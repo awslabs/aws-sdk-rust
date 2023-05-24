@@ -6,29 +6,29 @@ pub use crate::operation::describe_savings_plans::_describe_savings_plans_input:
 /// Fluent builder constructing a request to `DescribeSavingsPlans`.
 ///
 /// <p>Describes the specified Savings Plans.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeSavingsPlansFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::describe_savings_plans::builders::DescribeSavingsPlansInputBuilder,
 }
 impl DescribeSavingsPlansFluentBuilder {
     /// Creates a new `DescribeSavingsPlans`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::describe_savings_plans::DescribeSavingsPlans,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::describe_savings_plans::DescribeSavingsPlansError,
         >,
     > {
@@ -36,30 +36,33 @@ impl DescribeSavingsPlansFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::describe_savings_plans::DescribeSavingsPlansOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::describe_savings_plans::DescribeSavingsPlansError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,9 +75,9 @@ impl DescribeSavingsPlansFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::describe_savings_plans::DescribeSavingsPlansOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::describe_savings_plans::DescribeSavingsPlansError,
         >,
     > {
@@ -85,14 +88,17 @@ impl DescribeSavingsPlansFluentBuilder {
     /// To override the contents of this collection use [`set_savings_plan_arns`](Self::set_savings_plan_arns).
     ///
     /// <p>The Amazon Resource Names (ARN) of the Savings Plans.</p>
-    pub fn savings_plan_arns(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn savings_plan_arns(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.savings_plan_arns(input.into());
         self
     }
     /// <p>The Amazon Resource Names (ARN) of the Savings Plans.</p>
     pub fn set_savings_plan_arns(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_savings_plan_arns(input);
         self
@@ -102,25 +108,28 @@ impl DescribeSavingsPlansFluentBuilder {
     /// To override the contents of this collection use [`set_savings_plan_ids`](Self::set_savings_plan_ids).
     ///
     /// <p>The IDs of the Savings Plans.</p>
-    pub fn savings_plan_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn savings_plan_ids(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.savings_plan_ids(input.into());
         self
     }
     /// <p>The IDs of the Savings Plans.</p>
     pub fn set_savings_plan_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_savings_plan_ids(input);
         self
     }
     /// <p>The token for the next page of results.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
     /// <p>The token for the next page of results.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
@@ -130,7 +139,7 @@ impl DescribeSavingsPlansFluentBuilder {
         self
     }
     /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.</p>
-    pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
@@ -146,7 +155,7 @@ impl DescribeSavingsPlansFluentBuilder {
     /// <p>The states.</p>
     pub fn set_states(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SavingsPlanState>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanState>>,
     ) -> Self {
         self.inner = self.inner.set_states(input);
         self
@@ -163,7 +172,7 @@ impl DescribeSavingsPlansFluentBuilder {
     /// <p>The filters.</p>
     pub fn set_filters(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SavingsPlanFilter>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SavingsPlanFilter>>,
     ) -> Self {
         self.inner = self.inner.set_filters(input);
         self

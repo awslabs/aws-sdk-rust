@@ -2,22 +2,22 @@
 
 /// <p>A parameter used in a SQL statement.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SqlParameter {
     /// <p>The name of the parameter.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The value of the parameter. Amazon Redshift implicitly converts to the proper data type. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/c_Supported_data_types.html">Data types</a> in the <i>Amazon Redshift Database Developer Guide</i>. </p>
     #[doc(hidden)]
-    pub value: std::option::Option<std::string::String>,
+    pub value: ::std::option::Option<::std::string::String>,
 }
 impl SqlParameter {
     /// <p>The name of the parameter.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The value of the parameter. Amazon Redshift implicitly converts to the proper data type. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/c_Supported_data_types.html">Data types</a> in the <i>Amazon Redshift Database Developer Guide</i>. </p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl SqlParameter {
 
 /// A builder for [`SqlParameter`](crate::types::SqlParameter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SqlParameterBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) value: std::option::Option<std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) value: ::std::option::Option<::std::string::String>,
 }
 impl SqlParameterBuilder {
     /// <p>The name of the parameter.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the parameter.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The value of the parameter. Amazon Redshift implicitly converts to the proper data type. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/c_Supported_data_types.html">Data types</a> in the <i>Amazon Redshift Database Developer Guide</i>. </p>
-    pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.value = Some(input.into());
+    pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value of the parameter. Amazon Redshift implicitly converts to the proper data type. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/c_Supported_data_types.html">Data types</a> in the <i>Amazon Redshift Database Developer Guide</i>. </p>
-    pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
     }

@@ -2,11 +2,11 @@
 
 /// <p>The response for the OptInPhoneNumber action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OptInPhoneNumberOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for OptInPhoneNumberOutput {
+impl ::aws_http::request_id::RequestId for OptInPhoneNumberOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -21,7 +21,9 @@ impl OptInPhoneNumberOutput {
 
 /// A builder for [`OptInPhoneNumberOutput`](crate::operation::opt_in_phone_number::OptInPhoneNumberOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OptInPhoneNumberOutputBuilder {
     _request_id: Option<String>,
 }

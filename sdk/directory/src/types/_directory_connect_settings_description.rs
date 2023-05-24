@@ -2,50 +2,50 @@
 
 /// <p>Contains information about an AD Connector directory.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DirectoryConnectSettingsDescription {
     /// <p>The identifier of the VPC that the AD Connector is in.</p>
     #[doc(hidden)]
-    pub vpc_id: std::option::Option<std::string::String>,
+    pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of subnet identifiers in the VPC that the AD Connector is in.</p>
     #[doc(hidden)]
-    pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The user name of the service account in your self-managed directory.</p>
     #[doc(hidden)]
-    pub customer_user_name: std::option::Option<std::string::String>,
+    pub customer_user_name: ::std::option::Option<::std::string::String>,
     /// <p>The security group identifier for the AD Connector directory.</p>
     #[doc(hidden)]
-    pub security_group_id: std::option::Option<std::string::String>,
+    pub security_group_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of the Availability Zones that the directory is in.</p>
     #[doc(hidden)]
-    pub availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The IP addresses of the AD Connector servers.</p>
     #[doc(hidden)]
-    pub connect_ips: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub connect_ips: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DirectoryConnectSettingsDescription {
     /// <p>The identifier of the VPC that the AD Connector is in.</p>
-    pub fn vpc_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
     /// <p>A list of subnet identifiers in the VPC that the AD Connector is in.</p>
-    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.subnet_ids.as_deref()
     }
     /// <p>The user name of the service account in your self-managed directory.</p>
-    pub fn customer_user_name(&self) -> std::option::Option<&str> {
+    pub fn customer_user_name(&self) -> ::std::option::Option<&str> {
         self.customer_user_name.as_deref()
     }
     /// <p>The security group identifier for the AD Connector directory.</p>
-    pub fn security_group_id(&self) -> std::option::Option<&str> {
+    pub fn security_group_id(&self) -> ::std::option::Option<&str> {
         self.security_group_id.as_deref()
     }
     /// <p>A list of the Availability Zones that the directory is in.</p>
-    pub fn availability_zones(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn availability_zones(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.availability_zones.as_deref()
     }
     /// <p>The IP addresses of the AD Connector servers.</p>
-    pub fn connect_ips(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn connect_ips(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.connect_ips.as_deref()
     }
 }
@@ -58,23 +58,25 @@ impl DirectoryConnectSettingsDescription {
 
 /// A builder for [`DirectoryConnectSettingsDescription`](crate::types::DirectoryConnectSettingsDescription).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DirectoryConnectSettingsDescriptionBuilder {
-    pub(crate) vpc_id: std::option::Option<std::string::String>,
-    pub(crate) subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) customer_user_name: std::option::Option<std::string::String>,
-    pub(crate) security_group_id: std::option::Option<std::string::String>,
-    pub(crate) availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) connect_ips: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
+    pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) customer_user_name: ::std::option::Option<::std::string::String>,
+    pub(crate) security_group_id: ::std::option::Option<::std::string::String>,
+    pub(crate) availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) connect_ips: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DirectoryConnectSettingsDescriptionBuilder {
     /// <p>The identifier of the VPC that the AD Connector is in.</p>
-    pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.vpc_id = Some(input.into());
+    pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.vpc_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the VPC that the AD Connector is in.</p>
-    pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
     }
@@ -83,42 +85,48 @@ impl DirectoryConnectSettingsDescriptionBuilder {
     /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
     ///
     /// <p>A list of subnet identifiers in the VPC that the AD Connector is in.</p>
-    pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn subnet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subnet_ids.unwrap_or_default();
         v.push(input.into());
-        self.subnet_ids = Some(v);
+        self.subnet_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of subnet identifiers in the VPC that the AD Connector is in.</p>
     pub fn set_subnet_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.subnet_ids = input;
         self
     }
     /// <p>The user name of the service account in your self-managed directory.</p>
-    pub fn customer_user_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.customer_user_name = Some(input.into());
+    pub fn customer_user_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.customer_user_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user name of the service account in your self-managed directory.</p>
     pub fn set_customer_user_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.customer_user_name = input;
         self
     }
     /// <p>The security group identifier for the AD Connector directory.</p>
-    pub fn security_group_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.security_group_id = Some(input.into());
+    pub fn security_group_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.security_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The security group identifier for the AD Connector directory.</p>
     pub fn set_security_group_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.security_group_id = input;
         self
@@ -128,16 +136,19 @@ impl DirectoryConnectSettingsDescriptionBuilder {
     /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
     ///
     /// <p>A list of the Availability Zones that the directory is in.</p>
-    pub fn availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn availability_zones(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.availability_zones.unwrap_or_default();
         v.push(input.into());
-        self.availability_zones = Some(v);
+        self.availability_zones = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of the Availability Zones that the directory is in.</p>
     pub fn set_availability_zones(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.availability_zones = input;
         self
@@ -147,16 +158,16 @@ impl DirectoryConnectSettingsDescriptionBuilder {
     /// To override the contents of this collection use [`set_connect_ips`](Self::set_connect_ips).
     ///
     /// <p>The IP addresses of the AD Connector servers.</p>
-    pub fn connect_ips(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn connect_ips(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.connect_ips.unwrap_or_default();
         v.push(input.into());
-        self.connect_ips = Some(v);
+        self.connect_ips = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IP addresses of the AD Connector servers.</p>
     pub fn set_connect_ips(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.connect_ips = input;
         self

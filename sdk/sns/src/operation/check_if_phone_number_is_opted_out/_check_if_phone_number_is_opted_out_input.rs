@@ -2,15 +2,15 @@
 
 /// <p>The input for the <code>CheckIfPhoneNumberIsOptedOut</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CheckIfPhoneNumberIsOptedOutInput {
     /// <p>The phone number for which you want to check the opt out status.</p>
     #[doc(hidden)]
-    pub phone_number: std::option::Option<std::string::String>,
+    pub phone_number: ::std::option::Option<::std::string::String>,
 }
 impl CheckIfPhoneNumberIsOptedOutInput {
     /// <p>The phone number for which you want to check the opt out status.</p>
-    pub fn phone_number(&self) -> std::option::Option<&str> {
+    pub fn phone_number(&self) -> ::std::option::Option<&str> {
         self.phone_number.as_deref()
     }
 }
@@ -23,29 +23,31 @@ impl CheckIfPhoneNumberIsOptedOutInput {
 
 /// A builder for [`CheckIfPhoneNumberIsOptedOutInput`](crate::operation::check_if_phone_number_is_opted_out::CheckIfPhoneNumberIsOptedOutInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CheckIfPhoneNumberIsOptedOutInputBuilder {
-    pub(crate) phone_number: std::option::Option<std::string::String>,
+    pub(crate) phone_number: ::std::option::Option<::std::string::String>,
 }
 impl CheckIfPhoneNumberIsOptedOutInputBuilder {
     /// <p>The phone number for which you want to check the opt out status.</p>
-    pub fn phone_number(mut self, input: impl Into<std::string::String>) -> Self {
-        self.phone_number = Some(input.into());
+    pub fn phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.phone_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The phone number for which you want to check the opt out status.</p>
-    pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.phone_number = input;
         self
     }
     /// Consumes the builder and constructs a [`CheckIfPhoneNumberIsOptedOutInput`](crate::operation::check_if_phone_number_is_opted_out::CheckIfPhoneNumberIsOptedOutInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::check_if_phone_number_is_opted_out::CheckIfPhoneNumberIsOptedOutInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::check_if_phone_number_is_opted_out::CheckIfPhoneNumberIsOptedOutInput {
                 phone_number: self.phone_number
                 ,

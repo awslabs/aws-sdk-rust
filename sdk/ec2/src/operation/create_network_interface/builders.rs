@@ -8,29 +8,29 @@ pub use crate::operation::create_network_interface::_create_network_interface_in
 /// <p>Creates a network interface in the specified subnet.</p>
 /// <p>The number of IP addresses you can assign to a network interface varies by instance type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#AvailableIpPerENI">IP Addresses Per ENI Per Instance Type</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
 /// <p>For more information about network interfaces, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic network interfaces</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateNetworkInterfaceFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_network_interface::builders::CreateNetworkInterfaceInputBuilder,
 }
 impl CreateNetworkInterfaceFluentBuilder {
     /// Creates a new `CreateNetworkInterface`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_network_interface::CreateNetworkInterface,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_network_interface::CreateNetworkInterfaceError,
         >,
     > {
@@ -38,30 +38,33 @@ impl CreateNetworkInterfaceFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_network_interface::CreateNetworkInterfaceOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_network_interface::CreateNetworkInterfaceError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -74,21 +77,21 @@ impl CreateNetworkInterfaceFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_network_interface::CreateNetworkInterfaceOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_network_interface::CreateNetworkInterfaceError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>A description for the network interface.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>A description for the network interface.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
@@ -98,7 +101,7 @@ impl CreateNetworkInterfaceFluentBuilder {
         self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
     }
@@ -107,14 +110,14 @@ impl CreateNetworkInterfaceFluentBuilder {
     /// To override the contents of this collection use [`set_groups`](Self::set_groups).
     ///
     /// <p>The IDs of one or more security groups.</p>
-    pub fn groups(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.groups(input.into());
         self
     }
     /// <p>The IDs of one or more security groups.</p>
     pub fn set_groups(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_groups(input);
         self
@@ -129,7 +132,7 @@ impl CreateNetworkInterfaceFluentBuilder {
     /// <p>The number of IPv6 addresses to assign to a network interface. Amazon EC2 automatically selects the IPv6 addresses from the subnet range.</p>
     /// <p>You can't specify a count of IPv6 addresses using this parameter if you've specified one of the following: specific IPv6 addresses, specific IPv6 prefixes, or a count of IPv6 prefixes.</p>
     /// <p>If your subnet has the <code>AssignIpv6AddressOnCreation</code> attribute set, you can override that setting by specifying 0 as the IPv6 address count.</p>
-    pub fn set_ipv6_address_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_ipv6_address_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_ipv6_address_count(input);
         self
     }
@@ -147,20 +150,23 @@ impl CreateNetworkInterfaceFluentBuilder {
     /// <p>You can't specify IPv6 addresses using this parameter if you've specified one of the following: a count of IPv6 addresses, specific IPv6 prefixes, or a count of IPv6 prefixes.</p>
     pub fn set_ipv6_addresses(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::InstanceIpv6Address>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceIpv6Address>>,
     ) -> Self {
         self.inner = self.inner.set_ipv6_addresses(input);
         self
     }
     /// <p>The primary private IPv4 address of the network interface. If you don't specify an IPv4 address, Amazon EC2 selects one for you from the subnet's IPv4 CIDR range. If you specify an IP address, you cannot indicate any IP addresses specified in <code>privateIpAddresses</code> as primary (only one IP address can be designated as primary).</p>
-    pub fn private_ip_address(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn private_ip_address(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.private_ip_address(input.into());
         self
     }
     /// <p>The primary private IPv4 address of the network interface. If you don't specify an IPv4 address, Amazon EC2 selects one for you from the subnet's IPv4 CIDR range. If you specify an IP address, you cannot indicate any IP addresses specified in <code>privateIpAddresses</code> as primary (only one IP address can be designated as primary).</p>
     pub fn set_private_ip_address(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_private_ip_address(input);
         self
@@ -182,7 +188,7 @@ impl CreateNetworkInterfaceFluentBuilder {
     /// <p>You can't specify private IPv4 addresses if you've specified one of the following: a count of private IPv4 addresses, specific IPv4 prefixes, or a count of IPv4 prefixes.</p>
     pub fn set_private_ip_addresses(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PrivateIpAddressSpecification>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PrivateIpAddressSpecification>>,
     ) -> Self {
         self.inner = self.inner.set_private_ip_addresses(input);
         self
@@ -197,7 +203,7 @@ impl CreateNetworkInterfaceFluentBuilder {
     /// <p>You can't specify a count of private IPv4 addresses if you've specified one of the following: specific private IPv4 addresses, specific IPv4 prefixes, or a count of IPv4 prefixes.</p>
     pub fn set_secondary_private_ip_address_count(
         mut self,
-        input: std::option::Option<i32>,
+        input: ::std::option::Option<i32>,
     ) -> Self {
         self.inner = self.inner.set_secondary_private_ip_address_count(input);
         self
@@ -216,7 +222,7 @@ impl CreateNetworkInterfaceFluentBuilder {
     /// <p>You can't specify IPv4 prefixes if you've specified one of the following: a count of IPv4 prefixes, specific private IPv4 addresses, or a count of private IPv4 addresses.</p>
     pub fn set_ipv4_prefixes(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Ipv4PrefixSpecificationRequest>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Ipv4PrefixSpecificationRequest>>,
     ) -> Self {
         self.inner = self.inner.set_ipv4_prefixes(input);
         self
@@ -229,7 +235,7 @@ impl CreateNetworkInterfaceFluentBuilder {
     }
     /// <p>The number of IPv4 prefixes that Amazon Web Services automatically assigns to the network interface.</p>
     /// <p>You can't specify a count of IPv4 prefixes if you've specified one of the following: specific IPv4 prefixes, specific private IPv4 addresses, or a count of private IPv4 addresses.</p>
-    pub fn set_ipv4_prefix_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_ipv4_prefix_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_ipv4_prefix_count(input);
         self
     }
@@ -247,7 +253,7 @@ impl CreateNetworkInterfaceFluentBuilder {
     /// <p>You can't specify IPv6 prefixes if you've specified one of the following: a count of IPv6 prefixes, specific IPv6 addresses, or a count of IPv6 addresses.</p>
     pub fn set_ipv6_prefixes(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Ipv6PrefixSpecificationRequest>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Ipv6PrefixSpecificationRequest>>,
     ) -> Self {
         self.inner = self.inner.set_ipv6_prefixes(input);
         self
@@ -260,7 +266,7 @@ impl CreateNetworkInterfaceFluentBuilder {
     }
     /// <p>The number of IPv6 prefixes that Amazon Web Services automatically assigns to the network interface.</p>
     /// <p>You can't specify a count of IPv6 prefixes if you've specified one of the following: specific IPv6 prefixes, specific IPv6 addresses, or a count of IPv6 addresses.</p>
-    pub fn set_ipv6_prefix_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_ipv6_prefix_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_ipv6_prefix_count(input);
         self
     }
@@ -274,18 +280,18 @@ impl CreateNetworkInterfaceFluentBuilder {
     /// <p>The only supported values are <code>efa</code> and <code>trunk</code>.</p>
     pub fn set_interface_type(
         mut self,
-        input: std::option::Option<crate::types::NetworkInterfaceCreationType>,
+        input: ::std::option::Option<crate::types::NetworkInterfaceCreationType>,
     ) -> Self {
         self.inner = self.inner.set_interface_type(input);
         self
     }
     /// <p>The ID of the subnet to associate with the network interface.</p>
-    pub fn subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subnet_id(input.into());
         self
     }
     /// <p>The ID of the subnet to associate with the network interface.</p>
-    pub fn set_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_subnet_id(input);
         self
     }
@@ -301,18 +307,18 @@ impl CreateNetworkInterfaceFluentBuilder {
     /// <p>The tags to apply to the new network interface.</p>
     pub fn set_tag_specifications(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TagSpecification>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     ) -> Self {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
-    pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
-    pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }

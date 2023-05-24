@@ -7,29 +7,29 @@ pub use crate::operation::delete_ssh_public_key::_delete_ssh_public_key_input::D
 ///
 /// <p>Deletes the specified SSH public key.</p>
 /// <p>The SSH public key deleted by this operation is used only for authenticating the associated IAM user to an CodeCommit repository. For more information about using SSH keys to authenticate to an CodeCommit repository, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-credentials-ssh.html">Set up CodeCommit for SSH connections</a> in the <i>CodeCommit User Guide</i>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteSSHPublicKeyFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::delete_ssh_public_key::builders::DeleteSshPublicKeyInputBuilder,
 }
 impl DeleteSSHPublicKeyFluentBuilder {
     /// Creates a new `DeleteSSHPublicKey`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::delete_ssh_public_key::DeleteSSHPublicKey,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::delete_ssh_public_key::DeleteSSHPublicKeyError,
         >,
     > {
@@ -37,30 +37,33 @@ impl DeleteSSHPublicKeyFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::delete_ssh_public_key::DeleteSshPublicKeyOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::delete_ssh_public_key::DeleteSSHPublicKeyError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -73,9 +76,9 @@ impl DeleteSSHPublicKeyFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::delete_ssh_public_key::DeleteSshPublicKeyOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::delete_ssh_public_key::DeleteSSHPublicKeyError,
         >,
     > {
@@ -83,19 +86,22 @@ impl DeleteSSHPublicKeyFluentBuilder {
     }
     /// <p>The name of the IAM user associated with the SSH public key.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_name(input.into());
         self
     }
     /// <p>The name of the IAM user associated with the SSH public key.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_name(input);
         self
     }
     /// <p>The unique identifier for the SSH public key.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</p>
-    pub fn ssh_public_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn ssh_public_key_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.ssh_public_key_id(input.into());
         self
     }
@@ -103,7 +109,7 @@ impl DeleteSSHPublicKeyFluentBuilder {
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</p>
     pub fn set_ssh_public_key_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_ssh_public_key_id(input);
         self

@@ -2,11 +2,11 @@
 
 /// <p>A complex type that controls whether access logs are written for the CloudFront distribution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsCloudFrontDistributionLogging {
     /// <p>The S3 bucket to store the access logs in.</p>
     #[doc(hidden)]
-    pub bucket: std::option::Option<std::string::String>,
+    pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>With this field, you can enable or disable the selected distribution.</p>
     #[doc(hidden)]
     pub enabled: bool,
@@ -15,11 +15,11 @@ pub struct AwsCloudFrontDistributionLogging {
     pub include_cookies: bool,
     /// <p>An optional string that you want CloudFront to use as a prefix to the access log filenames for this distribution.</p>
     #[doc(hidden)]
-    pub prefix: std::option::Option<std::string::String>,
+    pub prefix: ::std::option::Option<::std::string::String>,
 }
 impl AwsCloudFrontDistributionLogging {
     /// <p>The S3 bucket to store the access logs in.</p>
-    pub fn bucket(&self) -> std::option::Option<&str> {
+    pub fn bucket(&self) -> ::std::option::Option<&str> {
         self.bucket.as_deref()
     }
     /// <p>With this field, you can enable or disable the selected distribution.</p>
@@ -31,7 +31,7 @@ impl AwsCloudFrontDistributionLogging {
         self.include_cookies
     }
     /// <p>An optional string that you want CloudFront to use as a prefix to the access log filenames for this distribution.</p>
-    pub fn prefix(&self) -> std::option::Option<&str> {
+    pub fn prefix(&self) -> ::std::option::Option<&str> {
         self.prefix.as_deref()
     }
 }
@@ -44,51 +44,53 @@ impl AwsCloudFrontDistributionLogging {
 
 /// A builder for [`AwsCloudFrontDistributionLogging`](crate::types::AwsCloudFrontDistributionLogging).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsCloudFrontDistributionLoggingBuilder {
-    pub(crate) bucket: std::option::Option<std::string::String>,
-    pub(crate) enabled: std::option::Option<bool>,
-    pub(crate) include_cookies: std::option::Option<bool>,
-    pub(crate) prefix: std::option::Option<std::string::String>,
+    pub(crate) bucket: ::std::option::Option<::std::string::String>,
+    pub(crate) enabled: ::std::option::Option<bool>,
+    pub(crate) include_cookies: ::std::option::Option<bool>,
+    pub(crate) prefix: ::std::option::Option<::std::string::String>,
 }
 impl AwsCloudFrontDistributionLoggingBuilder {
     /// <p>The S3 bucket to store the access logs in.</p>
-    pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
-        self.bucket = Some(input.into());
+    pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.bucket = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The S3 bucket to store the access logs in.</p>
-    pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket = input;
         self
     }
     /// <p>With this field, you can enable or disable the selected distribution.</p>
     pub fn enabled(mut self, input: bool) -> Self {
-        self.enabled = Some(input);
+        self.enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>With this field, you can enable or disable the selected distribution.</p>
-    pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
     }
     /// <p>Specifies whether you want CloudFront to include cookies in access logs.</p>
     pub fn include_cookies(mut self, input: bool) -> Self {
-        self.include_cookies = Some(input);
+        self.include_cookies = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether you want CloudFront to include cookies in access logs.</p>
-    pub fn set_include_cookies(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_include_cookies(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_cookies = input;
         self
     }
     /// <p>An optional string that you want CloudFront to use as a prefix to the access log filenames for this distribution.</p>
-    pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
-        self.prefix = Some(input.into());
+    pub fn prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An optional string that you want CloudFront to use as a prefix to the access log filenames for this distribution.</p>
-    pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.prefix = input;
         self
     }

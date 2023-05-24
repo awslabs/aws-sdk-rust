@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DisassociateLink`](crate::operation::disassociate_link::builders::DisassociateLinkFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`global_network_id(impl Into<String>)`](crate::operation::disassociate_link::builders::DisassociateLinkFluentBuilder::global_network_id) / [`set_global_network_id(Option<String>)`](crate::operation::disassociate_link::builders::DisassociateLinkFluentBuilder::set_global_network_id): <p>The ID of the global network.</p>
-    ///   - [`device_id(impl Into<String>)`](crate::operation::disassociate_link::builders::DisassociateLinkFluentBuilder::device_id) / [`set_device_id(Option<String>)`](crate::operation::disassociate_link::builders::DisassociateLinkFluentBuilder::set_device_id): <p>The ID of the device.</p>
-    ///   - [`link_id(impl Into<String>)`](crate::operation::disassociate_link::builders::DisassociateLinkFluentBuilder::link_id) / [`set_link_id(Option<String>)`](crate::operation::disassociate_link::builders::DisassociateLinkFluentBuilder::set_link_id): <p>The ID of the link.</p>
+    ///   - [`global_network_id(impl ::std::convert::Into<String>)`](crate::operation::disassociate_link::builders::DisassociateLinkFluentBuilder::global_network_id) / [`set_global_network_id(Option<String>)`](crate::operation::disassociate_link::builders::DisassociateLinkFluentBuilder::set_global_network_id): <p>The ID of the global network.</p>
+    ///   - [`device_id(impl ::std::convert::Into<String>)`](crate::operation::disassociate_link::builders::DisassociateLinkFluentBuilder::device_id) / [`set_device_id(Option<String>)`](crate::operation::disassociate_link::builders::DisassociateLinkFluentBuilder::set_device_id): <p>The ID of the device.</p>
+    ///   - [`link_id(impl ::std::convert::Into<String>)`](crate::operation::disassociate_link::builders::DisassociateLinkFluentBuilder::link_id) / [`set_link_id(Option<String>)`](crate::operation::disassociate_link::builders::DisassociateLinkFluentBuilder::set_link_id): <p>The ID of the link.</p>
     /// - On success, responds with [`DisassociateLinkOutput`](crate::operation::disassociate_link::DisassociateLinkOutput) with field(s):
     ///   - [`link_association(Option<LinkAssociation>)`](crate::operation::disassociate_link::DisassociateLinkOutput::link_association): <p>Information about the link association.</p>
     /// - On failure, responds with [`SdkError<DisassociateLinkError>`](crate::operation::disassociate_link::DisassociateLinkError)

@@ -2,57 +2,57 @@
 
 /// <p>Details for an Amazon EMR Studio, including ID, Name, VPC, and Description. The details do not include subnets, IAM roles, security groups, or tags associated with the Studio.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StudioSummary {
     /// <p>The ID of the Amazon EMR Studio.</p>
     #[doc(hidden)]
-    pub studio_id: std::option::Option<std::string::String>,
+    pub studio_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon EMR Studio.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Virtual Private Cloud (Amazon VPC) associated with the Amazon EMR Studio.</p>
     #[doc(hidden)]
-    pub vpc_id: std::option::Option<std::string::String>,
+    pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The detailed description of the Amazon EMR Studio.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The unique access URL of the Amazon EMR Studio.</p>
     #[doc(hidden)]
-    pub url: std::option::Option<std::string::String>,
+    pub url: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the Studio authenticates users using IAM or IAM Identity Center.</p>
     #[doc(hidden)]
-    pub auth_mode: std::option::Option<crate::types::AuthMode>,
+    pub auth_mode: ::std::option::Option<crate::types::AuthMode>,
     /// <p>The time when the Amazon EMR Studio was created.</p>
     #[doc(hidden)]
-    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl StudioSummary {
     /// <p>The ID of the Amazon EMR Studio.</p>
-    pub fn studio_id(&self) -> std::option::Option<&str> {
+    pub fn studio_id(&self) -> ::std::option::Option<&str> {
         self.studio_id.as_deref()
     }
     /// <p>The name of the Amazon EMR Studio.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The ID of the Virtual Private Cloud (Amazon VPC) associated with the Amazon EMR Studio.</p>
-    pub fn vpc_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
     /// <p>The detailed description of the Amazon EMR Studio.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The unique access URL of the Amazon EMR Studio.</p>
-    pub fn url(&self) -> std::option::Option<&str> {
+    pub fn url(&self) -> ::std::option::Option<&str> {
         self.url.as_deref()
     }
     /// <p>Specifies whether the Studio authenticates users using IAM or IAM Identity Center.</p>
-    pub fn auth_mode(&self) -> std::option::Option<&crate::types::AuthMode> {
+    pub fn auth_mode(&self) -> ::std::option::Option<&crate::types::AuthMode> {
         self.auth_mode.as_ref()
     }
     /// <p>The time when the Amazon EMR Studio was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
@@ -65,86 +65,88 @@ impl StudioSummary {
 
 /// A builder for [`StudioSummary`](crate::types::StudioSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StudioSummaryBuilder {
-    pub(crate) studio_id: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) vpc_id: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) url: std::option::Option<std::string::String>,
-    pub(crate) auth_mode: std::option::Option<crate::types::AuthMode>,
-    pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) studio_id: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) url: ::std::option::Option<::std::string::String>,
+    pub(crate) auth_mode: ::std::option::Option<crate::types::AuthMode>,
+    pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl StudioSummaryBuilder {
     /// <p>The ID of the Amazon EMR Studio.</p>
-    pub fn studio_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.studio_id = Some(input.into());
+    pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.studio_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon EMR Studio.</p>
-    pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_studio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.studio_id = input;
         self
     }
     /// <p>The name of the Amazon EMR Studio.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Amazon EMR Studio.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The ID of the Virtual Private Cloud (Amazon VPC) associated with the Amazon EMR Studio.</p>
-    pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.vpc_id = Some(input.into());
+    pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.vpc_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Virtual Private Cloud (Amazon VPC) associated with the Amazon EMR Studio.</p>
-    pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
     }
     /// <p>The detailed description of the Amazon EMR Studio.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The detailed description of the Amazon EMR Studio.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>The unique access URL of the Amazon EMR Studio.</p>
-    pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.url = Some(input.into());
+    pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique access URL of the Amazon EMR Studio.</p>
-    pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.url = input;
         self
     }
     /// <p>Specifies whether the Studio authenticates users using IAM or IAM Identity Center.</p>
     pub fn auth_mode(mut self, input: crate::types::AuthMode) -> Self {
-        self.auth_mode = Some(input);
+        self.auth_mode = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether the Studio authenticates users using IAM or IAM Identity Center.</p>
-    pub fn set_auth_mode(mut self, input: std::option::Option<crate::types::AuthMode>) -> Self {
+    pub fn set_auth_mode(mut self, input: ::std::option::Option<crate::types::AuthMode>) -> Self {
         self.auth_mode = input;
         self
     }
     /// <p>The time when the Amazon EMR Studio was created.</p>
-    pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_time = Some(input);
+    pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time when the Amazon EMR Studio was created.</p>
     pub fn set_creation_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_time = input;
         self

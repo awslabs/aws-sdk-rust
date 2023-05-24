@@ -2,18 +2,18 @@
 
 /// <p>The field well configuration of a waterfall visual.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WaterfallChartFieldWells {
     /// <p>The field well configuration of a waterfall visual.</p>
     #[doc(hidden)]
     pub waterfall_chart_aggregated_field_wells:
-        std::option::Option<crate::types::WaterfallChartAggregatedFieldWells>,
+        ::std::option::Option<crate::types::WaterfallChartAggregatedFieldWells>,
 }
 impl WaterfallChartFieldWells {
     /// <p>The field well configuration of a waterfall visual.</p>
     pub fn waterfall_chart_aggregated_field_wells(
         &self,
-    ) -> std::option::Option<&crate::types::WaterfallChartAggregatedFieldWells> {
+    ) -> ::std::option::Option<&crate::types::WaterfallChartAggregatedFieldWells> {
         self.waterfall_chart_aggregated_field_wells.as_ref()
     }
 }
@@ -26,10 +26,12 @@ impl WaterfallChartFieldWells {
 
 /// A builder for [`WaterfallChartFieldWells`](crate::types::WaterfallChartFieldWells).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct WaterfallChartFieldWellsBuilder {
     pub(crate) waterfall_chart_aggregated_field_wells:
-        std::option::Option<crate::types::WaterfallChartAggregatedFieldWells>,
+        ::std::option::Option<crate::types::WaterfallChartAggregatedFieldWells>,
 }
 impl WaterfallChartFieldWellsBuilder {
     /// <p>The field well configuration of a waterfall visual.</p>
@@ -37,13 +39,13 @@ impl WaterfallChartFieldWellsBuilder {
         mut self,
         input: crate::types::WaterfallChartAggregatedFieldWells,
     ) -> Self {
-        self.waterfall_chart_aggregated_field_wells = Some(input);
+        self.waterfall_chart_aggregated_field_wells = ::std::option::Option::Some(input);
         self
     }
     /// <p>The field well configuration of a waterfall visual.</p>
     pub fn set_waterfall_chart_aggregated_field_wells(
         mut self,
-        input: std::option::Option<crate::types::WaterfallChartAggregatedFieldWells>,
+        input: ::std::option::Option<crate::types::WaterfallChartAggregatedFieldWells>,
     ) -> Self {
         self.waterfall_chart_aggregated_field_wells = input;
         self

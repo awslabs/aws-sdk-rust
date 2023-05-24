@@ -2,46 +2,46 @@
 
 /// <p>Represents the output of a <code>CreateObject</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchCreateObject {
     /// <p>A list of <code>FacetArns</code> that will be associated with the object. For more information, see <code>arns</code>.</p>
     #[doc(hidden)]
-    pub schema_facet: std::option::Option<std::vec::Vec<crate::types::SchemaFacet>>,
+    pub schema_facet: ::std::option::Option<::std::vec::Vec<crate::types::SchemaFacet>>,
     /// <p>An attribute map, which contains an attribute ARN as the key and attribute value as the map value.</p>
     #[doc(hidden)]
     pub object_attribute_list:
-        std::option::Option<std::vec::Vec<crate::types::AttributeKeyAndValue>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>>,
     /// <p>If specified, the parent reference to which this object will be attached.</p>
     #[doc(hidden)]
-    pub parent_reference: std::option::Option<crate::types::ObjectReference>,
+    pub parent_reference: ::std::option::Option<crate::types::ObjectReference>,
     /// <p>The name of the link.</p>
     #[doc(hidden)]
-    pub link_name: std::option::Option<std::string::String>,
+    pub link_name: ::std::option::Option<::std::string::String>,
     /// <p>The batch reference name. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/transaction_support.html">Transaction Support</a> for more information.</p>
     #[doc(hidden)]
-    pub batch_reference_name: std::option::Option<std::string::String>,
+    pub batch_reference_name: ::std::option::Option<::std::string::String>,
 }
 impl BatchCreateObject {
     /// <p>A list of <code>FacetArns</code> that will be associated with the object. For more information, see <code>arns</code>.</p>
-    pub fn schema_facet(&self) -> std::option::Option<&[crate::types::SchemaFacet]> {
+    pub fn schema_facet(&self) -> ::std::option::Option<&[crate::types::SchemaFacet]> {
         self.schema_facet.as_deref()
     }
     /// <p>An attribute map, which contains an attribute ARN as the key and attribute value as the map value.</p>
     pub fn object_attribute_list(
         &self,
-    ) -> std::option::Option<&[crate::types::AttributeKeyAndValue]> {
+    ) -> ::std::option::Option<&[crate::types::AttributeKeyAndValue]> {
         self.object_attribute_list.as_deref()
     }
     /// <p>If specified, the parent reference to which this object will be attached.</p>
-    pub fn parent_reference(&self) -> std::option::Option<&crate::types::ObjectReference> {
+    pub fn parent_reference(&self) -> ::std::option::Option<&crate::types::ObjectReference> {
         self.parent_reference.as_ref()
     }
     /// <p>The name of the link.</p>
-    pub fn link_name(&self) -> std::option::Option<&str> {
+    pub fn link_name(&self) -> ::std::option::Option<&str> {
         self.link_name.as_deref()
     }
     /// <p>The batch reference name. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/transaction_support.html">Transaction Support</a> for more information.</p>
-    pub fn batch_reference_name(&self) -> std::option::Option<&str> {
+    pub fn batch_reference_name(&self) -> ::std::option::Option<&str> {
         self.batch_reference_name.as_deref()
     }
 }
@@ -54,14 +54,16 @@ impl BatchCreateObject {
 
 /// A builder for [`BatchCreateObject`](crate::types::BatchCreateObject).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BatchCreateObjectBuilder {
-    pub(crate) schema_facet: std::option::Option<std::vec::Vec<crate::types::SchemaFacet>>,
+    pub(crate) schema_facet: ::std::option::Option<::std::vec::Vec<crate::types::SchemaFacet>>,
     pub(crate) object_attribute_list:
-        std::option::Option<std::vec::Vec<crate::types::AttributeKeyAndValue>>,
-    pub(crate) parent_reference: std::option::Option<crate::types::ObjectReference>,
-    pub(crate) link_name: std::option::Option<std::string::String>,
-    pub(crate) batch_reference_name: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>>,
+    pub(crate) parent_reference: ::std::option::Option<crate::types::ObjectReference>,
+    pub(crate) link_name: ::std::option::Option<::std::string::String>,
+    pub(crate) batch_reference_name: ::std::option::Option<::std::string::String>,
 }
 impl BatchCreateObjectBuilder {
     /// Appends an item to `schema_facet`.
@@ -72,13 +74,13 @@ impl BatchCreateObjectBuilder {
     pub fn schema_facet(mut self, input: crate::types::SchemaFacet) -> Self {
         let mut v = self.schema_facet.unwrap_or_default();
         v.push(input);
-        self.schema_facet = Some(v);
+        self.schema_facet = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of <code>FacetArns</code> that will be associated with the object. For more information, see <code>arns</code>.</p>
     pub fn set_schema_facet(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SchemaFacet>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SchemaFacet>>,
     ) -> Self {
         self.schema_facet = input;
         self
@@ -91,49 +93,52 @@ impl BatchCreateObjectBuilder {
     pub fn object_attribute_list(mut self, input: crate::types::AttributeKeyAndValue) -> Self {
         let mut v = self.object_attribute_list.unwrap_or_default();
         v.push(input);
-        self.object_attribute_list = Some(v);
+        self.object_attribute_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>An attribute map, which contains an attribute ARN as the key and attribute value as the map value.</p>
     pub fn set_object_attribute_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AttributeKeyAndValue>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>>,
     ) -> Self {
         self.object_attribute_list = input;
         self
     }
     /// <p>If specified, the parent reference to which this object will be attached.</p>
     pub fn parent_reference(mut self, input: crate::types::ObjectReference) -> Self {
-        self.parent_reference = Some(input);
+        self.parent_reference = ::std::option::Option::Some(input);
         self
     }
     /// <p>If specified, the parent reference to which this object will be attached.</p>
     pub fn set_parent_reference(
         mut self,
-        input: std::option::Option<crate::types::ObjectReference>,
+        input: ::std::option::Option<crate::types::ObjectReference>,
     ) -> Self {
         self.parent_reference = input;
         self
     }
     /// <p>The name of the link.</p>
-    pub fn link_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.link_name = Some(input.into());
+    pub fn link_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.link_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the link.</p>
-    pub fn set_link_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_link_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.link_name = input;
         self
     }
     /// <p>The batch reference name. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/transaction_support.html">Transaction Support</a> for more information.</p>
-    pub fn batch_reference_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.batch_reference_name = Some(input.into());
+    pub fn batch_reference_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.batch_reference_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The batch reference name. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/transaction_support.html">Transaction Support</a> for more information.</p>
     pub fn set_batch_reference_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.batch_reference_name = input;
         self

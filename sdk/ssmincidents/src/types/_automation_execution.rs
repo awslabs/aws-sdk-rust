@@ -2,10 +2,10 @@
 
 /// <p>The Systems Manager automation document process to start as the runbook at the beginning of the incident.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum AutomationExecution {
     /// <p>The Amazon Resource Name (ARN) of the automation process.</p>
-    SsmExecutionArn(std::string::String),
+    SsmExecutionArn(::std::string::String),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -18,13 +18,13 @@ pub enum AutomationExecution {
 }
 impl AutomationExecution {
     #[allow(irrefutable_let_patterns)]
-    /// Tries to convert the enum instance into [`SsmExecutionArn`](crate::types::AutomationExecution::SsmExecutionArn), extracting the inner [`String`](std::string::String).
+    /// Tries to convert the enum instance into [`SsmExecutionArn`](crate::types::AutomationExecution::SsmExecutionArn), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_ssm_execution_arn(&self) -> std::result::Result<&std::string::String, &Self> {
+    pub fn as_ssm_execution_arn(&self) -> ::std::result::Result<&::std::string::String, &Self> {
         if let AutomationExecution::SsmExecutionArn(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`SsmExecutionArn`](crate::types::AutomationExecution::SsmExecutionArn).

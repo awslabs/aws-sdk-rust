@@ -2,15 +2,15 @@
 
 /// <p>Options that apply when the app starts. These options override default behavior.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LaunchOverrides {
     /// <p>App launch commands and command line parameters that override the launch command configured in the simulation schema.</p>
     #[doc(hidden)]
-    pub launch_commands: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub launch_commands: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl LaunchOverrides {
     /// <p>App launch commands and command line parameters that override the launch command configured in the simulation schema.</p>
-    pub fn launch_commands(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn launch_commands(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.launch_commands.as_deref()
     }
 }
@@ -23,9 +23,11 @@ impl LaunchOverrides {
 
 /// A builder for [`LaunchOverrides`](crate::types::LaunchOverrides).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LaunchOverridesBuilder {
-    pub(crate) launch_commands: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) launch_commands: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl LaunchOverridesBuilder {
     /// Appends an item to `launch_commands`.
@@ -33,16 +35,19 @@ impl LaunchOverridesBuilder {
     /// To override the contents of this collection use [`set_launch_commands`](Self::set_launch_commands).
     ///
     /// <p>App launch commands and command line parameters that override the launch command configured in the simulation schema.</p>
-    pub fn launch_commands(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn launch_commands(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.launch_commands.unwrap_or_default();
         v.push(input.into());
-        self.launch_commands = Some(v);
+        self.launch_commands = ::std::option::Option::Some(v);
         self
     }
     /// <p>App launch commands and command line parameters that override the launch command configured in the simulation schema.</p>
     pub fn set_launch_commands(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.launch_commands = input;
         self

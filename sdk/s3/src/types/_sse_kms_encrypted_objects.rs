@@ -2,15 +2,15 @@
 
 /// <p>A container for filter information for the selection of S3 objects encrypted with Amazon Web Services KMS.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SseKmsEncryptedObjects {
     /// <p>Specifies whether Amazon S3 replicates objects created with server-side encryption using an Amazon Web Services KMS key stored in Amazon Web Services Key Management Service.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::SseKmsEncryptedObjectsStatus>,
+    pub status: ::std::option::Option<crate::types::SseKmsEncryptedObjectsStatus>,
 }
 impl SseKmsEncryptedObjects {
     /// <p>Specifies whether Amazon S3 replicates objects created with server-side encryption using an Amazon Web Services KMS key stored in Amazon Web Services Key Management Service.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::SseKmsEncryptedObjectsStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::SseKmsEncryptedObjectsStatus> {
         self.status.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl SseKmsEncryptedObjects {
 
 /// A builder for [`SseKmsEncryptedObjects`](crate::types::SseKmsEncryptedObjects).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SseKmsEncryptedObjectsBuilder {
-    pub(crate) status: std::option::Option<crate::types::SseKmsEncryptedObjectsStatus>,
+    pub(crate) status: ::std::option::Option<crate::types::SseKmsEncryptedObjectsStatus>,
 }
 impl SseKmsEncryptedObjectsBuilder {
     /// <p>Specifies whether Amazon S3 replicates objects created with server-side encryption using an Amazon Web Services KMS key stored in Amazon Web Services Key Management Service.</p>
     pub fn status(mut self, input: crate::types::SseKmsEncryptedObjectsStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether Amazon S3 replicates objects created with server-side encryption using an Amazon Web Services KMS key stored in Amazon Web Services Key Management Service.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::SseKmsEncryptedObjectsStatus>,
+        input: ::std::option::Option<crate::types::SseKmsEncryptedObjectsStatus>,
     ) -> Self {
         self.status = input;
         self

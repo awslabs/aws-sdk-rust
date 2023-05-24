@@ -2,15 +2,15 @@
 
 /// <p>Describes whether monitoring is enabled for a Scheduled Instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScheduledInstancesMonitoring {
     /// <p>Indicates whether monitoring is enabled.</p>
     #[doc(hidden)]
-    pub enabled: std::option::Option<bool>,
+    pub enabled: ::std::option::Option<bool>,
 }
 impl ScheduledInstancesMonitoring {
     /// <p>Indicates whether monitoring is enabled.</p>
-    pub fn enabled(&self) -> std::option::Option<bool> {
+    pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
 }
@@ -23,18 +23,20 @@ impl ScheduledInstancesMonitoring {
 
 /// A builder for [`ScheduledInstancesMonitoring`](crate::types::ScheduledInstancesMonitoring).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ScheduledInstancesMonitoringBuilder {
-    pub(crate) enabled: std::option::Option<bool>,
+    pub(crate) enabled: ::std::option::Option<bool>,
 }
 impl ScheduledInstancesMonitoringBuilder {
     /// <p>Indicates whether monitoring is enabled.</p>
     pub fn enabled(mut self, input: bool) -> Self {
-        self.enabled = Some(input);
+        self.enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether monitoring is enabled.</p>
-    pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
     }

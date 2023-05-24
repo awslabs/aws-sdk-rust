@@ -9,29 +9,29 @@ pub use crate::operation::add_custom_routing_endpoints::_add_custom_routing_endp
 /// <p>The listener port range must be large enough to support the number of IP addresses that can be specified in your subnet. The number of ports required is: subnet size times the number of ports per destination EC2 instances. For example, a subnet defined as /24 requires a listener port range of at least 255 ports. </p>
 /// <p>Note: You must have enough remaining listener ports available to map to the subnet ports, or the call will fail with a LimitExceededException.</p>
 /// <p>By default, all destinations in a subnet in a custom routing accelerator cannot receive traffic. To enable all destinations to receive traffic, or to specify individual port mappings that can receive traffic, see the <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/API_AllowCustomRoutingTraffic.html"> AllowCustomRoutingTraffic</a> operation.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AddCustomRoutingEndpointsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::add_custom_routing_endpoints::builders::AddCustomRoutingEndpointsInputBuilder,
 }
 impl AddCustomRoutingEndpointsFluentBuilder {
     /// Creates a new `AddCustomRoutingEndpoints`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::add_custom_routing_endpoints::AddCustomRoutingEndpoints,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::add_custom_routing_endpoints::AddCustomRoutingEndpointsError,
         >,
     > {
@@ -39,30 +39,33 @@ impl AddCustomRoutingEndpointsFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::add_custom_routing_endpoints::AddCustomRoutingEndpointsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::add_custom_routing_endpoints::AddCustomRoutingEndpointsError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -75,9 +78,9 @@ impl AddCustomRoutingEndpointsFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::add_custom_routing_endpoints::AddCustomRoutingEndpointsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::add_custom_routing_endpoints::AddCustomRoutingEndpointsError,
         >,
     > {
@@ -98,20 +101,25 @@ impl AddCustomRoutingEndpointsFluentBuilder {
     /// <p>The list of endpoint objects to add to a custom routing accelerator.</p>
     pub fn set_endpoint_configurations(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CustomRoutingEndpointConfiguration>>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::CustomRoutingEndpointConfiguration>,
+        >,
     ) -> Self {
         self.inner = self.inner.set_endpoint_configurations(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group for the custom routing endpoint.</p>
-    pub fn endpoint_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn endpoint_group_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.endpoint_group_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group for the custom routing endpoint.</p>
     pub fn set_endpoint_group_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_endpoint_group_arn(input);
         self

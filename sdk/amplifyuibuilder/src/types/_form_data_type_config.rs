@@ -2,22 +2,22 @@
 
 /// <p>Describes the data type configuration for the data source associated with a form.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FormDataTypeConfig {
     /// <p>The data source type, either an Amplify DataStore model or a custom data type.</p>
     #[doc(hidden)]
-    pub data_source_type: std::option::Option<crate::types::FormDataSourceType>,
+    pub data_source_type: ::std::option::Option<crate::types::FormDataSourceType>,
     /// <p>The unique name of the data type you are using as the data source for the form.</p>
     #[doc(hidden)]
-    pub data_type_name: std::option::Option<std::string::String>,
+    pub data_type_name: ::std::option::Option<::std::string::String>,
 }
 impl FormDataTypeConfig {
     /// <p>The data source type, either an Amplify DataStore model or a custom data type.</p>
-    pub fn data_source_type(&self) -> std::option::Option<&crate::types::FormDataSourceType> {
+    pub fn data_source_type(&self) -> ::std::option::Option<&crate::types::FormDataSourceType> {
         self.data_source_type.as_ref()
     }
     /// <p>The unique name of the data type you are using as the data source for the form.</p>
-    pub fn data_type_name(&self) -> std::option::Option<&str> {
+    pub fn data_type_name(&self) -> ::std::option::Option<&str> {
         self.data_type_name.as_deref()
     }
 }
@@ -30,32 +30,40 @@ impl FormDataTypeConfig {
 
 /// A builder for [`FormDataTypeConfig`](crate::types::FormDataTypeConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FormDataTypeConfigBuilder {
-    pub(crate) data_source_type: std::option::Option<crate::types::FormDataSourceType>,
-    pub(crate) data_type_name: std::option::Option<std::string::String>,
+    pub(crate) data_source_type: ::std::option::Option<crate::types::FormDataSourceType>,
+    pub(crate) data_type_name: ::std::option::Option<::std::string::String>,
 }
 impl FormDataTypeConfigBuilder {
     /// <p>The data source type, either an Amplify DataStore model or a custom data type.</p>
     pub fn data_source_type(mut self, input: crate::types::FormDataSourceType) -> Self {
-        self.data_source_type = Some(input);
+        self.data_source_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The data source type, either an Amplify DataStore model or a custom data type.</p>
     pub fn set_data_source_type(
         mut self,
-        input: std::option::Option<crate::types::FormDataSourceType>,
+        input: ::std::option::Option<crate::types::FormDataSourceType>,
     ) -> Self {
         self.data_source_type = input;
         self
     }
     /// <p>The unique name of the data type you are using as the data source for the form.</p>
-    pub fn data_type_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.data_type_name = Some(input.into());
+    pub fn data_type_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.data_type_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique name of the data type you are using as the data source for the form.</p>
-    pub fn set_data_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_data_type_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.data_type_name = input;
         self
     }

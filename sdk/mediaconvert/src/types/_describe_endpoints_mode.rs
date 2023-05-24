@@ -38,13 +38,13 @@
 /// Optional field, defaults to DEFAULT. Specify DEFAULT for this operation to return your endpoints if any exist, or to create an endpoint for you and return it if one doesn't already exist. Specify GET_ONLY to return your endpoints if any exist, or an empty list if none exist.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum DescribeEndpointsMode {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum DescribeEndpointsMode {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for DescribeEndpointsMode {
+impl ::std::convert::From<&str> for DescribeEndpointsMode {
     fn from(s: &str) -> Self {
         match s {
             "DEFAULT" => DescribeEndpointsMode::Default,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for DescribeEndpointsMode {
         }
     }
 }
-impl std::str::FromStr for DescribeEndpointsMode {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for DescribeEndpointsMode {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DescribeEndpointsMode::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(DescribeEndpointsMode::from(s))
     }
 }
 impl DescribeEndpointsMode {
@@ -86,7 +86,7 @@ impl DescribeEndpointsMode {
         &["DEFAULT", "GET_ONLY"]
     }
 }
-impl AsRef<str> for DescribeEndpointsMode {
+impl ::std::convert::AsRef<str> for DescribeEndpointsMode {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

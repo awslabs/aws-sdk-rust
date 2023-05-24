@@ -2,27 +2,27 @@
 
 /// <p>Contains references to your APIs and links that guide you in how to interact with your collection. A collection offers a paginated view of your APIs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRestApisOutput {
     /// <p>The current page of elements from this collection.</p>
     #[doc(hidden)]
-    pub items: std::option::Option<std::vec::Vec<crate::types::RestApi>>,
+    pub items: ::std::option::Option<::std::vec::Vec<crate::types::RestApi>>,
     /// <p>The current pagination position in the paged result set.</p>
     #[doc(hidden)]
-    pub position: std::option::Option<std::string::String>,
+    pub position: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetRestApisOutput {
     /// <p>The current page of elements from this collection.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::types::RestApi]> {
+    pub fn items(&self) -> ::std::option::Option<&[crate::types::RestApi]> {
         self.items.as_deref()
     }
     /// <p>The current pagination position in the paged result set.</p>
-    pub fn position(&self) -> std::option::Option<&str> {
+    pub fn position(&self) -> ::std::option::Option<&str> {
         self.position.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for GetRestApisOutput {
+impl ::aws_http::request_id::RequestId for GetRestApisOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -36,10 +36,12 @@ impl GetRestApisOutput {
 
 /// A builder for [`GetRestApisOutput`](crate::operation::get_rest_apis::GetRestApisOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetRestApisOutputBuilder {
-    pub(crate) items: std::option::Option<std::vec::Vec<crate::types::RestApi>>,
-    pub(crate) position: std::option::Option<std::string::String>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::RestApi>>,
+    pub(crate) position: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetRestApisOutputBuilder {
@@ -51,24 +53,24 @@ impl GetRestApisOutputBuilder {
     pub fn items(mut self, input: crate::types::RestApi) -> Self {
         let mut v = self.items.unwrap_or_default();
         v.push(input);
-        self.items = Some(v);
+        self.items = ::std::option::Option::Some(v);
         self
     }
     /// <p>The current page of elements from this collection.</p>
     pub fn set_items(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RestApi>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::RestApi>>,
     ) -> Self {
         self.items = input;
         self
     }
     /// <p>The current pagination position in the paged result set.</p>
-    pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
-        self.position = Some(input.into());
+    pub fn position(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.position = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The current pagination position in the paged result set.</p>
-    pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_position(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.position = input;
         self
     }

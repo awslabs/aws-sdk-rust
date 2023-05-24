@@ -6,29 +6,29 @@ pub use crate::operation::create_domain_name::_create_domain_name_input::CreateD
 /// Fluent builder constructing a request to `CreateDomainName`.
 ///
 /// <p>Creates a new domain name.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateDomainNameFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_domain_name::builders::CreateDomainNameInputBuilder,
 }
 impl CreateDomainNameFluentBuilder {
     /// Creates a new `CreateDomainName`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_domain_name::CreateDomainName,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_domain_name::CreateDomainNameError,
         >,
     > {
@@ -36,30 +36,33 @@ impl CreateDomainNameFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_domain_name::CreateDomainNameOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_domain_name::CreateDomainNameError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,102 +75,132 @@ impl CreateDomainNameFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_domain_name::CreateDomainNameOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_domain_name::CreateDomainNameError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the DomainName resource.</p>
-    pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_name(input.into());
         self
     }
     /// <p>The name of the DomainName resource.</p>
-    pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_name(input);
         self
     }
     /// <p>The user-friendly name of the certificate that will be used by edge-optimized endpoint for this domain name.</p>
-    pub fn certificate_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn certificate_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.certificate_name(input.into());
         self
     }
     /// <p>The user-friendly name of the certificate that will be used by edge-optimized endpoint for this domain name.</p>
-    pub fn set_certificate_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_certificate_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_certificate_name(input);
         self
     }
     /// <p>[Deprecated] The body of the server certificate that will be used by edge-optimized endpoint for this domain name provided by your certificate authority.</p>
-    pub fn certificate_body(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn certificate_body(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.certificate_body(input.into());
         self
     }
     /// <p>[Deprecated] The body of the server certificate that will be used by edge-optimized endpoint for this domain name provided by your certificate authority.</p>
-    pub fn set_certificate_body(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_certificate_body(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_certificate_body(input);
         self
     }
     /// <p>[Deprecated] Your edge-optimized endpoint's domain name certificate's private key.</p>
-    pub fn certificate_private_key(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn certificate_private_key(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.certificate_private_key(input.into());
         self
     }
     /// <p>[Deprecated] Your edge-optimized endpoint's domain name certificate's private key.</p>
     pub fn set_certificate_private_key(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_certificate_private_key(input);
         self
     }
     /// <p>[Deprecated] The intermediate certificates and optionally the root certificate, one after the other without any blank lines, used by an edge-optimized endpoint for this domain name. If you include the root certificate, your certificate chain must start with intermediate certificates and end with the root certificate. Use the intermediate certificates that were provided by your certificate authority. Do not include any intermediaries that are not in the chain of trust path.</p>
-    pub fn certificate_chain(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn certificate_chain(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.certificate_chain(input.into());
         self
     }
     /// <p>[Deprecated] The intermediate certificates and optionally the root certificate, one after the other without any blank lines, used by an edge-optimized endpoint for this domain name. If you include the root certificate, your certificate chain must start with intermediate certificates and end with the root certificate. Use the intermediate certificates that were provided by your certificate authority. Do not include any intermediaries that are not in the chain of trust path.</p>
     pub fn set_certificate_chain(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_certificate_chain(input);
         self
     }
     /// <p>The reference to an AWS-managed certificate that will be used by edge-optimized endpoint for this domain name. AWS Certificate Manager is the only supported source.</p>
-    pub fn certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn certificate_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.certificate_arn(input.into());
         self
     }
     /// <p>The reference to an AWS-managed certificate that will be used by edge-optimized endpoint for this domain name. AWS Certificate Manager is the only supported source.</p>
-    pub fn set_certificate_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_certificate_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_certificate_arn(input);
         self
     }
     /// <p>The user-friendly name of the certificate that will be used by regional endpoint for this domain name.</p>
-    pub fn regional_certificate_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn regional_certificate_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.regional_certificate_name(input.into());
         self
     }
     /// <p>The user-friendly name of the certificate that will be used by regional endpoint for this domain name.</p>
     pub fn set_regional_certificate_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_regional_certificate_name(input);
         self
     }
     /// <p>The reference to an AWS-managed certificate that will be used by regional endpoint for this domain name. AWS Certificate Manager is the only supported source.</p>
-    pub fn regional_certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn regional_certificate_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.regional_certificate_arn(input.into());
         self
     }
     /// <p>The reference to an AWS-managed certificate that will be used by regional endpoint for this domain name. AWS Certificate Manager is the only supported source.</p>
     pub fn set_regional_certificate_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_regional_certificate_arn(input);
         self
@@ -180,7 +213,7 @@ impl CreateDomainNameFluentBuilder {
     /// <p>The endpoint configuration of this DomainName showing the endpoint types of the domain name. </p>
     pub fn set_endpoint_configuration(
         mut self,
-        input: std::option::Option<crate::types::EndpointConfiguration>,
+        input: ::std::option::Option<crate::types::EndpointConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_endpoint_configuration(input);
         self
@@ -192,8 +225,8 @@ impl CreateDomainNameFluentBuilder {
     /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
@@ -201,8 +234,8 @@ impl CreateDomainNameFluentBuilder {
     /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
@@ -216,7 +249,7 @@ impl CreateDomainNameFluentBuilder {
     /// <p>The Transport Layer Security (TLS) version + cipher suite for this DomainName. The valid values are <code>TLS_1_0</code> and <code>TLS_1_2</code>.</p>
     pub fn set_security_policy(
         mut self,
-        input: std::option::Option<crate::types::SecurityPolicy>,
+        input: ::std::option::Option<crate::types::SecurityPolicy>,
     ) -> Self {
         self.inner = self.inner.set_security_policy(input);
         self
@@ -232,7 +265,7 @@ impl CreateDomainNameFluentBuilder {
     /// <p>The mutual TLS authentication configuration for a custom domain name. If specified, API Gateway performs two-way authentication between the client and the server. Clients must present a trusted certificate to access your API.</p>
     pub fn set_mutual_tls_authentication(
         mut self,
-        input: std::option::Option<crate::types::MutualTlsAuthenticationInput>,
+        input: ::std::option::Option<crate::types::MutualTlsAuthenticationInput>,
     ) -> Self {
         self.inner = self.inner.set_mutual_tls_authentication(input);
         self
@@ -240,7 +273,7 @@ impl CreateDomainNameFluentBuilder {
     /// <p>The ARN of the public certificate issued by ACM to validate ownership of your custom domain. Only required when configuring mutual TLS and using an ACM imported or private CA certificate ARN as the regionalCertificateArn.</p>
     pub fn ownership_verification_certificate_arn(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self
             .inner
@@ -250,7 +283,7 @@ impl CreateDomainNameFluentBuilder {
     /// <p>The ARN of the public certificate issued by ACM to validate ownership of your custom domain. Only required when configuring mutual TLS and using an ACM imported or private CA certificate ARN as the regionalCertificateArn.</p>
     pub fn set_ownership_verification_certificate_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_ownership_verification_certificate_arn(input);
         self

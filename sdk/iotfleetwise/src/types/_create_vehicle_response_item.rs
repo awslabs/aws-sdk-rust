@@ -2,29 +2,29 @@
 
 /// <p>Information about a created vehicle.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateVehicleResponseItem {
     /// <p>The unique ID of the vehicle to create.</p>
     #[doc(hidden)]
-    pub vehicle_name: std::option::Option<std::string::String>,
+    pub vehicle_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the created vehicle.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of a created or validated Amazon Web Services IoT thing.</p>
     #[doc(hidden)]
-    pub thing_arn: std::option::Option<std::string::String>,
+    pub thing_arn: ::std::option::Option<::std::string::String>,
 }
 impl CreateVehicleResponseItem {
     /// <p>The unique ID of the vehicle to create.</p>
-    pub fn vehicle_name(&self) -> std::option::Option<&str> {
+    pub fn vehicle_name(&self) -> ::std::option::Option<&str> {
         self.vehicle_name.as_deref()
     }
     /// <p>The ARN of the created vehicle.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The ARN of a created or validated Amazon Web Services IoT thing.</p>
-    pub fn thing_arn(&self) -> std::option::Option<&str> {
+    pub fn thing_arn(&self) -> ::std::option::Option<&str> {
         self.thing_arn.as_deref()
     }
 }
@@ -37,40 +37,42 @@ impl CreateVehicleResponseItem {
 
 /// A builder for [`CreateVehicleResponseItem`](crate::types::CreateVehicleResponseItem).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateVehicleResponseItemBuilder {
-    pub(crate) vehicle_name: std::option::Option<std::string::String>,
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) thing_arn: std::option::Option<std::string::String>,
+    pub(crate) vehicle_name: ::std::option::Option<::std::string::String>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) thing_arn: ::std::option::Option<::std::string::String>,
 }
 impl CreateVehicleResponseItemBuilder {
     /// <p>The unique ID of the vehicle to create.</p>
-    pub fn vehicle_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.vehicle_name = Some(input.into());
+    pub fn vehicle_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.vehicle_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ID of the vehicle to create.</p>
-    pub fn set_vehicle_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_vehicle_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vehicle_name = input;
         self
     }
     /// <p>The ARN of the created vehicle.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the created vehicle.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// <p>The ARN of a created or validated Amazon Web Services IoT thing.</p>
-    pub fn thing_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.thing_arn = Some(input.into());
+    pub fn thing_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.thing_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of a created or validated Amazon Web Services IoT thing.</p>
-    pub fn set_thing_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_thing_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.thing_arn = input;
         self
     }

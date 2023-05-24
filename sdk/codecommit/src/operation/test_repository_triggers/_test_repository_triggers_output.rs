@@ -2,30 +2,30 @@
 
 /// <p>Represents the output of a test repository triggers operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TestRepositoryTriggersOutput {
     /// <p>The list of triggers that were successfully tested. This list provides the names of the triggers that were successfully tested, separated by commas.</p>
     #[doc(hidden)]
-    pub successful_executions: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub successful_executions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The list of triggers that were not tested. This list provides the names of the triggers that could not be tested, separated by commas.</p>
     #[doc(hidden)]
     pub failed_executions:
-        std::option::Option<std::vec::Vec<crate::types::RepositoryTriggerExecutionFailure>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::RepositoryTriggerExecutionFailure>>,
     _request_id: Option<String>,
 }
 impl TestRepositoryTriggersOutput {
     /// <p>The list of triggers that were successfully tested. This list provides the names of the triggers that were successfully tested, separated by commas.</p>
-    pub fn successful_executions(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn successful_executions(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.successful_executions.as_deref()
     }
     /// <p>The list of triggers that were not tested. This list provides the names of the triggers that could not be tested, separated by commas.</p>
     pub fn failed_executions(
         &self,
-    ) -> std::option::Option<&[crate::types::RepositoryTriggerExecutionFailure]> {
+    ) -> ::std::option::Option<&[crate::types::RepositoryTriggerExecutionFailure]> {
         self.failed_executions.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for TestRepositoryTriggersOutput {
+impl ::aws_http::request_id::RequestId for TestRepositoryTriggersOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -41,11 +41,13 @@ impl TestRepositoryTriggersOutput {
 
 /// A builder for [`TestRepositoryTriggersOutput`](crate::operation::test_repository_triggers::TestRepositoryTriggersOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TestRepositoryTriggersOutputBuilder {
-    pub(crate) successful_executions: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) successful_executions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) failed_executions:
-        std::option::Option<std::vec::Vec<crate::types::RepositoryTriggerExecutionFailure>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::RepositoryTriggerExecutionFailure>>,
     _request_id: Option<String>,
 }
 impl TestRepositoryTriggersOutputBuilder {
@@ -54,16 +56,19 @@ impl TestRepositoryTriggersOutputBuilder {
     /// To override the contents of this collection use [`set_successful_executions`](Self::set_successful_executions).
     ///
     /// <p>The list of triggers that were successfully tested. This list provides the names of the triggers that were successfully tested, separated by commas.</p>
-    pub fn successful_executions(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn successful_executions(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.successful_executions.unwrap_or_default();
         v.push(input.into());
-        self.successful_executions = Some(v);
+        self.successful_executions = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of triggers that were successfully tested. This list provides the names of the triggers that were successfully tested, separated by commas.</p>
     pub fn set_successful_executions(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.successful_executions = input;
         self
@@ -79,13 +84,15 @@ impl TestRepositoryTriggersOutputBuilder {
     ) -> Self {
         let mut v = self.failed_executions.unwrap_or_default();
         v.push(input);
-        self.failed_executions = Some(v);
+        self.failed_executions = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of triggers that were not tested. This list provides the names of the triggers that could not be tested, separated by commas.</p>
     pub fn set_failed_executions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RepositoryTriggerExecutionFailure>>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::RepositoryTriggerExecutionFailure>,
+        >,
     ) -> Self {
         self.failed_executions = input;
         self

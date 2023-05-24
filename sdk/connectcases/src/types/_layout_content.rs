@@ -2,7 +2,7 @@
 
 /// <p>Object to store union of different versions of layout content.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum LayoutContent {
     /// <p>Content specific to <code>BasicLayout</code> type. It configures fields in the top panel and More Info tab of Cases user interface.</p>
     Basic(crate::types::BasicLayout),
@@ -20,11 +20,11 @@ impl LayoutContent {
     #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`Basic`](crate::types::LayoutContent::Basic), extracting the inner [`BasicLayout`](crate::types::BasicLayout).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_basic(&self) -> std::result::Result<&crate::types::BasicLayout, &Self> {
+    pub fn as_basic(&self) -> ::std::result::Result<&crate::types::BasicLayout, &Self> {
         if let LayoutContent::Basic(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Basic`](crate::types::LayoutContent::Basic).

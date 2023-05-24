@@ -2,31 +2,31 @@
 
 /// <p>Information about the encryption configuration for X-Ray.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsXrayEncryptionConfigDetails {
     /// <p>The identifier of the KMS key that is used for encryption. Provided if <code>Type</code> is <code>KMS</code>.</p>
     #[doc(hidden)]
-    pub key_id: std::option::Option<std::string::String>,
+    pub key_id: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the encryption configuration. Valid values are <code>ACTIVE</code> or <code>UPDATING</code>.</p>
     /// <p>When <code>Status</code> is equal to <code>UPDATING</code>, X-Ray might use both the old and new encryption.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<std::string::String>,
+    pub status: ::std::option::Option<::std::string::String>,
     /// <p>The type of encryption. <code>KMS</code> indicates that the encryption uses KMS keys. <code>NONE</code> indicates the default encryption.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<std::string::String>,
+    pub r#type: ::std::option::Option<::std::string::String>,
 }
 impl AwsXrayEncryptionConfigDetails {
     /// <p>The identifier of the KMS key that is used for encryption. Provided if <code>Type</code> is <code>KMS</code>.</p>
-    pub fn key_id(&self) -> std::option::Option<&str> {
+    pub fn key_id(&self) -> ::std::option::Option<&str> {
         self.key_id.as_deref()
     }
     /// <p>The current status of the encryption configuration. Valid values are <code>ACTIVE</code> or <code>UPDATING</code>.</p>
     /// <p>When <code>Status</code> is equal to <code>UPDATING</code>, X-Ray might use both the old and new encryption.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
     /// <p>The type of encryption. <code>KMS</code> indicates that the encryption uses KMS keys. <code>NONE</code> indicates the default encryption.</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
     }
 }
@@ -39,42 +39,44 @@ impl AwsXrayEncryptionConfigDetails {
 
 /// A builder for [`AwsXrayEncryptionConfigDetails`](crate::types::AwsXrayEncryptionConfigDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsXrayEncryptionConfigDetailsBuilder {
-    pub(crate) key_id: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<std::string::String>,
-    pub(crate) r#type: std::option::Option<std::string::String>,
+    pub(crate) key_id: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<::std::string::String>,
 }
 impl AwsXrayEncryptionConfigDetailsBuilder {
     /// <p>The identifier of the KMS key that is used for encryption. Provided if <code>Type</code> is <code>KMS</code>.</p>
-    pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.key_id = Some(input.into());
+    pub fn key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the KMS key that is used for encryption. Provided if <code>Type</code> is <code>KMS</code>.</p>
-    pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_id = input;
         self
     }
     /// <p>The current status of the encryption configuration. Valid values are <code>ACTIVE</code> or <code>UPDATING</code>.</p>
     /// <p>When <code>Status</code> is equal to <code>UPDATING</code>, X-Ray might use both the old and new encryption.</p>
-    pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status = Some(input.into());
+    pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The current status of the encryption configuration. Valid values are <code>ACTIVE</code> or <code>UPDATING</code>.</p>
     /// <p>When <code>Status</code> is equal to <code>UPDATING</code>, X-Ray might use both the old and new encryption.</p>
-    pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }
     /// <p>The type of encryption. <code>KMS</code> indicates that the encryption uses KMS keys. <code>NONE</code> indicates the default encryption.</p>
-    pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.r#type = Some(input.into());
+    pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.r#type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of encryption. <code>KMS</code> indicates that the encryption uses KMS keys. <code>NONE</code> indicates the default encryption.</p>
-    pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
     }

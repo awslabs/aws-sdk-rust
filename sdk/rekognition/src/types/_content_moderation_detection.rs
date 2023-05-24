@@ -2,23 +2,23 @@
 
 /// <p>Information about an inappropriate, unwanted, or offensive content label detection in a stored video.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContentModerationDetection {
     /// <p>Time, in milliseconds from the beginning of the video, that the content moderation label was detected. Note that <code>Timestamp</code> is not guaranteed to be accurate to the individual frame where the moderated content first appears.</p>
     #[doc(hidden)]
     pub timestamp: i64,
     /// <p>The content moderation label detected by in the stored video.</p>
     #[doc(hidden)]
-    pub moderation_label: std::option::Option<crate::types::ModerationLabel>,
+    pub moderation_label: ::std::option::Option<crate::types::ModerationLabel>,
     /// <p>The time in milliseconds defining the start of the timeline segment containing a continuously detected moderation label.</p>
     #[doc(hidden)]
-    pub start_timestamp_millis: std::option::Option<i64>,
+    pub start_timestamp_millis: ::std::option::Option<i64>,
     /// <p> The time in milliseconds defining the end of the timeline segment containing a continuously detected moderation label. </p>
     #[doc(hidden)]
-    pub end_timestamp_millis: std::option::Option<i64>,
+    pub end_timestamp_millis: ::std::option::Option<i64>,
     /// <p> The time duration of a segment in milliseconds, I.e. time elapsed from StartTimestampMillis to EndTimestampMillis. </p>
     #[doc(hidden)]
-    pub duration_millis: std::option::Option<i64>,
+    pub duration_millis: ::std::option::Option<i64>,
 }
 impl ContentModerationDetection {
     /// <p>Time, in milliseconds from the beginning of the video, that the content moderation label was detected. Note that <code>Timestamp</code> is not guaranteed to be accurate to the individual frame where the moderated content first appears.</p>
@@ -26,19 +26,19 @@ impl ContentModerationDetection {
         self.timestamp
     }
     /// <p>The content moderation label detected by in the stored video.</p>
-    pub fn moderation_label(&self) -> std::option::Option<&crate::types::ModerationLabel> {
+    pub fn moderation_label(&self) -> ::std::option::Option<&crate::types::ModerationLabel> {
         self.moderation_label.as_ref()
     }
     /// <p>The time in milliseconds defining the start of the timeline segment containing a continuously detected moderation label.</p>
-    pub fn start_timestamp_millis(&self) -> std::option::Option<i64> {
+    pub fn start_timestamp_millis(&self) -> ::std::option::Option<i64> {
         self.start_timestamp_millis
     }
     /// <p> The time in milliseconds defining the end of the timeline segment containing a continuously detected moderation label. </p>
-    pub fn end_timestamp_millis(&self) -> std::option::Option<i64> {
+    pub fn end_timestamp_millis(&self) -> ::std::option::Option<i64> {
         self.end_timestamp_millis
     }
     /// <p> The time duration of a segment in milliseconds, I.e. time elapsed from StartTimestampMillis to EndTimestampMillis. </p>
-    pub fn duration_millis(&self) -> std::option::Option<i64> {
+    pub fn duration_millis(&self) -> ::std::option::Option<i64> {
         self.duration_millis
     }
 }
@@ -51,65 +51,67 @@ impl ContentModerationDetection {
 
 /// A builder for [`ContentModerationDetection`](crate::types::ContentModerationDetection).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ContentModerationDetectionBuilder {
-    pub(crate) timestamp: std::option::Option<i64>,
-    pub(crate) moderation_label: std::option::Option<crate::types::ModerationLabel>,
-    pub(crate) start_timestamp_millis: std::option::Option<i64>,
-    pub(crate) end_timestamp_millis: std::option::Option<i64>,
-    pub(crate) duration_millis: std::option::Option<i64>,
+    pub(crate) timestamp: ::std::option::Option<i64>,
+    pub(crate) moderation_label: ::std::option::Option<crate::types::ModerationLabel>,
+    pub(crate) start_timestamp_millis: ::std::option::Option<i64>,
+    pub(crate) end_timestamp_millis: ::std::option::Option<i64>,
+    pub(crate) duration_millis: ::std::option::Option<i64>,
 }
 impl ContentModerationDetectionBuilder {
     /// <p>Time, in milliseconds from the beginning of the video, that the content moderation label was detected. Note that <code>Timestamp</code> is not guaranteed to be accurate to the individual frame where the moderated content first appears.</p>
     pub fn timestamp(mut self, input: i64) -> Self {
-        self.timestamp = Some(input);
+        self.timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>Time, in milliseconds from the beginning of the video, that the content moderation label was detected. Note that <code>Timestamp</code> is not guaranteed to be accurate to the individual frame where the moderated content first appears.</p>
-    pub fn set_timestamp(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_timestamp(mut self, input: ::std::option::Option<i64>) -> Self {
         self.timestamp = input;
         self
     }
     /// <p>The content moderation label detected by in the stored video.</p>
     pub fn moderation_label(mut self, input: crate::types::ModerationLabel) -> Self {
-        self.moderation_label = Some(input);
+        self.moderation_label = ::std::option::Option::Some(input);
         self
     }
     /// <p>The content moderation label detected by in the stored video.</p>
     pub fn set_moderation_label(
         mut self,
-        input: std::option::Option<crate::types::ModerationLabel>,
+        input: ::std::option::Option<crate::types::ModerationLabel>,
     ) -> Self {
         self.moderation_label = input;
         self
     }
     /// <p>The time in milliseconds defining the start of the timeline segment containing a continuously detected moderation label.</p>
     pub fn start_timestamp_millis(mut self, input: i64) -> Self {
-        self.start_timestamp_millis = Some(input);
+        self.start_timestamp_millis = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time in milliseconds defining the start of the timeline segment containing a continuously detected moderation label.</p>
-    pub fn set_start_timestamp_millis(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_start_timestamp_millis(mut self, input: ::std::option::Option<i64>) -> Self {
         self.start_timestamp_millis = input;
         self
     }
     /// <p> The time in milliseconds defining the end of the timeline segment containing a continuously detected moderation label. </p>
     pub fn end_timestamp_millis(mut self, input: i64) -> Self {
-        self.end_timestamp_millis = Some(input);
+        self.end_timestamp_millis = ::std::option::Option::Some(input);
         self
     }
     /// <p> The time in milliseconds defining the end of the timeline segment containing a continuously detected moderation label. </p>
-    pub fn set_end_timestamp_millis(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_end_timestamp_millis(mut self, input: ::std::option::Option<i64>) -> Self {
         self.end_timestamp_millis = input;
         self
     }
     /// <p> The time duration of a segment in milliseconds, I.e. time elapsed from StartTimestampMillis to EndTimestampMillis. </p>
     pub fn duration_millis(mut self, input: i64) -> Self {
-        self.duration_millis = Some(input);
+        self.duration_millis = ::std::option::Option::Some(input);
         self
     }
     /// <p> The time duration of a segment in milliseconds, I.e. time elapsed from StartTimestampMillis to EndTimestampMillis. </p>
-    pub fn set_duration_millis(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_duration_millis(mut self, input: ::std::option::Option<i64>) -> Self {
         self.duration_millis = input;
         self
     }

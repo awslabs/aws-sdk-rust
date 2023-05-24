@@ -6,29 +6,29 @@ pub use crate::operation::create_sample_findings::_create_sample_findings_input:
 /// Fluent builder constructing a request to `CreateSampleFindings`.
 ///
 /// <p>Generates sample findings of types specified by the list of finding types. If 'NULL' is specified for <code>findingTypes</code>, the API generates sample findings of all supported finding types.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateSampleFindingsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_sample_findings::builders::CreateSampleFindingsInputBuilder,
 }
 impl CreateSampleFindingsFluentBuilder {
     /// Creates a new `CreateSampleFindings`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_sample_findings::CreateSampleFindings,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_sample_findings::CreateSampleFindingsError,
         >,
     > {
@@ -36,30 +36,33 @@ impl CreateSampleFindingsFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_sample_findings::CreateSampleFindingsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_sample_findings::CreateSampleFindingsError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,21 +75,21 @@ impl CreateSampleFindingsFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_sample_findings::CreateSampleFindingsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_sample_findings::CreateSampleFindingsError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The ID of the detector to create sample findings for.</p>
-    pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.detector_id(input.into());
         self
     }
     /// <p>The ID of the detector to create sample findings for.</p>
-    pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_detector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_detector_id(input);
         self
     }
@@ -95,14 +98,17 @@ impl CreateSampleFindingsFluentBuilder {
     /// To override the contents of this collection use [`set_finding_types`](Self::set_finding_types).
     ///
     /// <p>The types of sample findings to generate.</p>
-    pub fn finding_types(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn finding_types(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.finding_types(input.into());
         self
     }
     /// <p>The types of sample findings to generate.</p>
     pub fn set_finding_types(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_finding_types(input);
         self

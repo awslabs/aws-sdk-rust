@@ -37,13 +37,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum DimensionType {
     #[allow(missing_docs)] // documentation missing in model
@@ -51,7 +51,7 @@ pub enum DimensionType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for DimensionType {
+impl ::std::convert::From<&str> for DimensionType {
     fn from(s: &str) -> Self {
         match s {
             "TOPIC_FILTER" => DimensionType::TopicFilter,
@@ -61,11 +61,11 @@ impl std::convert::From<&str> for DimensionType {
         }
     }
 }
-impl std::str::FromStr for DimensionType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for DimensionType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DimensionType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(DimensionType::from(s))
     }
 }
 impl DimensionType {
@@ -81,7 +81,7 @@ impl DimensionType {
         &["TOPIC_FILTER"]
     }
 }
-impl AsRef<str> for DimensionType {
+impl ::std::convert::AsRef<str> for DimensionType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

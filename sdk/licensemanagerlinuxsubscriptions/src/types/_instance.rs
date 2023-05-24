@@ -2,78 +2,78 @@
 
 /// <p>Details discovered information about a running instance using Linux subscriptions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Instance {
     /// <p>The AMI ID used to launch the instance.</p>
     #[doc(hidden)]
-    pub ami_id: std::option::Option<std::string::String>,
+    pub ami_id: ::std::option::Option<::std::string::String>,
     /// <p>The instance ID of the resource.</p>
     #[doc(hidden)]
-    pub instance_id: std::option::Option<std::string::String>,
+    pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The instance type of the resource.</p>
     #[doc(hidden)]
-    pub instance_type: std::option::Option<std::string::String>,
+    pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The account ID which owns the instance.</p>
     #[doc(hidden)]
-    pub account_id: std::option::Option<std::string::String>,
+    pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the instance.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<std::string::String>,
+    pub status: ::std::option::Option<::std::string::String>,
     /// <p>The Region the instance is running in.</p>
     #[doc(hidden)]
-    pub region: std::option::Option<std::string::String>,
+    pub region: ::std::option::Option<::std::string::String>,
     /// <p>The usage operation of the instance. For more information, see For more information, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/linux-subscriptions-usage-operation.html">Usage operation values</a> in the <i>License Manager User Guide</i>.</p>
     #[doc(hidden)]
-    pub usage_operation: std::option::Option<std::string::String>,
+    pub usage_operation: ::std::option::Option<::std::string::String>,
     /// <p>The product code for the instance. For more information, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/linux-subscriptions-usage-operation.html">Usage operation values</a> in the <i>License Manager User Guide</i> .</p>
     #[doc(hidden)]
-    pub product_code: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub product_code: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The time in which the last discovery updated the instance details.</p>
     #[doc(hidden)]
-    pub last_updated_time: std::option::Option<std::string::String>,
+    pub last_updated_time: ::std::option::Option<::std::string::String>,
     /// <p>The name of the subscription being used by the instance.</p>
     #[doc(hidden)]
-    pub subscription_name: std::option::Option<std::string::String>,
+    pub subscription_name: ::std::option::Option<::std::string::String>,
 }
 impl Instance {
     /// <p>The AMI ID used to launch the instance.</p>
-    pub fn ami_id(&self) -> std::option::Option<&str> {
+    pub fn ami_id(&self) -> ::std::option::Option<&str> {
         self.ami_id.as_deref()
     }
     /// <p>The instance ID of the resource.</p>
-    pub fn instance_id(&self) -> std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<&str> {
         self.instance_id.as_deref()
     }
     /// <p>The instance type of the resource.</p>
-    pub fn instance_type(&self) -> std::option::Option<&str> {
+    pub fn instance_type(&self) -> ::std::option::Option<&str> {
         self.instance_type.as_deref()
     }
     /// <p>The account ID which owns the instance.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The status of the instance.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
     /// <p>The Region the instance is running in.</p>
-    pub fn region(&self) -> std::option::Option<&str> {
+    pub fn region(&self) -> ::std::option::Option<&str> {
         self.region.as_deref()
     }
     /// <p>The usage operation of the instance. For more information, see For more information, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/linux-subscriptions-usage-operation.html">Usage operation values</a> in the <i>License Manager User Guide</i>.</p>
-    pub fn usage_operation(&self) -> std::option::Option<&str> {
+    pub fn usage_operation(&self) -> ::std::option::Option<&str> {
         self.usage_operation.as_deref()
     }
     /// <p>The product code for the instance. For more information, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/linux-subscriptions-usage-operation.html">Usage operation values</a> in the <i>License Manager User Guide</i> .</p>
-    pub fn product_code(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn product_code(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.product_code.as_deref()
     }
     /// <p>The time in which the last discovery updated the instance details.</p>
-    pub fn last_updated_time(&self) -> std::option::Option<&str> {
+    pub fn last_updated_time(&self) -> ::std::option::Option<&str> {
         self.last_updated_time.as_deref()
     }
     /// <p>The name of the subscription being used by the instance.</p>
-    pub fn subscription_name(&self) -> std::option::Option<&str> {
+    pub fn subscription_name(&self) -> ::std::option::Option<&str> {
         self.subscription_name.as_deref()
     }
 }
@@ -86,87 +86,101 @@ impl Instance {
 
 /// A builder for [`Instance`](crate::types::Instance).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InstanceBuilder {
-    pub(crate) ami_id: std::option::Option<std::string::String>,
-    pub(crate) instance_id: std::option::Option<std::string::String>,
-    pub(crate) instance_type: std::option::Option<std::string::String>,
-    pub(crate) account_id: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<std::string::String>,
-    pub(crate) region: std::option::Option<std::string::String>,
-    pub(crate) usage_operation: std::option::Option<std::string::String>,
-    pub(crate) product_code: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) last_updated_time: std::option::Option<std::string::String>,
-    pub(crate) subscription_name: std::option::Option<std::string::String>,
+    pub(crate) ami_id: ::std::option::Option<::std::string::String>,
+    pub(crate) instance_id: ::std::option::Option<::std::string::String>,
+    pub(crate) instance_type: ::std::option::Option<::std::string::String>,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<::std::string::String>,
+    pub(crate) region: ::std::option::Option<::std::string::String>,
+    pub(crate) usage_operation: ::std::option::Option<::std::string::String>,
+    pub(crate) product_code: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) last_updated_time: ::std::option::Option<::std::string::String>,
+    pub(crate) subscription_name: ::std::option::Option<::std::string::String>,
 }
 impl InstanceBuilder {
     /// <p>The AMI ID used to launch the instance.</p>
-    pub fn ami_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ami_id = Some(input.into());
+    pub fn ami_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ami_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The AMI ID used to launch the instance.</p>
-    pub fn set_ami_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ami_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ami_id = input;
         self
     }
     /// <p>The instance ID of the resource.</p>
-    pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.instance_id = Some(input.into());
+    pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The instance ID of the resource.</p>
-    pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
     }
     /// <p>The instance type of the resource.</p>
-    pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.instance_type = Some(input.into());
+    pub fn instance_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.instance_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The instance type of the resource.</p>
-    pub fn set_instance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_instance_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.instance_type = input;
         self
     }
     /// <p>The account ID which owns the instance.</p>
-    pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.account_id = Some(input.into());
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The account ID which owns the instance.</p>
-    pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
     }
     /// <p>The status of the instance.</p>
-    pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status = Some(input.into());
+    pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the instance.</p>
-    pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }
     /// <p>The Region the instance is running in.</p>
-    pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
-        self.region = Some(input.into());
+    pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Region the instance is running in.</p>
-    pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region = input;
         self
     }
     /// <p>The usage operation of the instance. For more information, see For more information, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/linux-subscriptions-usage-operation.html">Usage operation values</a> in the <i>License Manager User Guide</i>.</p>
-    pub fn usage_operation(mut self, input: impl Into<std::string::String>) -> Self {
-        self.usage_operation = Some(input.into());
+    pub fn usage_operation(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.usage_operation = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The usage operation of the instance. For more information, see For more information, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/linux-subscriptions-usage-operation.html">Usage operation values</a> in the <i>License Manager User Guide</i>.</p>
-    pub fn set_usage_operation(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_usage_operation(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.usage_operation = input;
         self
     }
@@ -175,42 +189,48 @@ impl InstanceBuilder {
     /// To override the contents of this collection use [`set_product_code`](Self::set_product_code).
     ///
     /// <p>The product code for the instance. For more information, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/linux-subscriptions-usage-operation.html">Usage operation values</a> in the <i>License Manager User Guide</i> .</p>
-    pub fn product_code(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn product_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.product_code.unwrap_or_default();
         v.push(input.into());
-        self.product_code = Some(v);
+        self.product_code = ::std::option::Option::Some(v);
         self
     }
     /// <p>The product code for the instance. For more information, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/linux-subscriptions-usage-operation.html">Usage operation values</a> in the <i>License Manager User Guide</i> .</p>
     pub fn set_product_code(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.product_code = input;
         self
     }
     /// <p>The time in which the last discovery updated the instance details.</p>
-    pub fn last_updated_time(mut self, input: impl Into<std::string::String>) -> Self {
-        self.last_updated_time = Some(input.into());
+    pub fn last_updated_time(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.last_updated_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The time in which the last discovery updated the instance details.</p>
     pub fn set_last_updated_time(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.last_updated_time = input;
         self
     }
     /// <p>The name of the subscription being used by the instance.</p>
-    pub fn subscription_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.subscription_name = Some(input.into());
+    pub fn subscription_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.subscription_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the subscription being used by the instance.</p>
     pub fn set_subscription_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.subscription_name = input;
         self

@@ -2,15 +2,15 @@
 
 /// <p>Part of the <code>SuggestionQuery</code> type. Specifies a hint for retrieving property names that begin with the specified text.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PropertyNameQuery {
     /// <p>Text that begins a property's name.</p>
     #[doc(hidden)]
-    pub property_name_hint: std::option::Option<std::string::String>,
+    pub property_name_hint: ::std::option::Option<::std::string::String>,
 }
 impl PropertyNameQuery {
     /// <p>Text that begins a property's name.</p>
-    pub fn property_name_hint(&self) -> std::option::Option<&str> {
+    pub fn property_name_hint(&self) -> ::std::option::Option<&str> {
         self.property_name_hint.as_deref()
     }
 }
@@ -23,20 +23,25 @@ impl PropertyNameQuery {
 
 /// A builder for [`PropertyNameQuery`](crate::types::PropertyNameQuery).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PropertyNameQueryBuilder {
-    pub(crate) property_name_hint: std::option::Option<std::string::String>,
+    pub(crate) property_name_hint: ::std::option::Option<::std::string::String>,
 }
 impl PropertyNameQueryBuilder {
     /// <p>Text that begins a property's name.</p>
-    pub fn property_name_hint(mut self, input: impl Into<std::string::String>) -> Self {
-        self.property_name_hint = Some(input.into());
+    pub fn property_name_hint(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.property_name_hint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Text that begins a property's name.</p>
     pub fn set_property_name_hint(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.property_name_hint = input;
         self

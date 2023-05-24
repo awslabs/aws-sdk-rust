@@ -9,56 +9,59 @@ pub use crate::operation::create_key_pair::_create_key_pair_input::CreateKeyPair
 /// <p>The key pair returned to you is available only in the Amazon Web Services Region in which you create it. If you prefer, you can create your own key pair using a third-party tool and upload it to any Region using <code>ImportKeyPair</code>.</p>
 /// <p>You can have up to 5,000 key pairs per Amazon Web Services Region.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon EC2 key pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateKeyPairFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_key_pair::builders::CreateKeyPairInputBuilder,
 }
 impl CreateKeyPairFluentBuilder {
     /// Creates a new `CreateKeyPair`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_key_pair::CreateKeyPair,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_key_pair::CreateKeyPairError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_key_pair::CreateKeyPairError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_key_pair::CreateKeyPairOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_key_pair::CreateKeyPairError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_key_pair::CreateKeyPairError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -71,21 +74,21 @@ impl CreateKeyPairFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_key_pair::CreateKeyPairOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_key_pair::CreateKeyPairError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_key_pair::CreateKeyPairError>,
     > {
         self.send_middleware().await
     }
     /// <p>A unique name for the key pair.</p>
     /// <p>Constraints: Up to 255 ASCII characters</p>
-    pub fn key_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn key_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.key_name(input.into());
         self
     }
     /// <p>A unique name for the key pair.</p>
     /// <p>Constraints: Up to 255 ASCII characters</p>
-    pub fn set_key_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_key_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_key_name(input);
         self
     }
@@ -95,7 +98,7 @@ impl CreateKeyPairFluentBuilder {
         self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
     }
@@ -107,7 +110,7 @@ impl CreateKeyPairFluentBuilder {
     }
     /// <p>The type of key pair. Note that ED25519 keys are not supported for Windows instances.</p>
     /// <p>Default: <code>rsa</code> </p>
-    pub fn set_key_type(mut self, input: std::option::Option<crate::types::KeyType>) -> Self {
+    pub fn set_key_type(mut self, input: ::std::option::Option<crate::types::KeyType>) -> Self {
         self.inner = self.inner.set_key_type(input);
         self
     }
@@ -123,7 +126,7 @@ impl CreateKeyPairFluentBuilder {
     /// <p>The tags to apply to the new key pair.</p>
     pub fn set_tag_specifications(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TagSpecification>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     ) -> Self {
         self.inner = self.inner.set_tag_specifications(input);
         self
@@ -136,7 +139,7 @@ impl CreateKeyPairFluentBuilder {
     }
     /// <p>The format of the key pair.</p>
     /// <p>Default: <code>pem</code> </p>
-    pub fn set_key_format(mut self, input: std::option::Option<crate::types::KeyFormat>) -> Self {
+    pub fn set_key_format(mut self, input: ::std::option::Option<crate::types::KeyFormat>) -> Self {
         self.inner = self.inner.set_key_format(input);
         self
     }

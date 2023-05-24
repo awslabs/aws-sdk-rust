@@ -5,7 +5,7 @@ impl UpdateSensitivityInspectionTemplateInput {
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::update_sensitivity_inspection_template::UpdateSensitivityInspectionTemplate, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError>{
+    pub async fn make_operation(&self, _config: &crate::config::Config) -> ::std::result::Result<::aws_smithy_http::operation::Operation<crate::operation::update_sensitivity_inspection_template::UpdateSensitivityInspectionTemplate, ::aws_http::retry::AwsResponseRetryClassifier>, ::aws_smithy_http::operation::error::BuildError>{
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
             .set_use_dual_stack(_config.use_dual_stack)
@@ -13,124 +13,126 @@ impl UpdateSensitivityInspectionTemplateInput {
             .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                ::aws_smithy_http::endpoint::ResolveEndpointError::from_source(
                     "could not construct endpoint parameters",
                     err,
                 )
             });
         let (endpoint_result, params) = match params_result {
-            Ok(params) => (
+            ::std::result::Result::Ok(params) => (
                 _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
+                ::std::option::Option::Some(params),
             ),
-            Err(e) => (Err(e), None),
+            ::std::result::Result::Err(e) => {
+                (::std::result::Result::Err(e), ::std::option::Option::None)
+            }
         };
         let mut request = {
             fn uri_base(
                 _input: &crate::operation::update_sensitivity_inspection_template::UpdateSensitivityInspectionTemplateInput,
-                output: &mut String,
-            ) -> std::result::Result<(), aws_smithy_http::operation::error::BuildError>
+                output: &mut ::std::string::String,
+            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError>
             {
-                use std::fmt::Write as _;
+                use ::std::fmt::Write as _;
                 let input_1 = &_input.id;
                 let input_1 = input_1.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
                         "id",
                         "cannot be empty or unset",
                     )
                 })?;
-                let id = aws_smithy_http::label::fmt_string(
+                let id = ::aws_smithy_http::label::fmt_string(
                     input_1,
-                    aws_smithy_http::label::EncodingStrategy::Default,
+                    ::aws_smithy_http::label::EncodingStrategy::Default,
                 );
                 if id.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
+                    return ::std::result::Result::Err(
+                        ::aws_smithy_http::operation::error::BuildError::missing_field(
                             "id",
                             "cannot be empty or unset",
                         ),
                     );
                 }
-                write!(output, "/templates/sensitivity-inspections/{id}", id = id)
+                ::std::write!(output, "/templates/sensitivity-inspections/{id}", id = id)
                     .expect("formatting should succeed");
-                Ok(())
+                ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::operation::update_sensitivity_inspection_template::UpdateSensitivityInspectionTemplateInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
+                builder: ::http::request::Builder,
+            ) -> ::std::result::Result<
+                ::http::request::Builder,
+                ::aws_smithy_http::operation::error::BuildError,
             > {
-                let mut uri = String::new();
+                let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
-                Ok(builder.method("PUT").uri(uri))
+                ::std::result::Result::Ok(builder.method("PUT").uri(uri))
             }
-            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(
+            let mut builder = update_http_builder(&self, ::http::request::Builder::new())?;
+            builder = ::aws_smithy_http::header::set_request_header_if_absent(
                 builder,
-                http::header::CONTENT_TYPE,
+                ::http::header::CONTENT_TYPE,
                 "application/json",
             );
             builder
         };
-        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let mut properties = ::aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
+        let body = ::aws_smithy_http::body::SdkBody::from(
             crate::protocol_serde::shape_update_sensitivity_inspection_template::ser_update_sensitivity_inspection_template_input(&self)?
         );
-        if let Some(content_length) = body.content_length() {
-            request = aws_smithy_http::header::set_request_header_if_absent(
+        if let ::std::option::Option::Some(content_length) = body.content_length() {
+            request = ::aws_smithy_http::header::set_request_header_if_absent(
                 request,
-                http::header::CONTENT_LENGTH,
+                ::http::header::CONTENT_LENGTH,
                 content_length,
             );
         }
         let request = request.body(body).expect("should be valid request");
-        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        let mut request = ::aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
+        if let ::std::option::Option::Some(params) = params {
             request.properties_mut().insert(params);
         }
         request
             .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
-        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
+            .insert(::aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = ::aws_http::user_agent::AwsUserAgent::new_from_environment(
+            ::aws_types::os_shim_internal::Env::real(),
             crate::meta::API_METADATA.clone(),
         );
         if let Some(app_name) = _config.app_name() {
             user_agent = user_agent.with_app_name(app_name.clone());
         }
         request.properties_mut().insert(user_agent);
-        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        let mut signing_config = ::aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
-            .insert(aws_types::SigningService::from_static(
+            .insert(::aws_types::SigningService::from_static(
                 _config.signing_service(),
             ));
         if let Some(region) = &_config.region {
             request
                 .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
+                .insert(::aws_types::region::SigningRegion::from(region.clone()));
         }
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_credentials_cache(
+        ::aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
             _config.credentials_cache.clone(),
         );
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::update_sensitivity_inspection_template::UpdateSensitivityInspectionTemplate::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateSensitivityInspectionTemplate", "macie2"));
-        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
-        Ok(op)
+        let op = ::aws_smithy_http::operation::Operation::new(request, crate::operation::update_sensitivity_inspection_template::UpdateSensitivityInspectionTemplate::new())
+                            .with_metadata(::aws_smithy_http::operation::Metadata::new("UpdateSensitivityInspectionTemplate", "macie2"));
+        let op = op.with_retry_classifier(::aws_http::retry::AwsResponseRetryClassifier::new());
+        ::std::result::Result::Ok(op)
     }
 }
 /// `ParseStrictResponse` impl for `UpdateSensitivityInspectionTemplate`.
-#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]
 pub struct UpdateSensitivityInspectionTemplate;
@@ -140,13 +142,13 @@ impl UpdateSensitivityInspectionTemplate {
         Self
     }
 }
-impl aws_smithy_http::response::ParseStrictResponse for UpdateSensitivityInspectionTemplate {
-    type Output = std::result::Result<crate::operation::update_sensitivity_inspection_template::UpdateSensitivityInspectionTemplateOutput, crate::operation::update_sensitivity_inspection_template::UpdateSensitivityInspectionTemplateError>;
-    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+impl ::aws_smithy_http::response::ParseStrictResponse for UpdateSensitivityInspectionTemplate {
+    type Output = ::std::result::Result<crate::operation::update_sensitivity_inspection_template::UpdateSensitivityInspectionTemplateOutput, crate::operation::update_sensitivity_inspection_template::UpdateSensitivityInspectionTemplateError>;
+    fn parse(&self, response: &::http::Response<::bytes::Bytes>) -> Self::Output {
         let (success, status) = (response.status().is_success(), response.status().as_u16());
         let headers = response.headers();
         let body = response.body().as_ref();
-        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
+        ::tracing::debug!(request_id = ?::aws_http::request_id::RequestId::request_id(response));
         if !success && status != 200 {
             crate::protocol_serde::shape_update_sensitivity_inspection_template::de_update_sensitivity_inspection_template_http_error(status, headers, body)
         } else {
@@ -164,7 +166,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateSensitivityInspect
 pub type UpdateSensitivityInspectionTemplateErrorKind = UpdateSensitivityInspectionTemplateError;
 /// Error type for the `UpdateSensitivityInspectionTemplateError` operation.
 #[non_exhaustive]
-#[derive(std::fmt::Debug)]
+#[derive(::std::fmt::Debug)]
 pub enum UpdateSensitivityInspectionTemplateError {
     /// <p>Provides information about an error that occurred due to insufficient access to a specified resource.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
@@ -177,22 +179,24 @@ pub enum UpdateSensitivityInspectionTemplateError {
     /// <p>Provides information about an error that occurred due to a syntax error in a request.</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    Unhandled(aws_smithy_types::error::Unhandled),
+    Unhandled(::aws_smithy_types::error::Unhandled),
 }
-impl aws_smithy_http::result::CreateUnhandledError for UpdateSensitivityInspectionTemplateError {
+impl ::aws_smithy_http::result::CreateUnhandledError for UpdateSensitivityInspectionTemplateError {
     fn create_unhandled_error(
-        source: Box<dyn std::error::Error + Send + Sync + 'static>,
-        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+        source: ::std::boxed::Box<
+            dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static,
+        >,
+        meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
     ) -> Self {
         Self::Unhandled({
-            let mut builder = aws_smithy_types::error::Unhandled::builder().source(source);
+            let mut builder = ::aws_smithy_types::error::Unhandled::builder().source(source);
             builder.set_meta(meta);
             builder.build()
         })
     }
 }
-impl std::fmt::Display for UpdateSensitivityInspectionTemplateError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Display for UpdateSensitivityInspectionTemplateError {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::AccessDeniedException(_inner) => _inner.fmt(f),
             Self::InternalServerException(_inner) => _inner.fmt(f),
@@ -203,59 +207,65 @@ impl std::fmt::Display for UpdateSensitivityInspectionTemplateError {
         }
     }
 }
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
     for UpdateSensitivityInspectionTemplateError
 {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::AccessDeniedException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::InternalServerException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::ResourceNotFoundException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::ThrottlingException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::ValidationException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::Unhandled(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
         }
     }
 }
-impl aws_http::request_id::RequestId for crate::operation::update_sensitivity_inspection_template::UpdateSensitivityInspectionTemplateError {
+impl ::aws_http::request_id::RequestId for crate::operation::update_sensitivity_inspection_template::UpdateSensitivityInspectionTemplateError {
                             fn request_id(&self) -> Option<&str> {
                                 self.meta().request_id()
                             }
                         }
-impl aws_smithy_types::retry::ProvideErrorKind for UpdateSensitivityInspectionTemplateError {
-    fn code(&self) -> std::option::Option<&str> {
-        aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self)
+impl ::aws_smithy_types::retry::ProvideErrorKind for UpdateSensitivityInspectionTemplateError {
+    fn code(&self) -> ::std::option::Option<&str> {
+        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self)
     }
-    fn retryable_error_kind(&self) -> std::option::Option<aws_smithy_types::retry::ErrorKind> {
-        None
+    fn retryable_error_kind(&self) -> ::std::option::Option<::aws_smithy_types::retry::ErrorKind> {
+        ::std::option::Option::None
     }
 }
 impl UpdateSensitivityInspectionTemplateError {
     /// Creates the `UpdateSensitivityInspectionTemplateError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+    pub fn unhandled(
+        err: impl ::std::convert::Into<
+            ::std::boxed::Box<
+                dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static,
+            >,
+        >,
+    ) -> Self {
         Self::Unhandled(
-            aws_smithy_types::error::Unhandled::builder()
+            ::aws_smithy_types::error::Unhandled::builder()
                 .source(err)
                 .build(),
         )
     }
 
-    /// Creates the `UpdateSensitivityInspectionTemplateError::Unhandled` variant from a `aws_smithy_types::error::ErrorMetadata`.
-    pub fn generic(err: aws_smithy_types::error::ErrorMetadata) -> Self {
+    /// Creates the `UpdateSensitivityInspectionTemplateError::Unhandled` variant from a `::aws_smithy_types::error::ErrorMetadata`.
+    pub fn generic(err: ::aws_smithy_types::error::ErrorMetadata) -> Self {
         Self::Unhandled(
-            aws_smithy_types::error::Unhandled::builder()
+            ::aws_smithy_types::error::Unhandled::builder()
                 .source(err.clone())
                 .meta(err)
                 .build(),
@@ -265,8 +275,8 @@ impl UpdateSensitivityInspectionTemplateError {
     /// Returns error metadata, which includes the error code, message,
     /// request ID, and potentially additional information.
     ///
-    pub fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+    pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
+        use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
             Self::AccessDeniedException(e) => e.meta(),
             Self::InternalServerException(e) => e.meta(),
@@ -297,15 +307,15 @@ impl UpdateSensitivityInspectionTemplateError {
         matches!(self, Self::ValidationException(_))
     }
 }
-impl std::error::Error for UpdateSensitivityInspectionTemplateError {
-    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+impl ::std::error::Error for UpdateSensitivityInspectionTemplateError {
+    fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
-            Self::AccessDeniedException(_inner) => Some(_inner),
-            Self::InternalServerException(_inner) => Some(_inner),
-            Self::ResourceNotFoundException(_inner) => Some(_inner),
-            Self::ThrottlingException(_inner) => Some(_inner),
-            Self::ValidationException(_inner) => Some(_inner),
-            Self::Unhandled(_inner) => Some(_inner),
+            Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
+            Self::InternalServerException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ThrottlingException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ValidationException(_inner) => ::std::option::Option::Some(_inner),
+            Self::Unhandled(_inner) => ::std::option::Option::Some(_inner),
         }
     }
 }

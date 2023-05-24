@@ -2,12 +2,12 @@
 
 /// <p>Represents the status of Amazon SES Easy DKIM signing for an identity. For domain identities, this response also contains the DKIM tokens that are required for Easy DKIM signing, and whether Amazon SES successfully verified that these tokens were published.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetIdentityDkimAttributesOutput {
     /// <p>The DKIM attributes for an email address or a domain.</p>
     #[doc(hidden)]
-    pub dkim_attributes: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::IdentityDkimAttributes>,
+    pub dkim_attributes: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::IdentityDkimAttributes>,
     >,
     _request_id: Option<String>,
 }
@@ -15,13 +15,13 @@ impl GetIdentityDkimAttributesOutput {
     /// <p>The DKIM attributes for an email address or a domain.</p>
     pub fn dkim_attributes(
         &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::types::IdentityDkimAttributes>,
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, crate::types::IdentityDkimAttributes>,
     > {
         self.dkim_attributes.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for GetIdentityDkimAttributesOutput {
+impl ::aws_http::request_id::RequestId for GetIdentityDkimAttributesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -35,10 +35,12 @@ impl GetIdentityDkimAttributesOutput {
 
 /// A builder for [`GetIdentityDkimAttributesOutput`](crate::operation::get_identity_dkim_attributes::GetIdentityDkimAttributesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetIdentityDkimAttributesOutputBuilder {
-    pub(crate) dkim_attributes: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::IdentityDkimAttributes>,
+    pub(crate) dkim_attributes: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::IdentityDkimAttributes>,
     >,
     _request_id: Option<String>,
 }
@@ -50,19 +52,22 @@ impl GetIdentityDkimAttributesOutputBuilder {
     /// <p>The DKIM attributes for an email address or a domain.</p>
     pub fn dkim_attributes(
         mut self,
-        k: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
         v: crate::types::IdentityDkimAttributes,
     ) -> Self {
         let mut hash_map = self.dkim_attributes.unwrap_or_default();
         hash_map.insert(k.into(), v);
-        self.dkim_attributes = Some(hash_map);
+        self.dkim_attributes = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The DKIM attributes for an email address or a domain.</p>
     pub fn set_dkim_attributes(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::types::IdentityDkimAttributes>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<
+                ::std::string::String,
+                crate::types::IdentityDkimAttributes,
+            >,
         >,
     ) -> Self {
         self.dkim_attributes = input;

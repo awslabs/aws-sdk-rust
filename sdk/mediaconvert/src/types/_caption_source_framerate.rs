@@ -2,22 +2,22 @@
 
 /// Ignore this setting unless your input captions format is SCC. To have the service compensate for differing frame rates between your input captions and input video, specify the frame rate of the captions file. Specify this value as a fraction. When you work directly in your JSON job specification, use the settings framerateNumerator and framerateDenominator. For example, you might specify 24 / 1 for 24 fps, 25 / 1 for 25 fps, 24000 / 1001 for 23.976 fps, or 30000 / 1001 for 29.97 fps.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CaptionSourceFramerate {
     /// Specify the denominator of the fraction that represents the frame rate for the setting Caption source frame rate (CaptionSourceFramerate). Use this setting along with the setting Framerate numerator (framerateNumerator).
     #[doc(hidden)]
-    pub framerate_denominator: std::option::Option<i32>,
+    pub framerate_denominator: ::std::option::Option<i32>,
     /// Specify the numerator of the fraction that represents the frame rate for the setting Caption source frame rate (CaptionSourceFramerate). Use this setting along with the setting Framerate denominator (framerateDenominator).
     #[doc(hidden)]
-    pub framerate_numerator: std::option::Option<i32>,
+    pub framerate_numerator: ::std::option::Option<i32>,
 }
 impl CaptionSourceFramerate {
     /// Specify the denominator of the fraction that represents the frame rate for the setting Caption source frame rate (CaptionSourceFramerate). Use this setting along with the setting Framerate numerator (framerateNumerator).
-    pub fn framerate_denominator(&self) -> std::option::Option<i32> {
+    pub fn framerate_denominator(&self) -> ::std::option::Option<i32> {
         self.framerate_denominator
     }
     /// Specify the numerator of the fraction that represents the frame rate for the setting Caption source frame rate (CaptionSourceFramerate). Use this setting along with the setting Framerate denominator (framerateDenominator).
-    pub fn framerate_numerator(&self) -> std::option::Option<i32> {
+    pub fn framerate_numerator(&self) -> ::std::option::Option<i32> {
         self.framerate_numerator
     }
 }
@@ -30,29 +30,31 @@ impl CaptionSourceFramerate {
 
 /// A builder for [`CaptionSourceFramerate`](crate::types::CaptionSourceFramerate).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CaptionSourceFramerateBuilder {
-    pub(crate) framerate_denominator: std::option::Option<i32>,
-    pub(crate) framerate_numerator: std::option::Option<i32>,
+    pub(crate) framerate_denominator: ::std::option::Option<i32>,
+    pub(crate) framerate_numerator: ::std::option::Option<i32>,
 }
 impl CaptionSourceFramerateBuilder {
     /// Specify the denominator of the fraction that represents the frame rate for the setting Caption source frame rate (CaptionSourceFramerate). Use this setting along with the setting Framerate numerator (framerateNumerator).
     pub fn framerate_denominator(mut self, input: i32) -> Self {
-        self.framerate_denominator = Some(input);
+        self.framerate_denominator = ::std::option::Option::Some(input);
         self
     }
     /// Specify the denominator of the fraction that represents the frame rate for the setting Caption source frame rate (CaptionSourceFramerate). Use this setting along with the setting Framerate numerator (framerateNumerator).
-    pub fn set_framerate_denominator(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_framerate_denominator(mut self, input: ::std::option::Option<i32>) -> Self {
         self.framerate_denominator = input;
         self
     }
     /// Specify the numerator of the fraction that represents the frame rate for the setting Caption source frame rate (CaptionSourceFramerate). Use this setting along with the setting Framerate denominator (framerateDenominator).
     pub fn framerate_numerator(mut self, input: i32) -> Self {
-        self.framerate_numerator = Some(input);
+        self.framerate_numerator = ::std::option::Option::Some(input);
         self
     }
     /// Specify the numerator of the fraction that represents the frame rate for the setting Caption source frame rate (CaptionSourceFramerate). Use this setting along with the setting Framerate denominator (framerateDenominator).
-    pub fn set_framerate_numerator(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_framerate_numerator(mut self, input: ::std::option::Option<i32>) -> Self {
         self.framerate_numerator = input;
         self
     }

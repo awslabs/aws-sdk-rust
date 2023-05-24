@@ -6,36 +6,36 @@
 /// <li> <p> <i>ModifySubnetGroup</i> </p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SubnetGroup {
     /// <p>The name of the subnet group.</p>
     #[doc(hidden)]
-    pub subnet_group_name: std::option::Option<std::string::String>,
+    pub subnet_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the subnet group.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Virtual Private Cloud identifier (VPC ID) of the subnet group.</p>
     #[doc(hidden)]
-    pub vpc_id: std::option::Option<std::string::String>,
+    pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of subnets associated with the subnet group. </p>
     #[doc(hidden)]
-    pub subnets: std::option::Option<std::vec::Vec<crate::types::Subnet>>,
+    pub subnets: ::std::option::Option<::std::vec::Vec<crate::types::Subnet>>,
 }
 impl SubnetGroup {
     /// <p>The name of the subnet group.</p>
-    pub fn subnet_group_name(&self) -> std::option::Option<&str> {
+    pub fn subnet_group_name(&self) -> ::std::option::Option<&str> {
         self.subnet_group_name.as_deref()
     }
     /// <p>The description of the subnet group.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The Amazon Virtual Private Cloud identifier (VPC ID) of the subnet group.</p>
-    pub fn vpc_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
     /// <p>A list of subnets associated with the subnet group. </p>
-    pub fn subnets(&self) -> std::option::Option<&[crate::types::Subnet]> {
+    pub fn subnets(&self) -> ::std::option::Option<&[crate::types::Subnet]> {
         self.subnets.as_deref()
     }
 }
@@ -48,44 +48,49 @@ impl SubnetGroup {
 
 /// A builder for [`SubnetGroup`](crate::types::SubnetGroup).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SubnetGroupBuilder {
-    pub(crate) subnet_group_name: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) vpc_id: std::option::Option<std::string::String>,
-    pub(crate) subnets: std::option::Option<std::vec::Vec<crate::types::Subnet>>,
+    pub(crate) subnet_group_name: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
+    pub(crate) subnets: ::std::option::Option<::std::vec::Vec<crate::types::Subnet>>,
 }
 impl SubnetGroupBuilder {
     /// <p>The name of the subnet group.</p>
-    pub fn subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.subnet_group_name = Some(input.into());
+    pub fn subnet_group_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.subnet_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the subnet group.</p>
     pub fn set_subnet_group_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.subnet_group_name = input;
         self
     }
     /// <p>The description of the subnet group.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the subnet group.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>The Amazon Virtual Private Cloud identifier (VPC ID) of the subnet group.</p>
-    pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.vpc_id = Some(input.into());
+    pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.vpc_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Virtual Private Cloud identifier (VPC ID) of the subnet group.</p>
-    pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
     }
@@ -97,13 +102,13 @@ impl SubnetGroupBuilder {
     pub fn subnets(mut self, input: crate::types::Subnet) -> Self {
         let mut v = self.subnets.unwrap_or_default();
         v.push(input);
-        self.subnets = Some(v);
+        self.subnets = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of subnets associated with the subnet group. </p>
     pub fn set_subnets(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Subnet>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Subnet>>,
     ) -> Self {
         self.subnets = input;
         self

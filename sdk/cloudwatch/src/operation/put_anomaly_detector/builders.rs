@@ -7,29 +7,29 @@ pub use crate::operation::put_anomaly_detector::_put_anomaly_detector_input::Put
 ///
 /// <p>Creates an anomaly detection model for a CloudWatch metric. You can use the model to display a band of expected normal values when the metric is graphed.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Anomaly_Detection.html">CloudWatch Anomaly Detection</a>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutAnomalyDetectorFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::put_anomaly_detector::builders::PutAnomalyDetectorInputBuilder,
 }
 impl PutAnomalyDetectorFluentBuilder {
     /// Creates a new `PutAnomalyDetector`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::put_anomaly_detector::PutAnomalyDetector,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::put_anomaly_detector::PutAnomalyDetectorError,
         >,
     > {
@@ -37,30 +37,33 @@ impl PutAnomalyDetectorFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::put_anomaly_detector::PutAnomalyDetectorOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::put_anomaly_detector::PutAnomalyDetectorError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -73,9 +76,9 @@ impl PutAnomalyDetectorFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::put_anomaly_detector::PutAnomalyDetectorOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::put_anomaly_detector::PutAnomalyDetectorError,
         >,
     > {
@@ -83,25 +86,25 @@ impl PutAnomalyDetectorFluentBuilder {
     }
     /// <p>The namespace of the metric to create the anomaly detection model for.</p>
     #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
-    pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.namespace(input.into());
         self
     }
     /// <p>The namespace of the metric to create the anomaly detection model for.</p>
     #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
-    pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_namespace(input);
         self
     }
     /// <p>The name of the metric to create the anomaly detection model for.</p>
     #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
-    pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn metric_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.metric_name(input.into());
         self
     }
     /// <p>The name of the metric to create the anomaly detection model for.</p>
     #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
-    pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_metric_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_metric_name(input);
         self
     }
@@ -119,20 +122,20 @@ impl PutAnomalyDetectorFluentBuilder {
     #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
     pub fn set_dimensions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Dimension>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>,
     ) -> Self {
         self.inner = self.inner.set_dimensions(input);
         self
     }
     /// <p>The statistic to use for the metric and the anomaly detection model.</p>
     #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
-    pub fn stat(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn stat(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stat(input.into());
         self
     }
     /// <p>The statistic to use for the metric and the anomaly detection model.</p>
     #[deprecated(note = "Use SingleMetricAnomalyDetector.")]
-    pub fn set_stat(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_stat(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stat(input);
         self
     }
@@ -146,7 +149,7 @@ impl PutAnomalyDetectorFluentBuilder {
     /// <p>The configuration can also include the time zone to use for the metric.</p>
     pub fn set_configuration(
         mut self,
-        input: std::option::Option<crate::types::AnomalyDetectorConfiguration>,
+        input: ::std::option::Option<crate::types::AnomalyDetectorConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_configuration(input);
         self
@@ -180,7 +183,7 @@ impl PutAnomalyDetectorFluentBuilder {
     /// <p>Instead, specify the single metric anomaly detector attributes as part of the property <code>SingleMetricAnomalyDetector</code>.</p>
     pub fn set_single_metric_anomaly_detector(
         mut self,
-        input: std::option::Option<crate::types::SingleMetricAnomalyDetector>,
+        input: ::std::option::Option<crate::types::SingleMetricAnomalyDetector>,
     ) -> Self {
         self.inner = self.inner.set_single_metric_anomaly_detector(input);
         self
@@ -214,7 +217,7 @@ impl PutAnomalyDetectorFluentBuilder {
     /// <p>Instead, specify the metric math anomaly detector attributes as part of the property <code>MetricMathAnomalyDetector</code>.</p>
     pub fn set_metric_math_anomaly_detector(
         mut self,
-        input: std::option::Option<crate::types::MetricMathAnomalyDetector>,
+        input: ::std::option::Option<crate::types::MetricMathAnomalyDetector>,
     ) -> Self {
         self.inner = self.inner.set_metric_math_anomaly_detector(input);
         self

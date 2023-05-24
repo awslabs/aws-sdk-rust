@@ -2,11 +2,11 @@
 
 /// <p>DeleteFileShareInput</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteFileShareInput {
     /// <p>The Amazon Resource Name (ARN) of the file share to be deleted.</p>
     #[doc(hidden)]
-    pub file_share_arn: std::option::Option<std::string::String>,
+    pub file_share_arn: ::std::option::Option<::std::string::String>,
     /// <p>If this value is set to <code>true</code>, the operation deletes a file share immediately and aborts all data uploads to Amazon Web Services. Otherwise, the file share is not deleted until all data is uploaded to Amazon Web Services. This process aborts the data upload process, and the file share enters the <code>FORCE_DELETING</code> status.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
     #[doc(hidden)]
@@ -14,7 +14,7 @@ pub struct DeleteFileShareInput {
 }
 impl DeleteFileShareInput {
     /// <p>The Amazon Resource Name (ARN) of the file share to be deleted.</p>
-    pub fn file_share_arn(&self) -> std::option::Option<&str> {
+    pub fn file_share_arn(&self) -> ::std::option::Option<&str> {
         self.file_share_arn.as_deref()
     }
     /// <p>If this value is set to <code>true</code>, the operation deletes a file share immediately and aborts all data uploads to Amazon Web Services. Otherwise, the file share is not deleted until all data is uploaded to Amazon Web Services. This process aborts the data upload process, and the file share enters the <code>FORCE_DELETING</code> status.</p>
@@ -32,42 +32,50 @@ impl DeleteFileShareInput {
 
 /// A builder for [`DeleteFileShareInput`](crate::operation::delete_file_share::DeleteFileShareInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteFileShareInputBuilder {
-    pub(crate) file_share_arn: std::option::Option<std::string::String>,
-    pub(crate) force_delete: std::option::Option<bool>,
+    pub(crate) file_share_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) force_delete: ::std::option::Option<bool>,
 }
 impl DeleteFileShareInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the file share to be deleted.</p>
-    pub fn file_share_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.file_share_arn = Some(input.into());
+    pub fn file_share_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.file_share_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the file share to be deleted.</p>
-    pub fn set_file_share_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_file_share_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.file_share_arn = input;
         self
     }
     /// <p>If this value is set to <code>true</code>, the operation deletes a file share immediately and aborts all data uploads to Amazon Web Services. Otherwise, the file share is not deleted until all data is uploaded to Amazon Web Services. This process aborts the data upload process, and the file share enters the <code>FORCE_DELETING</code> status.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
     pub fn force_delete(mut self, input: bool) -> Self {
-        self.force_delete = Some(input);
+        self.force_delete = ::std::option::Option::Some(input);
         self
     }
     /// <p>If this value is set to <code>true</code>, the operation deletes a file share immediately and aborts all data uploads to Amazon Web Services. Otherwise, the file share is not deleted until all data is uploaded to Amazon Web Services. This process aborts the data upload process, and the file share enters the <code>FORCE_DELETING</code> status.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
-    pub fn set_force_delete(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_force_delete(mut self, input: ::std::option::Option<bool>) -> Self {
         self.force_delete = input;
         self
     }
     /// Consumes the builder and constructs a [`DeleteFileShareInput`](crate::operation::delete_file_share::DeleteFileShareInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::delete_file_share::DeleteFileShareInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::delete_file_share::DeleteFileShareInput {
+        ::std::result::Result::Ok(crate::operation::delete_file_share::DeleteFileShareInput {
             file_share_arn: self.file_share_arn,
             force_delete: self.force_delete.unwrap_or_default(),
         })

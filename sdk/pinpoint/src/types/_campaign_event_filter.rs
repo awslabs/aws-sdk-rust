@@ -2,24 +2,24 @@
 
 /// <p>Specifies the settings for events that cause a campaign to be sent.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CampaignEventFilter {
     /// <p>The dimension settings of the event filter for the campaign.</p>
     #[doc(hidden)]
-    pub dimensions: std::option::Option<crate::types::EventDimensions>,
+    pub dimensions: ::std::option::Option<crate::types::EventDimensions>,
     /// <p>The type of event that causes the campaign to be sent. Valid values are: SYSTEM, sends the campaign when a system event occurs; and, ENDPOINT, sends the campaign when an endpoint event (
     /// <link linkend="apps-application-id-events">Events resource) occurs.</p>
     #[doc(hidden)]
-    pub filter_type: std::option::Option<crate::types::FilterType>,
+    pub filter_type: ::std::option::Option<crate::types::FilterType>,
 }
 impl CampaignEventFilter {
     /// <p>The dimension settings of the event filter for the campaign.</p>
-    pub fn dimensions(&self) -> std::option::Option<&crate::types::EventDimensions> {
+    pub fn dimensions(&self) -> ::std::option::Option<&crate::types::EventDimensions> {
         self.dimensions.as_ref()
     }
     /// <p>The type of event that causes the campaign to be sent. Valid values are: SYSTEM, sends the campaign when a system event occurs; and, ENDPOINT, sends the campaign when an endpoint event (
     /// <link linkend="apps-application-id-events">Events resource) occurs.</p>
-    pub fn filter_type(&self) -> std::option::Option<&crate::types::FilterType> {
+    pub fn filter_type(&self) -> ::std::option::Option<&crate::types::FilterType> {
         self.filter_type.as_ref()
     }
 }
@@ -32,21 +32,23 @@ impl CampaignEventFilter {
 
 /// A builder for [`CampaignEventFilter`](crate::types::CampaignEventFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CampaignEventFilterBuilder {
-    pub(crate) dimensions: std::option::Option<crate::types::EventDimensions>,
-    pub(crate) filter_type: std::option::Option<crate::types::FilterType>,
+    pub(crate) dimensions: ::std::option::Option<crate::types::EventDimensions>,
+    pub(crate) filter_type: ::std::option::Option<crate::types::FilterType>,
 }
 impl CampaignEventFilterBuilder {
     /// <p>The dimension settings of the event filter for the campaign.</p>
     pub fn dimensions(mut self, input: crate::types::EventDimensions) -> Self {
-        self.dimensions = Some(input);
+        self.dimensions = ::std::option::Option::Some(input);
         self
     }
     /// <p>The dimension settings of the event filter for the campaign.</p>
     pub fn set_dimensions(
         mut self,
-        input: std::option::Option<crate::types::EventDimensions>,
+        input: ::std::option::Option<crate::types::EventDimensions>,
     ) -> Self {
         self.dimensions = input;
         self
@@ -54,12 +56,15 @@ impl CampaignEventFilterBuilder {
     /// <p>The type of event that causes the campaign to be sent. Valid values are: SYSTEM, sends the campaign when a system event occurs; and, ENDPOINT, sends the campaign when an endpoint event (
     /// <link linkend="apps-application-id-events">Events resource) occurs.</p>
     pub fn filter_type(mut self, input: crate::types::FilterType) -> Self {
-        self.filter_type = Some(input);
+        self.filter_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of event that causes the campaign to be sent. Valid values are: SYSTEM, sends the campaign when a system event occurs; and, ENDPOINT, sends the campaign when an endpoint event (
     /// <link linkend="apps-application-id-events">Events resource) occurs.</p>
-    pub fn set_filter_type(mut self, input: std::option::Option<crate::types::FilterType>) -> Self {
+    pub fn set_filter_type(
+        mut self,
+        input: ::std::option::Option<crate::types::FilterType>,
+    ) -> Self {
         self.filter_type = input;
         self
     }

@@ -6,29 +6,29 @@ pub use crate::operation::reset_cache_parameter_group::_reset_cache_parameter_gr
 /// Fluent builder constructing a request to `ResetCacheParameterGroup`.
 ///
 /// <p>Modifies the parameters of a cache parameter group to the engine or system default value. You can reset specific parameters by submitting a list of parameter names. To reset the entire cache parameter group, specify the <code>ResetAllParameters</code> and <code>CacheParameterGroupName</code> parameters.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ResetCacheParameterGroupFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::reset_cache_parameter_group::builders::ResetCacheParameterGroupInputBuilder,
 }
 impl ResetCacheParameterGroupFluentBuilder {
     /// Creates a new `ResetCacheParameterGroup`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::reset_cache_parameter_group::ResetCacheParameterGroup,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::reset_cache_parameter_group::ResetCacheParameterGroupError,
         >,
     > {
@@ -36,30 +36,33 @@ impl ResetCacheParameterGroupFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::reset_cache_parameter_group::ResetCacheParameterGroupOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::reset_cache_parameter_group::ResetCacheParameterGroupError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,23 +75,26 @@ impl ResetCacheParameterGroupFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::reset_cache_parameter_group::ResetCacheParameterGroupOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::reset_cache_parameter_group::ResetCacheParameterGroupError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the cache parameter group to reset.</p>
-    pub fn cache_parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn cache_parameter_group_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.cache_parameter_group_name(input.into());
         self
     }
     /// <p>The name of the cache parameter group to reset.</p>
     pub fn set_cache_parameter_group_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_cache_parameter_group_name(input);
         self
@@ -101,7 +107,7 @@ impl ResetCacheParameterGroupFluentBuilder {
     }
     /// <p>If <code>true</code>, all parameters in the cache parameter group are reset to their default values. If <code>false</code>, only the parameters listed by <code>ParameterNameValues</code> are reset to their default values.</p>
     /// <p>Valid values: <code>true</code> | <code>false</code> </p>
-    pub fn set_reset_all_parameters(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_reset_all_parameters(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_reset_all_parameters(input);
         self
     }
@@ -117,7 +123,7 @@ impl ResetCacheParameterGroupFluentBuilder {
     /// <p>An array of parameter names to reset to their default values. If <code>ResetAllParameters</code> is <code>true</code>, do not use <code>ParameterNameValues</code>. If <code>ResetAllParameters</code> is <code>false</code>, you must specify the name of at least one parameter to reset.</p>
     pub fn set_parameter_name_values(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ParameterNameValue>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ParameterNameValue>>,
     ) -> Self {
         self.inner = self.inner.set_parameter_name_values(input);
         self

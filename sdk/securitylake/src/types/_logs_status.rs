@@ -2,22 +2,22 @@
 
 /// <p>Retrieves the Logs status for the Amazon Security Lake account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LogsStatus {
     /// <p>Defines path the stored logs are available which has information on your systems, applications, and services. </p>
     #[doc(hidden)]
-    pub path_to_logs: std::option::Option<std::string::String>,
+    pub path_to_logs: ::std::option::Option<::std::string::String>,
     /// <p>The health status of services, including error codes and patterns.</p>
     #[doc(hidden)]
-    pub health_status: std::option::Option<crate::types::SourceStatus>,
+    pub health_status: ::std::option::Option<crate::types::SourceStatus>,
 }
 impl LogsStatus {
     /// <p>Defines path the stored logs are available which has information on your systems, applications, and services. </p>
-    pub fn path_to_logs(&self) -> std::option::Option<&str> {
+    pub fn path_to_logs(&self) -> ::std::option::Option<&str> {
         self.path_to_logs.as_deref()
     }
     /// <p>The health status of services, including error codes and patterns.</p>
-    pub fn health_status(&self) -> std::option::Option<&crate::types::SourceStatus> {
+    pub fn health_status(&self) -> ::std::option::Option<&crate::types::SourceStatus> {
         self.health_status.as_ref()
     }
 }
@@ -30,31 +30,33 @@ impl LogsStatus {
 
 /// A builder for [`LogsStatus`](crate::types::LogsStatus).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LogsStatusBuilder {
-    pub(crate) path_to_logs: std::option::Option<std::string::String>,
-    pub(crate) health_status: std::option::Option<crate::types::SourceStatus>,
+    pub(crate) path_to_logs: ::std::option::Option<::std::string::String>,
+    pub(crate) health_status: ::std::option::Option<crate::types::SourceStatus>,
 }
 impl LogsStatusBuilder {
     /// <p>Defines path the stored logs are available which has information on your systems, applications, and services. </p>
-    pub fn path_to_logs(mut self, input: impl Into<std::string::String>) -> Self {
-        self.path_to_logs = Some(input.into());
+    pub fn path_to_logs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.path_to_logs = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Defines path the stored logs are available which has information on your systems, applications, and services. </p>
-    pub fn set_path_to_logs(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_path_to_logs(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.path_to_logs = input;
         self
     }
     /// <p>The health status of services, including error codes and patterns.</p>
     pub fn health_status(mut self, input: crate::types::SourceStatus) -> Self {
-        self.health_status = Some(input);
+        self.health_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The health status of services, including error codes and patterns.</p>
     pub fn set_health_status(
         mut self,
-        input: std::option::Option<crate::types::SourceStatus>,
+        input: ::std::option::Option<crate::types::SourceStatus>,
     ) -> Self {
         self.health_status = input;
         self

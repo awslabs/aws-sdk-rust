@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateJob`](crate::operation::update_job::builders::UpdateJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`job_name(impl Into<String>)`](crate::operation::update_job::builders::UpdateJobFluentBuilder::job_name) / [`set_job_name(Option<String>)`](crate::operation::update_job::builders::UpdateJobFluentBuilder::set_job_name): <p>The name of the job definition to update.</p>
+    ///   - [`job_name(impl ::std::convert::Into<String>)`](crate::operation::update_job::builders::UpdateJobFluentBuilder::job_name) / [`set_job_name(Option<String>)`](crate::operation::update_job::builders::UpdateJobFluentBuilder::set_job_name): <p>The name of the job definition to update.</p>
     ///   - [`job_update(JobUpdate)`](crate::operation::update_job::builders::UpdateJobFluentBuilder::job_update) / [`set_job_update(Option<JobUpdate>)`](crate::operation::update_job::builders::UpdateJobFluentBuilder::set_job_update): <p>Specifies the values with which to update the job definition. Unspecified configuration is removed or reset to default values.</p>
     /// - On success, responds with [`UpdateJobOutput`](crate::operation::update_job::UpdateJobOutput) with field(s):
     ///   - [`job_name(Option<String>)`](crate::operation::update_job::UpdateJobOutput::job_name): <p>Returns the name of the updated job definition.</p>

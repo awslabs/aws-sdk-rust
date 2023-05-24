@@ -2,52 +2,52 @@
 
 /// <p>The ParameterDeclaration data type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ParameterDeclaration {
     /// <p>The name that's associated with the parameter.</p>
     #[doc(hidden)]
-    pub parameter_key: std::option::Option<std::string::String>,
+    pub parameter_key: ::std::option::Option<::std::string::String>,
     /// <p>The default value of the parameter.</p>
     #[doc(hidden)]
-    pub default_value: std::option::Option<std::string::String>,
+    pub default_value: ::std::option::Option<::std::string::String>,
     /// <p>The type of parameter.</p>
     #[doc(hidden)]
-    pub parameter_type: std::option::Option<std::string::String>,
+    pub parameter_type: ::std::option::Option<::std::string::String>,
     /// <p>Flag that indicates whether the parameter value is shown as plain text in logs and in the Amazon Web Services Management Console.</p>
     #[doc(hidden)]
-    pub no_echo: std::option::Option<bool>,
+    pub no_echo: ::std::option::Option<bool>,
     /// <p>The description that's associate with the parameter.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The criteria that CloudFormation uses to validate parameter values.</p>
     #[doc(hidden)]
-    pub parameter_constraints: std::option::Option<crate::types::ParameterConstraints>,
+    pub parameter_constraints: ::std::option::Option<crate::types::ParameterConstraints>,
 }
 impl ParameterDeclaration {
     /// <p>The name that's associated with the parameter.</p>
-    pub fn parameter_key(&self) -> std::option::Option<&str> {
+    pub fn parameter_key(&self) -> ::std::option::Option<&str> {
         self.parameter_key.as_deref()
     }
     /// <p>The default value of the parameter.</p>
-    pub fn default_value(&self) -> std::option::Option<&str> {
+    pub fn default_value(&self) -> ::std::option::Option<&str> {
         self.default_value.as_deref()
     }
     /// <p>The type of parameter.</p>
-    pub fn parameter_type(&self) -> std::option::Option<&str> {
+    pub fn parameter_type(&self) -> ::std::option::Option<&str> {
         self.parameter_type.as_deref()
     }
     /// <p>Flag that indicates whether the parameter value is shown as plain text in logs and in the Amazon Web Services Management Console.</p>
-    pub fn no_echo(&self) -> std::option::Option<bool> {
+    pub fn no_echo(&self) -> ::std::option::Option<bool> {
         self.no_echo
     }
     /// <p>The description that's associate with the parameter.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The criteria that CloudFormation uses to validate parameter values.</p>
     pub fn parameter_constraints(
         &self,
-    ) -> std::option::Option<&crate::types::ParameterConstraints> {
+    ) -> ::std::option::Option<&crate::types::ParameterConstraints> {
         self.parameter_constraints.as_ref()
     }
 }
@@ -60,75 +60,95 @@ impl ParameterDeclaration {
 
 /// A builder for [`ParameterDeclaration`](crate::types::ParameterDeclaration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ParameterDeclarationBuilder {
-    pub(crate) parameter_key: std::option::Option<std::string::String>,
-    pub(crate) default_value: std::option::Option<std::string::String>,
-    pub(crate) parameter_type: std::option::Option<std::string::String>,
-    pub(crate) no_echo: std::option::Option<bool>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) parameter_constraints: std::option::Option<crate::types::ParameterConstraints>,
+    pub(crate) parameter_key: ::std::option::Option<::std::string::String>,
+    pub(crate) default_value: ::std::option::Option<::std::string::String>,
+    pub(crate) parameter_type: ::std::option::Option<::std::string::String>,
+    pub(crate) no_echo: ::std::option::Option<bool>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) parameter_constraints: ::std::option::Option<crate::types::ParameterConstraints>,
 }
 impl ParameterDeclarationBuilder {
     /// <p>The name that's associated with the parameter.</p>
-    pub fn parameter_key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.parameter_key = Some(input.into());
+    pub fn parameter_key(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.parameter_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name that's associated with the parameter.</p>
-    pub fn set_parameter_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_parameter_key(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.parameter_key = input;
         self
     }
     /// <p>The default value of the parameter.</p>
-    pub fn default_value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.default_value = Some(input.into());
+    pub fn default_value(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.default_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The default value of the parameter.</p>
-    pub fn set_default_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_default_value(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.default_value = input;
         self
     }
     /// <p>The type of parameter.</p>
-    pub fn parameter_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.parameter_type = Some(input.into());
+    pub fn parameter_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.parameter_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of parameter.</p>
-    pub fn set_parameter_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_parameter_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.parameter_type = input;
         self
     }
     /// <p>Flag that indicates whether the parameter value is shown as plain text in logs and in the Amazon Web Services Management Console.</p>
     pub fn no_echo(mut self, input: bool) -> Self {
-        self.no_echo = Some(input);
+        self.no_echo = ::std::option::Option::Some(input);
         self
     }
     /// <p>Flag that indicates whether the parameter value is shown as plain text in logs and in the Amazon Web Services Management Console.</p>
-    pub fn set_no_echo(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_no_echo(mut self, input: ::std::option::Option<bool>) -> Self {
         self.no_echo = input;
         self
     }
     /// <p>The description that's associate with the parameter.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description that's associate with the parameter.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>The criteria that CloudFormation uses to validate parameter values.</p>
     pub fn parameter_constraints(mut self, input: crate::types::ParameterConstraints) -> Self {
-        self.parameter_constraints = Some(input);
+        self.parameter_constraints = ::std::option::Option::Some(input);
         self
     }
     /// <p>The criteria that CloudFormation uses to validate parameter values.</p>
     pub fn set_parameter_constraints(
         mut self,
-        input: std::option::Option<crate::types::ParameterConstraints>,
+        input: ::std::option::Option<crate::types::ParameterConstraints>,
     ) -> Self {
         self.parameter_constraints = input;
         self

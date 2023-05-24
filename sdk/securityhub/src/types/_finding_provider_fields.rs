@@ -2,7 +2,7 @@
 
 /// <p>In a <code>BatchImportFindings</code> request, finding providers use <code>FindingProviderFields</code> to provide and update values for confidence, criticality, related findings, severity, and types.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FindingProviderFields {
     /// <p>A finding's confidence. Confidence is defined as the likelihood that a finding accurately identifies the behavior or issue that it was intended to identify.</p>
     /// <p>Confidence is scored on a 0-100 basis using a ratio scale, where 0 means zero percent confidence and 100 means 100 percent confidence.</p>
@@ -14,14 +14,14 @@ pub struct FindingProviderFields {
     pub criticality: i32,
     /// <p>A list of findings that are related to the current finding.</p>
     #[doc(hidden)]
-    pub related_findings: std::option::Option<std::vec::Vec<crate::types::RelatedFinding>>,
+    pub related_findings: ::std::option::Option<::std::vec::Vec<crate::types::RelatedFinding>>,
     /// <p>The severity of a finding.</p>
     #[doc(hidden)]
-    pub severity: std::option::Option<crate::types::FindingProviderSeverity>,
+    pub severity: ::std::option::Option<crate::types::FindingProviderSeverity>,
     /// <p>One or more finding types in the format of <code>namespace/category/classifier</code> that classify a finding.</p>
     /// <p>Valid namespace values are: Software and Configuration Checks | TTPs | Effects | Unusual Behaviors | Sensitive Data Identifications</p>
     #[doc(hidden)]
-    pub types: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl FindingProviderFields {
     /// <p>A finding's confidence. Confidence is defined as the likelihood that a finding accurately identifies the behavior or issue that it was intended to identify.</p>
@@ -35,16 +35,16 @@ impl FindingProviderFields {
         self.criticality
     }
     /// <p>A list of findings that are related to the current finding.</p>
-    pub fn related_findings(&self) -> std::option::Option<&[crate::types::RelatedFinding]> {
+    pub fn related_findings(&self) -> ::std::option::Option<&[crate::types::RelatedFinding]> {
         self.related_findings.as_deref()
     }
     /// <p>The severity of a finding.</p>
-    pub fn severity(&self) -> std::option::Option<&crate::types::FindingProviderSeverity> {
+    pub fn severity(&self) -> ::std::option::Option<&crate::types::FindingProviderSeverity> {
         self.severity.as_ref()
     }
     /// <p>One or more finding types in the format of <code>namespace/category/classifier</code> that classify a finding.</p>
     /// <p>Valid namespace values are: Software and Configuration Checks | TTPs | Effects | Unusual Behaviors | Sensitive Data Identifications</p>
-    pub fn types(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn types(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.types.as_deref()
     }
 }
@@ -57,36 +57,39 @@ impl FindingProviderFields {
 
 /// A builder for [`FindingProviderFields`](crate::types::FindingProviderFields).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FindingProviderFieldsBuilder {
-    pub(crate) confidence: std::option::Option<i32>,
-    pub(crate) criticality: std::option::Option<i32>,
-    pub(crate) related_findings: std::option::Option<std::vec::Vec<crate::types::RelatedFinding>>,
-    pub(crate) severity: std::option::Option<crate::types::FindingProviderSeverity>,
-    pub(crate) types: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) confidence: ::std::option::Option<i32>,
+    pub(crate) criticality: ::std::option::Option<i32>,
+    pub(crate) related_findings:
+        ::std::option::Option<::std::vec::Vec<crate::types::RelatedFinding>>,
+    pub(crate) severity: ::std::option::Option<crate::types::FindingProviderSeverity>,
+    pub(crate) types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl FindingProviderFieldsBuilder {
     /// <p>A finding's confidence. Confidence is defined as the likelihood that a finding accurately identifies the behavior or issue that it was intended to identify.</p>
     /// <p>Confidence is scored on a 0-100 basis using a ratio scale, where 0 means zero percent confidence and 100 means 100 percent confidence.</p>
     pub fn confidence(mut self, input: i32) -> Self {
-        self.confidence = Some(input);
+        self.confidence = ::std::option::Option::Some(input);
         self
     }
     /// <p>A finding's confidence. Confidence is defined as the likelihood that a finding accurately identifies the behavior or issue that it was intended to identify.</p>
     /// <p>Confidence is scored on a 0-100 basis using a ratio scale, where 0 means zero percent confidence and 100 means 100 percent confidence.</p>
-    pub fn set_confidence(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_confidence(mut self, input: ::std::option::Option<i32>) -> Self {
         self.confidence = input;
         self
     }
     /// <p>The level of importance assigned to the resources associated with the finding.</p>
     /// <p>A score of 0 means that the underlying resources have no criticality, and a score of 100 is reserved for the most critical resources.</p>
     pub fn criticality(mut self, input: i32) -> Self {
-        self.criticality = Some(input);
+        self.criticality = ::std::option::Option::Some(input);
         self
     }
     /// <p>The level of importance assigned to the resources associated with the finding.</p>
     /// <p>A score of 0 means that the underlying resources have no criticality, and a score of 100 is reserved for the most critical resources.</p>
-    pub fn set_criticality(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_criticality(mut self, input: ::std::option::Option<i32>) -> Self {
         self.criticality = input;
         self
     }
@@ -98,26 +101,26 @@ impl FindingProviderFieldsBuilder {
     pub fn related_findings(mut self, input: crate::types::RelatedFinding) -> Self {
         let mut v = self.related_findings.unwrap_or_default();
         v.push(input);
-        self.related_findings = Some(v);
+        self.related_findings = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of findings that are related to the current finding.</p>
     pub fn set_related_findings(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RelatedFinding>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::RelatedFinding>>,
     ) -> Self {
         self.related_findings = input;
         self
     }
     /// <p>The severity of a finding.</p>
     pub fn severity(mut self, input: crate::types::FindingProviderSeverity) -> Self {
-        self.severity = Some(input);
+        self.severity = ::std::option::Option::Some(input);
         self
     }
     /// <p>The severity of a finding.</p>
     pub fn set_severity(
         mut self,
-        input: std::option::Option<crate::types::FindingProviderSeverity>,
+        input: ::std::option::Option<crate::types::FindingProviderSeverity>,
     ) -> Self {
         self.severity = input;
         self
@@ -128,17 +131,17 @@ impl FindingProviderFieldsBuilder {
     ///
     /// <p>One or more finding types in the format of <code>namespace/category/classifier</code> that classify a finding.</p>
     /// <p>Valid namespace values are: Software and Configuration Checks | TTPs | Effects | Unusual Behaviors | Sensitive Data Identifications</p>
-    pub fn types(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.types.unwrap_or_default();
         v.push(input.into());
-        self.types = Some(v);
+        self.types = ::std::option::Option::Some(v);
         self
     }
     /// <p>One or more finding types in the format of <code>namespace/category/classifier</code> that classify a finding.</p>
     /// <p>Valid namespace values are: Software and Configuration Checks | TTPs | Effects | Unusual Behaviors | Sensitive Data Identifications</p>
     pub fn set_types(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.types = input;
         self

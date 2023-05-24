@@ -2,22 +2,22 @@
 
 /// <p>The input for the ReplaceTopicRule operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplaceTopicRuleInput {
     /// <p>The name of the rule.</p>
     #[doc(hidden)]
-    pub rule_name: std::option::Option<std::string::String>,
+    pub rule_name: ::std::option::Option<::std::string::String>,
     /// <p>The rule payload.</p>
     #[doc(hidden)]
-    pub topic_rule_payload: std::option::Option<crate::types::TopicRulePayload>,
+    pub topic_rule_payload: ::std::option::Option<crate::types::TopicRulePayload>,
 }
 impl ReplaceTopicRuleInput {
     /// <p>The name of the rule.</p>
-    pub fn rule_name(&self) -> std::option::Option<&str> {
+    pub fn rule_name(&self) -> ::std::option::Option<&str> {
         self.rule_name.as_deref()
     }
     /// <p>The rule payload.</p>
-    pub fn topic_rule_payload(&self) -> std::option::Option<&crate::types::TopicRulePayload> {
+    pub fn topic_rule_payload(&self) -> ::std::option::Option<&crate::types::TopicRulePayload> {
         self.topic_rule_payload.as_ref()
     }
 }
@@ -31,31 +31,33 @@ impl ReplaceTopicRuleInput {
 
 /// A builder for [`ReplaceTopicRuleInput`](crate::operation::replace_topic_rule::ReplaceTopicRuleInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ReplaceTopicRuleInputBuilder {
-    pub(crate) rule_name: std::option::Option<std::string::String>,
-    pub(crate) topic_rule_payload: std::option::Option<crate::types::TopicRulePayload>,
+    pub(crate) rule_name: ::std::option::Option<::std::string::String>,
+    pub(crate) topic_rule_payload: ::std::option::Option<crate::types::TopicRulePayload>,
 }
 impl ReplaceTopicRuleInputBuilder {
     /// <p>The name of the rule.</p>
-    pub fn rule_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.rule_name = Some(input.into());
+    pub fn rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.rule_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the rule.</p>
-    pub fn set_rule_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_rule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_name = input;
         self
     }
     /// <p>The rule payload.</p>
     pub fn topic_rule_payload(mut self, input: crate::types::TopicRulePayload) -> Self {
-        self.topic_rule_payload = Some(input);
+        self.topic_rule_payload = ::std::option::Option::Some(input);
         self
     }
     /// <p>The rule payload.</p>
     pub fn set_topic_rule_payload(
         mut self,
-        input: std::option::Option<crate::types::TopicRulePayload>,
+        input: ::std::option::Option<crate::types::TopicRulePayload>,
     ) -> Self {
         self.topic_rule_payload = input;
         self
@@ -63,11 +65,11 @@ impl ReplaceTopicRuleInputBuilder {
     /// Consumes the builder and constructs a [`ReplaceTopicRuleInput`](crate::operation::replace_topic_rule::ReplaceTopicRuleInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::replace_topic_rule::ReplaceTopicRuleInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::replace_topic_rule::ReplaceTopicRuleInput {
                 rule_name: self.rule_name,
                 topic_rule_payload: self.topic_rule_payload,

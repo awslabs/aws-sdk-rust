@@ -2,15 +2,15 @@
 
 /// <p> Amazon S3 configuration for monitoring log publishing. You can configure your jobs to send log information to Amazon S3.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3MonitoringConfiguration {
     /// <p>Amazon S3 destination URI for log publishing.</p>
     #[doc(hidden)]
-    pub log_uri: std::option::Option<std::string::String>,
+    pub log_uri: ::std::option::Option<::std::string::String>,
 }
 impl S3MonitoringConfiguration {
     /// <p>Amazon S3 destination URI for log publishing.</p>
-    pub fn log_uri(&self) -> std::option::Option<&str> {
+    pub fn log_uri(&self) -> ::std::option::Option<&str> {
         self.log_uri.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl S3MonitoringConfiguration {
 
 /// A builder for [`S3MonitoringConfiguration`](crate::types::S3MonitoringConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct S3MonitoringConfigurationBuilder {
-    pub(crate) log_uri: std::option::Option<std::string::String>,
+    pub(crate) log_uri: ::std::option::Option<::std::string::String>,
 }
 impl S3MonitoringConfigurationBuilder {
     /// <p>Amazon S3 destination URI for log publishing.</p>
-    pub fn log_uri(mut self, input: impl Into<std::string::String>) -> Self {
-        self.log_uri = Some(input.into());
+    pub fn log_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.log_uri = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Amazon S3 destination URI for log publishing.</p>
-    pub fn set_log_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_log_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_uri = input;
         self
     }

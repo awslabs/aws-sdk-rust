@@ -2,18 +2,18 @@
 
 /// <p>The configuration parameters for the default Amazon Glue database. You use this database for SQL queries that you write in a Kinesis Data Analytics Studio notebook.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CatalogConfiguration {
     /// <p>The configuration parameters for the default Amazon Glue database. You use this database for Apache Flink SQL queries and table API transforms that you write in a Kinesis Data Analytics Studio notebook.</p>
     #[doc(hidden)]
     pub glue_data_catalog_configuration:
-        std::option::Option<crate::types::GlueDataCatalogConfiguration>,
+        ::std::option::Option<crate::types::GlueDataCatalogConfiguration>,
 }
 impl CatalogConfiguration {
     /// <p>The configuration parameters for the default Amazon Glue database. You use this database for Apache Flink SQL queries and table API transforms that you write in a Kinesis Data Analytics Studio notebook.</p>
     pub fn glue_data_catalog_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::GlueDataCatalogConfiguration> {
+    ) -> ::std::option::Option<&crate::types::GlueDataCatalogConfiguration> {
         self.glue_data_catalog_configuration.as_ref()
     }
 }
@@ -26,10 +26,12 @@ impl CatalogConfiguration {
 
 /// A builder for [`CatalogConfiguration`](crate::types::CatalogConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CatalogConfigurationBuilder {
     pub(crate) glue_data_catalog_configuration:
-        std::option::Option<crate::types::GlueDataCatalogConfiguration>,
+        ::std::option::Option<crate::types::GlueDataCatalogConfiguration>,
 }
 impl CatalogConfigurationBuilder {
     /// <p>The configuration parameters for the default Amazon Glue database. You use this database for Apache Flink SQL queries and table API transforms that you write in a Kinesis Data Analytics Studio notebook.</p>
@@ -37,13 +39,13 @@ impl CatalogConfigurationBuilder {
         mut self,
         input: crate::types::GlueDataCatalogConfiguration,
     ) -> Self {
-        self.glue_data_catalog_configuration = Some(input);
+        self.glue_data_catalog_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration parameters for the default Amazon Glue database. You use this database for Apache Flink SQL queries and table API transforms that you write in a Kinesis Data Analytics Studio notebook.</p>
     pub fn set_glue_data_catalog_configuration(
         mut self,
-        input: std::option::Option<crate::types::GlueDataCatalogConfiguration>,
+        input: ::std::option::Option<crate::types::GlueDataCatalogConfiguration>,
     ) -> Self {
         self.glue_data_catalog_configuration = input;
         self

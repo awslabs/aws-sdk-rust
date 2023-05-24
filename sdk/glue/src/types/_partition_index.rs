@@ -2,22 +2,22 @@
 
 /// <p>A structure for a partition index.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PartitionIndex {
     /// <p>The keys for the partition index.</p>
     #[doc(hidden)]
-    pub keys: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The name of the partition index.</p>
     #[doc(hidden)]
-    pub index_name: std::option::Option<std::string::String>,
+    pub index_name: ::std::option::Option<::std::string::String>,
 }
 impl PartitionIndex {
     /// <p>The keys for the partition index.</p>
-    pub fn keys(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn keys(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.keys.as_deref()
     }
     /// <p>The name of the partition index.</p>
-    pub fn index_name(&self) -> std::option::Option<&str> {
+    pub fn index_name(&self) -> ::std::option::Option<&str> {
         self.index_name.as_deref()
     }
 }
@@ -30,10 +30,12 @@ impl PartitionIndex {
 
 /// A builder for [`PartitionIndex`](crate::types::PartitionIndex).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PartitionIndexBuilder {
-    pub(crate) keys: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) index_name: std::option::Option<std::string::String>,
+    pub(crate) keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) index_name: ::std::option::Option<::std::string::String>,
 }
 impl PartitionIndexBuilder {
     /// Appends an item to `keys`.
@@ -41,27 +43,27 @@ impl PartitionIndexBuilder {
     /// To override the contents of this collection use [`set_keys`](Self::set_keys).
     ///
     /// <p>The keys for the partition index.</p>
-    pub fn keys(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn keys(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.keys.unwrap_or_default();
         v.push(input.into());
-        self.keys = Some(v);
+        self.keys = ::std::option::Option::Some(v);
         self
     }
     /// <p>The keys for the partition index.</p>
     pub fn set_keys(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.keys = input;
         self
     }
     /// <p>The name of the partition index.</p>
-    pub fn index_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.index_name = Some(input.into());
+    pub fn index_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.index_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the partition index.</p>
-    pub fn set_index_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_index_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.index_name = input;
         self
     }

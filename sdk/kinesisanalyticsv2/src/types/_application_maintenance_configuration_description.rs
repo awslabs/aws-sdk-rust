@@ -2,22 +2,22 @@
 
 /// <p>The details of the maintenance configuration for the application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApplicationMaintenanceConfigurationDescription {
     /// <p>The start time for the maintenance window.</p>
     #[doc(hidden)]
-    pub application_maintenance_window_start_time: std::option::Option<std::string::String>,
+    pub application_maintenance_window_start_time: ::std::option::Option<::std::string::String>,
     /// <p>The end time for the maintenance window.</p>
     #[doc(hidden)]
-    pub application_maintenance_window_end_time: std::option::Option<std::string::String>,
+    pub application_maintenance_window_end_time: ::std::option::Option<::std::string::String>,
 }
 impl ApplicationMaintenanceConfigurationDescription {
     /// <p>The start time for the maintenance window.</p>
-    pub fn application_maintenance_window_start_time(&self) -> std::option::Option<&str> {
+    pub fn application_maintenance_window_start_time(&self) -> ::std::option::Option<&str> {
         self.application_maintenance_window_start_time.as_deref()
     }
     /// <p>The end time for the maintenance window.</p>
-    pub fn application_maintenance_window_end_time(&self) -> std::option::Option<&str> {
+    pub fn application_maintenance_window_end_time(&self) -> ::std::option::Option<&str> {
         self.application_maintenance_window_end_time.as_deref()
     }
 }
@@ -31,24 +31,28 @@ impl ApplicationMaintenanceConfigurationDescription {
 
 /// A builder for [`ApplicationMaintenanceConfigurationDescription`](crate::types::ApplicationMaintenanceConfigurationDescription).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ApplicationMaintenanceConfigurationDescriptionBuilder {
-    pub(crate) application_maintenance_window_start_time: std::option::Option<std::string::String>,
-    pub(crate) application_maintenance_window_end_time: std::option::Option<std::string::String>,
+    pub(crate) application_maintenance_window_start_time:
+        ::std::option::Option<::std::string::String>,
+    pub(crate) application_maintenance_window_end_time:
+        ::std::option::Option<::std::string::String>,
 }
 impl ApplicationMaintenanceConfigurationDescriptionBuilder {
     /// <p>The start time for the maintenance window.</p>
     pub fn application_maintenance_window_start_time(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.application_maintenance_window_start_time = Some(input.into());
+        self.application_maintenance_window_start_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The start time for the maintenance window.</p>
     pub fn set_application_maintenance_window_start_time(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.application_maintenance_window_start_time = input;
         self
@@ -56,15 +60,15 @@ impl ApplicationMaintenanceConfigurationDescriptionBuilder {
     /// <p>The end time for the maintenance window.</p>
     pub fn application_maintenance_window_end_time(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.application_maintenance_window_end_time = Some(input.into());
+        self.application_maintenance_window_end_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The end time for the maintenance window.</p>
     pub fn set_application_maintenance_window_end_time(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.application_maintenance_window_end_time = input;
         self

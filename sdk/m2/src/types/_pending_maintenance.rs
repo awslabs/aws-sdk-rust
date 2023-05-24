@@ -2,22 +2,22 @@
 
 /// <p>The scheduled maintenance for a runtime engine.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PendingMaintenance {
     /// <p>The maintenance schedule for the runtime engine version.</p>
     #[doc(hidden)]
-    pub schedule: std::option::Option<crate::types::MaintenanceSchedule>,
+    pub schedule: ::std::option::Option<crate::types::MaintenanceSchedule>,
     /// <p>The specific runtime engine that the maintenance schedule applies to.</p>
     #[doc(hidden)]
-    pub engine_version: std::option::Option<std::string::String>,
+    pub engine_version: ::std::option::Option<::std::string::String>,
 }
 impl PendingMaintenance {
     /// <p>The maintenance schedule for the runtime engine version.</p>
-    pub fn schedule(&self) -> std::option::Option<&crate::types::MaintenanceSchedule> {
+    pub fn schedule(&self) -> ::std::option::Option<&crate::types::MaintenanceSchedule> {
         self.schedule.as_ref()
     }
     /// <p>The specific runtime engine that the maintenance schedule applies to.</p>
-    pub fn engine_version(&self) -> std::option::Option<&str> {
+    pub fn engine_version(&self) -> ::std::option::Option<&str> {
         self.engine_version.as_deref()
     }
 }
@@ -30,32 +30,40 @@ impl PendingMaintenance {
 
 /// A builder for [`PendingMaintenance`](crate::types::PendingMaintenance).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PendingMaintenanceBuilder {
-    pub(crate) schedule: std::option::Option<crate::types::MaintenanceSchedule>,
-    pub(crate) engine_version: std::option::Option<std::string::String>,
+    pub(crate) schedule: ::std::option::Option<crate::types::MaintenanceSchedule>,
+    pub(crate) engine_version: ::std::option::Option<::std::string::String>,
 }
 impl PendingMaintenanceBuilder {
     /// <p>The maintenance schedule for the runtime engine version.</p>
     pub fn schedule(mut self, input: crate::types::MaintenanceSchedule) -> Self {
-        self.schedule = Some(input);
+        self.schedule = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maintenance schedule for the runtime engine version.</p>
     pub fn set_schedule(
         mut self,
-        input: std::option::Option<crate::types::MaintenanceSchedule>,
+        input: ::std::option::Option<crate::types::MaintenanceSchedule>,
     ) -> Self {
         self.schedule = input;
         self
     }
     /// <p>The specific runtime engine that the maintenance schedule applies to.</p>
-    pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.engine_version = Some(input.into());
+    pub fn engine_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.engine_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The specific runtime engine that the maintenance schedule applies to.</p>
-    pub fn set_engine_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_engine_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.engine_version = input;
         self
     }

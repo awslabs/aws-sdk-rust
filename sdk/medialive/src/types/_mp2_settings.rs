@@ -2,29 +2,29 @@
 
 /// Mp2 Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Mp2Settings {
     /// Average bitrate in bits/second.
     #[doc(hidden)]
-    pub bitrate: std::option::Option<f64>,
+    pub bitrate: ::std::option::Option<f64>,
     /// The MPEG2 Audio coding mode. Valid values are codingMode10 (for mono) or codingMode20 (for stereo).
     #[doc(hidden)]
-    pub coding_mode: std::option::Option<crate::types::Mp2CodingMode>,
+    pub coding_mode: ::std::option::Option<crate::types::Mp2CodingMode>,
     /// Sample rate in Hz.
     #[doc(hidden)]
-    pub sample_rate: std::option::Option<f64>,
+    pub sample_rate: ::std::option::Option<f64>,
 }
 impl Mp2Settings {
     /// Average bitrate in bits/second.
-    pub fn bitrate(&self) -> std::option::Option<f64> {
+    pub fn bitrate(&self) -> ::std::option::Option<f64> {
         self.bitrate
     }
     /// The MPEG2 Audio coding mode. Valid values are codingMode10 (for mono) or codingMode20 (for stereo).
-    pub fn coding_mode(&self) -> std::option::Option<&crate::types::Mp2CodingMode> {
+    pub fn coding_mode(&self) -> ::std::option::Option<&crate::types::Mp2CodingMode> {
         self.coding_mode.as_ref()
     }
     /// Sample rate in Hz.
-    pub fn sample_rate(&self) -> std::option::Option<f64> {
+    pub fn sample_rate(&self) -> ::std::option::Option<f64> {
         self.sample_rate
     }
 }
@@ -37,43 +37,45 @@ impl Mp2Settings {
 
 /// A builder for [`Mp2Settings`](crate::types::Mp2Settings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct Mp2SettingsBuilder {
-    pub(crate) bitrate: std::option::Option<f64>,
-    pub(crate) coding_mode: std::option::Option<crate::types::Mp2CodingMode>,
-    pub(crate) sample_rate: std::option::Option<f64>,
+    pub(crate) bitrate: ::std::option::Option<f64>,
+    pub(crate) coding_mode: ::std::option::Option<crate::types::Mp2CodingMode>,
+    pub(crate) sample_rate: ::std::option::Option<f64>,
 }
 impl Mp2SettingsBuilder {
     /// Average bitrate in bits/second.
     pub fn bitrate(mut self, input: f64) -> Self {
-        self.bitrate = Some(input);
+        self.bitrate = ::std::option::Option::Some(input);
         self
     }
     /// Average bitrate in bits/second.
-    pub fn set_bitrate(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_bitrate(mut self, input: ::std::option::Option<f64>) -> Self {
         self.bitrate = input;
         self
     }
     /// The MPEG2 Audio coding mode. Valid values are codingMode10 (for mono) or codingMode20 (for stereo).
     pub fn coding_mode(mut self, input: crate::types::Mp2CodingMode) -> Self {
-        self.coding_mode = Some(input);
+        self.coding_mode = ::std::option::Option::Some(input);
         self
     }
     /// The MPEG2 Audio coding mode. Valid values are codingMode10 (for mono) or codingMode20 (for stereo).
     pub fn set_coding_mode(
         mut self,
-        input: std::option::Option<crate::types::Mp2CodingMode>,
+        input: ::std::option::Option<crate::types::Mp2CodingMode>,
     ) -> Self {
         self.coding_mode = input;
         self
     }
     /// Sample rate in Hz.
     pub fn sample_rate(mut self, input: f64) -> Self {
-        self.sample_rate = Some(input);
+        self.sample_rate = ::std::option::Option::Some(input);
         self
     }
     /// Sample rate in Hz.
-    pub fn set_sample_rate(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_sample_rate(mut self, input: ::std::option::Option<f64>) -> Self {
         self.sample_rate = input;
         self
     }

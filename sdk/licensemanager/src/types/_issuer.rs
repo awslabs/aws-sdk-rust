@@ -2,22 +2,22 @@
 
 /// <p>Details about the issuer of a license.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Issuer {
     /// <p>Issuer name.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>Asymmetric KMS key from Key Management Service. The KMS key must have a key usage of sign and verify, and support the RSASSA-PSS SHA-256 signing algorithm.</p>
     #[doc(hidden)]
-    pub sign_key: std::option::Option<std::string::String>,
+    pub sign_key: ::std::option::Option<::std::string::String>,
 }
 impl Issuer {
     /// <p>Issuer name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>Asymmetric KMS key from Key Management Service. The KMS key must have a key usage of sign and verify, and support the RSASSA-PSS SHA-256 signing algorithm.</p>
-    pub fn sign_key(&self) -> std::option::Option<&str> {
+    pub fn sign_key(&self) -> ::std::option::Option<&str> {
         self.sign_key.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl Issuer {
 
 /// A builder for [`Issuer`](crate::types::Issuer).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct IssuerBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) sign_key: std::option::Option<std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) sign_key: ::std::option::Option<::std::string::String>,
 }
 impl IssuerBuilder {
     /// <p>Issuer name.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Issuer name.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>Asymmetric KMS key from Key Management Service. The KMS key must have a key usage of sign and verify, and support the RSASSA-PSS SHA-256 signing algorithm.</p>
-    pub fn sign_key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.sign_key = Some(input.into());
+    pub fn sign_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.sign_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Asymmetric KMS key from Key Management Service. The KMS key must have a key usage of sign and verify, and support the RSASSA-PSS SHA-256 signing algorithm.</p>
-    pub fn set_sign_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_sign_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sign_key = input;
         self
     }

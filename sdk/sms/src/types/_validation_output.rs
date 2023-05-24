@@ -2,59 +2,61 @@
 
 /// <p>Contains validation output.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ValidationOutput {
     /// <p>The ID of the validation.</p>
     #[doc(hidden)]
-    pub validation_id: std::option::Option<std::string::String>,
+    pub validation_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the validation.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the validation.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::ValidationStatus>,
+    pub status: ::std::option::Option<crate::types::ValidationStatus>,
     /// <p>The status message.</p>
     #[doc(hidden)]
-    pub status_message: std::option::Option<std::string::String>,
+    pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The latest time that the validation was performed.</p>
     #[doc(hidden)]
-    pub latest_validation_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub latest_validation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The output from validating an application.</p>
     #[doc(hidden)]
-    pub app_validation_output: std::option::Option<crate::types::AppValidationOutput>,
+    pub app_validation_output: ::std::option::Option<crate::types::AppValidationOutput>,
     /// <p>The output from validation an instance.</p>
     #[doc(hidden)]
-    pub server_validation_output: std::option::Option<crate::types::ServerValidationOutput>,
+    pub server_validation_output: ::std::option::Option<crate::types::ServerValidationOutput>,
 }
 impl ValidationOutput {
     /// <p>The ID of the validation.</p>
-    pub fn validation_id(&self) -> std::option::Option<&str> {
+    pub fn validation_id(&self) -> ::std::option::Option<&str> {
         self.validation_id.as_deref()
     }
     /// <p>The name of the validation.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The status of the validation.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::ValidationStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::ValidationStatus> {
         self.status.as_ref()
     }
     /// <p>The status message.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<&str> {
         self.status_message.as_deref()
     }
     /// <p>The latest time that the validation was performed.</p>
-    pub fn latest_validation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn latest_validation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.latest_validation_time.as_ref()
     }
     /// <p>The output from validating an application.</p>
-    pub fn app_validation_output(&self) -> std::option::Option<&crate::types::AppValidationOutput> {
+    pub fn app_validation_output(
+        &self,
+    ) -> ::std::option::Option<&crate::types::AppValidationOutput> {
         self.app_validation_output.as_ref()
     }
     /// <p>The output from validation an instance.</p>
     pub fn server_validation_output(
         &self,
-    ) -> std::option::Option<&crate::types::ServerValidationOutput> {
+    ) -> ::std::option::Option<&crate::types::ServerValidationOutput> {
         self.server_validation_output.as_ref()
     }
 }
@@ -67,95 +69,110 @@ impl ValidationOutput {
 
 /// A builder for [`ValidationOutput`](crate::types::ValidationOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ValidationOutputBuilder {
-    pub(crate) validation_id: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::ValidationStatus>,
-    pub(crate) status_message: std::option::Option<std::string::String>,
-    pub(crate) latest_validation_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) app_validation_output: std::option::Option<crate::types::AppValidationOutput>,
-    pub(crate) server_validation_output: std::option::Option<crate::types::ServerValidationOutput>,
+    pub(crate) validation_id: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::ValidationStatus>,
+    pub(crate) status_message: ::std::option::Option<::std::string::String>,
+    pub(crate) latest_validation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) app_validation_output: ::std::option::Option<crate::types::AppValidationOutput>,
+    pub(crate) server_validation_output:
+        ::std::option::Option<crate::types::ServerValidationOutput>,
 }
 impl ValidationOutputBuilder {
     /// <p>The ID of the validation.</p>
-    pub fn validation_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.validation_id = Some(input.into());
+    pub fn validation_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.validation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the validation.</p>
-    pub fn set_validation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_validation_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.validation_id = input;
         self
     }
     /// <p>The name of the validation.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the validation.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The status of the validation.</p>
     pub fn status(mut self, input: crate::types::ValidationStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the validation.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::ValidationStatus>,
+        input: ::std::option::Option<crate::types::ValidationStatus>,
     ) -> Self {
         self.status = input;
         self
     }
     /// <p>The status message.</p>
-    pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status_message = Some(input.into());
+    pub fn status_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status message.</p>
-    pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.status_message = input;
         self
     }
     /// <p>The latest time that the validation was performed.</p>
-    pub fn latest_validation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.latest_validation_time = Some(input);
+    pub fn latest_validation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.latest_validation_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The latest time that the validation was performed.</p>
     pub fn set_latest_validation_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.latest_validation_time = input;
         self
     }
     /// <p>The output from validating an application.</p>
     pub fn app_validation_output(mut self, input: crate::types::AppValidationOutput) -> Self {
-        self.app_validation_output = Some(input);
+        self.app_validation_output = ::std::option::Option::Some(input);
         self
     }
     /// <p>The output from validating an application.</p>
     pub fn set_app_validation_output(
         mut self,
-        input: std::option::Option<crate::types::AppValidationOutput>,
+        input: ::std::option::Option<crate::types::AppValidationOutput>,
     ) -> Self {
         self.app_validation_output = input;
         self
     }
     /// <p>The output from validation an instance.</p>
     pub fn server_validation_output(mut self, input: crate::types::ServerValidationOutput) -> Self {
-        self.server_validation_output = Some(input);
+        self.server_validation_output = ::std::option::Option::Some(input);
         self
     }
     /// <p>The output from validation an instance.</p>
     pub fn set_server_validation_output(
         mut self,
-        input: std::option::Option<crate::types::ServerValidationOutput>,
+        input: ::std::option::Option<crate::types::ServerValidationOutput>,
     ) -> Self {
         self.server_validation_output = input;
         self

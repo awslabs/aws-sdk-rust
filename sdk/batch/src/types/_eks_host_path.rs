@@ -2,15 +2,15 @@
 
 /// <p>Specifies the configuration of a Kubernetes <code>hostPath</code> volume. A <code>hostPath</code> volume mounts an existing file or directory from the host node's filesystem into your pod. For more information, see <a href="https://kubernetes.io/docs/concepts/storage/volumes/#hostpath">hostPath</a> in the <i>Kubernetes documentation</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EksHostPath {
     /// <p>The path of the file or directory on the host to mount into containers on the pod.</p>
     #[doc(hidden)]
-    pub path: std::option::Option<std::string::String>,
+    pub path: ::std::option::Option<::std::string::String>,
 }
 impl EksHostPath {
     /// <p>The path of the file or directory on the host to mount into containers on the pod.</p>
-    pub fn path(&self) -> std::option::Option<&str> {
+    pub fn path(&self) -> ::std::option::Option<&str> {
         self.path.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl EksHostPath {
 
 /// A builder for [`EksHostPath`](crate::types::EksHostPath).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EksHostPathBuilder {
-    pub(crate) path: std::option::Option<std::string::String>,
+    pub(crate) path: ::std::option::Option<::std::string::String>,
 }
 impl EksHostPathBuilder {
     /// <p>The path of the file or directory on the host to mount into containers on the pod.</p>
-    pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
-        self.path = Some(input.into());
+    pub fn path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The path of the file or directory on the host to mount into containers on the pod.</p>
-    pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.path = input;
         self
     }

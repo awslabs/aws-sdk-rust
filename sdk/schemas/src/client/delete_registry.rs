@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteRegistry`](crate::operation::delete_registry::builders::DeleteRegistryFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`registry_name(impl Into<String>)`](crate::operation::delete_registry::builders::DeleteRegistryFluentBuilder::registry_name) / [`set_registry_name(Option<String>)`](crate::operation::delete_registry::builders::DeleteRegistryFluentBuilder::set_registry_name): <p>The name of the registry.</p>
+    ///   - [`registry_name(impl ::std::convert::Into<String>)`](crate::operation::delete_registry::builders::DeleteRegistryFluentBuilder::registry_name) / [`set_registry_name(Option<String>)`](crate::operation::delete_registry::builders::DeleteRegistryFluentBuilder::set_registry_name): <p>The name of the registry.</p>
     /// - On success, responds with [`DeleteRegistryOutput`](crate::operation::delete_registry::DeleteRegistryOutput)
     /// - On failure, responds with [`SdkError<DeleteRegistryError>`](crate::operation::delete_registry::DeleteRegistryError)
     pub fn delete_registry(

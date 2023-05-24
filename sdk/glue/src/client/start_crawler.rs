@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StartCrawler`](crate::operation::start_crawler::builders::StartCrawlerFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::start_crawler::builders::StartCrawlerFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::start_crawler::builders::StartCrawlerFluentBuilder::set_name): <p>Name of the crawler to start.</p>
+    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::start_crawler::builders::StartCrawlerFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::start_crawler::builders::StartCrawlerFluentBuilder::set_name): <p>Name of the crawler to start.</p>
     /// - On success, responds with [`StartCrawlerOutput`](crate::operation::start_crawler::StartCrawlerOutput)
     /// - On failure, responds with [`SdkError<StartCrawlerError>`](crate::operation::start_crawler::StartCrawlerError)
     pub fn start_crawler(

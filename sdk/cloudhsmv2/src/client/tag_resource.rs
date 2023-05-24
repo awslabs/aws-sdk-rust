@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`TagResource`](crate::operation::tag_resource::builders::TagResourceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_id(impl Into<String>)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::resource_id) / [`set_resource_id(Option<String>)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::set_resource_id): <p>The cluster identifier (ID) for the cluster that you are tagging. To find the cluster ID, use <code>DescribeClusters</code>.</p>
+    ///   - [`resource_id(impl ::std::convert::Into<String>)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::resource_id) / [`set_resource_id(Option<String>)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::set_resource_id): <p>The cluster identifier (ID) for the cluster that you are tagging. To find the cluster ID, use <code>DescribeClusters</code>.</p>
     ///   - [`tag_list(Vec<Tag>)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::tag_list) / [`set_tag_list(Option<Vec<Tag>>)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::set_tag_list): <p>A list of one or more tags.</p>
     /// - On success, responds with [`TagResourceOutput`](crate::operation::tag_resource::TagResourceOutput)
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::operation::tag_resource::TagResourceError)

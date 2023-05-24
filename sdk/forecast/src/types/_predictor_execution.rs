@@ -2,22 +2,22 @@
 
 /// <p>The algorithm used to perform a backtest and the status of those tests.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PredictorExecution {
     /// <p>The ARN of the algorithm used to test the predictor.</p>
     #[doc(hidden)]
-    pub algorithm_arn: std::option::Option<std::string::String>,
+    pub algorithm_arn: ::std::option::Option<::std::string::String>,
     /// <p>An array of test windows used to evaluate the algorithm. The <code>NumberOfBacktestWindows</code> from the object determines the number of windows in the array.</p>
     #[doc(hidden)]
-    pub test_windows: std::option::Option<std::vec::Vec<crate::types::TestWindowSummary>>,
+    pub test_windows: ::std::option::Option<::std::vec::Vec<crate::types::TestWindowSummary>>,
 }
 impl PredictorExecution {
     /// <p>The ARN of the algorithm used to test the predictor.</p>
-    pub fn algorithm_arn(&self) -> std::option::Option<&str> {
+    pub fn algorithm_arn(&self) -> ::std::option::Option<&str> {
         self.algorithm_arn.as_deref()
     }
     /// <p>An array of test windows used to evaluate the algorithm. The <code>NumberOfBacktestWindows</code> from the object determines the number of windows in the array.</p>
-    pub fn test_windows(&self) -> std::option::Option<&[crate::types::TestWindowSummary]> {
+    pub fn test_windows(&self) -> ::std::option::Option<&[crate::types::TestWindowSummary]> {
         self.test_windows.as_deref()
     }
 }
@@ -30,19 +30,28 @@ impl PredictorExecution {
 
 /// A builder for [`PredictorExecution`](crate::types::PredictorExecution).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PredictorExecutionBuilder {
-    pub(crate) algorithm_arn: std::option::Option<std::string::String>,
-    pub(crate) test_windows: std::option::Option<std::vec::Vec<crate::types::TestWindowSummary>>,
+    pub(crate) algorithm_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) test_windows:
+        ::std::option::Option<::std::vec::Vec<crate::types::TestWindowSummary>>,
 }
 impl PredictorExecutionBuilder {
     /// <p>The ARN of the algorithm used to test the predictor.</p>
-    pub fn algorithm_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.algorithm_arn = Some(input.into());
+    pub fn algorithm_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.algorithm_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the algorithm used to test the predictor.</p>
-    pub fn set_algorithm_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_algorithm_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.algorithm_arn = input;
         self
     }
@@ -54,13 +63,13 @@ impl PredictorExecutionBuilder {
     pub fn test_windows(mut self, input: crate::types::TestWindowSummary) -> Self {
         let mut v = self.test_windows.unwrap_or_default();
         v.push(input);
-        self.test_windows = Some(v);
+        self.test_windows = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of test windows used to evaluate the algorithm. The <code>NumberOfBacktestWindows</code> from the object determines the number of windows in the array.</p>
     pub fn set_test_windows(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TestWindowSummary>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::TestWindowSummary>>,
     ) -> Self {
         self.test_windows = input;
         self

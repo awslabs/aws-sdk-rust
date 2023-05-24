@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetAccount`](crate::operation::get_account::builders::GetAccountFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::operation::get_account::builders::GetAccountFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::get_account::builders::GetAccountFluentBuilder::set_account_id): <p>The Amazon Chime account ID.</p>
+    ///   - [`account_id(impl ::std::convert::Into<String>)`](crate::operation::get_account::builders::GetAccountFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::get_account::builders::GetAccountFluentBuilder::set_account_id): <p>The Amazon Chime account ID.</p>
     /// - On success, responds with [`GetAccountOutput`](crate::operation::get_account::GetAccountOutput) with field(s):
     ///   - [`account(Option<Account>)`](crate::operation::get_account::GetAccountOutput::account): <p>The Amazon Chime account details.</p>
     /// - On failure, responds with [`SdkError<GetAccountError>`](crate::operation::get_account::GetAccountError)

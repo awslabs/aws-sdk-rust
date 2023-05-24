@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteWave`](crate::operation::delete_wave::builders::DeleteWaveFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`wave_id(impl Into<String>)`](crate::operation::delete_wave::builders::DeleteWaveFluentBuilder::wave_id) / [`set_wave_id(Option<String>)`](crate::operation::delete_wave::builders::DeleteWaveFluentBuilder::set_wave_id): <p>Wave ID.</p>
+    ///   - [`wave_id(impl ::std::convert::Into<String>)`](crate::operation::delete_wave::builders::DeleteWaveFluentBuilder::wave_id) / [`set_wave_id(Option<String>)`](crate::operation::delete_wave::builders::DeleteWaveFluentBuilder::set_wave_id): <p>Wave ID.</p>
     /// - On success, responds with [`DeleteWaveOutput`](crate::operation::delete_wave::DeleteWaveOutput)
     /// - On failure, responds with [`SdkError<DeleteWaveError>`](crate::operation::delete_wave::DeleteWaveError)
     pub fn delete_wave(&self) -> crate::operation::delete_wave::builders::DeleteWaveFluentBuilder {

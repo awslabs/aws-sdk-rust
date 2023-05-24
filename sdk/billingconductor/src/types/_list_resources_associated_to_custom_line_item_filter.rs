@@ -2,15 +2,15 @@
 
 /// <p> A filter that specifies the type of resource associations that should be retrieved for a custom line item. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListResourcesAssociatedToCustomLineItemFilter {
     /// <p> The type of relationship between the custom line item and the associated resource. </p>
     #[doc(hidden)]
-    pub relationship: std::option::Option<crate::types::CustomLineItemRelationship>,
+    pub relationship: ::std::option::Option<crate::types::CustomLineItemRelationship>,
 }
 impl ListResourcesAssociatedToCustomLineItemFilter {
     /// <p> The type of relationship between the custom line item and the associated resource. </p>
-    pub fn relationship(&self) -> std::option::Option<&crate::types::CustomLineItemRelationship> {
+    pub fn relationship(&self) -> ::std::option::Option<&crate::types::CustomLineItemRelationship> {
         self.relationship.as_ref()
     }
 }
@@ -24,20 +24,22 @@ impl ListResourcesAssociatedToCustomLineItemFilter {
 
 /// A builder for [`ListResourcesAssociatedToCustomLineItemFilter`](crate::types::ListResourcesAssociatedToCustomLineItemFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListResourcesAssociatedToCustomLineItemFilterBuilder {
-    pub(crate) relationship: std::option::Option<crate::types::CustomLineItemRelationship>,
+    pub(crate) relationship: ::std::option::Option<crate::types::CustomLineItemRelationship>,
 }
 impl ListResourcesAssociatedToCustomLineItemFilterBuilder {
     /// <p> The type of relationship between the custom line item and the associated resource. </p>
     pub fn relationship(mut self, input: crate::types::CustomLineItemRelationship) -> Self {
-        self.relationship = Some(input);
+        self.relationship = ::std::option::Option::Some(input);
         self
     }
     /// <p> The type of relationship between the custom line item and the associated resource. </p>
     pub fn set_relationship(
         mut self,
-        input: std::option::Option<crate::types::CustomLineItemRelationship>,
+        input: ::std::option::Option<crate::types::CustomLineItemRelationship>,
     ) -> Self {
         self.relationship = input;
         self

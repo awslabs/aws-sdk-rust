@@ -2,20 +2,20 @@
 
 /// <p>The result of a <code>DescribeIndexFields</code> request. Contains the index fields configured for the domain specified in the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeIndexFieldsOutput {
     /// <p>The index fields configured for the domain.</p>
     #[doc(hidden)]
-    pub index_fields: std::option::Option<std::vec::Vec<crate::types::IndexFieldStatus>>,
+    pub index_fields: ::std::option::Option<::std::vec::Vec<crate::types::IndexFieldStatus>>,
     _request_id: Option<String>,
 }
 impl DescribeIndexFieldsOutput {
     /// <p>The index fields configured for the domain.</p>
-    pub fn index_fields(&self) -> std::option::Option<&[crate::types::IndexFieldStatus]> {
+    pub fn index_fields(&self) -> ::std::option::Option<&[crate::types::IndexFieldStatus]> {
         self.index_fields.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeIndexFieldsOutput {
+impl ::aws_http::request_id::RequestId for DescribeIndexFieldsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -31,9 +31,11 @@ impl DescribeIndexFieldsOutput {
 
 /// A builder for [`DescribeIndexFieldsOutput`](crate::operation::describe_index_fields::DescribeIndexFieldsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeIndexFieldsOutputBuilder {
-    pub(crate) index_fields: std::option::Option<std::vec::Vec<crate::types::IndexFieldStatus>>,
+    pub(crate) index_fields: ::std::option::Option<::std::vec::Vec<crate::types::IndexFieldStatus>>,
     _request_id: Option<String>,
 }
 impl DescribeIndexFieldsOutputBuilder {
@@ -45,13 +47,13 @@ impl DescribeIndexFieldsOutputBuilder {
     pub fn index_fields(mut self, input: crate::types::IndexFieldStatus) -> Self {
         let mut v = self.index_fields.unwrap_or_default();
         v.push(input);
-        self.index_fields = Some(v);
+        self.index_fields = ::std::option::Option::Some(v);
         self
     }
     /// <p>The index fields configured for the domain.</p>
     pub fn set_index_fields(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::IndexFieldStatus>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::IndexFieldStatus>>,
     ) -> Self {
         self.index_fields = input;
         self

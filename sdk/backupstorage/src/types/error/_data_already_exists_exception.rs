@@ -2,55 +2,55 @@
 
 /// Non-retryable exception. Attempted to create already existing object or chunk. This message contains a checksum of already presented data.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataAlreadyExistsException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
     /// Data checksum used
     #[doc(hidden)]
-    pub checksum: std::option::Option<std::string::String>,
+    pub checksum: ::std::option::Option<::std::string::String>,
     /// Checksum algorithm used
     #[doc(hidden)]
-    pub checksum_algorithm: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
+    pub checksum_algorithm: ::std::option::Option<::std::string::String>,
+    pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl DataAlreadyExistsException {
     /// Data checksum used
-    pub fn checksum(&self) -> std::option::Option<&str> {
+    pub fn checksum(&self) -> ::std::option::Option<&str> {
         self.checksum.as_deref()
     }
     /// Checksum algorithm used
-    pub fn checksum_algorithm(&self) -> std::option::Option<&str> {
+    pub fn checksum_algorithm(&self) -> ::std::option::Option<&str> {
         self.checksum_algorithm.as_deref()
     }
 }
 impl DataAlreadyExistsException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for DataAlreadyExistsException {
+impl ::std::fmt::Display for DataAlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "DataAlreadyExistsException")?;
-        if let Some(inner_1) = &self.message {
+        ::std::write!(f, "DataAlreadyExistsException")?;
+        if let ::std::option::Option::Some(inner_1) = &self.message {
             {
-                write!(f, ": {}", inner_1)?;
+                ::std::write!(f, ": {}", inner_1)?;
             }
         }
         Ok(())
     }
 }
-impl std::error::Error for DataAlreadyExistsException {}
-impl aws_http::request_id::RequestId for crate::types::error::DataAlreadyExistsException {
+impl ::std::error::Error for DataAlreadyExistsException {}
+impl ::aws_http::request_id::RequestId for crate::types::error::DataAlreadyExistsException {
     fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for DataAlreadyExistsException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DataAlreadyExistsException {
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
@@ -63,49 +63,54 @@ impl DataAlreadyExistsException {
 
 /// A builder for [`DataAlreadyExistsException`](crate::types::error::DataAlreadyExistsException).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DataAlreadyExistsExceptionBuilder {
-    pub(crate) message: std::option::Option<std::string::String>,
-    pub(crate) checksum: std::option::Option<std::string::String>,
-    pub(crate) checksum_algorithm: std::option::Option<std::string::String>,
-    meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
+    pub(crate) checksum: ::std::option::Option<::std::string::String>,
+    pub(crate) checksum_algorithm: ::std::option::Option<::std::string::String>,
+    meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl DataAlreadyExistsExceptionBuilder {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
     /// Data checksum used
-    pub fn checksum(mut self, input: impl Into<std::string::String>) -> Self {
-        self.checksum = Some(input.into());
+    pub fn checksum(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.checksum = ::std::option::Option::Some(input.into());
         self
     }
     /// Data checksum used
-    pub fn set_checksum(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_checksum(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.checksum = input;
         self
     }
     /// Checksum algorithm used
-    pub fn checksum_algorithm(mut self, input: impl Into<std::string::String>) -> Self {
-        self.checksum_algorithm = Some(input.into());
+    pub fn checksum_algorithm(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.checksum_algorithm = ::std::option::Option::Some(input.into());
         self
     }
     /// Checksum algorithm used
     pub fn set_checksum_algorithm(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.checksum_algorithm = input;
         self
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
         self.meta = Some(meta);
         self
     }
@@ -113,7 +118,7 @@ impl DataAlreadyExistsExceptionBuilder {
     /// Sets error metadata
     pub fn set_meta(
         &mut self,
-        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
     ) -> &mut Self {
         self.meta = meta;
         self

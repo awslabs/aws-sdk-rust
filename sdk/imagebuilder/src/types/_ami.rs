@@ -2,50 +2,50 @@
 
 /// <p>Details of an Amazon EC2 AMI.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Ami {
     /// <p>The Amazon Web Services Region of the Amazon EC2 AMI.</p>
     #[doc(hidden)]
-    pub region: std::option::Option<std::string::String>,
+    pub region: ::std::option::Option<::std::string::String>,
     /// <p>The AMI ID of the Amazon EC2 AMI.</p>
     #[doc(hidden)]
-    pub image: std::option::Option<std::string::String>,
+    pub image: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon EC2 AMI.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the Amazon EC2 AMI. Minimum and maximum length are in characters.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>Image status and the reason for that status.</p>
     #[doc(hidden)]
-    pub state: std::option::Option<crate::types::ImageState>,
+    pub state: ::std::option::Option<crate::types::ImageState>,
     /// <p>The account ID of the owner of the AMI.</p>
     #[doc(hidden)]
-    pub account_id: std::option::Option<std::string::String>,
+    pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl Ami {
     /// <p>The Amazon Web Services Region of the Amazon EC2 AMI.</p>
-    pub fn region(&self) -> std::option::Option<&str> {
+    pub fn region(&self) -> ::std::option::Option<&str> {
         self.region.as_deref()
     }
     /// <p>The AMI ID of the Amazon EC2 AMI.</p>
-    pub fn image(&self) -> std::option::Option<&str> {
+    pub fn image(&self) -> ::std::option::Option<&str> {
         self.image.as_deref()
     }
     /// <p>The name of the Amazon EC2 AMI.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The description of the Amazon EC2 AMI. Minimum and maximum length are in characters.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>Image status and the reason for that status.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::ImageState> {
+    pub fn state(&self) -> ::std::option::Option<&crate::types::ImageState> {
         self.state.as_ref()
     }
     /// <p>The account ID of the owner of the AMI.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
 }
@@ -58,73 +58,75 @@ impl Ami {
 
 /// A builder for [`Ami`](crate::types::Ami).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AmiBuilder {
-    pub(crate) region: std::option::Option<std::string::String>,
-    pub(crate) image: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) state: std::option::Option<crate::types::ImageState>,
-    pub(crate) account_id: std::option::Option<std::string::String>,
+    pub(crate) region: ::std::option::Option<::std::string::String>,
+    pub(crate) image: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) state: ::std::option::Option<crate::types::ImageState>,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }
 impl AmiBuilder {
     /// <p>The Amazon Web Services Region of the Amazon EC2 AMI.</p>
-    pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
-        self.region = Some(input.into());
+    pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services Region of the Amazon EC2 AMI.</p>
-    pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region = input;
         self
     }
     /// <p>The AMI ID of the Amazon EC2 AMI.</p>
-    pub fn image(mut self, input: impl Into<std::string::String>) -> Self {
-        self.image = Some(input.into());
+    pub fn image(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.image = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The AMI ID of the Amazon EC2 AMI.</p>
-    pub fn set_image(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_image(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image = input;
         self
     }
     /// <p>The name of the Amazon EC2 AMI.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Amazon EC2 AMI.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The description of the Amazon EC2 AMI. Minimum and maximum length are in characters.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the Amazon EC2 AMI. Minimum and maximum length are in characters.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>Image status and the reason for that status.</p>
     pub fn state(mut self, input: crate::types::ImageState) -> Self {
-        self.state = Some(input);
+        self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>Image status and the reason for that status.</p>
-    pub fn set_state(mut self, input: std::option::Option<crate::types::ImageState>) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::ImageState>) -> Self {
         self.state = input;
         self
     }
     /// <p>The account ID of the owner of the AMI.</p>
-    pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.account_id = Some(input.into());
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The account ID of the owner of the AMI.</p>
-    pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
     }

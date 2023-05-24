@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetEventSourceMapping`](crate::operation::get_event_source_mapping::builders::GetEventSourceMappingFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`uuid(impl Into<String>)`](crate::operation::get_event_source_mapping::builders::GetEventSourceMappingFluentBuilder::uuid) / [`set_uuid(Option<String>)`](crate::operation::get_event_source_mapping::builders::GetEventSourceMappingFluentBuilder::set_uuid): <p>The identifier of the event source mapping.</p>
+    ///   - [`uuid(impl ::std::convert::Into<String>)`](crate::operation::get_event_source_mapping::builders::GetEventSourceMappingFluentBuilder::uuid) / [`set_uuid(Option<String>)`](crate::operation::get_event_source_mapping::builders::GetEventSourceMappingFluentBuilder::set_uuid): <p>The identifier of the event source mapping.</p>
     /// - On success, responds with [`GetEventSourceMappingOutput`](crate::operation::get_event_source_mapping::GetEventSourceMappingOutput) with field(s):
     ///   - [`uuid(Option<String>)`](crate::operation::get_event_source_mapping::GetEventSourceMappingOutput::uuid): <p>The identifier of the event source mapping.</p>
     ///   - [`starting_position(Option<EventSourcePosition>)`](crate::operation::get_event_source_mapping::GetEventSourceMappingOutput::starting_position): <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK stream sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams and Amazon DocumentDB.</p>

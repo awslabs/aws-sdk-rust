@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DisassociateMember`](crate::operation::disassociate_member::builders::DisassociateMemberFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::disassociate_member::builders::DisassociateMemberFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::disassociate_member::builders::DisassociateMemberFluentBuilder::set_id): <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
+    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::disassociate_member::builders::DisassociateMemberFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::disassociate_member::builders::DisassociateMemberFluentBuilder::set_id): <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
     /// - On success, responds with [`DisassociateMemberOutput`](crate::operation::disassociate_member::DisassociateMemberOutput)
     /// - On failure, responds with [`SdkError<DisassociateMemberError>`](crate::operation::disassociate_member::DisassociateMemberError)
     pub fn disassociate_member(

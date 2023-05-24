@@ -2,41 +2,41 @@
 
 /// <p>Describes an instance's Amazon EBS volume.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Volume {
     /// <p>The volume ID.</p>
     #[doc(hidden)]
-    pub volume_id: std::option::Option<std::string::String>,
+    pub volume_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon EC2 volume ID.</p>
     #[doc(hidden)]
-    pub ec2_volume_id: std::option::Option<std::string::String>,
+    pub ec2_volume_id: ::std::option::Option<::std::string::String>,
     /// <p>The volume name.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The RAID array ID.</p>
     #[doc(hidden)]
-    pub raid_array_id: std::option::Option<std::string::String>,
+    pub raid_array_id: ::std::option::Option<::std::string::String>,
     /// <p>The instance ID.</p>
     #[doc(hidden)]
-    pub instance_id: std::option::Option<std::string::String>,
+    pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The value returned by <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeVolumes.html">DescribeVolumes</a>.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<std::string::String>,
+    pub status: ::std::option::Option<::std::string::String>,
     /// <p>The volume size.</p>
     #[doc(hidden)]
-    pub size: std::option::Option<i32>,
+    pub size: ::std::option::Option<i32>,
     /// <p>The device name.</p>
     #[doc(hidden)]
-    pub device: std::option::Option<std::string::String>,
+    pub device: ::std::option::Option<::std::string::String>,
     /// <p>The volume mount point. For example, "/mnt/disk1".</p>
     #[doc(hidden)]
-    pub mount_point: std::option::Option<std::string::String>,
+    pub mount_point: ::std::option::Option<::std::string::String>,
     /// <p>The AWS region. For more information about AWS regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
     #[doc(hidden)]
-    pub region: std::option::Option<std::string::String>,
+    pub region: ::std::option::Option<::std::string::String>,
     /// <p>The volume Availability Zone. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
     #[doc(hidden)]
-    pub availability_zone: std::option::Option<std::string::String>,
+    pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"> Amazon EBS Volume Types</a>.</p>
     /// <ul>
     /// <li> <p> <code>standard</code> - Magnetic. Magnetic volumes must have a minimum size of 1 GiB and a maximum size of 1024 GiB.</p> </li>
@@ -46,57 +46,57 @@ pub struct Volume {
     /// <li> <p> <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub volume_type: std::option::Option<std::string::String>,
+    pub volume_type: ::std::option::Option<::std::string::String>,
     /// <p>For PIOPS volumes, the IOPS per disk.</p>
     #[doc(hidden)]
-    pub iops: std::option::Option<i32>,
+    pub iops: ::std::option::Option<i32>,
     /// <p>Specifies whether an Amazon EBS volume is encrypted. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.</p>
     #[doc(hidden)]
-    pub encrypted: std::option::Option<bool>,
+    pub encrypted: ::std::option::Option<bool>,
 }
 impl Volume {
     /// <p>The volume ID.</p>
-    pub fn volume_id(&self) -> std::option::Option<&str> {
+    pub fn volume_id(&self) -> ::std::option::Option<&str> {
         self.volume_id.as_deref()
     }
     /// <p>The Amazon EC2 volume ID.</p>
-    pub fn ec2_volume_id(&self) -> std::option::Option<&str> {
+    pub fn ec2_volume_id(&self) -> ::std::option::Option<&str> {
         self.ec2_volume_id.as_deref()
     }
     /// <p>The volume name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The RAID array ID.</p>
-    pub fn raid_array_id(&self) -> std::option::Option<&str> {
+    pub fn raid_array_id(&self) -> ::std::option::Option<&str> {
         self.raid_array_id.as_deref()
     }
     /// <p>The instance ID.</p>
-    pub fn instance_id(&self) -> std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<&str> {
         self.instance_id.as_deref()
     }
     /// <p>The value returned by <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeVolumes.html">DescribeVolumes</a>.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
     /// <p>The volume size.</p>
-    pub fn size(&self) -> std::option::Option<i32> {
+    pub fn size(&self) -> ::std::option::Option<i32> {
         self.size
     }
     /// <p>The device name.</p>
-    pub fn device(&self) -> std::option::Option<&str> {
+    pub fn device(&self) -> ::std::option::Option<&str> {
         self.device.as_deref()
     }
     /// <p>The volume mount point. For example, "/mnt/disk1".</p>
-    pub fn mount_point(&self) -> std::option::Option<&str> {
+    pub fn mount_point(&self) -> ::std::option::Option<&str> {
         self.mount_point.as_deref()
     }
     /// <p>The AWS region. For more information about AWS regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
-    pub fn region(&self) -> std::option::Option<&str> {
+    pub fn region(&self) -> ::std::option::Option<&str> {
         self.region.as_deref()
     }
     /// <p>The volume Availability Zone. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
-    pub fn availability_zone(&self) -> std::option::Option<&str> {
+    pub fn availability_zone(&self) -> ::std::option::Option<&str> {
         self.availability_zone.as_deref()
     }
     /// <p>The volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"> Amazon EBS Volume Types</a>.</p>
@@ -107,15 +107,15 @@ impl Volume {
     /// <li> <p> <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li>
     /// <li> <p> <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li>
     /// </ul>
-    pub fn volume_type(&self) -> std::option::Option<&str> {
+    pub fn volume_type(&self) -> ::std::option::Option<&str> {
         self.volume_type.as_deref()
     }
     /// <p>For PIOPS volumes, the IOPS per disk.</p>
-    pub fn iops(&self) -> std::option::Option<i32> {
+    pub fn iops(&self) -> ::std::option::Option<i32> {
         self.iops
     }
     /// <p>Specifies whether an Amazon EBS volume is encrypted. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.</p>
-    pub fn encrypted(&self) -> std::option::Option<bool> {
+    pub fn encrypted(&self) -> ::std::option::Option<bool> {
         self.encrypted
     }
 }
@@ -128,133 +128,150 @@ impl Volume {
 
 /// A builder for [`Volume`](crate::types::Volume).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VolumeBuilder {
-    pub(crate) volume_id: std::option::Option<std::string::String>,
-    pub(crate) ec2_volume_id: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) raid_array_id: std::option::Option<std::string::String>,
-    pub(crate) instance_id: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<std::string::String>,
-    pub(crate) size: std::option::Option<i32>,
-    pub(crate) device: std::option::Option<std::string::String>,
-    pub(crate) mount_point: std::option::Option<std::string::String>,
-    pub(crate) region: std::option::Option<std::string::String>,
-    pub(crate) availability_zone: std::option::Option<std::string::String>,
-    pub(crate) volume_type: std::option::Option<std::string::String>,
-    pub(crate) iops: std::option::Option<i32>,
-    pub(crate) encrypted: std::option::Option<bool>,
+    pub(crate) volume_id: ::std::option::Option<::std::string::String>,
+    pub(crate) ec2_volume_id: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) raid_array_id: ::std::option::Option<::std::string::String>,
+    pub(crate) instance_id: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<::std::string::String>,
+    pub(crate) size: ::std::option::Option<i32>,
+    pub(crate) device: ::std::option::Option<::std::string::String>,
+    pub(crate) mount_point: ::std::option::Option<::std::string::String>,
+    pub(crate) region: ::std::option::Option<::std::string::String>,
+    pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
+    pub(crate) volume_type: ::std::option::Option<::std::string::String>,
+    pub(crate) iops: ::std::option::Option<i32>,
+    pub(crate) encrypted: ::std::option::Option<bool>,
 }
 impl VolumeBuilder {
     /// <p>The volume ID.</p>
-    pub fn volume_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.volume_id = Some(input.into());
+    pub fn volume_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.volume_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The volume ID.</p>
-    pub fn set_volume_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_volume_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.volume_id = input;
         self
     }
     /// <p>The Amazon EC2 volume ID.</p>
-    pub fn ec2_volume_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ec2_volume_id = Some(input.into());
+    pub fn ec2_volume_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.ec2_volume_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon EC2 volume ID.</p>
-    pub fn set_ec2_volume_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ec2_volume_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.ec2_volume_id = input;
         self
     }
     /// <p>The volume name.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The volume name.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The RAID array ID.</p>
-    pub fn raid_array_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.raid_array_id = Some(input.into());
+    pub fn raid_array_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.raid_array_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The RAID array ID.</p>
-    pub fn set_raid_array_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_raid_array_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.raid_array_id = input;
         self
     }
     /// <p>The instance ID.</p>
-    pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.instance_id = Some(input.into());
+    pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The instance ID.</p>
-    pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
     }
     /// <p>The value returned by <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeVolumes.html">DescribeVolumes</a>.</p>
-    pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status = Some(input.into());
+    pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value returned by <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeVolumes.html">DescribeVolumes</a>.</p>
-    pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }
     /// <p>The volume size.</p>
     pub fn size(mut self, input: i32) -> Self {
-        self.size = Some(input);
+        self.size = ::std::option::Option::Some(input);
         self
     }
     /// <p>The volume size.</p>
-    pub fn set_size(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.size = input;
         self
     }
     /// <p>The device name.</p>
-    pub fn device(mut self, input: impl Into<std::string::String>) -> Self {
-        self.device = Some(input.into());
+    pub fn device(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.device = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The device name.</p>
-    pub fn set_device(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_device(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device = input;
         self
     }
     /// <p>The volume mount point. For example, "/mnt/disk1".</p>
-    pub fn mount_point(mut self, input: impl Into<std::string::String>) -> Self {
-        self.mount_point = Some(input.into());
+    pub fn mount_point(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.mount_point = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The volume mount point. For example, "/mnt/disk1".</p>
-    pub fn set_mount_point(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_mount_point(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.mount_point = input;
         self
     }
     /// <p>The AWS region. For more information about AWS regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
-    pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
-        self.region = Some(input.into());
+    pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The AWS region. For more information about AWS regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
-    pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region = input;
         self
     }
     /// <p>The volume Availability Zone. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
-    pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
-        self.availability_zone = Some(input.into());
+    pub fn availability_zone(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The volume Availability Zone. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
     pub fn set_availability_zone(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.availability_zone = input;
         self
@@ -267,8 +284,8 @@ impl VolumeBuilder {
     /// <li> <p> <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li>
     /// <li> <p> <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li>
     /// </ul>
-    pub fn volume_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.volume_type = Some(input.into());
+    pub fn volume_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.volume_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"> Amazon EBS Volume Types</a>.</p>
@@ -279,27 +296,27 @@ impl VolumeBuilder {
     /// <li> <p> <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li>
     /// <li> <p> <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li>
     /// </ul>
-    pub fn set_volume_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_volume_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.volume_type = input;
         self
     }
     /// <p>For PIOPS volumes, the IOPS per disk.</p>
     pub fn iops(mut self, input: i32) -> Self {
-        self.iops = Some(input);
+        self.iops = ::std::option::Option::Some(input);
         self
     }
     /// <p>For PIOPS volumes, the IOPS per disk.</p>
-    pub fn set_iops(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_iops(mut self, input: ::std::option::Option<i32>) -> Self {
         self.iops = input;
         self
     }
     /// <p>Specifies whether an Amazon EBS volume is encrypted. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.</p>
     pub fn encrypted(mut self, input: bool) -> Self {
-        self.encrypted = Some(input);
+        self.encrypted = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether an Amazon EBS volume is encrypted. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.</p>
-    pub fn set_encrypted(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_encrypted(mut self, input: ::std::option::Option<bool>) -> Self {
         self.encrypted = input;
         self
     }

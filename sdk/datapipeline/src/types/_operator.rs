@@ -2,7 +2,7 @@
 
 /// <p>Contains a logical operation for comparing the value of a field with a specified value.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Operator {
     /// <p> The logical operation to be performed: equal (<code>EQ</code>), equal reference (<code>REF_EQ</code>), less than or equal (<code>LE</code>), greater than or equal (<code>GE</code>), or between (<code>BETWEEN</code>). Equal reference (<code>REF_EQ</code>) can be used only with reference fields. The other comparison types can be used only with String fields. The comparison types you can use apply only to certain object fields, as detailed below. </p>
     /// <p> The comparison operators EQ and REF_EQ act on the following fields: </p>
@@ -27,10 +27,10 @@ pub struct Operator {
     /// </ul>
     /// <p>Note that fields beginning with the at sign (@) are read-only and set by the web service. When you name fields, you should choose names containing only alpha-numeric values, as symbols may be reserved by AWS Data Pipeline. User-defined fields that you add to a pipeline should prefix their name with the string "my".</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::OperatorType>,
+    pub r#type: ::std::option::Option<crate::types::OperatorType>,
     /// <p>The value that the actual field value will be compared with.</p>
     #[doc(hidden)]
-    pub values: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Operator {
     /// <p> The logical operation to be performed: equal (<code>EQ</code>), equal reference (<code>REF_EQ</code>), less than or equal (<code>LE</code>), greater than or equal (<code>GE</code>), or between (<code>BETWEEN</code>). Equal reference (<code>REF_EQ</code>) can be used only with reference fields. The other comparison types can be used only with String fields. The comparison types you can use apply only to certain object fields, as detailed below. </p>
@@ -55,11 +55,11 @@ impl Operator {
     /// <li>@actualEndTime</li>
     /// </ul>
     /// <p>Note that fields beginning with the at sign (@) are read-only and set by the web service. When you name fields, you should choose names containing only alpha-numeric values, as symbols may be reserved by AWS Data Pipeline. User-defined fields that you add to a pipeline should prefix their name with the string "my".</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::OperatorType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::OperatorType> {
         self.r#type.as_ref()
     }
     /// <p>The value that the actual field value will be compared with.</p>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.values.as_deref()
     }
 }
@@ -72,10 +72,12 @@ impl Operator {
 
 /// A builder for [`Operator`](crate::types::Operator).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OperatorBuilder {
-    pub(crate) r#type: std::option::Option<crate::types::OperatorType>,
-    pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) r#type: ::std::option::Option<crate::types::OperatorType>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl OperatorBuilder {
     /// <p> The logical operation to be performed: equal (<code>EQ</code>), equal reference (<code>REF_EQ</code>), less than or equal (<code>LE</code>), greater than or equal (<code>GE</code>), or between (<code>BETWEEN</code>). Equal reference (<code>REF_EQ</code>) can be used only with reference fields. The other comparison types can be used only with String fields. The comparison types you can use apply only to certain object fields, as detailed below. </p>
@@ -101,7 +103,7 @@ impl OperatorBuilder {
     /// </ul>
     /// <p>Note that fields beginning with the at sign (@) are read-only and set by the web service. When you name fields, you should choose names containing only alpha-numeric values, as symbols may be reserved by AWS Data Pipeline. User-defined fields that you add to a pipeline should prefix their name with the string "my".</p>
     pub fn r#type(mut self, input: crate::types::OperatorType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p> The logical operation to be performed: equal (<code>EQ</code>), equal reference (<code>REF_EQ</code>), less than or equal (<code>LE</code>), greater than or equal (<code>GE</code>), or between (<code>BETWEEN</code>). Equal reference (<code>REF_EQ</code>) can be used only with reference fields. The other comparison types can be used only with String fields. The comparison types you can use apply only to certain object fields, as detailed below. </p>
@@ -126,7 +128,7 @@ impl OperatorBuilder {
     /// <li>@actualEndTime</li>
     /// </ul>
     /// <p>Note that fields beginning with the at sign (@) are read-only and set by the web service. When you name fields, you should choose names containing only alpha-numeric values, as symbols may be reserved by AWS Data Pipeline. User-defined fields that you add to a pipeline should prefix their name with the string "my".</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::OperatorType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::OperatorType>) -> Self {
         self.r#type = input;
         self
     }
@@ -135,16 +137,16 @@ impl OperatorBuilder {
     /// To override the contents of this collection use [`set_values`](Self::set_values).
     ///
     /// <p>The value that the actual field value will be compared with.</p>
-    pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
         v.push(input.into());
-        self.values = Some(v);
+        self.values = ::std::option::Option::Some(v);
         self
     }
     /// <p>The value that the actual field value will be compared with.</p>
     pub fn set_values(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.values = input;
         self

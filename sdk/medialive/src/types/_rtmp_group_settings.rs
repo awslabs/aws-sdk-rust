@@ -2,61 +2,63 @@
 
 /// Rtmp Group Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RtmpGroupSettings {
     /// Choose the ad marker type for this output group. MediaLive will create a message based on the content of each SCTE-35 message, format it for that marker type, and insert it in the datastream.
     #[doc(hidden)]
-    pub ad_markers: std::option::Option<std::vec::Vec<crate::types::RtmpAdMarkers>>,
+    pub ad_markers: ::std::option::Option<::std::vec::Vec<crate::types::RtmpAdMarkers>>,
     /// Authentication scheme to use when connecting with CDN
     #[doc(hidden)]
-    pub authentication_scheme: std::option::Option<crate::types::AuthenticationScheme>,
+    pub authentication_scheme: ::std::option::Option<crate::types::AuthenticationScheme>,
     /// Controls behavior when content cache fills up. If remote origin server stalls the RTMP connection and does not accept content fast enough the 'Media Cache' will fill up. When the cache reaches the duration specified by cacheLength the cache will stop accepting new content. If set to disconnectImmediately, the RTMP output will force a disconnect. Clear the media cache, and reconnect after restartDelay seconds. If set to waitForServer, the RTMP output will wait up to 5 minutes to allow the origin server to begin accepting data again.
     #[doc(hidden)]
-    pub cache_full_behavior: std::option::Option<crate::types::RtmpCacheFullBehavior>,
+    pub cache_full_behavior: ::std::option::Option<crate::types::RtmpCacheFullBehavior>,
     /// Cache length, in seconds, is used to calculate buffer size.
     #[doc(hidden)]
-    pub cache_length: std::option::Option<i32>,
+    pub cache_length: ::std::option::Option<i32>,
     /// Controls the types of data that passes to onCaptionInfo outputs. If set to 'all' then 608 and 708 carried DTVCC data will be passed. If set to 'field1AndField2608' then DTVCC data will be stripped out, but 608 data from both fields will be passed. If set to 'field1608' then only the data carried in 608 from field 1 video will be passed.
     #[doc(hidden)]
-    pub caption_data: std::option::Option<crate::types::RtmpCaptionData>,
+    pub caption_data: ::std::option::Option<crate::types::RtmpCaptionData>,
     /// Controls the behavior of this RTMP group if input becomes unavailable. - emitOutput: Emit a slate until input returns. - pauseOutput: Stop transmitting data until input returns. This does not close the underlying RTMP connection.
     #[doc(hidden)]
-    pub input_loss_action: std::option::Option<crate::types::InputLossActionForRtmpOut>,
+    pub input_loss_action: ::std::option::Option<crate::types::InputLossActionForRtmpOut>,
     /// If a streaming output fails, number of seconds to wait until a restart is initiated. A value of 0 means never restart.
     #[doc(hidden)]
-    pub restart_delay: std::option::Option<i32>,
+    pub restart_delay: ::std::option::Option<i32>,
 }
 impl RtmpGroupSettings {
     /// Choose the ad marker type for this output group. MediaLive will create a message based on the content of each SCTE-35 message, format it for that marker type, and insert it in the datastream.
-    pub fn ad_markers(&self) -> std::option::Option<&[crate::types::RtmpAdMarkers]> {
+    pub fn ad_markers(&self) -> ::std::option::Option<&[crate::types::RtmpAdMarkers]> {
         self.ad_markers.as_deref()
     }
     /// Authentication scheme to use when connecting with CDN
     pub fn authentication_scheme(
         &self,
-    ) -> std::option::Option<&crate::types::AuthenticationScheme> {
+    ) -> ::std::option::Option<&crate::types::AuthenticationScheme> {
         self.authentication_scheme.as_ref()
     }
     /// Controls behavior when content cache fills up. If remote origin server stalls the RTMP connection and does not accept content fast enough the 'Media Cache' will fill up. When the cache reaches the duration specified by cacheLength the cache will stop accepting new content. If set to disconnectImmediately, the RTMP output will force a disconnect. Clear the media cache, and reconnect after restartDelay seconds. If set to waitForServer, the RTMP output will wait up to 5 minutes to allow the origin server to begin accepting data again.
-    pub fn cache_full_behavior(&self) -> std::option::Option<&crate::types::RtmpCacheFullBehavior> {
+    pub fn cache_full_behavior(
+        &self,
+    ) -> ::std::option::Option<&crate::types::RtmpCacheFullBehavior> {
         self.cache_full_behavior.as_ref()
     }
     /// Cache length, in seconds, is used to calculate buffer size.
-    pub fn cache_length(&self) -> std::option::Option<i32> {
+    pub fn cache_length(&self) -> ::std::option::Option<i32> {
         self.cache_length
     }
     /// Controls the types of data that passes to onCaptionInfo outputs. If set to 'all' then 608 and 708 carried DTVCC data will be passed. If set to 'field1AndField2608' then DTVCC data will be stripped out, but 608 data from both fields will be passed. If set to 'field1608' then only the data carried in 608 from field 1 video will be passed.
-    pub fn caption_data(&self) -> std::option::Option<&crate::types::RtmpCaptionData> {
+    pub fn caption_data(&self) -> ::std::option::Option<&crate::types::RtmpCaptionData> {
         self.caption_data.as_ref()
     }
     /// Controls the behavior of this RTMP group if input becomes unavailable. - emitOutput: Emit a slate until input returns. - pauseOutput: Stop transmitting data until input returns. This does not close the underlying RTMP connection.
     pub fn input_loss_action(
         &self,
-    ) -> std::option::Option<&crate::types::InputLossActionForRtmpOut> {
+    ) -> ::std::option::Option<&crate::types::InputLossActionForRtmpOut> {
         self.input_loss_action.as_ref()
     }
     /// If a streaming output fails, number of seconds to wait until a restart is initiated. A value of 0 means never restart.
-    pub fn restart_delay(&self) -> std::option::Option<i32> {
+    pub fn restart_delay(&self) -> ::std::option::Option<i32> {
         self.restart_delay
     }
 }
@@ -69,15 +71,17 @@ impl RtmpGroupSettings {
 
 /// A builder for [`RtmpGroupSettings`](crate::types::RtmpGroupSettings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RtmpGroupSettingsBuilder {
-    pub(crate) ad_markers: std::option::Option<std::vec::Vec<crate::types::RtmpAdMarkers>>,
-    pub(crate) authentication_scheme: std::option::Option<crate::types::AuthenticationScheme>,
-    pub(crate) cache_full_behavior: std::option::Option<crate::types::RtmpCacheFullBehavior>,
-    pub(crate) cache_length: std::option::Option<i32>,
-    pub(crate) caption_data: std::option::Option<crate::types::RtmpCaptionData>,
-    pub(crate) input_loss_action: std::option::Option<crate::types::InputLossActionForRtmpOut>,
-    pub(crate) restart_delay: std::option::Option<i32>,
+    pub(crate) ad_markers: ::std::option::Option<::std::vec::Vec<crate::types::RtmpAdMarkers>>,
+    pub(crate) authentication_scheme: ::std::option::Option<crate::types::AuthenticationScheme>,
+    pub(crate) cache_full_behavior: ::std::option::Option<crate::types::RtmpCacheFullBehavior>,
+    pub(crate) cache_length: ::std::option::Option<i32>,
+    pub(crate) caption_data: ::std::option::Option<crate::types::RtmpCaptionData>,
+    pub(crate) input_loss_action: ::std::option::Option<crate::types::InputLossActionForRtmpOut>,
+    pub(crate) restart_delay: ::std::option::Option<i32>,
 }
 impl RtmpGroupSettingsBuilder {
     /// Appends an item to `ad_markers`.
@@ -88,86 +92,86 @@ impl RtmpGroupSettingsBuilder {
     pub fn ad_markers(mut self, input: crate::types::RtmpAdMarkers) -> Self {
         let mut v = self.ad_markers.unwrap_or_default();
         v.push(input);
-        self.ad_markers = Some(v);
+        self.ad_markers = ::std::option::Option::Some(v);
         self
     }
     /// Choose the ad marker type for this output group. MediaLive will create a message based on the content of each SCTE-35 message, format it for that marker type, and insert it in the datastream.
     pub fn set_ad_markers(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RtmpAdMarkers>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::RtmpAdMarkers>>,
     ) -> Self {
         self.ad_markers = input;
         self
     }
     /// Authentication scheme to use when connecting with CDN
     pub fn authentication_scheme(mut self, input: crate::types::AuthenticationScheme) -> Self {
-        self.authentication_scheme = Some(input);
+        self.authentication_scheme = ::std::option::Option::Some(input);
         self
     }
     /// Authentication scheme to use when connecting with CDN
     pub fn set_authentication_scheme(
         mut self,
-        input: std::option::Option<crate::types::AuthenticationScheme>,
+        input: ::std::option::Option<crate::types::AuthenticationScheme>,
     ) -> Self {
         self.authentication_scheme = input;
         self
     }
     /// Controls behavior when content cache fills up. If remote origin server stalls the RTMP connection and does not accept content fast enough the 'Media Cache' will fill up. When the cache reaches the duration specified by cacheLength the cache will stop accepting new content. If set to disconnectImmediately, the RTMP output will force a disconnect. Clear the media cache, and reconnect after restartDelay seconds. If set to waitForServer, the RTMP output will wait up to 5 minutes to allow the origin server to begin accepting data again.
     pub fn cache_full_behavior(mut self, input: crate::types::RtmpCacheFullBehavior) -> Self {
-        self.cache_full_behavior = Some(input);
+        self.cache_full_behavior = ::std::option::Option::Some(input);
         self
     }
     /// Controls behavior when content cache fills up. If remote origin server stalls the RTMP connection and does not accept content fast enough the 'Media Cache' will fill up. When the cache reaches the duration specified by cacheLength the cache will stop accepting new content. If set to disconnectImmediately, the RTMP output will force a disconnect. Clear the media cache, and reconnect after restartDelay seconds. If set to waitForServer, the RTMP output will wait up to 5 minutes to allow the origin server to begin accepting data again.
     pub fn set_cache_full_behavior(
         mut self,
-        input: std::option::Option<crate::types::RtmpCacheFullBehavior>,
+        input: ::std::option::Option<crate::types::RtmpCacheFullBehavior>,
     ) -> Self {
         self.cache_full_behavior = input;
         self
     }
     /// Cache length, in seconds, is used to calculate buffer size.
     pub fn cache_length(mut self, input: i32) -> Self {
-        self.cache_length = Some(input);
+        self.cache_length = ::std::option::Option::Some(input);
         self
     }
     /// Cache length, in seconds, is used to calculate buffer size.
-    pub fn set_cache_length(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_cache_length(mut self, input: ::std::option::Option<i32>) -> Self {
         self.cache_length = input;
         self
     }
     /// Controls the types of data that passes to onCaptionInfo outputs. If set to 'all' then 608 and 708 carried DTVCC data will be passed. If set to 'field1AndField2608' then DTVCC data will be stripped out, but 608 data from both fields will be passed. If set to 'field1608' then only the data carried in 608 from field 1 video will be passed.
     pub fn caption_data(mut self, input: crate::types::RtmpCaptionData) -> Self {
-        self.caption_data = Some(input);
+        self.caption_data = ::std::option::Option::Some(input);
         self
     }
     /// Controls the types of data that passes to onCaptionInfo outputs. If set to 'all' then 608 and 708 carried DTVCC data will be passed. If set to 'field1AndField2608' then DTVCC data will be stripped out, but 608 data from both fields will be passed. If set to 'field1608' then only the data carried in 608 from field 1 video will be passed.
     pub fn set_caption_data(
         mut self,
-        input: std::option::Option<crate::types::RtmpCaptionData>,
+        input: ::std::option::Option<crate::types::RtmpCaptionData>,
     ) -> Self {
         self.caption_data = input;
         self
     }
     /// Controls the behavior of this RTMP group if input becomes unavailable. - emitOutput: Emit a slate until input returns. - pauseOutput: Stop transmitting data until input returns. This does not close the underlying RTMP connection.
     pub fn input_loss_action(mut self, input: crate::types::InputLossActionForRtmpOut) -> Self {
-        self.input_loss_action = Some(input);
+        self.input_loss_action = ::std::option::Option::Some(input);
         self
     }
     /// Controls the behavior of this RTMP group if input becomes unavailable. - emitOutput: Emit a slate until input returns. - pauseOutput: Stop transmitting data until input returns. This does not close the underlying RTMP connection.
     pub fn set_input_loss_action(
         mut self,
-        input: std::option::Option<crate::types::InputLossActionForRtmpOut>,
+        input: ::std::option::Option<crate::types::InputLossActionForRtmpOut>,
     ) -> Self {
         self.input_loss_action = input;
         self
     }
     /// If a streaming output fails, number of seconds to wait until a restart is initiated. A value of 0 means never restart.
     pub fn restart_delay(mut self, input: i32) -> Self {
-        self.restart_delay = Some(input);
+        self.restart_delay = ::std::option::Option::Some(input);
         self
     }
     /// If a streaming output fails, number of seconds to wait until a restart is initiated. A value of 0 means never restart.
-    pub fn set_restart_delay(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_restart_delay(mut self, input: ::std::option::Option<i32>) -> Self {
         self.restart_delay = input;
         self
     }

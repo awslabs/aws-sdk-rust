@@ -2,15 +2,15 @@
 
 /// <p>Object specifying the stream attribute on which to filter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StreamFilters {
     /// <p>The stream’s health.</p>
     #[doc(hidden)]
-    pub health: std::option::Option<crate::types::StreamHealth>,
+    pub health: ::std::option::Option<crate::types::StreamHealth>,
 }
 impl StreamFilters {
     /// <p>The stream’s health.</p>
-    pub fn health(&self) -> std::option::Option<&crate::types::StreamHealth> {
+    pub fn health(&self) -> ::std::option::Option<&crate::types::StreamHealth> {
         self.health.as_ref()
     }
 }
@@ -23,18 +23,20 @@ impl StreamFilters {
 
 /// A builder for [`StreamFilters`](crate::types::StreamFilters).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StreamFiltersBuilder {
-    pub(crate) health: std::option::Option<crate::types::StreamHealth>,
+    pub(crate) health: ::std::option::Option<crate::types::StreamHealth>,
 }
 impl StreamFiltersBuilder {
     /// <p>The stream’s health.</p>
     pub fn health(mut self, input: crate::types::StreamHealth) -> Self {
-        self.health = Some(input);
+        self.health = ::std::option::Option::Some(input);
         self
     }
     /// <p>The stream’s health.</p>
-    pub fn set_health(mut self, input: std::option::Option<crate::types::StreamHealth>) -> Self {
+    pub fn set_health(mut self, input: ::std::option::Option<crate::types::StreamHealth>) -> Self {
         self.health = input;
         self
     }

@@ -2,7 +2,7 @@
 
 /// <p>Describes whether S3 data event logs will be enabled as a data source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3LogsConfiguration {
     /// <p> The status of S3 data event logs as a data source.</p>
     #[doc(hidden)]
@@ -23,18 +23,20 @@ impl S3LogsConfiguration {
 
 /// A builder for [`S3LogsConfiguration`](crate::types::S3LogsConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct S3LogsConfigurationBuilder {
-    pub(crate) enable: std::option::Option<bool>,
+    pub(crate) enable: ::std::option::Option<bool>,
 }
 impl S3LogsConfigurationBuilder {
     /// <p> The status of S3 data event logs as a data source.</p>
     pub fn enable(mut self, input: bool) -> Self {
-        self.enable = Some(input);
+        self.enable = ::std::option::Option::Some(input);
         self
     }
     /// <p> The status of S3 data event logs as a data source.</p>
-    pub fn set_enable(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enable(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable = input;
         self
     }

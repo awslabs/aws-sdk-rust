@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopStream`](crate::operation::stop_stream::builders::StopStreamFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`channel_arn(impl Into<String>)`](crate::operation::stop_stream::builders::StopStreamFluentBuilder::channel_arn) / [`set_channel_arn(Option<String>)`](crate::operation::stop_stream::builders::StopStreamFluentBuilder::set_channel_arn): <p>ARN of the channel for which the stream is to be stopped.</p>
+    ///   - [`channel_arn(impl ::std::convert::Into<String>)`](crate::operation::stop_stream::builders::StopStreamFluentBuilder::channel_arn) / [`set_channel_arn(Option<String>)`](crate::operation::stop_stream::builders::StopStreamFluentBuilder::set_channel_arn): <p>ARN of the channel for which the stream is to be stopped.</p>
     /// - On success, responds with [`StopStreamOutput`](crate::operation::stop_stream::StopStreamOutput)
     /// - On failure, responds with [`SdkError<StopStreamError>`](crate::operation::stop_stream::StopStreamError)
     pub fn stop_stream(&self) -> crate::operation::stop_stream::builders::StopStreamFluentBuilder {

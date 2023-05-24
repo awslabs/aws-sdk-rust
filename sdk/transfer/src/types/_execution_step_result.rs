@@ -2,7 +2,7 @@
 
 /// <p>Specifies the following details for the step: error (if any), outputs (if any), and the step type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExecutionStepResult {
     /// <p>One of the available step types.</p>
     /// <ul>
@@ -13,13 +13,13 @@ pub struct ExecutionStepResult {
     /// <li> <p> <b> <code>TAG</code> </b> - Add a tag to the file.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub step_type: std::option::Option<crate::types::WorkflowStepType>,
+    pub step_type: ::std::option::Option<crate::types::WorkflowStepType>,
     /// <p>The values for the key/value pair applied as a tag to the file. Only applicable if the step type is <code>TAG</code>.</p>
     #[doc(hidden)]
-    pub outputs: std::option::Option<std::string::String>,
+    pub outputs: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the details for an error, if it occurred during execution of the specified workflow step.</p>
     #[doc(hidden)]
-    pub error: std::option::Option<crate::types::ExecutionError>,
+    pub error: ::std::option::Option<crate::types::ExecutionError>,
 }
 impl ExecutionStepResult {
     /// <p>One of the available step types.</p>
@@ -30,15 +30,15 @@ impl ExecutionStepResult {
     /// <li> <p> <b> <code>DELETE</code> </b> - Delete the file.</p> </li>
     /// <li> <p> <b> <code>TAG</code> </b> - Add a tag to the file.</p> </li>
     /// </ul>
-    pub fn step_type(&self) -> std::option::Option<&crate::types::WorkflowStepType> {
+    pub fn step_type(&self) -> ::std::option::Option<&crate::types::WorkflowStepType> {
         self.step_type.as_ref()
     }
     /// <p>The values for the key/value pair applied as a tag to the file. Only applicable if the step type is <code>TAG</code>.</p>
-    pub fn outputs(&self) -> std::option::Option<&str> {
+    pub fn outputs(&self) -> ::std::option::Option<&str> {
         self.outputs.as_deref()
     }
     /// <p>Specifies the details for an error, if it occurred during execution of the specified workflow step.</p>
-    pub fn error(&self) -> std::option::Option<&crate::types::ExecutionError> {
+    pub fn error(&self) -> ::std::option::Option<&crate::types::ExecutionError> {
         self.error.as_ref()
     }
 }
@@ -51,11 +51,13 @@ impl ExecutionStepResult {
 
 /// A builder for [`ExecutionStepResult`](crate::types::ExecutionStepResult).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ExecutionStepResultBuilder {
-    pub(crate) step_type: std::option::Option<crate::types::WorkflowStepType>,
-    pub(crate) outputs: std::option::Option<std::string::String>,
-    pub(crate) error: std::option::Option<crate::types::ExecutionError>,
+    pub(crate) step_type: ::std::option::Option<crate::types::WorkflowStepType>,
+    pub(crate) outputs: ::std::option::Option<::std::string::String>,
+    pub(crate) error: ::std::option::Option<crate::types::ExecutionError>,
 }
 impl ExecutionStepResultBuilder {
     /// <p>One of the available step types.</p>
@@ -67,7 +69,7 @@ impl ExecutionStepResultBuilder {
     /// <li> <p> <b> <code>TAG</code> </b> - Add a tag to the file.</p> </li>
     /// </ul>
     pub fn step_type(mut self, input: crate::types::WorkflowStepType) -> Self {
-        self.step_type = Some(input);
+        self.step_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>One of the available step types.</p>
@@ -80,28 +82,28 @@ impl ExecutionStepResultBuilder {
     /// </ul>
     pub fn set_step_type(
         mut self,
-        input: std::option::Option<crate::types::WorkflowStepType>,
+        input: ::std::option::Option<crate::types::WorkflowStepType>,
     ) -> Self {
         self.step_type = input;
         self
     }
     /// <p>The values for the key/value pair applied as a tag to the file. Only applicable if the step type is <code>TAG</code>.</p>
-    pub fn outputs(mut self, input: impl Into<std::string::String>) -> Self {
-        self.outputs = Some(input.into());
+    pub fn outputs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.outputs = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The values for the key/value pair applied as a tag to the file. Only applicable if the step type is <code>TAG</code>.</p>
-    pub fn set_outputs(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_outputs(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.outputs = input;
         self
     }
     /// <p>Specifies the details for an error, if it occurred during execution of the specified workflow step.</p>
     pub fn error(mut self, input: crate::types::ExecutionError) -> Self {
-        self.error = Some(input);
+        self.error = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the details for an error, if it occurred during execution of the specified workflow step.</p>
-    pub fn set_error(mut self, input: std::option::Option<crate::types::ExecutionError>) -> Self {
+    pub fn set_error(mut self, input: ::std::option::Option<crate::types::ExecutionError>) -> Self {
         self.error = input;
         self
     }

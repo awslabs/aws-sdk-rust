@@ -5,7 +5,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_flows::builders::ListFlowsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_flows::builders::ListFlowsFluentBuilder::set_max_results): <p> Specifies the maximum number of items that should be returned in the result set. </p>
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_flows::builders::ListFlowsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_flows::builders::ListFlowsFluentBuilder::set_next_token): <p> The pagination token for next page of data. </p>
+    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_flows::builders::ListFlowsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_flows::builders::ListFlowsFluentBuilder::set_next_token): <p> The pagination token for next page of data. </p>
     /// - On success, responds with [`ListFlowsOutput`](crate::operation::list_flows::ListFlowsOutput) with field(s):
     ///   - [`flows(Option<Vec<FlowDefinition>>)`](crate::operation::list_flows::ListFlowsOutput::flows): <p> The list of flows associated with your account. </p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_flows::ListFlowsOutput::next_token): <p> The pagination token for next page of data. </p>

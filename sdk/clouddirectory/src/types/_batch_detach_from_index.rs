@@ -2,22 +2,22 @@
 
 /// <p>Detaches the specified object from the specified index inside a <code>BatchRead</code> operation. For more information, see <code>DetachFromIndex</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDetachFromIndex {
     /// <p>A reference to the index object.</p>
     #[doc(hidden)]
-    pub index_reference: std::option::Option<crate::types::ObjectReference>,
+    pub index_reference: ::std::option::Option<crate::types::ObjectReference>,
     /// <p>A reference to the object being detached from the index.</p>
     #[doc(hidden)]
-    pub target_reference: std::option::Option<crate::types::ObjectReference>,
+    pub target_reference: ::std::option::Option<crate::types::ObjectReference>,
 }
 impl BatchDetachFromIndex {
     /// <p>A reference to the index object.</p>
-    pub fn index_reference(&self) -> std::option::Option<&crate::types::ObjectReference> {
+    pub fn index_reference(&self) -> ::std::option::Option<&crate::types::ObjectReference> {
         self.index_reference.as_ref()
     }
     /// <p>A reference to the object being detached from the index.</p>
-    pub fn target_reference(&self) -> std::option::Option<&crate::types::ObjectReference> {
+    pub fn target_reference(&self) -> ::std::option::Option<&crate::types::ObjectReference> {
         self.target_reference.as_ref()
     }
 }
@@ -30,34 +30,36 @@ impl BatchDetachFromIndex {
 
 /// A builder for [`BatchDetachFromIndex`](crate::types::BatchDetachFromIndex).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BatchDetachFromIndexBuilder {
-    pub(crate) index_reference: std::option::Option<crate::types::ObjectReference>,
-    pub(crate) target_reference: std::option::Option<crate::types::ObjectReference>,
+    pub(crate) index_reference: ::std::option::Option<crate::types::ObjectReference>,
+    pub(crate) target_reference: ::std::option::Option<crate::types::ObjectReference>,
 }
 impl BatchDetachFromIndexBuilder {
     /// <p>A reference to the index object.</p>
     pub fn index_reference(mut self, input: crate::types::ObjectReference) -> Self {
-        self.index_reference = Some(input);
+        self.index_reference = ::std::option::Option::Some(input);
         self
     }
     /// <p>A reference to the index object.</p>
     pub fn set_index_reference(
         mut self,
-        input: std::option::Option<crate::types::ObjectReference>,
+        input: ::std::option::Option<crate::types::ObjectReference>,
     ) -> Self {
         self.index_reference = input;
         self
     }
     /// <p>A reference to the object being detached from the index.</p>
     pub fn target_reference(mut self, input: crate::types::ObjectReference) -> Self {
-        self.target_reference = Some(input);
+        self.target_reference = ::std::option::Option::Some(input);
         self
     }
     /// <p>A reference to the object being detached from the index.</p>
     pub fn set_target_reference(
         mut self,
-        input: std::option::Option<crate::types::ObjectReference>,
+        input: ::std::option::Option<crate::types::ObjectReference>,
     ) -> Self {
         self.target_reference = input;
         self

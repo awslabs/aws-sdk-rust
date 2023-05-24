@@ -2,15 +2,15 @@
 
 /// <p>Updated DNS properties for the private DNS namespace.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PrivateDnsPropertiesMutableChange {
     /// <p>Updated fields for the Start of Authority (SOA) record for the hosted zone for the private DNS namespace.</p>
     #[doc(hidden)]
-    pub soa: std::option::Option<crate::types::SoaChange>,
+    pub soa: ::std::option::Option<crate::types::SoaChange>,
 }
 impl PrivateDnsPropertiesMutableChange {
     /// <p>Updated fields for the Start of Authority (SOA) record for the hosted zone for the private DNS namespace.</p>
-    pub fn soa(&self) -> std::option::Option<&crate::types::SoaChange> {
+    pub fn soa(&self) -> ::std::option::Option<&crate::types::SoaChange> {
         self.soa.as_ref()
     }
 }
@@ -23,18 +23,20 @@ impl PrivateDnsPropertiesMutableChange {
 
 /// A builder for [`PrivateDnsPropertiesMutableChange`](crate::types::PrivateDnsPropertiesMutableChange).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PrivateDnsPropertiesMutableChangeBuilder {
-    pub(crate) soa: std::option::Option<crate::types::SoaChange>,
+    pub(crate) soa: ::std::option::Option<crate::types::SoaChange>,
 }
 impl PrivateDnsPropertiesMutableChangeBuilder {
     /// <p>Updated fields for the Start of Authority (SOA) record for the hosted zone for the private DNS namespace.</p>
     pub fn soa(mut self, input: crate::types::SoaChange) -> Self {
-        self.soa = Some(input);
+        self.soa = ::std::option::Option::Some(input);
         self
     }
     /// <p>Updated fields for the Start of Authority (SOA) record for the hosted zone for the private DNS namespace.</p>
-    pub fn set_soa(mut self, input: std::option::Option<crate::types::SoaChange>) -> Self {
+    pub fn set_soa(mut self, input: ::std::option::Option<crate::types::SoaChange>) -> Self {
         self.soa = input;
         self
     }

@@ -2,7 +2,7 @@
 
 /// <p>Defines column statistics supported for character sequence data values.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StringColumnStatisticsData {
     /// <p>The size of the longest string in the column.</p>
     #[doc(hidden)]
@@ -44,51 +44,53 @@ impl StringColumnStatisticsData {
 
 /// A builder for [`StringColumnStatisticsData`](crate::types::StringColumnStatisticsData).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StringColumnStatisticsDataBuilder {
-    pub(crate) maximum_length: std::option::Option<i64>,
-    pub(crate) average_length: std::option::Option<f64>,
-    pub(crate) number_of_nulls: std::option::Option<i64>,
-    pub(crate) number_of_distinct_values: std::option::Option<i64>,
+    pub(crate) maximum_length: ::std::option::Option<i64>,
+    pub(crate) average_length: ::std::option::Option<f64>,
+    pub(crate) number_of_nulls: ::std::option::Option<i64>,
+    pub(crate) number_of_distinct_values: ::std::option::Option<i64>,
 }
 impl StringColumnStatisticsDataBuilder {
     /// <p>The size of the longest string in the column.</p>
     pub fn maximum_length(mut self, input: i64) -> Self {
-        self.maximum_length = Some(input);
+        self.maximum_length = ::std::option::Option::Some(input);
         self
     }
     /// <p>The size of the longest string in the column.</p>
-    pub fn set_maximum_length(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_maximum_length(mut self, input: ::std::option::Option<i64>) -> Self {
         self.maximum_length = input;
         self
     }
     /// <p>The average string length in the column.</p>
     pub fn average_length(mut self, input: f64) -> Self {
-        self.average_length = Some(input);
+        self.average_length = ::std::option::Option::Some(input);
         self
     }
     /// <p>The average string length in the column.</p>
-    pub fn set_average_length(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_average_length(mut self, input: ::std::option::Option<f64>) -> Self {
         self.average_length = input;
         self
     }
     /// <p>The number of null values in the column.</p>
     pub fn number_of_nulls(mut self, input: i64) -> Self {
-        self.number_of_nulls = Some(input);
+        self.number_of_nulls = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of null values in the column.</p>
-    pub fn set_number_of_nulls(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_number_of_nulls(mut self, input: ::std::option::Option<i64>) -> Self {
         self.number_of_nulls = input;
         self
     }
     /// <p>The number of distinct values in a column.</p>
     pub fn number_of_distinct_values(mut self, input: i64) -> Self {
-        self.number_of_distinct_values = Some(input);
+        self.number_of_distinct_values = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of distinct values in a column.</p>
-    pub fn set_number_of_distinct_values(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_number_of_distinct_values(mut self, input: ::std::option::Option<i64>) -> Self {
         self.number_of_distinct_values = input;
         self
     }

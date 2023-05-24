@@ -2,15 +2,15 @@
 
 /// <p> The control entity attributes that uniquely identify an existing control to be added to a framework in Audit Manager. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAssessmentFrameworkControl {
     /// <p> The unique identifier of the control. </p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
 }
 impl CreateAssessmentFrameworkControl {
     /// <p> The unique identifier of the control. </p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl CreateAssessmentFrameworkControl {
 
 /// A builder for [`CreateAssessmentFrameworkControl`](crate::types::CreateAssessmentFrameworkControl).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateAssessmentFrameworkControlBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
 }
 impl CreateAssessmentFrameworkControlBuilder {
     /// <p> The unique identifier of the control. </p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The unique identifier of the control. </p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }

@@ -6,47 +6,50 @@ pub use crate::operation::list_domain_deliverability_campaigns::_list_domain_del
 /// Fluent builder constructing a request to `ListDomainDeliverabilityCampaigns`.
 ///
 /// <p>Retrieve deliverability data for all the campaigns that used a specific domain to send email during a specified time range. This data is available for a domain only if you enabled the Deliverability dashboard (<code>PutDeliverabilityDashboardOption</code> operation) for the domain.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListDomainDeliverabilityCampaignsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::list_domain_deliverability_campaigns::builders::ListDomainDeliverabilityCampaignsInputBuilder,
 }
 impl ListDomainDeliverabilityCampaignsFluentBuilder {
     /// Creates a new `ListDomainDeliverabilityCampaigns`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::list_domain_deliverability_campaigns::ListDomainDeliverabilityCampaigns, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::list_domain_deliverability_campaigns::ListDomainDeliverabilityCampaignsError>
+                    pub async fn customize(self) -> ::std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::list_domain_deliverability_campaigns::ListDomainDeliverabilityCampaigns, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                        ::aws_smithy_http::result::SdkError<crate::operation::list_domain_deliverability_campaigns::ListDomainDeliverabilityCampaignsError>
     >{
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::list_domain_deliverability_campaigns::ListDomainDeliverabilityCampaignsOutput, aws_smithy_http::result::SdkError<crate::operation::list_domain_deliverability_campaigns::ListDomainDeliverabilityCampaignsError>>
+                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_domain_deliverability_campaigns::ListDomainDeliverabilityCampaignsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_domain_deliverability_campaigns::ListDomainDeliverabilityCampaignsError>>
                      {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -57,7 +60,7 @@ impl ListDomainDeliverabilityCampaignsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> std::result::Result<crate::operation::list_domain_deliverability_campaigns::ListDomainDeliverabilityCampaignsOutput, aws_smithy_http::result::SdkError<crate::operation::list_domain_deliverability_campaigns::ListDomainDeliverabilityCampaignsError>>
+                        pub async fn send(self) -> ::std::result::Result<crate::operation::list_domain_deliverability_campaigns::ListDomainDeliverabilityCampaignsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_domain_deliverability_campaigns::ListDomainDeliverabilityCampaignsError>>
                          {
         self.send_middleware().await
     }
@@ -68,48 +71,54 @@ impl ListDomainDeliverabilityCampaignsFluentBuilder {
         crate::operation::list_domain_deliverability_campaigns::paginator::ListDomainDeliverabilityCampaignsPaginator::new(self.handle, self.inner)
     }
     /// <p>The first day, in Unix time format, that you want to obtain deliverability data for.</p>
-    pub fn start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
+    pub fn start_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.start_date(input);
         self
     }
     /// <p>The first day, in Unix time format, that you want to obtain deliverability data for.</p>
     pub fn set_start_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.inner = self.inner.set_start_date(input);
         self
     }
     /// <p>The last day, in Unix time format, that you want to obtain deliverability data for. This value has to be less than or equal to 30 days after the value of the <code>StartDate</code> parameter.</p>
-    pub fn end_date(mut self, input: aws_smithy_types::DateTime) -> Self {
+    pub fn end_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.end_date(input);
         self
     }
     /// <p>The last day, in Unix time format, that you want to obtain deliverability data for. This value has to be less than or equal to 30 days after the value of the <code>StartDate</code> parameter.</p>
-    pub fn set_end_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_end_date(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
         self.inner = self.inner.set_end_date(input);
         self
     }
     /// <p>The domain to obtain deliverability data for.</p>
-    pub fn subscribed_domain(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn subscribed_domain(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.subscribed_domain(input.into());
         self
     }
     /// <p>The domain to obtain deliverability data for.</p>
     pub fn set_subscribed_domain(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_subscribed_domain(input);
         self
     }
     /// <p>A token that’s returned from a previous call to the <code>ListDomainDeliverabilityCampaigns</code> operation. This token indicates the position of a campaign in the list of campaigns.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
     /// <p>A token that’s returned from a previous call to the <code>ListDomainDeliverabilityCampaigns</code> operation. This token indicates the position of a campaign in the list of campaigns.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
@@ -119,7 +128,7 @@ impl ListDomainDeliverabilityCampaignsFluentBuilder {
         self
     }
     /// <p>The maximum number of results to include in response to a single call to the <code>ListDomainDeliverabilityCampaigns</code> operation. If the number of results is larger than the number that you specify in this parameter, the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
-    pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_page_size(input);
         self
     }

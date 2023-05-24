@@ -3,22 +3,22 @@
 /// <p>A structure containing the column name and column importance score for a column. </p>
 /// <p>Column importance helps you understand how columns contribute to your model, by identifying which columns in your records are more important than others.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ColumnImportance {
     /// <p>The name of a column.</p>
     #[doc(hidden)]
-    pub column_name: std::option::Option<std::string::String>,
+    pub column_name: ::std::option::Option<::std::string::String>,
     /// <p>The column importance score for the column, as a decimal.</p>
     #[doc(hidden)]
-    pub importance: std::option::Option<f64>,
+    pub importance: ::std::option::Option<f64>,
 }
 impl ColumnImportance {
     /// <p>The name of a column.</p>
-    pub fn column_name(&self) -> std::option::Option<&str> {
+    pub fn column_name(&self) -> ::std::option::Option<&str> {
         self.column_name.as_deref()
     }
     /// <p>The column importance score for the column, as a decimal.</p>
-    pub fn importance(&self) -> std::option::Option<f64> {
+    pub fn importance(&self) -> ::std::option::Option<f64> {
         self.importance
     }
 }
@@ -31,29 +31,31 @@ impl ColumnImportance {
 
 /// A builder for [`ColumnImportance`](crate::types::ColumnImportance).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ColumnImportanceBuilder {
-    pub(crate) column_name: std::option::Option<std::string::String>,
-    pub(crate) importance: std::option::Option<f64>,
+    pub(crate) column_name: ::std::option::Option<::std::string::String>,
+    pub(crate) importance: ::std::option::Option<f64>,
 }
 impl ColumnImportanceBuilder {
     /// <p>The name of a column.</p>
-    pub fn column_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.column_name = Some(input.into());
+    pub fn column_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.column_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a column.</p>
-    pub fn set_column_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_column_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.column_name = input;
         self
     }
     /// <p>The column importance score for the column, as a decimal.</p>
     pub fn importance(mut self, input: f64) -> Self {
-        self.importance = Some(input);
+        self.importance = ::std::option::Option::Some(input);
         self
     }
     /// <p>The column importance score for the column, as a decimal.</p>
-    pub fn set_importance(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_importance(mut self, input: ::std::option::Option<f64>) -> Self {
         self.importance = input;
         self
     }

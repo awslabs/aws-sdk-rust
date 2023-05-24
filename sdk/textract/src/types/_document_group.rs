@@ -2,39 +2,40 @@
 
 /// <p>Summary information about documents grouped by the same document type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DocumentGroup {
     /// <p>The type of document that Amazon Textract has detected. See <a href="https://docs.aws.amazon.com/textract/latest/dg/lending-response-objects.html">Analyze Lending Response Objects</a> for a list of all types returned by Textract.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<std::string::String>,
+    pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>An array that contains information about the pages of a document, defined by logical boundary.</p>
     #[doc(hidden)]
-    pub split_documents: std::option::Option<std::vec::Vec<crate::types::SplitDocument>>,
+    pub split_documents: ::std::option::Option<::std::vec::Vec<crate::types::SplitDocument>>,
     /// <p>A list of the detected signatures found in a document group.</p>
     #[doc(hidden)]
-    pub detected_signatures: std::option::Option<std::vec::Vec<crate::types::DetectedSignature>>,
+    pub detected_signatures:
+        ::std::option::Option<::std::vec::Vec<crate::types::DetectedSignature>>,
     /// <p>A list of any expected signatures not found in a document group.</p>
     #[doc(hidden)]
     pub undetected_signatures:
-        std::option::Option<std::vec::Vec<crate::types::UndetectedSignature>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::UndetectedSignature>>,
 }
 impl DocumentGroup {
     /// <p>The type of document that Amazon Textract has detected. See <a href="https://docs.aws.amazon.com/textract/latest/dg/lending-response-objects.html">Analyze Lending Response Objects</a> for a list of all types returned by Textract.</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
     }
     /// <p>An array that contains information about the pages of a document, defined by logical boundary.</p>
-    pub fn split_documents(&self) -> std::option::Option<&[crate::types::SplitDocument]> {
+    pub fn split_documents(&self) -> ::std::option::Option<&[crate::types::SplitDocument]> {
         self.split_documents.as_deref()
     }
     /// <p>A list of the detected signatures found in a document group.</p>
-    pub fn detected_signatures(&self) -> std::option::Option<&[crate::types::DetectedSignature]> {
+    pub fn detected_signatures(&self) -> ::std::option::Option<&[crate::types::DetectedSignature]> {
         self.detected_signatures.as_deref()
     }
     /// <p>A list of any expected signatures not found in a document group.</p>
     pub fn undetected_signatures(
         &self,
-    ) -> std::option::Option<&[crate::types::UndetectedSignature]> {
+    ) -> ::std::option::Option<&[crate::types::UndetectedSignature]> {
         self.undetected_signatures.as_deref()
     }
 }
@@ -47,23 +48,25 @@ impl DocumentGroup {
 
 /// A builder for [`DocumentGroup`](crate::types::DocumentGroup).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DocumentGroupBuilder {
-    pub(crate) r#type: std::option::Option<std::string::String>,
-    pub(crate) split_documents: std::option::Option<std::vec::Vec<crate::types::SplitDocument>>,
+    pub(crate) r#type: ::std::option::Option<::std::string::String>,
+    pub(crate) split_documents: ::std::option::Option<::std::vec::Vec<crate::types::SplitDocument>>,
     pub(crate) detected_signatures:
-        std::option::Option<std::vec::Vec<crate::types::DetectedSignature>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::DetectedSignature>>,
     pub(crate) undetected_signatures:
-        std::option::Option<std::vec::Vec<crate::types::UndetectedSignature>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::UndetectedSignature>>,
 }
 impl DocumentGroupBuilder {
     /// <p>The type of document that Amazon Textract has detected. See <a href="https://docs.aws.amazon.com/textract/latest/dg/lending-response-objects.html">Analyze Lending Response Objects</a> for a list of all types returned by Textract.</p>
-    pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.r#type = Some(input.into());
+    pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.r#type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of document that Amazon Textract has detected. See <a href="https://docs.aws.amazon.com/textract/latest/dg/lending-response-objects.html">Analyze Lending Response Objects</a> for a list of all types returned by Textract.</p>
-    pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
     }
@@ -75,13 +78,13 @@ impl DocumentGroupBuilder {
     pub fn split_documents(mut self, input: crate::types::SplitDocument) -> Self {
         let mut v = self.split_documents.unwrap_or_default();
         v.push(input);
-        self.split_documents = Some(v);
+        self.split_documents = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array that contains information about the pages of a document, defined by logical boundary.</p>
     pub fn set_split_documents(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SplitDocument>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SplitDocument>>,
     ) -> Self {
         self.split_documents = input;
         self
@@ -94,13 +97,13 @@ impl DocumentGroupBuilder {
     pub fn detected_signatures(mut self, input: crate::types::DetectedSignature) -> Self {
         let mut v = self.detected_signatures.unwrap_or_default();
         v.push(input);
-        self.detected_signatures = Some(v);
+        self.detected_signatures = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of the detected signatures found in a document group.</p>
     pub fn set_detected_signatures(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DetectedSignature>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DetectedSignature>>,
     ) -> Self {
         self.detected_signatures = input;
         self
@@ -113,13 +116,13 @@ impl DocumentGroupBuilder {
     pub fn undetected_signatures(mut self, input: crate::types::UndetectedSignature) -> Self {
         let mut v = self.undetected_signatures.unwrap_or_default();
         v.push(input);
-        self.undetected_signatures = Some(v);
+        self.undetected_signatures = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of any expected signatures not found in a document group.</p>
     pub fn set_undetected_signatures(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::UndetectedSignature>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::UndetectedSignature>>,
     ) -> Self {
         self.undetected_signatures = input;
         self

@@ -2,43 +2,43 @@
 
 /// <p>Contains pipeline metadata.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PipelineDescription {
     /// <p>The pipeline identifier that was assigned by AWS Data Pipeline. This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.</p>
     #[doc(hidden)]
-    pub pipeline_id: std::option::Option<std::string::String>,
+    pub pipeline_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the pipeline.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>A list of read-only fields that contain metadata about the pipeline: @userId, @accountId, and @pipelineState.</p>
     #[doc(hidden)]
-    pub fields: std::option::Option<std::vec::Vec<crate::types::Field>>,
+    pub fields: ::std::option::Option<::std::vec::Vec<crate::types::Field>>,
     /// <p>Description of the pipeline.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags to associated with a pipeline. Tags let you control access to pipelines. For more information, see <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl PipelineDescription {
     /// <p>The pipeline identifier that was assigned by AWS Data Pipeline. This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.</p>
-    pub fn pipeline_id(&self) -> std::option::Option<&str> {
+    pub fn pipeline_id(&self) -> ::std::option::Option<&str> {
         self.pipeline_id.as_deref()
     }
     /// <p>The name of the pipeline.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>A list of read-only fields that contain metadata about the pipeline: @userId, @accountId, and @pipelineState.</p>
-    pub fn fields(&self) -> std::option::Option<&[crate::types::Field]> {
+    pub fn fields(&self) -> ::std::option::Option<&[crate::types::Field]> {
         self.fields.as_deref()
     }
     /// <p>Description of the pipeline.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>A list of tags to associated with a pipeline. Tags let you control access to pipelines. For more information, see <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -51,32 +51,34 @@ impl PipelineDescription {
 
 /// A builder for [`PipelineDescription`](crate::types::PipelineDescription).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PipelineDescriptionBuilder {
-    pub(crate) pipeline_id: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) fields: std::option::Option<std::vec::Vec<crate::types::Field>>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub(crate) pipeline_id: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) fields: ::std::option::Option<::std::vec::Vec<crate::types::Field>>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl PipelineDescriptionBuilder {
     /// <p>The pipeline identifier that was assigned by AWS Data Pipeline. This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.</p>
-    pub fn pipeline_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.pipeline_id = Some(input.into());
+    pub fn pipeline_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.pipeline_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The pipeline identifier that was assigned by AWS Data Pipeline. This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.</p>
-    pub fn set_pipeline_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_pipeline_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pipeline_id = input;
         self
     }
     /// <p>The name of the pipeline.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the pipeline.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
@@ -88,24 +90,24 @@ impl PipelineDescriptionBuilder {
     pub fn fields(mut self, input: crate::types::Field) -> Self {
         let mut v = self.fields.unwrap_or_default();
         v.push(input);
-        self.fields = Some(v);
+        self.fields = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of read-only fields that contain metadata about the pipeline: @userId, @accountId, and @pipelineState.</p>
     pub fn set_fields(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Field>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Field>>,
     ) -> Self {
         self.fields = input;
         self
     }
     /// <p>Description of the pipeline.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Description of the pipeline.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
@@ -117,13 +119,13 @@ impl PipelineDescriptionBuilder {
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
-        self.tags = Some(v);
+        self.tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of tags to associated with a pipeline. Tags let you control access to pipelines. For more information, see <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tags = input;
         self

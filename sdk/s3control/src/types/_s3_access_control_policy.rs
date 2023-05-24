@@ -2,24 +2,24 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3AccessControlPolicy {
     /// <p></p>
     #[doc(hidden)]
-    pub access_control_list: std::option::Option<crate::types::S3AccessControlList>,
+    pub access_control_list: ::std::option::Option<crate::types::S3AccessControlList>,
     /// <p></p>
     #[doc(hidden)]
-    pub canned_access_control_list: std::option::Option<crate::types::S3CannedAccessControlList>,
+    pub canned_access_control_list: ::std::option::Option<crate::types::S3CannedAccessControlList>,
 }
 impl S3AccessControlPolicy {
     /// <p></p>
-    pub fn access_control_list(&self) -> std::option::Option<&crate::types::S3AccessControlList> {
+    pub fn access_control_list(&self) -> ::std::option::Option<&crate::types::S3AccessControlList> {
         self.access_control_list.as_ref()
     }
     /// <p></p>
     pub fn canned_access_control_list(
         &self,
-    ) -> std::option::Option<&crate::types::S3CannedAccessControlList> {
+    ) -> ::std::option::Option<&crate::types::S3CannedAccessControlList> {
         self.canned_access_control_list.as_ref()
     }
 }
@@ -32,22 +32,24 @@ impl S3AccessControlPolicy {
 
 /// A builder for [`S3AccessControlPolicy`](crate::types::S3AccessControlPolicy).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct S3AccessControlPolicyBuilder {
-    pub(crate) access_control_list: std::option::Option<crate::types::S3AccessControlList>,
+    pub(crate) access_control_list: ::std::option::Option<crate::types::S3AccessControlList>,
     pub(crate) canned_access_control_list:
-        std::option::Option<crate::types::S3CannedAccessControlList>,
+        ::std::option::Option<crate::types::S3CannedAccessControlList>,
 }
 impl S3AccessControlPolicyBuilder {
     /// <p></p>
     pub fn access_control_list(mut self, input: crate::types::S3AccessControlList) -> Self {
-        self.access_control_list = Some(input);
+        self.access_control_list = ::std::option::Option::Some(input);
         self
     }
     /// <p></p>
     pub fn set_access_control_list(
         mut self,
-        input: std::option::Option<crate::types::S3AccessControlList>,
+        input: ::std::option::Option<crate::types::S3AccessControlList>,
     ) -> Self {
         self.access_control_list = input;
         self
@@ -57,13 +59,13 @@ impl S3AccessControlPolicyBuilder {
         mut self,
         input: crate::types::S3CannedAccessControlList,
     ) -> Self {
-        self.canned_access_control_list = Some(input);
+        self.canned_access_control_list = ::std::option::Option::Some(input);
         self
     }
     /// <p></p>
     pub fn set_canned_access_control_list(
         mut self,
-        input: std::option::Option<crate::types::S3CannedAccessControlList>,
+        input: ::std::option::Option<crate::types::S3CannedAccessControlList>,
     ) -> Self {
         self.canned_access_control_list = input;
         self

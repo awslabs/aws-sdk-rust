@@ -2,7 +2,7 @@
 pub(crate) fn de_cache_policy_list_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::types::CachePolicyList>,
+    ::std::option::Option<crate::types::CachePolicyList>,
     crate::operation::list_cache_policies::ListCachePoliciesError,
 > {
     (!body.is_empty())
@@ -15,13 +15,13 @@ pub(crate) fn de_cache_policy_list_payload(
 
 pub fn de_cache_policy_list(
     inp: &[u8],
-) -> Result<crate::types::CachePolicyList, aws_smithy_xml::decode::XmlDecodeError> {
-    let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
+) -> Result<crate::types::CachePolicyList, ::aws_smithy_xml::decode::XmlDecodeError> {
+    let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
     let start_el = decoder.start_el();
     if !(start_el.matches("CachePolicyList")) {
-        return Err(aws_smithy_xml::decode::XmlDecodeError::custom(format!(
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected CachePolicyList got {:?}",
             start_el
         )));

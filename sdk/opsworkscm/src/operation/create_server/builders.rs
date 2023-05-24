@@ -13,56 +13,59 @@ pub use crate::operation::create_server::_create_server_input::CreateServerInput
 /// <p> <i>Puppet Enterprise:</i> The default security group opens TCP ports 22, 443, 4433, 8140, 8142, 8143, and 8170. If a KeyName is present, AWS OpsWorks enables SSH access. SSH is also open to the world on TCP port 22. </p>
 /// <p>By default, your server is accessible from any IP address. We recommend that you update your security group rules to allow access from known IP addresses and address ranges only. To edit security group rules, open Security Groups in the navigation pane of the EC2 management console. </p>
 /// <p>To specify your own domain for a server, and provide your own self-signed or CA-signed certificate and private key, specify values for <code>CustomDomain</code>, <code>CustomCertificate</code>, and <code>CustomPrivateKey</code>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateServerFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_server::builders::CreateServerInputBuilder,
 }
 impl CreateServerFluentBuilder {
     /// Creates a new `CreateServer`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_server::CreateServer,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_server::CreateServerError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_server::CreateServerError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_server::CreateServerOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_server::CreateServerError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_server::CreateServerError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -75,9 +78,9 @@ impl CreateServerFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_server::CreateServerOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_server::CreateServerError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_server::CreateServerError>,
     > {
         self.send_middleware().await
     }
@@ -87,17 +90,23 @@ impl CreateServerFluentBuilder {
         self
     }
     /// <p> Associate a public IP address with a server that you are launching. Valid values are <code>true</code> or <code>false</code>. The default value is <code>true</code>. </p>
-    pub fn set_associate_public_ip_address(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_associate_public_ip_address(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_associate_public_ip_address(input);
         self
     }
     /// <p>An optional public endpoint of a server, such as <code>https://aws.my-company.com</code>. To access the server, create a CNAME DNS record in your preferred DNS service that points the custom domain to the endpoint that is generated when the server is created (the value of the CreateServer Endpoint attribute). You cannot access the server by using the generated <code>Endpoint</code> value if the server is using a custom domain. If you specify a custom domain, you must also specify values for <code>CustomCertificate</code> and <code>CustomPrivateKey</code>.</p>
-    pub fn custom_domain(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn custom_domain(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.custom_domain(input.into());
         self
     }
     /// <p>An optional public endpoint of a server, such as <code>https://aws.my-company.com</code>. To access the server, create a CNAME DNS record in your preferred DNS service that points the custom domain to the endpoint that is generated when the server is created (the value of the CreateServer Endpoint attribute). You cannot access the server by using the generated <code>Endpoint</code> value if the server is using a custom domain. If you specify a custom domain, you must also specify values for <code>CustomCertificate</code> and <code>CustomPrivateKey</code>.</p>
-    pub fn set_custom_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_custom_domain(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_custom_domain(input);
         self
     }
@@ -109,7 +118,10 @@ impl CreateServerFluentBuilder {
     /// <li> <p>The certificate’s common name or subject alternative names (SANs), if present, must match the value of <code>CustomDomain</code>.</p> </li>
     /// <li> <p>The certificate must match the value of <code>CustomPrivateKey</code>.</p> </li>
     /// </ul>
-    pub fn custom_certificate(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn custom_certificate(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.custom_certificate(input.into());
         self
     }
@@ -123,20 +135,23 @@ impl CreateServerFluentBuilder {
     /// </ul>
     pub fn set_custom_certificate(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_custom_certificate(input);
         self
     }
     /// <p>A private key in PEM format for connecting to the server by using HTTPS. The private key must not be encrypted; it cannot be protected by a password or passphrase. If you specify a custom private key, you must also specify values for <code>CustomDomain</code> and <code>CustomCertificate</code>.</p>
-    pub fn custom_private_key(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn custom_private_key(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.custom_private_key(input.into());
         self
     }
     /// <p>A private key in PEM format for connecting to the server by using HTTPS. The private key must not be encrypted; it cannot be protected by a password or passphrase. If you specify a custom private key, you must also specify values for <code>CustomDomain</code> and <code>CustomCertificate</code>.</p>
     pub fn set_custom_private_key(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_custom_private_key(input);
         self
@@ -147,37 +162,43 @@ impl CreateServerFluentBuilder {
         self
     }
     /// <p> Enable or disable scheduled backups. Valid values are <code>true</code> or <code>false</code>. The default value is <code>true</code>. </p>
-    pub fn set_disable_automated_backup(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_disable_automated_backup(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_disable_automated_backup(input);
         self
     }
     /// <p> The configuration management engine to use. Valid values include <code>ChefAutomate</code> and <code>Puppet</code>. </p>
-    pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.engine(input.into());
         self
     }
     /// <p> The configuration management engine to use. Valid values include <code>ChefAutomate</code> and <code>Puppet</code>. </p>
-    pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_engine(input);
         self
     }
     /// <p> The engine model of the server. Valid values in this release include <code>Monolithic</code> for Puppet and <code>Single</code> for Chef. </p>
-    pub fn engine_model(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn engine_model(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.engine_model(input.into());
         self
     }
     /// <p> The engine model of the server. Valid values in this release include <code>Monolithic</code> for Puppet and <code>Single</code> for Chef. </p>
-    pub fn set_engine_model(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_engine_model(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_engine_model(input);
         self
     }
     /// <p> The major release version of the engine that you want to use. For a Chef server, the valid value for EngineVersion is currently <code>2</code>. For a Puppet server, valid values are <code>2019</code> or <code>2017</code>. </p>
-    pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn engine_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.engine_version(input.into());
         self
     }
     /// <p> The major release version of the engine that you want to use. For a Chef server, the valid value for EngineVersion is currently <code>2</code>. For a Puppet server, valid values are <code>2019</code> or <code>2017</code>. </p>
-    pub fn set_engine_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_engine_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_engine_version(input);
         self
     }
@@ -215,7 +236,7 @@ impl CreateServerFluentBuilder {
     /// </ul>
     pub fn set_engine_attributes(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::EngineAttribute>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::EngineAttribute>>,
     ) -> Self {
         self.inner = self.inner.set_engine_attributes(input);
         self
@@ -226,56 +247,68 @@ impl CreateServerFluentBuilder {
         self
     }
     /// <p> The number of automated backups that you want to keep. Whenever a new backup is created, AWS OpsWorks CM deletes the oldest backups if this number is exceeded. The default value is <code>1</code>. </p>
-    pub fn set_backup_retention_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_backup_retention_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_backup_retention_count(input);
         self
     }
     /// <p> The name of the server. The server name must be unique within your AWS account, within each region. Server names must start with a letter; then letters, numbers, or hyphens (-) are allowed, up to a maximum of 40 characters. </p>
-    pub fn server_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn server_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.server_name(input.into());
         self
     }
     /// <p> The name of the server. The server name must be unique within your AWS account, within each region. Server names must start with a letter; then letters, numbers, or hyphens (-) are allowed, up to a maximum of 40 characters. </p>
-    pub fn set_server_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_server_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_server_name(input);
         self
     }
     /// <p> The ARN of the instance profile that your Amazon EC2 instances use. Although the AWS OpsWorks console typically creates the instance profile for you, if you are using API commands instead, run the service-role-creation.yaml AWS CloudFormation template, located at https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml. This template creates a CloudFormation stack that includes the instance profile you need. </p>
-    pub fn instance_profile_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn instance_profile_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.instance_profile_arn(input.into());
         self
     }
     /// <p> The ARN of the instance profile that your Amazon EC2 instances use. Although the AWS OpsWorks console typically creates the instance profile for you, if you are using API commands instead, run the service-role-creation.yaml AWS CloudFormation template, located at https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml. This template creates a CloudFormation stack that includes the instance profile you need. </p>
     pub fn set_instance_profile_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_instance_profile_arn(input);
         self
     }
     /// <p> The Amazon EC2 instance type to use. For example, <code>m5.large</code>. </p>
-    pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn instance_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.instance_type(input.into());
         self
     }
     /// <p> The Amazon EC2 instance type to use. For example, <code>m5.large</code>. </p>
-    pub fn set_instance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_instance_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_instance_type(input);
         self
     }
     /// <p> The Amazon EC2 key pair to set for the instance. This parameter is optional; if desired, you may specify this parameter to connect to your instances by using SSH. </p>
-    pub fn key_pair(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn key_pair(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.key_pair(input.into());
         self
     }
     /// <p> The Amazon EC2 key pair to set for the instance. This parameter is optional; if desired, you may specify this parameter to connect to your instances by using SSH. </p>
-    pub fn set_key_pair(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_key_pair(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_key_pair(input);
         self
     }
     /// <p> The start time for a one-hour period each week during which AWS OpsWorks CM performs maintenance on the instance. Valid values must be specified in the following format: <code>DDD:HH:MM</code>. <code>MM</code> must be specified as <code>00</code>. The specified time is in coordinated universal time (UTC). The default value is a random one-hour period on Tuesday, Wednesday, or Friday. See <code>TimeWindowDefinition</code> for more information. </p>
     /// <p> <b>Example:</b> <code>Mon:08:00</code>, which represents a start time of every Monday at 08:00 UTC. (8:00 a.m.) </p>
-    pub fn preferred_maintenance_window(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn preferred_maintenance_window(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.preferred_maintenance_window(input.into());
         self
     }
@@ -283,7 +316,7 @@ impl CreateServerFluentBuilder {
     /// <p> <b>Example:</b> <code>Mon:08:00</code>, which represents a start time of every Monday at 08:00 UTC. (8:00 a.m.) </p>
     pub fn set_preferred_maintenance_window(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_preferred_maintenance_window(input);
         self
@@ -296,7 +329,10 @@ impl CreateServerFluentBuilder {
     /// <p> <code>MM</code> must be specified as <code>00</code>. The specified time is in coordinated universal time (UTC). The default value is a random, daily start time.</p>
     /// <p> <b>Example:</b> <code>08:00</code>, which represents a daily start time of 08:00 UTC.</p>
     /// <p> <b>Example:</b> <code>Mon:08:00</code>, which represents a start time of every Monday at 08:00 UTC. (8:00 a.m.)</p>
-    pub fn preferred_backup_window(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn preferred_backup_window(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.preferred_backup_window(input.into());
         self
     }
@@ -310,7 +346,7 @@ impl CreateServerFluentBuilder {
     /// <p> <b>Example:</b> <code>Mon:08:00</code>, which represents a start time of every Monday at 08:00 UTC. (8:00 a.m.)</p>
     pub fn set_preferred_backup_window(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_preferred_backup_window(input);
         self
@@ -321,7 +357,10 @@ impl CreateServerFluentBuilder {
     ///
     /// <p> A list of security group IDs to attach to the Amazon EC2 instance. If you add this parameter, the specified security groups must be within the VPC that is specified by <code>SubnetIds</code>. </p>
     /// <p> If you do not specify this parameter, AWS OpsWorks CM creates one new security group that uses TCP ports 22 and 443, open to 0.0.0.0/0 (everyone). </p>
-    pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn security_group_ids(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.security_group_ids(input.into());
         self
     }
@@ -329,18 +368,24 @@ impl CreateServerFluentBuilder {
     /// <p> If you do not specify this parameter, AWS OpsWorks CM creates one new security group that uses TCP ports 22 and 443, open to 0.0.0.0/0 (everyone). </p>
     pub fn set_security_group_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_security_group_ids(input);
         self
     }
     /// <p> The service role that the AWS OpsWorks CM service backend uses to work with your account. Although the AWS OpsWorks management console typically creates the service role for you, if you are using the AWS CLI or API commands, run the service-role-creation.yaml AWS CloudFormation template, located at https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml. This template creates a CloudFormation stack that includes the service role and instance profile that you need. </p>
-    pub fn service_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn service_role_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.service_role_arn(input.into());
         self
     }
     /// <p> The service role that the AWS OpsWorks CM service backend uses to work with your account. Although the AWS OpsWorks management console typically creates the service role for you, if you are using the AWS CLI or API commands, run the service-role-creation.yaml AWS CloudFormation template, located at https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml. This template creates a CloudFormation stack that includes the service role and instance profile that you need. </p>
-    pub fn set_service_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_service_role_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_service_role_arn(input);
         self
     }
@@ -352,7 +397,7 @@ impl CreateServerFluentBuilder {
     /// <p> Amazon EC2-Classic customers: This field is required. All servers must run within a VPC. The VPC must have "Auto Assign Public IP" enabled. </p>
     /// <p> EC2-VPC customers: This field is optional. If you do not specify subnet IDs, your EC2 instances are created in a default subnet that is selected by Amazon EC2. If you specify subnet IDs, the VPC must have "Auto Assign Public IP" enabled. </p>
     /// <p>For more information about supported Amazon EC2 platforms, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a>.</p>
-    pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn subnet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subnet_ids(input.into());
         self
     }
@@ -362,7 +407,7 @@ impl CreateServerFluentBuilder {
     /// <p>For more information about supported Amazon EC2 platforms, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a>.</p>
     pub fn set_subnet_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_subnet_ids(input);
         self
@@ -393,18 +438,18 @@ impl CreateServerFluentBuilder {
     /// </ul>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p> If you specify this field, AWS OpsWorks CM creates the server by using the backup represented by BackupId. </p>
-    pub fn backup_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn backup_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.backup_id(input.into());
         self
     }
     /// <p> If you specify this field, AWS OpsWorks CM creates the server by using the backup represented by BackupId. </p>
-    pub fn set_backup_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_backup_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_backup_id(input);
         self
     }

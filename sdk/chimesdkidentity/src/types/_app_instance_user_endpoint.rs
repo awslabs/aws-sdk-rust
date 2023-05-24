@@ -2,35 +2,35 @@
 
 /// <p>An endpoint under an Amazon Chime <code>AppInstanceUser</code> that receives messages for a user. For push notifications, the endpoint is a mobile device used to receive mobile push notifications for a user.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AppInstanceUserEndpoint {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
     #[doc(hidden)]
-    pub app_instance_user_arn: std::option::Option<std::string::String>,
+    pub app_instance_user_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
     #[doc(hidden)]
-    pub endpoint_id: std::option::Option<std::string::String>,
+    pub endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the <code>AppInstanceUserEndpoint</code>.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of the <code>AppInstanceUserEndpoint</code>.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::AppInstanceUserEndpointType>,
+    pub r#type: ::std::option::Option<crate::types::AppInstanceUserEndpointType>,
     /// <p>The ARN of the resource to which the endpoint belongs.</p>
     #[doc(hidden)]
-    pub resource_arn: std::option::Option<std::string::String>,
+    pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The attributes of an <code>Endpoint</code>.</p>
     #[doc(hidden)]
-    pub endpoint_attributes: std::option::Option<crate::types::EndpointAttributes>,
+    pub endpoint_attributes: ::std::option::Option<crate::types::EndpointAttributes>,
     /// <p>The time at which an <code>AppInstanceUserEndpoint</code> was created.</p>
     #[doc(hidden)]
-    pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time at which an <code>AppInstanceUserEndpoint</code> was last updated.</p>
     #[doc(hidden)]
-    pub last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Boolean that controls whether the <code>AppInstanceUserEndpoint</code> is opted in to receive messages. <code>ALL</code> indicates the endpoint will receive all messages. <code>NONE</code> indicates the endpoint will receive no messages.</p>
     #[doc(hidden)]
-    pub allow_messages: std::option::Option<crate::types::AllowMessages>,
+    pub allow_messages: ::std::option::Option<crate::types::AllowMessages>,
     /// <p>A read-only field that represents the state of an <code>AppInstanceUserEndpoint</code>. Supported values:</p>
     /// <ul>
     /// <li> <p> <code>ACTIVE</code>: The <code>AppInstanceUserEndpoint</code> is active and able to receive messages. When <code>ACTIVE</code>, the <code>EndpointStatusReason</code> remains empty.</p> </li>
@@ -39,43 +39,43 @@ pub struct AppInstanceUserEndpoint {
     /// <li> <p> <code>INVALID_PINPOINT_ARN</code> indicates that an <code>AppInstanceUserEndpoint</code> is <code>INACTIVE</code> due to an invalid pinpoint ARN that was input through the <code>ResourceArn</code> field.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub endpoint_state: std::option::Option<crate::types::EndpointState>,
+    pub endpoint_state: ::std::option::Option<crate::types::EndpointState>,
 }
 impl AppInstanceUserEndpoint {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
-    pub fn app_instance_user_arn(&self) -> std::option::Option<&str> {
+    pub fn app_instance_user_arn(&self) -> ::std::option::Option<&str> {
         self.app_instance_user_arn.as_deref()
     }
     /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
-    pub fn endpoint_id(&self) -> std::option::Option<&str> {
+    pub fn endpoint_id(&self) -> ::std::option::Option<&str> {
         self.endpoint_id.as_deref()
     }
     /// <p>The name of the <code>AppInstanceUserEndpoint</code>.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The type of the <code>AppInstanceUserEndpoint</code>.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::AppInstanceUserEndpointType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::AppInstanceUserEndpointType> {
         self.r#type.as_ref()
     }
     /// <p>The ARN of the resource to which the endpoint belongs.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
     /// <p>The attributes of an <code>Endpoint</code>.</p>
-    pub fn endpoint_attributes(&self) -> std::option::Option<&crate::types::EndpointAttributes> {
+    pub fn endpoint_attributes(&self) -> ::std::option::Option<&crate::types::EndpointAttributes> {
         self.endpoint_attributes.as_ref()
     }
     /// <p>The time at which an <code>AppInstanceUserEndpoint</code> was created.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The time at which an <code>AppInstanceUserEndpoint</code> was last updated.</p>
-    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_timestamp.as_ref()
     }
     /// <p>Boolean that controls whether the <code>AppInstanceUserEndpoint</code> is opted in to receive messages. <code>ALL</code> indicates the endpoint will receive all messages. <code>NONE</code> indicates the endpoint will receive no messages.</p>
-    pub fn allow_messages(&self) -> std::option::Option<&crate::types::AllowMessages> {
+    pub fn allow_messages(&self) -> ::std::option::Option<&crate::types::AllowMessages> {
         self.allow_messages.as_ref()
     }
     /// <p>A read-only field that represents the state of an <code>AppInstanceUserEndpoint</code>. Supported values:</p>
@@ -85,12 +85,12 @@ impl AppInstanceUserEndpoint {
     /// <li> <p> <code>INVALID_DEVICE_TOKEN</code> indicates that an <code>AppInstanceUserEndpoint</code> is <code>INACTIVE</code> due to invalid device token</p> </li>
     /// <li> <p> <code>INVALID_PINPOINT_ARN</code> indicates that an <code>AppInstanceUserEndpoint</code> is <code>INACTIVE</code> due to an invalid pinpoint ARN that was input through the <code>ResourceArn</code> field.</p> </li>
     /// </ul>
-    pub fn endpoint_state(&self) -> std::option::Option<&crate::types::EndpointState> {
+    pub fn endpoint_state(&self) -> ::std::option::Option<&crate::types::EndpointState> {
         self.endpoint_state.as_ref()
     }
 }
-impl std::fmt::Debug for AppInstanceUserEndpoint {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for AppInstanceUserEndpoint {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AppInstanceUserEndpoint");
         formatter.field("app_instance_user_arn", &"*** Sensitive Data Redacted ***");
         formatter.field("endpoint_id", &"*** Sensitive Data Redacted ***");
@@ -114,124 +114,127 @@ impl AppInstanceUserEndpoint {
 
 /// A builder for [`AppInstanceUserEndpoint`](crate::types::AppInstanceUserEndpoint).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct AppInstanceUserEndpointBuilder {
-    pub(crate) app_instance_user_arn: std::option::Option<std::string::String>,
-    pub(crate) endpoint_id: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) r#type: std::option::Option<crate::types::AppInstanceUserEndpointType>,
-    pub(crate) resource_arn: std::option::Option<std::string::String>,
-    pub(crate) endpoint_attributes: std::option::Option<crate::types::EndpointAttributes>,
-    pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) allow_messages: std::option::Option<crate::types::AllowMessages>,
-    pub(crate) endpoint_state: std::option::Option<crate::types::EndpointState>,
+    pub(crate) app_instance_user_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) endpoint_id: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::AppInstanceUserEndpointType>,
+    pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) endpoint_attributes: ::std::option::Option<crate::types::EndpointAttributes>,
+    pub(crate) created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) allow_messages: ::std::option::Option<crate::types::AllowMessages>,
+    pub(crate) endpoint_state: ::std::option::Option<crate::types::EndpointState>,
 }
 impl AppInstanceUserEndpointBuilder {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
-    pub fn app_instance_user_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.app_instance_user_arn = Some(input.into());
+    pub fn app_instance_user_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.app_instance_user_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
     pub fn set_app_instance_user_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.app_instance_user_arn = input;
         self
     }
     /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
-    pub fn endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.endpoint_id = Some(input.into());
+    pub fn endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.endpoint_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
-    pub fn set_endpoint_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint_id = input;
         self
     }
     /// <p>The name of the <code>AppInstanceUserEndpoint</code>.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the <code>AppInstanceUserEndpoint</code>.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The type of the <code>AppInstanceUserEndpoint</code>.</p>
     pub fn r#type(mut self, input: crate::types::AppInstanceUserEndpointType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of the <code>AppInstanceUserEndpoint</code>.</p>
     pub fn set_type(
         mut self,
-        input: std::option::Option<crate::types::AppInstanceUserEndpointType>,
+        input: ::std::option::Option<crate::types::AppInstanceUserEndpointType>,
     ) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The ARN of the resource to which the endpoint belongs.</p>
-    pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_arn = Some(input.into());
+    pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the resource to which the endpoint belongs.</p>
-    pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
     }
     /// <p>The attributes of an <code>Endpoint</code>.</p>
     pub fn endpoint_attributes(mut self, input: crate::types::EndpointAttributes) -> Self {
-        self.endpoint_attributes = Some(input);
+        self.endpoint_attributes = ::std::option::Option::Some(input);
         self
     }
     /// <p>The attributes of an <code>Endpoint</code>.</p>
     pub fn set_endpoint_attributes(
         mut self,
-        input: std::option::Option<crate::types::EndpointAttributes>,
+        input: ::std::option::Option<crate::types::EndpointAttributes>,
     ) -> Self {
         self.endpoint_attributes = input;
         self
     }
     /// <p>The time at which an <code>AppInstanceUserEndpoint</code> was created.</p>
-    pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_timestamp = Some(input);
+    pub fn created_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time at which an <code>AppInstanceUserEndpoint</code> was created.</p>
     pub fn set_created_timestamp(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_timestamp = input;
         self
     }
     /// <p>The time at which an <code>AppInstanceUserEndpoint</code> was last updated.</p>
-    pub fn last_updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_updated_timestamp = Some(input);
+    pub fn last_updated_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_updated_timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time at which an <code>AppInstanceUserEndpoint</code> was last updated.</p>
     pub fn set_last_updated_timestamp(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_updated_timestamp = input;
         self
     }
     /// <p>Boolean that controls whether the <code>AppInstanceUserEndpoint</code> is opted in to receive messages. <code>ALL</code> indicates the endpoint will receive all messages. <code>NONE</code> indicates the endpoint will receive no messages.</p>
     pub fn allow_messages(mut self, input: crate::types::AllowMessages) -> Self {
-        self.allow_messages = Some(input);
+        self.allow_messages = ::std::option::Option::Some(input);
         self
     }
     /// <p>Boolean that controls whether the <code>AppInstanceUserEndpoint</code> is opted in to receive messages. <code>ALL</code> indicates the endpoint will receive all messages. <code>NONE</code> indicates the endpoint will receive no messages.</p>
     pub fn set_allow_messages(
         mut self,
-        input: std::option::Option<crate::types::AllowMessages>,
+        input: ::std::option::Option<crate::types::AllowMessages>,
     ) -> Self {
         self.allow_messages = input;
         self
@@ -244,7 +247,7 @@ impl AppInstanceUserEndpointBuilder {
     /// <li> <p> <code>INVALID_PINPOINT_ARN</code> indicates that an <code>AppInstanceUserEndpoint</code> is <code>INACTIVE</code> due to an invalid pinpoint ARN that was input through the <code>ResourceArn</code> field.</p> </li>
     /// </ul>
     pub fn endpoint_state(mut self, input: crate::types::EndpointState) -> Self {
-        self.endpoint_state = Some(input);
+        self.endpoint_state = ::std::option::Option::Some(input);
         self
     }
     /// <p>A read-only field that represents the state of an <code>AppInstanceUserEndpoint</code>. Supported values:</p>
@@ -256,7 +259,7 @@ impl AppInstanceUserEndpointBuilder {
     /// </ul>
     pub fn set_endpoint_state(
         mut self,
-        input: std::option::Option<crate::types::EndpointState>,
+        input: ::std::option::Option<crate::types::EndpointState>,
     ) -> Self {
         self.endpoint_state = input;
         self
@@ -277,8 +280,8 @@ impl AppInstanceUserEndpointBuilder {
         }
     }
 }
-impl std::fmt::Debug for AppInstanceUserEndpointBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for AppInstanceUserEndpointBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AppInstanceUserEndpointBuilder");
         formatter.field("app_instance_user_arn", &"*** Sensitive Data Redacted ***");
         formatter.field("endpoint_id", &"*** Sensitive Data Redacted ***");

@@ -2,29 +2,29 @@
 
 /// <p>Describes a WorkSpace that cannot be created.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FailedCreateWorkspaceRequest {
     /// <p>Information about the WorkSpace.</p>
     #[doc(hidden)]
-    pub workspace_request: std::option::Option<crate::types::WorkspaceRequest>,
+    pub workspace_request: ::std::option::Option<crate::types::WorkspaceRequest>,
     /// <p>The error code that is returned if the WorkSpace cannot be created.</p>
     #[doc(hidden)]
-    pub error_code: std::option::Option<std::string::String>,
+    pub error_code: ::std::option::Option<::std::string::String>,
     /// <p>The text of the error message that is returned if the WorkSpace cannot be created.</p>
     #[doc(hidden)]
-    pub error_message: std::option::Option<std::string::String>,
+    pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl FailedCreateWorkspaceRequest {
     /// <p>Information about the WorkSpace.</p>
-    pub fn workspace_request(&self) -> std::option::Option<&crate::types::WorkspaceRequest> {
+    pub fn workspace_request(&self) -> ::std::option::Option<&crate::types::WorkspaceRequest> {
         self.workspace_request.as_ref()
     }
     /// <p>The error code that is returned if the WorkSpace cannot be created.</p>
-    pub fn error_code(&self) -> std::option::Option<&str> {
+    pub fn error_code(&self) -> ::std::option::Option<&str> {
         self.error_code.as_deref()
     }
     /// <p>The text of the error message that is returned if the WorkSpace cannot be created.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<&str> {
         self.error_message.as_deref()
     }
 }
@@ -37,43 +37,51 @@ impl FailedCreateWorkspaceRequest {
 
 /// A builder for [`FailedCreateWorkspaceRequest`](crate::types::FailedCreateWorkspaceRequest).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FailedCreateWorkspaceRequestBuilder {
-    pub(crate) workspace_request: std::option::Option<crate::types::WorkspaceRequest>,
-    pub(crate) error_code: std::option::Option<std::string::String>,
-    pub(crate) error_message: std::option::Option<std::string::String>,
+    pub(crate) workspace_request: ::std::option::Option<crate::types::WorkspaceRequest>,
+    pub(crate) error_code: ::std::option::Option<::std::string::String>,
+    pub(crate) error_message: ::std::option::Option<::std::string::String>,
 }
 impl FailedCreateWorkspaceRequestBuilder {
     /// <p>Information about the WorkSpace.</p>
     pub fn workspace_request(mut self, input: crate::types::WorkspaceRequest) -> Self {
-        self.workspace_request = Some(input);
+        self.workspace_request = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the WorkSpace.</p>
     pub fn set_workspace_request(
         mut self,
-        input: std::option::Option<crate::types::WorkspaceRequest>,
+        input: ::std::option::Option<crate::types::WorkspaceRequest>,
     ) -> Self {
         self.workspace_request = input;
         self
     }
     /// <p>The error code that is returned if the WorkSpace cannot be created.</p>
-    pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
-        self.error_code = Some(input.into());
+    pub fn error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.error_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The error code that is returned if the WorkSpace cannot be created.</p>
-    pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_code = input;
         self
     }
     /// <p>The text of the error message that is returned if the WorkSpace cannot be created.</p>
-    pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.error_message = Some(input.into());
+    pub fn error_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The text of the error message that is returned if the WorkSpace cannot be created.</p>
-    pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_error_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.error_message = input;
         self
     }

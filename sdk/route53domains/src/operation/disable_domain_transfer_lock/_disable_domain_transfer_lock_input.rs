@@ -2,15 +2,15 @@
 
 /// <p>The DisableDomainTransferLock request includes the following element.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisableDomainTransferLockInput {
     /// <p>The name of the domain that you want to remove the transfer lock for.</p>
     #[doc(hidden)]
-    pub domain_name: std::option::Option<std::string::String>,
+    pub domain_name: ::std::option::Option<::std::string::String>,
 }
 impl DisableDomainTransferLockInput {
     /// <p>The name of the domain that you want to remove the transfer lock for.</p>
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<&str> {
         self.domain_name.as_deref()
     }
 }
@@ -23,29 +23,31 @@ impl DisableDomainTransferLockInput {
 
 /// A builder for [`DisableDomainTransferLockInput`](crate::operation::disable_domain_transfer_lock::DisableDomainTransferLockInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DisableDomainTransferLockInputBuilder {
-    pub(crate) domain_name: std::option::Option<std::string::String>,
+    pub(crate) domain_name: ::std::option::Option<::std::string::String>,
 }
 impl DisableDomainTransferLockInputBuilder {
     /// <p>The name of the domain that you want to remove the transfer lock for.</p>
-    pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.domain_name = Some(input.into());
+    pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.domain_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the domain that you want to remove the transfer lock for.</p>
-    pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_name = input;
         self
     }
     /// Consumes the builder and constructs a [`DisableDomainTransferLockInput`](crate::operation::disable_domain_transfer_lock::DisableDomainTransferLockInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::disable_domain_transfer_lock::DisableDomainTransferLockInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::disable_domain_transfer_lock::DisableDomainTransferLockInput {
                 domain_name: self.domain_name,
             },

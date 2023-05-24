@@ -2,50 +2,50 @@
 
 /// <p>An attribute value.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AttributeValue {
     /// <p>A string.</p>
     #[doc(hidden)]
-    pub s: std::option::Option<std::string::String>,
+    pub s: ::std::option::Option<::std::string::String>,
     /// <p>A number.</p>
     #[doc(hidden)]
-    pub n: std::option::Option<std::string::String>,
+    pub n: ::std::option::Option<::std::string::String>,
     /// <p>A binary value.</p>
     #[doc(hidden)]
-    pub b: std::option::Option<std::string::String>,
+    pub b: ::std::option::Option<::std::string::String>,
     /// <p>A list of strings.</p>
     #[doc(hidden)]
-    pub ss: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub ss: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of numbers.</p>
     #[doc(hidden)]
-    pub ns: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub ns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of binary values.</p>
     #[doc(hidden)]
-    pub bs: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub bs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AttributeValue {
     /// <p>A string.</p>
-    pub fn s(&self) -> std::option::Option<&str> {
+    pub fn s(&self) -> ::std::option::Option<&str> {
         self.s.as_deref()
     }
     /// <p>A number.</p>
-    pub fn n(&self) -> std::option::Option<&str> {
+    pub fn n(&self) -> ::std::option::Option<&str> {
         self.n.as_deref()
     }
     /// <p>A binary value.</p>
-    pub fn b(&self) -> std::option::Option<&str> {
+    pub fn b(&self) -> ::std::option::Option<&str> {
         self.b.as_deref()
     }
     /// <p>A list of strings.</p>
-    pub fn ss(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn ss(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.ss.as_deref()
     }
     /// <p>A list of numbers.</p>
-    pub fn ns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn ns(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.ns.as_deref()
     }
     /// <p>A list of binary values.</p>
-    pub fn bs(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn bs(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.bs.as_deref()
     }
 }
@@ -58,43 +58,45 @@ impl AttributeValue {
 
 /// A builder for [`AttributeValue`](crate::types::AttributeValue).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AttributeValueBuilder {
-    pub(crate) s: std::option::Option<std::string::String>,
-    pub(crate) n: std::option::Option<std::string::String>,
-    pub(crate) b: std::option::Option<std::string::String>,
-    pub(crate) ss: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) ns: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) bs: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) s: ::std::option::Option<::std::string::String>,
+    pub(crate) n: ::std::option::Option<::std::string::String>,
+    pub(crate) b: ::std::option::Option<::std::string::String>,
+    pub(crate) ss: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) ns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) bs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AttributeValueBuilder {
     /// <p>A string.</p>
-    pub fn s(mut self, input: impl Into<std::string::String>) -> Self {
-        self.s = Some(input.into());
+    pub fn s(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.s = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A string.</p>
-    pub fn set_s(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_s(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s = input;
         self
     }
     /// <p>A number.</p>
-    pub fn n(mut self, input: impl Into<std::string::String>) -> Self {
-        self.n = Some(input.into());
+    pub fn n(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.n = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A number.</p>
-    pub fn set_n(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_n(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.n = input;
         self
     }
     /// <p>A binary value.</p>
-    pub fn b(mut self, input: impl Into<std::string::String>) -> Self {
-        self.b = Some(input.into());
+    pub fn b(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.b = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A binary value.</p>
-    pub fn set_b(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_b(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.b = input;
         self
     }
@@ -103,16 +105,16 @@ impl AttributeValueBuilder {
     /// To override the contents of this collection use [`set_ss`](Self::set_ss).
     ///
     /// <p>A list of strings.</p>
-    pub fn ss(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn ss(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.ss.unwrap_or_default();
         v.push(input.into());
-        self.ss = Some(v);
+        self.ss = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of strings.</p>
     pub fn set_ss(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.ss = input;
         self
@@ -122,16 +124,16 @@ impl AttributeValueBuilder {
     /// To override the contents of this collection use [`set_ns`](Self::set_ns).
     ///
     /// <p>A list of numbers.</p>
-    pub fn ns(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn ns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.ns.unwrap_or_default();
         v.push(input.into());
-        self.ns = Some(v);
+        self.ns = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of numbers.</p>
     pub fn set_ns(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.ns = input;
         self
@@ -141,16 +143,16 @@ impl AttributeValueBuilder {
     /// To override the contents of this collection use [`set_bs`](Self::set_bs).
     ///
     /// <p>A list of binary values.</p>
-    pub fn bs(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn bs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.bs.unwrap_or_default();
         v.push(input.into());
-        self.bs = Some(v);
+        self.bs = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of binary values.</p>
     pub fn set_bs(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.bs = input;
         self

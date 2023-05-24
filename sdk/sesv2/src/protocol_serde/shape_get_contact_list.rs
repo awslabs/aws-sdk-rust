@@ -2,7 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_contact_list_http_error(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::get_contact_list::GetContactListOutput,
@@ -15,7 +15,7 @@ pub fn de_get_contact_list_http_error(
         _response_body,
     )
     .map_err(crate::operation::get_contact_list::GetContactListError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
+    generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
@@ -84,7 +84,7 @@ pub fn de_get_contact_list_http_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_contact_list_http_response_with_props(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::get_contact_list::GetContactListOutput,
@@ -100,7 +100,7 @@ pub fn de_get_contact_list_http_response_with_props(
         )
         .map_err(crate::operation::get_contact_list::GetContactListError::unhandled)?;
         output._set_request_id(
-            aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
+            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
         );
         output.build()
     })
@@ -111,21 +111,21 @@ pub(crate) fn de_get_contact_list(
     mut builder: crate::operation::get_contact_list::builders::GetContactListOutputBuilder,
 ) -> Result<
     crate::operation::get_contact_list::builders::GetContactListOutputBuilder,
-    aws_smithy_json::deserialize::error::DeserializeError,
+    ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =
-        aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
+        ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
             .peekable();
     let tokens = &mut tokens_owned;
-    aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
-            Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+            Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "ContactListName" => {
                         builder = builder.set_contact_list_name(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -134,15 +134,15 @@ pub(crate) fn de_get_contact_list(
                     }
                     "CreatedTimestamp" => {
                         builder = builder.set_created_timestamp(
-                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),
-                                aws_smithy_types::date_time::Format::EpochSeconds,
+                                ::aws_smithy_types::date_time::Format::EpochSeconds,
                             )?,
                         );
                     }
                     "Description" => {
                         builder = builder.set_description(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -151,9 +151,9 @@ pub(crate) fn de_get_contact_list(
                     }
                     "LastUpdatedTimestamp" => {
                         builder = builder.set_last_updated_timestamp(
-                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),
-                                aws_smithy_types::date_time::Format::EpochSeconds,
+                                ::aws_smithy_types::date_time::Format::EpochSeconds,
                             )?,
                         );
                     }
@@ -165,12 +165,12 @@ pub(crate) fn de_get_contact_list(
                         builder = builder
                             .set_topics(crate::protocol_serde::shape_topics::de_topics(tokens)?);
                     }
-                    _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }
             other => {
                 return Err(
-                    aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                         "expected object key or end object, found: {:?}",
                         other
                     )),
@@ -180,7 +180,7 @@ pub(crate) fn de_get_contact_list(
     }
     if tokens.next().is_some() {
         return Err(
-            aws_smithy_json::deserialize::error::DeserializeError::custom(
+            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
                 "found more JSON tokens after completing parsing",
             ),
         );

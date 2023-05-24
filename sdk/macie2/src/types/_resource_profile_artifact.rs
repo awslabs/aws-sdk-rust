@@ -2,11 +2,11 @@
 
 /// <p>Provides information about an S3 object that Amazon Macie selected for analysis while performing automated sensitive data discovery for an S3 bucket, and the status and results of the analysis. This information is available only if automated sensitive data discovery is currently enabled for your account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceProfileArtifact {
     /// <p>The Amazon Resource Name (ARN) of the object.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the analysis. Possible values are:</p>
     /// <ul>
     /// <li><p>COMPLETE - Amazon Macie successfully completed its analysis of the object.</p></li>
@@ -14,14 +14,14 @@ pub struct ResourceProfileArtifact {
     /// <li><p>SKIPPED - Macie wasn't able to analyze the object. For example, the object is a malformed file.</p></li>
     /// </ul>
     #[doc(hidden)]
-    pub classification_result_status: std::option::Option<std::string::String>,
+    pub classification_result_status: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether Amazon Macie found sensitive data in the object.</p>
     #[doc(hidden)]
-    pub sensitive: std::option::Option<bool>,
+    pub sensitive: ::std::option::Option<bool>,
 }
 impl ResourceProfileArtifact {
     /// <p>The Amazon Resource Name (ARN) of the object.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The status of the analysis. Possible values are:</p>
@@ -30,11 +30,11 @@ impl ResourceProfileArtifact {
     /// <li><p>PARTIAL - Macie analyzed only a subset of data in the object. For example, the object is an archive file that contains files in an unsupported format.</p></li>
     /// <li><p>SKIPPED - Macie wasn't able to analyze the object. For example, the object is a malformed file.</p></li>
     /// </ul>
-    pub fn classification_result_status(&self) -> std::option::Option<&str> {
+    pub fn classification_result_status(&self) -> ::std::option::Option<&str> {
         self.classification_result_status.as_deref()
     }
     /// <p>Specifies whether Amazon Macie found sensitive data in the object.</p>
-    pub fn sensitive(&self) -> std::option::Option<bool> {
+    pub fn sensitive(&self) -> ::std::option::Option<bool> {
         self.sensitive
     }
 }
@@ -47,20 +47,22 @@ impl ResourceProfileArtifact {
 
 /// A builder for [`ResourceProfileArtifact`](crate::types::ResourceProfileArtifact).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResourceProfileArtifactBuilder {
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) classification_result_status: std::option::Option<std::string::String>,
-    pub(crate) sensitive: std::option::Option<bool>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) classification_result_status: ::std::option::Option<::std::string::String>,
+    pub(crate) sensitive: ::std::option::Option<bool>,
 }
 impl ResourceProfileArtifactBuilder {
     /// <p>The Amazon Resource Name (ARN) of the object.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the object.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
@@ -70,8 +72,11 @@ impl ResourceProfileArtifactBuilder {
     /// <li><p>PARTIAL - Macie analyzed only a subset of data in the object. For example, the object is an archive file that contains files in an unsupported format.</p></li>
     /// <li><p>SKIPPED - Macie wasn't able to analyze the object. For example, the object is a malformed file.</p></li>
     /// </ul>
-    pub fn classification_result_status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.classification_result_status = Some(input.into());
+    pub fn classification_result_status(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.classification_result_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the analysis. Possible values are:</p>
@@ -82,18 +87,18 @@ impl ResourceProfileArtifactBuilder {
     /// </ul>
     pub fn set_classification_result_status(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.classification_result_status = input;
         self
     }
     /// <p>Specifies whether Amazon Macie found sensitive data in the object.</p>
     pub fn sensitive(mut self, input: bool) -> Self {
-        self.sensitive = Some(input);
+        self.sensitive = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether Amazon Macie found sensitive data in the object.</p>
-    pub fn set_sensitive(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_sensitive(mut self, input: ::std::option::Option<bool>) -> Self {
         self.sensitive = input;
         self
     }

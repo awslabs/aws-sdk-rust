@@ -2,29 +2,29 @@
 
 /// Settings for deinterlacer
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Deinterlacer {
     /// Only applies when you set Deinterlace mode to Deinterlace or Adaptive. Interpolate produces sharper pictures, while blend produces smoother motion. If your source file includes a ticker, such as a scrolling headline at the bottom of the frame: Choose Interpolate ticker or Blend ticker. To apply field doubling: Choose Linear interpolation. Note that Linear interpolation may introduce video artifacts into your output.
     #[doc(hidden)]
-    pub algorithm: std::option::Option<crate::types::DeinterlaceAlgorithm>,
+    pub algorithm: ::std::option::Option<crate::types::DeinterlaceAlgorithm>,
     /// - When set to NORMAL (default), the deinterlacer does not convert frames that are tagged in metadata as progressive. It will only convert those that are tagged as some other type. - When set to FORCE_ALL_FRAMES, the deinterlacer converts every frame to progressive - even those that are already tagged as progressive. Turn Force mode on only if there is a good chance that the metadata has tagged frames as progressive when they are not progressive. Do not turn on otherwise; processing frames that are already progressive into progressive will probably result in lower quality video.
     #[doc(hidden)]
-    pub control: std::option::Option<crate::types::DeinterlacerControl>,
+    pub control: ::std::option::Option<crate::types::DeinterlacerControl>,
     /// Use Deinterlacer (DeinterlaceMode) to choose how the service will do deinterlacing. Default is Deinterlace. - Deinterlace converts interlaced to progressive. - Inverse telecine converts Hard Telecine 29.97i to progressive 23.976p. - Adaptive auto-detects and converts to progressive.
     #[doc(hidden)]
-    pub mode: std::option::Option<crate::types::DeinterlacerMode>,
+    pub mode: ::std::option::Option<crate::types::DeinterlacerMode>,
 }
 impl Deinterlacer {
     /// Only applies when you set Deinterlace mode to Deinterlace or Adaptive. Interpolate produces sharper pictures, while blend produces smoother motion. If your source file includes a ticker, such as a scrolling headline at the bottom of the frame: Choose Interpolate ticker or Blend ticker. To apply field doubling: Choose Linear interpolation. Note that Linear interpolation may introduce video artifacts into your output.
-    pub fn algorithm(&self) -> std::option::Option<&crate::types::DeinterlaceAlgorithm> {
+    pub fn algorithm(&self) -> ::std::option::Option<&crate::types::DeinterlaceAlgorithm> {
         self.algorithm.as_ref()
     }
     /// - When set to NORMAL (default), the deinterlacer does not convert frames that are tagged in metadata as progressive. It will only convert those that are tagged as some other type. - When set to FORCE_ALL_FRAMES, the deinterlacer converts every frame to progressive - even those that are already tagged as progressive. Turn Force mode on only if there is a good chance that the metadata has tagged frames as progressive when they are not progressive. Do not turn on otherwise; processing frames that are already progressive into progressive will probably result in lower quality video.
-    pub fn control(&self) -> std::option::Option<&crate::types::DeinterlacerControl> {
+    pub fn control(&self) -> ::std::option::Option<&crate::types::DeinterlacerControl> {
         self.control.as_ref()
     }
     /// Use Deinterlacer (DeinterlaceMode) to choose how the service will do deinterlacing. Default is Deinterlace. - Deinterlace converts interlaced to progressive. - Inverse telecine converts Hard Telecine 29.97i to progressive 23.976p. - Adaptive auto-detects and converts to progressive.
-    pub fn mode(&self) -> std::option::Option<&crate::types::DeinterlacerMode> {
+    pub fn mode(&self) -> ::std::option::Option<&crate::types::DeinterlacerMode> {
         self.mode.as_ref()
     }
 }
@@ -37,46 +37,51 @@ impl Deinterlacer {
 
 /// A builder for [`Deinterlacer`](crate::types::Deinterlacer).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeinterlacerBuilder {
-    pub(crate) algorithm: std::option::Option<crate::types::DeinterlaceAlgorithm>,
-    pub(crate) control: std::option::Option<crate::types::DeinterlacerControl>,
-    pub(crate) mode: std::option::Option<crate::types::DeinterlacerMode>,
+    pub(crate) algorithm: ::std::option::Option<crate::types::DeinterlaceAlgorithm>,
+    pub(crate) control: ::std::option::Option<crate::types::DeinterlacerControl>,
+    pub(crate) mode: ::std::option::Option<crate::types::DeinterlacerMode>,
 }
 impl DeinterlacerBuilder {
     /// Only applies when you set Deinterlace mode to Deinterlace or Adaptive. Interpolate produces sharper pictures, while blend produces smoother motion. If your source file includes a ticker, such as a scrolling headline at the bottom of the frame: Choose Interpolate ticker or Blend ticker. To apply field doubling: Choose Linear interpolation. Note that Linear interpolation may introduce video artifacts into your output.
     pub fn algorithm(mut self, input: crate::types::DeinterlaceAlgorithm) -> Self {
-        self.algorithm = Some(input);
+        self.algorithm = ::std::option::Option::Some(input);
         self
     }
     /// Only applies when you set Deinterlace mode to Deinterlace or Adaptive. Interpolate produces sharper pictures, while blend produces smoother motion. If your source file includes a ticker, such as a scrolling headline at the bottom of the frame: Choose Interpolate ticker or Blend ticker. To apply field doubling: Choose Linear interpolation. Note that Linear interpolation may introduce video artifacts into your output.
     pub fn set_algorithm(
         mut self,
-        input: std::option::Option<crate::types::DeinterlaceAlgorithm>,
+        input: ::std::option::Option<crate::types::DeinterlaceAlgorithm>,
     ) -> Self {
         self.algorithm = input;
         self
     }
     /// - When set to NORMAL (default), the deinterlacer does not convert frames that are tagged in metadata as progressive. It will only convert those that are tagged as some other type. - When set to FORCE_ALL_FRAMES, the deinterlacer converts every frame to progressive - even those that are already tagged as progressive. Turn Force mode on only if there is a good chance that the metadata has tagged frames as progressive when they are not progressive. Do not turn on otherwise; processing frames that are already progressive into progressive will probably result in lower quality video.
     pub fn control(mut self, input: crate::types::DeinterlacerControl) -> Self {
-        self.control = Some(input);
+        self.control = ::std::option::Option::Some(input);
         self
     }
     /// - When set to NORMAL (default), the deinterlacer does not convert frames that are tagged in metadata as progressive. It will only convert those that are tagged as some other type. - When set to FORCE_ALL_FRAMES, the deinterlacer converts every frame to progressive - even those that are already tagged as progressive. Turn Force mode on only if there is a good chance that the metadata has tagged frames as progressive when they are not progressive. Do not turn on otherwise; processing frames that are already progressive into progressive will probably result in lower quality video.
     pub fn set_control(
         mut self,
-        input: std::option::Option<crate::types::DeinterlacerControl>,
+        input: ::std::option::Option<crate::types::DeinterlacerControl>,
     ) -> Self {
         self.control = input;
         self
     }
     /// Use Deinterlacer (DeinterlaceMode) to choose how the service will do deinterlacing. Default is Deinterlace. - Deinterlace converts interlaced to progressive. - Inverse telecine converts Hard Telecine 29.97i to progressive 23.976p. - Adaptive auto-detects and converts to progressive.
     pub fn mode(mut self, input: crate::types::DeinterlacerMode) -> Self {
-        self.mode = Some(input);
+        self.mode = ::std::option::Option::Some(input);
         self
     }
     /// Use Deinterlacer (DeinterlaceMode) to choose how the service will do deinterlacing. Default is Deinterlace. - Deinterlace converts interlaced to progressive. - Inverse telecine converts Hard Telecine 29.97i to progressive 23.976p. - Adaptive auto-detects and converts to progressive.
-    pub fn set_mode(mut self, input: std::option::Option<crate::types::DeinterlacerMode>) -> Self {
+    pub fn set_mode(
+        mut self,
+        input: ::std::option::Option<crate::types::DeinterlacerMode>,
+    ) -> Self {
         self.mode = input;
         self
     }

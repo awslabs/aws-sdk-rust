@@ -2,15 +2,15 @@
 
 /// <p>The Amazon Web Services organization for your S3 Storage Lens.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StorageLensAwsOrg {
     /// <p>A container for the Amazon Resource Name (ARN) of the Amazon Web Services organization. This property is read-only and follows the following format: <code> arn:aws:organizations:<i>us-east-1</i>:<i>example-account-id</i>:organization/<i>o-ex2l495dck</i> </code> </p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
 }
 impl StorageLensAwsOrg {
     /// <p>A container for the Amazon Resource Name (ARN) of the Amazon Web Services organization. This property is read-only and follows the following format: <code> arn:aws:organizations:<i>us-east-1</i>:<i>example-account-id</i>:organization/<i>o-ex2l495dck</i> </code> </p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl StorageLensAwsOrg {
 
 /// A builder for [`StorageLensAwsOrg`](crate::types::StorageLensAwsOrg).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StorageLensAwsOrgBuilder {
-    pub(crate) arn: std::option::Option<std::string::String>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
 impl StorageLensAwsOrgBuilder {
     /// <p>A container for the Amazon Resource Name (ARN) of the Amazon Web Services organization. This property is read-only and follows the following format: <code> arn:aws:organizations:<i>us-east-1</i>:<i>example-account-id</i>:organization/<i>o-ex2l495dck</i> </code> </p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A container for the Amazon Resource Name (ARN) of the Amazon Web Services organization. This property is read-only and follows the following format: <code> arn:aws:organizations:<i>us-east-1</i>:<i>example-account-id</i>:organization/<i>o-ex2l495dck</i> </code> </p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }

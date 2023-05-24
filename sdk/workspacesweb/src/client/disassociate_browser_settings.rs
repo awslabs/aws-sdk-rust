@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DisassociateBrowserSettings`](crate::operation::disassociate_browser_settings::builders::DisassociateBrowserSettingsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`portal_arn(impl Into<String>)`](crate::operation::disassociate_browser_settings::builders::DisassociateBrowserSettingsFluentBuilder::portal_arn) / [`set_portal_arn(Option<String>)`](crate::operation::disassociate_browser_settings::builders::DisassociateBrowserSettingsFluentBuilder::set_portal_arn): <p>The ARN of the web portal.</p>
+    ///   - [`portal_arn(impl ::std::convert::Into<String>)`](crate::operation::disassociate_browser_settings::builders::DisassociateBrowserSettingsFluentBuilder::portal_arn) / [`set_portal_arn(Option<String>)`](crate::operation::disassociate_browser_settings::builders::DisassociateBrowserSettingsFluentBuilder::set_portal_arn): <p>The ARN of the web portal.</p>
     /// - On success, responds with [`DisassociateBrowserSettingsOutput`](crate::operation::disassociate_browser_settings::DisassociateBrowserSettingsOutput)
     /// - On failure, responds with [`SdkError<DisassociateBrowserSettingsError>`](crate::operation::disassociate_browser_settings::DisassociateBrowserSettingsError)
     pub fn disassociate_browser_settings(&self) -> crate::operation::disassociate_browser_settings::builders::DisassociateBrowserSettingsFluentBuilder{

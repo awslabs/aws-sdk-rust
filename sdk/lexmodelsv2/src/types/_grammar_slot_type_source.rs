@@ -2,29 +2,29 @@
 
 /// <p>Describes the Amazon S3 bucket name and location for the grammar that is the source for the slot type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GrammarSlotTypeSource {
     /// <p>The name of the S3 bucket that contains the grammar source.</p>
     #[doc(hidden)]
-    pub s3_bucket_name: std::option::Option<std::string::String>,
+    pub s3_bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>The path to the grammar in the S3 bucket.</p>
     #[doc(hidden)]
-    pub s3_object_key: std::option::Option<std::string::String>,
+    pub s3_object_key: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon KMS key required to decrypt the contents of the grammar, if any.</p>
     #[doc(hidden)]
-    pub kms_key_arn: std::option::Option<std::string::String>,
+    pub kms_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl GrammarSlotTypeSource {
     /// <p>The name of the S3 bucket that contains the grammar source.</p>
-    pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
+    pub fn s3_bucket_name(&self) -> ::std::option::Option<&str> {
         self.s3_bucket_name.as_deref()
     }
     /// <p>The path to the grammar in the S3 bucket.</p>
-    pub fn s3_object_key(&self) -> std::option::Option<&str> {
+    pub fn s3_object_key(&self) -> ::std::option::Option<&str> {
         self.s3_object_key.as_deref()
     }
     /// <p>The Amazon KMS key required to decrypt the contents of the grammar, if any.</p>
-    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+    pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
 }
@@ -37,40 +37,54 @@ impl GrammarSlotTypeSource {
 
 /// A builder for [`GrammarSlotTypeSource`](crate::types::GrammarSlotTypeSource).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GrammarSlotTypeSourceBuilder {
-    pub(crate) s3_bucket_name: std::option::Option<std::string::String>,
-    pub(crate) s3_object_key: std::option::Option<std::string::String>,
-    pub(crate) kms_key_arn: std::option::Option<std::string::String>,
+    pub(crate) s3_bucket_name: ::std::option::Option<::std::string::String>,
+    pub(crate) s3_object_key: ::std::option::Option<::std::string::String>,
+    pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl GrammarSlotTypeSourceBuilder {
     /// <p>The name of the S3 bucket that contains the grammar source.</p>
-    pub fn s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.s3_bucket_name = Some(input.into());
+    pub fn s3_bucket_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.s3_bucket_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the S3 bucket that contains the grammar source.</p>
-    pub fn set_s3_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_s3_bucket_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.s3_bucket_name = input;
         self
     }
     /// <p>The path to the grammar in the S3 bucket.</p>
-    pub fn s3_object_key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.s3_object_key = Some(input.into());
+    pub fn s3_object_key(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.s3_object_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The path to the grammar in the S3 bucket.</p>
-    pub fn set_s3_object_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_s3_object_key(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.s3_object_key = input;
         self
     }
     /// <p>The Amazon KMS key required to decrypt the contents of the grammar, if any.</p>
-    pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.kms_key_arn = Some(input.into());
+    pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon KMS key required to decrypt the contents of the grammar, if any.</p>
-    pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_arn = input;
         self
     }

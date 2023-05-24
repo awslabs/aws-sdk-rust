@@ -2,31 +2,33 @@
 
 /// <p>An object defining the template for a placement.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PlacementTemplate {
     /// <p>The default attributes (key/value pairs) to be applied to all placements using this template.</p>
     #[doc(hidden)]
-    pub default_attributes:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub default_attributes: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>An object specifying the <code>DeviceTemplate</code> for all placements using this (<code>PlacementTemplate</code>) template.</p>
     #[doc(hidden)]
-    pub device_templates: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::DeviceTemplate>,
+    pub device_templates: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::DeviceTemplate>,
     >,
 }
 impl PlacementTemplate {
     /// <p>The default attributes (key/value pairs) to be applied to all placements using this template.</p>
     pub fn default_attributes(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.default_attributes.as_ref()
     }
     /// <p>An object specifying the <code>DeviceTemplate</code> for all placements using this (<code>PlacementTemplate</code>) template.</p>
     pub fn device_templates(
         &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::types::DeviceTemplate>,
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, crate::types::DeviceTemplate>,
     > {
         self.device_templates.as_ref()
     }
@@ -40,12 +42,15 @@ impl PlacementTemplate {
 
 /// A builder for [`PlacementTemplate`](crate::types::PlacementTemplate).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PlacementTemplateBuilder {
-    pub(crate) default_attributes:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) device_templates: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::DeviceTemplate>,
+    pub(crate) default_attributes: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) device_templates: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::DeviceTemplate>,
     >,
 }
 impl PlacementTemplateBuilder {
@@ -56,19 +61,19 @@ impl PlacementTemplateBuilder {
     /// <p>The default attributes (key/value pairs) to be applied to all placements using this template.</p>
     pub fn default_attributes(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.default_attributes.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.default_attributes = Some(hash_map);
+        self.default_attributes = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The default attributes (key/value pairs) to be applied to all placements using this template.</p>
     pub fn set_default_attributes(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.default_attributes = input;
@@ -81,19 +86,19 @@ impl PlacementTemplateBuilder {
     /// <p>An object specifying the <code>DeviceTemplate</code> for all placements using this (<code>PlacementTemplate</code>) template.</p>
     pub fn device_templates(
         mut self,
-        k: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
         v: crate::types::DeviceTemplate,
     ) -> Self {
         let mut hash_map = self.device_templates.unwrap_or_default();
         hash_map.insert(k.into(), v);
-        self.device_templates = Some(hash_map);
+        self.device_templates = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>An object specifying the <code>DeviceTemplate</code> for all placements using this (<code>PlacementTemplate</code>) template.</p>
     pub fn set_device_templates(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::types::DeviceTemplate>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, crate::types::DeviceTemplate>,
         >,
     ) -> Self {
         self.device_templates = input;

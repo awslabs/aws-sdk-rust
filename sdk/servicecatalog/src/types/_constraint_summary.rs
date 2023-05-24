@@ -2,7 +2,7 @@
 
 /// <p>Summary information about a constraint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConstraintSummary {
     /// <p>The type of constraint.</p>
     /// <ul>
@@ -12,10 +12,10 @@ pub struct ConstraintSummary {
     /// <li> <p> <code>TEMPLATE</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub r#type: std::option::Option<std::string::String>,
+    pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The description of the constraint.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
 }
 impl ConstraintSummary {
     /// <p>The type of constraint.</p>
@@ -25,11 +25,11 @@ impl ConstraintSummary {
     /// <li> <p>STACKSET</p> </li>
     /// <li> <p> <code>TEMPLATE</code> </p> </li>
     /// </ul>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
     }
     /// <p>The description of the constraint.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
 }
@@ -42,10 +42,12 @@ impl ConstraintSummary {
 
 /// A builder for [`ConstraintSummary`](crate::types::ConstraintSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ConstraintSummaryBuilder {
-    pub(crate) r#type: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
+    pub(crate) r#type: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
 }
 impl ConstraintSummaryBuilder {
     /// <p>The type of constraint.</p>
@@ -55,8 +57,8 @@ impl ConstraintSummaryBuilder {
     /// <li> <p>STACKSET</p> </li>
     /// <li> <p> <code>TEMPLATE</code> </p> </li>
     /// </ul>
-    pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.r#type = Some(input.into());
+    pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.r#type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of constraint.</p>
@@ -66,17 +68,17 @@ impl ConstraintSummaryBuilder {
     /// <li> <p>STACKSET</p> </li>
     /// <li> <p> <code>TEMPLATE</code> </p> </li>
     /// </ul>
-    pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The description of the constraint.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the constraint.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }

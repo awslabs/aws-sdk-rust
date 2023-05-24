@@ -2,7 +2,7 @@
 
 /// <p>Contains information about the effect that Organizations has on a policy simulation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OrganizationsDecisionDetail {
     /// <p>Specifies whether the simulated operation is allowed by the Organizations service control policies that impact the simulated user's account.</p>
     #[doc(hidden)]
@@ -23,18 +23,20 @@ impl OrganizationsDecisionDetail {
 
 /// A builder for [`OrganizationsDecisionDetail`](crate::types::OrganizationsDecisionDetail).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OrganizationsDecisionDetailBuilder {
-    pub(crate) allowed_by_organizations: std::option::Option<bool>,
+    pub(crate) allowed_by_organizations: ::std::option::Option<bool>,
 }
 impl OrganizationsDecisionDetailBuilder {
     /// <p>Specifies whether the simulated operation is allowed by the Organizations service control policies that impact the simulated user's account.</p>
     pub fn allowed_by_organizations(mut self, input: bool) -> Self {
-        self.allowed_by_organizations = Some(input);
+        self.allowed_by_organizations = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether the simulated operation is allowed by the Organizations service control policies that impact the simulated user's account.</p>
-    pub fn set_allowed_by_organizations(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_allowed_by_organizations(mut self, input: ::std::option::Option<bool>) -> Self {
         self.allowed_by_organizations = input;
         self
     }

@@ -2,15 +2,15 @@
 
 /// <p>LoRaWAN object for list functions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoRaWanListDevice {
     /// <p>The DevEUI value.</p>
     #[doc(hidden)]
-    pub dev_eui: std::option::Option<std::string::String>,
+    pub dev_eui: ::std::option::Option<::std::string::String>,
 }
 impl LoRaWanListDevice {
     /// <p>The DevEUI value.</p>
-    pub fn dev_eui(&self) -> std::option::Option<&str> {
+    pub fn dev_eui(&self) -> ::std::option::Option<&str> {
         self.dev_eui.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl LoRaWanListDevice {
 
 /// A builder for [`LoRaWanListDevice`](crate::types::LoRaWanListDevice).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LoRaWanListDeviceBuilder {
-    pub(crate) dev_eui: std::option::Option<std::string::String>,
+    pub(crate) dev_eui: ::std::option::Option<::std::string::String>,
 }
 impl LoRaWanListDeviceBuilder {
     /// <p>The DevEUI value.</p>
-    pub fn dev_eui(mut self, input: impl Into<std::string::String>) -> Self {
-        self.dev_eui = Some(input.into());
+    pub fn dev_eui(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.dev_eui = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The DevEUI value.</p>
-    pub fn set_dev_eui(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_dev_eui(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dev_eui = input;
         self
     }

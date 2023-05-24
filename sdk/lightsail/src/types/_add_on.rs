@@ -2,66 +2,66 @@
 
 /// <p>Describes an add-on that is enabled for an Amazon Lightsail resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddOn {
     /// <p>The name of the add-on.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the add-on.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<std::string::String>,
+    pub status: ::std::option::Option<::std::string::String>,
     /// <p>The daily time when an automatic snapshot is created.</p>
     /// <p>The time shown is in <code>HH:00</code> format, and in Coordinated Universal Time (UTC).</p>
     /// <p>The snapshot is automatically created between the time shown and up to 45 minutes after.</p>
     #[doc(hidden)]
-    pub snapshot_time_of_day: std::option::Option<std::string::String>,
+    pub snapshot_time_of_day: ::std::option::Option<::std::string::String>,
     /// <p>The next daily time an automatic snapshot will be created.</p>
     /// <p>The time shown is in <code>HH:00</code> format, and in Coordinated Universal Time (UTC).</p>
     /// <p>The snapshot is automatically created between the time shown and up to 45 minutes after.</p>
     #[doc(hidden)]
-    pub next_snapshot_time_of_day: std::option::Option<std::string::String>,
+    pub next_snapshot_time_of_day: ::std::option::Option<::std::string::String>,
     /// <p>The trigger threshold of the action.</p> <important>
     /// <p>This add-on only applies to Lightsail for Research resources.</p>
     /// </important>
     #[doc(hidden)]
-    pub threshold: std::option::Option<std::string::String>,
+    pub threshold: ::std::option::Option<::std::string::String>,
     /// <p>The amount of idle time in minutes after which your virtual computer will automatically stop.</p> <important>
     /// <p>This add-on only applies to Lightsail for Research resources.</p>
     /// </important>
     #[doc(hidden)]
-    pub duration: std::option::Option<std::string::String>,
+    pub duration: ::std::option::Option<::std::string::String>,
 }
 impl AddOn {
     /// <p>The name of the add-on.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The status of the add-on.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
     /// <p>The daily time when an automatic snapshot is created.</p>
     /// <p>The time shown is in <code>HH:00</code> format, and in Coordinated Universal Time (UTC).</p>
     /// <p>The snapshot is automatically created between the time shown and up to 45 minutes after.</p>
-    pub fn snapshot_time_of_day(&self) -> std::option::Option<&str> {
+    pub fn snapshot_time_of_day(&self) -> ::std::option::Option<&str> {
         self.snapshot_time_of_day.as_deref()
     }
     /// <p>The next daily time an automatic snapshot will be created.</p>
     /// <p>The time shown is in <code>HH:00</code> format, and in Coordinated Universal Time (UTC).</p>
     /// <p>The snapshot is automatically created between the time shown and up to 45 minutes after.</p>
-    pub fn next_snapshot_time_of_day(&self) -> std::option::Option<&str> {
+    pub fn next_snapshot_time_of_day(&self) -> ::std::option::Option<&str> {
         self.next_snapshot_time_of_day.as_deref()
     }
     /// <p>The trigger threshold of the action.</p> <important>
     /// <p>This add-on only applies to Lightsail for Research resources.</p>
     /// </important>
-    pub fn threshold(&self) -> std::option::Option<&str> {
+    pub fn threshold(&self) -> ::std::option::Option<&str> {
         self.threshold.as_deref()
     }
     /// <p>The amount of idle time in minutes after which your virtual computer will automatically stop.</p> <important>
     /// <p>This add-on only applies to Lightsail for Research resources.</p>
     /// </important>
-    pub fn duration(&self) -> std::option::Option<&str> {
+    pub fn duration(&self) -> ::std::option::Option<&str> {
         self.duration.as_deref()
     }
 }
@@ -74,41 +74,46 @@ impl AddOn {
 
 /// A builder for [`AddOn`](crate::types::AddOn).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AddOnBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<std::string::String>,
-    pub(crate) snapshot_time_of_day: std::option::Option<std::string::String>,
-    pub(crate) next_snapshot_time_of_day: std::option::Option<std::string::String>,
-    pub(crate) threshold: std::option::Option<std::string::String>,
-    pub(crate) duration: std::option::Option<std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<::std::string::String>,
+    pub(crate) snapshot_time_of_day: ::std::option::Option<::std::string::String>,
+    pub(crate) next_snapshot_time_of_day: ::std::option::Option<::std::string::String>,
+    pub(crate) threshold: ::std::option::Option<::std::string::String>,
+    pub(crate) duration: ::std::option::Option<::std::string::String>,
 }
 impl AddOnBuilder {
     /// <p>The name of the add-on.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the add-on.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The status of the add-on.</p>
-    pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status = Some(input.into());
+    pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the add-on.</p>
-    pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }
     /// <p>The daily time when an automatic snapshot is created.</p>
     /// <p>The time shown is in <code>HH:00</code> format, and in Coordinated Universal Time (UTC).</p>
     /// <p>The snapshot is automatically created between the time shown and up to 45 minutes after.</p>
-    pub fn snapshot_time_of_day(mut self, input: impl Into<std::string::String>) -> Self {
-        self.snapshot_time_of_day = Some(input.into());
+    pub fn snapshot_time_of_day(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.snapshot_time_of_day = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The daily time when an automatic snapshot is created.</p>
@@ -116,7 +121,7 @@ impl AddOnBuilder {
     /// <p>The snapshot is automatically created between the time shown and up to 45 minutes after.</p>
     pub fn set_snapshot_time_of_day(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.snapshot_time_of_day = input;
         self
@@ -124,8 +129,11 @@ impl AddOnBuilder {
     /// <p>The next daily time an automatic snapshot will be created.</p>
     /// <p>The time shown is in <code>HH:00</code> format, and in Coordinated Universal Time (UTC).</p>
     /// <p>The snapshot is automatically created between the time shown and up to 45 minutes after.</p>
-    pub fn next_snapshot_time_of_day(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_snapshot_time_of_day = Some(input.into());
+    pub fn next_snapshot_time_of_day(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.next_snapshot_time_of_day = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The next daily time an automatic snapshot will be created.</p>
@@ -133,7 +141,7 @@ impl AddOnBuilder {
     /// <p>The snapshot is automatically created between the time shown and up to 45 minutes after.</p>
     pub fn set_next_snapshot_time_of_day(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.next_snapshot_time_of_day = input;
         self
@@ -141,28 +149,28 @@ impl AddOnBuilder {
     /// <p>The trigger threshold of the action.</p> <important>
     /// <p>This add-on only applies to Lightsail for Research resources.</p>
     /// </important>
-    pub fn threshold(mut self, input: impl Into<std::string::String>) -> Self {
-        self.threshold = Some(input.into());
+    pub fn threshold(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.threshold = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The trigger threshold of the action.</p> <important>
     /// <p>This add-on only applies to Lightsail for Research resources.</p>
     /// </important>
-    pub fn set_threshold(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_threshold(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.threshold = input;
         self
     }
     /// <p>The amount of idle time in minutes after which your virtual computer will automatically stop.</p> <important>
     /// <p>This add-on only applies to Lightsail for Research resources.</p>
     /// </important>
-    pub fn duration(mut self, input: impl Into<std::string::String>) -> Self {
-        self.duration = Some(input.into());
+    pub fn duration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.duration = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The amount of idle time in minutes after which your virtual computer will automatically stop.</p> <important>
     /// <p>This add-on only applies to Lightsail for Research resources.</p>
     /// </important>
-    pub fn set_duration(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_duration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.duration = input;
         self
     }

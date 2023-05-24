@@ -2,29 +2,29 @@
 
 /// <p>Contains the parameters for PurchaseScheduledInstances.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PurchaseScheduledInstancesInput {
     /// <p>Unique, case-sensitive identifier that ensures the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
     #[doc(hidden)]
-    pub client_token: std::option::Option<std::string::String>,
+    pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
-    pub dry_run: std::option::Option<bool>,
+    pub dry_run: ::std::option::Option<bool>,
     /// <p>The purchase requests.</p>
     #[doc(hidden)]
-    pub purchase_requests: std::option::Option<std::vec::Vec<crate::types::PurchaseRequest>>,
+    pub purchase_requests: ::std::option::Option<::std::vec::Vec<crate::types::PurchaseRequest>>,
 }
 impl PurchaseScheduledInstancesInput {
     /// <p>Unique, case-sensitive identifier that ensures the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn dry_run(&self) -> std::option::Option<bool> {
+    pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
     /// <p>The purchase requests.</p>
-    pub fn purchase_requests(&self) -> std::option::Option<&[crate::types::PurchaseRequest]> {
+    pub fn purchase_requests(&self) -> ::std::option::Option<&[crate::types::PurchaseRequest]> {
         self.purchase_requests.as_deref()
     }
 }
@@ -37,30 +37,33 @@ impl PurchaseScheduledInstancesInput {
 
 /// A builder for [`PurchaseScheduledInstancesInput`](crate::operation::purchase_scheduled_instances::PurchaseScheduledInstancesInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PurchaseScheduledInstancesInputBuilder {
-    pub(crate) client_token: std::option::Option<std::string::String>,
-    pub(crate) dry_run: std::option::Option<bool>,
-    pub(crate) purchase_requests: std::option::Option<std::vec::Vec<crate::types::PurchaseRequest>>,
+    pub(crate) client_token: ::std::option::Option<::std::string::String>,
+    pub(crate) dry_run: ::std::option::Option<bool>,
+    pub(crate) purchase_requests:
+        ::std::option::Option<::std::vec::Vec<crate::types::PurchaseRequest>>,
 }
 impl PurchaseScheduledInstancesInputBuilder {
     /// <p>Unique, case-sensitive identifier that ensures the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
-    pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.client_token = Some(input.into());
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.client_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Unique, case-sensitive identifier that ensures the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
-    pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
-        self.dry_run = Some(input);
+        self.dry_run = ::std::option::Option::Some(input);
         self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
     }
@@ -72,13 +75,13 @@ impl PurchaseScheduledInstancesInputBuilder {
     pub fn purchase_requests(mut self, input: crate::types::PurchaseRequest) -> Self {
         let mut v = self.purchase_requests.unwrap_or_default();
         v.push(input);
-        self.purchase_requests = Some(v);
+        self.purchase_requests = ::std::option::Option::Some(v);
         self
     }
     /// <p>The purchase requests.</p>
     pub fn set_purchase_requests(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PurchaseRequest>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PurchaseRequest>>,
     ) -> Self {
         self.purchase_requests = input;
         self
@@ -86,11 +89,11 @@ impl PurchaseScheduledInstancesInputBuilder {
     /// Consumes the builder and constructs a [`PurchaseScheduledInstancesInput`](crate::operation::purchase_scheduled_instances::PurchaseScheduledInstancesInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::purchase_scheduled_instances::PurchaseScheduledInstancesInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::purchase_scheduled_instances::PurchaseScheduledInstancesInput {
                 client_token: self.client_token,
                 dry_run: self.dry_run,

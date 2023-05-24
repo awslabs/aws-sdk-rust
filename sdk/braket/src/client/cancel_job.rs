@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CancelJob`](crate::operation::cancel_job::builders::CancelJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`job_arn(impl Into<String>)`](crate::operation::cancel_job::builders::CancelJobFluentBuilder::job_arn) / [`set_job_arn(Option<String>)`](crate::operation::cancel_job::builders::CancelJobFluentBuilder::set_job_arn): <p>The ARN of the Amazon Braket job to cancel.</p>
+    ///   - [`job_arn(impl ::std::convert::Into<String>)`](crate::operation::cancel_job::builders::CancelJobFluentBuilder::job_arn) / [`set_job_arn(Option<String>)`](crate::operation::cancel_job::builders::CancelJobFluentBuilder::set_job_arn): <p>The ARN of the Amazon Braket job to cancel.</p>
     /// - On success, responds with [`CancelJobOutput`](crate::operation::cancel_job::CancelJobOutput) with field(s):
     ///   - [`job_arn(Option<String>)`](crate::operation::cancel_job::CancelJobOutput::job_arn): <p>The ARN of the Amazon Braket job.</p>
     ///   - [`cancellation_status(Option<CancellationStatus>)`](crate::operation::cancel_job::CancelJobOutput::cancellation_status): <p>The status of the job cancellation request.</p>

@@ -47,13 +47,13 @@
 /// <p>The type of field. The valid options for a field depend on the field type. For more information about the supported field types, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html" target="_blank">Configuring Index Fields</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum IndexFieldType {
     #[allow(missing_docs)] // documentation missing in model
@@ -81,7 +81,7 @@ pub enum IndexFieldType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for IndexFieldType {
+impl ::std::convert::From<&str> for IndexFieldType {
     fn from(s: &str) -> Self {
         match s {
             "date" => IndexFieldType::Date,
@@ -101,11 +101,11 @@ impl std::convert::From<&str> for IndexFieldType {
         }
     }
 }
-impl std::str::FromStr for IndexFieldType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for IndexFieldType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(IndexFieldType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(IndexFieldType::from(s))
     }
 }
 impl IndexFieldType {
@@ -143,7 +143,7 @@ impl IndexFieldType {
         ]
     }
 }
-impl AsRef<str> for IndexFieldType {
+impl ::std::convert::AsRef<str> for IndexFieldType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

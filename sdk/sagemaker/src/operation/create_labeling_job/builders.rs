@@ -16,29 +16,29 @@ pub use crate::operation::create_labeling_job::_create_labeling_job_input::Creat
 /// <p>The data objects to be labeled are contained in an Amazon S3 bucket. You create a <i>manifest file</i> that describes the location of each object. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-data.html">Using Input and Output Data</a>.</p>
 /// <p>The output can be used as the manifest file for another labeling job or as training data for your machine learning models.</p>
 /// <p>You can use this operation to create a static labeling job or a streaming labeling job. A static labeling job stops if all data objects in the input manifest file identified in <code>ManifestS3Uri</code> have been labeled. A streaming labeling job runs perpetually until it is manually stopped, or remains idle for 10 days. You can send new data objects to an active (<code>InProgress</code>) streaming labeling job in real time. To learn how to create a static labeling job, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-create-labeling-job-api.html">Create a Labeling Job (API) </a> in the Amazon SageMaker Developer Guide. To learn how to create a streaming labeling job, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-streaming-create-job.html">Create a Streaming Labeling Job</a>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateLabelingJobFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_labeling_job::builders::CreateLabelingJobInputBuilder,
 }
 impl CreateLabelingJobFluentBuilder {
     /// Creates a new `CreateLabelingJob`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_labeling_job::CreateLabelingJob,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_labeling_job::CreateLabelingJobError,
         >,
     > {
@@ -46,30 +46,33 @@ impl CreateLabelingJobFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_labeling_job::CreateLabelingJobOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_labeling_job::CreateLabelingJobError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -82,23 +85,26 @@ impl CreateLabelingJobFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_labeling_job::CreateLabelingJobOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_labeling_job::CreateLabelingJobError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the labeling job. This name is used to identify the job in a list of labeling jobs. Labeling job names must be unique within an Amazon Web Services account and region. <code>LabelingJobName</code> is not case sensitive. For example, Example-job and example-job are considered the same labeling job name by Ground Truth.</p>
-    pub fn labeling_job_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn labeling_job_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.labeling_job_name(input.into());
         self
     }
     /// <p>The name of the labeling job. This name is used to identify the job in a list of labeling jobs. Labeling job names must be unique within an Amazon Web Services account and region. <code>LabelingJobName</code> is not case sensitive. For example, Example-job and example-job are considered the same labeling job name by Ground Truth.</p>
     pub fn set_labeling_job_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_labeling_job_name(input);
         self
@@ -118,7 +124,10 @@ impl CreateLabelingJobFluentBuilder {
     /// <p></p> <important>
     /// <p>If you are creating an adjustment or verification labeling job, you must use a <i>different</i> <code>LabelAttributeName</code> than the one used in the original labeling job. The original labeling job is the Ground Truth labeling job that produced the labels that you want verified or adjusted. To learn more about adjustment and verification labeling jobs, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-verification-data.html">Verify and Adjust Labels</a>.</p>
     /// </important>
-    pub fn label_attribute_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn label_attribute_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.label_attribute_name(input.into());
         self
     }
@@ -139,7 +148,7 @@ impl CreateLabelingJobFluentBuilder {
     /// </important>
     pub fn set_label_attribute_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_label_attribute_name(input);
         self
@@ -164,7 +173,7 @@ impl CreateLabelingJobFluentBuilder {
     /// <p>If you use the Amazon Mechanical Turk workforce, your input data should not include confidential information, personal information or protected health information. Use <code>ContentClassifiers</code> to specify that your data is free of personally identifiable information and adult content.</p>
     pub fn set_input_config(
         mut self,
-        input: std::option::Option<crate::types::LabelingJobInputConfig>,
+        input: ::std::option::Option<crate::types::LabelingJobInputConfig>,
     ) -> Self {
         self.inner = self.inner.set_input_config(input);
         self
@@ -177,18 +186,18 @@ impl CreateLabelingJobFluentBuilder {
     /// <p>The location of the output data and the Amazon Web Services Key Management Service key ID for the key used to encrypt the output data, if any.</p>
     pub fn set_output_config(
         mut self,
-        input: std::option::Option<crate::types::LabelingJobOutputConfig>,
+        input: ::std::option::Option<crate::types::LabelingJobOutputConfig>,
     ) -> Self {
         self.inner = self.inner.set_output_config(input);
         self
     }
     /// <p>The Amazon Resource Number (ARN) that Amazon SageMaker assumes to perform tasks on your behalf during data labeling. You must grant this role the necessary permissions so that Amazon SageMaker can successfully complete data labeling.</p>
-    pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Number (ARN) that Amazon SageMaker assumes to perform tasks on your behalf during data labeling. You must grant this role the necessary permissions so that Amazon SageMaker can successfully complete data labeling.</p>
-    pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
     }
@@ -209,7 +218,10 @@ impl CreateLabelingJobFluentBuilder {
     /// <li> <p>Each label category must be unique, you cannot specify duplicate label categories.</p> </li>
     /// <li> <p>If you create a 3D point cloud or video frame adjustment or verification labeling job, you must include <code>auditLabelAttributeName</code> in the label category configuration. Use this parameter to enter the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateLabelingJob.html#sagemaker-CreateLabelingJob-request-LabelAttributeName"> <code>LabelAttributeName</code> </a> of the labeling job you want to adjust or verify annotations of.</p> </li>
     /// </ul>
-    pub fn label_category_config_s3_uri(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn label_category_config_s3_uri(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.label_category_config_s3_uri(input.into());
         self
     }
@@ -232,7 +244,7 @@ impl CreateLabelingJobFluentBuilder {
     /// </ul>
     pub fn set_label_category_config_s3_uri(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_label_category_config_s3_uri(input);
         self
@@ -248,7 +260,7 @@ impl CreateLabelingJobFluentBuilder {
     /// <p>A set of conditions for stopping the labeling job. If any of the conditions are met, the job is automatically stopped. You can use these conditions to control the cost of data labeling.</p>
     pub fn set_stopping_conditions(
         mut self,
-        input: std::option::Option<crate::types::LabelingJobStoppingConditions>,
+        input: ::std::option::Option<crate::types::LabelingJobStoppingConditions>,
     ) -> Self {
         self.inner = self.inner.set_stopping_conditions(input);
         self
@@ -264,7 +276,7 @@ impl CreateLabelingJobFluentBuilder {
     /// <p>Configures the information required to perform automated data labeling.</p>
     pub fn set_labeling_job_algorithms_config(
         mut self,
-        input: std::option::Option<crate::types::LabelingJobAlgorithmsConfig>,
+        input: ::std::option::Option<crate::types::LabelingJobAlgorithmsConfig>,
     ) -> Self {
         self.inner = self.inner.set_labeling_job_algorithms_config(input);
         self
@@ -277,7 +289,7 @@ impl CreateLabelingJobFluentBuilder {
     /// <p>Configures the labeling task and how it is presented to workers; including, but not limited to price, keywords, and batch size (task count).</p>
     pub fn set_human_task_config(
         mut self,
-        input: std::option::Option<crate::types::HumanTaskConfig>,
+        input: ::std::option::Option<crate::types::HumanTaskConfig>,
     ) -> Self {
         self.inner = self.inner.set_human_task_config(input);
         self
@@ -294,7 +306,7 @@ impl CreateLabelingJobFluentBuilder {
     /// <p>An array of key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self

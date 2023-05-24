@@ -44,13 +44,13 @@
 #[deprecated(note = "InstanceStatus is deprecated, use TargetStatus instead.")]
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum InstanceStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -70,7 +70,7 @@ pub enum InstanceStatus {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for InstanceStatus {
+impl ::std::convert::From<&str> for InstanceStatus {
     fn from(s: &str) -> Self {
         match s {
             "Failed" => InstanceStatus::Failed,
@@ -86,11 +86,11 @@ impl std::convert::From<&str> for InstanceStatus {
         }
     }
 }
-impl std::str::FromStr for InstanceStatus {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for InstanceStatus {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(InstanceStatus::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(InstanceStatus::from(s))
     }
 }
 impl InstanceStatus {
@@ -120,7 +120,7 @@ impl InstanceStatus {
         ]
     }
 }
-impl AsRef<str> for InstanceStatus {
+impl ::std::convert::AsRef<str> for InstanceStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

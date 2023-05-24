@@ -2,7 +2,7 @@
 
 /// <p>A time limit for how long the monitoring job is allowed to run before stopping.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MonitoringStoppingCondition {
     /// <p>The maximum runtime allowed in seconds.</p> <note>
     /// <p>The <code>MaxRuntimeInSeconds</code> cannot exceed the frequency of the job. For data quality and model explainability, this can be up to 3600 seconds for an hourly schedule. For model bias and model quality hourly schedules, this can be up to 1800 seconds.</p>
@@ -27,22 +27,24 @@ impl MonitoringStoppingCondition {
 
 /// A builder for [`MonitoringStoppingCondition`](crate::types::MonitoringStoppingCondition).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MonitoringStoppingConditionBuilder {
-    pub(crate) max_runtime_in_seconds: std::option::Option<i32>,
+    pub(crate) max_runtime_in_seconds: ::std::option::Option<i32>,
 }
 impl MonitoringStoppingConditionBuilder {
     /// <p>The maximum runtime allowed in seconds.</p> <note>
     /// <p>The <code>MaxRuntimeInSeconds</code> cannot exceed the frequency of the job. For data quality and model explainability, this can be up to 3600 seconds for an hourly schedule. For model bias and model quality hourly schedules, this can be up to 1800 seconds.</p>
     /// </note>
     pub fn max_runtime_in_seconds(mut self, input: i32) -> Self {
-        self.max_runtime_in_seconds = Some(input);
+        self.max_runtime_in_seconds = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum runtime allowed in seconds.</p> <note>
     /// <p>The <code>MaxRuntimeInSeconds</code> cannot exceed the frequency of the job. For data quality and model explainability, this can be up to 3600 seconds for an hourly schedule. For model bias and model quality hourly schedules, this can be up to 1800 seconds.</p>
     /// </note>
-    pub fn set_max_runtime_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_runtime_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_runtime_in_seconds = input;
         self
     }

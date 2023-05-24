@@ -2,22 +2,24 @@
 
 /// <p>Filters for the association execution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociationExecutionTargetsFilter {
     /// <p>The key value used in the request.</p>
     #[doc(hidden)]
-    pub key: std::option::Option<crate::types::AssociationExecutionTargetsFilterKey>,
+    pub key: ::std::option::Option<crate::types::AssociationExecutionTargetsFilterKey>,
     /// <p>The value specified for the key.</p>
     #[doc(hidden)]
-    pub value: std::option::Option<std::string::String>,
+    pub value: ::std::option::Option<::std::string::String>,
 }
 impl AssociationExecutionTargetsFilter {
     /// <p>The key value used in the request.</p>
-    pub fn key(&self) -> std::option::Option<&crate::types::AssociationExecutionTargetsFilterKey> {
+    pub fn key(
+        &self,
+    ) -> ::std::option::Option<&crate::types::AssociationExecutionTargetsFilterKey> {
         self.key.as_ref()
     }
     /// <p>The value specified for the key.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
 }
@@ -30,32 +32,34 @@ impl AssociationExecutionTargetsFilter {
 
 /// A builder for [`AssociationExecutionTargetsFilter`](crate::types::AssociationExecutionTargetsFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AssociationExecutionTargetsFilterBuilder {
-    pub(crate) key: std::option::Option<crate::types::AssociationExecutionTargetsFilterKey>,
-    pub(crate) value: std::option::Option<std::string::String>,
+    pub(crate) key: ::std::option::Option<crate::types::AssociationExecutionTargetsFilterKey>,
+    pub(crate) value: ::std::option::Option<::std::string::String>,
 }
 impl AssociationExecutionTargetsFilterBuilder {
     /// <p>The key value used in the request.</p>
     pub fn key(mut self, input: crate::types::AssociationExecutionTargetsFilterKey) -> Self {
-        self.key = Some(input);
+        self.key = ::std::option::Option::Some(input);
         self
     }
     /// <p>The key value used in the request.</p>
     pub fn set_key(
         mut self,
-        input: std::option::Option<crate::types::AssociationExecutionTargetsFilterKey>,
+        input: ::std::option::Option<crate::types::AssociationExecutionTargetsFilterKey>,
     ) -> Self {
         self.key = input;
         self
     }
     /// <p>The value specified for the key.</p>
-    pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.value = Some(input.into());
+    pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value specified for the key.</p>
-    pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
     }

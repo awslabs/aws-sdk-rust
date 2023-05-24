@@ -2,43 +2,43 @@
 
 /// <p>Describes an identity provider.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IdentityProviderSummary {
     /// <p>An object that specifies details for the identity provider.</p>
     #[doc(hidden)]
-    pub identity_provider: std::option::Option<crate::types::IdentityProvider>,
+    pub identity_provider: ::std::option::Option<crate::types::IdentityProvider>,
     /// <p>An object that details the registered identity provider’s product related configuration settings such as the subnets to provision VPC endpoints.</p>
     #[doc(hidden)]
-    pub settings: std::option::Option<crate::types::Settings>,
+    pub settings: ::std::option::Option<crate::types::Settings>,
     /// <p>The name of the user-based subscription product.</p>
     #[doc(hidden)]
-    pub product: std::option::Option<std::string::String>,
+    pub product: ::std::option::Option<::std::string::String>,
     /// <p>The status of an identity provider.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<std::string::String>,
+    pub status: ::std::option::Option<::std::string::String>,
     /// <p>The failure message associated with an identity provider.</p>
     #[doc(hidden)]
-    pub failure_message: std::option::Option<std::string::String>,
+    pub failure_message: ::std::option::Option<::std::string::String>,
 }
 impl IdentityProviderSummary {
     /// <p>An object that specifies details for the identity provider.</p>
-    pub fn identity_provider(&self) -> std::option::Option<&crate::types::IdentityProvider> {
+    pub fn identity_provider(&self) -> ::std::option::Option<&crate::types::IdentityProvider> {
         self.identity_provider.as_ref()
     }
     /// <p>An object that details the registered identity provider’s product related configuration settings such as the subnets to provision VPC endpoints.</p>
-    pub fn settings(&self) -> std::option::Option<&crate::types::Settings> {
+    pub fn settings(&self) -> ::std::option::Option<&crate::types::Settings> {
         self.settings.as_ref()
     }
     /// <p>The name of the user-based subscription product.</p>
-    pub fn product(&self) -> std::option::Option<&str> {
+    pub fn product(&self) -> ::std::option::Option<&str> {
         self.product.as_deref()
     }
     /// <p>The status of an identity provider.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
     /// <p>The failure message associated with an identity provider.</p>
-    pub fn failure_message(&self) -> std::option::Option<&str> {
+    pub fn failure_message(&self) -> ::std::option::Option<&str> {
         self.failure_message.as_deref()
     }
 }
@@ -51,65 +51,73 @@ impl IdentityProviderSummary {
 
 /// A builder for [`IdentityProviderSummary`](crate::types::IdentityProviderSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct IdentityProviderSummaryBuilder {
-    pub(crate) identity_provider: std::option::Option<crate::types::IdentityProvider>,
-    pub(crate) settings: std::option::Option<crate::types::Settings>,
-    pub(crate) product: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<std::string::String>,
-    pub(crate) failure_message: std::option::Option<std::string::String>,
+    pub(crate) identity_provider: ::std::option::Option<crate::types::IdentityProvider>,
+    pub(crate) settings: ::std::option::Option<crate::types::Settings>,
+    pub(crate) product: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<::std::string::String>,
+    pub(crate) failure_message: ::std::option::Option<::std::string::String>,
 }
 impl IdentityProviderSummaryBuilder {
     /// <p>An object that specifies details for the identity provider.</p>
     pub fn identity_provider(mut self, input: crate::types::IdentityProvider) -> Self {
-        self.identity_provider = Some(input);
+        self.identity_provider = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that specifies details for the identity provider.</p>
     pub fn set_identity_provider(
         mut self,
-        input: std::option::Option<crate::types::IdentityProvider>,
+        input: ::std::option::Option<crate::types::IdentityProvider>,
     ) -> Self {
         self.identity_provider = input;
         self
     }
     /// <p>An object that details the registered identity provider’s product related configuration settings such as the subnets to provision VPC endpoints.</p>
     pub fn settings(mut self, input: crate::types::Settings) -> Self {
-        self.settings = Some(input);
+        self.settings = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that details the registered identity provider’s product related configuration settings such as the subnets to provision VPC endpoints.</p>
-    pub fn set_settings(mut self, input: std::option::Option<crate::types::Settings>) -> Self {
+    pub fn set_settings(mut self, input: ::std::option::Option<crate::types::Settings>) -> Self {
         self.settings = input;
         self
     }
     /// <p>The name of the user-based subscription product.</p>
-    pub fn product(mut self, input: impl Into<std::string::String>) -> Self {
-        self.product = Some(input.into());
+    pub fn product(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.product = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the user-based subscription product.</p>
-    pub fn set_product(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_product(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.product = input;
         self
     }
     /// <p>The status of an identity provider.</p>
-    pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status = Some(input.into());
+    pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of an identity provider.</p>
-    pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }
     /// <p>The failure message associated with an identity provider.</p>
-    pub fn failure_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.failure_message = Some(input.into());
+    pub fn failure_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.failure_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The failure message associated with an identity provider.</p>
-    pub fn set_failure_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_failure_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.failure_message = input;
         self
     }

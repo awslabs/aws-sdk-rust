@@ -2,20 +2,20 @@
 
 /// <p>Output of a get workload call.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetWorkloadOutput {
     /// <p>A workload return object.</p>
     #[doc(hidden)]
-    pub workload: std::option::Option<crate::types::Workload>,
+    pub workload: ::std::option::Option<crate::types::Workload>,
     _request_id: Option<String>,
 }
 impl GetWorkloadOutput {
     /// <p>A workload return object.</p>
-    pub fn workload(&self) -> std::option::Option<&crate::types::Workload> {
+    pub fn workload(&self) -> ::std::option::Option<&crate::types::Workload> {
         self.workload.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for GetWorkloadOutput {
+impl ::aws_http::request_id::RequestId for GetWorkloadOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,21 @@ impl GetWorkloadOutput {
 
 /// A builder for [`GetWorkloadOutput`](crate::operation::get_workload::GetWorkloadOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetWorkloadOutputBuilder {
-    pub(crate) workload: std::option::Option<crate::types::Workload>,
+    pub(crate) workload: ::std::option::Option<crate::types::Workload>,
     _request_id: Option<String>,
 }
 impl GetWorkloadOutputBuilder {
     /// <p>A workload return object.</p>
     pub fn workload(mut self, input: crate::types::Workload) -> Self {
-        self.workload = Some(input);
+        self.workload = ::std::option::Option::Some(input);
         self
     }
     /// <p>A workload return object.</p>
-    pub fn set_workload(mut self, input: std::option::Option<crate::types::Workload>) -> Self {
+    pub fn set_workload(mut self, input: ::std::option::Option<crate::types::Workload>) -> Self {
         self.workload = input;
         self
     }

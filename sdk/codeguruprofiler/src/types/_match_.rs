@@ -2,29 +2,29 @@
 
 /// <p>The part of a profile that contains a recommendation found during analysis.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Match {
     /// <p>The target frame that triggered a match.</p>
     #[doc(hidden)]
-    pub target_frames_index: std::option::Option<i32>,
+    pub target_frames_index: ::std::option::Option<i32>,
     /// <p>The location in the profiling graph that contains a recommendation found during analysis.</p>
     #[doc(hidden)]
-    pub frame_address: std::option::Option<std::string::String>,
+    pub frame_address: ::std::option::Option<::std::string::String>,
     /// <p>The value in the profile data that exceeded the recommendation threshold.</p>
     #[doc(hidden)]
-    pub threshold_breach_value: std::option::Option<f64>,
+    pub threshold_breach_value: ::std::option::Option<f64>,
 }
 impl Match {
     /// <p>The target frame that triggered a match.</p>
-    pub fn target_frames_index(&self) -> std::option::Option<i32> {
+    pub fn target_frames_index(&self) -> ::std::option::Option<i32> {
         self.target_frames_index
     }
     /// <p>The location in the profiling graph that contains a recommendation found during analysis.</p>
-    pub fn frame_address(&self) -> std::option::Option<&str> {
+    pub fn frame_address(&self) -> ::std::option::Option<&str> {
         self.frame_address.as_deref()
     }
     /// <p>The value in the profile data that exceeded the recommendation threshold.</p>
-    pub fn threshold_breach_value(&self) -> std::option::Option<f64> {
+    pub fn threshold_breach_value(&self) -> ::std::option::Option<f64> {
         self.threshold_breach_value
     }
 }
@@ -37,40 +37,48 @@ impl Match {
 
 /// A builder for [`Match`](crate::types::Match).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MatchBuilder {
-    pub(crate) target_frames_index: std::option::Option<i32>,
-    pub(crate) frame_address: std::option::Option<std::string::String>,
-    pub(crate) threshold_breach_value: std::option::Option<f64>,
+    pub(crate) target_frames_index: ::std::option::Option<i32>,
+    pub(crate) frame_address: ::std::option::Option<::std::string::String>,
+    pub(crate) threshold_breach_value: ::std::option::Option<f64>,
 }
 impl MatchBuilder {
     /// <p>The target frame that triggered a match.</p>
     pub fn target_frames_index(mut self, input: i32) -> Self {
-        self.target_frames_index = Some(input);
+        self.target_frames_index = ::std::option::Option::Some(input);
         self
     }
     /// <p>The target frame that triggered a match.</p>
-    pub fn set_target_frames_index(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_target_frames_index(mut self, input: ::std::option::Option<i32>) -> Self {
         self.target_frames_index = input;
         self
     }
     /// <p>The location in the profiling graph that contains a recommendation found during analysis.</p>
-    pub fn frame_address(mut self, input: impl Into<std::string::String>) -> Self {
-        self.frame_address = Some(input.into());
+    pub fn frame_address(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.frame_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The location in the profiling graph that contains a recommendation found during analysis.</p>
-    pub fn set_frame_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_frame_address(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.frame_address = input;
         self
     }
     /// <p>The value in the profile data that exceeded the recommendation threshold.</p>
     pub fn threshold_breach_value(mut self, input: f64) -> Self {
-        self.threshold_breach_value = Some(input);
+        self.threshold_breach_value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The value in the profile data that exceeded the recommendation threshold.</p>
-    pub fn set_threshold_breach_value(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_threshold_breach_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.threshold_breach_value = input;
         self
     }

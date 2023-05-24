@@ -8,29 +8,29 @@ pub use crate::operation::create_place_index::_create_place_index_input::CreateP
 /// <p>Creates a place index resource in your Amazon Web Services account. Use a place index resource to geocode addresses and other text queries by using the <code>SearchPlaceIndexForText</code> operation, and reverse geocode coordinates by using the <code>SearchPlaceIndexForPosition</code> operation, and enable autosuggestions by using the <code>SearchPlaceIndexForSuggestions</code> operation.</p> <note>
 /// <p>If your application is tracking or routing assets you use in your business, such as delivery vehicles or employees, you must not use Esri as your geolocation provider. See section 82 of the <a href="http://aws.amazon.com/service-terms">Amazon Web Services service terms</a> for more details.</p>
 /// </note>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreatePlaceIndexFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_place_index::builders::CreatePlaceIndexInputBuilder,
 }
 impl CreatePlaceIndexFluentBuilder {
     /// Creates a new `CreatePlaceIndex`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_place_index::CreatePlaceIndex,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_place_index::CreatePlaceIndexError,
         >,
     > {
@@ -38,30 +38,33 @@ impl CreatePlaceIndexFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_place_index::CreatePlaceIndexOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_place_index::CreatePlaceIndexError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -74,9 +77,9 @@ impl CreatePlaceIndexFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_place_index::CreatePlaceIndexOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_place_index::CreatePlaceIndexError,
         >,
     > {
@@ -89,7 +92,7 @@ impl CreatePlaceIndexFluentBuilder {
     /// <li> <p>Must be a unique place index resource name.</p> </li>
     /// <li> <p>No spaces allowed. For example, <code>ExamplePlaceIndex</code>.</p> </li>
     /// </ul>
-    pub fn index_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn index_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.index_name(input.into());
         self
     }
@@ -100,7 +103,7 @@ impl CreatePlaceIndexFluentBuilder {
     /// <li> <p>Must be a unique place index resource name.</p> </li>
     /// <li> <p>No spaces allowed. For example, <code>ExamplePlaceIndex</code>.</p> </li>
     /// </ul>
-    pub fn set_index_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_index_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_index_name(input);
         self
     }
@@ -116,7 +119,7 @@ impl CreatePlaceIndexFluentBuilder {
     /// </important> </li>
     /// </ul>
     /// <p>For additional information , see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data providers</a> on the <i>Amazon Location Service Developer Guide</i>.</p>
-    pub fn data_source(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn data_source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.data_source(input.into());
         self
     }
@@ -132,7 +135,7 @@ impl CreatePlaceIndexFluentBuilder {
     /// </important> </li>
     /// </ul>
     /// <p>For additional information , see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data providers</a> on the <i>Amazon Location Service Developer Guide</i>.</p>
-    pub fn set_data_source(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_data_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_data_source(input);
         self
     }
@@ -152,18 +155,18 @@ impl CreatePlaceIndexFluentBuilder {
     )]
     pub fn set_pricing_plan(
         mut self,
-        input: std::option::Option<crate::types::PricingPlan>,
+        input: ::std::option::Option<crate::types::PricingPlan>,
     ) -> Self {
         self.inner = self.inner.set_pricing_plan(input);
         self
     }
     /// <p>The optional description for the place index resource.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>The optional description for the place index resource.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
@@ -178,7 +181,7 @@ impl CreatePlaceIndexFluentBuilder {
     /// <p>Specifies the data storage option requesting Places.</p>
     pub fn set_data_source_configuration(
         mut self,
-        input: std::option::Option<crate::types::DataSourceConfiguration>,
+        input: ::std::option::Option<crate::types::DataSourceConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_data_source_configuration(input);
         self
@@ -200,8 +203,8 @@ impl CreatePlaceIndexFluentBuilder {
     /// </ul>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
@@ -219,8 +222,8 @@ impl CreatePlaceIndexFluentBuilder {
     /// </ul>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_tags(input);

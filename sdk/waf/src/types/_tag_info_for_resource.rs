@@ -7,22 +7,22 @@
 /// <p>Information for a tag associated with an AWS resource. Tags are key:value pairs that you can use to categorize and manage your resources, for purposes like billing. For example, you might set the tag key to "customer" and the value to the customer name or ID. You can specify one or more tags to add to each AWS resource, up to 50 tags for a resource.</p>
 /// <p>Tagging is only available through the API, SDKs, and CLI. You can't manage or view tags through the AWS WAF Classic console. You can tag the AWS resources that you manage through AWS WAF Classic: web ACLs, rule groups, and rules. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TagInfoForResource {
     /// <p></p>
     #[doc(hidden)]
-    pub resource_arn: std::option::Option<std::string::String>,
+    pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p></p>
     #[doc(hidden)]
-    pub tag_list: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl TagInfoForResource {
     /// <p></p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
     /// <p></p>
-    pub fn tag_list(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tag_list(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tag_list.as_deref()
     }
 }
@@ -35,19 +35,21 @@ impl TagInfoForResource {
 
 /// A builder for [`TagInfoForResource`](crate::types::TagInfoForResource).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TagInfoForResourceBuilder {
-    pub(crate) resource_arn: std::option::Option<std::string::String>,
-    pub(crate) tag_list: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl TagInfoForResourceBuilder {
     /// <p></p>
-    pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_arn = Some(input.into());
+    pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p></p>
-    pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
     }
@@ -59,13 +61,13 @@ impl TagInfoForResourceBuilder {
     pub fn tag_list(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tag_list.unwrap_or_default();
         v.push(input);
-        self.tag_list = Some(v);
+        self.tag_list = ::std::option::Option::Some(v);
         self
     }
     /// <p></p>
     pub fn set_tag_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tag_list = input;
         self

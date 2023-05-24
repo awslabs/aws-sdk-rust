@@ -10,56 +10,59 @@ pub use crate::operation::stop_server::_stop_server_input::StopServerInputBuilde
 /// </note>
 /// <p>The state of <code>STOPPING</code> indicates that the server is in an intermediate state, either not fully able to respond, or not fully offline. The values of <code>STOP_FAILED</code> can indicate an error condition.</p>
 /// <p>No response is returned from this call.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopServerFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::stop_server::builders::StopServerInputBuilder,
 }
 impl StopServerFluentBuilder {
     /// Creates a new `StopServer`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::stop_server::StopServer,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::stop_server::StopServerError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_server::StopServerError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::stop_server::StopServerOutput,
-        aws_smithy_http::result::SdkError<crate::operation::stop_server::StopServerError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_server::StopServerError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,19 +75,19 @@ impl StopServerFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::stop_server::StopServerOutput,
-        aws_smithy_http::result::SdkError<crate::operation::stop_server::StopServerError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_server::StopServerError>,
     > {
         self.send_middleware().await
     }
     /// <p>A system-assigned unique identifier for a server that you stopped.</p>
-    pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.server_id(input.into());
         self
     }
     /// <p>A system-assigned unique identifier for a server that you stopped.</p>
-    pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_server_id(input);
         self
     }

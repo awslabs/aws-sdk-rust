@@ -2,11 +2,11 @@
 
 /// <p>An empty response that indicates a successful delete.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteConfiguredTableAnalysisRuleOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for DeleteConfiguredTableAnalysisRuleOutput {
+impl ::aws_http::request_id::RequestId for DeleteConfiguredTableAnalysisRuleOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -20,7 +20,9 @@ impl DeleteConfiguredTableAnalysisRuleOutput {
 
 /// A builder for [`DeleteConfiguredTableAnalysisRuleOutput`](crate::operation::delete_configured_table_analysis_rule::DeleteConfiguredTableAnalysisRuleOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteConfiguredTableAnalysisRuleOutputBuilder {
     _request_id: Option<String>,
 }

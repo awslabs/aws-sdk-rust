@@ -2,28 +2,28 @@
 
 /// <p>The model training data validation metrics.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataValidationMetrics {
     /// <p>The file-specific model training data validation messages.</p>
     #[doc(hidden)]
     pub file_level_messages:
-        std::option::Option<std::vec::Vec<crate::types::FileValidationMessage>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::FileValidationMessage>>,
     /// <p>The field-specific model training validation messages.</p>
     #[doc(hidden)]
     pub field_level_messages:
-        std::option::Option<std::vec::Vec<crate::types::FieldValidationMessage>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::FieldValidationMessage>>,
 }
 impl DataValidationMetrics {
     /// <p>The file-specific model training data validation messages.</p>
     pub fn file_level_messages(
         &self,
-    ) -> std::option::Option<&[crate::types::FileValidationMessage]> {
+    ) -> ::std::option::Option<&[crate::types::FileValidationMessage]> {
         self.file_level_messages.as_deref()
     }
     /// <p>The field-specific model training validation messages.</p>
     pub fn field_level_messages(
         &self,
-    ) -> std::option::Option<&[crate::types::FieldValidationMessage]> {
+    ) -> ::std::option::Option<&[crate::types::FieldValidationMessage]> {
         self.field_level_messages.as_deref()
     }
 }
@@ -36,12 +36,14 @@ impl DataValidationMetrics {
 
 /// A builder for [`DataValidationMetrics`](crate::types::DataValidationMetrics).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DataValidationMetricsBuilder {
     pub(crate) file_level_messages:
-        std::option::Option<std::vec::Vec<crate::types::FileValidationMessage>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::FileValidationMessage>>,
     pub(crate) field_level_messages:
-        std::option::Option<std::vec::Vec<crate::types::FieldValidationMessage>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::FieldValidationMessage>>,
 }
 impl DataValidationMetricsBuilder {
     /// Appends an item to `file_level_messages`.
@@ -52,13 +54,13 @@ impl DataValidationMetricsBuilder {
     pub fn file_level_messages(mut self, input: crate::types::FileValidationMessage) -> Self {
         let mut v = self.file_level_messages.unwrap_or_default();
         v.push(input);
-        self.file_level_messages = Some(v);
+        self.file_level_messages = ::std::option::Option::Some(v);
         self
     }
     /// <p>The file-specific model training data validation messages.</p>
     pub fn set_file_level_messages(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::FileValidationMessage>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::FileValidationMessage>>,
     ) -> Self {
         self.file_level_messages = input;
         self
@@ -71,13 +73,13 @@ impl DataValidationMetricsBuilder {
     pub fn field_level_messages(mut self, input: crate::types::FieldValidationMessage) -> Self {
         let mut v = self.field_level_messages.unwrap_or_default();
         v.push(input);
-        self.field_level_messages = Some(v);
+        self.field_level_messages = ::std::option::Option::Some(v);
         self
     }
     /// <p>The field-specific model training validation messages.</p>
     pub fn set_field_level_messages(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::FieldValidationMessage>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::FieldValidationMessage>>,
     ) -> Self {
         self.field_level_messages = input;
         self

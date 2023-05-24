@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum WebhookAuthenticationType {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum WebhookAuthenticationType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for WebhookAuthenticationType {
+impl ::std::convert::From<&str> for WebhookAuthenticationType {
     fn from(s: &str) -> Self {
         match s {
             "GITHUB_HMAC" => WebhookAuthenticationType::GithubHmac,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for WebhookAuthenticationType {
         }
     }
 }
-impl std::str::FromStr for WebhookAuthenticationType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for WebhookAuthenticationType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(WebhookAuthenticationType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(WebhookAuthenticationType::from(s))
     }
 }
 impl WebhookAuthenticationType {
@@ -91,7 +91,7 @@ impl WebhookAuthenticationType {
         &["GITHUB_HMAC", "IP", "UNAUTHENTICATED"]
     }
 }
-impl AsRef<str> for WebhookAuthenticationType {
+impl ::std::convert::AsRef<str> for WebhookAuthenticationType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

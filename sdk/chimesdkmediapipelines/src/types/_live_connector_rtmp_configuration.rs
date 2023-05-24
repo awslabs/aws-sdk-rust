@@ -2,34 +2,34 @@
 
 /// <p>The media pipeline's RTMP configuration object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct LiveConnectorRtmpConfiguration {
     /// <p>The URL of the RTMP configuration.</p>
     #[doc(hidden)]
-    pub url: std::option::Option<std::string::String>,
+    pub url: ::std::option::Option<::std::string::String>,
     /// <p>The audio channels set for the RTMP configuration</p>
     #[doc(hidden)]
-    pub audio_channels: std::option::Option<crate::types::AudioChannelsOption>,
+    pub audio_channels: ::std::option::Option<crate::types::AudioChannelsOption>,
     /// <p>The audio sample rate set for the RTMP configuration. Default: 48000.</p>
     #[doc(hidden)]
-    pub audio_sample_rate: std::option::Option<std::string::String>,
+    pub audio_sample_rate: ::std::option::Option<::std::string::String>,
 }
 impl LiveConnectorRtmpConfiguration {
     /// <p>The URL of the RTMP configuration.</p>
-    pub fn url(&self) -> std::option::Option<&str> {
+    pub fn url(&self) -> ::std::option::Option<&str> {
         self.url.as_deref()
     }
     /// <p>The audio channels set for the RTMP configuration</p>
-    pub fn audio_channels(&self) -> std::option::Option<&crate::types::AudioChannelsOption> {
+    pub fn audio_channels(&self) -> ::std::option::Option<&crate::types::AudioChannelsOption> {
         self.audio_channels.as_ref()
     }
     /// <p>The audio sample rate set for the RTMP configuration. Default: 48000.</p>
-    pub fn audio_sample_rate(&self) -> std::option::Option<&str> {
+    pub fn audio_sample_rate(&self) -> ::std::option::Option<&str> {
         self.audio_sample_rate.as_deref()
     }
 }
-impl std::fmt::Debug for LiveConnectorRtmpConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for LiveConnectorRtmpConfiguration {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("LiveConnectorRtmpConfiguration");
         formatter.field("url", &"*** Sensitive Data Redacted ***");
         formatter.field("audio_channels", &self.audio_channels);
@@ -46,45 +46,48 @@ impl LiveConnectorRtmpConfiguration {
 
 /// A builder for [`LiveConnectorRtmpConfiguration`](crate::types::LiveConnectorRtmpConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct LiveConnectorRtmpConfigurationBuilder {
-    pub(crate) url: std::option::Option<std::string::String>,
-    pub(crate) audio_channels: std::option::Option<crate::types::AudioChannelsOption>,
-    pub(crate) audio_sample_rate: std::option::Option<std::string::String>,
+    pub(crate) url: ::std::option::Option<::std::string::String>,
+    pub(crate) audio_channels: ::std::option::Option<crate::types::AudioChannelsOption>,
+    pub(crate) audio_sample_rate: ::std::option::Option<::std::string::String>,
 }
 impl LiveConnectorRtmpConfigurationBuilder {
     /// <p>The URL of the RTMP configuration.</p>
-    pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.url = Some(input.into());
+    pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL of the RTMP configuration.</p>
-    pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.url = input;
         self
     }
     /// <p>The audio channels set for the RTMP configuration</p>
     pub fn audio_channels(mut self, input: crate::types::AudioChannelsOption) -> Self {
-        self.audio_channels = Some(input);
+        self.audio_channels = ::std::option::Option::Some(input);
         self
     }
     /// <p>The audio channels set for the RTMP configuration</p>
     pub fn set_audio_channels(
         mut self,
-        input: std::option::Option<crate::types::AudioChannelsOption>,
+        input: ::std::option::Option<crate::types::AudioChannelsOption>,
     ) -> Self {
         self.audio_channels = input;
         self
     }
     /// <p>The audio sample rate set for the RTMP configuration. Default: 48000.</p>
-    pub fn audio_sample_rate(mut self, input: impl Into<std::string::String>) -> Self {
-        self.audio_sample_rate = Some(input.into());
+    pub fn audio_sample_rate(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.audio_sample_rate = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The audio sample rate set for the RTMP configuration. Default: 48000.</p>
     pub fn set_audio_sample_rate(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.audio_sample_rate = input;
         self
@@ -98,8 +101,8 @@ impl LiveConnectorRtmpConfigurationBuilder {
         }
     }
 }
-impl std::fmt::Debug for LiveConnectorRtmpConfigurationBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for LiveConnectorRtmpConfigurationBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("LiveConnectorRtmpConfigurationBuilder");
         formatter.field("url", &"*** Sensitive Data Redacted ***");
         formatter.field("audio_channels", &self.audio_channels);

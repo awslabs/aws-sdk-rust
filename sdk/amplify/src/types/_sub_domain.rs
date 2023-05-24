@@ -2,29 +2,29 @@
 
 /// <p> The subdomain for the domain association. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SubDomain {
     /// <p> Describes the settings for the subdomain. </p>
     #[doc(hidden)]
-    pub sub_domain_setting: std::option::Option<crate::types::SubDomainSetting>,
+    pub sub_domain_setting: ::std::option::Option<crate::types::SubDomainSetting>,
     /// <p> The verified status of the subdomain </p>
     #[doc(hidden)]
-    pub verified: std::option::Option<bool>,
+    pub verified: ::std::option::Option<bool>,
     /// <p> The DNS record for the subdomain. </p>
     #[doc(hidden)]
-    pub dns_record: std::option::Option<std::string::String>,
+    pub dns_record: ::std::option::Option<::std::string::String>,
 }
 impl SubDomain {
     /// <p> Describes the settings for the subdomain. </p>
-    pub fn sub_domain_setting(&self) -> std::option::Option<&crate::types::SubDomainSetting> {
+    pub fn sub_domain_setting(&self) -> ::std::option::Option<&crate::types::SubDomainSetting> {
         self.sub_domain_setting.as_ref()
     }
     /// <p> The verified status of the subdomain </p>
-    pub fn verified(&self) -> std::option::Option<bool> {
+    pub fn verified(&self) -> ::std::option::Option<bool> {
         self.verified
     }
     /// <p> The DNS record for the subdomain. </p>
-    pub fn dns_record(&self) -> std::option::Option<&str> {
+    pub fn dns_record(&self) -> ::std::option::Option<&str> {
         self.dns_record.as_deref()
     }
 }
@@ -37,43 +37,45 @@ impl SubDomain {
 
 /// A builder for [`SubDomain`](crate::types::SubDomain).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SubDomainBuilder {
-    pub(crate) sub_domain_setting: std::option::Option<crate::types::SubDomainSetting>,
-    pub(crate) verified: std::option::Option<bool>,
-    pub(crate) dns_record: std::option::Option<std::string::String>,
+    pub(crate) sub_domain_setting: ::std::option::Option<crate::types::SubDomainSetting>,
+    pub(crate) verified: ::std::option::Option<bool>,
+    pub(crate) dns_record: ::std::option::Option<::std::string::String>,
 }
 impl SubDomainBuilder {
     /// <p> Describes the settings for the subdomain. </p>
     pub fn sub_domain_setting(mut self, input: crate::types::SubDomainSetting) -> Self {
-        self.sub_domain_setting = Some(input);
+        self.sub_domain_setting = ::std::option::Option::Some(input);
         self
     }
     /// <p> Describes the settings for the subdomain. </p>
     pub fn set_sub_domain_setting(
         mut self,
-        input: std::option::Option<crate::types::SubDomainSetting>,
+        input: ::std::option::Option<crate::types::SubDomainSetting>,
     ) -> Self {
         self.sub_domain_setting = input;
         self
     }
     /// <p> The verified status of the subdomain </p>
     pub fn verified(mut self, input: bool) -> Self {
-        self.verified = Some(input);
+        self.verified = ::std::option::Option::Some(input);
         self
     }
     /// <p> The verified status of the subdomain </p>
-    pub fn set_verified(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_verified(mut self, input: ::std::option::Option<bool>) -> Self {
         self.verified = input;
         self
     }
     /// <p> The DNS record for the subdomain. </p>
-    pub fn dns_record(mut self, input: impl Into<std::string::String>) -> Self {
-        self.dns_record = Some(input.into());
+    pub fn dns_record(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.dns_record = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The DNS record for the subdomain. </p>
-    pub fn set_dns_record(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_dns_record(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dns_record = input;
         self
     }

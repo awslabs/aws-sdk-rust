@@ -6,29 +6,29 @@ pub use crate::operation::get_pull_request_override_state::_get_pull_request_ove
 /// Fluent builder constructing a request to `GetPullRequestOverrideState`.
 ///
 /// <p>Returns information about whether approval rules have been set aside (overridden) for a pull request, and if so, the Amazon Resource Name (ARN) of the user or identity that overrode the rules and their requirements for the pull request.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetPullRequestOverrideStateFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::get_pull_request_override_state::builders::GetPullRequestOverrideStateInputBuilder,
 }
 impl GetPullRequestOverrideStateFluentBuilder {
     /// Creates a new `GetPullRequestOverrideState`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::get_pull_request_override_state::GetPullRequestOverrideState,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::get_pull_request_override_state::GetPullRequestOverrideStateError,
         >,
     > {
@@ -36,30 +36,33 @@ impl GetPullRequestOverrideStateFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_pull_request_override_state::GetPullRequestOverrideStateOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::get_pull_request_override_state::GetPullRequestOverrideStateError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,31 +75,37 @@ impl GetPullRequestOverrideStateFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_pull_request_override_state::GetPullRequestOverrideStateOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::get_pull_request_override_state::GetPullRequestOverrideStateError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The ID of the pull request for which you want to get information about whether approval rules have been set aside (overridden).</p>
-    pub fn pull_request_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn pull_request_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.pull_request_id(input.into());
         self
     }
     /// <p>The ID of the pull request for which you want to get information about whether approval rules have been set aside (overridden).</p>
-    pub fn set_pull_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_pull_request_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_pull_request_id(input);
         self
     }
     /// <p>The system-generated ID of the revision for the pull request. To retrieve the most recent revision ID, use <code>GetPullRequest</code>.</p>
-    pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.revision_id(input.into());
         self
     }
     /// <p>The system-generated ID of the revision for the pull request. To retrieve the most recent revision ID, use <code>GetPullRequest</code>.</p>
-    pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_revision_id(input);
         self
     }

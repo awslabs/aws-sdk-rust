@@ -8,47 +8,50 @@ pub use crate::operation::delete_query_suggestions_block_list::_delete_query_sug
 /// <p>Deletes a block list used for query suggestions for an index.</p>
 /// <p>A deleted block list might not take effect right away. Amazon Kendra needs to refresh the entire suggestions list to add back the queries that were previously blocked.</p>
 /// <p> <code>DeleteQuerySuggestionsBlockList</code> is currently not supported in the Amazon Web Services GovCloud (US-West) region.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteQuerySuggestionsBlockListFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::delete_query_suggestions_block_list::builders::DeleteQuerySuggestionsBlockListInputBuilder,
 }
 impl DeleteQuerySuggestionsBlockListFluentBuilder {
     /// Creates a new `DeleteQuerySuggestionsBlockList`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::delete_query_suggestions_block_list::DeleteQuerySuggestionsBlockList, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::delete_query_suggestions_block_list::DeleteQuerySuggestionsBlockListError>
+                    pub async fn customize(self) -> ::std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::delete_query_suggestions_block_list::DeleteQuerySuggestionsBlockList, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                        ::aws_smithy_http::result::SdkError<crate::operation::delete_query_suggestions_block_list::DeleteQuerySuggestionsBlockListError>
     >{
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::delete_query_suggestions_block_list::DeleteQuerySuggestionsBlockListOutput, aws_smithy_http::result::SdkError<crate::operation::delete_query_suggestions_block_list::DeleteQuerySuggestionsBlockListError>>
+                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::delete_query_suggestions_block_list::DeleteQuerySuggestionsBlockListOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_query_suggestions_block_list::DeleteQuerySuggestionsBlockListError>>
                      {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -59,27 +62,27 @@ impl DeleteQuerySuggestionsBlockListFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> std::result::Result<crate::operation::delete_query_suggestions_block_list::DeleteQuerySuggestionsBlockListOutput, aws_smithy_http::result::SdkError<crate::operation::delete_query_suggestions_block_list::DeleteQuerySuggestionsBlockListError>>
+                        pub async fn send(self) -> ::std::result::Result<crate::operation::delete_query_suggestions_block_list::DeleteQuerySuggestionsBlockListOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_query_suggestions_block_list::DeleteQuerySuggestionsBlockListError>>
                          {
         self.send_middleware().await
     }
     /// <p>The identifier of the index for the block list.</p>
-    pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.index_id(input.into());
         self
     }
     /// <p>The identifier of the index for the block list.</p>
-    pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_index_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_index_id(input);
         self
     }
     /// <p>The identifier of the block list you want to delete.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.id(input.into());
         self
     }
     /// <p>The identifier of the block list you want to delete.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_id(input);
         self
     }

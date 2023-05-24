@@ -2,11 +2,11 @@
 
 /// <p>Response to an UnsubscribeFromDataset request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UnsubscribeFromDatasetOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for UnsubscribeFromDatasetOutput {
+impl ::aws_http::request_id::RequestId for UnsubscribeFromDatasetOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -22,7 +22,9 @@ impl UnsubscribeFromDatasetOutput {
 
 /// A builder for [`UnsubscribeFromDatasetOutput`](crate::operation::unsubscribe_from_dataset::UnsubscribeFromDatasetOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UnsubscribeFromDatasetOutputBuilder {
     _request_id: Option<String>,
 }

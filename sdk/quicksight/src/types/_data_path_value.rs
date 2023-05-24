@@ -2,27 +2,27 @@
 
 /// <p>The data path that needs to be sorted.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DataPathValue {
     /// <p>The field ID of the field that needs to be sorted.</p>
     #[doc(hidden)]
-    pub field_id: std::option::Option<std::string::String>,
+    pub field_id: ::std::option::Option<::std::string::String>,
     /// <p>The actual value of the field that needs to be sorted.</p>
     #[doc(hidden)]
-    pub field_value: std::option::Option<std::string::String>,
+    pub field_value: ::std::option::Option<::std::string::String>,
 }
 impl DataPathValue {
     /// <p>The field ID of the field that needs to be sorted.</p>
-    pub fn field_id(&self) -> std::option::Option<&str> {
+    pub fn field_id(&self) -> ::std::option::Option<&str> {
         self.field_id.as_deref()
     }
     /// <p>The actual value of the field that needs to be sorted.</p>
-    pub fn field_value(&self) -> std::option::Option<&str> {
+    pub fn field_value(&self) -> ::std::option::Option<&str> {
         self.field_value.as_deref()
     }
 }
-impl std::fmt::Debug for DataPathValue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for DataPathValue {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DataPathValue");
         formatter.field("field_id", &self.field_id);
         formatter.field("field_value", &"*** Sensitive Data Redacted ***");
@@ -38,29 +38,29 @@ impl DataPathValue {
 
 /// A builder for [`DataPathValue`](crate::types::DataPathValue).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct DataPathValueBuilder {
-    pub(crate) field_id: std::option::Option<std::string::String>,
-    pub(crate) field_value: std::option::Option<std::string::String>,
+    pub(crate) field_id: ::std::option::Option<::std::string::String>,
+    pub(crate) field_value: ::std::option::Option<::std::string::String>,
 }
 impl DataPathValueBuilder {
     /// <p>The field ID of the field that needs to be sorted.</p>
-    pub fn field_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.field_id = Some(input.into());
+    pub fn field_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.field_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The field ID of the field that needs to be sorted.</p>
-    pub fn set_field_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_field_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.field_id = input;
         self
     }
     /// <p>The actual value of the field that needs to be sorted.</p>
-    pub fn field_value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.field_value = Some(input.into());
+    pub fn field_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.field_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The actual value of the field that needs to be sorted.</p>
-    pub fn set_field_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_field_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.field_value = input;
         self
     }
@@ -72,8 +72,8 @@ impl DataPathValueBuilder {
         }
     }
 }
-impl std::fmt::Debug for DataPathValueBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for DataPathValueBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DataPathValueBuilder");
         formatter.field("field_id", &self.field_id);
         formatter.field("field_value", &"*** Sensitive Data Redacted ***");

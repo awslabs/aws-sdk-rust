@@ -6,29 +6,29 @@ pub use crate::operation::create_deployment::_create_deployment_input::CreateDep
 /// Fluent builder constructing a request to `CreateDeployment`.
 ///
 /// Creates a deployment. ''CreateDeployment'' requests are idempotent with respect to the ''X-Amzn-Client-Token'' token and the request parameters.
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateDeploymentFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_deployment::builders::CreateDeploymentInputBuilder,
 }
 impl CreateDeploymentFluentBuilder {
     /// Creates a new `CreateDeployment`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_deployment::CreateDeployment,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_deployment::CreateDeploymentError,
         >,
     > {
@@ -36,30 +36,33 @@ impl CreateDeploymentFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_deployment::CreateDeploymentOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_deployment::CreateDeploymentError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,34 +75,43 @@ impl CreateDeploymentFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_deployment::CreateDeploymentOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_deployment::CreateDeploymentError,
         >,
     > {
         self.send_middleware().await
     }
     /// A client token used to correlate requests and responses.
-    pub fn amzn_client_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn amzn_client_token(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.amzn_client_token(input.into());
         self
     }
     /// A client token used to correlate requests and responses.
     pub fn set_amzn_client_token(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_amzn_client_token(input);
         self
     }
     /// The ID of the deployment if you wish to redeploy a previous deployment.
-    pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn deployment_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.deployment_id(input.into());
         self
     }
     /// The ID of the deployment if you wish to redeploy a previous deployment.
-    pub fn set_deployment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_deployment_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_deployment_id(input);
         self
     }
@@ -111,28 +123,34 @@ impl CreateDeploymentFluentBuilder {
     /// The type of deployment. When used for ''CreateDeployment'', only ''NewDeployment'' and ''Redeployment'' are valid.
     pub fn set_deployment_type(
         mut self,
-        input: std::option::Option<crate::types::DeploymentType>,
+        input: ::std::option::Option<crate::types::DeploymentType>,
     ) -> Self {
         self.inner = self.inner.set_deployment_type(input);
         self
     }
     /// The ID of the Greengrass group.
-    pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.group_id(input.into());
         self
     }
     /// The ID of the Greengrass group.
-    pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_group_id(input);
         self
     }
     /// The ID of the group version to be deployed.
-    pub fn group_version_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn group_version_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.group_version_id(input.into());
         self
     }
     /// The ID of the group version to be deployed.
-    pub fn set_group_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_group_version_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_group_version_id(input);
         self
     }

@@ -2,22 +2,22 @@
 
 /// <p>Command to be run on a particular operating system.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PlatformCommand {
     /// <p>Command for Linux.</p>
     #[doc(hidden)]
-    pub linux: std::option::Option<std::string::String>,
+    pub linux: ::std::option::Option<::std::string::String>,
     /// <p>Command for Windows.</p>
     #[doc(hidden)]
-    pub windows: std::option::Option<std::string::String>,
+    pub windows: ::std::option::Option<::std::string::String>,
 }
 impl PlatformCommand {
     /// <p>Command for Linux.</p>
-    pub fn linux(&self) -> std::option::Option<&str> {
+    pub fn linux(&self) -> ::std::option::Option<&str> {
         self.linux.as_deref()
     }
     /// <p>Command for Windows.</p>
-    pub fn windows(&self) -> std::option::Option<&str> {
+    pub fn windows(&self) -> ::std::option::Option<&str> {
         self.windows.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl PlatformCommand {
 
 /// A builder for [`PlatformCommand`](crate::types::PlatformCommand).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PlatformCommandBuilder {
-    pub(crate) linux: std::option::Option<std::string::String>,
-    pub(crate) windows: std::option::Option<std::string::String>,
+    pub(crate) linux: ::std::option::Option<::std::string::String>,
+    pub(crate) windows: ::std::option::Option<::std::string::String>,
 }
 impl PlatformCommandBuilder {
     /// <p>Command for Linux.</p>
-    pub fn linux(mut self, input: impl Into<std::string::String>) -> Self {
-        self.linux = Some(input.into());
+    pub fn linux(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.linux = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Command for Linux.</p>
-    pub fn set_linux(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_linux(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.linux = input;
         self
     }
     /// <p>Command for Windows.</p>
-    pub fn windows(mut self, input: impl Into<std::string::String>) -> Self {
-        self.windows = Some(input.into());
+    pub fn windows(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.windows = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Command for Windows.</p>
-    pub fn set_windows(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_windows(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.windows = input;
         self
     }

@@ -4,17 +4,17 @@
 /// <p>You can only crawl websites that use the secure communication protocol, Hypertext Transfer Protocol Secure (HTTPS). If you receive an error when crawling a website, it could be that the website is blocked from crawling.</p>
 /// <p> <i>When selecting websites to index, you must adhere to the <a href="https://aws.amazon.com/aup/">Amazon Acceptable Use Policy</a> and all other Amazon terms. Remember that you must only use Amazon Kendra Web Crawler to index your own web pages, or web pages that you have authorization to index.</i> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Urls {
     /// <p>Configuration of the seed or starting point URLs of the websites you want to crawl.</p>
     /// <p>You can choose to crawl only the website host names, or the website host names with subdomains, or the website host names with subdomains and other domains that the web pages link to.</p>
     /// <p>You can list up to 100 seed URLs.</p>
     #[doc(hidden)]
-    pub seed_url_configuration: std::option::Option<crate::types::SeedUrlConfiguration>,
+    pub seed_url_configuration: ::std::option::Option<crate::types::SeedUrlConfiguration>,
     /// <p>Configuration of the sitemap URLs of the websites you want to crawl.</p>
     /// <p>Only URLs belonging to the same website host names are crawled. You can list up to three sitemap URLs.</p>
     #[doc(hidden)]
-    pub site_maps_configuration: std::option::Option<crate::types::SiteMapsConfiguration>,
+    pub site_maps_configuration: ::std::option::Option<crate::types::SiteMapsConfiguration>,
 }
 impl Urls {
     /// <p>Configuration of the seed or starting point URLs of the websites you want to crawl.</p>
@@ -22,14 +22,14 @@ impl Urls {
     /// <p>You can list up to 100 seed URLs.</p>
     pub fn seed_url_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::SeedUrlConfiguration> {
+    ) -> ::std::option::Option<&crate::types::SeedUrlConfiguration> {
         self.seed_url_configuration.as_ref()
     }
     /// <p>Configuration of the sitemap URLs of the websites you want to crawl.</p>
     /// <p>Only URLs belonging to the same website host names are crawled. You can list up to three sitemap URLs.</p>
     pub fn site_maps_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::SiteMapsConfiguration> {
+    ) -> ::std::option::Option<&crate::types::SiteMapsConfiguration> {
         self.site_maps_configuration.as_ref()
     }
 }
@@ -42,17 +42,19 @@ impl Urls {
 
 /// A builder for [`Urls`](crate::types::Urls).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UrlsBuilder {
-    pub(crate) seed_url_configuration: std::option::Option<crate::types::SeedUrlConfiguration>,
-    pub(crate) site_maps_configuration: std::option::Option<crate::types::SiteMapsConfiguration>,
+    pub(crate) seed_url_configuration: ::std::option::Option<crate::types::SeedUrlConfiguration>,
+    pub(crate) site_maps_configuration: ::std::option::Option<crate::types::SiteMapsConfiguration>,
 }
 impl UrlsBuilder {
     /// <p>Configuration of the seed or starting point URLs of the websites you want to crawl.</p>
     /// <p>You can choose to crawl only the website host names, or the website host names with subdomains, or the website host names with subdomains and other domains that the web pages link to.</p>
     /// <p>You can list up to 100 seed URLs.</p>
     pub fn seed_url_configuration(mut self, input: crate::types::SeedUrlConfiguration) -> Self {
-        self.seed_url_configuration = Some(input);
+        self.seed_url_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configuration of the seed or starting point URLs of the websites you want to crawl.</p>
@@ -60,7 +62,7 @@ impl UrlsBuilder {
     /// <p>You can list up to 100 seed URLs.</p>
     pub fn set_seed_url_configuration(
         mut self,
-        input: std::option::Option<crate::types::SeedUrlConfiguration>,
+        input: ::std::option::Option<crate::types::SeedUrlConfiguration>,
     ) -> Self {
         self.seed_url_configuration = input;
         self
@@ -68,14 +70,14 @@ impl UrlsBuilder {
     /// <p>Configuration of the sitemap URLs of the websites you want to crawl.</p>
     /// <p>Only URLs belonging to the same website host names are crawled. You can list up to three sitemap URLs.</p>
     pub fn site_maps_configuration(mut self, input: crate::types::SiteMapsConfiguration) -> Self {
-        self.site_maps_configuration = Some(input);
+        self.site_maps_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configuration of the sitemap URLs of the websites you want to crawl.</p>
     /// <p>Only URLs belonging to the same website host names are crawled. You can list up to three sitemap URLs.</p>
     pub fn set_site_maps_configuration(
         mut self,
-        input: std::option::Option<crate::types::SiteMapsConfiguration>,
+        input: ::std::option::Option<crate::types::SiteMapsConfiguration>,
     ) -> Self {
         self.site_maps_configuration = input;
         self

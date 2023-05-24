@@ -2,15 +2,15 @@
 
 /// <p>The input for the GetRetainedMessage operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRetainedMessageInput {
     /// <p>The topic name of the retained message to retrieve.</p>
     #[doc(hidden)]
-    pub topic: std::option::Option<std::string::String>,
+    pub topic: ::std::option::Option<::std::string::String>,
 }
 impl GetRetainedMessageInput {
     /// <p>The topic name of the retained message to retrieve.</p>
-    pub fn topic(&self) -> std::option::Option<&str> {
+    pub fn topic(&self) -> ::std::option::Option<&str> {
         self.topic.as_deref()
     }
 }
@@ -24,28 +24,32 @@ impl GetRetainedMessageInput {
 
 /// A builder for [`GetRetainedMessageInput`](crate::operation::get_retained_message::GetRetainedMessageInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetRetainedMessageInputBuilder {
-    pub(crate) topic: std::option::Option<std::string::String>,
+    pub(crate) topic: ::std::option::Option<::std::string::String>,
 }
 impl GetRetainedMessageInputBuilder {
     /// <p>The topic name of the retained message to retrieve.</p>
-    pub fn topic(mut self, input: impl Into<std::string::String>) -> Self {
-        self.topic = Some(input.into());
+    pub fn topic(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.topic = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The topic name of the retained message to retrieve.</p>
-    pub fn set_topic(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_topic(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.topic = input;
         self
     }
     /// Consumes the builder and constructs a [`GetRetainedMessageInput`](crate::operation::get_retained_message::GetRetainedMessageInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::get_retained_message::GetRetainedMessageInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::get_retained_message::GetRetainedMessageInput { topic: self.topic })
+        ::std::result::Result::Ok(
+            crate::operation::get_retained_message::GetRetainedMessageInput { topic: self.topic },
+        )
     }
 }

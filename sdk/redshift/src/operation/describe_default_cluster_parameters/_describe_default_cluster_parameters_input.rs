@@ -2,33 +2,33 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDefaultClusterParametersInput {
     /// <p>The name of the cluster parameter group family.</p>
     #[doc(hidden)]
-    pub parameter_group_family: std::option::Option<std::string::String>,
+    pub parameter_group_family: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>
     /// <p>Default: <code>100</code> </p>
     /// <p>Constraints: minimum 20, maximum 100.</p>
     #[doc(hidden)]
-    pub max_records: std::option::Option<i32>,
+    pub max_records: ::std::option::Option<i32>,
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeDefaultClusterParameters</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
     #[doc(hidden)]
-    pub marker: std::option::Option<std::string::String>,
+    pub marker: ::std::option::Option<::std::string::String>,
 }
 impl DescribeDefaultClusterParametersInput {
     /// <p>The name of the cluster parameter group family.</p>
-    pub fn parameter_group_family(&self) -> std::option::Option<&str> {
+    pub fn parameter_group_family(&self) -> ::std::option::Option<&str> {
         self.parameter_group_family.as_deref()
     }
     /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>
     /// <p>Default: <code>100</code> </p>
     /// <p>Constraints: minimum 20, maximum 100.</p>
-    pub fn max_records(&self) -> std::option::Option<i32> {
+    pub fn max_records(&self) -> ::std::option::Option<i32> {
         self.max_records
     }
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeDefaultClusterParameters</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
 }
@@ -41,22 +41,27 @@ impl DescribeDefaultClusterParametersInput {
 
 /// A builder for [`DescribeDefaultClusterParametersInput`](crate::operation::describe_default_cluster_parameters::DescribeDefaultClusterParametersInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeDefaultClusterParametersInputBuilder {
-    pub(crate) parameter_group_family: std::option::Option<std::string::String>,
-    pub(crate) max_records: std::option::Option<i32>,
-    pub(crate) marker: std::option::Option<std::string::String>,
+    pub(crate) parameter_group_family: ::std::option::Option<::std::string::String>,
+    pub(crate) max_records: ::std::option::Option<i32>,
+    pub(crate) marker: ::std::option::Option<::std::string::String>,
 }
 impl DescribeDefaultClusterParametersInputBuilder {
     /// <p>The name of the cluster parameter group family.</p>
-    pub fn parameter_group_family(mut self, input: impl Into<std::string::String>) -> Self {
-        self.parameter_group_family = Some(input.into());
+    pub fn parameter_group_family(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.parameter_group_family = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the cluster parameter group family.</p>
     pub fn set_parameter_group_family(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.parameter_group_family = input;
         self
@@ -65,29 +70,29 @@ impl DescribeDefaultClusterParametersInputBuilder {
     /// <p>Default: <code>100</code> </p>
     /// <p>Constraints: minimum 20, maximum 100.</p>
     pub fn max_records(mut self, input: i32) -> Self {
-        self.max_records = Some(input);
+        self.max_records = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>
     /// <p>Default: <code>100</code> </p>
     /// <p>Constraints: minimum 20, maximum 100.</p>
-    pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_records = input;
         self
     }
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeDefaultClusterParameters</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
-    pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-        self.marker = Some(input.into());
+    pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeDefaultClusterParameters</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
-    pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
     }
     /// Consumes the builder and constructs a [`DescribeDefaultClusterParametersInput`](crate::operation::describe_default_cluster_parameters::DescribeDefaultClusterParametersInput).
-    pub fn build(self) -> Result<crate::operation::describe_default_cluster_parameters::DescribeDefaultClusterParametersInput, aws_smithy_http::operation::error::BuildError>{
-        Ok(
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_default_cluster_parameters::DescribeDefaultClusterParametersInput, ::aws_smithy_http::operation::error::BuildError>{
+        ::std::result::Result::Ok(
             crate::operation::describe_default_cluster_parameters::DescribeDefaultClusterParametersInput {
                 parameter_group_family: self.parameter_group_family
                 ,

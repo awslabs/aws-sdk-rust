@@ -2,29 +2,29 @@
 
 /// <p>Information about an S3 object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3Object {
     /// <p>The bucket containing the object.</p>
     #[doc(hidden)]
-    pub bucket: std::option::Option<std::string::String>,
+    pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>The key of the object.</p>
     #[doc(hidden)]
-    pub key: std::option::Option<std::string::String>,
+    pub key: ::std::option::Option<::std::string::String>,
     /// <p>The etag of the object.</p>
     #[doc(hidden)]
-    pub etag: std::option::Option<std::string::String>,
+    pub etag: ::std::option::Option<::std::string::String>,
 }
 impl S3Object {
     /// <p>The bucket containing the object.</p>
-    pub fn bucket(&self) -> std::option::Option<&str> {
+    pub fn bucket(&self) -> ::std::option::Option<&str> {
         self.bucket.as_deref()
     }
     /// <p>The key of the object.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<&str> {
         self.key.as_deref()
     }
     /// <p>The etag of the object.</p>
-    pub fn etag(&self) -> std::option::Option<&str> {
+    pub fn etag(&self) -> ::std::option::Option<&str> {
         self.etag.as_deref()
     }
 }
@@ -37,40 +37,42 @@ impl S3Object {
 
 /// A builder for [`S3Object`](crate::types::S3Object).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct S3ObjectBuilder {
-    pub(crate) bucket: std::option::Option<std::string::String>,
-    pub(crate) key: std::option::Option<std::string::String>,
-    pub(crate) etag: std::option::Option<std::string::String>,
+    pub(crate) bucket: ::std::option::Option<::std::string::String>,
+    pub(crate) key: ::std::option::Option<::std::string::String>,
+    pub(crate) etag: ::std::option::Option<::std::string::String>,
 }
 impl S3ObjectBuilder {
     /// <p>The bucket containing the object.</p>
-    pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
-        self.bucket = Some(input.into());
+    pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.bucket = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The bucket containing the object.</p>
-    pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket = input;
         self
     }
     /// <p>The key of the object.</p>
-    pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.key = Some(input.into());
+    pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The key of the object.</p>
-    pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key = input;
         self
     }
     /// <p>The etag of the object.</p>
-    pub fn etag(mut self, input: impl Into<std::string::String>) -> Self {
-        self.etag = Some(input.into());
+    pub fn etag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.etag = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The etag of the object.</p>
-    pub fn set_etag(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_etag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.etag = input;
         self
     }

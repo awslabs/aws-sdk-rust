@@ -2,38 +2,38 @@
 
 /// <p>A control from a date parameter that specifies date and time.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ParameterDateTimePickerControl {
     /// <p>The ID of the <code>ParameterDateTimePickerControl</code>.</p>
     #[doc(hidden)]
-    pub parameter_control_id: std::option::Option<std::string::String>,
+    pub parameter_control_id: ::std::option::Option<::std::string::String>,
     /// <p>The title of the <code>ParameterDateTimePickerControl</code>.</p>
     #[doc(hidden)]
-    pub title: std::option::Option<std::string::String>,
+    pub title: ::std::option::Option<::std::string::String>,
     /// <p>The name of the <code>ParameterDateTimePickerControl</code>.</p>
     #[doc(hidden)]
-    pub source_parameter_name: std::option::Option<std::string::String>,
+    pub source_parameter_name: ::std::option::Option<::std::string::String>,
     /// <p>The display options of a control.</p>
     #[doc(hidden)]
-    pub display_options: std::option::Option<crate::types::DateTimePickerControlDisplayOptions>,
+    pub display_options: ::std::option::Option<crate::types::DateTimePickerControlDisplayOptions>,
 }
 impl ParameterDateTimePickerControl {
     /// <p>The ID of the <code>ParameterDateTimePickerControl</code>.</p>
-    pub fn parameter_control_id(&self) -> std::option::Option<&str> {
+    pub fn parameter_control_id(&self) -> ::std::option::Option<&str> {
         self.parameter_control_id.as_deref()
     }
     /// <p>The title of the <code>ParameterDateTimePickerControl</code>.</p>
-    pub fn title(&self) -> std::option::Option<&str> {
+    pub fn title(&self) -> ::std::option::Option<&str> {
         self.title.as_deref()
     }
     /// <p>The name of the <code>ParameterDateTimePickerControl</code>.</p>
-    pub fn source_parameter_name(&self) -> std::option::Option<&str> {
+    pub fn source_parameter_name(&self) -> ::std::option::Option<&str> {
         self.source_parameter_name.as_deref()
     }
     /// <p>The display options of a control.</p>
     pub fn display_options(
         &self,
-    ) -> std::option::Option<&crate::types::DateTimePickerControlDisplayOptions> {
+    ) -> ::std::option::Option<&crate::types::DateTimePickerControlDisplayOptions> {
         self.display_options.as_ref()
     }
 }
@@ -46,47 +46,55 @@ impl ParameterDateTimePickerControl {
 
 /// A builder for [`ParameterDateTimePickerControl`](crate::types::ParameterDateTimePickerControl).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ParameterDateTimePickerControlBuilder {
-    pub(crate) parameter_control_id: std::option::Option<std::string::String>,
-    pub(crate) title: std::option::Option<std::string::String>,
-    pub(crate) source_parameter_name: std::option::Option<std::string::String>,
+    pub(crate) parameter_control_id: ::std::option::Option<::std::string::String>,
+    pub(crate) title: ::std::option::Option<::std::string::String>,
+    pub(crate) source_parameter_name: ::std::option::Option<::std::string::String>,
     pub(crate) display_options:
-        std::option::Option<crate::types::DateTimePickerControlDisplayOptions>,
+        ::std::option::Option<crate::types::DateTimePickerControlDisplayOptions>,
 }
 impl ParameterDateTimePickerControlBuilder {
     /// <p>The ID of the <code>ParameterDateTimePickerControl</code>.</p>
-    pub fn parameter_control_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.parameter_control_id = Some(input.into());
+    pub fn parameter_control_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.parameter_control_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the <code>ParameterDateTimePickerControl</code>.</p>
     pub fn set_parameter_control_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.parameter_control_id = input;
         self
     }
     /// <p>The title of the <code>ParameterDateTimePickerControl</code>.</p>
-    pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
-        self.title = Some(input.into());
+    pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.title = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The title of the <code>ParameterDateTimePickerControl</code>.</p>
-    pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.title = input;
         self
     }
     /// <p>The name of the <code>ParameterDateTimePickerControl</code>.</p>
-    pub fn source_parameter_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.source_parameter_name = Some(input.into());
+    pub fn source_parameter_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.source_parameter_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the <code>ParameterDateTimePickerControl</code>.</p>
     pub fn set_source_parameter_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.source_parameter_name = input;
         self
@@ -96,13 +104,13 @@ impl ParameterDateTimePickerControlBuilder {
         mut self,
         input: crate::types::DateTimePickerControlDisplayOptions,
     ) -> Self {
-        self.display_options = Some(input);
+        self.display_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The display options of a control.</p>
     pub fn set_display_options(
         mut self,
-        input: std::option::Option<crate::types::DateTimePickerControlDisplayOptions>,
+        input: ::std::option::Option<crate::types::DateTimePickerControlDisplayOptions>,
     ) -> Self {
         self.display_options = input;
         self

@@ -2,22 +2,22 @@
 
 /// <p>Details on termination recommendation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TerminateRecommendationDetail {
     /// <p>The estimated savings that result from modification, on a monthly basis.</p>
     #[doc(hidden)]
-    pub estimated_monthly_savings: std::option::Option<std::string::String>,
+    pub estimated_monthly_savings: ::std::option::Option<::std::string::String>,
     /// <p>The currency code that Amazon Web Services used to calculate the costs for this instance.</p>
     #[doc(hidden)]
-    pub currency_code: std::option::Option<std::string::String>,
+    pub currency_code: ::std::option::Option<::std::string::String>,
 }
 impl TerminateRecommendationDetail {
     /// <p>The estimated savings that result from modification, on a monthly basis.</p>
-    pub fn estimated_monthly_savings(&self) -> std::option::Option<&str> {
+    pub fn estimated_monthly_savings(&self) -> ::std::option::Option<&str> {
         self.estimated_monthly_savings.as_deref()
     }
     /// <p>The currency code that Amazon Web Services used to calculate the costs for this instance.</p>
-    pub fn currency_code(&self) -> std::option::Option<&str> {
+    pub fn currency_code(&self) -> ::std::option::Option<&str> {
         self.currency_code.as_deref()
     }
 }
@@ -30,32 +30,43 @@ impl TerminateRecommendationDetail {
 
 /// A builder for [`TerminateRecommendationDetail`](crate::types::TerminateRecommendationDetail).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TerminateRecommendationDetailBuilder {
-    pub(crate) estimated_monthly_savings: std::option::Option<std::string::String>,
-    pub(crate) currency_code: std::option::Option<std::string::String>,
+    pub(crate) estimated_monthly_savings: ::std::option::Option<::std::string::String>,
+    pub(crate) currency_code: ::std::option::Option<::std::string::String>,
 }
 impl TerminateRecommendationDetailBuilder {
     /// <p>The estimated savings that result from modification, on a monthly basis.</p>
-    pub fn estimated_monthly_savings(mut self, input: impl Into<std::string::String>) -> Self {
-        self.estimated_monthly_savings = Some(input.into());
+    pub fn estimated_monthly_savings(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.estimated_monthly_savings = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The estimated savings that result from modification, on a monthly basis.</p>
     pub fn set_estimated_monthly_savings(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.estimated_monthly_savings = input;
         self
     }
     /// <p>The currency code that Amazon Web Services used to calculate the costs for this instance.</p>
-    pub fn currency_code(mut self, input: impl Into<std::string::String>) -> Self {
-        self.currency_code = Some(input.into());
+    pub fn currency_code(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.currency_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The currency code that Amazon Web Services used to calculate the costs for this instance.</p>
-    pub fn set_currency_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_currency_code(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.currency_code = input;
         self
     }

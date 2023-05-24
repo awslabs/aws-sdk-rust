@@ -2,7 +2,7 @@
 
 /// <p>Indicates whether a slot can return multiple values.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MultipleValuesSetting {
     /// <p>Indicates whether a slot can return multiple values. When <code>true</code>, the slot may return more than one value in a response. When <code>false</code>, the slot returns only a single value.</p>
     /// <p>Multi-value slots are only available in the en-US locale. If you set this value to <code>true</code> in any other locale, Amazon Lex throws a <code>ValidationException</code>.</p>
@@ -27,22 +27,24 @@ impl MultipleValuesSetting {
 
 /// A builder for [`MultipleValuesSetting`](crate::types::MultipleValuesSetting).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MultipleValuesSettingBuilder {
-    pub(crate) allow_multiple_values: std::option::Option<bool>,
+    pub(crate) allow_multiple_values: ::std::option::Option<bool>,
 }
 impl MultipleValuesSettingBuilder {
     /// <p>Indicates whether a slot can return multiple values. When <code>true</code>, the slot may return more than one value in a response. When <code>false</code>, the slot returns only a single value.</p>
     /// <p>Multi-value slots are only available in the en-US locale. If you set this value to <code>true</code> in any other locale, Amazon Lex throws a <code>ValidationException</code>.</p>
     /// <p>If the <code>allowMutlipleValues</code> is not set, the default value is <code>false</code>.</p>
     pub fn allow_multiple_values(mut self, input: bool) -> Self {
-        self.allow_multiple_values = Some(input);
+        self.allow_multiple_values = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether a slot can return multiple values. When <code>true</code>, the slot may return more than one value in a response. When <code>false</code>, the slot returns only a single value.</p>
     /// <p>Multi-value slots are only available in the en-US locale. If you set this value to <code>true</code> in any other locale, Amazon Lex throws a <code>ValidationException</code>.</p>
     /// <p>If the <code>allowMutlipleValues</code> is not set, the default value is <code>false</code>.</p>
-    pub fn set_allow_multiple_values(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_allow_multiple_values(mut self, input: ::std::option::Option<bool>) -> Self {
         self.allow_multiple_values = input;
         self
     }

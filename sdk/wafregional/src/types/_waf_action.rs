@@ -6,7 +6,7 @@
 /// </note>
 /// <p>For the action that is associated with a rule in a <code>WebACL</code>, specifies the action that you want AWS WAF to perform when a web request matches all of the conditions in a rule. For the default action in a <code>WebACL</code>, specifies the action that you want AWS WAF to take when a web request doesn't match all of the conditions in any of the rules in a <code>WebACL</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WafAction {
     /// <p>Specifies how you want AWS WAF to respond to requests that match the settings in a <code>Rule</code>. Valid settings include the following:</p>
     /// <ul>
@@ -15,7 +15,7 @@ pub struct WafAction {
     /// <li> <p> <code>COUNT</code>: AWS WAF increments a counter of the requests that match all of the conditions in the rule. AWS WAF then continues to inspect the web request based on the remaining rules in the web ACL. You can't specify <code>COUNT</code> for the default action for a <code>WebACL</code>.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::WafActionType>,
+    pub r#type: ::std::option::Option<crate::types::WafActionType>,
 }
 impl WafAction {
     /// <p>Specifies how you want AWS WAF to respond to requests that match the settings in a <code>Rule</code>. Valid settings include the following:</p>
@@ -24,7 +24,7 @@ impl WafAction {
     /// <li> <p> <code>BLOCK</code>: AWS WAF blocks requests</p> </li>
     /// <li> <p> <code>COUNT</code>: AWS WAF increments a counter of the requests that match all of the conditions in the rule. AWS WAF then continues to inspect the web request based on the remaining rules in the web ACL. You can't specify <code>COUNT</code> for the default action for a <code>WebACL</code>.</p> </li>
     /// </ul>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::WafActionType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::WafActionType> {
         self.r#type.as_ref()
     }
 }
@@ -37,9 +37,11 @@ impl WafAction {
 
 /// A builder for [`WafAction`](crate::types::WafAction).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct WafActionBuilder {
-    pub(crate) r#type: std::option::Option<crate::types::WafActionType>,
+    pub(crate) r#type: ::std::option::Option<crate::types::WafActionType>,
 }
 impl WafActionBuilder {
     /// <p>Specifies how you want AWS WAF to respond to requests that match the settings in a <code>Rule</code>. Valid settings include the following:</p>
@@ -49,7 +51,7 @@ impl WafActionBuilder {
     /// <li> <p> <code>COUNT</code>: AWS WAF increments a counter of the requests that match all of the conditions in the rule. AWS WAF then continues to inspect the web request based on the remaining rules in the web ACL. You can't specify <code>COUNT</code> for the default action for a <code>WebACL</code>.</p> </li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::WafActionType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies how you want AWS WAF to respond to requests that match the settings in a <code>Rule</code>. Valid settings include the following:</p>
@@ -58,7 +60,7 @@ impl WafActionBuilder {
     /// <li> <p> <code>BLOCK</code>: AWS WAF blocks requests</p> </li>
     /// <li> <p> <code>COUNT</code>: AWS WAF increments a counter of the requests that match all of the conditions in the rule. AWS WAF then continues to inspect the web request based on the remaining rules in the web ACL. You can't specify <code>COUNT</code> for the default action for a <code>WebACL</code>.</p> </li>
     /// </ul>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::WafActionType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::WafActionType>) -> Self {
         self.r#type = input;
         self
     }

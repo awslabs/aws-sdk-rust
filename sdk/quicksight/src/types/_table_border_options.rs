@@ -2,29 +2,29 @@
 
 /// <p>The border options for a table border.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TableBorderOptions {
     /// <p>The color of a table border.</p>
     #[doc(hidden)]
-    pub color: std::option::Option<std::string::String>,
+    pub color: ::std::option::Option<::std::string::String>,
     /// <p>The thickness of a table border.</p>
     #[doc(hidden)]
-    pub thickness: std::option::Option<i32>,
+    pub thickness: ::std::option::Option<i32>,
     /// <p>The style (none, solid) of a table border.</p>
     #[doc(hidden)]
-    pub style: std::option::Option<crate::types::TableBorderStyle>,
+    pub style: ::std::option::Option<crate::types::TableBorderStyle>,
 }
 impl TableBorderOptions {
     /// <p>The color of a table border.</p>
-    pub fn color(&self) -> std::option::Option<&str> {
+    pub fn color(&self) -> ::std::option::Option<&str> {
         self.color.as_deref()
     }
     /// <p>The thickness of a table border.</p>
-    pub fn thickness(&self) -> std::option::Option<i32> {
+    pub fn thickness(&self) -> ::std::option::Option<i32> {
         self.thickness
     }
     /// <p>The style (none, solid) of a table border.</p>
-    pub fn style(&self) -> std::option::Option<&crate::types::TableBorderStyle> {
+    pub fn style(&self) -> ::std::option::Option<&crate::types::TableBorderStyle> {
         self.style.as_ref()
     }
 }
@@ -37,40 +37,45 @@ impl TableBorderOptions {
 
 /// A builder for [`TableBorderOptions`](crate::types::TableBorderOptions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TableBorderOptionsBuilder {
-    pub(crate) color: std::option::Option<std::string::String>,
-    pub(crate) thickness: std::option::Option<i32>,
-    pub(crate) style: std::option::Option<crate::types::TableBorderStyle>,
+    pub(crate) color: ::std::option::Option<::std::string::String>,
+    pub(crate) thickness: ::std::option::Option<i32>,
+    pub(crate) style: ::std::option::Option<crate::types::TableBorderStyle>,
 }
 impl TableBorderOptionsBuilder {
     /// <p>The color of a table border.</p>
-    pub fn color(mut self, input: impl Into<std::string::String>) -> Self {
-        self.color = Some(input.into());
+    pub fn color(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.color = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The color of a table border.</p>
-    pub fn set_color(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_color(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.color = input;
         self
     }
     /// <p>The thickness of a table border.</p>
     pub fn thickness(mut self, input: i32) -> Self {
-        self.thickness = Some(input);
+        self.thickness = ::std::option::Option::Some(input);
         self
     }
     /// <p>The thickness of a table border.</p>
-    pub fn set_thickness(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_thickness(mut self, input: ::std::option::Option<i32>) -> Self {
         self.thickness = input;
         self
     }
     /// <p>The style (none, solid) of a table border.</p>
     pub fn style(mut self, input: crate::types::TableBorderStyle) -> Self {
-        self.style = Some(input);
+        self.style = ::std::option::Option::Some(input);
         self
     }
     /// <p>The style (none, solid) of a table border.</p>
-    pub fn set_style(mut self, input: std::option::Option<crate::types::TableBorderStyle>) -> Self {
+    pub fn set_style(
+        mut self,
+        input: ::std::option::Option<crate::types::TableBorderStyle>,
+    ) -> Self {
         self.style = input;
         self
     }

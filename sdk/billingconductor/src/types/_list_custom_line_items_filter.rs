@@ -2,29 +2,29 @@
 
 /// <p> A filter that specifies the custom line items and billing groups to retrieve FFLI information. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCustomLineItemsFilter {
     /// <p> A list of custom line items to retrieve information. </p>
     #[doc(hidden)]
-    pub names: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> The billing group Amazon Resource Names (ARNs) to retrieve information. </p>
     #[doc(hidden)]
-    pub billing_groups: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub billing_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> A list of custom line item ARNs to retrieve information. </p>
     #[doc(hidden)]
-    pub arns: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ListCustomLineItemsFilter {
     /// <p> A list of custom line items to retrieve information. </p>
-    pub fn names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn names(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.names.as_deref()
     }
     /// <p> The billing group Amazon Resource Names (ARNs) to retrieve information. </p>
-    pub fn billing_groups(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn billing_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.billing_groups.as_deref()
     }
     /// <p> A list of custom line item ARNs to retrieve information. </p>
-    pub fn arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn arns(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.arns.as_deref()
     }
 }
@@ -37,11 +37,13 @@ impl ListCustomLineItemsFilter {
 
 /// A builder for [`ListCustomLineItemsFilter`](crate::types::ListCustomLineItemsFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListCustomLineItemsFilterBuilder {
-    pub(crate) names: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) billing_groups: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) arns: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) billing_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ListCustomLineItemsFilterBuilder {
     /// Appends an item to `names`.
@@ -49,16 +51,16 @@ impl ListCustomLineItemsFilterBuilder {
     /// To override the contents of this collection use [`set_names`](Self::set_names).
     ///
     /// <p> A list of custom line items to retrieve information. </p>
-    pub fn names(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.names.unwrap_or_default();
         v.push(input.into());
-        self.names = Some(v);
+        self.names = ::std::option::Option::Some(v);
         self
     }
     /// <p> A list of custom line items to retrieve information. </p>
     pub fn set_names(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.names = input;
         self
@@ -68,16 +70,19 @@ impl ListCustomLineItemsFilterBuilder {
     /// To override the contents of this collection use [`set_billing_groups`](Self::set_billing_groups).
     ///
     /// <p> The billing group Amazon Resource Names (ARNs) to retrieve information. </p>
-    pub fn billing_groups(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn billing_groups(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.billing_groups.unwrap_or_default();
         v.push(input.into());
-        self.billing_groups = Some(v);
+        self.billing_groups = ::std::option::Option::Some(v);
         self
     }
     /// <p> The billing group Amazon Resource Names (ARNs) to retrieve information. </p>
     pub fn set_billing_groups(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.billing_groups = input;
         self
@@ -87,16 +92,16 @@ impl ListCustomLineItemsFilterBuilder {
     /// To override the contents of this collection use [`set_arns`](Self::set_arns).
     ///
     /// <p> A list of custom line item ARNs to retrieve information. </p>
-    pub fn arns(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.arns.unwrap_or_default();
         v.push(input.into());
-        self.arns = Some(v);
+        self.arns = ::std::option::Option::Some(v);
         self
     }
     /// <p> A list of custom line item ARNs to retrieve information. </p>
     pub fn set_arns(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.arns = input;
         self

@@ -2,22 +2,22 @@
 
 /// <p>A container that describes additional filters for identifying the source objects that you want to replicate. You can choose to enable or disable the replication of these objects. Currently, Amazon S3 supports only the filter that you can specify for objects created with server-side encryption using a customer managed key stored in Amazon Web Services Key Management Service (SSE-KMS).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SourceSelectionCriteria {
     /// <p> A container for filter information for the selection of Amazon S3 objects encrypted with Amazon Web Services KMS. If you include <code>SourceSelectionCriteria</code> in the replication configuration, this element is required. </p>
     #[doc(hidden)]
-    pub sse_kms_encrypted_objects: std::option::Option<crate::types::SseKmsEncryptedObjects>,
+    pub sse_kms_encrypted_objects: ::std::option::Option<crate::types::SseKmsEncryptedObjects>,
     /// <p>A filter that you can specify for selections for modifications on replicas. Amazon S3 doesn't replicate replica modifications by default. In the latest version of replication configuration (when <code>Filter</code> is specified), you can specify this element and set the status to <code>Enabled</code> to replicate modifications on replicas. </p> <note>
     /// <p> If you don't specify the <code>Filter</code> element, Amazon S3 assumes that the replication configuration is the earlier version, V1. In the earlier version, this element is not allowed</p>
     /// </note>
     #[doc(hidden)]
-    pub replica_modifications: std::option::Option<crate::types::ReplicaModifications>,
+    pub replica_modifications: ::std::option::Option<crate::types::ReplicaModifications>,
 }
 impl SourceSelectionCriteria {
     /// <p> A container for filter information for the selection of Amazon S3 objects encrypted with Amazon Web Services KMS. If you include <code>SourceSelectionCriteria</code> in the replication configuration, this element is required. </p>
     pub fn sse_kms_encrypted_objects(
         &self,
-    ) -> std::option::Option<&crate::types::SseKmsEncryptedObjects> {
+    ) -> ::std::option::Option<&crate::types::SseKmsEncryptedObjects> {
         self.sse_kms_encrypted_objects.as_ref()
     }
     /// <p>A filter that you can specify for selections for modifications on replicas. Amazon S3 doesn't replicate replica modifications by default. In the latest version of replication configuration (when <code>Filter</code> is specified), you can specify this element and set the status to <code>Enabled</code> to replicate modifications on replicas. </p> <note>
@@ -25,7 +25,7 @@ impl SourceSelectionCriteria {
     /// </note>
     pub fn replica_modifications(
         &self,
-    ) -> std::option::Option<&crate::types::ReplicaModifications> {
+    ) -> ::std::option::Option<&crate::types::ReplicaModifications> {
         self.replica_modifications.as_ref()
     }
 }
@@ -38,10 +38,13 @@ impl SourceSelectionCriteria {
 
 /// A builder for [`SourceSelectionCriteria`](crate::types::SourceSelectionCriteria).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SourceSelectionCriteriaBuilder {
-    pub(crate) sse_kms_encrypted_objects: std::option::Option<crate::types::SseKmsEncryptedObjects>,
-    pub(crate) replica_modifications: std::option::Option<crate::types::ReplicaModifications>,
+    pub(crate) sse_kms_encrypted_objects:
+        ::std::option::Option<crate::types::SseKmsEncryptedObjects>,
+    pub(crate) replica_modifications: ::std::option::Option<crate::types::ReplicaModifications>,
 }
 impl SourceSelectionCriteriaBuilder {
     /// <p> A container for filter information for the selection of Amazon S3 objects encrypted with Amazon Web Services KMS. If you include <code>SourceSelectionCriteria</code> in the replication configuration, this element is required. </p>
@@ -49,13 +52,13 @@ impl SourceSelectionCriteriaBuilder {
         mut self,
         input: crate::types::SseKmsEncryptedObjects,
     ) -> Self {
-        self.sse_kms_encrypted_objects = Some(input);
+        self.sse_kms_encrypted_objects = ::std::option::Option::Some(input);
         self
     }
     /// <p> A container for filter information for the selection of Amazon S3 objects encrypted with Amazon Web Services KMS. If you include <code>SourceSelectionCriteria</code> in the replication configuration, this element is required. </p>
     pub fn set_sse_kms_encrypted_objects(
         mut self,
-        input: std::option::Option<crate::types::SseKmsEncryptedObjects>,
+        input: ::std::option::Option<crate::types::SseKmsEncryptedObjects>,
     ) -> Self {
         self.sse_kms_encrypted_objects = input;
         self
@@ -64,7 +67,7 @@ impl SourceSelectionCriteriaBuilder {
     /// <p> If you don't specify the <code>Filter</code> element, Amazon S3 assumes that the replication configuration is the earlier version, V1. In the earlier version, this element is not allowed</p>
     /// </note>
     pub fn replica_modifications(mut self, input: crate::types::ReplicaModifications) -> Self {
-        self.replica_modifications = Some(input);
+        self.replica_modifications = ::std::option::Option::Some(input);
         self
     }
     /// <p>A filter that you can specify for selections for modifications on replicas. Amazon S3 doesn't replicate replica modifications by default. In the latest version of replication configuration (when <code>Filter</code> is specified), you can specify this element and set the status to <code>Enabled</code> to replicate modifications on replicas. </p> <note>
@@ -72,7 +75,7 @@ impl SourceSelectionCriteriaBuilder {
     /// </note>
     pub fn set_replica_modifications(
         mut self,
-        input: std::option::Option<crate::types::ReplicaModifications>,
+        input: ::std::option::Option<crate::types::ReplicaModifications>,
     ) -> Self {
         self.replica_modifications = input;
         self

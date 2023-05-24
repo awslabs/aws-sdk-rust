@@ -2,15 +2,15 @@
 
 /// <p>A logical rule statement used to combine other rule statements with AND logic. You provide more than one <code>Statement</code> within the <code>AndStatement</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AndStatement {
     /// <p>The statements to combine with AND logic. You can use any statements that can be nested. </p>
     #[doc(hidden)]
-    pub statements: std::option::Option<std::vec::Vec<crate::types::Statement>>,
+    pub statements: ::std::option::Option<::std::vec::Vec<crate::types::Statement>>,
 }
 impl AndStatement {
     /// <p>The statements to combine with AND logic. You can use any statements that can be nested. </p>
-    pub fn statements(&self) -> std::option::Option<&[crate::types::Statement]> {
+    pub fn statements(&self) -> ::std::option::Option<&[crate::types::Statement]> {
         self.statements.as_deref()
     }
 }
@@ -23,9 +23,11 @@ impl AndStatement {
 
 /// A builder for [`AndStatement`](crate::types::AndStatement).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AndStatementBuilder {
-    pub(crate) statements: std::option::Option<std::vec::Vec<crate::types::Statement>>,
+    pub(crate) statements: ::std::option::Option<::std::vec::Vec<crate::types::Statement>>,
 }
 impl AndStatementBuilder {
     /// Appends an item to `statements`.
@@ -36,13 +38,13 @@ impl AndStatementBuilder {
     pub fn statements(mut self, input: crate::types::Statement) -> Self {
         let mut v = self.statements.unwrap_or_default();
         v.push(input);
-        self.statements = Some(v);
+        self.statements = ::std::option::Option::Some(v);
         self
     }
     /// <p>The statements to combine with AND logic. You can use any statements that can be nested. </p>
     pub fn set_statements(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Statement>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Statement>>,
     ) -> Self {
         self.statements = input;
         self

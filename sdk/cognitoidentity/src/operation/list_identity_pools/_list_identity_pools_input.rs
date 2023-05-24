@@ -2,14 +2,14 @@
 
 /// <p>Input to the ListIdentityPools action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListIdentityPoolsInput {
     /// <p>The maximum number of identities to return.</p>
     #[doc(hidden)]
     pub max_results: i32,
     /// <p>A pagination token.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListIdentityPoolsInput {
     /// <p>The maximum number of identities to return.</p>
@@ -17,7 +17,7 @@ impl ListIdentityPoolsInput {
         self.max_results
     }
     /// <p>A pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
@@ -31,40 +31,42 @@ impl ListIdentityPoolsInput {
 
 /// A builder for [`ListIdentityPoolsInput`](crate::operation::list_identity_pools::ListIdentityPoolsInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListIdentityPoolsInputBuilder {
-    pub(crate) max_results: std::option::Option<i32>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) max_results: ::std::option::Option<i32>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListIdentityPoolsInputBuilder {
     /// <p>The maximum number of identities to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
-        self.max_results = Some(input);
+        self.max_results = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum number of identities to return.</p>
-    pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
     /// <p>A pagination token.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A pagination token.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
     /// Consumes the builder and constructs a [`ListIdentityPoolsInput`](crate::operation::list_identity_pools::ListIdentityPoolsInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::list_identity_pools::ListIdentityPoolsInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::list_identity_pools::ListIdentityPoolsInput {
                 max_results: self.max_results.unwrap_or_default(),
                 next_token: self.next_token,

@@ -40,13 +40,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum AccountTakeoverEventActionType {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,7 +60,7 @@ pub enum AccountTakeoverEventActionType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for AccountTakeoverEventActionType {
+impl ::std::convert::From<&str> for AccountTakeoverEventActionType {
     fn from(s: &str) -> Self {
         match s {
             "BLOCK" => AccountTakeoverEventActionType::Block,
@@ -73,11 +73,11 @@ impl std::convert::From<&str> for AccountTakeoverEventActionType {
         }
     }
 }
-impl std::str::FromStr for AccountTakeoverEventActionType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for AccountTakeoverEventActionType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AccountTakeoverEventActionType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(AccountTakeoverEventActionType::from(s))
     }
 }
 impl AccountTakeoverEventActionType {
@@ -96,7 +96,7 @@ impl AccountTakeoverEventActionType {
         &["BLOCK", "MFA_IF_CONFIGURED", "MFA_REQUIRED", "NO_ACTION"]
     }
 }
-impl AsRef<str> for AccountTakeoverEventActionType {
+impl ::std::convert::AsRef<str> for AccountTakeoverEventActionType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

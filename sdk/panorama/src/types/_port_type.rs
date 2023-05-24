@@ -41,13 +41,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum PortType {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,7 +63,7 @@ pub enum PortType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for PortType {
+impl ::std::convert::From<&str> for PortType {
     fn from(s: &str) -> Self {
         match s {
             "BOOLEAN" => PortType::Boolean,
@@ -75,11 +75,11 @@ impl std::convert::From<&str> for PortType {
         }
     }
 }
-impl std::str::FromStr for PortType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for PortType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PortType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(PortType::from(s))
     }
 }
 impl PortType {
@@ -99,7 +99,7 @@ impl PortType {
         &["BOOLEAN", "FLOAT32", "INT32", "MEDIA", "STRING"]
     }
 }
-impl AsRef<str> for PortType {
+impl ::std::convert::AsRef<str> for PortType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

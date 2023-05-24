@@ -5,7 +5,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`status(AssessmentStatus)`](crate::operation::list_assessments::builders::ListAssessmentsFluentBuilder::status) / [`set_status(Option<AssessmentStatus>)`](crate::operation::list_assessments::builders::ListAssessmentsFluentBuilder::set_status): <p> The current status of the assessment.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_assessments::builders::ListAssessmentsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_assessments::builders::ListAssessmentsFluentBuilder::set_next_token): <p> The pagination token that's used to fetch the next set of results. </p>
+    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_assessments::builders::ListAssessmentsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_assessments::builders::ListAssessmentsFluentBuilder::set_next_token): <p> The pagination token that's used to fetch the next set of results. </p>
     ///   - [`max_results(i32)`](crate::operation::list_assessments::builders::ListAssessmentsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_assessments::builders::ListAssessmentsFluentBuilder::set_max_results): <p> Represents the maximum number of results on a page or for an API request call. </p>
     /// - On success, responds with [`ListAssessmentsOutput`](crate::operation::list_assessments::ListAssessmentsOutput) with field(s):
     ///   - [`assessment_metadata(Option<Vec<AssessmentMetadataItem>>)`](crate::operation::list_assessments::ListAssessmentsOutput::assessment_metadata): <p> The metadata that's associated with the assessment. </p>

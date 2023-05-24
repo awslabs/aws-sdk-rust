@@ -2,15 +2,15 @@
 
 /// <p>Contains a list of values defining partitions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PartitionValueList {
     /// <p>The list of partition values.</p>
     #[doc(hidden)]
-    pub values: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl PartitionValueList {
     /// <p>The list of partition values.</p>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.values.as_deref()
     }
 }
@@ -23,9 +23,11 @@ impl PartitionValueList {
 
 /// A builder for [`PartitionValueList`](crate::types::PartitionValueList).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PartitionValueListBuilder {
-    pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl PartitionValueListBuilder {
     /// Appends an item to `values`.
@@ -33,16 +35,16 @@ impl PartitionValueListBuilder {
     /// To override the contents of this collection use [`set_values`](Self::set_values).
     ///
     /// <p>The list of partition values.</p>
-    pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
         v.push(input.into());
-        self.values = Some(v);
+        self.values = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of partition values.</p>
     pub fn set_values(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.values = input;
         self

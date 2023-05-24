@@ -41,13 +41,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum IndexState {
     /// Index is active.
@@ -63,7 +63,7 @@ pub enum IndexState {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for IndexState {
+impl ::std::convert::From<&str> for IndexState {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVE" => IndexState::Active,
@@ -75,11 +75,11 @@ impl std::convert::From<&str> for IndexState {
         }
     }
 }
-impl std::str::FromStr for IndexState {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for IndexState {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(IndexState::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(IndexState::from(s))
     }
 }
 impl IndexState {
@@ -99,7 +99,7 @@ impl IndexState {
         &["ACTIVE", "CREATING", "DELETED", "DELETING", "UPDATING"]
     }
 }
-impl AsRef<str> for IndexState {
+impl ::std::convert::AsRef<str> for IndexState {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

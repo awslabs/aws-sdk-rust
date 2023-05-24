@@ -2,22 +2,22 @@
 
 /// <p>Contains error details for each device that didn't return a position.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetDevicePositionError {
     /// <p>The ID of the device that didn't return a position.</p>
     #[doc(hidden)]
-    pub device_id: std::option::Option<std::string::String>,
+    pub device_id: ::std::option::Option<::std::string::String>,
     /// <p>Contains details related to the error code.</p>
     #[doc(hidden)]
-    pub error: std::option::Option<crate::types::BatchItemError>,
+    pub error: ::std::option::Option<crate::types::BatchItemError>,
 }
 impl BatchGetDevicePositionError {
     /// <p>The ID of the device that didn't return a position.</p>
-    pub fn device_id(&self) -> std::option::Option<&str> {
+    pub fn device_id(&self) -> ::std::option::Option<&str> {
         self.device_id.as_deref()
     }
     /// <p>Contains details related to the error code.</p>
-    pub fn error(&self) -> std::option::Option<&crate::types::BatchItemError> {
+    pub fn error(&self) -> ::std::option::Option<&crate::types::BatchItemError> {
         self.error.as_ref()
     }
 }
@@ -30,29 +30,31 @@ impl BatchGetDevicePositionError {
 
 /// A builder for [`BatchGetDevicePositionError`](crate::types::BatchGetDevicePositionError).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BatchGetDevicePositionErrorBuilder {
-    pub(crate) device_id: std::option::Option<std::string::String>,
-    pub(crate) error: std::option::Option<crate::types::BatchItemError>,
+    pub(crate) device_id: ::std::option::Option<::std::string::String>,
+    pub(crate) error: ::std::option::Option<crate::types::BatchItemError>,
 }
 impl BatchGetDevicePositionErrorBuilder {
     /// <p>The ID of the device that didn't return a position.</p>
-    pub fn device_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.device_id = Some(input.into());
+    pub fn device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.device_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the device that didn't return a position.</p>
-    pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_id = input;
         self
     }
     /// <p>Contains details related to the error code.</p>
     pub fn error(mut self, input: crate::types::BatchItemError) -> Self {
-        self.error = Some(input);
+        self.error = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains details related to the error code.</p>
-    pub fn set_error(mut self, input: std::option::Option<crate::types::BatchItemError>) -> Self {
+    pub fn set_error(mut self, input: ::std::option::Option<crate::types::BatchItemError>) -> Self {
         self.error = input;
         self
     }

@@ -39,13 +39,13 @@
 /// Specify the XAVC Intra 4k (VBR) Class to set the bitrate of your output. Outputs of the same class have similar image quality over the operating points that are valid for that class.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum Xavc4kIntraVbrProfileClass {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum Xavc4kIntraVbrProfileClass {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for Xavc4kIntraVbrProfileClass {
+impl ::std::convert::From<&str> for Xavc4kIntraVbrProfileClass {
     fn from(s: &str) -> Self {
         match s {
             "CLASS_100" => Xavc4kIntraVbrProfileClass::Class100,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for Xavc4kIntraVbrProfileClass {
         }
     }
 }
-impl std::str::FromStr for Xavc4kIntraVbrProfileClass {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for Xavc4kIntraVbrProfileClass {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Xavc4kIntraVbrProfileClass::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(Xavc4kIntraVbrProfileClass::from(s))
     }
 }
 impl Xavc4kIntraVbrProfileClass {
@@ -91,7 +91,7 @@ impl Xavc4kIntraVbrProfileClass {
         &["CLASS_100", "CLASS_300", "CLASS_480"]
     }
 }
-impl AsRef<str> for Xavc4kIntraVbrProfileClass {
+impl ::std::convert::AsRef<str> for Xavc4kIntraVbrProfileClass {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

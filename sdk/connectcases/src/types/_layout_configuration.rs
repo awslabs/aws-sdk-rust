@@ -2,15 +2,15 @@
 
 /// <p>Object to store configuration of layouts associated to the template.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LayoutConfiguration {
     /// <p> Unique identifier of a layout. </p>
     #[doc(hidden)]
-    pub default_layout: std::option::Option<std::string::String>,
+    pub default_layout: ::std::option::Option<::std::string::String>,
 }
 impl LayoutConfiguration {
     /// <p> Unique identifier of a layout. </p>
-    pub fn default_layout(&self) -> std::option::Option<&str> {
+    pub fn default_layout(&self) -> ::std::option::Option<&str> {
         self.default_layout.as_deref()
     }
 }
@@ -23,18 +23,26 @@ impl LayoutConfiguration {
 
 /// A builder for [`LayoutConfiguration`](crate::types::LayoutConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LayoutConfigurationBuilder {
-    pub(crate) default_layout: std::option::Option<std::string::String>,
+    pub(crate) default_layout: ::std::option::Option<::std::string::String>,
 }
 impl LayoutConfigurationBuilder {
     /// <p> Unique identifier of a layout. </p>
-    pub fn default_layout(mut self, input: impl Into<std::string::String>) -> Self {
-        self.default_layout = Some(input.into());
+    pub fn default_layout(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.default_layout = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Unique identifier of a layout. </p>
-    pub fn set_default_layout(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_default_layout(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.default_layout = input;
         self
     }

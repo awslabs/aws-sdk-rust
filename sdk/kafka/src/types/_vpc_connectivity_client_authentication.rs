@@ -2,22 +2,22 @@
 
 /// <p>Includes all client authentication information for VPC connectivity.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VpcConnectivityClientAuthentication {
     /// <p>SASL authentication type details for VPC connectivity.</p>
     #[doc(hidden)]
-    pub sasl: std::option::Option<crate::types::VpcConnectivitySasl>,
+    pub sasl: ::std::option::Option<crate::types::VpcConnectivitySasl>,
     /// <p>TLS authentication type details for VPC connectivity.</p>
     #[doc(hidden)]
-    pub tls: std::option::Option<crate::types::VpcConnectivityTls>,
+    pub tls: ::std::option::Option<crate::types::VpcConnectivityTls>,
 }
 impl VpcConnectivityClientAuthentication {
     /// <p>SASL authentication type details for VPC connectivity.</p>
-    pub fn sasl(&self) -> std::option::Option<&crate::types::VpcConnectivitySasl> {
+    pub fn sasl(&self) -> ::std::option::Option<&crate::types::VpcConnectivitySasl> {
         self.sasl.as_ref()
     }
     /// <p>TLS authentication type details for VPC connectivity.</p>
-    pub fn tls(&self) -> std::option::Option<&crate::types::VpcConnectivityTls> {
+    pub fn tls(&self) -> ::std::option::Option<&crate::types::VpcConnectivityTls> {
         self.tls.as_ref()
     }
 }
@@ -30,32 +30,37 @@ impl VpcConnectivityClientAuthentication {
 
 /// A builder for [`VpcConnectivityClientAuthentication`](crate::types::VpcConnectivityClientAuthentication).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VpcConnectivityClientAuthenticationBuilder {
-    pub(crate) sasl: std::option::Option<crate::types::VpcConnectivitySasl>,
-    pub(crate) tls: std::option::Option<crate::types::VpcConnectivityTls>,
+    pub(crate) sasl: ::std::option::Option<crate::types::VpcConnectivitySasl>,
+    pub(crate) tls: ::std::option::Option<crate::types::VpcConnectivityTls>,
 }
 impl VpcConnectivityClientAuthenticationBuilder {
     /// <p>SASL authentication type details for VPC connectivity.</p>
     pub fn sasl(mut self, input: crate::types::VpcConnectivitySasl) -> Self {
-        self.sasl = Some(input);
+        self.sasl = ::std::option::Option::Some(input);
         self
     }
     /// <p>SASL authentication type details for VPC connectivity.</p>
     pub fn set_sasl(
         mut self,
-        input: std::option::Option<crate::types::VpcConnectivitySasl>,
+        input: ::std::option::Option<crate::types::VpcConnectivitySasl>,
     ) -> Self {
         self.sasl = input;
         self
     }
     /// <p>TLS authentication type details for VPC connectivity.</p>
     pub fn tls(mut self, input: crate::types::VpcConnectivityTls) -> Self {
-        self.tls = Some(input);
+        self.tls = ::std::option::Option::Some(input);
         self
     }
     /// <p>TLS authentication type details for VPC connectivity.</p>
-    pub fn set_tls(mut self, input: std::option::Option<crate::types::VpcConnectivityTls>) -> Self {
+    pub fn set_tls(
+        mut self,
+        input: ::std::option::Option<crate::types::VpcConnectivityTls>,
+    ) -> Self {
         self.tls = input;
         self
     }

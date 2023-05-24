@@ -2,43 +2,43 @@
 
 /// <p>A structure that contains the information for one performance event that RUM collects from a user session with your application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RumEvent {
     /// <p>A unique ID for this event.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The exact time that this event occurred.</p>
     #[doc(hidden)]
-    pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The JSON schema that denotes the type of event this is, such as a page load or a new session.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<std::string::String>,
+    pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>Metadata about this event, which contains a JSON serialization of the identity of the user for this session. The user information comes from information such as the HTTP user-agent request header and document interface.</p>
     #[doc(hidden)]
-    pub metadata: std::option::Option<std::string::String>,
+    pub metadata: ::std::option::Option<::std::string::String>,
     /// <p>A string containing details about the event.</p>
     #[doc(hidden)]
-    pub details: std::option::Option<std::string::String>,
+    pub details: ::std::option::Option<::std::string::String>,
 }
 impl RumEvent {
     /// <p>A unique ID for this event.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The exact time that this event occurred.</p>
-    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
     /// <p>The JSON schema that denotes the type of event this is, such as a page load or a new session.</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
     }
     /// <p>Metadata about this event, which contains a JSON serialization of the identity of the user for this session. The user information comes from information such as the HTTP user-agent request header and document interface.</p>
-    pub fn metadata(&self) -> std::option::Option<&str> {
+    pub fn metadata(&self) -> ::std::option::Option<&str> {
         self.metadata.as_deref()
     }
     /// <p>A string containing details about the event.</p>
-    pub fn details(&self) -> std::option::Option<&str> {
+    pub fn details(&self) -> ::std::option::Option<&str> {
         self.details.as_deref()
     }
 }
@@ -51,62 +51,67 @@ impl RumEvent {
 
 /// A builder for [`RumEvent`](crate::types::RumEvent).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RumEventBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) r#type: std::option::Option<std::string::String>,
-    pub(crate) metadata: std::option::Option<std::string::String>,
-    pub(crate) details: std::option::Option<std::string::String>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) r#type: ::std::option::Option<::std::string::String>,
+    pub(crate) metadata: ::std::option::Option<::std::string::String>,
+    pub(crate) details: ::std::option::Option<::std::string::String>,
 }
 impl RumEventBuilder {
     /// <p>A unique ID for this event.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique ID for this event.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>The exact time that this event occurred.</p>
-    pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.timestamp = Some(input);
+    pub fn timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>The exact time that this event occurred.</p>
-    pub fn set_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_timestamp(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
         self.timestamp = input;
         self
     }
     /// <p>The JSON schema that denotes the type of event this is, such as a page load or a new session.</p>
-    pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.r#type = Some(input.into());
+    pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.r#type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The JSON schema that denotes the type of event this is, such as a page load or a new session.</p>
-    pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>Metadata about this event, which contains a JSON serialization of the identity of the user for this session. The user information comes from information such as the HTTP user-agent request header and document interface.</p>
-    pub fn metadata(mut self, input: impl Into<std::string::String>) -> Self {
-        self.metadata = Some(input.into());
+    pub fn metadata(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.metadata = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Metadata about this event, which contains a JSON serialization of the identity of the user for this session. The user information comes from information such as the HTTP user-agent request header and document interface.</p>
-    pub fn set_metadata(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_metadata(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metadata = input;
         self
     }
     /// <p>A string containing details about the event.</p>
-    pub fn details(mut self, input: impl Into<std::string::String>) -> Self {
-        self.details = Some(input.into());
+    pub fn details(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.details = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A string containing details about the event.</p>
-    pub fn set_details(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.details = input;
         self
     }

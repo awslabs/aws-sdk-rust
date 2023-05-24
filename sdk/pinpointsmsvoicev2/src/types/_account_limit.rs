@@ -2,11 +2,11 @@
 
 /// <p>The current resource quotas associated with an Amazon Web Services account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccountLimit {
     /// <p>The name of the attribute to apply the account limit to.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<crate::types::AccountLimitName>,
+    pub name: ::std::option::Option<crate::types::AccountLimitName>,
     /// <p>The current amount that has been spent, in US dollars.</p>
     #[doc(hidden)]
     pub used: i64,
@@ -16,7 +16,7 @@ pub struct AccountLimit {
 }
 impl AccountLimit {
     /// <p>The name of the attribute to apply the account limit to.</p>
-    pub fn name(&self) -> std::option::Option<&crate::types::AccountLimitName> {
+    pub fn name(&self) -> ::std::option::Option<&crate::types::AccountLimitName> {
         self.name.as_ref()
     }
     /// <p>The current amount that has been spent, in US dollars.</p>
@@ -37,40 +37,45 @@ impl AccountLimit {
 
 /// A builder for [`AccountLimit`](crate::types::AccountLimit).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AccountLimitBuilder {
-    pub(crate) name: std::option::Option<crate::types::AccountLimitName>,
-    pub(crate) used: std::option::Option<i64>,
-    pub(crate) max: std::option::Option<i64>,
+    pub(crate) name: ::std::option::Option<crate::types::AccountLimitName>,
+    pub(crate) used: ::std::option::Option<i64>,
+    pub(crate) max: ::std::option::Option<i64>,
 }
 impl AccountLimitBuilder {
     /// <p>The name of the attribute to apply the account limit to.</p>
     pub fn name(mut self, input: crate::types::AccountLimitName) -> Self {
-        self.name = Some(input);
+        self.name = ::std::option::Option::Some(input);
         self
     }
     /// <p>The name of the attribute to apply the account limit to.</p>
-    pub fn set_name(mut self, input: std::option::Option<crate::types::AccountLimitName>) -> Self {
+    pub fn set_name(
+        mut self,
+        input: ::std::option::Option<crate::types::AccountLimitName>,
+    ) -> Self {
         self.name = input;
         self
     }
     /// <p>The current amount that has been spent, in US dollars.</p>
     pub fn used(mut self, input: i64) -> Self {
-        self.used = Some(input);
+        self.used = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current amount that has been spent, in US dollars.</p>
-    pub fn set_used(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_used(mut self, input: ::std::option::Option<i64>) -> Self {
         self.used = input;
         self
     }
     /// <p>The Amazon Web Services set limit for that resource type, in US dollars.</p>
     pub fn max(mut self, input: i64) -> Self {
-        self.max = Some(input);
+        self.max = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Amazon Web Services set limit for that resource type, in US dollars.</p>
-    pub fn set_max(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_max(mut self, input: ::std::option::Option<i64>) -> Self {
         self.max = input;
         self
     }

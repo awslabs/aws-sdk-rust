@@ -7,47 +7,50 @@ pub use crate::operation::describe_host_reservation_offerings::_describe_host_re
 ///
 /// <p>Describes the Dedicated Host reservations that are available to purchase.</p>
 /// <p>The results describe all of the Dedicated Host reservation offerings, including offerings that might not match the instance family and Region of your Dedicated Hosts. When purchasing an offering, ensure that the instance family and Region of the offering matches that of the Dedicated Hosts with which it is to be associated. For more information about supported instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html">Dedicated Hosts</a> in the <i>Amazon EC2 User Guide</i>. </p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeHostReservationOfferingsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::describe_host_reservation_offerings::builders::DescribeHostReservationOfferingsInputBuilder,
 }
 impl DescribeHostReservationOfferingsFluentBuilder {
     /// Creates a new `DescribeHostReservationOfferings`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::describe_host_reservation_offerings::DescribeHostReservationOfferings, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::describe_host_reservation_offerings::DescribeHostReservationOfferingsError>
+                    pub async fn customize(self) -> ::std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::describe_host_reservation_offerings::DescribeHostReservationOfferings, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                        ::aws_smithy_http::result::SdkError<crate::operation::describe_host_reservation_offerings::DescribeHostReservationOfferingsError>
     >{
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::describe_host_reservation_offerings::DescribeHostReservationOfferingsOutput, aws_smithy_http::result::SdkError<crate::operation::describe_host_reservation_offerings::DescribeHostReservationOfferingsError>>
+                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::describe_host_reservation_offerings::DescribeHostReservationOfferingsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_host_reservation_offerings::DescribeHostReservationOfferingsError>>
                      {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -58,7 +61,7 @@ impl DescribeHostReservationOfferingsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> std::result::Result<crate::operation::describe_host_reservation_offerings::DescribeHostReservationOfferingsOutput, aws_smithy_http::result::SdkError<crate::operation::describe_host_reservation_offerings::DescribeHostReservationOfferingsError>>
+                        pub async fn send(self) -> ::std::result::Result<crate::operation::describe_host_reservation_offerings::DescribeHostReservationOfferingsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_host_reservation_offerings::DescribeHostReservationOfferingsError>>
                          {
         self.send_middleware().await
     }
@@ -88,7 +91,7 @@ impl DescribeHostReservationOfferingsFluentBuilder {
     /// </ul>
     pub fn set_filter(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     ) -> Self {
         self.inner = self.inner.set_filter(input);
         self
@@ -99,7 +102,7 @@ impl DescribeHostReservationOfferingsFluentBuilder {
         self
     }
     /// <p>This is the maximum duration of the reservation to purchase, specified in seconds. Reservations are available in one-year and three-year terms. The number of seconds specified must be the number of seconds in a year (365x24x60x60) times one of the supported durations (1 or 3). For example, specify 94608000 for three years.</p>
-    pub fn set_max_duration(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_duration(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_duration(input);
         self
     }
@@ -109,7 +112,7 @@ impl DescribeHostReservationOfferingsFluentBuilder {
         self
     }
     /// <p>The maximum number of results to return for the request in a single page. The remaining results can be seen by sending another request with the returned <code>nextToken</code> value. This value can be between 5 and 500. If <code>maxResults</code> is given a larger value than 500, you receive an error.</p>
-    pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
@@ -119,27 +122,27 @@ impl DescribeHostReservationOfferingsFluentBuilder {
         self
     }
     /// <p>This is the minimum duration of the reservation you'd like to purchase, specified in seconds. Reservations are available in one-year and three-year terms. The number of seconds specified must be the number of seconds in a year (365x24x60x60) times one of the supported durations (1 or 3). For example, specify 31536000 for one year.</p>
-    pub fn set_min_duration(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_min_duration(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_min_duration(input);
         self
     }
     /// <p>The token to use to retrieve the next page of results.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
     /// <p>The token to use to retrieve the next page of results.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
     /// <p>The ID of the reservation offering.</p>
-    pub fn offering_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn offering_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.offering_id(input.into());
         self
     }
     /// <p>The ID of the reservation offering.</p>
-    pub fn set_offering_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_offering_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_offering_id(input);
         self
     }

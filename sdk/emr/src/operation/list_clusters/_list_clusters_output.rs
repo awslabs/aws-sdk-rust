@@ -2,27 +2,27 @@
 
 /// <p>This contains a ClusterSummaryList with the cluster details; for example, the cluster IDs, names, and status.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListClustersOutput {
     /// <p>The list of clusters for the account based on the given filters.</p>
     #[doc(hidden)]
-    pub clusters: std::option::Option<std::vec::Vec<crate::types::ClusterSummary>>,
+    pub clusters: ::std::option::Option<::std::vec::Vec<crate::types::ClusterSummary>>,
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     #[doc(hidden)]
-    pub marker: std::option::Option<std::string::String>,
+    pub marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListClustersOutput {
     /// <p>The list of clusters for the account based on the given filters.</p>
-    pub fn clusters(&self) -> std::option::Option<&[crate::types::ClusterSummary]> {
+    pub fn clusters(&self) -> ::std::option::Option<&[crate::types::ClusterSummary]> {
         self.clusters.as_deref()
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListClustersOutput {
+impl ::aws_http::request_id::RequestId for ListClustersOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -36,10 +36,12 @@ impl ListClustersOutput {
 
 /// A builder for [`ListClustersOutput`](crate::operation::list_clusters::ListClustersOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListClustersOutputBuilder {
-    pub(crate) clusters: std::option::Option<std::vec::Vec<crate::types::ClusterSummary>>,
-    pub(crate) marker: std::option::Option<std::string::String>,
+    pub(crate) clusters: ::std::option::Option<::std::vec::Vec<crate::types::ClusterSummary>>,
+    pub(crate) marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListClustersOutputBuilder {
@@ -51,24 +53,24 @@ impl ListClustersOutputBuilder {
     pub fn clusters(mut self, input: crate::types::ClusterSummary) -> Self {
         let mut v = self.clusters.unwrap_or_default();
         v.push(input);
-        self.clusters = Some(v);
+        self.clusters = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of clusters for the account based on the given filters.</p>
     pub fn set_clusters(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ClusterSummary>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ClusterSummary>>,
     ) -> Self {
         self.clusters = input;
         self
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
-    pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-        self.marker = Some(input.into());
+    pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
-    pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
     }

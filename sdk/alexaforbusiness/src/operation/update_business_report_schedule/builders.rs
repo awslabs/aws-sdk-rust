@@ -6,29 +6,29 @@ pub use crate::operation::update_business_report_schedule::_update_business_repo
 /// Fluent builder constructing a request to `UpdateBusinessReportSchedule`.
 ///
 /// <p>Updates the configuration of the report delivery schedule with the specified schedule ARN.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateBusinessReportScheduleFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::update_business_report_schedule::builders::UpdateBusinessReportScheduleInputBuilder,
 }
 impl UpdateBusinessReportScheduleFluentBuilder {
     /// Creates a new `UpdateBusinessReportSchedule`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_business_report_schedule::UpdateBusinessReportSchedule,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_business_report_schedule::UpdateBusinessReportScheduleError,
         >,
     > {
@@ -36,30 +36,33 @@ impl UpdateBusinessReportScheduleFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_business_report_schedule::UpdateBusinessReportScheduleOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_business_report_schedule::UpdateBusinessReportScheduleError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,41 +75,53 @@ impl UpdateBusinessReportScheduleFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_business_report_schedule::UpdateBusinessReportScheduleOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_business_report_schedule::UpdateBusinessReportScheduleError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The ARN of the business report schedule.</p>
-    pub fn schedule_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn schedule_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.schedule_arn(input.into());
         self
     }
     /// <p>The ARN of the business report schedule.</p>
-    pub fn set_schedule_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_schedule_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_schedule_arn(input);
         self
     }
     /// <p>The S3 location of the output reports.</p>
-    pub fn s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn s3_bucket_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.s3_bucket_name(input.into());
         self
     }
     /// <p>The S3 location of the output reports.</p>
-    pub fn set_s3_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_s3_bucket_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_s3_bucket_name(input);
         self
     }
     /// <p>The S3 key where the report is delivered.</p>
-    pub fn s3_key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn s3_key_prefix(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.s3_key_prefix(input.into());
         self
     }
     /// <p>The S3 key where the report is delivered.</p>
-    pub fn set_s3_key_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_s3_key_prefix(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_s3_key_prefix(input);
         self
     }
@@ -118,18 +133,24 @@ impl UpdateBusinessReportScheduleFluentBuilder {
     /// <p>The format of the generated report (individual CSV files or zipped files of individual files).</p>
     pub fn set_format(
         mut self,
-        input: std::option::Option<crate::types::BusinessReportFormat>,
+        input: ::std::option::Option<crate::types::BusinessReportFormat>,
     ) -> Self {
         self.inner = self.inner.set_format(input);
         self
     }
     /// <p>The name identifier of the schedule.</p>
-    pub fn schedule_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn schedule_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.schedule_name(input.into());
         self
     }
     /// <p>The name identifier of the schedule.</p>
-    pub fn set_schedule_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_schedule_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_schedule_name(input);
         self
     }
@@ -141,7 +162,7 @@ impl UpdateBusinessReportScheduleFluentBuilder {
     /// <p>The recurrence of the reports.</p>
     pub fn set_recurrence(
         mut self,
-        input: std::option::Option<crate::types::BusinessReportRecurrence>,
+        input: ::std::option::Option<crate::types::BusinessReportRecurrence>,
     ) -> Self {
         self.inner = self.inner.set_recurrence(input);
         self

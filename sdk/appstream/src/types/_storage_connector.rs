@@ -2,29 +2,29 @@
 
 /// <p>Describes a connector that enables persistent storage for users.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StorageConnector {
     /// <p>The type of storage connector.</p>
     #[doc(hidden)]
-    pub connector_type: std::option::Option<crate::types::StorageConnectorType>,
+    pub connector_type: ::std::option::Option<crate::types::StorageConnectorType>,
     /// <p>The ARN of the storage connector.</p>
     #[doc(hidden)]
-    pub resource_identifier: std::option::Option<std::string::String>,
+    pub resource_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The names of the domains for the account.</p>
     #[doc(hidden)]
-    pub domains: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub domains: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl StorageConnector {
     /// <p>The type of storage connector.</p>
-    pub fn connector_type(&self) -> std::option::Option<&crate::types::StorageConnectorType> {
+    pub fn connector_type(&self) -> ::std::option::Option<&crate::types::StorageConnectorType> {
         self.connector_type.as_ref()
     }
     /// <p>The ARN of the storage connector.</p>
-    pub fn resource_identifier(&self) -> std::option::Option<&str> {
+    pub fn resource_identifier(&self) -> ::std::option::Option<&str> {
         self.resource_identifier.as_deref()
     }
     /// <p>The names of the domains for the account.</p>
-    pub fn domains(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn domains(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.domains.as_deref()
     }
 }
@@ -37,35 +37,40 @@ impl StorageConnector {
 
 /// A builder for [`StorageConnector`](crate::types::StorageConnector).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StorageConnectorBuilder {
-    pub(crate) connector_type: std::option::Option<crate::types::StorageConnectorType>,
-    pub(crate) resource_identifier: std::option::Option<std::string::String>,
-    pub(crate) domains: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) connector_type: ::std::option::Option<crate::types::StorageConnectorType>,
+    pub(crate) resource_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) domains: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl StorageConnectorBuilder {
     /// <p>The type of storage connector.</p>
     pub fn connector_type(mut self, input: crate::types::StorageConnectorType) -> Self {
-        self.connector_type = Some(input);
+        self.connector_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of storage connector.</p>
     pub fn set_connector_type(
         mut self,
-        input: std::option::Option<crate::types::StorageConnectorType>,
+        input: ::std::option::Option<crate::types::StorageConnectorType>,
     ) -> Self {
         self.connector_type = input;
         self
     }
     /// <p>The ARN of the storage connector.</p>
-    pub fn resource_identifier(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_identifier = Some(input.into());
+    pub fn resource_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.resource_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the storage connector.</p>
     pub fn set_resource_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.resource_identifier = input;
         self
@@ -75,16 +80,16 @@ impl StorageConnectorBuilder {
     /// To override the contents of this collection use [`set_domains`](Self::set_domains).
     ///
     /// <p>The names of the domains for the account.</p>
-    pub fn domains(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn domains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.domains.unwrap_or_default();
         v.push(input.into());
-        self.domains = Some(v);
+        self.domains = ::std::option::Option::Some(v);
         self
     }
     /// <p>The names of the domains for the account.</p>
     pub fn set_domains(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.domains = input;
         self

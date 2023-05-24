@@ -2,12 +2,12 @@
 
 /// <p>Describes the state of a traffic source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrafficSourceState {
     /// <p>This is replaced by <code>Identifier</code>.</p>
     #[deprecated(note = "TrafficSource has been replaced by Identifier")]
     #[doc(hidden)]
-    pub traffic_source: std::option::Option<std::string::String>,
+    pub traffic_source: ::std::option::Option<::std::string::String>,
     /// <p>Describes the current state of a traffic source.</p>
     /// <p>The state values are as follows:</p>
     /// <ul>
@@ -18,10 +18,10 @@ pub struct TrafficSourceState {
     /// <li> <p> <code>Removed</code> - All Auto Scaling instances are deregistered from the load balancer or target group.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub state: std::option::Option<std::string::String>,
+    pub state: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the traffic source.</p>
     #[doc(hidden)]
-    pub identifier: std::option::Option<std::string::String>,
+    pub identifier: ::std::option::Option<::std::string::String>,
     /// <p>Provides additional context for the value of <code>Identifier</code>.</p>
     /// <p>The following lists the valid values:</p>
     /// <ul>
@@ -31,12 +31,12 @@ pub struct TrafficSourceState {
     /// </ul>
     /// <p>Required if the identifier is the name of a Classic Load Balancer.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<std::string::String>,
+    pub r#type: ::std::option::Option<::std::string::String>,
 }
 impl TrafficSourceState {
     /// <p>This is replaced by <code>Identifier</code>.</p>
     #[deprecated(note = "TrafficSource has been replaced by Identifier")]
-    pub fn traffic_source(&self) -> std::option::Option<&str> {
+    pub fn traffic_source(&self) -> ::std::option::Option<&str> {
         self.traffic_source.as_deref()
     }
     /// <p>Describes the current state of a traffic source.</p>
@@ -48,11 +48,11 @@ impl TrafficSourceState {
     /// <li> <p> <code>Removing</code> - The Auto Scaling instances are being deregistered from the load balancer or target group. If connection draining (deregistration delay) is enabled, Elastic Load Balancing or VPC Lattice waits for in-flight requests to complete before deregistering the instances.</p> </li>
     /// <li> <p> <code>Removed</code> - All Auto Scaling instances are deregistered from the load balancer or target group.</p> </li>
     /// </ul>
-    pub fn state(&self) -> std::option::Option<&str> {
+    pub fn state(&self) -> ::std::option::Option<&str> {
         self.state.as_deref()
     }
     /// <p>The unique identifier of the traffic source.</p>
-    pub fn identifier(&self) -> std::option::Option<&str> {
+    pub fn identifier(&self) -> ::std::option::Option<&str> {
         self.identifier.as_deref()
     }
     /// <p>Provides additional context for the value of <code>Identifier</code>.</p>
@@ -63,7 +63,7 @@ impl TrafficSourceState {
     /// <li> <p> <code>vpc-lattice</code> if <code>Identifier</code> is the ARN of a VPC Lattice target group.</p> </li>
     /// </ul>
     /// <p>Required if the identifier is the name of a Classic Load Balancer.</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
     }
 }
@@ -76,23 +76,31 @@ impl TrafficSourceState {
 
 /// A builder for [`TrafficSourceState`](crate::types::TrafficSourceState).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TrafficSourceStateBuilder {
-    pub(crate) traffic_source: std::option::Option<std::string::String>,
-    pub(crate) state: std::option::Option<std::string::String>,
-    pub(crate) identifier: std::option::Option<std::string::String>,
-    pub(crate) r#type: std::option::Option<std::string::String>,
+    pub(crate) traffic_source: ::std::option::Option<::std::string::String>,
+    pub(crate) state: ::std::option::Option<::std::string::String>,
+    pub(crate) identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<::std::string::String>,
 }
 impl TrafficSourceStateBuilder {
     /// <p>This is replaced by <code>Identifier</code>.</p>
     #[deprecated(note = "TrafficSource has been replaced by Identifier")]
-    pub fn traffic_source(mut self, input: impl Into<std::string::String>) -> Self {
-        self.traffic_source = Some(input.into());
+    pub fn traffic_source(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.traffic_source = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>This is replaced by <code>Identifier</code>.</p>
     #[deprecated(note = "TrafficSource has been replaced by Identifier")]
-    pub fn set_traffic_source(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_traffic_source(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.traffic_source = input;
         self
     }
@@ -105,8 +113,8 @@ impl TrafficSourceStateBuilder {
     /// <li> <p> <code>Removing</code> - The Auto Scaling instances are being deregistered from the load balancer or target group. If connection draining (deregistration delay) is enabled, Elastic Load Balancing or VPC Lattice waits for in-flight requests to complete before deregistering the instances.</p> </li>
     /// <li> <p> <code>Removed</code> - All Auto Scaling instances are deregistered from the load balancer or target group.</p> </li>
     /// </ul>
-    pub fn state(mut self, input: impl Into<std::string::String>) -> Self {
-        self.state = Some(input.into());
+    pub fn state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.state = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Describes the current state of a traffic source.</p>
@@ -118,17 +126,17 @@ impl TrafficSourceStateBuilder {
     /// <li> <p> <code>Removing</code> - The Auto Scaling instances are being deregistered from the load balancer or target group. If connection draining (deregistration delay) is enabled, Elastic Load Balancing or VPC Lattice waits for in-flight requests to complete before deregistering the instances.</p> </li>
     /// <li> <p> <code>Removed</code> - All Auto Scaling instances are deregistered from the load balancer or target group.</p> </li>
     /// </ul>
-    pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state = input;
         self
     }
     /// <p>The unique identifier of the traffic source.</p>
-    pub fn identifier(mut self, input: impl Into<std::string::String>) -> Self {
-        self.identifier = Some(input.into());
+    pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the traffic source.</p>
-    pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identifier = input;
         self
     }
@@ -140,8 +148,8 @@ impl TrafficSourceStateBuilder {
     /// <li> <p> <code>vpc-lattice</code> if <code>Identifier</code> is the ARN of a VPC Lattice target group.</p> </li>
     /// </ul>
     /// <p>Required if the identifier is the name of a Classic Load Balancer.</p>
-    pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.r#type = Some(input.into());
+    pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.r#type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Provides additional context for the value of <code>Identifier</code>.</p>
@@ -152,7 +160,7 @@ impl TrafficSourceStateBuilder {
     /// <li> <p> <code>vpc-lattice</code> if <code>Identifier</code> is the ARN of a VPC Lattice target group.</p> </li>
     /// </ul>
     /// <p>Required if the identifier is the name of a Classic Load Balancer.</p>
-    pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
     }

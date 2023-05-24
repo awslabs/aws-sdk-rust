@@ -2,7 +2,7 @@
 
 /// <p>The information for each resource record set that you want to change.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Change {
     /// <p>The action to perform:</p>
     /// <ul>
@@ -13,10 +13,10 @@ pub struct Change {
     /// <li> <p> <code>UPSERT</code>: If a resource record set doesn't already exist, Route 53 creates it. If a resource record set does exist, Route 53 updates it with the values in the request.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub action: std::option::Option<crate::types::ChangeAction>,
+    pub action: ::std::option::Option<crate::types::ChangeAction>,
     /// <p>Information about the resource record set to create, delete, or update.</p>
     #[doc(hidden)]
-    pub resource_record_set: std::option::Option<crate::types::ResourceRecordSet>,
+    pub resource_record_set: ::std::option::Option<crate::types::ResourceRecordSet>,
 }
 impl Change {
     /// <p>The action to perform:</p>
@@ -27,11 +27,11 @@ impl Change {
     /// </important> </li>
     /// <li> <p> <code>UPSERT</code>: If a resource record set doesn't already exist, Route 53 creates it. If a resource record set does exist, Route 53 updates it with the values in the request.</p> </li>
     /// </ul>
-    pub fn action(&self) -> std::option::Option<&crate::types::ChangeAction> {
+    pub fn action(&self) -> ::std::option::Option<&crate::types::ChangeAction> {
         self.action.as_ref()
     }
     /// <p>Information about the resource record set to create, delete, or update.</p>
-    pub fn resource_record_set(&self) -> std::option::Option<&crate::types::ResourceRecordSet> {
+    pub fn resource_record_set(&self) -> ::std::option::Option<&crate::types::ResourceRecordSet> {
         self.resource_record_set.as_ref()
     }
 }
@@ -44,10 +44,12 @@ impl Change {
 
 /// A builder for [`Change`](crate::types::Change).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ChangeBuilder {
-    pub(crate) action: std::option::Option<crate::types::ChangeAction>,
-    pub(crate) resource_record_set: std::option::Option<crate::types::ResourceRecordSet>,
+    pub(crate) action: ::std::option::Option<crate::types::ChangeAction>,
+    pub(crate) resource_record_set: ::std::option::Option<crate::types::ResourceRecordSet>,
 }
 impl ChangeBuilder {
     /// <p>The action to perform:</p>
@@ -59,7 +61,7 @@ impl ChangeBuilder {
     /// <li> <p> <code>UPSERT</code>: If a resource record set doesn't already exist, Route 53 creates it. If a resource record set does exist, Route 53 updates it with the values in the request.</p> </li>
     /// </ul>
     pub fn action(mut self, input: crate::types::ChangeAction) -> Self {
-        self.action = Some(input);
+        self.action = ::std::option::Option::Some(input);
         self
     }
     /// <p>The action to perform:</p>
@@ -70,19 +72,19 @@ impl ChangeBuilder {
     /// </important> </li>
     /// <li> <p> <code>UPSERT</code>: If a resource record set doesn't already exist, Route 53 creates it. If a resource record set does exist, Route 53 updates it with the values in the request.</p> </li>
     /// </ul>
-    pub fn set_action(mut self, input: std::option::Option<crate::types::ChangeAction>) -> Self {
+    pub fn set_action(mut self, input: ::std::option::Option<crate::types::ChangeAction>) -> Self {
         self.action = input;
         self
     }
     /// <p>Information about the resource record set to create, delete, or update.</p>
     pub fn resource_record_set(mut self, input: crate::types::ResourceRecordSet) -> Self {
-        self.resource_record_set = Some(input);
+        self.resource_record_set = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the resource record set to create, delete, or update.</p>
     pub fn set_resource_record_set(
         mut self,
-        input: std::option::Option<crate::types::ResourceRecordSet>,
+        input: ::std::option::Option<crate::types::ResourceRecordSet>,
     ) -> Self {
         self.resource_record_set = input;
         self

@@ -2,7 +2,7 @@
 
 /// <p>Configures conditions under which the processing job should be stopped, such as how long the processing job has been running. After the condition is met, the processing job is stopped.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProcessingStoppingCondition {
     /// <p>Specifies the maximum runtime in seconds.</p>
     #[doc(hidden)]
@@ -23,18 +23,20 @@ impl ProcessingStoppingCondition {
 
 /// A builder for [`ProcessingStoppingCondition`](crate::types::ProcessingStoppingCondition).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ProcessingStoppingConditionBuilder {
-    pub(crate) max_runtime_in_seconds: std::option::Option<i32>,
+    pub(crate) max_runtime_in_seconds: ::std::option::Option<i32>,
 }
 impl ProcessingStoppingConditionBuilder {
     /// <p>Specifies the maximum runtime in seconds.</p>
     pub fn max_runtime_in_seconds(mut self, input: i32) -> Self {
-        self.max_runtime_in_seconds = Some(input);
+        self.max_runtime_in_seconds = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the maximum runtime in seconds.</p>
-    pub fn set_max_runtime_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_runtime_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_runtime_in_seconds = input;
         self
     }

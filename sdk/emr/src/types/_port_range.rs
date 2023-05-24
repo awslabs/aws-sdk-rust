@@ -2,22 +2,22 @@
 
 /// <p>A list of port ranges that are permitted to allow inbound traffic from all public IP addresses. To specify a single port, use the same value for <code>MinRange</code> and <code>MaxRange</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PortRange {
     /// <p>The smallest port number in a specified range of port numbers.</p>
     #[doc(hidden)]
-    pub min_range: std::option::Option<i32>,
+    pub min_range: ::std::option::Option<i32>,
     /// <p>The smallest port number in a specified range of port numbers.</p>
     #[doc(hidden)]
-    pub max_range: std::option::Option<i32>,
+    pub max_range: ::std::option::Option<i32>,
 }
 impl PortRange {
     /// <p>The smallest port number in a specified range of port numbers.</p>
-    pub fn min_range(&self) -> std::option::Option<i32> {
+    pub fn min_range(&self) -> ::std::option::Option<i32> {
         self.min_range
     }
     /// <p>The smallest port number in a specified range of port numbers.</p>
-    pub fn max_range(&self) -> std::option::Option<i32> {
+    pub fn max_range(&self) -> ::std::option::Option<i32> {
         self.max_range
     }
 }
@@ -30,29 +30,31 @@ impl PortRange {
 
 /// A builder for [`PortRange`](crate::types::PortRange).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PortRangeBuilder {
-    pub(crate) min_range: std::option::Option<i32>,
-    pub(crate) max_range: std::option::Option<i32>,
+    pub(crate) min_range: ::std::option::Option<i32>,
+    pub(crate) max_range: ::std::option::Option<i32>,
 }
 impl PortRangeBuilder {
     /// <p>The smallest port number in a specified range of port numbers.</p>
     pub fn min_range(mut self, input: i32) -> Self {
-        self.min_range = Some(input);
+        self.min_range = ::std::option::Option::Some(input);
         self
     }
     /// <p>The smallest port number in a specified range of port numbers.</p>
-    pub fn set_min_range(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_min_range(mut self, input: ::std::option::Option<i32>) -> Self {
         self.min_range = input;
         self
     }
     /// <p>The smallest port number in a specified range of port numbers.</p>
     pub fn max_range(mut self, input: i32) -> Self {
-        self.max_range = Some(input);
+        self.max_range = ::std::option::Option::Some(input);
         self
     }
     /// <p>The smallest port number in a specified range of port numbers.</p>
-    pub fn set_max_range(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_range(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_range = input;
         self
     }

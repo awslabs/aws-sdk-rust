@@ -2,30 +2,30 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListMissionProfilesOutput {
     /// <p>Next token returned in the response of a previous <code>ListMissionProfiles</code> call. Used to get the next page of results.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>List of mission profiles.</p>
     #[doc(hidden)]
     pub mission_profile_list:
-        std::option::Option<std::vec::Vec<crate::types::MissionProfileListItem>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::MissionProfileListItem>>,
     _request_id: Option<String>,
 }
 impl ListMissionProfilesOutput {
     /// <p>Next token returned in the response of a previous <code>ListMissionProfiles</code> call. Used to get the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>List of mission profiles.</p>
     pub fn mission_profile_list(
         &self,
-    ) -> std::option::Option<&[crate::types::MissionProfileListItem]> {
+    ) -> ::std::option::Option<&[crate::types::MissionProfileListItem]> {
         self.mission_profile_list.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListMissionProfilesOutput {
+impl ::aws_http::request_id::RequestId for ListMissionProfilesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -41,21 +41,23 @@ impl ListMissionProfilesOutput {
 
 /// A builder for [`ListMissionProfilesOutput`](crate::operation::list_mission_profiles::ListMissionProfilesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListMissionProfilesOutputBuilder {
-    pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) mission_profile_list:
-        std::option::Option<std::vec::Vec<crate::types::MissionProfileListItem>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::MissionProfileListItem>>,
     _request_id: Option<String>,
 }
 impl ListMissionProfilesOutputBuilder {
     /// <p>Next token returned in the response of a previous <code>ListMissionProfiles</code> call. Used to get the next page of results.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Next token returned in the response of a previous <code>ListMissionProfiles</code> call. Used to get the next page of results.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
@@ -67,13 +69,13 @@ impl ListMissionProfilesOutputBuilder {
     pub fn mission_profile_list(mut self, input: crate::types::MissionProfileListItem) -> Self {
         let mut v = self.mission_profile_list.unwrap_or_default();
         v.push(input);
-        self.mission_profile_list = Some(v);
+        self.mission_profile_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>List of mission profiles.</p>
     pub fn set_mission_profile_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::MissionProfileListItem>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::MissionProfileListItem>>,
     ) -> Self {
         self.mission_profile_list = input;
         self

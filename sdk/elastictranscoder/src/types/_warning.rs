@@ -3,26 +3,26 @@
 /// <p>Elastic Transcoder returns a warning if the resources used by your pipeline are not in the same region as the pipeline.</p>
 /// <p>Using resources in the same region, such as your Amazon S3 buckets, Amazon SNS notification topics, and AWS KMS key, reduces processing time and prevents cross-regional charges.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Warning {
     /// <p>The code of the cross-regional warning.</p>
     #[doc(hidden)]
-    pub code: std::option::Option<std::string::String>,
+    pub code: ::std::option::Option<::std::string::String>,
     /// <p>The message explaining what resources are in a different region from the pipeline.</p> <note>
     /// <p>AWS KMS keys must be in the same region as the pipeline.</p>
     /// </note>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
 }
 impl Warning {
     /// <p>The code of the cross-regional warning.</p>
-    pub fn code(&self) -> std::option::Option<&str> {
+    pub fn code(&self) -> ::std::option::Option<&str> {
         self.code.as_deref()
     }
     /// <p>The message explaining what resources are in a different region from the pipeline.</p> <note>
     /// <p>AWS KMS keys must be in the same region as the pipeline.</p>
     /// </note>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -35,33 +35,35 @@ impl Warning {
 
 /// A builder for [`Warning`](crate::types::Warning).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct WarningBuilder {
-    pub(crate) code: std::option::Option<std::string::String>,
-    pub(crate) message: std::option::Option<std::string::String>,
+    pub(crate) code: ::std::option::Option<::std::string::String>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
 }
 impl WarningBuilder {
     /// <p>The code of the cross-regional warning.</p>
-    pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
-        self.code = Some(input.into());
+    pub fn code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The code of the cross-regional warning.</p>
-    pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.code = input;
         self
     }
     /// <p>The message explaining what resources are in a different region from the pipeline.</p> <note>
     /// <p>AWS KMS keys must be in the same region as the pipeline.</p>
     /// </note>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The message explaining what resources are in a different region from the pipeline.</p> <note>
     /// <p>AWS KMS keys must be in the same region as the pipeline.</p>
     /// </note>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }

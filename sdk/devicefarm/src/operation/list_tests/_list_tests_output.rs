@@ -2,27 +2,27 @@
 
 /// <p>Represents the result of a list tests request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTestsOutput {
     /// <p>Information about the tests.</p>
     #[doc(hidden)]
-    pub tests: std::option::Option<std::vec::Vec<crate::types::Test>>,
+    pub tests: ::std::option::Option<::std::vec::Vec<crate::types::Test>>,
     /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListTestsOutput {
     /// <p>Information about the tests.</p>
-    pub fn tests(&self) -> std::option::Option<&[crate::types::Test]> {
+    pub fn tests(&self) -> ::std::option::Option<&[crate::types::Test]> {
         self.tests.as_deref()
     }
     /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListTestsOutput {
+impl ::aws_http::request_id::RequestId for ListTestsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -36,10 +36,12 @@ impl ListTestsOutput {
 
 /// A builder for [`ListTestsOutput`](crate::operation::list_tests::ListTestsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListTestsOutputBuilder {
-    pub(crate) tests: std::option::Option<std::vec::Vec<crate::types::Test>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) tests: ::std::option::Option<::std::vec::Vec<crate::types::Test>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListTestsOutputBuilder {
@@ -51,24 +53,24 @@ impl ListTestsOutputBuilder {
     pub fn tests(mut self, input: crate::types::Test) -> Self {
         let mut v = self.tests.unwrap_or_default();
         v.push(input);
-        self.tests = Some(v);
+        self.tests = ::std::option::Option::Some(v);
         self
     }
     /// <p>Information about the tests.</p>
     pub fn set_tests(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Test>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Test>>,
     ) -> Self {
         self.tests = input;
         self
     }
     /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

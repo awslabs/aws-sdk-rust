@@ -2,17 +2,17 @@
 
 /// <p>Provides information about the external source of the slot type's definition.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExternalSourceSetting {
     /// <p>Settings required for a slot type based on a grammar that you provide.</p>
     #[doc(hidden)]
-    pub grammar_slot_type_setting: std::option::Option<crate::types::GrammarSlotTypeSetting>,
+    pub grammar_slot_type_setting: ::std::option::Option<crate::types::GrammarSlotTypeSetting>,
 }
 impl ExternalSourceSetting {
     /// <p>Settings required for a slot type based on a grammar that you provide.</p>
     pub fn grammar_slot_type_setting(
         &self,
-    ) -> std::option::Option<&crate::types::GrammarSlotTypeSetting> {
+    ) -> ::std::option::Option<&crate::types::GrammarSlotTypeSetting> {
         self.grammar_slot_type_setting.as_ref()
     }
 }
@@ -25,9 +25,12 @@ impl ExternalSourceSetting {
 
 /// A builder for [`ExternalSourceSetting`](crate::types::ExternalSourceSetting).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ExternalSourceSettingBuilder {
-    pub(crate) grammar_slot_type_setting: std::option::Option<crate::types::GrammarSlotTypeSetting>,
+    pub(crate) grammar_slot_type_setting:
+        ::std::option::Option<crate::types::GrammarSlotTypeSetting>,
 }
 impl ExternalSourceSettingBuilder {
     /// <p>Settings required for a slot type based on a grammar that you provide.</p>
@@ -35,13 +38,13 @@ impl ExternalSourceSettingBuilder {
         mut self,
         input: crate::types::GrammarSlotTypeSetting,
     ) -> Self {
-        self.grammar_slot_type_setting = Some(input);
+        self.grammar_slot_type_setting = ::std::option::Option::Some(input);
         self
     }
     /// <p>Settings required for a slot type based on a grammar that you provide.</p>
     pub fn set_grammar_slot_type_setting(
         mut self,
-        input: std::option::Option<crate::types::GrammarSlotTypeSetting>,
+        input: ::std::option::Option<crate::types::GrammarSlotTypeSetting>,
     ) -> Self {
         self.grammar_slot_type_setting = input;
         self

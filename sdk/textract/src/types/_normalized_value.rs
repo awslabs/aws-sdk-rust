@@ -2,22 +2,22 @@
 
 /// <p>Contains information relating to dates in a document, including the type of value, and the value.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NormalizedValue {
     /// <p>The value of the date, written as Year-Month-DayTHour:Minute:Second.</p>
     #[doc(hidden)]
-    pub value: std::option::Option<std::string::String>,
+    pub value: ::std::option::Option<::std::string::String>,
     /// <p>The normalized type of the value detected. In this case, DATE.</p>
     #[doc(hidden)]
-    pub value_type: std::option::Option<crate::types::ValueType>,
+    pub value_type: ::std::option::Option<crate::types::ValueType>,
 }
 impl NormalizedValue {
     /// <p>The value of the date, written as Year-Month-DayTHour:Minute:Second.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
     /// <p>The normalized type of the value detected. In this case, DATE.</p>
-    pub fn value_type(&self) -> std::option::Option<&crate::types::ValueType> {
+    pub fn value_type(&self) -> ::std::option::Option<&crate::types::ValueType> {
         self.value_type.as_ref()
     }
 }
@@ -30,29 +30,31 @@ impl NormalizedValue {
 
 /// A builder for [`NormalizedValue`](crate::types::NormalizedValue).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NormalizedValueBuilder {
-    pub(crate) value: std::option::Option<std::string::String>,
-    pub(crate) value_type: std::option::Option<crate::types::ValueType>,
+    pub(crate) value: ::std::option::Option<::std::string::String>,
+    pub(crate) value_type: ::std::option::Option<crate::types::ValueType>,
 }
 impl NormalizedValueBuilder {
     /// <p>The value of the date, written as Year-Month-DayTHour:Minute:Second.</p>
-    pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.value = Some(input.into());
+    pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value of the date, written as Year-Month-DayTHour:Minute:Second.</p>
-    pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
     }
     /// <p>The normalized type of the value detected. In this case, DATE.</p>
     pub fn value_type(mut self, input: crate::types::ValueType) -> Self {
-        self.value_type = Some(input);
+        self.value_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The normalized type of the value detected. In this case, DATE.</p>
-    pub fn set_value_type(mut self, input: std::option::Option<crate::types::ValueType>) -> Self {
+    pub fn set_value_type(mut self, input: ::std::option::Option<crate::types::ValueType>) -> Self {
         self.value_type = input;
         self
     }

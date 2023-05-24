@@ -2,34 +2,34 @@
 
 /// <p>Configuration information for the superuser.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SuperuserParameters {
     /// <p>The email address of the superuser.</p>
     #[doc(hidden)]
-    pub email_address: std::option::Option<std::string::String>,
+    pub email_address: ::std::option::Option<::std::string::String>,
     /// <p>The first name of the superuser.</p>
     #[doc(hidden)]
-    pub first_name: std::option::Option<std::string::String>,
+    pub first_name: ::std::option::Option<::std::string::String>,
     /// <p>The last name of the superuser.</p>
     #[doc(hidden)]
-    pub last_name: std::option::Option<std::string::String>,
+    pub last_name: ::std::option::Option<::std::string::String>,
 }
 impl SuperuserParameters {
     /// <p>The email address of the superuser.</p>
-    pub fn email_address(&self) -> std::option::Option<&str> {
+    pub fn email_address(&self) -> ::std::option::Option<&str> {
         self.email_address.as_deref()
     }
     /// <p>The first name of the superuser.</p>
-    pub fn first_name(&self) -> std::option::Option<&str> {
+    pub fn first_name(&self) -> ::std::option::Option<&str> {
         self.first_name.as_deref()
     }
     /// <p>The last name of the superuser.</p>
-    pub fn last_name(&self) -> std::option::Option<&str> {
+    pub fn last_name(&self) -> ::std::option::Option<&str> {
         self.last_name.as_deref()
     }
 }
-impl std::fmt::Debug for SuperuserParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for SuperuserParameters {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SuperuserParameters");
         formatter.field("email_address", &"*** Sensitive Data Redacted ***");
         formatter.field("first_name", &self.first_name);
@@ -46,40 +46,46 @@ impl SuperuserParameters {
 
 /// A builder for [`SuperuserParameters`](crate::types::SuperuserParameters).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct SuperuserParametersBuilder {
-    pub(crate) email_address: std::option::Option<std::string::String>,
-    pub(crate) first_name: std::option::Option<std::string::String>,
-    pub(crate) last_name: std::option::Option<std::string::String>,
+    pub(crate) email_address: ::std::option::Option<::std::string::String>,
+    pub(crate) first_name: ::std::option::Option<::std::string::String>,
+    pub(crate) last_name: ::std::option::Option<::std::string::String>,
 }
 impl SuperuserParametersBuilder {
     /// <p>The email address of the superuser.</p>
-    pub fn email_address(mut self, input: impl Into<std::string::String>) -> Self {
-        self.email_address = Some(input.into());
+    pub fn email_address(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.email_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The email address of the superuser.</p>
-    pub fn set_email_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_email_address(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.email_address = input;
         self
     }
     /// <p>The first name of the superuser.</p>
-    pub fn first_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.first_name = Some(input.into());
+    pub fn first_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.first_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The first name of the superuser.</p>
-    pub fn set_first_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_first_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.first_name = input;
         self
     }
     /// <p>The last name of the superuser.</p>
-    pub fn last_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.last_name = Some(input.into());
+    pub fn last_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.last_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The last name of the superuser.</p>
-    pub fn set_last_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_last_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_name = input;
         self
     }
@@ -92,8 +98,8 @@ impl SuperuserParametersBuilder {
         }
     }
 }
-impl std::fmt::Debug for SuperuserParametersBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for SuperuserParametersBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SuperuserParametersBuilder");
         formatter.field("email_address", &"*** Sensitive Data Redacted ***");
         formatter.field("first_name", &self.first_name);

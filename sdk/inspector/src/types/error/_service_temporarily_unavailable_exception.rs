@@ -2,52 +2,52 @@
 
 /// <p>The serice is temporary unavailable.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceTemporarilyUnavailableException {
     /// <p>Details of the exception error.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
     /// <p>You can wait and then retry your request.</p>
     #[doc(hidden)]
-    pub can_retry: std::option::Option<bool>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
+    pub can_retry: ::std::option::Option<bool>,
+    pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl ServiceTemporarilyUnavailableException {
     /// <p>You can wait and then retry your request.</p>
-    pub fn can_retry(&self) -> std::option::Option<bool> {
+    pub fn can_retry(&self) -> ::std::option::Option<bool> {
         self.can_retry
     }
 }
 impl ServiceTemporarilyUnavailableException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for ServiceTemporarilyUnavailableException {
+impl ::std::fmt::Display for ServiceTemporarilyUnavailableException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ServiceTemporarilyUnavailableException")?;
-        if let Some(inner_1) = &self.message {
+        ::std::write!(f, "ServiceTemporarilyUnavailableException")?;
+        if let ::std::option::Option::Some(inner_1) = &self.message {
             {
-                write!(f, ": {}", inner_1)?;
+                ::std::write!(f, ": {}", inner_1)?;
             }
         }
         Ok(())
     }
 }
-impl std::error::Error for ServiceTemporarilyUnavailableException {}
-impl aws_http::request_id::RequestId
+impl ::std::error::Error for ServiceTemporarilyUnavailableException {}
+impl ::aws_http::request_id::RequestId
     for crate::types::error::ServiceTemporarilyUnavailableException
 {
     fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
     for ServiceTemporarilyUnavailableException
 {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
@@ -61,35 +61,37 @@ impl ServiceTemporarilyUnavailableException {
 
 /// A builder for [`ServiceTemporarilyUnavailableException`](crate::types::error::ServiceTemporarilyUnavailableException).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ServiceTemporarilyUnavailableExceptionBuilder {
-    pub(crate) message: std::option::Option<std::string::String>,
-    pub(crate) can_retry: std::option::Option<bool>,
-    meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
+    pub(crate) can_retry: ::std::option::Option<bool>,
+    meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl ServiceTemporarilyUnavailableExceptionBuilder {
     /// <p>Details of the exception error.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Details of the exception error.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
     /// <p>You can wait and then retry your request.</p>
     pub fn can_retry(mut self, input: bool) -> Self {
-        self.can_retry = Some(input);
+        self.can_retry = ::std::option::Option::Some(input);
         self
     }
     /// <p>You can wait and then retry your request.</p>
-    pub fn set_can_retry(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_can_retry(mut self, input: ::std::option::Option<bool>) -> Self {
         self.can_retry = input;
         self
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
         self.meta = Some(meta);
         self
     }
@@ -97,7 +99,7 @@ impl ServiceTemporarilyUnavailableExceptionBuilder {
     /// Sets error metadata
     pub fn set_meta(
         &mut self,
-        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
     ) -> &mut Self {
         self.meta = meta;
         self

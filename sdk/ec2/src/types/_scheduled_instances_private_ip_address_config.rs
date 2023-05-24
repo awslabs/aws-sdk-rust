@@ -2,22 +2,22 @@
 
 /// <p>Describes a private IPv4 address for a Scheduled Instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScheduledInstancesPrivateIpAddressConfig {
     /// <p>Indicates whether this is a primary IPv4 address. Otherwise, this is a secondary IPv4 address.</p>
     #[doc(hidden)]
-    pub primary: std::option::Option<bool>,
+    pub primary: ::std::option::Option<bool>,
     /// <p>The IPv4 address.</p>
     #[doc(hidden)]
-    pub private_ip_address: std::option::Option<std::string::String>,
+    pub private_ip_address: ::std::option::Option<::std::string::String>,
 }
 impl ScheduledInstancesPrivateIpAddressConfig {
     /// <p>Indicates whether this is a primary IPv4 address. Otherwise, this is a secondary IPv4 address.</p>
-    pub fn primary(&self) -> std::option::Option<bool> {
+    pub fn primary(&self) -> ::std::option::Option<bool> {
         self.primary
     }
     /// <p>The IPv4 address.</p>
-    pub fn private_ip_address(&self) -> std::option::Option<&str> {
+    pub fn private_ip_address(&self) -> ::std::option::Option<&str> {
         self.private_ip_address.as_deref()
     }
 }
@@ -30,31 +30,36 @@ impl ScheduledInstancesPrivateIpAddressConfig {
 
 /// A builder for [`ScheduledInstancesPrivateIpAddressConfig`](crate::types::ScheduledInstancesPrivateIpAddressConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ScheduledInstancesPrivateIpAddressConfigBuilder {
-    pub(crate) primary: std::option::Option<bool>,
-    pub(crate) private_ip_address: std::option::Option<std::string::String>,
+    pub(crate) primary: ::std::option::Option<bool>,
+    pub(crate) private_ip_address: ::std::option::Option<::std::string::String>,
 }
 impl ScheduledInstancesPrivateIpAddressConfigBuilder {
     /// <p>Indicates whether this is a primary IPv4 address. Otherwise, this is a secondary IPv4 address.</p>
     pub fn primary(mut self, input: bool) -> Self {
-        self.primary = Some(input);
+        self.primary = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether this is a primary IPv4 address. Otherwise, this is a secondary IPv4 address.</p>
-    pub fn set_primary(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_primary(mut self, input: ::std::option::Option<bool>) -> Self {
         self.primary = input;
         self
     }
     /// <p>The IPv4 address.</p>
-    pub fn private_ip_address(mut self, input: impl Into<std::string::String>) -> Self {
-        self.private_ip_address = Some(input.into());
+    pub fn private_ip_address(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.private_ip_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IPv4 address.</p>
     pub fn set_private_ip_address(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.private_ip_address = input;
         self

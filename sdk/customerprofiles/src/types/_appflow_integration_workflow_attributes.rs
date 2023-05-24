@@ -2,29 +2,31 @@
 
 /// <p>Structure holding all <code>APPFLOW_INTEGRATION</code> specific workflow attributes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AppflowIntegrationWorkflowAttributes {
     /// <p>Specifies the source connector type, such as Salesforce, ServiceNow, and Marketo. Indicates source of ingestion.</p>
     #[doc(hidden)]
-    pub source_connector_type: std::option::Option<crate::types::SourceConnectorType>,
+    pub source_connector_type: ::std::option::Option<crate::types::SourceConnectorType>,
     /// <p>The name of the AppFlow connector profile used for ingestion.</p>
     #[doc(hidden)]
-    pub connector_profile_name: std::option::Option<std::string::String>,
+    pub connector_profile_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role. Customer Profiles assumes this role to create resources on your behalf as part of workflow execution.</p>
     #[doc(hidden)]
-    pub role_arn: std::option::Option<std::string::String>,
+    pub role_arn: ::std::option::Option<::std::string::String>,
 }
 impl AppflowIntegrationWorkflowAttributes {
     /// <p>Specifies the source connector type, such as Salesforce, ServiceNow, and Marketo. Indicates source of ingestion.</p>
-    pub fn source_connector_type(&self) -> std::option::Option<&crate::types::SourceConnectorType> {
+    pub fn source_connector_type(
+        &self,
+    ) -> ::std::option::Option<&crate::types::SourceConnectorType> {
         self.source_connector_type.as_ref()
     }
     /// <p>The name of the AppFlow connector profile used for ingestion.</p>
-    pub fn connector_profile_name(&self) -> std::option::Option<&str> {
+    pub fn connector_profile_name(&self) -> ::std::option::Option<&str> {
         self.connector_profile_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role. Customer Profiles assumes this role to create resources on your behalf as part of workflow execution.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
 }
@@ -37,46 +39,51 @@ impl AppflowIntegrationWorkflowAttributes {
 
 /// A builder for [`AppflowIntegrationWorkflowAttributes`](crate::types::AppflowIntegrationWorkflowAttributes).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AppflowIntegrationWorkflowAttributesBuilder {
-    pub(crate) source_connector_type: std::option::Option<crate::types::SourceConnectorType>,
-    pub(crate) connector_profile_name: std::option::Option<std::string::String>,
-    pub(crate) role_arn: std::option::Option<std::string::String>,
+    pub(crate) source_connector_type: ::std::option::Option<crate::types::SourceConnectorType>,
+    pub(crate) connector_profile_name: ::std::option::Option<::std::string::String>,
+    pub(crate) role_arn: ::std::option::Option<::std::string::String>,
 }
 impl AppflowIntegrationWorkflowAttributesBuilder {
     /// <p>Specifies the source connector type, such as Salesforce, ServiceNow, and Marketo. Indicates source of ingestion.</p>
     pub fn source_connector_type(mut self, input: crate::types::SourceConnectorType) -> Self {
-        self.source_connector_type = Some(input);
+        self.source_connector_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the source connector type, such as Salesforce, ServiceNow, and Marketo. Indicates source of ingestion.</p>
     pub fn set_source_connector_type(
         mut self,
-        input: std::option::Option<crate::types::SourceConnectorType>,
+        input: ::std::option::Option<crate::types::SourceConnectorType>,
     ) -> Self {
         self.source_connector_type = input;
         self
     }
     /// <p>The name of the AppFlow connector profile used for ingestion.</p>
-    pub fn connector_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.connector_profile_name = Some(input.into());
+    pub fn connector_profile_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.connector_profile_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the AppFlow connector profile used for ingestion.</p>
     pub fn set_connector_profile_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.connector_profile_name = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role. Customer Profiles assumes this role to create resources on your behalf as part of workflow execution.</p>
-    pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.role_arn = Some(input.into());
+    pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role. Customer Profiles assumes this role to create resources on your behalf as part of workflow execution.</p>
-    pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }

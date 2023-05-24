@@ -2,22 +2,22 @@
 
 /// <p>A member of an Amazon QuickSight group. Currently, group members must be users. Groups can't be members of another group. .</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GroupMember {
     /// <p>The Amazon Resource Name (ARN) for the group member (user).</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the group member (user).</p>
     #[doc(hidden)]
-    pub member_name: std::option::Option<std::string::String>,
+    pub member_name: ::std::option::Option<::std::string::String>,
 }
 impl GroupMember {
     /// <p>The Amazon Resource Name (ARN) for the group member (user).</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The name of the group member (user).</p>
-    pub fn member_name(&self) -> std::option::Option<&str> {
+    pub fn member_name(&self) -> ::std::option::Option<&str> {
         self.member_name.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl GroupMember {
 
 /// A builder for [`GroupMember`](crate::types::GroupMember).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GroupMemberBuilder {
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) member_name: std::option::Option<std::string::String>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) member_name: ::std::option::Option<::std::string::String>,
 }
 impl GroupMemberBuilder {
     /// <p>The Amazon Resource Name (ARN) for the group member (user).</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the group member (user).</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// <p>The name of the group member (user).</p>
-    pub fn member_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.member_name = Some(input.into());
+    pub fn member_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.member_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the group member (user).</p>
-    pub fn set_member_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_member_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.member_name = input;
         self
     }

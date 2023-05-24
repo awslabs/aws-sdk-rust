@@ -7,56 +7,59 @@ pub use crate::operation::create_app::_create_app_input::CreateAppInputBuilder;
 ///
 /// <p>Creates an app for a specified stack. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Creating Apps</a>.</p>
 /// <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateAppFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_app::builders::CreateAppInputBuilder,
 }
 impl CreateAppFluentBuilder {
     /// Creates a new `CreateApp`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_app::CreateApp,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_app::CreateAppError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_app::CreateAppError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_app::CreateAppOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_app::CreateAppError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_app::CreateAppError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -69,49 +72,49 @@ impl CreateAppFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_app::CreateAppOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_app::CreateAppError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_app::CreateAppError>,
     > {
         self.send_middleware().await
     }
     /// <p>The stack ID.</p>
-    pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn stack_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stack_id(input.into());
         self
     }
     /// <p>The stack ID.</p>
-    pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_stack_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stack_id(input);
         self
     }
     /// <p>The app's short name.</p>
-    pub fn shortname(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn shortname(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.shortname(input.into());
         self
     }
     /// <p>The app's short name.</p>
-    pub fn set_shortname(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_shortname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_shortname(input);
         self
     }
     /// <p>The app name.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// <p>The app name.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
     /// <p>A description of the app.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>A description of the app.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
@@ -127,7 +130,7 @@ impl CreateAppFluentBuilder {
     /// <p>The app's data source.</p>
     pub fn set_data_sources(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DataSource>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DataSource>>,
     ) -> Self {
         self.inner = self.inner.set_data_sources(input);
         self
@@ -138,7 +141,7 @@ impl CreateAppFluentBuilder {
         self
     }
     /// <p>The app type. Each supported type is associated with a particular layer. For example, PHP applications are associated with a PHP layer. AWS OpsWorks Stacks deploys an application to those instances that are members of the corresponding layer. If your app isn't one of the standard types, or you prefer to implement your own Deploy recipes, specify <code>other</code>.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::AppType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::AppType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }
@@ -148,7 +151,7 @@ impl CreateAppFluentBuilder {
         self
     }
     /// <p>A <code>Source</code> object that specifies the app repository.</p>
-    pub fn set_app_source(mut self, input: std::option::Option<crate::types::Source>) -> Self {
+    pub fn set_app_source(mut self, input: ::std::option::Option<crate::types::Source>) -> Self {
         self.inner = self.inner.set_app_source(input);
         self
     }
@@ -157,14 +160,14 @@ impl CreateAppFluentBuilder {
     /// To override the contents of this collection use [`set_domains`](Self::set_domains).
     ///
     /// <p>The app virtual host settings, with multiple domains separated by commas. For example: <code>'www.example.com, example.com'</code> </p>
-    pub fn domains(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn domains(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domains(input.into());
         self
     }
     /// <p>The app virtual host settings, with multiple domains separated by commas. For example: <code>'www.example.com, example.com'</code> </p>
     pub fn set_domains(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_domains(input);
         self
@@ -175,7 +178,7 @@ impl CreateAppFluentBuilder {
         self
     }
     /// <p>Whether to enable SSL for the app.</p>
-    pub fn set_enable_ssl(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enable_ssl(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enable_ssl(input);
         self
     }
@@ -187,7 +190,7 @@ impl CreateAppFluentBuilder {
     /// <p>An <code>SslConfiguration</code> object with the SSL configuration.</p>
     pub fn set_ssl_configuration(
         mut self,
-        input: std::option::Option<crate::types::SslConfiguration>,
+        input: ::std::option::Option<crate::types::SslConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_ssl_configuration(input);
         self
@@ -200,7 +203,7 @@ impl CreateAppFluentBuilder {
     pub fn attributes(
         mut self,
         k: crate::types::AppAttributesKeys,
-        v: impl Into<std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.attributes(k, v.into());
         self
@@ -208,8 +211,8 @@ impl CreateAppFluentBuilder {
     /// <p>One or more user-defined key/value pairs to be added to the stack attributes.</p>
     pub fn set_attributes(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<crate::types::AppAttributesKeys, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<crate::types::AppAttributesKeys, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_attributes(input);
@@ -233,7 +236,7 @@ impl CreateAppFluentBuilder {
     /// </note>
     pub fn set_environment(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::EnvironmentVariable>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentVariable>>,
     ) -> Self {
         self.inner = self.inner.set_environment(input);
         self

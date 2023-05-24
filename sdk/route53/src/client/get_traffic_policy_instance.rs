@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetTrafficPolicyInstance`](crate::operation::get_traffic_policy_instance::builders::GetTrafficPolicyInstanceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::get_traffic_policy_instance::builders::GetTrafficPolicyInstanceFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_traffic_policy_instance::builders::GetTrafficPolicyInstanceFluentBuilder::set_id): <p>The ID of the traffic policy instance that you want to get information about.</p>
+    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::get_traffic_policy_instance::builders::GetTrafficPolicyInstanceFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_traffic_policy_instance::builders::GetTrafficPolicyInstanceFluentBuilder::set_id): <p>The ID of the traffic policy instance that you want to get information about.</p>
     /// - On success, responds with [`GetTrafficPolicyInstanceOutput`](crate::operation::get_traffic_policy_instance::GetTrafficPolicyInstanceOutput) with field(s):
     ///   - [`traffic_policy_instance(Option<TrafficPolicyInstance>)`](crate::operation::get_traffic_policy_instance::GetTrafficPolicyInstanceOutput::traffic_policy_instance): <p>A complex type that contains settings for the traffic policy instance.</p>
     /// - On failure, responds with [`SdkError<GetTrafficPolicyInstanceError>`](crate::operation::get_traffic_policy_instance::GetTrafficPolicyInstanceError)

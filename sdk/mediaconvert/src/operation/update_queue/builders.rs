@@ -6,56 +6,59 @@ pub use crate::operation::update_queue::_update_queue_input::UpdateQueueInputBui
 /// Fluent builder constructing a request to `UpdateQueue`.
 ///
 /// Modify one of your existing queues.
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateQueueFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::update_queue::builders::UpdateQueueInputBuilder,
 }
 impl UpdateQueueFluentBuilder {
     /// Creates a new `UpdateQueue`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_queue::UpdateQueue,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::update_queue::UpdateQueueError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_queue::UpdateQueueError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_queue::UpdateQueueOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_queue::UpdateQueueError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_queue::UpdateQueueError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,29 +71,29 @@ impl UpdateQueueFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_queue::UpdateQueueOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_queue::UpdateQueueError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_queue::UpdateQueueError>,
     > {
         self.send_middleware().await
     }
     /// The new description for the queue, if you are changing it.
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// The new description for the queue, if you are changing it.
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
     /// The name of the queue that you are modifying.
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// The name of the queue that you are modifying.
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
@@ -105,7 +108,7 @@ impl UpdateQueueFluentBuilder {
     /// The new details of your pricing plan for your reserved queue. When you set up a new pricing plan to replace an expired one, you enter into another 12-month commitment. When you add capacity to your queue by increasing the number of RTS, you extend the term of your commitment to 12 months from when you add capacity. After you make these commitments, you can't cancel them.
     pub fn set_reservation_plan_settings(
         mut self,
-        input: std::option::Option<crate::types::ReservationPlanSettings>,
+        input: ::std::option::Option<crate::types::ReservationPlanSettings>,
     ) -> Self {
         self.inner = self.inner.set_reservation_plan_settings(input);
         self
@@ -116,7 +119,7 @@ impl UpdateQueueFluentBuilder {
         self
     }
     /// Pause or activate a queue by changing its status between ACTIVE and PAUSED. If you pause a queue, jobs in that queue won't begin. Jobs that are running when you pause the queue continue to run until they finish or result in an error.
-    pub fn set_status(mut self, input: std::option::Option<crate::types::QueueStatus>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::QueueStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }

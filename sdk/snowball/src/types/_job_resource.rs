@@ -2,29 +2,29 @@
 
 /// <p>Contains an array of Amazon Web Services resource objects. Each object represents an Amazon S3 bucket, an Lambda function, or an Amazon Machine Image (AMI) based on Amazon EC2 that is associated with a particular job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobResource {
     /// <p>An array of <code>S3Resource</code> objects.</p>
     #[doc(hidden)]
-    pub s3_resources: std::option::Option<std::vec::Vec<crate::types::S3Resource>>,
+    pub s3_resources: ::std::option::Option<::std::vec::Vec<crate::types::S3Resource>>,
     /// <p>The Python-language Lambda functions for this job.</p>
     #[doc(hidden)]
-    pub lambda_resources: std::option::Option<std::vec::Vec<crate::types::LambdaResource>>,
+    pub lambda_resources: ::std::option::Option<::std::vec::Vec<crate::types::LambdaResource>>,
     /// <p>The Amazon Machine Images (AMIs) associated with this job.</p>
     #[doc(hidden)]
-    pub ec2_ami_resources: std::option::Option<std::vec::Vec<crate::types::Ec2AmiResource>>,
+    pub ec2_ami_resources: ::std::option::Option<::std::vec::Vec<crate::types::Ec2AmiResource>>,
 }
 impl JobResource {
     /// <p>An array of <code>S3Resource</code> objects.</p>
-    pub fn s3_resources(&self) -> std::option::Option<&[crate::types::S3Resource]> {
+    pub fn s3_resources(&self) -> ::std::option::Option<&[crate::types::S3Resource]> {
         self.s3_resources.as_deref()
     }
     /// <p>The Python-language Lambda functions for this job.</p>
-    pub fn lambda_resources(&self) -> std::option::Option<&[crate::types::LambdaResource]> {
+    pub fn lambda_resources(&self) -> ::std::option::Option<&[crate::types::LambdaResource]> {
         self.lambda_resources.as_deref()
     }
     /// <p>The Amazon Machine Images (AMIs) associated with this job.</p>
-    pub fn ec2_ami_resources(&self) -> std::option::Option<&[crate::types::Ec2AmiResource]> {
+    pub fn ec2_ami_resources(&self) -> ::std::option::Option<&[crate::types::Ec2AmiResource]> {
         self.ec2_ami_resources.as_deref()
     }
 }
@@ -37,11 +37,15 @@ impl JobResource {
 
 /// A builder for [`JobResource`](crate::types::JobResource).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct JobResourceBuilder {
-    pub(crate) s3_resources: std::option::Option<std::vec::Vec<crate::types::S3Resource>>,
-    pub(crate) lambda_resources: std::option::Option<std::vec::Vec<crate::types::LambdaResource>>,
-    pub(crate) ec2_ami_resources: std::option::Option<std::vec::Vec<crate::types::Ec2AmiResource>>,
+    pub(crate) s3_resources: ::std::option::Option<::std::vec::Vec<crate::types::S3Resource>>,
+    pub(crate) lambda_resources:
+        ::std::option::Option<::std::vec::Vec<crate::types::LambdaResource>>,
+    pub(crate) ec2_ami_resources:
+        ::std::option::Option<::std::vec::Vec<crate::types::Ec2AmiResource>>,
 }
 impl JobResourceBuilder {
     /// Appends an item to `s3_resources`.
@@ -52,13 +56,13 @@ impl JobResourceBuilder {
     pub fn s3_resources(mut self, input: crate::types::S3Resource) -> Self {
         let mut v = self.s3_resources.unwrap_or_default();
         v.push(input);
-        self.s3_resources = Some(v);
+        self.s3_resources = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of <code>S3Resource</code> objects.</p>
     pub fn set_s3_resources(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::S3Resource>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::S3Resource>>,
     ) -> Self {
         self.s3_resources = input;
         self
@@ -71,13 +75,13 @@ impl JobResourceBuilder {
     pub fn lambda_resources(mut self, input: crate::types::LambdaResource) -> Self {
         let mut v = self.lambda_resources.unwrap_or_default();
         v.push(input);
-        self.lambda_resources = Some(v);
+        self.lambda_resources = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Python-language Lambda functions for this job.</p>
     pub fn set_lambda_resources(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::LambdaResource>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::LambdaResource>>,
     ) -> Self {
         self.lambda_resources = input;
         self
@@ -90,13 +94,13 @@ impl JobResourceBuilder {
     pub fn ec2_ami_resources(mut self, input: crate::types::Ec2AmiResource) -> Self {
         let mut v = self.ec2_ami_resources.unwrap_or_default();
         v.push(input);
-        self.ec2_ami_resources = Some(v);
+        self.ec2_ami_resources = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Amazon Machine Images (AMIs) associated with this job.</p>
     pub fn set_ec2_ami_resources(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Ec2AmiResource>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Ec2AmiResource>>,
     ) -> Self {
         self.ec2_ami_resources = input;
         self

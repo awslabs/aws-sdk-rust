@@ -2,7 +2,7 @@
 
 /// <p>A configuration that shifts traffic from one version of a Lambda function or Amazon ECS task set to another in two increments. The original and target Lambda function versions or ECS task sets are specified in the deployment's AppSpec file.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimeBasedCanary {
     /// <p>The percentage of traffic to shift in the first increment of a <code>TimeBasedCanary</code> deployment.</p>
     #[doc(hidden)]
@@ -30,29 +30,31 @@ impl TimeBasedCanary {
 
 /// A builder for [`TimeBasedCanary`](crate::types::TimeBasedCanary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TimeBasedCanaryBuilder {
-    pub(crate) canary_percentage: std::option::Option<i32>,
-    pub(crate) canary_interval: std::option::Option<i32>,
+    pub(crate) canary_percentage: ::std::option::Option<i32>,
+    pub(crate) canary_interval: ::std::option::Option<i32>,
 }
 impl TimeBasedCanaryBuilder {
     /// <p>The percentage of traffic to shift in the first increment of a <code>TimeBasedCanary</code> deployment.</p>
     pub fn canary_percentage(mut self, input: i32) -> Self {
-        self.canary_percentage = Some(input);
+        self.canary_percentage = ::std::option::Option::Some(input);
         self
     }
     /// <p>The percentage of traffic to shift in the first increment of a <code>TimeBasedCanary</code> deployment.</p>
-    pub fn set_canary_percentage(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_canary_percentage(mut self, input: ::std::option::Option<i32>) -> Self {
         self.canary_percentage = input;
         self
     }
     /// <p>The number of minutes between the first and second traffic shifts of a <code>TimeBasedCanary</code> deployment.</p>
     pub fn canary_interval(mut self, input: i32) -> Self {
-        self.canary_interval = Some(input);
+        self.canary_interval = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of minutes between the first and second traffic shifts of a <code>TimeBasedCanary</code> deployment.</p>
-    pub fn set_canary_interval(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_canary_interval(mut self, input: ::std::option::Option<i32>) -> Self {
         self.canary_interval = input;
         self
     }

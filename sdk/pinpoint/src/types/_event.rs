@@ -2,84 +2,86 @@
 
 /// <p>Specifies information about an event that reports data to Amazon Pinpoint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Event {
     /// <p>The package name of the app that's recording the event.</p>
     #[doc(hidden)]
-    pub app_package_name: std::option::Option<std::string::String>,
+    pub app_package_name: ::std::option::Option<::std::string::String>,
     /// <p>The title of the app that's recording the event.</p>
     #[doc(hidden)]
-    pub app_title: std::option::Option<std::string::String>,
+    pub app_title: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the app that's recording the event.</p>
     #[doc(hidden)]
-    pub app_version_code: std::option::Option<std::string::String>,
+    pub app_version_code: ::std::option::Option<::std::string::String>,
     /// <p>One or more custom attributes that are associated with the event.</p>
     #[doc(hidden)]
-    pub attributes:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub attributes: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>The version of the SDK that's running on the client device.</p>
     #[doc(hidden)]
-    pub client_sdk_version: std::option::Option<std::string::String>,
+    pub client_sdk_version: ::std::option::Option<::std::string::String>,
     /// <p>The name of the event.</p>
     #[doc(hidden)]
-    pub event_type: std::option::Option<std::string::String>,
+    pub event_type: ::std::option::Option<::std::string::String>,
     /// <p>One or more custom metrics that are associated with the event.</p>
     #[doc(hidden)]
-    pub metrics: std::option::Option<std::collections::HashMap<std::string::String, f64>>,
+    pub metrics: ::std::option::Option<::std::collections::HashMap<::std::string::String, f64>>,
     /// <p>The name of the SDK that's being used to record the event.</p>
     #[doc(hidden)]
-    pub sdk_name: std::option::Option<std::string::String>,
+    pub sdk_name: ::std::option::Option<::std::string::String>,
     /// <p>Information about the session in which the event occurred.</p>
     #[doc(hidden)]
-    pub session: std::option::Option<crate::types::Session>,
+    pub session: ::std::option::Option<crate::types::Session>,
     /// <p>The date and time, in ISO 8601 format, when the event occurred.</p>
     #[doc(hidden)]
-    pub timestamp: std::option::Option<std::string::String>,
+    pub timestamp: ::std::option::Option<::std::string::String>,
 }
 impl Event {
     /// <p>The package name of the app that's recording the event.</p>
-    pub fn app_package_name(&self) -> std::option::Option<&str> {
+    pub fn app_package_name(&self) -> ::std::option::Option<&str> {
         self.app_package_name.as_deref()
     }
     /// <p>The title of the app that's recording the event.</p>
-    pub fn app_title(&self) -> std::option::Option<&str> {
+    pub fn app_title(&self) -> ::std::option::Option<&str> {
         self.app_title.as_deref()
     }
     /// <p>The version number of the app that's recording the event.</p>
-    pub fn app_version_code(&self) -> std::option::Option<&str> {
+    pub fn app_version_code(&self) -> ::std::option::Option<&str> {
         self.app_version_code.as_deref()
     }
     /// <p>One or more custom attributes that are associated with the event.</p>
     pub fn attributes(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.attributes.as_ref()
     }
     /// <p>The version of the SDK that's running on the client device.</p>
-    pub fn client_sdk_version(&self) -> std::option::Option<&str> {
+    pub fn client_sdk_version(&self) -> ::std::option::Option<&str> {
         self.client_sdk_version.as_deref()
     }
     /// <p>The name of the event.</p>
-    pub fn event_type(&self) -> std::option::Option<&str> {
+    pub fn event_type(&self) -> ::std::option::Option<&str> {
         self.event_type.as_deref()
     }
     /// <p>One or more custom metrics that are associated with the event.</p>
     pub fn metrics(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, f64>> {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, f64>> {
         self.metrics.as_ref()
     }
     /// <p>The name of the SDK that's being used to record the event.</p>
-    pub fn sdk_name(&self) -> std::option::Option<&str> {
+    pub fn sdk_name(&self) -> ::std::option::Option<&str> {
         self.sdk_name.as_deref()
     }
     /// <p>Information about the session in which the event occurred.</p>
-    pub fn session(&self) -> std::option::Option<&crate::types::Session> {
+    pub fn session(&self) -> ::std::option::Option<&crate::types::Session> {
         self.session.as_ref()
     }
     /// <p>The date and time, in ISO 8601 format, when the event occurred.</p>
-    pub fn timestamp(&self) -> std::option::Option<&str> {
+    pub fn timestamp(&self) -> ::std::option::Option<&str> {
         self.timestamp.as_deref()
     }
 }
@@ -92,48 +94,64 @@ impl Event {
 
 /// A builder for [`Event`](crate::types::Event).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EventBuilder {
-    pub(crate) app_package_name: std::option::Option<std::string::String>,
-    pub(crate) app_title: std::option::Option<std::string::String>,
-    pub(crate) app_version_code: std::option::Option<std::string::String>,
-    pub(crate) attributes:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) client_sdk_version: std::option::Option<std::string::String>,
-    pub(crate) event_type: std::option::Option<std::string::String>,
-    pub(crate) metrics: std::option::Option<std::collections::HashMap<std::string::String, f64>>,
-    pub(crate) sdk_name: std::option::Option<std::string::String>,
-    pub(crate) session: std::option::Option<crate::types::Session>,
-    pub(crate) timestamp: std::option::Option<std::string::String>,
+    pub(crate) app_package_name: ::std::option::Option<::std::string::String>,
+    pub(crate) app_title: ::std::option::Option<::std::string::String>,
+    pub(crate) app_version_code: ::std::option::Option<::std::string::String>,
+    pub(crate) attributes: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) client_sdk_version: ::std::option::Option<::std::string::String>,
+    pub(crate) event_type: ::std::option::Option<::std::string::String>,
+    pub(crate) metrics:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, f64>>,
+    pub(crate) sdk_name: ::std::option::Option<::std::string::String>,
+    pub(crate) session: ::std::option::Option<crate::types::Session>,
+    pub(crate) timestamp: ::std::option::Option<::std::string::String>,
 }
 impl EventBuilder {
     /// <p>The package name of the app that's recording the event.</p>
-    pub fn app_package_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.app_package_name = Some(input.into());
+    pub fn app_package_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.app_package_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The package name of the app that's recording the event.</p>
-    pub fn set_app_package_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_app_package_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.app_package_name = input;
         self
     }
     /// <p>The title of the app that's recording the event.</p>
-    pub fn app_title(mut self, input: impl Into<std::string::String>) -> Self {
-        self.app_title = Some(input.into());
+    pub fn app_title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.app_title = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The title of the app that's recording the event.</p>
-    pub fn set_app_title(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_app_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_title = input;
         self
     }
     /// <p>The version number of the app that's recording the event.</p>
-    pub fn app_version_code(mut self, input: impl Into<std::string::String>) -> Self {
-        self.app_version_code = Some(input.into());
+    pub fn app_version_code(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.app_version_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version number of the app that's recording the event.</p>
-    pub fn set_app_version_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_app_version_code(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.app_version_code = input;
         self
     }
@@ -144,44 +162,47 @@ impl EventBuilder {
     /// <p>One or more custom attributes that are associated with the event.</p>
     pub fn attributes(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.attributes = Some(hash_map);
+        self.attributes = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>One or more custom attributes that are associated with the event.</p>
     pub fn set_attributes(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.attributes = input;
         self
     }
     /// <p>The version of the SDK that's running on the client device.</p>
-    pub fn client_sdk_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.client_sdk_version = Some(input.into());
+    pub fn client_sdk_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.client_sdk_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the SDK that's running on the client device.</p>
     pub fn set_client_sdk_version(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.client_sdk_version = input;
         self
     }
     /// <p>The name of the event.</p>
-    pub fn event_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.event_type = Some(input.into());
+    pub fn event_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.event_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the event.</p>
-    pub fn set_event_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_event_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_type = input;
         self
     }
@@ -190,47 +211,47 @@ impl EventBuilder {
     /// To override the contents of this collection use [`set_metrics`](Self::set_metrics).
     ///
     /// <p>One or more custom metrics that are associated with the event.</p>
-    pub fn metrics(mut self, k: impl Into<std::string::String>, v: f64) -> Self {
+    pub fn metrics(mut self, k: impl ::std::convert::Into<::std::string::String>, v: f64) -> Self {
         let mut hash_map = self.metrics.unwrap_or_default();
         hash_map.insert(k.into(), v);
-        self.metrics = Some(hash_map);
+        self.metrics = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>One or more custom metrics that are associated with the event.</p>
     pub fn set_metrics(
         mut self,
-        input: std::option::Option<std::collections::HashMap<std::string::String, f64>>,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, f64>>,
     ) -> Self {
         self.metrics = input;
         self
     }
     /// <p>The name of the SDK that's being used to record the event.</p>
-    pub fn sdk_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.sdk_name = Some(input.into());
+    pub fn sdk_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.sdk_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the SDK that's being used to record the event.</p>
-    pub fn set_sdk_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_sdk_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sdk_name = input;
         self
     }
     /// <p>Information about the session in which the event occurred.</p>
     pub fn session(mut self, input: crate::types::Session) -> Self {
-        self.session = Some(input);
+        self.session = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the session in which the event occurred.</p>
-    pub fn set_session(mut self, input: std::option::Option<crate::types::Session>) -> Self {
+    pub fn set_session(mut self, input: ::std::option::Option<crate::types::Session>) -> Self {
         self.session = input;
         self
     }
     /// <p>The date and time, in ISO 8601 format, when the event occurred.</p>
-    pub fn timestamp(mut self, input: impl Into<std::string::String>) -> Self {
-        self.timestamp = Some(input.into());
+    pub fn timestamp(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.timestamp = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date and time, in ISO 8601 format, when the event occurred.</p>
-    pub fn set_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_timestamp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.timestamp = input;
         self
     }

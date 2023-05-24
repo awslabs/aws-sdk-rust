@@ -3,20 +3,20 @@
 /// <p> Represents the output of a <code>CreateDataSourceFromS3</code> operation, and is an acknowledgement that Amazon ML received the request.</p>
 /// <p>The <code>CreateDataSourceFromS3</code> operation is asynchronous. You can poll for updates by using the <code>GetBatchPrediction</code> operation and checking the <code>Status</code> parameter. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDataSourceFromS3Output {
     /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>. This value should be identical to the value of the <code>DataSourceID</code> in the request. </p>
     #[doc(hidden)]
-    pub data_source_id: std::option::Option<std::string::String>,
+    pub data_source_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateDataSourceFromS3Output {
     /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>. This value should be identical to the value of the <code>DataSourceID</code> in the request. </p>
-    pub fn data_source_id(&self) -> std::option::Option<&str> {
+    pub fn data_source_id(&self) -> ::std::option::Option<&str> {
         self.data_source_id.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for CreateDataSourceFromS3Output {
+impl ::aws_http::request_id::RequestId for CreateDataSourceFromS3Output {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -32,19 +32,27 @@ impl CreateDataSourceFromS3Output {
 
 /// A builder for [`CreateDataSourceFromS3Output`](crate::operation::create_data_source_from_s3::CreateDataSourceFromS3Output).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateDataSourceFromS3OutputBuilder {
-    pub(crate) data_source_id: std::option::Option<std::string::String>,
+    pub(crate) data_source_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateDataSourceFromS3OutputBuilder {
     /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>. This value should be identical to the value of the <code>DataSourceID</code> in the request. </p>
-    pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.data_source_id = Some(input.into());
+    pub fn data_source_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.data_source_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>. This value should be identical to the value of the <code>DataSourceID</code> in the request. </p>
-    pub fn set_data_source_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_data_source_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.data_source_id = input;
         self
     }

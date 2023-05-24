@@ -2,25 +2,25 @@
 
 /// <p>Provides the details of the <code>MarkerRecorded</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MarkerRecordedEventAttributes {
     /// <p>The name of the marker.</p>
     #[doc(hidden)]
-    pub marker_name: std::option::Option<std::string::String>,
+    pub marker_name: ::std::option::Option<::std::string::String>,
     /// <p>The details of the marker.</p>
     #[doc(hidden)]
-    pub details: std::option::Option<std::string::String>,
+    pub details: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>RecordMarker</code> decision that requested this marker. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     #[doc(hidden)]
     pub decision_task_completed_event_id: i64,
 }
 impl MarkerRecordedEventAttributes {
     /// <p>The name of the marker.</p>
-    pub fn marker_name(&self) -> std::option::Option<&str> {
+    pub fn marker_name(&self) -> ::std::option::Option<&str> {
         self.marker_name.as_deref()
     }
     /// <p>The details of the marker.</p>
-    pub fn details(&self) -> std::option::Option<&str> {
+    pub fn details(&self) -> ::std::option::Option<&str> {
         self.details.as_deref()
     }
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>RecordMarker</code> decision that requested this marker. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
@@ -37,40 +37,45 @@ impl MarkerRecordedEventAttributes {
 
 /// A builder for [`MarkerRecordedEventAttributes`](crate::types::MarkerRecordedEventAttributes).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MarkerRecordedEventAttributesBuilder {
-    pub(crate) marker_name: std::option::Option<std::string::String>,
-    pub(crate) details: std::option::Option<std::string::String>,
-    pub(crate) decision_task_completed_event_id: std::option::Option<i64>,
+    pub(crate) marker_name: ::std::option::Option<::std::string::String>,
+    pub(crate) details: ::std::option::Option<::std::string::String>,
+    pub(crate) decision_task_completed_event_id: ::std::option::Option<i64>,
 }
 impl MarkerRecordedEventAttributesBuilder {
     /// <p>The name of the marker.</p>
-    pub fn marker_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.marker_name = Some(input.into());
+    pub fn marker_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.marker_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the marker.</p>
-    pub fn set_marker_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_marker_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker_name = input;
         self
     }
     /// <p>The details of the marker.</p>
-    pub fn details(mut self, input: impl Into<std::string::String>) -> Self {
-        self.details = Some(input.into());
+    pub fn details(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.details = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The details of the marker.</p>
-    pub fn set_details(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.details = input;
         self
     }
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>RecordMarker</code> decision that requested this marker. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn decision_task_completed_event_id(mut self, input: i64) -> Self {
-        self.decision_task_completed_event_id = Some(input);
+        self.decision_task_completed_event_id = ::std::option::Option::Some(input);
         self
     }
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>RecordMarker</code> decision that requested this marker. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
-    pub fn set_decision_task_completed_event_id(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_decision_task_completed_event_id(
+        mut self,
+        input: ::std::option::Option<i64>,
+    ) -> Self {
         self.decision_task_completed_event_id = input;
         self
     }

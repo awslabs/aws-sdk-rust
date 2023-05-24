@@ -2,14 +2,14 @@
 
 /// <p>Shows the latest objective metric emitted by a training job that was launched by a hyperparameter tuning job. You define the objective metric in the <code>HyperParameterTuningJobObjective</code> parameter of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobConfig.html">HyperParameterTuningJobConfig</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FinalHyperParameterTuningJobObjectiveMetric {
     /// <p>Select if you want to minimize or maximize the objective metric during hyperparameter tuning. </p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::HyperParameterTuningJobObjectiveType>,
+    pub r#type: ::std::option::Option<crate::types::HyperParameterTuningJobObjectiveType>,
     /// <p>The name of the objective metric. For SageMaker built-in algorithms, metrics are defined per algorithm. See the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/xgboost-tuning.html">metrics for XGBoost</a> as an example. You can also use a custom algorithm for training and define your own metrics. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics-variables.html">Define metrics and environment variables</a>.</p>
     #[doc(hidden)]
-    pub metric_name: std::option::Option<std::string::String>,
+    pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p>The value of the objective metric.</p>
     #[doc(hidden)]
     pub value: f32,
@@ -18,11 +18,11 @@ impl FinalHyperParameterTuningJobObjectiveMetric {
     /// <p>Select if you want to minimize or maximize the objective metric during hyperparameter tuning. </p>
     pub fn r#type(
         &self,
-    ) -> std::option::Option<&crate::types::HyperParameterTuningJobObjectiveType> {
+    ) -> ::std::option::Option<&crate::types::HyperParameterTuningJobObjectiveType> {
         self.r#type.as_ref()
     }
     /// <p>The name of the objective metric. For SageMaker built-in algorithms, metrics are defined per algorithm. See the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/xgboost-tuning.html">metrics for XGBoost</a> as an example. You can also use a custom algorithm for training and define your own metrics. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics-variables.html">Define metrics and environment variables</a>.</p>
-    pub fn metric_name(&self) -> std::option::Option<&str> {
+    pub fn metric_name(&self) -> ::std::option::Option<&str> {
         self.metric_name.as_deref()
     }
     /// <p>The value of the objective metric.</p>
@@ -39,43 +39,45 @@ impl FinalHyperParameterTuningJobObjectiveMetric {
 
 /// A builder for [`FinalHyperParameterTuningJobObjectiveMetric`](crate::types::FinalHyperParameterTuningJobObjectiveMetric).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FinalHyperParameterTuningJobObjectiveMetricBuilder {
-    pub(crate) r#type: std::option::Option<crate::types::HyperParameterTuningJobObjectiveType>,
-    pub(crate) metric_name: std::option::Option<std::string::String>,
-    pub(crate) value: std::option::Option<f32>,
+    pub(crate) r#type: ::std::option::Option<crate::types::HyperParameterTuningJobObjectiveType>,
+    pub(crate) metric_name: ::std::option::Option<::std::string::String>,
+    pub(crate) value: ::std::option::Option<f32>,
 }
 impl FinalHyperParameterTuningJobObjectiveMetricBuilder {
     /// <p>Select if you want to minimize or maximize the objective metric during hyperparameter tuning. </p>
     pub fn r#type(mut self, input: crate::types::HyperParameterTuningJobObjectiveType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Select if you want to minimize or maximize the objective metric during hyperparameter tuning. </p>
     pub fn set_type(
         mut self,
-        input: std::option::Option<crate::types::HyperParameterTuningJobObjectiveType>,
+        input: ::std::option::Option<crate::types::HyperParameterTuningJobObjectiveType>,
     ) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The name of the objective metric. For SageMaker built-in algorithms, metrics are defined per algorithm. See the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/xgboost-tuning.html">metrics for XGBoost</a> as an example. You can also use a custom algorithm for training and define your own metrics. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics-variables.html">Define metrics and environment variables</a>.</p>
-    pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.metric_name = Some(input.into());
+    pub fn metric_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.metric_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the objective metric. For SageMaker built-in algorithms, metrics are defined per algorithm. See the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/xgboost-tuning.html">metrics for XGBoost</a> as an example. You can also use a custom algorithm for training and define your own metrics. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics-variables.html">Define metrics and environment variables</a>.</p>
-    pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_metric_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metric_name = input;
         self
     }
     /// <p>The value of the objective metric.</p>
     pub fn value(mut self, input: f32) -> Self {
-        self.value = Some(input);
+        self.value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The value of the objective metric.</p>
-    pub fn set_value(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<f32>) -> Self {
         self.value = input;
         self
     }

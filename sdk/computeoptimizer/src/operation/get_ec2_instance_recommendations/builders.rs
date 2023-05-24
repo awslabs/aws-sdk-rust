@@ -7,29 +7,29 @@ pub use crate::operation::get_ec2_instance_recommendations::_get_ec2_instance_re
 ///
 /// <p>Returns Amazon EC2 instance recommendations.</p>
 /// <p>Compute Optimizer generates recommendations for Amazon Elastic Compute Cloud (Amazon EC2) instances that meet a specific set of requirements. For more information, see the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported resources and requirements</a> in the <i>Compute Optimizer User Guide</i>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetEC2InstanceRecommendationsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::get_ec2_instance_recommendations::builders::GetEc2InstanceRecommendationsInputBuilder,
 }
 impl GetEC2InstanceRecommendationsFluentBuilder {
     /// Creates a new `GetEC2InstanceRecommendations`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::get_ec2_instance_recommendations::GetEC2InstanceRecommendations,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::get_ec2_instance_recommendations::GetEC2InstanceRecommendationsError,
         >,
     > {
@@ -37,30 +37,33 @@ impl GetEC2InstanceRecommendationsFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_ec2_instance_recommendations::GetEc2InstanceRecommendationsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::get_ec2_instance_recommendations::GetEC2InstanceRecommendationsError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -73,9 +76,9 @@ impl GetEC2InstanceRecommendationsFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_ec2_instance_recommendations::GetEc2InstanceRecommendationsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::get_ec2_instance_recommendations::GetEC2InstanceRecommendationsError,
         >,
     > {
@@ -86,25 +89,28 @@ impl GetEC2InstanceRecommendationsFluentBuilder {
     /// To override the contents of this collection use [`set_instance_arns`](Self::set_instance_arns).
     ///
     /// <p>The Amazon Resource Name (ARN) of the instances for which to return recommendations.</p>
-    pub fn instance_arns(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn instance_arns(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.instance_arns(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the instances for which to return recommendations.</p>
     pub fn set_instance_arns(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_instance_arns(input);
         self
     }
     /// <p>The token to advance to the next page of instance recommendations.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
     /// <p>The token to advance to the next page of instance recommendations.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
@@ -116,7 +122,7 @@ impl GetEC2InstanceRecommendationsFluentBuilder {
     }
     /// <p>The maximum number of instance recommendations to return with a single request.</p>
     /// <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>
-    pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
@@ -132,7 +138,7 @@ impl GetEC2InstanceRecommendationsFluentBuilder {
     /// <p>An array of objects to specify a filter that returns a more specific list of instance recommendations.</p>
     pub fn set_filters(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
@@ -144,7 +150,7 @@ impl GetEC2InstanceRecommendationsFluentBuilder {
     /// <p>The ID of the Amazon Web Services account for which to return instance recommendations.</p>
     /// <p>If your account is the management account of an organization, use this parameter to specify the member account for which you want to return instance recommendations.</p>
     /// <p>Only one account ID can be specified per request.</p>
-    pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn account_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.account_ids(input.into());
         self
     }
@@ -153,7 +159,7 @@ impl GetEC2InstanceRecommendationsFluentBuilder {
     /// <p>Only one account ID can be specified per request.</p>
     pub fn set_account_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_account_ids(input);
         self
@@ -169,7 +175,7 @@ impl GetEC2InstanceRecommendationsFluentBuilder {
     /// <p>An object to specify the preferences for the Amazon EC2 instance recommendations to return in the response.</p>
     pub fn set_recommendation_preferences(
         mut self,
-        input: std::option::Option<crate::types::RecommendationPreferences>,
+        input: ::std::option::Option<crate::types::RecommendationPreferences>,
     ) -> Self {
         self.inner = self.inner.set_recommendation_preferences(input);
         self

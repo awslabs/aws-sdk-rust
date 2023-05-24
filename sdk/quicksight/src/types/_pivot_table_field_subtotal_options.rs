@@ -2,15 +2,15 @@
 
 /// <p>The optional configuration of subtotals cells.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PivotTableFieldSubtotalOptions {
     /// <p>The field ID of the subtotal options.</p>
     #[doc(hidden)]
-    pub field_id: std::option::Option<std::string::String>,
+    pub field_id: ::std::option::Option<::std::string::String>,
 }
 impl PivotTableFieldSubtotalOptions {
     /// <p>The field ID of the subtotal options.</p>
-    pub fn field_id(&self) -> std::option::Option<&str> {
+    pub fn field_id(&self) -> ::std::option::Option<&str> {
         self.field_id.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl PivotTableFieldSubtotalOptions {
 
 /// A builder for [`PivotTableFieldSubtotalOptions`](crate::types::PivotTableFieldSubtotalOptions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PivotTableFieldSubtotalOptionsBuilder {
-    pub(crate) field_id: std::option::Option<std::string::String>,
+    pub(crate) field_id: ::std::option::Option<::std::string::String>,
 }
 impl PivotTableFieldSubtotalOptionsBuilder {
     /// <p>The field ID of the subtotal options.</p>
-    pub fn field_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.field_id = Some(input.into());
+    pub fn field_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.field_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The field ID of the subtotal options.</p>
-    pub fn set_field_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_field_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.field_id = input;
         self
     }

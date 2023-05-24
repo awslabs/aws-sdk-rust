@@ -2,33 +2,35 @@
 
 /// <p>Describes the target resource of an import operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceToImport {
     /// <p>The type of resource to import into your stack, such as <code>AWS::S3::Bucket</code>. For a list of supported resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import-supported-resources.html">Resources that support import operations</a> in the CloudFormation User Guide.</p>
     #[doc(hidden)]
-    pub resource_type: std::option::Option<std::string::String>,
+    pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>The logical ID of the target resource as specified in the template.</p>
     #[doc(hidden)]
-    pub logical_resource_id: std::option::Option<std::string::String>,
+    pub logical_resource_id: ::std::option::Option<::std::string::String>,
     /// <p>A key-value pair that identifies the target resource. The key is an identifier property (for example, <code>BucketName</code> for <code>AWS::S3::Bucket</code> resources) and the value is the actual property value (for example, <code>MyS3Bucket</code>).</p>
     #[doc(hidden)]
-    pub resource_identifier:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub resource_identifier: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl ResourceToImport {
     /// <p>The type of resource to import into your stack, such as <code>AWS::S3::Bucket</code>. For a list of supported resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import-supported-resources.html">Resources that support import operations</a> in the CloudFormation User Guide.</p>
-    pub fn resource_type(&self) -> std::option::Option<&str> {
+    pub fn resource_type(&self) -> ::std::option::Option<&str> {
         self.resource_type.as_deref()
     }
     /// <p>The logical ID of the target resource as specified in the template.</p>
-    pub fn logical_resource_id(&self) -> std::option::Option<&str> {
+    pub fn logical_resource_id(&self) -> ::std::option::Option<&str> {
         self.logical_resource_id.as_deref()
     }
     /// <p>A key-value pair that identifies the target resource. The key is an identifier property (for example, <code>BucketName</code> for <code>AWS::S3::Bucket</code> resources) and the value is the actual property value (for example, <code>MyS3Bucket</code>).</p>
     pub fn resource_identifier(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.resource_identifier.as_ref()
     }
 }
@@ -41,33 +43,45 @@ impl ResourceToImport {
 
 /// A builder for [`ResourceToImport`](crate::types::ResourceToImport).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResourceToImportBuilder {
-    pub(crate) resource_type: std::option::Option<std::string::String>,
-    pub(crate) logical_resource_id: std::option::Option<std::string::String>,
-    pub(crate) resource_identifier:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) resource_type: ::std::option::Option<::std::string::String>,
+    pub(crate) logical_resource_id: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_identifier: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl ResourceToImportBuilder {
     /// <p>The type of resource to import into your stack, such as <code>AWS::S3::Bucket</code>. For a list of supported resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import-supported-resources.html">Resources that support import operations</a> in the CloudFormation User Guide.</p>
-    pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_type = Some(input.into());
+    pub fn resource_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of resource to import into your stack, such as <code>AWS::S3::Bucket</code>. For a list of supported resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import-supported-resources.html">Resources that support import operations</a> in the CloudFormation User Guide.</p>
-    pub fn set_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.resource_type = input;
         self
     }
     /// <p>The logical ID of the target resource as specified in the template.</p>
-    pub fn logical_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.logical_resource_id = Some(input.into());
+    pub fn logical_resource_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.logical_resource_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The logical ID of the target resource as specified in the template.</p>
     pub fn set_logical_resource_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.logical_resource_id = input;
         self
@@ -79,19 +93,19 @@ impl ResourceToImportBuilder {
     /// <p>A key-value pair that identifies the target resource. The key is an identifier property (for example, <code>BucketName</code> for <code>AWS::S3::Bucket</code> resources) and the value is the actual property value (for example, <code>MyS3Bucket</code>).</p>
     pub fn resource_identifier(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.resource_identifier.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.resource_identifier = Some(hash_map);
+        self.resource_identifier = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A key-value pair that identifies the target resource. The key is an identifier property (for example, <code>BucketName</code> for <code>AWS::S3::Bucket</code> resources) and the value is the actual property value (for example, <code>MyS3Bucket</code>).</p>
     pub fn set_resource_identifier(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.resource_identifier = input;

@@ -11,56 +11,59 @@ pub use crate::operation::create_image::_create_image_input::CreateImageInputBui
 /// </important>
 /// <p>If you customized your instance with instance store volumes or Amazon EBS volumes in addition to the root device volume, the new AMI contains block device mapping information for those volumes. When you launch an instance from this new AMI, the instance automatically launches with those additional volumes.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Create an Amazon EBS-backed Linux AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateImageFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_image::builders::CreateImageInputBuilder,
 }
 impl CreateImageFluentBuilder {
     /// Creates a new `CreateImage`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_image::CreateImage,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_image::CreateImageError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_image::CreateImageError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_image::CreateImageOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_image::CreateImageError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_image::CreateImageError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -73,9 +76,9 @@ impl CreateImageFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_image::CreateImageOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_image::CreateImageError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_image::CreateImageError>,
     > {
         self.send_middleware().await
     }
@@ -91,18 +94,18 @@ impl CreateImageFluentBuilder {
     /// <p>The block device mappings. This parameter cannot be used to modify the encryption status of existing volumes or snapshots. To create an AMI with encrypted snapshots, use the <code>CopyImage</code> action.</p>
     pub fn set_block_device_mappings(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::BlockDeviceMapping>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::BlockDeviceMapping>>,
     ) -> Self {
         self.inner = self.inner.set_block_device_mappings(input);
         self
     }
     /// <p>A description for the new image.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>A description for the new image.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
@@ -112,29 +115,29 @@ impl CreateImageFluentBuilder {
         self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
     }
     /// <p>The ID of the instance.</p>
-    pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());
         self
     }
     /// <p>The ID of the instance.</p>
-    pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_id(input);
         self
     }
     /// <p>A name for the new image.</p>
     /// <p>Constraints: 3-128 alphanumeric characters, parentheses (()), square brackets ([]), spaces ( ), periods (.), slashes (/), dashes (-), single quotes ('), at-signs (@), or underscores(_)</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// <p>A name for the new image.</p>
     /// <p>Constraints: 3-128 alphanumeric characters, parentheses (()), square brackets ([]), spaces ( ), periods (.), slashes (/), dashes (-), single quotes ('), at-signs (@), or underscores(_)</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
@@ -150,7 +153,7 @@ impl CreateImageFluentBuilder {
     /// <p>If you choose to bypass the shutdown and reboot process by setting the <code>NoReboot</code> parameter to <code>true</code> in the API request, or by using the <code>--no-reboot</code> option in the CLI, we can't guarantee the file system integrity of the created image.</p>
     /// </important>
     /// <p>Default: <code>false</code> (follow standard reboot process)</p>
-    pub fn set_no_reboot(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_no_reboot(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_no_reboot(input);
         self
     }
@@ -178,7 +181,7 @@ impl CreateImageFluentBuilder {
     /// <p>To tag an AMI or snapshot after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>. </p>
     pub fn set_tag_specifications(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TagSpecification>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     ) -> Self {
         self.inner = self.inner.set_tag_specifications(input);
         self

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteStreamKey`](crate::operation::delete_stream_key::builders::DeleteStreamKeyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl Into<String>)`](crate::operation::delete_stream_key::builders::DeleteStreamKeyFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::delete_stream_key::builders::DeleteStreamKeyFluentBuilder::set_arn): <p>ARN of the stream key to be deleted.</p>
+    ///   - [`arn(impl ::std::convert::Into<String>)`](crate::operation::delete_stream_key::builders::DeleteStreamKeyFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::delete_stream_key::builders::DeleteStreamKeyFluentBuilder::set_arn): <p>ARN of the stream key to be deleted.</p>
     /// - On success, responds with [`DeleteStreamKeyOutput`](crate::operation::delete_stream_key::DeleteStreamKeyOutput)
     /// - On failure, responds with [`SdkError<DeleteStreamKeyError>`](crate::operation::delete_stream_key::DeleteStreamKeyError)
     pub fn delete_stream_key(

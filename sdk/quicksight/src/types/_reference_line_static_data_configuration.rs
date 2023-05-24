@@ -2,7 +2,7 @@
 
 /// <p>The static data configuration of the reference line data configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ReferenceLineStaticDataConfiguration {
     /// <p>The double input of the static data.</p>
     #[doc(hidden)]
@@ -14,8 +14,8 @@ impl ReferenceLineStaticDataConfiguration {
         self.value
     }
 }
-impl std::fmt::Debug for ReferenceLineStaticDataConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for ReferenceLineStaticDataConfiguration {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ReferenceLineStaticDataConfiguration");
         formatter.field("value", &"*** Sensitive Data Redacted ***");
         formatter.finish()
@@ -30,18 +30,18 @@ impl ReferenceLineStaticDataConfiguration {
 
 /// A builder for [`ReferenceLineStaticDataConfiguration`](crate::types::ReferenceLineStaticDataConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct ReferenceLineStaticDataConfigurationBuilder {
-    pub(crate) value: std::option::Option<f64>,
+    pub(crate) value: ::std::option::Option<f64>,
 }
 impl ReferenceLineStaticDataConfigurationBuilder {
     /// <p>The double input of the static data.</p>
     pub fn value(mut self, input: f64) -> Self {
-        self.value = Some(input);
+        self.value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The double input of the static data.</p>
-    pub fn set_value(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.value = input;
         self
     }
@@ -52,8 +52,8 @@ impl ReferenceLineStaticDataConfigurationBuilder {
         }
     }
 }
-impl std::fmt::Debug for ReferenceLineStaticDataConfigurationBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for ReferenceLineStaticDataConfigurationBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ReferenceLineStaticDataConfigurationBuilder");
         formatter.field("value", &"*** Sensitive Data Redacted ***");
         formatter.finish()

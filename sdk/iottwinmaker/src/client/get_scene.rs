@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetScene`](crate::operation::get_scene::builders::GetSceneFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`workspace_id(impl Into<String>)`](crate::operation::get_scene::builders::GetSceneFluentBuilder::workspace_id) / [`set_workspace_id(Option<String>)`](crate::operation::get_scene::builders::GetSceneFluentBuilder::set_workspace_id): <p>The ID of the workspace that contains the scene.</p>
-    ///   - [`scene_id(impl Into<String>)`](crate::operation::get_scene::builders::GetSceneFluentBuilder::scene_id) / [`set_scene_id(Option<String>)`](crate::operation::get_scene::builders::GetSceneFluentBuilder::set_scene_id): <p>The ID of the scene.</p>
+    ///   - [`workspace_id(impl ::std::convert::Into<String>)`](crate::operation::get_scene::builders::GetSceneFluentBuilder::workspace_id) / [`set_workspace_id(Option<String>)`](crate::operation::get_scene::builders::GetSceneFluentBuilder::set_workspace_id): <p>The ID of the workspace that contains the scene.</p>
+    ///   - [`scene_id(impl ::std::convert::Into<String>)`](crate::operation::get_scene::builders::GetSceneFluentBuilder::scene_id) / [`set_scene_id(Option<String>)`](crate::operation::get_scene::builders::GetSceneFluentBuilder::set_scene_id): <p>The ID of the scene.</p>
     /// - On success, responds with [`GetSceneOutput`](crate::operation::get_scene::GetSceneOutput) with field(s):
     ///   - [`workspace_id(Option<String>)`](crate::operation::get_scene::GetSceneOutput::workspace_id): <p>The ID of the workspace that contains the scene.</p>
     ///   - [`scene_id(Option<String>)`](crate::operation::get_scene::GetSceneOutput::scene_id): <p>The ID of the scene.</p>

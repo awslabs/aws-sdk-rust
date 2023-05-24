@@ -40,13 +40,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ConflictHandlerType {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,7 +60,7 @@ pub enum ConflictHandlerType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ConflictHandlerType {
+impl ::std::convert::From<&str> for ConflictHandlerType {
     fn from(s: &str) -> Self {
         match s {
             "AUTOMERGE" => ConflictHandlerType::Automerge,
@@ -73,11 +73,11 @@ impl std::convert::From<&str> for ConflictHandlerType {
         }
     }
 }
-impl std::str::FromStr for ConflictHandlerType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ConflictHandlerType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ConflictHandlerType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ConflictHandlerType::from(s))
     }
 }
 impl ConflictHandlerType {
@@ -96,7 +96,7 @@ impl ConflictHandlerType {
         &["AUTOMERGE", "LAMBDA", "NONE", "OPTIMISTIC_CONCURRENCY"]
     }
 }
-impl AsRef<str> for ConflictHandlerType {
+impl ::std::convert::AsRef<str> for ConflictHandlerType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -2,7 +2,7 @@
 
 /// <p>Provides a breakdown of the number of objects labeled.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LabelCounters {
     /// <p>The total number of objects labeled.</p>
     #[doc(hidden)]
@@ -51,62 +51,64 @@ impl LabelCounters {
 
 /// A builder for [`LabelCounters`](crate::types::LabelCounters).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LabelCountersBuilder {
-    pub(crate) total_labeled: std::option::Option<i32>,
-    pub(crate) human_labeled: std::option::Option<i32>,
-    pub(crate) machine_labeled: std::option::Option<i32>,
-    pub(crate) failed_non_retryable_error: std::option::Option<i32>,
-    pub(crate) unlabeled: std::option::Option<i32>,
+    pub(crate) total_labeled: ::std::option::Option<i32>,
+    pub(crate) human_labeled: ::std::option::Option<i32>,
+    pub(crate) machine_labeled: ::std::option::Option<i32>,
+    pub(crate) failed_non_retryable_error: ::std::option::Option<i32>,
+    pub(crate) unlabeled: ::std::option::Option<i32>,
 }
 impl LabelCountersBuilder {
     /// <p>The total number of objects labeled.</p>
     pub fn total_labeled(mut self, input: i32) -> Self {
-        self.total_labeled = Some(input);
+        self.total_labeled = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total number of objects labeled.</p>
-    pub fn set_total_labeled(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_total_labeled(mut self, input: ::std::option::Option<i32>) -> Self {
         self.total_labeled = input;
         self
     }
     /// <p>The total number of objects labeled by a human worker.</p>
     pub fn human_labeled(mut self, input: i32) -> Self {
-        self.human_labeled = Some(input);
+        self.human_labeled = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total number of objects labeled by a human worker.</p>
-    pub fn set_human_labeled(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_human_labeled(mut self, input: ::std::option::Option<i32>) -> Self {
         self.human_labeled = input;
         self
     }
     /// <p>The total number of objects labeled by automated data labeling.</p>
     pub fn machine_labeled(mut self, input: i32) -> Self {
-        self.machine_labeled = Some(input);
+        self.machine_labeled = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total number of objects labeled by automated data labeling.</p>
-    pub fn set_machine_labeled(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_machine_labeled(mut self, input: ::std::option::Option<i32>) -> Self {
         self.machine_labeled = input;
         self
     }
     /// <p>The total number of objects that could not be labeled due to an error.</p>
     pub fn failed_non_retryable_error(mut self, input: i32) -> Self {
-        self.failed_non_retryable_error = Some(input);
+        self.failed_non_retryable_error = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total number of objects that could not be labeled due to an error.</p>
-    pub fn set_failed_non_retryable_error(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_failed_non_retryable_error(mut self, input: ::std::option::Option<i32>) -> Self {
         self.failed_non_retryable_error = input;
         self
     }
     /// <p>The total number of objects not yet labeled.</p>
     pub fn unlabeled(mut self, input: i32) -> Self {
-        self.unlabeled = Some(input);
+        self.unlabeled = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total number of objects not yet labeled.</p>
-    pub fn set_unlabeled(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_unlabeled(mut self, input: ::std::option::Option<i32>) -> Self {
         self.unlabeled = input;
         self
     }

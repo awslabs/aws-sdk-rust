@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateTagOption`](crate::operation::update_tag_option::builders::UpdateTagOptionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::update_tag_option::builders::UpdateTagOptionFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::update_tag_option::builders::UpdateTagOptionFluentBuilder::set_id): <p>The TagOption identifier.</p>
-    ///   - [`value(impl Into<String>)`](crate::operation::update_tag_option::builders::UpdateTagOptionFluentBuilder::value) / [`set_value(Option<String>)`](crate::operation::update_tag_option::builders::UpdateTagOptionFluentBuilder::set_value): <p>The updated value.</p>
+    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::update_tag_option::builders::UpdateTagOptionFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::update_tag_option::builders::UpdateTagOptionFluentBuilder::set_id): <p>The TagOption identifier.</p>
+    ///   - [`value(impl ::std::convert::Into<String>)`](crate::operation::update_tag_option::builders::UpdateTagOptionFluentBuilder::value) / [`set_value(Option<String>)`](crate::operation::update_tag_option::builders::UpdateTagOptionFluentBuilder::set_value): <p>The updated value.</p>
     ///   - [`active(bool)`](crate::operation::update_tag_option::builders::UpdateTagOptionFluentBuilder::active) / [`set_active(Option<bool>)`](crate::operation::update_tag_option::builders::UpdateTagOptionFluentBuilder::set_active): <p>The updated active state.</p>
     /// - On success, responds with [`UpdateTagOptionOutput`](crate::operation::update_tag_option::UpdateTagOptionOutput) with field(s):
     ///   - [`tag_option_detail(Option<TagOptionDetail>)`](crate::operation::update_tag_option::UpdateTagOptionOutput::tag_option_detail): <p>Information about the TagOption.</p>

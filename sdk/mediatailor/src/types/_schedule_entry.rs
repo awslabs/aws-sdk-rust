@@ -2,38 +2,38 @@
 
 /// <p>The properties for a schedule.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScheduleEntry {
     /// <p>The approximate duration of this program, in seconds.</p>
     #[doc(hidden)]
     pub approximate_duration_seconds: i64,
     /// <p>The approximate time that the program will start playing.</p>
     #[doc(hidden)]
-    pub approximate_start_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub approximate_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ARN of the program.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the channel that uses this schedule.</p>
     #[doc(hidden)]
-    pub channel_name: std::option::Option<std::string::String>,
+    pub channel_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the live source used for the program.</p>
     #[doc(hidden)]
-    pub live_source_name: std::option::Option<std::string::String>,
+    pub live_source_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the program.</p>
     #[doc(hidden)]
-    pub program_name: std::option::Option<std::string::String>,
+    pub program_name: ::std::option::Option<::std::string::String>,
     /// <p>The schedule's ad break properties.</p>
     #[doc(hidden)]
-    pub schedule_ad_breaks: std::option::Option<std::vec::Vec<crate::types::ScheduleAdBreak>>,
+    pub schedule_ad_breaks: ::std::option::Option<::std::vec::Vec<crate::types::ScheduleAdBreak>>,
     /// <p>The type of schedule entry.</p>
     #[doc(hidden)]
-    pub schedule_entry_type: std::option::Option<crate::types::ScheduleEntryType>,
+    pub schedule_entry_type: ::std::option::Option<crate::types::ScheduleEntryType>,
     /// <p>The name of the source location.</p>
     #[doc(hidden)]
-    pub source_location_name: std::option::Option<std::string::String>,
+    pub source_location_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the VOD source.</p>
     #[doc(hidden)]
-    pub vod_source_name: std::option::Option<std::string::String>,
+    pub vod_source_name: ::std::option::Option<::std::string::String>,
 }
 impl ScheduleEntry {
     /// <p>The approximate duration of this program, in seconds.</p>
@@ -41,39 +41,39 @@ impl ScheduleEntry {
         self.approximate_duration_seconds
     }
     /// <p>The approximate time that the program will start playing.</p>
-    pub fn approximate_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn approximate_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.approximate_start_time.as_ref()
     }
     /// <p>The ARN of the program.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The name of the channel that uses this schedule.</p>
-    pub fn channel_name(&self) -> std::option::Option<&str> {
+    pub fn channel_name(&self) -> ::std::option::Option<&str> {
         self.channel_name.as_deref()
     }
     /// <p>The name of the live source used for the program.</p>
-    pub fn live_source_name(&self) -> std::option::Option<&str> {
+    pub fn live_source_name(&self) -> ::std::option::Option<&str> {
         self.live_source_name.as_deref()
     }
     /// <p>The name of the program.</p>
-    pub fn program_name(&self) -> std::option::Option<&str> {
+    pub fn program_name(&self) -> ::std::option::Option<&str> {
         self.program_name.as_deref()
     }
     /// <p>The schedule's ad break properties.</p>
-    pub fn schedule_ad_breaks(&self) -> std::option::Option<&[crate::types::ScheduleAdBreak]> {
+    pub fn schedule_ad_breaks(&self) -> ::std::option::Option<&[crate::types::ScheduleAdBreak]> {
         self.schedule_ad_breaks.as_deref()
     }
     /// <p>The type of schedule entry.</p>
-    pub fn schedule_entry_type(&self) -> std::option::Option<&crate::types::ScheduleEntryType> {
+    pub fn schedule_entry_type(&self) -> ::std::option::Option<&crate::types::ScheduleEntryType> {
         self.schedule_entry_type.as_ref()
     }
     /// <p>The name of the source location.</p>
-    pub fn source_location_name(&self) -> std::option::Option<&str> {
+    pub fn source_location_name(&self) -> ::std::option::Option<&str> {
         self.source_location_name.as_deref()
     }
     /// <p>The name of the VOD source.</p>
-    pub fn vod_source_name(&self) -> std::option::Option<&str> {
+    pub fn vod_source_name(&self) -> ::std::option::Option<&str> {
         self.vod_source_name.as_deref()
     }
 }
@@ -86,81 +86,89 @@ impl ScheduleEntry {
 
 /// A builder for [`ScheduleEntry`](crate::types::ScheduleEntry).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ScheduleEntryBuilder {
-    pub(crate) approximate_duration_seconds: std::option::Option<i64>,
-    pub(crate) approximate_start_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) channel_name: std::option::Option<std::string::String>,
-    pub(crate) live_source_name: std::option::Option<std::string::String>,
-    pub(crate) program_name: std::option::Option<std::string::String>,
+    pub(crate) approximate_duration_seconds: ::std::option::Option<i64>,
+    pub(crate) approximate_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) channel_name: ::std::option::Option<::std::string::String>,
+    pub(crate) live_source_name: ::std::option::Option<::std::string::String>,
+    pub(crate) program_name: ::std::option::Option<::std::string::String>,
     pub(crate) schedule_ad_breaks:
-        std::option::Option<std::vec::Vec<crate::types::ScheduleAdBreak>>,
-    pub(crate) schedule_entry_type: std::option::Option<crate::types::ScheduleEntryType>,
-    pub(crate) source_location_name: std::option::Option<std::string::String>,
-    pub(crate) vod_source_name: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ScheduleAdBreak>>,
+    pub(crate) schedule_entry_type: ::std::option::Option<crate::types::ScheduleEntryType>,
+    pub(crate) source_location_name: ::std::option::Option<::std::string::String>,
+    pub(crate) vod_source_name: ::std::option::Option<::std::string::String>,
 }
 impl ScheduleEntryBuilder {
     /// <p>The approximate duration of this program, in seconds.</p>
     pub fn approximate_duration_seconds(mut self, input: i64) -> Self {
-        self.approximate_duration_seconds = Some(input);
+        self.approximate_duration_seconds = ::std::option::Option::Some(input);
         self
     }
     /// <p>The approximate duration of this program, in seconds.</p>
-    pub fn set_approximate_duration_seconds(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_approximate_duration_seconds(mut self, input: ::std::option::Option<i64>) -> Self {
         self.approximate_duration_seconds = input;
         self
     }
     /// <p>The approximate time that the program will start playing.</p>
-    pub fn approximate_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.approximate_start_time = Some(input);
+    pub fn approximate_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.approximate_start_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The approximate time that the program will start playing.</p>
     pub fn set_approximate_start_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.approximate_start_time = input;
         self
     }
     /// <p>The ARN of the program.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the program.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// <p>The name of the channel that uses this schedule.</p>
-    pub fn channel_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.channel_name = Some(input.into());
+    pub fn channel_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.channel_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the channel that uses this schedule.</p>
-    pub fn set_channel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_channel_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.channel_name = input;
         self
     }
     /// <p>The name of the live source used for the program.</p>
-    pub fn live_source_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.live_source_name = Some(input.into());
+    pub fn live_source_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.live_source_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the live source used for the program.</p>
-    pub fn set_live_source_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_live_source_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.live_source_name = input;
         self
     }
     /// <p>The name of the program.</p>
-    pub fn program_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.program_name = Some(input.into());
+    pub fn program_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.program_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the program.</p>
-    pub fn set_program_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_program_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.program_name = input;
         self
     }
@@ -172,50 +180,59 @@ impl ScheduleEntryBuilder {
     pub fn schedule_ad_breaks(mut self, input: crate::types::ScheduleAdBreak) -> Self {
         let mut v = self.schedule_ad_breaks.unwrap_or_default();
         v.push(input);
-        self.schedule_ad_breaks = Some(v);
+        self.schedule_ad_breaks = ::std::option::Option::Some(v);
         self
     }
     /// <p>The schedule's ad break properties.</p>
     pub fn set_schedule_ad_breaks(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ScheduleAdBreak>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ScheduleAdBreak>>,
     ) -> Self {
         self.schedule_ad_breaks = input;
         self
     }
     /// <p>The type of schedule entry.</p>
     pub fn schedule_entry_type(mut self, input: crate::types::ScheduleEntryType) -> Self {
-        self.schedule_entry_type = Some(input);
+        self.schedule_entry_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of schedule entry.</p>
     pub fn set_schedule_entry_type(
         mut self,
-        input: std::option::Option<crate::types::ScheduleEntryType>,
+        input: ::std::option::Option<crate::types::ScheduleEntryType>,
     ) -> Self {
         self.schedule_entry_type = input;
         self
     }
     /// <p>The name of the source location.</p>
-    pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.source_location_name = Some(input.into());
+    pub fn source_location_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.source_location_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the source location.</p>
     pub fn set_source_location_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.source_location_name = input;
         self
     }
     /// <p>The name of the VOD source.</p>
-    pub fn vod_source_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.vod_source_name = Some(input.into());
+    pub fn vod_source_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.vod_source_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the VOD source.</p>
-    pub fn set_vod_source_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_vod_source_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.vod_source_name = input;
         self
     }

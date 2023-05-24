@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ResetPassword`](crate::operation::reset_password::builders::ResetPasswordFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`organization_id(impl Into<String>)`](crate::operation::reset_password::builders::ResetPasswordFluentBuilder::organization_id) / [`set_organization_id(Option<String>)`](crate::operation::reset_password::builders::ResetPasswordFluentBuilder::set_organization_id): <p>The identifier of the organization that contains the user for which the password is reset.</p>
-    ///   - [`user_id(impl Into<String>)`](crate::operation::reset_password::builders::ResetPasswordFluentBuilder::user_id) / [`set_user_id(Option<String>)`](crate::operation::reset_password::builders::ResetPasswordFluentBuilder::set_user_id): <p>The identifier of the user for whom the password is reset.</p>
-    ///   - [`password(impl Into<String>)`](crate::operation::reset_password::builders::ResetPasswordFluentBuilder::password) / [`set_password(Option<String>)`](crate::operation::reset_password::builders::ResetPasswordFluentBuilder::set_password): <p>The new password for the user.</p>
+    ///   - [`organization_id(impl ::std::convert::Into<String>)`](crate::operation::reset_password::builders::ResetPasswordFluentBuilder::organization_id) / [`set_organization_id(Option<String>)`](crate::operation::reset_password::builders::ResetPasswordFluentBuilder::set_organization_id): <p>The identifier of the organization that contains the user for which the password is reset.</p>
+    ///   - [`user_id(impl ::std::convert::Into<String>)`](crate::operation::reset_password::builders::ResetPasswordFluentBuilder::user_id) / [`set_user_id(Option<String>)`](crate::operation::reset_password::builders::ResetPasswordFluentBuilder::set_user_id): <p>The identifier of the user for whom the password is reset.</p>
+    ///   - [`password(impl ::std::convert::Into<String>)`](crate::operation::reset_password::builders::ResetPasswordFluentBuilder::password) / [`set_password(Option<String>)`](crate::operation::reset_password::builders::ResetPasswordFluentBuilder::set_password): <p>The new password for the user.</p>
     /// - On success, responds with [`ResetPasswordOutput`](crate::operation::reset_password::ResetPasswordOutput)
     /// - On failure, responds with [`SdkError<ResetPasswordError>`](crate::operation::reset_password::ResetPasswordError)
     pub fn reset_password(

@@ -3,31 +3,31 @@
 /// <p> <b>[Snapshot and AMI policies only]</b> Specifies optional parameters for snapshot and AMI policies. The set of valid parameters depends on the combination of policy type and target resource type.</p>
 /// <p>If you choose to exclude boot volumes and you specify tags that consequently exclude all of the additional data volumes attached to an instance, then Amazon Data Lifecycle Manager will not create any snapshots for the affected instance, and it will emit a <code>SnapshotsCreateFailed</code> Amazon CloudWatch metric. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-dlm-cw-metrics.html">Monitor your policies using Amazon CloudWatch</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Parameters {
     /// <p> <b>[Snapshot policies that target instances only]</b> Indicates whether to exclude the root volume from multi-volume snapshot sets. The default is <code>false</code>. If you specify <code>true</code>, then the root volumes attached to targeted instances will be excluded from the multi-volume snapshot sets created by the policy.</p>
     #[doc(hidden)]
-    pub exclude_boot_volume: std::option::Option<bool>,
+    pub exclude_boot_volume: ::std::option::Option<bool>,
     /// <p> <b>[AMI policies only]</b> Indicates whether targeted instances are rebooted when the lifecycle policy runs. <code>true</code> indicates that targeted instances are not rebooted when the policy runs. <code>false</code> indicates that target instances are rebooted when the policy runs. The default is <code>true</code> (instances are not rebooted).</p>
     #[doc(hidden)]
-    pub no_reboot: std::option::Option<bool>,
+    pub no_reboot: ::std::option::Option<bool>,
     /// <p> <b>[Snapshot policies that target instances only]</b> The tags used to identify data (non-root) volumes to exclude from multi-volume snapshot sets.</p>
     /// <p>If you create a snapshot lifecycle policy that targets instances and you specify tags for this parameter, then data volumes with the specified tags that are attached to targeted instances will be excluded from the multi-volume snapshot sets created by the policy.</p>
     #[doc(hidden)]
-    pub exclude_data_volume_tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub exclude_data_volume_tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl Parameters {
     /// <p> <b>[Snapshot policies that target instances only]</b> Indicates whether to exclude the root volume from multi-volume snapshot sets. The default is <code>false</code>. If you specify <code>true</code>, then the root volumes attached to targeted instances will be excluded from the multi-volume snapshot sets created by the policy.</p>
-    pub fn exclude_boot_volume(&self) -> std::option::Option<bool> {
+    pub fn exclude_boot_volume(&self) -> ::std::option::Option<bool> {
         self.exclude_boot_volume
     }
     /// <p> <b>[AMI policies only]</b> Indicates whether targeted instances are rebooted when the lifecycle policy runs. <code>true</code> indicates that targeted instances are not rebooted when the policy runs. <code>false</code> indicates that target instances are rebooted when the policy runs. The default is <code>true</code> (instances are not rebooted).</p>
-    pub fn no_reboot(&self) -> std::option::Option<bool> {
+    pub fn no_reboot(&self) -> ::std::option::Option<bool> {
         self.no_reboot
     }
     /// <p> <b>[Snapshot policies that target instances only]</b> The tags used to identify data (non-root) volumes to exclude from multi-volume snapshot sets.</p>
     /// <p>If you create a snapshot lifecycle policy that targets instances and you specify tags for this parameter, then data volumes with the specified tags that are attached to targeted instances will be excluded from the multi-volume snapshot sets created by the policy.</p>
-    pub fn exclude_data_volume_tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn exclude_data_volume_tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.exclude_data_volume_tags.as_deref()
     }
 }
@@ -40,30 +40,32 @@ impl Parameters {
 
 /// A builder for [`Parameters`](crate::types::Parameters).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ParametersBuilder {
-    pub(crate) exclude_boot_volume: std::option::Option<bool>,
-    pub(crate) no_reboot: std::option::Option<bool>,
-    pub(crate) exclude_data_volume_tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub(crate) exclude_boot_volume: ::std::option::Option<bool>,
+    pub(crate) no_reboot: ::std::option::Option<bool>,
+    pub(crate) exclude_data_volume_tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl ParametersBuilder {
     /// <p> <b>[Snapshot policies that target instances only]</b> Indicates whether to exclude the root volume from multi-volume snapshot sets. The default is <code>false</code>. If you specify <code>true</code>, then the root volumes attached to targeted instances will be excluded from the multi-volume snapshot sets created by the policy.</p>
     pub fn exclude_boot_volume(mut self, input: bool) -> Self {
-        self.exclude_boot_volume = Some(input);
+        self.exclude_boot_volume = ::std::option::Option::Some(input);
         self
     }
     /// <p> <b>[Snapshot policies that target instances only]</b> Indicates whether to exclude the root volume from multi-volume snapshot sets. The default is <code>false</code>. If you specify <code>true</code>, then the root volumes attached to targeted instances will be excluded from the multi-volume snapshot sets created by the policy.</p>
-    pub fn set_exclude_boot_volume(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_exclude_boot_volume(mut self, input: ::std::option::Option<bool>) -> Self {
         self.exclude_boot_volume = input;
         self
     }
     /// <p> <b>[AMI policies only]</b> Indicates whether targeted instances are rebooted when the lifecycle policy runs. <code>true</code> indicates that targeted instances are not rebooted when the policy runs. <code>false</code> indicates that target instances are rebooted when the policy runs. The default is <code>true</code> (instances are not rebooted).</p>
     pub fn no_reboot(mut self, input: bool) -> Self {
-        self.no_reboot = Some(input);
+        self.no_reboot = ::std::option::Option::Some(input);
         self
     }
     /// <p> <b>[AMI policies only]</b> Indicates whether targeted instances are rebooted when the lifecycle policy runs. <code>true</code> indicates that targeted instances are not rebooted when the policy runs. <code>false</code> indicates that target instances are rebooted when the policy runs. The default is <code>true</code> (instances are not rebooted).</p>
-    pub fn set_no_reboot(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_no_reboot(mut self, input: ::std::option::Option<bool>) -> Self {
         self.no_reboot = input;
         self
     }
@@ -76,14 +78,14 @@ impl ParametersBuilder {
     pub fn exclude_data_volume_tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.exclude_data_volume_tags.unwrap_or_default();
         v.push(input);
-        self.exclude_data_volume_tags = Some(v);
+        self.exclude_data_volume_tags = ::std::option::Option::Some(v);
         self
     }
     /// <p> <b>[Snapshot policies that target instances only]</b> The tags used to identify data (non-root) volumes to exclude from multi-volume snapshot sets.</p>
     /// <p>If you create a snapshot lifecycle policy that targets instances and you specify tags for this parameter, then data volumes with the specified tags that are attached to targeted instances will be excluded from the multi-volume snapshot sets created by the policy.</p>
     pub fn set_exclude_data_volume_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.exclude_data_volume_tags = input;
         self

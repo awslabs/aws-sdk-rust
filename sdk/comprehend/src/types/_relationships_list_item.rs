@@ -2,22 +2,22 @@
 
 /// <p>List of child blocks for the current block.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RelationshipsListItem {
     /// <p>Identifers of the child blocks.</p>
     #[doc(hidden)]
-    pub ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Only supported relationship is a child relationship.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::RelationshipType>,
+    pub r#type: ::std::option::Option<crate::types::RelationshipType>,
 }
 impl RelationshipsListItem {
     /// <p>Identifers of the child blocks.</p>
-    pub fn ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.ids.as_deref()
     }
     /// <p>Only supported relationship is a child relationship.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::RelationshipType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::RelationshipType> {
         self.r#type.as_ref()
     }
 }
@@ -30,10 +30,12 @@ impl RelationshipsListItem {
 
 /// A builder for [`RelationshipsListItem`](crate::types::RelationshipsListItem).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RelationshipsListItemBuilder {
-    pub(crate) ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) r#type: std::option::Option<crate::types::RelationshipType>,
+    pub(crate) ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) r#type: ::std::option::Option<crate::types::RelationshipType>,
 }
 impl RelationshipsListItemBuilder {
     /// Appends an item to `ids`.
@@ -41,27 +43,30 @@ impl RelationshipsListItemBuilder {
     /// To override the contents of this collection use [`set_ids`](Self::set_ids).
     ///
     /// <p>Identifers of the child blocks.</p>
-    pub fn ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.ids.unwrap_or_default();
         v.push(input.into());
-        self.ids = Some(v);
+        self.ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>Identifers of the child blocks.</p>
     pub fn set_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.ids = input;
         self
     }
     /// <p>Only supported relationship is a child relationship.</p>
     pub fn r#type(mut self, input: crate::types::RelationshipType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Only supported relationship is a child relationship.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::RelationshipType>) -> Self {
+    pub fn set_type(
+        mut self,
+        input: ::std::option::Option<crate::types::RelationshipType>,
+    ) -> Self {
         self.r#type = input;
         self
     }

@@ -2,25 +2,25 @@
 
 /// <p>Information about the network endpoint that you can use to connect to your custom or service app. For more information about SimSpace Weaver apps, see <a href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html#what-is_key-concepts_apps">Key concepts: Apps</a> in the <i>SimSpace Weaver User Guide</i>..</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SimulationAppEndpointInfo {
     /// <p>The IP address of the app. SimSpace Weaver dynamically assigns this IP address when the app starts.</p>
     #[doc(hidden)]
-    pub address: std::option::Option<std::string::String>,
+    pub address: ::std::option::Option<::std::string::String>,
     /// <p>The inbound TCP/UDP port numbers of the app. The combination of an IP address and a port number form a network endpoint.</p>
     #[doc(hidden)]
     pub ingress_port_mappings:
-        std::option::Option<std::vec::Vec<crate::types::SimulationAppPortMapping>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::SimulationAppPortMapping>>,
 }
 impl SimulationAppEndpointInfo {
     /// <p>The IP address of the app. SimSpace Weaver dynamically assigns this IP address when the app starts.</p>
-    pub fn address(&self) -> std::option::Option<&str> {
+    pub fn address(&self) -> ::std::option::Option<&str> {
         self.address.as_deref()
     }
     /// <p>The inbound TCP/UDP port numbers of the app. The combination of an IP address and a port number form a network endpoint.</p>
     pub fn ingress_port_mappings(
         &self,
-    ) -> std::option::Option<&[crate::types::SimulationAppPortMapping]> {
+    ) -> ::std::option::Option<&[crate::types::SimulationAppPortMapping]> {
         self.ingress_port_mappings.as_deref()
     }
 }
@@ -33,20 +33,22 @@ impl SimulationAppEndpointInfo {
 
 /// A builder for [`SimulationAppEndpointInfo`](crate::types::SimulationAppEndpointInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SimulationAppEndpointInfoBuilder {
-    pub(crate) address: std::option::Option<std::string::String>,
+    pub(crate) address: ::std::option::Option<::std::string::String>,
     pub(crate) ingress_port_mappings:
-        std::option::Option<std::vec::Vec<crate::types::SimulationAppPortMapping>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::SimulationAppPortMapping>>,
 }
 impl SimulationAppEndpointInfoBuilder {
     /// <p>The IP address of the app. SimSpace Weaver dynamically assigns this IP address when the app starts.</p>
-    pub fn address(mut self, input: impl Into<std::string::String>) -> Self {
-        self.address = Some(input.into());
+    pub fn address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IP address of the app. SimSpace Weaver dynamically assigns this IP address when the app starts.</p>
-    pub fn set_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.address = input;
         self
     }
@@ -58,13 +60,13 @@ impl SimulationAppEndpointInfoBuilder {
     pub fn ingress_port_mappings(mut self, input: crate::types::SimulationAppPortMapping) -> Self {
         let mut v = self.ingress_port_mappings.unwrap_or_default();
         v.push(input);
-        self.ingress_port_mappings = Some(v);
+        self.ingress_port_mappings = ::std::option::Option::Some(v);
         self
     }
     /// <p>The inbound TCP/UDP port numbers of the app. The combination of an IP address and a port number form a network endpoint.</p>
     pub fn set_ingress_port_mappings(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SimulationAppPortMapping>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SimulationAppPortMapping>>,
     ) -> Self {
         self.ingress_port_mappings = input;
         self

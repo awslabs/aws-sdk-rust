@@ -2,7 +2,7 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum EphemerisTypeDescription {
     /// <p>Description of ephemeris.</p>
     Oem(crate::types::EphemerisDescription),
@@ -21,11 +21,11 @@ pub enum EphemerisTypeDescription {
 impl EphemerisTypeDescription {
     /// Tries to convert the enum instance into [`Oem`](crate::types::EphemerisTypeDescription::Oem), extracting the inner [`EphemerisDescription`](crate::types::EphemerisDescription).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_oem(&self) -> std::result::Result<&crate::types::EphemerisDescription, &Self> {
+    pub fn as_oem(&self) -> ::std::result::Result<&crate::types::EphemerisDescription, &Self> {
         if let EphemerisTypeDescription::Oem(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Oem`](crate::types::EphemerisTypeDescription::Oem).
@@ -34,11 +34,11 @@ impl EphemerisTypeDescription {
     }
     /// Tries to convert the enum instance into [`Tle`](crate::types::EphemerisTypeDescription::Tle), extracting the inner [`EphemerisDescription`](crate::types::EphemerisDescription).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_tle(&self) -> std::result::Result<&crate::types::EphemerisDescription, &Self> {
+    pub fn as_tle(&self) -> ::std::result::Result<&crate::types::EphemerisDescription, &Self> {
         if let EphemerisTypeDescription::Tle(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Tle`](crate::types::EphemerisTypeDescription::Tle).

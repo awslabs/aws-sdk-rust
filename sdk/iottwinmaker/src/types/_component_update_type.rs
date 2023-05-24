@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ComponentUpdateType {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum ComponentUpdateType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ComponentUpdateType {
+impl ::std::convert::From<&str> for ComponentUpdateType {
     fn from(s: &str) -> Self {
         match s {
             "CREATE" => ComponentUpdateType::Create,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for ComponentUpdateType {
         }
     }
 }
-impl std::str::FromStr for ComponentUpdateType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ComponentUpdateType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ComponentUpdateType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ComponentUpdateType::from(s))
     }
 }
 impl ComponentUpdateType {
@@ -91,7 +91,7 @@ impl ComponentUpdateType {
         &["CREATE", "DELETE", "UPDATE"]
     }
 }
-impl AsRef<str> for ComponentUpdateType {
+impl ::std::convert::AsRef<str> for ComponentUpdateType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -2,29 +2,29 @@
 
 /// <p>Contains general information about the LDAPS settings.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LdapsSettingInfo {
     /// <p>The state of the LDAPS settings.</p>
     #[doc(hidden)]
-    pub ldaps_status: std::option::Option<crate::types::LdapsStatus>,
+    pub ldaps_status: ::std::option::Option<crate::types::LdapsStatus>,
     /// <p>Describes a state change for LDAPS.</p>
     #[doc(hidden)]
-    pub ldaps_status_reason: std::option::Option<std::string::String>,
+    pub ldaps_status_reason: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the LDAPS settings were last updated.</p>
     #[doc(hidden)]
-    pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl LdapsSettingInfo {
     /// <p>The state of the LDAPS settings.</p>
-    pub fn ldaps_status(&self) -> std::option::Option<&crate::types::LdapsStatus> {
+    pub fn ldaps_status(&self) -> ::std::option::Option<&crate::types::LdapsStatus> {
         self.ldaps_status.as_ref()
     }
     /// <p>Describes a state change for LDAPS.</p>
-    pub fn ldaps_status_reason(&self) -> std::option::Option<&str> {
+    pub fn ldaps_status_reason(&self) -> ::std::option::Option<&str> {
         self.ldaps_status_reason.as_deref()
     }
     /// <p>The date and time when the LDAPS settings were last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
 }
@@ -37,48 +37,53 @@ impl LdapsSettingInfo {
 
 /// A builder for [`LdapsSettingInfo`](crate::types::LdapsSettingInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LdapsSettingInfoBuilder {
-    pub(crate) ldaps_status: std::option::Option<crate::types::LdapsStatus>,
-    pub(crate) ldaps_status_reason: std::option::Option<std::string::String>,
-    pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) ldaps_status: ::std::option::Option<crate::types::LdapsStatus>,
+    pub(crate) ldaps_status_reason: ::std::option::Option<::std::string::String>,
+    pub(crate) last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl LdapsSettingInfoBuilder {
     /// <p>The state of the LDAPS settings.</p>
     pub fn ldaps_status(mut self, input: crate::types::LdapsStatus) -> Self {
-        self.ldaps_status = Some(input);
+        self.ldaps_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The state of the LDAPS settings.</p>
     pub fn set_ldaps_status(
         mut self,
-        input: std::option::Option<crate::types::LdapsStatus>,
+        input: ::std::option::Option<crate::types::LdapsStatus>,
     ) -> Self {
         self.ldaps_status = input;
         self
     }
     /// <p>Describes a state change for LDAPS.</p>
-    pub fn ldaps_status_reason(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ldaps_status_reason = Some(input.into());
+    pub fn ldaps_status_reason(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.ldaps_status_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Describes a state change for LDAPS.</p>
     pub fn set_ldaps_status_reason(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.ldaps_status_reason = input;
         self
     }
     /// <p>The date and time when the LDAPS settings were last updated.</p>
-    pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_updated_date_time = Some(input);
+    pub fn last_updated_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_updated_date_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time when the LDAPS settings were last updated.</p>
     pub fn set_last_updated_date_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_updated_date_time = input;
         self

@@ -2,22 +2,22 @@
 
 /// <p> HIT Review Policy data structures represent HIT review policies, which you specify when you create a HIT. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReviewPolicy {
     /// <p> Name of a Review Policy: SimplePlurality/2011-09-01 or ScoreMyKnownAnswers/2011-09-01 </p>
     #[doc(hidden)]
-    pub policy_name: std::option::Option<std::string::String>,
+    pub policy_name: ::std::option::Option<::std::string::String>,
     /// <p>Name of the parameter from the Review policy.</p>
     #[doc(hidden)]
-    pub parameters: std::option::Option<std::vec::Vec<crate::types::PolicyParameter>>,
+    pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::PolicyParameter>>,
 }
 impl ReviewPolicy {
     /// <p> Name of a Review Policy: SimplePlurality/2011-09-01 or ScoreMyKnownAnswers/2011-09-01 </p>
-    pub fn policy_name(&self) -> std::option::Option<&str> {
+    pub fn policy_name(&self) -> ::std::option::Option<&str> {
         self.policy_name.as_deref()
     }
     /// <p>Name of the parameter from the Review policy.</p>
-    pub fn parameters(&self) -> std::option::Option<&[crate::types::PolicyParameter]> {
+    pub fn parameters(&self) -> ::std::option::Option<&[crate::types::PolicyParameter]> {
         self.parameters.as_deref()
     }
 }
@@ -30,19 +30,21 @@ impl ReviewPolicy {
 
 /// A builder for [`ReviewPolicy`](crate::types::ReviewPolicy).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ReviewPolicyBuilder {
-    pub(crate) policy_name: std::option::Option<std::string::String>,
-    pub(crate) parameters: std::option::Option<std::vec::Vec<crate::types::PolicyParameter>>,
+    pub(crate) policy_name: ::std::option::Option<::std::string::String>,
+    pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::PolicyParameter>>,
 }
 impl ReviewPolicyBuilder {
     /// <p> Name of a Review Policy: SimplePlurality/2011-09-01 or ScoreMyKnownAnswers/2011-09-01 </p>
-    pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.policy_name = Some(input.into());
+    pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.policy_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Name of a Review Policy: SimplePlurality/2011-09-01 or ScoreMyKnownAnswers/2011-09-01 </p>
-    pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_name = input;
         self
     }
@@ -54,13 +56,13 @@ impl ReviewPolicyBuilder {
     pub fn parameters(mut self, input: crate::types::PolicyParameter) -> Self {
         let mut v = self.parameters.unwrap_or_default();
         v.push(input);
-        self.parameters = Some(v);
+        self.parameters = ::std::option::Option::Some(v);
         self
     }
     /// <p>Name of the parameter from the Review policy.</p>
     pub fn set_parameters(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PolicyParameter>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PolicyParameter>>,
     ) -> Self {
         self.parameters = input;
         self

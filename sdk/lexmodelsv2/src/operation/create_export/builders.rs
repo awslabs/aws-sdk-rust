@@ -8,56 +8,59 @@ pub use crate::operation::create_export::_create_export_input::CreateExportInput
 /// <p>Creates a zip archive containing the contents of a bot or a bot locale. The archive contains a directory structure that contains JSON files that define the bot.</p>
 /// <p>You can create an archive that contains the complete definition of a bot, or you can specify that the archive contain only the definition of a single bot locale.</p>
 /// <p>For more information about exporting bots, and about the structure of the export archive, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/importing-exporting.html"> Importing and exporting bots </a> </p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateExportFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_export::builders::CreateExportInputBuilder,
 }
 impl CreateExportFluentBuilder {
     /// Creates a new `CreateExport`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_export::CreateExport,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_export::CreateExportError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_export::CreateExportError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_export::CreateExportOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_export::CreateExportError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_export::CreateExportError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -70,9 +73,9 @@ impl CreateExportFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_export::CreateExportOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_export::CreateExportError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_export::CreateExportError>,
     > {
         self.send_middleware().await
     }
@@ -87,7 +90,7 @@ impl CreateExportFluentBuilder {
     /// <p>Specifies the type of resource to export, either a bot or a bot locale. You can only specify one type of resource to export.</p>
     pub fn set_resource_specification(
         mut self,
-        input: std::option::Option<crate::types::ExportResourceSpecification>,
+        input: ::std::option::Option<crate::types::ExportResourceSpecification>,
     ) -> Self {
         self.inner = self.inner.set_resource_specification(input);
         self
@@ -100,18 +103,24 @@ impl CreateExportFluentBuilder {
     /// <p>The file format of the bot or bot locale definition files.</p>
     pub fn set_file_format(
         mut self,
-        input: std::option::Option<crate::types::ImportExportFileFormat>,
+        input: ::std::option::Option<crate::types::ImportExportFileFormat>,
     ) -> Self {
         self.inner = self.inner.set_file_format(input);
         self
     }
     /// <p>An password to use to encrypt the exported archive. Using a password is optional, but you should encrypt the archive to protect the data in transit between Amazon Lex and your local computer.</p>
-    pub fn file_password(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn file_password(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.file_password(input.into());
         self
     }
     /// <p>An password to use to encrypt the exported archive. Using a password is optional, but you should encrypt the archive to protect the data in transit between Amazon Lex and your local computer.</p>
-    pub fn set_file_password(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_file_password(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_file_password(input);
         self
     }

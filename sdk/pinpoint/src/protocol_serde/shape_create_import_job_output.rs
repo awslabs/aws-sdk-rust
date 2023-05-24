@@ -2,7 +2,7 @@
 pub(crate) fn de_import_job_response_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::types::ImportJobResponse>,
+    ::std::option::Option<crate::types::ImportJobResponse>,
     crate::operation::create_import_job::CreateImportJobError,
 > {
     (!body.is_empty())

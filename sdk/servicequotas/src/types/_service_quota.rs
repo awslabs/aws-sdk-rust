@@ -2,29 +2,29 @@
 
 /// <p>Information about a quota.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceQuota {
     /// <p>The service identifier.</p>
     #[doc(hidden)]
-    pub service_code: std::option::Option<std::string::String>,
+    pub service_code: ::std::option::Option<::std::string::String>,
     /// <p>The service name.</p>
     #[doc(hidden)]
-    pub service_name: std::option::Option<std::string::String>,
+    pub service_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the quota.</p>
     #[doc(hidden)]
-    pub quota_arn: std::option::Option<std::string::String>,
+    pub quota_arn: ::std::option::Option<::std::string::String>,
     /// <p>The quota identifier.</p>
     #[doc(hidden)]
-    pub quota_code: std::option::Option<std::string::String>,
+    pub quota_code: ::std::option::Option<::std::string::String>,
     /// <p>The quota name.</p>
     #[doc(hidden)]
-    pub quota_name: std::option::Option<std::string::String>,
+    pub quota_name: ::std::option::Option<::std::string::String>,
     /// <p>The quota value.</p>
     #[doc(hidden)]
-    pub value: std::option::Option<f64>,
+    pub value: ::std::option::Option<f64>,
     /// <p>The unit of measurement.</p>
     #[doc(hidden)]
-    pub unit: std::option::Option<std::string::String>,
+    pub unit: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the quota value can be increased.</p>
     #[doc(hidden)]
     pub adjustable: bool,
@@ -33,41 +33,41 @@ pub struct ServiceQuota {
     pub global_quota: bool,
     /// <p>Information about the measurement.</p>
     #[doc(hidden)]
-    pub usage_metric: std::option::Option<crate::types::MetricInfo>,
+    pub usage_metric: ::std::option::Option<crate::types::MetricInfo>,
     /// <p>The period of time.</p>
     #[doc(hidden)]
-    pub period: std::option::Option<crate::types::QuotaPeriod>,
+    pub period: ::std::option::Option<crate::types::QuotaPeriod>,
     /// <p>The error code and error reason.</p>
     #[doc(hidden)]
-    pub error_reason: std::option::Option<crate::types::ErrorReason>,
+    pub error_reason: ::std::option::Option<crate::types::ErrorReason>,
 }
 impl ServiceQuota {
     /// <p>The service identifier.</p>
-    pub fn service_code(&self) -> std::option::Option<&str> {
+    pub fn service_code(&self) -> ::std::option::Option<&str> {
         self.service_code.as_deref()
     }
     /// <p>The service name.</p>
-    pub fn service_name(&self) -> std::option::Option<&str> {
+    pub fn service_name(&self) -> ::std::option::Option<&str> {
         self.service_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the quota.</p>
-    pub fn quota_arn(&self) -> std::option::Option<&str> {
+    pub fn quota_arn(&self) -> ::std::option::Option<&str> {
         self.quota_arn.as_deref()
     }
     /// <p>The quota identifier.</p>
-    pub fn quota_code(&self) -> std::option::Option<&str> {
+    pub fn quota_code(&self) -> ::std::option::Option<&str> {
         self.quota_code.as_deref()
     }
     /// <p>The quota name.</p>
-    pub fn quota_name(&self) -> std::option::Option<&str> {
+    pub fn quota_name(&self) -> ::std::option::Option<&str> {
         self.quota_name.as_deref()
     }
     /// <p>The quota value.</p>
-    pub fn value(&self) -> std::option::Option<f64> {
+    pub fn value(&self) -> ::std::option::Option<f64> {
         self.value
     }
     /// <p>The unit of measurement.</p>
-    pub fn unit(&self) -> std::option::Option<&str> {
+    pub fn unit(&self) -> ::std::option::Option<&str> {
         self.unit.as_deref()
     }
     /// <p>Indicates whether the quota value can be increased.</p>
@@ -79,15 +79,15 @@ impl ServiceQuota {
         self.global_quota
     }
     /// <p>Information about the measurement.</p>
-    pub fn usage_metric(&self) -> std::option::Option<&crate::types::MetricInfo> {
+    pub fn usage_metric(&self) -> ::std::option::Option<&crate::types::MetricInfo> {
         self.usage_metric.as_ref()
     }
     /// <p>The period of time.</p>
-    pub fn period(&self) -> std::option::Option<&crate::types::QuotaPeriod> {
+    pub fn period(&self) -> ::std::option::Option<&crate::types::QuotaPeriod> {
         self.period.as_ref()
     }
     /// <p>The error code and error reason.</p>
-    pub fn error_reason(&self) -> std::option::Option<&crate::types::ErrorReason> {
+    pub fn error_reason(&self) -> ::std::option::Option<&crate::types::ErrorReason> {
         self.error_reason.as_ref()
     }
 }
@@ -100,144 +100,146 @@ impl ServiceQuota {
 
 /// A builder for [`ServiceQuota`](crate::types::ServiceQuota).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ServiceQuotaBuilder {
-    pub(crate) service_code: std::option::Option<std::string::String>,
-    pub(crate) service_name: std::option::Option<std::string::String>,
-    pub(crate) quota_arn: std::option::Option<std::string::String>,
-    pub(crate) quota_code: std::option::Option<std::string::String>,
-    pub(crate) quota_name: std::option::Option<std::string::String>,
-    pub(crate) value: std::option::Option<f64>,
-    pub(crate) unit: std::option::Option<std::string::String>,
-    pub(crate) adjustable: std::option::Option<bool>,
-    pub(crate) global_quota: std::option::Option<bool>,
-    pub(crate) usage_metric: std::option::Option<crate::types::MetricInfo>,
-    pub(crate) period: std::option::Option<crate::types::QuotaPeriod>,
-    pub(crate) error_reason: std::option::Option<crate::types::ErrorReason>,
+    pub(crate) service_code: ::std::option::Option<::std::string::String>,
+    pub(crate) service_name: ::std::option::Option<::std::string::String>,
+    pub(crate) quota_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) quota_code: ::std::option::Option<::std::string::String>,
+    pub(crate) quota_name: ::std::option::Option<::std::string::String>,
+    pub(crate) value: ::std::option::Option<f64>,
+    pub(crate) unit: ::std::option::Option<::std::string::String>,
+    pub(crate) adjustable: ::std::option::Option<bool>,
+    pub(crate) global_quota: ::std::option::Option<bool>,
+    pub(crate) usage_metric: ::std::option::Option<crate::types::MetricInfo>,
+    pub(crate) period: ::std::option::Option<crate::types::QuotaPeriod>,
+    pub(crate) error_reason: ::std::option::Option<crate::types::ErrorReason>,
 }
 impl ServiceQuotaBuilder {
     /// <p>The service identifier.</p>
-    pub fn service_code(mut self, input: impl Into<std::string::String>) -> Self {
-        self.service_code = Some(input.into());
+    pub fn service_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.service_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The service identifier.</p>
-    pub fn set_service_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_service_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_code = input;
         self
     }
     /// <p>The service name.</p>
-    pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.service_name = Some(input.into());
+    pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.service_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The service name.</p>
-    pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_name = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the quota.</p>
-    pub fn quota_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.quota_arn = Some(input.into());
+    pub fn quota_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.quota_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the quota.</p>
-    pub fn set_quota_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_quota_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.quota_arn = input;
         self
     }
     /// <p>The quota identifier.</p>
-    pub fn quota_code(mut self, input: impl Into<std::string::String>) -> Self {
-        self.quota_code = Some(input.into());
+    pub fn quota_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.quota_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The quota identifier.</p>
-    pub fn set_quota_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_quota_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.quota_code = input;
         self
     }
     /// <p>The quota name.</p>
-    pub fn quota_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.quota_name = Some(input.into());
+    pub fn quota_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.quota_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The quota name.</p>
-    pub fn set_quota_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_quota_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.quota_name = input;
         self
     }
     /// <p>The quota value.</p>
     pub fn value(mut self, input: f64) -> Self {
-        self.value = Some(input);
+        self.value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The quota value.</p>
-    pub fn set_value(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.value = input;
         self
     }
     /// <p>The unit of measurement.</p>
-    pub fn unit(mut self, input: impl Into<std::string::String>) -> Self {
-        self.unit = Some(input.into());
+    pub fn unit(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.unit = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unit of measurement.</p>
-    pub fn set_unit(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_unit(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.unit = input;
         self
     }
     /// <p>Indicates whether the quota value can be increased.</p>
     pub fn adjustable(mut self, input: bool) -> Self {
-        self.adjustable = Some(input);
+        self.adjustable = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether the quota value can be increased.</p>
-    pub fn set_adjustable(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_adjustable(mut self, input: ::std::option::Option<bool>) -> Self {
         self.adjustable = input;
         self
     }
     /// <p>Indicates whether the quota is global.</p>
     pub fn global_quota(mut self, input: bool) -> Self {
-        self.global_quota = Some(input);
+        self.global_quota = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether the quota is global.</p>
-    pub fn set_global_quota(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_global_quota(mut self, input: ::std::option::Option<bool>) -> Self {
         self.global_quota = input;
         self
     }
     /// <p>Information about the measurement.</p>
     pub fn usage_metric(mut self, input: crate::types::MetricInfo) -> Self {
-        self.usage_metric = Some(input);
+        self.usage_metric = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the measurement.</p>
     pub fn set_usage_metric(
         mut self,
-        input: std::option::Option<crate::types::MetricInfo>,
+        input: ::std::option::Option<crate::types::MetricInfo>,
     ) -> Self {
         self.usage_metric = input;
         self
     }
     /// <p>The period of time.</p>
     pub fn period(mut self, input: crate::types::QuotaPeriod) -> Self {
-        self.period = Some(input);
+        self.period = ::std::option::Option::Some(input);
         self
     }
     /// <p>The period of time.</p>
-    pub fn set_period(mut self, input: std::option::Option<crate::types::QuotaPeriod>) -> Self {
+    pub fn set_period(mut self, input: ::std::option::Option<crate::types::QuotaPeriod>) -> Self {
         self.period = input;
         self
     }
     /// <p>The error code and error reason.</p>
     pub fn error_reason(mut self, input: crate::types::ErrorReason) -> Self {
-        self.error_reason = Some(input);
+        self.error_reason = ::std::option::Option::Some(input);
         self
     }
     /// <p>The error code and error reason.</p>
     pub fn set_error_reason(
         mut self,
-        input: std::option::Option<crate::types::ErrorReason>,
+        input: ::std::option::Option<crate::types::ErrorReason>,
     ) -> Self {
         self.error_reason = input;
         self

@@ -2,71 +2,71 @@
 
 /// <p> Provides information about an extracted medical entity.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Entity {
     /// <p> The numeric identifier for the entity. This is a monotonically increasing id unique within this response rather than a global unique identifier. </p>
     #[doc(hidden)]
-    pub id: std::option::Option<i32>,
+    pub id: ::std::option::Option<i32>,
     /// <p> The 0-based character offset in the input text that shows where the entity begins. The offset returns the UTF-8 code point in the string. </p>
     #[doc(hidden)]
-    pub begin_offset: std::option::Option<i32>,
+    pub begin_offset: ::std::option::Option<i32>,
     /// <p> The 0-based character offset in the input text that shows where the entity ends. The offset returns the UTF-8 code point in the string. </p>
     #[doc(hidden)]
-    pub end_offset: std::option::Option<i32>,
+    pub end_offset: ::std::option::Option<i32>,
     /// <p>The level of confidence that Comprehend Medical; has in the accuracy of the detection.</p>
     #[doc(hidden)]
-    pub score: std::option::Option<f32>,
+    pub score: ::std::option::Option<f32>,
     /// <p> The segment of input text extracted as this entity.</p>
     #[doc(hidden)]
-    pub text: std::option::Option<std::string::String>,
+    pub text: ::std::option::Option<::std::string::String>,
     /// <p> The category of the entity.</p>
     #[doc(hidden)]
-    pub category: std::option::Option<crate::types::EntityType>,
+    pub category: ::std::option::Option<crate::types::EntityType>,
     /// <p> Describes the specific type of entity with category of entities.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::EntitySubType>,
+    pub r#type: ::std::option::Option<crate::types::EntitySubType>,
     /// <p>Contextual information for the entity.</p>
     #[doc(hidden)]
-    pub traits: std::option::Option<std::vec::Vec<crate::types::Trait>>,
+    pub traits: ::std::option::Option<::std::vec::Vec<crate::types::Trait>>,
     /// <p> The extracted attributes that relate to this entity.</p>
     #[doc(hidden)]
-    pub attributes: std::option::Option<std::vec::Vec<crate::types::Attribute>>,
+    pub attributes: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
 }
 impl Entity {
     /// <p> The numeric identifier for the entity. This is a monotonically increasing id unique within this response rather than a global unique identifier. </p>
-    pub fn id(&self) -> std::option::Option<i32> {
+    pub fn id(&self) -> ::std::option::Option<i32> {
         self.id
     }
     /// <p> The 0-based character offset in the input text that shows where the entity begins. The offset returns the UTF-8 code point in the string. </p>
-    pub fn begin_offset(&self) -> std::option::Option<i32> {
+    pub fn begin_offset(&self) -> ::std::option::Option<i32> {
         self.begin_offset
     }
     /// <p> The 0-based character offset in the input text that shows where the entity ends. The offset returns the UTF-8 code point in the string. </p>
-    pub fn end_offset(&self) -> std::option::Option<i32> {
+    pub fn end_offset(&self) -> ::std::option::Option<i32> {
         self.end_offset
     }
     /// <p>The level of confidence that Comprehend Medical; has in the accuracy of the detection.</p>
-    pub fn score(&self) -> std::option::Option<f32> {
+    pub fn score(&self) -> ::std::option::Option<f32> {
         self.score
     }
     /// <p> The segment of input text extracted as this entity.</p>
-    pub fn text(&self) -> std::option::Option<&str> {
+    pub fn text(&self) -> ::std::option::Option<&str> {
         self.text.as_deref()
     }
     /// <p> The category of the entity.</p>
-    pub fn category(&self) -> std::option::Option<&crate::types::EntityType> {
+    pub fn category(&self) -> ::std::option::Option<&crate::types::EntityType> {
         self.category.as_ref()
     }
     /// <p> Describes the specific type of entity with category of entities.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::EntitySubType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::EntitySubType> {
         self.r#type.as_ref()
     }
     /// <p>Contextual information for the entity.</p>
-    pub fn traits(&self) -> std::option::Option<&[crate::types::Trait]> {
+    pub fn traits(&self) -> ::std::option::Option<&[crate::types::Trait]> {
         self.traits.as_deref()
     }
     /// <p> The extracted attributes that relate to this entity.</p>
-    pub fn attributes(&self) -> std::option::Option<&[crate::types::Attribute]> {
+    pub fn attributes(&self) -> ::std::option::Option<&[crate::types::Attribute]> {
         self.attributes.as_deref()
     }
 }
@@ -79,86 +79,88 @@ impl Entity {
 
 /// A builder for [`Entity`](crate::types::Entity).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EntityBuilder {
-    pub(crate) id: std::option::Option<i32>,
-    pub(crate) begin_offset: std::option::Option<i32>,
-    pub(crate) end_offset: std::option::Option<i32>,
-    pub(crate) score: std::option::Option<f32>,
-    pub(crate) text: std::option::Option<std::string::String>,
-    pub(crate) category: std::option::Option<crate::types::EntityType>,
-    pub(crate) r#type: std::option::Option<crate::types::EntitySubType>,
-    pub(crate) traits: std::option::Option<std::vec::Vec<crate::types::Trait>>,
-    pub(crate) attributes: std::option::Option<std::vec::Vec<crate::types::Attribute>>,
+    pub(crate) id: ::std::option::Option<i32>,
+    pub(crate) begin_offset: ::std::option::Option<i32>,
+    pub(crate) end_offset: ::std::option::Option<i32>,
+    pub(crate) score: ::std::option::Option<f32>,
+    pub(crate) text: ::std::option::Option<::std::string::String>,
+    pub(crate) category: ::std::option::Option<crate::types::EntityType>,
+    pub(crate) r#type: ::std::option::Option<crate::types::EntitySubType>,
+    pub(crate) traits: ::std::option::Option<::std::vec::Vec<crate::types::Trait>>,
+    pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
 }
 impl EntityBuilder {
     /// <p> The numeric identifier for the entity. This is a monotonically increasing id unique within this response rather than a global unique identifier. </p>
     pub fn id(mut self, input: i32) -> Self {
-        self.id = Some(input);
+        self.id = ::std::option::Option::Some(input);
         self
     }
     /// <p> The numeric identifier for the entity. This is a monotonically increasing id unique within this response rather than a global unique identifier. </p>
-    pub fn set_id(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<i32>) -> Self {
         self.id = input;
         self
     }
     /// <p> The 0-based character offset in the input text that shows where the entity begins. The offset returns the UTF-8 code point in the string. </p>
     pub fn begin_offset(mut self, input: i32) -> Self {
-        self.begin_offset = Some(input);
+        self.begin_offset = ::std::option::Option::Some(input);
         self
     }
     /// <p> The 0-based character offset in the input text that shows where the entity begins. The offset returns the UTF-8 code point in the string. </p>
-    pub fn set_begin_offset(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_begin_offset(mut self, input: ::std::option::Option<i32>) -> Self {
         self.begin_offset = input;
         self
     }
     /// <p> The 0-based character offset in the input text that shows where the entity ends. The offset returns the UTF-8 code point in the string. </p>
     pub fn end_offset(mut self, input: i32) -> Self {
-        self.end_offset = Some(input);
+        self.end_offset = ::std::option::Option::Some(input);
         self
     }
     /// <p> The 0-based character offset in the input text that shows where the entity ends. The offset returns the UTF-8 code point in the string. </p>
-    pub fn set_end_offset(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_end_offset(mut self, input: ::std::option::Option<i32>) -> Self {
         self.end_offset = input;
         self
     }
     /// <p>The level of confidence that Comprehend Medical; has in the accuracy of the detection.</p>
     pub fn score(mut self, input: f32) -> Self {
-        self.score = Some(input);
+        self.score = ::std::option::Option::Some(input);
         self
     }
     /// <p>The level of confidence that Comprehend Medical; has in the accuracy of the detection.</p>
-    pub fn set_score(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_score(mut self, input: ::std::option::Option<f32>) -> Self {
         self.score = input;
         self
     }
     /// <p> The segment of input text extracted as this entity.</p>
-    pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
-        self.text = Some(input.into());
+    pub fn text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.text = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The segment of input text extracted as this entity.</p>
-    pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.text = input;
         self
     }
     /// <p> The category of the entity.</p>
     pub fn category(mut self, input: crate::types::EntityType) -> Self {
-        self.category = Some(input);
+        self.category = ::std::option::Option::Some(input);
         self
     }
     /// <p> The category of the entity.</p>
-    pub fn set_category(mut self, input: std::option::Option<crate::types::EntityType>) -> Self {
+    pub fn set_category(mut self, input: ::std::option::Option<crate::types::EntityType>) -> Self {
         self.category = input;
         self
     }
     /// <p> Describes the specific type of entity with category of entities.</p>
     pub fn r#type(mut self, input: crate::types::EntitySubType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p> Describes the specific type of entity with category of entities.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::EntitySubType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::EntitySubType>) -> Self {
         self.r#type = input;
         self
     }
@@ -170,13 +172,13 @@ impl EntityBuilder {
     pub fn traits(mut self, input: crate::types::Trait) -> Self {
         let mut v = self.traits.unwrap_or_default();
         v.push(input);
-        self.traits = Some(v);
+        self.traits = ::std::option::Option::Some(v);
         self
     }
     /// <p>Contextual information for the entity.</p>
     pub fn set_traits(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Trait>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Trait>>,
     ) -> Self {
         self.traits = input;
         self
@@ -189,13 +191,13 @@ impl EntityBuilder {
     pub fn attributes(mut self, input: crate::types::Attribute) -> Self {
         let mut v = self.attributes.unwrap_or_default();
         v.push(input);
-        self.attributes = Some(v);
+        self.attributes = ::std::option::Option::Some(v);
         self
     }
     /// <p> The extracted attributes that relate to this entity.</p>
     pub fn set_attributes(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Attribute>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
     ) -> Self {
         self.attributes = input;
         self

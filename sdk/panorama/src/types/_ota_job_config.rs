@@ -2,18 +2,18 @@
 
 /// <p>An over-the-air update (OTA) job configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OtaJobConfig {
     /// <p>The target version of the device software.</p>
     #[doc(hidden)]
-    pub image_version: std::option::Option<std::string::String>,
+    pub image_version: ::std::option::Option<::std::string::String>,
     /// <p>Whether to apply the update if it is a major version change.</p>
     #[doc(hidden)]
     pub allow_major_version_update: bool,
 }
 impl OtaJobConfig {
     /// <p>The target version of the device software.</p>
-    pub fn image_version(&self) -> std::option::Option<&str> {
+    pub fn image_version(&self) -> ::std::option::Option<&str> {
         self.image_version.as_deref()
     }
     /// <p>Whether to apply the update if it is a major version change.</p>
@@ -30,29 +30,37 @@ impl OtaJobConfig {
 
 /// A builder for [`OtaJobConfig`](crate::types::OtaJobConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OtaJobConfigBuilder {
-    pub(crate) image_version: std::option::Option<std::string::String>,
-    pub(crate) allow_major_version_update: std::option::Option<bool>,
+    pub(crate) image_version: ::std::option::Option<::std::string::String>,
+    pub(crate) allow_major_version_update: ::std::option::Option<bool>,
 }
 impl OtaJobConfigBuilder {
     /// <p>The target version of the device software.</p>
-    pub fn image_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.image_version = Some(input.into());
+    pub fn image_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.image_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The target version of the device software.</p>
-    pub fn set_image_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_image_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.image_version = input;
         self
     }
     /// <p>Whether to apply the update if it is a major version change.</p>
     pub fn allow_major_version_update(mut self, input: bool) -> Self {
-        self.allow_major_version_update = Some(input);
+        self.allow_major_version_update = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether to apply the update if it is a major version change.</p>
-    pub fn set_allow_major_version_update(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_allow_major_version_update(mut self, input: ::std::option::Option<bool>) -> Self {
         self.allow_major_version_update = input;
         self
     }

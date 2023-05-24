@@ -2,24 +2,24 @@
 
 /// <p>A device's network configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EthernetPayload {
     /// <p>How the device gets an IP address.</p>
     #[doc(hidden)]
-    pub connection_type: std::option::Option<crate::types::ConnectionType>,
+    pub connection_type: ::std::option::Option<crate::types::ConnectionType>,
     /// <p>Network configuration for a static IP connection.</p>
     #[doc(hidden)]
-    pub static_ip_connection_info: std::option::Option<crate::types::StaticIpConnectionInfo>,
+    pub static_ip_connection_info: ::std::option::Option<crate::types::StaticIpConnectionInfo>,
 }
 impl EthernetPayload {
     /// <p>How the device gets an IP address.</p>
-    pub fn connection_type(&self) -> std::option::Option<&crate::types::ConnectionType> {
+    pub fn connection_type(&self) -> ::std::option::Option<&crate::types::ConnectionType> {
         self.connection_type.as_ref()
     }
     /// <p>Network configuration for a static IP connection.</p>
     pub fn static_ip_connection_info(
         &self,
-    ) -> std::option::Option<&crate::types::StaticIpConnectionInfo> {
+    ) -> ::std::option::Option<&crate::types::StaticIpConnectionInfo> {
         self.static_ip_connection_info.as_ref()
     }
 }
@@ -32,21 +32,24 @@ impl EthernetPayload {
 
 /// A builder for [`EthernetPayload`](crate::types::EthernetPayload).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EthernetPayloadBuilder {
-    pub(crate) connection_type: std::option::Option<crate::types::ConnectionType>,
-    pub(crate) static_ip_connection_info: std::option::Option<crate::types::StaticIpConnectionInfo>,
+    pub(crate) connection_type: ::std::option::Option<crate::types::ConnectionType>,
+    pub(crate) static_ip_connection_info:
+        ::std::option::Option<crate::types::StaticIpConnectionInfo>,
 }
 impl EthernetPayloadBuilder {
     /// <p>How the device gets an IP address.</p>
     pub fn connection_type(mut self, input: crate::types::ConnectionType) -> Self {
-        self.connection_type = Some(input);
+        self.connection_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>How the device gets an IP address.</p>
     pub fn set_connection_type(
         mut self,
-        input: std::option::Option<crate::types::ConnectionType>,
+        input: ::std::option::Option<crate::types::ConnectionType>,
     ) -> Self {
         self.connection_type = input;
         self
@@ -56,13 +59,13 @@ impl EthernetPayloadBuilder {
         mut self,
         input: crate::types::StaticIpConnectionInfo,
     ) -> Self {
-        self.static_ip_connection_info = Some(input);
+        self.static_ip_connection_info = ::std::option::Option::Some(input);
         self
     }
     /// <p>Network configuration for a static IP connection.</p>
     pub fn set_static_ip_connection_info(
         mut self,
-        input: std::option::Option<crate::types::StaticIpConnectionInfo>,
+        input: ::std::option::Option<crate::types::StaticIpConnectionInfo>,
     ) -> Self {
         self.static_ip_connection_info = input;
         self

@@ -2,11 +2,11 @@
 
 /// <p>An empty element returned on a successful request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SetIdentityNotificationTopicOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for SetIdentityNotificationTopicOutput {
+impl ::aws_http::request_id::RequestId for SetIdentityNotificationTopicOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -20,7 +20,9 @@ impl SetIdentityNotificationTopicOutput {
 
 /// A builder for [`SetIdentityNotificationTopicOutput`](crate::operation::set_identity_notification_topic::SetIdentityNotificationTopicOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SetIdentityNotificationTopicOutputBuilder {
     _request_id: Option<String>,
 }

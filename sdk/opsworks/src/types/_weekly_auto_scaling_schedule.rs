@@ -9,85 +9,99 @@
 /// <p>The following example specifies that the instance should be online for four hours, from UTC 1200 - 1600. It will be off for the remainder of the day.</p>
 /// <p> <code> { "12":"on", "13":"on", "14":"on", "15":"on" } </code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WeeklyAutoScalingSchedule {
     /// <p>The schedule for Monday.</p>
     #[doc(hidden)]
-    pub monday:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub monday: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>The schedule for Tuesday.</p>
     #[doc(hidden)]
-    pub tuesday:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tuesday: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>The schedule for Wednesday.</p>
     #[doc(hidden)]
-    pub wednesday:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub wednesday: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>The schedule for Thursday.</p>
     #[doc(hidden)]
-    pub thursday:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub thursday: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>The schedule for Friday.</p>
     #[doc(hidden)]
-    pub friday:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub friday: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>The schedule for Saturday.</p>
     #[doc(hidden)]
-    pub saturday:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub saturday: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>The schedule for Sunday.</p>
     #[doc(hidden)]
-    pub sunday:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub sunday: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl WeeklyAutoScalingSchedule {
     /// <p>The schedule for Monday.</p>
     pub fn monday(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.monday.as_ref()
     }
     /// <p>The schedule for Tuesday.</p>
     pub fn tuesday(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.tuesday.as_ref()
     }
     /// <p>The schedule for Wednesday.</p>
     pub fn wednesday(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.wednesday.as_ref()
     }
     /// <p>The schedule for Thursday.</p>
     pub fn thursday(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.thursday.as_ref()
     }
     /// <p>The schedule for Friday.</p>
     pub fn friday(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.friday.as_ref()
     }
     /// <p>The schedule for Saturday.</p>
     pub fn saturday(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.saturday.as_ref()
     }
     /// <p>The schedule for Sunday.</p>
     pub fn sunday(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.sunday.as_ref()
     }
 }
@@ -100,22 +114,31 @@ impl WeeklyAutoScalingSchedule {
 
 /// A builder for [`WeeklyAutoScalingSchedule`](crate::types::WeeklyAutoScalingSchedule).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct WeeklyAutoScalingScheduleBuilder {
-    pub(crate) monday:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) tuesday:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) wednesday:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) thursday:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) friday:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) saturday:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) sunday:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) monday: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) tuesday: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) wednesday: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) thursday: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) friday: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) saturday: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) sunday: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl WeeklyAutoScalingScheduleBuilder {
     /// Adds a key-value pair to `monday`.
@@ -125,19 +148,19 @@ impl WeeklyAutoScalingScheduleBuilder {
     /// <p>The schedule for Monday.</p>
     pub fn monday(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.monday.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.monday = Some(hash_map);
+        self.monday = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The schedule for Monday.</p>
     pub fn set_monday(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.monday = input;
@@ -150,19 +173,19 @@ impl WeeklyAutoScalingScheduleBuilder {
     /// <p>The schedule for Tuesday.</p>
     pub fn tuesday(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.tuesday.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.tuesday = Some(hash_map);
+        self.tuesday = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The schedule for Tuesday.</p>
     pub fn set_tuesday(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.tuesday = input;
@@ -175,19 +198,19 @@ impl WeeklyAutoScalingScheduleBuilder {
     /// <p>The schedule for Wednesday.</p>
     pub fn wednesday(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.wednesday.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.wednesday = Some(hash_map);
+        self.wednesday = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The schedule for Wednesday.</p>
     pub fn set_wednesday(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.wednesday = input;
@@ -200,19 +223,19 @@ impl WeeklyAutoScalingScheduleBuilder {
     /// <p>The schedule for Thursday.</p>
     pub fn thursday(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.thursday.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.thursday = Some(hash_map);
+        self.thursday = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The schedule for Thursday.</p>
     pub fn set_thursday(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.thursday = input;
@@ -225,19 +248,19 @@ impl WeeklyAutoScalingScheduleBuilder {
     /// <p>The schedule for Friday.</p>
     pub fn friday(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.friday.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.friday = Some(hash_map);
+        self.friday = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The schedule for Friday.</p>
     pub fn set_friday(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.friday = input;
@@ -250,19 +273,19 @@ impl WeeklyAutoScalingScheduleBuilder {
     /// <p>The schedule for Saturday.</p>
     pub fn saturday(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.saturday.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.saturday = Some(hash_map);
+        self.saturday = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The schedule for Saturday.</p>
     pub fn set_saturday(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.saturday = input;
@@ -275,19 +298,19 @@ impl WeeklyAutoScalingScheduleBuilder {
     /// <p>The schedule for Sunday.</p>
     pub fn sunday(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.sunday.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.sunday = Some(hash_map);
+        self.sunday = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The schedule for Sunday.</p>
     pub fn set_sunday(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.sunday = input;

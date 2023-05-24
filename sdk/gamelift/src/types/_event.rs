@@ -2,14 +2,14 @@
 
 /// <p>Log entry describing an event that involves Amazon GameLift resources (such as a fleet). In addition to tracking activity, event codes and messages can provide additional information for troubleshooting and debugging problems.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Event {
     /// <p>A unique identifier for a fleet event.</p>
     #[doc(hidden)]
-    pub event_id: std::option::Option<std::string::String>,
+    pub event_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for an event resource, such as a fleet ID.</p>
     #[doc(hidden)]
-    pub resource_id: std::option::Option<std::string::String>,
+    pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of event being logged. </p>
     /// <p> <b>Fleet state transition events:</b> </p>
     /// <ul>
@@ -66,24 +66,24 @@ pub struct Event {
     /// <li> <p> GENERIC_EVENT -- An unspecified event has occurred.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub event_code: std::option::Option<crate::types::EventCode>,
+    pub event_code: ::std::option::Option<crate::types::EventCode>,
     /// <p>Additional information related to the event.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
     /// <p>Time stamp indicating when this event occurred. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
     #[doc(hidden)]
-    pub event_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub event_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Location of stored logs with additional detail that is related to the event. This is useful for debugging issues. The URL is valid for 15 minutes. You can also access fleet creation logs through the Amazon GameLift console.</p>
     #[doc(hidden)]
-    pub pre_signed_log_url: std::option::Option<std::string::String>,
+    pub pre_signed_log_url: ::std::option::Option<::std::string::String>,
 }
 impl Event {
     /// <p>A unique identifier for a fleet event.</p>
-    pub fn event_id(&self) -> std::option::Option<&str> {
+    pub fn event_id(&self) -> ::std::option::Option<&str> {
         self.event_id.as_deref()
     }
     /// <p>A unique identifier for an event resource, such as a fleet ID.</p>
-    pub fn resource_id(&self) -> std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<&str> {
         self.resource_id.as_deref()
     }
     /// <p>The type of event being logged. </p>
@@ -141,19 +141,19 @@ impl Event {
     /// <li> <p>FLEET_DELETED -- A request to delete a fleet was initiated.</p> </li>
     /// <li> <p> GENERIC_EVENT -- An unspecified event has occurred.</p> </li>
     /// </ul>
-    pub fn event_code(&self) -> std::option::Option<&crate::types::EventCode> {
+    pub fn event_code(&self) -> ::std::option::Option<&crate::types::EventCode> {
         self.event_code.as_ref()
     }
     /// <p>Additional information related to the event.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
     /// <p>Time stamp indicating when this event occurred. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    pub fn event_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn event_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.event_time.as_ref()
     }
     /// <p>Location of stored logs with additional detail that is related to the event. This is useful for debugging issues. The URL is valid for 15 minutes. You can also access fleet creation logs through the Amazon GameLift console.</p>
-    pub fn pre_signed_log_url(&self) -> std::option::Option<&str> {
+    pub fn pre_signed_log_url(&self) -> ::std::option::Option<&str> {
         self.pre_signed_log_url.as_deref()
     }
 }
@@ -166,33 +166,35 @@ impl Event {
 
 /// A builder for [`Event`](crate::types::Event).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EventBuilder {
-    pub(crate) event_id: std::option::Option<std::string::String>,
-    pub(crate) resource_id: std::option::Option<std::string::String>,
-    pub(crate) event_code: std::option::Option<crate::types::EventCode>,
-    pub(crate) message: std::option::Option<std::string::String>,
-    pub(crate) event_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) pre_signed_log_url: std::option::Option<std::string::String>,
+    pub(crate) event_id: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_id: ::std::option::Option<::std::string::String>,
+    pub(crate) event_code: ::std::option::Option<crate::types::EventCode>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
+    pub(crate) event_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) pre_signed_log_url: ::std::option::Option<::std::string::String>,
 }
 impl EventBuilder {
     /// <p>A unique identifier for a fleet event.</p>
-    pub fn event_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.event_id = Some(input.into());
+    pub fn event_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.event_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for a fleet event.</p>
-    pub fn set_event_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_event_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_id = input;
         self
     }
     /// <p>A unique identifier for an event resource, such as a fleet ID.</p>
-    pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_id = Some(input.into());
+    pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for an event resource, such as a fleet ID.</p>
-    pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
     }
@@ -252,7 +254,7 @@ impl EventBuilder {
     /// <li> <p> GENERIC_EVENT -- An unspecified event has occurred.</p> </li>
     /// </ul>
     pub fn event_code(mut self, input: crate::types::EventCode) -> Self {
-        self.event_code = Some(input);
+        self.event_code = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of event being logged. </p>
@@ -310,42 +312,45 @@ impl EventBuilder {
     /// <li> <p>FLEET_DELETED -- A request to delete a fleet was initiated.</p> </li>
     /// <li> <p> GENERIC_EVENT -- An unspecified event has occurred.</p> </li>
     /// </ul>
-    pub fn set_event_code(mut self, input: std::option::Option<crate::types::EventCode>) -> Self {
+    pub fn set_event_code(mut self, input: ::std::option::Option<crate::types::EventCode>) -> Self {
         self.event_code = input;
         self
     }
     /// <p>Additional information related to the event.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Additional information related to the event.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
     /// <p>Time stamp indicating when this event occurred. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    pub fn event_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.event_time = Some(input);
+    pub fn event_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.event_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>Time stamp indicating when this event occurred. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
     pub fn set_event_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.event_time = input;
         self
     }
     /// <p>Location of stored logs with additional detail that is related to the event. This is useful for debugging issues. The URL is valid for 15 minutes. You can also access fleet creation logs through the Amazon GameLift console.</p>
-    pub fn pre_signed_log_url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.pre_signed_log_url = Some(input.into());
+    pub fn pre_signed_log_url(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.pre_signed_log_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Location of stored logs with additional detail that is related to the event. This is useful for debugging issues. The URL is valid for 15 minutes. You can also access fleet creation logs through the Amazon GameLift console.</p>
     pub fn set_pre_signed_log_url(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.pre_signed_log_url = input;
         self

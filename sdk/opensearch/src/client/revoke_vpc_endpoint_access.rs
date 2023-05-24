@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`RevokeVpcEndpointAccess`](crate::operation::revoke_vpc_endpoint_access::builders::RevokeVpcEndpointAccessFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_name(impl Into<String>)`](crate::operation::revoke_vpc_endpoint_access::builders::RevokeVpcEndpointAccessFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::revoke_vpc_endpoint_access::builders::RevokeVpcEndpointAccessFluentBuilder::set_domain_name): <p>The name of the OpenSearch Service domain.</p>
-    ///   - [`account(impl Into<String>)`](crate::operation::revoke_vpc_endpoint_access::builders::RevokeVpcEndpointAccessFluentBuilder::account) / [`set_account(Option<String>)`](crate::operation::revoke_vpc_endpoint_access::builders::RevokeVpcEndpointAccessFluentBuilder::set_account): <p>The account ID to revoke access from.</p>
+    ///   - [`domain_name(impl ::std::convert::Into<String>)`](crate::operation::revoke_vpc_endpoint_access::builders::RevokeVpcEndpointAccessFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::revoke_vpc_endpoint_access::builders::RevokeVpcEndpointAccessFluentBuilder::set_domain_name): <p>The name of the OpenSearch Service domain.</p>
+    ///   - [`account(impl ::std::convert::Into<String>)`](crate::operation::revoke_vpc_endpoint_access::builders::RevokeVpcEndpointAccessFluentBuilder::account) / [`set_account(Option<String>)`](crate::operation::revoke_vpc_endpoint_access::builders::RevokeVpcEndpointAccessFluentBuilder::set_account): <p>The account ID to revoke access from.</p>
     /// - On success, responds with [`RevokeVpcEndpointAccessOutput`](crate::operation::revoke_vpc_endpoint_access::RevokeVpcEndpointAccessOutput)
     /// - On failure, responds with [`SdkError<RevokeVpcEndpointAccessError>`](crate::operation::revoke_vpc_endpoint_access::RevokeVpcEndpointAccessError)
     pub fn revoke_vpc_endpoint_access(

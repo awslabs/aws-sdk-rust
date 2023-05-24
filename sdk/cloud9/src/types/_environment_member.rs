@@ -2,7 +2,7 @@
 
 /// <p>Information about an environment member for an Cloud9 development environment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnvironmentMember {
     /// <p>The type of environment member permissions associated with this environment member. Available values include:</p>
     /// <ul>
@@ -11,19 +11,19 @@ pub struct EnvironmentMember {
     /// <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub permissions: std::option::Option<crate::types::Permissions>,
+    pub permissions: ::std::option::Option<crate::types::Permissions>,
     /// <p>The user ID in Identity and Access Management (IAM) of the environment member.</p>
     #[doc(hidden)]
-    pub user_id: std::option::Option<std::string::String>,
+    pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the environment member.</p>
     #[doc(hidden)]
-    pub user_arn: std::option::Option<std::string::String>,
+    pub user_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the environment for the environment member.</p>
     #[doc(hidden)]
-    pub environment_id: std::option::Option<std::string::String>,
+    pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>The time, expressed in epoch time format, when the environment member last opened the environment.</p>
     #[doc(hidden)]
-    pub last_access: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_access: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl EnvironmentMember {
     /// <p>The type of environment member permissions associated with this environment member. Available values include:</p>
@@ -32,23 +32,23 @@ impl EnvironmentMember {
     /// <li> <p> <code>read-only</code>: Has read-only access to the environment.</p> </li>
     /// <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li>
     /// </ul>
-    pub fn permissions(&self) -> std::option::Option<&crate::types::Permissions> {
+    pub fn permissions(&self) -> ::std::option::Option<&crate::types::Permissions> {
         self.permissions.as_ref()
     }
     /// <p>The user ID in Identity and Access Management (IAM) of the environment member.</p>
-    pub fn user_id(&self) -> std::option::Option<&str> {
+    pub fn user_id(&self) -> ::std::option::Option<&str> {
         self.user_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the environment member.</p>
-    pub fn user_arn(&self) -> std::option::Option<&str> {
+    pub fn user_arn(&self) -> ::std::option::Option<&str> {
         self.user_arn.as_deref()
     }
     /// <p>The ID of the environment for the environment member.</p>
-    pub fn environment_id(&self) -> std::option::Option<&str> {
+    pub fn environment_id(&self) -> ::std::option::Option<&str> {
         self.environment_id.as_deref()
     }
     /// <p>The time, expressed in epoch time format, when the environment member last opened the environment.</p>
-    pub fn last_access(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_access(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_access.as_ref()
     }
 }
@@ -61,13 +61,15 @@ impl EnvironmentMember {
 
 /// A builder for [`EnvironmentMember`](crate::types::EnvironmentMember).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EnvironmentMemberBuilder {
-    pub(crate) permissions: std::option::Option<crate::types::Permissions>,
-    pub(crate) user_id: std::option::Option<std::string::String>,
-    pub(crate) user_arn: std::option::Option<std::string::String>,
-    pub(crate) environment_id: std::option::Option<std::string::String>,
-    pub(crate) last_access: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) permissions: ::std::option::Option<crate::types::Permissions>,
+    pub(crate) user_id: ::std::option::Option<::std::string::String>,
+    pub(crate) user_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) environment_id: ::std::option::Option<::std::string::String>,
+    pub(crate) last_access: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl EnvironmentMemberBuilder {
     /// <p>The type of environment member permissions associated with this environment member. Available values include:</p>
@@ -77,7 +79,7 @@ impl EnvironmentMemberBuilder {
     /// <li> <p> <code>read-write</code>: Has read-write access to the environment.</p> </li>
     /// </ul>
     pub fn permissions(mut self, input: crate::types::Permissions) -> Self {
-        self.permissions = Some(input);
+        self.permissions = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of environment member permissions associated with this environment member. Available values include:</p>
@@ -88,50 +90,56 @@ impl EnvironmentMemberBuilder {
     /// </ul>
     pub fn set_permissions(
         mut self,
-        input: std::option::Option<crate::types::Permissions>,
+        input: ::std::option::Option<crate::types::Permissions>,
     ) -> Self {
         self.permissions = input;
         self
     }
     /// <p>The user ID in Identity and Access Management (IAM) of the environment member.</p>
-    pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.user_id = Some(input.into());
+    pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.user_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user ID in Identity and Access Management (IAM) of the environment member.</p>
-    pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_id = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the environment member.</p>
-    pub fn user_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.user_arn = Some(input.into());
+    pub fn user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.user_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the environment member.</p>
-    pub fn set_user_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_arn = input;
         self
     }
     /// <p>The ID of the environment for the environment member.</p>
-    pub fn environment_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.environment_id = Some(input.into());
+    pub fn environment_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.environment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the environment for the environment member.</p>
-    pub fn set_environment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_environment_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.environment_id = input;
         self
     }
     /// <p>The time, expressed in epoch time format, when the environment member last opened the environment.</p>
-    pub fn last_access(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_access = Some(input);
+    pub fn last_access(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_access = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time, expressed in epoch time format, when the environment member last opened the environment.</p>
     pub fn set_last_access(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_access = input;
         self

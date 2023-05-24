@@ -2,29 +2,29 @@
 
 /// <p>Represents the overall status of a model package.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModelPackageStatusItem {
     /// <p>The name of the model package for which the overall status is being reported.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The current status.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::DetailedModelPackageStatus>,
+    pub status: ::std::option::Option<crate::types::DetailedModelPackageStatus>,
     /// <p>if the overall status is <code>Failed</code>, the reason for the failure.</p>
     #[doc(hidden)]
-    pub failure_reason: std::option::Option<std::string::String>,
+    pub failure_reason: ::std::option::Option<::std::string::String>,
 }
 impl ModelPackageStatusItem {
     /// <p>The name of the model package for which the overall status is being reported.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The current status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::DetailedModelPackageStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::DetailedModelPackageStatus> {
         self.status.as_ref()
     }
     /// <p>if the overall status is <code>Failed</code>, the reason for the failure.</p>
-    pub fn failure_reason(&self) -> std::option::Option<&str> {
+    pub fn failure_reason(&self) -> ::std::option::Option<&str> {
         self.failure_reason.as_deref()
     }
 }
@@ -37,43 +37,51 @@ impl ModelPackageStatusItem {
 
 /// A builder for [`ModelPackageStatusItem`](crate::types::ModelPackageStatusItem).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ModelPackageStatusItemBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::DetailedModelPackageStatus>,
-    pub(crate) failure_reason: std::option::Option<std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::DetailedModelPackageStatus>,
+    pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
 }
 impl ModelPackageStatusItemBuilder {
     /// <p>The name of the model package for which the overall status is being reported.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the model package for which the overall status is being reported.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The current status.</p>
     pub fn status(mut self, input: crate::types::DetailedModelPackageStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current status.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::DetailedModelPackageStatus>,
+        input: ::std::option::Option<crate::types::DetailedModelPackageStatus>,
     ) -> Self {
         self.status = input;
         self
     }
     /// <p>if the overall status is <code>Failed</code>, the reason for the failure.</p>
-    pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
-        self.failure_reason = Some(input.into());
+    pub fn failure_reason(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>if the overall status is <code>Failed</code>, the reason for the failure.</p>
-    pub fn set_failure_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_failure_reason(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.failure_reason = input;
         self
     }

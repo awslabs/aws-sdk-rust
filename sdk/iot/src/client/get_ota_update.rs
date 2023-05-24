@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetOTAUpdate`](crate::operation::get_ota_update::builders::GetOTAUpdateFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`ota_update_id(impl Into<String>)`](crate::operation::get_ota_update::builders::GetOTAUpdateFluentBuilder::ota_update_id) / [`set_ota_update_id(Option<String>)`](crate::operation::get_ota_update::builders::GetOTAUpdateFluentBuilder::set_ota_update_id): <p>The OTA update ID.</p>
+    ///   - [`ota_update_id(impl ::std::convert::Into<String>)`](crate::operation::get_ota_update::builders::GetOTAUpdateFluentBuilder::ota_update_id) / [`set_ota_update_id(Option<String>)`](crate::operation::get_ota_update::builders::GetOTAUpdateFluentBuilder::set_ota_update_id): <p>The OTA update ID.</p>
     /// - On success, responds with [`GetOtaUpdateOutput`](crate::operation::get_ota_update::GetOtaUpdateOutput) with field(s):
     ///   - [`ota_update_info(Option<OtaUpdateInfo>)`](crate::operation::get_ota_update::GetOtaUpdateOutput::ota_update_info): <p>The OTA update info.</p>
     /// - On failure, responds with [`SdkError<GetOTAUpdateError>`](crate::operation::get_ota_update::GetOTAUpdateError)

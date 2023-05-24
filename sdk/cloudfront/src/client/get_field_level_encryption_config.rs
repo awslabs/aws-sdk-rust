@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetFieldLevelEncryptionConfig`](crate::operation::get_field_level_encryption_config::builders::GetFieldLevelEncryptionConfigFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::get_field_level_encryption_config::builders::GetFieldLevelEncryptionConfigFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_field_level_encryption_config::builders::GetFieldLevelEncryptionConfigFluentBuilder::set_id): <p>Request the ID for the field-level encryption configuration information.</p>
+    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::get_field_level_encryption_config::builders::GetFieldLevelEncryptionConfigFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_field_level_encryption_config::builders::GetFieldLevelEncryptionConfigFluentBuilder::set_id): <p>Request the ID for the field-level encryption configuration information.</p>
     /// - On success, responds with [`GetFieldLevelEncryptionConfigOutput`](crate::operation::get_field_level_encryption_config::GetFieldLevelEncryptionConfigOutput) with field(s):
     ///   - [`field_level_encryption_config(Option<FieldLevelEncryptionConfig>)`](crate::operation::get_field_level_encryption_config::GetFieldLevelEncryptionConfigOutput::field_level_encryption_config): <p>Return the field-level encryption configuration information.</p>
     ///   - [`e_tag(Option<String>)`](crate::operation::get_field_level_encryption_config::GetFieldLevelEncryptionConfigOutput::e_tag): <p>The current version of the field level encryption configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>

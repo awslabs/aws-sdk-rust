@@ -2,32 +2,32 @@
 
 /// <p>Represents a node in a directed acyclic graph (DAG)</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CodeGenNode {
     /// <p>A node identifier that is unique within the node's graph.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The type of node that this is.</p>
     #[doc(hidden)]
-    pub node_type: std::option::Option<std::string::String>,
+    pub node_type: ::std::option::Option<::std::string::String>,
     /// <p>Properties of the node, in the form of name-value pairs.</p>
     #[doc(hidden)]
-    pub args: std::option::Option<std::vec::Vec<crate::types::CodeGenNodeArg>>,
+    pub args: ::std::option::Option<::std::vec::Vec<crate::types::CodeGenNodeArg>>,
     /// <p>The line number of the node.</p>
     #[doc(hidden)]
     pub line_number: i32,
 }
 impl CodeGenNode {
     /// <p>A node identifier that is unique within the node's graph.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The type of node that this is.</p>
-    pub fn node_type(&self) -> std::option::Option<&str> {
+    pub fn node_type(&self) -> ::std::option::Option<&str> {
         self.node_type.as_deref()
     }
     /// <p>Properties of the node, in the form of name-value pairs.</p>
-    pub fn args(&self) -> std::option::Option<&[crate::types::CodeGenNodeArg]> {
+    pub fn args(&self) -> ::std::option::Option<&[crate::types::CodeGenNodeArg]> {
         self.args.as_deref()
     }
     /// <p>The line number of the node.</p>
@@ -44,31 +44,33 @@ impl CodeGenNode {
 
 /// A builder for [`CodeGenNode`](crate::types::CodeGenNode).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CodeGenNodeBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) node_type: std::option::Option<std::string::String>,
-    pub(crate) args: std::option::Option<std::vec::Vec<crate::types::CodeGenNodeArg>>,
-    pub(crate) line_number: std::option::Option<i32>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) node_type: ::std::option::Option<::std::string::String>,
+    pub(crate) args: ::std::option::Option<::std::vec::Vec<crate::types::CodeGenNodeArg>>,
+    pub(crate) line_number: ::std::option::Option<i32>,
 }
 impl CodeGenNodeBuilder {
     /// <p>A node identifier that is unique within the node's graph.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A node identifier that is unique within the node's graph.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>The type of node that this is.</p>
-    pub fn node_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.node_type = Some(input.into());
+    pub fn node_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.node_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of node that this is.</p>
-    pub fn set_node_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_node_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.node_type = input;
         self
     }
@@ -80,24 +82,24 @@ impl CodeGenNodeBuilder {
     pub fn args(mut self, input: crate::types::CodeGenNodeArg) -> Self {
         let mut v = self.args.unwrap_or_default();
         v.push(input);
-        self.args = Some(v);
+        self.args = ::std::option::Option::Some(v);
         self
     }
     /// <p>Properties of the node, in the form of name-value pairs.</p>
     pub fn set_args(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CodeGenNodeArg>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::CodeGenNodeArg>>,
     ) -> Self {
         self.args = input;
         self
     }
     /// <p>The line number of the node.</p>
     pub fn line_number(mut self, input: i32) -> Self {
-        self.line_number = Some(input);
+        self.line_number = ::std::option::Option::Some(input);
         self
     }
     /// <p>The line number of the node.</p>
-    pub fn set_line_number(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_line_number(mut self, input: ::std::option::Option<i32>) -> Self {
         self.line_number = input;
         self
     }

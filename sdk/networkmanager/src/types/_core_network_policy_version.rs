@@ -2,50 +2,50 @@
 
 /// <p>Describes a core network policy version.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CoreNetworkPolicyVersion {
     /// <p>The ID of a core network.</p>
     #[doc(hidden)]
-    pub core_network_id: std::option::Option<std::string::String>,
+    pub core_network_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the policy version.</p>
     #[doc(hidden)]
-    pub policy_version_id: std::option::Option<i32>,
+    pub policy_version_id: ::std::option::Option<i32>,
     /// <p>Whether a core network policy is the current policy or the most recently submitted policy.</p>
     #[doc(hidden)]
-    pub alias: std::option::Option<crate::types::CoreNetworkPolicyAlias>,
+    pub alias: ::std::option::Option<crate::types::CoreNetworkPolicyAlias>,
     /// <p>The description of a core network policy version.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when a core network policy version was created.</p>
     #[doc(hidden)]
-    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the policy version change set.</p>
     #[doc(hidden)]
-    pub change_set_state: std::option::Option<crate::types::ChangeSetState>,
+    pub change_set_state: ::std::option::Option<crate::types::ChangeSetState>,
 }
 impl CoreNetworkPolicyVersion {
     /// <p>The ID of a core network.</p>
-    pub fn core_network_id(&self) -> std::option::Option<&str> {
+    pub fn core_network_id(&self) -> ::std::option::Option<&str> {
         self.core_network_id.as_deref()
     }
     /// <p>The ID of the policy version.</p>
-    pub fn policy_version_id(&self) -> std::option::Option<i32> {
+    pub fn policy_version_id(&self) -> ::std::option::Option<i32> {
         self.policy_version_id
     }
     /// <p>Whether a core network policy is the current policy or the most recently submitted policy.</p>
-    pub fn alias(&self) -> std::option::Option<&crate::types::CoreNetworkPolicyAlias> {
+    pub fn alias(&self) -> ::std::option::Option<&crate::types::CoreNetworkPolicyAlias> {
         self.alias.as_ref()
     }
     /// <p>The description of a core network policy version.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The timestamp when a core network policy version was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The status of the policy version change set.</p>
-    pub fn change_set_state(&self) -> std::option::Option<&crate::types::ChangeSetState> {
+    pub fn change_set_state(&self) -> ::std::option::Option<&crate::types::ChangeSetState> {
         self.change_set_state.as_ref()
     }
 }
@@ -58,81 +58,89 @@ impl CoreNetworkPolicyVersion {
 
 /// A builder for [`CoreNetworkPolicyVersion`](crate::types::CoreNetworkPolicyVersion).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CoreNetworkPolicyVersionBuilder {
-    pub(crate) core_network_id: std::option::Option<std::string::String>,
-    pub(crate) policy_version_id: std::option::Option<i32>,
-    pub(crate) alias: std::option::Option<crate::types::CoreNetworkPolicyAlias>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) change_set_state: std::option::Option<crate::types::ChangeSetState>,
+    pub(crate) core_network_id: ::std::option::Option<::std::string::String>,
+    pub(crate) policy_version_id: ::std::option::Option<i32>,
+    pub(crate) alias: ::std::option::Option<crate::types::CoreNetworkPolicyAlias>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) change_set_state: ::std::option::Option<crate::types::ChangeSetState>,
 }
 impl CoreNetworkPolicyVersionBuilder {
     /// <p>The ID of a core network.</p>
-    pub fn core_network_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.core_network_id = Some(input.into());
+    pub fn core_network_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.core_network_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of a core network.</p>
-    pub fn set_core_network_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_core_network_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.core_network_id = input;
         self
     }
     /// <p>The ID of the policy version.</p>
     pub fn policy_version_id(mut self, input: i32) -> Self {
-        self.policy_version_id = Some(input);
+        self.policy_version_id = ::std::option::Option::Some(input);
         self
     }
     /// <p>The ID of the policy version.</p>
-    pub fn set_policy_version_id(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_policy_version_id(mut self, input: ::std::option::Option<i32>) -> Self {
         self.policy_version_id = input;
         self
     }
     /// <p>Whether a core network policy is the current policy or the most recently submitted policy.</p>
     pub fn alias(mut self, input: crate::types::CoreNetworkPolicyAlias) -> Self {
-        self.alias = Some(input);
+        self.alias = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether a core network policy is the current policy or the most recently submitted policy.</p>
     pub fn set_alias(
         mut self,
-        input: std::option::Option<crate::types::CoreNetworkPolicyAlias>,
+        input: ::std::option::Option<crate::types::CoreNetworkPolicyAlias>,
     ) -> Self {
         self.alias = input;
         self
     }
     /// <p>The description of a core network policy version.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of a core network policy version.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>The timestamp when a core network policy version was created.</p>
-    pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_at = Some(input);
+    pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The timestamp when a core network policy version was created.</p>
     pub fn set_created_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_at = input;
         self
     }
     /// <p>The status of the policy version change set.</p>
     pub fn change_set_state(mut self, input: crate::types::ChangeSetState) -> Self {
-        self.change_set_state = Some(input);
+        self.change_set_state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the policy version change set.</p>
     pub fn set_change_set_state(
         mut self,
-        input: std::option::Option<crate::types::ChangeSetState>,
+        input: ::std::option::Option<crate::types::ChangeSetState>,
     ) -> Self {
         self.change_set_state = input;
         self

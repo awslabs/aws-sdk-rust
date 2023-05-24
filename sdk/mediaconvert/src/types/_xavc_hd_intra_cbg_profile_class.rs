@@ -39,13 +39,13 @@
 /// Specify the XAVC Intra HD (CBG) Class to set the bitrate of your output. Outputs of the same class have similar image quality over the operating points that are valid for that class.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum XavcHdIntraCbgProfileClass {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum XavcHdIntraCbgProfileClass {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for XavcHdIntraCbgProfileClass {
+impl ::std::convert::From<&str> for XavcHdIntraCbgProfileClass {
     fn from(s: &str) -> Self {
         match s {
             "CLASS_100" => XavcHdIntraCbgProfileClass::Class100,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for XavcHdIntraCbgProfileClass {
         }
     }
 }
-impl std::str::FromStr for XavcHdIntraCbgProfileClass {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for XavcHdIntraCbgProfileClass {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(XavcHdIntraCbgProfileClass::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(XavcHdIntraCbgProfileClass::from(s))
     }
 }
 impl XavcHdIntraCbgProfileClass {
@@ -91,7 +91,7 @@ impl XavcHdIntraCbgProfileClass {
         &["CLASS_100", "CLASS_200", "CLASS_50"]
     }
 }
-impl AsRef<str> for XavcHdIntraCbgProfileClass {
+impl ::std::convert::AsRef<str> for XavcHdIntraCbgProfileClass {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

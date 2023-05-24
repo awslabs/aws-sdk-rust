@@ -2,52 +2,52 @@
 
 /// Caption Description
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CaptionDescription {
     /// Indicates whether the caption track implements accessibility features such as written descriptions of spoken dialog, music, and sounds.
     #[doc(hidden)]
-    pub accessibility: std::option::Option<crate::types::AccessibilityType>,
+    pub accessibility: ::std::option::Option<crate::types::AccessibilityType>,
     /// Specifies which input caption selector to use as a caption source when generating output captions. This field should match a captionSelector name.
     #[doc(hidden)]
-    pub caption_selector_name: std::option::Option<std::string::String>,
+    pub caption_selector_name: ::std::option::Option<::std::string::String>,
     /// Additional settings for captions destination that depend on the destination type.
     #[doc(hidden)]
-    pub destination_settings: std::option::Option<crate::types::CaptionDestinationSettings>,
+    pub destination_settings: ::std::option::Option<crate::types::CaptionDestinationSettings>,
     /// ISO 639-2 three-digit code: http://www.loc.gov/standards/iso639-2/
     #[doc(hidden)]
-    pub language_code: std::option::Option<std::string::String>,
+    pub language_code: ::std::option::Option<::std::string::String>,
     /// Human readable information to indicate captions available for players (eg. English, or Spanish).
     #[doc(hidden)]
-    pub language_description: std::option::Option<std::string::String>,
+    pub language_description: ::std::option::Option<::std::string::String>,
     /// Name of the caption description. Used to associate a caption description with an output. Names must be unique within an event.
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
 }
 impl CaptionDescription {
     /// Indicates whether the caption track implements accessibility features such as written descriptions of spoken dialog, music, and sounds.
-    pub fn accessibility(&self) -> std::option::Option<&crate::types::AccessibilityType> {
+    pub fn accessibility(&self) -> ::std::option::Option<&crate::types::AccessibilityType> {
         self.accessibility.as_ref()
     }
     /// Specifies which input caption selector to use as a caption source when generating output captions. This field should match a captionSelector name.
-    pub fn caption_selector_name(&self) -> std::option::Option<&str> {
+    pub fn caption_selector_name(&self) -> ::std::option::Option<&str> {
         self.caption_selector_name.as_deref()
     }
     /// Additional settings for captions destination that depend on the destination type.
     pub fn destination_settings(
         &self,
-    ) -> std::option::Option<&crate::types::CaptionDestinationSettings> {
+    ) -> ::std::option::Option<&crate::types::CaptionDestinationSettings> {
         self.destination_settings.as_ref()
     }
     /// ISO 639-2 three-digit code: http://www.loc.gov/standards/iso639-2/
-    pub fn language_code(&self) -> std::option::Option<&str> {
+    pub fn language_code(&self) -> ::std::option::Option<&str> {
         self.language_code.as_deref()
     }
     /// Human readable information to indicate captions available for players (eg. English, or Spanish).
-    pub fn language_description(&self) -> std::option::Option<&str> {
+    pub fn language_description(&self) -> ::std::option::Option<&str> {
         self.language_description.as_deref()
     }
     /// Name of the caption description. Used to associate a caption description with an output. Names must be unique within an event.
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
 }
@@ -60,85 +60,100 @@ impl CaptionDescription {
 
 /// A builder for [`CaptionDescription`](crate::types::CaptionDescription).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CaptionDescriptionBuilder {
-    pub(crate) accessibility: std::option::Option<crate::types::AccessibilityType>,
-    pub(crate) caption_selector_name: std::option::Option<std::string::String>,
-    pub(crate) destination_settings: std::option::Option<crate::types::CaptionDestinationSettings>,
-    pub(crate) language_code: std::option::Option<std::string::String>,
-    pub(crate) language_description: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
+    pub(crate) accessibility: ::std::option::Option<crate::types::AccessibilityType>,
+    pub(crate) caption_selector_name: ::std::option::Option<::std::string::String>,
+    pub(crate) destination_settings:
+        ::std::option::Option<crate::types::CaptionDestinationSettings>,
+    pub(crate) language_code: ::std::option::Option<::std::string::String>,
+    pub(crate) language_description: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
 }
 impl CaptionDescriptionBuilder {
     /// Indicates whether the caption track implements accessibility features such as written descriptions of spoken dialog, music, and sounds.
     pub fn accessibility(mut self, input: crate::types::AccessibilityType) -> Self {
-        self.accessibility = Some(input);
+        self.accessibility = ::std::option::Option::Some(input);
         self
     }
     /// Indicates whether the caption track implements accessibility features such as written descriptions of spoken dialog, music, and sounds.
     pub fn set_accessibility(
         mut self,
-        input: std::option::Option<crate::types::AccessibilityType>,
+        input: ::std::option::Option<crate::types::AccessibilityType>,
     ) -> Self {
         self.accessibility = input;
         self
     }
     /// Specifies which input caption selector to use as a caption source when generating output captions. This field should match a captionSelector name.
-    pub fn caption_selector_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.caption_selector_name = Some(input.into());
+    pub fn caption_selector_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.caption_selector_name = ::std::option::Option::Some(input.into());
         self
     }
     /// Specifies which input caption selector to use as a caption source when generating output captions. This field should match a captionSelector name.
     pub fn set_caption_selector_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.caption_selector_name = input;
         self
     }
     /// Additional settings for captions destination that depend on the destination type.
     pub fn destination_settings(mut self, input: crate::types::CaptionDestinationSettings) -> Self {
-        self.destination_settings = Some(input);
+        self.destination_settings = ::std::option::Option::Some(input);
         self
     }
     /// Additional settings for captions destination that depend on the destination type.
     pub fn set_destination_settings(
         mut self,
-        input: std::option::Option<crate::types::CaptionDestinationSettings>,
+        input: ::std::option::Option<crate::types::CaptionDestinationSettings>,
     ) -> Self {
         self.destination_settings = input;
         self
     }
     /// ISO 639-2 three-digit code: http://www.loc.gov/standards/iso639-2/
-    pub fn language_code(mut self, input: impl Into<std::string::String>) -> Self {
-        self.language_code = Some(input.into());
+    pub fn language_code(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.language_code = ::std::option::Option::Some(input.into());
         self
     }
     /// ISO 639-2 three-digit code: http://www.loc.gov/standards/iso639-2/
-    pub fn set_language_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_language_code(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.language_code = input;
         self
     }
     /// Human readable information to indicate captions available for players (eg. English, or Spanish).
-    pub fn language_description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.language_description = Some(input.into());
+    pub fn language_description(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.language_description = ::std::option::Option::Some(input.into());
         self
     }
     /// Human readable information to indicate captions available for players (eg. English, or Spanish).
     pub fn set_language_description(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.language_description = input;
         self
     }
     /// Name of the caption description. Used to associate a caption description with an output. Names must be unique within an event.
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// Name of the caption description. Used to associate a caption description with an output. Names must be unique within an event.
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }

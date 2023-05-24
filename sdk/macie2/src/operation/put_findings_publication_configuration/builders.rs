@@ -6,47 +6,50 @@ pub use crate::operation::put_findings_publication_configuration::_put_findings_
 /// Fluent builder constructing a request to `PutFindingsPublicationConfiguration`.
 ///
 /// <p>Updates the configuration settings for publishing findings to Security Hub.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutFindingsPublicationConfigurationFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::put_findings_publication_configuration::builders::PutFindingsPublicationConfigurationInputBuilder,
 }
 impl PutFindingsPublicationConfigurationFluentBuilder {
     /// Creates a new `PutFindingsPublicationConfiguration`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::put_findings_publication_configuration::PutFindingsPublicationConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::put_findings_publication_configuration::PutFindingsPublicationConfigurationError>
+                    pub async fn customize(self) -> ::std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::put_findings_publication_configuration::PutFindingsPublicationConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                        ::aws_smithy_http::result::SdkError<crate::operation::put_findings_publication_configuration::PutFindingsPublicationConfigurationError>
     >{
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::put_findings_publication_configuration::PutFindingsPublicationConfigurationOutput, aws_smithy_http::result::SdkError<crate::operation::put_findings_publication_configuration::PutFindingsPublicationConfigurationError>>
+                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::put_findings_publication_configuration::PutFindingsPublicationConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_findings_publication_configuration::PutFindingsPublicationConfigurationError>>
                      {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -57,17 +60,17 @@ impl PutFindingsPublicationConfigurationFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> std::result::Result<crate::operation::put_findings_publication_configuration::PutFindingsPublicationConfigurationOutput, aws_smithy_http::result::SdkError<crate::operation::put_findings_publication_configuration::PutFindingsPublicationConfigurationError>>
+                        pub async fn send(self) -> ::std::result::Result<crate::operation::put_findings_publication_configuration::PutFindingsPublicationConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_findings_publication_configuration::PutFindingsPublicationConfigurationError>>
                          {
         self.send_middleware().await
     }
     /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
-    pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
     /// <p>A unique, case-sensitive token that you provide to ensure the idempotency of the request.</p>
-    pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
@@ -82,7 +85,7 @@ impl PutFindingsPublicationConfigurationFluentBuilder {
     /// <p>The configuration settings that determine which findings to publish to Security Hub.</p>
     pub fn set_security_hub_configuration(
         mut self,
-        input: std::option::Option<crate::types::SecurityHubConfiguration>,
+        input: ::std::option::Option<crate::types::SecurityHubConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_security_hub_configuration(input);
         self

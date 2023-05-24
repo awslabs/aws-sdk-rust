@@ -2,54 +2,56 @@
 
 /// <p>Provides the configuration information to connect to a index. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatabaseConfiguration {
     /// <p>The type of database engine that runs the database.</p>
     #[doc(hidden)]
-    pub database_engine_type: std::option::Option<crate::types::DatabaseEngineType>,
+    pub database_engine_type: ::std::option::Option<crate::types::DatabaseEngineType>,
     /// <p>Configuration information that's required to connect to a database.</p>
     #[doc(hidden)]
-    pub connection_configuration: std::option::Option<crate::types::ConnectionConfiguration>,
+    pub connection_configuration: ::std::option::Option<crate::types::ConnectionConfiguration>,
     /// <p>Provides the configuration information to connect to an Amazon VPC.</p>
     #[doc(hidden)]
-    pub vpc_configuration: std::option::Option<crate::types::DataSourceVpcConfiguration>,
+    pub vpc_configuration: ::std::option::Option<crate::types::DataSourceVpcConfiguration>,
     /// <p>Information about where the index should get the document information from the database.</p>
     #[doc(hidden)]
-    pub column_configuration: std::option::Option<crate::types::ColumnConfiguration>,
+    pub column_configuration: ::std::option::Option<crate::types::ColumnConfiguration>,
     /// <p>Information about the database column that provides information for user context filtering.</p>
     #[doc(hidden)]
-    pub acl_configuration: std::option::Option<crate::types::AclConfiguration>,
+    pub acl_configuration: ::std::option::Option<crate::types::AclConfiguration>,
     /// <p>Provides information about how Amazon Kendra uses quote marks around SQL identifiers when querying a database data source.</p>
     #[doc(hidden)]
-    pub sql_configuration: std::option::Option<crate::types::SqlConfiguration>,
+    pub sql_configuration: ::std::option::Option<crate::types::SqlConfiguration>,
 }
 impl DatabaseConfiguration {
     /// <p>The type of database engine that runs the database.</p>
-    pub fn database_engine_type(&self) -> std::option::Option<&crate::types::DatabaseEngineType> {
+    pub fn database_engine_type(&self) -> ::std::option::Option<&crate::types::DatabaseEngineType> {
         self.database_engine_type.as_ref()
     }
     /// <p>Configuration information that's required to connect to a database.</p>
     pub fn connection_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::ConnectionConfiguration> {
+    ) -> ::std::option::Option<&crate::types::ConnectionConfiguration> {
         self.connection_configuration.as_ref()
     }
     /// <p>Provides the configuration information to connect to an Amazon VPC.</p>
     pub fn vpc_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::DataSourceVpcConfiguration> {
+    ) -> ::std::option::Option<&crate::types::DataSourceVpcConfiguration> {
         self.vpc_configuration.as_ref()
     }
     /// <p>Information about where the index should get the document information from the database.</p>
-    pub fn column_configuration(&self) -> std::option::Option<&crate::types::ColumnConfiguration> {
+    pub fn column_configuration(
+        &self,
+    ) -> ::std::option::Option<&crate::types::ColumnConfiguration> {
         self.column_configuration.as_ref()
     }
     /// <p>Information about the database column that provides information for user context filtering.</p>
-    pub fn acl_configuration(&self) -> std::option::Option<&crate::types::AclConfiguration> {
+    pub fn acl_configuration(&self) -> ::std::option::Option<&crate::types::AclConfiguration> {
         self.acl_configuration.as_ref()
     }
     /// <p>Provides information about how Amazon Kendra uses quote marks around SQL identifiers when querying a database data source.</p>
-    pub fn sql_configuration(&self) -> std::option::Option<&crate::types::SqlConfiguration> {
+    pub fn sql_configuration(&self) -> ::std::option::Option<&crate::types::SqlConfiguration> {
         self.sql_configuration.as_ref()
     }
 }
@@ -62,25 +64,28 @@ impl DatabaseConfiguration {
 
 /// A builder for [`DatabaseConfiguration`](crate::types::DatabaseConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DatabaseConfigurationBuilder {
-    pub(crate) database_engine_type: std::option::Option<crate::types::DatabaseEngineType>,
-    pub(crate) connection_configuration: std::option::Option<crate::types::ConnectionConfiguration>,
-    pub(crate) vpc_configuration: std::option::Option<crate::types::DataSourceVpcConfiguration>,
-    pub(crate) column_configuration: std::option::Option<crate::types::ColumnConfiguration>,
-    pub(crate) acl_configuration: std::option::Option<crate::types::AclConfiguration>,
-    pub(crate) sql_configuration: std::option::Option<crate::types::SqlConfiguration>,
+    pub(crate) database_engine_type: ::std::option::Option<crate::types::DatabaseEngineType>,
+    pub(crate) connection_configuration:
+        ::std::option::Option<crate::types::ConnectionConfiguration>,
+    pub(crate) vpc_configuration: ::std::option::Option<crate::types::DataSourceVpcConfiguration>,
+    pub(crate) column_configuration: ::std::option::Option<crate::types::ColumnConfiguration>,
+    pub(crate) acl_configuration: ::std::option::Option<crate::types::AclConfiguration>,
+    pub(crate) sql_configuration: ::std::option::Option<crate::types::SqlConfiguration>,
 }
 impl DatabaseConfigurationBuilder {
     /// <p>The type of database engine that runs the database.</p>
     pub fn database_engine_type(mut self, input: crate::types::DatabaseEngineType) -> Self {
-        self.database_engine_type = Some(input);
+        self.database_engine_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of database engine that runs the database.</p>
     pub fn set_database_engine_type(
         mut self,
-        input: std::option::Option<crate::types::DatabaseEngineType>,
+        input: ::std::option::Option<crate::types::DatabaseEngineType>,
     ) -> Self {
         self.database_engine_type = input;
         self
@@ -90,65 +95,65 @@ impl DatabaseConfigurationBuilder {
         mut self,
         input: crate::types::ConnectionConfiguration,
     ) -> Self {
-        self.connection_configuration = Some(input);
+        self.connection_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configuration information that's required to connect to a database.</p>
     pub fn set_connection_configuration(
         mut self,
-        input: std::option::Option<crate::types::ConnectionConfiguration>,
+        input: ::std::option::Option<crate::types::ConnectionConfiguration>,
     ) -> Self {
         self.connection_configuration = input;
         self
     }
     /// <p>Provides the configuration information to connect to an Amazon VPC.</p>
     pub fn vpc_configuration(mut self, input: crate::types::DataSourceVpcConfiguration) -> Self {
-        self.vpc_configuration = Some(input);
+        self.vpc_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides the configuration information to connect to an Amazon VPC.</p>
     pub fn set_vpc_configuration(
         mut self,
-        input: std::option::Option<crate::types::DataSourceVpcConfiguration>,
+        input: ::std::option::Option<crate::types::DataSourceVpcConfiguration>,
     ) -> Self {
         self.vpc_configuration = input;
         self
     }
     /// <p>Information about where the index should get the document information from the database.</p>
     pub fn column_configuration(mut self, input: crate::types::ColumnConfiguration) -> Self {
-        self.column_configuration = Some(input);
+        self.column_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about where the index should get the document information from the database.</p>
     pub fn set_column_configuration(
         mut self,
-        input: std::option::Option<crate::types::ColumnConfiguration>,
+        input: ::std::option::Option<crate::types::ColumnConfiguration>,
     ) -> Self {
         self.column_configuration = input;
         self
     }
     /// <p>Information about the database column that provides information for user context filtering.</p>
     pub fn acl_configuration(mut self, input: crate::types::AclConfiguration) -> Self {
-        self.acl_configuration = Some(input);
+        self.acl_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the database column that provides information for user context filtering.</p>
     pub fn set_acl_configuration(
         mut self,
-        input: std::option::Option<crate::types::AclConfiguration>,
+        input: ::std::option::Option<crate::types::AclConfiguration>,
     ) -> Self {
         self.acl_configuration = input;
         self
     }
     /// <p>Provides information about how Amazon Kendra uses quote marks around SQL identifiers when querying a database data source.</p>
     pub fn sql_configuration(mut self, input: crate::types::SqlConfiguration) -> Self {
-        self.sql_configuration = Some(input);
+        self.sql_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides information about how Amazon Kendra uses quote marks around SQL identifiers when querying a database data source.</p>
     pub fn set_sql_configuration(
         mut self,
-        input: std::option::Option<crate::types::SqlConfiguration>,
+        input: ::std::option::Option<crate::types::SqlConfiguration>,
     ) -> Self {
         self.sql_configuration = input;
         self

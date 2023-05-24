@@ -2,50 +2,50 @@
 
 /// <p>Properties of an inferred CSV format.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetectedCsvFormatDescriptor {
     /// <p>The format's file compression.</p>
     #[doc(hidden)]
-    pub file_compression: std::option::Option<crate::types::DetectedField>,
+    pub file_compression: ::std::option::Option<crate::types::DetectedField>,
     /// <p>The format's charset.</p>
     #[doc(hidden)]
-    pub charset: std::option::Option<crate::types::DetectedField>,
+    pub charset: ::std::option::Option<crate::types::DetectedField>,
     /// <p>Whether the format includes a header.</p>
     #[doc(hidden)]
-    pub contains_header: std::option::Option<crate::types::DetectedField>,
+    pub contains_header: ::std::option::Option<crate::types::DetectedField>,
     /// <p>The format's delimiter.</p>
     #[doc(hidden)]
-    pub delimiter: std::option::Option<crate::types::DetectedField>,
+    pub delimiter: ::std::option::Option<crate::types::DetectedField>,
     /// <p>The format's header list.</p>
     #[doc(hidden)]
-    pub header_list: std::option::Option<crate::types::DetectedField>,
+    pub header_list: ::std::option::Option<crate::types::DetectedField>,
     /// <p>The format's quote symbol.</p>
     #[doc(hidden)]
-    pub quote_symbol: std::option::Option<crate::types::DetectedField>,
+    pub quote_symbol: ::std::option::Option<crate::types::DetectedField>,
 }
 impl DetectedCsvFormatDescriptor {
     /// <p>The format's file compression.</p>
-    pub fn file_compression(&self) -> std::option::Option<&crate::types::DetectedField> {
+    pub fn file_compression(&self) -> ::std::option::Option<&crate::types::DetectedField> {
         self.file_compression.as_ref()
     }
     /// <p>The format's charset.</p>
-    pub fn charset(&self) -> std::option::Option<&crate::types::DetectedField> {
+    pub fn charset(&self) -> ::std::option::Option<&crate::types::DetectedField> {
         self.charset.as_ref()
     }
     /// <p>Whether the format includes a header.</p>
-    pub fn contains_header(&self) -> std::option::Option<&crate::types::DetectedField> {
+    pub fn contains_header(&self) -> ::std::option::Option<&crate::types::DetectedField> {
         self.contains_header.as_ref()
     }
     /// <p>The format's delimiter.</p>
-    pub fn delimiter(&self) -> std::option::Option<&crate::types::DetectedField> {
+    pub fn delimiter(&self) -> ::std::option::Option<&crate::types::DetectedField> {
         self.delimiter.as_ref()
     }
     /// <p>The format's header list.</p>
-    pub fn header_list(&self) -> std::option::Option<&crate::types::DetectedField> {
+    pub fn header_list(&self) -> ::std::option::Option<&crate::types::DetectedField> {
         self.header_list.as_ref()
     }
     /// <p>The format's quote symbol.</p>
-    pub fn quote_symbol(&self) -> std::option::Option<&crate::types::DetectedField> {
+    pub fn quote_symbol(&self) -> ::std::option::Option<&crate::types::DetectedField> {
         self.quote_symbol.as_ref()
     }
 }
@@ -58,87 +58,92 @@ impl DetectedCsvFormatDescriptor {
 
 /// A builder for [`DetectedCsvFormatDescriptor`](crate::types::DetectedCsvFormatDescriptor).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DetectedCsvFormatDescriptorBuilder {
-    pub(crate) file_compression: std::option::Option<crate::types::DetectedField>,
-    pub(crate) charset: std::option::Option<crate::types::DetectedField>,
-    pub(crate) contains_header: std::option::Option<crate::types::DetectedField>,
-    pub(crate) delimiter: std::option::Option<crate::types::DetectedField>,
-    pub(crate) header_list: std::option::Option<crate::types::DetectedField>,
-    pub(crate) quote_symbol: std::option::Option<crate::types::DetectedField>,
+    pub(crate) file_compression: ::std::option::Option<crate::types::DetectedField>,
+    pub(crate) charset: ::std::option::Option<crate::types::DetectedField>,
+    pub(crate) contains_header: ::std::option::Option<crate::types::DetectedField>,
+    pub(crate) delimiter: ::std::option::Option<crate::types::DetectedField>,
+    pub(crate) header_list: ::std::option::Option<crate::types::DetectedField>,
+    pub(crate) quote_symbol: ::std::option::Option<crate::types::DetectedField>,
 }
 impl DetectedCsvFormatDescriptorBuilder {
     /// <p>The format's file compression.</p>
     pub fn file_compression(mut self, input: crate::types::DetectedField) -> Self {
-        self.file_compression = Some(input);
+        self.file_compression = ::std::option::Option::Some(input);
         self
     }
     /// <p>The format's file compression.</p>
     pub fn set_file_compression(
         mut self,
-        input: std::option::Option<crate::types::DetectedField>,
+        input: ::std::option::Option<crate::types::DetectedField>,
     ) -> Self {
         self.file_compression = input;
         self
     }
     /// <p>The format's charset.</p>
     pub fn charset(mut self, input: crate::types::DetectedField) -> Self {
-        self.charset = Some(input);
+        self.charset = ::std::option::Option::Some(input);
         self
     }
     /// <p>The format's charset.</p>
-    pub fn set_charset(mut self, input: std::option::Option<crate::types::DetectedField>) -> Self {
+    pub fn set_charset(
+        mut self,
+        input: ::std::option::Option<crate::types::DetectedField>,
+    ) -> Self {
         self.charset = input;
         self
     }
     /// <p>Whether the format includes a header.</p>
     pub fn contains_header(mut self, input: crate::types::DetectedField) -> Self {
-        self.contains_header = Some(input);
+        self.contains_header = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether the format includes a header.</p>
     pub fn set_contains_header(
         mut self,
-        input: std::option::Option<crate::types::DetectedField>,
+        input: ::std::option::Option<crate::types::DetectedField>,
     ) -> Self {
         self.contains_header = input;
         self
     }
     /// <p>The format's delimiter.</p>
     pub fn delimiter(mut self, input: crate::types::DetectedField) -> Self {
-        self.delimiter = Some(input);
+        self.delimiter = ::std::option::Option::Some(input);
         self
     }
     /// <p>The format's delimiter.</p>
     pub fn set_delimiter(
         mut self,
-        input: std::option::Option<crate::types::DetectedField>,
+        input: ::std::option::Option<crate::types::DetectedField>,
     ) -> Self {
         self.delimiter = input;
         self
     }
     /// <p>The format's header list.</p>
     pub fn header_list(mut self, input: crate::types::DetectedField) -> Self {
-        self.header_list = Some(input);
+        self.header_list = ::std::option::Option::Some(input);
         self
     }
     /// <p>The format's header list.</p>
     pub fn set_header_list(
         mut self,
-        input: std::option::Option<crate::types::DetectedField>,
+        input: ::std::option::Option<crate::types::DetectedField>,
     ) -> Self {
         self.header_list = input;
         self
     }
     /// <p>The format's quote symbol.</p>
     pub fn quote_symbol(mut self, input: crate::types::DetectedField) -> Self {
-        self.quote_symbol = Some(input);
+        self.quote_symbol = ::std::option::Option::Some(input);
         self
     }
     /// <p>The format's quote symbol.</p>
     pub fn set_quote_symbol(
         mut self,
-        input: std::option::Option<crate::types::DetectedField>,
+        input: ::std::option::Option<crate::types::DetectedField>,
     ) -> Self {
         self.quote_symbol = input;
         self

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteUsageLimit`](crate::operation::delete_usage_limit::builders::DeleteUsageLimitFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`usage_limit_id(impl Into<String>)`](crate::operation::delete_usage_limit::builders::DeleteUsageLimitFluentBuilder::usage_limit_id) / [`set_usage_limit_id(Option<String>)`](crate::operation::delete_usage_limit::builders::DeleteUsageLimitFluentBuilder::set_usage_limit_id): <p>The identifier of the usage limit to delete.</p>
+    ///   - [`usage_limit_id(impl ::std::convert::Into<String>)`](crate::operation::delete_usage_limit::builders::DeleteUsageLimitFluentBuilder::usage_limit_id) / [`set_usage_limit_id(Option<String>)`](crate::operation::delete_usage_limit::builders::DeleteUsageLimitFluentBuilder::set_usage_limit_id): <p>The identifier of the usage limit to delete.</p>
     /// - On success, responds with [`DeleteUsageLimitOutput`](crate::operation::delete_usage_limit::DeleteUsageLimitOutput)
     /// - On failure, responds with [`SdkError<DeleteUsageLimitError>`](crate::operation::delete_usage_limit::DeleteUsageLimitError)
     pub fn delete_usage_limit(

@@ -2,22 +2,22 @@
 
 /// <p>Container for the request parameters to the <code>ListVersions</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListVersionsInput {
     /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
     #[doc(hidden)]
-    pub max_results: std::option::Option<i32>,
+    pub max_results: ::std::option::Option<i32>,
     /// <p>If your initial <code>ListVersions</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListVersions</code> operations, which returns results in the next page.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListVersionsInput {
     /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
-    pub fn max_results(&self) -> std::option::Option<i32> {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>If your initial <code>ListVersions</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListVersions</code> operations, which returns results in the next page.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
@@ -30,40 +30,42 @@ impl ListVersionsInput {
 
 /// A builder for [`ListVersionsInput`](crate::operation::list_versions::ListVersionsInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListVersionsInputBuilder {
-    pub(crate) max_results: std::option::Option<i32>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) max_results: ::std::option::Option<i32>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListVersionsInputBuilder {
     /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
-        self.max_results = Some(input);
+        self.max_results = ::std::option::Option::Some(input);
         self
     }
     /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
-    pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
     /// <p>If your initial <code>ListVersions</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListVersions</code> operations, which returns results in the next page.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If your initial <code>ListVersions</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListVersions</code> operations, which returns results in the next page.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
     /// Consumes the builder and constructs a [`ListVersionsInput`](crate::operation::list_versions::ListVersionsInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::list_versions::ListVersionsInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::list_versions::ListVersionsInput {
+        ::std::result::Result::Ok(crate::operation::list_versions::ListVersionsInput {
             max_results: self.max_results,
             next_token: self.next_token,
         })

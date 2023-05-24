@@ -2,15 +2,15 @@
 
 /// <p>AWS account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Account {
     /// <p>Account ID of AWS account.</p>
     #[doc(hidden)]
-    pub account_id: std::option::Option<std::string::String>,
+    pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl Account {
     /// <p>Account ID of AWS account.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl Account {
 
 /// A builder for [`Account`](crate::types::Account).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AccountBuilder {
-    pub(crate) account_id: std::option::Option<std::string::String>,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }
 impl AccountBuilder {
     /// <p>Account ID of AWS account.</p>
-    pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.account_id = Some(input.into());
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Account ID of AWS account.</p>
-    pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
     }

@@ -2,30 +2,30 @@
 
 /// <p>Container for response parameters to the <code><code>ListVpcEndpointsForDomain</code></code> operation. Returns a list containing summarized details of the VPC endpoints.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListVpcEndpointsForDomainOutput {
     /// <p>Provides list of <code>VpcEndpointSummary</code> summarizing details of the VPC endpoints.</p>
     #[doc(hidden)]
     pub vpc_endpoint_summary_list:
-        std::option::Option<std::vec::Vec<crate::types::VpcEndpointSummary>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::VpcEndpointSummary>>,
     /// <p>Information about each endpoint associated with the domain.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListVpcEndpointsForDomainOutput {
     /// <p>Provides list of <code>VpcEndpointSummary</code> summarizing details of the VPC endpoints.</p>
     pub fn vpc_endpoint_summary_list(
         &self,
-    ) -> std::option::Option<&[crate::types::VpcEndpointSummary]> {
+    ) -> ::std::option::Option<&[crate::types::VpcEndpointSummary]> {
         self.vpc_endpoint_summary_list.as_deref()
     }
     /// <p>Information about each endpoint associated with the domain.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListVpcEndpointsForDomainOutput {
+impl ::aws_http::request_id::RequestId for ListVpcEndpointsForDomainOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -39,11 +39,13 @@ impl ListVpcEndpointsForDomainOutput {
 
 /// A builder for [`ListVpcEndpointsForDomainOutput`](crate::operation::list_vpc_endpoints_for_domain::ListVpcEndpointsForDomainOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListVpcEndpointsForDomainOutputBuilder {
     pub(crate) vpc_endpoint_summary_list:
-        std::option::Option<std::vec::Vec<crate::types::VpcEndpointSummary>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::VpcEndpointSummary>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListVpcEndpointsForDomainOutputBuilder {
@@ -55,24 +57,24 @@ impl ListVpcEndpointsForDomainOutputBuilder {
     pub fn vpc_endpoint_summary_list(mut self, input: crate::types::VpcEndpointSummary) -> Self {
         let mut v = self.vpc_endpoint_summary_list.unwrap_or_default();
         v.push(input);
-        self.vpc_endpoint_summary_list = Some(v);
+        self.vpc_endpoint_summary_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>Provides list of <code>VpcEndpointSummary</code> summarizing details of the VPC endpoints.</p>
     pub fn set_vpc_endpoint_summary_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::VpcEndpointSummary>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::VpcEndpointSummary>>,
     ) -> Self {
         self.vpc_endpoint_summary_list = input;
         self
     }
     /// <p>Information about each endpoint associated with the domain.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Information about each endpoint associated with the domain.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

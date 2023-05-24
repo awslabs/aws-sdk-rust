@@ -6,29 +6,29 @@ pub use crate::operation::describe_anomaly_detectors::_describe_anomaly_detector
 /// Fluent builder constructing a request to `DescribeAnomalyDetectors`.
 ///
 /// <p>Lists the anomaly detection models that you have created in your account. For single metric anomaly detectors, you can list all of the models in your account or filter the results to only the models that are related to a certain namespace, metric name, or metric dimension. For metric math anomaly detectors, you can list them by adding <code>METRIC_MATH</code> to the <code>AnomalyDetectorTypes</code> array. This will return all metric math anomaly detectors in your account.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeAnomalyDetectorsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::describe_anomaly_detectors::builders::DescribeAnomalyDetectorsInputBuilder,
 }
 impl DescribeAnomalyDetectorsFluentBuilder {
     /// Creates a new `DescribeAnomalyDetectors`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::describe_anomaly_detectors::DescribeAnomalyDetectors,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::describe_anomaly_detectors::DescribeAnomalyDetectorsError,
         >,
     > {
@@ -36,30 +36,33 @@ impl DescribeAnomalyDetectorsFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::describe_anomaly_detectors::DescribeAnomalyDetectorsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::describe_anomaly_detectors::DescribeAnomalyDetectorsError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,9 +75,9 @@ impl DescribeAnomalyDetectorsFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::describe_anomaly_detectors::DescribeAnomalyDetectorsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::describe_anomaly_detectors::DescribeAnomalyDetectorsError,
         >,
     > {
@@ -90,12 +93,12 @@ impl DescribeAnomalyDetectorsFluentBuilder {
         crate::operation::describe_anomaly_detectors::paginator::DescribeAnomalyDetectorsPaginator::new(self.handle, self.inner)
     }
     /// <p>Use the token returned by the previous operation to request the next page of results.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
     /// <p>Use the token returned by the previous operation to request the next page of results.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
@@ -107,27 +110,27 @@ impl DescribeAnomalyDetectorsFluentBuilder {
     }
     /// <p>The maximum number of results to return in one operation. The maximum value that you can specify is 100.</p>
     /// <p>To retrieve the remaining results, make another call with the returned <code>NextToken</code> value. </p>
-    pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
     /// <p>Limits the results to only the anomaly detection models that are associated with the specified namespace.</p>
-    pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.namespace(input.into());
         self
     }
     /// <p>Limits the results to only the anomaly detection models that are associated with the specified namespace.</p>
-    pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_namespace(input);
         self
     }
     /// <p>Limits the results to only the anomaly detection models that are associated with the specified metric name. If there are multiple metrics with this name in different namespaces that have anomaly detection models, they're all returned.</p>
-    pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn metric_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.metric_name(input.into());
         self
     }
     /// <p>Limits the results to only the anomaly detection models that are associated with the specified metric name. If there are multiple metrics with this name in different namespaces that have anomaly detection models, they're all returned.</p>
-    pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_metric_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_metric_name(input);
         self
     }
@@ -143,7 +146,7 @@ impl DescribeAnomalyDetectorsFluentBuilder {
     /// <p>Limits the results to only the anomaly detection models that are associated with the specified metric dimensions. If there are multiple metrics that have these dimensions and have anomaly detection models associated, they're all returned.</p>
     pub fn set_dimensions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Dimension>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>,
     ) -> Self {
         self.inner = self.inner.set_dimensions(input);
         self
@@ -160,7 +163,7 @@ impl DescribeAnomalyDetectorsFluentBuilder {
     /// <p>The anomaly detector types to request when using <code>DescribeAnomalyDetectorsInput</code>. If empty, defaults to <code>SINGLE_METRIC</code>.</p>
     pub fn set_anomaly_detector_types(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AnomalyDetectorType>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AnomalyDetectorType>>,
     ) -> Self {
         self.inner = self.inner.set_anomaly_detector_types(input);
         self

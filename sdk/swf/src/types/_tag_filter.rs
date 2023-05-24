@@ -2,17 +2,17 @@
 
 /// <p>Used to filter the workflow executions in visibility APIs based on a tag.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TagFilter {
     /// <p> Specifies the tag that must be associated with the execution for it to meet the filter criteria.</p>
     /// <p>Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.</p>
     #[doc(hidden)]
-    pub tag: std::option::Option<std::string::String>,
+    pub tag: ::std::option::Option<::std::string::String>,
 }
 impl TagFilter {
     /// <p> Specifies the tag that must be associated with the execution for it to meet the filter criteria.</p>
     /// <p>Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.</p>
-    pub fn tag(&self) -> std::option::Option<&str> {
+    pub fn tag(&self) -> ::std::option::Option<&str> {
         self.tag.as_deref()
     }
 }
@@ -25,20 +25,22 @@ impl TagFilter {
 
 /// A builder for [`TagFilter`](crate::types::TagFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TagFilterBuilder {
-    pub(crate) tag: std::option::Option<std::string::String>,
+    pub(crate) tag: ::std::option::Option<::std::string::String>,
 }
 impl TagFilterBuilder {
     /// <p> Specifies the tag that must be associated with the execution for it to meet the filter criteria.</p>
     /// <p>Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.</p>
-    pub fn tag(mut self, input: impl Into<std::string::String>) -> Self {
-        self.tag = Some(input.into());
+    pub fn tag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.tag = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Specifies the tag that must be associated with the execution for it to meet the filter criteria.</p>
     /// <p>Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.</p>
-    pub fn set_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tag = input;
         self
     }

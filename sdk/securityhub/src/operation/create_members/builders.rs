@@ -21,56 +21,59 @@ pub use crate::operation::create_members::_create_members_input::CreateMembersIn
 /// </ul>
 /// <p>A permissions policy is added that permits the administrator account to view the findings generated in the member account.</p>
 /// <p>To remove the association between the administrator and member accounts, use the <code>DisassociateFromMasterAccount</code> or <code>DisassociateMembers</code> operation.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateMembersFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_members::builders::CreateMembersInputBuilder,
 }
 impl CreateMembersFluentBuilder {
     /// Creates a new `CreateMembers`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_members::CreateMembers,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_members::CreateMembersError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_members::CreateMembersError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_members::CreateMembersOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_members::CreateMembersError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_members::CreateMembersError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -83,9 +86,9 @@ impl CreateMembersFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_members::CreateMembersOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_members::CreateMembersError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_members::CreateMembersError>,
     > {
         self.send_middleware().await
     }
@@ -101,7 +104,7 @@ impl CreateMembersFluentBuilder {
     /// <p>The list of accounts to associate with the Security Hub administrator account. For each account, the list includes the account ID and optionally the email address.</p>
     pub fn set_account_details(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AccountDetails>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AccountDetails>>,
     ) -> Self {
         self.inner = self.inner.set_account_details(input);
         self

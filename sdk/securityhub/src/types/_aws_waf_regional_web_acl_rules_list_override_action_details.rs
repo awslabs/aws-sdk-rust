@@ -2,15 +2,15 @@
 
 /// <p>Provides details about the action to use in the place of the action that results from the rule group evaluation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsWafRegionalWebAclRulesListOverrideActionDetails {
     /// <p>Overrides the rule evaluation result in the rule group. </p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<std::string::String>,
+    pub r#type: ::std::option::Option<::std::string::String>,
 }
 impl AwsWafRegionalWebAclRulesListOverrideActionDetails {
     /// <p>Overrides the rule evaluation result in the rule group. </p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
     }
 }
@@ -24,18 +24,20 @@ impl AwsWafRegionalWebAclRulesListOverrideActionDetails {
 
 /// A builder for [`AwsWafRegionalWebAclRulesListOverrideActionDetails`](crate::types::AwsWafRegionalWebAclRulesListOverrideActionDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsWafRegionalWebAclRulesListOverrideActionDetailsBuilder {
-    pub(crate) r#type: std::option::Option<std::string::String>,
+    pub(crate) r#type: ::std::option::Option<::std::string::String>,
 }
 impl AwsWafRegionalWebAclRulesListOverrideActionDetailsBuilder {
     /// <p>Overrides the rule evaluation result in the rule group. </p>
-    pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.r#type = Some(input.into());
+    pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.r#type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Overrides the rule evaluation result in the rule group. </p>
-    pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
     }

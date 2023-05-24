@@ -2,7 +2,7 @@
 
 /// <p>Information about minimum healthy instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MinimumHealthyHosts {
     /// <p>The minimum healthy instance type:</p>
     /// <ul>
@@ -14,7 +14,7 @@ pub struct MinimumHealthyHosts {
     /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html">CodeDeploy Instance Health</a> in the <i>CodeDeploy User Guide</i>.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::MinimumHealthyHostsType>,
+    pub r#type: ::std::option::Option<crate::types::MinimumHealthyHostsType>,
     /// <p>The minimum healthy instance value.</p>
     #[doc(hidden)]
     pub value: i32,
@@ -29,7 +29,7 @@ impl MinimumHealthyHosts {
     /// <p>In a call to the <code>GetDeploymentConfig</code>, CodeDeployDefault.OneAtATime returns a minimum healthy instance type of MOST_CONCURRENCY and a value of 1. This means a deployment to only one instance at a time. (You cannot set the type to MOST_CONCURRENCY, only to HOST_COUNT or FLEET_PERCENT.) In addition, with CodeDeployDefault.OneAtATime, CodeDeploy attempts to ensure that all instances but one are kept in a healthy state during the deployment. Although this allows one instance at a time to be taken offline for a new deployment, it also means that if the deployment to the last instance fails, the overall deployment is still successful.</p>
     /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html">CodeDeploy Instance Health</a> in the <i>CodeDeploy User Guide</i>.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::MinimumHealthyHostsType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::MinimumHealthyHostsType> {
         self.r#type.as_ref()
     }
     /// <p>The minimum healthy instance value.</p>
@@ -46,10 +46,12 @@ impl MinimumHealthyHosts {
 
 /// A builder for [`MinimumHealthyHosts`](crate::types::MinimumHealthyHosts).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MinimumHealthyHostsBuilder {
-    pub(crate) r#type: std::option::Option<crate::types::MinimumHealthyHostsType>,
-    pub(crate) value: std::option::Option<i32>,
+    pub(crate) r#type: ::std::option::Option<crate::types::MinimumHealthyHostsType>,
+    pub(crate) value: ::std::option::Option<i32>,
 }
 impl MinimumHealthyHostsBuilder {
     /// <p>The minimum healthy instance type:</p>
@@ -62,7 +64,7 @@ impl MinimumHealthyHostsBuilder {
     /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html">CodeDeploy Instance Health</a> in the <i>CodeDeploy User Guide</i>.</p>
     pub fn r#type(mut self, input: crate::types::MinimumHealthyHostsType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The minimum healthy instance type:</p>
@@ -76,18 +78,18 @@ impl MinimumHealthyHostsBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html">CodeDeploy Instance Health</a> in the <i>CodeDeploy User Guide</i>.</p>
     pub fn set_type(
         mut self,
-        input: std::option::Option<crate::types::MinimumHealthyHostsType>,
+        input: ::std::option::Option<crate::types::MinimumHealthyHostsType>,
     ) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The minimum healthy instance value.</p>
     pub fn value(mut self, input: i32) -> Self {
-        self.value = Some(input);
+        self.value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The minimum healthy instance value.</p>
-    pub fn set_value(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<i32>) -> Self {
         self.value = input;
         self
     }

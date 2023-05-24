@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeHostedConnections`](crate::operation::describe_hosted_connections::builders::DescribeHostedConnectionsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`connection_id(impl Into<String>)`](crate::operation::describe_hosted_connections::builders::DescribeHostedConnectionsFluentBuilder::connection_id) / [`set_connection_id(Option<String>)`](crate::operation::describe_hosted_connections::builders::DescribeHostedConnectionsFluentBuilder::set_connection_id): <p>The ID of the interconnect or LAG.</p>
+    ///   - [`connection_id(impl ::std::convert::Into<String>)`](crate::operation::describe_hosted_connections::builders::DescribeHostedConnectionsFluentBuilder::connection_id) / [`set_connection_id(Option<String>)`](crate::operation::describe_hosted_connections::builders::DescribeHostedConnectionsFluentBuilder::set_connection_id): <p>The ID of the interconnect or LAG.</p>
     /// - On success, responds with [`DescribeHostedConnectionsOutput`](crate::operation::describe_hosted_connections::DescribeHostedConnectionsOutput) with field(s):
     ///   - [`connections(Option<Vec<Connection>>)`](crate::operation::describe_hosted_connections::DescribeHostedConnectionsOutput::connections): <p>The connections.</p>
     /// - On failure, responds with [`SdkError<DescribeHostedConnectionsError>`](crate::operation::describe_hosted_connections::DescribeHostedConnectionsError)

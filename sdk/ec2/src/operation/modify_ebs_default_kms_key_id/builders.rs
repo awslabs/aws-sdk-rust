@@ -9,29 +9,29 @@ pub use crate::operation::modify_ebs_default_kms_key_id::_modify_ebs_default_kms
 /// <p>Amazon Web Services creates a unique Amazon Web Services managed KMS key in each Region for use with encryption by default. If you change the default KMS key to a symmetric customer managed KMS key, it is used instead of the Amazon Web Services managed KMS key. To reset the default KMS key to the Amazon Web Services managed KMS key for EBS, use <code>ResetEbsDefaultKmsKeyId</code>. Amazon EBS does not support asymmetric KMS keys.</p>
 /// <p>If you delete or disable the customer managed KMS key that you specified for use with encryption by default, your instances will fail to launch.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyEbsDefaultKmsKeyIdFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::modify_ebs_default_kms_key_id::builders::ModifyEbsDefaultKmsKeyIdInputBuilder,
 }
 impl ModifyEbsDefaultKmsKeyIdFluentBuilder {
     /// Creates a new `ModifyEbsDefaultKmsKeyId`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::modify_ebs_default_kms_key_id::ModifyEbsDefaultKmsKeyId,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::modify_ebs_default_kms_key_id::ModifyEbsDefaultKmsKeyIdError,
         >,
     > {
@@ -39,30 +39,33 @@ impl ModifyEbsDefaultKmsKeyIdFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::modify_ebs_default_kms_key_id::ModifyEbsDefaultKmsKeyIdOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::modify_ebs_default_kms_key_id::ModifyEbsDefaultKmsKeyIdError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -75,9 +78,9 @@ impl ModifyEbsDefaultKmsKeyIdFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::modify_ebs_default_kms_key_id::ModifyEbsDefaultKmsKeyIdOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::modify_ebs_default_kms_key_id::ModifyEbsDefaultKmsKeyIdError,
         >,
     > {
@@ -93,7 +96,7 @@ impl ModifyEbsDefaultKmsKeyIdFluentBuilder {
     /// </ul>
     /// <p>Amazon Web Services authenticates the KMS key asynchronously. Therefore, if you specify an ID, alias, or ARN that is not valid, the action can appear to complete, but eventually fails.</p>
     /// <p>Amazon EBS does not support asymmetric KMS keys.</p>
-    pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kms_key_id(input.into());
         self
     }
@@ -107,7 +110,7 @@ impl ModifyEbsDefaultKmsKeyIdFluentBuilder {
     /// </ul>
     /// <p>Amazon Web Services authenticates the KMS key asynchronously. Therefore, if you specify an ID, alias, or ARN that is not valid, the action can appear to complete, but eventually fails.</p>
     /// <p>Amazon EBS does not support asymmetric KMS keys.</p>
-    pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kms_key_id(input);
         self
     }
@@ -117,7 +120,7 @@ impl ModifyEbsDefaultKmsKeyIdFluentBuilder {
         self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
     }

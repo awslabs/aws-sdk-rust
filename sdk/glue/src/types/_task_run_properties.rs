@@ -2,55 +2,55 @@
 
 /// <p>The configuration properties for the task run.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TaskRunProperties {
     /// <p>The type of task run.</p>
     #[doc(hidden)]
-    pub task_type: std::option::Option<crate::types::TaskType>,
+    pub task_type: ::std::option::Option<crate::types::TaskType>,
     /// <p>The configuration properties for an importing labels task run.</p>
     #[doc(hidden)]
     pub import_labels_task_run_properties:
-        std::option::Option<crate::types::ImportLabelsTaskRunProperties>,
+        ::std::option::Option<crate::types::ImportLabelsTaskRunProperties>,
     /// <p>The configuration properties for an exporting labels task run.</p>
     #[doc(hidden)]
     pub export_labels_task_run_properties:
-        std::option::Option<crate::types::ExportLabelsTaskRunProperties>,
+        ::std::option::Option<crate::types::ExportLabelsTaskRunProperties>,
     /// <p>The configuration properties for a labeling set generation task run.</p>
     #[doc(hidden)]
     pub labeling_set_generation_task_run_properties:
-        std::option::Option<crate::types::LabelingSetGenerationTaskRunProperties>,
+        ::std::option::Option<crate::types::LabelingSetGenerationTaskRunProperties>,
     /// <p>The configuration properties for a find matches task run.</p>
     #[doc(hidden)]
     pub find_matches_task_run_properties:
-        std::option::Option<crate::types::FindMatchesTaskRunProperties>,
+        ::std::option::Option<crate::types::FindMatchesTaskRunProperties>,
 }
 impl TaskRunProperties {
     /// <p>The type of task run.</p>
-    pub fn task_type(&self) -> std::option::Option<&crate::types::TaskType> {
+    pub fn task_type(&self) -> ::std::option::Option<&crate::types::TaskType> {
         self.task_type.as_ref()
     }
     /// <p>The configuration properties for an importing labels task run.</p>
     pub fn import_labels_task_run_properties(
         &self,
-    ) -> std::option::Option<&crate::types::ImportLabelsTaskRunProperties> {
+    ) -> ::std::option::Option<&crate::types::ImportLabelsTaskRunProperties> {
         self.import_labels_task_run_properties.as_ref()
     }
     /// <p>The configuration properties for an exporting labels task run.</p>
     pub fn export_labels_task_run_properties(
         &self,
-    ) -> std::option::Option<&crate::types::ExportLabelsTaskRunProperties> {
+    ) -> ::std::option::Option<&crate::types::ExportLabelsTaskRunProperties> {
         self.export_labels_task_run_properties.as_ref()
     }
     /// <p>The configuration properties for a labeling set generation task run.</p>
     pub fn labeling_set_generation_task_run_properties(
         &self,
-    ) -> std::option::Option<&crate::types::LabelingSetGenerationTaskRunProperties> {
+    ) -> ::std::option::Option<&crate::types::LabelingSetGenerationTaskRunProperties> {
         self.labeling_set_generation_task_run_properties.as_ref()
     }
     /// <p>The configuration properties for a find matches task run.</p>
     pub fn find_matches_task_run_properties(
         &self,
-    ) -> std::option::Option<&crate::types::FindMatchesTaskRunProperties> {
+    ) -> ::std::option::Option<&crate::types::FindMatchesTaskRunProperties> {
         self.find_matches_task_run_properties.as_ref()
     }
 }
@@ -63,26 +63,28 @@ impl TaskRunProperties {
 
 /// A builder for [`TaskRunProperties`](crate::types::TaskRunProperties).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TaskRunPropertiesBuilder {
-    pub(crate) task_type: std::option::Option<crate::types::TaskType>,
+    pub(crate) task_type: ::std::option::Option<crate::types::TaskType>,
     pub(crate) import_labels_task_run_properties:
-        std::option::Option<crate::types::ImportLabelsTaskRunProperties>,
+        ::std::option::Option<crate::types::ImportLabelsTaskRunProperties>,
     pub(crate) export_labels_task_run_properties:
-        std::option::Option<crate::types::ExportLabelsTaskRunProperties>,
+        ::std::option::Option<crate::types::ExportLabelsTaskRunProperties>,
     pub(crate) labeling_set_generation_task_run_properties:
-        std::option::Option<crate::types::LabelingSetGenerationTaskRunProperties>,
+        ::std::option::Option<crate::types::LabelingSetGenerationTaskRunProperties>,
     pub(crate) find_matches_task_run_properties:
-        std::option::Option<crate::types::FindMatchesTaskRunProperties>,
+        ::std::option::Option<crate::types::FindMatchesTaskRunProperties>,
 }
 impl TaskRunPropertiesBuilder {
     /// <p>The type of task run.</p>
     pub fn task_type(mut self, input: crate::types::TaskType) -> Self {
-        self.task_type = Some(input);
+        self.task_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of task run.</p>
-    pub fn set_task_type(mut self, input: std::option::Option<crate::types::TaskType>) -> Self {
+    pub fn set_task_type(mut self, input: ::std::option::Option<crate::types::TaskType>) -> Self {
         self.task_type = input;
         self
     }
@@ -91,13 +93,13 @@ impl TaskRunPropertiesBuilder {
         mut self,
         input: crate::types::ImportLabelsTaskRunProperties,
     ) -> Self {
-        self.import_labels_task_run_properties = Some(input);
+        self.import_labels_task_run_properties = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration properties for an importing labels task run.</p>
     pub fn set_import_labels_task_run_properties(
         mut self,
-        input: std::option::Option<crate::types::ImportLabelsTaskRunProperties>,
+        input: ::std::option::Option<crate::types::ImportLabelsTaskRunProperties>,
     ) -> Self {
         self.import_labels_task_run_properties = input;
         self
@@ -107,13 +109,13 @@ impl TaskRunPropertiesBuilder {
         mut self,
         input: crate::types::ExportLabelsTaskRunProperties,
     ) -> Self {
-        self.export_labels_task_run_properties = Some(input);
+        self.export_labels_task_run_properties = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration properties for an exporting labels task run.</p>
     pub fn set_export_labels_task_run_properties(
         mut self,
-        input: std::option::Option<crate::types::ExportLabelsTaskRunProperties>,
+        input: ::std::option::Option<crate::types::ExportLabelsTaskRunProperties>,
     ) -> Self {
         self.export_labels_task_run_properties = input;
         self
@@ -123,13 +125,13 @@ impl TaskRunPropertiesBuilder {
         mut self,
         input: crate::types::LabelingSetGenerationTaskRunProperties,
     ) -> Self {
-        self.labeling_set_generation_task_run_properties = Some(input);
+        self.labeling_set_generation_task_run_properties = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration properties for a labeling set generation task run.</p>
     pub fn set_labeling_set_generation_task_run_properties(
         mut self,
-        input: std::option::Option<crate::types::LabelingSetGenerationTaskRunProperties>,
+        input: ::std::option::Option<crate::types::LabelingSetGenerationTaskRunProperties>,
     ) -> Self {
         self.labeling_set_generation_task_run_properties = input;
         self
@@ -139,13 +141,13 @@ impl TaskRunPropertiesBuilder {
         mut self,
         input: crate::types::FindMatchesTaskRunProperties,
     ) -> Self {
-        self.find_matches_task_run_properties = Some(input);
+        self.find_matches_task_run_properties = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration properties for a find matches task run.</p>
     pub fn set_find_matches_task_run_properties(
         mut self,
-        input: std::option::Option<crate::types::FindMatchesTaskRunProperties>,
+        input: ::std::option::Option<crate::types::FindMatchesTaskRunProperties>,
     ) -> Self {
         self.find_matches_task_run_properties = input;
         self

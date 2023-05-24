@@ -6,47 +6,50 @@ pub use crate::operation::get_transit_gateway_route_table_propagations::_get_tra
 /// Fluent builder constructing a request to `GetTransitGatewayRouteTablePropagations`.
 ///
 /// <p>Gets information about the route table propagations for the specified transit gateway route table.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetTransitGatewayRouteTablePropagationsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::get_transit_gateway_route_table_propagations::builders::GetTransitGatewayRouteTablePropagationsInputBuilder,
 }
 impl GetTransitGatewayRouteTablePropagationsFluentBuilder {
     /// Creates a new `GetTransitGatewayRouteTablePropagations`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::get_transit_gateway_route_table_propagations::GetTransitGatewayRouteTablePropagations, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::get_transit_gateway_route_table_propagations::GetTransitGatewayRouteTablePropagationsError>
+                    pub async fn customize(self) -> ::std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::get_transit_gateway_route_table_propagations::GetTransitGatewayRouteTablePropagations, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                        ::aws_smithy_http::result::SdkError<crate::operation::get_transit_gateway_route_table_propagations::GetTransitGatewayRouteTablePropagationsError>
     >{
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::get_transit_gateway_route_table_propagations::GetTransitGatewayRouteTablePropagationsOutput, aws_smithy_http::result::SdkError<crate::operation::get_transit_gateway_route_table_propagations::GetTransitGatewayRouteTablePropagationsError>>
+                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::get_transit_gateway_route_table_propagations::GetTransitGatewayRouteTablePropagationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_transit_gateway_route_table_propagations::GetTransitGatewayRouteTablePropagationsError>>
                      {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -57,7 +60,7 @@ impl GetTransitGatewayRouteTablePropagationsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> std::result::Result<crate::operation::get_transit_gateway_route_table_propagations::GetTransitGatewayRouteTablePropagationsOutput, aws_smithy_http::result::SdkError<crate::operation::get_transit_gateway_route_table_propagations::GetTransitGatewayRouteTablePropagationsError>>
+                        pub async fn send(self) -> ::std::result::Result<crate::operation::get_transit_gateway_route_table_propagations::GetTransitGatewayRouteTablePropagationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_transit_gateway_route_table_propagations::GetTransitGatewayRouteTablePropagationsError>>
                          {
         self.send_middleware().await
     }
@@ -68,14 +71,17 @@ impl GetTransitGatewayRouteTablePropagationsFluentBuilder {
         crate::operation::get_transit_gateway_route_table_propagations::paginator::GetTransitGatewayRouteTablePropagationsPaginator::new(self.handle, self.inner)
     }
     /// <p>The ID of the transit gateway route table.</p>
-    pub fn transit_gateway_route_table_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn transit_gateway_route_table_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.transit_gateway_route_table_id(input.into());
         self
     }
     /// <p>The ID of the transit gateway route table.</p>
     pub fn set_transit_gateway_route_table_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_transit_gateway_route_table_id(input);
         self
@@ -102,7 +108,7 @@ impl GetTransitGatewayRouteTablePropagationsFluentBuilder {
     /// </ul>
     pub fn set_filters(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
@@ -113,17 +119,17 @@ impl GetTransitGatewayRouteTablePropagationsFluentBuilder {
         self
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
-    pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
     /// <p>The token for the next page of results.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
     /// <p>The token for the next page of results.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
@@ -133,7 +139,7 @@ impl GetTransitGatewayRouteTablePropagationsFluentBuilder {
         self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
     }

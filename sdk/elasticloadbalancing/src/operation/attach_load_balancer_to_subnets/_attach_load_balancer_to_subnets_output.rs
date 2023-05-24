@@ -2,20 +2,20 @@
 
 /// <p>Contains the output of AttachLoadBalancerToSubnets.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AttachLoadBalancerToSubnetsOutput {
     /// <p>The IDs of the subnets attached to the load balancer.</p>
     #[doc(hidden)]
-    pub subnets: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl AttachLoadBalancerToSubnetsOutput {
     /// <p>The IDs of the subnets attached to the load balancer.</p>
-    pub fn subnets(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn subnets(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.subnets.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for AttachLoadBalancerToSubnetsOutput {
+impl ::aws_http::request_id::RequestId for AttachLoadBalancerToSubnetsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,9 +29,11 @@ impl AttachLoadBalancerToSubnetsOutput {
 
 /// A builder for [`AttachLoadBalancerToSubnetsOutput`](crate::operation::attach_load_balancer_to_subnets::AttachLoadBalancerToSubnetsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AttachLoadBalancerToSubnetsOutputBuilder {
-    pub(crate) subnets: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl AttachLoadBalancerToSubnetsOutputBuilder {
@@ -40,16 +42,16 @@ impl AttachLoadBalancerToSubnetsOutputBuilder {
     /// To override the contents of this collection use [`set_subnets`](Self::set_subnets).
     ///
     /// <p>The IDs of the subnets attached to the load balancer.</p>
-    pub fn subnets(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn subnets(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subnets.unwrap_or_default();
         v.push(input.into());
-        self.subnets = Some(v);
+        self.subnets = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IDs of the subnets attached to the load balancer.</p>
     pub fn set_subnets(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.subnets = input;
         self

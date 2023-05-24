@@ -6,29 +6,29 @@ pub use crate::operation::contains_pii_entities::_contains_pii_entities_input::C
 /// Fluent builder constructing a request to `ContainsPiiEntities`.
 ///
 /// <p>Analyzes input text for the presence of personally identifiable information (PII) and returns the labels of identified PII entity types such as name, address, bank account number, or phone number.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ContainsPiiEntitiesFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::contains_pii_entities::builders::ContainsPiiEntitiesInputBuilder,
 }
 impl ContainsPiiEntitiesFluentBuilder {
     /// Creates a new `ContainsPiiEntities`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::contains_pii_entities::ContainsPiiEntities,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::contains_pii_entities::ContainsPiiEntitiesError,
         >,
     > {
@@ -36,30 +36,33 @@ impl ContainsPiiEntitiesFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::contains_pii_entities::ContainsPiiEntitiesOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::contains_pii_entities::ContainsPiiEntitiesError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,21 +75,21 @@ impl ContainsPiiEntitiesFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::contains_pii_entities::ContainsPiiEntitiesOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::contains_pii_entities::ContainsPiiEntitiesError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>A UTF-8 text string. The maximum string size is 100 KB.</p>
-    pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.text(input.into());
         self
     }
     /// <p>A UTF-8 text string. The maximum string size is 100 KB.</p>
-    pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_text(input);
         self
     }
@@ -98,7 +101,7 @@ impl ContainsPiiEntitiesFluentBuilder {
     /// <p>The language of the input documents. Currently, English is the only valid language.</p>
     pub fn set_language_code(
         mut self,
-        input: std::option::Option<crate::types::LanguageCode>,
+        input: ::std::option::Option<crate::types::LanguageCode>,
     ) -> Self {
         self.inner = self.inner.set_language_code(input);
         self

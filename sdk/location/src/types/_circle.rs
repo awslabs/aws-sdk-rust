@@ -2,27 +2,27 @@
 
 /// <p>A circle on the earth, as defined by a center point and a radius.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Circle {
     /// <p>A single point geometry, specifying the center of the circle, using <a href="https://gisgeography.com/wgs84-world-geodetic-system/">WGS 84</a> coordinates, in the form <code>[longitude, latitude]</code>.</p>
     #[doc(hidden)]
-    pub center: std::option::Option<std::vec::Vec<f64>>,
+    pub center: ::std::option::Option<::std::vec::Vec<f64>>,
     /// <p>The radius of the circle in meters. Must be greater than zero and no larger than 100,000 (100 kilometers).</p>
     #[doc(hidden)]
-    pub radius: std::option::Option<f64>,
+    pub radius: ::std::option::Option<f64>,
 }
 impl Circle {
     /// <p>A single point geometry, specifying the center of the circle, using <a href="https://gisgeography.com/wgs84-world-geodetic-system/">WGS 84</a> coordinates, in the form <code>[longitude, latitude]</code>.</p>
-    pub fn center(&self) -> std::option::Option<&[f64]> {
+    pub fn center(&self) -> ::std::option::Option<&[f64]> {
         self.center.as_deref()
     }
     /// <p>The radius of the circle in meters. Must be greater than zero and no larger than 100,000 (100 kilometers).</p>
-    pub fn radius(&self) -> std::option::Option<f64> {
+    pub fn radius(&self) -> ::std::option::Option<f64> {
         self.radius
     }
 }
-impl std::fmt::Debug for Circle {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for Circle {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("Circle");
         formatter.field("center", &"*** Sensitive Data Redacted ***");
         formatter.field("radius", &"*** Sensitive Data Redacted ***");
@@ -38,10 +38,10 @@ impl Circle {
 
 /// A builder for [`Circle`](crate::types::Circle).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct CircleBuilder {
-    pub(crate) center: std::option::Option<std::vec::Vec<f64>>,
-    pub(crate) radius: std::option::Option<f64>,
+    pub(crate) center: ::std::option::Option<::std::vec::Vec<f64>>,
+    pub(crate) radius: ::std::option::Option<f64>,
 }
 impl CircleBuilder {
     /// Appends an item to `center`.
@@ -52,21 +52,21 @@ impl CircleBuilder {
     pub fn center(mut self, input: f64) -> Self {
         let mut v = self.center.unwrap_or_default();
         v.push(input);
-        self.center = Some(v);
+        self.center = ::std::option::Option::Some(v);
         self
     }
     /// <p>A single point geometry, specifying the center of the circle, using <a href="https://gisgeography.com/wgs84-world-geodetic-system/">WGS 84</a> coordinates, in the form <code>[longitude, latitude]</code>.</p>
-    pub fn set_center(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
+    pub fn set_center(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
         self.center = input;
         self
     }
     /// <p>The radius of the circle in meters. Must be greater than zero and no larger than 100,000 (100 kilometers).</p>
     pub fn radius(mut self, input: f64) -> Self {
-        self.radius = Some(input);
+        self.radius = ::std::option::Option::Some(input);
         self
     }
     /// <p>The radius of the circle in meters. Must be greater than zero and no larger than 100,000 (100 kilometers).</p>
-    pub fn set_radius(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_radius(mut self, input: ::std::option::Option<f64>) -> Self {
         self.radius = input;
         self
     }
@@ -78,8 +78,8 @@ impl CircleBuilder {
         }
     }
 }
-impl std::fmt::Debug for CircleBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for CircleBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CircleBuilder");
         formatter.field("center", &"*** Sensitive Data Redacted ***");
         formatter.field("radius", &"*** Sensitive Data Redacted ***");

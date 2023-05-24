@@ -2,45 +2,47 @@
 
 /// Represents the output of a CreateWorkspace operation.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateWorkspaceOutput {
     /// The generated ID of the workspace that was just created.
     #[doc(hidden)]
-    pub workspace_id: std::option::Option<std::string::String>,
+    pub workspace_id: ::std::option::Option<::std::string::String>,
     /// The ARN of the workspace that was just created.
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// The status of the workspace that was just created (usually CREATING).
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::WorkspaceStatus>,
+    pub status: ::std::option::Option<crate::types::WorkspaceStatus>,
     /// The tags of this workspace.
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     _request_id: Option<String>,
 }
 impl CreateWorkspaceOutput {
     /// The generated ID of the workspace that was just created.
-    pub fn workspace_id(&self) -> std::option::Option<&str> {
+    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
         self.workspace_id.as_deref()
     }
     /// The ARN of the workspace that was just created.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// The status of the workspace that was just created (usually CREATING).
-    pub fn status(&self) -> std::option::Option<&crate::types::WorkspaceStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::WorkspaceStatus> {
         self.status.as_ref()
     }
     /// The tags of this workspace.
     pub fn tags(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.tags.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for CreateWorkspaceOutput {
+impl ::aws_http::request_id::RequestId for CreateWorkspaceOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -54,43 +56,49 @@ impl CreateWorkspaceOutput {
 
 /// A builder for [`CreateWorkspaceOutput`](crate::operation::create_workspace::CreateWorkspaceOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateWorkspaceOutputBuilder {
-    pub(crate) workspace_id: std::option::Option<std::string::String>,
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::WorkspaceStatus>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::WorkspaceStatus>,
+    pub(crate) tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     _request_id: Option<String>,
 }
 impl CreateWorkspaceOutputBuilder {
     /// The generated ID of the workspace that was just created.
-    pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.workspace_id = Some(input.into());
+    pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.workspace_id = ::std::option::Option::Some(input.into());
         self
     }
     /// The generated ID of the workspace that was just created.
-    pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workspace_id = input;
         self
     }
     /// The ARN of the workspace that was just created.
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// The ARN of the workspace that was just created.
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// The status of the workspace that was just created (usually CREATING).
     pub fn status(mut self, input: crate::types::WorkspaceStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// The status of the workspace that was just created (usually CREATING).
-    pub fn set_status(mut self, input: std::option::Option<crate::types::WorkspaceStatus>) -> Self {
+    pub fn set_status(
+        mut self,
+        input: ::std::option::Option<crate::types::WorkspaceStatus>,
+    ) -> Self {
         self.status = input;
         self
     }
@@ -101,19 +109,19 @@ impl CreateWorkspaceOutputBuilder {
     /// The tags of this workspace.
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
+        self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// The tags of this workspace.
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.tags = input;

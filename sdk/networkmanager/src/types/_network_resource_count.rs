@@ -2,22 +2,22 @@
 
 /// <p>Describes a resource count.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkResourceCount {
     /// <p>The resource type.</p>
     #[doc(hidden)]
-    pub resource_type: std::option::Option<std::string::String>,
+    pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>The resource count.</p>
     #[doc(hidden)]
-    pub count: std::option::Option<i32>,
+    pub count: ::std::option::Option<i32>,
 }
 impl NetworkResourceCount {
     /// <p>The resource type.</p>
-    pub fn resource_type(&self) -> std::option::Option<&str> {
+    pub fn resource_type(&self) -> ::std::option::Option<&str> {
         self.resource_type.as_deref()
     }
     /// <p>The resource count.</p>
-    pub fn count(&self) -> std::option::Option<i32> {
+    pub fn count(&self) -> ::std::option::Option<i32> {
         self.count
     }
 }
@@ -30,29 +30,37 @@ impl NetworkResourceCount {
 
 /// A builder for [`NetworkResourceCount`](crate::types::NetworkResourceCount).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NetworkResourceCountBuilder {
-    pub(crate) resource_type: std::option::Option<std::string::String>,
-    pub(crate) count: std::option::Option<i32>,
+    pub(crate) resource_type: ::std::option::Option<::std::string::String>,
+    pub(crate) count: ::std::option::Option<i32>,
 }
 impl NetworkResourceCountBuilder {
     /// <p>The resource type.</p>
-    pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_type = Some(input.into());
+    pub fn resource_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The resource type.</p>
-    pub fn set_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.resource_type = input;
         self
     }
     /// <p>The resource count.</p>
     pub fn count(mut self, input: i32) -> Self {
-        self.count = Some(input);
+        self.count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The resource count.</p>
-    pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.count = input;
         self
     }

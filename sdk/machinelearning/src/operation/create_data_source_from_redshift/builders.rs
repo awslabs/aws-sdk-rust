@@ -11,29 +11,29 @@ pub use crate::operation::create_data_source_from_redshift::_create_data_source_
 /// <p>The observations should be contained in the database hosted on an Amazon Redshift cluster and should be specified by a <code>SelectSqlQuery</code> query. Amazon ML executes an <code>Unload</code> command in Amazon Redshift to transfer the result set of the <code>SelectSqlQuery</code> query to <code>S3StagingLocation</code>.</p>
 /// <p>After the <code>DataSource</code> has been created, it's ready for use in evaluations and batch predictions. If you plan to use the <code>DataSource</code> to train an <code>MLModel</code>, the <code>DataSource</code> also requires a recipe. A recipe describes how each input variable will be used in training an <code>MLModel</code>. Will the variable be included or excluded from training? Will the variable be manipulated; for example, will it be combined with another variable or will it be split apart into word combinations? The recipe provides answers to these questions.</p>
 /// <p>You can't change an existing datasource, but you can copy and modify the settings from an existing Amazon Redshift datasource to create a new datasource. To do so, call <code>GetDataSource</code> for an existing datasource and copy the values to a <code>CreateDataSource</code> call. Change the settings that you want to change and make sure that all required fields have the appropriate values.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateDataSourceFromRedshiftFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::create_data_source_from_redshift::builders::CreateDataSourceFromRedshiftInputBuilder,
 }
 impl CreateDataSourceFromRedshiftFluentBuilder {
     /// Creates a new `CreateDataSourceFromRedshift`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_data_source_from_redshift::CreateDataSourceFromRedshift,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_data_source_from_redshift::CreateDataSourceFromRedshiftError,
         >,
     > {
@@ -41,30 +41,33 @@ impl CreateDataSourceFromRedshiftFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_data_source_from_redshift::CreateDataSourceFromRedshiftOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_data_source_from_redshift::CreateDataSourceFromRedshiftError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -77,31 +80,43 @@ impl CreateDataSourceFromRedshiftFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_data_source_from_redshift::CreateDataSourceFromRedshiftOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_data_source_from_redshift::CreateDataSourceFromRedshiftError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>.</p>
-    pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn data_source_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.data_source_id(input.into());
         self
     }
     /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>.</p>
-    pub fn set_data_source_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_data_source_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_data_source_id(input);
         self
     }
     /// <p>A user-supplied name or description of the <code>DataSource</code>. </p>
-    pub fn data_source_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn data_source_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.data_source_name(input.into());
         self
     }
     /// <p>A user-supplied name or description of the <code>DataSource</code>. </p>
-    pub fn set_data_source_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_data_source_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_data_source_name(input);
         self
     }
@@ -139,7 +154,7 @@ impl CreateDataSourceFromRedshiftFluentBuilder {
     /// </ul>
     pub fn set_data_spec(
         mut self,
-        input: std::option::Option<crate::types::RedshiftDataSpec>,
+        input: ::std::option::Option<crate::types::RedshiftDataSpec>,
     ) -> Self {
         self.inner = self.inner.set_data_spec(input);
         self
@@ -149,7 +164,7 @@ impl CreateDataSourceFromRedshiftFluentBuilder {
     /// <li> <p>A security group to allow Amazon ML to execute the <code>SelectSqlQuery</code> query on an Amazon Redshift cluster</p> </li>
     /// <li> <p>An Amazon S3 bucket policy to grant Amazon ML read/write permissions on the <code>S3StagingLocation</code> </p> </li>
     /// </ul>
-    pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
         self
     }
@@ -158,7 +173,7 @@ impl CreateDataSourceFromRedshiftFluentBuilder {
     /// <li> <p>A security group to allow Amazon ML to execute the <code>SelectSqlQuery</code> query on an Amazon Redshift cluster</p> </li>
     /// <li> <p>An Amazon S3 bucket policy to grant Amazon ML read/write permissions on the <code>S3StagingLocation</code> </p> </li>
     /// </ul>
-    pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
     }
@@ -168,7 +183,7 @@ impl CreateDataSourceFromRedshiftFluentBuilder {
         self
     }
     /// <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training. This parameter must be set to <code>true</code> if the <code>DataSource</code> needs to be used for <code>MLModel</code> training.</p>
-    pub fn set_compute_statistics(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_compute_statistics(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_compute_statistics(input);
         self
     }

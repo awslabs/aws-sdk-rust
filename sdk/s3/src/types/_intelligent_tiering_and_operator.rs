@@ -2,22 +2,22 @@
 
 /// <p>A container for specifying S3 Intelligent-Tiering filters. The filters determine the subset of objects to which the rule applies.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IntelligentTieringAndOperator {
     /// <p>An object key name prefix that identifies the subset of objects to which the configuration applies.</p>
     #[doc(hidden)]
-    pub prefix: std::option::Option<std::string::String>,
+    pub prefix: ::std::option::Option<::std::string::String>,
     /// <p>All of these tags must exist in the object's tag set in order for the configuration to apply.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl IntelligentTieringAndOperator {
     /// <p>An object key name prefix that identifies the subset of objects to which the configuration applies.</p>
-    pub fn prefix(&self) -> std::option::Option<&str> {
+    pub fn prefix(&self) -> ::std::option::Option<&str> {
         self.prefix.as_deref()
     }
     /// <p>All of these tags must exist in the object's tag set in order for the configuration to apply.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -30,19 +30,21 @@ impl IntelligentTieringAndOperator {
 
 /// A builder for [`IntelligentTieringAndOperator`](crate::types::IntelligentTieringAndOperator).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct IntelligentTieringAndOperatorBuilder {
-    pub(crate) prefix: std::option::Option<std::string::String>,
-    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub(crate) prefix: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl IntelligentTieringAndOperatorBuilder {
     /// <p>An object key name prefix that identifies the subset of objects to which the configuration applies.</p>
-    pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
-        self.prefix = Some(input.into());
+    pub fn prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An object key name prefix that identifies the subset of objects to which the configuration applies.</p>
-    pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.prefix = input;
         self
     }
@@ -54,13 +56,13 @@ impl IntelligentTieringAndOperatorBuilder {
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
-        self.tags = Some(v);
+        self.tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>All of these tags must exist in the object's tag set in order for the configuration to apply.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tags = input;
         self

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeTrialComponent`](crate::operation::describe_trial_component::builders::DescribeTrialComponentFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`trial_component_name(impl Into<String>)`](crate::operation::describe_trial_component::builders::DescribeTrialComponentFluentBuilder::trial_component_name) / [`set_trial_component_name(Option<String>)`](crate::operation::describe_trial_component::builders::DescribeTrialComponentFluentBuilder::set_trial_component_name): <p>The name of the trial component to describe.</p>
+    ///   - [`trial_component_name(impl ::std::convert::Into<String>)`](crate::operation::describe_trial_component::builders::DescribeTrialComponentFluentBuilder::trial_component_name) / [`set_trial_component_name(Option<String>)`](crate::operation::describe_trial_component::builders::DescribeTrialComponentFluentBuilder::set_trial_component_name): <p>The name of the trial component to describe.</p>
     /// - On success, responds with [`DescribeTrialComponentOutput`](crate::operation::describe_trial_component::DescribeTrialComponentOutput) with field(s):
     ///   - [`trial_component_name(Option<String>)`](crate::operation::describe_trial_component::DescribeTrialComponentOutput::trial_component_name): <p>The name of the trial component.</p>
     ///   - [`trial_component_arn(Option<String>)`](crate::operation::describe_trial_component::DescribeTrialComponentOutput::trial_component_arn): <p>The Amazon Resource Name (ARN) of the trial component.</p>

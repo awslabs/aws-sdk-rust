@@ -2,7 +2,7 @@
 
 /// <p>Information about the auto scaling parameters for the connector.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoScalingDescription {
     /// <p>The maximum number of workers allocated to the connector.</p>
     #[doc(hidden)]
@@ -15,10 +15,10 @@ pub struct AutoScalingDescription {
     pub min_worker_count: i32,
     /// <p>The sacle-in policy for the connector.</p>
     #[doc(hidden)]
-    pub scale_in_policy: std::option::Option<crate::types::ScaleInPolicyDescription>,
+    pub scale_in_policy: ::std::option::Option<crate::types::ScaleInPolicyDescription>,
     /// <p>The sacle-out policy for the connector.&gt;</p>
     #[doc(hidden)]
-    pub scale_out_policy: std::option::Option<crate::types::ScaleOutPolicyDescription>,
+    pub scale_out_policy: ::std::option::Option<crate::types::ScaleOutPolicyDescription>,
 }
 impl AutoScalingDescription {
     /// <p>The maximum number of workers allocated to the connector.</p>
@@ -34,13 +34,15 @@ impl AutoScalingDescription {
         self.min_worker_count
     }
     /// <p>The sacle-in policy for the connector.</p>
-    pub fn scale_in_policy(&self) -> std::option::Option<&crate::types::ScaleInPolicyDescription> {
+    pub fn scale_in_policy(
+        &self,
+    ) -> ::std::option::Option<&crate::types::ScaleInPolicyDescription> {
         self.scale_in_policy.as_ref()
     }
     /// <p>The sacle-out policy for the connector.&gt;</p>
     pub fn scale_out_policy(
         &self,
-    ) -> std::option::Option<&crate::types::ScaleOutPolicyDescription> {
+    ) -> ::std::option::Option<&crate::types::ScaleOutPolicyDescription> {
         self.scale_out_policy.as_ref()
     }
 }
@@ -53,67 +55,69 @@ impl AutoScalingDescription {
 
 /// A builder for [`AutoScalingDescription`](crate::types::AutoScalingDescription).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AutoScalingDescriptionBuilder {
-    pub(crate) max_worker_count: std::option::Option<i32>,
-    pub(crate) mcu_count: std::option::Option<i32>,
-    pub(crate) min_worker_count: std::option::Option<i32>,
-    pub(crate) scale_in_policy: std::option::Option<crate::types::ScaleInPolicyDescription>,
-    pub(crate) scale_out_policy: std::option::Option<crate::types::ScaleOutPolicyDescription>,
+    pub(crate) max_worker_count: ::std::option::Option<i32>,
+    pub(crate) mcu_count: ::std::option::Option<i32>,
+    pub(crate) min_worker_count: ::std::option::Option<i32>,
+    pub(crate) scale_in_policy: ::std::option::Option<crate::types::ScaleInPolicyDescription>,
+    pub(crate) scale_out_policy: ::std::option::Option<crate::types::ScaleOutPolicyDescription>,
 }
 impl AutoScalingDescriptionBuilder {
     /// <p>The maximum number of workers allocated to the connector.</p>
     pub fn max_worker_count(mut self, input: i32) -> Self {
-        self.max_worker_count = Some(input);
+        self.max_worker_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum number of workers allocated to the connector.</p>
-    pub fn set_max_worker_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_worker_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_worker_count = input;
         self
     }
     /// <p>The number of microcontroller units (MCUs) allocated to each connector worker. The valid values are 1,2,4,8.</p>
     pub fn mcu_count(mut self, input: i32) -> Self {
-        self.mcu_count = Some(input);
+        self.mcu_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of microcontroller units (MCUs) allocated to each connector worker. The valid values are 1,2,4,8.</p>
-    pub fn set_mcu_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_mcu_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.mcu_count = input;
         self
     }
     /// <p>The minimum number of workers allocated to the connector.</p>
     pub fn min_worker_count(mut self, input: i32) -> Self {
-        self.min_worker_count = Some(input);
+        self.min_worker_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The minimum number of workers allocated to the connector.</p>
-    pub fn set_min_worker_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_min_worker_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.min_worker_count = input;
         self
     }
     /// <p>The sacle-in policy for the connector.</p>
     pub fn scale_in_policy(mut self, input: crate::types::ScaleInPolicyDescription) -> Self {
-        self.scale_in_policy = Some(input);
+        self.scale_in_policy = ::std::option::Option::Some(input);
         self
     }
     /// <p>The sacle-in policy for the connector.</p>
     pub fn set_scale_in_policy(
         mut self,
-        input: std::option::Option<crate::types::ScaleInPolicyDescription>,
+        input: ::std::option::Option<crate::types::ScaleInPolicyDescription>,
     ) -> Self {
         self.scale_in_policy = input;
         self
     }
     /// <p>The sacle-out policy for the connector.&gt;</p>
     pub fn scale_out_policy(mut self, input: crate::types::ScaleOutPolicyDescription) -> Self {
-        self.scale_out_policy = Some(input);
+        self.scale_out_policy = ::std::option::Option::Some(input);
         self
     }
     /// <p>The sacle-out policy for the connector.&gt;</p>
     pub fn set_scale_out_policy(
         mut self,
-        input: std::option::Option<crate::types::ScaleOutPolicyDescription>,
+        input: ::std::option::Option<crate::types::ScaleOutPolicyDescription>,
     ) -> Self {
         self.scale_out_policy = input;
         self

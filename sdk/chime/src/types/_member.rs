@@ -2,48 +2,48 @@
 
 /// <p>The member details, such as email address, name, member ID, and member type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Member {
     /// <p>The member ID (user ID or bot ID).</p>
     #[doc(hidden)]
-    pub member_id: std::option::Option<std::string::String>,
+    pub member_id: ::std::option::Option<::std::string::String>,
     /// <p>The member type.</p>
     #[doc(hidden)]
-    pub member_type: std::option::Option<crate::types::MemberType>,
+    pub member_type: ::std::option::Option<crate::types::MemberType>,
     /// <p>The member email address.</p>
     #[doc(hidden)]
-    pub email: std::option::Option<std::string::String>,
+    pub email: ::std::option::Option<::std::string::String>,
     /// <p>The member name.</p>
     #[doc(hidden)]
-    pub full_name: std::option::Option<std::string::String>,
+    pub full_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Chime account ID.</p>
     #[doc(hidden)]
-    pub account_id: std::option::Option<std::string::String>,
+    pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl Member {
     /// <p>The member ID (user ID or bot ID).</p>
-    pub fn member_id(&self) -> std::option::Option<&str> {
+    pub fn member_id(&self) -> ::std::option::Option<&str> {
         self.member_id.as_deref()
     }
     /// <p>The member type.</p>
-    pub fn member_type(&self) -> std::option::Option<&crate::types::MemberType> {
+    pub fn member_type(&self) -> ::std::option::Option<&crate::types::MemberType> {
         self.member_type.as_ref()
     }
     /// <p>The member email address.</p>
-    pub fn email(&self) -> std::option::Option<&str> {
+    pub fn email(&self) -> ::std::option::Option<&str> {
         self.email.as_deref()
     }
     /// <p>The member name.</p>
-    pub fn full_name(&self) -> std::option::Option<&str> {
+    pub fn full_name(&self) -> ::std::option::Option<&str> {
         self.full_name.as_deref()
     }
     /// <p>The Amazon Chime account ID.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
 }
-impl std::fmt::Debug for Member {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for Member {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("Member");
         formatter.field("member_id", &self.member_id);
         formatter.field("member_type", &self.member_type);
@@ -62,62 +62,65 @@ impl Member {
 
 /// A builder for [`Member`](crate::types::Member).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct MemberBuilder {
-    pub(crate) member_id: std::option::Option<std::string::String>,
-    pub(crate) member_type: std::option::Option<crate::types::MemberType>,
-    pub(crate) email: std::option::Option<std::string::String>,
-    pub(crate) full_name: std::option::Option<std::string::String>,
-    pub(crate) account_id: std::option::Option<std::string::String>,
+    pub(crate) member_id: ::std::option::Option<::std::string::String>,
+    pub(crate) member_type: ::std::option::Option<crate::types::MemberType>,
+    pub(crate) email: ::std::option::Option<::std::string::String>,
+    pub(crate) full_name: ::std::option::Option<::std::string::String>,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }
 impl MemberBuilder {
     /// <p>The member ID (user ID or bot ID).</p>
-    pub fn member_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.member_id = Some(input.into());
+    pub fn member_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.member_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The member ID (user ID or bot ID).</p>
-    pub fn set_member_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_member_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.member_id = input;
         self
     }
     /// <p>The member type.</p>
     pub fn member_type(mut self, input: crate::types::MemberType) -> Self {
-        self.member_type = Some(input);
+        self.member_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The member type.</p>
-    pub fn set_member_type(mut self, input: std::option::Option<crate::types::MemberType>) -> Self {
+    pub fn set_member_type(
+        mut self,
+        input: ::std::option::Option<crate::types::MemberType>,
+    ) -> Self {
         self.member_type = input;
         self
     }
     /// <p>The member email address.</p>
-    pub fn email(mut self, input: impl Into<std::string::String>) -> Self {
-        self.email = Some(input.into());
+    pub fn email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.email = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The member email address.</p>
-    pub fn set_email(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.email = input;
         self
     }
     /// <p>The member name.</p>
-    pub fn full_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.full_name = Some(input.into());
+    pub fn full_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.full_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The member name.</p>
-    pub fn set_full_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_full_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.full_name = input;
         self
     }
     /// <p>The Amazon Chime account ID.</p>
-    pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.account_id = Some(input.into());
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Chime account ID.</p>
-    pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
     }
@@ -132,8 +135,8 @@ impl MemberBuilder {
         }
     }
 }
-impl std::fmt::Debug for MemberBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for MemberBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("MemberBuilder");
         formatter.field("member_id", &self.member_id);
         formatter.field("member_type", &self.member_type);

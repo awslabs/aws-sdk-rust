@@ -2,22 +2,22 @@
 
 /// <p>Specifies attributes for sorting a list of built-in intents.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BuiltInIntentSortBy {
     /// <p>The attribute to use to sort the list of built-in intents.</p>
     #[doc(hidden)]
-    pub attribute: std::option::Option<crate::types::BuiltInIntentSortAttribute>,
+    pub attribute: ::std::option::Option<crate::types::BuiltInIntentSortAttribute>,
     /// <p>The order to sort the list. You can specify ascending or descending order.</p>
     #[doc(hidden)]
-    pub order: std::option::Option<crate::types::SortOrder>,
+    pub order: ::std::option::Option<crate::types::SortOrder>,
 }
 impl BuiltInIntentSortBy {
     /// <p>The attribute to use to sort the list of built-in intents.</p>
-    pub fn attribute(&self) -> std::option::Option<&crate::types::BuiltInIntentSortAttribute> {
+    pub fn attribute(&self) -> ::std::option::Option<&crate::types::BuiltInIntentSortAttribute> {
         self.attribute.as_ref()
     }
     /// <p>The order to sort the list. You can specify ascending or descending order.</p>
-    pub fn order(&self) -> std::option::Option<&crate::types::SortOrder> {
+    pub fn order(&self) -> ::std::option::Option<&crate::types::SortOrder> {
         self.order.as_ref()
     }
 }
@@ -30,32 +30,34 @@ impl BuiltInIntentSortBy {
 
 /// A builder for [`BuiltInIntentSortBy`](crate::types::BuiltInIntentSortBy).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BuiltInIntentSortByBuilder {
-    pub(crate) attribute: std::option::Option<crate::types::BuiltInIntentSortAttribute>,
-    pub(crate) order: std::option::Option<crate::types::SortOrder>,
+    pub(crate) attribute: ::std::option::Option<crate::types::BuiltInIntentSortAttribute>,
+    pub(crate) order: ::std::option::Option<crate::types::SortOrder>,
 }
 impl BuiltInIntentSortByBuilder {
     /// <p>The attribute to use to sort the list of built-in intents.</p>
     pub fn attribute(mut self, input: crate::types::BuiltInIntentSortAttribute) -> Self {
-        self.attribute = Some(input);
+        self.attribute = ::std::option::Option::Some(input);
         self
     }
     /// <p>The attribute to use to sort the list of built-in intents.</p>
     pub fn set_attribute(
         mut self,
-        input: std::option::Option<crate::types::BuiltInIntentSortAttribute>,
+        input: ::std::option::Option<crate::types::BuiltInIntentSortAttribute>,
     ) -> Self {
         self.attribute = input;
         self
     }
     /// <p>The order to sort the list. You can specify ascending or descending order.</p>
     pub fn order(mut self, input: crate::types::SortOrder) -> Self {
-        self.order = Some(input);
+        self.order = ::std::option::Option::Some(input);
         self
     }
     /// <p>The order to sort the list. You can specify ascending or descending order.</p>
-    pub fn set_order(mut self, input: std::option::Option<crate::types::SortOrder>) -> Self {
+    pub fn set_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.order = input;
         self
     }

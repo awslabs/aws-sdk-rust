@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[deprecated(note = "This operation is no longer supported.")]
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutPositionConfigurationOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for PutPositionConfigurationOutput {
+impl ::aws_http::request_id::RequestId for PutPositionConfigurationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -22,7 +22,9 @@ impl PutPositionConfigurationOutput {
 
 /// A builder for [`PutPositionConfigurationOutput`](crate::operation::put_position_configuration::PutPositionConfigurationOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PutPositionConfigurationOutputBuilder {
     _request_id: Option<String>,
 }

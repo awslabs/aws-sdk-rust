@@ -2,22 +2,22 @@
 
 /// <p>The root cause information for a trace summary fault.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FaultRootCause {
     /// <p>A list of corresponding services. A service identifies a segment and it contains a name, account ID, type, and inferred flag.</p>
     #[doc(hidden)]
-    pub services: std::option::Option<std::vec::Vec<crate::types::FaultRootCauseService>>,
+    pub services: ::std::option::Option<::std::vec::Vec<crate::types::FaultRootCauseService>>,
     /// <p>A flag that denotes that the root cause impacts the trace client.</p>
     #[doc(hidden)]
-    pub client_impacting: std::option::Option<bool>,
+    pub client_impacting: ::std::option::Option<bool>,
 }
 impl FaultRootCause {
     /// <p>A list of corresponding services. A service identifies a segment and it contains a name, account ID, type, and inferred flag.</p>
-    pub fn services(&self) -> std::option::Option<&[crate::types::FaultRootCauseService]> {
+    pub fn services(&self) -> ::std::option::Option<&[crate::types::FaultRootCauseService]> {
         self.services.as_deref()
     }
     /// <p>A flag that denotes that the root cause impacts the trace client.</p>
-    pub fn client_impacting(&self) -> std::option::Option<bool> {
+    pub fn client_impacting(&self) -> ::std::option::Option<bool> {
         self.client_impacting
     }
 }
@@ -30,10 +30,13 @@ impl FaultRootCause {
 
 /// A builder for [`FaultRootCause`](crate::types::FaultRootCause).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FaultRootCauseBuilder {
-    pub(crate) services: std::option::Option<std::vec::Vec<crate::types::FaultRootCauseService>>,
-    pub(crate) client_impacting: std::option::Option<bool>,
+    pub(crate) services:
+        ::std::option::Option<::std::vec::Vec<crate::types::FaultRootCauseService>>,
+    pub(crate) client_impacting: ::std::option::Option<bool>,
 }
 impl FaultRootCauseBuilder {
     /// Appends an item to `services`.
@@ -44,24 +47,24 @@ impl FaultRootCauseBuilder {
     pub fn services(mut self, input: crate::types::FaultRootCauseService) -> Self {
         let mut v = self.services.unwrap_or_default();
         v.push(input);
-        self.services = Some(v);
+        self.services = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of corresponding services. A service identifies a segment and it contains a name, account ID, type, and inferred flag.</p>
     pub fn set_services(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::FaultRootCauseService>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::FaultRootCauseService>>,
     ) -> Self {
         self.services = input;
         self
     }
     /// <p>A flag that denotes that the root cause impacts the trace client.</p>
     pub fn client_impacting(mut self, input: bool) -> Self {
-        self.client_impacting = Some(input);
+        self.client_impacting = ::std::option::Option::Some(input);
         self
     }
     /// <p>A flag that denotes that the root cause impacts the trace client.</p>
-    pub fn set_client_impacting(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_client_impacting(mut self, input: ::std::option::Option<bool>) -> Self {
         self.client_impacting = input;
         self
     }

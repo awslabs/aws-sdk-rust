@@ -6,56 +6,59 @@ pub use crate::operation::create_profile::_create_profile_input::CreateProfileIn
 /// Fluent builder constructing a request to `CreateProfile`.
 ///
 /// <p>Creates a new room profile with the specified details.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateProfileFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_profile::builders::CreateProfileInputBuilder,
 }
 impl CreateProfileFluentBuilder {
     /// Creates a new `CreateProfile`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_profile::CreateProfile,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_profile::CreateProfileError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_profile::CreateProfileError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_profile::CreateProfileOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_profile::CreateProfileError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_profile::CreateProfileError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,39 +71,39 @@ impl CreateProfileFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_profile::CreateProfileOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_profile::CreateProfileError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_profile::CreateProfileError>,
     > {
         self.send_middleware().await
     }
     /// <p>The name of a room profile.</p>
-    pub fn profile_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn profile_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.profile_name(input.into());
         self
     }
     /// <p>The name of a room profile.</p>
-    pub fn set_profile_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_profile_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_profile_name(input);
         self
     }
     /// <p>The time zone used by a room profile.</p>
-    pub fn timezone(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn timezone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.timezone(input.into());
         self
     }
     /// <p>The time zone used by a room profile.</p>
-    pub fn set_timezone(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_timezone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_timezone(input);
         self
     }
     /// <p>The valid address for the room.</p>
-    pub fn address(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.address(input.into());
         self
     }
     /// <p>The valid address for the room.</p>
-    pub fn set_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_address(input);
         self
     }
@@ -112,7 +115,7 @@ impl CreateProfileFluentBuilder {
     /// <p>The distance unit to be used by devices in the profile.</p>
     pub fn set_distance_unit(
         mut self,
-        input: std::option::Option<crate::types::DistanceUnit>,
+        input: ::std::option::Option<crate::types::DistanceUnit>,
     ) -> Self {
         self.inner = self.inner.set_distance_unit(input);
         self
@@ -125,7 +128,7 @@ impl CreateProfileFluentBuilder {
     /// <p>The temperature unit to be used by devices in the profile.</p>
     pub fn set_temperature_unit(
         mut self,
-        input: std::option::Option<crate::types::TemperatureUnit>,
+        input: ::std::option::Option<crate::types::TemperatureUnit>,
     ) -> Self {
         self.inner = self.inner.set_temperature_unit(input);
         self
@@ -136,29 +139,32 @@ impl CreateProfileFluentBuilder {
         self
     }
     /// <p>A wake word for Alexa, Echo, Amazon, or a computer.</p>
-    pub fn set_wake_word(mut self, input: std::option::Option<crate::types::WakeWord>) -> Self {
+    pub fn set_wake_word(mut self, input: ::std::option::Option<crate::types::WakeWord>) -> Self {
         self.inner = self.inner.set_wake_word(input);
         self
     }
     /// <p>The locale of the room profile. (This is currently only available to a limited preview audience.)</p>
-    pub fn locale(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn locale(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.locale(input.into());
         self
     }
     /// <p>The locale of the room profile. (This is currently only available to a limited preview audience.)</p>
-    pub fn set_locale(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_locale(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_locale(input);
         self
     }
     /// <p>The user-specified token that is used during the creation of a profile.</p>
-    pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn client_request_token(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>The user-specified token that is used during the creation of a profile.</p>
     pub fn set_client_request_token(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
@@ -169,7 +175,7 @@ impl CreateProfileFluentBuilder {
         self
     }
     /// <p>Whether room profile setup is enabled.</p>
-    pub fn set_setup_mode_disabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_setup_mode_disabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_setup_mode_disabled(input);
         self
     }
@@ -179,7 +185,7 @@ impl CreateProfileFluentBuilder {
         self
     }
     /// <p>The maximum volume limit for a room profile.</p>
-    pub fn set_max_volume_limit(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_volume_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_volume_limit(input);
         self
     }
@@ -189,7 +195,7 @@ impl CreateProfileFluentBuilder {
         self
     }
     /// <p>Whether PSTN calling is enabled.</p>
-    pub fn set_pstn_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_pstn_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_pstn_enabled(input);
         self
     }
@@ -199,7 +205,7 @@ impl CreateProfileFluentBuilder {
         self
     }
     /// <p>Whether data retention of the profile is enabled.</p>
-    pub fn set_data_retention_opt_in(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_data_retention_opt_in(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_data_retention_opt_in(input);
         self
     }
@@ -214,7 +220,7 @@ impl CreateProfileFluentBuilder {
     /// <p>The meeting room settings of a room profile.</p>
     pub fn set_meeting_room_configuration(
         mut self,
-        input: std::option::Option<crate::types::CreateMeetingRoomConfiguration>,
+        input: ::std::option::Option<crate::types::CreateMeetingRoomConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_meeting_room_configuration(input);
         self
@@ -231,7 +237,7 @@ impl CreateProfileFluentBuilder {
     /// <p>The tags for the profile.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self

@@ -38,13 +38,13 @@
 /// <p>The current status of an account as the delegated Amazon Macie administrator account for an organization in Organizations. Possible values are:</p>
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum AdminStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum AdminStatus {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for AdminStatus {
+impl ::std::convert::From<&str> for AdminStatus {
     fn from(s: &str) -> Self {
         match s {
             "DISABLING_IN_PROGRESS" => AdminStatus::DisablingInProgress,
@@ -63,11 +63,11 @@ impl std::convert::From<&str> for AdminStatus {
         }
     }
 }
-impl std::str::FromStr for AdminStatus {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for AdminStatus {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AdminStatus::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(AdminStatus::from(s))
     }
 }
 impl AdminStatus {
@@ -84,7 +84,7 @@ impl AdminStatus {
         &["DISABLING_IN_PROGRESS", "ENABLED"]
     }
 }
-impl AsRef<str> for AdminStatus {
+impl ::std::convert::AsRef<str> for AdminStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

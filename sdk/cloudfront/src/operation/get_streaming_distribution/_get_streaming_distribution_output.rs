@@ -2,29 +2,29 @@
 
 /// <p>The returned result of the corresponding request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetStreamingDistributionOutput {
     /// <p>The streaming distribution's information.</p>
     #[doc(hidden)]
-    pub streaming_distribution: std::option::Option<crate::types::StreamingDistribution>,
+    pub streaming_distribution: ::std::option::Option<crate::types::StreamingDistribution>,
     /// <p>The current version of the streaming distribution's information. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     #[doc(hidden)]
-    pub e_tag: std::option::Option<std::string::String>,
+    pub e_tag: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetStreamingDistributionOutput {
     /// <p>The streaming distribution's information.</p>
     pub fn streaming_distribution(
         &self,
-    ) -> std::option::Option<&crate::types::StreamingDistribution> {
+    ) -> ::std::option::Option<&crate::types::StreamingDistribution> {
         self.streaming_distribution.as_ref()
     }
     /// <p>The current version of the streaming distribution's information. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-    pub fn e_tag(&self) -> std::option::Option<&str> {
+    pub fn e_tag(&self) -> ::std::option::Option<&str> {
         self.e_tag.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for GetStreamingDistributionOutput {
+impl ::aws_http::request_id::RequestId for GetStreamingDistributionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -40,33 +40,35 @@ impl GetStreamingDistributionOutput {
 
 /// A builder for [`GetStreamingDistributionOutput`](crate::operation::get_streaming_distribution::GetStreamingDistributionOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetStreamingDistributionOutputBuilder {
-    pub(crate) streaming_distribution: std::option::Option<crate::types::StreamingDistribution>,
-    pub(crate) e_tag: std::option::Option<std::string::String>,
+    pub(crate) streaming_distribution: ::std::option::Option<crate::types::StreamingDistribution>,
+    pub(crate) e_tag: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetStreamingDistributionOutputBuilder {
     /// <p>The streaming distribution's information.</p>
     pub fn streaming_distribution(mut self, input: crate::types::StreamingDistribution) -> Self {
-        self.streaming_distribution = Some(input);
+        self.streaming_distribution = ::std::option::Option::Some(input);
         self
     }
     /// <p>The streaming distribution's information.</p>
     pub fn set_streaming_distribution(
         mut self,
-        input: std::option::Option<crate::types::StreamingDistribution>,
+        input: ::std::option::Option<crate::types::StreamingDistribution>,
     ) -> Self {
         self.streaming_distribution = input;
         self
     }
     /// <p>The current version of the streaming distribution's information. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-    pub fn e_tag(mut self, input: impl Into<std::string::String>) -> Self {
-        self.e_tag = Some(input.into());
+    pub fn e_tag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.e_tag = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The current version of the streaming distribution's information. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-    pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_e_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.e_tag = input;
         self
     }

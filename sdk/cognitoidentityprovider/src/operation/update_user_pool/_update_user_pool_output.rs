@@ -2,11 +2,11 @@
 
 /// <p>Represents the response from the server when you make a request to update the user pool.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateUserPoolOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for UpdateUserPoolOutput {
+impl ::aws_http::request_id::RequestId for UpdateUserPoolOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -20,7 +20,9 @@ impl UpdateUserPoolOutput {
 
 /// A builder for [`UpdateUserPoolOutput`](crate::operation::update_user_pool::UpdateUserPoolOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateUserPoolOutputBuilder {
     _request_id: Option<String>,
 }

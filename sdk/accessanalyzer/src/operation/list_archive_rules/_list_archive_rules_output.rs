@@ -2,27 +2,27 @@
 
 /// <p>The response to the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListArchiveRulesOutput {
     /// <p>A list of archive rules created for the specified analyzer.</p>
     #[doc(hidden)]
-    pub archive_rules: std::option::Option<std::vec::Vec<crate::types::ArchiveRuleSummary>>,
+    pub archive_rules: ::std::option::Option<::std::vec::Vec<crate::types::ArchiveRuleSummary>>,
     /// <p>A token used for pagination of results returned.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListArchiveRulesOutput {
     /// <p>A list of archive rules created for the specified analyzer.</p>
-    pub fn archive_rules(&self) -> std::option::Option<&[crate::types::ArchiveRuleSummary]> {
+    pub fn archive_rules(&self) -> ::std::option::Option<&[crate::types::ArchiveRuleSummary]> {
         self.archive_rules.as_deref()
     }
     /// <p>A token used for pagination of results returned.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListArchiveRulesOutput {
+impl ::aws_http::request_id::RequestId for ListArchiveRulesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -37,10 +37,13 @@ impl ListArchiveRulesOutput {
 
 /// A builder for [`ListArchiveRulesOutput`](crate::operation::list_archive_rules::ListArchiveRulesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListArchiveRulesOutputBuilder {
-    pub(crate) archive_rules: std::option::Option<std::vec::Vec<crate::types::ArchiveRuleSummary>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) archive_rules:
+        ::std::option::Option<::std::vec::Vec<crate::types::ArchiveRuleSummary>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListArchiveRulesOutputBuilder {
@@ -52,24 +55,24 @@ impl ListArchiveRulesOutputBuilder {
     pub fn archive_rules(mut self, input: crate::types::ArchiveRuleSummary) -> Self {
         let mut v = self.archive_rules.unwrap_or_default();
         v.push(input);
-        self.archive_rules = Some(v);
+        self.archive_rules = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of archive rules created for the specified analyzer.</p>
     pub fn set_archive_rules(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ArchiveRuleSummary>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ArchiveRuleSummary>>,
     ) -> Self {
         self.archive_rules = input;
         self
     }
     /// <p>A token used for pagination of results returned.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A token used for pagination of results returned.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

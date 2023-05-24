@@ -3,22 +3,22 @@
 /// <p>The liner axis scale setup.</p>
 /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AxisLinearScale {
     /// <p>The step count setup of a linear axis.</p>
     #[doc(hidden)]
-    pub step_count: std::option::Option<i32>,
+    pub step_count: ::std::option::Option<i32>,
     /// <p>The step size setup of a linear axis.</p>
     #[doc(hidden)]
-    pub step_size: std::option::Option<f64>,
+    pub step_size: ::std::option::Option<f64>,
 }
 impl AxisLinearScale {
     /// <p>The step count setup of a linear axis.</p>
-    pub fn step_count(&self) -> std::option::Option<i32> {
+    pub fn step_count(&self) -> ::std::option::Option<i32> {
         self.step_count
     }
     /// <p>The step size setup of a linear axis.</p>
-    pub fn step_size(&self) -> std::option::Option<f64> {
+    pub fn step_size(&self) -> ::std::option::Option<f64> {
         self.step_size
     }
 }
@@ -31,29 +31,31 @@ impl AxisLinearScale {
 
 /// A builder for [`AxisLinearScale`](crate::types::AxisLinearScale).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AxisLinearScaleBuilder {
-    pub(crate) step_count: std::option::Option<i32>,
-    pub(crate) step_size: std::option::Option<f64>,
+    pub(crate) step_count: ::std::option::Option<i32>,
+    pub(crate) step_size: ::std::option::Option<f64>,
 }
 impl AxisLinearScaleBuilder {
     /// <p>The step count setup of a linear axis.</p>
     pub fn step_count(mut self, input: i32) -> Self {
-        self.step_count = Some(input);
+        self.step_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The step count setup of a linear axis.</p>
-    pub fn set_step_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_step_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.step_count = input;
         self
     }
     /// <p>The step size setup of a linear axis.</p>
     pub fn step_size(mut self, input: f64) -> Self {
-        self.step_size = Some(input);
+        self.step_size = ::std::option::Option::Some(input);
         self
     }
     /// <p>The step size setup of a linear axis.</p>
-    pub fn set_step_size(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_step_size(mut self, input: ::std::option::Option<f64>) -> Self {
         self.step_size = input;
         self
     }

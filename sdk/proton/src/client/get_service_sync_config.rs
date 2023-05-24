@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetServiceSyncConfig`](crate::operation::get_service_sync_config::builders::GetServiceSyncConfigFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`service_name(impl Into<String>)`](crate::operation::get_service_sync_config::builders::GetServiceSyncConfigFluentBuilder::service_name) / [`set_service_name(Option<String>)`](crate::operation::get_service_sync_config::builders::GetServiceSyncConfigFluentBuilder::set_service_name): <p>The name of the service that you want to get the service sync configuration for.</p>
+    ///   - [`service_name(impl ::std::convert::Into<String>)`](crate::operation::get_service_sync_config::builders::GetServiceSyncConfigFluentBuilder::service_name) / [`set_service_name(Option<String>)`](crate::operation::get_service_sync_config::builders::GetServiceSyncConfigFluentBuilder::set_service_name): <p>The name of the service that you want to get the service sync configuration for.</p>
     /// - On success, responds with [`GetServiceSyncConfigOutput`](crate::operation::get_service_sync_config::GetServiceSyncConfigOutput) with field(s):
     ///   - [`service_sync_config(Option<ServiceSyncConfig>)`](crate::operation::get_service_sync_config::GetServiceSyncConfigOutput::service_sync_config): <p>The detailed data of the requested service sync configuration.</p>
     /// - On failure, responds with [`SdkError<GetServiceSyncConfigError>`](crate::operation::get_service_sync_config::GetServiceSyncConfigError)

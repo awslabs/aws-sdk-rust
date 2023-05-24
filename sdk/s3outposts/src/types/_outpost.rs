@@ -2,32 +2,32 @@
 
 /// <p>Contains the details for the Outpost object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Outpost {
     /// <p>Specifies the unique Amazon Resource Name (ARN) for the outpost.</p>
     #[doc(hidden)]
-    pub outpost_arn: std::option::Option<std::string::String>,
+    pub outpost_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the unique identifier for the outpost.</p>
     #[doc(hidden)]
-    pub outpost_id: std::option::Option<std::string::String>,
+    pub outpost_id: ::std::option::Option<::std::string::String>,
     /// <p>Returns the Amazon Web Services account ID of the outpost owner. Useful for comparing owned versus shared outposts.</p>
     #[doc(hidden)]
-    pub owner_id: std::option::Option<std::string::String>,
+    pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 capacity of the outpost in bytes.</p>
     #[doc(hidden)]
     pub capacity_in_bytes: i64,
 }
 impl Outpost {
     /// <p>Specifies the unique Amazon Resource Name (ARN) for the outpost.</p>
-    pub fn outpost_arn(&self) -> std::option::Option<&str> {
+    pub fn outpost_arn(&self) -> ::std::option::Option<&str> {
         self.outpost_arn.as_deref()
     }
     /// <p>Specifies the unique identifier for the outpost.</p>
-    pub fn outpost_id(&self) -> std::option::Option<&str> {
+    pub fn outpost_id(&self) -> ::std::option::Option<&str> {
         self.outpost_id.as_deref()
     }
     /// <p>Returns the Amazon Web Services account ID of the outpost owner. Useful for comparing owned versus shared outposts.</p>
-    pub fn owner_id(&self) -> std::option::Option<&str> {
+    pub fn owner_id(&self) -> ::std::option::Option<&str> {
         self.owner_id.as_deref()
     }
     /// <p>The Amazon S3 capacity of the outpost in bytes.</p>
@@ -44,51 +44,53 @@ impl Outpost {
 
 /// A builder for [`Outpost`](crate::types::Outpost).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OutpostBuilder {
-    pub(crate) outpost_arn: std::option::Option<std::string::String>,
-    pub(crate) outpost_id: std::option::Option<std::string::String>,
-    pub(crate) owner_id: std::option::Option<std::string::String>,
-    pub(crate) capacity_in_bytes: std::option::Option<i64>,
+    pub(crate) outpost_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) outpost_id: ::std::option::Option<::std::string::String>,
+    pub(crate) owner_id: ::std::option::Option<::std::string::String>,
+    pub(crate) capacity_in_bytes: ::std::option::Option<i64>,
 }
 impl OutpostBuilder {
     /// <p>Specifies the unique Amazon Resource Name (ARN) for the outpost.</p>
-    pub fn outpost_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.outpost_arn = Some(input.into());
+    pub fn outpost_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.outpost_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the unique Amazon Resource Name (ARN) for the outpost.</p>
-    pub fn set_outpost_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_outpost_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.outpost_arn = input;
         self
     }
     /// <p>Specifies the unique identifier for the outpost.</p>
-    pub fn outpost_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.outpost_id = Some(input.into());
+    pub fn outpost_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.outpost_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the unique identifier for the outpost.</p>
-    pub fn set_outpost_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_outpost_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.outpost_id = input;
         self
     }
     /// <p>Returns the Amazon Web Services account ID of the outpost owner. Useful for comparing owned versus shared outposts.</p>
-    pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.owner_id = Some(input.into());
+    pub fn owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.owner_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Returns the Amazon Web Services account ID of the outpost owner. Useful for comparing owned versus shared outposts.</p>
-    pub fn set_owner_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner_id = input;
         self
     }
     /// <p>The Amazon S3 capacity of the outpost in bytes.</p>
     pub fn capacity_in_bytes(mut self, input: i64) -> Self {
-        self.capacity_in_bytes = Some(input);
+        self.capacity_in_bytes = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Amazon S3 capacity of the outpost in bytes.</p>
-    pub fn set_capacity_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_capacity_in_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.capacity_in_bytes = input;
         self
     }

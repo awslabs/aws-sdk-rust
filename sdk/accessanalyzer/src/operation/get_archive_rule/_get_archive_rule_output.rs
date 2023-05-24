@@ -2,20 +2,20 @@
 
 /// <p>The response to the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetArchiveRuleOutput {
     /// <p>Contains information about an archive rule.</p>
     #[doc(hidden)]
-    pub archive_rule: std::option::Option<crate::types::ArchiveRuleSummary>,
+    pub archive_rule: ::std::option::Option<crate::types::ArchiveRuleSummary>,
     _request_id: Option<String>,
 }
 impl GetArchiveRuleOutput {
     /// <p>Contains information about an archive rule.</p>
-    pub fn archive_rule(&self) -> std::option::Option<&crate::types::ArchiveRuleSummary> {
+    pub fn archive_rule(&self) -> ::std::option::Option<&crate::types::ArchiveRuleSummary> {
         self.archive_rule.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for GetArchiveRuleOutput {
+impl ::aws_http::request_id::RequestId for GetArchiveRuleOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,21 +29,23 @@ impl GetArchiveRuleOutput {
 
 /// A builder for [`GetArchiveRuleOutput`](crate::operation::get_archive_rule::GetArchiveRuleOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetArchiveRuleOutputBuilder {
-    pub(crate) archive_rule: std::option::Option<crate::types::ArchiveRuleSummary>,
+    pub(crate) archive_rule: ::std::option::Option<crate::types::ArchiveRuleSummary>,
     _request_id: Option<String>,
 }
 impl GetArchiveRuleOutputBuilder {
     /// <p>Contains information about an archive rule.</p>
     pub fn archive_rule(mut self, input: crate::types::ArchiveRuleSummary) -> Self {
-        self.archive_rule = Some(input);
+        self.archive_rule = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains information about an archive rule.</p>
     pub fn set_archive_rule(
         mut self,
-        input: std::option::Option<crate::types::ArchiveRuleSummary>,
+        input: ::std::option::Option<crate::types::ArchiveRuleSummary>,
     ) -> Self {
         self.archive_rule = input;
         self

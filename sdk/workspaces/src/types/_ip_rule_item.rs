@@ -2,22 +2,22 @@
 
 /// <p>Describes a rule for an IP access control group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IpRuleItem {
     /// <p>The IP address range, in CIDR notation.</p>
     #[doc(hidden)]
-    pub ip_rule: std::option::Option<std::string::String>,
+    pub ip_rule: ::std::option::Option<::std::string::String>,
     /// <p>The description.</p>
     #[doc(hidden)]
-    pub rule_desc: std::option::Option<std::string::String>,
+    pub rule_desc: ::std::option::Option<::std::string::String>,
 }
 impl IpRuleItem {
     /// <p>The IP address range, in CIDR notation.</p>
-    pub fn ip_rule(&self) -> std::option::Option<&str> {
+    pub fn ip_rule(&self) -> ::std::option::Option<&str> {
         self.ip_rule.as_deref()
     }
     /// <p>The description.</p>
-    pub fn rule_desc(&self) -> std::option::Option<&str> {
+    pub fn rule_desc(&self) -> ::std::option::Option<&str> {
         self.rule_desc.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl IpRuleItem {
 
 /// A builder for [`IpRuleItem`](crate::types::IpRuleItem).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct IpRuleItemBuilder {
-    pub(crate) ip_rule: std::option::Option<std::string::String>,
-    pub(crate) rule_desc: std::option::Option<std::string::String>,
+    pub(crate) ip_rule: ::std::option::Option<::std::string::String>,
+    pub(crate) rule_desc: ::std::option::Option<::std::string::String>,
 }
 impl IpRuleItemBuilder {
     /// <p>The IP address range, in CIDR notation.</p>
-    pub fn ip_rule(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ip_rule = Some(input.into());
+    pub fn ip_rule(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ip_rule = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IP address range, in CIDR notation.</p>
-    pub fn set_ip_rule(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ip_rule(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ip_rule = input;
         self
     }
     /// <p>The description.</p>
-    pub fn rule_desc(mut self, input: impl Into<std::string::String>) -> Self {
-        self.rule_desc = Some(input.into());
+    pub fn rule_desc(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.rule_desc = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description.</p>
-    pub fn set_rule_desc(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_rule_desc(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_desc = input;
         self
     }

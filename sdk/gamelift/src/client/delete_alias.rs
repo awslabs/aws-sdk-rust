@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteAlias`](crate::operation::delete_alias::builders::DeleteAliasFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`alias_id(impl Into<String>)`](crate::operation::delete_alias::builders::DeleteAliasFluentBuilder::alias_id) / [`set_alias_id(Option<String>)`](crate::operation::delete_alias::builders::DeleteAliasFluentBuilder::set_alias_id): <p>A unique identifier of the alias that you want to delete. You can use either the alias ID or ARN value.</p>
+    ///   - [`alias_id(impl ::std::convert::Into<String>)`](crate::operation::delete_alias::builders::DeleteAliasFluentBuilder::alias_id) / [`set_alias_id(Option<String>)`](crate::operation::delete_alias::builders::DeleteAliasFluentBuilder::set_alias_id): <p>A unique identifier of the alias that you want to delete. You can use either the alias ID or ARN value.</p>
     /// - On success, responds with [`DeleteAliasOutput`](crate::operation::delete_alias::DeleteAliasOutput)
     /// - On failure, responds with [`SdkError<DeleteAliasError>`](crate::operation::delete_alias::DeleteAliasError)
     pub fn delete_alias(

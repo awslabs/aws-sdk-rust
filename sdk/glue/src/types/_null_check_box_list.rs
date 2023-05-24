@@ -2,29 +2,29 @@
 
 /// <p>Represents whether certain values are recognized as null values for removal.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NullCheckBoxList {
     /// <p>Specifies that an empty string is considered as a null value.</p>
     #[doc(hidden)]
-    pub is_empty: std::option::Option<bool>,
+    pub is_empty: ::std::option::Option<bool>,
     /// <p>Specifies that a value spelling out the word 'null' is considered as a null value.</p>
     #[doc(hidden)]
-    pub is_null_string: std::option::Option<bool>,
+    pub is_null_string: ::std::option::Option<bool>,
     /// <p>Specifies that an integer value of -1 is considered as a null value.</p>
     #[doc(hidden)]
-    pub is_neg_one: std::option::Option<bool>,
+    pub is_neg_one: ::std::option::Option<bool>,
 }
 impl NullCheckBoxList {
     /// <p>Specifies that an empty string is considered as a null value.</p>
-    pub fn is_empty(&self) -> std::option::Option<bool> {
+    pub fn is_empty(&self) -> ::std::option::Option<bool> {
         self.is_empty
     }
     /// <p>Specifies that a value spelling out the word 'null' is considered as a null value.</p>
-    pub fn is_null_string(&self) -> std::option::Option<bool> {
+    pub fn is_null_string(&self) -> ::std::option::Option<bool> {
         self.is_null_string
     }
     /// <p>Specifies that an integer value of -1 is considered as a null value.</p>
-    pub fn is_neg_one(&self) -> std::option::Option<bool> {
+    pub fn is_neg_one(&self) -> ::std::option::Option<bool> {
         self.is_neg_one
     }
 }
@@ -37,40 +37,42 @@ impl NullCheckBoxList {
 
 /// A builder for [`NullCheckBoxList`](crate::types::NullCheckBoxList).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NullCheckBoxListBuilder {
-    pub(crate) is_empty: std::option::Option<bool>,
-    pub(crate) is_null_string: std::option::Option<bool>,
-    pub(crate) is_neg_one: std::option::Option<bool>,
+    pub(crate) is_empty: ::std::option::Option<bool>,
+    pub(crate) is_null_string: ::std::option::Option<bool>,
+    pub(crate) is_neg_one: ::std::option::Option<bool>,
 }
 impl NullCheckBoxListBuilder {
     /// <p>Specifies that an empty string is considered as a null value.</p>
     pub fn is_empty(mut self, input: bool) -> Self {
-        self.is_empty = Some(input);
+        self.is_empty = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies that an empty string is considered as a null value.</p>
-    pub fn set_is_empty(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_empty(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_empty = input;
         self
     }
     /// <p>Specifies that a value spelling out the word 'null' is considered as a null value.</p>
     pub fn is_null_string(mut self, input: bool) -> Self {
-        self.is_null_string = Some(input);
+        self.is_null_string = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies that a value spelling out the word 'null' is considered as a null value.</p>
-    pub fn set_is_null_string(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_null_string(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_null_string = input;
         self
     }
     /// <p>Specifies that an integer value of -1 is considered as a null value.</p>
     pub fn is_neg_one(mut self, input: bool) -> Self {
-        self.is_neg_one = Some(input);
+        self.is_neg_one = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies that an integer value of -1 is considered as a null value.</p>
-    pub fn set_is_neg_one(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_neg_one(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_neg_one = input;
         self
     }

@@ -6,29 +6,29 @@ pub use crate::operation::describe_environment_memberships::_describe_environmen
 /// Fluent builder constructing a request to `DescribeEnvironmentMemberships`.
 ///
 /// <p>Gets information about environment members for an Cloud9 development environment.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeEnvironmentMembershipsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::describe_environment_memberships::builders::DescribeEnvironmentMembershipsInputBuilder,
 }
 impl DescribeEnvironmentMembershipsFluentBuilder {
     /// Creates a new `DescribeEnvironmentMemberships`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::describe_environment_memberships::DescribeEnvironmentMemberships,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::describe_environment_memberships::DescribeEnvironmentMembershipsError,
         >,
     > {
@@ -36,30 +36,33 @@ impl DescribeEnvironmentMembershipsFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::describe_environment_memberships::DescribeEnvironmentMembershipsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::describe_environment_memberships::DescribeEnvironmentMembershipsError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,9 +75,9 @@ impl DescribeEnvironmentMembershipsFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::describe_environment_memberships::DescribeEnvironmentMembershipsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::describe_environment_memberships::DescribeEnvironmentMembershipsError,
         >,
     > {
@@ -87,22 +90,28 @@ impl DescribeEnvironmentMembershipsFluentBuilder {
         crate::operation::describe_environment_memberships::paginator::DescribeEnvironmentMembershipsPaginator::new(self.handle, self.inner)
     }
     /// <p>The Amazon Resource Name (ARN) of an individual environment member to get information about. If no value is specified, information about all environment members are returned.</p>
-    pub fn user_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of an individual environment member to get information about. If no value is specified, information about all environment members are returned.</p>
-    pub fn set_user_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_arn(input);
         self
     }
     /// <p>The ID of the environment to get environment member information about.</p>
-    pub fn environment_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn environment_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.environment_id(input.into());
         self
     }
     /// <p>The ID of the environment to get environment member information about.</p>
-    pub fn set_environment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_environment_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_environment_id(input);
         self
     }
@@ -130,18 +139,18 @@ impl DescribeEnvironmentMembershipsFluentBuilder {
     /// <p>If no value is specified, information about all environment members are returned.</p>
     pub fn set_permissions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Permissions>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Permissions>>,
     ) -> Self {
         self.inner = self.inner.set_permissions(input);
         self
     }
     /// <p>During a previous call, if there are more than 25 items in the list, only the first 25 items are returned, along with a unique string called a <i>next token</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
     /// <p>During a previous call, if there are more than 25 items in the list, only the first 25 items are returned, along with a unique string called a <i>next token</i>. To get the next batch of items in the list, call this operation again, adding the next token to the call. To get all of the items in the list, keep calling this operation with each subsequent next token that is returned, until no more next tokens are returned.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
@@ -151,7 +160,7 @@ impl DescribeEnvironmentMembershipsFluentBuilder {
         self
     }
     /// <p>The maximum number of environment members to get information about.</p>
-    pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }

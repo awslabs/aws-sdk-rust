@@ -2,36 +2,36 @@
 
 /// <p>Dataflow details for the destination side.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Destination {
     /// <p>Type of a <code>Config</code>.</p>
     #[doc(hidden)]
-    pub config_type: std::option::Option<crate::types::ConfigCapabilityType>,
+    pub config_type: ::std::option::Option<crate::types::ConfigCapabilityType>,
     /// <p>UUID of a <code>Config</code>.</p>
     #[doc(hidden)]
-    pub config_id: std::option::Option<std::string::String>,
+    pub config_id: ::std::option::Option<::std::string::String>,
     /// <p>Additional details for a <code>Config</code>, if type is dataflow endpoint or antenna demod decode.</p>
     #[doc(hidden)]
-    pub config_details: std::option::Option<crate::types::ConfigDetails>,
+    pub config_details: ::std::option::Option<crate::types::ConfigDetails>,
     /// <p>Region of a dataflow destination.</p>
     #[doc(hidden)]
-    pub dataflow_destination_region: std::option::Option<std::string::String>,
+    pub dataflow_destination_region: ::std::option::Option<::std::string::String>,
 }
 impl Destination {
     /// <p>Type of a <code>Config</code>.</p>
-    pub fn config_type(&self) -> std::option::Option<&crate::types::ConfigCapabilityType> {
+    pub fn config_type(&self) -> ::std::option::Option<&crate::types::ConfigCapabilityType> {
         self.config_type.as_ref()
     }
     /// <p>UUID of a <code>Config</code>.</p>
-    pub fn config_id(&self) -> std::option::Option<&str> {
+    pub fn config_id(&self) -> ::std::option::Option<&str> {
         self.config_id.as_deref()
     }
     /// <p>Additional details for a <code>Config</code>, if type is dataflow endpoint or antenna demod decode.</p>
-    pub fn config_details(&self) -> std::option::Option<&crate::types::ConfigDetails> {
+    pub fn config_details(&self) -> ::std::option::Option<&crate::types::ConfigDetails> {
         self.config_details.as_ref()
     }
     /// <p>Region of a dataflow destination.</p>
-    pub fn dataflow_destination_region(&self) -> std::option::Option<&str> {
+    pub fn dataflow_destination_region(&self) -> ::std::option::Option<&str> {
         self.dataflow_destination_region.as_deref()
     }
 }
@@ -44,59 +44,64 @@ impl Destination {
 
 /// A builder for [`Destination`](crate::types::Destination).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DestinationBuilder {
-    pub(crate) config_type: std::option::Option<crate::types::ConfigCapabilityType>,
-    pub(crate) config_id: std::option::Option<std::string::String>,
-    pub(crate) config_details: std::option::Option<crate::types::ConfigDetails>,
-    pub(crate) dataflow_destination_region: std::option::Option<std::string::String>,
+    pub(crate) config_type: ::std::option::Option<crate::types::ConfigCapabilityType>,
+    pub(crate) config_id: ::std::option::Option<::std::string::String>,
+    pub(crate) config_details: ::std::option::Option<crate::types::ConfigDetails>,
+    pub(crate) dataflow_destination_region: ::std::option::Option<::std::string::String>,
 }
 impl DestinationBuilder {
     /// <p>Type of a <code>Config</code>.</p>
     pub fn config_type(mut self, input: crate::types::ConfigCapabilityType) -> Self {
-        self.config_type = Some(input);
+        self.config_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Type of a <code>Config</code>.</p>
     pub fn set_config_type(
         mut self,
-        input: std::option::Option<crate::types::ConfigCapabilityType>,
+        input: ::std::option::Option<crate::types::ConfigCapabilityType>,
     ) -> Self {
         self.config_type = input;
         self
     }
     /// <p>UUID of a <code>Config</code>.</p>
-    pub fn config_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.config_id = Some(input.into());
+    pub fn config_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.config_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>UUID of a <code>Config</code>.</p>
-    pub fn set_config_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_config_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.config_id = input;
         self
     }
     /// <p>Additional details for a <code>Config</code>, if type is dataflow endpoint or antenna demod decode.</p>
     pub fn config_details(mut self, input: crate::types::ConfigDetails) -> Self {
-        self.config_details = Some(input);
+        self.config_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>Additional details for a <code>Config</code>, if type is dataflow endpoint or antenna demod decode.</p>
     pub fn set_config_details(
         mut self,
-        input: std::option::Option<crate::types::ConfigDetails>,
+        input: ::std::option::Option<crate::types::ConfigDetails>,
     ) -> Self {
         self.config_details = input;
         self
     }
     /// <p>Region of a dataflow destination.</p>
-    pub fn dataflow_destination_region(mut self, input: impl Into<std::string::String>) -> Self {
-        self.dataflow_destination_region = Some(input.into());
+    pub fn dataflow_destination_region(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.dataflow_destination_region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Region of a dataflow destination.</p>
     pub fn set_dataflow_destination_region(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.dataflow_destination_region = input;
         self

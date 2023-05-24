@@ -41,13 +41,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum DeviceStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,7 +63,7 @@ pub enum DeviceStatus {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for DeviceStatus {
+impl ::std::convert::From<&str> for DeviceStatus {
     fn from(s: &str) -> Self {
         match s {
             "DEREGISTERED" => DeviceStatus::Deregistered,
@@ -77,11 +77,11 @@ impl std::convert::From<&str> for DeviceStatus {
         }
     }
 }
-impl std::str::FromStr for DeviceStatus {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for DeviceStatus {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DeviceStatus::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(DeviceStatus::from(s))
     }
 }
 impl DeviceStatus {
@@ -101,7 +101,7 @@ impl DeviceStatus {
         &["DEREGISTERED", "FAILED", "PENDING", "READY", "WAS_OFFLINE"]
     }
 }
-impl AsRef<str> for DeviceStatus {
+impl ::std::convert::AsRef<str> for DeviceStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

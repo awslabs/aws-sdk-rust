@@ -2,22 +2,22 @@
 
 /// <p>Information about an import task created for bulk provisioning.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SidewalkStartImportInfo {
     /// <p>The CSV file contained in an S3 bucket that's used for adding devices to an import task.</p>
     #[doc(hidden)]
-    pub device_creation_file: std::option::Option<std::string::String>,
+    pub device_creation_file: ::std::option::Option<::std::string::String>,
     /// <p>The IAM role that allows AWS IoT Wireless to access the CSV file in the S3 bucket.</p>
     #[doc(hidden)]
-    pub role: std::option::Option<std::string::String>,
+    pub role: ::std::option::Option<::std::string::String>,
 }
 impl SidewalkStartImportInfo {
     /// <p>The CSV file contained in an S3 bucket that's used for adding devices to an import task.</p>
-    pub fn device_creation_file(&self) -> std::option::Option<&str> {
+    pub fn device_creation_file(&self) -> ::std::option::Option<&str> {
         self.device_creation_file.as_deref()
     }
     /// <p>The IAM role that allows AWS IoT Wireless to access the CSV file in the S3 bucket.</p>
-    pub fn role(&self) -> std::option::Option<&str> {
+    pub fn role(&self) -> ::std::option::Option<&str> {
         self.role.as_deref()
     }
 }
@@ -30,32 +30,37 @@ impl SidewalkStartImportInfo {
 
 /// A builder for [`SidewalkStartImportInfo`](crate::types::SidewalkStartImportInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SidewalkStartImportInfoBuilder {
-    pub(crate) device_creation_file: std::option::Option<std::string::String>,
-    pub(crate) role: std::option::Option<std::string::String>,
+    pub(crate) device_creation_file: ::std::option::Option<::std::string::String>,
+    pub(crate) role: ::std::option::Option<::std::string::String>,
 }
 impl SidewalkStartImportInfoBuilder {
     /// <p>The CSV file contained in an S3 bucket that's used for adding devices to an import task.</p>
-    pub fn device_creation_file(mut self, input: impl Into<std::string::String>) -> Self {
-        self.device_creation_file = Some(input.into());
+    pub fn device_creation_file(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.device_creation_file = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The CSV file contained in an S3 bucket that's used for adding devices to an import task.</p>
     pub fn set_device_creation_file(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.device_creation_file = input;
         self
     }
     /// <p>The IAM role that allows AWS IoT Wireless to access the CSV file in the S3 bucket.</p>
-    pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
-        self.role = Some(input.into());
+    pub fn role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.role = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IAM role that allows AWS IoT Wireless to access the CSV file in the S3 bucket.</p>
-    pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role = input;
         self
     }

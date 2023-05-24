@@ -2,27 +2,28 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChangeMessageVisibilityBatchInput {
     /// <p>The URL of the Amazon SQS queue whose messages' visibility is changed.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
     #[doc(hidden)]
-    pub queue_url: std::option::Option<std::string::String>,
+    pub queue_url: ::std::option::Option<::std::string::String>,
     /// <p>A list of receipt handles of the messages for which the visibility timeout must be changed.</p>
     #[doc(hidden)]
-    pub entries:
-        std::option::Option<std::vec::Vec<crate::types::ChangeMessageVisibilityBatchRequestEntry>>,
+    pub entries: ::std::option::Option<
+        ::std::vec::Vec<crate::types::ChangeMessageVisibilityBatchRequestEntry>,
+    >,
 }
 impl ChangeMessageVisibilityBatchInput {
     /// <p>The URL of the Amazon SQS queue whose messages' visibility is changed.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
-    pub fn queue_url(&self) -> std::option::Option<&str> {
+    pub fn queue_url(&self) -> ::std::option::Option<&str> {
         self.queue_url.as_deref()
     }
     /// <p>A list of receipt handles of the messages for which the visibility timeout must be changed.</p>
     pub fn entries(
         &self,
-    ) -> std::option::Option<&[crate::types::ChangeMessageVisibilityBatchRequestEntry]> {
+    ) -> ::std::option::Option<&[crate::types::ChangeMessageVisibilityBatchRequestEntry]> {
         self.entries.as_deref()
     }
 }
@@ -35,22 +36,25 @@ impl ChangeMessageVisibilityBatchInput {
 
 /// A builder for [`ChangeMessageVisibilityBatchInput`](crate::operation::change_message_visibility_batch::ChangeMessageVisibilityBatchInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ChangeMessageVisibilityBatchInputBuilder {
-    pub(crate) queue_url: std::option::Option<std::string::String>,
-    pub(crate) entries:
-        std::option::Option<std::vec::Vec<crate::types::ChangeMessageVisibilityBatchRequestEntry>>,
+    pub(crate) queue_url: ::std::option::Option<::std::string::String>,
+    pub(crate) entries: ::std::option::Option<
+        ::std::vec::Vec<crate::types::ChangeMessageVisibilityBatchRequestEntry>,
+    >,
 }
 impl ChangeMessageVisibilityBatchInputBuilder {
     /// <p>The URL of the Amazon SQS queue whose messages' visibility is changed.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
-    pub fn queue_url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.queue_url = Some(input.into());
+    pub fn queue_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.queue_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL of the Amazon SQS queue whose messages' visibility is changed.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
-    pub fn set_queue_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_queue_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.queue_url = input;
         self
     }
@@ -65,14 +69,14 @@ impl ChangeMessageVisibilityBatchInputBuilder {
     ) -> Self {
         let mut v = self.entries.unwrap_or_default();
         v.push(input);
-        self.entries = Some(v);
+        self.entries = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of receipt handles of the messages for which the visibility timeout must be changed.</p>
     pub fn set_entries(
         mut self,
-        input: std::option::Option<
-            std::vec::Vec<crate::types::ChangeMessageVisibilityBatchRequestEntry>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::ChangeMessageVisibilityBatchRequestEntry>,
         >,
     ) -> Self {
         self.entries = input;
@@ -81,11 +85,11 @@ impl ChangeMessageVisibilityBatchInputBuilder {
     /// Consumes the builder and constructs a [`ChangeMessageVisibilityBatchInput`](crate::operation::change_message_visibility_batch::ChangeMessageVisibilityBatchInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::change_message_visibility_batch::ChangeMessageVisibilityBatchInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::change_message_visibility_batch::ChangeMessageVisibilityBatchInput {
                 queue_url: self.queue_url,
                 entries: self.entries,

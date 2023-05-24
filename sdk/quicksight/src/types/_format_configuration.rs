@@ -2,36 +2,36 @@
 
 /// <p>The formatting configuration for all types of field.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FormatConfiguration {
     /// <p>Formatting configuration for string fields.</p>
     #[doc(hidden)]
-    pub string_format_configuration: std::option::Option<crate::types::StringFormatConfiguration>,
+    pub string_format_configuration: ::std::option::Option<crate::types::StringFormatConfiguration>,
     /// <p>Formatting configuration for number fields.</p>
     #[doc(hidden)]
-    pub number_format_configuration: std::option::Option<crate::types::NumberFormatConfiguration>,
+    pub number_format_configuration: ::std::option::Option<crate::types::NumberFormatConfiguration>,
     /// <p>Formatting configuration for <code>DateTime</code> fields.</p>
     #[doc(hidden)]
     pub date_time_format_configuration:
-        std::option::Option<crate::types::DateTimeFormatConfiguration>,
+        ::std::option::Option<crate::types::DateTimeFormatConfiguration>,
 }
 impl FormatConfiguration {
     /// <p>Formatting configuration for string fields.</p>
     pub fn string_format_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::StringFormatConfiguration> {
+    ) -> ::std::option::Option<&crate::types::StringFormatConfiguration> {
         self.string_format_configuration.as_ref()
     }
     /// <p>Formatting configuration for number fields.</p>
     pub fn number_format_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::NumberFormatConfiguration> {
+    ) -> ::std::option::Option<&crate::types::NumberFormatConfiguration> {
         self.number_format_configuration.as_ref()
     }
     /// <p>Formatting configuration for <code>DateTime</code> fields.</p>
     pub fn date_time_format_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::DateTimeFormatConfiguration> {
+    ) -> ::std::option::Option<&crate::types::DateTimeFormatConfiguration> {
         self.date_time_format_configuration.as_ref()
     }
 }
@@ -44,14 +44,16 @@ impl FormatConfiguration {
 
 /// A builder for [`FormatConfiguration`](crate::types::FormatConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FormatConfigurationBuilder {
     pub(crate) string_format_configuration:
-        std::option::Option<crate::types::StringFormatConfiguration>,
+        ::std::option::Option<crate::types::StringFormatConfiguration>,
     pub(crate) number_format_configuration:
-        std::option::Option<crate::types::NumberFormatConfiguration>,
+        ::std::option::Option<crate::types::NumberFormatConfiguration>,
     pub(crate) date_time_format_configuration:
-        std::option::Option<crate::types::DateTimeFormatConfiguration>,
+        ::std::option::Option<crate::types::DateTimeFormatConfiguration>,
 }
 impl FormatConfigurationBuilder {
     /// <p>Formatting configuration for string fields.</p>
@@ -59,13 +61,13 @@ impl FormatConfigurationBuilder {
         mut self,
         input: crate::types::StringFormatConfiguration,
     ) -> Self {
-        self.string_format_configuration = Some(input);
+        self.string_format_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Formatting configuration for string fields.</p>
     pub fn set_string_format_configuration(
         mut self,
-        input: std::option::Option<crate::types::StringFormatConfiguration>,
+        input: ::std::option::Option<crate::types::StringFormatConfiguration>,
     ) -> Self {
         self.string_format_configuration = input;
         self
@@ -75,13 +77,13 @@ impl FormatConfigurationBuilder {
         mut self,
         input: crate::types::NumberFormatConfiguration,
     ) -> Self {
-        self.number_format_configuration = Some(input);
+        self.number_format_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Formatting configuration for number fields.</p>
     pub fn set_number_format_configuration(
         mut self,
-        input: std::option::Option<crate::types::NumberFormatConfiguration>,
+        input: ::std::option::Option<crate::types::NumberFormatConfiguration>,
     ) -> Self {
         self.number_format_configuration = input;
         self
@@ -91,13 +93,13 @@ impl FormatConfigurationBuilder {
         mut self,
         input: crate::types::DateTimeFormatConfiguration,
     ) -> Self {
-        self.date_time_format_configuration = Some(input);
+        self.date_time_format_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Formatting configuration for <code>DateTime</code> fields.</p>
     pub fn set_date_time_format_configuration(
         mut self,
-        input: std::option::Option<crate::types::DateTimeFormatConfiguration>,
+        input: ::std::option::Option<crate::types::DateTimeFormatConfiguration>,
     ) -> Self {
         self.date_time_format_configuration = input;
         self

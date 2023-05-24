@@ -2,50 +2,50 @@
 
 /// <p>LoRaWAN device metatdata.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoRaWanDeviceMetadata {
     /// <p>The DevEUI value.</p>
     #[doc(hidden)]
-    pub dev_eui: std::option::Option<std::string::String>,
+    pub dev_eui: ::std::option::Option<::std::string::String>,
     /// <p>The FPort value.</p>
     #[doc(hidden)]
-    pub f_port: std::option::Option<i32>,
+    pub f_port: ::std::option::Option<i32>,
     /// <p>The DataRate value.</p>
     #[doc(hidden)]
-    pub data_rate: std::option::Option<i32>,
+    pub data_rate: ::std::option::Option<i32>,
     /// <p>The device's channel frequency in Hz.</p>
     #[doc(hidden)]
-    pub frequency: std::option::Option<i32>,
+    pub frequency: ::std::option::Option<i32>,
     /// <p>The date and time of the metadata.</p>
     #[doc(hidden)]
-    pub timestamp: std::option::Option<std::string::String>,
+    pub timestamp: ::std::option::Option<::std::string::String>,
     /// <p>Information about the gateways accessed by the device.</p>
     #[doc(hidden)]
-    pub gateways: std::option::Option<std::vec::Vec<crate::types::LoRaWanGatewayMetadata>>,
+    pub gateways: ::std::option::Option<::std::vec::Vec<crate::types::LoRaWanGatewayMetadata>>,
 }
 impl LoRaWanDeviceMetadata {
     /// <p>The DevEUI value.</p>
-    pub fn dev_eui(&self) -> std::option::Option<&str> {
+    pub fn dev_eui(&self) -> ::std::option::Option<&str> {
         self.dev_eui.as_deref()
     }
     /// <p>The FPort value.</p>
-    pub fn f_port(&self) -> std::option::Option<i32> {
+    pub fn f_port(&self) -> ::std::option::Option<i32> {
         self.f_port
     }
     /// <p>The DataRate value.</p>
-    pub fn data_rate(&self) -> std::option::Option<i32> {
+    pub fn data_rate(&self) -> ::std::option::Option<i32> {
         self.data_rate
     }
     /// <p>The device's channel frequency in Hz.</p>
-    pub fn frequency(&self) -> std::option::Option<i32> {
+    pub fn frequency(&self) -> ::std::option::Option<i32> {
         self.frequency
     }
     /// <p>The date and time of the metadata.</p>
-    pub fn timestamp(&self) -> std::option::Option<&str> {
+    pub fn timestamp(&self) -> ::std::option::Option<&str> {
         self.timestamp.as_deref()
     }
     /// <p>Information about the gateways accessed by the device.</p>
-    pub fn gateways(&self) -> std::option::Option<&[crate::types::LoRaWanGatewayMetadata]> {
+    pub fn gateways(&self) -> ::std::option::Option<&[crate::types::LoRaWanGatewayMetadata]> {
         self.gateways.as_deref()
     }
 }
@@ -58,63 +58,66 @@ impl LoRaWanDeviceMetadata {
 
 /// A builder for [`LoRaWanDeviceMetadata`](crate::types::LoRaWanDeviceMetadata).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LoRaWanDeviceMetadataBuilder {
-    pub(crate) dev_eui: std::option::Option<std::string::String>,
-    pub(crate) f_port: std::option::Option<i32>,
-    pub(crate) data_rate: std::option::Option<i32>,
-    pub(crate) frequency: std::option::Option<i32>,
-    pub(crate) timestamp: std::option::Option<std::string::String>,
-    pub(crate) gateways: std::option::Option<std::vec::Vec<crate::types::LoRaWanGatewayMetadata>>,
+    pub(crate) dev_eui: ::std::option::Option<::std::string::String>,
+    pub(crate) f_port: ::std::option::Option<i32>,
+    pub(crate) data_rate: ::std::option::Option<i32>,
+    pub(crate) frequency: ::std::option::Option<i32>,
+    pub(crate) timestamp: ::std::option::Option<::std::string::String>,
+    pub(crate) gateways:
+        ::std::option::Option<::std::vec::Vec<crate::types::LoRaWanGatewayMetadata>>,
 }
 impl LoRaWanDeviceMetadataBuilder {
     /// <p>The DevEUI value.</p>
-    pub fn dev_eui(mut self, input: impl Into<std::string::String>) -> Self {
-        self.dev_eui = Some(input.into());
+    pub fn dev_eui(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.dev_eui = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The DevEUI value.</p>
-    pub fn set_dev_eui(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_dev_eui(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dev_eui = input;
         self
     }
     /// <p>The FPort value.</p>
     pub fn f_port(mut self, input: i32) -> Self {
-        self.f_port = Some(input);
+        self.f_port = ::std::option::Option::Some(input);
         self
     }
     /// <p>The FPort value.</p>
-    pub fn set_f_port(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_f_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.f_port = input;
         self
     }
     /// <p>The DataRate value.</p>
     pub fn data_rate(mut self, input: i32) -> Self {
-        self.data_rate = Some(input);
+        self.data_rate = ::std::option::Option::Some(input);
         self
     }
     /// <p>The DataRate value.</p>
-    pub fn set_data_rate(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_data_rate(mut self, input: ::std::option::Option<i32>) -> Self {
         self.data_rate = input;
         self
     }
     /// <p>The device's channel frequency in Hz.</p>
     pub fn frequency(mut self, input: i32) -> Self {
-        self.frequency = Some(input);
+        self.frequency = ::std::option::Option::Some(input);
         self
     }
     /// <p>The device's channel frequency in Hz.</p>
-    pub fn set_frequency(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_frequency(mut self, input: ::std::option::Option<i32>) -> Self {
         self.frequency = input;
         self
     }
     /// <p>The date and time of the metadata.</p>
-    pub fn timestamp(mut self, input: impl Into<std::string::String>) -> Self {
-        self.timestamp = Some(input.into());
+    pub fn timestamp(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.timestamp = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date and time of the metadata.</p>
-    pub fn set_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_timestamp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.timestamp = input;
         self
     }
@@ -126,13 +129,13 @@ impl LoRaWanDeviceMetadataBuilder {
     pub fn gateways(mut self, input: crate::types::LoRaWanGatewayMetadata) -> Self {
         let mut v = self.gateways.unwrap_or_default();
         v.push(input);
-        self.gateways = Some(v);
+        self.gateways = ::std::option::Option::Some(v);
         self
     }
     /// <p>Information about the gateways accessed by the device.</p>
     pub fn set_gateways(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::LoRaWanGatewayMetadata>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::LoRaWanGatewayMetadata>>,
     ) -> Self {
         self.gateways = input;
         self

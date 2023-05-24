@@ -6,56 +6,59 @@ pub use crate::operation::create_flow::_create_flow_input::CreateFlowInputBuilde
 /// Fluent builder constructing a request to `CreateFlow`.
 ///
 /// <p> Enables your application to create a new flow using Amazon AppFlow. You must create a connector profile before calling this API. Please note that the Request Syntax below shows syntax for multiple destinations, however, you can only transfer data to one item in this list at a time. Amazon AppFlow does not currently support flows to multiple destinations at once. </p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateFlowFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_flow::builders::CreateFlowInputBuilder,
 }
 impl CreateFlowFluentBuilder {
     /// Creates a new `CreateFlow`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_flow::CreateFlow,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_flow::CreateFlowError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_flow::CreateFlowError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_flow::CreateFlowOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_flow::CreateFlowError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_flow::CreateFlowError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,39 +71,39 @@ impl CreateFlowFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_flow::CreateFlowOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_flow::CreateFlowError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_flow::CreateFlowError>,
     > {
         self.send_middleware().await
     }
     /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
-    pub fn flow_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn flow_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.flow_name(input.into());
         self
     }
     /// <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
-    pub fn set_flow_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_flow_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_flow_name(input);
         self
     }
     /// <p> A description of the flow you want to create. </p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p> A description of the flow you want to create. </p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
     /// <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key. </p>
-    pub fn kms_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn kms_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kms_arn(input.into());
         self
     }
     /// <p> The ARN (Amazon Resource Name) of the Key Management Service (KMS) key you provide for encryption. This is required if you do not want to use the Amazon AppFlow-managed KMS key. If you don't provide anything here, Amazon AppFlow uses the Amazon AppFlow-managed KMS key. </p>
-    pub fn set_kms_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_kms_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kms_arn(input);
         self
     }
@@ -112,7 +115,7 @@ impl CreateFlowFluentBuilder {
     /// <p> The trigger settings that determine how and when the flow runs. </p>
     pub fn set_trigger_config(
         mut self,
-        input: std::option::Option<crate::types::TriggerConfig>,
+        input: ::std::option::Option<crate::types::TriggerConfig>,
     ) -> Self {
         self.inner = self.inner.set_trigger_config(input);
         self
@@ -125,7 +128,7 @@ impl CreateFlowFluentBuilder {
     /// <p> The configuration that controls how Amazon AppFlow retrieves data from the source connector. </p>
     pub fn set_source_flow_config(
         mut self,
-        input: std::option::Option<crate::types::SourceFlowConfig>,
+        input: ::std::option::Option<crate::types::SourceFlowConfig>,
     ) -> Self {
         self.inner = self.inner.set_source_flow_config(input);
         self
@@ -145,7 +148,7 @@ impl CreateFlowFluentBuilder {
     /// <p> The configuration that controls how Amazon AppFlow places data in the destination connector. </p>
     pub fn set_destination_flow_config_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DestinationFlowConfig>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DestinationFlowConfig>>,
     ) -> Self {
         self.inner = self.inner.set_destination_flow_config_list(input);
         self
@@ -162,7 +165,7 @@ impl CreateFlowFluentBuilder {
     /// <p> A list of tasks that Amazon AppFlow performs while transferring the data in the flow run. </p>
     pub fn set_tasks(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Task>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Task>>,
     ) -> Self {
         self.inner = self.inner.set_tasks(input);
         self
@@ -174,8 +177,8 @@ impl CreateFlowFluentBuilder {
     /// <p> The tags used to organize, track, or control access for your flow. </p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
@@ -183,8 +186,8 @@ impl CreateFlowFluentBuilder {
     /// <p> The tags used to organize, track, or control access for your flow. </p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
@@ -198,7 +201,7 @@ impl CreateFlowFluentBuilder {
     /// <p>Specifies the configuration that Amazon AppFlow uses when it catalogs the data that's transferred by the associated flow. When Amazon AppFlow catalogs the data from a flow, it stores metadata in a data catalog.</p>
     pub fn set_metadata_catalog_config(
         mut self,
-        input: std::option::Option<crate::types::MetadataCatalogConfig>,
+        input: ::std::option::Option<crate::types::MetadataCatalogConfig>,
     ) -> Self {
         self.inner = self.inner.set_metadata_catalog_config(input);
         self
@@ -206,14 +209,14 @@ impl CreateFlowFluentBuilder {
     /// <p>The <code>clientToken</code> parameter is an idempotency token. It ensures that your <code>CreateFlow</code> request completes only once. You choose the value to pass. For example, if you don't receive a response from your request, you can safely retry the request with the same <code>clientToken</code> parameter value.</p>
     /// <p>If you omit a <code>clientToken</code> value, the Amazon Web Services SDK that you are using inserts a value for you. This way, the SDK can safely retry requests multiple times after a network error. You must provide your own value for other use cases.</p>
     /// <p>If you specify input parameters that differ from your first request, an error occurs. If you use a different value for <code>clientToken</code>, Amazon AppFlow considers it a new call to <code>CreateFlow</code>. The token is active for 8 hours.</p>
-    pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
     /// <p>The <code>clientToken</code> parameter is an idempotency token. It ensures that your <code>CreateFlow</code> request completes only once. You choose the value to pass. For example, if you don't receive a response from your request, you can safely retry the request with the same <code>clientToken</code> parameter value.</p>
     /// <p>If you omit a <code>clientToken</code> value, the Amazon Web Services SDK that you are using inserts a value for you. This way, the SDK can safely retry requests multiple times after a network error. You must provide your own value for other use cases.</p>
     /// <p>If you specify input parameters that differ from your first request, an error occurs. If you use a different value for <code>clientToken</code>, Amazon AppFlow considers it a new call to <code>CreateFlow</code>. The token is active for 8 hours.</p>
-    pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }

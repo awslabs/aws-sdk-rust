@@ -2,22 +2,22 @@
 
 /// <p>Describes an EC2 Fleet error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteFleetError {
     /// <p>The error code.</p>
     #[doc(hidden)]
-    pub code: std::option::Option<crate::types::DeleteFleetErrorCode>,
+    pub code: ::std::option::Option<crate::types::DeleteFleetErrorCode>,
     /// <p>The description for the error code.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
 }
 impl DeleteFleetError {
     /// <p>The error code.</p>
-    pub fn code(&self) -> std::option::Option<&crate::types::DeleteFleetErrorCode> {
+    pub fn code(&self) -> ::std::option::Option<&crate::types::DeleteFleetErrorCode> {
         self.code.as_ref()
     }
     /// <p>The description for the error code.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -30,32 +30,34 @@ impl DeleteFleetError {
 
 /// A builder for [`DeleteFleetError`](crate::types::DeleteFleetError).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteFleetErrorBuilder {
-    pub(crate) code: std::option::Option<crate::types::DeleteFleetErrorCode>,
-    pub(crate) message: std::option::Option<std::string::String>,
+    pub(crate) code: ::std::option::Option<crate::types::DeleteFleetErrorCode>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
 }
 impl DeleteFleetErrorBuilder {
     /// <p>The error code.</p>
     pub fn code(mut self, input: crate::types::DeleteFleetErrorCode) -> Self {
-        self.code = Some(input);
+        self.code = ::std::option::Option::Some(input);
         self
     }
     /// <p>The error code.</p>
     pub fn set_code(
         mut self,
-        input: std::option::Option<crate::types::DeleteFleetErrorCode>,
+        input: ::std::option::Option<crate::types::DeleteFleetErrorCode>,
     ) -> Self {
         self.code = input;
         self
     }
     /// <p>The description for the error code.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description for the error code.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }

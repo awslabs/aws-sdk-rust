@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ActivatePipeline`](crate::operation::activate_pipeline::builders::ActivatePipelineFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`pipeline_id(impl Into<String>)`](crate::operation::activate_pipeline::builders::ActivatePipelineFluentBuilder::pipeline_id) / [`set_pipeline_id(Option<String>)`](crate::operation::activate_pipeline::builders::ActivatePipelineFluentBuilder::set_pipeline_id): <p>The ID of the pipeline.</p>
+    ///   - [`pipeline_id(impl ::std::convert::Into<String>)`](crate::operation::activate_pipeline::builders::ActivatePipelineFluentBuilder::pipeline_id) / [`set_pipeline_id(Option<String>)`](crate::operation::activate_pipeline::builders::ActivatePipelineFluentBuilder::set_pipeline_id): <p>The ID of the pipeline.</p>
     ///   - [`parameter_values(Vec<ParameterValue>)`](crate::operation::activate_pipeline::builders::ActivatePipelineFluentBuilder::parameter_values) / [`set_parameter_values(Option<Vec<ParameterValue>>)`](crate::operation::activate_pipeline::builders::ActivatePipelineFluentBuilder::set_parameter_values): <p>A list of parameter values to pass to the pipeline at activation.</p>
     ///   - [`start_timestamp(DateTime)`](crate::operation::activate_pipeline::builders::ActivatePipelineFluentBuilder::start_timestamp) / [`set_start_timestamp(Option<DateTime>)`](crate::operation::activate_pipeline::builders::ActivatePipelineFluentBuilder::set_start_timestamp): <p>The date and time to resume the pipeline. By default, the pipeline resumes from the last completed execution.</p>
     /// - On success, responds with [`ActivatePipelineOutput`](crate::operation::activate_pipeline::ActivatePipelineOutput)

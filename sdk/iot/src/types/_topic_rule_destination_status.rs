@@ -41,13 +41,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum TopicRuleDestinationStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,7 +63,7 @@ pub enum TopicRuleDestinationStatus {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for TopicRuleDestinationStatus {
+impl ::std::convert::From<&str> for TopicRuleDestinationStatus {
     fn from(s: &str) -> Self {
         match s {
             "DELETING" => TopicRuleDestinationStatus::Deleting,
@@ -77,11 +77,11 @@ impl std::convert::From<&str> for TopicRuleDestinationStatus {
         }
     }
 }
-impl std::str::FromStr for TopicRuleDestinationStatus {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for TopicRuleDestinationStatus {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TopicRuleDestinationStatus::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(TopicRuleDestinationStatus::from(s))
     }
 }
 impl TopicRuleDestinationStatus {
@@ -101,7 +101,7 @@ impl TopicRuleDestinationStatus {
         &["DELETING", "DISABLED", "ENABLED", "ERROR", "IN_PROGRESS"]
     }
 }
-impl AsRef<str> for TopicRuleDestinationStatus {
+impl ::std::convert::AsRef<str> for TopicRuleDestinationStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -3,7 +3,7 @@
 /// <p>Describes a Sync configuration for a resolver.</p>
 /// <p>Specifies which Conflict Detection strategy and Resolution strategy to use when the resolver is invoked.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SyncConfig {
     /// <p>The Conflict Resolution strategy to perform in the event of a conflict.</p>
     /// <ul>
@@ -12,18 +12,18 @@ pub struct SyncConfig {
     /// <li> <p> <b>LAMBDA</b>: Resolve conflicts with an Lambda function supplied in the <code>LambdaConflictHandlerConfig</code>.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub conflict_handler: std::option::Option<crate::types::ConflictHandlerType>,
+    pub conflict_handler: ::std::option::Option<crate::types::ConflictHandlerType>,
     /// <p>The Conflict Detection strategy to use.</p>
     /// <ul>
     /// <li> <p> <b>VERSION</b>: Detect conflicts based on object versions for this resolver.</p> </li>
     /// <li> <p> <b>NONE</b>: Do not detect conflicts when invoking this resolver.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub conflict_detection: std::option::Option<crate::types::ConflictDetectionType>,
+    pub conflict_detection: ::std::option::Option<crate::types::ConflictDetectionType>,
     /// <p>The <code>LambdaConflictHandlerConfig</code> when configuring <code>LAMBDA</code> as the Conflict Handler.</p>
     #[doc(hidden)]
     pub lambda_conflict_handler_config:
-        std::option::Option<crate::types::LambdaConflictHandlerConfig>,
+        ::std::option::Option<crate::types::LambdaConflictHandlerConfig>,
 }
 impl SyncConfig {
     /// <p>The Conflict Resolution strategy to perform in the event of a conflict.</p>
@@ -32,7 +32,7 @@ impl SyncConfig {
     /// <li> <p> <b>AUTOMERGE</b>: Resolve conflicts with the Automerge conflict resolution strategy.</p> </li>
     /// <li> <p> <b>LAMBDA</b>: Resolve conflicts with an Lambda function supplied in the <code>LambdaConflictHandlerConfig</code>.</p> </li>
     /// </ul>
-    pub fn conflict_handler(&self) -> std::option::Option<&crate::types::ConflictHandlerType> {
+    pub fn conflict_handler(&self) -> ::std::option::Option<&crate::types::ConflictHandlerType> {
         self.conflict_handler.as_ref()
     }
     /// <p>The Conflict Detection strategy to use.</p>
@@ -40,13 +40,15 @@ impl SyncConfig {
     /// <li> <p> <b>VERSION</b>: Detect conflicts based on object versions for this resolver.</p> </li>
     /// <li> <p> <b>NONE</b>: Do not detect conflicts when invoking this resolver.</p> </li>
     /// </ul>
-    pub fn conflict_detection(&self) -> std::option::Option<&crate::types::ConflictDetectionType> {
+    pub fn conflict_detection(
+        &self,
+    ) -> ::std::option::Option<&crate::types::ConflictDetectionType> {
         self.conflict_detection.as_ref()
     }
     /// <p>The <code>LambdaConflictHandlerConfig</code> when configuring <code>LAMBDA</code> as the Conflict Handler.</p>
     pub fn lambda_conflict_handler_config(
         &self,
-    ) -> std::option::Option<&crate::types::LambdaConflictHandlerConfig> {
+    ) -> ::std::option::Option<&crate::types::LambdaConflictHandlerConfig> {
         self.lambda_conflict_handler_config.as_ref()
     }
 }
@@ -59,12 +61,14 @@ impl SyncConfig {
 
 /// A builder for [`SyncConfig`](crate::types::SyncConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SyncConfigBuilder {
-    pub(crate) conflict_handler: std::option::Option<crate::types::ConflictHandlerType>,
-    pub(crate) conflict_detection: std::option::Option<crate::types::ConflictDetectionType>,
+    pub(crate) conflict_handler: ::std::option::Option<crate::types::ConflictHandlerType>,
+    pub(crate) conflict_detection: ::std::option::Option<crate::types::ConflictDetectionType>,
     pub(crate) lambda_conflict_handler_config:
-        std::option::Option<crate::types::LambdaConflictHandlerConfig>,
+        ::std::option::Option<crate::types::LambdaConflictHandlerConfig>,
 }
 impl SyncConfigBuilder {
     /// <p>The Conflict Resolution strategy to perform in the event of a conflict.</p>
@@ -74,7 +78,7 @@ impl SyncConfigBuilder {
     /// <li> <p> <b>LAMBDA</b>: Resolve conflicts with an Lambda function supplied in the <code>LambdaConflictHandlerConfig</code>.</p> </li>
     /// </ul>
     pub fn conflict_handler(mut self, input: crate::types::ConflictHandlerType) -> Self {
-        self.conflict_handler = Some(input);
+        self.conflict_handler = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Conflict Resolution strategy to perform in the event of a conflict.</p>
@@ -85,7 +89,7 @@ impl SyncConfigBuilder {
     /// </ul>
     pub fn set_conflict_handler(
         mut self,
-        input: std::option::Option<crate::types::ConflictHandlerType>,
+        input: ::std::option::Option<crate::types::ConflictHandlerType>,
     ) -> Self {
         self.conflict_handler = input;
         self
@@ -96,7 +100,7 @@ impl SyncConfigBuilder {
     /// <li> <p> <b>NONE</b>: Do not detect conflicts when invoking this resolver.</p> </li>
     /// </ul>
     pub fn conflict_detection(mut self, input: crate::types::ConflictDetectionType) -> Self {
-        self.conflict_detection = Some(input);
+        self.conflict_detection = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Conflict Detection strategy to use.</p>
@@ -106,7 +110,7 @@ impl SyncConfigBuilder {
     /// </ul>
     pub fn set_conflict_detection(
         mut self,
-        input: std::option::Option<crate::types::ConflictDetectionType>,
+        input: ::std::option::Option<crate::types::ConflictDetectionType>,
     ) -> Self {
         self.conflict_detection = input;
         self
@@ -116,13 +120,13 @@ impl SyncConfigBuilder {
         mut self,
         input: crate::types::LambdaConflictHandlerConfig,
     ) -> Self {
-        self.lambda_conflict_handler_config = Some(input);
+        self.lambda_conflict_handler_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The <code>LambdaConflictHandlerConfig</code> when configuring <code>LAMBDA</code> as the Conflict Handler.</p>
     pub fn set_lambda_conflict_handler_config(
         mut self,
-        input: std::option::Option<crate::types::LambdaConflictHandlerConfig>,
+        input: ::std::option::Option<crate::types::LambdaConflictHandlerConfig>,
     ) -> Self {
         self.lambda_conflict_handler_config = input;
         self

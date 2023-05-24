@@ -9,7 +9,7 @@
 /// <li> <p>If an automatic snapshot is scheduled to be created within 30 minutes from your current time and you change the snapshot time, then the new snapshot time will be effective the following day and a snapshot is automatically created at the previously set time for the current day. This ensures that a snapshot is created for the current day, because 30 minutes is required between your current time and the new snapshot time that you specify.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoSnapshotAddOnRequest {
     /// <p>The daily time when an automatic snapshot will be created.</p>
     /// <p>Constraints:</p>
@@ -19,7 +19,7 @@ pub struct AutoSnapshotAddOnRequest {
     /// <li> <p>The snapshot will be automatically created between the time specified and up to 45 minutes after.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub snapshot_time_of_day: std::option::Option<std::string::String>,
+    pub snapshot_time_of_day: ::std::option::Option<::std::string::String>,
 }
 impl AutoSnapshotAddOnRequest {
     /// <p>The daily time when an automatic snapshot will be created.</p>
@@ -29,7 +29,7 @@ impl AutoSnapshotAddOnRequest {
     /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
     /// <li> <p>The snapshot will be automatically created between the time specified and up to 45 minutes after.</p> </li>
     /// </ul>
-    pub fn snapshot_time_of_day(&self) -> std::option::Option<&str> {
+    pub fn snapshot_time_of_day(&self) -> ::std::option::Option<&str> {
         self.snapshot_time_of_day.as_deref()
     }
 }
@@ -42,9 +42,11 @@ impl AutoSnapshotAddOnRequest {
 
 /// A builder for [`AutoSnapshotAddOnRequest`](crate::types::AutoSnapshotAddOnRequest).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AutoSnapshotAddOnRequestBuilder {
-    pub(crate) snapshot_time_of_day: std::option::Option<std::string::String>,
+    pub(crate) snapshot_time_of_day: ::std::option::Option<::std::string::String>,
 }
 impl AutoSnapshotAddOnRequestBuilder {
     /// <p>The daily time when an automatic snapshot will be created.</p>
@@ -54,8 +56,11 @@ impl AutoSnapshotAddOnRequestBuilder {
     /// <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li>
     /// <li> <p>The snapshot will be automatically created between the time specified and up to 45 minutes after.</p> </li>
     /// </ul>
-    pub fn snapshot_time_of_day(mut self, input: impl Into<std::string::String>) -> Self {
-        self.snapshot_time_of_day = Some(input.into());
+    pub fn snapshot_time_of_day(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.snapshot_time_of_day = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The daily time when an automatic snapshot will be created.</p>
@@ -67,7 +72,7 @@ impl AutoSnapshotAddOnRequestBuilder {
     /// </ul>
     pub fn set_snapshot_time_of_day(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.snapshot_time_of_day = input;
         self

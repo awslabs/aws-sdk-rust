@@ -3,64 +3,64 @@
 /// <p>Info about the specific network instance.</p>
 /// <p>A network instance is a single network created in Amazon Web Services TNB that can be deployed and on which life-cycle operations (like terminate, update, and delete) can be performed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSolNetworkInstanceInfo {
     /// <p>ID of the network instance.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>Network instance ARN.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Human-readable name of the network instance.</p>
     #[doc(hidden)]
-    pub ns_instance_name: std::option::Option<std::string::String>,
+    pub ns_instance_name: ::std::option::Option<::std::string::String>,
     /// <p>Human-readable description of the network instance.</p>
     #[doc(hidden)]
-    pub ns_instance_description: std::option::Option<std::string::String>,
+    pub ns_instance_description: ::std::option::Option<::std::string::String>,
     /// <p>ID of the network service descriptor in the network package.</p>
     #[doc(hidden)]
-    pub nsd_id: std::option::Option<std::string::String>,
+    pub nsd_id: ::std::option::Option<::std::string::String>,
     /// <p>ID of the network service descriptor in the network package.</p>
     #[doc(hidden)]
-    pub nsd_info_id: std::option::Option<std::string::String>,
+    pub nsd_info_id: ::std::option::Option<::std::string::String>,
     /// <p>The state of the network instance.</p>
     #[doc(hidden)]
-    pub ns_state: std::option::Option<crate::types::NsState>,
+    pub ns_state: ::std::option::Option<crate::types::NsState>,
     /// <p>The metadata of the network instance.</p>
     #[doc(hidden)]
-    pub metadata: std::option::Option<crate::types::ListSolNetworkInstanceMetadata>,
+    pub metadata: ::std::option::Option<crate::types::ListSolNetworkInstanceMetadata>,
 }
 impl ListSolNetworkInstanceInfo {
     /// <p>ID of the network instance.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>Network instance ARN.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>Human-readable name of the network instance.</p>
-    pub fn ns_instance_name(&self) -> std::option::Option<&str> {
+    pub fn ns_instance_name(&self) -> ::std::option::Option<&str> {
         self.ns_instance_name.as_deref()
     }
     /// <p>Human-readable description of the network instance.</p>
-    pub fn ns_instance_description(&self) -> std::option::Option<&str> {
+    pub fn ns_instance_description(&self) -> ::std::option::Option<&str> {
         self.ns_instance_description.as_deref()
     }
     /// <p>ID of the network service descriptor in the network package.</p>
-    pub fn nsd_id(&self) -> std::option::Option<&str> {
+    pub fn nsd_id(&self) -> ::std::option::Option<&str> {
         self.nsd_id.as_deref()
     }
     /// <p>ID of the network service descriptor in the network package.</p>
-    pub fn nsd_info_id(&self) -> std::option::Option<&str> {
+    pub fn nsd_info_id(&self) -> ::std::option::Option<&str> {
         self.nsd_info_id.as_deref()
     }
     /// <p>The state of the network instance.</p>
-    pub fn ns_state(&self) -> std::option::Option<&crate::types::NsState> {
+    pub fn ns_state(&self) -> ::std::option::Option<&crate::types::NsState> {
         self.ns_state.as_ref()
     }
     /// <p>The metadata of the network instance.</p>
-    pub fn metadata(&self) -> std::option::Option<&crate::types::ListSolNetworkInstanceMetadata> {
+    pub fn metadata(&self) -> ::std::option::Option<&crate::types::ListSolNetworkInstanceMetadata> {
         self.metadata.as_ref()
     }
 }
@@ -73,100 +73,111 @@ impl ListSolNetworkInstanceInfo {
 
 /// A builder for [`ListSolNetworkInstanceInfo`](crate::types::ListSolNetworkInstanceInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListSolNetworkInstanceInfoBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) ns_instance_name: std::option::Option<std::string::String>,
-    pub(crate) ns_instance_description: std::option::Option<std::string::String>,
-    pub(crate) nsd_id: std::option::Option<std::string::String>,
-    pub(crate) nsd_info_id: std::option::Option<std::string::String>,
-    pub(crate) ns_state: std::option::Option<crate::types::NsState>,
-    pub(crate) metadata: std::option::Option<crate::types::ListSolNetworkInstanceMetadata>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) ns_instance_name: ::std::option::Option<::std::string::String>,
+    pub(crate) ns_instance_description: ::std::option::Option<::std::string::String>,
+    pub(crate) nsd_id: ::std::option::Option<::std::string::String>,
+    pub(crate) nsd_info_id: ::std::option::Option<::std::string::String>,
+    pub(crate) ns_state: ::std::option::Option<crate::types::NsState>,
+    pub(crate) metadata: ::std::option::Option<crate::types::ListSolNetworkInstanceMetadata>,
 }
 impl ListSolNetworkInstanceInfoBuilder {
     /// <p>ID of the network instance.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>ID of the network instance.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>Network instance ARN.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Network instance ARN.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// <p>Human-readable name of the network instance.</p>
-    pub fn ns_instance_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ns_instance_name = Some(input.into());
+    pub fn ns_instance_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.ns_instance_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Human-readable name of the network instance.</p>
-    pub fn set_ns_instance_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ns_instance_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.ns_instance_name = input;
         self
     }
     /// <p>Human-readable description of the network instance.</p>
-    pub fn ns_instance_description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ns_instance_description = Some(input.into());
+    pub fn ns_instance_description(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.ns_instance_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Human-readable description of the network instance.</p>
     pub fn set_ns_instance_description(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.ns_instance_description = input;
         self
     }
     /// <p>ID of the network service descriptor in the network package.</p>
-    pub fn nsd_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.nsd_id = Some(input.into());
+    pub fn nsd_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.nsd_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>ID of the network service descriptor in the network package.</p>
-    pub fn set_nsd_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_nsd_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.nsd_id = input;
         self
     }
     /// <p>ID of the network service descriptor in the network package.</p>
-    pub fn nsd_info_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.nsd_info_id = Some(input.into());
+    pub fn nsd_info_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.nsd_info_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>ID of the network service descriptor in the network package.</p>
-    pub fn set_nsd_info_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_nsd_info_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.nsd_info_id = input;
         self
     }
     /// <p>The state of the network instance.</p>
     pub fn ns_state(mut self, input: crate::types::NsState) -> Self {
-        self.ns_state = Some(input);
+        self.ns_state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The state of the network instance.</p>
-    pub fn set_ns_state(mut self, input: std::option::Option<crate::types::NsState>) -> Self {
+    pub fn set_ns_state(mut self, input: ::std::option::Option<crate::types::NsState>) -> Self {
         self.ns_state = input;
         self
     }
     /// <p>The metadata of the network instance.</p>
     pub fn metadata(mut self, input: crate::types::ListSolNetworkInstanceMetadata) -> Self {
-        self.metadata = Some(input);
+        self.metadata = ::std::option::Option::Some(input);
         self
     }
     /// <p>The metadata of the network instance.</p>
     pub fn set_metadata(
         mut self,
-        input: std::option::Option<crate::types::ListSolNetworkInstanceMetadata>,
+        input: ::std::option::Option<crate::types::ListSolNetworkInstanceMetadata>,
     ) -> Self {
         self.metadata = input;
         self

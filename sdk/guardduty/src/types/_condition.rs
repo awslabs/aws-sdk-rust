@@ -2,16 +2,16 @@
 
 /// <p>Contains information about the condition.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Condition {
     /// <p>Represents the <i>equal</i> condition to be applied to a single field when querying for findings.</p>
     #[deprecated]
     #[doc(hidden)]
-    pub eq: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub eq: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Represents the <i>not equal</i> condition to be applied to a single field when querying for findings.</p>
     #[deprecated]
     #[doc(hidden)]
-    pub neq: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub neq: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Represents a <i>greater than</i> condition to be applied to a single field when querying for findings.</p>
     #[deprecated]
     #[doc(hidden)]
@@ -30,10 +30,10 @@ pub struct Condition {
     pub lte: i32,
     /// <p>Represents an <i>equal</i> <b></b> condition to be applied to a single field when querying for findings.</p>
     #[doc(hidden)]
-    pub equals: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub equals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Represents a <i>not equal</i> <b></b> condition to be applied to a single field when querying for findings.</p>
     #[doc(hidden)]
-    pub not_equals: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub not_equals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Represents a <i>greater than</i> condition to be applied to a single field when querying for findings.</p>
     #[doc(hidden)]
     pub greater_than: i64,
@@ -50,12 +50,12 @@ pub struct Condition {
 impl Condition {
     /// <p>Represents the <i>equal</i> condition to be applied to a single field when querying for findings.</p>
     #[deprecated]
-    pub fn eq(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn eq(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.eq.as_deref()
     }
     /// <p>Represents the <i>not equal</i> condition to be applied to a single field when querying for findings.</p>
     #[deprecated]
-    pub fn neq(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn neq(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.neq.as_deref()
     }
     /// <p>Represents a <i>greater than</i> condition to be applied to a single field when querying for findings.</p>
@@ -79,11 +79,11 @@ impl Condition {
         self.lte
     }
     /// <p>Represents an <i>equal</i> <b></b> condition to be applied to a single field when querying for findings.</p>
-    pub fn equals(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn equals(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.equals.as_deref()
     }
     /// <p>Represents a <i>not equal</i> <b></b> condition to be applied to a single field when querying for findings.</p>
-    pub fn not_equals(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn not_equals(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.not_equals.as_deref()
     }
     /// <p>Represents a <i>greater than</i> condition to be applied to a single field when querying for findings.</p>
@@ -112,20 +112,22 @@ impl Condition {
 
 /// A builder for [`Condition`](crate::types::Condition).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ConditionBuilder {
-    pub(crate) eq: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) neq: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) gt: std::option::Option<i32>,
-    pub(crate) gte: std::option::Option<i32>,
-    pub(crate) lt: std::option::Option<i32>,
-    pub(crate) lte: std::option::Option<i32>,
-    pub(crate) equals: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) not_equals: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) greater_than: std::option::Option<i64>,
-    pub(crate) greater_than_or_equal: std::option::Option<i64>,
-    pub(crate) less_than: std::option::Option<i64>,
-    pub(crate) less_than_or_equal: std::option::Option<i64>,
+    pub(crate) eq: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) neq: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) gt: ::std::option::Option<i32>,
+    pub(crate) gte: ::std::option::Option<i32>,
+    pub(crate) lt: ::std::option::Option<i32>,
+    pub(crate) lte: ::std::option::Option<i32>,
+    pub(crate) equals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) not_equals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) greater_than: ::std::option::Option<i64>,
+    pub(crate) greater_than_or_equal: ::std::option::Option<i64>,
+    pub(crate) less_than: ::std::option::Option<i64>,
+    pub(crate) less_than_or_equal: ::std::option::Option<i64>,
 }
 impl ConditionBuilder {
     /// Appends an item to `eq`.
@@ -134,17 +136,17 @@ impl ConditionBuilder {
     ///
     /// <p>Represents the <i>equal</i> condition to be applied to a single field when querying for findings.</p>
     #[deprecated]
-    pub fn eq(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn eq(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.eq.unwrap_or_default();
         v.push(input.into());
-        self.eq = Some(v);
+        self.eq = ::std::option::Option::Some(v);
         self
     }
     /// <p>Represents the <i>equal</i> condition to be applied to a single field when querying for findings.</p>
     #[deprecated]
     pub fn set_eq(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.eq = input;
         self
@@ -155,17 +157,17 @@ impl ConditionBuilder {
     ///
     /// <p>Represents the <i>not equal</i> condition to be applied to a single field when querying for findings.</p>
     #[deprecated]
-    pub fn neq(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn neq(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.neq.unwrap_or_default();
         v.push(input.into());
-        self.neq = Some(v);
+        self.neq = ::std::option::Option::Some(v);
         self
     }
     /// <p>Represents the <i>not equal</i> condition to be applied to a single field when querying for findings.</p>
     #[deprecated]
     pub fn set_neq(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.neq = input;
         self
@@ -173,48 +175,48 @@ impl ConditionBuilder {
     /// <p>Represents a <i>greater than</i> condition to be applied to a single field when querying for findings.</p>
     #[deprecated]
     pub fn gt(mut self, input: i32) -> Self {
-        self.gt = Some(input);
+        self.gt = ::std::option::Option::Some(input);
         self
     }
     /// <p>Represents a <i>greater than</i> condition to be applied to a single field when querying for findings.</p>
     #[deprecated]
-    pub fn set_gt(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_gt(mut self, input: ::std::option::Option<i32>) -> Self {
         self.gt = input;
         self
     }
     /// <p>Represents a <i>greater than or equal</i> condition to be applied to a single field when querying for findings.</p>
     #[deprecated]
     pub fn gte(mut self, input: i32) -> Self {
-        self.gte = Some(input);
+        self.gte = ::std::option::Option::Some(input);
         self
     }
     /// <p>Represents a <i>greater than or equal</i> condition to be applied to a single field when querying for findings.</p>
     #[deprecated]
-    pub fn set_gte(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_gte(mut self, input: ::std::option::Option<i32>) -> Self {
         self.gte = input;
         self
     }
     /// <p>Represents a <i>less than</i> condition to be applied to a single field when querying for findings.</p>
     #[deprecated]
     pub fn lt(mut self, input: i32) -> Self {
-        self.lt = Some(input);
+        self.lt = ::std::option::Option::Some(input);
         self
     }
     /// <p>Represents a <i>less than</i> condition to be applied to a single field when querying for findings.</p>
     #[deprecated]
-    pub fn set_lt(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_lt(mut self, input: ::std::option::Option<i32>) -> Self {
         self.lt = input;
         self
     }
     /// <p>Represents a <i>less than or equal</i> condition to be applied to a single field when querying for findings.</p>
     #[deprecated]
     pub fn lte(mut self, input: i32) -> Self {
-        self.lte = Some(input);
+        self.lte = ::std::option::Option::Some(input);
         self
     }
     /// <p>Represents a <i>less than or equal</i> condition to be applied to a single field when querying for findings.</p>
     #[deprecated]
-    pub fn set_lte(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_lte(mut self, input: ::std::option::Option<i32>) -> Self {
         self.lte = input;
         self
     }
@@ -223,16 +225,16 @@ impl ConditionBuilder {
     /// To override the contents of this collection use [`set_equals`](Self::set_equals).
     ///
     /// <p>Represents an <i>equal</i> <b></b> condition to be applied to a single field when querying for findings.</p>
-    pub fn equals(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn equals(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.equals.unwrap_or_default();
         v.push(input.into());
-        self.equals = Some(v);
+        self.equals = ::std::option::Option::Some(v);
         self
     }
     /// <p>Represents an <i>equal</i> <b></b> condition to be applied to a single field when querying for findings.</p>
     pub fn set_equals(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.equals = input;
         self
@@ -242,57 +244,57 @@ impl ConditionBuilder {
     /// To override the contents of this collection use [`set_not_equals`](Self::set_not_equals).
     ///
     /// <p>Represents a <i>not equal</i> <b></b> condition to be applied to a single field when querying for findings.</p>
-    pub fn not_equals(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn not_equals(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.not_equals.unwrap_or_default();
         v.push(input.into());
-        self.not_equals = Some(v);
+        self.not_equals = ::std::option::Option::Some(v);
         self
     }
     /// <p>Represents a <i>not equal</i> <b></b> condition to be applied to a single field when querying for findings.</p>
     pub fn set_not_equals(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.not_equals = input;
         self
     }
     /// <p>Represents a <i>greater than</i> condition to be applied to a single field when querying for findings.</p>
     pub fn greater_than(mut self, input: i64) -> Self {
-        self.greater_than = Some(input);
+        self.greater_than = ::std::option::Option::Some(input);
         self
     }
     /// <p>Represents a <i>greater than</i> condition to be applied to a single field when querying for findings.</p>
-    pub fn set_greater_than(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_greater_than(mut self, input: ::std::option::Option<i64>) -> Self {
         self.greater_than = input;
         self
     }
     /// <p>Represents a <i>greater than or equal</i> condition to be applied to a single field when querying for findings.</p>
     pub fn greater_than_or_equal(mut self, input: i64) -> Self {
-        self.greater_than_or_equal = Some(input);
+        self.greater_than_or_equal = ::std::option::Option::Some(input);
         self
     }
     /// <p>Represents a <i>greater than or equal</i> condition to be applied to a single field when querying for findings.</p>
-    pub fn set_greater_than_or_equal(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_greater_than_or_equal(mut self, input: ::std::option::Option<i64>) -> Self {
         self.greater_than_or_equal = input;
         self
     }
     /// <p>Represents a <i>less than</i> condition to be applied to a single field when querying for findings.</p>
     pub fn less_than(mut self, input: i64) -> Self {
-        self.less_than = Some(input);
+        self.less_than = ::std::option::Option::Some(input);
         self
     }
     /// <p>Represents a <i>less than</i> condition to be applied to a single field when querying for findings.</p>
-    pub fn set_less_than(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_less_than(mut self, input: ::std::option::Option<i64>) -> Self {
         self.less_than = input;
         self
     }
     /// <p>Represents a <i>less than or equal</i> condition to be applied to a single field when querying for findings.</p>
     pub fn less_than_or_equal(mut self, input: i64) -> Self {
-        self.less_than_or_equal = Some(input);
+        self.less_than_or_equal = ::std::option::Option::Some(input);
         self
     }
     /// <p>Represents a <i>less than or equal</i> condition to be applied to a single field when querying for findings.</p>
-    pub fn set_less_than_or_equal(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_less_than_or_equal(mut self, input: ::std::option::Option<i64>) -> Self {
         self.less_than_or_equal = input;
         self
     }

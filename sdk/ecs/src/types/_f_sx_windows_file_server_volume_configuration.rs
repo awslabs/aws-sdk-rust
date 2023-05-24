@@ -3,32 +3,32 @@
 /// <p>This parameter is specified when you're using <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/what-is.html">Amazon FSx for Windows File Server</a> file system for task storage.</p>
 /// <p>For more information and the input format, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/wfsx-volumes.html">Amazon FSx for Windows File Server volumes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FSxWindowsFileServerVolumeConfiguration {
     /// <p>The Amazon FSx for Windows File Server file system ID to use.</p>
     #[doc(hidden)]
-    pub file_system_id: std::option::Option<std::string::String>,
+    pub file_system_id: ::std::option::Option<::std::string::String>,
     /// <p>The directory within the Amazon FSx for Windows File Server file system to mount as the root directory inside the host.</p>
     #[doc(hidden)]
-    pub root_directory: std::option::Option<std::string::String>,
+    pub root_directory: ::std::option::Option<::std::string::String>,
     /// <p>The authorization configuration details for the Amazon FSx for Windows File Server file system.</p>
     #[doc(hidden)]
     pub authorization_config:
-        std::option::Option<crate::types::FSxWindowsFileServerAuthorizationConfig>,
+        ::std::option::Option<crate::types::FSxWindowsFileServerAuthorizationConfig>,
 }
 impl FSxWindowsFileServerVolumeConfiguration {
     /// <p>The Amazon FSx for Windows File Server file system ID to use.</p>
-    pub fn file_system_id(&self) -> std::option::Option<&str> {
+    pub fn file_system_id(&self) -> ::std::option::Option<&str> {
         self.file_system_id.as_deref()
     }
     /// <p>The directory within the Amazon FSx for Windows File Server file system to mount as the root directory inside the host.</p>
-    pub fn root_directory(&self) -> std::option::Option<&str> {
+    pub fn root_directory(&self) -> ::std::option::Option<&str> {
         self.root_directory.as_deref()
     }
     /// <p>The authorization configuration details for the Amazon FSx for Windows File Server file system.</p>
     pub fn authorization_config(
         &self,
-    ) -> std::option::Option<&crate::types::FSxWindowsFileServerAuthorizationConfig> {
+    ) -> ::std::option::Option<&crate::types::FSxWindowsFileServerAuthorizationConfig> {
         self.authorization_config.as_ref()
     }
 }
@@ -41,31 +41,45 @@ impl FSxWindowsFileServerVolumeConfiguration {
 
 /// A builder for [`FSxWindowsFileServerVolumeConfiguration`](crate::types::FSxWindowsFileServerVolumeConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FSxWindowsFileServerVolumeConfigurationBuilder {
-    pub(crate) file_system_id: std::option::Option<std::string::String>,
-    pub(crate) root_directory: std::option::Option<std::string::String>,
+    pub(crate) file_system_id: ::std::option::Option<::std::string::String>,
+    pub(crate) root_directory: ::std::option::Option<::std::string::String>,
     pub(crate) authorization_config:
-        std::option::Option<crate::types::FSxWindowsFileServerAuthorizationConfig>,
+        ::std::option::Option<crate::types::FSxWindowsFileServerAuthorizationConfig>,
 }
 impl FSxWindowsFileServerVolumeConfigurationBuilder {
     /// <p>The Amazon FSx for Windows File Server file system ID to use.</p>
-    pub fn file_system_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.file_system_id = Some(input.into());
+    pub fn file_system_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.file_system_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon FSx for Windows File Server file system ID to use.</p>
-    pub fn set_file_system_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_file_system_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.file_system_id = input;
         self
     }
     /// <p>The directory within the Amazon FSx for Windows File Server file system to mount as the root directory inside the host.</p>
-    pub fn root_directory(mut self, input: impl Into<std::string::String>) -> Self {
-        self.root_directory = Some(input.into());
+    pub fn root_directory(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.root_directory = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The directory within the Amazon FSx for Windows File Server file system to mount as the root directory inside the host.</p>
-    pub fn set_root_directory(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_root_directory(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.root_directory = input;
         self
     }
@@ -74,13 +88,13 @@ impl FSxWindowsFileServerVolumeConfigurationBuilder {
         mut self,
         input: crate::types::FSxWindowsFileServerAuthorizationConfig,
     ) -> Self {
-        self.authorization_config = Some(input);
+        self.authorization_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The authorization configuration details for the Amazon FSx for Windows File Server file system.</p>
     pub fn set_authorization_config(
         mut self,
-        input: std::option::Option<crate::types::FSxWindowsFileServerAuthorizationConfig>,
+        input: ::std::option::Option<crate::types::FSxWindowsFileServerAuthorizationConfig>,
     ) -> Self {
         self.authorization_config = input;
         self

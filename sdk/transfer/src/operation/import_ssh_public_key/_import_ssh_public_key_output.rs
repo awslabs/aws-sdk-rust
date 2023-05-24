@@ -2,34 +2,34 @@
 
 /// <p>Identifies the user, the server they belong to, and the identifier of the SSH public key associated with that user. A user can have more than one key on each server that they are associated with.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportSshPublicKeyOutput {
     /// <p>A system-assigned unique identifier for a server.</p>
     #[doc(hidden)]
-    pub server_id: std::option::Option<std::string::String>,
+    pub server_id: ::std::option::Option<::std::string::String>,
     /// <p>The name given to a public key by the system that was imported.</p>
     #[doc(hidden)]
-    pub ssh_public_key_id: std::option::Option<std::string::String>,
+    pub ssh_public_key_id: ::std::option::Option<::std::string::String>,
     /// <p>A user name assigned to the <code>ServerID</code> value that you specified.</p>
     #[doc(hidden)]
-    pub user_name: std::option::Option<std::string::String>,
+    pub user_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ImportSshPublicKeyOutput {
     /// <p>A system-assigned unique identifier for a server.</p>
-    pub fn server_id(&self) -> std::option::Option<&str> {
+    pub fn server_id(&self) -> ::std::option::Option<&str> {
         self.server_id.as_deref()
     }
     /// <p>The name given to a public key by the system that was imported.</p>
-    pub fn ssh_public_key_id(&self) -> std::option::Option<&str> {
+    pub fn ssh_public_key_id(&self) -> ::std::option::Option<&str> {
         self.ssh_public_key_id.as_deref()
     }
     /// <p>A user name assigned to the <code>ServerID</code> value that you specified.</p>
-    pub fn user_name(&self) -> std::option::Option<&str> {
+    pub fn user_name(&self) -> ::std::option::Option<&str> {
         self.user_name.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ImportSshPublicKeyOutput {
+impl ::aws_http::request_id::RequestId for ImportSshPublicKeyOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -45,44 +45,49 @@ impl ImportSshPublicKeyOutput {
 
 /// A builder for [`ImportSshPublicKeyOutput`](crate::operation::import_ssh_public_key::ImportSshPublicKeyOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ImportSshPublicKeyOutputBuilder {
-    pub(crate) server_id: std::option::Option<std::string::String>,
-    pub(crate) ssh_public_key_id: std::option::Option<std::string::String>,
-    pub(crate) user_name: std::option::Option<std::string::String>,
+    pub(crate) server_id: ::std::option::Option<::std::string::String>,
+    pub(crate) ssh_public_key_id: ::std::option::Option<::std::string::String>,
+    pub(crate) user_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ImportSshPublicKeyOutputBuilder {
     /// <p>A system-assigned unique identifier for a server.</p>
-    pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.server_id = Some(input.into());
+    pub fn server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.server_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A system-assigned unique identifier for a server.</p>
-    pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.server_id = input;
         self
     }
     /// <p>The name given to a public key by the system that was imported.</p>
-    pub fn ssh_public_key_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ssh_public_key_id = Some(input.into());
+    pub fn ssh_public_key_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.ssh_public_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name given to a public key by the system that was imported.</p>
     pub fn set_ssh_public_key_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.ssh_public_key_id = input;
         self
     }
     /// <p>A user name assigned to the <code>ServerID</code> value that you specified.</p>
-    pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.user_name = Some(input.into());
+    pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.user_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A user name assigned to the <code>ServerID</code> value that you specified.</p>
-    pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_name = input;
         self
     }

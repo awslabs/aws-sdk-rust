@@ -2,78 +2,78 @@
 
 /// <p>Describes a Reserved Instance listing.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReservedInstancesListing {
     /// <p>A unique, case-sensitive key supplied by the client to ensure that the request is idempotent. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
     #[doc(hidden)]
-    pub client_token: std::option::Option<std::string::String>,
+    pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The time the listing was created.</p>
     #[doc(hidden)]
-    pub create_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The number of instances in this state.</p>
     #[doc(hidden)]
-    pub instance_counts: std::option::Option<std::vec::Vec<crate::types::InstanceCount>>,
+    pub instance_counts: ::std::option::Option<::std::vec::Vec<crate::types::InstanceCount>>,
     /// <p>The price of the Reserved Instance listing.</p>
     #[doc(hidden)]
-    pub price_schedules: std::option::Option<std::vec::Vec<crate::types::PriceSchedule>>,
+    pub price_schedules: ::std::option::Option<::std::vec::Vec<crate::types::PriceSchedule>>,
     /// <p>The ID of the Reserved Instance.</p>
     #[doc(hidden)]
-    pub reserved_instances_id: std::option::Option<std::string::String>,
+    pub reserved_instances_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Reserved Instance listing.</p>
     #[doc(hidden)]
-    pub reserved_instances_listing_id: std::option::Option<std::string::String>,
+    pub reserved_instances_listing_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the Reserved Instance listing.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::ListingStatus>,
+    pub status: ::std::option::Option<crate::types::ListingStatus>,
     /// <p>The reason for the current status of the Reserved Instance listing. The response can be blank.</p>
     #[doc(hidden)]
-    pub status_message: std::option::Option<std::string::String>,
+    pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>Any tags assigned to the resource.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The last modified timestamp of the listing.</p>
     #[doc(hidden)]
-    pub update_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub update_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ReservedInstancesListing {
     /// <p>A unique, case-sensitive key supplied by the client to ensure that the request is idempotent. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
     /// <p>The time the listing was created.</p>
-    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.create_date.as_ref()
     }
     /// <p>The number of instances in this state.</p>
-    pub fn instance_counts(&self) -> std::option::Option<&[crate::types::InstanceCount]> {
+    pub fn instance_counts(&self) -> ::std::option::Option<&[crate::types::InstanceCount]> {
         self.instance_counts.as_deref()
     }
     /// <p>The price of the Reserved Instance listing.</p>
-    pub fn price_schedules(&self) -> std::option::Option<&[crate::types::PriceSchedule]> {
+    pub fn price_schedules(&self) -> ::std::option::Option<&[crate::types::PriceSchedule]> {
         self.price_schedules.as_deref()
     }
     /// <p>The ID of the Reserved Instance.</p>
-    pub fn reserved_instances_id(&self) -> std::option::Option<&str> {
+    pub fn reserved_instances_id(&self) -> ::std::option::Option<&str> {
         self.reserved_instances_id.as_deref()
     }
     /// <p>The ID of the Reserved Instance listing.</p>
-    pub fn reserved_instances_listing_id(&self) -> std::option::Option<&str> {
+    pub fn reserved_instances_listing_id(&self) -> ::std::option::Option<&str> {
         self.reserved_instances_listing_id.as_deref()
     }
     /// <p>The status of the Reserved Instance listing.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::ListingStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::ListingStatus> {
         self.status.as_ref()
     }
     /// <p>The reason for the current status of the Reserved Instance listing. The response can be blank.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<&str> {
         self.status_message.as_deref()
     }
     /// <p>Any tags assigned to the resource.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The last modified timestamp of the listing.</p>
-    pub fn update_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn update_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.update_date.as_ref()
     }
 }
@@ -86,39 +86,41 @@ impl ReservedInstancesListing {
 
 /// A builder for [`ReservedInstancesListing`](crate::types::ReservedInstancesListing).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ReservedInstancesListingBuilder {
-    pub(crate) client_token: std::option::Option<std::string::String>,
-    pub(crate) create_date: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) instance_counts: std::option::Option<std::vec::Vec<crate::types::InstanceCount>>,
-    pub(crate) price_schedules: std::option::Option<std::vec::Vec<crate::types::PriceSchedule>>,
-    pub(crate) reserved_instances_id: std::option::Option<std::string::String>,
-    pub(crate) reserved_instances_listing_id: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::ListingStatus>,
-    pub(crate) status_message: std::option::Option<std::string::String>,
-    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    pub(crate) update_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) client_token: ::std::option::Option<::std::string::String>,
+    pub(crate) create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) instance_counts: ::std::option::Option<::std::vec::Vec<crate::types::InstanceCount>>,
+    pub(crate) price_schedules: ::std::option::Option<::std::vec::Vec<crate::types::PriceSchedule>>,
+    pub(crate) reserved_instances_id: ::std::option::Option<::std::string::String>,
+    pub(crate) reserved_instances_listing_id: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::ListingStatus>,
+    pub(crate) status_message: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) update_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ReservedInstancesListingBuilder {
     /// <p>A unique, case-sensitive key supplied by the client to ensure that the request is idempotent. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
-    pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.client_token = Some(input.into());
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.client_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique, case-sensitive key supplied by the client to ensure that the request is idempotent. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
-    pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
     }
     /// <p>The time the listing was created.</p>
-    pub fn create_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.create_date = Some(input);
+    pub fn create_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.create_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time the listing was created.</p>
     pub fn set_create_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.create_date = input;
         self
@@ -131,13 +133,13 @@ impl ReservedInstancesListingBuilder {
     pub fn instance_counts(mut self, input: crate::types::InstanceCount) -> Self {
         let mut v = self.instance_counts.unwrap_or_default();
         v.push(input);
-        self.instance_counts = Some(v);
+        self.instance_counts = ::std::option::Option::Some(v);
         self
     }
     /// <p>The number of instances in this state.</p>
     pub fn set_instance_counts(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::InstanceCount>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceCount>>,
     ) -> Self {
         self.instance_counts = input;
         self
@@ -150,60 +152,72 @@ impl ReservedInstancesListingBuilder {
     pub fn price_schedules(mut self, input: crate::types::PriceSchedule) -> Self {
         let mut v = self.price_schedules.unwrap_or_default();
         v.push(input);
-        self.price_schedules = Some(v);
+        self.price_schedules = ::std::option::Option::Some(v);
         self
     }
     /// <p>The price of the Reserved Instance listing.</p>
     pub fn set_price_schedules(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PriceSchedule>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PriceSchedule>>,
     ) -> Self {
         self.price_schedules = input;
         self
     }
     /// <p>The ID of the Reserved Instance.</p>
-    pub fn reserved_instances_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.reserved_instances_id = Some(input.into());
+    pub fn reserved_instances_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.reserved_instances_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Reserved Instance.</p>
     pub fn set_reserved_instances_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.reserved_instances_id = input;
         self
     }
     /// <p>The ID of the Reserved Instance listing.</p>
-    pub fn reserved_instances_listing_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.reserved_instances_listing_id = Some(input.into());
+    pub fn reserved_instances_listing_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.reserved_instances_listing_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Reserved Instance listing.</p>
     pub fn set_reserved_instances_listing_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.reserved_instances_listing_id = input;
         self
     }
     /// <p>The status of the Reserved Instance listing.</p>
     pub fn status(mut self, input: crate::types::ListingStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the Reserved Instance listing.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::ListingStatus>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ListingStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>The reason for the current status of the Reserved Instance listing. The response can be blank.</p>
-    pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status_message = Some(input.into());
+    pub fn status_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason for the current status of the Reserved Instance listing. The response can be blank.</p>
-    pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.status_message = input;
         self
     }
@@ -215,26 +229,26 @@ impl ReservedInstancesListingBuilder {
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
-        self.tags = Some(v);
+        self.tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>Any tags assigned to the resource.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tags = input;
         self
     }
     /// <p>The last modified timestamp of the listing.</p>
-    pub fn update_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.update_date = Some(input);
+    pub fn update_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.update_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The last modified timestamp of the listing.</p>
     pub fn set_update_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.update_date = input;
         self

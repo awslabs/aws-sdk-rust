@@ -2,22 +2,22 @@
 
 /// <p>A resource tag.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceTag {
     /// <p>Specifies the ARN of the resource.</p>
     #[doc(hidden)]
-    pub resource_id: std::option::Option<std::string::String>,
+    pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags.</p>
     #[doc(hidden)]
-    pub tags_list: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tags_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl ResourceTag {
     /// <p>Specifies the ARN of the resource.</p>
-    pub fn resource_id(&self) -> std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<&str> {
         self.resource_id.as_deref()
     }
     /// <p>A list of tags.</p>
-    pub fn tags_list(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags_list(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags_list.as_deref()
     }
 }
@@ -30,19 +30,21 @@ impl ResourceTag {
 
 /// A builder for [`ResourceTag`](crate::types::ResourceTag).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResourceTagBuilder {
-    pub(crate) resource_id: std::option::Option<std::string::String>,
-    pub(crate) tags_list: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub(crate) resource_id: ::std::option::Option<::std::string::String>,
+    pub(crate) tags_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl ResourceTagBuilder {
     /// <p>Specifies the ARN of the resource.</p>
-    pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_id = Some(input.into());
+    pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the ARN of the resource.</p>
-    pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
     }
@@ -54,13 +56,13 @@ impl ResourceTagBuilder {
     pub fn tags_list(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags_list.unwrap_or_default();
         v.push(input);
-        self.tags_list = Some(v);
+        self.tags_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of tags.</p>
     pub fn set_tags_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tags_list = input;
         self

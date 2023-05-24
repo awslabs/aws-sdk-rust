@@ -2,11 +2,11 @@
 
 /// <p>An empty element returned on a successful request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateConfigurationSetTrackingOptionsOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for CreateConfigurationSetTrackingOptionsOutput {
+impl ::aws_http::request_id::RequestId for CreateConfigurationSetTrackingOptionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -20,7 +20,9 @@ impl CreateConfigurationSetTrackingOptionsOutput {
 
 /// A builder for [`CreateConfigurationSetTrackingOptionsOutput`](crate::operation::create_configuration_set_tracking_options::CreateConfigurationSetTrackingOptionsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateConfigurationSetTrackingOptionsOutputBuilder {
     _request_id: Option<String>,
 }

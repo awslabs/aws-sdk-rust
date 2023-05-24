@@ -2,18 +2,18 @@
 
 /// <p>A filter that specifies the billing period range where the custom line item versions reside.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCustomLineItemVersionsFilter {
     /// <p>The billing period range in which the custom line item version is applied.</p>
     #[doc(hidden)]
     pub billing_period_range:
-        std::option::Option<crate::types::ListCustomLineItemVersionsBillingPeriodRangeFilter>,
+        ::std::option::Option<crate::types::ListCustomLineItemVersionsBillingPeriodRangeFilter>,
 }
 impl ListCustomLineItemVersionsFilter {
     /// <p>The billing period range in which the custom line item version is applied.</p>
     pub fn billing_period_range(
         &self,
-    ) -> std::option::Option<&crate::types::ListCustomLineItemVersionsBillingPeriodRangeFilter>
+    ) -> ::std::option::Option<&crate::types::ListCustomLineItemVersionsBillingPeriodRangeFilter>
     {
         self.billing_period_range.as_ref()
     }
@@ -27,10 +27,12 @@ impl ListCustomLineItemVersionsFilter {
 
 /// A builder for [`ListCustomLineItemVersionsFilter`](crate::types::ListCustomLineItemVersionsFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListCustomLineItemVersionsFilterBuilder {
     pub(crate) billing_period_range:
-        std::option::Option<crate::types::ListCustomLineItemVersionsBillingPeriodRangeFilter>,
+        ::std::option::Option<crate::types::ListCustomLineItemVersionsBillingPeriodRangeFilter>,
 }
 impl ListCustomLineItemVersionsFilterBuilder {
     /// <p>The billing period range in which the custom line item version is applied.</p>
@@ -38,13 +40,13 @@ impl ListCustomLineItemVersionsFilterBuilder {
         mut self,
         input: crate::types::ListCustomLineItemVersionsBillingPeriodRangeFilter,
     ) -> Self {
-        self.billing_period_range = Some(input);
+        self.billing_period_range = ::std::option::Option::Some(input);
         self
     }
     /// <p>The billing period range in which the custom line item version is applied.</p>
     pub fn set_billing_period_range(
         mut self,
-        input: std::option::Option<
+        input: ::std::option::Option<
             crate::types::ListCustomLineItemVersionsBillingPeriodRangeFilter,
         >,
     ) -> Self {

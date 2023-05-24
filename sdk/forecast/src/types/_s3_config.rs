@@ -2,31 +2,31 @@
 
 /// <p>The path to the file(s) in an Amazon Simple Storage Service (Amazon S3) bucket, and an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the file(s). Optionally, includes an Key Management Service (KMS) key. This object is part of the <code>DataSource</code> object that is submitted in the <code>CreateDatasetImportJob</code> request, and part of the <code>DataDestination</code> object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3Config {
     /// <p>The path to an Amazon Simple Storage Service (Amazon S3) bucket or file(s) in an Amazon S3 bucket.</p>
     #[doc(hidden)]
-    pub path: std::option::Option<std::string::String>,
+    pub path: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the Identity and Access Management (IAM) role that Amazon Forecast can assume to access the Amazon S3 bucket or files. If you provide a value for the <code>KMSKeyArn</code> key, the role must allow access to the key.</p>
     /// <p>Passing a role across Amazon Web Services accounts is not allowed. If you pass a role that isn't in your account, you get an <code>InvalidInputException</code> error.</p>
     #[doc(hidden)]
-    pub role_arn: std::option::Option<std::string::String>,
+    pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an Key Management Service (KMS) key.</p>
     #[doc(hidden)]
-    pub kms_key_arn: std::option::Option<std::string::String>,
+    pub kms_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl S3Config {
     /// <p>The path to an Amazon Simple Storage Service (Amazon S3) bucket or file(s) in an Amazon S3 bucket.</p>
-    pub fn path(&self) -> std::option::Option<&str> {
+    pub fn path(&self) -> ::std::option::Option<&str> {
         self.path.as_deref()
     }
     /// <p>The ARN of the Identity and Access Management (IAM) role that Amazon Forecast can assume to access the Amazon S3 bucket or files. If you provide a value for the <code>KMSKeyArn</code> key, the role must allow access to the key.</p>
     /// <p>Passing a role across Amazon Web Services accounts is not allowed. If you pass a role that isn't in your account, you get an <code>InvalidInputException</code> error.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of an Key Management Service (KMS) key.</p>
-    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+    pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
 }
@@ -39,42 +39,44 @@ impl S3Config {
 
 /// A builder for [`S3Config`](crate::types::S3Config).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct S3ConfigBuilder {
-    pub(crate) path: std::option::Option<std::string::String>,
-    pub(crate) role_arn: std::option::Option<std::string::String>,
-    pub(crate) kms_key_arn: std::option::Option<std::string::String>,
+    pub(crate) path: ::std::option::Option<::std::string::String>,
+    pub(crate) role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl S3ConfigBuilder {
     /// <p>The path to an Amazon Simple Storage Service (Amazon S3) bucket or file(s) in an Amazon S3 bucket.</p>
-    pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
-        self.path = Some(input.into());
+    pub fn path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The path to an Amazon Simple Storage Service (Amazon S3) bucket or file(s) in an Amazon S3 bucket.</p>
-    pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.path = input;
         self
     }
     /// <p>The ARN of the Identity and Access Management (IAM) role that Amazon Forecast can assume to access the Amazon S3 bucket or files. If you provide a value for the <code>KMSKeyArn</code> key, the role must allow access to the key.</p>
     /// <p>Passing a role across Amazon Web Services accounts is not allowed. If you pass a role that isn't in your account, you get an <code>InvalidInputException</code> error.</p>
-    pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.role_arn = Some(input.into());
+    pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the Identity and Access Management (IAM) role that Amazon Forecast can assume to access the Amazon S3 bucket or files. If you provide a value for the <code>KMSKeyArn</code> key, the role must allow access to the key.</p>
     /// <p>Passing a role across Amazon Web Services accounts is not allowed. If you pass a role that isn't in your account, you get an <code>InvalidInputException</code> error.</p>
-    pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of an Key Management Service (KMS) key.</p>
-    pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.kms_key_arn = Some(input.into());
+    pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of an Key Management Service (KMS) key.</p>
-    pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_arn = input;
         self
     }

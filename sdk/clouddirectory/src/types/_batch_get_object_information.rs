@@ -2,15 +2,15 @@
 
 /// <p>Retrieves metadata about an object inside a <code>BatchRead</code> operation. For more information, see <code>GetObjectInformation</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetObjectInformation {
     /// <p>A reference to the object.</p>
     #[doc(hidden)]
-    pub object_reference: std::option::Option<crate::types::ObjectReference>,
+    pub object_reference: ::std::option::Option<crate::types::ObjectReference>,
 }
 impl BatchGetObjectInformation {
     /// <p>A reference to the object.</p>
-    pub fn object_reference(&self) -> std::option::Option<&crate::types::ObjectReference> {
+    pub fn object_reference(&self) -> ::std::option::Option<&crate::types::ObjectReference> {
         self.object_reference.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl BatchGetObjectInformation {
 
 /// A builder for [`BatchGetObjectInformation`](crate::types::BatchGetObjectInformation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BatchGetObjectInformationBuilder {
-    pub(crate) object_reference: std::option::Option<crate::types::ObjectReference>,
+    pub(crate) object_reference: ::std::option::Option<crate::types::ObjectReference>,
 }
 impl BatchGetObjectInformationBuilder {
     /// <p>A reference to the object.</p>
     pub fn object_reference(mut self, input: crate::types::ObjectReference) -> Self {
-        self.object_reference = Some(input);
+        self.object_reference = ::std::option::Option::Some(input);
         self
     }
     /// <p>A reference to the object.</p>
     pub fn set_object_reference(
         mut self,
-        input: std::option::Option<crate::types::ObjectReference>,
+        input: ::std::option::Option<crate::types::ObjectReference>,
     ) -> Self {
         self.object_reference = input;
         self

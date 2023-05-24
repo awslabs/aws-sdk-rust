@@ -2,29 +2,29 @@
 
 /// <p>Information that identifies a mitigation action. This information is returned by ListMitigationActions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MitigationActionIdentifier {
     /// <p>The friendly name of the mitigation action.</p>
     #[doc(hidden)]
-    pub action_name: std::option::Option<std::string::String>,
+    pub action_name: ::std::option::Option<::std::string::String>,
     /// <p>The IAM role ARN used to apply this mitigation action.</p>
     #[doc(hidden)]
-    pub action_arn: std::option::Option<std::string::String>,
+    pub action_arn: ::std::option::Option<::std::string::String>,
     /// <p>The date when this mitigation action was created.</p>
     #[doc(hidden)]
-    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl MitigationActionIdentifier {
     /// <p>The friendly name of the mitigation action.</p>
-    pub fn action_name(&self) -> std::option::Option<&str> {
+    pub fn action_name(&self) -> ::std::option::Option<&str> {
         self.action_name.as_deref()
     }
     /// <p>The IAM role ARN used to apply this mitigation action.</p>
-    pub fn action_arn(&self) -> std::option::Option<&str> {
+    pub fn action_arn(&self) -> ::std::option::Option<&str> {
         self.action_arn.as_deref()
     }
     /// <p>The date when this mitigation action was created.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
 }
@@ -37,42 +37,44 @@ impl MitigationActionIdentifier {
 
 /// A builder for [`MitigationActionIdentifier`](crate::types::MitigationActionIdentifier).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MitigationActionIdentifierBuilder {
-    pub(crate) action_name: std::option::Option<std::string::String>,
-    pub(crate) action_arn: std::option::Option<std::string::String>,
-    pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) action_name: ::std::option::Option<::std::string::String>,
+    pub(crate) action_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl MitigationActionIdentifierBuilder {
     /// <p>The friendly name of the mitigation action.</p>
-    pub fn action_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.action_name = Some(input.into());
+    pub fn action_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.action_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The friendly name of the mitigation action.</p>
-    pub fn set_action_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_action_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.action_name = input;
         self
     }
     /// <p>The IAM role ARN used to apply this mitigation action.</p>
-    pub fn action_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.action_arn = Some(input.into());
+    pub fn action_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.action_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IAM role ARN used to apply this mitigation action.</p>
-    pub fn set_action_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_action_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.action_arn = input;
         self
     }
     /// <p>The date when this mitigation action was created.</p>
-    pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_date = Some(input);
+    pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date when this mitigation action was created.</p>
     pub fn set_creation_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_date = input;
         self

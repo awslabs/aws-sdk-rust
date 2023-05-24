@@ -2,36 +2,36 @@
 
 /// <p>Describes a block device mapping.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LaunchTemplateBlockDeviceMapping {
     /// <p>The device name.</p>
     #[doc(hidden)]
-    pub device_name: std::option::Option<std::string::String>,
+    pub device_name: ::std::option::Option<::std::string::String>,
     /// <p>The virtual device name (ephemeralN).</p>
     #[doc(hidden)]
-    pub virtual_name: std::option::Option<std::string::String>,
+    pub virtual_name: ::std::option::Option<::std::string::String>,
     /// <p>Information about the block device for an EBS volume.</p>
     #[doc(hidden)]
-    pub ebs: std::option::Option<crate::types::LaunchTemplateEbsBlockDevice>,
+    pub ebs: ::std::option::Option<crate::types::LaunchTemplateEbsBlockDevice>,
     /// <p>To omit the device from the block device mapping, specify an empty string.</p>
     #[doc(hidden)]
-    pub no_device: std::option::Option<std::string::String>,
+    pub no_device: ::std::option::Option<::std::string::String>,
 }
 impl LaunchTemplateBlockDeviceMapping {
     /// <p>The device name.</p>
-    pub fn device_name(&self) -> std::option::Option<&str> {
+    pub fn device_name(&self) -> ::std::option::Option<&str> {
         self.device_name.as_deref()
     }
     /// <p>The virtual device name (ephemeralN).</p>
-    pub fn virtual_name(&self) -> std::option::Option<&str> {
+    pub fn virtual_name(&self) -> ::std::option::Option<&str> {
         self.virtual_name.as_deref()
     }
     /// <p>Information about the block device for an EBS volume.</p>
-    pub fn ebs(&self) -> std::option::Option<&crate::types::LaunchTemplateEbsBlockDevice> {
+    pub fn ebs(&self) -> ::std::option::Option<&crate::types::LaunchTemplateEbsBlockDevice> {
         self.ebs.as_ref()
     }
     /// <p>To omit the device from the block device mapping, specify an empty string.</p>
-    pub fn no_device(&self) -> std::option::Option<&str> {
+    pub fn no_device(&self) -> ::std::option::Option<&str> {
         self.no_device.as_deref()
     }
 }
@@ -44,54 +44,56 @@ impl LaunchTemplateBlockDeviceMapping {
 
 /// A builder for [`LaunchTemplateBlockDeviceMapping`](crate::types::LaunchTemplateBlockDeviceMapping).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LaunchTemplateBlockDeviceMappingBuilder {
-    pub(crate) device_name: std::option::Option<std::string::String>,
-    pub(crate) virtual_name: std::option::Option<std::string::String>,
-    pub(crate) ebs: std::option::Option<crate::types::LaunchTemplateEbsBlockDevice>,
-    pub(crate) no_device: std::option::Option<std::string::String>,
+    pub(crate) device_name: ::std::option::Option<::std::string::String>,
+    pub(crate) virtual_name: ::std::option::Option<::std::string::String>,
+    pub(crate) ebs: ::std::option::Option<crate::types::LaunchTemplateEbsBlockDevice>,
+    pub(crate) no_device: ::std::option::Option<::std::string::String>,
 }
 impl LaunchTemplateBlockDeviceMappingBuilder {
     /// <p>The device name.</p>
-    pub fn device_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.device_name = Some(input.into());
+    pub fn device_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.device_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The device name.</p>
-    pub fn set_device_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_device_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_name = input;
         self
     }
     /// <p>The virtual device name (ephemeralN).</p>
-    pub fn virtual_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.virtual_name = Some(input.into());
+    pub fn virtual_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.virtual_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The virtual device name (ephemeralN).</p>
-    pub fn set_virtual_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_virtual_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.virtual_name = input;
         self
     }
     /// <p>Information about the block device for an EBS volume.</p>
     pub fn ebs(mut self, input: crate::types::LaunchTemplateEbsBlockDevice) -> Self {
-        self.ebs = Some(input);
+        self.ebs = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the block device for an EBS volume.</p>
     pub fn set_ebs(
         mut self,
-        input: std::option::Option<crate::types::LaunchTemplateEbsBlockDevice>,
+        input: ::std::option::Option<crate::types::LaunchTemplateEbsBlockDevice>,
     ) -> Self {
         self.ebs = input;
         self
     }
     /// <p>To omit the device from the block device mapping, specify an empty string.</p>
-    pub fn no_device(mut self, input: impl Into<std::string::String>) -> Self {
-        self.no_device = Some(input.into());
+    pub fn no_device(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.no_device = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>To omit the device from the block device mapping, specify an empty string.</p>
-    pub fn set_no_device(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_no_device(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.no_device = input;
         self
     }

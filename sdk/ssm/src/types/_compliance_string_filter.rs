@@ -2,29 +2,29 @@
 
 /// <p>One or more filters. Use a filter to return a more specific list of results.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComplianceStringFilter {
     /// <p>The name of the filter.</p>
     #[doc(hidden)]
-    pub key: std::option::Option<std::string::String>,
+    pub key: ::std::option::Option<::std::string::String>,
     /// <p>The value for which to search.</p>
     #[doc(hidden)]
-    pub values: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The type of comparison that should be performed for the value: Equal, NotEqual, BeginWith, LessThan, or GreaterThan.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::ComplianceQueryOperatorType>,
+    pub r#type: ::std::option::Option<crate::types::ComplianceQueryOperatorType>,
 }
 impl ComplianceStringFilter {
     /// <p>The name of the filter.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<&str> {
         self.key.as_deref()
     }
     /// <p>The value for which to search.</p>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.values.as_deref()
     }
     /// <p>The type of comparison that should be performed for the value: Equal, NotEqual, BeginWith, LessThan, or GreaterThan.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::ComplianceQueryOperatorType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ComplianceQueryOperatorType> {
         self.r#type.as_ref()
     }
 }
@@ -37,20 +37,22 @@ impl ComplianceStringFilter {
 
 /// A builder for [`ComplianceStringFilter`](crate::types::ComplianceStringFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ComplianceStringFilterBuilder {
-    pub(crate) key: std::option::Option<std::string::String>,
-    pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) r#type: std::option::Option<crate::types::ComplianceQueryOperatorType>,
+    pub(crate) key: ::std::option::Option<::std::string::String>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) r#type: ::std::option::Option<crate::types::ComplianceQueryOperatorType>,
 }
 impl ComplianceStringFilterBuilder {
     /// <p>The name of the filter.</p>
-    pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.key = Some(input.into());
+    pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the filter.</p>
-    pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key = input;
         self
     }
@@ -59,29 +61,29 @@ impl ComplianceStringFilterBuilder {
     /// To override the contents of this collection use [`set_values`](Self::set_values).
     ///
     /// <p>The value for which to search.</p>
-    pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
         v.push(input.into());
-        self.values = Some(v);
+        self.values = ::std::option::Option::Some(v);
         self
     }
     /// <p>The value for which to search.</p>
     pub fn set_values(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.values = input;
         self
     }
     /// <p>The type of comparison that should be performed for the value: Equal, NotEqual, BeginWith, LessThan, or GreaterThan.</p>
     pub fn r#type(mut self, input: crate::types::ComplianceQueryOperatorType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of comparison that should be performed for the value: Equal, NotEqual, BeginWith, LessThan, or GreaterThan.</p>
     pub fn set_type(
         mut self,
-        input: std::option::Option<crate::types::ComplianceQueryOperatorType>,
+        input: ::std::option::Option<crate::types::ComplianceQueryOperatorType>,
     ) -> Self {
         self.r#type = input;
         self

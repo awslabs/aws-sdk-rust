@@ -2,29 +2,29 @@
 
 /// <p>The <code>ReadPipelineResponse</code> structure.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReadPipelineOutput {
     /// <p>A section of the response body that provides information about the pipeline.</p>
     #[doc(hidden)]
-    pub pipeline: std::option::Option<crate::types::Pipeline>,
+    pub pipeline: ::std::option::Option<crate::types::Pipeline>,
     /// <p>Elastic Transcoder returns a warning if the resources used by your pipeline are not in the same region as the pipeline.</p>
     /// <p>Using resources in the same region, such as your Amazon S3 buckets, Amazon SNS notification topics, and AWS KMS key, reduces processing time and prevents cross-regional charges.</p>
     #[doc(hidden)]
-    pub warnings: std::option::Option<std::vec::Vec<crate::types::Warning>>,
+    pub warnings: ::std::option::Option<::std::vec::Vec<crate::types::Warning>>,
     _request_id: Option<String>,
 }
 impl ReadPipelineOutput {
     /// <p>A section of the response body that provides information about the pipeline.</p>
-    pub fn pipeline(&self) -> std::option::Option<&crate::types::Pipeline> {
+    pub fn pipeline(&self) -> ::std::option::Option<&crate::types::Pipeline> {
         self.pipeline.as_ref()
     }
     /// <p>Elastic Transcoder returns a warning if the resources used by your pipeline are not in the same region as the pipeline.</p>
     /// <p>Using resources in the same region, such as your Amazon S3 buckets, Amazon SNS notification topics, and AWS KMS key, reduces processing time and prevents cross-regional charges.</p>
-    pub fn warnings(&self) -> std::option::Option<&[crate::types::Warning]> {
+    pub fn warnings(&self) -> ::std::option::Option<&[crate::types::Warning]> {
         self.warnings.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ReadPipelineOutput {
+impl ::aws_http::request_id::RequestId for ReadPipelineOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -38,20 +38,22 @@ impl ReadPipelineOutput {
 
 /// A builder for [`ReadPipelineOutput`](crate::operation::read_pipeline::ReadPipelineOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ReadPipelineOutputBuilder {
-    pub(crate) pipeline: std::option::Option<crate::types::Pipeline>,
-    pub(crate) warnings: std::option::Option<std::vec::Vec<crate::types::Warning>>,
+    pub(crate) pipeline: ::std::option::Option<crate::types::Pipeline>,
+    pub(crate) warnings: ::std::option::Option<::std::vec::Vec<crate::types::Warning>>,
     _request_id: Option<String>,
 }
 impl ReadPipelineOutputBuilder {
     /// <p>A section of the response body that provides information about the pipeline.</p>
     pub fn pipeline(mut self, input: crate::types::Pipeline) -> Self {
-        self.pipeline = Some(input);
+        self.pipeline = ::std::option::Option::Some(input);
         self
     }
     /// <p>A section of the response body that provides information about the pipeline.</p>
-    pub fn set_pipeline(mut self, input: std::option::Option<crate::types::Pipeline>) -> Self {
+    pub fn set_pipeline(mut self, input: ::std::option::Option<crate::types::Pipeline>) -> Self {
         self.pipeline = input;
         self
     }
@@ -64,14 +66,14 @@ impl ReadPipelineOutputBuilder {
     pub fn warnings(mut self, input: crate::types::Warning) -> Self {
         let mut v = self.warnings.unwrap_or_default();
         v.push(input);
-        self.warnings = Some(v);
+        self.warnings = ::std::option::Option::Some(v);
         self
     }
     /// <p>Elastic Transcoder returns a warning if the resources used by your pipeline are not in the same region as the pipeline.</p>
     /// <p>Using resources in the same region, such as your Amazon S3 buckets, Amazon SNS notification topics, and AWS KMS key, reduces processing time and prevents cross-regional charges.</p>
     pub fn set_warnings(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Warning>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Warning>>,
     ) -> Self {
         self.warnings = input;
         self

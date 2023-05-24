@@ -2,15 +2,15 @@
 
 /// <p>An object that represents an Batch array job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ArrayProperties {
     /// <p>The size of the array job.</p>
     #[doc(hidden)]
-    pub size: std::option::Option<i32>,
+    pub size: ::std::option::Option<i32>,
 }
 impl ArrayProperties {
     /// <p>The size of the array job.</p>
-    pub fn size(&self) -> std::option::Option<i32> {
+    pub fn size(&self) -> ::std::option::Option<i32> {
         self.size
     }
 }
@@ -23,18 +23,20 @@ impl ArrayProperties {
 
 /// A builder for [`ArrayProperties`](crate::types::ArrayProperties).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ArrayPropertiesBuilder {
-    pub(crate) size: std::option::Option<i32>,
+    pub(crate) size: ::std::option::Option<i32>,
 }
 impl ArrayPropertiesBuilder {
     /// <p>The size of the array job.</p>
     pub fn size(mut self, input: i32) -> Self {
-        self.size = Some(input);
+        self.size = ::std::option::Option::Some(input);
         self
     }
     /// <p>The size of the array job.</p>
-    pub fn set_size(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.size = input;
         self
     }

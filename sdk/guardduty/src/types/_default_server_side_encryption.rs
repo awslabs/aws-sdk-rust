@@ -2,22 +2,22 @@
 
 /// <p>Contains information on the server side encryption method used in the S3 bucket. See <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">S3 Server-Side Encryption</a> for more information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DefaultServerSideEncryption {
     /// <p>The type of encryption used for objects within the S3 bucket.</p>
     #[doc(hidden)]
-    pub encryption_type: std::option::Option<std::string::String>,
+    pub encryption_type: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the KMS encryption key. Only available if the bucket <code>EncryptionType</code> is <code>aws:kms</code>.</p>
     #[doc(hidden)]
-    pub kms_master_key_arn: std::option::Option<std::string::String>,
+    pub kms_master_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl DefaultServerSideEncryption {
     /// <p>The type of encryption used for objects within the S3 bucket.</p>
-    pub fn encryption_type(&self) -> std::option::Option<&str> {
+    pub fn encryption_type(&self) -> ::std::option::Option<&str> {
         self.encryption_type.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the KMS encryption key. Only available if the bucket <code>EncryptionType</code> is <code>aws:kms</code>.</p>
-    pub fn kms_master_key_arn(&self) -> std::option::Option<&str> {
+    pub fn kms_master_key_arn(&self) -> ::std::option::Option<&str> {
         self.kms_master_key_arn.as_deref()
     }
 }
@@ -30,31 +30,42 @@ impl DefaultServerSideEncryption {
 
 /// A builder for [`DefaultServerSideEncryption`](crate::types::DefaultServerSideEncryption).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DefaultServerSideEncryptionBuilder {
-    pub(crate) encryption_type: std::option::Option<std::string::String>,
-    pub(crate) kms_master_key_arn: std::option::Option<std::string::String>,
+    pub(crate) encryption_type: ::std::option::Option<::std::string::String>,
+    pub(crate) kms_master_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl DefaultServerSideEncryptionBuilder {
     /// <p>The type of encryption used for objects within the S3 bucket.</p>
-    pub fn encryption_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.encryption_type = Some(input.into());
+    pub fn encryption_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.encryption_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of encryption used for objects within the S3 bucket.</p>
-    pub fn set_encryption_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_encryption_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.encryption_type = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the KMS encryption key. Only available if the bucket <code>EncryptionType</code> is <code>aws:kms</code>.</p>
-    pub fn kms_master_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.kms_master_key_arn = Some(input.into());
+    pub fn kms_master_key_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.kms_master_key_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the KMS encryption key. Only available if the bucket <code>EncryptionType</code> is <code>aws:kms</code>.</p>
     pub fn set_kms_master_key_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.kms_master_key_arn = input;
         self

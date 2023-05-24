@@ -2,7 +2,7 @@
 
 /// <p>The input structure for the data source that represents the storage type of the input data objects.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum VectorEnrichmentJobDataSourceConfigInput {
     /// <p>The input structure for the Amazon S3 data that represents the Amazon S3 location of the input data objects.</p>
     S3Data(crate::types::VectorEnrichmentJobS3Data),
@@ -22,11 +22,11 @@ impl VectorEnrichmentJobDataSourceConfigInput {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_s3_data(
         &self,
-    ) -> std::result::Result<&crate::types::VectorEnrichmentJobS3Data, &Self> {
+    ) -> ::std::result::Result<&crate::types::VectorEnrichmentJobS3Data, &Self> {
         if let VectorEnrichmentJobDataSourceConfigInput::S3Data(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`S3Data`](crate::types::VectorEnrichmentJobDataSourceConfigInput::S3Data).

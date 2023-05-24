@@ -2,14 +2,14 @@
 
 /// <p>Set of options which defines notification preferences of given action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct NotificationOptions {
     /// <p>Boolean value to indicate an email notification should be sent to the recipients.</p>
     #[doc(hidden)]
     pub send_email: bool,
     /// <p>Text value to be included in the email body.</p>
     #[doc(hidden)]
-    pub email_message: std::option::Option<std::string::String>,
+    pub email_message: ::std::option::Option<::std::string::String>,
 }
 impl NotificationOptions {
     /// <p>Boolean value to indicate an email notification should be sent to the recipients.</p>
@@ -17,12 +17,12 @@ impl NotificationOptions {
         self.send_email
     }
     /// <p>Text value to be included in the email body.</p>
-    pub fn email_message(&self) -> std::option::Option<&str> {
+    pub fn email_message(&self) -> ::std::option::Option<&str> {
         self.email_message.as_deref()
     }
 }
-impl std::fmt::Debug for NotificationOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for NotificationOptions {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("NotificationOptions");
         formatter.field("send_email", &self.send_email);
         formatter.field("email_message", &"*** Sensitive Data Redacted ***");
@@ -38,29 +38,35 @@ impl NotificationOptions {
 
 /// A builder for [`NotificationOptions`](crate::types::NotificationOptions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct NotificationOptionsBuilder {
-    pub(crate) send_email: std::option::Option<bool>,
-    pub(crate) email_message: std::option::Option<std::string::String>,
+    pub(crate) send_email: ::std::option::Option<bool>,
+    pub(crate) email_message: ::std::option::Option<::std::string::String>,
 }
 impl NotificationOptionsBuilder {
     /// <p>Boolean value to indicate an email notification should be sent to the recipients.</p>
     pub fn send_email(mut self, input: bool) -> Self {
-        self.send_email = Some(input);
+        self.send_email = ::std::option::Option::Some(input);
         self
     }
     /// <p>Boolean value to indicate an email notification should be sent to the recipients.</p>
-    pub fn set_send_email(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_send_email(mut self, input: ::std::option::Option<bool>) -> Self {
         self.send_email = input;
         self
     }
     /// <p>Text value to be included in the email body.</p>
-    pub fn email_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.email_message = Some(input.into());
+    pub fn email_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.email_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Text value to be included in the email body.</p>
-    pub fn set_email_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_email_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.email_message = input;
         self
     }
@@ -72,8 +78,8 @@ impl NotificationOptionsBuilder {
         }
     }
 }
-impl std::fmt::Debug for NotificationOptionsBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for NotificationOptionsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("NotificationOptionsBuilder");
         formatter.field("send_email", &self.send_email);
         formatter.field("email_message", &"*** Sensitive Data Redacted ***");

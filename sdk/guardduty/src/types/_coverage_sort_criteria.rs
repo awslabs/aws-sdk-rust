@@ -2,22 +2,22 @@
 
 /// <p>Information about the sorting criteria used in the coverage statistics.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CoverageSortCriteria {
     /// <p>Represents the field name used to sort the coverage details.</p>
     #[doc(hidden)]
-    pub attribute_name: std::option::Option<crate::types::CoverageSortKey>,
+    pub attribute_name: ::std::option::Option<crate::types::CoverageSortKey>,
     /// <p>The order in which the sorted findings are to be displayed.</p>
     #[doc(hidden)]
-    pub order_by: std::option::Option<crate::types::OrderBy>,
+    pub order_by: ::std::option::Option<crate::types::OrderBy>,
 }
 impl CoverageSortCriteria {
     /// <p>Represents the field name used to sort the coverage details.</p>
-    pub fn attribute_name(&self) -> std::option::Option<&crate::types::CoverageSortKey> {
+    pub fn attribute_name(&self) -> ::std::option::Option<&crate::types::CoverageSortKey> {
         self.attribute_name.as_ref()
     }
     /// <p>The order in which the sorted findings are to be displayed.</p>
-    pub fn order_by(&self) -> std::option::Option<&crate::types::OrderBy> {
+    pub fn order_by(&self) -> ::std::option::Option<&crate::types::OrderBy> {
         self.order_by.as_ref()
     }
 }
@@ -30,32 +30,34 @@ impl CoverageSortCriteria {
 
 /// A builder for [`CoverageSortCriteria`](crate::types::CoverageSortCriteria).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CoverageSortCriteriaBuilder {
-    pub(crate) attribute_name: std::option::Option<crate::types::CoverageSortKey>,
-    pub(crate) order_by: std::option::Option<crate::types::OrderBy>,
+    pub(crate) attribute_name: ::std::option::Option<crate::types::CoverageSortKey>,
+    pub(crate) order_by: ::std::option::Option<crate::types::OrderBy>,
 }
 impl CoverageSortCriteriaBuilder {
     /// <p>Represents the field name used to sort the coverage details.</p>
     pub fn attribute_name(mut self, input: crate::types::CoverageSortKey) -> Self {
-        self.attribute_name = Some(input);
+        self.attribute_name = ::std::option::Option::Some(input);
         self
     }
     /// <p>Represents the field name used to sort the coverage details.</p>
     pub fn set_attribute_name(
         mut self,
-        input: std::option::Option<crate::types::CoverageSortKey>,
+        input: ::std::option::Option<crate::types::CoverageSortKey>,
     ) -> Self {
         self.attribute_name = input;
         self
     }
     /// <p>The order in which the sorted findings are to be displayed.</p>
     pub fn order_by(mut self, input: crate::types::OrderBy) -> Self {
-        self.order_by = Some(input);
+        self.order_by = ::std::option::Option::Some(input);
         self
     }
     /// <p>The order in which the sorted findings are to be displayed.</p>
-    pub fn set_order_by(mut self, input: std::option::Option<crate::types::OrderBy>) -> Self {
+    pub fn set_order_by(mut self, input: ::std::option::Option<crate::types::OrderBy>) -> Self {
         self.order_by = input;
         self
     }

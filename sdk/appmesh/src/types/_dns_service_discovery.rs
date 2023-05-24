@@ -2,29 +2,29 @@
 
 /// <p>An object that represents the DNS service discovery information for your virtual node.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DnsServiceDiscovery {
     /// <p>Specifies the DNS service discovery hostname for the virtual node. </p>
     #[doc(hidden)]
-    pub hostname: std::option::Option<std::string::String>,
+    pub hostname: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the DNS response type for the virtual node.</p>
     #[doc(hidden)]
-    pub response_type: std::option::Option<crate::types::DnsResponseType>,
+    pub response_type: ::std::option::Option<crate::types::DnsResponseType>,
     /// <p>The preferred IP version that this virtual node uses. Setting the IP preference on the virtual node only overrides the IP preference set for the mesh on this specific node.</p>
     #[doc(hidden)]
-    pub ip_preference: std::option::Option<crate::types::IpPreference>,
+    pub ip_preference: ::std::option::Option<crate::types::IpPreference>,
 }
 impl DnsServiceDiscovery {
     /// <p>Specifies the DNS service discovery hostname for the virtual node. </p>
-    pub fn hostname(&self) -> std::option::Option<&str> {
+    pub fn hostname(&self) -> ::std::option::Option<&str> {
         self.hostname.as_deref()
     }
     /// <p>Specifies the DNS response type for the virtual node.</p>
-    pub fn response_type(&self) -> std::option::Option<&crate::types::DnsResponseType> {
+    pub fn response_type(&self) -> ::std::option::Option<&crate::types::DnsResponseType> {
         self.response_type.as_ref()
     }
     /// <p>The preferred IP version that this virtual node uses. Setting the IP preference on the virtual node only overrides the IP preference set for the mesh on this specific node.</p>
-    pub fn ip_preference(&self) -> std::option::Option<&crate::types::IpPreference> {
+    pub fn ip_preference(&self) -> ::std::option::Option<&crate::types::IpPreference> {
         self.ip_preference.as_ref()
     }
 }
@@ -37,45 +37,47 @@ impl DnsServiceDiscovery {
 
 /// A builder for [`DnsServiceDiscovery`](crate::types::DnsServiceDiscovery).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DnsServiceDiscoveryBuilder {
-    pub(crate) hostname: std::option::Option<std::string::String>,
-    pub(crate) response_type: std::option::Option<crate::types::DnsResponseType>,
-    pub(crate) ip_preference: std::option::Option<crate::types::IpPreference>,
+    pub(crate) hostname: ::std::option::Option<::std::string::String>,
+    pub(crate) response_type: ::std::option::Option<crate::types::DnsResponseType>,
+    pub(crate) ip_preference: ::std::option::Option<crate::types::IpPreference>,
 }
 impl DnsServiceDiscoveryBuilder {
     /// <p>Specifies the DNS service discovery hostname for the virtual node. </p>
-    pub fn hostname(mut self, input: impl Into<std::string::String>) -> Self {
-        self.hostname = Some(input.into());
+    pub fn hostname(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.hostname = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the DNS service discovery hostname for the virtual node. </p>
-    pub fn set_hostname(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_hostname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hostname = input;
         self
     }
     /// <p>Specifies the DNS response type for the virtual node.</p>
     pub fn response_type(mut self, input: crate::types::DnsResponseType) -> Self {
-        self.response_type = Some(input);
+        self.response_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the DNS response type for the virtual node.</p>
     pub fn set_response_type(
         mut self,
-        input: std::option::Option<crate::types::DnsResponseType>,
+        input: ::std::option::Option<crate::types::DnsResponseType>,
     ) -> Self {
         self.response_type = input;
         self
     }
     /// <p>The preferred IP version that this virtual node uses. Setting the IP preference on the virtual node only overrides the IP preference set for the mesh on this specific node.</p>
     pub fn ip_preference(mut self, input: crate::types::IpPreference) -> Self {
-        self.ip_preference = Some(input);
+        self.ip_preference = ::std::option::Option::Some(input);
         self
     }
     /// <p>The preferred IP version that this virtual node uses. Setting the IP preference on the virtual node only overrides the IP preference set for the mesh on this specific node.</p>
     pub fn set_ip_preference(
         mut self,
-        input: std::option::Option<crate::types::IpPreference>,
+        input: ::std::option::Option<crate::types::IpPreference>,
     ) -> Self {
         self.ip_preference = input;
         self

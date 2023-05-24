@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum RowLevelPermissionFormatVersion {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum RowLevelPermissionFormatVersion {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for RowLevelPermissionFormatVersion {
+impl ::std::convert::From<&str> for RowLevelPermissionFormatVersion {
     fn from(s: &str) -> Self {
         match s {
             "VERSION_1" => RowLevelPermissionFormatVersion::Version1,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for RowLevelPermissionFormatVersion {
         }
     }
 }
-impl std::str::FromStr for RowLevelPermissionFormatVersion {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for RowLevelPermissionFormatVersion {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RowLevelPermissionFormatVersion::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(RowLevelPermissionFormatVersion::from(s))
     }
 }
 impl RowLevelPermissionFormatVersion {
@@ -86,7 +86,7 @@ impl RowLevelPermissionFormatVersion {
         &["VERSION_1", "VERSION_2"]
     }
 }
-impl AsRef<str> for RowLevelPermissionFormatVersion {
+impl ::std::convert::AsRef<str> for RowLevelPermissionFormatVersion {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

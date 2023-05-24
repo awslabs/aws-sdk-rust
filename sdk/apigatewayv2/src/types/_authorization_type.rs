@@ -40,13 +40,13 @@
 /// <p>The authorization type. For WebSocket APIs, valid values are NONE for open access, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer. For HTTP APIs, valid values are NONE for open access, JWT for using JSON Web Tokens, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer.</p>
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum AuthorizationType {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,7 +60,7 @@ pub enum AuthorizationType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for AuthorizationType {
+impl ::std::convert::From<&str> for AuthorizationType {
     fn from(s: &str) -> Self {
         match s {
             "AWS_IAM" => AuthorizationType::AwsIam,
@@ -73,11 +73,11 @@ impl std::convert::From<&str> for AuthorizationType {
         }
     }
 }
-impl std::str::FromStr for AuthorizationType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for AuthorizationType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AuthorizationType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(AuthorizationType::from(s))
     }
 }
 impl AuthorizationType {
@@ -96,7 +96,7 @@ impl AuthorizationType {
         &["AWS_IAM", "CUSTOM", "JWT", "NONE"]
     }
 }
-impl AsRef<str> for AuthorizationType {
+impl ::std::convert::AsRef<str> for AuthorizationType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

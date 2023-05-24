@@ -2,22 +2,22 @@
 
 /// <p>A concurrent access issue occurred.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConcurrentAccessException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
-    pub class_name: std::option::Option<std::string::String>,
+    pub class_name: ::std::option::Option<::std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub code: i32,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
+    pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl ConcurrentAccessException {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn class_name(&self) -> std::option::Option<&str> {
+    pub fn class_name(&self) -> ::std::option::Option<&str> {
         self.class_name.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
@@ -27,30 +27,30 @@ impl ConcurrentAccessException {
 }
 impl ConcurrentAccessException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for ConcurrentAccessException {
+impl ::std::fmt::Display for ConcurrentAccessException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ConcurrentAccessException")?;
-        if let Some(inner_1) = &self.message {
+        ::std::write!(f, "ConcurrentAccessException")?;
+        if let ::std::option::Option::Some(inner_1) = &self.message {
             {
-                write!(f, ": {}", inner_1)?;
+                ::std::write!(f, ": {}", inner_1)?;
             }
         }
         Ok(())
     }
 }
-impl std::error::Error for ConcurrentAccessException {}
-impl aws_http::request_id::RequestId for crate::types::error::ConcurrentAccessException {
+impl ::std::error::Error for ConcurrentAccessException {}
+impl ::aws_http::request_id::RequestId for crate::types::error::ConcurrentAccessException {
     fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ConcurrentAccessException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ConcurrentAccessException {
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
@@ -63,46 +63,48 @@ impl ConcurrentAccessException {
 
 /// A builder for [`ConcurrentAccessException`](crate::types::error::ConcurrentAccessException).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ConcurrentAccessExceptionBuilder {
-    pub(crate) message: std::option::Option<std::string::String>,
-    pub(crate) class_name: std::option::Option<std::string::String>,
-    pub(crate) code: std::option::Option<i32>,
-    meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
+    pub(crate) class_name: ::std::option::Option<::std::string::String>,
+    pub(crate) code: ::std::option::Option<i32>,
+    meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl ConcurrentAccessExceptionBuilder {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn class_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.class_name = Some(input.into());
+    pub fn class_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.class_name = ::std::option::Option::Some(input.into());
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_class_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_class_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.class_name = input;
         self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn code(mut self, input: i32) -> Self {
-        self.code = Some(input);
+        self.code = ::std::option::Option::Some(input);
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_code(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_code(mut self, input: ::std::option::Option<i32>) -> Self {
         self.code = input;
         self
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
         self.meta = Some(meta);
         self
     }
@@ -110,7 +112,7 @@ impl ConcurrentAccessExceptionBuilder {
     /// Sets error metadata
     pub fn set_meta(
         &mut self,
-        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
     ) -> &mut Self {
         self.meta = meta;
         self

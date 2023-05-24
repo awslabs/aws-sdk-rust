@@ -2,43 +2,43 @@
 
 /// <p>The entity type details.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EntityType {
     /// <p>The entity type name.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The entity type description.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>Timestamp of when the entity type was last updated.</p>
     #[doc(hidden)]
-    pub last_updated_time: std::option::Option<std::string::String>,
+    pub last_updated_time: ::std::option::Option<::std::string::String>,
     /// <p>Timestamp of when the entity type was created.</p>
     #[doc(hidden)]
-    pub created_time: std::option::Option<std::string::String>,
+    pub created_time: ::std::option::Option<::std::string::String>,
     /// <p>The entity type ARN.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
 }
 impl EntityType {
     /// <p>The entity type name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The entity type description.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>Timestamp of when the entity type was last updated.</p>
-    pub fn last_updated_time(&self) -> std::option::Option<&str> {
+    pub fn last_updated_time(&self) -> ::std::option::Option<&str> {
         self.last_updated_time.as_deref()
     }
     /// <p>Timestamp of when the entity type was created.</p>
-    pub fn created_time(&self) -> std::option::Option<&str> {
+    pub fn created_time(&self) -> ::std::option::Option<&str> {
         self.created_time.as_deref()
     }
     /// <p>The entity type ARN.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
 }
@@ -51,65 +51,70 @@ impl EntityType {
 
 /// A builder for [`EntityType`](crate::types::EntityType).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EntityTypeBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) last_updated_time: std::option::Option<std::string::String>,
-    pub(crate) created_time: std::option::Option<std::string::String>,
-    pub(crate) arn: std::option::Option<std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) last_updated_time: ::std::option::Option<::std::string::String>,
+    pub(crate) created_time: ::std::option::Option<::std::string::String>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
 impl EntityTypeBuilder {
     /// <p>The entity type name.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The entity type name.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The entity type description.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The entity type description.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>Timestamp of when the entity type was last updated.</p>
-    pub fn last_updated_time(mut self, input: impl Into<std::string::String>) -> Self {
-        self.last_updated_time = Some(input.into());
+    pub fn last_updated_time(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.last_updated_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Timestamp of when the entity type was last updated.</p>
     pub fn set_last_updated_time(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.last_updated_time = input;
         self
     }
     /// <p>Timestamp of when the entity type was created.</p>
-    pub fn created_time(mut self, input: impl Into<std::string::String>) -> Self {
-        self.created_time = Some(input.into());
+    pub fn created_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.created_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Timestamp of when the entity type was created.</p>
-    pub fn set_created_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_created_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_time = input;
         self
     }
     /// <p>The entity type ARN.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The entity type ARN.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }

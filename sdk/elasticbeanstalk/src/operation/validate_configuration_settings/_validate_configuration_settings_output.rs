@@ -2,20 +2,20 @@
 
 /// <p>Provides a list of validation messages.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ValidateConfigurationSettingsOutput {
     /// <p> A list of <code>ValidationMessage</code>. </p>
     #[doc(hidden)]
-    pub messages: std::option::Option<std::vec::Vec<crate::types::ValidationMessage>>,
+    pub messages: ::std::option::Option<::std::vec::Vec<crate::types::ValidationMessage>>,
     _request_id: Option<String>,
 }
 impl ValidateConfigurationSettingsOutput {
     /// <p> A list of <code>ValidationMessage</code>. </p>
-    pub fn messages(&self) -> std::option::Option<&[crate::types::ValidationMessage]> {
+    pub fn messages(&self) -> ::std::option::Option<&[crate::types::ValidationMessage]> {
         self.messages.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ValidateConfigurationSettingsOutput {
+impl ::aws_http::request_id::RequestId for ValidateConfigurationSettingsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,9 +29,11 @@ impl ValidateConfigurationSettingsOutput {
 
 /// A builder for [`ValidateConfigurationSettingsOutput`](crate::operation::validate_configuration_settings::ValidateConfigurationSettingsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ValidateConfigurationSettingsOutputBuilder {
-    pub(crate) messages: std::option::Option<std::vec::Vec<crate::types::ValidationMessage>>,
+    pub(crate) messages: ::std::option::Option<::std::vec::Vec<crate::types::ValidationMessage>>,
     _request_id: Option<String>,
 }
 impl ValidateConfigurationSettingsOutputBuilder {
@@ -43,13 +45,13 @@ impl ValidateConfigurationSettingsOutputBuilder {
     pub fn messages(mut self, input: crate::types::ValidationMessage) -> Self {
         let mut v = self.messages.unwrap_or_default();
         v.push(input);
-        self.messages = Some(v);
+        self.messages = ::std::option::Option::Some(v);
         self
     }
     /// <p> A list of <code>ValidationMessage</code>. </p>
     pub fn set_messages(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ValidationMessage>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ValidationMessage>>,
     ) -> Self {
         self.messages = input;
         self

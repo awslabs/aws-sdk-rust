@@ -6,29 +6,29 @@ pub use crate::operation::update_zonal_shift::_update_zonal_shift_input::UpdateZ
 /// Fluent builder constructing a request to `UpdateZonalShift`.
 ///
 /// <p>Update an active zonal shift in Amazon Route 53 Application Recovery Controller in your AWS account. You can update a zonal shift to set a new expiration, or edit or replace the comment for the zonal shift. </p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateZonalShiftFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::update_zonal_shift::builders::UpdateZonalShiftInputBuilder,
 }
 impl UpdateZonalShiftFluentBuilder {
     /// Creates a new `UpdateZonalShift`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_zonal_shift::UpdateZonalShift,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_zonal_shift::UpdateZonalShiftError,
         >,
     > {
@@ -36,30 +36,33 @@ impl UpdateZonalShiftFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_zonal_shift::UpdateZonalShiftOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_zonal_shift::UpdateZonalShiftError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,31 +75,37 @@ impl UpdateZonalShiftFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_zonal_shift::UpdateZonalShiftOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_zonal_shift::UpdateZonalShiftError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The identifier of a zonal shift.</p>
-    pub fn zonal_shift_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn zonal_shift_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.zonal_shift_id(input.into());
         self
     }
     /// <p>The identifier of a zonal shift.</p>
-    pub fn set_zonal_shift_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_zonal_shift_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_zonal_shift_id(input);
         self
     }
     /// <p>A comment that you enter about the zonal shift. Only the latest comment is retained; no comment history is maintained. A new comment overwrites any existing comment string.</p>
-    pub fn comment(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn comment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.comment(input.into());
         self
     }
     /// <p>A comment that you enter about the zonal shift. Only the latest comment is retained; no comment history is maintained. A new comment overwrites any existing comment string.</p>
-    pub fn set_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_comment(input);
         self
     }
@@ -108,7 +117,7 @@ impl UpdateZonalShiftFluentBuilder {
     /// <li> <p> <b>A lowercase letter h:</b> To specify that the value is in hours.</p> </li>
     /// </ul>
     /// <p>For example: <code>20h</code> means the zonal shift expires in 20 hours. <code>120m</code> means the zonal shift expires in 120 minutes (2 hours).</p>
-    pub fn expires_in(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn expires_in(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.expires_in(input.into());
         self
     }
@@ -120,7 +129,7 @@ impl UpdateZonalShiftFluentBuilder {
     /// <li> <p> <b>A lowercase letter h:</b> To specify that the value is in hours.</p> </li>
     /// </ul>
     /// <p>For example: <code>20h</code> means the zonal shift expires in 20 hours. <code>120m</code> means the zonal shift expires in 120 minutes (2 hours).</p>
-    pub fn set_expires_in(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_expires_in(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_expires_in(input);
         self
     }

@@ -2,31 +2,31 @@
 
 /// <p>Contains information about the deployment options of a model.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModelVariantConfig {
     /// <p>The name of the Amazon SageMaker Model entity.</p>
     #[doc(hidden)]
-    pub model_name: std::option::Option<std::string::String>,
+    pub model_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the variant.</p>
     #[doc(hidden)]
-    pub variant_name: std::option::Option<std::string::String>,
+    pub variant_name: ::std::option::Option<::std::string::String>,
     /// <p>The configuration for the infrastructure that the model will be deployed to.</p>
     #[doc(hidden)]
-    pub infrastructure_config: std::option::Option<crate::types::ModelInfrastructureConfig>,
+    pub infrastructure_config: ::std::option::Option<crate::types::ModelInfrastructureConfig>,
 }
 impl ModelVariantConfig {
     /// <p>The name of the Amazon SageMaker Model entity.</p>
-    pub fn model_name(&self) -> std::option::Option<&str> {
+    pub fn model_name(&self) -> ::std::option::Option<&str> {
         self.model_name.as_deref()
     }
     /// <p>The name of the variant.</p>
-    pub fn variant_name(&self) -> std::option::Option<&str> {
+    pub fn variant_name(&self) -> ::std::option::Option<&str> {
         self.variant_name.as_deref()
     }
     /// <p>The configuration for the infrastructure that the model will be deployed to.</p>
     pub fn infrastructure_config(
         &self,
-    ) -> std::option::Option<&crate::types::ModelInfrastructureConfig> {
+    ) -> ::std::option::Option<&crate::types::ModelInfrastructureConfig> {
         self.infrastructure_config.as_ref()
     }
 }
@@ -39,42 +39,45 @@ impl ModelVariantConfig {
 
 /// A builder for [`ModelVariantConfig`](crate::types::ModelVariantConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ModelVariantConfigBuilder {
-    pub(crate) model_name: std::option::Option<std::string::String>,
-    pub(crate) variant_name: std::option::Option<std::string::String>,
-    pub(crate) infrastructure_config: std::option::Option<crate::types::ModelInfrastructureConfig>,
+    pub(crate) model_name: ::std::option::Option<::std::string::String>,
+    pub(crate) variant_name: ::std::option::Option<::std::string::String>,
+    pub(crate) infrastructure_config:
+        ::std::option::Option<crate::types::ModelInfrastructureConfig>,
 }
 impl ModelVariantConfigBuilder {
     /// <p>The name of the Amazon SageMaker Model entity.</p>
-    pub fn model_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.model_name = Some(input.into());
+    pub fn model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.model_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Amazon SageMaker Model entity.</p>
-    pub fn set_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_name = input;
         self
     }
     /// <p>The name of the variant.</p>
-    pub fn variant_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.variant_name = Some(input.into());
+    pub fn variant_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.variant_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the variant.</p>
-    pub fn set_variant_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_variant_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.variant_name = input;
         self
     }
     /// <p>The configuration for the infrastructure that the model will be deployed to.</p>
     pub fn infrastructure_config(mut self, input: crate::types::ModelInfrastructureConfig) -> Self {
-        self.infrastructure_config = Some(input);
+        self.infrastructure_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration for the infrastructure that the model will be deployed to.</p>
     pub fn set_infrastructure_config(
         mut self,
-        input: std::option::Option<crate::types::ModelInfrastructureConfig>,
+        input: ::std::option::Option<crate::types::ModelInfrastructureConfig>,
     ) -> Self {
         self.infrastructure_config = input;
         self

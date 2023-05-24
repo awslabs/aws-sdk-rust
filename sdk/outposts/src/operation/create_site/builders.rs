@@ -6,56 +6,59 @@ pub use crate::operation::create_site::_create_site_input::CreateSiteInputBuilde
 /// Fluent builder constructing a request to `CreateSite`.
 ///
 /// <p> Creates a site for an Outpost. </p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateSiteFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_site::builders::CreateSiteInputBuilder,
 }
 impl CreateSiteFluentBuilder {
     /// Creates a new `CreateSite`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_site::CreateSite,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_site::CreateSiteError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_site::CreateSiteError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_site::CreateSiteOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_site::CreateSiteError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_site::CreateSiteError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,39 +71,39 @@ impl CreateSiteFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_site::CreateSiteOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_site::CreateSiteError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_site::CreateSiteError>,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the site.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// <p>The name of the site.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
     /// <p>The description of the site.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>The description of the site.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
     /// <p>Additional information that you provide about site access requirements, electrician scheduling, personal protective equipment, or regulation of equipment materials that could affect your installation process. </p>
-    pub fn notes(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn notes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.notes(input.into());
         self
     }
     /// <p>Additional information that you provide about site access requirements, electrician scheduling, personal protective equipment, or regulation of equipment materials that could affect your installation process. </p>
-    pub fn set_notes(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_notes(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_notes(input);
         self
     }
@@ -111,8 +114,8 @@ impl CreateSiteFluentBuilder {
     /// <p> The tags to apply to a site. </p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
@@ -120,8 +123,8 @@ impl CreateSiteFluentBuilder {
     /// <p> The tags to apply to a site. </p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
@@ -135,7 +138,7 @@ impl CreateSiteFluentBuilder {
     /// <p> The location to install and power on the hardware. This address might be different from the shipping address. </p>
     pub fn set_operating_address(
         mut self,
-        input: std::option::Option<crate::types::Address>,
+        input: ::std::option::Option<crate::types::Address>,
     ) -> Self {
         self.inner = self.inner.set_operating_address(input);
         self
@@ -148,7 +151,7 @@ impl CreateSiteFluentBuilder {
     /// <p> The location to ship the hardware. This address might be different from the operating address. </p>
     pub fn set_shipping_address(
         mut self,
-        input: std::option::Option<crate::types::Address>,
+        input: ::std::option::Option<crate::types::Address>,
     ) -> Self {
         self.inner = self.inner.set_shipping_address(input);
         self
@@ -161,7 +164,7 @@ impl CreateSiteFluentBuilder {
     /// <p> Information about the physical and logistical details for the rack at this site. For more information about hardware requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#checklist">Network readiness checklist</a> in the Amazon Web Services Outposts User Guide. </p>
     pub fn set_rack_physical_properties(
         mut self,
-        input: std::option::Option<crate::types::RackPhysicalProperties>,
+        input: ::std::option::Option<crate::types::RackPhysicalProperties>,
     ) -> Self {
         self.inner = self.inner.set_rack_physical_properties(input);
         self

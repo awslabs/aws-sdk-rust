@@ -2,41 +2,42 @@
 
 /// <p>The streaming configuration associated with an Amazon Chime SDK Voice Connector. Specifies whether media streaming is enabled for sending to Amazon Kinesis, and shows the retention period for the Amazon Kinesis data, in hours.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StreamingConfiguration {
     /// <p>The amount of time, in hours, to the Kinesis data.</p>
     #[doc(hidden)]
-    pub data_retention_in_hours: std::option::Option<i32>,
+    pub data_retention_in_hours: ::std::option::Option<i32>,
     /// <p>When true, streaming to Kinesis is off.</p>
     #[doc(hidden)]
-    pub disabled: std::option::Option<bool>,
+    pub disabled: ::std::option::Option<bool>,
     /// <p>The streaming notification targets.</p>
     #[doc(hidden)]
     pub streaming_notification_targets:
-        std::option::Option<std::vec::Vec<crate::types::StreamingNotificationTarget>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::StreamingNotificationTarget>>,
     /// <p>The call analytics configuration.</p>
     #[doc(hidden)]
-    pub media_insights_configuration: std::option::Option<crate::types::MediaInsightsConfiguration>,
+    pub media_insights_configuration:
+        ::std::option::Option<crate::types::MediaInsightsConfiguration>,
 }
 impl StreamingConfiguration {
     /// <p>The amount of time, in hours, to the Kinesis data.</p>
-    pub fn data_retention_in_hours(&self) -> std::option::Option<i32> {
+    pub fn data_retention_in_hours(&self) -> ::std::option::Option<i32> {
         self.data_retention_in_hours
     }
     /// <p>When true, streaming to Kinesis is off.</p>
-    pub fn disabled(&self) -> std::option::Option<bool> {
+    pub fn disabled(&self) -> ::std::option::Option<bool> {
         self.disabled
     }
     /// <p>The streaming notification targets.</p>
     pub fn streaming_notification_targets(
         &self,
-    ) -> std::option::Option<&[crate::types::StreamingNotificationTarget]> {
+    ) -> ::std::option::Option<&[crate::types::StreamingNotificationTarget]> {
         self.streaming_notification_targets.as_deref()
     }
     /// <p>The call analytics configuration.</p>
     pub fn media_insights_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::MediaInsightsConfiguration> {
+    ) -> ::std::option::Option<&crate::types::MediaInsightsConfiguration> {
         self.media_insights_configuration.as_ref()
     }
 }
@@ -49,33 +50,35 @@ impl StreamingConfiguration {
 
 /// A builder for [`StreamingConfiguration`](crate::types::StreamingConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StreamingConfigurationBuilder {
-    pub(crate) data_retention_in_hours: std::option::Option<i32>,
-    pub(crate) disabled: std::option::Option<bool>,
+    pub(crate) data_retention_in_hours: ::std::option::Option<i32>,
+    pub(crate) disabled: ::std::option::Option<bool>,
     pub(crate) streaming_notification_targets:
-        std::option::Option<std::vec::Vec<crate::types::StreamingNotificationTarget>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::StreamingNotificationTarget>>,
     pub(crate) media_insights_configuration:
-        std::option::Option<crate::types::MediaInsightsConfiguration>,
+        ::std::option::Option<crate::types::MediaInsightsConfiguration>,
 }
 impl StreamingConfigurationBuilder {
     /// <p>The amount of time, in hours, to the Kinesis data.</p>
     pub fn data_retention_in_hours(mut self, input: i32) -> Self {
-        self.data_retention_in_hours = Some(input);
+        self.data_retention_in_hours = ::std::option::Option::Some(input);
         self
     }
     /// <p>The amount of time, in hours, to the Kinesis data.</p>
-    pub fn set_data_retention_in_hours(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_data_retention_in_hours(mut self, input: ::std::option::Option<i32>) -> Self {
         self.data_retention_in_hours = input;
         self
     }
     /// <p>When true, streaming to Kinesis is off.</p>
     pub fn disabled(mut self, input: bool) -> Self {
-        self.disabled = Some(input);
+        self.disabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>When true, streaming to Kinesis is off.</p>
-    pub fn set_disabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_disabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.disabled = input;
         self
     }
@@ -90,13 +93,13 @@ impl StreamingConfigurationBuilder {
     ) -> Self {
         let mut v = self.streaming_notification_targets.unwrap_or_default();
         v.push(input);
-        self.streaming_notification_targets = Some(v);
+        self.streaming_notification_targets = ::std::option::Option::Some(v);
         self
     }
     /// <p>The streaming notification targets.</p>
     pub fn set_streaming_notification_targets(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::StreamingNotificationTarget>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::StreamingNotificationTarget>>,
     ) -> Self {
         self.streaming_notification_targets = input;
         self
@@ -106,13 +109,13 @@ impl StreamingConfigurationBuilder {
         mut self,
         input: crate::types::MediaInsightsConfiguration,
     ) -> Self {
-        self.media_insights_configuration = Some(input);
+        self.media_insights_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The call analytics configuration.</p>
     pub fn set_media_insights_configuration(
         mut self,
-        input: std::option::Option<crate::types::MediaInsightsConfiguration>,
+        input: ::std::option::Option<crate::types::MediaInsightsConfiguration>,
     ) -> Self {
         self.media_insights_configuration = input;
         self

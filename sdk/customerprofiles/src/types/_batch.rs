@@ -2,22 +2,22 @@
 
 /// <p>Batch defines the boundaries for ingestion for each step in <code>APPFLOW_INTEGRATION</code> workflow. <code>APPFLOW_INTEGRATION</code> workflow splits ingestion based on these boundaries.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Batch {
     /// <p>Start time of batch to split ingestion.</p>
     #[doc(hidden)]
-    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>End time of batch to split ingestion.</p>
     #[doc(hidden)]
-    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Batch {
     /// <p>Start time of batch to split ingestion.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>End time of batch to split ingestion.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
 }
@@ -30,32 +30,37 @@ impl Batch {
 
 /// A builder for [`Batch`](crate::types::Batch).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BatchBuilder {
-    pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl BatchBuilder {
     /// <p>Start time of batch to split ingestion.</p>
-    pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.start_time = Some(input);
+    pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.start_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>Start time of batch to split ingestion.</p>
     pub fn set_start_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.start_time = input;
         self
     }
     /// <p>End time of batch to split ingestion.</p>
-    pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.end_time = Some(input);
+    pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.end_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>End time of batch to split ingestion.</p>
-    pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_end_time(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
         self.end_time = input;
         self
     }

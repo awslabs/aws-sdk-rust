@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum LaunchTemplateInstanceMetadataTagsState {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum LaunchTemplateInstanceMetadataTagsState {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for LaunchTemplateInstanceMetadataTagsState {
+impl ::std::convert::From<&str> for LaunchTemplateInstanceMetadataTagsState {
     fn from(s: &str) -> Self {
         match s {
             "disabled" => LaunchTemplateInstanceMetadataTagsState::Disabled,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for LaunchTemplateInstanceMetadataTagsState {
         }
     }
 }
-impl std::str::FromStr for LaunchTemplateInstanceMetadataTagsState {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for LaunchTemplateInstanceMetadataTagsState {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LaunchTemplateInstanceMetadataTagsState::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(LaunchTemplateInstanceMetadataTagsState::from(s))
     }
 }
 impl LaunchTemplateInstanceMetadataTagsState {
@@ -86,7 +86,7 @@ impl LaunchTemplateInstanceMetadataTagsState {
         &["disabled", "enabled"]
     }
 }
-impl AsRef<str> for LaunchTemplateInstanceMetadataTagsState {
+impl ::std::convert::AsRef<str> for LaunchTemplateInstanceMetadataTagsState {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

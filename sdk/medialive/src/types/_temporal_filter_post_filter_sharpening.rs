@@ -39,13 +39,13 @@
 /// Temporal Filter Post Filter Sharpening
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum TemporalFilterPostFilterSharpening {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum TemporalFilterPostFilterSharpening {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for TemporalFilterPostFilterSharpening {
+impl ::std::convert::From<&str> for TemporalFilterPostFilterSharpening {
     fn from(s: &str) -> Self {
         match s {
             "AUTO" => TemporalFilterPostFilterSharpening::Auto,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for TemporalFilterPostFilterSharpening {
         }
     }
 }
-impl std::str::FromStr for TemporalFilterPostFilterSharpening {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for TemporalFilterPostFilterSharpening {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TemporalFilterPostFilterSharpening::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(TemporalFilterPostFilterSharpening::from(s))
     }
 }
 impl TemporalFilterPostFilterSharpening {
@@ -91,7 +91,7 @@ impl TemporalFilterPostFilterSharpening {
         &["AUTO", "DISABLED", "ENABLED"]
     }
 }
-impl AsRef<str> for TemporalFilterPostFilterSharpening {
+impl ::std::convert::AsRef<str> for TemporalFilterPostFilterSharpening {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

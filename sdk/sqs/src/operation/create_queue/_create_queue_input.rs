@@ -2,7 +2,7 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateQueueInput {
     /// <p>The name of the new queue. The following limits apply to this name:</p>
     /// <ul>
@@ -12,7 +12,7 @@ pub struct CreateQueueInput {
     /// </ul>
     /// <p>Queue URLs and names are case-sensitive.</p>
     #[doc(hidden)]
-    pub queue_name: std::option::Option<std::string::String>,
+    pub queue_name: ::std::option::Option<::std::string::String>,
     /// <p>Add cost allocation tags to the specified Amazon SQS queue. For an overview, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-tags.html">Tagging Your Amazon SQS Queues</a> in the <i>Amazon SQS Developer Guide</i>.</p>
     /// <p>When you use queue tags, keep the following guidelines in mind:</p>
     /// <ul>
@@ -26,8 +26,9 @@ pub struct CreateQueueInput {
     /// <p>Cross-account permissions don't apply to this action. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer Guide</i>.</p>
     /// </note>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>A map of attributes with their corresponding values.</p>
     /// <p>The following lists the names, descriptions, and values of the special request parameters that the <code>CreateQueue</code> action uses:</p>
     /// <ul>
@@ -80,8 +81,8 @@ pub struct CreateQueueInput {
     /// <p>If you set these attributes to anything other than the values shown for enabling high throughput, normal throughput is in effect and deduplication occurs as specified.</p>
     /// <p>For information on throughput quotas, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas related to messages</a> in the <i>Amazon SQS Developer Guide</i>.</p>
     #[doc(hidden)]
-    pub attributes: std::option::Option<
-        std::collections::HashMap<crate::types::QueueAttributeName, std::string::String>,
+    pub attributes: ::std::option::Option<
+        ::std::collections::HashMap<crate::types::QueueAttributeName, ::std::string::String>,
     >,
 }
 impl CreateQueueInput {
@@ -92,7 +93,7 @@ impl CreateQueueInput {
     /// <li> <p>A FIFO queue name must end with the <code>.fifo</code> suffix.</p> </li>
     /// </ul>
     /// <p>Queue URLs and names are case-sensitive.</p>
-    pub fn queue_name(&self) -> std::option::Option<&str> {
+    pub fn queue_name(&self) -> ::std::option::Option<&str> {
         self.queue_name.as_deref()
     }
     /// <p>Add cost allocation tags to the specified Amazon SQS queue. For an overview, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-tags.html">Tagging Your Amazon SQS Queues</a> in the <i>Amazon SQS Developer Guide</i>.</p>
@@ -109,8 +110,9 @@ impl CreateQueueInput {
     /// </note>
     pub fn tags(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.tags.as_ref()
     }
     /// <p>A map of attributes with their corresponding values.</p>
@@ -166,8 +168,8 @@ impl CreateQueueInput {
     /// <p>For information on throughput quotas, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas related to messages</a> in the <i>Amazon SQS Developer Guide</i>.</p>
     pub fn attributes(
         &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<crate::types::QueueAttributeName, std::string::String>,
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<crate::types::QueueAttributeName, ::std::string::String>,
     > {
         self.attributes.as_ref()
     }
@@ -181,13 +183,16 @@ impl CreateQueueInput {
 
 /// A builder for [`CreateQueueInput`](crate::operation::create_queue::CreateQueueInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateQueueInputBuilder {
-    pub(crate) queue_name: std::option::Option<std::string::String>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) attributes: std::option::Option<
-        std::collections::HashMap<crate::types::QueueAttributeName, std::string::String>,
+    pub(crate) queue_name: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) attributes: ::std::option::Option<
+        ::std::collections::HashMap<crate::types::QueueAttributeName, ::std::string::String>,
     >,
 }
 impl CreateQueueInputBuilder {
@@ -198,8 +203,8 @@ impl CreateQueueInputBuilder {
     /// <li> <p>A FIFO queue name must end with the <code>.fifo</code> suffix.</p> </li>
     /// </ul>
     /// <p>Queue URLs and names are case-sensitive.</p>
-    pub fn queue_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.queue_name = Some(input.into());
+    pub fn queue_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.queue_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the new queue. The following limits apply to this name:</p>
@@ -209,7 +214,7 @@ impl CreateQueueInputBuilder {
     /// <li> <p>A FIFO queue name must end with the <code>.fifo</code> suffix.</p> </li>
     /// </ul>
     /// <p>Queue URLs and names are case-sensitive.</p>
-    pub fn set_queue_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_queue_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.queue_name = input;
         self
     }
@@ -231,12 +236,12 @@ impl CreateQueueInputBuilder {
     /// </note>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
+        self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Add cost allocation tags to the specified Amazon SQS queue. For an overview, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-tags.html">Tagging Your Amazon SQS Queues</a> in the <i>Amazon SQS Developer Guide</i>.</p>
@@ -253,8 +258,8 @@ impl CreateQueueInputBuilder {
     /// </note>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.tags = input;
@@ -318,11 +323,11 @@ impl CreateQueueInputBuilder {
     pub fn attributes(
         mut self,
         k: crate::types::QueueAttributeName,
-        v: impl Into<std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
         hash_map.insert(k, v.into());
-        self.attributes = Some(hash_map);
+        self.attributes = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A map of attributes with their corresponding values.</p>
@@ -378,8 +383,8 @@ impl CreateQueueInputBuilder {
     /// <p>For information on throughput quotas, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas related to messages</a> in the <i>Amazon SQS Developer Guide</i>.</p>
     pub fn set_attributes(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<crate::types::QueueAttributeName, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<crate::types::QueueAttributeName, ::std::string::String>,
         >,
     ) -> Self {
         self.attributes = input;
@@ -388,11 +393,11 @@ impl CreateQueueInputBuilder {
     /// Consumes the builder and constructs a [`CreateQueueInput`](crate::operation::create_queue::CreateQueueInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::create_queue::CreateQueueInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::create_queue::CreateQueueInput {
+        ::std::result::Result::Ok(crate::operation::create_queue::CreateQueueInput {
             queue_name: self.queue_name,
             tags: self.tags,
             attributes: self.attributes,

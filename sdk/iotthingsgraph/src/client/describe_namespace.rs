@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeNamespace`](crate::operation::describe_namespace::builders::DescribeNamespaceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`namespace_name(impl Into<String>)`](crate::operation::describe_namespace::builders::DescribeNamespaceFluentBuilder::namespace_name) / [`set_namespace_name(Option<String>)`](crate::operation::describe_namespace::builders::DescribeNamespaceFluentBuilder::set_namespace_name): <p>The name of the user's namespace. Set this to <code>aws</code> to get the public namespace.</p>
+    ///   - [`namespace_name(impl ::std::convert::Into<String>)`](crate::operation::describe_namespace::builders::DescribeNamespaceFluentBuilder::namespace_name) / [`set_namespace_name(Option<String>)`](crate::operation::describe_namespace::builders::DescribeNamespaceFluentBuilder::set_namespace_name): <p>The name of the user's namespace. Set this to <code>aws</code> to get the public namespace.</p>
     /// - On success, responds with [`DescribeNamespaceOutput`](crate::operation::describe_namespace::DescribeNamespaceOutput) with field(s):
     ///   - [`namespace_arn(Option<String>)`](crate::operation::describe_namespace::DescribeNamespaceOutput::namespace_arn): <p>The ARN of the namespace.</p>
     ///   - [`namespace_name(Option<String>)`](crate::operation::describe_namespace::DescribeNamespaceOutput::namespace_name): <p>The name of the namespace.</p>

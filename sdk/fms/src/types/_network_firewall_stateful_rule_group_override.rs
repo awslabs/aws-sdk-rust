@@ -2,15 +2,15 @@
 
 /// <p>The setting that allows the policy owner to change the behavior of the rule group within a policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkFirewallStatefulRuleGroupOverride {
     /// <p>The action that changes the rule group from <code>DROP</code> to <code>ALERT</code>. This only applies to managed rule groups.</p>
     #[doc(hidden)]
-    pub action: std::option::Option<crate::types::NetworkFirewallOverrideAction>,
+    pub action: ::std::option::Option<crate::types::NetworkFirewallOverrideAction>,
 }
 impl NetworkFirewallStatefulRuleGroupOverride {
     /// <p>The action that changes the rule group from <code>DROP</code> to <code>ALERT</code>. This only applies to managed rule groups.</p>
-    pub fn action(&self) -> std::option::Option<&crate::types::NetworkFirewallOverrideAction> {
+    pub fn action(&self) -> ::std::option::Option<&crate::types::NetworkFirewallOverrideAction> {
         self.action.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl NetworkFirewallStatefulRuleGroupOverride {
 
 /// A builder for [`NetworkFirewallStatefulRuleGroupOverride`](crate::types::NetworkFirewallStatefulRuleGroupOverride).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NetworkFirewallStatefulRuleGroupOverrideBuilder {
-    pub(crate) action: std::option::Option<crate::types::NetworkFirewallOverrideAction>,
+    pub(crate) action: ::std::option::Option<crate::types::NetworkFirewallOverrideAction>,
 }
 impl NetworkFirewallStatefulRuleGroupOverrideBuilder {
     /// <p>The action that changes the rule group from <code>DROP</code> to <code>ALERT</code>. This only applies to managed rule groups.</p>
     pub fn action(mut self, input: crate::types::NetworkFirewallOverrideAction) -> Self {
-        self.action = Some(input);
+        self.action = ::std::option::Option::Some(input);
         self
     }
     /// <p>The action that changes the rule group from <code>DROP</code> to <code>ALERT</code>. This only applies to managed rule groups.</p>
     pub fn set_action(
         mut self,
-        input: std::option::Option<crate::types::NetworkFirewallOverrideAction>,
+        input: ::std::option::Option<crate::types::NetworkFirewallOverrideAction>,
     ) -> Self {
         self.action = input;
         self

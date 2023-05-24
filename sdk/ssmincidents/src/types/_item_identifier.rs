@@ -2,22 +2,22 @@
 
 /// <p>Details and type of a related item.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ItemIdentifier {
     /// <p>Details about the related item.</p>
     #[doc(hidden)]
-    pub value: std::option::Option<crate::types::ItemValue>,
+    pub value: ::std::option::Option<crate::types::ItemValue>,
     /// <p>The type of related item. </p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::ItemType>,
+    pub r#type: ::std::option::Option<crate::types::ItemType>,
 }
 impl ItemIdentifier {
     /// <p>Details about the related item.</p>
-    pub fn value(&self) -> std::option::Option<&crate::types::ItemValue> {
+    pub fn value(&self) -> ::std::option::Option<&crate::types::ItemValue> {
         self.value.as_ref()
     }
     /// <p>The type of related item. </p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::ItemType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ItemType> {
         self.r#type.as_ref()
     }
 }
@@ -30,29 +30,31 @@ impl ItemIdentifier {
 
 /// A builder for [`ItemIdentifier`](crate::types::ItemIdentifier).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ItemIdentifierBuilder {
-    pub(crate) value: std::option::Option<crate::types::ItemValue>,
-    pub(crate) r#type: std::option::Option<crate::types::ItemType>,
+    pub(crate) value: ::std::option::Option<crate::types::ItemValue>,
+    pub(crate) r#type: ::std::option::Option<crate::types::ItemType>,
 }
 impl ItemIdentifierBuilder {
     /// <p>Details about the related item.</p>
     pub fn value(mut self, input: crate::types::ItemValue) -> Self {
-        self.value = Some(input);
+        self.value = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details about the related item.</p>
-    pub fn set_value(mut self, input: std::option::Option<crate::types::ItemValue>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<crate::types::ItemValue>) -> Self {
         self.value = input;
         self
     }
     /// <p>The type of related item. </p>
     pub fn r#type(mut self, input: crate::types::ItemType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of related item. </p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::ItemType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ItemType>) -> Self {
         self.r#type = input;
         self
     }

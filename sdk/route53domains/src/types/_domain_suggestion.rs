@@ -2,11 +2,11 @@
 
 /// <p>Information about one suggested domain name.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DomainSuggestion {
     /// <p>A suggested domain name.</p>
     #[doc(hidden)]
-    pub domain_name: std::option::Option<std::string::String>,
+    pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>Whether the domain name is available for registering.</p> <note>
     /// <p>You can register only the domains that are designated as <code>AVAILABLE</code>.</p>
     /// </note>
@@ -68,11 +68,11 @@ pub struct DomainSuggestion {
     /// </dd>
     /// </dl>
     #[doc(hidden)]
-    pub availability: std::option::Option<std::string::String>,
+    pub availability: ::std::option::Option<::std::string::String>,
 }
 impl DomainSuggestion {
     /// <p>A suggested domain name.</p>
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<&str> {
         self.domain_name.as_deref()
     }
     /// <p>Whether the domain name is available for registering.</p> <note>
@@ -135,7 +135,7 @@ impl DomainSuggestion {
     /// <p>The domain name is forbidden.</p>
     /// </dd>
     /// </dl>
-    pub fn availability(&self) -> std::option::Option<&str> {
+    pub fn availability(&self) -> ::std::option::Option<&str> {
         self.availability.as_deref()
     }
 }
@@ -148,19 +148,21 @@ impl DomainSuggestion {
 
 /// A builder for [`DomainSuggestion`](crate::types::DomainSuggestion).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DomainSuggestionBuilder {
-    pub(crate) domain_name: std::option::Option<std::string::String>,
-    pub(crate) availability: std::option::Option<std::string::String>,
+    pub(crate) domain_name: ::std::option::Option<::std::string::String>,
+    pub(crate) availability: ::std::option::Option<::std::string::String>,
 }
 impl DomainSuggestionBuilder {
     /// <p>A suggested domain name.</p>
-    pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.domain_name = Some(input.into());
+    pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.domain_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A suggested domain name.</p>
-    pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_name = input;
         self
     }
@@ -224,8 +226,8 @@ impl DomainSuggestionBuilder {
     /// <p>The domain name is forbidden.</p>
     /// </dd>
     /// </dl>
-    pub fn availability(mut self, input: impl Into<std::string::String>) -> Self {
-        self.availability = Some(input.into());
+    pub fn availability(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.availability = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Whether the domain name is available for registering.</p> <note>
@@ -288,7 +290,7 @@ impl DomainSuggestionBuilder {
     /// <p>The domain name is forbidden.</p>
     /// </dd>
     /// </dl>
-    pub fn set_availability(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_availability(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.availability = input;
         self
     }

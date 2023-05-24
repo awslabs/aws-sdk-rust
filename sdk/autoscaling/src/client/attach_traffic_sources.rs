@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`AttachTrafficSources`](crate::operation::attach_traffic_sources::builders::AttachTrafficSourcesFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`auto_scaling_group_name(impl Into<String>)`](crate::operation::attach_traffic_sources::builders::AttachTrafficSourcesFluentBuilder::auto_scaling_group_name) / [`set_auto_scaling_group_name(Option<String>)`](crate::operation::attach_traffic_sources::builders::AttachTrafficSourcesFluentBuilder::set_auto_scaling_group_name): <p>The name of the Auto Scaling group.</p>
+    ///   - [`auto_scaling_group_name(impl ::std::convert::Into<String>)`](crate::operation::attach_traffic_sources::builders::AttachTrafficSourcesFluentBuilder::auto_scaling_group_name) / [`set_auto_scaling_group_name(Option<String>)`](crate::operation::attach_traffic_sources::builders::AttachTrafficSourcesFluentBuilder::set_auto_scaling_group_name): <p>The name of the Auto Scaling group.</p>
     ///   - [`traffic_sources(Vec<TrafficSourceIdentifier>)`](crate::operation::attach_traffic_sources::builders::AttachTrafficSourcesFluentBuilder::traffic_sources) / [`set_traffic_sources(Option<Vec<TrafficSourceIdentifier>>)`](crate::operation::attach_traffic_sources::builders::AttachTrafficSourcesFluentBuilder::set_traffic_sources): <p>The unique identifiers of one or more traffic sources. You can specify up to 10 traffic sources.</p>
     /// - On success, responds with [`AttachTrafficSourcesOutput`](crate::operation::attach_traffic_sources::AttachTrafficSourcesOutput)
     /// - On failure, responds with [`SdkError<AttachTrafficSourcesError>`](crate::operation::attach_traffic_sources::AttachTrafficSourcesError)

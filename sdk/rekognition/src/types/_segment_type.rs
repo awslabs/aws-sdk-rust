@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum SegmentType {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum SegmentType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for SegmentType {
+impl ::std::convert::From<&str> for SegmentType {
     fn from(s: &str) -> Self {
         match s {
             "SHOT" => SegmentType::Shot,
@@ -63,11 +63,11 @@ impl std::convert::From<&str> for SegmentType {
         }
     }
 }
-impl std::str::FromStr for SegmentType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for SegmentType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SegmentType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(SegmentType::from(s))
     }
 }
 impl SegmentType {
@@ -84,7 +84,7 @@ impl SegmentType {
         &["SHOT", "TECHNICAL_CUE"]
     }
 }
-impl AsRef<str> for SegmentType {
+impl ::std::convert::AsRef<str> for SegmentType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

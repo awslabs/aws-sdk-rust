@@ -2,22 +2,22 @@
 
 /// <p>The forecast value for a specific date. Part of the <code>Forecast</code> object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataPoint {
     /// <p>The timestamp of the specific forecast.</p>
     #[doc(hidden)]
-    pub timestamp: std::option::Option<std::string::String>,
+    pub timestamp: ::std::option::Option<::std::string::String>,
     /// <p>The forecast value.</p>
     #[doc(hidden)]
-    pub value: std::option::Option<f64>,
+    pub value: ::std::option::Option<f64>,
 }
 impl DataPoint {
     /// <p>The timestamp of the specific forecast.</p>
-    pub fn timestamp(&self) -> std::option::Option<&str> {
+    pub fn timestamp(&self) -> ::std::option::Option<&str> {
         self.timestamp.as_deref()
     }
     /// <p>The forecast value.</p>
-    pub fn value(&self) -> std::option::Option<f64> {
+    pub fn value(&self) -> ::std::option::Option<f64> {
         self.value
     }
 }
@@ -30,29 +30,31 @@ impl DataPoint {
 
 /// A builder for [`DataPoint`](crate::types::DataPoint).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DataPointBuilder {
-    pub(crate) timestamp: std::option::Option<std::string::String>,
-    pub(crate) value: std::option::Option<f64>,
+    pub(crate) timestamp: ::std::option::Option<::std::string::String>,
+    pub(crate) value: ::std::option::Option<f64>,
 }
 impl DataPointBuilder {
     /// <p>The timestamp of the specific forecast.</p>
-    pub fn timestamp(mut self, input: impl Into<std::string::String>) -> Self {
-        self.timestamp = Some(input.into());
+    pub fn timestamp(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.timestamp = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The timestamp of the specific forecast.</p>
-    pub fn set_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_timestamp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.timestamp = input;
         self
     }
     /// <p>The forecast value.</p>
     pub fn value(mut self, input: f64) -> Self {
-        self.value = Some(input);
+        self.value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The forecast value.</p>
-    pub fn set_value(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.value = input;
         self
     }

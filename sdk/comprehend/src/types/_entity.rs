@@ -3,56 +3,56 @@
 /// <p>Provides information about an entity. </p>
 /// <p> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Entity {
     /// <p>The level of confidence that Amazon Comprehend has in the accuracy of the detection.</p>
     #[doc(hidden)]
-    pub score: std::option::Option<f32>,
+    pub score: ::std::option::Option<f32>,
     /// <p>The entity type. For entity detection using the built-in model, this field contains one of the standard entity types listed below.</p>
     /// <p>For custom entity detection, this field contains one of the entity types that you specified when you trained your custom model.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::EntityType>,
+    pub r#type: ::std::option::Option<crate::types::EntityType>,
     /// <p>The text of the entity.</p>
     #[doc(hidden)]
-    pub text: std::option::Option<std::string::String>,
+    pub text: ::std::option::Option<::std::string::String>,
     /// <p>The zero-based offset from the beginning of the source text to the first character in the entity.</p>
     /// <p>This field is empty for non-text input.</p>
     #[doc(hidden)]
-    pub begin_offset: std::option::Option<i32>,
+    pub begin_offset: ::std::option::Option<i32>,
     /// <p>The zero-based offset from the beginning of the source text to the last character in the entity.</p>
     /// <p>This field is empty for non-text input.</p>
     #[doc(hidden)]
-    pub end_offset: std::option::Option<i32>,
+    pub end_offset: ::std::option::Option<i32>,
     /// <p>A reference to each block for this entity. This field is empty for plain-text input.</p>
     #[doc(hidden)]
-    pub block_references: std::option::Option<std::vec::Vec<crate::types::BlockReference>>,
+    pub block_references: ::std::option::Option<::std::vec::Vec<crate::types::BlockReference>>,
 }
 impl Entity {
     /// <p>The level of confidence that Amazon Comprehend has in the accuracy of the detection.</p>
-    pub fn score(&self) -> std::option::Option<f32> {
+    pub fn score(&self) -> ::std::option::Option<f32> {
         self.score
     }
     /// <p>The entity type. For entity detection using the built-in model, this field contains one of the standard entity types listed below.</p>
     /// <p>For custom entity detection, this field contains one of the entity types that you specified when you trained your custom model.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::EntityType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::EntityType> {
         self.r#type.as_ref()
     }
     /// <p>The text of the entity.</p>
-    pub fn text(&self) -> std::option::Option<&str> {
+    pub fn text(&self) -> ::std::option::Option<&str> {
         self.text.as_deref()
     }
     /// <p>The zero-based offset from the beginning of the source text to the first character in the entity.</p>
     /// <p>This field is empty for non-text input.</p>
-    pub fn begin_offset(&self) -> std::option::Option<i32> {
+    pub fn begin_offset(&self) -> ::std::option::Option<i32> {
         self.begin_offset
     }
     /// <p>The zero-based offset from the beginning of the source text to the last character in the entity.</p>
     /// <p>This field is empty for non-text input.</p>
-    pub fn end_offset(&self) -> std::option::Option<i32> {
+    pub fn end_offset(&self) -> ::std::option::Option<i32> {
         self.end_offset
     }
     /// <p>A reference to each block for this entity. This field is empty for plain-text input.</p>
-    pub fn block_references(&self) -> std::option::Option<&[crate::types::BlockReference]> {
+    pub fn block_references(&self) -> ::std::option::Option<&[crate::types::BlockReference]> {
         self.block_references.as_deref()
     }
 }
@@ -65,69 +65,72 @@ impl Entity {
 
 /// A builder for [`Entity`](crate::types::Entity).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EntityBuilder {
-    pub(crate) score: std::option::Option<f32>,
-    pub(crate) r#type: std::option::Option<crate::types::EntityType>,
-    pub(crate) text: std::option::Option<std::string::String>,
-    pub(crate) begin_offset: std::option::Option<i32>,
-    pub(crate) end_offset: std::option::Option<i32>,
-    pub(crate) block_references: std::option::Option<std::vec::Vec<crate::types::BlockReference>>,
+    pub(crate) score: ::std::option::Option<f32>,
+    pub(crate) r#type: ::std::option::Option<crate::types::EntityType>,
+    pub(crate) text: ::std::option::Option<::std::string::String>,
+    pub(crate) begin_offset: ::std::option::Option<i32>,
+    pub(crate) end_offset: ::std::option::Option<i32>,
+    pub(crate) block_references:
+        ::std::option::Option<::std::vec::Vec<crate::types::BlockReference>>,
 }
 impl EntityBuilder {
     /// <p>The level of confidence that Amazon Comprehend has in the accuracy of the detection.</p>
     pub fn score(mut self, input: f32) -> Self {
-        self.score = Some(input);
+        self.score = ::std::option::Option::Some(input);
         self
     }
     /// <p>The level of confidence that Amazon Comprehend has in the accuracy of the detection.</p>
-    pub fn set_score(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_score(mut self, input: ::std::option::Option<f32>) -> Self {
         self.score = input;
         self
     }
     /// <p>The entity type. For entity detection using the built-in model, this field contains one of the standard entity types listed below.</p>
     /// <p>For custom entity detection, this field contains one of the entity types that you specified when you trained your custom model.</p>
     pub fn r#type(mut self, input: crate::types::EntityType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The entity type. For entity detection using the built-in model, this field contains one of the standard entity types listed below.</p>
     /// <p>For custom entity detection, this field contains one of the entity types that you specified when you trained your custom model.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::EntityType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::EntityType>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The text of the entity.</p>
-    pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
-        self.text = Some(input.into());
+    pub fn text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.text = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The text of the entity.</p>
-    pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.text = input;
         self
     }
     /// <p>The zero-based offset from the beginning of the source text to the first character in the entity.</p>
     /// <p>This field is empty for non-text input.</p>
     pub fn begin_offset(mut self, input: i32) -> Self {
-        self.begin_offset = Some(input);
+        self.begin_offset = ::std::option::Option::Some(input);
         self
     }
     /// <p>The zero-based offset from the beginning of the source text to the first character in the entity.</p>
     /// <p>This field is empty for non-text input.</p>
-    pub fn set_begin_offset(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_begin_offset(mut self, input: ::std::option::Option<i32>) -> Self {
         self.begin_offset = input;
         self
     }
     /// <p>The zero-based offset from the beginning of the source text to the last character in the entity.</p>
     /// <p>This field is empty for non-text input.</p>
     pub fn end_offset(mut self, input: i32) -> Self {
-        self.end_offset = Some(input);
+        self.end_offset = ::std::option::Option::Some(input);
         self
     }
     /// <p>The zero-based offset from the beginning of the source text to the last character in the entity.</p>
     /// <p>This field is empty for non-text input.</p>
-    pub fn set_end_offset(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_end_offset(mut self, input: ::std::option::Option<i32>) -> Self {
         self.end_offset = input;
         self
     }
@@ -139,13 +142,13 @@ impl EntityBuilder {
     pub fn block_references(mut self, input: crate::types::BlockReference) -> Self {
         let mut v = self.block_references.unwrap_or_default();
         v.push(input);
-        self.block_references = Some(v);
+        self.block_references = ::std::option::Option::Some(v);
         self
     }
     /// <p>A reference to each block for this entity. This field is empty for plain-text input.</p>
     pub fn set_block_references(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::BlockReference>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::BlockReference>>,
     ) -> Self {
         self.block_references = input;
         self

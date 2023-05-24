@@ -2,22 +2,22 @@
 
 /// <p>The response from Amazon Cognito to a request to reset a password.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ForgotPasswordOutput {
     /// <p>The code delivery details returned by the server in response to the request to reset a password.</p>
     #[doc(hidden)]
-    pub code_delivery_details: std::option::Option<crate::types::CodeDeliveryDetailsType>,
+    pub code_delivery_details: ::std::option::Option<crate::types::CodeDeliveryDetailsType>,
     _request_id: Option<String>,
 }
 impl ForgotPasswordOutput {
     /// <p>The code delivery details returned by the server in response to the request to reset a password.</p>
     pub fn code_delivery_details(
         &self,
-    ) -> std::option::Option<&crate::types::CodeDeliveryDetailsType> {
+    ) -> ::std::option::Option<&crate::types::CodeDeliveryDetailsType> {
         self.code_delivery_details.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for ForgotPasswordOutput {
+impl ::aws_http::request_id::RequestId for ForgotPasswordOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -31,21 +31,23 @@ impl ForgotPasswordOutput {
 
 /// A builder for [`ForgotPasswordOutput`](crate::operation::forgot_password::ForgotPasswordOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ForgotPasswordOutputBuilder {
-    pub(crate) code_delivery_details: std::option::Option<crate::types::CodeDeliveryDetailsType>,
+    pub(crate) code_delivery_details: ::std::option::Option<crate::types::CodeDeliveryDetailsType>,
     _request_id: Option<String>,
 }
 impl ForgotPasswordOutputBuilder {
     /// <p>The code delivery details returned by the server in response to the request to reset a password.</p>
     pub fn code_delivery_details(mut self, input: crate::types::CodeDeliveryDetailsType) -> Self {
-        self.code_delivery_details = Some(input);
+        self.code_delivery_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>The code delivery details returned by the server in response to the request to reset a password.</p>
     pub fn set_code_delivery_details(
         mut self,
-        input: std::option::Option<crate::types::CodeDeliveryDetailsType>,
+        input: ::std::option::Option<crate::types::CodeDeliveryDetailsType>,
     ) -> Self {
         self.code_delivery_details = input;
         self

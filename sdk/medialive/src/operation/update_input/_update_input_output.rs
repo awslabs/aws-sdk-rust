@@ -2,20 +2,20 @@
 
 /// Placeholder documentation for UpdateInputResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateInputOutput {
     /// Placeholder documentation for Input
     #[doc(hidden)]
-    pub input: std::option::Option<crate::types::Input>,
+    pub input: ::std::option::Option<crate::types::Input>,
     _request_id: Option<String>,
 }
 impl UpdateInputOutput {
     /// Placeholder documentation for Input
-    pub fn input(&self) -> std::option::Option<&crate::types::Input> {
+    pub fn input(&self) -> ::std::option::Option<&crate::types::Input> {
         self.input.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for UpdateInputOutput {
+impl ::aws_http::request_id::RequestId for UpdateInputOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,21 @@ impl UpdateInputOutput {
 
 /// A builder for [`UpdateInputOutput`](crate::operation::update_input::UpdateInputOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateInputOutputBuilder {
-    pub(crate) input: std::option::Option<crate::types::Input>,
+    pub(crate) input: ::std::option::Option<crate::types::Input>,
     _request_id: Option<String>,
 }
 impl UpdateInputOutputBuilder {
     /// Placeholder documentation for Input
     pub fn input(mut self, input: crate::types::Input) -> Self {
-        self.input = Some(input);
+        self.input = ::std::option::Option::Some(input);
         self
     }
     /// Placeholder documentation for Input
-    pub fn set_input(mut self, input: std::option::Option<crate::types::Input>) -> Self {
+    pub fn set_input(mut self, input: ::std::option::Option<crate::types::Input>) -> Self {
         self.input = input;
         self
     }

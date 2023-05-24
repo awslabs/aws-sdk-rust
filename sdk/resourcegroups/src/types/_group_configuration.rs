@@ -2,39 +2,39 @@
 
 /// <p>A service configuration associated with a resource group. The configuration options are determined by the Amazon Web Services service that defines the <code>Type</code>, and specifies which resources can be included in the group. You can add a service configuration when you create the group by using <code>CreateGroup</code>, or later by using the <code>PutGroupConfiguration</code> operation. For details about group service configuration syntax, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource groups</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GroupConfiguration {
     /// <p>The configuration currently associated with the group and in effect.</p>
     #[doc(hidden)]
-    pub configuration: std::option::Option<std::vec::Vec<crate::types::GroupConfigurationItem>>,
+    pub configuration: ::std::option::Option<::std::vec::Vec<crate::types::GroupConfigurationItem>>,
     /// <p>If present, the new configuration that is in the process of being applied to the group.</p>
     #[doc(hidden)]
     pub proposed_configuration:
-        std::option::Option<std::vec::Vec<crate::types::GroupConfigurationItem>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::GroupConfigurationItem>>,
     /// <p>The current status of an attempt to update the group configuration.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::GroupConfigurationStatus>,
+    pub status: ::std::option::Option<crate::types::GroupConfigurationStatus>,
     /// <p>If present, the reason why a request to update the group configuration failed.</p>
     #[doc(hidden)]
-    pub failure_reason: std::option::Option<std::string::String>,
+    pub failure_reason: ::std::option::Option<::std::string::String>,
 }
 impl GroupConfiguration {
     /// <p>The configuration currently associated with the group and in effect.</p>
-    pub fn configuration(&self) -> std::option::Option<&[crate::types::GroupConfigurationItem]> {
+    pub fn configuration(&self) -> ::std::option::Option<&[crate::types::GroupConfigurationItem]> {
         self.configuration.as_deref()
     }
     /// <p>If present, the new configuration that is in the process of being applied to the group.</p>
     pub fn proposed_configuration(
         &self,
-    ) -> std::option::Option<&[crate::types::GroupConfigurationItem]> {
+    ) -> ::std::option::Option<&[crate::types::GroupConfigurationItem]> {
         self.proposed_configuration.as_deref()
     }
     /// <p>The current status of an attempt to update the group configuration.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::GroupConfigurationStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::GroupConfigurationStatus> {
         self.status.as_ref()
     }
     /// <p>If present, the reason why a request to update the group configuration failed.</p>
-    pub fn failure_reason(&self) -> std::option::Option<&str> {
+    pub fn failure_reason(&self) -> ::std::option::Option<&str> {
         self.failure_reason.as_deref()
     }
 }
@@ -47,14 +47,16 @@ impl GroupConfiguration {
 
 /// A builder for [`GroupConfiguration`](crate::types::GroupConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GroupConfigurationBuilder {
     pub(crate) configuration:
-        std::option::Option<std::vec::Vec<crate::types::GroupConfigurationItem>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::GroupConfigurationItem>>,
     pub(crate) proposed_configuration:
-        std::option::Option<std::vec::Vec<crate::types::GroupConfigurationItem>>,
-    pub(crate) status: std::option::Option<crate::types::GroupConfigurationStatus>,
-    pub(crate) failure_reason: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::GroupConfigurationItem>>,
+    pub(crate) status: ::std::option::Option<crate::types::GroupConfigurationStatus>,
+    pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
 }
 impl GroupConfigurationBuilder {
     /// Appends an item to `configuration`.
@@ -65,13 +67,13 @@ impl GroupConfigurationBuilder {
     pub fn configuration(mut self, input: crate::types::GroupConfigurationItem) -> Self {
         let mut v = self.configuration.unwrap_or_default();
         v.push(input);
-        self.configuration = Some(v);
+        self.configuration = ::std::option::Option::Some(v);
         self
     }
     /// <p>The configuration currently associated with the group and in effect.</p>
     pub fn set_configuration(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::GroupConfigurationItem>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::GroupConfigurationItem>>,
     ) -> Self {
         self.configuration = input;
         self
@@ -84,37 +86,43 @@ impl GroupConfigurationBuilder {
     pub fn proposed_configuration(mut self, input: crate::types::GroupConfigurationItem) -> Self {
         let mut v = self.proposed_configuration.unwrap_or_default();
         v.push(input);
-        self.proposed_configuration = Some(v);
+        self.proposed_configuration = ::std::option::Option::Some(v);
         self
     }
     /// <p>If present, the new configuration that is in the process of being applied to the group.</p>
     pub fn set_proposed_configuration(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::GroupConfigurationItem>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::GroupConfigurationItem>>,
     ) -> Self {
         self.proposed_configuration = input;
         self
     }
     /// <p>The current status of an attempt to update the group configuration.</p>
     pub fn status(mut self, input: crate::types::GroupConfigurationStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current status of an attempt to update the group configuration.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::GroupConfigurationStatus>,
+        input: ::std::option::Option<crate::types::GroupConfigurationStatus>,
     ) -> Self {
         self.status = input;
         self
     }
     /// <p>If present, the reason why a request to update the group configuration failed.</p>
-    pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
-        self.failure_reason = Some(input.into());
+    pub fn failure_reason(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If present, the reason why a request to update the group configuration failed.</p>
-    pub fn set_failure_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_failure_reason(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.failure_reason = input;
         self
     }

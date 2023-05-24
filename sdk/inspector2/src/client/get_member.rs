@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetMember`](crate::operation::get_member::builders::GetMemberFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::operation::get_member::builders::GetMemberFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::get_member::builders::GetMemberFluentBuilder::set_account_id): <p>The Amazon Web Services account ID of the member account to retrieve information on.</p>
+    ///   - [`account_id(impl ::std::convert::Into<String>)`](crate::operation::get_member::builders::GetMemberFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::get_member::builders::GetMemberFluentBuilder::set_account_id): <p>The Amazon Web Services account ID of the member account to retrieve information on.</p>
     /// - On success, responds with [`GetMemberOutput`](crate::operation::get_member::GetMemberOutput) with field(s):
     ///   - [`member(Option<Member>)`](crate::operation::get_member::GetMemberOutput::member): <p>Details of the retrieved member account.</p>
     /// - On failure, responds with [`SdkError<GetMemberError>`](crate::operation::get_member::GetMemberError)

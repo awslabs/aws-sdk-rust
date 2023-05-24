@@ -3,18 +3,18 @@
 /// <p>The field well configuration of a heat map.</p>
 /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HeatMapFieldWells {
     /// <p>The aggregated field wells of a heat map.</p>
     #[doc(hidden)]
     pub heat_map_aggregated_field_wells:
-        std::option::Option<crate::types::HeatMapAggregatedFieldWells>,
+        ::std::option::Option<crate::types::HeatMapAggregatedFieldWells>,
 }
 impl HeatMapFieldWells {
     /// <p>The aggregated field wells of a heat map.</p>
     pub fn heat_map_aggregated_field_wells(
         &self,
-    ) -> std::option::Option<&crate::types::HeatMapAggregatedFieldWells> {
+    ) -> ::std::option::Option<&crate::types::HeatMapAggregatedFieldWells> {
         self.heat_map_aggregated_field_wells.as_ref()
     }
 }
@@ -27,10 +27,12 @@ impl HeatMapFieldWells {
 
 /// A builder for [`HeatMapFieldWells`](crate::types::HeatMapFieldWells).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct HeatMapFieldWellsBuilder {
     pub(crate) heat_map_aggregated_field_wells:
-        std::option::Option<crate::types::HeatMapAggregatedFieldWells>,
+        ::std::option::Option<crate::types::HeatMapAggregatedFieldWells>,
 }
 impl HeatMapFieldWellsBuilder {
     /// <p>The aggregated field wells of a heat map.</p>
@@ -38,13 +40,13 @@ impl HeatMapFieldWellsBuilder {
         mut self,
         input: crate::types::HeatMapAggregatedFieldWells,
     ) -> Self {
-        self.heat_map_aggregated_field_wells = Some(input);
+        self.heat_map_aggregated_field_wells = ::std::option::Option::Some(input);
         self
     }
     /// <p>The aggregated field wells of a heat map.</p>
     pub fn set_heat_map_aggregated_field_wells(
         mut self,
-        input: std::option::Option<crate::types::HeatMapAggregatedFieldWells>,
+        input: ::std::option::Option<crate::types::HeatMapAggregatedFieldWells>,
     ) -> Self {
         self.heat_map_aggregated_field_wells = input;
         self

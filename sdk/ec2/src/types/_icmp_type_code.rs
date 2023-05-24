@@ -2,22 +2,22 @@
 
 /// <p>Describes the ICMP type and code.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IcmpTypeCode {
     /// <p>The ICMP code. A value of -1 means all codes for the specified ICMP type.</p>
     #[doc(hidden)]
-    pub code: std::option::Option<i32>,
+    pub code: ::std::option::Option<i32>,
     /// <p>The ICMP type. A value of -1 means all types.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<i32>,
+    pub r#type: ::std::option::Option<i32>,
 }
 impl IcmpTypeCode {
     /// <p>The ICMP code. A value of -1 means all codes for the specified ICMP type.</p>
-    pub fn code(&self) -> std::option::Option<i32> {
+    pub fn code(&self) -> ::std::option::Option<i32> {
         self.code
     }
     /// <p>The ICMP type. A value of -1 means all types.</p>
-    pub fn r#type(&self) -> std::option::Option<i32> {
+    pub fn r#type(&self) -> ::std::option::Option<i32> {
         self.r#type
     }
 }
@@ -30,29 +30,31 @@ impl IcmpTypeCode {
 
 /// A builder for [`IcmpTypeCode`](crate::types::IcmpTypeCode).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct IcmpTypeCodeBuilder {
-    pub(crate) code: std::option::Option<i32>,
-    pub(crate) r#type: std::option::Option<i32>,
+    pub(crate) code: ::std::option::Option<i32>,
+    pub(crate) r#type: ::std::option::Option<i32>,
 }
 impl IcmpTypeCodeBuilder {
     /// <p>The ICMP code. A value of -1 means all codes for the specified ICMP type.</p>
     pub fn code(mut self, input: i32) -> Self {
-        self.code = Some(input);
+        self.code = ::std::option::Option::Some(input);
         self
     }
     /// <p>The ICMP code. A value of -1 means all codes for the specified ICMP type.</p>
-    pub fn set_code(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_code(mut self, input: ::std::option::Option<i32>) -> Self {
         self.code = input;
         self
     }
     /// <p>The ICMP type. A value of -1 means all types.</p>
     pub fn r#type(mut self, input: i32) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The ICMP type. A value of -1 means all types.</p>
-    pub fn set_type(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<i32>) -> Self {
         self.r#type = input;
         self
     }

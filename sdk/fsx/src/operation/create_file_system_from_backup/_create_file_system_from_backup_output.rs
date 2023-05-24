@@ -2,20 +2,20 @@
 
 /// <p>The response object for the <code>CreateFileSystemFromBackup</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateFileSystemFromBackupOutput {
     /// <p>A description of the file system.</p>
     #[doc(hidden)]
-    pub file_system: std::option::Option<crate::types::FileSystem>,
+    pub file_system: ::std::option::Option<crate::types::FileSystem>,
     _request_id: Option<String>,
 }
 impl CreateFileSystemFromBackupOutput {
     /// <p>A description of the file system.</p>
-    pub fn file_system(&self) -> std::option::Option<&crate::types::FileSystem> {
+    pub fn file_system(&self) -> ::std::option::Option<&crate::types::FileSystem> {
         self.file_system.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for CreateFileSystemFromBackupOutput {
+impl ::aws_http::request_id::RequestId for CreateFileSystemFromBackupOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,24 @@ impl CreateFileSystemFromBackupOutput {
 
 /// A builder for [`CreateFileSystemFromBackupOutput`](crate::operation::create_file_system_from_backup::CreateFileSystemFromBackupOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateFileSystemFromBackupOutputBuilder {
-    pub(crate) file_system: std::option::Option<crate::types::FileSystem>,
+    pub(crate) file_system: ::std::option::Option<crate::types::FileSystem>,
     _request_id: Option<String>,
 }
 impl CreateFileSystemFromBackupOutputBuilder {
     /// <p>A description of the file system.</p>
     pub fn file_system(mut self, input: crate::types::FileSystem) -> Self {
-        self.file_system = Some(input);
+        self.file_system = ::std::option::Option::Some(input);
         self
     }
     /// <p>A description of the file system.</p>
-    pub fn set_file_system(mut self, input: std::option::Option<crate::types::FileSystem>) -> Self {
+    pub fn set_file_system(
+        mut self,
+        input: ::std::option::Option<crate::types::FileSystem>,
+    ) -> Self {
         self.file_system = input;
         self
     }

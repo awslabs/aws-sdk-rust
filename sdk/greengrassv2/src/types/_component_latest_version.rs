@@ -2,50 +2,50 @@
 
 /// <p>Contains information about the latest version of a component.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComponentLatestVersion {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The version of the component.</p>
     #[doc(hidden)]
-    pub component_version: std::option::Option<std::string::String>,
+    pub component_version: ::std::option::Option<::std::string::String>,
     /// <p>The time at which the component was created, expressed in ISO 8601 format.</p>
     #[doc(hidden)]
-    pub creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The description of the component version.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The publisher of the component version.</p>
     #[doc(hidden)]
-    pub publisher: std::option::Option<std::string::String>,
+    pub publisher: ::std::option::Option<::std::string::String>,
     /// <p>The platforms that the component version supports.</p>
     #[doc(hidden)]
-    pub platforms: std::option::Option<std::vec::Vec<crate::types::ComponentPlatform>>,
+    pub platforms: ::std::option::Option<::std::vec::Vec<crate::types::ComponentPlatform>>,
 }
 impl ComponentLatestVersion {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The version of the component.</p>
-    pub fn component_version(&self) -> std::option::Option<&str> {
+    pub fn component_version(&self) -> ::std::option::Option<&str> {
         self.component_version.as_deref()
     }
     /// <p>The time at which the component was created, expressed in ISO 8601 format.</p>
-    pub fn creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_timestamp.as_ref()
     }
     /// <p>The description of the component version.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The publisher of the component version.</p>
-    pub fn publisher(&self) -> std::option::Option<&str> {
+    pub fn publisher(&self) -> ::std::option::Option<&str> {
         self.publisher.as_deref()
     }
     /// <p>The platforms that the component version supports.</p>
-    pub fn platforms(&self) -> std::option::Option<&[crate::types::ComponentPlatform]> {
+    pub fn platforms(&self) -> ::std::option::Option<&[crate::types::ComponentPlatform]> {
         self.platforms.as_deref()
     }
 }
@@ -58,69 +58,74 @@ impl ComponentLatestVersion {
 
 /// A builder for [`ComponentLatestVersion`](crate::types::ComponentLatestVersion).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ComponentLatestVersionBuilder {
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) component_version: std::option::Option<std::string::String>,
-    pub(crate) creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) publisher: std::option::Option<std::string::String>,
-    pub(crate) platforms: std::option::Option<std::vec::Vec<crate::types::ComponentPlatform>>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) component_version: ::std::option::Option<::std::string::String>,
+    pub(crate) creation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) publisher: ::std::option::Option<::std::string::String>,
+    pub(crate) platforms: ::std::option::Option<::std::vec::Vec<crate::types::ComponentPlatform>>,
 }
 impl ComponentLatestVersionBuilder {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// <p>The version of the component.</p>
-    pub fn component_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.component_version = Some(input.into());
+    pub fn component_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.component_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the component.</p>
     pub fn set_component_version(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.component_version = input;
         self
     }
     /// <p>The time at which the component was created, expressed in ISO 8601 format.</p>
-    pub fn creation_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_timestamp = Some(input);
+    pub fn creation_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time at which the component was created, expressed in ISO 8601 format.</p>
     pub fn set_creation_timestamp(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_timestamp = input;
         self
     }
     /// <p>The description of the component version.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the component version.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>The publisher of the component version.</p>
-    pub fn publisher(mut self, input: impl Into<std::string::String>) -> Self {
-        self.publisher = Some(input.into());
+    pub fn publisher(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.publisher = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The publisher of the component version.</p>
-    pub fn set_publisher(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_publisher(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.publisher = input;
         self
     }
@@ -132,13 +137,13 @@ impl ComponentLatestVersionBuilder {
     pub fn platforms(mut self, input: crate::types::ComponentPlatform) -> Self {
         let mut v = self.platforms.unwrap_or_default();
         v.push(input);
-        self.platforms = Some(v);
+        self.platforms = ::std::option::Option::Some(v);
         self
     }
     /// <p>The platforms that the component version supports.</p>
     pub fn set_platforms(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ComponentPlatform>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ComponentPlatform>>,
     ) -> Self {
         self.platforms = input;
         self

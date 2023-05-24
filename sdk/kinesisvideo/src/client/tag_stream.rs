@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`TagStream`](crate::operation::tag_stream::builders::TagStreamFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`stream_arn(impl Into<String>)`](crate::operation::tag_stream::builders::TagStreamFluentBuilder::stream_arn) / [`set_stream_arn(Option<String>)`](crate::operation::tag_stream::builders::TagStreamFluentBuilder::set_stream_arn): <p>The Amazon Resource Name (ARN) of the resource that you want to add the tag or tags to.</p>
-    ///   - [`stream_name(impl Into<String>)`](crate::operation::tag_stream::builders::TagStreamFluentBuilder::stream_name) / [`set_stream_name(Option<String>)`](crate::operation::tag_stream::builders::TagStreamFluentBuilder::set_stream_name): <p>The name of the stream that you want to add the tag or tags to.</p>
+    ///   - [`stream_arn(impl ::std::convert::Into<String>)`](crate::operation::tag_stream::builders::TagStreamFluentBuilder::stream_arn) / [`set_stream_arn(Option<String>)`](crate::operation::tag_stream::builders::TagStreamFluentBuilder::set_stream_arn): <p>The Amazon Resource Name (ARN) of the resource that you want to add the tag or tags to.</p>
+    ///   - [`stream_name(impl ::std::convert::Into<String>)`](crate::operation::tag_stream::builders::TagStreamFluentBuilder::stream_name) / [`set_stream_name(Option<String>)`](crate::operation::tag_stream::builders::TagStreamFluentBuilder::set_stream_name): <p>The name of the stream that you want to add the tag or tags to.</p>
     ///   - [`tags(HashMap<String, String>)`](crate::operation::tag_stream::builders::TagStreamFluentBuilder::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::operation::tag_stream::builders::TagStreamFluentBuilder::set_tags): <p>A list of tags to associate with the specified stream. Each tag is a key-value pair (the value is optional).</p>
     /// - On success, responds with [`TagStreamOutput`](crate::operation::tag_stream::TagStreamOutput)
     /// - On failure, responds with [`SdkError<TagStreamError>`](crate::operation::tag_stream::TagStreamError)

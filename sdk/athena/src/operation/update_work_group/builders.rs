@@ -6,29 +6,29 @@ pub use crate::operation::update_work_group::_update_work_group_input::UpdateWor
 /// Fluent builder constructing a request to `UpdateWorkGroup`.
 ///
 /// <p>Updates the workgroup with the specified name. The workgroup's name cannot be changed. Only <code>ConfigurationUpdates</code> can be specified.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateWorkGroupFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::update_work_group::builders::UpdateWorkGroupInputBuilder,
 }
 impl UpdateWorkGroupFluentBuilder {
     /// Creates a new `UpdateWorkGroup`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_work_group::UpdateWorkGroup,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_work_group::UpdateWorkGroupError,
         >,
     > {
@@ -36,30 +36,33 @@ impl UpdateWorkGroupFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_work_group::UpdateWorkGroupOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_work_group::UpdateWorkGroupError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,31 +75,31 @@ impl UpdateWorkGroupFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_work_group::UpdateWorkGroupOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_work_group::UpdateWorkGroupError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The specified workgroup that will be updated.</p>
-    pub fn work_group(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn work_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.work_group(input.into());
         self
     }
     /// <p>The specified workgroup that will be updated.</p>
-    pub fn set_work_group(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_work_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_work_group(input);
         self
     }
     /// <p>The workgroup description.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>The workgroup description.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
@@ -111,7 +114,7 @@ impl UpdateWorkGroupFluentBuilder {
     /// <p>Contains configuration updates for an Athena SQL workgroup.</p>
     pub fn set_configuration_updates(
         mut self,
-        input: std::option::Option<crate::types::WorkGroupConfigurationUpdates>,
+        input: ::std::option::Option<crate::types::WorkGroupConfigurationUpdates>,
     ) -> Self {
         self.inner = self.inner.set_configuration_updates(input);
         self
@@ -122,7 +125,7 @@ impl UpdateWorkGroupFluentBuilder {
         self
     }
     /// <p>The workgroup state that will be updated for the given workgroup.</p>
-    pub fn set_state(mut self, input: std::option::Option<crate::types::WorkGroupState>) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::WorkGroupState>) -> Self {
         self.inner = self.inner.set_state(input);
         self
     }

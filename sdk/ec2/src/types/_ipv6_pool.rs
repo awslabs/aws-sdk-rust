@@ -2,36 +2,36 @@
 
 /// <p>Describes an IPv6 address pool.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Ipv6Pool {
     /// <p>The ID of the address pool.</p>
     #[doc(hidden)]
-    pub pool_id: std::option::Option<std::string::String>,
+    pub pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The description for the address pool.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The CIDR blocks for the address pool.</p>
     #[doc(hidden)]
-    pub pool_cidr_blocks: std::option::Option<std::vec::Vec<crate::types::PoolCidrBlock>>,
+    pub pool_cidr_blocks: ::std::option::Option<::std::vec::Vec<crate::types::PoolCidrBlock>>,
     /// <p>Any tags for the address pool.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl Ipv6Pool {
     /// <p>The ID of the address pool.</p>
-    pub fn pool_id(&self) -> std::option::Option<&str> {
+    pub fn pool_id(&self) -> ::std::option::Option<&str> {
         self.pool_id.as_deref()
     }
     /// <p>The description for the address pool.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The CIDR blocks for the address pool.</p>
-    pub fn pool_cidr_blocks(&self) -> std::option::Option<&[crate::types::PoolCidrBlock]> {
+    pub fn pool_cidr_blocks(&self) -> ::std::option::Option<&[crate::types::PoolCidrBlock]> {
         self.pool_cidr_blocks.as_deref()
     }
     /// <p>Any tags for the address pool.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -44,31 +44,34 @@ impl Ipv6Pool {
 
 /// A builder for [`Ipv6Pool`](crate::types::Ipv6Pool).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct Ipv6PoolBuilder {
-    pub(crate) pool_id: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) pool_cidr_blocks: std::option::Option<std::vec::Vec<crate::types::PoolCidrBlock>>,
-    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub(crate) pool_id: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) pool_cidr_blocks:
+        ::std::option::Option<::std::vec::Vec<crate::types::PoolCidrBlock>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl Ipv6PoolBuilder {
     /// <p>The ID of the address pool.</p>
-    pub fn pool_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.pool_id = Some(input.into());
+    pub fn pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.pool_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the address pool.</p>
-    pub fn set_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pool_id = input;
         self
     }
     /// <p>The description for the address pool.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description for the address pool.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
@@ -80,13 +83,13 @@ impl Ipv6PoolBuilder {
     pub fn pool_cidr_blocks(mut self, input: crate::types::PoolCidrBlock) -> Self {
         let mut v = self.pool_cidr_blocks.unwrap_or_default();
         v.push(input);
-        self.pool_cidr_blocks = Some(v);
+        self.pool_cidr_blocks = ::std::option::Option::Some(v);
         self
     }
     /// <p>The CIDR blocks for the address pool.</p>
     pub fn set_pool_cidr_blocks(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PoolCidrBlock>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PoolCidrBlock>>,
     ) -> Self {
         self.pool_cidr_blocks = input;
         self
@@ -99,13 +102,13 @@ impl Ipv6PoolBuilder {
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
-        self.tags = Some(v);
+        self.tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>Any tags for the address pool.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tags = input;
         self

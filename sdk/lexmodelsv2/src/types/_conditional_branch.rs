@@ -2,36 +2,36 @@
 
 /// <p>A set of actions that Amazon Lex should run if the condition is matched.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConditionalBranch {
     /// <p>The name of the branch. </p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>Contains the expression to evaluate. If the condition is true, the branch's actions are taken.</p>
     #[doc(hidden)]
-    pub condition: std::option::Option<crate::types::Condition>,
+    pub condition: ::std::option::Option<crate::types::Condition>,
     /// <p>The next step in the conversation.</p>
     #[doc(hidden)]
-    pub next_step: std::option::Option<crate::types::DialogState>,
+    pub next_step: ::std::option::Option<crate::types::DialogState>,
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
     #[doc(hidden)]
-    pub response: std::option::Option<crate::types::ResponseSpecification>,
+    pub response: ::std::option::Option<crate::types::ResponseSpecification>,
 }
 impl ConditionalBranch {
     /// <p>The name of the branch. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>Contains the expression to evaluate. If the condition is true, the branch's actions are taken.</p>
-    pub fn condition(&self) -> std::option::Option<&crate::types::Condition> {
+    pub fn condition(&self) -> ::std::option::Option<&crate::types::Condition> {
         self.condition.as_ref()
     }
     /// <p>The next step in the conversation.</p>
-    pub fn next_step(&self) -> std::option::Option<&crate::types::DialogState> {
+    pub fn next_step(&self) -> ::std::option::Option<&crate::types::DialogState> {
         self.next_step.as_ref()
     }
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
-    pub fn response(&self) -> std::option::Option<&crate::types::ResponseSpecification> {
+    pub fn response(&self) -> ::std::option::Option<&crate::types::ResponseSpecification> {
         self.response.as_ref()
     }
 }
@@ -44,53 +44,58 @@ impl ConditionalBranch {
 
 /// A builder for [`ConditionalBranch`](crate::types::ConditionalBranch).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ConditionalBranchBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) condition: std::option::Option<crate::types::Condition>,
-    pub(crate) next_step: std::option::Option<crate::types::DialogState>,
-    pub(crate) response: std::option::Option<crate::types::ResponseSpecification>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) condition: ::std::option::Option<crate::types::Condition>,
+    pub(crate) next_step: ::std::option::Option<crate::types::DialogState>,
+    pub(crate) response: ::std::option::Option<crate::types::ResponseSpecification>,
 }
 impl ConditionalBranchBuilder {
     /// <p>The name of the branch. </p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the branch. </p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>Contains the expression to evaluate. If the condition is true, the branch's actions are taken.</p>
     pub fn condition(mut self, input: crate::types::Condition) -> Self {
-        self.condition = Some(input);
+        self.condition = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains the expression to evaluate. If the condition is true, the branch's actions are taken.</p>
-    pub fn set_condition(mut self, input: std::option::Option<crate::types::Condition>) -> Self {
+    pub fn set_condition(mut self, input: ::std::option::Option<crate::types::Condition>) -> Self {
         self.condition = input;
         self
     }
     /// <p>The next step in the conversation.</p>
     pub fn next_step(mut self, input: crate::types::DialogState) -> Self {
-        self.next_step = Some(input);
+        self.next_step = ::std::option::Option::Some(input);
         self
     }
     /// <p>The next step in the conversation.</p>
-    pub fn set_next_step(mut self, input: std::option::Option<crate::types::DialogState>) -> Self {
+    pub fn set_next_step(
+        mut self,
+        input: ::std::option::Option<crate::types::DialogState>,
+    ) -> Self {
         self.next_step = input;
         self
     }
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
     pub fn response(mut self, input: crate::types::ResponseSpecification) -> Self {
-        self.response = Some(input);
+        self.response = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
     pub fn set_response(
         mut self,
-        input: std::option::Option<crate::types::ResponseSpecification>,
+        input: ::std::option::Option<crate::types::ResponseSpecification>,
     ) -> Self {
         self.response = input;
         self

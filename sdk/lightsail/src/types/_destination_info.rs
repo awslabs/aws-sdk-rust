@@ -2,22 +2,22 @@
 
 /// <p>Describes the destination of a record.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DestinationInfo {
     /// <p>The ID of the resource created at the destination.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The destination service of the record.</p>
     #[doc(hidden)]
-    pub service: std::option::Option<std::string::String>,
+    pub service: ::std::option::Option<::std::string::String>,
 }
 impl DestinationInfo {
     /// <p>The ID of the resource created at the destination.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The destination service of the record.</p>
-    pub fn service(&self) -> std::option::Option<&str> {
+    pub fn service(&self) -> ::std::option::Option<&str> {
         self.service.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl DestinationInfo {
 
 /// A builder for [`DestinationInfo`](crate::types::DestinationInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DestinationInfoBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) service: std::option::Option<std::string::String>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) service: ::std::option::Option<::std::string::String>,
 }
 impl DestinationInfoBuilder {
     /// <p>The ID of the resource created at the destination.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the resource created at the destination.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>The destination service of the record.</p>
-    pub fn service(mut self, input: impl Into<std::string::String>) -> Self {
-        self.service = Some(input.into());
+    pub fn service(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.service = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The destination service of the record.</p>
-    pub fn set_service(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_service(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service = input;
         self
     }

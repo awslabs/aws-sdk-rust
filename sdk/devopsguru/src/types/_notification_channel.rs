@@ -5,22 +5,22 @@
 /// <p>If you use an Amazon SNS topic in another account, you must attach a policy to it that grants DevOps Guru permission to it notifications. DevOps Guru adds the required policy on your behalf to send notifications using Amazon SNS in your account. For more information, see Permissions for cross account Amazon SNS topics.</p>
 /// <p>If you use an Amazon SNS topic that is encrypted by an Amazon Web Services Key Management Service customer-managed key (CMK), then you must add permissions to the CMK. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-kms-permissions.html">Permissions for Amazon Web Services KMS–encrypted Amazon SNS topics</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NotificationChannel {
     /// <p> The ID of a notification channel. </p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p> A <code>NotificationChannelConfig</code> object that contains information about configured notification channels. </p>
     #[doc(hidden)]
-    pub config: std::option::Option<crate::types::NotificationChannelConfig>,
+    pub config: ::std::option::Option<crate::types::NotificationChannelConfig>,
 }
 impl NotificationChannel {
     /// <p> The ID of a notification channel. </p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p> A <code>NotificationChannelConfig</code> object that contains information about configured notification channels. </p>
-    pub fn config(&self) -> std::option::Option<&crate::types::NotificationChannelConfig> {
+    pub fn config(&self) -> ::std::option::Option<&crate::types::NotificationChannelConfig> {
         self.config.as_ref()
     }
 }
@@ -33,31 +33,33 @@ impl NotificationChannel {
 
 /// A builder for [`NotificationChannel`](crate::types::NotificationChannel).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NotificationChannelBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) config: std::option::Option<crate::types::NotificationChannelConfig>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) config: ::std::option::Option<crate::types::NotificationChannelConfig>,
 }
 impl NotificationChannelBuilder {
     /// <p> The ID of a notification channel. </p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The ID of a notification channel. </p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p> A <code>NotificationChannelConfig</code> object that contains information about configured notification channels. </p>
     pub fn config(mut self, input: crate::types::NotificationChannelConfig) -> Self {
-        self.config = Some(input);
+        self.config = ::std::option::Option::Some(input);
         self
     }
     /// <p> A <code>NotificationChannelConfig</code> object that contains information about configured notification channels. </p>
     pub fn set_config(
         mut self,
-        input: std::option::Option<crate::types::NotificationChannelConfig>,
+        input: ::std::option::Option<crate::types::NotificationChannelConfig>,
     ) -> Self {
         self.config = input;
         self

@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeDetector`](crate::operation::describe_detector::builders::DescribeDetectorFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`detector_id(impl Into<String>)`](crate::operation::describe_detector::builders::DescribeDetectorFluentBuilder::detector_id) / [`set_detector_id(Option<String>)`](crate::operation::describe_detector::builders::DescribeDetectorFluentBuilder::set_detector_id): <p>The detector ID.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::operation::describe_detector::builders::DescribeDetectorFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_detector::builders::DescribeDetectorFluentBuilder::set_next_token): <p>The next token from the previous response.</p>
+    ///   - [`detector_id(impl ::std::convert::Into<String>)`](crate::operation::describe_detector::builders::DescribeDetectorFluentBuilder::detector_id) / [`set_detector_id(Option<String>)`](crate::operation::describe_detector::builders::DescribeDetectorFluentBuilder::set_detector_id): <p>The detector ID.</p>
+    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::describe_detector::builders::DescribeDetectorFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::describe_detector::builders::DescribeDetectorFluentBuilder::set_next_token): <p>The next token from the previous response.</p>
     ///   - [`max_results(i32)`](crate::operation::describe_detector::builders::DescribeDetectorFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::describe_detector::builders::DescribeDetectorFluentBuilder::set_max_results): <p>The maximum number of results to return for the request.</p>
     /// - On success, responds with [`DescribeDetectorOutput`](crate::operation::describe_detector::DescribeDetectorOutput) with field(s):
     ///   - [`detector_id(Option<String>)`](crate::operation::describe_detector::DescribeDetectorOutput::detector_id): <p>The detector ID.</p>

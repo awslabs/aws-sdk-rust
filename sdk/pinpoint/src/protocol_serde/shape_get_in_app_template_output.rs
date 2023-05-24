@@ -2,7 +2,7 @@
 pub(crate) fn de_in_app_template_response_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::types::InAppTemplateResponse>,
+    ::std::option::Option<crate::types::InAppTemplateResponse>,
     crate::operation::get_in_app_template::GetInAppTemplateError,
 > {
     (!body.is_empty()).then(||{

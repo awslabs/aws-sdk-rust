@@ -2,20 +2,20 @@
 
 /// Returned for a successful UpdateRecordsRequest.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateRecordsOutput {
     /// A list of records that have been updated.
     #[doc(hidden)]
-    pub records: std::option::Option<std::vec::Vec<crate::types::Record>>,
+    pub records: ::std::option::Option<::std::vec::Vec<crate::types::Record>>,
     _request_id: Option<String>,
 }
 impl UpdateRecordsOutput {
     /// A list of records that have been updated.
-    pub fn records(&self) -> std::option::Option<&[crate::types::Record]> {
+    pub fn records(&self) -> ::std::option::Option<&[crate::types::Record]> {
         self.records.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for UpdateRecordsOutput {
+impl ::aws_http::request_id::RequestId for UpdateRecordsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,9 +29,11 @@ impl UpdateRecordsOutput {
 
 /// A builder for [`UpdateRecordsOutput`](crate::operation::update_records::UpdateRecordsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateRecordsOutputBuilder {
-    pub(crate) records: std::option::Option<std::vec::Vec<crate::types::Record>>,
+    pub(crate) records: ::std::option::Option<::std::vec::Vec<crate::types::Record>>,
     _request_id: Option<String>,
 }
 impl UpdateRecordsOutputBuilder {
@@ -43,13 +45,13 @@ impl UpdateRecordsOutputBuilder {
     pub fn records(mut self, input: crate::types::Record) -> Self {
         let mut v = self.records.unwrap_or_default();
         v.push(input);
-        self.records = Some(v);
+        self.records = ::std::option::Option::Some(v);
         self
     }
     /// A list of records that have been updated.
     pub fn set_records(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Record>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Record>>,
     ) -> Self {
         self.records = input;
         self

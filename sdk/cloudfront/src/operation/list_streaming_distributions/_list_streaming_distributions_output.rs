@@ -2,22 +2,22 @@
 
 /// <p>The returned result of the corresponding request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListStreamingDistributionsOutput {
     /// <p>The <code>StreamingDistributionList</code> type.</p>
     #[doc(hidden)]
-    pub streaming_distribution_list: std::option::Option<crate::types::StreamingDistributionList>,
+    pub streaming_distribution_list: ::std::option::Option<crate::types::StreamingDistributionList>,
     _request_id: Option<String>,
 }
 impl ListStreamingDistributionsOutput {
     /// <p>The <code>StreamingDistributionList</code> type.</p>
     pub fn streaming_distribution_list(
         &self,
-    ) -> std::option::Option<&crate::types::StreamingDistributionList> {
+    ) -> ::std::option::Option<&crate::types::StreamingDistributionList> {
         self.streaming_distribution_list.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for ListStreamingDistributionsOutput {
+impl ::aws_http::request_id::RequestId for ListStreamingDistributionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -31,10 +31,12 @@ impl ListStreamingDistributionsOutput {
 
 /// A builder for [`ListStreamingDistributionsOutput`](crate::operation::list_streaming_distributions::ListStreamingDistributionsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListStreamingDistributionsOutputBuilder {
     pub(crate) streaming_distribution_list:
-        std::option::Option<crate::types::StreamingDistributionList>,
+        ::std::option::Option<crate::types::StreamingDistributionList>,
     _request_id: Option<String>,
 }
 impl ListStreamingDistributionsOutputBuilder {
@@ -43,13 +45,13 @@ impl ListStreamingDistributionsOutputBuilder {
         mut self,
         input: crate::types::StreamingDistributionList,
     ) -> Self {
-        self.streaming_distribution_list = Some(input);
+        self.streaming_distribution_list = ::std::option::Option::Some(input);
         self
     }
     /// <p>The <code>StreamingDistributionList</code> type.</p>
     pub fn set_streaming_distribution_list(
         mut self,
-        input: std::option::Option<crate::types::StreamingDistributionList>,
+        input: ::std::option::Option<crate::types::StreamingDistributionList>,
     ) -> Self {
         self.streaming_distribution_list = input;
         self

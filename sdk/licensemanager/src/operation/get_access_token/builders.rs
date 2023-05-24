@@ -6,56 +6,63 @@ pub use crate::operation::get_access_token::_get_access_token_input::GetAccessTo
 /// Fluent builder constructing a request to `GetAccessToken`.
 ///
 /// <p>Gets a temporary access token to use with AssumeRoleWithWebIdentity. Access tokens are valid for one hour.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetAccessTokenFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::get_access_token::builders::GetAccessTokenInputBuilder,
 }
 impl GetAccessTokenFluentBuilder {
     /// Creates a new `GetAccessToken`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::get_access_token::GetAccessToken,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::get_access_token::GetAccessTokenError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_access_token::GetAccessTokenError,
+        >,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_access_token::GetAccessTokenOutput,
-        aws_smithy_http::result::SdkError<crate::operation::get_access_token::GetAccessTokenError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_access_token::GetAccessTokenError,
+        >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,19 +75,21 @@ impl GetAccessTokenFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_access_token::GetAccessTokenOutput,
-        aws_smithy_http::result::SdkError<crate::operation::get_access_token::GetAccessTokenError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_access_token::GetAccessTokenError,
+        >,
     > {
         self.send_middleware().await
     }
     /// <p>Refresh token, encoded as a JWT token.</p>
-    pub fn token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.token(input.into());
         self
     }
     /// <p>Refresh token, encoded as a JWT token.</p>
-    pub fn set_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_token(input);
         self
     }
@@ -89,14 +98,17 @@ impl GetAccessTokenFluentBuilder {
     /// To override the contents of this collection use [`set_token_properties`](Self::set_token_properties).
     ///
     /// <p>Token properties to validate against those present in the JWT token.</p>
-    pub fn token_properties(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn token_properties(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.token_properties(input.into());
         self
     }
     /// <p>Token properties to validate against those present in the JWT token.</p>
     pub fn set_token_properties(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_token_properties(input);
         self

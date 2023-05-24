@@ -4,22 +4,22 @@
 /// <p>Labeling jobs fail after 30 days with an appropriate client error message.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LabelingJobStoppingConditions {
     /// <p>The maximum number of objects that can be labeled by human workers.</p>
     #[doc(hidden)]
-    pub max_human_labeled_object_count: std::option::Option<i32>,
+    pub max_human_labeled_object_count: ::std::option::Option<i32>,
     /// <p>The maximum number of input data objects that should be labeled.</p>
     #[doc(hidden)]
-    pub max_percentage_of_input_dataset_labeled: std::option::Option<i32>,
+    pub max_percentage_of_input_dataset_labeled: ::std::option::Option<i32>,
 }
 impl LabelingJobStoppingConditions {
     /// <p>The maximum number of objects that can be labeled by human workers.</p>
-    pub fn max_human_labeled_object_count(&self) -> std::option::Option<i32> {
+    pub fn max_human_labeled_object_count(&self) -> ::std::option::Option<i32> {
         self.max_human_labeled_object_count
     }
     /// <p>The maximum number of input data objects that should be labeled.</p>
-    pub fn max_percentage_of_input_dataset_labeled(&self) -> std::option::Option<i32> {
+    pub fn max_percentage_of_input_dataset_labeled(&self) -> ::std::option::Option<i32> {
         self.max_percentage_of_input_dataset_labeled
     }
 }
@@ -32,31 +32,33 @@ impl LabelingJobStoppingConditions {
 
 /// A builder for [`LabelingJobStoppingConditions`](crate::types::LabelingJobStoppingConditions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LabelingJobStoppingConditionsBuilder {
-    pub(crate) max_human_labeled_object_count: std::option::Option<i32>,
-    pub(crate) max_percentage_of_input_dataset_labeled: std::option::Option<i32>,
+    pub(crate) max_human_labeled_object_count: ::std::option::Option<i32>,
+    pub(crate) max_percentage_of_input_dataset_labeled: ::std::option::Option<i32>,
 }
 impl LabelingJobStoppingConditionsBuilder {
     /// <p>The maximum number of objects that can be labeled by human workers.</p>
     pub fn max_human_labeled_object_count(mut self, input: i32) -> Self {
-        self.max_human_labeled_object_count = Some(input);
+        self.max_human_labeled_object_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum number of objects that can be labeled by human workers.</p>
-    pub fn set_max_human_labeled_object_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_human_labeled_object_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_human_labeled_object_count = input;
         self
     }
     /// <p>The maximum number of input data objects that should be labeled.</p>
     pub fn max_percentage_of_input_dataset_labeled(mut self, input: i32) -> Self {
-        self.max_percentage_of_input_dataset_labeled = Some(input);
+        self.max_percentage_of_input_dataset_labeled = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum number of input data objects that should be labeled.</p>
     pub fn set_max_percentage_of_input_dataset_labeled(
         mut self,
-        input: std::option::Option<i32>,
+        input: ::std::option::Option<i32>,
     ) -> Self {
         self.max_percentage_of_input_dataset_labeled = input;
         self

@@ -6,56 +6,59 @@ pub use crate::operation::import_rest_api::_import_rest_api_input::ImportRestApi
 /// Fluent builder constructing a request to `ImportRestApi`.
 ///
 /// <p>A feature of the API Gateway control service for creating a new API from an external API definition file.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ImportRestApiFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::import_rest_api::builders::ImportRestApiInputBuilder,
 }
 impl ImportRestApiFluentBuilder {
     /// Creates a new `ImportRestApi`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::import_rest_api::ImportRestApi,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::import_rest_api::ImportRestApiError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_rest_api::ImportRestApiError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::import_rest_api::ImportRestApiOutput,
-        aws_smithy_http::result::SdkError<crate::operation::import_rest_api::ImportRestApiError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_rest_api::ImportRestApiError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,9 +71,9 @@ impl ImportRestApiFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::import_rest_api::ImportRestApiOutput,
-        aws_smithy_http::result::SdkError<crate::operation::import_rest_api::ImportRestApiError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_rest_api::ImportRestApiError>,
     > {
         self.send_middleware().await
     }
@@ -80,7 +83,7 @@ impl ImportRestApiFluentBuilder {
         self
     }
     /// <p>A query parameter to indicate whether to rollback the API creation (<code>true</code>) or not (<code>false</code>) when a warning is encountered. The default value is <code>false</code>.</p>
-    pub fn set_fail_on_warnings(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_fail_on_warnings(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_fail_on_warnings(input);
         self
     }
@@ -96,8 +99,8 @@ impl ImportRestApiFluentBuilder {
     /// <p>The AWS CLI command to set the regional endpoint on the imported API is:</p>
     pub fn parameters(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.parameters(k.into(), v.into());
         self
@@ -110,20 +113,20 @@ impl ImportRestApiFluentBuilder {
     /// <p>The AWS CLI command to set the regional endpoint on the imported API is:</p>
     pub fn set_parameters(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_parameters(input);
         self
     }
     /// <p>The POST request body containing external API definitions. Currently, only OpenAPI definition JSON/YAML files are supported. The maximum size of the API definition file is 6MB.</p>
-    pub fn body(mut self, input: aws_smithy_types::Blob) -> Self {
+    pub fn body(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.inner = self.inner.body(input);
         self
     }
     /// <p>The POST request body containing external API definitions. Currently, only OpenAPI definition JSON/YAML files are supported. The maximum size of the API definition file is 6MB.</p>
-    pub fn set_body(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
+    pub fn set_body(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.inner = self.inner.set_body(input);
         self
     }

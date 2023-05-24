@@ -7,29 +7,29 @@ pub use crate::operation::create_cluster_snapshot::_create_cluster_snapshot_inpu
 ///
 /// <p>Creates a manual snapshot of the specified cluster. The cluster must be in the <code>available</code> state. </p>
 /// <p> For more information about working with snapshots, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon Redshift Snapshots</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateClusterSnapshotFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_cluster_snapshot::builders::CreateClusterSnapshotInputBuilder,
 }
 impl CreateClusterSnapshotFluentBuilder {
     /// Creates a new `CreateClusterSnapshot`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_cluster_snapshot::CreateClusterSnapshot,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_cluster_snapshot::CreateClusterSnapshotError,
         >,
     > {
@@ -37,30 +37,33 @@ impl CreateClusterSnapshotFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_cluster_snapshot::CreateClusterSnapshotOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_cluster_snapshot::CreateClusterSnapshotError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -73,9 +76,9 @@ impl CreateClusterSnapshotFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_cluster_snapshot::CreateClusterSnapshotOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_cluster_snapshot::CreateClusterSnapshotError,
         >,
     > {
@@ -90,7 +93,10 @@ impl CreateClusterSnapshotFluentBuilder {
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
     /// <p>Example: <code>my-snapshot-id</code> </p>
-    pub fn snapshot_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn snapshot_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.snapshot_identifier(input.into());
         self
     }
@@ -105,20 +111,23 @@ impl CreateClusterSnapshotFluentBuilder {
     /// <p>Example: <code>my-snapshot-id</code> </p>
     pub fn set_snapshot_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_snapshot_identifier(input);
         self
     }
     /// <p>The cluster identifier for which you want a snapshot.</p>
-    pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn cluster_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.cluster_identifier(input.into());
         self
     }
     /// <p>The cluster identifier for which you want a snapshot.</p>
     pub fn set_cluster_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_cluster_identifier(input);
         self
@@ -133,7 +142,10 @@ impl CreateClusterSnapshotFluentBuilder {
     /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely. </p>
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
     /// <p>The default value is -1.</p>
-    pub fn set_manual_snapshot_retention_period(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_manual_snapshot_retention_period(
+        mut self,
+        input: ::std::option::Option<i32>,
+    ) -> Self {
         self.inner = self.inner.set_manual_snapshot_retention_period(input);
         self
     }
@@ -149,7 +161,7 @@ impl CreateClusterSnapshotFluentBuilder {
     /// <p>A list of tag instances.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self

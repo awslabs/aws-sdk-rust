@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopJob`](crate::operation::stop_job::builders::StopJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl Into<String>)`](crate::operation::stop_job::builders::StopJobFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::stop_job::builders::StopJobFluentBuilder::set_arn): <p>Represents the Amazon Resource Name (ARN) of the Device Farm job to stop.</p>
+    ///   - [`arn(impl ::std::convert::Into<String>)`](crate::operation::stop_job::builders::StopJobFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::stop_job::builders::StopJobFluentBuilder::set_arn): <p>Represents the Amazon Resource Name (ARN) of the Device Farm job to stop.</p>
     /// - On success, responds with [`StopJobOutput`](crate::operation::stop_job::StopJobOutput) with field(s):
     ///   - [`job(Option<Job>)`](crate::operation::stop_job::StopJobOutput::job): <p>The job that was stopped.</p>
     /// - On failure, responds with [`SdkError<StopJobError>`](crate::operation::stop_job::StopJobError)

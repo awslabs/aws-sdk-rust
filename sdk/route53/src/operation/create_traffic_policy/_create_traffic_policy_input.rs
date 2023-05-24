@@ -2,29 +2,29 @@
 
 /// <p>A complex type that contains information about the traffic policy that you want to create.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateTrafficPolicyInput {
     /// <p>The name of the traffic policy.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The definition of this traffic policy in JSON format. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html">Traffic Policy Document Format</a>.</p>
     #[doc(hidden)]
-    pub document: std::option::Option<std::string::String>,
+    pub document: ::std::option::Option<::std::string::String>,
     /// <p>(Optional) Any comments that you want to include about the traffic policy.</p>
     #[doc(hidden)]
-    pub comment: std::option::Option<std::string::String>,
+    pub comment: ::std::option::Option<::std::string::String>,
 }
 impl CreateTrafficPolicyInput {
     /// <p>The name of the traffic policy.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The definition of this traffic policy in JSON format. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html">Traffic Policy Document Format</a>.</p>
-    pub fn document(&self) -> std::option::Option<&str> {
+    pub fn document(&self) -> ::std::option::Option<&str> {
         self.document.as_deref()
     }
     /// <p>(Optional) Any comments that you want to include about the traffic policy.</p>
-    pub fn comment(&self) -> std::option::Option<&str> {
+    pub fn comment(&self) -> ::std::option::Option<&str> {
         self.comment.as_deref()
     }
 }
@@ -39,51 +39,53 @@ impl CreateTrafficPolicyInput {
 
 /// A builder for [`CreateTrafficPolicyInput`](crate::operation::create_traffic_policy::CreateTrafficPolicyInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateTrafficPolicyInputBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) document: std::option::Option<std::string::String>,
-    pub(crate) comment: std::option::Option<std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) document: ::std::option::Option<::std::string::String>,
+    pub(crate) comment: ::std::option::Option<::std::string::String>,
 }
 impl CreateTrafficPolicyInputBuilder {
     /// <p>The name of the traffic policy.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the traffic policy.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The definition of this traffic policy in JSON format. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html">Traffic Policy Document Format</a>.</p>
-    pub fn document(mut self, input: impl Into<std::string::String>) -> Self {
-        self.document = Some(input.into());
+    pub fn document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.document = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The definition of this traffic policy in JSON format. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html">Traffic Policy Document Format</a>.</p>
-    pub fn set_document(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.document = input;
         self
     }
     /// <p>(Optional) Any comments that you want to include about the traffic policy.</p>
-    pub fn comment(mut self, input: impl Into<std::string::String>) -> Self {
-        self.comment = Some(input.into());
+    pub fn comment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.comment = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>(Optional) Any comments that you want to include about the traffic policy.</p>
-    pub fn set_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.comment = input;
         self
     }
     /// Consumes the builder and constructs a [`CreateTrafficPolicyInput`](crate::operation::create_traffic_policy::CreateTrafficPolicyInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::create_traffic_policy::CreateTrafficPolicyInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::create_traffic_policy::CreateTrafficPolicyInput {
                 name: self.name,
                 document: self.document,

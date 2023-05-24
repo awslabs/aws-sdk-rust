@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopStreamProcessor`](crate::operation::stop_stream_processor::builders::StopStreamProcessorFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::stop_stream_processor::builders::StopStreamProcessorFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::stop_stream_processor::builders::StopStreamProcessorFluentBuilder::set_name): <p>The name of a stream processor created by <code>CreateStreamProcessor</code>.</p>
+    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::stop_stream_processor::builders::StopStreamProcessorFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::stop_stream_processor::builders::StopStreamProcessorFluentBuilder::set_name): <p>The name of a stream processor created by <code>CreateStreamProcessor</code>.</p>
     /// - On success, responds with [`StopStreamProcessorOutput`](crate::operation::stop_stream_processor::StopStreamProcessorOutput)
     /// - On failure, responds with [`SdkError<StopStreamProcessorError>`](crate::operation::stop_stream_processor::StopStreamProcessorError)
     pub fn stop_stream_processor(

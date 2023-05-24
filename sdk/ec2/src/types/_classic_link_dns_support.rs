@@ -2,22 +2,22 @@
 
 /// <p>Describes the ClassicLink DNS support status of a VPC.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClassicLinkDnsSupport {
     /// <p>Indicates whether ClassicLink DNS support is enabled for the VPC.</p>
     #[doc(hidden)]
-    pub classic_link_dns_supported: std::option::Option<bool>,
+    pub classic_link_dns_supported: ::std::option::Option<bool>,
     /// <p>The ID of the VPC.</p>
     #[doc(hidden)]
-    pub vpc_id: std::option::Option<std::string::String>,
+    pub vpc_id: ::std::option::Option<::std::string::String>,
 }
 impl ClassicLinkDnsSupport {
     /// <p>Indicates whether ClassicLink DNS support is enabled for the VPC.</p>
-    pub fn classic_link_dns_supported(&self) -> std::option::Option<bool> {
+    pub fn classic_link_dns_supported(&self) -> ::std::option::Option<bool> {
         self.classic_link_dns_supported
     }
     /// <p>The ID of the VPC.</p>
-    pub fn vpc_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl ClassicLinkDnsSupport {
 
 /// A builder for [`ClassicLinkDnsSupport`](crate::types::ClassicLinkDnsSupport).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ClassicLinkDnsSupportBuilder {
-    pub(crate) classic_link_dns_supported: std::option::Option<bool>,
-    pub(crate) vpc_id: std::option::Option<std::string::String>,
+    pub(crate) classic_link_dns_supported: ::std::option::Option<bool>,
+    pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
 }
 impl ClassicLinkDnsSupportBuilder {
     /// <p>Indicates whether ClassicLink DNS support is enabled for the VPC.</p>
     pub fn classic_link_dns_supported(mut self, input: bool) -> Self {
-        self.classic_link_dns_supported = Some(input);
+        self.classic_link_dns_supported = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether ClassicLink DNS support is enabled for the VPC.</p>
-    pub fn set_classic_link_dns_supported(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_classic_link_dns_supported(mut self, input: ::std::option::Option<bool>) -> Self {
         self.classic_link_dns_supported = input;
         self
     }
     /// <p>The ID of the VPC.</p>
-    pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.vpc_id = Some(input.into());
+    pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.vpc_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the VPC.</p>
-    pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
     }

@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum LineChartType {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum LineChartType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for LineChartType {
+impl ::std::convert::From<&str> for LineChartType {
     fn from(s: &str) -> Self {
         match s {
             "AREA" => LineChartType::Area,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for LineChartType {
         }
     }
 }
-impl std::str::FromStr for LineChartType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for LineChartType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LineChartType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(LineChartType::from(s))
     }
 }
 impl LineChartType {
@@ -91,7 +91,7 @@ impl LineChartType {
         &["AREA", "LINE", "STACKED_AREA"]
     }
 }
-impl AsRef<str> for LineChartType {
+impl ::std::convert::AsRef<str> for LineChartType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

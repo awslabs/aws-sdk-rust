@@ -2,29 +2,29 @@
 
 /// <p>Describes a WorkSpace that could not be rebooted. (<code>RebootWorkspaces</code>), rebuilt (<code>RebuildWorkspaces</code>), restored (<code>RestoreWorkspace</code>), terminated (<code>TerminateWorkspaces</code>), started (<code>StartWorkspaces</code>), or stopped (<code>StopWorkspaces</code>).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FailedWorkspaceChangeRequest {
     /// <p>The identifier of the WorkSpace.</p>
     #[doc(hidden)]
-    pub workspace_id: std::option::Option<std::string::String>,
+    pub workspace_id: ::std::option::Option<::std::string::String>,
     /// <p>The error code that is returned if the WorkSpace cannot be rebooted.</p>
     #[doc(hidden)]
-    pub error_code: std::option::Option<std::string::String>,
+    pub error_code: ::std::option::Option<::std::string::String>,
     /// <p>The text of the error message that is returned if the WorkSpace cannot be rebooted.</p>
     #[doc(hidden)]
-    pub error_message: std::option::Option<std::string::String>,
+    pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl FailedWorkspaceChangeRequest {
     /// <p>The identifier of the WorkSpace.</p>
-    pub fn workspace_id(&self) -> std::option::Option<&str> {
+    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
         self.workspace_id.as_deref()
     }
     /// <p>The error code that is returned if the WorkSpace cannot be rebooted.</p>
-    pub fn error_code(&self) -> std::option::Option<&str> {
+    pub fn error_code(&self) -> ::std::option::Option<&str> {
         self.error_code.as_deref()
     }
     /// <p>The text of the error message that is returned if the WorkSpace cannot be rebooted.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<&str> {
         self.error_message.as_deref()
     }
 }
@@ -37,40 +37,48 @@ impl FailedWorkspaceChangeRequest {
 
 /// A builder for [`FailedWorkspaceChangeRequest`](crate::types::FailedWorkspaceChangeRequest).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FailedWorkspaceChangeRequestBuilder {
-    pub(crate) workspace_id: std::option::Option<std::string::String>,
-    pub(crate) error_code: std::option::Option<std::string::String>,
-    pub(crate) error_message: std::option::Option<std::string::String>,
+    pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
+    pub(crate) error_code: ::std::option::Option<::std::string::String>,
+    pub(crate) error_message: ::std::option::Option<::std::string::String>,
 }
 impl FailedWorkspaceChangeRequestBuilder {
     /// <p>The identifier of the WorkSpace.</p>
-    pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.workspace_id = Some(input.into());
+    pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.workspace_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the WorkSpace.</p>
-    pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workspace_id = input;
         self
     }
     /// <p>The error code that is returned if the WorkSpace cannot be rebooted.</p>
-    pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
-        self.error_code = Some(input.into());
+    pub fn error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.error_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The error code that is returned if the WorkSpace cannot be rebooted.</p>
-    pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_code = input;
         self
     }
     /// <p>The text of the error message that is returned if the WorkSpace cannot be rebooted.</p>
-    pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.error_message = Some(input.into());
+    pub fn error_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The text of the error message that is returned if the WorkSpace cannot be rebooted.</p>
-    pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_error_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.error_message = input;
         self
     }

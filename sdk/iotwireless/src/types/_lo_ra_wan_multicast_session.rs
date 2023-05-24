@@ -2,43 +2,43 @@
 
 /// <p>The LoRaWAN information used with the multicast session.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoRaWanMulticastSession {
     /// <p>Downlink data rate.</p>
     #[doc(hidden)]
-    pub dl_dr: std::option::Option<i32>,
+    pub dl_dr: ::std::option::Option<i32>,
     /// <p>Downlink frequency.</p>
     #[doc(hidden)]
-    pub dl_freq: std::option::Option<i32>,
+    pub dl_freq: ::std::option::Option<i32>,
     /// <p>Timestamp of when the multicast group session is to start.</p>
     #[doc(hidden)]
-    pub session_start_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub session_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>How long before a multicast group session is to timeout.</p>
     #[doc(hidden)]
-    pub session_timeout: std::option::Option<i32>,
+    pub session_timeout: ::std::option::Option<i32>,
     /// <p>The PingSlotPeriod value.</p>
     #[doc(hidden)]
-    pub ping_slot_period: std::option::Option<i32>,
+    pub ping_slot_period: ::std::option::Option<i32>,
 }
 impl LoRaWanMulticastSession {
     /// <p>Downlink data rate.</p>
-    pub fn dl_dr(&self) -> std::option::Option<i32> {
+    pub fn dl_dr(&self) -> ::std::option::Option<i32> {
         self.dl_dr
     }
     /// <p>Downlink frequency.</p>
-    pub fn dl_freq(&self) -> std::option::Option<i32> {
+    pub fn dl_freq(&self) -> ::std::option::Option<i32> {
         self.dl_freq
     }
     /// <p>Timestamp of when the multicast group session is to start.</p>
-    pub fn session_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn session_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.session_start_time.as_ref()
     }
     /// <p>How long before a multicast group session is to timeout.</p>
-    pub fn session_timeout(&self) -> std::option::Option<i32> {
+    pub fn session_timeout(&self) -> ::std::option::Option<i32> {
         self.session_timeout
     }
     /// <p>The PingSlotPeriod value.</p>
-    pub fn ping_slot_period(&self) -> std::option::Option<i32> {
+    pub fn ping_slot_period(&self) -> ::std::option::Option<i32> {
         self.ping_slot_period
     }
 }
@@ -51,65 +51,67 @@ impl LoRaWanMulticastSession {
 
 /// A builder for [`LoRaWanMulticastSession`](crate::types::LoRaWanMulticastSession).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LoRaWanMulticastSessionBuilder {
-    pub(crate) dl_dr: std::option::Option<i32>,
-    pub(crate) dl_freq: std::option::Option<i32>,
-    pub(crate) session_start_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) session_timeout: std::option::Option<i32>,
-    pub(crate) ping_slot_period: std::option::Option<i32>,
+    pub(crate) dl_dr: ::std::option::Option<i32>,
+    pub(crate) dl_freq: ::std::option::Option<i32>,
+    pub(crate) session_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) session_timeout: ::std::option::Option<i32>,
+    pub(crate) ping_slot_period: ::std::option::Option<i32>,
 }
 impl LoRaWanMulticastSessionBuilder {
     /// <p>Downlink data rate.</p>
     pub fn dl_dr(mut self, input: i32) -> Self {
-        self.dl_dr = Some(input);
+        self.dl_dr = ::std::option::Option::Some(input);
         self
     }
     /// <p>Downlink data rate.</p>
-    pub fn set_dl_dr(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_dl_dr(mut self, input: ::std::option::Option<i32>) -> Self {
         self.dl_dr = input;
         self
     }
     /// <p>Downlink frequency.</p>
     pub fn dl_freq(mut self, input: i32) -> Self {
-        self.dl_freq = Some(input);
+        self.dl_freq = ::std::option::Option::Some(input);
         self
     }
     /// <p>Downlink frequency.</p>
-    pub fn set_dl_freq(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_dl_freq(mut self, input: ::std::option::Option<i32>) -> Self {
         self.dl_freq = input;
         self
     }
     /// <p>Timestamp of when the multicast group session is to start.</p>
-    pub fn session_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.session_start_time = Some(input);
+    pub fn session_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.session_start_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>Timestamp of when the multicast group session is to start.</p>
     pub fn set_session_start_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.session_start_time = input;
         self
     }
     /// <p>How long before a multicast group session is to timeout.</p>
     pub fn session_timeout(mut self, input: i32) -> Self {
-        self.session_timeout = Some(input);
+        self.session_timeout = ::std::option::Option::Some(input);
         self
     }
     /// <p>How long before a multicast group session is to timeout.</p>
-    pub fn set_session_timeout(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_session_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
         self.session_timeout = input;
         self
     }
     /// <p>The PingSlotPeriod value.</p>
     pub fn ping_slot_period(mut self, input: i32) -> Self {
-        self.ping_slot_period = Some(input);
+        self.ping_slot_period = ::std::option::Option::Some(input);
         self
     }
     /// <p>The PingSlotPeriod value.</p>
-    pub fn set_ping_slot_period(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_ping_slot_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.ping_slot_period = input;
         self
     }

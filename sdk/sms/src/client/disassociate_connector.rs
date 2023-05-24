@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DisassociateConnector`](crate::operation::disassociate_connector::builders::DisassociateConnectorFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`connector_id(impl Into<String>)`](crate::operation::disassociate_connector::builders::DisassociateConnectorFluentBuilder::connector_id) / [`set_connector_id(Option<String>)`](crate::operation::disassociate_connector::builders::DisassociateConnectorFluentBuilder::set_connector_id): <p>The ID of the connector.</p>
+    ///   - [`connector_id(impl ::std::convert::Into<String>)`](crate::operation::disassociate_connector::builders::DisassociateConnectorFluentBuilder::connector_id) / [`set_connector_id(Option<String>)`](crate::operation::disassociate_connector::builders::DisassociateConnectorFluentBuilder::set_connector_id): <p>The ID of the connector.</p>
     /// - On success, responds with [`DisassociateConnectorOutput`](crate::operation::disassociate_connector::DisassociateConnectorOutput)
     /// - On failure, responds with [`SdkError<DisassociateConnectorError>`](crate::operation::disassociate_connector::DisassociateConnectorError)
     pub fn disassociate_connector(

@@ -2,15 +2,15 @@
 
 /// <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq">dead-letter queue</a> for failed asynchronous invocations.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeadLetterConfig {
     /// <p>The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic.</p>
     #[doc(hidden)]
-    pub target_arn: std::option::Option<std::string::String>,
+    pub target_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeadLetterConfig {
     /// <p>The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic.</p>
-    pub fn target_arn(&self) -> std::option::Option<&str> {
+    pub fn target_arn(&self) -> ::std::option::Option<&str> {
         self.target_arn.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl DeadLetterConfig {
 
 /// A builder for [`DeadLetterConfig`](crate::types::DeadLetterConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeadLetterConfigBuilder {
-    pub(crate) target_arn: std::option::Option<std::string::String>,
+    pub(crate) target_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeadLetterConfigBuilder {
     /// <p>The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic.</p>
-    pub fn target_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.target_arn = Some(input.into());
+    pub fn target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.target_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic.</p>
-    pub fn set_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_target_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_arn = input;
         self
     }

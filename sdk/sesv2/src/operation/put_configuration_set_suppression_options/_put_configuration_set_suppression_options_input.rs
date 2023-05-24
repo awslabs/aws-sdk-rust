@@ -2,22 +2,23 @@
 
 /// <p>A request to change the account suppression list preferences for a specific configuration set.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutConfigurationSetSuppressionOptionsInput {
     /// <p>The name of the configuration set to change the suppression list preferences for.</p>
     #[doc(hidden)]
-    pub configuration_set_name: std::option::Option<std::string::String>,
+    pub configuration_set_name: ::std::option::Option<::std::string::String>,
     /// <p>A list that contains the reasons that email addresses are automatically added to the suppression list for your account. This list can contain any or all of the following:</p>
     /// <ul>
     /// <li> <p> <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a complaint.</p> </li>
     /// <li> <p> <code>BOUNCE</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a hard bounce.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub suppressed_reasons: std::option::Option<std::vec::Vec<crate::types::SuppressionListReason>>,
+    pub suppressed_reasons:
+        ::std::option::Option<::std::vec::Vec<crate::types::SuppressionListReason>>,
 }
 impl PutConfigurationSetSuppressionOptionsInput {
     /// <p>The name of the configuration set to change the suppression list preferences for.</p>
-    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+    pub fn configuration_set_name(&self) -> ::std::option::Option<&str> {
         self.configuration_set_name.as_deref()
     }
     /// <p>A list that contains the reasons that email addresses are automatically added to the suppression list for your account. This list can contain any or all of the following:</p>
@@ -27,7 +28,7 @@ impl PutConfigurationSetSuppressionOptionsInput {
     /// </ul>
     pub fn suppressed_reasons(
         &self,
-    ) -> std::option::Option<&[crate::types::SuppressionListReason]> {
+    ) -> ::std::option::Option<&[crate::types::SuppressionListReason]> {
         self.suppressed_reasons.as_deref()
     }
 }
@@ -40,22 +41,27 @@ impl PutConfigurationSetSuppressionOptionsInput {
 
 /// A builder for [`PutConfigurationSetSuppressionOptionsInput`](crate::operation::put_configuration_set_suppression_options::PutConfigurationSetSuppressionOptionsInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PutConfigurationSetSuppressionOptionsInputBuilder {
-    pub(crate) configuration_set_name: std::option::Option<std::string::String>,
+    pub(crate) configuration_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) suppressed_reasons:
-        std::option::Option<std::vec::Vec<crate::types::SuppressionListReason>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::SuppressionListReason>>,
 }
 impl PutConfigurationSetSuppressionOptionsInputBuilder {
     /// <p>The name of the configuration set to change the suppression list preferences for.</p>
-    pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.configuration_set_name = Some(input.into());
+    pub fn configuration_set_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.configuration_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the configuration set to change the suppression list preferences for.</p>
     pub fn set_configuration_set_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.configuration_set_name = input;
         self
@@ -72,7 +78,7 @@ impl PutConfigurationSetSuppressionOptionsInputBuilder {
     pub fn suppressed_reasons(mut self, input: crate::types::SuppressionListReason) -> Self {
         let mut v = self.suppressed_reasons.unwrap_or_default();
         v.push(input);
-        self.suppressed_reasons = Some(v);
+        self.suppressed_reasons = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list that contains the reasons that email addresses are automatically added to the suppression list for your account. This list can contain any or all of the following:</p>
@@ -82,14 +88,14 @@ impl PutConfigurationSetSuppressionOptionsInputBuilder {
     /// </ul>
     pub fn set_suppressed_reasons(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SuppressionListReason>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SuppressionListReason>>,
     ) -> Self {
         self.suppressed_reasons = input;
         self
     }
     /// Consumes the builder and constructs a [`PutConfigurationSetSuppressionOptionsInput`](crate::operation::put_configuration_set_suppression_options::PutConfigurationSetSuppressionOptionsInput).
-    pub fn build(self) -> Result<crate::operation::put_configuration_set_suppression_options::PutConfigurationSetSuppressionOptionsInput, aws_smithy_http::operation::error::BuildError>{
-        Ok(
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_configuration_set_suppression_options::PutConfigurationSetSuppressionOptionsInput, ::aws_smithy_http::operation::error::BuildError>{
+        ::std::result::Result::Ok(
             crate::operation::put_configuration_set_suppression_options::PutConfigurationSetSuppressionOptionsInput {
                 configuration_set_name: self.configuration_set_name
                 ,

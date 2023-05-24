@@ -2,22 +2,22 @@
 
 /// <p> Describes the Amazon Kinesis Firehose delivery stream that is configured as the streaming source in the application input configuration. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KinesisFirehoseInputDescription {
     /// <p>Amazon Resource Name (ARN) of the Amazon Kinesis Firehose delivery stream.</p>
     #[doc(hidden)]
-    pub resource_arn: std::option::Option<std::string::String>,
+    pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>ARN of the IAM role that Amazon Kinesis Analytics assumes to access the stream.</p>
     #[doc(hidden)]
-    pub role_arn: std::option::Option<std::string::String>,
+    pub role_arn: ::std::option::Option<::std::string::String>,
 }
 impl KinesisFirehoseInputDescription {
     /// <p>Amazon Resource Name (ARN) of the Amazon Kinesis Firehose delivery stream.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
     /// <p>ARN of the IAM role that Amazon Kinesis Analytics assumes to access the stream.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl KinesisFirehoseInputDescription {
 
 /// A builder for [`KinesisFirehoseInputDescription`](crate::types::KinesisFirehoseInputDescription).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct KinesisFirehoseInputDescriptionBuilder {
-    pub(crate) resource_arn: std::option::Option<std::string::String>,
-    pub(crate) role_arn: std::option::Option<std::string::String>,
+    pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) role_arn: ::std::option::Option<::std::string::String>,
 }
 impl KinesisFirehoseInputDescriptionBuilder {
     /// <p>Amazon Resource Name (ARN) of the Amazon Kinesis Firehose delivery stream.</p>
-    pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_arn = Some(input.into());
+    pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Amazon Resource Name (ARN) of the Amazon Kinesis Firehose delivery stream.</p>
-    pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
     }
     /// <p>ARN of the IAM role that Amazon Kinesis Analytics assumes to access the stream.</p>
-    pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.role_arn = Some(input.into());
+    pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>ARN of the IAM role that Amazon Kinesis Analytics assumes to access the stream.</p>
-    pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }

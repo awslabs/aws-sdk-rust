@@ -2,22 +2,22 @@
 
 /// <p>A trigger failed to run.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RepositoryTriggerExecutionFailure {
     /// <p>The name of the trigger that did not run.</p>
     #[doc(hidden)]
-    pub trigger: std::option::Option<std::string::String>,
+    pub trigger: ::std::option::Option<::std::string::String>,
     /// <p>Message information about the trigger that did not run.</p>
     #[doc(hidden)]
-    pub failure_message: std::option::Option<std::string::String>,
+    pub failure_message: ::std::option::Option<::std::string::String>,
 }
 impl RepositoryTriggerExecutionFailure {
     /// <p>The name of the trigger that did not run.</p>
-    pub fn trigger(&self) -> std::option::Option<&str> {
+    pub fn trigger(&self) -> ::std::option::Option<&str> {
         self.trigger.as_deref()
     }
     /// <p>Message information about the trigger that did not run.</p>
-    pub fn failure_message(&self) -> std::option::Option<&str> {
+    pub fn failure_message(&self) -> ::std::option::Option<&str> {
         self.failure_message.as_deref()
     }
 }
@@ -30,29 +30,37 @@ impl RepositoryTriggerExecutionFailure {
 
 /// A builder for [`RepositoryTriggerExecutionFailure`](crate::types::RepositoryTriggerExecutionFailure).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RepositoryTriggerExecutionFailureBuilder {
-    pub(crate) trigger: std::option::Option<std::string::String>,
-    pub(crate) failure_message: std::option::Option<std::string::String>,
+    pub(crate) trigger: ::std::option::Option<::std::string::String>,
+    pub(crate) failure_message: ::std::option::Option<::std::string::String>,
 }
 impl RepositoryTriggerExecutionFailureBuilder {
     /// <p>The name of the trigger that did not run.</p>
-    pub fn trigger(mut self, input: impl Into<std::string::String>) -> Self {
-        self.trigger = Some(input.into());
+    pub fn trigger(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.trigger = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the trigger that did not run.</p>
-    pub fn set_trigger(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_trigger(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.trigger = input;
         self
     }
     /// <p>Message information about the trigger that did not run.</p>
-    pub fn failure_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.failure_message = Some(input.into());
+    pub fn failure_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.failure_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Message information about the trigger that did not run.</p>
-    pub fn set_failure_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_failure_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.failure_message = input;
         self
     }

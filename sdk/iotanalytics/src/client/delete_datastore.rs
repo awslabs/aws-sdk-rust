@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteDatastore`](crate::operation::delete_datastore::builders::DeleteDatastoreFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`datastore_name(impl Into<String>)`](crate::operation::delete_datastore::builders::DeleteDatastoreFluentBuilder::datastore_name) / [`set_datastore_name(Option<String>)`](crate::operation::delete_datastore::builders::DeleteDatastoreFluentBuilder::set_datastore_name): <p>The name of the data store to delete.</p>
+    ///   - [`datastore_name(impl ::std::convert::Into<String>)`](crate::operation::delete_datastore::builders::DeleteDatastoreFluentBuilder::datastore_name) / [`set_datastore_name(Option<String>)`](crate::operation::delete_datastore::builders::DeleteDatastoreFluentBuilder::set_datastore_name): <p>The name of the data store to delete.</p>
     /// - On success, responds with [`DeleteDatastoreOutput`](crate::operation::delete_datastore::DeleteDatastoreOutput)
     /// - On failure, responds with [`SdkError<DeleteDatastoreError>`](crate::operation::delete_datastore::DeleteDatastoreError)
     pub fn delete_datastore(

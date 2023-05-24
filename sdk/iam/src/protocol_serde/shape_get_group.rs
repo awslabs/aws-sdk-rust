@@ -2,7 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_group_http_error(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::get_group::GetGroupOutput,
@@ -15,7 +15,7 @@ pub fn de_get_group_http_error(
         _response_body,
     )
     .map_err(crate::operation::get_group::GetGroupError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
+    generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
@@ -65,7 +65,7 @@ pub fn de_get_group_http_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_group_http_response_with_props(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::get_group::GetGroupOutput,
@@ -77,7 +77,7 @@ pub fn de_get_group_http_response_with_props(
         output = crate::protocol_serde::shape_get_group::de_get_group(_response_body, output)
             .map_err(crate::operation::get_group::GetGroupError::unhandled)?;
         output._set_request_id(
-            aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
+            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
         );
         output.build()
     })
@@ -89,16 +89,16 @@ pub fn de_get_group(
     mut builder: crate::operation::get_group::builders::GetGroupOutputBuilder,
 ) -> Result<
     crate::operation::get_group::builders::GetGroupOutputBuilder,
-    aws_smithy_xml::decode::XmlDecodeError,
+    ::aws_smithy_xml::decode::XmlDecodeError,
 > {
-    let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
+    let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetGroupResponse")) {
-        return Err(aws_smithy_xml::decode::XmlDecodeError::custom(format!(
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected GetGroupResponse got {:?}",
             start_el
         )));
@@ -106,7 +106,7 @@ pub fn de_get_group(
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("GetGroupResult")) {
-            return Err(aws_smithy_xml::decode::XmlDecodeError::custom(format!(
+            return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
                 "invalid result, expected GetGroupResult got {:?}",
                 start_el
             )));
@@ -137,10 +137,10 @@ pub fn de_get_group(
                 let var_3 =
                     Some(
                          {
-                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
-                            .map_err(|_|aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
                         }
                         ?
                     )
@@ -151,8 +151,8 @@ pub fn de_get_group(
             s if s.matches("Marker") /* Marker com.amazonaws.iam.synthetic#GetGroupOutput$Marker */ =>  {
                 let var_4 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -165,7 +165,7 @@ pub fn de_get_group(
         }
         }
     } else {
-        return Err(aws_smithy_xml::decode::XmlDecodeError::custom(
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(
             "expected GetGroupResult tag",
         ));
     };

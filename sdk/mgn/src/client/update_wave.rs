@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateWave`](crate::operation::update_wave::builders::UpdateWaveFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`wave_id(impl Into<String>)`](crate::operation::update_wave::builders::UpdateWaveFluentBuilder::wave_id) / [`set_wave_id(Option<String>)`](crate::operation::update_wave::builders::UpdateWaveFluentBuilder::set_wave_id): <p>Wave ID.</p>
-    ///   - [`name(impl Into<String>)`](crate::operation::update_wave::builders::UpdateWaveFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_wave::builders::UpdateWaveFluentBuilder::set_name): <p>Wave name.</p>
-    ///   - [`description(impl Into<String>)`](crate::operation::update_wave::builders::UpdateWaveFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_wave::builders::UpdateWaveFluentBuilder::set_description): <p>Wave description.</p>
+    ///   - [`wave_id(impl ::std::convert::Into<String>)`](crate::operation::update_wave::builders::UpdateWaveFluentBuilder::wave_id) / [`set_wave_id(Option<String>)`](crate::operation::update_wave::builders::UpdateWaveFluentBuilder::set_wave_id): <p>Wave ID.</p>
+    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::update_wave::builders::UpdateWaveFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_wave::builders::UpdateWaveFluentBuilder::set_name): <p>Wave name.</p>
+    ///   - [`description(impl ::std::convert::Into<String>)`](crate::operation::update_wave::builders::UpdateWaveFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_wave::builders::UpdateWaveFluentBuilder::set_description): <p>Wave description.</p>
     /// - On success, responds with [`UpdateWaveOutput`](crate::operation::update_wave::UpdateWaveOutput) with field(s):
     ///   - [`wave_id(Option<String>)`](crate::operation::update_wave::UpdateWaveOutput::wave_id): <p>Wave ID.</p>
     ///   - [`arn(Option<String>)`](crate::operation::update_wave::UpdateWaveOutput::arn): <p>Wave ARN.</p>

@@ -2,20 +2,20 @@
 
 /// <p>A complex type that contains the response to a <code>GetHostedZoneCount</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetHostedZoneCountOutput {
     /// <p>The total number of public and private hosted zones that are associated with the current Amazon Web Services account.</p>
     #[doc(hidden)]
-    pub hosted_zone_count: std::option::Option<i64>,
+    pub hosted_zone_count: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }
 impl GetHostedZoneCountOutput {
     /// <p>The total number of public and private hosted zones that are associated with the current Amazon Web Services account.</p>
-    pub fn hosted_zone_count(&self) -> std::option::Option<i64> {
+    pub fn hosted_zone_count(&self) -> ::std::option::Option<i64> {
         self.hosted_zone_count
     }
 }
-impl aws_http::request_id::RequestId for GetHostedZoneCountOutput {
+impl ::aws_http::request_id::RequestId for GetHostedZoneCountOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -31,19 +31,21 @@ impl GetHostedZoneCountOutput {
 
 /// A builder for [`GetHostedZoneCountOutput`](crate::operation::get_hosted_zone_count::GetHostedZoneCountOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetHostedZoneCountOutputBuilder {
-    pub(crate) hosted_zone_count: std::option::Option<i64>,
+    pub(crate) hosted_zone_count: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }
 impl GetHostedZoneCountOutputBuilder {
     /// <p>The total number of public and private hosted zones that are associated with the current Amazon Web Services account.</p>
     pub fn hosted_zone_count(mut self, input: i64) -> Self {
-        self.hosted_zone_count = Some(input);
+        self.hosted_zone_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total number of public and private hosted zones that are associated with the current Amazon Web Services account.</p>
-    pub fn set_hosted_zone_count(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_hosted_zone_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.hosted_zone_count = input;
         self
     }

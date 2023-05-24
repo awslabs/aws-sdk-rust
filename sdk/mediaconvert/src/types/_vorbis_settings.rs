@@ -2,29 +2,29 @@
 
 /// Required when you set Codec, under AudioDescriptions&gt;CodecSettings, to the value Vorbis.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VorbisSettings {
     /// Optional. Specify the number of channels in this output audio track. Choosing Mono on the console gives you 1 output channel; choosing Stereo gives you 2. In the API, valid values are 1 and 2. The default value is 2.
     #[doc(hidden)]
-    pub channels: std::option::Option<i32>,
+    pub channels: ::std::option::Option<i32>,
     /// Optional. Specify the audio sample rate in Hz. Valid values are 22050, 32000, 44100, and 48000. The default value is 48000.
     #[doc(hidden)]
-    pub sample_rate: std::option::Option<i32>,
+    pub sample_rate: ::std::option::Option<i32>,
     /// Optional. Specify the variable audio quality of this Vorbis output from -1 (lowest quality, ~45 kbit/s) to 10 (highest quality, ~500 kbit/s). The default value is 4 (~128 kbit/s). Values 5 and 6 are approximately 160 and 192 kbit/s, respectively.
     #[doc(hidden)]
-    pub vbr_quality: std::option::Option<i32>,
+    pub vbr_quality: ::std::option::Option<i32>,
 }
 impl VorbisSettings {
     /// Optional. Specify the number of channels in this output audio track. Choosing Mono on the console gives you 1 output channel; choosing Stereo gives you 2. In the API, valid values are 1 and 2. The default value is 2.
-    pub fn channels(&self) -> std::option::Option<i32> {
+    pub fn channels(&self) -> ::std::option::Option<i32> {
         self.channels
     }
     /// Optional. Specify the audio sample rate in Hz. Valid values are 22050, 32000, 44100, and 48000. The default value is 48000.
-    pub fn sample_rate(&self) -> std::option::Option<i32> {
+    pub fn sample_rate(&self) -> ::std::option::Option<i32> {
         self.sample_rate
     }
     /// Optional. Specify the variable audio quality of this Vorbis output from -1 (lowest quality, ~45 kbit/s) to 10 (highest quality, ~500 kbit/s). The default value is 4 (~128 kbit/s). Values 5 and 6 are approximately 160 and 192 kbit/s, respectively.
-    pub fn vbr_quality(&self) -> std::option::Option<i32> {
+    pub fn vbr_quality(&self) -> ::std::option::Option<i32> {
         self.vbr_quality
     }
 }
@@ -37,40 +37,42 @@ impl VorbisSettings {
 
 /// A builder for [`VorbisSettings`](crate::types::VorbisSettings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VorbisSettingsBuilder {
-    pub(crate) channels: std::option::Option<i32>,
-    pub(crate) sample_rate: std::option::Option<i32>,
-    pub(crate) vbr_quality: std::option::Option<i32>,
+    pub(crate) channels: ::std::option::Option<i32>,
+    pub(crate) sample_rate: ::std::option::Option<i32>,
+    pub(crate) vbr_quality: ::std::option::Option<i32>,
 }
 impl VorbisSettingsBuilder {
     /// Optional. Specify the number of channels in this output audio track. Choosing Mono on the console gives you 1 output channel; choosing Stereo gives you 2. In the API, valid values are 1 and 2. The default value is 2.
     pub fn channels(mut self, input: i32) -> Self {
-        self.channels = Some(input);
+        self.channels = ::std::option::Option::Some(input);
         self
     }
     /// Optional. Specify the number of channels in this output audio track. Choosing Mono on the console gives you 1 output channel; choosing Stereo gives you 2. In the API, valid values are 1 and 2. The default value is 2.
-    pub fn set_channels(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_channels(mut self, input: ::std::option::Option<i32>) -> Self {
         self.channels = input;
         self
     }
     /// Optional. Specify the audio sample rate in Hz. Valid values are 22050, 32000, 44100, and 48000. The default value is 48000.
     pub fn sample_rate(mut self, input: i32) -> Self {
-        self.sample_rate = Some(input);
+        self.sample_rate = ::std::option::Option::Some(input);
         self
     }
     /// Optional. Specify the audio sample rate in Hz. Valid values are 22050, 32000, 44100, and 48000. The default value is 48000.
-    pub fn set_sample_rate(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_sample_rate(mut self, input: ::std::option::Option<i32>) -> Self {
         self.sample_rate = input;
         self
     }
     /// Optional. Specify the variable audio quality of this Vorbis output from -1 (lowest quality, ~45 kbit/s) to 10 (highest quality, ~500 kbit/s). The default value is 4 (~128 kbit/s). Values 5 and 6 are approximately 160 and 192 kbit/s, respectively.
     pub fn vbr_quality(mut self, input: i32) -> Self {
-        self.vbr_quality = Some(input);
+        self.vbr_quality = ::std::option::Option::Some(input);
         self
     }
     /// Optional. Specify the variable audio quality of this Vorbis output from -1 (lowest quality, ~45 kbit/s) to 10 (highest quality, ~500 kbit/s). The default value is 4 (~128 kbit/s). Values 5 and 6 are approximately 160 and 192 kbit/s, respectively.
-    pub fn set_vbr_quality(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_vbr_quality(mut self, input: ::std::option::Option<i32>) -> Self {
         self.vbr_quality = input;
         self
     }

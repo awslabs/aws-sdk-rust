@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UnassignVolume`](crate::operation::unassign_volume::builders::UnassignVolumeFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`volume_id(impl Into<String>)`](crate::operation::unassign_volume::builders::UnassignVolumeFluentBuilder::volume_id) / [`set_volume_id(Option<String>)`](crate::operation::unassign_volume::builders::UnassignVolumeFluentBuilder::set_volume_id): <p>The volume ID.</p>
+    ///   - [`volume_id(impl ::std::convert::Into<String>)`](crate::operation::unassign_volume::builders::UnassignVolumeFluentBuilder::volume_id) / [`set_volume_id(Option<String>)`](crate::operation::unassign_volume::builders::UnassignVolumeFluentBuilder::set_volume_id): <p>The volume ID.</p>
     /// - On success, responds with [`UnassignVolumeOutput`](crate::operation::unassign_volume::UnassignVolumeOutput)
     /// - On failure, responds with [`SdkError<UnassignVolumeError>`](crate::operation::unassign_volume::UnassignVolumeError)
     pub fn unassign_volume(

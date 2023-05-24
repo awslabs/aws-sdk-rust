@@ -6,29 +6,29 @@ pub use crate::operation::start_annotation_import_job::_start_annotation_import_
 /// Fluent builder constructing a request to `StartAnnotationImportJob`.
 ///
 /// <p>Starts an annotation import job.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartAnnotationImportJobFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::start_annotation_import_job::builders::StartAnnotationImportJobInputBuilder,
 }
 impl StartAnnotationImportJobFluentBuilder {
     /// Creates a new `StartAnnotationImportJob`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::start_annotation_import_job::StartAnnotationImportJob,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::start_annotation_import_job::StartAnnotationImportJobError,
         >,
     > {
@@ -36,30 +36,33 @@ impl StartAnnotationImportJobFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::start_annotation_import_job::StartAnnotationImportJobOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::start_annotation_import_job::StartAnnotationImportJobError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,31 +75,37 @@ impl StartAnnotationImportJobFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::start_annotation_import_job::StartAnnotationImportJobOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::start_annotation_import_job::StartAnnotationImportJobError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>A destination annotation store for the job.</p>
-    pub fn destination_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn destination_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.destination_name(input.into());
         self
     }
     /// <p>A destination annotation store for the job.</p>
-    pub fn set_destination_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_destination_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_destination_name(input);
         self
     }
     /// <p>A service role for the job.</p>
-    pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
         self
     }
     /// <p>A service role for the job.</p>
-    pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
     }
@@ -112,7 +121,7 @@ impl StartAnnotationImportJobFluentBuilder {
     /// <p>Items to import.</p>
     pub fn set_items(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AnnotationImportItemSource>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AnnotationImportItemSource>>,
     ) -> Self {
         self.inner = self.inner.set_items(input);
         self
@@ -125,7 +134,7 @@ impl StartAnnotationImportJobFluentBuilder {
     /// <p>Formatting options for the annotation file.</p>
     pub fn set_format_options(
         mut self,
-        input: std::option::Option<crate::types::FormatOptions>,
+        input: ::std::option::Option<crate::types::FormatOptions>,
     ) -> Self {
         self.inner = self.inner.set_format_options(input);
         self
@@ -136,7 +145,7 @@ impl StartAnnotationImportJobFluentBuilder {
         self
     }
     /// <p>The job's left normalization setting.</p>
-    pub fn set_run_left_normalization(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_run_left_normalization(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_run_left_normalization(input);
         self
     }
@@ -147,8 +156,8 @@ impl StartAnnotationImportJobFluentBuilder {
     /// <p> The annotation schema generated by the parsed annotation data. </p>
     pub fn annotation_fields(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.annotation_fields(k.into(), v.into());
         self
@@ -156,8 +165,8 @@ impl StartAnnotationImportJobFluentBuilder {
     /// <p> The annotation schema generated by the parsed annotation data. </p>
     pub fn set_annotation_fields(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_annotation_fields(input);

@@ -4,7 +4,7 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_package_import_jobs::builders::ListPackageImportJobsFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_package_import_jobs::builders::ListPackageImportJobsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_package_import_jobs::builders::ListPackageImportJobsFluentBuilder::set_next_token): <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
+    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_package_import_jobs::builders::ListPackageImportJobsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_package_import_jobs::builders::ListPackageImportJobsFluentBuilder::set_next_token): <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     ///   - [`max_results(i32)`](crate::operation::list_package_import_jobs::builders::ListPackageImportJobsFluentBuilder::max_results) / [`set_max_results(i32)`](crate::operation::list_package_import_jobs::builders::ListPackageImportJobsFluentBuilder::set_max_results): <p>The maximum number of package import jobs to return in one page of results.</p>
     /// - On success, responds with [`ListPackageImportJobsOutput`](crate::operation::list_package_import_jobs::ListPackageImportJobsOutput) with field(s):
     ///   - [`package_import_jobs(Option<Vec<PackageImportJob>>)`](crate::operation::list_package_import_jobs::ListPackageImportJobsOutput::package_import_jobs): <p>A list of package import jobs.</p>

@@ -2,35 +2,35 @@
 
 /// <p>The facet values for the documents in the response.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FacetResult {
     /// <p>The key for the facet values. This is the same as the <code>DocumentAttributeKey</code> provided in the query.</p>
     #[doc(hidden)]
-    pub document_attribute_key: std::option::Option<std::string::String>,
+    pub document_attribute_key: ::std::option::Option<::std::string::String>,
     /// <p>The data type of the facet value. This is the same as the type defined for the index field when it was created.</p>
     #[doc(hidden)]
     pub document_attribute_value_type:
-        std::option::Option<crate::types::DocumentAttributeValueType>,
+        ::std::option::Option<crate::types::DocumentAttributeValueType>,
     /// <p>An array of key/value pairs, where the key is the value of the attribute and the count is the number of documents that share the key value.</p>
     #[doc(hidden)]
     pub document_attribute_value_count_pairs:
-        std::option::Option<std::vec::Vec<crate::types::DocumentAttributeValueCountPair>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::DocumentAttributeValueCountPair>>,
 }
 impl FacetResult {
     /// <p>The key for the facet values. This is the same as the <code>DocumentAttributeKey</code> provided in the query.</p>
-    pub fn document_attribute_key(&self) -> std::option::Option<&str> {
+    pub fn document_attribute_key(&self) -> ::std::option::Option<&str> {
         self.document_attribute_key.as_deref()
     }
     /// <p>The data type of the facet value. This is the same as the type defined for the index field when it was created.</p>
     pub fn document_attribute_value_type(
         &self,
-    ) -> std::option::Option<&crate::types::DocumentAttributeValueType> {
+    ) -> ::std::option::Option<&crate::types::DocumentAttributeValueType> {
         self.document_attribute_value_type.as_ref()
     }
     /// <p>An array of key/value pairs, where the key is the value of the attribute and the count is the number of documents that share the key value.</p>
     pub fn document_attribute_value_count_pairs(
         &self,
-    ) -> std::option::Option<&[crate::types::DocumentAttributeValueCountPair]> {
+    ) -> ::std::option::Option<&[crate::types::DocumentAttributeValueCountPair]> {
         self.document_attribute_value_count_pairs.as_deref()
     }
 }
@@ -43,24 +43,29 @@ impl FacetResult {
 
 /// A builder for [`FacetResult`](crate::types::FacetResult).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FacetResultBuilder {
-    pub(crate) document_attribute_key: std::option::Option<std::string::String>,
+    pub(crate) document_attribute_key: ::std::option::Option<::std::string::String>,
     pub(crate) document_attribute_value_type:
-        std::option::Option<crate::types::DocumentAttributeValueType>,
+        ::std::option::Option<crate::types::DocumentAttributeValueType>,
     pub(crate) document_attribute_value_count_pairs:
-        std::option::Option<std::vec::Vec<crate::types::DocumentAttributeValueCountPair>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::DocumentAttributeValueCountPair>>,
 }
 impl FacetResultBuilder {
     /// <p>The key for the facet values. This is the same as the <code>DocumentAttributeKey</code> provided in the query.</p>
-    pub fn document_attribute_key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.document_attribute_key = Some(input.into());
+    pub fn document_attribute_key(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.document_attribute_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The key for the facet values. This is the same as the <code>DocumentAttributeKey</code> provided in the query.</p>
     pub fn set_document_attribute_key(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.document_attribute_key = input;
         self
@@ -70,13 +75,13 @@ impl FacetResultBuilder {
         mut self,
         input: crate::types::DocumentAttributeValueType,
     ) -> Self {
-        self.document_attribute_value_type = Some(input);
+        self.document_attribute_value_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The data type of the facet value. This is the same as the type defined for the index field when it was created.</p>
     pub fn set_document_attribute_value_type(
         mut self,
-        input: std::option::Option<crate::types::DocumentAttributeValueType>,
+        input: ::std::option::Option<crate::types::DocumentAttributeValueType>,
     ) -> Self {
         self.document_attribute_value_type = input;
         self
@@ -94,13 +99,15 @@ impl FacetResultBuilder {
             .document_attribute_value_count_pairs
             .unwrap_or_default();
         v.push(input);
-        self.document_attribute_value_count_pairs = Some(v);
+        self.document_attribute_value_count_pairs = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of key/value pairs, where the key is the value of the attribute and the count is the number of documents that share the key value.</p>
     pub fn set_document_attribute_value_count_pairs(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DocumentAttributeValueCountPair>>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::DocumentAttributeValueCountPair>,
+        >,
     ) -> Self {
         self.document_attribute_value_count_pairs = input;
         self

@@ -2,7 +2,7 @@
 
 /// <p>Detailed information about the StackSet operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StackSetOperationStatusDetails {
     /// <p>The number of stack instances for which the StackSet operation failed.</p>
     #[doc(hidden)]
@@ -23,18 +23,20 @@ impl StackSetOperationStatusDetails {
 
 /// A builder for [`StackSetOperationStatusDetails`](crate::types::StackSetOperationStatusDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StackSetOperationStatusDetailsBuilder {
-    pub(crate) failed_stack_instances_count: std::option::Option<i32>,
+    pub(crate) failed_stack_instances_count: ::std::option::Option<i32>,
 }
 impl StackSetOperationStatusDetailsBuilder {
     /// <p>The number of stack instances for which the StackSet operation failed.</p>
     pub fn failed_stack_instances_count(mut self, input: i32) -> Self {
-        self.failed_stack_instances_count = Some(input);
+        self.failed_stack_instances_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of stack instances for which the StackSet operation failed.</p>
-    pub fn set_failed_stack_instances_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_failed_stack_instances_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.failed_stack_instances_count = input;
         self
     }

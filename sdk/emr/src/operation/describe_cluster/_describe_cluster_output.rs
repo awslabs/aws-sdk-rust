@@ -2,20 +2,20 @@
 
 /// <p>This output contains the description of the cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeClusterOutput {
     /// <p>This output contains the details for the requested cluster.</p>
     #[doc(hidden)]
-    pub cluster: std::option::Option<crate::types::Cluster>,
+    pub cluster: ::std::option::Option<crate::types::Cluster>,
     _request_id: Option<String>,
 }
 impl DescribeClusterOutput {
     /// <p>This output contains the details for the requested cluster.</p>
-    pub fn cluster(&self) -> std::option::Option<&crate::types::Cluster> {
+    pub fn cluster(&self) -> ::std::option::Option<&crate::types::Cluster> {
         self.cluster.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeClusterOutput {
+impl ::aws_http::request_id::RequestId for DescribeClusterOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,21 @@ impl DescribeClusterOutput {
 
 /// A builder for [`DescribeClusterOutput`](crate::operation::describe_cluster::DescribeClusterOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeClusterOutputBuilder {
-    pub(crate) cluster: std::option::Option<crate::types::Cluster>,
+    pub(crate) cluster: ::std::option::Option<crate::types::Cluster>,
     _request_id: Option<String>,
 }
 impl DescribeClusterOutputBuilder {
     /// <p>This output contains the details for the requested cluster.</p>
     pub fn cluster(mut self, input: crate::types::Cluster) -> Self {
-        self.cluster = Some(input);
+        self.cluster = ::std::option::Option::Some(input);
         self
     }
     /// <p>This output contains the details for the requested cluster.</p>
-    pub fn set_cluster(mut self, input: std::option::Option<crate::types::Cluster>) -> Self {
+    pub fn set_cluster(mut self, input: ::std::option::Option<crate::types::Cluster>) -> Self {
         self.cluster = input;
         self
     }

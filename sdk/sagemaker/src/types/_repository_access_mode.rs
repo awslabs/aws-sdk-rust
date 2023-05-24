@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum RepositoryAccessMode {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum RepositoryAccessMode {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for RepositoryAccessMode {
+impl ::std::convert::From<&str> for RepositoryAccessMode {
     fn from(s: &str) -> Self {
         match s {
             "Platform" => RepositoryAccessMode::Platform,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for RepositoryAccessMode {
         }
     }
 }
-impl std::str::FromStr for RepositoryAccessMode {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for RepositoryAccessMode {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RepositoryAccessMode::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(RepositoryAccessMode::from(s))
     }
 }
 impl RepositoryAccessMode {
@@ -86,7 +86,7 @@ impl RepositoryAccessMode {
         &["Platform", "Vpc"]
     }
 }
-impl AsRef<str> for RepositoryAccessMode {
+impl ::std::convert::AsRef<str> for RepositoryAccessMode {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

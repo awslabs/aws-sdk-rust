@@ -3,43 +3,43 @@
 /// <p>Contains summary information about a flow.</p>
 /// <p>You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon Connect Flow language</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContactFlowSummary {
     /// <p>The identifier of the flow.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the flow.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the flow.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of flow.</p>
     #[doc(hidden)]
-    pub contact_flow_type: std::option::Option<crate::types::ContactFlowType>,
+    pub contact_flow_type: ::std::option::Option<crate::types::ContactFlowType>,
     /// <p>The type of flow.</p>
     #[doc(hidden)]
-    pub contact_flow_state: std::option::Option<crate::types::ContactFlowState>,
+    pub contact_flow_state: ::std::option::Option<crate::types::ContactFlowState>,
 }
 impl ContactFlowSummary {
     /// <p>The identifier of the flow.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the flow.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The name of the flow.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The type of flow.</p>
-    pub fn contact_flow_type(&self) -> std::option::Option<&crate::types::ContactFlowType> {
+    pub fn contact_flow_type(&self) -> ::std::option::Option<&crate::types::ContactFlowType> {
         self.contact_flow_type.as_ref()
     }
     /// <p>The type of flow.</p>
-    pub fn contact_flow_state(&self) -> std::option::Option<&crate::types::ContactFlowState> {
+    pub fn contact_flow_state(&self) -> ::std::option::Option<&crate::types::ContactFlowState> {
         self.contact_flow_state.as_ref()
     }
 }
@@ -52,67 +52,69 @@ impl ContactFlowSummary {
 
 /// A builder for [`ContactFlowSummary`](crate::types::ContactFlowSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ContactFlowSummaryBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) contact_flow_type: std::option::Option<crate::types::ContactFlowType>,
-    pub(crate) contact_flow_state: std::option::Option<crate::types::ContactFlowState>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) contact_flow_type: ::std::option::Option<crate::types::ContactFlowType>,
+    pub(crate) contact_flow_state: ::std::option::Option<crate::types::ContactFlowState>,
 }
 impl ContactFlowSummaryBuilder {
     /// <p>The identifier of the flow.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the flow.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the flow.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the flow.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// <p>The name of the flow.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the flow.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The type of flow.</p>
     pub fn contact_flow_type(mut self, input: crate::types::ContactFlowType) -> Self {
-        self.contact_flow_type = Some(input);
+        self.contact_flow_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of flow.</p>
     pub fn set_contact_flow_type(
         mut self,
-        input: std::option::Option<crate::types::ContactFlowType>,
+        input: ::std::option::Option<crate::types::ContactFlowType>,
     ) -> Self {
         self.contact_flow_type = input;
         self
     }
     /// <p>The type of flow.</p>
     pub fn contact_flow_state(mut self, input: crate::types::ContactFlowState) -> Self {
-        self.contact_flow_state = Some(input);
+        self.contact_flow_state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of flow.</p>
     pub fn set_contact_flow_state(
         mut self,
-        input: std::option::Option<crate::types::ContactFlowState>,
+        input: ::std::option::Option<crate::types::ContactFlowState>,
     ) -> Self {
         self.contact_flow_state = input;
         self

@@ -6,29 +6,29 @@ pub use crate::operation::describe_update_actions::_describe_update_actions_inpu
 /// Fluent builder constructing a request to `DescribeUpdateActions`.
 ///
 /// <p>Returns details of the update actions </p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeUpdateActionsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::describe_update_actions::builders::DescribeUpdateActionsInputBuilder,
 }
 impl DescribeUpdateActionsFluentBuilder {
     /// Creates a new `DescribeUpdateActions`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::describe_update_actions::DescribeUpdateActions,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::describe_update_actions::DescribeUpdateActionsError,
         >,
     > {
@@ -36,30 +36,33 @@ impl DescribeUpdateActionsFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::describe_update_actions::DescribeUpdateActionsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::describe_update_actions::DescribeUpdateActionsError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,9 +75,9 @@ impl DescribeUpdateActionsFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::describe_update_actions::DescribeUpdateActionsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::describe_update_actions::DescribeUpdateActionsError,
         >,
     > {
@@ -92,14 +95,17 @@ impl DescribeUpdateActionsFluentBuilder {
         )
     }
     /// <p>The unique ID of the service update</p>
-    pub fn service_update_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn service_update_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.service_update_name(input.into());
         self
     }
     /// <p>The unique ID of the service update</p>
     pub fn set_service_update_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_service_update_name(input);
         self
@@ -109,14 +115,17 @@ impl DescribeUpdateActionsFluentBuilder {
     /// To override the contents of this collection use [`set_replication_group_ids`](Self::set_replication_group_ids).
     ///
     /// <p>The replication group IDs</p>
-    pub fn replication_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn replication_group_ids(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.replication_group_ids(input.into());
         self
     }
     /// <p>The replication group IDs</p>
     pub fn set_replication_group_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_replication_group_ids(input);
         self
@@ -126,25 +135,28 @@ impl DescribeUpdateActionsFluentBuilder {
     /// To override the contents of this collection use [`set_cache_cluster_ids`](Self::set_cache_cluster_ids).
     ///
     /// <p>The cache cluster IDs</p>
-    pub fn cache_cluster_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn cache_cluster_ids(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.cache_cluster_ids(input.into());
         self
     }
     /// <p>The cache cluster IDs</p>
     pub fn set_cache_cluster_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_cache_cluster_ids(input);
         self
     }
     /// <p>The Elasticache engine to which the update applies. Either Redis or Memcached </p>
-    pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.engine(input.into());
         self
     }
     /// <p>The Elasticache engine to which the update applies. Either Redis or Memcached </p>
-    pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_engine(input);
         self
     }
@@ -160,7 +172,7 @@ impl DescribeUpdateActionsFluentBuilder {
     /// <p>The status of the service update</p>
     pub fn set_service_update_status(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ServiceUpdateStatus>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceUpdateStatus>>,
     ) -> Self {
         self.inner = self.inner.set_service_update_status(input);
         self
@@ -173,7 +185,7 @@ impl DescribeUpdateActionsFluentBuilder {
     /// <p>The range of time specified to search for service updates that are in available status</p>
     pub fn set_service_update_time_range(
         mut self,
-        input: std::option::Option<crate::types::TimeRangeFilter>,
+        input: ::std::option::Option<crate::types::TimeRangeFilter>,
     ) -> Self {
         self.inner = self.inner.set_service_update_time_range(input);
         self
@@ -190,7 +202,7 @@ impl DescribeUpdateActionsFluentBuilder {
     /// <p>The status of the update action.</p>
     pub fn set_update_action_status(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::UpdateActionStatus>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateActionStatus>>,
     ) -> Self {
         self.inner = self.inner.set_update_action_status(input);
         self
@@ -201,7 +213,7 @@ impl DescribeUpdateActionsFluentBuilder {
         self
     }
     /// <p>Dictates whether to include node level update status in the response </p>
-    pub fn set_show_node_level_update_status(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_show_node_level_update_status(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_show_node_level_update_status(input);
         self
     }
@@ -211,17 +223,17 @@ impl DescribeUpdateActionsFluentBuilder {
         self
     }
     /// <p>The maximum number of records to include in the response</p>
-    pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_records(input);
         self
     }
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.marker(input.into());
         self
     }
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_marker(input);
         self
     }

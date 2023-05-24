@@ -2,22 +2,22 @@
 
 /// <p>Error information for the SPICE ingestion of a dataset.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ErrorInfo {
     /// <p>Error type.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::IngestionErrorType>,
+    pub r#type: ::std::option::Option<crate::types::IngestionErrorType>,
     /// <p>Error message.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
 }
 impl ErrorInfo {
     /// <p>Error type.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::IngestionErrorType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::IngestionErrorType> {
         self.r#type.as_ref()
     }
     /// <p>Error message.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -30,32 +30,34 @@ impl ErrorInfo {
 
 /// A builder for [`ErrorInfo`](crate::types::ErrorInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ErrorInfoBuilder {
-    pub(crate) r#type: std::option::Option<crate::types::IngestionErrorType>,
-    pub(crate) message: std::option::Option<std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::IngestionErrorType>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
 }
 impl ErrorInfoBuilder {
     /// <p>Error type.</p>
     pub fn r#type(mut self, input: crate::types::IngestionErrorType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Error type.</p>
     pub fn set_type(
         mut self,
-        input: std::option::Option<crate::types::IngestionErrorType>,
+        input: ::std::option::Option<crate::types::IngestionErrorType>,
     ) -> Self {
         self.r#type = input;
         self
     }
     /// <p>Error message.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Error message.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }

@@ -2,15 +2,15 @@
 
 /// <p>Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeliveryOptions {
     /// <p>Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS). If the value is <code>Require</code>, messages are only delivered if a TLS connection can be established. If the value is <code>Optional</code>, messages can be delivered in plain text if a TLS connection can't be established.</p>
     #[doc(hidden)]
-    pub tls_policy: std::option::Option<crate::types::TlsPolicy>,
+    pub tls_policy: ::std::option::Option<crate::types::TlsPolicy>,
 }
 impl DeliveryOptions {
     /// <p>Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS). If the value is <code>Require</code>, messages are only delivered if a TLS connection can be established. If the value is <code>Optional</code>, messages can be delivered in plain text if a TLS connection can't be established.</p>
-    pub fn tls_policy(&self) -> std::option::Option<&crate::types::TlsPolicy> {
+    pub fn tls_policy(&self) -> ::std::option::Option<&crate::types::TlsPolicy> {
         self.tls_policy.as_ref()
     }
 }
@@ -23,18 +23,20 @@ impl DeliveryOptions {
 
 /// A builder for [`DeliveryOptions`](crate::types::DeliveryOptions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeliveryOptionsBuilder {
-    pub(crate) tls_policy: std::option::Option<crate::types::TlsPolicy>,
+    pub(crate) tls_policy: ::std::option::Option<crate::types::TlsPolicy>,
 }
 impl DeliveryOptionsBuilder {
     /// <p>Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS). If the value is <code>Require</code>, messages are only delivered if a TLS connection can be established. If the value is <code>Optional</code>, messages can be delivered in plain text if a TLS connection can't be established.</p>
     pub fn tls_policy(mut self, input: crate::types::TlsPolicy) -> Self {
-        self.tls_policy = Some(input);
+        self.tls_policy = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS). If the value is <code>Require</code>, messages are only delivered if a TLS connection can be established. If the value is <code>Optional</code>, messages can be delivered in plain text if a TLS connection can't be established.</p>
-    pub fn set_tls_policy(mut self, input: std::option::Option<crate::types::TlsPolicy>) -> Self {
+    pub fn set_tls_policy(mut self, input: ::std::option::Option<crate::types::TlsPolicy>) -> Self {
         self.tls_policy = input;
         self
     }

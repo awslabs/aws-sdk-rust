@@ -3,12 +3,12 @@
 /// <p>Provides the configuration information to connect to Amazon WorkDocs as your data source.</p>
 /// <p>Amazon WorkDocs connector is available in Oregon, North Virginia, Sydney, Singapore and Ireland regions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorkDocsConfiguration {
     /// <p>The identifier of the directory corresponding to your Amazon WorkDocs site repository.</p>
     /// <p>You can find the organization ID in the <a href="https://console.aws.amazon.com/directoryservicev2/">Directory Service</a> by going to <b>Active Directory</b>, then <b>Directories</b>. Your Amazon WorkDocs site directory has an ID, which is the organization ID. You can also set up a new Amazon WorkDocs directory in the Directory Service console and enable a Amazon WorkDocs site for the directory in the Amazon WorkDocs console.</p>
     #[doc(hidden)]
-    pub organization_id: std::option::Option<std::string::String>,
+    pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p> <code>TRUE</code> to include comments on documents in your index. Including comments in your index means each comment is a document that can be searched on.</p>
     /// <p>The default is set to <code>FALSE</code>.</p>
     #[doc(hidden)]
@@ -18,19 +18,19 @@ pub struct WorkDocsConfiguration {
     pub use_change_log: bool,
     /// <p>A list of regular expression patterns to include certain files in your Amazon WorkDocs site repository. Files that match the patterns are included in the index. Files that don't match the patterns are excluded from the index. If a file matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
     #[doc(hidden)]
-    pub inclusion_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub inclusion_patterns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of regular expression patterns to exclude certain files in your Amazon WorkDocs site repository. Files that match the patterns are excluded from the index. Files that don’t match the patterns are included in the index. If a file matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
     #[doc(hidden)]
-    pub exclusion_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub exclusion_patterns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map Amazon WorkDocs data source attributes or field names to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Amazon WorkDocs fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Amazon WorkDocs data source field names must exist in your Amazon WorkDocs custom metadata.</p>
     #[doc(hidden)]
     pub field_mappings:
-        std::option::Option<std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>>,
 }
 impl WorkDocsConfiguration {
     /// <p>The identifier of the directory corresponding to your Amazon WorkDocs site repository.</p>
     /// <p>You can find the organization ID in the <a href="https://console.aws.amazon.com/directoryservicev2/">Directory Service</a> by going to <b>Active Directory</b>, then <b>Directories</b>. Your Amazon WorkDocs site directory has an ID, which is the organization ID. You can also set up a new Amazon WorkDocs directory in the Directory Service console and enable a Amazon WorkDocs site for the directory in the Amazon WorkDocs console.</p>
-    pub fn organization_id(&self) -> std::option::Option<&str> {
+    pub fn organization_id(&self) -> ::std::option::Option<&str> {
         self.organization_id.as_deref()
     }
     /// <p> <code>TRUE</code> to include comments on documents in your index. Including comments in your index means each comment is a document that can be searched on.</p>
@@ -43,17 +43,17 @@ impl WorkDocsConfiguration {
         self.use_change_log
     }
     /// <p>A list of regular expression patterns to include certain files in your Amazon WorkDocs site repository. Files that match the patterns are included in the index. Files that don't match the patterns are excluded from the index. If a file matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
-    pub fn inclusion_patterns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn inclusion_patterns(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.inclusion_patterns.as_deref()
     }
     /// <p>A list of regular expression patterns to exclude certain files in your Amazon WorkDocs site repository. Files that match the patterns are excluded from the index. Files that don’t match the patterns are included in the index. If a file matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
-    pub fn exclusion_patterns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn exclusion_patterns(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.exclusion_patterns.as_deref()
     }
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map Amazon WorkDocs data source attributes or field names to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Amazon WorkDocs fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Amazon WorkDocs data source field names must exist in your Amazon WorkDocs custom metadata.</p>
     pub fn field_mappings(
         &self,
-    ) -> std::option::Option<&[crate::types::DataSourceToIndexFieldMapping]> {
+    ) -> ::std::option::Option<&[crate::types::DataSourceToIndexFieldMapping]> {
         self.field_mappings.as_deref()
     }
 }
@@ -66,48 +66,56 @@ impl WorkDocsConfiguration {
 
 /// A builder for [`WorkDocsConfiguration`](crate::types::WorkDocsConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct WorkDocsConfigurationBuilder {
-    pub(crate) organization_id: std::option::Option<std::string::String>,
-    pub(crate) crawl_comments: std::option::Option<bool>,
-    pub(crate) use_change_log: std::option::Option<bool>,
-    pub(crate) inclusion_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) exclusion_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) organization_id: ::std::option::Option<::std::string::String>,
+    pub(crate) crawl_comments: ::std::option::Option<bool>,
+    pub(crate) use_change_log: ::std::option::Option<bool>,
+    pub(crate) inclusion_patterns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) exclusion_patterns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) field_mappings:
-        std::option::Option<std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>>,
 }
 impl WorkDocsConfigurationBuilder {
     /// <p>The identifier of the directory corresponding to your Amazon WorkDocs site repository.</p>
     /// <p>You can find the organization ID in the <a href="https://console.aws.amazon.com/directoryservicev2/">Directory Service</a> by going to <b>Active Directory</b>, then <b>Directories</b>. Your Amazon WorkDocs site directory has an ID, which is the organization ID. You can also set up a new Amazon WorkDocs directory in the Directory Service console and enable a Amazon WorkDocs site for the directory in the Amazon WorkDocs console.</p>
-    pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.organization_id = Some(input.into());
+    pub fn organization_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.organization_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the directory corresponding to your Amazon WorkDocs site repository.</p>
     /// <p>You can find the organization ID in the <a href="https://console.aws.amazon.com/directoryservicev2/">Directory Service</a> by going to <b>Active Directory</b>, then <b>Directories</b>. Your Amazon WorkDocs site directory has an ID, which is the organization ID. You can also set up a new Amazon WorkDocs directory in the Directory Service console and enable a Amazon WorkDocs site for the directory in the Amazon WorkDocs console.</p>
-    pub fn set_organization_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_organization_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.organization_id = input;
         self
     }
     /// <p> <code>TRUE</code> to include comments on documents in your index. Including comments in your index means each comment is a document that can be searched on.</p>
     /// <p>The default is set to <code>FALSE</code>.</p>
     pub fn crawl_comments(mut self, input: bool) -> Self {
-        self.crawl_comments = Some(input);
+        self.crawl_comments = ::std::option::Option::Some(input);
         self
     }
     /// <p> <code>TRUE</code> to include comments on documents in your index. Including comments in your index means each comment is a document that can be searched on.</p>
     /// <p>The default is set to <code>FALSE</code>.</p>
-    pub fn set_crawl_comments(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_crawl_comments(mut self, input: ::std::option::Option<bool>) -> Self {
         self.crawl_comments = input;
         self
     }
     /// <p> <code>TRUE</code> to use the Amazon WorkDocs change log to determine which documents require updating in the index. Depending on the change log's size, it may take longer for Amazon Kendra to use the change log than to scan all of your documents in Amazon WorkDocs.</p>
     pub fn use_change_log(mut self, input: bool) -> Self {
-        self.use_change_log = Some(input);
+        self.use_change_log = ::std::option::Option::Some(input);
         self
     }
     /// <p> <code>TRUE</code> to use the Amazon WorkDocs change log to determine which documents require updating in the index. Depending on the change log's size, it may take longer for Amazon Kendra to use the change log than to scan all of your documents in Amazon WorkDocs.</p>
-    pub fn set_use_change_log(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_use_change_log(mut self, input: ::std::option::Option<bool>) -> Self {
         self.use_change_log = input;
         self
     }
@@ -116,16 +124,19 @@ impl WorkDocsConfigurationBuilder {
     /// To override the contents of this collection use [`set_inclusion_patterns`](Self::set_inclusion_patterns).
     ///
     /// <p>A list of regular expression patterns to include certain files in your Amazon WorkDocs site repository. Files that match the patterns are included in the index. Files that don't match the patterns are excluded from the index. If a file matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
-    pub fn inclusion_patterns(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn inclusion_patterns(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.inclusion_patterns.unwrap_or_default();
         v.push(input.into());
-        self.inclusion_patterns = Some(v);
+        self.inclusion_patterns = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of regular expression patterns to include certain files in your Amazon WorkDocs site repository. Files that match the patterns are included in the index. Files that don't match the patterns are excluded from the index. If a file matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
     pub fn set_inclusion_patterns(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inclusion_patterns = input;
         self
@@ -135,16 +146,19 @@ impl WorkDocsConfigurationBuilder {
     /// To override the contents of this collection use [`set_exclusion_patterns`](Self::set_exclusion_patterns).
     ///
     /// <p>A list of regular expression patterns to exclude certain files in your Amazon WorkDocs site repository. Files that match the patterns are excluded from the index. Files that don’t match the patterns are included in the index. If a file matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
-    pub fn exclusion_patterns(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn exclusion_patterns(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.exclusion_patterns.unwrap_or_default();
         v.push(input.into());
-        self.exclusion_patterns = Some(v);
+        self.exclusion_patterns = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of regular expression patterns to exclude certain files in your Amazon WorkDocs site repository. Files that match the patterns are excluded from the index. Files that don’t match the patterns are included in the index. If a file matches both an inclusion and exclusion pattern, the exclusion pattern takes precedence and the file isn't included in the index.</p>
     pub fn set_exclusion_patterns(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.exclusion_patterns = input;
         self
@@ -157,13 +171,13 @@ impl WorkDocsConfigurationBuilder {
     pub fn field_mappings(mut self, input: crate::types::DataSourceToIndexFieldMapping) -> Self {
         let mut v = self.field_mappings.unwrap_or_default();
         v.push(input);
-        self.field_mappings = Some(v);
+        self.field_mappings = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map Amazon WorkDocs data source attributes or field names to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Amazon WorkDocs fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Amazon WorkDocs data source field names must exist in your Amazon WorkDocs custom metadata.</p>
     pub fn set_field_mappings(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DataSourceToIndexFieldMapping>>,
     ) -> Self {
         self.field_mappings = input;
         self

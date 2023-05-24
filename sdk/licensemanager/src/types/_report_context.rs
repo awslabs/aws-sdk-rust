@@ -2,15 +2,15 @@
 
 /// <p>Details of the license configuration that this generator reports on.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReportContext {
     /// <p>Amazon Resource Name (ARN) of the license configuration that this generator reports on.</p>
     #[doc(hidden)]
-    pub license_configuration_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub license_configuration_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ReportContext {
     /// <p>Amazon Resource Name (ARN) of the license configuration that this generator reports on.</p>
-    pub fn license_configuration_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn license_configuration_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.license_configuration_arns.as_deref()
     }
 }
@@ -23,9 +23,12 @@ impl ReportContext {
 
 /// A builder for [`ReportContext`](crate::types::ReportContext).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ReportContextBuilder {
-    pub(crate) license_configuration_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) license_configuration_arns:
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ReportContextBuilder {
     /// Appends an item to `license_configuration_arns`.
@@ -33,16 +36,19 @@ impl ReportContextBuilder {
     /// To override the contents of this collection use [`set_license_configuration_arns`](Self::set_license_configuration_arns).
     ///
     /// <p>Amazon Resource Name (ARN) of the license configuration that this generator reports on.</p>
-    pub fn license_configuration_arns(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn license_configuration_arns(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.license_configuration_arns.unwrap_or_default();
         v.push(input.into());
-        self.license_configuration_arns = Some(v);
+        self.license_configuration_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>Amazon Resource Name (ARN) of the license configuration that this generator reports on.</p>
     pub fn set_license_configuration_arns(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.license_configuration_arns = input;
         self

@@ -6,47 +6,50 @@ pub use crate::operation::update_field_level_encryption_config::_update_field_le
 /// Fluent builder constructing a request to `UpdateFieldLevelEncryptionConfig`.
 ///
 /// <p>Update a field-level encryption configuration.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateFieldLevelEncryptionConfigFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::update_field_level_encryption_config::builders::UpdateFieldLevelEncryptionConfigInputBuilder,
 }
 impl UpdateFieldLevelEncryptionConfigFluentBuilder {
     /// Creates a new `UpdateFieldLevelEncryptionConfig`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_field_level_encryption_config::UpdateFieldLevelEncryptionConfig, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::update_field_level_encryption_config::UpdateFieldLevelEncryptionConfigError>
+                    pub async fn customize(self) -> ::std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::update_field_level_encryption_config::UpdateFieldLevelEncryptionConfig, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                        ::aws_smithy_http::result::SdkError<crate::operation::update_field_level_encryption_config::UpdateFieldLevelEncryptionConfigError>
     >{
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::update_field_level_encryption_config::UpdateFieldLevelEncryptionConfigOutput, aws_smithy_http::result::SdkError<crate::operation::update_field_level_encryption_config::UpdateFieldLevelEncryptionConfigError>>
+                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_field_level_encryption_config::UpdateFieldLevelEncryptionConfigOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_field_level_encryption_config::UpdateFieldLevelEncryptionConfigError>>
                      {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -57,7 +60,7 @@ impl UpdateFieldLevelEncryptionConfigFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> std::result::Result<crate::operation::update_field_level_encryption_config::UpdateFieldLevelEncryptionConfigOutput, aws_smithy_http::result::SdkError<crate::operation::update_field_level_encryption_config::UpdateFieldLevelEncryptionConfigError>>
+                        pub async fn send(self) -> ::std::result::Result<crate::operation::update_field_level_encryption_config::UpdateFieldLevelEncryptionConfigOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_field_level_encryption_config::UpdateFieldLevelEncryptionConfigError>>
                          {
         self.send_middleware().await
     }
@@ -72,28 +75,28 @@ impl UpdateFieldLevelEncryptionConfigFluentBuilder {
     /// <p>Request to update a field-level encryption configuration.</p>
     pub fn set_field_level_encryption_config(
         mut self,
-        input: std::option::Option<crate::types::FieldLevelEncryptionConfig>,
+        input: ::std::option::Option<crate::types::FieldLevelEncryptionConfig>,
     ) -> Self {
         self.inner = self.inner.set_field_level_encryption_config(input);
         self
     }
     /// <p>The ID of the configuration you want to update.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.id(input.into());
         self
     }
     /// <p>The ID of the configuration you want to update.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_id(input);
         self
     }
     /// <p>The value of the <code>ETag</code> header that you received when retrieving the configuration identity to update. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-    pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn if_match(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.if_match(input.into());
         self
     }
     /// <p>The value of the <code>ETag</code> header that you received when retrieving the configuration identity to update. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-    pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_if_match(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_if_match(input);
         self
     }

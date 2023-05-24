@@ -38,13 +38,13 @@
 /// Encrypts the segments with the given encryption scheme. Leave blank to disable. Selecting 'Disabled' in the web interface also disables encryption.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum HlsEncryptionType {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum HlsEncryptionType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for HlsEncryptionType {
+impl ::std::convert::From<&str> for HlsEncryptionType {
     fn from(s: &str) -> Self {
         match s {
             "AES128" => HlsEncryptionType::Aes128,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for HlsEncryptionType {
         }
     }
 }
-impl std::str::FromStr for HlsEncryptionType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for HlsEncryptionType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(HlsEncryptionType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(HlsEncryptionType::from(s))
     }
 }
 impl HlsEncryptionType {
@@ -86,7 +86,7 @@ impl HlsEncryptionType {
         &["AES128", "SAMPLE_AES"]
     }
 }
-impl AsRef<str> for HlsEncryptionType {
+impl ::std::convert::AsRef<str> for HlsEncryptionType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

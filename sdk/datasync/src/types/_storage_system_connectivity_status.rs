@@ -39,13 +39,13 @@
 /// _Note: `StorageSystemConnectivityStatus::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum StorageSystemConnectivityStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum StorageSystemConnectivityStatus {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for StorageSystemConnectivityStatus {
+impl ::std::convert::From<&str> for StorageSystemConnectivityStatus {
     fn from(s: &str) -> Self {
         match s {
             "FAIL" => StorageSystemConnectivityStatus::Fail,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for StorageSystemConnectivityStatus {
         }
     }
 }
-impl std::str::FromStr for StorageSystemConnectivityStatus {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for StorageSystemConnectivityStatus {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(StorageSystemConnectivityStatus::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(StorageSystemConnectivityStatus::from(s))
     }
 }
 impl StorageSystemConnectivityStatus {
@@ -91,7 +91,7 @@ impl StorageSystemConnectivityStatus {
         &["FAIL", "PASS", "UNKNOWN"]
     }
 }
-impl AsRef<str> for StorageSystemConnectivityStatus {
+impl ::std::convert::AsRef<str> for StorageSystemConnectivityStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

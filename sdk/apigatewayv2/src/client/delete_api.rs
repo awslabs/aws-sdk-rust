@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteApi`](crate::operation::delete_api::builders::DeleteApiFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`api_id(impl Into<String>)`](crate::operation::delete_api::builders::DeleteApiFluentBuilder::api_id) / [`set_api_id(Option<String>)`](crate::operation::delete_api::builders::DeleteApiFluentBuilder::set_api_id): <p>The API identifier.</p>
+    ///   - [`api_id(impl ::std::convert::Into<String>)`](crate::operation::delete_api::builders::DeleteApiFluentBuilder::api_id) / [`set_api_id(Option<String>)`](crate::operation::delete_api::builders::DeleteApiFluentBuilder::set_api_id): <p>The API identifier.</p>
     /// - On success, responds with [`DeleteApiOutput`](crate::operation::delete_api::DeleteApiOutput)
     /// - On failure, responds with [`SdkError<DeleteApiError>`](crate::operation::delete_api::DeleteApiError)
     pub fn delete_api(&self) -> crate::operation::delete_api::builders::DeleteApiFluentBuilder {

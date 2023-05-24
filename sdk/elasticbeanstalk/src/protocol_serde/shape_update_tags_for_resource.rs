@@ -2,7 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_update_tags_for_resource_http_error(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::update_tags_for_resource::UpdateTagsForResourceOutput,
@@ -15,7 +15,7 @@ pub fn de_update_tags_for_resource_http_error(
         _response_body,
     )
     .map_err(crate::operation::update_tags_for_resource::UpdateTagsForResourceError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
+    generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code =
         match generic.code() {
@@ -116,7 +116,7 @@ pub fn de_update_tags_for_resource_http_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_update_tags_for_resource_http_response_with_props(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::update_tags_for_resource::UpdateTagsForResourceOutput,
@@ -126,7 +126,7 @@ pub fn de_update_tags_for_resource_http_response_with_props(
         #[allow(unused_mut)]
         let mut output = crate::operation::update_tags_for_resource::builders::UpdateTagsForResourceOutputBuilder::default();
         output._set_request_id(
-            aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
+            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
         );
         output.build()
     })

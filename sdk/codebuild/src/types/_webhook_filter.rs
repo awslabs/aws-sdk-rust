@@ -2,7 +2,7 @@
 
 /// <p> A filter used to determine which webhooks trigger a build. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WebhookFilter {
     /// <p> The type of webhook filter. There are six webhook filter types: <code>EVENT</code>, <code>ACTOR_ACCOUNT_ID</code>, <code>HEAD_REF</code>, <code>BASE_REF</code>, <code>FILE_PATH</code>, and <code>COMMIT_MESSAGE</code>. </p>
     /// <dl>
@@ -53,14 +53,14 @@ pub struct WebhookFilter {
     /// </dd>
     /// </dl>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::WebhookFilterType>,
+    pub r#type: ::std::option::Option<crate::types::WebhookFilterType>,
     /// <p> For a <code>WebHookFilter</code> that uses <code>EVENT</code> type, a comma-separated string that specifies one or more events. For example, the webhook filter <code>PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED</code> allows all push, pull request created, and pull request updated events to trigger a build. </p>
     /// <p> For a <code>WebHookFilter</code> that uses any of the other filter types, a regular expression pattern. For example, a <code>WebHookFilter</code> that uses <code>HEAD_REF</code> for its <code>type</code> and the pattern <code>^refs/heads/</code> triggers a build when the head reference is a branch with a reference name <code>refs/heads/branch-name</code>. </p>
     #[doc(hidden)]
-    pub pattern: std::option::Option<std::string::String>,
+    pub pattern: ::std::option::Option<::std::string::String>,
     /// <p> Used to indicate that the <code>pattern</code> determines which webhook events do not trigger a build. If true, then a webhook event that does not match the <code>pattern</code> triggers a build. If false, then a webhook event that matches the <code>pattern</code> triggers a build. </p>
     #[doc(hidden)]
-    pub exclude_matched_pattern: std::option::Option<bool>,
+    pub exclude_matched_pattern: ::std::option::Option<bool>,
 }
 impl WebhookFilter {
     /// <p> The type of webhook filter. There are six webhook filter types: <code>EVENT</code>, <code>ACTOR_ACCOUNT_ID</code>, <code>HEAD_REF</code>, <code>BASE_REF</code>, <code>FILE_PATH</code>, and <code>COMMIT_MESSAGE</code>. </p>
@@ -111,16 +111,16 @@ impl WebhookFilter {
     /// </note>
     /// </dd>
     /// </dl>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::WebhookFilterType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::WebhookFilterType> {
         self.r#type.as_ref()
     }
     /// <p> For a <code>WebHookFilter</code> that uses <code>EVENT</code> type, a comma-separated string that specifies one or more events. For example, the webhook filter <code>PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED</code> allows all push, pull request created, and pull request updated events to trigger a build. </p>
     /// <p> For a <code>WebHookFilter</code> that uses any of the other filter types, a regular expression pattern. For example, a <code>WebHookFilter</code> that uses <code>HEAD_REF</code> for its <code>type</code> and the pattern <code>^refs/heads/</code> triggers a build when the head reference is a branch with a reference name <code>refs/heads/branch-name</code>. </p>
-    pub fn pattern(&self) -> std::option::Option<&str> {
+    pub fn pattern(&self) -> ::std::option::Option<&str> {
         self.pattern.as_deref()
     }
     /// <p> Used to indicate that the <code>pattern</code> determines which webhook events do not trigger a build. If true, then a webhook event that does not match the <code>pattern</code> triggers a build. If false, then a webhook event that matches the <code>pattern</code> triggers a build. </p>
-    pub fn exclude_matched_pattern(&self) -> std::option::Option<bool> {
+    pub fn exclude_matched_pattern(&self) -> ::std::option::Option<bool> {
         self.exclude_matched_pattern
     }
 }
@@ -133,11 +133,13 @@ impl WebhookFilter {
 
 /// A builder for [`WebhookFilter`](crate::types::WebhookFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct WebhookFilterBuilder {
-    pub(crate) r#type: std::option::Option<crate::types::WebhookFilterType>,
-    pub(crate) pattern: std::option::Option<std::string::String>,
-    pub(crate) exclude_matched_pattern: std::option::Option<bool>,
+    pub(crate) r#type: ::std::option::Option<crate::types::WebhookFilterType>,
+    pub(crate) pattern: ::std::option::Option<::std::string::String>,
+    pub(crate) exclude_matched_pattern: ::std::option::Option<bool>,
 }
 impl WebhookFilterBuilder {
     /// <p> The type of webhook filter. There are six webhook filter types: <code>EVENT</code>, <code>ACTOR_ACCOUNT_ID</code>, <code>HEAD_REF</code>, <code>BASE_REF</code>, <code>FILE_PATH</code>, and <code>COMMIT_MESSAGE</code>. </p>
@@ -189,7 +191,7 @@ impl WebhookFilterBuilder {
     /// </dd>
     /// </dl>
     pub fn r#type(mut self, input: crate::types::WebhookFilterType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p> The type of webhook filter. There are six webhook filter types: <code>EVENT</code>, <code>ACTOR_ACCOUNT_ID</code>, <code>HEAD_REF</code>, <code>BASE_REF</code>, <code>FILE_PATH</code>, and <code>COMMIT_MESSAGE</code>. </p>
@@ -240,29 +242,32 @@ impl WebhookFilterBuilder {
     /// </note>
     /// </dd>
     /// </dl>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::WebhookFilterType>) -> Self {
+    pub fn set_type(
+        mut self,
+        input: ::std::option::Option<crate::types::WebhookFilterType>,
+    ) -> Self {
         self.r#type = input;
         self
     }
     /// <p> For a <code>WebHookFilter</code> that uses <code>EVENT</code> type, a comma-separated string that specifies one or more events. For example, the webhook filter <code>PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED</code> allows all push, pull request created, and pull request updated events to trigger a build. </p>
     /// <p> For a <code>WebHookFilter</code> that uses any of the other filter types, a regular expression pattern. For example, a <code>WebHookFilter</code> that uses <code>HEAD_REF</code> for its <code>type</code> and the pattern <code>^refs/heads/</code> triggers a build when the head reference is a branch with a reference name <code>refs/heads/branch-name</code>. </p>
-    pub fn pattern(mut self, input: impl Into<std::string::String>) -> Self {
-        self.pattern = Some(input.into());
+    pub fn pattern(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.pattern = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> For a <code>WebHookFilter</code> that uses <code>EVENT</code> type, a comma-separated string that specifies one or more events. For example, the webhook filter <code>PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED</code> allows all push, pull request created, and pull request updated events to trigger a build. </p>
     /// <p> For a <code>WebHookFilter</code> that uses any of the other filter types, a regular expression pattern. For example, a <code>WebHookFilter</code> that uses <code>HEAD_REF</code> for its <code>type</code> and the pattern <code>^refs/heads/</code> triggers a build when the head reference is a branch with a reference name <code>refs/heads/branch-name</code>. </p>
-    pub fn set_pattern(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_pattern(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pattern = input;
         self
     }
     /// <p> Used to indicate that the <code>pattern</code> determines which webhook events do not trigger a build. If true, then a webhook event that does not match the <code>pattern</code> triggers a build. If false, then a webhook event that matches the <code>pattern</code> triggers a build. </p>
     pub fn exclude_matched_pattern(mut self, input: bool) -> Self {
-        self.exclude_matched_pattern = Some(input);
+        self.exclude_matched_pattern = ::std::option::Option::Some(input);
         self
     }
     /// <p> Used to indicate that the <code>pattern</code> determines which webhook events do not trigger a build. If true, then a webhook event that does not match the <code>pattern</code> triggers a build. If false, then a webhook event that matches the <code>pattern</code> triggers a build. </p>
-    pub fn set_exclude_matched_pattern(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_exclude_matched_pattern(mut self, input: ::std::option::Option<bool>) -> Self {
         self.exclude_matched_pattern = input;
         self
     }

@@ -2,36 +2,36 @@
 
 /// <p>Contains information about the access keys.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccessKeyDetails {
     /// <p>The access key ID of the user.</p>
     #[doc(hidden)]
-    pub access_key_id: std::option::Option<std::string::String>,
+    pub access_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The principal ID of the user.</p>
     #[doc(hidden)]
-    pub principal_id: std::option::Option<std::string::String>,
+    pub principal_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the user.</p>
     #[doc(hidden)]
-    pub user_name: std::option::Option<std::string::String>,
+    pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of the user.</p>
     #[doc(hidden)]
-    pub user_type: std::option::Option<std::string::String>,
+    pub user_type: ::std::option::Option<::std::string::String>,
 }
 impl AccessKeyDetails {
     /// <p>The access key ID of the user.</p>
-    pub fn access_key_id(&self) -> std::option::Option<&str> {
+    pub fn access_key_id(&self) -> ::std::option::Option<&str> {
         self.access_key_id.as_deref()
     }
     /// <p>The principal ID of the user.</p>
-    pub fn principal_id(&self) -> std::option::Option<&str> {
+    pub fn principal_id(&self) -> ::std::option::Option<&str> {
         self.principal_id.as_deref()
     }
     /// <p>The name of the user.</p>
-    pub fn user_name(&self) -> std::option::Option<&str> {
+    pub fn user_name(&self) -> ::std::option::Option<&str> {
         self.user_name.as_deref()
     }
     /// <p>The type of the user.</p>
-    pub fn user_type(&self) -> std::option::Option<&str> {
+    pub fn user_type(&self) -> ::std::option::Option<&str> {
         self.user_type.as_deref()
     }
 }
@@ -44,51 +44,59 @@ impl AccessKeyDetails {
 
 /// A builder for [`AccessKeyDetails`](crate::types::AccessKeyDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AccessKeyDetailsBuilder {
-    pub(crate) access_key_id: std::option::Option<std::string::String>,
-    pub(crate) principal_id: std::option::Option<std::string::String>,
-    pub(crate) user_name: std::option::Option<std::string::String>,
-    pub(crate) user_type: std::option::Option<std::string::String>,
+    pub(crate) access_key_id: ::std::option::Option<::std::string::String>,
+    pub(crate) principal_id: ::std::option::Option<::std::string::String>,
+    pub(crate) user_name: ::std::option::Option<::std::string::String>,
+    pub(crate) user_type: ::std::option::Option<::std::string::String>,
 }
 impl AccessKeyDetailsBuilder {
     /// <p>The access key ID of the user.</p>
-    pub fn access_key_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.access_key_id = Some(input.into());
+    pub fn access_key_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.access_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The access key ID of the user.</p>
-    pub fn set_access_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_access_key_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.access_key_id = input;
         self
     }
     /// <p>The principal ID of the user.</p>
-    pub fn principal_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.principal_id = Some(input.into());
+    pub fn principal_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.principal_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The principal ID of the user.</p>
-    pub fn set_principal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_principal_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.principal_id = input;
         self
     }
     /// <p>The name of the user.</p>
-    pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.user_name = Some(input.into());
+    pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.user_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the user.</p>
-    pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_name = input;
         self
     }
     /// <p>The type of the user.</p>
-    pub fn user_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.user_type = Some(input.into());
+    pub fn user_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.user_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of the user.</p>
-    pub fn set_user_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_user_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_type = input;
         self
     }

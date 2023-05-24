@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetChannels`](crate::operation::get_channels::builders::GetChannelsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::operation::get_channels::builders::GetChannelsFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::get_channels::builders::GetChannelsFluentBuilder::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    ///   - [`application_id(impl ::std::convert::Into<String>)`](crate::operation::get_channels::builders::GetChannelsFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::get_channels::builders::GetChannelsFluentBuilder::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     /// - On success, responds with [`GetChannelsOutput`](crate::operation::get_channels::GetChannelsOutput) with field(s):
     ///   - [`channels_response(Option<ChannelsResponse>)`](crate::operation::get_channels::GetChannelsOutput::channels_response): <p>Provides information about the general settings and status of all channels for an application, including channels that aren't enabled for the application.</p>
     /// - On failure, responds with [`SdkError<GetChannelsError>`](crate::operation::get_channels::GetChannelsError)

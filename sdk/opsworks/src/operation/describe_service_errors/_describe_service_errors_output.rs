@@ -2,20 +2,20 @@
 
 /// <p>Contains the response to a <code>DescribeServiceErrors</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeServiceErrorsOutput {
     /// <p>An array of <code>ServiceError</code> objects that describe the specified service errors.</p>
     #[doc(hidden)]
-    pub service_errors: std::option::Option<std::vec::Vec<crate::types::ServiceError>>,
+    pub service_errors: ::std::option::Option<::std::vec::Vec<crate::types::ServiceError>>,
     _request_id: Option<String>,
 }
 impl DescribeServiceErrorsOutput {
     /// <p>An array of <code>ServiceError</code> objects that describe the specified service errors.</p>
-    pub fn service_errors(&self) -> std::option::Option<&[crate::types::ServiceError]> {
+    pub fn service_errors(&self) -> ::std::option::Option<&[crate::types::ServiceError]> {
         self.service_errors.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeServiceErrorsOutput {
+impl ::aws_http::request_id::RequestId for DescribeServiceErrorsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -31,9 +31,11 @@ impl DescribeServiceErrorsOutput {
 
 /// A builder for [`DescribeServiceErrorsOutput`](crate::operation::describe_service_errors::DescribeServiceErrorsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeServiceErrorsOutputBuilder {
-    pub(crate) service_errors: std::option::Option<std::vec::Vec<crate::types::ServiceError>>,
+    pub(crate) service_errors: ::std::option::Option<::std::vec::Vec<crate::types::ServiceError>>,
     _request_id: Option<String>,
 }
 impl DescribeServiceErrorsOutputBuilder {
@@ -45,13 +47,13 @@ impl DescribeServiceErrorsOutputBuilder {
     pub fn service_errors(mut self, input: crate::types::ServiceError) -> Self {
         let mut v = self.service_errors.unwrap_or_default();
         v.push(input);
-        self.service_errors = Some(v);
+        self.service_errors = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of <code>ServiceError</code> objects that describe the specified service errors.</p>
     pub fn set_service_errors(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ServiceError>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceError>>,
     ) -> Self {
         self.service_errors = input;
         self

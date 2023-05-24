@@ -2,27 +2,27 @@
 
 /// <p>Represents the response to list devices.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDevicesOutput {
     /// <p>The devices returned in the list devices response.</p>
     #[doc(hidden)]
-    pub devices: std::option::Option<std::vec::Vec<crate::types::DeviceType>>,
+    pub devices: ::std::option::Option<::std::vec::Vec<crate::types::DeviceType>>,
     /// <p>The pagination token for the list device response.</p>
     #[doc(hidden)]
-    pub pagination_token: std::option::Option<std::string::String>,
+    pub pagination_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListDevicesOutput {
     /// <p>The devices returned in the list devices response.</p>
-    pub fn devices(&self) -> std::option::Option<&[crate::types::DeviceType]> {
+    pub fn devices(&self) -> ::std::option::Option<&[crate::types::DeviceType]> {
         self.devices.as_deref()
     }
     /// <p>The pagination token for the list device response.</p>
-    pub fn pagination_token(&self) -> std::option::Option<&str> {
+    pub fn pagination_token(&self) -> ::std::option::Option<&str> {
         self.pagination_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListDevicesOutput {
+impl ::aws_http::request_id::RequestId for ListDevicesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -36,10 +36,12 @@ impl ListDevicesOutput {
 
 /// A builder for [`ListDevicesOutput`](crate::operation::list_devices::ListDevicesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListDevicesOutputBuilder {
-    pub(crate) devices: std::option::Option<std::vec::Vec<crate::types::DeviceType>>,
-    pub(crate) pagination_token: std::option::Option<std::string::String>,
+    pub(crate) devices: ::std::option::Option<::std::vec::Vec<crate::types::DeviceType>>,
+    pub(crate) pagination_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListDevicesOutputBuilder {
@@ -51,24 +53,30 @@ impl ListDevicesOutputBuilder {
     pub fn devices(mut self, input: crate::types::DeviceType) -> Self {
         let mut v = self.devices.unwrap_or_default();
         v.push(input);
-        self.devices = Some(v);
+        self.devices = ::std::option::Option::Some(v);
         self
     }
     /// <p>The devices returned in the list devices response.</p>
     pub fn set_devices(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DeviceType>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DeviceType>>,
     ) -> Self {
         self.devices = input;
         self
     }
     /// <p>The pagination token for the list device response.</p>
-    pub fn pagination_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.pagination_token = Some(input.into());
+    pub fn pagination_token(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.pagination_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The pagination token for the list device response.</p>
-    pub fn set_pagination_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_pagination_token(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.pagination_token = input;
         self
     }

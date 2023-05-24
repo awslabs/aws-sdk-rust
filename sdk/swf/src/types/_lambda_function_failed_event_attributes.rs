@@ -2,7 +2,7 @@
 
 /// <p>Provides the details of the <code>LambdaFunctionFailed</code> event. It isn't set for other event types.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LambdaFunctionFailedEventAttributes {
     /// <p>The ID of the <code>LambdaFunctionScheduled</code> event that was recorded when this activity task was scheduled. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
     #[doc(hidden)]
@@ -12,10 +12,10 @@ pub struct LambdaFunctionFailedEventAttributes {
     pub started_event_id: i64,
     /// <p>The reason provided for the failure.</p>
     #[doc(hidden)]
-    pub reason: std::option::Option<std::string::String>,
+    pub reason: ::std::option::Option<::std::string::String>,
     /// <p>The details of the failure.</p>
     #[doc(hidden)]
-    pub details: std::option::Option<std::string::String>,
+    pub details: ::std::option::Option<::std::string::String>,
 }
 impl LambdaFunctionFailedEventAttributes {
     /// <p>The ID of the <code>LambdaFunctionScheduled</code> event that was recorded when this activity task was scheduled. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
@@ -27,11 +27,11 @@ impl LambdaFunctionFailedEventAttributes {
         self.started_event_id
     }
     /// <p>The reason provided for the failure.</p>
-    pub fn reason(&self) -> std::option::Option<&str> {
+    pub fn reason(&self) -> ::std::option::Option<&str> {
         self.reason.as_deref()
     }
     /// <p>The details of the failure.</p>
-    pub fn details(&self) -> std::option::Option<&str> {
+    pub fn details(&self) -> ::std::option::Option<&str> {
         self.details.as_deref()
     }
 }
@@ -44,51 +44,53 @@ impl LambdaFunctionFailedEventAttributes {
 
 /// A builder for [`LambdaFunctionFailedEventAttributes`](crate::types::LambdaFunctionFailedEventAttributes).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LambdaFunctionFailedEventAttributesBuilder {
-    pub(crate) scheduled_event_id: std::option::Option<i64>,
-    pub(crate) started_event_id: std::option::Option<i64>,
-    pub(crate) reason: std::option::Option<std::string::String>,
-    pub(crate) details: std::option::Option<std::string::String>,
+    pub(crate) scheduled_event_id: ::std::option::Option<i64>,
+    pub(crate) started_event_id: ::std::option::Option<i64>,
+    pub(crate) reason: ::std::option::Option<::std::string::String>,
+    pub(crate) details: ::std::option::Option<::std::string::String>,
 }
 impl LambdaFunctionFailedEventAttributesBuilder {
     /// <p>The ID of the <code>LambdaFunctionScheduled</code> event that was recorded when this activity task was scheduled. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
     pub fn scheduled_event_id(mut self, input: i64) -> Self {
-        self.scheduled_event_id = Some(input);
+        self.scheduled_event_id = ::std::option::Option::Some(input);
         self
     }
     /// <p>The ID of the <code>LambdaFunctionScheduled</code> event that was recorded when this activity task was scheduled. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
-    pub fn set_scheduled_event_id(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_scheduled_event_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.scheduled_event_id = input;
         self
     }
     /// <p>The ID of the <code>LambdaFunctionStarted</code> event recorded when this activity task started. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
     pub fn started_event_id(mut self, input: i64) -> Self {
-        self.started_event_id = Some(input);
+        self.started_event_id = ::std::option::Option::Some(input);
         self
     }
     /// <p>The ID of the <code>LambdaFunctionStarted</code> event recorded when this activity task started. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
-    pub fn set_started_event_id(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_started_event_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.started_event_id = input;
         self
     }
     /// <p>The reason provided for the failure.</p>
-    pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
-        self.reason = Some(input.into());
+    pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason provided for the failure.</p>
-    pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reason = input;
         self
     }
     /// <p>The details of the failure.</p>
-    pub fn details(mut self, input: impl Into<std::string::String>) -> Self {
-        self.details = Some(input.into());
+    pub fn details(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.details = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The details of the failure.</p>
-    pub fn set_details(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.details = input;
         self
     }

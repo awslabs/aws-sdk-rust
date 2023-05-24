@@ -2,22 +2,22 @@
 
 /// <p>Describes the status of an instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceStatusSummary {
     /// <p>The system instance health or application instance health.</p>
     #[doc(hidden)]
-    pub details: std::option::Option<std::vec::Vec<crate::types::InstanceStatusDetails>>,
+    pub details: ::std::option::Option<::std::vec::Vec<crate::types::InstanceStatusDetails>>,
     /// <p>The status.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::SummaryStatus>,
+    pub status: ::std::option::Option<crate::types::SummaryStatus>,
 }
 impl InstanceStatusSummary {
     /// <p>The system instance health or application instance health.</p>
-    pub fn details(&self) -> std::option::Option<&[crate::types::InstanceStatusDetails]> {
+    pub fn details(&self) -> ::std::option::Option<&[crate::types::InstanceStatusDetails]> {
         self.details.as_deref()
     }
     /// <p>The status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::SummaryStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::SummaryStatus> {
         self.status.as_ref()
     }
 }
@@ -30,10 +30,12 @@ impl InstanceStatusSummary {
 
 /// A builder for [`InstanceStatusSummary`](crate::types::InstanceStatusSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InstanceStatusSummaryBuilder {
-    pub(crate) details: std::option::Option<std::vec::Vec<crate::types::InstanceStatusDetails>>,
-    pub(crate) status: std::option::Option<crate::types::SummaryStatus>,
+    pub(crate) details: ::std::option::Option<::std::vec::Vec<crate::types::InstanceStatusDetails>>,
+    pub(crate) status: ::std::option::Option<crate::types::SummaryStatus>,
 }
 impl InstanceStatusSummaryBuilder {
     /// Appends an item to `details`.
@@ -44,24 +46,24 @@ impl InstanceStatusSummaryBuilder {
     pub fn details(mut self, input: crate::types::InstanceStatusDetails) -> Self {
         let mut v = self.details.unwrap_or_default();
         v.push(input);
-        self.details = Some(v);
+        self.details = ::std::option::Option::Some(v);
         self
     }
     /// <p>The system instance health or application instance health.</p>
     pub fn set_details(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::InstanceStatusDetails>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceStatusDetails>>,
     ) -> Self {
         self.details = input;
         self
     }
     /// <p>The status.</p>
     pub fn status(mut self, input: crate::types::SummaryStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::SummaryStatus>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::SummaryStatus>) -> Self {
         self.status = input;
         self
     }

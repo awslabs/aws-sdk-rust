@@ -2,22 +2,22 @@
 
 /// <p>A reference to a unique stage identified in the format <code>{restApiId}/{stage}</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StageKey {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
-    pub rest_api_id: std::option::Option<std::string::String>,
+    pub rest_api_id: ::std::option::Option<::std::string::String>,
     /// <p>The stage name associated with the stage key.</p>
     #[doc(hidden)]
-    pub stage_name: std::option::Option<std::string::String>,
+    pub stage_name: ::std::option::Option<::std::string::String>,
 }
 impl StageKey {
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+    pub fn rest_api_id(&self) -> ::std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
     /// <p>The stage name associated with the stage key.</p>
-    pub fn stage_name(&self) -> std::option::Option<&str> {
+    pub fn stage_name(&self) -> ::std::option::Option<&str> {
         self.stage_name.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl StageKey {
 
 /// A builder for [`StageKey`](crate::types::StageKey).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StageKeyBuilder {
-    pub(crate) rest_api_id: std::option::Option<std::string::String>,
-    pub(crate) stage_name: std::option::Option<std::string::String>,
+    pub(crate) rest_api_id: ::std::option::Option<::std::string::String>,
+    pub(crate) stage_name: ::std::option::Option<::std::string::String>,
 }
 impl StageKeyBuilder {
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.rest_api_id = Some(input.into());
+    pub fn rest_api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.rest_api_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_rest_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rest_api_id = input;
         self
     }
     /// <p>The stage name associated with the stage key.</p>
-    pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.stage_name = Some(input.into());
+    pub fn stage_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.stage_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The stage name associated with the stage key.</p>
-    pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_stage_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stage_name = input;
         self
     }

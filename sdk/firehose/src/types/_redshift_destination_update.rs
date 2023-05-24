@@ -2,96 +2,96 @@
 
 /// <p>Describes an update for a destination in Amazon Redshift.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RedshiftDestinationUpdate {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
     #[doc(hidden)]
-    pub role_arn: std::option::Option<std::string::String>,
+    pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The database connection string.</p>
     #[doc(hidden)]
-    pub cluster_jdbcurl: std::option::Option<std::string::String>,
+    pub cluster_jdbcurl: ::std::option::Option<::std::string::String>,
     /// <p>The <code>COPY</code> command.</p>
     #[doc(hidden)]
-    pub copy_command: std::option::Option<crate::types::CopyCommand>,
+    pub copy_command: ::std::option::Option<crate::types::CopyCommand>,
     /// <p>The name of the user.</p>
     #[doc(hidden)]
-    pub username: std::option::Option<std::string::String>,
+    pub username: ::std::option::Option<::std::string::String>,
     /// <p>The user password.</p>
     #[doc(hidden)]
-    pub password: std::option::Option<std::string::String>,
+    pub password: ::std::option::Option<::std::string::String>,
     /// <p>The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon Redshift. Default value is 3600 (60 minutes).</p>
     #[doc(hidden)]
-    pub retry_options: std::option::Option<crate::types::RedshiftRetryOptions>,
+    pub retry_options: ::std::option::Option<crate::types::RedshiftRetryOptions>,
     /// <p>The Amazon S3 destination.</p>
     /// <p>The compression formats <code>SNAPPY</code> or <code>ZIP</code> cannot be specified in <code>RedshiftDestinationUpdate.S3Update</code> because the Amazon Redshift <code>COPY</code> operation that reads from the S3 bucket doesn't support these compression formats.</p>
     #[doc(hidden)]
-    pub s3_update: std::option::Option<crate::types::S3DestinationUpdate>,
+    pub s3_update: ::std::option::Option<crate::types::S3DestinationUpdate>,
     /// <p>The data processing configuration.</p>
     #[doc(hidden)]
-    pub processing_configuration: std::option::Option<crate::types::ProcessingConfiguration>,
+    pub processing_configuration: ::std::option::Option<crate::types::ProcessingConfiguration>,
     /// <p>You can update a delivery stream to enable Amazon S3 backup if it is disabled. If backup is enabled, you can't update the delivery stream to disable it. </p>
     #[doc(hidden)]
-    pub s3_backup_mode: std::option::Option<crate::types::RedshiftS3BackupMode>,
+    pub s3_backup_mode: ::std::option::Option<crate::types::RedshiftS3BackupMode>,
     /// <p>The Amazon S3 destination for backup.</p>
     #[doc(hidden)]
-    pub s3_backup_update: std::option::Option<crate::types::S3DestinationUpdate>,
+    pub s3_backup_update: ::std::option::Option<crate::types::S3DestinationUpdate>,
     /// <p>The Amazon CloudWatch logging options for your delivery stream.</p>
     #[doc(hidden)]
-    pub cloud_watch_logging_options: std::option::Option<crate::types::CloudWatchLoggingOptions>,
+    pub cloud_watch_logging_options: ::std::option::Option<crate::types::CloudWatchLoggingOptions>,
 }
 impl RedshiftDestinationUpdate {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
     /// <p>The database connection string.</p>
-    pub fn cluster_jdbcurl(&self) -> std::option::Option<&str> {
+    pub fn cluster_jdbcurl(&self) -> ::std::option::Option<&str> {
         self.cluster_jdbcurl.as_deref()
     }
     /// <p>The <code>COPY</code> command.</p>
-    pub fn copy_command(&self) -> std::option::Option<&crate::types::CopyCommand> {
+    pub fn copy_command(&self) -> ::std::option::Option<&crate::types::CopyCommand> {
         self.copy_command.as_ref()
     }
     /// <p>The name of the user.</p>
-    pub fn username(&self) -> std::option::Option<&str> {
+    pub fn username(&self) -> ::std::option::Option<&str> {
         self.username.as_deref()
     }
     /// <p>The user password.</p>
-    pub fn password(&self) -> std::option::Option<&str> {
+    pub fn password(&self) -> ::std::option::Option<&str> {
         self.password.as_deref()
     }
     /// <p>The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon Redshift. Default value is 3600 (60 minutes).</p>
-    pub fn retry_options(&self) -> std::option::Option<&crate::types::RedshiftRetryOptions> {
+    pub fn retry_options(&self) -> ::std::option::Option<&crate::types::RedshiftRetryOptions> {
         self.retry_options.as_ref()
     }
     /// <p>The Amazon S3 destination.</p>
     /// <p>The compression formats <code>SNAPPY</code> or <code>ZIP</code> cannot be specified in <code>RedshiftDestinationUpdate.S3Update</code> because the Amazon Redshift <code>COPY</code> operation that reads from the S3 bucket doesn't support these compression formats.</p>
-    pub fn s3_update(&self) -> std::option::Option<&crate::types::S3DestinationUpdate> {
+    pub fn s3_update(&self) -> ::std::option::Option<&crate::types::S3DestinationUpdate> {
         self.s3_update.as_ref()
     }
     /// <p>The data processing configuration.</p>
     pub fn processing_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::ProcessingConfiguration> {
+    ) -> ::std::option::Option<&crate::types::ProcessingConfiguration> {
         self.processing_configuration.as_ref()
     }
     /// <p>You can update a delivery stream to enable Amazon S3 backup if it is disabled. If backup is enabled, you can't update the delivery stream to disable it. </p>
-    pub fn s3_backup_mode(&self) -> std::option::Option<&crate::types::RedshiftS3BackupMode> {
+    pub fn s3_backup_mode(&self) -> ::std::option::Option<&crate::types::RedshiftS3BackupMode> {
         self.s3_backup_mode.as_ref()
     }
     /// <p>The Amazon S3 destination for backup.</p>
-    pub fn s3_backup_update(&self) -> std::option::Option<&crate::types::S3DestinationUpdate> {
+    pub fn s3_backup_update(&self) -> ::std::option::Option<&crate::types::S3DestinationUpdate> {
         self.s3_backup_update.as_ref()
     }
     /// <p>The Amazon CloudWatch logging options for your delivery stream.</p>
     pub fn cloud_watch_logging_options(
         &self,
-    ) -> std::option::Option<&crate::types::CloudWatchLoggingOptions> {
+    ) -> ::std::option::Option<&crate::types::CloudWatchLoggingOptions> {
         self.cloud_watch_logging_options.as_ref()
     }
 }
-impl std::fmt::Debug for RedshiftDestinationUpdate {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for RedshiftDestinationUpdate {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("RedshiftDestinationUpdate");
         formatter.field("role_arn", &self.role_arn);
         formatter.field("cluster_jdbcurl", &self.cluster_jdbcurl);
@@ -119,84 +119,91 @@ impl RedshiftDestinationUpdate {
 
 /// A builder for [`RedshiftDestinationUpdate`](crate::types::RedshiftDestinationUpdate).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct RedshiftDestinationUpdateBuilder {
-    pub(crate) role_arn: std::option::Option<std::string::String>,
-    pub(crate) cluster_jdbcurl: std::option::Option<std::string::String>,
-    pub(crate) copy_command: std::option::Option<crate::types::CopyCommand>,
-    pub(crate) username: std::option::Option<std::string::String>,
-    pub(crate) password: std::option::Option<std::string::String>,
-    pub(crate) retry_options: std::option::Option<crate::types::RedshiftRetryOptions>,
-    pub(crate) s3_update: std::option::Option<crate::types::S3DestinationUpdate>,
-    pub(crate) processing_configuration: std::option::Option<crate::types::ProcessingConfiguration>,
-    pub(crate) s3_backup_mode: std::option::Option<crate::types::RedshiftS3BackupMode>,
-    pub(crate) s3_backup_update: std::option::Option<crate::types::S3DestinationUpdate>,
+    pub(crate) role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) cluster_jdbcurl: ::std::option::Option<::std::string::String>,
+    pub(crate) copy_command: ::std::option::Option<crate::types::CopyCommand>,
+    pub(crate) username: ::std::option::Option<::std::string::String>,
+    pub(crate) password: ::std::option::Option<::std::string::String>,
+    pub(crate) retry_options: ::std::option::Option<crate::types::RedshiftRetryOptions>,
+    pub(crate) s3_update: ::std::option::Option<crate::types::S3DestinationUpdate>,
+    pub(crate) processing_configuration:
+        ::std::option::Option<crate::types::ProcessingConfiguration>,
+    pub(crate) s3_backup_mode: ::std::option::Option<crate::types::RedshiftS3BackupMode>,
+    pub(crate) s3_backup_update: ::std::option::Option<crate::types::S3DestinationUpdate>,
     pub(crate) cloud_watch_logging_options:
-        std::option::Option<crate::types::CloudWatchLoggingOptions>,
+        ::std::option::Option<crate::types::CloudWatchLoggingOptions>,
 }
 impl RedshiftDestinationUpdateBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
-    pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.role_arn = Some(input.into());
+    pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
-    pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
     /// <p>The database connection string.</p>
-    pub fn cluster_jdbcurl(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cluster_jdbcurl = Some(input.into());
+    pub fn cluster_jdbcurl(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.cluster_jdbcurl = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The database connection string.</p>
-    pub fn set_cluster_jdbcurl(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cluster_jdbcurl(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.cluster_jdbcurl = input;
         self
     }
     /// <p>The <code>COPY</code> command.</p>
     pub fn copy_command(mut self, input: crate::types::CopyCommand) -> Self {
-        self.copy_command = Some(input);
+        self.copy_command = ::std::option::Option::Some(input);
         self
     }
     /// <p>The <code>COPY</code> command.</p>
     pub fn set_copy_command(
         mut self,
-        input: std::option::Option<crate::types::CopyCommand>,
+        input: ::std::option::Option<crate::types::CopyCommand>,
     ) -> Self {
         self.copy_command = input;
         self
     }
     /// <p>The name of the user.</p>
-    pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
-        self.username = Some(input.into());
+    pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.username = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the user.</p>
-    pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.username = input;
         self
     }
     /// <p>The user password.</p>
-    pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
-        self.password = Some(input.into());
+    pub fn password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.password = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user password.</p>
-    pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.password = input;
         self
     }
     /// <p>The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon Redshift. Default value is 3600 (60 minutes).</p>
     pub fn retry_options(mut self, input: crate::types::RedshiftRetryOptions) -> Self {
-        self.retry_options = Some(input);
+        self.retry_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon Redshift. Default value is 3600 (60 minutes).</p>
     pub fn set_retry_options(
         mut self,
-        input: std::option::Option<crate::types::RedshiftRetryOptions>,
+        input: ::std::option::Option<crate::types::RedshiftRetryOptions>,
     ) -> Self {
         self.retry_options = input;
         self
@@ -204,14 +211,14 @@ impl RedshiftDestinationUpdateBuilder {
     /// <p>The Amazon S3 destination.</p>
     /// <p>The compression formats <code>SNAPPY</code> or <code>ZIP</code> cannot be specified in <code>RedshiftDestinationUpdate.S3Update</code> because the Amazon Redshift <code>COPY</code> operation that reads from the S3 bucket doesn't support these compression formats.</p>
     pub fn s3_update(mut self, input: crate::types::S3DestinationUpdate) -> Self {
-        self.s3_update = Some(input);
+        self.s3_update = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Amazon S3 destination.</p>
     /// <p>The compression formats <code>SNAPPY</code> or <code>ZIP</code> cannot be specified in <code>RedshiftDestinationUpdate.S3Update</code> because the Amazon Redshift <code>COPY</code> operation that reads from the S3 bucket doesn't support these compression formats.</p>
     pub fn set_s3_update(
         mut self,
-        input: std::option::Option<crate::types::S3DestinationUpdate>,
+        input: ::std::option::Option<crate::types::S3DestinationUpdate>,
     ) -> Self {
         self.s3_update = input;
         self
@@ -221,39 +228,39 @@ impl RedshiftDestinationUpdateBuilder {
         mut self,
         input: crate::types::ProcessingConfiguration,
     ) -> Self {
-        self.processing_configuration = Some(input);
+        self.processing_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The data processing configuration.</p>
     pub fn set_processing_configuration(
         mut self,
-        input: std::option::Option<crate::types::ProcessingConfiguration>,
+        input: ::std::option::Option<crate::types::ProcessingConfiguration>,
     ) -> Self {
         self.processing_configuration = input;
         self
     }
     /// <p>You can update a delivery stream to enable Amazon S3 backup if it is disabled. If backup is enabled, you can't update the delivery stream to disable it. </p>
     pub fn s3_backup_mode(mut self, input: crate::types::RedshiftS3BackupMode) -> Self {
-        self.s3_backup_mode = Some(input);
+        self.s3_backup_mode = ::std::option::Option::Some(input);
         self
     }
     /// <p>You can update a delivery stream to enable Amazon S3 backup if it is disabled. If backup is enabled, you can't update the delivery stream to disable it. </p>
     pub fn set_s3_backup_mode(
         mut self,
-        input: std::option::Option<crate::types::RedshiftS3BackupMode>,
+        input: ::std::option::Option<crate::types::RedshiftS3BackupMode>,
     ) -> Self {
         self.s3_backup_mode = input;
         self
     }
     /// <p>The Amazon S3 destination for backup.</p>
     pub fn s3_backup_update(mut self, input: crate::types::S3DestinationUpdate) -> Self {
-        self.s3_backup_update = Some(input);
+        self.s3_backup_update = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Amazon S3 destination for backup.</p>
     pub fn set_s3_backup_update(
         mut self,
-        input: std::option::Option<crate::types::S3DestinationUpdate>,
+        input: ::std::option::Option<crate::types::S3DestinationUpdate>,
     ) -> Self {
         self.s3_backup_update = input;
         self
@@ -263,13 +270,13 @@ impl RedshiftDestinationUpdateBuilder {
         mut self,
         input: crate::types::CloudWatchLoggingOptions,
     ) -> Self {
-        self.cloud_watch_logging_options = Some(input);
+        self.cloud_watch_logging_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Amazon CloudWatch logging options for your delivery stream.</p>
     pub fn set_cloud_watch_logging_options(
         mut self,
-        input: std::option::Option<crate::types::CloudWatchLoggingOptions>,
+        input: ::std::option::Option<crate::types::CloudWatchLoggingOptions>,
     ) -> Self {
         self.cloud_watch_logging_options = input;
         self
@@ -291,8 +298,8 @@ impl RedshiftDestinationUpdateBuilder {
         }
     }
 }
-impl std::fmt::Debug for RedshiftDestinationUpdateBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for RedshiftDestinationUpdateBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("RedshiftDestinationUpdateBuilder");
         formatter.field("role_arn", &self.role_arn);
         formatter.field("cluster_jdbcurl", &self.cluster_jdbcurl);

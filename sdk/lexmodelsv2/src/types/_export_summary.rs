@@ -2,52 +2,52 @@
 
 /// <p>Provides summary information about an export in an export list. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportSummary {
     /// <p>The unique identifier that Amazon Lex assigned to the export.</p>
     #[doc(hidden)]
-    pub export_id: std::option::Option<std::string::String>,
+    pub export_id: ::std::option::Option<::std::string::String>,
     /// <p>Information about the bot or bot locale that was exported.</p>
     #[doc(hidden)]
-    pub resource_specification: std::option::Option<crate::types::ExportResourceSpecification>,
+    pub resource_specification: ::std::option::Option<crate::types::ExportResourceSpecification>,
     /// <p>The file format used in the export files.</p>
     #[doc(hidden)]
-    pub file_format: std::option::Option<crate::types::ImportExportFileFormat>,
+    pub file_format: ::std::option::Option<crate::types::ImportExportFileFormat>,
     /// <p>The status of the export. When the status is <code>Completed</code> the export is ready to download.</p>
     #[doc(hidden)]
-    pub export_status: std::option::Option<crate::types::ExportStatus>,
+    pub export_status: ::std::option::Option<crate::types::ExportStatus>,
     /// <p>The date and time that the export was created.</p>
     #[doc(hidden)]
-    pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the export was last updated.</p>
     #[doc(hidden)]
-    pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ExportSummary {
     /// <p>The unique identifier that Amazon Lex assigned to the export.</p>
-    pub fn export_id(&self) -> std::option::Option<&str> {
+    pub fn export_id(&self) -> ::std::option::Option<&str> {
         self.export_id.as_deref()
     }
     /// <p>Information about the bot or bot locale that was exported.</p>
     pub fn resource_specification(
         &self,
-    ) -> std::option::Option<&crate::types::ExportResourceSpecification> {
+    ) -> ::std::option::Option<&crate::types::ExportResourceSpecification> {
         self.resource_specification.as_ref()
     }
     /// <p>The file format used in the export files.</p>
-    pub fn file_format(&self) -> std::option::Option<&crate::types::ImportExportFileFormat> {
+    pub fn file_format(&self) -> ::std::option::Option<&crate::types::ImportExportFileFormat> {
         self.file_format.as_ref()
     }
     /// <p>The status of the export. When the status is <code>Completed</code> the export is ready to download.</p>
-    pub fn export_status(&self) -> std::option::Option<&crate::types::ExportStatus> {
+    pub fn export_status(&self) -> ::std::option::Option<&crate::types::ExportStatus> {
         self.export_status.as_ref()
     }
     /// <p>The date and time that the export was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time that the export was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
 }
@@ -60,24 +60,26 @@ impl ExportSummary {
 
 /// A builder for [`ExportSummary`](crate::types::ExportSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ExportSummaryBuilder {
-    pub(crate) export_id: std::option::Option<std::string::String>,
+    pub(crate) export_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_specification:
-        std::option::Option<crate::types::ExportResourceSpecification>,
-    pub(crate) file_format: std::option::Option<crate::types::ImportExportFileFormat>,
-    pub(crate) export_status: std::option::Option<crate::types::ExportStatus>,
-    pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        ::std::option::Option<crate::types::ExportResourceSpecification>,
+    pub(crate) file_format: ::std::option::Option<crate::types::ImportExportFileFormat>,
+    pub(crate) export_status: ::std::option::Option<crate::types::ExportStatus>,
+    pub(crate) creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ExportSummaryBuilder {
     /// <p>The unique identifier that Amazon Lex assigned to the export.</p>
-    pub fn export_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.export_id = Some(input.into());
+    pub fn export_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.export_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier that Amazon Lex assigned to the export.</p>
-    pub fn set_export_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_export_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.export_id = input;
         self
     }
@@ -86,65 +88,65 @@ impl ExportSummaryBuilder {
         mut self,
         input: crate::types::ExportResourceSpecification,
     ) -> Self {
-        self.resource_specification = Some(input);
+        self.resource_specification = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the bot or bot locale that was exported.</p>
     pub fn set_resource_specification(
         mut self,
-        input: std::option::Option<crate::types::ExportResourceSpecification>,
+        input: ::std::option::Option<crate::types::ExportResourceSpecification>,
     ) -> Self {
         self.resource_specification = input;
         self
     }
     /// <p>The file format used in the export files.</p>
     pub fn file_format(mut self, input: crate::types::ImportExportFileFormat) -> Self {
-        self.file_format = Some(input);
+        self.file_format = ::std::option::Option::Some(input);
         self
     }
     /// <p>The file format used in the export files.</p>
     pub fn set_file_format(
         mut self,
-        input: std::option::Option<crate::types::ImportExportFileFormat>,
+        input: ::std::option::Option<crate::types::ImportExportFileFormat>,
     ) -> Self {
         self.file_format = input;
         self
     }
     /// <p>The status of the export. When the status is <code>Completed</code> the export is ready to download.</p>
     pub fn export_status(mut self, input: crate::types::ExportStatus) -> Self {
-        self.export_status = Some(input);
+        self.export_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the export. When the status is <code>Completed</code> the export is ready to download.</p>
     pub fn set_export_status(
         mut self,
-        input: std::option::Option<crate::types::ExportStatus>,
+        input: ::std::option::Option<crate::types::ExportStatus>,
     ) -> Self {
         self.export_status = input;
         self
     }
     /// <p>The date and time that the export was created.</p>
-    pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_date_time = Some(input);
+    pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_date_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time that the export was created.</p>
     pub fn set_creation_date_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_date_time = input;
         self
     }
     /// <p>The date and time that the export was last updated.</p>
-    pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_updated_date_time = Some(input);
+    pub fn last_updated_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_updated_date_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time that the export was last updated.</p>
     pub fn set_last_updated_date_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_updated_date_time = input;
         self

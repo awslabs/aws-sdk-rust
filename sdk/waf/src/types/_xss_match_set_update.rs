@@ -6,22 +6,22 @@
 /// </note>
 /// <p>Specifies the part of a web request that you want to inspect for cross-site scripting attacks and indicates whether you want to add the specification to an <code>XssMatchSet</code> or delete it from an <code>XssMatchSet</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct XssMatchSetUpdate {
     /// <p>Specify <code>INSERT</code> to add an <code>XssMatchSetUpdate</code> to an <code>XssMatchSet</code>. Use <code>DELETE</code> to remove an <code>XssMatchSetUpdate</code> from an <code>XssMatchSet</code>.</p>
     #[doc(hidden)]
-    pub action: std::option::Option<crate::types::ChangeAction>,
+    pub action: ::std::option::Option<crate::types::ChangeAction>,
     /// <p>Specifies the part of a web request that you want AWS WAF to inspect for cross-site scripting attacks and, if you want AWS WAF to inspect a header, the name of the header.</p>
     #[doc(hidden)]
-    pub xss_match_tuple: std::option::Option<crate::types::XssMatchTuple>,
+    pub xss_match_tuple: ::std::option::Option<crate::types::XssMatchTuple>,
 }
 impl XssMatchSetUpdate {
     /// <p>Specify <code>INSERT</code> to add an <code>XssMatchSetUpdate</code> to an <code>XssMatchSet</code>. Use <code>DELETE</code> to remove an <code>XssMatchSetUpdate</code> from an <code>XssMatchSet</code>.</p>
-    pub fn action(&self) -> std::option::Option<&crate::types::ChangeAction> {
+    pub fn action(&self) -> ::std::option::Option<&crate::types::ChangeAction> {
         self.action.as_ref()
     }
     /// <p>Specifies the part of a web request that you want AWS WAF to inspect for cross-site scripting attacks and, if you want AWS WAF to inspect a header, the name of the header.</p>
-    pub fn xss_match_tuple(&self) -> std::option::Option<&crate::types::XssMatchTuple> {
+    pub fn xss_match_tuple(&self) -> ::std::option::Option<&crate::types::XssMatchTuple> {
         self.xss_match_tuple.as_ref()
     }
 }
@@ -34,31 +34,33 @@ impl XssMatchSetUpdate {
 
 /// A builder for [`XssMatchSetUpdate`](crate::types::XssMatchSetUpdate).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct XssMatchSetUpdateBuilder {
-    pub(crate) action: std::option::Option<crate::types::ChangeAction>,
-    pub(crate) xss_match_tuple: std::option::Option<crate::types::XssMatchTuple>,
+    pub(crate) action: ::std::option::Option<crate::types::ChangeAction>,
+    pub(crate) xss_match_tuple: ::std::option::Option<crate::types::XssMatchTuple>,
 }
 impl XssMatchSetUpdateBuilder {
     /// <p>Specify <code>INSERT</code> to add an <code>XssMatchSetUpdate</code> to an <code>XssMatchSet</code>. Use <code>DELETE</code> to remove an <code>XssMatchSetUpdate</code> from an <code>XssMatchSet</code>.</p>
     pub fn action(mut self, input: crate::types::ChangeAction) -> Self {
-        self.action = Some(input);
+        self.action = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specify <code>INSERT</code> to add an <code>XssMatchSetUpdate</code> to an <code>XssMatchSet</code>. Use <code>DELETE</code> to remove an <code>XssMatchSetUpdate</code> from an <code>XssMatchSet</code>.</p>
-    pub fn set_action(mut self, input: std::option::Option<crate::types::ChangeAction>) -> Self {
+    pub fn set_action(mut self, input: ::std::option::Option<crate::types::ChangeAction>) -> Self {
         self.action = input;
         self
     }
     /// <p>Specifies the part of a web request that you want AWS WAF to inspect for cross-site scripting attacks and, if you want AWS WAF to inspect a header, the name of the header.</p>
     pub fn xss_match_tuple(mut self, input: crate::types::XssMatchTuple) -> Self {
-        self.xss_match_tuple = Some(input);
+        self.xss_match_tuple = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the part of a web request that you want AWS WAF to inspect for cross-site scripting attacks and, if you want AWS WAF to inspect a header, the name of the header.</p>
     pub fn set_xss_match_tuple(
         mut self,
-        input: std::option::Option<crate::types::XssMatchTuple>,
+        input: ::std::option::Option<crate::types::XssMatchTuple>,
     ) -> Self {
         self.xss_match_tuple = input;
         self

@@ -2,15 +2,15 @@
 
 /// <p>The specifications for a worker type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorkerTypeSpecification {
     /// <p>The image configuration for a worker type.</p>
     #[doc(hidden)]
-    pub image_configuration: std::option::Option<crate::types::ImageConfiguration>,
+    pub image_configuration: ::std::option::Option<crate::types::ImageConfiguration>,
 }
 impl WorkerTypeSpecification {
     /// <p>The image configuration for a worker type.</p>
-    pub fn image_configuration(&self) -> std::option::Option<&crate::types::ImageConfiguration> {
+    pub fn image_configuration(&self) -> ::std::option::Option<&crate::types::ImageConfiguration> {
         self.image_configuration.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl WorkerTypeSpecification {
 
 /// A builder for [`WorkerTypeSpecification`](crate::types::WorkerTypeSpecification).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct WorkerTypeSpecificationBuilder {
-    pub(crate) image_configuration: std::option::Option<crate::types::ImageConfiguration>,
+    pub(crate) image_configuration: ::std::option::Option<crate::types::ImageConfiguration>,
 }
 impl WorkerTypeSpecificationBuilder {
     /// <p>The image configuration for a worker type.</p>
     pub fn image_configuration(mut self, input: crate::types::ImageConfiguration) -> Self {
-        self.image_configuration = Some(input);
+        self.image_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The image configuration for a worker type.</p>
     pub fn set_image_configuration(
         mut self,
-        input: std::option::Option<crate::types::ImageConfiguration>,
+        input: ::std::option::Option<crate::types::ImageConfiguration>,
     ) -> Self {
         self.image_configuration = input;
         self

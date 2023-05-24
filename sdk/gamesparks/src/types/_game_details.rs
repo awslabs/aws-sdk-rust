@@ -2,57 +2,58 @@
 
 /// <p>Details about a game.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GameDetails {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of this game.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The description of the game.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The date when the game was created.</p>
     #[doc(hidden)]
-    pub created: std::option::Option<aws_smithy_types::DateTime>,
+    pub created: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date when the game was last modified.</p>
     #[doc(hidden)]
-    pub last_updated: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The state of the game.</p>
     #[doc(hidden)]
-    pub state: std::option::Option<crate::types::GameState>,
+    pub state: ::std::option::Option<crate::types::GameState>,
     /// <p>Determines if the game can be deleted.</p>
     #[doc(hidden)]
     pub enable_termination_protection: bool,
     /// <p>The tags associated with the game.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl GameDetails {
     /// <p>The name of the game.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of this game.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The description of the game.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The date when the game was created.</p>
-    pub fn created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
     /// <p>The date when the game was last modified.</p>
-    pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated.as_ref()
     }
     /// <p>The state of the game.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::GameState> {
+    pub fn state(&self) -> ::std::option::Option<&crate::types::GameState> {
         self.state.as_ref()
     }
     /// <p>Determines if the game can be deleted.</p>
@@ -62,8 +63,9 @@ impl GameDetails {
     /// <p>The tags associated with the game.</p>
     pub fn tags(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.tags.as_ref()
     }
 }
@@ -76,89 +78,95 @@ impl GameDetails {
 
 /// A builder for [`GameDetails`](crate::types::GameDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GameDetailsBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) created: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_updated: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) state: std::option::Option<crate::types::GameState>,
-    pub(crate) enable_termination_protection: std::option::Option<bool>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) created: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) state: ::std::option::Option<crate::types::GameState>,
+    pub(crate) enable_termination_protection: ::std::option::Option<bool>,
+    pub(crate) tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl GameDetailsBuilder {
     /// <p>The name of the game.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the game.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of this game.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of this game.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// <p>The description of the game.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the game.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>The date when the game was created.</p>
-    pub fn created(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created = Some(input);
+    pub fn created(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date when the game was created.</p>
-    pub fn set_created(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_created(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
         self.created = input;
         self
     }
     /// <p>The date when the game was last modified.</p>
-    pub fn last_updated(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_updated = Some(input);
+    pub fn last_updated(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_updated = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date when the game was last modified.</p>
     pub fn set_last_updated(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_updated = input;
         self
     }
     /// <p>The state of the game.</p>
     pub fn state(mut self, input: crate::types::GameState) -> Self {
-        self.state = Some(input);
+        self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The state of the game.</p>
-    pub fn set_state(mut self, input: std::option::Option<crate::types::GameState>) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::GameState>) -> Self {
         self.state = input;
         self
     }
     /// <p>Determines if the game can be deleted.</p>
     pub fn enable_termination_protection(mut self, input: bool) -> Self {
-        self.enable_termination_protection = Some(input);
+        self.enable_termination_protection = ::std::option::Option::Some(input);
         self
     }
     /// <p>Determines if the game can be deleted.</p>
-    pub fn set_enable_termination_protection(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enable_termination_protection(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_termination_protection = input;
         self
     }
@@ -169,19 +177,19 @@ impl GameDetailsBuilder {
     /// <p>The tags associated with the game.</p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
+        self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags associated with the game.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.tags = input;

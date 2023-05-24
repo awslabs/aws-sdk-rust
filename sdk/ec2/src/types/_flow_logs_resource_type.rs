@@ -41,13 +41,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum FlowLogsResourceType {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,7 +63,7 @@ pub enum FlowLogsResourceType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for FlowLogsResourceType {
+impl ::std::convert::From<&str> for FlowLogsResourceType {
     fn from(s: &str) -> Self {
         match s {
             "NetworkInterface" => FlowLogsResourceType::NetworkInterface,
@@ -77,11 +77,11 @@ impl std::convert::From<&str> for FlowLogsResourceType {
         }
     }
 }
-impl std::str::FromStr for FlowLogsResourceType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for FlowLogsResourceType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FlowLogsResourceType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(FlowLogsResourceType::from(s))
     }
 }
 impl FlowLogsResourceType {
@@ -107,7 +107,7 @@ impl FlowLogsResourceType {
         ]
     }
 }
-impl AsRef<str> for FlowLogsResourceType {
+impl ::std::convert::AsRef<str> for FlowLogsResourceType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

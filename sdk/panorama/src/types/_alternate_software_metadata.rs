@@ -2,15 +2,15 @@
 
 /// <p>Details about a beta appliance software update.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AlternateSoftwareMetadata {
     /// <p>The appliance software version.</p>
     #[doc(hidden)]
-    pub version: std::option::Option<std::string::String>,
+    pub version: ::std::option::Option<::std::string::String>,
 }
 impl AlternateSoftwareMetadata {
     /// <p>The appliance software version.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<&str> {
         self.version.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl AlternateSoftwareMetadata {
 
 /// A builder for [`AlternateSoftwareMetadata`](crate::types::AlternateSoftwareMetadata).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AlternateSoftwareMetadataBuilder {
-    pub(crate) version: std::option::Option<std::string::String>,
+    pub(crate) version: ::std::option::Option<::std::string::String>,
 }
 impl AlternateSoftwareMetadataBuilder {
     /// <p>The appliance software version.</p>
-    pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.version = Some(input.into());
+    pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The appliance software version.</p>
-    pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
     }

@@ -2,7 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_create_replication_group_http_error(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::create_replication_group::CreateReplicationGroupOutput,
@@ -15,7 +15,7 @@ pub fn de_create_replication_group_http_error(
         _response_body,
     )
     .map_err(crate::operation::create_replication_group::CreateReplicationGroupError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
+    generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code =
         match generic.code() {
@@ -340,7 +340,7 @@ pub fn de_create_replication_group_http_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_create_replication_group_http_response_with_props(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::create_replication_group::CreateReplicationGroupOutput,
@@ -358,7 +358,7 @@ pub fn de_create_replication_group_http_response_with_props(
                 crate::operation::create_replication_group::CreateReplicationGroupError::unhandled,
             )?;
         output._set_request_id(
-            aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
+            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
         );
         output.build()
     })
@@ -370,16 +370,16 @@ pub fn de_create_replication_group(
     mut builder: crate::operation::create_replication_group::builders::CreateReplicationGroupOutputBuilder,
 ) -> Result<
     crate::operation::create_replication_group::builders::CreateReplicationGroupOutputBuilder,
-    aws_smithy_xml::decode::XmlDecodeError,
+    ::aws_smithy_xml::decode::XmlDecodeError,
 > {
-    let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
+    let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateReplicationGroupResponse")) {
-        return Err(aws_smithy_xml::decode::XmlDecodeError::custom(format!(
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected CreateReplicationGroupResponse got {:?}",
             start_el
         )));
@@ -387,7 +387,7 @@ pub fn de_create_replication_group(
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("CreateReplicationGroupResult")) {
-            return Err(aws_smithy_xml::decode::XmlDecodeError::custom(format!(
+            return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
                 "invalid result, expected CreateReplicationGroupResult got {:?}",
                 start_el
             )));
@@ -408,7 +408,7 @@ pub fn de_create_replication_group(
         }
         }
     } else {
-        return Err(aws_smithy_xml::decode::XmlDecodeError::custom(
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(
             "expected CreateReplicationGroupResult tag",
         ));
     };

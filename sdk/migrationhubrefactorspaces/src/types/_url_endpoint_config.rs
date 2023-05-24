@@ -2,22 +2,22 @@
 
 /// <p>The configuration for the URL endpoint type. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UrlEndpointConfig {
     /// <p>The HTTP URL endpoint. </p>
     #[doc(hidden)]
-    pub url: std::option::Option<std::string::String>,
+    pub url: ::std::option::Option<::std::string::String>,
     /// <p>The health check URL of the URL endpoint type. </p>
     #[doc(hidden)]
-    pub health_url: std::option::Option<std::string::String>,
+    pub health_url: ::std::option::Option<::std::string::String>,
 }
 impl UrlEndpointConfig {
     /// <p>The HTTP URL endpoint. </p>
-    pub fn url(&self) -> std::option::Option<&str> {
+    pub fn url(&self) -> ::std::option::Option<&str> {
         self.url.as_deref()
     }
     /// <p>The health check URL of the URL endpoint type. </p>
-    pub fn health_url(&self) -> std::option::Option<&str> {
+    pub fn health_url(&self) -> ::std::option::Option<&str> {
         self.health_url.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl UrlEndpointConfig {
 
 /// A builder for [`UrlEndpointConfig`](crate::types::UrlEndpointConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UrlEndpointConfigBuilder {
-    pub(crate) url: std::option::Option<std::string::String>,
-    pub(crate) health_url: std::option::Option<std::string::String>,
+    pub(crate) url: ::std::option::Option<::std::string::String>,
+    pub(crate) health_url: ::std::option::Option<::std::string::String>,
 }
 impl UrlEndpointConfigBuilder {
     /// <p>The HTTP URL endpoint. </p>
-    pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.url = Some(input.into());
+    pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The HTTP URL endpoint. </p>
-    pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.url = input;
         self
     }
     /// <p>The health check URL of the URL endpoint type. </p>
-    pub fn health_url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.health_url = Some(input.into());
+    pub fn health_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.health_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The health check URL of the URL endpoint type. </p>
-    pub fn set_health_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_health_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.health_url = input;
         self
     }

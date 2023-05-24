@@ -7,104 +7,104 @@
 /// <p>For <code>RUN_COMMAND</code> tasks, Systems Manager uses specified values for <code>TaskParameters</code> and <code>LoggingInfo</code> only if no values are specified for <code>TaskInvocationParameters</code>. </p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct MaintenanceWindowRunCommandParameters {
     /// <p>Information about the commands to run.</p>
     #[doc(hidden)]
-    pub comment: std::option::Option<std::string::String>,
+    pub comment: ::std::option::Option<::std::string::String>,
     /// <p>Configuration options for sending command output to Amazon CloudWatch Logs.</p>
     #[doc(hidden)]
-    pub cloud_watch_output_config: std::option::Option<crate::types::CloudWatchOutputConfig>,
+    pub cloud_watch_output_config: ::std::option::Option<crate::types::CloudWatchOutputConfig>,
     /// <p>The SHA-256 or SHA-1 hash created by the system when the document was created. SHA-1 hashes have been deprecated.</p>
     #[doc(hidden)]
-    pub document_hash: std::option::Option<std::string::String>,
+    pub document_hash: ::std::option::Option<::std::string::String>,
     /// <p>SHA-256 or SHA-1. SHA-1 hashes have been deprecated.</p>
     #[doc(hidden)]
-    pub document_hash_type: std::option::Option<crate::types::DocumentHashType>,
+    pub document_hash_type: ::std::option::Option<crate::types::DocumentHashType>,
     /// <p>The Amazon Web Services Systems Manager document (SSM document) version to use in the request. You can specify <code>$DEFAULT</code>, <code>$LATEST</code>, or a specific version number. If you run commands by using the Amazon Web Services CLI, then you must escape the first two options by using a backslash. If you specify a version number, then you don't need to use the backslash. For example:</p>
     /// <p> <code>--document-version "\$DEFAULT"</code> </p>
     /// <p> <code>--document-version "\$LATEST"</code> </p>
     /// <p> <code>--document-version "3"</code> </p>
     #[doc(hidden)]
-    pub document_version: std::option::Option<std::string::String>,
+    pub document_version: ::std::option::Option<::std::string::String>,
     /// <p>Configurations for sending notifications about command status changes on a per-managed node basis.</p>
     #[doc(hidden)]
-    pub notification_config: std::option::Option<crate::types::NotificationConfig>,
+    pub notification_config: ::std::option::Option<crate::types::NotificationConfig>,
     /// <p>The name of the Amazon Simple Storage Service (Amazon S3) bucket.</p>
     #[doc(hidden)]
-    pub output_s3_bucket_name: std::option::Option<std::string::String>,
+    pub output_s3_bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>The S3 bucket subfolder.</p>
     #[doc(hidden)]
-    pub output_s3_key_prefix: std::option::Option<std::string::String>,
+    pub output_s3_key_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The parameters for the <code>RUN_COMMAND</code> task execution.</p>
     #[doc(hidden)]
-    pub parameters: std::option::Option<
-        std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    pub parameters: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
     >,
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
     #[doc(hidden)]
-    pub service_role_arn: std::option::Option<std::string::String>,
+    pub service_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>If this time is reached and the command hasn't already started running, it doesn't run.</p>
     #[doc(hidden)]
-    pub timeout_seconds: std::option::Option<i32>,
+    pub timeout_seconds: ::std::option::Option<i32>,
 }
 impl MaintenanceWindowRunCommandParameters {
     /// <p>Information about the commands to run.</p>
-    pub fn comment(&self) -> std::option::Option<&str> {
+    pub fn comment(&self) -> ::std::option::Option<&str> {
         self.comment.as_deref()
     }
     /// <p>Configuration options for sending command output to Amazon CloudWatch Logs.</p>
     pub fn cloud_watch_output_config(
         &self,
-    ) -> std::option::Option<&crate::types::CloudWatchOutputConfig> {
+    ) -> ::std::option::Option<&crate::types::CloudWatchOutputConfig> {
         self.cloud_watch_output_config.as_ref()
     }
     /// <p>The SHA-256 or SHA-1 hash created by the system when the document was created. SHA-1 hashes have been deprecated.</p>
-    pub fn document_hash(&self) -> std::option::Option<&str> {
+    pub fn document_hash(&self) -> ::std::option::Option<&str> {
         self.document_hash.as_deref()
     }
     /// <p>SHA-256 or SHA-1. SHA-1 hashes have been deprecated.</p>
-    pub fn document_hash_type(&self) -> std::option::Option<&crate::types::DocumentHashType> {
+    pub fn document_hash_type(&self) -> ::std::option::Option<&crate::types::DocumentHashType> {
         self.document_hash_type.as_ref()
     }
     /// <p>The Amazon Web Services Systems Manager document (SSM document) version to use in the request. You can specify <code>$DEFAULT</code>, <code>$LATEST</code>, or a specific version number. If you run commands by using the Amazon Web Services CLI, then you must escape the first two options by using a backslash. If you specify a version number, then you don't need to use the backslash. For example:</p>
     /// <p> <code>--document-version "\$DEFAULT"</code> </p>
     /// <p> <code>--document-version "\$LATEST"</code> </p>
     /// <p> <code>--document-version "3"</code> </p>
-    pub fn document_version(&self) -> std::option::Option<&str> {
+    pub fn document_version(&self) -> ::std::option::Option<&str> {
         self.document_version.as_deref()
     }
     /// <p>Configurations for sending notifications about command status changes on a per-managed node basis.</p>
-    pub fn notification_config(&self) -> std::option::Option<&crate::types::NotificationConfig> {
+    pub fn notification_config(&self) -> ::std::option::Option<&crate::types::NotificationConfig> {
         self.notification_config.as_ref()
     }
     /// <p>The name of the Amazon Simple Storage Service (Amazon S3) bucket.</p>
-    pub fn output_s3_bucket_name(&self) -> std::option::Option<&str> {
+    pub fn output_s3_bucket_name(&self) -> ::std::option::Option<&str> {
         self.output_s3_bucket_name.as_deref()
     }
     /// <p>The S3 bucket subfolder.</p>
-    pub fn output_s3_key_prefix(&self) -> std::option::Option<&str> {
+    pub fn output_s3_key_prefix(&self) -> ::std::option::Option<&str> {
         self.output_s3_key_prefix.as_deref()
     }
     /// <p>The parameters for the <code>RUN_COMMAND</code> task execution.</p>
     pub fn parameters(
         &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
     > {
         self.parameters.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
-    pub fn service_role_arn(&self) -> std::option::Option<&str> {
+    pub fn service_role_arn(&self) -> ::std::option::Option<&str> {
         self.service_role_arn.as_deref()
     }
     /// <p>If this time is reached and the command hasn't already started running, it doesn't run.</p>
-    pub fn timeout_seconds(&self) -> std::option::Option<i32> {
+    pub fn timeout_seconds(&self) -> ::std::option::Option<i32> {
         self.timeout_seconds
     }
 }
-impl std::fmt::Debug for MaintenanceWindowRunCommandParameters {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for MaintenanceWindowRunCommandParameters {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("MaintenanceWindowRunCommandParameters");
         formatter.field("comment", &self.comment);
         formatter.field("cloud_watch_output_config", &self.cloud_watch_output_config);
@@ -129,30 +129,31 @@ impl MaintenanceWindowRunCommandParameters {
 
 /// A builder for [`MaintenanceWindowRunCommandParameters`](crate::types::MaintenanceWindowRunCommandParameters).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct MaintenanceWindowRunCommandParametersBuilder {
-    pub(crate) comment: std::option::Option<std::string::String>,
-    pub(crate) cloud_watch_output_config: std::option::Option<crate::types::CloudWatchOutputConfig>,
-    pub(crate) document_hash: std::option::Option<std::string::String>,
-    pub(crate) document_hash_type: std::option::Option<crate::types::DocumentHashType>,
-    pub(crate) document_version: std::option::Option<std::string::String>,
-    pub(crate) notification_config: std::option::Option<crate::types::NotificationConfig>,
-    pub(crate) output_s3_bucket_name: std::option::Option<std::string::String>,
-    pub(crate) output_s3_key_prefix: std::option::Option<std::string::String>,
-    pub(crate) parameters: std::option::Option<
-        std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    pub(crate) comment: ::std::option::Option<::std::string::String>,
+    pub(crate) cloud_watch_output_config:
+        ::std::option::Option<crate::types::CloudWatchOutputConfig>,
+    pub(crate) document_hash: ::std::option::Option<::std::string::String>,
+    pub(crate) document_hash_type: ::std::option::Option<crate::types::DocumentHashType>,
+    pub(crate) document_version: ::std::option::Option<::std::string::String>,
+    pub(crate) notification_config: ::std::option::Option<crate::types::NotificationConfig>,
+    pub(crate) output_s3_bucket_name: ::std::option::Option<::std::string::String>,
+    pub(crate) output_s3_key_prefix: ::std::option::Option<::std::string::String>,
+    pub(crate) parameters: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
     >,
-    pub(crate) service_role_arn: std::option::Option<std::string::String>,
-    pub(crate) timeout_seconds: std::option::Option<i32>,
+    pub(crate) service_role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) timeout_seconds: ::std::option::Option<i32>,
 }
 impl MaintenanceWindowRunCommandParametersBuilder {
     /// <p>Information about the commands to run.</p>
-    pub fn comment(mut self, input: impl Into<std::string::String>) -> Self {
-        self.comment = Some(input.into());
+    pub fn comment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.comment = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Information about the commands to run.</p>
-    pub fn set_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.comment = input;
         self
     }
@@ -161,36 +162,42 @@ impl MaintenanceWindowRunCommandParametersBuilder {
         mut self,
         input: crate::types::CloudWatchOutputConfig,
     ) -> Self {
-        self.cloud_watch_output_config = Some(input);
+        self.cloud_watch_output_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configuration options for sending command output to Amazon CloudWatch Logs.</p>
     pub fn set_cloud_watch_output_config(
         mut self,
-        input: std::option::Option<crate::types::CloudWatchOutputConfig>,
+        input: ::std::option::Option<crate::types::CloudWatchOutputConfig>,
     ) -> Self {
         self.cloud_watch_output_config = input;
         self
     }
     /// <p>The SHA-256 or SHA-1 hash created by the system when the document was created. SHA-1 hashes have been deprecated.</p>
-    pub fn document_hash(mut self, input: impl Into<std::string::String>) -> Self {
-        self.document_hash = Some(input.into());
+    pub fn document_hash(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.document_hash = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The SHA-256 or SHA-1 hash created by the system when the document was created. SHA-1 hashes have been deprecated.</p>
-    pub fn set_document_hash(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_document_hash(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.document_hash = input;
         self
     }
     /// <p>SHA-256 or SHA-1. SHA-1 hashes have been deprecated.</p>
     pub fn document_hash_type(mut self, input: crate::types::DocumentHashType) -> Self {
-        self.document_hash_type = Some(input);
+        self.document_hash_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>SHA-256 or SHA-1. SHA-1 hashes have been deprecated.</p>
     pub fn set_document_hash_type(
         mut self,
-        input: std::option::Option<crate::types::DocumentHashType>,
+        input: ::std::option::Option<crate::types::DocumentHashType>,
     ) -> Self {
         self.document_hash_type = input;
         self
@@ -199,53 +206,65 @@ impl MaintenanceWindowRunCommandParametersBuilder {
     /// <p> <code>--document-version "\$DEFAULT"</code> </p>
     /// <p> <code>--document-version "\$LATEST"</code> </p>
     /// <p> <code>--document-version "3"</code> </p>
-    pub fn document_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.document_version = Some(input.into());
+    pub fn document_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.document_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services Systems Manager document (SSM document) version to use in the request. You can specify <code>$DEFAULT</code>, <code>$LATEST</code>, or a specific version number. If you run commands by using the Amazon Web Services CLI, then you must escape the first two options by using a backslash. If you specify a version number, then you don't need to use the backslash. For example:</p>
     /// <p> <code>--document-version "\$DEFAULT"</code> </p>
     /// <p> <code>--document-version "\$LATEST"</code> </p>
     /// <p> <code>--document-version "3"</code> </p>
-    pub fn set_document_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_document_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.document_version = input;
         self
     }
     /// <p>Configurations for sending notifications about command status changes on a per-managed node basis.</p>
     pub fn notification_config(mut self, input: crate::types::NotificationConfig) -> Self {
-        self.notification_config = Some(input);
+        self.notification_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configurations for sending notifications about command status changes on a per-managed node basis.</p>
     pub fn set_notification_config(
         mut self,
-        input: std::option::Option<crate::types::NotificationConfig>,
+        input: ::std::option::Option<crate::types::NotificationConfig>,
     ) -> Self {
         self.notification_config = input;
         self
     }
     /// <p>The name of the Amazon Simple Storage Service (Amazon S3) bucket.</p>
-    pub fn output_s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.output_s3_bucket_name = Some(input.into());
+    pub fn output_s3_bucket_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.output_s3_bucket_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Amazon Simple Storage Service (Amazon S3) bucket.</p>
     pub fn set_output_s3_bucket_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.output_s3_bucket_name = input;
         self
     }
     /// <p>The S3 bucket subfolder.</p>
-    pub fn output_s3_key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
-        self.output_s3_key_prefix = Some(input.into());
+    pub fn output_s3_key_prefix(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.output_s3_key_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The S3 bucket subfolder.</p>
     pub fn set_output_s3_key_prefix(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.output_s3_key_prefix = input;
         self
@@ -257,41 +276,50 @@ impl MaintenanceWindowRunCommandParametersBuilder {
     /// <p>The parameters for the <code>RUN_COMMAND</code> task execution.</p>
     pub fn parameters(
         mut self,
-        k: impl Into<std::string::String>,
-        v: std::vec::Vec<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: ::std::vec::Vec<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
         hash_map.insert(k.into(), v);
-        self.parameters = Some(hash_map);
+        self.parameters = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The parameters for the <code>RUN_COMMAND</code> task execution.</p>
     pub fn set_parameters(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<
+                ::std::string::String,
+                ::std::vec::Vec<::std::string::String>,
+            >,
         >,
     ) -> Self {
         self.parameters = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
-    pub fn service_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.service_role_arn = Some(input.into());
+    pub fn service_role_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.service_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
-    pub fn set_service_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_service_role_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.service_role_arn = input;
         self
     }
     /// <p>If this time is reached and the command hasn't already started running, it doesn't run.</p>
     pub fn timeout_seconds(mut self, input: i32) -> Self {
-        self.timeout_seconds = Some(input);
+        self.timeout_seconds = ::std::option::Option::Some(input);
         self
     }
     /// <p>If this time is reached and the command hasn't already started running, it doesn't run.</p>
-    pub fn set_timeout_seconds(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_timeout_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.timeout_seconds = input;
         self
     }
@@ -312,8 +340,8 @@ impl MaintenanceWindowRunCommandParametersBuilder {
         }
     }
 }
-impl std::fmt::Debug for MaintenanceWindowRunCommandParametersBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for MaintenanceWindowRunCommandParametersBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("MaintenanceWindowRunCommandParametersBuilder");
         formatter.field("comment", &self.comment);
         formatter.field("cloud_watch_output_config", &self.cloud_watch_output_config);

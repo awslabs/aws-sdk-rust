@@ -6,29 +6,29 @@ pub use crate::operation::remove_attributes_from_findings::_remove_attributes_fr
 /// Fluent builder constructing a request to `RemoveAttributesFromFindings`.
 ///
 /// <p>Removes entire attributes (key and value pairs) from the findings that are specified by the ARNs of the findings where an attribute with the specified key exists.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RemoveAttributesFromFindingsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::remove_attributes_from_findings::builders::RemoveAttributesFromFindingsInputBuilder,
 }
 impl RemoveAttributesFromFindingsFluentBuilder {
     /// Creates a new `RemoveAttributesFromFindings`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::remove_attributes_from_findings::RemoveAttributesFromFindings,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::remove_attributes_from_findings::RemoveAttributesFromFindingsError,
         >,
     > {
@@ -36,30 +36,33 @@ impl RemoveAttributesFromFindingsFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::remove_attributes_from_findings::RemoveAttributesFromFindingsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::remove_attributes_from_findings::RemoveAttributesFromFindingsError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,9 +75,9 @@ impl RemoveAttributesFromFindingsFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::remove_attributes_from_findings::RemoveAttributesFromFindingsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::remove_attributes_from_findings::RemoveAttributesFromFindingsError,
         >,
     > {
@@ -85,14 +88,14 @@ impl RemoveAttributesFromFindingsFluentBuilder {
     /// To override the contents of this collection use [`set_finding_arns`](Self::set_finding_arns).
     ///
     /// <p>The ARNs that specify the findings that you want to remove attributes from.</p>
-    pub fn finding_arns(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn finding_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.finding_arns(input.into());
         self
     }
     /// <p>The ARNs that specify the findings that you want to remove attributes from.</p>
     pub fn set_finding_arns(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_finding_arns(input);
         self
@@ -102,14 +105,17 @@ impl RemoveAttributesFromFindingsFluentBuilder {
     /// To override the contents of this collection use [`set_attribute_keys`](Self::set_attribute_keys).
     ///
     /// <p>The array of attribute keys that you want to remove from specified findings.</p>
-    pub fn attribute_keys(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn attribute_keys(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.attribute_keys(input.into());
         self
     }
     /// <p>The array of attribute keys that you want to remove from specified findings.</p>
     pub fn set_attribute_keys(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_attribute_keys(input);
         self

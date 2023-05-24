@@ -3,7 +3,7 @@
 /// <p>A configuration for a shuffle option for input data in a channel. If you use <code>S3Prefix</code> for <code>S3DataType</code>, the results of the S3 key prefix matches are shuffled. If you use <code>ManifestFile</code>, the order of the S3 object references in the <code>ManifestFile</code> is shuffled. If you use <code>AugmentedManifestFile</code>, the order of the JSON lines in the <code>AugmentedManifestFile</code> is shuffled. The shuffling order is determined using the <code>Seed</code> value.</p>
 /// <p>For Pipe input mode, when <code>ShuffleConfig</code> is specified shuffling is done at the start of every epoch. With large datasets, this ensures that the order of the training data is different for each epoch, and it helps reduce bias and possible overfitting. In a multi-node training job when <code>ShuffleConfig</code> is combined with <code>S3DataDistributionType</code> of <code>ShardedByS3Key</code>, the data is shuffled across nodes so that the content sent to a particular node on the first epoch might be sent to a different node on the second epoch.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ShuffleConfig {
     /// <p>Determines the shuffling order in <code>ShuffleConfig</code> value.</p>
     #[doc(hidden)]
@@ -24,18 +24,20 @@ impl ShuffleConfig {
 
 /// A builder for [`ShuffleConfig`](crate::types::ShuffleConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ShuffleConfigBuilder {
-    pub(crate) seed: std::option::Option<i64>,
+    pub(crate) seed: ::std::option::Option<i64>,
 }
 impl ShuffleConfigBuilder {
     /// <p>Determines the shuffling order in <code>ShuffleConfig</code> value.</p>
     pub fn seed(mut self, input: i64) -> Self {
-        self.seed = Some(input);
+        self.seed = ::std::option::Option::Some(input);
         self
     }
     /// <p>Determines the shuffling order in <code>ShuffleConfig</code> value.</p>
-    pub fn set_seed(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_seed(mut self, input: ::std::option::Option<i64>) -> Self {
         self.seed = input;
         self
     }

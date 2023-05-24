@@ -2,29 +2,29 @@
 
 /// <p>Describes a disk.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DiskInfo {
     /// <p>The size of the disk in GB.</p>
     #[doc(hidden)]
-    pub size_in_gb: std::option::Option<i64>,
+    pub size_in_gb: ::std::option::Option<i64>,
     /// <p>The number of disks with this configuration.</p>
     #[doc(hidden)]
-    pub count: std::option::Option<i32>,
+    pub count: ::std::option::Option<i32>,
     /// <p>The type of disk.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::DiskType>,
+    pub r#type: ::std::option::Option<crate::types::DiskType>,
 }
 impl DiskInfo {
     /// <p>The size of the disk in GB.</p>
-    pub fn size_in_gb(&self) -> std::option::Option<i64> {
+    pub fn size_in_gb(&self) -> ::std::option::Option<i64> {
         self.size_in_gb
     }
     /// <p>The number of disks with this configuration.</p>
-    pub fn count(&self) -> std::option::Option<i32> {
+    pub fn count(&self) -> ::std::option::Option<i32> {
         self.count
     }
     /// <p>The type of disk.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::DiskType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::DiskType> {
         self.r#type.as_ref()
     }
 }
@@ -37,40 +37,42 @@ impl DiskInfo {
 
 /// A builder for [`DiskInfo`](crate::types::DiskInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DiskInfoBuilder {
-    pub(crate) size_in_gb: std::option::Option<i64>,
-    pub(crate) count: std::option::Option<i32>,
-    pub(crate) r#type: std::option::Option<crate::types::DiskType>,
+    pub(crate) size_in_gb: ::std::option::Option<i64>,
+    pub(crate) count: ::std::option::Option<i32>,
+    pub(crate) r#type: ::std::option::Option<crate::types::DiskType>,
 }
 impl DiskInfoBuilder {
     /// <p>The size of the disk in GB.</p>
     pub fn size_in_gb(mut self, input: i64) -> Self {
-        self.size_in_gb = Some(input);
+        self.size_in_gb = ::std::option::Option::Some(input);
         self
     }
     /// <p>The size of the disk in GB.</p>
-    pub fn set_size_in_gb(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_size_in_gb(mut self, input: ::std::option::Option<i64>) -> Self {
         self.size_in_gb = input;
         self
     }
     /// <p>The number of disks with this configuration.</p>
     pub fn count(mut self, input: i32) -> Self {
-        self.count = Some(input);
+        self.count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of disks with this configuration.</p>
-    pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.count = input;
         self
     }
     /// <p>The type of disk.</p>
     pub fn r#type(mut self, input: crate::types::DiskType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of disk.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::DiskType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::DiskType>) -> Self {
         self.r#type = input;
         self
     }

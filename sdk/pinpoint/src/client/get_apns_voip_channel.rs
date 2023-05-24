@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetApnsVoipChannel`](crate::operation::get_apns_voip_channel::builders::GetApnsVoipChannelFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::operation::get_apns_voip_channel::builders::GetApnsVoipChannelFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::get_apns_voip_channel::builders::GetApnsVoipChannelFluentBuilder::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    ///   - [`application_id(impl ::std::convert::Into<String>)`](crate::operation::get_apns_voip_channel::builders::GetApnsVoipChannelFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::get_apns_voip_channel::builders::GetApnsVoipChannelFluentBuilder::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     /// - On success, responds with [`GetApnsVoipChannelOutput`](crate::operation::get_apns_voip_channel::GetApnsVoipChannelOutput) with field(s):
     ///   - [`apns_voip_channel_response(Option<ApnsVoipChannelResponse>)`](crate::operation::get_apns_voip_channel::GetApnsVoipChannelOutput::apns_voip_channel_response): <p>Provides information about the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.</p>
     /// - On failure, responds with [`SdkError<GetApnsVoipChannelError>`](crate::operation::get_apns_voip_channel::GetApnsVoipChannelError)

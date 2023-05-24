@@ -2,57 +2,57 @@
 
 /// <p>Describes a transit gateway route table.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TransitGatewayRouteTable {
     /// <p>The ID of the transit gateway route table.</p>
     #[doc(hidden)]
-    pub transit_gateway_route_table_id: std::option::Option<std::string::String>,
+    pub transit_gateway_route_table_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the transit gateway.</p>
     #[doc(hidden)]
-    pub transit_gateway_id: std::option::Option<std::string::String>,
+    pub transit_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The state of the transit gateway route table.</p>
     #[doc(hidden)]
-    pub state: std::option::Option<crate::types::TransitGatewayRouteTableState>,
+    pub state: ::std::option::Option<crate::types::TransitGatewayRouteTableState>,
     /// <p>Indicates whether this is the default association route table for the transit gateway.</p>
     #[doc(hidden)]
-    pub default_association_route_table: std::option::Option<bool>,
+    pub default_association_route_table: ::std::option::Option<bool>,
     /// <p>Indicates whether this is the default propagation route table for the transit gateway.</p>
     #[doc(hidden)]
-    pub default_propagation_route_table: std::option::Option<bool>,
+    pub default_propagation_route_table: ::std::option::Option<bool>,
     /// <p>The creation time.</p>
     #[doc(hidden)]
-    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Any tags assigned to the route table.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl TransitGatewayRouteTable {
     /// <p>The ID of the transit gateway route table.</p>
-    pub fn transit_gateway_route_table_id(&self) -> std::option::Option<&str> {
+    pub fn transit_gateway_route_table_id(&self) -> ::std::option::Option<&str> {
         self.transit_gateway_route_table_id.as_deref()
     }
     /// <p>The ID of the transit gateway.</p>
-    pub fn transit_gateway_id(&self) -> std::option::Option<&str> {
+    pub fn transit_gateway_id(&self) -> ::std::option::Option<&str> {
         self.transit_gateway_id.as_deref()
     }
     /// <p>The state of the transit gateway route table.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::TransitGatewayRouteTableState> {
+    pub fn state(&self) -> ::std::option::Option<&crate::types::TransitGatewayRouteTableState> {
         self.state.as_ref()
     }
     /// <p>Indicates whether this is the default association route table for the transit gateway.</p>
-    pub fn default_association_route_table(&self) -> std::option::Option<bool> {
+    pub fn default_association_route_table(&self) -> ::std::option::Option<bool> {
         self.default_association_route_table
     }
     /// <p>Indicates whether this is the default propagation route table for the transit gateway.</p>
-    pub fn default_propagation_route_table(&self) -> std::option::Option<bool> {
+    pub fn default_propagation_route_table(&self) -> ::std::option::Option<bool> {
         self.default_propagation_route_table
     }
     /// <p>The creation time.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>Any tags assigned to the route table.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -65,85 +65,99 @@ impl TransitGatewayRouteTable {
 
 /// A builder for [`TransitGatewayRouteTable`](crate::types::TransitGatewayRouteTable).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TransitGatewayRouteTableBuilder {
-    pub(crate) transit_gateway_route_table_id: std::option::Option<std::string::String>,
-    pub(crate) transit_gateway_id: std::option::Option<std::string::String>,
-    pub(crate) state: std::option::Option<crate::types::TransitGatewayRouteTableState>,
-    pub(crate) default_association_route_table: std::option::Option<bool>,
-    pub(crate) default_propagation_route_table: std::option::Option<bool>,
-    pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub(crate) transit_gateway_route_table_id: ::std::option::Option<::std::string::String>,
+    pub(crate) transit_gateway_id: ::std::option::Option<::std::string::String>,
+    pub(crate) state: ::std::option::Option<crate::types::TransitGatewayRouteTableState>,
+    pub(crate) default_association_route_table: ::std::option::Option<bool>,
+    pub(crate) default_propagation_route_table: ::std::option::Option<bool>,
+    pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl TransitGatewayRouteTableBuilder {
     /// <p>The ID of the transit gateway route table.</p>
-    pub fn transit_gateway_route_table_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.transit_gateway_route_table_id = Some(input.into());
+    pub fn transit_gateway_route_table_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.transit_gateway_route_table_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the transit gateway route table.</p>
     pub fn set_transit_gateway_route_table_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.transit_gateway_route_table_id = input;
         self
     }
     /// <p>The ID of the transit gateway.</p>
-    pub fn transit_gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.transit_gateway_id = Some(input.into());
+    pub fn transit_gateway_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.transit_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the transit gateway.</p>
     pub fn set_transit_gateway_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.transit_gateway_id = input;
         self
     }
     /// <p>The state of the transit gateway route table.</p>
     pub fn state(mut self, input: crate::types::TransitGatewayRouteTableState) -> Self {
-        self.state = Some(input);
+        self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The state of the transit gateway route table.</p>
     pub fn set_state(
         mut self,
-        input: std::option::Option<crate::types::TransitGatewayRouteTableState>,
+        input: ::std::option::Option<crate::types::TransitGatewayRouteTableState>,
     ) -> Self {
         self.state = input;
         self
     }
     /// <p>Indicates whether this is the default association route table for the transit gateway.</p>
     pub fn default_association_route_table(mut self, input: bool) -> Self {
-        self.default_association_route_table = Some(input);
+        self.default_association_route_table = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether this is the default association route table for the transit gateway.</p>
-    pub fn set_default_association_route_table(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_default_association_route_table(
+        mut self,
+        input: ::std::option::Option<bool>,
+    ) -> Self {
         self.default_association_route_table = input;
         self
     }
     /// <p>Indicates whether this is the default propagation route table for the transit gateway.</p>
     pub fn default_propagation_route_table(mut self, input: bool) -> Self {
-        self.default_propagation_route_table = Some(input);
+        self.default_propagation_route_table = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether this is the default propagation route table for the transit gateway.</p>
-    pub fn set_default_propagation_route_table(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_default_propagation_route_table(
+        mut self,
+        input: ::std::option::Option<bool>,
+    ) -> Self {
         self.default_propagation_route_table = input;
         self
     }
     /// <p>The creation time.</p>
-    pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_time = Some(input);
+    pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The creation time.</p>
     pub fn set_creation_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_time = input;
         self
@@ -156,13 +170,13 @@ impl TransitGatewayRouteTableBuilder {
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
-        self.tags = Some(v);
+        self.tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>Any tags assigned to the route table.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tags = input;
         self

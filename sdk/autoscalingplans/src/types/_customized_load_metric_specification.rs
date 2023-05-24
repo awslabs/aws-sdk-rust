@@ -7,45 +7,45 @@
 /// <p>For information about terminology, available metrics, or how to publish new metrics, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html">Amazon CloudWatch Concepts</a> in the <i>Amazon CloudWatch User Guide</i>. </p>
 /// <p>After creating your scaling plan, you can use the AWS Auto Scaling console to visualize forecasts for the specified metric. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/userguide/gs-create-scaling-plan.html#gs-view-resource">View Scaling Information for a Resource</a> in the <i>AWS Auto Scaling User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomizedLoadMetricSpecification {
     /// <p>The name of the metric.</p>
     #[doc(hidden)]
-    pub metric_name: std::option::Option<std::string::String>,
+    pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p>The namespace of the metric.</p>
     #[doc(hidden)]
-    pub namespace: std::option::Option<std::string::String>,
+    pub namespace: ::std::option::Option<::std::string::String>,
     /// <p>The dimensions of the metric.</p>
     /// <p>Conditional: If you published your metric with dimensions, you must specify the same dimensions in your customized load metric specification.</p>
     #[doc(hidden)]
-    pub dimensions: std::option::Option<std::vec::Vec<crate::types::MetricDimension>>,
+    pub dimensions: ::std::option::Option<::std::vec::Vec<crate::types::MetricDimension>>,
     /// <p>The statistic of the metric. The only valid value is <code>Sum</code>.</p>
     #[doc(hidden)]
-    pub statistic: std::option::Option<crate::types::MetricStatistic>,
+    pub statistic: ::std::option::Option<crate::types::MetricStatistic>,
     /// <p>The unit of the metric.</p>
     #[doc(hidden)]
-    pub unit: std::option::Option<std::string::String>,
+    pub unit: ::std::option::Option<::std::string::String>,
 }
 impl CustomizedLoadMetricSpecification {
     /// <p>The name of the metric.</p>
-    pub fn metric_name(&self) -> std::option::Option<&str> {
+    pub fn metric_name(&self) -> ::std::option::Option<&str> {
         self.metric_name.as_deref()
     }
     /// <p>The namespace of the metric.</p>
-    pub fn namespace(&self) -> std::option::Option<&str> {
+    pub fn namespace(&self) -> ::std::option::Option<&str> {
         self.namespace.as_deref()
     }
     /// <p>The dimensions of the metric.</p>
     /// <p>Conditional: If you published your metric with dimensions, you must specify the same dimensions in your customized load metric specification.</p>
-    pub fn dimensions(&self) -> std::option::Option<&[crate::types::MetricDimension]> {
+    pub fn dimensions(&self) -> ::std::option::Option<&[crate::types::MetricDimension]> {
         self.dimensions.as_deref()
     }
     /// <p>The statistic of the metric. The only valid value is <code>Sum</code>.</p>
-    pub fn statistic(&self) -> std::option::Option<&crate::types::MetricStatistic> {
+    pub fn statistic(&self) -> ::std::option::Option<&crate::types::MetricStatistic> {
         self.statistic.as_ref()
     }
     /// <p>The unit of the metric.</p>
-    pub fn unit(&self) -> std::option::Option<&str> {
+    pub fn unit(&self) -> ::std::option::Option<&str> {
         self.unit.as_deref()
     }
 }
@@ -58,32 +58,34 @@ impl CustomizedLoadMetricSpecification {
 
 /// A builder for [`CustomizedLoadMetricSpecification`](crate::types::CustomizedLoadMetricSpecification).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CustomizedLoadMetricSpecificationBuilder {
-    pub(crate) metric_name: std::option::Option<std::string::String>,
-    pub(crate) namespace: std::option::Option<std::string::String>,
-    pub(crate) dimensions: std::option::Option<std::vec::Vec<crate::types::MetricDimension>>,
-    pub(crate) statistic: std::option::Option<crate::types::MetricStatistic>,
-    pub(crate) unit: std::option::Option<std::string::String>,
+    pub(crate) metric_name: ::std::option::Option<::std::string::String>,
+    pub(crate) namespace: ::std::option::Option<::std::string::String>,
+    pub(crate) dimensions: ::std::option::Option<::std::vec::Vec<crate::types::MetricDimension>>,
+    pub(crate) statistic: ::std::option::Option<crate::types::MetricStatistic>,
+    pub(crate) unit: ::std::option::Option<::std::string::String>,
 }
 impl CustomizedLoadMetricSpecificationBuilder {
     /// <p>The name of the metric.</p>
-    pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.metric_name = Some(input.into());
+    pub fn metric_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.metric_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the metric.</p>
-    pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_metric_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metric_name = input;
         self
     }
     /// <p>The namespace of the metric.</p>
-    pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
-        self.namespace = Some(input.into());
+    pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.namespace = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The namespace of the metric.</p>
-    pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.namespace = input;
         self
     }
@@ -96,38 +98,38 @@ impl CustomizedLoadMetricSpecificationBuilder {
     pub fn dimensions(mut self, input: crate::types::MetricDimension) -> Self {
         let mut v = self.dimensions.unwrap_or_default();
         v.push(input);
-        self.dimensions = Some(v);
+        self.dimensions = ::std::option::Option::Some(v);
         self
     }
     /// <p>The dimensions of the metric.</p>
     /// <p>Conditional: If you published your metric with dimensions, you must specify the same dimensions in your customized load metric specification.</p>
     pub fn set_dimensions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::MetricDimension>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricDimension>>,
     ) -> Self {
         self.dimensions = input;
         self
     }
     /// <p>The statistic of the metric. The only valid value is <code>Sum</code>.</p>
     pub fn statistic(mut self, input: crate::types::MetricStatistic) -> Self {
-        self.statistic = Some(input);
+        self.statistic = ::std::option::Option::Some(input);
         self
     }
     /// <p>The statistic of the metric. The only valid value is <code>Sum</code>.</p>
     pub fn set_statistic(
         mut self,
-        input: std::option::Option<crate::types::MetricStatistic>,
+        input: ::std::option::Option<crate::types::MetricStatistic>,
     ) -> Self {
         self.statistic = input;
         self
     }
     /// <p>The unit of the metric.</p>
-    pub fn unit(mut self, input: impl Into<std::string::String>) -> Self {
-        self.unit = Some(input.into());
+    pub fn unit(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.unit = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unit of the metric.</p>
-    pub fn set_unit(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_unit(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.unit = input;
         self
     }

@@ -2,17 +2,17 @@
 
 /// <p>The options that determine the presentation of the arc of a <code>GaugeChartVisual</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GaugeChartArcConditionalFormatting {
     /// <p>The conditional formatting of the arc foreground color.</p>
     #[doc(hidden)]
-    pub foreground_color: std::option::Option<crate::types::ConditionalFormattingColor>,
+    pub foreground_color: ::std::option::Option<crate::types::ConditionalFormattingColor>,
 }
 impl GaugeChartArcConditionalFormatting {
     /// <p>The conditional formatting of the arc foreground color.</p>
     pub fn foreground_color(
         &self,
-    ) -> std::option::Option<&crate::types::ConditionalFormattingColor> {
+    ) -> ::std::option::Option<&crate::types::ConditionalFormattingColor> {
         self.foreground_color.as_ref()
     }
 }
@@ -25,20 +25,22 @@ impl GaugeChartArcConditionalFormatting {
 
 /// A builder for [`GaugeChartArcConditionalFormatting`](crate::types::GaugeChartArcConditionalFormatting).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GaugeChartArcConditionalFormattingBuilder {
-    pub(crate) foreground_color: std::option::Option<crate::types::ConditionalFormattingColor>,
+    pub(crate) foreground_color: ::std::option::Option<crate::types::ConditionalFormattingColor>,
 }
 impl GaugeChartArcConditionalFormattingBuilder {
     /// <p>The conditional formatting of the arc foreground color.</p>
     pub fn foreground_color(mut self, input: crate::types::ConditionalFormattingColor) -> Self {
-        self.foreground_color = Some(input);
+        self.foreground_color = ::std::option::Option::Some(input);
         self
     }
     /// <p>The conditional formatting of the arc foreground color.</p>
     pub fn set_foreground_color(
         mut self,
-        input: std::option::Option<crate::types::ConditionalFormattingColor>,
+        input: ::std::option::Option<crate::types::ConditionalFormattingColor>,
     ) -> Self {
         self.foreground_color = input;
         self

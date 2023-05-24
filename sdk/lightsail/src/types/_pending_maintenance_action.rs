@@ -2,29 +2,29 @@
 
 /// <p>Describes a pending database maintenance action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PendingMaintenanceAction {
     /// <p>The type of pending database maintenance action.</p>
     #[doc(hidden)]
-    pub action: std::option::Option<std::string::String>,
+    pub action: ::std::option::Option<::std::string::String>,
     /// <p>Additional detail about the pending database maintenance action.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The effective date of the pending database maintenance action.</p>
     #[doc(hidden)]
-    pub current_apply_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub current_apply_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl PendingMaintenanceAction {
     /// <p>The type of pending database maintenance action.</p>
-    pub fn action(&self) -> std::option::Option<&str> {
+    pub fn action(&self) -> ::std::option::Option<&str> {
         self.action.as_deref()
     }
     /// <p>Additional detail about the pending database maintenance action.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The effective date of the pending database maintenance action.</p>
-    pub fn current_apply_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn current_apply_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.current_apply_date.as_ref()
     }
 }
@@ -37,42 +37,44 @@ impl PendingMaintenanceAction {
 
 /// A builder for [`PendingMaintenanceAction`](crate::types::PendingMaintenanceAction).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PendingMaintenanceActionBuilder {
-    pub(crate) action: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) current_apply_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) action: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) current_apply_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl PendingMaintenanceActionBuilder {
     /// <p>The type of pending database maintenance action.</p>
-    pub fn action(mut self, input: impl Into<std::string::String>) -> Self {
-        self.action = Some(input.into());
+    pub fn action(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.action = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of pending database maintenance action.</p>
-    pub fn set_action(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_action(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.action = input;
         self
     }
     /// <p>Additional detail about the pending database maintenance action.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Additional detail about the pending database maintenance action.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>The effective date of the pending database maintenance action.</p>
-    pub fn current_apply_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.current_apply_date = Some(input);
+    pub fn current_apply_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.current_apply_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The effective date of the pending database maintenance action.</p>
     pub fn set_current_apply_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.current_apply_date = input;
         self

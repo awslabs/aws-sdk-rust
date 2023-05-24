@@ -2,44 +2,44 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeOrderableClusterOptionsInput {
     /// <p>The version filter value. Specify this parameter to show only the available offerings matching the specified version.</p>
     /// <p>Default: All versions.</p>
     /// <p>Constraints: Must be one of the version returned from <code>DescribeClusterVersions</code>.</p>
     #[doc(hidden)]
-    pub cluster_version: std::option::Option<std::string::String>,
+    pub cluster_version: ::std::option::Option<::std::string::String>,
     /// <p>The node type filter value. Specify this parameter to show only the available offerings matching the specified node type.</p>
     #[doc(hidden)]
-    pub node_type: std::option::Option<std::string::String>,
+    pub node_type: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>
     /// <p>Default: <code>100</code> </p>
     /// <p>Constraints: minimum 20, maximum 100.</p>
     #[doc(hidden)]
-    pub max_records: std::option::Option<i32>,
+    pub max_records: ::std::option::Option<i32>,
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeOrderableClusterOptions</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
     #[doc(hidden)]
-    pub marker: std::option::Option<std::string::String>,
+    pub marker: ::std::option::Option<::std::string::String>,
 }
 impl DescribeOrderableClusterOptionsInput {
     /// <p>The version filter value. Specify this parameter to show only the available offerings matching the specified version.</p>
     /// <p>Default: All versions.</p>
     /// <p>Constraints: Must be one of the version returned from <code>DescribeClusterVersions</code>.</p>
-    pub fn cluster_version(&self) -> std::option::Option<&str> {
+    pub fn cluster_version(&self) -> ::std::option::Option<&str> {
         self.cluster_version.as_deref()
     }
     /// <p>The node type filter value. Specify this parameter to show only the available offerings matching the specified node type.</p>
-    pub fn node_type(&self) -> std::option::Option<&str> {
+    pub fn node_type(&self) -> ::std::option::Option<&str> {
         self.node_type.as_deref()
     }
     /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>
     /// <p>Default: <code>100</code> </p>
     /// <p>Constraints: minimum 20, maximum 100.</p>
-    pub fn max_records(&self) -> std::option::Option<i32> {
+    pub fn max_records(&self) -> ::std::option::Option<i32> {
         self.max_records
     }
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeOrderableClusterOptions</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
 }
@@ -52,35 +52,43 @@ impl DescribeOrderableClusterOptionsInput {
 
 /// A builder for [`DescribeOrderableClusterOptionsInput`](crate::operation::describe_orderable_cluster_options::DescribeOrderableClusterOptionsInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeOrderableClusterOptionsInputBuilder {
-    pub(crate) cluster_version: std::option::Option<std::string::String>,
-    pub(crate) node_type: std::option::Option<std::string::String>,
-    pub(crate) max_records: std::option::Option<i32>,
-    pub(crate) marker: std::option::Option<std::string::String>,
+    pub(crate) cluster_version: ::std::option::Option<::std::string::String>,
+    pub(crate) node_type: ::std::option::Option<::std::string::String>,
+    pub(crate) max_records: ::std::option::Option<i32>,
+    pub(crate) marker: ::std::option::Option<::std::string::String>,
 }
 impl DescribeOrderableClusterOptionsInputBuilder {
     /// <p>The version filter value. Specify this parameter to show only the available offerings matching the specified version.</p>
     /// <p>Default: All versions.</p>
     /// <p>Constraints: Must be one of the version returned from <code>DescribeClusterVersions</code>.</p>
-    pub fn cluster_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cluster_version = Some(input.into());
+    pub fn cluster_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.cluster_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version filter value. Specify this parameter to show only the available offerings matching the specified version.</p>
     /// <p>Default: All versions.</p>
     /// <p>Constraints: Must be one of the version returned from <code>DescribeClusterVersions</code>.</p>
-    pub fn set_cluster_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cluster_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.cluster_version = input;
         self
     }
     /// <p>The node type filter value. Specify this parameter to show only the available offerings matching the specified node type.</p>
-    pub fn node_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.node_type = Some(input.into());
+    pub fn node_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.node_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The node type filter value. Specify this parameter to show only the available offerings matching the specified node type.</p>
-    pub fn set_node_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_node_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.node_type = input;
         self
     }
@@ -88,34 +96,34 @@ impl DescribeOrderableClusterOptionsInputBuilder {
     /// <p>Default: <code>100</code> </p>
     /// <p>Constraints: minimum 20, maximum 100.</p>
     pub fn max_records(mut self, input: i32) -> Self {
-        self.max_records = Some(input);
+        self.max_records = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>
     /// <p>Default: <code>100</code> </p>
     /// <p>Constraints: minimum 20, maximum 100.</p>
-    pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_records = input;
         self
     }
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeOrderableClusterOptions</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
-    pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-        self.marker = Some(input.into());
+    pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <code>DescribeOrderableClusterOptions</code> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
-    pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
     }
     /// Consumes the builder and constructs a [`DescribeOrderableClusterOptionsInput`](crate::operation::describe_orderable_cluster_options::DescribeOrderableClusterOptionsInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::describe_orderable_cluster_options::DescribeOrderableClusterOptionsInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::describe_orderable_cluster_options::DescribeOrderableClusterOptionsInput {
                 cluster_version: self.cluster_version
                 ,

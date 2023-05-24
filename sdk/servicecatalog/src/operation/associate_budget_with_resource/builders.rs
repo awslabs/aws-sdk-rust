@@ -6,29 +6,29 @@ pub use crate::operation::associate_budget_with_resource::_associate_budget_with
 /// Fluent builder constructing a request to `AssociateBudgetWithResource`.
 ///
 /// <p>Associates the specified budget with the specified resource.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateBudgetWithResourceFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::associate_budget_with_resource::builders::AssociateBudgetWithResourceInputBuilder,
 }
 impl AssociateBudgetWithResourceFluentBuilder {
     /// Creates a new `AssociateBudgetWithResource`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::associate_budget_with_resource::AssociateBudgetWithResource,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::associate_budget_with_resource::AssociateBudgetWithResourceError,
         >,
     > {
@@ -36,30 +36,33 @@ impl AssociateBudgetWithResourceFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::associate_budget_with_resource::AssociateBudgetWithResourceOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::associate_budget_with_resource::AssociateBudgetWithResourceError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,31 +75,31 @@ impl AssociateBudgetWithResourceFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::associate_budget_with_resource::AssociateBudgetWithResourceOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::associate_budget_with_resource::AssociateBudgetWithResourceError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the budget you want to associate.</p>
-    pub fn budget_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn budget_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.budget_name(input.into());
         self
     }
     /// <p>The name of the budget you want to associate.</p>
-    pub fn set_budget_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_budget_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_budget_name(input);
         self
     }
     /// <p> The resource identifier. Either a portfolio-id or a product-id.</p>
-    pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_id(input.into());
         self
     }
     /// <p> The resource identifier. Either a portfolio-id or a product-id.</p>
-    pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_id(input);
         self
     }

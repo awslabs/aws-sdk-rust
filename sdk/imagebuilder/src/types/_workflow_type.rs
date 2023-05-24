@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum WorkflowType {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum WorkflowType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for WorkflowType {
+impl ::std::convert::From<&str> for WorkflowType {
     fn from(s: &str) -> Self {
         match s {
             "BUILD" => WorkflowType::Build,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for WorkflowType {
         }
     }
 }
-impl std::str::FromStr for WorkflowType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for WorkflowType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(WorkflowType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(WorkflowType::from(s))
     }
 }
 impl WorkflowType {
@@ -91,7 +91,7 @@ impl WorkflowType {
         &["BUILD", "DISTRIBUTION", "TEST"]
     }
 }
-impl AsRef<str> for WorkflowType {
+impl ::std::convert::AsRef<str> for WorkflowType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

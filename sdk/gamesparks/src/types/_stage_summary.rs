@@ -2,49 +2,51 @@
 
 /// <p>The summary of the properties of a stage.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StageSummary {
     /// <p>The name of the stage.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The game key associated with the stage.</p>
     /// <p> The game key is a unique identifier that the game client uses to connect to the GameSparks backend. </p>
     #[doc(hidden)]
-    pub game_key: std::option::Option<std::string::String>,
+    pub game_key: ::std::option::Option<::std::string::String>,
     /// <p>The description of the stage.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The state of the stage.</p>
     #[doc(hidden)]
-    pub state: std::option::Option<crate::types::StageState>,
+    pub state: ::std::option::Option<crate::types::StageState>,
     /// <p>The tags associated with the stage.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl StageSummary {
     /// <p>The name of the stage.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The game key associated with the stage.</p>
     /// <p> The game key is a unique identifier that the game client uses to connect to the GameSparks backend. </p>
-    pub fn game_key(&self) -> std::option::Option<&str> {
+    pub fn game_key(&self) -> ::std::option::Option<&str> {
         self.game_key.as_deref()
     }
     /// <p>The description of the stage.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The state of the stage.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::StageState> {
+    pub fn state(&self) -> ::std::option::Option<&crate::types::StageState> {
         self.state.as_ref()
     }
     /// <p>The tags associated with the stage.</p>
     pub fn tags(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.tags.as_ref()
     }
 }
@@ -57,55 +59,58 @@ impl StageSummary {
 
 /// A builder for [`StageSummary`](crate::types::StageSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StageSummaryBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) game_key: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) state: std::option::Option<crate::types::StageState>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) game_key: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) state: ::std::option::Option<crate::types::StageState>,
+    pub(crate) tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl StageSummaryBuilder {
     /// <p>The name of the stage.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the stage.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The game key associated with the stage.</p>
     /// <p> The game key is a unique identifier that the game client uses to connect to the GameSparks backend. </p>
-    pub fn game_key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.game_key = Some(input.into());
+    pub fn game_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.game_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The game key associated with the stage.</p>
     /// <p> The game key is a unique identifier that the game client uses to connect to the GameSparks backend. </p>
-    pub fn set_game_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_game_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.game_key = input;
         self
     }
     /// <p>The description of the stage.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the stage.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>The state of the stage.</p>
     pub fn state(mut self, input: crate::types::StageState) -> Self {
-        self.state = Some(input);
+        self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The state of the stage.</p>
-    pub fn set_state(mut self, input: std::option::Option<crate::types::StageState>) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::StageState>) -> Self {
         self.state = input;
         self
     }
@@ -116,19 +121,19 @@ impl StageSummaryBuilder {
     /// <p>The tags associated with the stage.</p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
+        self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags associated with the stage.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.tags = input;

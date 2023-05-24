@@ -2,20 +2,20 @@
 
 /// <p>Contains the output for CreateLoadBalancer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateLoadBalancerOutput {
     /// <p>The DNS name of the load balancer.</p>
     #[doc(hidden)]
-    pub dns_name: std::option::Option<std::string::String>,
+    pub dns_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateLoadBalancerOutput {
     /// <p>The DNS name of the load balancer.</p>
-    pub fn dns_name(&self) -> std::option::Option<&str> {
+    pub fn dns_name(&self) -> ::std::option::Option<&str> {
         self.dns_name.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for CreateLoadBalancerOutput {
+impl ::aws_http::request_id::RequestId for CreateLoadBalancerOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,19 +30,21 @@ impl CreateLoadBalancerOutput {
 
 /// A builder for [`CreateLoadBalancerOutput`](crate::operation::create_load_balancer::CreateLoadBalancerOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateLoadBalancerOutputBuilder {
-    pub(crate) dns_name: std::option::Option<std::string::String>,
+    pub(crate) dns_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateLoadBalancerOutputBuilder {
     /// <p>The DNS name of the load balancer.</p>
-    pub fn dns_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.dns_name = Some(input.into());
+    pub fn dns_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.dns_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The DNS name of the load balancer.</p>
-    pub fn set_dns_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_dns_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dns_name = input;
         self
     }

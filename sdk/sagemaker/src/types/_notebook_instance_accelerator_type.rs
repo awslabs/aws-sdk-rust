@@ -42,13 +42,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum NotebookInstanceAcceleratorType {
     #[allow(missing_docs)] // documentation missing in model
@@ -66,7 +66,7 @@ pub enum NotebookInstanceAcceleratorType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for NotebookInstanceAcceleratorType {
+impl ::std::convert::From<&str> for NotebookInstanceAcceleratorType {
     fn from(s: &str) -> Self {
         match s {
             "ml.eia1.large" => NotebookInstanceAcceleratorType::MlEia1Large,
@@ -81,11 +81,11 @@ impl std::convert::From<&str> for NotebookInstanceAcceleratorType {
         }
     }
 }
-impl std::str::FromStr for NotebookInstanceAcceleratorType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for NotebookInstanceAcceleratorType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(NotebookInstanceAcceleratorType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(NotebookInstanceAcceleratorType::from(s))
     }
 }
 impl NotebookInstanceAcceleratorType {
@@ -113,7 +113,7 @@ impl NotebookInstanceAcceleratorType {
         ]
     }
 }
-impl AsRef<str> for NotebookInstanceAcceleratorType {
+impl ::std::convert::AsRef<str> for NotebookInstanceAcceleratorType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

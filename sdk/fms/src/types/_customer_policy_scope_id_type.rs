@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum CustomerPolicyScopeIdType {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum CustomerPolicyScopeIdType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for CustomerPolicyScopeIdType {
+impl ::std::convert::From<&str> for CustomerPolicyScopeIdType {
     fn from(s: &str) -> Self {
         match s {
             "ACCOUNT" => CustomerPolicyScopeIdType::Account,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for CustomerPolicyScopeIdType {
         }
     }
 }
-impl std::str::FromStr for CustomerPolicyScopeIdType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for CustomerPolicyScopeIdType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CustomerPolicyScopeIdType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(CustomerPolicyScopeIdType::from(s))
     }
 }
 impl CustomerPolicyScopeIdType {
@@ -86,7 +86,7 @@ impl CustomerPolicyScopeIdType {
         &["ACCOUNT", "ORG_UNIT"]
     }
 }
-impl AsRef<str> for CustomerPolicyScopeIdType {
+impl ::std::convert::AsRef<str> for CustomerPolicyScopeIdType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -5,22 +5,22 @@
 /// <p>Vendors, you can use the managed rule set APIs to provide controlled rollout of your versioned managed rule group offerings for your customers. The APIs are <code>ListManagedRuleSets</code>, <code>GetManagedRuleSet</code>, <code>PutManagedRuleSetVersions</code>, and <code>UpdateManagedRuleSetVersionExpiryDate</code>.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VersionToPublish {
     /// <p>The Amazon Resource Name (ARN) of the vendor's rule group that's used in the published managed rule group version. </p>
     #[doc(hidden)]
-    pub associated_rule_group_arn: std::option::Option<std::string::String>,
+    pub associated_rule_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The amount of time the vendor expects this version of the managed rule group to last, in days. </p>
     #[doc(hidden)]
-    pub forecasted_lifetime: std::option::Option<i32>,
+    pub forecasted_lifetime: ::std::option::Option<i32>,
 }
 impl VersionToPublish {
     /// <p>The Amazon Resource Name (ARN) of the vendor's rule group that's used in the published managed rule group version. </p>
-    pub fn associated_rule_group_arn(&self) -> std::option::Option<&str> {
+    pub fn associated_rule_group_arn(&self) -> ::std::option::Option<&str> {
         self.associated_rule_group_arn.as_deref()
     }
     /// <p>The amount of time the vendor expects this version of the managed rule group to last, in days. </p>
-    pub fn forecasted_lifetime(&self) -> std::option::Option<i32> {
+    pub fn forecasted_lifetime(&self) -> ::std::option::Option<i32> {
         self.forecasted_lifetime
     }
 }
@@ -33,32 +33,37 @@ impl VersionToPublish {
 
 /// A builder for [`VersionToPublish`](crate::types::VersionToPublish).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VersionToPublishBuilder {
-    pub(crate) associated_rule_group_arn: std::option::Option<std::string::String>,
-    pub(crate) forecasted_lifetime: std::option::Option<i32>,
+    pub(crate) associated_rule_group_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) forecasted_lifetime: ::std::option::Option<i32>,
 }
 impl VersionToPublishBuilder {
     /// <p>The Amazon Resource Name (ARN) of the vendor's rule group that's used in the published managed rule group version. </p>
-    pub fn associated_rule_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.associated_rule_group_arn = Some(input.into());
+    pub fn associated_rule_group_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.associated_rule_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the vendor's rule group that's used in the published managed rule group version. </p>
     pub fn set_associated_rule_group_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.associated_rule_group_arn = input;
         self
     }
     /// <p>The amount of time the vendor expects this version of the managed rule group to last, in days. </p>
     pub fn forecasted_lifetime(mut self, input: i32) -> Self {
-        self.forecasted_lifetime = Some(input);
+        self.forecasted_lifetime = ::std::option::Option::Some(input);
         self
     }
     /// <p>The amount of time the vendor expects this version of the managed rule group to last, in days. </p>
-    pub fn set_forecasted_lifetime(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_forecasted_lifetime(mut self, input: ::std::option::Option<i32>) -> Self {
         self.forecasted_lifetime = input;
         self
     }

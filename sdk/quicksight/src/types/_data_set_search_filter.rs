@@ -2,13 +2,13 @@
 
 /// <p>A filter that you apply when searching for datasets.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataSetSearchFilter {
     /// <p>The comparison operator that you want to use as a filter, for example <code>"Operator": "StringEquals"</code>. Valid values are <code>"StringEquals"</code> and <code>"StringLike"</code>.</p>
     /// <p>If you set the operator value to <code>"StringEquals"</code>, you need to provide an ownership related filter in the <code>"NAME"</code> field and the arn of the user or group whose datasets you want to search in the <code>"Value"</code> field. For example, <code>"Name":"QUICKSIGHT_OWNER", "Operator": "StringEquals", "Value": "arn:aws:quicksight:us-east- 1:1:user/default/UserName1"</code>.</p>
     /// <p>If you set the value to <code>"StringLike"</code>, you need to provide the name of the datasets you are searching for. For example, <code>"Name":"DATASET_NAME", "Operator": "StringLike", "Value": "Test"</code>. The <code>"StringLike"</code> operator only supports the <code>NAME</code> value <code>DATASET_NAME</code>.</p>
     #[doc(hidden)]
-    pub operator: std::option::Option<crate::types::FilterOperator>,
+    pub operator: ::std::option::Option<crate::types::FilterOperator>,
     /// <p>The name of the value that you want to use as a filter, for example, <code>"Name": "QUICKSIGHT_OWNER"</code>.</p>
     /// <p>Valid values are defined as follows:</p>
     /// <ul>
@@ -20,16 +20,16 @@ pub struct DataSetSearchFilter {
     /// <li> <p> <code>DATASET_NAME</code>: Any datasets whose names have a substring match to this value will be returned.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub name: std::option::Option<crate::types::DataSetFilterAttribute>,
+    pub name: ::std::option::Option<crate::types::DataSetFilterAttribute>,
     /// <p>The value of the named item, in this case <code>QUICKSIGHT_OWNER</code>, that you want to use as a filter, for example, <code>"Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1"</code>.</p>
     #[doc(hidden)]
-    pub value: std::option::Option<std::string::String>,
+    pub value: ::std::option::Option<::std::string::String>,
 }
 impl DataSetSearchFilter {
     /// <p>The comparison operator that you want to use as a filter, for example <code>"Operator": "StringEquals"</code>. Valid values are <code>"StringEquals"</code> and <code>"StringLike"</code>.</p>
     /// <p>If you set the operator value to <code>"StringEquals"</code>, you need to provide an ownership related filter in the <code>"NAME"</code> field and the arn of the user or group whose datasets you want to search in the <code>"Value"</code> field. For example, <code>"Name":"QUICKSIGHT_OWNER", "Operator": "StringEquals", "Value": "arn:aws:quicksight:us-east- 1:1:user/default/UserName1"</code>.</p>
     /// <p>If you set the value to <code>"StringLike"</code>, you need to provide the name of the datasets you are searching for. For example, <code>"Name":"DATASET_NAME", "Operator": "StringLike", "Value": "Test"</code>. The <code>"StringLike"</code> operator only supports the <code>NAME</code> value <code>DATASET_NAME</code>.</p>
-    pub fn operator(&self) -> std::option::Option<&crate::types::FilterOperator> {
+    pub fn operator(&self) -> ::std::option::Option<&crate::types::FilterOperator> {
         self.operator.as_ref()
     }
     /// <p>The name of the value that you want to use as a filter, for example, <code>"Name": "QUICKSIGHT_OWNER"</code>.</p>
@@ -42,11 +42,11 @@ impl DataSetSearchFilter {
     /// <li> <p> <code>DIRECT_QUICKSIGHT_VIEWER_OR_OWNER</code>: Provide an ARN of a user or group, and any datasets with that ARN listed as one of the owners or viewers of the dataset are returned. Implicit permissions from folders or groups are not considered.</p> </li>
     /// <li> <p> <code>DATASET_NAME</code>: Any datasets whose names have a substring match to this value will be returned.</p> </li>
     /// </ul>
-    pub fn name(&self) -> std::option::Option<&crate::types::DataSetFilterAttribute> {
+    pub fn name(&self) -> ::std::option::Option<&crate::types::DataSetFilterAttribute> {
         self.name.as_ref()
     }
     /// <p>The value of the named item, in this case <code>QUICKSIGHT_OWNER</code>, that you want to use as a filter, for example, <code>"Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1"</code>.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
 }
@@ -59,18 +59,20 @@ impl DataSetSearchFilter {
 
 /// A builder for [`DataSetSearchFilter`](crate::types::DataSetSearchFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DataSetSearchFilterBuilder {
-    pub(crate) operator: std::option::Option<crate::types::FilterOperator>,
-    pub(crate) name: std::option::Option<crate::types::DataSetFilterAttribute>,
-    pub(crate) value: std::option::Option<std::string::String>,
+    pub(crate) operator: ::std::option::Option<crate::types::FilterOperator>,
+    pub(crate) name: ::std::option::Option<crate::types::DataSetFilterAttribute>,
+    pub(crate) value: ::std::option::Option<::std::string::String>,
 }
 impl DataSetSearchFilterBuilder {
     /// <p>The comparison operator that you want to use as a filter, for example <code>"Operator": "StringEquals"</code>. Valid values are <code>"StringEquals"</code> and <code>"StringLike"</code>.</p>
     /// <p>If you set the operator value to <code>"StringEquals"</code>, you need to provide an ownership related filter in the <code>"NAME"</code> field and the arn of the user or group whose datasets you want to search in the <code>"Value"</code> field. For example, <code>"Name":"QUICKSIGHT_OWNER", "Operator": "StringEquals", "Value": "arn:aws:quicksight:us-east- 1:1:user/default/UserName1"</code>.</p>
     /// <p>If you set the value to <code>"StringLike"</code>, you need to provide the name of the datasets you are searching for. For example, <code>"Name":"DATASET_NAME", "Operator": "StringLike", "Value": "Test"</code>. The <code>"StringLike"</code> operator only supports the <code>NAME</code> value <code>DATASET_NAME</code>.</p>
     pub fn operator(mut self, input: crate::types::FilterOperator) -> Self {
-        self.operator = Some(input);
+        self.operator = ::std::option::Option::Some(input);
         self
     }
     /// <p>The comparison operator that you want to use as a filter, for example <code>"Operator": "StringEquals"</code>. Valid values are <code>"StringEquals"</code> and <code>"StringLike"</code>.</p>
@@ -78,7 +80,7 @@ impl DataSetSearchFilterBuilder {
     /// <p>If you set the value to <code>"StringLike"</code>, you need to provide the name of the datasets you are searching for. For example, <code>"Name":"DATASET_NAME", "Operator": "StringLike", "Value": "Test"</code>. The <code>"StringLike"</code> operator only supports the <code>NAME</code> value <code>DATASET_NAME</code>.</p>
     pub fn set_operator(
         mut self,
-        input: std::option::Option<crate::types::FilterOperator>,
+        input: ::std::option::Option<crate::types::FilterOperator>,
     ) -> Self {
         self.operator = input;
         self
@@ -94,7 +96,7 @@ impl DataSetSearchFilterBuilder {
     /// <li> <p> <code>DATASET_NAME</code>: Any datasets whose names have a substring match to this value will be returned.</p> </li>
     /// </ul>
     pub fn name(mut self, input: crate::types::DataSetFilterAttribute) -> Self {
-        self.name = Some(input);
+        self.name = ::std::option::Option::Some(input);
         self
     }
     /// <p>The name of the value that you want to use as a filter, for example, <code>"Name": "QUICKSIGHT_OWNER"</code>.</p>
@@ -109,18 +111,18 @@ impl DataSetSearchFilterBuilder {
     /// </ul>
     pub fn set_name(
         mut self,
-        input: std::option::Option<crate::types::DataSetFilterAttribute>,
+        input: ::std::option::Option<crate::types::DataSetFilterAttribute>,
     ) -> Self {
         self.name = input;
         self
     }
     /// <p>The value of the named item, in this case <code>QUICKSIGHT_OWNER</code>, that you want to use as a filter, for example, <code>"Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1"</code>.</p>
-    pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.value = Some(input.into());
+    pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value of the named item, in this case <code>QUICKSIGHT_OWNER</code>, that you want to use as a filter, for example, <code>"Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1"</code>.</p>
-    pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
     }

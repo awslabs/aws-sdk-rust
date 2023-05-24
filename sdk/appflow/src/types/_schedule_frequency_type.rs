@@ -42,13 +42,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ScheduleFrequencyType {
     #[allow(missing_docs)] // documentation missing in model
@@ -66,7 +66,7 @@ pub enum ScheduleFrequencyType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ScheduleFrequencyType {
+impl ::std::convert::From<&str> for ScheduleFrequencyType {
     fn from(s: &str) -> Self {
         match s {
             "BYMINUTE" => ScheduleFrequencyType::Byminute,
@@ -81,11 +81,11 @@ impl std::convert::From<&str> for ScheduleFrequencyType {
         }
     }
 }
-impl std::str::FromStr for ScheduleFrequencyType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ScheduleFrequencyType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ScheduleFrequencyType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ScheduleFrequencyType::from(s))
     }
 }
 impl ScheduleFrequencyType {
@@ -106,7 +106,7 @@ impl ScheduleFrequencyType {
         &["BYMINUTE", "DAILY", "HOURLY", "MONTHLY", "ONCE", "WEEKLY"]
     }
 }
-impl AsRef<str> for ScheduleFrequencyType {
+impl ::std::convert::AsRef<str> for ScheduleFrequencyType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

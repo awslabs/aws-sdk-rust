@@ -2,15 +2,15 @@
 
 /// <p>Container for the parameters to the <code>DescribeDomainConfig</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDomainConfigInput {
     /// <p>Name of the OpenSearch Service domain configuration that you want to describe.</p>
     #[doc(hidden)]
-    pub domain_name: std::option::Option<std::string::String>,
+    pub domain_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeDomainConfigInput {
     /// <p>Name of the OpenSearch Service domain configuration that you want to describe.</p>
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<&str> {
         self.domain_name.as_deref()
     }
 }
@@ -24,29 +24,31 @@ impl DescribeDomainConfigInput {
 
 /// A builder for [`DescribeDomainConfigInput`](crate::operation::describe_domain_config::DescribeDomainConfigInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeDomainConfigInputBuilder {
-    pub(crate) domain_name: std::option::Option<std::string::String>,
+    pub(crate) domain_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeDomainConfigInputBuilder {
     /// <p>Name of the OpenSearch Service domain configuration that you want to describe.</p>
-    pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.domain_name = Some(input.into());
+    pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.domain_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of the OpenSearch Service domain configuration that you want to describe.</p>
-    pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_name = input;
         self
     }
     /// Consumes the builder and constructs a [`DescribeDomainConfigInput`](crate::operation::describe_domain_config::DescribeDomainConfigInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::describe_domain_config::DescribeDomainConfigInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::describe_domain_config::DescribeDomainConfigInput {
                 domain_name: self.domain_name,
             },

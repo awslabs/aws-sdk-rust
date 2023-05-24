@@ -2,11 +2,11 @@
 
 /// <p>An empty element returned on a successful request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SetIdentityMailFromDomainOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for SetIdentityMailFromDomainOutput {
+impl ::aws_http::request_id::RequestId for SetIdentityMailFromDomainOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -20,7 +20,9 @@ impl SetIdentityMailFromDomainOutput {
 
 /// A builder for [`SetIdentityMailFromDomainOutput`](crate::operation::set_identity_mail_from_domain::SetIdentityMailFromDomainOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SetIdentityMailFromDomainOutputBuilder {
     _request_id: Option<String>,
 }

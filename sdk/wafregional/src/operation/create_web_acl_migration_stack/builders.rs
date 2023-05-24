@@ -7,29 +7,29 @@ pub use crate::operation::create_web_acl_migration_stack::_create_web_acl_migrat
 ///
 /// <p>Creates an AWS CloudFormation WAFV2 template for the specified web ACL in the specified Amazon S3 bucket. Then, in CloudFormation, you create a stack from the template, to create the web ACL and its resources in AWS WAFV2. Use this to migrate your AWS WAF Classic web ACL to the latest version of AWS WAF.</p>
 /// <p>This is part of a larger migration procedure for web ACLs from AWS WAF Classic to the latest version of AWS WAF. For the full procedure, including caveats and manual steps to complete the migration and switch over to the new web ACL, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-migrating-from-classic.html">Migrating your AWS WAF Classic resources to AWS WAF</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>. </p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateWebACLMigrationStackFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::create_web_acl_migration_stack::builders::CreateWebAclMigrationStackInputBuilder,
 }
 impl CreateWebACLMigrationStackFluentBuilder {
     /// Creates a new `CreateWebACLMigrationStack`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_web_acl_migration_stack::CreateWebACLMigrationStack,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_web_acl_migration_stack::CreateWebACLMigrationStackError,
         >,
     > {
@@ -37,30 +37,33 @@ impl CreateWebACLMigrationStackFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_web_acl_migration_stack::CreateWebAclMigrationStackOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_web_acl_migration_stack::CreateWebACLMigrationStackError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -73,21 +76,21 @@ impl CreateWebACLMigrationStackFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_web_acl_migration_stack::CreateWebAclMigrationStackOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_web_acl_migration_stack::CreateWebACLMigrationStackError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The UUID of the WAF Classic web ACL that you want to migrate to WAF v2.</p>
-    pub fn web_acl_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn web_acl_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.web_acl_id(input.into());
         self
     }
     /// <p>The UUID of the WAF Classic web ACL that you want to migrate to WAF v2.</p>
-    pub fn set_web_acl_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_web_acl_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_web_acl_id(input);
         self
     }
@@ -97,7 +100,10 @@ impl CreateWebACLMigrationStackFluentBuilder {
     /// <li> <p>The bucket must be in the Region where you are deploying the template. For example, for a web ACL in us-west-2, you must use an Amazon S3 bucket in us-west-2 and you must deploy the template stack to us-west-2. </p> </li>
     /// <li> <p>The bucket policies must permit the migration process to write data. For listings of the bucket policies, see the Examples section. </p> </li>
     /// </ul>
-    pub fn s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn s3_bucket_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.s3_bucket_name(input.into());
         self
     }
@@ -107,7 +113,10 @@ impl CreateWebACLMigrationStackFluentBuilder {
     /// <li> <p>The bucket must be in the Region where you are deploying the template. For example, for a web ACL in us-west-2, you must use an Amazon S3 bucket in us-west-2 and you must deploy the template stack to us-west-2. </p> </li>
     /// <li> <p>The bucket policies must permit the migration process to write data. For listings of the bucket policies, see the Examples section. </p> </li>
     /// </ul>
-    pub fn set_s3_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_s3_bucket_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_s3_bucket_name(input);
         self
     }
@@ -117,7 +126,7 @@ impl CreateWebACLMigrationStackFluentBuilder {
         self
     }
     /// <p>Indicates whether to exclude entities that can't be migrated or to stop the migration. Set this to true to ignore unsupported entities in the web ACL during the migration. Otherwise, if AWS WAF encounters unsupported entities, it stops the process and throws an exception. </p>
-    pub fn set_ignore_unsupported_type(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_ignore_unsupported_type(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_ignore_unsupported_type(input);
         self
     }

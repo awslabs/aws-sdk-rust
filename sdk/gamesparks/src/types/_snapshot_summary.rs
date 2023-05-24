@@ -2,36 +2,36 @@
 
 /// <p>The summary of the properties of a snapshot.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SnapshotSummary {
     /// <p>The identifier of the snapshot.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The description of the snapshot.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp of when the snapshot was created.</p>
     #[doc(hidden)]
-    pub created: std::option::Option<aws_smithy_types::DateTime>,
+    pub created: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Then timestamp of when the snapshot was last updated.</p>
     #[doc(hidden)]
-    pub last_updated: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl SnapshotSummary {
     /// <p>The identifier of the snapshot.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The description of the snapshot.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The timestamp of when the snapshot was created.</p>
-    pub fn created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
     /// <p>Then timestamp of when the snapshot was last updated.</p>
-    pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated.as_ref()
     }
 }
@@ -44,53 +44,58 @@ impl SnapshotSummary {
 
 /// A builder for [`SnapshotSummary`](crate::types::SnapshotSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SnapshotSummaryBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) created: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_updated: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) created: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl SnapshotSummaryBuilder {
     /// <p>The identifier of the snapshot.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the snapshot.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>The description of the snapshot.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the snapshot.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>The timestamp of when the snapshot was created.</p>
-    pub fn created(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created = Some(input);
+    pub fn created(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created = ::std::option::Option::Some(input);
         self
     }
     /// <p>The timestamp of when the snapshot was created.</p>
-    pub fn set_created(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_created(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
         self.created = input;
         self
     }
     /// <p>Then timestamp of when the snapshot was last updated.</p>
-    pub fn last_updated(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_updated = Some(input);
+    pub fn last_updated(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_updated = ::std::option::Option::Some(input);
         self
     }
     /// <p>Then timestamp of when the snapshot was last updated.</p>
     pub fn set_last_updated(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_updated = input;
         self

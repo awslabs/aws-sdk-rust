@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteCommentContent`](crate::operation::delete_comment_content::builders::DeleteCommentContentFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`comment_id(impl Into<String>)`](crate::operation::delete_comment_content::builders::DeleteCommentContentFluentBuilder::comment_id) / [`set_comment_id(Option<String>)`](crate::operation::delete_comment_content::builders::DeleteCommentContentFluentBuilder::set_comment_id): <p>The unique, system-generated ID of the comment. To get this ID, use <code>GetCommentsForComparedCommit</code> or <code>GetCommentsForPullRequest</code>.</p>
+    ///   - [`comment_id(impl ::std::convert::Into<String>)`](crate::operation::delete_comment_content::builders::DeleteCommentContentFluentBuilder::comment_id) / [`set_comment_id(Option<String>)`](crate::operation::delete_comment_content::builders::DeleteCommentContentFluentBuilder::set_comment_id): <p>The unique, system-generated ID of the comment. To get this ID, use <code>GetCommentsForComparedCommit</code> or <code>GetCommentsForPullRequest</code>.</p>
     /// - On success, responds with [`DeleteCommentContentOutput`](crate::operation::delete_comment_content::DeleteCommentContentOutput) with field(s):
     ///   - [`comment(Option<Comment>)`](crate::operation::delete_comment_content::DeleteCommentContentOutput::comment): <p>Information about the comment you just deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteCommentContentError>`](crate::operation::delete_comment_content::DeleteCommentContentError)

@@ -2,30 +2,30 @@
 
 /// <p>A paginated list of custom verification email templates.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCustomVerificationEmailTemplatesOutput {
     /// <p>A list of the custom verification email templates that exist in your account.</p>
     #[doc(hidden)]
     pub custom_verification_email_templates:
-        std::option::Option<std::vec::Vec<crate::types::CustomVerificationEmailTemplate>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::CustomVerificationEmailTemplate>>,
     /// <p>A token indicating that there are additional custom verification email templates available to be listed. Pass this token to a subsequent call to <code>ListTemplates</code> to retrieve the next 50 custom verification email templates.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListCustomVerificationEmailTemplatesOutput {
     /// <p>A list of the custom verification email templates that exist in your account.</p>
     pub fn custom_verification_email_templates(
         &self,
-    ) -> std::option::Option<&[crate::types::CustomVerificationEmailTemplate]> {
+    ) -> ::std::option::Option<&[crate::types::CustomVerificationEmailTemplate]> {
         self.custom_verification_email_templates.as_deref()
     }
     /// <p>A token indicating that there are additional custom verification email templates available to be listed. Pass this token to a subsequent call to <code>ListTemplates</code> to retrieve the next 50 custom verification email templates.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListCustomVerificationEmailTemplatesOutput {
+impl ::aws_http::request_id::RequestId for ListCustomVerificationEmailTemplatesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -39,11 +39,13 @@ impl ListCustomVerificationEmailTemplatesOutput {
 
 /// A builder for [`ListCustomVerificationEmailTemplatesOutput`](crate::operation::list_custom_verification_email_templates::ListCustomVerificationEmailTemplatesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListCustomVerificationEmailTemplatesOutputBuilder {
     pub(crate) custom_verification_email_templates:
-        std::option::Option<std::vec::Vec<crate::types::CustomVerificationEmailTemplate>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::CustomVerificationEmailTemplate>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListCustomVerificationEmailTemplatesOutputBuilder {
@@ -58,24 +60,26 @@ impl ListCustomVerificationEmailTemplatesOutputBuilder {
     ) -> Self {
         let mut v = self.custom_verification_email_templates.unwrap_or_default();
         v.push(input);
-        self.custom_verification_email_templates = Some(v);
+        self.custom_verification_email_templates = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of the custom verification email templates that exist in your account.</p>
     pub fn set_custom_verification_email_templates(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CustomVerificationEmailTemplate>>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::CustomVerificationEmailTemplate>,
+        >,
     ) -> Self {
         self.custom_verification_email_templates = input;
         self
     }
     /// <p>A token indicating that there are additional custom verification email templates available to be listed. Pass this token to a subsequent call to <code>ListTemplates</code> to retrieve the next 50 custom verification email templates.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A token indicating that there are additional custom verification email templates available to be listed. Pass this token to a subsequent call to <code>ListTemplates</code> to retrieve the next 50 custom verification email templates.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

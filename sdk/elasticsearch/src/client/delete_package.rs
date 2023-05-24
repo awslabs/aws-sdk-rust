@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeletePackage`](crate::operation::delete_package::builders::DeletePackageFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`package_id(impl Into<String>)`](crate::operation::delete_package::builders::DeletePackageFluentBuilder::package_id) / [`set_package_id(Option<String>)`](crate::operation::delete_package::builders::DeletePackageFluentBuilder::set_package_id): <p>Internal ID of the package that you want to delete. Use <code>DescribePackages</code> to find this value.</p>
+    ///   - [`package_id(impl ::std::convert::Into<String>)`](crate::operation::delete_package::builders::DeletePackageFluentBuilder::package_id) / [`set_package_id(Option<String>)`](crate::operation::delete_package::builders::DeletePackageFluentBuilder::set_package_id): <p>Internal ID of the package that you want to delete. Use <code>DescribePackages</code> to find this value.</p>
     /// - On success, responds with [`DeletePackageOutput`](crate::operation::delete_package::DeletePackageOutput) with field(s):
     ///   - [`package_details(Option<PackageDetails>)`](crate::operation::delete_package::DeletePackageOutput::package_details): <p><code>PackageDetails</code></p>
     /// - On failure, responds with [`SdkError<DeletePackageError>`](crate::operation::delete_package::DeletePackageError)

@@ -2,22 +2,22 @@
 
 /// <p>The new setting of a timer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimerDefinition {
     /// <p>The name of the timer.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The new setting of the timer (the number of seconds before the timer elapses).</p>
     #[doc(hidden)]
-    pub seconds: std::option::Option<i32>,
+    pub seconds: ::std::option::Option<i32>,
 }
 impl TimerDefinition {
     /// <p>The name of the timer.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The new setting of the timer (the number of seconds before the timer elapses).</p>
-    pub fn seconds(&self) -> std::option::Option<i32> {
+    pub fn seconds(&self) -> ::std::option::Option<i32> {
         self.seconds
     }
 }
@@ -30,29 +30,31 @@ impl TimerDefinition {
 
 /// A builder for [`TimerDefinition`](crate::types::TimerDefinition).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TimerDefinitionBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) seconds: std::option::Option<i32>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) seconds: ::std::option::Option<i32>,
 }
 impl TimerDefinitionBuilder {
     /// <p>The name of the timer.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the timer.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The new setting of the timer (the number of seconds before the timer elapses).</p>
     pub fn seconds(mut self, input: i32) -> Self {
-        self.seconds = Some(input);
+        self.seconds = ::std::option::Option::Some(input);
         self
     }
     /// <p>The new setting of the timer (the number of seconds before the timer elapses).</p>
-    pub fn set_seconds(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.seconds = input;
         self
     }

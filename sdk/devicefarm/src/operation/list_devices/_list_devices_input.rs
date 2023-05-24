@@ -2,14 +2,14 @@
 
 /// <p>Represents the result of a list devices request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDevicesInput {
     /// <p>The Amazon Resource Name (ARN) of the project.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Used to select a set of devices. A filter is made up of an attribute, an operator, and one or more values.</p>
     /// <ul>
     /// <li> <p>Attribute: The aspect of a device such as platform or model used as the selection criteria in a device filter.</p> <p>Allowed values include:</p>
@@ -42,15 +42,15 @@ pub struct ListDevicesInput {
     /// </ul> </li>
     /// </ul>
     #[doc(hidden)]
-    pub filters: std::option::Option<std::vec::Vec<crate::types::DeviceFilter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::DeviceFilter>>,
 }
 impl ListDevicesInput {
     /// <p>The Amazon Resource Name (ARN) of the project.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>Used to select a set of devices. A filter is made up of an attribute, an operator, and one or more values.</p>
@@ -84,7 +84,7 @@ impl ListDevicesInput {
     /// <li> <p>In a request, the AVAILABILITY attribute takes the following values: AVAILABLE, HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn filters(&self) -> std::option::Option<&[crate::types::DeviceFilter]> {
+    pub fn filters(&self) -> ::std::option::Option<&[crate::types::DeviceFilter]> {
         self.filters.as_deref()
     }
 }
@@ -97,30 +97,32 @@ impl ListDevicesInput {
 
 /// A builder for [`ListDevicesInput`](crate::operation::list_devices::ListDevicesInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListDevicesInputBuilder {
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
-    pub(crate) filters: std::option::Option<std::vec::Vec<crate::types::DeviceFilter>>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::DeviceFilter>>,
 }
 impl ListDevicesInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the project.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the project.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
@@ -162,7 +164,7 @@ impl ListDevicesInputBuilder {
     pub fn filters(mut self, input: crate::types::DeviceFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
         v.push(input);
-        self.filters = Some(v);
+        self.filters = ::std::option::Option::Some(v);
         self
     }
     /// <p>Used to select a set of devices. A filter is made up of an attribute, an operator, and one or more values.</p>
@@ -198,7 +200,7 @@ impl ListDevicesInputBuilder {
     /// </ul>
     pub fn set_filters(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DeviceFilter>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DeviceFilter>>,
     ) -> Self {
         self.filters = input;
         self
@@ -206,11 +208,11 @@ impl ListDevicesInputBuilder {
     /// Consumes the builder and constructs a [`ListDevicesInput`](crate::operation::list_devices::ListDevicesInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::list_devices::ListDevicesInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::list_devices::ListDevicesInput {
+        ::std::result::Result::Ok(crate::operation::list_devices::ListDevicesInput {
             arn: self.arn,
             next_token: self.next_token,
             filters: self.filters,

@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetBot`](crate::operation::get_bot::builders::GetBotFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::get_bot::builders::GetBotFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_bot::builders::GetBotFluentBuilder::set_name): <p>The name of the bot. The name is case sensitive. </p>
-    ///   - [`version_or_alias(impl Into<String>)`](crate::operation::get_bot::builders::GetBotFluentBuilder::version_or_alias) / [`set_version_or_alias(Option<String>)`](crate::operation::get_bot::builders::GetBotFluentBuilder::set_version_or_alias): <p>The version or alias of the bot.</p>
+    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::get_bot::builders::GetBotFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_bot::builders::GetBotFluentBuilder::set_name): <p>The name of the bot. The name is case sensitive. </p>
+    ///   - [`version_or_alias(impl ::std::convert::Into<String>)`](crate::operation::get_bot::builders::GetBotFluentBuilder::version_or_alias) / [`set_version_or_alias(Option<String>)`](crate::operation::get_bot::builders::GetBotFluentBuilder::set_version_or_alias): <p>The version or alias of the bot.</p>
     /// - On success, responds with [`GetBotOutput`](crate::operation::get_bot::GetBotOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::get_bot::GetBotOutput::name): <p>The name of the bot.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_bot::GetBotOutput::description): <p>A description of the bot.</p>

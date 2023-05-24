@@ -6,22 +6,22 @@
 /// </note>
 /// <p>Specifies the type of update to perform to an <code>IPSet</code> with <code>UpdateIPSet</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IpSetUpdate {
     /// <p>Specifies whether to insert or delete an IP address with <code>UpdateIPSet</code>.</p>
     #[doc(hidden)]
-    pub action: std::option::Option<crate::types::ChangeAction>,
+    pub action: ::std::option::Option<crate::types::ChangeAction>,
     /// <p>The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR notation) that web requests originate from.</p>
     #[doc(hidden)]
-    pub ip_set_descriptor: std::option::Option<crate::types::IpSetDescriptor>,
+    pub ip_set_descriptor: ::std::option::Option<crate::types::IpSetDescriptor>,
 }
 impl IpSetUpdate {
     /// <p>Specifies whether to insert or delete an IP address with <code>UpdateIPSet</code>.</p>
-    pub fn action(&self) -> std::option::Option<&crate::types::ChangeAction> {
+    pub fn action(&self) -> ::std::option::Option<&crate::types::ChangeAction> {
         self.action.as_ref()
     }
     /// <p>The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR notation) that web requests originate from.</p>
-    pub fn ip_set_descriptor(&self) -> std::option::Option<&crate::types::IpSetDescriptor> {
+    pub fn ip_set_descriptor(&self) -> ::std::option::Option<&crate::types::IpSetDescriptor> {
         self.ip_set_descriptor.as_ref()
     }
 }
@@ -34,31 +34,33 @@ impl IpSetUpdate {
 
 /// A builder for [`IpSetUpdate`](crate::types::IpSetUpdate).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct IpSetUpdateBuilder {
-    pub(crate) action: std::option::Option<crate::types::ChangeAction>,
-    pub(crate) ip_set_descriptor: std::option::Option<crate::types::IpSetDescriptor>,
+    pub(crate) action: ::std::option::Option<crate::types::ChangeAction>,
+    pub(crate) ip_set_descriptor: ::std::option::Option<crate::types::IpSetDescriptor>,
 }
 impl IpSetUpdateBuilder {
     /// <p>Specifies whether to insert or delete an IP address with <code>UpdateIPSet</code>.</p>
     pub fn action(mut self, input: crate::types::ChangeAction) -> Self {
-        self.action = Some(input);
+        self.action = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether to insert or delete an IP address with <code>UpdateIPSet</code>.</p>
-    pub fn set_action(mut self, input: std::option::Option<crate::types::ChangeAction>) -> Self {
+    pub fn set_action(mut self, input: ::std::option::Option<crate::types::ChangeAction>) -> Self {
         self.action = input;
         self
     }
     /// <p>The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR notation) that web requests originate from.</p>
     pub fn ip_set_descriptor(mut self, input: crate::types::IpSetDescriptor) -> Self {
-        self.ip_set_descriptor = Some(input);
+        self.ip_set_descriptor = ::std::option::Option::Some(input);
         self
     }
     /// <p>The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range (in CIDR notation) that web requests originate from.</p>
     pub fn set_ip_set_descriptor(
         mut self,
-        input: std::option::Option<crate::types::IpSetDescriptor>,
+        input: ::std::option::Option<crate::types::IpSetDescriptor>,
     ) -> Self {
         self.ip_set_descriptor = input;
         self

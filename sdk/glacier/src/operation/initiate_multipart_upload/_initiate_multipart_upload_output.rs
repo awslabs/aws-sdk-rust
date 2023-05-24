@@ -2,27 +2,27 @@
 
 /// <p>The Amazon S3 Glacier response to your request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InitiateMultipartUploadOutput {
     /// <p>The relative URI path of the multipart upload ID Amazon S3 Glacier created.</p>
     #[doc(hidden)]
-    pub location: std::option::Option<std::string::String>,
+    pub location: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the multipart upload. This value is also included as part of the location.</p>
     #[doc(hidden)]
-    pub upload_id: std::option::Option<std::string::String>,
+    pub upload_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl InitiateMultipartUploadOutput {
     /// <p>The relative URI path of the multipart upload ID Amazon S3 Glacier created.</p>
-    pub fn location(&self) -> std::option::Option<&str> {
+    pub fn location(&self) -> ::std::option::Option<&str> {
         self.location.as_deref()
     }
     /// <p>The ID of the multipart upload. This value is also included as part of the location.</p>
-    pub fn upload_id(&self) -> std::option::Option<&str> {
+    pub fn upload_id(&self) -> ::std::option::Option<&str> {
         self.upload_id.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for InitiateMultipartUploadOutput {
+impl ::aws_http::request_id::RequestId for InitiateMultipartUploadOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -38,30 +38,32 @@ impl InitiateMultipartUploadOutput {
 
 /// A builder for [`InitiateMultipartUploadOutput`](crate::operation::initiate_multipart_upload::InitiateMultipartUploadOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InitiateMultipartUploadOutputBuilder {
-    pub(crate) location: std::option::Option<std::string::String>,
-    pub(crate) upload_id: std::option::Option<std::string::String>,
+    pub(crate) location: ::std::option::Option<::std::string::String>,
+    pub(crate) upload_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl InitiateMultipartUploadOutputBuilder {
     /// <p>The relative URI path of the multipart upload ID Amazon S3 Glacier created.</p>
-    pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
-        self.location = Some(input.into());
+    pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.location = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The relative URI path of the multipart upload ID Amazon S3 Glacier created.</p>
-    pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location = input;
         self
     }
     /// <p>The ID of the multipart upload. This value is also included as part of the location.</p>
-    pub fn upload_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.upload_id = Some(input.into());
+    pub fn upload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.upload_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the multipart upload. This value is also included as part of the location.</p>
-    pub fn set_upload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_upload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.upload_id = input;
         self
     }

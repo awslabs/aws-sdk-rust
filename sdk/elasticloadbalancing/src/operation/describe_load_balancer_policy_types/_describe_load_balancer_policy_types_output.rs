@@ -2,23 +2,23 @@
 
 /// <p>Contains the output of DescribeLoadBalancerPolicyTypes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeLoadBalancerPolicyTypesOutput {
     /// <p>Information about the policy types.</p>
     #[doc(hidden)]
     pub policy_type_descriptions:
-        std::option::Option<std::vec::Vec<crate::types::PolicyTypeDescription>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::PolicyTypeDescription>>,
     _request_id: Option<String>,
 }
 impl DescribeLoadBalancerPolicyTypesOutput {
     /// <p>Information about the policy types.</p>
     pub fn policy_type_descriptions(
         &self,
-    ) -> std::option::Option<&[crate::types::PolicyTypeDescription]> {
+    ) -> ::std::option::Option<&[crate::types::PolicyTypeDescription]> {
         self.policy_type_descriptions.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeLoadBalancerPolicyTypesOutput {
+impl ::aws_http::request_id::RequestId for DescribeLoadBalancerPolicyTypesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -32,10 +32,12 @@ impl DescribeLoadBalancerPolicyTypesOutput {
 
 /// A builder for [`DescribeLoadBalancerPolicyTypesOutput`](crate::operation::describe_load_balancer_policy_types::DescribeLoadBalancerPolicyTypesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeLoadBalancerPolicyTypesOutputBuilder {
     pub(crate) policy_type_descriptions:
-        std::option::Option<std::vec::Vec<crate::types::PolicyTypeDescription>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::PolicyTypeDescription>>,
     _request_id: Option<String>,
 }
 impl DescribeLoadBalancerPolicyTypesOutputBuilder {
@@ -47,13 +49,13 @@ impl DescribeLoadBalancerPolicyTypesOutputBuilder {
     pub fn policy_type_descriptions(mut self, input: crate::types::PolicyTypeDescription) -> Self {
         let mut v = self.policy_type_descriptions.unwrap_or_default();
         v.push(input);
-        self.policy_type_descriptions = Some(v);
+        self.policy_type_descriptions = ::std::option::Option::Some(v);
         self
     }
     /// <p>Information about the policy types.</p>
     pub fn set_policy_type_descriptions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PolicyTypeDescription>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PolicyTypeDescription>>,
     ) -> Self {
         self.policy_type_descriptions = input;
         self

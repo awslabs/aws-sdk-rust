@@ -3,15 +3,15 @@
 /// <p>Metadata for function package artifacts.</p>
 /// <p>Artifacts are the contents of the package descriptor file and the state of the package.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FunctionArtifactMeta {
     /// <p>Lists of function package overrides.</p>
     #[doc(hidden)]
-    pub overrides: std::option::Option<std::vec::Vec<crate::types::ToscaOverride>>,
+    pub overrides: ::std::option::Option<::std::vec::Vec<crate::types::ToscaOverride>>,
 }
 impl FunctionArtifactMeta {
     /// <p>Lists of function package overrides.</p>
-    pub fn overrides(&self) -> std::option::Option<&[crate::types::ToscaOverride]> {
+    pub fn overrides(&self) -> ::std::option::Option<&[crate::types::ToscaOverride]> {
         self.overrides.as_deref()
     }
 }
@@ -24,9 +24,11 @@ impl FunctionArtifactMeta {
 
 /// A builder for [`FunctionArtifactMeta`](crate::types::FunctionArtifactMeta).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FunctionArtifactMetaBuilder {
-    pub(crate) overrides: std::option::Option<std::vec::Vec<crate::types::ToscaOverride>>,
+    pub(crate) overrides: ::std::option::Option<::std::vec::Vec<crate::types::ToscaOverride>>,
 }
 impl FunctionArtifactMetaBuilder {
     /// Appends an item to `overrides`.
@@ -37,13 +39,13 @@ impl FunctionArtifactMetaBuilder {
     pub fn overrides(mut self, input: crate::types::ToscaOverride) -> Self {
         let mut v = self.overrides.unwrap_or_default();
         v.push(input);
-        self.overrides = Some(v);
+        self.overrides = ::std::option::Option::Some(v);
         self
     }
     /// <p>Lists of function package overrides.</p>
     pub fn set_overrides(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ToscaOverride>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ToscaOverride>>,
     ) -> Self {
         self.overrides = input;
         self

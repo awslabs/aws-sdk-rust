@@ -2,22 +2,22 @@
 
 /// <p>A signed document that proves that you are authorized to bring the specified IP address range to Amazon using BYOIP.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IpamCidrAuthorizationContext {
     /// <p>The plain-text authorization message for the prefix and account.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
     /// <p>The signed authorization message for the prefix and account.</p>
     #[doc(hidden)]
-    pub signature: std::option::Option<std::string::String>,
+    pub signature: ::std::option::Option<::std::string::String>,
 }
 impl IpamCidrAuthorizationContext {
     /// <p>The plain-text authorization message for the prefix and account.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
     /// <p>The signed authorization message for the prefix and account.</p>
-    pub fn signature(&self) -> std::option::Option<&str> {
+    pub fn signature(&self) -> ::std::option::Option<&str> {
         self.signature.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl IpamCidrAuthorizationContext {
 
 /// A builder for [`IpamCidrAuthorizationContext`](crate::types::IpamCidrAuthorizationContext).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct IpamCidrAuthorizationContextBuilder {
-    pub(crate) message: std::option::Option<std::string::String>,
-    pub(crate) signature: std::option::Option<std::string::String>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
+    pub(crate) signature: ::std::option::Option<::std::string::String>,
 }
 impl IpamCidrAuthorizationContextBuilder {
     /// <p>The plain-text authorization message for the prefix and account.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The plain-text authorization message for the prefix and account.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
     /// <p>The signed authorization message for the prefix and account.</p>
-    pub fn signature(mut self, input: impl Into<std::string::String>) -> Self {
-        self.signature = Some(input.into());
+    pub fn signature(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.signature = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The signed authorization message for the prefix and account.</p>
-    pub fn set_signature(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_signature(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.signature = input;
         self
     }

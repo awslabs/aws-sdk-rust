@@ -2,7 +2,7 @@
 
 /// <p>A JSON object containing the following fields:</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeChapCredentialsOutput {
     /// <p>An array of <code>ChapInfo</code> objects that represent CHAP credentials. Each object in the array contains CHAP credential information for one target-initiator pair. If no CHAP credentials are set, an empty array is returned. CHAP credential information is provided in a JSON object with the following fields:</p>
     /// <ul>
@@ -12,7 +12,7 @@ pub struct DescribeChapCredentialsOutput {
     /// <li> <p> <b>TargetARN</b>: The Amazon Resource Name (ARN) of the storage volume.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub chap_credentials: std::option::Option<std::vec::Vec<crate::types::ChapInfo>>,
+    pub chap_credentials: ::std::option::Option<::std::vec::Vec<crate::types::ChapInfo>>,
     _request_id: Option<String>,
 }
 impl DescribeChapCredentialsOutput {
@@ -23,11 +23,11 @@ impl DescribeChapCredentialsOutput {
     /// <li> <p> <b>SecretToAuthenticateTarget</b>: The secret key that the target must provide to participate in mutual CHAP with the initiator (e.g. Windows client).</p> </li>
     /// <li> <p> <b>TargetARN</b>: The Amazon Resource Name (ARN) of the storage volume.</p> </li>
     /// </ul>
-    pub fn chap_credentials(&self) -> std::option::Option<&[crate::types::ChapInfo]> {
+    pub fn chap_credentials(&self) -> ::std::option::Option<&[crate::types::ChapInfo]> {
         self.chap_credentials.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeChapCredentialsOutput {
+impl ::aws_http::request_id::RequestId for DescribeChapCredentialsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -43,9 +43,11 @@ impl DescribeChapCredentialsOutput {
 
 /// A builder for [`DescribeChapCredentialsOutput`](crate::operation::describe_chap_credentials::DescribeChapCredentialsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeChapCredentialsOutputBuilder {
-    pub(crate) chap_credentials: std::option::Option<std::vec::Vec<crate::types::ChapInfo>>,
+    pub(crate) chap_credentials: ::std::option::Option<::std::vec::Vec<crate::types::ChapInfo>>,
     _request_id: Option<String>,
 }
 impl DescribeChapCredentialsOutputBuilder {
@@ -63,7 +65,7 @@ impl DescribeChapCredentialsOutputBuilder {
     pub fn chap_credentials(mut self, input: crate::types::ChapInfo) -> Self {
         let mut v = self.chap_credentials.unwrap_or_default();
         v.push(input);
-        self.chap_credentials = Some(v);
+        self.chap_credentials = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of <code>ChapInfo</code> objects that represent CHAP credentials. Each object in the array contains CHAP credential information for one target-initiator pair. If no CHAP credentials are set, an empty array is returned. CHAP credential information is provided in a JSON object with the following fields:</p>
@@ -75,7 +77,7 @@ impl DescribeChapCredentialsOutputBuilder {
     /// </ul>
     pub fn set_chap_credentials(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ChapInfo>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ChapInfo>>,
     ) -> Self {
         self.chap_credentials = input;
         self

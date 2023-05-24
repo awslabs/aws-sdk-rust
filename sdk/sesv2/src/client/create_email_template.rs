@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateEmailTemplate`](crate::operation::create_email_template::builders::CreateEmailTemplateFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`template_name(impl Into<String>)`](crate::operation::create_email_template::builders::CreateEmailTemplateFluentBuilder::template_name) / [`set_template_name(Option<String>)`](crate::operation::create_email_template::builders::CreateEmailTemplateFluentBuilder::set_template_name): <p>The name of the template.</p>
+    ///   - [`template_name(impl ::std::convert::Into<String>)`](crate::operation::create_email_template::builders::CreateEmailTemplateFluentBuilder::template_name) / [`set_template_name(Option<String>)`](crate::operation::create_email_template::builders::CreateEmailTemplateFluentBuilder::set_template_name): <p>The name of the template.</p>
     ///   - [`template_content(EmailTemplateContent)`](crate::operation::create_email_template::builders::CreateEmailTemplateFluentBuilder::template_content) / [`set_template_content(Option<EmailTemplateContent>)`](crate::operation::create_email_template::builders::CreateEmailTemplateFluentBuilder::set_template_content): <p>The content of the email template, composed of a subject line, an HTML part, and a text-only part.</p>
     /// - On success, responds with [`CreateEmailTemplateOutput`](crate::operation::create_email_template::CreateEmailTemplateOutput)
     /// - On failure, responds with [`SdkError<CreateEmailTemplateError>`](crate::operation::create_email_template::CreateEmailTemplateError)

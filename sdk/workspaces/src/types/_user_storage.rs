@@ -2,15 +2,15 @@
 
 /// <p>Describes the user volume for a WorkSpace bundle.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserStorage {
     /// <p>The size of the user volume.</p>
     #[doc(hidden)]
-    pub capacity: std::option::Option<std::string::String>,
+    pub capacity: ::std::option::Option<::std::string::String>,
 }
 impl UserStorage {
     /// <p>The size of the user volume.</p>
-    pub fn capacity(&self) -> std::option::Option<&str> {
+    pub fn capacity(&self) -> ::std::option::Option<&str> {
         self.capacity.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl UserStorage {
 
 /// A builder for [`UserStorage`](crate::types::UserStorage).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UserStorageBuilder {
-    pub(crate) capacity: std::option::Option<std::string::String>,
+    pub(crate) capacity: ::std::option::Option<::std::string::String>,
 }
 impl UserStorageBuilder {
     /// <p>The size of the user volume.</p>
-    pub fn capacity(mut self, input: impl Into<std::string::String>) -> Self {
-        self.capacity = Some(input.into());
+    pub fn capacity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.capacity = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The size of the user volume.</p>
-    pub fn set_capacity(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_capacity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.capacity = input;
         self
     }

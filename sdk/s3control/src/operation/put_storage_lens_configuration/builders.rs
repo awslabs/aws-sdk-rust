@@ -8,29 +8,29 @@ pub use crate::operation::put_storage_lens_configuration::_put_storage_lens_conf
 /// <p>Puts an Amazon S3 Storage Lens configuration. For more information about S3 Storage Lens, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working with Amazon S3 Storage Lens</a> in the <i>Amazon S3 User Guide</i>. For a complete list of S3 Storage Lens metrics, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_metrics_glossary.html">S3 Storage Lens metrics glossary</a> in the <i>Amazon S3 User Guide</i>.</p> <note>
 /// <p>To use this action, you must have permission to perform the <code>s3:PutStorageLensConfiguration</code> action. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens_iam_permissions.html">Setting permissions to use Amazon S3 Storage Lens</a> in the <i>Amazon S3 User Guide</i>.</p>
 /// </note>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutStorageLensConfigurationFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::put_storage_lens_configuration::builders::PutStorageLensConfigurationInputBuilder,
 }
 impl PutStorageLensConfigurationFluentBuilder {
     /// Creates a new `PutStorageLensConfiguration`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::put_storage_lens_configuration::PutStorageLensConfiguration,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::put_storage_lens_configuration::PutStorageLensConfigurationError,
         >,
     > {
@@ -38,30 +38,33 @@ impl PutStorageLensConfigurationFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::put_storage_lens_configuration::PutStorageLensConfigurationOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::put_storage_lens_configuration::PutStorageLensConfigurationError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -74,31 +77,31 @@ impl PutStorageLensConfigurationFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::put_storage_lens_configuration::PutStorageLensConfigurationOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::put_storage_lens_configuration::PutStorageLensConfigurationError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The ID of the S3 Storage Lens configuration.</p>
-    pub fn config_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn config_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.config_id(input.into());
         self
     }
     /// <p>The ID of the S3 Storage Lens configuration.</p>
-    pub fn set_config_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_config_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_config_id(input);
         self
     }
     /// <p>The account ID of the requester.</p>
-    pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.account_id(input.into());
         self
     }
     /// <p>The account ID of the requester.</p>
-    pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_account_id(input);
         self
     }
@@ -113,7 +116,7 @@ impl PutStorageLensConfigurationFluentBuilder {
     /// <p>The S3 Storage Lens configuration.</p>
     pub fn set_storage_lens_configuration(
         mut self,
-        input: std::option::Option<crate::types::StorageLensConfiguration>,
+        input: ::std::option::Option<crate::types::StorageLensConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_storage_lens_configuration(input);
         self
@@ -134,7 +137,7 @@ impl PutStorageLensConfigurationFluentBuilder {
     /// </note>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::StorageLensTag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::StorageLensTag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self

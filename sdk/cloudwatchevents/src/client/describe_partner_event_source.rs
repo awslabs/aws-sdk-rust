@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribePartnerEventSource`](crate::operation::describe_partner_event_source::builders::DescribePartnerEventSourceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::describe_partner_event_source::builders::DescribePartnerEventSourceFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::describe_partner_event_source::builders::DescribePartnerEventSourceFluentBuilder::set_name): <p>The name of the event source to display.</p>
+    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::describe_partner_event_source::builders::DescribePartnerEventSourceFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::describe_partner_event_source::builders::DescribePartnerEventSourceFluentBuilder::set_name): <p>The name of the event source to display.</p>
     /// - On success, responds with [`DescribePartnerEventSourceOutput`](crate::operation::describe_partner_event_source::DescribePartnerEventSourceOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::describe_partner_event_source::DescribePartnerEventSourceOutput::arn): <p>The ARN of the event source.</p>
     ///   - [`name(Option<String>)`](crate::operation::describe_partner_event_source::DescribePartnerEventSourceOutput::name): <p>The name of the event source.</p>

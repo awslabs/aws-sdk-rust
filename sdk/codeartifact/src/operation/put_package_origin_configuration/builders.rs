@@ -8,29 +8,29 @@ pub use crate::operation::put_package_origin_configuration::_put_package_origin_
 /// <p>Sets the package origin configuration for a package.</p>
 /// <p>The package origin configuration determines how new versions of a package can be added to a repository. You can allow or block direct publishing of new package versions, or ingestion and retaining of new package versions from an external connection or upstream source. For more information about package origin controls and configuration, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/package-origin-controls.html">Editing package origin controls</a> in the <i>CodeArtifact User Guide</i>.</p>
 /// <p> <code>PutPackageOriginConfiguration</code> can be called on a package that doesn't yet exist in the repository. When called on a package that does not exist, a package is created in the repository with no versions and the requested restrictions are set on the package. This can be used to preemptively block ingesting or retaining any versions from external connections or upstream repositories, or to block publishing any versions of the package into the repository before connecting any package managers or publishers to the repository.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutPackageOriginConfigurationFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::put_package_origin_configuration::builders::PutPackageOriginConfigurationInputBuilder,
 }
 impl PutPackageOriginConfigurationFluentBuilder {
     /// Creates a new `PutPackageOriginConfiguration`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::put_package_origin_configuration::PutPackageOriginConfiguration,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::put_package_origin_configuration::PutPackageOriginConfigurationError,
         >,
     > {
@@ -38,30 +38,33 @@ impl PutPackageOriginConfigurationFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::put_package_origin_configuration::PutPackageOriginConfigurationOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::put_package_origin_configuration::PutPackageOriginConfigurationError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -74,41 +77,41 @@ impl PutPackageOriginConfigurationFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::put_package_origin_configuration::PutPackageOriginConfigurationOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::put_package_origin_configuration::PutPackageOriginConfigurationError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the domain that contains the repository that contains the package.</p>
-    pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain(input.into());
         self
     }
     /// <p>The name of the domain that contains the repository that contains the package.</p>
-    pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain(input);
         self
     }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn domain_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_owner(input.into());
         self
     }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_domain_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_owner(input);
         self
     }
     /// <p>The name of the repository that contains the package.</p>
-    pub fn repository(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn repository(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.repository(input.into());
         self
     }
     /// <p>The name of the repository that contains the package.</p>
-    pub fn set_repository(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_repository(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_repository(input);
         self
     }
@@ -118,7 +121,7 @@ impl PutPackageOriginConfigurationFluentBuilder {
         self
     }
     /// <p>A format that specifies the type of the package to be updated.</p>
-    pub fn set_format(mut self, input: std::option::Option<crate::types::PackageFormat>) -> Self {
+    pub fn set_format(mut self, input: ::std::option::Option<crate::types::PackageFormat>) -> Self {
         self.inner = self.inner.set_format(input);
         self
     }
@@ -129,7 +132,7 @@ impl PutPackageOriginConfigurationFluentBuilder {
     /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
     /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li>
     /// </ul>
-    pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.namespace(input.into());
         self
     }
@@ -140,17 +143,17 @@ impl PutPackageOriginConfigurationFluentBuilder {
     /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
     /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li>
     /// </ul>
-    pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_namespace(input);
         self
     }
     /// <p>The name of the package to be updated.</p>
-    pub fn package(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn package(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.package(input.into());
         self
     }
     /// <p>The name of the package to be updated.</p>
-    pub fn set_package(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_package(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_package(input);
         self
     }
@@ -164,7 +167,7 @@ impl PutPackageOriginConfigurationFluentBuilder {
     /// <p>You must include both the desired <code>upstream</code> and <code>publish</code> restrictions.</p>
     pub fn set_restrictions(
         mut self,
-        input: std::option::Option<crate::types::PackageOriginRestrictions>,
+        input: ::std::option::Option<crate::types::PackageOriginRestrictions>,
     ) -> Self {
         self.inner = self.inner.set_restrictions(input);
         self

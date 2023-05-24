@@ -2,22 +2,22 @@
 
 /// <p>An indication of whether a project creation or deletion is failed or successful.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProjectStatus {
     /// <p>The phase of completion for a project creation or deletion.</p>
     #[doc(hidden)]
-    pub state: std::option::Option<std::string::String>,
+    pub state: ::std::option::Option<::std::string::String>,
     /// <p>In the case of a project creation or deletion failure, a reason for the failure.</p>
     #[doc(hidden)]
-    pub reason: std::option::Option<std::string::String>,
+    pub reason: ::std::option::Option<::std::string::String>,
 }
 impl ProjectStatus {
     /// <p>The phase of completion for a project creation or deletion.</p>
-    pub fn state(&self) -> std::option::Option<&str> {
+    pub fn state(&self) -> ::std::option::Option<&str> {
         self.state.as_deref()
     }
     /// <p>In the case of a project creation or deletion failure, a reason for the failure.</p>
-    pub fn reason(&self) -> std::option::Option<&str> {
+    pub fn reason(&self) -> ::std::option::Option<&str> {
         self.reason.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl ProjectStatus {
 
 /// A builder for [`ProjectStatus`](crate::types::ProjectStatus).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ProjectStatusBuilder {
-    pub(crate) state: std::option::Option<std::string::String>,
-    pub(crate) reason: std::option::Option<std::string::String>,
+    pub(crate) state: ::std::option::Option<::std::string::String>,
+    pub(crate) reason: ::std::option::Option<::std::string::String>,
 }
 impl ProjectStatusBuilder {
     /// <p>The phase of completion for a project creation or deletion.</p>
-    pub fn state(mut self, input: impl Into<std::string::String>) -> Self {
-        self.state = Some(input.into());
+    pub fn state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.state = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The phase of completion for a project creation or deletion.</p>
-    pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state = input;
         self
     }
     /// <p>In the case of a project creation or deletion failure, a reason for the failure.</p>
-    pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
-        self.reason = Some(input.into());
+    pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>In the case of a project creation or deletion failure, a reason for the failure.</p>
-    pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reason = input;
         self
     }

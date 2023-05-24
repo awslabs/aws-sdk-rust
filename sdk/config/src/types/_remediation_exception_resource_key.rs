@@ -2,22 +2,22 @@
 
 /// <p>The details that identify a resource within Config, including the resource type and resource ID. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemediationExceptionResourceKey {
     /// <p>The type of a resource.</p>
     #[doc(hidden)]
-    pub resource_type: std::option::Option<std::string::String>,
+    pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the resource (for example., sg-xxxxxx).</p>
     #[doc(hidden)]
-    pub resource_id: std::option::Option<std::string::String>,
+    pub resource_id: ::std::option::Option<::std::string::String>,
 }
 impl RemediationExceptionResourceKey {
     /// <p>The type of a resource.</p>
-    pub fn resource_type(&self) -> std::option::Option<&str> {
+    pub fn resource_type(&self) -> ::std::option::Option<&str> {
         self.resource_type.as_deref()
     }
     /// <p>The ID of the resource (for example., sg-xxxxxx).</p>
-    pub fn resource_id(&self) -> std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<&str> {
         self.resource_id.as_deref()
     }
 }
@@ -30,29 +30,37 @@ impl RemediationExceptionResourceKey {
 
 /// A builder for [`RemediationExceptionResourceKey`](crate::types::RemediationExceptionResourceKey).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RemediationExceptionResourceKeyBuilder {
-    pub(crate) resource_type: std::option::Option<std::string::String>,
-    pub(crate) resource_id: std::option::Option<std::string::String>,
+    pub(crate) resource_type: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_id: ::std::option::Option<::std::string::String>,
 }
 impl RemediationExceptionResourceKeyBuilder {
     /// <p>The type of a resource.</p>
-    pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_type = Some(input.into());
+    pub fn resource_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of a resource.</p>
-    pub fn set_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.resource_type = input;
         self
     }
     /// <p>The ID of the resource (for example., sg-xxxxxx).</p>
-    pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_id = Some(input.into());
+    pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the resource (for example., sg-xxxxxx).</p>
-    pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
     }

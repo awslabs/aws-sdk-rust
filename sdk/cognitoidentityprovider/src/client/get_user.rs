@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetUser`](crate::operation::get_user::builders::GetUserFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`access_token(impl Into<String>)`](crate::operation::get_user::builders::GetUserFluentBuilder::access_token) / [`set_access_token(Option<String>)`](crate::operation::get_user::builders::GetUserFluentBuilder::set_access_token): <p>A non-expired access token for the user whose information you want to query.</p>
+    ///   - [`access_token(impl ::std::convert::Into<String>)`](crate::operation::get_user::builders::GetUserFluentBuilder::access_token) / [`set_access_token(Option<String>)`](crate::operation::get_user::builders::GetUserFluentBuilder::set_access_token): <p>A non-expired access token for the user whose information you want to query.</p>
     /// - On success, responds with [`GetUserOutput`](crate::operation::get_user::GetUserOutput) with field(s):
     ///   - [`username(Option<String>)`](crate::operation::get_user::GetUserOutput::username): <p>The user name of the user you want to retrieve from the get user request.</p>
     ///   - [`user_attributes(Option<Vec<AttributeType>>)`](crate::operation::get_user::GetUserOutput::user_attributes): <p>An array of name-value pairs representing user attributes.</p>  <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>

@@ -2,22 +2,22 @@
 
 /// <p>Information about the suppressed email address.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSuppressedDestinationOutput {
     /// <p>An object containing information about the suppressed email address.</p>
     #[doc(hidden)]
-    pub suppressed_destination: std::option::Option<crate::types::SuppressedDestination>,
+    pub suppressed_destination: ::std::option::Option<crate::types::SuppressedDestination>,
     _request_id: Option<String>,
 }
 impl GetSuppressedDestinationOutput {
     /// <p>An object containing information about the suppressed email address.</p>
     pub fn suppressed_destination(
         &self,
-    ) -> std::option::Option<&crate::types::SuppressedDestination> {
+    ) -> ::std::option::Option<&crate::types::SuppressedDestination> {
         self.suppressed_destination.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for GetSuppressedDestinationOutput {
+impl ::aws_http::request_id::RequestId for GetSuppressedDestinationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -33,21 +33,23 @@ impl GetSuppressedDestinationOutput {
 
 /// A builder for [`GetSuppressedDestinationOutput`](crate::operation::get_suppressed_destination::GetSuppressedDestinationOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetSuppressedDestinationOutputBuilder {
-    pub(crate) suppressed_destination: std::option::Option<crate::types::SuppressedDestination>,
+    pub(crate) suppressed_destination: ::std::option::Option<crate::types::SuppressedDestination>,
     _request_id: Option<String>,
 }
 impl GetSuppressedDestinationOutputBuilder {
     /// <p>An object containing information about the suppressed email address.</p>
     pub fn suppressed_destination(mut self, input: crate::types::SuppressedDestination) -> Self {
-        self.suppressed_destination = Some(input);
+        self.suppressed_destination = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object containing information about the suppressed email address.</p>
     pub fn set_suppressed_destination(
         mut self,
-        input: std::option::Option<crate::types::SuppressedDestination>,
+        input: ::std::option::Option<crate::types::SuppressedDestination>,
     ) -> Self {
         self.suppressed_destination = input;
         self

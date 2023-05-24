@@ -2,48 +2,48 @@
 
 /// <p>The operation is already in progress.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DuplicateRequest {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the operation that's already in progress.</p>
     #[doc(hidden)]
-    pub duplicate_operation_id: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
+    pub duplicate_operation_id: ::std::option::Option<::std::string::String>,
+    pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl DuplicateRequest {
     /// <p>The ID of the operation that's already in progress.</p>
-    pub fn duplicate_operation_id(&self) -> std::option::Option<&str> {
+    pub fn duplicate_operation_id(&self) -> ::std::option::Option<&str> {
         self.duplicate_operation_id.as_deref()
     }
 }
 impl DuplicateRequest {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for DuplicateRequest {
+impl ::std::fmt::Display for DuplicateRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "DuplicateRequest")?;
-        if let Some(inner_1) = &self.message {
+        ::std::write!(f, "DuplicateRequest")?;
+        if let ::std::option::Option::Some(inner_1) = &self.message {
             {
-                write!(f, ": {}", inner_1)?;
+                ::std::write!(f, ": {}", inner_1)?;
             }
         }
         Ok(())
     }
 }
-impl std::error::Error for DuplicateRequest {}
-impl aws_http::request_id::RequestId for crate::types::error::DuplicateRequest {
+impl ::std::error::Error for DuplicateRequest {}
+impl ::aws_http::request_id::RequestId for crate::types::error::DuplicateRequest {
     fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for DuplicateRequest {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DuplicateRequest {
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
@@ -56,38 +56,43 @@ impl DuplicateRequest {
 
 /// A builder for [`DuplicateRequest`](crate::types::error::DuplicateRequest).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DuplicateRequestBuilder {
-    pub(crate) message: std::option::Option<std::string::String>,
-    pub(crate) duplicate_operation_id: std::option::Option<std::string::String>,
-    meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
+    pub(crate) duplicate_operation_id: ::std::option::Option<::std::string::String>,
+    meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl DuplicateRequestBuilder {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
     /// <p>The ID of the operation that's already in progress.</p>
-    pub fn duplicate_operation_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.duplicate_operation_id = Some(input.into());
+    pub fn duplicate_operation_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.duplicate_operation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the operation that's already in progress.</p>
     pub fn set_duplicate_operation_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.duplicate_operation_id = input;
         self
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
         self.meta = Some(meta);
         self
     }
@@ -95,7 +100,7 @@ impl DuplicateRequestBuilder {
     /// Sets error metadata
     pub fn set_meta(
         &mut self,
-        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
     ) -> &mut Self {
         self.meta = meta;
         self

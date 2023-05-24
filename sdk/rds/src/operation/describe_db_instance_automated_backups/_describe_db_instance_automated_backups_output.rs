@@ -2,30 +2,30 @@
 
 /// <p>Contains the result of a successful invocation of the <code>DescribeDBInstanceAutomatedBackups</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDbInstanceAutomatedBackupsOutput {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     #[doc(hidden)]
-    pub marker: std::option::Option<std::string::String>,
+    pub marker: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>DBInstanceAutomatedBackup</code> instances.</p>
     #[doc(hidden)]
     pub db_instance_automated_backups:
-        std::option::Option<std::vec::Vec<crate::types::DbInstanceAutomatedBackup>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::DbInstanceAutomatedBackup>>,
     _request_id: Option<String>,
 }
 impl DescribeDbInstanceAutomatedBackupsOutput {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
     /// <p>A list of <code>DBInstanceAutomatedBackup</code> instances.</p>
     pub fn db_instance_automated_backups(
         &self,
-    ) -> std::option::Option<&[crate::types::DbInstanceAutomatedBackup]> {
+    ) -> ::std::option::Option<&[crate::types::DbInstanceAutomatedBackup]> {
         self.db_instance_automated_backups.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeDbInstanceAutomatedBackupsOutput {
+impl ::aws_http::request_id::RequestId for DescribeDbInstanceAutomatedBackupsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -39,21 +39,23 @@ impl DescribeDbInstanceAutomatedBackupsOutput {
 
 /// A builder for [`DescribeDbInstanceAutomatedBackupsOutput`](crate::operation::describe_db_instance_automated_backups::DescribeDbInstanceAutomatedBackupsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeDbInstanceAutomatedBackupsOutputBuilder {
-    pub(crate) marker: std::option::Option<std::string::String>,
+    pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) db_instance_automated_backups:
-        std::option::Option<std::vec::Vec<crate::types::DbInstanceAutomatedBackup>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::DbInstanceAutomatedBackup>>,
     _request_id: Option<String>,
 }
 impl DescribeDbInstanceAutomatedBackupsOutputBuilder {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-        self.marker = Some(input.into());
+    pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
     }
@@ -68,13 +70,13 @@ impl DescribeDbInstanceAutomatedBackupsOutputBuilder {
     ) -> Self {
         let mut v = self.db_instance_automated_backups.unwrap_or_default();
         v.push(input);
-        self.db_instance_automated_backups = Some(v);
+        self.db_instance_automated_backups = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of <code>DBInstanceAutomatedBackup</code> instances.</p>
     pub fn set_db_instance_automated_backups(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DbInstanceAutomatedBackup>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DbInstanceAutomatedBackup>>,
     ) -> Self {
         self.db_instance_automated_backups = input;
         self

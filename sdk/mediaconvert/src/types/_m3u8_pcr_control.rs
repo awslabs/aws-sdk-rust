@@ -38,13 +38,13 @@
 /// When set to PCR_EVERY_PES_PACKET a Program Clock Reference value is inserted for every Packetized Elementary Stream (PES) header. This parameter is effective only when the PCR PID is the same as the video or audio elementary stream.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum M3u8PcrControl {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum M3u8PcrControl {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for M3u8PcrControl {
+impl ::std::convert::From<&str> for M3u8PcrControl {
     fn from(s: &str) -> Self {
         match s {
             "CONFIGURED_PCR_PERIOD" => M3u8PcrControl::ConfiguredPcrPeriod,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for M3u8PcrControl {
         }
     }
 }
-impl std::str::FromStr for M3u8PcrControl {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for M3u8PcrControl {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(M3u8PcrControl::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(M3u8PcrControl::from(s))
     }
 }
 impl M3u8PcrControl {
@@ -86,7 +86,7 @@ impl M3u8PcrControl {
         &["CONFIGURED_PCR_PERIOD", "PCR_EVERY_PES_PACKET"]
     }
 }
-impl AsRef<str> for M3u8PcrControl {
+impl ::std::convert::AsRef<str> for M3u8PcrControl {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -2,22 +2,22 @@
 
 /// <p>Contains information regarding DocumentGroups and UndetectedDocumentTypes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LendingSummary {
     /// <p>Contains an array of all DocumentGroup objects.</p>
     #[doc(hidden)]
-    pub document_groups: std::option::Option<std::vec::Vec<crate::types::DocumentGroup>>,
+    pub document_groups: ::std::option::Option<::std::vec::Vec<crate::types::DocumentGroup>>,
     /// <p>UndetectedDocumentTypes.</p>
     #[doc(hidden)]
-    pub undetected_document_types: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub undetected_document_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl LendingSummary {
     /// <p>Contains an array of all DocumentGroup objects.</p>
-    pub fn document_groups(&self) -> std::option::Option<&[crate::types::DocumentGroup]> {
+    pub fn document_groups(&self) -> ::std::option::Option<&[crate::types::DocumentGroup]> {
         self.document_groups.as_deref()
     }
     /// <p>UndetectedDocumentTypes.</p>
-    pub fn undetected_document_types(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn undetected_document_types(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.undetected_document_types.as_deref()
     }
 }
@@ -30,10 +30,13 @@ impl LendingSummary {
 
 /// A builder for [`LendingSummary`](crate::types::LendingSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LendingSummaryBuilder {
-    pub(crate) document_groups: std::option::Option<std::vec::Vec<crate::types::DocumentGroup>>,
-    pub(crate) undetected_document_types: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) document_groups: ::std::option::Option<::std::vec::Vec<crate::types::DocumentGroup>>,
+    pub(crate) undetected_document_types:
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl LendingSummaryBuilder {
     /// Appends an item to `document_groups`.
@@ -44,13 +47,13 @@ impl LendingSummaryBuilder {
     pub fn document_groups(mut self, input: crate::types::DocumentGroup) -> Self {
         let mut v = self.document_groups.unwrap_or_default();
         v.push(input);
-        self.document_groups = Some(v);
+        self.document_groups = ::std::option::Option::Some(v);
         self
     }
     /// <p>Contains an array of all DocumentGroup objects.</p>
     pub fn set_document_groups(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DocumentGroup>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DocumentGroup>>,
     ) -> Self {
         self.document_groups = input;
         self
@@ -60,16 +63,19 @@ impl LendingSummaryBuilder {
     /// To override the contents of this collection use [`set_undetected_document_types`](Self::set_undetected_document_types).
     ///
     /// <p>UndetectedDocumentTypes.</p>
-    pub fn undetected_document_types(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn undetected_document_types(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.undetected_document_types.unwrap_or_default();
         v.push(input.into());
-        self.undetected_document_types = Some(v);
+        self.undetected_document_types = ::std::option::Option::Some(v);
         self
     }
     /// <p>UndetectedDocumentTypes.</p>
     pub fn set_undetected_document_types(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.undetected_document_types = input;
         self

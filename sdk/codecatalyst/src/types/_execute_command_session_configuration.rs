@@ -2,22 +2,22 @@
 
 /// <p>Information about the commands that will be run on a Dev Environment when an SSH session begins.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExecuteCommandSessionConfiguration {
     /// <p>The command used at the beginning of the SSH session to a Dev Environment.</p>
     #[doc(hidden)]
-    pub command: std::option::Option<std::string::String>,
+    pub command: ::std::option::Option<::std::string::String>,
     /// <p>An array of arguments containing arguments and members.</p>
     #[doc(hidden)]
-    pub arguments: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub arguments: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ExecuteCommandSessionConfiguration {
     /// <p>The command used at the beginning of the SSH session to a Dev Environment.</p>
-    pub fn command(&self) -> std::option::Option<&str> {
+    pub fn command(&self) -> ::std::option::Option<&str> {
         self.command.as_deref()
     }
     /// <p>An array of arguments containing arguments and members.</p>
-    pub fn arguments(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn arguments(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.arguments.as_deref()
     }
 }
@@ -30,19 +30,21 @@ impl ExecuteCommandSessionConfiguration {
 
 /// A builder for [`ExecuteCommandSessionConfiguration`](crate::types::ExecuteCommandSessionConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ExecuteCommandSessionConfigurationBuilder {
-    pub(crate) command: std::option::Option<std::string::String>,
-    pub(crate) arguments: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) command: ::std::option::Option<::std::string::String>,
+    pub(crate) arguments: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ExecuteCommandSessionConfigurationBuilder {
     /// <p>The command used at the beginning of the SSH session to a Dev Environment.</p>
-    pub fn command(mut self, input: impl Into<std::string::String>) -> Self {
-        self.command = Some(input.into());
+    pub fn command(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.command = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The command used at the beginning of the SSH session to a Dev Environment.</p>
-    pub fn set_command(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_command(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.command = input;
         self
     }
@@ -51,16 +53,16 @@ impl ExecuteCommandSessionConfigurationBuilder {
     /// To override the contents of this collection use [`set_arguments`](Self::set_arguments).
     ///
     /// <p>An array of arguments containing arguments and members.</p>
-    pub fn arguments(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn arguments(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.arguments.unwrap_or_default();
         v.push(input.into());
-        self.arguments = Some(v);
+        self.arguments = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of arguments containing arguments and members.</p>
     pub fn set_arguments(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.arguments = input;
         self

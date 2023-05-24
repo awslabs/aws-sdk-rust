@@ -2,22 +2,22 @@
 
 /// <p>Specifies the serverless update concurrency configuration for an endpoint variant.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProductionVariantServerlessUpdateConfig {
     /// <p>The updated maximum number of concurrent invocations your serverless endpoint can process.</p>
     #[doc(hidden)]
-    pub max_concurrency: std::option::Option<i32>,
+    pub max_concurrency: ::std::option::Option<i32>,
     /// <p>The updated amount of provisioned concurrency to allocate for the serverless endpoint. Should be less than or equal to <code>MaxConcurrency</code>.</p>
     #[doc(hidden)]
-    pub provisioned_concurrency: std::option::Option<i32>,
+    pub provisioned_concurrency: ::std::option::Option<i32>,
 }
 impl ProductionVariantServerlessUpdateConfig {
     /// <p>The updated maximum number of concurrent invocations your serverless endpoint can process.</p>
-    pub fn max_concurrency(&self) -> std::option::Option<i32> {
+    pub fn max_concurrency(&self) -> ::std::option::Option<i32> {
         self.max_concurrency
     }
     /// <p>The updated amount of provisioned concurrency to allocate for the serverless endpoint. Should be less than or equal to <code>MaxConcurrency</code>.</p>
-    pub fn provisioned_concurrency(&self) -> std::option::Option<i32> {
+    pub fn provisioned_concurrency(&self) -> ::std::option::Option<i32> {
         self.provisioned_concurrency
     }
 }
@@ -30,29 +30,31 @@ impl ProductionVariantServerlessUpdateConfig {
 
 /// A builder for [`ProductionVariantServerlessUpdateConfig`](crate::types::ProductionVariantServerlessUpdateConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ProductionVariantServerlessUpdateConfigBuilder {
-    pub(crate) max_concurrency: std::option::Option<i32>,
-    pub(crate) provisioned_concurrency: std::option::Option<i32>,
+    pub(crate) max_concurrency: ::std::option::Option<i32>,
+    pub(crate) provisioned_concurrency: ::std::option::Option<i32>,
 }
 impl ProductionVariantServerlessUpdateConfigBuilder {
     /// <p>The updated maximum number of concurrent invocations your serverless endpoint can process.</p>
     pub fn max_concurrency(mut self, input: i32) -> Self {
-        self.max_concurrency = Some(input);
+        self.max_concurrency = ::std::option::Option::Some(input);
         self
     }
     /// <p>The updated maximum number of concurrent invocations your serverless endpoint can process.</p>
-    pub fn set_max_concurrency(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_concurrency(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_concurrency = input;
         self
     }
     /// <p>The updated amount of provisioned concurrency to allocate for the serverless endpoint. Should be less than or equal to <code>MaxConcurrency</code>.</p>
     pub fn provisioned_concurrency(mut self, input: i32) -> Self {
-        self.provisioned_concurrency = Some(input);
+        self.provisioned_concurrency = ::std::option::Option::Some(input);
         self
     }
     /// <p>The updated amount of provisioned concurrency to allocate for the serverless endpoint. Should be less than or equal to <code>MaxConcurrency</code>.</p>
-    pub fn set_provisioned_concurrency(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_provisioned_concurrency(mut self, input: ::std::option::Option<i32>) -> Self {
         self.provisioned_concurrency = input;
         self
     }

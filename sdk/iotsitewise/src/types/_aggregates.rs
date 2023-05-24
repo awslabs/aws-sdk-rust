@@ -2,50 +2,50 @@
 
 /// <p>Contains the (pre-calculated) aggregate values for an asset property.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Aggregates {
     /// <p>The average (mean) value of the time series over a time interval window.</p>
     #[doc(hidden)]
-    pub average: std::option::Option<f64>,
+    pub average: ::std::option::Option<f64>,
     /// <p>The count of data points in the time series over a time interval window.</p>
     #[doc(hidden)]
-    pub count: std::option::Option<f64>,
+    pub count: ::std::option::Option<f64>,
     /// <p>The maximum value of the time series over a time interval window.</p>
     #[doc(hidden)]
-    pub maximum: std::option::Option<f64>,
+    pub maximum: ::std::option::Option<f64>,
     /// <p>The minimum value of the time series over a time interval window.</p>
     #[doc(hidden)]
-    pub minimum: std::option::Option<f64>,
+    pub minimum: ::std::option::Option<f64>,
     /// <p>The sum of the time series over a time interval window.</p>
     #[doc(hidden)]
-    pub sum: std::option::Option<f64>,
+    pub sum: ::std::option::Option<f64>,
     /// <p>The standard deviation of the time series over a time interval window.</p>
     #[doc(hidden)]
-    pub standard_deviation: std::option::Option<f64>,
+    pub standard_deviation: ::std::option::Option<f64>,
 }
 impl Aggregates {
     /// <p>The average (mean) value of the time series over a time interval window.</p>
-    pub fn average(&self) -> std::option::Option<f64> {
+    pub fn average(&self) -> ::std::option::Option<f64> {
         self.average
     }
     /// <p>The count of data points in the time series over a time interval window.</p>
-    pub fn count(&self) -> std::option::Option<f64> {
+    pub fn count(&self) -> ::std::option::Option<f64> {
         self.count
     }
     /// <p>The maximum value of the time series over a time interval window.</p>
-    pub fn maximum(&self) -> std::option::Option<f64> {
+    pub fn maximum(&self) -> ::std::option::Option<f64> {
         self.maximum
     }
     /// <p>The minimum value of the time series over a time interval window.</p>
-    pub fn minimum(&self) -> std::option::Option<f64> {
+    pub fn minimum(&self) -> ::std::option::Option<f64> {
         self.minimum
     }
     /// <p>The sum of the time series over a time interval window.</p>
-    pub fn sum(&self) -> std::option::Option<f64> {
+    pub fn sum(&self) -> ::std::option::Option<f64> {
         self.sum
     }
     /// <p>The standard deviation of the time series over a time interval window.</p>
-    pub fn standard_deviation(&self) -> std::option::Option<f64> {
+    pub fn standard_deviation(&self) -> ::std::option::Option<f64> {
         self.standard_deviation
     }
 }
@@ -58,73 +58,75 @@ impl Aggregates {
 
 /// A builder for [`Aggregates`](crate::types::Aggregates).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AggregatesBuilder {
-    pub(crate) average: std::option::Option<f64>,
-    pub(crate) count: std::option::Option<f64>,
-    pub(crate) maximum: std::option::Option<f64>,
-    pub(crate) minimum: std::option::Option<f64>,
-    pub(crate) sum: std::option::Option<f64>,
-    pub(crate) standard_deviation: std::option::Option<f64>,
+    pub(crate) average: ::std::option::Option<f64>,
+    pub(crate) count: ::std::option::Option<f64>,
+    pub(crate) maximum: ::std::option::Option<f64>,
+    pub(crate) minimum: ::std::option::Option<f64>,
+    pub(crate) sum: ::std::option::Option<f64>,
+    pub(crate) standard_deviation: ::std::option::Option<f64>,
 }
 impl AggregatesBuilder {
     /// <p>The average (mean) value of the time series over a time interval window.</p>
     pub fn average(mut self, input: f64) -> Self {
-        self.average = Some(input);
+        self.average = ::std::option::Option::Some(input);
         self
     }
     /// <p>The average (mean) value of the time series over a time interval window.</p>
-    pub fn set_average(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_average(mut self, input: ::std::option::Option<f64>) -> Self {
         self.average = input;
         self
     }
     /// <p>The count of data points in the time series over a time interval window.</p>
     pub fn count(mut self, input: f64) -> Self {
-        self.count = Some(input);
+        self.count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The count of data points in the time series over a time interval window.</p>
-    pub fn set_count(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_count(mut self, input: ::std::option::Option<f64>) -> Self {
         self.count = input;
         self
     }
     /// <p>The maximum value of the time series over a time interval window.</p>
     pub fn maximum(mut self, input: f64) -> Self {
-        self.maximum = Some(input);
+        self.maximum = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum value of the time series over a time interval window.</p>
-    pub fn set_maximum(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_maximum(mut self, input: ::std::option::Option<f64>) -> Self {
         self.maximum = input;
         self
     }
     /// <p>The minimum value of the time series over a time interval window.</p>
     pub fn minimum(mut self, input: f64) -> Self {
-        self.minimum = Some(input);
+        self.minimum = ::std::option::Option::Some(input);
         self
     }
     /// <p>The minimum value of the time series over a time interval window.</p>
-    pub fn set_minimum(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_minimum(mut self, input: ::std::option::Option<f64>) -> Self {
         self.minimum = input;
         self
     }
     /// <p>The sum of the time series over a time interval window.</p>
     pub fn sum(mut self, input: f64) -> Self {
-        self.sum = Some(input);
+        self.sum = ::std::option::Option::Some(input);
         self
     }
     /// <p>The sum of the time series over a time interval window.</p>
-    pub fn set_sum(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_sum(mut self, input: ::std::option::Option<f64>) -> Self {
         self.sum = input;
         self
     }
     /// <p>The standard deviation of the time series over a time interval window.</p>
     pub fn standard_deviation(mut self, input: f64) -> Self {
-        self.standard_deviation = Some(input);
+        self.standard_deviation = ::std::option::Option::Some(input);
         self
     }
     /// <p>The standard deviation of the time series over a time interval window.</p>
-    pub fn set_standard_deviation(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_standard_deviation(mut self, input: ::std::option::Option<f64>) -> Self {
         self.standard_deviation = input;
         self
     }

@@ -6,29 +6,29 @@ pub use crate::operation::create_topic_refresh_schedule::_create_topic_refresh_s
 /// Fluent builder constructing a request to `CreateTopicRefreshSchedule`.
 ///
 /// <p>Creates a topic refresh schedule.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateTopicRefreshScheduleFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::create_topic_refresh_schedule::builders::CreateTopicRefreshScheduleInputBuilder,
 }
 impl CreateTopicRefreshScheduleFluentBuilder {
     /// Creates a new `CreateTopicRefreshSchedule`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_topic_refresh_schedule::CreateTopicRefreshSchedule,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_topic_refresh_schedule::CreateTopicRefreshScheduleError,
         >,
     > {
@@ -36,30 +36,33 @@ impl CreateTopicRefreshScheduleFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_topic_refresh_schedule::CreateTopicRefreshScheduleOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_topic_refresh_schedule::CreateTopicRefreshScheduleError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,51 +75,57 @@ impl CreateTopicRefreshScheduleFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_topic_refresh_schedule::CreateTopicRefreshScheduleOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_topic_refresh_schedule::CreateTopicRefreshScheduleError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The ID of the Amazon Web Services account that contains the topic you're creating a refresh schedule for.</p>
-    pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn aws_account_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that contains the topic you're creating a refresh schedule for.</p>
-    pub fn set_aws_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_aws_account_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
     /// <p>The ID of the topic that you want to modify. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
-    pub fn topic_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn topic_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.topic_id(input.into());
         self
     }
     /// <p>The ID of the topic that you want to modify. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
-    pub fn set_topic_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_topic_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_topic_id(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
-    pub fn dataset_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn dataset_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.dataset_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
-    pub fn set_dataset_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_dataset_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_dataset_arn(input);
         self
     }
     /// <p>The name of the dataset.</p>
-    pub fn dataset_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn dataset_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.dataset_name(input.into());
         self
     }
     /// <p>The name of the dataset.</p>
-    pub fn set_dataset_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_dataset_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_dataset_name(input);
         self
     }
@@ -128,7 +137,7 @@ impl CreateTopicRefreshScheduleFluentBuilder {
     /// <p>The definition of a refresh schedule.</p>
     pub fn set_refresh_schedule(
         mut self,
-        input: std::option::Option<crate::types::TopicRefreshSchedule>,
+        input: ::std::option::Option<crate::types::TopicRefreshSchedule>,
     ) -> Self {
         self.inner = self.inner.set_refresh_schedule(input);
         self

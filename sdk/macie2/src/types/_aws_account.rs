@@ -2,22 +2,22 @@
 
 /// <p>Provides information about an Amazon Web Services account and entity that performed an action on an affected resource. The action was performed using the credentials for an Amazon Web Services account other than your own account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsAccount {
     /// <p>The unique identifier for the Amazon Web Services account.</p>
     #[doc(hidden)]
-    pub account_id: std::option::Option<std::string::String>,
+    pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the entity that performed the action.</p>
     #[doc(hidden)]
-    pub principal_id: std::option::Option<std::string::String>,
+    pub principal_id: ::std::option::Option<::std::string::String>,
 }
 impl AwsAccount {
     /// <p>The unique identifier for the Amazon Web Services account.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The unique identifier for the entity that performed the action.</p>
-    pub fn principal_id(&self) -> std::option::Option<&str> {
+    pub fn principal_id(&self) -> ::std::option::Option<&str> {
         self.principal_id.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl AwsAccount {
 
 /// A builder for [`AwsAccount`](crate::types::AwsAccount).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsAccountBuilder {
-    pub(crate) account_id: std::option::Option<std::string::String>,
-    pub(crate) principal_id: std::option::Option<std::string::String>,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) principal_id: ::std::option::Option<::std::string::String>,
 }
 impl AwsAccountBuilder {
     /// <p>The unique identifier for the Amazon Web Services account.</p>
-    pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.account_id = Some(input.into());
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the Amazon Web Services account.</p>
-    pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
     }
     /// <p>The unique identifier for the entity that performed the action.</p>
-    pub fn principal_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.principal_id = Some(input.into());
+    pub fn principal_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.principal_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the entity that performed the action.</p>
-    pub fn set_principal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_principal_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.principal_id = input;
         self
     }

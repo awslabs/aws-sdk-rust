@@ -7,14 +7,14 @@
 /// <li> <p>The percentage of failures with type <code>failureType</code> exceeds the <code>thresholdPercentage</code>.</p> </li>
 /// </ol>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IoTJobAbortCriteria {
     /// <p>The type of job deployment failure that can cancel a job.</p>
     #[doc(hidden)]
-    pub failure_type: std::option::Option<crate::types::IoTJobExecutionFailureType>,
+    pub failure_type: ::std::option::Option<crate::types::IoTJobExecutionFailureType>,
     /// <p>The action to perform when the criteria are met.</p>
     #[doc(hidden)]
-    pub action: std::option::Option<crate::types::IoTJobAbortAction>,
+    pub action: ::std::option::Option<crate::types::IoTJobAbortAction>,
     /// <p>The minimum percentage of <code>failureType</code> failures that occur before the job can cancel.</p>
     /// <p>This parameter supports up to two digits after the decimal (for example, you can specify <code>10.9</code> or <code>10.99</code>, but not <code>10.999</code>).</p>
     #[doc(hidden)]
@@ -25,11 +25,11 @@ pub struct IoTJobAbortCriteria {
 }
 impl IoTJobAbortCriteria {
     /// <p>The type of job deployment failure that can cancel a job.</p>
-    pub fn failure_type(&self) -> std::option::Option<&crate::types::IoTJobExecutionFailureType> {
+    pub fn failure_type(&self) -> ::std::option::Option<&crate::types::IoTJobExecutionFailureType> {
         self.failure_type.as_ref()
     }
     /// <p>The action to perform when the criteria are met.</p>
-    pub fn action(&self) -> std::option::Option<&crate::types::IoTJobAbortAction> {
+    pub fn action(&self) -> ::std::option::Option<&crate::types::IoTJobAbortAction> {
         self.action.as_ref()
     }
     /// <p>The minimum percentage of <code>failureType</code> failures that occur before the job can cancel.</p>
@@ -51,36 +51,38 @@ impl IoTJobAbortCriteria {
 
 /// A builder for [`IoTJobAbortCriteria`](crate::types::IoTJobAbortCriteria).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct IoTJobAbortCriteriaBuilder {
-    pub(crate) failure_type: std::option::Option<crate::types::IoTJobExecutionFailureType>,
-    pub(crate) action: std::option::Option<crate::types::IoTJobAbortAction>,
-    pub(crate) threshold_percentage: std::option::Option<f64>,
-    pub(crate) min_number_of_executed_things: std::option::Option<i32>,
+    pub(crate) failure_type: ::std::option::Option<crate::types::IoTJobExecutionFailureType>,
+    pub(crate) action: ::std::option::Option<crate::types::IoTJobAbortAction>,
+    pub(crate) threshold_percentage: ::std::option::Option<f64>,
+    pub(crate) min_number_of_executed_things: ::std::option::Option<i32>,
 }
 impl IoTJobAbortCriteriaBuilder {
     /// <p>The type of job deployment failure that can cancel a job.</p>
     pub fn failure_type(mut self, input: crate::types::IoTJobExecutionFailureType) -> Self {
-        self.failure_type = Some(input);
+        self.failure_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of job deployment failure that can cancel a job.</p>
     pub fn set_failure_type(
         mut self,
-        input: std::option::Option<crate::types::IoTJobExecutionFailureType>,
+        input: ::std::option::Option<crate::types::IoTJobExecutionFailureType>,
     ) -> Self {
         self.failure_type = input;
         self
     }
     /// <p>The action to perform when the criteria are met.</p>
     pub fn action(mut self, input: crate::types::IoTJobAbortAction) -> Self {
-        self.action = Some(input);
+        self.action = ::std::option::Option::Some(input);
         self
     }
     /// <p>The action to perform when the criteria are met.</p>
     pub fn set_action(
         mut self,
-        input: std::option::Option<crate::types::IoTJobAbortAction>,
+        input: ::std::option::Option<crate::types::IoTJobAbortAction>,
     ) -> Self {
         self.action = input;
         self
@@ -88,22 +90,22 @@ impl IoTJobAbortCriteriaBuilder {
     /// <p>The minimum percentage of <code>failureType</code> failures that occur before the job can cancel.</p>
     /// <p>This parameter supports up to two digits after the decimal (for example, you can specify <code>10.9</code> or <code>10.99</code>, but not <code>10.999</code>).</p>
     pub fn threshold_percentage(mut self, input: f64) -> Self {
-        self.threshold_percentage = Some(input);
+        self.threshold_percentage = ::std::option::Option::Some(input);
         self
     }
     /// <p>The minimum percentage of <code>failureType</code> failures that occur before the job can cancel.</p>
     /// <p>This parameter supports up to two digits after the decimal (for example, you can specify <code>10.9</code> or <code>10.99</code>, but not <code>10.999</code>).</p>
-    pub fn set_threshold_percentage(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_threshold_percentage(mut self, input: ::std::option::Option<f64>) -> Self {
         self.threshold_percentage = input;
         self
     }
     /// <p>The minimum number of things that receive the configuration before the job can cancel.</p>
     pub fn min_number_of_executed_things(mut self, input: i32) -> Self {
-        self.min_number_of_executed_things = Some(input);
+        self.min_number_of_executed_things = ::std::option::Option::Some(input);
         self
     }
     /// <p>The minimum number of things that receive the configuration before the job can cancel.</p>
-    pub fn set_min_number_of_executed_things(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_min_number_of_executed_things(mut self, input: ::std::option::Option<i32>) -> Self {
         self.min_number_of_executed_things = input;
         self
     }

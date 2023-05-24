@@ -2,15 +2,15 @@
 
 /// <p>Defines the possible values for a categorical hyperparameter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CategoricalParameterRangeSpecification {
     /// <p>The allowed categories for the hyperparameter.</p>
     #[doc(hidden)]
-    pub values: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CategoricalParameterRangeSpecification {
     /// <p>The allowed categories for the hyperparameter.</p>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.values.as_deref()
     }
 }
@@ -23,9 +23,11 @@ impl CategoricalParameterRangeSpecification {
 
 /// A builder for [`CategoricalParameterRangeSpecification`](crate::types::CategoricalParameterRangeSpecification).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CategoricalParameterRangeSpecificationBuilder {
-    pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CategoricalParameterRangeSpecificationBuilder {
     /// Appends an item to `values`.
@@ -33,16 +35,16 @@ impl CategoricalParameterRangeSpecificationBuilder {
     /// To override the contents of this collection use [`set_values`](Self::set_values).
     ///
     /// <p>The allowed categories for the hyperparameter.</p>
-    pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
         v.push(input.into());
-        self.values = Some(v);
+        self.values = ::std::option::Option::Some(v);
         self
     }
     /// <p>The allowed categories for the hyperparameter.</p>
     pub fn set_values(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.values = input;
         self

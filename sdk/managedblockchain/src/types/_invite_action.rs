@@ -3,15 +3,15 @@
 /// <p>An action to invite a specific Amazon Web Services account to create a member and join the network. The <code>InviteAction</code> is carried out when a <code>Proposal</code> is <code>APPROVED</code>.</p>
 /// <p>Applies only to Hyperledger Fabric.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InviteAction {
     /// <p>The Amazon Web Services account ID to invite.</p>
     #[doc(hidden)]
-    pub principal: std::option::Option<std::string::String>,
+    pub principal: ::std::option::Option<::std::string::String>,
 }
 impl InviteAction {
     /// <p>The Amazon Web Services account ID to invite.</p>
-    pub fn principal(&self) -> std::option::Option<&str> {
+    pub fn principal(&self) -> ::std::option::Option<&str> {
         self.principal.as_deref()
     }
 }
@@ -24,18 +24,20 @@ impl InviteAction {
 
 /// A builder for [`InviteAction`](crate::types::InviteAction).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InviteActionBuilder {
-    pub(crate) principal: std::option::Option<std::string::String>,
+    pub(crate) principal: ::std::option::Option<::std::string::String>,
 }
 impl InviteActionBuilder {
     /// <p>The Amazon Web Services account ID to invite.</p>
-    pub fn principal(mut self, input: impl Into<std::string::String>) -> Self {
-        self.principal = Some(input.into());
+    pub fn principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.principal = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID to invite.</p>
-    pub fn set_principal(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_principal(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.principal = input;
         self
     }

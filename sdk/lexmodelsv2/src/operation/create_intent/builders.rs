@@ -16,56 +16,59 @@ pub use crate::operation::create_intent::_create_intent_input::CreateIntentInput
 /// <li> <p>A conclusion statement to send to the user after the intent is fulfilled. For example, "I ordered your pizza."</p> </li>
 /// <li> <p>A follow-up prompt that asks the user for additional activity. For example, "Do you want a drink with your pizza?"</p> </li>
 /// </ul>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateIntentFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_intent::builders::CreateIntentInputBuilder,
 }
 impl CreateIntentFluentBuilder {
     /// Creates a new `CreateIntent`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_intent::CreateIntent,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_intent::CreateIntentError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_intent::CreateIntentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_intent::CreateIntentOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_intent::CreateIntentError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_intent::CreateIntentError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -78,41 +81,44 @@ impl CreateIntentFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_intent::CreateIntentOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_intent::CreateIntentError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_intent::CreateIntentError>,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the intent. Intent names must be unique in the locale that contains the intent and cannot match the name of any built-in intent.</p>
-    pub fn intent_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn intent_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.intent_name(input.into());
         self
     }
     /// <p>The name of the intent. Intent names must be unique in the locale that contains the intent and cannot match the name of any built-in intent.</p>
-    pub fn set_intent_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_intent_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_intent_name(input);
         self
     }
     /// <p>A description of the intent. Use the description to help identify the intent in lists.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>A description of the intent. Use the description to help identify the intent in lists.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
     /// <p>A unique identifier for the built-in intent to base this intent on.</p>
-    pub fn parent_intent_signature(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn parent_intent_signature(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.parent_intent_signature(input.into());
         self
     }
     /// <p>A unique identifier for the built-in intent to base this intent on.</p>
     pub fn set_parent_intent_signature(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_parent_intent_signature(input);
         self
@@ -131,7 +137,7 @@ impl CreateIntentFluentBuilder {
     /// <p>In an utterance, slot names are enclosed in curly braces ("{", "}") to indicate where they should be displayed in the utterance shown to the user.. </p>
     pub fn set_sample_utterances(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SampleUtterance>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SampleUtterance>>,
     ) -> Self {
         self.inner = self.inner.set_sample_utterances(input);
         self
@@ -146,7 +152,7 @@ impl CreateIntentFluentBuilder {
     /// <p>For example, suppose that your bot determines that the user's name is John. You Lambda function might retrieve John's information from a backend database and prepopulate some of the values. For example, if you find that John is gluten intolerant, you might set the corresponding intent slot, <code>glutenIntolerant</code> to <code>true</code>. You might find John's phone number and set the corresponding session attribute.</p>
     pub fn set_dialog_code_hook(
         mut self,
-        input: std::option::Option<crate::types::DialogCodeHookSettings>,
+        input: ::std::option::Option<crate::types::DialogCodeHookSettings>,
     ) -> Self {
         self.inner = self.inner.set_dialog_code_hook(input);
         self
@@ -164,7 +170,7 @@ impl CreateIntentFluentBuilder {
     /// <p>For example, in a pizza ordering bot, the Lambda function can look up the closest pizza restaurant to the customer's location and then place an order on the customer's behalf.</p>
     pub fn set_fulfillment_code_hook(
         mut self,
-        input: std::option::Option<crate::types::FulfillmentCodeHookSettings>,
+        input: ::std::option::Option<crate::types::FulfillmentCodeHookSettings>,
     ) -> Self {
         self.inner = self.inner.set_fulfillment_code_hook(input);
         self
@@ -180,7 +186,7 @@ impl CreateIntentFluentBuilder {
     /// <p>Provides prompts that Amazon Lex sends to the user to confirm the completion of an intent. If the user answers "no," the settings contain a statement that is sent to the user to end the intent.</p>
     pub fn set_intent_confirmation_setting(
         mut self,
-        input: std::option::Option<crate::types::IntentConfirmationSetting>,
+        input: ::std::option::Option<crate::types::IntentConfirmationSetting>,
     ) -> Self {
         self.inner = self.inner.set_intent_confirmation_setting(input);
         self
@@ -193,7 +199,7 @@ impl CreateIntentFluentBuilder {
     /// <p>Sets the response that Amazon Lex sends to the user when the intent is closed.</p>
     pub fn set_intent_closing_setting(
         mut self,
-        input: std::option::Option<crate::types::IntentClosingSetting>,
+        input: ::std::option::Option<crate::types::IntentClosingSetting>,
     ) -> Self {
         self.inner = self.inner.set_intent_closing_setting(input);
         self
@@ -218,7 +224,7 @@ impl CreateIntentFluentBuilder {
     /// <p>An intent may have up to 5 input contexts. If an intent has multiple input contexts, all of the contexts must be active to consider the intent.</p>
     pub fn set_input_contexts(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::InputContext>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::InputContext>>,
     ) -> Self {
         self.inner = self.inner.set_input_contexts(input);
         self
@@ -239,7 +245,7 @@ impl CreateIntentFluentBuilder {
     /// <p>When you use the <code>outputContextsList</code> property, all of the contexts specified in the list are activated when the intent is fulfilled. You can set up to 10 output contexts. You can also set the number of conversation turns that the context should be active, or the length of time that the context should be active.</p>
     pub fn set_output_contexts(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::OutputContext>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::OutputContext>>,
     ) -> Self {
         self.inner = self.inner.set_output_contexts(input);
         self
@@ -252,38 +258,38 @@ impl CreateIntentFluentBuilder {
     /// <p>Configuration information required to use the <code>AMAZON.KendraSearchIntent</code> intent to connect to an Amazon Kendra index. The <code>AMAZON.KendraSearchIntent</code> intent is called when Amazon Lex can't determine another intent to invoke.</p>
     pub fn set_kendra_configuration(
         mut self,
-        input: std::option::Option<crate::types::KendraConfiguration>,
+        input: ::std::option::Option<crate::types::KendraConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_kendra_configuration(input);
         self
     }
     /// <p>The identifier of the bot associated with this intent.</p>
-    pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn bot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bot_id(input.into());
         self
     }
     /// <p>The identifier of the bot associated with this intent.</p>
-    pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_bot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bot_id(input);
         self
     }
     /// <p>The identifier of the version of the bot associated with this intent.</p>
-    pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bot_version(input.into());
         self
     }
     /// <p>The identifier of the version of the bot associated with this intent.</p>
-    pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_bot_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bot_version(input);
         self
     }
     /// <p>The identifier of the language and locale where this intent is used. All of the bots, slot types, and slots used by the intent must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
-    pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn locale_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.locale_id(input.into());
         self
     }
     /// <p>The identifier of the language and locale where this intent is used. All of the bots, slot types, and slots used by the intent must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
-    pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_locale_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_locale_id(input);
         self
     }
@@ -295,7 +301,7 @@ impl CreateIntentFluentBuilder {
     /// <p>Configuration settings for the response that is sent to the user at the beginning of a conversation, before eliciting slot values.</p>
     pub fn set_initial_response_setting(
         mut self,
-        input: std::option::Option<crate::types::InitialResponseSetting>,
+        input: ::std::option::Option<crate::types::InitialResponseSetting>,
     ) -> Self {
         self.inner = self.inner.set_initial_response_setting(input);
         self

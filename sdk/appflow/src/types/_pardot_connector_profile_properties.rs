@@ -2,21 +2,21 @@
 
 /// <p>The connector-specific profile properties required when using Salesforce Pardot.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PardotConnectorProfileProperties {
     /// <p>The location of the Salesforce Pardot resource.</p>
     #[doc(hidden)]
-    pub instance_url: std::option::Option<std::string::String>,
+    pub instance_url: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the connector profile applies to a sandbox or production environment.</p>
     #[doc(hidden)]
     pub is_sandbox_environment: bool,
     /// <p>The business unit id of Salesforce Pardot instance.</p>
     #[doc(hidden)]
-    pub business_unit_id: std::option::Option<std::string::String>,
+    pub business_unit_id: ::std::option::Option<::std::string::String>,
 }
 impl PardotConnectorProfileProperties {
     /// <p>The location of the Salesforce Pardot resource.</p>
-    pub fn instance_url(&self) -> std::option::Option<&str> {
+    pub fn instance_url(&self) -> ::std::option::Option<&str> {
         self.instance_url.as_deref()
     }
     /// <p>Indicates whether the connector profile applies to a sandbox or production environment.</p>
@@ -24,7 +24,7 @@ impl PardotConnectorProfileProperties {
         self.is_sandbox_environment
     }
     /// <p>The business unit id of Salesforce Pardot instance.</p>
-    pub fn business_unit_id(&self) -> std::option::Option<&str> {
+    pub fn business_unit_id(&self) -> ::std::option::Option<&str> {
         self.business_unit_id.as_deref()
     }
 }
@@ -37,40 +37,48 @@ impl PardotConnectorProfileProperties {
 
 /// A builder for [`PardotConnectorProfileProperties`](crate::types::PardotConnectorProfileProperties).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PardotConnectorProfilePropertiesBuilder {
-    pub(crate) instance_url: std::option::Option<std::string::String>,
-    pub(crate) is_sandbox_environment: std::option::Option<bool>,
-    pub(crate) business_unit_id: std::option::Option<std::string::String>,
+    pub(crate) instance_url: ::std::option::Option<::std::string::String>,
+    pub(crate) is_sandbox_environment: ::std::option::Option<bool>,
+    pub(crate) business_unit_id: ::std::option::Option<::std::string::String>,
 }
 impl PardotConnectorProfilePropertiesBuilder {
     /// <p>The location of the Salesforce Pardot resource.</p>
-    pub fn instance_url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.instance_url = Some(input.into());
+    pub fn instance_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.instance_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The location of the Salesforce Pardot resource.</p>
-    pub fn set_instance_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_instance_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_url = input;
         self
     }
     /// <p>Indicates whether the connector profile applies to a sandbox or production environment.</p>
     pub fn is_sandbox_environment(mut self, input: bool) -> Self {
-        self.is_sandbox_environment = Some(input);
+        self.is_sandbox_environment = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether the connector profile applies to a sandbox or production environment.</p>
-    pub fn set_is_sandbox_environment(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_sandbox_environment(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_sandbox_environment = input;
         self
     }
     /// <p>The business unit id of Salesforce Pardot instance.</p>
-    pub fn business_unit_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.business_unit_id = Some(input.into());
+    pub fn business_unit_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.business_unit_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The business unit id of Salesforce Pardot instance.</p>
-    pub fn set_business_unit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_business_unit_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.business_unit_id = input;
         self
     }

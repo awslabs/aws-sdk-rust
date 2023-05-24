@@ -2,7 +2,7 @@
 
 /// <p>A combination of existing analysis statuses.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum AnalysisStatusUnion {
     /// <p>The status of the analysis.</p>
     RuntimeAnalysisStatus(crate::types::RuntimeAnalysisStatus),
@@ -23,11 +23,11 @@ impl AnalysisStatusUnion {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_runtime_analysis_status(
         &self,
-    ) -> std::result::Result<&crate::types::RuntimeAnalysisStatus, &Self> {
+    ) -> ::std::result::Result<&crate::types::RuntimeAnalysisStatus, &Self> {
         if let AnalysisStatusUnion::RuntimeAnalysisStatus(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`RuntimeAnalysisStatus`](crate::types::AnalysisStatusUnion::RuntimeAnalysisStatus).
@@ -38,11 +38,11 @@ impl AnalysisStatusUnion {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_src_code_or_db_analysis_status(
         &self,
-    ) -> std::result::Result<&crate::types::SrcCodeOrDbAnalysisStatus, &Self> {
+    ) -> ::std::result::Result<&crate::types::SrcCodeOrDbAnalysisStatus, &Self> {
         if let AnalysisStatusUnion::SrcCodeOrDbAnalysisStatus(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`SrcCodeOrDbAnalysisStatus`](crate::types::AnalysisStatusUnion::SrcCodeOrDbAnalysisStatus).

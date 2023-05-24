@@ -16,56 +16,59 @@ pub use crate::operation::register_domain::_register_domain_input::RegisterDomai
 /// <li> <p>If registration is successful, returns an operation ID that you can use to track the progress and completion of the action. If the request is not completed successfully, the domain registrant is notified by email.</p> </li>
 /// <li> <p>Charges your Amazon Web Services account an amount based on the top-level domain. For more information, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.</p> </li>
 /// </ul>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RegisterDomainFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::register_domain::builders::RegisterDomainInputBuilder,
 }
 impl RegisterDomainFluentBuilder {
     /// Creates a new `RegisterDomain`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::register_domain::RegisterDomain,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::register_domain::RegisterDomainError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_domain::RegisterDomainError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::register_domain::RegisterDomainOutput,
-        aws_smithy_http::result::SdkError<crate::operation::register_domain::RegisterDomainError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_domain::RegisterDomainError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -78,9 +81,9 @@ impl RegisterDomainFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::register_domain::RegisterDomainOutput,
-        aws_smithy_http::result::SdkError<crate::operation::register_domain::RegisterDomainError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_domain::RegisterDomainError>,
     > {
         self.send_middleware().await
     }
@@ -93,7 +96,7 @@ impl RegisterDomainFluentBuilder {
     /// <li> <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p> </li>
     /// </ul>
     /// <p>Internationalized domain names are not supported for some top-level domains. To determine whether the TLD that you want to use supports internationalized domain names, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a>. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html#domain-name-format-idns">Formatting Internationalized Domain Names</a>. </p>
-    pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_name(input.into());
         self
     }
@@ -106,17 +109,23 @@ impl RegisterDomainFluentBuilder {
     /// <li> <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p> </li>
     /// </ul>
     /// <p>Internationalized domain names are not supported for some top-level domains. To determine whether the TLD that you want to use supports internationalized domain names, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a>. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html#domain-name-format-idns">Formatting Internationalized Domain Names</a>. </p>
-    pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_name(input);
         self
     }
     /// <p>Reserved for future use.</p>
-    pub fn idn_lang_code(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn idn_lang_code(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.idn_lang_code(input.into());
         self
     }
     /// <p>Reserved for future use.</p>
-    pub fn set_idn_lang_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_idn_lang_code(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_idn_lang_code(input);
         self
     }
@@ -128,7 +137,7 @@ impl RegisterDomainFluentBuilder {
     }
     /// <p>The number of years that you want to register the domain for. Domains are registered for a minimum of one year. The maximum period depends on the top-level domain. For the range of valid values for your domain, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     /// <p>Default: 1</p>
-    pub fn set_duration_in_years(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_duration_in_years(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_duration_in_years(input);
         self
     }
@@ -140,7 +149,7 @@ impl RegisterDomainFluentBuilder {
     }
     /// <p>Indicates whether the domain will be automatically renewed (<code>true</code>) or not (<code>false</code>). Auto renewal only takes effect after the account is charged.</p>
     /// <p>Default: <code>true</code> </p>
-    pub fn set_auto_renew(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_auto_renew(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_auto_renew(input);
         self
     }
@@ -152,7 +161,7 @@ impl RegisterDomainFluentBuilder {
     /// <p>Provides detailed contact information. For information about the values that you specify for each element, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
     pub fn set_admin_contact(
         mut self,
-        input: std::option::Option<crate::types::ContactDetail>,
+        input: ::std::option::Option<crate::types::ContactDetail>,
     ) -> Self {
         self.inner = self.inner.set_admin_contact(input);
         self
@@ -165,7 +174,7 @@ impl RegisterDomainFluentBuilder {
     /// <p>Provides detailed contact information. For information about the values that you specify for each element, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
     pub fn set_registrant_contact(
         mut self,
-        input: std::option::Option<crate::types::ContactDetail>,
+        input: ::std::option::Option<crate::types::ContactDetail>,
     ) -> Self {
         self.inner = self.inner.set_registrant_contact(input);
         self
@@ -178,7 +187,7 @@ impl RegisterDomainFluentBuilder {
     /// <p>Provides detailed contact information. For information about the values that you specify for each element, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
     pub fn set_tech_contact(
         mut self,
-        input: std::option::Option<crate::types::ContactDetail>,
+        input: ::std::option::Option<crate::types::ContactDetail>,
     ) -> Self {
         self.inner = self.inner.set_tech_contact(input);
         self
@@ -195,7 +204,7 @@ impl RegisterDomainFluentBuilder {
     /// <p>You must specify the same privacy setting for the administrative, registrant, and technical contacts.</p>
     /// </note>
     /// <p>Default: <code>true</code> </p>
-    pub fn set_privacy_protect_admin_contact(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_privacy_protect_admin_contact(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_privacy_protect_admin_contact(input);
         self
     }
@@ -213,7 +222,7 @@ impl RegisterDomainFluentBuilder {
     /// <p>Default: <code>true</code> </p>
     pub fn set_privacy_protect_registrant_contact(
         mut self,
-        input: std::option::Option<bool>,
+        input: ::std::option::Option<bool>,
     ) -> Self {
         self.inner = self.inner.set_privacy_protect_registrant_contact(input);
         self
@@ -230,7 +239,7 @@ impl RegisterDomainFluentBuilder {
     /// <p>You must specify the same privacy setting for the administrative, registrant, and technical contacts.</p>
     /// </note>
     /// <p>Default: <code>true</code> </p>
-    pub fn set_privacy_protect_tech_contact(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_privacy_protect_tech_contact(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_privacy_protect_tech_contact(input);
         self
     }

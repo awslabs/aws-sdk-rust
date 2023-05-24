@@ -6,29 +6,29 @@ pub use crate::operation::put_method_response::_put_method_response_input::PutMe
 /// Fluent builder constructing a request to `PutMethodResponse`.
 ///
 /// <p>Adds a MethodResponse to an existing Method resource.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutMethodResponseFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::put_method_response::builders::PutMethodResponseInputBuilder,
 }
 impl PutMethodResponseFluentBuilder {
     /// Creates a new `PutMethodResponse`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::put_method_response::PutMethodResponse,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::put_method_response::PutMethodResponseError,
         >,
     > {
@@ -36,30 +36,33 @@ impl PutMethodResponseFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::put_method_response::PutMethodResponseOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::put_method_response::PutMethodResponseError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,51 +75,51 @@ impl PutMethodResponseFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::put_method_response::PutMethodResponseOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::put_method_response::PutMethodResponseError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn rest_api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.rest_api_id(input.into());
         self
     }
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_rest_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_rest_api_id(input);
         self
     }
     /// <p>The Resource identifier for the Method resource.</p>
-    pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_id(input.into());
         self
     }
     /// <p>The Resource identifier for the Method resource.</p>
-    pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_id(input);
         self
     }
     /// <p>The HTTP verb of the Method resource.</p>
-    pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn http_method(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.http_method(input.into());
         self
     }
     /// <p>The HTTP verb of the Method resource.</p>
-    pub fn set_http_method(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_http_method(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_http_method(input);
         self
     }
     /// <p>The method response's status code.</p>
-    pub fn status_code(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn status_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.status_code(input.into());
         self
     }
     /// <p>The method response's status code.</p>
-    pub fn set_status_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_status_code(input);
         self
     }
@@ -125,14 +128,18 @@ impl PutMethodResponseFluentBuilder {
     /// To override the contents of this collection use [`set_response_parameters`](Self::set_response_parameters).
     ///
     /// <p>A key-value map specifying required or optional response parameters that API Gateway can send back to the caller. A key defines a method response header name and the associated value is a Boolean flag indicating whether the method response parameter is required or not. The method response header names must match the pattern of <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name. The response parameter names defined here are available in the integration response to be mapped from an integration response header expressed in <code>integration.response.header.{name}</code>, a static value enclosed within a pair of single quotes (e.g., <code>'application/json'</code>), or a JSON expression from the back-end response payload in the form of <code>integration.response.body.{JSON-expression}</code>, where <code>JSON-expression</code> is a valid JSON expression without the <code>$</code> prefix.)</p>
-    pub fn response_parameters(mut self, k: impl Into<std::string::String>, v: bool) -> Self {
+    pub fn response_parameters(
+        mut self,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: bool,
+    ) -> Self {
         self.inner = self.inner.response_parameters(k.into(), v);
         self
     }
     /// <p>A key-value map specifying required or optional response parameters that API Gateway can send back to the caller. A key defines a method response header name and the associated value is a Boolean flag indicating whether the method response parameter is required or not. The method response header names must match the pattern of <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name. The response parameter names defined here are available in the integration response to be mapped from an integration response header expressed in <code>integration.response.header.{name}</code>, a static value enclosed within a pair of single quotes (e.g., <code>'application/json'</code>), or a JSON expression from the back-end response payload in the form of <code>integration.response.body.{JSON-expression}</code>, where <code>JSON-expression</code> is a valid JSON expression without the <code>$</code> prefix.)</p>
     pub fn set_response_parameters(
         mut self,
-        input: std::option::Option<std::collections::HashMap<std::string::String, bool>>,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, bool>>,
     ) -> Self {
         self.inner = self.inner.set_response_parameters(input);
         self
@@ -144,8 +151,8 @@ impl PutMethodResponseFluentBuilder {
     /// <p>Specifies the Model resources used for the response's content type. Response models are represented as a key/value map, with a content type as the key and a Model name as the value.</p>
     pub fn response_models(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.response_models(k.into(), v.into());
         self
@@ -153,8 +160,8 @@ impl PutMethodResponseFluentBuilder {
     /// <p>Specifies the Model resources used for the response's content type. Response models are represented as a key/value map, with a content type as the key and a Model name as the value.</p>
     pub fn set_response_models(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_response_models(input);

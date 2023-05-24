@@ -2,29 +2,29 @@
 
 /// <p>Contains the response to a successful <code>GetAccessKeyLastUsed</code> request. It is also returned as a member of the <code>AccessKeyMetaData</code> structure returned by the <code>ListAccessKeys</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAccessKeyLastUsedOutput {
     /// <p>The name of the IAM user that owns this access key.</p>
     /// <p></p>
     #[doc(hidden)]
-    pub user_name: std::option::Option<std::string::String>,
+    pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>Contains information about the last time the access key was used.</p>
     #[doc(hidden)]
-    pub access_key_last_used: std::option::Option<crate::types::AccessKeyLastUsed>,
+    pub access_key_last_used: ::std::option::Option<crate::types::AccessKeyLastUsed>,
     _request_id: Option<String>,
 }
 impl GetAccessKeyLastUsedOutput {
     /// <p>The name of the IAM user that owns this access key.</p>
     /// <p></p>
-    pub fn user_name(&self) -> std::option::Option<&str> {
+    pub fn user_name(&self) -> ::std::option::Option<&str> {
         self.user_name.as_deref()
     }
     /// <p>Contains information about the last time the access key was used.</p>
-    pub fn access_key_last_used(&self) -> std::option::Option<&crate::types::AccessKeyLastUsed> {
+    pub fn access_key_last_used(&self) -> ::std::option::Option<&crate::types::AccessKeyLastUsed> {
         self.access_key_last_used.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for GetAccessKeyLastUsedOutput {
+impl ::aws_http::request_id::RequestId for GetAccessKeyLastUsedOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -40,34 +40,36 @@ impl GetAccessKeyLastUsedOutput {
 
 /// A builder for [`GetAccessKeyLastUsedOutput`](crate::operation::get_access_key_last_used::GetAccessKeyLastUsedOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetAccessKeyLastUsedOutputBuilder {
-    pub(crate) user_name: std::option::Option<std::string::String>,
-    pub(crate) access_key_last_used: std::option::Option<crate::types::AccessKeyLastUsed>,
+    pub(crate) user_name: ::std::option::Option<::std::string::String>,
+    pub(crate) access_key_last_used: ::std::option::Option<crate::types::AccessKeyLastUsed>,
     _request_id: Option<String>,
 }
 impl GetAccessKeyLastUsedOutputBuilder {
     /// <p>The name of the IAM user that owns this access key.</p>
     /// <p></p>
-    pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.user_name = Some(input.into());
+    pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.user_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the IAM user that owns this access key.</p>
     /// <p></p>
-    pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_name = input;
         self
     }
     /// <p>Contains information about the last time the access key was used.</p>
     pub fn access_key_last_used(mut self, input: crate::types::AccessKeyLastUsed) -> Self {
-        self.access_key_last_used = Some(input);
+        self.access_key_last_used = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains information about the last time the access key was used.</p>
     pub fn set_access_key_last_used(
         mut self,
-        input: std::option::Option<crate::types::AccessKeyLastUsed>,
+        input: ::std::option::Option<crate::types::AccessKeyLastUsed>,
     ) -> Self {
         self.access_key_last_used = input;
         self

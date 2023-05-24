@@ -6,56 +6,59 @@ pub use crate::operation::create_bot::_create_bot_input::CreateBotInputBuilder;
 /// Fluent builder constructing a request to `CreateBot`.
 ///
 /// <p>Creates an Amazon Lex conversational bot. </p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateBotFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_bot::builders::CreateBotInputBuilder,
 }
 impl CreateBotFluentBuilder {
     /// Creates a new `CreateBot`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_bot::CreateBot,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_bot::CreateBotError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_bot::CreateBotError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_bot::CreateBotOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_bot::CreateBotError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_bot::CreateBotError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,39 +71,39 @@ impl CreateBotFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_bot::CreateBotOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_bot::CreateBotError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_bot::CreateBotError>,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the bot. The bot name must be unique in the account that creates the bot.</p>
-    pub fn bot_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn bot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bot_name(input.into());
         self
     }
     /// <p>The name of the bot. The bot name must be unique in the account that creates the bot.</p>
-    pub fn set_bot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_bot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bot_name(input);
         self
     }
     /// <p>A description of the bot. It appears in lists to help you identify a particular bot.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>A description of the bot. It appears in lists to help you identify a particular bot.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that has permission to access the bot.</p>
-    pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that has permission to access the bot.</p>
-    pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
     }
@@ -112,7 +115,7 @@ impl CreateBotFluentBuilder {
     /// <p>Provides information on additional privacy protections Amazon Lex should use with the bot's data.</p>
     pub fn set_data_privacy(
         mut self,
-        input: std::option::Option<crate::types::DataPrivacy>,
+        input: ::std::option::Option<crate::types::DataPrivacy>,
     ) -> Self {
         self.inner = self.inner.set_data_privacy(input);
         self
@@ -127,7 +130,7 @@ impl CreateBotFluentBuilder {
     /// <p>The time, in seconds, that Amazon Lex should keep information about a user's conversation with the bot. </p>
     /// <p>A user interaction remains active for the amount of time specified. If no conversation occurs during this time, the session expires and Amazon Lex deletes any data provided before the timeout.</p>
     /// <p>You can specify between 60 (1 minute) and 86,400 (24 hours) seconds.</p>
-    pub fn set_idle_session_ttl_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_idle_session_ttl_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_idle_session_ttl_in_seconds(input);
         self
     }
@@ -138,8 +141,8 @@ impl CreateBotFluentBuilder {
     /// <p>A list of tags to add to the bot. You can only add tags when you create a bot. You can't use the <code>UpdateBot</code> operation to update tags. To update tags, use the <code>TagResource</code> operation.</p>
     pub fn bot_tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.bot_tags(k.into(), v.into());
         self
@@ -147,8 +150,8 @@ impl CreateBotFluentBuilder {
     /// <p>A list of tags to add to the bot. You can only add tags when you create a bot. You can't use the <code>UpdateBot</code> operation to update tags. To update tags, use the <code>TagResource</code> operation.</p>
     pub fn set_bot_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_bot_tags(input);
@@ -161,8 +164,8 @@ impl CreateBotFluentBuilder {
     /// <p>A list of tags to add to the test alias for a bot. You can only add tags when you create a bot. You can't use the <code>UpdateAlias</code> operation to update tags. To update tags on the test alias, use the <code>TagResource</code> operation.</p>
     pub fn test_bot_alias_tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.test_bot_alias_tags(k.into(), v.into());
         self
@@ -170,8 +173,8 @@ impl CreateBotFluentBuilder {
     /// <p>A list of tags to add to the test alias for a bot. You can only add tags when you create a bot. You can't use the <code>UpdateAlias</code> operation to update tags. To update tags on the test alias, use the <code>TagResource</code> operation.</p>
     pub fn set_test_bot_alias_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_test_bot_alias_tags(input);
@@ -183,7 +186,7 @@ impl CreateBotFluentBuilder {
         self
     }
     /// <p>The type of a bot to create.</p>
-    pub fn set_bot_type(mut self, input: std::option::Option<crate::types::BotType>) -> Self {
+    pub fn set_bot_type(mut self, input: ::std::option::Option<crate::types::BotType>) -> Self {
         self.inner = self.inner.set_bot_type(input);
         self
     }
@@ -199,7 +202,7 @@ impl CreateBotFluentBuilder {
     /// <p>The list of bot members in a network to be created.</p>
     pub fn set_bot_members(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::BotMember>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::BotMember>>,
     ) -> Self {
         self.inner = self.inner.set_bot_members(input);
         self

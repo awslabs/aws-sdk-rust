@@ -2,46 +2,46 @@
 
 /// <p>Describes a network resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkResourceSummary {
     /// <p>The ARN of the gateway.</p>
     #[doc(hidden)]
-    pub registered_gateway_arn: std::option::Option<std::string::String>,
+    pub registered_gateway_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the resource.</p>
     #[doc(hidden)]
-    pub resource_arn: std::option::Option<std::string::String>,
+    pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The resource type.</p>
     #[doc(hidden)]
-    pub resource_type: std::option::Option<std::string::String>,
+    pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>Information about the resource, in JSON format. Network Manager gets this information by describing the resource using its Describe API call.</p>
     #[doc(hidden)]
-    pub definition: std::option::Option<std::string::String>,
+    pub definition: ::std::option::Option<::std::string::String>,
     /// <p>The value for the Name tag.</p>
     #[doc(hidden)]
-    pub name_tag: std::option::Option<std::string::String>,
+    pub name_tag: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether this is a middlebox appliance.</p>
     #[doc(hidden)]
     pub is_middlebox: bool,
 }
 impl NetworkResourceSummary {
     /// <p>The ARN of the gateway.</p>
-    pub fn registered_gateway_arn(&self) -> std::option::Option<&str> {
+    pub fn registered_gateway_arn(&self) -> ::std::option::Option<&str> {
         self.registered_gateway_arn.as_deref()
     }
     /// <p>The ARN of the resource.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
     /// <p>The resource type.</p>
-    pub fn resource_type(&self) -> std::option::Option<&str> {
+    pub fn resource_type(&self) -> ::std::option::Option<&str> {
         self.resource_type.as_deref()
     }
     /// <p>Information about the resource, in JSON format. Network Manager gets this information by describing the resource using its Describe API call.</p>
-    pub fn definition(&self) -> std::option::Option<&str> {
+    pub fn definition(&self) -> ::std::option::Option<&str> {
         self.definition.as_deref()
     }
     /// <p>The value for the Name tag.</p>
-    pub fn name_tag(&self) -> std::option::Option<&str> {
+    pub fn name_tag(&self) -> ::std::option::Option<&str> {
         self.name_tag.as_deref()
     }
     /// <p>Indicates whether this is a middlebox appliance.</p>
@@ -58,76 +58,87 @@ impl NetworkResourceSummary {
 
 /// A builder for [`NetworkResourceSummary`](crate::types::NetworkResourceSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NetworkResourceSummaryBuilder {
-    pub(crate) registered_gateway_arn: std::option::Option<std::string::String>,
-    pub(crate) resource_arn: std::option::Option<std::string::String>,
-    pub(crate) resource_type: std::option::Option<std::string::String>,
-    pub(crate) definition: std::option::Option<std::string::String>,
-    pub(crate) name_tag: std::option::Option<std::string::String>,
-    pub(crate) is_middlebox: std::option::Option<bool>,
+    pub(crate) registered_gateway_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_type: ::std::option::Option<::std::string::String>,
+    pub(crate) definition: ::std::option::Option<::std::string::String>,
+    pub(crate) name_tag: ::std::option::Option<::std::string::String>,
+    pub(crate) is_middlebox: ::std::option::Option<bool>,
 }
 impl NetworkResourceSummaryBuilder {
     /// <p>The ARN of the gateway.</p>
-    pub fn registered_gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.registered_gateway_arn = Some(input.into());
+    pub fn registered_gateway_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.registered_gateway_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the gateway.</p>
     pub fn set_registered_gateway_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.registered_gateway_arn = input;
         self
     }
     /// <p>The ARN of the resource.</p>
-    pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_arn = Some(input.into());
+    pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the resource.</p>
-    pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
     }
     /// <p>The resource type.</p>
-    pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_type = Some(input.into());
+    pub fn resource_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The resource type.</p>
-    pub fn set_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.resource_type = input;
         self
     }
     /// <p>Information about the resource, in JSON format. Network Manager gets this information by describing the resource using its Describe API call.</p>
-    pub fn definition(mut self, input: impl Into<std::string::String>) -> Self {
-        self.definition = Some(input.into());
+    pub fn definition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.definition = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Information about the resource, in JSON format. Network Manager gets this information by describing the resource using its Describe API call.</p>
-    pub fn set_definition(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_definition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.definition = input;
         self
     }
     /// <p>The value for the Name tag.</p>
-    pub fn name_tag(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name_tag = Some(input.into());
+    pub fn name_tag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name_tag = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value for the Name tag.</p>
-    pub fn set_name_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name_tag = input;
         self
     }
     /// <p>Indicates whether this is a middlebox appliance.</p>
     pub fn is_middlebox(mut self, input: bool) -> Self {
-        self.is_middlebox = Some(input);
+        self.is_middlebox = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether this is a middlebox appliance.</p>
-    pub fn set_is_middlebox(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_middlebox(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_middlebox = input;
         self
     }

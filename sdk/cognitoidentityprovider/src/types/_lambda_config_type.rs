@@ -2,103 +2,104 @@
 
 /// <p>Specifies the configuration for Lambda triggers.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LambdaConfigType {
     /// <p>A pre-registration Lambda trigger.</p>
     #[doc(hidden)]
-    pub pre_sign_up: std::option::Option<std::string::String>,
+    pub pre_sign_up: ::std::option::Option<::std::string::String>,
     /// <p>A custom Message Lambda trigger.</p>
     #[doc(hidden)]
-    pub custom_message: std::option::Option<std::string::String>,
+    pub custom_message: ::std::option::Option<::std::string::String>,
     /// <p>A post-confirmation Lambda trigger.</p>
     #[doc(hidden)]
-    pub post_confirmation: std::option::Option<std::string::String>,
+    pub post_confirmation: ::std::option::Option<::std::string::String>,
     /// <p>A pre-authentication Lambda trigger.</p>
     #[doc(hidden)]
-    pub pre_authentication: std::option::Option<std::string::String>,
+    pub pre_authentication: ::std::option::Option<::std::string::String>,
     /// <p>A post-authentication Lambda trigger.</p>
     #[doc(hidden)]
-    pub post_authentication: std::option::Option<std::string::String>,
+    pub post_authentication: ::std::option::Option<::std::string::String>,
     /// <p>Defines the authentication challenge.</p>
     #[doc(hidden)]
-    pub define_auth_challenge: std::option::Option<std::string::String>,
+    pub define_auth_challenge: ::std::option::Option<::std::string::String>,
     /// <p>Creates an authentication challenge.</p>
     #[doc(hidden)]
-    pub create_auth_challenge: std::option::Option<std::string::String>,
+    pub create_auth_challenge: ::std::option::Option<::std::string::String>,
     /// <p>Verifies the authentication challenge response.</p>
     #[doc(hidden)]
-    pub verify_auth_challenge_response: std::option::Option<std::string::String>,
+    pub verify_auth_challenge_response: ::std::option::Option<::std::string::String>,
     /// <p>A Lambda trigger that is invoked before token generation.</p>
     #[doc(hidden)]
-    pub pre_token_generation: std::option::Option<std::string::String>,
+    pub pre_token_generation: ::std::option::Option<::std::string::String>,
     /// <p>The user migration Lambda config type.</p>
     #[doc(hidden)]
-    pub user_migration: std::option::Option<std::string::String>,
+    pub user_migration: ::std::option::Option<::std::string::String>,
     /// <p>A custom SMS sender Lambda trigger.</p>
     #[doc(hidden)]
-    pub custom_sms_sender: std::option::Option<crate::types::CustomSmsLambdaVersionConfigType>,
+    pub custom_sms_sender: ::std::option::Option<crate::types::CustomSmsLambdaVersionConfigType>,
     /// <p>A custom email sender Lambda trigger.</p>
     #[doc(hidden)]
-    pub custom_email_sender: std::option::Option<crate::types::CustomEmailLambdaVersionConfigType>,
+    pub custom_email_sender:
+        ::std::option::Option<crate::types::CustomEmailLambdaVersionConfigType>,
     /// <p>The Amazon Resource Name (ARN) of an <a href="/kms/latest/developerguide/concepts.html#master_keys">KMS key</a>. Amazon Cognito uses the key to encrypt codes and temporary passwords sent to <code>CustomEmailSender</code> and <code>CustomSMSSender</code>.</p>
     #[doc(hidden)]
-    pub kms_key_id: std::option::Option<std::string::String>,
+    pub kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl LambdaConfigType {
     /// <p>A pre-registration Lambda trigger.</p>
-    pub fn pre_sign_up(&self) -> std::option::Option<&str> {
+    pub fn pre_sign_up(&self) -> ::std::option::Option<&str> {
         self.pre_sign_up.as_deref()
     }
     /// <p>A custom Message Lambda trigger.</p>
-    pub fn custom_message(&self) -> std::option::Option<&str> {
+    pub fn custom_message(&self) -> ::std::option::Option<&str> {
         self.custom_message.as_deref()
     }
     /// <p>A post-confirmation Lambda trigger.</p>
-    pub fn post_confirmation(&self) -> std::option::Option<&str> {
+    pub fn post_confirmation(&self) -> ::std::option::Option<&str> {
         self.post_confirmation.as_deref()
     }
     /// <p>A pre-authentication Lambda trigger.</p>
-    pub fn pre_authentication(&self) -> std::option::Option<&str> {
+    pub fn pre_authentication(&self) -> ::std::option::Option<&str> {
         self.pre_authentication.as_deref()
     }
     /// <p>A post-authentication Lambda trigger.</p>
-    pub fn post_authentication(&self) -> std::option::Option<&str> {
+    pub fn post_authentication(&self) -> ::std::option::Option<&str> {
         self.post_authentication.as_deref()
     }
     /// <p>Defines the authentication challenge.</p>
-    pub fn define_auth_challenge(&self) -> std::option::Option<&str> {
+    pub fn define_auth_challenge(&self) -> ::std::option::Option<&str> {
         self.define_auth_challenge.as_deref()
     }
     /// <p>Creates an authentication challenge.</p>
-    pub fn create_auth_challenge(&self) -> std::option::Option<&str> {
+    pub fn create_auth_challenge(&self) -> ::std::option::Option<&str> {
         self.create_auth_challenge.as_deref()
     }
     /// <p>Verifies the authentication challenge response.</p>
-    pub fn verify_auth_challenge_response(&self) -> std::option::Option<&str> {
+    pub fn verify_auth_challenge_response(&self) -> ::std::option::Option<&str> {
         self.verify_auth_challenge_response.as_deref()
     }
     /// <p>A Lambda trigger that is invoked before token generation.</p>
-    pub fn pre_token_generation(&self) -> std::option::Option<&str> {
+    pub fn pre_token_generation(&self) -> ::std::option::Option<&str> {
         self.pre_token_generation.as_deref()
     }
     /// <p>The user migration Lambda config type.</p>
-    pub fn user_migration(&self) -> std::option::Option<&str> {
+    pub fn user_migration(&self) -> ::std::option::Option<&str> {
         self.user_migration.as_deref()
     }
     /// <p>A custom SMS sender Lambda trigger.</p>
     pub fn custom_sms_sender(
         &self,
-    ) -> std::option::Option<&crate::types::CustomSmsLambdaVersionConfigType> {
+    ) -> ::std::option::Option<&crate::types::CustomSmsLambdaVersionConfigType> {
         self.custom_sms_sender.as_ref()
     }
     /// <p>A custom email sender Lambda trigger.</p>
     pub fn custom_email_sender(
         &self,
-    ) -> std::option::Option<&crate::types::CustomEmailLambdaVersionConfigType> {
+    ) -> ::std::option::Option<&crate::types::CustomEmailLambdaVersionConfigType> {
         self.custom_email_sender.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of an <a href="/kms/latest/developerguide/concepts.html#master_keys">KMS key</a>. Amazon Cognito uses the key to encrypt codes and temporary passwords sent to <code>CustomEmailSender</code> and <code>CustomSMSSender</code>.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
 }
@@ -111,143 +112,178 @@ impl LambdaConfigType {
 
 /// A builder for [`LambdaConfigType`](crate::types::LambdaConfigType).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LambdaConfigTypeBuilder {
-    pub(crate) pre_sign_up: std::option::Option<std::string::String>,
-    pub(crate) custom_message: std::option::Option<std::string::String>,
-    pub(crate) post_confirmation: std::option::Option<std::string::String>,
-    pub(crate) pre_authentication: std::option::Option<std::string::String>,
-    pub(crate) post_authentication: std::option::Option<std::string::String>,
-    pub(crate) define_auth_challenge: std::option::Option<std::string::String>,
-    pub(crate) create_auth_challenge: std::option::Option<std::string::String>,
-    pub(crate) verify_auth_challenge_response: std::option::Option<std::string::String>,
-    pub(crate) pre_token_generation: std::option::Option<std::string::String>,
-    pub(crate) user_migration: std::option::Option<std::string::String>,
+    pub(crate) pre_sign_up: ::std::option::Option<::std::string::String>,
+    pub(crate) custom_message: ::std::option::Option<::std::string::String>,
+    pub(crate) post_confirmation: ::std::option::Option<::std::string::String>,
+    pub(crate) pre_authentication: ::std::option::Option<::std::string::String>,
+    pub(crate) post_authentication: ::std::option::Option<::std::string::String>,
+    pub(crate) define_auth_challenge: ::std::option::Option<::std::string::String>,
+    pub(crate) create_auth_challenge: ::std::option::Option<::std::string::String>,
+    pub(crate) verify_auth_challenge_response: ::std::option::Option<::std::string::String>,
+    pub(crate) pre_token_generation: ::std::option::Option<::std::string::String>,
+    pub(crate) user_migration: ::std::option::Option<::std::string::String>,
     pub(crate) custom_sms_sender:
-        std::option::Option<crate::types::CustomSmsLambdaVersionConfigType>,
+        ::std::option::Option<crate::types::CustomSmsLambdaVersionConfigType>,
     pub(crate) custom_email_sender:
-        std::option::Option<crate::types::CustomEmailLambdaVersionConfigType>,
-    pub(crate) kms_key_id: std::option::Option<std::string::String>,
+        ::std::option::Option<crate::types::CustomEmailLambdaVersionConfigType>,
+    pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl LambdaConfigTypeBuilder {
     /// <p>A pre-registration Lambda trigger.</p>
-    pub fn pre_sign_up(mut self, input: impl Into<std::string::String>) -> Self {
-        self.pre_sign_up = Some(input.into());
+    pub fn pre_sign_up(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.pre_sign_up = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A pre-registration Lambda trigger.</p>
-    pub fn set_pre_sign_up(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_pre_sign_up(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pre_sign_up = input;
         self
     }
     /// <p>A custom Message Lambda trigger.</p>
-    pub fn custom_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.custom_message = Some(input.into());
+    pub fn custom_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.custom_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A custom Message Lambda trigger.</p>
-    pub fn set_custom_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_custom_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.custom_message = input;
         self
     }
     /// <p>A post-confirmation Lambda trigger.</p>
-    pub fn post_confirmation(mut self, input: impl Into<std::string::String>) -> Self {
-        self.post_confirmation = Some(input.into());
+    pub fn post_confirmation(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.post_confirmation = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A post-confirmation Lambda trigger.</p>
     pub fn set_post_confirmation(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.post_confirmation = input;
         self
     }
     /// <p>A pre-authentication Lambda trigger.</p>
-    pub fn pre_authentication(mut self, input: impl Into<std::string::String>) -> Self {
-        self.pre_authentication = Some(input.into());
+    pub fn pre_authentication(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.pre_authentication = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A pre-authentication Lambda trigger.</p>
     pub fn set_pre_authentication(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.pre_authentication = input;
         self
     }
     /// <p>A post-authentication Lambda trigger.</p>
-    pub fn post_authentication(mut self, input: impl Into<std::string::String>) -> Self {
-        self.post_authentication = Some(input.into());
+    pub fn post_authentication(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.post_authentication = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A post-authentication Lambda trigger.</p>
     pub fn set_post_authentication(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.post_authentication = input;
         self
     }
     /// <p>Defines the authentication challenge.</p>
-    pub fn define_auth_challenge(mut self, input: impl Into<std::string::String>) -> Self {
-        self.define_auth_challenge = Some(input.into());
+    pub fn define_auth_challenge(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.define_auth_challenge = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Defines the authentication challenge.</p>
     pub fn set_define_auth_challenge(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.define_auth_challenge = input;
         self
     }
     /// <p>Creates an authentication challenge.</p>
-    pub fn create_auth_challenge(mut self, input: impl Into<std::string::String>) -> Self {
-        self.create_auth_challenge = Some(input.into());
+    pub fn create_auth_challenge(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.create_auth_challenge = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Creates an authentication challenge.</p>
     pub fn set_create_auth_challenge(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.create_auth_challenge = input;
         self
     }
     /// <p>Verifies the authentication challenge response.</p>
-    pub fn verify_auth_challenge_response(mut self, input: impl Into<std::string::String>) -> Self {
-        self.verify_auth_challenge_response = Some(input.into());
+    pub fn verify_auth_challenge_response(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.verify_auth_challenge_response = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Verifies the authentication challenge response.</p>
     pub fn set_verify_auth_challenge_response(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.verify_auth_challenge_response = input;
         self
     }
     /// <p>A Lambda trigger that is invoked before token generation.</p>
-    pub fn pre_token_generation(mut self, input: impl Into<std::string::String>) -> Self {
-        self.pre_token_generation = Some(input.into());
+    pub fn pre_token_generation(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.pre_token_generation = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A Lambda trigger that is invoked before token generation.</p>
     pub fn set_pre_token_generation(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.pre_token_generation = input;
         self
     }
     /// <p>The user migration Lambda config type.</p>
-    pub fn user_migration(mut self, input: impl Into<std::string::String>) -> Self {
-        self.user_migration = Some(input.into());
+    pub fn user_migration(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.user_migration = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user migration Lambda config type.</p>
-    pub fn set_user_migration(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_user_migration(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.user_migration = input;
         self
     }
@@ -256,13 +292,13 @@ impl LambdaConfigTypeBuilder {
         mut self,
         input: crate::types::CustomSmsLambdaVersionConfigType,
     ) -> Self {
-        self.custom_sms_sender = Some(input);
+        self.custom_sms_sender = ::std::option::Option::Some(input);
         self
     }
     /// <p>A custom SMS sender Lambda trigger.</p>
     pub fn set_custom_sms_sender(
         mut self,
-        input: std::option::Option<crate::types::CustomSmsLambdaVersionConfigType>,
+        input: ::std::option::Option<crate::types::CustomSmsLambdaVersionConfigType>,
     ) -> Self {
         self.custom_sms_sender = input;
         self
@@ -272,24 +308,24 @@ impl LambdaConfigTypeBuilder {
         mut self,
         input: crate::types::CustomEmailLambdaVersionConfigType,
     ) -> Self {
-        self.custom_email_sender = Some(input);
+        self.custom_email_sender = ::std::option::Option::Some(input);
         self
     }
     /// <p>A custom email sender Lambda trigger.</p>
     pub fn set_custom_email_sender(
         mut self,
-        input: std::option::Option<crate::types::CustomEmailLambdaVersionConfigType>,
+        input: ::std::option::Option<crate::types::CustomEmailLambdaVersionConfigType>,
     ) -> Self {
         self.custom_email_sender = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of an <a href="/kms/latest/developerguide/concepts.html#master_keys">KMS key</a>. Amazon Cognito uses the key to encrypt codes and temporary passwords sent to <code>CustomEmailSender</code> and <code>CustomSMSSender</code>.</p>
-    pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.kms_key_id = Some(input.into());
+    pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of an <a href="/kms/latest/developerguide/concepts.html#master_keys">KMS key</a>. Amazon Cognito uses the key to encrypt codes and temporary passwords sent to <code>CustomEmailSender</code> and <code>CustomSMSSender</code>.</p>
-    pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
     }

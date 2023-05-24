@@ -54,13 +54,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum AutoMlJobSecondaryStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -102,7 +102,7 @@ pub enum AutoMlJobSecondaryStatus {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for AutoMlJobSecondaryStatus {
+impl ::std::convert::From<&str> for AutoMlJobSecondaryStatus {
     fn from(s: &str) -> Self {
         match s {
             "AnalyzingData" => AutoMlJobSecondaryStatus::AnalyzingData,
@@ -135,11 +135,11 @@ impl std::convert::From<&str> for AutoMlJobSecondaryStatus {
         }
     }
 }
-impl std::str::FromStr for AutoMlJobSecondaryStatus {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for AutoMlJobSecondaryStatus {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AutoMlJobSecondaryStatus::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(AutoMlJobSecondaryStatus::from(s))
     }
 }
 impl AutoMlJobSecondaryStatus {
@@ -197,7 +197,7 @@ impl AutoMlJobSecondaryStatus {
         ]
     }
 }
-impl AsRef<str> for AutoMlJobSecondaryStatus {
+impl ::std::convert::AsRef<str> for AutoMlJobSecondaryStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

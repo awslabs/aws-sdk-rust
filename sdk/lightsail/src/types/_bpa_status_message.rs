@@ -40,13 +40,13 @@
 /// _Note: `BpaStatusMessage::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum BpaStatusMessage {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,7 +60,7 @@ pub enum BpaStatusMessage {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for BpaStatusMessage {
+impl ::std::convert::From<&str> for BpaStatusMessage {
     fn from(s: &str) -> Self {
         match s {
             "DEFAULTED_FOR_SLR_MISSING" => BpaStatusMessage::DefaultedForSlrMissing,
@@ -73,11 +73,11 @@ impl std::convert::From<&str> for BpaStatusMessage {
         }
     }
 }
-impl std::str::FromStr for BpaStatusMessage {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for BpaStatusMessage {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(BpaStatusMessage::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(BpaStatusMessage::from(s))
     }
 }
 impl BpaStatusMessage {
@@ -101,7 +101,7 @@ impl BpaStatusMessage {
         ]
     }
 }
-impl AsRef<str> for BpaStatusMessage {
+impl ::std::convert::AsRef<str> for BpaStatusMessage {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

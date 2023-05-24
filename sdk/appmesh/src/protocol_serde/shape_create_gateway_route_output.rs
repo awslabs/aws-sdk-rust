@@ -2,7 +2,7 @@
 pub(crate) fn de_gateway_route_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::types::GatewayRouteData>,
+    ::std::option::Option<crate::types::GatewayRouteData>,
     crate::operation::create_gateway_route::CreateGatewayRouteError,
 > {
     (!body.is_empty())

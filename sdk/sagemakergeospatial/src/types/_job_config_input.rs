@@ -2,7 +2,7 @@
 
 /// <p>The input structure for the JobConfig in an EarthObservationJob.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum JobConfigInput {
     /// <p>An object containing information about the job configuration for BandMath.</p>
     BandMathConfig(crate::types::BandMathConfigInput),
@@ -37,11 +37,11 @@ impl JobConfigInput {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_band_math_config(
         &self,
-    ) -> std::result::Result<&crate::types::BandMathConfigInput, &Self> {
+    ) -> ::std::result::Result<&crate::types::BandMathConfigInput, &Self> {
         if let JobConfigInput::BandMathConfig(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`BandMathConfig`](crate::types::JobConfigInput::BandMathConfig).
@@ -52,11 +52,11 @@ impl JobConfigInput {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_cloud_masking_config(
         &self,
-    ) -> std::result::Result<&crate::types::CloudMaskingConfigInput, &Self> {
+    ) -> ::std::result::Result<&crate::types::CloudMaskingConfigInput, &Self> {
         if let JobConfigInput::CloudMaskingConfig(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`CloudMaskingConfig`](crate::types::JobConfigInput::CloudMaskingConfig).
@@ -67,11 +67,11 @@ impl JobConfigInput {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_cloud_removal_config(
         &self,
-    ) -> std::result::Result<&crate::types::CloudRemovalConfigInput, &Self> {
+    ) -> ::std::result::Result<&crate::types::CloudRemovalConfigInput, &Self> {
         if let JobConfigInput::CloudRemovalConfig(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`CloudRemovalConfig`](crate::types::JobConfigInput::CloudRemovalConfig).
@@ -82,11 +82,11 @@ impl JobConfigInput {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_geo_mosaic_config(
         &self,
-    ) -> std::result::Result<&crate::types::GeoMosaicConfigInput, &Self> {
+    ) -> ::std::result::Result<&crate::types::GeoMosaicConfigInput, &Self> {
         if let JobConfigInput::GeoMosaicConfig(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`GeoMosaicConfig`](crate::types::JobConfigInput::GeoMosaicConfig).
@@ -97,11 +97,11 @@ impl JobConfigInput {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_land_cover_segmentation_config(
         &self,
-    ) -> std::result::Result<&crate::types::LandCoverSegmentationConfigInput, &Self> {
+    ) -> ::std::result::Result<&crate::types::LandCoverSegmentationConfigInput, &Self> {
         if let JobConfigInput::LandCoverSegmentationConfig(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`LandCoverSegmentationConfig`](crate::types::JobConfigInput::LandCoverSegmentationConfig).
@@ -112,11 +112,11 @@ impl JobConfigInput {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_resampling_config(
         &self,
-    ) -> std::result::Result<&crate::types::ResamplingConfigInput, &Self> {
+    ) -> ::std::result::Result<&crate::types::ResamplingConfigInput, &Self> {
         if let JobConfigInput::ResamplingConfig(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`ResamplingConfig`](crate::types::JobConfigInput::ResamplingConfig).
@@ -125,11 +125,11 @@ impl JobConfigInput {
     }
     /// Tries to convert the enum instance into [`StackConfig`](crate::types::JobConfigInput::StackConfig), extracting the inner [`StackConfigInput`](crate::types::StackConfigInput).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_stack_config(&self) -> std::result::Result<&crate::types::StackConfigInput, &Self> {
+    pub fn as_stack_config(&self) -> ::std::result::Result<&crate::types::StackConfigInput, &Self> {
         if let JobConfigInput::StackConfig(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`StackConfig`](crate::types::JobConfigInput::StackConfig).
@@ -140,11 +140,11 @@ impl JobConfigInput {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_temporal_statistics_config(
         &self,
-    ) -> std::result::Result<&crate::types::TemporalStatisticsConfigInput, &Self> {
+    ) -> ::std::result::Result<&crate::types::TemporalStatisticsConfigInput, &Self> {
         if let JobConfigInput::TemporalStatisticsConfig(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`TemporalStatisticsConfig`](crate::types::JobConfigInput::TemporalStatisticsConfig).
@@ -155,11 +155,11 @@ impl JobConfigInput {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_zonal_statistics_config(
         &self,
-    ) -> std::result::Result<&crate::types::ZonalStatisticsConfigInput, &Self> {
+    ) -> ::std::result::Result<&crate::types::ZonalStatisticsConfigInput, &Self> {
         if let JobConfigInput::ZonalStatisticsConfig(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`ZonalStatisticsConfig`](crate::types::JobConfigInput::ZonalStatisticsConfig).

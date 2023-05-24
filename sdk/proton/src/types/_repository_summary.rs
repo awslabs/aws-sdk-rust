@@ -2,36 +2,36 @@
 
 /// <p>Summary data of a linked repository—a repository that has been registered with Proton.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RepositorySummary {
     /// <p>The Amazon Resource Name (ARN) of the linked repository.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The repository provider.</p>
     #[doc(hidden)]
-    pub provider: std::option::Option<crate::types::RepositoryProvider>,
+    pub provider: ::std::option::Option<crate::types::RepositoryProvider>,
     /// <p>The repository name.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the of your connection that connects Proton to your repository.</p>
     #[doc(hidden)]
-    pub connection_arn: std::option::Option<std::string::String>,
+    pub connection_arn: ::std::option::Option<::std::string::String>,
 }
 impl RepositorySummary {
     /// <p>The Amazon Resource Name (ARN) of the linked repository.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The repository provider.</p>
-    pub fn provider(&self) -> std::option::Option<&crate::types::RepositoryProvider> {
+    pub fn provider(&self) -> ::std::option::Option<&crate::types::RepositoryProvider> {
         self.provider.as_ref()
     }
     /// <p>The repository name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the of your connection that connects Proton to your repository.</p>
-    pub fn connection_arn(&self) -> std::option::Option<&str> {
+    pub fn connection_arn(&self) -> ::std::option::Option<&str> {
         self.connection_arn.as_deref()
     }
 }
@@ -44,54 +44,62 @@ impl RepositorySummary {
 
 /// A builder for [`RepositorySummary`](crate::types::RepositorySummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RepositorySummaryBuilder {
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) provider: std::option::Option<crate::types::RepositoryProvider>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) connection_arn: std::option::Option<std::string::String>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) provider: ::std::option::Option<crate::types::RepositoryProvider>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) connection_arn: ::std::option::Option<::std::string::String>,
 }
 impl RepositorySummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the linked repository.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the linked repository.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// <p>The repository provider.</p>
     pub fn provider(mut self, input: crate::types::RepositoryProvider) -> Self {
-        self.provider = Some(input);
+        self.provider = ::std::option::Option::Some(input);
         self
     }
     /// <p>The repository provider.</p>
     pub fn set_provider(
         mut self,
-        input: std::option::Option<crate::types::RepositoryProvider>,
+        input: ::std::option::Option<crate::types::RepositoryProvider>,
     ) -> Self {
         self.provider = input;
         self
     }
     /// <p>The repository name.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The repository name.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the of your connection that connects Proton to your repository.</p>
-    pub fn connection_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.connection_arn = Some(input.into());
+    pub fn connection_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.connection_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the of your connection that connects Proton to your repository.</p>
-    pub fn set_connection_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_connection_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.connection_arn = input;
         self
     }

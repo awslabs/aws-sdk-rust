@@ -3,7 +3,7 @@
 /// <p> Describes the utilization metric of an Amazon ECS service. </p>
 /// <p>To determine the performance difference between your current Amazon ECS service and the recommended option, compare the utilization metric data of your service against its projected utilization metric data.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EcsServiceUtilizationMetric {
     /// <p> The name of the utilization metric. </p>
     /// <p>The following utilization metrics are available:</p>
@@ -12,12 +12,12 @@ pub struct EcsServiceUtilizationMetric {
     /// <li> <p> <code>Memory</code> — The amount of memory that's used in the service.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub name: std::option::Option<crate::types::EcsServiceMetricName>,
+    pub name: ::std::option::Option<crate::types::EcsServiceMetricName>,
     /// <p>The statistic of the utilization metric.</p>
     /// <p>The Compute Optimizer API, Command Line Interface (CLI), and SDKs return utilization metrics using only the <code>Maximum</code> statistic, which is the highest value observed during the specified period.</p>
     /// <p>The Compute Optimizer console displays graphs for some utilization metrics using the <code>Average</code> statistic, which is the value of <code>Sum</code> / <code>SampleCount</code> during the specified period. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/viewing-recommendations.html">Viewing resource recommendations</a> in the <i>Compute Optimizer User Guide</i>. You can also get averaged utilization metric data for your resources using Amazon CloudWatch. For more information, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html">Amazon CloudWatch User Guide</a>.</p>
     #[doc(hidden)]
-    pub statistic: std::option::Option<crate::types::EcsServiceMetricStatistic>,
+    pub statistic: ::std::option::Option<crate::types::EcsServiceMetricStatistic>,
     /// <p> The value of the utilization metric. </p>
     #[doc(hidden)]
     pub value: f64,
@@ -29,13 +29,13 @@ impl EcsServiceUtilizationMetric {
     /// <li> <p> <code>Cpu</code> — The amount of CPU capacity that's used in the service.</p> </li>
     /// <li> <p> <code>Memory</code> — The amount of memory that's used in the service.</p> </li>
     /// </ul>
-    pub fn name(&self) -> std::option::Option<&crate::types::EcsServiceMetricName> {
+    pub fn name(&self) -> ::std::option::Option<&crate::types::EcsServiceMetricName> {
         self.name.as_ref()
     }
     /// <p>The statistic of the utilization metric.</p>
     /// <p>The Compute Optimizer API, Command Line Interface (CLI), and SDKs return utilization metrics using only the <code>Maximum</code> statistic, which is the highest value observed during the specified period.</p>
     /// <p>The Compute Optimizer console displays graphs for some utilization metrics using the <code>Average</code> statistic, which is the value of <code>Sum</code> / <code>SampleCount</code> during the specified period. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/viewing-recommendations.html">Viewing resource recommendations</a> in the <i>Compute Optimizer User Guide</i>. You can also get averaged utilization metric data for your resources using Amazon CloudWatch. For more information, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html">Amazon CloudWatch User Guide</a>.</p>
-    pub fn statistic(&self) -> std::option::Option<&crate::types::EcsServiceMetricStatistic> {
+    pub fn statistic(&self) -> ::std::option::Option<&crate::types::EcsServiceMetricStatistic> {
         self.statistic.as_ref()
     }
     /// <p> The value of the utilization metric. </p>
@@ -52,11 +52,13 @@ impl EcsServiceUtilizationMetric {
 
 /// A builder for [`EcsServiceUtilizationMetric`](crate::types::EcsServiceUtilizationMetric).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EcsServiceUtilizationMetricBuilder {
-    pub(crate) name: std::option::Option<crate::types::EcsServiceMetricName>,
-    pub(crate) statistic: std::option::Option<crate::types::EcsServiceMetricStatistic>,
-    pub(crate) value: std::option::Option<f64>,
+    pub(crate) name: ::std::option::Option<crate::types::EcsServiceMetricName>,
+    pub(crate) statistic: ::std::option::Option<crate::types::EcsServiceMetricStatistic>,
+    pub(crate) value: ::std::option::Option<f64>,
 }
 impl EcsServiceUtilizationMetricBuilder {
     /// <p> The name of the utilization metric. </p>
@@ -66,7 +68,7 @@ impl EcsServiceUtilizationMetricBuilder {
     /// <li> <p> <code>Memory</code> — The amount of memory that's used in the service.</p> </li>
     /// </ul>
     pub fn name(mut self, input: crate::types::EcsServiceMetricName) -> Self {
-        self.name = Some(input);
+        self.name = ::std::option::Option::Some(input);
         self
     }
     /// <p> The name of the utilization metric. </p>
@@ -77,7 +79,7 @@ impl EcsServiceUtilizationMetricBuilder {
     /// </ul>
     pub fn set_name(
         mut self,
-        input: std::option::Option<crate::types::EcsServiceMetricName>,
+        input: ::std::option::Option<crate::types::EcsServiceMetricName>,
     ) -> Self {
         self.name = input;
         self
@@ -86,7 +88,7 @@ impl EcsServiceUtilizationMetricBuilder {
     /// <p>The Compute Optimizer API, Command Line Interface (CLI), and SDKs return utilization metrics using only the <code>Maximum</code> statistic, which is the highest value observed during the specified period.</p>
     /// <p>The Compute Optimizer console displays graphs for some utilization metrics using the <code>Average</code> statistic, which is the value of <code>Sum</code> / <code>SampleCount</code> during the specified period. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/viewing-recommendations.html">Viewing resource recommendations</a> in the <i>Compute Optimizer User Guide</i>. You can also get averaged utilization metric data for your resources using Amazon CloudWatch. For more information, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html">Amazon CloudWatch User Guide</a>.</p>
     pub fn statistic(mut self, input: crate::types::EcsServiceMetricStatistic) -> Self {
-        self.statistic = Some(input);
+        self.statistic = ::std::option::Option::Some(input);
         self
     }
     /// <p>The statistic of the utilization metric.</p>
@@ -94,18 +96,18 @@ impl EcsServiceUtilizationMetricBuilder {
     /// <p>The Compute Optimizer console displays graphs for some utilization metrics using the <code>Average</code> statistic, which is the value of <code>Sum</code> / <code>SampleCount</code> during the specified period. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/viewing-recommendations.html">Viewing resource recommendations</a> in the <i>Compute Optimizer User Guide</i>. You can also get averaged utilization metric data for your resources using Amazon CloudWatch. For more information, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html">Amazon CloudWatch User Guide</a>.</p>
     pub fn set_statistic(
         mut self,
-        input: std::option::Option<crate::types::EcsServiceMetricStatistic>,
+        input: ::std::option::Option<crate::types::EcsServiceMetricStatistic>,
     ) -> Self {
         self.statistic = input;
         self
     }
     /// <p> The value of the utilization metric. </p>
     pub fn value(mut self, input: f64) -> Self {
-        self.value = Some(input);
+        self.value = ::std::option::Option::Some(input);
         self
     }
     /// <p> The value of the utilization metric. </p>
-    pub fn set_value(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.value = input;
         self
     }

@@ -2,20 +2,20 @@
 
 /// <p> Result structure which contains link to download custom-generated SDK and tool packages used to integrate mobile web or app clients with backed AWS resources. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportBundleOutput {
     /// <p> URL which contains the custom-generated SDK and tool packages used to integrate the client mobile app or web app with the AWS resources created by the AWS Mobile Hub project. </p>
     #[doc(hidden)]
-    pub download_url: std::option::Option<std::string::String>,
+    pub download_url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ExportBundleOutput {
     /// <p> URL which contains the custom-generated SDK and tool packages used to integrate the client mobile app or web app with the AWS resources created by the AWS Mobile Hub project. </p>
-    pub fn download_url(&self) -> std::option::Option<&str> {
+    pub fn download_url(&self) -> ::std::option::Option<&str> {
         self.download_url.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ExportBundleOutput {
+impl ::aws_http::request_id::RequestId for ExportBundleOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,21 @@ impl ExportBundleOutput {
 
 /// A builder for [`ExportBundleOutput`](crate::operation::export_bundle::ExportBundleOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ExportBundleOutputBuilder {
-    pub(crate) download_url: std::option::Option<std::string::String>,
+    pub(crate) download_url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ExportBundleOutputBuilder {
     /// <p> URL which contains the custom-generated SDK and tool packages used to integrate the client mobile app or web app with the AWS resources created by the AWS Mobile Hub project. </p>
-    pub fn download_url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.download_url = Some(input.into());
+    pub fn download_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.download_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> URL which contains the custom-generated SDK and tool packages used to integrate the client mobile app or web app with the AWS resources created by the AWS Mobile Hub project. </p>
-    pub fn set_download_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_download_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.download_url = input;
         self
     }

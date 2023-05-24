@@ -6,47 +6,50 @@ pub use crate::operation::put_resolver_query_log_config_policy::_put_resolver_qu
 /// Fluent builder constructing a request to `PutResolverQueryLogConfigPolicy`.
 ///
 /// <p>Specifies an Amazon Web Services account that you want to share a query logging configuration with, the query logging configuration that you want to share, and the operations that you want the account to be able to perform on the configuration.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutResolverQueryLogConfigPolicyFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::put_resolver_query_log_config_policy::builders::PutResolverQueryLogConfigPolicyInputBuilder,
 }
 impl PutResolverQueryLogConfigPolicyFluentBuilder {
     /// Creates a new `PutResolverQueryLogConfigPolicy`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::put_resolver_query_log_config_policy::PutResolverQueryLogConfigPolicy, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::put_resolver_query_log_config_policy::PutResolverQueryLogConfigPolicyError>
+                    pub async fn customize(self) -> ::std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::put_resolver_query_log_config_policy::PutResolverQueryLogConfigPolicy, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                        ::aws_smithy_http::result::SdkError<crate::operation::put_resolver_query_log_config_policy::PutResolverQueryLogConfigPolicyError>
     >{
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::put_resolver_query_log_config_policy::PutResolverQueryLogConfigPolicyOutput, aws_smithy_http::result::SdkError<crate::operation::put_resolver_query_log_config_policy::PutResolverQueryLogConfigPolicyError>>
+                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::put_resolver_query_log_config_policy::PutResolverQueryLogConfigPolicyOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_resolver_query_log_config_policy::PutResolverQueryLogConfigPolicyError>>
                      {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -57,17 +60,17 @@ impl PutResolverQueryLogConfigPolicyFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> std::result::Result<crate::operation::put_resolver_query_log_config_policy::PutResolverQueryLogConfigPolicyOutput, aws_smithy_http::result::SdkError<crate::operation::put_resolver_query_log_config_policy::PutResolverQueryLogConfigPolicyError>>
+                        pub async fn send(self) -> ::std::result::Result<crate::operation::put_resolver_query_log_config_policy::PutResolverQueryLogConfigPolicyOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_resolver_query_log_config_policy::PutResolverQueryLogConfigPolicyError>>
                          {
         self.send_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the account that you want to share rules with.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the account that you want to share rules with.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_arn(input);
         self
     }
@@ -81,7 +84,7 @@ impl PutResolverQueryLogConfigPolicyFluentBuilder {
     /// <p>In the <code>Resource</code> section of the statement, you specify the ARNs for the query logging configurations that you want to share with the account that you specified in <code>Arn</code>. </p>
     pub fn resolver_query_log_config_policy(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.resolver_query_log_config_policy(input.into());
         self
@@ -96,7 +99,7 @@ impl PutResolverQueryLogConfigPolicyFluentBuilder {
     /// <p>In the <code>Resource</code> section of the statement, you specify the ARNs for the query logging configurations that you want to share with the account that you specified in <code>Arn</code>. </p>
     pub fn set_resolver_query_log_config_policy(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_resolver_query_log_config_policy(input);
         self

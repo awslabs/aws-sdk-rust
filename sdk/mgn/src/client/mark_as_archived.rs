@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`MarkAsArchived`](crate::operation::mark_as_archived::builders::MarkAsArchivedFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`source_server_id(impl Into<String>)`](crate::operation::mark_as_archived::builders::MarkAsArchivedFluentBuilder::source_server_id) / [`set_source_server_id(Option<String>)`](crate::operation::mark_as_archived::builders::MarkAsArchivedFluentBuilder::set_source_server_id): <p>Mark as archived by Source Server ID.</p>
+    ///   - [`source_server_id(impl ::std::convert::Into<String>)`](crate::operation::mark_as_archived::builders::MarkAsArchivedFluentBuilder::source_server_id) / [`set_source_server_id(Option<String>)`](crate::operation::mark_as_archived::builders::MarkAsArchivedFluentBuilder::set_source_server_id): <p>Mark as archived by Source Server ID.</p>
     /// - On success, responds with [`MarkAsArchivedOutput`](crate::operation::mark_as_archived::MarkAsArchivedOutput) with field(s):
     ///   - [`source_server_id(Option<String>)`](crate::operation::mark_as_archived::MarkAsArchivedOutput::source_server_id): <p>Source server ID.</p>
     ///   - [`arn(Option<String>)`](crate::operation::mark_as_archived::MarkAsArchivedOutput::arn): <p>Source server ARN.</p>

@@ -2,20 +2,20 @@
 
 /// <p>Represents the results of your stop run attempt.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopRunOutput {
     /// <p>The run that was stopped.</p>
     #[doc(hidden)]
-    pub run: std::option::Option<crate::types::Run>,
+    pub run: ::std::option::Option<crate::types::Run>,
     _request_id: Option<String>,
 }
 impl StopRunOutput {
     /// <p>The run that was stopped.</p>
-    pub fn run(&self) -> std::option::Option<&crate::types::Run> {
+    pub fn run(&self) -> ::std::option::Option<&crate::types::Run> {
         self.run.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for StopRunOutput {
+impl ::aws_http::request_id::RequestId for StopRunOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,21 @@ impl StopRunOutput {
 
 /// A builder for [`StopRunOutput`](crate::operation::stop_run::StopRunOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StopRunOutputBuilder {
-    pub(crate) run: std::option::Option<crate::types::Run>,
+    pub(crate) run: ::std::option::Option<crate::types::Run>,
     _request_id: Option<String>,
 }
 impl StopRunOutputBuilder {
     /// <p>The run that was stopped.</p>
     pub fn run(mut self, input: crate::types::Run) -> Self {
-        self.run = Some(input);
+        self.run = ::std::option::Option::Some(input);
         self
     }
     /// <p>The run that was stopped.</p>
-    pub fn set_run(mut self, input: std::option::Option<crate::types::Run>) -> Self {
+    pub fn set_run(mut self, input: ::std::option::Option<crate::types::Run>) -> Self {
         self.run = input;
         self
     }

@@ -7,29 +7,29 @@ pub use crate::operation::update_provisioning_template::_update_provisioning_tem
 ///
 /// <p>Updates a provisioning template.</p>
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateProvisioningTemplate</a> action.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateProvisioningTemplateFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::update_provisioning_template::builders::UpdateProvisioningTemplateInputBuilder,
 }
 impl UpdateProvisioningTemplateFluentBuilder {
     /// Creates a new `UpdateProvisioningTemplate`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_provisioning_template::UpdateProvisioningTemplate,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_provisioning_template::UpdateProvisioningTemplateError,
         >,
     > {
@@ -37,30 +37,33 @@ impl UpdateProvisioningTemplateFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_provisioning_template::UpdateProvisioningTemplateOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_provisioning_template::UpdateProvisioningTemplateError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -73,31 +76,37 @@ impl UpdateProvisioningTemplateFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_provisioning_template::UpdateProvisioningTemplateOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_provisioning_template::UpdateProvisioningTemplateError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the provisioning template.</p>
-    pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn template_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.template_name(input.into());
         self
     }
     /// <p>The name of the provisioning template.</p>
-    pub fn set_template_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_template_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_template_name(input);
         self
     }
     /// <p>The description of the provisioning template.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>The description of the provisioning template.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
@@ -107,7 +116,7 @@ impl UpdateProvisioningTemplateFluentBuilder {
         self
     }
     /// <p>True to enable the provisioning template, otherwise false.</p>
-    pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enabled(input);
         self
     }
@@ -117,19 +126,22 @@ impl UpdateProvisioningTemplateFluentBuilder {
         self
     }
     /// <p>The ID of the default provisioning template version.</p>
-    pub fn set_default_version_id(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_default_version_id(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_default_version_id(input);
         self
     }
     /// <p>The ARN of the role associated with the provisioning template. This IoT role grants permission to provision a device.</p>
-    pub fn provisioning_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn provisioning_role_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.provisioning_role_arn(input.into());
         self
     }
     /// <p>The ARN of the role associated with the provisioning template. This IoT role grants permission to provision a device.</p>
     pub fn set_provisioning_role_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_provisioning_role_arn(input);
         self
@@ -142,7 +154,7 @@ impl UpdateProvisioningTemplateFluentBuilder {
     /// <p>Updates the pre-provisioning hook template. Only supports template of type <code>FLEET_PROVISIONING</code>. For more information about provisioning template types, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_CreateProvisioningTemplate.html#iot-CreateProvisioningTemplate-request-type">type</a>.</p>
     pub fn set_pre_provisioning_hook(
         mut self,
-        input: std::option::Option<crate::types::ProvisioningHook>,
+        input: ::std::option::Option<crate::types::ProvisioningHook>,
     ) -> Self {
         self.inner = self.inner.set_pre_provisioning_hook(input);
         self
@@ -153,7 +165,7 @@ impl UpdateProvisioningTemplateFluentBuilder {
         self
     }
     /// <p>Removes pre-provisioning hook template.</p>
-    pub fn set_remove_pre_provisioning_hook(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_remove_pre_provisioning_hook(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_remove_pre_provisioning_hook(input);
         self
     }

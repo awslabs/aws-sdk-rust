@@ -6,56 +6,59 @@ pub use crate::operation::get_partitions::_get_partitions_input::GetPartitionsIn
 /// Fluent builder constructing a request to `GetPartitions`.
 ///
 /// <p>Retrieves information about the partitions in a table.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetPartitionsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::get_partitions::builders::GetPartitionsInputBuilder,
 }
 impl GetPartitionsFluentBuilder {
     /// Creates a new `GetPartitions`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::get_partitions::GetPartitions,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::get_partitions::GetPartitionsError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_partitions::GetPartitionsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_partitions::GetPartitionsOutput,
-        aws_smithy_http::result::SdkError<crate::operation::get_partitions::GetPartitionsError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_partitions::GetPartitionsError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,9 +71,9 @@ impl GetPartitionsFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_partitions::GetPartitionsOutput,
-        aws_smithy_http::result::SdkError<crate::operation::get_partitions::GetPartitionsError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_partitions::GetPartitionsError>,
     > {
         self.send_middleware().await
     }
@@ -86,32 +89,38 @@ impl GetPartitionsFluentBuilder {
         )
     }
     /// <p>The ID of the Data Catalog where the partitions in question reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
-    pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn catalog_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.catalog_id(input.into());
         self
     }
     /// <p>The ID of the Data Catalog where the partitions in question reside. If none is provided, the Amazon Web Services account ID is used by default.</p>
-    pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_catalog_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_catalog_id(input);
         self
     }
     /// <p>The name of the catalog database where the partitions reside.</p>
-    pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn database_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.database_name(input.into());
         self
     }
     /// <p>The name of the catalog database where the partitions reside.</p>
-    pub fn set_database_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_database_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_database_name(input);
         self
     }
     /// <p>The name of the partitions' table.</p>
-    pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.table_name(input.into());
         self
     }
     /// <p>The name of the partitions' table.</p>
-    pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_table_name(input);
         self
     }
@@ -184,7 +193,7 @@ impl GetPartitionsFluentBuilder {
     /// <p>If an type is encountered that is not valid, an exception is thrown. </p>
     /// <p>The following list shows the valid operators on each type. When you define a crawler, the <code>partitionKey</code> type is created as a <code>STRING</code>, to be compatible with the catalog partitions. </p>
     /// <p> <i>Sample API Call</i>: </p>
-    pub fn expression(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.expression(input.into());
         self
     }
@@ -257,17 +266,17 @@ impl GetPartitionsFluentBuilder {
     /// <p>If an type is encountered that is not valid, an exception is thrown. </p>
     /// <p>The following list shows the valid operators on each type. When you define a crawler, the <code>partitionKey</code> type is created as a <code>STRING</code>, to be compatible with the catalog partitions. </p>
     /// <p> <i>Sample API Call</i>: </p>
-    pub fn set_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_expression(input);
         self
     }
     /// <p>A continuation token, if this is not the first call to retrieve these partitions.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
     /// <p>A continuation token, if this is not the first call to retrieve these partitions.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
@@ -277,7 +286,7 @@ impl GetPartitionsFluentBuilder {
         self
     }
     /// <p>The segment of the table's partitions to scan in this request.</p>
-    pub fn set_segment(mut self, input: std::option::Option<crate::types::Segment>) -> Self {
+    pub fn set_segment(mut self, input: ::std::option::Option<crate::types::Segment>) -> Self {
         self.inner = self.inner.set_segment(input);
         self
     }
@@ -287,7 +296,7 @@ impl GetPartitionsFluentBuilder {
         self
     }
     /// <p>The maximum number of partitions to return in a single response.</p>
-    pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
@@ -297,29 +306,35 @@ impl GetPartitionsFluentBuilder {
         self
     }
     /// <p>When true, specifies not returning the partition column schema. Useful when you are interested only in other partition attributes such as partition values or location. This approach avoids the problem of a large response by not returning duplicate data.</p>
-    pub fn set_exclude_column_schema(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_exclude_column_schema(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_exclude_column_schema(input);
         self
     }
     /// <p>The transaction ID at which to read the partition contents.</p>
-    pub fn transaction_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn transaction_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.transaction_id(input.into());
         self
     }
     /// <p>The transaction ID at which to read the partition contents.</p>
-    pub fn set_transaction_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_transaction_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_transaction_id(input);
         self
     }
     /// <p>The time as of when to read the partition contents. If not set, the most recent transaction commit time will be used. Cannot be specified along with <code>TransactionId</code>.</p>
-    pub fn query_as_of_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+    pub fn query_as_of_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.query_as_of_time(input);
         self
     }
     /// <p>The time as of when to read the partition contents. If not set, the most recent transaction commit time will be used. Cannot be specified along with <code>TransactionId</code>.</p>
     pub fn set_query_as_of_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.inner = self.inner.set_query_as_of_time(input);
         self

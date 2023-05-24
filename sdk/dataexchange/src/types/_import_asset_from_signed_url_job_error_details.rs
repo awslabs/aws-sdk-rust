@@ -2,15 +2,15 @@
 
 /// <p>Details about the job error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportAssetFromSignedUrlJobErrorDetails {
     /// <p>Details about the job error.</p>
     #[doc(hidden)]
-    pub asset_name: std::option::Option<std::string::String>,
+    pub asset_name: ::std::option::Option<::std::string::String>,
 }
 impl ImportAssetFromSignedUrlJobErrorDetails {
     /// <p>Details about the job error.</p>
-    pub fn asset_name(&self) -> std::option::Option<&str> {
+    pub fn asset_name(&self) -> ::std::option::Option<&str> {
         self.asset_name.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl ImportAssetFromSignedUrlJobErrorDetails {
 
 /// A builder for [`ImportAssetFromSignedUrlJobErrorDetails`](crate::types::ImportAssetFromSignedUrlJobErrorDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ImportAssetFromSignedUrlJobErrorDetailsBuilder {
-    pub(crate) asset_name: std::option::Option<std::string::String>,
+    pub(crate) asset_name: ::std::option::Option<::std::string::String>,
 }
 impl ImportAssetFromSignedUrlJobErrorDetailsBuilder {
     /// <p>Details about the job error.</p>
-    pub fn asset_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.asset_name = Some(input.into());
+    pub fn asset_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.asset_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Details about the job error.</p>
-    pub fn set_asset_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_asset_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.asset_name = input;
         self
     }

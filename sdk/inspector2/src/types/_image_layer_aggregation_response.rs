@@ -2,43 +2,43 @@
 
 /// <p>A response that contains the results of a finding aggregation by image layer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImageLayerAggregationResponse {
     /// <p>The repository the layer resides in.</p>
     #[doc(hidden)]
-    pub repository: std::option::Option<std::string::String>,
+    pub repository: ::std::option::Option<::std::string::String>,
     /// <p>The resource ID of the container image layer.</p>
     #[doc(hidden)]
-    pub resource_id: std::option::Option<std::string::String>,
+    pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The layer hash.</p>
     #[doc(hidden)]
-    pub layer_hash: std::option::Option<std::string::String>,
+    pub layer_hash: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services account that owns the container image hosting the layer image.</p>
     #[doc(hidden)]
-    pub account_id: std::option::Option<std::string::String>,
+    pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>An object that represents the count of matched findings per severity.</p>
     #[doc(hidden)]
-    pub severity_counts: std::option::Option<crate::types::SeverityCounts>,
+    pub severity_counts: ::std::option::Option<crate::types::SeverityCounts>,
 }
 impl ImageLayerAggregationResponse {
     /// <p>The repository the layer resides in.</p>
-    pub fn repository(&self) -> std::option::Option<&str> {
+    pub fn repository(&self) -> ::std::option::Option<&str> {
         self.repository.as_deref()
     }
     /// <p>The resource ID of the container image layer.</p>
-    pub fn resource_id(&self) -> std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<&str> {
         self.resource_id.as_deref()
     }
     /// <p>The layer hash.</p>
-    pub fn layer_hash(&self) -> std::option::Option<&str> {
+    pub fn layer_hash(&self) -> ::std::option::Option<&str> {
         self.layer_hash.as_deref()
     }
     /// <p>The ID of the Amazon Web Services account that owns the container image hosting the layer image.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>An object that represents the count of matched findings per severity.</p>
-    pub fn severity_counts(&self) -> std::option::Option<&crate::types::SeverityCounts> {
+    pub fn severity_counts(&self) -> ::std::option::Option<&crate::types::SeverityCounts> {
         self.severity_counts.as_ref()
     }
 }
@@ -51,64 +51,66 @@ impl ImageLayerAggregationResponse {
 
 /// A builder for [`ImageLayerAggregationResponse`](crate::types::ImageLayerAggregationResponse).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ImageLayerAggregationResponseBuilder {
-    pub(crate) repository: std::option::Option<std::string::String>,
-    pub(crate) resource_id: std::option::Option<std::string::String>,
-    pub(crate) layer_hash: std::option::Option<std::string::String>,
-    pub(crate) account_id: std::option::Option<std::string::String>,
-    pub(crate) severity_counts: std::option::Option<crate::types::SeverityCounts>,
+    pub(crate) repository: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_id: ::std::option::Option<::std::string::String>,
+    pub(crate) layer_hash: ::std::option::Option<::std::string::String>,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) severity_counts: ::std::option::Option<crate::types::SeverityCounts>,
 }
 impl ImageLayerAggregationResponseBuilder {
     /// <p>The repository the layer resides in.</p>
-    pub fn repository(mut self, input: impl Into<std::string::String>) -> Self {
-        self.repository = Some(input.into());
+    pub fn repository(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.repository = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The repository the layer resides in.</p>
-    pub fn set_repository(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_repository(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository = input;
         self
     }
     /// <p>The resource ID of the container image layer.</p>
-    pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_id = Some(input.into());
+    pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The resource ID of the container image layer.</p>
-    pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
     }
     /// <p>The layer hash.</p>
-    pub fn layer_hash(mut self, input: impl Into<std::string::String>) -> Self {
-        self.layer_hash = Some(input.into());
+    pub fn layer_hash(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.layer_hash = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The layer hash.</p>
-    pub fn set_layer_hash(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_layer_hash(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.layer_hash = input;
         self
     }
     /// <p>The ID of the Amazon Web Services account that owns the container image hosting the layer image.</p>
-    pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.account_id = Some(input.into());
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that owns the container image hosting the layer image.</p>
-    pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
     }
     /// <p>An object that represents the count of matched findings per severity.</p>
     pub fn severity_counts(mut self, input: crate::types::SeverityCounts) -> Self {
-        self.severity_counts = Some(input);
+        self.severity_counts = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that represents the count of matched findings per severity.</p>
     pub fn set_severity_counts(
         mut self,
-        input: std::option::Option<crate::types::SeverityCounts>,
+        input: ::std::option::Option<crate::types::SeverityCounts>,
     ) -> Self {
         self.severity_counts = input;
         self

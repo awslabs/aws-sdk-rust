@@ -2,30 +2,30 @@
 
 /// <p>Response for ListPlatformApplications action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPlatformApplicationsOutput {
     /// <p>Platform applications returned when calling ListPlatformApplications action.</p>
     #[doc(hidden)]
     pub platform_applications:
-        std::option::Option<std::vec::Vec<crate::types::PlatformApplication>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::PlatformApplication>>,
     /// <p>NextToken string is returned when calling ListPlatformApplications action if additional records are available after the first page results.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListPlatformApplicationsOutput {
     /// <p>Platform applications returned when calling ListPlatformApplications action.</p>
     pub fn platform_applications(
         &self,
-    ) -> std::option::Option<&[crate::types::PlatformApplication]> {
+    ) -> ::std::option::Option<&[crate::types::PlatformApplication]> {
         self.platform_applications.as_deref()
     }
     /// <p>NextToken string is returned when calling ListPlatformApplications action if additional records are available after the first page results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListPlatformApplicationsOutput {
+impl ::aws_http::request_id::RequestId for ListPlatformApplicationsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -41,11 +41,13 @@ impl ListPlatformApplicationsOutput {
 
 /// A builder for [`ListPlatformApplicationsOutput`](crate::operation::list_platform_applications::ListPlatformApplicationsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListPlatformApplicationsOutputBuilder {
     pub(crate) platform_applications:
-        std::option::Option<std::vec::Vec<crate::types::PlatformApplication>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::PlatformApplication>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListPlatformApplicationsOutputBuilder {
@@ -57,24 +59,24 @@ impl ListPlatformApplicationsOutputBuilder {
     pub fn platform_applications(mut self, input: crate::types::PlatformApplication) -> Self {
         let mut v = self.platform_applications.unwrap_or_default();
         v.push(input);
-        self.platform_applications = Some(v);
+        self.platform_applications = ::std::option::Option::Some(v);
         self
     }
     /// <p>Platform applications returned when calling ListPlatformApplications action.</p>
     pub fn set_platform_applications(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PlatformApplication>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PlatformApplication>>,
     ) -> Self {
         self.platform_applications = input;
         self
     }
     /// <p>NextToken string is returned when calling ListPlatformApplications action if additional records are available after the first page results.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>NextToken string is returned when calling ListPlatformApplications action if additional records are available after the first page results.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

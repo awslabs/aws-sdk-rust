@@ -2,15 +2,15 @@
 
 /// <p>An object which contains <code>ReplacementTemplateData</code> to be used for a specific <code>BulkEmailEntry</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplacementTemplate {
     /// <p>A list of replacement values to apply to the template. This parameter is a JSON object, typically consisting of key-value pairs in which the keys correspond to replacement tags in the email template.</p>
     #[doc(hidden)]
-    pub replacement_template_data: std::option::Option<std::string::String>,
+    pub replacement_template_data: ::std::option::Option<::std::string::String>,
 }
 impl ReplacementTemplate {
     /// <p>A list of replacement values to apply to the template. This parameter is a JSON object, typically consisting of key-value pairs in which the keys correspond to replacement tags in the email template.</p>
-    pub fn replacement_template_data(&self) -> std::option::Option<&str> {
+    pub fn replacement_template_data(&self) -> ::std::option::Option<&str> {
         self.replacement_template_data.as_deref()
     }
 }
@@ -23,20 +23,25 @@ impl ReplacementTemplate {
 
 /// A builder for [`ReplacementTemplate`](crate::types::ReplacementTemplate).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ReplacementTemplateBuilder {
-    pub(crate) replacement_template_data: std::option::Option<std::string::String>,
+    pub(crate) replacement_template_data: ::std::option::Option<::std::string::String>,
 }
 impl ReplacementTemplateBuilder {
     /// <p>A list of replacement values to apply to the template. This parameter is a JSON object, typically consisting of key-value pairs in which the keys correspond to replacement tags in the email template.</p>
-    pub fn replacement_template_data(mut self, input: impl Into<std::string::String>) -> Self {
-        self.replacement_template_data = Some(input.into());
+    pub fn replacement_template_data(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.replacement_template_data = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A list of replacement values to apply to the template. This parameter is a JSON object, typically consisting of key-value pairs in which the keys correspond to replacement tags in the email template.</p>
     pub fn set_replacement_template_data(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.replacement_template_data = input;
         self

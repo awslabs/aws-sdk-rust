@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteAccount`](crate::operation::delete_account::builders::DeleteAccountFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::operation::delete_account::builders::DeleteAccountFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::delete_account::builders::DeleteAccountFluentBuilder::set_account_id): <p>The Amazon Chime account ID.</p>
+    ///   - [`account_id(impl ::std::convert::Into<String>)`](crate::operation::delete_account::builders::DeleteAccountFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::delete_account::builders::DeleteAccountFluentBuilder::set_account_id): <p>The Amazon Chime account ID.</p>
     /// - On success, responds with [`DeleteAccountOutput`](crate::operation::delete_account::DeleteAccountOutput)
     /// - On failure, responds with [`SdkError<DeleteAccountError>`](crate::operation::delete_account::DeleteAccountError)
     pub fn delete_account(

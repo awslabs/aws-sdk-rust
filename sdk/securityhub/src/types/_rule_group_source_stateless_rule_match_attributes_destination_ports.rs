@@ -2,7 +2,7 @@
 
 /// <p>A port range to specify the destination ports to inspect for.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts {
     /// <p>The starting port value for the port range.</p>
     #[doc(hidden)]
@@ -32,29 +32,31 @@ impl RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts {
 
 /// A builder for [`RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts`](crate::types::RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RuleGroupSourceStatelessRuleMatchAttributesDestinationPortsBuilder {
-    pub(crate) from_port: std::option::Option<i32>,
-    pub(crate) to_port: std::option::Option<i32>,
+    pub(crate) from_port: ::std::option::Option<i32>,
+    pub(crate) to_port: ::std::option::Option<i32>,
 }
 impl RuleGroupSourceStatelessRuleMatchAttributesDestinationPortsBuilder {
     /// <p>The starting port value for the port range.</p>
     pub fn from_port(mut self, input: i32) -> Self {
-        self.from_port = Some(input);
+        self.from_port = ::std::option::Option::Some(input);
         self
     }
     /// <p>The starting port value for the port range.</p>
-    pub fn set_from_port(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_from_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.from_port = input;
         self
     }
     /// <p>The ending port value for the port range.</p>
     pub fn to_port(mut self, input: i32) -> Self {
-        self.to_port = Some(input);
+        self.to_port = ::std::option::Option::Some(input);
         self
     }
     /// <p>The ending port value for the port range.</p>
-    pub fn set_to_port(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_to_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.to_port = input;
         self
     }

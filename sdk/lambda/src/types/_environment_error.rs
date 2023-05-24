@@ -2,27 +2,27 @@
 
 /// <p>Error messages for environment variables that couldn't be applied.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct EnvironmentError {
     /// <p>The error code.</p>
     #[doc(hidden)]
-    pub error_code: std::option::Option<std::string::String>,
+    pub error_code: ::std::option::Option<::std::string::String>,
     /// <p>The error message.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
 }
 impl EnvironmentError {
     /// <p>The error code.</p>
-    pub fn error_code(&self) -> std::option::Option<&str> {
+    pub fn error_code(&self) -> ::std::option::Option<&str> {
         self.error_code.as_deref()
     }
     /// <p>The error message.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Debug for EnvironmentError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for EnvironmentError {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("EnvironmentError");
         formatter.field("error_code", &self.error_code);
         formatter.field("message", &"*** Sensitive Data Redacted ***");
@@ -38,29 +38,29 @@ impl EnvironmentError {
 
 /// A builder for [`EnvironmentError`](crate::types::EnvironmentError).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct EnvironmentErrorBuilder {
-    pub(crate) error_code: std::option::Option<std::string::String>,
-    pub(crate) message: std::option::Option<std::string::String>,
+    pub(crate) error_code: ::std::option::Option<::std::string::String>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
 }
 impl EnvironmentErrorBuilder {
     /// <p>The error code.</p>
-    pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
-        self.error_code = Some(input.into());
+    pub fn error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.error_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The error code.</p>
-    pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_code = input;
         self
     }
     /// <p>The error message.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The error message.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
@@ -72,8 +72,8 @@ impl EnvironmentErrorBuilder {
         }
     }
 }
-impl std::fmt::Debug for EnvironmentErrorBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for EnvironmentErrorBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("EnvironmentErrorBuilder");
         formatter.field("error_code", &self.error_code);
         formatter.field("message", &"*** Sensitive Data Redacted ***");

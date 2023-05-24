@@ -2,20 +2,20 @@
 
 /// <p>Detailed health information about the Amazon EC2 instances in an AWS Elastic Beanstalk environment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeInstancesHealthOutput {
     /// <p>Detailed health information about each instance.</p>
     /// <p>The output differs slightly between Linux and Windows environments. There is a difference in the members that are supported under the <code>
     /// <cpuutilization></cpuutilization></code> type.</p>
     #[doc(hidden)]
     pub instance_health_list:
-        std::option::Option<std::vec::Vec<crate::types::SingleInstanceHealth>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::SingleInstanceHealth>>,
     /// <p>The date and time that the health information was retrieved.</p>
     #[doc(hidden)]
-    pub refreshed_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub refreshed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Pagination token for the next page of results, if available.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeInstancesHealthOutput {
@@ -24,19 +24,19 @@ impl DescribeInstancesHealthOutput {
     /// <cpuutilization></cpuutilization></code> type.</p>
     pub fn instance_health_list(
         &self,
-    ) -> std::option::Option<&[crate::types::SingleInstanceHealth]> {
+    ) -> ::std::option::Option<&[crate::types::SingleInstanceHealth]> {
         self.instance_health_list.as_deref()
     }
     /// <p>The date and time that the health information was retrieved.</p>
-    pub fn refreshed_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn refreshed_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.refreshed_at.as_ref()
     }
     /// <p>Pagination token for the next page of results, if available.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeInstancesHealthOutput {
+impl ::aws_http::request_id::RequestId for DescribeInstancesHealthOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -52,12 +52,14 @@ impl DescribeInstancesHealthOutput {
 
 /// A builder for [`DescribeInstancesHealthOutput`](crate::operation::describe_instances_health::DescribeInstancesHealthOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeInstancesHealthOutputBuilder {
     pub(crate) instance_health_list:
-        std::option::Option<std::vec::Vec<crate::types::SingleInstanceHealth>>,
-    pub(crate) refreshed_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::SingleInstanceHealth>>,
+    pub(crate) refreshed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeInstancesHealthOutputBuilder {
@@ -71,7 +73,7 @@ impl DescribeInstancesHealthOutputBuilder {
     pub fn instance_health_list(mut self, input: crate::types::SingleInstanceHealth) -> Self {
         let mut v = self.instance_health_list.unwrap_or_default();
         v.push(input);
-        self.instance_health_list = Some(v);
+        self.instance_health_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>Detailed health information about each instance.</p>
@@ -79,31 +81,31 @@ impl DescribeInstancesHealthOutputBuilder {
     /// <cpuutilization></cpuutilization></code> type.</p>
     pub fn set_instance_health_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SingleInstanceHealth>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SingleInstanceHealth>>,
     ) -> Self {
         self.instance_health_list = input;
         self
     }
     /// <p>The date and time that the health information was retrieved.</p>
-    pub fn refreshed_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.refreshed_at = Some(input);
+    pub fn refreshed_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.refreshed_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time that the health information was retrieved.</p>
     pub fn set_refreshed_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.refreshed_at = input;
         self
     }
     /// <p>Pagination token for the next page of results, if available.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Pagination token for the next page of results, if available.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

@@ -2,15 +2,15 @@
 
 /// <p>The display options of a control.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SliderControlDisplayOptions {
     /// <p>The options to configure the title visibility, name, and font size.</p>
     #[doc(hidden)]
-    pub title_options: std::option::Option<crate::types::LabelOptions>,
+    pub title_options: ::std::option::Option<crate::types::LabelOptions>,
 }
 impl SliderControlDisplayOptions {
     /// <p>The options to configure the title visibility, name, and font size.</p>
-    pub fn title_options(&self) -> std::option::Option<&crate::types::LabelOptions> {
+    pub fn title_options(&self) -> ::std::option::Option<&crate::types::LabelOptions> {
         self.title_options.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl SliderControlDisplayOptions {
 
 /// A builder for [`SliderControlDisplayOptions`](crate::types::SliderControlDisplayOptions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SliderControlDisplayOptionsBuilder {
-    pub(crate) title_options: std::option::Option<crate::types::LabelOptions>,
+    pub(crate) title_options: ::std::option::Option<crate::types::LabelOptions>,
 }
 impl SliderControlDisplayOptionsBuilder {
     /// <p>The options to configure the title visibility, name, and font size.</p>
     pub fn title_options(mut self, input: crate::types::LabelOptions) -> Self {
-        self.title_options = Some(input);
+        self.title_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The options to configure the title visibility, name, and font size.</p>
     pub fn set_title_options(
         mut self,
-        input: std::option::Option<crate::types::LabelOptions>,
+        input: ::std::option::Option<crate::types::LabelOptions>,
     ) -> Self {
         self.title_options = input;
         self

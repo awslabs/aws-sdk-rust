@@ -12,56 +12,59 @@ pub use crate::operation::import_image::_import_image_input::ImportImageInputBui
 /// <p>Amazon Web Services VM Import/Export strongly recommends specifying a value for either the <code>--license-type</code> or <code>--usage-operation</code> parameter when you create a new VM Import task. This ensures your operating system is licensed appropriately and your billing is optimized.</p>
 /// </important>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html">Importing a VM as an image using VM Import/Export</a> in the <i>VM Import/Export User Guide</i>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ImportImageFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::import_image::builders::ImportImageInputBuilder,
 }
 impl ImportImageFluentBuilder {
     /// Creates a new `ImportImage`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::import_image::ImportImage,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::import_image::ImportImageError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_image::ImportImageError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::import_image::ImportImageOutput,
-        aws_smithy_http::result::SdkError<crate::operation::import_image::ImportImageError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_image::ImportImageError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -74,21 +77,21 @@ impl ImportImageFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::import_image::ImportImageOutput,
-        aws_smithy_http::result::SdkError<crate::operation::import_image::ImportImageError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_image::ImportImageError>,
     > {
         self.send_middleware().await
     }
     /// <p>The architecture of the virtual machine.</p>
     /// <p>Valid values: <code>i386</code> | <code>x86_64</code> </p>
-    pub fn architecture(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn architecture(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.architecture(input.into());
         self
     }
     /// <p>The architecture of the virtual machine.</p>
     /// <p>Valid values: <code>i386</code> | <code>x86_64</code> </p>
-    pub fn set_architecture(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_architecture(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_architecture(input);
         self
     }
@@ -98,27 +101,30 @@ impl ImportImageFluentBuilder {
         self
     }
     /// <p>The client-specific data.</p>
-    pub fn set_client_data(mut self, input: std::option::Option<crate::types::ClientData>) -> Self {
+    pub fn set_client_data(
+        mut self,
+        input: ::std::option::Option<crate::types::ClientData>,
+    ) -> Self {
         self.inner = self.inner.set_client_data(input);
         self
     }
     /// <p>The token to enable idempotency for VM import requests.</p>
-    pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
     /// <p>The token to enable idempotency for VM import requests.</p>
-    pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
     /// <p>A description string for the import image task.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>A description string for the import image task.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
@@ -134,7 +140,7 @@ impl ImportImageFluentBuilder {
     /// <p>Information about the disk containers.</p>
     pub fn set_disk_containers(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ImageDiskContainer>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ImageDiskContainer>>,
     ) -> Self {
         self.inner = self.inner.set_disk_containers(input);
         self
@@ -145,7 +151,7 @@ impl ImportImageFluentBuilder {
         self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
     }
@@ -155,19 +161,19 @@ impl ImportImageFluentBuilder {
         self
     }
     /// <p>Specifies whether the destination AMI of the imported image should be encrypted. The default KMS key for EBS is used unless you specify a non-default KMS key using <code>KmsKeyId</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    pub fn set_encrypted(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_encrypted(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_encrypted(input);
         self
     }
     /// <p>The target hypervisor platform.</p>
     /// <p>Valid values: <code>xen</code> </p>
-    pub fn hypervisor(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn hypervisor(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.hypervisor(input.into());
         self
     }
     /// <p>The target hypervisor platform.</p>
     /// <p>Valid values: <code>xen</code> </p>
-    pub fn set_hypervisor(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_hypervisor(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_hypervisor(input);
         self
     }
@@ -182,7 +188,7 @@ impl ImportImageFluentBuilder {
     /// <p>Amazon Web Services parses <code>KmsKeyId</code> asynchronously, meaning that the action you call may appear to complete even though you provided an invalid identifier. This action will eventually report failure. </p>
     /// <p>The specified KMS key must exist in the Region that the AMI is being copied to.</p>
     /// <p>Amazon EBS does not support asymmetric KMS keys.</p>
-    pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kms_key_id(input.into());
         self
     }
@@ -197,43 +203,43 @@ impl ImportImageFluentBuilder {
     /// <p>Amazon Web Services parses <code>KmsKeyId</code> asynchronously, meaning that the action you call may appear to complete even though you provided an invalid identifier. This action will eventually report failure. </p>
     /// <p>The specified KMS key must exist in the Region that the AMI is being copied to.</p>
     /// <p>Amazon EBS does not support asymmetric KMS keys.</p>
-    pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kms_key_id(input);
         self
     }
     /// <p>The license type to be used for the Amazon Machine Image (AMI) after importing.</p>
     /// <p>Specify <code>AWS</code> to replace the source-system license with an Amazon Web Services license or <code>BYOL</code> to retain the source-system license. Leaving this parameter undefined is the same as choosing <code>AWS</code> when importing a Windows Server operating system, and the same as choosing <code>BYOL</code> when importing a Windows client operating system (such as Windows 10) or a Linux operating system.</p>
     /// <p>To use <code>BYOL</code>, you must have existing licenses with rights to use these licenses in a third party cloud, such as Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#prerequisites-image">Prerequisites</a> in the VM Import/Export User Guide.</p>
-    pub fn license_type(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn license_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.license_type(input.into());
         self
     }
     /// <p>The license type to be used for the Amazon Machine Image (AMI) after importing.</p>
     /// <p>Specify <code>AWS</code> to replace the source-system license with an Amazon Web Services license or <code>BYOL</code> to retain the source-system license. Leaving this parameter undefined is the same as choosing <code>AWS</code> when importing a Windows Server operating system, and the same as choosing <code>BYOL</code> when importing a Windows client operating system (such as Windows 10) or a Linux operating system.</p>
     /// <p>To use <code>BYOL</code>, you must have existing licenses with rights to use these licenses in a third party cloud, such as Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#prerequisites-image">Prerequisites</a> in the VM Import/Export User Guide.</p>
-    pub fn set_license_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_license_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_license_type(input);
         self
     }
     /// <p>The operating system of the virtual machine.</p>
     /// <p>Valid values: <code>Windows</code> | <code>Linux</code> </p>
-    pub fn platform(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn platform(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.platform(input.into());
         self
     }
     /// <p>The operating system of the virtual machine.</p>
     /// <p>Valid values: <code>Windows</code> | <code>Linux</code> </p>
-    pub fn set_platform(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_platform(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_platform(input);
         self
     }
     /// <p>The name of the role to use when not using the default role, 'vmimport'.</p>
-    pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn role_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_name(input.into());
         self
     }
     /// <p>The name of the role to use when not using the default role, 'vmimport'.</p>
-    pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_role_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_name(input);
         self
     }
@@ -252,8 +258,8 @@ impl ImportImageFluentBuilder {
     /// <p>The ARNs of the license configurations.</p>
     pub fn set_license_specifications(
         mut self,
-        input: std::option::Option<
-            std::vec::Vec<crate::types::ImportImageLicenseConfigurationRequest>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::ImportImageLicenseConfigurationRequest>,
         >,
     ) -> Self {
         self.inner = self.inner.set_license_specifications(input);
@@ -271,18 +277,24 @@ impl ImportImageFluentBuilder {
     /// <p>The tags to apply to the import image task during creation.</p>
     pub fn set_tag_specifications(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TagSpecification>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     ) -> Self {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
     /// <p>The usage operation value. For more information, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmie_prereqs.html#prerequisites">Licensing options</a> in the <i>VM Import/Export User Guide</i>.</p>
-    pub fn usage_operation(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn usage_operation(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.usage_operation(input.into());
         self
     }
     /// <p>The usage operation value. For more information, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmie_prereqs.html#prerequisites">Licensing options</a> in the <i>VM Import/Export User Guide</i>.</p>
-    pub fn set_usage_operation(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_usage_operation(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_usage_operation(input);
         self
     }
@@ -294,7 +306,7 @@ impl ImportImageFluentBuilder {
     /// <p>The boot mode of the virtual machine.</p>
     pub fn set_boot_mode(
         mut self,
-        input: std::option::Option<crate::types::BootModeValues>,
+        input: ::std::option::Option<crate::types::BootModeValues>,
     ) -> Self {
         self.inner = self.inner.set_boot_mode(input);
         self

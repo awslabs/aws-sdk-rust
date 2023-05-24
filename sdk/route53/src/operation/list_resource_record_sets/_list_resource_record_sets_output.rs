@@ -2,34 +2,37 @@
 
 /// <p>A complex type that contains list information for the resource record set.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListResourceRecordSetsOutput {
     /// <p>Information about multiple resource record sets.</p>
     #[doc(hidden)]
-    pub resource_record_sets: std::option::Option<std::vec::Vec<crate::types::ResourceRecordSet>>,
+    pub resource_record_sets:
+        ::std::option::Option<::std::vec::Vec<crate::types::ResourceRecordSet>>,
     /// <p>A flag that indicates whether more resource record sets remain to be listed. If your results were truncated, you can make a follow-up pagination request by using the <code>NextRecordName</code> element.</p>
     #[doc(hidden)]
     pub is_truncated: bool,
     /// <p>If the results were truncated, the name of the next record in the list.</p>
     /// <p>This element is present only if <code>IsTruncated</code> is true. </p>
     #[doc(hidden)]
-    pub next_record_name: std::option::Option<std::string::String>,
+    pub next_record_name: ::std::option::Option<::std::string::String>,
     /// <p>If the results were truncated, the type of the next record in the list.</p>
     /// <p>This element is present only if <code>IsTruncated</code> is true. </p>
     #[doc(hidden)]
-    pub next_record_type: std::option::Option<crate::types::RrType>,
+    pub next_record_type: ::std::option::Option<crate::types::RrType>,
     /// <p> <i>Resource record sets that have a routing policy other than simple:</i> If results were truncated for a given DNS name and type, the value of <code>SetIdentifier</code> for the next resource record set that has the current DNS name and type.</p>
     /// <p>For information about routing policies, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing a Routing Policy</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     #[doc(hidden)]
-    pub next_record_identifier: std::option::Option<std::string::String>,
+    pub next_record_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of records you requested.</p>
     #[doc(hidden)]
-    pub max_items: std::option::Option<i32>,
+    pub max_items: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }
 impl ListResourceRecordSetsOutput {
     /// <p>Information about multiple resource record sets.</p>
-    pub fn resource_record_sets(&self) -> std::option::Option<&[crate::types::ResourceRecordSet]> {
+    pub fn resource_record_sets(
+        &self,
+    ) -> ::std::option::Option<&[crate::types::ResourceRecordSet]> {
         self.resource_record_sets.as_deref()
     }
     /// <p>A flag that indicates whether more resource record sets remain to be listed. If your results were truncated, you can make a follow-up pagination request by using the <code>NextRecordName</code> element.</p>
@@ -38,25 +41,25 @@ impl ListResourceRecordSetsOutput {
     }
     /// <p>If the results were truncated, the name of the next record in the list.</p>
     /// <p>This element is present only if <code>IsTruncated</code> is true. </p>
-    pub fn next_record_name(&self) -> std::option::Option<&str> {
+    pub fn next_record_name(&self) -> ::std::option::Option<&str> {
         self.next_record_name.as_deref()
     }
     /// <p>If the results were truncated, the type of the next record in the list.</p>
     /// <p>This element is present only if <code>IsTruncated</code> is true. </p>
-    pub fn next_record_type(&self) -> std::option::Option<&crate::types::RrType> {
+    pub fn next_record_type(&self) -> ::std::option::Option<&crate::types::RrType> {
         self.next_record_type.as_ref()
     }
     /// <p> <i>Resource record sets that have a routing policy other than simple:</i> If results were truncated for a given DNS name and type, the value of <code>SetIdentifier</code> for the next resource record set that has the current DNS name and type.</p>
     /// <p>For information about routing policies, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing a Routing Policy</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
-    pub fn next_record_identifier(&self) -> std::option::Option<&str> {
+    pub fn next_record_identifier(&self) -> ::std::option::Option<&str> {
         self.next_record_identifier.as_deref()
     }
     /// <p>The maximum number of records you requested.</p>
-    pub fn max_items(&self) -> std::option::Option<i32> {
+    pub fn max_items(&self) -> ::std::option::Option<i32> {
         self.max_items
     }
 }
-impl aws_http::request_id::RequestId for ListResourceRecordSetsOutput {
+impl ::aws_http::request_id::RequestId for ListResourceRecordSetsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -72,15 +75,17 @@ impl ListResourceRecordSetsOutput {
 
 /// A builder for [`ListResourceRecordSetsOutput`](crate::operation::list_resource_record_sets::ListResourceRecordSetsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListResourceRecordSetsOutputBuilder {
     pub(crate) resource_record_sets:
-        std::option::Option<std::vec::Vec<crate::types::ResourceRecordSet>>,
-    pub(crate) is_truncated: std::option::Option<bool>,
-    pub(crate) next_record_name: std::option::Option<std::string::String>,
-    pub(crate) next_record_type: std::option::Option<crate::types::RrType>,
-    pub(crate) next_record_identifier: std::option::Option<std::string::String>,
-    pub(crate) max_items: std::option::Option<i32>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ResourceRecordSet>>,
+    pub(crate) is_truncated: ::std::option::Option<bool>,
+    pub(crate) next_record_name: ::std::option::Option<::std::string::String>,
+    pub(crate) next_record_type: ::std::option::Option<crate::types::RrType>,
+    pub(crate) next_record_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) max_items: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }
 impl ListResourceRecordSetsOutputBuilder {
@@ -92,76 +97,85 @@ impl ListResourceRecordSetsOutputBuilder {
     pub fn resource_record_sets(mut self, input: crate::types::ResourceRecordSet) -> Self {
         let mut v = self.resource_record_sets.unwrap_or_default();
         v.push(input);
-        self.resource_record_sets = Some(v);
+        self.resource_record_sets = ::std::option::Option::Some(v);
         self
     }
     /// <p>Information about multiple resource record sets.</p>
     pub fn set_resource_record_sets(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ResourceRecordSet>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceRecordSet>>,
     ) -> Self {
         self.resource_record_sets = input;
         self
     }
     /// <p>A flag that indicates whether more resource record sets remain to be listed. If your results were truncated, you can make a follow-up pagination request by using the <code>NextRecordName</code> element.</p>
     pub fn is_truncated(mut self, input: bool) -> Self {
-        self.is_truncated = Some(input);
+        self.is_truncated = ::std::option::Option::Some(input);
         self
     }
     /// <p>A flag that indicates whether more resource record sets remain to be listed. If your results were truncated, you can make a follow-up pagination request by using the <code>NextRecordName</code> element.</p>
-    pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_truncated(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_truncated = input;
         self
     }
     /// <p>If the results were truncated, the name of the next record in the list.</p>
     /// <p>This element is present only if <code>IsTruncated</code> is true. </p>
-    pub fn next_record_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_record_name = Some(input.into());
+    pub fn next_record_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.next_record_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the results were truncated, the name of the next record in the list.</p>
     /// <p>This element is present only if <code>IsTruncated</code> is true. </p>
-    pub fn set_next_record_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_record_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.next_record_name = input;
         self
     }
     /// <p>If the results were truncated, the type of the next record in the list.</p>
     /// <p>This element is present only if <code>IsTruncated</code> is true. </p>
     pub fn next_record_type(mut self, input: crate::types::RrType) -> Self {
-        self.next_record_type = Some(input);
+        self.next_record_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>If the results were truncated, the type of the next record in the list.</p>
     /// <p>This element is present only if <code>IsTruncated</code> is true. </p>
     pub fn set_next_record_type(
         mut self,
-        input: std::option::Option<crate::types::RrType>,
+        input: ::std::option::Option<crate::types::RrType>,
     ) -> Self {
         self.next_record_type = input;
         self
     }
     /// <p> <i>Resource record sets that have a routing policy other than simple:</i> If results were truncated for a given DNS name and type, the value of <code>SetIdentifier</code> for the next resource record set that has the current DNS name and type.</p>
     /// <p>For information about routing policies, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing a Routing Policy</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
-    pub fn next_record_identifier(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_record_identifier = Some(input.into());
+    pub fn next_record_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.next_record_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> <i>Resource record sets that have a routing policy other than simple:</i> If results were truncated for a given DNS name and type, the value of <code>SetIdentifier</code> for the next resource record set that has the current DNS name and type.</p>
     /// <p>For information about routing policies, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing a Routing Policy</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     pub fn set_next_record_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.next_record_identifier = input;
         self
     }
     /// <p>The maximum number of records you requested.</p>
     pub fn max_items(mut self, input: i32) -> Self {
-        self.max_items = Some(input);
+        self.max_items = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum number of records you requested.</p>
-    pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_items = input;
         self
     }

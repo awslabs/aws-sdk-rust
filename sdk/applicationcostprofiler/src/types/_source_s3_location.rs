@@ -2,29 +2,29 @@
 
 /// <p>Represents the Amazon Simple Storage Service (Amazon S3) location where usage data is read from.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SourceS3Location {
     /// <p>Name of the bucket.</p>
     #[doc(hidden)]
-    pub bucket: std::option::Option<std::string::String>,
+    pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>Key of the object.</p>
     #[doc(hidden)]
-    pub key: std::option::Option<std::string::String>,
+    pub key: ::std::option::Option<::std::string::String>,
     /// <p>Region of the bucket. Only required for Regions that are disabled by default. For more infomration about Regions that are disabled by default, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html#rande-manage-enable"> Enabling a Region</a> in the <i>AWS General Reference guide</i>.</p>
     #[doc(hidden)]
-    pub region: std::option::Option<crate::types::S3BucketRegion>,
+    pub region: ::std::option::Option<crate::types::S3BucketRegion>,
 }
 impl SourceS3Location {
     /// <p>Name of the bucket.</p>
-    pub fn bucket(&self) -> std::option::Option<&str> {
+    pub fn bucket(&self) -> ::std::option::Option<&str> {
         self.bucket.as_deref()
     }
     /// <p>Key of the object.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<&str> {
         self.key.as_deref()
     }
     /// <p>Region of the bucket. Only required for Regions that are disabled by default. For more infomration about Regions that are disabled by default, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html#rande-manage-enable"> Enabling a Region</a> in the <i>AWS General Reference guide</i>.</p>
-    pub fn region(&self) -> std::option::Option<&crate::types::S3BucketRegion> {
+    pub fn region(&self) -> ::std::option::Option<&crate::types::S3BucketRegion> {
         self.region.as_ref()
     }
 }
@@ -37,40 +37,45 @@ impl SourceS3Location {
 
 /// A builder for [`SourceS3Location`](crate::types::SourceS3Location).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SourceS3LocationBuilder {
-    pub(crate) bucket: std::option::Option<std::string::String>,
-    pub(crate) key: std::option::Option<std::string::String>,
-    pub(crate) region: std::option::Option<crate::types::S3BucketRegion>,
+    pub(crate) bucket: ::std::option::Option<::std::string::String>,
+    pub(crate) key: ::std::option::Option<::std::string::String>,
+    pub(crate) region: ::std::option::Option<crate::types::S3BucketRegion>,
 }
 impl SourceS3LocationBuilder {
     /// <p>Name of the bucket.</p>
-    pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
-        self.bucket = Some(input.into());
+    pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.bucket = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of the bucket.</p>
-    pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket = input;
         self
     }
     /// <p>Key of the object.</p>
-    pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.key = Some(input.into());
+    pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Key of the object.</p>
-    pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key = input;
         self
     }
     /// <p>Region of the bucket. Only required for Regions that are disabled by default. For more infomration about Regions that are disabled by default, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html#rande-manage-enable"> Enabling a Region</a> in the <i>AWS General Reference guide</i>.</p>
     pub fn region(mut self, input: crate::types::S3BucketRegion) -> Self {
-        self.region = Some(input);
+        self.region = ::std::option::Option::Some(input);
         self
     }
     /// <p>Region of the bucket. Only required for Regions that are disabled by default. For more infomration about Regions that are disabled by default, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html#rande-manage-enable"> Enabling a Region</a> in the <i>AWS General Reference guide</i>.</p>
-    pub fn set_region(mut self, input: std::option::Option<crate::types::S3BucketRegion>) -> Self {
+    pub fn set_region(
+        mut self,
+        input: ::std::option::Option<crate::types::S3BucketRegion>,
+    ) -> Self {
         self.region = input;
         self
     }

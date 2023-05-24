@@ -2,7 +2,7 @@
 
 /// <p>The data that is output as a result of the assistant association.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum AssistantAssociationOutputData {
     /// <p>The knowledge base where output data is sent.</p>
     KnowledgeBaseAssociation(crate::types::KnowledgeBaseAssociationData),
@@ -22,11 +22,11 @@ impl AssistantAssociationOutputData {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_knowledge_base_association(
         &self,
-    ) -> std::result::Result<&crate::types::KnowledgeBaseAssociationData, &Self> {
+    ) -> ::std::result::Result<&crate::types::KnowledgeBaseAssociationData, &Self> {
         if let AssistantAssociationOutputData::KnowledgeBaseAssociation(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`KnowledgeBaseAssociation`](crate::types::AssistantAssociationOutputData::KnowledgeBaseAssociation).

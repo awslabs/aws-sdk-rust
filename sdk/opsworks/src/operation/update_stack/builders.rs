@@ -7,56 +7,59 @@ pub use crate::operation::update_stack::_update_stack_input::UpdateStackInputBui
 ///
 /// <p>Updates a specified stack.</p>
 /// <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateStackFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::update_stack::builders::UpdateStackInputBuilder,
 }
 impl UpdateStackFluentBuilder {
     /// Creates a new `UpdateStack`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_stack::UpdateStack,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::update_stack::UpdateStackError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_stack::UpdateStackError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_stack::UpdateStackOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_stack::UpdateStackError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_stack::UpdateStackError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -69,29 +72,29 @@ impl UpdateStackFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_stack::UpdateStackOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_stack::UpdateStackError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_stack::UpdateStackError>,
     > {
         self.send_middleware().await
     }
     /// <p>The stack ID.</p>
-    pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn stack_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stack_id(input.into());
         self
     }
     /// <p>The stack ID.</p>
-    pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_stack_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stack_id(input);
         self
     }
     /// <p>The stack's new name.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// <p>The stack's new name.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
@@ -103,7 +106,7 @@ impl UpdateStackFluentBuilder {
     pub fn attributes(
         mut self,
         k: crate::types::StackAttributesKeys,
-        v: impl Into<std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.attributes(k, v.into());
         self
@@ -111,32 +114,41 @@ impl UpdateStackFluentBuilder {
     /// <p>One or more user-defined key-value pairs to be added to the stack attributes.</p>
     pub fn set_attributes(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<crate::types::StackAttributesKeys, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<crate::types::StackAttributesKeys, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_attributes(input);
         self
     }
     /// <p>Do not use this parameter. You cannot update a stack's service role.</p>
-    pub fn service_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn service_role_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.service_role_arn(input.into());
         self
     }
     /// <p>Do not use this parameter. You cannot update a stack's service role.</p>
-    pub fn set_service_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_service_role_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_service_role_arn(input);
         self
     }
     /// <p>The ARN of an IAM profile that is the default profile for all of the stack's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
-    pub fn default_instance_profile_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn default_instance_profile_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.default_instance_profile_arn(input.into());
         self
     }
     /// <p>The ARN of an IAM profile that is the default profile for all of the stack's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
     pub fn set_default_instance_profile_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_default_instance_profile_arn(input);
         self
@@ -151,7 +163,7 @@ impl UpdateStackFluentBuilder {
     /// <li> <p>A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when you create instances. For more information about how to use custom AMIs with OpsWorks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p> </li>
     /// </ul>
     /// <p>The default option is the stack's current operating system. For more information about supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
-    pub fn default_os(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn default_os(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.default_os(input.into());
         self
     }
@@ -165,7 +177,7 @@ impl UpdateStackFluentBuilder {
     /// <li> <p>A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when you create instances. For more information about how to use custom AMIs with OpsWorks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p> </li>
     /// </ul>
     /// <p>The default option is the stack's current operating system. For more information about supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
-    pub fn set_default_os(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_default_os(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_default_os(input);
         self
     }
@@ -184,7 +196,10 @@ impl UpdateStackFluentBuilder {
     /// <li> <p> <code>Wild_Cats</code> </p> </li>
     /// </ul>
     /// <p>To obtain a generated host name, call <code>GetHostNameSuggestion</code>, which returns a host name based on the current theme.</p>
-    pub fn hostname_theme(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn hostname_theme(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.hostname_theme(input.into());
         self
     }
@@ -203,32 +218,41 @@ impl UpdateStackFluentBuilder {
     /// <li> <p> <code>Wild_Cats</code> </p> </li>
     /// </ul>
     /// <p>To obtain a generated host name, call <code>GetHostNameSuggestion</code>, which returns a host name based on the current theme.</p>
-    pub fn set_hostname_theme(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_hostname_theme(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_hostname_theme(input);
         self
     }
     /// <p>The stack's default Availability Zone, which must be in the stack's region. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>. If you also specify a value for <code>DefaultSubnetId</code>, the subnet must be in the same zone. For more information, see <code>CreateStack</code>. </p>
-    pub fn default_availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn default_availability_zone(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.default_availability_zone(input.into());
         self
     }
     /// <p>The stack's default Availability Zone, which must be in the stack's region. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>. If you also specify a value for <code>DefaultSubnetId</code>, the subnet must be in the same zone. For more information, see <code>CreateStack</code>. </p>
     pub fn set_default_availability_zone(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_default_availability_zone(input);
         self
     }
     /// <p>The stack's default VPC subnet ID. This parameter is required if you specify a value for the <code>VpcId</code> parameter. All instances are launched into this subnet unless you specify otherwise when you create the instance. If you also specify a value for <code>DefaultAvailabilityZone</code>, the subnet must be in that zone. For information on default values and when this parameter is required, see the <code>VpcId</code> parameter description. </p>
-    pub fn default_subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn default_subnet_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.default_subnet_id(input.into());
         self
     }
     /// <p>The stack's default VPC subnet ID. This parameter is required if you specify a value for the <code>VpcId</code> parameter. All instances are launched into this subnet unless you specify otherwise when you create the instance. If you also specify a value for <code>DefaultAvailabilityZone</code>, the subnet must be in that zone. For information on default values and when this parameter is required, see the <code>VpcId</code> parameter description. </p>
     pub fn set_default_subnet_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_default_subnet_id(input);
         self
@@ -236,14 +260,14 @@ impl UpdateStackFluentBuilder {
     /// <p>A string that contains user-defined, custom JSON. It can be used to override the corresponding default stack configuration JSON values or to pass data to recipes. The string should be in the following format:</p>
     /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p>
     /// <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
-    pub fn custom_json(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn custom_json(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.custom_json(input.into());
         self
     }
     /// <p>A string that contains user-defined, custom JSON. It can be used to override the corresponding default stack configuration JSON values or to pass data to recipes. The string should be in the following format:</p>
     /// <p> <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p>
     /// <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
-    pub fn set_custom_json(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_custom_json(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_custom_json(input);
         self
     }
@@ -255,7 +279,7 @@ impl UpdateStackFluentBuilder {
     /// <p>The configuration manager. When you update a stack, we recommend that you use the configuration manager to specify the Chef version: 12, 11.10, or 11.4 for Linux stacks, or 12.2 for Windows stacks. The default value for Linux stacks is currently 12.</p>
     pub fn set_configuration_manager(
         mut self,
-        input: std::option::Option<crate::types::StackConfigurationManager>,
+        input: ::std::option::Option<crate::types::StackConfigurationManager>,
     ) -> Self {
         self.inner = self.inner.set_configuration_manager(input);
         self
@@ -268,7 +292,7 @@ impl UpdateStackFluentBuilder {
     /// <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the Berkshelf version on Chef 11.10 stacks. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
     pub fn set_chef_configuration(
         mut self,
-        input: std::option::Option<crate::types::ChefConfiguration>,
+        input: ::std::option::Option<crate::types::ChefConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_chef_configuration(input);
         self
@@ -279,7 +303,7 @@ impl UpdateStackFluentBuilder {
         self
     }
     /// <p>Whether the stack uses custom cookbooks.</p>
-    pub fn set_use_custom_cookbooks(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_use_custom_cookbooks(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_use_custom_cookbooks(input);
         self
     }
@@ -291,20 +315,23 @@ impl UpdateStackFluentBuilder {
     /// <p>Contains the information required to retrieve an app or cookbook from a repository. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.</p>
     pub fn set_custom_cookbooks_source(
         mut self,
-        input: std::option::Option<crate::types::Source>,
+        input: ::std::option::Option<crate::types::Source>,
     ) -> Self {
         self.inner = self.inner.set_custom_cookbooks_source(input);
         self
     }
     /// <p>A default Amazon EC2 key-pair name. The default value is <code>none</code>. If you specify a key-pair name, AWS OpsWorks Stacks installs the public key on the instance and you can use the private key with an SSH client to log in to the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html"> Using SSH to Communicate with an Instance</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html"> Managing SSH Access</a>. You can override this setting by specifying a different key pair, or no key pair, when you <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html"> create an instance</a>. </p>
-    pub fn default_ssh_key_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn default_ssh_key_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.default_ssh_key_name(input.into());
         self
     }
     /// <p>A default Amazon EC2 key-pair name. The default value is <code>none</code>. If you specify a key-pair name, AWS OpsWorks Stacks installs the public key on the instance and you can use the private key with an SSH client to log in to the instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-ssh.html"> Using SSH to Communicate with an Instance</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html"> Managing SSH Access</a>. You can override this setting by specifying a different key pair, or no key pair, when you <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html"> create an instance</a>. </p>
     pub fn set_default_ssh_key_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_default_ssh_key_name(input);
         self
@@ -317,7 +344,7 @@ impl UpdateStackFluentBuilder {
     /// <p>The default root device type. This value is used by default for all instances in the stack, but you can override it when you create an instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
     pub fn set_default_root_device_type(
         mut self,
-        input: std::option::Option<crate::types::RootDeviceType>,
+        input: ::std::option::Option<crate::types::RootDeviceType>,
     ) -> Self {
         self.inner = self.inner.set_default_root_device_type(input);
         self
@@ -340,7 +367,7 @@ impl UpdateStackFluentBuilder {
     /// <li> <p>False - AWS OpsWorks Stacks does not associate built-in security groups with layers. You must create appropriate EC2 security groups and associate a security group with each layer that you create. However, you can still manually associate a built-in security group with a layer on. Custom security groups are required only for those layers that need custom settings.</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
-    pub fn set_use_opsworks_security_groups(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_use_opsworks_security_groups(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_use_opsworks_security_groups(input);
         self
     }
@@ -352,7 +379,10 @@ impl UpdateStackFluentBuilder {
     /// <p>The default setting is <code>LATEST</code>. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call <code>DescribeAgentVersions</code>. AgentVersion cannot be set to Chef 12.2.</p> <note>
     /// <p>You can also specify an agent version when you create or update an instance, which overrides the stack's default setting.</p>
     /// </note>
-    pub fn agent_version(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn agent_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.agent_version(input.into());
         self
     }
@@ -364,7 +394,10 @@ impl UpdateStackFluentBuilder {
     /// <p>The default setting is <code>LATEST</code>. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call <code>DescribeAgentVersions</code>. AgentVersion cannot be set to Chef 12.2.</p> <note>
     /// <p>You can also specify an agent version when you create or update an instance, which overrides the stack's default setting.</p>
     /// </note>
-    pub fn set_agent_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_agent_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_agent_version(input);
         self
     }

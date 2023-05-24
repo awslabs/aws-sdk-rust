@@ -6,56 +6,63 @@ pub use crate::operation::list_ephemerides::_list_ephemerides_input::ListEphemer
 /// Fluent builder constructing a request to `ListEphemerides`.
 ///
 /// <p>List existing ephemerides.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListEphemeridesFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::list_ephemerides::builders::ListEphemeridesInputBuilder,
 }
 impl ListEphemeridesFluentBuilder {
     /// Creates a new `ListEphemerides`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::list_ephemerides::ListEphemerides,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::list_ephemerides::ListEphemeridesError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_ephemerides::ListEphemeridesError,
+        >,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::list_ephemerides::ListEphemeridesOutput,
-        aws_smithy_http::result::SdkError<crate::operation::list_ephemerides::ListEphemeridesError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_ephemerides::ListEphemeridesError,
+        >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,9 +75,11 @@ impl ListEphemeridesFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::list_ephemerides::ListEphemeridesOutput,
-        aws_smithy_http::result::SdkError<crate::operation::list_ephemerides::ListEphemeridesError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_ephemerides::ListEphemeridesError,
+        >,
     > {
         self.send_middleware().await
     }
@@ -86,35 +95,38 @@ impl ListEphemeridesFluentBuilder {
         )
     }
     /// <p>The AWS Ground Station satellite ID to list ephemeris for.</p>
-    pub fn satellite_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn satellite_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.satellite_id(input.into());
         self
     }
     /// <p>The AWS Ground Station satellite ID to list ephemeris for.</p>
-    pub fn set_satellite_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_satellite_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_satellite_id(input);
         self
     }
     /// <p>The start time to list in UTC. The operation will return an ephemeris if its expiration time is within the time range defined by the <code>startTime</code> and <code>endTime</code>.</p>
-    pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+    pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.start_time(input);
         self
     }
     /// <p>The start time to list in UTC. The operation will return an ephemeris if its expiration time is within the time range defined by the <code>startTime</code> and <code>endTime</code>.</p>
     pub fn set_start_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
     /// <p>The end time to list in UTC. The operation will return an ephemeris if its expiration time is within the time range defined by the <code>startTime</code> and <code>endTime</code>.</p>
-    pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+    pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.end_time(input);
         self
     }
     /// <p>The end time to list in UTC. The operation will return an ephemeris if its expiration time is within the time range defined by the <code>startTime</code> and <code>endTime</code>.</p>
-    pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_end_time(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }
@@ -130,7 +142,7 @@ impl ListEphemeridesFluentBuilder {
     /// <p>The list of ephemeris status to return.</p>
     pub fn set_status_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::EphemerisStatus>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::EphemerisStatus>>,
     ) -> Self {
         self.inner = self.inner.set_status_list(input);
         self
@@ -141,17 +153,17 @@ impl ListEphemeridesFluentBuilder {
         self
     }
     /// <p>Maximum number of ephemerides to return.</p>
-    pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
     /// <p>Pagination token.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
     /// <p>Pagination token.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }

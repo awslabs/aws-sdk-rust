@@ -3,15 +3,15 @@
 /// <p>The function's Lambda SnapStart setting. Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version.</p>
 /// <p>SnapStart is supported with the <code>java11</code> runtime. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Improving startup performance with Lambda SnapStart</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SnapStart {
     /// <p>Set to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version.</p>
     #[doc(hidden)]
-    pub apply_on: std::option::Option<crate::types::SnapStartApplyOn>,
+    pub apply_on: ::std::option::Option<crate::types::SnapStartApplyOn>,
 }
 impl SnapStart {
     /// <p>Set to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version.</p>
-    pub fn apply_on(&self) -> std::option::Option<&crate::types::SnapStartApplyOn> {
+    pub fn apply_on(&self) -> ::std::option::Option<&crate::types::SnapStartApplyOn> {
         self.apply_on.as_ref()
     }
 }
@@ -24,20 +24,22 @@ impl SnapStart {
 
 /// A builder for [`SnapStart`](crate::types::SnapStart).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SnapStartBuilder {
-    pub(crate) apply_on: std::option::Option<crate::types::SnapStartApplyOn>,
+    pub(crate) apply_on: ::std::option::Option<crate::types::SnapStartApplyOn>,
 }
 impl SnapStartBuilder {
     /// <p>Set to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version.</p>
     pub fn apply_on(mut self, input: crate::types::SnapStartApplyOn) -> Self {
-        self.apply_on = Some(input);
+        self.apply_on = ::std::option::Option::Some(input);
         self
     }
     /// <p>Set to <code>PublishedVersions</code> to create a snapshot of the initialized execution environment when you publish a function version.</p>
     pub fn set_apply_on(
         mut self,
-        input: std::option::Option<crate::types::SnapStartApplyOn>,
+        input: ::std::option::Option<crate::types::SnapStartApplyOn>,
     ) -> Self {
         self.apply_on = input;
         self

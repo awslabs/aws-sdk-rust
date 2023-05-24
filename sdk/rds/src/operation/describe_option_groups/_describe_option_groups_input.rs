@@ -2,22 +2,22 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeOptionGroupsInput {
     /// <p>The name of the option group to describe. Can't be supplied together with EngineName or MajorEngineVersion.</p>
     #[doc(hidden)]
-    pub option_group_name: std::option::Option<std::string::String>,
+    pub option_group_name: ::std::option::Option<::std::string::String>,
     /// <p>This parameter isn't currently supported.</p>
     #[doc(hidden)]
-    pub filters: std::option::Option<std::vec::Vec<crate::types::Filter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>An optional pagination token provided by a previous DescribeOptionGroups request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     #[doc(hidden)]
-    pub marker: std::option::Option<std::string::String>,
+    pub marker: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you can retrieve the remaining results.</p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     #[doc(hidden)]
-    pub max_records: std::option::Option<i32>,
+    pub max_records: ::std::option::Option<i32>,
     /// <p>Filters the list of option groups to only include groups associated with a specific database engine.</p>
     /// <p>Valid Values:</p>
     /// <ul>
@@ -34,28 +34,28 @@ pub struct DescribeOptionGroupsInput {
     /// <li> <p> <code>sqlserver-web</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub engine_name: std::option::Option<std::string::String>,
+    pub engine_name: ::std::option::Option<::std::string::String>,
     /// <p>Filters the list of option groups to only include groups associated with a specific database engine version. If specified, then EngineName must also be specified.</p>
     #[doc(hidden)]
-    pub major_engine_version: std::option::Option<std::string::String>,
+    pub major_engine_version: ::std::option::Option<::std::string::String>,
 }
 impl DescribeOptionGroupsInput {
     /// <p>The name of the option group to describe. Can't be supplied together with EngineName or MajorEngineVersion.</p>
-    pub fn option_group_name(&self) -> std::option::Option<&str> {
+    pub fn option_group_name(&self) -> ::std::option::Option<&str> {
         self.option_group_name.as_deref()
     }
     /// <p>This parameter isn't currently supported.</p>
-    pub fn filters(&self) -> std::option::Option<&[crate::types::Filter]> {
+    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
         self.filters.as_deref()
     }
     /// <p>An optional pagination token provided by a previous DescribeOptionGroups request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you can retrieve the remaining results.</p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
-    pub fn max_records(&self) -> std::option::Option<i32> {
+    pub fn max_records(&self) -> ::std::option::Option<i32> {
         self.max_records
     }
     /// <p>Filters the list of option groups to only include groups associated with a specific database engine.</p>
@@ -73,11 +73,11 @@ impl DescribeOptionGroupsInput {
     /// <li> <p> <code>sqlserver-ex</code> </p> </li>
     /// <li> <p> <code>sqlserver-web</code> </p> </li>
     /// </ul>
-    pub fn engine_name(&self) -> std::option::Option<&str> {
+    pub fn engine_name(&self) -> ::std::option::Option<&str> {
         self.engine_name.as_deref()
     }
     /// <p>Filters the list of option groups to only include groups associated with a specific database engine version. If specified, then EngineName must also be specified.</p>
-    pub fn major_engine_version(&self) -> std::option::Option<&str> {
+    pub fn major_engine_version(&self) -> ::std::option::Option<&str> {
         self.major_engine_version.as_deref()
     }
 }
@@ -91,25 +91,30 @@ impl DescribeOptionGroupsInput {
 
 /// A builder for [`DescribeOptionGroupsInput`](crate::operation::describe_option_groups::DescribeOptionGroupsInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeOptionGroupsInputBuilder {
-    pub(crate) option_group_name: std::option::Option<std::string::String>,
-    pub(crate) filters: std::option::Option<std::vec::Vec<crate::types::Filter>>,
-    pub(crate) marker: std::option::Option<std::string::String>,
-    pub(crate) max_records: std::option::Option<i32>,
-    pub(crate) engine_name: std::option::Option<std::string::String>,
-    pub(crate) major_engine_version: std::option::Option<std::string::String>,
+    pub(crate) option_group_name: ::std::option::Option<::std::string::String>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub(crate) marker: ::std::option::Option<::std::string::String>,
+    pub(crate) max_records: ::std::option::Option<i32>,
+    pub(crate) engine_name: ::std::option::Option<::std::string::String>,
+    pub(crate) major_engine_version: ::std::option::Option<::std::string::String>,
 }
 impl DescribeOptionGroupsInputBuilder {
     /// <p>The name of the option group to describe. Can't be supplied together with EngineName or MajorEngineVersion.</p>
-    pub fn option_group_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.option_group_name = Some(input.into());
+    pub fn option_group_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.option_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the option group to describe. Can't be supplied together with EngineName or MajorEngineVersion.</p>
     pub fn set_option_group_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.option_group_name = input;
         self
@@ -122,24 +127,24 @@ impl DescribeOptionGroupsInputBuilder {
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
         v.push(input);
-        self.filters = Some(v);
+        self.filters = ::std::option::Option::Some(v);
         self
     }
     /// <p>This parameter isn't currently supported.</p>
     pub fn set_filters(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     ) -> Self {
         self.filters = input;
         self
     }
     /// <p>An optional pagination token provided by a previous DescribeOptionGroups request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-        self.marker = Some(input.into());
+    pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An optional pagination token provided by a previous DescribeOptionGroups request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
     }
@@ -147,13 +152,13 @@ impl DescribeOptionGroupsInputBuilder {
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub fn max_records(mut self, input: i32) -> Self {
-        self.max_records = Some(input);
+        self.max_records = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that you can retrieve the remaining results.</p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
-    pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_records = input;
         self
     }
@@ -172,8 +177,8 @@ impl DescribeOptionGroupsInputBuilder {
     /// <li> <p> <code>sqlserver-ex</code> </p> </li>
     /// <li> <p> <code>sqlserver-web</code> </p> </li>
     /// </ul>
-    pub fn engine_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.engine_name = Some(input.into());
+    pub fn engine_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.engine_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Filters the list of option groups to only include groups associated with a specific database engine.</p>
@@ -191,19 +196,22 @@ impl DescribeOptionGroupsInputBuilder {
     /// <li> <p> <code>sqlserver-ex</code> </p> </li>
     /// <li> <p> <code>sqlserver-web</code> </p> </li>
     /// </ul>
-    pub fn set_engine_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_engine_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_name = input;
         self
     }
     /// <p>Filters the list of option groups to only include groups associated with a specific database engine version. If specified, then EngineName must also be specified.</p>
-    pub fn major_engine_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.major_engine_version = Some(input.into());
+    pub fn major_engine_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.major_engine_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Filters the list of option groups to only include groups associated with a specific database engine version. If specified, then EngineName must also be specified.</p>
     pub fn set_major_engine_version(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.major_engine_version = input;
         self
@@ -211,11 +219,11 @@ impl DescribeOptionGroupsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeOptionGroupsInput`](crate::operation::describe_option_groups::DescribeOptionGroupsInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::describe_option_groups::DescribeOptionGroupsInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::describe_option_groups::DescribeOptionGroupsInput {
                 option_group_name: self.option_group_name,
                 filters: self.filters,

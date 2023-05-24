@@ -2,15 +2,15 @@
 
 /// <p>The static value of the resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StaticValue {
     /// <p>A list of values. For example, the ARN of the assumed role. </p>
     #[doc(hidden)]
-    pub values: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl StaticValue {
     /// <p>A list of values. For example, the ARN of the assumed role. </p>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.values.as_deref()
     }
 }
@@ -23,9 +23,11 @@ impl StaticValue {
 
 /// A builder for [`StaticValue`](crate::types::StaticValue).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StaticValueBuilder {
-    pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl StaticValueBuilder {
     /// Appends an item to `values`.
@@ -33,16 +35,16 @@ impl StaticValueBuilder {
     /// To override the contents of this collection use [`set_values`](Self::set_values).
     ///
     /// <p>A list of values. For example, the ARN of the assumed role. </p>
-    pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
         v.push(input.into());
-        self.values = Some(v);
+        self.values = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of values. For example, the ARN of the assumed role. </p>
     pub fn set_values(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.values = input;
         self

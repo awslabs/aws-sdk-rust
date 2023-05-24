@@ -2,29 +2,29 @@
 
 /// <p>Contains a DNS record value that you can use to validate ownership or control of a domain. This is used by the <code>DescribeCertificate</code> action. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceRecord {
     /// <p>The name of the DNS record to create in your domain. This is supplied by ACM.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of DNS record. Currently this can be <code>CNAME</code>.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::RecordType>,
+    pub r#type: ::std::option::Option<crate::types::RecordType>,
     /// <p>The value of the CNAME record to add to your DNS database. This is supplied by ACM.</p>
     #[doc(hidden)]
-    pub value: std::option::Option<std::string::String>,
+    pub value: ::std::option::Option<::std::string::String>,
 }
 impl ResourceRecord {
     /// <p>The name of the DNS record to create in your domain. This is supplied by ACM.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The type of DNS record. Currently this can be <code>CNAME</code>.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::RecordType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::RecordType> {
         self.r#type.as_ref()
     }
     /// <p>The value of the CNAME record to add to your DNS database. This is supplied by ACM.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
 }
@@ -37,40 +37,42 @@ impl ResourceRecord {
 
 /// A builder for [`ResourceRecord`](crate::types::ResourceRecord).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResourceRecordBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) r#type: std::option::Option<crate::types::RecordType>,
-    pub(crate) value: std::option::Option<std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::RecordType>,
+    pub(crate) value: ::std::option::Option<::std::string::String>,
 }
 impl ResourceRecordBuilder {
     /// <p>The name of the DNS record to create in your domain. This is supplied by ACM.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the DNS record to create in your domain. This is supplied by ACM.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The type of DNS record. Currently this can be <code>CNAME</code>.</p>
     pub fn r#type(mut self, input: crate::types::RecordType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of DNS record. Currently this can be <code>CNAME</code>.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::RecordType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::RecordType>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The value of the CNAME record to add to your DNS database. This is supplied by ACM.</p>
-    pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.value = Some(input.into());
+    pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value of the CNAME record to add to your DNS database. This is supplied by ACM.</p>
-    pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
     }

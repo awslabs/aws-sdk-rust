@@ -2,24 +2,24 @@
 
 /// <p>Container for the values required to configure logging for the pipeline. If you don't specify these values, OpenSearch Ingestion will not publish logs from your application to CloudWatch Logs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LogPublishingOptions {
     /// <p>Whether logs should be published.</p>
     #[doc(hidden)]
-    pub is_logging_enabled: std::option::Option<bool>,
+    pub is_logging_enabled: ::std::option::Option<bool>,
     /// <p>The destination for OpenSearch Ingestion logs sent to Amazon CloudWatch Logs. This parameter is required if <code>IsLoggingEnabled</code> is set to <code>true</code>.</p>
     #[doc(hidden)]
-    pub cloud_watch_log_destination: std::option::Option<crate::types::CloudWatchLogDestination>,
+    pub cloud_watch_log_destination: ::std::option::Option<crate::types::CloudWatchLogDestination>,
 }
 impl LogPublishingOptions {
     /// <p>Whether logs should be published.</p>
-    pub fn is_logging_enabled(&self) -> std::option::Option<bool> {
+    pub fn is_logging_enabled(&self) -> ::std::option::Option<bool> {
         self.is_logging_enabled
     }
     /// <p>The destination for OpenSearch Ingestion logs sent to Amazon CloudWatch Logs. This parameter is required if <code>IsLoggingEnabled</code> is set to <code>true</code>.</p>
     pub fn cloud_watch_log_destination(
         &self,
-    ) -> std::option::Option<&crate::types::CloudWatchLogDestination> {
+    ) -> ::std::option::Option<&crate::types::CloudWatchLogDestination> {
         self.cloud_watch_log_destination.as_ref()
     }
 }
@@ -32,20 +32,22 @@ impl LogPublishingOptions {
 
 /// A builder for [`LogPublishingOptions`](crate::types::LogPublishingOptions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LogPublishingOptionsBuilder {
-    pub(crate) is_logging_enabled: std::option::Option<bool>,
+    pub(crate) is_logging_enabled: ::std::option::Option<bool>,
     pub(crate) cloud_watch_log_destination:
-        std::option::Option<crate::types::CloudWatchLogDestination>,
+        ::std::option::Option<crate::types::CloudWatchLogDestination>,
 }
 impl LogPublishingOptionsBuilder {
     /// <p>Whether logs should be published.</p>
     pub fn is_logging_enabled(mut self, input: bool) -> Self {
-        self.is_logging_enabled = Some(input);
+        self.is_logging_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether logs should be published.</p>
-    pub fn set_is_logging_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_logging_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_logging_enabled = input;
         self
     }
@@ -54,13 +56,13 @@ impl LogPublishingOptionsBuilder {
         mut self,
         input: crate::types::CloudWatchLogDestination,
     ) -> Self {
-        self.cloud_watch_log_destination = Some(input);
+        self.cloud_watch_log_destination = ::std::option::Option::Some(input);
         self
     }
     /// <p>The destination for OpenSearch Ingestion logs sent to Amazon CloudWatch Logs. This parameter is required if <code>IsLoggingEnabled</code> is set to <code>true</code>.</p>
     pub fn set_cloud_watch_log_destination(
         mut self,
-        input: std::option::Option<crate::types::CloudWatchLogDestination>,
+        input: ::std::option::Option<crate::types::CloudWatchLogDestination>,
     ) -> Self {
         self.cloud_watch_log_destination = input;
         self

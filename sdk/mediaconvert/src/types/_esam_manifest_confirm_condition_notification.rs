@@ -2,15 +2,15 @@
 
 /// ESAM ManifestConfirmConditionNotification defined by OC-SP-ESAM-API-I03-131025.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EsamManifestConfirmConditionNotification {
     /// Provide your ESAM ManifestConfirmConditionNotification XML document inside your JSON job settings. Form the XML document as per OC-SP-ESAM-API-I03-131025. The transcoder will use the Manifest Conditioning instructions in the message that you supply.
     #[doc(hidden)]
-    pub mcc_xml: std::option::Option<std::string::String>,
+    pub mcc_xml: ::std::option::Option<::std::string::String>,
 }
 impl EsamManifestConfirmConditionNotification {
     /// Provide your ESAM ManifestConfirmConditionNotification XML document inside your JSON job settings. Form the XML document as per OC-SP-ESAM-API-I03-131025. The transcoder will use the Manifest Conditioning instructions in the message that you supply.
-    pub fn mcc_xml(&self) -> std::option::Option<&str> {
+    pub fn mcc_xml(&self) -> ::std::option::Option<&str> {
         self.mcc_xml.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl EsamManifestConfirmConditionNotification {
 
 /// A builder for [`EsamManifestConfirmConditionNotification`](crate::types::EsamManifestConfirmConditionNotification).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EsamManifestConfirmConditionNotificationBuilder {
-    pub(crate) mcc_xml: std::option::Option<std::string::String>,
+    pub(crate) mcc_xml: ::std::option::Option<::std::string::String>,
 }
 impl EsamManifestConfirmConditionNotificationBuilder {
     /// Provide your ESAM ManifestConfirmConditionNotification XML document inside your JSON job settings. Form the XML document as per OC-SP-ESAM-API-I03-131025. The transcoder will use the Manifest Conditioning instructions in the message that you supply.
-    pub fn mcc_xml(mut self, input: impl Into<std::string::String>) -> Self {
-        self.mcc_xml = Some(input.into());
+    pub fn mcc_xml(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.mcc_xml = ::std::option::Option::Some(input.into());
         self
     }
     /// Provide your ESAM ManifestConfirmConditionNotification XML document inside your JSON job settings. Form the XML document as per OC-SP-ESAM-API-I03-131025. The transcoder will use the Manifest Conditioning instructions in the message that you supply.
-    pub fn set_mcc_xml(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_mcc_xml(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.mcc_xml = input;
         self
     }

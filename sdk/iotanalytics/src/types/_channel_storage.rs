@@ -2,26 +2,26 @@
 
 /// <p>Where channel data is stored. You may choose one of <code>serviceManagedS3</code>, <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. This can't be changed after creation of the channel.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChannelStorage {
     /// <p>Used to store channel data in an S3 bucket managed by IoT Analytics. You can't change the choice of S3 storage after the data store is created.</p>
     #[doc(hidden)]
-    pub service_managed_s3: std::option::Option<crate::types::ServiceManagedChannelS3Storage>,
+    pub service_managed_s3: ::std::option::Option<crate::types::ServiceManagedChannelS3Storage>,
     /// <p>Used to store channel data in an S3 bucket that you manage. If customer managed storage is selected, the <code>retentionPeriod</code> parameter is ignored. You can't change the choice of S3 storage after the data store is created.</p>
     #[doc(hidden)]
-    pub customer_managed_s3: std::option::Option<crate::types::CustomerManagedChannelS3Storage>,
+    pub customer_managed_s3: ::std::option::Option<crate::types::CustomerManagedChannelS3Storage>,
 }
 impl ChannelStorage {
     /// <p>Used to store channel data in an S3 bucket managed by IoT Analytics. You can't change the choice of S3 storage after the data store is created.</p>
     pub fn service_managed_s3(
         &self,
-    ) -> std::option::Option<&crate::types::ServiceManagedChannelS3Storage> {
+    ) -> ::std::option::Option<&crate::types::ServiceManagedChannelS3Storage> {
         self.service_managed_s3.as_ref()
     }
     /// <p>Used to store channel data in an S3 bucket that you manage. If customer managed storage is selected, the <code>retentionPeriod</code> parameter is ignored. You can't change the choice of S3 storage after the data store is created.</p>
     pub fn customer_managed_s3(
         &self,
-    ) -> std::option::Option<&crate::types::CustomerManagedChannelS3Storage> {
+    ) -> ::std::option::Option<&crate::types::CustomerManagedChannelS3Storage> {
         self.customer_managed_s3.as_ref()
     }
 }
@@ -34,12 +34,14 @@ impl ChannelStorage {
 
 /// A builder for [`ChannelStorage`](crate::types::ChannelStorage).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ChannelStorageBuilder {
     pub(crate) service_managed_s3:
-        std::option::Option<crate::types::ServiceManagedChannelS3Storage>,
+        ::std::option::Option<crate::types::ServiceManagedChannelS3Storage>,
     pub(crate) customer_managed_s3:
-        std::option::Option<crate::types::CustomerManagedChannelS3Storage>,
+        ::std::option::Option<crate::types::CustomerManagedChannelS3Storage>,
 }
 impl ChannelStorageBuilder {
     /// <p>Used to store channel data in an S3 bucket managed by IoT Analytics. You can't change the choice of S3 storage after the data store is created.</p>
@@ -47,13 +49,13 @@ impl ChannelStorageBuilder {
         mut self,
         input: crate::types::ServiceManagedChannelS3Storage,
     ) -> Self {
-        self.service_managed_s3 = Some(input);
+        self.service_managed_s3 = ::std::option::Option::Some(input);
         self
     }
     /// <p>Used to store channel data in an S3 bucket managed by IoT Analytics. You can't change the choice of S3 storage after the data store is created.</p>
     pub fn set_service_managed_s3(
         mut self,
-        input: std::option::Option<crate::types::ServiceManagedChannelS3Storage>,
+        input: ::std::option::Option<crate::types::ServiceManagedChannelS3Storage>,
     ) -> Self {
         self.service_managed_s3 = input;
         self
@@ -63,13 +65,13 @@ impl ChannelStorageBuilder {
         mut self,
         input: crate::types::CustomerManagedChannelS3Storage,
     ) -> Self {
-        self.customer_managed_s3 = Some(input);
+        self.customer_managed_s3 = ::std::option::Option::Some(input);
         self
     }
     /// <p>Used to store channel data in an S3 bucket that you manage. If customer managed storage is selected, the <code>retentionPeriod</code> parameter is ignored. You can't change the choice of S3 storage after the data store is created.</p>
     pub fn set_customer_managed_s3(
         mut self,
-        input: std::option::Option<crate::types::CustomerManagedChannelS3Storage>,
+        input: ::std::option::Option<crate::types::CustomerManagedChannelS3Storage>,
     ) -> Self {
         self.customer_managed_s3 = input;
         self

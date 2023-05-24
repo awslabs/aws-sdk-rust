@@ -2,15 +2,15 @@
 
 /// <p> The number of characters in the input text to be analyzed. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Characters {
     /// <p> The number of characters present in the input text document as processed by Comprehend Medical. </p>
     #[doc(hidden)]
-    pub original_text_characters: std::option::Option<i32>,
+    pub original_text_characters: ::std::option::Option<i32>,
 }
 impl Characters {
     /// <p> The number of characters present in the input text document as processed by Comprehend Medical. </p>
-    pub fn original_text_characters(&self) -> std::option::Option<i32> {
+    pub fn original_text_characters(&self) -> ::std::option::Option<i32> {
         self.original_text_characters
     }
 }
@@ -23,18 +23,20 @@ impl Characters {
 
 /// A builder for [`Characters`](crate::types::Characters).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CharactersBuilder {
-    pub(crate) original_text_characters: std::option::Option<i32>,
+    pub(crate) original_text_characters: ::std::option::Option<i32>,
 }
 impl CharactersBuilder {
     /// <p> The number of characters present in the input text document as processed by Comprehend Medical. </p>
     pub fn original_text_characters(mut self, input: i32) -> Self {
-        self.original_text_characters = Some(input);
+        self.original_text_characters = ::std::option::Option::Some(input);
         self
     }
     /// <p> The number of characters present in the input text document as processed by Comprehend Medical. </p>
-    pub fn set_original_text_characters(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_original_text_characters(mut self, input: ::std::option::Option<i32>) -> Self {
         self.original_text_characters = input;
         self
     }

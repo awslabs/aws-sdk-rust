@@ -2,21 +2,21 @@
 
 /// <p>The parameters for Presto.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PrestoParameters {
     /// <p>Host.</p>
     #[doc(hidden)]
-    pub host: std::option::Option<std::string::String>,
+    pub host: ::std::option::Option<::std::string::String>,
     /// <p>Port.</p>
     #[doc(hidden)]
     pub port: i32,
     /// <p>Catalog.</p>
     #[doc(hidden)]
-    pub catalog: std::option::Option<std::string::String>,
+    pub catalog: ::std::option::Option<::std::string::String>,
 }
 impl PrestoParameters {
     /// <p>Host.</p>
-    pub fn host(&self) -> std::option::Option<&str> {
+    pub fn host(&self) -> ::std::option::Option<&str> {
         self.host.as_deref()
     }
     /// <p>Port.</p>
@@ -24,7 +24,7 @@ impl PrestoParameters {
         self.port
     }
     /// <p>Catalog.</p>
-    pub fn catalog(&self) -> std::option::Option<&str> {
+    pub fn catalog(&self) -> ::std::option::Option<&str> {
         self.catalog.as_deref()
     }
 }
@@ -37,40 +37,42 @@ impl PrestoParameters {
 
 /// A builder for [`PrestoParameters`](crate::types::PrestoParameters).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PrestoParametersBuilder {
-    pub(crate) host: std::option::Option<std::string::String>,
-    pub(crate) port: std::option::Option<i32>,
-    pub(crate) catalog: std::option::Option<std::string::String>,
+    pub(crate) host: ::std::option::Option<::std::string::String>,
+    pub(crate) port: ::std::option::Option<i32>,
+    pub(crate) catalog: ::std::option::Option<::std::string::String>,
 }
 impl PrestoParametersBuilder {
     /// <p>Host.</p>
-    pub fn host(mut self, input: impl Into<std::string::String>) -> Self {
-        self.host = Some(input.into());
+    pub fn host(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.host = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Host.</p>
-    pub fn set_host(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_host(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.host = input;
         self
     }
     /// <p>Port.</p>
     pub fn port(mut self, input: i32) -> Self {
-        self.port = Some(input);
+        self.port = ::std::option::Option::Some(input);
         self
     }
     /// <p>Port.</p>
-    pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.port = input;
         self
     }
     /// <p>Catalog.</p>
-    pub fn catalog(mut self, input: impl Into<std::string::String>) -> Self {
-        self.catalog = Some(input.into());
+    pub fn catalog(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.catalog = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Catalog.</p>
-    pub fn set_catalog(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_catalog(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.catalog = input;
         self
     }

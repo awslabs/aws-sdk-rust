@@ -2,32 +2,32 @@
 
 /// <p>A collection of attributes of the host from which the finding is generated.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssetAttributes {
     /// <p>The schema version of this data type.</p>
     #[doc(hidden)]
     pub schema_version: i32,
     /// <p>The ID of the agent that is installed on the EC2 instance where the finding is generated.</p>
     #[doc(hidden)]
-    pub agent_id: std::option::Option<std::string::String>,
+    pub agent_id: ::std::option::Option<::std::string::String>,
     /// <p>The Auto Scaling group of the EC2 instance where the finding is generated.</p>
     #[doc(hidden)]
-    pub auto_scaling_group: std::option::Option<std::string::String>,
+    pub auto_scaling_group: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Machine Image (AMI) that is installed on the EC2 instance where the finding is generated.</p>
     #[doc(hidden)]
-    pub ami_id: std::option::Option<std::string::String>,
+    pub ami_id: ::std::option::Option<::std::string::String>,
     /// <p>The hostname of the EC2 instance where the finding is generated.</p>
     #[doc(hidden)]
-    pub hostname: std::option::Option<std::string::String>,
+    pub hostname: ::std::option::Option<::std::string::String>,
     /// <p>The list of IP v4 addresses of the EC2 instance where the finding is generated.</p>
     #[doc(hidden)]
-    pub ipv4_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub ipv4_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The tags related to the EC2 instance where the finding is generated.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>An array of the network interfaces interacting with the EC2 instance where the finding is generated.</p>
     #[doc(hidden)]
-    pub network_interfaces: std::option::Option<std::vec::Vec<crate::types::NetworkInterface>>,
+    pub network_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>,
 }
 impl AssetAttributes {
     /// <p>The schema version of this data type.</p>
@@ -35,31 +35,31 @@ impl AssetAttributes {
         self.schema_version
     }
     /// <p>The ID of the agent that is installed on the EC2 instance where the finding is generated.</p>
-    pub fn agent_id(&self) -> std::option::Option<&str> {
+    pub fn agent_id(&self) -> ::std::option::Option<&str> {
         self.agent_id.as_deref()
     }
     /// <p>The Auto Scaling group of the EC2 instance where the finding is generated.</p>
-    pub fn auto_scaling_group(&self) -> std::option::Option<&str> {
+    pub fn auto_scaling_group(&self) -> ::std::option::Option<&str> {
         self.auto_scaling_group.as_deref()
     }
     /// <p>The ID of the Amazon Machine Image (AMI) that is installed on the EC2 instance where the finding is generated.</p>
-    pub fn ami_id(&self) -> std::option::Option<&str> {
+    pub fn ami_id(&self) -> ::std::option::Option<&str> {
         self.ami_id.as_deref()
     }
     /// <p>The hostname of the EC2 instance where the finding is generated.</p>
-    pub fn hostname(&self) -> std::option::Option<&str> {
+    pub fn hostname(&self) -> ::std::option::Option<&str> {
         self.hostname.as_deref()
     }
     /// <p>The list of IP v4 addresses of the EC2 instance where the finding is generated.</p>
-    pub fn ipv4_addresses(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn ipv4_addresses(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.ipv4_addresses.as_deref()
     }
     /// <p>The tags related to the EC2 instance where the finding is generated.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>An array of the network interfaces interacting with the EC2 instance where the finding is generated.</p>
-    pub fn network_interfaces(&self) -> std::option::Option<&[crate::types::NetworkInterface]> {
+    pub fn network_interfaces(&self) -> ::std::option::Option<&[crate::types::NetworkInterface]> {
         self.network_interfaces.as_deref()
     }
 }
@@ -72,69 +72,74 @@ impl AssetAttributes {
 
 /// A builder for [`AssetAttributes`](crate::types::AssetAttributes).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AssetAttributesBuilder {
-    pub(crate) schema_version: std::option::Option<i32>,
-    pub(crate) agent_id: std::option::Option<std::string::String>,
-    pub(crate) auto_scaling_group: std::option::Option<std::string::String>,
-    pub(crate) ami_id: std::option::Option<std::string::String>,
-    pub(crate) hostname: std::option::Option<std::string::String>,
-    pub(crate) ipv4_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub(crate) schema_version: ::std::option::Option<i32>,
+    pub(crate) agent_id: ::std::option::Option<::std::string::String>,
+    pub(crate) auto_scaling_group: ::std::option::Option<::std::string::String>,
+    pub(crate) ami_id: ::std::option::Option<::std::string::String>,
+    pub(crate) hostname: ::std::option::Option<::std::string::String>,
+    pub(crate) ipv4_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) network_interfaces:
-        std::option::Option<std::vec::Vec<crate::types::NetworkInterface>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>,
 }
 impl AssetAttributesBuilder {
     /// <p>The schema version of this data type.</p>
     pub fn schema_version(mut self, input: i32) -> Self {
-        self.schema_version = Some(input);
+        self.schema_version = ::std::option::Option::Some(input);
         self
     }
     /// <p>The schema version of this data type.</p>
-    pub fn set_schema_version(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_schema_version(mut self, input: ::std::option::Option<i32>) -> Self {
         self.schema_version = input;
         self
     }
     /// <p>The ID of the agent that is installed on the EC2 instance where the finding is generated.</p>
-    pub fn agent_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.agent_id = Some(input.into());
+    pub fn agent_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.agent_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the agent that is installed on the EC2 instance where the finding is generated.</p>
-    pub fn set_agent_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_agent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.agent_id = input;
         self
     }
     /// <p>The Auto Scaling group of the EC2 instance where the finding is generated.</p>
-    pub fn auto_scaling_group(mut self, input: impl Into<std::string::String>) -> Self {
-        self.auto_scaling_group = Some(input.into());
+    pub fn auto_scaling_group(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.auto_scaling_group = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Auto Scaling group of the EC2 instance where the finding is generated.</p>
     pub fn set_auto_scaling_group(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.auto_scaling_group = input;
         self
     }
     /// <p>The ID of the Amazon Machine Image (AMI) that is installed on the EC2 instance where the finding is generated.</p>
-    pub fn ami_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ami_id = Some(input.into());
+    pub fn ami_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ami_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Machine Image (AMI) that is installed on the EC2 instance where the finding is generated.</p>
-    pub fn set_ami_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ami_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ami_id = input;
         self
     }
     /// <p>The hostname of the EC2 instance where the finding is generated.</p>
-    pub fn hostname(mut self, input: impl Into<std::string::String>) -> Self {
-        self.hostname = Some(input.into());
+    pub fn hostname(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.hostname = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The hostname of the EC2 instance where the finding is generated.</p>
-    pub fn set_hostname(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_hostname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hostname = input;
         self
     }
@@ -143,16 +148,19 @@ impl AssetAttributesBuilder {
     /// To override the contents of this collection use [`set_ipv4_addresses`](Self::set_ipv4_addresses).
     ///
     /// <p>The list of IP v4 addresses of the EC2 instance where the finding is generated.</p>
-    pub fn ipv4_addresses(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn ipv4_addresses(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.ipv4_addresses.unwrap_or_default();
         v.push(input.into());
-        self.ipv4_addresses = Some(v);
+        self.ipv4_addresses = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of IP v4 addresses of the EC2 instance where the finding is generated.</p>
     pub fn set_ipv4_addresses(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.ipv4_addresses = input;
         self
@@ -165,13 +173,13 @@ impl AssetAttributesBuilder {
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
-        self.tags = Some(v);
+        self.tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>The tags related to the EC2 instance where the finding is generated.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tags = input;
         self
@@ -184,13 +192,13 @@ impl AssetAttributesBuilder {
     pub fn network_interfaces(mut self, input: crate::types::NetworkInterface) -> Self {
         let mut v = self.network_interfaces.unwrap_or_default();
         v.push(input);
-        self.network_interfaces = Some(v);
+        self.network_interfaces = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of the network interfaces interacting with the EC2 instance where the finding is generated.</p>
     pub fn set_network_interfaces(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::NetworkInterface>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>,
     ) -> Self {
         self.network_interfaces = input;
         self

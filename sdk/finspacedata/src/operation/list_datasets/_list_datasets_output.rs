@@ -2,27 +2,27 @@
 
 /// Response for the ListDatasets operation
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDatasetsOutput {
     /// <p>List of Datasets.</p>
     #[doc(hidden)]
-    pub datasets: std::option::Option<std::vec::Vec<crate::types::Dataset>>,
+    pub datasets: ::std::option::Option<::std::vec::Vec<crate::types::Dataset>>,
     /// <p>A token that indicates where a results page should begin.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListDatasetsOutput {
     /// <p>List of Datasets.</p>
-    pub fn datasets(&self) -> std::option::Option<&[crate::types::Dataset]> {
+    pub fn datasets(&self) -> ::std::option::Option<&[crate::types::Dataset]> {
         self.datasets.as_deref()
     }
     /// <p>A token that indicates where a results page should begin.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListDatasetsOutput {
+impl ::aws_http::request_id::RequestId for ListDatasetsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -36,10 +36,12 @@ impl ListDatasetsOutput {
 
 /// A builder for [`ListDatasetsOutput`](crate::operation::list_datasets::ListDatasetsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListDatasetsOutputBuilder {
-    pub(crate) datasets: std::option::Option<std::vec::Vec<crate::types::Dataset>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) datasets: ::std::option::Option<::std::vec::Vec<crate::types::Dataset>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListDatasetsOutputBuilder {
@@ -51,24 +53,24 @@ impl ListDatasetsOutputBuilder {
     pub fn datasets(mut self, input: crate::types::Dataset) -> Self {
         let mut v = self.datasets.unwrap_or_default();
         v.push(input);
-        self.datasets = Some(v);
+        self.datasets = ::std::option::Option::Some(v);
         self
     }
     /// <p>List of Datasets.</p>
     pub fn set_datasets(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Dataset>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Dataset>>,
     ) -> Self {
         self.datasets = input;
         self
     }
     /// <p>A token that indicates where a results page should begin.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A token that indicates where a results page should begin.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

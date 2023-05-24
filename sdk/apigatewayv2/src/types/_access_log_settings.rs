@@ -2,22 +2,22 @@
 
 /// <p>Settings for logging access in a stage.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccessLogSettings {
     /// <p>The ARN of the CloudWatch Logs log group to receive access logs.</p>
     #[doc(hidden)]
-    pub destination_arn: std::option::Option<std::string::String>,
+    pub destination_arn: ::std::option::Option<::std::string::String>,
     /// <p>A single line format of the access logs of data, as specified by selected $context variables. The format must include at least $context.requestId.</p>
     #[doc(hidden)]
-    pub format: std::option::Option<std::string::String>,
+    pub format: ::std::option::Option<::std::string::String>,
 }
 impl AccessLogSettings {
     /// <p>The ARN of the CloudWatch Logs log group to receive access logs.</p>
-    pub fn destination_arn(&self) -> std::option::Option<&str> {
+    pub fn destination_arn(&self) -> ::std::option::Option<&str> {
         self.destination_arn.as_deref()
     }
     /// <p>A single line format of the access logs of data, as specified by selected $context variables. The format must include at least $context.requestId.</p>
-    pub fn format(&self) -> std::option::Option<&str> {
+    pub fn format(&self) -> ::std::option::Option<&str> {
         self.format.as_deref()
     }
 }
@@ -30,29 +30,37 @@ impl AccessLogSettings {
 
 /// A builder for [`AccessLogSettings`](crate::types::AccessLogSettings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AccessLogSettingsBuilder {
-    pub(crate) destination_arn: std::option::Option<std::string::String>,
-    pub(crate) format: std::option::Option<std::string::String>,
+    pub(crate) destination_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) format: ::std::option::Option<::std::string::String>,
 }
 impl AccessLogSettingsBuilder {
     /// <p>The ARN of the CloudWatch Logs log group to receive access logs.</p>
-    pub fn destination_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.destination_arn = Some(input.into());
+    pub fn destination_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.destination_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the CloudWatch Logs log group to receive access logs.</p>
-    pub fn set_destination_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_destination_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.destination_arn = input;
         self
     }
     /// <p>A single line format of the access logs of data, as specified by selected $context variables. The format must include at least $context.requestId.</p>
-    pub fn format(mut self, input: impl Into<std::string::String>) -> Self {
-        self.format = Some(input.into());
+    pub fn format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.format = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A single line format of the access logs of data, as specified by selected $context variables. The format must include at least $context.requestId.</p>
-    pub fn set_format(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.format = input;
         self
     }

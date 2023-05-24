@@ -2,22 +2,22 @@
 
 /// Contains any warning codes and their count for the job.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WarningGroup {
     /// Warning code that identifies a specific warning in the job. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/warning_codes.html
     #[doc(hidden)]
-    pub code: std::option::Option<i32>,
+    pub code: ::std::option::Option<i32>,
     /// The number of times this warning occurred in the job.
     #[doc(hidden)]
-    pub count: std::option::Option<i32>,
+    pub count: ::std::option::Option<i32>,
 }
 impl WarningGroup {
     /// Warning code that identifies a specific warning in the job. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/warning_codes.html
-    pub fn code(&self) -> std::option::Option<i32> {
+    pub fn code(&self) -> ::std::option::Option<i32> {
         self.code
     }
     /// The number of times this warning occurred in the job.
-    pub fn count(&self) -> std::option::Option<i32> {
+    pub fn count(&self) -> ::std::option::Option<i32> {
         self.count
     }
 }
@@ -30,29 +30,31 @@ impl WarningGroup {
 
 /// A builder for [`WarningGroup`](crate::types::WarningGroup).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct WarningGroupBuilder {
-    pub(crate) code: std::option::Option<i32>,
-    pub(crate) count: std::option::Option<i32>,
+    pub(crate) code: ::std::option::Option<i32>,
+    pub(crate) count: ::std::option::Option<i32>,
 }
 impl WarningGroupBuilder {
     /// Warning code that identifies a specific warning in the job. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/warning_codes.html
     pub fn code(mut self, input: i32) -> Self {
-        self.code = Some(input);
+        self.code = ::std::option::Option::Some(input);
         self
     }
     /// Warning code that identifies a specific warning in the job. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/warning_codes.html
-    pub fn set_code(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_code(mut self, input: ::std::option::Option<i32>) -> Self {
         self.code = input;
         self
     }
     /// The number of times this warning occurred in the job.
     pub fn count(mut self, input: i32) -> Self {
-        self.count = Some(input);
+        self.count = ::std::option::Option::Some(input);
         self
     }
     /// The number of times this warning occurred in the job.
-    pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.count = input;
         self
     }

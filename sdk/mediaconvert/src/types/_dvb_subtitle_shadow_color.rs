@@ -40,13 +40,13 @@
 /// Specify the color of the shadow cast by the captions. Leave Shadow color (ShadowColor) blank and set Style passthrough (StylePassthrough) to enabled to use the shadow color data from your input captions, if present. Within your job settings, all of your DVB-Sub settings must be identical.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum DvbSubtitleShadowColor {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,7 +60,7 @@ pub enum DvbSubtitleShadowColor {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for DvbSubtitleShadowColor {
+impl ::std::convert::From<&str> for DvbSubtitleShadowColor {
     fn from(s: &str) -> Self {
         match s {
             "AUTO" => DvbSubtitleShadowColor::Auto,
@@ -73,11 +73,11 @@ impl std::convert::From<&str> for DvbSubtitleShadowColor {
         }
     }
 }
-impl std::str::FromStr for DvbSubtitleShadowColor {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for DvbSubtitleShadowColor {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DvbSubtitleShadowColor::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(DvbSubtitleShadowColor::from(s))
     }
 }
 impl DvbSubtitleShadowColor {
@@ -96,7 +96,7 @@ impl DvbSubtitleShadowColor {
         &["AUTO", "BLACK", "NONE", "WHITE"]
     }
 }
-impl AsRef<str> for DvbSubtitleShadowColor {
+impl ::std::convert::AsRef<str> for DvbSubtitleShadowColor {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

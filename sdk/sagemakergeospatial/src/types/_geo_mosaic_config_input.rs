@@ -2,22 +2,22 @@
 
 /// <p>Input configuration information for the geomosaic.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GeoMosaicConfigInput {
     /// <p>The name of the algorithm being used for geomosaic.</p>
     #[doc(hidden)]
-    pub algorithm_name: std::option::Option<crate::types::AlgorithmNameGeoMosaic>,
+    pub algorithm_name: ::std::option::Option<crate::types::AlgorithmNameGeoMosaic>,
     /// <p>The target bands for geomosaic.</p>
     #[doc(hidden)]
-    pub target_bands: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub target_bands: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl GeoMosaicConfigInput {
     /// <p>The name of the algorithm being used for geomosaic.</p>
-    pub fn algorithm_name(&self) -> std::option::Option<&crate::types::AlgorithmNameGeoMosaic> {
+    pub fn algorithm_name(&self) -> ::std::option::Option<&crate::types::AlgorithmNameGeoMosaic> {
         self.algorithm_name.as_ref()
     }
     /// <p>The target bands for geomosaic.</p>
-    pub fn target_bands(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn target_bands(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.target_bands.as_deref()
     }
 }
@@ -30,21 +30,23 @@ impl GeoMosaicConfigInput {
 
 /// A builder for [`GeoMosaicConfigInput`](crate::types::GeoMosaicConfigInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GeoMosaicConfigInputBuilder {
-    pub(crate) algorithm_name: std::option::Option<crate::types::AlgorithmNameGeoMosaic>,
-    pub(crate) target_bands: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) algorithm_name: ::std::option::Option<crate::types::AlgorithmNameGeoMosaic>,
+    pub(crate) target_bands: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl GeoMosaicConfigInputBuilder {
     /// <p>The name of the algorithm being used for geomosaic.</p>
     pub fn algorithm_name(mut self, input: crate::types::AlgorithmNameGeoMosaic) -> Self {
-        self.algorithm_name = Some(input);
+        self.algorithm_name = ::std::option::Option::Some(input);
         self
     }
     /// <p>The name of the algorithm being used for geomosaic.</p>
     pub fn set_algorithm_name(
         mut self,
-        input: std::option::Option<crate::types::AlgorithmNameGeoMosaic>,
+        input: ::std::option::Option<crate::types::AlgorithmNameGeoMosaic>,
     ) -> Self {
         self.algorithm_name = input;
         self
@@ -54,16 +56,16 @@ impl GeoMosaicConfigInputBuilder {
     /// To override the contents of this collection use [`set_target_bands`](Self::set_target_bands).
     ///
     /// <p>The target bands for geomosaic.</p>
-    pub fn target_bands(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn target_bands(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.target_bands.unwrap_or_default();
         v.push(input.into());
-        self.target_bands = Some(v);
+        self.target_bands = ::std::option::Option::Some(v);
         self
     }
     /// <p>The target bands for geomosaic.</p>
     pub fn set_target_bands(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.target_bands = input;
         self

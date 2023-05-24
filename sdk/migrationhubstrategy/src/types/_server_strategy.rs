@@ -2,36 +2,36 @@
 
 /// <p> Contains information about a strategy recommendation for a server. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServerStrategy {
     /// <p> Strategy recommendation for the server. </p>
     #[doc(hidden)]
-    pub recommendation: std::option::Option<crate::types::RecommendationSet>,
+    pub recommendation: ::std::option::Option<crate::types::RecommendationSet>,
     /// <p> The recommendation status of the strategy for the server. </p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::StrategyRecommendation>,
+    pub status: ::std::option::Option<crate::types::StrategyRecommendation>,
     /// <p> The number of application components with this strategy recommendation running on the server. </p>
     #[doc(hidden)]
-    pub number_of_application_components: std::option::Option<i32>,
+    pub number_of_application_components: ::std::option::Option<i32>,
     /// <p> Set to true if the recommendation is set as preferred. </p>
     #[doc(hidden)]
-    pub is_preferred: std::option::Option<bool>,
+    pub is_preferred: ::std::option::Option<bool>,
 }
 impl ServerStrategy {
     /// <p> Strategy recommendation for the server. </p>
-    pub fn recommendation(&self) -> std::option::Option<&crate::types::RecommendationSet> {
+    pub fn recommendation(&self) -> ::std::option::Option<&crate::types::RecommendationSet> {
         self.recommendation.as_ref()
     }
     /// <p> The recommendation status of the strategy for the server. </p>
-    pub fn status(&self) -> std::option::Option<&crate::types::StrategyRecommendation> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::StrategyRecommendation> {
         self.status.as_ref()
     }
     /// <p> The number of application components with this strategy recommendation running on the server. </p>
-    pub fn number_of_application_components(&self) -> std::option::Option<i32> {
+    pub fn number_of_application_components(&self) -> ::std::option::Option<i32> {
         self.number_of_application_components
     }
     /// <p> Set to true if the recommendation is set as preferred. </p>
-    pub fn is_preferred(&self) -> std::option::Option<bool> {
+    pub fn is_preferred(&self) -> ::std::option::Option<bool> {
         self.is_preferred
     }
 }
@@ -44,57 +44,62 @@ impl ServerStrategy {
 
 /// A builder for [`ServerStrategy`](crate::types::ServerStrategy).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ServerStrategyBuilder {
-    pub(crate) recommendation: std::option::Option<crate::types::RecommendationSet>,
-    pub(crate) status: std::option::Option<crate::types::StrategyRecommendation>,
-    pub(crate) number_of_application_components: std::option::Option<i32>,
-    pub(crate) is_preferred: std::option::Option<bool>,
+    pub(crate) recommendation: ::std::option::Option<crate::types::RecommendationSet>,
+    pub(crate) status: ::std::option::Option<crate::types::StrategyRecommendation>,
+    pub(crate) number_of_application_components: ::std::option::Option<i32>,
+    pub(crate) is_preferred: ::std::option::Option<bool>,
 }
 impl ServerStrategyBuilder {
     /// <p> Strategy recommendation for the server. </p>
     pub fn recommendation(mut self, input: crate::types::RecommendationSet) -> Self {
-        self.recommendation = Some(input);
+        self.recommendation = ::std::option::Option::Some(input);
         self
     }
     /// <p> Strategy recommendation for the server. </p>
     pub fn set_recommendation(
         mut self,
-        input: std::option::Option<crate::types::RecommendationSet>,
+        input: ::std::option::Option<crate::types::RecommendationSet>,
     ) -> Self {
         self.recommendation = input;
         self
     }
     /// <p> The recommendation status of the strategy for the server. </p>
     pub fn status(mut self, input: crate::types::StrategyRecommendation) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p> The recommendation status of the strategy for the server. </p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::StrategyRecommendation>,
+        input: ::std::option::Option<crate::types::StrategyRecommendation>,
     ) -> Self {
         self.status = input;
         self
     }
     /// <p> The number of application components with this strategy recommendation running on the server. </p>
     pub fn number_of_application_components(mut self, input: i32) -> Self {
-        self.number_of_application_components = Some(input);
+        self.number_of_application_components = ::std::option::Option::Some(input);
         self
     }
     /// <p> The number of application components with this strategy recommendation running on the server. </p>
-    pub fn set_number_of_application_components(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_number_of_application_components(
+        mut self,
+        input: ::std::option::Option<i32>,
+    ) -> Self {
         self.number_of_application_components = input;
         self
     }
     /// <p> Set to true if the recommendation is set as preferred. </p>
     pub fn is_preferred(mut self, input: bool) -> Self {
-        self.is_preferred = Some(input);
+        self.is_preferred = ::std::option::Option::Some(input);
         self
     }
     /// <p> Set to true if the recommendation is set as preferred. </p>
-    pub fn set_is_preferred(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_preferred(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_preferred = input;
         self
     }

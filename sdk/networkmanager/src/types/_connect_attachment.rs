@@ -2,29 +2,29 @@
 
 /// <p>Describes a core network Connect attachment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConnectAttachment {
     /// <p>The attachment details.</p>
     #[doc(hidden)]
-    pub attachment: std::option::Option<crate::types::Attachment>,
+    pub attachment: ::std::option::Option<crate::types::Attachment>,
     /// <p>The ID of the transport attachment.</p>
     #[doc(hidden)]
-    pub transport_attachment_id: std::option::Option<std::string::String>,
+    pub transport_attachment_id: ::std::option::Option<::std::string::String>,
     /// <p>Options for connecting an attachment.</p>
     #[doc(hidden)]
-    pub options: std::option::Option<crate::types::ConnectAttachmentOptions>,
+    pub options: ::std::option::Option<crate::types::ConnectAttachmentOptions>,
 }
 impl ConnectAttachment {
     /// <p>The attachment details.</p>
-    pub fn attachment(&self) -> std::option::Option<&crate::types::Attachment> {
+    pub fn attachment(&self) -> ::std::option::Option<&crate::types::Attachment> {
         self.attachment.as_ref()
     }
     /// <p>The ID of the transport attachment.</p>
-    pub fn transport_attachment_id(&self) -> std::option::Option<&str> {
+    pub fn transport_attachment_id(&self) -> ::std::option::Option<&str> {
         self.transport_attachment_id.as_deref()
     }
     /// <p>Options for connecting an attachment.</p>
-    pub fn options(&self) -> std::option::Option<&crate::types::ConnectAttachmentOptions> {
+    pub fn options(&self) -> ::std::option::Option<&crate::types::ConnectAttachmentOptions> {
         self.options.as_ref()
     }
 }
@@ -37,45 +37,53 @@ impl ConnectAttachment {
 
 /// A builder for [`ConnectAttachment`](crate::types::ConnectAttachment).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ConnectAttachmentBuilder {
-    pub(crate) attachment: std::option::Option<crate::types::Attachment>,
-    pub(crate) transport_attachment_id: std::option::Option<std::string::String>,
-    pub(crate) options: std::option::Option<crate::types::ConnectAttachmentOptions>,
+    pub(crate) attachment: ::std::option::Option<crate::types::Attachment>,
+    pub(crate) transport_attachment_id: ::std::option::Option<::std::string::String>,
+    pub(crate) options: ::std::option::Option<crate::types::ConnectAttachmentOptions>,
 }
 impl ConnectAttachmentBuilder {
     /// <p>The attachment details.</p>
     pub fn attachment(mut self, input: crate::types::Attachment) -> Self {
-        self.attachment = Some(input);
+        self.attachment = ::std::option::Option::Some(input);
         self
     }
     /// <p>The attachment details.</p>
-    pub fn set_attachment(mut self, input: std::option::Option<crate::types::Attachment>) -> Self {
+    pub fn set_attachment(
+        mut self,
+        input: ::std::option::Option<crate::types::Attachment>,
+    ) -> Self {
         self.attachment = input;
         self
     }
     /// <p>The ID of the transport attachment.</p>
-    pub fn transport_attachment_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.transport_attachment_id = Some(input.into());
+    pub fn transport_attachment_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.transport_attachment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the transport attachment.</p>
     pub fn set_transport_attachment_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.transport_attachment_id = input;
         self
     }
     /// <p>Options for connecting an attachment.</p>
     pub fn options(mut self, input: crate::types::ConnectAttachmentOptions) -> Self {
-        self.options = Some(input);
+        self.options = ::std::option::Option::Some(input);
         self
     }
     /// <p>Options for connecting an attachment.</p>
     pub fn set_options(
         mut self,
-        input: std::option::Option<crate::types::ConnectAttachmentOptions>,
+        input: ::std::option::Option<crate::types::ConnectAttachmentOptions>,
     ) -> Self {
         self.options = input;
         self

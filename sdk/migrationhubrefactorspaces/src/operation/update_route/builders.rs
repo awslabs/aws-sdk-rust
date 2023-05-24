@@ -6,56 +6,59 @@ pub use crate::operation::update_route::_update_route_input::UpdateRouteInputBui
 /// Fluent builder constructing a request to `UpdateRoute`.
 ///
 /// <p> Updates an Amazon Web Services Migration Hub Refactor Spaces route. </p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateRouteFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::update_route::builders::UpdateRouteInputBuilder,
 }
 impl UpdateRouteFluentBuilder {
     /// Creates a new `UpdateRoute`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_route::UpdateRoute,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::update_route::UpdateRouteError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_route::UpdateRouteError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_route::UpdateRouteOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_route::UpdateRouteError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_route::UpdateRouteError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,45 +71,57 @@ impl UpdateRouteFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_route::UpdateRouteOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_route::UpdateRouteError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_route::UpdateRouteError>,
     > {
         self.send_middleware().await
     }
     /// <p> The ID of the environment in which the route is being updated. </p>
-    pub fn environment_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn environment_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.environment_identifier(input.into());
         self
     }
     /// <p> The ID of the environment in which the route is being updated. </p>
     pub fn set_environment_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_environment_identifier(input);
         self
     }
     /// <p> The ID of the application within which the route is being updated. </p>
-    pub fn application_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn application_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.application_identifier(input.into());
         self
     }
     /// <p> The ID of the application within which the route is being updated. </p>
     pub fn set_application_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_application_identifier(input);
         self
     }
     /// <p> The unique identifier of the route to update. </p>
-    pub fn route_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn route_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.route_identifier(input.into());
         self
     }
     /// <p> The unique identifier of the route to update. </p>
-    pub fn set_route_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_route_identifier(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_route_identifier(input);
         self
     }
@@ -118,7 +133,7 @@ impl UpdateRouteFluentBuilder {
     /// <p> If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service after the route is updated. </p>
     pub fn set_activation_state(
         mut self,
-        input: std::option::Option<crate::types::RouteActivationState>,
+        input: ::std::option::Option<crate::types::RouteActivationState>,
     ) -> Self {
         self.inner = self.inner.set_activation_state(input);
         self

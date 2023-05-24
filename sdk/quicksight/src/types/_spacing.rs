@@ -2,36 +2,36 @@
 
 /// <p>The configuration of spacing (often a margin or padding).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Spacing {
     /// <p>Define the top spacing.</p>
     #[doc(hidden)]
-    pub top: std::option::Option<std::string::String>,
+    pub top: ::std::option::Option<::std::string::String>,
     /// <p>Define the bottom spacing.</p>
     #[doc(hidden)]
-    pub bottom: std::option::Option<std::string::String>,
+    pub bottom: ::std::option::Option<::std::string::String>,
     /// <p>Define the left spacing.</p>
     #[doc(hidden)]
-    pub left: std::option::Option<std::string::String>,
+    pub left: ::std::option::Option<::std::string::String>,
     /// <p>Define the right spacing.</p>
     #[doc(hidden)]
-    pub right: std::option::Option<std::string::String>,
+    pub right: ::std::option::Option<::std::string::String>,
 }
 impl Spacing {
     /// <p>Define the top spacing.</p>
-    pub fn top(&self) -> std::option::Option<&str> {
+    pub fn top(&self) -> ::std::option::Option<&str> {
         self.top.as_deref()
     }
     /// <p>Define the bottom spacing.</p>
-    pub fn bottom(&self) -> std::option::Option<&str> {
+    pub fn bottom(&self) -> ::std::option::Option<&str> {
         self.bottom.as_deref()
     }
     /// <p>Define the left spacing.</p>
-    pub fn left(&self) -> std::option::Option<&str> {
+    pub fn left(&self) -> ::std::option::Option<&str> {
         self.left.as_deref()
     }
     /// <p>Define the right spacing.</p>
-    pub fn right(&self) -> std::option::Option<&str> {
+    pub fn right(&self) -> ::std::option::Option<&str> {
         self.right.as_deref()
     }
 }
@@ -44,51 +44,53 @@ impl Spacing {
 
 /// A builder for [`Spacing`](crate::types::Spacing).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SpacingBuilder {
-    pub(crate) top: std::option::Option<std::string::String>,
-    pub(crate) bottom: std::option::Option<std::string::String>,
-    pub(crate) left: std::option::Option<std::string::String>,
-    pub(crate) right: std::option::Option<std::string::String>,
+    pub(crate) top: ::std::option::Option<::std::string::String>,
+    pub(crate) bottom: ::std::option::Option<::std::string::String>,
+    pub(crate) left: ::std::option::Option<::std::string::String>,
+    pub(crate) right: ::std::option::Option<::std::string::String>,
 }
 impl SpacingBuilder {
     /// <p>Define the top spacing.</p>
-    pub fn top(mut self, input: impl Into<std::string::String>) -> Self {
-        self.top = Some(input.into());
+    pub fn top(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.top = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Define the top spacing.</p>
-    pub fn set_top(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_top(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.top = input;
         self
     }
     /// <p>Define the bottom spacing.</p>
-    pub fn bottom(mut self, input: impl Into<std::string::String>) -> Self {
-        self.bottom = Some(input.into());
+    pub fn bottom(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.bottom = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Define the bottom spacing.</p>
-    pub fn set_bottom(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_bottom(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bottom = input;
         self
     }
     /// <p>Define the left spacing.</p>
-    pub fn left(mut self, input: impl Into<std::string::String>) -> Self {
-        self.left = Some(input.into());
+    pub fn left(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.left = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Define the left spacing.</p>
-    pub fn set_left(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_left(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.left = input;
         self
     }
     /// <p>Define the right spacing.</p>
-    pub fn right(mut self, input: impl Into<std::string::String>) -> Self {
-        self.right = Some(input.into());
+    pub fn right(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.right = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Define the right spacing.</p>
-    pub fn set_right(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_right(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.right = input;
         self
     }

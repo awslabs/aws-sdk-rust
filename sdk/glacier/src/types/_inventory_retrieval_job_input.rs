@@ -2,36 +2,36 @@
 
 /// <p>Provides options for specifying a range inventory retrieval job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InventoryRetrievalJobInput {
     /// <p>The start of the date range in UTC for vault inventory retrieval that includes archives created on or after this date. This value should be a string in the ISO 8601 date format, for example <code>2013-03-20T17:03:43Z</code>.</p>
     #[doc(hidden)]
-    pub start_date: std::option::Option<std::string::String>,
+    pub start_date: ::std::option::Option<::std::string::String>,
     /// <p>The end of the date range in UTC for vault inventory retrieval that includes archives created before this date. This value should be a string in the ISO 8601 date format, for example <code>2013-03-20T17:03:43Z</code>.</p>
     #[doc(hidden)]
-    pub end_date: std::option::Option<std::string::String>,
+    pub end_date: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the maximum number of inventory items returned per vault inventory retrieval request. Valid values are greater than or equal to 1.</p>
     #[doc(hidden)]
-    pub limit: std::option::Option<std::string::String>,
+    pub limit: ::std::option::Option<::std::string::String>,
     /// <p>An opaque string that represents where to continue pagination of the vault inventory retrieval results. You use the marker in a new <b>InitiateJob</b> request to obtain additional inventory items. If there are no more inventory items, this value is <code>null</code>.</p>
     #[doc(hidden)]
-    pub marker: std::option::Option<std::string::String>,
+    pub marker: ::std::option::Option<::std::string::String>,
 }
 impl InventoryRetrievalJobInput {
     /// <p>The start of the date range in UTC for vault inventory retrieval that includes archives created on or after this date. This value should be a string in the ISO 8601 date format, for example <code>2013-03-20T17:03:43Z</code>.</p>
-    pub fn start_date(&self) -> std::option::Option<&str> {
+    pub fn start_date(&self) -> ::std::option::Option<&str> {
         self.start_date.as_deref()
     }
     /// <p>The end of the date range in UTC for vault inventory retrieval that includes archives created before this date. This value should be a string in the ISO 8601 date format, for example <code>2013-03-20T17:03:43Z</code>.</p>
-    pub fn end_date(&self) -> std::option::Option<&str> {
+    pub fn end_date(&self) -> ::std::option::Option<&str> {
         self.end_date.as_deref()
     }
     /// <p>Specifies the maximum number of inventory items returned per vault inventory retrieval request. Valid values are greater than or equal to 1.</p>
-    pub fn limit(&self) -> std::option::Option<&str> {
+    pub fn limit(&self) -> ::std::option::Option<&str> {
         self.limit.as_deref()
     }
     /// <p>An opaque string that represents where to continue pagination of the vault inventory retrieval results. You use the marker in a new <b>InitiateJob</b> request to obtain additional inventory items. If there are no more inventory items, this value is <code>null</code>.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
 }
@@ -44,51 +44,53 @@ impl InventoryRetrievalJobInput {
 
 /// A builder for [`InventoryRetrievalJobInput`](crate::types::InventoryRetrievalJobInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InventoryRetrievalJobInputBuilder {
-    pub(crate) start_date: std::option::Option<std::string::String>,
-    pub(crate) end_date: std::option::Option<std::string::String>,
-    pub(crate) limit: std::option::Option<std::string::String>,
-    pub(crate) marker: std::option::Option<std::string::String>,
+    pub(crate) start_date: ::std::option::Option<::std::string::String>,
+    pub(crate) end_date: ::std::option::Option<::std::string::String>,
+    pub(crate) limit: ::std::option::Option<::std::string::String>,
+    pub(crate) marker: ::std::option::Option<::std::string::String>,
 }
 impl InventoryRetrievalJobInputBuilder {
     /// <p>The start of the date range in UTC for vault inventory retrieval that includes archives created on or after this date. This value should be a string in the ISO 8601 date format, for example <code>2013-03-20T17:03:43Z</code>.</p>
-    pub fn start_date(mut self, input: impl Into<std::string::String>) -> Self {
-        self.start_date = Some(input.into());
+    pub fn start_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.start_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The start of the date range in UTC for vault inventory retrieval that includes archives created on or after this date. This value should be a string in the ISO 8601 date format, for example <code>2013-03-20T17:03:43Z</code>.</p>
-    pub fn set_start_date(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_start_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.start_date = input;
         self
     }
     /// <p>The end of the date range in UTC for vault inventory retrieval that includes archives created before this date. This value should be a string in the ISO 8601 date format, for example <code>2013-03-20T17:03:43Z</code>.</p>
-    pub fn end_date(mut self, input: impl Into<std::string::String>) -> Self {
-        self.end_date = Some(input.into());
+    pub fn end_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.end_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The end of the date range in UTC for vault inventory retrieval that includes archives created before this date. This value should be a string in the ISO 8601 date format, for example <code>2013-03-20T17:03:43Z</code>.</p>
-    pub fn set_end_date(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_end_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.end_date = input;
         self
     }
     /// <p>Specifies the maximum number of inventory items returned per vault inventory retrieval request. Valid values are greater than or equal to 1.</p>
-    pub fn limit(mut self, input: impl Into<std::string::String>) -> Self {
-        self.limit = Some(input.into());
+    pub fn limit(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.limit = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the maximum number of inventory items returned per vault inventory retrieval request. Valid values are greater than or equal to 1.</p>
-    pub fn set_limit(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_limit(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.limit = input;
         self
     }
     /// <p>An opaque string that represents where to continue pagination of the vault inventory retrieval results. You use the marker in a new <b>InitiateJob</b> request to obtain additional inventory items. If there are no more inventory items, this value is <code>null</code>.</p>
-    pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-        self.marker = Some(input.into());
+    pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An opaque string that represents where to continue pagination of the vault inventory retrieval results. You use the marker in a new <b>InitiateJob</b> request to obtain additional inventory items. If there are no more inventory items, this value is <code>null</code>.</p>
-    pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
     }

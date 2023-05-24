@@ -2,29 +2,29 @@
 
 /// <p>Information about a pipeline.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PipelineMetadata {
     /// <p>The Amazon Resource Name (ARN) of the pipeline.</p>
     #[doc(hidden)]
-    pub pipeline_arn: std::option::Option<std::string::String>,
+    pub pipeline_arn: ::std::option::Option<::std::string::String>,
     /// <p>The date and time the pipeline was created, in timestamp format.</p>
     #[doc(hidden)]
-    pub created: std::option::Option<aws_smithy_types::DateTime>,
+    pub created: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time the pipeline was last updated, in timestamp format.</p>
     #[doc(hidden)]
-    pub updated: std::option::Option<aws_smithy_types::DateTime>,
+    pub updated: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl PipelineMetadata {
     /// <p>The Amazon Resource Name (ARN) of the pipeline.</p>
-    pub fn pipeline_arn(&self) -> std::option::Option<&str> {
+    pub fn pipeline_arn(&self) -> ::std::option::Option<&str> {
         self.pipeline_arn.as_deref()
     }
     /// <p>The date and time the pipeline was created, in timestamp format.</p>
-    pub fn created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
     /// <p>The date and time the pipeline was last updated, in timestamp format.</p>
-    pub fn updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.updated.as_ref()
     }
 }
@@ -37,40 +37,48 @@ impl PipelineMetadata {
 
 /// A builder for [`PipelineMetadata`](crate::types::PipelineMetadata).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PipelineMetadataBuilder {
-    pub(crate) pipeline_arn: std::option::Option<std::string::String>,
-    pub(crate) created: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) updated: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) pipeline_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) created: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) updated: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl PipelineMetadataBuilder {
     /// <p>The Amazon Resource Name (ARN) of the pipeline.</p>
-    pub fn pipeline_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.pipeline_arn = Some(input.into());
+    pub fn pipeline_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.pipeline_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the pipeline.</p>
-    pub fn set_pipeline_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_pipeline_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pipeline_arn = input;
         self
     }
     /// <p>The date and time the pipeline was created, in timestamp format.</p>
-    pub fn created(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created = Some(input);
+    pub fn created(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time the pipeline was created, in timestamp format.</p>
-    pub fn set_created(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_created(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
         self.created = input;
         self
     }
     /// <p>The date and time the pipeline was last updated, in timestamp format.</p>
-    pub fn updated(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.updated = Some(input);
+    pub fn updated(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.updated = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time the pipeline was last updated, in timestamp format.</p>
-    pub fn set_updated(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_updated(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
         self.updated = input;
         self
     }

@@ -2,20 +2,20 @@
 
 /// Represents the output of a CreateAlertManagerDefinition operation.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAlertManagerDefinitionOutput {
     /// The status of alert manager definition.
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::AlertManagerDefinitionStatus>,
+    pub status: ::std::option::Option<crate::types::AlertManagerDefinitionStatus>,
     _request_id: Option<String>,
 }
 impl CreateAlertManagerDefinitionOutput {
     /// The status of alert manager definition.
-    pub fn status(&self) -> std::option::Option<&crate::types::AlertManagerDefinitionStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::AlertManagerDefinitionStatus> {
         self.status.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for CreateAlertManagerDefinitionOutput {
+impl ::aws_http::request_id::RequestId for CreateAlertManagerDefinitionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,21 +29,23 @@ impl CreateAlertManagerDefinitionOutput {
 
 /// A builder for [`CreateAlertManagerDefinitionOutput`](crate::operation::create_alert_manager_definition::CreateAlertManagerDefinitionOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateAlertManagerDefinitionOutputBuilder {
-    pub(crate) status: std::option::Option<crate::types::AlertManagerDefinitionStatus>,
+    pub(crate) status: ::std::option::Option<crate::types::AlertManagerDefinitionStatus>,
     _request_id: Option<String>,
 }
 impl CreateAlertManagerDefinitionOutputBuilder {
     /// The status of alert manager definition.
     pub fn status(mut self, input: crate::types::AlertManagerDefinitionStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// The status of alert manager definition.
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::AlertManagerDefinitionStatus>,
+        input: ::std::option::Option<crate::types::AlertManagerDefinitionStatus>,
     ) -> Self {
         self.status = input;
         self

@@ -3,22 +3,22 @@
 /// <p>Use this parameter to configure client-side evaluation for your project. Client-side evaluation allows your application to assign variations to user sessions locally instead of by calling the <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_EvaluateFeature.html">EvaluateFeature</a> operation to assign the variations. This mitigates the latency and availability risks that come with an API call.</p>
 /// <p> <code>ProjectAppConfigResource</code> is a structure that defines the configuration of how your application integrates with AppConfig to run client-side evaluation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProjectAppConfigResourceConfig {
     /// <p>The ID of the AppConfig application to use for client-side evaluation. </p>
     #[doc(hidden)]
-    pub application_id: std::option::Option<std::string::String>,
+    pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the AppConfig environment to use for client-side evaluation. This must be an environment that is within the application that you specify for <code>applicationId</code>.</p>
     #[doc(hidden)]
-    pub environment_id: std::option::Option<std::string::String>,
+    pub environment_id: ::std::option::Option<::std::string::String>,
 }
 impl ProjectAppConfigResourceConfig {
     /// <p>The ID of the AppConfig application to use for client-side evaluation. </p>
-    pub fn application_id(&self) -> std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<&str> {
         self.application_id.as_deref()
     }
     /// <p>The ID of the AppConfig environment to use for client-side evaluation. This must be an environment that is within the application that you specify for <code>applicationId</code>.</p>
-    pub fn environment_id(&self) -> std::option::Option<&str> {
+    pub fn environment_id(&self) -> ::std::option::Option<&str> {
         self.environment_id.as_deref()
     }
 }
@@ -31,29 +31,43 @@ impl ProjectAppConfigResourceConfig {
 
 /// A builder for [`ProjectAppConfigResourceConfig`](crate::types::ProjectAppConfigResourceConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ProjectAppConfigResourceConfigBuilder {
-    pub(crate) application_id: std::option::Option<std::string::String>,
-    pub(crate) environment_id: std::option::Option<std::string::String>,
+    pub(crate) application_id: ::std::option::Option<::std::string::String>,
+    pub(crate) environment_id: ::std::option::Option<::std::string::String>,
 }
 impl ProjectAppConfigResourceConfigBuilder {
     /// <p>The ID of the AppConfig application to use for client-side evaluation. </p>
-    pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.application_id = Some(input.into());
+    pub fn application_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the AppConfig application to use for client-side evaluation. </p>
-    pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_application_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.application_id = input;
         self
     }
     /// <p>The ID of the AppConfig environment to use for client-side evaluation. This must be an environment that is within the application that you specify for <code>applicationId</code>.</p>
-    pub fn environment_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.environment_id = Some(input.into());
+    pub fn environment_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.environment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the AppConfig environment to use for client-side evaluation. This must be an environment that is within the application that you specify for <code>applicationId</code>.</p>
-    pub fn set_environment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_environment_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.environment_id = input;
         self
     }

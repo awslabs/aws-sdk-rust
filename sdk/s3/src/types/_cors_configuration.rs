@@ -2,15 +2,15 @@
 
 /// <p>Describes the cross-origin access configuration for objects in an Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html">Enabling Cross-Origin Resource Sharing</a> in the <i>Amazon S3 User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CorsConfiguration {
     /// <p>A set of origins and methods (cross-origin access that you want to allow). You can add up to 100 rules to the configuration.</p>
     #[doc(hidden)]
-    pub cors_rules: std::option::Option<std::vec::Vec<crate::types::CorsRule>>,
+    pub cors_rules: ::std::option::Option<::std::vec::Vec<crate::types::CorsRule>>,
 }
 impl CorsConfiguration {
     /// <p>A set of origins and methods (cross-origin access that you want to allow). You can add up to 100 rules to the configuration.</p>
-    pub fn cors_rules(&self) -> std::option::Option<&[crate::types::CorsRule]> {
+    pub fn cors_rules(&self) -> ::std::option::Option<&[crate::types::CorsRule]> {
         self.cors_rules.as_deref()
     }
 }
@@ -23,9 +23,11 @@ impl CorsConfiguration {
 
 /// A builder for [`CorsConfiguration`](crate::types::CorsConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CorsConfigurationBuilder {
-    pub(crate) cors_rules: std::option::Option<std::vec::Vec<crate::types::CorsRule>>,
+    pub(crate) cors_rules: ::std::option::Option<::std::vec::Vec<crate::types::CorsRule>>,
 }
 impl CorsConfigurationBuilder {
     /// Appends an item to `cors_rules`.
@@ -36,13 +38,13 @@ impl CorsConfigurationBuilder {
     pub fn cors_rules(mut self, input: crate::types::CorsRule) -> Self {
         let mut v = self.cors_rules.unwrap_or_default();
         v.push(input);
-        self.cors_rules = Some(v);
+        self.cors_rules = ::std::option::Option::Some(v);
         self
     }
     /// <p>A set of origins and methods (cross-origin access that you want to allow). You can add up to 100 rules to the configuration.</p>
     pub fn set_cors_rules(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CorsRule>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::CorsRule>>,
     ) -> Self {
         self.cors_rules = input;
         self

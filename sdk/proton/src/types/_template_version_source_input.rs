@@ -2,7 +2,7 @@
 
 /// <p>Template version source data.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum TemplateVersionSourceInput {
     /// <p>An S3 source object that includes the template bundle S3 path and name for a template minor version.</p>
     S3(crate::types::S3ObjectSource),
@@ -20,11 +20,11 @@ impl TemplateVersionSourceInput {
     #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`S3`](crate::types::TemplateVersionSourceInput::S3), extracting the inner [`S3ObjectSource`](crate::types::S3ObjectSource).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_s3(&self) -> std::result::Result<&crate::types::S3ObjectSource, &Self> {
+    pub fn as_s3(&self) -> ::std::result::Result<&crate::types::S3ObjectSource, &Self> {
         if let TemplateVersionSourceInput::S3(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`S3`](crate::types::TemplateVersionSourceInput::S3).

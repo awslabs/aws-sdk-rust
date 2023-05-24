@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetComponent`](crate::operation::get_component::builders::GetComponentFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`app_id(impl Into<String>)`](crate::operation::get_component::builders::GetComponentFluentBuilder::app_id) / [`set_app_id(Option<String>)`](crate::operation::get_component::builders::GetComponentFluentBuilder::set_app_id): <p>The unique ID of the Amplify app.</p>
-    ///   - [`environment_name(impl Into<String>)`](crate::operation::get_component::builders::GetComponentFluentBuilder::environment_name) / [`set_environment_name(Option<String>)`](crate::operation::get_component::builders::GetComponentFluentBuilder::set_environment_name): <p>The name of the backend environment that is part of the Amplify app.</p>
-    ///   - [`id(impl Into<String>)`](crate::operation::get_component::builders::GetComponentFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_component::builders::GetComponentFluentBuilder::set_id): <p>The unique ID of the component.</p>
+    ///   - [`app_id(impl ::std::convert::Into<String>)`](crate::operation::get_component::builders::GetComponentFluentBuilder::app_id) / [`set_app_id(Option<String>)`](crate::operation::get_component::builders::GetComponentFluentBuilder::set_app_id): <p>The unique ID of the Amplify app.</p>
+    ///   - [`environment_name(impl ::std::convert::Into<String>)`](crate::operation::get_component::builders::GetComponentFluentBuilder::environment_name) / [`set_environment_name(Option<String>)`](crate::operation::get_component::builders::GetComponentFluentBuilder::set_environment_name): <p>The name of the backend environment that is part of the Amplify app.</p>
+    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::get_component::builders::GetComponentFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_component::builders::GetComponentFluentBuilder::set_id): <p>The unique ID of the component.</p>
     /// - On success, responds with [`GetComponentOutput`](crate::operation::get_component::GetComponentOutput) with field(s):
     ///   - [`component(Option<Component>)`](crate::operation::get_component::GetComponentOutput::component): <p>Represents the configuration settings for the component.</p>
     /// - On failure, responds with [`SdkError<GetComponentError>`](crate::operation::get_component::GetComponentError)

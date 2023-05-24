@@ -2,29 +2,29 @@
 
 /// <p>The result for the calculated route of one <code>DeparturePosition</code> <code>DestinationPosition</code> pair.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RouteMatrixEntry {
     /// <p>The total distance of travel for the route.</p>
     #[doc(hidden)]
-    pub distance: std::option::Option<f64>,
+    pub distance: ::std::option::Option<f64>,
     /// <p>The expected duration of travel for the route.</p>
     #[doc(hidden)]
-    pub duration_seconds: std::option::Option<f64>,
+    pub duration_seconds: ::std::option::Option<f64>,
     /// <p>An error corresponding to the calculation of a route between the <code>DeparturePosition</code> and <code>DestinationPosition</code>.</p>
     #[doc(hidden)]
-    pub error: std::option::Option<crate::types::RouteMatrixEntryError>,
+    pub error: ::std::option::Option<crate::types::RouteMatrixEntryError>,
 }
 impl RouteMatrixEntry {
     /// <p>The total distance of travel for the route.</p>
-    pub fn distance(&self) -> std::option::Option<f64> {
+    pub fn distance(&self) -> ::std::option::Option<f64> {
         self.distance
     }
     /// <p>The expected duration of travel for the route.</p>
-    pub fn duration_seconds(&self) -> std::option::Option<f64> {
+    pub fn duration_seconds(&self) -> ::std::option::Option<f64> {
         self.duration_seconds
     }
     /// <p>An error corresponding to the calculation of a route between the <code>DeparturePosition</code> and <code>DestinationPosition</code>.</p>
-    pub fn error(&self) -> std::option::Option<&crate::types::RouteMatrixEntryError> {
+    pub fn error(&self) -> ::std::option::Option<&crate::types::RouteMatrixEntryError> {
         self.error.as_ref()
     }
 }
@@ -37,42 +37,44 @@ impl RouteMatrixEntry {
 
 /// A builder for [`RouteMatrixEntry`](crate::types::RouteMatrixEntry).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RouteMatrixEntryBuilder {
-    pub(crate) distance: std::option::Option<f64>,
-    pub(crate) duration_seconds: std::option::Option<f64>,
-    pub(crate) error: std::option::Option<crate::types::RouteMatrixEntryError>,
+    pub(crate) distance: ::std::option::Option<f64>,
+    pub(crate) duration_seconds: ::std::option::Option<f64>,
+    pub(crate) error: ::std::option::Option<crate::types::RouteMatrixEntryError>,
 }
 impl RouteMatrixEntryBuilder {
     /// <p>The total distance of travel for the route.</p>
     pub fn distance(mut self, input: f64) -> Self {
-        self.distance = Some(input);
+        self.distance = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total distance of travel for the route.</p>
-    pub fn set_distance(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_distance(mut self, input: ::std::option::Option<f64>) -> Self {
         self.distance = input;
         self
     }
     /// <p>The expected duration of travel for the route.</p>
     pub fn duration_seconds(mut self, input: f64) -> Self {
-        self.duration_seconds = Some(input);
+        self.duration_seconds = ::std::option::Option::Some(input);
         self
     }
     /// <p>The expected duration of travel for the route.</p>
-    pub fn set_duration_seconds(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_duration_seconds(mut self, input: ::std::option::Option<f64>) -> Self {
         self.duration_seconds = input;
         self
     }
     /// <p>An error corresponding to the calculation of a route between the <code>DeparturePosition</code> and <code>DestinationPosition</code>.</p>
     pub fn error(mut self, input: crate::types::RouteMatrixEntryError) -> Self {
-        self.error = Some(input);
+        self.error = ::std::option::Option::Some(input);
         self
     }
     /// <p>An error corresponding to the calculation of a route between the <code>DeparturePosition</code> and <code>DestinationPosition</code>.</p>
     pub fn set_error(
         mut self,
-        input: std::option::Option<crate::types::RouteMatrixEntryError>,
+        input: ::std::option::Option<crate::types::RouteMatrixEntryError>,
     ) -> Self {
         self.error = input;
         self

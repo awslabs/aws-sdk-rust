@@ -6,11 +6,11 @@
 /// <p>We recommend waiting a minimum of 24 hours after creating an Auto Scaling group to configure predictive scaling. At minimum, there must be 24 hours of historical data to generate a forecast. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/userguide/gs-best-practices.html">Best Practices for AWS Auto Scaling</a> in the <i>AWS Auto Scaling User Guide</i>.</p>
 /// </important>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScalingInstruction {
     /// <p>The namespace of the AWS service.</p>
     #[doc(hidden)]
-    pub service_namespace: std::option::Option<crate::types::ServiceNamespace>,
+    pub service_namespace: ::std::option::Option<crate::types::ServiceNamespace>,
     /// <p>The ID of the resource. This string consists of the resource type and unique identifier.</p>
     /// <ul>
     /// <li> <p>Auto Scaling group - The resource type is <code>autoScalingGroup</code> and the unique identifier is the name of the Auto Scaling group. Example: <code>autoScalingGroup/my-asg</code>.</p> </li>
@@ -21,7 +21,7 @@ pub struct ScalingInstruction {
     /// <li> <p>Aurora DB cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:my-db-cluster</code>.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub resource_id: std::option::Option<std::string::String>,
+    pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The scalable dimension associated with the resource.</p>
     /// <ul>
     /// <li> <p> <code>autoscaling:autoScalingGroup:DesiredCapacity</code> - The desired capacity of an Auto Scaling group.</p> </li>
@@ -34,30 +34,30 @@ pub struct ScalingInstruction {
     /// <li> <p> <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora PostgreSQL-compatible edition.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub scalable_dimension: std::option::Option<crate::types::ScalableDimension>,
+    pub scalable_dimension: ::std::option::Option<crate::types::ScalableDimension>,
     /// <p>The minimum capacity of the resource. </p>
     #[doc(hidden)]
-    pub min_capacity: std::option::Option<i32>,
+    pub min_capacity: ::std::option::Option<i32>,
     /// <p>The maximum capacity of the resource. The exception to this upper limit is if you specify a non-default setting for <b>PredictiveScalingMaxCapacityBehavior</b>. </p>
     #[doc(hidden)]
-    pub max_capacity: std::option::Option<i32>,
+    pub max_capacity: ::std::option::Option<i32>,
     /// <p>The target tracking configurations (up to 10). Each of these structures must specify a unique scaling metric and a target value for the metric. </p>
     #[doc(hidden)]
     pub target_tracking_configurations:
-        std::option::Option<std::vec::Vec<crate::types::TargetTrackingConfiguration>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::TargetTrackingConfiguration>>,
     /// <p>The predefined load metric to use for predictive scaling. This parameter or a <b>CustomizedLoadMetricSpecification</b> is required when configuring predictive scaling, and cannot be used otherwise. </p>
     #[doc(hidden)]
     pub predefined_load_metric_specification:
-        std::option::Option<crate::types::PredefinedLoadMetricSpecification>,
+        ::std::option::Option<crate::types::PredefinedLoadMetricSpecification>,
     /// <p>The customized load metric to use for predictive scaling. This parameter or a <b>PredefinedLoadMetricSpecification</b> is required when configuring predictive scaling, and cannot be used otherwise. </p>
     #[doc(hidden)]
     pub customized_load_metric_specification:
-        std::option::Option<crate::types::CustomizedLoadMetricSpecification>,
+        ::std::option::Option<crate::types::CustomizedLoadMetricSpecification>,
     /// <p>The amount of time, in seconds, to buffer the run time of scheduled scaling actions when scaling out. For example, if the forecast says to add capacity at 10:00 AM, and the buffer time is 5 minutes, then the run time of the corresponding scheduled scaling action will be 9:55 AM. The intention is to give resources time to be provisioned. For example, it can take a few minutes to launch an EC2 instance. The actual amount of time required depends on several factors, such as the size of the instance and whether there are startup scripts to complete. </p>
     /// <p>The value must be less than the forecast interval duration of 3600 seconds (60 minutes). The default is 300 seconds. </p>
     /// <p>Only valid when configuring predictive scaling. </p>
     #[doc(hidden)]
-    pub scheduled_action_buffer_time: std::option::Option<i32>,
+    pub scheduled_action_buffer_time: ::std::option::Option<i32>,
     /// <p>Defines the behavior that should be applied if the forecast capacity approaches or exceeds the maximum capacity specified for the resource. The default value is <code>SetForecastCapacityToMaxCapacity</code>.</p>
     /// <p>The following are possible values:</p>
     /// <ul>
@@ -68,30 +68,30 @@ pub struct ScalingInstruction {
     /// <p>Only valid when configuring predictive scaling.</p>
     #[doc(hidden)]
     pub predictive_scaling_max_capacity_behavior:
-        std::option::Option<crate::types::PredictiveScalingMaxCapacityBehavior>,
+        ::std::option::Option<crate::types::PredictiveScalingMaxCapacityBehavior>,
     /// <p>The size of the capacity buffer to use when the forecast capacity is close to or exceeds the maximum capacity. The value is specified as a percentage relative to the forecast capacity. For example, if the buffer is 10, this means a 10 percent buffer, such that if the forecast capacity is 50, and the maximum capacity is 40, then the effective maximum capacity is 55.</p>
     /// <p>Only valid when configuring predictive scaling. Required if the <b>PredictiveScalingMaxCapacityBehavior</b> is set to <code>SetMaxCapacityAboveForecastCapacity</code>, and cannot be used otherwise.</p>
     /// <p>The range is 1-100.</p>
     #[doc(hidden)]
-    pub predictive_scaling_max_capacity_buffer: std::option::Option<i32>,
+    pub predictive_scaling_max_capacity_buffer: ::std::option::Option<i32>,
     /// <p>The predictive scaling mode. The default value is <code>ForecastAndScale</code>. Otherwise, AWS Auto Scaling forecasts capacity but does not create any scheduled scaling actions based on the capacity forecast. </p>
     #[doc(hidden)]
-    pub predictive_scaling_mode: std::option::Option<crate::types::PredictiveScalingMode>,
+    pub predictive_scaling_mode: ::std::option::Option<crate::types::PredictiveScalingMode>,
     /// <p>Controls whether a resource's externally created scaling policies are kept or replaced. </p>
     /// <p>The default value is <code>KeepExternalPolicies</code>. If the parameter is set to <code>ReplaceExternalPolicies</code>, any scaling policies that are external to AWS Auto Scaling are deleted and new target tracking scaling policies created. </p>
     /// <p>Only valid when configuring dynamic scaling. </p>
     /// <p>Condition: The number of existing policies to be replaced must be less than or equal to 50. If there are more than 50 policies to be replaced, AWS Auto Scaling keeps all existing policies and does not create new ones.</p>
     #[doc(hidden)]
     pub scaling_policy_update_behavior:
-        std::option::Option<crate::types::ScalingPolicyUpdateBehavior>,
+        ::std::option::Option<crate::types::ScalingPolicyUpdateBehavior>,
     /// <p>Controls whether dynamic scaling by AWS Auto Scaling is disabled. When dynamic scaling is enabled, AWS Auto Scaling creates target tracking scaling policies based on the specified target tracking configurations. </p>
     /// <p>The default is enabled (<code>false</code>). </p>
     #[doc(hidden)]
-    pub disable_dynamic_scaling: std::option::Option<bool>,
+    pub disable_dynamic_scaling: ::std::option::Option<bool>,
 }
 impl ScalingInstruction {
     /// <p>The namespace of the AWS service.</p>
-    pub fn service_namespace(&self) -> std::option::Option<&crate::types::ServiceNamespace> {
+    pub fn service_namespace(&self) -> ::std::option::Option<&crate::types::ServiceNamespace> {
         self.service_namespace.as_ref()
     }
     /// <p>The ID of the resource. This string consists of the resource type and unique identifier.</p>
@@ -103,7 +103,7 @@ impl ScalingInstruction {
     /// <li> <p>DynamoDB global secondary index - The resource type is <code>index</code> and the unique identifier is the resource ID. Example: <code>table/my-table/index/my-table-index</code>.</p> </li>
     /// <li> <p>Aurora DB cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:my-db-cluster</code>.</p> </li>
     /// </ul>
-    pub fn resource_id(&self) -> std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<&str> {
         self.resource_id.as_deref()
     }
     /// <p>The scalable dimension associated with the resource.</p>
@@ -117,39 +117,39 @@ impl ScalingInstruction {
     /// <li> <p> <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB global secondary index.</p> </li>
     /// <li> <p> <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora PostgreSQL-compatible edition.</p> </li>
     /// </ul>
-    pub fn scalable_dimension(&self) -> std::option::Option<&crate::types::ScalableDimension> {
+    pub fn scalable_dimension(&self) -> ::std::option::Option<&crate::types::ScalableDimension> {
         self.scalable_dimension.as_ref()
     }
     /// <p>The minimum capacity of the resource. </p>
-    pub fn min_capacity(&self) -> std::option::Option<i32> {
+    pub fn min_capacity(&self) -> ::std::option::Option<i32> {
         self.min_capacity
     }
     /// <p>The maximum capacity of the resource. The exception to this upper limit is if you specify a non-default setting for <b>PredictiveScalingMaxCapacityBehavior</b>. </p>
-    pub fn max_capacity(&self) -> std::option::Option<i32> {
+    pub fn max_capacity(&self) -> ::std::option::Option<i32> {
         self.max_capacity
     }
     /// <p>The target tracking configurations (up to 10). Each of these structures must specify a unique scaling metric and a target value for the metric. </p>
     pub fn target_tracking_configurations(
         &self,
-    ) -> std::option::Option<&[crate::types::TargetTrackingConfiguration]> {
+    ) -> ::std::option::Option<&[crate::types::TargetTrackingConfiguration]> {
         self.target_tracking_configurations.as_deref()
     }
     /// <p>The predefined load metric to use for predictive scaling. This parameter or a <b>CustomizedLoadMetricSpecification</b> is required when configuring predictive scaling, and cannot be used otherwise. </p>
     pub fn predefined_load_metric_specification(
         &self,
-    ) -> std::option::Option<&crate::types::PredefinedLoadMetricSpecification> {
+    ) -> ::std::option::Option<&crate::types::PredefinedLoadMetricSpecification> {
         self.predefined_load_metric_specification.as_ref()
     }
     /// <p>The customized load metric to use for predictive scaling. This parameter or a <b>PredefinedLoadMetricSpecification</b> is required when configuring predictive scaling, and cannot be used otherwise. </p>
     pub fn customized_load_metric_specification(
         &self,
-    ) -> std::option::Option<&crate::types::CustomizedLoadMetricSpecification> {
+    ) -> ::std::option::Option<&crate::types::CustomizedLoadMetricSpecification> {
         self.customized_load_metric_specification.as_ref()
     }
     /// <p>The amount of time, in seconds, to buffer the run time of scheduled scaling actions when scaling out. For example, if the forecast says to add capacity at 10:00 AM, and the buffer time is 5 minutes, then the run time of the corresponding scheduled scaling action will be 9:55 AM. The intention is to give resources time to be provisioned. For example, it can take a few minutes to launch an EC2 instance. The actual amount of time required depends on several factors, such as the size of the instance and whether there are startup scripts to complete. </p>
     /// <p>The value must be less than the forecast interval duration of 3600 seconds (60 minutes). The default is 300 seconds. </p>
     /// <p>Only valid when configuring predictive scaling. </p>
-    pub fn scheduled_action_buffer_time(&self) -> std::option::Option<i32> {
+    pub fn scheduled_action_buffer_time(&self) -> ::std::option::Option<i32> {
         self.scheduled_action_buffer_time
     }
     /// <p>Defines the behavior that should be applied if the forecast capacity approaches or exceeds the maximum capacity specified for the resource. The default value is <code>SetForecastCapacityToMaxCapacity</code>.</p>
@@ -162,19 +162,19 @@ impl ScalingInstruction {
     /// <p>Only valid when configuring predictive scaling.</p>
     pub fn predictive_scaling_max_capacity_behavior(
         &self,
-    ) -> std::option::Option<&crate::types::PredictiveScalingMaxCapacityBehavior> {
+    ) -> ::std::option::Option<&crate::types::PredictiveScalingMaxCapacityBehavior> {
         self.predictive_scaling_max_capacity_behavior.as_ref()
     }
     /// <p>The size of the capacity buffer to use when the forecast capacity is close to or exceeds the maximum capacity. The value is specified as a percentage relative to the forecast capacity. For example, if the buffer is 10, this means a 10 percent buffer, such that if the forecast capacity is 50, and the maximum capacity is 40, then the effective maximum capacity is 55.</p>
     /// <p>Only valid when configuring predictive scaling. Required if the <b>PredictiveScalingMaxCapacityBehavior</b> is set to <code>SetMaxCapacityAboveForecastCapacity</code>, and cannot be used otherwise.</p>
     /// <p>The range is 1-100.</p>
-    pub fn predictive_scaling_max_capacity_buffer(&self) -> std::option::Option<i32> {
+    pub fn predictive_scaling_max_capacity_buffer(&self) -> ::std::option::Option<i32> {
         self.predictive_scaling_max_capacity_buffer
     }
     /// <p>The predictive scaling mode. The default value is <code>ForecastAndScale</code>. Otherwise, AWS Auto Scaling forecasts capacity but does not create any scheduled scaling actions based on the capacity forecast. </p>
     pub fn predictive_scaling_mode(
         &self,
-    ) -> std::option::Option<&crate::types::PredictiveScalingMode> {
+    ) -> ::std::option::Option<&crate::types::PredictiveScalingMode> {
         self.predictive_scaling_mode.as_ref()
     }
     /// <p>Controls whether a resource's externally created scaling policies are kept or replaced. </p>
@@ -183,12 +183,12 @@ impl ScalingInstruction {
     /// <p>Condition: The number of existing policies to be replaced must be less than or equal to 50. If there are more than 50 policies to be replaced, AWS Auto Scaling keeps all existing policies and does not create new ones.</p>
     pub fn scaling_policy_update_behavior(
         &self,
-    ) -> std::option::Option<&crate::types::ScalingPolicyUpdateBehavior> {
+    ) -> ::std::option::Option<&crate::types::ScalingPolicyUpdateBehavior> {
         self.scaling_policy_update_behavior.as_ref()
     }
     /// <p>Controls whether dynamic scaling by AWS Auto Scaling is disabled. When dynamic scaling is enabled, AWS Auto Scaling creates target tracking scaling policies based on the specified target tracking configurations. </p>
     /// <p>The default is enabled (<code>false</code>). </p>
-    pub fn disable_dynamic_scaling(&self) -> std::option::Option<bool> {
+    pub fn disable_dynamic_scaling(&self) -> ::std::option::Option<bool> {
         self.disable_dynamic_scaling
     }
 }
@@ -201,38 +201,40 @@ impl ScalingInstruction {
 
 /// A builder for [`ScalingInstruction`](crate::types::ScalingInstruction).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ScalingInstructionBuilder {
-    pub(crate) service_namespace: std::option::Option<crate::types::ServiceNamespace>,
-    pub(crate) resource_id: std::option::Option<std::string::String>,
-    pub(crate) scalable_dimension: std::option::Option<crate::types::ScalableDimension>,
-    pub(crate) min_capacity: std::option::Option<i32>,
-    pub(crate) max_capacity: std::option::Option<i32>,
+    pub(crate) service_namespace: ::std::option::Option<crate::types::ServiceNamespace>,
+    pub(crate) resource_id: ::std::option::Option<::std::string::String>,
+    pub(crate) scalable_dimension: ::std::option::Option<crate::types::ScalableDimension>,
+    pub(crate) min_capacity: ::std::option::Option<i32>,
+    pub(crate) max_capacity: ::std::option::Option<i32>,
     pub(crate) target_tracking_configurations:
-        std::option::Option<std::vec::Vec<crate::types::TargetTrackingConfiguration>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::TargetTrackingConfiguration>>,
     pub(crate) predefined_load_metric_specification:
-        std::option::Option<crate::types::PredefinedLoadMetricSpecification>,
+        ::std::option::Option<crate::types::PredefinedLoadMetricSpecification>,
     pub(crate) customized_load_metric_specification:
-        std::option::Option<crate::types::CustomizedLoadMetricSpecification>,
-    pub(crate) scheduled_action_buffer_time: std::option::Option<i32>,
+        ::std::option::Option<crate::types::CustomizedLoadMetricSpecification>,
+    pub(crate) scheduled_action_buffer_time: ::std::option::Option<i32>,
     pub(crate) predictive_scaling_max_capacity_behavior:
-        std::option::Option<crate::types::PredictiveScalingMaxCapacityBehavior>,
-    pub(crate) predictive_scaling_max_capacity_buffer: std::option::Option<i32>,
-    pub(crate) predictive_scaling_mode: std::option::Option<crate::types::PredictiveScalingMode>,
+        ::std::option::Option<crate::types::PredictiveScalingMaxCapacityBehavior>,
+    pub(crate) predictive_scaling_max_capacity_buffer: ::std::option::Option<i32>,
+    pub(crate) predictive_scaling_mode: ::std::option::Option<crate::types::PredictiveScalingMode>,
     pub(crate) scaling_policy_update_behavior:
-        std::option::Option<crate::types::ScalingPolicyUpdateBehavior>,
-    pub(crate) disable_dynamic_scaling: std::option::Option<bool>,
+        ::std::option::Option<crate::types::ScalingPolicyUpdateBehavior>,
+    pub(crate) disable_dynamic_scaling: ::std::option::Option<bool>,
 }
 impl ScalingInstructionBuilder {
     /// <p>The namespace of the AWS service.</p>
     pub fn service_namespace(mut self, input: crate::types::ServiceNamespace) -> Self {
-        self.service_namespace = Some(input);
+        self.service_namespace = ::std::option::Option::Some(input);
         self
     }
     /// <p>The namespace of the AWS service.</p>
     pub fn set_service_namespace(
         mut self,
-        input: std::option::Option<crate::types::ServiceNamespace>,
+        input: ::std::option::Option<crate::types::ServiceNamespace>,
     ) -> Self {
         self.service_namespace = input;
         self
@@ -246,8 +248,8 @@ impl ScalingInstructionBuilder {
     /// <li> <p>DynamoDB global secondary index - The resource type is <code>index</code> and the unique identifier is the resource ID. Example: <code>table/my-table/index/my-table-index</code>.</p> </li>
     /// <li> <p>Aurora DB cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:my-db-cluster</code>.</p> </li>
     /// </ul>
-    pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_id = Some(input.into());
+    pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the resource. This string consists of the resource type and unique identifier.</p>
@@ -259,7 +261,7 @@ impl ScalingInstructionBuilder {
     /// <li> <p>DynamoDB global secondary index - The resource type is <code>index</code> and the unique identifier is the resource ID. Example: <code>table/my-table/index/my-table-index</code>.</p> </li>
     /// <li> <p>Aurora DB cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:my-db-cluster</code>.</p> </li>
     /// </ul>
-    pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
     }
@@ -275,7 +277,7 @@ impl ScalingInstructionBuilder {
     /// <li> <p> <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora PostgreSQL-compatible edition.</p> </li>
     /// </ul>
     pub fn scalable_dimension(mut self, input: crate::types::ScalableDimension) -> Self {
-        self.scalable_dimension = Some(input);
+        self.scalable_dimension = ::std::option::Option::Some(input);
         self
     }
     /// <p>The scalable dimension associated with the resource.</p>
@@ -291,28 +293,28 @@ impl ScalingInstructionBuilder {
     /// </ul>
     pub fn set_scalable_dimension(
         mut self,
-        input: std::option::Option<crate::types::ScalableDimension>,
+        input: ::std::option::Option<crate::types::ScalableDimension>,
     ) -> Self {
         self.scalable_dimension = input;
         self
     }
     /// <p>The minimum capacity of the resource. </p>
     pub fn min_capacity(mut self, input: i32) -> Self {
-        self.min_capacity = Some(input);
+        self.min_capacity = ::std::option::Option::Some(input);
         self
     }
     /// <p>The minimum capacity of the resource. </p>
-    pub fn set_min_capacity(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_min_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.min_capacity = input;
         self
     }
     /// <p>The maximum capacity of the resource. The exception to this upper limit is if you specify a non-default setting for <b>PredictiveScalingMaxCapacityBehavior</b>. </p>
     pub fn max_capacity(mut self, input: i32) -> Self {
-        self.max_capacity = Some(input);
+        self.max_capacity = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum capacity of the resource. The exception to this upper limit is if you specify a non-default setting for <b>PredictiveScalingMaxCapacityBehavior</b>. </p>
-    pub fn set_max_capacity(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_capacity = input;
         self
     }
@@ -327,13 +329,13 @@ impl ScalingInstructionBuilder {
     ) -> Self {
         let mut v = self.target_tracking_configurations.unwrap_or_default();
         v.push(input);
-        self.target_tracking_configurations = Some(v);
+        self.target_tracking_configurations = ::std::option::Option::Some(v);
         self
     }
     /// <p>The target tracking configurations (up to 10). Each of these structures must specify a unique scaling metric and a target value for the metric. </p>
     pub fn set_target_tracking_configurations(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TargetTrackingConfiguration>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::TargetTrackingConfiguration>>,
     ) -> Self {
         self.target_tracking_configurations = input;
         self
@@ -343,13 +345,13 @@ impl ScalingInstructionBuilder {
         mut self,
         input: crate::types::PredefinedLoadMetricSpecification,
     ) -> Self {
-        self.predefined_load_metric_specification = Some(input);
+        self.predefined_load_metric_specification = ::std::option::Option::Some(input);
         self
     }
     /// <p>The predefined load metric to use for predictive scaling. This parameter or a <b>CustomizedLoadMetricSpecification</b> is required when configuring predictive scaling, and cannot be used otherwise. </p>
     pub fn set_predefined_load_metric_specification(
         mut self,
-        input: std::option::Option<crate::types::PredefinedLoadMetricSpecification>,
+        input: ::std::option::Option<crate::types::PredefinedLoadMetricSpecification>,
     ) -> Self {
         self.predefined_load_metric_specification = input;
         self
@@ -359,13 +361,13 @@ impl ScalingInstructionBuilder {
         mut self,
         input: crate::types::CustomizedLoadMetricSpecification,
     ) -> Self {
-        self.customized_load_metric_specification = Some(input);
+        self.customized_load_metric_specification = ::std::option::Option::Some(input);
         self
     }
     /// <p>The customized load metric to use for predictive scaling. This parameter or a <b>PredefinedLoadMetricSpecification</b> is required when configuring predictive scaling, and cannot be used otherwise. </p>
     pub fn set_customized_load_metric_specification(
         mut self,
-        input: std::option::Option<crate::types::CustomizedLoadMetricSpecification>,
+        input: ::std::option::Option<crate::types::CustomizedLoadMetricSpecification>,
     ) -> Self {
         self.customized_load_metric_specification = input;
         self
@@ -374,13 +376,13 @@ impl ScalingInstructionBuilder {
     /// <p>The value must be less than the forecast interval duration of 3600 seconds (60 minutes). The default is 300 seconds. </p>
     /// <p>Only valid when configuring predictive scaling. </p>
     pub fn scheduled_action_buffer_time(mut self, input: i32) -> Self {
-        self.scheduled_action_buffer_time = Some(input);
+        self.scheduled_action_buffer_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The amount of time, in seconds, to buffer the run time of scheduled scaling actions when scaling out. For example, if the forecast says to add capacity at 10:00 AM, and the buffer time is 5 minutes, then the run time of the corresponding scheduled scaling action will be 9:55 AM. The intention is to give resources time to be provisioned. For example, it can take a few minutes to launch an EC2 instance. The actual amount of time required depends on several factors, such as the size of the instance and whether there are startup scripts to complete. </p>
     /// <p>The value must be less than the forecast interval duration of 3600 seconds (60 minutes). The default is 300 seconds. </p>
     /// <p>Only valid when configuring predictive scaling. </p>
-    pub fn set_scheduled_action_buffer_time(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_scheduled_action_buffer_time(mut self, input: ::std::option::Option<i32>) -> Self {
         self.scheduled_action_buffer_time = input;
         self
     }
@@ -396,7 +398,7 @@ impl ScalingInstructionBuilder {
         mut self,
         input: crate::types::PredictiveScalingMaxCapacityBehavior,
     ) -> Self {
-        self.predictive_scaling_max_capacity_behavior = Some(input);
+        self.predictive_scaling_max_capacity_behavior = ::std::option::Option::Some(input);
         self
     }
     /// <p>Defines the behavior that should be applied if the forecast capacity approaches or exceeds the maximum capacity specified for the resource. The default value is <code>SetForecastCapacityToMaxCapacity</code>.</p>
@@ -409,7 +411,7 @@ impl ScalingInstructionBuilder {
     /// <p>Only valid when configuring predictive scaling.</p>
     pub fn set_predictive_scaling_max_capacity_behavior(
         mut self,
-        input: std::option::Option<crate::types::PredictiveScalingMaxCapacityBehavior>,
+        input: ::std::option::Option<crate::types::PredictiveScalingMaxCapacityBehavior>,
     ) -> Self {
         self.predictive_scaling_max_capacity_behavior = input;
         self
@@ -418,7 +420,7 @@ impl ScalingInstructionBuilder {
     /// <p>Only valid when configuring predictive scaling. Required if the <b>PredictiveScalingMaxCapacityBehavior</b> is set to <code>SetMaxCapacityAboveForecastCapacity</code>, and cannot be used otherwise.</p>
     /// <p>The range is 1-100.</p>
     pub fn predictive_scaling_max_capacity_buffer(mut self, input: i32) -> Self {
-        self.predictive_scaling_max_capacity_buffer = Some(input);
+        self.predictive_scaling_max_capacity_buffer = ::std::option::Option::Some(input);
         self
     }
     /// <p>The size of the capacity buffer to use when the forecast capacity is close to or exceeds the maximum capacity. The value is specified as a percentage relative to the forecast capacity. For example, if the buffer is 10, this means a 10 percent buffer, such that if the forecast capacity is 50, and the maximum capacity is 40, then the effective maximum capacity is 55.</p>
@@ -426,20 +428,20 @@ impl ScalingInstructionBuilder {
     /// <p>The range is 1-100.</p>
     pub fn set_predictive_scaling_max_capacity_buffer(
         mut self,
-        input: std::option::Option<i32>,
+        input: ::std::option::Option<i32>,
     ) -> Self {
         self.predictive_scaling_max_capacity_buffer = input;
         self
     }
     /// <p>The predictive scaling mode. The default value is <code>ForecastAndScale</code>. Otherwise, AWS Auto Scaling forecasts capacity but does not create any scheduled scaling actions based on the capacity forecast. </p>
     pub fn predictive_scaling_mode(mut self, input: crate::types::PredictiveScalingMode) -> Self {
-        self.predictive_scaling_mode = Some(input);
+        self.predictive_scaling_mode = ::std::option::Option::Some(input);
         self
     }
     /// <p>The predictive scaling mode. The default value is <code>ForecastAndScale</code>. Otherwise, AWS Auto Scaling forecasts capacity but does not create any scheduled scaling actions based on the capacity forecast. </p>
     pub fn set_predictive_scaling_mode(
         mut self,
-        input: std::option::Option<crate::types::PredictiveScalingMode>,
+        input: ::std::option::Option<crate::types::PredictiveScalingMode>,
     ) -> Self {
         self.predictive_scaling_mode = input;
         self
@@ -452,7 +454,7 @@ impl ScalingInstructionBuilder {
         mut self,
         input: crate::types::ScalingPolicyUpdateBehavior,
     ) -> Self {
-        self.scaling_policy_update_behavior = Some(input);
+        self.scaling_policy_update_behavior = ::std::option::Option::Some(input);
         self
     }
     /// <p>Controls whether a resource's externally created scaling policies are kept or replaced. </p>
@@ -461,7 +463,7 @@ impl ScalingInstructionBuilder {
     /// <p>Condition: The number of existing policies to be replaced must be less than or equal to 50. If there are more than 50 policies to be replaced, AWS Auto Scaling keeps all existing policies and does not create new ones.</p>
     pub fn set_scaling_policy_update_behavior(
         mut self,
-        input: std::option::Option<crate::types::ScalingPolicyUpdateBehavior>,
+        input: ::std::option::Option<crate::types::ScalingPolicyUpdateBehavior>,
     ) -> Self {
         self.scaling_policy_update_behavior = input;
         self
@@ -469,12 +471,12 @@ impl ScalingInstructionBuilder {
     /// <p>Controls whether dynamic scaling by AWS Auto Scaling is disabled. When dynamic scaling is enabled, AWS Auto Scaling creates target tracking scaling policies based on the specified target tracking configurations. </p>
     /// <p>The default is enabled (<code>false</code>). </p>
     pub fn disable_dynamic_scaling(mut self, input: bool) -> Self {
-        self.disable_dynamic_scaling = Some(input);
+        self.disable_dynamic_scaling = ::std::option::Option::Some(input);
         self
     }
     /// <p>Controls whether dynamic scaling by AWS Auto Scaling is disabled. When dynamic scaling is enabled, AWS Auto Scaling creates target tracking scaling policies based on the specified target tracking configurations. </p>
     /// <p>The default is enabled (<code>false</code>). </p>
-    pub fn set_disable_dynamic_scaling(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_disable_dynamic_scaling(mut self, input: ::std::option::Option<bool>) -> Self {
         self.disable_dynamic_scaling = input;
         self
     }

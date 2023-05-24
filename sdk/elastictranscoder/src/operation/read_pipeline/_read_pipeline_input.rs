@@ -2,15 +2,15 @@
 
 /// <p>The <code>ReadPipelineRequest</code> structure.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReadPipelineInput {
     /// <p>The identifier of the pipeline to read.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
 }
 impl ReadPipelineInput {
     /// <p>The identifier of the pipeline to read.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
 }
@@ -23,28 +23,32 @@ impl ReadPipelineInput {
 
 /// A builder for [`ReadPipelineInput`](crate::operation::read_pipeline::ReadPipelineInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ReadPipelineInputBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
 }
 impl ReadPipelineInputBuilder {
     /// <p>The identifier of the pipeline to read.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the pipeline to read.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// Consumes the builder and constructs a [`ReadPipelineInput`](crate::operation::read_pipeline::ReadPipelineInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::read_pipeline::ReadPipelineInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::read_pipeline::ReadPipelineInput { id: self.id })
+        ::std::result::Result::Ok(crate::operation::read_pipeline::ReadPipelineInput {
+            id: self.id,
+        })
     }
 }

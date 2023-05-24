@@ -2,61 +2,63 @@
 
 /// <p>Dashboard publish options.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DashboardPublishOptions {
     /// <p>Ad hoc (one-time) filtering option.</p>
     #[doc(hidden)]
-    pub ad_hoc_filtering_option: std::option::Option<crate::types::AdHocFilteringOption>,
+    pub ad_hoc_filtering_option: ::std::option::Option<crate::types::AdHocFilteringOption>,
     /// <p>Export to .csv option.</p>
     #[doc(hidden)]
-    pub export_to_csv_option: std::option::Option<crate::types::ExportToCsvOption>,
+    pub export_to_csv_option: ::std::option::Option<crate::types::ExportToCsvOption>,
     /// <p>Sheet controls option.</p>
     #[doc(hidden)]
-    pub sheet_controls_option: std::option::Option<crate::types::SheetControlsOption>,
+    pub sheet_controls_option: ::std::option::Option<crate::types::SheetControlsOption>,
     /// <p>The visual publish options of a visual in a dashboard.</p>
     #[deprecated(
         note = "VisualPublishOptions property will reach its end of standard support in a future release. To perform this action, use ExportWithHiddenFields."
     )]
     #[doc(hidden)]
-    pub visual_publish_options: std::option::Option<crate::types::DashboardVisualPublishOptions>,
+    pub visual_publish_options: ::std::option::Option<crate::types::DashboardVisualPublishOptions>,
     /// <p>The sheet layout maximization options of a dashbaord.</p>
     #[doc(hidden)]
     pub sheet_layout_element_maximization_option:
-        std::option::Option<crate::types::SheetLayoutElementMaximizationOption>,
+        ::std::option::Option<crate::types::SheetLayoutElementMaximizationOption>,
     /// <p>The menu options of a visual in a dashboard.</p>
     #[doc(hidden)]
-    pub visual_menu_option: std::option::Option<crate::types::VisualMenuOption>,
+    pub visual_menu_option: ::std::option::Option<crate::types::VisualMenuOption>,
     /// <p>The axis sort options of a dashboard.</p>
     #[doc(hidden)]
-    pub visual_axis_sort_option: std::option::Option<crate::types::VisualAxisSortOption>,
+    pub visual_axis_sort_option: ::std::option::Option<crate::types::VisualAxisSortOption>,
     /// <p>Determines if hidden fields are exported with a dashboard.</p>
     #[doc(hidden)]
     pub export_with_hidden_fields_option:
-        std::option::Option<crate::types::ExportWithHiddenFieldsOption>,
+        ::std::option::Option<crate::types::ExportWithHiddenFieldsOption>,
     /// <p>The drill-down options of data points in a dashboard.</p>
     #[doc(hidden)]
     pub data_point_drill_up_down_option:
-        std::option::Option<crate::types::DataPointDrillUpDownOption>,
+        ::std::option::Option<crate::types::DataPointDrillUpDownOption>,
     /// <p>The data point menu label options of a dashboard.</p>
     #[doc(hidden)]
-    pub data_point_menu_label_option: std::option::Option<crate::types::DataPointMenuLabelOption>,
+    pub data_point_menu_label_option: ::std::option::Option<crate::types::DataPointMenuLabelOption>,
     /// <p>The data point tool tip options of a dashboard.</p>
     #[doc(hidden)]
-    pub data_point_tooltip_option: std::option::Option<crate::types::DataPointTooltipOption>,
+    pub data_point_tooltip_option: ::std::option::Option<crate::types::DataPointTooltipOption>,
 }
 impl DashboardPublishOptions {
     /// <p>Ad hoc (one-time) filtering option.</p>
     pub fn ad_hoc_filtering_option(
         &self,
-    ) -> std::option::Option<&crate::types::AdHocFilteringOption> {
+    ) -> ::std::option::Option<&crate::types::AdHocFilteringOption> {
         self.ad_hoc_filtering_option.as_ref()
     }
     /// <p>Export to .csv option.</p>
-    pub fn export_to_csv_option(&self) -> std::option::Option<&crate::types::ExportToCsvOption> {
+    pub fn export_to_csv_option(&self) -> ::std::option::Option<&crate::types::ExportToCsvOption> {
         self.export_to_csv_option.as_ref()
     }
     /// <p>Sheet controls option.</p>
-    pub fn sheet_controls_option(&self) -> std::option::Option<&crate::types::SheetControlsOption> {
+    pub fn sheet_controls_option(
+        &self,
+    ) -> ::std::option::Option<&crate::types::SheetControlsOption> {
         self.sheet_controls_option.as_ref()
     }
     /// <p>The visual publish options of a visual in a dashboard.</p>
@@ -65,47 +67,47 @@ impl DashboardPublishOptions {
     )]
     pub fn visual_publish_options(
         &self,
-    ) -> std::option::Option<&crate::types::DashboardVisualPublishOptions> {
+    ) -> ::std::option::Option<&crate::types::DashboardVisualPublishOptions> {
         self.visual_publish_options.as_ref()
     }
     /// <p>The sheet layout maximization options of a dashbaord.</p>
     pub fn sheet_layout_element_maximization_option(
         &self,
-    ) -> std::option::Option<&crate::types::SheetLayoutElementMaximizationOption> {
+    ) -> ::std::option::Option<&crate::types::SheetLayoutElementMaximizationOption> {
         self.sheet_layout_element_maximization_option.as_ref()
     }
     /// <p>The menu options of a visual in a dashboard.</p>
-    pub fn visual_menu_option(&self) -> std::option::Option<&crate::types::VisualMenuOption> {
+    pub fn visual_menu_option(&self) -> ::std::option::Option<&crate::types::VisualMenuOption> {
         self.visual_menu_option.as_ref()
     }
     /// <p>The axis sort options of a dashboard.</p>
     pub fn visual_axis_sort_option(
         &self,
-    ) -> std::option::Option<&crate::types::VisualAxisSortOption> {
+    ) -> ::std::option::Option<&crate::types::VisualAxisSortOption> {
         self.visual_axis_sort_option.as_ref()
     }
     /// <p>Determines if hidden fields are exported with a dashboard.</p>
     pub fn export_with_hidden_fields_option(
         &self,
-    ) -> std::option::Option<&crate::types::ExportWithHiddenFieldsOption> {
+    ) -> ::std::option::Option<&crate::types::ExportWithHiddenFieldsOption> {
         self.export_with_hidden_fields_option.as_ref()
     }
     /// <p>The drill-down options of data points in a dashboard.</p>
     pub fn data_point_drill_up_down_option(
         &self,
-    ) -> std::option::Option<&crate::types::DataPointDrillUpDownOption> {
+    ) -> ::std::option::Option<&crate::types::DataPointDrillUpDownOption> {
         self.data_point_drill_up_down_option.as_ref()
     }
     /// <p>The data point menu label options of a dashboard.</p>
     pub fn data_point_menu_label_option(
         &self,
-    ) -> std::option::Option<&crate::types::DataPointMenuLabelOption> {
+    ) -> ::std::option::Option<&crate::types::DataPointMenuLabelOption> {
         self.data_point_menu_label_option.as_ref()
     }
     /// <p>The data point tool tip options of a dashboard.</p>
     pub fn data_point_tooltip_option(
         &self,
-    ) -> std::option::Option<&crate::types::DataPointTooltipOption> {
+    ) -> ::std::option::Option<&crate::types::DataPointTooltipOption> {
         self.data_point_tooltip_option.as_ref()
     }
 }
@@ -118,61 +120,64 @@ impl DashboardPublishOptions {
 
 /// A builder for [`DashboardPublishOptions`](crate::types::DashboardPublishOptions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DashboardPublishOptionsBuilder {
-    pub(crate) ad_hoc_filtering_option: std::option::Option<crate::types::AdHocFilteringOption>,
-    pub(crate) export_to_csv_option: std::option::Option<crate::types::ExportToCsvOption>,
-    pub(crate) sheet_controls_option: std::option::Option<crate::types::SheetControlsOption>,
+    pub(crate) ad_hoc_filtering_option: ::std::option::Option<crate::types::AdHocFilteringOption>,
+    pub(crate) export_to_csv_option: ::std::option::Option<crate::types::ExportToCsvOption>,
+    pub(crate) sheet_controls_option: ::std::option::Option<crate::types::SheetControlsOption>,
     pub(crate) visual_publish_options:
-        std::option::Option<crate::types::DashboardVisualPublishOptions>,
+        ::std::option::Option<crate::types::DashboardVisualPublishOptions>,
     pub(crate) sheet_layout_element_maximization_option:
-        std::option::Option<crate::types::SheetLayoutElementMaximizationOption>,
-    pub(crate) visual_menu_option: std::option::Option<crate::types::VisualMenuOption>,
-    pub(crate) visual_axis_sort_option: std::option::Option<crate::types::VisualAxisSortOption>,
+        ::std::option::Option<crate::types::SheetLayoutElementMaximizationOption>,
+    pub(crate) visual_menu_option: ::std::option::Option<crate::types::VisualMenuOption>,
+    pub(crate) visual_axis_sort_option: ::std::option::Option<crate::types::VisualAxisSortOption>,
     pub(crate) export_with_hidden_fields_option:
-        std::option::Option<crate::types::ExportWithHiddenFieldsOption>,
+        ::std::option::Option<crate::types::ExportWithHiddenFieldsOption>,
     pub(crate) data_point_drill_up_down_option:
-        std::option::Option<crate::types::DataPointDrillUpDownOption>,
+        ::std::option::Option<crate::types::DataPointDrillUpDownOption>,
     pub(crate) data_point_menu_label_option:
-        std::option::Option<crate::types::DataPointMenuLabelOption>,
-    pub(crate) data_point_tooltip_option: std::option::Option<crate::types::DataPointTooltipOption>,
+        ::std::option::Option<crate::types::DataPointMenuLabelOption>,
+    pub(crate) data_point_tooltip_option:
+        ::std::option::Option<crate::types::DataPointTooltipOption>,
 }
 impl DashboardPublishOptionsBuilder {
     /// <p>Ad hoc (one-time) filtering option.</p>
     pub fn ad_hoc_filtering_option(mut self, input: crate::types::AdHocFilteringOption) -> Self {
-        self.ad_hoc_filtering_option = Some(input);
+        self.ad_hoc_filtering_option = ::std::option::Option::Some(input);
         self
     }
     /// <p>Ad hoc (one-time) filtering option.</p>
     pub fn set_ad_hoc_filtering_option(
         mut self,
-        input: std::option::Option<crate::types::AdHocFilteringOption>,
+        input: ::std::option::Option<crate::types::AdHocFilteringOption>,
     ) -> Self {
         self.ad_hoc_filtering_option = input;
         self
     }
     /// <p>Export to .csv option.</p>
     pub fn export_to_csv_option(mut self, input: crate::types::ExportToCsvOption) -> Self {
-        self.export_to_csv_option = Some(input);
+        self.export_to_csv_option = ::std::option::Option::Some(input);
         self
     }
     /// <p>Export to .csv option.</p>
     pub fn set_export_to_csv_option(
         mut self,
-        input: std::option::Option<crate::types::ExportToCsvOption>,
+        input: ::std::option::Option<crate::types::ExportToCsvOption>,
     ) -> Self {
         self.export_to_csv_option = input;
         self
     }
     /// <p>Sheet controls option.</p>
     pub fn sheet_controls_option(mut self, input: crate::types::SheetControlsOption) -> Self {
-        self.sheet_controls_option = Some(input);
+        self.sheet_controls_option = ::std::option::Option::Some(input);
         self
     }
     /// <p>Sheet controls option.</p>
     pub fn set_sheet_controls_option(
         mut self,
-        input: std::option::Option<crate::types::SheetControlsOption>,
+        input: ::std::option::Option<crate::types::SheetControlsOption>,
     ) -> Self {
         self.sheet_controls_option = input;
         self
@@ -185,7 +190,7 @@ impl DashboardPublishOptionsBuilder {
         mut self,
         input: crate::types::DashboardVisualPublishOptions,
     ) -> Self {
-        self.visual_publish_options = Some(input);
+        self.visual_publish_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The visual publish options of a visual in a dashboard.</p>
@@ -194,7 +199,7 @@ impl DashboardPublishOptionsBuilder {
     )]
     pub fn set_visual_publish_options(
         mut self,
-        input: std::option::Option<crate::types::DashboardVisualPublishOptions>,
+        input: ::std::option::Option<crate::types::DashboardVisualPublishOptions>,
     ) -> Self {
         self.visual_publish_options = input;
         self
@@ -204,39 +209,39 @@ impl DashboardPublishOptionsBuilder {
         mut self,
         input: crate::types::SheetLayoutElementMaximizationOption,
     ) -> Self {
-        self.sheet_layout_element_maximization_option = Some(input);
+        self.sheet_layout_element_maximization_option = ::std::option::Option::Some(input);
         self
     }
     /// <p>The sheet layout maximization options of a dashbaord.</p>
     pub fn set_sheet_layout_element_maximization_option(
         mut self,
-        input: std::option::Option<crate::types::SheetLayoutElementMaximizationOption>,
+        input: ::std::option::Option<crate::types::SheetLayoutElementMaximizationOption>,
     ) -> Self {
         self.sheet_layout_element_maximization_option = input;
         self
     }
     /// <p>The menu options of a visual in a dashboard.</p>
     pub fn visual_menu_option(mut self, input: crate::types::VisualMenuOption) -> Self {
-        self.visual_menu_option = Some(input);
+        self.visual_menu_option = ::std::option::Option::Some(input);
         self
     }
     /// <p>The menu options of a visual in a dashboard.</p>
     pub fn set_visual_menu_option(
         mut self,
-        input: std::option::Option<crate::types::VisualMenuOption>,
+        input: ::std::option::Option<crate::types::VisualMenuOption>,
     ) -> Self {
         self.visual_menu_option = input;
         self
     }
     /// <p>The axis sort options of a dashboard.</p>
     pub fn visual_axis_sort_option(mut self, input: crate::types::VisualAxisSortOption) -> Self {
-        self.visual_axis_sort_option = Some(input);
+        self.visual_axis_sort_option = ::std::option::Option::Some(input);
         self
     }
     /// <p>The axis sort options of a dashboard.</p>
     pub fn set_visual_axis_sort_option(
         mut self,
-        input: std::option::Option<crate::types::VisualAxisSortOption>,
+        input: ::std::option::Option<crate::types::VisualAxisSortOption>,
     ) -> Self {
         self.visual_axis_sort_option = input;
         self
@@ -246,13 +251,13 @@ impl DashboardPublishOptionsBuilder {
         mut self,
         input: crate::types::ExportWithHiddenFieldsOption,
     ) -> Self {
-        self.export_with_hidden_fields_option = Some(input);
+        self.export_with_hidden_fields_option = ::std::option::Option::Some(input);
         self
     }
     /// <p>Determines if hidden fields are exported with a dashboard.</p>
     pub fn set_export_with_hidden_fields_option(
         mut self,
-        input: std::option::Option<crate::types::ExportWithHiddenFieldsOption>,
+        input: ::std::option::Option<crate::types::ExportWithHiddenFieldsOption>,
     ) -> Self {
         self.export_with_hidden_fields_option = input;
         self
@@ -262,13 +267,13 @@ impl DashboardPublishOptionsBuilder {
         mut self,
         input: crate::types::DataPointDrillUpDownOption,
     ) -> Self {
-        self.data_point_drill_up_down_option = Some(input);
+        self.data_point_drill_up_down_option = ::std::option::Option::Some(input);
         self
     }
     /// <p>The drill-down options of data points in a dashboard.</p>
     pub fn set_data_point_drill_up_down_option(
         mut self,
-        input: std::option::Option<crate::types::DataPointDrillUpDownOption>,
+        input: ::std::option::Option<crate::types::DataPointDrillUpDownOption>,
     ) -> Self {
         self.data_point_drill_up_down_option = input;
         self
@@ -278,13 +283,13 @@ impl DashboardPublishOptionsBuilder {
         mut self,
         input: crate::types::DataPointMenuLabelOption,
     ) -> Self {
-        self.data_point_menu_label_option = Some(input);
+        self.data_point_menu_label_option = ::std::option::Option::Some(input);
         self
     }
     /// <p>The data point menu label options of a dashboard.</p>
     pub fn set_data_point_menu_label_option(
         mut self,
-        input: std::option::Option<crate::types::DataPointMenuLabelOption>,
+        input: ::std::option::Option<crate::types::DataPointMenuLabelOption>,
     ) -> Self {
         self.data_point_menu_label_option = input;
         self
@@ -294,13 +299,13 @@ impl DashboardPublishOptionsBuilder {
         mut self,
         input: crate::types::DataPointTooltipOption,
     ) -> Self {
-        self.data_point_tooltip_option = Some(input);
+        self.data_point_tooltip_option = ::std::option::Option::Some(input);
         self
     }
     /// <p>The data point tool tip options of a dashboard.</p>
     pub fn set_data_point_tooltip_option(
         mut self,
-        input: std::option::Option<crate::types::DataPointTooltipOption>,
+        input: ::std::option::Option<crate::types::DataPointTooltipOption>,
     ) -> Self {
         self.data_point_tooltip_option = input;
         self

@@ -4,22 +4,22 @@
 /// <p>Does not apply to RabbitMQ brokers.</p>
 /// </important>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConfigurationId {
     /// <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The revision number of the configuration.</p>
     #[doc(hidden)]
-    pub revision: std::option::Option<i32>,
+    pub revision: ::std::option::Option<i32>,
 }
 impl ConfigurationId {
     /// <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The revision number of the configuration.</p>
-    pub fn revision(&self) -> std::option::Option<i32> {
+    pub fn revision(&self) -> ::std::option::Option<i32> {
         self.revision
     }
 }
@@ -32,29 +32,31 @@ impl ConfigurationId {
 
 /// A builder for [`ConfigurationId`](crate::types::ConfigurationId).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ConfigurationIdBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) revision: std::option::Option<i32>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) revision: ::std::option::Option<i32>,
 }
 impl ConfigurationIdBuilder {
     /// <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Required. The unique ID that Amazon MQ generates for the configuration.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>The revision number of the configuration.</p>
     pub fn revision(mut self, input: i32) -> Self {
-        self.revision = Some(input);
+        self.revision = ::std::option::Option::Some(input);
         self
     }
     /// <p>The revision number of the configuration.</p>
-    pub fn set_revision(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_revision(mut self, input: ::std::option::Option<i32>) -> Self {
         self.revision = input;
         self
     }

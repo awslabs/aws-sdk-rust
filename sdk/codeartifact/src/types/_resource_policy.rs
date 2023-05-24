@@ -2,29 +2,29 @@
 
 /// <p> An CodeArtifact resource policy that contains a resource ARN, document details, and a revision. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourcePolicy {
     /// <p> The ARN of the resource associated with the resource policy </p>
     #[doc(hidden)]
-    pub resource_arn: std::option::Option<std::string::String>,
+    pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p> The current revision of the resource policy. </p>
     #[doc(hidden)]
-    pub revision: std::option::Option<std::string::String>,
+    pub revision: ::std::option::Option<::std::string::String>,
     /// <p> The resource policy formatted in JSON. </p>
     #[doc(hidden)]
-    pub document: std::option::Option<std::string::String>,
+    pub document: ::std::option::Option<::std::string::String>,
 }
 impl ResourcePolicy {
     /// <p> The ARN of the resource associated with the resource policy </p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
     /// <p> The current revision of the resource policy. </p>
-    pub fn revision(&self) -> std::option::Option<&str> {
+    pub fn revision(&self) -> ::std::option::Option<&str> {
         self.revision.as_deref()
     }
     /// <p> The resource policy formatted in JSON. </p>
-    pub fn document(&self) -> std::option::Option<&str> {
+    pub fn document(&self) -> ::std::option::Option<&str> {
         self.document.as_deref()
     }
 }
@@ -37,40 +37,42 @@ impl ResourcePolicy {
 
 /// A builder for [`ResourcePolicy`](crate::types::ResourcePolicy).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResourcePolicyBuilder {
-    pub(crate) resource_arn: std::option::Option<std::string::String>,
-    pub(crate) revision: std::option::Option<std::string::String>,
-    pub(crate) document: std::option::Option<std::string::String>,
+    pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) revision: ::std::option::Option<::std::string::String>,
+    pub(crate) document: ::std::option::Option<::std::string::String>,
 }
 impl ResourcePolicyBuilder {
     /// <p> The ARN of the resource associated with the resource policy </p>
-    pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_arn = Some(input.into());
+    pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The ARN of the resource associated with the resource policy </p>
-    pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
     }
     /// <p> The current revision of the resource policy. </p>
-    pub fn revision(mut self, input: impl Into<std::string::String>) -> Self {
-        self.revision = Some(input.into());
+    pub fn revision(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.revision = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The current revision of the resource policy. </p>
-    pub fn set_revision(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_revision(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.revision = input;
         self
     }
     /// <p> The resource policy formatted in JSON. </p>
-    pub fn document(mut self, input: impl Into<std::string::String>) -> Self {
-        self.document = Some(input.into());
+    pub fn document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.document = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The resource policy formatted in JSON. </p>
-    pub fn set_document(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.document = input;
         self
     }

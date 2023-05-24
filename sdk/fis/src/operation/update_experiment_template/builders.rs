@@ -6,29 +6,29 @@ pub use crate::operation::update_experiment_template::_update_experiment_templat
 /// Fluent builder constructing a request to `UpdateExperimentTemplate`.
 ///
 /// <p>Updates the specified experiment template.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateExperimentTemplateFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::update_experiment_template::builders::UpdateExperimentTemplateInputBuilder,
 }
 impl UpdateExperimentTemplateFluentBuilder {
     /// Creates a new `UpdateExperimentTemplate`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_experiment_template::UpdateExperimentTemplate,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_experiment_template::UpdateExperimentTemplateError,
         >,
     > {
@@ -36,30 +36,33 @@ impl UpdateExperimentTemplateFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_experiment_template::UpdateExperimentTemplateOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_experiment_template::UpdateExperimentTemplateError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,31 +75,31 @@ impl UpdateExperimentTemplateFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_experiment_template::UpdateExperimentTemplateOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_experiment_template::UpdateExperimentTemplateError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The ID of the experiment template.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.id(input.into());
         self
     }
     /// <p>The ID of the experiment template.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_id(input);
         self
     }
     /// <p>A description for the template.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>A description for the template.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
@@ -115,8 +118,8 @@ impl UpdateExperimentTemplateFluentBuilder {
     /// <p>The stop conditions for the experiment.</p>
     pub fn set_stop_conditions(
         mut self,
-        input: std::option::Option<
-            std::vec::Vec<crate::types::UpdateExperimentTemplateStopConditionInput>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::UpdateExperimentTemplateStopConditionInput>,
         >,
     ) -> Self {
         self.inner = self.inner.set_stop_conditions(input);
@@ -129,7 +132,7 @@ impl UpdateExperimentTemplateFluentBuilder {
     /// <p>The targets for the experiment.</p>
     pub fn targets(
         mut self,
-        k: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
         v: crate::types::UpdateExperimentTemplateTargetInput,
     ) -> Self {
         self.inner = self.inner.targets(k.into(), v);
@@ -138,9 +141,9 @@ impl UpdateExperimentTemplateFluentBuilder {
     /// <p>The targets for the experiment.</p>
     pub fn set_targets(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<
-                std::string::String,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<
+                ::std::string::String,
                 crate::types::UpdateExperimentTemplateTargetInput,
             >,
         >,
@@ -155,7 +158,7 @@ impl UpdateExperimentTemplateFluentBuilder {
     /// <p>The actions for the experiment.</p>
     pub fn actions(
         mut self,
-        k: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
         v: crate::types::UpdateExperimentTemplateActionInputItem,
     ) -> Self {
         self.inner = self.inner.actions(k.into(), v);
@@ -164,9 +167,9 @@ impl UpdateExperimentTemplateFluentBuilder {
     /// <p>The actions for the experiment.</p>
     pub fn set_actions(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<
-                std::string::String,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<
+                ::std::string::String,
                 crate::types::UpdateExperimentTemplateActionInputItem,
             >,
         >,
@@ -175,12 +178,12 @@ impl UpdateExperimentTemplateFluentBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that grants the FIS service permission to perform service actions on your behalf.</p>
-    pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that grants the FIS service permission to perform service actions on your behalf.</p>
-    pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
     }
@@ -195,7 +198,7 @@ impl UpdateExperimentTemplateFluentBuilder {
     /// <p>The configuration for experiment logging.</p>
     pub fn set_log_configuration(
         mut self,
-        input: std::option::Option<crate::types::UpdateExperimentTemplateLogConfigurationInput>,
+        input: ::std::option::Option<crate::types::UpdateExperimentTemplateLogConfigurationInput>,
     ) -> Self {
         self.inner = self.inner.set_log_configuration(input);
         self

@@ -2,22 +2,22 @@
 
 /// <p>The severity assigned to the finding by the finding provider.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FindingProviderSeverity {
     /// <p>The severity label assigned to the finding by the finding provider.</p>
     #[doc(hidden)]
-    pub label: std::option::Option<crate::types::SeverityLabel>,
+    pub label: ::std::option::Option<crate::types::SeverityLabel>,
     /// <p>The finding provider's original value for the severity.</p>
     #[doc(hidden)]
-    pub original: std::option::Option<std::string::String>,
+    pub original: ::std::option::Option<::std::string::String>,
 }
 impl FindingProviderSeverity {
     /// <p>The severity label assigned to the finding by the finding provider.</p>
-    pub fn label(&self) -> std::option::Option<&crate::types::SeverityLabel> {
+    pub fn label(&self) -> ::std::option::Option<&crate::types::SeverityLabel> {
         self.label.as_ref()
     }
     /// <p>The finding provider's original value for the severity.</p>
-    pub fn original(&self) -> std::option::Option<&str> {
+    pub fn original(&self) -> ::std::option::Option<&str> {
         self.original.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl FindingProviderSeverity {
 
 /// A builder for [`FindingProviderSeverity`](crate::types::FindingProviderSeverity).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FindingProviderSeverityBuilder {
-    pub(crate) label: std::option::Option<crate::types::SeverityLabel>,
-    pub(crate) original: std::option::Option<std::string::String>,
+    pub(crate) label: ::std::option::Option<crate::types::SeverityLabel>,
+    pub(crate) original: ::std::option::Option<::std::string::String>,
 }
 impl FindingProviderSeverityBuilder {
     /// <p>The severity label assigned to the finding by the finding provider.</p>
     pub fn label(mut self, input: crate::types::SeverityLabel) -> Self {
-        self.label = Some(input);
+        self.label = ::std::option::Option::Some(input);
         self
     }
     /// <p>The severity label assigned to the finding by the finding provider.</p>
-    pub fn set_label(mut self, input: std::option::Option<crate::types::SeverityLabel>) -> Self {
+    pub fn set_label(mut self, input: ::std::option::Option<crate::types::SeverityLabel>) -> Self {
         self.label = input;
         self
     }
     /// <p>The finding provider's original value for the severity.</p>
-    pub fn original(mut self, input: impl Into<std::string::String>) -> Self {
-        self.original = Some(input.into());
+    pub fn original(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.original = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The finding provider's original value for the severity.</p>
-    pub fn set_original(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_original(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.original = input;
         self
     }

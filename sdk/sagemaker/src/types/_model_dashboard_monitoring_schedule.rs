@@ -2,93 +2,95 @@
 
 /// <p>A monitoring schedule for a model displayed in the Amazon SageMaker Model Dashboard.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModelDashboardMonitoringSchedule {
     /// <p>The Amazon Resource Name (ARN) of a monitoring schedule.</p>
     #[doc(hidden)]
-    pub monitoring_schedule_arn: std::option::Option<std::string::String>,
+    pub monitoring_schedule_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of a monitoring schedule.</p>
     #[doc(hidden)]
-    pub monitoring_schedule_name: std::option::Option<std::string::String>,
+    pub monitoring_schedule_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the monitoring schedule.</p>
     #[doc(hidden)]
-    pub monitoring_schedule_status: std::option::Option<crate::types::ScheduleStatus>,
+    pub monitoring_schedule_status: ::std::option::Option<crate::types::ScheduleStatus>,
     /// <p>The monitor type of a model monitor.</p>
     #[doc(hidden)]
-    pub monitoring_type: std::option::Option<crate::types::MonitoringType>,
+    pub monitoring_type: ::std::option::Option<crate::types::MonitoringType>,
     /// <p>If a monitoring job failed, provides the reason.</p>
     #[doc(hidden)]
-    pub failure_reason: std::option::Option<std::string::String>,
+    pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>A timestamp that indicates when the monitoring schedule was created.</p>
     #[doc(hidden)]
-    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A timestamp that indicates when the monitoring schedule was last updated.</p>
     #[doc(hidden)]
-    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Configures the monitoring schedule and defines the monitoring job.</p>
     #[doc(hidden)]
-    pub monitoring_schedule_config: std::option::Option<crate::types::MonitoringScheduleConfig>,
+    pub monitoring_schedule_config: ::std::option::Option<crate::types::MonitoringScheduleConfig>,
     /// <p>The endpoint which is monitored.</p>
     #[doc(hidden)]
-    pub endpoint_name: std::option::Option<std::string::String>,
+    pub endpoint_name: ::std::option::Option<::std::string::String>,
     /// <p>A JSON array where each element is a summary for a monitoring alert.</p>
     #[doc(hidden)]
     pub monitoring_alert_summaries:
-        std::option::Option<std::vec::Vec<crate::types::MonitoringAlertSummary>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::MonitoringAlertSummary>>,
     /// <p>Summary of information about the last monitoring job to run.</p>
     #[doc(hidden)]
     pub last_monitoring_execution_summary:
-        std::option::Option<crate::types::MonitoringExecutionSummary>,
+        ::std::option::Option<crate::types::MonitoringExecutionSummary>,
 }
 impl ModelDashboardMonitoringSchedule {
     /// <p>The Amazon Resource Name (ARN) of a monitoring schedule.</p>
-    pub fn monitoring_schedule_arn(&self) -> std::option::Option<&str> {
+    pub fn monitoring_schedule_arn(&self) -> ::std::option::Option<&str> {
         self.monitoring_schedule_arn.as_deref()
     }
     /// <p>The name of a monitoring schedule.</p>
-    pub fn monitoring_schedule_name(&self) -> std::option::Option<&str> {
+    pub fn monitoring_schedule_name(&self) -> ::std::option::Option<&str> {
         self.monitoring_schedule_name.as_deref()
     }
     /// <p>The status of the monitoring schedule.</p>
-    pub fn monitoring_schedule_status(&self) -> std::option::Option<&crate::types::ScheduleStatus> {
+    pub fn monitoring_schedule_status(
+        &self,
+    ) -> ::std::option::Option<&crate::types::ScheduleStatus> {
         self.monitoring_schedule_status.as_ref()
     }
     /// <p>The monitor type of a model monitor.</p>
-    pub fn monitoring_type(&self) -> std::option::Option<&crate::types::MonitoringType> {
+    pub fn monitoring_type(&self) -> ::std::option::Option<&crate::types::MonitoringType> {
         self.monitoring_type.as_ref()
     }
     /// <p>If a monitoring job failed, provides the reason.</p>
-    pub fn failure_reason(&self) -> std::option::Option<&str> {
+    pub fn failure_reason(&self) -> ::std::option::Option<&str> {
         self.failure_reason.as_deref()
     }
     /// <p>A timestamp that indicates when the monitoring schedule was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>A timestamp that indicates when the monitoring schedule was last updated.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>Configures the monitoring schedule and defines the monitoring job.</p>
     pub fn monitoring_schedule_config(
         &self,
-    ) -> std::option::Option<&crate::types::MonitoringScheduleConfig> {
+    ) -> ::std::option::Option<&crate::types::MonitoringScheduleConfig> {
         self.monitoring_schedule_config.as_ref()
     }
     /// <p>The endpoint which is monitored.</p>
-    pub fn endpoint_name(&self) -> std::option::Option<&str> {
+    pub fn endpoint_name(&self) -> ::std::option::Option<&str> {
         self.endpoint_name.as_deref()
     }
     /// <p>A JSON array where each element is a summary for a monitoring alert.</p>
     pub fn monitoring_alert_summaries(
         &self,
-    ) -> std::option::Option<&[crate::types::MonitoringAlertSummary]> {
+    ) -> ::std::option::Option<&[crate::types::MonitoringAlertSummary]> {
         self.monitoring_alert_summaries.as_deref()
     }
     /// <p>Summary of information about the last monitoring job to run.</p>
     pub fn last_monitoring_execution_summary(
         &self,
-    ) -> std::option::Option<&crate::types::MonitoringExecutionSummary> {
+    ) -> ::std::option::Option<&crate::types::MonitoringExecutionSummary> {
         self.last_monitoring_execution_summary.as_ref()
     }
 }
@@ -101,108 +103,122 @@ impl ModelDashboardMonitoringSchedule {
 
 /// A builder for [`ModelDashboardMonitoringSchedule`](crate::types::ModelDashboardMonitoringSchedule).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ModelDashboardMonitoringScheduleBuilder {
-    pub(crate) monitoring_schedule_arn: std::option::Option<std::string::String>,
-    pub(crate) monitoring_schedule_name: std::option::Option<std::string::String>,
-    pub(crate) monitoring_schedule_status: std::option::Option<crate::types::ScheduleStatus>,
-    pub(crate) monitoring_type: std::option::Option<crate::types::MonitoringType>,
-    pub(crate) failure_reason: std::option::Option<std::string::String>,
-    pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) monitoring_schedule_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) monitoring_schedule_name: ::std::option::Option<::std::string::String>,
+    pub(crate) monitoring_schedule_status: ::std::option::Option<crate::types::ScheduleStatus>,
+    pub(crate) monitoring_type: ::std::option::Option<crate::types::MonitoringType>,
+    pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
+    pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) monitoring_schedule_config:
-        std::option::Option<crate::types::MonitoringScheduleConfig>,
-    pub(crate) endpoint_name: std::option::Option<std::string::String>,
+        ::std::option::Option<crate::types::MonitoringScheduleConfig>,
+    pub(crate) endpoint_name: ::std::option::Option<::std::string::String>,
     pub(crate) monitoring_alert_summaries:
-        std::option::Option<std::vec::Vec<crate::types::MonitoringAlertSummary>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::MonitoringAlertSummary>>,
     pub(crate) last_monitoring_execution_summary:
-        std::option::Option<crate::types::MonitoringExecutionSummary>,
+        ::std::option::Option<crate::types::MonitoringExecutionSummary>,
 }
 impl ModelDashboardMonitoringScheduleBuilder {
     /// <p>The Amazon Resource Name (ARN) of a monitoring schedule.</p>
-    pub fn monitoring_schedule_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.monitoring_schedule_arn = Some(input.into());
+    pub fn monitoring_schedule_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.monitoring_schedule_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of a monitoring schedule.</p>
     pub fn set_monitoring_schedule_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.monitoring_schedule_arn = input;
         self
     }
     /// <p>The name of a monitoring schedule.</p>
-    pub fn monitoring_schedule_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.monitoring_schedule_name = Some(input.into());
+    pub fn monitoring_schedule_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.monitoring_schedule_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a monitoring schedule.</p>
     pub fn set_monitoring_schedule_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.monitoring_schedule_name = input;
         self
     }
     /// <p>The status of the monitoring schedule.</p>
     pub fn monitoring_schedule_status(mut self, input: crate::types::ScheduleStatus) -> Self {
-        self.monitoring_schedule_status = Some(input);
+        self.monitoring_schedule_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the monitoring schedule.</p>
     pub fn set_monitoring_schedule_status(
         mut self,
-        input: std::option::Option<crate::types::ScheduleStatus>,
+        input: ::std::option::Option<crate::types::ScheduleStatus>,
     ) -> Self {
         self.monitoring_schedule_status = input;
         self
     }
     /// <p>The monitor type of a model monitor.</p>
     pub fn monitoring_type(mut self, input: crate::types::MonitoringType) -> Self {
-        self.monitoring_type = Some(input);
+        self.monitoring_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The monitor type of a model monitor.</p>
     pub fn set_monitoring_type(
         mut self,
-        input: std::option::Option<crate::types::MonitoringType>,
+        input: ::std::option::Option<crate::types::MonitoringType>,
     ) -> Self {
         self.monitoring_type = input;
         self
     }
     /// <p>If a monitoring job failed, provides the reason.</p>
-    pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
-        self.failure_reason = Some(input.into());
+    pub fn failure_reason(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If a monitoring job failed, provides the reason.</p>
-    pub fn set_failure_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_failure_reason(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.failure_reason = input;
         self
     }
     /// <p>A timestamp that indicates when the monitoring schedule was created.</p>
-    pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_time = Some(input);
+    pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>A timestamp that indicates when the monitoring schedule was created.</p>
     pub fn set_creation_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_time = input;
         self
     }
     /// <p>A timestamp that indicates when the monitoring schedule was last updated.</p>
-    pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_modified_time = Some(input);
+    pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_modified_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>A timestamp that indicates when the monitoring schedule was last updated.</p>
     pub fn set_last_modified_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_modified_time = input;
         self
@@ -212,24 +228,30 @@ impl ModelDashboardMonitoringScheduleBuilder {
         mut self,
         input: crate::types::MonitoringScheduleConfig,
     ) -> Self {
-        self.monitoring_schedule_config = Some(input);
+        self.monitoring_schedule_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configures the monitoring schedule and defines the monitoring job.</p>
     pub fn set_monitoring_schedule_config(
         mut self,
-        input: std::option::Option<crate::types::MonitoringScheduleConfig>,
+        input: ::std::option::Option<crate::types::MonitoringScheduleConfig>,
     ) -> Self {
         self.monitoring_schedule_config = input;
         self
     }
     /// <p>The endpoint which is monitored.</p>
-    pub fn endpoint_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.endpoint_name = Some(input.into());
+    pub fn endpoint_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.endpoint_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The endpoint which is monitored.</p>
-    pub fn set_endpoint_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_endpoint_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.endpoint_name = input;
         self
     }
@@ -244,13 +266,13 @@ impl ModelDashboardMonitoringScheduleBuilder {
     ) -> Self {
         let mut v = self.monitoring_alert_summaries.unwrap_or_default();
         v.push(input);
-        self.monitoring_alert_summaries = Some(v);
+        self.monitoring_alert_summaries = ::std::option::Option::Some(v);
         self
     }
     /// <p>A JSON array where each element is a summary for a monitoring alert.</p>
     pub fn set_monitoring_alert_summaries(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::MonitoringAlertSummary>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::MonitoringAlertSummary>>,
     ) -> Self {
         self.monitoring_alert_summaries = input;
         self
@@ -260,13 +282,13 @@ impl ModelDashboardMonitoringScheduleBuilder {
         mut self,
         input: crate::types::MonitoringExecutionSummary,
     ) -> Self {
-        self.last_monitoring_execution_summary = Some(input);
+        self.last_monitoring_execution_summary = ::std::option::Option::Some(input);
         self
     }
     /// <p>Summary of information about the last monitoring job to run.</p>
     pub fn set_last_monitoring_execution_summary(
         mut self,
-        input: std::option::Option<crate::types::MonitoringExecutionSummary>,
+        input: ::std::option::Option<crate::types::MonitoringExecutionSummary>,
     ) -> Self {
         self.last_monitoring_execution_summary = input;
         self

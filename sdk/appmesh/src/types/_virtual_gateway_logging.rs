@@ -2,15 +2,15 @@
 
 /// <p>An object that represents logging information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VirtualGatewayLogging {
     /// <p>The access log configuration.</p>
     #[doc(hidden)]
-    pub access_log: std::option::Option<crate::types::VirtualGatewayAccessLog>,
+    pub access_log: ::std::option::Option<crate::types::VirtualGatewayAccessLog>,
 }
 impl VirtualGatewayLogging {
     /// <p>The access log configuration.</p>
-    pub fn access_log(&self) -> std::option::Option<&crate::types::VirtualGatewayAccessLog> {
+    pub fn access_log(&self) -> ::std::option::Option<&crate::types::VirtualGatewayAccessLog> {
         self.access_log.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl VirtualGatewayLogging {
 
 /// A builder for [`VirtualGatewayLogging`](crate::types::VirtualGatewayLogging).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VirtualGatewayLoggingBuilder {
-    pub(crate) access_log: std::option::Option<crate::types::VirtualGatewayAccessLog>,
+    pub(crate) access_log: ::std::option::Option<crate::types::VirtualGatewayAccessLog>,
 }
 impl VirtualGatewayLoggingBuilder {
     /// <p>The access log configuration.</p>
     pub fn access_log(mut self, input: crate::types::VirtualGatewayAccessLog) -> Self {
-        self.access_log = Some(input);
+        self.access_log = ::std::option::Option::Some(input);
         self
     }
     /// <p>The access log configuration.</p>
     pub fn set_access_log(
         mut self,
-        input: std::option::Option<crate::types::VirtualGatewayAccessLog>,
+        input: ::std::option::Option<crate::types::VirtualGatewayAccessLog>,
     ) -> Self {
         self.access_log = input;
         self

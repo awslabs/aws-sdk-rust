@@ -2,27 +2,27 @@
 
 /// <p>Describes a key pair.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct KeyPair {
     /// <p>The public key.</p>
     #[doc(hidden)]
-    pub public_key: std::option::Option<std::string::String>,
+    pub public_key: ::std::option::Option<::std::string::String>,
     /// <p>The private key.</p>
     #[doc(hidden)]
-    pub private_key: std::option::Option<std::string::String>,
+    pub private_key: ::std::option::Option<::std::string::String>,
 }
 impl KeyPair {
     /// <p>The public key.</p>
-    pub fn public_key(&self) -> std::option::Option<&str> {
+    pub fn public_key(&self) -> ::std::option::Option<&str> {
         self.public_key.as_deref()
     }
     /// <p>The private key.</p>
-    pub fn private_key(&self) -> std::option::Option<&str> {
+    pub fn private_key(&self) -> ::std::option::Option<&str> {
         self.private_key.as_deref()
     }
 }
-impl std::fmt::Debug for KeyPair {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for KeyPair {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("KeyPair");
         formatter.field("public_key", &self.public_key);
         formatter.field("private_key", &"*** Sensitive Data Redacted ***");
@@ -38,29 +38,29 @@ impl KeyPair {
 
 /// A builder for [`KeyPair`](crate::types::KeyPair).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct KeyPairBuilder {
-    pub(crate) public_key: std::option::Option<std::string::String>,
-    pub(crate) private_key: std::option::Option<std::string::String>,
+    pub(crate) public_key: ::std::option::Option<::std::string::String>,
+    pub(crate) private_key: ::std::option::Option<::std::string::String>,
 }
 impl KeyPairBuilder {
     /// <p>The public key.</p>
-    pub fn public_key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.public_key = Some(input.into());
+    pub fn public_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.public_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The public key.</p>
-    pub fn set_public_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_public_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.public_key = input;
         self
     }
     /// <p>The private key.</p>
-    pub fn private_key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.private_key = Some(input.into());
+    pub fn private_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.private_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The private key.</p>
-    pub fn set_private_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_private_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.private_key = input;
         self
     }
@@ -72,8 +72,8 @@ impl KeyPairBuilder {
         }
     }
 }
-impl std::fmt::Debug for KeyPairBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for KeyPairBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("KeyPairBuilder");
         formatter.field("public_key", &self.public_key);
         formatter.field("private_key", &"*** Sensitive Data Redacted ***");

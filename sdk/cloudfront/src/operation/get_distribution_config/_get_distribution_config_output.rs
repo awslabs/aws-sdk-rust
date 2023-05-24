@@ -2,27 +2,27 @@
 
 /// <p>The returned result of the corresponding request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDistributionConfigOutput {
     /// <p>The distribution's configuration information.</p>
     #[doc(hidden)]
-    pub distribution_config: std::option::Option<crate::types::DistributionConfig>,
+    pub distribution_config: ::std::option::Option<crate::types::DistributionConfig>,
     /// <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     #[doc(hidden)]
-    pub e_tag: std::option::Option<std::string::String>,
+    pub e_tag: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetDistributionConfigOutput {
     /// <p>The distribution's configuration information.</p>
-    pub fn distribution_config(&self) -> std::option::Option<&crate::types::DistributionConfig> {
+    pub fn distribution_config(&self) -> ::std::option::Option<&crate::types::DistributionConfig> {
         self.distribution_config.as_ref()
     }
     /// <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-    pub fn e_tag(&self) -> std::option::Option<&str> {
+    pub fn e_tag(&self) -> ::std::option::Option<&str> {
         self.e_tag.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for GetDistributionConfigOutput {
+impl ::aws_http::request_id::RequestId for GetDistributionConfigOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -38,33 +38,35 @@ impl GetDistributionConfigOutput {
 
 /// A builder for [`GetDistributionConfigOutput`](crate::operation::get_distribution_config::GetDistributionConfigOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetDistributionConfigOutputBuilder {
-    pub(crate) distribution_config: std::option::Option<crate::types::DistributionConfig>,
-    pub(crate) e_tag: std::option::Option<std::string::String>,
+    pub(crate) distribution_config: ::std::option::Option<crate::types::DistributionConfig>,
+    pub(crate) e_tag: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetDistributionConfigOutputBuilder {
     /// <p>The distribution's configuration information.</p>
     pub fn distribution_config(mut self, input: crate::types::DistributionConfig) -> Self {
-        self.distribution_config = Some(input);
+        self.distribution_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The distribution's configuration information.</p>
     pub fn set_distribution_config(
         mut self,
-        input: std::option::Option<crate::types::DistributionConfig>,
+        input: ::std::option::Option<crate::types::DistributionConfig>,
     ) -> Self {
         self.distribution_config = input;
         self
     }
     /// <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-    pub fn e_tag(mut self, input: impl Into<std::string::String>) -> Self {
-        self.e_tag = Some(input.into());
+    pub fn e_tag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.e_tag = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-    pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_e_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.e_tag = input;
         self
     }

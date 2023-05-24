@@ -2,7 +2,7 @@
 
 /// <p>Represents the input of a <code>DescribeLimits</code> operation. Has no content.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeLimitsInput {}
 impl DescribeLimitsInput {
     /// Creates a new builder-style object to manufacture [`DescribeLimitsInput`](crate::operation::describe_limits::DescribeLimitsInput).
@@ -13,16 +13,18 @@ impl DescribeLimitsInput {
 
 /// A builder for [`DescribeLimitsInput`](crate::operation::describe_limits::DescribeLimitsInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeLimitsInputBuilder {}
 impl DescribeLimitsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeLimitsInput`](crate::operation::describe_limits::DescribeLimitsInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::describe_limits::DescribeLimitsInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::describe_limits::DescribeLimitsInput {})
+        ::std::result::Result::Ok(crate::operation::describe_limits::DescribeLimitsInput {})
     }
 }

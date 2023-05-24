@@ -2,15 +2,15 @@
 
 /// <p>A previously completed or stopped hyperparameter tuning job to be used as a starting point for a new hyperparameter tuning job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ParentHyperParameterTuningJob {
     /// <p>The name of the hyperparameter tuning job to be used as a starting point for a new hyperparameter tuning job.</p>
     #[doc(hidden)]
-    pub hyper_parameter_tuning_job_name: std::option::Option<std::string::String>,
+    pub hyper_parameter_tuning_job_name: ::std::option::Option<::std::string::String>,
 }
 impl ParentHyperParameterTuningJob {
     /// <p>The name of the hyperparameter tuning job to be used as a starting point for a new hyperparameter tuning job.</p>
-    pub fn hyper_parameter_tuning_job_name(&self) -> std::option::Option<&str> {
+    pub fn hyper_parameter_tuning_job_name(&self) -> ::std::option::Option<&str> {
         self.hyper_parameter_tuning_job_name.as_deref()
     }
 }
@@ -23,23 +23,25 @@ impl ParentHyperParameterTuningJob {
 
 /// A builder for [`ParentHyperParameterTuningJob`](crate::types::ParentHyperParameterTuningJob).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ParentHyperParameterTuningJobBuilder {
-    pub(crate) hyper_parameter_tuning_job_name: std::option::Option<std::string::String>,
+    pub(crate) hyper_parameter_tuning_job_name: ::std::option::Option<::std::string::String>,
 }
 impl ParentHyperParameterTuningJobBuilder {
     /// <p>The name of the hyperparameter tuning job to be used as a starting point for a new hyperparameter tuning job.</p>
     pub fn hyper_parameter_tuning_job_name(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.hyper_parameter_tuning_job_name = Some(input.into());
+        self.hyper_parameter_tuning_job_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the hyperparameter tuning job to be used as a starting point for a new hyperparameter tuning job.</p>
     pub fn set_hyper_parameter_tuning_job_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.hyper_parameter_tuning_job_name = input;
         self

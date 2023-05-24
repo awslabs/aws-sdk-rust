@@ -2,22 +2,22 @@
 
 /// <p>The SQL query to modify the message.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SqlQueryDatasetAction {
     /// <p>A SQL query string.</p>
     #[doc(hidden)]
-    pub sql_query: std::option::Option<std::string::String>,
+    pub sql_query: ::std::option::Option<::std::string::String>,
     /// <p>Prefilters applied to message data.</p>
     #[doc(hidden)]
-    pub filters: std::option::Option<std::vec::Vec<crate::types::QueryFilter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::QueryFilter>>,
 }
 impl SqlQueryDatasetAction {
     /// <p>A SQL query string.</p>
-    pub fn sql_query(&self) -> std::option::Option<&str> {
+    pub fn sql_query(&self) -> ::std::option::Option<&str> {
         self.sql_query.as_deref()
     }
     /// <p>Prefilters applied to message data.</p>
-    pub fn filters(&self) -> std::option::Option<&[crate::types::QueryFilter]> {
+    pub fn filters(&self) -> ::std::option::Option<&[crate::types::QueryFilter]> {
         self.filters.as_deref()
     }
 }
@@ -30,19 +30,21 @@ impl SqlQueryDatasetAction {
 
 /// A builder for [`SqlQueryDatasetAction`](crate::types::SqlQueryDatasetAction).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SqlQueryDatasetActionBuilder {
-    pub(crate) sql_query: std::option::Option<std::string::String>,
-    pub(crate) filters: std::option::Option<std::vec::Vec<crate::types::QueryFilter>>,
+    pub(crate) sql_query: ::std::option::Option<::std::string::String>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::QueryFilter>>,
 }
 impl SqlQueryDatasetActionBuilder {
     /// <p>A SQL query string.</p>
-    pub fn sql_query(mut self, input: impl Into<std::string::String>) -> Self {
-        self.sql_query = Some(input.into());
+    pub fn sql_query(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.sql_query = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A SQL query string.</p>
-    pub fn set_sql_query(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_sql_query(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sql_query = input;
         self
     }
@@ -54,13 +56,13 @@ impl SqlQueryDatasetActionBuilder {
     pub fn filters(mut self, input: crate::types::QueryFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
         v.push(input);
-        self.filters = Some(v);
+        self.filters = ::std::option::Option::Some(v);
         self
     }
     /// <p>Prefilters applied to message data.</p>
     pub fn set_filters(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::QueryFilter>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::QueryFilter>>,
     ) -> Self {
         self.filters = input;
         self

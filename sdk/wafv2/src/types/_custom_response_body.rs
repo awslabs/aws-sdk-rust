@@ -2,26 +2,26 @@
 
 /// <p>The response body to use in a custom response to a web request. This is referenced by key from <code>CustomResponse</code> <code>CustomResponseBodyKey</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomResponseBody {
     /// <p>The type of content in the payload that you are defining in the <code>Content</code> string.</p>
     #[doc(hidden)]
-    pub content_type: std::option::Option<crate::types::ResponseContentType>,
+    pub content_type: ::std::option::Option<crate::types::ResponseContentType>,
     /// <p>The payload of the custom response. </p>
     /// <p>You can use JSON escape strings in JSON content. To do this, you must specify JSON content in the <code>ContentType</code> setting. </p>
     /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>. </p>
     #[doc(hidden)]
-    pub content: std::option::Option<std::string::String>,
+    pub content: ::std::option::Option<::std::string::String>,
 }
 impl CustomResponseBody {
     /// <p>The type of content in the payload that you are defining in the <code>Content</code> string.</p>
-    pub fn content_type(&self) -> std::option::Option<&crate::types::ResponseContentType> {
+    pub fn content_type(&self) -> ::std::option::Option<&crate::types::ResponseContentType> {
         self.content_type.as_ref()
     }
     /// <p>The payload of the custom response. </p>
     /// <p>You can use JSON escape strings in JSON content. To do this, you must specify JSON content in the <code>ContentType</code> setting. </p>
     /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>. </p>
-    pub fn content(&self) -> std::option::Option<&str> {
+    pub fn content(&self) -> ::std::option::Option<&str> {
         self.content.as_deref()
     }
 }
@@ -34,21 +34,23 @@ impl CustomResponseBody {
 
 /// A builder for [`CustomResponseBody`](crate::types::CustomResponseBody).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CustomResponseBodyBuilder {
-    pub(crate) content_type: std::option::Option<crate::types::ResponseContentType>,
-    pub(crate) content: std::option::Option<std::string::String>,
+    pub(crate) content_type: ::std::option::Option<crate::types::ResponseContentType>,
+    pub(crate) content: ::std::option::Option<::std::string::String>,
 }
 impl CustomResponseBodyBuilder {
     /// <p>The type of content in the payload that you are defining in the <code>Content</code> string.</p>
     pub fn content_type(mut self, input: crate::types::ResponseContentType) -> Self {
-        self.content_type = Some(input);
+        self.content_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of content in the payload that you are defining in the <code>Content</code> string.</p>
     pub fn set_content_type(
         mut self,
-        input: std::option::Option<crate::types::ResponseContentType>,
+        input: ::std::option::Option<crate::types::ResponseContentType>,
     ) -> Self {
         self.content_type = input;
         self
@@ -56,14 +58,14 @@ impl CustomResponseBodyBuilder {
     /// <p>The payload of the custom response. </p>
     /// <p>You can use JSON escape strings in JSON content. To do this, you must specify JSON content in the <code>ContentType</code> setting. </p>
     /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>. </p>
-    pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
-        self.content = Some(input.into());
+    pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.content = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The payload of the custom response. </p>
     /// <p>You can use JSON escape strings in JSON content. To do this, you must specify JSON content in the <code>ContentType</code> setting. </p>
     /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>. </p>
-    pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content = input;
         self
     }

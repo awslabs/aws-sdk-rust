@@ -2,20 +2,20 @@
 
 /// <p>Contains the output for DisableAvailabilityZonesForLoadBalancer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisableAvailabilityZonesForLoadBalancerOutput {
     /// <p>The remaining Availability Zones for the load balancer.</p>
     #[doc(hidden)]
-    pub availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl DisableAvailabilityZonesForLoadBalancerOutput {
     /// <p>The remaining Availability Zones for the load balancer.</p>
-    pub fn availability_zones(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn availability_zones(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.availability_zones.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DisableAvailabilityZonesForLoadBalancerOutput {
+impl ::aws_http::request_id::RequestId for DisableAvailabilityZonesForLoadBalancerOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,9 +29,11 @@ impl DisableAvailabilityZonesForLoadBalancerOutput {
 
 /// A builder for [`DisableAvailabilityZonesForLoadBalancerOutput`](crate::operation::disable_availability_zones_for_load_balancer::DisableAvailabilityZonesForLoadBalancerOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DisableAvailabilityZonesForLoadBalancerOutputBuilder {
-    pub(crate) availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl DisableAvailabilityZonesForLoadBalancerOutputBuilder {
@@ -40,16 +42,19 @@ impl DisableAvailabilityZonesForLoadBalancerOutputBuilder {
     /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
     ///
     /// <p>The remaining Availability Zones for the load balancer.</p>
-    pub fn availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn availability_zones(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.availability_zones.unwrap_or_default();
         v.push(input.into());
-        self.availability_zones = Some(v);
+        self.availability_zones = ::std::option::Option::Some(v);
         self
     }
     /// <p>The remaining Availability Zones for the load balancer.</p>
     pub fn set_availability_zones(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.availability_zones = input;
         self

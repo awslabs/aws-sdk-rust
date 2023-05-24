@@ -6,56 +6,59 @@ pub use crate::operation::untag_meeting::_untag_meeting_input::UntagMeetingInput
 /// Fluent builder constructing a request to `UntagMeeting`.
 ///
 /// <p>Untags the specified tags from the specified Amazon Chime SDK meeting.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UntagMeetingFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::untag_meeting::builders::UntagMeetingInputBuilder,
 }
 impl UntagMeetingFluentBuilder {
     /// Creates a new `UntagMeeting`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::untag_meeting::UntagMeeting,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::untag_meeting::UntagMeetingError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::untag_meeting::UntagMeetingError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::untag_meeting::UntagMeetingOutput,
-        aws_smithy_http::result::SdkError<crate::operation::untag_meeting::UntagMeetingError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::untag_meeting::UntagMeetingError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,19 +71,19 @@ impl UntagMeetingFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::untag_meeting::UntagMeetingOutput,
-        aws_smithy_http::result::SdkError<crate::operation::untag_meeting::UntagMeetingError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::untag_meeting::UntagMeetingError>,
     > {
         self.send_middleware().await
     }
     /// <p>The Amazon Chime SDK meeting ID.</p>
-    pub fn meeting_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn meeting_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.meeting_id(input.into());
         self
     }
     /// <p>The Amazon Chime SDK meeting ID.</p>
-    pub fn set_meeting_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_meeting_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_meeting_id(input);
         self
     }
@@ -89,14 +92,14 @@ impl UntagMeetingFluentBuilder {
     /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
     ///
     /// <p>The tag keys.</p>
-    pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn tag_keys(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tag_keys(input.into());
         self
     }
     /// <p>The tag keys.</p>
     pub fn set_tag_keys(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_tag_keys(input);
         self

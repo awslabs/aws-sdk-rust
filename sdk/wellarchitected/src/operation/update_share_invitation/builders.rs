@@ -8,29 +8,29 @@ pub use crate::operation::update_share_invitation::_update_share_invitation_inpu
 /// <p>Update a workload or custom lens share invitation.</p> <note>
 /// <p>This API operation can be called independently of any resource. Previous documentation implied that a workload ARN must be specified.</p>
 /// </note>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateShareInvitationFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::update_share_invitation::builders::UpdateShareInvitationInputBuilder,
 }
 impl UpdateShareInvitationFluentBuilder {
     /// Creates a new `UpdateShareInvitation`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_share_invitation::UpdateShareInvitation,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_share_invitation::UpdateShareInvitationError,
         >,
     > {
@@ -38,30 +38,33 @@ impl UpdateShareInvitationFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_share_invitation::UpdateShareInvitationOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_share_invitation::UpdateShareInvitationError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -74,23 +77,26 @@ impl UpdateShareInvitationFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_share_invitation::UpdateShareInvitationOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_share_invitation::UpdateShareInvitationError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The ID assigned to the share invitation.</p>
-    pub fn share_invitation_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn share_invitation_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.share_invitation_id(input.into());
         self
     }
     /// <p>The ID assigned to the share invitation.</p>
     pub fn set_share_invitation_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_share_invitation_id(input);
         self
@@ -103,7 +109,7 @@ impl UpdateShareInvitationFluentBuilder {
     /// <p>Share invitation action taken by contributor.</p>
     pub fn set_share_invitation_action(
         mut self,
-        input: std::option::Option<crate::types::ShareInvitationAction>,
+        input: ::std::option::Option<crate::types::ShareInvitationAction>,
     ) -> Self {
         self.inner = self.inner.set_share_invitation_action(input);
         self

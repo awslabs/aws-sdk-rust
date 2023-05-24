@@ -2,15 +2,15 @@
 
 /// <p>Provides a relative ranking that indicates how confident Amazon Kendra is that the response matches the query.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScoreAttributes {
     /// <p>A relative ranking for how well the response matches the query.</p>
     #[doc(hidden)]
-    pub score_confidence: std::option::Option<crate::types::ScoreConfidence>,
+    pub score_confidence: ::std::option::Option<crate::types::ScoreConfidence>,
 }
 impl ScoreAttributes {
     /// <p>A relative ranking for how well the response matches the query.</p>
-    pub fn score_confidence(&self) -> std::option::Option<&crate::types::ScoreConfidence> {
+    pub fn score_confidence(&self) -> ::std::option::Option<&crate::types::ScoreConfidence> {
         self.score_confidence.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl ScoreAttributes {
 
 /// A builder for [`ScoreAttributes`](crate::types::ScoreAttributes).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ScoreAttributesBuilder {
-    pub(crate) score_confidence: std::option::Option<crate::types::ScoreConfidence>,
+    pub(crate) score_confidence: ::std::option::Option<crate::types::ScoreConfidence>,
 }
 impl ScoreAttributesBuilder {
     /// <p>A relative ranking for how well the response matches the query.</p>
     pub fn score_confidence(mut self, input: crate::types::ScoreConfidence) -> Self {
-        self.score_confidence = Some(input);
+        self.score_confidence = ::std::option::Option::Some(input);
         self
     }
     /// <p>A relative ranking for how well the response matches the query.</p>
     pub fn set_score_confidence(
         mut self,
-        input: std::option::Option<crate::types::ScoreConfidence>,
+        input: ::std::option::Option<crate::types::ScoreConfidence>,
     ) -> Self {
         self.score_confidence = input;
         self

@@ -2,29 +2,29 @@
 
 /// <p>Contains the details of the executed statement.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExecuteStatementResult {
     /// <p>Contains the details of the first fetched page.</p>
     #[doc(hidden)]
-    pub first_page: std::option::Option<crate::types::Page>,
+    pub first_page: ::std::option::Option<crate::types::Page>,
     /// <p>Contains server-side performance information for the command.</p>
     #[doc(hidden)]
-    pub timing_information: std::option::Option<crate::types::TimingInformation>,
+    pub timing_information: ::std::option::Option<crate::types::TimingInformation>,
     /// <p>Contains metrics about the number of I/O requests that were consumed.</p>
     #[doc(hidden)]
-    pub consumed_i_os: std::option::Option<crate::types::IoUsage>,
+    pub consumed_i_os: ::std::option::Option<crate::types::IoUsage>,
 }
 impl ExecuteStatementResult {
     /// <p>Contains the details of the first fetched page.</p>
-    pub fn first_page(&self) -> std::option::Option<&crate::types::Page> {
+    pub fn first_page(&self) -> ::std::option::Option<&crate::types::Page> {
         self.first_page.as_ref()
     }
     /// <p>Contains server-side performance information for the command.</p>
-    pub fn timing_information(&self) -> std::option::Option<&crate::types::TimingInformation> {
+    pub fn timing_information(&self) -> ::std::option::Option<&crate::types::TimingInformation> {
         self.timing_information.as_ref()
     }
     /// <p>Contains metrics about the number of I/O requests that were consumed.</p>
-    pub fn consumed_i_os(&self) -> std::option::Option<&crate::types::IoUsage> {
+    pub fn consumed_i_os(&self) -> ::std::option::Option<&crate::types::IoUsage> {
         self.consumed_i_os.as_ref()
     }
 }
@@ -37,43 +37,48 @@ impl ExecuteStatementResult {
 
 /// A builder for [`ExecuteStatementResult`](crate::types::ExecuteStatementResult).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ExecuteStatementResultBuilder {
-    pub(crate) first_page: std::option::Option<crate::types::Page>,
-    pub(crate) timing_information: std::option::Option<crate::types::TimingInformation>,
-    pub(crate) consumed_i_os: std::option::Option<crate::types::IoUsage>,
+    pub(crate) first_page: ::std::option::Option<crate::types::Page>,
+    pub(crate) timing_information: ::std::option::Option<crate::types::TimingInformation>,
+    pub(crate) consumed_i_os: ::std::option::Option<crate::types::IoUsage>,
 }
 impl ExecuteStatementResultBuilder {
     /// <p>Contains the details of the first fetched page.</p>
     pub fn first_page(mut self, input: crate::types::Page) -> Self {
-        self.first_page = Some(input);
+        self.first_page = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains the details of the first fetched page.</p>
-    pub fn set_first_page(mut self, input: std::option::Option<crate::types::Page>) -> Self {
+    pub fn set_first_page(mut self, input: ::std::option::Option<crate::types::Page>) -> Self {
         self.first_page = input;
         self
     }
     /// <p>Contains server-side performance information for the command.</p>
     pub fn timing_information(mut self, input: crate::types::TimingInformation) -> Self {
-        self.timing_information = Some(input);
+        self.timing_information = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains server-side performance information for the command.</p>
     pub fn set_timing_information(
         mut self,
-        input: std::option::Option<crate::types::TimingInformation>,
+        input: ::std::option::Option<crate::types::TimingInformation>,
     ) -> Self {
         self.timing_information = input;
         self
     }
     /// <p>Contains metrics about the number of I/O requests that were consumed.</p>
     pub fn consumed_i_os(mut self, input: crate::types::IoUsage) -> Self {
-        self.consumed_i_os = Some(input);
+        self.consumed_i_os = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains metrics about the number of I/O requests that were consumed.</p>
-    pub fn set_consumed_i_os(mut self, input: std::option::Option<crate::types::IoUsage>) -> Self {
+    pub fn set_consumed_i_os(
+        mut self,
+        input: ::std::option::Option<crate::types::IoUsage>,
+    ) -> Self {
         self.consumed_i_os = input;
         self
     }

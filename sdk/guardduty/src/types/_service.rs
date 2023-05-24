@@ -2,14 +2,14 @@
 
 /// <p>Contains additional information about the generated finding.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Service {
     /// <p>Information about the activity that is described in a finding.</p>
     #[doc(hidden)]
-    pub action: std::option::Option<crate::types::Action>,
+    pub action: ::std::option::Option<crate::types::Action>,
     /// <p>An evidence object associated with the service.</p>
     #[doc(hidden)]
-    pub evidence: std::option::Option<crate::types::Evidence>,
+    pub evidence: ::std::option::Option<crate::types::Evidence>,
     /// <p>Indicates whether this finding is archived.</p>
     #[doc(hidden)]
     pub archived: bool,
@@ -18,42 +18,42 @@ pub struct Service {
     pub count: i32,
     /// <p>The detector ID for the GuardDuty service.</p>
     #[doc(hidden)]
-    pub detector_id: std::option::Option<std::string::String>,
+    pub detector_id: ::std::option::Option<::std::string::String>,
     /// <p>The first-seen timestamp of the activity that prompted GuardDuty to generate this finding.</p>
     #[doc(hidden)]
-    pub event_first_seen: std::option::Option<std::string::String>,
+    pub event_first_seen: ::std::option::Option<::std::string::String>,
     /// <p>The last-seen timestamp of the activity that prompted GuardDuty to generate this finding.</p>
     #[doc(hidden)]
-    pub event_last_seen: std::option::Option<std::string::String>,
+    pub event_last_seen: ::std::option::Option<::std::string::String>,
     /// <p>The resource role information for this finding.</p>
     #[doc(hidden)]
-    pub resource_role: std::option::Option<std::string::String>,
+    pub resource_role: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon Web Services service (GuardDuty) that generated a finding.</p>
     #[doc(hidden)]
-    pub service_name: std::option::Option<std::string::String>,
+    pub service_name: ::std::option::Option<::std::string::String>,
     /// <p>Feedback that was submitted about the finding.</p>
     #[doc(hidden)]
-    pub user_feedback: std::option::Option<std::string::String>,
+    pub user_feedback: ::std::option::Option<::std::string::String>,
     /// <p>Contains additional information about the generated finding.</p>
     #[doc(hidden)]
-    pub additional_info: std::option::Option<crate::types::ServiceAdditionalInfo>,
+    pub additional_info: ::std::option::Option<crate::types::ServiceAdditionalInfo>,
     /// <p>The name of the feature that generated a finding.</p>
     #[doc(hidden)]
-    pub feature_name: std::option::Option<std::string::String>,
+    pub feature_name: ::std::option::Option<::std::string::String>,
     /// <p>Returns details from the malware scan that created a finding.</p>
     #[doc(hidden)]
-    pub ebs_volume_scan_details: std::option::Option<crate::types::EbsVolumeScanDetails>,
+    pub ebs_volume_scan_details: ::std::option::Option<crate::types::EbsVolumeScanDetails>,
     /// <p>Information about the process and any required context values for a specific finding</p>
     #[doc(hidden)]
-    pub runtime_details: std::option::Option<crate::types::RuntimeDetails>,
+    pub runtime_details: ::std::option::Option<crate::types::RuntimeDetails>,
 }
 impl Service {
     /// <p>Information about the activity that is described in a finding.</p>
-    pub fn action(&self) -> std::option::Option<&crate::types::Action> {
+    pub fn action(&self) -> ::std::option::Option<&crate::types::Action> {
         self.action.as_ref()
     }
     /// <p>An evidence object associated with the service.</p>
-    pub fn evidence(&self) -> std::option::Option<&crate::types::Evidence> {
+    pub fn evidence(&self) -> ::std::option::Option<&crate::types::Evidence> {
         self.evidence.as_ref()
     }
     /// <p>Indicates whether this finding is archived.</p>
@@ -65,45 +65,45 @@ impl Service {
         self.count
     }
     /// <p>The detector ID for the GuardDuty service.</p>
-    pub fn detector_id(&self) -> std::option::Option<&str> {
+    pub fn detector_id(&self) -> ::std::option::Option<&str> {
         self.detector_id.as_deref()
     }
     /// <p>The first-seen timestamp of the activity that prompted GuardDuty to generate this finding.</p>
-    pub fn event_first_seen(&self) -> std::option::Option<&str> {
+    pub fn event_first_seen(&self) -> ::std::option::Option<&str> {
         self.event_first_seen.as_deref()
     }
     /// <p>The last-seen timestamp of the activity that prompted GuardDuty to generate this finding.</p>
-    pub fn event_last_seen(&self) -> std::option::Option<&str> {
+    pub fn event_last_seen(&self) -> ::std::option::Option<&str> {
         self.event_last_seen.as_deref()
     }
     /// <p>The resource role information for this finding.</p>
-    pub fn resource_role(&self) -> std::option::Option<&str> {
+    pub fn resource_role(&self) -> ::std::option::Option<&str> {
         self.resource_role.as_deref()
     }
     /// <p>The name of the Amazon Web Services service (GuardDuty) that generated a finding.</p>
-    pub fn service_name(&self) -> std::option::Option<&str> {
+    pub fn service_name(&self) -> ::std::option::Option<&str> {
         self.service_name.as_deref()
     }
     /// <p>Feedback that was submitted about the finding.</p>
-    pub fn user_feedback(&self) -> std::option::Option<&str> {
+    pub fn user_feedback(&self) -> ::std::option::Option<&str> {
         self.user_feedback.as_deref()
     }
     /// <p>Contains additional information about the generated finding.</p>
-    pub fn additional_info(&self) -> std::option::Option<&crate::types::ServiceAdditionalInfo> {
+    pub fn additional_info(&self) -> ::std::option::Option<&crate::types::ServiceAdditionalInfo> {
         self.additional_info.as_ref()
     }
     /// <p>The name of the feature that generated a finding.</p>
-    pub fn feature_name(&self) -> std::option::Option<&str> {
+    pub fn feature_name(&self) -> ::std::option::Option<&str> {
         self.feature_name.as_deref()
     }
     /// <p>Returns details from the malware scan that created a finding.</p>
     pub fn ebs_volume_scan_details(
         &self,
-    ) -> std::option::Option<&crate::types::EbsVolumeScanDetails> {
+    ) -> ::std::option::Option<&crate::types::EbsVolumeScanDetails> {
         self.ebs_volume_scan_details.as_ref()
     }
     /// <p>Information about the process and any required context values for a specific finding</p>
-    pub fn runtime_details(&self) -> std::option::Option<&crate::types::RuntimeDetails> {
+    pub fn runtime_details(&self) -> ::std::option::Option<&crate::types::RuntimeDetails> {
         self.runtime_details.as_ref()
     }
 }
@@ -116,169 +116,195 @@ impl Service {
 
 /// A builder for [`Service`](crate::types::Service).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ServiceBuilder {
-    pub(crate) action: std::option::Option<crate::types::Action>,
-    pub(crate) evidence: std::option::Option<crate::types::Evidence>,
-    pub(crate) archived: std::option::Option<bool>,
-    pub(crate) count: std::option::Option<i32>,
-    pub(crate) detector_id: std::option::Option<std::string::String>,
-    pub(crate) event_first_seen: std::option::Option<std::string::String>,
-    pub(crate) event_last_seen: std::option::Option<std::string::String>,
-    pub(crate) resource_role: std::option::Option<std::string::String>,
-    pub(crate) service_name: std::option::Option<std::string::String>,
-    pub(crate) user_feedback: std::option::Option<std::string::String>,
-    pub(crate) additional_info: std::option::Option<crate::types::ServiceAdditionalInfo>,
-    pub(crate) feature_name: std::option::Option<std::string::String>,
-    pub(crate) ebs_volume_scan_details: std::option::Option<crate::types::EbsVolumeScanDetails>,
-    pub(crate) runtime_details: std::option::Option<crate::types::RuntimeDetails>,
+    pub(crate) action: ::std::option::Option<crate::types::Action>,
+    pub(crate) evidence: ::std::option::Option<crate::types::Evidence>,
+    pub(crate) archived: ::std::option::Option<bool>,
+    pub(crate) count: ::std::option::Option<i32>,
+    pub(crate) detector_id: ::std::option::Option<::std::string::String>,
+    pub(crate) event_first_seen: ::std::option::Option<::std::string::String>,
+    pub(crate) event_last_seen: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_role: ::std::option::Option<::std::string::String>,
+    pub(crate) service_name: ::std::option::Option<::std::string::String>,
+    pub(crate) user_feedback: ::std::option::Option<::std::string::String>,
+    pub(crate) additional_info: ::std::option::Option<crate::types::ServiceAdditionalInfo>,
+    pub(crate) feature_name: ::std::option::Option<::std::string::String>,
+    pub(crate) ebs_volume_scan_details: ::std::option::Option<crate::types::EbsVolumeScanDetails>,
+    pub(crate) runtime_details: ::std::option::Option<crate::types::RuntimeDetails>,
 }
 impl ServiceBuilder {
     /// <p>Information about the activity that is described in a finding.</p>
     pub fn action(mut self, input: crate::types::Action) -> Self {
-        self.action = Some(input);
+        self.action = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the activity that is described in a finding.</p>
-    pub fn set_action(mut self, input: std::option::Option<crate::types::Action>) -> Self {
+    pub fn set_action(mut self, input: ::std::option::Option<crate::types::Action>) -> Self {
         self.action = input;
         self
     }
     /// <p>An evidence object associated with the service.</p>
     pub fn evidence(mut self, input: crate::types::Evidence) -> Self {
-        self.evidence = Some(input);
+        self.evidence = ::std::option::Option::Some(input);
         self
     }
     /// <p>An evidence object associated with the service.</p>
-    pub fn set_evidence(mut self, input: std::option::Option<crate::types::Evidence>) -> Self {
+    pub fn set_evidence(mut self, input: ::std::option::Option<crate::types::Evidence>) -> Self {
         self.evidence = input;
         self
     }
     /// <p>Indicates whether this finding is archived.</p>
     pub fn archived(mut self, input: bool) -> Self {
-        self.archived = Some(input);
+        self.archived = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether this finding is archived.</p>
-    pub fn set_archived(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_archived(mut self, input: ::std::option::Option<bool>) -> Self {
         self.archived = input;
         self
     }
     /// <p>The total count of the occurrences of this finding type.</p>
     pub fn count(mut self, input: i32) -> Self {
-        self.count = Some(input);
+        self.count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total count of the occurrences of this finding type.</p>
-    pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.count = input;
         self
     }
     /// <p>The detector ID for the GuardDuty service.</p>
-    pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.detector_id = Some(input.into());
+    pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.detector_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The detector ID for the GuardDuty service.</p>
-    pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_detector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.detector_id = input;
         self
     }
     /// <p>The first-seen timestamp of the activity that prompted GuardDuty to generate this finding.</p>
-    pub fn event_first_seen(mut self, input: impl Into<std::string::String>) -> Self {
-        self.event_first_seen = Some(input.into());
+    pub fn event_first_seen(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.event_first_seen = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The first-seen timestamp of the activity that prompted GuardDuty to generate this finding.</p>
-    pub fn set_event_first_seen(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_event_first_seen(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.event_first_seen = input;
         self
     }
     /// <p>The last-seen timestamp of the activity that prompted GuardDuty to generate this finding.</p>
-    pub fn event_last_seen(mut self, input: impl Into<std::string::String>) -> Self {
-        self.event_last_seen = Some(input.into());
+    pub fn event_last_seen(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.event_last_seen = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The last-seen timestamp of the activity that prompted GuardDuty to generate this finding.</p>
-    pub fn set_event_last_seen(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_event_last_seen(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.event_last_seen = input;
         self
     }
     /// <p>The resource role information for this finding.</p>
-    pub fn resource_role(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_role = Some(input.into());
+    pub fn resource_role(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.resource_role = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The resource role information for this finding.</p>
-    pub fn set_resource_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_role(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.resource_role = input;
         self
     }
     /// <p>The name of the Amazon Web Services service (GuardDuty) that generated a finding.</p>
-    pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.service_name = Some(input.into());
+    pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.service_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Amazon Web Services service (GuardDuty) that generated a finding.</p>
-    pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_name = input;
         self
     }
     /// <p>Feedback that was submitted about the finding.</p>
-    pub fn user_feedback(mut self, input: impl Into<std::string::String>) -> Self {
-        self.user_feedback = Some(input.into());
+    pub fn user_feedback(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.user_feedback = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Feedback that was submitted about the finding.</p>
-    pub fn set_user_feedback(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_user_feedback(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.user_feedback = input;
         self
     }
     /// <p>Contains additional information about the generated finding.</p>
     pub fn additional_info(mut self, input: crate::types::ServiceAdditionalInfo) -> Self {
-        self.additional_info = Some(input);
+        self.additional_info = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains additional information about the generated finding.</p>
     pub fn set_additional_info(
         mut self,
-        input: std::option::Option<crate::types::ServiceAdditionalInfo>,
+        input: ::std::option::Option<crate::types::ServiceAdditionalInfo>,
     ) -> Self {
         self.additional_info = input;
         self
     }
     /// <p>The name of the feature that generated a finding.</p>
-    pub fn feature_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.feature_name = Some(input.into());
+    pub fn feature_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.feature_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the feature that generated a finding.</p>
-    pub fn set_feature_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_feature_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.feature_name = input;
         self
     }
     /// <p>Returns details from the malware scan that created a finding.</p>
     pub fn ebs_volume_scan_details(mut self, input: crate::types::EbsVolumeScanDetails) -> Self {
-        self.ebs_volume_scan_details = Some(input);
+        self.ebs_volume_scan_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>Returns details from the malware scan that created a finding.</p>
     pub fn set_ebs_volume_scan_details(
         mut self,
-        input: std::option::Option<crate::types::EbsVolumeScanDetails>,
+        input: ::std::option::Option<crate::types::EbsVolumeScanDetails>,
     ) -> Self {
         self.ebs_volume_scan_details = input;
         self
     }
     /// <p>Information about the process and any required context values for a specific finding</p>
     pub fn runtime_details(mut self, input: crate::types::RuntimeDetails) -> Self {
-        self.runtime_details = Some(input);
+        self.runtime_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the process and any required context values for a specific finding</p>
     pub fn set_runtime_details(
         mut self,
-        input: std::option::Option<crate::types::RuntimeDetails>,
+        input: ::std::option::Option<crate::types::RuntimeDetails>,
     ) -> Self {
         self.runtime_details = input;
         self

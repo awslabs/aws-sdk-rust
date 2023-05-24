@@ -6,56 +6,59 @@ pub use crate::operation::create_gateway::_create_gateway_input::CreateGatewayIn
 /// Fluent builder constructing a request to `CreateGateway`.
 ///
 /// <p>Creates a backup gateway. After you create a gateway, you can associate it with a server using the <code>AssociateGatewayToServer</code> operation.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateGatewayFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_gateway::builders::CreateGatewayInputBuilder,
 }
 impl CreateGatewayFluentBuilder {
     /// Creates a new `CreateGateway`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_gateway::CreateGateway,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_gateway::CreateGatewayError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_gateway::CreateGatewayError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_gateway::CreateGatewayOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_gateway::CreateGatewayError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_gateway::CreateGatewayError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,31 +71,40 @@ impl CreateGatewayFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_gateway::CreateGatewayOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_gateway::CreateGatewayError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_gateway::CreateGatewayError>,
     > {
         self.send_middleware().await
     }
     /// <p>The activation key of the created gateway.</p>
-    pub fn activation_key(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn activation_key(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.activation_key(input.into());
         self
     }
     /// <p>The activation key of the created gateway.</p>
-    pub fn set_activation_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_activation_key(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_activation_key(input);
         self
     }
     /// <p>The display name of the created gateway.</p>
-    pub fn gateway_display_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn gateway_display_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.gateway_display_name(input.into());
         self
     }
     /// <p>The display name of the created gateway.</p>
     pub fn set_gateway_display_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_gateway_display_name(input);
         self
@@ -105,7 +117,7 @@ impl CreateGatewayFluentBuilder {
     /// <p>The type of created gateway.</p>
     pub fn set_gateway_type(
         mut self,
-        input: std::option::Option<crate::types::GatewayType>,
+        input: ::std::option::Option<crate::types::GatewayType>,
     ) -> Self {
         self.inner = self.inner.set_gateway_type(input);
         self
@@ -122,7 +134,7 @@ impl CreateGatewayFluentBuilder {
     /// <p>A list of up to 50 tags to assign to the gateway. Each tag is a key-value pair.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self

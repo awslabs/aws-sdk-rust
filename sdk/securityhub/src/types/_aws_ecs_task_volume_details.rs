@@ -2,22 +2,22 @@
 
 /// <p>Provides information about a data volume that's used in a task definition. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEcsTaskVolumeDetails {
     /// <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed. This name is referenced in the <code>sourceVolume</code> parameter of container definition <code>mountPoints</code>. </p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>This parameter is specified when you use bind mount host volumes. The contents of the <code>host</code> parameter determine whether your bind mount host volume persists on the host container instance and where it's stored. </p>
     #[doc(hidden)]
-    pub host: std::option::Option<crate::types::AwsEcsTaskVolumeHostDetails>,
+    pub host: ::std::option::Option<crate::types::AwsEcsTaskVolumeHostDetails>,
 }
 impl AwsEcsTaskVolumeDetails {
     /// <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed. This name is referenced in the <code>sourceVolume</code> parameter of container definition <code>mountPoints</code>. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>This parameter is specified when you use bind mount host volumes. The contents of the <code>host</code> parameter determine whether your bind mount host volume persists on the host container instance and where it's stored. </p>
-    pub fn host(&self) -> std::option::Option<&crate::types::AwsEcsTaskVolumeHostDetails> {
+    pub fn host(&self) -> ::std::option::Option<&crate::types::AwsEcsTaskVolumeHostDetails> {
         self.host.as_ref()
     }
 }
@@ -30,31 +30,33 @@ impl AwsEcsTaskVolumeDetails {
 
 /// A builder for [`AwsEcsTaskVolumeDetails`](crate::types::AwsEcsTaskVolumeDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsEcsTaskVolumeDetailsBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) host: std::option::Option<crate::types::AwsEcsTaskVolumeHostDetails>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) host: ::std::option::Option<crate::types::AwsEcsTaskVolumeHostDetails>,
 }
 impl AwsEcsTaskVolumeDetailsBuilder {
     /// <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed. This name is referenced in the <code>sourceVolume</code> parameter of container definition <code>mountPoints</code>. </p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed. This name is referenced in the <code>sourceVolume</code> parameter of container definition <code>mountPoints</code>. </p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>This parameter is specified when you use bind mount host volumes. The contents of the <code>host</code> parameter determine whether your bind mount host volume persists on the host container instance and where it's stored. </p>
     pub fn host(mut self, input: crate::types::AwsEcsTaskVolumeHostDetails) -> Self {
-        self.host = Some(input);
+        self.host = ::std::option::Option::Some(input);
         self
     }
     /// <p>This parameter is specified when you use bind mount host volumes. The contents of the <code>host</code> parameter determine whether your bind mount host volume persists on the host container instance and where it's stored. </p>
     pub fn set_host(
         mut self,
-        input: std::option::Option<crate::types::AwsEcsTaskVolumeHostDetails>,
+        input: ::std::option::Option<crate::types::AwsEcsTaskVolumeHostDetails>,
     ) -> Self {
         self.host = input;
         self

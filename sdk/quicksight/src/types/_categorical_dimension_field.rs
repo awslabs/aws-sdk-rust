@@ -2,38 +2,38 @@
 
 /// <p>The dimension type field with categorical type columns..</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CategoricalDimensionField {
     /// <p>The custom field ID.</p>
     #[doc(hidden)]
-    pub field_id: std::option::Option<std::string::String>,
+    pub field_id: ::std::option::Option<::std::string::String>,
     /// <p>The column that is used in the <code>CategoricalDimensionField</code>.</p>
     #[doc(hidden)]
-    pub column: std::option::Option<crate::types::ColumnIdentifier>,
+    pub column: ::std::option::Option<crate::types::ColumnIdentifier>,
     /// <p>The custom hierarchy ID.</p>
     #[doc(hidden)]
-    pub hierarchy_id: std::option::Option<std::string::String>,
+    pub hierarchy_id: ::std::option::Option<::std::string::String>,
     /// <p>The format configuration of the field.</p>
     #[doc(hidden)]
-    pub format_configuration: std::option::Option<crate::types::StringFormatConfiguration>,
+    pub format_configuration: ::std::option::Option<crate::types::StringFormatConfiguration>,
 }
 impl CategoricalDimensionField {
     /// <p>The custom field ID.</p>
-    pub fn field_id(&self) -> std::option::Option<&str> {
+    pub fn field_id(&self) -> ::std::option::Option<&str> {
         self.field_id.as_deref()
     }
     /// <p>The column that is used in the <code>CategoricalDimensionField</code>.</p>
-    pub fn column(&self) -> std::option::Option<&crate::types::ColumnIdentifier> {
+    pub fn column(&self) -> ::std::option::Option<&crate::types::ColumnIdentifier> {
         self.column.as_ref()
     }
     /// <p>The custom hierarchy ID.</p>
-    pub fn hierarchy_id(&self) -> std::option::Option<&str> {
+    pub fn hierarchy_id(&self) -> ::std::option::Option<&str> {
         self.hierarchy_id.as_deref()
     }
     /// <p>The format configuration of the field.</p>
     pub fn format_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::StringFormatConfiguration> {
+    ) -> ::std::option::Option<&crate::types::StringFormatConfiguration> {
         self.format_configuration.as_ref()
     }
 }
@@ -46,56 +46,58 @@ impl CategoricalDimensionField {
 
 /// A builder for [`CategoricalDimensionField`](crate::types::CategoricalDimensionField).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CategoricalDimensionFieldBuilder {
-    pub(crate) field_id: std::option::Option<std::string::String>,
-    pub(crate) column: std::option::Option<crate::types::ColumnIdentifier>,
-    pub(crate) hierarchy_id: std::option::Option<std::string::String>,
-    pub(crate) format_configuration: std::option::Option<crate::types::StringFormatConfiguration>,
+    pub(crate) field_id: ::std::option::Option<::std::string::String>,
+    pub(crate) column: ::std::option::Option<crate::types::ColumnIdentifier>,
+    pub(crate) hierarchy_id: ::std::option::Option<::std::string::String>,
+    pub(crate) format_configuration: ::std::option::Option<crate::types::StringFormatConfiguration>,
 }
 impl CategoricalDimensionFieldBuilder {
     /// <p>The custom field ID.</p>
-    pub fn field_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.field_id = Some(input.into());
+    pub fn field_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.field_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The custom field ID.</p>
-    pub fn set_field_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_field_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.field_id = input;
         self
     }
     /// <p>The column that is used in the <code>CategoricalDimensionField</code>.</p>
     pub fn column(mut self, input: crate::types::ColumnIdentifier) -> Self {
-        self.column = Some(input);
+        self.column = ::std::option::Option::Some(input);
         self
     }
     /// <p>The column that is used in the <code>CategoricalDimensionField</code>.</p>
     pub fn set_column(
         mut self,
-        input: std::option::Option<crate::types::ColumnIdentifier>,
+        input: ::std::option::Option<crate::types::ColumnIdentifier>,
     ) -> Self {
         self.column = input;
         self
     }
     /// <p>The custom hierarchy ID.</p>
-    pub fn hierarchy_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.hierarchy_id = Some(input.into());
+    pub fn hierarchy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.hierarchy_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The custom hierarchy ID.</p>
-    pub fn set_hierarchy_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_hierarchy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hierarchy_id = input;
         self
     }
     /// <p>The format configuration of the field.</p>
     pub fn format_configuration(mut self, input: crate::types::StringFormatConfiguration) -> Self {
-        self.format_configuration = Some(input);
+        self.format_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The format configuration of the field.</p>
     pub fn set_format_configuration(
         mut self,
-        input: std::option::Option<crate::types::StringFormatConfiguration>,
+        input: ::std::option::Option<crate::types::StringFormatConfiguration>,
     ) -> Self {
         self.format_configuration = input;
         self

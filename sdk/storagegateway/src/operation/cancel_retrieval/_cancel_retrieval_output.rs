@@ -2,20 +2,20 @@
 
 /// <p>CancelRetrievalOutput</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelRetrievalOutput {
     /// <p>The Amazon Resource Name (ARN) of the virtual tape for which retrieval was canceled.</p>
     #[doc(hidden)]
-    pub tape_arn: std::option::Option<std::string::String>,
+    pub tape_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CancelRetrievalOutput {
     /// <p>The Amazon Resource Name (ARN) of the virtual tape for which retrieval was canceled.</p>
-    pub fn tape_arn(&self) -> std::option::Option<&str> {
+    pub fn tape_arn(&self) -> ::std::option::Option<&str> {
         self.tape_arn.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for CancelRetrievalOutput {
+impl ::aws_http::request_id::RequestId for CancelRetrievalOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,21 @@ impl CancelRetrievalOutput {
 
 /// A builder for [`CancelRetrievalOutput`](crate::operation::cancel_retrieval::CancelRetrievalOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CancelRetrievalOutputBuilder {
-    pub(crate) tape_arn: std::option::Option<std::string::String>,
+    pub(crate) tape_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CancelRetrievalOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the virtual tape for which retrieval was canceled.</p>
-    pub fn tape_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.tape_arn = Some(input.into());
+    pub fn tape_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.tape_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the virtual tape for which retrieval was canceled.</p>
-    pub fn set_tape_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_tape_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tape_arn = input;
         self
     }

@@ -2,50 +2,50 @@
 
 /// The entitlement fields that you want to update.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateFlowEntitlementInput {
     /// A description of the entitlement. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the subscriber or end user.
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// The type of encryption that will be used on the output associated with this entitlement. Allowable encryption types: static-key, speke.
     #[doc(hidden)]
-    pub encryption: std::option::Option<crate::types::UpdateEncryption>,
+    pub encryption: ::std::option::Option<crate::types::UpdateEncryption>,
     /// The ARN of the entitlement that you want to update.
     #[doc(hidden)]
-    pub entitlement_arn: std::option::Option<std::string::String>,
+    pub entitlement_arn: ::std::option::Option<::std::string::String>,
     /// An indication of whether you want to enable the entitlement to allow access, or disable it to stop streaming content to the subscriber’s flow temporarily. If you don’t specify the entitlementStatus field in your request, MediaConnect leaves the value unchanged.
     #[doc(hidden)]
-    pub entitlement_status: std::option::Option<crate::types::EntitlementStatus>,
+    pub entitlement_status: ::std::option::Option<crate::types::EntitlementStatus>,
     /// The flow that is associated with the entitlement that you want to update.
     #[doc(hidden)]
-    pub flow_arn: std::option::Option<std::string::String>,
+    pub flow_arn: ::std::option::Option<::std::string::String>,
     /// The AWS account IDs that you want to share your content with. The receiving accounts (subscribers) will be allowed to create their own flow using your content as the source.
     #[doc(hidden)]
-    pub subscribers: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub subscribers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateFlowEntitlementInput {
     /// A description of the entitlement. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the subscriber or end user.
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// The type of encryption that will be used on the output associated with this entitlement. Allowable encryption types: static-key, speke.
-    pub fn encryption(&self) -> std::option::Option<&crate::types::UpdateEncryption> {
+    pub fn encryption(&self) -> ::std::option::Option<&crate::types::UpdateEncryption> {
         self.encryption.as_ref()
     }
     /// The ARN of the entitlement that you want to update.
-    pub fn entitlement_arn(&self) -> std::option::Option<&str> {
+    pub fn entitlement_arn(&self) -> ::std::option::Option<&str> {
         self.entitlement_arn.as_deref()
     }
     /// An indication of whether you want to enable the entitlement to allow access, or disable it to stop streaming content to the subscriber’s flow temporarily. If you don’t specify the entitlementStatus field in your request, MediaConnect leaves the value unchanged.
-    pub fn entitlement_status(&self) -> std::option::Option<&crate::types::EntitlementStatus> {
+    pub fn entitlement_status(&self) -> ::std::option::Option<&crate::types::EntitlementStatus> {
         self.entitlement_status.as_ref()
     }
     /// The flow that is associated with the entitlement that you want to update.
-    pub fn flow_arn(&self) -> std::option::Option<&str> {
+    pub fn flow_arn(&self) -> ::std::option::Option<&str> {
         self.flow_arn.as_deref()
     }
     /// The AWS account IDs that you want to share your content with. The receiving accounts (subscribers) will be allowed to create their own flow using your content as the source.
-    pub fn subscribers(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn subscribers(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.subscribers.as_deref()
     }
 }
@@ -60,69 +60,77 @@ impl UpdateFlowEntitlementInput {
 
 /// A builder for [`UpdateFlowEntitlementInput`](crate::operation::update_flow_entitlement::UpdateFlowEntitlementInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateFlowEntitlementInputBuilder {
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) encryption: std::option::Option<crate::types::UpdateEncryption>,
-    pub(crate) entitlement_arn: std::option::Option<std::string::String>,
-    pub(crate) entitlement_status: std::option::Option<crate::types::EntitlementStatus>,
-    pub(crate) flow_arn: std::option::Option<std::string::String>,
-    pub(crate) subscribers: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) encryption: ::std::option::Option<crate::types::UpdateEncryption>,
+    pub(crate) entitlement_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) entitlement_status: ::std::option::Option<crate::types::EntitlementStatus>,
+    pub(crate) flow_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) subscribers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateFlowEntitlementInputBuilder {
     /// A description of the entitlement. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the subscriber or end user.
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// A description of the entitlement. This description appears only on the AWS Elemental MediaConnect console and will not be seen by the subscriber or end user.
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// The type of encryption that will be used on the output associated with this entitlement. Allowable encryption types: static-key, speke.
     pub fn encryption(mut self, input: crate::types::UpdateEncryption) -> Self {
-        self.encryption = Some(input);
+        self.encryption = ::std::option::Option::Some(input);
         self
     }
     /// The type of encryption that will be used on the output associated with this entitlement. Allowable encryption types: static-key, speke.
     pub fn set_encryption(
         mut self,
-        input: std::option::Option<crate::types::UpdateEncryption>,
+        input: ::std::option::Option<crate::types::UpdateEncryption>,
     ) -> Self {
         self.encryption = input;
         self
     }
     /// The ARN of the entitlement that you want to update.
-    pub fn entitlement_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.entitlement_arn = Some(input.into());
+    pub fn entitlement_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.entitlement_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// The ARN of the entitlement that you want to update.
-    pub fn set_entitlement_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_entitlement_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.entitlement_arn = input;
         self
     }
     /// An indication of whether you want to enable the entitlement to allow access, or disable it to stop streaming content to the subscriber’s flow temporarily. If you don’t specify the entitlementStatus field in your request, MediaConnect leaves the value unchanged.
     pub fn entitlement_status(mut self, input: crate::types::EntitlementStatus) -> Self {
-        self.entitlement_status = Some(input);
+        self.entitlement_status = ::std::option::Option::Some(input);
         self
     }
     /// An indication of whether you want to enable the entitlement to allow access, or disable it to stop streaming content to the subscriber’s flow temporarily. If you don’t specify the entitlementStatus field in your request, MediaConnect leaves the value unchanged.
     pub fn set_entitlement_status(
         mut self,
-        input: std::option::Option<crate::types::EntitlementStatus>,
+        input: ::std::option::Option<crate::types::EntitlementStatus>,
     ) -> Self {
         self.entitlement_status = input;
         self
     }
     /// The flow that is associated with the entitlement that you want to update.
-    pub fn flow_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.flow_arn = Some(input.into());
+    pub fn flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.flow_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// The flow that is associated with the entitlement that you want to update.
-    pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.flow_arn = input;
         self
     }
@@ -131,16 +139,16 @@ impl UpdateFlowEntitlementInputBuilder {
     /// To override the contents of this collection use [`set_subscribers`](Self::set_subscribers).
     ///
     /// The AWS account IDs that you want to share your content with. The receiving accounts (subscribers) will be allowed to create their own flow using your content as the source.
-    pub fn subscribers(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn subscribers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subscribers.unwrap_or_default();
         v.push(input.into());
-        self.subscribers = Some(v);
+        self.subscribers = ::std::option::Option::Some(v);
         self
     }
     /// The AWS account IDs that you want to share your content with. The receiving accounts (subscribers) will be allowed to create their own flow using your content as the source.
     pub fn set_subscribers(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.subscribers = input;
         self
@@ -148,11 +156,11 @@ impl UpdateFlowEntitlementInputBuilder {
     /// Consumes the builder and constructs a [`UpdateFlowEntitlementInput`](crate::operation::update_flow_entitlement::UpdateFlowEntitlementInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::update_flow_entitlement::UpdateFlowEntitlementInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::update_flow_entitlement::UpdateFlowEntitlementInput {
                 description: self.description,
                 encryption: self.encryption,

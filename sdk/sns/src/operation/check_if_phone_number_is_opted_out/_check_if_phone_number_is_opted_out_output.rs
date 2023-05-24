@@ -2,7 +2,7 @@
 
 /// <p>The response from the <code>CheckIfPhoneNumberIsOptedOut</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CheckIfPhoneNumberIsOptedOutOutput {
     /// <p>Indicates whether the phone number is opted out:</p>
     /// <ul>
@@ -23,7 +23,7 @@ impl CheckIfPhoneNumberIsOptedOutOutput {
         self.is_opted_out
     }
 }
-impl aws_http::request_id::RequestId for CheckIfPhoneNumberIsOptedOutOutput {
+impl ::aws_http::request_id::RequestId for CheckIfPhoneNumberIsOptedOutOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -37,9 +37,11 @@ impl CheckIfPhoneNumberIsOptedOutOutput {
 
 /// A builder for [`CheckIfPhoneNumberIsOptedOutOutput`](crate::operation::check_if_phone_number_is_opted_out::CheckIfPhoneNumberIsOptedOutOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CheckIfPhoneNumberIsOptedOutOutputBuilder {
-    pub(crate) is_opted_out: std::option::Option<bool>,
+    pub(crate) is_opted_out: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl CheckIfPhoneNumberIsOptedOutOutputBuilder {
@@ -49,7 +51,7 @@ impl CheckIfPhoneNumberIsOptedOutOutputBuilder {
     /// <li> <p> <code>false</code> – The phone number is opted in, meaning you can publish SMS messages to it.</p> </li>
     /// </ul>
     pub fn is_opted_out(mut self, input: bool) -> Self {
-        self.is_opted_out = Some(input);
+        self.is_opted_out = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether the phone number is opted out:</p>
@@ -57,7 +59,7 @@ impl CheckIfPhoneNumberIsOptedOutOutputBuilder {
     /// <li> <p> <code>true</code> – The phone number is opted out, meaning you cannot publish SMS messages to it.</p> </li>
     /// <li> <p> <code>false</code> – The phone number is opted in, meaning you can publish SMS messages to it.</p> </li>
     /// </ul>
-    pub fn set_is_opted_out(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_opted_out(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_opted_out = input;
         self
     }

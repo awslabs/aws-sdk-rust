@@ -2,22 +2,22 @@
 
 /// <p>A policy that defines the number of days to retain backups.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BackupRetentionPolicy {
     /// <p>The type of backup retention policy. For the <code>DAYS</code> type, the value is the number of days to retain backups.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::BackupRetentionType>,
+    pub r#type: ::std::option::Option<crate::types::BackupRetentionType>,
     /// <p>Use a value between 7 - 379.</p>
     #[doc(hidden)]
-    pub value: std::option::Option<std::string::String>,
+    pub value: ::std::option::Option<::std::string::String>,
 }
 impl BackupRetentionPolicy {
     /// <p>The type of backup retention policy. For the <code>DAYS</code> type, the value is the number of days to retain backups.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::BackupRetentionType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::BackupRetentionType> {
         self.r#type.as_ref()
     }
     /// <p>Use a value between 7 - 379.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
 }
@@ -30,32 +30,34 @@ impl BackupRetentionPolicy {
 
 /// A builder for [`BackupRetentionPolicy`](crate::types::BackupRetentionPolicy).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BackupRetentionPolicyBuilder {
-    pub(crate) r#type: std::option::Option<crate::types::BackupRetentionType>,
-    pub(crate) value: std::option::Option<std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::BackupRetentionType>,
+    pub(crate) value: ::std::option::Option<::std::string::String>,
 }
 impl BackupRetentionPolicyBuilder {
     /// <p>The type of backup retention policy. For the <code>DAYS</code> type, the value is the number of days to retain backups.</p>
     pub fn r#type(mut self, input: crate::types::BackupRetentionType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of backup retention policy. For the <code>DAYS</code> type, the value is the number of days to retain backups.</p>
     pub fn set_type(
         mut self,
-        input: std::option::Option<crate::types::BackupRetentionType>,
+        input: ::std::option::Option<crate::types::BackupRetentionType>,
     ) -> Self {
         self.r#type = input;
         self
     }
     /// <p>Use a value between 7 - 379.</p>
-    pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.value = Some(input.into());
+    pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Use a value between 7 - 379.</p>
-    pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
     }

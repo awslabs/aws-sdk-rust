@@ -8,47 +8,50 @@ pub use crate::operation::get_aggregate_config_rule_compliance_summary::_get_agg
 /// <p>Returns the number of compliant and noncompliant rules for one or more accounts and regions in an aggregator.</p> <note>
 /// <p>The results can return an empty result page, but if you have a nextToken, the results are displayed on the next page.</p>
 /// </note>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetAggregateConfigRuleComplianceSummaryFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::get_aggregate_config_rule_compliance_summary::builders::GetAggregateConfigRuleComplianceSummaryInputBuilder,
 }
 impl GetAggregateConfigRuleComplianceSummaryFluentBuilder {
     /// Creates a new `GetAggregateConfigRuleComplianceSummary`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::get_aggregate_config_rule_compliance_summary::GetAggregateConfigRuleComplianceSummary, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::get_aggregate_config_rule_compliance_summary::GetAggregateConfigRuleComplianceSummaryError>
+                    pub async fn customize(self) -> ::std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::get_aggregate_config_rule_compliance_summary::GetAggregateConfigRuleComplianceSummary, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                        ::aws_smithy_http::result::SdkError<crate::operation::get_aggregate_config_rule_compliance_summary::GetAggregateConfigRuleComplianceSummaryError>
     >{
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::get_aggregate_config_rule_compliance_summary::GetAggregateConfigRuleComplianceSummaryOutput, aws_smithy_http::result::SdkError<crate::operation::get_aggregate_config_rule_compliance_summary::GetAggregateConfigRuleComplianceSummaryError>>
+                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::get_aggregate_config_rule_compliance_summary::GetAggregateConfigRuleComplianceSummaryOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_aggregate_config_rule_compliance_summary::GetAggregateConfigRuleComplianceSummaryError>>
                      {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -59,7 +62,7 @@ impl GetAggregateConfigRuleComplianceSummaryFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> std::result::Result<crate::operation::get_aggregate_config_rule_compliance_summary::GetAggregateConfigRuleComplianceSummaryOutput, aws_smithy_http::result::SdkError<crate::operation::get_aggregate_config_rule_compliance_summary::GetAggregateConfigRuleComplianceSummaryError>>
+                        pub async fn send(self) -> ::std::result::Result<crate::operation::get_aggregate_config_rule_compliance_summary::GetAggregateConfigRuleComplianceSummaryOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_aggregate_config_rule_compliance_summary::GetAggregateConfigRuleComplianceSummaryError>>
                          {
         self.send_middleware().await
     }
@@ -70,14 +73,17 @@ impl GetAggregateConfigRuleComplianceSummaryFluentBuilder {
         crate::operation::get_aggregate_config_rule_compliance_summary::paginator::GetAggregateConfigRuleComplianceSummaryPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the configuration aggregator.</p>
-    pub fn configuration_aggregator_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn configuration_aggregator_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.configuration_aggregator_name(input.into());
         self
     }
     /// <p>The name of the configuration aggregator.</p>
     pub fn set_configuration_aggregator_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_configuration_aggregator_name(input);
         self
@@ -90,7 +96,7 @@ impl GetAggregateConfigRuleComplianceSummaryFluentBuilder {
     /// <p>Filters the results based on the ConfigRuleComplianceSummaryFilters object.</p>
     pub fn set_filters(
         mut self,
-        input: std::option::Option<crate::types::ConfigRuleComplianceSummaryFilters>,
+        input: ::std::option::Option<crate::types::ConfigRuleComplianceSummaryFilters>,
     ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
@@ -106,7 +112,7 @@ impl GetAggregateConfigRuleComplianceSummaryFluentBuilder {
     /// <p>Groups the result based on ACCOUNT_ID or AWS_REGION.</p>
     pub fn set_group_by_key(
         mut self,
-        input: std::option::Option<crate::types::ConfigRuleComplianceSummaryGroupKey>,
+        input: ::std::option::Option<crate::types::ConfigRuleComplianceSummaryGroupKey>,
     ) -> Self {
         self.inner = self.inner.set_group_by_key(input);
         self
@@ -117,17 +123,17 @@ impl GetAggregateConfigRuleComplianceSummaryFluentBuilder {
         self
     }
     /// <p>The maximum number of evaluation results returned on each page. The default is 1000. You cannot specify a number greater than 1000. If you specify 0, Config uses the default.</p>
-    pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_limit(input);
         self
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }

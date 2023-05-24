@@ -17,56 +17,59 @@ pub use crate::operation::create_stream::_create_stream_input::CreateStreamInput
 /// <p>For the default shard limit for an Amazon Web Services account, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Amazon Kinesis Data Streams Limits</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>. To increase this limit, <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">contact Amazon Web Services Support</a>.</p>
 /// <p>You can use <code>DescribeStreamSummary</code> to check the stream status, which is returned in <code>StreamStatus</code>.</p>
 /// <p> <code>CreateStream</code> has a limit of five transactions per second per account.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateStreamFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_stream::builders::CreateStreamInputBuilder,
 }
 impl CreateStreamFluentBuilder {
     /// Creates a new `CreateStream`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_stream::CreateStream,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_stream::CreateStreamError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_stream::CreateStreamError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_stream::CreateStreamOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_stream::CreateStreamError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_stream::CreateStreamError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -79,19 +82,19 @@ impl CreateStreamFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_stream::CreateStreamOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_stream::CreateStreamError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_stream::CreateStreamError>,
     > {
         self.send_middleware().await
     }
     /// <p>A name to identify the stream. The stream name is scoped to the Amazon Web Services account used by the application that creates the stream. It is also scoped by Amazon Web Services Region. That is, two streams in two different Amazon Web Services accounts can have the same name. Two streams in the same Amazon Web Services account but in two different Regions can also have the same name.</p>
-    pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stream_name(input.into());
         self
     }
     /// <p>A name to identify the stream. The stream name is scoped to the Amazon Web Services account used by the application that creates the stream. It is also scoped by Amazon Web Services Region. That is, two streams in two different Amazon Web Services accounts can have the same name. Two streams in the same Amazon Web Services account but in two different Regions can also have the same name.</p>
-    pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stream_name(input);
         self
     }
@@ -101,7 +104,7 @@ impl CreateStreamFluentBuilder {
         self
     }
     /// <p>The number of shards that the stream will use. The throughput of the stream is a function of the number of shards; more shards are required for greater provisioned throughput.</p>
-    pub fn set_shard_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_shard_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_shard_count(input);
         self
     }
@@ -113,7 +116,7 @@ impl CreateStreamFluentBuilder {
     /// <p> Indicates the capacity mode of the data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b> capacity mode for your data streams.</p>
     pub fn set_stream_mode_details(
         mut self,
-        input: std::option::Option<crate::types::StreamModeDetails>,
+        input: ::std::option::Option<crate::types::StreamModeDetails>,
     ) -> Self {
         self.inner = self.inner.set_stream_mode_details(input);
         self

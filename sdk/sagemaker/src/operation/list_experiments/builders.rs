@@ -6,56 +6,63 @@ pub use crate::operation::list_experiments::_list_experiments_input::ListExperim
 /// Fluent builder constructing a request to `ListExperiments`.
 ///
 /// <p>Lists all the experiments in your account. The list can be filtered to show only experiments that were created in a specific time range. The list can be sorted by experiment name or creation time.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListExperimentsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::list_experiments::builders::ListExperimentsInputBuilder,
 }
 impl ListExperimentsFluentBuilder {
     /// Creates a new `ListExperiments`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::list_experiments::ListExperiments,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::list_experiments::ListExperimentsError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_experiments::ListExperimentsError,
+        >,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::list_experiments::ListExperimentsOutput,
-        aws_smithy_http::result::SdkError<crate::operation::list_experiments::ListExperimentsError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_experiments::ListExperimentsError,
+        >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,9 +75,11 @@ impl ListExperimentsFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::list_experiments::ListExperimentsOutput,
-        aws_smithy_http::result::SdkError<crate::operation::list_experiments::ListExperimentsError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_experiments::ListExperimentsError,
+        >,
     > {
         self.send_middleware().await
     }
@@ -86,27 +95,27 @@ impl ListExperimentsFluentBuilder {
         )
     }
     /// <p>A filter that returns only experiments created after the specified time.</p>
-    pub fn created_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+    pub fn created_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.created_after(input);
         self
     }
     /// <p>A filter that returns only experiments created after the specified time.</p>
     pub fn set_created_after(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.inner = self.inner.set_created_after(input);
         self
     }
     /// <p>A filter that returns only experiments created before the specified time.</p>
-    pub fn created_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+    pub fn created_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.created_before(input);
         self
     }
     /// <p>A filter that returns only experiments created before the specified time.</p>
     pub fn set_created_before(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.inner = self.inner.set_created_before(input);
         self
@@ -119,7 +128,7 @@ impl ListExperimentsFluentBuilder {
     /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
     pub fn set_sort_by(
         mut self,
-        input: std::option::Option<crate::types::SortExperimentsBy>,
+        input: ::std::option::Option<crate::types::SortExperimentsBy>,
     ) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
@@ -130,17 +139,17 @@ impl ListExperimentsFluentBuilder {
         self
     }
     /// <p>The sort order. The default value is <code>Descending</code>.</p>
-    pub fn set_sort_order(mut self, input: std::option::Option<crate::types::SortOrder>) -> Self {
+    pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.inner = self.inner.set_sort_order(input);
         self
     }
     /// <p>If the previous call to <code>ListExperiments</code> didn't return the full set of experiments, the call returns a token for getting the next set of experiments.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
     /// <p>If the previous call to <code>ListExperiments</code> didn't return the full set of experiments, the call returns a token for getting the next set of experiments.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
@@ -150,7 +159,7 @@ impl ListExperimentsFluentBuilder {
         self
     }
     /// <p>The maximum number of experiments to return in the response. The default value is 10.</p>
-    pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }

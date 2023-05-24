@@ -6,11 +6,11 @@
 /// </note>
 /// <p>Specifies a constraint on the size of a part of the web request. AWS WAF uses the <code>Size</code>, <code>ComparisonOperator</code>, and <code>FieldToMatch</code> to build an expression in the form of "<code>Size</code> <code>ComparisonOperator</code> size in bytes of <code>FieldToMatch</code>". If that expression is true, the <code>SizeConstraint</code> is considered to match.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SizeConstraint {
     /// <p>Specifies where in a web request to look for the size constraint.</p>
     #[doc(hidden)]
-    pub field_to_match: std::option::Option<crate::types::FieldToMatch>,
+    pub field_to_match: ::std::option::Option<crate::types::FieldToMatch>,
     /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on <code>FieldToMatch</code> before inspecting it for a match.</p>
     /// <p>You can only specify a single type of TextTransformation.</p>
     /// <p>Note that if you choose <code>BODY</code> for the value of <code>Type</code>, you must choose <code>NONE</code> for <code>TextTransformation</code> because CloudFront forwards only the first 8192 bytes for inspection. </p>
@@ -51,7 +51,7 @@ pub struct SizeConstraint {
     /// <p> <b>URL_DECODE</b> </p>
     /// <p>Use this option to decode a URL-encoded value.</p>
     #[doc(hidden)]
-    pub text_transformation: std::option::Option<crate::types::TextTransformation>,
+    pub text_transformation: ::std::option::Option<crate::types::TextTransformation>,
     /// <p>The type of comparison you want AWS WAF to perform. AWS WAF uses this in combination with the provided <code>Size</code> and <code>FieldToMatch</code> to build an expression in the form of "<code>Size</code> <code>ComparisonOperator</code> size in bytes of <code>FieldToMatch</code>". If that expression is true, the <code>SizeConstraint</code> is considered to match.</p>
     /// <p> <b>EQ</b>: Used to test if the <code>Size</code> is equal to the size of the <code>FieldToMatch</code> </p>
     /// <p> <b>NE</b>: Used to test if the <code>Size</code> is not equal to the size of the <code>FieldToMatch</code> </p>
@@ -60,7 +60,7 @@ pub struct SizeConstraint {
     /// <p> <b>GE</b>: Used to test if the <code>Size</code> is greater than or equal to the size of the <code>FieldToMatch</code> </p>
     /// <p> <b>GT</b>: Used to test if the <code>Size</code> is strictly greater than the size of the <code>FieldToMatch</code> </p>
     #[doc(hidden)]
-    pub comparison_operator: std::option::Option<crate::types::ComparisonOperator>,
+    pub comparison_operator: ::std::option::Option<crate::types::ComparisonOperator>,
     /// <p>The size in bytes that you want AWS WAF to compare against the size of the specified <code>FieldToMatch</code>. AWS WAF uses this in combination with <code>ComparisonOperator</code> and <code>FieldToMatch</code> to build an expression in the form of "<code>Size</code> <code>ComparisonOperator</code> size in bytes of <code>FieldToMatch</code>". If that expression is true, the <code>SizeConstraint</code> is considered to match.</p>
     /// <p>Valid values for size are 0 - 21474836480 bytes (0 - 20 GB).</p>
     /// <p>If you specify <code>URI</code> for the value of <code>Type</code>, the / in the URI counts as one character. For example, the URI <code>/logo.jpg</code> is nine characters long.</p>
@@ -69,7 +69,7 @@ pub struct SizeConstraint {
 }
 impl SizeConstraint {
     /// <p>Specifies where in a web request to look for the size constraint.</p>
-    pub fn field_to_match(&self) -> std::option::Option<&crate::types::FieldToMatch> {
+    pub fn field_to_match(&self) -> ::std::option::Option<&crate::types::FieldToMatch> {
         self.field_to_match.as_ref()
     }
     /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on <code>FieldToMatch</code> before inspecting it for a match.</p>
@@ -111,7 +111,7 @@ impl SizeConstraint {
     /// <p>Use this option to convert uppercase letters (A-Z) to lowercase (a-z).</p>
     /// <p> <b>URL_DECODE</b> </p>
     /// <p>Use this option to decode a URL-encoded value.</p>
-    pub fn text_transformation(&self) -> std::option::Option<&crate::types::TextTransformation> {
+    pub fn text_transformation(&self) -> ::std::option::Option<&crate::types::TextTransformation> {
         self.text_transformation.as_ref()
     }
     /// <p>The type of comparison you want AWS WAF to perform. AWS WAF uses this in combination with the provided <code>Size</code> and <code>FieldToMatch</code> to build an expression in the form of "<code>Size</code> <code>ComparisonOperator</code> size in bytes of <code>FieldToMatch</code>". If that expression is true, the <code>SizeConstraint</code> is considered to match.</p>
@@ -121,7 +121,7 @@ impl SizeConstraint {
     /// <p> <b>LT</b>: Used to test if the <code>Size</code> is strictly less than the size of the <code>FieldToMatch</code> </p>
     /// <p> <b>GE</b>: Used to test if the <code>Size</code> is greater than or equal to the size of the <code>FieldToMatch</code> </p>
     /// <p> <b>GT</b>: Used to test if the <code>Size</code> is strictly greater than the size of the <code>FieldToMatch</code> </p>
-    pub fn comparison_operator(&self) -> std::option::Option<&crate::types::ComparisonOperator> {
+    pub fn comparison_operator(&self) -> ::std::option::Option<&crate::types::ComparisonOperator> {
         self.comparison_operator.as_ref()
     }
     /// <p>The size in bytes that you want AWS WAF to compare against the size of the specified <code>FieldToMatch</code>. AWS WAF uses this in combination with <code>ComparisonOperator</code> and <code>FieldToMatch</code> to build an expression in the form of "<code>Size</code> <code>ComparisonOperator</code> size in bytes of <code>FieldToMatch</code>". If that expression is true, the <code>SizeConstraint</code> is considered to match.</p>
@@ -140,23 +140,25 @@ impl SizeConstraint {
 
 /// A builder for [`SizeConstraint`](crate::types::SizeConstraint).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SizeConstraintBuilder {
-    pub(crate) field_to_match: std::option::Option<crate::types::FieldToMatch>,
-    pub(crate) text_transformation: std::option::Option<crate::types::TextTransformation>,
-    pub(crate) comparison_operator: std::option::Option<crate::types::ComparisonOperator>,
-    pub(crate) size: std::option::Option<i64>,
+    pub(crate) field_to_match: ::std::option::Option<crate::types::FieldToMatch>,
+    pub(crate) text_transformation: ::std::option::Option<crate::types::TextTransformation>,
+    pub(crate) comparison_operator: ::std::option::Option<crate::types::ComparisonOperator>,
+    pub(crate) size: ::std::option::Option<i64>,
 }
 impl SizeConstraintBuilder {
     /// <p>Specifies where in a web request to look for the size constraint.</p>
     pub fn field_to_match(mut self, input: crate::types::FieldToMatch) -> Self {
-        self.field_to_match = Some(input);
+        self.field_to_match = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies where in a web request to look for the size constraint.</p>
     pub fn set_field_to_match(
         mut self,
-        input: std::option::Option<crate::types::FieldToMatch>,
+        input: ::std::option::Option<crate::types::FieldToMatch>,
     ) -> Self {
         self.field_to_match = input;
         self
@@ -201,7 +203,7 @@ impl SizeConstraintBuilder {
     /// <p> <b>URL_DECODE</b> </p>
     /// <p>Use this option to decode a URL-encoded value.</p>
     pub fn text_transformation(mut self, input: crate::types::TextTransformation) -> Self {
-        self.text_transformation = Some(input);
+        self.text_transformation = ::std::option::Option::Some(input);
         self
     }
     /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass AWS WAF. If you specify a transformation, AWS WAF performs the transformation on <code>FieldToMatch</code> before inspecting it for a match.</p>
@@ -245,7 +247,7 @@ impl SizeConstraintBuilder {
     /// <p>Use this option to decode a URL-encoded value.</p>
     pub fn set_text_transformation(
         mut self,
-        input: std::option::Option<crate::types::TextTransformation>,
+        input: ::std::option::Option<crate::types::TextTransformation>,
     ) -> Self {
         self.text_transformation = input;
         self
@@ -258,7 +260,7 @@ impl SizeConstraintBuilder {
     /// <p> <b>GE</b>: Used to test if the <code>Size</code> is greater than or equal to the size of the <code>FieldToMatch</code> </p>
     /// <p> <b>GT</b>: Used to test if the <code>Size</code> is strictly greater than the size of the <code>FieldToMatch</code> </p>
     pub fn comparison_operator(mut self, input: crate::types::ComparisonOperator) -> Self {
-        self.comparison_operator = Some(input);
+        self.comparison_operator = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of comparison you want AWS WAF to perform. AWS WAF uses this in combination with the provided <code>Size</code> and <code>FieldToMatch</code> to build an expression in the form of "<code>Size</code> <code>ComparisonOperator</code> size in bytes of <code>FieldToMatch</code>". If that expression is true, the <code>SizeConstraint</code> is considered to match.</p>
@@ -270,7 +272,7 @@ impl SizeConstraintBuilder {
     /// <p> <b>GT</b>: Used to test if the <code>Size</code> is strictly greater than the size of the <code>FieldToMatch</code> </p>
     pub fn set_comparison_operator(
         mut self,
-        input: std::option::Option<crate::types::ComparisonOperator>,
+        input: ::std::option::Option<crate::types::ComparisonOperator>,
     ) -> Self {
         self.comparison_operator = input;
         self
@@ -279,13 +281,13 @@ impl SizeConstraintBuilder {
     /// <p>Valid values for size are 0 - 21474836480 bytes (0 - 20 GB).</p>
     /// <p>If you specify <code>URI</code> for the value of <code>Type</code>, the / in the URI counts as one character. For example, the URI <code>/logo.jpg</code> is nine characters long.</p>
     pub fn size(mut self, input: i64) -> Self {
-        self.size = Some(input);
+        self.size = ::std::option::Option::Some(input);
         self
     }
     /// <p>The size in bytes that you want AWS WAF to compare against the size of the specified <code>FieldToMatch</code>. AWS WAF uses this in combination with <code>ComparisonOperator</code> and <code>FieldToMatch</code> to build an expression in the form of "<code>Size</code> <code>ComparisonOperator</code> size in bytes of <code>FieldToMatch</code>". If that expression is true, the <code>SizeConstraint</code> is considered to match.</p>
     /// <p>Valid values for size are 0 - 21474836480 bytes (0 - 20 GB).</p>
     /// <p>If you specify <code>URI</code> for the value of <code>Type</code>, the / in the URI counts as one character. For example, the URI <code>/logo.jpg</code> is nine characters long.</p>
-    pub fn set_size(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_size(mut self, input: ::std::option::Option<i64>) -> Self {
         self.size = input;
         self
     }

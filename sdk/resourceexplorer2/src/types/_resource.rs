@@ -2,57 +2,57 @@
 
 /// <p>A resource in Amazon Web Services that Amazon Web Services Resource Explorer has discovered, and for which it has stored information in the index of the Amazon Web Services Region that contains the resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Resource {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the resource.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account that owns the resource.</p>
     #[doc(hidden)]
-    pub owning_account_id: std::option::Option<std::string::String>,
+    pub owning_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region in which the resource was created and exists.</p>
     #[doc(hidden)]
-    pub region: std::option::Option<std::string::String>,
+    pub region: ::std::option::Option<::std::string::String>,
     /// <p>The type of the resource.</p>
     #[doc(hidden)]
-    pub resource_type: std::option::Option<std::string::String>,
+    pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Service that owns the resource and is responsible for creating and updating it.</p>
     #[doc(hidden)]
-    pub service: std::option::Option<std::string::String>,
+    pub service: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that Resource Explorer last queried this resource and updated the index with the latest information about the resource.</p>
     #[doc(hidden)]
-    pub last_reported_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_reported_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A structure with additional type-specific details about the resource. These properties can be added by turning on integration between Resource Explorer and other Amazon Web Services services.</p>
     #[doc(hidden)]
-    pub properties: std::option::Option<std::vec::Vec<crate::types::ResourceProperty>>,
+    pub properties: ::std::option::Option<::std::vec::Vec<crate::types::ResourceProperty>>,
 }
 impl Resource {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the resource.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The Amazon Web Services account that owns the resource.</p>
-    pub fn owning_account_id(&self) -> std::option::Option<&str> {
+    pub fn owning_account_id(&self) -> ::std::option::Option<&str> {
         self.owning_account_id.as_deref()
     }
     /// <p>The Amazon Web Services Region in which the resource was created and exists.</p>
-    pub fn region(&self) -> std::option::Option<&str> {
+    pub fn region(&self) -> ::std::option::Option<&str> {
         self.region.as_deref()
     }
     /// <p>The type of the resource.</p>
-    pub fn resource_type(&self) -> std::option::Option<&str> {
+    pub fn resource_type(&self) -> ::std::option::Option<&str> {
         self.resource_type.as_deref()
     }
     /// <p>The Amazon Web Service that owns the resource and is responsible for creating and updating it.</p>
-    pub fn service(&self) -> std::option::Option<&str> {
+    pub fn service(&self) -> ::std::option::Option<&str> {
         self.service.as_deref()
     }
     /// <p>The date and time that Resource Explorer last queried this resource and updated the index with the latest information about the resource.</p>
-    pub fn last_reported_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_reported_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_reported_at.as_ref()
     }
     /// <p>A structure with additional type-specific details about the resource. These properties can be added by turning on integration between Resource Explorer and other Amazon Web Services services.</p>
-    pub fn properties(&self) -> std::option::Option<&[crate::types::ResourceProperty]> {
+    pub fn properties(&self) -> ::std::option::Option<&[crate::types::ResourceProperty]> {
         self.properties.as_deref()
     }
 }
@@ -65,79 +65,90 @@ impl Resource {
 
 /// A builder for [`Resource`](crate::types::Resource).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResourceBuilder {
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) owning_account_id: std::option::Option<std::string::String>,
-    pub(crate) region: std::option::Option<std::string::String>,
-    pub(crate) resource_type: std::option::Option<std::string::String>,
-    pub(crate) service: std::option::Option<std::string::String>,
-    pub(crate) last_reported_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) properties: std::option::Option<std::vec::Vec<crate::types::ResourceProperty>>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) owning_account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) region: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_type: ::std::option::Option<::std::string::String>,
+    pub(crate) service: ::std::option::Option<::std::string::String>,
+    pub(crate) last_reported_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) properties: ::std::option::Option<::std::vec::Vec<crate::types::ResourceProperty>>,
 }
 impl ResourceBuilder {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the resource.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the resource.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// <p>The Amazon Web Services account that owns the resource.</p>
-    pub fn owning_account_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.owning_account_id = Some(input.into());
+    pub fn owning_account_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.owning_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account that owns the resource.</p>
     pub fn set_owning_account_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.owning_account_id = input;
         self
     }
     /// <p>The Amazon Web Services Region in which the resource was created and exists.</p>
-    pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
-        self.region = Some(input.into());
+    pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services Region in which the resource was created and exists.</p>
-    pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region = input;
         self
     }
     /// <p>The type of the resource.</p>
-    pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_type = Some(input.into());
+    pub fn resource_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of the resource.</p>
-    pub fn set_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.resource_type = input;
         self
     }
     /// <p>The Amazon Web Service that owns the resource and is responsible for creating and updating it.</p>
-    pub fn service(mut self, input: impl Into<std::string::String>) -> Self {
-        self.service = Some(input.into());
+    pub fn service(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.service = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Service that owns the resource and is responsible for creating and updating it.</p>
-    pub fn set_service(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_service(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service = input;
         self
     }
     /// <p>The date and time that Resource Explorer last queried this resource and updated the index with the latest information about the resource.</p>
-    pub fn last_reported_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_reported_at = Some(input);
+    pub fn last_reported_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_reported_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time that Resource Explorer last queried this resource and updated the index with the latest information about the resource.</p>
     pub fn set_last_reported_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_reported_at = input;
         self
@@ -150,13 +161,13 @@ impl ResourceBuilder {
     pub fn properties(mut self, input: crate::types::ResourceProperty) -> Self {
         let mut v = self.properties.unwrap_or_default();
         v.push(input);
-        self.properties = Some(v);
+        self.properties = ::std::option::Option::Some(v);
         self
     }
     /// <p>A structure with additional type-specific details about the resource. These properties can be added by turning on integration between Resource Explorer and other Amazon Web Services services.</p>
     pub fn set_properties(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ResourceProperty>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceProperty>>,
     ) -> Self {
         self.properties = input;
         self

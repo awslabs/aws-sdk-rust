@@ -2,7 +2,7 @@
 
 /// <p>Contains information about whether the stack's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the stack template and any values specified as template parameters. A stack is considered to have drifted if one or more of its resources have drifted.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StackDriftInformationSummary {
     /// <p>Status of the stack's actual configuration compared to its expected template configuration.</p>
     /// <ul>
@@ -12,10 +12,10 @@ pub struct StackDriftInformationSummary {
     /// <li> <p> <code>UNKNOWN</code>: This value is reserved for future use.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub stack_drift_status: std::option::Option<crate::types::StackDriftStatus>,
+    pub stack_drift_status: ::std::option::Option<crate::types::StackDriftStatus>,
     /// <p>Most recent time when a drift detection operation was initiated on the stack, or any of its individual resources that support drift detection.</p>
     #[doc(hidden)]
-    pub last_check_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_check_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl StackDriftInformationSummary {
     /// <p>Status of the stack's actual configuration compared to its expected template configuration.</p>
@@ -25,11 +25,11 @@ impl StackDriftInformationSummary {
     /// <li> <p> <code>IN_SYNC</code>: The stack's actual configuration matches its expected template configuration.</p> </li>
     /// <li> <p> <code>UNKNOWN</code>: This value is reserved for future use.</p> </li>
     /// </ul>
-    pub fn stack_drift_status(&self) -> std::option::Option<&crate::types::StackDriftStatus> {
+    pub fn stack_drift_status(&self) -> ::std::option::Option<&crate::types::StackDriftStatus> {
         self.stack_drift_status.as_ref()
     }
     /// <p>Most recent time when a drift detection operation was initiated on the stack, or any of its individual resources that support drift detection.</p>
-    pub fn last_check_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_check_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_check_timestamp.as_ref()
     }
 }
@@ -42,10 +42,12 @@ impl StackDriftInformationSummary {
 
 /// A builder for [`StackDriftInformationSummary`](crate::types::StackDriftInformationSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StackDriftInformationSummaryBuilder {
-    pub(crate) stack_drift_status: std::option::Option<crate::types::StackDriftStatus>,
-    pub(crate) last_check_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) stack_drift_status: ::std::option::Option<crate::types::StackDriftStatus>,
+    pub(crate) last_check_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl StackDriftInformationSummaryBuilder {
     /// <p>Status of the stack's actual configuration compared to its expected template configuration.</p>
@@ -56,7 +58,7 @@ impl StackDriftInformationSummaryBuilder {
     /// <li> <p> <code>UNKNOWN</code>: This value is reserved for future use.</p> </li>
     /// </ul>
     pub fn stack_drift_status(mut self, input: crate::types::StackDriftStatus) -> Self {
-        self.stack_drift_status = Some(input);
+        self.stack_drift_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Status of the stack's actual configuration compared to its expected template configuration.</p>
@@ -68,20 +70,20 @@ impl StackDriftInformationSummaryBuilder {
     /// </ul>
     pub fn set_stack_drift_status(
         mut self,
-        input: std::option::Option<crate::types::StackDriftStatus>,
+        input: ::std::option::Option<crate::types::StackDriftStatus>,
     ) -> Self {
         self.stack_drift_status = input;
         self
     }
     /// <p>Most recent time when a drift detection operation was initiated on the stack, or any of its individual resources that support drift detection.</p>
-    pub fn last_check_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_check_timestamp = Some(input);
+    pub fn last_check_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_check_timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>Most recent time when a drift detection operation was initiated on the stack, or any of its individual resources that support drift detection.</p>
     pub fn set_last_check_timestamp(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_check_timestamp = input;
         self

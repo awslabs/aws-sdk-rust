@@ -2,11 +2,11 @@
 
 /// <p>Represents the properties of a local secondary index.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LocalSecondaryIndexDescription {
     /// <p>Represents the name of the local secondary index.</p>
     #[doc(hidden)]
-    pub index_name: std::option::Option<std::string::String>,
+    pub index_name: ::std::option::Option<::std::string::String>,
     /// <p>The complete key schema for the local secondary index, consisting of one or more pairs of attribute names and key types:</p>
     /// <ul>
     /// <li> <p> <code>HASH</code> - partition key</p> </li>
@@ -16,23 +16,23 @@ pub struct LocalSecondaryIndexDescription {
     /// <p>The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives from the way DynamoDB stores items with the same partition key physically close together, in sorted order by the sort key value.</p>
     /// </note>
     #[doc(hidden)]
-    pub key_schema: std::option::Option<std::vec::Vec<crate::types::KeySchemaElement>>,
+    pub key_schema: ::std::option::Option<::std::vec::Vec<crate::types::KeySchemaElement>>,
     /// <p>Represents attributes that are copied (projected) from the table into the global secondary index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. </p>
     #[doc(hidden)]
-    pub projection: std::option::Option<crate::types::Projection>,
+    pub projection: ::std::option::Option<crate::types::Projection>,
     /// <p>The total size of the specified index, in bytes. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p>
     #[doc(hidden)]
-    pub index_size_bytes: std::option::Option<i64>,
+    pub index_size_bytes: ::std::option::Option<i64>,
     /// <p>The number of items in the specified index. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p>
     #[doc(hidden)]
-    pub item_count: std::option::Option<i64>,
+    pub item_count: ::std::option::Option<i64>,
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the index.</p>
     #[doc(hidden)]
-    pub index_arn: std::option::Option<std::string::String>,
+    pub index_arn: ::std::option::Option<::std::string::String>,
 }
 impl LocalSecondaryIndexDescription {
     /// <p>Represents the name of the local secondary index.</p>
-    pub fn index_name(&self) -> std::option::Option<&str> {
+    pub fn index_name(&self) -> ::std::option::Option<&str> {
         self.index_name.as_deref()
     }
     /// <p>The complete key schema for the local secondary index, consisting of one or more pairs of attribute names and key types:</p>
@@ -43,23 +43,23 @@ impl LocalSecondaryIndexDescription {
     /// <p>The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives from DynamoDB's usage of an internal hash function to evenly distribute data items across partitions, based on their partition key values.</p>
     /// <p>The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives from the way DynamoDB stores items with the same partition key physically close together, in sorted order by the sort key value.</p>
     /// </note>
-    pub fn key_schema(&self) -> std::option::Option<&[crate::types::KeySchemaElement]> {
+    pub fn key_schema(&self) -> ::std::option::Option<&[crate::types::KeySchemaElement]> {
         self.key_schema.as_deref()
     }
     /// <p>Represents attributes that are copied (projected) from the table into the global secondary index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. </p>
-    pub fn projection(&self) -> std::option::Option<&crate::types::Projection> {
+    pub fn projection(&self) -> ::std::option::Option<&crate::types::Projection> {
         self.projection.as_ref()
     }
     /// <p>The total size of the specified index, in bytes. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p>
-    pub fn index_size_bytes(&self) -> std::option::Option<i64> {
+    pub fn index_size_bytes(&self) -> ::std::option::Option<i64> {
         self.index_size_bytes
     }
     /// <p>The number of items in the specified index. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p>
-    pub fn item_count(&self) -> std::option::Option<i64> {
+    pub fn item_count(&self) -> ::std::option::Option<i64> {
         self.item_count
     }
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the index.</p>
-    pub fn index_arn(&self) -> std::option::Option<&str> {
+    pub fn index_arn(&self) -> ::std::option::Option<&str> {
         self.index_arn.as_deref()
     }
 }
@@ -72,23 +72,25 @@ impl LocalSecondaryIndexDescription {
 
 /// A builder for [`LocalSecondaryIndexDescription`](crate::types::LocalSecondaryIndexDescription).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LocalSecondaryIndexDescriptionBuilder {
-    pub(crate) index_name: std::option::Option<std::string::String>,
-    pub(crate) key_schema: std::option::Option<std::vec::Vec<crate::types::KeySchemaElement>>,
-    pub(crate) projection: std::option::Option<crate::types::Projection>,
-    pub(crate) index_size_bytes: std::option::Option<i64>,
-    pub(crate) item_count: std::option::Option<i64>,
-    pub(crate) index_arn: std::option::Option<std::string::String>,
+    pub(crate) index_name: ::std::option::Option<::std::string::String>,
+    pub(crate) key_schema: ::std::option::Option<::std::vec::Vec<crate::types::KeySchemaElement>>,
+    pub(crate) projection: ::std::option::Option<crate::types::Projection>,
+    pub(crate) index_size_bytes: ::std::option::Option<i64>,
+    pub(crate) item_count: ::std::option::Option<i64>,
+    pub(crate) index_arn: ::std::option::Option<::std::string::String>,
 }
 impl LocalSecondaryIndexDescriptionBuilder {
     /// <p>Represents the name of the local secondary index.</p>
-    pub fn index_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.index_name = Some(input.into());
+    pub fn index_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.index_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Represents the name of the local secondary index.</p>
-    pub fn set_index_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_index_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.index_name = input;
         self
     }
@@ -107,7 +109,7 @@ impl LocalSecondaryIndexDescriptionBuilder {
     pub fn key_schema(mut self, input: crate::types::KeySchemaElement) -> Self {
         let mut v = self.key_schema.unwrap_or_default();
         v.push(input);
-        self.key_schema = Some(v);
+        self.key_schema = ::std::option::Option::Some(v);
         self
     }
     /// <p>The complete key schema for the local secondary index, consisting of one or more pairs of attribute names and key types:</p>
@@ -120,48 +122,51 @@ impl LocalSecondaryIndexDescriptionBuilder {
     /// </note>
     pub fn set_key_schema(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::KeySchemaElement>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::KeySchemaElement>>,
     ) -> Self {
         self.key_schema = input;
         self
     }
     /// <p>Represents attributes that are copied (projected) from the table into the global secondary index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. </p>
     pub fn projection(mut self, input: crate::types::Projection) -> Self {
-        self.projection = Some(input);
+        self.projection = ::std::option::Option::Some(input);
         self
     }
     /// <p>Represents attributes that are copied (projected) from the table into the global secondary index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. </p>
-    pub fn set_projection(mut self, input: std::option::Option<crate::types::Projection>) -> Self {
+    pub fn set_projection(
+        mut self,
+        input: ::std::option::Option<crate::types::Projection>,
+    ) -> Self {
         self.projection = input;
         self
     }
     /// <p>The total size of the specified index, in bytes. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p>
     pub fn index_size_bytes(mut self, input: i64) -> Self {
-        self.index_size_bytes = Some(input);
+        self.index_size_bytes = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total size of the specified index, in bytes. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p>
-    pub fn set_index_size_bytes(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_index_size_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.index_size_bytes = input;
         self
     }
     /// <p>The number of items in the specified index. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p>
     pub fn item_count(mut self, input: i64) -> Self {
-        self.item_count = Some(input);
+        self.item_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of items in the specified index. DynamoDB updates this value approximately every six hours. Recent changes might not be reflected in this value.</p>
-    pub fn set_item_count(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_item_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.item_count = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the index.</p>
-    pub fn index_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.index_arn = Some(input.into());
+    pub fn index_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.index_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the index.</p>
-    pub fn set_index_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_index_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.index_arn = input;
         self
     }

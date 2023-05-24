@@ -2,15 +2,15 @@
 
 /// <p>List imports request filters.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListImportsRequestFilters {
     /// <p>List imports request filters import IDs.</p>
     #[doc(hidden)]
-    pub import_i_ds: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub import_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ListImportsRequestFilters {
     /// <p>List imports request filters import IDs.</p>
-    pub fn import_i_ds(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn import_i_ds(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.import_i_ds.as_deref()
     }
 }
@@ -23,9 +23,11 @@ impl ListImportsRequestFilters {
 
 /// A builder for [`ListImportsRequestFilters`](crate::types::ListImportsRequestFilters).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListImportsRequestFiltersBuilder {
-    pub(crate) import_i_ds: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) import_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ListImportsRequestFiltersBuilder {
     /// Appends an item to `import_i_ds`.
@@ -33,16 +35,16 @@ impl ListImportsRequestFiltersBuilder {
     /// To override the contents of this collection use [`set_import_i_ds`](Self::set_import_i_ds).
     ///
     /// <p>List imports request filters import IDs.</p>
-    pub fn import_i_ds(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn import_i_ds(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.import_i_ds.unwrap_or_default();
         v.push(input.into());
-        self.import_i_ds = Some(v);
+        self.import_i_ds = ::std::option::Option::Some(v);
         self
     }
     /// <p>List imports request filters import IDs.</p>
     pub fn set_import_i_ds(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.import_i_ds = input;
         self

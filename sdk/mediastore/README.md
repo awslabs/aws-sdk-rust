@@ -26,9 +26,9 @@ Then in code, a client can be created with the following:
 ```rust,no_run
 use aws_sdk_mediastore as mediastore;
 
-#[tokio::main]
+#[::tokio::main]
 async fn main() -> Result<(), mediastore::Error> {
-    let config = aws_config::load_from_env().await;
+    let config = ::aws_config::load_from_env().await;
     let client = mediastore::Client::new(&config);
 
     // ... make some calls with the client

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteDeliveryChannel`](crate::operation::delete_delivery_channel::builders::DeleteDeliveryChannelFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`delivery_channel_name(impl Into<String>)`](crate::operation::delete_delivery_channel::builders::DeleteDeliveryChannelFluentBuilder::delivery_channel_name) / [`set_delivery_channel_name(Option<String>)`](crate::operation::delete_delivery_channel::builders::DeleteDeliveryChannelFluentBuilder::set_delivery_channel_name): <p>The name of the delivery channel to delete.</p>
+    ///   - [`delivery_channel_name(impl ::std::convert::Into<String>)`](crate::operation::delete_delivery_channel::builders::DeleteDeliveryChannelFluentBuilder::delivery_channel_name) / [`set_delivery_channel_name(Option<String>)`](crate::operation::delete_delivery_channel::builders::DeleteDeliveryChannelFluentBuilder::set_delivery_channel_name): <p>The name of the delivery channel to delete.</p>
     /// - On success, responds with [`DeleteDeliveryChannelOutput`](crate::operation::delete_delivery_channel::DeleteDeliveryChannelOutput)
     /// - On failure, responds with [`SdkError<DeleteDeliveryChannelError>`](crate::operation::delete_delivery_channel::DeleteDeliveryChannelError)
     pub fn delete_delivery_channel(

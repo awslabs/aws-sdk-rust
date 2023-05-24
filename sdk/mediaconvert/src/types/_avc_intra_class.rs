@@ -40,13 +40,13 @@
 /// Specify the AVC-Intra class of your output. The AVC-Intra class selection determines the output video bit rate depending on the frame rate of the output. Outputs with higher class values have higher bitrates and improved image quality. Note that for Class 4K/2K, MediaConvert supports only 4:2:2 chroma subsampling.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum AvcIntraClass {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,7 +60,7 @@ pub enum AvcIntraClass {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for AvcIntraClass {
+impl ::std::convert::From<&str> for AvcIntraClass {
     fn from(s: &str) -> Self {
         match s {
             "CLASS_100" => AvcIntraClass::Class100,
@@ -73,11 +73,11 @@ impl std::convert::From<&str> for AvcIntraClass {
         }
     }
 }
-impl std::str::FromStr for AvcIntraClass {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for AvcIntraClass {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AvcIntraClass::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(AvcIntraClass::from(s))
     }
 }
 impl AvcIntraClass {
@@ -96,7 +96,7 @@ impl AvcIntraClass {
         &["CLASS_100", "CLASS_200", "CLASS_4K_2K", "CLASS_50"]
     }
 }
-impl AsRef<str> for AvcIntraClass {
+impl ::std::convert::AsRef<str> for AvcIntraClass {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

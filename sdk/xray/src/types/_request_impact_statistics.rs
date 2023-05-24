@@ -2,29 +2,29 @@
 
 /// <p>Statistics that describe how the incident has impacted a service.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RequestImpactStatistics {
     /// <p>The number of requests that have resulted in a fault,</p>
     #[doc(hidden)]
-    pub fault_count: std::option::Option<i64>,
+    pub fault_count: ::std::option::Option<i64>,
     /// <p>The number of successful requests.</p>
     #[doc(hidden)]
-    pub ok_count: std::option::Option<i64>,
+    pub ok_count: ::std::option::Option<i64>,
     /// <p>The total number of requests to the service.</p>
     #[doc(hidden)]
-    pub total_count: std::option::Option<i64>,
+    pub total_count: ::std::option::Option<i64>,
 }
 impl RequestImpactStatistics {
     /// <p>The number of requests that have resulted in a fault,</p>
-    pub fn fault_count(&self) -> std::option::Option<i64> {
+    pub fn fault_count(&self) -> ::std::option::Option<i64> {
         self.fault_count
     }
     /// <p>The number of successful requests.</p>
-    pub fn ok_count(&self) -> std::option::Option<i64> {
+    pub fn ok_count(&self) -> ::std::option::Option<i64> {
         self.ok_count
     }
     /// <p>The total number of requests to the service.</p>
-    pub fn total_count(&self) -> std::option::Option<i64> {
+    pub fn total_count(&self) -> ::std::option::Option<i64> {
         self.total_count
     }
 }
@@ -37,40 +37,42 @@ impl RequestImpactStatistics {
 
 /// A builder for [`RequestImpactStatistics`](crate::types::RequestImpactStatistics).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RequestImpactStatisticsBuilder {
-    pub(crate) fault_count: std::option::Option<i64>,
-    pub(crate) ok_count: std::option::Option<i64>,
-    pub(crate) total_count: std::option::Option<i64>,
+    pub(crate) fault_count: ::std::option::Option<i64>,
+    pub(crate) ok_count: ::std::option::Option<i64>,
+    pub(crate) total_count: ::std::option::Option<i64>,
 }
 impl RequestImpactStatisticsBuilder {
     /// <p>The number of requests that have resulted in a fault,</p>
     pub fn fault_count(mut self, input: i64) -> Self {
-        self.fault_count = Some(input);
+        self.fault_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of requests that have resulted in a fault,</p>
-    pub fn set_fault_count(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_fault_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.fault_count = input;
         self
     }
     /// <p>The number of successful requests.</p>
     pub fn ok_count(mut self, input: i64) -> Self {
-        self.ok_count = Some(input);
+        self.ok_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of successful requests.</p>
-    pub fn set_ok_count(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_ok_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.ok_count = input;
         self
     }
     /// <p>The total number of requests to the service.</p>
     pub fn total_count(mut self, input: i64) -> Self {
-        self.total_count = Some(input);
+        self.total_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total number of requests to the service.</p>
-    pub fn set_total_count(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_total_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.total_count = input;
         self
     }

@@ -2,22 +2,22 @@
 
 /// <p>The <code>SessionCommand</code> that runs the job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SessionCommand {
     /// <p>Specifies the name of the SessionCommand. Can be 'glueetl' or 'gluestreaming'.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the Python version. The Python version indicates the version supported for jobs of type Spark.</p>
     #[doc(hidden)]
-    pub python_version: std::option::Option<std::string::String>,
+    pub python_version: ::std::option::Option<::std::string::String>,
 }
 impl SessionCommand {
     /// <p>Specifies the name of the SessionCommand. Can be 'glueetl' or 'gluestreaming'.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>Specifies the Python version. The Python version indicates the version supported for jobs of type Spark.</p>
-    pub fn python_version(&self) -> std::option::Option<&str> {
+    pub fn python_version(&self) -> ::std::option::Option<&str> {
         self.python_version.as_deref()
     }
 }
@@ -30,29 +30,37 @@ impl SessionCommand {
 
 /// A builder for [`SessionCommand`](crate::types::SessionCommand).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SessionCommandBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) python_version: std::option::Option<std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) python_version: ::std::option::Option<::std::string::String>,
 }
 impl SessionCommandBuilder {
     /// <p>Specifies the name of the SessionCommand. Can be 'glueetl' or 'gluestreaming'.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the name of the SessionCommand. Can be 'glueetl' or 'gluestreaming'.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>Specifies the Python version. The Python version indicates the version supported for jobs of type Spark.</p>
-    pub fn python_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.python_version = Some(input.into());
+    pub fn python_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.python_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the Python version. The Python version indicates the version supported for jobs of type Spark.</p>
-    pub fn set_python_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_python_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.python_version = input;
         self
     }

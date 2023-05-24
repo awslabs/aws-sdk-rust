@@ -2,22 +2,22 @@
 
 /// <p> Information about a line item asset. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LineItemAssetInformation {
     /// <p> The ID of the asset. </p>
     #[doc(hidden)]
-    pub asset_id: std::option::Option<std::string::String>,
+    pub asset_id: ::std::option::Option<::std::string::String>,
     /// <p> The MAC addresses of the asset. </p>
     #[doc(hidden)]
-    pub mac_address_list: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub mac_address_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl LineItemAssetInformation {
     /// <p> The ID of the asset. </p>
-    pub fn asset_id(&self) -> std::option::Option<&str> {
+    pub fn asset_id(&self) -> ::std::option::Option<&str> {
         self.asset_id.as_deref()
     }
     /// <p> The MAC addresses of the asset. </p>
-    pub fn mac_address_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn mac_address_list(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.mac_address_list.as_deref()
     }
 }
@@ -30,19 +30,21 @@ impl LineItemAssetInformation {
 
 /// A builder for [`LineItemAssetInformation`](crate::types::LineItemAssetInformation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LineItemAssetInformationBuilder {
-    pub(crate) asset_id: std::option::Option<std::string::String>,
-    pub(crate) mac_address_list: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) asset_id: ::std::option::Option<::std::string::String>,
+    pub(crate) mac_address_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl LineItemAssetInformationBuilder {
     /// <p> The ID of the asset. </p>
-    pub fn asset_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.asset_id = Some(input.into());
+    pub fn asset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.asset_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The ID of the asset. </p>
-    pub fn set_asset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_asset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.asset_id = input;
         self
     }
@@ -51,16 +53,19 @@ impl LineItemAssetInformationBuilder {
     /// To override the contents of this collection use [`set_mac_address_list`](Self::set_mac_address_list).
     ///
     /// <p> The MAC addresses of the asset. </p>
-    pub fn mac_address_list(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn mac_address_list(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.mac_address_list.unwrap_or_default();
         v.push(input.into());
-        self.mac_address_list = Some(v);
+        self.mac_address_list = ::std::option::Option::Some(v);
         self
     }
     /// <p> The MAC addresses of the asset. </p>
     pub fn set_mac_address_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.mac_address_list = input;
         self

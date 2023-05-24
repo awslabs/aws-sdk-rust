@@ -2,34 +2,34 @@
 
 /// <p>Represents the output of a <code>GetApplicationRevision</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetApplicationRevisionOutput {
     /// <p>The name of the application that corresponds to the revision.</p>
     #[doc(hidden)]
-    pub application_name: std::option::Option<std::string::String>,
+    pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>Additional information about the revision, including type and location.</p>
     #[doc(hidden)]
-    pub revision: std::option::Option<crate::types::RevisionLocation>,
+    pub revision: ::std::option::Option<crate::types::RevisionLocation>,
     /// <p>General information about the revision.</p>
     #[doc(hidden)]
-    pub revision_info: std::option::Option<crate::types::GenericRevisionInfo>,
+    pub revision_info: ::std::option::Option<crate::types::GenericRevisionInfo>,
     _request_id: Option<String>,
 }
 impl GetApplicationRevisionOutput {
     /// <p>The name of the application that corresponds to the revision.</p>
-    pub fn application_name(&self) -> std::option::Option<&str> {
+    pub fn application_name(&self) -> ::std::option::Option<&str> {
         self.application_name.as_deref()
     }
     /// <p>Additional information about the revision, including type and location.</p>
-    pub fn revision(&self) -> std::option::Option<&crate::types::RevisionLocation> {
+    pub fn revision(&self) -> ::std::option::Option<&crate::types::RevisionLocation> {
         self.revision.as_ref()
     }
     /// <p>General information about the revision.</p>
-    pub fn revision_info(&self) -> std::option::Option<&crate::types::GenericRevisionInfo> {
+    pub fn revision_info(&self) -> ::std::option::Option<&crate::types::GenericRevisionInfo> {
         self.revision_info.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for GetApplicationRevisionOutput {
+impl ::aws_http::request_id::RequestId for GetApplicationRevisionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -45,46 +45,54 @@ impl GetApplicationRevisionOutput {
 
 /// A builder for [`GetApplicationRevisionOutput`](crate::operation::get_application_revision::GetApplicationRevisionOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetApplicationRevisionOutputBuilder {
-    pub(crate) application_name: std::option::Option<std::string::String>,
-    pub(crate) revision: std::option::Option<crate::types::RevisionLocation>,
-    pub(crate) revision_info: std::option::Option<crate::types::GenericRevisionInfo>,
+    pub(crate) application_name: ::std::option::Option<::std::string::String>,
+    pub(crate) revision: ::std::option::Option<crate::types::RevisionLocation>,
+    pub(crate) revision_info: ::std::option::Option<crate::types::GenericRevisionInfo>,
     _request_id: Option<String>,
 }
 impl GetApplicationRevisionOutputBuilder {
     /// <p>The name of the application that corresponds to the revision.</p>
-    pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.application_name = Some(input.into());
+    pub fn application_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.application_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the application that corresponds to the revision.</p>
-    pub fn set_application_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_application_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.application_name = input;
         self
     }
     /// <p>Additional information about the revision, including type and location.</p>
     pub fn revision(mut self, input: crate::types::RevisionLocation) -> Self {
-        self.revision = Some(input);
+        self.revision = ::std::option::Option::Some(input);
         self
     }
     /// <p>Additional information about the revision, including type and location.</p>
     pub fn set_revision(
         mut self,
-        input: std::option::Option<crate::types::RevisionLocation>,
+        input: ::std::option::Option<crate::types::RevisionLocation>,
     ) -> Self {
         self.revision = input;
         self
     }
     /// <p>General information about the revision.</p>
     pub fn revision_info(mut self, input: crate::types::GenericRevisionInfo) -> Self {
-        self.revision_info = Some(input);
+        self.revision_info = ::std::option::Option::Some(input);
         self
     }
     /// <p>General information about the revision.</p>
     pub fn set_revision_info(
         mut self,
-        input: std::option::Option<crate::types::GenericRevisionInfo>,
+        input: ::std::option::Option<crate::types::GenericRevisionInfo>,
     ) -> Self {
         self.revision_info = input;
         self

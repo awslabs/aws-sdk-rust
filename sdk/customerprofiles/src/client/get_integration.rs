@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetIntegration`](crate::operation::get_integration::builders::GetIntegrationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_name(impl Into<String>)`](crate::operation::get_integration::builders::GetIntegrationFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::get_integration::builders::GetIntegrationFluentBuilder::set_domain_name): <p>The unique name of the domain.</p>
-    ///   - [`uri(impl Into<String>)`](crate::operation::get_integration::builders::GetIntegrationFluentBuilder::uri) / [`set_uri(Option<String>)`](crate::operation::get_integration::builders::GetIntegrationFluentBuilder::set_uri): <p>The URI of the S3 bucket or any other type of data source.</p>
+    ///   - [`domain_name(impl ::std::convert::Into<String>)`](crate::operation::get_integration::builders::GetIntegrationFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::get_integration::builders::GetIntegrationFluentBuilder::set_domain_name): <p>The unique name of the domain.</p>
+    ///   - [`uri(impl ::std::convert::Into<String>)`](crate::operation::get_integration::builders::GetIntegrationFluentBuilder::uri) / [`set_uri(Option<String>)`](crate::operation::get_integration::builders::GetIntegrationFluentBuilder::set_uri): <p>The URI of the S3 bucket or any other type of data source.</p>
     /// - On success, responds with [`GetIntegrationOutput`](crate::operation::get_integration::GetIntegrationOutput) with field(s):
     ///   - [`domain_name(Option<String>)`](crate::operation::get_integration::GetIntegrationOutput::domain_name): <p>The unique name of the domain.</p>
     ///   - [`uri(Option<String>)`](crate::operation::get_integration::GetIntegrationOutput::uri): <p>The URI of the S3 bucket or any other type of data source.</p>

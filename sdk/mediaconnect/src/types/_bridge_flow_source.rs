@@ -2,38 +2,38 @@
 
 /// The source of the bridge. A flow source originates in MediaConnect as an existing cloud flow.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BridgeFlowSource {
     /// The ARN of the cloud flow used as a source of this bridge.
     #[doc(hidden)]
-    pub flow_arn: std::option::Option<std::string::String>,
+    pub flow_arn: ::std::option::Option<::std::string::String>,
     /// The name of the VPC interface attachment to use for this source.
     #[doc(hidden)]
-    pub flow_vpc_interface_attachment: std::option::Option<crate::types::VpcInterfaceAttachment>,
+    pub flow_vpc_interface_attachment: ::std::option::Option<crate::types::VpcInterfaceAttachment>,
     /// The name of the flow source.
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// The Amazon Resource Number (ARN) of the output.
     #[doc(hidden)]
-    pub output_arn: std::option::Option<std::string::String>,
+    pub output_arn: ::std::option::Option<::std::string::String>,
 }
 impl BridgeFlowSource {
     /// The ARN of the cloud flow used as a source of this bridge.
-    pub fn flow_arn(&self) -> std::option::Option<&str> {
+    pub fn flow_arn(&self) -> ::std::option::Option<&str> {
         self.flow_arn.as_deref()
     }
     /// The name of the VPC interface attachment to use for this source.
     pub fn flow_vpc_interface_attachment(
         &self,
-    ) -> std::option::Option<&crate::types::VpcInterfaceAttachment> {
+    ) -> ::std::option::Option<&crate::types::VpcInterfaceAttachment> {
         self.flow_vpc_interface_attachment.as_ref()
     }
     /// The name of the flow source.
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// The Amazon Resource Number (ARN) of the output.
-    pub fn output_arn(&self) -> std::option::Option<&str> {
+    pub fn output_arn(&self) -> ::std::option::Option<&str> {
         self.output_arn.as_deref()
     }
 }
@@ -46,22 +46,24 @@ impl BridgeFlowSource {
 
 /// A builder for [`BridgeFlowSource`](crate::types::BridgeFlowSource).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BridgeFlowSourceBuilder {
-    pub(crate) flow_arn: std::option::Option<std::string::String>,
+    pub(crate) flow_arn: ::std::option::Option<::std::string::String>,
     pub(crate) flow_vpc_interface_attachment:
-        std::option::Option<crate::types::VpcInterfaceAttachment>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) output_arn: std::option::Option<std::string::String>,
+        ::std::option::Option<crate::types::VpcInterfaceAttachment>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) output_arn: ::std::option::Option<::std::string::String>,
 }
 impl BridgeFlowSourceBuilder {
     /// The ARN of the cloud flow used as a source of this bridge.
-    pub fn flow_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.flow_arn = Some(input.into());
+    pub fn flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.flow_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// The ARN of the cloud flow used as a source of this bridge.
-    pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_flow_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.flow_arn = input;
         self
     }
@@ -70,34 +72,34 @@ impl BridgeFlowSourceBuilder {
         mut self,
         input: crate::types::VpcInterfaceAttachment,
     ) -> Self {
-        self.flow_vpc_interface_attachment = Some(input);
+        self.flow_vpc_interface_attachment = ::std::option::Option::Some(input);
         self
     }
     /// The name of the VPC interface attachment to use for this source.
     pub fn set_flow_vpc_interface_attachment(
         mut self,
-        input: std::option::Option<crate::types::VpcInterfaceAttachment>,
+        input: ::std::option::Option<crate::types::VpcInterfaceAttachment>,
     ) -> Self {
         self.flow_vpc_interface_attachment = input;
         self
     }
     /// The name of the flow source.
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// The name of the flow source.
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// The Amazon Resource Number (ARN) of the output.
-    pub fn output_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.output_arn = Some(input.into());
+    pub fn output_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.output_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// The Amazon Resource Number (ARN) of the output.
-    pub fn set_output_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_output_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.output_arn = input;
         self
     }

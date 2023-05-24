@@ -2,36 +2,36 @@
 
 /// <p>The field well configuration of a line chart.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LineChartAggregatedFieldWells {
     /// <p>The category field wells of a line chart. Values are grouped by category fields.</p>
     #[doc(hidden)]
-    pub category: std::option::Option<std::vec::Vec<crate::types::DimensionField>>,
+    pub category: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
     /// <p>The value field wells of a line chart. Values are aggregated based on categories.</p>
     #[doc(hidden)]
-    pub values: std::option::Option<std::vec::Vec<crate::types::MeasureField>>,
+    pub values: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>,
     /// <p>The color field wells of a line chart. Values are grouped by category fields.</p>
     #[doc(hidden)]
-    pub colors: std::option::Option<std::vec::Vec<crate::types::DimensionField>>,
+    pub colors: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
     /// <p>The small multiples field well of a line chart.</p>
     #[doc(hidden)]
-    pub small_multiples: std::option::Option<std::vec::Vec<crate::types::DimensionField>>,
+    pub small_multiples: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
 }
 impl LineChartAggregatedFieldWells {
     /// <p>The category field wells of a line chart. Values are grouped by category fields.</p>
-    pub fn category(&self) -> std::option::Option<&[crate::types::DimensionField]> {
+    pub fn category(&self) -> ::std::option::Option<&[crate::types::DimensionField]> {
         self.category.as_deref()
     }
     /// <p>The value field wells of a line chart. Values are aggregated based on categories.</p>
-    pub fn values(&self) -> std::option::Option<&[crate::types::MeasureField]> {
+    pub fn values(&self) -> ::std::option::Option<&[crate::types::MeasureField]> {
         self.values.as_deref()
     }
     /// <p>The color field wells of a line chart. Values are grouped by category fields.</p>
-    pub fn colors(&self) -> std::option::Option<&[crate::types::DimensionField]> {
+    pub fn colors(&self) -> ::std::option::Option<&[crate::types::DimensionField]> {
         self.colors.as_deref()
     }
     /// <p>The small multiples field well of a line chart.</p>
-    pub fn small_multiples(&self) -> std::option::Option<&[crate::types::DimensionField]> {
+    pub fn small_multiples(&self) -> ::std::option::Option<&[crate::types::DimensionField]> {
         self.small_multiples.as_deref()
     }
 }
@@ -44,12 +44,15 @@ impl LineChartAggregatedFieldWells {
 
 /// A builder for [`LineChartAggregatedFieldWells`](crate::types::LineChartAggregatedFieldWells).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LineChartAggregatedFieldWellsBuilder {
-    pub(crate) category: std::option::Option<std::vec::Vec<crate::types::DimensionField>>,
-    pub(crate) values: std::option::Option<std::vec::Vec<crate::types::MeasureField>>,
-    pub(crate) colors: std::option::Option<std::vec::Vec<crate::types::DimensionField>>,
-    pub(crate) small_multiples: std::option::Option<std::vec::Vec<crate::types::DimensionField>>,
+    pub(crate) category: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>,
+    pub(crate) colors: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
+    pub(crate) small_multiples:
+        ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
 }
 impl LineChartAggregatedFieldWellsBuilder {
     /// Appends an item to `category`.
@@ -60,13 +63,13 @@ impl LineChartAggregatedFieldWellsBuilder {
     pub fn category(mut self, input: crate::types::DimensionField) -> Self {
         let mut v = self.category.unwrap_or_default();
         v.push(input);
-        self.category = Some(v);
+        self.category = ::std::option::Option::Some(v);
         self
     }
     /// <p>The category field wells of a line chart. Values are grouped by category fields.</p>
     pub fn set_category(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DimensionField>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
     ) -> Self {
         self.category = input;
         self
@@ -79,13 +82,13 @@ impl LineChartAggregatedFieldWellsBuilder {
     pub fn values(mut self, input: crate::types::MeasureField) -> Self {
         let mut v = self.values.unwrap_or_default();
         v.push(input);
-        self.values = Some(v);
+        self.values = ::std::option::Option::Some(v);
         self
     }
     /// <p>The value field wells of a line chart. Values are aggregated based on categories.</p>
     pub fn set_values(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::MeasureField>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>,
     ) -> Self {
         self.values = input;
         self
@@ -98,13 +101,13 @@ impl LineChartAggregatedFieldWellsBuilder {
     pub fn colors(mut self, input: crate::types::DimensionField) -> Self {
         let mut v = self.colors.unwrap_or_default();
         v.push(input);
-        self.colors = Some(v);
+        self.colors = ::std::option::Option::Some(v);
         self
     }
     /// <p>The color field wells of a line chart. Values are grouped by category fields.</p>
     pub fn set_colors(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DimensionField>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
     ) -> Self {
         self.colors = input;
         self
@@ -117,13 +120,13 @@ impl LineChartAggregatedFieldWellsBuilder {
     pub fn small_multiples(mut self, input: crate::types::DimensionField) -> Self {
         let mut v = self.small_multiples.unwrap_or_default();
         v.push(input);
-        self.small_multiples = Some(v);
+        self.small_multiples = ::std::option::Option::Some(v);
         self
     }
     /// <p>The small multiples field well of a line chart.</p>
     pub fn set_small_multiples(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DimensionField>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
     ) -> Self {
         self.small_multiples = input;
         self

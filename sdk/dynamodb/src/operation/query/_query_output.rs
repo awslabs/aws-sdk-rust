@@ -2,12 +2,14 @@
 
 /// <p>Represents the output of a <code>Query</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QueryOutput {
     /// <p>An array of item attributes that match the query criteria. Each element in this array consists of an attribute name and the value for that attribute.</p>
     #[doc(hidden)]
-    pub items: std::option::Option<
-        std::vec::Vec<std::collections::HashMap<std::string::String, crate::types::AttributeValue>>,
+    pub items: ::std::option::Option<
+        ::std::vec::Vec<
+            ::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>,
+        >,
     >,
     /// <p>The number of items in the response.</p>
     /// <p>If you used a <code>QueryFilter</code> in the request, then <code>Count</code> is the number of items returned after the filter was applied, and <code>ScannedCount</code> is the number of matching items before the filter was applied.</p>
@@ -22,20 +24,20 @@ pub struct QueryOutput {
     /// <p>If <code>LastEvaluatedKey</code> is empty, then the "last page" of results has been processed and there is no more data to be retrieved.</p>
     /// <p>If <code>LastEvaluatedKey</code> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedKey</code> is empty.</p>
     #[doc(hidden)]
-    pub last_evaluated_key: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::AttributeValue>,
+    pub last_evaluated_key: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>,
     >,
     /// <p>The capacity units consumed by the <code>Query</code> operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was specified. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     #[doc(hidden)]
-    pub consumed_capacity: std::option::Option<crate::types::ConsumedCapacity>,
+    pub consumed_capacity: ::std::option::Option<crate::types::ConsumedCapacity>,
     _request_id: Option<String>,
 }
 impl QueryOutput {
     /// <p>An array of item attributes that match the query criteria. Each element in this array consists of an attribute name and the value for that attribute.</p>
     pub fn items(
         &self,
-    ) -> std::option::Option<
-        &[std::collections::HashMap<std::string::String, crate::types::AttributeValue>],
+    ) -> ::std::option::Option<
+        &[::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>],
     > {
         self.items.as_deref()
     }
@@ -55,17 +57,17 @@ impl QueryOutput {
     /// <p>If <code>LastEvaluatedKey</code> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedKey</code> is empty.</p>
     pub fn last_evaluated_key(
         &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::types::AttributeValue>,
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>,
     > {
         self.last_evaluated_key.as_ref()
     }
     /// <p>The capacity units consumed by the <code>Query</code> operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was specified. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    pub fn consumed_capacity(&self) -> std::option::Option<&crate::types::ConsumedCapacity> {
+    pub fn consumed_capacity(&self) -> ::std::option::Option<&crate::types::ConsumedCapacity> {
         self.consumed_capacity.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for QueryOutput {
+impl ::aws_http::request_id::RequestId for QueryOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -79,17 +81,21 @@ impl QueryOutput {
 
 /// A builder for [`QueryOutput`](crate::operation::query::QueryOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct QueryOutputBuilder {
-    pub(crate) items: std::option::Option<
-        std::vec::Vec<std::collections::HashMap<std::string::String, crate::types::AttributeValue>>,
+    pub(crate) items: ::std::option::Option<
+        ::std::vec::Vec<
+            ::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>,
+        >,
     >,
-    pub(crate) count: std::option::Option<i32>,
-    pub(crate) scanned_count: std::option::Option<i32>,
-    pub(crate) last_evaluated_key: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::AttributeValue>,
+    pub(crate) count: ::std::option::Option<i32>,
+    pub(crate) scanned_count: ::std::option::Option<i32>,
+    pub(crate) last_evaluated_key: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>,
     >,
-    pub(crate) consumed_capacity: std::option::Option<crate::types::ConsumedCapacity>,
+    pub(crate) consumed_capacity: ::std::option::Option<crate::types::ConsumedCapacity>,
     _request_id: Option<String>,
 }
 impl QueryOutputBuilder {
@@ -100,19 +106,19 @@ impl QueryOutputBuilder {
     /// <p>An array of item attributes that match the query criteria. Each element in this array consists of an attribute name and the value for that attribute.</p>
     pub fn items(
         mut self,
-        input: std::collections::HashMap<std::string::String, crate::types::AttributeValue>,
+        input: ::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>,
     ) -> Self {
         let mut v = self.items.unwrap_or_default();
         v.push(input);
-        self.items = Some(v);
+        self.items = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of item attributes that match the query criteria. Each element in this array consists of an attribute name and the value for that attribute.</p>
     pub fn set_items(
         mut self,
-        input: std::option::Option<
-            std::vec::Vec<
-                std::collections::HashMap<std::string::String, crate::types::AttributeValue>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<
+                ::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>,
             >,
         >,
     ) -> Self {
@@ -123,25 +129,25 @@ impl QueryOutputBuilder {
     /// <p>If you used a <code>QueryFilter</code> in the request, then <code>Count</code> is the number of items returned after the filter was applied, and <code>ScannedCount</code> is the number of matching items before the filter was applied.</p>
     /// <p>If you did not use a filter in the request, then <code>Count</code> and <code>ScannedCount</code> are the same.</p>
     pub fn count(mut self, input: i32) -> Self {
-        self.count = Some(input);
+        self.count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of items in the response.</p>
     /// <p>If you used a <code>QueryFilter</code> in the request, then <code>Count</code> is the number of items returned after the filter was applied, and <code>ScannedCount</code> is the number of matching items before the filter was applied.</p>
     /// <p>If you did not use a filter in the request, then <code>Count</code> and <code>ScannedCount</code> are the same.</p>
-    pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.count = input;
         self
     }
     /// <p>The number of items evaluated, before any <code>QueryFilter</code> is applied. A high <code>ScannedCount</code> value with few, or no, <code>Count</code> results indicates an inefficient <code>Query</code> operation. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count and ScannedCount</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     /// <p>If you did not use a filter in the request, then <code>ScannedCount</code> is the same as <code>Count</code>.</p>
     pub fn scanned_count(mut self, input: i32) -> Self {
-        self.scanned_count = Some(input);
+        self.scanned_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of items evaluated, before any <code>QueryFilter</code> is applied. A high <code>ScannedCount</code> value with few, or no, <code>Count</code> results indicates an inefficient <code>Query</code> operation. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count and ScannedCount</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     /// <p>If you did not use a filter in the request, then <code>ScannedCount</code> is the same as <code>Count</code>.</p>
-    pub fn set_scanned_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_scanned_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.scanned_count = input;
         self
     }
@@ -154,12 +160,12 @@ impl QueryOutputBuilder {
     /// <p>If <code>LastEvaluatedKey</code> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedKey</code> is empty.</p>
     pub fn last_evaluated_key(
         mut self,
-        k: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
         v: crate::types::AttributeValue,
     ) -> Self {
         let mut hash_map = self.last_evaluated_key.unwrap_or_default();
         hash_map.insert(k.into(), v);
-        self.last_evaluated_key = Some(hash_map);
+        self.last_evaluated_key = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The primary key of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p>
@@ -167,8 +173,8 @@ impl QueryOutputBuilder {
     /// <p>If <code>LastEvaluatedKey</code> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedKey</code> is empty.</p>
     pub fn set_last_evaluated_key(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::types::AttributeValue>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>,
         >,
     ) -> Self {
         self.last_evaluated_key = input;
@@ -176,13 +182,13 @@ impl QueryOutputBuilder {
     }
     /// <p>The capacity units consumed by the <code>Query</code> operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was specified. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn consumed_capacity(mut self, input: crate::types::ConsumedCapacity) -> Self {
-        self.consumed_capacity = Some(input);
+        self.consumed_capacity = ::std::option::Option::Some(input);
         self
     }
     /// <p>The capacity units consumed by the <code>Query</code> operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was specified. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn set_consumed_capacity(
         mut self,
-        input: std::option::Option<crate::types::ConsumedCapacity>,
+        input: ::std::option::Option<crate::types::ConsumedCapacity>,
     ) -> Self {
         self.consumed_capacity = input;
         self

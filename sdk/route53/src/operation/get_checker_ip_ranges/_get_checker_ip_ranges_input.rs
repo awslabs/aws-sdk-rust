@@ -2,7 +2,7 @@
 
 /// <p>Empty request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCheckerIpRangesInput {}
 impl GetCheckerIpRangesInput {
     /// Creates a new builder-style object to manufacture [`GetCheckerIpRangesInput`](crate::operation::get_checker_ip_ranges::GetCheckerIpRangesInput).
@@ -14,16 +14,20 @@ impl GetCheckerIpRangesInput {
 
 /// A builder for [`GetCheckerIpRangesInput`](crate::operation::get_checker_ip_ranges::GetCheckerIpRangesInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetCheckerIpRangesInputBuilder {}
 impl GetCheckerIpRangesInputBuilder {
     /// Consumes the builder and constructs a [`GetCheckerIpRangesInput`](crate::operation::get_checker_ip_ranges::GetCheckerIpRangesInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::get_checker_ip_ranges::GetCheckerIpRangesInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::get_checker_ip_ranges::GetCheckerIpRangesInput {})
+        ::std::result::Result::Ok(
+            crate::operation::get_checker_ip_ranges::GetCheckerIpRangesInput {},
+        )
     }
 }

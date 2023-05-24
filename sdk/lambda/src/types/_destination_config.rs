@@ -2,22 +2,22 @@
 
 /// <p>A configuration object that specifies the destination of an event after Lambda processes it.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DestinationConfig {
     /// <p>The destination configuration for successful invocations.</p>
     #[doc(hidden)]
-    pub on_success: std::option::Option<crate::types::OnSuccess>,
+    pub on_success: ::std::option::Option<crate::types::OnSuccess>,
     /// <p>The destination configuration for failed invocations.</p>
     #[doc(hidden)]
-    pub on_failure: std::option::Option<crate::types::OnFailure>,
+    pub on_failure: ::std::option::Option<crate::types::OnFailure>,
 }
 impl DestinationConfig {
     /// <p>The destination configuration for successful invocations.</p>
-    pub fn on_success(&self) -> std::option::Option<&crate::types::OnSuccess> {
+    pub fn on_success(&self) -> ::std::option::Option<&crate::types::OnSuccess> {
         self.on_success.as_ref()
     }
     /// <p>The destination configuration for failed invocations.</p>
-    pub fn on_failure(&self) -> std::option::Option<&crate::types::OnFailure> {
+    pub fn on_failure(&self) -> ::std::option::Option<&crate::types::OnFailure> {
         self.on_failure.as_ref()
     }
 }
@@ -30,29 +30,31 @@ impl DestinationConfig {
 
 /// A builder for [`DestinationConfig`](crate::types::DestinationConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DestinationConfigBuilder {
-    pub(crate) on_success: std::option::Option<crate::types::OnSuccess>,
-    pub(crate) on_failure: std::option::Option<crate::types::OnFailure>,
+    pub(crate) on_success: ::std::option::Option<crate::types::OnSuccess>,
+    pub(crate) on_failure: ::std::option::Option<crate::types::OnFailure>,
 }
 impl DestinationConfigBuilder {
     /// <p>The destination configuration for successful invocations.</p>
     pub fn on_success(mut self, input: crate::types::OnSuccess) -> Self {
-        self.on_success = Some(input);
+        self.on_success = ::std::option::Option::Some(input);
         self
     }
     /// <p>The destination configuration for successful invocations.</p>
-    pub fn set_on_success(mut self, input: std::option::Option<crate::types::OnSuccess>) -> Self {
+    pub fn set_on_success(mut self, input: ::std::option::Option<crate::types::OnSuccess>) -> Self {
         self.on_success = input;
         self
     }
     /// <p>The destination configuration for failed invocations.</p>
     pub fn on_failure(mut self, input: crate::types::OnFailure) -> Self {
-        self.on_failure = Some(input);
+        self.on_failure = ::std::option::Option::Some(input);
         self
     }
     /// <p>The destination configuration for failed invocations.</p>
-    pub fn set_on_failure(mut self, input: std::option::Option<crate::types::OnFailure>) -> Self {
+    pub fn set_on_failure(mut self, input: ::std::option::Option<crate::types::OnFailure>) -> Self {
         self.on_failure = input;
         self
     }

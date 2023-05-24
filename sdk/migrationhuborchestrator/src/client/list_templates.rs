@@ -5,8 +5,8 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_templates::builders::ListTemplatesFluentBuilder::max_results) / [`set_max_results(i32)`](crate::operation::list_templates::builders::ListTemplatesFluentBuilder::set_max_results): <p>The maximum number of results that can be returned.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_templates::builders::ListTemplatesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_templates::builders::ListTemplatesFluentBuilder::set_next_token): <p>The pagination token.</p>
-    ///   - [`name(impl Into<String>)`](crate::operation::list_templates::builders::ListTemplatesFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::list_templates::builders::ListTemplatesFluentBuilder::set_name): <p>The name of the template.</p>
+    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_templates::builders::ListTemplatesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_templates::builders::ListTemplatesFluentBuilder::set_next_token): <p>The pagination token.</p>
+    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::list_templates::builders::ListTemplatesFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::list_templates::builders::ListTemplatesFluentBuilder::set_name): <p>The name of the template.</p>
     /// - On success, responds with [`ListTemplatesOutput`](crate::operation::list_templates::ListTemplatesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_templates::ListTemplatesOutput::next_token): <p>The pagination token.</p>
     ///   - [`template_summary(Option<Vec<TemplateSummary>>)`](crate::operation::list_templates::ListTemplatesOutput::template_summary): <p>The summary of the template.</p>

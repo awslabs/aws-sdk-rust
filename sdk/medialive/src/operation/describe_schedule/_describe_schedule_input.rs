@@ -2,29 +2,29 @@
 
 /// Placeholder documentation for DescribeScheduleRequest
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeScheduleInput {
     /// Id of the channel whose schedule is being updated.
     #[doc(hidden)]
-    pub channel_id: std::option::Option<std::string::String>,
+    pub channel_id: ::std::option::Option<::std::string::String>,
     /// Placeholder documentation for MaxResults
     #[doc(hidden)]
-    pub max_results: std::option::Option<i32>,
+    pub max_results: ::std::option::Option<i32>,
     /// Placeholder documentation for __string
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeScheduleInput {
     /// Id of the channel whose schedule is being updated.
-    pub fn channel_id(&self) -> std::option::Option<&str> {
+    pub fn channel_id(&self) -> ::std::option::Option<&str> {
         self.channel_id.as_deref()
     }
     /// Placeholder documentation for MaxResults
-    pub fn max_results(&self) -> std::option::Option<i32> {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// Placeholder documentation for __string
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
@@ -38,51 +38,53 @@ impl DescribeScheduleInput {
 
 /// A builder for [`DescribeScheduleInput`](crate::operation::describe_schedule::DescribeScheduleInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeScheduleInputBuilder {
-    pub(crate) channel_id: std::option::Option<std::string::String>,
-    pub(crate) max_results: std::option::Option<i32>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) channel_id: ::std::option::Option<::std::string::String>,
+    pub(crate) max_results: ::std::option::Option<i32>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeScheduleInputBuilder {
     /// Id of the channel whose schedule is being updated.
-    pub fn channel_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.channel_id = Some(input.into());
+    pub fn channel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.channel_id = ::std::option::Option::Some(input.into());
         self
     }
     /// Id of the channel whose schedule is being updated.
-    pub fn set_channel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_channel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.channel_id = input;
         self
     }
     /// Placeholder documentation for MaxResults
     pub fn max_results(mut self, input: i32) -> Self {
-        self.max_results = Some(input);
+        self.max_results = ::std::option::Option::Some(input);
         self
     }
     /// Placeholder documentation for MaxResults
-    pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
     /// Placeholder documentation for __string
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// Placeholder documentation for __string
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
     /// Consumes the builder and constructs a [`DescribeScheduleInput`](crate::operation::describe_schedule::DescribeScheduleInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::describe_schedule::DescribeScheduleInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::describe_schedule::DescribeScheduleInput {
+        ::std::result::Result::Ok(crate::operation::describe_schedule::DescribeScheduleInput {
             channel_id: self.channel_id,
             max_results: self.max_results,
             next_token: self.next_token,

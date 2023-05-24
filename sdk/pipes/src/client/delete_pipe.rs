@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeletePipe`](crate::operation::delete_pipe::builders::DeletePipeFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::delete_pipe::builders::DeletePipeFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_pipe::builders::DeletePipeFluentBuilder::set_name): <p>The name of the pipe.</p>
+    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::delete_pipe::builders::DeletePipeFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_pipe::builders::DeletePipeFluentBuilder::set_name): <p>The name of the pipe.</p>
     /// - On success, responds with [`DeletePipeOutput`](crate::operation::delete_pipe::DeletePipeOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::delete_pipe::DeletePipeOutput::arn): <p>The ARN of the pipe.</p>
     ///   - [`name(Option<String>)`](crate::operation::delete_pipe::DeletePipeOutput::name): <p>The name of the pipe.</p>

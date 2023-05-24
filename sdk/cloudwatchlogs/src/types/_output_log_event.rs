@@ -2,29 +2,29 @@
 
 /// <p>Represents a log event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OutputLogEvent {
     /// <p>The time the event occurred, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
     #[doc(hidden)]
-    pub timestamp: std::option::Option<i64>,
+    pub timestamp: ::std::option::Option<i64>,
     /// <p>The data contained in the log event.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
     /// <p>The time the event was ingested, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
     #[doc(hidden)]
-    pub ingestion_time: std::option::Option<i64>,
+    pub ingestion_time: ::std::option::Option<i64>,
 }
 impl OutputLogEvent {
     /// <p>The time the event occurred, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
-    pub fn timestamp(&self) -> std::option::Option<i64> {
+    pub fn timestamp(&self) -> ::std::option::Option<i64> {
         self.timestamp
     }
     /// <p>The data contained in the log event.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
     /// <p>The time the event was ingested, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
-    pub fn ingestion_time(&self) -> std::option::Option<i64> {
+    pub fn ingestion_time(&self) -> ::std::option::Option<i64> {
         self.ingestion_time
     }
 }
@@ -37,40 +37,42 @@ impl OutputLogEvent {
 
 /// A builder for [`OutputLogEvent`](crate::types::OutputLogEvent).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OutputLogEventBuilder {
-    pub(crate) timestamp: std::option::Option<i64>,
-    pub(crate) message: std::option::Option<std::string::String>,
-    pub(crate) ingestion_time: std::option::Option<i64>,
+    pub(crate) timestamp: ::std::option::Option<i64>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
+    pub(crate) ingestion_time: ::std::option::Option<i64>,
 }
 impl OutputLogEventBuilder {
     /// <p>The time the event occurred, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
     pub fn timestamp(mut self, input: i64) -> Self {
-        self.timestamp = Some(input);
+        self.timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time the event occurred, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
-    pub fn set_timestamp(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_timestamp(mut self, input: ::std::option::Option<i64>) -> Self {
         self.timestamp = input;
         self
     }
     /// <p>The data contained in the log event.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The data contained in the log event.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
     /// <p>The time the event was ingested, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
     pub fn ingestion_time(mut self, input: i64) -> Self {
-        self.ingestion_time = Some(input);
+        self.ingestion_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time the event was ingested, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
-    pub fn set_ingestion_time(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_ingestion_time(mut self, input: ::std::option::Option<i64>) -> Self {
         self.ingestion_time = input;
         self
     }

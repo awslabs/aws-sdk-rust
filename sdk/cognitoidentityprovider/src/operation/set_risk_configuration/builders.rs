@@ -7,29 +7,29 @@ pub use crate::operation::set_risk_configuration::_set_risk_configuration_input:
 ///
 /// <p>Configures actions on detected risks. To delete the risk configuration for <code>UserPoolId</code> or <code>ClientId</code>, pass null values for all four configuration types.</p>
 /// <p>To activate Amazon Cognito advanced security features, update the user pool to include the <code>UserPoolAddOns</code> key<code>AdvancedSecurityMode</code>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SetRiskConfigurationFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::set_risk_configuration::builders::SetRiskConfigurationInputBuilder,
 }
 impl SetRiskConfigurationFluentBuilder {
     /// Creates a new `SetRiskConfiguration`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::set_risk_configuration::SetRiskConfiguration,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::set_risk_configuration::SetRiskConfigurationError,
         >,
     > {
@@ -37,30 +37,33 @@ impl SetRiskConfigurationFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::set_risk_configuration::SetRiskConfigurationOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::set_risk_configuration::SetRiskConfigurationError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -73,33 +76,33 @@ impl SetRiskConfigurationFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::set_risk_configuration::SetRiskConfigurationOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::set_risk_configuration::SetRiskConfigurationError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The user pool ID. </p>
-    pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_pool_id(input.into());
         self
     }
     /// <p>The user pool ID. </p>
-    pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_pool_id(input);
         self
     }
     /// <p>The app client ID. If <code>ClientId</code> is null, then the risk configuration is mapped to <code>userPoolId</code>. When the client ID is null, the same risk configuration is applied to all the clients in the userPool.</p>
     /// <p>Otherwise, <code>ClientId</code> is mapped to the client. When the client ID isn't null, the user pool configuration is overridden and the risk configuration for the client is used instead.</p>
-    pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_id(input.into());
         self
     }
     /// <p>The app client ID. If <code>ClientId</code> is null, then the risk configuration is mapped to <code>userPoolId</code>. When the client ID is null, the same risk configuration is applied to all the clients in the userPool.</p>
     /// <p>Otherwise, <code>ClientId</code> is mapped to the client. When the client ID isn't null, the user pool configuration is overridden and the risk configuration for the client is used instead.</p>
-    pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_id(input);
         self
     }
@@ -114,7 +117,7 @@ impl SetRiskConfigurationFluentBuilder {
     /// <p>The compromised credentials risk configuration.</p>
     pub fn set_compromised_credentials_risk_configuration(
         mut self,
-        input: std::option::Option<crate::types::CompromisedCredentialsRiskConfigurationType>,
+        input: ::std::option::Option<crate::types::CompromisedCredentialsRiskConfigurationType>,
     ) -> Self {
         self.inner = self
             .inner
@@ -132,7 +135,7 @@ impl SetRiskConfigurationFluentBuilder {
     /// <p>The account takeover risk configuration.</p>
     pub fn set_account_takeover_risk_configuration(
         mut self,
-        input: std::option::Option<crate::types::AccountTakeoverRiskConfigurationType>,
+        input: ::std::option::Option<crate::types::AccountTakeoverRiskConfigurationType>,
     ) -> Self {
         self.inner = self.inner.set_account_takeover_risk_configuration(input);
         self
@@ -148,7 +151,7 @@ impl SetRiskConfigurationFluentBuilder {
     /// <p>The configuration to override the risk decision.</p>
     pub fn set_risk_exception_configuration(
         mut self,
-        input: std::option::Option<crate::types::RiskExceptionConfigurationType>,
+        input: ::std::option::Option<crate::types::RiskExceptionConfigurationType>,
     ) -> Self {
         self.inner = self.inner.set_risk_exception_configuration(input);
         self

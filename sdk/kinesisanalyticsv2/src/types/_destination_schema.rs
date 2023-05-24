@@ -2,15 +2,15 @@
 
 /// <p>Describes the data format when records are written to the destination in a SQL-based Kinesis Data Analytics application. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DestinationSchema {
     /// <p>Specifies the format of the records on the output stream.</p>
     #[doc(hidden)]
-    pub record_format_type: std::option::Option<crate::types::RecordFormatType>,
+    pub record_format_type: ::std::option::Option<crate::types::RecordFormatType>,
 }
 impl DestinationSchema {
     /// <p>Specifies the format of the records on the output stream.</p>
-    pub fn record_format_type(&self) -> std::option::Option<&crate::types::RecordFormatType> {
+    pub fn record_format_type(&self) -> ::std::option::Option<&crate::types::RecordFormatType> {
         self.record_format_type.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl DestinationSchema {
 
 /// A builder for [`DestinationSchema`](crate::types::DestinationSchema).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DestinationSchemaBuilder {
-    pub(crate) record_format_type: std::option::Option<crate::types::RecordFormatType>,
+    pub(crate) record_format_type: ::std::option::Option<crate::types::RecordFormatType>,
 }
 impl DestinationSchemaBuilder {
     /// <p>Specifies the format of the records on the output stream.</p>
     pub fn record_format_type(mut self, input: crate::types::RecordFormatType) -> Self {
-        self.record_format_type = Some(input);
+        self.record_format_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the format of the records on the output stream.</p>
     pub fn set_record_format_type(
         mut self,
-        input: std::option::Option<crate::types::RecordFormatType>,
+        input: ::std::option::Option<crate::types::RecordFormatType>,
     ) -> Self {
         self.record_format_type = input;
         self

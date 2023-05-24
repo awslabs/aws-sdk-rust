@@ -2,15 +2,15 @@
 
 /// <p>The configuration of a page break after a section.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SectionAfterPageBreak {
     /// <p>The option that enables or disables a page break at the end of a section.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::SectionPageBreakStatus>,
+    pub status: ::std::option::Option<crate::types::SectionPageBreakStatus>,
 }
 impl SectionAfterPageBreak {
     /// <p>The option that enables or disables a page break at the end of a section.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::SectionPageBreakStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::SectionPageBreakStatus> {
         self.status.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl SectionAfterPageBreak {
 
 /// A builder for [`SectionAfterPageBreak`](crate::types::SectionAfterPageBreak).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SectionAfterPageBreakBuilder {
-    pub(crate) status: std::option::Option<crate::types::SectionPageBreakStatus>,
+    pub(crate) status: ::std::option::Option<crate::types::SectionPageBreakStatus>,
 }
 impl SectionAfterPageBreakBuilder {
     /// <p>The option that enables or disables a page break at the end of a section.</p>
     pub fn status(mut self, input: crate::types::SectionPageBreakStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The option that enables or disables a page break at the end of a section.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::SectionPageBreakStatus>,
+        input: ::std::option::Option<crate::types::SectionPageBreakStatus>,
     ) -> Self {
         self.status = input;
         self

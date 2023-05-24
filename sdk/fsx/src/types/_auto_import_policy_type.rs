@@ -40,13 +40,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum AutoImportPolicyType {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,7 +60,7 @@ pub enum AutoImportPolicyType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for AutoImportPolicyType {
+impl ::std::convert::From<&str> for AutoImportPolicyType {
     fn from(s: &str) -> Self {
         match s {
             "NEW" => AutoImportPolicyType::New,
@@ -73,11 +73,11 @@ impl std::convert::From<&str> for AutoImportPolicyType {
         }
     }
 }
-impl std::str::FromStr for AutoImportPolicyType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for AutoImportPolicyType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AutoImportPolicyType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(AutoImportPolicyType::from(s))
     }
 }
 impl AutoImportPolicyType {
@@ -96,7 +96,7 @@ impl AutoImportPolicyType {
         &["NEW", "NEW_CHANGED", "NEW_CHANGED_DELETED", "NONE"]
     }
 }
-impl AsRef<str> for AutoImportPolicyType {
+impl ::std::convert::AsRef<str> for AutoImportPolicyType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

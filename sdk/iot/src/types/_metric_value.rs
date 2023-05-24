@@ -2,50 +2,50 @@
 
 /// <p>The value to be compared with the <code>metric</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetricValue {
     /// <p>If the <code>comparisonOperator</code> calls for a numeric value, use this to specify that numeric value to be compared with the <code>metric</code>.</p>
     #[doc(hidden)]
-    pub count: std::option::Option<i64>,
+    pub count: ::std::option::Option<i64>,
     /// <p>If the <code>comparisonOperator</code> calls for a set of CIDRs, use this to specify that set to be compared with the <code>metric</code>.</p>
     #[doc(hidden)]
-    pub cidrs: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub cidrs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>If the <code>comparisonOperator</code> calls for a set of ports, use this to specify that set to be compared with the <code>metric</code>.</p>
     #[doc(hidden)]
-    pub ports: std::option::Option<std::vec::Vec<i32>>,
+    pub ports: ::std::option::Option<::std::vec::Vec<i32>>,
     /// <p> The numeral value of a metric. </p>
     #[doc(hidden)]
-    pub number: std::option::Option<f64>,
+    pub number: ::std::option::Option<f64>,
     /// <p> The numeral values of a metric. </p>
     #[doc(hidden)]
-    pub numbers: std::option::Option<std::vec::Vec<f64>>,
+    pub numbers: ::std::option::Option<::std::vec::Vec<f64>>,
     /// <p> The string values of a metric. </p>
     #[doc(hidden)]
-    pub strings: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub strings: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl MetricValue {
     /// <p>If the <code>comparisonOperator</code> calls for a numeric value, use this to specify that numeric value to be compared with the <code>metric</code>.</p>
-    pub fn count(&self) -> std::option::Option<i64> {
+    pub fn count(&self) -> ::std::option::Option<i64> {
         self.count
     }
     /// <p>If the <code>comparisonOperator</code> calls for a set of CIDRs, use this to specify that set to be compared with the <code>metric</code>.</p>
-    pub fn cidrs(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn cidrs(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.cidrs.as_deref()
     }
     /// <p>If the <code>comparisonOperator</code> calls for a set of ports, use this to specify that set to be compared with the <code>metric</code>.</p>
-    pub fn ports(&self) -> std::option::Option<&[i32]> {
+    pub fn ports(&self) -> ::std::option::Option<&[i32]> {
         self.ports.as_deref()
     }
     /// <p> The numeral value of a metric. </p>
-    pub fn number(&self) -> std::option::Option<f64> {
+    pub fn number(&self) -> ::std::option::Option<f64> {
         self.number
     }
     /// <p> The numeral values of a metric. </p>
-    pub fn numbers(&self) -> std::option::Option<&[f64]> {
+    pub fn numbers(&self) -> ::std::option::Option<&[f64]> {
         self.numbers.as_deref()
     }
     /// <p> The string values of a metric. </p>
-    pub fn strings(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn strings(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.strings.as_deref()
     }
 }
@@ -58,23 +58,25 @@ impl MetricValue {
 
 /// A builder for [`MetricValue`](crate::types::MetricValue).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MetricValueBuilder {
-    pub(crate) count: std::option::Option<i64>,
-    pub(crate) cidrs: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) ports: std::option::Option<std::vec::Vec<i32>>,
-    pub(crate) number: std::option::Option<f64>,
-    pub(crate) numbers: std::option::Option<std::vec::Vec<f64>>,
-    pub(crate) strings: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) count: ::std::option::Option<i64>,
+    pub(crate) cidrs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) ports: ::std::option::Option<::std::vec::Vec<i32>>,
+    pub(crate) number: ::std::option::Option<f64>,
+    pub(crate) numbers: ::std::option::Option<::std::vec::Vec<f64>>,
+    pub(crate) strings: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl MetricValueBuilder {
     /// <p>If the <code>comparisonOperator</code> calls for a numeric value, use this to specify that numeric value to be compared with the <code>metric</code>.</p>
     pub fn count(mut self, input: i64) -> Self {
-        self.count = Some(input);
+        self.count = ::std::option::Option::Some(input);
         self
     }
     /// <p>If the <code>comparisonOperator</code> calls for a numeric value, use this to specify that numeric value to be compared with the <code>metric</code>.</p>
-    pub fn set_count(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.count = input;
         self
     }
@@ -83,16 +85,16 @@ impl MetricValueBuilder {
     /// To override the contents of this collection use [`set_cidrs`](Self::set_cidrs).
     ///
     /// <p>If the <code>comparisonOperator</code> calls for a set of CIDRs, use this to specify that set to be compared with the <code>metric</code>.</p>
-    pub fn cidrs(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn cidrs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.cidrs.unwrap_or_default();
         v.push(input.into());
-        self.cidrs = Some(v);
+        self.cidrs = ::std::option::Option::Some(v);
         self
     }
     /// <p>If the <code>comparisonOperator</code> calls for a set of CIDRs, use this to specify that set to be compared with the <code>metric</code>.</p>
     pub fn set_cidrs(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.cidrs = input;
         self
@@ -105,21 +107,21 @@ impl MetricValueBuilder {
     pub fn ports(mut self, input: i32) -> Self {
         let mut v = self.ports.unwrap_or_default();
         v.push(input);
-        self.ports = Some(v);
+        self.ports = ::std::option::Option::Some(v);
         self
     }
     /// <p>If the <code>comparisonOperator</code> calls for a set of ports, use this to specify that set to be compared with the <code>metric</code>.</p>
-    pub fn set_ports(mut self, input: std::option::Option<std::vec::Vec<i32>>) -> Self {
+    pub fn set_ports(mut self, input: ::std::option::Option<::std::vec::Vec<i32>>) -> Self {
         self.ports = input;
         self
     }
     /// <p> The numeral value of a metric. </p>
     pub fn number(mut self, input: f64) -> Self {
-        self.number = Some(input);
+        self.number = ::std::option::Option::Some(input);
         self
     }
     /// <p> The numeral value of a metric. </p>
-    pub fn set_number(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_number(mut self, input: ::std::option::Option<f64>) -> Self {
         self.number = input;
         self
     }
@@ -131,11 +133,11 @@ impl MetricValueBuilder {
     pub fn numbers(mut self, input: f64) -> Self {
         let mut v = self.numbers.unwrap_or_default();
         v.push(input);
-        self.numbers = Some(v);
+        self.numbers = ::std::option::Option::Some(v);
         self
     }
     /// <p> The numeral values of a metric. </p>
-    pub fn set_numbers(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
+    pub fn set_numbers(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
         self.numbers = input;
         self
     }
@@ -144,16 +146,16 @@ impl MetricValueBuilder {
     /// To override the contents of this collection use [`set_strings`](Self::set_strings).
     ///
     /// <p> The string values of a metric. </p>
-    pub fn strings(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn strings(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.strings.unwrap_or_default();
         v.push(input.into());
-        self.strings = Some(v);
+        self.strings = ::std::option::Option::Some(v);
         self
     }
     /// <p> The string values of a metric. </p>
     pub fn set_strings(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.strings = input;
         self

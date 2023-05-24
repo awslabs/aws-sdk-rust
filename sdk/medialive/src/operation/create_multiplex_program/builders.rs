@@ -6,29 +6,29 @@ pub use crate::operation::create_multiplex_program::_create_multiplex_program_in
 /// Fluent builder constructing a request to `CreateMultiplexProgram`.
 ///
 /// Create a new program in the multiplex.
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateMultiplexProgramFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_multiplex_program::builders::CreateMultiplexProgramInputBuilder,
 }
 impl CreateMultiplexProgramFluentBuilder {
     /// Creates a new `CreateMultiplexProgram`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_multiplex_program::CreateMultiplexProgram,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_multiplex_program::CreateMultiplexProgramError,
         >,
     > {
@@ -36,30 +36,33 @@ impl CreateMultiplexProgramFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_multiplex_program::CreateMultiplexProgramOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_multiplex_program::CreateMultiplexProgramError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,21 +75,21 @@ impl CreateMultiplexProgramFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_multiplex_program::CreateMultiplexProgramOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_multiplex_program::CreateMultiplexProgramError,
         >,
     > {
         self.send_middleware().await
     }
     /// ID of the multiplex where the program is to be created.
-    pub fn multiplex_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn multiplex_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.multiplex_id(input.into());
         self
     }
     /// ID of the multiplex where the program is to be created.
-    pub fn set_multiplex_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_multiplex_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_multiplex_id(input);
         self
     }
@@ -101,28 +104,28 @@ impl CreateMultiplexProgramFluentBuilder {
     /// The settings for this multiplex program.
     pub fn set_multiplex_program_settings(
         mut self,
-        input: std::option::Option<crate::types::MultiplexProgramSettings>,
+        input: ::std::option::Option<crate::types::MultiplexProgramSettings>,
     ) -> Self {
         self.inner = self.inner.set_multiplex_program_settings(input);
         self
     }
     /// Name of multiplex program.
-    pub fn program_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn program_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.program_name(input.into());
         self
     }
     /// Name of multiplex program.
-    pub fn set_program_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_program_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_program_name(input);
         self
     }
     /// Unique request ID. This prevents retries from creating multiple resources.
-    pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.request_id(input.into());
         self
     }
     /// Unique request ID. This prevents retries from creating multiple resources.
-    pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_request_id(input);
         self
     }

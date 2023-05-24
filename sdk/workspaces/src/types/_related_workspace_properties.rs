@@ -2,36 +2,36 @@
 
 /// <p>Describes the related WorkSpace. The related WorkSpace could be a standby WorkSpace or primary WorkSpace related to the specified WorkSpace.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RelatedWorkspaceProperties {
     /// <p>The identifier of the related WorkSpace.</p>
     #[doc(hidden)]
-    pub workspace_id: std::option::Option<std::string::String>,
+    pub workspace_id: ::std::option::Option<::std::string::String>,
     /// <p>The Region of the related WorkSpace.</p>
     #[doc(hidden)]
-    pub region: std::option::Option<std::string::String>,
+    pub region: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the state of the WorkSpace.</p>
     #[doc(hidden)]
-    pub state: std::option::Option<crate::types::WorkspaceState>,
+    pub state: ::std::option::Option<crate::types::WorkspaceState>,
     /// <p>Indicates the type of WorkSpace.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::StandbyWorkspaceRelationshipType>,
+    pub r#type: ::std::option::Option<crate::types::StandbyWorkspaceRelationshipType>,
 }
 impl RelatedWorkspaceProperties {
     /// <p>The identifier of the related WorkSpace.</p>
-    pub fn workspace_id(&self) -> std::option::Option<&str> {
+    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
         self.workspace_id.as_deref()
     }
     /// <p>The Region of the related WorkSpace.</p>
-    pub fn region(&self) -> std::option::Option<&str> {
+    pub fn region(&self) -> ::std::option::Option<&str> {
         self.region.as_deref()
     }
     /// <p>Indicates the state of the WorkSpace.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::WorkspaceState> {
+    pub fn state(&self) -> ::std::option::Option<&crate::types::WorkspaceState> {
         self.state.as_ref()
     }
     /// <p>Indicates the type of WorkSpace.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::StandbyWorkspaceRelationshipType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::StandbyWorkspaceRelationshipType> {
         self.r#type.as_ref()
     }
 }
@@ -44,53 +44,55 @@ impl RelatedWorkspaceProperties {
 
 /// A builder for [`RelatedWorkspaceProperties`](crate::types::RelatedWorkspaceProperties).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RelatedWorkspacePropertiesBuilder {
-    pub(crate) workspace_id: std::option::Option<std::string::String>,
-    pub(crate) region: std::option::Option<std::string::String>,
-    pub(crate) state: std::option::Option<crate::types::WorkspaceState>,
-    pub(crate) r#type: std::option::Option<crate::types::StandbyWorkspaceRelationshipType>,
+    pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
+    pub(crate) region: ::std::option::Option<::std::string::String>,
+    pub(crate) state: ::std::option::Option<crate::types::WorkspaceState>,
+    pub(crate) r#type: ::std::option::Option<crate::types::StandbyWorkspaceRelationshipType>,
 }
 impl RelatedWorkspacePropertiesBuilder {
     /// <p>The identifier of the related WorkSpace.</p>
-    pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.workspace_id = Some(input.into());
+    pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.workspace_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the related WorkSpace.</p>
-    pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workspace_id = input;
         self
     }
     /// <p>The Region of the related WorkSpace.</p>
-    pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
-        self.region = Some(input.into());
+    pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Region of the related WorkSpace.</p>
-    pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region = input;
         self
     }
     /// <p>Indicates the state of the WorkSpace.</p>
     pub fn state(mut self, input: crate::types::WorkspaceState) -> Self {
-        self.state = Some(input);
+        self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates the state of the WorkSpace.</p>
-    pub fn set_state(mut self, input: std::option::Option<crate::types::WorkspaceState>) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::WorkspaceState>) -> Self {
         self.state = input;
         self
     }
     /// <p>Indicates the type of WorkSpace.</p>
     pub fn r#type(mut self, input: crate::types::StandbyWorkspaceRelationshipType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates the type of WorkSpace.</p>
     pub fn set_type(
         mut self,
-        input: std::option::Option<crate::types::StandbyWorkspaceRelationshipType>,
+        input: ::std::option::Option<crate::types::StandbyWorkspaceRelationshipType>,
     ) -> Self {
         self.r#type = input;
         self

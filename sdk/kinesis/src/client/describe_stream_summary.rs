@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeStreamSummary`](crate::operation::describe_stream_summary::builders::DescribeStreamSummaryFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`stream_name(impl Into<String>)`](crate::operation::describe_stream_summary::builders::DescribeStreamSummaryFluentBuilder::stream_name) / [`set_stream_name(Option<String>)`](crate::operation::describe_stream_summary::builders::DescribeStreamSummaryFluentBuilder::set_stream_name): <p>The name of the stream to describe.</p>
-    ///   - [`stream_arn(impl Into<String>)`](crate::operation::describe_stream_summary::builders::DescribeStreamSummaryFluentBuilder::stream_arn) / [`set_stream_arn(Option<String>)`](crate::operation::describe_stream_summary::builders::DescribeStreamSummaryFluentBuilder::set_stream_arn): <p>The ARN of the stream.</p>
+    ///   - [`stream_name(impl ::std::convert::Into<String>)`](crate::operation::describe_stream_summary::builders::DescribeStreamSummaryFluentBuilder::stream_name) / [`set_stream_name(Option<String>)`](crate::operation::describe_stream_summary::builders::DescribeStreamSummaryFluentBuilder::set_stream_name): <p>The name of the stream to describe.</p>
+    ///   - [`stream_arn(impl ::std::convert::Into<String>)`](crate::operation::describe_stream_summary::builders::DescribeStreamSummaryFluentBuilder::stream_arn) / [`set_stream_arn(Option<String>)`](crate::operation::describe_stream_summary::builders::DescribeStreamSummaryFluentBuilder::set_stream_arn): <p>The ARN of the stream.</p>
     /// - On success, responds with [`DescribeStreamSummaryOutput`](crate::operation::describe_stream_summary::DescribeStreamSummaryOutput) with field(s):
     ///   - [`stream_description_summary(Option<StreamDescriptionSummary>)`](crate::operation::describe_stream_summary::DescribeStreamSummaryOutput::stream_description_summary): <p>A <code>StreamDescriptionSummary</code> containing information about the stream.</p>
     /// - On failure, responds with [`SdkError<DescribeStreamSummaryError>`](crate::operation::describe_stream_summary::DescribeStreamSummaryError)

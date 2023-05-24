@@ -3,78 +3,78 @@
 /// <p>Information about a function package.</p>
 /// <p>A function package is a .zip file in CSAR (Cloud Service Archive) format that contains a network function (an ETSI standard telecommunication application) and function package descriptor that uses the TOSCA standard to describe how the network functions should run on your network.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSolFunctionPackageInfo {
     /// <p>ID of the function package.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>Function package ARN.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Onboarding state of the function package.</p>
     #[doc(hidden)]
-    pub onboarding_state: std::option::Option<crate::types::OnboardingState>,
+    pub onboarding_state: ::std::option::Option<crate::types::OnboardingState>,
     /// <p>Operational state of the function package.</p>
     #[doc(hidden)]
-    pub operational_state: std::option::Option<crate::types::OperationalState>,
+    pub operational_state: ::std::option::Option<crate::types::OperationalState>,
     /// <p>Usage state of the function package.</p>
     #[doc(hidden)]
-    pub usage_state: std::option::Option<crate::types::UsageState>,
+    pub usage_state: ::std::option::Option<crate::types::UsageState>,
     /// <p>Identifies the function package and the function package descriptor.</p>
     #[doc(hidden)]
-    pub vnfd_id: std::option::Option<std::string::String>,
+    pub vnfd_id: ::std::option::Option<::std::string::String>,
     /// <p>Provider of the function package and the function package descriptor.</p>
     #[doc(hidden)]
-    pub vnf_provider: std::option::Option<std::string::String>,
+    pub vnf_provider: ::std::option::Option<::std::string::String>,
     /// <p>The product name for the network function.</p>
     #[doc(hidden)]
-    pub vnf_product_name: std::option::Option<std::string::String>,
+    pub vnf_product_name: ::std::option::Option<::std::string::String>,
     /// <p>Identifies the version of the function package descriptor.</p>
     #[doc(hidden)]
-    pub vnfd_version: std::option::Option<std::string::String>,
+    pub vnfd_version: ::std::option::Option<::std::string::String>,
     /// <p>The metadata of the function package.</p>
     #[doc(hidden)]
-    pub metadata: std::option::Option<crate::types::ListSolFunctionPackageMetadata>,
+    pub metadata: ::std::option::Option<crate::types::ListSolFunctionPackageMetadata>,
 }
 impl ListSolFunctionPackageInfo {
     /// <p>ID of the function package.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>Function package ARN.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>Onboarding state of the function package.</p>
-    pub fn onboarding_state(&self) -> std::option::Option<&crate::types::OnboardingState> {
+    pub fn onboarding_state(&self) -> ::std::option::Option<&crate::types::OnboardingState> {
         self.onboarding_state.as_ref()
     }
     /// <p>Operational state of the function package.</p>
-    pub fn operational_state(&self) -> std::option::Option<&crate::types::OperationalState> {
+    pub fn operational_state(&self) -> ::std::option::Option<&crate::types::OperationalState> {
         self.operational_state.as_ref()
     }
     /// <p>Usage state of the function package.</p>
-    pub fn usage_state(&self) -> std::option::Option<&crate::types::UsageState> {
+    pub fn usage_state(&self) -> ::std::option::Option<&crate::types::UsageState> {
         self.usage_state.as_ref()
     }
     /// <p>Identifies the function package and the function package descriptor.</p>
-    pub fn vnfd_id(&self) -> std::option::Option<&str> {
+    pub fn vnfd_id(&self) -> ::std::option::Option<&str> {
         self.vnfd_id.as_deref()
     }
     /// <p>Provider of the function package and the function package descriptor.</p>
-    pub fn vnf_provider(&self) -> std::option::Option<&str> {
+    pub fn vnf_provider(&self) -> ::std::option::Option<&str> {
         self.vnf_provider.as_deref()
     }
     /// <p>The product name for the network function.</p>
-    pub fn vnf_product_name(&self) -> std::option::Option<&str> {
+    pub fn vnf_product_name(&self) -> ::std::option::Option<&str> {
         self.vnf_product_name.as_deref()
     }
     /// <p>Identifies the version of the function package descriptor.</p>
-    pub fn vnfd_version(&self) -> std::option::Option<&str> {
+    pub fn vnfd_version(&self) -> ::std::option::Option<&str> {
         self.vnfd_version.as_deref()
     }
     /// <p>The metadata of the function package.</p>
-    pub fn metadata(&self) -> std::option::Option<&crate::types::ListSolFunctionPackageMetadata> {
+    pub fn metadata(&self) -> ::std::option::Option<&crate::types::ListSolFunctionPackageMetadata> {
         self.metadata.as_ref()
     }
 }
@@ -87,125 +87,136 @@ impl ListSolFunctionPackageInfo {
 
 /// A builder for [`ListSolFunctionPackageInfo`](crate::types::ListSolFunctionPackageInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListSolFunctionPackageInfoBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) onboarding_state: std::option::Option<crate::types::OnboardingState>,
-    pub(crate) operational_state: std::option::Option<crate::types::OperationalState>,
-    pub(crate) usage_state: std::option::Option<crate::types::UsageState>,
-    pub(crate) vnfd_id: std::option::Option<std::string::String>,
-    pub(crate) vnf_provider: std::option::Option<std::string::String>,
-    pub(crate) vnf_product_name: std::option::Option<std::string::String>,
-    pub(crate) vnfd_version: std::option::Option<std::string::String>,
-    pub(crate) metadata: std::option::Option<crate::types::ListSolFunctionPackageMetadata>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) onboarding_state: ::std::option::Option<crate::types::OnboardingState>,
+    pub(crate) operational_state: ::std::option::Option<crate::types::OperationalState>,
+    pub(crate) usage_state: ::std::option::Option<crate::types::UsageState>,
+    pub(crate) vnfd_id: ::std::option::Option<::std::string::String>,
+    pub(crate) vnf_provider: ::std::option::Option<::std::string::String>,
+    pub(crate) vnf_product_name: ::std::option::Option<::std::string::String>,
+    pub(crate) vnfd_version: ::std::option::Option<::std::string::String>,
+    pub(crate) metadata: ::std::option::Option<crate::types::ListSolFunctionPackageMetadata>,
 }
 impl ListSolFunctionPackageInfoBuilder {
     /// <p>ID of the function package.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>ID of the function package.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>Function package ARN.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Function package ARN.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// <p>Onboarding state of the function package.</p>
     pub fn onboarding_state(mut self, input: crate::types::OnboardingState) -> Self {
-        self.onboarding_state = Some(input);
+        self.onboarding_state = ::std::option::Option::Some(input);
         self
     }
     /// <p>Onboarding state of the function package.</p>
     pub fn set_onboarding_state(
         mut self,
-        input: std::option::Option<crate::types::OnboardingState>,
+        input: ::std::option::Option<crate::types::OnboardingState>,
     ) -> Self {
         self.onboarding_state = input;
         self
     }
     /// <p>Operational state of the function package.</p>
     pub fn operational_state(mut self, input: crate::types::OperationalState) -> Self {
-        self.operational_state = Some(input);
+        self.operational_state = ::std::option::Option::Some(input);
         self
     }
     /// <p>Operational state of the function package.</p>
     pub fn set_operational_state(
         mut self,
-        input: std::option::Option<crate::types::OperationalState>,
+        input: ::std::option::Option<crate::types::OperationalState>,
     ) -> Self {
         self.operational_state = input;
         self
     }
     /// <p>Usage state of the function package.</p>
     pub fn usage_state(mut self, input: crate::types::UsageState) -> Self {
-        self.usage_state = Some(input);
+        self.usage_state = ::std::option::Option::Some(input);
         self
     }
     /// <p>Usage state of the function package.</p>
-    pub fn set_usage_state(mut self, input: std::option::Option<crate::types::UsageState>) -> Self {
+    pub fn set_usage_state(
+        mut self,
+        input: ::std::option::Option<crate::types::UsageState>,
+    ) -> Self {
         self.usage_state = input;
         self
     }
     /// <p>Identifies the function package and the function package descriptor.</p>
-    pub fn vnfd_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.vnfd_id = Some(input.into());
+    pub fn vnfd_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.vnfd_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Identifies the function package and the function package descriptor.</p>
-    pub fn set_vnfd_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_vnfd_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vnfd_id = input;
         self
     }
     /// <p>Provider of the function package and the function package descriptor.</p>
-    pub fn vnf_provider(mut self, input: impl Into<std::string::String>) -> Self {
-        self.vnf_provider = Some(input.into());
+    pub fn vnf_provider(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.vnf_provider = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Provider of the function package and the function package descriptor.</p>
-    pub fn set_vnf_provider(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_vnf_provider(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vnf_provider = input;
         self
     }
     /// <p>The product name for the network function.</p>
-    pub fn vnf_product_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.vnf_product_name = Some(input.into());
+    pub fn vnf_product_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.vnf_product_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The product name for the network function.</p>
-    pub fn set_vnf_product_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_vnf_product_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.vnf_product_name = input;
         self
     }
     /// <p>Identifies the version of the function package descriptor.</p>
-    pub fn vnfd_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.vnfd_version = Some(input.into());
+    pub fn vnfd_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.vnfd_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Identifies the version of the function package descriptor.</p>
-    pub fn set_vnfd_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_vnfd_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vnfd_version = input;
         self
     }
     /// <p>The metadata of the function package.</p>
     pub fn metadata(mut self, input: crate::types::ListSolFunctionPackageMetadata) -> Self {
-        self.metadata = Some(input);
+        self.metadata = ::std::option::Option::Some(input);
         self
     }
     /// <p>The metadata of the function package.</p>
     pub fn set_metadata(
         mut self,
-        input: std::option::Option<crate::types::ListSolFunctionPackageMetadata>,
+        input: ::std::option::Option<crate::types::ListSolFunctionPackageMetadata>,
     ) -> Self {
         self.metadata = input;
         self

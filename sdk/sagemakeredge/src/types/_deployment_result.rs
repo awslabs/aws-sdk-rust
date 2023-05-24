@@ -2,50 +2,50 @@
 
 /// <p>Information about the result of a deployment on an edge device that is registered with SageMaker Edge Manager.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeploymentResult {
     /// <p>The name and unique ID of the deployment.</p>
     #[doc(hidden)]
-    pub deployment_name: std::option::Option<std::string::String>,
+    pub deployment_name: ::std::option::Option<::std::string::String>,
     /// <p>Returns the bucket error code.</p>
     #[doc(hidden)]
-    pub deployment_status: std::option::Option<std::string::String>,
+    pub deployment_status: ::std::option::Option<::std::string::String>,
     /// <p>Returns the detailed error message.</p>
     #[doc(hidden)]
-    pub deployment_status_message: std::option::Option<std::string::String>,
+    pub deployment_status_message: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp of when the deployment was started on the agent.</p>
     #[doc(hidden)]
-    pub deployment_start_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub deployment_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp of when the deployment was ended, and the agent got the deployment results.</p>
     #[doc(hidden)]
-    pub deployment_end_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub deployment_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Returns a list of models deployed on the agent.</p>
     #[doc(hidden)]
-    pub deployment_models: std::option::Option<std::vec::Vec<crate::types::DeploymentModel>>,
+    pub deployment_models: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentModel>>,
 }
 impl DeploymentResult {
     /// <p>The name and unique ID of the deployment.</p>
-    pub fn deployment_name(&self) -> std::option::Option<&str> {
+    pub fn deployment_name(&self) -> ::std::option::Option<&str> {
         self.deployment_name.as_deref()
     }
     /// <p>Returns the bucket error code.</p>
-    pub fn deployment_status(&self) -> std::option::Option<&str> {
+    pub fn deployment_status(&self) -> ::std::option::Option<&str> {
         self.deployment_status.as_deref()
     }
     /// <p>Returns the detailed error message.</p>
-    pub fn deployment_status_message(&self) -> std::option::Option<&str> {
+    pub fn deployment_status_message(&self) -> ::std::option::Option<&str> {
         self.deployment_status_message.as_deref()
     }
     /// <p>The timestamp of when the deployment was started on the agent.</p>
-    pub fn deployment_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn deployment_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.deployment_start_time.as_ref()
     }
     /// <p>The timestamp of when the deployment was ended, and the agent got the deployment results.</p>
-    pub fn deployment_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn deployment_end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.deployment_end_time.as_ref()
     }
     /// <p>Returns a list of models deployed on the agent.</p>
-    pub fn deployment_models(&self) -> std::option::Option<&[crate::types::DeploymentModel]> {
+    pub fn deployment_models(&self) -> ::std::option::Option<&[crate::types::DeploymentModel]> {
         self.deployment_models.as_deref()
     }
 }
@@ -58,74 +58,89 @@ impl DeploymentResult {
 
 /// A builder for [`DeploymentResult`](crate::types::DeploymentResult).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeploymentResultBuilder {
-    pub(crate) deployment_name: std::option::Option<std::string::String>,
-    pub(crate) deployment_status: std::option::Option<std::string::String>,
-    pub(crate) deployment_status_message: std::option::Option<std::string::String>,
-    pub(crate) deployment_start_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) deployment_end_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) deployment_models: std::option::Option<std::vec::Vec<crate::types::DeploymentModel>>,
+    pub(crate) deployment_name: ::std::option::Option<::std::string::String>,
+    pub(crate) deployment_status: ::std::option::Option<::std::string::String>,
+    pub(crate) deployment_status_message: ::std::option::Option<::std::string::String>,
+    pub(crate) deployment_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) deployment_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) deployment_models:
+        ::std::option::Option<::std::vec::Vec<crate::types::DeploymentModel>>,
 }
 impl DeploymentResultBuilder {
     /// <p>The name and unique ID of the deployment.</p>
-    pub fn deployment_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.deployment_name = Some(input.into());
+    pub fn deployment_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.deployment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name and unique ID of the deployment.</p>
-    pub fn set_deployment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_deployment_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.deployment_name = input;
         self
     }
     /// <p>Returns the bucket error code.</p>
-    pub fn deployment_status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.deployment_status = Some(input.into());
+    pub fn deployment_status(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.deployment_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Returns the bucket error code.</p>
     pub fn set_deployment_status(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.deployment_status = input;
         self
     }
     /// <p>Returns the detailed error message.</p>
-    pub fn deployment_status_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.deployment_status_message = Some(input.into());
+    pub fn deployment_status_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.deployment_status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Returns the detailed error message.</p>
     pub fn set_deployment_status_message(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.deployment_status_message = input;
         self
     }
     /// <p>The timestamp of when the deployment was started on the agent.</p>
-    pub fn deployment_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.deployment_start_time = Some(input);
+    pub fn deployment_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.deployment_start_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The timestamp of when the deployment was started on the agent.</p>
     pub fn set_deployment_start_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.deployment_start_time = input;
         self
     }
     /// <p>The timestamp of when the deployment was ended, and the agent got the deployment results.</p>
-    pub fn deployment_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.deployment_end_time = Some(input);
+    pub fn deployment_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.deployment_end_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The timestamp of when the deployment was ended, and the agent got the deployment results.</p>
     pub fn set_deployment_end_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.deployment_end_time = input;
         self
@@ -138,13 +153,13 @@ impl DeploymentResultBuilder {
     pub fn deployment_models(mut self, input: crate::types::DeploymentModel) -> Self {
         let mut v = self.deployment_models.unwrap_or_default();
         v.push(input);
-        self.deployment_models = Some(v);
+        self.deployment_models = ::std::option::Option::Some(v);
         self
     }
     /// <p>Returns a list of models deployed on the agent.</p>
     pub fn set_deployment_models(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DeploymentModel>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentModel>>,
     ) -> Self {
         self.deployment_models = input;
         self

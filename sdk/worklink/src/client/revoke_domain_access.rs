@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`RevokeDomainAccess`](crate::operation::revoke_domain_access::builders::RevokeDomainAccessFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`fleet_arn(impl Into<String>)`](crate::operation::revoke_domain_access::builders::RevokeDomainAccessFluentBuilder::fleet_arn) / [`set_fleet_arn(Option<String>)`](crate::operation::revoke_domain_access::builders::RevokeDomainAccessFluentBuilder::set_fleet_arn): <p>The ARN of the fleet.</p>
-    ///   - [`domain_name(impl Into<String>)`](crate::operation::revoke_domain_access::builders::RevokeDomainAccessFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::revoke_domain_access::builders::RevokeDomainAccessFluentBuilder::set_domain_name): <p>The name of the domain.</p>
+    ///   - [`fleet_arn(impl ::std::convert::Into<String>)`](crate::operation::revoke_domain_access::builders::RevokeDomainAccessFluentBuilder::fleet_arn) / [`set_fleet_arn(Option<String>)`](crate::operation::revoke_domain_access::builders::RevokeDomainAccessFluentBuilder::set_fleet_arn): <p>The ARN of the fleet.</p>
+    ///   - [`domain_name(impl ::std::convert::Into<String>)`](crate::operation::revoke_domain_access::builders::RevokeDomainAccessFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::revoke_domain_access::builders::RevokeDomainAccessFluentBuilder::set_domain_name): <p>The name of the domain.</p>
     /// - On success, responds with [`RevokeDomainAccessOutput`](crate::operation::revoke_domain_access::RevokeDomainAccessOutput)
     /// - On failure, responds with [`SdkError<RevokeDomainAccessError>`](crate::operation::revoke_domain_access::RevokeDomainAccessError)
     #[deprecated(

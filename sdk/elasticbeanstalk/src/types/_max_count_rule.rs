@@ -2,29 +2,29 @@
 
 /// <p>A lifecycle rule that deletes the oldest application version when the maximum count is exceeded.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MaxCountRule {
     /// <p>Specify <code>true</code> to apply the rule, or <code>false</code> to disable it.</p>
     #[doc(hidden)]
-    pub enabled: std::option::Option<bool>,
+    pub enabled: ::std::option::Option<bool>,
     /// <p>Specify the maximum number of application versions to retain.</p>
     #[doc(hidden)]
-    pub max_count: std::option::Option<i32>,
+    pub max_count: ::std::option::Option<i32>,
     /// <p>Set to <code>true</code> to delete a version's source bundle from Amazon S3 when Elastic Beanstalk deletes the application version.</p>
     #[doc(hidden)]
-    pub delete_source_from_s3: std::option::Option<bool>,
+    pub delete_source_from_s3: ::std::option::Option<bool>,
 }
 impl MaxCountRule {
     /// <p>Specify <code>true</code> to apply the rule, or <code>false</code> to disable it.</p>
-    pub fn enabled(&self) -> std::option::Option<bool> {
+    pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
     /// <p>Specify the maximum number of application versions to retain.</p>
-    pub fn max_count(&self) -> std::option::Option<i32> {
+    pub fn max_count(&self) -> ::std::option::Option<i32> {
         self.max_count
     }
     /// <p>Set to <code>true</code> to delete a version's source bundle from Amazon S3 when Elastic Beanstalk deletes the application version.</p>
-    pub fn delete_source_from_s3(&self) -> std::option::Option<bool> {
+    pub fn delete_source_from_s3(&self) -> ::std::option::Option<bool> {
         self.delete_source_from_s3
     }
 }
@@ -37,40 +37,42 @@ impl MaxCountRule {
 
 /// A builder for [`MaxCountRule`](crate::types::MaxCountRule).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MaxCountRuleBuilder {
-    pub(crate) enabled: std::option::Option<bool>,
-    pub(crate) max_count: std::option::Option<i32>,
-    pub(crate) delete_source_from_s3: std::option::Option<bool>,
+    pub(crate) enabled: ::std::option::Option<bool>,
+    pub(crate) max_count: ::std::option::Option<i32>,
+    pub(crate) delete_source_from_s3: ::std::option::Option<bool>,
 }
 impl MaxCountRuleBuilder {
     /// <p>Specify <code>true</code> to apply the rule, or <code>false</code> to disable it.</p>
     pub fn enabled(mut self, input: bool) -> Self {
-        self.enabled = Some(input);
+        self.enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specify <code>true</code> to apply the rule, or <code>false</code> to disable it.</p>
-    pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
     }
     /// <p>Specify the maximum number of application versions to retain.</p>
     pub fn max_count(mut self, input: i32) -> Self {
-        self.max_count = Some(input);
+        self.max_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specify the maximum number of application versions to retain.</p>
-    pub fn set_max_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_count = input;
         self
     }
     /// <p>Set to <code>true</code> to delete a version's source bundle from Amazon S3 when Elastic Beanstalk deletes the application version.</p>
     pub fn delete_source_from_s3(mut self, input: bool) -> Self {
-        self.delete_source_from_s3 = Some(input);
+        self.delete_source_from_s3 = ::std::option::Option::Some(input);
         self
     }
     /// <p>Set to <code>true</code> to delete a version's source bundle from Amazon S3 when Elastic Beanstalk deletes the application version.</p>
-    pub fn set_delete_source_from_s3(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_delete_source_from_s3(mut self, input: ::std::option::Option<bool>) -> Self {
         self.delete_source_from_s3 = input;
         self
     }

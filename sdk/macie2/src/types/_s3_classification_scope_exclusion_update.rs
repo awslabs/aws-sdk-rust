@@ -2,11 +2,11 @@
 
 /// <p>Specifies S3 buckets to add or remove from the exclusion list defined by the classification scope for an Amazon Macie account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3ClassificationScopeExclusionUpdate {
     /// <p>Depending on the value specified for the update operation (ClassificationScopeUpdateOperation), an array of strings that: lists the names of buckets to add or remove from the list, or specifies a new set of bucket names that overwrites all existing names in the list. Each string must be the full name of an S3 bucket. Values are case sensitive.</p>
     #[doc(hidden)]
-    pub bucket_names: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub bucket_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies how to apply the changes to the exclusion list. Valid values are:</p>
     /// <ul>
     /// <li><p>ADD - Append the specified bucket names to the current list.</p></li>
@@ -14,11 +14,11 @@ pub struct S3ClassificationScopeExclusionUpdate {
     /// <li><p>REPLACE - Overwrite the current list with the specified list of bucket names. If you specify this value, Amazon Macie removes all existing names from the list and adds all the specified names to the list.</p></li>
     /// </ul>
     #[doc(hidden)]
-    pub operation: std::option::Option<crate::types::ClassificationScopeUpdateOperation>,
+    pub operation: ::std::option::Option<crate::types::ClassificationScopeUpdateOperation>,
 }
 impl S3ClassificationScopeExclusionUpdate {
     /// <p>Depending on the value specified for the update operation (ClassificationScopeUpdateOperation), an array of strings that: lists the names of buckets to add or remove from the list, or specifies a new set of bucket names that overwrites all existing names in the list. Each string must be the full name of an S3 bucket. Values are case sensitive.</p>
-    pub fn bucket_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn bucket_names(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.bucket_names.as_deref()
     }
     /// <p>Specifies how to apply the changes to the exclusion list. Valid values are:</p>
@@ -29,7 +29,7 @@ impl S3ClassificationScopeExclusionUpdate {
     /// </ul>
     pub fn operation(
         &self,
-    ) -> std::option::Option<&crate::types::ClassificationScopeUpdateOperation> {
+    ) -> ::std::option::Option<&crate::types::ClassificationScopeUpdateOperation> {
         self.operation.as_ref()
     }
 }
@@ -42,10 +42,12 @@ impl S3ClassificationScopeExclusionUpdate {
 
 /// A builder for [`S3ClassificationScopeExclusionUpdate`](crate::types::S3ClassificationScopeExclusionUpdate).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct S3ClassificationScopeExclusionUpdateBuilder {
-    pub(crate) bucket_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) operation: std::option::Option<crate::types::ClassificationScopeUpdateOperation>,
+    pub(crate) bucket_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) operation: ::std::option::Option<crate::types::ClassificationScopeUpdateOperation>,
 }
 impl S3ClassificationScopeExclusionUpdateBuilder {
     /// Appends an item to `bucket_names`.
@@ -53,16 +55,16 @@ impl S3ClassificationScopeExclusionUpdateBuilder {
     /// To override the contents of this collection use [`set_bucket_names`](Self::set_bucket_names).
     ///
     /// <p>Depending on the value specified for the update operation (ClassificationScopeUpdateOperation), an array of strings that: lists the names of buckets to add or remove from the list, or specifies a new set of bucket names that overwrites all existing names in the list. Each string must be the full name of an S3 bucket. Values are case sensitive.</p>
-    pub fn bucket_names(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn bucket_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.bucket_names.unwrap_or_default();
         v.push(input.into());
-        self.bucket_names = Some(v);
+        self.bucket_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>Depending on the value specified for the update operation (ClassificationScopeUpdateOperation), an array of strings that: lists the names of buckets to add or remove from the list, or specifies a new set of bucket names that overwrites all existing names in the list. Each string must be the full name of an S3 bucket. Values are case sensitive.</p>
     pub fn set_bucket_names(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.bucket_names = input;
         self
@@ -74,7 +76,7 @@ impl S3ClassificationScopeExclusionUpdateBuilder {
     /// <li><p>REPLACE - Overwrite the current list with the specified list of bucket names. If you specify this value, Amazon Macie removes all existing names from the list and adds all the specified names to the list.</p></li>
     /// </ul>
     pub fn operation(mut self, input: crate::types::ClassificationScopeUpdateOperation) -> Self {
-        self.operation = Some(input);
+        self.operation = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies how to apply the changes to the exclusion list. Valid values are:</p>
@@ -85,7 +87,7 @@ impl S3ClassificationScopeExclusionUpdateBuilder {
     /// </ul>
     pub fn set_operation(
         mut self,
-        input: std::option::Option<crate::types::ClassificationScopeUpdateOperation>,
+        input: ::std::option::Option<crate::types::ClassificationScopeUpdateOperation>,
     ) -> Self {
         self.operation = input;
         self

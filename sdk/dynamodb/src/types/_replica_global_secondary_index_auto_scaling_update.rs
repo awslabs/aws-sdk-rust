@@ -2,25 +2,25 @@
 
 /// <p>Represents the auto scaling settings of a global secondary index for a replica that will be modified.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplicaGlobalSecondaryIndexAutoScalingUpdate {
     /// <p>The name of the global secondary index.</p>
     #[doc(hidden)]
-    pub index_name: std::option::Option<std::string::String>,
+    pub index_name: ::std::option::Option<::std::string::String>,
     /// <p>Represents the auto scaling settings to be modified for a global table or global secondary index.</p>
     #[doc(hidden)]
     pub provisioned_read_capacity_auto_scaling_update:
-        std::option::Option<crate::types::AutoScalingSettingsUpdate>,
+        ::std::option::Option<crate::types::AutoScalingSettingsUpdate>,
 }
 impl ReplicaGlobalSecondaryIndexAutoScalingUpdate {
     /// <p>The name of the global secondary index.</p>
-    pub fn index_name(&self) -> std::option::Option<&str> {
+    pub fn index_name(&self) -> ::std::option::Option<&str> {
         self.index_name.as_deref()
     }
     /// <p>Represents the auto scaling settings to be modified for a global table or global secondary index.</p>
     pub fn provisioned_read_capacity_auto_scaling_update(
         &self,
-    ) -> std::option::Option<&crate::types::AutoScalingSettingsUpdate> {
+    ) -> ::std::option::Option<&crate::types::AutoScalingSettingsUpdate> {
         self.provisioned_read_capacity_auto_scaling_update.as_ref()
     }
 }
@@ -34,20 +34,22 @@ impl ReplicaGlobalSecondaryIndexAutoScalingUpdate {
 
 /// A builder for [`ReplicaGlobalSecondaryIndexAutoScalingUpdate`](crate::types::ReplicaGlobalSecondaryIndexAutoScalingUpdate).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ReplicaGlobalSecondaryIndexAutoScalingUpdateBuilder {
-    pub(crate) index_name: std::option::Option<std::string::String>,
+    pub(crate) index_name: ::std::option::Option<::std::string::String>,
     pub(crate) provisioned_read_capacity_auto_scaling_update:
-        std::option::Option<crate::types::AutoScalingSettingsUpdate>,
+        ::std::option::Option<crate::types::AutoScalingSettingsUpdate>,
 }
 impl ReplicaGlobalSecondaryIndexAutoScalingUpdateBuilder {
     /// <p>The name of the global secondary index.</p>
-    pub fn index_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.index_name = Some(input.into());
+    pub fn index_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.index_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the global secondary index.</p>
-    pub fn set_index_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_index_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.index_name = input;
         self
     }
@@ -56,13 +58,13 @@ impl ReplicaGlobalSecondaryIndexAutoScalingUpdateBuilder {
         mut self,
         input: crate::types::AutoScalingSettingsUpdate,
     ) -> Self {
-        self.provisioned_read_capacity_auto_scaling_update = Some(input);
+        self.provisioned_read_capacity_auto_scaling_update = ::std::option::Option::Some(input);
         self
     }
     /// <p>Represents the auto scaling settings to be modified for a global table or global secondary index.</p>
     pub fn set_provisioned_read_capacity_auto_scaling_update(
         mut self,
-        input: std::option::Option<crate::types::AutoScalingSettingsUpdate>,
+        input: ::std::option::Option<crate::types::AutoScalingSettingsUpdate>,
     ) -> Self {
         self.provisioned_read_capacity_auto_scaling_update = input;
         self

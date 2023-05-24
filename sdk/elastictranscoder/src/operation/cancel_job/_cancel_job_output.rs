@@ -2,11 +2,11 @@
 
 /// <p>The response body contains a JSON object. If the job is successfully canceled, the value of <code>Success</code> is <code>true</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelJobOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for CancelJobOutput {
+impl ::aws_http::request_id::RequestId for CancelJobOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -20,7 +20,9 @@ impl CancelJobOutput {
 
 /// A builder for [`CancelJobOutput`](crate::operation::cancel_job::CancelJobOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CancelJobOutputBuilder {
     _request_id: Option<String>,
 }

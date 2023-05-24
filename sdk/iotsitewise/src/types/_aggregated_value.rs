@@ -2,29 +2,29 @@
 
 /// <p>Contains aggregated asset property values (for example, average, minimum, and maximum).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AggregatedValue {
     /// <p>The date the aggregating computations occurred, in Unix epoch time.</p>
     #[doc(hidden)]
-    pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The quality of the aggregated data.</p>
     #[doc(hidden)]
-    pub quality: std::option::Option<crate::types::Quality>,
+    pub quality: ::std::option::Option<crate::types::Quality>,
     /// <p>The value of the aggregates.</p>
     #[doc(hidden)]
-    pub value: std::option::Option<crate::types::Aggregates>,
+    pub value: ::std::option::Option<crate::types::Aggregates>,
 }
 impl AggregatedValue {
     /// <p>The date the aggregating computations occurred, in Unix epoch time.</p>
-    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
     /// <p>The quality of the aggregated data.</p>
-    pub fn quality(&self) -> std::option::Option<&crate::types::Quality> {
+    pub fn quality(&self) -> ::std::option::Option<&crate::types::Quality> {
         self.quality.as_ref()
     }
     /// <p>The value of the aggregates.</p>
-    pub fn value(&self) -> std::option::Option<&crate::types::Aggregates> {
+    pub fn value(&self) -> ::std::option::Option<&crate::types::Aggregates> {
         self.value.as_ref()
     }
 }
@@ -37,40 +37,45 @@ impl AggregatedValue {
 
 /// A builder for [`AggregatedValue`](crate::types::AggregatedValue).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AggregatedValueBuilder {
-    pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) quality: std::option::Option<crate::types::Quality>,
-    pub(crate) value: std::option::Option<crate::types::Aggregates>,
+    pub(crate) timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) quality: ::std::option::Option<crate::types::Quality>,
+    pub(crate) value: ::std::option::Option<crate::types::Aggregates>,
 }
 impl AggregatedValueBuilder {
     /// <p>The date the aggregating computations occurred, in Unix epoch time.</p>
-    pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.timestamp = Some(input);
+    pub fn timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date the aggregating computations occurred, in Unix epoch time.</p>
-    pub fn set_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_timestamp(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
         self.timestamp = input;
         self
     }
     /// <p>The quality of the aggregated data.</p>
     pub fn quality(mut self, input: crate::types::Quality) -> Self {
-        self.quality = Some(input);
+        self.quality = ::std::option::Option::Some(input);
         self
     }
     /// <p>The quality of the aggregated data.</p>
-    pub fn set_quality(mut self, input: std::option::Option<crate::types::Quality>) -> Self {
+    pub fn set_quality(mut self, input: ::std::option::Option<crate::types::Quality>) -> Self {
         self.quality = input;
         self
     }
     /// <p>The value of the aggregates.</p>
     pub fn value(mut self, input: crate::types::Aggregates) -> Self {
-        self.value = Some(input);
+        self.value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The value of the aggregates.</p>
-    pub fn set_value(mut self, input: std::option::Option<crate::types::Aggregates>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<crate::types::Aggregates>) -> Self {
         self.value = input;
         self
     }

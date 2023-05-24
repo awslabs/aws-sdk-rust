@@ -4,29 +4,29 @@
 /// <p>Amazon Personalize doesn't support configuring the <code>hpoObjective</code> at this time.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HpoObjective {
     /// <p>The type of the metric. Valid values are <code>Maximize</code> and <code>Minimize</code>.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<std::string::String>,
+    pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The name of the metric.</p>
     #[doc(hidden)]
-    pub metric_name: std::option::Option<std::string::String>,
+    pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p>A regular expression for finding the metric in the training job logs.</p>
     #[doc(hidden)]
-    pub metric_regex: std::option::Option<std::string::String>,
+    pub metric_regex: ::std::option::Option<::std::string::String>,
 }
 impl HpoObjective {
     /// <p>The type of the metric. Valid values are <code>Maximize</code> and <code>Minimize</code>.</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
     }
     /// <p>The name of the metric.</p>
-    pub fn metric_name(&self) -> std::option::Option<&str> {
+    pub fn metric_name(&self) -> ::std::option::Option<&str> {
         self.metric_name.as_deref()
     }
     /// <p>A regular expression for finding the metric in the training job logs.</p>
-    pub fn metric_regex(&self) -> std::option::Option<&str> {
+    pub fn metric_regex(&self) -> ::std::option::Option<&str> {
         self.metric_regex.as_deref()
     }
 }
@@ -39,40 +39,42 @@ impl HpoObjective {
 
 /// A builder for [`HpoObjective`](crate::types::HpoObjective).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct HpoObjectiveBuilder {
-    pub(crate) r#type: std::option::Option<std::string::String>,
-    pub(crate) metric_name: std::option::Option<std::string::String>,
-    pub(crate) metric_regex: std::option::Option<std::string::String>,
+    pub(crate) r#type: ::std::option::Option<::std::string::String>,
+    pub(crate) metric_name: ::std::option::Option<::std::string::String>,
+    pub(crate) metric_regex: ::std::option::Option<::std::string::String>,
 }
 impl HpoObjectiveBuilder {
     /// <p>The type of the metric. Valid values are <code>Maximize</code> and <code>Minimize</code>.</p>
-    pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.r#type = Some(input.into());
+    pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.r#type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of the metric. Valid values are <code>Maximize</code> and <code>Minimize</code>.</p>
-    pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The name of the metric.</p>
-    pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.metric_name = Some(input.into());
+    pub fn metric_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.metric_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the metric.</p>
-    pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_metric_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metric_name = input;
         self
     }
     /// <p>A regular expression for finding the metric in the training job logs.</p>
-    pub fn metric_regex(mut self, input: impl Into<std::string::String>) -> Self {
-        self.metric_regex = Some(input.into());
+    pub fn metric_regex(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.metric_regex = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A regular expression for finding the metric in the training job logs.</p>
-    pub fn set_metric_regex(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_metric_regex(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metric_regex = input;
         self
     }

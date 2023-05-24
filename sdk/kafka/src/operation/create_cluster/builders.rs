@@ -6,56 +6,59 @@ pub use crate::operation::create_cluster::_create_cluster_input::CreateClusterIn
 /// Fluent builder constructing a request to `CreateCluster`.
 ///
 /// <p>Creates a new MSK cluster.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateClusterFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_cluster::builders::CreateClusterInputBuilder,
 }
 impl CreateClusterFluentBuilder {
     /// Creates a new `CreateCluster`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_cluster::CreateCluster,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_cluster::CreateClusterError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_cluster::CreateClusterError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_cluster::CreateClusterOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_cluster::CreateClusterError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_cluster::CreateClusterError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,9 +71,9 @@ impl CreateClusterFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_cluster::CreateClusterOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_cluster::CreateClusterError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_cluster::CreateClusterError>,
     > {
         self.send_middleware().await
     }
@@ -82,7 +85,7 @@ impl CreateClusterFluentBuilder {
     /// <p>Information about the broker nodes in the cluster.</p>
     pub fn set_broker_node_group_info(
         mut self,
-        input: std::option::Option<crate::types::BrokerNodeGroupInfo>,
+        input: ::std::option::Option<crate::types::BrokerNodeGroupInfo>,
     ) -> Self {
         self.inner = self.inner.set_broker_node_group_info(input);
         self
@@ -95,18 +98,18 @@ impl CreateClusterFluentBuilder {
     /// <p>Includes all client authentication related information.</p>
     pub fn set_client_authentication(
         mut self,
-        input: std::option::Option<crate::types::ClientAuthentication>,
+        input: ::std::option::Option<crate::types::ClientAuthentication>,
     ) -> Self {
         self.inner = self.inner.set_client_authentication(input);
         self
     }
     /// <p>The name of the cluster.</p>
-    pub fn cluster_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_name(input.into());
         self
     }
     /// <p>The name of the cluster.</p>
-    pub fn set_cluster_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_name(input);
         self
     }
@@ -118,7 +121,7 @@ impl CreateClusterFluentBuilder {
     /// <p>Represents the configuration that you want MSK to use for the brokers in a cluster.</p>
     pub fn set_configuration_info(
         mut self,
-        input: std::option::Option<crate::types::ConfigurationInfo>,
+        input: ::std::option::Option<crate::types::ConfigurationInfo>,
     ) -> Self {
         self.inner = self.inner.set_configuration_info(input);
         self
@@ -131,7 +134,7 @@ impl CreateClusterFluentBuilder {
     /// <p>Includes all encryption-related information.</p>
     pub fn set_encryption_info(
         mut self,
-        input: std::option::Option<crate::types::EncryptionInfo>,
+        input: ::std::option::Option<crate::types::EncryptionInfo>,
     ) -> Self {
         self.inner = self.inner.set_encryption_info(input);
         self
@@ -144,7 +147,7 @@ impl CreateClusterFluentBuilder {
     /// <p>Specifies the level of monitoring for the MSK cluster. The possible values are DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER, and PER_TOPIC_PER_PARTITION.</p>
     pub fn set_enhanced_monitoring(
         mut self,
-        input: std::option::Option<crate::types::EnhancedMonitoring>,
+        input: ::std::option::Option<crate::types::EnhancedMonitoring>,
     ) -> Self {
         self.inner = self.inner.set_enhanced_monitoring(input);
         self
@@ -157,18 +160,24 @@ impl CreateClusterFluentBuilder {
     /// <p>The settings for open monitoring.</p>
     pub fn set_open_monitoring(
         mut self,
-        input: std::option::Option<crate::types::OpenMonitoringInfo>,
+        input: ::std::option::Option<crate::types::OpenMonitoringInfo>,
     ) -> Self {
         self.inner = self.inner.set_open_monitoring(input);
         self
     }
     /// <p>The version of Apache Kafka.</p>
-    pub fn kafka_version(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn kafka_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.kafka_version(input.into());
         self
     }
     /// <p>The version of Apache Kafka.</p>
-    pub fn set_kafka_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_kafka_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_kafka_version(input);
         self
     }
@@ -180,7 +189,7 @@ impl CreateClusterFluentBuilder {
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_logging_info(
         mut self,
-        input: std::option::Option<crate::types::LoggingInfo>,
+        input: ::std::option::Option<crate::types::LoggingInfo>,
     ) -> Self {
         self.inner = self.inner.set_logging_info(input);
         self
@@ -191,7 +200,7 @@ impl CreateClusterFluentBuilder {
         self
     }
     /// <p>The number of broker nodes in the cluster.</p>
-    pub fn set_number_of_broker_nodes(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_number_of_broker_nodes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_number_of_broker_nodes(input);
         self
     }
@@ -202,8 +211,8 @@ impl CreateClusterFluentBuilder {
     /// <p>Create tags when creating the cluster.</p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
@@ -211,8 +220,8 @@ impl CreateClusterFluentBuilder {
     /// <p>Create tags when creating the cluster.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
@@ -226,7 +235,7 @@ impl CreateClusterFluentBuilder {
     /// <p>This controls storage mode for supported storage tiers.</p>
     pub fn set_storage_mode(
         mut self,
-        input: std::option::Option<crate::types::StorageMode>,
+        input: ::std::option::Option<crate::types::StorageMode>,
     ) -> Self {
         self.inner = self.inner.set_storage_mode(input);
         self

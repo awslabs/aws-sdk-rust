@@ -6,29 +6,29 @@ pub use crate::operation::register_certificate_without_ca::_register_certificate
 /// Fluent builder constructing a request to `RegisterCertificateWithoutCA`.
 ///
 /// <p>Register a certificate that does not have a certificate authority (CA). For supported certificates, consult <a href="https://docs.aws.amazon.com/iot/latest/developerguide/x509-client-certs.html#x509-cert-algorithms"> Certificate signing algorithms supported by IoT</a>. </p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RegisterCertificateWithoutCAFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::register_certificate_without_ca::builders::RegisterCertificateWithoutCaInputBuilder,
 }
 impl RegisterCertificateWithoutCAFluentBuilder {
     /// Creates a new `RegisterCertificateWithoutCA`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::register_certificate_without_ca::RegisterCertificateWithoutCA,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::register_certificate_without_ca::RegisterCertificateWithoutCAError,
         >,
     > {
@@ -36,30 +36,33 @@ impl RegisterCertificateWithoutCAFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::register_certificate_without_ca::RegisterCertificateWithoutCaOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::register_certificate_without_ca::RegisterCertificateWithoutCAError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,21 +75,27 @@ impl RegisterCertificateWithoutCAFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::register_certificate_without_ca::RegisterCertificateWithoutCaOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::register_certificate_without_ca::RegisterCertificateWithoutCAError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The certificate data, in PEM format.</p>
-    pub fn certificate_pem(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn certificate_pem(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.certificate_pem(input.into());
         self
     }
     /// <p>The certificate data, in PEM format.</p>
-    pub fn set_certificate_pem(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_certificate_pem(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_certificate_pem(input);
         self
     }
@@ -98,7 +107,7 @@ impl RegisterCertificateWithoutCAFluentBuilder {
     /// <p>The status of the register certificate request.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::CertificateStatus>,
+        input: ::std::option::Option<crate::types::CertificateStatus>,
     ) -> Self {
         self.inner = self.inner.set_status(input);
         self

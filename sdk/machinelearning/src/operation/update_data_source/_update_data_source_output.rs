@@ -3,20 +3,20 @@
 /// <p>Represents the output of an <code>UpdateDataSource</code> operation.</p>
 /// <p>You can see the updated content by using the <code>GetBatchPrediction</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDataSourceOutput {
     /// <p>The ID assigned to the <code>DataSource</code> during creation. This value should be identical to the value of the <code>DataSourceID</code> in the request.</p>
     #[doc(hidden)]
-    pub data_source_id: std::option::Option<std::string::String>,
+    pub data_source_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl UpdateDataSourceOutput {
     /// <p>The ID assigned to the <code>DataSource</code> during creation. This value should be identical to the value of the <code>DataSourceID</code> in the request.</p>
-    pub fn data_source_id(&self) -> std::option::Option<&str> {
+    pub fn data_source_id(&self) -> ::std::option::Option<&str> {
         self.data_source_id.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for UpdateDataSourceOutput {
+impl ::aws_http::request_id::RequestId for UpdateDataSourceOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -31,19 +31,27 @@ impl UpdateDataSourceOutput {
 
 /// A builder for [`UpdateDataSourceOutput`](crate::operation::update_data_source::UpdateDataSourceOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateDataSourceOutputBuilder {
-    pub(crate) data_source_id: std::option::Option<std::string::String>,
+    pub(crate) data_source_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl UpdateDataSourceOutputBuilder {
     /// <p>The ID assigned to the <code>DataSource</code> during creation. This value should be identical to the value of the <code>DataSourceID</code> in the request.</p>
-    pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.data_source_id = Some(input.into());
+    pub fn data_source_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.data_source_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID assigned to the <code>DataSource</code> during creation. This value should be identical to the value of the <code>DataSourceID</code> in the request.</p>
-    pub fn set_data_source_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_data_source_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.data_source_id = input;
         self
     }

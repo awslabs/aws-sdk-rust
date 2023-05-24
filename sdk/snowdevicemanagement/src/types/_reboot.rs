@@ -2,7 +2,7 @@
 
 /// <p>A structure used to reboot the device.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Reboot {}
 impl Reboot {
     /// Creates a new builder-style object to manufacture [`Reboot`](crate::types::Reboot).
@@ -13,7 +13,9 @@ impl Reboot {
 
 /// A builder for [`Reboot`](crate::types::Reboot).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RebootBuilder {}
 impl RebootBuilder {
     /// Consumes the builder and constructs a [`Reboot`](crate::types::Reboot).

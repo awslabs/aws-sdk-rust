@@ -2,22 +2,22 @@
 
 /// <p>The S3 location where Identity Resolution Jobs write result files.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3ExportingLocation {
     /// <p>The name of the S3 bucket name where Identity Resolution Jobs write result files.</p>
     #[doc(hidden)]
-    pub s3_bucket_name: std::option::Option<std::string::String>,
+    pub s3_bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>The S3 key name of the location where Identity Resolution Jobs write result files.</p>
     #[doc(hidden)]
-    pub s3_key_name: std::option::Option<std::string::String>,
+    pub s3_key_name: ::std::option::Option<::std::string::String>,
 }
 impl S3ExportingLocation {
     /// <p>The name of the S3 bucket name where Identity Resolution Jobs write result files.</p>
-    pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
+    pub fn s3_bucket_name(&self) -> ::std::option::Option<&str> {
         self.s3_bucket_name.as_deref()
     }
     /// <p>The S3 key name of the location where Identity Resolution Jobs write result files.</p>
-    pub fn s3_key_name(&self) -> std::option::Option<&str> {
+    pub fn s3_key_name(&self) -> ::std::option::Option<&str> {
         self.s3_key_name.as_deref()
     }
 }
@@ -30,29 +30,37 @@ impl S3ExportingLocation {
 
 /// A builder for [`S3ExportingLocation`](crate::types::S3ExportingLocation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct S3ExportingLocationBuilder {
-    pub(crate) s3_bucket_name: std::option::Option<std::string::String>,
-    pub(crate) s3_key_name: std::option::Option<std::string::String>,
+    pub(crate) s3_bucket_name: ::std::option::Option<::std::string::String>,
+    pub(crate) s3_key_name: ::std::option::Option<::std::string::String>,
 }
 impl S3ExportingLocationBuilder {
     /// <p>The name of the S3 bucket name where Identity Resolution Jobs write result files.</p>
-    pub fn s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.s3_bucket_name = Some(input.into());
+    pub fn s3_bucket_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.s3_bucket_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the S3 bucket name where Identity Resolution Jobs write result files.</p>
-    pub fn set_s3_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_s3_bucket_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.s3_bucket_name = input;
         self
     }
     /// <p>The S3 key name of the location where Identity Resolution Jobs write result files.</p>
-    pub fn s3_key_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.s3_key_name = Some(input.into());
+    pub fn s3_key_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.s3_key_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The S3 key name of the location where Identity Resolution Jobs write result files.</p>
-    pub fn set_s3_key_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_s3_key_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_key_name = input;
         self
     }

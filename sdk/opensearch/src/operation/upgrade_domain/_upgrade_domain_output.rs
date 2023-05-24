@@ -2,61 +2,63 @@
 
 /// <p>Container for the response returned by <code>UpgradeDomain</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpgradeDomainOutput {
     /// <p>The unique identifier of the domain upgrade.</p>
     #[doc(hidden)]
-    pub upgrade_id: std::option::Option<std::string::String>,
+    pub upgrade_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the domain that was upgraded.</p>
     #[doc(hidden)]
-    pub domain_name: std::option::Option<std::string::String>,
+    pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>OpenSearch or Elasticsearch version that the domain was upgraded to.</p>
     #[doc(hidden)]
-    pub target_version: std::option::Option<std::string::String>,
+    pub target_version: ::std::option::Option<::std::string::String>,
     /// <p>When true, indicates that an upgrade eligibility check was performed.</p>
     #[doc(hidden)]
-    pub perform_check_only: std::option::Option<bool>,
+    pub perform_check_only: ::std::option::Option<bool>,
     /// <p>The advanced options configuration for the domain.</p>
     #[doc(hidden)]
-    pub advanced_options:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub advanced_options: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>Container for information about a configuration change happening on a domain.</p>
     #[doc(hidden)]
-    pub change_progress_details: std::option::Option<crate::types::ChangeProgressDetails>,
+    pub change_progress_details: ::std::option::Option<crate::types::ChangeProgressDetails>,
     _request_id: Option<String>,
 }
 impl UpgradeDomainOutput {
     /// <p>The unique identifier of the domain upgrade.</p>
-    pub fn upgrade_id(&self) -> std::option::Option<&str> {
+    pub fn upgrade_id(&self) -> ::std::option::Option<&str> {
         self.upgrade_id.as_deref()
     }
     /// <p>The name of the domain that was upgraded.</p>
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<&str> {
         self.domain_name.as_deref()
     }
     /// <p>OpenSearch or Elasticsearch version that the domain was upgraded to.</p>
-    pub fn target_version(&self) -> std::option::Option<&str> {
+    pub fn target_version(&self) -> ::std::option::Option<&str> {
         self.target_version.as_deref()
     }
     /// <p>When true, indicates that an upgrade eligibility check was performed.</p>
-    pub fn perform_check_only(&self) -> std::option::Option<bool> {
+    pub fn perform_check_only(&self) -> ::std::option::Option<bool> {
         self.perform_check_only
     }
     /// <p>The advanced options configuration for the domain.</p>
     pub fn advanced_options(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.advanced_options.as_ref()
     }
     /// <p>Container for information about a configuration change happening on a domain.</p>
     pub fn change_progress_details(
         &self,
-    ) -> std::option::Option<&crate::types::ChangeProgressDetails> {
+    ) -> ::std::option::Option<&crate::types::ChangeProgressDetails> {
         self.change_progress_details.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for UpgradeDomainOutput {
+impl ::aws_http::request_id::RequestId for UpgradeDomainOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -70,55 +72,64 @@ impl UpgradeDomainOutput {
 
 /// A builder for [`UpgradeDomainOutput`](crate::operation::upgrade_domain::UpgradeDomainOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpgradeDomainOutputBuilder {
-    pub(crate) upgrade_id: std::option::Option<std::string::String>,
-    pub(crate) domain_name: std::option::Option<std::string::String>,
-    pub(crate) target_version: std::option::Option<std::string::String>,
-    pub(crate) perform_check_only: std::option::Option<bool>,
-    pub(crate) advanced_options:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) change_progress_details: std::option::Option<crate::types::ChangeProgressDetails>,
+    pub(crate) upgrade_id: ::std::option::Option<::std::string::String>,
+    pub(crate) domain_name: ::std::option::Option<::std::string::String>,
+    pub(crate) target_version: ::std::option::Option<::std::string::String>,
+    pub(crate) perform_check_only: ::std::option::Option<bool>,
+    pub(crate) advanced_options: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) change_progress_details: ::std::option::Option<crate::types::ChangeProgressDetails>,
     _request_id: Option<String>,
 }
 impl UpgradeDomainOutputBuilder {
     /// <p>The unique identifier of the domain upgrade.</p>
-    pub fn upgrade_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.upgrade_id = Some(input.into());
+    pub fn upgrade_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.upgrade_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the domain upgrade.</p>
-    pub fn set_upgrade_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_upgrade_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.upgrade_id = input;
         self
     }
     /// <p>The name of the domain that was upgraded.</p>
-    pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.domain_name = Some(input.into());
+    pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.domain_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the domain that was upgraded.</p>
-    pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_name = input;
         self
     }
     /// <p>OpenSearch or Elasticsearch version that the domain was upgraded to.</p>
-    pub fn target_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.target_version = Some(input.into());
+    pub fn target_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.target_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>OpenSearch or Elasticsearch version that the domain was upgraded to.</p>
-    pub fn set_target_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_target_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.target_version = input;
         self
     }
     /// <p>When true, indicates that an upgrade eligibility check was performed.</p>
     pub fn perform_check_only(mut self, input: bool) -> Self {
-        self.perform_check_only = Some(input);
+        self.perform_check_only = ::std::option::Option::Some(input);
         self
     }
     /// <p>When true, indicates that an upgrade eligibility check was performed.</p>
-    pub fn set_perform_check_only(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_perform_check_only(mut self, input: ::std::option::Option<bool>) -> Self {
         self.perform_check_only = input;
         self
     }
@@ -129,19 +140,19 @@ impl UpgradeDomainOutputBuilder {
     /// <p>The advanced options configuration for the domain.</p>
     pub fn advanced_options(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.advanced_options.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.advanced_options = Some(hash_map);
+        self.advanced_options = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The advanced options configuration for the domain.</p>
     pub fn set_advanced_options(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.advanced_options = input;
@@ -149,13 +160,13 @@ impl UpgradeDomainOutputBuilder {
     }
     /// <p>Container for information about a configuration change happening on a domain.</p>
     pub fn change_progress_details(mut self, input: crate::types::ChangeProgressDetails) -> Self {
-        self.change_progress_details = Some(input);
+        self.change_progress_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>Container for information about a configuration change happening on a domain.</p>
     pub fn set_change_progress_details(
         mut self,
-        input: std::option::Option<crate::types::ChangeProgressDetails>,
+        input: ::std::option::Option<crate::types::ChangeProgressDetails>,
     ) -> Self {
         self.change_progress_details = input;
         self

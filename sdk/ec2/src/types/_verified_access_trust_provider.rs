@@ -2,89 +2,89 @@
 
 /// <p>Describes a Verified Access trust provider.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VerifiedAccessTrustProvider {
     /// <p>The ID of the Amazon Web Services Verified Access trust provider.</p>
     #[doc(hidden)]
-    pub verified_access_trust_provider_id: std::option::Option<std::string::String>,
+    pub verified_access_trust_provider_id: ::std::option::Option<::std::string::String>,
     /// <p>A description for the Amazon Web Services Verified Access trust provider.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The type of Verified Access trust provider.</p>
     #[doc(hidden)]
-    pub trust_provider_type: std::option::Option<crate::types::TrustProviderType>,
+    pub trust_provider_type: ::std::option::Option<crate::types::TrustProviderType>,
     /// <p>The type of user-based trust provider.</p>
     #[doc(hidden)]
-    pub user_trust_provider_type: std::option::Option<crate::types::UserTrustProviderType>,
+    pub user_trust_provider_type: ::std::option::Option<crate::types::UserTrustProviderType>,
     /// <p>The type of device-based trust provider.</p>
     #[doc(hidden)]
-    pub device_trust_provider_type: std::option::Option<crate::types::DeviceTrustProviderType>,
+    pub device_trust_provider_type: ::std::option::Option<crate::types::DeviceTrustProviderType>,
     /// <p>The options for an OpenID Connect-compatible user-identity trust provider.</p>
     #[doc(hidden)]
-    pub oidc_options: std::option::Option<crate::types::OidcOptions>,
+    pub oidc_options: ::std::option::Option<crate::types::OidcOptions>,
     /// <p>The options for device-identity trust provider.</p>
     #[doc(hidden)]
-    pub device_options: std::option::Option<crate::types::DeviceOptions>,
+    pub device_options: ::std::option::Option<crate::types::DeviceOptions>,
     /// <p>The identifier to be used when working with policy rules.</p>
     #[doc(hidden)]
-    pub policy_reference_name: std::option::Option<std::string::String>,
+    pub policy_reference_name: ::std::option::Option<::std::string::String>,
     /// <p>The creation time.</p>
     #[doc(hidden)]
-    pub creation_time: std::option::Option<std::string::String>,
+    pub creation_time: ::std::option::Option<::std::string::String>,
     /// <p>The last updated time.</p>
     #[doc(hidden)]
-    pub last_updated_time: std::option::Option<std::string::String>,
+    pub last_updated_time: ::std::option::Option<::std::string::String>,
     /// <p>The tags.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl VerifiedAccessTrustProvider {
     /// <p>The ID of the Amazon Web Services Verified Access trust provider.</p>
-    pub fn verified_access_trust_provider_id(&self) -> std::option::Option<&str> {
+    pub fn verified_access_trust_provider_id(&self) -> ::std::option::Option<&str> {
         self.verified_access_trust_provider_id.as_deref()
     }
     /// <p>A description for the Amazon Web Services Verified Access trust provider.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The type of Verified Access trust provider.</p>
-    pub fn trust_provider_type(&self) -> std::option::Option<&crate::types::TrustProviderType> {
+    pub fn trust_provider_type(&self) -> ::std::option::Option<&crate::types::TrustProviderType> {
         self.trust_provider_type.as_ref()
     }
     /// <p>The type of user-based trust provider.</p>
     pub fn user_trust_provider_type(
         &self,
-    ) -> std::option::Option<&crate::types::UserTrustProviderType> {
+    ) -> ::std::option::Option<&crate::types::UserTrustProviderType> {
         self.user_trust_provider_type.as_ref()
     }
     /// <p>The type of device-based trust provider.</p>
     pub fn device_trust_provider_type(
         &self,
-    ) -> std::option::Option<&crate::types::DeviceTrustProviderType> {
+    ) -> ::std::option::Option<&crate::types::DeviceTrustProviderType> {
         self.device_trust_provider_type.as_ref()
     }
     /// <p>The options for an OpenID Connect-compatible user-identity trust provider.</p>
-    pub fn oidc_options(&self) -> std::option::Option<&crate::types::OidcOptions> {
+    pub fn oidc_options(&self) -> ::std::option::Option<&crate::types::OidcOptions> {
         self.oidc_options.as_ref()
     }
     /// <p>The options for device-identity trust provider.</p>
-    pub fn device_options(&self) -> std::option::Option<&crate::types::DeviceOptions> {
+    pub fn device_options(&self) -> ::std::option::Option<&crate::types::DeviceOptions> {
         self.device_options.as_ref()
     }
     /// <p>The identifier to be used when working with policy rules.</p>
-    pub fn policy_reference_name(&self) -> std::option::Option<&str> {
+    pub fn policy_reference_name(&self) -> ::std::option::Option<&str> {
         self.policy_reference_name.as_deref()
     }
     /// <p>The creation time.</p>
-    pub fn creation_time(&self) -> std::option::Option<&str> {
+    pub fn creation_time(&self) -> ::std::option::Option<&str> {
         self.creation_time.as_deref()
     }
     /// <p>The last updated time.</p>
-    pub fn last_updated_time(&self) -> std::option::Option<&str> {
+    pub fn last_updated_time(&self) -> ::std::option::Option<&str> {
         self.last_updated_time.as_deref()
     }
     /// <p>The tags.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -97,70 +97,72 @@ impl VerifiedAccessTrustProvider {
 
 /// A builder for [`VerifiedAccessTrustProvider`](crate::types::VerifiedAccessTrustProvider).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VerifiedAccessTrustProviderBuilder {
-    pub(crate) verified_access_trust_provider_id: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) trust_provider_type: std::option::Option<crate::types::TrustProviderType>,
-    pub(crate) user_trust_provider_type: std::option::Option<crate::types::UserTrustProviderType>,
+    pub(crate) verified_access_trust_provider_id: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) trust_provider_type: ::std::option::Option<crate::types::TrustProviderType>,
+    pub(crate) user_trust_provider_type: ::std::option::Option<crate::types::UserTrustProviderType>,
     pub(crate) device_trust_provider_type:
-        std::option::Option<crate::types::DeviceTrustProviderType>,
-    pub(crate) oidc_options: std::option::Option<crate::types::OidcOptions>,
-    pub(crate) device_options: std::option::Option<crate::types::DeviceOptions>,
-    pub(crate) policy_reference_name: std::option::Option<std::string::String>,
-    pub(crate) creation_time: std::option::Option<std::string::String>,
-    pub(crate) last_updated_time: std::option::Option<std::string::String>,
-    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        ::std::option::Option<crate::types::DeviceTrustProviderType>,
+    pub(crate) oidc_options: ::std::option::Option<crate::types::OidcOptions>,
+    pub(crate) device_options: ::std::option::Option<crate::types::DeviceOptions>,
+    pub(crate) policy_reference_name: ::std::option::Option<::std::string::String>,
+    pub(crate) creation_time: ::std::option::Option<::std::string::String>,
+    pub(crate) last_updated_time: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl VerifiedAccessTrustProviderBuilder {
     /// <p>The ID of the Amazon Web Services Verified Access trust provider.</p>
     pub fn verified_access_trust_provider_id(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.verified_access_trust_provider_id = Some(input.into());
+        self.verified_access_trust_provider_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services Verified Access trust provider.</p>
     pub fn set_verified_access_trust_provider_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.verified_access_trust_provider_id = input;
         self
     }
     /// <p>A description for the Amazon Web Services Verified Access trust provider.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description for the Amazon Web Services Verified Access trust provider.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>The type of Verified Access trust provider.</p>
     pub fn trust_provider_type(mut self, input: crate::types::TrustProviderType) -> Self {
-        self.trust_provider_type = Some(input);
+        self.trust_provider_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of Verified Access trust provider.</p>
     pub fn set_trust_provider_type(
         mut self,
-        input: std::option::Option<crate::types::TrustProviderType>,
+        input: ::std::option::Option<crate::types::TrustProviderType>,
     ) -> Self {
         self.trust_provider_type = input;
         self
     }
     /// <p>The type of user-based trust provider.</p>
     pub fn user_trust_provider_type(mut self, input: crate::types::UserTrustProviderType) -> Self {
-        self.user_trust_provider_type = Some(input);
+        self.user_trust_provider_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of user-based trust provider.</p>
     pub fn set_user_trust_provider_type(
         mut self,
-        input: std::option::Option<crate::types::UserTrustProviderType>,
+        input: ::std::option::Option<crate::types::UserTrustProviderType>,
     ) -> Self {
         self.user_trust_provider_type = input;
         self
@@ -170,75 +172,87 @@ impl VerifiedAccessTrustProviderBuilder {
         mut self,
         input: crate::types::DeviceTrustProviderType,
     ) -> Self {
-        self.device_trust_provider_type = Some(input);
+        self.device_trust_provider_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of device-based trust provider.</p>
     pub fn set_device_trust_provider_type(
         mut self,
-        input: std::option::Option<crate::types::DeviceTrustProviderType>,
+        input: ::std::option::Option<crate::types::DeviceTrustProviderType>,
     ) -> Self {
         self.device_trust_provider_type = input;
         self
     }
     /// <p>The options for an OpenID Connect-compatible user-identity trust provider.</p>
     pub fn oidc_options(mut self, input: crate::types::OidcOptions) -> Self {
-        self.oidc_options = Some(input);
+        self.oidc_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The options for an OpenID Connect-compatible user-identity trust provider.</p>
     pub fn set_oidc_options(
         mut self,
-        input: std::option::Option<crate::types::OidcOptions>,
+        input: ::std::option::Option<crate::types::OidcOptions>,
     ) -> Self {
         self.oidc_options = input;
         self
     }
     /// <p>The options for device-identity trust provider.</p>
     pub fn device_options(mut self, input: crate::types::DeviceOptions) -> Self {
-        self.device_options = Some(input);
+        self.device_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The options for device-identity trust provider.</p>
     pub fn set_device_options(
         mut self,
-        input: std::option::Option<crate::types::DeviceOptions>,
+        input: ::std::option::Option<crate::types::DeviceOptions>,
     ) -> Self {
         self.device_options = input;
         self
     }
     /// <p>The identifier to be used when working with policy rules.</p>
-    pub fn policy_reference_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.policy_reference_name = Some(input.into());
+    pub fn policy_reference_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.policy_reference_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier to be used when working with policy rules.</p>
     pub fn set_policy_reference_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.policy_reference_name = input;
         self
     }
     /// <p>The creation time.</p>
-    pub fn creation_time(mut self, input: impl Into<std::string::String>) -> Self {
-        self.creation_time = Some(input.into());
+    pub fn creation_time(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.creation_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The creation time.</p>
-    pub fn set_creation_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_creation_time(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.creation_time = input;
         self
     }
     /// <p>The last updated time.</p>
-    pub fn last_updated_time(mut self, input: impl Into<std::string::String>) -> Self {
-        self.last_updated_time = Some(input.into());
+    pub fn last_updated_time(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.last_updated_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The last updated time.</p>
     pub fn set_last_updated_time(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.last_updated_time = input;
         self
@@ -251,13 +265,13 @@ impl VerifiedAccessTrustProviderBuilder {
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
-        self.tags = Some(v);
+        self.tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>The tags.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tags = input;
         self

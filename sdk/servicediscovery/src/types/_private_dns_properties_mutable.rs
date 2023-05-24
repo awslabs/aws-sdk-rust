@@ -2,15 +2,15 @@
 
 /// <p>DNS properties for the private DNS namespace.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PrivateDnsPropertiesMutable {
     /// <p>Fields for the Start of Authority (SOA) record for the hosted zone for the private DNS namespace.</p>
     #[doc(hidden)]
-    pub soa: std::option::Option<crate::types::Soa>,
+    pub soa: ::std::option::Option<crate::types::Soa>,
 }
 impl PrivateDnsPropertiesMutable {
     /// <p>Fields for the Start of Authority (SOA) record for the hosted zone for the private DNS namespace.</p>
-    pub fn soa(&self) -> std::option::Option<&crate::types::Soa> {
+    pub fn soa(&self) -> ::std::option::Option<&crate::types::Soa> {
         self.soa.as_ref()
     }
 }
@@ -23,18 +23,20 @@ impl PrivateDnsPropertiesMutable {
 
 /// A builder for [`PrivateDnsPropertiesMutable`](crate::types::PrivateDnsPropertiesMutable).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PrivateDnsPropertiesMutableBuilder {
-    pub(crate) soa: std::option::Option<crate::types::Soa>,
+    pub(crate) soa: ::std::option::Option<crate::types::Soa>,
 }
 impl PrivateDnsPropertiesMutableBuilder {
     /// <p>Fields for the Start of Authority (SOA) record for the hosted zone for the private DNS namespace.</p>
     pub fn soa(mut self, input: crate::types::Soa) -> Self {
-        self.soa = Some(input);
+        self.soa = ::std::option::Option::Some(input);
         self
     }
     /// <p>Fields for the Start of Authority (SOA) record for the hosted zone for the private DNS namespace.</p>
-    pub fn set_soa(mut self, input: std::option::Option<crate::types::Soa>) -> Self {
+    pub fn set_soa(mut self, input: ::std::option::Option<crate::types::Soa>) -> Self {
         self.soa = input;
         self
     }

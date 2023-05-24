@@ -2,20 +2,20 @@
 
 /// <p>Start import response.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartImportOutput {
     /// <p>Start import response import task.</p>
     #[doc(hidden)]
-    pub import_task: std::option::Option<crate::types::ImportTask>,
+    pub import_task: ::std::option::Option<crate::types::ImportTask>,
     _request_id: Option<String>,
 }
 impl StartImportOutput {
     /// <p>Start import response import task.</p>
-    pub fn import_task(&self) -> std::option::Option<&crate::types::ImportTask> {
+    pub fn import_task(&self) -> ::std::option::Option<&crate::types::ImportTask> {
         self.import_task.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for StartImportOutput {
+impl ::aws_http::request_id::RequestId for StartImportOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,24 @@ impl StartImportOutput {
 
 /// A builder for [`StartImportOutput`](crate::operation::start_import::StartImportOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StartImportOutputBuilder {
-    pub(crate) import_task: std::option::Option<crate::types::ImportTask>,
+    pub(crate) import_task: ::std::option::Option<crate::types::ImportTask>,
     _request_id: Option<String>,
 }
 impl StartImportOutputBuilder {
     /// <p>Start import response import task.</p>
     pub fn import_task(mut self, input: crate::types::ImportTask) -> Self {
-        self.import_task = Some(input);
+        self.import_task = ::std::option::Option::Some(input);
         self
     }
     /// <p>Start import response import task.</p>
-    pub fn set_import_task(mut self, input: std::option::Option<crate::types::ImportTask>) -> Self {
+    pub fn set_import_task(
+        mut self,
+        input: ::std::option::Option<crate::types::ImportTask>,
+    ) -> Self {
         self.import_task = input;
         self
     }

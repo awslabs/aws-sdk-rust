@@ -2,32 +2,32 @@
 
 /// <p>Summary information about a stream session.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StreamSessionSummary {
     /// <p>Unique identifier for a live or previously live stream in the specified channel.</p>
     #[doc(hidden)]
-    pub stream_id: std::option::Option<std::string::String>,
+    pub stream_id: ::std::option::Option<::std::string::String>,
     /// <p>Time when the channel went live. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
     #[doc(hidden)]
-    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Time when the channel went offline. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>. For live streams, this is <code>NULL</code>.</p>
     #[doc(hidden)]
-    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>If <code>true</code>, this stream encountered a quota breach or failure.</p>
     #[doc(hidden)]
     pub has_error_event: bool,
 }
 impl StreamSessionSummary {
     /// <p>Unique identifier for a live or previously live stream in the specified channel.</p>
-    pub fn stream_id(&self) -> std::option::Option<&str> {
+    pub fn stream_id(&self) -> ::std::option::Option<&str> {
         self.stream_id.as_deref()
     }
     /// <p>Time when the channel went live. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>Time when the channel went offline. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>. For live streams, this is <code>NULL</code>.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>If <code>true</code>, this stream encountered a quota breach or failure.</p>
@@ -44,54 +44,59 @@ impl StreamSessionSummary {
 
 /// A builder for [`StreamSessionSummary`](crate::types::StreamSessionSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StreamSessionSummaryBuilder {
-    pub(crate) stream_id: std::option::Option<std::string::String>,
-    pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) has_error_event: std::option::Option<bool>,
+    pub(crate) stream_id: ::std::option::Option<::std::string::String>,
+    pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) has_error_event: ::std::option::Option<bool>,
 }
 impl StreamSessionSummaryBuilder {
     /// <p>Unique identifier for a live or previously live stream in the specified channel.</p>
-    pub fn stream_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.stream_id = Some(input.into());
+    pub fn stream_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.stream_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Unique identifier for a live or previously live stream in the specified channel.</p>
-    pub fn set_stream_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_stream_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stream_id = input;
         self
     }
     /// <p>Time when the channel went live. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
-    pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.start_time = Some(input);
+    pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.start_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>Time when the channel went live. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>.</p>
     pub fn set_start_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.start_time = input;
         self
     }
     /// <p>Time when the channel went offline. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>. For live streams, this is <code>NULL</code>.</p>
-    pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.end_time = Some(input);
+    pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.end_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>Time when the channel went offline. This is an ISO 8601 timestamp; <i>note that this is returned as a string</i>. For live streams, this is <code>NULL</code>.</p>
-    pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_end_time(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
         self.end_time = input;
         self
     }
     /// <p>If <code>true</code>, this stream encountered a quota breach or failure.</p>
     pub fn has_error_event(mut self, input: bool) -> Self {
-        self.has_error_event = Some(input);
+        self.has_error_event = ::std::option::Option::Some(input);
         self
     }
     /// <p>If <code>true</code>, this stream encountered a quota breach or failure.</p>
-    pub fn set_has_error_event(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_has_error_event(mut self, input: ::std::option::Option<bool>) -> Self {
         self.has_error_event = input;
         self
     }

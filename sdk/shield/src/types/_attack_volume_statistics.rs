@@ -2,7 +2,7 @@
 
 /// <p>Statistics objects for the various data types in <code>AttackVolume</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AttackVolumeStatistics {
     /// <p>The maximum attack volume observed for the given unit.</p>
     #[doc(hidden)]
@@ -23,18 +23,20 @@ impl AttackVolumeStatistics {
 
 /// A builder for [`AttackVolumeStatistics`](crate::types::AttackVolumeStatistics).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AttackVolumeStatisticsBuilder {
-    pub(crate) max: std::option::Option<f64>,
+    pub(crate) max: ::std::option::Option<f64>,
 }
 impl AttackVolumeStatisticsBuilder {
     /// <p>The maximum attack volume observed for the given unit.</p>
     pub fn max(mut self, input: f64) -> Self {
-        self.max = Some(input);
+        self.max = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum attack volume observed for the given unit.</p>
-    pub fn set_max(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_max(mut self, input: ::std::option::Option<f64>) -> Self {
         self.max = input;
         self
     }

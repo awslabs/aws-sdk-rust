@@ -2,22 +2,22 @@
 
 /// A request for information about the usage of an identity pool.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeIdentityUsageInput {
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     #[doc(hidden)]
-    pub identity_pool_id: std::option::Option<std::string::String>,
+    pub identity_pool_id: ::std::option::Option<::std::string::String>,
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     #[doc(hidden)]
-    pub identity_id: std::option::Option<std::string::String>,
+    pub identity_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeIdentityUsageInput {
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
+    pub fn identity_pool_id(&self) -> ::std::option::Option<&str> {
         self.identity_pool_id.as_deref()
     }
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    pub fn identity_id(&self) -> std::option::Option<&str> {
+    pub fn identity_id(&self) -> ::std::option::Option<&str> {
         self.identity_id.as_deref()
     }
 }
@@ -32,40 +32,48 @@ impl DescribeIdentityUsageInput {
 
 /// A builder for [`DescribeIdentityUsageInput`](crate::operation::describe_identity_usage::DescribeIdentityUsageInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeIdentityUsageInputBuilder {
-    pub(crate) identity_pool_id: std::option::Option<std::string::String>,
-    pub(crate) identity_id: std::option::Option<std::string::String>,
+    pub(crate) identity_pool_id: ::std::option::Option<::std::string::String>,
+    pub(crate) identity_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeIdentityUsageInputBuilder {
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    pub fn identity_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.identity_pool_id = Some(input.into());
+    pub fn identity_pool_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.identity_pool_id = ::std::option::Option::Some(input.into());
         self
     }
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    pub fn set_identity_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_identity_pool_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.identity_pool_id = input;
         self
     }
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    pub fn identity_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.identity_id = Some(input.into());
+    pub fn identity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.identity_id = ::std::option::Option::Some(input.into());
         self
     }
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_identity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identity_id = input;
         self
     }
     /// Consumes the builder and constructs a [`DescribeIdentityUsageInput`](crate::operation::describe_identity_usage::DescribeIdentityUsageInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::describe_identity_usage::DescribeIdentityUsageInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::describe_identity_usage::DescribeIdentityUsageInput {
                 identity_pool_id: self.identity_pool_id,
                 identity_id: self.identity_id,

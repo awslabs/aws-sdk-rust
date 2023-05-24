@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteDedicatedIpPool`](crate::operation::delete_dedicated_ip_pool::builders::DeleteDedicatedIpPoolFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`pool_name(impl Into<String>)`](crate::operation::delete_dedicated_ip_pool::builders::DeleteDedicatedIpPoolFluentBuilder::pool_name) / [`set_pool_name(Option<String>)`](crate::operation::delete_dedicated_ip_pool::builders::DeleteDedicatedIpPoolFluentBuilder::set_pool_name): <p>The name of the dedicated IP pool that you want to delete.</p>
+    ///   - [`pool_name(impl ::std::convert::Into<String>)`](crate::operation::delete_dedicated_ip_pool::builders::DeleteDedicatedIpPoolFluentBuilder::pool_name) / [`set_pool_name(Option<String>)`](crate::operation::delete_dedicated_ip_pool::builders::DeleteDedicatedIpPoolFluentBuilder::set_pool_name): <p>The name of the dedicated IP pool that you want to delete.</p>
     /// - On success, responds with [`DeleteDedicatedIpPoolOutput`](crate::operation::delete_dedicated_ip_pool::DeleteDedicatedIpPoolOutput)
     /// - On failure, responds with [`SdkError<DeleteDedicatedIpPoolError>`](crate::operation::delete_dedicated_ip_pool::DeleteDedicatedIpPoolError)
     pub fn delete_dedicated_ip_pool(

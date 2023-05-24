@@ -9,56 +9,59 @@ pub use crate::operation::describe_stream::_describe_stream_input::DescribeStrea
 /// <p>You can call <code>DescribeStream</code> at a maximum rate of 10 times per second.</p>
 /// </note>
 /// <p>Each shard in the stream has a <code>SequenceNumberRange</code> associated with it. If the <code>SequenceNumberRange</code> has a <code>StartingSequenceNumber</code> but no <code>EndingSequenceNumber</code>, then the shard is still open (able to receive more stream records). If both <code>StartingSequenceNumber</code> and <code>EndingSequenceNumber</code> are present, then that shard is closed and can no longer receive more data.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeStreamFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::describe_stream::builders::DescribeStreamInputBuilder,
 }
 impl DescribeStreamFluentBuilder {
     /// Creates a new `DescribeStream`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::describe_stream::DescribeStream,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::describe_stream::DescribeStreamError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_stream::DescribeStreamError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::describe_stream::DescribeStreamOutput,
-        aws_smithy_http::result::SdkError<crate::operation::describe_stream::DescribeStreamError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_stream::DescribeStreamError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -71,19 +74,19 @@ impl DescribeStreamFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::describe_stream::DescribeStreamOutput,
-        aws_smithy_http::result::SdkError<crate::operation::describe_stream::DescribeStreamError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_stream::DescribeStreamError>,
     > {
         self.send_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) for the stream.</p>
-    pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stream_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the stream.</p>
-    pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stream_arn(input);
         self
     }
@@ -93,19 +96,22 @@ impl DescribeStreamFluentBuilder {
         self
     }
     /// <p>The maximum number of shard objects to return. The upper limit is 100.</p>
-    pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_limit(input);
         self
     }
     /// <p>The shard ID of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedShardId</code> in the previous operation. </p>
-    pub fn exclusive_start_shard_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn exclusive_start_shard_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.exclusive_start_shard_id(input.into());
         self
     }
     /// <p>The shard ID of the first item that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedShardId</code> in the previous operation. </p>
     pub fn set_exclusive_start_shard_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_exclusive_start_shard_id(input);
         self

@@ -2,11 +2,11 @@
 
 /// <p> The properties that are applied when Salesforce is being used as a source. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SalesforceSourceProperties {
     /// <p> The object specified in the Salesforce flow source. </p>
     #[doc(hidden)]
-    pub object: std::option::Option<std::string::String>,
+    pub object: ::std::option::Option<::std::string::String>,
     /// <p> The flag that enables dynamic fetching of new (recently added) fields in the Salesforce objects while running a flow. </p>
     #[doc(hidden)]
     pub enable_dynamic_field_update: bool,
@@ -38,11 +38,11 @@ pub struct SalesforceSourceProperties {
     /// </dd>
     /// </dl>
     #[doc(hidden)]
-    pub data_transfer_api: std::option::Option<crate::types::SalesforceDataTransferApi>,
+    pub data_transfer_api: ::std::option::Option<crate::types::SalesforceDataTransferApi>,
 }
 impl SalesforceSourceProperties {
     /// <p> The object specified in the Salesforce flow source. </p>
-    pub fn object(&self) -> std::option::Option<&str> {
+    pub fn object(&self) -> ::std::option::Option<&str> {
         self.object.as_deref()
     }
     /// <p> The flag that enables dynamic fetching of new (recently added) fields in the Salesforce objects while running a flow. </p>
@@ -79,7 +79,7 @@ impl SalesforceSourceProperties {
     /// </dl>
     pub fn data_transfer_api(
         &self,
-    ) -> std::option::Option<&crate::types::SalesforceDataTransferApi> {
+    ) -> ::std::option::Option<&crate::types::SalesforceDataTransferApi> {
         self.data_transfer_api.as_ref()
     }
 }
@@ -92,41 +92,43 @@ impl SalesforceSourceProperties {
 
 /// A builder for [`SalesforceSourceProperties`](crate::types::SalesforceSourceProperties).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SalesforceSourcePropertiesBuilder {
-    pub(crate) object: std::option::Option<std::string::String>,
-    pub(crate) enable_dynamic_field_update: std::option::Option<bool>,
-    pub(crate) include_deleted_records: std::option::Option<bool>,
-    pub(crate) data_transfer_api: std::option::Option<crate::types::SalesforceDataTransferApi>,
+    pub(crate) object: ::std::option::Option<::std::string::String>,
+    pub(crate) enable_dynamic_field_update: ::std::option::Option<bool>,
+    pub(crate) include_deleted_records: ::std::option::Option<bool>,
+    pub(crate) data_transfer_api: ::std::option::Option<crate::types::SalesforceDataTransferApi>,
 }
 impl SalesforceSourcePropertiesBuilder {
     /// <p> The object specified in the Salesforce flow source. </p>
-    pub fn object(mut self, input: impl Into<std::string::String>) -> Self {
-        self.object = Some(input.into());
+    pub fn object(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.object = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The object specified in the Salesforce flow source. </p>
-    pub fn set_object(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_object(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.object = input;
         self
     }
     /// <p> The flag that enables dynamic fetching of new (recently added) fields in the Salesforce objects while running a flow. </p>
     pub fn enable_dynamic_field_update(mut self, input: bool) -> Self {
-        self.enable_dynamic_field_update = Some(input);
+        self.enable_dynamic_field_update = ::std::option::Option::Some(input);
         self
     }
     /// <p> The flag that enables dynamic fetching of new (recently added) fields in the Salesforce objects while running a flow. </p>
-    pub fn set_enable_dynamic_field_update(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enable_dynamic_field_update(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_dynamic_field_update = input;
         self
     }
     /// <p> Indicates whether Amazon AppFlow includes deleted files in the flow run. </p>
     pub fn include_deleted_records(mut self, input: bool) -> Self {
-        self.include_deleted_records = Some(input);
+        self.include_deleted_records = ::std::option::Option::Some(input);
         self
     }
     /// <p> Indicates whether Amazon AppFlow includes deleted files in the flow run. </p>
-    pub fn set_include_deleted_records(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_include_deleted_records(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_deleted_records = input;
         self
     }
@@ -155,7 +157,7 @@ impl SalesforceSourcePropertiesBuilder {
     /// </dd>
     /// </dl>
     pub fn data_transfer_api(mut self, input: crate::types::SalesforceDataTransferApi) -> Self {
-        self.data_transfer_api = Some(input);
+        self.data_transfer_api = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies which Salesforce API is used by Amazon AppFlow when your flow transfers data from Salesforce.</p>
@@ -184,7 +186,7 @@ impl SalesforceSourcePropertiesBuilder {
     /// </dl>
     pub fn set_data_transfer_api(
         mut self,
-        input: std::option::Option<crate::types::SalesforceDataTransferApi>,
+        input: ::std::option::Option<crate::types::SalesforceDataTransferApi>,
     ) -> Self {
         self.data_transfer_api = input;
         self

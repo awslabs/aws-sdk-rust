@@ -2,11 +2,11 @@
 
 /// <p>Information about the EKS cluster that has a coverage status.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CoverageEksClusterDetails {
     /// <p>Name of the EKS cluster.</p>
     #[doc(hidden)]
-    pub cluster_name: std::option::Option<std::string::String>,
+    pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>Represents the nodes within the EKS cluster that have a <code>HEALTHY</code> coverage status.</p>
     #[doc(hidden)]
     pub covered_nodes: i64,
@@ -15,11 +15,11 @@ pub struct CoverageEksClusterDetails {
     pub compatible_nodes: i64,
     /// <p>Information about the installed EKS add-on.</p>
     #[doc(hidden)]
-    pub addon_details: std::option::Option<crate::types::AddonDetails>,
+    pub addon_details: ::std::option::Option<crate::types::AddonDetails>,
 }
 impl CoverageEksClusterDetails {
     /// <p>Name of the EKS cluster.</p>
-    pub fn cluster_name(&self) -> std::option::Option<&str> {
+    pub fn cluster_name(&self) -> ::std::option::Option<&str> {
         self.cluster_name.as_deref()
     }
     /// <p>Represents the nodes within the EKS cluster that have a <code>HEALTHY</code> coverage status.</p>
@@ -31,7 +31,7 @@ impl CoverageEksClusterDetails {
         self.compatible_nodes
     }
     /// <p>Information about the installed EKS add-on.</p>
-    pub fn addon_details(&self) -> std::option::Option<&crate::types::AddonDetails> {
+    pub fn addon_details(&self) -> ::std::option::Option<&crate::types::AddonDetails> {
         self.addon_details.as_ref()
     }
 }
@@ -44,53 +44,55 @@ impl CoverageEksClusterDetails {
 
 /// A builder for [`CoverageEksClusterDetails`](crate::types::CoverageEksClusterDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CoverageEksClusterDetailsBuilder {
-    pub(crate) cluster_name: std::option::Option<std::string::String>,
-    pub(crate) covered_nodes: std::option::Option<i64>,
-    pub(crate) compatible_nodes: std::option::Option<i64>,
-    pub(crate) addon_details: std::option::Option<crate::types::AddonDetails>,
+    pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
+    pub(crate) covered_nodes: ::std::option::Option<i64>,
+    pub(crate) compatible_nodes: ::std::option::Option<i64>,
+    pub(crate) addon_details: ::std::option::Option<crate::types::AddonDetails>,
 }
 impl CoverageEksClusterDetailsBuilder {
     /// <p>Name of the EKS cluster.</p>
-    pub fn cluster_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cluster_name = Some(input.into());
+    pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cluster_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of the EKS cluster.</p>
-    pub fn set_cluster_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_name = input;
         self
     }
     /// <p>Represents the nodes within the EKS cluster that have a <code>HEALTHY</code> coverage status.</p>
     pub fn covered_nodes(mut self, input: i64) -> Self {
-        self.covered_nodes = Some(input);
+        self.covered_nodes = ::std::option::Option::Some(input);
         self
     }
     /// <p>Represents the nodes within the EKS cluster that have a <code>HEALTHY</code> coverage status.</p>
-    pub fn set_covered_nodes(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_covered_nodes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.covered_nodes = input;
         self
     }
     /// <p>Represents all the nodes within the EKS cluster in your account.</p>
     pub fn compatible_nodes(mut self, input: i64) -> Self {
-        self.compatible_nodes = Some(input);
+        self.compatible_nodes = ::std::option::Option::Some(input);
         self
     }
     /// <p>Represents all the nodes within the EKS cluster in your account.</p>
-    pub fn set_compatible_nodes(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_compatible_nodes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.compatible_nodes = input;
         self
     }
     /// <p>Information about the installed EKS add-on.</p>
     pub fn addon_details(mut self, input: crate::types::AddonDetails) -> Self {
-        self.addon_details = Some(input);
+        self.addon_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the installed EKS add-on.</p>
     pub fn set_addon_details(
         mut self,
-        input: std::option::Option<crate::types::AddonDetails>,
+        input: ::std::option::Option<crate::types::AddonDetails>,
     ) -> Self {
         self.addon_details = input;
         self

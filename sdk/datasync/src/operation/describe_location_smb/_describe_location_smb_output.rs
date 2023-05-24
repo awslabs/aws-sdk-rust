@@ -2,62 +2,62 @@
 
 /// <p>DescribeLocationSmbResponse</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeLocationSmbOutput {
     /// <p>The Amazon Resource Name (ARN) of the SMB location that was described.</p>
     #[doc(hidden)]
-    pub location_arn: std::option::Option<std::string::String>,
+    pub location_arn: ::std::option::Option<::std::string::String>,
     /// <p>The URL of the source SMB location that was described.</p>
     #[doc(hidden)]
-    pub location_uri: std::option::Option<std::string::String>,
+    pub location_uri: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the source SMB file system location that is created.</p>
     #[doc(hidden)]
-    pub agent_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub agent_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The user who can mount the share, has the permissions to access files and folders in the SMB share.</p>
     #[doc(hidden)]
-    pub user: std::option::Option<std::string::String>,
+    pub user: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Windows domain that the SMB server belongs to.</p>
     #[doc(hidden)]
-    pub domain: std::option::Option<std::string::String>,
+    pub domain: ::std::option::Option<::std::string::String>,
     /// <p>The mount options that are available for DataSync to use to access an SMB location.</p>
     #[doc(hidden)]
-    pub mount_options: std::option::Option<crate::types::SmbMountOptions>,
+    pub mount_options: ::std::option::Option<crate::types::SmbMountOptions>,
     /// <p>The time that the SMB location was created.</p>
     #[doc(hidden)]
-    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
 impl DescribeLocationSmbOutput {
     /// <p>The Amazon Resource Name (ARN) of the SMB location that was described.</p>
-    pub fn location_arn(&self) -> std::option::Option<&str> {
+    pub fn location_arn(&self) -> ::std::option::Option<&str> {
         self.location_arn.as_deref()
     }
     /// <p>The URL of the source SMB location that was described.</p>
-    pub fn location_uri(&self) -> std::option::Option<&str> {
+    pub fn location_uri(&self) -> ::std::option::Option<&str> {
         self.location_uri.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the source SMB file system location that is created.</p>
-    pub fn agent_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn agent_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.agent_arns.as_deref()
     }
     /// <p>The user who can mount the share, has the permissions to access files and folders in the SMB share.</p>
-    pub fn user(&self) -> std::option::Option<&str> {
+    pub fn user(&self) -> ::std::option::Option<&str> {
         self.user.as_deref()
     }
     /// <p>The name of the Windows domain that the SMB server belongs to.</p>
-    pub fn domain(&self) -> std::option::Option<&str> {
+    pub fn domain(&self) -> ::std::option::Option<&str> {
         self.domain.as_deref()
     }
     /// <p>The mount options that are available for DataSync to use to access an SMB location.</p>
-    pub fn mount_options(&self) -> std::option::Option<&crate::types::SmbMountOptions> {
+    pub fn mount_options(&self) -> ::std::option::Option<&crate::types::SmbMountOptions> {
         self.mount_options.as_ref()
     }
     /// <p>The time that the SMB location was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeLocationSmbOutput {
+impl ::aws_http::request_id::RequestId for DescribeLocationSmbOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -73,35 +73,37 @@ impl DescribeLocationSmbOutput {
 
 /// A builder for [`DescribeLocationSmbOutput`](crate::operation::describe_location_smb::DescribeLocationSmbOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeLocationSmbOutputBuilder {
-    pub(crate) location_arn: std::option::Option<std::string::String>,
-    pub(crate) location_uri: std::option::Option<std::string::String>,
-    pub(crate) agent_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) user: std::option::Option<std::string::String>,
-    pub(crate) domain: std::option::Option<std::string::String>,
-    pub(crate) mount_options: std::option::Option<crate::types::SmbMountOptions>,
-    pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) location_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) location_uri: ::std::option::Option<::std::string::String>,
+    pub(crate) agent_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) user: ::std::option::Option<::std::string::String>,
+    pub(crate) domain: ::std::option::Option<::std::string::String>,
+    pub(crate) mount_options: ::std::option::Option<crate::types::SmbMountOptions>,
+    pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
 impl DescribeLocationSmbOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the SMB location that was described.</p>
-    pub fn location_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.location_arn = Some(input.into());
+    pub fn location_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.location_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the SMB location that was described.</p>
-    pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_location_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location_arn = input;
         self
     }
     /// <p>The URL of the source SMB location that was described.</p>
-    pub fn location_uri(mut self, input: impl Into<std::string::String>) -> Self {
-        self.location_uri = Some(input.into());
+    pub fn location_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.location_uri = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL of the source SMB location that was described.</p>
-    pub fn set_location_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_location_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location_uri = input;
         self
     }
@@ -110,62 +112,62 @@ impl DescribeLocationSmbOutputBuilder {
     /// To override the contents of this collection use [`set_agent_arns`](Self::set_agent_arns).
     ///
     /// <p>The Amazon Resource Name (ARN) of the source SMB file system location that is created.</p>
-    pub fn agent_arns(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn agent_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.agent_arns.unwrap_or_default();
         v.push(input.into());
-        self.agent_arns = Some(v);
+        self.agent_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the source SMB file system location that is created.</p>
     pub fn set_agent_arns(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.agent_arns = input;
         self
     }
     /// <p>The user who can mount the share, has the permissions to access files and folders in the SMB share.</p>
-    pub fn user(mut self, input: impl Into<std::string::String>) -> Self {
-        self.user = Some(input.into());
+    pub fn user(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.user = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user who can mount the share, has the permissions to access files and folders in the SMB share.</p>
-    pub fn set_user(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_user(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user = input;
         self
     }
     /// <p>The name of the Windows domain that the SMB server belongs to.</p>
-    pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
-        self.domain = Some(input.into());
+    pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.domain = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Windows domain that the SMB server belongs to.</p>
-    pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain = input;
         self
     }
     /// <p>The mount options that are available for DataSync to use to access an SMB location.</p>
     pub fn mount_options(mut self, input: crate::types::SmbMountOptions) -> Self {
-        self.mount_options = Some(input);
+        self.mount_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The mount options that are available for DataSync to use to access an SMB location.</p>
     pub fn set_mount_options(
         mut self,
-        input: std::option::Option<crate::types::SmbMountOptions>,
+        input: ::std::option::Option<crate::types::SmbMountOptions>,
     ) -> Self {
         self.mount_options = input;
         self
     }
     /// <p>The time that the SMB location was created.</p>
-    pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_time = Some(input);
+    pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time that the SMB location was created.</p>
     pub fn set_creation_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_time = input;
         self

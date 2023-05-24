@@ -2,22 +2,22 @@
 
 /// <p>Information about comments added to a document review request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DocumentReviewCommentSource {
     /// <p>The type of information added to a review request. Currently, only the value <code>Comment</code> is supported.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::DocumentReviewCommentType>,
+    pub r#type: ::std::option::Option<crate::types::DocumentReviewCommentType>,
     /// <p>The content of a comment entered by a user who requests a review of a new document version, or who reviews the new version.</p>
     #[doc(hidden)]
-    pub content: std::option::Option<std::string::String>,
+    pub content: ::std::option::Option<::std::string::String>,
 }
 impl DocumentReviewCommentSource {
     /// <p>The type of information added to a review request. Currently, only the value <code>Comment</code> is supported.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::DocumentReviewCommentType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::DocumentReviewCommentType> {
         self.r#type.as_ref()
     }
     /// <p>The content of a comment entered by a user who requests a review of a new document version, or who reviews the new version.</p>
-    pub fn content(&self) -> std::option::Option<&str> {
+    pub fn content(&self) -> ::std::option::Option<&str> {
         self.content.as_deref()
     }
 }
@@ -30,32 +30,34 @@ impl DocumentReviewCommentSource {
 
 /// A builder for [`DocumentReviewCommentSource`](crate::types::DocumentReviewCommentSource).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DocumentReviewCommentSourceBuilder {
-    pub(crate) r#type: std::option::Option<crate::types::DocumentReviewCommentType>,
-    pub(crate) content: std::option::Option<std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::DocumentReviewCommentType>,
+    pub(crate) content: ::std::option::Option<::std::string::String>,
 }
 impl DocumentReviewCommentSourceBuilder {
     /// <p>The type of information added to a review request. Currently, only the value <code>Comment</code> is supported.</p>
     pub fn r#type(mut self, input: crate::types::DocumentReviewCommentType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of information added to a review request. Currently, only the value <code>Comment</code> is supported.</p>
     pub fn set_type(
         mut self,
-        input: std::option::Option<crate::types::DocumentReviewCommentType>,
+        input: ::std::option::Option<crate::types::DocumentReviewCommentType>,
     ) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The content of a comment entered by a user who requests a review of a new document version, or who reviews the new version.</p>
-    pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
-        self.content = Some(input.into());
+    pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.content = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The content of a comment entered by a user who requests a review of a new document version, or who reviews the new version.</p>
-    pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content = input;
         self
     }

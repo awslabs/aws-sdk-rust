@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`PutRecord`](crate::operation::put_record::builders::PutRecordFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`delivery_stream_name(impl Into<String>)`](crate::operation::put_record::builders::PutRecordFluentBuilder::delivery_stream_name) / [`set_delivery_stream_name(Option<String>)`](crate::operation::put_record::builders::PutRecordFluentBuilder::set_delivery_stream_name): <p>The name of the delivery stream.</p>
+    ///   - [`delivery_stream_name(impl ::std::convert::Into<String>)`](crate::operation::put_record::builders::PutRecordFluentBuilder::delivery_stream_name) / [`set_delivery_stream_name(Option<String>)`](crate::operation::put_record::builders::PutRecordFluentBuilder::set_delivery_stream_name): <p>The name of the delivery stream.</p>
     ///   - [`record(Record)`](crate::operation::put_record::builders::PutRecordFluentBuilder::record) / [`set_record(Option<Record>)`](crate::operation::put_record::builders::PutRecordFluentBuilder::set_record): <p>The record.</p>
     /// - On success, responds with [`PutRecordOutput`](crate::operation::put_record::PutRecordOutput) with field(s):
     ///   - [`record_id(Option<String>)`](crate::operation::put_record::PutRecordOutput::record_id): <p>The ID of the record.</p>

@@ -10,56 +10,59 @@ pub use crate::operation::create_link::_create_link_input::CreateLinkInputBuilde
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/OAM/latest/APIReference/API_CreateSink.html">CreateSink</a> and <a href="https://docs.aws.amazon.com/OAM/latest/APIReference/API_PutSinkPolicy.html">PutSinkPolicy</a>.</p>
 /// <p>Each monitoring account can be linked to as many as 100,000 source accounts.</p>
 /// <p>Each source account can be linked to as many as five monitoring accounts.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateLinkFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_link::builders::CreateLinkInputBuilder,
 }
 impl CreateLinkFluentBuilder {
     /// Creates a new `CreateLink`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_link::CreateLink,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_link::CreateLinkError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_link::CreateLinkError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_link::CreateLinkOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_link::CreateLinkError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_link::CreateLinkError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,9 +75,9 @@ impl CreateLinkFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_link::CreateLinkOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_link::CreateLinkError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_link::CreateLinkError>,
     > {
         self.send_middleware().await
     }
@@ -85,7 +88,10 @@ impl CreateLinkFluentBuilder {
     /// <li> <p> <code>$AccountEmail</code> is the globally unique email address of the account</p> </li>
     /// <li> <p> <code>$AccountEmailNoDomain</code> is the email address of the account without the domain name</p> </li>
     /// </ul>
-    pub fn label_template(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn label_template(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.label_template(input.into());
         self
     }
@@ -96,7 +102,10 @@ impl CreateLinkFluentBuilder {
     /// <li> <p> <code>$AccountEmail</code> is the globally unique email address of the account</p> </li>
     /// <li> <p> <code>$AccountEmailNoDomain</code> is the email address of the account without the domain name</p> </li>
     /// </ul>
-    pub fn set_label_template(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_label_template(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_label_template(input);
         self
     }
@@ -112,20 +121,26 @@ impl CreateLinkFluentBuilder {
     /// <p>An array of strings that define which types of data that the source account shares with the monitoring account.</p>
     pub fn set_resource_types(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ResourceType>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceType>>,
     ) -> Self {
         self.inner = self.inner.set_resource_types(input);
         self
     }
     /// <p>The ARN of the sink to use to create this link. You can use <a href="https://docs.aws.amazon.com/OAM/latest/APIReference/API_ListSinks.html">ListSinks</a> to find the ARNs of sinks.</p>
     /// <p>For more information about sinks, see <a href="https://docs.aws.amazon.com/OAM/latest/APIReference/API_CreateSink.html">CreateSink</a>.</p>
-    pub fn sink_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn sink_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.sink_identifier(input.into());
         self
     }
     /// <p>The ARN of the sink to use to create this link. You can use <a href="https://docs.aws.amazon.com/OAM/latest/APIReference/API_ListSinks.html">ListSinks</a> to find the ARNs of sinks.</p>
     /// <p>For more information about sinks, see <a href="https://docs.aws.amazon.com/OAM/latest/APIReference/API_CreateSink.html">CreateSink</a>.</p>
-    pub fn set_sink_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_sink_identifier(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_sink_identifier(input);
         self
     }
@@ -138,8 +153,8 @@ impl CreateLinkFluentBuilder {
     /// <p>For more information about using tags to control access, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling access to Amazon Web Services resources using tags</a>.</p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
@@ -149,8 +164,8 @@ impl CreateLinkFluentBuilder {
     /// <p>For more information about using tags to control access, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling access to Amazon Web Services resources using tags</a>.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_tags(input);

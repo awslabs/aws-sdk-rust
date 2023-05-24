@@ -2,22 +2,22 @@
 
 /// <p>A subset of information about the engine version for a specific application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EngineVersionsSummary {
     /// <p>The type of target platform for the application.</p>
     #[doc(hidden)]
-    pub engine_type: std::option::Option<std::string::String>,
+    pub engine_type: ::std::option::Option<::std::string::String>,
     /// <p>The version of the engine type used by the application.</p>
     #[doc(hidden)]
-    pub engine_version: std::option::Option<std::string::String>,
+    pub engine_version: ::std::option::Option<::std::string::String>,
 }
 impl EngineVersionsSummary {
     /// <p>The type of target platform for the application.</p>
-    pub fn engine_type(&self) -> std::option::Option<&str> {
+    pub fn engine_type(&self) -> ::std::option::Option<&str> {
         self.engine_type.as_deref()
     }
     /// <p>The version of the engine type used by the application.</p>
-    pub fn engine_version(&self) -> std::option::Option<&str> {
+    pub fn engine_version(&self) -> ::std::option::Option<&str> {
         self.engine_version.as_deref()
     }
 }
@@ -30,29 +30,37 @@ impl EngineVersionsSummary {
 
 /// A builder for [`EngineVersionsSummary`](crate::types::EngineVersionsSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EngineVersionsSummaryBuilder {
-    pub(crate) engine_type: std::option::Option<std::string::String>,
-    pub(crate) engine_version: std::option::Option<std::string::String>,
+    pub(crate) engine_type: ::std::option::Option<::std::string::String>,
+    pub(crate) engine_version: ::std::option::Option<::std::string::String>,
 }
 impl EngineVersionsSummaryBuilder {
     /// <p>The type of target platform for the application.</p>
-    pub fn engine_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.engine_type = Some(input.into());
+    pub fn engine_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.engine_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of target platform for the application.</p>
-    pub fn set_engine_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_engine_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine_type = input;
         self
     }
     /// <p>The version of the engine type used by the application.</p>
-    pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.engine_version = Some(input.into());
+    pub fn engine_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.engine_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the engine type used by the application.</p>
-    pub fn set_engine_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_engine_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.engine_version = input;
         self
     }

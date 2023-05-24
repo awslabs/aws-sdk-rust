@@ -2,29 +2,29 @@
 
 /// <p>Indicates the location of the landmark on the face.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Landmark {
     /// <p>Type of landmark.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::LandmarkType>,
+    pub r#type: ::std::option::Option<crate::types::LandmarkType>,
     /// <p>The x-coordinate of the landmark expressed as a ratio of the width of the image. The x-coordinate is measured from the left-side of the image. For example, if the image is 700 pixels wide and the x-coordinate of the landmark is at 350 pixels, this value is 0.5. </p>
     #[doc(hidden)]
-    pub x: std::option::Option<f32>,
+    pub x: ::std::option::Option<f32>,
     /// <p>The y-coordinate of the landmark expressed as a ratio of the height of the image. The y-coordinate is measured from the top of the image. For example, if the image height is 200 pixels and the y-coordinate of the landmark is at 50 pixels, this value is 0.25.</p>
     #[doc(hidden)]
-    pub y: std::option::Option<f32>,
+    pub y: ::std::option::Option<f32>,
 }
 impl Landmark {
     /// <p>Type of landmark.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::LandmarkType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::LandmarkType> {
         self.r#type.as_ref()
     }
     /// <p>The x-coordinate of the landmark expressed as a ratio of the width of the image. The x-coordinate is measured from the left-side of the image. For example, if the image is 700 pixels wide and the x-coordinate of the landmark is at 350 pixels, this value is 0.5. </p>
-    pub fn x(&self) -> std::option::Option<f32> {
+    pub fn x(&self) -> ::std::option::Option<f32> {
         self.x
     }
     /// <p>The y-coordinate of the landmark expressed as a ratio of the height of the image. The y-coordinate is measured from the top of the image. For example, if the image height is 200 pixels and the y-coordinate of the landmark is at 50 pixels, this value is 0.25.</p>
-    pub fn y(&self) -> std::option::Option<f32> {
+    pub fn y(&self) -> ::std::option::Option<f32> {
         self.y
     }
 }
@@ -37,40 +37,42 @@ impl Landmark {
 
 /// A builder for [`Landmark`](crate::types::Landmark).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LandmarkBuilder {
-    pub(crate) r#type: std::option::Option<crate::types::LandmarkType>,
-    pub(crate) x: std::option::Option<f32>,
-    pub(crate) y: std::option::Option<f32>,
+    pub(crate) r#type: ::std::option::Option<crate::types::LandmarkType>,
+    pub(crate) x: ::std::option::Option<f32>,
+    pub(crate) y: ::std::option::Option<f32>,
 }
 impl LandmarkBuilder {
     /// <p>Type of landmark.</p>
     pub fn r#type(mut self, input: crate::types::LandmarkType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Type of landmark.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::LandmarkType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::LandmarkType>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The x-coordinate of the landmark expressed as a ratio of the width of the image. The x-coordinate is measured from the left-side of the image. For example, if the image is 700 pixels wide and the x-coordinate of the landmark is at 350 pixels, this value is 0.5. </p>
     pub fn x(mut self, input: f32) -> Self {
-        self.x = Some(input);
+        self.x = ::std::option::Option::Some(input);
         self
     }
     /// <p>The x-coordinate of the landmark expressed as a ratio of the width of the image. The x-coordinate is measured from the left-side of the image. For example, if the image is 700 pixels wide and the x-coordinate of the landmark is at 350 pixels, this value is 0.5. </p>
-    pub fn set_x(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_x(mut self, input: ::std::option::Option<f32>) -> Self {
         self.x = input;
         self
     }
     /// <p>The y-coordinate of the landmark expressed as a ratio of the height of the image. The y-coordinate is measured from the top of the image. For example, if the image height is 200 pixels and the y-coordinate of the landmark is at 50 pixels, this value is 0.25.</p>
     pub fn y(mut self, input: f32) -> Self {
-        self.y = Some(input);
+        self.y = ::std::option::Option::Some(input);
         self
     }
     /// <p>The y-coordinate of the landmark expressed as a ratio of the height of the image. The y-coordinate is measured from the top of the image. For example, if the image height is 200 pixels and the y-coordinate of the landmark is at 50 pixels, this value is 0.25.</p>
-    pub fn set_y(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_y(mut self, input: ::std::option::Option<f32>) -> Self {
         self.y = input;
         self
     }

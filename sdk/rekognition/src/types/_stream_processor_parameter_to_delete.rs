@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum StreamProcessorParameterToDelete {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum StreamProcessorParameterToDelete {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for StreamProcessorParameterToDelete {
+impl ::std::convert::From<&str> for StreamProcessorParameterToDelete {
     fn from(s: &str) -> Self {
         match s {
             "ConnectedHomeMinConfidence" => {
@@ -67,11 +67,11 @@ impl std::convert::From<&str> for StreamProcessorParameterToDelete {
         }
     }
 }
-impl std::str::FromStr for StreamProcessorParameterToDelete {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for StreamProcessorParameterToDelete {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(StreamProcessorParameterToDelete::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(StreamProcessorParameterToDelete::from(s))
     }
 }
 impl StreamProcessorParameterToDelete {
@@ -90,7 +90,7 @@ impl StreamProcessorParameterToDelete {
         &["ConnectedHomeMinConfidence", "RegionsOfInterest"]
     }
 }
-impl AsRef<str> for StreamProcessorParameterToDelete {
+impl ::std::convert::AsRef<str> for StreamProcessorParameterToDelete {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -2,20 +2,20 @@
 
 /// <p>Represents the output of a <code>DeleteTable</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteTableOutput {
     /// <p>Represents the properties of a table.</p>
     #[doc(hidden)]
-    pub table_description: std::option::Option<crate::types::TableDescription>,
+    pub table_description: ::std::option::Option<crate::types::TableDescription>,
     _request_id: Option<String>,
 }
 impl DeleteTableOutput {
     /// <p>Represents the properties of a table.</p>
-    pub fn table_description(&self) -> std::option::Option<&crate::types::TableDescription> {
+    pub fn table_description(&self) -> ::std::option::Option<&crate::types::TableDescription> {
         self.table_description.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for DeleteTableOutput {
+impl ::aws_http::request_id::RequestId for DeleteTableOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,21 +29,23 @@ impl DeleteTableOutput {
 
 /// A builder for [`DeleteTableOutput`](crate::operation::delete_table::DeleteTableOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteTableOutputBuilder {
-    pub(crate) table_description: std::option::Option<crate::types::TableDescription>,
+    pub(crate) table_description: ::std::option::Option<crate::types::TableDescription>,
     _request_id: Option<String>,
 }
 impl DeleteTableOutputBuilder {
     /// <p>Represents the properties of a table.</p>
     pub fn table_description(mut self, input: crate::types::TableDescription) -> Self {
-        self.table_description = Some(input);
+        self.table_description = ::std::option::Option::Some(input);
         self
     }
     /// <p>Represents the properties of a table.</p>
     pub fn set_table_description(
         mut self,
-        input: std::option::Option<crate::types::TableDescription>,
+        input: ::std::option::Option<crate::types::TableDescription>,
     ) -> Self {
         self.table_description = input;
         self

@@ -2,34 +2,34 @@
 
 /// <p>ListFileShareOutput</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFileSharesOutput {
     /// <p>If the request includes <code>Marker</code>, the response returns that value in this field.</p>
     #[doc(hidden)]
-    pub marker: std::option::Option<std::string::String>,
+    pub marker: ::std::option::Option<::std::string::String>,
     /// <p>If a value is present, there are more file shares to return. In a subsequent request, use <code>NextMarker</code> as the value for <code>Marker</code> to retrieve the next set of file shares.</p>
     #[doc(hidden)]
-    pub next_marker: std::option::Option<std::string::String>,
+    pub next_marker: ::std::option::Option<::std::string::String>,
     /// <p>An array of information about the S3 File Gateway's file shares.</p>
     #[doc(hidden)]
-    pub file_share_info_list: std::option::Option<std::vec::Vec<crate::types::FileShareInfo>>,
+    pub file_share_info_list: ::std::option::Option<::std::vec::Vec<crate::types::FileShareInfo>>,
     _request_id: Option<String>,
 }
 impl ListFileSharesOutput {
     /// <p>If the request includes <code>Marker</code>, the response returns that value in this field.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
     /// <p>If a value is present, there are more file shares to return. In a subsequent request, use <code>NextMarker</code> as the value for <code>Marker</code> to retrieve the next set of file shares.</p>
-    pub fn next_marker(&self) -> std::option::Option<&str> {
+    pub fn next_marker(&self) -> ::std::option::Option<&str> {
         self.next_marker.as_deref()
     }
     /// <p>An array of information about the S3 File Gateway's file shares.</p>
-    pub fn file_share_info_list(&self) -> std::option::Option<&[crate::types::FileShareInfo]> {
+    pub fn file_share_info_list(&self) -> ::std::option::Option<&[crate::types::FileShareInfo]> {
         self.file_share_info_list.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListFileSharesOutput {
+impl ::aws_http::request_id::RequestId for ListFileSharesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -43,32 +43,34 @@ impl ListFileSharesOutput {
 
 /// A builder for [`ListFileSharesOutput`](crate::operation::list_file_shares::ListFileSharesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListFileSharesOutputBuilder {
-    pub(crate) marker: std::option::Option<std::string::String>,
-    pub(crate) next_marker: std::option::Option<std::string::String>,
+    pub(crate) marker: ::std::option::Option<::std::string::String>,
+    pub(crate) next_marker: ::std::option::Option<::std::string::String>,
     pub(crate) file_share_info_list:
-        std::option::Option<std::vec::Vec<crate::types::FileShareInfo>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::FileShareInfo>>,
     _request_id: Option<String>,
 }
 impl ListFileSharesOutputBuilder {
     /// <p>If the request includes <code>Marker</code>, the response returns that value in this field.</p>
-    pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-        self.marker = Some(input.into());
+    pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the request includes <code>Marker</code>, the response returns that value in this field.</p>
-    pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
     }
     /// <p>If a value is present, there are more file shares to return. In a subsequent request, use <code>NextMarker</code> as the value for <code>Marker</code> to retrieve the next set of file shares.</p>
-    pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_marker = Some(input.into());
+    pub fn next_marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If a value is present, there are more file shares to return. In a subsequent request, use <code>NextMarker</code> as the value for <code>Marker</code> to retrieve the next set of file shares.</p>
-    pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_marker = input;
         self
     }
@@ -80,13 +82,13 @@ impl ListFileSharesOutputBuilder {
     pub fn file_share_info_list(mut self, input: crate::types::FileShareInfo) -> Self {
         let mut v = self.file_share_info_list.unwrap_or_default();
         v.push(input);
-        self.file_share_info_list = Some(v);
+        self.file_share_info_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of information about the S3 File Gateway's file shares.</p>
     pub fn set_file_share_info_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::FileShareInfo>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::FileShareInfo>>,
     ) -> Self {
         self.file_share_info_list = input;
         self

@@ -2,21 +2,21 @@
 
 /// <p>When crawling an Amazon S3 data source after the first crawl is complete, specifies whether to crawl the entire dataset again or to crawl only folders that were added since the last crawler run. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/incremental-crawls.html">Incremental Crawls in Glue</a> in the developer guide.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecrawlPolicy {
     /// <p>Specifies whether to crawl the entire dataset again or to crawl only folders that were added since the last crawler run.</p>
     /// <p>A value of <code>CRAWL_EVERYTHING</code> specifies crawling the entire dataset again.</p>
     /// <p>A value of <code>CRAWL_NEW_FOLDERS_ONLY</code> specifies crawling only folders that were added since the last crawler run.</p>
     /// <p>A value of <code>CRAWL_EVENT_MODE</code> specifies crawling only the changes identified by Amazon S3 events.</p>
     #[doc(hidden)]
-    pub recrawl_behavior: std::option::Option<crate::types::RecrawlBehavior>,
+    pub recrawl_behavior: ::std::option::Option<crate::types::RecrawlBehavior>,
 }
 impl RecrawlPolicy {
     /// <p>Specifies whether to crawl the entire dataset again or to crawl only folders that were added since the last crawler run.</p>
     /// <p>A value of <code>CRAWL_EVERYTHING</code> specifies crawling the entire dataset again.</p>
     /// <p>A value of <code>CRAWL_NEW_FOLDERS_ONLY</code> specifies crawling only folders that were added since the last crawler run.</p>
     /// <p>A value of <code>CRAWL_EVENT_MODE</code> specifies crawling only the changes identified by Amazon S3 events.</p>
-    pub fn recrawl_behavior(&self) -> std::option::Option<&crate::types::RecrawlBehavior> {
+    pub fn recrawl_behavior(&self) -> ::std::option::Option<&crate::types::RecrawlBehavior> {
         self.recrawl_behavior.as_ref()
     }
 }
@@ -29,9 +29,11 @@ impl RecrawlPolicy {
 
 /// A builder for [`RecrawlPolicy`](crate::types::RecrawlPolicy).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RecrawlPolicyBuilder {
-    pub(crate) recrawl_behavior: std::option::Option<crate::types::RecrawlBehavior>,
+    pub(crate) recrawl_behavior: ::std::option::Option<crate::types::RecrawlBehavior>,
 }
 impl RecrawlPolicyBuilder {
     /// <p>Specifies whether to crawl the entire dataset again or to crawl only folders that were added since the last crawler run.</p>
@@ -39,7 +41,7 @@ impl RecrawlPolicyBuilder {
     /// <p>A value of <code>CRAWL_NEW_FOLDERS_ONLY</code> specifies crawling only folders that were added since the last crawler run.</p>
     /// <p>A value of <code>CRAWL_EVENT_MODE</code> specifies crawling only the changes identified by Amazon S3 events.</p>
     pub fn recrawl_behavior(mut self, input: crate::types::RecrawlBehavior) -> Self {
-        self.recrawl_behavior = Some(input);
+        self.recrawl_behavior = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether to crawl the entire dataset again or to crawl only folders that were added since the last crawler run.</p>
@@ -48,7 +50,7 @@ impl RecrawlPolicyBuilder {
     /// <p>A value of <code>CRAWL_EVENT_MODE</code> specifies crawling only the changes identified by Amazon S3 events.</p>
     pub fn set_recrawl_behavior(
         mut self,
-        input: std::option::Option<crate::types::RecrawlBehavior>,
+        input: ::std::option::Option<crate::types::RecrawlBehavior>,
     ) -> Self {
         self.recrawl_behavior = input;
         self

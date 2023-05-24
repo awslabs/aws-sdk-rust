@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteEventsByEventType`](crate::operation::delete_events_by_event_type::builders::DeleteEventsByEventTypeFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`event_type_name(impl Into<String>)`](crate::operation::delete_events_by_event_type::builders::DeleteEventsByEventTypeFluentBuilder::event_type_name) / [`set_event_type_name(Option<String>)`](crate::operation::delete_events_by_event_type::builders::DeleteEventsByEventTypeFluentBuilder::set_event_type_name): <p>The name of the event type.</p>
+    ///   - [`event_type_name(impl ::std::convert::Into<String>)`](crate::operation::delete_events_by_event_type::builders::DeleteEventsByEventTypeFluentBuilder::event_type_name) / [`set_event_type_name(Option<String>)`](crate::operation::delete_events_by_event_type::builders::DeleteEventsByEventTypeFluentBuilder::set_event_type_name): <p>The name of the event type.</p>
     /// - On success, responds with [`DeleteEventsByEventTypeOutput`](crate::operation::delete_events_by_event_type::DeleteEventsByEventTypeOutput) with field(s):
     ///   - [`event_type_name(Option<String>)`](crate::operation::delete_events_by_event_type::DeleteEventsByEventTypeOutput::event_type_name): <p>Name of event type for which to delete the events.</p>
     ///   - [`events_deletion_status(Option<String>)`](crate::operation::delete_events_by_event_type::DeleteEventsByEventTypeOutput::events_deletion_status): <p>The status of the delete request.</p>

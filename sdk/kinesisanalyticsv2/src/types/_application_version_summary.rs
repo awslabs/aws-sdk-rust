@@ -2,22 +2,22 @@
 
 /// <p>The summary of the application version.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApplicationVersionSummary {
     /// <p>The ID of the application version. Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you update the application.</p>
     #[doc(hidden)]
-    pub application_version_id: std::option::Option<i64>,
+    pub application_version_id: ::std::option::Option<i64>,
     /// <p>The status of the application.</p>
     #[doc(hidden)]
-    pub application_status: std::option::Option<crate::types::ApplicationStatus>,
+    pub application_status: ::std::option::Option<crate::types::ApplicationStatus>,
 }
 impl ApplicationVersionSummary {
     /// <p>The ID of the application version. Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you update the application.</p>
-    pub fn application_version_id(&self) -> std::option::Option<i64> {
+    pub fn application_version_id(&self) -> ::std::option::Option<i64> {
         self.application_version_id
     }
     /// <p>The status of the application.</p>
-    pub fn application_status(&self) -> std::option::Option<&crate::types::ApplicationStatus> {
+    pub fn application_status(&self) -> ::std::option::Option<&crate::types::ApplicationStatus> {
         self.application_status.as_ref()
     }
 }
@@ -30,31 +30,33 @@ impl ApplicationVersionSummary {
 
 /// A builder for [`ApplicationVersionSummary`](crate::types::ApplicationVersionSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ApplicationVersionSummaryBuilder {
-    pub(crate) application_version_id: std::option::Option<i64>,
-    pub(crate) application_status: std::option::Option<crate::types::ApplicationStatus>,
+    pub(crate) application_version_id: ::std::option::Option<i64>,
+    pub(crate) application_status: ::std::option::Option<crate::types::ApplicationStatus>,
 }
 impl ApplicationVersionSummaryBuilder {
     /// <p>The ID of the application version. Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you update the application.</p>
     pub fn application_version_id(mut self, input: i64) -> Self {
-        self.application_version_id = Some(input);
+        self.application_version_id = ::std::option::Option::Some(input);
         self
     }
     /// <p>The ID of the application version. Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you update the application.</p>
-    pub fn set_application_version_id(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_application_version_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.application_version_id = input;
         self
     }
     /// <p>The status of the application.</p>
     pub fn application_status(mut self, input: crate::types::ApplicationStatus) -> Self {
-        self.application_status = Some(input);
+        self.application_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the application.</p>
     pub fn set_application_status(
         mut self,
-        input: std::option::Option<crate::types::ApplicationStatus>,
+        input: ::std::option::Option<crate::types::ApplicationStatus>,
     ) -> Self {
         self.application_status = input;
         self

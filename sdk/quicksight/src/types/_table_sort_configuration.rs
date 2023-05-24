@@ -2,24 +2,24 @@
 
 /// <p>The sort configuration for a <code>TableVisual</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TableSortConfiguration {
     /// <p>The field sort options for rows in the table.</p>
     #[doc(hidden)]
-    pub row_sort: std::option::Option<std::vec::Vec<crate::types::FieldSortOptions>>,
+    pub row_sort: ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>,
     /// <p>The pagination configuration (page size, page number) for the table.</p>
     #[doc(hidden)]
-    pub pagination_configuration: std::option::Option<crate::types::PaginationConfiguration>,
+    pub pagination_configuration: ::std::option::Option<crate::types::PaginationConfiguration>,
 }
 impl TableSortConfiguration {
     /// <p>The field sort options for rows in the table.</p>
-    pub fn row_sort(&self) -> std::option::Option<&[crate::types::FieldSortOptions]> {
+    pub fn row_sort(&self) -> ::std::option::Option<&[crate::types::FieldSortOptions]> {
         self.row_sort.as_deref()
     }
     /// <p>The pagination configuration (page size, page number) for the table.</p>
     pub fn pagination_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::PaginationConfiguration> {
+    ) -> ::std::option::Option<&crate::types::PaginationConfiguration> {
         self.pagination_configuration.as_ref()
     }
 }
@@ -32,10 +32,13 @@ impl TableSortConfiguration {
 
 /// A builder for [`TableSortConfiguration`](crate::types::TableSortConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TableSortConfigurationBuilder {
-    pub(crate) row_sort: std::option::Option<std::vec::Vec<crate::types::FieldSortOptions>>,
-    pub(crate) pagination_configuration: std::option::Option<crate::types::PaginationConfiguration>,
+    pub(crate) row_sort: ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>,
+    pub(crate) pagination_configuration:
+        ::std::option::Option<crate::types::PaginationConfiguration>,
 }
 impl TableSortConfigurationBuilder {
     /// Appends an item to `row_sort`.
@@ -46,13 +49,13 @@ impl TableSortConfigurationBuilder {
     pub fn row_sort(mut self, input: crate::types::FieldSortOptions) -> Self {
         let mut v = self.row_sort.unwrap_or_default();
         v.push(input);
-        self.row_sort = Some(v);
+        self.row_sort = ::std::option::Option::Some(v);
         self
     }
     /// <p>The field sort options for rows in the table.</p>
     pub fn set_row_sort(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::FieldSortOptions>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>,
     ) -> Self {
         self.row_sort = input;
         self
@@ -62,13 +65,13 @@ impl TableSortConfigurationBuilder {
         mut self,
         input: crate::types::PaginationConfiguration,
     ) -> Self {
-        self.pagination_configuration = Some(input);
+        self.pagination_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The pagination configuration (page size, page number) for the table.</p>
     pub fn set_pagination_configuration(
         mut self,
-        input: std::option::Option<crate::types::PaginationConfiguration>,
+        input: ::std::option::Option<crate::types::PaginationConfiguration>,
     ) -> Self {
         self.pagination_configuration = input;
         self

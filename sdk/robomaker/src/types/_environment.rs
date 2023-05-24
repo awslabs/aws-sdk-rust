@@ -2,15 +2,15 @@
 
 /// <p>The object that contains the Docker image URI for either your robot or simulation applications.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Environment {
     /// <p>The Docker image URI for either your robot or simulation applications.</p>
     #[doc(hidden)]
-    pub uri: std::option::Option<std::string::String>,
+    pub uri: ::std::option::Option<::std::string::String>,
 }
 impl Environment {
     /// <p>The Docker image URI for either your robot or simulation applications.</p>
-    pub fn uri(&self) -> std::option::Option<&str> {
+    pub fn uri(&self) -> ::std::option::Option<&str> {
         self.uri.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl Environment {
 
 /// A builder for [`Environment`](crate::types::Environment).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EnvironmentBuilder {
-    pub(crate) uri: std::option::Option<std::string::String>,
+    pub(crate) uri: ::std::option::Option<::std::string::String>,
 }
 impl EnvironmentBuilder {
     /// <p>The Docker image URI for either your robot or simulation applications.</p>
-    pub fn uri(mut self, input: impl Into<std::string::String>) -> Self {
-        self.uri = Some(input.into());
+    pub fn uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.uri = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Docker image URI for either your robot or simulation applications.</p>
-    pub fn set_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.uri = input;
         self
     }

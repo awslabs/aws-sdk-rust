@@ -5,54 +5,54 @@
 /// </note>
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoMlChannel {
     /// <p>The data source for an AutoML channel.</p>
     #[doc(hidden)]
-    pub data_source: std::option::Option<crate::types::AutoMlDataSource>,
+    pub data_source: ::std::option::Option<crate::types::AutoMlDataSource>,
     /// <p>You can use <code>Gzip</code> or <code>None</code>. The default value is <code>None</code>.</p>
     #[doc(hidden)]
-    pub compression_type: std::option::Option<crate::types::CompressionType>,
+    pub compression_type: ::std::option::Option<crate::types::CompressionType>,
     /// <p>The name of the target variable in supervised learning, usually represented by 'y'.</p>
     #[doc(hidden)]
-    pub target_attribute_name: std::option::Option<std::string::String>,
+    pub target_attribute_name: ::std::option::Option<::std::string::String>,
     /// <p>The content type of the data from the input source. You can use <code>text/csv;header=present</code> or <code>x-application/vnd.amazon+parquet</code>. The default value is <code>text/csv;header=present</code>.</p>
     #[doc(hidden)]
-    pub content_type: std::option::Option<std::string::String>,
+    pub content_type: ::std::option::Option<::std::string::String>,
     /// <p>The channel type (optional) is an <code>enum</code> string. The default value is <code>training</code>. Channels for training and validation must share the same <code>ContentType</code> and <code>TargetAttributeName</code>. For information on specifying training and validation channel types, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-data-sources-training-or-validation">How to specify training and validation datasets</a>.</p>
     #[doc(hidden)]
-    pub channel_type: std::option::Option<crate::types::AutoMlChannelType>,
+    pub channel_type: ::std::option::Option<crate::types::AutoMlChannelType>,
     /// <p>If specified, this column name indicates which column of the dataset should be treated as sample weights for use by the objective metric during the training, evaluation, and the selection of the best model. This column is not considered as a predictive feature. For more information on Autopilot metrics, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html">Metrics and validation</a>.</p>
     /// <p>Sample weights should be numeric, non-negative, with larger values indicating which rows are more important than others. Data points that have invalid or no weight value are excluded.</p>
     /// <p>Support for sample weights is available in <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLAlgorithmConfig.html">Ensembling</a> mode only.</p>
     #[doc(hidden)]
-    pub sample_weight_attribute_name: std::option::Option<std::string::String>,
+    pub sample_weight_attribute_name: ::std::option::Option<::std::string::String>,
 }
 impl AutoMlChannel {
     /// <p>The data source for an AutoML channel.</p>
-    pub fn data_source(&self) -> std::option::Option<&crate::types::AutoMlDataSource> {
+    pub fn data_source(&self) -> ::std::option::Option<&crate::types::AutoMlDataSource> {
         self.data_source.as_ref()
     }
     /// <p>You can use <code>Gzip</code> or <code>None</code>. The default value is <code>None</code>.</p>
-    pub fn compression_type(&self) -> std::option::Option<&crate::types::CompressionType> {
+    pub fn compression_type(&self) -> ::std::option::Option<&crate::types::CompressionType> {
         self.compression_type.as_ref()
     }
     /// <p>The name of the target variable in supervised learning, usually represented by 'y'.</p>
-    pub fn target_attribute_name(&self) -> std::option::Option<&str> {
+    pub fn target_attribute_name(&self) -> ::std::option::Option<&str> {
         self.target_attribute_name.as_deref()
     }
     /// <p>The content type of the data from the input source. You can use <code>text/csv;header=present</code> or <code>x-application/vnd.amazon+parquet</code>. The default value is <code>text/csv;header=present</code>.</p>
-    pub fn content_type(&self) -> std::option::Option<&str> {
+    pub fn content_type(&self) -> ::std::option::Option<&str> {
         self.content_type.as_deref()
     }
     /// <p>The channel type (optional) is an <code>enum</code> string. The default value is <code>training</code>. Channels for training and validation must share the same <code>ContentType</code> and <code>TargetAttributeName</code>. For information on specifying training and validation channel types, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-data-sources-training-or-validation">How to specify training and validation datasets</a>.</p>
-    pub fn channel_type(&self) -> std::option::Option<&crate::types::AutoMlChannelType> {
+    pub fn channel_type(&self) -> ::std::option::Option<&crate::types::AutoMlChannelType> {
         self.channel_type.as_ref()
     }
     /// <p>If specified, this column name indicates which column of the dataset should be treated as sample weights for use by the objective metric during the training, evaluation, and the selection of the best model. This column is not considered as a predictive feature. For more information on Autopilot metrics, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html">Metrics and validation</a>.</p>
     /// <p>Sample weights should be numeric, non-negative, with larger values indicating which rows are more important than others. Data points that have invalid or no weight value are excluded.</p>
     /// <p>Support for sample weights is available in <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLAlgorithmConfig.html">Ensembling</a> mode only.</p>
-    pub fn sample_weight_attribute_name(&self) -> std::option::Option<&str> {
+    pub fn sample_weight_attribute_name(&self) -> ::std::option::Option<&str> {
         self.sample_weight_attribute_name.as_deref()
     }
 }
@@ -65,74 +65,79 @@ impl AutoMlChannel {
 
 /// A builder for [`AutoMlChannel`](crate::types::AutoMlChannel).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AutoMlChannelBuilder {
-    pub(crate) data_source: std::option::Option<crate::types::AutoMlDataSource>,
-    pub(crate) compression_type: std::option::Option<crate::types::CompressionType>,
-    pub(crate) target_attribute_name: std::option::Option<std::string::String>,
-    pub(crate) content_type: std::option::Option<std::string::String>,
-    pub(crate) channel_type: std::option::Option<crate::types::AutoMlChannelType>,
-    pub(crate) sample_weight_attribute_name: std::option::Option<std::string::String>,
+    pub(crate) data_source: ::std::option::Option<crate::types::AutoMlDataSource>,
+    pub(crate) compression_type: ::std::option::Option<crate::types::CompressionType>,
+    pub(crate) target_attribute_name: ::std::option::Option<::std::string::String>,
+    pub(crate) content_type: ::std::option::Option<::std::string::String>,
+    pub(crate) channel_type: ::std::option::Option<crate::types::AutoMlChannelType>,
+    pub(crate) sample_weight_attribute_name: ::std::option::Option<::std::string::String>,
 }
 impl AutoMlChannelBuilder {
     /// <p>The data source for an AutoML channel.</p>
     pub fn data_source(mut self, input: crate::types::AutoMlDataSource) -> Self {
-        self.data_source = Some(input);
+        self.data_source = ::std::option::Option::Some(input);
         self
     }
     /// <p>The data source for an AutoML channel.</p>
     pub fn set_data_source(
         mut self,
-        input: std::option::Option<crate::types::AutoMlDataSource>,
+        input: ::std::option::Option<crate::types::AutoMlDataSource>,
     ) -> Self {
         self.data_source = input;
         self
     }
     /// <p>You can use <code>Gzip</code> or <code>None</code>. The default value is <code>None</code>.</p>
     pub fn compression_type(mut self, input: crate::types::CompressionType) -> Self {
-        self.compression_type = Some(input);
+        self.compression_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>You can use <code>Gzip</code> or <code>None</code>. The default value is <code>None</code>.</p>
     pub fn set_compression_type(
         mut self,
-        input: std::option::Option<crate::types::CompressionType>,
+        input: ::std::option::Option<crate::types::CompressionType>,
     ) -> Self {
         self.compression_type = input;
         self
     }
     /// <p>The name of the target variable in supervised learning, usually represented by 'y'.</p>
-    pub fn target_attribute_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.target_attribute_name = Some(input.into());
+    pub fn target_attribute_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.target_attribute_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the target variable in supervised learning, usually represented by 'y'.</p>
     pub fn set_target_attribute_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.target_attribute_name = input;
         self
     }
     /// <p>The content type of the data from the input source. You can use <code>text/csv;header=present</code> or <code>x-application/vnd.amazon+parquet</code>. The default value is <code>text/csv;header=present</code>.</p>
-    pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.content_type = Some(input.into());
+    pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.content_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The content type of the data from the input source. You can use <code>text/csv;header=present</code> or <code>x-application/vnd.amazon+parquet</code>. The default value is <code>text/csv;header=present</code>.</p>
-    pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_type = input;
         self
     }
     /// <p>The channel type (optional) is an <code>enum</code> string. The default value is <code>training</code>. Channels for training and validation must share the same <code>ContentType</code> and <code>TargetAttributeName</code>. For information on specifying training and validation channel types, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-data-sources-training-or-validation">How to specify training and validation datasets</a>.</p>
     pub fn channel_type(mut self, input: crate::types::AutoMlChannelType) -> Self {
-        self.channel_type = Some(input);
+        self.channel_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The channel type (optional) is an <code>enum</code> string. The default value is <code>training</code>. Channels for training and validation must share the same <code>ContentType</code> and <code>TargetAttributeName</code>. For information on specifying training and validation channel types, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-data-sources-training-or-validation">How to specify training and validation datasets</a>.</p>
     pub fn set_channel_type(
         mut self,
-        input: std::option::Option<crate::types::AutoMlChannelType>,
+        input: ::std::option::Option<crate::types::AutoMlChannelType>,
     ) -> Self {
         self.channel_type = input;
         self
@@ -140,8 +145,11 @@ impl AutoMlChannelBuilder {
     /// <p>If specified, this column name indicates which column of the dataset should be treated as sample weights for use by the objective metric during the training, evaluation, and the selection of the best model. This column is not considered as a predictive feature. For more information on Autopilot metrics, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html">Metrics and validation</a>.</p>
     /// <p>Sample weights should be numeric, non-negative, with larger values indicating which rows are more important than others. Data points that have invalid or no weight value are excluded.</p>
     /// <p>Support for sample weights is available in <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLAlgorithmConfig.html">Ensembling</a> mode only.</p>
-    pub fn sample_weight_attribute_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.sample_weight_attribute_name = Some(input.into());
+    pub fn sample_weight_attribute_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.sample_weight_attribute_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If specified, this column name indicates which column of the dataset should be treated as sample weights for use by the objective metric during the training, evaluation, and the selection of the best model. This column is not considered as a predictive feature. For more information on Autopilot metrics, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html">Metrics and validation</a>.</p>
@@ -149,7 +157,7 @@ impl AutoMlChannelBuilder {
     /// <p>Support for sample weights is available in <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLAlgorithmConfig.html">Ensembling</a> mode only.</p>
     pub fn set_sample_weight_attribute_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.sample_weight_attribute_name = input;
         self

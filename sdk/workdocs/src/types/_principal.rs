@@ -2,29 +2,29 @@
 
 /// <p>Describes a resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Principal {
     /// <p>The ID of the resource.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The type of resource.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::PrincipalType>,
+    pub r#type: ::std::option::Option<crate::types::PrincipalType>,
     /// <p>The permission information for the resource.</p>
     #[doc(hidden)]
-    pub roles: std::option::Option<std::vec::Vec<crate::types::PermissionInfo>>,
+    pub roles: ::std::option::Option<::std::vec::Vec<crate::types::PermissionInfo>>,
 }
 impl Principal {
     /// <p>The ID of the resource.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The type of resource.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::PrincipalType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::PrincipalType> {
         self.r#type.as_ref()
     }
     /// <p>The permission information for the resource.</p>
-    pub fn roles(&self) -> std::option::Option<&[crate::types::PermissionInfo]> {
+    pub fn roles(&self) -> ::std::option::Option<&[crate::types::PermissionInfo]> {
         self.roles.as_deref()
     }
 }
@@ -37,30 +37,32 @@ impl Principal {
 
 /// A builder for [`Principal`](crate::types::Principal).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PrincipalBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) r#type: std::option::Option<crate::types::PrincipalType>,
-    pub(crate) roles: std::option::Option<std::vec::Vec<crate::types::PermissionInfo>>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::PrincipalType>,
+    pub(crate) roles: ::std::option::Option<::std::vec::Vec<crate::types::PermissionInfo>>,
 }
 impl PrincipalBuilder {
     /// <p>The ID of the resource.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the resource.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>The type of resource.</p>
     pub fn r#type(mut self, input: crate::types::PrincipalType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of resource.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::PrincipalType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::PrincipalType>) -> Self {
         self.r#type = input;
         self
     }
@@ -72,13 +74,13 @@ impl PrincipalBuilder {
     pub fn roles(mut self, input: crate::types::PermissionInfo) -> Self {
         let mut v = self.roles.unwrap_or_default();
         v.push(input);
-        self.roles = Some(v);
+        self.roles = ::std::option::Option::Some(v);
         self
     }
     /// <p>The permission information for the resource.</p>
     pub fn set_roles(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PermissionInfo>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PermissionInfo>>,
     ) -> Self {
         self.roles = input;
         self

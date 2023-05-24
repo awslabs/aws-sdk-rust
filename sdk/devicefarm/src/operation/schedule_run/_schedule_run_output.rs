@@ -2,20 +2,20 @@
 
 /// <p>Represents the result of a schedule run request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScheduleRunOutput {
     /// <p>Information about the scheduled run.</p>
     #[doc(hidden)]
-    pub run: std::option::Option<crate::types::Run>,
+    pub run: ::std::option::Option<crate::types::Run>,
     _request_id: Option<String>,
 }
 impl ScheduleRunOutput {
     /// <p>Information about the scheduled run.</p>
-    pub fn run(&self) -> std::option::Option<&crate::types::Run> {
+    pub fn run(&self) -> ::std::option::Option<&crate::types::Run> {
         self.run.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for ScheduleRunOutput {
+impl ::aws_http::request_id::RequestId for ScheduleRunOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,21 @@ impl ScheduleRunOutput {
 
 /// A builder for [`ScheduleRunOutput`](crate::operation::schedule_run::ScheduleRunOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ScheduleRunOutputBuilder {
-    pub(crate) run: std::option::Option<crate::types::Run>,
+    pub(crate) run: ::std::option::Option<crate::types::Run>,
     _request_id: Option<String>,
 }
 impl ScheduleRunOutputBuilder {
     /// <p>Information about the scheduled run.</p>
     pub fn run(mut self, input: crate::types::Run) -> Self {
-        self.run = Some(input);
+        self.run = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the scheduled run.</p>
-    pub fn set_run(mut self, input: std::option::Option<crate::types::Run>) -> Self {
+    pub fn set_run(mut self, input: ::std::option::Option<crate::types::Run>) -> Self {
         self.run = input;
         self
     }

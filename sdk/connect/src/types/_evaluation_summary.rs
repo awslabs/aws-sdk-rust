@@ -2,71 +2,71 @@
 
 /// <p>Summary information about a contact evaluation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluationSummary {
     /// <p>A unique identifier for the contact evaluation.</p>
     #[doc(hidden)]
-    pub evaluation_id: std::option::Option<std::string::String>,
+    pub evaluation_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the contact evaluation resource.</p>
     #[doc(hidden)]
-    pub evaluation_arn: std::option::Option<std::string::String>,
+    pub evaluation_arn: ::std::option::Option<::std::string::String>,
     /// <p>A title of the evaluation form.</p>
     #[doc(hidden)]
-    pub evaluation_form_title: std::option::Option<std::string::String>,
+    pub evaluation_form_title: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the evaluation form.</p>
     #[doc(hidden)]
-    pub evaluation_form_id: std::option::Option<std::string::String>,
+    pub evaluation_form_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the contact evaluation.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::EvaluationStatus>,
+    pub status: ::std::option::Option<crate::types::EvaluationStatus>,
     /// <p>The Amazon Resource Name (ARN) of the user who last updated the evaluation.</p>
     #[doc(hidden)]
-    pub evaluator_arn: std::option::Option<std::string::String>,
+    pub evaluator_arn: ::std::option::Option<::std::string::String>,
     /// <p>The overall score of the contact evaluation.</p>
     #[doc(hidden)]
-    pub score: std::option::Option<crate::types::EvaluationScore>,
+    pub score: ::std::option::Option<crate::types::EvaluationScore>,
     /// <p>The timestamp for when the evaluation was created.</p>
     #[doc(hidden)]
-    pub created_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp for when the evaluation was last updated.</p>
     #[doc(hidden)]
-    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl EvaluationSummary {
     /// <p>A unique identifier for the contact evaluation.</p>
-    pub fn evaluation_id(&self) -> std::option::Option<&str> {
+    pub fn evaluation_id(&self) -> ::std::option::Option<&str> {
         self.evaluation_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the contact evaluation resource.</p>
-    pub fn evaluation_arn(&self) -> std::option::Option<&str> {
+    pub fn evaluation_arn(&self) -> ::std::option::Option<&str> {
         self.evaluation_arn.as_deref()
     }
     /// <p>A title of the evaluation form.</p>
-    pub fn evaluation_form_title(&self) -> std::option::Option<&str> {
+    pub fn evaluation_form_title(&self) -> ::std::option::Option<&str> {
         self.evaluation_form_title.as_deref()
     }
     /// <p>The unique identifier for the evaluation form.</p>
-    pub fn evaluation_form_id(&self) -> std::option::Option<&str> {
+    pub fn evaluation_form_id(&self) -> ::std::option::Option<&str> {
         self.evaluation_form_id.as_deref()
     }
     /// <p>The status of the contact evaluation.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::EvaluationStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::EvaluationStatus> {
         self.status.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the user who last updated the evaluation.</p>
-    pub fn evaluator_arn(&self) -> std::option::Option<&str> {
+    pub fn evaluator_arn(&self) -> ::std::option::Option<&str> {
         self.evaluator_arn.as_deref()
     }
     /// <p>The overall score of the contact evaluation.</p>
-    pub fn score(&self) -> std::option::Option<&crate::types::EvaluationScore> {
+    pub fn score(&self) -> ::std::option::Option<&crate::types::EvaluationScore> {
         self.score.as_ref()
     }
     /// <p>The timestamp for when the evaluation was created.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The timestamp for when the evaluation was last updated.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
 }
@@ -79,120 +79,149 @@ impl EvaluationSummary {
 
 /// A builder for [`EvaluationSummary`](crate::types::EvaluationSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EvaluationSummaryBuilder {
-    pub(crate) evaluation_id: std::option::Option<std::string::String>,
-    pub(crate) evaluation_arn: std::option::Option<std::string::String>,
-    pub(crate) evaluation_form_title: std::option::Option<std::string::String>,
-    pub(crate) evaluation_form_id: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::EvaluationStatus>,
-    pub(crate) evaluator_arn: std::option::Option<std::string::String>,
-    pub(crate) score: std::option::Option<crate::types::EvaluationScore>,
-    pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) evaluation_id: ::std::option::Option<::std::string::String>,
+    pub(crate) evaluation_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) evaluation_form_title: ::std::option::Option<::std::string::String>,
+    pub(crate) evaluation_form_id: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::EvaluationStatus>,
+    pub(crate) evaluator_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) score: ::std::option::Option<crate::types::EvaluationScore>,
+    pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl EvaluationSummaryBuilder {
     /// <p>A unique identifier for the contact evaluation.</p>
-    pub fn evaluation_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.evaluation_id = Some(input.into());
+    pub fn evaluation_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.evaluation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the contact evaluation.</p>
-    pub fn set_evaluation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_evaluation_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.evaluation_id = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the contact evaluation resource.</p>
-    pub fn evaluation_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.evaluation_arn = Some(input.into());
+    pub fn evaluation_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.evaluation_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the contact evaluation resource.</p>
-    pub fn set_evaluation_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_evaluation_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.evaluation_arn = input;
         self
     }
     /// <p>A title of the evaluation form.</p>
-    pub fn evaluation_form_title(mut self, input: impl Into<std::string::String>) -> Self {
-        self.evaluation_form_title = Some(input.into());
+    pub fn evaluation_form_title(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.evaluation_form_title = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A title of the evaluation form.</p>
     pub fn set_evaluation_form_title(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.evaluation_form_title = input;
         self
     }
     /// <p>The unique identifier for the evaluation form.</p>
-    pub fn evaluation_form_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.evaluation_form_id = Some(input.into());
+    pub fn evaluation_form_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.evaluation_form_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the evaluation form.</p>
     pub fn set_evaluation_form_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.evaluation_form_id = input;
         self
     }
     /// <p>The status of the contact evaluation.</p>
     pub fn status(mut self, input: crate::types::EvaluationStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the contact evaluation.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::EvaluationStatus>,
+        input: ::std::option::Option<crate::types::EvaluationStatus>,
     ) -> Self {
         self.status = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the user who last updated the evaluation.</p>
-    pub fn evaluator_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.evaluator_arn = Some(input.into());
+    pub fn evaluator_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.evaluator_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the user who last updated the evaluation.</p>
-    pub fn set_evaluator_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_evaluator_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.evaluator_arn = input;
         self
     }
     /// <p>The overall score of the contact evaluation.</p>
     pub fn score(mut self, input: crate::types::EvaluationScore) -> Self {
-        self.score = Some(input);
+        self.score = ::std::option::Option::Some(input);
         self
     }
     /// <p>The overall score of the contact evaluation.</p>
-    pub fn set_score(mut self, input: std::option::Option<crate::types::EvaluationScore>) -> Self {
+    pub fn set_score(
+        mut self,
+        input: ::std::option::Option<crate::types::EvaluationScore>,
+    ) -> Self {
         self.score = input;
         self
     }
     /// <p>The timestamp for when the evaluation was created.</p>
-    pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_time = Some(input);
+    pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The timestamp for when the evaluation was created.</p>
     pub fn set_created_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_time = input;
         self
     }
     /// <p>The timestamp for when the evaluation was last updated.</p>
-    pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_modified_time = Some(input);
+    pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_modified_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The timestamp for when the evaluation was last updated.</p>
     pub fn set_last_modified_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_modified_time = input;
         self

@@ -2,7 +2,7 @@
 
 /// <p>Contains the response to a <code>DescribePermissions</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribePermissionsOutput {
     /// <p>An array of <code>Permission</code> objects that describe the stack permissions.</p>
     /// <ul>
@@ -11,7 +11,7 @@ pub struct DescribePermissionsOutput {
     /// <li> <p>If the request contains a stack ID and an IAM ARN, the array contains a single <code>Permission</code> object with permissions for the specified stack and IAM ARN.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub permissions: std::option::Option<std::vec::Vec<crate::types::Permission>>,
+    pub permissions: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
     _request_id: Option<String>,
 }
 impl DescribePermissionsOutput {
@@ -21,11 +21,11 @@ impl DescribePermissionsOutput {
     /// <li> <p>If the request object contains only an IAM ARN, the array contains a <code>Permission</code> object with permissions for each of the user's stack IDs.</p> </li>
     /// <li> <p>If the request contains a stack ID and an IAM ARN, the array contains a single <code>Permission</code> object with permissions for the specified stack and IAM ARN.</p> </li>
     /// </ul>
-    pub fn permissions(&self) -> std::option::Option<&[crate::types::Permission]> {
+    pub fn permissions(&self) -> ::std::option::Option<&[crate::types::Permission]> {
         self.permissions.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribePermissionsOutput {
+impl ::aws_http::request_id::RequestId for DescribePermissionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -41,9 +41,11 @@ impl DescribePermissionsOutput {
 
 /// A builder for [`DescribePermissionsOutput`](crate::operation::describe_permissions::DescribePermissionsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribePermissionsOutputBuilder {
-    pub(crate) permissions: std::option::Option<std::vec::Vec<crate::types::Permission>>,
+    pub(crate) permissions: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
     _request_id: Option<String>,
 }
 impl DescribePermissionsOutputBuilder {
@@ -60,7 +62,7 @@ impl DescribePermissionsOutputBuilder {
     pub fn permissions(mut self, input: crate::types::Permission) -> Self {
         let mut v = self.permissions.unwrap_or_default();
         v.push(input);
-        self.permissions = Some(v);
+        self.permissions = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of <code>Permission</code> objects that describe the stack permissions.</p>
@@ -71,7 +73,7 @@ impl DescribePermissionsOutputBuilder {
     /// </ul>
     pub fn set_permissions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Permission>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Permission>>,
     ) -> Self {
         self.permissions = input;
         self

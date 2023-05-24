@@ -2,29 +2,33 @@
 
 /// <p>Specifies the conditions for the first activity in a journey. This activity and its conditions determine which users are participants in a journey.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartCondition {
     /// <p>The custom description of the condition.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the settings for an event that causes a journey activity to start.</p>
     #[doc(hidden)]
-    pub event_start_condition: std::option::Option<crate::types::EventStartCondition>,
+    pub event_start_condition: ::std::option::Option<crate::types::EventStartCondition>,
     /// <p>The segment that's associated with the first activity in the journey. This segment determines which users are participants in the journey.</p>
     #[doc(hidden)]
-    pub segment_start_condition: std::option::Option<crate::types::SegmentCondition>,
+    pub segment_start_condition: ::std::option::Option<crate::types::SegmentCondition>,
 }
 impl StartCondition {
     /// <p>The custom description of the condition.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>Specifies the settings for an event that causes a journey activity to start.</p>
-    pub fn event_start_condition(&self) -> std::option::Option<&crate::types::EventStartCondition> {
+    pub fn event_start_condition(
+        &self,
+    ) -> ::std::option::Option<&crate::types::EventStartCondition> {
         self.event_start_condition.as_ref()
     }
     /// <p>The segment that's associated with the first activity in the journey. This segment determines which users are participants in the journey.</p>
-    pub fn segment_start_condition(&self) -> std::option::Option<&crate::types::SegmentCondition> {
+    pub fn segment_start_condition(
+        &self,
+    ) -> ::std::option::Option<&crate::types::SegmentCondition> {
         self.segment_start_condition.as_ref()
     }
 }
@@ -37,45 +41,47 @@ impl StartCondition {
 
 /// A builder for [`StartCondition`](crate::types::StartCondition).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StartConditionBuilder {
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) event_start_condition: std::option::Option<crate::types::EventStartCondition>,
-    pub(crate) segment_start_condition: std::option::Option<crate::types::SegmentCondition>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) event_start_condition: ::std::option::Option<crate::types::EventStartCondition>,
+    pub(crate) segment_start_condition: ::std::option::Option<crate::types::SegmentCondition>,
 }
 impl StartConditionBuilder {
     /// <p>The custom description of the condition.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The custom description of the condition.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>Specifies the settings for an event that causes a journey activity to start.</p>
     pub fn event_start_condition(mut self, input: crate::types::EventStartCondition) -> Self {
-        self.event_start_condition = Some(input);
+        self.event_start_condition = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the settings for an event that causes a journey activity to start.</p>
     pub fn set_event_start_condition(
         mut self,
-        input: std::option::Option<crate::types::EventStartCondition>,
+        input: ::std::option::Option<crate::types::EventStartCondition>,
     ) -> Self {
         self.event_start_condition = input;
         self
     }
     /// <p>The segment that's associated with the first activity in the journey. This segment determines which users are participants in the journey.</p>
     pub fn segment_start_condition(mut self, input: crate::types::SegmentCondition) -> Self {
-        self.segment_start_condition = Some(input);
+        self.segment_start_condition = ::std::option::Option::Some(input);
         self
     }
     /// <p>The segment that's associated with the first activity in the journey. This segment determines which users are participants in the journey.</p>
     pub fn set_segment_start_condition(
         mut self,
-        input: std::option::Option<crate::types::SegmentCondition>,
+        input: ::std::option::Option<crate::types::SegmentCondition>,
     ) -> Self {
         self.segment_start_condition = input;
         self

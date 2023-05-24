@@ -2,20 +2,20 @@
 
 /// <p>Response to a RegisterDevice request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterDeviceOutput {
     /// <p>The unique ID generated for this device by Cognito.</p>
     #[doc(hidden)]
-    pub device_id: std::option::Option<std::string::String>,
+    pub device_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl RegisterDeviceOutput {
     /// <p>The unique ID generated for this device by Cognito.</p>
-    pub fn device_id(&self) -> std::option::Option<&str> {
+    pub fn device_id(&self) -> ::std::option::Option<&str> {
         self.device_id.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for RegisterDeviceOutput {
+impl ::aws_http::request_id::RequestId for RegisterDeviceOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,21 @@ impl RegisterDeviceOutput {
 
 /// A builder for [`RegisterDeviceOutput`](crate::operation::register_device::RegisterDeviceOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RegisterDeviceOutputBuilder {
-    pub(crate) device_id: std::option::Option<std::string::String>,
+    pub(crate) device_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl RegisterDeviceOutputBuilder {
     /// <p>The unique ID generated for this device by Cognito.</p>
-    pub fn device_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.device_id = Some(input.into());
+    pub fn device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.device_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ID generated for this device by Cognito.</p>
-    pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_id = input;
         self
     }

@@ -2,15 +2,15 @@
 
 /// <p>Input object defining the custom BandMath indices to compute.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomIndicesInput {
     /// <p>A list of BandMath indices to compute.</p>
     #[doc(hidden)]
-    pub operations: std::option::Option<std::vec::Vec<crate::types::Operation>>,
+    pub operations: ::std::option::Option<::std::vec::Vec<crate::types::Operation>>,
 }
 impl CustomIndicesInput {
     /// <p>A list of BandMath indices to compute.</p>
-    pub fn operations(&self) -> std::option::Option<&[crate::types::Operation]> {
+    pub fn operations(&self) -> ::std::option::Option<&[crate::types::Operation]> {
         self.operations.as_deref()
     }
 }
@@ -23,9 +23,11 @@ impl CustomIndicesInput {
 
 /// A builder for [`CustomIndicesInput`](crate::types::CustomIndicesInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CustomIndicesInputBuilder {
-    pub(crate) operations: std::option::Option<std::vec::Vec<crate::types::Operation>>,
+    pub(crate) operations: ::std::option::Option<::std::vec::Vec<crate::types::Operation>>,
 }
 impl CustomIndicesInputBuilder {
     /// Appends an item to `operations`.
@@ -36,13 +38,13 @@ impl CustomIndicesInputBuilder {
     pub fn operations(mut self, input: crate::types::Operation) -> Self {
         let mut v = self.operations.unwrap_or_default();
         v.push(input);
-        self.operations = Some(v);
+        self.operations = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of BandMath indices to compute.</p>
     pub fn set_operations(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Operation>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Operation>>,
     ) -> Self {
         self.operations = input;
         self

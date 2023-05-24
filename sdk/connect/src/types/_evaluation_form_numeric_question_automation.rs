@@ -2,7 +2,7 @@
 
 /// <p>Information about the automation configuration in numeric questions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum EvaluationFormNumericQuestionAutomation {
     /// <p>The property value of the automation.</p>
     PropertyValue(crate::types::NumericQuestionPropertyValueAutomation),
@@ -22,11 +22,11 @@ impl EvaluationFormNumericQuestionAutomation {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_property_value(
         &self,
-    ) -> std::result::Result<&crate::types::NumericQuestionPropertyValueAutomation, &Self> {
+    ) -> ::std::result::Result<&crate::types::NumericQuestionPropertyValueAutomation, &Self> {
         if let EvaluationFormNumericQuestionAutomation::PropertyValue(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`PropertyValue`](crate::types::EvaluationFormNumericQuestionAutomation::PropertyValue).

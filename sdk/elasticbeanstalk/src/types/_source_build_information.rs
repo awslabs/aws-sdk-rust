@@ -2,7 +2,7 @@
 
 /// <p>Location of the source code for an application version.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SourceBuildInformation {
     /// <p>The type of repository.</p>
     /// <ul>
@@ -10,21 +10,21 @@ pub struct SourceBuildInformation {
     /// <li> <p> <code>Zip</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub source_type: std::option::Option<crate::types::SourceType>,
+    pub source_type: ::std::option::Option<crate::types::SourceType>,
     /// <p>Location where the repository is stored.</p>
     /// <ul>
     /// <li> <p> <code>CodeCommit</code> </p> </li>
     /// <li> <p> <code>S3</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub source_repository: std::option::Option<crate::types::SourceRepository>,
+    pub source_repository: ::std::option::Option<crate::types::SourceRepository>,
     /// <p>The location of the source code, as a formatted string, depending on the value of <code>SourceRepository</code> </p>
     /// <ul>
     /// <li> <p>For <code>CodeCommit</code>, the format is the repository name and commit ID, separated by a forward slash. For example, <code>my-git-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.</p> </li>
     /// <li> <p>For <code>S3</code>, the format is the S3 bucket name and object key, separated by a forward slash. For example, <code>my-s3-bucket/Folders/my-source-file</code>.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub source_location: std::option::Option<std::string::String>,
+    pub source_location: ::std::option::Option<::std::string::String>,
 }
 impl SourceBuildInformation {
     /// <p>The type of repository.</p>
@@ -32,7 +32,7 @@ impl SourceBuildInformation {
     /// <li> <p> <code>Git</code> </p> </li>
     /// <li> <p> <code>Zip</code> </p> </li>
     /// </ul>
-    pub fn source_type(&self) -> std::option::Option<&crate::types::SourceType> {
+    pub fn source_type(&self) -> ::std::option::Option<&crate::types::SourceType> {
         self.source_type.as_ref()
     }
     /// <p>Location where the repository is stored.</p>
@@ -40,7 +40,7 @@ impl SourceBuildInformation {
     /// <li> <p> <code>CodeCommit</code> </p> </li>
     /// <li> <p> <code>S3</code> </p> </li>
     /// </ul>
-    pub fn source_repository(&self) -> std::option::Option<&crate::types::SourceRepository> {
+    pub fn source_repository(&self) -> ::std::option::Option<&crate::types::SourceRepository> {
         self.source_repository.as_ref()
     }
     /// <p>The location of the source code, as a formatted string, depending on the value of <code>SourceRepository</code> </p>
@@ -48,7 +48,7 @@ impl SourceBuildInformation {
     /// <li> <p>For <code>CodeCommit</code>, the format is the repository name and commit ID, separated by a forward slash. For example, <code>my-git-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.</p> </li>
     /// <li> <p>For <code>S3</code>, the format is the S3 bucket name and object key, separated by a forward slash. For example, <code>my-s3-bucket/Folders/my-source-file</code>.</p> </li>
     /// </ul>
-    pub fn source_location(&self) -> std::option::Option<&str> {
+    pub fn source_location(&self) -> ::std::option::Option<&str> {
         self.source_location.as_deref()
     }
 }
@@ -61,11 +61,13 @@ impl SourceBuildInformation {
 
 /// A builder for [`SourceBuildInformation`](crate::types::SourceBuildInformation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SourceBuildInformationBuilder {
-    pub(crate) source_type: std::option::Option<crate::types::SourceType>,
-    pub(crate) source_repository: std::option::Option<crate::types::SourceRepository>,
-    pub(crate) source_location: std::option::Option<std::string::String>,
+    pub(crate) source_type: ::std::option::Option<crate::types::SourceType>,
+    pub(crate) source_repository: ::std::option::Option<crate::types::SourceRepository>,
+    pub(crate) source_location: ::std::option::Option<::std::string::String>,
 }
 impl SourceBuildInformationBuilder {
     /// <p>The type of repository.</p>
@@ -74,7 +76,7 @@ impl SourceBuildInformationBuilder {
     /// <li> <p> <code>Zip</code> </p> </li>
     /// </ul>
     pub fn source_type(mut self, input: crate::types::SourceType) -> Self {
-        self.source_type = Some(input);
+        self.source_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of repository.</p>
@@ -82,7 +84,10 @@ impl SourceBuildInformationBuilder {
     /// <li> <p> <code>Git</code> </p> </li>
     /// <li> <p> <code>Zip</code> </p> </li>
     /// </ul>
-    pub fn set_source_type(mut self, input: std::option::Option<crate::types::SourceType>) -> Self {
+    pub fn set_source_type(
+        mut self,
+        input: ::std::option::Option<crate::types::SourceType>,
+    ) -> Self {
         self.source_type = input;
         self
     }
@@ -92,7 +97,7 @@ impl SourceBuildInformationBuilder {
     /// <li> <p> <code>S3</code> </p> </li>
     /// </ul>
     pub fn source_repository(mut self, input: crate::types::SourceRepository) -> Self {
-        self.source_repository = Some(input);
+        self.source_repository = ::std::option::Option::Some(input);
         self
     }
     /// <p>Location where the repository is stored.</p>
@@ -102,7 +107,7 @@ impl SourceBuildInformationBuilder {
     /// </ul>
     pub fn set_source_repository(
         mut self,
-        input: std::option::Option<crate::types::SourceRepository>,
+        input: ::std::option::Option<crate::types::SourceRepository>,
     ) -> Self {
         self.source_repository = input;
         self
@@ -112,8 +117,11 @@ impl SourceBuildInformationBuilder {
     /// <li> <p>For <code>CodeCommit</code>, the format is the repository name and commit ID, separated by a forward slash. For example, <code>my-git-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.</p> </li>
     /// <li> <p>For <code>S3</code>, the format is the S3 bucket name and object key, separated by a forward slash. For example, <code>my-s3-bucket/Folders/my-source-file</code>.</p> </li>
     /// </ul>
-    pub fn source_location(mut self, input: impl Into<std::string::String>) -> Self {
-        self.source_location = Some(input.into());
+    pub fn source_location(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.source_location = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The location of the source code, as a formatted string, depending on the value of <code>SourceRepository</code> </p>
@@ -121,7 +129,10 @@ impl SourceBuildInformationBuilder {
     /// <li> <p>For <code>CodeCommit</code>, the format is the repository name and commit ID, separated by a forward slash. For example, <code>my-git-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.</p> </li>
     /// <li> <p>For <code>S3</code>, the format is the S3 bucket name and object key, separated by a forward slash. For example, <code>my-s3-bucket/Folders/my-source-file</code>.</p> </li>
     /// </ul>
-    pub fn set_source_location(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_source_location(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.source_location = input;
         self
     }

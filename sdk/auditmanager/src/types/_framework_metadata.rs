@@ -2,36 +2,36 @@
 
 /// <p> The metadata of a framework, such as the name, ID, or description. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FrameworkMetadata {
     /// <p> The name of the framework. </p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p> The description of the framework. </p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p> The logo that's associated with the framework. </p>
     #[doc(hidden)]
-    pub logo: std::option::Option<std::string::String>,
+    pub logo: ::std::option::Option<::std::string::String>,
     /// <p> The compliance standard that's associated with the framework. For example, this could be PCI DSS or HIPAA. </p>
     #[doc(hidden)]
-    pub compliance_type: std::option::Option<std::string::String>,
+    pub compliance_type: ::std::option::Option<::std::string::String>,
 }
 impl FrameworkMetadata {
     /// <p> The name of the framework. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p> The description of the framework. </p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p> The logo that's associated with the framework. </p>
-    pub fn logo(&self) -> std::option::Option<&str> {
+    pub fn logo(&self) -> ::std::option::Option<&str> {
         self.logo.as_deref()
     }
     /// <p> The compliance standard that's associated with the framework. For example, this could be PCI DSS or HIPAA. </p>
-    pub fn compliance_type(&self) -> std::option::Option<&str> {
+    pub fn compliance_type(&self) -> ::std::option::Option<&str> {
         self.compliance_type.as_deref()
     }
 }
@@ -44,51 +44,59 @@ impl FrameworkMetadata {
 
 /// A builder for [`FrameworkMetadata`](crate::types::FrameworkMetadata).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FrameworkMetadataBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) logo: std::option::Option<std::string::String>,
-    pub(crate) compliance_type: std::option::Option<std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) logo: ::std::option::Option<::std::string::String>,
+    pub(crate) compliance_type: ::std::option::Option<::std::string::String>,
 }
 impl FrameworkMetadataBuilder {
     /// <p> The name of the framework. </p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the framework. </p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p> The description of the framework. </p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The description of the framework. </p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p> The logo that's associated with the framework. </p>
-    pub fn logo(mut self, input: impl Into<std::string::String>) -> Self {
-        self.logo = Some(input.into());
+    pub fn logo(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.logo = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The logo that's associated with the framework. </p>
-    pub fn set_logo(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_logo(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.logo = input;
         self
     }
     /// <p> The compliance standard that's associated with the framework. For example, this could be PCI DSS or HIPAA. </p>
-    pub fn compliance_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.compliance_type = Some(input.into());
+    pub fn compliance_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.compliance_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The compliance standard that's associated with the framework. For example, this could be PCI DSS or HIPAA. </p>
-    pub fn set_compliance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_compliance_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.compliance_type = input;
         self
     }

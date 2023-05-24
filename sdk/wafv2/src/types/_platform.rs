@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum Platform {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum Platform {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for Platform {
+impl ::std::convert::From<&str> for Platform {
     fn from(s: &str) -> Self {
         match s {
             "ANDROID" => Platform::Android,
@@ -63,11 +63,11 @@ impl std::convert::From<&str> for Platform {
         }
     }
 }
-impl std::str::FromStr for Platform {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for Platform {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Platform::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(Platform::from(s))
     }
 }
 impl Platform {
@@ -84,7 +84,7 @@ impl Platform {
         &["ANDROID", "IOS"]
     }
 }
-impl AsRef<str> for Platform {
+impl ::std::convert::AsRef<str> for Platform {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

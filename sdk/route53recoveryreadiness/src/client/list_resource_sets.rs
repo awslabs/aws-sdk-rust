@@ -5,7 +5,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_resource_sets::builders::ListResourceSetsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_resource_sets::builders::ListResourceSetsFluentBuilder::set_max_results): <p>The number of objects that you want to return with this call.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_resource_sets::builders::ListResourceSetsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_resource_sets::builders::ListResourceSetsFluentBuilder::set_next_token): <p>The token that identifies which batch of results you want to see.</p>
+    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_resource_sets::builders::ListResourceSetsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_resource_sets::builders::ListResourceSetsFluentBuilder::set_next_token): <p>The token that identifies which batch of results you want to see.</p>
     /// - On success, responds with [`ListResourceSetsOutput`](crate::operation::list_resource_sets::ListResourceSetsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_resource_sets::ListResourceSetsOutput::next_token): <p>The token that identifies which batch of results you want to see.</p>
     ///   - [`resource_sets(Option<Vec<ResourceSetOutput>>)`](crate::operation::list_resource_sets::ListResourceSetsOutput::resource_sets): <p>A list of resource sets associated with the account.</p>

@@ -6,29 +6,29 @@ pub use crate::operation::update_directory_config::_update_directory_config_inpu
 /// Fluent builder constructing a request to `UpdateDirectoryConfig`.
 ///
 /// <p>Updates the specified Directory Config object in AppStream 2.0. This object includes the configuration information required to join fleets and image builders to Microsoft Active Directory domains.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateDirectoryConfigFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::update_directory_config::builders::UpdateDirectoryConfigInputBuilder,
 }
 impl UpdateDirectoryConfigFluentBuilder {
     /// Creates a new `UpdateDirectoryConfig`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_directory_config::UpdateDirectoryConfig,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_directory_config::UpdateDirectoryConfigError,
         >,
     > {
@@ -36,30 +36,33 @@ impl UpdateDirectoryConfigFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_directory_config::UpdateDirectoryConfigOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_directory_config::UpdateDirectoryConfigError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,21 +75,27 @@ impl UpdateDirectoryConfigFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_directory_config::UpdateDirectoryConfigOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_directory_config::UpdateDirectoryConfigError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the Directory Config object.</p>
-    pub fn directory_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn directory_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.directory_name(input.into());
         self
     }
     /// <p>The name of the Directory Config object.</p>
-    pub fn set_directory_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_directory_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_directory_name(input);
         self
     }
@@ -97,7 +106,7 @@ impl UpdateDirectoryConfigFluentBuilder {
     /// <p>The distinguished names of the organizational units for computer accounts.</p>
     pub fn organizational_unit_distinguished_names(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self
             .inner
@@ -107,7 +116,7 @@ impl UpdateDirectoryConfigFluentBuilder {
     /// <p>The distinguished names of the organizational units for computer accounts.</p>
     pub fn set_organizational_unit_distinguished_names(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self
             .inner
@@ -125,7 +134,7 @@ impl UpdateDirectoryConfigFluentBuilder {
     /// <p>The credentials for the service account used by the fleet or image builder to connect to the directory.</p>
     pub fn set_service_account_credentials(
         mut self,
-        input: std::option::Option<crate::types::ServiceAccountCredentials>,
+        input: ::std::option::Option<crate::types::ServiceAccountCredentials>,
     ) -> Self {
         self.inner = self.inner.set_service_account_credentials(input);
         self
@@ -141,7 +150,7 @@ impl UpdateDirectoryConfigFluentBuilder {
     /// <p>The certificate-based authentication properties used to authenticate SAML 2.0 Identity Provider (IdP) user identities to Active Directory domain-joined streaming instances. Fallback is turned on by default when certificate-based authentication is <b>Enabled</b> . Fallback allows users to log in using their AD domain password if certificate-based authentication is unsuccessful, or to unlock a desktop lock screen. <b>Enabled_no_directory_login_fallback</b> enables certificate-based authentication, but does not allow users to log in using their AD domain password. Users will be disconnected to re-authenticate using certificates.</p>
     pub fn set_certificate_based_auth_properties(
         mut self,
-        input: std::option::Option<crate::types::CertificateBasedAuthProperties>,
+        input: ::std::option::Option<crate::types::CertificateBasedAuthProperties>,
     ) -> Self {
         self.inner = self.inner.set_certificate_based_auth_properties(input);
         self

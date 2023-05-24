@@ -2,48 +2,48 @@
 
 /// <p>Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
-    pub turk_error_code: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
+    pub turk_error_code: ::std::option::Option<::std::string::String>,
+    pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl ServiceFault {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn turk_error_code(&self) -> std::option::Option<&str> {
+    pub fn turk_error_code(&self) -> ::std::option::Option<&str> {
         self.turk_error_code.as_deref()
     }
 }
 impl ServiceFault {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for ServiceFault {
+impl ::std::fmt::Display for ServiceFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ServiceFault")?;
-        if let Some(inner_1) = &self.message {
+        ::std::write!(f, "ServiceFault")?;
+        if let ::std::option::Option::Some(inner_1) = &self.message {
             {
-                write!(f, ": {}", inner_1)?;
+                ::std::write!(f, ": {}", inner_1)?;
             }
         }
         Ok(())
     }
 }
-impl std::error::Error for ServiceFault {}
-impl aws_http::request_id::RequestId for crate::types::error::ServiceFault {
+impl ::std::error::Error for ServiceFault {}
+impl ::aws_http::request_id::RequestId for crate::types::error::ServiceFault {
     fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ServiceFault {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ServiceFault {
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
@@ -56,35 +56,43 @@ impl ServiceFault {
 
 /// A builder for [`ServiceFault`](crate::types::error::ServiceFault).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ServiceFaultBuilder {
-    pub(crate) message: std::option::Option<std::string::String>,
-    pub(crate) turk_error_code: std::option::Option<std::string::String>,
-    meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
+    pub(crate) turk_error_code: ::std::option::Option<::std::string::String>,
+    meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl ServiceFaultBuilder {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn turk_error_code(mut self, input: impl Into<std::string::String>) -> Self {
-        self.turk_error_code = Some(input.into());
+    pub fn turk_error_code(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.turk_error_code = ::std::option::Option::Some(input.into());
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_turk_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_turk_error_code(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.turk_error_code = input;
         self
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
         self.meta = Some(meta);
         self
     }
@@ -92,7 +100,7 @@ impl ServiceFaultBuilder {
     /// Sets error metadata
     pub fn set_meta(
         &mut self,
-        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
     ) -> &mut Self {
         self.meta = meta;
         self

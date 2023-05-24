@@ -15,33 +15,33 @@
 /// </ul>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-steps">Step adjustments</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StepAdjustment {
     /// <p>The lower bound for the difference between the alarm threshold and the CloudWatch metric. If the metric value is above the breach threshold, the lower bound is inclusive (the metric must be greater than or equal to the threshold plus the lower bound). Otherwise, it is exclusive (the metric must be greater than the threshold plus the lower bound). A null value indicates negative infinity.</p>
     #[doc(hidden)]
-    pub metric_interval_lower_bound: std::option::Option<f64>,
+    pub metric_interval_lower_bound: ::std::option::Option<f64>,
     /// <p>The upper bound for the difference between the alarm threshold and the CloudWatch metric. If the metric value is above the breach threshold, the upper bound is exclusive (the metric must be less than the threshold plus the upper bound). Otherwise, it is inclusive (the metric must be less than or equal to the threshold plus the upper bound). A null value indicates positive infinity.</p>
     /// <p>The upper bound must be greater than the lower bound.</p>
     #[doc(hidden)]
-    pub metric_interval_upper_bound: std::option::Option<f64>,
+    pub metric_interval_upper_bound: ::std::option::Option<f64>,
     /// <p>The amount by which to scale, based on the specified adjustment type. A positive value adds to the current capacity while a negative number removes from the current capacity.</p>
     /// <p>The amount by which to scale. The adjustment is based on the value that you specified in the <code>AdjustmentType</code> property (either an absolute number or a percentage). A positive value adds to the current capacity and a negative number subtracts from the current capacity. </p>
     #[doc(hidden)]
-    pub scaling_adjustment: std::option::Option<i32>,
+    pub scaling_adjustment: ::std::option::Option<i32>,
 }
 impl StepAdjustment {
     /// <p>The lower bound for the difference between the alarm threshold and the CloudWatch metric. If the metric value is above the breach threshold, the lower bound is inclusive (the metric must be greater than or equal to the threshold plus the lower bound). Otherwise, it is exclusive (the metric must be greater than the threshold plus the lower bound). A null value indicates negative infinity.</p>
-    pub fn metric_interval_lower_bound(&self) -> std::option::Option<f64> {
+    pub fn metric_interval_lower_bound(&self) -> ::std::option::Option<f64> {
         self.metric_interval_lower_bound
     }
     /// <p>The upper bound for the difference between the alarm threshold and the CloudWatch metric. If the metric value is above the breach threshold, the upper bound is exclusive (the metric must be less than the threshold plus the upper bound). Otherwise, it is inclusive (the metric must be less than or equal to the threshold plus the upper bound). A null value indicates positive infinity.</p>
     /// <p>The upper bound must be greater than the lower bound.</p>
-    pub fn metric_interval_upper_bound(&self) -> std::option::Option<f64> {
+    pub fn metric_interval_upper_bound(&self) -> ::std::option::Option<f64> {
         self.metric_interval_upper_bound
     }
     /// <p>The amount by which to scale, based on the specified adjustment type. A positive value adds to the current capacity while a negative number removes from the current capacity.</p>
     /// <p>The amount by which to scale. The adjustment is based on the value that you specified in the <code>AdjustmentType</code> property (either an absolute number or a percentage). A positive value adds to the current capacity and a negative number subtracts from the current capacity. </p>
-    pub fn scaling_adjustment(&self) -> std::option::Option<i32> {
+    pub fn scaling_adjustment(&self) -> ::std::option::Option<i32> {
         self.scaling_adjustment
     }
 }
@@ -54,44 +54,46 @@ impl StepAdjustment {
 
 /// A builder for [`StepAdjustment`](crate::types::StepAdjustment).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StepAdjustmentBuilder {
-    pub(crate) metric_interval_lower_bound: std::option::Option<f64>,
-    pub(crate) metric_interval_upper_bound: std::option::Option<f64>,
-    pub(crate) scaling_adjustment: std::option::Option<i32>,
+    pub(crate) metric_interval_lower_bound: ::std::option::Option<f64>,
+    pub(crate) metric_interval_upper_bound: ::std::option::Option<f64>,
+    pub(crate) scaling_adjustment: ::std::option::Option<i32>,
 }
 impl StepAdjustmentBuilder {
     /// <p>The lower bound for the difference between the alarm threshold and the CloudWatch metric. If the metric value is above the breach threshold, the lower bound is inclusive (the metric must be greater than or equal to the threshold plus the lower bound). Otherwise, it is exclusive (the metric must be greater than the threshold plus the lower bound). A null value indicates negative infinity.</p>
     pub fn metric_interval_lower_bound(mut self, input: f64) -> Self {
-        self.metric_interval_lower_bound = Some(input);
+        self.metric_interval_lower_bound = ::std::option::Option::Some(input);
         self
     }
     /// <p>The lower bound for the difference between the alarm threshold and the CloudWatch metric. If the metric value is above the breach threshold, the lower bound is inclusive (the metric must be greater than or equal to the threshold plus the lower bound). Otherwise, it is exclusive (the metric must be greater than the threshold plus the lower bound). A null value indicates negative infinity.</p>
-    pub fn set_metric_interval_lower_bound(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_metric_interval_lower_bound(mut self, input: ::std::option::Option<f64>) -> Self {
         self.metric_interval_lower_bound = input;
         self
     }
     /// <p>The upper bound for the difference between the alarm threshold and the CloudWatch metric. If the metric value is above the breach threshold, the upper bound is exclusive (the metric must be less than the threshold plus the upper bound). Otherwise, it is inclusive (the metric must be less than or equal to the threshold plus the upper bound). A null value indicates positive infinity.</p>
     /// <p>The upper bound must be greater than the lower bound.</p>
     pub fn metric_interval_upper_bound(mut self, input: f64) -> Self {
-        self.metric_interval_upper_bound = Some(input);
+        self.metric_interval_upper_bound = ::std::option::Option::Some(input);
         self
     }
     /// <p>The upper bound for the difference between the alarm threshold and the CloudWatch metric. If the metric value is above the breach threshold, the upper bound is exclusive (the metric must be less than the threshold plus the upper bound). Otherwise, it is inclusive (the metric must be less than or equal to the threshold plus the upper bound). A null value indicates positive infinity.</p>
     /// <p>The upper bound must be greater than the lower bound.</p>
-    pub fn set_metric_interval_upper_bound(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_metric_interval_upper_bound(mut self, input: ::std::option::Option<f64>) -> Self {
         self.metric_interval_upper_bound = input;
         self
     }
     /// <p>The amount by which to scale, based on the specified adjustment type. A positive value adds to the current capacity while a negative number removes from the current capacity.</p>
     /// <p>The amount by which to scale. The adjustment is based on the value that you specified in the <code>AdjustmentType</code> property (either an absolute number or a percentage). A positive value adds to the current capacity and a negative number subtracts from the current capacity. </p>
     pub fn scaling_adjustment(mut self, input: i32) -> Self {
-        self.scaling_adjustment = Some(input);
+        self.scaling_adjustment = ::std::option::Option::Some(input);
         self
     }
     /// <p>The amount by which to scale, based on the specified adjustment type. A positive value adds to the current capacity while a negative number removes from the current capacity.</p>
     /// <p>The amount by which to scale. The adjustment is based on the value that you specified in the <code>AdjustmentType</code> property (either an absolute number or a percentage). A positive value adds to the current capacity and a negative number subtracts from the current capacity. </p>
-    pub fn set_scaling_adjustment(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_scaling_adjustment(mut self, input: ::std::option::Option<i32>) -> Self {
         self.scaling_adjustment = input;
         self
     }

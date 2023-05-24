@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum MessageAction {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum MessageAction {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for MessageAction {
+impl ::std::convert::From<&str> for MessageAction {
     fn from(s: &str) -> Self {
         match s {
             "RESEND" => MessageAction::Resend,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for MessageAction {
         }
     }
 }
-impl std::str::FromStr for MessageAction {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for MessageAction {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(MessageAction::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(MessageAction::from(s))
     }
 }
 impl MessageAction {
@@ -86,7 +86,7 @@ impl MessageAction {
         &["RESEND", "SUPPRESS"]
     }
 }
-impl AsRef<str> for MessageAction {
+impl ::std::convert::AsRef<str> for MessageAction {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -6,47 +6,50 @@ pub use crate::operation::update_event_configuration_by_resource_types::_update_
 /// Fluent builder constructing a request to `UpdateEventConfigurationByResourceTypes`.
 ///
 /// <p>Update the event configuration based on resource types.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateEventConfigurationByResourceTypesFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::update_event_configuration_by_resource_types::builders::UpdateEventConfigurationByResourceTypesInputBuilder,
 }
 impl UpdateEventConfigurationByResourceTypesFluentBuilder {
     /// Creates a new `UpdateEventConfigurationByResourceTypes`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_event_configuration_by_resource_types::UpdateEventConfigurationByResourceTypes, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::update_event_configuration_by_resource_types::UpdateEventConfigurationByResourceTypesError>
+                    pub async fn customize(self) -> ::std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::update_event_configuration_by_resource_types::UpdateEventConfigurationByResourceTypes, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                        ::aws_smithy_http::result::SdkError<crate::operation::update_event_configuration_by_resource_types::UpdateEventConfigurationByResourceTypesError>
     >{
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::update_event_configuration_by_resource_types::UpdateEventConfigurationByResourceTypesOutput, aws_smithy_http::result::SdkError<crate::operation::update_event_configuration_by_resource_types::UpdateEventConfigurationByResourceTypesError>>
+                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_event_configuration_by_resource_types::UpdateEventConfigurationByResourceTypesOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_event_configuration_by_resource_types::UpdateEventConfigurationByResourceTypesError>>
                      {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -57,7 +60,7 @@ impl UpdateEventConfigurationByResourceTypesFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> std::result::Result<crate::operation::update_event_configuration_by_resource_types::UpdateEventConfigurationByResourceTypesOutput, aws_smithy_http::result::SdkError<crate::operation::update_event_configuration_by_resource_types::UpdateEventConfigurationByResourceTypesError>>
+                        pub async fn send(self) -> ::std::result::Result<crate::operation::update_event_configuration_by_resource_types::UpdateEventConfigurationByResourceTypesOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_event_configuration_by_resource_types::UpdateEventConfigurationByResourceTypesError>>
                          {
         self.send_middleware().await
     }
@@ -72,7 +75,7 @@ impl UpdateEventConfigurationByResourceTypesFluentBuilder {
     /// <p>Device registration state resource type event configuration object for enabling and disabling wireless gateway topic.</p>
     pub fn set_device_registration_state(
         mut self,
-        input: std::option::Option<
+        input: ::std::option::Option<
             crate::types::DeviceRegistrationStateResourceTypeEventConfiguration,
         >,
     ) -> Self {
@@ -90,7 +93,7 @@ impl UpdateEventConfigurationByResourceTypesFluentBuilder {
     /// <p>Proximity resource type event configuration object for enabling and disabling wireless gateway topic.</p>
     pub fn set_proximity(
         mut self,
-        input: std::option::Option<crate::types::ProximityResourceTypeEventConfiguration>,
+        input: ::std::option::Option<crate::types::ProximityResourceTypeEventConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_proximity(input);
         self
@@ -103,7 +106,7 @@ impl UpdateEventConfigurationByResourceTypesFluentBuilder {
     /// <p>Join resource type event configuration object for enabling and disabling wireless device topic.</p>
     pub fn set_join(
         mut self,
-        input: std::option::Option<crate::types::JoinResourceTypeEventConfiguration>,
+        input: ::std::option::Option<crate::types::JoinResourceTypeEventConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_join(input);
         self
@@ -119,7 +122,7 @@ impl UpdateEventConfigurationByResourceTypesFluentBuilder {
     /// <p>Connection status resource type event configuration object for enabling and disabling wireless gateway topic.</p>
     pub fn set_connection_status(
         mut self,
-        input: std::option::Option<crate::types::ConnectionStatusResourceTypeEventConfiguration>,
+        input: ::std::option::Option<crate::types::ConnectionStatusResourceTypeEventConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_connection_status(input);
         self
@@ -135,7 +138,7 @@ impl UpdateEventConfigurationByResourceTypesFluentBuilder {
     /// <p>Message delivery status resource type event configuration object for enabling and disabling wireless device topic.</p>
     pub fn set_message_delivery_status(
         mut self,
-        input: std::option::Option<
+        input: ::std::option::Option<
             crate::types::MessageDeliveryStatusResourceTypeEventConfiguration,
         >,
     ) -> Self {

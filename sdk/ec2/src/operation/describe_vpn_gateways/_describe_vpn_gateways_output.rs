@@ -2,20 +2,20 @@
 
 /// <p>Contains the output of DescribeVpnGateways.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeVpnGatewaysOutput {
     /// <p>Information about one or more virtual private gateways.</p>
     #[doc(hidden)]
-    pub vpn_gateways: std::option::Option<std::vec::Vec<crate::types::VpnGateway>>,
+    pub vpn_gateways: ::std::option::Option<::std::vec::Vec<crate::types::VpnGateway>>,
     _request_id: Option<String>,
 }
 impl DescribeVpnGatewaysOutput {
     /// <p>Information about one or more virtual private gateways.</p>
-    pub fn vpn_gateways(&self) -> std::option::Option<&[crate::types::VpnGateway]> {
+    pub fn vpn_gateways(&self) -> ::std::option::Option<&[crate::types::VpnGateway]> {
         self.vpn_gateways.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeVpnGatewaysOutput {
+impl ::aws_http::request_id::RequestId for DescribeVpnGatewaysOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -31,9 +31,11 @@ impl DescribeVpnGatewaysOutput {
 
 /// A builder for [`DescribeVpnGatewaysOutput`](crate::operation::describe_vpn_gateways::DescribeVpnGatewaysOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeVpnGatewaysOutputBuilder {
-    pub(crate) vpn_gateways: std::option::Option<std::vec::Vec<crate::types::VpnGateway>>,
+    pub(crate) vpn_gateways: ::std::option::Option<::std::vec::Vec<crate::types::VpnGateway>>,
     _request_id: Option<String>,
 }
 impl DescribeVpnGatewaysOutputBuilder {
@@ -45,13 +47,13 @@ impl DescribeVpnGatewaysOutputBuilder {
     pub fn vpn_gateways(mut self, input: crate::types::VpnGateway) -> Self {
         let mut v = self.vpn_gateways.unwrap_or_default();
         v.push(input);
-        self.vpn_gateways = Some(v);
+        self.vpn_gateways = ::std::option::Option::Some(v);
         self
     }
     /// <p>Information about one or more virtual private gateways.</p>
     pub fn set_vpn_gateways(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::VpnGateway>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::VpnGateway>>,
     ) -> Self {
         self.vpn_gateways = input;
         self

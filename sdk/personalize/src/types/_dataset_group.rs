@@ -3,14 +3,14 @@
 /// <p>A dataset group is a collection of related datasets (Interactions, User, and Item). You create a dataset group by calling <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetGroup.html">CreateDatasetGroup</a>. You then create a dataset and add it to a dataset group by calling <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDataset.html">CreateDataset</a>. The dataset group is used to create and train a solution by calling <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a>. A dataset group can contain only one of each type of dataset.</p>
 /// <p>You can specify an Key Management Service (KMS) key to encrypt the datasets in the group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatasetGroup {
     /// <p>The name of the dataset group.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
     #[doc(hidden)]
-    pub dataset_group_arn: std::option::Option<std::string::String>,
+    pub dataset_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the dataset group.</p>
     /// <p>A dataset group can be in one of the following states:</p>
     /// <ul>
@@ -18,33 +18,33 @@ pub struct DatasetGroup {
     /// <li> <p>DELETE PENDING</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub status: std::option::Option<std::string::String>,
+    pub status: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the IAM role that has permissions to create the dataset group.</p>
     #[doc(hidden)]
-    pub role_arn: std::option::Option<std::string::String>,
+    pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key used to encrypt the datasets.</p>
     #[doc(hidden)]
-    pub kms_key_arn: std::option::Option<std::string::String>,
+    pub kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The creation date and time (in Unix time) of the dataset group.</p>
     #[doc(hidden)]
-    pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last update date and time (in Unix time) of the dataset group.</p>
     #[doc(hidden)]
-    pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>If creating a dataset group fails, provides the reason why.</p>
     #[doc(hidden)]
-    pub failure_reason: std::option::Option<std::string::String>,
+    pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>The domain of a Domain dataset group.</p>
     #[doc(hidden)]
-    pub domain: std::option::Option<crate::types::Domain>,
+    pub domain: ::std::option::Option<crate::types::Domain>,
 }
 impl DatasetGroup {
     /// <p>The name of the dataset group.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
-    pub fn dataset_group_arn(&self) -> std::option::Option<&str> {
+    pub fn dataset_group_arn(&self) -> ::std::option::Option<&str> {
         self.dataset_group_arn.as_deref()
     }
     /// <p>The current status of the dataset group.</p>
@@ -53,31 +53,31 @@ impl DatasetGroup {
     /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
     /// <li> <p>DELETE PENDING</p> </li>
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
     /// <p>The ARN of the IAM role that has permissions to create the dataset group.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key used to encrypt the datasets.</p>
-    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+    pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
     /// <p>The creation date and time (in Unix time) of the dataset group.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The last update date and time (in Unix time) of the dataset group.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
     /// <p>If creating a dataset group fails, provides the reason why.</p>
-    pub fn failure_reason(&self) -> std::option::Option<&str> {
+    pub fn failure_reason(&self) -> ::std::option::Option<&str> {
         self.failure_reason.as_deref()
     }
     /// <p>The domain of a Domain dataset group.</p>
-    pub fn domain(&self) -> std::option::Option<&crate::types::Domain> {
+    pub fn domain(&self) -> ::std::option::Option<&crate::types::Domain> {
         self.domain.as_ref()
     }
 }
@@ -90,38 +90,43 @@ impl DatasetGroup {
 
 /// A builder for [`DatasetGroup`](crate::types::DatasetGroup).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DatasetGroupBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) dataset_group_arn: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<std::string::String>,
-    pub(crate) role_arn: std::option::Option<std::string::String>,
-    pub(crate) kms_key_arn: std::option::Option<std::string::String>,
-    pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) failure_reason: std::option::Option<std::string::String>,
-    pub(crate) domain: std::option::Option<crate::types::Domain>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) dataset_group_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<::std::string::String>,
+    pub(crate) role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
+    pub(crate) domain: ::std::option::Option<crate::types::Domain>,
 }
 impl DatasetGroupBuilder {
     /// <p>The name of the dataset group.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the dataset group.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
-    pub fn dataset_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.dataset_group_arn = Some(input.into());
+    pub fn dataset_group_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.dataset_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
     pub fn set_dataset_group_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.dataset_group_arn = input;
         self
@@ -132,8 +137,8 @@ impl DatasetGroupBuilder {
     /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
     /// <li> <p>DELETE PENDING</p> </li>
     /// </ul>
-    pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status = Some(input.into());
+    pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The current status of the dataset group.</p>
@@ -142,73 +147,79 @@ impl DatasetGroupBuilder {
     /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
     /// <li> <p>DELETE PENDING</p> </li>
     /// </ul>
-    pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }
     /// <p>The ARN of the IAM role that has permissions to create the dataset group.</p>
-    pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.role_arn = Some(input.into());
+    pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the IAM role that has permissions to create the dataset group.</p>
-    pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key used to encrypt the datasets.</p>
-    pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.kms_key_arn = Some(input.into());
+    pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key used to encrypt the datasets.</p>
-    pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_arn = input;
         self
     }
     /// <p>The creation date and time (in Unix time) of the dataset group.</p>
-    pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_date_time = Some(input);
+    pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_date_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The creation date and time (in Unix time) of the dataset group.</p>
     pub fn set_creation_date_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_date_time = input;
         self
     }
     /// <p>The last update date and time (in Unix time) of the dataset group.</p>
-    pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_updated_date_time = Some(input);
+    pub fn last_updated_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_updated_date_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The last update date and time (in Unix time) of the dataset group.</p>
     pub fn set_last_updated_date_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_updated_date_time = input;
         self
     }
     /// <p>If creating a dataset group fails, provides the reason why.</p>
-    pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
-        self.failure_reason = Some(input.into());
+    pub fn failure_reason(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If creating a dataset group fails, provides the reason why.</p>
-    pub fn set_failure_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_failure_reason(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.failure_reason = input;
         self
     }
     /// <p>The domain of a Domain dataset group.</p>
     pub fn domain(mut self, input: crate::types::Domain) -> Self {
-        self.domain = Some(input);
+        self.domain = ::std::option::Option::Some(input);
         self
     }
     /// <p>The domain of a Domain dataset group.</p>
-    pub fn set_domain(mut self, input: std::option::Option<crate::types::Domain>) -> Self {
+    pub fn set_domain(mut self, input: ::std::option::Option<crate::types::Domain>) -> Self {
         self.domain = input;
         self
     }

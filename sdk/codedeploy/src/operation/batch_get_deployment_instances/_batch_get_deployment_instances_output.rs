@@ -2,27 +2,27 @@
 
 /// <p>Represents the output of a <code>BatchGetDeploymentInstances</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetDeploymentInstancesOutput {
     /// <p>Information about the instance.</p>
     #[doc(hidden)]
-    pub instances_summary: std::option::Option<std::vec::Vec<crate::types::InstanceSummary>>,
+    pub instances_summary: ::std::option::Option<::std::vec::Vec<crate::types::InstanceSummary>>,
     /// <p>Information about errors that might have occurred during the API call.</p>
     #[doc(hidden)]
-    pub error_message: std::option::Option<std::string::String>,
+    pub error_message: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl BatchGetDeploymentInstancesOutput {
     /// <p>Information about the instance.</p>
-    pub fn instances_summary(&self) -> std::option::Option<&[crate::types::InstanceSummary]> {
+    pub fn instances_summary(&self) -> ::std::option::Option<&[crate::types::InstanceSummary]> {
         self.instances_summary.as_deref()
     }
     /// <p>Information about errors that might have occurred during the API call.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<&str> {
         self.error_message.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for BatchGetDeploymentInstancesOutput {
+impl ::aws_http::request_id::RequestId for BatchGetDeploymentInstancesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -36,10 +36,13 @@ impl BatchGetDeploymentInstancesOutput {
 
 /// A builder for [`BatchGetDeploymentInstancesOutput`](crate::operation::batch_get_deployment_instances::BatchGetDeploymentInstancesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BatchGetDeploymentInstancesOutputBuilder {
-    pub(crate) instances_summary: std::option::Option<std::vec::Vec<crate::types::InstanceSummary>>,
-    pub(crate) error_message: std::option::Option<std::string::String>,
+    pub(crate) instances_summary:
+        ::std::option::Option<::std::vec::Vec<crate::types::InstanceSummary>>,
+    pub(crate) error_message: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl BatchGetDeploymentInstancesOutputBuilder {
@@ -51,24 +54,30 @@ impl BatchGetDeploymentInstancesOutputBuilder {
     pub fn instances_summary(mut self, input: crate::types::InstanceSummary) -> Self {
         let mut v = self.instances_summary.unwrap_or_default();
         v.push(input);
-        self.instances_summary = Some(v);
+        self.instances_summary = ::std::option::Option::Some(v);
         self
     }
     /// <p>Information about the instance.</p>
     pub fn set_instances_summary(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::InstanceSummary>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceSummary>>,
     ) -> Self {
         self.instances_summary = input;
         self
     }
     /// <p>Information about errors that might have occurred during the API call.</p>
-    pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.error_message = Some(input.into());
+    pub fn error_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Information about errors that might have occurred during the API call.</p>
-    pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_error_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.error_message = input;
         self
     }

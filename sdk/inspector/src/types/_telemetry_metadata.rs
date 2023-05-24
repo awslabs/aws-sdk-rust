@@ -2,29 +2,29 @@
 
 /// <p>The metadata about the Amazon Inspector application data metrics collected by the agent. This data type is used as the response element in the <code>GetTelemetryMetadata</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TelemetryMetadata {
     /// <p>A specific type of behavioral data that is collected by the agent.</p>
     #[doc(hidden)]
-    pub message_type: std::option::Option<std::string::String>,
+    pub message_type: ::std::option::Option<::std::string::String>,
     /// <p>The count of messages that the agent sends to the Amazon Inspector service.</p>
     #[doc(hidden)]
-    pub count: std::option::Option<i64>,
+    pub count: ::std::option::Option<i64>,
     /// <p>The data size of messages that the agent sends to the Amazon Inspector service.</p>
     #[doc(hidden)]
-    pub data_size: std::option::Option<i64>,
+    pub data_size: ::std::option::Option<i64>,
 }
 impl TelemetryMetadata {
     /// <p>A specific type of behavioral data that is collected by the agent.</p>
-    pub fn message_type(&self) -> std::option::Option<&str> {
+    pub fn message_type(&self) -> ::std::option::Option<&str> {
         self.message_type.as_deref()
     }
     /// <p>The count of messages that the agent sends to the Amazon Inspector service.</p>
-    pub fn count(&self) -> std::option::Option<i64> {
+    pub fn count(&self) -> ::std::option::Option<i64> {
         self.count
     }
     /// <p>The data size of messages that the agent sends to the Amazon Inspector service.</p>
-    pub fn data_size(&self) -> std::option::Option<i64> {
+    pub fn data_size(&self) -> ::std::option::Option<i64> {
         self.data_size
     }
 }
@@ -37,40 +37,42 @@ impl TelemetryMetadata {
 
 /// A builder for [`TelemetryMetadata`](crate::types::TelemetryMetadata).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TelemetryMetadataBuilder {
-    pub(crate) message_type: std::option::Option<std::string::String>,
-    pub(crate) count: std::option::Option<i64>,
-    pub(crate) data_size: std::option::Option<i64>,
+    pub(crate) message_type: ::std::option::Option<::std::string::String>,
+    pub(crate) count: ::std::option::Option<i64>,
+    pub(crate) data_size: ::std::option::Option<i64>,
 }
 impl TelemetryMetadataBuilder {
     /// <p>A specific type of behavioral data that is collected by the agent.</p>
-    pub fn message_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message_type = Some(input.into());
+    pub fn message_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A specific type of behavioral data that is collected by the agent.</p>
-    pub fn set_message_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message_type = input;
         self
     }
     /// <p>The count of messages that the agent sends to the Amazon Inspector service.</p>
     pub fn count(mut self, input: i64) -> Self {
-        self.count = Some(input);
+        self.count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The count of messages that the agent sends to the Amazon Inspector service.</p>
-    pub fn set_count(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.count = input;
         self
     }
     /// <p>The data size of messages that the agent sends to the Amazon Inspector service.</p>
     pub fn data_size(mut self, input: i64) -> Self {
-        self.data_size = Some(input);
+        self.data_size = ::std::option::Option::Some(input);
         self
     }
     /// <p>The data size of messages that the agent sends to the Amazon Inspector service.</p>
-    pub fn set_data_size(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_data_size(mut self, input: ::std::option::Option<i64>) -> Self {
         self.data_size = input;
         self
     }

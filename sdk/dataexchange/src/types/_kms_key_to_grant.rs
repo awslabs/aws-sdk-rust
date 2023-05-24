@@ -2,15 +2,15 @@
 
 /// <p>The Amazon Resource Name (ARN) of the AWS KMS key used to encrypt the shared S3 objects.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KmsKeyToGrant {
     /// <p>The AWS KMS CMK (Key Management System Customer Managed Key) used to encrypt S3 objects in the shared S3 Bucket. AWS Data exchange will create a KMS grant for each subscriber to allow them to access and decrypt their entitled data that is encrypted using this KMS key specified.</p>
     #[doc(hidden)]
-    pub kms_key_arn: std::option::Option<std::string::String>,
+    pub kms_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl KmsKeyToGrant {
     /// <p>The AWS KMS CMK (Key Management System Customer Managed Key) used to encrypt S3 objects in the shared S3 Bucket. AWS Data exchange will create a KMS grant for each subscriber to allow them to access and decrypt their entitled data that is encrypted using this KMS key specified.</p>
-    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+    pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl KmsKeyToGrant {
 
 /// A builder for [`KmsKeyToGrant`](crate::types::KmsKeyToGrant).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct KmsKeyToGrantBuilder {
-    pub(crate) kms_key_arn: std::option::Option<std::string::String>,
+    pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl KmsKeyToGrantBuilder {
     /// <p>The AWS KMS CMK (Key Management System Customer Managed Key) used to encrypt S3 objects in the shared S3 Bucket. AWS Data exchange will create a KMS grant for each subscriber to allow them to access and decrypt their entitled data that is encrypted using this KMS key specified.</p>
-    pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.kms_key_arn = Some(input.into());
+    pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The AWS KMS CMK (Key Management System Customer Managed Key) used to encrypt S3 objects in the shared S3 Bucket. AWS Data exchange will create a KMS grant for each subscriber to allow them to access and decrypt their entitled data that is encrypted using this KMS key specified.</p>
-    pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_arn = input;
         self
     }

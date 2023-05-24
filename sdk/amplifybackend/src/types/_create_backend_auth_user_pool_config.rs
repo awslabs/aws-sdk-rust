@@ -2,74 +2,74 @@
 
 /// <p>Describes the Amazon Cognito user pool configuration for the auth resource to be configured for your Amplify project.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateBackendAuthUserPoolConfig {
     /// <p><b>(DEPRECATED)</b> Describes the forgotten password policy for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
     #[doc(hidden)]
-    pub forgot_password: std::option::Option<crate::types::CreateBackendAuthForgotPasswordConfig>,
+    pub forgot_password: ::std::option::Option<crate::types::CreateBackendAuthForgotPasswordConfig>,
     /// <p>Describes whether to apply multi-factor authentication policies for your Amazon Cognito user pool configured as a part of your Amplify project.</p>
     #[doc(hidden)]
-    pub mfa: std::option::Option<crate::types::CreateBackendAuthMfaConfig>,
+    pub mfa: ::std::option::Option<crate::types::CreateBackendAuthMfaConfig>,
     /// <p>Describes the OAuth policy and rules for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
     #[doc(hidden)]
-    pub o_auth: std::option::Option<crate::types::CreateBackendAuthOAuthConfig>,
+    pub o_auth: ::std::option::Option<crate::types::CreateBackendAuthOAuthConfig>,
     /// <p>Describes the password policy for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
     #[doc(hidden)]
-    pub password_policy: std::option::Option<crate::types::CreateBackendAuthPasswordPolicyConfig>,
+    pub password_policy: ::std::option::Option<crate::types::CreateBackendAuthPasswordPolicyConfig>,
     /// <p>The required attributes to sign up new users in the user pool.</p>
     #[doc(hidden)]
     pub required_sign_up_attributes:
-        std::option::Option<std::vec::Vec<crate::types::RequiredSignUpAttributesElement>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::RequiredSignUpAttributesElement>>,
     /// <p>Describes the sign-in methods that your Amplify app users use to log in using the Amazon Cognito user pool, configured as a part of your Amplify project.</p>
     #[doc(hidden)]
-    pub sign_in_method: std::option::Option<crate::types::SignInMethod>,
+    pub sign_in_method: ::std::option::Option<crate::types::SignInMethod>,
     /// <p>The Amazon Cognito user pool name.</p>
     #[doc(hidden)]
-    pub user_pool_name: std::option::Option<std::string::String>,
+    pub user_pool_name: ::std::option::Option<::std::string::String>,
     /// <p>Describes the email or SMS verification message for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
     #[doc(hidden)]
     pub verification_message:
-        std::option::Option<crate::types::CreateBackendAuthVerificationMessageConfig>,
+        ::std::option::Option<crate::types::CreateBackendAuthVerificationMessageConfig>,
 }
 impl CreateBackendAuthUserPoolConfig {
     /// <p><b>(DEPRECATED)</b> Describes the forgotten password policy for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
     pub fn forgot_password(
         &self,
-    ) -> std::option::Option<&crate::types::CreateBackendAuthForgotPasswordConfig> {
+    ) -> ::std::option::Option<&crate::types::CreateBackendAuthForgotPasswordConfig> {
         self.forgot_password.as_ref()
     }
     /// <p>Describes whether to apply multi-factor authentication policies for your Amazon Cognito user pool configured as a part of your Amplify project.</p>
-    pub fn mfa(&self) -> std::option::Option<&crate::types::CreateBackendAuthMfaConfig> {
+    pub fn mfa(&self) -> ::std::option::Option<&crate::types::CreateBackendAuthMfaConfig> {
         self.mfa.as_ref()
     }
     /// <p>Describes the OAuth policy and rules for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
-    pub fn o_auth(&self) -> std::option::Option<&crate::types::CreateBackendAuthOAuthConfig> {
+    pub fn o_auth(&self) -> ::std::option::Option<&crate::types::CreateBackendAuthOAuthConfig> {
         self.o_auth.as_ref()
     }
     /// <p>Describes the password policy for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
     pub fn password_policy(
         &self,
-    ) -> std::option::Option<&crate::types::CreateBackendAuthPasswordPolicyConfig> {
+    ) -> ::std::option::Option<&crate::types::CreateBackendAuthPasswordPolicyConfig> {
         self.password_policy.as_ref()
     }
     /// <p>The required attributes to sign up new users in the user pool.</p>
     pub fn required_sign_up_attributes(
         &self,
-    ) -> std::option::Option<&[crate::types::RequiredSignUpAttributesElement]> {
+    ) -> ::std::option::Option<&[crate::types::RequiredSignUpAttributesElement]> {
         self.required_sign_up_attributes.as_deref()
     }
     /// <p>Describes the sign-in methods that your Amplify app users use to log in using the Amazon Cognito user pool, configured as a part of your Amplify project.</p>
-    pub fn sign_in_method(&self) -> std::option::Option<&crate::types::SignInMethod> {
+    pub fn sign_in_method(&self) -> ::std::option::Option<&crate::types::SignInMethod> {
         self.sign_in_method.as_ref()
     }
     /// <p>The Amazon Cognito user pool name.</p>
-    pub fn user_pool_name(&self) -> std::option::Option<&str> {
+    pub fn user_pool_name(&self) -> ::std::option::Option<&str> {
         self.user_pool_name.as_deref()
     }
     /// <p>Describes the email or SMS verification message for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
     pub fn verification_message(
         &self,
-    ) -> std::option::Option<&crate::types::CreateBackendAuthVerificationMessageConfig> {
+    ) -> ::std::option::Option<&crate::types::CreateBackendAuthVerificationMessageConfig> {
         self.verification_message.as_ref()
     }
 }
@@ -82,20 +82,22 @@ impl CreateBackendAuthUserPoolConfig {
 
 /// A builder for [`CreateBackendAuthUserPoolConfig`](crate::types::CreateBackendAuthUserPoolConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateBackendAuthUserPoolConfigBuilder {
     pub(crate) forgot_password:
-        std::option::Option<crate::types::CreateBackendAuthForgotPasswordConfig>,
-    pub(crate) mfa: std::option::Option<crate::types::CreateBackendAuthMfaConfig>,
-    pub(crate) o_auth: std::option::Option<crate::types::CreateBackendAuthOAuthConfig>,
+        ::std::option::Option<crate::types::CreateBackendAuthForgotPasswordConfig>,
+    pub(crate) mfa: ::std::option::Option<crate::types::CreateBackendAuthMfaConfig>,
+    pub(crate) o_auth: ::std::option::Option<crate::types::CreateBackendAuthOAuthConfig>,
     pub(crate) password_policy:
-        std::option::Option<crate::types::CreateBackendAuthPasswordPolicyConfig>,
+        ::std::option::Option<crate::types::CreateBackendAuthPasswordPolicyConfig>,
     pub(crate) required_sign_up_attributes:
-        std::option::Option<std::vec::Vec<crate::types::RequiredSignUpAttributesElement>>,
-    pub(crate) sign_in_method: std::option::Option<crate::types::SignInMethod>,
-    pub(crate) user_pool_name: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::RequiredSignUpAttributesElement>>,
+    pub(crate) sign_in_method: ::std::option::Option<crate::types::SignInMethod>,
+    pub(crate) user_pool_name: ::std::option::Option<::std::string::String>,
     pub(crate) verification_message:
-        std::option::Option<crate::types::CreateBackendAuthVerificationMessageConfig>,
+        ::std::option::Option<crate::types::CreateBackendAuthVerificationMessageConfig>,
 }
 impl CreateBackendAuthUserPoolConfigBuilder {
     /// <p><b>(DEPRECATED)</b> Describes the forgotten password policy for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
@@ -103,39 +105,39 @@ impl CreateBackendAuthUserPoolConfigBuilder {
         mut self,
         input: crate::types::CreateBackendAuthForgotPasswordConfig,
     ) -> Self {
-        self.forgot_password = Some(input);
+        self.forgot_password = ::std::option::Option::Some(input);
         self
     }
     /// <p><b>(DEPRECATED)</b> Describes the forgotten password policy for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
     pub fn set_forgot_password(
         mut self,
-        input: std::option::Option<crate::types::CreateBackendAuthForgotPasswordConfig>,
+        input: ::std::option::Option<crate::types::CreateBackendAuthForgotPasswordConfig>,
     ) -> Self {
         self.forgot_password = input;
         self
     }
     /// <p>Describes whether to apply multi-factor authentication policies for your Amazon Cognito user pool configured as a part of your Amplify project.</p>
     pub fn mfa(mut self, input: crate::types::CreateBackendAuthMfaConfig) -> Self {
-        self.mfa = Some(input);
+        self.mfa = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes whether to apply multi-factor authentication policies for your Amazon Cognito user pool configured as a part of your Amplify project.</p>
     pub fn set_mfa(
         mut self,
-        input: std::option::Option<crate::types::CreateBackendAuthMfaConfig>,
+        input: ::std::option::Option<crate::types::CreateBackendAuthMfaConfig>,
     ) -> Self {
         self.mfa = input;
         self
     }
     /// <p>Describes the OAuth policy and rules for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
     pub fn o_auth(mut self, input: crate::types::CreateBackendAuthOAuthConfig) -> Self {
-        self.o_auth = Some(input);
+        self.o_auth = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes the OAuth policy and rules for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
     pub fn set_o_auth(
         mut self,
-        input: std::option::Option<crate::types::CreateBackendAuthOAuthConfig>,
+        input: ::std::option::Option<crate::types::CreateBackendAuthOAuthConfig>,
     ) -> Self {
         self.o_auth = input;
         self
@@ -145,13 +147,13 @@ impl CreateBackendAuthUserPoolConfigBuilder {
         mut self,
         input: crate::types::CreateBackendAuthPasswordPolicyConfig,
     ) -> Self {
-        self.password_policy = Some(input);
+        self.password_policy = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes the password policy for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
     pub fn set_password_policy(
         mut self,
-        input: std::option::Option<crate::types::CreateBackendAuthPasswordPolicyConfig>,
+        input: ::std::option::Option<crate::types::CreateBackendAuthPasswordPolicyConfig>,
     ) -> Self {
         self.password_policy = input;
         self
@@ -167,37 +169,45 @@ impl CreateBackendAuthUserPoolConfigBuilder {
     ) -> Self {
         let mut v = self.required_sign_up_attributes.unwrap_or_default();
         v.push(input);
-        self.required_sign_up_attributes = Some(v);
+        self.required_sign_up_attributes = ::std::option::Option::Some(v);
         self
     }
     /// <p>The required attributes to sign up new users in the user pool.</p>
     pub fn set_required_sign_up_attributes(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RequiredSignUpAttributesElement>>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::RequiredSignUpAttributesElement>,
+        >,
     ) -> Self {
         self.required_sign_up_attributes = input;
         self
     }
     /// <p>Describes the sign-in methods that your Amplify app users use to log in using the Amazon Cognito user pool, configured as a part of your Amplify project.</p>
     pub fn sign_in_method(mut self, input: crate::types::SignInMethod) -> Self {
-        self.sign_in_method = Some(input);
+        self.sign_in_method = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes the sign-in methods that your Amplify app users use to log in using the Amazon Cognito user pool, configured as a part of your Amplify project.</p>
     pub fn set_sign_in_method(
         mut self,
-        input: std::option::Option<crate::types::SignInMethod>,
+        input: ::std::option::Option<crate::types::SignInMethod>,
     ) -> Self {
         self.sign_in_method = input;
         self
     }
     /// <p>The Amazon Cognito user pool name.</p>
-    pub fn user_pool_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.user_pool_name = Some(input.into());
+    pub fn user_pool_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.user_pool_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Cognito user pool name.</p>
-    pub fn set_user_pool_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_user_pool_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.user_pool_name = input;
         self
     }
@@ -206,13 +216,13 @@ impl CreateBackendAuthUserPoolConfigBuilder {
         mut self,
         input: crate::types::CreateBackendAuthVerificationMessageConfig,
     ) -> Self {
-        self.verification_message = Some(input);
+        self.verification_message = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes the email or SMS verification message for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
     pub fn set_verification_message(
         mut self,
-        input: std::option::Option<crate::types::CreateBackendAuthVerificationMessageConfig>,
+        input: ::std::option::Option<crate::types::CreateBackendAuthVerificationMessageConfig>,
     ) -> Self {
         self.verification_message = input;
         self

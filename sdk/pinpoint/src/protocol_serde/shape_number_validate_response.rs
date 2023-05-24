@@ -3,22 +3,22 @@ pub(crate) fn de_number_validate_response_payload(
     input: &[u8],
 ) -> Result<
     crate::types::NumberValidateResponse,
-    aws_smithy_json::deserialize::error::DeserializeError,
+    ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =
-        aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(input))
+        ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(input))
             .peekable();
     let tokens = &mut tokens_owned;
     let result =
         crate::protocol_serde::shape_number_validate_response::de_number_validate_response(tokens)?
             .ok_or_else(|| {
-                aws_smithy_json::deserialize::error::DeserializeError::custom(
+                ::aws_smithy_json::deserialize::error::DeserializeError::custom(
                     "expected payload member value",
                 )
             });
     if tokens.next().is_some() {
         return Err(
-            aws_smithy_json::deserialize::error::DeserializeError::custom(
+            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
                 "found more JSON tokens after completing parsing",
             ),
         );
@@ -27,32 +27,32 @@ pub(crate) fn de_number_validate_response_payload(
 }
 
 pub(crate) fn de_number_validate_response<'a, I>(
-    tokens: &mut std::iter::Peekable<I>,
+    tokens: &mut ::std::iter::Peekable<I>,
 ) -> Result<
     Option<crate::types::NumberValidateResponse>,
-    aws_smithy_json::deserialize::error::DeserializeError,
+    ::aws_smithy_json::deserialize::error::DeserializeError,
 >
 where
     I: Iterator<
         Item = Result<
-            aws_smithy_json::deserialize::Token<'a>,
-            aws_smithy_json::deserialize::error::DeserializeError,
+            ::aws_smithy_json::deserialize::Token<'a>,
+            ::aws_smithy_json::deserialize::error::DeserializeError,
         >,
     >,
 {
     match tokens.next().transpose()? {
-        Some(aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
-        Some(aws_smithy_json::deserialize::Token::StartObject { .. }) => {
+        Some(::aws_smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(::aws_smithy_json::deserialize::Token::StartObject { .. }) => {
             #[allow(unused_mut)]
             let mut builder = crate::types::builders::NumberValidateResponseBuilder::default();
             loop {
                 match tokens.next().transpose()? {
-                    Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                    Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                         match key.to_unescaped()?.as_ref() {
                             "Carrier" => {
                                 builder = builder.set_carrier(
-                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                         tokens.next(),
                                     )?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -61,7 +61,7 @@ where
                             }
                             "City" => {
                                 builder = builder.set_city(
-                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                         tokens.next(),
                                     )?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -70,7 +70,7 @@ where
                             }
                             "CleansedPhoneNumberE164" => {
                                 builder = builder.set_cleansed_phone_number_e164(
-                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                         tokens.next(),
                                     )?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -79,7 +79,7 @@ where
                             }
                             "CleansedPhoneNumberNational" => {
                                 builder = builder.set_cleansed_phone_number_national(
-                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                         tokens.next(),
                                     )?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -88,7 +88,7 @@ where
                             }
                             "Country" => {
                                 builder = builder.set_country(
-                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                         tokens.next(),
                                     )?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -97,7 +97,7 @@ where
                             }
                             "CountryCodeIso2" => {
                                 builder = builder.set_country_code_iso2(
-                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                         tokens.next(),
                                     )?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -106,7 +106,7 @@ where
                             }
                             "CountryCodeNumeric" => {
                                 builder = builder.set_country_code_numeric(
-                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                         tokens.next(),
                                     )?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -115,7 +115,7 @@ where
                             }
                             "County" => {
                                 builder = builder.set_county(
-                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                         tokens.next(),
                                     )?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -124,7 +124,7 @@ where
                             }
                             "OriginalCountryCodeIso2" => {
                                 builder = builder.set_original_country_code_iso2(
-                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                         tokens.next(),
                                     )?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -133,7 +133,7 @@ where
                             }
                             "OriginalPhoneNumber" => {
                                 builder = builder.set_original_phone_number(
-                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                         tokens.next(),
                                     )?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -142,7 +142,7 @@ where
                             }
                             "PhoneType" => {
                                 builder = builder.set_phone_type(
-                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                         tokens.next(),
                                     )?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -151,7 +151,7 @@ where
                             }
                             "PhoneTypeCode" => {
                                 builder = builder.set_phone_type_code(
-                                    aws_smithy_json::deserialize::token::expect_number_or_null(
+                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(
                                         tokens.next(),
                                     )?
                                     .map(i32::try_from)
@@ -160,7 +160,7 @@ where
                             }
                             "Timezone" => {
                                 builder = builder.set_timezone(
-                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                         tokens.next(),
                                     )?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -169,22 +169,21 @@ where
                             }
                             "ZipCode" => {
                                 builder = builder.set_zip_code(
-                                    aws_smithy_json::deserialize::token::expect_string_or_null(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                         tokens.next(),
                                     )?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                                 );
                             }
-                            _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
                     other => {
                         return Err(
-                            aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                                "expected object key or end object, found: {:?}",
-                                other
-                            )),
+                            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                format!("expected object key or end object, found: {:?}", other),
+                            ),
                         )
                     }
                 }
@@ -192,7 +191,7 @@ where
             Ok(Some(builder.build()))
         }
         _ => Err(
-            aws_smithy_json::deserialize::error::DeserializeError::custom(
+            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
                 "expected start object or null",
             ),
         ),

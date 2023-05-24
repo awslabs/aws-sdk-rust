@@ -2,7 +2,7 @@
 
 /// <p>The state perssitence configuration of an embedded dashboard.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StatePersistenceConfigurations {
     /// <p>Determines if a Amazon QuickSight dashboard's state persistence settings are turned on or off.</p>
     #[doc(hidden)]
@@ -23,18 +23,20 @@ impl StatePersistenceConfigurations {
 
 /// A builder for [`StatePersistenceConfigurations`](crate::types::StatePersistenceConfigurations).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StatePersistenceConfigurationsBuilder {
-    pub(crate) enabled: std::option::Option<bool>,
+    pub(crate) enabled: ::std::option::Option<bool>,
 }
 impl StatePersistenceConfigurationsBuilder {
     /// <p>Determines if a Amazon QuickSight dashboard's state persistence settings are turned on or off.</p>
     pub fn enabled(mut self, input: bool) -> Self {
-        self.enabled = Some(input);
+        self.enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Determines if a Amazon QuickSight dashboard's state persistence settings are turned on or off.</p>
-    pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
     }

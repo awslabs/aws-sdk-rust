@@ -2,14 +2,14 @@
 
 /// <p>Describes plugin details.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CommandPlugin {
     /// <p>The name of the plugin. Must be one of the following: <code>aws:updateAgent</code>, <code>aws:domainjoin</code>, <code>aws:applications</code>, <code>aws:runPowerShellScript</code>, <code>aws:psmodule</code>, <code>aws:cloudWatch</code>, <code>aws:runShellScript</code>, or <code>aws:updateSSMAgent</code>. </p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The status of this plugin. You can run a document with multiple plugins.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::CommandPluginStatus>,
+    pub status: ::std::option::Option<crate::types::CommandPluginStatus>,
     /// <p>A detailed status of the plugin execution. <code>StatusDetails</code> includes more information than Status because it includes states resulting from error and concurrency control parameters. StatusDetails can show different results than Status. For more information about these statuses, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding command statuses</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. StatusDetails can be one of the following values:</p>
     /// <ul>
     /// <li> <p>Pending: The command hasn't been sent to the managed node.</p> </li>
@@ -23,28 +23,28 @@ pub struct CommandPlugin {
     /// <li> <p>Terminated: The parent command exceeded its MaxErrors limit and subsequent command invocations were canceled by the system. This is a terminal state.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub status_details: std::option::Option<std::string::String>,
+    pub status_details: ::std::option::Option<::std::string::String>,
     /// <p>A numeric response code generated after running the plugin. </p>
     #[doc(hidden)]
     pub response_code: i32,
     /// <p>The time the plugin started running. </p>
     #[doc(hidden)]
-    pub response_start_date_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub response_start_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time the plugin stopped running. Could stop prematurely if, for example, a cancel command was sent. </p>
     #[doc(hidden)]
-    pub response_finish_date_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub response_finish_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Output of the plugin execution.</p>
     #[doc(hidden)]
-    pub output: std::option::Option<std::string::String>,
+    pub output: ::std::option::Option<::std::string::String>,
     /// <p>The URL for the complete text written by the plugin to stdout in Amazon S3. If the S3 bucket for the command wasn't specified, then this string is empty.</p>
     #[doc(hidden)]
-    pub standard_output_url: std::option::Option<std::string::String>,
+    pub standard_output_url: ::std::option::Option<::std::string::String>,
     /// <p>The URL for the complete text written by the plugin to stderr. If execution isn't yet complete, then this string is empty.</p>
     #[doc(hidden)]
-    pub standard_error_url: std::option::Option<std::string::String>,
+    pub standard_error_url: ::std::option::Option<::std::string::String>,
     /// <p>(Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Amazon Web Services Systems Manager automatically determines the S3 bucket region.</p>
     #[doc(hidden)]
-    pub output_s3_region: std::option::Option<std::string::String>,
+    pub output_s3_region: ::std::option::Option<::std::string::String>,
     /// <p>The S3 bucket where the responses to the command executions should be stored. This was requested when issuing the command. For example, in the following response:</p>
     /// <p> <code>doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript</code> </p>
     /// <p> <code>doc-example-bucket</code> is the name of the S3 bucket;</p>
@@ -52,7 +52,7 @@ pub struct CommandPlugin {
     /// <p> <code>i-02573cafcfEXAMPLE</code> is the managed node ID;</p>
     /// <p> <code>awsrunShellScript</code> is the name of the plugin.</p>
     #[doc(hidden)]
-    pub output_s3_bucket_name: std::option::Option<std::string::String>,
+    pub output_s3_bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>The S3 directory path inside the bucket where the responses to the command executions should be stored. This was requested when issuing the command. For example, in the following response:</p>
     /// <p> <code>doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript</code> </p>
     /// <p> <code>doc-example-bucket</code> is the name of the S3 bucket;</p>
@@ -60,15 +60,15 @@ pub struct CommandPlugin {
     /// <p> <code>i-02573cafcfEXAMPLE</code> is the managed node ID;</p>
     /// <p> <code>awsrunShellScript</code> is the name of the plugin.</p>
     #[doc(hidden)]
-    pub output_s3_key_prefix: std::option::Option<std::string::String>,
+    pub output_s3_key_prefix: ::std::option::Option<::std::string::String>,
 }
 impl CommandPlugin {
     /// <p>The name of the plugin. Must be one of the following: <code>aws:updateAgent</code>, <code>aws:domainjoin</code>, <code>aws:applications</code>, <code>aws:runPowerShellScript</code>, <code>aws:psmodule</code>, <code>aws:cloudWatch</code>, <code>aws:runShellScript</code>, or <code>aws:updateSSMAgent</code>. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The status of this plugin. You can run a document with multiple plugins.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::CommandPluginStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::CommandPluginStatus> {
         self.status.as_ref()
     }
     /// <p>A detailed status of the plugin execution. <code>StatusDetails</code> includes more information than Status because it includes states resulting from error and concurrency control parameters. StatusDetails can show different results than Status. For more information about these statuses, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding command statuses</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. StatusDetails can be one of the following values:</p>
@@ -83,7 +83,7 @@ impl CommandPlugin {
     /// <li> <p>Undeliverable: The command can't be delivered to the managed node. The managed node might not exist, or it might not be responding. Undeliverable invocations don't count against the parent command's MaxErrors limit, and they don't contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p> </li>
     /// <li> <p>Terminated: The parent command exceeded its MaxErrors limit and subsequent command invocations were canceled by the system. This is a terminal state.</p> </li>
     /// </ul>
-    pub fn status_details(&self) -> std::option::Option<&str> {
+    pub fn status_details(&self) -> ::std::option::Option<&str> {
         self.status_details.as_deref()
     }
     /// <p>A numeric response code generated after running the plugin. </p>
@@ -91,27 +91,29 @@ impl CommandPlugin {
         self.response_code
     }
     /// <p>The time the plugin started running. </p>
-    pub fn response_start_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn response_start_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.response_start_date_time.as_ref()
     }
     /// <p>The time the plugin stopped running. Could stop prematurely if, for example, a cancel command was sent. </p>
-    pub fn response_finish_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn response_finish_date_time(
+        &self,
+    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.response_finish_date_time.as_ref()
     }
     /// <p>Output of the plugin execution.</p>
-    pub fn output(&self) -> std::option::Option<&str> {
+    pub fn output(&self) -> ::std::option::Option<&str> {
         self.output.as_deref()
     }
     /// <p>The URL for the complete text written by the plugin to stdout in Amazon S3. If the S3 bucket for the command wasn't specified, then this string is empty.</p>
-    pub fn standard_output_url(&self) -> std::option::Option<&str> {
+    pub fn standard_output_url(&self) -> ::std::option::Option<&str> {
         self.standard_output_url.as_deref()
     }
     /// <p>The URL for the complete text written by the plugin to stderr. If execution isn't yet complete, then this string is empty.</p>
-    pub fn standard_error_url(&self) -> std::option::Option<&str> {
+    pub fn standard_error_url(&self) -> ::std::option::Option<&str> {
         self.standard_error_url.as_deref()
     }
     /// <p>(Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Amazon Web Services Systems Manager automatically determines the S3 bucket region.</p>
-    pub fn output_s3_region(&self) -> std::option::Option<&str> {
+    pub fn output_s3_region(&self) -> ::std::option::Option<&str> {
         self.output_s3_region.as_deref()
     }
     /// <p>The S3 bucket where the responses to the command executions should be stored. This was requested when issuing the command. For example, in the following response:</p>
@@ -120,7 +122,7 @@ impl CommandPlugin {
     /// <p> <code>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix</code> is the name of the S3 prefix;</p>
     /// <p> <code>i-02573cafcfEXAMPLE</code> is the managed node ID;</p>
     /// <p> <code>awsrunShellScript</code> is the name of the plugin.</p>
-    pub fn output_s3_bucket_name(&self) -> std::option::Option<&str> {
+    pub fn output_s3_bucket_name(&self) -> ::std::option::Option<&str> {
         self.output_s3_bucket_name.as_deref()
     }
     /// <p>The S3 directory path inside the bucket where the responses to the command executions should be stored. This was requested when issuing the command. For example, in the following response:</p>
@@ -129,7 +131,7 @@ impl CommandPlugin {
     /// <p> <code>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix</code> is the name of the S3 prefix;</p>
     /// <p> <code>i-02573cafcfEXAMPLE</code> is the managed node ID;</p>
     /// <p> <code>awsrunShellScript</code> is the name of the plugin.</p>
-    pub fn output_s3_key_prefix(&self) -> std::option::Option<&str> {
+    pub fn output_s3_key_prefix(&self) -> ::std::option::Option<&str> {
         self.output_s3_key_prefix.as_deref()
     }
 }
@@ -142,41 +144,43 @@ impl CommandPlugin {
 
 /// A builder for [`CommandPlugin`](crate::types::CommandPlugin).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CommandPluginBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::CommandPluginStatus>,
-    pub(crate) status_details: std::option::Option<std::string::String>,
-    pub(crate) response_code: std::option::Option<i32>,
-    pub(crate) response_start_date_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) response_finish_date_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) output: std::option::Option<std::string::String>,
-    pub(crate) standard_output_url: std::option::Option<std::string::String>,
-    pub(crate) standard_error_url: std::option::Option<std::string::String>,
-    pub(crate) output_s3_region: std::option::Option<std::string::String>,
-    pub(crate) output_s3_bucket_name: std::option::Option<std::string::String>,
-    pub(crate) output_s3_key_prefix: std::option::Option<std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::CommandPluginStatus>,
+    pub(crate) status_details: ::std::option::Option<::std::string::String>,
+    pub(crate) response_code: ::std::option::Option<i32>,
+    pub(crate) response_start_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) response_finish_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) output: ::std::option::Option<::std::string::String>,
+    pub(crate) standard_output_url: ::std::option::Option<::std::string::String>,
+    pub(crate) standard_error_url: ::std::option::Option<::std::string::String>,
+    pub(crate) output_s3_region: ::std::option::Option<::std::string::String>,
+    pub(crate) output_s3_bucket_name: ::std::option::Option<::std::string::String>,
+    pub(crate) output_s3_key_prefix: ::std::option::Option<::std::string::String>,
 }
 impl CommandPluginBuilder {
     /// <p>The name of the plugin. Must be one of the following: <code>aws:updateAgent</code>, <code>aws:domainjoin</code>, <code>aws:applications</code>, <code>aws:runPowerShellScript</code>, <code>aws:psmodule</code>, <code>aws:cloudWatch</code>, <code>aws:runShellScript</code>, or <code>aws:updateSSMAgent</code>. </p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the plugin. Must be one of the following: <code>aws:updateAgent</code>, <code>aws:domainjoin</code>, <code>aws:applications</code>, <code>aws:runPowerShellScript</code>, <code>aws:psmodule</code>, <code>aws:cloudWatch</code>, <code>aws:runShellScript</code>, or <code>aws:updateSSMAgent</code>. </p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The status of this plugin. You can run a document with multiple plugins.</p>
     pub fn status(mut self, input: crate::types::CommandPluginStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of this plugin. You can run a document with multiple plugins.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::CommandPluginStatus>,
+        input: ::std::option::Option<crate::types::CommandPluginStatus>,
     ) -> Self {
         self.status = input;
         self
@@ -193,8 +197,11 @@ impl CommandPluginBuilder {
     /// <li> <p>Undeliverable: The command can't be delivered to the managed node. The managed node might not exist, or it might not be responding. Undeliverable invocations don't count against the parent command's MaxErrors limit, and they don't contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p> </li>
     /// <li> <p>Terminated: The parent command exceeded its MaxErrors limit and subsequent command invocations were canceled by the system. This is a terminal state.</p> </li>
     /// </ul>
-    pub fn status_details(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status_details = Some(input.into());
+    pub fn status_details(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.status_details = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A detailed status of the plugin execution. <code>StatusDetails</code> includes more information than Status because it includes states resulting from error and concurrency control parameters. StatusDetails can show different results than Status. For more information about these statuses, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding command statuses</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. StatusDetails can be one of the following values:</p>
@@ -209,89 +216,104 @@ impl CommandPluginBuilder {
     /// <li> <p>Undeliverable: The command can't be delivered to the managed node. The managed node might not exist, or it might not be responding. Undeliverable invocations don't count against the parent command's MaxErrors limit, and they don't contribute to whether the parent command status is Success or Incomplete. This is a terminal state.</p> </li>
     /// <li> <p>Terminated: The parent command exceeded its MaxErrors limit and subsequent command invocations were canceled by the system. This is a terminal state.</p> </li>
     /// </ul>
-    pub fn set_status_details(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status_details(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.status_details = input;
         self
     }
     /// <p>A numeric response code generated after running the plugin. </p>
     pub fn response_code(mut self, input: i32) -> Self {
-        self.response_code = Some(input);
+        self.response_code = ::std::option::Option::Some(input);
         self
     }
     /// <p>A numeric response code generated after running the plugin. </p>
-    pub fn set_response_code(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_response_code(mut self, input: ::std::option::Option<i32>) -> Self {
         self.response_code = input;
         self
     }
     /// <p>The time the plugin started running. </p>
-    pub fn response_start_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.response_start_date_time = Some(input);
+    pub fn response_start_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.response_start_date_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time the plugin started running. </p>
     pub fn set_response_start_date_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.response_start_date_time = input;
         self
     }
     /// <p>The time the plugin stopped running. Could stop prematurely if, for example, a cancel command was sent. </p>
-    pub fn response_finish_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.response_finish_date_time = Some(input);
+    pub fn response_finish_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.response_finish_date_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time the plugin stopped running. Could stop prematurely if, for example, a cancel command was sent. </p>
     pub fn set_response_finish_date_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.response_finish_date_time = input;
         self
     }
     /// <p>Output of the plugin execution.</p>
-    pub fn output(mut self, input: impl Into<std::string::String>) -> Self {
-        self.output = Some(input.into());
+    pub fn output(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.output = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Output of the plugin execution.</p>
-    pub fn set_output(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_output(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.output = input;
         self
     }
     /// <p>The URL for the complete text written by the plugin to stdout in Amazon S3. If the S3 bucket for the command wasn't specified, then this string is empty.</p>
-    pub fn standard_output_url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.standard_output_url = Some(input.into());
+    pub fn standard_output_url(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.standard_output_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL for the complete text written by the plugin to stdout in Amazon S3. If the S3 bucket for the command wasn't specified, then this string is empty.</p>
     pub fn set_standard_output_url(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.standard_output_url = input;
         self
     }
     /// <p>The URL for the complete text written by the plugin to stderr. If execution isn't yet complete, then this string is empty.</p>
-    pub fn standard_error_url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.standard_error_url = Some(input.into());
+    pub fn standard_error_url(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.standard_error_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL for the complete text written by the plugin to stderr. If execution isn't yet complete, then this string is empty.</p>
     pub fn set_standard_error_url(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.standard_error_url = input;
         self
     }
     /// <p>(Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Amazon Web Services Systems Manager automatically determines the S3 bucket region.</p>
-    pub fn output_s3_region(mut self, input: impl Into<std::string::String>) -> Self {
-        self.output_s3_region = Some(input.into());
+    pub fn output_s3_region(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.output_s3_region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>(Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Amazon Web Services Systems Manager automatically determines the S3 bucket region.</p>
-    pub fn set_output_s3_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_output_s3_region(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.output_s3_region = input;
         self
     }
@@ -301,8 +323,11 @@ impl CommandPluginBuilder {
     /// <p> <code>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix</code> is the name of the S3 prefix;</p>
     /// <p> <code>i-02573cafcfEXAMPLE</code> is the managed node ID;</p>
     /// <p> <code>awsrunShellScript</code> is the name of the plugin.</p>
-    pub fn output_s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.output_s3_bucket_name = Some(input.into());
+    pub fn output_s3_bucket_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.output_s3_bucket_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The S3 bucket where the responses to the command executions should be stored. This was requested when issuing the command. For example, in the following response:</p>
@@ -313,7 +338,7 @@ impl CommandPluginBuilder {
     /// <p> <code>awsrunShellScript</code> is the name of the plugin.</p>
     pub fn set_output_s3_bucket_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.output_s3_bucket_name = input;
         self
@@ -324,8 +349,11 @@ impl CommandPluginBuilder {
     /// <p> <code>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix</code> is the name of the S3 prefix;</p>
     /// <p> <code>i-02573cafcfEXAMPLE</code> is the managed node ID;</p>
     /// <p> <code>awsrunShellScript</code> is the name of the plugin.</p>
-    pub fn output_s3_key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
-        self.output_s3_key_prefix = Some(input.into());
+    pub fn output_s3_key_prefix(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.output_s3_key_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The S3 directory path inside the bucket where the responses to the command executions should be stored. This was requested when issuing the command. For example, in the following response:</p>
@@ -336,7 +364,7 @@ impl CommandPluginBuilder {
     /// <p> <code>awsrunShellScript</code> is the name of the plugin.</p>
     pub fn set_output_s3_key_prefix(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.output_s3_key_prefix = input;
         self

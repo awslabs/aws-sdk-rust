@@ -2,45 +2,45 @@
 
 /// <p>Describes the source deployed to an App Runner service. It can be a code or an image repository.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SourceConfiguration {
     /// <p>The description of a source code repository.</p>
     /// <p>You must provide either this member or <code>ImageRepository</code> (but not both).</p>
     #[doc(hidden)]
-    pub code_repository: std::option::Option<crate::types::CodeRepository>,
+    pub code_repository: ::std::option::Option<crate::types::CodeRepository>,
     /// <p>The description of a source image repository.</p>
     /// <p>You must provide either this member or <code>CodeRepository</code> (but not both).</p>
     #[doc(hidden)]
-    pub image_repository: std::option::Option<crate::types::ImageRepository>,
+    pub image_repository: ::std::option::Option<crate::types::ImageRepository>,
     /// <p>If <code>true</code>, continuous integration from the source repository is enabled for the App Runner service. Each repository change (including any source code commit or new image version) starts a deployment.</p>
     /// <p>Default: App Runner sets to <code>false</code> for a source image that uses an ECR Public repository or an ECR repository that's in an Amazon Web Services account other than the one that the service is in. App Runner sets to <code>true</code> in all other cases (which currently include a source code repository or a source image using a same-account ECR repository).</p>
     #[doc(hidden)]
-    pub auto_deployments_enabled: std::option::Option<bool>,
+    pub auto_deployments_enabled: ::std::option::Option<bool>,
     /// <p>Describes the resources that are needed to authenticate access to some source repositories.</p>
     #[doc(hidden)]
     pub authentication_configuration:
-        std::option::Option<crate::types::AuthenticationConfiguration>,
+        ::std::option::Option<crate::types::AuthenticationConfiguration>,
 }
 impl SourceConfiguration {
     /// <p>The description of a source code repository.</p>
     /// <p>You must provide either this member or <code>ImageRepository</code> (but not both).</p>
-    pub fn code_repository(&self) -> std::option::Option<&crate::types::CodeRepository> {
+    pub fn code_repository(&self) -> ::std::option::Option<&crate::types::CodeRepository> {
         self.code_repository.as_ref()
     }
     /// <p>The description of a source image repository.</p>
     /// <p>You must provide either this member or <code>CodeRepository</code> (but not both).</p>
-    pub fn image_repository(&self) -> std::option::Option<&crate::types::ImageRepository> {
+    pub fn image_repository(&self) -> ::std::option::Option<&crate::types::ImageRepository> {
         self.image_repository.as_ref()
     }
     /// <p>If <code>true</code>, continuous integration from the source repository is enabled for the App Runner service. Each repository change (including any source code commit or new image version) starts a deployment.</p>
     /// <p>Default: App Runner sets to <code>false</code> for a source image that uses an ECR Public repository or an ECR repository that's in an Amazon Web Services account other than the one that the service is in. App Runner sets to <code>true</code> in all other cases (which currently include a source code repository or a source image using a same-account ECR repository).</p>
-    pub fn auto_deployments_enabled(&self) -> std::option::Option<bool> {
+    pub fn auto_deployments_enabled(&self) -> ::std::option::Option<bool> {
         self.auto_deployments_enabled
     }
     /// <p>Describes the resources that are needed to authenticate access to some source repositories.</p>
     pub fn authentication_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::AuthenticationConfiguration> {
+    ) -> ::std::option::Option<&crate::types::AuthenticationConfiguration> {
         self.authentication_configuration.as_ref()
     }
 }
@@ -53,26 +53,28 @@ impl SourceConfiguration {
 
 /// A builder for [`SourceConfiguration`](crate::types::SourceConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SourceConfigurationBuilder {
-    pub(crate) code_repository: std::option::Option<crate::types::CodeRepository>,
-    pub(crate) image_repository: std::option::Option<crate::types::ImageRepository>,
-    pub(crate) auto_deployments_enabled: std::option::Option<bool>,
+    pub(crate) code_repository: ::std::option::Option<crate::types::CodeRepository>,
+    pub(crate) image_repository: ::std::option::Option<crate::types::ImageRepository>,
+    pub(crate) auto_deployments_enabled: ::std::option::Option<bool>,
     pub(crate) authentication_configuration:
-        std::option::Option<crate::types::AuthenticationConfiguration>,
+        ::std::option::Option<crate::types::AuthenticationConfiguration>,
 }
 impl SourceConfigurationBuilder {
     /// <p>The description of a source code repository.</p>
     /// <p>You must provide either this member or <code>ImageRepository</code> (but not both).</p>
     pub fn code_repository(mut self, input: crate::types::CodeRepository) -> Self {
-        self.code_repository = Some(input);
+        self.code_repository = ::std::option::Option::Some(input);
         self
     }
     /// <p>The description of a source code repository.</p>
     /// <p>You must provide either this member or <code>ImageRepository</code> (but not both).</p>
     pub fn set_code_repository(
         mut self,
-        input: std::option::Option<crate::types::CodeRepository>,
+        input: ::std::option::Option<crate::types::CodeRepository>,
     ) -> Self {
         self.code_repository = input;
         self
@@ -80,14 +82,14 @@ impl SourceConfigurationBuilder {
     /// <p>The description of a source image repository.</p>
     /// <p>You must provide either this member or <code>CodeRepository</code> (but not both).</p>
     pub fn image_repository(mut self, input: crate::types::ImageRepository) -> Self {
-        self.image_repository = Some(input);
+        self.image_repository = ::std::option::Option::Some(input);
         self
     }
     /// <p>The description of a source image repository.</p>
     /// <p>You must provide either this member or <code>CodeRepository</code> (but not both).</p>
     pub fn set_image_repository(
         mut self,
-        input: std::option::Option<crate::types::ImageRepository>,
+        input: ::std::option::Option<crate::types::ImageRepository>,
     ) -> Self {
         self.image_repository = input;
         self
@@ -95,12 +97,12 @@ impl SourceConfigurationBuilder {
     /// <p>If <code>true</code>, continuous integration from the source repository is enabled for the App Runner service. Each repository change (including any source code commit or new image version) starts a deployment.</p>
     /// <p>Default: App Runner sets to <code>false</code> for a source image that uses an ECR Public repository or an ECR repository that's in an Amazon Web Services account other than the one that the service is in. App Runner sets to <code>true</code> in all other cases (which currently include a source code repository or a source image using a same-account ECR repository).</p>
     pub fn auto_deployments_enabled(mut self, input: bool) -> Self {
-        self.auto_deployments_enabled = Some(input);
+        self.auto_deployments_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>If <code>true</code>, continuous integration from the source repository is enabled for the App Runner service. Each repository change (including any source code commit or new image version) starts a deployment.</p>
     /// <p>Default: App Runner sets to <code>false</code> for a source image that uses an ECR Public repository or an ECR repository that's in an Amazon Web Services account other than the one that the service is in. App Runner sets to <code>true</code> in all other cases (which currently include a source code repository or a source image using a same-account ECR repository).</p>
-    pub fn set_auto_deployments_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_auto_deployments_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.auto_deployments_enabled = input;
         self
     }
@@ -109,13 +111,13 @@ impl SourceConfigurationBuilder {
         mut self,
         input: crate::types::AuthenticationConfiguration,
     ) -> Self {
-        self.authentication_configuration = Some(input);
+        self.authentication_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes the resources that are needed to authenticate access to some source repositories.</p>
     pub fn set_authentication_configuration(
         mut self,
-        input: std::option::Option<crate::types::AuthenticationConfiguration>,
+        input: ::std::option::Option<crate::types::AuthenticationConfiguration>,
     ) -> Self {
         self.authentication_configuration = input;
         self

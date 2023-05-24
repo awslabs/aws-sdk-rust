@@ -2,33 +2,35 @@
 
 /// <p>Provides all fields required for building an in-app message.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InAppMessage {
     /// <p>In-app message content.</p>
     #[doc(hidden)]
-    pub content: std::option::Option<std::vec::Vec<crate::types::InAppMessageContent>>,
+    pub content: ::std::option::Option<::std::vec::Vec<crate::types::InAppMessageContent>>,
     /// <p>Custom config to be sent to SDK.</p>
     #[doc(hidden)]
-    pub custom_config:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub custom_config: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>The layout of the message.</p>
     #[doc(hidden)]
-    pub layout: std::option::Option<crate::types::Layout>,
+    pub layout: ::std::option::Option<crate::types::Layout>,
 }
 impl InAppMessage {
     /// <p>In-app message content.</p>
-    pub fn content(&self) -> std::option::Option<&[crate::types::InAppMessageContent]> {
+    pub fn content(&self) -> ::std::option::Option<&[crate::types::InAppMessageContent]> {
         self.content.as_deref()
     }
     /// <p>Custom config to be sent to SDK.</p>
     pub fn custom_config(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.custom_config.as_ref()
     }
     /// <p>The layout of the message.</p>
-    pub fn layout(&self) -> std::option::Option<&crate::types::Layout> {
+    pub fn layout(&self) -> ::std::option::Option<&crate::types::Layout> {
         self.layout.as_ref()
     }
 }
@@ -41,12 +43,15 @@ impl InAppMessage {
 
 /// A builder for [`InAppMessage`](crate::types::InAppMessage).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InAppMessageBuilder {
-    pub(crate) content: std::option::Option<std::vec::Vec<crate::types::InAppMessageContent>>,
-    pub(crate) custom_config:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) layout: std::option::Option<crate::types::Layout>,
+    pub(crate) content: ::std::option::Option<::std::vec::Vec<crate::types::InAppMessageContent>>,
+    pub(crate) custom_config: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) layout: ::std::option::Option<crate::types::Layout>,
 }
 impl InAppMessageBuilder {
     /// Appends an item to `content`.
@@ -57,13 +62,13 @@ impl InAppMessageBuilder {
     pub fn content(mut self, input: crate::types::InAppMessageContent) -> Self {
         let mut v = self.content.unwrap_or_default();
         v.push(input);
-        self.content = Some(v);
+        self.content = ::std::option::Option::Some(v);
         self
     }
     /// <p>In-app message content.</p>
     pub fn set_content(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::InAppMessageContent>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::InAppMessageContent>>,
     ) -> Self {
         self.content = input;
         self
@@ -75,19 +80,19 @@ impl InAppMessageBuilder {
     /// <p>Custom config to be sent to SDK.</p>
     pub fn custom_config(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.custom_config.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.custom_config = Some(hash_map);
+        self.custom_config = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Custom config to be sent to SDK.</p>
     pub fn set_custom_config(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.custom_config = input;
@@ -95,11 +100,11 @@ impl InAppMessageBuilder {
     }
     /// <p>The layout of the message.</p>
     pub fn layout(mut self, input: crate::types::Layout) -> Self {
-        self.layout = Some(input);
+        self.layout = ::std::option::Option::Some(input);
         self
     }
     /// <p>The layout of the message.</p>
-    pub fn set_layout(mut self, input: std::option::Option<crate::types::Layout>) -> Self {
+    pub fn set_layout(mut self, input: ::std::option::Option<crate::types::Layout>) -> Self {
         self.layout = input;
         self
     }

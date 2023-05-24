@@ -2,27 +2,27 @@
 
 /// <p>A complex type containing the response information for the new health check.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateHealthCheckOutput {
     /// <p>A complex type that contains identifying information about the health check.</p>
     #[doc(hidden)]
-    pub health_check: std::option::Option<crate::types::HealthCheck>,
+    pub health_check: ::std::option::Option<crate::types::HealthCheck>,
     /// <p>The unique URL representing the new health check.</p>
     #[doc(hidden)]
-    pub location: std::option::Option<std::string::String>,
+    pub location: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateHealthCheckOutput {
     /// <p>A complex type that contains identifying information about the health check.</p>
-    pub fn health_check(&self) -> std::option::Option<&crate::types::HealthCheck> {
+    pub fn health_check(&self) -> ::std::option::Option<&crate::types::HealthCheck> {
         self.health_check.as_ref()
     }
     /// <p>The unique URL representing the new health check.</p>
-    pub fn location(&self) -> std::option::Option<&str> {
+    pub fn location(&self) -> ::std::option::Option<&str> {
         self.location.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for CreateHealthCheckOutput {
+impl ::aws_http::request_id::RequestId for CreateHealthCheckOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -37,33 +37,35 @@ impl CreateHealthCheckOutput {
 
 /// A builder for [`CreateHealthCheckOutput`](crate::operation::create_health_check::CreateHealthCheckOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateHealthCheckOutputBuilder {
-    pub(crate) health_check: std::option::Option<crate::types::HealthCheck>,
-    pub(crate) location: std::option::Option<std::string::String>,
+    pub(crate) health_check: ::std::option::Option<crate::types::HealthCheck>,
+    pub(crate) location: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateHealthCheckOutputBuilder {
     /// <p>A complex type that contains identifying information about the health check.</p>
     pub fn health_check(mut self, input: crate::types::HealthCheck) -> Self {
-        self.health_check = Some(input);
+        self.health_check = ::std::option::Option::Some(input);
         self
     }
     /// <p>A complex type that contains identifying information about the health check.</p>
     pub fn set_health_check(
         mut self,
-        input: std::option::Option<crate::types::HealthCheck>,
+        input: ::std::option::Option<crate::types::HealthCheck>,
     ) -> Self {
         self.health_check = input;
         self
     }
     /// <p>The unique URL representing the new health check.</p>
-    pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
-        self.location = Some(input.into());
+    pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.location = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique URL representing the new health check.</p>
-    pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location = input;
         self
     }

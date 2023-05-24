@@ -2,43 +2,43 @@
 
 /// <p>Represents a collection of nodes in a cluster. One node in the node group is the read/write primary node. All the other nodes are read-only Replica nodes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Shard {
     /// <p>The name of the shard</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The current state of this replication group - creating, available, modifying, deleting.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<std::string::String>,
+    pub status: ::std::option::Option<::std::string::String>,
     /// <p>The keyspace for this shard.</p>
     #[doc(hidden)]
-    pub slots: std::option::Option<std::string::String>,
+    pub slots: ::std::option::Option<::std::string::String>,
     /// <p>A list containing information about individual nodes within the shard</p>
     #[doc(hidden)]
-    pub nodes: std::option::Option<std::vec::Vec<crate::types::Node>>,
+    pub nodes: ::std::option::Option<::std::vec::Vec<crate::types::Node>>,
     /// <p>The number of nodes in the shard</p>
     #[doc(hidden)]
-    pub number_of_nodes: std::option::Option<i32>,
+    pub number_of_nodes: ::std::option::Option<i32>,
 }
 impl Shard {
     /// <p>The name of the shard</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The current state of this replication group - creating, available, modifying, deleting.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
     /// <p>The keyspace for this shard.</p>
-    pub fn slots(&self) -> std::option::Option<&str> {
+    pub fn slots(&self) -> ::std::option::Option<&str> {
         self.slots.as_deref()
     }
     /// <p>A list containing information about individual nodes within the shard</p>
-    pub fn nodes(&self) -> std::option::Option<&[crate::types::Node]> {
+    pub fn nodes(&self) -> ::std::option::Option<&[crate::types::Node]> {
         self.nodes.as_deref()
     }
     /// <p>The number of nodes in the shard</p>
-    pub fn number_of_nodes(&self) -> std::option::Option<i32> {
+    pub fn number_of_nodes(&self) -> ::std::option::Option<i32> {
         self.number_of_nodes
     }
 }
@@ -51,42 +51,44 @@ impl Shard {
 
 /// A builder for [`Shard`](crate::types::Shard).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ShardBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<std::string::String>,
-    pub(crate) slots: std::option::Option<std::string::String>,
-    pub(crate) nodes: std::option::Option<std::vec::Vec<crate::types::Node>>,
-    pub(crate) number_of_nodes: std::option::Option<i32>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<::std::string::String>,
+    pub(crate) slots: ::std::option::Option<::std::string::String>,
+    pub(crate) nodes: ::std::option::Option<::std::vec::Vec<crate::types::Node>>,
+    pub(crate) number_of_nodes: ::std::option::Option<i32>,
 }
 impl ShardBuilder {
     /// <p>The name of the shard</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the shard</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The current state of this replication group - creating, available, modifying, deleting.</p>
-    pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status = Some(input.into());
+    pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The current state of this replication group - creating, available, modifying, deleting.</p>
-    pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }
     /// <p>The keyspace for this shard.</p>
-    pub fn slots(mut self, input: impl Into<std::string::String>) -> Self {
-        self.slots = Some(input.into());
+    pub fn slots(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.slots = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The keyspace for this shard.</p>
-    pub fn set_slots(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_slots(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.slots = input;
         self
     }
@@ -98,24 +100,24 @@ impl ShardBuilder {
     pub fn nodes(mut self, input: crate::types::Node) -> Self {
         let mut v = self.nodes.unwrap_or_default();
         v.push(input);
-        self.nodes = Some(v);
+        self.nodes = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list containing information about individual nodes within the shard</p>
     pub fn set_nodes(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Node>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Node>>,
     ) -> Self {
         self.nodes = input;
         self
     }
     /// <p>The number of nodes in the shard</p>
     pub fn number_of_nodes(mut self, input: i32) -> Self {
-        self.number_of_nodes = Some(input);
+        self.number_of_nodes = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of nodes in the shard</p>
-    pub fn set_number_of_nodes(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_number_of_nodes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.number_of_nodes = input;
         self
     }

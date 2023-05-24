@@ -2,20 +2,20 @@
 
 /// <p>Provides information about an application, including the default settings for an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApplicationSettingsResource {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
-    pub application_id: std::option::Option<std::string::String>,
+    pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The settings for the AWS Lambda function to invoke by default as a code hook for campaigns in the application. You can use this hook to customize segments that are used by campaigns in the application.</p>
     #[doc(hidden)]
-    pub campaign_hook: std::option::Option<crate::types::CampaignHook>,
+    pub campaign_hook: ::std::option::Option<crate::types::CampaignHook>,
     /// <p>The date and time, in ISO 8601 format, when the application's settings were last modified.</p>
     #[doc(hidden)]
-    pub last_modified_date: std::option::Option<std::string::String>,
+    pub last_modified_date: ::std::option::Option<::std::string::String>,
     /// <p>The default sending limits for campaigns in the application.</p>
     #[doc(hidden)]
-    pub limits: std::option::Option<crate::types::CampaignLimits>,
+    pub limits: ::std::option::Option<crate::types::CampaignLimits>,
     /// <p>The default quiet time for campaigns in the application. Quiet time is a specific time range when messages aren't sent to endpoints, if all the following conditions are met:</p>
     /// <ul>
     /// <li><p>The EndpointDemographic.Timezone property of the endpoint is set to a valid value.</p></li>
@@ -24,23 +24,23 @@ pub struct ApplicationSettingsResource {
     /// </ul>
     /// <p>If any of the preceding conditions isn't met, the endpoint will receive messages from a campaign or journey, even if quiet time is enabled.</p>
     #[doc(hidden)]
-    pub quiet_time: std::option::Option<crate::types::QuietTime>,
+    pub quiet_time: ::std::option::Option<crate::types::QuietTime>,
 }
 impl ApplicationSettingsResource {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn application_id(&self) -> std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<&str> {
         self.application_id.as_deref()
     }
     /// <p>The settings for the AWS Lambda function to invoke by default as a code hook for campaigns in the application. You can use this hook to customize segments that are used by campaigns in the application.</p>
-    pub fn campaign_hook(&self) -> std::option::Option<&crate::types::CampaignHook> {
+    pub fn campaign_hook(&self) -> ::std::option::Option<&crate::types::CampaignHook> {
         self.campaign_hook.as_ref()
     }
     /// <p>The date and time, in ISO 8601 format, when the application's settings were last modified.</p>
-    pub fn last_modified_date(&self) -> std::option::Option<&str> {
+    pub fn last_modified_date(&self) -> ::std::option::Option<&str> {
         self.last_modified_date.as_deref()
     }
     /// <p>The default sending limits for campaigns in the application.</p>
-    pub fn limits(&self) -> std::option::Option<&crate::types::CampaignLimits> {
+    pub fn limits(&self) -> ::std::option::Option<&crate::types::CampaignLimits> {
         self.limits.as_ref()
     }
     /// <p>The default quiet time for campaigns in the application. Quiet time is a specific time range when messages aren't sent to endpoints, if all the following conditions are met:</p>
@@ -50,7 +50,7 @@ impl ApplicationSettingsResource {
     /// <li><p>The current time in the endpoint's time zone is earlier than or equal to the time specified by the QuietTime.End property for the application (or a campaign or journey that has custom quiet time settings).</p></li>
     /// </ul>
     /// <p>If any of the preceding conditions isn't met, the endpoint will receive messages from a campaign or journey, even if quiet time is enabled.</p>
-    pub fn quiet_time(&self) -> std::option::Option<&crate::types::QuietTime> {
+    pub fn quiet_time(&self) -> ::std::option::Option<&crate::types::QuietTime> {
         self.quiet_time.as_ref()
     }
 }
@@ -63,58 +63,72 @@ impl ApplicationSettingsResource {
 
 /// A builder for [`ApplicationSettingsResource`](crate::types::ApplicationSettingsResource).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ApplicationSettingsResourceBuilder {
-    pub(crate) application_id: std::option::Option<std::string::String>,
-    pub(crate) campaign_hook: std::option::Option<crate::types::CampaignHook>,
-    pub(crate) last_modified_date: std::option::Option<std::string::String>,
-    pub(crate) limits: std::option::Option<crate::types::CampaignLimits>,
-    pub(crate) quiet_time: std::option::Option<crate::types::QuietTime>,
+    pub(crate) application_id: ::std::option::Option<::std::string::String>,
+    pub(crate) campaign_hook: ::std::option::Option<crate::types::CampaignHook>,
+    pub(crate) last_modified_date: ::std::option::Option<::std::string::String>,
+    pub(crate) limits: ::std::option::Option<crate::types::CampaignLimits>,
+    pub(crate) quiet_time: ::std::option::Option<crate::types::QuietTime>,
 }
 impl ApplicationSettingsResourceBuilder {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.application_id = Some(input.into());
+    pub fn application_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_application_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.application_id = input;
         self
     }
     /// <p>The settings for the AWS Lambda function to invoke by default as a code hook for campaigns in the application. You can use this hook to customize segments that are used by campaigns in the application.</p>
     pub fn campaign_hook(mut self, input: crate::types::CampaignHook) -> Self {
-        self.campaign_hook = Some(input);
+        self.campaign_hook = ::std::option::Option::Some(input);
         self
     }
     /// <p>The settings for the AWS Lambda function to invoke by default as a code hook for campaigns in the application. You can use this hook to customize segments that are used by campaigns in the application.</p>
     pub fn set_campaign_hook(
         mut self,
-        input: std::option::Option<crate::types::CampaignHook>,
+        input: ::std::option::Option<crate::types::CampaignHook>,
     ) -> Self {
         self.campaign_hook = input;
         self
     }
     /// <p>The date and time, in ISO 8601 format, when the application's settings were last modified.</p>
-    pub fn last_modified_date(mut self, input: impl Into<std::string::String>) -> Self {
-        self.last_modified_date = Some(input.into());
+    pub fn last_modified_date(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.last_modified_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date and time, in ISO 8601 format, when the application's settings were last modified.</p>
     pub fn set_last_modified_date(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.last_modified_date = input;
         self
     }
     /// <p>The default sending limits for campaigns in the application.</p>
     pub fn limits(mut self, input: crate::types::CampaignLimits) -> Self {
-        self.limits = Some(input);
+        self.limits = ::std::option::Option::Some(input);
         self
     }
     /// <p>The default sending limits for campaigns in the application.</p>
-    pub fn set_limits(mut self, input: std::option::Option<crate::types::CampaignLimits>) -> Self {
+    pub fn set_limits(
+        mut self,
+        input: ::std::option::Option<crate::types::CampaignLimits>,
+    ) -> Self {
         self.limits = input;
         self
     }
@@ -126,7 +140,7 @@ impl ApplicationSettingsResourceBuilder {
     /// </ul>
     /// <p>If any of the preceding conditions isn't met, the endpoint will receive messages from a campaign or journey, even if quiet time is enabled.</p>
     pub fn quiet_time(mut self, input: crate::types::QuietTime) -> Self {
-        self.quiet_time = Some(input);
+        self.quiet_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The default quiet time for campaigns in the application. Quiet time is a specific time range when messages aren't sent to endpoints, if all the following conditions are met:</p>
@@ -136,7 +150,7 @@ impl ApplicationSettingsResourceBuilder {
     /// <li><p>The current time in the endpoint's time zone is earlier than or equal to the time specified by the QuietTime.End property for the application (or a campaign or journey that has custom quiet time settings).</p></li>
     /// </ul>
     /// <p>If any of the preceding conditions isn't met, the endpoint will receive messages from a campaign or journey, even if quiet time is enabled.</p>
-    pub fn set_quiet_time(mut self, input: std::option::Option<crate::types::QuietTime>) -> Self {
+    pub fn set_quiet_time(mut self, input: ::std::option::Option<crate::types::QuietTime>) -> Self {
         self.quiet_time = input;
         self
     }

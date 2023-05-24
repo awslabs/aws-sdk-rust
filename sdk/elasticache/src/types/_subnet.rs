@@ -2,36 +2,38 @@
 
 /// <p>Represents the subnet associated with a cluster. This parameter refers to subnets defined in Amazon Virtual Private Cloud (Amazon VPC) and used with ElastiCache.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Subnet {
     /// <p>The unique identifier for the subnet.</p>
     #[doc(hidden)]
-    pub subnet_identifier: std::option::Option<std::string::String>,
+    pub subnet_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The Availability Zone associated with the subnet.</p>
     #[doc(hidden)]
-    pub subnet_availability_zone: std::option::Option<crate::types::AvailabilityZone>,
+    pub subnet_availability_zone: ::std::option::Option<crate::types::AvailabilityZone>,
     /// <p>The outpost ARN of the subnet.</p>
     #[doc(hidden)]
-    pub subnet_outpost: std::option::Option<crate::types::SubnetOutpost>,
+    pub subnet_outpost: ::std::option::Option<crate::types::SubnetOutpost>,
     /// <p>Either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
     #[doc(hidden)]
-    pub supported_network_types: std::option::Option<std::vec::Vec<crate::types::NetworkType>>,
+    pub supported_network_types: ::std::option::Option<::std::vec::Vec<crate::types::NetworkType>>,
 }
 impl Subnet {
     /// <p>The unique identifier for the subnet.</p>
-    pub fn subnet_identifier(&self) -> std::option::Option<&str> {
+    pub fn subnet_identifier(&self) -> ::std::option::Option<&str> {
         self.subnet_identifier.as_deref()
     }
     /// <p>The Availability Zone associated with the subnet.</p>
-    pub fn subnet_availability_zone(&self) -> std::option::Option<&crate::types::AvailabilityZone> {
+    pub fn subnet_availability_zone(
+        &self,
+    ) -> ::std::option::Option<&crate::types::AvailabilityZone> {
         self.subnet_availability_zone.as_ref()
     }
     /// <p>The outpost ARN of the subnet.</p>
-    pub fn subnet_outpost(&self) -> std::option::Option<&crate::types::SubnetOutpost> {
+    pub fn subnet_outpost(&self) -> ::std::option::Option<&crate::types::SubnetOutpost> {
         self.subnet_outpost.as_ref()
     }
     /// <p>Either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
-    pub fn supported_network_types(&self) -> std::option::Option<&[crate::types::NetworkType]> {
+    pub fn supported_network_types(&self) -> ::std::option::Option<&[crate::types::NetworkType]> {
         self.supported_network_types.as_deref()
     }
 }
@@ -44,50 +46,55 @@ impl Subnet {
 
 /// A builder for [`Subnet`](crate::types::Subnet).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SubnetBuilder {
-    pub(crate) subnet_identifier: std::option::Option<std::string::String>,
-    pub(crate) subnet_availability_zone: std::option::Option<crate::types::AvailabilityZone>,
-    pub(crate) subnet_outpost: std::option::Option<crate::types::SubnetOutpost>,
+    pub(crate) subnet_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) subnet_availability_zone: ::std::option::Option<crate::types::AvailabilityZone>,
+    pub(crate) subnet_outpost: ::std::option::Option<crate::types::SubnetOutpost>,
     pub(crate) supported_network_types:
-        std::option::Option<std::vec::Vec<crate::types::NetworkType>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::NetworkType>>,
 }
 impl SubnetBuilder {
     /// <p>The unique identifier for the subnet.</p>
-    pub fn subnet_identifier(mut self, input: impl Into<std::string::String>) -> Self {
-        self.subnet_identifier = Some(input.into());
+    pub fn subnet_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.subnet_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the subnet.</p>
     pub fn set_subnet_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.subnet_identifier = input;
         self
     }
     /// <p>The Availability Zone associated with the subnet.</p>
     pub fn subnet_availability_zone(mut self, input: crate::types::AvailabilityZone) -> Self {
-        self.subnet_availability_zone = Some(input);
+        self.subnet_availability_zone = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Availability Zone associated with the subnet.</p>
     pub fn set_subnet_availability_zone(
         mut self,
-        input: std::option::Option<crate::types::AvailabilityZone>,
+        input: ::std::option::Option<crate::types::AvailabilityZone>,
     ) -> Self {
         self.subnet_availability_zone = input;
         self
     }
     /// <p>The outpost ARN of the subnet.</p>
     pub fn subnet_outpost(mut self, input: crate::types::SubnetOutpost) -> Self {
-        self.subnet_outpost = Some(input);
+        self.subnet_outpost = ::std::option::Option::Some(input);
         self
     }
     /// <p>The outpost ARN of the subnet.</p>
     pub fn set_subnet_outpost(
         mut self,
-        input: std::option::Option<crate::types::SubnetOutpost>,
+        input: ::std::option::Option<crate::types::SubnetOutpost>,
     ) -> Self {
         self.subnet_outpost = input;
         self
@@ -100,13 +107,13 @@ impl SubnetBuilder {
     pub fn supported_network_types(mut self, input: crate::types::NetworkType) -> Self {
         let mut v = self.supported_network_types.unwrap_or_default();
         v.push(input);
-        self.supported_network_types = Some(v);
+        self.supported_network_types = ::std::option::Option::Some(v);
         self
     }
     /// <p>Either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
     pub fn set_supported_network_types(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::NetworkType>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkType>>,
     ) -> Self {
         self.supported_network_types = input;
         self

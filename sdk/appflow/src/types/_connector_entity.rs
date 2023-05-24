@@ -2,25 +2,25 @@
 
 /// <p> The high-level entity that can be queried in Amazon AppFlow. For example, a Salesforce entity might be an <i>Account</i> or <i>Opportunity</i>, whereas a ServiceNow entity might be an <i>Incident</i>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConnectorEntity {
     /// <p> The name of the connector entity. </p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p> The label applied to the connector entity. </p>
     #[doc(hidden)]
-    pub label: std::option::Option<std::string::String>,
+    pub label: ::std::option::Option<::std::string::String>,
     /// <p> Specifies whether the connector entity is a parent or a category and has more entities nested underneath it. If another call is made with <code>entitiesPath = "the_current_entity_name_with_hasNestedEntities_true"</code>, then it returns the nested entities underneath it. This provides a way to retrieve all supported entities in a recursive fashion. </p>
     #[doc(hidden)]
     pub has_nested_entities: bool,
 }
 impl ConnectorEntity {
     /// <p> The name of the connector entity. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p> The label applied to the connector entity. </p>
-    pub fn label(&self) -> std::option::Option<&str> {
+    pub fn label(&self) -> ::std::option::Option<&str> {
         self.label.as_deref()
     }
     /// <p> Specifies whether the connector entity is a parent or a category and has more entities nested underneath it. If another call is made with <code>entitiesPath = "the_current_entity_name_with_hasNestedEntities_true"</code>, then it returns the nested entities underneath it. This provides a way to retrieve all supported entities in a recursive fashion. </p>
@@ -37,40 +37,42 @@ impl ConnectorEntity {
 
 /// A builder for [`ConnectorEntity`](crate::types::ConnectorEntity).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ConnectorEntityBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) label: std::option::Option<std::string::String>,
-    pub(crate) has_nested_entities: std::option::Option<bool>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) label: ::std::option::Option<::std::string::String>,
+    pub(crate) has_nested_entities: ::std::option::Option<bool>,
 }
 impl ConnectorEntityBuilder {
     /// <p> The name of the connector entity. </p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the connector entity. </p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p> The label applied to the connector entity. </p>
-    pub fn label(mut self, input: impl Into<std::string::String>) -> Self {
-        self.label = Some(input.into());
+    pub fn label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.label = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The label applied to the connector entity. </p>
-    pub fn set_label(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.label = input;
         self
     }
     /// <p> Specifies whether the connector entity is a parent or a category and has more entities nested underneath it. If another call is made with <code>entitiesPath = "the_current_entity_name_with_hasNestedEntities_true"</code>, then it returns the nested entities underneath it. This provides a way to retrieve all supported entities in a recursive fashion. </p>
     pub fn has_nested_entities(mut self, input: bool) -> Self {
-        self.has_nested_entities = Some(input);
+        self.has_nested_entities = ::std::option::Option::Some(input);
         self
     }
     /// <p> Specifies whether the connector entity is a parent or a category and has more entities nested underneath it. If another call is made with <code>entitiesPath = "the_current_entity_name_with_hasNestedEntities_true"</code>, then it returns the nested entities underneath it. This provides a way to retrieve all supported entities in a recursive fashion. </p>
-    pub fn set_has_nested_entities(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_has_nested_entities(mut self, input: ::std::option::Option<bool>) -> Self {
         self.has_nested_entities = input;
         self
     }

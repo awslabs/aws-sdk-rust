@@ -39,13 +39,13 @@
 /// To use the available style, color, and position information from your input captions: Set Style passthrough (stylePassthrough) to Enabled (ENABLED). MediaConvert uses default settings when style and position information is missing from your input captions. To recreate the input captions exactly: Set Style passthrough to Strict (STRICT). MediaConvert automatically applies timing adjustments, including adjustments for frame rate conversion, ad avails, and input clipping. Your input captions format must be WebVTT. To ignore the style and position information from your input captions and use simplified output captions: Set Style passthrough to Disabled (DISABLED), or leave blank.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum WebvttStylePassthrough {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum WebvttStylePassthrough {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for WebvttStylePassthrough {
+impl ::std::convert::From<&str> for WebvttStylePassthrough {
     fn from(s: &str) -> Self {
         match s {
             "DISABLED" => WebvttStylePassthrough::Disabled,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for WebvttStylePassthrough {
         }
     }
 }
-impl std::str::FromStr for WebvttStylePassthrough {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for WebvttStylePassthrough {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(WebvttStylePassthrough::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(WebvttStylePassthrough::from(s))
     }
 }
 impl WebvttStylePassthrough {
@@ -91,7 +91,7 @@ impl WebvttStylePassthrough {
         &["DISABLED", "ENABLED", "STRICT"]
     }
 }
-impl AsRef<str> for WebvttStylePassthrough {
+impl ::std::convert::AsRef<str> for WebvttStylePassthrough {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

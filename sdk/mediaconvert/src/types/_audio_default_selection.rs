@@ -38,13 +38,13 @@
 /// Enable this setting on one audio selector to set it as the default for the job. The service uses this default for outputs where it can't find the specified input audio. If you don't set a default, those outputs have no audio.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum AudioDefaultSelection {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum AudioDefaultSelection {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for AudioDefaultSelection {
+impl ::std::convert::From<&str> for AudioDefaultSelection {
     fn from(s: &str) -> Self {
         match s {
             "DEFAULT" => AudioDefaultSelection::Default,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for AudioDefaultSelection {
         }
     }
 }
-impl std::str::FromStr for AudioDefaultSelection {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for AudioDefaultSelection {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AudioDefaultSelection::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(AudioDefaultSelection::from(s))
     }
 }
 impl AudioDefaultSelection {
@@ -86,7 +86,7 @@ impl AudioDefaultSelection {
         &["DEFAULT", "NOT_DEFAULT"]
     }
 }
-impl AsRef<str> for AudioDefaultSelection {
+impl ::std::convert::AsRef<str> for AudioDefaultSelection {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

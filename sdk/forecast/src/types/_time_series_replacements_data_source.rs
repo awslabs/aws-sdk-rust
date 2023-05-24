@@ -2,36 +2,36 @@
 
 /// <p>A replacement dataset is a modified version of the baseline related time series that contains only the values that you want to include in a what-if forecast. The replacement dataset must contain the forecast dimensions and item identifiers in the baseline related time series as well as at least 1 changed time series. This dataset is merged with the baseline related time series to create a transformed dataset that is used for the what-if forecast.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimeSeriesReplacementsDataSource {
     /// <p>The path to the file(s) in an Amazon Simple Storage Service (Amazon S3) bucket, and an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the file(s). Optionally, includes an Key Management Service (KMS) key. This object is part of the <code>DataSource</code> object that is submitted in the <code>CreateDatasetImportJob</code> request, and part of the <code>DataDestination</code> object.</p>
     #[doc(hidden)]
-    pub s3_config: std::option::Option<crate::types::S3Config>,
+    pub s3_config: ::std::option::Option<crate::types::S3Config>,
     /// <p>Defines the fields of a dataset.</p>
     #[doc(hidden)]
-    pub schema: std::option::Option<crate::types::Schema>,
+    pub schema: ::std::option::Option<crate::types::Schema>,
     /// <p>The format of the replacement data, CSV or PARQUET.</p>
     #[doc(hidden)]
-    pub format: std::option::Option<std::string::String>,
+    pub format: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp format of the replacement data.</p>
     #[doc(hidden)]
-    pub timestamp_format: std::option::Option<std::string::String>,
+    pub timestamp_format: ::std::option::Option<::std::string::String>,
 }
 impl TimeSeriesReplacementsDataSource {
     /// <p>The path to the file(s) in an Amazon Simple Storage Service (Amazon S3) bucket, and an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the file(s). Optionally, includes an Key Management Service (KMS) key. This object is part of the <code>DataSource</code> object that is submitted in the <code>CreateDatasetImportJob</code> request, and part of the <code>DataDestination</code> object.</p>
-    pub fn s3_config(&self) -> std::option::Option<&crate::types::S3Config> {
+    pub fn s3_config(&self) -> ::std::option::Option<&crate::types::S3Config> {
         self.s3_config.as_ref()
     }
     /// <p>Defines the fields of a dataset.</p>
-    pub fn schema(&self) -> std::option::Option<&crate::types::Schema> {
+    pub fn schema(&self) -> ::std::option::Option<&crate::types::Schema> {
         self.schema.as_ref()
     }
     /// <p>The format of the replacement data, CSV or PARQUET.</p>
-    pub fn format(&self) -> std::option::Option<&str> {
+    pub fn format(&self) -> ::std::option::Option<&str> {
         self.format.as_deref()
     }
     /// <p>The timestamp format of the replacement data.</p>
-    pub fn timestamp_format(&self) -> std::option::Option<&str> {
+    pub fn timestamp_format(&self) -> ::std::option::Option<&str> {
         self.timestamp_format.as_deref()
     }
 }
@@ -44,51 +44,59 @@ impl TimeSeriesReplacementsDataSource {
 
 /// A builder for [`TimeSeriesReplacementsDataSource`](crate::types::TimeSeriesReplacementsDataSource).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TimeSeriesReplacementsDataSourceBuilder {
-    pub(crate) s3_config: std::option::Option<crate::types::S3Config>,
-    pub(crate) schema: std::option::Option<crate::types::Schema>,
-    pub(crate) format: std::option::Option<std::string::String>,
-    pub(crate) timestamp_format: std::option::Option<std::string::String>,
+    pub(crate) s3_config: ::std::option::Option<crate::types::S3Config>,
+    pub(crate) schema: ::std::option::Option<crate::types::Schema>,
+    pub(crate) format: ::std::option::Option<::std::string::String>,
+    pub(crate) timestamp_format: ::std::option::Option<::std::string::String>,
 }
 impl TimeSeriesReplacementsDataSourceBuilder {
     /// <p>The path to the file(s) in an Amazon Simple Storage Service (Amazon S3) bucket, and an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the file(s). Optionally, includes an Key Management Service (KMS) key. This object is part of the <code>DataSource</code> object that is submitted in the <code>CreateDatasetImportJob</code> request, and part of the <code>DataDestination</code> object.</p>
     pub fn s3_config(mut self, input: crate::types::S3Config) -> Self {
-        self.s3_config = Some(input);
+        self.s3_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The path to the file(s) in an Amazon Simple Storage Service (Amazon S3) bucket, and an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the file(s). Optionally, includes an Key Management Service (KMS) key. This object is part of the <code>DataSource</code> object that is submitted in the <code>CreateDatasetImportJob</code> request, and part of the <code>DataDestination</code> object.</p>
-    pub fn set_s3_config(mut self, input: std::option::Option<crate::types::S3Config>) -> Self {
+    pub fn set_s3_config(mut self, input: ::std::option::Option<crate::types::S3Config>) -> Self {
         self.s3_config = input;
         self
     }
     /// <p>Defines the fields of a dataset.</p>
     pub fn schema(mut self, input: crate::types::Schema) -> Self {
-        self.schema = Some(input);
+        self.schema = ::std::option::Option::Some(input);
         self
     }
     /// <p>Defines the fields of a dataset.</p>
-    pub fn set_schema(mut self, input: std::option::Option<crate::types::Schema>) -> Self {
+    pub fn set_schema(mut self, input: ::std::option::Option<crate::types::Schema>) -> Self {
         self.schema = input;
         self
     }
     /// <p>The format of the replacement data, CSV or PARQUET.</p>
-    pub fn format(mut self, input: impl Into<std::string::String>) -> Self {
-        self.format = Some(input.into());
+    pub fn format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.format = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The format of the replacement data, CSV or PARQUET.</p>
-    pub fn set_format(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.format = input;
         self
     }
     /// <p>The timestamp format of the replacement data.</p>
-    pub fn timestamp_format(mut self, input: impl Into<std::string::String>) -> Self {
-        self.timestamp_format = Some(input.into());
+    pub fn timestamp_format(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.timestamp_format = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The timestamp format of the replacement data.</p>
-    pub fn set_timestamp_format(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_timestamp_format(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.timestamp_format = input;
         self
     }

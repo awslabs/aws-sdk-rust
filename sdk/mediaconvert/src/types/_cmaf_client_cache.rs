@@ -38,13 +38,13 @@
 /// Disable this setting only when your workflow requires the #EXT-X-ALLOW-CACHE:no tag. Otherwise, keep the default value Enabled (ENABLED) and control caching in your video distribution set up. For example, use the Cache-Control http header.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum CmafClientCache {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum CmafClientCache {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for CmafClientCache {
+impl ::std::convert::From<&str> for CmafClientCache {
     fn from(s: &str) -> Self {
         match s {
             "DISABLED" => CmafClientCache::Disabled,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for CmafClientCache {
         }
     }
 }
-impl std::str::FromStr for CmafClientCache {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for CmafClientCache {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CmafClientCache::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(CmafClientCache::from(s))
     }
 }
 impl CmafClientCache {
@@ -86,7 +86,7 @@ impl CmafClientCache {
         &["DISABLED", "ENABLED"]
     }
 }
-impl AsRef<str> for CmafClientCache {
+impl ::std::convert::AsRef<str> for CmafClientCache {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

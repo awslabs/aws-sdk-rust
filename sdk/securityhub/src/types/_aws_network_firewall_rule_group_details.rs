@@ -3,29 +3,29 @@
 /// <p>Details about an Network Firewall rule group. Rule groups are used to inspect and control network traffic. Stateless rule groups apply to individual packets. Stateful rule groups apply to packets in the context of their traffic flow.</p>
 /// <p>Rule groups are referenced in firewall policies. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsNetworkFirewallRuleGroupDetails {
     /// <p>The maximum number of operating resources that this rule group can use.</p>
     #[doc(hidden)]
     pub capacity: i32,
     /// <p>A description of the rule group.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>Details about the rule group.</p>
     #[doc(hidden)]
-    pub rule_group: std::option::Option<crate::types::RuleGroupDetails>,
+    pub rule_group: ::std::option::Option<crate::types::RuleGroupDetails>,
     /// <p>The ARN of the rule group.</p>
     #[doc(hidden)]
-    pub rule_group_arn: std::option::Option<std::string::String>,
+    pub rule_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the rule group.</p>
     #[doc(hidden)]
-    pub rule_group_id: std::option::Option<std::string::String>,
+    pub rule_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The descriptive name of the rule group.</p>
     #[doc(hidden)]
-    pub rule_group_name: std::option::Option<std::string::String>,
+    pub rule_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of rule group. A rule group can be stateful or stateless.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<std::string::String>,
+    pub r#type: ::std::option::Option<::std::string::String>,
 }
 impl AwsNetworkFirewallRuleGroupDetails {
     /// <p>The maximum number of operating resources that this rule group can use.</p>
@@ -33,27 +33,27 @@ impl AwsNetworkFirewallRuleGroupDetails {
         self.capacity
     }
     /// <p>A description of the rule group.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>Details about the rule group.</p>
-    pub fn rule_group(&self) -> std::option::Option<&crate::types::RuleGroupDetails> {
+    pub fn rule_group(&self) -> ::std::option::Option<&crate::types::RuleGroupDetails> {
         self.rule_group.as_ref()
     }
     /// <p>The ARN of the rule group.</p>
-    pub fn rule_group_arn(&self) -> std::option::Option<&str> {
+    pub fn rule_group_arn(&self) -> ::std::option::Option<&str> {
         self.rule_group_arn.as_deref()
     }
     /// <p>The identifier of the rule group.</p>
-    pub fn rule_group_id(&self) -> std::option::Option<&str> {
+    pub fn rule_group_id(&self) -> ::std::option::Option<&str> {
         self.rule_group_id.as_deref()
     }
     /// <p>The descriptive name of the rule group.</p>
-    pub fn rule_group_name(&self) -> std::option::Option<&str> {
+    pub fn rule_group_name(&self) -> ::std::option::Option<&str> {
         self.rule_group_name.as_deref()
     }
     /// <p>The type of rule group. A rule group can be stateful or stateless.</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
     }
 }
@@ -66,87 +66,107 @@ impl AwsNetworkFirewallRuleGroupDetails {
 
 /// A builder for [`AwsNetworkFirewallRuleGroupDetails`](crate::types::AwsNetworkFirewallRuleGroupDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsNetworkFirewallRuleGroupDetailsBuilder {
-    pub(crate) capacity: std::option::Option<i32>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) rule_group: std::option::Option<crate::types::RuleGroupDetails>,
-    pub(crate) rule_group_arn: std::option::Option<std::string::String>,
-    pub(crate) rule_group_id: std::option::Option<std::string::String>,
-    pub(crate) rule_group_name: std::option::Option<std::string::String>,
-    pub(crate) r#type: std::option::Option<std::string::String>,
+    pub(crate) capacity: ::std::option::Option<i32>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) rule_group: ::std::option::Option<crate::types::RuleGroupDetails>,
+    pub(crate) rule_group_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) rule_group_id: ::std::option::Option<::std::string::String>,
+    pub(crate) rule_group_name: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<::std::string::String>,
 }
 impl AwsNetworkFirewallRuleGroupDetailsBuilder {
     /// <p>The maximum number of operating resources that this rule group can use.</p>
     pub fn capacity(mut self, input: i32) -> Self {
-        self.capacity = Some(input);
+        self.capacity = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum number of operating resources that this rule group can use.</p>
-    pub fn set_capacity(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.capacity = input;
         self
     }
     /// <p>A description of the rule group.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of the rule group.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>Details about the rule group.</p>
     pub fn rule_group(mut self, input: crate::types::RuleGroupDetails) -> Self {
-        self.rule_group = Some(input);
+        self.rule_group = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details about the rule group.</p>
     pub fn set_rule_group(
         mut self,
-        input: std::option::Option<crate::types::RuleGroupDetails>,
+        input: ::std::option::Option<crate::types::RuleGroupDetails>,
     ) -> Self {
         self.rule_group = input;
         self
     }
     /// <p>The ARN of the rule group.</p>
-    pub fn rule_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.rule_group_arn = Some(input.into());
+    pub fn rule_group_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.rule_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the rule group.</p>
-    pub fn set_rule_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_rule_group_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.rule_group_arn = input;
         self
     }
     /// <p>The identifier of the rule group.</p>
-    pub fn rule_group_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.rule_group_id = Some(input.into());
+    pub fn rule_group_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.rule_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the rule group.</p>
-    pub fn set_rule_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_rule_group_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.rule_group_id = input;
         self
     }
     /// <p>The descriptive name of the rule group.</p>
-    pub fn rule_group_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.rule_group_name = Some(input.into());
+    pub fn rule_group_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.rule_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The descriptive name of the rule group.</p>
-    pub fn set_rule_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_rule_group_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.rule_group_name = input;
         self
     }
     /// <p>The type of rule group. A rule group can be stateful or stateless.</p>
-    pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.r#type = Some(input.into());
+    pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.r#type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of rule group. A rule group can be stateful or stateless.</p>
-    pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
     }

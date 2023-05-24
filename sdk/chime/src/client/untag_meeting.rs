@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UntagMeeting`](crate::operation::untag_meeting::builders::UntagMeetingFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`meeting_id(impl Into<String>)`](crate::operation::untag_meeting::builders::UntagMeetingFluentBuilder::meeting_id) / [`set_meeting_id(Option<String>)`](crate::operation::untag_meeting::builders::UntagMeetingFluentBuilder::set_meeting_id): <p>The Amazon Chime SDK meeting ID.</p>
+    ///   - [`meeting_id(impl ::std::convert::Into<String>)`](crate::operation::untag_meeting::builders::UntagMeetingFluentBuilder::meeting_id) / [`set_meeting_id(Option<String>)`](crate::operation::untag_meeting::builders::UntagMeetingFluentBuilder::set_meeting_id): <p>The Amazon Chime SDK meeting ID.</p>
     ///   - [`tag_keys(Vec<String>)`](crate::operation::untag_meeting::builders::UntagMeetingFluentBuilder::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::operation::untag_meeting::builders::UntagMeetingFluentBuilder::set_tag_keys): <p>The tag keys.</p>
     /// - On success, responds with [`UntagMeetingOutput`](crate::operation::untag_meeting::UntagMeetingOutput)
     /// - On failure, responds with [`SdkError<UntagMeetingError>`](crate::operation::untag_meeting::UntagMeetingError)

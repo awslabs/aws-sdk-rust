@@ -2,43 +2,43 @@
 
 /// <p>Information about an override specified for an on-call rotation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RotationOverride {
     /// <p>The Amazon Resource Name (ARN) of the override to an on-call rotation.</p>
     #[doc(hidden)]
-    pub rotation_override_id: std::option::Option<std::string::String>,
+    pub rotation_override_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Names (ARNs) of the contacts assigned to the override of the on-call rotation.</p>
     #[doc(hidden)]
-    pub new_contact_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub new_contact_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The time a rotation override begins.</p>
     #[doc(hidden)]
-    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time a rotation override ends.</p>
     #[doc(hidden)]
-    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time a rotation override was created.</p>
     #[doc(hidden)]
-    pub create_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl RotationOverride {
     /// <p>The Amazon Resource Name (ARN) of the override to an on-call rotation.</p>
-    pub fn rotation_override_id(&self) -> std::option::Option<&str> {
+    pub fn rotation_override_id(&self) -> ::std::option::Option<&str> {
         self.rotation_override_id.as_deref()
     }
     /// <p>The Amazon Resource Names (ARNs) of the contacts assigned to the override of the on-call rotation.</p>
-    pub fn new_contact_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn new_contact_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.new_contact_ids.as_deref()
     }
     /// <p>The time a rotation override begins.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The time a rotation override ends.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The time a rotation override was created.</p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
 }
@@ -51,24 +51,29 @@ impl RotationOverride {
 
 /// A builder for [`RotationOverride`](crate::types::RotationOverride).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RotationOverrideBuilder {
-    pub(crate) rotation_override_id: std::option::Option<std::string::String>,
-    pub(crate) new_contact_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) rotation_override_id: ::std::option::Option<::std::string::String>,
+    pub(crate) new_contact_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl RotationOverrideBuilder {
     /// <p>The Amazon Resource Name (ARN) of the override to an on-call rotation.</p>
-    pub fn rotation_override_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.rotation_override_id = Some(input.into());
+    pub fn rotation_override_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.rotation_override_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the override to an on-call rotation.</p>
     pub fn set_rotation_override_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.rotation_override_id = input;
         self
@@ -78,52 +83,58 @@ impl RotationOverrideBuilder {
     /// To override the contents of this collection use [`set_new_contact_ids`](Self::set_new_contact_ids).
     ///
     /// <p>The Amazon Resource Names (ARNs) of the contacts assigned to the override of the on-call rotation.</p>
-    pub fn new_contact_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn new_contact_ids(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.new_contact_ids.unwrap_or_default();
         v.push(input.into());
-        self.new_contact_ids = Some(v);
+        self.new_contact_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Amazon Resource Names (ARNs) of the contacts assigned to the override of the on-call rotation.</p>
     pub fn set_new_contact_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.new_contact_ids = input;
         self
     }
     /// <p>The time a rotation override begins.</p>
-    pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.start_time = Some(input);
+    pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.start_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time a rotation override begins.</p>
     pub fn set_start_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.start_time = input;
         self
     }
     /// <p>The time a rotation override ends.</p>
-    pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.end_time = Some(input);
+    pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.end_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time a rotation override ends.</p>
-    pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_end_time(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
         self.end_time = input;
         self
     }
     /// <p>The time a rotation override was created.</p>
-    pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.create_time = Some(input);
+    pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.create_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time a rotation override was created.</p>
     pub fn set_create_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.create_time = input;
         self

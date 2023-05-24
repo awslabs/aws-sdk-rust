@@ -8,29 +8,29 @@ pub use crate::operation::disable_enhanced_monitoring::_disable_enhanced_monitor
 /// <p>Disables enhanced monitoring.</p> <note>
 /// <p>When invoking this API, it is recommended you use the <code>StreamARN</code> input parameter rather than the <code>StreamName</code> input parameter.</p>
 /// </note>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisableEnhancedMonitoringFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::disable_enhanced_monitoring::builders::DisableEnhancedMonitoringInputBuilder,
 }
 impl DisableEnhancedMonitoringFluentBuilder {
     /// Creates a new `DisableEnhancedMonitoring`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::disable_enhanced_monitoring::DisableEnhancedMonitoring,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::disable_enhanced_monitoring::DisableEnhancedMonitoringError,
         >,
     > {
@@ -38,30 +38,33 @@ impl DisableEnhancedMonitoringFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::disable_enhanced_monitoring::DisableEnhancedMonitoringOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::disable_enhanced_monitoring::DisableEnhancedMonitoringError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -74,21 +77,21 @@ impl DisableEnhancedMonitoringFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::disable_enhanced_monitoring::DisableEnhancedMonitoringOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::disable_enhanced_monitoring::DisableEnhancedMonitoringError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the Kinesis data stream for which to disable enhanced monitoring.</p>
-    pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stream_name(input.into());
         self
     }
     /// <p>The name of the Kinesis data stream for which to disable enhanced monitoring.</p>
-    pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stream_name(input);
         self
     }
@@ -128,18 +131,18 @@ impl DisableEnhancedMonitoringFluentBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring the Amazon Kinesis Data Streams Service with Amazon CloudWatch</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
     pub fn set_shard_level_metrics(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::MetricsName>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricsName>>,
     ) -> Self {
         self.inner = self.inner.set_shard_level_metrics(input);
         self
     }
     /// <p>The ARN of the stream.</p>
-    pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stream_arn(input.into());
         self
     }
     /// <p>The ARN of the stream.</p>
-    pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stream_arn(input);
         self
     }

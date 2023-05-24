@@ -2,31 +2,31 @@
 
 /// <p>Details for Site-to-Site VPN tunnel endpoint maintenance events.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MaintenanceDetails {
     /// <p>Verify existence of a pending maintenance.</p>
     #[doc(hidden)]
-    pub pending_maintenance: std::option::Option<std::string::String>,
+    pub pending_maintenance: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp after which Amazon Web Services will automatically apply maintenance.</p>
     #[doc(hidden)]
-    pub maintenance_auto_applied_after: std::option::Option<aws_smithy_types::DateTime>,
+    pub maintenance_auto_applied_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Timestamp of last applied maintenance.</p>
     #[doc(hidden)]
-    pub last_maintenance_applied: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_maintenance_applied: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl MaintenanceDetails {
     /// <p>Verify existence of a pending maintenance.</p>
-    pub fn pending_maintenance(&self) -> std::option::Option<&str> {
+    pub fn pending_maintenance(&self) -> ::std::option::Option<&str> {
         self.pending_maintenance.as_deref()
     }
     /// <p>The timestamp after which Amazon Web Services will automatically apply maintenance.</p>
     pub fn maintenance_auto_applied_after(
         &self,
-    ) -> std::option::Option<&aws_smithy_types::DateTime> {
+    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.maintenance_auto_applied_after.as_ref()
     }
     /// <p>Timestamp of last applied maintenance.</p>
-    pub fn last_maintenance_applied(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_maintenance_applied(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_maintenance_applied.as_ref()
     }
 }
@@ -39,48 +39,53 @@ impl MaintenanceDetails {
 
 /// A builder for [`MaintenanceDetails`](crate::types::MaintenanceDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MaintenanceDetailsBuilder {
-    pub(crate) pending_maintenance: std::option::Option<std::string::String>,
-    pub(crate) maintenance_auto_applied_after: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_maintenance_applied: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) pending_maintenance: ::std::option::Option<::std::string::String>,
+    pub(crate) maintenance_auto_applied_after: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_maintenance_applied: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl MaintenanceDetailsBuilder {
     /// <p>Verify existence of a pending maintenance.</p>
-    pub fn pending_maintenance(mut self, input: impl Into<std::string::String>) -> Self {
-        self.pending_maintenance = Some(input.into());
+    pub fn pending_maintenance(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.pending_maintenance = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Verify existence of a pending maintenance.</p>
     pub fn set_pending_maintenance(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.pending_maintenance = input;
         self
     }
     /// <p>The timestamp after which Amazon Web Services will automatically apply maintenance.</p>
-    pub fn maintenance_auto_applied_after(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.maintenance_auto_applied_after = Some(input);
+    pub fn maintenance_auto_applied_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.maintenance_auto_applied_after = ::std::option::Option::Some(input);
         self
     }
     /// <p>The timestamp after which Amazon Web Services will automatically apply maintenance.</p>
     pub fn set_maintenance_auto_applied_after(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.maintenance_auto_applied_after = input;
         self
     }
     /// <p>Timestamp of last applied maintenance.</p>
-    pub fn last_maintenance_applied(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_maintenance_applied = Some(input);
+    pub fn last_maintenance_applied(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_maintenance_applied = ::std::option::Option::Some(input);
         self
     }
     /// <p>Timestamp of last applied maintenance.</p>
     pub fn set_last_maintenance_applied(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_maintenance_applied = input;
         self

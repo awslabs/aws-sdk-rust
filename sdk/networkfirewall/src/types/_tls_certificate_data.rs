@@ -2,36 +2,36 @@
 
 /// <p>Contains metadata about an Certificate Manager certificate.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TlsCertificateData {
     /// <p>The Amazon Resource Name (ARN) of the certificate.</p>
     #[doc(hidden)]
-    pub certificate_arn: std::option::Option<std::string::String>,
+    pub certificate_arn: ::std::option::Option<::std::string::String>,
     /// <p>The serial number of the certificate.</p>
     #[doc(hidden)]
-    pub certificate_serial: std::option::Option<std::string::String>,
+    pub certificate_serial: ::std::option::Option<::std::string::String>,
     /// <p>The status of the certificate.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<std::string::String>,
+    pub status: ::std::option::Option<::std::string::String>,
     /// <p>Contains details about the certificate status, including information about certificate errors.</p>
     #[doc(hidden)]
-    pub status_message: std::option::Option<std::string::String>,
+    pub status_message: ::std::option::Option<::std::string::String>,
 }
 impl TlsCertificateData {
     /// <p>The Amazon Resource Name (ARN) of the certificate.</p>
-    pub fn certificate_arn(&self) -> std::option::Option<&str> {
+    pub fn certificate_arn(&self) -> ::std::option::Option<&str> {
         self.certificate_arn.as_deref()
     }
     /// <p>The serial number of the certificate.</p>
-    pub fn certificate_serial(&self) -> std::option::Option<&str> {
+    pub fn certificate_serial(&self) -> ::std::option::Option<&str> {
         self.certificate_serial.as_deref()
     }
     /// <p>The status of the certificate.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
     /// <p>Contains details about the certificate status, including information about certificate errors.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<&str> {
         self.status_message.as_deref()
     }
 }
@@ -44,54 +44,71 @@ impl TlsCertificateData {
 
 /// A builder for [`TlsCertificateData`](crate::types::TlsCertificateData).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TlsCertificateDataBuilder {
-    pub(crate) certificate_arn: std::option::Option<std::string::String>,
-    pub(crate) certificate_serial: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<std::string::String>,
-    pub(crate) status_message: std::option::Option<std::string::String>,
+    pub(crate) certificate_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) certificate_serial: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<::std::string::String>,
+    pub(crate) status_message: ::std::option::Option<::std::string::String>,
 }
 impl TlsCertificateDataBuilder {
     /// <p>The Amazon Resource Name (ARN) of the certificate.</p>
-    pub fn certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.certificate_arn = Some(input.into());
+    pub fn certificate_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.certificate_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the certificate.</p>
-    pub fn set_certificate_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_certificate_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.certificate_arn = input;
         self
     }
     /// <p>The serial number of the certificate.</p>
-    pub fn certificate_serial(mut self, input: impl Into<std::string::String>) -> Self {
-        self.certificate_serial = Some(input.into());
+    pub fn certificate_serial(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.certificate_serial = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The serial number of the certificate.</p>
     pub fn set_certificate_serial(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.certificate_serial = input;
         self
     }
     /// <p>The status of the certificate.</p>
-    pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status = Some(input.into());
+    pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the certificate.</p>
-    pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }
     /// <p>Contains details about the certificate status, including information about certificate errors.</p>
-    pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status_message = Some(input.into());
+    pub fn status_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Contains details about the certificate status, including information about certificate errors.</p>
-    pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.status_message = input;
         self
     }

@@ -38,13 +38,13 @@
 /// Eac3 Lfe Control
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum Eac3LfeControl {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum Eac3LfeControl {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for Eac3LfeControl {
+impl ::std::convert::From<&str> for Eac3LfeControl {
     fn from(s: &str) -> Self {
         match s {
             "LFE" => Eac3LfeControl::Lfe,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for Eac3LfeControl {
         }
     }
 }
-impl std::str::FromStr for Eac3LfeControl {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for Eac3LfeControl {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Eac3LfeControl::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(Eac3LfeControl::from(s))
     }
 }
 impl Eac3LfeControl {
@@ -86,7 +86,7 @@ impl Eac3LfeControl {
         &["LFE", "NO_LFE"]
     }
 }
-impl AsRef<str> for Eac3LfeControl {
+impl ::std::convert::AsRef<str> for Eac3LfeControl {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

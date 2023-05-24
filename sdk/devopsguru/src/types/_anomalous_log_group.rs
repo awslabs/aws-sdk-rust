@@ -2,35 +2,36 @@
 
 /// <p> An Amazon CloudWatch log group that contains log anomalies and is used to generate an insight. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnomalousLogGroup {
     /// <p> The name of the CloudWatch log group. </p>
     #[doc(hidden)]
-    pub log_group_name: std::option::Option<std::string::String>,
+    pub log_group_name: ::std::option::Option<::std::string::String>,
     /// <p> The time the anomalous log events began. The impact start time indicates the time of the first log anomaly event that occurs. </p>
     #[doc(hidden)]
-    pub impact_start_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub impact_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The time the anomalous log events stopped. </p>
     #[doc(hidden)]
-    pub impact_end_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub impact_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The number of log lines that were scanned for anomalous log events. </p>
     #[doc(hidden)]
     pub number_of_log_lines_scanned: i32,
     /// <p> The log anomalies in the log group. Each log anomaly displayed represents a cluster of similar anomalous log events. </p>
     #[doc(hidden)]
-    pub log_anomaly_showcases: std::option::Option<std::vec::Vec<crate::types::LogAnomalyShowcase>>,
+    pub log_anomaly_showcases:
+        ::std::option::Option<::std::vec::Vec<crate::types::LogAnomalyShowcase>>,
 }
 impl AnomalousLogGroup {
     /// <p> The name of the CloudWatch log group. </p>
-    pub fn log_group_name(&self) -> std::option::Option<&str> {
+    pub fn log_group_name(&self) -> ::std::option::Option<&str> {
         self.log_group_name.as_deref()
     }
     /// <p> The time the anomalous log events began. The impact start time indicates the time of the first log anomaly event that occurs. </p>
-    pub fn impact_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn impact_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.impact_start_time.as_ref()
     }
     /// <p> The time the anomalous log events stopped. </p>
-    pub fn impact_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn impact_end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.impact_end_time.as_ref()
     }
     /// <p> The number of log lines that were scanned for anomalous log events. </p>
@@ -40,7 +41,7 @@ impl AnomalousLogGroup {
     /// <p> The log anomalies in the log group. Each log anomaly displayed represents a cluster of similar anomalous log events. </p>
     pub fn log_anomaly_showcases(
         &self,
-    ) -> std::option::Option<&[crate::types::LogAnomalyShowcase]> {
+    ) -> ::std::option::Option<&[crate::types::LogAnomalyShowcase]> {
         self.log_anomaly_showcases.as_deref()
     }
 }
@@ -53,59 +54,67 @@ impl AnomalousLogGroup {
 
 /// A builder for [`AnomalousLogGroup`](crate::types::AnomalousLogGroup).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AnomalousLogGroupBuilder {
-    pub(crate) log_group_name: std::option::Option<std::string::String>,
-    pub(crate) impact_start_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) impact_end_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) number_of_log_lines_scanned: std::option::Option<i32>,
+    pub(crate) log_group_name: ::std::option::Option<::std::string::String>,
+    pub(crate) impact_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) impact_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) number_of_log_lines_scanned: ::std::option::Option<i32>,
     pub(crate) log_anomaly_showcases:
-        std::option::Option<std::vec::Vec<crate::types::LogAnomalyShowcase>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::LogAnomalyShowcase>>,
 }
 impl AnomalousLogGroupBuilder {
     /// <p> The name of the CloudWatch log group. </p>
-    pub fn log_group_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.log_group_name = Some(input.into());
+    pub fn log_group_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.log_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the CloudWatch log group. </p>
-    pub fn set_log_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_log_group_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.log_group_name = input;
         self
     }
     /// <p> The time the anomalous log events began. The impact start time indicates the time of the first log anomaly event that occurs. </p>
-    pub fn impact_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.impact_start_time = Some(input);
+    pub fn impact_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.impact_start_time = ::std::option::Option::Some(input);
         self
     }
     /// <p> The time the anomalous log events began. The impact start time indicates the time of the first log anomaly event that occurs. </p>
     pub fn set_impact_start_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.impact_start_time = input;
         self
     }
     /// <p> The time the anomalous log events stopped. </p>
-    pub fn impact_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.impact_end_time = Some(input);
+    pub fn impact_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.impact_end_time = ::std::option::Option::Some(input);
         self
     }
     /// <p> The time the anomalous log events stopped. </p>
     pub fn set_impact_end_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.impact_end_time = input;
         self
     }
     /// <p> The number of log lines that were scanned for anomalous log events. </p>
     pub fn number_of_log_lines_scanned(mut self, input: i32) -> Self {
-        self.number_of_log_lines_scanned = Some(input);
+        self.number_of_log_lines_scanned = ::std::option::Option::Some(input);
         self
     }
     /// <p> The number of log lines that were scanned for anomalous log events. </p>
-    pub fn set_number_of_log_lines_scanned(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_number_of_log_lines_scanned(mut self, input: ::std::option::Option<i32>) -> Self {
         self.number_of_log_lines_scanned = input;
         self
     }
@@ -117,13 +126,13 @@ impl AnomalousLogGroupBuilder {
     pub fn log_anomaly_showcases(mut self, input: crate::types::LogAnomalyShowcase) -> Self {
         let mut v = self.log_anomaly_showcases.unwrap_or_default();
         v.push(input);
-        self.log_anomaly_showcases = Some(v);
+        self.log_anomaly_showcases = ::std::option::Option::Some(v);
         self
     }
     /// <p> The log anomalies in the log group. Each log anomaly displayed represents a cluster of similar anomalous log events. </p>
     pub fn set_log_anomaly_showcases(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::LogAnomalyShowcase>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::LogAnomalyShowcase>>,
     ) -> Self {
         self.log_anomaly_showcases = input;
         self

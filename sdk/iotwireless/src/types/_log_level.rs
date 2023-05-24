@@ -40,13 +40,13 @@
 /// less verbose logs containing only error information, or to <code>INFO</code> for more detailed logs.</p>
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum LogLevel {
     #[allow(missing_docs)] // documentation missing in model
@@ -58,7 +58,7 @@ pub enum LogLevel {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for LogLevel {
+impl ::std::convert::From<&str> for LogLevel {
     fn from(s: &str) -> Self {
         match s {
             "DISABLED" => LogLevel::Disabled,
@@ -68,11 +68,11 @@ impl std::convert::From<&str> for LogLevel {
         }
     }
 }
-impl std::str::FromStr for LogLevel {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for LogLevel {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LogLevel::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(LogLevel::from(s))
     }
 }
 impl LogLevel {
@@ -90,7 +90,7 @@ impl LogLevel {
         &["DISABLED", "ERROR", "INFO"]
     }
 }
-impl AsRef<str> for LogLevel {
+impl ::std::convert::AsRef<str> for LogLevel {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

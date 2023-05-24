@@ -6,56 +6,59 @@ pub use crate::operation::create_alert::_create_alert_input::CreateAlertInputBui
 /// Fluent builder constructing a request to `CreateAlert`.
 ///
 /// <p>Creates an alert for an anomaly detector.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateAlertFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_alert::builders::CreateAlertInputBuilder,
 }
 impl CreateAlertFluentBuilder {
     /// Creates a new `CreateAlert`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_alert::CreateAlert,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_alert::CreateAlertError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_alert::CreateAlertError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_alert::CreateAlertOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_alert::CreateAlertError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_alert::CreateAlertError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,19 +71,19 @@ impl CreateAlertFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_alert::CreateAlertOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_alert::CreateAlertError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_alert::CreateAlertError>,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the alert.</p>
-    pub fn alert_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn alert_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.alert_name(input.into());
         self
     }
     /// <p>The name of the alert.</p>
-    pub fn set_alert_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_alert_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_alert_name(input);
         self
     }
@@ -90,32 +93,38 @@ impl CreateAlertFluentBuilder {
         self
     }
     /// <p>An integer from 0 to 100 specifying the alert sensitivity threshold.</p>
-    pub fn set_alert_sensitivity_threshold(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_alert_sensitivity_threshold(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_alert_sensitivity_threshold(input);
         self
     }
     /// <p>A description of the alert.</p>
-    pub fn alert_description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn alert_description(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.alert_description(input.into());
         self
     }
     /// <p>A description of the alert.</p>
     pub fn set_alert_description(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_alert_description(input);
         self
     }
     /// <p>The ARN of the detector to which the alert is attached.</p>
-    pub fn anomaly_detector_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn anomaly_detector_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.anomaly_detector_arn(input.into());
         self
     }
     /// <p>The ARN of the detector to which the alert is attached.</p>
     pub fn set_anomaly_detector_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_anomaly_detector_arn(input);
         self
@@ -126,7 +135,7 @@ impl CreateAlertFluentBuilder {
         self
     }
     /// <p>Action that will be triggered when there is an alert.</p>
-    pub fn set_action(mut self, input: std::option::Option<crate::types::Action>) -> Self {
+    pub fn set_action(mut self, input: ::std::option::Option<crate::types::Action>) -> Self {
         self.inner = self.inner.set_action(input);
         self
     }
@@ -137,8 +146,8 @@ impl CreateAlertFluentBuilder {
     /// <p>A list of <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a> to apply to the alert.</p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
@@ -146,8 +155,8 @@ impl CreateAlertFluentBuilder {
     /// <p>A list of <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a> to apply to the alert.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
@@ -161,7 +170,7 @@ impl CreateAlertFluentBuilder {
     /// <p>The configuration of the alert filters, containing MetricList and DimensionFilterList.</p>
     pub fn set_alert_filters(
         mut self,
-        input: std::option::Option<crate::types::AlertFilters>,
+        input: ::std::option::Option<crate::types::AlertFilters>,
     ) -> Self {
         self.inner = self.inner.set_alert_filters(input);
         self

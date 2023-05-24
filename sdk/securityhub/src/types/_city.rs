@@ -2,15 +2,15 @@
 
 /// <p>Information about a city.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct City {
     /// <p>The name of the city.</p>
     #[doc(hidden)]
-    pub city_name: std::option::Option<std::string::String>,
+    pub city_name: ::std::option::Option<::std::string::String>,
 }
 impl City {
     /// <p>The name of the city.</p>
-    pub fn city_name(&self) -> std::option::Option<&str> {
+    pub fn city_name(&self) -> ::std::option::Option<&str> {
         self.city_name.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl City {
 
 /// A builder for [`City`](crate::types::City).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CityBuilder {
-    pub(crate) city_name: std::option::Option<std::string::String>,
+    pub(crate) city_name: ::std::option::Option<::std::string::String>,
 }
 impl CityBuilder {
     /// <p>The name of the city.</p>
-    pub fn city_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.city_name = Some(input.into());
+    pub fn city_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.city_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the city.</p>
-    pub fn set_city_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_city_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.city_name = input;
         self
     }

@@ -2,136 +2,138 @@
 
 /// <p>A summary for the service as a response to <code>ListServices</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ServiceSummary {
     /// <p>The unique identifier of the service. </p>
     #[doc(hidden)]
-    pub service_id: std::option::Option<std::string::String>,
+    pub service_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the service. </p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the service. </p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID of the service owner.</p>
     #[doc(hidden)]
-    pub owner_account_id: std::option::Option<std::string::String>,
+    pub owner_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID of the service creator. </p>
     #[doc(hidden)]
-    pub created_by_account_id: std::option::Option<std::string::String>,
+    pub created_by_account_id: ::std::option::Option<::std::string::String>,
     /// <p>A description of the service. </p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the environment. </p>
     #[doc(hidden)]
-    pub environment_id: std::option::Option<std::string::String>,
+    pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the application. </p>
     #[doc(hidden)]
-    pub application_id: std::option::Option<std::string::String>,
+    pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the virtual private cloud (VPC). </p>
     #[doc(hidden)]
-    pub vpc_id: std::option::Option<std::string::String>,
+    pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The endpoint type of the service. </p>
     #[doc(hidden)]
-    pub endpoint_type: std::option::Option<crate::types::ServiceEndpointType>,
+    pub endpoint_type: ::std::option::Option<crate::types::ServiceEndpointType>,
     /// <p>The summary of the configuration for the URL endpoint type. </p>
     #[doc(hidden)]
-    pub url_endpoint: std::option::Option<crate::types::UrlEndpointSummary>,
+    pub url_endpoint: ::std::option::Option<crate::types::UrlEndpointSummary>,
     /// <p>A summary of the configuration for the Lambda endpoint type. </p>
     #[doc(hidden)]
-    pub lambda_endpoint: std::option::Option<crate::types::LambdaEndpointSummary>,
+    pub lambda_endpoint: ::std::option::Option<crate::types::LambdaEndpointSummary>,
     /// <p>The current state of the service. </p>
     #[doc(hidden)]
-    pub state: std::option::Option<crate::types::ServiceState>,
+    pub state: ::std::option::Option<crate::types::ServiceState>,
     /// <p>The tags assigned to the service. </p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>Any error associated with the service resource. </p>
     #[doc(hidden)]
-    pub error: std::option::Option<crate::types::ErrorResponse>,
+    pub error: ::std::option::Option<crate::types::ErrorResponse>,
     /// <p>A timestamp that indicates when the service was last updated. </p>
     #[doc(hidden)]
-    pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A timestamp that indicates when the service is created. </p>
     #[doc(hidden)]
-    pub created_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ServiceSummary {
     /// <p>The unique identifier of the service. </p>
-    pub fn service_id(&self) -> std::option::Option<&str> {
+    pub fn service_id(&self) -> ::std::option::Option<&str> {
         self.service_id.as_deref()
     }
     /// <p>The name of the service. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the service. </p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The Amazon Web Services account ID of the service owner.</p>
-    pub fn owner_account_id(&self) -> std::option::Option<&str> {
+    pub fn owner_account_id(&self) -> ::std::option::Option<&str> {
         self.owner_account_id.as_deref()
     }
     /// <p>The Amazon Web Services account ID of the service creator. </p>
-    pub fn created_by_account_id(&self) -> std::option::Option<&str> {
+    pub fn created_by_account_id(&self) -> ::std::option::Option<&str> {
         self.created_by_account_id.as_deref()
     }
     /// <p>A description of the service. </p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The unique identifier of the environment. </p>
-    pub fn environment_id(&self) -> std::option::Option<&str> {
+    pub fn environment_id(&self) -> ::std::option::Option<&str> {
         self.environment_id.as_deref()
     }
     /// <p>The unique identifier of the application. </p>
-    pub fn application_id(&self) -> std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<&str> {
         self.application_id.as_deref()
     }
     /// <p>The ID of the virtual private cloud (VPC). </p>
-    pub fn vpc_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
     /// <p>The endpoint type of the service. </p>
-    pub fn endpoint_type(&self) -> std::option::Option<&crate::types::ServiceEndpointType> {
+    pub fn endpoint_type(&self) -> ::std::option::Option<&crate::types::ServiceEndpointType> {
         self.endpoint_type.as_ref()
     }
     /// <p>The summary of the configuration for the URL endpoint type. </p>
-    pub fn url_endpoint(&self) -> std::option::Option<&crate::types::UrlEndpointSummary> {
+    pub fn url_endpoint(&self) -> ::std::option::Option<&crate::types::UrlEndpointSummary> {
         self.url_endpoint.as_ref()
     }
     /// <p>A summary of the configuration for the Lambda endpoint type. </p>
-    pub fn lambda_endpoint(&self) -> std::option::Option<&crate::types::LambdaEndpointSummary> {
+    pub fn lambda_endpoint(&self) -> ::std::option::Option<&crate::types::LambdaEndpointSummary> {
         self.lambda_endpoint.as_ref()
     }
     /// <p>The current state of the service. </p>
-    pub fn state(&self) -> std::option::Option<&crate::types::ServiceState> {
+    pub fn state(&self) -> ::std::option::Option<&crate::types::ServiceState> {
         self.state.as_ref()
     }
     /// <p>The tags assigned to the service. </p>
     pub fn tags(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.tags.as_ref()
     }
     /// <p>Any error associated with the service resource. </p>
-    pub fn error(&self) -> std::option::Option<&crate::types::ErrorResponse> {
+    pub fn error(&self) -> ::std::option::Option<&crate::types::ErrorResponse> {
         self.error.as_ref()
     }
     /// <p>A timestamp that indicates when the service was last updated. </p>
-    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>A timestamp that indicates when the service is created. </p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
 }
-impl std::fmt::Debug for ServiceSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for ServiceSummary {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ServiceSummary");
         formatter.field("service_id", &self.service_id);
         formatter.field("name", &self.name);
@@ -162,167 +164,189 @@ impl ServiceSummary {
 
 /// A builder for [`ServiceSummary`](crate::types::ServiceSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct ServiceSummaryBuilder {
-    pub(crate) service_id: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) owner_account_id: std::option::Option<std::string::String>,
-    pub(crate) created_by_account_id: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) environment_id: std::option::Option<std::string::String>,
-    pub(crate) application_id: std::option::Option<std::string::String>,
-    pub(crate) vpc_id: std::option::Option<std::string::String>,
-    pub(crate) endpoint_type: std::option::Option<crate::types::ServiceEndpointType>,
-    pub(crate) url_endpoint: std::option::Option<crate::types::UrlEndpointSummary>,
-    pub(crate) lambda_endpoint: std::option::Option<crate::types::LambdaEndpointSummary>,
-    pub(crate) state: std::option::Option<crate::types::ServiceState>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) error: std::option::Option<crate::types::ErrorResponse>,
-    pub(crate) last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) service_id: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) owner_account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) created_by_account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) environment_id: ::std::option::Option<::std::string::String>,
+    pub(crate) application_id: ::std::option::Option<::std::string::String>,
+    pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
+    pub(crate) endpoint_type: ::std::option::Option<crate::types::ServiceEndpointType>,
+    pub(crate) url_endpoint: ::std::option::Option<crate::types::UrlEndpointSummary>,
+    pub(crate) lambda_endpoint: ::std::option::Option<crate::types::LambdaEndpointSummary>,
+    pub(crate) state: ::std::option::Option<crate::types::ServiceState>,
+    pub(crate) tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) error: ::std::option::Option<crate::types::ErrorResponse>,
+    pub(crate) last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ServiceSummaryBuilder {
     /// <p>The unique identifier of the service. </p>
-    pub fn service_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.service_id = Some(input.into());
+    pub fn service_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.service_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the service. </p>
-    pub fn set_service_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_service_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_id = input;
         self
     }
     /// <p>The name of the service. </p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the service. </p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the service. </p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the service. </p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// <p>The Amazon Web Services account ID of the service owner.</p>
-    pub fn owner_account_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.owner_account_id = Some(input.into());
+    pub fn owner_account_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.owner_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID of the service owner.</p>
-    pub fn set_owner_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_owner_account_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.owner_account_id = input;
         self
     }
     /// <p>The Amazon Web Services account ID of the service creator. </p>
-    pub fn created_by_account_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.created_by_account_id = Some(input.into());
+    pub fn created_by_account_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.created_by_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID of the service creator. </p>
     pub fn set_created_by_account_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.created_by_account_id = input;
         self
     }
     /// <p>A description of the service. </p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of the service. </p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>The unique identifier of the environment. </p>
-    pub fn environment_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.environment_id = Some(input.into());
+    pub fn environment_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.environment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the environment. </p>
-    pub fn set_environment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_environment_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.environment_id = input;
         self
     }
     /// <p>The unique identifier of the application. </p>
-    pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.application_id = Some(input.into());
+    pub fn application_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the application. </p>
-    pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_application_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.application_id = input;
         self
     }
     /// <p>The ID of the virtual private cloud (VPC). </p>
-    pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.vpc_id = Some(input.into());
+    pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.vpc_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the virtual private cloud (VPC). </p>
-    pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
     }
     /// <p>The endpoint type of the service. </p>
     pub fn endpoint_type(mut self, input: crate::types::ServiceEndpointType) -> Self {
-        self.endpoint_type = Some(input);
+        self.endpoint_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The endpoint type of the service. </p>
     pub fn set_endpoint_type(
         mut self,
-        input: std::option::Option<crate::types::ServiceEndpointType>,
+        input: ::std::option::Option<crate::types::ServiceEndpointType>,
     ) -> Self {
         self.endpoint_type = input;
         self
     }
     /// <p>The summary of the configuration for the URL endpoint type. </p>
     pub fn url_endpoint(mut self, input: crate::types::UrlEndpointSummary) -> Self {
-        self.url_endpoint = Some(input);
+        self.url_endpoint = ::std::option::Option::Some(input);
         self
     }
     /// <p>The summary of the configuration for the URL endpoint type. </p>
     pub fn set_url_endpoint(
         mut self,
-        input: std::option::Option<crate::types::UrlEndpointSummary>,
+        input: ::std::option::Option<crate::types::UrlEndpointSummary>,
     ) -> Self {
         self.url_endpoint = input;
         self
     }
     /// <p>A summary of the configuration for the Lambda endpoint type. </p>
     pub fn lambda_endpoint(mut self, input: crate::types::LambdaEndpointSummary) -> Self {
-        self.lambda_endpoint = Some(input);
+        self.lambda_endpoint = ::std::option::Option::Some(input);
         self
     }
     /// <p>A summary of the configuration for the Lambda endpoint type. </p>
     pub fn set_lambda_endpoint(
         mut self,
-        input: std::option::Option<crate::types::LambdaEndpointSummary>,
+        input: ::std::option::Option<crate::types::LambdaEndpointSummary>,
     ) -> Self {
         self.lambda_endpoint = input;
         self
     }
     /// <p>The current state of the service. </p>
     pub fn state(mut self, input: crate::types::ServiceState) -> Self {
-        self.state = Some(input);
+        self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current state of the service. </p>
-    pub fn set_state(mut self, input: std::option::Option<crate::types::ServiceState>) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::ServiceState>) -> Self {
         self.state = input;
         self
     }
@@ -333,19 +357,19 @@ impl ServiceSummaryBuilder {
     /// <p>The tags assigned to the service. </p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
+        self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags assigned to the service. </p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.tags = input;
@@ -353,36 +377,36 @@ impl ServiceSummaryBuilder {
     }
     /// <p>Any error associated with the service resource. </p>
     pub fn error(mut self, input: crate::types::ErrorResponse) -> Self {
-        self.error = Some(input);
+        self.error = ::std::option::Option::Some(input);
         self
     }
     /// <p>Any error associated with the service resource. </p>
-    pub fn set_error(mut self, input: std::option::Option<crate::types::ErrorResponse>) -> Self {
+    pub fn set_error(mut self, input: ::std::option::Option<crate::types::ErrorResponse>) -> Self {
         self.error = input;
         self
     }
     /// <p>A timestamp that indicates when the service was last updated. </p>
-    pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_updated_time = Some(input);
+    pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_updated_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>A timestamp that indicates when the service was last updated. </p>
     pub fn set_last_updated_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_updated_time = input;
         self
     }
     /// <p>A timestamp that indicates when the service is created. </p>
-    pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_time = Some(input);
+    pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>A timestamp that indicates when the service is created. </p>
     pub fn set_created_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_time = input;
         self
@@ -410,8 +434,8 @@ impl ServiceSummaryBuilder {
         }
     }
 }
-impl std::fmt::Debug for ServiceSummaryBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for ServiceSummaryBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ServiceSummaryBuilder");
         formatter.field("service_id", &self.service_id);
         formatter.field("name", &self.name);

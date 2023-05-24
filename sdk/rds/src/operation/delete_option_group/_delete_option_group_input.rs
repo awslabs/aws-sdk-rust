@@ -2,19 +2,19 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteOptionGroupInput {
     /// <p>The name of the option group to be deleted.</p> <note>
     /// <p>You can't delete default option groups.</p>
     /// </note>
     #[doc(hidden)]
-    pub option_group_name: std::option::Option<std::string::String>,
+    pub option_group_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteOptionGroupInput {
     /// <p>The name of the option group to be deleted.</p> <note>
     /// <p>You can't delete default option groups.</p>
     /// </note>
-    pub fn option_group_name(&self) -> std::option::Option<&str> {
+    pub fn option_group_name(&self) -> ::std::option::Option<&str> {
         self.option_group_name.as_deref()
     }
 }
@@ -28,16 +28,21 @@ impl DeleteOptionGroupInput {
 
 /// A builder for [`DeleteOptionGroupInput`](crate::operation::delete_option_group::DeleteOptionGroupInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteOptionGroupInputBuilder {
-    pub(crate) option_group_name: std::option::Option<std::string::String>,
+    pub(crate) option_group_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteOptionGroupInputBuilder {
     /// <p>The name of the option group to be deleted.</p> <note>
     /// <p>You can't delete default option groups.</p>
     /// </note>
-    pub fn option_group_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.option_group_name = Some(input.into());
+    pub fn option_group_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.option_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the option group to be deleted.</p> <note>
@@ -45,7 +50,7 @@ impl DeleteOptionGroupInputBuilder {
     /// </note>
     pub fn set_option_group_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.option_group_name = input;
         self
@@ -53,11 +58,11 @@ impl DeleteOptionGroupInputBuilder {
     /// Consumes the builder and constructs a [`DeleteOptionGroupInput`](crate::operation::delete_option_group::DeleteOptionGroupInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::delete_option_group::DeleteOptionGroupInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::delete_option_group::DeleteOptionGroupInput {
                 option_group_name: self.option_group_name,
             },

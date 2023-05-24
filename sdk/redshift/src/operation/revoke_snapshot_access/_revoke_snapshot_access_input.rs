@@ -2,36 +2,36 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RevokeSnapshotAccessInput {
     /// <p>The identifier of the snapshot that the account can no longer access.</p>
     #[doc(hidden)]
-    pub snapshot_identifier: std::option::Option<std::string::String>,
+    pub snapshot_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to revoke access.</p>
     #[doc(hidden)]
-    pub snapshot_arn: std::option::Option<std::string::String>,
+    pub snapshot_arn: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user or role has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
     #[doc(hidden)]
-    pub snapshot_cluster_identifier: std::option::Option<std::string::String>,
+    pub snapshot_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the Amazon Web Services account that can no longer restore the specified snapshot.</p>
     #[doc(hidden)]
-    pub account_with_restore_access: std::option::Option<std::string::String>,
+    pub account_with_restore_access: ::std::option::Option<::std::string::String>,
 }
 impl RevokeSnapshotAccessInput {
     /// <p>The identifier of the snapshot that the account can no longer access.</p>
-    pub fn snapshot_identifier(&self) -> std::option::Option<&str> {
+    pub fn snapshot_identifier(&self) -> ::std::option::Option<&str> {
         self.snapshot_identifier.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to revoke access.</p>
-    pub fn snapshot_arn(&self) -> std::option::Option<&str> {
+    pub fn snapshot_arn(&self) -> ::std::option::Option<&str> {
         self.snapshot_arn.as_deref()
     }
     /// <p>The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user or role has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
-    pub fn snapshot_cluster_identifier(&self) -> std::option::Option<&str> {
+    pub fn snapshot_cluster_identifier(&self) -> ::std::option::Option<&str> {
         self.snapshot_cluster_identifier.as_deref()
     }
     /// <p>The identifier of the Amazon Web Services account that can no longer restore the specified snapshot.</p>
-    pub fn account_with_restore_access(&self) -> std::option::Option<&str> {
+    pub fn account_with_restore_access(&self) -> ::std::option::Option<&str> {
         self.account_with_restore_access.as_deref()
     }
 }
@@ -45,59 +45,70 @@ impl RevokeSnapshotAccessInput {
 
 /// A builder for [`RevokeSnapshotAccessInput`](crate::operation::revoke_snapshot_access::RevokeSnapshotAccessInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RevokeSnapshotAccessInputBuilder {
-    pub(crate) snapshot_identifier: std::option::Option<std::string::String>,
-    pub(crate) snapshot_arn: std::option::Option<std::string::String>,
-    pub(crate) snapshot_cluster_identifier: std::option::Option<std::string::String>,
-    pub(crate) account_with_restore_access: std::option::Option<std::string::String>,
+    pub(crate) snapshot_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) snapshot_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) snapshot_cluster_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) account_with_restore_access: ::std::option::Option<::std::string::String>,
 }
 impl RevokeSnapshotAccessInputBuilder {
     /// <p>The identifier of the snapshot that the account can no longer access.</p>
-    pub fn snapshot_identifier(mut self, input: impl Into<std::string::String>) -> Self {
-        self.snapshot_identifier = Some(input.into());
+    pub fn snapshot_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.snapshot_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the snapshot that the account can no longer access.</p>
     pub fn set_snapshot_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.snapshot_identifier = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to revoke access.</p>
-    pub fn snapshot_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.snapshot_arn = Some(input.into());
+    pub fn snapshot_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.snapshot_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to revoke access.</p>
-    pub fn set_snapshot_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_snapshot_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_arn = input;
         self
     }
     /// <p>The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user or role has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
-    pub fn snapshot_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
-        self.snapshot_cluster_identifier = Some(input.into());
+    pub fn snapshot_cluster_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.snapshot_cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user or role has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
     pub fn set_snapshot_cluster_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.snapshot_cluster_identifier = input;
         self
     }
     /// <p>The identifier of the Amazon Web Services account that can no longer restore the specified snapshot.</p>
-    pub fn account_with_restore_access(mut self, input: impl Into<std::string::String>) -> Self {
-        self.account_with_restore_access = Some(input.into());
+    pub fn account_with_restore_access(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.account_with_restore_access = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the Amazon Web Services account that can no longer restore the specified snapshot.</p>
     pub fn set_account_with_restore_access(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.account_with_restore_access = input;
         self
@@ -105,11 +116,11 @@ impl RevokeSnapshotAccessInputBuilder {
     /// Consumes the builder and constructs a [`RevokeSnapshotAccessInput`](crate::operation::revoke_snapshot_access::RevokeSnapshotAccessInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::revoke_snapshot_access::RevokeSnapshotAccessInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::revoke_snapshot_access::RevokeSnapshotAccessInput {
                 snapshot_identifier: self.snapshot_identifier,
                 snapshot_arn: self.snapshot_arn,

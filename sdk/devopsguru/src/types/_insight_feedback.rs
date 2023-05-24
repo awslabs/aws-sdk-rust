@@ -2,22 +2,22 @@
 
 /// <p> Information about insight feedback received from a customer. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InsightFeedback {
     /// <p> The insight feedback ID. </p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p> The feedback provided by the customer. </p>
     #[doc(hidden)]
-    pub feedback: std::option::Option<crate::types::InsightFeedbackOption>,
+    pub feedback: ::std::option::Option<crate::types::InsightFeedbackOption>,
 }
 impl InsightFeedback {
     /// <p> The insight feedback ID. </p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p> The feedback provided by the customer. </p>
-    pub fn feedback(&self) -> std::option::Option<&crate::types::InsightFeedbackOption> {
+    pub fn feedback(&self) -> ::std::option::Option<&crate::types::InsightFeedbackOption> {
         self.feedback.as_ref()
     }
 }
@@ -30,31 +30,33 @@ impl InsightFeedback {
 
 /// A builder for [`InsightFeedback`](crate::types::InsightFeedback).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InsightFeedbackBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) feedback: std::option::Option<crate::types::InsightFeedbackOption>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) feedback: ::std::option::Option<crate::types::InsightFeedbackOption>,
 }
 impl InsightFeedbackBuilder {
     /// <p> The insight feedback ID. </p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The insight feedback ID. </p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p> The feedback provided by the customer. </p>
     pub fn feedback(mut self, input: crate::types::InsightFeedbackOption) -> Self {
-        self.feedback = Some(input);
+        self.feedback = ::std::option::Option::Some(input);
         self
     }
     /// <p> The feedback provided by the customer. </p>
     pub fn set_feedback(
         mut self,
-        input: std::option::Option<crate::types::InsightFeedbackOption>,
+        input: ::std::option::Option<crate::types::InsightFeedbackOption>,
     ) -> Self {
         self.feedback = input;
         self

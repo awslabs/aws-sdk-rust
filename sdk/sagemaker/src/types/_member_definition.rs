@@ -2,26 +2,26 @@
 
 /// <p>Defines an Amazon Cognito or your own OIDC IdP user group that is part of a work team.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MemberDefinition {
     /// <p>The Amazon Cognito user group that is part of the work team.</p>
     #[doc(hidden)]
-    pub cognito_member_definition: std::option::Option<crate::types::CognitoMemberDefinition>,
+    pub cognito_member_definition: ::std::option::Option<crate::types::CognitoMemberDefinition>,
     /// <p>A list user groups that exist in your OIDC Identity Provider (IdP). One to ten groups can be used to create a single private work team. When you add a user group to the list of <code>Groups</code>, you can add that user group to one or more private work teams. If you add a user group to a private work team, all workers in that user group are added to the work team.</p>
     #[doc(hidden)]
-    pub oidc_member_definition: std::option::Option<crate::types::OidcMemberDefinition>,
+    pub oidc_member_definition: ::std::option::Option<crate::types::OidcMemberDefinition>,
 }
 impl MemberDefinition {
     /// <p>The Amazon Cognito user group that is part of the work team.</p>
     pub fn cognito_member_definition(
         &self,
-    ) -> std::option::Option<&crate::types::CognitoMemberDefinition> {
+    ) -> ::std::option::Option<&crate::types::CognitoMemberDefinition> {
         self.cognito_member_definition.as_ref()
     }
     /// <p>A list user groups that exist in your OIDC Identity Provider (IdP). One to ten groups can be used to create a single private work team. When you add a user group to the list of <code>Groups</code>, you can add that user group to one or more private work teams. If you add a user group to a private work team, all workers in that user group are added to the work team.</p>
     pub fn oidc_member_definition(
         &self,
-    ) -> std::option::Option<&crate::types::OidcMemberDefinition> {
+    ) -> ::std::option::Option<&crate::types::OidcMemberDefinition> {
         self.oidc_member_definition.as_ref()
     }
 }
@@ -34,11 +34,13 @@ impl MemberDefinition {
 
 /// A builder for [`MemberDefinition`](crate::types::MemberDefinition).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MemberDefinitionBuilder {
     pub(crate) cognito_member_definition:
-        std::option::Option<crate::types::CognitoMemberDefinition>,
-    pub(crate) oidc_member_definition: std::option::Option<crate::types::OidcMemberDefinition>,
+        ::std::option::Option<crate::types::CognitoMemberDefinition>,
+    pub(crate) oidc_member_definition: ::std::option::Option<crate::types::OidcMemberDefinition>,
 }
 impl MemberDefinitionBuilder {
     /// <p>The Amazon Cognito user group that is part of the work team.</p>
@@ -46,26 +48,26 @@ impl MemberDefinitionBuilder {
         mut self,
         input: crate::types::CognitoMemberDefinition,
     ) -> Self {
-        self.cognito_member_definition = Some(input);
+        self.cognito_member_definition = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Amazon Cognito user group that is part of the work team.</p>
     pub fn set_cognito_member_definition(
         mut self,
-        input: std::option::Option<crate::types::CognitoMemberDefinition>,
+        input: ::std::option::Option<crate::types::CognitoMemberDefinition>,
     ) -> Self {
         self.cognito_member_definition = input;
         self
     }
     /// <p>A list user groups that exist in your OIDC Identity Provider (IdP). One to ten groups can be used to create a single private work team. When you add a user group to the list of <code>Groups</code>, you can add that user group to one or more private work teams. If you add a user group to a private work team, all workers in that user group are added to the work team.</p>
     pub fn oidc_member_definition(mut self, input: crate::types::OidcMemberDefinition) -> Self {
-        self.oidc_member_definition = Some(input);
+        self.oidc_member_definition = ::std::option::Option::Some(input);
         self
     }
     /// <p>A list user groups that exist in your OIDC Identity Provider (IdP). One to ten groups can be used to create a single private work team. When you add a user group to the list of <code>Groups</code>, you can add that user group to one or more private work teams. If you add a user group to a private work team, all workers in that user group are added to the work team.</p>
     pub fn set_oidc_member_definition(
         mut self,
-        input: std::option::Option<crate::types::OidcMemberDefinition>,
+        input: ::std::option::Option<crate::types::OidcMemberDefinition>,
     ) -> Self {
         self.oidc_member_definition = input;
         self

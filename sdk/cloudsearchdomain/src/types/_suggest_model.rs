@@ -2,21 +2,21 @@
 
 /// <p>Container for the suggestion information returned in a <code>SuggestResponse</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SuggestModel {
     /// <p>The query string specified in the suggest request.</p>
     #[doc(hidden)]
-    pub query: std::option::Option<std::string::String>,
+    pub query: ::std::option::Option<::std::string::String>,
     /// <p>The number of documents that were found to match the query string.</p>
     #[doc(hidden)]
     pub found: i64,
     /// <p>The documents that match the query string.</p>
     #[doc(hidden)]
-    pub suggestions: std::option::Option<std::vec::Vec<crate::types::SuggestionMatch>>,
+    pub suggestions: ::std::option::Option<::std::vec::Vec<crate::types::SuggestionMatch>>,
 }
 impl SuggestModel {
     /// <p>The query string specified in the suggest request.</p>
-    pub fn query(&self) -> std::option::Option<&str> {
+    pub fn query(&self) -> ::std::option::Option<&str> {
         self.query.as_deref()
     }
     /// <p>The number of documents that were found to match the query string.</p>
@@ -24,7 +24,7 @@ impl SuggestModel {
         self.found
     }
     /// <p>The documents that match the query string.</p>
-    pub fn suggestions(&self) -> std::option::Option<&[crate::types::SuggestionMatch]> {
+    pub fn suggestions(&self) -> ::std::option::Option<&[crate::types::SuggestionMatch]> {
         self.suggestions.as_deref()
     }
 }
@@ -37,30 +37,32 @@ impl SuggestModel {
 
 /// A builder for [`SuggestModel`](crate::types::SuggestModel).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SuggestModelBuilder {
-    pub(crate) query: std::option::Option<std::string::String>,
-    pub(crate) found: std::option::Option<i64>,
-    pub(crate) suggestions: std::option::Option<std::vec::Vec<crate::types::SuggestionMatch>>,
+    pub(crate) query: ::std::option::Option<::std::string::String>,
+    pub(crate) found: ::std::option::Option<i64>,
+    pub(crate) suggestions: ::std::option::Option<::std::vec::Vec<crate::types::SuggestionMatch>>,
 }
 impl SuggestModelBuilder {
     /// <p>The query string specified in the suggest request.</p>
-    pub fn query(mut self, input: impl Into<std::string::String>) -> Self {
-        self.query = Some(input.into());
+    pub fn query(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.query = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The query string specified in the suggest request.</p>
-    pub fn set_query(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_query(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.query = input;
         self
     }
     /// <p>The number of documents that were found to match the query string.</p>
     pub fn found(mut self, input: i64) -> Self {
-        self.found = Some(input);
+        self.found = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of documents that were found to match the query string.</p>
-    pub fn set_found(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_found(mut self, input: ::std::option::Option<i64>) -> Self {
         self.found = input;
         self
     }
@@ -72,13 +74,13 @@ impl SuggestModelBuilder {
     pub fn suggestions(mut self, input: crate::types::SuggestionMatch) -> Self {
         let mut v = self.suggestions.unwrap_or_default();
         v.push(input);
-        self.suggestions = Some(v);
+        self.suggestions = ::std::option::Option::Some(v);
         self
     }
     /// <p>The documents that match the query string.</p>
     pub fn set_suggestions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SuggestionMatch>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SuggestionMatch>>,
     ) -> Self {
         self.suggestions = input;
         self

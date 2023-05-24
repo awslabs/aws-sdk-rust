@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum SalesforceDataTransferApi {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum SalesforceDataTransferApi {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for SalesforceDataTransferApi {
+impl ::std::convert::From<&str> for SalesforceDataTransferApi {
     fn from(s: &str) -> Self {
         match s {
             "AUTOMATIC" => SalesforceDataTransferApi::Automatic,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for SalesforceDataTransferApi {
         }
     }
 }
-impl std::str::FromStr for SalesforceDataTransferApi {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for SalesforceDataTransferApi {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SalesforceDataTransferApi::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(SalesforceDataTransferApi::from(s))
     }
 }
 impl SalesforceDataTransferApi {
@@ -91,7 +91,7 @@ impl SalesforceDataTransferApi {
         &["AUTOMATIC", "BULKV2", "REST_SYNC"]
     }
 }
-impl AsRef<str> for SalesforceDataTransferApi {
+impl ::std::convert::AsRef<str> for SalesforceDataTransferApi {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

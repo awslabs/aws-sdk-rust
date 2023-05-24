@@ -2,14 +2,14 @@
 
 /// <p>An object that contains information about the inbox placement data settings for a verified domain that’s associated with your AWS account. This data is available only if you enabled the Deliverability dashboard for the domain (<code>PutDeliverabilityDashboardOption</code> operation).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InboxPlacementTrackingOption {
     /// <p>Specifies whether inbox placement data is being tracked for the domain.</p>
     #[doc(hidden)]
     pub global: bool,
     /// <p>An array of strings, one for each major email provider that the inbox placement data applies to.</p>
     #[doc(hidden)]
-    pub tracked_isps: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub tracked_isps: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl InboxPlacementTrackingOption {
     /// <p>Specifies whether inbox placement data is being tracked for the domain.</p>
@@ -17,7 +17,7 @@ impl InboxPlacementTrackingOption {
         self.global
     }
     /// <p>An array of strings, one for each major email provider that the inbox placement data applies to.</p>
-    pub fn tracked_isps(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn tracked_isps(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.tracked_isps.as_deref()
     }
 }
@@ -30,19 +30,21 @@ impl InboxPlacementTrackingOption {
 
 /// A builder for [`InboxPlacementTrackingOption`](crate::types::InboxPlacementTrackingOption).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InboxPlacementTrackingOptionBuilder {
-    pub(crate) global: std::option::Option<bool>,
-    pub(crate) tracked_isps: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) global: ::std::option::Option<bool>,
+    pub(crate) tracked_isps: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl InboxPlacementTrackingOptionBuilder {
     /// <p>Specifies whether inbox placement data is being tracked for the domain.</p>
     pub fn global(mut self, input: bool) -> Self {
-        self.global = Some(input);
+        self.global = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether inbox placement data is being tracked for the domain.</p>
-    pub fn set_global(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_global(mut self, input: ::std::option::Option<bool>) -> Self {
         self.global = input;
         self
     }
@@ -51,16 +53,16 @@ impl InboxPlacementTrackingOptionBuilder {
     /// To override the contents of this collection use [`set_tracked_isps`](Self::set_tracked_isps).
     ///
     /// <p>An array of strings, one for each major email provider that the inbox placement data applies to.</p>
-    pub fn tracked_isps(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn tracked_isps(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.tracked_isps.unwrap_or_default();
         v.push(input.into());
-        self.tracked_isps = Some(v);
+        self.tracked_isps = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of strings, one for each major email provider that the inbox placement data applies to.</p>
     pub fn set_tracked_isps(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.tracked_isps = input;
         self

@@ -38,13 +38,13 @@
 /// <p>The status of the configuration for retrieving occurrences of sensitive data reported by findings. Valid values are:</p>
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum RevealStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum RevealStatus {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for RevealStatus {
+impl ::std::convert::From<&str> for RevealStatus {
     fn from(s: &str) -> Self {
         match s {
             "DISABLED" => RevealStatus::Disabled,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for RevealStatus {
         }
     }
 }
-impl std::str::FromStr for RevealStatus {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for RevealStatus {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RevealStatus::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(RevealStatus::from(s))
     }
 }
 impl RevealStatus {
@@ -86,7 +86,7 @@ impl RevealStatus {
         &["DISABLED", "ENABLED"]
     }
 }
-impl AsRef<str> for RevealStatus {
+impl ::std::convert::AsRef<str> for RevealStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -2,7 +2,7 @@
 
 /// <p>The username configuration type. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UsernameConfigurationType {
     /// <p>Specifies whether user name case sensitivity will be applied for all users in the user pool through Amazon Cognito APIs.</p>
     /// <p>Valid values include:</p>
@@ -21,7 +21,7 @@ pub struct UsernameConfigurationType {
     /// </dd>
     /// </dl>
     #[doc(hidden)]
-    pub case_sensitive: std::option::Option<bool>,
+    pub case_sensitive: ::std::option::Option<bool>,
 }
 impl UsernameConfigurationType {
     /// <p>Specifies whether user name case sensitivity will be applied for all users in the user pool through Amazon Cognito APIs.</p>
@@ -40,7 +40,7 @@ impl UsernameConfigurationType {
     /// <p>Enables case insensitivity for all username input. For example, when this option is set to <code>False</code>, users can sign in using either "username" or "Username". This option also enables both <code>preferred_username</code> and <code>email</code> alias to be case insensitive, in addition to the <code>username</code> attribute.</p>
     /// </dd>
     /// </dl>
-    pub fn case_sensitive(&self) -> std::option::Option<bool> {
+    pub fn case_sensitive(&self) -> ::std::option::Option<bool> {
         self.case_sensitive
     }
 }
@@ -53,9 +53,11 @@ impl UsernameConfigurationType {
 
 /// A builder for [`UsernameConfigurationType`](crate::types::UsernameConfigurationType).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UsernameConfigurationTypeBuilder {
-    pub(crate) case_sensitive: std::option::Option<bool>,
+    pub(crate) case_sensitive: ::std::option::Option<bool>,
 }
 impl UsernameConfigurationTypeBuilder {
     /// <p>Specifies whether user name case sensitivity will be applied for all users in the user pool through Amazon Cognito APIs.</p>
@@ -75,7 +77,7 @@ impl UsernameConfigurationTypeBuilder {
     /// </dd>
     /// </dl>
     pub fn case_sensitive(mut self, input: bool) -> Self {
-        self.case_sensitive = Some(input);
+        self.case_sensitive = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether user name case sensitivity will be applied for all users in the user pool through Amazon Cognito APIs.</p>
@@ -94,7 +96,7 @@ impl UsernameConfigurationTypeBuilder {
     /// <p>Enables case insensitivity for all username input. For example, when this option is set to <code>False</code>, users can sign in using either "username" or "Username". This option also enables both <code>preferred_username</code> and <code>email</code> alias to be case insensitive, in addition to the <code>username</code> attribute.</p>
     /// </dd>
     /// </dl>
-    pub fn set_case_sensitive(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_case_sensitive(mut self, input: ::std::option::Option<bool>) -> Self {
         self.case_sensitive = input;
         self
     }

@@ -2,22 +2,22 @@
 
 /// <p>The contextual information for the entity. InferRxNorm recognizes the trait <code>NEGATION</code>, which is any indication that the patient is not taking a medication. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RxNormTrait {
     /// <p>Provides a name or contextual description about the trait.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<crate::types::RxNormTraitName>,
+    pub name: ::std::option::Option<crate::types::RxNormTraitName>,
     /// <p>The level of confidence that Amazon Comprehend Medical has in the accuracy of the detected trait.</p>
     #[doc(hidden)]
-    pub score: std::option::Option<f32>,
+    pub score: ::std::option::Option<f32>,
 }
 impl RxNormTrait {
     /// <p>Provides a name or contextual description about the trait.</p>
-    pub fn name(&self) -> std::option::Option<&crate::types::RxNormTraitName> {
+    pub fn name(&self) -> ::std::option::Option<&crate::types::RxNormTraitName> {
         self.name.as_ref()
     }
     /// <p>The level of confidence that Amazon Comprehend Medical has in the accuracy of the detected trait.</p>
-    pub fn score(&self) -> std::option::Option<f32> {
+    pub fn score(&self) -> ::std::option::Option<f32> {
         self.score
     }
 }
@@ -30,29 +30,31 @@ impl RxNormTrait {
 
 /// A builder for [`RxNormTrait`](crate::types::RxNormTrait).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RxNormTraitBuilder {
-    pub(crate) name: std::option::Option<crate::types::RxNormTraitName>,
-    pub(crate) score: std::option::Option<f32>,
+    pub(crate) name: ::std::option::Option<crate::types::RxNormTraitName>,
+    pub(crate) score: ::std::option::Option<f32>,
 }
 impl RxNormTraitBuilder {
     /// <p>Provides a name or contextual description about the trait.</p>
     pub fn name(mut self, input: crate::types::RxNormTraitName) -> Self {
-        self.name = Some(input);
+        self.name = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides a name or contextual description about the trait.</p>
-    pub fn set_name(mut self, input: std::option::Option<crate::types::RxNormTraitName>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::RxNormTraitName>) -> Self {
         self.name = input;
         self
     }
     /// <p>The level of confidence that Amazon Comprehend Medical has in the accuracy of the detected trait.</p>
     pub fn score(mut self, input: f32) -> Self {
-        self.score = Some(input);
+        self.score = ::std::option::Option::Some(input);
         self
     }
     /// <p>The level of confidence that Amazon Comprehend Medical has in the accuracy of the detected trait.</p>
-    pub fn set_score(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_score(mut self, input: ::std::option::Option<f32>) -> Self {
         self.score = input;
         self
     }

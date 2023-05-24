@@ -6,56 +6,59 @@ pub use crate::operation::create_filter::_create_filter_input::CreateFilterInput
 /// Fluent builder constructing a request to `CreateFilter`.
 ///
 /// <p>Creates a filter resource using specified filter criteria.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateFilterFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_filter::builders::CreateFilterInputBuilder,
 }
 impl CreateFilterFluentBuilder {
     /// Creates a new `CreateFilter`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_filter::CreateFilter,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_filter::CreateFilterError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_filter::CreateFilterError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_filter::CreateFilterOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_filter::CreateFilterError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_filter::CreateFilterError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,9 +71,9 @@ impl CreateFilterFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_filter::CreateFilterOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_filter::CreateFilterError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_filter::CreateFilterError>,
     > {
         self.send_middleware().await
     }
@@ -80,17 +83,17 @@ impl CreateFilterFluentBuilder {
         self
     }
     /// <p>Defines the action that is to be applied to the findings that match the filter.</p>
-    pub fn set_action(mut self, input: std::option::Option<crate::types::FilterAction>) -> Self {
+    pub fn set_action(mut self, input: ::std::option::Option<crate::types::FilterAction>) -> Self {
         self.inner = self.inner.set_action(input);
         self
     }
     /// <p>A description of the filter.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>A description of the filter.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
@@ -102,18 +105,18 @@ impl CreateFilterFluentBuilder {
     /// <p>Defines the criteria to be used in the filter for querying findings.</p>
     pub fn set_filter_criteria(
         mut self,
-        input: std::option::Option<crate::types::FilterCriteria>,
+        input: ::std::option::Option<crate::types::FilterCriteria>,
     ) -> Self {
         self.inner = self.inner.set_filter_criteria(input);
         self
     }
     /// <p>The name of the filter. Minimum length of 3. Maximum length of 64. Valid characters include alphanumeric characters, dot (.), underscore (_), and dash (-). Spaces are not allowed.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// <p>The name of the filter. Minimum length of 3. Maximum length of 64. Valid characters include alphanumeric characters, dot (.), underscore (_), and dash (-). Spaces are not allowed.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
@@ -124,8 +127,8 @@ impl CreateFilterFluentBuilder {
     /// <p>A list of tags for the filter.</p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
@@ -133,20 +136,20 @@ impl CreateFilterFluentBuilder {
     /// <p>A list of tags for the filter.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The reason for creating the filter.</p>
-    pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.reason(input.into());
         self
     }
     /// <p>The reason for creating the filter.</p>
-    pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_reason(input);
         self
     }

@@ -4,34 +4,34 @@
 /// <p>Video elements might be broken up into multiple artifacts as they grow in size during creation. </p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct TestGridSessionArtifact {
     /// <p>The file name of the artifact.</p>
     #[doc(hidden)]
-    pub filename: std::option::Option<std::string::String>,
+    pub filename: ::std::option::Option<::std::string::String>,
     /// <p>The kind of artifact.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::TestGridSessionArtifactType>,
+    pub r#type: ::std::option::Option<crate::types::TestGridSessionArtifactType>,
     /// <p>A semi-stable URL to the content of the object.</p>
     #[doc(hidden)]
-    pub url: std::option::Option<std::string::String>,
+    pub url: ::std::option::Option<::std::string::String>,
 }
 impl TestGridSessionArtifact {
     /// <p>The file name of the artifact.</p>
-    pub fn filename(&self) -> std::option::Option<&str> {
+    pub fn filename(&self) -> ::std::option::Option<&str> {
         self.filename.as_deref()
     }
     /// <p>The kind of artifact.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::TestGridSessionArtifactType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::TestGridSessionArtifactType> {
         self.r#type.as_ref()
     }
     /// <p>A semi-stable URL to the content of the object.</p>
-    pub fn url(&self) -> std::option::Option<&str> {
+    pub fn url(&self) -> ::std::option::Option<&str> {
         self.url.as_deref()
     }
 }
-impl std::fmt::Debug for TestGridSessionArtifact {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for TestGridSessionArtifact {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("TestGridSessionArtifact");
         formatter.field("filename", &self.filename);
         formatter.field("r#type", &self.r#type);
@@ -48,43 +48,43 @@ impl TestGridSessionArtifact {
 
 /// A builder for [`TestGridSessionArtifact`](crate::types::TestGridSessionArtifact).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct TestGridSessionArtifactBuilder {
-    pub(crate) filename: std::option::Option<std::string::String>,
-    pub(crate) r#type: std::option::Option<crate::types::TestGridSessionArtifactType>,
-    pub(crate) url: std::option::Option<std::string::String>,
+    pub(crate) filename: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::TestGridSessionArtifactType>,
+    pub(crate) url: ::std::option::Option<::std::string::String>,
 }
 impl TestGridSessionArtifactBuilder {
     /// <p>The file name of the artifact.</p>
-    pub fn filename(mut self, input: impl Into<std::string::String>) -> Self {
-        self.filename = Some(input.into());
+    pub fn filename(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.filename = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The file name of the artifact.</p>
-    pub fn set_filename(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_filename(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.filename = input;
         self
     }
     /// <p>The kind of artifact.</p>
     pub fn r#type(mut self, input: crate::types::TestGridSessionArtifactType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The kind of artifact.</p>
     pub fn set_type(
         mut self,
-        input: std::option::Option<crate::types::TestGridSessionArtifactType>,
+        input: ::std::option::Option<crate::types::TestGridSessionArtifactType>,
     ) -> Self {
         self.r#type = input;
         self
     }
     /// <p>A semi-stable URL to the content of the object.</p>
-    pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.url = Some(input.into());
+    pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A semi-stable URL to the content of the object.</p>
-    pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.url = input;
         self
     }
@@ -97,8 +97,8 @@ impl TestGridSessionArtifactBuilder {
         }
     }
 }
-impl std::fmt::Debug for TestGridSessionArtifactBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for TestGridSessionArtifactBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("TestGridSessionArtifactBuilder");
         formatter.field("filename", &self.filename);
         formatter.field("r#type", &self.r#type);

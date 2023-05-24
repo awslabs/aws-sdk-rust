@@ -2,49 +2,49 @@
 
 /// <p>This parameter is specified when you're using an Amazon Elastic File System file system for task storage. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/efs-volumes.html">Amazon EFS volumes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EfsVolumeConfiguration {
     /// <p>The Amazon EFS file system ID to use.</p>
     #[doc(hidden)]
-    pub file_system_id: std::option::Option<std::string::String>,
+    pub file_system_id: ::std::option::Option<::std::string::String>,
     /// <p>The directory within the Amazon EFS file system to mount as the root directory inside the host. If this parameter is omitted, the root of the Amazon EFS volume will be used. Specifying <code>/</code> will have the same effect as omitting this parameter.</p> <important>
     /// <p>If an EFS access point is specified in the <code>authorizationConfig</code>, the root directory parameter must either be omitted or set to <code>/</code> which will enforce the path set on the EFS access point.</p>
     /// </important>
     #[doc(hidden)]
-    pub root_directory: std::option::Option<std::string::String>,
+    pub root_directory: ::std::option::Option<::std::string::String>,
     /// <p>Determines whether to use encryption for Amazon EFS data in transit between the Amazon ECS host and the Amazon EFS server. Transit encryption must be turned on if Amazon EFS IAM authorization is used. If this parameter is omitted, the default value of <code>DISABLED</code> is used. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting data in transit</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
     #[doc(hidden)]
-    pub transit_encryption: std::option::Option<crate::types::EfsTransitEncryption>,
+    pub transit_encryption: ::std::option::Option<crate::types::EfsTransitEncryption>,
     /// <p>The port to use when sending encrypted data between the Amazon ECS host and the Amazon EFS server. If you do not specify a transit encryption port, it will use the port selection strategy that the Amazon EFS mount helper uses. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-mount-helper.html">EFS mount helper</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
     #[doc(hidden)]
-    pub transit_encryption_port: std::option::Option<i32>,
+    pub transit_encryption_port: ::std::option::Option<i32>,
     /// <p>The authorization configuration details for the Amazon EFS file system.</p>
     #[doc(hidden)]
-    pub authorization_config: std::option::Option<crate::types::EfsAuthorizationConfig>,
+    pub authorization_config: ::std::option::Option<crate::types::EfsAuthorizationConfig>,
 }
 impl EfsVolumeConfiguration {
     /// <p>The Amazon EFS file system ID to use.</p>
-    pub fn file_system_id(&self) -> std::option::Option<&str> {
+    pub fn file_system_id(&self) -> ::std::option::Option<&str> {
         self.file_system_id.as_deref()
     }
     /// <p>The directory within the Amazon EFS file system to mount as the root directory inside the host. If this parameter is omitted, the root of the Amazon EFS volume will be used. Specifying <code>/</code> will have the same effect as omitting this parameter.</p> <important>
     /// <p>If an EFS access point is specified in the <code>authorizationConfig</code>, the root directory parameter must either be omitted or set to <code>/</code> which will enforce the path set on the EFS access point.</p>
     /// </important>
-    pub fn root_directory(&self) -> std::option::Option<&str> {
+    pub fn root_directory(&self) -> ::std::option::Option<&str> {
         self.root_directory.as_deref()
     }
     /// <p>Determines whether to use encryption for Amazon EFS data in transit between the Amazon ECS host and the Amazon EFS server. Transit encryption must be turned on if Amazon EFS IAM authorization is used. If this parameter is omitted, the default value of <code>DISABLED</code> is used. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting data in transit</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
-    pub fn transit_encryption(&self) -> std::option::Option<&crate::types::EfsTransitEncryption> {
+    pub fn transit_encryption(&self) -> ::std::option::Option<&crate::types::EfsTransitEncryption> {
         self.transit_encryption.as_ref()
     }
     /// <p>The port to use when sending encrypted data between the Amazon ECS host and the Amazon EFS server. If you do not specify a transit encryption port, it will use the port selection strategy that the Amazon EFS mount helper uses. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-mount-helper.html">EFS mount helper</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
-    pub fn transit_encryption_port(&self) -> std::option::Option<i32> {
+    pub fn transit_encryption_port(&self) -> ::std::option::Option<i32> {
         self.transit_encryption_port
     }
     /// <p>The authorization configuration details for the Amazon EFS file system.</p>
     pub fn authorization_config(
         &self,
-    ) -> std::option::Option<&crate::types::EfsAuthorizationConfig> {
+    ) -> ::std::option::Option<&crate::types::EfsAuthorizationConfig> {
         self.authorization_config.as_ref()
     }
 }
@@ -57,71 +57,85 @@ impl EfsVolumeConfiguration {
 
 /// A builder for [`EfsVolumeConfiguration`](crate::types::EfsVolumeConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EfsVolumeConfigurationBuilder {
-    pub(crate) file_system_id: std::option::Option<std::string::String>,
-    pub(crate) root_directory: std::option::Option<std::string::String>,
-    pub(crate) transit_encryption: std::option::Option<crate::types::EfsTransitEncryption>,
-    pub(crate) transit_encryption_port: std::option::Option<i32>,
-    pub(crate) authorization_config: std::option::Option<crate::types::EfsAuthorizationConfig>,
+    pub(crate) file_system_id: ::std::option::Option<::std::string::String>,
+    pub(crate) root_directory: ::std::option::Option<::std::string::String>,
+    pub(crate) transit_encryption: ::std::option::Option<crate::types::EfsTransitEncryption>,
+    pub(crate) transit_encryption_port: ::std::option::Option<i32>,
+    pub(crate) authorization_config: ::std::option::Option<crate::types::EfsAuthorizationConfig>,
 }
 impl EfsVolumeConfigurationBuilder {
     /// <p>The Amazon EFS file system ID to use.</p>
-    pub fn file_system_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.file_system_id = Some(input.into());
+    pub fn file_system_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.file_system_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon EFS file system ID to use.</p>
-    pub fn set_file_system_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_file_system_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.file_system_id = input;
         self
     }
     /// <p>The directory within the Amazon EFS file system to mount as the root directory inside the host. If this parameter is omitted, the root of the Amazon EFS volume will be used. Specifying <code>/</code> will have the same effect as omitting this parameter.</p> <important>
     /// <p>If an EFS access point is specified in the <code>authorizationConfig</code>, the root directory parameter must either be omitted or set to <code>/</code> which will enforce the path set on the EFS access point.</p>
     /// </important>
-    pub fn root_directory(mut self, input: impl Into<std::string::String>) -> Self {
-        self.root_directory = Some(input.into());
+    pub fn root_directory(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.root_directory = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The directory within the Amazon EFS file system to mount as the root directory inside the host. If this parameter is omitted, the root of the Amazon EFS volume will be used. Specifying <code>/</code> will have the same effect as omitting this parameter.</p> <important>
     /// <p>If an EFS access point is specified in the <code>authorizationConfig</code>, the root directory parameter must either be omitted or set to <code>/</code> which will enforce the path set on the EFS access point.</p>
     /// </important>
-    pub fn set_root_directory(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_root_directory(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.root_directory = input;
         self
     }
     /// <p>Determines whether to use encryption for Amazon EFS data in transit between the Amazon ECS host and the Amazon EFS server. Transit encryption must be turned on if Amazon EFS IAM authorization is used. If this parameter is omitted, the default value of <code>DISABLED</code> is used. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting data in transit</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
     pub fn transit_encryption(mut self, input: crate::types::EfsTransitEncryption) -> Self {
-        self.transit_encryption = Some(input);
+        self.transit_encryption = ::std::option::Option::Some(input);
         self
     }
     /// <p>Determines whether to use encryption for Amazon EFS data in transit between the Amazon ECS host and the Amazon EFS server. Transit encryption must be turned on if Amazon EFS IAM authorization is used. If this parameter is omitted, the default value of <code>DISABLED</code> is used. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting data in transit</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
     pub fn set_transit_encryption(
         mut self,
-        input: std::option::Option<crate::types::EfsTransitEncryption>,
+        input: ::std::option::Option<crate::types::EfsTransitEncryption>,
     ) -> Self {
         self.transit_encryption = input;
         self
     }
     /// <p>The port to use when sending encrypted data between the Amazon ECS host and the Amazon EFS server. If you do not specify a transit encryption port, it will use the port selection strategy that the Amazon EFS mount helper uses. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-mount-helper.html">EFS mount helper</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
     pub fn transit_encryption_port(mut self, input: i32) -> Self {
-        self.transit_encryption_port = Some(input);
+        self.transit_encryption_port = ::std::option::Option::Some(input);
         self
     }
     /// <p>The port to use when sending encrypted data between the Amazon ECS host and the Amazon EFS server. If you do not specify a transit encryption port, it will use the port selection strategy that the Amazon EFS mount helper uses. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-mount-helper.html">EFS mount helper</a> in the <i>Amazon Elastic File System User Guide</i>.</p>
-    pub fn set_transit_encryption_port(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_transit_encryption_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.transit_encryption_port = input;
         self
     }
     /// <p>The authorization configuration details for the Amazon EFS file system.</p>
     pub fn authorization_config(mut self, input: crate::types::EfsAuthorizationConfig) -> Self {
-        self.authorization_config = Some(input);
+        self.authorization_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The authorization configuration details for the Amazon EFS file system.</p>
     pub fn set_authorization_config(
         mut self,
-        input: std::option::Option<crate::types::EfsAuthorizationConfig>,
+        input: ::std::option::Option<crate::types::EfsAuthorizationConfig>,
     ) -> Self {
         self.authorization_config = input;
         self

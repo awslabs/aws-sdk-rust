@@ -2,7 +2,7 @@
 
 /// <p>Represents the input to <code>DeleteDBSubnetGroup</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteDbSubnetGroupInput {
     /// <p>The name of the database subnet group to delete.</p> <note>
     /// <p>You can't delete the default subnet group.</p>
@@ -11,7 +11,7 @@ pub struct DeleteDbSubnetGroupInput {
     /// <p>Must match the name of an existing <code>DBSubnetGroup</code>. Must not be default.</p>
     /// <p>Example: <code>mySubnetgroup</code> </p>
     #[doc(hidden)]
-    pub db_subnet_group_name: std::option::Option<std::string::String>,
+    pub db_subnet_group_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDbSubnetGroupInput {
     /// <p>The name of the database subnet group to delete.</p> <note>
@@ -20,7 +20,7 @@ impl DeleteDbSubnetGroupInput {
     /// <p>Constraints:</p>
     /// <p>Must match the name of an existing <code>DBSubnetGroup</code>. Must not be default.</p>
     /// <p>Example: <code>mySubnetgroup</code> </p>
-    pub fn db_subnet_group_name(&self) -> std::option::Option<&str> {
+    pub fn db_subnet_group_name(&self) -> ::std::option::Option<&str> {
         self.db_subnet_group_name.as_deref()
     }
 }
@@ -35,9 +35,11 @@ impl DeleteDbSubnetGroupInput {
 
 /// A builder for [`DeleteDbSubnetGroupInput`](crate::operation::delete_db_subnet_group::DeleteDbSubnetGroupInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteDbSubnetGroupInputBuilder {
-    pub(crate) db_subnet_group_name: std::option::Option<std::string::String>,
+    pub(crate) db_subnet_group_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDbSubnetGroupInputBuilder {
     /// <p>The name of the database subnet group to delete.</p> <note>
@@ -46,8 +48,11 @@ impl DeleteDbSubnetGroupInputBuilder {
     /// <p>Constraints:</p>
     /// <p>Must match the name of an existing <code>DBSubnetGroup</code>. Must not be default.</p>
     /// <p>Example: <code>mySubnetgroup</code> </p>
-    pub fn db_subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.db_subnet_group_name = Some(input.into());
+    pub fn db_subnet_group_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.db_subnet_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the database subnet group to delete.</p> <note>
@@ -58,7 +63,7 @@ impl DeleteDbSubnetGroupInputBuilder {
     /// <p>Example: <code>mySubnetgroup</code> </p>
     pub fn set_db_subnet_group_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.db_subnet_group_name = input;
         self
@@ -66,11 +71,11 @@ impl DeleteDbSubnetGroupInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDbSubnetGroupInput`](crate::operation::delete_db_subnet_group::DeleteDbSubnetGroupInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::delete_db_subnet_group::DeleteDbSubnetGroupInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::delete_db_subnet_group::DeleteDbSubnetGroupInput {
                 db_subnet_group_name: self.db_subnet_group_name,
             },

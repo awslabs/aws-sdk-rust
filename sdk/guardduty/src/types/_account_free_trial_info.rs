@@ -2,34 +2,34 @@
 
 /// <p>Provides details of the GuardDuty member account that uses a free trial service.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccountFreeTrialInfo {
     /// <p>The account identifier of the GuardDuty member account.</p>
     #[doc(hidden)]
-    pub account_id: std::option::Option<std::string::String>,
+    pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>Describes the data source enabled for the GuardDuty member account.</p>
     #[deprecated(note = "This parameter is deprecated, use Features instead")]
     #[doc(hidden)]
-    pub data_sources: std::option::Option<crate::types::DataSourcesFreeTrial>,
+    pub data_sources: ::std::option::Option<crate::types::DataSourcesFreeTrial>,
     /// <p>A list of features enabled for the GuardDuty account.</p>
     #[doc(hidden)]
     pub features:
-        std::option::Option<std::vec::Vec<crate::types::FreeTrialFeatureConfigurationResult>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::FreeTrialFeatureConfigurationResult>>,
 }
 impl AccountFreeTrialInfo {
     /// <p>The account identifier of the GuardDuty member account.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>Describes the data source enabled for the GuardDuty member account.</p>
     #[deprecated(note = "This parameter is deprecated, use Features instead")]
-    pub fn data_sources(&self) -> std::option::Option<&crate::types::DataSourcesFreeTrial> {
+    pub fn data_sources(&self) -> ::std::option::Option<&crate::types::DataSourcesFreeTrial> {
         self.data_sources.as_ref()
     }
     /// <p>A list of features enabled for the GuardDuty account.</p>
     pub fn features(
         &self,
-    ) -> std::option::Option<&[crate::types::FreeTrialFeatureConfigurationResult]> {
+    ) -> ::std::option::Option<&[crate::types::FreeTrialFeatureConfigurationResult]> {
         self.features.as_deref()
     }
 }
@@ -42,35 +42,37 @@ impl AccountFreeTrialInfo {
 
 /// A builder for [`AccountFreeTrialInfo`](crate::types::AccountFreeTrialInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AccountFreeTrialInfoBuilder {
-    pub(crate) account_id: std::option::Option<std::string::String>,
-    pub(crate) data_sources: std::option::Option<crate::types::DataSourcesFreeTrial>,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) data_sources: ::std::option::Option<crate::types::DataSourcesFreeTrial>,
     pub(crate) features:
-        std::option::Option<std::vec::Vec<crate::types::FreeTrialFeatureConfigurationResult>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::FreeTrialFeatureConfigurationResult>>,
 }
 impl AccountFreeTrialInfoBuilder {
     /// <p>The account identifier of the GuardDuty member account.</p>
-    pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.account_id = Some(input.into());
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The account identifier of the GuardDuty member account.</p>
-    pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
     }
     /// <p>Describes the data source enabled for the GuardDuty member account.</p>
     #[deprecated(note = "This parameter is deprecated, use Features instead")]
     pub fn data_sources(mut self, input: crate::types::DataSourcesFreeTrial) -> Self {
-        self.data_sources = Some(input);
+        self.data_sources = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes the data source enabled for the GuardDuty member account.</p>
     #[deprecated(note = "This parameter is deprecated, use Features instead")]
     pub fn set_data_sources(
         mut self,
-        input: std::option::Option<crate::types::DataSourcesFreeTrial>,
+        input: ::std::option::Option<crate::types::DataSourcesFreeTrial>,
     ) -> Self {
         self.data_sources = input;
         self
@@ -83,14 +85,14 @@ impl AccountFreeTrialInfoBuilder {
     pub fn features(mut self, input: crate::types::FreeTrialFeatureConfigurationResult) -> Self {
         let mut v = self.features.unwrap_or_default();
         v.push(input);
-        self.features = Some(v);
+        self.features = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of features enabled for the GuardDuty account.</p>
     pub fn set_features(
         mut self,
-        input: std::option::Option<
-            std::vec::Vec<crate::types::FreeTrialFeatureConfigurationResult>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::FreeTrialFeatureConfigurationResult>,
         >,
     ) -> Self {
         self.features = input;

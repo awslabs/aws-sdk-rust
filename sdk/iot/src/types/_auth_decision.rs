@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum AuthDecision {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum AuthDecision {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for AuthDecision {
+impl ::std::convert::From<&str> for AuthDecision {
     fn from(s: &str) -> Self {
         match s {
             "ALLOWED" => AuthDecision::Allowed,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for AuthDecision {
         }
     }
 }
-impl std::str::FromStr for AuthDecision {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for AuthDecision {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AuthDecision::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(AuthDecision::from(s))
     }
 }
 impl AuthDecision {
@@ -91,7 +91,7 @@ impl AuthDecision {
         &["ALLOWED", "EXPLICIT_DENY", "IMPLICIT_DENY"]
     }
 }
-impl AsRef<str> for AuthDecision {
+impl ::std::convert::AsRef<str> for AuthDecision {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

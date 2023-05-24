@@ -6,7 +6,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`filters(ListApplicationsRequestFilters)`](crate::operation::list_applications::builders::ListApplicationsFluentBuilder::filters) / [`set_filters(Option<ListApplicationsRequestFilters>)`](crate::operation::list_applications::builders::ListApplicationsFluentBuilder::set_filters): <p>Applications list filters.</p>
     ///   - [`max_results(i32)`](crate::operation::list_applications::builders::ListApplicationsFluentBuilder::max_results) / [`set_max_results(i32)`](crate::operation::list_applications::builders::ListApplicationsFluentBuilder::set_max_results): <p>Maximum results to return when listing applications.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_applications::builders::ListApplicationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_applications::builders::ListApplicationsFluentBuilder::set_next_token): <p>Request next token.</p>
+    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_applications::builders::ListApplicationsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_applications::builders::ListApplicationsFluentBuilder::set_next_token): <p>Request next token.</p>
     /// - On success, responds with [`ListApplicationsOutput`](crate::operation::list_applications::ListApplicationsOutput) with field(s):
     ///   - [`items(Option<Vec<Application>>)`](crate::operation::list_applications::ListApplicationsOutput::items): <p>Applications list.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_applications::ListApplicationsOutput::next_token): <p>Response next token.</p>

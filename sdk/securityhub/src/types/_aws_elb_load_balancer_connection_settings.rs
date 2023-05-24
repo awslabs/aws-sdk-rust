@@ -2,7 +2,7 @@
 
 /// <p>Contains connection settings for the load balancer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsElbLoadBalancerConnectionSettings {
     /// <p>The time, in seconds, that the connection can be idle (no data is sent over the connection) before it is closed by the load balancer.</p>
     #[doc(hidden)]
@@ -23,18 +23,20 @@ impl AwsElbLoadBalancerConnectionSettings {
 
 /// A builder for [`AwsElbLoadBalancerConnectionSettings`](crate::types::AwsElbLoadBalancerConnectionSettings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsElbLoadBalancerConnectionSettingsBuilder {
-    pub(crate) idle_timeout: std::option::Option<i32>,
+    pub(crate) idle_timeout: ::std::option::Option<i32>,
 }
 impl AwsElbLoadBalancerConnectionSettingsBuilder {
     /// <p>The time, in seconds, that the connection can be idle (no data is sent over the connection) before it is closed by the load balancer.</p>
     pub fn idle_timeout(mut self, input: i32) -> Self {
-        self.idle_timeout = Some(input);
+        self.idle_timeout = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time, in seconds, that the connection can be idle (no data is sent over the connection) before it is closed by the load balancer.</p>
-    pub fn set_idle_timeout(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_idle_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
         self.idle_timeout = input;
         self
     }

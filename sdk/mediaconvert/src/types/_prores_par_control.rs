@@ -38,13 +38,13 @@
 /// Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To specify a different PAR in the console, choose any value other than Follow source. To specify a different PAR by editing the JSON job specification, choose SPECIFIED. When you choose SPECIFIED for this setting, you must also specify values for the parNumerator and parDenominator settings.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ProresParControl {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum ProresParControl {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ProresParControl {
+impl ::std::convert::From<&str> for ProresParControl {
     fn from(s: &str) -> Self {
         match s {
             "INITIALIZE_FROM_SOURCE" => ProresParControl::InitializeFromSource,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for ProresParControl {
         }
     }
 }
-impl std::str::FromStr for ProresParControl {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ProresParControl {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ProresParControl::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ProresParControl::from(s))
     }
 }
 impl ProresParControl {
@@ -86,7 +86,7 @@ impl ProresParControl {
         &["INITIALIZE_FROM_SOURCE", "SPECIFIED"]
     }
 }
-impl AsRef<str> for ProresParControl {
+impl ::std::convert::AsRef<str> for ProresParControl {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

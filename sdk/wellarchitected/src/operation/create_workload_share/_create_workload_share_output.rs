@@ -2,27 +2,27 @@
 
 /// <p>Input for Create Workload Share</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateWorkloadShareOutput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     #[doc(hidden)]
-    pub workload_id: std::option::Option<std::string::String>,
+    pub workload_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID associated with the workload share.</p>
     #[doc(hidden)]
-    pub share_id: std::option::Option<std::string::String>,
+    pub share_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateWorkloadShareOutput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    pub fn workload_id(&self) -> std::option::Option<&str> {
+    pub fn workload_id(&self) -> ::std::option::Option<&str> {
         self.workload_id.as_deref()
     }
     /// <p>The ID associated with the workload share.</p>
-    pub fn share_id(&self) -> std::option::Option<&str> {
+    pub fn share_id(&self) -> ::std::option::Option<&str> {
         self.share_id.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for CreateWorkloadShareOutput {
+impl ::aws_http::request_id::RequestId for CreateWorkloadShareOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -38,30 +38,32 @@ impl CreateWorkloadShareOutput {
 
 /// A builder for [`CreateWorkloadShareOutput`](crate::operation::create_workload_share::CreateWorkloadShareOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateWorkloadShareOutputBuilder {
-    pub(crate) workload_id: std::option::Option<std::string::String>,
-    pub(crate) share_id: std::option::Option<std::string::String>,
+    pub(crate) workload_id: ::std::option::Option<::std::string::String>,
+    pub(crate) share_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateWorkloadShareOutputBuilder {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.workload_id = Some(input.into());
+    pub fn workload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.workload_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_workload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workload_id = input;
         self
     }
     /// <p>The ID associated with the workload share.</p>
-    pub fn share_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.share_id = Some(input.into());
+    pub fn share_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.share_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID associated with the workload share.</p>
-    pub fn set_share_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_share_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.share_id = input;
         self
     }

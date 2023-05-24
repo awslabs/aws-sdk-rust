@@ -2,43 +2,43 @@
 
 /// <p>Describes a type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Type {
     /// <p>The type name.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type description.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The type Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The type definition.</p>
     #[doc(hidden)]
-    pub definition: std::option::Option<std::string::String>,
+    pub definition: ::std::option::Option<::std::string::String>,
     /// <p>The type format: SDL or JSON.</p>
     #[doc(hidden)]
-    pub format: std::option::Option<crate::types::TypeDefinitionFormat>,
+    pub format: ::std::option::Option<crate::types::TypeDefinitionFormat>,
 }
 impl Type {
     /// <p>The type name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The type description.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The type Amazon Resource Name (ARN).</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The type definition.</p>
-    pub fn definition(&self) -> std::option::Option<&str> {
+    pub fn definition(&self) -> ::std::option::Option<&str> {
         self.definition.as_deref()
     }
     /// <p>The type format: SDL or JSON.</p>
-    pub fn format(&self) -> std::option::Option<&crate::types::TypeDefinitionFormat> {
+    pub fn format(&self) -> ::std::option::Option<&crate::types::TypeDefinitionFormat> {
         self.format.as_ref()
     }
 }
@@ -51,64 +51,66 @@ impl Type {
 
 /// A builder for [`Type`](crate::types::Type).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TypeBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) definition: std::option::Option<std::string::String>,
-    pub(crate) format: std::option::Option<crate::types::TypeDefinitionFormat>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) definition: ::std::option::Option<::std::string::String>,
+    pub(crate) format: ::std::option::Option<crate::types::TypeDefinitionFormat>,
 }
 impl TypeBuilder {
     /// <p>The type name.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type name.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The type description.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type description.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>The type Amazon Resource Name (ARN).</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type Amazon Resource Name (ARN).</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// <p>The type definition.</p>
-    pub fn definition(mut self, input: impl Into<std::string::String>) -> Self {
-        self.definition = Some(input.into());
+    pub fn definition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.definition = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type definition.</p>
-    pub fn set_definition(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_definition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.definition = input;
         self
     }
     /// <p>The type format: SDL or JSON.</p>
     pub fn format(mut self, input: crate::types::TypeDefinitionFormat) -> Self {
-        self.format = Some(input);
+        self.format = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type format: SDL or JSON.</p>
     pub fn set_format(
         mut self,
-        input: std::option::Option<crate::types::TypeDefinitionFormat>,
+        input: ::std::option::Option<crate::types::TypeDefinitionFormat>,
     ) -> Self {
         self.format = input;
         self

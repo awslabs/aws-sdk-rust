@@ -39,13 +39,13 @@
 /// Burn In Alignment
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum BurnInAlignment {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum BurnInAlignment {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for BurnInAlignment {
+impl ::std::convert::From<&str> for BurnInAlignment {
     fn from(s: &str) -> Self {
         match s {
             "CENTERED" => BurnInAlignment::Centered,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for BurnInAlignment {
         }
     }
 }
-impl std::str::FromStr for BurnInAlignment {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for BurnInAlignment {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(BurnInAlignment::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(BurnInAlignment::from(s))
     }
 }
 impl BurnInAlignment {
@@ -91,7 +91,7 @@ impl BurnInAlignment {
         &["CENTERED", "LEFT", "SMART"]
     }
 }
-impl AsRef<str> for BurnInAlignment {
+impl ::std::convert::AsRef<str> for BurnInAlignment {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

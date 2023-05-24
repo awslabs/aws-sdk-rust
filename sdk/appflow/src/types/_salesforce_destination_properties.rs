@@ -2,20 +2,20 @@
 
 /// <p> The properties that are applied when Salesforce is being used as a destination. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SalesforceDestinationProperties {
     /// <p> The object specified in the Salesforce flow destination. </p>
     #[doc(hidden)]
-    pub object: std::option::Option<std::string::String>,
+    pub object: ::std::option::Option<::std::string::String>,
     /// <p> The name of the field that Amazon AppFlow uses as an ID when performing a write operation such as update or delete. </p>
     #[doc(hidden)]
-    pub id_field_names: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub id_field_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the Salesforce destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details. </p>
     #[doc(hidden)]
-    pub error_handling_config: std::option::Option<crate::types::ErrorHandlingConfig>,
+    pub error_handling_config: ::std::option::Option<crate::types::ErrorHandlingConfig>,
     /// <p> This specifies the type of write operation to be performed in Salesforce. When the value is <code>UPSERT</code>, then <code>idFieldNames</code> is required. </p>
     #[doc(hidden)]
-    pub write_operation_type: std::option::Option<crate::types::WriteOperationType>,
+    pub write_operation_type: ::std::option::Option<crate::types::WriteOperationType>,
     /// <p>Specifies which Salesforce API is used by Amazon AppFlow when your flow transfers data to Salesforce.</p>
     /// <dl>
     /// <dt>
@@ -41,23 +41,25 @@ pub struct SalesforceDestinationProperties {
     /// </dd>
     /// </dl>
     #[doc(hidden)]
-    pub data_transfer_api: std::option::Option<crate::types::SalesforceDataTransferApi>,
+    pub data_transfer_api: ::std::option::Option<crate::types::SalesforceDataTransferApi>,
 }
 impl SalesforceDestinationProperties {
     /// <p> The object specified in the Salesforce flow destination. </p>
-    pub fn object(&self) -> std::option::Option<&str> {
+    pub fn object(&self) -> ::std::option::Option<&str> {
         self.object.as_deref()
     }
     /// <p> The name of the field that Amazon AppFlow uses as an ID when performing a write operation such as update or delete. </p>
-    pub fn id_field_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn id_field_names(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.id_field_names.as_deref()
     }
     /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the Salesforce destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details. </p>
-    pub fn error_handling_config(&self) -> std::option::Option<&crate::types::ErrorHandlingConfig> {
+    pub fn error_handling_config(
+        &self,
+    ) -> ::std::option::Option<&crate::types::ErrorHandlingConfig> {
         self.error_handling_config.as_ref()
     }
     /// <p> This specifies the type of write operation to be performed in Salesforce. When the value is <code>UPSERT</code>, then <code>idFieldNames</code> is required. </p>
-    pub fn write_operation_type(&self) -> std::option::Option<&crate::types::WriteOperationType> {
+    pub fn write_operation_type(&self) -> ::std::option::Option<&crate::types::WriteOperationType> {
         self.write_operation_type.as_ref()
     }
     /// <p>Specifies which Salesforce API is used by Amazon AppFlow when your flow transfers data to Salesforce.</p>
@@ -86,7 +88,7 @@ impl SalesforceDestinationProperties {
     /// </dl>
     pub fn data_transfer_api(
         &self,
-    ) -> std::option::Option<&crate::types::SalesforceDataTransferApi> {
+    ) -> ::std::option::Option<&crate::types::SalesforceDataTransferApi> {
         self.data_transfer_api.as_ref()
     }
 }
@@ -99,22 +101,24 @@ impl SalesforceDestinationProperties {
 
 /// A builder for [`SalesforceDestinationProperties`](crate::types::SalesforceDestinationProperties).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SalesforceDestinationPropertiesBuilder {
-    pub(crate) object: std::option::Option<std::string::String>,
-    pub(crate) id_field_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) error_handling_config: std::option::Option<crate::types::ErrorHandlingConfig>,
-    pub(crate) write_operation_type: std::option::Option<crate::types::WriteOperationType>,
-    pub(crate) data_transfer_api: std::option::Option<crate::types::SalesforceDataTransferApi>,
+    pub(crate) object: ::std::option::Option<::std::string::String>,
+    pub(crate) id_field_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) error_handling_config: ::std::option::Option<crate::types::ErrorHandlingConfig>,
+    pub(crate) write_operation_type: ::std::option::Option<crate::types::WriteOperationType>,
+    pub(crate) data_transfer_api: ::std::option::Option<crate::types::SalesforceDataTransferApi>,
 }
 impl SalesforceDestinationPropertiesBuilder {
     /// <p> The object specified in the Salesforce flow destination. </p>
-    pub fn object(mut self, input: impl Into<std::string::String>) -> Self {
-        self.object = Some(input.into());
+    pub fn object(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.object = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The object specified in the Salesforce flow destination. </p>
-    pub fn set_object(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_object(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.object = input;
         self
     }
@@ -123,42 +127,45 @@ impl SalesforceDestinationPropertiesBuilder {
     /// To override the contents of this collection use [`set_id_field_names`](Self::set_id_field_names).
     ///
     /// <p> The name of the field that Amazon AppFlow uses as an ID when performing a write operation such as update or delete. </p>
-    pub fn id_field_names(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn id_field_names(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.id_field_names.unwrap_or_default();
         v.push(input.into());
-        self.id_field_names = Some(v);
+        self.id_field_names = ::std::option::Option::Some(v);
         self
     }
     /// <p> The name of the field that Amazon AppFlow uses as an ID when performing a write operation such as update or delete. </p>
     pub fn set_id_field_names(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.id_field_names = input;
         self
     }
     /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the Salesforce destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details. </p>
     pub fn error_handling_config(mut self, input: crate::types::ErrorHandlingConfig) -> Self {
-        self.error_handling_config = Some(input);
+        self.error_handling_config = ::std::option::Option::Some(input);
         self
     }
     /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the Salesforce destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details. </p>
     pub fn set_error_handling_config(
         mut self,
-        input: std::option::Option<crate::types::ErrorHandlingConfig>,
+        input: ::std::option::Option<crate::types::ErrorHandlingConfig>,
     ) -> Self {
         self.error_handling_config = input;
         self
     }
     /// <p> This specifies the type of write operation to be performed in Salesforce. When the value is <code>UPSERT</code>, then <code>idFieldNames</code> is required. </p>
     pub fn write_operation_type(mut self, input: crate::types::WriteOperationType) -> Self {
-        self.write_operation_type = Some(input);
+        self.write_operation_type = ::std::option::Option::Some(input);
         self
     }
     /// <p> This specifies the type of write operation to be performed in Salesforce. When the value is <code>UPSERT</code>, then <code>idFieldNames</code> is required. </p>
     pub fn set_write_operation_type(
         mut self,
-        input: std::option::Option<crate::types::WriteOperationType>,
+        input: ::std::option::Option<crate::types::WriteOperationType>,
     ) -> Self {
         self.write_operation_type = input;
         self
@@ -188,7 +195,7 @@ impl SalesforceDestinationPropertiesBuilder {
     /// </dd>
     /// </dl>
     pub fn data_transfer_api(mut self, input: crate::types::SalesforceDataTransferApi) -> Self {
-        self.data_transfer_api = Some(input);
+        self.data_transfer_api = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies which Salesforce API is used by Amazon AppFlow when your flow transfers data to Salesforce.</p>
@@ -217,7 +224,7 @@ impl SalesforceDestinationPropertiesBuilder {
     /// </dl>
     pub fn set_data_transfer_api(
         mut self,
-        input: std::option::Option<crate::types::SalesforceDataTransferApi>,
+        input: ::std::option::Option<crate::types::SalesforceDataTransferApi>,
     ) -> Self {
         self.data_transfer_api = input;
         self

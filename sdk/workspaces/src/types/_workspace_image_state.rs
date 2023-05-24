@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum WorkspaceImageState {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum WorkspaceImageState {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for WorkspaceImageState {
+impl ::std::convert::From<&str> for WorkspaceImageState {
     fn from(s: &str) -> Self {
         match s {
             "AVAILABLE" => WorkspaceImageState::Available,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for WorkspaceImageState {
         }
     }
 }
-impl std::str::FromStr for WorkspaceImageState {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for WorkspaceImageState {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(WorkspaceImageState::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(WorkspaceImageState::from(s))
     }
 }
 impl WorkspaceImageState {
@@ -91,7 +91,7 @@ impl WorkspaceImageState {
         &["AVAILABLE", "ERROR", "PENDING"]
     }
 }
-impl AsRef<str> for WorkspaceImageState {
+impl ::std::convert::AsRef<str> for WorkspaceImageState {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

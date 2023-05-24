@@ -2,23 +2,23 @@
 
 /// <p>Represents the request to reset a user's password.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ForgotPasswordInput {
     /// <p>The ID of the client associated with the user pool.</p>
     #[doc(hidden)]
-    pub client_id: std::option::Option<std::string::String>,
+    pub client_id: ::std::option::Option<::std::string::String>,
     /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a user pool client and username plus the client ID in the message.</p>
     #[doc(hidden)]
-    pub secret_hash: std::option::Option<std::string::String>,
+    pub secret_hash: ::std::option::Option<::std::string::String>,
     /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
     #[doc(hidden)]
-    pub user_context_data: std::option::Option<crate::types::UserContextDataType>,
+    pub user_context_data: ::std::option::Option<crate::types::UserContextDataType>,
     /// <p>The user name of the user for whom you want to enter a code to reset a forgotten password.</p>
     #[doc(hidden)]
-    pub username: std::option::Option<std::string::String>,
+    pub username: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>ForgotPassword</code> calls.</p>
     #[doc(hidden)]
-    pub analytics_metadata: std::option::Option<crate::types::AnalyticsMetadataType>,
+    pub analytics_metadata: ::std::option::Option<crate::types::AnalyticsMetadataType>,
     /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers.</p>
     /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the ForgotPassword API action, Amazon Cognito invokes any functions that are assigned to the following triggers: <i>pre sign-up</i>, <i>custom message</i>, and <i>user migration</i>. When Amazon Cognito invokes any of these functions, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your ForgotPassword request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html"> Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>
@@ -30,28 +30,31 @@ pub struct ForgotPasswordInput {
     /// </ul>
     /// </note>
     #[doc(hidden)]
-    pub client_metadata:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub client_metadata: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl ForgotPasswordInput {
     /// <p>The ID of the client associated with the user pool.</p>
-    pub fn client_id(&self) -> std::option::Option<&str> {
+    pub fn client_id(&self) -> ::std::option::Option<&str> {
         self.client_id.as_deref()
     }
     /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a user pool client and username plus the client ID in the message.</p>
-    pub fn secret_hash(&self) -> std::option::Option<&str> {
+    pub fn secret_hash(&self) -> ::std::option::Option<&str> {
         self.secret_hash.as_deref()
     }
     /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
-    pub fn user_context_data(&self) -> std::option::Option<&crate::types::UserContextDataType> {
+    pub fn user_context_data(&self) -> ::std::option::Option<&crate::types::UserContextDataType> {
         self.user_context_data.as_ref()
     }
     /// <p>The user name of the user for whom you want to enter a code to reset a forgotten password.</p>
-    pub fn username(&self) -> std::option::Option<&str> {
+    pub fn username(&self) -> ::std::option::Option<&str> {
         self.username.as_deref()
     }
     /// <p>The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>ForgotPassword</code> calls.</p>
-    pub fn analytics_metadata(&self) -> std::option::Option<&crate::types::AnalyticsMetadataType> {
+    pub fn analytics_metadata(
+        &self,
+    ) -> ::std::option::Option<&crate::types::AnalyticsMetadataType> {
         self.analytics_metadata.as_ref()
     }
     /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers.</p>
@@ -66,13 +69,14 @@ impl ForgotPasswordInput {
     /// </note>
     pub fn client_metadata(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.client_metadata.as_ref()
     }
 }
-impl std::fmt::Debug for ForgotPasswordInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for ForgotPasswordInput {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ForgotPasswordInput");
         formatter.field("client_id", &"*** Sensitive Data Redacted ***");
         formatter.field("secret_hash", &"*** Sensitive Data Redacted ***");
@@ -92,69 +96,70 @@ impl ForgotPasswordInput {
 
 /// A builder for [`ForgotPasswordInput`](crate::operation::forgot_password::ForgotPasswordInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct ForgotPasswordInputBuilder {
-    pub(crate) client_id: std::option::Option<std::string::String>,
-    pub(crate) secret_hash: std::option::Option<std::string::String>,
-    pub(crate) user_context_data: std::option::Option<crate::types::UserContextDataType>,
-    pub(crate) username: std::option::Option<std::string::String>,
-    pub(crate) analytics_metadata: std::option::Option<crate::types::AnalyticsMetadataType>,
-    pub(crate) client_metadata:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) client_id: ::std::option::Option<::std::string::String>,
+    pub(crate) secret_hash: ::std::option::Option<::std::string::String>,
+    pub(crate) user_context_data: ::std::option::Option<crate::types::UserContextDataType>,
+    pub(crate) username: ::std::option::Option<::std::string::String>,
+    pub(crate) analytics_metadata: ::std::option::Option<crate::types::AnalyticsMetadataType>,
+    pub(crate) client_metadata: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl ForgotPasswordInputBuilder {
     /// <p>The ID of the client associated with the user pool.</p>
-    pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.client_id = Some(input.into());
+    pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.client_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the client associated with the user pool.</p>
-    pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_id = input;
         self
     }
     /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a user pool client and username plus the client ID in the message.</p>
-    pub fn secret_hash(mut self, input: impl Into<std::string::String>) -> Self {
-        self.secret_hash = Some(input.into());
+    pub fn secret_hash(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.secret_hash = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a user pool client and username plus the client ID in the message.</p>
-    pub fn set_secret_hash(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_secret_hash(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secret_hash = input;
         self
     }
     /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
     pub fn user_context_data(mut self, input: crate::types::UserContextDataType) -> Self {
-        self.user_context_data = Some(input);
+        self.user_context_data = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
     pub fn set_user_context_data(
         mut self,
-        input: std::option::Option<crate::types::UserContextDataType>,
+        input: ::std::option::Option<crate::types::UserContextDataType>,
     ) -> Self {
         self.user_context_data = input;
         self
     }
     /// <p>The user name of the user for whom you want to enter a code to reset a forgotten password.</p>
-    pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
-        self.username = Some(input.into());
+    pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.username = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user name of the user for whom you want to enter a code to reset a forgotten password.</p>
-    pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.username = input;
         self
     }
     /// <p>The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>ForgotPassword</code> calls.</p>
     pub fn analytics_metadata(mut self, input: crate::types::AnalyticsMetadataType) -> Self {
-        self.analytics_metadata = Some(input);
+        self.analytics_metadata = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>ForgotPassword</code> calls.</p>
     pub fn set_analytics_metadata(
         mut self,
-        input: std::option::Option<crate::types::AnalyticsMetadataType>,
+        input: ::std::option::Option<crate::types::AnalyticsMetadataType>,
     ) -> Self {
         self.analytics_metadata = input;
         self
@@ -175,12 +180,12 @@ impl ForgotPasswordInputBuilder {
     /// </note>
     pub fn client_metadata(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.client_metadata.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.client_metadata = Some(hash_map);
+        self.client_metadata = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers.</p>
@@ -195,8 +200,8 @@ impl ForgotPasswordInputBuilder {
     /// </note>
     pub fn set_client_metadata(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.client_metadata = input;
@@ -205,11 +210,11 @@ impl ForgotPasswordInputBuilder {
     /// Consumes the builder and constructs a [`ForgotPasswordInput`](crate::operation::forgot_password::ForgotPasswordInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::forgot_password::ForgotPasswordInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::forgot_password::ForgotPasswordInput {
+        ::std::result::Result::Ok(crate::operation::forgot_password::ForgotPasswordInput {
             client_id: self.client_id,
             secret_hash: self.secret_hash,
             user_context_data: self.user_context_data,
@@ -219,8 +224,8 @@ impl ForgotPasswordInputBuilder {
         })
     }
 }
-impl std::fmt::Debug for ForgotPasswordInputBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for ForgotPasswordInputBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ForgotPasswordInputBuilder");
         formatter.field("client_id", &"*** Sensitive Data Redacted ***");
         formatter.field("secret_hash", &"*** Sensitive Data Redacted ***");

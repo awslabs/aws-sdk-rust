@@ -2,22 +2,22 @@
 
 /// <p>Protocol used in Amazon Security Lake that dictates how notifications are posted at the endpoint. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProtocolAndNotificationEndpoint {
     /// <p>The protocol to which notification messages are posted. </p>
     #[doc(hidden)]
-    pub protocol: std::option::Option<std::string::String>,
+    pub protocol: ::std::option::Option<::std::string::String>,
     /// <p>The account that is subscribed to receive exception notifications. </p>
     #[doc(hidden)]
-    pub endpoint: std::option::Option<std::string::String>,
+    pub endpoint: ::std::option::Option<::std::string::String>,
 }
 impl ProtocolAndNotificationEndpoint {
     /// <p>The protocol to which notification messages are posted. </p>
-    pub fn protocol(&self) -> std::option::Option<&str> {
+    pub fn protocol(&self) -> ::std::option::Option<&str> {
         self.protocol.as_deref()
     }
     /// <p>The account that is subscribed to receive exception notifications. </p>
-    pub fn endpoint(&self) -> std::option::Option<&str> {
+    pub fn endpoint(&self) -> ::std::option::Option<&str> {
         self.endpoint.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl ProtocolAndNotificationEndpoint {
 
 /// A builder for [`ProtocolAndNotificationEndpoint`](crate::types::ProtocolAndNotificationEndpoint).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ProtocolAndNotificationEndpointBuilder {
-    pub(crate) protocol: std::option::Option<std::string::String>,
-    pub(crate) endpoint: std::option::Option<std::string::String>,
+    pub(crate) protocol: ::std::option::Option<::std::string::String>,
+    pub(crate) endpoint: ::std::option::Option<::std::string::String>,
 }
 impl ProtocolAndNotificationEndpointBuilder {
     /// <p>The protocol to which notification messages are posted. </p>
-    pub fn protocol(mut self, input: impl Into<std::string::String>) -> Self {
-        self.protocol = Some(input.into());
+    pub fn protocol(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.protocol = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The protocol to which notification messages are posted. </p>
-    pub fn set_protocol(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_protocol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.protocol = input;
         self
     }
     /// <p>The account that is subscribed to receive exception notifications. </p>
-    pub fn endpoint(mut self, input: impl Into<std::string::String>) -> Self {
-        self.endpoint = Some(input.into());
+    pub fn endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.endpoint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The account that is subscribed to receive exception notifications. </p>
-    pub fn set_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint = input;
         self
     }

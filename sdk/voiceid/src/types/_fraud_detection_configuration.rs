@@ -2,22 +2,22 @@
 
 /// <p>The configuration used for performing fraud detection over a speaker during a session.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FraudDetectionConfiguration {
     /// <p>Threshold value for determining whether the speaker is a fraudster. If the detected risk score calculated by Voice ID is higher than the threshold, the speaker is considered a fraudster.</p>
     #[doc(hidden)]
-    pub risk_threshold: std::option::Option<i32>,
+    pub risk_threshold: ::std::option::Option<i32>,
     /// <p>The identifier of the watchlist against which fraud detection is performed. </p>
     #[doc(hidden)]
-    pub watchlist_id: std::option::Option<std::string::String>,
+    pub watchlist_id: ::std::option::Option<::std::string::String>,
 }
 impl FraudDetectionConfiguration {
     /// <p>Threshold value for determining whether the speaker is a fraudster. If the detected risk score calculated by Voice ID is higher than the threshold, the speaker is considered a fraudster.</p>
-    pub fn risk_threshold(&self) -> std::option::Option<i32> {
+    pub fn risk_threshold(&self) -> ::std::option::Option<i32> {
         self.risk_threshold
     }
     /// <p>The identifier of the watchlist against which fraud detection is performed. </p>
-    pub fn watchlist_id(&self) -> std::option::Option<&str> {
+    pub fn watchlist_id(&self) -> ::std::option::Option<&str> {
         self.watchlist_id.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl FraudDetectionConfiguration {
 
 /// A builder for [`FraudDetectionConfiguration`](crate::types::FraudDetectionConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FraudDetectionConfigurationBuilder {
-    pub(crate) risk_threshold: std::option::Option<i32>,
-    pub(crate) watchlist_id: std::option::Option<std::string::String>,
+    pub(crate) risk_threshold: ::std::option::Option<i32>,
+    pub(crate) watchlist_id: ::std::option::Option<::std::string::String>,
 }
 impl FraudDetectionConfigurationBuilder {
     /// <p>Threshold value for determining whether the speaker is a fraudster. If the detected risk score calculated by Voice ID is higher than the threshold, the speaker is considered a fraudster.</p>
     pub fn risk_threshold(mut self, input: i32) -> Self {
-        self.risk_threshold = Some(input);
+        self.risk_threshold = ::std::option::Option::Some(input);
         self
     }
     /// <p>Threshold value for determining whether the speaker is a fraudster. If the detected risk score calculated by Voice ID is higher than the threshold, the speaker is considered a fraudster.</p>
-    pub fn set_risk_threshold(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_risk_threshold(mut self, input: ::std::option::Option<i32>) -> Self {
         self.risk_threshold = input;
         self
     }
     /// <p>The identifier of the watchlist against which fraud detection is performed. </p>
-    pub fn watchlist_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.watchlist_id = Some(input.into());
+    pub fn watchlist_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.watchlist_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the watchlist against which fraud detection is performed. </p>
-    pub fn set_watchlist_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_watchlist_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.watchlist_id = input;
         self
     }

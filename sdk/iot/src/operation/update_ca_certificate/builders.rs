@@ -7,29 +7,29 @@ pub use crate::operation::update_ca_certificate::_update_ca_certificate_input::U
 ///
 /// <p>Updates a registered CA certificate.</p>
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateCACertificate</a> action.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateCACertificateFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::update_ca_certificate::builders::UpdateCaCertificateInputBuilder,
 }
 impl UpdateCACertificateFluentBuilder {
     /// Creates a new `UpdateCACertificate`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_ca_certificate::UpdateCACertificate,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_ca_certificate::UpdateCACertificateError,
         >,
     > {
@@ -37,30 +37,33 @@ impl UpdateCACertificateFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_ca_certificate::UpdateCaCertificateOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_ca_certificate::UpdateCACertificateError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -73,21 +76,27 @@ impl UpdateCACertificateFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_ca_certificate::UpdateCaCertificateOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_ca_certificate::UpdateCACertificateError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The CA certificate identifier.</p>
-    pub fn certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn certificate_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.certificate_id(input.into());
         self
     }
     /// <p>The CA certificate identifier.</p>
-    pub fn set_certificate_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_certificate_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_certificate_id(input);
         self
     }
@@ -101,7 +110,7 @@ impl UpdateCACertificateFluentBuilder {
     /// <p> <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>
     pub fn set_new_status(
         mut self,
-        input: std::option::Option<crate::types::CaCertificateStatus>,
+        input: ::std::option::Option<crate::types::CaCertificateStatus>,
     ) -> Self {
         self.inner = self.inner.set_new_status(input);
         self
@@ -117,7 +126,7 @@ impl UpdateCACertificateFluentBuilder {
     /// <p>The new value for the auto registration status. Valid values are: "ENABLE" or "DISABLE".</p>
     pub fn set_new_auto_registration_status(
         mut self,
-        input: std::option::Option<crate::types::AutoRegistrationStatus>,
+        input: ::std::option::Option<crate::types::AutoRegistrationStatus>,
     ) -> Self {
         self.inner = self.inner.set_new_auto_registration_status(input);
         self
@@ -130,7 +139,7 @@ impl UpdateCACertificateFluentBuilder {
     /// <p>Information about the registration configuration.</p>
     pub fn set_registration_config(
         mut self,
-        input: std::option::Option<crate::types::RegistrationConfig>,
+        input: ::std::option::Option<crate::types::RegistrationConfig>,
     ) -> Self {
         self.inner = self.inner.set_registration_config(input);
         self
@@ -141,7 +150,7 @@ impl UpdateCACertificateFluentBuilder {
         self
     }
     /// <p>If true, removes auto registration.</p>
-    pub fn set_remove_auto_registration(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_remove_auto_registration(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_remove_auto_registration(input);
         self
     }

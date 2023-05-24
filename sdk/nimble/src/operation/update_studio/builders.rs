@@ -7,56 +7,59 @@ pub use crate::operation::update_studio::_update_studio_input::UpdateStudioInput
 ///
 /// <p>Update a Studio resource.</p>
 /// <p>Currently, this operation only supports updating the displayName of your studio.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateStudioFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::update_studio::builders::UpdateStudioInputBuilder,
 }
 impl UpdateStudioFluentBuilder {
     /// Creates a new `UpdateStudio`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_studio::UpdateStudio,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::update_studio::UpdateStudioError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_studio::UpdateStudioError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_studio::UpdateStudioOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_studio::UpdateStudioError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_studio::UpdateStudioError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -69,59 +72,71 @@ impl UpdateStudioFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_studio::UpdateStudioOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_studio::UpdateStudioError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_studio::UpdateStudioError>,
     > {
         self.send_middleware().await
     }
     /// <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio portal.</p>
-    pub fn admin_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn admin_role_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.admin_role_arn(input.into());
         self
     }
     /// <p>The IAM role that Studio Admins will assume when logging in to the Nimble Studio portal.</p>
-    pub fn set_admin_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_admin_role_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_admin_role_arn(input);
         self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
-    pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
-    pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
     /// <p>A friendly name for the studio.</p>
-    pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.display_name(input.into());
         self
     }
     /// <p>A friendly name for the studio.</p>
-    pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_display_name(input);
         self
     }
     /// <p>The studio ID. </p>
-    pub fn studio_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.studio_id(input.into());
         self
     }
     /// <p>The studio ID. </p>
-    pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_studio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_studio_id(input);
         self
     }
     /// <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio portal.</p>
-    pub fn user_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn user_role_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.user_role_arn(input.into());
         self
     }
     /// <p>The IAM role that Studio Users will assume when logging in to the Nimble Studio portal.</p>
-    pub fn set_user_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_user_role_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_user_role_arn(input);
         self
     }

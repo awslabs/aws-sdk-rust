@@ -2,64 +2,64 @@
 
 /// <p>Describes a block device for an EBS volume.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LaunchTemplateEbsBlockDevice {
     /// <p>Indicates whether the EBS volume is encrypted.</p>
     #[doc(hidden)]
-    pub encrypted: std::option::Option<bool>,
+    pub encrypted: ::std::option::Option<bool>,
     /// <p>Indicates whether the EBS volume is deleted on instance termination.</p>
     #[doc(hidden)]
-    pub delete_on_termination: std::option::Option<bool>,
+    pub delete_on_termination: ::std::option::Option<bool>,
     /// <p>The number of I/O operations per second (IOPS) that the volume supports. </p>
     #[doc(hidden)]
-    pub iops: std::option::Option<i32>,
+    pub iops: ::std::option::Option<i32>,
     /// <p>The ARN of the Key Management Service (KMS) CMK used for encryption.</p>
     #[doc(hidden)]
-    pub kms_key_id: std::option::Option<std::string::String>,
+    pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the snapshot.</p>
     #[doc(hidden)]
-    pub snapshot_id: std::option::Option<std::string::String>,
+    pub snapshot_id: ::std::option::Option<::std::string::String>,
     /// <p>The size of the volume, in GiB.</p>
     #[doc(hidden)]
-    pub volume_size: std::option::Option<i32>,
+    pub volume_size: ::std::option::Option<i32>,
     /// <p>The volume type.</p>
     #[doc(hidden)]
-    pub volume_type: std::option::Option<crate::types::VolumeType>,
+    pub volume_type: ::std::option::Option<crate::types::VolumeType>,
     /// <p>The throughput that the volume supports, in MiB/s.</p>
     #[doc(hidden)]
-    pub throughput: std::option::Option<i32>,
+    pub throughput: ::std::option::Option<i32>,
 }
 impl LaunchTemplateEbsBlockDevice {
     /// <p>Indicates whether the EBS volume is encrypted.</p>
-    pub fn encrypted(&self) -> std::option::Option<bool> {
+    pub fn encrypted(&self) -> ::std::option::Option<bool> {
         self.encrypted
     }
     /// <p>Indicates whether the EBS volume is deleted on instance termination.</p>
-    pub fn delete_on_termination(&self) -> std::option::Option<bool> {
+    pub fn delete_on_termination(&self) -> ::std::option::Option<bool> {
         self.delete_on_termination
     }
     /// <p>The number of I/O operations per second (IOPS) that the volume supports. </p>
-    pub fn iops(&self) -> std::option::Option<i32> {
+    pub fn iops(&self) -> ::std::option::Option<i32> {
         self.iops
     }
     /// <p>The ARN of the Key Management Service (KMS) CMK used for encryption.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The ID of the snapshot.</p>
-    pub fn snapshot_id(&self) -> std::option::Option<&str> {
+    pub fn snapshot_id(&self) -> ::std::option::Option<&str> {
         self.snapshot_id.as_deref()
     }
     /// <p>The size of the volume, in GiB.</p>
-    pub fn volume_size(&self) -> std::option::Option<i32> {
+    pub fn volume_size(&self) -> ::std::option::Option<i32> {
         self.volume_size
     }
     /// <p>The volume type.</p>
-    pub fn volume_type(&self) -> std::option::Option<&crate::types::VolumeType> {
+    pub fn volume_type(&self) -> ::std::option::Option<&crate::types::VolumeType> {
         self.volume_type.as_ref()
     }
     /// <p>The throughput that the volume supports, in MiB/s.</p>
-    pub fn throughput(&self) -> std::option::Option<i32> {
+    pub fn throughput(&self) -> ::std::option::Option<i32> {
         self.throughput
     }
 }
@@ -72,95 +72,100 @@ impl LaunchTemplateEbsBlockDevice {
 
 /// A builder for [`LaunchTemplateEbsBlockDevice`](crate::types::LaunchTemplateEbsBlockDevice).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LaunchTemplateEbsBlockDeviceBuilder {
-    pub(crate) encrypted: std::option::Option<bool>,
-    pub(crate) delete_on_termination: std::option::Option<bool>,
-    pub(crate) iops: std::option::Option<i32>,
-    pub(crate) kms_key_id: std::option::Option<std::string::String>,
-    pub(crate) snapshot_id: std::option::Option<std::string::String>,
-    pub(crate) volume_size: std::option::Option<i32>,
-    pub(crate) volume_type: std::option::Option<crate::types::VolumeType>,
-    pub(crate) throughput: std::option::Option<i32>,
+    pub(crate) encrypted: ::std::option::Option<bool>,
+    pub(crate) delete_on_termination: ::std::option::Option<bool>,
+    pub(crate) iops: ::std::option::Option<i32>,
+    pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
+    pub(crate) snapshot_id: ::std::option::Option<::std::string::String>,
+    pub(crate) volume_size: ::std::option::Option<i32>,
+    pub(crate) volume_type: ::std::option::Option<crate::types::VolumeType>,
+    pub(crate) throughput: ::std::option::Option<i32>,
 }
 impl LaunchTemplateEbsBlockDeviceBuilder {
     /// <p>Indicates whether the EBS volume is encrypted.</p>
     pub fn encrypted(mut self, input: bool) -> Self {
-        self.encrypted = Some(input);
+        self.encrypted = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether the EBS volume is encrypted.</p>
-    pub fn set_encrypted(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_encrypted(mut self, input: ::std::option::Option<bool>) -> Self {
         self.encrypted = input;
         self
     }
     /// <p>Indicates whether the EBS volume is deleted on instance termination.</p>
     pub fn delete_on_termination(mut self, input: bool) -> Self {
-        self.delete_on_termination = Some(input);
+        self.delete_on_termination = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether the EBS volume is deleted on instance termination.</p>
-    pub fn set_delete_on_termination(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_delete_on_termination(mut self, input: ::std::option::Option<bool>) -> Self {
         self.delete_on_termination = input;
         self
     }
     /// <p>The number of I/O operations per second (IOPS) that the volume supports. </p>
     pub fn iops(mut self, input: i32) -> Self {
-        self.iops = Some(input);
+        self.iops = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of I/O operations per second (IOPS) that the volume supports. </p>
-    pub fn set_iops(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_iops(mut self, input: ::std::option::Option<i32>) -> Self {
         self.iops = input;
         self
     }
     /// <p>The ARN of the Key Management Service (KMS) CMK used for encryption.</p>
-    pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.kms_key_id = Some(input.into());
+    pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the Key Management Service (KMS) CMK used for encryption.</p>
-    pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
     }
     /// <p>The ID of the snapshot.</p>
-    pub fn snapshot_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.snapshot_id = Some(input.into());
+    pub fn snapshot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.snapshot_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the snapshot.</p>
-    pub fn set_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_snapshot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_id = input;
         self
     }
     /// <p>The size of the volume, in GiB.</p>
     pub fn volume_size(mut self, input: i32) -> Self {
-        self.volume_size = Some(input);
+        self.volume_size = ::std::option::Option::Some(input);
         self
     }
     /// <p>The size of the volume, in GiB.</p>
-    pub fn set_volume_size(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_volume_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.volume_size = input;
         self
     }
     /// <p>The volume type.</p>
     pub fn volume_type(mut self, input: crate::types::VolumeType) -> Self {
-        self.volume_type = Some(input);
+        self.volume_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The volume type.</p>
-    pub fn set_volume_type(mut self, input: std::option::Option<crate::types::VolumeType>) -> Self {
+    pub fn set_volume_type(
+        mut self,
+        input: ::std::option::Option<crate::types::VolumeType>,
+    ) -> Self {
         self.volume_type = input;
         self
     }
     /// <p>The throughput that the volume supports, in MiB/s.</p>
     pub fn throughput(mut self, input: i32) -> Self {
-        self.throughput = Some(input);
+        self.throughput = ::std::option::Option::Some(input);
         self
     }
     /// <p>The throughput that the volume supports, in MiB/s.</p>
-    pub fn set_throughput(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_throughput(mut self, input: ::std::option::Option<i32>) -> Self {
         self.throughput = input;
         self
     }

@@ -2,57 +2,57 @@
 
 /// <p>Statistics for the checks performed during the audit.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TaskStatistics {
     /// <p>The number of checks in this audit.</p>
     #[doc(hidden)]
-    pub total_checks: std::option::Option<i32>,
+    pub total_checks: ::std::option::Option<i32>,
     /// <p>The number of checks in progress.</p>
     #[doc(hidden)]
-    pub in_progress_checks: std::option::Option<i32>,
+    pub in_progress_checks: ::std::option::Option<i32>,
     /// <p>The number of checks waiting for data collection.</p>
     #[doc(hidden)]
-    pub waiting_for_data_collection_checks: std::option::Option<i32>,
+    pub waiting_for_data_collection_checks: ::std::option::Option<i32>,
     /// <p>The number of checks that found compliant resources.</p>
     #[doc(hidden)]
-    pub compliant_checks: std::option::Option<i32>,
+    pub compliant_checks: ::std::option::Option<i32>,
     /// <p>The number of checks that found noncompliant resources.</p>
     #[doc(hidden)]
-    pub non_compliant_checks: std::option::Option<i32>,
+    pub non_compliant_checks: ::std::option::Option<i32>,
     /// <p>The number of checks.</p>
     #[doc(hidden)]
-    pub failed_checks: std::option::Option<i32>,
+    pub failed_checks: ::std::option::Option<i32>,
     /// <p>The number of checks that did not run because the audit was canceled.</p>
     #[doc(hidden)]
-    pub canceled_checks: std::option::Option<i32>,
+    pub canceled_checks: ::std::option::Option<i32>,
 }
 impl TaskStatistics {
     /// <p>The number of checks in this audit.</p>
-    pub fn total_checks(&self) -> std::option::Option<i32> {
+    pub fn total_checks(&self) -> ::std::option::Option<i32> {
         self.total_checks
     }
     /// <p>The number of checks in progress.</p>
-    pub fn in_progress_checks(&self) -> std::option::Option<i32> {
+    pub fn in_progress_checks(&self) -> ::std::option::Option<i32> {
         self.in_progress_checks
     }
     /// <p>The number of checks waiting for data collection.</p>
-    pub fn waiting_for_data_collection_checks(&self) -> std::option::Option<i32> {
+    pub fn waiting_for_data_collection_checks(&self) -> ::std::option::Option<i32> {
         self.waiting_for_data_collection_checks
     }
     /// <p>The number of checks that found compliant resources.</p>
-    pub fn compliant_checks(&self) -> std::option::Option<i32> {
+    pub fn compliant_checks(&self) -> ::std::option::Option<i32> {
         self.compliant_checks
     }
     /// <p>The number of checks that found noncompliant resources.</p>
-    pub fn non_compliant_checks(&self) -> std::option::Option<i32> {
+    pub fn non_compliant_checks(&self) -> ::std::option::Option<i32> {
         self.non_compliant_checks
     }
     /// <p>The number of checks.</p>
-    pub fn failed_checks(&self) -> std::option::Option<i32> {
+    pub fn failed_checks(&self) -> ::std::option::Option<i32> {
         self.failed_checks
     }
     /// <p>The number of checks that did not run because the audit was canceled.</p>
-    pub fn canceled_checks(&self) -> std::option::Option<i32> {
+    pub fn canceled_checks(&self) -> ::std::option::Option<i32> {
         self.canceled_checks
     }
 }
@@ -65,87 +65,89 @@ impl TaskStatistics {
 
 /// A builder for [`TaskStatistics`](crate::types::TaskStatistics).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TaskStatisticsBuilder {
-    pub(crate) total_checks: std::option::Option<i32>,
-    pub(crate) in_progress_checks: std::option::Option<i32>,
-    pub(crate) waiting_for_data_collection_checks: std::option::Option<i32>,
-    pub(crate) compliant_checks: std::option::Option<i32>,
-    pub(crate) non_compliant_checks: std::option::Option<i32>,
-    pub(crate) failed_checks: std::option::Option<i32>,
-    pub(crate) canceled_checks: std::option::Option<i32>,
+    pub(crate) total_checks: ::std::option::Option<i32>,
+    pub(crate) in_progress_checks: ::std::option::Option<i32>,
+    pub(crate) waiting_for_data_collection_checks: ::std::option::Option<i32>,
+    pub(crate) compliant_checks: ::std::option::Option<i32>,
+    pub(crate) non_compliant_checks: ::std::option::Option<i32>,
+    pub(crate) failed_checks: ::std::option::Option<i32>,
+    pub(crate) canceled_checks: ::std::option::Option<i32>,
 }
 impl TaskStatisticsBuilder {
     /// <p>The number of checks in this audit.</p>
     pub fn total_checks(mut self, input: i32) -> Self {
-        self.total_checks = Some(input);
+        self.total_checks = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of checks in this audit.</p>
-    pub fn set_total_checks(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_total_checks(mut self, input: ::std::option::Option<i32>) -> Self {
         self.total_checks = input;
         self
     }
     /// <p>The number of checks in progress.</p>
     pub fn in_progress_checks(mut self, input: i32) -> Self {
-        self.in_progress_checks = Some(input);
+        self.in_progress_checks = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of checks in progress.</p>
-    pub fn set_in_progress_checks(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_in_progress_checks(mut self, input: ::std::option::Option<i32>) -> Self {
         self.in_progress_checks = input;
         self
     }
     /// <p>The number of checks waiting for data collection.</p>
     pub fn waiting_for_data_collection_checks(mut self, input: i32) -> Self {
-        self.waiting_for_data_collection_checks = Some(input);
+        self.waiting_for_data_collection_checks = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of checks waiting for data collection.</p>
     pub fn set_waiting_for_data_collection_checks(
         mut self,
-        input: std::option::Option<i32>,
+        input: ::std::option::Option<i32>,
     ) -> Self {
         self.waiting_for_data_collection_checks = input;
         self
     }
     /// <p>The number of checks that found compliant resources.</p>
     pub fn compliant_checks(mut self, input: i32) -> Self {
-        self.compliant_checks = Some(input);
+        self.compliant_checks = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of checks that found compliant resources.</p>
-    pub fn set_compliant_checks(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_compliant_checks(mut self, input: ::std::option::Option<i32>) -> Self {
         self.compliant_checks = input;
         self
     }
     /// <p>The number of checks that found noncompliant resources.</p>
     pub fn non_compliant_checks(mut self, input: i32) -> Self {
-        self.non_compliant_checks = Some(input);
+        self.non_compliant_checks = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of checks that found noncompliant resources.</p>
-    pub fn set_non_compliant_checks(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_non_compliant_checks(mut self, input: ::std::option::Option<i32>) -> Self {
         self.non_compliant_checks = input;
         self
     }
     /// <p>The number of checks.</p>
     pub fn failed_checks(mut self, input: i32) -> Self {
-        self.failed_checks = Some(input);
+        self.failed_checks = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of checks.</p>
-    pub fn set_failed_checks(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_failed_checks(mut self, input: ::std::option::Option<i32>) -> Self {
         self.failed_checks = input;
         self
     }
     /// <p>The number of checks that did not run because the audit was canceled.</p>
     pub fn canceled_checks(mut self, input: i32) -> Self {
-        self.canceled_checks = Some(input);
+        self.canceled_checks = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of checks that did not run because the audit was canceled.</p>
-    pub fn set_canceled_checks(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_canceled_checks(mut self, input: ::std::option::Option<i32>) -> Self {
         self.canceled_checks = input;
         self
     }

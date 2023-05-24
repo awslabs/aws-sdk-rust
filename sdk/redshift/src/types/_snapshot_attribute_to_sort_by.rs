@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum SnapshotAttributeToSortBy {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum SnapshotAttributeToSortBy {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for SnapshotAttributeToSortBy {
+impl ::std::convert::From<&str> for SnapshotAttributeToSortBy {
     fn from(s: &str) -> Self {
         match s {
             "CREATE_TIME" => SnapshotAttributeToSortBy::CreateTime,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for SnapshotAttributeToSortBy {
         }
     }
 }
-impl std::str::FromStr for SnapshotAttributeToSortBy {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for SnapshotAttributeToSortBy {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SnapshotAttributeToSortBy::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(SnapshotAttributeToSortBy::from(s))
     }
 }
 impl SnapshotAttributeToSortBy {
@@ -91,7 +91,7 @@ impl SnapshotAttributeToSortBy {
         &["CREATE_TIME", "SOURCE_TYPE", "TOTAL_SIZE"]
     }
 }
-impl AsRef<str> for SnapshotAttributeToSortBy {
+impl ::std::convert::AsRef<str> for SnapshotAttributeToSortBy {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

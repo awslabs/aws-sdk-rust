@@ -2,22 +2,22 @@
 
 /// <p>The pagination configuration for a table visual or boxplot.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PaginationConfiguration {
     /// <p>Indicates how many items render in one page.</p>
     #[doc(hidden)]
-    pub page_size: std::option::Option<i64>,
+    pub page_size: ::std::option::Option<i64>,
     /// <p>Indicates the page number.</p>
     #[doc(hidden)]
-    pub page_number: std::option::Option<i64>,
+    pub page_number: ::std::option::Option<i64>,
 }
 impl PaginationConfiguration {
     /// <p>Indicates how many items render in one page.</p>
-    pub fn page_size(&self) -> std::option::Option<i64> {
+    pub fn page_size(&self) -> ::std::option::Option<i64> {
         self.page_size
     }
     /// <p>Indicates the page number.</p>
-    pub fn page_number(&self) -> std::option::Option<i64> {
+    pub fn page_number(&self) -> ::std::option::Option<i64> {
         self.page_number
     }
 }
@@ -30,29 +30,31 @@ impl PaginationConfiguration {
 
 /// A builder for [`PaginationConfiguration`](crate::types::PaginationConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PaginationConfigurationBuilder {
-    pub(crate) page_size: std::option::Option<i64>,
-    pub(crate) page_number: std::option::Option<i64>,
+    pub(crate) page_size: ::std::option::Option<i64>,
+    pub(crate) page_number: ::std::option::Option<i64>,
 }
 impl PaginationConfigurationBuilder {
     /// <p>Indicates how many items render in one page.</p>
     pub fn page_size(mut self, input: i64) -> Self {
-        self.page_size = Some(input);
+        self.page_size = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates how many items render in one page.</p>
-    pub fn set_page_size(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_page_size(mut self, input: ::std::option::Option<i64>) -> Self {
         self.page_size = input;
         self
     }
     /// <p>Indicates the page number.</p>
     pub fn page_number(mut self, input: i64) -> Self {
-        self.page_number = Some(input);
+        self.page_number = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates the page number.</p>
-    pub fn set_page_number(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_page_number(mut self, input: ::std::option::Option<i64>) -> Self {
         self.page_number = input;
         self
     }

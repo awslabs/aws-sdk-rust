@@ -2,22 +2,22 @@
 
 /// <p>Describes third-party social federation configurations for allowing your app users to sign in using OAuth.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BackendAuthSocialProviderConfig {
     /// <p>Describes the client_id, which can be obtained from the third-party social federation provider.</p>
     #[doc(hidden)]
-    pub client_id: std::option::Option<std::string::String>,
+    pub client_id: ::std::option::Option<::std::string::String>,
     /// <p>Describes the client_secret, which can be obtained from third-party social federation providers.</p>
     #[doc(hidden)]
-    pub client_secret: std::option::Option<std::string::String>,
+    pub client_secret: ::std::option::Option<::std::string::String>,
 }
 impl BackendAuthSocialProviderConfig {
     /// <p>Describes the client_id, which can be obtained from the third-party social federation provider.</p>
-    pub fn client_id(&self) -> std::option::Option<&str> {
+    pub fn client_id(&self) -> ::std::option::Option<&str> {
         self.client_id.as_deref()
     }
     /// <p>Describes the client_secret, which can be obtained from third-party social federation providers.</p>
-    pub fn client_secret(&self) -> std::option::Option<&str> {
+    pub fn client_secret(&self) -> ::std::option::Option<&str> {
         self.client_secret.as_deref()
     }
 }
@@ -30,29 +30,37 @@ impl BackendAuthSocialProviderConfig {
 
 /// A builder for [`BackendAuthSocialProviderConfig`](crate::types::BackendAuthSocialProviderConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BackendAuthSocialProviderConfigBuilder {
-    pub(crate) client_id: std::option::Option<std::string::String>,
-    pub(crate) client_secret: std::option::Option<std::string::String>,
+    pub(crate) client_id: ::std::option::Option<::std::string::String>,
+    pub(crate) client_secret: ::std::option::Option<::std::string::String>,
 }
 impl BackendAuthSocialProviderConfigBuilder {
     /// <p>Describes the client_id, which can be obtained from the third-party social federation provider.</p>
-    pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.client_id = Some(input.into());
+    pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.client_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Describes the client_id, which can be obtained from the third-party social federation provider.</p>
-    pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_id = input;
         self
     }
     /// <p>Describes the client_secret, which can be obtained from third-party social federation providers.</p>
-    pub fn client_secret(mut self, input: impl Into<std::string::String>) -> Self {
-        self.client_secret = Some(input.into());
+    pub fn client_secret(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.client_secret = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Describes the client_secret, which can be obtained from third-party social federation providers.</p>
-    pub fn set_client_secret(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_secret(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.client_secret = input;
         self
     }

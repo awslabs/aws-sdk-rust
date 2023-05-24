@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum DirectorySize {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum DirectorySize {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for DirectorySize {
+impl ::std::convert::From<&str> for DirectorySize {
     fn from(s: &str) -> Self {
         match s {
             "Large" => DirectorySize::Large,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for DirectorySize {
         }
     }
 }
-impl std::str::FromStr for DirectorySize {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for DirectorySize {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DirectorySize::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(DirectorySize::from(s))
     }
 }
 impl DirectorySize {
@@ -86,7 +86,7 @@ impl DirectorySize {
         &["Large", "Small"]
     }
 }
-impl AsRef<str> for DirectorySize {
+impl ::std::convert::AsRef<str> for DirectorySize {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

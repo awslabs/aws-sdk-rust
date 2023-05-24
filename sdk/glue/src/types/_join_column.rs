@@ -2,22 +2,22 @@
 
 /// <p>Specifies a column to be joined.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JoinColumn {
     /// <p>The column to be joined.</p>
     #[doc(hidden)]
-    pub from: std::option::Option<std::string::String>,
+    pub from: ::std::option::Option<::std::string::String>,
     /// <p>The key of the column to be joined.</p>
     #[doc(hidden)]
-    pub keys: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
+    pub keys: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
 }
 impl JoinColumn {
     /// <p>The column to be joined.</p>
-    pub fn from(&self) -> std::option::Option<&str> {
+    pub fn from(&self) -> ::std::option::Option<&str> {
         self.from.as_deref()
     }
     /// <p>The key of the column to be joined.</p>
-    pub fn keys(&self) -> std::option::Option<&[std::vec::Vec<std::string::String>]> {
+    pub fn keys(&self) -> ::std::option::Option<&[::std::vec::Vec<::std::string::String>]> {
         self.keys.as_deref()
     }
 }
@@ -30,19 +30,21 @@ impl JoinColumn {
 
 /// A builder for [`JoinColumn`](crate::types::JoinColumn).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct JoinColumnBuilder {
-    pub(crate) from: std::option::Option<std::string::String>,
-    pub(crate) keys: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
+    pub(crate) from: ::std::option::Option<::std::string::String>,
+    pub(crate) keys: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
 }
 impl JoinColumnBuilder {
     /// <p>The column to be joined.</p>
-    pub fn from(mut self, input: impl Into<std::string::String>) -> Self {
-        self.from = Some(input.into());
+    pub fn from(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.from = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The column to be joined.</p>
-    pub fn set_from(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_from(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.from = input;
         self
     }
@@ -51,16 +53,16 @@ impl JoinColumnBuilder {
     /// To override the contents of this collection use [`set_keys`](Self::set_keys).
     ///
     /// <p>The key of the column to be joined.</p>
-    pub fn keys(mut self, input: std::vec::Vec<std::string::String>) -> Self {
+    pub fn keys(mut self, input: ::std::vec::Vec<::std::string::String>) -> Self {
         let mut v = self.keys.unwrap_or_default();
         v.push(input);
-        self.keys = Some(v);
+        self.keys = ::std::option::Option::Some(v);
         self
     }
     /// <p>The key of the column to be joined.</p>
     pub fn set_keys(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
     ) -> Self {
         self.keys = input;
         self

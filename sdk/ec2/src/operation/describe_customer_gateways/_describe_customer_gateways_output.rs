@@ -2,20 +2,20 @@
 
 /// <p>Contains the output of DescribeCustomerGateways.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeCustomerGatewaysOutput {
     /// <p>Information about one or more customer gateways.</p>
     #[doc(hidden)]
-    pub customer_gateways: std::option::Option<std::vec::Vec<crate::types::CustomerGateway>>,
+    pub customer_gateways: ::std::option::Option<::std::vec::Vec<crate::types::CustomerGateway>>,
     _request_id: Option<String>,
 }
 impl DescribeCustomerGatewaysOutput {
     /// <p>Information about one or more customer gateways.</p>
-    pub fn customer_gateways(&self) -> std::option::Option<&[crate::types::CustomerGateway]> {
+    pub fn customer_gateways(&self) -> ::std::option::Option<&[crate::types::CustomerGateway]> {
         self.customer_gateways.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeCustomerGatewaysOutput {
+impl ::aws_http::request_id::RequestId for DescribeCustomerGatewaysOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -31,9 +31,12 @@ impl DescribeCustomerGatewaysOutput {
 
 /// A builder for [`DescribeCustomerGatewaysOutput`](crate::operation::describe_customer_gateways::DescribeCustomerGatewaysOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeCustomerGatewaysOutputBuilder {
-    pub(crate) customer_gateways: std::option::Option<std::vec::Vec<crate::types::CustomerGateway>>,
+    pub(crate) customer_gateways:
+        ::std::option::Option<::std::vec::Vec<crate::types::CustomerGateway>>,
     _request_id: Option<String>,
 }
 impl DescribeCustomerGatewaysOutputBuilder {
@@ -45,13 +48,13 @@ impl DescribeCustomerGatewaysOutputBuilder {
     pub fn customer_gateways(mut self, input: crate::types::CustomerGateway) -> Self {
         let mut v = self.customer_gateways.unwrap_or_default();
         v.push(input);
-        self.customer_gateways = Some(v);
+        self.customer_gateways = ::std::option::Option::Some(v);
         self
     }
     /// <p>Information about one or more customer gateways.</p>
     pub fn set_customer_gateways(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CustomerGateway>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::CustomerGateway>>,
     ) -> Self {
         self.customer_gateways = input;
         self

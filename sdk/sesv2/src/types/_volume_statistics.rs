@@ -2,36 +2,36 @@
 
 /// <p>An object that contains information about the amount of email that was delivered to recipients.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VolumeStatistics {
     /// <p>The total number of emails that arrived in recipients' inboxes.</p>
     #[doc(hidden)]
-    pub inbox_raw_count: std::option::Option<i64>,
+    pub inbox_raw_count: ::std::option::Option<i64>,
     /// <p>The total number of emails that arrived in recipients' spam or junk mail folders.</p>
     #[doc(hidden)]
-    pub spam_raw_count: std::option::Option<i64>,
+    pub spam_raw_count: ::std::option::Option<i64>,
     /// <p>An estimate of the percentage of emails sent from the current domain that will arrive in recipients' inboxes.</p>
     #[doc(hidden)]
-    pub projected_inbox: std::option::Option<i64>,
+    pub projected_inbox: ::std::option::Option<i64>,
     /// <p>An estimate of the percentage of emails sent from the current domain that will arrive in recipients' spam or junk mail folders.</p>
     #[doc(hidden)]
-    pub projected_spam: std::option::Option<i64>,
+    pub projected_spam: ::std::option::Option<i64>,
 }
 impl VolumeStatistics {
     /// <p>The total number of emails that arrived in recipients' inboxes.</p>
-    pub fn inbox_raw_count(&self) -> std::option::Option<i64> {
+    pub fn inbox_raw_count(&self) -> ::std::option::Option<i64> {
         self.inbox_raw_count
     }
     /// <p>The total number of emails that arrived in recipients' spam or junk mail folders.</p>
-    pub fn spam_raw_count(&self) -> std::option::Option<i64> {
+    pub fn spam_raw_count(&self) -> ::std::option::Option<i64> {
         self.spam_raw_count
     }
     /// <p>An estimate of the percentage of emails sent from the current domain that will arrive in recipients' inboxes.</p>
-    pub fn projected_inbox(&self) -> std::option::Option<i64> {
+    pub fn projected_inbox(&self) -> ::std::option::Option<i64> {
         self.projected_inbox
     }
     /// <p>An estimate of the percentage of emails sent from the current domain that will arrive in recipients' spam or junk mail folders.</p>
-    pub fn projected_spam(&self) -> std::option::Option<i64> {
+    pub fn projected_spam(&self) -> ::std::option::Option<i64> {
         self.projected_spam
     }
 }
@@ -44,51 +44,53 @@ impl VolumeStatistics {
 
 /// A builder for [`VolumeStatistics`](crate::types::VolumeStatistics).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VolumeStatisticsBuilder {
-    pub(crate) inbox_raw_count: std::option::Option<i64>,
-    pub(crate) spam_raw_count: std::option::Option<i64>,
-    pub(crate) projected_inbox: std::option::Option<i64>,
-    pub(crate) projected_spam: std::option::Option<i64>,
+    pub(crate) inbox_raw_count: ::std::option::Option<i64>,
+    pub(crate) spam_raw_count: ::std::option::Option<i64>,
+    pub(crate) projected_inbox: ::std::option::Option<i64>,
+    pub(crate) projected_spam: ::std::option::Option<i64>,
 }
 impl VolumeStatisticsBuilder {
     /// <p>The total number of emails that arrived in recipients' inboxes.</p>
     pub fn inbox_raw_count(mut self, input: i64) -> Self {
-        self.inbox_raw_count = Some(input);
+        self.inbox_raw_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total number of emails that arrived in recipients' inboxes.</p>
-    pub fn set_inbox_raw_count(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_inbox_raw_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inbox_raw_count = input;
         self
     }
     /// <p>The total number of emails that arrived in recipients' spam or junk mail folders.</p>
     pub fn spam_raw_count(mut self, input: i64) -> Self {
-        self.spam_raw_count = Some(input);
+        self.spam_raw_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total number of emails that arrived in recipients' spam or junk mail folders.</p>
-    pub fn set_spam_raw_count(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_spam_raw_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.spam_raw_count = input;
         self
     }
     /// <p>An estimate of the percentage of emails sent from the current domain that will arrive in recipients' inboxes.</p>
     pub fn projected_inbox(mut self, input: i64) -> Self {
-        self.projected_inbox = Some(input);
+        self.projected_inbox = ::std::option::Option::Some(input);
         self
     }
     /// <p>An estimate of the percentage of emails sent from the current domain that will arrive in recipients' inboxes.</p>
-    pub fn set_projected_inbox(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_projected_inbox(mut self, input: ::std::option::Option<i64>) -> Self {
         self.projected_inbox = input;
         self
     }
     /// <p>An estimate of the percentage of emails sent from the current domain that will arrive in recipients' spam or junk mail folders.</p>
     pub fn projected_spam(mut self, input: i64) -> Self {
-        self.projected_spam = Some(input);
+        self.projected_spam = ::std::option::Option::Some(input);
         self
     }
     /// <p>An estimate of the percentage of emails sent from the current domain that will arrive in recipients' spam or junk mail folders.</p>
-    pub fn set_projected_spam(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_projected_spam(mut self, input: ::std::option::Option<i64>) -> Self {
         self.projected_spam = input;
         self
     }

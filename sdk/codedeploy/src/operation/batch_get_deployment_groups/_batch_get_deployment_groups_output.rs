@@ -2,30 +2,30 @@
 
 /// <p>Represents the output of a <code>BatchGetDeploymentGroups</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetDeploymentGroupsOutput {
     /// <p>Information about the deployment groups.</p>
     #[doc(hidden)]
     pub deployment_groups_info:
-        std::option::Option<std::vec::Vec<crate::types::DeploymentGroupInfo>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::DeploymentGroupInfo>>,
     /// <p>Information about errors that might have occurred during the API call.</p>
     #[doc(hidden)]
-    pub error_message: std::option::Option<std::string::String>,
+    pub error_message: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl BatchGetDeploymentGroupsOutput {
     /// <p>Information about the deployment groups.</p>
     pub fn deployment_groups_info(
         &self,
-    ) -> std::option::Option<&[crate::types::DeploymentGroupInfo]> {
+    ) -> ::std::option::Option<&[crate::types::DeploymentGroupInfo]> {
         self.deployment_groups_info.as_deref()
     }
     /// <p>Information about errors that might have occurred during the API call.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<&str> {
         self.error_message.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for BatchGetDeploymentGroupsOutput {
+impl ::aws_http::request_id::RequestId for BatchGetDeploymentGroupsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -39,11 +39,13 @@ impl BatchGetDeploymentGroupsOutput {
 
 /// A builder for [`BatchGetDeploymentGroupsOutput`](crate::operation::batch_get_deployment_groups::BatchGetDeploymentGroupsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BatchGetDeploymentGroupsOutputBuilder {
     pub(crate) deployment_groups_info:
-        std::option::Option<std::vec::Vec<crate::types::DeploymentGroupInfo>>,
-    pub(crate) error_message: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::DeploymentGroupInfo>>,
+    pub(crate) error_message: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl BatchGetDeploymentGroupsOutputBuilder {
@@ -55,24 +57,30 @@ impl BatchGetDeploymentGroupsOutputBuilder {
     pub fn deployment_groups_info(mut self, input: crate::types::DeploymentGroupInfo) -> Self {
         let mut v = self.deployment_groups_info.unwrap_or_default();
         v.push(input);
-        self.deployment_groups_info = Some(v);
+        self.deployment_groups_info = ::std::option::Option::Some(v);
         self
     }
     /// <p>Information about the deployment groups.</p>
     pub fn set_deployment_groups_info(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DeploymentGroupInfo>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentGroupInfo>>,
     ) -> Self {
         self.deployment_groups_info = input;
         self
     }
     /// <p>Information about errors that might have occurred during the API call.</p>
-    pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.error_message = Some(input.into());
+    pub fn error_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Information about errors that might have occurred during the API call.</p>
-    pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_error_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.error_message = input;
         self
     }

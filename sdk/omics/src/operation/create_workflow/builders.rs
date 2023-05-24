@@ -6,56 +6,59 @@ pub use crate::operation::create_workflow::_create_workflow_input::CreateWorkflo
 /// Fluent builder constructing a request to `CreateWorkflow`.
 ///
 /// <p>Creates a workflow.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateWorkflowFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_workflow::builders::CreateWorkflowInputBuilder,
 }
 impl CreateWorkflowFluentBuilder {
     /// Creates a new `CreateWorkflow`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_workflow::CreateWorkflow,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_workflow::CreateWorkflowError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_workflow::CreateWorkflowError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_workflow::CreateWorkflowOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_workflow::CreateWorkflowError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_workflow::CreateWorkflowError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,29 +71,29 @@ impl CreateWorkflowFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_workflow::CreateWorkflowOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_workflow::CreateWorkflowError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_workflow::CreateWorkflowError>,
     > {
         self.send_middleware().await
     }
     /// <p>A name for the workflow.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// <p>A name for the workflow.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
     /// <p>A description for the workflow.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>A description for the workflow.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
@@ -100,40 +103,49 @@ impl CreateWorkflowFluentBuilder {
         self
     }
     /// <p>An engine for the workflow.</p>
-    pub fn set_engine(mut self, input: std::option::Option<crate::types::WorkflowEngine>) -> Self {
+    pub fn set_engine(
+        mut self,
+        input: ::std::option::Option<crate::types::WorkflowEngine>,
+    ) -> Self {
         self.inner = self.inner.set_engine(input);
         self
     }
     /// <p>A ZIP archive for the workflow.</p>
-    pub fn definition_zip(mut self, input: aws_smithy_types::Blob) -> Self {
+    pub fn definition_zip(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.inner = self.inner.definition_zip(input);
         self
     }
     /// <p>A ZIP archive for the workflow.</p>
     pub fn set_definition_zip(
         mut self,
-        input: std::option::Option<aws_smithy_types::Blob>,
+        input: ::std::option::Option<::aws_smithy_types::Blob>,
     ) -> Self {
         self.inner = self.inner.set_definition_zip(input);
         self
     }
     /// <p>The URI of a definition for the workflow.</p>
-    pub fn definition_uri(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn definition_uri(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.definition_uri(input.into());
         self
     }
     /// <p>The URI of a definition for the workflow.</p>
-    pub fn set_definition_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_definition_uri(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_definition_uri(input);
         self
     }
     /// <p>The path of the main definition file for the workflow.</p>
-    pub fn main(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn main(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.main(input.into());
         self
     }
     /// <p>The path of the main definition file for the workflow.</p>
-    pub fn set_main(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_main(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_main(input);
         self
     }
@@ -144,7 +156,7 @@ impl CreateWorkflowFluentBuilder {
     /// <p>A parameter template for the workflow.</p>
     pub fn parameter_template(
         mut self,
-        k: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
         v: crate::types::WorkflowParameter,
     ) -> Self {
         self.inner = self.inner.parameter_template(k.into(), v);
@@ -153,8 +165,8 @@ impl CreateWorkflowFluentBuilder {
     /// <p>A parameter template for the workflow.</p>
     pub fn set_parameter_template(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::types::WorkflowParameter>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, crate::types::WorkflowParameter>,
         >,
     ) -> Self {
         self.inner = self.inner.set_parameter_template(input);
@@ -166,7 +178,7 @@ impl CreateWorkflowFluentBuilder {
         self
     }
     /// <p>A storage capacity for the workflow in gigabytes.</p>
-    pub fn set_storage_capacity(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_storage_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_storage_capacity(input);
         self
     }
@@ -177,8 +189,8 @@ impl CreateWorkflowFluentBuilder {
     /// <p>Tags for the workflow.</p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
@@ -186,20 +198,20 @@ impl CreateWorkflowFluentBuilder {
     /// <p>Tags for the workflow.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>To ensure that requests don't run multiple times, specify a unique ID for each request.</p>
-    pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.request_id(input.into());
         self
     }
     /// <p>To ensure that requests don't run multiple times, specify a unique ID for each request.</p>
-    pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_request_id(input);
         self
     }
@@ -211,7 +223,7 @@ impl CreateWorkflowFluentBuilder {
     /// <p> The computational accelerator specified to run the workflow. </p>
     pub fn set_accelerators(
         mut self,
-        input: std::option::Option<crate::types::Accelerators>,
+        input: ::std::option::Option<crate::types::Accelerators>,
     ) -> Self {
         self.inner = self.inner.set_accelerators(input);
         self

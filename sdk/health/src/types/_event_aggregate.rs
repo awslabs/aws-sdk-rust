@@ -2,18 +2,18 @@
 
 /// <p>The number of events of each issue type. Returned by the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventAggregates.html">DescribeEventAggregates</a> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventAggregate {
     /// <p>The issue type for the associated count.</p>
     #[doc(hidden)]
-    pub aggregate_value: std::option::Option<std::string::String>,
+    pub aggregate_value: ::std::option::Option<::std::string::String>,
     /// <p>The number of events of the associated issue type.</p>
     #[doc(hidden)]
     pub count: i32,
 }
 impl EventAggregate {
     /// <p>The issue type for the associated count.</p>
-    pub fn aggregate_value(&self) -> std::option::Option<&str> {
+    pub fn aggregate_value(&self) -> ::std::option::Option<&str> {
         self.aggregate_value.as_deref()
     }
     /// <p>The number of events of the associated issue type.</p>
@@ -30,29 +30,37 @@ impl EventAggregate {
 
 /// A builder for [`EventAggregate`](crate::types::EventAggregate).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EventAggregateBuilder {
-    pub(crate) aggregate_value: std::option::Option<std::string::String>,
-    pub(crate) count: std::option::Option<i32>,
+    pub(crate) aggregate_value: ::std::option::Option<::std::string::String>,
+    pub(crate) count: ::std::option::Option<i32>,
 }
 impl EventAggregateBuilder {
     /// <p>The issue type for the associated count.</p>
-    pub fn aggregate_value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.aggregate_value = Some(input.into());
+    pub fn aggregate_value(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.aggregate_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The issue type for the associated count.</p>
-    pub fn set_aggregate_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_aggregate_value(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.aggregate_value = input;
         self
     }
     /// <p>The number of events of the associated issue type.</p>
     pub fn count(mut self, input: i32) -> Self {
-        self.count = Some(input);
+        self.count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of events of the associated issue type.</p>
-    pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.count = input;
         self
     }

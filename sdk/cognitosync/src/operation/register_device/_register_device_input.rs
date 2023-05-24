@@ -2,36 +2,36 @@
 
 /// <p>A request to RegisterDevice.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterDeviceInput {
     /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. Here, the ID of the pool that the identity belongs to.</p>
     #[doc(hidden)]
-    pub identity_pool_id: std::option::Option<std::string::String>,
+    pub identity_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID for this identity.</p>
     #[doc(hidden)]
-    pub identity_id: std::option::Option<std::string::String>,
+    pub identity_id: ::std::option::Option<::std::string::String>,
     /// <p>The SNS platform type (e.g. GCM, SDM, APNS, APNS_SANDBOX).</p>
     #[doc(hidden)]
-    pub platform: std::option::Option<crate::types::Platform>,
+    pub platform: ::std::option::Option<crate::types::Platform>,
     /// <p>The push token.</p>
     #[doc(hidden)]
-    pub token: std::option::Option<std::string::String>,
+    pub token: ::std::option::Option<::std::string::String>,
 }
 impl RegisterDeviceInput {
     /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. Here, the ID of the pool that the identity belongs to.</p>
-    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
+    pub fn identity_pool_id(&self) -> ::std::option::Option<&str> {
         self.identity_pool_id.as_deref()
     }
     /// <p>The unique ID for this identity.</p>
-    pub fn identity_id(&self) -> std::option::Option<&str> {
+    pub fn identity_id(&self) -> ::std::option::Option<&str> {
         self.identity_id.as_deref()
     }
     /// <p>The SNS platform type (e.g. GCM, SDM, APNS, APNS_SANDBOX).</p>
-    pub fn platform(&self) -> std::option::Option<&crate::types::Platform> {
+    pub fn platform(&self) -> ::std::option::Option<&crate::types::Platform> {
         self.platform.as_ref()
     }
     /// <p>The push token.</p>
-    pub fn token(&self) -> std::option::Option<&str> {
+    pub fn token(&self) -> ::std::option::Option<&str> {
         self.token.as_deref()
     }
 }
@@ -44,62 +44,70 @@ impl RegisterDeviceInput {
 
 /// A builder for [`RegisterDeviceInput`](crate::operation::register_device::RegisterDeviceInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RegisterDeviceInputBuilder {
-    pub(crate) identity_pool_id: std::option::Option<std::string::String>,
-    pub(crate) identity_id: std::option::Option<std::string::String>,
-    pub(crate) platform: std::option::Option<crate::types::Platform>,
-    pub(crate) token: std::option::Option<std::string::String>,
+    pub(crate) identity_pool_id: ::std::option::Option<::std::string::String>,
+    pub(crate) identity_id: ::std::option::Option<::std::string::String>,
+    pub(crate) platform: ::std::option::Option<crate::types::Platform>,
+    pub(crate) token: ::std::option::Option<::std::string::String>,
 }
 impl RegisterDeviceInputBuilder {
     /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. Here, the ID of the pool that the identity belongs to.</p>
-    pub fn identity_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.identity_pool_id = Some(input.into());
+    pub fn identity_pool_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.identity_pool_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. Here, the ID of the pool that the identity belongs to.</p>
-    pub fn set_identity_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_identity_pool_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.identity_pool_id = input;
         self
     }
     /// <p>The unique ID for this identity.</p>
-    pub fn identity_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.identity_id = Some(input.into());
+    pub fn identity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.identity_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ID for this identity.</p>
-    pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_identity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identity_id = input;
         self
     }
     /// <p>The SNS platform type (e.g. GCM, SDM, APNS, APNS_SANDBOX).</p>
     pub fn platform(mut self, input: crate::types::Platform) -> Self {
-        self.platform = Some(input);
+        self.platform = ::std::option::Option::Some(input);
         self
     }
     /// <p>The SNS platform type (e.g. GCM, SDM, APNS, APNS_SANDBOX).</p>
-    pub fn set_platform(mut self, input: std::option::Option<crate::types::Platform>) -> Self {
+    pub fn set_platform(mut self, input: ::std::option::Option<crate::types::Platform>) -> Self {
         self.platform = input;
         self
     }
     /// <p>The push token.</p>
-    pub fn token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.token = Some(input.into());
+    pub fn token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The push token.</p>
-    pub fn set_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.token = input;
         self
     }
     /// Consumes the builder and constructs a [`RegisterDeviceInput`](crate::operation::register_device::RegisterDeviceInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::register_device::RegisterDeviceInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::register_device::RegisterDeviceInput {
+        ::std::result::Result::Ok(crate::operation::register_device::RegisterDeviceInput {
             identity_pool_id: self.identity_pool_id,
             identity_id: self.identity_id,
             platform: self.platform,

@@ -7,47 +7,50 @@ pub use crate::operation::get_scaling_plan_resource_forecast_data::_get_scaling_
 ///
 /// <p>Retrieves the forecast data for a scalable resource.</p>
 /// <p>Capacity forecasts are represented as predicted values, or data points, that are calculated using historical data points from a specified CloudWatch load metric. Data points are available for up to 56 days. </p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetScalingPlanResourceForecastDataFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::get_scaling_plan_resource_forecast_data::builders::GetScalingPlanResourceForecastDataInputBuilder,
 }
 impl GetScalingPlanResourceForecastDataFluentBuilder {
     /// Creates a new `GetScalingPlanResourceForecastData`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::get_scaling_plan_resource_forecast_data::GetScalingPlanResourceForecastData, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::get_scaling_plan_resource_forecast_data::GetScalingPlanResourceForecastDataError>
+                    pub async fn customize(self) -> ::std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::get_scaling_plan_resource_forecast_data::GetScalingPlanResourceForecastData, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                        ::aws_smithy_http::result::SdkError<crate::operation::get_scaling_plan_resource_forecast_data::GetScalingPlanResourceForecastDataError>
     >{
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::get_scaling_plan_resource_forecast_data::GetScalingPlanResourceForecastDataOutput, aws_smithy_http::result::SdkError<crate::operation::get_scaling_plan_resource_forecast_data::GetScalingPlanResourceForecastDataError>>
+                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::get_scaling_plan_resource_forecast_data::GetScalingPlanResourceForecastDataOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_scaling_plan_resource_forecast_data::GetScalingPlanResourceForecastDataError>>
                      {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -58,19 +61,22 @@ impl GetScalingPlanResourceForecastDataFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> std::result::Result<crate::operation::get_scaling_plan_resource_forecast_data::GetScalingPlanResourceForecastDataOutput, aws_smithy_http::result::SdkError<crate::operation::get_scaling_plan_resource_forecast_data::GetScalingPlanResourceForecastDataError>>
+                        pub async fn send(self) -> ::std::result::Result<crate::operation::get_scaling_plan_resource_forecast_data::GetScalingPlanResourceForecastDataOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_scaling_plan_resource_forecast_data::GetScalingPlanResourceForecastDataError>>
                          {
         self.send_middleware().await
     }
     /// <p>The name of the scaling plan.</p>
-    pub fn scaling_plan_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn scaling_plan_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.scaling_plan_name(input.into());
         self
     }
     /// <p>The name of the scaling plan.</p>
     pub fn set_scaling_plan_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_scaling_plan_name(input);
         self
@@ -81,7 +87,7 @@ impl GetScalingPlanResourceForecastDataFluentBuilder {
         self
     }
     /// <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p>
-    pub fn set_scaling_plan_version(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_scaling_plan_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_scaling_plan_version(input);
         self
     }
@@ -93,18 +99,18 @@ impl GetScalingPlanResourceForecastDataFluentBuilder {
     /// <p>The namespace of the AWS service. The only valid value is <code>autoscaling</code>. </p>
     pub fn set_service_namespace(
         mut self,
-        input: std::option::Option<crate::types::ServiceNamespace>,
+        input: ::std::option::Option<crate::types::ServiceNamespace>,
     ) -> Self {
         self.inner = self.inner.set_service_namespace(input);
         self
     }
     /// <p>The ID of the resource. This string consists of a prefix (<code>autoScalingGroup</code>) followed by the name of a specified Auto Scaling group (<code>my-asg</code>). Example: <code>autoScalingGroup/my-asg</code>. </p>
-    pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_id(input.into());
         self
     }
     /// <p>The ID of the resource. This string consists of a prefix (<code>autoScalingGroup</code>) followed by the name of a specified Auto Scaling group (<code>my-asg</code>). Example: <code>autoScalingGroup/my-asg</code>. </p>
-    pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_id(input);
         self
     }
@@ -116,7 +122,7 @@ impl GetScalingPlanResourceForecastDataFluentBuilder {
     /// <p>The scalable dimension for the resource. The only valid value is <code>autoscaling:autoScalingGroup:DesiredCapacity</code>. </p>
     pub fn set_scalable_dimension(
         mut self,
-        input: std::option::Option<crate::types::ScalableDimension>,
+        input: ::std::option::Option<crate::types::ScalableDimension>,
     ) -> Self {
         self.inner = self.inner.set_scalable_dimension(input);
         self
@@ -141,33 +147,36 @@ impl GetScalingPlanResourceForecastDataFluentBuilder {
     /// </ul>
     pub fn set_forecast_data_type(
         mut self,
-        input: std::option::Option<crate::types::ForecastDataType>,
+        input: ::std::option::Option<crate::types::ForecastDataType>,
     ) -> Self {
         self.inner = self.inner.set_forecast_data_type(input);
         self
     }
     /// <p>The inclusive start time of the time range for the forecast data to get. The date and time can be at most 56 days before the current date and time. </p>
-    pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+    pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.start_time(input);
         self
     }
     /// <p>The inclusive start time of the time range for the forecast data to get. The date and time can be at most 56 days before the current date and time. </p>
     pub fn set_start_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
     /// <p>The exclusive end time of the time range for the forecast data to get. The maximum time duration between the start and end time is seven days. </p>
     /// <p>Although this parameter can accept a date and time that is more than two days in the future, the availability of forecast data has limits. AWS Auto Scaling only issues forecasts for periods of two days in advance.</p>
-    pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+    pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.end_time(input);
         self
     }
     /// <p>The exclusive end time of the time range for the forecast data to get. The maximum time duration between the start and end time is seven days. </p>
     /// <p>Although this parameter can accept a date and time that is more than two days in the future, the availability of forecast data has limits. AWS Auto Scaling only issues forecasts for periods of two days in advance.</p>
-    pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_end_time(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }

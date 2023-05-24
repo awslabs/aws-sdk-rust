@@ -7,56 +7,59 @@ pub use crate::operation::create_workteam::_create_workteam_input::CreateWorktea
 ///
 /// <p>Creates a new work team for labeling your data. A work team is defined by one or more Amazon Cognito user pools. You must first create the user pools before you can create a work team.</p>
 /// <p>You cannot create more than 25 work teams in an account and region.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateWorkteamFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_workteam::builders::CreateWorkteamInputBuilder,
 }
 impl CreateWorkteamFluentBuilder {
     /// Creates a new `CreateWorkteam`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_workteam::CreateWorkteam,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_workteam::CreateWorkteamError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_workteam::CreateWorkteamError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_workteam::CreateWorkteamOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_workteam::CreateWorkteamError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_workteam::CreateWorkteamError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -69,29 +72,41 @@ impl CreateWorkteamFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_workteam::CreateWorkteamOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_workteam::CreateWorkteamError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_workteam::CreateWorkteamError>,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the work team. Use this name to identify the work team.</p>
-    pub fn workteam_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn workteam_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.workteam_name(input.into());
         self
     }
     /// <p>The name of the work team. Use this name to identify the work team.</p>
-    pub fn set_workteam_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_workteam_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_workteam_name(input);
         self
     }
     /// <p>The name of the workforce.</p>
-    pub fn workforce_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn workforce_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.workforce_name(input.into());
         self
     }
     /// <p>The name of the workforce.</p>
-    pub fn set_workforce_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_workforce_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_workforce_name(input);
         self
     }
@@ -113,18 +128,18 @@ impl CreateWorkteamFluentBuilder {
     /// <p>For workforces created using your own OIDC IdP, specify the user groups that you want to include in your private work team in <code>OidcMemberDefinition</code> by listing those groups in <code>Groups</code>.</p>
     pub fn set_member_definitions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::MemberDefinition>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::MemberDefinition>>,
     ) -> Self {
         self.inner = self.inner.set_member_definitions(input);
         self
     }
     /// <p>A description of the work team.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>A description of the work team.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
@@ -139,7 +154,7 @@ impl CreateWorkteamFluentBuilder {
     /// <p>Configures notification of workers regarding available or expiring work items.</p>
     pub fn set_notification_configuration(
         mut self,
-        input: std::option::Option<crate::types::NotificationConfiguration>,
+        input: ::std::option::Option<crate::types::NotificationConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_notification_configuration(input);
         self
@@ -158,7 +173,7 @@ impl CreateWorkteamFluentBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html">Resource Tag</a> and <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using Cost Allocation Tags</a> in the <i> Amazon Web Services Billing and Cost Management User Guide</i>.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self

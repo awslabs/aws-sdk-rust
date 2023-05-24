@@ -2,16 +2,16 @@
 
 /// <p>A map of key value pairs that is generated when you create a migration workflow. The key value pairs will differ based on your selection of the template.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum StepInput {
     /// <p>The value of the integer.</p>
     IntegerValue(i32),
     /// <p>List of string values.</p>
-    ListOfStringsValue(std::vec::Vec<std::string::String>),
+    ListOfStringsValue(::std::vec::Vec<::std::string::String>),
     /// <p>Map of string values.</p>
-    MapOfStringValue(std::collections::HashMap<std::string::String, std::string::String>),
+    MapOfStringValue(::std::collections::HashMap<::std::string::String, ::std::string::String>),
     /// <p>String value.</p>
-    StringValue(std::string::String),
+    StringValue(::std::string::String),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -25,57 +25,57 @@ pub enum StepInput {
 impl StepInput {
     /// Tries to convert the enum instance into [`IntegerValue`](crate::types::StepInput::IntegerValue), extracting the inner [`i32`](i32).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_integer_value(&self) -> std::result::Result<&i32, &Self> {
+    pub fn as_integer_value(&self) -> ::std::result::Result<&i32, &Self> {
         if let StepInput::IntegerValue(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`IntegerValue`](crate::types::StepInput::IntegerValue).
     pub fn is_integer_value(&self) -> bool {
         self.as_integer_value().is_ok()
     }
-    /// Tries to convert the enum instance into [`ListOfStringsValue`](crate::types::StepInput::ListOfStringsValue), extracting the inner [`Vec`](std::vec::Vec).
+    /// Tries to convert the enum instance into [`ListOfStringsValue`](crate::types::StepInput::ListOfStringsValue), extracting the inner [`Vec`](::std::vec::Vec).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_list_of_strings_value(
         &self,
-    ) -> std::result::Result<&std::vec::Vec<std::string::String>, &Self> {
+    ) -> ::std::result::Result<&::std::vec::Vec<::std::string::String>, &Self> {
         if let StepInput::ListOfStringsValue(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`ListOfStringsValue`](crate::types::StepInput::ListOfStringsValue).
     pub fn is_list_of_strings_value(&self) -> bool {
         self.as_list_of_strings_value().is_ok()
     }
-    /// Tries to convert the enum instance into [`MapOfStringValue`](crate::types::StepInput::MapOfStringValue), extracting the inner [`HashMap`](std::collections::HashMap).
+    /// Tries to convert the enum instance into [`MapOfStringValue`](crate::types::StepInput::MapOfStringValue), extracting the inner [`HashMap`](::std::collections::HashMap).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_map_of_string_value(
         &self,
-    ) -> std::result::Result<
-        &std::collections::HashMap<std::string::String, std::string::String>,
+    ) -> ::std::result::Result<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
         &Self,
     > {
         if let StepInput::MapOfStringValue(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`MapOfStringValue`](crate::types::StepInput::MapOfStringValue).
     pub fn is_map_of_string_value(&self) -> bool {
         self.as_map_of_string_value().is_ok()
     }
-    /// Tries to convert the enum instance into [`StringValue`](crate::types::StepInput::StringValue), extracting the inner [`String`](std::string::String).
+    /// Tries to convert the enum instance into [`StringValue`](crate::types::StepInput::StringValue), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_string_value(&self) -> std::result::Result<&std::string::String, &Self> {
+    pub fn as_string_value(&self) -> ::std::result::Result<&::std::string::String, &Self> {
         if let StepInput::StringValue(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`StringValue`](crate::types::StepInput::StringValue).

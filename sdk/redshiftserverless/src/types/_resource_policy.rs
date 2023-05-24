@@ -2,22 +2,22 @@
 
 /// <p>The resource policy object. Currently, you can use policies to share snapshots across Amazon Web Services accounts.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourcePolicy {
     /// <p>The Amazon Resource Name (ARN) of the policy.</p>
     #[doc(hidden)]
-    pub resource_arn: std::option::Option<std::string::String>,
+    pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The resource policy.</p>
     #[doc(hidden)]
-    pub policy: std::option::Option<std::string::String>,
+    pub policy: ::std::option::Option<::std::string::String>,
 }
 impl ResourcePolicy {
     /// <p>The Amazon Resource Name (ARN) of the policy.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
     /// <p>The resource policy.</p>
-    pub fn policy(&self) -> std::option::Option<&str> {
+    pub fn policy(&self) -> ::std::option::Option<&str> {
         self.policy.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl ResourcePolicy {
 
 /// A builder for [`ResourcePolicy`](crate::types::ResourcePolicy).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResourcePolicyBuilder {
-    pub(crate) resource_arn: std::option::Option<std::string::String>,
-    pub(crate) policy: std::option::Option<std::string::String>,
+    pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) policy: ::std::option::Option<::std::string::String>,
 }
 impl ResourcePolicyBuilder {
     /// <p>The Amazon Resource Name (ARN) of the policy.</p>
-    pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_arn = Some(input.into());
+    pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the policy.</p>
-    pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
     }
     /// <p>The resource policy.</p>
-    pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
-        self.policy = Some(input.into());
+    pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.policy = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The resource policy.</p>
-    pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy = input;
         self
     }

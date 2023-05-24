@@ -2,62 +2,62 @@
 
 /// <p>A contact with attributes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Contact {
     /// <p>The ARN of the contact.</p>
     #[doc(hidden)]
-    pub contact_arn: std::option::Option<std::string::String>,
+    pub contact_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the contact to display on the console.</p>
     #[doc(hidden)]
-    pub display_name: std::option::Option<std::string::String>,
+    pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The first name of the contact, used to call the contact on the device.</p>
     #[doc(hidden)]
-    pub first_name: std::option::Option<std::string::String>,
+    pub first_name: ::std::option::Option<::std::string::String>,
     /// <p>The last name of the contact, used to call the contact on the device.</p>
     #[doc(hidden)]
-    pub last_name: std::option::Option<std::string::String>,
+    pub last_name: ::std::option::Option<::std::string::String>,
     /// <p>The phone number of the contact. The phone number type defaults to WORK. You can either specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers, which lets you specify the phone number type and multiple numbers.</p>
     #[doc(hidden)]
-    pub phone_number: std::option::Option<std::string::String>,
+    pub phone_number: ::std::option::Option<::std::string::String>,
     /// <p>The list of phone numbers for the contact.</p>
     #[doc(hidden)]
-    pub phone_numbers: std::option::Option<std::vec::Vec<crate::types::PhoneNumber>>,
+    pub phone_numbers: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumber>>,
     /// <p>The list of SIP addresses for the contact.</p>
     #[doc(hidden)]
-    pub sip_addresses: std::option::Option<std::vec::Vec<crate::types::SipAddress>>,
+    pub sip_addresses: ::std::option::Option<::std::vec::Vec<crate::types::SipAddress>>,
 }
 impl Contact {
     /// <p>The ARN of the contact.</p>
-    pub fn contact_arn(&self) -> std::option::Option<&str> {
+    pub fn contact_arn(&self) -> ::std::option::Option<&str> {
         self.contact_arn.as_deref()
     }
     /// <p>The name of the contact to display on the console.</p>
-    pub fn display_name(&self) -> std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<&str> {
         self.display_name.as_deref()
     }
     /// <p>The first name of the contact, used to call the contact on the device.</p>
-    pub fn first_name(&self) -> std::option::Option<&str> {
+    pub fn first_name(&self) -> ::std::option::Option<&str> {
         self.first_name.as_deref()
     }
     /// <p>The last name of the contact, used to call the contact on the device.</p>
-    pub fn last_name(&self) -> std::option::Option<&str> {
+    pub fn last_name(&self) -> ::std::option::Option<&str> {
         self.last_name.as_deref()
     }
     /// <p>The phone number of the contact. The phone number type defaults to WORK. You can either specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers, which lets you specify the phone number type and multiple numbers.</p>
-    pub fn phone_number(&self) -> std::option::Option<&str> {
+    pub fn phone_number(&self) -> ::std::option::Option<&str> {
         self.phone_number.as_deref()
     }
     /// <p>The list of phone numbers for the contact.</p>
-    pub fn phone_numbers(&self) -> std::option::Option<&[crate::types::PhoneNumber]> {
+    pub fn phone_numbers(&self) -> ::std::option::Option<&[crate::types::PhoneNumber]> {
         self.phone_numbers.as_deref()
     }
     /// <p>The list of SIP addresses for the contact.</p>
-    pub fn sip_addresses(&self) -> std::option::Option<&[crate::types::SipAddress]> {
+    pub fn sip_addresses(&self) -> ::std::option::Option<&[crate::types::SipAddress]> {
         self.sip_addresses.as_deref()
     }
 }
-impl std::fmt::Debug for Contact {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for Contact {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("Contact");
         formatter.field("contact_arn", &self.contact_arn);
         formatter.field("display_name", &self.display_name);
@@ -78,64 +78,64 @@ impl Contact {
 
 /// A builder for [`Contact`](crate::types::Contact).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct ContactBuilder {
-    pub(crate) contact_arn: std::option::Option<std::string::String>,
-    pub(crate) display_name: std::option::Option<std::string::String>,
-    pub(crate) first_name: std::option::Option<std::string::String>,
-    pub(crate) last_name: std::option::Option<std::string::String>,
-    pub(crate) phone_number: std::option::Option<std::string::String>,
-    pub(crate) phone_numbers: std::option::Option<std::vec::Vec<crate::types::PhoneNumber>>,
-    pub(crate) sip_addresses: std::option::Option<std::vec::Vec<crate::types::SipAddress>>,
+    pub(crate) contact_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) display_name: ::std::option::Option<::std::string::String>,
+    pub(crate) first_name: ::std::option::Option<::std::string::String>,
+    pub(crate) last_name: ::std::option::Option<::std::string::String>,
+    pub(crate) phone_number: ::std::option::Option<::std::string::String>,
+    pub(crate) phone_numbers: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumber>>,
+    pub(crate) sip_addresses: ::std::option::Option<::std::vec::Vec<crate::types::SipAddress>>,
 }
 impl ContactBuilder {
     /// <p>The ARN of the contact.</p>
-    pub fn contact_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.contact_arn = Some(input.into());
+    pub fn contact_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.contact_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the contact.</p>
-    pub fn set_contact_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_contact_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.contact_arn = input;
         self
     }
     /// <p>The name of the contact to display on the console.</p>
-    pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.display_name = Some(input.into());
+    pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.display_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the contact to display on the console.</p>
-    pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
     }
     /// <p>The first name of the contact, used to call the contact on the device.</p>
-    pub fn first_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.first_name = Some(input.into());
+    pub fn first_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.first_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The first name of the contact, used to call the contact on the device.</p>
-    pub fn set_first_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_first_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.first_name = input;
         self
     }
     /// <p>The last name of the contact, used to call the contact on the device.</p>
-    pub fn last_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.last_name = Some(input.into());
+    pub fn last_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.last_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The last name of the contact, used to call the contact on the device.</p>
-    pub fn set_last_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_last_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_name = input;
         self
     }
     /// <p>The phone number of the contact. The phone number type defaults to WORK. You can either specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers, which lets you specify the phone number type and multiple numbers.</p>
-    pub fn phone_number(mut self, input: impl Into<std::string::String>) -> Self {
-        self.phone_number = Some(input.into());
+    pub fn phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.phone_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The phone number of the contact. The phone number type defaults to WORK. You can either specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers, which lets you specify the phone number type and multiple numbers.</p>
-    pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.phone_number = input;
         self
     }
@@ -147,13 +147,13 @@ impl ContactBuilder {
     pub fn phone_numbers(mut self, input: crate::types::PhoneNumber) -> Self {
         let mut v = self.phone_numbers.unwrap_or_default();
         v.push(input);
-        self.phone_numbers = Some(v);
+        self.phone_numbers = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of phone numbers for the contact.</p>
     pub fn set_phone_numbers(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PhoneNumber>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumber>>,
     ) -> Self {
         self.phone_numbers = input;
         self
@@ -166,13 +166,13 @@ impl ContactBuilder {
     pub fn sip_addresses(mut self, input: crate::types::SipAddress) -> Self {
         let mut v = self.sip_addresses.unwrap_or_default();
         v.push(input);
-        self.sip_addresses = Some(v);
+        self.sip_addresses = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of SIP addresses for the contact.</p>
     pub fn set_sip_addresses(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SipAddress>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SipAddress>>,
     ) -> Self {
         self.sip_addresses = input;
         self
@@ -190,8 +190,8 @@ impl ContactBuilder {
         }
     }
 }
-impl std::fmt::Debug for ContactBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for ContactBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ContactBuilder");
         formatter.field("contact_arn", &self.contact_arn);
         formatter.field("display_name", &self.display_name);

@@ -2,22 +2,22 @@
 
 /// <p> The budget name and associated notifications for an account. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BudgetNotificationsForAccount {
     /// <p> A list of notifications.</p>
     #[doc(hidden)]
-    pub notifications: std::option::Option<std::vec::Vec<crate::types::Notification>>,
+    pub notifications: ::std::option::Option<::std::vec::Vec<crate::types::Notification>>,
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
     #[doc(hidden)]
-    pub budget_name: std::option::Option<std::string::String>,
+    pub budget_name: ::std::option::Option<::std::string::String>,
 }
 impl BudgetNotificationsForAccount {
     /// <p> A list of notifications.</p>
-    pub fn notifications(&self) -> std::option::Option<&[crate::types::Notification]> {
+    pub fn notifications(&self) -> ::std::option::Option<&[crate::types::Notification]> {
         self.notifications.as_deref()
     }
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
-    pub fn budget_name(&self) -> std::option::Option<&str> {
+    pub fn budget_name(&self) -> ::std::option::Option<&str> {
         self.budget_name.as_deref()
     }
 }
@@ -30,10 +30,12 @@ impl BudgetNotificationsForAccount {
 
 /// A builder for [`BudgetNotificationsForAccount`](crate::types::BudgetNotificationsForAccount).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BudgetNotificationsForAccountBuilder {
-    pub(crate) notifications: std::option::Option<std::vec::Vec<crate::types::Notification>>,
-    pub(crate) budget_name: std::option::Option<std::string::String>,
+    pub(crate) notifications: ::std::option::Option<::std::vec::Vec<crate::types::Notification>>,
+    pub(crate) budget_name: ::std::option::Option<::std::string::String>,
 }
 impl BudgetNotificationsForAccountBuilder {
     /// Appends an item to `notifications`.
@@ -44,24 +46,24 @@ impl BudgetNotificationsForAccountBuilder {
     pub fn notifications(mut self, input: crate::types::Notification) -> Self {
         let mut v = self.notifications.unwrap_or_default();
         v.push(input);
-        self.notifications = Some(v);
+        self.notifications = ::std::option::Option::Some(v);
         self
     }
     /// <p> A list of notifications.</p>
     pub fn set_notifications(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Notification>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Notification>>,
     ) -> Self {
         self.notifications = input;
         self
     }
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
-    pub fn budget_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.budget_name = Some(input.into());
+    pub fn budget_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.budget_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
-    pub fn set_budget_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_budget_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.budget_name = input;
         self
     }

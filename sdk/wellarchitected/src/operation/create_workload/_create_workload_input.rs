@@ -2,36 +2,36 @@
 
 /// <p>Input for workload creation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateWorkloadInput {
     /// <p>The name of the workload.</p>
     /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
     #[doc(hidden)]
-    pub workload_name: std::option::Option<std::string::String>,
+    pub workload_name: ::std::option::Option<::std::string::String>,
     /// <p>The description for the workload.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The environment for the workload.</p>
     #[doc(hidden)]
-    pub environment: std::option::Option<crate::types::WorkloadEnvironment>,
+    pub environment: ::std::option::Option<crate::types::WorkloadEnvironment>,
     /// <p>The list of Amazon Web Services account IDs associated with the workload.</p>
     #[doc(hidden)]
-    pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The list of Amazon Web Services Regions associated with the workload, for example, <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
     #[doc(hidden)]
-    pub aws_regions: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub aws_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> The list of non-Amazon Web Services Regions associated with the workload.</p>
     #[doc(hidden)]
-    pub non_aws_regions: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub non_aws_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The priorities of the pillars, which are used to order items in the improvement plan. Each pillar is represented by its <code>PillarReviewSummary$PillarId</code>.</p>
     #[doc(hidden)]
-    pub pillar_priorities: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub pillar_priorities: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The URL of the architectural design for the workload.</p>
     #[doc(hidden)]
-    pub architectural_design: std::option::Option<std::string::String>,
+    pub architectural_design: ::std::option::Option<::std::string::String>,
     /// <p>The review owner of the workload. The name, email address, or identifier for the primary group or individual that owns the workload review process.</p>
     #[doc(hidden)]
-    pub review_owner: std::option::Option<std::string::String>,
+    pub review_owner: ::std::option::Option<::std::string::String>,
     /// <p>The industry type for the workload.</p>
     /// <p>If specified, must be one of the following:</p>
     /// <ul>
@@ -64,69 +64,70 @@ pub struct CreateWorkloadInput {
     /// <li> <p> <code>Other</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub industry_type: std::option::Option<std::string::String>,
+    pub industry_type: ::std::option::Option<::std::string::String>,
     /// <p>The industry for the workload.</p>
     #[doc(hidden)]
-    pub industry: std::option::Option<std::string::String>,
+    pub industry: ::std::option::Option<::std::string::String>,
     /// <p>The list of lenses associated with the workload. Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     #[doc(hidden)]
-    pub lenses: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub lenses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The notes associated with the workload.</p>
     #[doc(hidden)]
-    pub notes: std::option::Option<std::string::String>,
+    pub notes: ::std::option::Option<::std::string::String>,
     /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
     /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important>
     /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
     /// </important>
     #[doc(hidden)]
-    pub client_request_token: std::option::Option<std::string::String>,
+    pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>The tags to be associated with the workload.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>Well-Architected discovery configuration settings associated to the workload.</p>
     #[doc(hidden)]
-    pub discovery_config: std::option::Option<crate::types::WorkloadDiscoveryConfig>,
+    pub discovery_config: ::std::option::Option<crate::types::WorkloadDiscoveryConfig>,
     /// <p>List of AppRegistry application ARNs associated to the workload.</p>
     #[doc(hidden)]
-    pub applications: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub applications: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CreateWorkloadInput {
     /// <p>The name of the workload.</p>
     /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
-    pub fn workload_name(&self) -> std::option::Option<&str> {
+    pub fn workload_name(&self) -> ::std::option::Option<&str> {
         self.workload_name.as_deref()
     }
     /// <p>The description for the workload.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The environment for the workload.</p>
-    pub fn environment(&self) -> std::option::Option<&crate::types::WorkloadEnvironment> {
+    pub fn environment(&self) -> ::std::option::Option<&crate::types::WorkloadEnvironment> {
         self.environment.as_ref()
     }
     /// <p>The list of Amazon Web Services account IDs associated with the workload.</p>
-    pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn account_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.account_ids.as_deref()
     }
     /// <p>The list of Amazon Web Services Regions associated with the workload, for example, <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
-    pub fn aws_regions(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn aws_regions(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.aws_regions.as_deref()
     }
     /// <p> The list of non-Amazon Web Services Regions associated with the workload.</p>
-    pub fn non_aws_regions(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn non_aws_regions(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.non_aws_regions.as_deref()
     }
     /// <p>The priorities of the pillars, which are used to order items in the improvement plan. Each pillar is represented by its <code>PillarReviewSummary$PillarId</code>.</p>
-    pub fn pillar_priorities(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn pillar_priorities(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.pillar_priorities.as_deref()
     }
     /// <p>The URL of the architectural design for the workload.</p>
-    pub fn architectural_design(&self) -> std::option::Option<&str> {
+    pub fn architectural_design(&self) -> ::std::option::Option<&str> {
         self.architectural_design.as_deref()
     }
     /// <p>The review owner of the workload. The name, email address, or identifier for the primary group or individual that owns the workload review process.</p>
-    pub fn review_owner(&self) -> std::option::Option<&str> {
+    pub fn review_owner(&self) -> ::std::option::Option<&str> {
         self.review_owner.as_deref()
     }
     /// <p>The industry type for the workload.</p>
@@ -160,41 +161,44 @@ impl CreateWorkloadInput {
     /// <li> <p> <code>Travel, Transportation &amp; Logistics</code> </p> </li>
     /// <li> <p> <code>Other</code> </p> </li>
     /// </ul>
-    pub fn industry_type(&self) -> std::option::Option<&str> {
+    pub fn industry_type(&self) -> ::std::option::Option<&str> {
         self.industry_type.as_deref()
     }
     /// <p>The industry for the workload.</p>
-    pub fn industry(&self) -> std::option::Option<&str> {
+    pub fn industry(&self) -> ::std::option::Option<&str> {
         self.industry.as_deref()
     }
     /// <p>The list of lenses associated with the workload. Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
-    pub fn lenses(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn lenses(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.lenses.as_deref()
     }
     /// <p>The notes associated with the workload.</p>
-    pub fn notes(&self) -> std::option::Option<&str> {
+    pub fn notes(&self) -> ::std::option::Option<&str> {
         self.notes.as_deref()
     }
     /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
     /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important>
     /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
     /// </important>
-    pub fn client_request_token(&self) -> std::option::Option<&str> {
+    pub fn client_request_token(&self) -> ::std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
     /// <p>The tags to be associated with the workload.</p>
     pub fn tags(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.tags.as_ref()
     }
     /// <p>Well-Architected discovery configuration settings associated to the workload.</p>
-    pub fn discovery_config(&self) -> std::option::Option<&crate::types::WorkloadDiscoveryConfig> {
+    pub fn discovery_config(
+        &self,
+    ) -> ::std::option::Option<&crate::types::WorkloadDiscoveryConfig> {
         self.discovery_config.as_ref()
     }
     /// <p>List of AppRegistry application ARNs associated to the workload.</p>
-    pub fn applications(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn applications(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.applications.as_deref()
     }
 }
@@ -207,59 +211,68 @@ impl CreateWorkloadInput {
 
 /// A builder for [`CreateWorkloadInput`](crate::operation::create_workload::CreateWorkloadInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateWorkloadInputBuilder {
-    pub(crate) workload_name: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) environment: std::option::Option<crate::types::WorkloadEnvironment>,
-    pub(crate) account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) aws_regions: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) non_aws_regions: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) pillar_priorities: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) architectural_design: std::option::Option<std::string::String>,
-    pub(crate) review_owner: std::option::Option<std::string::String>,
-    pub(crate) industry_type: std::option::Option<std::string::String>,
-    pub(crate) industry: std::option::Option<std::string::String>,
-    pub(crate) lenses: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) notes: std::option::Option<std::string::String>,
-    pub(crate) client_request_token: std::option::Option<std::string::String>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) discovery_config: std::option::Option<crate::types::WorkloadDiscoveryConfig>,
-    pub(crate) applications: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) workload_name: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) environment: ::std::option::Option<crate::types::WorkloadEnvironment>,
+    pub(crate) account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) aws_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) non_aws_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) pillar_priorities: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) architectural_design: ::std::option::Option<::std::string::String>,
+    pub(crate) review_owner: ::std::option::Option<::std::string::String>,
+    pub(crate) industry_type: ::std::option::Option<::std::string::String>,
+    pub(crate) industry: ::std::option::Option<::std::string::String>,
+    pub(crate) lenses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) notes: ::std::option::Option<::std::string::String>,
+    pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) discovery_config: ::std::option::Option<crate::types::WorkloadDiscoveryConfig>,
+    pub(crate) applications: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CreateWorkloadInputBuilder {
     /// <p>The name of the workload.</p>
     /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
-    pub fn workload_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.workload_name = Some(input.into());
+    pub fn workload_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.workload_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the workload.</p>
     /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
-    pub fn set_workload_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_workload_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.workload_name = input;
         self
     }
     /// <p>The description for the workload.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description for the workload.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>The environment for the workload.</p>
     pub fn environment(mut self, input: crate::types::WorkloadEnvironment) -> Self {
-        self.environment = Some(input);
+        self.environment = ::std::option::Option::Some(input);
         self
     }
     /// <p>The environment for the workload.</p>
     pub fn set_environment(
         mut self,
-        input: std::option::Option<crate::types::WorkloadEnvironment>,
+        input: ::std::option::Option<crate::types::WorkloadEnvironment>,
     ) -> Self {
         self.environment = input;
         self
@@ -269,16 +282,16 @@ impl CreateWorkloadInputBuilder {
     /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
     ///
     /// <p>The list of Amazon Web Services account IDs associated with the workload.</p>
-    pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn account_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.account_ids.unwrap_or_default();
         v.push(input.into());
-        self.account_ids = Some(v);
+        self.account_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of Amazon Web Services account IDs associated with the workload.</p>
     pub fn set_account_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.account_ids = input;
         self
@@ -288,16 +301,16 @@ impl CreateWorkloadInputBuilder {
     /// To override the contents of this collection use [`set_aws_regions`](Self::set_aws_regions).
     ///
     /// <p>The list of Amazon Web Services Regions associated with the workload, for example, <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
-    pub fn aws_regions(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn aws_regions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.aws_regions.unwrap_or_default();
         v.push(input.into());
-        self.aws_regions = Some(v);
+        self.aws_regions = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of Amazon Web Services Regions associated with the workload, for example, <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
     pub fn set_aws_regions(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.aws_regions = input;
         self
@@ -307,16 +320,19 @@ impl CreateWorkloadInputBuilder {
     /// To override the contents of this collection use [`set_non_aws_regions`](Self::set_non_aws_regions).
     ///
     /// <p> The list of non-Amazon Web Services Regions associated with the workload.</p>
-    pub fn non_aws_regions(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn non_aws_regions(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.non_aws_regions.unwrap_or_default();
         v.push(input.into());
-        self.non_aws_regions = Some(v);
+        self.non_aws_regions = ::std::option::Option::Some(v);
         self
     }
     /// <p> The list of non-Amazon Web Services Regions associated with the workload.</p>
     pub fn set_non_aws_regions(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.non_aws_regions = input;
         self
@@ -326,40 +342,46 @@ impl CreateWorkloadInputBuilder {
     /// To override the contents of this collection use [`set_pillar_priorities`](Self::set_pillar_priorities).
     ///
     /// <p>The priorities of the pillars, which are used to order items in the improvement plan. Each pillar is represented by its <code>PillarReviewSummary$PillarId</code>.</p>
-    pub fn pillar_priorities(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn pillar_priorities(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.pillar_priorities.unwrap_or_default();
         v.push(input.into());
-        self.pillar_priorities = Some(v);
+        self.pillar_priorities = ::std::option::Option::Some(v);
         self
     }
     /// <p>The priorities of the pillars, which are used to order items in the improvement plan. Each pillar is represented by its <code>PillarReviewSummary$PillarId</code>.</p>
     pub fn set_pillar_priorities(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.pillar_priorities = input;
         self
     }
     /// <p>The URL of the architectural design for the workload.</p>
-    pub fn architectural_design(mut self, input: impl Into<std::string::String>) -> Self {
-        self.architectural_design = Some(input.into());
+    pub fn architectural_design(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.architectural_design = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL of the architectural design for the workload.</p>
     pub fn set_architectural_design(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.architectural_design = input;
         self
     }
     /// <p>The review owner of the workload. The name, email address, or identifier for the primary group or individual that owns the workload review process.</p>
-    pub fn review_owner(mut self, input: impl Into<std::string::String>) -> Self {
-        self.review_owner = Some(input.into());
+    pub fn review_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.review_owner = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The review owner of the workload. The name, email address, or identifier for the primary group or individual that owns the workload review process.</p>
-    pub fn set_review_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_review_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.review_owner = input;
         self
     }
@@ -394,8 +416,11 @@ impl CreateWorkloadInputBuilder {
     /// <li> <p> <code>Travel, Transportation &amp; Logistics</code> </p> </li>
     /// <li> <p> <code>Other</code> </p> </li>
     /// </ul>
-    pub fn industry_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.industry_type = Some(input.into());
+    pub fn industry_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.industry_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The industry type for the workload.</p>
@@ -429,17 +454,20 @@ impl CreateWorkloadInputBuilder {
     /// <li> <p> <code>Travel, Transportation &amp; Logistics</code> </p> </li>
     /// <li> <p> <code>Other</code> </p> </li>
     /// </ul>
-    pub fn set_industry_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_industry_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.industry_type = input;
         self
     }
     /// <p>The industry for the workload.</p>
-    pub fn industry(mut self, input: impl Into<std::string::String>) -> Self {
-        self.industry = Some(input.into());
+    pub fn industry(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.industry = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The industry for the workload.</p>
-    pub fn set_industry(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_industry(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.industry = input;
         self
     }
@@ -448,27 +476,27 @@ impl CreateWorkloadInputBuilder {
     /// To override the contents of this collection use [`set_lenses`](Self::set_lenses).
     ///
     /// <p>The list of lenses associated with the workload. Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
-    pub fn lenses(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn lenses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.lenses.unwrap_or_default();
         v.push(input.into());
-        self.lenses = Some(v);
+        self.lenses = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of lenses associated with the workload. Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub fn set_lenses(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.lenses = input;
         self
     }
     /// <p>The notes associated with the workload.</p>
-    pub fn notes(mut self, input: impl Into<std::string::String>) -> Self {
-        self.notes = Some(input.into());
+    pub fn notes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.notes = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The notes associated with the workload.</p>
-    pub fn set_notes(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_notes(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.notes = input;
         self
     }
@@ -476,8 +504,11 @@ impl CreateWorkloadInputBuilder {
     /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important>
     /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
     /// </important>
-    pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.client_request_token = Some(input.into());
+    pub fn client_request_token(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.client_request_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
@@ -486,7 +517,7 @@ impl CreateWorkloadInputBuilder {
     /// </important>
     pub fn set_client_request_token(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.client_request_token = input;
         self
@@ -498,19 +529,19 @@ impl CreateWorkloadInputBuilder {
     /// <p>The tags to be associated with the workload.</p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
+        self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags to be associated with the workload.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.tags = input;
@@ -518,13 +549,13 @@ impl CreateWorkloadInputBuilder {
     }
     /// <p>Well-Architected discovery configuration settings associated to the workload.</p>
     pub fn discovery_config(mut self, input: crate::types::WorkloadDiscoveryConfig) -> Self {
-        self.discovery_config = Some(input);
+        self.discovery_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>Well-Architected discovery configuration settings associated to the workload.</p>
     pub fn set_discovery_config(
         mut self,
-        input: std::option::Option<crate::types::WorkloadDiscoveryConfig>,
+        input: ::std::option::Option<crate::types::WorkloadDiscoveryConfig>,
     ) -> Self {
         self.discovery_config = input;
         self
@@ -534,16 +565,16 @@ impl CreateWorkloadInputBuilder {
     /// To override the contents of this collection use [`set_applications`](Self::set_applications).
     ///
     /// <p>List of AppRegistry application ARNs associated to the workload.</p>
-    pub fn applications(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn applications(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.applications.unwrap_or_default();
         v.push(input.into());
-        self.applications = Some(v);
+        self.applications = ::std::option::Option::Some(v);
         self
     }
     /// <p>List of AppRegistry application ARNs associated to the workload.</p>
     pub fn set_applications(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.applications = input;
         self
@@ -551,11 +582,11 @@ impl CreateWorkloadInputBuilder {
     /// Consumes the builder and constructs a [`CreateWorkloadInput`](crate::operation::create_workload::CreateWorkloadInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::create_workload::CreateWorkloadInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::create_workload::CreateWorkloadInput {
+        ::std::result::Result::Ok(crate::operation::create_workload::CreateWorkloadInput {
             workload_name: self.workload_name,
             description: self.description,
             environment: self.environment,

@@ -40,13 +40,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ReasonCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,7 +60,7 @@ pub enum ReasonCode {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ReasonCode {
+impl ::std::convert::From<&str> for ReasonCode {
     fn from(s: &str) -> Self {
         match s {
             "AWS_SERVICE_ACCESS_DISABLED" => ReasonCode::AwsServiceAccessDisabled,
@@ -73,11 +73,11 @@ impl std::convert::From<&str> for ReasonCode {
         }
     }
 }
-impl std::str::FromStr for ReasonCode {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ReasonCode {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ReasonCode::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ReasonCode::from(s))
     }
 }
 impl ReasonCode {
@@ -103,7 +103,7 @@ impl ReasonCode {
         ]
     }
 }
-impl AsRef<str> for ReasonCode {
+impl ::std::convert::AsRef<str> for ReasonCode {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

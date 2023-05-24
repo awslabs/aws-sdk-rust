@@ -2,7 +2,7 @@
 
 /// <p>An object that contains information about your account details review.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReviewDetails {
     /// <p>The status of the latest review of your account. The status can be one of the following:</p>
     /// <ul>
@@ -12,10 +12,10 @@ pub struct ReviewDetails {
     /// <li> <p> <code>FAILED</code> – An internal error occurred and we didn't receive your appeal. You can submit your appeal again.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::ReviewStatus>,
+    pub status: ::std::option::Option<crate::types::ReviewStatus>,
     /// <p>The associated support center case ID (if any).</p>
     #[doc(hidden)]
-    pub case_id: std::option::Option<std::string::String>,
+    pub case_id: ::std::option::Option<::std::string::String>,
 }
 impl ReviewDetails {
     /// <p>The status of the latest review of your account. The status can be one of the following:</p>
@@ -25,11 +25,11 @@ impl ReviewDetails {
     /// <li> <p> <code>DENIED</code> – Your appeal has been reviewed and your production access has been denied.</p> </li>
     /// <li> <p> <code>FAILED</code> – An internal error occurred and we didn't receive your appeal. You can submit your appeal again.</p> </li>
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::types::ReviewStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::ReviewStatus> {
         self.status.as_ref()
     }
     /// <p>The associated support center case ID (if any).</p>
-    pub fn case_id(&self) -> std::option::Option<&str> {
+    pub fn case_id(&self) -> ::std::option::Option<&str> {
         self.case_id.as_deref()
     }
 }
@@ -42,10 +42,12 @@ impl ReviewDetails {
 
 /// A builder for [`ReviewDetails`](crate::types::ReviewDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ReviewDetailsBuilder {
-    pub(crate) status: std::option::Option<crate::types::ReviewStatus>,
-    pub(crate) case_id: std::option::Option<std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::ReviewStatus>,
+    pub(crate) case_id: ::std::option::Option<::std::string::String>,
 }
 impl ReviewDetailsBuilder {
     /// <p>The status of the latest review of your account. The status can be one of the following:</p>
@@ -56,7 +58,7 @@ impl ReviewDetailsBuilder {
     /// <li> <p> <code>FAILED</code> – An internal error occurred and we didn't receive your appeal. You can submit your appeal again.</p> </li>
     /// </ul>
     pub fn status(mut self, input: crate::types::ReviewStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the latest review of your account. The status can be one of the following:</p>
@@ -66,17 +68,17 @@ impl ReviewDetailsBuilder {
     /// <li> <p> <code>DENIED</code> – Your appeal has been reviewed and your production access has been denied.</p> </li>
     /// <li> <p> <code>FAILED</code> – An internal error occurred and we didn't receive your appeal. You can submit your appeal again.</p> </li>
     /// </ul>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::ReviewStatus>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ReviewStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>The associated support center case ID (if any).</p>
-    pub fn case_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.case_id = Some(input.into());
+    pub fn case_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.case_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The associated support center case ID (if any).</p>
-    pub fn set_case_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_case_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.case_id = input;
         self
     }

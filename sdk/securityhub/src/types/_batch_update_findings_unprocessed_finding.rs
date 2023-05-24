@@ -2,11 +2,11 @@
 
 /// <p>A finding from a <code>BatchUpdateFindings</code> request that Security Hub was unable to update.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchUpdateFindingsUnprocessedFinding {
     /// <p>The identifier of the finding that was not updated.</p>
     #[doc(hidden)]
-    pub finding_identifier: std::option::Option<crate::types::AwsSecurityFindingIdentifier>,
+    pub finding_identifier: ::std::option::Option<crate::types::AwsSecurityFindingIdentifier>,
     /// <p>The code associated with the error. Possible values are:</p>
     /// <ul>
     /// <li> <p> <code>ConcurrentUpdateError</code> - Another request attempted to update the finding while this request was being processed. This error may also occur if you call <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateFindings.html"> <code>BatchUpdateFindings</code> </a> and <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchImportFindings.html"> <code>BatchImportFindings</code> </a> at the same time.</p> </li>
@@ -17,7 +17,7 @@ pub struct BatchUpdateFindingsUnprocessedFinding {
     /// <li> <p> <code>InvalidInput</code> - The finding update contained an invalid value that did not satisfy the <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">Amazon Web Services Security Finding Format</a> syntax.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub error_code: std::option::Option<std::string::String>,
+    pub error_code: ::std::option::Option<::std::string::String>,
     /// <p>The message associated with the error. Possible values are:</p>
     /// <ul>
     /// <li> <p> <code>Concurrent finding updates detected</code> </p> </li>
@@ -28,13 +28,13 @@ pub struct BatchUpdateFindingsUnprocessedFinding {
     /// <li> <p> <code>Invalid Input</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub error_message: std::option::Option<std::string::String>,
+    pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl BatchUpdateFindingsUnprocessedFinding {
     /// <p>The identifier of the finding that was not updated.</p>
     pub fn finding_identifier(
         &self,
-    ) -> std::option::Option<&crate::types::AwsSecurityFindingIdentifier> {
+    ) -> ::std::option::Option<&crate::types::AwsSecurityFindingIdentifier> {
         self.finding_identifier.as_ref()
     }
     /// <p>The code associated with the error. Possible values are:</p>
@@ -46,7 +46,7 @@ impl BatchUpdateFindingsUnprocessedFinding {
     /// <li> <p> <code>InternalFailure</code> - An internal service failure occurred when updating the finding.</p> </li>
     /// <li> <p> <code>InvalidInput</code> - The finding update contained an invalid value that did not satisfy the <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">Amazon Web Services Security Finding Format</a> syntax.</p> </li>
     /// </ul>
-    pub fn error_code(&self) -> std::option::Option<&str> {
+    pub fn error_code(&self) -> ::std::option::Option<&str> {
         self.error_code.as_deref()
     }
     /// <p>The message associated with the error. Possible values are:</p>
@@ -58,7 +58,7 @@ impl BatchUpdateFindingsUnprocessedFinding {
     /// <li> <p> <code>Internal service failure</code> </p> </li>
     /// <li> <p> <code>Invalid Input</code> </p> </li>
     /// </ul>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<&str> {
         self.error_message.as_deref()
     }
 }
@@ -71,22 +71,25 @@ impl BatchUpdateFindingsUnprocessedFinding {
 
 /// A builder for [`BatchUpdateFindingsUnprocessedFinding`](crate::types::BatchUpdateFindingsUnprocessedFinding).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BatchUpdateFindingsUnprocessedFindingBuilder {
-    pub(crate) finding_identifier: std::option::Option<crate::types::AwsSecurityFindingIdentifier>,
-    pub(crate) error_code: std::option::Option<std::string::String>,
-    pub(crate) error_message: std::option::Option<std::string::String>,
+    pub(crate) finding_identifier:
+        ::std::option::Option<crate::types::AwsSecurityFindingIdentifier>,
+    pub(crate) error_code: ::std::option::Option<::std::string::String>,
+    pub(crate) error_message: ::std::option::Option<::std::string::String>,
 }
 impl BatchUpdateFindingsUnprocessedFindingBuilder {
     /// <p>The identifier of the finding that was not updated.</p>
     pub fn finding_identifier(mut self, input: crate::types::AwsSecurityFindingIdentifier) -> Self {
-        self.finding_identifier = Some(input);
+        self.finding_identifier = ::std::option::Option::Some(input);
         self
     }
     /// <p>The identifier of the finding that was not updated.</p>
     pub fn set_finding_identifier(
         mut self,
-        input: std::option::Option<crate::types::AwsSecurityFindingIdentifier>,
+        input: ::std::option::Option<crate::types::AwsSecurityFindingIdentifier>,
     ) -> Self {
         self.finding_identifier = input;
         self
@@ -100,8 +103,8 @@ impl BatchUpdateFindingsUnprocessedFindingBuilder {
     /// <li> <p> <code>InternalFailure</code> - An internal service failure occurred when updating the finding.</p> </li>
     /// <li> <p> <code>InvalidInput</code> - The finding update contained an invalid value that did not satisfy the <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">Amazon Web Services Security Finding Format</a> syntax.</p> </li>
     /// </ul>
-    pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
-        self.error_code = Some(input.into());
+    pub fn error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.error_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The code associated with the error. Possible values are:</p>
@@ -113,7 +116,7 @@ impl BatchUpdateFindingsUnprocessedFindingBuilder {
     /// <li> <p> <code>InternalFailure</code> - An internal service failure occurred when updating the finding.</p> </li>
     /// <li> <p> <code>InvalidInput</code> - The finding update contained an invalid value that did not satisfy the <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">Amazon Web Services Security Finding Format</a> syntax.</p> </li>
     /// </ul>
-    pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_code = input;
         self
     }
@@ -126,8 +129,11 @@ impl BatchUpdateFindingsUnprocessedFindingBuilder {
     /// <li> <p> <code>Internal service failure</code> </p> </li>
     /// <li> <p> <code>Invalid Input</code> </p> </li>
     /// </ul>
-    pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.error_message = Some(input.into());
+    pub fn error_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The message associated with the error. Possible values are:</p>
@@ -139,7 +145,10 @@ impl BatchUpdateFindingsUnprocessedFindingBuilder {
     /// <li> <p> <code>Internal service failure</code> </p> </li>
     /// <li> <p> <code>Invalid Input</code> </p> </li>
     /// </ul>
-    pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_error_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.error_message = input;
         self
     }

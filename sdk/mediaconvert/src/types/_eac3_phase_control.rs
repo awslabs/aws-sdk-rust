@@ -38,13 +38,13 @@
 /// Controls the amount of phase-shift applied to the surround channels. Only used for 3/2 coding mode.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum Eac3PhaseControl {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum Eac3PhaseControl {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for Eac3PhaseControl {
+impl ::std::convert::From<&str> for Eac3PhaseControl {
     fn from(s: &str) -> Self {
         match s {
             "NO_SHIFT" => Eac3PhaseControl::NoShift,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for Eac3PhaseControl {
         }
     }
 }
-impl std::str::FromStr for Eac3PhaseControl {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for Eac3PhaseControl {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Eac3PhaseControl::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(Eac3PhaseControl::from(s))
     }
 }
 impl Eac3PhaseControl {
@@ -86,7 +86,7 @@ impl Eac3PhaseControl {
         &["NO_SHIFT", "SHIFT_90_DEGREES"]
     }
 }
-impl AsRef<str> for Eac3PhaseControl {
+impl ::std::convert::AsRef<str> for Eac3PhaseControl {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

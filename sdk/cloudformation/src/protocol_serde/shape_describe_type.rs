@@ -2,7 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_type_http_error(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::describe_type::DescribeTypeOutput,
@@ -15,7 +15,7 @@ pub fn de_describe_type_http_error(
         _response_body,
     )
     .map_err(crate::operation::describe_type::DescribeTypeError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
+    generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
@@ -65,7 +65,7 @@ pub fn de_describe_type_http_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_type_http_response_with_props(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::describe_type::DescribeTypeOutput,
@@ -79,7 +79,7 @@ pub fn de_describe_type_http_response_with_props(
             crate::protocol_serde::shape_describe_type::de_describe_type(_response_body, output)
                 .map_err(crate::operation::describe_type::DescribeTypeError::unhandled)?;
         output._set_request_id(
-            aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
+            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
         );
         output.build()
     })
@@ -91,16 +91,16 @@ pub fn de_describe_type(
     mut builder: crate::operation::describe_type::builders::DescribeTypeOutputBuilder,
 ) -> Result<
     crate::operation::describe_type::builders::DescribeTypeOutputBuilder,
-    aws_smithy_xml::decode::XmlDecodeError,
+    ::aws_smithy_xml::decode::XmlDecodeError,
 > {
-    let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
+    let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeTypeResponse")) {
-        return Err(aws_smithy_xml::decode::XmlDecodeError::custom(format!(
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeTypeResponse got {:?}",
             start_el
         )));
@@ -108,7 +108,7 @@ pub fn de_describe_type(
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("DescribeTypeResult")) {
-            return Err(aws_smithy_xml::decode::XmlDecodeError::custom(format!(
+            return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
                 "invalid result, expected DescribeTypeResult got {:?}",
                 start_el
             )));
@@ -118,8 +118,8 @@ pub fn de_describe_type(
             s if s.matches("Arn") /* Arn com.amazonaws.cloudformation.synthetic#DescribeTypeOutput$Arn */ =>  {
                 let var_1 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -131,9 +131,9 @@ pub fn de_describe_type(
             s if s.matches("Type") /* Type com.amazonaws.cloudformation.synthetic#DescribeTypeOutput$Type */ =>  {
                 let var_2 =
                     Some(
-                        Result::<crate::types::RegistryType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                        Result::<crate::types::RegistryType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::RegistryType::from(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )
                         ?
@@ -145,8 +145,8 @@ pub fn de_describe_type(
             s if s.matches("TypeName") /* TypeName com.amazonaws.cloudformation.synthetic#DescribeTypeOutput$TypeName */ =>  {
                 let var_3 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -158,8 +158,8 @@ pub fn de_describe_type(
             s if s.matches("DefaultVersionId") /* DefaultVersionId com.amazonaws.cloudformation.synthetic#DescribeTypeOutput$DefaultVersionId */ =>  {
                 let var_4 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -172,10 +172,10 @@ pub fn de_describe_type(
                 let var_5 =
                     Some(
                          {
-                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
-                            .map_err(|_|aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.cloudformation#IsDefaultVersion`)"))
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.cloudformation#IsDefaultVersion`)"))
                         }
                         ?
                     )
@@ -186,9 +186,9 @@ pub fn de_describe_type(
             s if s.matches("TypeTestsStatus") /* TypeTestsStatus com.amazonaws.cloudformation.synthetic#DescribeTypeOutput$TypeTestsStatus */ =>  {
                 let var_6 =
                     Some(
-                        Result::<crate::types::TypeTestsStatus, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                        Result::<crate::types::TypeTestsStatus, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::TypeTestsStatus::from(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )
                         ?
@@ -200,8 +200,8 @@ pub fn de_describe_type(
             s if s.matches("TypeTestsStatusDescription") /* TypeTestsStatusDescription com.amazonaws.cloudformation.synthetic#DescribeTypeOutput$TypeTestsStatusDescription */ =>  {
                 let var_7 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -213,8 +213,8 @@ pub fn de_describe_type(
             s if s.matches("Description") /* Description com.amazonaws.cloudformation.synthetic#DescribeTypeOutput$Description */ =>  {
                 let var_8 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -226,8 +226,8 @@ pub fn de_describe_type(
             s if s.matches("Schema") /* Schema com.amazonaws.cloudformation.synthetic#DescribeTypeOutput$Schema */ =>  {
                 let var_9 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -239,9 +239,9 @@ pub fn de_describe_type(
             s if s.matches("ProvisioningType") /* ProvisioningType com.amazonaws.cloudformation.synthetic#DescribeTypeOutput$ProvisioningType */ =>  {
                 let var_10 =
                     Some(
-                        Result::<crate::types::ProvisioningType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                        Result::<crate::types::ProvisioningType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::ProvisioningType::from(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )
                         ?
@@ -253,9 +253,9 @@ pub fn de_describe_type(
             s if s.matches("DeprecatedStatus") /* DeprecatedStatus com.amazonaws.cloudformation.synthetic#DescribeTypeOutput$DeprecatedStatus */ =>  {
                 let var_11 =
                     Some(
-                        Result::<crate::types::DeprecatedStatus, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                        Result::<crate::types::DeprecatedStatus, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::DeprecatedStatus::from(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )
                         ?
@@ -287,8 +287,8 @@ pub fn de_describe_type(
             s if s.matches("ExecutionRoleArn") /* ExecutionRoleArn com.amazonaws.cloudformation.synthetic#DescribeTypeOutput$ExecutionRoleArn */ =>  {
                 let var_14 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -300,9 +300,9 @@ pub fn de_describe_type(
             s if s.matches("Visibility") /* Visibility com.amazonaws.cloudformation.synthetic#DescribeTypeOutput$Visibility */ =>  {
                 let var_15 =
                     Some(
-                        Result::<crate::types::Visibility, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                        Result::<crate::types::Visibility, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::Visibility::from(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )
                         ?
@@ -314,8 +314,8 @@ pub fn de_describe_type(
             s if s.matches("SourceUrl") /* SourceUrl com.amazonaws.cloudformation.synthetic#DescribeTypeOutput$SourceUrl */ =>  {
                 let var_16 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -327,8 +327,8 @@ pub fn de_describe_type(
             s if s.matches("DocumentationUrl") /* DocumentationUrl com.amazonaws.cloudformation.synthetic#DescribeTypeOutput$DocumentationUrl */ =>  {
                 let var_17 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -340,11 +340,11 @@ pub fn de_describe_type(
             s if s.matches("LastUpdated") /* LastUpdated com.amazonaws.cloudformation.synthetic#DescribeTypeOutput$LastUpdated */ =>  {
                 let var_18 =
                     Some(
-                        aws_smithy_types::DateTime::from_str(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::date_time::Format::DateTimeWithOffset
+                        ::aws_smithy_types::DateTime::from_str(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            , ::aws_smithy_types::date_time::Format::DateTimeWithOffset
                         )
-                        .map_err(|_|aws_smithy_xml::decode::XmlDecodeError::custom("expected (timestamp: `com.amazonaws.cloudformation#Timestamp`)"))
+                        .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (timestamp: `com.amazonaws.cloudformation#Timestamp`)"))
                         ?
                     )
                 ;
@@ -354,11 +354,11 @@ pub fn de_describe_type(
             s if s.matches("TimeCreated") /* TimeCreated com.amazonaws.cloudformation.synthetic#DescribeTypeOutput$TimeCreated */ =>  {
                 let var_19 =
                     Some(
-                        aws_smithy_types::DateTime::from_str(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::date_time::Format::DateTimeWithOffset
+                        ::aws_smithy_types::DateTime::from_str(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            , ::aws_smithy_types::date_time::Format::DateTimeWithOffset
                         )
-                        .map_err(|_|aws_smithy_xml::decode::XmlDecodeError::custom("expected (timestamp: `com.amazonaws.cloudformation#Timestamp`)"))
+                        .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (timestamp: `com.amazonaws.cloudformation#Timestamp`)"))
                         ?
                     )
                 ;
@@ -368,8 +368,8 @@ pub fn de_describe_type(
             s if s.matches("ConfigurationSchema") /* ConfigurationSchema com.amazonaws.cloudformation.synthetic#DescribeTypeOutput$ConfigurationSchema */ =>  {
                 let var_20 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -381,8 +381,8 @@ pub fn de_describe_type(
             s if s.matches("PublisherId") /* PublisherId com.amazonaws.cloudformation.synthetic#DescribeTypeOutput$PublisherId */ =>  {
                 let var_21 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -394,8 +394,8 @@ pub fn de_describe_type(
             s if s.matches("OriginalTypeName") /* OriginalTypeName com.amazonaws.cloudformation.synthetic#DescribeTypeOutput$OriginalTypeName */ =>  {
                 let var_22 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -407,8 +407,8 @@ pub fn de_describe_type(
             s if s.matches("OriginalTypeArn") /* OriginalTypeArn com.amazonaws.cloudformation.synthetic#DescribeTypeOutput$OriginalTypeArn */ =>  {
                 let var_23 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -420,8 +420,8 @@ pub fn de_describe_type(
             s if s.matches("PublicVersionNumber") /* PublicVersionNumber com.amazonaws.cloudformation.synthetic#DescribeTypeOutput$PublicVersionNumber */ =>  {
                 let var_24 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -433,8 +433,8 @@ pub fn de_describe_type(
             s if s.matches("LatestPublicVersion") /* LatestPublicVersion com.amazonaws.cloudformation.synthetic#DescribeTypeOutput$LatestPublicVersion */ =>  {
                 let var_25 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -447,10 +447,10 @@ pub fn de_describe_type(
                 let var_26 =
                     Some(
                          {
-                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
-                            .map_err(|_|aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.cloudformation#IsActivated`)"))
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.cloudformation#IsActivated`)"))
                         }
                         ?
                     )
@@ -462,10 +462,10 @@ pub fn de_describe_type(
                 let var_27 =
                     Some(
                          {
-                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
-                            .map_err(|_|aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.cloudformation#AutoUpdate`)"))
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.cloudformation#AutoUpdate`)"))
                         }
                         ?
                     )
@@ -477,7 +477,7 @@ pub fn de_describe_type(
         }
         }
     } else {
-        return Err(aws_smithy_xml::decode::XmlDecodeError::custom(
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(
             "expected DescribeTypeResult tag",
         ));
     };

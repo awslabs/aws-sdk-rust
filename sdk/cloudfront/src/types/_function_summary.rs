@@ -2,36 +2,36 @@
 
 /// <p>Contains configuration information and metadata about a CloudFront function.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FunctionSummary {
     /// <p>The name of the CloudFront function.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the CloudFront function.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<std::string::String>,
+    pub status: ::std::option::Option<::std::string::String>,
     /// <p>Contains configuration information about a CloudFront function.</p>
     #[doc(hidden)]
-    pub function_config: std::option::Option<crate::types::FunctionConfig>,
+    pub function_config: ::std::option::Option<crate::types::FunctionConfig>,
     /// <p>Contains metadata about a CloudFront function.</p>
     #[doc(hidden)]
-    pub function_metadata: std::option::Option<crate::types::FunctionMetadata>,
+    pub function_metadata: ::std::option::Option<crate::types::FunctionMetadata>,
 }
 impl FunctionSummary {
     /// <p>The name of the CloudFront function.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The status of the CloudFront function.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
     /// <p>Contains configuration information about a CloudFront function.</p>
-    pub fn function_config(&self) -> std::option::Option<&crate::types::FunctionConfig> {
+    pub fn function_config(&self) -> ::std::option::Option<&crate::types::FunctionConfig> {
         self.function_config.as_ref()
     }
     /// <p>Contains metadata about a CloudFront function.</p>
-    pub fn function_metadata(&self) -> std::option::Option<&crate::types::FunctionMetadata> {
+    pub fn function_metadata(&self) -> ::std::option::Option<&crate::types::FunctionMetadata> {
         self.function_metadata.as_ref()
     }
 }
@@ -44,56 +44,58 @@ impl FunctionSummary {
 
 /// A builder for [`FunctionSummary`](crate::types::FunctionSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FunctionSummaryBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<std::string::String>,
-    pub(crate) function_config: std::option::Option<crate::types::FunctionConfig>,
-    pub(crate) function_metadata: std::option::Option<crate::types::FunctionMetadata>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<::std::string::String>,
+    pub(crate) function_config: ::std::option::Option<crate::types::FunctionConfig>,
+    pub(crate) function_metadata: ::std::option::Option<crate::types::FunctionMetadata>,
 }
 impl FunctionSummaryBuilder {
     /// <p>The name of the CloudFront function.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the CloudFront function.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The status of the CloudFront function.</p>
-    pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status = Some(input.into());
+    pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the CloudFront function.</p>
-    pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }
     /// <p>Contains configuration information about a CloudFront function.</p>
     pub fn function_config(mut self, input: crate::types::FunctionConfig) -> Self {
-        self.function_config = Some(input);
+        self.function_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains configuration information about a CloudFront function.</p>
     pub fn set_function_config(
         mut self,
-        input: std::option::Option<crate::types::FunctionConfig>,
+        input: ::std::option::Option<crate::types::FunctionConfig>,
     ) -> Self {
         self.function_config = input;
         self
     }
     /// <p>Contains metadata about a CloudFront function.</p>
     pub fn function_metadata(mut self, input: crate::types::FunctionMetadata) -> Self {
-        self.function_metadata = Some(input);
+        self.function_metadata = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains metadata about a CloudFront function.</p>
     pub fn set_function_metadata(
         mut self,
-        input: std::option::Option<crate::types::FunctionMetadata>,
+        input: ::std::option::Option<crate::types::FunctionMetadata>,
     ) -> Self {
         self.function_metadata = input;
         self

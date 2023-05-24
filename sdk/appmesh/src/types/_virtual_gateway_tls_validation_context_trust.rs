@@ -2,7 +2,7 @@
 
 /// <p>An object that represents a Transport Layer Security (TLS) validation context trust.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum VirtualGatewayTlsValidationContextTrust {
     /// <p>A reference to an object that represents a Transport Layer Security (TLS) validation context trust for an Certificate Manager certificate.</p>
     Acm(crate::types::VirtualGatewayTlsValidationContextAcmTrust),
@@ -25,11 +25,12 @@ impl VirtualGatewayTlsValidationContextTrust {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_acm(
         &self,
-    ) -> std::result::Result<&crate::types::VirtualGatewayTlsValidationContextAcmTrust, &Self> {
+    ) -> ::std::result::Result<&crate::types::VirtualGatewayTlsValidationContextAcmTrust, &Self>
+    {
         if let VirtualGatewayTlsValidationContextTrust::Acm(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Acm`](crate::types::VirtualGatewayTlsValidationContextTrust::Acm).
@@ -40,12 +41,12 @@ impl VirtualGatewayTlsValidationContextTrust {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_file(
         &self,
-    ) -> std::result::Result<&crate::types::VirtualGatewayTlsValidationContextFileTrust, &Self>
+    ) -> ::std::result::Result<&crate::types::VirtualGatewayTlsValidationContextFileTrust, &Self>
     {
         if let VirtualGatewayTlsValidationContextTrust::File(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`File`](crate::types::VirtualGatewayTlsValidationContextTrust::File).
@@ -56,11 +57,12 @@ impl VirtualGatewayTlsValidationContextTrust {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_sds(
         &self,
-    ) -> std::result::Result<&crate::types::VirtualGatewayTlsValidationContextSdsTrust, &Self> {
+    ) -> ::std::result::Result<&crate::types::VirtualGatewayTlsValidationContextSdsTrust, &Self>
+    {
         if let VirtualGatewayTlsValidationContextTrust::Sds(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Sds`](crate::types::VirtualGatewayTlsValidationContextTrust::Sds).

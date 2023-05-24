@@ -2,15 +2,15 @@
 
 /// <p>A transform operation that projects columns. Operations that come after a projection can only refer to projected columns.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProjectOperation {
     /// <p>Projected columns.</p>
     #[doc(hidden)]
-    pub projected_columns: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub projected_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ProjectOperation {
     /// <p>Projected columns.</p>
-    pub fn projected_columns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn projected_columns(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.projected_columns.as_deref()
     }
 }
@@ -23,9 +23,11 @@ impl ProjectOperation {
 
 /// A builder for [`ProjectOperation`](crate::types::ProjectOperation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ProjectOperationBuilder {
-    pub(crate) projected_columns: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) projected_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ProjectOperationBuilder {
     /// Appends an item to `projected_columns`.
@@ -33,16 +35,19 @@ impl ProjectOperationBuilder {
     /// To override the contents of this collection use [`set_projected_columns`](Self::set_projected_columns).
     ///
     /// <p>Projected columns.</p>
-    pub fn projected_columns(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn projected_columns(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.projected_columns.unwrap_or_default();
         v.push(input.into());
-        self.projected_columns = Some(v);
+        self.projected_columns = ::std::option::Option::Some(v);
         self
     }
     /// <p>Projected columns.</p>
     pub fn set_projected_columns(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.projected_columns = input;
         self

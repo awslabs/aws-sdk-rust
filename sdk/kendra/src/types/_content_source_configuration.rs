@@ -2,25 +2,25 @@
 
 /// <p>Provides the configuration information for your content sources, such as data sources, FAQs, and content indexed directly via <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_BatchPutDocument.html">BatchPutDocument</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContentSourceConfiguration {
     /// <p>The identifier of the data sources you want to use for your Amazon Kendra experience.</p>
     #[doc(hidden)]
-    pub data_source_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub data_source_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The identifier of the FAQs that you want to use for your Amazon Kendra experience.</p>
     #[doc(hidden)]
-    pub faq_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub faq_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> <code>TRUE</code> to use documents you indexed directly using the <code>BatchPutDocument</code> API.</p>
     #[doc(hidden)]
     pub direct_put_content: bool,
 }
 impl ContentSourceConfiguration {
     /// <p>The identifier of the data sources you want to use for your Amazon Kendra experience.</p>
-    pub fn data_source_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn data_source_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.data_source_ids.as_deref()
     }
     /// <p>The identifier of the FAQs that you want to use for your Amazon Kendra experience.</p>
-    pub fn faq_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn faq_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.faq_ids.as_deref()
     }
     /// <p> <code>TRUE</code> to use documents you indexed directly using the <code>BatchPutDocument</code> API.</p>
@@ -37,11 +37,13 @@ impl ContentSourceConfiguration {
 
 /// A builder for [`ContentSourceConfiguration`](crate::types::ContentSourceConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ContentSourceConfigurationBuilder {
-    pub(crate) data_source_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) faq_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) direct_put_content: std::option::Option<bool>,
+    pub(crate) data_source_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) faq_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) direct_put_content: ::std::option::Option<bool>,
 }
 impl ContentSourceConfigurationBuilder {
     /// Appends an item to `data_source_ids`.
@@ -49,16 +51,19 @@ impl ContentSourceConfigurationBuilder {
     /// To override the contents of this collection use [`set_data_source_ids`](Self::set_data_source_ids).
     ///
     /// <p>The identifier of the data sources you want to use for your Amazon Kendra experience.</p>
-    pub fn data_source_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn data_source_ids(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.data_source_ids.unwrap_or_default();
         v.push(input.into());
-        self.data_source_ids = Some(v);
+        self.data_source_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The identifier of the data sources you want to use for your Amazon Kendra experience.</p>
     pub fn set_data_source_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.data_source_ids = input;
         self
@@ -68,27 +73,27 @@ impl ContentSourceConfigurationBuilder {
     /// To override the contents of this collection use [`set_faq_ids`](Self::set_faq_ids).
     ///
     /// <p>The identifier of the FAQs that you want to use for your Amazon Kendra experience.</p>
-    pub fn faq_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn faq_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.faq_ids.unwrap_or_default();
         v.push(input.into());
-        self.faq_ids = Some(v);
+        self.faq_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The identifier of the FAQs that you want to use for your Amazon Kendra experience.</p>
     pub fn set_faq_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.faq_ids = input;
         self
     }
     /// <p> <code>TRUE</code> to use documents you indexed directly using the <code>BatchPutDocument</code> API.</p>
     pub fn direct_put_content(mut self, input: bool) -> Self {
-        self.direct_put_content = Some(input);
+        self.direct_put_content = ::std::option::Option::Some(input);
         self
     }
     /// <p> <code>TRUE</code> to use documents you indexed directly using the <code>BatchPutDocument</code> API.</p>
-    pub fn set_direct_put_content(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_direct_put_content(mut self, input: ::std::option::Option<bool>) -> Self {
         self.direct_put_content = input;
         self
     }

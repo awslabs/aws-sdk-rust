@@ -6,29 +6,29 @@ pub use crate::operation::modify_db_instance::_modify_db_instance_input::ModifyD
 /// Fluent builder constructing a request to `ModifyDBInstance`.
 ///
 /// <p>Modifies settings for a DB instance. You can change one or more database configuration parameters by specifying these parameters and the new values in the request. To learn what modifications you can make to your DB instance, call <code>DescribeValidDBInstanceModifications</code> before you call <code>ModifyDBInstance</code>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyDBInstanceFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::modify_db_instance::builders::ModifyDbInstanceInputBuilder,
 }
 impl ModifyDBInstanceFluentBuilder {
     /// Creates a new `ModifyDBInstance`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::modify_db_instance::ModifyDBInstance,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::modify_db_instance::ModifyDBInstanceError,
         >,
     > {
@@ -36,30 +36,33 @@ impl ModifyDBInstanceFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::modify_db_instance::ModifyDbInstanceOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::modify_db_instance::ModifyDBInstanceError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,9 +75,9 @@ impl ModifyDBInstanceFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::modify_db_instance::ModifyDbInstanceOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::modify_db_instance::ModifyDBInstanceError,
         >,
     > {
@@ -85,7 +88,10 @@ impl ModifyDBInstanceFluentBuilder {
     /// <ul>
     /// <li> <p>Must match the identifier of an existing DBInstance.</p> </li>
     /// </ul>
-    pub fn db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn db_instance_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.db_instance_identifier(input.into());
         self
     }
@@ -96,7 +102,7 @@ impl ModifyDBInstanceFluentBuilder {
     /// </ul>
     pub fn set_db_instance_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_db_instance_identifier(input);
         self
@@ -107,14 +113,17 @@ impl ModifyDBInstanceFluentBuilder {
         self
     }
     /// <p>Not supported by Neptune.</p>
-    pub fn set_allocated_storage(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_allocated_storage(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_allocated_storage(input);
         self
     }
     /// <p>The new compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>. Not all DB instance classes are available in all Amazon Regions.</p>
     /// <p>If you modify the DB instance class, an outage occurs during the change. The change is applied during the next maintenance window, unless <code>ApplyImmediately</code> is specified as <code>true</code> for this request.</p>
     /// <p>Default: Uses existing setting</p>
-    pub fn db_instance_class(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn db_instance_class(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.db_instance_class(input.into());
         self
     }
@@ -123,7 +132,7 @@ impl ModifyDBInstanceFluentBuilder {
     /// <p>Default: Uses existing setting</p>
     pub fn set_db_instance_class(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_db_instance_class(input);
         self
@@ -132,7 +141,10 @@ impl ModifyDBInstanceFluentBuilder {
     /// <p>Changing the subnet group causes an outage during the change. The change is applied during the next maintenance window, unless you specify <code>true</code> for the <code>ApplyImmediately</code> parameter.</p>
     /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
     /// <p>Example: <code>mySubnetGroup</code> </p>
-    pub fn db_subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn db_subnet_group_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.db_subnet_group_name(input.into());
         self
     }
@@ -142,7 +154,7 @@ impl ModifyDBInstanceFluentBuilder {
     /// <p>Example: <code>mySubnetGroup</code> </p>
     pub fn set_db_subnet_group_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_db_subnet_group_name(input);
         self
@@ -156,7 +168,10 @@ impl ModifyDBInstanceFluentBuilder {
     /// <ul>
     /// <li> <p>If supplied, must match existing DBSecurityGroups.</p> </li>
     /// </ul>
-    pub fn db_security_groups(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn db_security_groups(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.db_security_groups(input.into());
         self
     }
@@ -167,7 +182,7 @@ impl ModifyDBInstanceFluentBuilder {
     /// </ul>
     pub fn set_db_security_groups(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_db_security_groups(input);
         self
@@ -182,7 +197,10 @@ impl ModifyDBInstanceFluentBuilder {
     /// <ul>
     /// <li> <p>If supplied, must match existing VpcSecurityGroupIds.</p> </li>
     /// </ul>
-    pub fn vpc_security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn vpc_security_group_ids(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.vpc_security_group_ids(input.into());
         self
     }
@@ -194,7 +212,7 @@ impl ModifyDBInstanceFluentBuilder {
     /// </ul>
     pub fn set_vpc_security_group_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_vpc_security_group_ids(input);
         self
@@ -209,19 +227,22 @@ impl ModifyDBInstanceFluentBuilder {
     /// <p>Specifies whether the modifications in this request and any pending modifications are asynchronously applied as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code> setting for the DB instance.</p>
     /// <p> If this parameter is set to <code>false</code>, changes to the DB instance are applied during the next maintenance window. Some parameter changes can cause an outage and are applied on the next call to <code>RebootDBInstance</code>, or the next failure reboot.</p>
     /// <p>Default: <code>false</code> </p>
-    pub fn set_apply_immediately(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_apply_immediately(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_apply_immediately(input);
         self
     }
     /// <p>Not supported by Neptune.</p>
-    pub fn master_user_password(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn master_user_password(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.master_user_password(input.into());
         self
     }
     /// <p>Not supported by Neptune.</p>
     pub fn set_master_user_password(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_master_user_password(input);
         self
@@ -229,7 +250,10 @@ impl ModifyDBInstanceFluentBuilder {
     /// <p>The name of the DB parameter group to apply to the DB instance. Changing this setting doesn't result in an outage. The parameter group name itself is changed immediately, but the actual parameter changes are not applied until you reboot the instance without failover. The db instance will NOT be rebooted automatically and the parameter changes will NOT be applied during the next maintenance window.</p>
     /// <p>Default: Uses existing setting</p>
     /// <p>Constraints: The DB parameter group must be in the same DB parameter group family as this DB instance.</p>
-    pub fn db_parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn db_parameter_group_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.db_parameter_group_name(input.into());
         self
     }
@@ -238,7 +262,7 @@ impl ModifyDBInstanceFluentBuilder {
     /// <p>Constraints: The DB parameter group must be in the same DB parameter group family as this DB instance.</p>
     pub fn set_db_parameter_group_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_db_parameter_group_name(input);
         self
@@ -251,7 +275,7 @@ impl ModifyDBInstanceFluentBuilder {
     }
     /// <p>Not applicable. The retention period for automated backups is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.</p>
     /// <p>Default: Uses existing setting</p>
-    pub fn set_backup_retention_period(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_backup_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_backup_retention_period(input);
         self
     }
@@ -264,7 +288,10 @@ impl ModifyDBInstanceFluentBuilder {
     /// <li> <p>Must not conflict with the preferred maintenance window</p> </li>
     /// <li> <p>Must be at least 30 minutes</p> </li>
     /// </ul>
-    pub fn preferred_backup_window(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn preferred_backup_window(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.preferred_backup_window(input.into());
         self
     }
@@ -279,7 +306,7 @@ impl ModifyDBInstanceFluentBuilder {
     /// </ul>
     pub fn set_preferred_backup_window(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_preferred_backup_window(input);
         self
@@ -289,7 +316,10 @@ impl ModifyDBInstanceFluentBuilder {
     /// <p>Format: ddd:hh24:mi-ddd:hh24:mi</p>
     /// <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun</p>
     /// <p>Constraints: Must be at least 30 minutes</p>
-    pub fn preferred_maintenance_window(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn preferred_maintenance_window(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.preferred_maintenance_window(input.into());
         self
     }
@@ -300,7 +330,7 @@ impl ModifyDBInstanceFluentBuilder {
     /// <p>Constraints: Must be at least 30 minutes</p>
     pub fn set_preferred_maintenance_window(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_preferred_maintenance_window(input);
         self
@@ -311,17 +341,23 @@ impl ModifyDBInstanceFluentBuilder {
         self
     }
     /// <p>Specifies if the DB instance is a Multi-AZ deployment. Changing this parameter doesn't result in an outage and the change is applied during the next maintenance window unless the <code>ApplyImmediately</code> parameter is set to <code>true</code> for this request.</p>
-    pub fn set_multi_az(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_multi_az(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_multi_az(input);
         self
     }
     /// <p>The version number of the database engine to upgrade to. Currently, setting this parameter has no effect. To upgrade your database engine to the most recent release, use the <code>ApplyPendingMaintenanceAction</code> API.</p>
-    pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn engine_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.engine_version(input.into());
         self
     }
     /// <p>The version number of the database engine to upgrade to. Currently, setting this parameter has no effect. To upgrade your database engine to the most recent release, use the <code>ApplyPendingMaintenanceAction</code> API.</p>
-    pub fn set_engine_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_engine_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_engine_version(input);
         self
     }
@@ -331,7 +367,7 @@ impl ModifyDBInstanceFluentBuilder {
         self
     }
     /// <p>Indicates that major version upgrades are allowed. Changing this parameter doesn't result in an outage and the change is asynchronously applied as soon as possible.</p>
-    pub fn set_allow_major_version_upgrade(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_allow_major_version_upgrade(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_allow_major_version_upgrade(input);
         self
     }
@@ -341,17 +377,23 @@ impl ModifyDBInstanceFluentBuilder {
         self
     }
     /// <p> Indicates that minor version upgrades are applied automatically to the DB instance during the maintenance window. Changing this parameter doesn't result in an outage except in the following case and the change is asynchronously applied as soon as possible. An outage will result if this parameter is set to <code>true</code> during the maintenance window, and a newer minor version is available, and Neptune has enabled auto patching for that engine version.</p>
-    pub fn set_auto_minor_version_upgrade(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_auto_minor_version_upgrade(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_auto_minor_version_upgrade(input);
         self
     }
     /// <p>Not supported by Neptune.</p>
-    pub fn license_model(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn license_model(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.license_model(input.into());
         self
     }
     /// <p>Not supported by Neptune.</p>
-    pub fn set_license_model(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_license_model(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_license_model(input);
         self
     }
@@ -365,19 +407,22 @@ impl ModifyDBInstanceFluentBuilder {
     /// <p>The new Provisioned IOPS (I/O operations per second) value for the instance.</p>
     /// <p>Changing this setting doesn't result in an outage and the change is applied during the next maintenance window unless the <code>ApplyImmediately</code> parameter is set to <code>true</code> for this request.</p>
     /// <p>Default: Uses existing setting</p>
-    pub fn set_iops(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_iops(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_iops(input);
         self
     }
     /// <p> <i>(Not supported by Neptune)</i> </p>
-    pub fn option_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn option_group_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.option_group_name(input.into());
         self
     }
     /// <p> <i>(Not supported by Neptune)</i> </p>
     pub fn set_option_group_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_option_group_name(input);
         self
@@ -390,7 +435,10 @@ impl ModifyDBInstanceFluentBuilder {
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     /// <p>Example: <code>mydbinstance</code> </p>
-    pub fn new_db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn new_db_instance_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.new_db_instance_identifier(input.into());
         self
     }
@@ -404,67 +452,76 @@ impl ModifyDBInstanceFluentBuilder {
     /// <p>Example: <code>mydbinstance</code> </p>
     pub fn set_new_db_instance_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_new_db_instance_identifier(input);
         self
     }
     /// <p>Not supported.</p>
-    pub fn storage_type(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn storage_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.storage_type(input.into());
         self
     }
     /// <p>Not supported.</p>
-    pub fn set_storage_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_storage_type(input);
         self
     }
     /// <p>The ARN from the key store with which to associate the instance for TDE encryption.</p>
-    pub fn tde_credential_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn tde_credential_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.tde_credential_arn(input.into());
         self
     }
     /// <p>The ARN from the key store with which to associate the instance for TDE encryption.</p>
     pub fn set_tde_credential_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_tde_credential_arn(input);
         self
     }
     /// <p>The password for the given ARN from the key store in order to access the device.</p>
-    pub fn tde_credential_password(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn tde_credential_password(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.tde_credential_password(input.into());
         self
     }
     /// <p>The password for the given ARN from the key store in order to access the device.</p>
     pub fn set_tde_credential_password(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_tde_credential_password(input);
         self
     }
     /// <p>Indicates the certificate that needs to be associated with the instance.</p>
-    pub fn ca_certificate_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn ca_certificate_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.ca_certificate_identifier(input.into());
         self
     }
     /// <p>Indicates the certificate that needs to be associated with the instance.</p>
     pub fn set_ca_certificate_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_ca_certificate_identifier(input);
         self
     }
     /// <p>Not supported.</p>
-    pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain(input.into());
         self
     }
     /// <p>Not supported.</p>
-    pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain(input);
         self
     }
@@ -474,7 +531,7 @@ impl ModifyDBInstanceFluentBuilder {
         self
     }
     /// <p>True to copy all tags from the DB instance to snapshots of the DB instance, and otherwise false. The default is false.</p>
-    pub fn set_copy_tags_to_snapshot(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_copy_tags_to_snapshot(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_copy_tags_to_snapshot(input);
         self
     }
@@ -488,7 +545,7 @@ impl ModifyDBInstanceFluentBuilder {
     /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB instance. To disable collecting Enhanced Monitoring metrics, specify 0. The default is 0.</p>
     /// <p>If <code>MonitoringRoleArn</code> is specified, then you must also set <code>MonitoringInterval</code> to a value other than 0.</p>
     /// <p>Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code> </p>
-    pub fn set_monitoring_interval(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_monitoring_interval(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_monitoring_interval(input);
         self
     }
@@ -504,7 +561,7 @@ impl ModifyDBInstanceFluentBuilder {
     /// <p>The value of the <code>DBPortNumber</code> parameter must not match any of the port values specified for options in the option group for the DB instance.</p>
     /// <p>Your database will restart when you change the <code>DBPortNumber</code> value regardless of the value of the <code>ApplyImmediately</code> parameter.</p>
     /// <p> Default: <code>8182</code> </p>
-    pub fn set_db_port_number(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_db_port_number(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_db_port_number(input);
         self
     }
@@ -516,13 +573,16 @@ impl ModifyDBInstanceFluentBuilder {
     }
     /// <p>This flag should no longer be used.</p>
     #[deprecated]
-    pub fn set_publicly_accessible(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_publicly_accessible(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_publicly_accessible(input);
         self
     }
     /// <p>The ARN for the IAM role that permits Neptune to send enhanced monitoring metrics to Amazon CloudWatch Logs. For example, <code>arn:aws:iam:123456789012:role/emaccess</code>.</p>
     /// <p>If <code>MonitoringInterval</code> is set to a value other than 0, then you must supply a <code>MonitoringRoleArn</code> value.</p>
-    pub fn monitoring_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn monitoring_role_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.monitoring_role_arn(input.into());
         self
     }
@@ -530,20 +590,23 @@ impl ModifyDBInstanceFluentBuilder {
     /// <p>If <code>MonitoringInterval</code> is set to a value other than 0, then you must supply a <code>MonitoringRoleArn</code> value.</p>
     pub fn set_monitoring_role_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_monitoring_role_arn(input);
         self
     }
     /// <p>Not supported</p>
-    pub fn domain_iam_role_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn domain_iam_role_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.domain_iam_role_name(input.into());
         self
     }
     /// <p>Not supported</p>
     pub fn set_domain_iam_role_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_domain_iam_role_name(input);
         self
@@ -558,7 +621,7 @@ impl ModifyDBInstanceFluentBuilder {
     /// <p>A value that specifies the order in which a Read Replica is promoted to the primary instance after a failure of the existing primary instance.</p>
     /// <p>Default: 1</p>
     /// <p>Valid Values: 0 - 15</p>
-    pub fn set_promotion_tier(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_promotion_tier(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_promotion_tier(input);
         self
     }
@@ -576,7 +639,7 @@ impl ModifyDBInstanceFluentBuilder {
     /// <p>Default: <code>false</code> </p>
     pub fn set_enable_iam_database_authentication(
         mut self,
-        input: std::option::Option<bool>,
+        input: ::std::option::Option<bool>,
     ) -> Self {
         self.inner = self.inner.set_enable_iam_database_authentication(input);
         self
@@ -587,14 +650,14 @@ impl ModifyDBInstanceFluentBuilder {
         self
     }
     /// <p> <i>(Not supported by Neptune)</i> </p>
-    pub fn set_enable_performance_insights(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enable_performance_insights(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enable_performance_insights(input);
         self
     }
     /// <p> <i>(Not supported by Neptune)</i> </p>
     pub fn performance_insights_kms_key_id(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.performance_insights_kms_key_id(input.into());
         self
@@ -602,7 +665,7 @@ impl ModifyDBInstanceFluentBuilder {
     /// <p> <i>(Not supported by Neptune)</i> </p>
     pub fn set_performance_insights_kms_key_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_performance_insights_kms_key_id(input);
         self
@@ -618,7 +681,7 @@ impl ModifyDBInstanceFluentBuilder {
     /// <p>The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB instance or DB cluster.</p>
     pub fn set_cloudwatch_logs_export_configuration(
         mut self,
-        input: std::option::Option<crate::types::CloudwatchLogsExportConfiguration>,
+        input: ::std::option::Option<crate::types::CloudwatchLogsExportConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_cloudwatch_logs_export_configuration(input);
         self
@@ -629,7 +692,7 @@ impl ModifyDBInstanceFluentBuilder {
         self
     }
     /// <p>A value that indicates whether the DB instance has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection is disabled. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html">Deleting a DB Instance</a>.</p>
-    pub fn set_deletion_protection(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_deletion_protection(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_deletion_protection(input);
         self
     }

@@ -2,27 +2,30 @@
 
 /// <p>For each message in the batch, the response contains a <code> <code>SendMessageBatchResultEntry</code> </code> tag if the message succeeds or a <code> <code>BatchResultErrorEntry</code> </code> tag if the message fails.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SendMessageBatchOutput {
     /// <p>A list of <code> <code>SendMessageBatchResultEntry</code> </code> items.</p>
     #[doc(hidden)]
-    pub successful: std::option::Option<std::vec::Vec<crate::types::SendMessageBatchResultEntry>>,
+    pub successful:
+        ::std::option::Option<::std::vec::Vec<crate::types::SendMessageBatchResultEntry>>,
     /// <p>A list of <code> <code>BatchResultErrorEntry</code> </code> items with error details about each message that can't be enqueued.</p>
     #[doc(hidden)]
-    pub failed: std::option::Option<std::vec::Vec<crate::types::BatchResultErrorEntry>>,
+    pub failed: ::std::option::Option<::std::vec::Vec<crate::types::BatchResultErrorEntry>>,
     _request_id: Option<String>,
 }
 impl SendMessageBatchOutput {
     /// <p>A list of <code> <code>SendMessageBatchResultEntry</code> </code> items.</p>
-    pub fn successful(&self) -> std::option::Option<&[crate::types::SendMessageBatchResultEntry]> {
+    pub fn successful(
+        &self,
+    ) -> ::std::option::Option<&[crate::types::SendMessageBatchResultEntry]> {
         self.successful.as_deref()
     }
     /// <p>A list of <code> <code>BatchResultErrorEntry</code> </code> items with error details about each message that can't be enqueued.</p>
-    pub fn failed(&self) -> std::option::Option<&[crate::types::BatchResultErrorEntry]> {
+    pub fn failed(&self) -> ::std::option::Option<&[crate::types::BatchResultErrorEntry]> {
         self.failed.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for SendMessageBatchOutput {
+impl ::aws_http::request_id::RequestId for SendMessageBatchOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -37,11 +40,13 @@ impl SendMessageBatchOutput {
 
 /// A builder for [`SendMessageBatchOutput`](crate::operation::send_message_batch::SendMessageBatchOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SendMessageBatchOutputBuilder {
     pub(crate) successful:
-        std::option::Option<std::vec::Vec<crate::types::SendMessageBatchResultEntry>>,
-    pub(crate) failed: std::option::Option<std::vec::Vec<crate::types::BatchResultErrorEntry>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::SendMessageBatchResultEntry>>,
+    pub(crate) failed: ::std::option::Option<::std::vec::Vec<crate::types::BatchResultErrorEntry>>,
     _request_id: Option<String>,
 }
 impl SendMessageBatchOutputBuilder {
@@ -53,13 +58,13 @@ impl SendMessageBatchOutputBuilder {
     pub fn successful(mut self, input: crate::types::SendMessageBatchResultEntry) -> Self {
         let mut v = self.successful.unwrap_or_default();
         v.push(input);
-        self.successful = Some(v);
+        self.successful = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of <code> <code>SendMessageBatchResultEntry</code> </code> items.</p>
     pub fn set_successful(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SendMessageBatchResultEntry>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SendMessageBatchResultEntry>>,
     ) -> Self {
         self.successful = input;
         self
@@ -72,13 +77,13 @@ impl SendMessageBatchOutputBuilder {
     pub fn failed(mut self, input: crate::types::BatchResultErrorEntry) -> Self {
         let mut v = self.failed.unwrap_or_default();
         v.push(input);
-        self.failed = Some(v);
+        self.failed = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of <code> <code>BatchResultErrorEntry</code> </code> items with error details about each message that can't be enqueued.</p>
     pub fn set_failed(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::BatchResultErrorEntry>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::BatchResultErrorEntry>>,
     ) -> Self {
         self.failed = input;
         self

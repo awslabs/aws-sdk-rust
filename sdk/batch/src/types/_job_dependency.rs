@@ -2,22 +2,22 @@
 
 /// <p>An object that represents an Batch job dependency.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobDependency {
     /// <p>The job ID of the Batch job that's associated with this dependency.</p>
     #[doc(hidden)]
-    pub job_id: std::option::Option<std::string::String>,
+    pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of the job dependency.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::ArrayJobDependency>,
+    pub r#type: ::std::option::Option<crate::types::ArrayJobDependency>,
 }
 impl JobDependency {
     /// <p>The job ID of the Batch job that's associated with this dependency.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<&str> {
         self.job_id.as_deref()
     }
     /// <p>The type of the job dependency.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::ArrayJobDependency> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ArrayJobDependency> {
         self.r#type.as_ref()
     }
 }
@@ -30,31 +30,33 @@ impl JobDependency {
 
 /// A builder for [`JobDependency`](crate::types::JobDependency).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct JobDependencyBuilder {
-    pub(crate) job_id: std::option::Option<std::string::String>,
-    pub(crate) r#type: std::option::Option<crate::types::ArrayJobDependency>,
+    pub(crate) job_id: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::ArrayJobDependency>,
 }
 impl JobDependencyBuilder {
     /// <p>The job ID of the Batch job that's associated with this dependency.</p>
-    pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.job_id = Some(input.into());
+    pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.job_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The job ID of the Batch job that's associated with this dependency.</p>
-    pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_id = input;
         self
     }
     /// <p>The type of the job dependency.</p>
     pub fn r#type(mut self, input: crate::types::ArrayJobDependency) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of the job dependency.</p>
     pub fn set_type(
         mut self,
-        input: std::option::Option<crate::types::ArrayJobDependency>,
+        input: ::std::option::Option<crate::types::ArrayJobDependency>,
     ) -> Self {
         self.r#type = input;
         self

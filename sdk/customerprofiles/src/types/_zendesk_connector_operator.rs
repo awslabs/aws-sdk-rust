@@ -50,13 +50,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ZendeskConnectorOperator {
     #[allow(missing_docs)] // documentation missing in model
@@ -90,7 +90,7 @@ pub enum ZendeskConnectorOperator {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ZendeskConnectorOperator {
+impl ::std::convert::From<&str> for ZendeskConnectorOperator {
     fn from(s: &str) -> Self {
         match s {
             "ADDITION" => ZendeskConnectorOperator::Addition,
@@ -113,11 +113,11 @@ impl std::convert::From<&str> for ZendeskConnectorOperator {
         }
     }
 }
-impl std::str::FromStr for ZendeskConnectorOperator {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ZendeskConnectorOperator {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ZendeskConnectorOperator::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ZendeskConnectorOperator::from(s))
     }
 }
 impl ZendeskConnectorOperator {
@@ -161,7 +161,7 @@ impl ZendeskConnectorOperator {
         ]
     }
 }
-impl AsRef<str> for ZendeskConnectorOperator {
+impl ::std::convert::AsRef<str> for ZendeskConnectorOperator {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

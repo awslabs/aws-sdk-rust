@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetExport`](crate::operation::get_export::builders::GetExportFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::get_export::builders::GetExportFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_export::builders::GetExportFluentBuilder::set_name): <p>The name of the bot to export.</p>
-    ///   - [`version(impl Into<String>)`](crate::operation::get_export::builders::GetExportFluentBuilder::version) / [`set_version(Option<String>)`](crate::operation::get_export::builders::GetExportFluentBuilder::set_version): <p>The version of the bot to export.</p>
+    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::get_export::builders::GetExportFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_export::builders::GetExportFluentBuilder::set_name): <p>The name of the bot to export.</p>
+    ///   - [`version(impl ::std::convert::Into<String>)`](crate::operation::get_export::builders::GetExportFluentBuilder::version) / [`set_version(Option<String>)`](crate::operation::get_export::builders::GetExportFluentBuilder::set_version): <p>The version of the bot to export.</p>
     ///   - [`resource_type(ResourceType)`](crate::operation::get_export::builders::GetExportFluentBuilder::resource_type) / [`set_resource_type(Option<ResourceType>)`](crate::operation::get_export::builders::GetExportFluentBuilder::set_resource_type): <p>The type of resource to export. </p>
     ///   - [`export_type(ExportType)`](crate::operation::get_export::builders::GetExportFluentBuilder::export_type) / [`set_export_type(Option<ExportType>)`](crate::operation::get_export::builders::GetExportFluentBuilder::set_export_type): <p>The format of the exported data.</p>
     /// - On success, responds with [`GetExportOutput`](crate::operation::get_export::GetExportOutput) with field(s):

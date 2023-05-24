@@ -2,15 +2,15 @@
 
 /// <p> Information about the output from a model packaging job. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModelPackagingOutputDetails {
     /// <p> Information about the AWS IoT Greengrass component in a model packaging job. </p>
     #[doc(hidden)]
-    pub greengrass: std::option::Option<crate::types::GreengrassOutputDetails>,
+    pub greengrass: ::std::option::Option<crate::types::GreengrassOutputDetails>,
 }
 impl ModelPackagingOutputDetails {
     /// <p> Information about the AWS IoT Greengrass component in a model packaging job. </p>
-    pub fn greengrass(&self) -> std::option::Option<&crate::types::GreengrassOutputDetails> {
+    pub fn greengrass(&self) -> ::std::option::Option<&crate::types::GreengrassOutputDetails> {
         self.greengrass.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl ModelPackagingOutputDetails {
 
 /// A builder for [`ModelPackagingOutputDetails`](crate::types::ModelPackagingOutputDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ModelPackagingOutputDetailsBuilder {
-    pub(crate) greengrass: std::option::Option<crate::types::GreengrassOutputDetails>,
+    pub(crate) greengrass: ::std::option::Option<crate::types::GreengrassOutputDetails>,
 }
 impl ModelPackagingOutputDetailsBuilder {
     /// <p> Information about the AWS IoT Greengrass component in a model packaging job. </p>
     pub fn greengrass(mut self, input: crate::types::GreengrassOutputDetails) -> Self {
-        self.greengrass = Some(input);
+        self.greengrass = ::std::option::Option::Some(input);
         self
     }
     /// <p> Information about the AWS IoT Greengrass component in a model packaging job. </p>
     pub fn set_greengrass(
         mut self,
-        input: std::option::Option<crate::types::GreengrassOutputDetails>,
+        input: ::std::option::Option<crate::types::GreengrassOutputDetails>,
     ) -> Self {
         self.greengrass = input;
         self

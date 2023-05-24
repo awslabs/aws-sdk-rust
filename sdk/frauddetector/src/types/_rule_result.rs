@@ -2,22 +2,22 @@
 
 /// <p>The rule results.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuleResult {
     /// <p>The rule ID that was matched, based on the rule execution mode.</p>
     #[doc(hidden)]
-    pub rule_id: std::option::Option<std::string::String>,
+    pub rule_id: ::std::option::Option<::std::string::String>,
     /// <p>The outcomes of the matched rule, based on the rule execution mode.</p>
     #[doc(hidden)]
-    pub outcomes: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub outcomes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RuleResult {
     /// <p>The rule ID that was matched, based on the rule execution mode.</p>
-    pub fn rule_id(&self) -> std::option::Option<&str> {
+    pub fn rule_id(&self) -> ::std::option::Option<&str> {
         self.rule_id.as_deref()
     }
     /// <p>The outcomes of the matched rule, based on the rule execution mode.</p>
-    pub fn outcomes(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn outcomes(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.outcomes.as_deref()
     }
 }
@@ -30,19 +30,21 @@ impl RuleResult {
 
 /// A builder for [`RuleResult`](crate::types::RuleResult).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RuleResultBuilder {
-    pub(crate) rule_id: std::option::Option<std::string::String>,
-    pub(crate) outcomes: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) rule_id: ::std::option::Option<::std::string::String>,
+    pub(crate) outcomes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RuleResultBuilder {
     /// <p>The rule ID that was matched, based on the rule execution mode.</p>
-    pub fn rule_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.rule_id = Some(input.into());
+    pub fn rule_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.rule_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The rule ID that was matched, based on the rule execution mode.</p>
-    pub fn set_rule_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_rule_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_id = input;
         self
     }
@@ -51,16 +53,16 @@ impl RuleResultBuilder {
     /// To override the contents of this collection use [`set_outcomes`](Self::set_outcomes).
     ///
     /// <p>The outcomes of the matched rule, based on the rule execution mode.</p>
-    pub fn outcomes(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn outcomes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.outcomes.unwrap_or_default();
         v.push(input.into());
-        self.outcomes = Some(v);
+        self.outcomes = ::std::option::Option::Some(v);
         self
     }
     /// <p>The outcomes of the matched rule, based on the rule execution mode.</p>
     pub fn set_outcomes(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.outcomes = input;
         self

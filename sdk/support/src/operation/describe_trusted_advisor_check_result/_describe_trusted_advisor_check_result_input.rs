@@ -2,11 +2,11 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTrustedAdvisorCheckResultInput {
     /// <p>The unique identifier for the Trusted Advisor check.</p>
     #[doc(hidden)]
-    pub check_id: std::option::Option<std::string::String>,
+    pub check_id: ::std::option::Option<::std::string::String>,
     /// <p>The ISO 639-1 code for the language that you want your check results to appear in.</p>
     /// <p>The Amazon Web Services Support API currently supports the following languages for Trusted Advisor:</p>
     /// <ul>
@@ -23,11 +23,11 @@ pub struct DescribeTrustedAdvisorCheckResultInput {
     /// <li> <p>Spanish - <code>es</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub language: std::option::Option<std::string::String>,
+    pub language: ::std::option::Option<::std::string::String>,
 }
 impl DescribeTrustedAdvisorCheckResultInput {
     /// <p>The unique identifier for the Trusted Advisor check.</p>
-    pub fn check_id(&self) -> std::option::Option<&str> {
+    pub fn check_id(&self) -> ::std::option::Option<&str> {
         self.check_id.as_deref()
     }
     /// <p>The ISO 639-1 code for the language that you want your check results to appear in.</p>
@@ -45,7 +45,7 @@ impl DescribeTrustedAdvisorCheckResultInput {
     /// <li> <p>Portuguese, Brazilian - <code>pt_BR</code> </p> </li>
     /// <li> <p>Spanish - <code>es</code> </p> </li>
     /// </ul>
-    pub fn language(&self) -> std::option::Option<&str> {
+    pub fn language(&self) -> ::std::option::Option<&str> {
         self.language.as_deref()
     }
 }
@@ -58,19 +58,21 @@ impl DescribeTrustedAdvisorCheckResultInput {
 
 /// A builder for [`DescribeTrustedAdvisorCheckResultInput`](crate::operation::describe_trusted_advisor_check_result::DescribeTrustedAdvisorCheckResultInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeTrustedAdvisorCheckResultInputBuilder {
-    pub(crate) check_id: std::option::Option<std::string::String>,
-    pub(crate) language: std::option::Option<std::string::String>,
+    pub(crate) check_id: ::std::option::Option<::std::string::String>,
+    pub(crate) language: ::std::option::Option<::std::string::String>,
 }
 impl DescribeTrustedAdvisorCheckResultInputBuilder {
     /// <p>The unique identifier for the Trusted Advisor check.</p>
-    pub fn check_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.check_id = Some(input.into());
+    pub fn check_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.check_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the Trusted Advisor check.</p>
-    pub fn set_check_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_check_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.check_id = input;
         self
     }
@@ -89,8 +91,8 @@ impl DescribeTrustedAdvisorCheckResultInputBuilder {
     /// <li> <p>Portuguese, Brazilian - <code>pt_BR</code> </p> </li>
     /// <li> <p>Spanish - <code>es</code> </p> </li>
     /// </ul>
-    pub fn language(mut self, input: impl Into<std::string::String>) -> Self {
-        self.language = Some(input.into());
+    pub fn language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.language = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ISO 639-1 code for the language that you want your check results to appear in.</p>
@@ -108,13 +110,13 @@ impl DescribeTrustedAdvisorCheckResultInputBuilder {
     /// <li> <p>Portuguese, Brazilian - <code>pt_BR</code> </p> </li>
     /// <li> <p>Spanish - <code>es</code> </p> </li>
     /// </ul>
-    pub fn set_language(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.language = input;
         self
     }
     /// Consumes the builder and constructs a [`DescribeTrustedAdvisorCheckResultInput`](crate::operation::describe_trusted_advisor_check_result::DescribeTrustedAdvisorCheckResultInput).
-    pub fn build(self) -> Result<crate::operation::describe_trusted_advisor_check_result::DescribeTrustedAdvisorCheckResultInput, aws_smithy_http::operation::error::BuildError>{
-        Ok(
+    pub fn build(self) -> ::std::result::Result<crate::operation::describe_trusted_advisor_check_result::DescribeTrustedAdvisorCheckResultInput, ::aws_smithy_http::operation::error::BuildError>{
+        ::std::result::Result::Ok(
             crate::operation::describe_trusted_advisor_check_result::DescribeTrustedAdvisorCheckResultInput {
                 check_id: self.check_id
                 ,

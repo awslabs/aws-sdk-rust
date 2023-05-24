@@ -2,22 +2,22 @@
 
 /// <p>Details about the account that was not processed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Result {
     /// <p>An Amazon Web Services account ID of the account that was not processed.</p>
     #[doc(hidden)]
-    pub account_id: std::option::Option<std::string::String>,
+    pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The reason that the account was not processed.</p>
     #[doc(hidden)]
-    pub processing_result: std::option::Option<std::string::String>,
+    pub processing_result: ::std::option::Option<::std::string::String>,
 }
 impl Result {
     /// <p>An Amazon Web Services account ID of the account that was not processed.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The reason that the account was not processed.</p>
-    pub fn processing_result(&self) -> std::option::Option<&str> {
+    pub fn processing_result(&self) -> ::std::option::Option<&str> {
         self.processing_result.as_deref()
     }
 }
@@ -30,31 +30,36 @@ impl Result {
 
 /// A builder for [`Result`](crate::types::Result).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResultBuilder {
-    pub(crate) account_id: std::option::Option<std::string::String>,
-    pub(crate) processing_result: std::option::Option<std::string::String>,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) processing_result: ::std::option::Option<::std::string::String>,
 }
 impl ResultBuilder {
     /// <p>An Amazon Web Services account ID of the account that was not processed.</p>
-    pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.account_id = Some(input.into());
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An Amazon Web Services account ID of the account that was not processed.</p>
-    pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
     }
     /// <p>The reason that the account was not processed.</p>
-    pub fn processing_result(mut self, input: impl Into<std::string::String>) -> Self {
-        self.processing_result = Some(input.into());
+    pub fn processing_result(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.processing_result = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason that the account was not processed.</p>
     pub fn set_processing_result(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.processing_result = input;
         self

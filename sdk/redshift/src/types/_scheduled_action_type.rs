@@ -2,29 +2,29 @@
 
 /// <p>The action type that specifies an Amazon Redshift API operation that is supported by the Amazon Redshift scheduler. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScheduledActionType {
     /// <p>An action that runs a <code>ResizeCluster</code> API operation. </p>
     #[doc(hidden)]
-    pub resize_cluster: std::option::Option<crate::types::ResizeClusterMessage>,
+    pub resize_cluster: ::std::option::Option<crate::types::ResizeClusterMessage>,
     /// <p>An action that runs a <code>PauseCluster</code> API operation. </p>
     #[doc(hidden)]
-    pub pause_cluster: std::option::Option<crate::types::PauseClusterMessage>,
+    pub pause_cluster: ::std::option::Option<crate::types::PauseClusterMessage>,
     /// <p>An action that runs a <code>ResumeCluster</code> API operation. </p>
     #[doc(hidden)]
-    pub resume_cluster: std::option::Option<crate::types::ResumeClusterMessage>,
+    pub resume_cluster: ::std::option::Option<crate::types::ResumeClusterMessage>,
 }
 impl ScheduledActionType {
     /// <p>An action that runs a <code>ResizeCluster</code> API operation. </p>
-    pub fn resize_cluster(&self) -> std::option::Option<&crate::types::ResizeClusterMessage> {
+    pub fn resize_cluster(&self) -> ::std::option::Option<&crate::types::ResizeClusterMessage> {
         self.resize_cluster.as_ref()
     }
     /// <p>An action that runs a <code>PauseCluster</code> API operation. </p>
-    pub fn pause_cluster(&self) -> std::option::Option<&crate::types::PauseClusterMessage> {
+    pub fn pause_cluster(&self) -> ::std::option::Option<&crate::types::PauseClusterMessage> {
         self.pause_cluster.as_ref()
     }
     /// <p>An action that runs a <code>ResumeCluster</code> API operation. </p>
-    pub fn resume_cluster(&self) -> std::option::Option<&crate::types::ResumeClusterMessage> {
+    pub fn resume_cluster(&self) -> ::std::option::Option<&crate::types::ResumeClusterMessage> {
         self.resume_cluster.as_ref()
     }
 }
@@ -37,48 +37,50 @@ impl ScheduledActionType {
 
 /// A builder for [`ScheduledActionType`](crate::types::ScheduledActionType).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ScheduledActionTypeBuilder {
-    pub(crate) resize_cluster: std::option::Option<crate::types::ResizeClusterMessage>,
-    pub(crate) pause_cluster: std::option::Option<crate::types::PauseClusterMessage>,
-    pub(crate) resume_cluster: std::option::Option<crate::types::ResumeClusterMessage>,
+    pub(crate) resize_cluster: ::std::option::Option<crate::types::ResizeClusterMessage>,
+    pub(crate) pause_cluster: ::std::option::Option<crate::types::PauseClusterMessage>,
+    pub(crate) resume_cluster: ::std::option::Option<crate::types::ResumeClusterMessage>,
 }
 impl ScheduledActionTypeBuilder {
     /// <p>An action that runs a <code>ResizeCluster</code> API operation. </p>
     pub fn resize_cluster(mut self, input: crate::types::ResizeClusterMessage) -> Self {
-        self.resize_cluster = Some(input);
+        self.resize_cluster = ::std::option::Option::Some(input);
         self
     }
     /// <p>An action that runs a <code>ResizeCluster</code> API operation. </p>
     pub fn set_resize_cluster(
         mut self,
-        input: std::option::Option<crate::types::ResizeClusterMessage>,
+        input: ::std::option::Option<crate::types::ResizeClusterMessage>,
     ) -> Self {
         self.resize_cluster = input;
         self
     }
     /// <p>An action that runs a <code>PauseCluster</code> API operation. </p>
     pub fn pause_cluster(mut self, input: crate::types::PauseClusterMessage) -> Self {
-        self.pause_cluster = Some(input);
+        self.pause_cluster = ::std::option::Option::Some(input);
         self
     }
     /// <p>An action that runs a <code>PauseCluster</code> API operation. </p>
     pub fn set_pause_cluster(
         mut self,
-        input: std::option::Option<crate::types::PauseClusterMessage>,
+        input: ::std::option::Option<crate::types::PauseClusterMessage>,
     ) -> Self {
         self.pause_cluster = input;
         self
     }
     /// <p>An action that runs a <code>ResumeCluster</code> API operation. </p>
     pub fn resume_cluster(mut self, input: crate::types::ResumeClusterMessage) -> Self {
-        self.resume_cluster = Some(input);
+        self.resume_cluster = ::std::option::Option::Some(input);
         self
     }
     /// <p>An action that runs a <code>ResumeCluster</code> API operation. </p>
     pub fn set_resume_cluster(
         mut self,
-        input: std::option::Option<crate::types::ResumeClusterMessage>,
+        input: ::std::option::Option<crate::types::ResumeClusterMessage>,
     ) -> Self {
         self.resume_cluster = input;
         self

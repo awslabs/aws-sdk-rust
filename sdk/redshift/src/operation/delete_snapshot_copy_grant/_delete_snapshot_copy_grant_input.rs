@@ -2,15 +2,15 @@
 
 /// <p>The result of the <code>DeleteSnapshotCopyGrant</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteSnapshotCopyGrantInput {
     /// <p>The name of the snapshot copy grant to delete.</p>
     #[doc(hidden)]
-    pub snapshot_copy_grant_name: std::option::Option<std::string::String>,
+    pub snapshot_copy_grant_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteSnapshotCopyGrantInput {
     /// <p>The name of the snapshot copy grant to delete.</p>
-    pub fn snapshot_copy_grant_name(&self) -> std::option::Option<&str> {
+    pub fn snapshot_copy_grant_name(&self) -> ::std::option::Option<&str> {
         self.snapshot_copy_grant_name.as_deref()
     }
 }
@@ -25,20 +25,25 @@ impl DeleteSnapshotCopyGrantInput {
 
 /// A builder for [`DeleteSnapshotCopyGrantInput`](crate::operation::delete_snapshot_copy_grant::DeleteSnapshotCopyGrantInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteSnapshotCopyGrantInputBuilder {
-    pub(crate) snapshot_copy_grant_name: std::option::Option<std::string::String>,
+    pub(crate) snapshot_copy_grant_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteSnapshotCopyGrantInputBuilder {
     /// <p>The name of the snapshot copy grant to delete.</p>
-    pub fn snapshot_copy_grant_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.snapshot_copy_grant_name = Some(input.into());
+    pub fn snapshot_copy_grant_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.snapshot_copy_grant_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the snapshot copy grant to delete.</p>
     pub fn set_snapshot_copy_grant_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.snapshot_copy_grant_name = input;
         self
@@ -46,11 +51,11 @@ impl DeleteSnapshotCopyGrantInputBuilder {
     /// Consumes the builder and constructs a [`DeleteSnapshotCopyGrantInput`](crate::operation::delete_snapshot_copy_grant::DeleteSnapshotCopyGrantInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::delete_snapshot_copy_grant::DeleteSnapshotCopyGrantInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::delete_snapshot_copy_grant::DeleteSnapshotCopyGrantInput {
                 snapshot_copy_grant_name: self.snapshot_copy_grant_name,
             },

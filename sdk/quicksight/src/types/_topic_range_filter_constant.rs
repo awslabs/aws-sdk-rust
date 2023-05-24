@@ -2,27 +2,27 @@
 
 /// <p>A constant value that is used in a range filter to specify the endpoints of the range.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct TopicRangeFilterConstant {
     /// <p>The data type of the constant value that is used in a range filter. Valid values for this structure are <code>RANGE</code>.</p>
     #[doc(hidden)]
-    pub constant_type: std::option::Option<crate::types::ConstantType>,
+    pub constant_type: ::std::option::Option<crate::types::ConstantType>,
     /// <p>The value of the constant that is used to specify the endpoints of a range filter.</p>
     #[doc(hidden)]
-    pub range_constant: std::option::Option<crate::types::RangeConstant>,
+    pub range_constant: ::std::option::Option<crate::types::RangeConstant>,
 }
 impl TopicRangeFilterConstant {
     /// <p>The data type of the constant value that is used in a range filter. Valid values for this structure are <code>RANGE</code>.</p>
-    pub fn constant_type(&self) -> std::option::Option<&crate::types::ConstantType> {
+    pub fn constant_type(&self) -> ::std::option::Option<&crate::types::ConstantType> {
         self.constant_type.as_ref()
     }
     /// <p>The value of the constant that is used to specify the endpoints of a range filter.</p>
-    pub fn range_constant(&self) -> std::option::Option<&crate::types::RangeConstant> {
+    pub fn range_constant(&self) -> ::std::option::Option<&crate::types::RangeConstant> {
         self.range_constant.as_ref()
     }
 }
-impl std::fmt::Debug for TopicRangeFilterConstant {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for TopicRangeFilterConstant {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("TopicRangeFilterConstant");
         formatter.field("constant_type", &"*** Sensitive Data Redacted ***");
         formatter.field("range_constant", &"*** Sensitive Data Redacted ***");
@@ -38,34 +38,34 @@ impl TopicRangeFilterConstant {
 
 /// A builder for [`TopicRangeFilterConstant`](crate::types::TopicRangeFilterConstant).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct TopicRangeFilterConstantBuilder {
-    pub(crate) constant_type: std::option::Option<crate::types::ConstantType>,
-    pub(crate) range_constant: std::option::Option<crate::types::RangeConstant>,
+    pub(crate) constant_type: ::std::option::Option<crate::types::ConstantType>,
+    pub(crate) range_constant: ::std::option::Option<crate::types::RangeConstant>,
 }
 impl TopicRangeFilterConstantBuilder {
     /// <p>The data type of the constant value that is used in a range filter. Valid values for this structure are <code>RANGE</code>.</p>
     pub fn constant_type(mut self, input: crate::types::ConstantType) -> Self {
-        self.constant_type = Some(input);
+        self.constant_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The data type of the constant value that is used in a range filter. Valid values for this structure are <code>RANGE</code>.</p>
     pub fn set_constant_type(
         mut self,
-        input: std::option::Option<crate::types::ConstantType>,
+        input: ::std::option::Option<crate::types::ConstantType>,
     ) -> Self {
         self.constant_type = input;
         self
     }
     /// <p>The value of the constant that is used to specify the endpoints of a range filter.</p>
     pub fn range_constant(mut self, input: crate::types::RangeConstant) -> Self {
-        self.range_constant = Some(input);
+        self.range_constant = ::std::option::Option::Some(input);
         self
     }
     /// <p>The value of the constant that is used to specify the endpoints of a range filter.</p>
     pub fn set_range_constant(
         mut self,
-        input: std::option::Option<crate::types::RangeConstant>,
+        input: ::std::option::Option<crate::types::RangeConstant>,
     ) -> Self {
         self.range_constant = input;
         self
@@ -78,8 +78,8 @@ impl TopicRangeFilterConstantBuilder {
         }
     }
 }
-impl std::fmt::Debug for TopicRangeFilterConstantBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for TopicRangeFilterConstantBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("TopicRangeFilterConstantBuilder");
         formatter.field("constant_type", &"*** Sensitive Data Redacted ***");
         formatter.field("range_constant", &"*** Sensitive Data Redacted ***");

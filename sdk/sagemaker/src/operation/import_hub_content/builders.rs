@@ -8,29 +8,29 @@ pub use crate::operation::import_hub_content::_import_hub_content_input::ImportH
 /// <p>Import hub content.</p> <note>
 /// <p>Hub APIs are only callable through SageMaker Studio.</p>
 /// </note>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ImportHubContentFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::import_hub_content::builders::ImportHubContentInputBuilder,
 }
 impl ImportHubContentFluentBuilder {
     /// Creates a new `ImportHubContent`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::import_hub_content::ImportHubContent,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::import_hub_content::ImportHubContentError,
         >,
     > {
@@ -38,30 +38,33 @@ impl ImportHubContentFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::import_hub_content::ImportHubContentOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::import_hub_content::ImportHubContentError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -74,33 +77,42 @@ impl ImportHubContentFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::import_hub_content::ImportHubContentOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::import_hub_content::ImportHubContentError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the hub content to import.</p>
-    pub fn hub_content_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn hub_content_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.hub_content_name(input.into());
         self
     }
     /// <p>The name of the hub content to import.</p>
-    pub fn set_hub_content_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_hub_content_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_hub_content_name(input);
         self
     }
     /// <p>The version of the hub content to import.</p>
-    pub fn hub_content_version(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn hub_content_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.hub_content_version(input.into());
         self
     }
     /// <p>The version of the hub content to import.</p>
     pub fn set_hub_content_version(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_hub_content_version(input);
         self
@@ -113,82 +125,97 @@ impl ImportHubContentFluentBuilder {
     /// <p>The type of hub content to import.</p>
     pub fn set_hub_content_type(
         mut self,
-        input: std::option::Option<crate::types::HubContentType>,
+        input: ::std::option::Option<crate::types::HubContentType>,
     ) -> Self {
         self.inner = self.inner.set_hub_content_type(input);
         self
     }
     /// <p>The version of the hub content schema to import.</p>
-    pub fn document_schema_version(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn document_schema_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.document_schema_version(input.into());
         self
     }
     /// <p>The version of the hub content schema to import.</p>
     pub fn set_document_schema_version(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_document_schema_version(input);
         self
     }
     /// <p>The name of the hub to import content into.</p>
-    pub fn hub_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn hub_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.hub_name(input.into());
         self
     }
     /// <p>The name of the hub to import content into.</p>
-    pub fn set_hub_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_hub_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_hub_name(input);
         self
     }
     /// <p>The display name of the hub content to import.</p>
-    pub fn hub_content_display_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn hub_content_display_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.hub_content_display_name(input.into());
         self
     }
     /// <p>The display name of the hub content to import.</p>
     pub fn set_hub_content_display_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_hub_content_display_name(input);
         self
     }
     /// <p>A description of the hub content to import.</p>
-    pub fn hub_content_description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn hub_content_description(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.hub_content_description(input.into());
         self
     }
     /// <p>A description of the hub content to import.</p>
     pub fn set_hub_content_description(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_hub_content_description(input);
         self
     }
     /// <p>A string that provides a description of the hub content. This string can include links, tables, and standard markdown formating.</p>
-    pub fn hub_content_markdown(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn hub_content_markdown(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.hub_content_markdown(input.into());
         self
     }
     /// <p>A string that provides a description of the hub content. This string can include links, tables, and standard markdown formating.</p>
     pub fn set_hub_content_markdown(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_hub_content_markdown(input);
         self
     }
     /// <p>The hub content document that describes information about the hub content such as type, associated containers, scripts, and more.</p>
-    pub fn hub_content_document(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn hub_content_document(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.hub_content_document(input.into());
         self
     }
     /// <p>The hub content document that describes information about the hub content such as type, associated containers, scripts, and more.</p>
     pub fn set_hub_content_document(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_hub_content_document(input);
         self
@@ -198,14 +225,17 @@ impl ImportHubContentFluentBuilder {
     /// To override the contents of this collection use [`set_hub_content_search_keywords`](Self::set_hub_content_search_keywords).
     ///
     /// <p>The searchable keywords of the hub content.</p>
-    pub fn hub_content_search_keywords(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn hub_content_search_keywords(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.hub_content_search_keywords(input.into());
         self
     }
     /// <p>The searchable keywords of the hub content.</p>
     pub fn set_hub_content_search_keywords(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_hub_content_search_keywords(input);
         self
@@ -222,7 +252,7 @@ impl ImportHubContentFluentBuilder {
     /// <p>Any tags associated with the hub content.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self

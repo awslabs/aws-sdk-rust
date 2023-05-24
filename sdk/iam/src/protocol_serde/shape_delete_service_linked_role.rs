@@ -2,7 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_delete_service_linked_role_http_error(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::delete_service_linked_role::DeleteServiceLinkedRoleOutput,
@@ -17,7 +17,7 @@ pub fn de_delete_service_linked_role_http_error(
     .map_err(
         crate::operation::delete_service_linked_role::DeleteServiceLinkedRoleError::unhandled,
     )?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
+    generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
@@ -85,7 +85,7 @@ pub fn de_delete_service_linked_role_http_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_delete_service_linked_role_http_response_with_props(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::delete_service_linked_role::DeleteServiceLinkedRoleOutput,
@@ -96,7 +96,7 @@ pub fn de_delete_service_linked_role_http_response_with_props(
         let mut output = crate::operation::delete_service_linked_role::builders::DeleteServiceLinkedRoleOutputBuilder::default();
         output = crate::protocol_serde::shape_delete_service_linked_role::de_delete_service_linked_role(_response_body, output).map_err(crate::operation::delete_service_linked_role::DeleteServiceLinkedRoleError::unhandled)?;
         output._set_request_id(
-            aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
+            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
         );
         output.build()
     })
@@ -108,16 +108,16 @@ pub fn de_delete_service_linked_role(
     mut builder: crate::operation::delete_service_linked_role::builders::DeleteServiceLinkedRoleOutputBuilder,
 ) -> Result<
     crate::operation::delete_service_linked_role::builders::DeleteServiceLinkedRoleOutputBuilder,
-    aws_smithy_xml::decode::XmlDecodeError,
+    ::aws_smithy_xml::decode::XmlDecodeError,
 > {
-    let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
+    let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DeleteServiceLinkedRoleResponse")) {
-        return Err(aws_smithy_xml::decode::XmlDecodeError::custom(format!(
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DeleteServiceLinkedRoleResponse got {:?}",
             start_el
         )));
@@ -125,7 +125,7 @@ pub fn de_delete_service_linked_role(
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("DeleteServiceLinkedRoleResult")) {
-            return Err(aws_smithy_xml::decode::XmlDecodeError::custom(format!(
+            return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
                 "invalid result, expected DeleteServiceLinkedRoleResult got {:?}",
                 start_el
             )));
@@ -135,8 +135,8 @@ pub fn de_delete_service_linked_role(
             s if s.matches("DeletionTaskId") /* DeletionTaskId com.amazonaws.iam.synthetic#DeleteServiceLinkedRoleOutput$DeletionTaskId */ =>  {
                 let var_1 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -149,7 +149,7 @@ pub fn de_delete_service_linked_role(
         }
         }
     } else {
-        return Err(aws_smithy_xml::decode::XmlDecodeError::custom(
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(
             "expected DeleteServiceLinkedRoleResult tag",
         ));
     };

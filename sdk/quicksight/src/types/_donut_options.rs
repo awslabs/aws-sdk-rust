@@ -2,7 +2,7 @@
 
 /// <p>The options for configuring a donut chart or pie chart.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DonutOptions {
     /// <p>The option for define the arc of the chart shape. Valid values are as follows:</p>
     /// <ul>
@@ -12,10 +12,10 @@ pub struct DonutOptions {
     /// <li> <p> <code>LARGE</code>- A large-sized donut chart</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub arc_options: std::option::Option<crate::types::ArcOptions>,
+    pub arc_options: ::std::option::Option<crate::types::ArcOptions>,
     /// <p>The label options of the label that is displayed in the center of a donut chart. This option isn't available for pie charts.</p>
     #[doc(hidden)]
-    pub donut_center_options: std::option::Option<crate::types::DonutCenterOptions>,
+    pub donut_center_options: ::std::option::Option<crate::types::DonutCenterOptions>,
 }
 impl DonutOptions {
     /// <p>The option for define the arc of the chart shape. Valid values are as follows:</p>
@@ -25,11 +25,11 @@ impl DonutOptions {
     /// <li> <p> <code>MEDIUM</code>- A medium-sized donut chart</p> </li>
     /// <li> <p> <code>LARGE</code>- A large-sized donut chart</p> </li>
     /// </ul>
-    pub fn arc_options(&self) -> std::option::Option<&crate::types::ArcOptions> {
+    pub fn arc_options(&self) -> ::std::option::Option<&crate::types::ArcOptions> {
         self.arc_options.as_ref()
     }
     /// <p>The label options of the label that is displayed in the center of a donut chart. This option isn't available for pie charts.</p>
-    pub fn donut_center_options(&self) -> std::option::Option<&crate::types::DonutCenterOptions> {
+    pub fn donut_center_options(&self) -> ::std::option::Option<&crate::types::DonutCenterOptions> {
         self.donut_center_options.as_ref()
     }
 }
@@ -42,10 +42,12 @@ impl DonutOptions {
 
 /// A builder for [`DonutOptions`](crate::types::DonutOptions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DonutOptionsBuilder {
-    pub(crate) arc_options: std::option::Option<crate::types::ArcOptions>,
-    pub(crate) donut_center_options: std::option::Option<crate::types::DonutCenterOptions>,
+    pub(crate) arc_options: ::std::option::Option<crate::types::ArcOptions>,
+    pub(crate) donut_center_options: ::std::option::Option<crate::types::DonutCenterOptions>,
 }
 impl DonutOptionsBuilder {
     /// <p>The option for define the arc of the chart shape. Valid values are as follows:</p>
@@ -56,7 +58,7 @@ impl DonutOptionsBuilder {
     /// <li> <p> <code>LARGE</code>- A large-sized donut chart</p> </li>
     /// </ul>
     pub fn arc_options(mut self, input: crate::types::ArcOptions) -> Self {
-        self.arc_options = Some(input);
+        self.arc_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The option for define the arc of the chart shape. Valid values are as follows:</p>
@@ -66,19 +68,22 @@ impl DonutOptionsBuilder {
     /// <li> <p> <code>MEDIUM</code>- A medium-sized donut chart</p> </li>
     /// <li> <p> <code>LARGE</code>- A large-sized donut chart</p> </li>
     /// </ul>
-    pub fn set_arc_options(mut self, input: std::option::Option<crate::types::ArcOptions>) -> Self {
+    pub fn set_arc_options(
+        mut self,
+        input: ::std::option::Option<crate::types::ArcOptions>,
+    ) -> Self {
         self.arc_options = input;
         self
     }
     /// <p>The label options of the label that is displayed in the center of a donut chart. This option isn't available for pie charts.</p>
     pub fn donut_center_options(mut self, input: crate::types::DonutCenterOptions) -> Self {
-        self.donut_center_options = Some(input);
+        self.donut_center_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The label options of the label that is displayed in the center of a donut chart. This option isn't available for pie charts.</p>
     pub fn set_donut_center_options(
         mut self,
-        input: std::option::Option<crate::types::DonutCenterOptions>,
+        input: ::std::option::Option<crate::types::DonutCenterOptions>,
     ) -> Self {
         self.donut_center_options = input;
         self

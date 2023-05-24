@@ -2,29 +2,29 @@
 
 /// <p>Describes a Region.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Region {
     /// <p>The Region service endpoint.</p>
     #[doc(hidden)]
-    pub endpoint: std::option::Option<std::string::String>,
+    pub endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Region.</p>
     #[doc(hidden)]
-    pub region_name: std::option::Option<std::string::String>,
+    pub region_name: ::std::option::Option<::std::string::String>,
     /// <p>The Region opt-in status. The possible values are <code>opt-in-not-required</code>, <code>opted-in</code>, and <code>not-opted-in</code>.</p>
     #[doc(hidden)]
-    pub opt_in_status: std::option::Option<std::string::String>,
+    pub opt_in_status: ::std::option::Option<::std::string::String>,
 }
 impl Region {
     /// <p>The Region service endpoint.</p>
-    pub fn endpoint(&self) -> std::option::Option<&str> {
+    pub fn endpoint(&self) -> ::std::option::Option<&str> {
         self.endpoint.as_deref()
     }
     /// <p>The name of the Region.</p>
-    pub fn region_name(&self) -> std::option::Option<&str> {
+    pub fn region_name(&self) -> ::std::option::Option<&str> {
         self.region_name.as_deref()
     }
     /// <p>The Region opt-in status. The possible values are <code>opt-in-not-required</code>, <code>opted-in</code>, and <code>not-opted-in</code>.</p>
-    pub fn opt_in_status(&self) -> std::option::Option<&str> {
+    pub fn opt_in_status(&self) -> ::std::option::Option<&str> {
         self.opt_in_status.as_deref()
     }
 }
@@ -37,40 +37,48 @@ impl Region {
 
 /// A builder for [`Region`](crate::types::Region).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RegionBuilder {
-    pub(crate) endpoint: std::option::Option<std::string::String>,
-    pub(crate) region_name: std::option::Option<std::string::String>,
-    pub(crate) opt_in_status: std::option::Option<std::string::String>,
+    pub(crate) endpoint: ::std::option::Option<::std::string::String>,
+    pub(crate) region_name: ::std::option::Option<::std::string::String>,
+    pub(crate) opt_in_status: ::std::option::Option<::std::string::String>,
 }
 impl RegionBuilder {
     /// <p>The Region service endpoint.</p>
-    pub fn endpoint(mut self, input: impl Into<std::string::String>) -> Self {
-        self.endpoint = Some(input.into());
+    pub fn endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.endpoint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Region service endpoint.</p>
-    pub fn set_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint = input;
         self
     }
     /// <p>The name of the Region.</p>
-    pub fn region_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.region_name = Some(input.into());
+    pub fn region_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.region_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Region.</p>
-    pub fn set_region_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_region_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region_name = input;
         self
     }
     /// <p>The Region opt-in status. The possible values are <code>opt-in-not-required</code>, <code>opted-in</code>, and <code>not-opted-in</code>.</p>
-    pub fn opt_in_status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.opt_in_status = Some(input.into());
+    pub fn opt_in_status(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.opt_in_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Region opt-in status. The possible values are <code>opt-in-not-required</code>, <code>opted-in</code>, and <code>not-opted-in</code>.</p>
-    pub fn set_opt_in_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_opt_in_status(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.opt_in_status = input;
         self
     }

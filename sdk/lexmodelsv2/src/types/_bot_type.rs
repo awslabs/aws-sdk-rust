@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum BotType {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum BotType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for BotType {
+impl ::std::convert::From<&str> for BotType {
     fn from(s: &str) -> Self {
         match s {
             "Bot" => BotType::Bot,
@@ -63,11 +63,11 @@ impl std::convert::From<&str> for BotType {
         }
     }
 }
-impl std::str::FromStr for BotType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for BotType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(BotType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(BotType::from(s))
     }
 }
 impl BotType {
@@ -84,7 +84,7 @@ impl BotType {
         &["Bot", "BotNetwork"]
     }
 }
-impl AsRef<str> for BotType {
+impl ::std::convert::AsRef<str> for BotType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

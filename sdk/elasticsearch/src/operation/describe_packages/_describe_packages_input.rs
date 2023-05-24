@@ -2,29 +2,29 @@
 
 /// <p> Container for request parameters to <code> <code>DescribePackage</code> </code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribePackagesInput {
     /// <p>Only returns packages that match the <code>DescribePackagesFilterList</code> values.</p>
     #[doc(hidden)]
-    pub filters: std::option::Option<std::vec::Vec<crate::types::DescribePackagesFilter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::DescribePackagesFilter>>,
     /// <p>Limits results to a maximum number of packages.</p>
     #[doc(hidden)]
-    pub max_results: std::option::Option<i32>,
+    pub max_results: ::std::option::Option<i32>,
     /// <p>Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided, returns results for the next page.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribePackagesInput {
     /// <p>Only returns packages that match the <code>DescribePackagesFilterList</code> values.</p>
-    pub fn filters(&self) -> std::option::Option<&[crate::types::DescribePackagesFilter]> {
+    pub fn filters(&self) -> ::std::option::Option<&[crate::types::DescribePackagesFilter]> {
         self.filters.as_deref()
     }
     /// <p>Limits results to a maximum number of packages.</p>
-    pub fn max_results(&self) -> std::option::Option<i32> {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided, returns results for the next page.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
@@ -38,11 +38,14 @@ impl DescribePackagesInput {
 
 /// A builder for [`DescribePackagesInput`](crate::operation::describe_packages::DescribePackagesInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribePackagesInputBuilder {
-    pub(crate) filters: std::option::Option<std::vec::Vec<crate::types::DescribePackagesFilter>>,
-    pub(crate) max_results: std::option::Option<i32>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) filters:
+        ::std::option::Option<::std::vec::Vec<crate::types::DescribePackagesFilter>>,
+    pub(crate) max_results: ::std::option::Option<i32>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribePackagesInputBuilder {
     /// Appends an item to `filters`.
@@ -53,45 +56,45 @@ impl DescribePackagesInputBuilder {
     pub fn filters(mut self, input: crate::types::DescribePackagesFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
         v.push(input);
-        self.filters = Some(v);
+        self.filters = ::std::option::Option::Some(v);
         self
     }
     /// <p>Only returns packages that match the <code>DescribePackagesFilterList</code> values.</p>
     pub fn set_filters(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DescribePackagesFilter>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DescribePackagesFilter>>,
     ) -> Self {
         self.filters = input;
         self
     }
     /// <p>Limits results to a maximum number of packages.</p>
     pub fn max_results(mut self, input: i32) -> Self {
-        self.max_results = Some(input);
+        self.max_results = ::std::option::Option::Some(input);
         self
     }
     /// <p>Limits results to a maximum number of packages.</p>
-    pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
     /// <p>Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided, returns results for the next page.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided, returns results for the next page.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
     /// Consumes the builder and constructs a [`DescribePackagesInput`](crate::operation::describe_packages::DescribePackagesInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::describe_packages::DescribePackagesInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::describe_packages::DescribePackagesInput {
+        ::std::result::Result::Ok(crate::operation::describe_packages::DescribePackagesInput {
             filters: self.filters,
             max_results: self.max_results,
             next_token: self.next_token,

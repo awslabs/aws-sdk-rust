@@ -2,14 +2,14 @@
 
 /// <p>A summary of resources that are compliant. The summary is organized according to the resource count for each compliance type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CompliantSummary {
     /// <p>The total number of resources that are compliant.</p>
     #[doc(hidden)]
     pub compliant_count: i32,
     /// <p>A summary of the compliance severity by compliance type.</p>
     #[doc(hidden)]
-    pub severity_summary: std::option::Option<crate::types::SeveritySummary>,
+    pub severity_summary: ::std::option::Option<crate::types::SeveritySummary>,
 }
 impl CompliantSummary {
     /// <p>The total number of resources that are compliant.</p>
@@ -17,7 +17,7 @@ impl CompliantSummary {
         self.compliant_count
     }
     /// <p>A summary of the compliance severity by compliance type.</p>
-    pub fn severity_summary(&self) -> std::option::Option<&crate::types::SeveritySummary> {
+    pub fn severity_summary(&self) -> ::std::option::Option<&crate::types::SeveritySummary> {
         self.severity_summary.as_ref()
     }
 }
@@ -30,31 +30,33 @@ impl CompliantSummary {
 
 /// A builder for [`CompliantSummary`](crate::types::CompliantSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CompliantSummaryBuilder {
-    pub(crate) compliant_count: std::option::Option<i32>,
-    pub(crate) severity_summary: std::option::Option<crate::types::SeveritySummary>,
+    pub(crate) compliant_count: ::std::option::Option<i32>,
+    pub(crate) severity_summary: ::std::option::Option<crate::types::SeveritySummary>,
 }
 impl CompliantSummaryBuilder {
     /// <p>The total number of resources that are compliant.</p>
     pub fn compliant_count(mut self, input: i32) -> Self {
-        self.compliant_count = Some(input);
+        self.compliant_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total number of resources that are compliant.</p>
-    pub fn set_compliant_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_compliant_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.compliant_count = input;
         self
     }
     /// <p>A summary of the compliance severity by compliance type.</p>
     pub fn severity_summary(mut self, input: crate::types::SeveritySummary) -> Self {
-        self.severity_summary = Some(input);
+        self.severity_summary = ::std::option::Option::Some(input);
         self
     }
     /// <p>A summary of the compliance severity by compliance type.</p>
     pub fn set_severity_summary(
         mut self,
-        input: std::option::Option<crate::types::SeveritySummary>,
+        input: ::std::option::Option<crate::types::SeveritySummary>,
     ) -> Self {
         self.severity_summary = input;
         self

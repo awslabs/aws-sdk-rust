@@ -2,22 +2,22 @@
 
 /// <p>An object that describes the details of a string filter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StringFilter {
     /// <p>The operator to use when comparing values in the filter.</p>
     #[doc(hidden)]
-    pub comparison: std::option::Option<crate::types::StringComparison>,
+    pub comparison: ::std::option::Option<crate::types::StringComparison>,
     /// <p>The value to filter on.</p>
     #[doc(hidden)]
-    pub value: std::option::Option<std::string::String>,
+    pub value: ::std::option::Option<::std::string::String>,
 }
 impl StringFilter {
     /// <p>The operator to use when comparing values in the filter.</p>
-    pub fn comparison(&self) -> std::option::Option<&crate::types::StringComparison> {
+    pub fn comparison(&self) -> ::std::option::Option<&crate::types::StringComparison> {
         self.comparison.as_ref()
     }
     /// <p>The value to filter on.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
 }
@@ -30,32 +30,34 @@ impl StringFilter {
 
 /// A builder for [`StringFilter`](crate::types::StringFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StringFilterBuilder {
-    pub(crate) comparison: std::option::Option<crate::types::StringComparison>,
-    pub(crate) value: std::option::Option<std::string::String>,
+    pub(crate) comparison: ::std::option::Option<crate::types::StringComparison>,
+    pub(crate) value: ::std::option::Option<::std::string::String>,
 }
 impl StringFilterBuilder {
     /// <p>The operator to use when comparing values in the filter.</p>
     pub fn comparison(mut self, input: crate::types::StringComparison) -> Self {
-        self.comparison = Some(input);
+        self.comparison = ::std::option::Option::Some(input);
         self
     }
     /// <p>The operator to use when comparing values in the filter.</p>
     pub fn set_comparison(
         mut self,
-        input: std::option::Option<crate::types::StringComparison>,
+        input: ::std::option::Option<crate::types::StringComparison>,
     ) -> Self {
         self.comparison = input;
         self
     }
     /// <p>The value to filter on.</p>
-    pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.value = Some(input.into());
+    pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value to filter on.</p>
-    pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
     }

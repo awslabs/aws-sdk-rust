@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StartInferenceExperiment`](crate::operation::start_inference_experiment::builders::StartInferenceExperimentFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::start_inference_experiment::builders::StartInferenceExperimentFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::start_inference_experiment::builders::StartInferenceExperimentFluentBuilder::set_name): <p>The name of the inference experiment to start.</p>
+    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::start_inference_experiment::builders::StartInferenceExperimentFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::start_inference_experiment::builders::StartInferenceExperimentFluentBuilder::set_name): <p>The name of the inference experiment to start.</p>
     /// - On success, responds with [`StartInferenceExperimentOutput`](crate::operation::start_inference_experiment::StartInferenceExperimentOutput) with field(s):
     ///   - [`inference_experiment_arn(Option<String>)`](crate::operation::start_inference_experiment::StartInferenceExperimentOutput::inference_experiment_arn): <p>The ARN of the started inference experiment to start.</p>
     /// - On failure, responds with [`SdkError<StartInferenceExperimentError>`](crate::operation::start_inference_experiment::StartInferenceExperimentError)

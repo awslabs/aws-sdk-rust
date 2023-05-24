@@ -2,29 +2,31 @@
 
 /// <p>Information about the network impairment for a specific network measured by Amazon CloudWatch Internet Monitor.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkImpairment {
     /// <p>The networks that could be impacted by a network impairment event.</p>
     #[doc(hidden)]
-    pub networks: std::option::Option<std::vec::Vec<crate::types::Network>>,
+    pub networks: ::std::option::Option<::std::vec::Vec<crate::types::Network>>,
     /// <p>The combination of the Autonomous System Number (ASN) of the network and the name of the network.</p>
     #[doc(hidden)]
-    pub as_path: std::option::Option<std::vec::Vec<crate::types::Network>>,
+    pub as_path: ::std::option::Option<::std::vec::Vec<crate::types::Network>>,
     /// <p>Type of network impairment.</p>
     #[doc(hidden)]
-    pub network_event_type: std::option::Option<crate::types::TriangulationEventType>,
+    pub network_event_type: ::std::option::Option<crate::types::TriangulationEventType>,
 }
 impl NetworkImpairment {
     /// <p>The networks that could be impacted by a network impairment event.</p>
-    pub fn networks(&self) -> std::option::Option<&[crate::types::Network]> {
+    pub fn networks(&self) -> ::std::option::Option<&[crate::types::Network]> {
         self.networks.as_deref()
     }
     /// <p>The combination of the Autonomous System Number (ASN) of the network and the name of the network.</p>
-    pub fn as_path(&self) -> std::option::Option<&[crate::types::Network]> {
+    pub fn as_path(&self) -> ::std::option::Option<&[crate::types::Network]> {
         self.as_path.as_deref()
     }
     /// <p>Type of network impairment.</p>
-    pub fn network_event_type(&self) -> std::option::Option<&crate::types::TriangulationEventType> {
+    pub fn network_event_type(
+        &self,
+    ) -> ::std::option::Option<&crate::types::TriangulationEventType> {
         self.network_event_type.as_ref()
     }
 }
@@ -37,11 +39,13 @@ impl NetworkImpairment {
 
 /// A builder for [`NetworkImpairment`](crate::types::NetworkImpairment).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NetworkImpairmentBuilder {
-    pub(crate) networks: std::option::Option<std::vec::Vec<crate::types::Network>>,
-    pub(crate) as_path: std::option::Option<std::vec::Vec<crate::types::Network>>,
-    pub(crate) network_event_type: std::option::Option<crate::types::TriangulationEventType>,
+    pub(crate) networks: ::std::option::Option<::std::vec::Vec<crate::types::Network>>,
+    pub(crate) as_path: ::std::option::Option<::std::vec::Vec<crate::types::Network>>,
+    pub(crate) network_event_type: ::std::option::Option<crate::types::TriangulationEventType>,
 }
 impl NetworkImpairmentBuilder {
     /// Appends an item to `networks`.
@@ -52,13 +56,13 @@ impl NetworkImpairmentBuilder {
     pub fn networks(mut self, input: crate::types::Network) -> Self {
         let mut v = self.networks.unwrap_or_default();
         v.push(input);
-        self.networks = Some(v);
+        self.networks = ::std::option::Option::Some(v);
         self
     }
     /// <p>The networks that could be impacted by a network impairment event.</p>
     pub fn set_networks(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Network>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Network>>,
     ) -> Self {
         self.networks = input;
         self
@@ -71,26 +75,26 @@ impl NetworkImpairmentBuilder {
     pub fn as_path(mut self, input: crate::types::Network) -> Self {
         let mut v = self.as_path.unwrap_or_default();
         v.push(input);
-        self.as_path = Some(v);
+        self.as_path = ::std::option::Option::Some(v);
         self
     }
     /// <p>The combination of the Autonomous System Number (ASN) of the network and the name of the network.</p>
     pub fn set_as_path(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Network>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Network>>,
     ) -> Self {
         self.as_path = input;
         self
     }
     /// <p>Type of network impairment.</p>
     pub fn network_event_type(mut self, input: crate::types::TriangulationEventType) -> Self {
-        self.network_event_type = Some(input);
+        self.network_event_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Type of network impairment.</p>
     pub fn set_network_event_type(
         mut self,
-        input: std::option::Option<crate::types::TriangulationEventType>,
+        input: ::std::option::Option<crate::types::TriangulationEventType>,
     ) -> Self {
         self.network_event_type = input;
         self

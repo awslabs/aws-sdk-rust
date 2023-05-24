@@ -2,22 +2,22 @@
 
 /// <p>A <code>ReplayDestination</code> object that contains details about a replay.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplayDestination {
     /// <p>The ARN of the event bus to replay event to. You can replay events only to the event bus specified to create the archive.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of ARNs for rules to replay events to.</p>
     #[doc(hidden)]
-    pub filter_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub filter_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ReplayDestination {
     /// <p>The ARN of the event bus to replay event to. You can replay events only to the event bus specified to create the archive.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>A list of ARNs for rules to replay events to.</p>
-    pub fn filter_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn filter_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.filter_arns.as_deref()
     }
 }
@@ -30,19 +30,21 @@ impl ReplayDestination {
 
 /// A builder for [`ReplayDestination`](crate::types::ReplayDestination).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ReplayDestinationBuilder {
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) filter_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) filter_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ReplayDestinationBuilder {
     /// <p>The ARN of the event bus to replay event to. You can replay events only to the event bus specified to create the archive.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the event bus to replay event to. You can replay events only to the event bus specified to create the archive.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
@@ -51,16 +53,16 @@ impl ReplayDestinationBuilder {
     /// To override the contents of this collection use [`set_filter_arns`](Self::set_filter_arns).
     ///
     /// <p>A list of ARNs for rules to replay events to.</p>
-    pub fn filter_arns(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn filter_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.filter_arns.unwrap_or_default();
         v.push(input.into());
-        self.filter_arns = Some(v);
+        self.filter_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of ARNs for rules to replay events to.</p>
     pub fn set_filter_arns(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.filter_arns = input;
         self

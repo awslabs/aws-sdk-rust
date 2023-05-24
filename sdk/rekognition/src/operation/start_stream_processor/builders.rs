@@ -7,29 +7,29 @@ pub use crate::operation::start_stream_processor::_start_stream_processor_input:
 ///
 /// <p>Starts processing a stream processor. You create a stream processor by calling <code>CreateStreamProcessor</code>. To tell <code>StartStreamProcessor</code> which stream processor to start, use the value of the <code>Name</code> field specified in the call to <code>CreateStreamProcessor</code>.</p>
 /// <p>If you are using a label detection stream processor to detect labels, you need to provide a <code>Start selector</code> and a <code>Stop selector</code> to determine the length of the stream processing time.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartStreamProcessorFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::start_stream_processor::builders::StartStreamProcessorInputBuilder,
 }
 impl StartStreamProcessorFluentBuilder {
     /// Creates a new `StartStreamProcessor`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::start_stream_processor::StartStreamProcessor,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::start_stream_processor::StartStreamProcessorError,
         >,
     > {
@@ -37,30 +37,33 @@ impl StartStreamProcessorFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::start_stream_processor::StartStreamProcessorOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::start_stream_processor::StartStreamProcessorError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -73,21 +76,21 @@ impl StartStreamProcessorFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::start_stream_processor::StartStreamProcessorOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::start_stream_processor::StartStreamProcessorError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the stream processor to start processing.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// <p>The name of the stream processor to start processing.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
@@ -101,7 +104,7 @@ impl StartStreamProcessorFluentBuilder {
     /// <p>This is a required parameter for label detection stream processors and should not be used to start a face search stream processor.</p>
     pub fn set_start_selector(
         mut self,
-        input: std::option::Option<crate::types::StreamProcessingStartSelector>,
+        input: ::std::option::Option<crate::types::StreamProcessingStartSelector>,
     ) -> Self {
         self.inner = self.inner.set_start_selector(input);
         self
@@ -116,7 +119,7 @@ impl StartStreamProcessorFluentBuilder {
     /// <p>This is a required parameter for label detection stream processors and should not be used to start a face search stream processor.</p>
     pub fn set_stop_selector(
         mut self,
-        input: std::option::Option<crate::types::StreamProcessingStopSelector>,
+        input: ::std::option::Option<crate::types::StreamProcessingStopSelector>,
     ) -> Self {
         self.inner = self.inner.set_stop_selector(input);
         self

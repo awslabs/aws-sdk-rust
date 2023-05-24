@@ -2,7 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_key_groups_http_error(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::list_key_groups::ListKeyGroupsOutput,
@@ -15,7 +15,7 @@ pub fn de_list_key_groups_http_error(
         _response_body,
     )
     .map_err(crate::operation::list_key_groups::ListKeyGroupsError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
+    generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
@@ -57,7 +57,7 @@ pub fn de_list_key_groups_http_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_key_groups_http_response_with_props(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::list_key_groups::ListKeyGroupsOutput,
@@ -73,7 +73,7 @@ pub fn de_list_key_groups_http_response_with_props(
             )?,
         );
         output._set_request_id(
-            aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
+            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
         );
         output.build()
     })

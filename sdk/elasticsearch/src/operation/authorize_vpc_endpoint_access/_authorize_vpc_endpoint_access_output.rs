@@ -2,20 +2,22 @@
 
 /// <p>Container for response parameters to the <code><code>AuthorizeVpcEndpointAccess</code></code> operation. Contains the account ID and the type of the account being authorized to access the VPC endpoint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AuthorizeVpcEndpointAccessOutput {
     /// <p>Information about the account or service that was provided access to the domain.</p>
     #[doc(hidden)]
-    pub authorized_principal: std::option::Option<crate::types::AuthorizedPrincipal>,
+    pub authorized_principal: ::std::option::Option<crate::types::AuthorizedPrincipal>,
     _request_id: Option<String>,
 }
 impl AuthorizeVpcEndpointAccessOutput {
     /// <p>Information about the account or service that was provided access to the domain.</p>
-    pub fn authorized_principal(&self) -> std::option::Option<&crate::types::AuthorizedPrincipal> {
+    pub fn authorized_principal(
+        &self,
+    ) -> ::std::option::Option<&crate::types::AuthorizedPrincipal> {
         self.authorized_principal.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for AuthorizeVpcEndpointAccessOutput {
+impl ::aws_http::request_id::RequestId for AuthorizeVpcEndpointAccessOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,21 +31,23 @@ impl AuthorizeVpcEndpointAccessOutput {
 
 /// A builder for [`AuthorizeVpcEndpointAccessOutput`](crate::operation::authorize_vpc_endpoint_access::AuthorizeVpcEndpointAccessOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AuthorizeVpcEndpointAccessOutputBuilder {
-    pub(crate) authorized_principal: std::option::Option<crate::types::AuthorizedPrincipal>,
+    pub(crate) authorized_principal: ::std::option::Option<crate::types::AuthorizedPrincipal>,
     _request_id: Option<String>,
 }
 impl AuthorizeVpcEndpointAccessOutputBuilder {
     /// <p>Information about the account or service that was provided access to the domain.</p>
     pub fn authorized_principal(mut self, input: crate::types::AuthorizedPrincipal) -> Self {
-        self.authorized_principal = Some(input);
+        self.authorized_principal = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the account or service that was provided access to the domain.</p>
     pub fn set_authorized_principal(
         mut self,
-        input: std::option::Option<crate::types::AuthorizedPrincipal>,
+        input: ::std::option::Option<crate::types::AuthorizedPrincipal>,
     ) -> Self {
         self.authorized_principal = input;
         self

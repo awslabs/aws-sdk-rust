@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteAuthPolicy`](crate::operation::delete_auth_policy::builders::DeleteAuthPolicyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_identifier(impl Into<String>)`](crate::operation::delete_auth_policy::builders::DeleteAuthPolicyFluentBuilder::resource_identifier) / [`set_resource_identifier(Option<String>)`](crate::operation::delete_auth_policy::builders::DeleteAuthPolicyFluentBuilder::set_resource_identifier): <p>The ID or Amazon Resource Name (ARN) of the resource.</p>
+    ///   - [`resource_identifier(impl ::std::convert::Into<String>)`](crate::operation::delete_auth_policy::builders::DeleteAuthPolicyFluentBuilder::resource_identifier) / [`set_resource_identifier(Option<String>)`](crate::operation::delete_auth_policy::builders::DeleteAuthPolicyFluentBuilder::set_resource_identifier): <p>The ID or Amazon Resource Name (ARN) of the resource.</p>
     /// - On success, responds with [`DeleteAuthPolicyOutput`](crate::operation::delete_auth_policy::DeleteAuthPolicyOutput)
     /// - On failure, responds with [`SdkError<DeleteAuthPolicyError>`](crate::operation::delete_auth_policy::DeleteAuthPolicyError)
     pub fn delete_auth_policy(

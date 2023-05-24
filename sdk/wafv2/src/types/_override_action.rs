@@ -5,26 +5,26 @@
 /// <p>This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want the rules in the rule group to only count matches, do not use this and instead use the rule action override option, with <code>Count</code> action, in your rule group reference statement settings. </p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OverrideAction {
     /// <p>Override the rule group evaluation result to count only. </p> <note>
     /// <p>This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want the rules in the rule group to only count matches, do not use this and instead use the rule action override option, with <code>Count</code> action, in your rule group reference statement settings. </p>
     /// </note>
     #[doc(hidden)]
-    pub count: std::option::Option<crate::types::CountAction>,
+    pub count: ::std::option::Option<crate::types::CountAction>,
     /// <p>Don't override the rule group evaluation result. This is the most common setting.</p>
     #[doc(hidden)]
-    pub none: std::option::Option<crate::types::NoneAction>,
+    pub none: ::std::option::Option<crate::types::NoneAction>,
 }
 impl OverrideAction {
     /// <p>Override the rule group evaluation result to count only. </p> <note>
     /// <p>This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want the rules in the rule group to only count matches, do not use this and instead use the rule action override option, with <code>Count</code> action, in your rule group reference statement settings. </p>
     /// </note>
-    pub fn count(&self) -> std::option::Option<&crate::types::CountAction> {
+    pub fn count(&self) -> ::std::option::Option<&crate::types::CountAction> {
         self.count.as_ref()
     }
     /// <p>Don't override the rule group evaluation result. This is the most common setting.</p>
-    pub fn none(&self) -> std::option::Option<&crate::types::NoneAction> {
+    pub fn none(&self) -> ::std::option::Option<&crate::types::NoneAction> {
         self.none.as_ref()
     }
 }
@@ -37,33 +37,35 @@ impl OverrideAction {
 
 /// A builder for [`OverrideAction`](crate::types::OverrideAction).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OverrideActionBuilder {
-    pub(crate) count: std::option::Option<crate::types::CountAction>,
-    pub(crate) none: std::option::Option<crate::types::NoneAction>,
+    pub(crate) count: ::std::option::Option<crate::types::CountAction>,
+    pub(crate) none: ::std::option::Option<crate::types::NoneAction>,
 }
 impl OverrideActionBuilder {
     /// <p>Override the rule group evaluation result to count only. </p> <note>
     /// <p>This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want the rules in the rule group to only count matches, do not use this and instead use the rule action override option, with <code>Count</code> action, in your rule group reference statement settings. </p>
     /// </note>
     pub fn count(mut self, input: crate::types::CountAction) -> Self {
-        self.count = Some(input);
+        self.count = ::std::option::Option::Some(input);
         self
     }
     /// <p>Override the rule group evaluation result to count only. </p> <note>
     /// <p>This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want the rules in the rule group to only count matches, do not use this and instead use the rule action override option, with <code>Count</code> action, in your rule group reference statement settings. </p>
     /// </note>
-    pub fn set_count(mut self, input: std::option::Option<crate::types::CountAction>) -> Self {
+    pub fn set_count(mut self, input: ::std::option::Option<crate::types::CountAction>) -> Self {
         self.count = input;
         self
     }
     /// <p>Don't override the rule group evaluation result. This is the most common setting.</p>
     pub fn none(mut self, input: crate::types::NoneAction) -> Self {
-        self.none = Some(input);
+        self.none = ::std::option::Option::Some(input);
         self
     }
     /// <p>Don't override the rule group evaluation result. This is the most common setting.</p>
-    pub fn set_none(mut self, input: std::option::Option<crate::types::NoneAction>) -> Self {
+    pub fn set_none(mut self, input: ::std::option::Option<crate::types::NoneAction>) -> Self {
         self.none = input;
         self
     }

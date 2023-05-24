@@ -2,41 +2,41 @@
 
 /// <p>Contains details about a task that failed to start during an execution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct TaskStartFailedEventDetails {
     /// <p>The service name of the resource in a task state.</p>
     #[doc(hidden)]
-    pub resource_type: std::option::Option<std::string::String>,
+    pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>The action of the resource called by a task state.</p>
     #[doc(hidden)]
-    pub resource: std::option::Option<std::string::String>,
+    pub resource: ::std::option::Option<::std::string::String>,
     /// <p>The error code of the failure.</p>
     #[doc(hidden)]
-    pub error: std::option::Option<std::string::String>,
+    pub error: ::std::option::Option<::std::string::String>,
     /// <p>A more detailed explanation of the cause of the failure.</p>
     #[doc(hidden)]
-    pub cause: std::option::Option<std::string::String>,
+    pub cause: ::std::option::Option<::std::string::String>,
 }
 impl TaskStartFailedEventDetails {
     /// <p>The service name of the resource in a task state.</p>
-    pub fn resource_type(&self) -> std::option::Option<&str> {
+    pub fn resource_type(&self) -> ::std::option::Option<&str> {
         self.resource_type.as_deref()
     }
     /// <p>The action of the resource called by a task state.</p>
-    pub fn resource(&self) -> std::option::Option<&str> {
+    pub fn resource(&self) -> ::std::option::Option<&str> {
         self.resource.as_deref()
     }
     /// <p>The error code of the failure.</p>
-    pub fn error(&self) -> std::option::Option<&str> {
+    pub fn error(&self) -> ::std::option::Option<&str> {
         self.error.as_deref()
     }
     /// <p>A more detailed explanation of the cause of the failure.</p>
-    pub fn cause(&self) -> std::option::Option<&str> {
+    pub fn cause(&self) -> ::std::option::Option<&str> {
         self.cause.as_deref()
     }
 }
-impl std::fmt::Debug for TaskStartFailedEventDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for TaskStartFailedEventDetails {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("TaskStartFailedEventDetails");
         formatter.field("resource_type", &self.resource_type);
         formatter.field("resource", &self.resource);
@@ -54,51 +54,57 @@ impl TaskStartFailedEventDetails {
 
 /// A builder for [`TaskStartFailedEventDetails`](crate::types::TaskStartFailedEventDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct TaskStartFailedEventDetailsBuilder {
-    pub(crate) resource_type: std::option::Option<std::string::String>,
-    pub(crate) resource: std::option::Option<std::string::String>,
-    pub(crate) error: std::option::Option<std::string::String>,
-    pub(crate) cause: std::option::Option<std::string::String>,
+    pub(crate) resource_type: ::std::option::Option<::std::string::String>,
+    pub(crate) resource: ::std::option::Option<::std::string::String>,
+    pub(crate) error: ::std::option::Option<::std::string::String>,
+    pub(crate) cause: ::std::option::Option<::std::string::String>,
 }
 impl TaskStartFailedEventDetailsBuilder {
     /// <p>The service name of the resource in a task state.</p>
-    pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_type = Some(input.into());
+    pub fn resource_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The service name of the resource in a task state.</p>
-    pub fn set_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.resource_type = input;
         self
     }
     /// <p>The action of the resource called by a task state.</p>
-    pub fn resource(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource = Some(input.into());
+    pub fn resource(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The action of the resource called by a task state.</p>
-    pub fn set_resource(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource = input;
         self
     }
     /// <p>The error code of the failure.</p>
-    pub fn error(mut self, input: impl Into<std::string::String>) -> Self {
-        self.error = Some(input.into());
+    pub fn error(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.error = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The error code of the failure.</p>
-    pub fn set_error(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_error(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error = input;
         self
     }
     /// <p>A more detailed explanation of the cause of the failure.</p>
-    pub fn cause(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cause = Some(input.into());
+    pub fn cause(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cause = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A more detailed explanation of the cause of the failure.</p>
-    pub fn set_cause(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cause(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cause = input;
         self
     }
@@ -112,8 +118,8 @@ impl TaskStartFailedEventDetailsBuilder {
         }
     }
 }
-impl std::fmt::Debug for TaskStartFailedEventDetailsBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for TaskStartFailedEventDetailsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("TaskStartFailedEventDetailsBuilder");
         formatter.field("resource_type", &self.resource_type);
         formatter.field("resource", &self.resource);

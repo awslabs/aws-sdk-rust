@@ -2,22 +2,22 @@
 
 /// <p>The redirect behavior for requests to the website.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsS3BucketWebsiteConfigurationRedirectTo {
     /// <p>The name of the host to redirect requests to.</p>
     #[doc(hidden)]
-    pub hostname: std::option::Option<std::string::String>,
+    pub hostname: ::std::option::Option<::std::string::String>,
     /// <p>The protocol to use when redirecting requests. By default, this field uses the same protocol as the original request. Valid values are <code>http</code> or <code>https</code>.</p>
     #[doc(hidden)]
-    pub protocol: std::option::Option<std::string::String>,
+    pub protocol: ::std::option::Option<::std::string::String>,
 }
 impl AwsS3BucketWebsiteConfigurationRedirectTo {
     /// <p>The name of the host to redirect requests to.</p>
-    pub fn hostname(&self) -> std::option::Option<&str> {
+    pub fn hostname(&self) -> ::std::option::Option<&str> {
         self.hostname.as_deref()
     }
     /// <p>The protocol to use when redirecting requests. By default, this field uses the same protocol as the original request. Valid values are <code>http</code> or <code>https</code>.</p>
-    pub fn protocol(&self) -> std::option::Option<&str> {
+    pub fn protocol(&self) -> ::std::option::Option<&str> {
         self.protocol.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl AwsS3BucketWebsiteConfigurationRedirectTo {
 
 /// A builder for [`AwsS3BucketWebsiteConfigurationRedirectTo`](crate::types::AwsS3BucketWebsiteConfigurationRedirectTo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsS3BucketWebsiteConfigurationRedirectToBuilder {
-    pub(crate) hostname: std::option::Option<std::string::String>,
-    pub(crate) protocol: std::option::Option<std::string::String>,
+    pub(crate) hostname: ::std::option::Option<::std::string::String>,
+    pub(crate) protocol: ::std::option::Option<::std::string::String>,
 }
 impl AwsS3BucketWebsiteConfigurationRedirectToBuilder {
     /// <p>The name of the host to redirect requests to.</p>
-    pub fn hostname(mut self, input: impl Into<std::string::String>) -> Self {
-        self.hostname = Some(input.into());
+    pub fn hostname(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.hostname = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the host to redirect requests to.</p>
-    pub fn set_hostname(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_hostname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hostname = input;
         self
     }
     /// <p>The protocol to use when redirecting requests. By default, this field uses the same protocol as the original request. Valid values are <code>http</code> or <code>https</code>.</p>
-    pub fn protocol(mut self, input: impl Into<std::string::String>) -> Self {
-        self.protocol = Some(input.into());
+    pub fn protocol(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.protocol = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The protocol to use when redirecting requests. By default, this field uses the same protocol as the original request. Valid values are <code>http</code> or <code>https</code>.</p>
-    pub fn set_protocol(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_protocol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.protocol = input;
         self
     }

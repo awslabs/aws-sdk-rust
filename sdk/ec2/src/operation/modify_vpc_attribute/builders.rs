@@ -6,29 +6,29 @@ pub use crate::operation::modify_vpc_attribute::_modify_vpc_attribute_input::Mod
 /// Fluent builder constructing a request to `ModifyVpcAttribute`.
 ///
 /// <p>Modifies the specified attribute of the specified VPC.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyVpcAttributeFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::modify_vpc_attribute::builders::ModifyVpcAttributeInputBuilder,
 }
 impl ModifyVpcAttributeFluentBuilder {
     /// Creates a new `ModifyVpcAttribute`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::modify_vpc_attribute::ModifyVpcAttribute,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::modify_vpc_attribute::ModifyVpcAttributeError,
         >,
     > {
@@ -36,30 +36,33 @@ impl ModifyVpcAttributeFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::modify_vpc_attribute::ModifyVpcAttributeOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::modify_vpc_attribute::ModifyVpcAttributeError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,9 +75,9 @@ impl ModifyVpcAttributeFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::modify_vpc_attribute::ModifyVpcAttributeOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::modify_vpc_attribute::ModifyVpcAttributeError,
         >,
     > {
@@ -90,7 +93,7 @@ impl ModifyVpcAttributeFluentBuilder {
     /// <p>You cannot modify the DNS resolution and DNS hostnames attributes in the same request. Use separate requests for each attribute. You can only enable DNS hostnames if you've enabled DNS support.</p>
     pub fn set_enable_dns_hostnames(
         mut self,
-        input: std::option::Option<crate::types::AttributeBooleanValue>,
+        input: ::std::option::Option<crate::types::AttributeBooleanValue>,
     ) -> Self {
         self.inner = self.inner.set_enable_dns_hostnames(input);
         self
@@ -105,18 +108,18 @@ impl ModifyVpcAttributeFluentBuilder {
     /// <p>You cannot modify the DNS resolution and DNS hostnames attributes in the same request. Use separate requests for each attribute.</p>
     pub fn set_enable_dns_support(
         mut self,
-        input: std::option::Option<crate::types::AttributeBooleanValue>,
+        input: ::std::option::Option<crate::types::AttributeBooleanValue>,
     ) -> Self {
         self.inner = self.inner.set_enable_dns_support(input);
         self
     }
     /// <p>The ID of the VPC.</p>
-    pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpc_id(input.into());
         self
     }
     /// <p>The ID of the VPC.</p>
-    pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vpc_id(input);
         self
     }
@@ -131,7 +134,7 @@ impl ModifyVpcAttributeFluentBuilder {
     /// <p>Indicates whether Network Address Usage metrics are enabled for your VPC.</p>
     pub fn set_enable_network_address_usage_metrics(
         mut self,
-        input: std::option::Option<crate::types::AttributeBooleanValue>,
+        input: ::std::option::Option<crate::types::AttributeBooleanValue>,
     ) -> Self {
         self.inner = self.inner.set_enable_network_address_usage_metrics(input);
         self

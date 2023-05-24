@@ -2,7 +2,7 @@
 
 /// <p>Diagnostic information about executable scripts that are part of a deployment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Diagnostics {
     /// <p>The associated error code:</p>
     /// <ul>
@@ -14,17 +14,17 @@ pub struct Diagnostics {
     /// <li> <p>UnknownError: The specified script did not run for an unknown reason.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub error_code: std::option::Option<crate::types::LifecycleErrorCode>,
+    pub error_code: ::std::option::Option<crate::types::LifecycleErrorCode>,
     /// <p>The name of the script.</p>
     #[doc(hidden)]
-    pub script_name: std::option::Option<std::string::String>,
+    pub script_name: ::std::option::Option<::std::string::String>,
     /// <p>The message associated with the error.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
     /// <p>The last portion of the diagnostic log.</p>
     /// <p>If available, CodeDeploy returns up to the last 4 KB of the diagnostic log.</p>
     #[doc(hidden)]
-    pub log_tail: std::option::Option<std::string::String>,
+    pub log_tail: ::std::option::Option<::std::string::String>,
 }
 impl Diagnostics {
     /// <p>The associated error code:</p>
@@ -36,20 +36,20 @@ impl Diagnostics {
     /// <li> <p>ScriptFailed: The specified script failed to run as expected.</p> </li>
     /// <li> <p>UnknownError: The specified script did not run for an unknown reason.</p> </li>
     /// </ul>
-    pub fn error_code(&self) -> std::option::Option<&crate::types::LifecycleErrorCode> {
+    pub fn error_code(&self) -> ::std::option::Option<&crate::types::LifecycleErrorCode> {
         self.error_code.as_ref()
     }
     /// <p>The name of the script.</p>
-    pub fn script_name(&self) -> std::option::Option<&str> {
+    pub fn script_name(&self) -> ::std::option::Option<&str> {
         self.script_name.as_deref()
     }
     /// <p>The message associated with the error.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
     /// <p>The last portion of the diagnostic log.</p>
     /// <p>If available, CodeDeploy returns up to the last 4 KB of the diagnostic log.</p>
-    pub fn log_tail(&self) -> std::option::Option<&str> {
+    pub fn log_tail(&self) -> ::std::option::Option<&str> {
         self.log_tail.as_deref()
     }
 }
@@ -62,12 +62,14 @@ impl Diagnostics {
 
 /// A builder for [`Diagnostics`](crate::types::Diagnostics).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DiagnosticsBuilder {
-    pub(crate) error_code: std::option::Option<crate::types::LifecycleErrorCode>,
-    pub(crate) script_name: std::option::Option<std::string::String>,
-    pub(crate) message: std::option::Option<std::string::String>,
-    pub(crate) log_tail: std::option::Option<std::string::String>,
+    pub(crate) error_code: ::std::option::Option<crate::types::LifecycleErrorCode>,
+    pub(crate) script_name: ::std::option::Option<::std::string::String>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
+    pub(crate) log_tail: ::std::option::Option<::std::string::String>,
 }
 impl DiagnosticsBuilder {
     /// <p>The associated error code:</p>
@@ -80,7 +82,7 @@ impl DiagnosticsBuilder {
     /// <li> <p>UnknownError: The specified script did not run for an unknown reason.</p> </li>
     /// </ul>
     pub fn error_code(mut self, input: crate::types::LifecycleErrorCode) -> Self {
-        self.error_code = Some(input);
+        self.error_code = ::std::option::Option::Some(input);
         self
     }
     /// <p>The associated error code:</p>
@@ -94,40 +96,40 @@ impl DiagnosticsBuilder {
     /// </ul>
     pub fn set_error_code(
         mut self,
-        input: std::option::Option<crate::types::LifecycleErrorCode>,
+        input: ::std::option::Option<crate::types::LifecycleErrorCode>,
     ) -> Self {
         self.error_code = input;
         self
     }
     /// <p>The name of the script.</p>
-    pub fn script_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.script_name = Some(input.into());
+    pub fn script_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.script_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the script.</p>
-    pub fn set_script_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_script_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.script_name = input;
         self
     }
     /// <p>The message associated with the error.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The message associated with the error.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
     /// <p>The last portion of the diagnostic log.</p>
     /// <p>If available, CodeDeploy returns up to the last 4 KB of the diagnostic log.</p>
-    pub fn log_tail(mut self, input: impl Into<std::string::String>) -> Self {
-        self.log_tail = Some(input.into());
+    pub fn log_tail(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.log_tail = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The last portion of the diagnostic log.</p>
     /// <p>If available, CodeDeploy returns up to the last 4 KB of the diagnostic log.</p>
-    pub fn set_log_tail(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_log_tail(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_tail = input;
         self
     }

@@ -38,13 +38,13 @@
 /// To create assets that have the same TIC values in each audio track, keep the default value Share TICs (SAME_TICS_PER_TRACK). To create assets that have unique TIC values for each audio track, choose Use unique TICs (RESERVE_UNIQUE_TICS_PER_TRACK).
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum NielsenUniqueTicPerAudioTrackType {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum NielsenUniqueTicPerAudioTrackType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for NielsenUniqueTicPerAudioTrackType {
+impl ::std::convert::From<&str> for NielsenUniqueTicPerAudioTrackType {
     fn from(s: &str) -> Self {
         match s {
             "RESERVE_UNIQUE_TICS_PER_TRACK" => {
@@ -67,11 +67,11 @@ impl std::convert::From<&str> for NielsenUniqueTicPerAudioTrackType {
         }
     }
 }
-impl std::str::FromStr for NielsenUniqueTicPerAudioTrackType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for NielsenUniqueTicPerAudioTrackType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(NielsenUniqueTicPerAudioTrackType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(NielsenUniqueTicPerAudioTrackType::from(s))
     }
 }
 impl NielsenUniqueTicPerAudioTrackType {
@@ -90,7 +90,7 @@ impl NielsenUniqueTicPerAudioTrackType {
         &["RESERVE_UNIQUE_TICS_PER_TRACK", "SAME_TICS_PER_TRACK"]
     }
 }
-impl AsRef<str> for NielsenUniqueTicPerAudioTrackType {
+impl ::std::convert::AsRef<str> for NielsenUniqueTicPerAudioTrackType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

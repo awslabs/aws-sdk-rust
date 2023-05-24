@@ -2,15 +2,15 @@
 
 /// <p>Information about the detector state.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetectorStateSummary {
     /// <p>The name of the state.</p>
     #[doc(hidden)]
-    pub state_name: std::option::Option<std::string::String>,
+    pub state_name: ::std::option::Option<::std::string::String>,
 }
 impl DetectorStateSummary {
     /// <p>The name of the state.</p>
-    pub fn state_name(&self) -> std::option::Option<&str> {
+    pub fn state_name(&self) -> ::std::option::Option<&str> {
         self.state_name.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl DetectorStateSummary {
 
 /// A builder for [`DetectorStateSummary`](crate::types::DetectorStateSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DetectorStateSummaryBuilder {
-    pub(crate) state_name: std::option::Option<std::string::String>,
+    pub(crate) state_name: ::std::option::Option<::std::string::String>,
 }
 impl DetectorStateSummaryBuilder {
     /// <p>The name of the state.</p>
-    pub fn state_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.state_name = Some(input.into());
+    pub fn state_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.state_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the state.</p>
-    pub fn set_state_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_state_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state_name = input;
         self
     }

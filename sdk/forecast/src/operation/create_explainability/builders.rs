@@ -49,29 +49,29 @@ pub use crate::operation::create_explainability::_create_explainability_input::C
 /// <li> <p> <code>StartDateTime</code> - The first timestamp in the range of time points.</p> </li>
 /// <li> <p> <code>EndDateTime</code> - The last timestamp in the range of time points.</p> </li>
 /// </ul>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateExplainabilityFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_explainability::builders::CreateExplainabilityInputBuilder,
 }
 impl CreateExplainabilityFluentBuilder {
     /// Creates a new `CreateExplainability`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_explainability::CreateExplainability,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_explainability::CreateExplainabilityError,
         >,
     > {
@@ -79,30 +79,33 @@ impl CreateExplainabilityFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_explainability::CreateExplainabilityOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_explainability::CreateExplainabilityError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -115,34 +118,37 @@ impl CreateExplainabilityFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_explainability::CreateExplainabilityOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_explainability::CreateExplainabilityError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>A unique name for the Explainability.</p>
-    pub fn explainability_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn explainability_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.explainability_name(input.into());
         self
     }
     /// <p>A unique name for the Explainability.</p>
     pub fn set_explainability_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_explainability_name(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Predictor or Forecast used to create the Explainability.</p>
-    pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Predictor or Forecast used to create the Explainability.</p>
-    pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_arn(input);
         self
     }
@@ -154,7 +160,7 @@ impl CreateExplainabilityFluentBuilder {
     /// <p>The configuration settings that define the granularity of time series and time points for the Explainability.</p>
     pub fn set_explainability_config(
         mut self,
-        input: std::option::Option<crate::types::ExplainabilityConfig>,
+        input: ::std::option::Option<crate::types::ExplainabilityConfig>,
     ) -> Self {
         self.inner = self.inner.set_explainability_config(input);
         self
@@ -165,7 +171,10 @@ impl CreateExplainabilityFluentBuilder {
         self
     }
     /// <p>The source of your data, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an Key Management Service (KMS) key.</p>
-    pub fn set_data_source(mut self, input: std::option::Option<crate::types::DataSource>) -> Self {
+    pub fn set_data_source(
+        mut self,
+        input: ::std::option::Option<crate::types::DataSource>,
+    ) -> Self {
         self.inner = self.inner.set_data_source(input);
         self
     }
@@ -175,7 +184,7 @@ impl CreateExplainabilityFluentBuilder {
         self
     }
     /// <p>Defines the fields of a dataset.</p>
-    pub fn set_schema(mut self, input: std::option::Option<crate::types::Schema>) -> Self {
+    pub fn set_schema(mut self, input: ::std::option::Option<crate::types::Schema>) -> Self {
         self.inner = self.inner.set_schema(input);
         self
     }
@@ -185,31 +194,43 @@ impl CreateExplainabilityFluentBuilder {
         self
     }
     /// <p>Create an Explainability visualization that is viewable within the Amazon Web Services console.</p>
-    pub fn set_enable_visualization(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enable_visualization(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enable_visualization(input);
         self
     }
     /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define the first point for the Explainability.</p>
     /// <p>Use the following timestamp format: yyyy-MM-ddTHH:mm:ss (example: 2015-01-01T20:00:00)</p>
-    pub fn start_date_time(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn start_date_time(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.start_date_time(input.into());
         self
     }
     /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define the first point for the Explainability.</p>
     /// <p>Use the following timestamp format: yyyy-MM-ddTHH:mm:ss (example: 2015-01-01T20:00:00)</p>
-    pub fn set_start_date_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_start_date_time(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_start_date_time(input);
         self
     }
     /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define the last time point for the Explainability.</p>
     /// <p>Use the following timestamp format: yyyy-MM-ddTHH:mm:ss (example: 2015-01-01T20:00:00)</p>
-    pub fn end_date_time(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn end_date_time(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.end_date_time(input.into());
         self
     }
     /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define the last time point for the Explainability.</p>
     /// <p>Use the following timestamp format: yyyy-MM-ddTHH:mm:ss (example: 2015-01-01T20:00:00)</p>
-    pub fn set_end_date_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_end_date_time(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_end_date_time(input);
         self
     }
@@ -243,7 +264,7 @@ impl CreateExplainabilityFluentBuilder {
     /// </ul>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self

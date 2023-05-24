@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeInferenceExperiment`](crate::operation::describe_inference_experiment::builders::DescribeInferenceExperimentFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::describe_inference_experiment::builders::DescribeInferenceExperimentFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::describe_inference_experiment::builders::DescribeInferenceExperimentFluentBuilder::set_name): <p>The name of the inference experiment to describe.</p>
+    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::describe_inference_experiment::builders::DescribeInferenceExperimentFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::describe_inference_experiment::builders::DescribeInferenceExperimentFluentBuilder::set_name): <p>The name of the inference experiment to describe.</p>
     /// - On success, responds with [`DescribeInferenceExperimentOutput`](crate::operation::describe_inference_experiment::DescribeInferenceExperimentOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::describe_inference_experiment::DescribeInferenceExperimentOutput::arn): <p>The ARN of the inference experiment being described.</p>
     ///   - [`name(Option<String>)`](crate::operation::describe_inference_experiment::DescribeInferenceExperimentOutput::name): <p>The name of the inference experiment.</p>

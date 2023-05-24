@@ -2,7 +2,7 @@
 
 /// <p>Contains summary information about a reference. <code>ReferenceSummary</code> contains only one non null field between the URL and attachment based on the reference type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum ReferenceSummary {
     /// <p>Information about the reference when the <code>referenceType</code> is <code>ATTACHMENT</code>. Otherwise, null.</p>
     Attachment(crate::types::AttachmentReference),
@@ -29,11 +29,13 @@ pub enum ReferenceSummary {
 impl ReferenceSummary {
     /// Tries to convert the enum instance into [`Attachment`](crate::types::ReferenceSummary::Attachment), extracting the inner [`AttachmentReference`](crate::types::AttachmentReference).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_attachment(&self) -> std::result::Result<&crate::types::AttachmentReference, &Self> {
+    pub fn as_attachment(
+        &self,
+    ) -> ::std::result::Result<&crate::types::AttachmentReference, &Self> {
         if let ReferenceSummary::Attachment(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Attachment`](crate::types::ReferenceSummary::Attachment).
@@ -42,11 +44,11 @@ impl ReferenceSummary {
     }
     /// Tries to convert the enum instance into [`Date`](crate::types::ReferenceSummary::Date), extracting the inner [`DateReference`](crate::types::DateReference).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_date(&self) -> std::result::Result<&crate::types::DateReference, &Self> {
+    pub fn as_date(&self) -> ::std::result::Result<&crate::types::DateReference, &Self> {
         if let ReferenceSummary::Date(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Date`](crate::types::ReferenceSummary::Date).
@@ -55,11 +57,11 @@ impl ReferenceSummary {
     }
     /// Tries to convert the enum instance into [`Email`](crate::types::ReferenceSummary::Email), extracting the inner [`EmailReference`](crate::types::EmailReference).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_email(&self) -> std::result::Result<&crate::types::EmailReference, &Self> {
+    pub fn as_email(&self) -> ::std::result::Result<&crate::types::EmailReference, &Self> {
         if let ReferenceSummary::Email(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Email`](crate::types::ReferenceSummary::Email).
@@ -68,11 +70,11 @@ impl ReferenceSummary {
     }
     /// Tries to convert the enum instance into [`Number`](crate::types::ReferenceSummary::Number), extracting the inner [`NumberReference`](crate::types::NumberReference).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_number(&self) -> std::result::Result<&crate::types::NumberReference, &Self> {
+    pub fn as_number(&self) -> ::std::result::Result<&crate::types::NumberReference, &Self> {
         if let ReferenceSummary::Number(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Number`](crate::types::ReferenceSummary::Number).
@@ -81,11 +83,11 @@ impl ReferenceSummary {
     }
     /// Tries to convert the enum instance into [`String`](crate::types::ReferenceSummary::String), extracting the inner [`StringReference`](crate::types::StringReference).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_string(&self) -> std::result::Result<&crate::types::StringReference, &Self> {
+    pub fn as_string(&self) -> ::std::result::Result<&crate::types::StringReference, &Self> {
         if let ReferenceSummary::String(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`String`](crate::types::ReferenceSummary::String).
@@ -94,11 +96,11 @@ impl ReferenceSummary {
     }
     /// Tries to convert the enum instance into [`Url`](crate::types::ReferenceSummary::Url), extracting the inner [`UrlReference`](crate::types::UrlReference).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_url(&self) -> std::result::Result<&crate::types::UrlReference, &Self> {
+    pub fn as_url(&self) -> ::std::result::Result<&crate::types::UrlReference, &Self> {
         if let ReferenceSummary::Url(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Url`](crate::types::ReferenceSummary::Url).

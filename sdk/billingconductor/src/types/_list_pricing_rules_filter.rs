@@ -2,15 +2,15 @@
 
 /// <p> The filter that specifies criteria that the pricing rules returned by the <code>ListPricingRules</code> API will adhere to. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPricingRulesFilter {
     /// <p> A list containing the pricing rule Amazon Resource Names (ARNs) to include in the API response. </p>
     #[doc(hidden)]
-    pub arns: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ListPricingRulesFilter {
     /// <p> A list containing the pricing rule Amazon Resource Names (ARNs) to include in the API response. </p>
-    pub fn arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn arns(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.arns.as_deref()
     }
 }
@@ -23,9 +23,11 @@ impl ListPricingRulesFilter {
 
 /// A builder for [`ListPricingRulesFilter`](crate::types::ListPricingRulesFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListPricingRulesFilterBuilder {
-    pub(crate) arns: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ListPricingRulesFilterBuilder {
     /// Appends an item to `arns`.
@@ -33,16 +35,16 @@ impl ListPricingRulesFilterBuilder {
     /// To override the contents of this collection use [`set_arns`](Self::set_arns).
     ///
     /// <p> A list containing the pricing rule Amazon Resource Names (ARNs) to include in the API response. </p>
-    pub fn arns(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.arns.unwrap_or_default();
         v.push(input.into());
-        self.arns = Some(v);
+        self.arns = ::std::option::Option::Some(v);
         self
     }
     /// <p> A list containing the pricing rule Amazon Resource Names (ARNs) to include in the API response. </p>
     pub fn set_arns(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.arns = input;
         self

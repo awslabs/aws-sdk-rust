@@ -2,15 +2,15 @@
 
 /// <p>A wildcard object, consisting of an optional list of excluded column names or indexes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ColumnWildcard {
     /// <p>Excludes column names. Any column with this name will be excluded.</p>
     #[doc(hidden)]
-    pub excluded_column_names: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub excluded_column_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ColumnWildcard {
     /// <p>Excludes column names. Any column with this name will be excluded.</p>
-    pub fn excluded_column_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn excluded_column_names(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.excluded_column_names.as_deref()
     }
 }
@@ -23,9 +23,11 @@ impl ColumnWildcard {
 
 /// A builder for [`ColumnWildcard`](crate::types::ColumnWildcard).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ColumnWildcardBuilder {
-    pub(crate) excluded_column_names: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) excluded_column_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ColumnWildcardBuilder {
     /// Appends an item to `excluded_column_names`.
@@ -33,16 +35,19 @@ impl ColumnWildcardBuilder {
     /// To override the contents of this collection use [`set_excluded_column_names`](Self::set_excluded_column_names).
     ///
     /// <p>Excludes column names. Any column with this name will be excluded.</p>
-    pub fn excluded_column_names(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn excluded_column_names(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.excluded_column_names.unwrap_or_default();
         v.push(input.into());
-        self.excluded_column_names = Some(v);
+        self.excluded_column_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>Excludes column names. Any column with this name will be excluded.</p>
     pub fn set_excluded_column_names(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.excluded_column_names = input;
         self

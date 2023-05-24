@@ -2,36 +2,36 @@
 
 /// <p>A structure that contains information about a transaction.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TransactionDescription {
     /// <p>The ID of the transaction.</p>
     #[doc(hidden)]
-    pub transaction_id: std::option::Option<std::string::String>,
+    pub transaction_id: ::std::option::Option<::std::string::String>,
     /// <p>A status of ACTIVE, COMMITTED, or ABORTED.</p>
     #[doc(hidden)]
-    pub transaction_status: std::option::Option<crate::types::TransactionStatus>,
+    pub transaction_status: ::std::option::Option<crate::types::TransactionStatus>,
     /// <p>The time when the transaction started.</p>
     #[doc(hidden)]
-    pub transaction_start_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub transaction_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when the transaction committed or aborted, if it is not currently active.</p>
     #[doc(hidden)]
-    pub transaction_end_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub transaction_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl TransactionDescription {
     /// <p>The ID of the transaction.</p>
-    pub fn transaction_id(&self) -> std::option::Option<&str> {
+    pub fn transaction_id(&self) -> ::std::option::Option<&str> {
         self.transaction_id.as_deref()
     }
     /// <p>A status of ACTIVE, COMMITTED, or ABORTED.</p>
-    pub fn transaction_status(&self) -> std::option::Option<&crate::types::TransactionStatus> {
+    pub fn transaction_status(&self) -> ::std::option::Option<&crate::types::TransactionStatus> {
         self.transaction_status.as_ref()
     }
     /// <p>The time when the transaction started.</p>
-    pub fn transaction_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn transaction_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.transaction_start_time.as_ref()
     }
     /// <p>The time when the transaction committed or aborted, if it is not currently active.</p>
-    pub fn transaction_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn transaction_end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.transaction_end_time.as_ref()
     }
 }
@@ -44,59 +44,67 @@ impl TransactionDescription {
 
 /// A builder for [`TransactionDescription`](crate::types::TransactionDescription).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TransactionDescriptionBuilder {
-    pub(crate) transaction_id: std::option::Option<std::string::String>,
-    pub(crate) transaction_status: std::option::Option<crate::types::TransactionStatus>,
-    pub(crate) transaction_start_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) transaction_end_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) transaction_id: ::std::option::Option<::std::string::String>,
+    pub(crate) transaction_status: ::std::option::Option<crate::types::TransactionStatus>,
+    pub(crate) transaction_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) transaction_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl TransactionDescriptionBuilder {
     /// <p>The ID of the transaction.</p>
-    pub fn transaction_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.transaction_id = Some(input.into());
+    pub fn transaction_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.transaction_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the transaction.</p>
-    pub fn set_transaction_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_transaction_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.transaction_id = input;
         self
     }
     /// <p>A status of ACTIVE, COMMITTED, or ABORTED.</p>
     pub fn transaction_status(mut self, input: crate::types::TransactionStatus) -> Self {
-        self.transaction_status = Some(input);
+        self.transaction_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>A status of ACTIVE, COMMITTED, or ABORTED.</p>
     pub fn set_transaction_status(
         mut self,
-        input: std::option::Option<crate::types::TransactionStatus>,
+        input: ::std::option::Option<crate::types::TransactionStatus>,
     ) -> Self {
         self.transaction_status = input;
         self
     }
     /// <p>The time when the transaction started.</p>
-    pub fn transaction_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.transaction_start_time = Some(input);
+    pub fn transaction_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.transaction_start_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time when the transaction started.</p>
     pub fn set_transaction_start_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.transaction_start_time = input;
         self
     }
     /// <p>The time when the transaction committed or aborted, if it is not currently active.</p>
-    pub fn transaction_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.transaction_end_time = Some(input);
+    pub fn transaction_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.transaction_end_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time when the transaction committed or aborted, if it is not currently active.</p>
     pub fn set_transaction_end_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.transaction_end_time = input;
         self

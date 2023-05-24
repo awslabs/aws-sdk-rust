@@ -2,36 +2,36 @@
 
 /// <p>The information for public switched telephone network (PSTN) conferencing.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PstnDialIn {
     /// <p>The zip code.</p>
     #[doc(hidden)]
-    pub country_code: std::option::Option<std::string::String>,
+    pub country_code: ::std::option::Option<::std::string::String>,
     /// <p>The phone number to call to join the conference.</p>
     #[doc(hidden)]
-    pub phone_number: std::option::Option<std::string::String>,
+    pub phone_number: ::std::option::Option<::std::string::String>,
     /// <p>The delay duration before Alexa enters the conference ID with dual-tone multi-frequency (DTMF). Each number on the dial pad corresponds to a DTMF tone, which is how we send data over the telephone network.</p>
     #[doc(hidden)]
-    pub one_click_id_delay: std::option::Option<std::string::String>,
+    pub one_click_id_delay: ::std::option::Option<::std::string::String>,
     /// <p>The delay duration before Alexa enters the conference pin with dual-tone multi-frequency (DTMF). Each number on the dial pad corresponds to a DTMF tone, which is how we send data over the telephone network.</p>
     #[doc(hidden)]
-    pub one_click_pin_delay: std::option::Option<std::string::String>,
+    pub one_click_pin_delay: ::std::option::Option<::std::string::String>,
 }
 impl PstnDialIn {
     /// <p>The zip code.</p>
-    pub fn country_code(&self) -> std::option::Option<&str> {
+    pub fn country_code(&self) -> ::std::option::Option<&str> {
         self.country_code.as_deref()
     }
     /// <p>The phone number to call to join the conference.</p>
-    pub fn phone_number(&self) -> std::option::Option<&str> {
+    pub fn phone_number(&self) -> ::std::option::Option<&str> {
         self.phone_number.as_deref()
     }
     /// <p>The delay duration before Alexa enters the conference ID with dual-tone multi-frequency (DTMF). Each number on the dial pad corresponds to a DTMF tone, which is how we send data over the telephone network.</p>
-    pub fn one_click_id_delay(&self) -> std::option::Option<&str> {
+    pub fn one_click_id_delay(&self) -> ::std::option::Option<&str> {
         self.one_click_id_delay.as_deref()
     }
     /// <p>The delay duration before Alexa enters the conference pin with dual-tone multi-frequency (DTMF). Each number on the dial pad corresponds to a DTMF tone, which is how we send data over the telephone network.</p>
-    pub fn one_click_pin_delay(&self) -> std::option::Option<&str> {
+    pub fn one_click_pin_delay(&self) -> ::std::option::Option<&str> {
         self.one_click_pin_delay.as_deref()
     }
 }
@@ -44,56 +44,64 @@ impl PstnDialIn {
 
 /// A builder for [`PstnDialIn`](crate::types::PstnDialIn).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PstnDialInBuilder {
-    pub(crate) country_code: std::option::Option<std::string::String>,
-    pub(crate) phone_number: std::option::Option<std::string::String>,
-    pub(crate) one_click_id_delay: std::option::Option<std::string::String>,
-    pub(crate) one_click_pin_delay: std::option::Option<std::string::String>,
+    pub(crate) country_code: ::std::option::Option<::std::string::String>,
+    pub(crate) phone_number: ::std::option::Option<::std::string::String>,
+    pub(crate) one_click_id_delay: ::std::option::Option<::std::string::String>,
+    pub(crate) one_click_pin_delay: ::std::option::Option<::std::string::String>,
 }
 impl PstnDialInBuilder {
     /// <p>The zip code.</p>
-    pub fn country_code(mut self, input: impl Into<std::string::String>) -> Self {
-        self.country_code = Some(input.into());
+    pub fn country_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.country_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The zip code.</p>
-    pub fn set_country_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_country_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.country_code = input;
         self
     }
     /// <p>The phone number to call to join the conference.</p>
-    pub fn phone_number(mut self, input: impl Into<std::string::String>) -> Self {
-        self.phone_number = Some(input.into());
+    pub fn phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.phone_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The phone number to call to join the conference.</p>
-    pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.phone_number = input;
         self
     }
     /// <p>The delay duration before Alexa enters the conference ID with dual-tone multi-frequency (DTMF). Each number on the dial pad corresponds to a DTMF tone, which is how we send data over the telephone network.</p>
-    pub fn one_click_id_delay(mut self, input: impl Into<std::string::String>) -> Self {
-        self.one_click_id_delay = Some(input.into());
+    pub fn one_click_id_delay(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.one_click_id_delay = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The delay duration before Alexa enters the conference ID with dual-tone multi-frequency (DTMF). Each number on the dial pad corresponds to a DTMF tone, which is how we send data over the telephone network.</p>
     pub fn set_one_click_id_delay(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.one_click_id_delay = input;
         self
     }
     /// <p>The delay duration before Alexa enters the conference pin with dual-tone multi-frequency (DTMF). Each number on the dial pad corresponds to a DTMF tone, which is how we send data over the telephone network.</p>
-    pub fn one_click_pin_delay(mut self, input: impl Into<std::string::String>) -> Self {
-        self.one_click_pin_delay = Some(input.into());
+    pub fn one_click_pin_delay(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.one_click_pin_delay = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The delay duration before Alexa enters the conference pin with dual-tone multi-frequency (DTMF). Each number on the dial pad corresponds to a DTMF tone, which is how we send data over the telephone network.</p>
     pub fn set_one_click_pin_delay(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.one_click_pin_delay = input;
         self

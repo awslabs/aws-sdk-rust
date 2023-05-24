@@ -2,22 +2,22 @@
 
 /// <p>Contains the Basic authorization parameters to use for the connection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateConnectionBasicAuthRequestParameters {
     /// <p>The user name to use for Basic authorization.</p>
     #[doc(hidden)]
-    pub username: std::option::Option<std::string::String>,
+    pub username: ::std::option::Option<::std::string::String>,
     /// <p>The password associated with the user name to use for Basic authorization.</p>
     #[doc(hidden)]
-    pub password: std::option::Option<std::string::String>,
+    pub password: ::std::option::Option<::std::string::String>,
 }
 impl CreateConnectionBasicAuthRequestParameters {
     /// <p>The user name to use for Basic authorization.</p>
-    pub fn username(&self) -> std::option::Option<&str> {
+    pub fn username(&self) -> ::std::option::Option<&str> {
         self.username.as_deref()
     }
     /// <p>The password associated with the user name to use for Basic authorization.</p>
-    pub fn password(&self) -> std::option::Option<&str> {
+    pub fn password(&self) -> ::std::option::Option<&str> {
         self.password.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl CreateConnectionBasicAuthRequestParameters {
 
 /// A builder for [`CreateConnectionBasicAuthRequestParameters`](crate::types::CreateConnectionBasicAuthRequestParameters).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateConnectionBasicAuthRequestParametersBuilder {
-    pub(crate) username: std::option::Option<std::string::String>,
-    pub(crate) password: std::option::Option<std::string::String>,
+    pub(crate) username: ::std::option::Option<::std::string::String>,
+    pub(crate) password: ::std::option::Option<::std::string::String>,
 }
 impl CreateConnectionBasicAuthRequestParametersBuilder {
     /// <p>The user name to use for Basic authorization.</p>
-    pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
-        self.username = Some(input.into());
+    pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.username = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user name to use for Basic authorization.</p>
-    pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.username = input;
         self
     }
     /// <p>The password associated with the user name to use for Basic authorization.</p>
-    pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
-        self.password = Some(input.into());
+    pub fn password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.password = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The password associated with the user name to use for Basic authorization.</p>
-    pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.password = input;
         self
     }

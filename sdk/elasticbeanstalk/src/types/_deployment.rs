@@ -2,14 +2,14 @@
 
 /// <p>Information about an application version deployment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Deployment {
     /// <p>The version label of the application version in the deployment.</p>
     #[doc(hidden)]
-    pub version_label: std::option::Option<std::string::String>,
+    pub version_label: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the deployment. This number increases by one each time that you deploy source code or change instance configuration settings.</p>
     #[doc(hidden)]
-    pub deployment_id: std::option::Option<i64>,
+    pub deployment_id: ::std::option::Option<i64>,
     /// <p>The status of the deployment:</p>
     /// <ul>
     /// <li> <p> <code>In Progress</code> : The deployment is in progress.</p> </li>
@@ -17,19 +17,19 @@ pub struct Deployment {
     /// <li> <p> <code>Failed</code> : The deployment failed.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub status: std::option::Option<std::string::String>,
+    pub status: ::std::option::Option<::std::string::String>,
     /// <p>For in-progress deployments, the time that the deployment started.</p>
     /// <p>For completed deployments, the time that the deployment ended.</p>
     #[doc(hidden)]
-    pub deployment_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub deployment_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Deployment {
     /// <p>The version label of the application version in the deployment.</p>
-    pub fn version_label(&self) -> std::option::Option<&str> {
+    pub fn version_label(&self) -> ::std::option::Option<&str> {
         self.version_label.as_deref()
     }
     /// <p>The ID of the deployment. This number increases by one each time that you deploy source code or change instance configuration settings.</p>
-    pub fn deployment_id(&self) -> std::option::Option<i64> {
+    pub fn deployment_id(&self) -> ::std::option::Option<i64> {
         self.deployment_id
     }
     /// <p>The status of the deployment:</p>
@@ -38,12 +38,12 @@ impl Deployment {
     /// <li> <p> <code>Deployed</code> : The deployment succeeded.</p> </li>
     /// <li> <p> <code>Failed</code> : The deployment failed.</p> </li>
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
     /// <p>For in-progress deployments, the time that the deployment started.</p>
     /// <p>For completed deployments, the time that the deployment ended.</p>
-    pub fn deployment_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn deployment_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.deployment_time.as_ref()
     }
 }
@@ -56,31 +56,39 @@ impl Deployment {
 
 /// A builder for [`Deployment`](crate::types::Deployment).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeploymentBuilder {
-    pub(crate) version_label: std::option::Option<std::string::String>,
-    pub(crate) deployment_id: std::option::Option<i64>,
-    pub(crate) status: std::option::Option<std::string::String>,
-    pub(crate) deployment_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) version_label: ::std::option::Option<::std::string::String>,
+    pub(crate) deployment_id: ::std::option::Option<i64>,
+    pub(crate) status: ::std::option::Option<::std::string::String>,
+    pub(crate) deployment_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl DeploymentBuilder {
     /// <p>The version label of the application version in the deployment.</p>
-    pub fn version_label(mut self, input: impl Into<std::string::String>) -> Self {
-        self.version_label = Some(input.into());
+    pub fn version_label(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.version_label = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version label of the application version in the deployment.</p>
-    pub fn set_version_label(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_version_label(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.version_label = input;
         self
     }
     /// <p>The ID of the deployment. This number increases by one each time that you deploy source code or change instance configuration settings.</p>
     pub fn deployment_id(mut self, input: i64) -> Self {
-        self.deployment_id = Some(input);
+        self.deployment_id = ::std::option::Option::Some(input);
         self
     }
     /// <p>The ID of the deployment. This number increases by one each time that you deploy source code or change instance configuration settings.</p>
-    pub fn set_deployment_id(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_deployment_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.deployment_id = input;
         self
     }
@@ -90,8 +98,8 @@ impl DeploymentBuilder {
     /// <li> <p> <code>Deployed</code> : The deployment succeeded.</p> </li>
     /// <li> <p> <code>Failed</code> : The deployment failed.</p> </li>
     /// </ul>
-    pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status = Some(input.into());
+    pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the deployment:</p>
@@ -100,21 +108,21 @@ impl DeploymentBuilder {
     /// <li> <p> <code>Deployed</code> : The deployment succeeded.</p> </li>
     /// <li> <p> <code>Failed</code> : The deployment failed.</p> </li>
     /// </ul>
-    pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }
     /// <p>For in-progress deployments, the time that the deployment started.</p>
     /// <p>For completed deployments, the time that the deployment ended.</p>
-    pub fn deployment_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.deployment_time = Some(input);
+    pub fn deployment_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.deployment_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>For in-progress deployments, the time that the deployment started.</p>
     /// <p>For completed deployments, the time that the deployment ended.</p>
     pub fn set_deployment_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.deployment_time = input;
         self

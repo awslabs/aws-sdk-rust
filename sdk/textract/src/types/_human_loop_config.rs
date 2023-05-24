@@ -2,29 +2,29 @@
 
 /// <p>Sets up the human review workflow the document will be sent to if one of the conditions is met. You can also set certain attributes of the image before review. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HumanLoopConfig {
     /// <p>The name of the human workflow used for this image. This should be kept unique within a region.</p>
     #[doc(hidden)]
-    pub human_loop_name: std::option::Option<std::string::String>,
+    pub human_loop_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the flow definition.</p>
     #[doc(hidden)]
-    pub flow_definition_arn: std::option::Option<std::string::String>,
+    pub flow_definition_arn: ::std::option::Option<::std::string::String>,
     /// <p>Sets attributes of the input data.</p>
     #[doc(hidden)]
-    pub data_attributes: std::option::Option<crate::types::HumanLoopDataAttributes>,
+    pub data_attributes: ::std::option::Option<crate::types::HumanLoopDataAttributes>,
 }
 impl HumanLoopConfig {
     /// <p>The name of the human workflow used for this image. This should be kept unique within a region.</p>
-    pub fn human_loop_name(&self) -> std::option::Option<&str> {
+    pub fn human_loop_name(&self) -> ::std::option::Option<&str> {
         self.human_loop_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the flow definition.</p>
-    pub fn flow_definition_arn(&self) -> std::option::Option<&str> {
+    pub fn flow_definition_arn(&self) -> ::std::option::Option<&str> {
         self.flow_definition_arn.as_deref()
     }
     /// <p>Sets attributes of the input data.</p>
-    pub fn data_attributes(&self) -> std::option::Option<&crate::types::HumanLoopDataAttributes> {
+    pub fn data_attributes(&self) -> ::std::option::Option<&crate::types::HumanLoopDataAttributes> {
         self.data_attributes.as_ref()
     }
 }
@@ -37,45 +37,56 @@ impl HumanLoopConfig {
 
 /// A builder for [`HumanLoopConfig`](crate::types::HumanLoopConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct HumanLoopConfigBuilder {
-    pub(crate) human_loop_name: std::option::Option<std::string::String>,
-    pub(crate) flow_definition_arn: std::option::Option<std::string::String>,
-    pub(crate) data_attributes: std::option::Option<crate::types::HumanLoopDataAttributes>,
+    pub(crate) human_loop_name: ::std::option::Option<::std::string::String>,
+    pub(crate) flow_definition_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) data_attributes: ::std::option::Option<crate::types::HumanLoopDataAttributes>,
 }
 impl HumanLoopConfigBuilder {
     /// <p>The name of the human workflow used for this image. This should be kept unique within a region.</p>
-    pub fn human_loop_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.human_loop_name = Some(input.into());
+    pub fn human_loop_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.human_loop_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the human workflow used for this image. This should be kept unique within a region.</p>
-    pub fn set_human_loop_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_human_loop_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.human_loop_name = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the flow definition.</p>
-    pub fn flow_definition_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.flow_definition_arn = Some(input.into());
+    pub fn flow_definition_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.flow_definition_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the flow definition.</p>
     pub fn set_flow_definition_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.flow_definition_arn = input;
         self
     }
     /// <p>Sets attributes of the input data.</p>
     pub fn data_attributes(mut self, input: crate::types::HumanLoopDataAttributes) -> Self {
-        self.data_attributes = Some(input);
+        self.data_attributes = ::std::option::Option::Some(input);
         self
     }
     /// <p>Sets attributes of the input data.</p>
     pub fn set_data_attributes(
         mut self,
-        input: std::option::Option<crate::types::HumanLoopDataAttributes>,
+        input: ::std::option::Option<crate::types::HumanLoopDataAttributes>,
     ) -> Self {
         self.data_attributes = input;
         self

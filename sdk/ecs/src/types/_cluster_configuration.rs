@@ -2,18 +2,18 @@
 
 /// <p>The execute command configuration for the cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClusterConfiguration {
     /// <p>The details of the execute command configuration.</p>
     #[doc(hidden)]
     pub execute_command_configuration:
-        std::option::Option<crate::types::ExecuteCommandConfiguration>,
+        ::std::option::Option<crate::types::ExecuteCommandConfiguration>,
 }
 impl ClusterConfiguration {
     /// <p>The details of the execute command configuration.</p>
     pub fn execute_command_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::ExecuteCommandConfiguration> {
+    ) -> ::std::option::Option<&crate::types::ExecuteCommandConfiguration> {
         self.execute_command_configuration.as_ref()
     }
 }
@@ -26,10 +26,12 @@ impl ClusterConfiguration {
 
 /// A builder for [`ClusterConfiguration`](crate::types::ClusterConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ClusterConfigurationBuilder {
     pub(crate) execute_command_configuration:
-        std::option::Option<crate::types::ExecuteCommandConfiguration>,
+        ::std::option::Option<crate::types::ExecuteCommandConfiguration>,
 }
 impl ClusterConfigurationBuilder {
     /// <p>The details of the execute command configuration.</p>
@@ -37,13 +39,13 @@ impl ClusterConfigurationBuilder {
         mut self,
         input: crate::types::ExecuteCommandConfiguration,
     ) -> Self {
-        self.execute_command_configuration = Some(input);
+        self.execute_command_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The details of the execute command configuration.</p>
     pub fn set_execute_command_configuration(
         mut self,
-        input: std::option::Option<crate::types::ExecuteCommandConfiguration>,
+        input: ::std::option::Option<crate::types::ExecuteCommandConfiguration>,
     ) -> Self {
         self.execute_command_configuration = input;
         self

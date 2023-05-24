@@ -2,11 +2,11 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddApplicationReferenceDataSourceOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for AddApplicationReferenceDataSourceOutput {
+impl ::aws_http::request_id::RequestId for AddApplicationReferenceDataSourceOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -20,7 +20,9 @@ impl AddApplicationReferenceDataSourceOutput {
 
 /// A builder for [`AddApplicationReferenceDataSourceOutput`](crate::operation::add_application_reference_data_source::AddApplicationReferenceDataSourceOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AddApplicationReferenceDataSourceOutputBuilder {
     _request_id: Option<String>,
 }

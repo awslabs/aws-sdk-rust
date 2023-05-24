@@ -2,23 +2,23 @@
 
 /// <p>Information about the deployment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeploymentSummary {
     /// <p>The sequence number of the deployment.</p>
     #[doc(hidden)]
     pub deployment_number: i32,
     /// <p>The name of the configuration.</p>
     #[doc(hidden)]
-    pub configuration_name: std::option::Option<std::string::String>,
+    pub configuration_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the configuration.</p>
     #[doc(hidden)]
-    pub configuration_version: std::option::Option<std::string::String>,
+    pub configuration_version: ::std::option::Option<::std::string::String>,
     /// <p>Total amount of time the deployment lasted.</p>
     #[doc(hidden)]
     pub deployment_duration_in_minutes: i32,
     /// <p>The algorithm used to define how percentage grows over time.</p>
     #[doc(hidden)]
-    pub growth_type: std::option::Option<crate::types::GrowthType>,
+    pub growth_type: ::std::option::Option<crate::types::GrowthType>,
     /// <p>The percentage of targets to receive a deployed configuration during each interval.</p>
     #[doc(hidden)]
     pub growth_factor: f32,
@@ -27,16 +27,16 @@ pub struct DeploymentSummary {
     pub final_bake_time_in_minutes: i32,
     /// <p>The state of the deployment.</p>
     #[doc(hidden)]
-    pub state: std::option::Option<crate::types::DeploymentState>,
+    pub state: ::std::option::Option<crate::types::DeploymentState>,
     /// <p>The percentage of targets for which the deployment is available.</p>
     #[doc(hidden)]
     pub percentage_complete: f32,
     /// <p>Time the deployment started.</p>
     #[doc(hidden)]
-    pub started_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Time the deployment completed.</p>
     #[doc(hidden)]
-    pub completed_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub completed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl DeploymentSummary {
     /// <p>The sequence number of the deployment.</p>
@@ -44,11 +44,11 @@ impl DeploymentSummary {
         self.deployment_number
     }
     /// <p>The name of the configuration.</p>
-    pub fn configuration_name(&self) -> std::option::Option<&str> {
+    pub fn configuration_name(&self) -> ::std::option::Option<&str> {
         self.configuration_name.as_deref()
     }
     /// <p>The version of the configuration.</p>
-    pub fn configuration_version(&self) -> std::option::Option<&str> {
+    pub fn configuration_version(&self) -> ::std::option::Option<&str> {
         self.configuration_version.as_deref()
     }
     /// <p>Total amount of time the deployment lasted.</p>
@@ -56,7 +56,7 @@ impl DeploymentSummary {
         self.deployment_duration_in_minutes
     }
     /// <p>The algorithm used to define how percentage grows over time.</p>
-    pub fn growth_type(&self) -> std::option::Option<&crate::types::GrowthType> {
+    pub fn growth_type(&self) -> ::std::option::Option<&crate::types::GrowthType> {
         self.growth_type.as_ref()
     }
     /// <p>The percentage of targets to receive a deployed configuration during each interval.</p>
@@ -68,7 +68,7 @@ impl DeploymentSummary {
         self.final_bake_time_in_minutes
     }
     /// <p>The state of the deployment.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::DeploymentState> {
+    pub fn state(&self) -> ::std::option::Option<&crate::types::DeploymentState> {
         self.state.as_ref()
     }
     /// <p>The percentage of targets for which the deployment is available.</p>
@@ -76,11 +76,11 @@ impl DeploymentSummary {
         self.percentage_complete
     }
     /// <p>Time the deployment started.</p>
-    pub fn started_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn started_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.started_at.as_ref()
     }
     /// <p>Time the deployment completed.</p>
-    pub fn completed_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn completed_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.completed_at.as_ref()
     }
 }
@@ -93,139 +93,153 @@ impl DeploymentSummary {
 
 /// A builder for [`DeploymentSummary`](crate::types::DeploymentSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeploymentSummaryBuilder {
-    pub(crate) deployment_number: std::option::Option<i32>,
-    pub(crate) configuration_name: std::option::Option<std::string::String>,
-    pub(crate) configuration_version: std::option::Option<std::string::String>,
-    pub(crate) deployment_duration_in_minutes: std::option::Option<i32>,
-    pub(crate) growth_type: std::option::Option<crate::types::GrowthType>,
-    pub(crate) growth_factor: std::option::Option<f32>,
-    pub(crate) final_bake_time_in_minutes: std::option::Option<i32>,
-    pub(crate) state: std::option::Option<crate::types::DeploymentState>,
-    pub(crate) percentage_complete: std::option::Option<f32>,
-    pub(crate) started_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) completed_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) deployment_number: ::std::option::Option<i32>,
+    pub(crate) configuration_name: ::std::option::Option<::std::string::String>,
+    pub(crate) configuration_version: ::std::option::Option<::std::string::String>,
+    pub(crate) deployment_duration_in_minutes: ::std::option::Option<i32>,
+    pub(crate) growth_type: ::std::option::Option<crate::types::GrowthType>,
+    pub(crate) growth_factor: ::std::option::Option<f32>,
+    pub(crate) final_bake_time_in_minutes: ::std::option::Option<i32>,
+    pub(crate) state: ::std::option::Option<crate::types::DeploymentState>,
+    pub(crate) percentage_complete: ::std::option::Option<f32>,
+    pub(crate) started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) completed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl DeploymentSummaryBuilder {
     /// <p>The sequence number of the deployment.</p>
     pub fn deployment_number(mut self, input: i32) -> Self {
-        self.deployment_number = Some(input);
+        self.deployment_number = ::std::option::Option::Some(input);
         self
     }
     /// <p>The sequence number of the deployment.</p>
-    pub fn set_deployment_number(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_deployment_number(mut self, input: ::std::option::Option<i32>) -> Self {
         self.deployment_number = input;
         self
     }
     /// <p>The name of the configuration.</p>
-    pub fn configuration_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.configuration_name = Some(input.into());
+    pub fn configuration_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.configuration_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the configuration.</p>
     pub fn set_configuration_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.configuration_name = input;
         self
     }
     /// <p>The version of the configuration.</p>
-    pub fn configuration_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.configuration_version = Some(input.into());
+    pub fn configuration_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.configuration_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the configuration.</p>
     pub fn set_configuration_version(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.configuration_version = input;
         self
     }
     /// <p>Total amount of time the deployment lasted.</p>
     pub fn deployment_duration_in_minutes(mut self, input: i32) -> Self {
-        self.deployment_duration_in_minutes = Some(input);
+        self.deployment_duration_in_minutes = ::std::option::Option::Some(input);
         self
     }
     /// <p>Total amount of time the deployment lasted.</p>
-    pub fn set_deployment_duration_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_deployment_duration_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.deployment_duration_in_minutes = input;
         self
     }
     /// <p>The algorithm used to define how percentage grows over time.</p>
     pub fn growth_type(mut self, input: crate::types::GrowthType) -> Self {
-        self.growth_type = Some(input);
+        self.growth_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The algorithm used to define how percentage grows over time.</p>
-    pub fn set_growth_type(mut self, input: std::option::Option<crate::types::GrowthType>) -> Self {
+    pub fn set_growth_type(
+        mut self,
+        input: ::std::option::Option<crate::types::GrowthType>,
+    ) -> Self {
         self.growth_type = input;
         self
     }
     /// <p>The percentage of targets to receive a deployed configuration during each interval.</p>
     pub fn growth_factor(mut self, input: f32) -> Self {
-        self.growth_factor = Some(input);
+        self.growth_factor = ::std::option::Option::Some(input);
         self
     }
     /// <p>The percentage of targets to receive a deployed configuration during each interval.</p>
-    pub fn set_growth_factor(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_growth_factor(mut self, input: ::std::option::Option<f32>) -> Self {
         self.growth_factor = input;
         self
     }
     /// <p>The amount of time that AppConfig monitors for alarms before considering the deployment to be complete and no longer eligible for automatic rollback.</p>
     pub fn final_bake_time_in_minutes(mut self, input: i32) -> Self {
-        self.final_bake_time_in_minutes = Some(input);
+        self.final_bake_time_in_minutes = ::std::option::Option::Some(input);
         self
     }
     /// <p>The amount of time that AppConfig monitors for alarms before considering the deployment to be complete and no longer eligible for automatic rollback.</p>
-    pub fn set_final_bake_time_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_final_bake_time_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.final_bake_time_in_minutes = input;
         self
     }
     /// <p>The state of the deployment.</p>
     pub fn state(mut self, input: crate::types::DeploymentState) -> Self {
-        self.state = Some(input);
+        self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The state of the deployment.</p>
-    pub fn set_state(mut self, input: std::option::Option<crate::types::DeploymentState>) -> Self {
+    pub fn set_state(
+        mut self,
+        input: ::std::option::Option<crate::types::DeploymentState>,
+    ) -> Self {
         self.state = input;
         self
     }
     /// <p>The percentage of targets for which the deployment is available.</p>
     pub fn percentage_complete(mut self, input: f32) -> Self {
-        self.percentage_complete = Some(input);
+        self.percentage_complete = ::std::option::Option::Some(input);
         self
     }
     /// <p>The percentage of targets for which the deployment is available.</p>
-    pub fn set_percentage_complete(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_percentage_complete(mut self, input: ::std::option::Option<f32>) -> Self {
         self.percentage_complete = input;
         self
     }
     /// <p>Time the deployment started.</p>
-    pub fn started_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.started_at = Some(input);
+    pub fn started_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.started_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>Time the deployment started.</p>
     pub fn set_started_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.started_at = input;
         self
     }
     /// <p>Time the deployment completed.</p>
-    pub fn completed_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.completed_at = Some(input);
+    pub fn completed_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.completed_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>Time the deployment completed.</p>
     pub fn set_completed_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.completed_at = input;
         self

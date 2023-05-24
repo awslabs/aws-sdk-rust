@@ -7,29 +7,29 @@ pub use crate::operation::publish_layer_version::_publish_layer_version_input::P
 ///
 /// <p>Creates an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda layer</a> from a ZIP archive. Each time you call <code>PublishLayerVersion</code> with the same layer name, a new version is created.</p>
 /// <p>Add layers to your function with <code>CreateFunction</code> or <code>UpdateFunctionConfiguration</code>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PublishLayerVersionFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::publish_layer_version::builders::PublishLayerVersionInputBuilder,
 }
 impl PublishLayerVersionFluentBuilder {
     /// Creates a new `PublishLayerVersion`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::publish_layer_version::PublishLayerVersion,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::publish_layer_version::PublishLayerVersionError,
         >,
     > {
@@ -37,30 +37,33 @@ impl PublishLayerVersionFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::publish_layer_version::PublishLayerVersionOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::publish_layer_version::PublishLayerVersionError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -73,31 +76,31 @@ impl PublishLayerVersionFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::publish_layer_version::PublishLayerVersionOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::publish_layer_version::PublishLayerVersionError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
-    pub fn layer_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn layer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.layer_name(input.into());
         self
     }
     /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
-    pub fn set_layer_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_layer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_layer_name(input);
         self
     }
     /// <p>The description of the version.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>The description of the version.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
@@ -109,7 +112,7 @@ impl PublishLayerVersionFluentBuilder {
     /// <p>The function layer archive.</p>
     pub fn set_content(
         mut self,
-        input: std::option::Option<crate::types::LayerVersionContentInput>,
+        input: ::std::option::Option<crate::types::LayerVersionContentInput>,
     ) -> Self {
         self.inner = self.inner.set_content(input);
         self
@@ -126,7 +129,7 @@ impl PublishLayerVersionFluentBuilder {
     /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function runtimes</a>. Used for filtering with <code>ListLayers</code> and <code>ListLayerVersions</code>.</p>
     pub fn set_compatible_runtimes(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Runtime>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Runtime>>,
     ) -> Self {
         self.inner = self.inner.set_compatible_runtimes(input);
         self
@@ -137,7 +140,7 @@ impl PublishLayerVersionFluentBuilder {
     /// <li> <p>The URL of a license hosted on the internet. For example, <code>https://opensource.org/licenses/MIT</code>.</p> </li>
     /// <li> <p>The full text of the license.</p> </li>
     /// </ul>
-    pub fn license_info(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn license_info(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.license_info(input.into());
         self
     }
@@ -147,7 +150,7 @@ impl PublishLayerVersionFluentBuilder {
     /// <li> <p>The URL of a license hosted on the internet. For example, <code>https://opensource.org/licenses/MIT</code>.</p> </li>
     /// <li> <p>The full text of the license.</p> </li>
     /// </ul>
-    pub fn set_license_info(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_license_info(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_license_info(input);
         self
     }
@@ -163,7 +166,7 @@ impl PublishLayerVersionFluentBuilder {
     /// <p>A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architectures</a>.</p>
     pub fn set_compatible_architectures(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Architecture>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Architecture>>,
     ) -> Self {
         self.inner = self.inner.set_compatible_architectures(input);
         self

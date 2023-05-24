@@ -2,11 +2,11 @@
 
 /// <p>The output for a <code>ContinueUpdateRollback</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContinueUpdateRollbackOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for ContinueUpdateRollbackOutput {
+impl ::aws_http::request_id::RequestId for ContinueUpdateRollbackOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -22,7 +22,9 @@ impl ContinueUpdateRollbackOutput {
 
 /// A builder for [`ContinueUpdateRollbackOutput`](crate::operation::continue_update_rollback::ContinueUpdateRollbackOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ContinueUpdateRollbackOutputBuilder {
     _request_id: Option<String>,
 }

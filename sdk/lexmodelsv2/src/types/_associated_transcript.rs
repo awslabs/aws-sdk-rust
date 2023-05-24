@@ -2,15 +2,15 @@
 
 /// <p>The object containing information that associates the recommended intent/slot type with a conversation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociatedTranscript {
     /// <p>The content of the transcript that meets the search filter criteria. For the JSON format of the transcript, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/designing-output-format.html">Output transcript format</a>.</p>
     #[doc(hidden)]
-    pub transcript: std::option::Option<std::string::String>,
+    pub transcript: ::std::option::Option<::std::string::String>,
 }
 impl AssociatedTranscript {
     /// <p>The content of the transcript that meets the search filter criteria. For the JSON format of the transcript, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/designing-output-format.html">Output transcript format</a>.</p>
-    pub fn transcript(&self) -> std::option::Option<&str> {
+    pub fn transcript(&self) -> ::std::option::Option<&str> {
         self.transcript.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl AssociatedTranscript {
 
 /// A builder for [`AssociatedTranscript`](crate::types::AssociatedTranscript).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AssociatedTranscriptBuilder {
-    pub(crate) transcript: std::option::Option<std::string::String>,
+    pub(crate) transcript: ::std::option::Option<::std::string::String>,
 }
 impl AssociatedTranscriptBuilder {
     /// <p>The content of the transcript that meets the search filter criteria. For the JSON format of the transcript, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/designing-output-format.html">Output transcript format</a>.</p>
-    pub fn transcript(mut self, input: impl Into<std::string::String>) -> Self {
-        self.transcript = Some(input.into());
+    pub fn transcript(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.transcript = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The content of the transcript that meets the search filter criteria. For the JSON format of the transcript, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/designing-output-format.html">Output transcript format</a>.</p>
-    pub fn set_transcript(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_transcript(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transcript = input;
         self
     }

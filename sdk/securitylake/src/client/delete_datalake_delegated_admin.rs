@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteDatalakeDelegatedAdmin`](crate::operation::delete_datalake_delegated_admin::builders::DeleteDatalakeDelegatedAdminFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`account(impl Into<String>)`](crate::operation::delete_datalake_delegated_admin::builders::DeleteDatalakeDelegatedAdminFluentBuilder::account) / [`set_account(Option<String>)`](crate::operation::delete_datalake_delegated_admin::builders::DeleteDatalakeDelegatedAdminFluentBuilder::set_account): <p>The account ID the Security Lake delegated administrator.</p>
+    ///   - [`account(impl ::std::convert::Into<String>)`](crate::operation::delete_datalake_delegated_admin::builders::DeleteDatalakeDelegatedAdminFluentBuilder::account) / [`set_account(Option<String>)`](crate::operation::delete_datalake_delegated_admin::builders::DeleteDatalakeDelegatedAdminFluentBuilder::set_account): <p>The account ID the Security Lake delegated administrator.</p>
     /// - On success, responds with [`DeleteDatalakeDelegatedAdminOutput`](crate::operation::delete_datalake_delegated_admin::DeleteDatalakeDelegatedAdminOutput)
     /// - On failure, responds with [`SdkError<DeleteDatalakeDelegatedAdminError>`](crate::operation::delete_datalake_delegated_admin::DeleteDatalakeDelegatedAdminError)
     pub fn delete_datalake_delegated_admin(&self) -> crate::operation::delete_datalake_delegated_admin::builders::DeleteDatalakeDelegatedAdminFluentBuilder{

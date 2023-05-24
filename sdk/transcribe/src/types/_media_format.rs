@@ -43,13 +43,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum MediaFormat {
     #[allow(missing_docs)] // documentation missing in model
@@ -69,7 +69,7 @@ pub enum MediaFormat {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for MediaFormat {
+impl ::std::convert::From<&str> for MediaFormat {
     fn from(s: &str) -> Self {
         match s {
             "amr" => MediaFormat::Amr,
@@ -83,11 +83,11 @@ impl std::convert::From<&str> for MediaFormat {
         }
     }
 }
-impl std::str::FromStr for MediaFormat {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for MediaFormat {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(MediaFormat::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(MediaFormat::from(s))
     }
 }
 impl MediaFormat {
@@ -109,7 +109,7 @@ impl MediaFormat {
         &["amr", "flac", "mp3", "mp4", "ogg", "wav", "webm"]
     }
 }
-impl AsRef<str> for MediaFormat {
+impl ::std::convert::AsRef<str> for MediaFormat {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

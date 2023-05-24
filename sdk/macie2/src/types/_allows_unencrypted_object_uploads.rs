@@ -39,13 +39,13 @@
 /// _Note: `AllowsUnencryptedObjectUploads::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum AllowsUnencryptedObjectUploads {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum AllowsUnencryptedObjectUploads {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for AllowsUnencryptedObjectUploads {
+impl ::std::convert::From<&str> for AllowsUnencryptedObjectUploads {
     fn from(s: &str) -> Self {
         match s {
             "FALSE" => AllowsUnencryptedObjectUploads::False,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for AllowsUnencryptedObjectUploads {
         }
     }
 }
-impl std::str::FromStr for AllowsUnencryptedObjectUploads {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for AllowsUnencryptedObjectUploads {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AllowsUnencryptedObjectUploads::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(AllowsUnencryptedObjectUploads::from(s))
     }
 }
 impl AllowsUnencryptedObjectUploads {
@@ -91,7 +91,7 @@ impl AllowsUnencryptedObjectUploads {
         &["FALSE", "TRUE", "UNKNOWN"]
     }
 }
-impl AsRef<str> for AllowsUnencryptedObjectUploads {
+impl ::std::convert::AsRef<str> for AllowsUnencryptedObjectUploads {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

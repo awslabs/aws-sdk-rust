@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum KeywordAction {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum KeywordAction {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for KeywordAction {
+impl ::std::convert::From<&str> for KeywordAction {
     fn from(s: &str) -> Self {
         match s {
             "AUTOMATIC_RESPONSE" => KeywordAction::AutomaticResponse,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for KeywordAction {
         }
     }
 }
-impl std::str::FromStr for KeywordAction {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for KeywordAction {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(KeywordAction::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(KeywordAction::from(s))
     }
 }
 impl KeywordAction {
@@ -91,7 +91,7 @@ impl KeywordAction {
         &["AUTOMATIC_RESPONSE", "OPT_IN", "OPT_OUT"]
     }
 }
-impl AsRef<str> for KeywordAction {
+impl ::std::convert::AsRef<str> for KeywordAction {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

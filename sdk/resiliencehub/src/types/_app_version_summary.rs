@@ -2,15 +2,15 @@
 
 /// <p>The version of the application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AppVersionSummary {
     /// <p>The version of the application.</p>
     #[doc(hidden)]
-    pub app_version: std::option::Option<std::string::String>,
+    pub app_version: ::std::option::Option<::std::string::String>,
 }
 impl AppVersionSummary {
     /// <p>The version of the application.</p>
-    pub fn app_version(&self) -> std::option::Option<&str> {
+    pub fn app_version(&self) -> ::std::option::Option<&str> {
         self.app_version.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl AppVersionSummary {
 
 /// A builder for [`AppVersionSummary`](crate::types::AppVersionSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AppVersionSummaryBuilder {
-    pub(crate) app_version: std::option::Option<std::string::String>,
+    pub(crate) app_version: ::std::option::Option<::std::string::String>,
 }
 impl AppVersionSummaryBuilder {
     /// <p>The version of the application.</p>
-    pub fn app_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.app_version = Some(input.into());
+    pub fn app_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.app_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the application.</p>
-    pub fn set_app_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_app_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_version = input;
         self
     }

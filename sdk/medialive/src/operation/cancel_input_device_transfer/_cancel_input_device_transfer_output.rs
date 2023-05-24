@@ -2,11 +2,11 @@
 
 /// Placeholder documentation for CancelInputDeviceTransferResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelInputDeviceTransferOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for CancelInputDeviceTransferOutput {
+impl ::aws_http::request_id::RequestId for CancelInputDeviceTransferOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -20,7 +20,9 @@ impl CancelInputDeviceTransferOutput {
 
 /// A builder for [`CancelInputDeviceTransferOutput`](crate::operation::cancel_input_device_transfer::CancelInputDeviceTransferOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CancelInputDeviceTransferOutputBuilder {
     _request_id: Option<String>,
 }

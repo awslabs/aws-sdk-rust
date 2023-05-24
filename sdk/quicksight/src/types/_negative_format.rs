@@ -2,22 +2,22 @@
 
 /// <p>A structure that represents a negative format.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NegativeFormat {
     /// <p>The prefix for a negative format.</p>
     #[doc(hidden)]
-    pub prefix: std::option::Option<std::string::String>,
+    pub prefix: ::std::option::Option<::std::string::String>,
     /// <p>The suffix for a negative format.</p>
     #[doc(hidden)]
-    pub suffix: std::option::Option<std::string::String>,
+    pub suffix: ::std::option::Option<::std::string::String>,
 }
 impl NegativeFormat {
     /// <p>The prefix for a negative format.</p>
-    pub fn prefix(&self) -> std::option::Option<&str> {
+    pub fn prefix(&self) -> ::std::option::Option<&str> {
         self.prefix.as_deref()
     }
     /// <p>The suffix for a negative format.</p>
-    pub fn suffix(&self) -> std::option::Option<&str> {
+    pub fn suffix(&self) -> ::std::option::Option<&str> {
         self.suffix.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl NegativeFormat {
 
 /// A builder for [`NegativeFormat`](crate::types::NegativeFormat).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NegativeFormatBuilder {
-    pub(crate) prefix: std::option::Option<std::string::String>,
-    pub(crate) suffix: std::option::Option<std::string::String>,
+    pub(crate) prefix: ::std::option::Option<::std::string::String>,
+    pub(crate) suffix: ::std::option::Option<::std::string::String>,
 }
 impl NegativeFormatBuilder {
     /// <p>The prefix for a negative format.</p>
-    pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
-        self.prefix = Some(input.into());
+    pub fn prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The prefix for a negative format.</p>
-    pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.prefix = input;
         self
     }
     /// <p>The suffix for a negative format.</p>
-    pub fn suffix(mut self, input: impl Into<std::string::String>) -> Self {
-        self.suffix = Some(input.into());
+    pub fn suffix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.suffix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The suffix for a negative format.</p>
-    pub fn set_suffix(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_suffix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.suffix = input;
         self
     }

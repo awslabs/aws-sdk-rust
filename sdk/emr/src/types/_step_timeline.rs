@@ -2,29 +2,29 @@
 
 /// <p>The timeline of the cluster step lifecycle.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StepTimeline {
     /// <p>The date and time when the cluster step was created.</p>
     #[doc(hidden)]
-    pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time when the cluster step execution started.</p>
     #[doc(hidden)]
-    pub start_date_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub start_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time when the cluster step execution completed or failed.</p>
     #[doc(hidden)]
-    pub end_date_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub end_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl StepTimeline {
     /// <p>The date and time when the cluster step was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time when the cluster step execution started.</p>
-    pub fn start_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.start_date_time.as_ref()
     }
     /// <p>The date and time when the cluster step execution completed or failed.</p>
-    pub fn end_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.end_date_time.as_ref()
     }
 }
@@ -37,48 +37,50 @@ impl StepTimeline {
 
 /// A builder for [`StepTimeline`](crate::types::StepTimeline).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StepTimelineBuilder {
-    pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) start_date_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) end_date_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) start_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) end_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl StepTimelineBuilder {
     /// <p>The date and time when the cluster step was created.</p>
-    pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_date_time = Some(input);
+    pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_date_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time when the cluster step was created.</p>
     pub fn set_creation_date_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_date_time = input;
         self
     }
     /// <p>The date and time when the cluster step execution started.</p>
-    pub fn start_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.start_date_time = Some(input);
+    pub fn start_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.start_date_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time when the cluster step execution started.</p>
     pub fn set_start_date_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.start_date_time = input;
         self
     }
     /// <p>The date and time when the cluster step execution completed or failed.</p>
-    pub fn end_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.end_date_time = Some(input);
+    pub fn end_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.end_date_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time when the cluster step execution completed or failed.</p>
     pub fn set_end_date_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.end_date_time = input;
         self

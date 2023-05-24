@@ -2,36 +2,36 @@
 
 /// <p>Contains details about the start of the execution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ExecutionStartedEventDetails {
     /// <p>The JSON data input to the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
     #[doc(hidden)]
-    pub input: std::option::Option<std::string::String>,
+    pub input: ::std::option::Option<::std::string::String>,
     /// <p>Contains details about the input for an execution history event.</p>
     #[doc(hidden)]
-    pub input_details: std::option::Option<crate::types::HistoryEventExecutionDataDetails>,
+    pub input_details: ::std::option::Option<crate::types::HistoryEventExecutionDataDetails>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role used for executing Lambda tasks.</p>
     #[doc(hidden)]
-    pub role_arn: std::option::Option<std::string::String>,
+    pub role_arn: ::std::option::Option<::std::string::String>,
 }
 impl ExecutionStartedEventDetails {
     /// <p>The JSON data input to the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
-    pub fn input(&self) -> std::option::Option<&str> {
+    pub fn input(&self) -> ::std::option::Option<&str> {
         self.input.as_deref()
     }
     /// <p>Contains details about the input for an execution history event.</p>
     pub fn input_details(
         &self,
-    ) -> std::option::Option<&crate::types::HistoryEventExecutionDataDetails> {
+    ) -> ::std::option::Option<&crate::types::HistoryEventExecutionDataDetails> {
         self.input_details.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role used for executing Lambda tasks.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ExecutionStartedEventDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for ExecutionStartedEventDetails {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ExecutionStartedEventDetails");
         formatter.field("input", &"*** Sensitive Data Redacted ***");
         formatter.field("input_details", &self.input_details);
@@ -48,43 +48,43 @@ impl ExecutionStartedEventDetails {
 
 /// A builder for [`ExecutionStartedEventDetails`](crate::types::ExecutionStartedEventDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct ExecutionStartedEventDetailsBuilder {
-    pub(crate) input: std::option::Option<std::string::String>,
-    pub(crate) input_details: std::option::Option<crate::types::HistoryEventExecutionDataDetails>,
-    pub(crate) role_arn: std::option::Option<std::string::String>,
+    pub(crate) input: ::std::option::Option<::std::string::String>,
+    pub(crate) input_details: ::std::option::Option<crate::types::HistoryEventExecutionDataDetails>,
+    pub(crate) role_arn: ::std::option::Option<::std::string::String>,
 }
 impl ExecutionStartedEventDetailsBuilder {
     /// <p>The JSON data input to the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
-    pub fn input(mut self, input: impl Into<std::string::String>) -> Self {
-        self.input = Some(input.into());
+    pub fn input(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.input = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The JSON data input to the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
-    pub fn set_input(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_input(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.input = input;
         self
     }
     /// <p>Contains details about the input for an execution history event.</p>
     pub fn input_details(mut self, input: crate::types::HistoryEventExecutionDataDetails) -> Self {
-        self.input_details = Some(input);
+        self.input_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains details about the input for an execution history event.</p>
     pub fn set_input_details(
         mut self,
-        input: std::option::Option<crate::types::HistoryEventExecutionDataDetails>,
+        input: ::std::option::Option<crate::types::HistoryEventExecutionDataDetails>,
     ) -> Self {
         self.input_details = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role used for executing Lambda tasks.</p>
-    pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.role_arn = Some(input.into());
+    pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role used for executing Lambda tasks.</p>
-    pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
@@ -97,8 +97,8 @@ impl ExecutionStartedEventDetailsBuilder {
         }
     }
 }
-impl std::fmt::Debug for ExecutionStartedEventDetailsBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for ExecutionStartedEventDetailsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ExecutionStartedEventDetailsBuilder");
         formatter.field("input", &"*** Sensitive Data Redacted ***");
         formatter.field("input_details", &self.input_details);

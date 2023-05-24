@@ -2,7 +2,7 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDbLogFilesInput {
     /// <p>The customer-assigned name of the DB instance that contains the log files you want to list.</p>
     /// <p>Constraints:</p>
@@ -10,10 +10,10 @@ pub struct DescribeDbLogFilesInput {
     /// <li> <p>Must match the identifier of an existing DBInstance.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub db_instance_identifier: std::option::Option<std::string::String>,
+    pub db_instance_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Filters the available log files for log file names that contain the specified string.</p>
     #[doc(hidden)]
-    pub filename_contains: std::option::Option<std::string::String>,
+    pub filename_contains: ::std::option::Option<::std::string::String>,
     /// <p>Filters the available log files for files written since the specified date, in POSIX timestamp format with milliseconds.</p>
     #[doc(hidden)]
     pub file_last_written: i64,
@@ -22,13 +22,13 @@ pub struct DescribeDbLogFilesInput {
     pub file_size: i64,
     /// <p>This parameter isn't currently supported.</p>
     #[doc(hidden)]
-    pub filters: std::option::Option<std::vec::Vec<crate::types::Filter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxRecords value, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>
     #[doc(hidden)]
-    pub max_records: std::option::Option<i32>,
+    pub max_records: ::std::option::Option<i32>,
     /// <p>The pagination token provided in the previous request. If this parameter is specified the response includes only records beyond the marker, up to MaxRecords.</p>
     #[doc(hidden)]
-    pub marker: std::option::Option<std::string::String>,
+    pub marker: ::std::option::Option<::std::string::String>,
 }
 impl DescribeDbLogFilesInput {
     /// <p>The customer-assigned name of the DB instance that contains the log files you want to list.</p>
@@ -36,11 +36,11 @@ impl DescribeDbLogFilesInput {
     /// <ul>
     /// <li> <p>Must match the identifier of an existing DBInstance.</p> </li>
     /// </ul>
-    pub fn db_instance_identifier(&self) -> std::option::Option<&str> {
+    pub fn db_instance_identifier(&self) -> ::std::option::Option<&str> {
         self.db_instance_identifier.as_deref()
     }
     /// <p>Filters the available log files for log file names that contain the specified string.</p>
-    pub fn filename_contains(&self) -> std::option::Option<&str> {
+    pub fn filename_contains(&self) -> ::std::option::Option<&str> {
         self.filename_contains.as_deref()
     }
     /// <p>Filters the available log files for files written since the specified date, in POSIX timestamp format with milliseconds.</p>
@@ -52,15 +52,15 @@ impl DescribeDbLogFilesInput {
         self.file_size
     }
     /// <p>This parameter isn't currently supported.</p>
-    pub fn filters(&self) -> std::option::Option<&[crate::types::Filter]> {
+    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
         self.filters.as_deref()
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxRecords value, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>
-    pub fn max_records(&self) -> std::option::Option<i32> {
+    pub fn max_records(&self) -> ::std::option::Option<i32> {
         self.max_records
     }
     /// <p>The pagination token provided in the previous request. If this parameter is specified the response includes only records beyond the marker, up to MaxRecords.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
 }
@@ -74,15 +74,17 @@ impl DescribeDbLogFilesInput {
 
 /// A builder for [`DescribeDbLogFilesInput`](crate::operation::describe_db_log_files::DescribeDbLogFilesInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeDbLogFilesInputBuilder {
-    pub(crate) db_instance_identifier: std::option::Option<std::string::String>,
-    pub(crate) filename_contains: std::option::Option<std::string::String>,
-    pub(crate) file_last_written: std::option::Option<i64>,
-    pub(crate) file_size: std::option::Option<i64>,
-    pub(crate) filters: std::option::Option<std::vec::Vec<crate::types::Filter>>,
-    pub(crate) max_records: std::option::Option<i32>,
-    pub(crate) marker: std::option::Option<std::string::String>,
+    pub(crate) db_instance_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) filename_contains: ::std::option::Option<::std::string::String>,
+    pub(crate) file_last_written: ::std::option::Option<i64>,
+    pub(crate) file_size: ::std::option::Option<i64>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub(crate) max_records: ::std::option::Option<i32>,
+    pub(crate) marker: ::std::option::Option<::std::string::String>,
 }
 impl DescribeDbLogFilesInputBuilder {
     /// <p>The customer-assigned name of the DB instance that contains the log files you want to list.</p>
@@ -90,8 +92,11 @@ impl DescribeDbLogFilesInputBuilder {
     /// <ul>
     /// <li> <p>Must match the identifier of an existing DBInstance.</p> </li>
     /// </ul>
-    pub fn db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
-        self.db_instance_identifier = Some(input.into());
+    pub fn db_instance_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.db_instance_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The customer-assigned name of the DB instance that contains the log files you want to list.</p>
@@ -101,41 +106,44 @@ impl DescribeDbLogFilesInputBuilder {
     /// </ul>
     pub fn set_db_instance_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.db_instance_identifier = input;
         self
     }
     /// <p>Filters the available log files for log file names that contain the specified string.</p>
-    pub fn filename_contains(mut self, input: impl Into<std::string::String>) -> Self {
-        self.filename_contains = Some(input.into());
+    pub fn filename_contains(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.filename_contains = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Filters the available log files for log file names that contain the specified string.</p>
     pub fn set_filename_contains(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.filename_contains = input;
         self
     }
     /// <p>Filters the available log files for files written since the specified date, in POSIX timestamp format with milliseconds.</p>
     pub fn file_last_written(mut self, input: i64) -> Self {
-        self.file_last_written = Some(input);
+        self.file_last_written = ::std::option::Option::Some(input);
         self
     }
     /// <p>Filters the available log files for files written since the specified date, in POSIX timestamp format with milliseconds.</p>
-    pub fn set_file_last_written(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_file_last_written(mut self, input: ::std::option::Option<i64>) -> Self {
         self.file_last_written = input;
         self
     }
     /// <p>Filters the available log files for files larger than the specified size.</p>
     pub fn file_size(mut self, input: i64) -> Self {
-        self.file_size = Some(input);
+        self.file_size = ::std::option::Option::Some(input);
         self
     }
     /// <p>Filters the available log files for files larger than the specified size.</p>
-    pub fn set_file_size(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_file_size(mut self, input: ::std::option::Option<i64>) -> Self {
         self.file_size = input;
         self
     }
@@ -147,45 +155,45 @@ impl DescribeDbLogFilesInputBuilder {
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
         v.push(input);
-        self.filters = Some(v);
+        self.filters = ::std::option::Option::Some(v);
         self
     }
     /// <p>This parameter isn't currently supported.</p>
     pub fn set_filters(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     ) -> Self {
         self.filters = input;
         self
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxRecords value, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>
     pub fn max_records(mut self, input: i32) -> Self {
-        self.max_records = Some(input);
+        self.max_records = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxRecords value, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>
-    pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_records = input;
         self
     }
     /// <p>The pagination token provided in the previous request. If this parameter is specified the response includes only records beyond the marker, up to MaxRecords.</p>
-    pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-        self.marker = Some(input.into());
+    pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The pagination token provided in the previous request. If this parameter is specified the response includes only records beyond the marker, up to MaxRecords.</p>
-    pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
     }
     /// Consumes the builder and constructs a [`DescribeDbLogFilesInput`](crate::operation::describe_db_log_files::DescribeDbLogFilesInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::describe_db_log_files::DescribeDbLogFilesInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::describe_db_log_files::DescribeDbLogFilesInput {
                 db_instance_identifier: self.db_instance_identifier,
                 filename_contains: self.filename_contains,

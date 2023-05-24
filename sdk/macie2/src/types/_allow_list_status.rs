@@ -2,7 +2,7 @@
 
 /// <p>Provides information about the current status of an allow list, which indicates whether Amazon Macie can access and use the list's criteria.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AllowListStatus {
     /// <p>The current status of the allow list. If the list's criteria specify a regular expression (regex), this value is typically OK. Amazon Macie can compile the expression.</p>
     /// <p>If the list's criteria specify an S3 object, possible values are:</p>
@@ -17,10 +17,10 @@ pub struct AllowListStatus {
     /// <li><p>UNKNOWN_ERROR - A transient or internal error occurred when Macie attempted to retrieve or parse the object. Wait a few minutes and then try again. A list can also have this status if it's encrypted with a key that Amazon S3 and Macie can't access or use.</p></li>
     /// </ul>
     #[doc(hidden)]
-    pub code: std::option::Option<crate::types::AllowListStatusCode>,
+    pub code: ::std::option::Option<crate::types::AllowListStatusCode>,
     /// <p>A brief description of the status of the allow list. Amazon Macie uses this value to provide additional information about an error that occurred when Macie tried to access and use the list's criteria.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
 }
 impl AllowListStatus {
     /// <p>The current status of the allow list. If the list's criteria specify a regular expression (regex), this value is typically OK. Amazon Macie can compile the expression.</p>
@@ -35,11 +35,11 @@ impl AllowListStatus {
     /// <li><p>S3_USER_ACCESS_DENIED - Amazon S3 denied the request to retrieve the object. If the specified object exists, you're not allowed to access it or it's encrypted with an KMS key that you're not allowed to use. Work with your Amazon Web Services administrator to ensure that the list's criteria specify the correct bucket and object names, and you have read access to the bucket and the object. If the object is encrypted, also ensure that it's encrypted with a key that you're allowed to use.</p></li>
     /// <li><p>UNKNOWN_ERROR - A transient or internal error occurred when Macie attempted to retrieve or parse the object. Wait a few minutes and then try again. A list can also have this status if it's encrypted with a key that Amazon S3 and Macie can't access or use.</p></li>
     /// </ul>
-    pub fn code(&self) -> std::option::Option<&crate::types::AllowListStatusCode> {
+    pub fn code(&self) -> ::std::option::Option<&crate::types::AllowListStatusCode> {
         self.code.as_ref()
     }
     /// <p>A brief description of the status of the allow list. Amazon Macie uses this value to provide additional information about an error that occurred when Macie tried to access and use the list's criteria.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
 }
@@ -52,10 +52,12 @@ impl AllowListStatus {
 
 /// A builder for [`AllowListStatus`](crate::types::AllowListStatus).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AllowListStatusBuilder {
-    pub(crate) code: std::option::Option<crate::types::AllowListStatusCode>,
-    pub(crate) description: std::option::Option<std::string::String>,
+    pub(crate) code: ::std::option::Option<crate::types::AllowListStatusCode>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
 }
 impl AllowListStatusBuilder {
     /// <p>The current status of the allow list. If the list's criteria specify a regular expression (regex), this value is typically OK. Amazon Macie can compile the expression.</p>
@@ -71,7 +73,7 @@ impl AllowListStatusBuilder {
     /// <li><p>UNKNOWN_ERROR - A transient or internal error occurred when Macie attempted to retrieve or parse the object. Wait a few minutes and then try again. A list can also have this status if it's encrypted with a key that Amazon S3 and Macie can't access or use.</p></li>
     /// </ul>
     pub fn code(mut self, input: crate::types::AllowListStatusCode) -> Self {
-        self.code = Some(input);
+        self.code = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current status of the allow list. If the list's criteria specify a regular expression (regex), this value is typically OK. Amazon Macie can compile the expression.</p>
@@ -88,18 +90,18 @@ impl AllowListStatusBuilder {
     /// </ul>
     pub fn set_code(
         mut self,
-        input: std::option::Option<crate::types::AllowListStatusCode>,
+        input: ::std::option::Option<crate::types::AllowListStatusCode>,
     ) -> Self {
         self.code = input;
         self
     }
     /// <p>A brief description of the status of the allow list. Amazon Macie uses this value to provide additional information about an error that occurred when Macie tried to access and use the list's criteria.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A brief description of the status of the allow list. Amazon Macie uses this value to provide additional information about an error that occurred when Macie tried to access and use the list's criteria.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }

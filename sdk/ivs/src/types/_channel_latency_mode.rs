@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ChannelLatencyMode {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum ChannelLatencyMode {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ChannelLatencyMode {
+impl ::std::convert::From<&str> for ChannelLatencyMode {
     fn from(s: &str) -> Self {
         match s {
             "LOW" => ChannelLatencyMode::LowLatency,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for ChannelLatencyMode {
         }
     }
 }
-impl std::str::FromStr for ChannelLatencyMode {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ChannelLatencyMode {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ChannelLatencyMode::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ChannelLatencyMode::from(s))
     }
 }
 impl ChannelLatencyMode {
@@ -86,7 +86,7 @@ impl ChannelLatencyMode {
         &["LOW", "NORMAL"]
     }
 }
-impl AsRef<str> for ChannelLatencyMode {
+impl ::std::convert::AsRef<str> for ChannelLatencyMode {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

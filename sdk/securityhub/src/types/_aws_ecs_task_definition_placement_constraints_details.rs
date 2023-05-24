@@ -2,22 +2,22 @@
 
 /// <p>A placement constraint object to use for tasks.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEcsTaskDefinitionPlacementConstraintsDetails {
     /// <p>A cluster query language expression to apply to the constraint.</p>
     #[doc(hidden)]
-    pub expression: std::option::Option<std::string::String>,
+    pub expression: ::std::option::Option<::std::string::String>,
     /// <p>The type of constraint.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<std::string::String>,
+    pub r#type: ::std::option::Option<::std::string::String>,
 }
 impl AwsEcsTaskDefinitionPlacementConstraintsDetails {
     /// <p>A cluster query language expression to apply to the constraint.</p>
-    pub fn expression(&self) -> std::option::Option<&str> {
+    pub fn expression(&self) -> ::std::option::Option<&str> {
         self.expression.as_deref()
     }
     /// <p>The type of constraint.</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
     }
 }
@@ -31,29 +31,31 @@ impl AwsEcsTaskDefinitionPlacementConstraintsDetails {
 
 /// A builder for [`AwsEcsTaskDefinitionPlacementConstraintsDetails`](crate::types::AwsEcsTaskDefinitionPlacementConstraintsDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsEcsTaskDefinitionPlacementConstraintsDetailsBuilder {
-    pub(crate) expression: std::option::Option<std::string::String>,
-    pub(crate) r#type: std::option::Option<std::string::String>,
+    pub(crate) expression: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<::std::string::String>,
 }
 impl AwsEcsTaskDefinitionPlacementConstraintsDetailsBuilder {
     /// <p>A cluster query language expression to apply to the constraint.</p>
-    pub fn expression(mut self, input: impl Into<std::string::String>) -> Self {
-        self.expression = Some(input.into());
+    pub fn expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.expression = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A cluster query language expression to apply to the constraint.</p>
-    pub fn set_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.expression = input;
         self
     }
     /// <p>The type of constraint.</p>
-    pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.r#type = Some(input.into());
+    pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.r#type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of constraint.</p>
-    pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
     }

@@ -2,22 +2,22 @@
 
 /// <p>The details of the control panel that you're updating.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateControlPanelInput {
     /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
     #[doc(hidden)]
-    pub control_panel_arn: std::option::Option<std::string::String>,
+    pub control_panel_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the control panel.</p>
     #[doc(hidden)]
-    pub control_panel_name: std::option::Option<std::string::String>,
+    pub control_panel_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateControlPanelInput {
     /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
-    pub fn control_panel_arn(&self) -> std::option::Option<&str> {
+    pub fn control_panel_arn(&self) -> ::std::option::Option<&str> {
         self.control_panel_arn.as_deref()
     }
     /// <p>The name of the control panel.</p>
-    pub fn control_panel_name(&self) -> std::option::Option<&str> {
+    pub fn control_panel_name(&self) -> ::std::option::Option<&str> {
         self.control_panel_name.as_deref()
     }
 }
@@ -31,34 +31,42 @@ impl UpdateControlPanelInput {
 
 /// A builder for [`UpdateControlPanelInput`](crate::operation::update_control_panel::UpdateControlPanelInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateControlPanelInputBuilder {
-    pub(crate) control_panel_arn: std::option::Option<std::string::String>,
-    pub(crate) control_panel_name: std::option::Option<std::string::String>,
+    pub(crate) control_panel_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) control_panel_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateControlPanelInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
-    pub fn control_panel_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.control_panel_arn = Some(input.into());
+    pub fn control_panel_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.control_panel_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
     pub fn set_control_panel_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.control_panel_arn = input;
         self
     }
     /// <p>The name of the control panel.</p>
-    pub fn control_panel_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.control_panel_name = Some(input.into());
+    pub fn control_panel_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.control_panel_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the control panel.</p>
     pub fn set_control_panel_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.control_panel_name = input;
         self
@@ -66,11 +74,11 @@ impl UpdateControlPanelInputBuilder {
     /// Consumes the builder and constructs a [`UpdateControlPanelInput`](crate::operation::update_control_panel::UpdateControlPanelInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::update_control_panel::UpdateControlPanelInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::update_control_panel::UpdateControlPanelInput {
                 control_panel_arn: self.control_panel_arn,
                 control_panel_name: self.control_panel_name,

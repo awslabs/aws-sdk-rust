@@ -2,22 +2,22 @@
 
 /// <p>The value input pf the numeric range filter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NumericRangeFilterValue {
     /// <p>The static value of the numeric range filter.</p>
     #[doc(hidden)]
-    pub static_value: std::option::Option<f64>,
+    pub static_value: ::std::option::Option<f64>,
     /// <p>The parameter that is used in the numeric range.</p>
     #[doc(hidden)]
-    pub parameter: std::option::Option<std::string::String>,
+    pub parameter: ::std::option::Option<::std::string::String>,
 }
 impl NumericRangeFilterValue {
     /// <p>The static value of the numeric range filter.</p>
-    pub fn static_value(&self) -> std::option::Option<f64> {
+    pub fn static_value(&self) -> ::std::option::Option<f64> {
         self.static_value
     }
     /// <p>The parameter that is used in the numeric range.</p>
-    pub fn parameter(&self) -> std::option::Option<&str> {
+    pub fn parameter(&self) -> ::std::option::Option<&str> {
         self.parameter.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl NumericRangeFilterValue {
 
 /// A builder for [`NumericRangeFilterValue`](crate::types::NumericRangeFilterValue).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NumericRangeFilterValueBuilder {
-    pub(crate) static_value: std::option::Option<f64>,
-    pub(crate) parameter: std::option::Option<std::string::String>,
+    pub(crate) static_value: ::std::option::Option<f64>,
+    pub(crate) parameter: ::std::option::Option<::std::string::String>,
 }
 impl NumericRangeFilterValueBuilder {
     /// <p>The static value of the numeric range filter.</p>
     pub fn static_value(mut self, input: f64) -> Self {
-        self.static_value = Some(input);
+        self.static_value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The static value of the numeric range filter.</p>
-    pub fn set_static_value(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_static_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.static_value = input;
         self
     }
     /// <p>The parameter that is used in the numeric range.</p>
-    pub fn parameter(mut self, input: impl Into<std::string::String>) -> Self {
-        self.parameter = Some(input.into());
+    pub fn parameter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.parameter = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The parameter that is used in the numeric range.</p>
-    pub fn set_parameter(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_parameter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parameter = input;
         self
     }

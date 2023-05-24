@@ -2,81 +2,81 @@
 
 /// <p>Information about an active Device Defender security profile behavior violation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActiveViolation {
     /// <p>The ID of the active violation.</p>
     #[doc(hidden)]
-    pub violation_id: std::option::Option<std::string::String>,
+    pub violation_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the thing responsible for the active violation.</p>
     #[doc(hidden)]
-    pub thing_name: std::option::Option<std::string::String>,
+    pub thing_name: ::std::option::Option<::std::string::String>,
     /// <p>The security profile with the behavior is in violation.</p>
     #[doc(hidden)]
-    pub security_profile_name: std::option::Option<std::string::String>,
+    pub security_profile_name: ::std::option::Option<::std::string::String>,
     /// <p>The behavior that is being violated.</p>
     #[doc(hidden)]
-    pub behavior: std::option::Option<crate::types::Behavior>,
+    pub behavior: ::std::option::Option<crate::types::Behavior>,
     /// <p>The value of the metric (the measurement) that caused the most recent violation.</p>
     #[doc(hidden)]
-    pub last_violation_value: std::option::Option<crate::types::MetricValue>,
+    pub last_violation_value: ::std::option::Option<crate::types::MetricValue>,
     /// <p> The details of a violation event. </p>
     #[doc(hidden)]
     pub violation_event_additional_info:
-        std::option::Option<crate::types::ViolationEventAdditionalInfo>,
+        ::std::option::Option<crate::types::ViolationEventAdditionalInfo>,
     /// <p>The verification state of the violation (detect alarm).</p>
     #[doc(hidden)]
-    pub verification_state: std::option::Option<crate::types::VerificationState>,
+    pub verification_state: ::std::option::Option<crate::types::VerificationState>,
     /// <p>The description of the verification state of the violation.</p>
     #[doc(hidden)]
-    pub verification_state_description: std::option::Option<std::string::String>,
+    pub verification_state_description: ::std::option::Option<::std::string::String>,
     /// <p>The time the most recent violation occurred.</p>
     #[doc(hidden)]
-    pub last_violation_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_violation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time the violation started.</p>
     #[doc(hidden)]
-    pub violation_start_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub violation_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ActiveViolation {
     /// <p>The ID of the active violation.</p>
-    pub fn violation_id(&self) -> std::option::Option<&str> {
+    pub fn violation_id(&self) -> ::std::option::Option<&str> {
         self.violation_id.as_deref()
     }
     /// <p>The name of the thing responsible for the active violation.</p>
-    pub fn thing_name(&self) -> std::option::Option<&str> {
+    pub fn thing_name(&self) -> ::std::option::Option<&str> {
         self.thing_name.as_deref()
     }
     /// <p>The security profile with the behavior is in violation.</p>
-    pub fn security_profile_name(&self) -> std::option::Option<&str> {
+    pub fn security_profile_name(&self) -> ::std::option::Option<&str> {
         self.security_profile_name.as_deref()
     }
     /// <p>The behavior that is being violated.</p>
-    pub fn behavior(&self) -> std::option::Option<&crate::types::Behavior> {
+    pub fn behavior(&self) -> ::std::option::Option<&crate::types::Behavior> {
         self.behavior.as_ref()
     }
     /// <p>The value of the metric (the measurement) that caused the most recent violation.</p>
-    pub fn last_violation_value(&self) -> std::option::Option<&crate::types::MetricValue> {
+    pub fn last_violation_value(&self) -> ::std::option::Option<&crate::types::MetricValue> {
         self.last_violation_value.as_ref()
     }
     /// <p> The details of a violation event. </p>
     pub fn violation_event_additional_info(
         &self,
-    ) -> std::option::Option<&crate::types::ViolationEventAdditionalInfo> {
+    ) -> ::std::option::Option<&crate::types::ViolationEventAdditionalInfo> {
         self.violation_event_additional_info.as_ref()
     }
     /// <p>The verification state of the violation (detect alarm).</p>
-    pub fn verification_state(&self) -> std::option::Option<&crate::types::VerificationState> {
+    pub fn verification_state(&self) -> ::std::option::Option<&crate::types::VerificationState> {
         self.verification_state.as_ref()
     }
     /// <p>The description of the verification state of the violation.</p>
-    pub fn verification_state_description(&self) -> std::option::Option<&str> {
+    pub fn verification_state_description(&self) -> ::std::option::Option<&str> {
         self.verification_state_description.as_deref()
     }
     /// <p>The time the most recent violation occurred.</p>
-    pub fn last_violation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_violation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_violation_time.as_ref()
     }
     /// <p>The time the violation started.</p>
-    pub fn violation_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn violation_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.violation_start_time.as_ref()
     }
 }
@@ -89,73 +89,78 @@ impl ActiveViolation {
 
 /// A builder for [`ActiveViolation`](crate::types::ActiveViolation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ActiveViolationBuilder {
-    pub(crate) violation_id: std::option::Option<std::string::String>,
-    pub(crate) thing_name: std::option::Option<std::string::String>,
-    pub(crate) security_profile_name: std::option::Option<std::string::String>,
-    pub(crate) behavior: std::option::Option<crate::types::Behavior>,
-    pub(crate) last_violation_value: std::option::Option<crate::types::MetricValue>,
+    pub(crate) violation_id: ::std::option::Option<::std::string::String>,
+    pub(crate) thing_name: ::std::option::Option<::std::string::String>,
+    pub(crate) security_profile_name: ::std::option::Option<::std::string::String>,
+    pub(crate) behavior: ::std::option::Option<crate::types::Behavior>,
+    pub(crate) last_violation_value: ::std::option::Option<crate::types::MetricValue>,
     pub(crate) violation_event_additional_info:
-        std::option::Option<crate::types::ViolationEventAdditionalInfo>,
-    pub(crate) verification_state: std::option::Option<crate::types::VerificationState>,
-    pub(crate) verification_state_description: std::option::Option<std::string::String>,
-    pub(crate) last_violation_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) violation_start_time: std::option::Option<aws_smithy_types::DateTime>,
+        ::std::option::Option<crate::types::ViolationEventAdditionalInfo>,
+    pub(crate) verification_state: ::std::option::Option<crate::types::VerificationState>,
+    pub(crate) verification_state_description: ::std::option::Option<::std::string::String>,
+    pub(crate) last_violation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) violation_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ActiveViolationBuilder {
     /// <p>The ID of the active violation.</p>
-    pub fn violation_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.violation_id = Some(input.into());
+    pub fn violation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.violation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the active violation.</p>
-    pub fn set_violation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_violation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.violation_id = input;
         self
     }
     /// <p>The name of the thing responsible for the active violation.</p>
-    pub fn thing_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.thing_name = Some(input.into());
+    pub fn thing_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.thing_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the thing responsible for the active violation.</p>
-    pub fn set_thing_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_thing_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.thing_name = input;
         self
     }
     /// <p>The security profile with the behavior is in violation.</p>
-    pub fn security_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.security_profile_name = Some(input.into());
+    pub fn security_profile_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.security_profile_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The security profile with the behavior is in violation.</p>
     pub fn set_security_profile_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.security_profile_name = input;
         self
     }
     /// <p>The behavior that is being violated.</p>
     pub fn behavior(mut self, input: crate::types::Behavior) -> Self {
-        self.behavior = Some(input);
+        self.behavior = ::std::option::Option::Some(input);
         self
     }
     /// <p>The behavior that is being violated.</p>
-    pub fn set_behavior(mut self, input: std::option::Option<crate::types::Behavior>) -> Self {
+    pub fn set_behavior(mut self, input: ::std::option::Option<crate::types::Behavior>) -> Self {
         self.behavior = input;
         self
     }
     /// <p>The value of the metric (the measurement) that caused the most recent violation.</p>
     pub fn last_violation_value(mut self, input: crate::types::MetricValue) -> Self {
-        self.last_violation_value = Some(input);
+        self.last_violation_value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The value of the metric (the measurement) that caused the most recent violation.</p>
     pub fn set_last_violation_value(
         mut self,
-        input: std::option::Option<crate::types::MetricValue>,
+        input: ::std::option::Option<crate::types::MetricValue>,
     ) -> Self {
         self.last_violation_value = input;
         self
@@ -165,65 +170,68 @@ impl ActiveViolationBuilder {
         mut self,
         input: crate::types::ViolationEventAdditionalInfo,
     ) -> Self {
-        self.violation_event_additional_info = Some(input);
+        self.violation_event_additional_info = ::std::option::Option::Some(input);
         self
     }
     /// <p> The details of a violation event. </p>
     pub fn set_violation_event_additional_info(
         mut self,
-        input: std::option::Option<crate::types::ViolationEventAdditionalInfo>,
+        input: ::std::option::Option<crate::types::ViolationEventAdditionalInfo>,
     ) -> Self {
         self.violation_event_additional_info = input;
         self
     }
     /// <p>The verification state of the violation (detect alarm).</p>
     pub fn verification_state(mut self, input: crate::types::VerificationState) -> Self {
-        self.verification_state = Some(input);
+        self.verification_state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The verification state of the violation (detect alarm).</p>
     pub fn set_verification_state(
         mut self,
-        input: std::option::Option<crate::types::VerificationState>,
+        input: ::std::option::Option<crate::types::VerificationState>,
     ) -> Self {
         self.verification_state = input;
         self
     }
     /// <p>The description of the verification state of the violation.</p>
-    pub fn verification_state_description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.verification_state_description = Some(input.into());
+    pub fn verification_state_description(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.verification_state_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the verification state of the violation.</p>
     pub fn set_verification_state_description(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.verification_state_description = input;
         self
     }
     /// <p>The time the most recent violation occurred.</p>
-    pub fn last_violation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_violation_time = Some(input);
+    pub fn last_violation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_violation_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time the most recent violation occurred.</p>
     pub fn set_last_violation_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_violation_time = input;
         self
     }
     /// <p>The time the violation started.</p>
-    pub fn violation_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.violation_start_time = Some(input);
+    pub fn violation_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.violation_start_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time the violation started.</p>
     pub fn set_violation_start_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.violation_start_time = input;
         self

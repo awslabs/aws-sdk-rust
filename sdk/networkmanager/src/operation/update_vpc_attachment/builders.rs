@@ -6,29 +6,29 @@ pub use crate::operation::update_vpc_attachment::_update_vpc_attachment_input::U
 /// Fluent builder constructing a request to `UpdateVpcAttachment`.
 ///
 /// <p>Updates a VPC attachment.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateVpcAttachmentFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::update_vpc_attachment::builders::UpdateVpcAttachmentInputBuilder,
 }
 impl UpdateVpcAttachmentFluentBuilder {
     /// Creates a new `UpdateVpcAttachment`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_vpc_attachment::UpdateVpcAttachment,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_vpc_attachment::UpdateVpcAttachmentError,
         >,
     > {
@@ -36,30 +36,33 @@ impl UpdateVpcAttachmentFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_vpc_attachment::UpdateVpcAttachmentOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_vpc_attachment::UpdateVpcAttachmentError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,21 +75,27 @@ impl UpdateVpcAttachmentFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_vpc_attachment::UpdateVpcAttachmentOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_vpc_attachment::UpdateVpcAttachmentError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The ID of the attachment.</p>
-    pub fn attachment_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn attachment_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.attachment_id(input.into());
         self
     }
     /// <p>The ID of the attachment.</p>
-    pub fn set_attachment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_attachment_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_attachment_id(input);
         self
     }
@@ -95,14 +104,17 @@ impl UpdateVpcAttachmentFluentBuilder {
     /// To override the contents of this collection use [`set_add_subnet_arns`](Self::set_add_subnet_arns).
     ///
     /// <p>Adds a subnet ARN to the VPC attachment.</p>
-    pub fn add_subnet_arns(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn add_subnet_arns(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.add_subnet_arns(input.into());
         self
     }
     /// <p>Adds a subnet ARN to the VPC attachment.</p>
     pub fn set_add_subnet_arns(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_add_subnet_arns(input);
         self
@@ -112,14 +124,17 @@ impl UpdateVpcAttachmentFluentBuilder {
     /// To override the contents of this collection use [`set_remove_subnet_arns`](Self::set_remove_subnet_arns).
     ///
     /// <p>Removes a subnet ARN from the attachment.</p>
-    pub fn remove_subnet_arns(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn remove_subnet_arns(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.remove_subnet_arns(input.into());
         self
     }
     /// <p>Removes a subnet ARN from the attachment.</p>
     pub fn set_remove_subnet_arns(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_remove_subnet_arns(input);
         self
@@ -130,7 +145,7 @@ impl UpdateVpcAttachmentFluentBuilder {
         self
     }
     /// <p>Additional options for updating the VPC attachment. </p>
-    pub fn set_options(mut self, input: std::option::Option<crate::types::VpcOptions>) -> Self {
+    pub fn set_options(mut self, input: ::std::option::Option<crate::types::VpcOptions>) -> Self {
         self.inner = self.inner.set_options(input);
         self
     }

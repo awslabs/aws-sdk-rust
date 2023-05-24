@@ -2,32 +2,32 @@
 
 /// <p>Specifies the Auto-Tune options: the Auto-Tune desired state for the domain, rollback state when disabling Auto-Tune options and list of maintenance schedules.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoTuneOptions {
     /// <p>Specifies the Auto-Tune desired state. Valid values are ENABLED, DISABLED. </p>
     #[doc(hidden)]
-    pub desired_state: std::option::Option<crate::types::AutoTuneDesiredState>,
+    pub desired_state: ::std::option::Option<crate::types::AutoTuneDesiredState>,
     /// <p>Specifies the rollback state while disabling Auto-Tune for the domain. Valid values are NO_ROLLBACK, DEFAULT_ROLLBACK. </p>
     #[doc(hidden)]
-    pub rollback_on_disable: std::option::Option<crate::types::RollbackOnDisable>,
+    pub rollback_on_disable: ::std::option::Option<crate::types::RollbackOnDisable>,
     /// <p>Specifies list of maitenance schedules. See the <a href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html" target="_blank">Developer Guide</a> for more information.</p>
     #[doc(hidden)]
     pub maintenance_schedules:
-        std::option::Option<std::vec::Vec<crate::types::AutoTuneMaintenanceSchedule>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::AutoTuneMaintenanceSchedule>>,
 }
 impl AutoTuneOptions {
     /// <p>Specifies the Auto-Tune desired state. Valid values are ENABLED, DISABLED. </p>
-    pub fn desired_state(&self) -> std::option::Option<&crate::types::AutoTuneDesiredState> {
+    pub fn desired_state(&self) -> ::std::option::Option<&crate::types::AutoTuneDesiredState> {
         self.desired_state.as_ref()
     }
     /// <p>Specifies the rollback state while disabling Auto-Tune for the domain. Valid values are NO_ROLLBACK, DEFAULT_ROLLBACK. </p>
-    pub fn rollback_on_disable(&self) -> std::option::Option<&crate::types::RollbackOnDisable> {
+    pub fn rollback_on_disable(&self) -> ::std::option::Option<&crate::types::RollbackOnDisable> {
         self.rollback_on_disable.as_ref()
     }
     /// <p>Specifies list of maitenance schedules. See the <a href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html" target="_blank">Developer Guide</a> for more information.</p>
     pub fn maintenance_schedules(
         &self,
-    ) -> std::option::Option<&[crate::types::AutoTuneMaintenanceSchedule]> {
+    ) -> ::std::option::Option<&[crate::types::AutoTuneMaintenanceSchedule]> {
         self.maintenance_schedules.as_deref()
     }
 }
@@ -40,36 +40,38 @@ impl AutoTuneOptions {
 
 /// A builder for [`AutoTuneOptions`](crate::types::AutoTuneOptions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AutoTuneOptionsBuilder {
-    pub(crate) desired_state: std::option::Option<crate::types::AutoTuneDesiredState>,
-    pub(crate) rollback_on_disable: std::option::Option<crate::types::RollbackOnDisable>,
+    pub(crate) desired_state: ::std::option::Option<crate::types::AutoTuneDesiredState>,
+    pub(crate) rollback_on_disable: ::std::option::Option<crate::types::RollbackOnDisable>,
     pub(crate) maintenance_schedules:
-        std::option::Option<std::vec::Vec<crate::types::AutoTuneMaintenanceSchedule>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::AutoTuneMaintenanceSchedule>>,
 }
 impl AutoTuneOptionsBuilder {
     /// <p>Specifies the Auto-Tune desired state. Valid values are ENABLED, DISABLED. </p>
     pub fn desired_state(mut self, input: crate::types::AutoTuneDesiredState) -> Self {
-        self.desired_state = Some(input);
+        self.desired_state = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the Auto-Tune desired state. Valid values are ENABLED, DISABLED. </p>
     pub fn set_desired_state(
         mut self,
-        input: std::option::Option<crate::types::AutoTuneDesiredState>,
+        input: ::std::option::Option<crate::types::AutoTuneDesiredState>,
     ) -> Self {
         self.desired_state = input;
         self
     }
     /// <p>Specifies the rollback state while disabling Auto-Tune for the domain. Valid values are NO_ROLLBACK, DEFAULT_ROLLBACK. </p>
     pub fn rollback_on_disable(mut self, input: crate::types::RollbackOnDisable) -> Self {
-        self.rollback_on_disable = Some(input);
+        self.rollback_on_disable = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the rollback state while disabling Auto-Tune for the domain. Valid values are NO_ROLLBACK, DEFAULT_ROLLBACK. </p>
     pub fn set_rollback_on_disable(
         mut self,
-        input: std::option::Option<crate::types::RollbackOnDisable>,
+        input: ::std::option::Option<crate::types::RollbackOnDisable>,
     ) -> Self {
         self.rollback_on_disable = input;
         self
@@ -85,13 +87,13 @@ impl AutoTuneOptionsBuilder {
     ) -> Self {
         let mut v = self.maintenance_schedules.unwrap_or_default();
         v.push(input);
-        self.maintenance_schedules = Some(v);
+        self.maintenance_schedules = ::std::option::Option::Some(v);
         self
     }
     /// <p>Specifies list of maitenance schedules. See the <a href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html" target="_blank">Developer Guide</a> for more information.</p>
     pub fn set_maintenance_schedules(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AutoTuneMaintenanceSchedule>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AutoTuneMaintenanceSchedule>>,
     ) -> Self {
         self.maintenance_schedules = input;
         self

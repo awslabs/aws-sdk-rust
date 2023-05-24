@@ -2,22 +2,22 @@
 
 /// <p>Represents the subnet associated with a cluster. This parameter refers to subnets defined in Amazon Virtual Private Cloud (Amazon VPC) and used with MemoryDB.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Subnet {
     /// <p>The unique identifier for the subnet.</p>
     #[doc(hidden)]
-    pub identifier: std::option::Option<std::string::String>,
+    pub identifier: ::std::option::Option<::std::string::String>,
     /// <p>The Availability Zone where the subnet resides</p>
     #[doc(hidden)]
-    pub availability_zone: std::option::Option<crate::types::AvailabilityZone>,
+    pub availability_zone: ::std::option::Option<crate::types::AvailabilityZone>,
 }
 impl Subnet {
     /// <p>The unique identifier for the subnet.</p>
-    pub fn identifier(&self) -> std::option::Option<&str> {
+    pub fn identifier(&self) -> ::std::option::Option<&str> {
         self.identifier.as_deref()
     }
     /// <p>The Availability Zone where the subnet resides</p>
-    pub fn availability_zone(&self) -> std::option::Option<&crate::types::AvailabilityZone> {
+    pub fn availability_zone(&self) -> ::std::option::Option<&crate::types::AvailabilityZone> {
         self.availability_zone.as_ref()
     }
 }
@@ -30,31 +30,33 @@ impl Subnet {
 
 /// A builder for [`Subnet`](crate::types::Subnet).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SubnetBuilder {
-    pub(crate) identifier: std::option::Option<std::string::String>,
-    pub(crate) availability_zone: std::option::Option<crate::types::AvailabilityZone>,
+    pub(crate) identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) availability_zone: ::std::option::Option<crate::types::AvailabilityZone>,
 }
 impl SubnetBuilder {
     /// <p>The unique identifier for the subnet.</p>
-    pub fn identifier(mut self, input: impl Into<std::string::String>) -> Self {
-        self.identifier = Some(input.into());
+    pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the subnet.</p>
-    pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identifier = input;
         self
     }
     /// <p>The Availability Zone where the subnet resides</p>
     pub fn availability_zone(mut self, input: crate::types::AvailabilityZone) -> Self {
-        self.availability_zone = Some(input);
+        self.availability_zone = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Availability Zone where the subnet resides</p>
     pub fn set_availability_zone(
         mut self,
-        input: std::option::Option<crate::types::AvailabilityZone>,
+        input: ::std::option::Option<crate::types::AvailabilityZone>,
     ) -> Self {
         self.availability_zone = input;
         self

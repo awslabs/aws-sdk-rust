@@ -2,22 +2,22 @@
 
 /// <p>The description of the details for the event. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActionHistoryDetails {
     /// <p> A generic string.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
     /// <p>The budget action resource. </p>
     #[doc(hidden)]
-    pub action: std::option::Option<crate::types::Action>,
+    pub action: ::std::option::Option<crate::types::Action>,
 }
 impl ActionHistoryDetails {
     /// <p> A generic string.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
     /// <p>The budget action resource. </p>
-    pub fn action(&self) -> std::option::Option<&crate::types::Action> {
+    pub fn action(&self) -> ::std::option::Option<&crate::types::Action> {
         self.action.as_ref()
     }
 }
@@ -30,29 +30,31 @@ impl ActionHistoryDetails {
 
 /// A builder for [`ActionHistoryDetails`](crate::types::ActionHistoryDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ActionHistoryDetailsBuilder {
-    pub(crate) message: std::option::Option<std::string::String>,
-    pub(crate) action: std::option::Option<crate::types::Action>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
+    pub(crate) action: ::std::option::Option<crate::types::Action>,
 }
 impl ActionHistoryDetailsBuilder {
     /// <p> A generic string.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> A generic string.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
     /// <p>The budget action resource. </p>
     pub fn action(mut self, input: crate::types::Action) -> Self {
-        self.action = Some(input);
+        self.action = ::std::option::Option::Some(input);
         self
     }
     /// <p>The budget action resource. </p>
-    pub fn set_action(mut self, input: std::option::Option<crate::types::Action>) -> Self {
+    pub fn set_action(mut self, input: ::std::option::Option<crate::types::Action>) -> Self {
         self.action = input;
         self
     }

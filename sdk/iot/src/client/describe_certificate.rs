@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeCertificate`](crate::operation::describe_certificate::builders::DescribeCertificateFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`certificate_id(impl Into<String>)`](crate::operation::describe_certificate::builders::DescribeCertificateFluentBuilder::certificate_id) / [`set_certificate_id(Option<String>)`](crate::operation::describe_certificate::builders::DescribeCertificateFluentBuilder::set_certificate_id): <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
+    ///   - [`certificate_id(impl ::std::convert::Into<String>)`](crate::operation::describe_certificate::builders::DescribeCertificateFluentBuilder::certificate_id) / [`set_certificate_id(Option<String>)`](crate::operation::describe_certificate::builders::DescribeCertificateFluentBuilder::set_certificate_id): <p>The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)</p>
     /// - On success, responds with [`DescribeCertificateOutput`](crate::operation::describe_certificate::DescribeCertificateOutput) with field(s):
     ///   - [`certificate_description(Option<CertificateDescription>)`](crate::operation::describe_certificate::DescribeCertificateOutput::certificate_description): <p>The description of the certificate.</p>
     /// - On failure, responds with [`SdkError<DescribeCertificateError>`](crate::operation::describe_certificate::DescribeCertificateError)

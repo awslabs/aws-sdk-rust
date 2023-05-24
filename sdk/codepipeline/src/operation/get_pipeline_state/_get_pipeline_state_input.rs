@@ -2,15 +2,15 @@
 
 /// <p>Represents the input of a <code>GetPipelineState</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPipelineStateInput {
     /// <p>The name of the pipeline about which you want to get information.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
 }
 impl GetPipelineStateInput {
     /// <p>The name of the pipeline about which you want to get information.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
 }
@@ -24,28 +24,32 @@ impl GetPipelineStateInput {
 
 /// A builder for [`GetPipelineStateInput`](crate::operation::get_pipeline_state::GetPipelineStateInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetPipelineStateInputBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
 }
 impl GetPipelineStateInputBuilder {
     /// <p>The name of the pipeline about which you want to get information.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the pipeline about which you want to get information.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// Consumes the builder and constructs a [`GetPipelineStateInput`](crate::operation::get_pipeline_state::GetPipelineStateInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::get_pipeline_state::GetPipelineStateInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::get_pipeline_state::GetPipelineStateInput { name: self.name })
+        ::std::result::Result::Ok(
+            crate::operation::get_pipeline_state::GetPipelineStateInput { name: self.name },
+        )
     }
 }

@@ -2,20 +2,20 @@
 
 /// <p>Contains the output of AllocateHosts.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AllocateHostsOutput {
     /// <p>The ID of the allocated Dedicated Host. This is used to launch an instance onto a specific host.</p>
     #[doc(hidden)]
-    pub host_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub host_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl AllocateHostsOutput {
     /// <p>The ID of the allocated Dedicated Host. This is used to launch an instance onto a specific host.</p>
-    pub fn host_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn host_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.host_ids.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for AllocateHostsOutput {
+impl ::aws_http::request_id::RequestId for AllocateHostsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,9 +29,11 @@ impl AllocateHostsOutput {
 
 /// A builder for [`AllocateHostsOutput`](crate::operation::allocate_hosts::AllocateHostsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AllocateHostsOutputBuilder {
-    pub(crate) host_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) host_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl AllocateHostsOutputBuilder {
@@ -40,16 +42,16 @@ impl AllocateHostsOutputBuilder {
     /// To override the contents of this collection use [`set_host_ids`](Self::set_host_ids).
     ///
     /// <p>The ID of the allocated Dedicated Host. This is used to launch an instance onto a specific host.</p>
-    pub fn host_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn host_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.host_ids.unwrap_or_default();
         v.push(input.into());
-        self.host_ids = Some(v);
+        self.host_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The ID of the allocated Dedicated Host. This is used to launch an instance onto a specific host.</p>
     pub fn set_host_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.host_ids = input;
         self

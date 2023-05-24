@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeProcessingJob`](crate::operation::describe_processing_job::builders::DescribeProcessingJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`processing_job_name(impl Into<String>)`](crate::operation::describe_processing_job::builders::DescribeProcessingJobFluentBuilder::processing_job_name) / [`set_processing_job_name(Option<String>)`](crate::operation::describe_processing_job::builders::DescribeProcessingJobFluentBuilder::set_processing_job_name): <p>The name of the processing job. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
+    ///   - [`processing_job_name(impl ::std::convert::Into<String>)`](crate::operation::describe_processing_job::builders::DescribeProcessingJobFluentBuilder::processing_job_name) / [`set_processing_job_name(Option<String>)`](crate::operation::describe_processing_job::builders::DescribeProcessingJobFluentBuilder::set_processing_job_name): <p>The name of the processing job. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
     /// - On success, responds with [`DescribeProcessingJobOutput`](crate::operation::describe_processing_job::DescribeProcessingJobOutput) with field(s):
     ///   - [`processing_inputs(Option<Vec<ProcessingInput>>)`](crate::operation::describe_processing_job::DescribeProcessingJobOutput::processing_inputs): <p>The inputs for a processing job.</p>
     ///   - [`processing_output_config(Option<ProcessingOutputConfig>)`](crate::operation::describe_processing_job::DescribeProcessingJobOutput::processing_output_config): <p>Output configuration for the processing job.</p>

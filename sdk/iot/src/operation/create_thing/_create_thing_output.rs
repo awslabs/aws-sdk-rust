@@ -2,34 +2,34 @@
 
 /// <p>The output of the CreateThing operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateThingOutput {
     /// <p>The name of the new thing.</p>
     #[doc(hidden)]
-    pub thing_name: std::option::Option<std::string::String>,
+    pub thing_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the new thing.</p>
     #[doc(hidden)]
-    pub thing_arn: std::option::Option<std::string::String>,
+    pub thing_arn: ::std::option::Option<::std::string::String>,
     /// <p>The thing ID.</p>
     #[doc(hidden)]
-    pub thing_id: std::option::Option<std::string::String>,
+    pub thing_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateThingOutput {
     /// <p>The name of the new thing.</p>
-    pub fn thing_name(&self) -> std::option::Option<&str> {
+    pub fn thing_name(&self) -> ::std::option::Option<&str> {
         self.thing_name.as_deref()
     }
     /// <p>The ARN of the new thing.</p>
-    pub fn thing_arn(&self) -> std::option::Option<&str> {
+    pub fn thing_arn(&self) -> ::std::option::Option<&str> {
         self.thing_arn.as_deref()
     }
     /// <p>The thing ID.</p>
-    pub fn thing_id(&self) -> std::option::Option<&str> {
+    pub fn thing_id(&self) -> ::std::option::Option<&str> {
         self.thing_id.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for CreateThingOutput {
+impl ::aws_http::request_id::RequestId for CreateThingOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -43,41 +43,43 @@ impl CreateThingOutput {
 
 /// A builder for [`CreateThingOutput`](crate::operation::create_thing::CreateThingOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateThingOutputBuilder {
-    pub(crate) thing_name: std::option::Option<std::string::String>,
-    pub(crate) thing_arn: std::option::Option<std::string::String>,
-    pub(crate) thing_id: std::option::Option<std::string::String>,
+    pub(crate) thing_name: ::std::option::Option<::std::string::String>,
+    pub(crate) thing_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) thing_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateThingOutputBuilder {
     /// <p>The name of the new thing.</p>
-    pub fn thing_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.thing_name = Some(input.into());
+    pub fn thing_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.thing_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the new thing.</p>
-    pub fn set_thing_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_thing_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.thing_name = input;
         self
     }
     /// <p>The ARN of the new thing.</p>
-    pub fn thing_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.thing_arn = Some(input.into());
+    pub fn thing_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.thing_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the new thing.</p>
-    pub fn set_thing_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_thing_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.thing_arn = input;
         self
     }
     /// <p>The thing ID.</p>
-    pub fn thing_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.thing_id = Some(input.into());
+    pub fn thing_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.thing_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The thing ID.</p>
-    pub fn set_thing_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_thing_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.thing_id = input;
         self
     }

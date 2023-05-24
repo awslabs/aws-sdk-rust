@@ -2,22 +2,22 @@
 
 /// <p>Contains the parameters for DescribeInstanceHealth.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeInstanceHealthInput {
     /// <p>The name of the load balancer.</p>
     #[doc(hidden)]
-    pub load_balancer_name: std::option::Option<std::string::String>,
+    pub load_balancer_name: ::std::option::Option<::std::string::String>,
     /// <p>The IDs of the instances.</p>
     #[doc(hidden)]
-    pub instances: std::option::Option<std::vec::Vec<crate::types::Instance>>,
+    pub instances: ::std::option::Option<::std::vec::Vec<crate::types::Instance>>,
 }
 impl DescribeInstanceHealthInput {
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
+    pub fn load_balancer_name(&self) -> ::std::option::Option<&str> {
         self.load_balancer_name.as_deref()
     }
     /// <p>The IDs of the instances.</p>
-    pub fn instances(&self) -> std::option::Option<&[crate::types::Instance]> {
+    pub fn instances(&self) -> ::std::option::Option<&[crate::types::Instance]> {
         self.instances.as_deref()
     }
 }
@@ -32,21 +32,26 @@ impl DescribeInstanceHealthInput {
 
 /// A builder for [`DescribeInstanceHealthInput`](crate::operation::describe_instance_health::DescribeInstanceHealthInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeInstanceHealthInputBuilder {
-    pub(crate) load_balancer_name: std::option::Option<std::string::String>,
-    pub(crate) instances: std::option::Option<std::vec::Vec<crate::types::Instance>>,
+    pub(crate) load_balancer_name: ::std::option::Option<::std::string::String>,
+    pub(crate) instances: ::std::option::Option<::std::vec::Vec<crate::types::Instance>>,
 }
 impl DescribeInstanceHealthInputBuilder {
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.load_balancer_name = Some(input.into());
+    pub fn load_balancer_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.load_balancer_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the load balancer.</p>
     pub fn set_load_balancer_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.load_balancer_name = input;
         self
@@ -59,13 +64,13 @@ impl DescribeInstanceHealthInputBuilder {
     pub fn instances(mut self, input: crate::types::Instance) -> Self {
         let mut v = self.instances.unwrap_or_default();
         v.push(input);
-        self.instances = Some(v);
+        self.instances = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IDs of the instances.</p>
     pub fn set_instances(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Instance>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Instance>>,
     ) -> Self {
         self.instances = input;
         self
@@ -73,11 +78,11 @@ impl DescribeInstanceHealthInputBuilder {
     /// Consumes the builder and constructs a [`DescribeInstanceHealthInput`](crate::operation::describe_instance_health::DescribeInstanceHealthInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::describe_instance_health::DescribeInstanceHealthInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::describe_instance_health::DescribeInstanceHealthInput {
                 load_balancer_name: self.load_balancer_name,
                 instances: self.instances,

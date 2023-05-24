@@ -2,15 +2,15 @@
 
 /// <p>Represents the input of a <code>CreateTable</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateTableInput {
     /// <p>An array of attributes that describe the key schema for the table and indexes.</p>
     #[doc(hidden)]
     pub attribute_definitions:
-        std::option::Option<std::vec::Vec<crate::types::AttributeDefinition>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::AttributeDefinition>>,
     /// <p>The name of the table to create.</p>
     #[doc(hidden)]
-    pub table_name: std::option::Option<std::string::String>,
+    pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the attributes that make up the primary key for a table or an index. The attributes in <code>KeySchema</code> must also be defined in the <code>AttributeDefinitions</code> array. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     /// <p>Each <code>KeySchemaElement</code> in the array is composed of:</p>
     /// <ul>
@@ -28,7 +28,7 @@ pub struct CreateTableInput {
     /// <p>For a composite primary key (partition key and sort key), you must provide exactly two elements, in this order: The first element must have a <code>KeyType</code> of <code>HASH</code>, and the second element must have a <code>KeyType</code> of <code>RANGE</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Working with Tables</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     #[doc(hidden)]
-    pub key_schema: std::option::Option<std::vec::Vec<crate::types::KeySchemaElement>>,
+    pub key_schema: ::std::option::Option<::std::vec::Vec<crate::types::KeySchemaElement>>,
     /// <p>One or more local secondary indexes (the maximum is 5) to be created on the table. Each index is scoped to a given partition key value. There is a 10 GB size limit per partition key value; otherwise, the size of a local secondary index is unconstrained.</p>
     /// <p>Each local secondary index in the array includes the following:</p>
     /// <ul>
@@ -47,7 +47,7 @@ pub struct CreateTableInput {
     /// </ul>
     #[doc(hidden)]
     pub local_secondary_indexes:
-        std::option::Option<std::vec::Vec<crate::types::LocalSecondaryIndex>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::LocalSecondaryIndex>>,
     /// <p>One or more global secondary indexes (the maximum is 20) to be created on the table. Each global secondary index in the array includes the following:</p>
     /// <ul>
     /// <li> <p> <code>IndexName</code> - The name of the global secondary index. Must be unique only for this table.</p> <p></p> </li>
@@ -66,19 +66,19 @@ pub struct CreateTableInput {
     /// </ul>
     #[doc(hidden)]
     pub global_secondary_indexes:
-        std::option::Option<std::vec::Vec<crate::types::GlobalSecondaryIndex>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::GlobalSecondaryIndex>>,
     /// <p>Controls how you are charged for read and write throughput and how you manage capacity. This setting can be changed later.</p>
     /// <ul>
     /// <li> <p> <code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for predictable workloads. <code>PROVISIONED</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual">Provisioned Mode</a>.</p> </li>
     /// <li> <p> <code>PAY_PER_REQUEST</code> - We recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads. <code>PAY_PER_REQUEST</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand Mode</a>. </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub billing_mode: std::option::Option<crate::types::BillingMode>,
+    pub billing_mode: ::std::option::Option<crate::types::BillingMode>,
     /// <p>Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the <code>UpdateTable</code> operation.</p>
     /// <p> If you set BillingMode as <code>PROVISIONED</code>, you must specify this property. If you set BillingMode as <code>PAY_PER_REQUEST</code>, you cannot specify this property.</p>
     /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     #[doc(hidden)]
-    pub provisioned_throughput: std::option::Option<crate::types::ProvisionedThroughput>,
+    pub provisioned_throughput: ::std::option::Option<crate::types::ProvisionedThroughput>,
     /// <p>The settings for DynamoDB Streams on the table. These settings consist of:</p>
     /// <ul>
     /// <li> <p> <code>StreamEnabled</code> - Indicates whether DynamoDB Streams is to be enabled (true) or disabled (false).</p> </li>
@@ -91,29 +91,29 @@ pub struct CreateTableInput {
     /// </ul> </li>
     /// </ul>
     #[doc(hidden)]
-    pub stream_specification: std::option::Option<crate::types::StreamSpecification>,
+    pub stream_specification: ::std::option::Option<crate::types::StreamSpecification>,
     /// <p>Represents the settings used to enable server-side encryption.</p>
     #[doc(hidden)]
-    pub sse_specification: std::option::Option<crate::types::SseSpecification>,
+    pub sse_specification: ::std::option::Option<crate::types::SseSpecification>,
     /// <p>A list of key-value pairs to label the table. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging for DynamoDB</a>.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The table class of the new table. Valid values are <code>STANDARD</code> and <code>STANDARD_INFREQUENT_ACCESS</code>.</p>
     #[doc(hidden)]
-    pub table_class: std::option::Option<crate::types::TableClass>,
+    pub table_class: ::std::option::Option<crate::types::TableClass>,
     /// <p>Indicates whether deletion protection is to be enabled (true) or disabled (false) on the table.</p>
     #[doc(hidden)]
-    pub deletion_protection_enabled: std::option::Option<bool>,
+    pub deletion_protection_enabled: ::std::option::Option<bool>,
 }
 impl CreateTableInput {
     /// <p>An array of attributes that describe the key schema for the table and indexes.</p>
     pub fn attribute_definitions(
         &self,
-    ) -> std::option::Option<&[crate::types::AttributeDefinition]> {
+    ) -> ::std::option::Option<&[crate::types::AttributeDefinition]> {
         self.attribute_definitions.as_deref()
     }
     /// <p>The name of the table to create.</p>
-    pub fn table_name(&self) -> std::option::Option<&str> {
+    pub fn table_name(&self) -> ::std::option::Option<&str> {
         self.table_name.as_deref()
     }
     /// <p>Specifies the attributes that make up the primary key for a table or an index. The attributes in <code>KeySchema</code> must also be defined in the <code>AttributeDefinitions</code> array. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
@@ -132,7 +132,7 @@ impl CreateTableInput {
     /// <p>For a simple primary key (partition key), you must provide exactly one element with a <code>KeyType</code> of <code>HASH</code>.</p>
     /// <p>For a composite primary key (partition key and sort key), you must provide exactly two elements, in this order: The first element must have a <code>KeyType</code> of <code>HASH</code>, and the second element must have a <code>KeyType</code> of <code>RANGE</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Working with Tables</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    pub fn key_schema(&self) -> std::option::Option<&[crate::types::KeySchemaElement]> {
+    pub fn key_schema(&self) -> ::std::option::Option<&[crate::types::KeySchemaElement]> {
         self.key_schema.as_deref()
     }
     /// <p>One or more local secondary indexes (the maximum is 5) to be created on the table. Each index is scoped to a given partition key value. There is a 10 GB size limit per partition key value; otherwise, the size of a local secondary index is unconstrained.</p>
@@ -153,7 +153,7 @@ impl CreateTableInput {
     /// </ul>
     pub fn local_secondary_indexes(
         &self,
-    ) -> std::option::Option<&[crate::types::LocalSecondaryIndex]> {
+    ) -> ::std::option::Option<&[crate::types::LocalSecondaryIndex]> {
         self.local_secondary_indexes.as_deref()
     }
     /// <p>One or more global secondary indexes (the maximum is 20) to be created on the table. Each global secondary index in the array includes the following:</p>
@@ -174,7 +174,7 @@ impl CreateTableInput {
     /// </ul>
     pub fn global_secondary_indexes(
         &self,
-    ) -> std::option::Option<&[crate::types::GlobalSecondaryIndex]> {
+    ) -> ::std::option::Option<&[crate::types::GlobalSecondaryIndex]> {
         self.global_secondary_indexes.as_deref()
     }
     /// <p>Controls how you are charged for read and write throughput and how you manage capacity. This setting can be changed later.</p>
@@ -182,7 +182,7 @@ impl CreateTableInput {
     /// <li> <p> <code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for predictable workloads. <code>PROVISIONED</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual">Provisioned Mode</a>.</p> </li>
     /// <li> <p> <code>PAY_PER_REQUEST</code> - We recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads. <code>PAY_PER_REQUEST</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand Mode</a>. </p> </li>
     /// </ul>
-    pub fn billing_mode(&self) -> std::option::Option<&crate::types::BillingMode> {
+    pub fn billing_mode(&self) -> ::std::option::Option<&crate::types::BillingMode> {
         self.billing_mode.as_ref()
     }
     /// <p>Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the <code>UpdateTable</code> operation.</p>
@@ -190,7 +190,7 @@ impl CreateTableInput {
     /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn provisioned_throughput(
         &self,
-    ) -> std::option::Option<&crate::types::ProvisionedThroughput> {
+    ) -> ::std::option::Option<&crate::types::ProvisionedThroughput> {
         self.provisioned_throughput.as_ref()
     }
     /// <p>The settings for DynamoDB Streams on the table. These settings consist of:</p>
@@ -204,23 +204,25 @@ impl CreateTableInput {
     /// <li> <p> <code>NEW_AND_OLD_IMAGES</code> - Both the new and the old item images of the item are written to the stream.</p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn stream_specification(&self) -> std::option::Option<&crate::types::StreamSpecification> {
+    pub fn stream_specification(
+        &self,
+    ) -> ::std::option::Option<&crate::types::StreamSpecification> {
         self.stream_specification.as_ref()
     }
     /// <p>Represents the settings used to enable server-side encryption.</p>
-    pub fn sse_specification(&self) -> std::option::Option<&crate::types::SseSpecification> {
+    pub fn sse_specification(&self) -> ::std::option::Option<&crate::types::SseSpecification> {
         self.sse_specification.as_ref()
     }
     /// <p>A list of key-value pairs to label the table. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging for DynamoDB</a>.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The table class of the new table. Valid values are <code>STANDARD</code> and <code>STANDARD_INFREQUENT_ACCESS</code>.</p>
-    pub fn table_class(&self) -> std::option::Option<&crate::types::TableClass> {
+    pub fn table_class(&self) -> ::std::option::Option<&crate::types::TableClass> {
         self.table_class.as_ref()
     }
     /// <p>Indicates whether deletion protection is to be enabled (true) or disabled (false) on the table.</p>
-    pub fn deletion_protection_enabled(&self) -> std::option::Option<bool> {
+    pub fn deletion_protection_enabled(&self) -> ::std::option::Option<bool> {
         self.deletion_protection_enabled
     }
 }
@@ -233,23 +235,25 @@ impl CreateTableInput {
 
 /// A builder for [`CreateTableInput`](crate::operation::create_table::CreateTableInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateTableInputBuilder {
     pub(crate) attribute_definitions:
-        std::option::Option<std::vec::Vec<crate::types::AttributeDefinition>>,
-    pub(crate) table_name: std::option::Option<std::string::String>,
-    pub(crate) key_schema: std::option::Option<std::vec::Vec<crate::types::KeySchemaElement>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::AttributeDefinition>>,
+    pub(crate) table_name: ::std::option::Option<::std::string::String>,
+    pub(crate) key_schema: ::std::option::Option<::std::vec::Vec<crate::types::KeySchemaElement>>,
     pub(crate) local_secondary_indexes:
-        std::option::Option<std::vec::Vec<crate::types::LocalSecondaryIndex>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::LocalSecondaryIndex>>,
     pub(crate) global_secondary_indexes:
-        std::option::Option<std::vec::Vec<crate::types::GlobalSecondaryIndex>>,
-    pub(crate) billing_mode: std::option::Option<crate::types::BillingMode>,
-    pub(crate) provisioned_throughput: std::option::Option<crate::types::ProvisionedThroughput>,
-    pub(crate) stream_specification: std::option::Option<crate::types::StreamSpecification>,
-    pub(crate) sse_specification: std::option::Option<crate::types::SseSpecification>,
-    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    pub(crate) table_class: std::option::Option<crate::types::TableClass>,
-    pub(crate) deletion_protection_enabled: std::option::Option<bool>,
+        ::std::option::Option<::std::vec::Vec<crate::types::GlobalSecondaryIndex>>,
+    pub(crate) billing_mode: ::std::option::Option<crate::types::BillingMode>,
+    pub(crate) provisioned_throughput: ::std::option::Option<crate::types::ProvisionedThroughput>,
+    pub(crate) stream_specification: ::std::option::Option<crate::types::StreamSpecification>,
+    pub(crate) sse_specification: ::std::option::Option<crate::types::SseSpecification>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) table_class: ::std::option::Option<crate::types::TableClass>,
+    pub(crate) deletion_protection_enabled: ::std::option::Option<bool>,
 }
 impl CreateTableInputBuilder {
     /// Appends an item to `attribute_definitions`.
@@ -260,24 +264,24 @@ impl CreateTableInputBuilder {
     pub fn attribute_definitions(mut self, input: crate::types::AttributeDefinition) -> Self {
         let mut v = self.attribute_definitions.unwrap_or_default();
         v.push(input);
-        self.attribute_definitions = Some(v);
+        self.attribute_definitions = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of attributes that describe the key schema for the table and indexes.</p>
     pub fn set_attribute_definitions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AttributeDefinition>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeDefinition>>,
     ) -> Self {
         self.attribute_definitions = input;
         self
     }
     /// <p>The name of the table to create.</p>
-    pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.table_name = Some(input.into());
+    pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.table_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the table to create.</p>
-    pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_name = input;
         self
     }
@@ -304,7 +308,7 @@ impl CreateTableInputBuilder {
     pub fn key_schema(mut self, input: crate::types::KeySchemaElement) -> Self {
         let mut v = self.key_schema.unwrap_or_default();
         v.push(input);
-        self.key_schema = Some(v);
+        self.key_schema = ::std::option::Option::Some(v);
         self
     }
     /// <p>Specifies the attributes that make up the primary key for a table or an index. The attributes in <code>KeySchema</code> must also be defined in the <code>AttributeDefinitions</code> array. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
@@ -325,7 +329,7 @@ impl CreateTableInputBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Working with Tables</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn set_key_schema(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::KeySchemaElement>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::KeySchemaElement>>,
     ) -> Self {
         self.key_schema = input;
         self
@@ -353,7 +357,7 @@ impl CreateTableInputBuilder {
     pub fn local_secondary_indexes(mut self, input: crate::types::LocalSecondaryIndex) -> Self {
         let mut v = self.local_secondary_indexes.unwrap_or_default();
         v.push(input);
-        self.local_secondary_indexes = Some(v);
+        self.local_secondary_indexes = ::std::option::Option::Some(v);
         self
     }
     /// <p>One or more local secondary indexes (the maximum is 5) to be created on the table. Each index is scoped to a given partition key value. There is a 10 GB size limit per partition key value; otherwise, the size of a local secondary index is unconstrained.</p>
@@ -374,7 +378,7 @@ impl CreateTableInputBuilder {
     /// </ul>
     pub fn set_local_secondary_indexes(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::LocalSecondaryIndex>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::LocalSecondaryIndex>>,
     ) -> Self {
         self.local_secondary_indexes = input;
         self
@@ -402,7 +406,7 @@ impl CreateTableInputBuilder {
     pub fn global_secondary_indexes(mut self, input: crate::types::GlobalSecondaryIndex) -> Self {
         let mut v = self.global_secondary_indexes.unwrap_or_default();
         v.push(input);
-        self.global_secondary_indexes = Some(v);
+        self.global_secondary_indexes = ::std::option::Option::Some(v);
         self
     }
     /// <p>One or more global secondary indexes (the maximum is 20) to be created on the table. Each global secondary index in the array includes the following:</p>
@@ -423,7 +427,7 @@ impl CreateTableInputBuilder {
     /// </ul>
     pub fn set_global_secondary_indexes(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::GlobalSecondaryIndex>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::GlobalSecondaryIndex>>,
     ) -> Self {
         self.global_secondary_indexes = input;
         self
@@ -434,7 +438,7 @@ impl CreateTableInputBuilder {
     /// <li> <p> <code>PAY_PER_REQUEST</code> - We recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads. <code>PAY_PER_REQUEST</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand Mode</a>. </p> </li>
     /// </ul>
     pub fn billing_mode(mut self, input: crate::types::BillingMode) -> Self {
-        self.billing_mode = Some(input);
+        self.billing_mode = ::std::option::Option::Some(input);
         self
     }
     /// <p>Controls how you are charged for read and write throughput and how you manage capacity. This setting can be changed later.</p>
@@ -444,7 +448,7 @@ impl CreateTableInputBuilder {
     /// </ul>
     pub fn set_billing_mode(
         mut self,
-        input: std::option::Option<crate::types::BillingMode>,
+        input: ::std::option::Option<crate::types::BillingMode>,
     ) -> Self {
         self.billing_mode = input;
         self
@@ -453,7 +457,7 @@ impl CreateTableInputBuilder {
     /// <p> If you set BillingMode as <code>PROVISIONED</code>, you must specify this property. If you set BillingMode as <code>PAY_PER_REQUEST</code>, you cannot specify this property.</p>
     /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn provisioned_throughput(mut self, input: crate::types::ProvisionedThroughput) -> Self {
-        self.provisioned_throughput = Some(input);
+        self.provisioned_throughput = ::std::option::Option::Some(input);
         self
     }
     /// <p>Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the <code>UpdateTable</code> operation.</p>
@@ -461,7 +465,7 @@ impl CreateTableInputBuilder {
     /// <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn set_provisioned_throughput(
         mut self,
-        input: std::option::Option<crate::types::ProvisionedThroughput>,
+        input: ::std::option::Option<crate::types::ProvisionedThroughput>,
     ) -> Self {
         self.provisioned_throughput = input;
         self
@@ -478,7 +482,7 @@ impl CreateTableInputBuilder {
     /// </ul> </li>
     /// </ul>
     pub fn stream_specification(mut self, input: crate::types::StreamSpecification) -> Self {
-        self.stream_specification = Some(input);
+        self.stream_specification = ::std::option::Option::Some(input);
         self
     }
     /// <p>The settings for DynamoDB Streams on the table. These settings consist of:</p>
@@ -494,20 +498,20 @@ impl CreateTableInputBuilder {
     /// </ul>
     pub fn set_stream_specification(
         mut self,
-        input: std::option::Option<crate::types::StreamSpecification>,
+        input: ::std::option::Option<crate::types::StreamSpecification>,
     ) -> Self {
         self.stream_specification = input;
         self
     }
     /// <p>Represents the settings used to enable server-side encryption.</p>
     pub fn sse_specification(mut self, input: crate::types::SseSpecification) -> Self {
-        self.sse_specification = Some(input);
+        self.sse_specification = ::std::option::Option::Some(input);
         self
     }
     /// <p>Represents the settings used to enable server-side encryption.</p>
     pub fn set_sse_specification(
         mut self,
-        input: std::option::Option<crate::types::SseSpecification>,
+        input: ::std::option::Option<crate::types::SseSpecification>,
     ) -> Self {
         self.sse_specification = input;
         self
@@ -520,45 +524,48 @@ impl CreateTableInputBuilder {
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
-        self.tags = Some(v);
+        self.tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of key-value pairs to label the table. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging for DynamoDB</a>.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tags = input;
         self
     }
     /// <p>The table class of the new table. Valid values are <code>STANDARD</code> and <code>STANDARD_INFREQUENT_ACCESS</code>.</p>
     pub fn table_class(mut self, input: crate::types::TableClass) -> Self {
-        self.table_class = Some(input);
+        self.table_class = ::std::option::Option::Some(input);
         self
     }
     /// <p>The table class of the new table. Valid values are <code>STANDARD</code> and <code>STANDARD_INFREQUENT_ACCESS</code>.</p>
-    pub fn set_table_class(mut self, input: std::option::Option<crate::types::TableClass>) -> Self {
+    pub fn set_table_class(
+        mut self,
+        input: ::std::option::Option<crate::types::TableClass>,
+    ) -> Self {
         self.table_class = input;
         self
     }
     /// <p>Indicates whether deletion protection is to be enabled (true) or disabled (false) on the table.</p>
     pub fn deletion_protection_enabled(mut self, input: bool) -> Self {
-        self.deletion_protection_enabled = Some(input);
+        self.deletion_protection_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether deletion protection is to be enabled (true) or disabled (false) on the table.</p>
-    pub fn set_deletion_protection_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_deletion_protection_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.deletion_protection_enabled = input;
         self
     }
     /// Consumes the builder and constructs a [`CreateTableInput`](crate::operation::create_table::CreateTableInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::create_table::CreateTableInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::create_table::CreateTableInput {
+        ::std::result::Result::Ok(crate::operation::create_table::CreateTableInput {
             attribute_definitions: self.attribute_definitions,
             table_name: self.table_name,
             key_schema: self.key_schema,

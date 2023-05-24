@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`RegisterDefaultPatchBaseline`](crate::operation::register_default_patch_baseline::builders::RegisterDefaultPatchBaselineFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`baseline_id(impl Into<String>)`](crate::operation::register_default_patch_baseline::builders::RegisterDefaultPatchBaselineFluentBuilder::baseline_id) / [`set_baseline_id(Option<String>)`](crate::operation::register_default_patch_baseline::builders::RegisterDefaultPatchBaselineFluentBuilder::set_baseline_id): <p>The ID of the patch baseline that should be the default patch baseline.</p>
+    ///   - [`baseline_id(impl ::std::convert::Into<String>)`](crate::operation::register_default_patch_baseline::builders::RegisterDefaultPatchBaselineFluentBuilder::baseline_id) / [`set_baseline_id(Option<String>)`](crate::operation::register_default_patch_baseline::builders::RegisterDefaultPatchBaselineFluentBuilder::set_baseline_id): <p>The ID of the patch baseline that should be the default patch baseline.</p>
     /// - On success, responds with [`RegisterDefaultPatchBaselineOutput`](crate::operation::register_default_patch_baseline::RegisterDefaultPatchBaselineOutput) with field(s):
     ///   - [`baseline_id(Option<String>)`](crate::operation::register_default_patch_baseline::RegisterDefaultPatchBaselineOutput::baseline_id): <p>The ID of the default patch baseline.</p>
     /// - On failure, responds with [`SdkError<RegisterDefaultPatchBaselineError>`](crate::operation::register_default_patch_baseline::RegisterDefaultPatchBaselineError)

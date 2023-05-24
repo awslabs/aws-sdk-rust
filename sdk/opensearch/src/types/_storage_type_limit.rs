@@ -2,7 +2,7 @@
 
 /// <p>Limits that are applicable for the given Amazon OpenSearch Service storage type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StorageTypeLimit {
     /// <p> Name of storage limits that are applicable for the given storage type. If <code>StorageType</code> is <code>ebs</code>, the following options are available:</p>
     /// <ul>
@@ -14,10 +14,10 @@ pub struct StorageTypeLimit {
     /// <li> <p> <b>MinimumThroughput</b> - Minimum amount of throughput that is available for the given the storage type. Can be empty if not applicable.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub limit_name: std::option::Option<std::string::String>,
+    pub limit_name: ::std::option::Option<::std::string::String>,
     /// <p>The limit values.</p>
     #[doc(hidden)]
-    pub limit_values: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub limit_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl StorageTypeLimit {
     /// <p> Name of storage limits that are applicable for the given storage type. If <code>StorageType</code> is <code>ebs</code>, the following options are available:</p>
@@ -29,11 +29,11 @@ impl StorageTypeLimit {
     /// <li> <p> <b>MaximumThroughput</b> - Maximum amount of throughput that is available for the given the storage type. Can be empty if not applicable.</p> </li>
     /// <li> <p> <b>MinimumThroughput</b> - Minimum amount of throughput that is available for the given the storage type. Can be empty if not applicable.</p> </li>
     /// </ul>
-    pub fn limit_name(&self) -> std::option::Option<&str> {
+    pub fn limit_name(&self) -> ::std::option::Option<&str> {
         self.limit_name.as_deref()
     }
     /// <p>The limit values.</p>
-    pub fn limit_values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn limit_values(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.limit_values.as_deref()
     }
 }
@@ -46,10 +46,12 @@ impl StorageTypeLimit {
 
 /// A builder for [`StorageTypeLimit`](crate::types::StorageTypeLimit).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StorageTypeLimitBuilder {
-    pub(crate) limit_name: std::option::Option<std::string::String>,
-    pub(crate) limit_values: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) limit_name: ::std::option::Option<::std::string::String>,
+    pub(crate) limit_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl StorageTypeLimitBuilder {
     /// <p> Name of storage limits that are applicable for the given storage type. If <code>StorageType</code> is <code>ebs</code>, the following options are available:</p>
@@ -61,8 +63,8 @@ impl StorageTypeLimitBuilder {
     /// <li> <p> <b>MaximumThroughput</b> - Maximum amount of throughput that is available for the given the storage type. Can be empty if not applicable.</p> </li>
     /// <li> <p> <b>MinimumThroughput</b> - Minimum amount of throughput that is available for the given the storage type. Can be empty if not applicable.</p> </li>
     /// </ul>
-    pub fn limit_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.limit_name = Some(input.into());
+    pub fn limit_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.limit_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Name of storage limits that are applicable for the given storage type. If <code>StorageType</code> is <code>ebs</code>, the following options are available:</p>
@@ -74,7 +76,7 @@ impl StorageTypeLimitBuilder {
     /// <li> <p> <b>MaximumThroughput</b> - Maximum amount of throughput that is available for the given the storage type. Can be empty if not applicable.</p> </li>
     /// <li> <p> <b>MinimumThroughput</b> - Minimum amount of throughput that is available for the given the storage type. Can be empty if not applicable.</p> </li>
     /// </ul>
-    pub fn set_limit_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_limit_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.limit_name = input;
         self
     }
@@ -83,16 +85,16 @@ impl StorageTypeLimitBuilder {
     /// To override the contents of this collection use [`set_limit_values`](Self::set_limit_values).
     ///
     /// <p>The limit values.</p>
-    pub fn limit_values(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn limit_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.limit_values.unwrap_or_default();
         v.push(input.into());
-        self.limit_values = Some(v);
+        self.limit_values = ::std::option::Option::Some(v);
         self
     }
     /// <p>The limit values.</p>
     pub fn set_limit_values(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.limit_values = input;
         self

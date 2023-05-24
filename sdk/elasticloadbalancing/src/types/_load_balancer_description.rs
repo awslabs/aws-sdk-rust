@@ -2,132 +2,134 @@
 
 /// <p>Information about a load balancer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoadBalancerDescription {
     /// <p>The name of the load balancer.</p>
     #[doc(hidden)]
-    pub load_balancer_name: std::option::Option<std::string::String>,
+    pub load_balancer_name: ::std::option::Option<::std::string::String>,
     /// <p>The DNS name of the load balancer.</p>
     #[doc(hidden)]
-    pub dns_name: std::option::Option<std::string::String>,
+    pub dns_name: ::std::option::Option<::std::string::String>,
     /// <p>The DNS name of the load balancer.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/using-domain-names-with-elb.html">Configure a Custom Domain Name</a> in the <i>Classic Load Balancers Guide</i>.</p>
     #[doc(hidden)]
-    pub canonical_hosted_zone_name: std::option::Option<std::string::String>,
+    pub canonical_hosted_zone_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Route 53 hosted zone for the load balancer.</p>
     #[doc(hidden)]
-    pub canonical_hosted_zone_name_id: std::option::Option<std::string::String>,
+    pub canonical_hosted_zone_name_id: ::std::option::Option<::std::string::String>,
     /// <p>The listeners for the load balancer.</p>
     #[doc(hidden)]
     pub listener_descriptions:
-        std::option::Option<std::vec::Vec<crate::types::ListenerDescription>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ListenerDescription>>,
     /// <p>The policies defined for the load balancer.</p>
     #[doc(hidden)]
-    pub policies: std::option::Option<crate::types::Policies>,
+    pub policies: ::std::option::Option<crate::types::Policies>,
     /// <p>Information about your EC2 instances.</p>
     #[doc(hidden)]
     pub backend_server_descriptions:
-        std::option::Option<std::vec::Vec<crate::types::BackendServerDescription>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::BackendServerDescription>>,
     /// <p>The Availability Zones for the load balancer.</p>
     #[doc(hidden)]
-    pub availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The IDs of the subnets for the load balancer.</p>
     #[doc(hidden)]
-    pub subnets: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ID of the VPC for the load balancer.</p>
     #[doc(hidden)]
-    pub vpc_id: std::option::Option<std::string::String>,
+    pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The IDs of the instances for the load balancer.</p>
     #[doc(hidden)]
-    pub instances: std::option::Option<std::vec::Vec<crate::types::Instance>>,
+    pub instances: ::std::option::Option<::std::vec::Vec<crate::types::Instance>>,
     /// <p>Information about the health checks conducted on the load balancer.</p>
     #[doc(hidden)]
-    pub health_check: std::option::Option<crate::types::HealthCheck>,
+    pub health_check: ::std::option::Option<crate::types::HealthCheck>,
     /// <p>The security group for the load balancer, which you can use as part of your inbound rules for your registered instances. To only allow traffic from load balancers, add a security group rule that specifies this source security group as the inbound source.</p>
     #[doc(hidden)]
-    pub source_security_group: std::option::Option<crate::types::SourceSecurityGroup>,
+    pub source_security_group: ::std::option::Option<crate::types::SourceSecurityGroup>,
     /// <p>The security groups for the load balancer. Valid only for load balancers in a VPC.</p>
     #[doc(hidden)]
-    pub security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The date and time the load balancer was created.</p>
     #[doc(hidden)]
-    pub created_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The type of load balancer. Valid only for load balancers in a VPC.</p>
     /// <p>If <code>Scheme</code> is <code>internet-facing</code>, the load balancer has a public DNS name that resolves to a public IP address.</p>
     /// <p>If <code>Scheme</code> is <code>internal</code>, the load balancer has a public DNS name that resolves to a private IP address.</p>
     #[doc(hidden)]
-    pub scheme: std::option::Option<std::string::String>,
+    pub scheme: ::std::option::Option<::std::string::String>,
 }
 impl LoadBalancerDescription {
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
+    pub fn load_balancer_name(&self) -> ::std::option::Option<&str> {
         self.load_balancer_name.as_deref()
     }
     /// <p>The DNS name of the load balancer.</p>
-    pub fn dns_name(&self) -> std::option::Option<&str> {
+    pub fn dns_name(&self) -> ::std::option::Option<&str> {
         self.dns_name.as_deref()
     }
     /// <p>The DNS name of the load balancer.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/using-domain-names-with-elb.html">Configure a Custom Domain Name</a> in the <i>Classic Load Balancers Guide</i>.</p>
-    pub fn canonical_hosted_zone_name(&self) -> std::option::Option<&str> {
+    pub fn canonical_hosted_zone_name(&self) -> ::std::option::Option<&str> {
         self.canonical_hosted_zone_name.as_deref()
     }
     /// <p>The ID of the Amazon Route 53 hosted zone for the load balancer.</p>
-    pub fn canonical_hosted_zone_name_id(&self) -> std::option::Option<&str> {
+    pub fn canonical_hosted_zone_name_id(&self) -> ::std::option::Option<&str> {
         self.canonical_hosted_zone_name_id.as_deref()
     }
     /// <p>The listeners for the load balancer.</p>
     pub fn listener_descriptions(
         &self,
-    ) -> std::option::Option<&[crate::types::ListenerDescription]> {
+    ) -> ::std::option::Option<&[crate::types::ListenerDescription]> {
         self.listener_descriptions.as_deref()
     }
     /// <p>The policies defined for the load balancer.</p>
-    pub fn policies(&self) -> std::option::Option<&crate::types::Policies> {
+    pub fn policies(&self) -> ::std::option::Option<&crate::types::Policies> {
         self.policies.as_ref()
     }
     /// <p>Information about your EC2 instances.</p>
     pub fn backend_server_descriptions(
         &self,
-    ) -> std::option::Option<&[crate::types::BackendServerDescription]> {
+    ) -> ::std::option::Option<&[crate::types::BackendServerDescription]> {
         self.backend_server_descriptions.as_deref()
     }
     /// <p>The Availability Zones for the load balancer.</p>
-    pub fn availability_zones(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn availability_zones(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.availability_zones.as_deref()
     }
     /// <p>The IDs of the subnets for the load balancer.</p>
-    pub fn subnets(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn subnets(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.subnets.as_deref()
     }
     /// <p>The ID of the VPC for the load balancer.</p>
-    pub fn vpc_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
     /// <p>The IDs of the instances for the load balancer.</p>
-    pub fn instances(&self) -> std::option::Option<&[crate::types::Instance]> {
+    pub fn instances(&self) -> ::std::option::Option<&[crate::types::Instance]> {
         self.instances.as_deref()
     }
     /// <p>Information about the health checks conducted on the load balancer.</p>
-    pub fn health_check(&self) -> std::option::Option<&crate::types::HealthCheck> {
+    pub fn health_check(&self) -> ::std::option::Option<&crate::types::HealthCheck> {
         self.health_check.as_ref()
     }
     /// <p>The security group for the load balancer, which you can use as part of your inbound rules for your registered instances. To only allow traffic from load balancers, add a security group rule that specifies this source security group as the inbound source.</p>
-    pub fn source_security_group(&self) -> std::option::Option<&crate::types::SourceSecurityGroup> {
+    pub fn source_security_group(
+        &self,
+    ) -> ::std::option::Option<&crate::types::SourceSecurityGroup> {
         self.source_security_group.as_ref()
     }
     /// <p>The security groups for the load balancer. Valid only for load balancers in a VPC.</p>
-    pub fn security_groups(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn security_groups(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.security_groups.as_deref()
     }
     /// <p>The date and time the load balancer was created.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The type of load balancer. Valid only for load balancers in a VPC.</p>
     /// <p>If <code>Scheme</code> is <code>internet-facing</code>, the load balancer has a public DNS name that resolves to a public IP address.</p>
     /// <p>If <code>Scheme</code> is <code>internal</code>, the load balancer has a public DNS name that resolves to a private IP address.</p>
-    pub fn scheme(&self) -> std::option::Option<&str> {
+    pub fn scheme(&self) -> ::std::option::Option<&str> {
         self.scheme.as_deref()
     }
 }
@@ -140,75 +142,86 @@ impl LoadBalancerDescription {
 
 /// A builder for [`LoadBalancerDescription`](crate::types::LoadBalancerDescription).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LoadBalancerDescriptionBuilder {
-    pub(crate) load_balancer_name: std::option::Option<std::string::String>,
-    pub(crate) dns_name: std::option::Option<std::string::String>,
-    pub(crate) canonical_hosted_zone_name: std::option::Option<std::string::String>,
-    pub(crate) canonical_hosted_zone_name_id: std::option::Option<std::string::String>,
+    pub(crate) load_balancer_name: ::std::option::Option<::std::string::String>,
+    pub(crate) dns_name: ::std::option::Option<::std::string::String>,
+    pub(crate) canonical_hosted_zone_name: ::std::option::Option<::std::string::String>,
+    pub(crate) canonical_hosted_zone_name_id: ::std::option::Option<::std::string::String>,
     pub(crate) listener_descriptions:
-        std::option::Option<std::vec::Vec<crate::types::ListenerDescription>>,
-    pub(crate) policies: std::option::Option<crate::types::Policies>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ListenerDescription>>,
+    pub(crate) policies: ::std::option::Option<crate::types::Policies>,
     pub(crate) backend_server_descriptions:
-        std::option::Option<std::vec::Vec<crate::types::BackendServerDescription>>,
-    pub(crate) availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) subnets: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) vpc_id: std::option::Option<std::string::String>,
-    pub(crate) instances: std::option::Option<std::vec::Vec<crate::types::Instance>>,
-    pub(crate) health_check: std::option::Option<crate::types::HealthCheck>,
-    pub(crate) source_security_group: std::option::Option<crate::types::SourceSecurityGroup>,
-    pub(crate) security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) scheme: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::BackendServerDescription>>,
+    pub(crate) availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
+    pub(crate) instances: ::std::option::Option<::std::vec::Vec<crate::types::Instance>>,
+    pub(crate) health_check: ::std::option::Option<crate::types::HealthCheck>,
+    pub(crate) source_security_group: ::std::option::Option<crate::types::SourceSecurityGroup>,
+    pub(crate) security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) scheme: ::std::option::Option<::std::string::String>,
 }
 impl LoadBalancerDescriptionBuilder {
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.load_balancer_name = Some(input.into());
+    pub fn load_balancer_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.load_balancer_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the load balancer.</p>
     pub fn set_load_balancer_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.load_balancer_name = input;
         self
     }
     /// <p>The DNS name of the load balancer.</p>
-    pub fn dns_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.dns_name = Some(input.into());
+    pub fn dns_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.dns_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The DNS name of the load balancer.</p>
-    pub fn set_dns_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_dns_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dns_name = input;
         self
     }
     /// <p>The DNS name of the load balancer.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/using-domain-names-with-elb.html">Configure a Custom Domain Name</a> in the <i>Classic Load Balancers Guide</i>.</p>
-    pub fn canonical_hosted_zone_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.canonical_hosted_zone_name = Some(input.into());
+    pub fn canonical_hosted_zone_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.canonical_hosted_zone_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The DNS name of the load balancer.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/using-domain-names-with-elb.html">Configure a Custom Domain Name</a> in the <i>Classic Load Balancers Guide</i>.</p>
     pub fn set_canonical_hosted_zone_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.canonical_hosted_zone_name = input;
         self
     }
     /// <p>The ID of the Amazon Route 53 hosted zone for the load balancer.</p>
-    pub fn canonical_hosted_zone_name_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.canonical_hosted_zone_name_id = Some(input.into());
+    pub fn canonical_hosted_zone_name_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.canonical_hosted_zone_name_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Route 53 hosted zone for the load balancer.</p>
     pub fn set_canonical_hosted_zone_name_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.canonical_hosted_zone_name_id = input;
         self
@@ -221,24 +234,24 @@ impl LoadBalancerDescriptionBuilder {
     pub fn listener_descriptions(mut self, input: crate::types::ListenerDescription) -> Self {
         let mut v = self.listener_descriptions.unwrap_or_default();
         v.push(input);
-        self.listener_descriptions = Some(v);
+        self.listener_descriptions = ::std::option::Option::Some(v);
         self
     }
     /// <p>The listeners for the load balancer.</p>
     pub fn set_listener_descriptions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ListenerDescription>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ListenerDescription>>,
     ) -> Self {
         self.listener_descriptions = input;
         self
     }
     /// <p>The policies defined for the load balancer.</p>
     pub fn policies(mut self, input: crate::types::Policies) -> Self {
-        self.policies = Some(input);
+        self.policies = ::std::option::Option::Some(input);
         self
     }
     /// <p>The policies defined for the load balancer.</p>
-    pub fn set_policies(mut self, input: std::option::Option<crate::types::Policies>) -> Self {
+    pub fn set_policies(mut self, input: ::std::option::Option<crate::types::Policies>) -> Self {
         self.policies = input;
         self
     }
@@ -253,13 +266,13 @@ impl LoadBalancerDescriptionBuilder {
     ) -> Self {
         let mut v = self.backend_server_descriptions.unwrap_or_default();
         v.push(input);
-        self.backend_server_descriptions = Some(v);
+        self.backend_server_descriptions = ::std::option::Option::Some(v);
         self
     }
     /// <p>Information about your EC2 instances.</p>
     pub fn set_backend_server_descriptions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::BackendServerDescription>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::BackendServerDescription>>,
     ) -> Self {
         self.backend_server_descriptions = input;
         self
@@ -269,16 +282,19 @@ impl LoadBalancerDescriptionBuilder {
     /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
     ///
     /// <p>The Availability Zones for the load balancer.</p>
-    pub fn availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn availability_zones(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.availability_zones.unwrap_or_default();
         v.push(input.into());
-        self.availability_zones = Some(v);
+        self.availability_zones = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Availability Zones for the load balancer.</p>
     pub fn set_availability_zones(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.availability_zones = input;
         self
@@ -288,27 +304,27 @@ impl LoadBalancerDescriptionBuilder {
     /// To override the contents of this collection use [`set_subnets`](Self::set_subnets).
     ///
     /// <p>The IDs of the subnets for the load balancer.</p>
-    pub fn subnets(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn subnets(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subnets.unwrap_or_default();
         v.push(input.into());
-        self.subnets = Some(v);
+        self.subnets = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IDs of the subnets for the load balancer.</p>
     pub fn set_subnets(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.subnets = input;
         self
     }
     /// <p>The ID of the VPC for the load balancer.</p>
-    pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.vpc_id = Some(input.into());
+    pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.vpc_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the VPC for the load balancer.</p>
-    pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
     }
@@ -320,39 +336,39 @@ impl LoadBalancerDescriptionBuilder {
     pub fn instances(mut self, input: crate::types::Instance) -> Self {
         let mut v = self.instances.unwrap_or_default();
         v.push(input);
-        self.instances = Some(v);
+        self.instances = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IDs of the instances for the load balancer.</p>
     pub fn set_instances(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Instance>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Instance>>,
     ) -> Self {
         self.instances = input;
         self
     }
     /// <p>Information about the health checks conducted on the load balancer.</p>
     pub fn health_check(mut self, input: crate::types::HealthCheck) -> Self {
-        self.health_check = Some(input);
+        self.health_check = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the health checks conducted on the load balancer.</p>
     pub fn set_health_check(
         mut self,
-        input: std::option::Option<crate::types::HealthCheck>,
+        input: ::std::option::Option<crate::types::HealthCheck>,
     ) -> Self {
         self.health_check = input;
         self
     }
     /// <p>The security group for the load balancer, which you can use as part of your inbound rules for your registered instances. To only allow traffic from load balancers, add a security group rule that specifies this source security group as the inbound source.</p>
     pub fn source_security_group(mut self, input: crate::types::SourceSecurityGroup) -> Self {
-        self.source_security_group = Some(input);
+        self.source_security_group = ::std::option::Option::Some(input);
         self
     }
     /// <p>The security group for the load balancer, which you can use as part of your inbound rules for your registered instances. To only allow traffic from load balancers, add a security group rule that specifies this source security group as the inbound source.</p>
     pub fn set_source_security_group(
         mut self,
-        input: std::option::Option<crate::types::SourceSecurityGroup>,
+        input: ::std::option::Option<crate::types::SourceSecurityGroup>,
     ) -> Self {
         self.source_security_group = input;
         self
@@ -362,29 +378,32 @@ impl LoadBalancerDescriptionBuilder {
     /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
     ///
     /// <p>The security groups for the load balancer. Valid only for load balancers in a VPC.</p>
-    pub fn security_groups(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn security_groups(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.security_groups.unwrap_or_default();
         v.push(input.into());
-        self.security_groups = Some(v);
+        self.security_groups = ::std::option::Option::Some(v);
         self
     }
     /// <p>The security groups for the load balancer. Valid only for load balancers in a VPC.</p>
     pub fn set_security_groups(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.security_groups = input;
         self
     }
     /// <p>The date and time the load balancer was created.</p>
-    pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_time = Some(input);
+    pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time the load balancer was created.</p>
     pub fn set_created_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_time = input;
         self
@@ -392,14 +411,14 @@ impl LoadBalancerDescriptionBuilder {
     /// <p>The type of load balancer. Valid only for load balancers in a VPC.</p>
     /// <p>If <code>Scheme</code> is <code>internet-facing</code>, the load balancer has a public DNS name that resolves to a public IP address.</p>
     /// <p>If <code>Scheme</code> is <code>internal</code>, the load balancer has a public DNS name that resolves to a private IP address.</p>
-    pub fn scheme(mut self, input: impl Into<std::string::String>) -> Self {
-        self.scheme = Some(input.into());
+    pub fn scheme(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.scheme = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of load balancer. Valid only for load balancers in a VPC.</p>
     /// <p>If <code>Scheme</code> is <code>internet-facing</code>, the load balancer has a public DNS name that resolves to a public IP address.</p>
     /// <p>If <code>Scheme</code> is <code>internal</code>, the load balancer has a public DNS name that resolves to a private IP address.</p>
-    pub fn set_scheme(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_scheme(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.scheme = input;
         self
     }

@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum RecordingFileFormat {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum RecordingFileFormat {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for RecordingFileFormat {
+impl ::std::convert::From<&str> for RecordingFileFormat {
     fn from(s: &str) -> Self {
         match s {
             "Opus" => RecordingFileFormat::Opus,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for RecordingFileFormat {
         }
     }
 }
-impl std::str::FromStr for RecordingFileFormat {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for RecordingFileFormat {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RecordingFileFormat::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(RecordingFileFormat::from(s))
     }
 }
 impl RecordingFileFormat {
@@ -86,7 +86,7 @@ impl RecordingFileFormat {
         &["Opus", "Wav"]
     }
 }
-impl AsRef<str> for RecordingFileFormat {
+impl ::std::convert::AsRef<str> for RecordingFileFormat {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -2,27 +2,30 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeOptionGroupOptionsOutput {
     /// <p>List of available option group options.</p>
     #[doc(hidden)]
-    pub option_group_options: std::option::Option<std::vec::Vec<crate::types::OptionGroupOption>>,
+    pub option_group_options:
+        ::std::option::Option<::std::vec::Vec<crate::types::OptionGroupOption>>,
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     #[doc(hidden)]
-    pub marker: std::option::Option<std::string::String>,
+    pub marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeOptionGroupOptionsOutput {
     /// <p>List of available option group options.</p>
-    pub fn option_group_options(&self) -> std::option::Option<&[crate::types::OptionGroupOption]> {
+    pub fn option_group_options(
+        &self,
+    ) -> ::std::option::Option<&[crate::types::OptionGroupOption]> {
         self.option_group_options.as_deref()
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeOptionGroupOptionsOutput {
+impl ::aws_http::request_id::RequestId for DescribeOptionGroupOptionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -36,11 +39,13 @@ impl DescribeOptionGroupOptionsOutput {
 
 /// A builder for [`DescribeOptionGroupOptionsOutput`](crate::operation::describe_option_group_options::DescribeOptionGroupOptionsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeOptionGroupOptionsOutputBuilder {
     pub(crate) option_group_options:
-        std::option::Option<std::vec::Vec<crate::types::OptionGroupOption>>,
-    pub(crate) marker: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::OptionGroupOption>>,
+    pub(crate) marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeOptionGroupOptionsOutputBuilder {
@@ -52,24 +57,24 @@ impl DescribeOptionGroupOptionsOutputBuilder {
     pub fn option_group_options(mut self, input: crate::types::OptionGroupOption) -> Self {
         let mut v = self.option_group_options.unwrap_or_default();
         v.push(input);
-        self.option_group_options = Some(v);
+        self.option_group_options = ::std::option::Option::Some(v);
         self
     }
     /// <p>List of available option group options.</p>
     pub fn set_option_group_options(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::OptionGroupOption>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::OptionGroupOption>>,
     ) -> Self {
         self.option_group_options = input;
         self
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-        self.marker = Some(input.into());
+    pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
     }

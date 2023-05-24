@@ -6,56 +6,59 @@ pub use crate::operation::create_program::_create_program_input::CreateProgramIn
 /// Fluent builder constructing a request to `CreateProgram`.
 ///
 /// <p>Creates a program within a channel. For information about programs, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-programs.html">Working with programs</a> in the <i>MediaTailor User Guide</i>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateProgramFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_program::builders::CreateProgramInputBuilder,
 }
 impl CreateProgramFluentBuilder {
     /// Creates a new `CreateProgram`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_program::CreateProgram,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_program::CreateProgramError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_program::CreateProgramError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_program::CreateProgramOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_program::CreateProgramError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_program::CreateProgramError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,9 +71,9 @@ impl CreateProgramFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_program::CreateProgramOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_program::CreateProgramError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_program::CreateProgramError>,
     > {
         self.send_middleware().await
     }
@@ -86,38 +89,44 @@ impl CreateProgramFluentBuilder {
     /// <p>The ad break configuration settings.</p>
     pub fn set_ad_breaks(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AdBreak>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AdBreak>>,
     ) -> Self {
         self.inner = self.inner.set_ad_breaks(input);
         self
     }
     /// <p>The name of the channel for this Program.</p>
-    pub fn channel_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn channel_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.channel_name(input.into());
         self
     }
     /// <p>The name of the channel for this Program.</p>
-    pub fn set_channel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_channel_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_channel_name(input);
         self
     }
     /// <p>The name of the LiveSource for this Program.</p>
-    pub fn live_source_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn live_source_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.live_source_name(input.into());
         self
     }
     /// <p>The name of the LiveSource for this Program.</p>
-    pub fn set_live_source_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_live_source_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_live_source_name(input);
         self
     }
     /// <p>The name of the Program.</p>
-    pub fn program_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn program_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.program_name(input.into());
         self
     }
     /// <p>The name of the Program.</p>
-    pub fn set_program_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_program_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_program_name(input);
         self
     }
@@ -129,31 +138,40 @@ impl CreateProgramFluentBuilder {
     /// <p>The schedule configuration settings.</p>
     pub fn set_schedule_configuration(
         mut self,
-        input: std::option::Option<crate::types::ScheduleConfiguration>,
+        input: ::std::option::Option<crate::types::ScheduleConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_schedule_configuration(input);
         self
     }
     /// <p>The name of the source location.</p>
-    pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn source_location_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.source_location_name(input.into());
         self
     }
     /// <p>The name of the source location.</p>
     pub fn set_source_location_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_source_location_name(input);
         self
     }
     /// <p>The name that's used to refer to a VOD source.</p>
-    pub fn vod_source_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn vod_source_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.vod_source_name(input.into());
         self
     }
     /// <p>The name that's used to refer to a VOD source.</p>
-    pub fn set_vod_source_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_vod_source_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_vod_source_name(input);
         self
     }

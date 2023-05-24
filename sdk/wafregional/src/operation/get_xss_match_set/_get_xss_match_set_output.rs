@@ -2,7 +2,7 @@
 
 /// <p>The response to a <code>GetXssMatchSet</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetXssMatchSetOutput {
     /// <p>Information about the <code>XssMatchSet</code> that you specified in the <code>GetXssMatchSet</code> request. For more information, see the following topics:</p>
     /// <ul>
@@ -11,7 +11,7 @@ pub struct GetXssMatchSetOutput {
     /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub xss_match_set: std::option::Option<crate::types::XssMatchSet>,
+    pub xss_match_set: ::std::option::Option<crate::types::XssMatchSet>,
     _request_id: Option<String>,
 }
 impl GetXssMatchSetOutput {
@@ -21,11 +21,11 @@ impl GetXssMatchSetOutput {
     /// <li> <p> <code>XssMatchTuple</code>: Each <code>XssMatchTuple</code> object contains <code>FieldToMatch</code> and <code>TextTransformation</code> </p> </li>
     /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
     /// </ul>
-    pub fn xss_match_set(&self) -> std::option::Option<&crate::types::XssMatchSet> {
+    pub fn xss_match_set(&self) -> ::std::option::Option<&crate::types::XssMatchSet> {
         self.xss_match_set.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for GetXssMatchSetOutput {
+impl ::aws_http::request_id::RequestId for GetXssMatchSetOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -39,9 +39,11 @@ impl GetXssMatchSetOutput {
 
 /// A builder for [`GetXssMatchSetOutput`](crate::operation::get_xss_match_set::GetXssMatchSetOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetXssMatchSetOutputBuilder {
-    pub(crate) xss_match_set: std::option::Option<crate::types::XssMatchSet>,
+    pub(crate) xss_match_set: ::std::option::Option<crate::types::XssMatchSet>,
     _request_id: Option<String>,
 }
 impl GetXssMatchSetOutputBuilder {
@@ -52,7 +54,7 @@ impl GetXssMatchSetOutputBuilder {
     /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
     /// </ul>
     pub fn xss_match_set(mut self, input: crate::types::XssMatchSet) -> Self {
-        self.xss_match_set = Some(input);
+        self.xss_match_set = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the <code>XssMatchSet</code> that you specified in the <code>GetXssMatchSet</code> request. For more information, see the following topics:</p>
@@ -63,7 +65,7 @@ impl GetXssMatchSetOutputBuilder {
     /// </ul>
     pub fn set_xss_match_set(
         mut self,
-        input: std::option::Option<crate::types::XssMatchSet>,
+        input: ::std::option::Option<crate::types::XssMatchSet>,
     ) -> Self {
         self.xss_match_set = input;
         self

@@ -6,29 +6,29 @@ pub use crate::operation::get_table_objects::_get_table_objects_input::GetTableO
 /// Fluent builder constructing a request to `GetTableObjects`.
 ///
 /// <p>Returns the set of Amazon S3 objects that make up the specified governed table. A transaction ID or timestamp can be specified for time-travel queries.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetTableObjectsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::get_table_objects::builders::GetTableObjectsInputBuilder,
 }
 impl GetTableObjectsFluentBuilder {
     /// Creates a new `GetTableObjects`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::get_table_objects::GetTableObjects,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::get_table_objects::GetTableObjectsError,
         >,
     > {
@@ -36,30 +36,33 @@ impl GetTableObjectsFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_table_objects::GetTableObjectsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::get_table_objects::GetTableObjectsError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,9 +75,9 @@ impl GetTableObjectsFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_table_objects::GetTableObjectsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::get_table_objects::GetTableObjectsError,
         >,
     > {
@@ -92,54 +95,66 @@ impl GetTableObjectsFluentBuilder {
         )
     }
     /// <p>The catalog containing the governed table. Defaults to the caller’s account.</p>
-    pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn catalog_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.catalog_id(input.into());
         self
     }
     /// <p>The catalog containing the governed table. Defaults to the caller’s account.</p>
-    pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_catalog_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_catalog_id(input);
         self
     }
     /// <p>The database containing the governed table.</p>
-    pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn database_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.database_name(input.into());
         self
     }
     /// <p>The database containing the governed table.</p>
-    pub fn set_database_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_database_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_database_name(input);
         self
     }
     /// <p>The governed table for which to retrieve objects.</p>
-    pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.table_name(input.into());
         self
     }
     /// <p>The governed table for which to retrieve objects.</p>
-    pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_table_name(input);
         self
     }
     /// <p>The transaction ID at which to read the governed table contents. If this transaction has aborted, an error is returned. If not set, defaults to the most recent committed transaction. Cannot be specified along with <code>QueryAsOfTime</code>.</p>
-    pub fn transaction_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn transaction_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.transaction_id(input.into());
         self
     }
     /// <p>The transaction ID at which to read the governed table contents. If this transaction has aborted, an error is returned. If not set, defaults to the most recent committed transaction. Cannot be specified along with <code>QueryAsOfTime</code>.</p>
-    pub fn set_transaction_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_transaction_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_transaction_id(input);
         self
     }
     /// <p>The time as of when to read the governed table contents. If not set, the most recent transaction commit time is used. Cannot be specified along with <code>TransactionId</code>.</p>
-    pub fn query_as_of_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+    pub fn query_as_of_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.query_as_of_time(input);
         self
     }
     /// <p>The time as of when to read the governed table contents. If not set, the most recent transaction commit time is used. Cannot be specified along with <code>TransactionId</code>.</p>
     pub fn set_query_as_of_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.inner = self.inner.set_query_as_of_time(input);
         self
@@ -150,7 +165,10 @@ impl GetTableObjectsFluentBuilder {
     /// <li> <p>The logical operators supported are: AND</p> </li>
     /// <li> <p>The data types supported are integer, long, date(yyyy-MM-dd), timestamp(yyyy-MM-dd HH:mm:ssXXX or yyyy-MM-dd HH:mm:ss"), string and decimal.</p> </li>
     /// </ul>
-    pub fn partition_predicate(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn partition_predicate(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.partition_predicate(input.into());
         self
     }
@@ -162,7 +180,7 @@ impl GetTableObjectsFluentBuilder {
     /// </ul>
     pub fn set_partition_predicate(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_partition_predicate(input);
         self
@@ -173,17 +191,17 @@ impl GetTableObjectsFluentBuilder {
         self
     }
     /// <p>Specifies how many values to return in a page.</p>
-    pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
     /// <p>A continuation token if this is not the first call to retrieve these objects.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
     /// <p>A continuation token if this is not the first call to retrieve these objects.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }

@@ -2,7 +2,7 @@
 
 /// <p>An aggregate of step execution statuses displayed in the Amazon Web Services Systems Manager console for a multi-Region and multi-account Automation execution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProgressCounters {
     /// <p>The total number of steps run in all specified Amazon Web Services Regions and Amazon Web Services accounts for the current Automation execution.</p>
     #[doc(hidden)]
@@ -51,62 +51,64 @@ impl ProgressCounters {
 
 /// A builder for [`ProgressCounters`](crate::types::ProgressCounters).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ProgressCountersBuilder {
-    pub(crate) total_steps: std::option::Option<i32>,
-    pub(crate) success_steps: std::option::Option<i32>,
-    pub(crate) failed_steps: std::option::Option<i32>,
-    pub(crate) cancelled_steps: std::option::Option<i32>,
-    pub(crate) timed_out_steps: std::option::Option<i32>,
+    pub(crate) total_steps: ::std::option::Option<i32>,
+    pub(crate) success_steps: ::std::option::Option<i32>,
+    pub(crate) failed_steps: ::std::option::Option<i32>,
+    pub(crate) cancelled_steps: ::std::option::Option<i32>,
+    pub(crate) timed_out_steps: ::std::option::Option<i32>,
 }
 impl ProgressCountersBuilder {
     /// <p>The total number of steps run in all specified Amazon Web Services Regions and Amazon Web Services accounts for the current Automation execution.</p>
     pub fn total_steps(mut self, input: i32) -> Self {
-        self.total_steps = Some(input);
+        self.total_steps = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total number of steps run in all specified Amazon Web Services Regions and Amazon Web Services accounts for the current Automation execution.</p>
-    pub fn set_total_steps(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_total_steps(mut self, input: ::std::option::Option<i32>) -> Self {
         self.total_steps = input;
         self
     }
     /// <p>The total number of steps that successfully completed in all specified Amazon Web Services Regions and Amazon Web Services accounts for the current Automation execution.</p>
     pub fn success_steps(mut self, input: i32) -> Self {
-        self.success_steps = Some(input);
+        self.success_steps = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total number of steps that successfully completed in all specified Amazon Web Services Regions and Amazon Web Services accounts for the current Automation execution.</p>
-    pub fn set_success_steps(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_success_steps(mut self, input: ::std::option::Option<i32>) -> Self {
         self.success_steps = input;
         self
     }
     /// <p>The total number of steps that failed to run in all specified Amazon Web Services Regions and Amazon Web Services accounts for the current Automation execution.</p>
     pub fn failed_steps(mut self, input: i32) -> Self {
-        self.failed_steps = Some(input);
+        self.failed_steps = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total number of steps that failed to run in all specified Amazon Web Services Regions and Amazon Web Services accounts for the current Automation execution.</p>
-    pub fn set_failed_steps(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_failed_steps(mut self, input: ::std::option::Option<i32>) -> Self {
         self.failed_steps = input;
         self
     }
     /// <p>The total number of steps that the system cancelled in all specified Amazon Web Services Regions and Amazon Web Services accounts for the current Automation execution.</p>
     pub fn cancelled_steps(mut self, input: i32) -> Self {
-        self.cancelled_steps = Some(input);
+        self.cancelled_steps = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total number of steps that the system cancelled in all specified Amazon Web Services Regions and Amazon Web Services accounts for the current Automation execution.</p>
-    pub fn set_cancelled_steps(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_cancelled_steps(mut self, input: ::std::option::Option<i32>) -> Self {
         self.cancelled_steps = input;
         self
     }
     /// <p>The total number of steps that timed out in all specified Amazon Web Services Regions and Amazon Web Services accounts for the current Automation execution.</p>
     pub fn timed_out_steps(mut self, input: i32) -> Self {
-        self.timed_out_steps = Some(input);
+        self.timed_out_steps = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total number of steps that timed out in all specified Amazon Web Services Regions and Amazon Web Services accounts for the current Automation execution.</p>
-    pub fn set_timed_out_steps(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_timed_out_steps(mut self, input: ::std::option::Option<i32>) -> Self {
         self.timed_out_steps = input;
         self
     }

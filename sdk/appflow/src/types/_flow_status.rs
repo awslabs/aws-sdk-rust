@@ -42,13 +42,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum FlowStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -66,7 +66,7 @@ pub enum FlowStatus {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for FlowStatus {
+impl ::std::convert::From<&str> for FlowStatus {
     fn from(s: &str) -> Self {
         match s {
             "Active" => FlowStatus::Active,
@@ -79,11 +79,11 @@ impl std::convert::From<&str> for FlowStatus {
         }
     }
 }
-impl std::str::FromStr for FlowStatus {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for FlowStatus {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FlowStatus::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(FlowStatus::from(s))
     }
 }
 impl FlowStatus {
@@ -111,7 +111,7 @@ impl FlowStatus {
         ]
     }
 }
-impl AsRef<str> for FlowStatus {
+impl ::std::convert::AsRef<str> for FlowStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

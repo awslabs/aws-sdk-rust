@@ -7,29 +7,29 @@ pub use crate::operation::send_workflow_step_state::_send_workflow_step_state_in
 ///
 /// <p>Sends a callback for asynchronous custom steps.</p>
 /// <p> The <code>ExecutionId</code>, <code>WorkflowId</code>, and <code>Token</code> are passed to the target resource during execution of a custom step of a workflow. You must include those with their callback as well as providing a status. </p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SendWorkflowStepStateFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::send_workflow_step_state::builders::SendWorkflowStepStateInputBuilder,
 }
 impl SendWorkflowStepStateFluentBuilder {
     /// Creates a new `SendWorkflowStepState`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::send_workflow_step_state::SendWorkflowStepState,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::send_workflow_step_state::SendWorkflowStepStateError,
         >,
     > {
@@ -37,30 +37,33 @@ impl SendWorkflowStepStateFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::send_workflow_step_state::SendWorkflowStepStateOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::send_workflow_step_state::SendWorkflowStepStateError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -73,41 +76,41 @@ impl SendWorkflowStepStateFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::send_workflow_step_state::SendWorkflowStepStateOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::send_workflow_step_state::SendWorkflowStepStateError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>A unique identifier for the workflow.</p>
-    pub fn workflow_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn workflow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.workflow_id(input.into());
         self
     }
     /// <p>A unique identifier for the workflow.</p>
-    pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_workflow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_workflow_id(input);
         self
     }
     /// <p>A unique identifier for the execution of a workflow.</p>
-    pub fn execution_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.execution_id(input.into());
         self
     }
     /// <p>A unique identifier for the execution of a workflow.</p>
-    pub fn set_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_execution_id(input);
         self
     }
     /// <p>Used to distinguish between multiple callbacks for multiple Lambda steps within the same execution.</p>
-    pub fn token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.token(input.into());
         self
     }
     /// <p>Used to distinguish between multiple callbacks for multiple Lambda steps within the same execution.</p>
-    pub fn set_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_token(input);
         self
     }
@@ -119,7 +122,7 @@ impl SendWorkflowStepStateFluentBuilder {
     /// <p>Indicates whether the specified step succeeded or failed.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::CustomStepStatus>,
+        input: ::std::option::Option<crate::types::CustomStepStatus>,
     ) -> Self {
         self.inner = self.inner.set_status(input);
         self

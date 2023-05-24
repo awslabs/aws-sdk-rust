@@ -3,15 +3,15 @@
 /// <p>Details of resource associated with a network function.</p>
 /// <p>A network instance is a single network created in Amazon Web Services TNB that can be deployed and on which life-cycle operations (like terminate, update, and delete) can be performed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSolVnfcResourceInfo {
     /// <p>The metadata of the network function compute.</p>
     #[doc(hidden)]
-    pub metadata: std::option::Option<crate::types::GetSolVnfcResourceInfoMetadata>,
+    pub metadata: ::std::option::Option<crate::types::GetSolVnfcResourceInfoMetadata>,
 }
 impl GetSolVnfcResourceInfo {
     /// <p>The metadata of the network function compute.</p>
-    pub fn metadata(&self) -> std::option::Option<&crate::types::GetSolVnfcResourceInfoMetadata> {
+    pub fn metadata(&self) -> ::std::option::Option<&crate::types::GetSolVnfcResourceInfoMetadata> {
         self.metadata.as_ref()
     }
 }
@@ -24,20 +24,22 @@ impl GetSolVnfcResourceInfo {
 
 /// A builder for [`GetSolVnfcResourceInfo`](crate::types::GetSolVnfcResourceInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetSolVnfcResourceInfoBuilder {
-    pub(crate) metadata: std::option::Option<crate::types::GetSolVnfcResourceInfoMetadata>,
+    pub(crate) metadata: ::std::option::Option<crate::types::GetSolVnfcResourceInfoMetadata>,
 }
 impl GetSolVnfcResourceInfoBuilder {
     /// <p>The metadata of the network function compute.</p>
     pub fn metadata(mut self, input: crate::types::GetSolVnfcResourceInfoMetadata) -> Self {
-        self.metadata = Some(input);
+        self.metadata = ::std::option::Option::Some(input);
         self
     }
     /// <p>The metadata of the network function compute.</p>
     pub fn set_metadata(
         mut self,
-        input: std::option::Option<crate::types::GetSolVnfcResourceInfoMetadata>,
+        input: ::std::option::Option<crate::types::GetSolVnfcResourceInfoMetadata>,
     ) -> Self {
         self.metadata = input;
         self

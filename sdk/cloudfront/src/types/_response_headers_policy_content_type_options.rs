@@ -3,15 +3,15 @@
 /// <p>Determines whether CloudFront includes the <code>X-Content-Type-Options</code> HTTP response header with its value set to <code>nosniff</code>.</p>
 /// <p>For more information about the <code>X-Content-Type-Options</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options">X-Content-Type-Options</a> in the MDN Web Docs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResponseHeadersPolicyContentTypeOptions {
     /// <p>A Boolean that determines whether CloudFront overrides the <code>X-Content-Type-Options</code> HTTP response header received from the origin with the one specified in this response headers policy.</p>
     #[doc(hidden)]
-    pub r#override: std::option::Option<bool>,
+    pub r#override: ::std::option::Option<bool>,
 }
 impl ResponseHeadersPolicyContentTypeOptions {
     /// <p>A Boolean that determines whether CloudFront overrides the <code>X-Content-Type-Options</code> HTTP response header received from the origin with the one specified in this response headers policy.</p>
-    pub fn r#override(&self) -> std::option::Option<bool> {
+    pub fn r#override(&self) -> ::std::option::Option<bool> {
         self.r#override
     }
 }
@@ -24,18 +24,20 @@ impl ResponseHeadersPolicyContentTypeOptions {
 
 /// A builder for [`ResponseHeadersPolicyContentTypeOptions`](crate::types::ResponseHeadersPolicyContentTypeOptions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResponseHeadersPolicyContentTypeOptionsBuilder {
-    pub(crate) r#override: std::option::Option<bool>,
+    pub(crate) r#override: ::std::option::Option<bool>,
 }
 impl ResponseHeadersPolicyContentTypeOptionsBuilder {
     /// <p>A Boolean that determines whether CloudFront overrides the <code>X-Content-Type-Options</code> HTTP response header received from the origin with the one specified in this response headers policy.</p>
     pub fn r#override(mut self, input: bool) -> Self {
-        self.r#override = Some(input);
+        self.r#override = ::std::option::Option::Some(input);
         self
     }
     /// <p>A Boolean that determines whether CloudFront overrides the <code>X-Content-Type-Options</code> HTTP response header received from the origin with the one specified in this response headers policy.</p>
-    pub fn set_override(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_override(mut self, input: ::std::option::Option<bool>) -> Self {
         self.r#override = input;
         self
     }

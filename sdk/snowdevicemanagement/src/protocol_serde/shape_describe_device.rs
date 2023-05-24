@@ -2,7 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_device_http_error(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::describe_device::DescribeDeviceOutput,
@@ -15,7 +15,7 @@ pub fn de_describe_device_http_error(
         _response_body,
     )
     .map_err(crate::operation::describe_device::DescribeDeviceError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
+    generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
@@ -118,7 +118,7 @@ pub fn de_describe_device_http_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_device_http_response_with_props(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::describe_device::DescribeDeviceOutput,
@@ -134,7 +134,7 @@ pub fn de_describe_device_http_response_with_props(
         )
         .map_err(crate::operation::describe_device::DescribeDeviceError::unhandled)?;
         output._set_request_id(
-            aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
+            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
         );
         output.build()
     })
@@ -145,21 +145,21 @@ pub(crate) fn de_describe_device(
     mut builder: crate::operation::describe_device::builders::DescribeDeviceOutputBuilder,
 ) -> Result<
     crate::operation::describe_device::builders::DescribeDeviceOutputBuilder,
-    aws_smithy_json::deserialize::error::DeserializeError,
+    ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =
-        aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
+        ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
             .peekable();
     let tokens = &mut tokens_owned;
-    aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
-            Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+            Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "associatedWithJob" => {
                         builder = builder.set_associated_with_job(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -173,7 +173,7 @@ pub(crate) fn de_describe_device(
                     }
                     "deviceState" => {
                         builder = builder.set_device_state(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| {
@@ -185,7 +185,7 @@ pub(crate) fn de_describe_device(
                     }
                     "deviceType" => {
                         builder = builder.set_device_type(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -194,23 +194,23 @@ pub(crate) fn de_describe_device(
                     }
                     "lastReachedOutAt" => {
                         builder = builder.set_last_reached_out_at(
-                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),
-                                aws_smithy_types::date_time::Format::EpochSeconds,
+                                ::aws_smithy_types::date_time::Format::EpochSeconds,
                             )?,
                         );
                     }
                     "lastUpdatedAt" => {
                         builder = builder.set_last_updated_at(
-                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),
-                                aws_smithy_types::date_time::Format::EpochSeconds,
+                                ::aws_smithy_types::date_time::Format::EpochSeconds,
                             )?,
                         );
                     }
                     "managedDeviceArn" => {
                         builder = builder.set_managed_device_arn(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -219,7 +219,7 @@ pub(crate) fn de_describe_device(
                     }
                     "managedDeviceId" => {
                         builder = builder.set_managed_device_id(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -240,12 +240,12 @@ pub(crate) fn de_describe_device(
                         builder = builder
                             .set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens)?);
                     }
-                    _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }
             other => {
                 return Err(
-                    aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                         "expected object key or end object, found: {:?}",
                         other
                     )),
@@ -255,7 +255,7 @@ pub(crate) fn de_describe_device(
     }
     if tokens.next().is_some() {
         return Err(
-            aws_smithy_json::deserialize::error::DeserializeError::custom(
+            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
                 "found more JSON tokens after completing parsing",
             ),
         );

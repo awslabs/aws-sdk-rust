@@ -2,7 +2,7 @@
 
 /// <p>Defines the compliance against the resiliency policy for a disruption.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisruptionCompliance {
     /// <p>The Recovery Time Objective (RTO) that is achievable, in seconds</p>
     #[doc(hidden)]
@@ -12,28 +12,28 @@ pub struct DisruptionCompliance {
     pub current_rto_in_secs: i32,
     /// <p>The RTO reference identifier.</p>
     #[doc(hidden)]
-    pub rto_reference_id: std::option::Option<std::string::String>,
+    pub rto_reference_id: ::std::option::Option<::std::string::String>,
     /// <p>The RTO description.</p>
     #[doc(hidden)]
-    pub rto_description: std::option::Option<std::string::String>,
+    pub rto_description: ::std::option::Option<::std::string::String>,
     /// <p>The current RPO, in seconds.</p>
     #[doc(hidden)]
     pub current_rpo_in_secs: i32,
     /// <p>The RPO reference identifier.</p>
     #[doc(hidden)]
-    pub rpo_reference_id: std::option::Option<std::string::String>,
+    pub rpo_reference_id: ::std::option::Option<::std::string::String>,
     /// <p>The RPO description.</p>
     #[doc(hidden)]
-    pub rpo_description: std::option::Option<std::string::String>,
+    pub rpo_description: ::std::option::Option<::std::string::String>,
     /// <p>The current status of compliance for the resiliency policy.</p>
     #[doc(hidden)]
-    pub compliance_status: std::option::Option<crate::types::ComplianceStatus>,
+    pub compliance_status: ::std::option::Option<crate::types::ComplianceStatus>,
     /// <p>The Recovery Point Objective (RPO) that is achievable, in seconds.</p>
     #[doc(hidden)]
     pub achievable_rpo_in_secs: i32,
     /// <p>The disruption compliance message.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
 }
 impl DisruptionCompliance {
     /// <p>The Recovery Time Objective (RTO) that is achievable, in seconds</p>
@@ -45,11 +45,11 @@ impl DisruptionCompliance {
         self.current_rto_in_secs
     }
     /// <p>The RTO reference identifier.</p>
-    pub fn rto_reference_id(&self) -> std::option::Option<&str> {
+    pub fn rto_reference_id(&self) -> ::std::option::Option<&str> {
         self.rto_reference_id.as_deref()
     }
     /// <p>The RTO description.</p>
-    pub fn rto_description(&self) -> std::option::Option<&str> {
+    pub fn rto_description(&self) -> ::std::option::Option<&str> {
         self.rto_description.as_deref()
     }
     /// <p>The current RPO, in seconds.</p>
@@ -57,15 +57,15 @@ impl DisruptionCompliance {
         self.current_rpo_in_secs
     }
     /// <p>The RPO reference identifier.</p>
-    pub fn rpo_reference_id(&self) -> std::option::Option<&str> {
+    pub fn rpo_reference_id(&self) -> ::std::option::Option<&str> {
         self.rpo_reference_id.as_deref()
     }
     /// <p>The RPO description.</p>
-    pub fn rpo_description(&self) -> std::option::Option<&str> {
+    pub fn rpo_description(&self) -> ::std::option::Option<&str> {
         self.rpo_description.as_deref()
     }
     /// <p>The current status of compliance for the resiliency policy.</p>
-    pub fn compliance_status(&self) -> std::option::Option<&crate::types::ComplianceStatus> {
+    pub fn compliance_status(&self) -> ::std::option::Option<&crate::types::ComplianceStatus> {
         self.compliance_status.as_ref()
     }
     /// <p>The Recovery Point Objective (RPO) that is achievable, in seconds.</p>
@@ -73,7 +73,7 @@ impl DisruptionCompliance {
         self.achievable_rpo_in_secs
     }
     /// <p>The disruption compliance message.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -86,120 +86,146 @@ impl DisruptionCompliance {
 
 /// A builder for [`DisruptionCompliance`](crate::types::DisruptionCompliance).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DisruptionComplianceBuilder {
-    pub(crate) achievable_rto_in_secs: std::option::Option<i32>,
-    pub(crate) current_rto_in_secs: std::option::Option<i32>,
-    pub(crate) rto_reference_id: std::option::Option<std::string::String>,
-    pub(crate) rto_description: std::option::Option<std::string::String>,
-    pub(crate) current_rpo_in_secs: std::option::Option<i32>,
-    pub(crate) rpo_reference_id: std::option::Option<std::string::String>,
-    pub(crate) rpo_description: std::option::Option<std::string::String>,
-    pub(crate) compliance_status: std::option::Option<crate::types::ComplianceStatus>,
-    pub(crate) achievable_rpo_in_secs: std::option::Option<i32>,
-    pub(crate) message: std::option::Option<std::string::String>,
+    pub(crate) achievable_rto_in_secs: ::std::option::Option<i32>,
+    pub(crate) current_rto_in_secs: ::std::option::Option<i32>,
+    pub(crate) rto_reference_id: ::std::option::Option<::std::string::String>,
+    pub(crate) rto_description: ::std::option::Option<::std::string::String>,
+    pub(crate) current_rpo_in_secs: ::std::option::Option<i32>,
+    pub(crate) rpo_reference_id: ::std::option::Option<::std::string::String>,
+    pub(crate) rpo_description: ::std::option::Option<::std::string::String>,
+    pub(crate) compliance_status: ::std::option::Option<crate::types::ComplianceStatus>,
+    pub(crate) achievable_rpo_in_secs: ::std::option::Option<i32>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
 }
 impl DisruptionComplianceBuilder {
     /// <p>The Recovery Time Objective (RTO) that is achievable, in seconds</p>
     pub fn achievable_rto_in_secs(mut self, input: i32) -> Self {
-        self.achievable_rto_in_secs = Some(input);
+        self.achievable_rto_in_secs = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Recovery Time Objective (RTO) that is achievable, in seconds</p>
-    pub fn set_achievable_rto_in_secs(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_achievable_rto_in_secs(mut self, input: ::std::option::Option<i32>) -> Self {
         self.achievable_rto_in_secs = input;
         self
     }
     /// <p>The current RTO, in seconds.</p>
     pub fn current_rto_in_secs(mut self, input: i32) -> Self {
-        self.current_rto_in_secs = Some(input);
+        self.current_rto_in_secs = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current RTO, in seconds.</p>
-    pub fn set_current_rto_in_secs(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_current_rto_in_secs(mut self, input: ::std::option::Option<i32>) -> Self {
         self.current_rto_in_secs = input;
         self
     }
     /// <p>The RTO reference identifier.</p>
-    pub fn rto_reference_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.rto_reference_id = Some(input.into());
+    pub fn rto_reference_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.rto_reference_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The RTO reference identifier.</p>
-    pub fn set_rto_reference_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_rto_reference_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.rto_reference_id = input;
         self
     }
     /// <p>The RTO description.</p>
-    pub fn rto_description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.rto_description = Some(input.into());
+    pub fn rto_description(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.rto_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The RTO description.</p>
-    pub fn set_rto_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_rto_description(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.rto_description = input;
         self
     }
     /// <p>The current RPO, in seconds.</p>
     pub fn current_rpo_in_secs(mut self, input: i32) -> Self {
-        self.current_rpo_in_secs = Some(input);
+        self.current_rpo_in_secs = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current RPO, in seconds.</p>
-    pub fn set_current_rpo_in_secs(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_current_rpo_in_secs(mut self, input: ::std::option::Option<i32>) -> Self {
         self.current_rpo_in_secs = input;
         self
     }
     /// <p>The RPO reference identifier.</p>
-    pub fn rpo_reference_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.rpo_reference_id = Some(input.into());
+    pub fn rpo_reference_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.rpo_reference_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The RPO reference identifier.</p>
-    pub fn set_rpo_reference_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_rpo_reference_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.rpo_reference_id = input;
         self
     }
     /// <p>The RPO description.</p>
-    pub fn rpo_description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.rpo_description = Some(input.into());
+    pub fn rpo_description(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.rpo_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The RPO description.</p>
-    pub fn set_rpo_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_rpo_description(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.rpo_description = input;
         self
     }
     /// <p>The current status of compliance for the resiliency policy.</p>
     pub fn compliance_status(mut self, input: crate::types::ComplianceStatus) -> Self {
-        self.compliance_status = Some(input);
+        self.compliance_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current status of compliance for the resiliency policy.</p>
     pub fn set_compliance_status(
         mut self,
-        input: std::option::Option<crate::types::ComplianceStatus>,
+        input: ::std::option::Option<crate::types::ComplianceStatus>,
     ) -> Self {
         self.compliance_status = input;
         self
     }
     /// <p>The Recovery Point Objective (RPO) that is achievable, in seconds.</p>
     pub fn achievable_rpo_in_secs(mut self, input: i32) -> Self {
-        self.achievable_rpo_in_secs = Some(input);
+        self.achievable_rpo_in_secs = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Recovery Point Objective (RPO) that is achievable, in seconds.</p>
-    pub fn set_achievable_rpo_in_secs(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_achievable_rpo_in_secs(mut self, input: ::std::option::Option<i32>) -> Self {
         self.achievable_rpo_in_secs = input;
         self
     }
     /// <p>The disruption compliance message.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The disruption compliance message.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }

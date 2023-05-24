@@ -7,30 +7,30 @@ pub use crate::operation::list_on_premises_instances::_list_on_premises_instance
 ///
 /// <p>Gets a list of names for one or more on-premises instances.</p>
 /// <p>Unless otherwise specified, both registered and deregistered on-premises instance names are listed. To list only registered or deregistered on-premises instance names, use the registration status parameter.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListOnPremisesInstancesFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner:
         crate::operation::list_on_premises_instances::builders::ListOnPremisesInstancesInputBuilder,
 }
 impl ListOnPremisesInstancesFluentBuilder {
     /// Creates a new `ListOnPremisesInstances`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::list_on_premises_instances::ListOnPremisesInstances,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::list_on_premises_instances::ListOnPremisesInstancesError,
         >,
     > {
@@ -38,30 +38,33 @@ impl ListOnPremisesInstancesFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::list_on_premises_instances::ListOnPremisesInstancesOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::list_on_premises_instances::ListOnPremisesInstancesError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -74,9 +77,9 @@ impl ListOnPremisesInstancesFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::list_on_premises_instances::ListOnPremisesInstancesOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::list_on_premises_instances::ListOnPremisesInstancesError,
         >,
     > {
@@ -98,7 +101,7 @@ impl ListOnPremisesInstancesFluentBuilder {
     /// </ul>
     pub fn set_registration_status(
         mut self,
-        input: std::option::Option<crate::types::RegistrationStatus>,
+        input: ::std::option::Option<crate::types::RegistrationStatus>,
     ) -> Self {
         self.inner = self.inner.set_registration_status(input);
         self
@@ -115,18 +118,18 @@ impl ListOnPremisesInstancesFluentBuilder {
     /// <p>The on-premises instance tags that are used to restrict the on-premises instance names returned.</p>
     pub fn set_tag_filters(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TagFilter>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::TagFilter>>,
     ) -> Self {
         self.inner = self.inner.set_tag_filters(input);
         self
     }
     /// <p>An identifier returned from the previous list on-premises instances call. It can be used to return the next set of on-premises instances in the list.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
     /// <p>An identifier returned from the previous list on-premises instances call. It can be used to return the next set of on-premises instances in the list.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }

@@ -2,24 +2,25 @@
 
 /// <p> Information about the integration of DevOps Guru with another Amazon Web Services service, such as Amazon Web Services Systems Manager. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceIntegrationConfig {
     /// <p> Information about whether DevOps Guru is configured to create an OpsItem in Amazon Web Services Systems Manager OpsCenter for each created insight. </p>
     #[doc(hidden)]
-    pub ops_center: std::option::Option<crate::types::OpsCenterIntegration>,
+    pub ops_center: ::std::option::Option<crate::types::OpsCenterIntegration>,
     /// <p> Information about whether DevOps Guru is configured to perform log anomaly detection on Amazon CloudWatch log groups. </p>
     #[doc(hidden)]
-    pub logs_anomaly_detection: std::option::Option<crate::types::LogsAnomalyDetectionIntegration>,
+    pub logs_anomaly_detection:
+        ::std::option::Option<crate::types::LogsAnomalyDetectionIntegration>,
 }
 impl ServiceIntegrationConfig {
     /// <p> Information about whether DevOps Guru is configured to create an OpsItem in Amazon Web Services Systems Manager OpsCenter for each created insight. </p>
-    pub fn ops_center(&self) -> std::option::Option<&crate::types::OpsCenterIntegration> {
+    pub fn ops_center(&self) -> ::std::option::Option<&crate::types::OpsCenterIntegration> {
         self.ops_center.as_ref()
     }
     /// <p> Information about whether DevOps Guru is configured to perform log anomaly detection on Amazon CloudWatch log groups. </p>
     pub fn logs_anomaly_detection(
         &self,
-    ) -> std::option::Option<&crate::types::LogsAnomalyDetectionIntegration> {
+    ) -> ::std::option::Option<&crate::types::LogsAnomalyDetectionIntegration> {
         self.logs_anomaly_detection.as_ref()
     }
 }
@@ -32,22 +33,24 @@ impl ServiceIntegrationConfig {
 
 /// A builder for [`ServiceIntegrationConfig`](crate::types::ServiceIntegrationConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ServiceIntegrationConfigBuilder {
-    pub(crate) ops_center: std::option::Option<crate::types::OpsCenterIntegration>,
+    pub(crate) ops_center: ::std::option::Option<crate::types::OpsCenterIntegration>,
     pub(crate) logs_anomaly_detection:
-        std::option::Option<crate::types::LogsAnomalyDetectionIntegration>,
+        ::std::option::Option<crate::types::LogsAnomalyDetectionIntegration>,
 }
 impl ServiceIntegrationConfigBuilder {
     /// <p> Information about whether DevOps Guru is configured to create an OpsItem in Amazon Web Services Systems Manager OpsCenter for each created insight. </p>
     pub fn ops_center(mut self, input: crate::types::OpsCenterIntegration) -> Self {
-        self.ops_center = Some(input);
+        self.ops_center = ::std::option::Option::Some(input);
         self
     }
     /// <p> Information about whether DevOps Guru is configured to create an OpsItem in Amazon Web Services Systems Manager OpsCenter for each created insight. </p>
     pub fn set_ops_center(
         mut self,
-        input: std::option::Option<crate::types::OpsCenterIntegration>,
+        input: ::std::option::Option<crate::types::OpsCenterIntegration>,
     ) -> Self {
         self.ops_center = input;
         self
@@ -57,13 +60,13 @@ impl ServiceIntegrationConfigBuilder {
         mut self,
         input: crate::types::LogsAnomalyDetectionIntegration,
     ) -> Self {
-        self.logs_anomaly_detection = Some(input);
+        self.logs_anomaly_detection = ::std::option::Option::Some(input);
         self
     }
     /// <p> Information about whether DevOps Guru is configured to perform log anomaly detection on Amazon CloudWatch log groups. </p>
     pub fn set_logs_anomaly_detection(
         mut self,
-        input: std::option::Option<crate::types::LogsAnomalyDetectionIntegration>,
+        input: ::std::option::Option<crate::types::LogsAnomalyDetectionIntegration>,
     ) -> Self {
         self.logs_anomaly_detection = input;
         self

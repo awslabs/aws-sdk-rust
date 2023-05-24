@@ -3,22 +3,22 @@
 /// <p>The authorization configuration details for Amazon FSx for Windows File Server file system. See <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_FSxWindowsFileServerVolumeConfiguration.html">FSxWindowsFileServerVolumeConfiguration</a> in the <i>Amazon ECS API Reference</i>.</p>
 /// <p>For more information and the input format, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/wfsx-volumes.html">Amazon FSx for Windows File Server Volumes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FSxWindowsFileServerAuthorizationConfig {
     /// <p>The authorization credential option to use. The authorization credential options can be provided using either the Amazon Resource Name (ARN) of an Secrets Manager secret or SSM Parameter Store parameter. The ARN refers to the stored credentials.</p>
     #[doc(hidden)]
-    pub credentials_parameter: std::option::Option<std::string::String>,
+    pub credentials_parameter: ::std::option::Option<::std::string::String>,
     /// <p>A fully qualified domain name hosted by an <a href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_microsoft_ad.html">Directory Service</a> Managed Microsoft AD (Active Directory) or self-hosted AD on Amazon EC2.</p>
     #[doc(hidden)]
-    pub domain: std::option::Option<std::string::String>,
+    pub domain: ::std::option::Option<::std::string::String>,
 }
 impl FSxWindowsFileServerAuthorizationConfig {
     /// <p>The authorization credential option to use. The authorization credential options can be provided using either the Amazon Resource Name (ARN) of an Secrets Manager secret or SSM Parameter Store parameter. The ARN refers to the stored credentials.</p>
-    pub fn credentials_parameter(&self) -> std::option::Option<&str> {
+    pub fn credentials_parameter(&self) -> ::std::option::Option<&str> {
         self.credentials_parameter.as_deref()
     }
     /// <p>A fully qualified domain name hosted by an <a href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_microsoft_ad.html">Directory Service</a> Managed Microsoft AD (Active Directory) or self-hosted AD on Amazon EC2.</p>
-    pub fn domain(&self) -> std::option::Option<&str> {
+    pub fn domain(&self) -> ::std::option::Option<&str> {
         self.domain.as_deref()
     }
 }
@@ -31,32 +31,37 @@ impl FSxWindowsFileServerAuthorizationConfig {
 
 /// A builder for [`FSxWindowsFileServerAuthorizationConfig`](crate::types::FSxWindowsFileServerAuthorizationConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FSxWindowsFileServerAuthorizationConfigBuilder {
-    pub(crate) credentials_parameter: std::option::Option<std::string::String>,
-    pub(crate) domain: std::option::Option<std::string::String>,
+    pub(crate) credentials_parameter: ::std::option::Option<::std::string::String>,
+    pub(crate) domain: ::std::option::Option<::std::string::String>,
 }
 impl FSxWindowsFileServerAuthorizationConfigBuilder {
     /// <p>The authorization credential option to use. The authorization credential options can be provided using either the Amazon Resource Name (ARN) of an Secrets Manager secret or SSM Parameter Store parameter. The ARN refers to the stored credentials.</p>
-    pub fn credentials_parameter(mut self, input: impl Into<std::string::String>) -> Self {
-        self.credentials_parameter = Some(input.into());
+    pub fn credentials_parameter(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.credentials_parameter = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The authorization credential option to use. The authorization credential options can be provided using either the Amazon Resource Name (ARN) of an Secrets Manager secret or SSM Parameter Store parameter. The ARN refers to the stored credentials.</p>
     pub fn set_credentials_parameter(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.credentials_parameter = input;
         self
     }
     /// <p>A fully qualified domain name hosted by an <a href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_microsoft_ad.html">Directory Service</a> Managed Microsoft AD (Active Directory) or self-hosted AD on Amazon EC2.</p>
-    pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
-        self.domain = Some(input.into());
+    pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.domain = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A fully qualified domain name hosted by an <a href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_microsoft_ad.html">Directory Service</a> Managed Microsoft AD (Active Directory) or self-hosted AD on Amazon EC2.</p>
-    pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain = input;
         self
     }

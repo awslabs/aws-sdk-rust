@@ -2,33 +2,33 @@
 
 /// <p>Represents the input of a <code>CreateCacheSecurityGroup</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateCacheSecurityGroupInput {
     /// <p>A name for the cache security group. This value is stored as a lowercase string.</p>
     /// <p>Constraints: Must contain no more than 255 alphanumeric characters. Cannot be the word "Default".</p>
     /// <p>Example: <code>mysecuritygroup</code> </p>
     #[doc(hidden)]
-    pub cache_security_group_name: std::option::Option<std::string::String>,
+    pub cache_security_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A description for the cache security group.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateCacheSecurityGroupInput {
     /// <p>A name for the cache security group. This value is stored as a lowercase string.</p>
     /// <p>Constraints: Must contain no more than 255 alphanumeric characters. Cannot be the word "Default".</p>
     /// <p>Example: <code>mysecuritygroup</code> </p>
-    pub fn cache_security_group_name(&self) -> std::option::Option<&str> {
+    pub fn cache_security_group_name(&self) -> ::std::option::Option<&str> {
         self.cache_security_group_name.as_deref()
     }
     /// <p>A description for the cache security group.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -43,18 +43,23 @@ impl CreateCacheSecurityGroupInput {
 
 /// A builder for [`CreateCacheSecurityGroupInput`](crate::operation::create_cache_security_group::CreateCacheSecurityGroupInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateCacheSecurityGroupInputBuilder {
-    pub(crate) cache_security_group_name: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub(crate) cache_security_group_name: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateCacheSecurityGroupInputBuilder {
     /// <p>A name for the cache security group. This value is stored as a lowercase string.</p>
     /// <p>Constraints: Must contain no more than 255 alphanumeric characters. Cannot be the word "Default".</p>
     /// <p>Example: <code>mysecuritygroup</code> </p>
-    pub fn cache_security_group_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cache_security_group_name = Some(input.into());
+    pub fn cache_security_group_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.cache_security_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A name for the cache security group. This value is stored as a lowercase string.</p>
@@ -62,18 +67,18 @@ impl CreateCacheSecurityGroupInputBuilder {
     /// <p>Example: <code>mysecuritygroup</code> </p>
     pub fn set_cache_security_group_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.cache_security_group_name = input;
         self
     }
     /// <p>A description for the cache security group.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description for the cache security group.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
@@ -85,13 +90,13 @@ impl CreateCacheSecurityGroupInputBuilder {
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
-        self.tags = Some(v);
+        self.tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tags = input;
         self
@@ -99,11 +104,11 @@ impl CreateCacheSecurityGroupInputBuilder {
     /// Consumes the builder and constructs a [`CreateCacheSecurityGroupInput`](crate::operation::create_cache_security_group::CreateCacheSecurityGroupInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::create_cache_security_group::CreateCacheSecurityGroupInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::create_cache_security_group::CreateCacheSecurityGroupInput {
                 cache_security_group_name: self.cache_security_group_name,
                 description: self.description,

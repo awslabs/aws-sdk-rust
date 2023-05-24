@@ -6,29 +6,29 @@ pub use crate::operation::update_live_source::_update_live_source_input::UpdateL
 /// Fluent builder constructing a request to `UpdateLiveSource`.
 ///
 /// <p>Updates a live source's configuration.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateLiveSourceFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::update_live_source::builders::UpdateLiveSourceInputBuilder,
 }
 impl UpdateLiveSourceFluentBuilder {
     /// Creates a new `UpdateLiveSource`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_live_source::UpdateLiveSource,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_live_source::UpdateLiveSourceError,
         >,
     > {
@@ -36,30 +36,33 @@ impl UpdateLiveSourceFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_live_source::UpdateLiveSourceOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_live_source::UpdateLiveSourceError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,9 +75,9 @@ impl UpdateLiveSourceFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_live_source::UpdateLiveSourceOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_live_source::UpdateLiveSourceError,
         >,
     > {
@@ -95,30 +98,39 @@ impl UpdateLiveSourceFluentBuilder {
     /// <p>A list of HTTP package configurations for the live source on this account.</p>
     pub fn set_http_package_configurations(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::HttpPackageConfiguration>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::HttpPackageConfiguration>>,
     ) -> Self {
         self.inner = self.inner.set_http_package_configurations(input);
         self
     }
     /// <p>The name of the live source.</p>
-    pub fn live_source_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn live_source_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.live_source_name(input.into());
         self
     }
     /// <p>The name of the live source.</p>
-    pub fn set_live_source_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_live_source_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_live_source_name(input);
         self
     }
     /// <p>The name of the source location associated with this Live Source.</p>
-    pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn source_location_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.source_location_name(input.into());
         self
     }
     /// <p>The name of the source location associated with this Live Source.</p>
     pub fn set_source_location_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_source_location_name(input);
         self

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetEmailChannel`](crate::operation::get_email_channel::builders::GetEmailChannelFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::operation::get_email_channel::builders::GetEmailChannelFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::get_email_channel::builders::GetEmailChannelFluentBuilder::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    ///   - [`application_id(impl ::std::convert::Into<String>)`](crate::operation::get_email_channel::builders::GetEmailChannelFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::get_email_channel::builders::GetEmailChannelFluentBuilder::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     /// - On success, responds with [`GetEmailChannelOutput`](crate::operation::get_email_channel::GetEmailChannelOutput) with field(s):
     ///   - [`email_channel_response(Option<EmailChannelResponse>)`](crate::operation::get_email_channel::GetEmailChannelOutput::email_channel_response): <p>Provides information about the status and settings of the email channel for an application.</p>
     /// - On failure, responds with [`SdkError<GetEmailChannelError>`](crate::operation::get_email_channel::GetEmailChannelError)

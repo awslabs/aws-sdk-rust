@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteBackupPlan`](crate::operation::delete_backup_plan::builders::DeleteBackupPlanFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`backup_plan_id(impl Into<String>)`](crate::operation::delete_backup_plan::builders::DeleteBackupPlanFluentBuilder::backup_plan_id) / [`set_backup_plan_id(Option<String>)`](crate::operation::delete_backup_plan::builders::DeleteBackupPlanFluentBuilder::set_backup_plan_id): <p>Uniquely identifies a backup plan.</p>
+    ///   - [`backup_plan_id(impl ::std::convert::Into<String>)`](crate::operation::delete_backup_plan::builders::DeleteBackupPlanFluentBuilder::backup_plan_id) / [`set_backup_plan_id(Option<String>)`](crate::operation::delete_backup_plan::builders::DeleteBackupPlanFluentBuilder::set_backup_plan_id): <p>Uniquely identifies a backup plan.</p>
     /// - On success, responds with [`DeleteBackupPlanOutput`](crate::operation::delete_backup_plan::DeleteBackupPlanOutput) with field(s):
     ///   - [`backup_plan_id(Option<String>)`](crate::operation::delete_backup_plan::DeleteBackupPlanOutput::backup_plan_id): <p>Uniquely identifies a backup plan.</p>
     ///   - [`backup_plan_arn(Option<String>)`](crate::operation::delete_backup_plan::DeleteBackupPlanOutput::backup_plan_arn): <p>An Amazon Resource Name (ARN) that uniquely identifies a backup plan; for example, <code>arn:aws:backup:us-east-1:123456789012:plan:8F81F553-3A74-4A3F-B93D-B3360DC80C50</code>.</p>

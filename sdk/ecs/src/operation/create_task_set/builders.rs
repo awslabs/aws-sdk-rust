@@ -6,56 +6,59 @@ pub use crate::operation::create_task_set::_create_task_set_input::CreateTaskSet
 /// Fluent builder constructing a request to `CreateTaskSet`.
 ///
 /// <p>Create a task set in the specified cluster and service. This is used when a service uses the <code>EXTERNAL</code> deployment controller type. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS deployment types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateTaskSetFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_task_set::builders::CreateTaskSetInputBuilder,
 }
 impl CreateTaskSetFluentBuilder {
     /// Creates a new `CreateTaskSet`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_task_set::CreateTaskSet,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_task_set::CreateTaskSetError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_task_set::CreateTaskSetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_task_set::CreateTaskSetOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_task_set::CreateTaskSetError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_task_set::CreateTaskSetError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,49 +71,55 @@ impl CreateTaskSetFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_task_set::CreateTaskSetOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_task_set::CreateTaskSetError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_task_set::CreateTaskSetError>,
     > {
         self.send_middleware().await
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the service to create the task set in.</p>
-    pub fn service(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn service(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service(input.into());
         self
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the service to create the task set in.</p>
-    pub fn set_service(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_service(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service(input);
         self
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service to create the task set in.</p>
-    pub fn cluster(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn cluster(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster(input.into());
         self
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service to create the task set in.</p>
-    pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cluster(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster(input);
         self
     }
     /// <p>An optional non-unique tag that identifies this task set in external systems. If the task set is associated with a service discovery registry, the tasks in this task set will have the <code>ECS_TASK_SET_EXTERNAL_ID</code> Cloud Map attribute set to the provided value.</p>
-    pub fn external_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn external_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.external_id(input.into());
         self
     }
     /// <p>An optional non-unique tag that identifies this task set in external systems. If the task set is associated with a service discovery registry, the tasks in this task set will have the <code>ECS_TASK_SET_EXTERNAL_ID</code> Cloud Map attribute set to the provided value.</p>
-    pub fn set_external_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_external_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_external_id(input);
         self
     }
     /// <p>The task definition for the tasks in the task set to use.</p>
-    pub fn task_definition(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn task_definition(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.task_definition(input.into());
         self
     }
     /// <p>The task definition for the tasks in the task set to use.</p>
-    pub fn set_task_definition(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_task_definition(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_task_definition(input);
         self
     }
@@ -122,7 +131,7 @@ impl CreateTaskSetFluentBuilder {
     /// <p>An object representing the network configuration for a task set.</p>
     pub fn set_network_configuration(
         mut self,
-        input: std::option::Option<crate::types::NetworkConfiguration>,
+        input: ::std::option::Option<crate::types::NetworkConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_network_configuration(input);
         self
@@ -139,7 +148,7 @@ impl CreateTaskSetFluentBuilder {
     /// <p>A load balancer object representing the load balancer to use with the task set. The supported load balancer types are either an Application Load Balancer or a Network Load Balancer.</p>
     pub fn set_load_balancers(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::LoadBalancer>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::LoadBalancer>>,
     ) -> Self {
         self.inner = self.inner.set_load_balancers(input);
         self
@@ -156,7 +165,7 @@ impl CreateTaskSetFluentBuilder {
     /// <p>The details of the service discovery registries to assign to this task set. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service discovery</a>.</p>
     pub fn set_service_registries(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ServiceRegistry>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceRegistry>>,
     ) -> Self {
         self.inner = self.inner.set_service_registries(input);
         self
@@ -169,7 +178,10 @@ impl CreateTaskSetFluentBuilder {
     }
     /// <p>The launch type that new tasks in the task set uses. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     /// <p>If a <code>launchType</code> is specified, the <code>capacityProviderStrategy</code> parameter must be omitted.</p>
-    pub fn set_launch_type(mut self, input: std::option::Option<crate::types::LaunchType>) -> Self {
+    pub fn set_launch_type(
+        mut self,
+        input: ::std::option::Option<crate::types::LaunchType>,
+    ) -> Self {
         self.inner = self.inner.set_launch_type(input);
         self
     }
@@ -198,18 +210,24 @@ impl CreateTaskSetFluentBuilder {
     /// <p>The <code>PutClusterCapacityProviders</code> API operation is used to update the list of available capacity providers for a cluster after the cluster is created.</p>
     pub fn set_capacity_provider_strategy(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CapacityProviderStrategyItem>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderStrategyItem>>,
     ) -> Self {
         self.inner = self.inner.set_capacity_provider_strategy(input);
         self
     }
     /// <p>The platform version that the tasks in the task set uses. A platform version is specified only for tasks using the Fargate launch type. If one isn't specified, the <code>LATEST</code> platform version is used.</p>
-    pub fn platform_version(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn platform_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.platform_version(input.into());
         self
     }
     /// <p>The platform version that the tasks in the task set uses. A platform version is specified only for tasks using the Fargate launch type. If one isn't specified, the <code>LATEST</code> platform version is used.</p>
-    pub fn set_platform_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_platform_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_platform_version(input);
         self
     }
@@ -219,17 +237,17 @@ impl CreateTaskSetFluentBuilder {
         self
     }
     /// <p>A floating-point percentage of the desired number of tasks to place and keep running in the task set.</p>
-    pub fn set_scale(mut self, input: std::option::Option<crate::types::Scale>) -> Self {
+    pub fn set_scale(mut self, input: ::std::option::Option<crate::types::Scale>) -> Self {
         self.inner = self.inner.set_scale(input);
         self
     }
     /// <p>The identifier that you provide to ensure the idempotency of the request. It's case sensitive and must be unique. It can be up to 32 ASCII characters are allowed.</p>
-    pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
     /// <p>The identifier that you provide to ensure the idempotency of the request. It's case sensitive and must be unique. It can be up to 32 ASCII characters are allowed.</p>
-    pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
@@ -265,7 +283,7 @@ impl CreateTaskSetFluentBuilder {
     /// </ul>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self

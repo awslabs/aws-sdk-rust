@@ -2,64 +2,64 @@
 
 /// <p> A metadata object that's associated with an assessment in Audit Manager. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssessmentMetadataItem {
     /// <p> The name of the assessment. </p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p> The unique identifier for the assessment. </p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p> The name of the compliance standard that's related to the assessment, such as PCI-DSS. </p>
     #[doc(hidden)]
-    pub compliance_type: std::option::Option<std::string::String>,
+    pub compliance_type: ::std::option::Option<::std::string::String>,
     /// <p> The current status of the assessment. </p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::AssessmentStatus>,
+    pub status: ::std::option::Option<crate::types::AssessmentStatus>,
     /// <p> The roles that are associated with the assessment. </p>
     #[doc(hidden)]
-    pub roles: std::option::Option<std::vec::Vec<crate::types::Role>>,
+    pub roles: ::std::option::Option<::std::vec::Vec<crate::types::Role>>,
     /// <p> The delegations that are associated with the assessment. </p>
     #[doc(hidden)]
-    pub delegations: std::option::Option<std::vec::Vec<crate::types::Delegation>>,
+    pub delegations: ::std::option::Option<::std::vec::Vec<crate::types::Delegation>>,
     /// <p> Specifies when the assessment was created. </p>
     #[doc(hidden)]
-    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The time of the most recent update. </p>
     #[doc(hidden)]
-    pub last_updated: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl AssessmentMetadataItem {
     /// <p> The name of the assessment. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p> The unique identifier for the assessment. </p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p> The name of the compliance standard that's related to the assessment, such as PCI-DSS. </p>
-    pub fn compliance_type(&self) -> std::option::Option<&str> {
+    pub fn compliance_type(&self) -> ::std::option::Option<&str> {
         self.compliance_type.as_deref()
     }
     /// <p> The current status of the assessment. </p>
-    pub fn status(&self) -> std::option::Option<&crate::types::AssessmentStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::AssessmentStatus> {
         self.status.as_ref()
     }
     /// <p> The roles that are associated with the assessment. </p>
-    pub fn roles(&self) -> std::option::Option<&[crate::types::Role]> {
+    pub fn roles(&self) -> ::std::option::Option<&[crate::types::Role]> {
         self.roles.as_deref()
     }
     /// <p> The delegations that are associated with the assessment. </p>
-    pub fn delegations(&self) -> std::option::Option<&[crate::types::Delegation]> {
+    pub fn delegations(&self) -> ::std::option::Option<&[crate::types::Delegation]> {
         self.delegations.as_deref()
     }
     /// <p> Specifies when the assessment was created. </p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p> The time of the most recent update. </p>
-    pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated.as_ref()
     }
 }
@@ -72,57 +72,65 @@ impl AssessmentMetadataItem {
 
 /// A builder for [`AssessmentMetadataItem`](crate::types::AssessmentMetadataItem).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AssessmentMetadataItemBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) compliance_type: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::AssessmentStatus>,
-    pub(crate) roles: std::option::Option<std::vec::Vec<crate::types::Role>>,
-    pub(crate) delegations: std::option::Option<std::vec::Vec<crate::types::Delegation>>,
-    pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_updated: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) compliance_type: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::AssessmentStatus>,
+    pub(crate) roles: ::std::option::Option<::std::vec::Vec<crate::types::Role>>,
+    pub(crate) delegations: ::std::option::Option<::std::vec::Vec<crate::types::Delegation>>,
+    pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl AssessmentMetadataItemBuilder {
     /// <p> The name of the assessment. </p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the assessment. </p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p> The unique identifier for the assessment. </p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The unique identifier for the assessment. </p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p> The name of the compliance standard that's related to the assessment, such as PCI-DSS. </p>
-    pub fn compliance_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.compliance_type = Some(input.into());
+    pub fn compliance_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.compliance_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the compliance standard that's related to the assessment, such as PCI-DSS. </p>
-    pub fn set_compliance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_compliance_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.compliance_type = input;
         self
     }
     /// <p> The current status of the assessment. </p>
     pub fn status(mut self, input: crate::types::AssessmentStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p> The current status of the assessment. </p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::AssessmentStatus>,
+        input: ::std::option::Option<crate::types::AssessmentStatus>,
     ) -> Self {
         self.status = input;
         self
@@ -135,13 +143,13 @@ impl AssessmentMetadataItemBuilder {
     pub fn roles(mut self, input: crate::types::Role) -> Self {
         let mut v = self.roles.unwrap_or_default();
         v.push(input);
-        self.roles = Some(v);
+        self.roles = ::std::option::Option::Some(v);
         self
     }
     /// <p> The roles that are associated with the assessment. </p>
     pub fn set_roles(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Role>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Role>>,
     ) -> Self {
         self.roles = input;
         self
@@ -154,39 +162,39 @@ impl AssessmentMetadataItemBuilder {
     pub fn delegations(mut self, input: crate::types::Delegation) -> Self {
         let mut v = self.delegations.unwrap_or_default();
         v.push(input);
-        self.delegations = Some(v);
+        self.delegations = ::std::option::Option::Some(v);
         self
     }
     /// <p> The delegations that are associated with the assessment. </p>
     pub fn set_delegations(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Delegation>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Delegation>>,
     ) -> Self {
         self.delegations = input;
         self
     }
     /// <p> Specifies when the assessment was created. </p>
-    pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_time = Some(input);
+    pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_time = ::std::option::Option::Some(input);
         self
     }
     /// <p> Specifies when the assessment was created. </p>
     pub fn set_creation_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_time = input;
         self
     }
     /// <p> The time of the most recent update. </p>
-    pub fn last_updated(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_updated = Some(input);
+    pub fn last_updated(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_updated = ::std::option::Option::Some(input);
         self
     }
     /// <p> The time of the most recent update. </p>
     pub fn set_last_updated(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_updated = input;
         self

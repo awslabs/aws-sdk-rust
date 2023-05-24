@@ -2,11 +2,11 @@
 
 /// <p>Node group (shard) configuration options when adding or removing replicas. Each node group (shard) configuration has the following members: NodeGroupId, NewReplicaCount, and PreferredAvailabilityZones. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConfigureShard {
     /// <p>The 4-digit id for the node group you are configuring. For Redis (cluster mode disabled) replication groups, the node group id is always 0001. To find a Redis (cluster mode enabled)'s node group's (shard's) id, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/shard-find-id.html">Finding a Shard's Id</a>.</p>
     #[doc(hidden)]
-    pub node_group_id: std::option::Option<std::string::String>,
+    pub node_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The number of replicas you want in this node group at the end of this operation. The maximum value for <code>NewReplicaCount</code> is 5. The minimum value depends upon the type of Redis replication group you are working with.</p>
     /// <p>The minimum number of replicas in a shard or replication group is:</p>
     /// <ul>
@@ -21,14 +21,14 @@ pub struct ConfigureShard {
     pub new_replica_count: i32,
     /// <p>A list of <code>PreferredAvailabilityZone</code> strings that specify which availability zones the replication group's nodes are to be in. The nummber of <code>PreferredAvailabilityZone</code> values must equal the value of <code>NewReplicaCount</code> plus 1 to account for the primary node. If this member of <code>ReplicaConfiguration</code> is omitted, ElastiCache for Redis selects the availability zone for each of the replicas.</p>
     #[doc(hidden)]
-    pub preferred_availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub preferred_availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The outpost ARNs in which the cache cluster is created.</p>
     #[doc(hidden)]
-    pub preferred_outpost_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub preferred_outpost_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ConfigureShard {
     /// <p>The 4-digit id for the node group you are configuring. For Redis (cluster mode disabled) replication groups, the node group id is always 0001. To find a Redis (cluster mode enabled)'s node group's (shard's) id, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/shard-find-id.html">Finding a Shard's Id</a>.</p>
-    pub fn node_group_id(&self) -> std::option::Option<&str> {
+    pub fn node_group_id(&self) -> ::std::option::Option<&str> {
         self.node_group_id.as_deref()
     }
     /// <p>The number of replicas you want in this node group at the end of this operation. The maximum value for <code>NewReplicaCount</code> is 5. The minimum value depends upon the type of Redis replication group you are working with.</p>
@@ -45,11 +45,11 @@ impl ConfigureShard {
         self.new_replica_count
     }
     /// <p>A list of <code>PreferredAvailabilityZone</code> strings that specify which availability zones the replication group's nodes are to be in. The nummber of <code>PreferredAvailabilityZone</code> values must equal the value of <code>NewReplicaCount</code> plus 1 to account for the primary node. If this member of <code>ReplicaConfiguration</code> is omitted, ElastiCache for Redis selects the availability zone for each of the replicas.</p>
-    pub fn preferred_availability_zones(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn preferred_availability_zones(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.preferred_availability_zones.as_deref()
     }
     /// <p>The outpost ARNs in which the cache cluster is created.</p>
-    pub fn preferred_outpost_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn preferred_outpost_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.preferred_outpost_arns.as_deref()
     }
 }
@@ -62,22 +62,31 @@ impl ConfigureShard {
 
 /// A builder for [`ConfigureShard`](crate::types::ConfigureShard).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ConfigureShardBuilder {
-    pub(crate) node_group_id: std::option::Option<std::string::String>,
-    pub(crate) new_replica_count: std::option::Option<i32>,
+    pub(crate) node_group_id: ::std::option::Option<::std::string::String>,
+    pub(crate) new_replica_count: ::std::option::Option<i32>,
     pub(crate) preferred_availability_zones:
-        std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) preferred_outpost_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) preferred_outpost_arns:
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ConfigureShardBuilder {
     /// <p>The 4-digit id for the node group you are configuring. For Redis (cluster mode disabled) replication groups, the node group id is always 0001. To find a Redis (cluster mode enabled)'s node group's (shard's) id, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/shard-find-id.html">Finding a Shard's Id</a>.</p>
-    pub fn node_group_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.node_group_id = Some(input.into());
+    pub fn node_group_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.node_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The 4-digit id for the node group you are configuring. For Redis (cluster mode disabled) replication groups, the node group id is always 0001. To find a Redis (cluster mode enabled)'s node group's (shard's) id, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/shard-find-id.html">Finding a Shard's Id</a>.</p>
-    pub fn set_node_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_node_group_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.node_group_id = input;
         self
     }
@@ -92,7 +101,7 @@ impl ConfigureShardBuilder {
     /// <li> <p>Redis (cluster mode enabled): 0 (though you will not be able to failover to a replica if your primary node fails)</p> </li>
     /// </ul>
     pub fn new_replica_count(mut self, input: i32) -> Self {
-        self.new_replica_count = Some(input);
+        self.new_replica_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of replicas you want in this node group at the end of this operation. The maximum value for <code>NewReplicaCount</code> is 5. The minimum value depends upon the type of Redis replication group you are working with.</p>
@@ -105,7 +114,7 @@ impl ConfigureShardBuilder {
     /// </ul> </li>
     /// <li> <p>Redis (cluster mode enabled): 0 (though you will not be able to failover to a replica if your primary node fails)</p> </li>
     /// </ul>
-    pub fn set_new_replica_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_new_replica_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.new_replica_count = input;
         self
     }
@@ -114,16 +123,19 @@ impl ConfigureShardBuilder {
     /// To override the contents of this collection use [`set_preferred_availability_zones`](Self::set_preferred_availability_zones).
     ///
     /// <p>A list of <code>PreferredAvailabilityZone</code> strings that specify which availability zones the replication group's nodes are to be in. The nummber of <code>PreferredAvailabilityZone</code> values must equal the value of <code>NewReplicaCount</code> plus 1 to account for the primary node. If this member of <code>ReplicaConfiguration</code> is omitted, ElastiCache for Redis selects the availability zone for each of the replicas.</p>
-    pub fn preferred_availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn preferred_availability_zones(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.preferred_availability_zones.unwrap_or_default();
         v.push(input.into());
-        self.preferred_availability_zones = Some(v);
+        self.preferred_availability_zones = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of <code>PreferredAvailabilityZone</code> strings that specify which availability zones the replication group's nodes are to be in. The nummber of <code>PreferredAvailabilityZone</code> values must equal the value of <code>NewReplicaCount</code> plus 1 to account for the primary node. If this member of <code>ReplicaConfiguration</code> is omitted, ElastiCache for Redis selects the availability zone for each of the replicas.</p>
     pub fn set_preferred_availability_zones(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.preferred_availability_zones = input;
         self
@@ -133,16 +145,19 @@ impl ConfigureShardBuilder {
     /// To override the contents of this collection use [`set_preferred_outpost_arns`](Self::set_preferred_outpost_arns).
     ///
     /// <p>The outpost ARNs in which the cache cluster is created.</p>
-    pub fn preferred_outpost_arns(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn preferred_outpost_arns(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.preferred_outpost_arns.unwrap_or_default();
         v.push(input.into());
-        self.preferred_outpost_arns = Some(v);
+        self.preferred_outpost_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>The outpost ARNs in which the cache cluster is created.</p>
     pub fn set_preferred_outpost_arns(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.preferred_outpost_arns = input;
         self

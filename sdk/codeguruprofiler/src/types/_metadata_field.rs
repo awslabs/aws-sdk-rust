@@ -45,13 +45,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum MetadataField {
     /// Unique identifier for the agent instance.
@@ -75,7 +75,7 @@ pub enum MetadataField {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for MetadataField {
+impl ::std::convert::From<&str> for MetadataField {
     fn from(s: &str) -> Self {
         match s {
             "AgentId" => MetadataField::AgentId,
@@ -97,11 +97,11 @@ impl std::convert::From<&str> for MetadataField {
         }
     }
 }
-impl std::str::FromStr for MetadataField {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for MetadataField {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(MetadataField::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(MetadataField::from(s))
     }
 }
 impl MetadataField {
@@ -139,7 +139,7 @@ impl MetadataField {
         ]
     }
 }
-impl AsRef<str> for MetadataField {
+impl ::std::convert::AsRef<str> for MetadataField {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

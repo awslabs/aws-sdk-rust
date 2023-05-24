@@ -40,13 +40,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum InventoryFilterCondition {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,7 +60,7 @@ pub enum InventoryFilterCondition {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for InventoryFilterCondition {
+impl ::std::convert::From<&str> for InventoryFilterCondition {
     fn from(s: &str) -> Self {
         match s {
             "BEGINS_WITH" => InventoryFilterCondition::BeginsWith,
@@ -73,11 +73,11 @@ impl std::convert::From<&str> for InventoryFilterCondition {
         }
     }
 }
-impl std::str::FromStr for InventoryFilterCondition {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for InventoryFilterCondition {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(InventoryFilterCondition::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(InventoryFilterCondition::from(s))
     }
 }
 impl InventoryFilterCondition {
@@ -96,7 +96,7 @@ impl InventoryFilterCondition {
         &["BEGINS_WITH", "CONTAINS", "EQUALS", "NOT_EQUALS"]
     }
 }
-impl AsRef<str> for InventoryFilterCondition {
+impl ::std::convert::AsRef<str> for InventoryFilterCondition {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

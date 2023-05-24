@@ -2,20 +2,20 @@
 
 /// <p>The response elements represent the output of a commit transaction request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CommitTransactionOutput {
     /// <p>The status of the commit operation.</p>
     #[doc(hidden)]
-    pub transaction_status: std::option::Option<std::string::String>,
+    pub transaction_status: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CommitTransactionOutput {
     /// <p>The status of the commit operation.</p>
-    pub fn transaction_status(&self) -> std::option::Option<&str> {
+    pub fn transaction_status(&self) -> ::std::option::Option<&str> {
         self.transaction_status.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for CommitTransactionOutput {
+impl ::aws_http::request_id::RequestId for CommitTransactionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,21 +30,26 @@ impl CommitTransactionOutput {
 
 /// A builder for [`CommitTransactionOutput`](crate::operation::commit_transaction::CommitTransactionOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CommitTransactionOutputBuilder {
-    pub(crate) transaction_status: std::option::Option<std::string::String>,
+    pub(crate) transaction_status: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CommitTransactionOutputBuilder {
     /// <p>The status of the commit operation.</p>
-    pub fn transaction_status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.transaction_status = Some(input.into());
+    pub fn transaction_status(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.transaction_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the commit operation.</p>
     pub fn set_transaction_status(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.transaction_status = input;
         self

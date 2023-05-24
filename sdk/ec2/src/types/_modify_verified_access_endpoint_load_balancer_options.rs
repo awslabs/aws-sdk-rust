@@ -2,29 +2,29 @@
 
 /// <p>Describes a load balancer when creating an Amazon Web Services Verified Access endpoint using the <code>load-balancer</code> type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyVerifiedAccessEndpointLoadBalancerOptions {
     /// <p>The IDs of the subnets.</p>
     #[doc(hidden)]
-    pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The IP protocol.</p>
     #[doc(hidden)]
-    pub protocol: std::option::Option<crate::types::VerifiedAccessEndpointProtocol>,
+    pub protocol: ::std::option::Option<crate::types::VerifiedAccessEndpointProtocol>,
     /// <p>The IP port number.</p>
     #[doc(hidden)]
-    pub port: std::option::Option<i32>,
+    pub port: ::std::option::Option<i32>,
 }
 impl ModifyVerifiedAccessEndpointLoadBalancerOptions {
     /// <p>The IDs of the subnets.</p>
-    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.subnet_ids.as_deref()
     }
     /// <p>The IP protocol.</p>
-    pub fn protocol(&self) -> std::option::Option<&crate::types::VerifiedAccessEndpointProtocol> {
+    pub fn protocol(&self) -> ::std::option::Option<&crate::types::VerifiedAccessEndpointProtocol> {
         self.protocol.as_ref()
     }
     /// <p>The IP port number.</p>
-    pub fn port(&self) -> std::option::Option<i32> {
+    pub fn port(&self) -> ::std::option::Option<i32> {
         self.port
     }
 }
@@ -38,11 +38,13 @@ impl ModifyVerifiedAccessEndpointLoadBalancerOptions {
 
 /// A builder for [`ModifyVerifiedAccessEndpointLoadBalancerOptions`](crate::types::ModifyVerifiedAccessEndpointLoadBalancerOptions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ModifyVerifiedAccessEndpointLoadBalancerOptionsBuilder {
-    pub(crate) subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) protocol: std::option::Option<crate::types::VerifiedAccessEndpointProtocol>,
-    pub(crate) port: std::option::Option<i32>,
+    pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) protocol: ::std::option::Option<crate::types::VerifiedAccessEndpointProtocol>,
+    pub(crate) port: ::std::option::Option<i32>,
 }
 impl ModifyVerifiedAccessEndpointLoadBalancerOptionsBuilder {
     /// Appends an item to `subnet_ids`.
@@ -50,40 +52,40 @@ impl ModifyVerifiedAccessEndpointLoadBalancerOptionsBuilder {
     /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
     ///
     /// <p>The IDs of the subnets.</p>
-    pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn subnet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subnet_ids.unwrap_or_default();
         v.push(input.into());
-        self.subnet_ids = Some(v);
+        self.subnet_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IDs of the subnets.</p>
     pub fn set_subnet_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.subnet_ids = input;
         self
     }
     /// <p>The IP protocol.</p>
     pub fn protocol(mut self, input: crate::types::VerifiedAccessEndpointProtocol) -> Self {
-        self.protocol = Some(input);
+        self.protocol = ::std::option::Option::Some(input);
         self
     }
     /// <p>The IP protocol.</p>
     pub fn set_protocol(
         mut self,
-        input: std::option::Option<crate::types::VerifiedAccessEndpointProtocol>,
+        input: ::std::option::Option<crate::types::VerifiedAccessEndpointProtocol>,
     ) -> Self {
         self.protocol = input;
         self
     }
     /// <p>The IP port number.</p>
     pub fn port(mut self, input: i32) -> Self {
-        self.port = Some(input);
+        self.port = ::std::option::Option::Some(input);
         self
     }
     /// <p>The IP port number.</p>
-    pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.port = input;
         self
     }

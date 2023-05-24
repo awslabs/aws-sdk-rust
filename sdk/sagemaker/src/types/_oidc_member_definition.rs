@@ -2,15 +2,15 @@
 
 /// <p>A list of user groups that exist in your OIDC Identity Provider (IdP). One to ten groups can be used to create a single private work team. When you add a user group to the list of <code>Groups</code>, you can add that user group to one or more private work teams. If you add a user group to a private work team, all workers in that user group are added to the work team.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OidcMemberDefinition {
     /// <p>A list of comma seperated strings that identifies user groups in your OIDC IdP. Each user group is made up of a group of private workers.</p>
     #[doc(hidden)]
-    pub groups: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl OidcMemberDefinition {
     /// <p>A list of comma seperated strings that identifies user groups in your OIDC IdP. Each user group is made up of a group of private workers.</p>
-    pub fn groups(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn groups(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.groups.as_deref()
     }
 }
@@ -23,9 +23,11 @@ impl OidcMemberDefinition {
 
 /// A builder for [`OidcMemberDefinition`](crate::types::OidcMemberDefinition).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OidcMemberDefinitionBuilder {
-    pub(crate) groups: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl OidcMemberDefinitionBuilder {
     /// Appends an item to `groups`.
@@ -33,16 +35,16 @@ impl OidcMemberDefinitionBuilder {
     /// To override the contents of this collection use [`set_groups`](Self::set_groups).
     ///
     /// <p>A list of comma seperated strings that identifies user groups in your OIDC IdP. Each user group is made up of a group of private workers.</p>
-    pub fn groups(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.groups.unwrap_or_default();
         v.push(input.into());
-        self.groups = Some(v);
+        self.groups = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of comma seperated strings that identifies user groups in your OIDC IdP. Each user group is made up of a group of private workers.</p>
     pub fn set_groups(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.groups = input;
         self

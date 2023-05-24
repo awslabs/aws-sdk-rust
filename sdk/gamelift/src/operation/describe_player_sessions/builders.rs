@@ -16,29 +16,29 @@ pub use crate::operation::describe_player_sessions::_describe_player_sessions_in
 /// <p>If successful, a <code>PlayerSession</code> object is returned for each session that matches the request.</p>
 /// <p> <b>Related actions</b> </p>
 /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribePlayerSessionsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::describe_player_sessions::builders::DescribePlayerSessionsInputBuilder,
 }
 impl DescribePlayerSessionsFluentBuilder {
     /// Creates a new `DescribePlayerSessions`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::describe_player_sessions::DescribePlayerSessions,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::describe_player_sessions::DescribePlayerSessionsError,
         >,
     > {
@@ -46,30 +46,33 @@ impl DescribePlayerSessionsFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::describe_player_sessions::DescribePlayerSessionsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::describe_player_sessions::DescribePlayerSessionsError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -82,9 +85,9 @@ impl DescribePlayerSessionsFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::describe_player_sessions::DescribePlayerSessionsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::describe_player_sessions::DescribePlayerSessionsError,
         >,
     > {
@@ -103,34 +106,43 @@ impl DescribePlayerSessionsFluentBuilder {
         )
     }
     /// <p>A unique identifier for the game session to retrieve player sessions for.</p>
-    pub fn game_session_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn game_session_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.game_session_id(input.into());
         self
     }
     /// <p>A unique identifier for the game session to retrieve player sessions for.</p>
-    pub fn set_game_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_game_session_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_game_session_id(input);
         self
     }
     /// <p>A unique identifier for a player to retrieve player sessions for.</p>
-    pub fn player_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn player_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.player_id(input.into());
         self
     }
     /// <p>A unique identifier for a player to retrieve player sessions for.</p>
-    pub fn set_player_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_player_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_player_id(input);
         self
     }
     /// <p>A unique identifier for a player session to retrieve.</p>
-    pub fn player_session_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn player_session_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.player_session_id(input.into());
         self
     }
     /// <p>A unique identifier for a player session to retrieve.</p>
     pub fn set_player_session_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_player_session_id(input);
         self
@@ -143,7 +155,10 @@ impl DescribePlayerSessionsFluentBuilder {
     /// <li> <p> <b>COMPLETED</b> -- The player connection has been dropped.</p> </li>
     /// <li> <p> <b>TIMEDOUT</b> -- A player session request was received, but the player did not connect and/or was not validated within the timeout limit (60 seconds).</p> </li>
     /// </ul>
-    pub fn player_session_status_filter(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn player_session_status_filter(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.player_session_status_filter(input.into());
         self
     }
@@ -157,7 +172,7 @@ impl DescribePlayerSessionsFluentBuilder {
     /// </ul>
     pub fn set_player_session_status_filter(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_player_session_status_filter(input);
         self
@@ -168,17 +183,17 @@ impl DescribePlayerSessionsFluentBuilder {
         self
     }
     /// <p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages. If a player session ID is specified, this parameter is ignored.</p>
-    pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_limit(input);
         self
     }
     /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. If a player session ID is specified, this parameter is ignored.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
     /// <p>A token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. If a player session ID is specified, this parameter is ignored.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }

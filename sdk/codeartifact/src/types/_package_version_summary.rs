@@ -2,36 +2,36 @@
 
 /// <p> Details about a package version, including its status, version, and revision. The <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html">ListPackageVersions</a> operation returns a list of <code>PackageVersionSummary</code> objects. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PackageVersionSummary {
     /// <p> Information about a package version. </p>
     #[doc(hidden)]
-    pub version: std::option::Option<std::string::String>,
+    pub version: ::std::option::Option<::std::string::String>,
     /// <p> The revision associated with a package version. </p>
     #[doc(hidden)]
-    pub revision: std::option::Option<std::string::String>,
+    pub revision: ::std::option::Option<::std::string::String>,
     /// <p> A string that contains the status of the package version. It can be one of the following: </p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::PackageVersionStatus>,
+    pub status: ::std::option::Option<crate::types::PackageVersionStatus>,
     /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionOrigin.html">PackageVersionOrigin</a> object that contains information about how the package version was added to the repository.</p>
     #[doc(hidden)]
-    pub origin: std::option::Option<crate::types::PackageVersionOrigin>,
+    pub origin: ::std::option::Option<crate::types::PackageVersionOrigin>,
 }
 impl PackageVersionSummary {
     /// <p> Information about a package version. </p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<&str> {
         self.version.as_deref()
     }
     /// <p> The revision associated with a package version. </p>
-    pub fn revision(&self) -> std::option::Option<&str> {
+    pub fn revision(&self) -> ::std::option::Option<&str> {
         self.revision.as_deref()
     }
     /// <p> A string that contains the status of the package version. It can be one of the following: </p>
-    pub fn status(&self) -> std::option::Option<&crate::types::PackageVersionStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::PackageVersionStatus> {
         self.status.as_ref()
     }
     /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionOrigin.html">PackageVersionOrigin</a> object that contains information about how the package version was added to the repository.</p>
-    pub fn origin(&self) -> std::option::Option<&crate::types::PackageVersionOrigin> {
+    pub fn origin(&self) -> ::std::option::Option<&crate::types::PackageVersionOrigin> {
         self.origin.as_ref()
     }
 }
@@ -44,56 +44,58 @@ impl PackageVersionSummary {
 
 /// A builder for [`PackageVersionSummary`](crate::types::PackageVersionSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PackageVersionSummaryBuilder {
-    pub(crate) version: std::option::Option<std::string::String>,
-    pub(crate) revision: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::PackageVersionStatus>,
-    pub(crate) origin: std::option::Option<crate::types::PackageVersionOrigin>,
+    pub(crate) version: ::std::option::Option<::std::string::String>,
+    pub(crate) revision: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::PackageVersionStatus>,
+    pub(crate) origin: ::std::option::Option<crate::types::PackageVersionOrigin>,
 }
 impl PackageVersionSummaryBuilder {
     /// <p> Information about a package version. </p>
-    pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.version = Some(input.into());
+    pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Information about a package version. </p>
-    pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
     }
     /// <p> The revision associated with a package version. </p>
-    pub fn revision(mut self, input: impl Into<std::string::String>) -> Self {
-        self.revision = Some(input.into());
+    pub fn revision(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.revision = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The revision associated with a package version. </p>
-    pub fn set_revision(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_revision(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.revision = input;
         self
     }
     /// <p> A string that contains the status of the package version. It can be one of the following: </p>
     pub fn status(mut self, input: crate::types::PackageVersionStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p> A string that contains the status of the package version. It can be one of the following: </p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::PackageVersionStatus>,
+        input: ::std::option::Option<crate::types::PackageVersionStatus>,
     ) -> Self {
         self.status = input;
         self
     }
     /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionOrigin.html">PackageVersionOrigin</a> object that contains information about how the package version was added to the repository.</p>
     pub fn origin(mut self, input: crate::types::PackageVersionOrigin) -> Self {
-        self.origin = Some(input);
+        self.origin = ::std::option::Option::Some(input);
         self
     }
     /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionOrigin.html">PackageVersionOrigin</a> object that contains information about how the package version was added to the repository.</p>
     pub fn set_origin(
         mut self,
-        input: std::option::Option<crate::types::PackageVersionOrigin>,
+        input: ::std::option::Option<crate::types::PackageVersionOrigin>,
     ) -> Self {
         self.origin = input;
         self

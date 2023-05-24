@@ -16,29 +16,29 @@ pub use crate::operation::get_dashboard_embed_url::_get_dashboard_embed_url_inpu
 /// </ul>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics-deprecated.html">Embedding Analytics Using GetDashboardEmbedUrl</a> in the <i>Amazon QuickSight User Guide</i>.</p>
 /// <p>For more information about the high-level steps for embedding and for an interactive demo of the ways you can customize embedding, visit the <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-portal.html">Amazon QuickSight Developer Portal</a>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetDashboardEmbedUrlFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::get_dashboard_embed_url::builders::GetDashboardEmbedUrlInputBuilder,
 }
 impl GetDashboardEmbedUrlFluentBuilder {
     /// Creates a new `GetDashboardEmbedUrl`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrl,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrlError,
         >,
     > {
@@ -46,30 +46,33 @@ impl GetDashboardEmbedUrlFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrlOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrlError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -82,31 +85,37 @@ impl GetDashboardEmbedUrlFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrlOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrlError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The ID for the Amazon Web Services account that contains the dashboard that you're embedding.</p>
-    pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn aws_account_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
     /// <p>The ID for the Amazon Web Services account that contains the dashboard that you're embedding.</p>
-    pub fn set_aws_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_aws_account_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
     /// <p>The ID for the dashboard, also added to the Identity and Access Management (IAM) policy.</p>
-    pub fn dashboard_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn dashboard_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.dashboard_id(input.into());
         self
     }
     /// <p>The ID for the dashboard, also added to the Identity and Access Management (IAM) policy.</p>
-    pub fn set_dashboard_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_dashboard_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_dashboard_id(input);
         self
     }
@@ -118,7 +127,7 @@ impl GetDashboardEmbedUrlFluentBuilder {
     /// <p>The authentication method that the user uses to sign in.</p>
     pub fn set_identity_type(
         mut self,
-        input: std::option::Option<crate::types::EmbeddingIdentityType>,
+        input: ::std::option::Option<crate::types::EmbeddingIdentityType>,
     ) -> Self {
         self.inner = self.inner.set_identity_type(input);
         self
@@ -129,7 +138,7 @@ impl GetDashboardEmbedUrlFluentBuilder {
         self
     }
     /// <p>How many minutes the session is valid. The session lifetime must be 15-600 minutes.</p>
-    pub fn set_session_lifetime_in_minutes(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_session_lifetime_in_minutes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_session_lifetime_in_minutes(input);
         self
     }
@@ -139,7 +148,7 @@ impl GetDashboardEmbedUrlFluentBuilder {
         self
     }
     /// <p>Remove the undo/redo button on the embedded dashboard. The default is FALSE, which enables the undo/redo button.</p>
-    pub fn set_undo_redo_disabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_undo_redo_disabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_undo_redo_disabled(input);
         self
     }
@@ -149,7 +158,7 @@ impl GetDashboardEmbedUrlFluentBuilder {
         self
     }
     /// <p>Remove the reset button on the embedded dashboard. The default is FALSE, which enables the reset button.</p>
-    pub fn set_reset_disabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_reset_disabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_reset_disabled(input);
         self
     }
@@ -159,7 +168,7 @@ impl GetDashboardEmbedUrlFluentBuilder {
         self
     }
     /// <p>Adds persistence of state for the user session in an embedded dashboard. Persistence applies to the sheet and the parameter settings. These are control settings that the dashboard subscriber (Amazon QuickSight reader) chooses while viewing the dashboard. If this is set to <code>TRUE</code>, the settings are the same when the subscriber reopens the same dashboard URL. The state is stored in Amazon QuickSight, not in a browser cookie. If this is set to FALSE, the state of the user session is not persisted. The default is <code>FALSE</code>.</p>
-    pub fn set_state_persistence_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_state_persistence_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_state_persistence_enabled(input);
         self
     }
@@ -170,7 +179,7 @@ impl GetDashboardEmbedUrlFluentBuilder {
     /// <li> <p>IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID Connect, or IAM federation.</p> </li>
     /// </ul>
     /// <p>Omit this parameter for users in the third group – IAM users and IAM role-based sessions.</p>
-    pub fn user_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_arn(input.into());
         self
     }
@@ -181,17 +190,17 @@ impl GetDashboardEmbedUrlFluentBuilder {
     /// <li> <p>IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID Connect, or IAM federation.</p> </li>
     /// </ul>
     /// <p>Omit this parameter for users in the third group – IAM users and IAM role-based sessions.</p>
-    pub fn set_user_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_arn(input);
         self
     }
     /// <p>The Amazon QuickSight namespace that contains the dashboard IDs in this request. If you're not using a custom namespace, set <code>Namespace = default</code>.</p>
-    pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.namespace(input.into());
         self
     }
     /// <p>The Amazon QuickSight namespace that contains the dashboard IDs in this request. If you're not using a custom namespace, set <code>Namespace = default</code>.</p>
-    pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_namespace(input);
         self
     }
@@ -200,14 +209,17 @@ impl GetDashboardEmbedUrlFluentBuilder {
     /// To override the contents of this collection use [`set_additional_dashboard_ids`](Self::set_additional_dashboard_ids).
     ///
     /// <p>A list of one or more dashboard IDs that you want anonymous users to have tempporary access to. Currently, the <code>IdentityType</code> parameter must be set to <code>ANONYMOUS</code> because other identity types authenticate as Amazon QuickSight or IAM users. For example, if you set "<code>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the session can access all three dashboards.</p>
-    pub fn additional_dashboard_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn additional_dashboard_ids(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.additional_dashboard_ids(input.into());
         self
     }
     /// <p>A list of one or more dashboard IDs that you want anonymous users to have tempporary access to. Currently, the <code>IdentityType</code> parameter must be set to <code>ANONYMOUS</code> because other identity types authenticate as Amazon QuickSight or IAM users. For example, if you set "<code>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the session can access all three dashboards.</p>
     pub fn set_additional_dashboard_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_additional_dashboard_ids(input);
         self

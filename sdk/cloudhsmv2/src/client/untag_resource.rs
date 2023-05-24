@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UntagResource`](crate::operation::untag_resource::builders::UntagResourceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_id(impl Into<String>)`](crate::operation::untag_resource::builders::UntagResourceFluentBuilder::resource_id) / [`set_resource_id(Option<String>)`](crate::operation::untag_resource::builders::UntagResourceFluentBuilder::set_resource_id): <p>The cluster identifier (ID) for the cluster whose tags you are removing. To find the cluster ID, use <code>DescribeClusters</code>.</p>
+    ///   - [`resource_id(impl ::std::convert::Into<String>)`](crate::operation::untag_resource::builders::UntagResourceFluentBuilder::resource_id) / [`set_resource_id(Option<String>)`](crate::operation::untag_resource::builders::UntagResourceFluentBuilder::set_resource_id): <p>The cluster identifier (ID) for the cluster whose tags you are removing. To find the cluster ID, use <code>DescribeClusters</code>.</p>
     ///   - [`tag_key_list(Vec<String>)`](crate::operation::untag_resource::builders::UntagResourceFluentBuilder::tag_key_list) / [`set_tag_key_list(Option<Vec<String>>)`](crate::operation::untag_resource::builders::UntagResourceFluentBuilder::set_tag_key_list): <p>A list of one or more tag keys for the tags that you are removing. Specify only the tag keys, not the tag values.</p>
     /// - On success, responds with [`UntagResourceOutput`](crate::operation::untag_resource::UntagResourceOutput)
     /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::operation::untag_resource::UntagResourceError)

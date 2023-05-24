@@ -2,25 +2,25 @@
 
 /// <p>Information about a global secondary index for a DynamoDB table replica.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsDynamoDbTableReplicaGlobalSecondaryIndex {
     /// <p>The name of the index.</p>
     #[doc(hidden)]
-    pub index_name: std::option::Option<std::string::String>,
+    pub index_name: ::std::option::Option<::std::string::String>,
     /// <p>Replica-specific configuration for the provisioned throughput for the index.</p>
     #[doc(hidden)]
     pub provisioned_throughput_override:
-        std::option::Option<crate::types::AwsDynamoDbTableProvisionedThroughputOverride>,
+        ::std::option::Option<crate::types::AwsDynamoDbTableProvisionedThroughputOverride>,
 }
 impl AwsDynamoDbTableReplicaGlobalSecondaryIndex {
     /// <p>The name of the index.</p>
-    pub fn index_name(&self) -> std::option::Option<&str> {
+    pub fn index_name(&self) -> ::std::option::Option<&str> {
         self.index_name.as_deref()
     }
     /// <p>Replica-specific configuration for the provisioned throughput for the index.</p>
     pub fn provisioned_throughput_override(
         &self,
-    ) -> std::option::Option<&crate::types::AwsDynamoDbTableProvisionedThroughputOverride> {
+    ) -> ::std::option::Option<&crate::types::AwsDynamoDbTableProvisionedThroughputOverride> {
         self.provisioned_throughput_override.as_ref()
     }
 }
@@ -33,20 +33,22 @@ impl AwsDynamoDbTableReplicaGlobalSecondaryIndex {
 
 /// A builder for [`AwsDynamoDbTableReplicaGlobalSecondaryIndex`](crate::types::AwsDynamoDbTableReplicaGlobalSecondaryIndex).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsDynamoDbTableReplicaGlobalSecondaryIndexBuilder {
-    pub(crate) index_name: std::option::Option<std::string::String>,
+    pub(crate) index_name: ::std::option::Option<::std::string::String>,
     pub(crate) provisioned_throughput_override:
-        std::option::Option<crate::types::AwsDynamoDbTableProvisionedThroughputOverride>,
+        ::std::option::Option<crate::types::AwsDynamoDbTableProvisionedThroughputOverride>,
 }
 impl AwsDynamoDbTableReplicaGlobalSecondaryIndexBuilder {
     /// <p>The name of the index.</p>
-    pub fn index_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.index_name = Some(input.into());
+    pub fn index_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.index_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the index.</p>
-    pub fn set_index_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_index_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.index_name = input;
         self
     }
@@ -55,13 +57,13 @@ impl AwsDynamoDbTableReplicaGlobalSecondaryIndexBuilder {
         mut self,
         input: crate::types::AwsDynamoDbTableProvisionedThroughputOverride,
     ) -> Self {
-        self.provisioned_throughput_override = Some(input);
+        self.provisioned_throughput_override = ::std::option::Option::Some(input);
         self
     }
     /// <p>Replica-specific configuration for the provisioned throughput for the index.</p>
     pub fn set_provisioned_throughput_override(
         mut self,
-        input: std::option::Option<crate::types::AwsDynamoDbTableProvisionedThroughputOverride>,
+        input: ::std::option::Option<crate::types::AwsDynamoDbTableProvisionedThroughputOverride>,
     ) -> Self {
         self.provisioned_throughput_override = input;
         self

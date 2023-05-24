@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum RobotSoftwareSuiteType {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum RobotSoftwareSuiteType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for RobotSoftwareSuiteType {
+impl ::std::convert::From<&str> for RobotSoftwareSuiteType {
     fn from(s: &str) -> Self {
         match s {
             "General" => RobotSoftwareSuiteType::General,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for RobotSoftwareSuiteType {
         }
     }
 }
-impl std::str::FromStr for RobotSoftwareSuiteType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for RobotSoftwareSuiteType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RobotSoftwareSuiteType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(RobotSoftwareSuiteType::from(s))
     }
 }
 impl RobotSoftwareSuiteType {
@@ -91,7 +91,7 @@ impl RobotSoftwareSuiteType {
         &["General", "ROS", "ROS2"]
     }
 }
-impl AsRef<str> for RobotSoftwareSuiteType {
+impl ::std::convert::AsRef<str> for RobotSoftwareSuiteType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

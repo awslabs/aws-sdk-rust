@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateUsagePlan`](crate::operation::update_usage_plan::builders::UpdateUsagePlanFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`usage_plan_id(impl Into<String>)`](crate::operation::update_usage_plan::builders::UpdateUsagePlanFluentBuilder::usage_plan_id) / [`set_usage_plan_id(Option<String>)`](crate::operation::update_usage_plan::builders::UpdateUsagePlanFluentBuilder::set_usage_plan_id): <p>The Id of the to-be-updated usage plan.</p>
+    ///   - [`usage_plan_id(impl ::std::convert::Into<String>)`](crate::operation::update_usage_plan::builders::UpdateUsagePlanFluentBuilder::usage_plan_id) / [`set_usage_plan_id(Option<String>)`](crate::operation::update_usage_plan::builders::UpdateUsagePlanFluentBuilder::set_usage_plan_id): <p>The Id of the to-be-updated usage plan.</p>
     ///   - [`patch_operations(Vec<PatchOperation>)`](crate::operation::update_usage_plan::builders::UpdateUsagePlanFluentBuilder::patch_operations) / [`set_patch_operations(Option<Vec<PatchOperation>>)`](crate::operation::update_usage_plan::builders::UpdateUsagePlanFluentBuilder::set_patch_operations): <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
     /// - On success, responds with [`UpdateUsagePlanOutput`](crate::operation::update_usage_plan::UpdateUsagePlanOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::update_usage_plan::UpdateUsagePlanOutput::id): <p>The identifier of a UsagePlan resource.</p>

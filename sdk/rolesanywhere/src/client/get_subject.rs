@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetSubject`](crate::operation::get_subject::builders::GetSubjectFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`subject_id(impl Into<String>)`](crate::operation::get_subject::builders::GetSubjectFluentBuilder::subject_id) / [`set_subject_id(Option<String>)`](crate::operation::get_subject::builders::GetSubjectFluentBuilder::set_subject_id): <p>The unique identifier of the subject. </p>
+    ///   - [`subject_id(impl ::std::convert::Into<String>)`](crate::operation::get_subject::builders::GetSubjectFluentBuilder::subject_id) / [`set_subject_id(Option<String>)`](crate::operation::get_subject::builders::GetSubjectFluentBuilder::set_subject_id): <p>The unique identifier of the subject. </p>
     /// - On success, responds with [`GetSubjectOutput`](crate::operation::get_subject::GetSubjectOutput) with field(s):
     ///   - [`subject(Option<SubjectDetail>)`](crate::operation::get_subject::GetSubjectOutput::subject): <p>The state of the subject after a read or write operation.</p>
     /// - On failure, responds with [`SdkError<GetSubjectError>`](crate::operation::get_subject::GetSubjectError)

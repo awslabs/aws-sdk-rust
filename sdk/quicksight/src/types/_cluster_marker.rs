@@ -2,15 +2,17 @@
 
 /// <p>The cluster marker that is a part of the cluster marker configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClusterMarker {
     /// <p>The simple cluster marker of the cluster marker.</p>
     #[doc(hidden)]
-    pub simple_cluster_marker: std::option::Option<crate::types::SimpleClusterMarker>,
+    pub simple_cluster_marker: ::std::option::Option<crate::types::SimpleClusterMarker>,
 }
 impl ClusterMarker {
     /// <p>The simple cluster marker of the cluster marker.</p>
-    pub fn simple_cluster_marker(&self) -> std::option::Option<&crate::types::SimpleClusterMarker> {
+    pub fn simple_cluster_marker(
+        &self,
+    ) -> ::std::option::Option<&crate::types::SimpleClusterMarker> {
         self.simple_cluster_marker.as_ref()
     }
 }
@@ -23,20 +25,22 @@ impl ClusterMarker {
 
 /// A builder for [`ClusterMarker`](crate::types::ClusterMarker).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ClusterMarkerBuilder {
-    pub(crate) simple_cluster_marker: std::option::Option<crate::types::SimpleClusterMarker>,
+    pub(crate) simple_cluster_marker: ::std::option::Option<crate::types::SimpleClusterMarker>,
 }
 impl ClusterMarkerBuilder {
     /// <p>The simple cluster marker of the cluster marker.</p>
     pub fn simple_cluster_marker(mut self, input: crate::types::SimpleClusterMarker) -> Self {
-        self.simple_cluster_marker = Some(input);
+        self.simple_cluster_marker = ::std::option::Option::Some(input);
         self
     }
     /// <p>The simple cluster marker of the cluster marker.</p>
     pub fn set_simple_cluster_marker(
         mut self,
-        input: std::option::Option<crate::types::SimpleClusterMarker>,
+        input: ::std::option::Option<crate::types::SimpleClusterMarker>,
     ) -> Self {
         self.simple_cluster_marker = input;
         self

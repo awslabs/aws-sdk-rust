@@ -6,29 +6,29 @@ pub use crate::operation::create_image_recipe::_create_image_recipe_input::Creat
 /// Fluent builder constructing a request to `CreateImageRecipe`.
 ///
 /// <p>Creates a new image recipe. Image recipes define how images are configured, tested, and assessed.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateImageRecipeFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_image_recipe::builders::CreateImageRecipeInputBuilder,
 }
 impl CreateImageRecipeFluentBuilder {
     /// Creates a new `CreateImageRecipe`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_image_recipe::CreateImageRecipe,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_image_recipe::CreateImageRecipeError,
         >,
     > {
@@ -36,30 +36,33 @@ impl CreateImageRecipeFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_image_recipe::CreateImageRecipeOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_image_recipe::CreateImageRecipeError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,31 +75,31 @@ impl CreateImageRecipeFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_image_recipe::CreateImageRecipeOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_image_recipe::CreateImageRecipeError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the image recipe.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// <p>The name of the image recipe.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
     /// <p>The description of the image recipe.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>The description of the image recipe.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
@@ -116,7 +119,10 @@ impl CreateImageRecipeFluentBuilder {
     /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
     /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
     /// </note>
-    pub fn semantic_version(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn semantic_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.semantic_version(input.into());
         self
     }
@@ -136,7 +142,10 @@ impl CreateImageRecipeFluentBuilder {
     /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
     /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
     /// </note>
-    pub fn set_semantic_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_semantic_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_semantic_version(input);
         self
     }
@@ -152,18 +161,18 @@ impl CreateImageRecipeFluentBuilder {
     /// <p>The components included in the image recipe.</p>
     pub fn set_components(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ComponentConfiguration>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ComponentConfiguration>>,
     ) -> Self {
         self.inner = self.inner.set_components(input);
         self
     }
     /// <p>The base image of the image recipe. The value of the string can be the ARN of the base image or an AMI ID. The format for the ARN follows this example: <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/x.x.x</code>. You can provide the specific version that you want to use, or you can use a wildcard in all of the fields. If you enter an AMI ID for the string value, you must have access to the AMI, and the AMI must be in the same Region in which you are using Image Builder.</p>
-    pub fn parent_image(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn parent_image(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.parent_image(input.into());
         self
     }
     /// <p>The base image of the image recipe. The value of the string can be the ARN of the base image or an AMI ID. The format for the ARN follows this example: <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/x.x.x</code>. You can provide the specific version that you want to use, or you can use a wildcard in all of the fields. If you enter an AMI ID for the string value, you must have access to the AMI, and the AMI must be in the same Region in which you are using Image Builder.</p>
-    pub fn set_parent_image(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_parent_image(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_parent_image(input);
         self
     }
@@ -182,7 +191,7 @@ impl CreateImageRecipeFluentBuilder {
     /// <p>The block device mappings of the image recipe.</p>
     pub fn set_block_device_mappings(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::InstanceBlockDeviceMapping>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceBlockDeviceMapping>>,
     ) -> Self {
         self.inner = self.inner.set_block_device_mappings(input);
         self
@@ -194,8 +203,8 @@ impl CreateImageRecipeFluentBuilder {
     /// <p>The tags of the image recipe.</p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
@@ -203,22 +212,25 @@ impl CreateImageRecipeFluentBuilder {
     /// <p>The tags of the image recipe.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The working directory used during build and test workflows.</p>
-    pub fn working_directory(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn working_directory(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.working_directory(input.into());
         self
     }
     /// <p>The working directory used during build and test workflows.</p>
     pub fn set_working_directory(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_working_directory(input);
         self
@@ -234,18 +246,18 @@ impl CreateImageRecipeFluentBuilder {
     /// <p>Specify additional settings and launch scripts for your build instances.</p>
     pub fn set_additional_instance_configuration(
         mut self,
-        input: std::option::Option<crate::types::AdditionalInstanceConfiguration>,
+        input: ::std::option::Option<crate::types::AdditionalInstanceConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_additional_instance_configuration(input);
         self
     }
     /// <p>The idempotency token used to make this request idempotent.</p>
-    pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
     /// <p>The idempotency token used to make this request idempotent.</p>
-    pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }

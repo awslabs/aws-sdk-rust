@@ -2,7 +2,7 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CopyOptionGroupInput {
     /// <p>The identifier for the source option group.</p>
     /// <p>Constraints:</p>
@@ -10,7 +10,7 @@ pub struct CopyOptionGroupInput {
     /// <li> <p>Must specify a valid option group.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub source_option_group_identifier: std::option::Option<std::string::String>,
+    pub source_option_group_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the copied option group.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -21,13 +21,13 @@ pub struct CopyOptionGroupInput {
     /// </ul>
     /// <p>Example: <code>my-option-group</code> </p>
     #[doc(hidden)]
-    pub target_option_group_identifier: std::option::Option<std::string::String>,
+    pub target_option_group_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The description for the copied option group.</p>
     #[doc(hidden)]
-    pub target_option_group_description: std::option::Option<std::string::String>,
+    pub target_option_group_description: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CopyOptionGroupInput {
     /// <p>The identifier for the source option group.</p>
@@ -35,7 +35,7 @@ impl CopyOptionGroupInput {
     /// <ul>
     /// <li> <p>Must specify a valid option group.</p> </li>
     /// </ul>
-    pub fn source_option_group_identifier(&self) -> std::option::Option<&str> {
+    pub fn source_option_group_identifier(&self) -> ::std::option::Option<&str> {
         self.source_option_group_identifier.as_deref()
     }
     /// <p>The identifier for the copied option group.</p>
@@ -47,15 +47,15 @@ impl CopyOptionGroupInput {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
     /// <p>Example: <code>my-option-group</code> </p>
-    pub fn target_option_group_identifier(&self) -> std::option::Option<&str> {
+    pub fn target_option_group_identifier(&self) -> ::std::option::Option<&str> {
         self.target_option_group_identifier.as_deref()
     }
     /// <p>The description for the copied option group.</p>
-    pub fn target_option_group_description(&self) -> std::option::Option<&str> {
+    pub fn target_option_group_description(&self) -> ::std::option::Option<&str> {
         self.target_option_group_description.as_deref()
     }
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -68,12 +68,14 @@ impl CopyOptionGroupInput {
 
 /// A builder for [`CopyOptionGroupInput`](crate::operation::copy_option_group::CopyOptionGroupInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CopyOptionGroupInputBuilder {
-    pub(crate) source_option_group_identifier: std::option::Option<std::string::String>,
-    pub(crate) target_option_group_identifier: std::option::Option<std::string::String>,
-    pub(crate) target_option_group_description: std::option::Option<std::string::String>,
-    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub(crate) source_option_group_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) target_option_group_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) target_option_group_description: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CopyOptionGroupInputBuilder {
     /// <p>The identifier for the source option group.</p>
@@ -81,8 +83,11 @@ impl CopyOptionGroupInputBuilder {
     /// <ul>
     /// <li> <p>Must specify a valid option group.</p> </li>
     /// </ul>
-    pub fn source_option_group_identifier(mut self, input: impl Into<std::string::String>) -> Self {
-        self.source_option_group_identifier = Some(input.into());
+    pub fn source_option_group_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.source_option_group_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for the source option group.</p>
@@ -92,7 +97,7 @@ impl CopyOptionGroupInputBuilder {
     /// </ul>
     pub fn set_source_option_group_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.source_option_group_identifier = input;
         self
@@ -106,8 +111,11 @@ impl CopyOptionGroupInputBuilder {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
     /// </ul>
     /// <p>Example: <code>my-option-group</code> </p>
-    pub fn target_option_group_identifier(mut self, input: impl Into<std::string::String>) -> Self {
-        self.target_option_group_identifier = Some(input.into());
+    pub fn target_option_group_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.target_option_group_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for the copied option group.</p>
@@ -121,7 +129,7 @@ impl CopyOptionGroupInputBuilder {
     /// <p>Example: <code>my-option-group</code> </p>
     pub fn set_target_option_group_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.target_option_group_identifier = input;
         self
@@ -129,15 +137,15 @@ impl CopyOptionGroupInputBuilder {
     /// <p>The description for the copied option group.</p>
     pub fn target_option_group_description(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.target_option_group_description = Some(input.into());
+        self.target_option_group_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description for the copied option group.</p>
     pub fn set_target_option_group_description(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.target_option_group_description = input;
         self
@@ -150,13 +158,13 @@ impl CopyOptionGroupInputBuilder {
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
-        self.tags = Some(v);
+        self.tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of tags. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tags = input;
         self
@@ -164,11 +172,11 @@ impl CopyOptionGroupInputBuilder {
     /// Consumes the builder and constructs a [`CopyOptionGroupInput`](crate::operation::copy_option_group::CopyOptionGroupInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::copy_option_group::CopyOptionGroupInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::copy_option_group::CopyOptionGroupInput {
+        ::std::result::Result::Ok(crate::operation::copy_option_group::CopyOptionGroupInput {
             source_option_group_identifier: self.source_option_group_identifier,
             target_option_group_identifier: self.target_option_group_identifier,
             target_option_group_description: self.target_option_group_description,

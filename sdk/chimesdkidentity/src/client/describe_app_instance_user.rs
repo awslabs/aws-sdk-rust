@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeAppInstanceUser`](crate::operation::describe_app_instance_user::builders::DescribeAppInstanceUserFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`app_instance_user_arn(impl Into<String>)`](crate::operation::describe_app_instance_user::builders::DescribeAppInstanceUserFluentBuilder::app_instance_user_arn) / [`set_app_instance_user_arn(Option<String>)`](crate::operation::describe_app_instance_user::builders::DescribeAppInstanceUserFluentBuilder::set_app_instance_user_arn): <p>The ARN of the <code>AppInstanceUser</code>.</p>
+    ///   - [`app_instance_user_arn(impl ::std::convert::Into<String>)`](crate::operation::describe_app_instance_user::builders::DescribeAppInstanceUserFluentBuilder::app_instance_user_arn) / [`set_app_instance_user_arn(Option<String>)`](crate::operation::describe_app_instance_user::builders::DescribeAppInstanceUserFluentBuilder::set_app_instance_user_arn): <p>The ARN of the <code>AppInstanceUser</code>.</p>
     /// - On success, responds with [`DescribeAppInstanceUserOutput`](crate::operation::describe_app_instance_user::DescribeAppInstanceUserOutput) with field(s):
     ///   - [`app_instance_user(Option<AppInstanceUser>)`](crate::operation::describe_app_instance_user::DescribeAppInstanceUserOutput::app_instance_user): <p>The name of the <code>AppInstanceUser</code>.</p>
     /// - On failure, responds with [`SdkError<DescribeAppInstanceUserError>`](crate::operation::describe_app_instance_user::DescribeAppInstanceUserError)

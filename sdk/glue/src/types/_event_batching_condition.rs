@@ -2,14 +2,14 @@
 
 /// <p>Batch condition that must be met (specified number of events received or batch time window expired) before EventBridge event trigger fires.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventBatchingCondition {
     /// <p>Number of events that must be received from Amazon EventBridge before EventBridge event trigger fires.</p>
     #[doc(hidden)]
     pub batch_size: i32,
     /// <p>Window of time in seconds after which EventBridge event trigger fires. Window starts when first event is received.</p>
     #[doc(hidden)]
-    pub batch_window: std::option::Option<i32>,
+    pub batch_window: ::std::option::Option<i32>,
 }
 impl EventBatchingCondition {
     /// <p>Number of events that must be received from Amazon EventBridge before EventBridge event trigger fires.</p>
@@ -17,7 +17,7 @@ impl EventBatchingCondition {
         self.batch_size
     }
     /// <p>Window of time in seconds after which EventBridge event trigger fires. Window starts when first event is received.</p>
-    pub fn batch_window(&self) -> std::option::Option<i32> {
+    pub fn batch_window(&self) -> ::std::option::Option<i32> {
         self.batch_window
     }
 }
@@ -30,29 +30,31 @@ impl EventBatchingCondition {
 
 /// A builder for [`EventBatchingCondition`](crate::types::EventBatchingCondition).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EventBatchingConditionBuilder {
-    pub(crate) batch_size: std::option::Option<i32>,
-    pub(crate) batch_window: std::option::Option<i32>,
+    pub(crate) batch_size: ::std::option::Option<i32>,
+    pub(crate) batch_window: ::std::option::Option<i32>,
 }
 impl EventBatchingConditionBuilder {
     /// <p>Number of events that must be received from Amazon EventBridge before EventBridge event trigger fires.</p>
     pub fn batch_size(mut self, input: i32) -> Self {
-        self.batch_size = Some(input);
+        self.batch_size = ::std::option::Option::Some(input);
         self
     }
     /// <p>Number of events that must be received from Amazon EventBridge before EventBridge event trigger fires.</p>
-    pub fn set_batch_size(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_batch_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.batch_size = input;
         self
     }
     /// <p>Window of time in seconds after which EventBridge event trigger fires. Window starts when first event is received.</p>
     pub fn batch_window(mut self, input: i32) -> Self {
-        self.batch_window = Some(input);
+        self.batch_window = ::std::option::Option::Some(input);
         self
     }
     /// <p>Window of time in seconds after which EventBridge event trigger fires. Window starts when first event is received.</p>
-    pub fn set_batch_window(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_batch_window(mut self, input: ::std::option::Option<i32>) -> Self {
         self.batch_window = input;
         self
     }

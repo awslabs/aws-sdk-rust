@@ -2,20 +2,20 @@
 
 /// <p>Contains the output for DeleteNetworkInterfacePermission.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteNetworkInterfacePermissionOutput {
     /// <p>Returns <code>true</code> if the request succeeds, otherwise returns an error.</p>
     #[doc(hidden)]
-    pub r#return: std::option::Option<bool>,
+    pub r#return: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl DeleteNetworkInterfacePermissionOutput {
     /// <p>Returns <code>true</code> if the request succeeds, otherwise returns an error.</p>
-    pub fn r#return(&self) -> std::option::Option<bool> {
+    pub fn r#return(&self) -> ::std::option::Option<bool> {
         self.r#return
     }
 }
-impl aws_http::request_id::RequestId for DeleteNetworkInterfacePermissionOutput {
+impl ::aws_http::request_id::RequestId for DeleteNetworkInterfacePermissionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,21 @@ impl DeleteNetworkInterfacePermissionOutput {
 
 /// A builder for [`DeleteNetworkInterfacePermissionOutput`](crate::operation::delete_network_interface_permission::DeleteNetworkInterfacePermissionOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteNetworkInterfacePermissionOutputBuilder {
-    pub(crate) r#return: std::option::Option<bool>,
+    pub(crate) r#return: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl DeleteNetworkInterfacePermissionOutputBuilder {
     /// <p>Returns <code>true</code> if the request succeeds, otherwise returns an error.</p>
     pub fn r#return(mut self, input: bool) -> Self {
-        self.r#return = Some(input);
+        self.r#return = ::std::option::Option::Some(input);
         self
     }
     /// <p>Returns <code>true</code> if the request succeeds, otherwise returns an error.</p>
-    pub fn set_return(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_return(mut self, input: ::std::option::Option<bool>) -> Self {
         self.r#return = input;
         self
     }

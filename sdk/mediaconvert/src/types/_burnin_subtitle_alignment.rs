@@ -39,13 +39,13 @@
 /// Specify the alignment of your captions. If no explicit x_position is provided, setting alignment to centered will placethe captions at the bottom center of the output. Similarly, setting a left alignment willalign captions to the bottom left of the output. If x and y positions are given in conjunction with the alignment parameter, the font will be justified (either left or centered) relative to those coordinates.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum BurninSubtitleAlignment {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum BurninSubtitleAlignment {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for BurninSubtitleAlignment {
+impl ::std::convert::From<&str> for BurninSubtitleAlignment {
     fn from(s: &str) -> Self {
         match s {
             "AUTO" => BurninSubtitleAlignment::Auto,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for BurninSubtitleAlignment {
         }
     }
 }
-impl std::str::FromStr for BurninSubtitleAlignment {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for BurninSubtitleAlignment {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(BurninSubtitleAlignment::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(BurninSubtitleAlignment::from(s))
     }
 }
 impl BurninSubtitleAlignment {
@@ -91,7 +91,7 @@ impl BurninSubtitleAlignment {
         &["AUTO", "CENTERED", "LEFT"]
     }
 }
-impl AsRef<str> for BurninSubtitleAlignment {
+impl ::std::convert::AsRef<str> for BurninSubtitleAlignment {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

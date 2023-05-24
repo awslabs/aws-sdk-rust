@@ -2,36 +2,36 @@
 
 /// <p>Represents the output of a CreateParameterGroup operation. A parameter group represents a combination of specific values for the parameters that are passed to the engine software during startup.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ParameterGroup {
     /// <p>The name of the parameter group</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the parameter group family that this parameter group is compatible with.</p>
     #[doc(hidden)]
-    pub family: std::option::Option<std::string::String>,
+    pub family: ::std::option::Option<::std::string::String>,
     /// <p>A description of the parameter group</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the parameter group</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
 }
 impl ParameterGroup {
     /// <p>The name of the parameter group</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The name of the parameter group family that this parameter group is compatible with.</p>
-    pub fn family(&self) -> std::option::Option<&str> {
+    pub fn family(&self) -> ::std::option::Option<&str> {
         self.family.as_deref()
     }
     /// <p>A description of the parameter group</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the parameter group</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
 }
@@ -44,51 +44,53 @@ impl ParameterGroup {
 
 /// A builder for [`ParameterGroup`](crate::types::ParameterGroup).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ParameterGroupBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) family: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) arn: std::option::Option<std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) family: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
 impl ParameterGroupBuilder {
     /// <p>The name of the parameter group</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the parameter group</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The name of the parameter group family that this parameter group is compatible with.</p>
-    pub fn family(mut self, input: impl Into<std::string::String>) -> Self {
-        self.family = Some(input.into());
+    pub fn family(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.family = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the parameter group family that this parameter group is compatible with.</p>
-    pub fn set_family(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.family = input;
         self
     }
     /// <p>A description of the parameter group</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of the parameter group</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the parameter group</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the parameter group</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }

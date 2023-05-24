@@ -2,18 +2,18 @@
 
 /// <p> Describes the real-time endpoint information for an <code>MLModel</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RealtimeEndpointInfo {
     /// <p> The maximum processing rate for the real-time endpoint for <code>MLModel</code>, measured in incoming requests per second.</p>
     #[doc(hidden)]
     pub peak_requests_per_second: i32,
     /// <p>The time that the request to create the real-time endpoint for the <code>MLModel</code> was received. The time is expressed in epoch time.</p>
     #[doc(hidden)]
-    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The URI that specifies where to send real-time prediction requests for the <code>MLModel</code>.</p>
     /// <p> <b>Note:</b> The application must wait until the real-time endpoint is ready before using this URI.</p>
     #[doc(hidden)]
-    pub endpoint_url: std::option::Option<std::string::String>,
+    pub endpoint_url: ::std::option::Option<::std::string::String>,
     /// <p> The current status of the real-time endpoint for the <code>MLModel</code>. This element can have one of the following values: </p>
     /// <ul>
     /// <li> <p> <code>NONE</code> - Endpoint does not exist or was previously deleted.</p> </li>
@@ -21,7 +21,7 @@ pub struct RealtimeEndpointInfo {
     /// <li> <p> <code>UPDATING</code> - Updating/creating the endpoint. </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub endpoint_status: std::option::Option<crate::types::RealtimeEndpointStatus>,
+    pub endpoint_status: ::std::option::Option<crate::types::RealtimeEndpointStatus>,
 }
 impl RealtimeEndpointInfo {
     /// <p> The maximum processing rate for the real-time endpoint for <code>MLModel</code>, measured in incoming requests per second.</p>
@@ -29,12 +29,12 @@ impl RealtimeEndpointInfo {
         self.peak_requests_per_second
     }
     /// <p>The time that the request to create the real-time endpoint for the <code>MLModel</code> was received. The time is expressed in epoch time.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The URI that specifies where to send real-time prediction requests for the <code>MLModel</code>.</p>
     /// <p> <b>Note:</b> The application must wait until the real-time endpoint is ready before using this URI.</p>
-    pub fn endpoint_url(&self) -> std::option::Option<&str> {
+    pub fn endpoint_url(&self) -> ::std::option::Option<&str> {
         self.endpoint_url.as_deref()
     }
     /// <p> The current status of the real-time endpoint for the <code>MLModel</code>. This element can have one of the following values: </p>
@@ -43,7 +43,7 @@ impl RealtimeEndpointInfo {
     /// <li> <p> <code>READY</code> - Endpoint is ready to be used for real-time predictions.</p> </li>
     /// <li> <p> <code>UPDATING</code> - Updating/creating the endpoint. </p> </li>
     /// </ul>
-    pub fn endpoint_status(&self) -> std::option::Option<&crate::types::RealtimeEndpointStatus> {
+    pub fn endpoint_status(&self) -> ::std::option::Option<&crate::types::RealtimeEndpointStatus> {
         self.endpoint_status.as_ref()
     }
 }
@@ -56,46 +56,48 @@ impl RealtimeEndpointInfo {
 
 /// A builder for [`RealtimeEndpointInfo`](crate::types::RealtimeEndpointInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RealtimeEndpointInfoBuilder {
-    pub(crate) peak_requests_per_second: std::option::Option<i32>,
-    pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) endpoint_url: std::option::Option<std::string::String>,
-    pub(crate) endpoint_status: std::option::Option<crate::types::RealtimeEndpointStatus>,
+    pub(crate) peak_requests_per_second: ::std::option::Option<i32>,
+    pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) endpoint_url: ::std::option::Option<::std::string::String>,
+    pub(crate) endpoint_status: ::std::option::Option<crate::types::RealtimeEndpointStatus>,
 }
 impl RealtimeEndpointInfoBuilder {
     /// <p> The maximum processing rate for the real-time endpoint for <code>MLModel</code>, measured in incoming requests per second.</p>
     pub fn peak_requests_per_second(mut self, input: i32) -> Self {
-        self.peak_requests_per_second = Some(input);
+        self.peak_requests_per_second = ::std::option::Option::Some(input);
         self
     }
     /// <p> The maximum processing rate for the real-time endpoint for <code>MLModel</code>, measured in incoming requests per second.</p>
-    pub fn set_peak_requests_per_second(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_peak_requests_per_second(mut self, input: ::std::option::Option<i32>) -> Self {
         self.peak_requests_per_second = input;
         self
     }
     /// <p>The time that the request to create the real-time endpoint for the <code>MLModel</code> was received. The time is expressed in epoch time.</p>
-    pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_at = Some(input);
+    pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time that the request to create the real-time endpoint for the <code>MLModel</code> was received. The time is expressed in epoch time.</p>
     pub fn set_created_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_at = input;
         self
     }
     /// <p>The URI that specifies where to send real-time prediction requests for the <code>MLModel</code>.</p>
     /// <p> <b>Note:</b> The application must wait until the real-time endpoint is ready before using this URI.</p>
-    pub fn endpoint_url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.endpoint_url = Some(input.into());
+    pub fn endpoint_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.endpoint_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URI that specifies where to send real-time prediction requests for the <code>MLModel</code>.</p>
     /// <p> <b>Note:</b> The application must wait until the real-time endpoint is ready before using this URI.</p>
-    pub fn set_endpoint_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_endpoint_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint_url = input;
         self
     }
@@ -106,7 +108,7 @@ impl RealtimeEndpointInfoBuilder {
     /// <li> <p> <code>UPDATING</code> - Updating/creating the endpoint. </p> </li>
     /// </ul>
     pub fn endpoint_status(mut self, input: crate::types::RealtimeEndpointStatus) -> Self {
-        self.endpoint_status = Some(input);
+        self.endpoint_status = ::std::option::Option::Some(input);
         self
     }
     /// <p> The current status of the real-time endpoint for the <code>MLModel</code>. This element can have one of the following values: </p>
@@ -117,7 +119,7 @@ impl RealtimeEndpointInfoBuilder {
     /// </ul>
     pub fn set_endpoint_status(
         mut self,
-        input: std::option::Option<crate::types::RealtimeEndpointStatus>,
+        input: ::std::option::Option<crate::types::RealtimeEndpointStatus>,
     ) -> Self {
         self.endpoint_status = input;
         self

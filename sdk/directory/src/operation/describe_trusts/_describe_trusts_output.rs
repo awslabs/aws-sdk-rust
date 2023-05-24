@@ -2,29 +2,29 @@
 
 /// <p>The result of a DescribeTrust request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTrustsOutput {
     /// <p>The list of Trust objects that were retrieved.</p>
     /// <p>It is possible that this list contains less than the number of items specified in the <i>Limit</i> member of the request. This occurs if there are less than the requested number of items left to retrieve, or if the limitations of the operation have been exceeded.</p>
     #[doc(hidden)]
-    pub trusts: std::option::Option<std::vec::Vec<crate::types::Trust>>,
+    pub trusts: ::std::option::Option<::std::vec::Vec<crate::types::Trust>>,
     /// <p>If not null, more results are available. Pass this value for the <i>NextToken</i> parameter in a subsequent call to <code>DescribeTrusts</code> to retrieve the next set of items.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeTrustsOutput {
     /// <p>The list of Trust objects that were retrieved.</p>
     /// <p>It is possible that this list contains less than the number of items specified in the <i>Limit</i> member of the request. This occurs if there are less than the requested number of items left to retrieve, or if the limitations of the operation have been exceeded.</p>
-    pub fn trusts(&self) -> std::option::Option<&[crate::types::Trust]> {
+    pub fn trusts(&self) -> ::std::option::Option<&[crate::types::Trust]> {
         self.trusts.as_deref()
     }
     /// <p>If not null, more results are available. Pass this value for the <i>NextToken</i> parameter in a subsequent call to <code>DescribeTrusts</code> to retrieve the next set of items.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeTrustsOutput {
+impl ::aws_http::request_id::RequestId for DescribeTrustsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -38,10 +38,12 @@ impl DescribeTrustsOutput {
 
 /// A builder for [`DescribeTrustsOutput`](crate::operation::describe_trusts::DescribeTrustsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeTrustsOutputBuilder {
-    pub(crate) trusts: std::option::Option<std::vec::Vec<crate::types::Trust>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) trusts: ::std::option::Option<::std::vec::Vec<crate::types::Trust>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeTrustsOutputBuilder {
@@ -54,25 +56,25 @@ impl DescribeTrustsOutputBuilder {
     pub fn trusts(mut self, input: crate::types::Trust) -> Self {
         let mut v = self.trusts.unwrap_or_default();
         v.push(input);
-        self.trusts = Some(v);
+        self.trusts = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of Trust objects that were retrieved.</p>
     /// <p>It is possible that this list contains less than the number of items specified in the <i>Limit</i> member of the request. This occurs if there are less than the requested number of items left to retrieve, or if the limitations of the operation have been exceeded.</p>
     pub fn set_trusts(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Trust>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Trust>>,
     ) -> Self {
         self.trusts = input;
         self
     }
     /// <p>If not null, more results are available. Pass this value for the <i>NextToken</i> parameter in a subsequent call to <code>DescribeTrusts</code> to retrieve the next set of items.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If not null, more results are available. Pass this value for the <i>NextToken</i> parameter in a subsequent call to <code>DescribeTrusts</code> to retrieve the next set of items.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

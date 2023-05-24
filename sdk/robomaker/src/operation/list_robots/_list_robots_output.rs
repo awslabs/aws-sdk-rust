@@ -4,27 +4,27 @@
     note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
 )]
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRobotsOutput {
     /// <p>A list of robots that meet the criteria of the request.</p>
     #[doc(hidden)]
-    pub robots: std::option::Option<std::vec::Vec<crate::types::Robot>>,
+    pub robots: ::std::option::Option<::std::vec::Vec<crate::types::Robot>>,
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListRobots</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListRobotsOutput {
     /// <p>A list of robots that meet the criteria of the request.</p>
-    pub fn robots(&self) -> std::option::Option<&[crate::types::Robot]> {
+    pub fn robots(&self) -> ::std::option::Option<&[crate::types::Robot]> {
         self.robots.as_deref()
     }
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListRobots</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListRobotsOutput {
+impl ::aws_http::request_id::RequestId for ListRobotsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -38,10 +38,12 @@ impl ListRobotsOutput {
 
 /// A builder for [`ListRobotsOutput`](crate::operation::list_robots::ListRobotsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListRobotsOutputBuilder {
-    pub(crate) robots: std::option::Option<std::vec::Vec<crate::types::Robot>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) robots: ::std::option::Option<::std::vec::Vec<crate::types::Robot>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListRobotsOutputBuilder {
@@ -53,24 +55,24 @@ impl ListRobotsOutputBuilder {
     pub fn robots(mut self, input: crate::types::Robot) -> Self {
         let mut v = self.robots.unwrap_or_default();
         v.push(input);
-        self.robots = Some(v);
+        self.robots = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of robots that meet the criteria of the request.</p>
     pub fn set_robots(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Robot>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Robot>>,
     ) -> Self {
         self.robots = input;
         self
     }
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListRobots</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListRobots</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

@@ -2,15 +2,15 @@
 
 /// <p>The drill down options for data points in a dashbaord.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataPointDrillUpDownOption {
     /// <p>The status of the drill down options of data points.</p>
     #[doc(hidden)]
-    pub availability_status: std::option::Option<crate::types::DashboardBehavior>,
+    pub availability_status: ::std::option::Option<crate::types::DashboardBehavior>,
 }
 impl DataPointDrillUpDownOption {
     /// <p>The status of the drill down options of data points.</p>
-    pub fn availability_status(&self) -> std::option::Option<&crate::types::DashboardBehavior> {
+    pub fn availability_status(&self) -> ::std::option::Option<&crate::types::DashboardBehavior> {
         self.availability_status.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl DataPointDrillUpDownOption {
 
 /// A builder for [`DataPointDrillUpDownOption`](crate::types::DataPointDrillUpDownOption).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DataPointDrillUpDownOptionBuilder {
-    pub(crate) availability_status: std::option::Option<crate::types::DashboardBehavior>,
+    pub(crate) availability_status: ::std::option::Option<crate::types::DashboardBehavior>,
 }
 impl DataPointDrillUpDownOptionBuilder {
     /// <p>The status of the drill down options of data points.</p>
     pub fn availability_status(mut self, input: crate::types::DashboardBehavior) -> Self {
-        self.availability_status = Some(input);
+        self.availability_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the drill down options of data points.</p>
     pub fn set_availability_status(
         mut self,
-        input: std::option::Option<crate::types::DashboardBehavior>,
+        input: ::std::option::Option<crate::types::DashboardBehavior>,
     ) -> Self {
         self.availability_status = input;
         self

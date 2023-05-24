@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetOperationDetail`](crate::operation::get_operation_detail::builders::GetOperationDetailFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`operation_id(impl Into<String>)`](crate::operation::get_operation_detail::builders::GetOperationDetailFluentBuilder::operation_id) / [`set_operation_id(Option<String>)`](crate::operation::get_operation_detail::builders::GetOperationDetailFluentBuilder::set_operation_id): <p>The identifier for the operation for which you want to get the status. Route 53 returned the identifier in the response to the original request.</p>
+    ///   - [`operation_id(impl ::std::convert::Into<String>)`](crate::operation::get_operation_detail::builders::GetOperationDetailFluentBuilder::operation_id) / [`set_operation_id(Option<String>)`](crate::operation::get_operation_detail::builders::GetOperationDetailFluentBuilder::set_operation_id): <p>The identifier for the operation for which you want to get the status. Route 53 returned the identifier in the response to the original request.</p>
     /// - On success, responds with [`GetOperationDetailOutput`](crate::operation::get_operation_detail::GetOperationDetailOutput) with field(s):
     ///   - [`operation_id(Option<String>)`](crate::operation::get_operation_detail::GetOperationDetailOutput::operation_id): <p>The identifier for the operation.</p>
     ///   - [`status(Option<OperationStatus>)`](crate::operation::get_operation_detail::GetOperationDetailOutput::status): <p>The current status of the requested operation in the system.</p>

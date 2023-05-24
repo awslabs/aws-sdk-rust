@@ -11,56 +11,59 @@ pub use crate::operation::create_firewall::_create_firewall_input::CreateFirewal
 /// <p>To update the settings for a firewall, you use the operations that apply to the settings themselves, for example <code>UpdateLoggingConfiguration</code>, <code>AssociateSubnets</code>, and <code>UpdateFirewallDeleteProtection</code>. </p>
 /// <p>To manage a firewall's tags, use the standard Amazon Web Services resource tagging operations, <code>ListTagsForResource</code>, <code>TagResource</code>, and <code>UntagResource</code>.</p>
 /// <p>To retrieve information about firewalls, use <code>ListFirewalls</code> and <code>DescribeFirewall</code>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateFirewallFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_firewall::builders::CreateFirewallInputBuilder,
 }
 impl CreateFirewallFluentBuilder {
     /// Creates a new `CreateFirewall`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_firewall::CreateFirewall,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_firewall::CreateFirewallError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_firewall::CreateFirewallError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_firewall::CreateFirewallOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_firewall::CreateFirewallError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_firewall::CreateFirewallError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -73,44 +76,53 @@ impl CreateFirewallFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_firewall::CreateFirewallOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_firewall::CreateFirewallError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_firewall::CreateFirewallError>,
     > {
         self.send_middleware().await
     }
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
-    pub fn firewall_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn firewall_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.firewall_name(input.into());
         self
     }
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
-    pub fn set_firewall_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_firewall_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_firewall_name(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the <code>FirewallPolicy</code> that you want to use for the firewall.</p>
-    pub fn firewall_policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn firewall_policy_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.firewall_policy_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the <code>FirewallPolicy</code> that you want to use for the firewall.</p>
     pub fn set_firewall_policy_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_firewall_policy_arn(input);
         self
     }
     /// <p>The unique identifier of the VPC where Network Firewall should create the firewall. </p>
     /// <p>You can't change this setting after you create the firewall. </p>
-    pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpc_id(input.into());
         self
     }
     /// <p>The unique identifier of the VPC where Network Firewall should create the firewall. </p>
     /// <p>You can't change this setting after you create the firewall. </p>
-    pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vpc_id(input);
         self
     }
@@ -126,7 +138,7 @@ impl CreateFirewallFluentBuilder {
     /// <p>The public subnets to use for your Network Firewall firewalls. Each subnet must belong to a different Availability Zone in the VPC. Network Firewall creates a firewall endpoint in each subnet. </p>
     pub fn set_subnet_mappings(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SubnetMapping>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SubnetMapping>>,
     ) -> Self {
         self.inner = self.inner.set_subnet_mappings(input);
         self
@@ -137,7 +149,7 @@ impl CreateFirewallFluentBuilder {
         self
     }
     /// <p>A flag indicating whether it is possible to delete the firewall. A setting of <code>TRUE</code> indicates that the firewall is protected against deletion. Use this setting to protect against accidentally deleting a firewall that is in use. When you create a firewall, the operation initializes this flag to <code>TRUE</code>.</p>
-    pub fn set_delete_protection(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_delete_protection(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_delete_protection(input);
         self
     }
@@ -147,7 +159,7 @@ impl CreateFirewallFluentBuilder {
         self
     }
     /// <p>A setting indicating whether the firewall is protected against changes to the subnet associations. Use this setting to protect against accidentally modifying the subnet associations for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
-    pub fn set_subnet_change_protection(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_subnet_change_protection(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_subnet_change_protection(input);
         self
     }
@@ -159,18 +171,18 @@ impl CreateFirewallFluentBuilder {
     /// <p>A setting indicating whether the firewall is protected against a change to the firewall policy association. Use this setting to protect against accidentally modifying the firewall policy for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
     pub fn set_firewall_policy_change_protection(
         mut self,
-        input: std::option::Option<bool>,
+        input: ::std::option::Option<bool>,
     ) -> Self {
         self.inner = self.inner.set_firewall_policy_change_protection(input);
         self
     }
     /// <p>A description of the firewall.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>A description of the firewall.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
@@ -186,7 +198,7 @@ impl CreateFirewallFluentBuilder {
     /// <p>The key:value pairs to associate with the resource.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
@@ -202,7 +214,7 @@ impl CreateFirewallFluentBuilder {
     /// <p>A complex type that contains settings for encryption of your firewall resources.</p>
     pub fn set_encryption_configuration(
         mut self,
-        input: std::option::Option<crate::types::EncryptionConfiguration>,
+        input: ::std::option::Option<crate::types::EncryptionConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_encryption_configuration(input);
         self

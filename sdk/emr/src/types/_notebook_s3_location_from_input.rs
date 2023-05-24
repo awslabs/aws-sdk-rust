@@ -2,22 +2,22 @@
 
 /// <p>The Amazon S3 location that stores the notebook execution input.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NotebookS3LocationFromInput {
     /// <p>The Amazon S3 bucket that stores the notebook execution input.</p>
     #[doc(hidden)]
-    pub bucket: std::option::Option<std::string::String>,
+    pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>The key to the Amazon S3 location that stores the notebook execution input.</p>
     #[doc(hidden)]
-    pub key: std::option::Option<std::string::String>,
+    pub key: ::std::option::Option<::std::string::String>,
 }
 impl NotebookS3LocationFromInput {
     /// <p>The Amazon S3 bucket that stores the notebook execution input.</p>
-    pub fn bucket(&self) -> std::option::Option<&str> {
+    pub fn bucket(&self) -> ::std::option::Option<&str> {
         self.bucket.as_deref()
     }
     /// <p>The key to the Amazon S3 location that stores the notebook execution input.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<&str> {
         self.key.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl NotebookS3LocationFromInput {
 
 /// A builder for [`NotebookS3LocationFromInput`](crate::types::NotebookS3LocationFromInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NotebookS3LocationFromInputBuilder {
-    pub(crate) bucket: std::option::Option<std::string::String>,
-    pub(crate) key: std::option::Option<std::string::String>,
+    pub(crate) bucket: ::std::option::Option<::std::string::String>,
+    pub(crate) key: ::std::option::Option<::std::string::String>,
 }
 impl NotebookS3LocationFromInputBuilder {
     /// <p>The Amazon S3 bucket that stores the notebook execution input.</p>
-    pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
-        self.bucket = Some(input.into());
+    pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.bucket = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon S3 bucket that stores the notebook execution input.</p>
-    pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket = input;
         self
     }
     /// <p>The key to the Amazon S3 location that stores the notebook execution input.</p>
-    pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.key = Some(input.into());
+    pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The key to the Amazon S3 location that stores the notebook execution input.</p>
-    pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key = input;
         self
     }

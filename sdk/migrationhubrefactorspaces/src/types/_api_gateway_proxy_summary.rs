@@ -2,57 +2,57 @@
 
 /// <p>A wrapper object holding the Amazon API Gateway proxy summary. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApiGatewayProxySummary {
     /// <p>The endpoint URL of the API Gateway proxy. </p>
     #[doc(hidden)]
-    pub proxy_url: std::option::Option<std::string::String>,
+    pub proxy_url: ::std::option::Option<::std::string::String>,
     /// <p>The resource ID of the API Gateway for the proxy. </p>
     #[doc(hidden)]
-    pub api_gateway_id: std::option::Option<std::string::String>,
+    pub api_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The <code>VpcLink</code> ID of the API Gateway proxy. </p>
     #[doc(hidden)]
-    pub vpc_link_id: std::option::Option<std::string::String>,
+    pub vpc_link_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Network Load Balancer configured by the API Gateway proxy. </p>
     #[doc(hidden)]
-    pub nlb_arn: std::option::Option<std::string::String>,
+    pub nlb_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Network Load Balancer that is configured by the API Gateway proxy. </p>
     #[doc(hidden)]
-    pub nlb_name: std::option::Option<std::string::String>,
+    pub nlb_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of API Gateway endpoint created. </p>
     #[doc(hidden)]
-    pub endpoint_type: std::option::Option<crate::types::ApiGatewayEndpointType>,
+    pub endpoint_type: ::std::option::Option<crate::types::ApiGatewayEndpointType>,
     /// <p>The name of the API Gateway stage. The name defaults to <code>prod</code>. </p>
     #[doc(hidden)]
-    pub stage_name: std::option::Option<std::string::String>,
+    pub stage_name: ::std::option::Option<::std::string::String>,
 }
 impl ApiGatewayProxySummary {
     /// <p>The endpoint URL of the API Gateway proxy. </p>
-    pub fn proxy_url(&self) -> std::option::Option<&str> {
+    pub fn proxy_url(&self) -> ::std::option::Option<&str> {
         self.proxy_url.as_deref()
     }
     /// <p>The resource ID of the API Gateway for the proxy. </p>
-    pub fn api_gateway_id(&self) -> std::option::Option<&str> {
+    pub fn api_gateway_id(&self) -> ::std::option::Option<&str> {
         self.api_gateway_id.as_deref()
     }
     /// <p>The <code>VpcLink</code> ID of the API Gateway proxy. </p>
-    pub fn vpc_link_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_link_id(&self) -> ::std::option::Option<&str> {
         self.vpc_link_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Network Load Balancer configured by the API Gateway proxy. </p>
-    pub fn nlb_arn(&self) -> std::option::Option<&str> {
+    pub fn nlb_arn(&self) -> ::std::option::Option<&str> {
         self.nlb_arn.as_deref()
     }
     /// <p>The name of the Network Load Balancer that is configured by the API Gateway proxy. </p>
-    pub fn nlb_name(&self) -> std::option::Option<&str> {
+    pub fn nlb_name(&self) -> ::std::option::Option<&str> {
         self.nlb_name.as_deref()
     }
     /// <p>The type of API Gateway endpoint created. </p>
-    pub fn endpoint_type(&self) -> std::option::Option<&crate::types::ApiGatewayEndpointType> {
+    pub fn endpoint_type(&self) -> ::std::option::Option<&crate::types::ApiGatewayEndpointType> {
         self.endpoint_type.as_ref()
     }
     /// <p>The name of the API Gateway stage. The name defaults to <code>prod</code>. </p>
-    pub fn stage_name(&self) -> std::option::Option<&str> {
+    pub fn stage_name(&self) -> ::std::option::Option<&str> {
         self.stage_name.as_deref()
     }
 }
@@ -65,87 +65,95 @@ impl ApiGatewayProxySummary {
 
 /// A builder for [`ApiGatewayProxySummary`](crate::types::ApiGatewayProxySummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ApiGatewayProxySummaryBuilder {
-    pub(crate) proxy_url: std::option::Option<std::string::String>,
-    pub(crate) api_gateway_id: std::option::Option<std::string::String>,
-    pub(crate) vpc_link_id: std::option::Option<std::string::String>,
-    pub(crate) nlb_arn: std::option::Option<std::string::String>,
-    pub(crate) nlb_name: std::option::Option<std::string::String>,
-    pub(crate) endpoint_type: std::option::Option<crate::types::ApiGatewayEndpointType>,
-    pub(crate) stage_name: std::option::Option<std::string::String>,
+    pub(crate) proxy_url: ::std::option::Option<::std::string::String>,
+    pub(crate) api_gateway_id: ::std::option::Option<::std::string::String>,
+    pub(crate) vpc_link_id: ::std::option::Option<::std::string::String>,
+    pub(crate) nlb_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) nlb_name: ::std::option::Option<::std::string::String>,
+    pub(crate) endpoint_type: ::std::option::Option<crate::types::ApiGatewayEndpointType>,
+    pub(crate) stage_name: ::std::option::Option<::std::string::String>,
 }
 impl ApiGatewayProxySummaryBuilder {
     /// <p>The endpoint URL of the API Gateway proxy. </p>
-    pub fn proxy_url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.proxy_url = Some(input.into());
+    pub fn proxy_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.proxy_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The endpoint URL of the API Gateway proxy. </p>
-    pub fn set_proxy_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_proxy_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.proxy_url = input;
         self
     }
     /// <p>The resource ID of the API Gateway for the proxy. </p>
-    pub fn api_gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.api_gateway_id = Some(input.into());
+    pub fn api_gateway_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.api_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The resource ID of the API Gateway for the proxy. </p>
-    pub fn set_api_gateway_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_api_gateway_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.api_gateway_id = input;
         self
     }
     /// <p>The <code>VpcLink</code> ID of the API Gateway proxy. </p>
-    pub fn vpc_link_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.vpc_link_id = Some(input.into());
+    pub fn vpc_link_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.vpc_link_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>VpcLink</code> ID of the API Gateway proxy. </p>
-    pub fn set_vpc_link_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_vpc_link_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_link_id = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Network Load Balancer configured by the API Gateway proxy. </p>
-    pub fn nlb_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.nlb_arn = Some(input.into());
+    pub fn nlb_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.nlb_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Network Load Balancer configured by the API Gateway proxy. </p>
-    pub fn set_nlb_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_nlb_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.nlb_arn = input;
         self
     }
     /// <p>The name of the Network Load Balancer that is configured by the API Gateway proxy. </p>
-    pub fn nlb_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.nlb_name = Some(input.into());
+    pub fn nlb_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.nlb_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Network Load Balancer that is configured by the API Gateway proxy. </p>
-    pub fn set_nlb_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_nlb_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.nlb_name = input;
         self
     }
     /// <p>The type of API Gateway endpoint created. </p>
     pub fn endpoint_type(mut self, input: crate::types::ApiGatewayEndpointType) -> Self {
-        self.endpoint_type = Some(input);
+        self.endpoint_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of API Gateway endpoint created. </p>
     pub fn set_endpoint_type(
         mut self,
-        input: std::option::Option<crate::types::ApiGatewayEndpointType>,
+        input: ::std::option::Option<crate::types::ApiGatewayEndpointType>,
     ) -> Self {
         self.endpoint_type = input;
         self
     }
     /// <p>The name of the API Gateway stage. The name defaults to <code>prod</code>. </p>
-    pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.stage_name = Some(input.into());
+    pub fn stage_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.stage_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the API Gateway stage. The name defaults to <code>prod</code>. </p>
-    pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_stage_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stage_name = input;
         self
     }

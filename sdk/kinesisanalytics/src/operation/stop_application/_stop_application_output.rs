@@ -2,11 +2,11 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopApplicationOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for StopApplicationOutput {
+impl ::aws_http::request_id::RequestId for StopApplicationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -20,7 +20,9 @@ impl StopApplicationOutput {
 
 /// A builder for [`StopApplicationOutput`](crate::operation::stop_application::StopApplicationOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StopApplicationOutputBuilder {
     _request_id: Option<String>,
 }

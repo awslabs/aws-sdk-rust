@@ -2,22 +2,22 @@
 
 /// <p>A list of PropertyFilter objects.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PropertyFilters {
     /// <p>A list of Property Filters.</p>
     #[doc(hidden)]
-    pub properties: std::option::Option<std::vec::Vec<crate::types::PropertyFilter>>,
+    pub properties: ::std::option::Option<::std::vec::Vec<crate::types::PropertyFilter>>,
     /// <p>The Logical Operator used to combine the Property Filters.</p>
     #[doc(hidden)]
-    pub logical_operator: std::option::Option<crate::types::LogicalOperator>,
+    pub logical_operator: ::std::option::Option<crate::types::LogicalOperator>,
 }
 impl PropertyFilters {
     /// <p>A list of Property Filters.</p>
-    pub fn properties(&self) -> std::option::Option<&[crate::types::PropertyFilter]> {
+    pub fn properties(&self) -> ::std::option::Option<&[crate::types::PropertyFilter]> {
         self.properties.as_deref()
     }
     /// <p>The Logical Operator used to combine the Property Filters.</p>
-    pub fn logical_operator(&self) -> std::option::Option<&crate::types::LogicalOperator> {
+    pub fn logical_operator(&self) -> ::std::option::Option<&crate::types::LogicalOperator> {
         self.logical_operator.as_ref()
     }
 }
@@ -30,10 +30,12 @@ impl PropertyFilters {
 
 /// A builder for [`PropertyFilters`](crate::types::PropertyFilters).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PropertyFiltersBuilder {
-    pub(crate) properties: std::option::Option<std::vec::Vec<crate::types::PropertyFilter>>,
-    pub(crate) logical_operator: std::option::Option<crate::types::LogicalOperator>,
+    pub(crate) properties: ::std::option::Option<::std::vec::Vec<crate::types::PropertyFilter>>,
+    pub(crate) logical_operator: ::std::option::Option<crate::types::LogicalOperator>,
 }
 impl PropertyFiltersBuilder {
     /// Appends an item to `properties`.
@@ -44,26 +46,26 @@ impl PropertyFiltersBuilder {
     pub fn properties(mut self, input: crate::types::PropertyFilter) -> Self {
         let mut v = self.properties.unwrap_or_default();
         v.push(input);
-        self.properties = Some(v);
+        self.properties = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of Property Filters.</p>
     pub fn set_properties(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PropertyFilter>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PropertyFilter>>,
     ) -> Self {
         self.properties = input;
         self
     }
     /// <p>The Logical Operator used to combine the Property Filters.</p>
     pub fn logical_operator(mut self, input: crate::types::LogicalOperator) -> Self {
-        self.logical_operator = Some(input);
+        self.logical_operator = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Logical Operator used to combine the Property Filters.</p>
     pub fn set_logical_operator(
         mut self,
-        input: std::option::Option<crate::types::LogicalOperator>,
+        input: ::std::option::Option<crate::types::LogicalOperator>,
     ) -> Self {
         self.logical_operator = input;
         self

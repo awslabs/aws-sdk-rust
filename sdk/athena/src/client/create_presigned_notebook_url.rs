@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreatePresignedNotebookUrl`](crate::operation::create_presigned_notebook_url::builders::CreatePresignedNotebookUrlFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`session_id(impl Into<String>)`](crate::operation::create_presigned_notebook_url::builders::CreatePresignedNotebookUrlFluentBuilder::session_id) / [`set_session_id(Option<String>)`](crate::operation::create_presigned_notebook_url::builders::CreatePresignedNotebookUrlFluentBuilder::set_session_id): <p>The session ID.</p>
+    ///   - [`session_id(impl ::std::convert::Into<String>)`](crate::operation::create_presigned_notebook_url::builders::CreatePresignedNotebookUrlFluentBuilder::session_id) / [`set_session_id(Option<String>)`](crate::operation::create_presigned_notebook_url::builders::CreatePresignedNotebookUrlFluentBuilder::set_session_id): <p>The session ID.</p>
     /// - On success, responds with [`CreatePresignedNotebookUrlOutput`](crate::operation::create_presigned_notebook_url::CreatePresignedNotebookUrlOutput) with field(s):
     ///   - [`notebook_url(Option<String>)`](crate::operation::create_presigned_notebook_url::CreatePresignedNotebookUrlOutput::notebook_url): <p>The URL of the notebook. The URL includes the authentication token and notebook file name and points directly to the opened notebook.</p>
     ///   - [`auth_token(Option<String>)`](crate::operation::create_presigned_notebook_url::CreatePresignedNotebookUrlOutput::auth_token): <p>The authentication token for the notebook.</p>

@@ -2,26 +2,28 @@
 
 /// <p>The fraud prediction scores from Amazon SageMaker model.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExternalModelOutputs {
     /// <p>The Amazon SageMaker model.</p>
     #[doc(hidden)]
-    pub external_model: std::option::Option<crate::types::ExternalModelSummary>,
+    pub external_model: ::std::option::Option<crate::types::ExternalModelSummary>,
     /// <p>The fraud prediction scores from Amazon SageMaker model.</p>
     #[doc(hidden)]
-    pub outputs:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub outputs: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl ExternalModelOutputs {
     /// <p>The Amazon SageMaker model.</p>
-    pub fn external_model(&self) -> std::option::Option<&crate::types::ExternalModelSummary> {
+    pub fn external_model(&self) -> ::std::option::Option<&crate::types::ExternalModelSummary> {
         self.external_model.as_ref()
     }
     /// <p>The fraud prediction scores from Amazon SageMaker model.</p>
     pub fn outputs(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.outputs.as_ref()
     }
 }
@@ -34,22 +36,25 @@ impl ExternalModelOutputs {
 
 /// A builder for [`ExternalModelOutputs`](crate::types::ExternalModelOutputs).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ExternalModelOutputsBuilder {
-    pub(crate) external_model: std::option::Option<crate::types::ExternalModelSummary>,
-    pub(crate) outputs:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) external_model: ::std::option::Option<crate::types::ExternalModelSummary>,
+    pub(crate) outputs: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl ExternalModelOutputsBuilder {
     /// <p>The Amazon SageMaker model.</p>
     pub fn external_model(mut self, input: crate::types::ExternalModelSummary) -> Self {
-        self.external_model = Some(input);
+        self.external_model = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Amazon SageMaker model.</p>
     pub fn set_external_model(
         mut self,
-        input: std::option::Option<crate::types::ExternalModelSummary>,
+        input: ::std::option::Option<crate::types::ExternalModelSummary>,
     ) -> Self {
         self.external_model = input;
         self
@@ -61,19 +66,19 @@ impl ExternalModelOutputsBuilder {
     /// <p>The fraud prediction scores from Amazon SageMaker model.</p>
     pub fn outputs(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.outputs.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.outputs = Some(hash_map);
+        self.outputs = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The fraud prediction scores from Amazon SageMaker model.</p>
     pub fn set_outputs(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.outputs = input;

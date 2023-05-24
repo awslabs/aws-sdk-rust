@@ -2,75 +2,77 @@
 
 /// <p>This entity describes a job template. Job template stores values of StartJobRun API request in a template and can be used to start a job run. Job template allows two use cases: avoid repeating recurring StartJobRun API request values, enforcing certain values in StartJobRun API request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobTemplate {
     /// <p>The name of the job template.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the job template.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the job template.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p> The date and time when the job template was created.</p>
     #[doc(hidden)]
-    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The user who created the job template.</p>
     #[doc(hidden)]
-    pub created_by: std::option::Option<std::string::String>,
+    pub created_by: ::std::option::Option<::std::string::String>,
     /// <p>The tags assigned to the job template.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>The job template data which holds values of StartJobRun API request.</p>
     #[doc(hidden)]
-    pub job_template_data: std::option::Option<crate::types::JobTemplateData>,
+    pub job_template_data: ::std::option::Option<crate::types::JobTemplateData>,
     /// <p> The KMS key ARN used to encrypt the job template.</p>
     #[doc(hidden)]
-    pub kms_key_arn: std::option::Option<std::string::String>,
+    pub kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The error message in case the decryption of job template fails.</p>
     #[doc(hidden)]
-    pub decryption_error: std::option::Option<std::string::String>,
+    pub decryption_error: ::std::option::Option<::std::string::String>,
 }
 impl JobTemplate {
     /// <p>The name of the job template.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The ID of the job template.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The ARN of the job template.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p> The date and time when the job template was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p> The user who created the job template.</p>
-    pub fn created_by(&self) -> std::option::Option<&str> {
+    pub fn created_by(&self) -> ::std::option::Option<&str> {
         self.created_by.as_deref()
     }
     /// <p>The tags assigned to the job template.</p>
     pub fn tags(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.tags.as_ref()
     }
     /// <p>The job template data which holds values of StartJobRun API request.</p>
-    pub fn job_template_data(&self) -> std::option::Option<&crate::types::JobTemplateData> {
+    pub fn job_template_data(&self) -> ::std::option::Option<&crate::types::JobTemplateData> {
         self.job_template_data.as_ref()
     }
     /// <p> The KMS key ARN used to encrypt the job template.</p>
-    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+    pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
     /// <p>The error message in case the decryption of job template fails.</p>
-    pub fn decryption_error(&self) -> std::option::Option<&str> {
+    pub fn decryption_error(&self) -> ::std::option::Option<&str> {
         self.decryption_error.as_deref()
     }
 }
@@ -83,70 +85,73 @@ impl JobTemplate {
 
 /// A builder for [`JobTemplate`](crate::types::JobTemplate).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct JobTemplateBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) created_by: std::option::Option<std::string::String>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) job_template_data: std::option::Option<crate::types::JobTemplateData>,
-    pub(crate) kms_key_arn: std::option::Option<std::string::String>,
-    pub(crate) decryption_error: std::option::Option<std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) created_by: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) job_template_data: ::std::option::Option<crate::types::JobTemplateData>,
+    pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) decryption_error: ::std::option::Option<::std::string::String>,
 }
 impl JobTemplateBuilder {
     /// <p>The name of the job template.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the job template.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The ID of the job template.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the job template.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>The ARN of the job template.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the job template.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// <p> The date and time when the job template was created.</p>
-    pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_at = Some(input);
+    pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_at = ::std::option::Option::Some(input);
         self
     }
     /// <p> The date and time when the job template was created.</p>
     pub fn set_created_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_at = input;
         self
     }
     /// <p> The user who created the job template.</p>
-    pub fn created_by(mut self, input: impl Into<std::string::String>) -> Self {
-        self.created_by = Some(input.into());
+    pub fn created_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.created_by = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The user who created the job template.</p>
-    pub fn set_created_by(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_created_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_by = input;
         self
     }
@@ -157,19 +162,19 @@ impl JobTemplateBuilder {
     /// <p>The tags assigned to the job template.</p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
+        self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags assigned to the job template.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.tags = input;
@@ -177,34 +182,40 @@ impl JobTemplateBuilder {
     }
     /// <p>The job template data which holds values of StartJobRun API request.</p>
     pub fn job_template_data(mut self, input: crate::types::JobTemplateData) -> Self {
-        self.job_template_data = Some(input);
+        self.job_template_data = ::std::option::Option::Some(input);
         self
     }
     /// <p>The job template data which holds values of StartJobRun API request.</p>
     pub fn set_job_template_data(
         mut self,
-        input: std::option::Option<crate::types::JobTemplateData>,
+        input: ::std::option::Option<crate::types::JobTemplateData>,
     ) -> Self {
         self.job_template_data = input;
         self
     }
     /// <p> The KMS key ARN used to encrypt the job template.</p>
-    pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.kms_key_arn = Some(input.into());
+    pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The KMS key ARN used to encrypt the job template.</p>
-    pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_arn = input;
         self
     }
     /// <p>The error message in case the decryption of job template fails.</p>
-    pub fn decryption_error(mut self, input: impl Into<std::string::String>) -> Self {
-        self.decryption_error = Some(input.into());
+    pub fn decryption_error(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.decryption_error = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The error message in case the decryption of job template fails.</p>
-    pub fn set_decryption_error(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_decryption_error(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.decryption_error = input;
         self
     }

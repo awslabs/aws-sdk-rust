@@ -2,22 +2,22 @@
 
 /// <p>The HTTP header.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HttpHeader {
     /// <p>The header name.</p>
     #[doc(hidden)]
-    pub header_name: std::option::Option<std::string::String>,
+    pub header_name: ::std::option::Option<::std::string::String>,
     /// <p>The header value.</p>
     #[doc(hidden)]
-    pub header_value: std::option::Option<std::string::String>,
+    pub header_value: ::std::option::Option<::std::string::String>,
 }
 impl HttpHeader {
     /// <p>The header name.</p>
-    pub fn header_name(&self) -> std::option::Option<&str> {
+    pub fn header_name(&self) -> ::std::option::Option<&str> {
         self.header_name.as_deref()
     }
     /// <p>The header value.</p>
-    pub fn header_value(&self) -> std::option::Option<&str> {
+    pub fn header_value(&self) -> ::std::option::Option<&str> {
         self.header_value.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl HttpHeader {
 
 /// A builder for [`HttpHeader`](crate::types::HttpHeader).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct HttpHeaderBuilder {
-    pub(crate) header_name: std::option::Option<std::string::String>,
-    pub(crate) header_value: std::option::Option<std::string::String>,
+    pub(crate) header_name: ::std::option::Option<::std::string::String>,
+    pub(crate) header_value: ::std::option::Option<::std::string::String>,
 }
 impl HttpHeaderBuilder {
     /// <p>The header name.</p>
-    pub fn header_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.header_name = Some(input.into());
+    pub fn header_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.header_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The header name.</p>
-    pub fn set_header_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_header_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.header_name = input;
         self
     }
     /// <p>The header value.</p>
-    pub fn header_value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.header_value = Some(input.into());
+    pub fn header_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.header_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The header value.</p>
-    pub fn set_header_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_header_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.header_value = input;
         self
     }

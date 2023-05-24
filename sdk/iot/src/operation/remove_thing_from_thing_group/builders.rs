@@ -8,29 +8,29 @@ pub use crate::operation::remove_thing_from_thing_group::_remove_thing_from_thin
 /// <p>Remove the specified thing from the specified group.</p>
 /// <p>You must specify either a <code>thingGroupArn</code> or a <code>thingGroupName</code> to identify the thing group and either a <code>thingArn</code> or a <code>thingName</code> to identify the thing to remove from the thing group. </p>
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">RemoveThingFromThingGroup</a> action.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RemoveThingFromThingGroupFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::remove_thing_from_thing_group::builders::RemoveThingFromThingGroupInputBuilder,
 }
 impl RemoveThingFromThingGroupFluentBuilder {
     /// Creates a new `RemoveThingFromThingGroup`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::remove_thing_from_thing_group::RemoveThingFromThingGroup,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::remove_thing_from_thing_group::RemoveThingFromThingGroupError,
         >,
     > {
@@ -38,30 +38,33 @@ impl RemoveThingFromThingGroupFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::remove_thing_from_thing_group::RemoveThingFromThingGroupOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::remove_thing_from_thing_group::RemoveThingFromThingGroupError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -74,51 +77,63 @@ impl RemoveThingFromThingGroupFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::remove_thing_from_thing_group::RemoveThingFromThingGroupOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::remove_thing_from_thing_group::RemoveThingFromThingGroupError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The group name.</p>
-    pub fn thing_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn thing_group_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.thing_group_name(input.into());
         self
     }
     /// <p>The group name.</p>
-    pub fn set_thing_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_thing_group_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_thing_group_name(input);
         self
     }
     /// <p>The group ARN.</p>
-    pub fn thing_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn thing_group_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.thing_group_arn(input.into());
         self
     }
     /// <p>The group ARN.</p>
-    pub fn set_thing_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_thing_group_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_thing_group_arn(input);
         self
     }
     /// <p>The name of the thing to remove from the group.</p>
-    pub fn thing_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn thing_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.thing_name(input.into());
         self
     }
     /// <p>The name of the thing to remove from the group.</p>
-    pub fn set_thing_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_thing_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_thing_name(input);
         self
     }
     /// <p>The ARN of the thing to remove from the group.</p>
-    pub fn thing_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn thing_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.thing_arn(input.into());
         self
     }
     /// <p>The ARN of the thing to remove from the group.</p>
-    pub fn set_thing_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_thing_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_thing_arn(input);
         self
     }

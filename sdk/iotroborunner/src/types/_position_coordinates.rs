@@ -2,7 +2,7 @@
 
 /// Supported coordinates for worker position.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum PositionCoordinates {
     /// Cartesian coordinates.
     CartesianCoordinates(crate::types::CartesianCoordinates),
@@ -22,11 +22,11 @@ impl PositionCoordinates {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_cartesian_coordinates(
         &self,
-    ) -> std::result::Result<&crate::types::CartesianCoordinates, &Self> {
+    ) -> ::std::result::Result<&crate::types::CartesianCoordinates, &Self> {
         if let PositionCoordinates::CartesianCoordinates(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`CartesianCoordinates`](crate::types::PositionCoordinates::CartesianCoordinates).

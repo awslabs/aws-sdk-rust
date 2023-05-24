@@ -2,15 +2,15 @@
 
 /// <p>The object that contains a path format that will be applied when Amazon Lex reads the transcript file in the bucket you provide. Specify this object if you only want Lex to read a subset of files in your Amazon S3 bucket.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PathFormat {
     /// <p>A list of Amazon S3 prefixes that points to sub-folders in the Amazon S3 bucket. Specify this list if you only want Lex to read the files under this set of sub-folders.</p>
     #[doc(hidden)]
-    pub object_prefixes: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub object_prefixes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl PathFormat {
     /// <p>A list of Amazon S3 prefixes that points to sub-folders in the Amazon S3 bucket. Specify this list if you only want Lex to read the files under this set of sub-folders.</p>
-    pub fn object_prefixes(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn object_prefixes(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.object_prefixes.as_deref()
     }
 }
@@ -23,9 +23,11 @@ impl PathFormat {
 
 /// A builder for [`PathFormat`](crate::types::PathFormat).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PathFormatBuilder {
-    pub(crate) object_prefixes: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) object_prefixes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl PathFormatBuilder {
     /// Appends an item to `object_prefixes`.
@@ -33,16 +35,19 @@ impl PathFormatBuilder {
     /// To override the contents of this collection use [`set_object_prefixes`](Self::set_object_prefixes).
     ///
     /// <p>A list of Amazon S3 prefixes that points to sub-folders in the Amazon S3 bucket. Specify this list if you only want Lex to read the files under this set of sub-folders.</p>
-    pub fn object_prefixes(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn object_prefixes(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.object_prefixes.unwrap_or_default();
         v.push(input.into());
-        self.object_prefixes = Some(v);
+        self.object_prefixes = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of Amazon S3 prefixes that points to sub-folders in the Amazon S3 bucket. Specify this list if you only want Lex to read the files under this set of sub-folders.</p>
     pub fn set_object_prefixes(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.object_prefixes = input;
         self

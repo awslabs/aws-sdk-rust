@@ -46,29 +46,29 @@ pub use crate::operation::get_hls_streaming_session_url::_get_hls_streaming_sess
 /// <p>Both the HTTP status code and the ErrorType header can be utilized to make programmatic decisions about whether errors are retry-able and under what conditions, as well as provide information on what actions the client programmer might need to take in order to successfully try again.</p>
 /// <p>For more information, see the <b>Errors</b> section at the bottom of this topic, as well as <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/CommonErrors.html">Common Errors</a>. </p>
 /// </important>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetHLSStreamingSessionURLFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::get_hls_streaming_session_url::builders::GetHlsStreamingSessionUrlInputBuilder,
 }
 impl GetHLSStreamingSessionURLFluentBuilder {
     /// Creates a new `GetHLSStreamingSessionURL`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::get_hls_streaming_session_url::GetHLSStreamingSessionURL,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::get_hls_streaming_session_url::GetHLSStreamingSessionURLError,
         >,
     > {
@@ -76,30 +76,33 @@ impl GetHLSStreamingSessionURLFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_hls_streaming_session_url::GetHlsStreamingSessionUrlOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::get_hls_streaming_session_url::GetHLSStreamingSessionURLError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -112,9 +115,9 @@ impl GetHLSStreamingSessionURLFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_hls_streaming_session_url::GetHlsStreamingSessionUrlOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::get_hls_streaming_session_url::GetHLSStreamingSessionURLError,
         >,
     > {
@@ -122,25 +125,25 @@ impl GetHLSStreamingSessionURLFluentBuilder {
     }
     /// <p>The name of the stream for which to retrieve the HLS master playlist URL.</p>
     /// <p>You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
-    pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stream_name(input.into());
         self
     }
     /// <p>The name of the stream for which to retrieve the HLS master playlist URL.</p>
     /// <p>You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
-    pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stream_name(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the stream for which to retrieve the HLS master playlist URL.</p>
     /// <p>You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
-    pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stream_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the stream for which to retrieve the HLS master playlist URL.</p>
     /// <p>You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
-    pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stream_arn(input);
         self
     }
@@ -172,7 +175,7 @@ impl GetHLSStreamingSessionURLFluentBuilder {
     /// <p>The default is <code>LIVE</code>.</p>
     pub fn set_playback_mode(
         mut self,
-        input: std::option::Option<crate::types::HlsPlaybackMode>,
+        input: ::std::option::Option<crate::types::HlsPlaybackMode>,
     ) -> Self {
         self.inner = self.inner.set_playback_mode(input);
         self
@@ -187,7 +190,7 @@ impl GetHLSStreamingSessionURLFluentBuilder {
     /// <p>This parameter is required if <code>PlaybackMode</code> is <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>. This parameter is optional if PlaybackMode is<code></code> <code>LIVE</code>. If <code>PlaybackMode</code> is <code>LIVE</code>, the <code>FragmentSelectorType</code> can be set, but the <code>TimestampRange</code> should not be set. If <code>PlaybackMode</code> is <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>, both <code>FragmentSelectorType</code> and <code>TimestampRange</code> must be set.</p>
     pub fn set_hls_fragment_selector(
         mut self,
-        input: std::option::Option<crate::types::HlsFragmentSelector>,
+        input: ::std::option::Option<crate::types::HlsFragmentSelector>,
     ) -> Self {
         self.inner = self.inner.set_hls_fragment_selector(input);
         self
@@ -202,7 +205,7 @@ impl GetHLSStreamingSessionURLFluentBuilder {
     /// <p>The default is <code>FRAGMENTED_MP4</code>.</p>
     pub fn set_container_format(
         mut self,
-        input: std::option::Option<crate::types::ContainerFormat>,
+        input: ::std::option::Option<crate::types::ContainerFormat>,
     ) -> Self {
         self.inner = self.inner.set_container_format(input);
         self
@@ -231,7 +234,7 @@ impl GetHLSStreamingSessionURLFluentBuilder {
     /// <p>The default is <code>ALWAYS</code> when <code>HLSFragmentSelector</code> is set to <code>SERVER_TIMESTAMP</code>, and <code>NEVER</code> when it is set to <code>PRODUCER_TIMESTAMP</code>.</p>
     pub fn set_discontinuity_mode(
         mut self,
-        input: std::option::Option<crate::types::HlsDiscontinuityMode>,
+        input: ::std::option::Option<crate::types::HlsDiscontinuityMode>,
     ) -> Self {
         self.inner = self.inner.set_discontinuity_mode(input);
         self
@@ -249,7 +252,7 @@ impl GetHLSStreamingSessionURLFluentBuilder {
     /// <p>The default is <code>NEVER</code>. When <code>HLSFragmentSelector</code> is <code>SERVER_TIMESTAMP</code>, the timestamps will be the server start timestamps. Similarly, when <code>HLSFragmentSelector</code> is <code>PRODUCER_TIMESTAMP</code>, the timestamps will be the producer start timestamps. </p>
     pub fn set_display_fragment_timestamp(
         mut self,
-        input: std::option::Option<crate::types::HlsDisplayFragmentTimestamp>,
+        input: ::std::option::Option<crate::types::HlsDisplayFragmentTimestamp>,
     ) -> Self {
         self.inner = self.inner.set_display_fragment_timestamp(input);
         self
@@ -264,7 +267,7 @@ impl GetHLSStreamingSessionURLFluentBuilder {
     /// <p>The time in seconds until the requested session expires. This value can be between 300 (5 minutes) and 43200 (12 hours).</p>
     /// <p>When a session expires, no new calls to <code>GetHLSMasterPlaylist</code>, <code>GetHLSMediaPlaylist</code>, <code>GetMP4InitFragment</code>, <code>GetMP4MediaFragment</code>, or <code>GetTSFragment</code> can be made for that session.</p>
     /// <p>The default is 300 (5 minutes).</p>
-    pub fn set_expires(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_expires(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_expires(input);
         self
     }
@@ -284,7 +287,7 @@ impl GetHLSStreamingSessionURLFluentBuilder {
     /// <p>The maximum value of 5,000 fragments corresponds to more than 80 minutes of video on streams with 1-second fragments, and more than 13 hours of video on streams with 10-second fragments.</p>
     pub fn set_max_media_playlist_fragment_results(
         mut self,
-        input: std::option::Option<i64>,
+        input: ::std::option::Option<i64>,
     ) -> Self {
         self.inner = self.inner.set_max_media_playlist_fragment_results(input);
         self

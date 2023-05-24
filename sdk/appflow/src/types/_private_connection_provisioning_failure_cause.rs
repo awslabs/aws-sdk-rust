@@ -41,13 +41,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum PrivateConnectionProvisioningFailureCause {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,7 +63,7 @@ pub enum PrivateConnectionProvisioningFailureCause {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for PrivateConnectionProvisioningFailureCause {
+impl ::std::convert::From<&str> for PrivateConnectionProvisioningFailureCause {
     fn from(s: &str) -> Self {
         match s {
             "ACCESS_DENIED" => PrivateConnectionProvisioningFailureCause::AccessDenied,
@@ -79,11 +79,11 @@ impl std::convert::From<&str> for PrivateConnectionProvisioningFailureCause {
         }
     }
 }
-impl std::str::FromStr for PrivateConnectionProvisioningFailureCause {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for PrivateConnectionProvisioningFailureCause {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PrivateConnectionProvisioningFailureCause::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(PrivateConnectionProvisioningFailureCause::from(s))
     }
 }
 impl PrivateConnectionProvisioningFailureCause {
@@ -111,7 +111,7 @@ impl PrivateConnectionProvisioningFailureCause {
         ]
     }
 }
-impl AsRef<str> for PrivateConnectionProvisioningFailureCause {
+impl ::std::convert::AsRef<str> for PrivateConnectionProvisioningFailureCause {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

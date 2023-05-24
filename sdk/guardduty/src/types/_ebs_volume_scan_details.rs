@@ -2,57 +2,57 @@
 
 /// <p>Contains details from the malware scan that created a finding.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EbsVolumeScanDetails {
     /// <p>Unique Id of the malware scan that generated the finding.</p>
     #[doc(hidden)]
-    pub scan_id: std::option::Option<std::string::String>,
+    pub scan_id: ::std::option::Option<::std::string::String>,
     /// <p>Returns the start date and time of the malware scan.</p>
     #[doc(hidden)]
-    pub scan_started_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub scan_started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Returns the completion date and time of the malware scan.</p>
     #[doc(hidden)]
-    pub scan_completed_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub scan_completed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>GuardDuty finding ID that triggered a malware scan.</p>
     #[doc(hidden)]
-    pub trigger_finding_id: std::option::Option<std::string::String>,
+    pub trigger_finding_id: ::std::option::Option<::std::string::String>,
     /// <p>Contains list of threat intelligence sources used to detect threats.</p>
     #[doc(hidden)]
-    pub sources: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub sources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Contains a complete view providing malware scan result details.</p>
     #[doc(hidden)]
-    pub scan_detections: std::option::Option<crate::types::ScanDetections>,
+    pub scan_detections: ::std::option::Option<crate::types::ScanDetections>,
     /// <p>Specifies the scan type that invoked the malware scan.</p>
     #[doc(hidden)]
-    pub scan_type: std::option::Option<crate::types::ScanType>,
+    pub scan_type: ::std::option::Option<crate::types::ScanType>,
 }
 impl EbsVolumeScanDetails {
     /// <p>Unique Id of the malware scan that generated the finding.</p>
-    pub fn scan_id(&self) -> std::option::Option<&str> {
+    pub fn scan_id(&self) -> ::std::option::Option<&str> {
         self.scan_id.as_deref()
     }
     /// <p>Returns the start date and time of the malware scan.</p>
-    pub fn scan_started_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn scan_started_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.scan_started_at.as_ref()
     }
     /// <p>Returns the completion date and time of the malware scan.</p>
-    pub fn scan_completed_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn scan_completed_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.scan_completed_at.as_ref()
     }
     /// <p>GuardDuty finding ID that triggered a malware scan.</p>
-    pub fn trigger_finding_id(&self) -> std::option::Option<&str> {
+    pub fn trigger_finding_id(&self) -> ::std::option::Option<&str> {
         self.trigger_finding_id.as_deref()
     }
     /// <p>Contains list of threat intelligence sources used to detect threats.</p>
-    pub fn sources(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn sources(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.sources.as_deref()
     }
     /// <p>Contains a complete view providing malware scan result details.</p>
-    pub fn scan_detections(&self) -> std::option::Option<&crate::types::ScanDetections> {
+    pub fn scan_detections(&self) -> ::std::option::Option<&crate::types::ScanDetections> {
         self.scan_detections.as_ref()
     }
     /// <p>Specifies the scan type that invoked the malware scan.</p>
-    pub fn scan_type(&self) -> std::option::Option<&crate::types::ScanType> {
+    pub fn scan_type(&self) -> ::std::option::Option<&crate::types::ScanType> {
         self.scan_type.as_ref()
     }
 }
@@ -65,62 +65,67 @@ impl EbsVolumeScanDetails {
 
 /// A builder for [`EbsVolumeScanDetails`](crate::types::EbsVolumeScanDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EbsVolumeScanDetailsBuilder {
-    pub(crate) scan_id: std::option::Option<std::string::String>,
-    pub(crate) scan_started_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) scan_completed_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) trigger_finding_id: std::option::Option<std::string::String>,
-    pub(crate) sources: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) scan_detections: std::option::Option<crate::types::ScanDetections>,
-    pub(crate) scan_type: std::option::Option<crate::types::ScanType>,
+    pub(crate) scan_id: ::std::option::Option<::std::string::String>,
+    pub(crate) scan_started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) scan_completed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) trigger_finding_id: ::std::option::Option<::std::string::String>,
+    pub(crate) sources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) scan_detections: ::std::option::Option<crate::types::ScanDetections>,
+    pub(crate) scan_type: ::std::option::Option<crate::types::ScanType>,
 }
 impl EbsVolumeScanDetailsBuilder {
     /// <p>Unique Id of the malware scan that generated the finding.</p>
-    pub fn scan_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.scan_id = Some(input.into());
+    pub fn scan_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.scan_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Unique Id of the malware scan that generated the finding.</p>
-    pub fn set_scan_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_scan_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.scan_id = input;
         self
     }
     /// <p>Returns the start date and time of the malware scan.</p>
-    pub fn scan_started_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.scan_started_at = Some(input);
+    pub fn scan_started_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.scan_started_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>Returns the start date and time of the malware scan.</p>
     pub fn set_scan_started_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.scan_started_at = input;
         self
     }
     /// <p>Returns the completion date and time of the malware scan.</p>
-    pub fn scan_completed_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.scan_completed_at = Some(input);
+    pub fn scan_completed_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.scan_completed_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>Returns the completion date and time of the malware scan.</p>
     pub fn set_scan_completed_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.scan_completed_at = input;
         self
     }
     /// <p>GuardDuty finding ID that triggered a malware scan.</p>
-    pub fn trigger_finding_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.trigger_finding_id = Some(input.into());
+    pub fn trigger_finding_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.trigger_finding_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>GuardDuty finding ID that triggered a malware scan.</p>
     pub fn set_trigger_finding_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.trigger_finding_id = input;
         self
@@ -130,40 +135,40 @@ impl EbsVolumeScanDetailsBuilder {
     /// To override the contents of this collection use [`set_sources`](Self::set_sources).
     ///
     /// <p>Contains list of threat intelligence sources used to detect threats.</p>
-    pub fn sources(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn sources(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.sources.unwrap_or_default();
         v.push(input.into());
-        self.sources = Some(v);
+        self.sources = ::std::option::Option::Some(v);
         self
     }
     /// <p>Contains list of threat intelligence sources used to detect threats.</p>
     pub fn set_sources(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.sources = input;
         self
     }
     /// <p>Contains a complete view providing malware scan result details.</p>
     pub fn scan_detections(mut self, input: crate::types::ScanDetections) -> Self {
-        self.scan_detections = Some(input);
+        self.scan_detections = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains a complete view providing malware scan result details.</p>
     pub fn set_scan_detections(
         mut self,
-        input: std::option::Option<crate::types::ScanDetections>,
+        input: ::std::option::Option<crate::types::ScanDetections>,
     ) -> Self {
         self.scan_detections = input;
         self
     }
     /// <p>Specifies the scan type that invoked the malware scan.</p>
     pub fn scan_type(mut self, input: crate::types::ScanType) -> Self {
-        self.scan_type = Some(input);
+        self.scan_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the scan type that invoked the malware scan.</p>
-    pub fn set_scan_type(mut self, input: std::option::Option<crate::types::ScanType>) -> Self {
+    pub fn set_scan_type(mut self, input: ::std::option::Option<crate::types::ScanType>) -> Self {
         self.scan_type = input;
         self
     }

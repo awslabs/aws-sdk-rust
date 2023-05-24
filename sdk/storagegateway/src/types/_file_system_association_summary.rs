@@ -2,36 +2,36 @@
 
 /// <p>Gets the summary returned by <code>ListFileSystemAssociation</code>, which is a summary of a created file system association.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FileSystemAssociationSummary {
     /// <p>The ID of the file system association.</p>
     #[doc(hidden)]
-    pub file_system_association_id: std::option::Option<std::string::String>,
+    pub file_system_association_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the file system association.</p>
     #[doc(hidden)]
-    pub file_system_association_arn: std::option::Option<std::string::String>,
+    pub file_system_association_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the file share. Valid Values: <code>AVAILABLE</code> | <code>CREATING</code> | <code>DELETING</code> | <code>FORCE_DELETING</code> | <code>UPDATING</code> | <code>ERROR</code> </p>
     #[doc(hidden)]
-    pub file_system_association_status: std::option::Option<std::string::String>,
+    pub file_system_association_status: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
-    pub gateway_arn: std::option::Option<std::string::String>,
+    pub gateway_arn: ::std::option::Option<::std::string::String>,
 }
 impl FileSystemAssociationSummary {
     /// <p>The ID of the file system association.</p>
-    pub fn file_system_association_id(&self) -> std::option::Option<&str> {
+    pub fn file_system_association_id(&self) -> ::std::option::Option<&str> {
         self.file_system_association_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the file system association.</p>
-    pub fn file_system_association_arn(&self) -> std::option::Option<&str> {
+    pub fn file_system_association_arn(&self) -> ::std::option::Option<&str> {
         self.file_system_association_arn.as_deref()
     }
     /// <p>The status of the file share. Valid Values: <code>AVAILABLE</code> | <code>CREATING</code> | <code>DELETING</code> | <code>FORCE_DELETING</code> | <code>UPDATING</code> | <code>ERROR</code> </p>
-    pub fn file_system_association_status(&self) -> std::option::Option<&str> {
+    pub fn file_system_association_status(&self) -> ::std::option::Option<&str> {
         self.file_system_association_status.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+    pub fn gateway_arn(&self) -> ::std::option::Option<&str> {
         self.gateway_arn.as_deref()
     }
 }
@@ -44,60 +44,71 @@ impl FileSystemAssociationSummary {
 
 /// A builder for [`FileSystemAssociationSummary`](crate::types::FileSystemAssociationSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FileSystemAssociationSummaryBuilder {
-    pub(crate) file_system_association_id: std::option::Option<std::string::String>,
-    pub(crate) file_system_association_arn: std::option::Option<std::string::String>,
-    pub(crate) file_system_association_status: std::option::Option<std::string::String>,
-    pub(crate) gateway_arn: std::option::Option<std::string::String>,
+    pub(crate) file_system_association_id: ::std::option::Option<::std::string::String>,
+    pub(crate) file_system_association_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) file_system_association_status: ::std::option::Option<::std::string::String>,
+    pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
 }
 impl FileSystemAssociationSummaryBuilder {
     /// <p>The ID of the file system association.</p>
-    pub fn file_system_association_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.file_system_association_id = Some(input.into());
+    pub fn file_system_association_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.file_system_association_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the file system association.</p>
     pub fn set_file_system_association_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.file_system_association_id = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the file system association.</p>
-    pub fn file_system_association_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.file_system_association_arn = Some(input.into());
+    pub fn file_system_association_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.file_system_association_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the file system association.</p>
     pub fn set_file_system_association_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.file_system_association_arn = input;
         self
     }
     /// <p>The status of the file share. Valid Values: <code>AVAILABLE</code> | <code>CREATING</code> | <code>DELETING</code> | <code>FORCE_DELETING</code> | <code>UPDATING</code> | <code>ERROR</code> </p>
-    pub fn file_system_association_status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.file_system_association_status = Some(input.into());
+    pub fn file_system_association_status(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.file_system_association_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the file share. Valid Values: <code>AVAILABLE</code> | <code>CREATING</code> | <code>DELETING</code> | <code>FORCE_DELETING</code> | <code>UPDATING</code> | <code>ERROR</code> </p>
     pub fn set_file_system_association_status(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.file_system_association_status = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.gateway_arn = Some(input.into());
+    pub fn gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.gateway_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    pub fn set_gateway_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_gateway_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.gateway_arn = input;
         self
     }

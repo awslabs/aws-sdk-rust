@@ -2,15 +2,15 @@
 
 /// <p>The content range of the report.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BusinessReportContentRange {
     /// <p>The interval of the content range.</p>
     #[doc(hidden)]
-    pub interval: std::option::Option<crate::types::BusinessReportInterval>,
+    pub interval: ::std::option::Option<crate::types::BusinessReportInterval>,
 }
 impl BusinessReportContentRange {
     /// <p>The interval of the content range.</p>
-    pub fn interval(&self) -> std::option::Option<&crate::types::BusinessReportInterval> {
+    pub fn interval(&self) -> ::std::option::Option<&crate::types::BusinessReportInterval> {
         self.interval.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl BusinessReportContentRange {
 
 /// A builder for [`BusinessReportContentRange`](crate::types::BusinessReportContentRange).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BusinessReportContentRangeBuilder {
-    pub(crate) interval: std::option::Option<crate::types::BusinessReportInterval>,
+    pub(crate) interval: ::std::option::Option<crate::types::BusinessReportInterval>,
 }
 impl BusinessReportContentRangeBuilder {
     /// <p>The interval of the content range.</p>
     pub fn interval(mut self, input: crate::types::BusinessReportInterval) -> Self {
-        self.interval = Some(input);
+        self.interval = ::std::option::Option::Some(input);
         self
     }
     /// <p>The interval of the content range.</p>
     pub fn set_interval(
         mut self,
-        input: std::option::Option<crate::types::BusinessReportInterval>,
+        input: ::std::option::Option<crate::types::BusinessReportInterval>,
     ) -> Self {
         self.interval = input;
         self

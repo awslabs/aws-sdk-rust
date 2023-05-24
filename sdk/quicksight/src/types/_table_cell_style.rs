@@ -2,68 +2,68 @@
 
 /// <p>The table cell style for a cell in pivot table or table visual.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TableCellStyle {
     /// <p>The visibility of the table cells.</p>
     #[doc(hidden)]
-    pub visibility: std::option::Option<crate::types::Visibility>,
+    pub visibility: ::std::option::Option<crate::types::Visibility>,
     /// <p>The font configuration of the table cells.</p>
     #[doc(hidden)]
-    pub font_configuration: std::option::Option<crate::types::FontConfiguration>,
+    pub font_configuration: ::std::option::Option<crate::types::FontConfiguration>,
     /// <p>The text wrap (none, wrap) for the table cells.</p>
     #[doc(hidden)]
-    pub text_wrap: std::option::Option<crate::types::TextWrap>,
+    pub text_wrap: ::std::option::Option<crate::types::TextWrap>,
     /// <p>The horizontal text alignment (left, center, right, auto) for the table cells.</p>
     #[doc(hidden)]
-    pub horizontal_text_alignment: std::option::Option<crate::types::HorizontalTextAlignment>,
+    pub horizontal_text_alignment: ::std::option::Option<crate::types::HorizontalTextAlignment>,
     /// <p>The vertical text alignment (top, middle, bottom) for the table cells.</p>
     #[doc(hidden)]
-    pub vertical_text_alignment: std::option::Option<crate::types::VerticalTextAlignment>,
+    pub vertical_text_alignment: ::std::option::Option<crate::types::VerticalTextAlignment>,
     /// <p>The background color for the table cells.</p>
     #[doc(hidden)]
-    pub background_color: std::option::Option<std::string::String>,
+    pub background_color: ::std::option::Option<::std::string::String>,
     /// <p>The height color for the table cells.</p>
     #[doc(hidden)]
-    pub height: std::option::Option<i32>,
+    pub height: ::std::option::Option<i32>,
     /// <p>The borders for the table cells.</p>
     #[doc(hidden)]
-    pub border: std::option::Option<crate::types::GlobalTableBorderOptions>,
+    pub border: ::std::option::Option<crate::types::GlobalTableBorderOptions>,
 }
 impl TableCellStyle {
     /// <p>The visibility of the table cells.</p>
-    pub fn visibility(&self) -> std::option::Option<&crate::types::Visibility> {
+    pub fn visibility(&self) -> ::std::option::Option<&crate::types::Visibility> {
         self.visibility.as_ref()
     }
     /// <p>The font configuration of the table cells.</p>
-    pub fn font_configuration(&self) -> std::option::Option<&crate::types::FontConfiguration> {
+    pub fn font_configuration(&self) -> ::std::option::Option<&crate::types::FontConfiguration> {
         self.font_configuration.as_ref()
     }
     /// <p>The text wrap (none, wrap) for the table cells.</p>
-    pub fn text_wrap(&self) -> std::option::Option<&crate::types::TextWrap> {
+    pub fn text_wrap(&self) -> ::std::option::Option<&crate::types::TextWrap> {
         self.text_wrap.as_ref()
     }
     /// <p>The horizontal text alignment (left, center, right, auto) for the table cells.</p>
     pub fn horizontal_text_alignment(
         &self,
-    ) -> std::option::Option<&crate::types::HorizontalTextAlignment> {
+    ) -> ::std::option::Option<&crate::types::HorizontalTextAlignment> {
         self.horizontal_text_alignment.as_ref()
     }
     /// <p>The vertical text alignment (top, middle, bottom) for the table cells.</p>
     pub fn vertical_text_alignment(
         &self,
-    ) -> std::option::Option<&crate::types::VerticalTextAlignment> {
+    ) -> ::std::option::Option<&crate::types::VerticalTextAlignment> {
         self.vertical_text_alignment.as_ref()
     }
     /// <p>The background color for the table cells.</p>
-    pub fn background_color(&self) -> std::option::Option<&str> {
+    pub fn background_color(&self) -> ::std::option::Option<&str> {
         self.background_color.as_deref()
     }
     /// <p>The height color for the table cells.</p>
-    pub fn height(&self) -> std::option::Option<i32> {
+    pub fn height(&self) -> ::std::option::Option<i32> {
         self.height
     }
     /// <p>The borders for the table cells.</p>
-    pub fn border(&self) -> std::option::Option<&crate::types::GlobalTableBorderOptions> {
+    pub fn border(&self) -> ::std::option::Option<&crate::types::GlobalTableBorderOptions> {
         self.border.as_ref()
     }
 }
@@ -76,49 +76,54 @@ impl TableCellStyle {
 
 /// A builder for [`TableCellStyle`](crate::types::TableCellStyle).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TableCellStyleBuilder {
-    pub(crate) visibility: std::option::Option<crate::types::Visibility>,
-    pub(crate) font_configuration: std::option::Option<crate::types::FontConfiguration>,
-    pub(crate) text_wrap: std::option::Option<crate::types::TextWrap>,
+    pub(crate) visibility: ::std::option::Option<crate::types::Visibility>,
+    pub(crate) font_configuration: ::std::option::Option<crate::types::FontConfiguration>,
+    pub(crate) text_wrap: ::std::option::Option<crate::types::TextWrap>,
     pub(crate) horizontal_text_alignment:
-        std::option::Option<crate::types::HorizontalTextAlignment>,
-    pub(crate) vertical_text_alignment: std::option::Option<crate::types::VerticalTextAlignment>,
-    pub(crate) background_color: std::option::Option<std::string::String>,
-    pub(crate) height: std::option::Option<i32>,
-    pub(crate) border: std::option::Option<crate::types::GlobalTableBorderOptions>,
+        ::std::option::Option<crate::types::HorizontalTextAlignment>,
+    pub(crate) vertical_text_alignment: ::std::option::Option<crate::types::VerticalTextAlignment>,
+    pub(crate) background_color: ::std::option::Option<::std::string::String>,
+    pub(crate) height: ::std::option::Option<i32>,
+    pub(crate) border: ::std::option::Option<crate::types::GlobalTableBorderOptions>,
 }
 impl TableCellStyleBuilder {
     /// <p>The visibility of the table cells.</p>
     pub fn visibility(mut self, input: crate::types::Visibility) -> Self {
-        self.visibility = Some(input);
+        self.visibility = ::std::option::Option::Some(input);
         self
     }
     /// <p>The visibility of the table cells.</p>
-    pub fn set_visibility(mut self, input: std::option::Option<crate::types::Visibility>) -> Self {
+    pub fn set_visibility(
+        mut self,
+        input: ::std::option::Option<crate::types::Visibility>,
+    ) -> Self {
         self.visibility = input;
         self
     }
     /// <p>The font configuration of the table cells.</p>
     pub fn font_configuration(mut self, input: crate::types::FontConfiguration) -> Self {
-        self.font_configuration = Some(input);
+        self.font_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The font configuration of the table cells.</p>
     pub fn set_font_configuration(
         mut self,
-        input: std::option::Option<crate::types::FontConfiguration>,
+        input: ::std::option::Option<crate::types::FontConfiguration>,
     ) -> Self {
         self.font_configuration = input;
         self
     }
     /// <p>The text wrap (none, wrap) for the table cells.</p>
     pub fn text_wrap(mut self, input: crate::types::TextWrap) -> Self {
-        self.text_wrap = Some(input);
+        self.text_wrap = ::std::option::Option::Some(input);
         self
     }
     /// <p>The text wrap (none, wrap) for the table cells.</p>
-    pub fn set_text_wrap(mut self, input: std::option::Option<crate::types::TextWrap>) -> Self {
+    pub fn set_text_wrap(mut self, input: ::std::option::Option<crate::types::TextWrap>) -> Self {
         self.text_wrap = input;
         self
     }
@@ -127,59 +132,65 @@ impl TableCellStyleBuilder {
         mut self,
         input: crate::types::HorizontalTextAlignment,
     ) -> Self {
-        self.horizontal_text_alignment = Some(input);
+        self.horizontal_text_alignment = ::std::option::Option::Some(input);
         self
     }
     /// <p>The horizontal text alignment (left, center, right, auto) for the table cells.</p>
     pub fn set_horizontal_text_alignment(
         mut self,
-        input: std::option::Option<crate::types::HorizontalTextAlignment>,
+        input: ::std::option::Option<crate::types::HorizontalTextAlignment>,
     ) -> Self {
         self.horizontal_text_alignment = input;
         self
     }
     /// <p>The vertical text alignment (top, middle, bottom) for the table cells.</p>
     pub fn vertical_text_alignment(mut self, input: crate::types::VerticalTextAlignment) -> Self {
-        self.vertical_text_alignment = Some(input);
+        self.vertical_text_alignment = ::std::option::Option::Some(input);
         self
     }
     /// <p>The vertical text alignment (top, middle, bottom) for the table cells.</p>
     pub fn set_vertical_text_alignment(
         mut self,
-        input: std::option::Option<crate::types::VerticalTextAlignment>,
+        input: ::std::option::Option<crate::types::VerticalTextAlignment>,
     ) -> Self {
         self.vertical_text_alignment = input;
         self
     }
     /// <p>The background color for the table cells.</p>
-    pub fn background_color(mut self, input: impl Into<std::string::String>) -> Self {
-        self.background_color = Some(input.into());
+    pub fn background_color(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.background_color = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The background color for the table cells.</p>
-    pub fn set_background_color(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_background_color(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.background_color = input;
         self
     }
     /// <p>The height color for the table cells.</p>
     pub fn height(mut self, input: i32) -> Self {
-        self.height = Some(input);
+        self.height = ::std::option::Option::Some(input);
         self
     }
     /// <p>The height color for the table cells.</p>
-    pub fn set_height(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_height(mut self, input: ::std::option::Option<i32>) -> Self {
         self.height = input;
         self
     }
     /// <p>The borders for the table cells.</p>
     pub fn border(mut self, input: crate::types::GlobalTableBorderOptions) -> Self {
-        self.border = Some(input);
+        self.border = ::std::option::Option::Some(input);
         self
     }
     /// <p>The borders for the table cells.</p>
     pub fn set_border(
         mut self,
-        input: std::option::Option<crate::types::GlobalTableBorderOptions>,
+        input: ::std::option::Option<crate::types::GlobalTableBorderOptions>,
     ) -> Self {
         self.border = input;
         self

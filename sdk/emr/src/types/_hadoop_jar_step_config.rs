@@ -2,36 +2,36 @@
 
 /// <p>A job flow step consisting of a JAR file whose main function will be executed. The main function submits a job for Hadoop to execute and waits for the job to finish or fail.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HadoopJarStepConfig {
     /// <p>A list of Java properties that are set when the step runs. You can use these properties to pass key-value pairs to your main function.</p>
     #[doc(hidden)]
-    pub properties: std::option::Option<std::vec::Vec<crate::types::KeyValue>>,
+    pub properties: ::std::option::Option<::std::vec::Vec<crate::types::KeyValue>>,
     /// <p>A path to a JAR file run during the step.</p>
     #[doc(hidden)]
-    pub jar: std::option::Option<std::string::String>,
+    pub jar: ::std::option::Option<::std::string::String>,
     /// <p>The name of the main class in the specified Java file. If not specified, the JAR file should specify a Main-Class in its manifest file.</p>
     #[doc(hidden)]
-    pub main_class: std::option::Option<std::string::String>,
+    pub main_class: ::std::option::Option<::std::string::String>,
     /// <p>A list of command line arguments passed to the JAR file's main function when executed.</p>
     #[doc(hidden)]
-    pub args: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub args: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl HadoopJarStepConfig {
     /// <p>A list of Java properties that are set when the step runs. You can use these properties to pass key-value pairs to your main function.</p>
-    pub fn properties(&self) -> std::option::Option<&[crate::types::KeyValue]> {
+    pub fn properties(&self) -> ::std::option::Option<&[crate::types::KeyValue]> {
         self.properties.as_deref()
     }
     /// <p>A path to a JAR file run during the step.</p>
-    pub fn jar(&self) -> std::option::Option<&str> {
+    pub fn jar(&self) -> ::std::option::Option<&str> {
         self.jar.as_deref()
     }
     /// <p>The name of the main class in the specified Java file. If not specified, the JAR file should specify a Main-Class in its manifest file.</p>
-    pub fn main_class(&self) -> std::option::Option<&str> {
+    pub fn main_class(&self) -> ::std::option::Option<&str> {
         self.main_class.as_deref()
     }
     /// <p>A list of command line arguments passed to the JAR file's main function when executed.</p>
-    pub fn args(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn args(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.args.as_deref()
     }
 }
@@ -44,12 +44,14 @@ impl HadoopJarStepConfig {
 
 /// A builder for [`HadoopJarStepConfig`](crate::types::HadoopJarStepConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct HadoopJarStepConfigBuilder {
-    pub(crate) properties: std::option::Option<std::vec::Vec<crate::types::KeyValue>>,
-    pub(crate) jar: std::option::Option<std::string::String>,
-    pub(crate) main_class: std::option::Option<std::string::String>,
-    pub(crate) args: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) properties: ::std::option::Option<::std::vec::Vec<crate::types::KeyValue>>,
+    pub(crate) jar: ::std::option::Option<::std::string::String>,
+    pub(crate) main_class: ::std::option::Option<::std::string::String>,
+    pub(crate) args: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl HadoopJarStepConfigBuilder {
     /// Appends an item to `properties`.
@@ -60,34 +62,34 @@ impl HadoopJarStepConfigBuilder {
     pub fn properties(mut self, input: crate::types::KeyValue) -> Self {
         let mut v = self.properties.unwrap_or_default();
         v.push(input);
-        self.properties = Some(v);
+        self.properties = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of Java properties that are set when the step runs. You can use these properties to pass key-value pairs to your main function.</p>
     pub fn set_properties(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::KeyValue>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::KeyValue>>,
     ) -> Self {
         self.properties = input;
         self
     }
     /// <p>A path to a JAR file run during the step.</p>
-    pub fn jar(mut self, input: impl Into<std::string::String>) -> Self {
-        self.jar = Some(input.into());
+    pub fn jar(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.jar = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A path to a JAR file run during the step.</p>
-    pub fn set_jar(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_jar(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.jar = input;
         self
     }
     /// <p>The name of the main class in the specified Java file. If not specified, the JAR file should specify a Main-Class in its manifest file.</p>
-    pub fn main_class(mut self, input: impl Into<std::string::String>) -> Self {
-        self.main_class = Some(input.into());
+    pub fn main_class(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.main_class = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the main class in the specified Java file. If not specified, the JAR file should specify a Main-Class in its manifest file.</p>
-    pub fn set_main_class(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_main_class(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.main_class = input;
         self
     }
@@ -96,16 +98,16 @@ impl HadoopJarStepConfigBuilder {
     /// To override the contents of this collection use [`set_args`](Self::set_args).
     ///
     /// <p>A list of command line arguments passed to the JAR file's main function when executed.</p>
-    pub fn args(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn args(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.args.unwrap_or_default();
         v.push(input.into());
-        self.args = Some(v);
+        self.args = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of command line arguments passed to the JAR file's main function when executed.</p>
     pub fn set_args(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.args = input;
         self

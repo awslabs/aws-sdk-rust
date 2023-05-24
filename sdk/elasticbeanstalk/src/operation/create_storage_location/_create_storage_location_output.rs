@@ -2,20 +2,20 @@
 
 /// <p>Results of a <code>CreateStorageLocationResult</code> call.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateStorageLocationOutput {
     /// <p>The name of the Amazon S3 bucket created.</p>
     #[doc(hidden)]
-    pub s3_bucket: std::option::Option<std::string::String>,
+    pub s3_bucket: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateStorageLocationOutput {
     /// <p>The name of the Amazon S3 bucket created.</p>
-    pub fn s3_bucket(&self) -> std::option::Option<&str> {
+    pub fn s3_bucket(&self) -> ::std::option::Option<&str> {
         self.s3_bucket.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for CreateStorageLocationOutput {
+impl ::aws_http::request_id::RequestId for CreateStorageLocationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -31,19 +31,21 @@ impl CreateStorageLocationOutput {
 
 /// A builder for [`CreateStorageLocationOutput`](crate::operation::create_storage_location::CreateStorageLocationOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateStorageLocationOutputBuilder {
-    pub(crate) s3_bucket: std::option::Option<std::string::String>,
+    pub(crate) s3_bucket: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateStorageLocationOutputBuilder {
     /// <p>The name of the Amazon S3 bucket created.</p>
-    pub fn s3_bucket(mut self, input: impl Into<std::string::String>) -> Self {
-        self.s3_bucket = Some(input.into());
+    pub fn s3_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.s3_bucket = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Amazon S3 bucket created.</p>
-    pub fn set_s3_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_s3_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_bucket = input;
         self
     }

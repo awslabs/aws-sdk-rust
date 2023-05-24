@@ -2,50 +2,50 @@
 
 /// <p>A subset of the possible data set attributes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataSetSummary {
     /// <p>The name of the data set.</p>
     #[doc(hidden)]
-    pub data_set_name: std::option::Option<std::string::String>,
+    pub data_set_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of data set. The only supported value is VSAM.</p>
     #[doc(hidden)]
-    pub data_set_org: std::option::Option<std::string::String>,
+    pub data_set_org: ::std::option::Option<::std::string::String>,
     /// <p>The format of the data set. </p>
     #[doc(hidden)]
-    pub format: std::option::Option<std::string::String>,
+    pub format: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the data set was created.</p>
     #[doc(hidden)]
-    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time the data set was updated.</p>
     #[doc(hidden)]
-    pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time the data set was referenced.</p>
     #[doc(hidden)]
-    pub last_referenced_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_referenced_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl DataSetSummary {
     /// <p>The name of the data set.</p>
-    pub fn data_set_name(&self) -> std::option::Option<&str> {
+    pub fn data_set_name(&self) -> ::std::option::Option<&str> {
         self.data_set_name.as_deref()
     }
     /// <p>The type of data set. The only supported value is VSAM.</p>
-    pub fn data_set_org(&self) -> std::option::Option<&str> {
+    pub fn data_set_org(&self) -> ::std::option::Option<&str> {
         self.data_set_org.as_deref()
     }
     /// <p>The format of the data set. </p>
-    pub fn format(&self) -> std::option::Option<&str> {
+    pub fn format(&self) -> ::std::option::Option<&str> {
         self.format.as_deref()
     }
     /// <p>The timestamp when the data set was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The last time the data set was updated.</p>
-    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>The last time the data set was referenced.</p>
-    pub fn last_referenced_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_referenced_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_referenced_time.as_ref()
     }
 }
@@ -58,81 +58,89 @@ impl DataSetSummary {
 
 /// A builder for [`DataSetSummary`](crate::types::DataSetSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DataSetSummaryBuilder {
-    pub(crate) data_set_name: std::option::Option<std::string::String>,
-    pub(crate) data_set_org: std::option::Option<std::string::String>,
-    pub(crate) format: std::option::Option<std::string::String>,
-    pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_referenced_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) data_set_name: ::std::option::Option<::std::string::String>,
+    pub(crate) data_set_org: ::std::option::Option<::std::string::String>,
+    pub(crate) format: ::std::option::Option<::std::string::String>,
+    pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_referenced_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl DataSetSummaryBuilder {
     /// <p>The name of the data set.</p>
-    pub fn data_set_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.data_set_name = Some(input.into());
+    pub fn data_set_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.data_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the data set.</p>
-    pub fn set_data_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_data_set_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.data_set_name = input;
         self
     }
     /// <p>The type of data set. The only supported value is VSAM.</p>
-    pub fn data_set_org(mut self, input: impl Into<std::string::String>) -> Self {
-        self.data_set_org = Some(input.into());
+    pub fn data_set_org(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.data_set_org = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of data set. The only supported value is VSAM.</p>
-    pub fn set_data_set_org(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_data_set_org(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_set_org = input;
         self
     }
     /// <p>The format of the data set. </p>
-    pub fn format(mut self, input: impl Into<std::string::String>) -> Self {
-        self.format = Some(input.into());
+    pub fn format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.format = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The format of the data set. </p>
-    pub fn set_format(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.format = input;
         self
     }
     /// <p>The timestamp when the data set was created.</p>
-    pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_time = Some(input);
+    pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The timestamp when the data set was created.</p>
     pub fn set_creation_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_time = input;
         self
     }
     /// <p>The last time the data set was updated.</p>
-    pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_updated_time = Some(input);
+    pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_updated_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The last time the data set was updated.</p>
     pub fn set_last_updated_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_updated_time = input;
         self
     }
     /// <p>The last time the data set was referenced.</p>
-    pub fn last_referenced_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_referenced_time = Some(input);
+    pub fn last_referenced_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_referenced_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The last time the data set was referenced.</p>
     pub fn set_last_referenced_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_referenced_time = input;
         self

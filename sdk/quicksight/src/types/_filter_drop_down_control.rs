@@ -2,52 +2,52 @@
 
 /// <p>A control to display a dropdown list with buttons that are used to select a single value.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FilterDropDownControl {
     /// <p>The ID of the <code>FilterDropDownControl</code>.</p>
     #[doc(hidden)]
-    pub filter_control_id: std::option::Option<std::string::String>,
+    pub filter_control_id: ::std::option::Option<::std::string::String>,
     /// <p>The title of the <code>FilterDropDownControl</code>.</p>
     #[doc(hidden)]
-    pub title: std::option::Option<std::string::String>,
+    pub title: ::std::option::Option<::std::string::String>,
     /// <p>The source filter ID of the <code>FilterDropDownControl</code>.</p>
     #[doc(hidden)]
-    pub source_filter_id: std::option::Option<std::string::String>,
+    pub source_filter_id: ::std::option::Option<::std::string::String>,
     /// <p>The display options of the <code>FilterDropDownControl</code>.</p>
     #[doc(hidden)]
-    pub display_options: std::option::Option<crate::types::DropDownControlDisplayOptions>,
+    pub display_options: ::std::option::Option<crate::types::DropDownControlDisplayOptions>,
     /// <p>The type of the <code>FilterDropDownControl</code>. Choose one of the following options:</p>
     /// <ul>
     /// <li> <p> <code>MULTI_SELECT</code>: The user can select multiple entries from a dropdown menu.</p> </li>
     /// <li> <p> <code>SINGLE_SELECT</code>: The user can select a single entry from a dropdown menu.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::SheetControlListType>,
+    pub r#type: ::std::option::Option<crate::types::SheetControlListType>,
     /// <p>A list of selectable values that are used in a control.</p>
     #[doc(hidden)]
-    pub selectable_values: std::option::Option<crate::types::FilterSelectableValues>,
+    pub selectable_values: ::std::option::Option<crate::types::FilterSelectableValues>,
     /// <p>The values that are displayed in a control can be configured to only show values that are valid based on what's selected in other controls.</p>
     #[doc(hidden)]
     pub cascading_control_configuration:
-        std::option::Option<crate::types::CascadingControlConfiguration>,
+        ::std::option::Option<crate::types::CascadingControlConfiguration>,
 }
 impl FilterDropDownControl {
     /// <p>The ID of the <code>FilterDropDownControl</code>.</p>
-    pub fn filter_control_id(&self) -> std::option::Option<&str> {
+    pub fn filter_control_id(&self) -> ::std::option::Option<&str> {
         self.filter_control_id.as_deref()
     }
     /// <p>The title of the <code>FilterDropDownControl</code>.</p>
-    pub fn title(&self) -> std::option::Option<&str> {
+    pub fn title(&self) -> ::std::option::Option<&str> {
         self.title.as_deref()
     }
     /// <p>The source filter ID of the <code>FilterDropDownControl</code>.</p>
-    pub fn source_filter_id(&self) -> std::option::Option<&str> {
+    pub fn source_filter_id(&self) -> ::std::option::Option<&str> {
         self.source_filter_id.as_deref()
     }
     /// <p>The display options of the <code>FilterDropDownControl</code>.</p>
     pub fn display_options(
         &self,
-    ) -> std::option::Option<&crate::types::DropDownControlDisplayOptions> {
+    ) -> ::std::option::Option<&crate::types::DropDownControlDisplayOptions> {
         self.display_options.as_ref()
     }
     /// <p>The type of the <code>FilterDropDownControl</code>. Choose one of the following options:</p>
@@ -55,17 +55,19 @@ impl FilterDropDownControl {
     /// <li> <p> <code>MULTI_SELECT</code>: The user can select multiple entries from a dropdown menu.</p> </li>
     /// <li> <p> <code>SINGLE_SELECT</code>: The user can select a single entry from a dropdown menu.</p> </li>
     /// </ul>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::SheetControlListType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::SheetControlListType> {
         self.r#type.as_ref()
     }
     /// <p>A list of selectable values that are used in a control.</p>
-    pub fn selectable_values(&self) -> std::option::Option<&crate::types::FilterSelectableValues> {
+    pub fn selectable_values(
+        &self,
+    ) -> ::std::option::Option<&crate::types::FilterSelectableValues> {
         self.selectable_values.as_ref()
     }
     /// <p>The values that are displayed in a control can be configured to only show values that are valid based on what's selected in other controls.</p>
     pub fn cascading_control_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::CascadingControlConfiguration> {
+    ) -> ::std::option::Option<&crate::types::CascadingControlConfiguration> {
         self.cascading_control_configuration.as_ref()
     }
 }
@@ -78,60 +80,71 @@ impl FilterDropDownControl {
 
 /// A builder for [`FilterDropDownControl`](crate::types::FilterDropDownControl).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FilterDropDownControlBuilder {
-    pub(crate) filter_control_id: std::option::Option<std::string::String>,
-    pub(crate) title: std::option::Option<std::string::String>,
-    pub(crate) source_filter_id: std::option::Option<std::string::String>,
-    pub(crate) display_options: std::option::Option<crate::types::DropDownControlDisplayOptions>,
-    pub(crate) r#type: std::option::Option<crate::types::SheetControlListType>,
-    pub(crate) selectable_values: std::option::Option<crate::types::FilterSelectableValues>,
+    pub(crate) filter_control_id: ::std::option::Option<::std::string::String>,
+    pub(crate) title: ::std::option::Option<::std::string::String>,
+    pub(crate) source_filter_id: ::std::option::Option<::std::string::String>,
+    pub(crate) display_options: ::std::option::Option<crate::types::DropDownControlDisplayOptions>,
+    pub(crate) r#type: ::std::option::Option<crate::types::SheetControlListType>,
+    pub(crate) selectable_values: ::std::option::Option<crate::types::FilterSelectableValues>,
     pub(crate) cascading_control_configuration:
-        std::option::Option<crate::types::CascadingControlConfiguration>,
+        ::std::option::Option<crate::types::CascadingControlConfiguration>,
 }
 impl FilterDropDownControlBuilder {
     /// <p>The ID of the <code>FilterDropDownControl</code>.</p>
-    pub fn filter_control_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.filter_control_id = Some(input.into());
+    pub fn filter_control_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.filter_control_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the <code>FilterDropDownControl</code>.</p>
     pub fn set_filter_control_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.filter_control_id = input;
         self
     }
     /// <p>The title of the <code>FilterDropDownControl</code>.</p>
-    pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
-        self.title = Some(input.into());
+    pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.title = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The title of the <code>FilterDropDownControl</code>.</p>
-    pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.title = input;
         self
     }
     /// <p>The source filter ID of the <code>FilterDropDownControl</code>.</p>
-    pub fn source_filter_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.source_filter_id = Some(input.into());
+    pub fn source_filter_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.source_filter_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The source filter ID of the <code>FilterDropDownControl</code>.</p>
-    pub fn set_source_filter_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_source_filter_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.source_filter_id = input;
         self
     }
     /// <p>The display options of the <code>FilterDropDownControl</code>.</p>
     pub fn display_options(mut self, input: crate::types::DropDownControlDisplayOptions) -> Self {
-        self.display_options = Some(input);
+        self.display_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The display options of the <code>FilterDropDownControl</code>.</p>
     pub fn set_display_options(
         mut self,
-        input: std::option::Option<crate::types::DropDownControlDisplayOptions>,
+        input: ::std::option::Option<crate::types::DropDownControlDisplayOptions>,
     ) -> Self {
         self.display_options = input;
         self
@@ -142,7 +155,7 @@ impl FilterDropDownControlBuilder {
     /// <li> <p> <code>SINGLE_SELECT</code>: The user can select a single entry from a dropdown menu.</p> </li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::SheetControlListType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of the <code>FilterDropDownControl</code>. Choose one of the following options:</p>
@@ -152,20 +165,20 @@ impl FilterDropDownControlBuilder {
     /// </ul>
     pub fn set_type(
         mut self,
-        input: std::option::Option<crate::types::SheetControlListType>,
+        input: ::std::option::Option<crate::types::SheetControlListType>,
     ) -> Self {
         self.r#type = input;
         self
     }
     /// <p>A list of selectable values that are used in a control.</p>
     pub fn selectable_values(mut self, input: crate::types::FilterSelectableValues) -> Self {
-        self.selectable_values = Some(input);
+        self.selectable_values = ::std::option::Option::Some(input);
         self
     }
     /// <p>A list of selectable values that are used in a control.</p>
     pub fn set_selectable_values(
         mut self,
-        input: std::option::Option<crate::types::FilterSelectableValues>,
+        input: ::std::option::Option<crate::types::FilterSelectableValues>,
     ) -> Self {
         self.selectable_values = input;
         self
@@ -175,13 +188,13 @@ impl FilterDropDownControlBuilder {
         mut self,
         input: crate::types::CascadingControlConfiguration,
     ) -> Self {
-        self.cascading_control_configuration = Some(input);
+        self.cascading_control_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The values that are displayed in a control can be configured to only show values that are valid based on what's selected in other controls.</p>
     pub fn set_cascading_control_configuration(
         mut self,
-        input: std::option::Option<crate::types::CascadingControlConfiguration>,
+        input: ::std::option::Option<crate::types::CascadingControlConfiguration>,
     ) -> Self {
         self.cascading_control_configuration = input;
         self

@@ -40,13 +40,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ArtifactSourceIdType {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,7 +60,7 @@ pub enum ArtifactSourceIdType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ArtifactSourceIdType {
+impl ::std::convert::From<&str> for ArtifactSourceIdType {
     fn from(s: &str) -> Self {
         match s {
             "Custom" => ArtifactSourceIdType::Custom,
@@ -73,11 +73,11 @@ impl std::convert::From<&str> for ArtifactSourceIdType {
         }
     }
 }
-impl std::str::FromStr for ArtifactSourceIdType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ArtifactSourceIdType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ArtifactSourceIdType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ArtifactSourceIdType::from(s))
     }
 }
 impl ArtifactSourceIdType {
@@ -96,7 +96,7 @@ impl ArtifactSourceIdType {
         &["Custom", "MD5Hash", "S3ETag", "S3Version"]
     }
 }
-impl AsRef<str> for ArtifactSourceIdType {
+impl ::std::convert::AsRef<str> for ArtifactSourceIdType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

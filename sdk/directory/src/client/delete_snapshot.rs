@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteSnapshot`](crate::operation::delete_snapshot::builders::DeleteSnapshotFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`snapshot_id(impl Into<String>)`](crate::operation::delete_snapshot::builders::DeleteSnapshotFluentBuilder::snapshot_id) / [`set_snapshot_id(Option<String>)`](crate::operation::delete_snapshot::builders::DeleteSnapshotFluentBuilder::set_snapshot_id): <p>The identifier of the directory snapshot to be deleted.</p>
+    ///   - [`snapshot_id(impl ::std::convert::Into<String>)`](crate::operation::delete_snapshot::builders::DeleteSnapshotFluentBuilder::snapshot_id) / [`set_snapshot_id(Option<String>)`](crate::operation::delete_snapshot::builders::DeleteSnapshotFluentBuilder::set_snapshot_id): <p>The identifier of the directory snapshot to be deleted.</p>
     /// - On success, responds with [`DeleteSnapshotOutput`](crate::operation::delete_snapshot::DeleteSnapshotOutput) with field(s):
     ///   - [`snapshot_id(Option<String>)`](crate::operation::delete_snapshot::DeleteSnapshotOutput::snapshot_id): <p>The identifier of the directory snapshot that was deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteSnapshotError>`](crate::operation::delete_snapshot::DeleteSnapshotError)

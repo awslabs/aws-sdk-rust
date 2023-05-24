@@ -6,29 +6,29 @@ pub use crate::operation::create_route_response::_create_route_response_input::C
 /// Fluent builder constructing a request to `CreateRouteResponse`.
 ///
 /// <p>Creates a RouteResponse for a Route.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateRouteResponseFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_route_response::builders::CreateRouteResponseInputBuilder,
 }
 impl CreateRouteResponseFluentBuilder {
     /// Creates a new `CreateRouteResponse`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_route_response::CreateRouteResponse,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_route_response::CreateRouteResponseError,
         >,
     > {
@@ -36,30 +36,33 @@ impl CreateRouteResponseFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_route_response::CreateRouteResponseOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_route_response::CreateRouteResponseError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,33 +75,36 @@ impl CreateRouteResponseFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_route_response::CreateRouteResponseOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_route_response::CreateRouteResponseError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The API identifier.</p>
-    pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.api_id(input.into());
         self
     }
     /// <p>The API identifier.</p>
-    pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_api_id(input);
         self
     }
     /// <p>The model selection expression for the route response. Supported only for WebSocket APIs.</p>
-    pub fn model_selection_expression(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn model_selection_expression(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.model_selection_expression(input.into());
         self
     }
     /// <p>The model selection expression for the route response. Supported only for WebSocket APIs.</p>
     pub fn set_model_selection_expression(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_model_selection_expression(input);
         self
@@ -110,8 +116,8 @@ impl CreateRouteResponseFluentBuilder {
     /// <p>The response models for the route response.</p>
     pub fn response_models(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.response_models(k.into(), v.into());
         self
@@ -119,8 +125,8 @@ impl CreateRouteResponseFluentBuilder {
     /// <p>The response models for the route response.</p>
     pub fn set_response_models(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_response_models(input);
@@ -133,7 +139,7 @@ impl CreateRouteResponseFluentBuilder {
     /// <p>The route response parameters.</p>
     pub fn response_parameters(
         mut self,
-        k: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
         v: crate::types::ParameterConstraints,
     ) -> Self {
         self.inner = self.inner.response_parameters(k.into(), v);
@@ -142,32 +148,35 @@ impl CreateRouteResponseFluentBuilder {
     /// <p>The route response parameters.</p>
     pub fn set_response_parameters(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::types::ParameterConstraints>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, crate::types::ParameterConstraints>,
         >,
     ) -> Self {
         self.inner = self.inner.set_response_parameters(input);
         self
     }
     /// <p>The route ID.</p>
-    pub fn route_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn route_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.route_id(input.into());
         self
     }
     /// <p>The route ID.</p>
-    pub fn set_route_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_route_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_route_id(input);
         self
     }
     /// <p>The route response key.</p>
-    pub fn route_response_key(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn route_response_key(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.route_response_key(input.into());
         self
     }
     /// <p>The route response key.</p>
     pub fn set_route_response_key(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_route_response_key(input);
         self

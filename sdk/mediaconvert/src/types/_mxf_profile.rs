@@ -41,13 +41,13 @@
 /// Specify the MXF profile, also called shim, for this output. When you choose Auto, MediaConvert chooses a profile based on the video codec and resolution. For a list of codecs supported with each MXF profile, see https://docs.aws.amazon.com/mediaconvert/latest/ug/codecs-supported-with-each-mxf-profile.html. For more information about the automatic selection behavior, see https://docs.aws.amazon.com/mediaconvert/latest/ug/default-automatic-selection-of-mxf-profiles.html.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum MxfProfile {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,7 +63,7 @@ pub enum MxfProfile {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for MxfProfile {
+impl ::std::convert::From<&str> for MxfProfile {
     fn from(s: &str) -> Self {
         match s {
             "D_10" => MxfProfile::D10,
@@ -75,11 +75,11 @@ impl std::convert::From<&str> for MxfProfile {
         }
     }
 }
-impl std::str::FromStr for MxfProfile {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for MxfProfile {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(MxfProfile::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(MxfProfile::from(s))
     }
 }
 impl MxfProfile {
@@ -99,7 +99,7 @@ impl MxfProfile {
         &["D_10", "OP1A", "XAVC", "XDCAM", "XDCAM_RDD9"]
     }
 }
-impl AsRef<str> for MxfProfile {
+impl ::std::convert::AsRef<str> for MxfProfile {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ImportFailureStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum ImportFailureStatus {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ImportFailureStatus {
+impl ::std::convert::From<&str> for ImportFailureStatus {
     fn from(s: &str) -> Self {
         match s {
             "FAILED" => ImportFailureStatus::Failed,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for ImportFailureStatus {
         }
     }
 }
-impl std::str::FromStr for ImportFailureStatus {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ImportFailureStatus {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ImportFailureStatus::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ImportFailureStatus::from(s))
     }
 }
 impl ImportFailureStatus {
@@ -91,7 +91,7 @@ impl ImportFailureStatus {
         &["FAILED", "RETRY", "SUCCEEDED"]
     }
 }
-impl AsRef<str> for ImportFailureStatus {
+impl ::std::convert::AsRef<str> for ImportFailureStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

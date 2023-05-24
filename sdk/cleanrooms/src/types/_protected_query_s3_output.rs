@@ -2,15 +2,15 @@
 
 /// <p>Contains output information for protected queries with an S3 output type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProtectedQueryS3Output {
     /// <p>The S3 location of the result.</p>
     #[doc(hidden)]
-    pub location: std::option::Option<std::string::String>,
+    pub location: ::std::option::Option<::std::string::String>,
 }
 impl ProtectedQueryS3Output {
     /// <p>The S3 location of the result.</p>
-    pub fn location(&self) -> std::option::Option<&str> {
+    pub fn location(&self) -> ::std::option::Option<&str> {
         self.location.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl ProtectedQueryS3Output {
 
 /// A builder for [`ProtectedQueryS3Output`](crate::types::ProtectedQueryS3Output).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ProtectedQueryS3OutputBuilder {
-    pub(crate) location: std::option::Option<std::string::String>,
+    pub(crate) location: ::std::option::Option<::std::string::String>,
 }
 impl ProtectedQueryS3OutputBuilder {
     /// <p>The S3 location of the result.</p>
-    pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
-        self.location = Some(input.into());
+    pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.location = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The S3 location of the result.</p>
-    pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location = input;
         self
     }

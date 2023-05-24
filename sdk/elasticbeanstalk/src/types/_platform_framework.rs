@@ -2,22 +2,22 @@
 
 /// <p>A framework supported by the platform.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PlatformFramework {
     /// <p>The name of the framework.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the framework.</p>
     #[doc(hidden)]
-    pub version: std::option::Option<std::string::String>,
+    pub version: ::std::option::Option<::std::string::String>,
 }
 impl PlatformFramework {
     /// <p>The name of the framework.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The version of the framework.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<&str> {
         self.version.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl PlatformFramework {
 
 /// A builder for [`PlatformFramework`](crate::types::PlatformFramework).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PlatformFrameworkBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) version: std::option::Option<std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) version: ::std::option::Option<::std::string::String>,
 }
 impl PlatformFrameworkBuilder {
     /// <p>The name of the framework.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the framework.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The version of the framework.</p>
-    pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.version = Some(input.into());
+    pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the framework.</p>
-    pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
     }

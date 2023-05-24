@@ -2,11 +2,11 @@
 
 /// <p>Represents the auto scaling configuration for a global table.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TableAutoScalingDescription {
     /// <p>The name of the table.</p>
     #[doc(hidden)]
-    pub table_name: std::option::Option<std::string::String>,
+    pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the table:</p>
     /// <ul>
     /// <li> <p> <code>CREATING</code> - The table is being created.</p> </li>
@@ -15,14 +15,15 @@ pub struct TableAutoScalingDescription {
     /// <li> <p> <code>ACTIVE</code> - The table is ready for use.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub table_status: std::option::Option<crate::types::TableStatus>,
+    pub table_status: ::std::option::Option<crate::types::TableStatus>,
     /// <p>Represents replicas of the global table.</p>
     #[doc(hidden)]
-    pub replicas: std::option::Option<std::vec::Vec<crate::types::ReplicaAutoScalingDescription>>,
+    pub replicas:
+        ::std::option::Option<::std::vec::Vec<crate::types::ReplicaAutoScalingDescription>>,
 }
 impl TableAutoScalingDescription {
     /// <p>The name of the table.</p>
-    pub fn table_name(&self) -> std::option::Option<&str> {
+    pub fn table_name(&self) -> ::std::option::Option<&str> {
         self.table_name.as_deref()
     }
     /// <p>The current state of the table:</p>
@@ -32,11 +33,13 @@ impl TableAutoScalingDescription {
     /// <li> <p> <code>DELETING</code> - The table is being deleted.</p> </li>
     /// <li> <p> <code>ACTIVE</code> - The table is ready for use.</p> </li>
     /// </ul>
-    pub fn table_status(&self) -> std::option::Option<&crate::types::TableStatus> {
+    pub fn table_status(&self) -> ::std::option::Option<&crate::types::TableStatus> {
         self.table_status.as_ref()
     }
     /// <p>Represents replicas of the global table.</p>
-    pub fn replicas(&self) -> std::option::Option<&[crate::types::ReplicaAutoScalingDescription]> {
+    pub fn replicas(
+        &self,
+    ) -> ::std::option::Option<&[crate::types::ReplicaAutoScalingDescription]> {
         self.replicas.as_deref()
     }
 }
@@ -49,21 +52,23 @@ impl TableAutoScalingDescription {
 
 /// A builder for [`TableAutoScalingDescription`](crate::types::TableAutoScalingDescription).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TableAutoScalingDescriptionBuilder {
-    pub(crate) table_name: std::option::Option<std::string::String>,
-    pub(crate) table_status: std::option::Option<crate::types::TableStatus>,
+    pub(crate) table_name: ::std::option::Option<::std::string::String>,
+    pub(crate) table_status: ::std::option::Option<crate::types::TableStatus>,
     pub(crate) replicas:
-        std::option::Option<std::vec::Vec<crate::types::ReplicaAutoScalingDescription>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ReplicaAutoScalingDescription>>,
 }
 impl TableAutoScalingDescriptionBuilder {
     /// <p>The name of the table.</p>
-    pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.table_name = Some(input.into());
+    pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.table_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the table.</p>
-    pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_name = input;
         self
     }
@@ -75,7 +80,7 @@ impl TableAutoScalingDescriptionBuilder {
     /// <li> <p> <code>ACTIVE</code> - The table is ready for use.</p> </li>
     /// </ul>
     pub fn table_status(mut self, input: crate::types::TableStatus) -> Self {
-        self.table_status = Some(input);
+        self.table_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current state of the table:</p>
@@ -87,7 +92,7 @@ impl TableAutoScalingDescriptionBuilder {
     /// </ul>
     pub fn set_table_status(
         mut self,
-        input: std::option::Option<crate::types::TableStatus>,
+        input: ::std::option::Option<crate::types::TableStatus>,
     ) -> Self {
         self.table_status = input;
         self
@@ -100,13 +105,13 @@ impl TableAutoScalingDescriptionBuilder {
     pub fn replicas(mut self, input: crate::types::ReplicaAutoScalingDescription) -> Self {
         let mut v = self.replicas.unwrap_or_default();
         v.push(input);
-        self.replicas = Some(v);
+        self.replicas = ::std::option::Option::Some(v);
         self
     }
     /// <p>Represents replicas of the global table.</p>
     pub fn set_replicas(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ReplicaAutoScalingDescription>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaAutoScalingDescription>>,
     ) -> Self {
         self.replicas = input;
         self

@@ -2,36 +2,36 @@
 
 /// <p>Specifies the DTMF input specifications.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DtmfSpecification {
     /// <p>The maximum number of DTMF digits allowed in an utterance.</p>
     #[doc(hidden)]
-    pub max_length: std::option::Option<i32>,
+    pub max_length: ::std::option::Option<i32>,
     /// <p>How long the bot should wait after the last DTMF character input before assuming that the input has concluded.</p>
     #[doc(hidden)]
-    pub end_timeout_ms: std::option::Option<i32>,
+    pub end_timeout_ms: ::std::option::Option<i32>,
     /// <p>The DTMF character that clears the accumulated DTMF digits and immediately ends the input.</p>
     #[doc(hidden)]
-    pub deletion_character: std::option::Option<std::string::String>,
+    pub deletion_character: ::std::option::Option<::std::string::String>,
     /// <p>The DTMF character that immediately ends input. If the user does not press this character, the input ends after the end timeout.</p>
     #[doc(hidden)]
-    pub end_character: std::option::Option<std::string::String>,
+    pub end_character: ::std::option::Option<::std::string::String>,
 }
 impl DtmfSpecification {
     /// <p>The maximum number of DTMF digits allowed in an utterance.</p>
-    pub fn max_length(&self) -> std::option::Option<i32> {
+    pub fn max_length(&self) -> ::std::option::Option<i32> {
         self.max_length
     }
     /// <p>How long the bot should wait after the last DTMF character input before assuming that the input has concluded.</p>
-    pub fn end_timeout_ms(&self) -> std::option::Option<i32> {
+    pub fn end_timeout_ms(&self) -> ::std::option::Option<i32> {
         self.end_timeout_ms
     }
     /// <p>The DTMF character that clears the accumulated DTMF digits and immediately ends the input.</p>
-    pub fn deletion_character(&self) -> std::option::Option<&str> {
+    pub fn deletion_character(&self) -> ::std::option::Option<&str> {
         self.deletion_character.as_deref()
     }
     /// <p>The DTMF character that immediately ends input. If the user does not press this character, the input ends after the end timeout.</p>
-    pub fn end_character(&self) -> std::option::Option<&str> {
+    pub fn end_character(&self) -> ::std::option::Option<&str> {
         self.end_character.as_deref()
     }
 }
@@ -44,54 +44,65 @@ impl DtmfSpecification {
 
 /// A builder for [`DtmfSpecification`](crate::types::DtmfSpecification).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DtmfSpecificationBuilder {
-    pub(crate) max_length: std::option::Option<i32>,
-    pub(crate) end_timeout_ms: std::option::Option<i32>,
-    pub(crate) deletion_character: std::option::Option<std::string::String>,
-    pub(crate) end_character: std::option::Option<std::string::String>,
+    pub(crate) max_length: ::std::option::Option<i32>,
+    pub(crate) end_timeout_ms: ::std::option::Option<i32>,
+    pub(crate) deletion_character: ::std::option::Option<::std::string::String>,
+    pub(crate) end_character: ::std::option::Option<::std::string::String>,
 }
 impl DtmfSpecificationBuilder {
     /// <p>The maximum number of DTMF digits allowed in an utterance.</p>
     pub fn max_length(mut self, input: i32) -> Self {
-        self.max_length = Some(input);
+        self.max_length = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum number of DTMF digits allowed in an utterance.</p>
-    pub fn set_max_length(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_length(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_length = input;
         self
     }
     /// <p>How long the bot should wait after the last DTMF character input before assuming that the input has concluded.</p>
     pub fn end_timeout_ms(mut self, input: i32) -> Self {
-        self.end_timeout_ms = Some(input);
+        self.end_timeout_ms = ::std::option::Option::Some(input);
         self
     }
     /// <p>How long the bot should wait after the last DTMF character input before assuming that the input has concluded.</p>
-    pub fn set_end_timeout_ms(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_end_timeout_ms(mut self, input: ::std::option::Option<i32>) -> Self {
         self.end_timeout_ms = input;
         self
     }
     /// <p>The DTMF character that clears the accumulated DTMF digits and immediately ends the input.</p>
-    pub fn deletion_character(mut self, input: impl Into<std::string::String>) -> Self {
-        self.deletion_character = Some(input.into());
+    pub fn deletion_character(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.deletion_character = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The DTMF character that clears the accumulated DTMF digits and immediately ends the input.</p>
     pub fn set_deletion_character(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.deletion_character = input;
         self
     }
     /// <p>The DTMF character that immediately ends input. If the user does not press this character, the input ends after the end timeout.</p>
-    pub fn end_character(mut self, input: impl Into<std::string::String>) -> Self {
-        self.end_character = Some(input.into());
+    pub fn end_character(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.end_character = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The DTMF character that immediately ends input. If the user does not press this character, the input ends after the end timeout.</p>
-    pub fn set_end_character(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_end_character(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.end_character = input;
         self
     }

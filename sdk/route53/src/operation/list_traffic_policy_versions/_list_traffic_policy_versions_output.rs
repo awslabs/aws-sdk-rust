@@ -2,26 +2,26 @@
 
 /// <p>A complex type that contains the response information for the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTrafficPolicyVersionsOutput {
     /// <p>A list that contains one <code>TrafficPolicy</code> element for each traffic policy version that is associated with the specified traffic policy.</p>
     #[doc(hidden)]
-    pub traffic_policies: std::option::Option<std::vec::Vec<crate::types::TrafficPolicy>>,
+    pub traffic_policies: ::std::option::Option<::std::vec::Vec<crate::types::TrafficPolicy>>,
     /// <p>A flag that indicates whether there are more traffic policies to be listed. If the response was truncated, you can get the next group of traffic policies by submitting another <code>ListTrafficPolicyVersions</code> request and specifying the value of <code>NextMarker</code> in the <code>marker</code> parameter.</p>
     #[doc(hidden)]
     pub is_truncated: bool,
     /// <p>If <code>IsTruncated</code> is <code>true</code>, the value of <code>TrafficPolicyVersionMarker</code> identifies the first traffic policy that Amazon Route 53 will return if you submit another request. Call <code>ListTrafficPolicyVersions</code> again and specify the value of <code>TrafficPolicyVersionMarker</code> in the <code>TrafficPolicyVersionMarker</code> request parameter.</p>
     /// <p>This element is present only if <code>IsTruncated</code> is <code>true</code>.</p>
     #[doc(hidden)]
-    pub traffic_policy_version_marker: std::option::Option<std::string::String>,
+    pub traffic_policy_version_marker: ::std::option::Option<::std::string::String>,
     /// <p>The value that you specified for the <code>maxitems</code> parameter in the <code>ListTrafficPolicyVersions</code> request that produced the current response.</p>
     #[doc(hidden)]
-    pub max_items: std::option::Option<i32>,
+    pub max_items: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }
 impl ListTrafficPolicyVersionsOutput {
     /// <p>A list that contains one <code>TrafficPolicy</code> element for each traffic policy version that is associated with the specified traffic policy.</p>
-    pub fn traffic_policies(&self) -> std::option::Option<&[crate::types::TrafficPolicy]> {
+    pub fn traffic_policies(&self) -> ::std::option::Option<&[crate::types::TrafficPolicy]> {
         self.traffic_policies.as_deref()
     }
     /// <p>A flag that indicates whether there are more traffic policies to be listed. If the response was truncated, you can get the next group of traffic policies by submitting another <code>ListTrafficPolicyVersions</code> request and specifying the value of <code>NextMarker</code> in the <code>marker</code> parameter.</p>
@@ -30,15 +30,15 @@ impl ListTrafficPolicyVersionsOutput {
     }
     /// <p>If <code>IsTruncated</code> is <code>true</code>, the value of <code>TrafficPolicyVersionMarker</code> identifies the first traffic policy that Amazon Route 53 will return if you submit another request. Call <code>ListTrafficPolicyVersions</code> again and specify the value of <code>TrafficPolicyVersionMarker</code> in the <code>TrafficPolicyVersionMarker</code> request parameter.</p>
     /// <p>This element is present only if <code>IsTruncated</code> is <code>true</code>.</p>
-    pub fn traffic_policy_version_marker(&self) -> std::option::Option<&str> {
+    pub fn traffic_policy_version_marker(&self) -> ::std::option::Option<&str> {
         self.traffic_policy_version_marker.as_deref()
     }
     /// <p>The value that you specified for the <code>maxitems</code> parameter in the <code>ListTrafficPolicyVersions</code> request that produced the current response.</p>
-    pub fn max_items(&self) -> std::option::Option<i32> {
+    pub fn max_items(&self) -> ::std::option::Option<i32> {
         self.max_items
     }
 }
-impl aws_http::request_id::RequestId for ListTrafficPolicyVersionsOutput {
+impl ::aws_http::request_id::RequestId for ListTrafficPolicyVersionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -52,12 +52,15 @@ impl ListTrafficPolicyVersionsOutput {
 
 /// A builder for [`ListTrafficPolicyVersionsOutput`](crate::operation::list_traffic_policy_versions::ListTrafficPolicyVersionsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListTrafficPolicyVersionsOutputBuilder {
-    pub(crate) traffic_policies: std::option::Option<std::vec::Vec<crate::types::TrafficPolicy>>,
-    pub(crate) is_truncated: std::option::Option<bool>,
-    pub(crate) traffic_policy_version_marker: std::option::Option<std::string::String>,
-    pub(crate) max_items: std::option::Option<i32>,
+    pub(crate) traffic_policies:
+        ::std::option::Option<::std::vec::Vec<crate::types::TrafficPolicy>>,
+    pub(crate) is_truncated: ::std::option::Option<bool>,
+    pub(crate) traffic_policy_version_marker: ::std::option::Option<::std::string::String>,
+    pub(crate) max_items: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }
 impl ListTrafficPolicyVersionsOutputBuilder {
@@ -69,49 +72,52 @@ impl ListTrafficPolicyVersionsOutputBuilder {
     pub fn traffic_policies(mut self, input: crate::types::TrafficPolicy) -> Self {
         let mut v = self.traffic_policies.unwrap_or_default();
         v.push(input);
-        self.traffic_policies = Some(v);
+        self.traffic_policies = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list that contains one <code>TrafficPolicy</code> element for each traffic policy version that is associated with the specified traffic policy.</p>
     pub fn set_traffic_policies(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TrafficPolicy>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::TrafficPolicy>>,
     ) -> Self {
         self.traffic_policies = input;
         self
     }
     /// <p>A flag that indicates whether there are more traffic policies to be listed. If the response was truncated, you can get the next group of traffic policies by submitting another <code>ListTrafficPolicyVersions</code> request and specifying the value of <code>NextMarker</code> in the <code>marker</code> parameter.</p>
     pub fn is_truncated(mut self, input: bool) -> Self {
-        self.is_truncated = Some(input);
+        self.is_truncated = ::std::option::Option::Some(input);
         self
     }
     /// <p>A flag that indicates whether there are more traffic policies to be listed. If the response was truncated, you can get the next group of traffic policies by submitting another <code>ListTrafficPolicyVersions</code> request and specifying the value of <code>NextMarker</code> in the <code>marker</code> parameter.</p>
-    pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_truncated(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_truncated = input;
         self
     }
     /// <p>If <code>IsTruncated</code> is <code>true</code>, the value of <code>TrafficPolicyVersionMarker</code> identifies the first traffic policy that Amazon Route 53 will return if you submit another request. Call <code>ListTrafficPolicyVersions</code> again and specify the value of <code>TrafficPolicyVersionMarker</code> in the <code>TrafficPolicyVersionMarker</code> request parameter.</p>
     /// <p>This element is present only if <code>IsTruncated</code> is <code>true</code>.</p>
-    pub fn traffic_policy_version_marker(mut self, input: impl Into<std::string::String>) -> Self {
-        self.traffic_policy_version_marker = Some(input.into());
+    pub fn traffic_policy_version_marker(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.traffic_policy_version_marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If <code>IsTruncated</code> is <code>true</code>, the value of <code>TrafficPolicyVersionMarker</code> identifies the first traffic policy that Amazon Route 53 will return if you submit another request. Call <code>ListTrafficPolicyVersions</code> again and specify the value of <code>TrafficPolicyVersionMarker</code> in the <code>TrafficPolicyVersionMarker</code> request parameter.</p>
     /// <p>This element is present only if <code>IsTruncated</code> is <code>true</code>.</p>
     pub fn set_traffic_policy_version_marker(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.traffic_policy_version_marker = input;
         self
     }
     /// <p>The value that you specified for the <code>maxitems</code> parameter in the <code>ListTrafficPolicyVersions</code> request that produced the current response.</p>
     pub fn max_items(mut self, input: i32) -> Self {
-        self.max_items = Some(input);
+        self.max_items = ::std::option::Option::Some(input);
         self
     }
     /// <p>The value that you specified for the <code>maxitems</code> parameter in the <code>ListTrafficPolicyVersions</code> request that produced the current response.</p>
-    pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_items = input;
         self
     }

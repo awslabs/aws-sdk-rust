@@ -9,29 +9,29 @@
 /// <li> <p> <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchSnoozeAlarm.html">BatchSnoozeAlarm</a> </p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchAlarmActionErrorEntry {
     /// <p>The request ID. Each ID must be unique within each batch.</p>
     #[doc(hidden)]
-    pub request_id: std::option::Option<std::string::String>,
+    pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>The error code.</p>
     #[doc(hidden)]
-    pub error_code: std::option::Option<crate::types::ErrorCode>,
+    pub error_code: ::std::option::Option<crate::types::ErrorCode>,
     /// <p>A message that describes the error.</p>
     #[doc(hidden)]
-    pub error_message: std::option::Option<std::string::String>,
+    pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl BatchAlarmActionErrorEntry {
     /// <p>The request ID. Each ID must be unique within each batch.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> ::std::option::Option<&str> {
         self.request_id.as_deref()
     }
     /// <p>The error code.</p>
-    pub fn error_code(&self) -> std::option::Option<&crate::types::ErrorCode> {
+    pub fn error_code(&self) -> ::std::option::Option<&crate::types::ErrorCode> {
         self.error_code.as_ref()
     }
     /// <p>A message that describes the error.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<&str> {
         self.error_message.as_deref()
     }
 }
@@ -44,40 +44,48 @@ impl BatchAlarmActionErrorEntry {
 
 /// A builder for [`BatchAlarmActionErrorEntry`](crate::types::BatchAlarmActionErrorEntry).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BatchAlarmActionErrorEntryBuilder {
-    pub(crate) request_id: std::option::Option<std::string::String>,
-    pub(crate) error_code: std::option::Option<crate::types::ErrorCode>,
-    pub(crate) error_message: std::option::Option<std::string::String>,
+    pub(crate) request_id: ::std::option::Option<::std::string::String>,
+    pub(crate) error_code: ::std::option::Option<crate::types::ErrorCode>,
+    pub(crate) error_message: ::std::option::Option<::std::string::String>,
 }
 impl BatchAlarmActionErrorEntryBuilder {
     /// <p>The request ID. Each ID must be unique within each batch.</p>
-    pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.request_id = Some(input.into());
+    pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.request_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The request ID. Each ID must be unique within each batch.</p>
-    pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.request_id = input;
         self
     }
     /// <p>The error code.</p>
     pub fn error_code(mut self, input: crate::types::ErrorCode) -> Self {
-        self.error_code = Some(input);
+        self.error_code = ::std::option::Option::Some(input);
         self
     }
     /// <p>The error code.</p>
-    pub fn set_error_code(mut self, input: std::option::Option<crate::types::ErrorCode>) -> Self {
+    pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::ErrorCode>) -> Self {
         self.error_code = input;
         self
     }
     /// <p>A message that describes the error.</p>
-    pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.error_message = Some(input.into());
+    pub fn error_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A message that describes the error.</p>
-    pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_error_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.error_message = input;
         self
     }

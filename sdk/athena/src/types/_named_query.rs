@@ -2,50 +2,50 @@
 
 /// <p>A query, where <code>QueryString</code> contains the SQL statements that make up the query.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NamedQuery {
     /// <p>The query name.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The query description.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The database to which the query belongs.</p>
     #[doc(hidden)]
-    pub database: std::option::Option<std::string::String>,
+    pub database: ::std::option::Option<::std::string::String>,
     /// <p>The SQL statements that make up the query.</p>
     #[doc(hidden)]
-    pub query_string: std::option::Option<std::string::String>,
+    pub query_string: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the query.</p>
     #[doc(hidden)]
-    pub named_query_id: std::option::Option<std::string::String>,
+    pub named_query_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the workgroup that contains the named query.</p>
     #[doc(hidden)]
-    pub work_group: std::option::Option<std::string::String>,
+    pub work_group: ::std::option::Option<::std::string::String>,
 }
 impl NamedQuery {
     /// <p>The query name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The query description.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The database to which the query belongs.</p>
-    pub fn database(&self) -> std::option::Option<&str> {
+    pub fn database(&self) -> ::std::option::Option<&str> {
         self.database.as_deref()
     }
     /// <p>The SQL statements that make up the query.</p>
-    pub fn query_string(&self) -> std::option::Option<&str> {
+    pub fn query_string(&self) -> ::std::option::Option<&str> {
         self.query_string.as_deref()
     }
     /// <p>The unique identifier of the query.</p>
-    pub fn named_query_id(&self) -> std::option::Option<&str> {
+    pub fn named_query_id(&self) -> ::std::option::Option<&str> {
         self.named_query_id.as_deref()
     }
     /// <p>The name of the workgroup that contains the named query.</p>
-    pub fn work_group(&self) -> std::option::Option<&str> {
+    pub fn work_group(&self) -> ::std::option::Option<&str> {
         self.work_group.as_deref()
     }
 }
@@ -58,73 +58,81 @@ impl NamedQuery {
 
 /// A builder for [`NamedQuery`](crate::types::NamedQuery).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NamedQueryBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) database: std::option::Option<std::string::String>,
-    pub(crate) query_string: std::option::Option<std::string::String>,
-    pub(crate) named_query_id: std::option::Option<std::string::String>,
-    pub(crate) work_group: std::option::Option<std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) database: ::std::option::Option<::std::string::String>,
+    pub(crate) query_string: ::std::option::Option<::std::string::String>,
+    pub(crate) named_query_id: ::std::option::Option<::std::string::String>,
+    pub(crate) work_group: ::std::option::Option<::std::string::String>,
 }
 impl NamedQueryBuilder {
     /// <p>The query name.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The query name.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The query description.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The query description.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>The database to which the query belongs.</p>
-    pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
-        self.database = Some(input.into());
+    pub fn database(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.database = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The database to which the query belongs.</p>
-    pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_database(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database = input;
         self
     }
     /// <p>The SQL statements that make up the query.</p>
-    pub fn query_string(mut self, input: impl Into<std::string::String>) -> Self {
-        self.query_string = Some(input.into());
+    pub fn query_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.query_string = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The SQL statements that make up the query.</p>
-    pub fn set_query_string(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_query_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.query_string = input;
         self
     }
     /// <p>The unique identifier of the query.</p>
-    pub fn named_query_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.named_query_id = Some(input.into());
+    pub fn named_query_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.named_query_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the query.</p>
-    pub fn set_named_query_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_named_query_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.named_query_id = input;
         self
     }
     /// <p>The name of the workgroup that contains the named query.</p>
-    pub fn work_group(mut self, input: impl Into<std::string::String>) -> Self {
-        self.work_group = Some(input.into());
+    pub fn work_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.work_group = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the workgroup that contains the named query.</p>
-    pub fn set_work_group(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_work_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.work_group = input;
         self
     }

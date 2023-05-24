@@ -6,56 +6,59 @@ pub use crate::operation::describe_trails::_describe_trails_input::DescribeTrail
 /// Fluent builder constructing a request to `DescribeTrails`.
 ///
 /// <p>Retrieves settings for one or more trails associated with the current region for your account.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeTrailsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::describe_trails::builders::DescribeTrailsInputBuilder,
 }
 impl DescribeTrailsFluentBuilder {
     /// Creates a new `DescribeTrails`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::describe_trails::DescribeTrails,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::describe_trails::DescribeTrailsError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_trails::DescribeTrailsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::describe_trails::DescribeTrailsOutput,
-        aws_smithy_http::result::SdkError<crate::operation::describe_trails::DescribeTrailsError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_trails::DescribeTrailsError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,9 +71,9 @@ impl DescribeTrailsFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::describe_trails::DescribeTrailsOutput,
-        aws_smithy_http::result::SdkError<crate::operation::describe_trails::DescribeTrailsError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::describe_trails::DescribeTrailsError>,
     > {
         self.send_middleware().await
     }
@@ -87,7 +90,10 @@ impl DescribeTrailsFluentBuilder {
     /// </ul> <note>
     /// <p>If one or more trail names are specified, information is returned only if the names match the names of trails belonging only to the current region and current account. To return information about a trail in another region, you must specify its trail ARN.</p>
     /// </note>
-    pub fn trail_name_list(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn trail_name_list(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.trail_name_list(input.into());
         self
     }
@@ -102,7 +108,7 @@ impl DescribeTrailsFluentBuilder {
     /// </note>
     pub fn set_trail_name_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_trail_name_list(input);
         self
@@ -113,7 +119,7 @@ impl DescribeTrailsFluentBuilder {
         self
     }
     /// <p>Specifies whether to include shadow trails in the response. A shadow trail is the replication in a region of a trail that was created in a different region, or in the case of an organization trail, the replication of an organization trail in member accounts. If you do not include shadow trails, organization trails in a member account and region replication trails will not be returned. The default is true.</p>
-    pub fn set_include_shadow_trails(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_include_shadow_trails(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_include_shadow_trails(input);
         self
     }

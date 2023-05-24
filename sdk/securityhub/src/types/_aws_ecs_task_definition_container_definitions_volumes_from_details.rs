@@ -2,14 +2,14 @@
 
 /// <p>A data volume to mount from another container.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails {
     /// <p>Whether the container has read-only access to the volume.</p>
     #[doc(hidden)]
     pub read_only: bool,
     /// <p>The name of another container within the same task definition from which to mount volumes.</p>
     #[doc(hidden)]
-    pub source_container: std::option::Option<std::string::String>,
+    pub source_container: ::std::option::Option<::std::string::String>,
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails {
     /// <p>Whether the container has read-only access to the volume.</p>
@@ -17,7 +17,7 @@ impl AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails {
         self.read_only
     }
     /// <p>The name of another container within the same task definition from which to mount volumes.</p>
-    pub fn source_container(&self) -> std::option::Option<&str> {
+    pub fn source_container(&self) -> ::std::option::Option<&str> {
         self.source_container.as_deref()
     }
 }
@@ -32,29 +32,37 @@ impl AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails {
 
 /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetailsBuilder {
-    pub(crate) read_only: std::option::Option<bool>,
-    pub(crate) source_container: std::option::Option<std::string::String>,
+    pub(crate) read_only: ::std::option::Option<bool>,
+    pub(crate) source_container: ::std::option::Option<::std::string::String>,
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsVolumesFromDetailsBuilder {
     /// <p>Whether the container has read-only access to the volume.</p>
     pub fn read_only(mut self, input: bool) -> Self {
-        self.read_only = Some(input);
+        self.read_only = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether the container has read-only access to the volume.</p>
-    pub fn set_read_only(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_read_only(mut self, input: ::std::option::Option<bool>) -> Self {
         self.read_only = input;
         self
     }
     /// <p>The name of another container within the same task definition from which to mount volumes.</p>
-    pub fn source_container(mut self, input: impl Into<std::string::String>) -> Self {
-        self.source_container = Some(input.into());
+    pub fn source_container(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.source_container = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of another container within the same task definition from which to mount volumes.</p>
-    pub fn set_source_container(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_source_container(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.source_container = input;
         self
     }

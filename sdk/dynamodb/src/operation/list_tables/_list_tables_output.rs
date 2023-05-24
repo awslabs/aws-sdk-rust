@@ -2,31 +2,31 @@
 
 /// <p>Represents the output of a <code>ListTables</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTablesOutput {
     /// <p>The names of the tables associated with the current account at the current endpoint. The maximum size of this array is 100.</p>
     /// <p>If <code>LastEvaluatedTableName</code> also appears in the output, you can use this value as the <code>ExclusiveStartTableName</code> parameter in a subsequent <code>ListTables</code> request and obtain the next page of results.</p>
     #[doc(hidden)]
-    pub table_names: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub table_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The name of the last table in the current page of results. Use this value as the <code>ExclusiveStartTableName</code> in a new request to obtain the next page of results, until all the table names are returned.</p>
     /// <p>If you do not receive a <code>LastEvaluatedTableName</code> value in the response, this means that there are no more table names to be retrieved.</p>
     #[doc(hidden)]
-    pub last_evaluated_table_name: std::option::Option<std::string::String>,
+    pub last_evaluated_table_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListTablesOutput {
     /// <p>The names of the tables associated with the current account at the current endpoint. The maximum size of this array is 100.</p>
     /// <p>If <code>LastEvaluatedTableName</code> also appears in the output, you can use this value as the <code>ExclusiveStartTableName</code> parameter in a subsequent <code>ListTables</code> request and obtain the next page of results.</p>
-    pub fn table_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn table_names(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.table_names.as_deref()
     }
     /// <p>The name of the last table in the current page of results. Use this value as the <code>ExclusiveStartTableName</code> in a new request to obtain the next page of results, until all the table names are returned.</p>
     /// <p>If you do not receive a <code>LastEvaluatedTableName</code> value in the response, this means that there are no more table names to be retrieved.</p>
-    pub fn last_evaluated_table_name(&self) -> std::option::Option<&str> {
+    pub fn last_evaluated_table_name(&self) -> ::std::option::Option<&str> {
         self.last_evaluated_table_name.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListTablesOutput {
+impl ::aws_http::request_id::RequestId for ListTablesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -40,10 +40,12 @@ impl ListTablesOutput {
 
 /// A builder for [`ListTablesOutput`](crate::operation::list_tables::ListTablesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListTablesOutputBuilder {
-    pub(crate) table_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) last_evaluated_table_name: std::option::Option<std::string::String>,
+    pub(crate) table_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) last_evaluated_table_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListTablesOutputBuilder {
@@ -53,32 +55,35 @@ impl ListTablesOutputBuilder {
     ///
     /// <p>The names of the tables associated with the current account at the current endpoint. The maximum size of this array is 100.</p>
     /// <p>If <code>LastEvaluatedTableName</code> also appears in the output, you can use this value as the <code>ExclusiveStartTableName</code> parameter in a subsequent <code>ListTables</code> request and obtain the next page of results.</p>
-    pub fn table_names(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn table_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.table_names.unwrap_or_default();
         v.push(input.into());
-        self.table_names = Some(v);
+        self.table_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>The names of the tables associated with the current account at the current endpoint. The maximum size of this array is 100.</p>
     /// <p>If <code>LastEvaluatedTableName</code> also appears in the output, you can use this value as the <code>ExclusiveStartTableName</code> parameter in a subsequent <code>ListTables</code> request and obtain the next page of results.</p>
     pub fn set_table_names(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.table_names = input;
         self
     }
     /// <p>The name of the last table in the current page of results. Use this value as the <code>ExclusiveStartTableName</code> in a new request to obtain the next page of results, until all the table names are returned.</p>
     /// <p>If you do not receive a <code>LastEvaluatedTableName</code> value in the response, this means that there are no more table names to be retrieved.</p>
-    pub fn last_evaluated_table_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.last_evaluated_table_name = Some(input.into());
+    pub fn last_evaluated_table_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.last_evaluated_table_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the last table in the current page of results. Use this value as the <code>ExclusiveStartTableName</code> in a new request to obtain the next page of results, until all the table names are returned.</p>
     /// <p>If you do not receive a <code>LastEvaluatedTableName</code> value in the response, this means that there are no more table names to be retrieved.</p>
     pub fn set_last_evaluated_table_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.last_evaluated_table_name = input;
         self

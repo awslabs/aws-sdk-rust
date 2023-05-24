@@ -38,13 +38,13 @@
 /// Hls Mode
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum HlsMode {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum HlsMode {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for HlsMode {
+impl ::std::convert::From<&str> for HlsMode {
     fn from(s: &str) -> Self {
         match s {
             "LIVE" => HlsMode::Live,
@@ -63,11 +63,11 @@ impl std::convert::From<&str> for HlsMode {
         }
     }
 }
-impl std::str::FromStr for HlsMode {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for HlsMode {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(HlsMode::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(HlsMode::from(s))
     }
 }
 impl HlsMode {
@@ -84,7 +84,7 @@ impl HlsMode {
         &["LIVE", "VOD"]
     }
 }
-impl AsRef<str> for HlsMode {
+impl ::std::convert::AsRef<str> for HlsMode {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

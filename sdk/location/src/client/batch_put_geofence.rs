@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`BatchPutGeofence`](crate::operation::batch_put_geofence::builders::BatchPutGeofenceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`collection_name(impl Into<String>)`](crate::operation::batch_put_geofence::builders::BatchPutGeofenceFluentBuilder::collection_name) / [`set_collection_name(Option<String>)`](crate::operation::batch_put_geofence::builders::BatchPutGeofenceFluentBuilder::set_collection_name): <p>The geofence collection storing the geofences.</p>
+    ///   - [`collection_name(impl ::std::convert::Into<String>)`](crate::operation::batch_put_geofence::builders::BatchPutGeofenceFluentBuilder::collection_name) / [`set_collection_name(Option<String>)`](crate::operation::batch_put_geofence::builders::BatchPutGeofenceFluentBuilder::set_collection_name): <p>The geofence collection storing the geofences.</p>
     ///   - [`entries(Vec<BatchPutGeofenceRequestEntry>)`](crate::operation::batch_put_geofence::builders::BatchPutGeofenceFluentBuilder::entries) / [`set_entries(Option<Vec<BatchPutGeofenceRequestEntry>>)`](crate::operation::batch_put_geofence::builders::BatchPutGeofenceFluentBuilder::set_entries): <p>The batch of geofences to be stored in a geofence collection.</p>
     /// - On success, responds with [`BatchPutGeofenceOutput`](crate::operation::batch_put_geofence::BatchPutGeofenceOutput) with field(s):
     ///   - [`successes(Option<Vec<BatchPutGeofenceSuccess>>)`](crate::operation::batch_put_geofence::BatchPutGeofenceOutput::successes): <p>Contains each geofence that was successfully stored in a geofence collection.</p>

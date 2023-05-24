@@ -2,7 +2,7 @@
 
 /// <p>A filter that identifies the subset of objects to which the replication rule applies. A <code>Filter</code> must specify exactly one <code>Prefix</code>, <code>Tag</code>, or an <code>And</code> child element.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum ReplicationRuleFilter {
     /// <p>A container for specifying rule filters. The filters determine the subset of objects to which the rule applies. This element is required only if you specify more than one filter. For example: </p>
     /// <ul>
@@ -13,7 +13,7 @@ pub enum ReplicationRuleFilter {
     /// <p>An object key name prefix that identifies the subset of objects to which the rule applies.</p> <important>
     /// <p>Replacement must be made for object keys containing special characters (such as carriage returns) when using XML requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints"> XML related object key constraints</a>.</p>
     /// </important>
-    Prefix(std::string::String),
+    Prefix(::std::string::String),
     /// <p>A container for specifying a tag key and value. </p>
     /// <p>The rule applies only to objects that have the tag in their tag set.</p>
     Tag(crate::types::Tag),
@@ -30,24 +30,26 @@ pub enum ReplicationRuleFilter {
 impl ReplicationRuleFilter {
     /// Tries to convert the enum instance into [`And`](crate::types::ReplicationRuleFilter::And), extracting the inner [`ReplicationRuleAndOperator`](crate::types::ReplicationRuleAndOperator).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_and(&self) -> std::result::Result<&crate::types::ReplicationRuleAndOperator, &Self> {
+    pub fn as_and(
+        &self,
+    ) -> ::std::result::Result<&crate::types::ReplicationRuleAndOperator, &Self> {
         if let ReplicationRuleFilter::And(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`And`](crate::types::ReplicationRuleFilter::And).
     pub fn is_and(&self) -> bool {
         self.as_and().is_ok()
     }
-    /// Tries to convert the enum instance into [`Prefix`](crate::types::ReplicationRuleFilter::Prefix), extracting the inner [`String`](std::string::String).
+    /// Tries to convert the enum instance into [`Prefix`](crate::types::ReplicationRuleFilter::Prefix), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_prefix(&self) -> std::result::Result<&std::string::String, &Self> {
+    pub fn as_prefix(&self) -> ::std::result::Result<&::std::string::String, &Self> {
         if let ReplicationRuleFilter::Prefix(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Prefix`](crate::types::ReplicationRuleFilter::Prefix).
@@ -56,11 +58,11 @@ impl ReplicationRuleFilter {
     }
     /// Tries to convert the enum instance into [`Tag`](crate::types::ReplicationRuleFilter::Tag), extracting the inner [`Tag`](crate::types::Tag).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_tag(&self) -> std::result::Result<&crate::types::Tag, &Self> {
+    pub fn as_tag(&self) -> ::std::result::Result<&crate::types::Tag, &Self> {
         if let ReplicationRuleFilter::Tag(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Tag`](crate::types::ReplicationRuleFilter::Tag).

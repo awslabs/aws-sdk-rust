@@ -38,13 +38,13 @@
 /// Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed for output video quality. The default behavior is faster, lower quality, single-pass encoding.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum Mpeg2QualityTuningLevel {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum Mpeg2QualityTuningLevel {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for Mpeg2QualityTuningLevel {
+impl ::std::convert::From<&str> for Mpeg2QualityTuningLevel {
     fn from(s: &str) -> Self {
         match s {
             "MULTI_PASS" => Mpeg2QualityTuningLevel::MultiPass,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for Mpeg2QualityTuningLevel {
         }
     }
 }
-impl std::str::FromStr for Mpeg2QualityTuningLevel {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for Mpeg2QualityTuningLevel {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Mpeg2QualityTuningLevel::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(Mpeg2QualityTuningLevel::from(s))
     }
 }
 impl Mpeg2QualityTuningLevel {
@@ -86,7 +86,7 @@ impl Mpeg2QualityTuningLevel {
         &["MULTI_PASS", "SINGLE_PASS"]
     }
 }
-impl AsRef<str> for Mpeg2QualityTuningLevel {
+impl ::std::convert::AsRef<str> for Mpeg2QualityTuningLevel {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

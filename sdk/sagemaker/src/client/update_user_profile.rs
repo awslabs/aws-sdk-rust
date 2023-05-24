@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateUserProfile`](crate::operation::update_user_profile::builders::UpdateUserProfileFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_id(impl Into<String>)`](crate::operation::update_user_profile::builders::UpdateUserProfileFluentBuilder::domain_id) / [`set_domain_id(Option<String>)`](crate::operation::update_user_profile::builders::UpdateUserProfileFluentBuilder::set_domain_id): <p>The domain ID.</p>
-    ///   - [`user_profile_name(impl Into<String>)`](crate::operation::update_user_profile::builders::UpdateUserProfileFluentBuilder::user_profile_name) / [`set_user_profile_name(Option<String>)`](crate::operation::update_user_profile::builders::UpdateUserProfileFluentBuilder::set_user_profile_name): <p>The user profile name.</p>
+    ///   - [`domain_id(impl ::std::convert::Into<String>)`](crate::operation::update_user_profile::builders::UpdateUserProfileFluentBuilder::domain_id) / [`set_domain_id(Option<String>)`](crate::operation::update_user_profile::builders::UpdateUserProfileFluentBuilder::set_domain_id): <p>The domain ID.</p>
+    ///   - [`user_profile_name(impl ::std::convert::Into<String>)`](crate::operation::update_user_profile::builders::UpdateUserProfileFluentBuilder::user_profile_name) / [`set_user_profile_name(Option<String>)`](crate::operation::update_user_profile::builders::UpdateUserProfileFluentBuilder::set_user_profile_name): <p>The user profile name.</p>
     ///   - [`user_settings(UserSettings)`](crate::operation::update_user_profile::builders::UpdateUserProfileFluentBuilder::user_settings) / [`set_user_settings(Option<UserSettings>)`](crate::operation::update_user_profile::builders::UpdateUserProfileFluentBuilder::set_user_settings): <p>A collection of settings.</p>
     /// - On success, responds with [`UpdateUserProfileOutput`](crate::operation::update_user_profile::UpdateUserProfileOutput) with field(s):
     ///   - [`user_profile_arn(Option<String>)`](crate::operation::update_user_profile::UpdateUserProfileOutput::user_profile_arn): <p>The user profile Amazon Resource Name (ARN).</p>

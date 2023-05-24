@@ -4,47 +4,49 @@
 /// <p>If you specify a maximum price, your instances will be interrupted more frequently than if you do not specify this parameter.</p>
 /// </important>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SpotPrice {
     /// <p>The Availability Zone.</p>
     #[doc(hidden)]
-    pub availability_zone: std::option::Option<std::string::String>,
+    pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The instance type.</p>
     #[doc(hidden)]
-    pub instance_type: std::option::Option<crate::types::InstanceType>,
+    pub instance_type: ::std::option::Option<crate::types::InstanceType>,
     /// <p>A general description of the AMI.</p>
     #[doc(hidden)]
-    pub product_description: std::option::Option<crate::types::RiProductDescription>,
+    pub product_description: ::std::option::Option<crate::types::RiProductDescription>,
     /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p> <important>
     /// <p>If you specify a maximum price, your instances will be interrupted more frequently than if you do not specify this parameter.</p>
     /// </important>
     #[doc(hidden)]
-    pub spot_price: std::option::Option<std::string::String>,
+    pub spot_price: ::std::option::Option<::std::string::String>,
     /// <p>The date and time the request was created, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
     #[doc(hidden)]
-    pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl SpotPrice {
     /// <p>The Availability Zone.</p>
-    pub fn availability_zone(&self) -> std::option::Option<&str> {
+    pub fn availability_zone(&self) -> ::std::option::Option<&str> {
         self.availability_zone.as_deref()
     }
     /// <p>The instance type.</p>
-    pub fn instance_type(&self) -> std::option::Option<&crate::types::InstanceType> {
+    pub fn instance_type(&self) -> ::std::option::Option<&crate::types::InstanceType> {
         self.instance_type.as_ref()
     }
     /// <p>A general description of the AMI.</p>
-    pub fn product_description(&self) -> std::option::Option<&crate::types::RiProductDescription> {
+    pub fn product_description(
+        &self,
+    ) -> ::std::option::Option<&crate::types::RiProductDescription> {
         self.product_description.as_ref()
     }
     /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p> <important>
     /// <p>If you specify a maximum price, your instances will be interrupted more frequently than if you do not specify this parameter.</p>
     /// </important>
-    pub fn spot_price(&self) -> std::option::Option<&str> {
+    pub fn spot_price(&self) -> ::std::option::Option<&str> {
         self.spot_price.as_deref()
     }
     /// <p>The date and time the request was created, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
 }
@@ -57,50 +59,55 @@ impl SpotPrice {
 
 /// A builder for [`SpotPrice`](crate::types::SpotPrice).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SpotPriceBuilder {
-    pub(crate) availability_zone: std::option::Option<std::string::String>,
-    pub(crate) instance_type: std::option::Option<crate::types::InstanceType>,
-    pub(crate) product_description: std::option::Option<crate::types::RiProductDescription>,
-    pub(crate) spot_price: std::option::Option<std::string::String>,
-    pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
+    pub(crate) instance_type: ::std::option::Option<crate::types::InstanceType>,
+    pub(crate) product_description: ::std::option::Option<crate::types::RiProductDescription>,
+    pub(crate) spot_price: ::std::option::Option<::std::string::String>,
+    pub(crate) timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl SpotPriceBuilder {
     /// <p>The Availability Zone.</p>
-    pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
-        self.availability_zone = Some(input.into());
+    pub fn availability_zone(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Availability Zone.</p>
     pub fn set_availability_zone(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.availability_zone = input;
         self
     }
     /// <p>The instance type.</p>
     pub fn instance_type(mut self, input: crate::types::InstanceType) -> Self {
-        self.instance_type = Some(input);
+        self.instance_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The instance type.</p>
     pub fn set_instance_type(
         mut self,
-        input: std::option::Option<crate::types::InstanceType>,
+        input: ::std::option::Option<crate::types::InstanceType>,
     ) -> Self {
         self.instance_type = input;
         self
     }
     /// <p>A general description of the AMI.</p>
     pub fn product_description(mut self, input: crate::types::RiProductDescription) -> Self {
-        self.product_description = Some(input);
+        self.product_description = ::std::option::Option::Some(input);
         self
     }
     /// <p>A general description of the AMI.</p>
     pub fn set_product_description(
         mut self,
-        input: std::option::Option<crate::types::RiProductDescription>,
+        input: ::std::option::Option<crate::types::RiProductDescription>,
     ) -> Self {
         self.product_description = input;
         self
@@ -108,24 +115,27 @@ impl SpotPriceBuilder {
     /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p> <important>
     /// <p>If you specify a maximum price, your instances will be interrupted more frequently than if you do not specify this parameter.</p>
     /// </important>
-    pub fn spot_price(mut self, input: impl Into<std::string::String>) -> Self {
-        self.spot_price = Some(input.into());
+    pub fn spot_price(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.spot_price = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p> <important>
     /// <p>If you specify a maximum price, your instances will be interrupted more frequently than if you do not specify this parameter.</p>
     /// </important>
-    pub fn set_spot_price(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_spot_price(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.spot_price = input;
         self
     }
     /// <p>The date and time the request was created, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-    pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.timestamp = Some(input);
+    pub fn timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time the request was created, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-    pub fn set_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_timestamp(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
         self.timestamp = input;
         self
     }

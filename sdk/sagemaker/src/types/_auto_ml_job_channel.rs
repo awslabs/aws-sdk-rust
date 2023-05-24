@@ -2,28 +2,28 @@
 
 /// <p>A channel is a named input source that training algorithms can consume. This channel is used for the non tabular training data of an AutoML job using the V2 API. For tabular training data, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLChannel.html"> AutoMLChannel</a>. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Channel.html"> Channel</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoMlJobChannel {
     /// <p>The type of channel. Defines whether the data are used for training or validation. The default value is <code>training</code>. Channels for <code>training</code> and <code>validation</code> must share the same <code>ContentType</code> </p>
     #[doc(hidden)]
-    pub channel_type: std::option::Option<crate::types::AutoMlChannelType>,
+    pub channel_type: ::std::option::Option<crate::types::AutoMlChannelType>,
     /// <p>The content type of the data from the input source. The following are the allowed content types for different problems:</p>
     /// <ul>
     /// <li> <p>ImageClassification: <code>image/png</code>, <code>image/jpeg</code>, <code>image/*</code> </p> </li>
     /// <li> <p>TextClassification: <code>text/csv;header=present</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub content_type: std::option::Option<std::string::String>,
+    pub content_type: ::std::option::Option<::std::string::String>,
     /// <p>The allowed compression types depend on the input format. We allow the compression type <code>Gzip</code> for <code>S3Prefix</code> inputs only. For all other inputs, the compression type should be <code>None</code>. If no compression type is provided, we default to <code>None</code>.</p>
     #[doc(hidden)]
-    pub compression_type: std::option::Option<crate::types::CompressionType>,
+    pub compression_type: ::std::option::Option<crate::types::CompressionType>,
     /// <p>The data source for an AutoML channel.</p>
     #[doc(hidden)]
-    pub data_source: std::option::Option<crate::types::AutoMlDataSource>,
+    pub data_source: ::std::option::Option<crate::types::AutoMlDataSource>,
 }
 impl AutoMlJobChannel {
     /// <p>The type of channel. Defines whether the data are used for training or validation. The default value is <code>training</code>. Channels for <code>training</code> and <code>validation</code> must share the same <code>ContentType</code> </p>
-    pub fn channel_type(&self) -> std::option::Option<&crate::types::AutoMlChannelType> {
+    pub fn channel_type(&self) -> ::std::option::Option<&crate::types::AutoMlChannelType> {
         self.channel_type.as_ref()
     }
     /// <p>The content type of the data from the input source. The following are the allowed content types for different problems:</p>
@@ -31,15 +31,15 @@ impl AutoMlJobChannel {
     /// <li> <p>ImageClassification: <code>image/png</code>, <code>image/jpeg</code>, <code>image/*</code> </p> </li>
     /// <li> <p>TextClassification: <code>text/csv;header=present</code> </p> </li>
     /// </ul>
-    pub fn content_type(&self) -> std::option::Option<&str> {
+    pub fn content_type(&self) -> ::std::option::Option<&str> {
         self.content_type.as_deref()
     }
     /// <p>The allowed compression types depend on the input format. We allow the compression type <code>Gzip</code> for <code>S3Prefix</code> inputs only. For all other inputs, the compression type should be <code>None</code>. If no compression type is provided, we default to <code>None</code>.</p>
-    pub fn compression_type(&self) -> std::option::Option<&crate::types::CompressionType> {
+    pub fn compression_type(&self) -> ::std::option::Option<&crate::types::CompressionType> {
         self.compression_type.as_ref()
     }
     /// <p>The data source for an AutoML channel.</p>
-    pub fn data_source(&self) -> std::option::Option<&crate::types::AutoMlDataSource> {
+    pub fn data_source(&self) -> ::std::option::Option<&crate::types::AutoMlDataSource> {
         self.data_source.as_ref()
     }
 }
@@ -52,23 +52,25 @@ impl AutoMlJobChannel {
 
 /// A builder for [`AutoMlJobChannel`](crate::types::AutoMlJobChannel).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AutoMlJobChannelBuilder {
-    pub(crate) channel_type: std::option::Option<crate::types::AutoMlChannelType>,
-    pub(crate) content_type: std::option::Option<std::string::String>,
-    pub(crate) compression_type: std::option::Option<crate::types::CompressionType>,
-    pub(crate) data_source: std::option::Option<crate::types::AutoMlDataSource>,
+    pub(crate) channel_type: ::std::option::Option<crate::types::AutoMlChannelType>,
+    pub(crate) content_type: ::std::option::Option<::std::string::String>,
+    pub(crate) compression_type: ::std::option::Option<crate::types::CompressionType>,
+    pub(crate) data_source: ::std::option::Option<crate::types::AutoMlDataSource>,
 }
 impl AutoMlJobChannelBuilder {
     /// <p>The type of channel. Defines whether the data are used for training or validation. The default value is <code>training</code>. Channels for <code>training</code> and <code>validation</code> must share the same <code>ContentType</code> </p>
     pub fn channel_type(mut self, input: crate::types::AutoMlChannelType) -> Self {
-        self.channel_type = Some(input);
+        self.channel_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of channel. Defines whether the data are used for training or validation. The default value is <code>training</code>. Channels for <code>training</code> and <code>validation</code> must share the same <code>ContentType</code> </p>
     pub fn set_channel_type(
         mut self,
-        input: std::option::Option<crate::types::AutoMlChannelType>,
+        input: ::std::option::Option<crate::types::AutoMlChannelType>,
     ) -> Self {
         self.channel_type = input;
         self
@@ -78,8 +80,8 @@ impl AutoMlJobChannelBuilder {
     /// <li> <p>ImageClassification: <code>image/png</code>, <code>image/jpeg</code>, <code>image/*</code> </p> </li>
     /// <li> <p>TextClassification: <code>text/csv;header=present</code> </p> </li>
     /// </ul>
-    pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.content_type = Some(input.into());
+    pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.content_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The content type of the data from the input source. The following are the allowed content types for different problems:</p>
@@ -87,32 +89,32 @@ impl AutoMlJobChannelBuilder {
     /// <li> <p>ImageClassification: <code>image/png</code>, <code>image/jpeg</code>, <code>image/*</code> </p> </li>
     /// <li> <p>TextClassification: <code>text/csv;header=present</code> </p> </li>
     /// </ul>
-    pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_type = input;
         self
     }
     /// <p>The allowed compression types depend on the input format. We allow the compression type <code>Gzip</code> for <code>S3Prefix</code> inputs only. For all other inputs, the compression type should be <code>None</code>. If no compression type is provided, we default to <code>None</code>.</p>
     pub fn compression_type(mut self, input: crate::types::CompressionType) -> Self {
-        self.compression_type = Some(input);
+        self.compression_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The allowed compression types depend on the input format. We allow the compression type <code>Gzip</code> for <code>S3Prefix</code> inputs only. For all other inputs, the compression type should be <code>None</code>. If no compression type is provided, we default to <code>None</code>.</p>
     pub fn set_compression_type(
         mut self,
-        input: std::option::Option<crate::types::CompressionType>,
+        input: ::std::option::Option<crate::types::CompressionType>,
     ) -> Self {
         self.compression_type = input;
         self
     }
     /// <p>The data source for an AutoML channel.</p>
     pub fn data_source(mut self, input: crate::types::AutoMlDataSource) -> Self {
-        self.data_source = Some(input);
+        self.data_source = ::std::option::Option::Some(input);
         self
     }
     /// <p>The data source for an AutoML channel.</p>
     pub fn set_data_source(
         mut self,
-        input: std::option::Option<crate::types::AutoMlDataSource>,
+        input: ::std::option::Option<crate::types::AutoMlDataSource>,
     ) -> Self {
         self.data_source = input;
         self

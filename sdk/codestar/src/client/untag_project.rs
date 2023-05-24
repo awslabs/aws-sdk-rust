@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UntagProject`](crate::operation::untag_project::builders::UntagProjectFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::untag_project::builders::UntagProjectFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::untag_project::builders::UntagProjectFluentBuilder::set_id): <p>The ID of the project to remove tags from.</p>
+    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::untag_project::builders::UntagProjectFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::untag_project::builders::UntagProjectFluentBuilder::set_id): <p>The ID of the project to remove tags from.</p>
     ///   - [`tags(Vec<String>)`](crate::operation::untag_project::builders::UntagProjectFluentBuilder::tags) / [`set_tags(Option<Vec<String>>)`](crate::operation::untag_project::builders::UntagProjectFluentBuilder::set_tags): <p>The tags to remove from the project.</p>
     /// - On success, responds with [`UntagProjectOutput`](crate::operation::untag_project::UntagProjectOutput)
     /// - On failure, responds with [`SdkError<UntagProjectError>`](crate::operation::untag_project::UntagProjectError)

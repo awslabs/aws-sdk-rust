@@ -6,29 +6,29 @@ pub use crate::operation::accept_invitation::_accept_invitation_input::AcceptInv
 /// Fluent builder constructing a request to `AcceptInvitation`.
 ///
 /// <p>Accepts an Amazon Macie membership invitation that was received from a specific account.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AcceptInvitationFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::accept_invitation::builders::AcceptInvitationInputBuilder,
 }
 impl AcceptInvitationFluentBuilder {
     /// Creates a new `AcceptInvitation`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::accept_invitation::AcceptInvitation,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::accept_invitation::AcceptInvitationError,
         >,
     > {
@@ -36,30 +36,33 @@ impl AcceptInvitationFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::accept_invitation::AcceptInvitationOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::accept_invitation::AcceptInvitationError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,44 +75,59 @@ impl AcceptInvitationFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::accept_invitation::AcceptInvitationOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::accept_invitation::AcceptInvitationError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The Amazon Web Services account ID for the account that sent the invitation.</p>
-    pub fn administrator_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn administrator_account_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.administrator_account_id(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID for the account that sent the invitation.</p>
     pub fn set_administrator_account_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_administrator_account_id(input);
         self
     }
     /// <p>The unique identifier for the invitation to accept.</p>
-    pub fn invitation_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn invitation_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.invitation_id(input.into());
         self
     }
     /// <p>The unique identifier for the invitation to accept.</p>
-    pub fn set_invitation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_invitation_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_invitation_id(input);
         self
     }
     /// <p>(Deprecated) The Amazon Web Services account ID for the account that sent the invitation. This property has been replaced by the administratorAccountId property and is retained only for backward compatibility.</p>
-    pub fn master_account(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn master_account(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.master_account(input.into());
         self
     }
     /// <p>(Deprecated) The Amazon Web Services account ID for the account that sent the invitation. This property has been replaced by the administratorAccountId property and is retained only for backward compatibility.</p>
-    pub fn set_master_account(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_master_account(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_master_account(input);
         self
     }

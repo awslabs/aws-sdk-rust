@@ -2,27 +2,27 @@
 
 /// <p>A list of receipt rule sets that exist under your AWS account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListReceiptRuleSetsOutput {
     /// <p>The metadata for the currently active receipt rule set. The metadata consists of the rule set name and the timestamp of when the rule set was created.</p>
     #[doc(hidden)]
-    pub rule_sets: std::option::Option<std::vec::Vec<crate::types::ReceiptRuleSetMetadata>>,
+    pub rule_sets: ::std::option::Option<::std::vec::Vec<crate::types::ReceiptRuleSetMetadata>>,
     /// <p>A token indicating that there are additional receipt rule sets available to be listed. Pass this token to successive calls of <code>ListReceiptRuleSets</code> to retrieve up to 100 receipt rule sets at a time.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListReceiptRuleSetsOutput {
     /// <p>The metadata for the currently active receipt rule set. The metadata consists of the rule set name and the timestamp of when the rule set was created.</p>
-    pub fn rule_sets(&self) -> std::option::Option<&[crate::types::ReceiptRuleSetMetadata]> {
+    pub fn rule_sets(&self) -> ::std::option::Option<&[crate::types::ReceiptRuleSetMetadata]> {
         self.rule_sets.as_deref()
     }
     /// <p>A token indicating that there are additional receipt rule sets available to be listed. Pass this token to successive calls of <code>ListReceiptRuleSets</code> to retrieve up to 100 receipt rule sets at a time.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListReceiptRuleSetsOutput {
+impl ::aws_http::request_id::RequestId for ListReceiptRuleSetsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -37,10 +37,13 @@ impl ListReceiptRuleSetsOutput {
 
 /// A builder for [`ListReceiptRuleSetsOutput`](crate::operation::list_receipt_rule_sets::ListReceiptRuleSetsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListReceiptRuleSetsOutputBuilder {
-    pub(crate) rule_sets: std::option::Option<std::vec::Vec<crate::types::ReceiptRuleSetMetadata>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) rule_sets:
+        ::std::option::Option<::std::vec::Vec<crate::types::ReceiptRuleSetMetadata>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListReceiptRuleSetsOutputBuilder {
@@ -52,24 +55,24 @@ impl ListReceiptRuleSetsOutputBuilder {
     pub fn rule_sets(mut self, input: crate::types::ReceiptRuleSetMetadata) -> Self {
         let mut v = self.rule_sets.unwrap_or_default();
         v.push(input);
-        self.rule_sets = Some(v);
+        self.rule_sets = ::std::option::Option::Some(v);
         self
     }
     /// <p>The metadata for the currently active receipt rule set. The metadata consists of the rule set name and the timestamp of when the rule set was created.</p>
     pub fn set_rule_sets(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ReceiptRuleSetMetadata>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ReceiptRuleSetMetadata>>,
     ) -> Self {
         self.rule_sets = input;
         self
     }
     /// <p>A token indicating that there are additional receipt rule sets available to be listed. Pass this token to successive calls of <code>ListReceiptRuleSets</code> to retrieve up to 100 receipt rule sets at a time.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A token indicating that there are additional receipt rule sets available to be listed. Pass this token to successive calls of <code>ListReceiptRuleSets</code> to retrieve up to 100 receipt rule sets at a time.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

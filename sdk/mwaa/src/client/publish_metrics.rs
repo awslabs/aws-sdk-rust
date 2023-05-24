@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`PublishMetrics`](crate::operation::publish_metrics::builders::PublishMetricsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`environment_name(impl Into<String>)`](crate::operation::publish_metrics::builders::PublishMetricsFluentBuilder::environment_name) / [`set_environment_name(Option<String>)`](crate::operation::publish_metrics::builders::PublishMetricsFluentBuilder::set_environment_name): <p> <b>Internal only</b>. The name of the environment.</p>
+    ///   - [`environment_name(impl ::std::convert::Into<String>)`](crate::operation::publish_metrics::builders::PublishMetricsFluentBuilder::environment_name) / [`set_environment_name(Option<String>)`](crate::operation::publish_metrics::builders::PublishMetricsFluentBuilder::set_environment_name): <p> <b>Internal only</b>. The name of the environment.</p>
     ///   - [`metric_data(Vec<MetricDatum>)`](crate::operation::publish_metrics::builders::PublishMetricsFluentBuilder::metric_data) / [`set_metric_data(Option<Vec<MetricDatum>>)`](crate::operation::publish_metrics::builders::PublishMetricsFluentBuilder::set_metric_data): <p> <b>Internal only</b>. Publishes metrics to Amazon CloudWatch. To learn more about the metrics published to Amazon CloudWatch, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/cw-metrics.html">Amazon MWAA performance metrics in Amazon CloudWatch</a>.</p>
     /// - On success, responds with [`PublishMetricsOutput`](crate::operation::publish_metrics::PublishMetricsOutput)
     /// - On failure, responds with [`SdkError<PublishMetricsError>`](crate::operation::publish_metrics::PublishMetricsError)

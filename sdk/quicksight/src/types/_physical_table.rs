@@ -2,7 +2,7 @@
 
 /// <p>A view of a data source that contains information about the shape of the data in the underlying source. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum PhysicalTable {
     /// <p>A physical table type built from the results of the custom SQL query.</p>
     CustomSql(crate::types::CustomSql),
@@ -23,11 +23,11 @@ pub enum PhysicalTable {
 impl PhysicalTable {
     /// Tries to convert the enum instance into [`CustomSql`](crate::types::PhysicalTable::CustomSql), extracting the inner [`CustomSql`](crate::types::CustomSql).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_custom_sql(&self) -> std::result::Result<&crate::types::CustomSql, &Self> {
+    pub fn as_custom_sql(&self) -> ::std::result::Result<&crate::types::CustomSql, &Self> {
         if let PhysicalTable::CustomSql(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`CustomSql`](crate::types::PhysicalTable::CustomSql).
@@ -38,11 +38,11 @@ impl PhysicalTable {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_relational_table(
         &self,
-    ) -> std::result::Result<&crate::types::RelationalTable, &Self> {
+    ) -> ::std::result::Result<&crate::types::RelationalTable, &Self> {
         if let PhysicalTable::RelationalTable(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`RelationalTable`](crate::types::PhysicalTable::RelationalTable).
@@ -51,11 +51,11 @@ impl PhysicalTable {
     }
     /// Tries to convert the enum instance into [`S3Source`](crate::types::PhysicalTable::S3Source), extracting the inner [`S3Source`](crate::types::S3Source).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_s3_source(&self) -> std::result::Result<&crate::types::S3Source, &Self> {
+    pub fn as_s3_source(&self) -> ::std::result::Result<&crate::types::S3Source, &Self> {
         if let PhysicalTable::S3Source(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`S3Source`](crate::types::PhysicalTable::S3Source).

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetSequenceStore`](crate::operation::get_sequence_store::builders::GetSequenceStoreFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::get_sequence_store::builders::GetSequenceStoreFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_sequence_store::builders::GetSequenceStoreFluentBuilder::set_id): <p>The store's ID.</p>
+    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::get_sequence_store::builders::GetSequenceStoreFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_sequence_store::builders::GetSequenceStoreFluentBuilder::set_id): <p>The store's ID.</p>
     /// - On success, responds with [`GetSequenceStoreOutput`](crate::operation::get_sequence_store::GetSequenceStoreOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::get_sequence_store::GetSequenceStoreOutput::id): <p>The store's ID.</p>
     ///   - [`arn(Option<String>)`](crate::operation::get_sequence_store::GetSequenceStoreOutput::arn): <p>The store's ARN.</p>

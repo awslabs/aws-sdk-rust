@@ -2,42 +2,43 @@
 
 /// <p>The sort configuration of a heat map.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HeatMapSortConfiguration {
     /// <p>The field sort configuration of the rows fields.</p>
     #[doc(hidden)]
-    pub heat_map_row_sort: std::option::Option<std::vec::Vec<crate::types::FieldSortOptions>>,
+    pub heat_map_row_sort: ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>,
     /// <p>The column sort configuration for heat map for columns that aren't a part of a field well.</p>
     #[doc(hidden)]
-    pub heat_map_column_sort: std::option::Option<std::vec::Vec<crate::types::FieldSortOptions>>,
+    pub heat_map_column_sort:
+        ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>,
     /// <p>The limit on the number of rows that are displayed in a heat map.</p>
     #[doc(hidden)]
     pub heat_map_row_items_limit_configuration:
-        std::option::Option<crate::types::ItemsLimitConfiguration>,
+        ::std::option::Option<crate::types::ItemsLimitConfiguration>,
     /// <p>The limit on the number of columns that are displayed in a heat map.</p>
     #[doc(hidden)]
     pub heat_map_column_items_limit_configuration:
-        std::option::Option<crate::types::ItemsLimitConfiguration>,
+        ::std::option::Option<crate::types::ItemsLimitConfiguration>,
 }
 impl HeatMapSortConfiguration {
     /// <p>The field sort configuration of the rows fields.</p>
-    pub fn heat_map_row_sort(&self) -> std::option::Option<&[crate::types::FieldSortOptions]> {
+    pub fn heat_map_row_sort(&self) -> ::std::option::Option<&[crate::types::FieldSortOptions]> {
         self.heat_map_row_sort.as_deref()
     }
     /// <p>The column sort configuration for heat map for columns that aren't a part of a field well.</p>
-    pub fn heat_map_column_sort(&self) -> std::option::Option<&[crate::types::FieldSortOptions]> {
+    pub fn heat_map_column_sort(&self) -> ::std::option::Option<&[crate::types::FieldSortOptions]> {
         self.heat_map_column_sort.as_deref()
     }
     /// <p>The limit on the number of rows that are displayed in a heat map.</p>
     pub fn heat_map_row_items_limit_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::ItemsLimitConfiguration> {
+    ) -> ::std::option::Option<&crate::types::ItemsLimitConfiguration> {
         self.heat_map_row_items_limit_configuration.as_ref()
     }
     /// <p>The limit on the number of columns that are displayed in a heat map.</p>
     pub fn heat_map_column_items_limit_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::ItemsLimitConfiguration> {
+    ) -> ::std::option::Option<&crate::types::ItemsLimitConfiguration> {
         self.heat_map_column_items_limit_configuration.as_ref()
     }
 }
@@ -50,16 +51,18 @@ impl HeatMapSortConfiguration {
 
 /// A builder for [`HeatMapSortConfiguration`](crate::types::HeatMapSortConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct HeatMapSortConfigurationBuilder {
     pub(crate) heat_map_row_sort:
-        std::option::Option<std::vec::Vec<crate::types::FieldSortOptions>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>,
     pub(crate) heat_map_column_sort:
-        std::option::Option<std::vec::Vec<crate::types::FieldSortOptions>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>,
     pub(crate) heat_map_row_items_limit_configuration:
-        std::option::Option<crate::types::ItemsLimitConfiguration>,
+        ::std::option::Option<crate::types::ItemsLimitConfiguration>,
     pub(crate) heat_map_column_items_limit_configuration:
-        std::option::Option<crate::types::ItemsLimitConfiguration>,
+        ::std::option::Option<crate::types::ItemsLimitConfiguration>,
 }
 impl HeatMapSortConfigurationBuilder {
     /// Appends an item to `heat_map_row_sort`.
@@ -70,13 +73,13 @@ impl HeatMapSortConfigurationBuilder {
     pub fn heat_map_row_sort(mut self, input: crate::types::FieldSortOptions) -> Self {
         let mut v = self.heat_map_row_sort.unwrap_or_default();
         v.push(input);
-        self.heat_map_row_sort = Some(v);
+        self.heat_map_row_sort = ::std::option::Option::Some(v);
         self
     }
     /// <p>The field sort configuration of the rows fields.</p>
     pub fn set_heat_map_row_sort(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::FieldSortOptions>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>,
     ) -> Self {
         self.heat_map_row_sort = input;
         self
@@ -89,13 +92,13 @@ impl HeatMapSortConfigurationBuilder {
     pub fn heat_map_column_sort(mut self, input: crate::types::FieldSortOptions) -> Self {
         let mut v = self.heat_map_column_sort.unwrap_or_default();
         v.push(input);
-        self.heat_map_column_sort = Some(v);
+        self.heat_map_column_sort = ::std::option::Option::Some(v);
         self
     }
     /// <p>The column sort configuration for heat map for columns that aren't a part of a field well.</p>
     pub fn set_heat_map_column_sort(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::FieldSortOptions>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>,
     ) -> Self {
         self.heat_map_column_sort = input;
         self
@@ -105,13 +108,13 @@ impl HeatMapSortConfigurationBuilder {
         mut self,
         input: crate::types::ItemsLimitConfiguration,
     ) -> Self {
-        self.heat_map_row_items_limit_configuration = Some(input);
+        self.heat_map_row_items_limit_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The limit on the number of rows that are displayed in a heat map.</p>
     pub fn set_heat_map_row_items_limit_configuration(
         mut self,
-        input: std::option::Option<crate::types::ItemsLimitConfiguration>,
+        input: ::std::option::Option<crate::types::ItemsLimitConfiguration>,
     ) -> Self {
         self.heat_map_row_items_limit_configuration = input;
         self
@@ -121,13 +124,13 @@ impl HeatMapSortConfigurationBuilder {
         mut self,
         input: crate::types::ItemsLimitConfiguration,
     ) -> Self {
-        self.heat_map_column_items_limit_configuration = Some(input);
+        self.heat_map_column_items_limit_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The limit on the number of columns that are displayed in a heat map.</p>
     pub fn set_heat_map_column_items_limit_configuration(
         mut self,
-        input: std::option::Option<crate::types::ItemsLimitConfiguration>,
+        input: ::std::option::Option<crate::types::ItemsLimitConfiguration>,
     ) -> Self {
         self.heat_map_column_items_limit_configuration = input;
         self

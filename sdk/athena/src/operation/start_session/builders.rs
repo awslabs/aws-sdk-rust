@@ -6,56 +6,59 @@ pub use crate::operation::start_session::_start_session_input::StartSessionInput
 /// Fluent builder constructing a request to `StartSession`.
 ///
 /// <p>Creates a session for running calculations within a workgroup. The session is ready when it reaches an <code>IDLE</code> state.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartSessionFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::start_session::builders::StartSessionInputBuilder,
 }
 impl StartSessionFluentBuilder {
     /// Creates a new `StartSession`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::start_session::StartSession,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::start_session::StartSessionError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_session::StartSessionError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::start_session::StartSessionOutput,
-        aws_smithy_http::result::SdkError<crate::operation::start_session::StartSessionError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_session::StartSessionError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,29 +71,29 @@ impl StartSessionFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::start_session::StartSessionOutput,
-        aws_smithy_http::result::SdkError<crate::operation::start_session::StartSessionError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_session::StartSessionError>,
     > {
         self.send_middleware().await
     }
     /// <p>The session description.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>The session description.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
     /// <p>The workgroup to which the session belongs.</p>
-    pub fn work_group(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn work_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.work_group(input.into());
         self
     }
     /// <p>The workgroup to which the session belongs.</p>
-    pub fn set_work_group(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_work_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_work_group(input);
         self
     }
@@ -102,18 +105,24 @@ impl StartSessionFluentBuilder {
     /// <p>Contains engine data processing unit (DPU) configuration settings and parameter mappings.</p>
     pub fn set_engine_configuration(
         mut self,
-        input: std::option::Option<crate::types::EngineConfiguration>,
+        input: ::std::option::Option<crate::types::EngineConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_engine_configuration(input);
         self
     }
     /// <p>The notebook version. This value is supplied automatically for notebook sessions in the Athena console and is not required for programmatic session access. The only valid notebook version is <code>Athena notebook version 1</code>. If you specify a value for <code>NotebookVersion</code>, you must also specify a value for <code>NotebookId</code>. See <code>EngineConfiguration$AdditionalConfigs</code>.</p>
-    pub fn notebook_version(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn notebook_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.notebook_version(input.into());
         self
     }
     /// <p>The notebook version. This value is supplied automatically for notebook sessions in the Athena console and is not required for programmatic session access. The only valid notebook version is <code>Athena notebook version 1</code>. If you specify a value for <code>NotebookVersion</code>, you must also specify a value for <code>NotebookId</code>. See <code>EngineConfiguration$AdditionalConfigs</code>.</p>
-    pub fn set_notebook_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_notebook_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_notebook_version(input);
         self
     }
@@ -123,14 +132,20 @@ impl StartSessionFluentBuilder {
         self
     }
     /// <p>The idle timeout in minutes for the session.</p>
-    pub fn set_session_idle_timeout_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_session_idle_timeout_in_minutes(
+        mut self,
+        input: ::std::option::Option<i32>,
+    ) -> Self {
         self.inner = self.inner.set_session_idle_timeout_in_minutes(input);
         self
     }
     /// <p>A unique case-sensitive string used to ensure the request to create the session is idempotent (executes only once). If another <code>StartSessionRequest</code> is received, the same response is returned and another session is not created. If a parameter has changed, an error is returned.</p> <important>
     /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
     /// </important>
-    pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn client_request_token(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
@@ -139,7 +154,7 @@ impl StartSessionFluentBuilder {
     /// </important>
     pub fn set_client_request_token(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self

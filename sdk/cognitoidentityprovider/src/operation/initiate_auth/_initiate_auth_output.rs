@@ -2,7 +2,7 @@
 
 /// <p>Initiates the authentication response.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InitiateAuthOutput {
     /// <p>The name of the challenge that you're responding to with this call. This name is returned in the <code>AdminInitiateAuth</code> response if you must pass another challenge.</p>
     /// <p>Valid values include the following:</p> <note>
@@ -20,18 +20,19 @@ pub struct InitiateAuthOutput {
     /// <li> <p> <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign in. The MFA types activated for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code> value. </p> <p> To set up software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to <code>AssociateSoftwareToken</code>. Use the session returned by <code>VerifySoftwareToken</code> as an input to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete sign-in. To set up SMS MFA, an administrator should help the user to add a phone number to their account, and then the user should call <code>InitiateAuth</code> again to restart sign-in.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub challenge_name: std::option::Option<crate::types::ChallengeNameType>,
+    pub challenge_name: ::std::option::Option<crate::types::ChallengeNameType>,
     /// <p>The session that should pass both ways in challenge-response calls to the service. If the caller must pass another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
     #[doc(hidden)]
-    pub session: std::option::Option<std::string::String>,
+    pub session: ::std::option::Option<::std::string::String>,
     /// <p>The challenge parameters. These are returned in the <code>InitiateAuth</code> response if you must pass another challenge. The responses in this parameter should be used to compute inputs to the next call (<code>RespondToAuthChallenge</code>). </p>
     /// <p>All challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable).</p>
     #[doc(hidden)]
-    pub challenge_parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub challenge_parameters: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>The result of the authentication response. This result is only returned if the caller doesn't need to pass another challenge. If the caller does need to pass another challenge before it gets tokens, <code>ChallengeName</code>, <code>ChallengeParameters</code>, and <code>Session</code> are returned.</p>
     #[doc(hidden)]
-    pub authentication_result: std::option::Option<crate::types::AuthenticationResultType>,
+    pub authentication_result: ::std::option::Option<crate::types::AuthenticationResultType>,
     _request_id: Option<String>,
 }
 impl InitiateAuthOutput {
@@ -50,29 +51,30 @@ impl InitiateAuthOutput {
     /// </note> </li>
     /// <li> <p> <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign in. The MFA types activated for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code> value. </p> <p> To set up software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to <code>AssociateSoftwareToken</code>. Use the session returned by <code>VerifySoftwareToken</code> as an input to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete sign-in. To set up SMS MFA, an administrator should help the user to add a phone number to their account, and then the user should call <code>InitiateAuth</code> again to restart sign-in.</p> </li>
     /// </ul>
-    pub fn challenge_name(&self) -> std::option::Option<&crate::types::ChallengeNameType> {
+    pub fn challenge_name(&self) -> ::std::option::Option<&crate::types::ChallengeNameType> {
         self.challenge_name.as_ref()
     }
     /// <p>The session that should pass both ways in challenge-response calls to the service. If the caller must pass another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
-    pub fn session(&self) -> std::option::Option<&str> {
+    pub fn session(&self) -> ::std::option::Option<&str> {
         self.session.as_deref()
     }
     /// <p>The challenge parameters. These are returned in the <code>InitiateAuth</code> response if you must pass another challenge. The responses in this parameter should be used to compute inputs to the next call (<code>RespondToAuthChallenge</code>). </p>
     /// <p>All challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable).</p>
     pub fn challenge_parameters(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.challenge_parameters.as_ref()
     }
     /// <p>The result of the authentication response. This result is only returned if the caller doesn't need to pass another challenge. If the caller does need to pass another challenge before it gets tokens, <code>ChallengeName</code>, <code>ChallengeParameters</code>, and <code>Session</code> are returned.</p>
     pub fn authentication_result(
         &self,
-    ) -> std::option::Option<&crate::types::AuthenticationResultType> {
+    ) -> ::std::option::Option<&crate::types::AuthenticationResultType> {
         self.authentication_result.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for InitiateAuthOutput {
+impl ::aws_http::request_id::RequestId for InitiateAuthOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -86,13 +88,16 @@ impl InitiateAuthOutput {
 
 /// A builder for [`InitiateAuthOutput`](crate::operation::initiate_auth::InitiateAuthOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InitiateAuthOutputBuilder {
-    pub(crate) challenge_name: std::option::Option<crate::types::ChallengeNameType>,
-    pub(crate) session: std::option::Option<std::string::String>,
-    pub(crate) challenge_parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) authentication_result: std::option::Option<crate::types::AuthenticationResultType>,
+    pub(crate) challenge_name: ::std::option::Option<crate::types::ChallengeNameType>,
+    pub(crate) session: ::std::option::Option<::std::string::String>,
+    pub(crate) challenge_parameters: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) authentication_result: ::std::option::Option<crate::types::AuthenticationResultType>,
     _request_id: Option<String>,
 }
 impl InitiateAuthOutputBuilder {
@@ -112,7 +117,7 @@ impl InitiateAuthOutputBuilder {
     /// <li> <p> <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign in. The MFA types activated for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code> value. </p> <p> To set up software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to <code>AssociateSoftwareToken</code>. Use the session returned by <code>VerifySoftwareToken</code> as an input to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete sign-in. To set up SMS MFA, an administrator should help the user to add a phone number to their account, and then the user should call <code>InitiateAuth</code> again to restart sign-in.</p> </li>
     /// </ul>
     pub fn challenge_name(mut self, input: crate::types::ChallengeNameType) -> Self {
-        self.challenge_name = Some(input);
+        self.challenge_name = ::std::option::Option::Some(input);
         self
     }
     /// <p>The name of the challenge that you're responding to with this call. This name is returned in the <code>AdminInitiateAuth</code> response if you must pass another challenge.</p>
@@ -132,18 +137,18 @@ impl InitiateAuthOutputBuilder {
     /// </ul>
     pub fn set_challenge_name(
         mut self,
-        input: std::option::Option<crate::types::ChallengeNameType>,
+        input: ::std::option::Option<crate::types::ChallengeNameType>,
     ) -> Self {
         self.challenge_name = input;
         self
     }
     /// <p>The session that should pass both ways in challenge-response calls to the service. If the caller must pass another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
-    pub fn session(mut self, input: impl Into<std::string::String>) -> Self {
-        self.session = Some(input.into());
+    pub fn session(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.session = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The session that should pass both ways in challenge-response calls to the service. If the caller must pass another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
-    pub fn set_session(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_session(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.session = input;
         self
     }
@@ -155,20 +160,20 @@ impl InitiateAuthOutputBuilder {
     /// <p>All challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable).</p>
     pub fn challenge_parameters(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.challenge_parameters.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.challenge_parameters = Some(hash_map);
+        self.challenge_parameters = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The challenge parameters. These are returned in the <code>InitiateAuth</code> response if you must pass another challenge. The responses in this parameter should be used to compute inputs to the next call (<code>RespondToAuthChallenge</code>). </p>
     /// <p>All challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable).</p>
     pub fn set_challenge_parameters(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.challenge_parameters = input;
@@ -176,13 +181,13 @@ impl InitiateAuthOutputBuilder {
     }
     /// <p>The result of the authentication response. This result is only returned if the caller doesn't need to pass another challenge. If the caller does need to pass another challenge before it gets tokens, <code>ChallengeName</code>, <code>ChallengeParameters</code>, and <code>Session</code> are returned.</p>
     pub fn authentication_result(mut self, input: crate::types::AuthenticationResultType) -> Self {
-        self.authentication_result = Some(input);
+        self.authentication_result = ::std::option::Option::Some(input);
         self
     }
     /// <p>The result of the authentication response. This result is only returned if the caller doesn't need to pass another challenge. If the caller does need to pass another challenge before it gets tokens, <code>ChallengeName</code>, <code>ChallengeParameters</code>, and <code>Session</code> are returned.</p>
     pub fn set_authentication_result(
         mut self,
-        input: std::option::Option<crate::types::AuthenticationResultType>,
+        input: ::std::option::Option<crate::types::AuthenticationResultType>,
     ) -> Self {
         self.authentication_result = input;
         self

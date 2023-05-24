@@ -2,15 +2,15 @@
 
 /// <p>The <code>ResourceConfig</code> to update <code>KeepAlivePeriodInSeconds</code>. Other fields in the <code>ResourceConfig</code> cannot be updated.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceConfigForUpdate {
     /// <p>The <code>KeepAlivePeriodInSeconds</code> value specified in the <code>ResourceConfig</code> to update.</p>
     #[doc(hidden)]
-    pub keep_alive_period_in_seconds: std::option::Option<i32>,
+    pub keep_alive_period_in_seconds: ::std::option::Option<i32>,
 }
 impl ResourceConfigForUpdate {
     /// <p>The <code>KeepAlivePeriodInSeconds</code> value specified in the <code>ResourceConfig</code> to update.</p>
-    pub fn keep_alive_period_in_seconds(&self) -> std::option::Option<i32> {
+    pub fn keep_alive_period_in_seconds(&self) -> ::std::option::Option<i32> {
         self.keep_alive_period_in_seconds
     }
 }
@@ -23,18 +23,20 @@ impl ResourceConfigForUpdate {
 
 /// A builder for [`ResourceConfigForUpdate`](crate::types::ResourceConfigForUpdate).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResourceConfigForUpdateBuilder {
-    pub(crate) keep_alive_period_in_seconds: std::option::Option<i32>,
+    pub(crate) keep_alive_period_in_seconds: ::std::option::Option<i32>,
 }
 impl ResourceConfigForUpdateBuilder {
     /// <p>The <code>KeepAlivePeriodInSeconds</code> value specified in the <code>ResourceConfig</code> to update.</p>
     pub fn keep_alive_period_in_seconds(mut self, input: i32) -> Self {
-        self.keep_alive_period_in_seconds = Some(input);
+        self.keep_alive_period_in_seconds = ::std::option::Option::Some(input);
         self
     }
     /// <p>The <code>KeepAlivePeriodInSeconds</code> value specified in the <code>ResourceConfig</code> to update.</p>
-    pub fn set_keep_alive_period_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_keep_alive_period_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.keep_alive_period_in_seconds = input;
         self
     }

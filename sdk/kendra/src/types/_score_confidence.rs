@@ -41,13 +41,13 @@
 /// Enumeration for query score confidence.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ScoreConfidence {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,7 +63,7 @@ pub enum ScoreConfidence {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ScoreConfidence {
+impl ::std::convert::From<&str> for ScoreConfidence {
     fn from(s: &str) -> Self {
         match s {
             "HIGH" => ScoreConfidence::High,
@@ -77,11 +77,11 @@ impl std::convert::From<&str> for ScoreConfidence {
         }
     }
 }
-impl std::str::FromStr for ScoreConfidence {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ScoreConfidence {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ScoreConfidence::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ScoreConfidence::from(s))
     }
 }
 impl ScoreConfidence {
@@ -101,7 +101,7 @@ impl ScoreConfidence {
         &["HIGH", "LOW", "MEDIUM", "NOT_AVAILABLE", "VERY_HIGH"]
     }
 }
-impl AsRef<str> for ScoreConfidence {
+impl ::std::convert::AsRef<str> for ScoreConfidence {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -2,7 +2,7 @@
 
 /// <p>Represents test settings. This data structure is passed in as the test parameter to ScheduleRun. For an example of the JSON request syntax, see <code>ScheduleRun</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScheduleRunTest {
     /// <p>The test's type.</p>
     /// <p>Must be one of the following values:</p>
@@ -27,16 +27,16 @@ pub struct ScheduleRunTest {
     /// <li> <p>XCTEST_UI</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::TestType>,
+    pub r#type: ::std::option::Option<crate::types::TestType>,
     /// <p>The ARN of the uploaded test to be run.</p>
     #[doc(hidden)]
-    pub test_package_arn: std::option::Option<std::string::String>,
+    pub test_package_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the YAML-formatted test specification.</p>
     #[doc(hidden)]
-    pub test_spec_arn: std::option::Option<std::string::String>,
+    pub test_spec_arn: ::std::option::Option<::std::string::String>,
     /// <p>The test's filter.</p>
     #[doc(hidden)]
-    pub filter: std::option::Option<std::string::String>,
+    pub filter: ::std::option::Option<::std::string::String>,
     /// <p>The test's parameters, such as test framework parameters and fixture settings. Parameters are represented by name-value pairs of strings.</p>
     /// <p>For all tests:</p>
     /// <ul>
@@ -96,8 +96,9 @@ pub struct ScheduleRunTest {
     /// </ul> </li>
     /// </ul>
     #[doc(hidden)]
-    pub parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub parameters: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl ScheduleRunTest {
     /// <p>The test's type.</p>
@@ -122,19 +123,19 @@ impl ScheduleRunTest {
     /// <li> <p>XCTEST</p> </li>
     /// <li> <p>XCTEST_UI</p> </li>
     /// </ul>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::TestType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::TestType> {
         self.r#type.as_ref()
     }
     /// <p>The ARN of the uploaded test to be run.</p>
-    pub fn test_package_arn(&self) -> std::option::Option<&str> {
+    pub fn test_package_arn(&self) -> ::std::option::Option<&str> {
         self.test_package_arn.as_deref()
     }
     /// <p>The ARN of the YAML-formatted test specification.</p>
-    pub fn test_spec_arn(&self) -> std::option::Option<&str> {
+    pub fn test_spec_arn(&self) -> ::std::option::Option<&str> {
         self.test_spec_arn.as_deref()
     }
     /// <p>The test's filter.</p>
-    pub fn filter(&self) -> std::option::Option<&str> {
+    pub fn filter(&self) -> ::std::option::Option<&str> {
         self.filter.as_deref()
     }
     /// <p>The test's parameters, such as test framework parameters and fixture settings. Parameters are represented by name-value pairs of strings.</p>
@@ -197,8 +198,9 @@ impl ScheduleRunTest {
     /// </ul>
     pub fn parameters(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.parameters.as_ref()
     }
 }
@@ -211,14 +213,17 @@ impl ScheduleRunTest {
 
 /// A builder for [`ScheduleRunTest`](crate::types::ScheduleRunTest).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ScheduleRunTestBuilder {
-    pub(crate) r#type: std::option::Option<crate::types::TestType>,
-    pub(crate) test_package_arn: std::option::Option<std::string::String>,
-    pub(crate) test_spec_arn: std::option::Option<std::string::String>,
-    pub(crate) filter: std::option::Option<std::string::String>,
-    pub(crate) parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) r#type: ::std::option::Option<crate::types::TestType>,
+    pub(crate) test_package_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) test_spec_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) filter: ::std::option::Option<::std::string::String>,
+    pub(crate) parameters: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl ScheduleRunTestBuilder {
     /// <p>The test's type.</p>
@@ -244,7 +249,7 @@ impl ScheduleRunTestBuilder {
     /// <li> <p>XCTEST_UI</p> </li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::TestType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The test's type.</p>
@@ -269,37 +274,49 @@ impl ScheduleRunTestBuilder {
     /// <li> <p>XCTEST</p> </li>
     /// <li> <p>XCTEST_UI</p> </li>
     /// </ul>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::TestType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::TestType>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The ARN of the uploaded test to be run.</p>
-    pub fn test_package_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.test_package_arn = Some(input.into());
+    pub fn test_package_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.test_package_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the uploaded test to be run.</p>
-    pub fn set_test_package_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_test_package_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.test_package_arn = input;
         self
     }
     /// <p>The ARN of the YAML-formatted test specification.</p>
-    pub fn test_spec_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.test_spec_arn = Some(input.into());
+    pub fn test_spec_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.test_spec_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the YAML-formatted test specification.</p>
-    pub fn set_test_spec_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_test_spec_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.test_spec_arn = input;
         self
     }
     /// <p>The test's filter.</p>
-    pub fn filter(mut self, input: impl Into<std::string::String>) -> Self {
-        self.filter = Some(input.into());
+    pub fn filter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.filter = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The test's filter.</p>
-    pub fn set_filter(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.filter = input;
         self
     }
@@ -367,12 +384,12 @@ impl ScheduleRunTestBuilder {
     /// </ul>
     pub fn parameters(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.parameters = Some(hash_map);
+        self.parameters = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The test's parameters, such as test framework parameters and fixture settings. Parameters are represented by name-value pairs of strings.</p>
@@ -435,8 +452,8 @@ impl ScheduleRunTestBuilder {
     /// </ul>
     pub fn set_parameters(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.parameters = input;

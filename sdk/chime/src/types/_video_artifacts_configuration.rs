@@ -2,22 +2,22 @@
 
 /// <p>The video artifact configuration object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VideoArtifactsConfiguration {
     /// <p>Indicates whether the video artifact is enabled or disabled.</p>
     #[doc(hidden)]
-    pub state: std::option::Option<crate::types::ArtifactsState>,
+    pub state: ::std::option::Option<crate::types::ArtifactsState>,
     /// <p>The MUX type of the video artifact configuration object.</p>
     #[doc(hidden)]
-    pub mux_type: std::option::Option<crate::types::VideoMuxType>,
+    pub mux_type: ::std::option::Option<crate::types::VideoMuxType>,
 }
 impl VideoArtifactsConfiguration {
     /// <p>Indicates whether the video artifact is enabled or disabled.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::ArtifactsState> {
+    pub fn state(&self) -> ::std::option::Option<&crate::types::ArtifactsState> {
         self.state.as_ref()
     }
     /// <p>The MUX type of the video artifact configuration object.</p>
-    pub fn mux_type(&self) -> std::option::Option<&crate::types::VideoMuxType> {
+    pub fn mux_type(&self) -> ::std::option::Option<&crate::types::VideoMuxType> {
         self.mux_type.as_ref()
     }
 }
@@ -30,29 +30,34 @@ impl VideoArtifactsConfiguration {
 
 /// A builder for [`VideoArtifactsConfiguration`](crate::types::VideoArtifactsConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VideoArtifactsConfigurationBuilder {
-    pub(crate) state: std::option::Option<crate::types::ArtifactsState>,
-    pub(crate) mux_type: std::option::Option<crate::types::VideoMuxType>,
+    pub(crate) state: ::std::option::Option<crate::types::ArtifactsState>,
+    pub(crate) mux_type: ::std::option::Option<crate::types::VideoMuxType>,
 }
 impl VideoArtifactsConfigurationBuilder {
     /// <p>Indicates whether the video artifact is enabled or disabled.</p>
     pub fn state(mut self, input: crate::types::ArtifactsState) -> Self {
-        self.state = Some(input);
+        self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether the video artifact is enabled or disabled.</p>
-    pub fn set_state(mut self, input: std::option::Option<crate::types::ArtifactsState>) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::ArtifactsState>) -> Self {
         self.state = input;
         self
     }
     /// <p>The MUX type of the video artifact configuration object.</p>
     pub fn mux_type(mut self, input: crate::types::VideoMuxType) -> Self {
-        self.mux_type = Some(input);
+        self.mux_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The MUX type of the video artifact configuration object.</p>
-    pub fn set_mux_type(mut self, input: std::option::Option<crate::types::VideoMuxType>) -> Self {
+    pub fn set_mux_type(
+        mut self,
+        input: ::std::option::Option<crate::types::VideoMuxType>,
+    ) -> Self {
         self.mux_type = input;
         self
     }

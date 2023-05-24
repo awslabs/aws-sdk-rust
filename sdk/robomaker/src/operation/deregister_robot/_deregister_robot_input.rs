@@ -4,22 +4,22 @@
     note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
 )]
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeregisterRobotInput {
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
     #[doc(hidden)]
-    pub fleet: std::option::Option<std::string::String>,
+    pub fleet: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the robot.</p>
     #[doc(hidden)]
-    pub robot: std::option::Option<std::string::String>,
+    pub robot: ::std::option::Option<::std::string::String>,
 }
 impl DeregisterRobotInput {
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
-    pub fn fleet(&self) -> std::option::Option<&str> {
+    pub fn fleet(&self) -> ::std::option::Option<&str> {
         self.fleet.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the robot.</p>
-    pub fn robot(&self) -> std::option::Option<&str> {
+    pub fn robot(&self) -> ::std::option::Option<&str> {
         self.robot.as_deref()
     }
 }
@@ -32,40 +32,42 @@ impl DeregisterRobotInput {
 
 /// A builder for [`DeregisterRobotInput`](crate::operation::deregister_robot::DeregisterRobotInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeregisterRobotInputBuilder {
-    pub(crate) fleet: std::option::Option<std::string::String>,
-    pub(crate) robot: std::option::Option<std::string::String>,
+    pub(crate) fleet: ::std::option::Option<::std::string::String>,
+    pub(crate) robot: ::std::option::Option<::std::string::String>,
 }
 impl DeregisterRobotInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
-    pub fn fleet(mut self, input: impl Into<std::string::String>) -> Self {
-        self.fleet = Some(input.into());
+    pub fn fleet(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.fleet = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
-    pub fn set_fleet(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_fleet(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fleet = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the robot.</p>
-    pub fn robot(mut self, input: impl Into<std::string::String>) -> Self {
-        self.robot = Some(input.into());
+    pub fn robot(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.robot = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the robot.</p>
-    pub fn set_robot(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_robot(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.robot = input;
         self
     }
     /// Consumes the builder and constructs a [`DeregisterRobotInput`](crate::operation::deregister_robot::DeregisterRobotInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::deregister_robot::DeregisterRobotInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::deregister_robot::DeregisterRobotInput {
+        ::std::result::Result::Ok(crate::operation::deregister_robot::DeregisterRobotInput {
             fleet: self.fleet,
             robot: self.robot,
         })

@@ -2,29 +2,29 @@
 
 /// <p>Output column.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OutputColumn {
     /// <p>A display name for the dataset.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description for a column.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The type.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::ColumnDataType>,
+    pub r#type: ::std::option::Option<crate::types::ColumnDataType>,
 }
 impl OutputColumn {
     /// <p>A display name for the dataset.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>A description for a column.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The type.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::ColumnDataType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ColumnDataType> {
         self.r#type.as_ref()
     }
 }
@@ -37,40 +37,42 @@ impl OutputColumn {
 
 /// A builder for [`OutputColumn`](crate::types::OutputColumn).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OutputColumnBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) r#type: std::option::Option<crate::types::ColumnDataType>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::ColumnDataType>,
 }
 impl OutputColumnBuilder {
     /// <p>A display name for the dataset.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A display name for the dataset.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>A description for a column.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description for a column.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>The type.</p>
     pub fn r#type(mut self, input: crate::types::ColumnDataType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::ColumnDataType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ColumnDataType>) -> Self {
         self.r#type = input;
         self
     }

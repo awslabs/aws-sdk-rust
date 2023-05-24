@@ -2,107 +2,112 @@
 
 /// <p>Describes a GraphQL API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GraphqlApi {
     /// <p>The API name.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The API ID.</p>
     #[doc(hidden)]
-    pub api_id: std::option::Option<std::string::String>,
+    pub api_id: ::std::option::Option<::std::string::String>,
     /// <p>The authentication type.</p>
     #[doc(hidden)]
-    pub authentication_type: std::option::Option<crate::types::AuthenticationType>,
+    pub authentication_type: ::std::option::Option<crate::types::AuthenticationType>,
     /// <p>The Amazon CloudWatch Logs configuration.</p>
     #[doc(hidden)]
-    pub log_config: std::option::Option<crate::types::LogConfig>,
+    pub log_config: ::std::option::Option<crate::types::LogConfig>,
     /// <p>The Amazon Cognito user pool configuration.</p>
     #[doc(hidden)]
-    pub user_pool_config: std::option::Option<crate::types::UserPoolConfig>,
+    pub user_pool_config: ::std::option::Option<crate::types::UserPoolConfig>,
     /// <p>The OpenID Connect configuration.</p>
     #[doc(hidden)]
-    pub open_id_connect_config: std::option::Option<crate::types::OpenIdConnectConfig>,
+    pub open_id_connect_config: ::std::option::Option<crate::types::OpenIdConnectConfig>,
     /// <p>The Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The URIs.</p>
     #[doc(hidden)]
-    pub uris:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub uris: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>The tags.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>A list of additional authentication providers for the <code>GraphqlApi</code> API.</p>
     #[doc(hidden)]
     pub additional_authentication_providers:
-        std::option::Option<std::vec::Vec<crate::types::AdditionalAuthenticationProvider>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::AdditionalAuthenticationProvider>>,
     /// <p>A flag indicating whether to use X-Ray tracing for this <code>GraphqlApi</code>.</p>
     #[doc(hidden)]
     pub xray_enabled: bool,
     /// <p>The ARN of the WAF access control list (ACL) associated with this <code>GraphqlApi</code>, if one exists.</p>
     #[doc(hidden)]
-    pub waf_web_acl_arn: std::option::Option<std::string::String>,
+    pub waf_web_acl_arn: ::std::option::Option<::std::string::String>,
     /// <p>Configuration for Lambda function authorization.</p>
     #[doc(hidden)]
-    pub lambda_authorizer_config: std::option::Option<crate::types::LambdaAuthorizerConfig>,
+    pub lambda_authorizer_config: ::std::option::Option<crate::types::LambdaAuthorizerConfig>,
     /// <p>The DNS records for the API.</p>
     #[doc(hidden)]
-    pub dns:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub dns: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>Sets the value of the GraphQL API to public (<code>GLOBAL</code>) or private (<code>PRIVATE</code>). If no value is provided, the visibility will be set to <code>GLOBAL</code> by default. This value cannot be changed once the API has been created.</p>
     #[doc(hidden)]
-    pub visibility: std::option::Option<crate::types::GraphQlApiVisibility>,
+    pub visibility: ::std::option::Option<crate::types::GraphQlApiVisibility>,
 }
 impl GraphqlApi {
     /// <p>The API name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The API ID.</p>
-    pub fn api_id(&self) -> std::option::Option<&str> {
+    pub fn api_id(&self) -> ::std::option::Option<&str> {
         self.api_id.as_deref()
     }
     /// <p>The authentication type.</p>
-    pub fn authentication_type(&self) -> std::option::Option<&crate::types::AuthenticationType> {
+    pub fn authentication_type(&self) -> ::std::option::Option<&crate::types::AuthenticationType> {
         self.authentication_type.as_ref()
     }
     /// <p>The Amazon CloudWatch Logs configuration.</p>
-    pub fn log_config(&self) -> std::option::Option<&crate::types::LogConfig> {
+    pub fn log_config(&self) -> ::std::option::Option<&crate::types::LogConfig> {
         self.log_config.as_ref()
     }
     /// <p>The Amazon Cognito user pool configuration.</p>
-    pub fn user_pool_config(&self) -> std::option::Option<&crate::types::UserPoolConfig> {
+    pub fn user_pool_config(&self) -> ::std::option::Option<&crate::types::UserPoolConfig> {
         self.user_pool_config.as_ref()
     }
     /// <p>The OpenID Connect configuration.</p>
     pub fn open_id_connect_config(
         &self,
-    ) -> std::option::Option<&crate::types::OpenIdConnectConfig> {
+    ) -> ::std::option::Option<&crate::types::OpenIdConnectConfig> {
         self.open_id_connect_config.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN).</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The URIs.</p>
     pub fn uris(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.uris.as_ref()
     }
     /// <p>The tags.</p>
     pub fn tags(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.tags.as_ref()
     }
     /// <p>A list of additional authentication providers for the <code>GraphqlApi</code> API.</p>
     pub fn additional_authentication_providers(
         &self,
-    ) -> std::option::Option<&[crate::types::AdditionalAuthenticationProvider]> {
+    ) -> ::std::option::Option<&[crate::types::AdditionalAuthenticationProvider]> {
         self.additional_authentication_providers.as_deref()
     }
     /// <p>A flag indicating whether to use X-Ray tracing for this <code>GraphqlApi</code>.</p>
@@ -110,24 +115,25 @@ impl GraphqlApi {
         self.xray_enabled
     }
     /// <p>The ARN of the WAF access control list (ACL) associated with this <code>GraphqlApi</code>, if one exists.</p>
-    pub fn waf_web_acl_arn(&self) -> std::option::Option<&str> {
+    pub fn waf_web_acl_arn(&self) -> ::std::option::Option<&str> {
         self.waf_web_acl_arn.as_deref()
     }
     /// <p>Configuration for Lambda function authorization.</p>
     pub fn lambda_authorizer_config(
         &self,
-    ) -> std::option::Option<&crate::types::LambdaAuthorizerConfig> {
+    ) -> ::std::option::Option<&crate::types::LambdaAuthorizerConfig> {
         self.lambda_authorizer_config.as_ref()
     }
     /// <p>The DNS records for the API.</p>
     pub fn dns(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.dns.as_ref()
     }
     /// <p>Sets the value of the GraphQL API to public (<code>GLOBAL</code>) or private (<code>PRIVATE</code>). If no value is provided, the visibility will be set to <code>GLOBAL</code> by default. This value cannot be changed once the API has been created.</p>
-    pub fn visibility(&self) -> std::option::Option<&crate::types::GraphQlApiVisibility> {
+    pub fn visibility(&self) -> ::std::option::Option<&crate::types::GraphQlApiVisibility> {
         self.visibility.as_ref()
     }
 }
@@ -140,105 +146,111 @@ impl GraphqlApi {
 
 /// A builder for [`GraphqlApi`](crate::types::GraphqlApi).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GraphqlApiBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) api_id: std::option::Option<std::string::String>,
-    pub(crate) authentication_type: std::option::Option<crate::types::AuthenticationType>,
-    pub(crate) log_config: std::option::Option<crate::types::LogConfig>,
-    pub(crate) user_pool_config: std::option::Option<crate::types::UserPoolConfig>,
-    pub(crate) open_id_connect_config: std::option::Option<crate::types::OpenIdConnectConfig>,
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) uris:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) api_id: ::std::option::Option<::std::string::String>,
+    pub(crate) authentication_type: ::std::option::Option<crate::types::AuthenticationType>,
+    pub(crate) log_config: ::std::option::Option<crate::types::LogConfig>,
+    pub(crate) user_pool_config: ::std::option::Option<crate::types::UserPoolConfig>,
+    pub(crate) open_id_connect_config: ::std::option::Option<crate::types::OpenIdConnectConfig>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) uris: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     pub(crate) additional_authentication_providers:
-        std::option::Option<std::vec::Vec<crate::types::AdditionalAuthenticationProvider>>,
-    pub(crate) xray_enabled: std::option::Option<bool>,
-    pub(crate) waf_web_acl_arn: std::option::Option<std::string::String>,
-    pub(crate) lambda_authorizer_config: std::option::Option<crate::types::LambdaAuthorizerConfig>,
-    pub(crate) dns:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) visibility: std::option::Option<crate::types::GraphQlApiVisibility>,
+        ::std::option::Option<::std::vec::Vec<crate::types::AdditionalAuthenticationProvider>>,
+    pub(crate) xray_enabled: ::std::option::Option<bool>,
+    pub(crate) waf_web_acl_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) lambda_authorizer_config:
+        ::std::option::Option<crate::types::LambdaAuthorizerConfig>,
+    pub(crate) dns: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) visibility: ::std::option::Option<crate::types::GraphQlApiVisibility>,
 }
 impl GraphqlApiBuilder {
     /// <p>The API name.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The API name.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The API ID.</p>
-    pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.api_id = Some(input.into());
+    pub fn api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.api_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The API ID.</p>
-    pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.api_id = input;
         self
     }
     /// <p>The authentication type.</p>
     pub fn authentication_type(mut self, input: crate::types::AuthenticationType) -> Self {
-        self.authentication_type = Some(input);
+        self.authentication_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The authentication type.</p>
     pub fn set_authentication_type(
         mut self,
-        input: std::option::Option<crate::types::AuthenticationType>,
+        input: ::std::option::Option<crate::types::AuthenticationType>,
     ) -> Self {
         self.authentication_type = input;
         self
     }
     /// <p>The Amazon CloudWatch Logs configuration.</p>
     pub fn log_config(mut self, input: crate::types::LogConfig) -> Self {
-        self.log_config = Some(input);
+        self.log_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Amazon CloudWatch Logs configuration.</p>
-    pub fn set_log_config(mut self, input: std::option::Option<crate::types::LogConfig>) -> Self {
+    pub fn set_log_config(mut self, input: ::std::option::Option<crate::types::LogConfig>) -> Self {
         self.log_config = input;
         self
     }
     /// <p>The Amazon Cognito user pool configuration.</p>
     pub fn user_pool_config(mut self, input: crate::types::UserPoolConfig) -> Self {
-        self.user_pool_config = Some(input);
+        self.user_pool_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Amazon Cognito user pool configuration.</p>
     pub fn set_user_pool_config(
         mut self,
-        input: std::option::Option<crate::types::UserPoolConfig>,
+        input: ::std::option::Option<crate::types::UserPoolConfig>,
     ) -> Self {
         self.user_pool_config = input;
         self
     }
     /// <p>The OpenID Connect configuration.</p>
     pub fn open_id_connect_config(mut self, input: crate::types::OpenIdConnectConfig) -> Self {
-        self.open_id_connect_config = Some(input);
+        self.open_id_connect_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The OpenID Connect configuration.</p>
     pub fn set_open_id_connect_config(
         mut self,
-        input: std::option::Option<crate::types::OpenIdConnectConfig>,
+        input: ::std::option::Option<crate::types::OpenIdConnectConfig>,
     ) -> Self {
         self.open_id_connect_config = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN).</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN).</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
@@ -249,19 +261,19 @@ impl GraphqlApiBuilder {
     /// <p>The URIs.</p>
     pub fn uris(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.uris.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.uris = Some(hash_map);
+        self.uris = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The URIs.</p>
     pub fn set_uris(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.uris = input;
@@ -274,19 +286,19 @@ impl GraphqlApiBuilder {
     /// <p>The tags.</p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
+        self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.tags = input;
@@ -303,46 +315,54 @@ impl GraphqlApiBuilder {
     ) -> Self {
         let mut v = self.additional_authentication_providers.unwrap_or_default();
         v.push(input);
-        self.additional_authentication_providers = Some(v);
+        self.additional_authentication_providers = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of additional authentication providers for the <code>GraphqlApi</code> API.</p>
     pub fn set_additional_authentication_providers(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AdditionalAuthenticationProvider>>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::AdditionalAuthenticationProvider>,
+        >,
     ) -> Self {
         self.additional_authentication_providers = input;
         self
     }
     /// <p>A flag indicating whether to use X-Ray tracing for this <code>GraphqlApi</code>.</p>
     pub fn xray_enabled(mut self, input: bool) -> Self {
-        self.xray_enabled = Some(input);
+        self.xray_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>A flag indicating whether to use X-Ray tracing for this <code>GraphqlApi</code>.</p>
-    pub fn set_xray_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_xray_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.xray_enabled = input;
         self
     }
     /// <p>The ARN of the WAF access control list (ACL) associated with this <code>GraphqlApi</code>, if one exists.</p>
-    pub fn waf_web_acl_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.waf_web_acl_arn = Some(input.into());
+    pub fn waf_web_acl_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.waf_web_acl_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the WAF access control list (ACL) associated with this <code>GraphqlApi</code>, if one exists.</p>
-    pub fn set_waf_web_acl_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_waf_web_acl_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.waf_web_acl_arn = input;
         self
     }
     /// <p>Configuration for Lambda function authorization.</p>
     pub fn lambda_authorizer_config(mut self, input: crate::types::LambdaAuthorizerConfig) -> Self {
-        self.lambda_authorizer_config = Some(input);
+        self.lambda_authorizer_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configuration for Lambda function authorization.</p>
     pub fn set_lambda_authorizer_config(
         mut self,
-        input: std::option::Option<crate::types::LambdaAuthorizerConfig>,
+        input: ::std::option::Option<crate::types::LambdaAuthorizerConfig>,
     ) -> Self {
         self.lambda_authorizer_config = input;
         self
@@ -354,19 +374,19 @@ impl GraphqlApiBuilder {
     /// <p>The DNS records for the API.</p>
     pub fn dns(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.dns.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.dns = Some(hash_map);
+        self.dns = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The DNS records for the API.</p>
     pub fn set_dns(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.dns = input;
@@ -374,13 +394,13 @@ impl GraphqlApiBuilder {
     }
     /// <p>Sets the value of the GraphQL API to public (<code>GLOBAL</code>) or private (<code>PRIVATE</code>). If no value is provided, the visibility will be set to <code>GLOBAL</code> by default. This value cannot be changed once the API has been created.</p>
     pub fn visibility(mut self, input: crate::types::GraphQlApiVisibility) -> Self {
-        self.visibility = Some(input);
+        self.visibility = ::std::option::Option::Some(input);
         self
     }
     /// <p>Sets the value of the GraphQL API to public (<code>GLOBAL</code>) or private (<code>PRIVATE</code>). If no value is provided, the visibility will be set to <code>GLOBAL</code> by default. This value cannot be changed once the API has been created.</p>
     pub fn set_visibility(
         mut self,
-        input: std::option::Option<crate::types::GraphQlApiVisibility>,
+        input: ::std::option::Option<crate::types::GraphQlApiVisibility>,
     ) -> Self {
         self.visibility = input;
         self

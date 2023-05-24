@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetCorsPolicy`](crate::operation::get_cors_policy::builders::GetCorsPolicyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`container_name(impl Into<String>)`](crate::operation::get_cors_policy::builders::GetCorsPolicyFluentBuilder::container_name) / [`set_container_name(Option<String>)`](crate::operation::get_cors_policy::builders::GetCorsPolicyFluentBuilder::set_container_name): <p>The name of the container that the policy is assigned to.</p>
+    ///   - [`container_name(impl ::std::convert::Into<String>)`](crate::operation::get_cors_policy::builders::GetCorsPolicyFluentBuilder::container_name) / [`set_container_name(Option<String>)`](crate::operation::get_cors_policy::builders::GetCorsPolicyFluentBuilder::set_container_name): <p>The name of the container that the policy is assigned to.</p>
     /// - On success, responds with [`GetCorsPolicyOutput`](crate::operation::get_cors_policy::GetCorsPolicyOutput) with field(s):
     ///   - [`cors_policy(Option<Vec<CorsRule>>)`](crate::operation::get_cors_policy::GetCorsPolicyOutput::cors_policy): <p>The CORS policy assigned to the container.</p>
     /// - On failure, responds with [`SdkError<GetCorsPolicyError>`](crate::operation::get_cors_policy::GetCorsPolicyError)

@@ -6,47 +6,50 @@ pub use crate::operation::create_data_quality_job_definition::_create_data_quali
 /// Fluent builder constructing a request to `CreateDataQualityJobDefinition`.
 ///
 /// <p>Creates a definition for a job that monitors data quality and drift. For information about model monitor, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor.html">Amazon SageMaker Model Monitor</a>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateDataQualityJobDefinitionFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::create_data_quality_job_definition::builders::CreateDataQualityJobDefinitionInputBuilder,
 }
 impl CreateDataQualityJobDefinitionFluentBuilder {
     /// Creates a new `CreateDataQualityJobDefinition`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_data_quality_job_definition::CreateDataQualityJobDefinition, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_data_quality_job_definition::CreateDataQualityJobDefinitionError>
+                    pub async fn customize(self) -> ::std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::create_data_quality_job_definition::CreateDataQualityJobDefinition, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                        ::aws_smithy_http::result::SdkError<crate::operation::create_data_quality_job_definition::CreateDataQualityJobDefinitionError>
     >{
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::create_data_quality_job_definition::CreateDataQualityJobDefinitionOutput, aws_smithy_http::result::SdkError<crate::operation::create_data_quality_job_definition::CreateDataQualityJobDefinitionError>>
+                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::create_data_quality_job_definition::CreateDataQualityJobDefinitionOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_data_quality_job_definition::CreateDataQualityJobDefinitionError>>
                      {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -57,19 +60,22 @@ impl CreateDataQualityJobDefinitionFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> std::result::Result<crate::operation::create_data_quality_job_definition::CreateDataQualityJobDefinitionOutput, aws_smithy_http::result::SdkError<crate::operation::create_data_quality_job_definition::CreateDataQualityJobDefinitionError>>
+                        pub async fn send(self) -> ::std::result::Result<crate::operation::create_data_quality_job_definition::CreateDataQualityJobDefinitionOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_data_quality_job_definition::CreateDataQualityJobDefinitionError>>
                          {
         self.send_middleware().await
     }
     /// <p>The name for the monitoring job definition.</p>
-    pub fn job_definition_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn job_definition_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.job_definition_name(input.into());
         self
     }
     /// <p>The name for the monitoring job definition.</p>
     pub fn set_job_definition_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_job_definition_name(input);
         self
@@ -85,7 +91,7 @@ impl CreateDataQualityJobDefinitionFluentBuilder {
     /// <p>Configures the constraints and baselines for the monitoring job.</p>
     pub fn set_data_quality_baseline_config(
         mut self,
-        input: std::option::Option<crate::types::DataQualityBaselineConfig>,
+        input: ::std::option::Option<crate::types::DataQualityBaselineConfig>,
     ) -> Self {
         self.inner = self.inner.set_data_quality_baseline_config(input);
         self
@@ -101,7 +107,7 @@ impl CreateDataQualityJobDefinitionFluentBuilder {
     /// <p>Specifies the container that runs the monitoring job.</p>
     pub fn set_data_quality_app_specification(
         mut self,
-        input: std::option::Option<crate::types::DataQualityAppSpecification>,
+        input: ::std::option::Option<crate::types::DataQualityAppSpecification>,
     ) -> Self {
         self.inner = self.inner.set_data_quality_app_specification(input);
         self
@@ -114,7 +120,7 @@ impl CreateDataQualityJobDefinitionFluentBuilder {
     /// <p>A list of inputs for the monitoring job. Currently endpoints are supported as monitoring inputs.</p>
     pub fn set_data_quality_job_input(
         mut self,
-        input: std::option::Option<crate::types::DataQualityJobInput>,
+        input: ::std::option::Option<crate::types::DataQualityJobInput>,
     ) -> Self {
         self.inner = self.inner.set_data_quality_job_input(input);
         self
@@ -130,7 +136,7 @@ impl CreateDataQualityJobDefinitionFluentBuilder {
     /// <p>The output configuration for monitoring jobs.</p>
     pub fn set_data_quality_job_output_config(
         mut self,
-        input: std::option::Option<crate::types::MonitoringOutputConfig>,
+        input: ::std::option::Option<crate::types::MonitoringOutputConfig>,
     ) -> Self {
         self.inner = self.inner.set_data_quality_job_output_config(input);
         self
@@ -143,7 +149,7 @@ impl CreateDataQualityJobDefinitionFluentBuilder {
     /// <p>Identifies the resources to deploy for a monitoring job.</p>
     pub fn set_job_resources(
         mut self,
-        input: std::option::Option<crate::types::MonitoringResources>,
+        input: ::std::option::Option<crate::types::MonitoringResources>,
     ) -> Self {
         self.inner = self.inner.set_job_resources(input);
         self
@@ -156,18 +162,18 @@ impl CreateDataQualityJobDefinitionFluentBuilder {
     /// <p>Specifies networking configuration for the monitoring job.</p>
     pub fn set_network_config(
         mut self,
-        input: std::option::Option<crate::types::MonitoringNetworkConfig>,
+        input: ::std::option::Option<crate::types::MonitoringNetworkConfig>,
     ) -> Self {
         self.inner = self.inner.set_network_config(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.</p>
-    pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.</p>
-    pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
     }
@@ -179,7 +185,7 @@ impl CreateDataQualityJobDefinitionFluentBuilder {
     /// <p>A time limit for how long the monitoring job is allowed to run before stopping.</p>
     pub fn set_stopping_condition(
         mut self,
-        input: std::option::Option<crate::types::MonitoringStoppingCondition>,
+        input: ::std::option::Option<crate::types::MonitoringStoppingCondition>,
     ) -> Self {
         self.inner = self.inner.set_stopping_condition(input);
         self
@@ -196,7 +202,7 @@ impl CreateDataQualityJobDefinitionFluentBuilder {
     /// <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self

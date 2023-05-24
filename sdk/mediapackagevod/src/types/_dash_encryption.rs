@@ -2,15 +2,15 @@
 
 /// A Dynamic Adaptive Streaming over HTTP (DASH) encryption configuration.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DashEncryption {
     /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
     #[doc(hidden)]
-    pub speke_key_provider: std::option::Option<crate::types::SpekeKeyProvider>,
+    pub speke_key_provider: ::std::option::Option<crate::types::SpekeKeyProvider>,
 }
 impl DashEncryption {
     /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
-    pub fn speke_key_provider(&self) -> std::option::Option<&crate::types::SpekeKeyProvider> {
+    pub fn speke_key_provider(&self) -> ::std::option::Option<&crate::types::SpekeKeyProvider> {
         self.speke_key_provider.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl DashEncryption {
 
 /// A builder for [`DashEncryption`](crate::types::DashEncryption).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DashEncryptionBuilder {
-    pub(crate) speke_key_provider: std::option::Option<crate::types::SpekeKeyProvider>,
+    pub(crate) speke_key_provider: ::std::option::Option<crate::types::SpekeKeyProvider>,
 }
 impl DashEncryptionBuilder {
     /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
     pub fn speke_key_provider(mut self, input: crate::types::SpekeKeyProvider) -> Self {
-        self.speke_key_provider = Some(input);
+        self.speke_key_provider = ::std::option::Option::Some(input);
         self
     }
     /// A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.
     pub fn set_speke_key_provider(
         mut self,
-        input: std::option::Option<crate::types::SpekeKeyProvider>,
+        input: ::std::option::Option<crate::types::SpekeKeyProvider>,
     ) -> Self {
         self.speke_key_provider = input;
         self

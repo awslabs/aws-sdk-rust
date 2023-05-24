@@ -2,20 +2,20 @@
 
 /// <p>The top ranked and bottom ranked computation configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TopBottomRankedComputation {
     /// <p>The ID for a computation.</p>
     #[doc(hidden)]
-    pub computation_id: std::option::Option<std::string::String>,
+    pub computation_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of a computation.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The category field that is used in a computation.</p>
     #[doc(hidden)]
-    pub category: std::option::Option<crate::types::DimensionField>,
+    pub category: ::std::option::Option<crate::types::DimensionField>,
     /// <p>The value field that is used in a computation.</p>
     #[doc(hidden)]
-    pub value: std::option::Option<crate::types::MeasureField>,
+    pub value: ::std::option::Option<crate::types::MeasureField>,
     /// <p>The result size of a top and bottom ranked computation.</p>
     #[doc(hidden)]
     pub result_size: i32,
@@ -25,23 +25,23 @@ pub struct TopBottomRankedComputation {
     /// <li> <p>BOTTOM: A bottom ranked computation.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::TopBottomComputationType>,
+    pub r#type: ::std::option::Option<crate::types::TopBottomComputationType>,
 }
 impl TopBottomRankedComputation {
     /// <p>The ID for a computation.</p>
-    pub fn computation_id(&self) -> std::option::Option<&str> {
+    pub fn computation_id(&self) -> ::std::option::Option<&str> {
         self.computation_id.as_deref()
     }
     /// <p>The name of a computation.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The category field that is used in a computation.</p>
-    pub fn category(&self) -> std::option::Option<&crate::types::DimensionField> {
+    pub fn category(&self) -> ::std::option::Option<&crate::types::DimensionField> {
         self.category.as_ref()
     }
     /// <p>The value field that is used in a computation.</p>
-    pub fn value(&self) -> std::option::Option<&crate::types::MeasureField> {
+    pub fn value(&self) -> ::std::option::Option<&crate::types::MeasureField> {
         self.value.as_ref()
     }
     /// <p>The result size of a top and bottom ranked computation.</p>
@@ -53,7 +53,7 @@ impl TopBottomRankedComputation {
     /// <li> <p>TOP: A top ranked computation.</p> </li>
     /// <li> <p>BOTTOM: A bottom ranked computation.</p> </li>
     /// </ul>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::TopBottomComputationType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::TopBottomComputationType> {
         self.r#type.as_ref()
     }
 }
@@ -66,66 +66,74 @@ impl TopBottomRankedComputation {
 
 /// A builder for [`TopBottomRankedComputation`](crate::types::TopBottomRankedComputation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TopBottomRankedComputationBuilder {
-    pub(crate) computation_id: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) category: std::option::Option<crate::types::DimensionField>,
-    pub(crate) value: std::option::Option<crate::types::MeasureField>,
-    pub(crate) result_size: std::option::Option<i32>,
-    pub(crate) r#type: std::option::Option<crate::types::TopBottomComputationType>,
+    pub(crate) computation_id: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) category: ::std::option::Option<crate::types::DimensionField>,
+    pub(crate) value: ::std::option::Option<crate::types::MeasureField>,
+    pub(crate) result_size: ::std::option::Option<i32>,
+    pub(crate) r#type: ::std::option::Option<crate::types::TopBottomComputationType>,
 }
 impl TopBottomRankedComputationBuilder {
     /// <p>The ID for a computation.</p>
-    pub fn computation_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.computation_id = Some(input.into());
+    pub fn computation_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.computation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID for a computation.</p>
-    pub fn set_computation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_computation_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.computation_id = input;
         self
     }
     /// <p>The name of a computation.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a computation.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The category field that is used in a computation.</p>
     pub fn category(mut self, input: crate::types::DimensionField) -> Self {
-        self.category = Some(input);
+        self.category = ::std::option::Option::Some(input);
         self
     }
     /// <p>The category field that is used in a computation.</p>
     pub fn set_category(
         mut self,
-        input: std::option::Option<crate::types::DimensionField>,
+        input: ::std::option::Option<crate::types::DimensionField>,
     ) -> Self {
         self.category = input;
         self
     }
     /// <p>The value field that is used in a computation.</p>
     pub fn value(mut self, input: crate::types::MeasureField) -> Self {
-        self.value = Some(input);
+        self.value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The value field that is used in a computation.</p>
-    pub fn set_value(mut self, input: std::option::Option<crate::types::MeasureField>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<crate::types::MeasureField>) -> Self {
         self.value = input;
         self
     }
     /// <p>The result size of a top and bottom ranked computation.</p>
     pub fn result_size(mut self, input: i32) -> Self {
-        self.result_size = Some(input);
+        self.result_size = ::std::option::Option::Some(input);
         self
     }
     /// <p>The result size of a top and bottom ranked computation.</p>
-    pub fn set_result_size(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_result_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.result_size = input;
         self
     }
@@ -135,7 +143,7 @@ impl TopBottomRankedComputationBuilder {
     /// <li> <p>BOTTOM: A bottom ranked computation.</p> </li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::TopBottomComputationType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The computation type. Choose one of the following options:</p>
@@ -145,7 +153,7 @@ impl TopBottomRankedComputationBuilder {
     /// </ul>
     pub fn set_type(
         mut self,
-        input: std::option::Option<crate::types::TopBottomComputationType>,
+        input: ::std::option::Option<crate::types::TopBottomComputationType>,
     ) -> Self {
         self.r#type = input;
         self

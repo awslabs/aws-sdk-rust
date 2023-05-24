@@ -2,82 +2,84 @@
 
 /// <p>Details about a filter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Filter {
     /// <p>The Amazon Resource Number (ARN) associated with this filter.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID of the account that created the filter.</p>
     #[doc(hidden)]
-    pub owner_id: std::option::Option<std::string::String>,
+    pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the filter.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>Details on the filter criteria associated with this filter.</p>
     #[doc(hidden)]
-    pub criteria: std::option::Option<crate::types::FilterCriteria>,
+    pub criteria: ::std::option::Option<crate::types::FilterCriteria>,
     /// <p>The action that is to be applied to the findings that match the filter.</p>
     #[doc(hidden)]
-    pub action: std::option::Option<crate::types::FilterAction>,
+    pub action: ::std::option::Option<crate::types::FilterAction>,
     /// <p>The date and time this filter was created at.</p>
     #[doc(hidden)]
-    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time the filter was last updated at.</p>
     #[doc(hidden)]
-    pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A description of the filter.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The reason for the filter.</p>
     #[doc(hidden)]
-    pub reason: std::option::Option<std::string::String>,
+    pub reason: ::std::option::Option<::std::string::String>,
     /// <p>The tags attached to the filter.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl Filter {
     /// <p>The Amazon Resource Number (ARN) associated with this filter.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The Amazon Web Services account ID of the account that created the filter.</p>
-    pub fn owner_id(&self) -> std::option::Option<&str> {
+    pub fn owner_id(&self) -> ::std::option::Option<&str> {
         self.owner_id.as_deref()
     }
     /// <p>The name of the filter.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>Details on the filter criteria associated with this filter.</p>
-    pub fn criteria(&self) -> std::option::Option<&crate::types::FilterCriteria> {
+    pub fn criteria(&self) -> ::std::option::Option<&crate::types::FilterCriteria> {
         self.criteria.as_ref()
     }
     /// <p>The action that is to be applied to the findings that match the filter.</p>
-    pub fn action(&self) -> std::option::Option<&crate::types::FilterAction> {
+    pub fn action(&self) -> ::std::option::Option<&crate::types::FilterAction> {
         self.action.as_ref()
     }
     /// <p>The date and time this filter was created at.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The date and time the filter was last updated at.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>A description of the filter.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The reason for the filter.</p>
-    pub fn reason(&self) -> std::option::Option<&str> {
+    pub fn reason(&self) -> ::std::option::Option<&str> {
         self.reason.as_deref()
     }
     /// <p>The tags attached to the filter.</p>
     pub fn tags(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.tags.as_ref()
     }
 }
@@ -90,117 +92,120 @@ impl Filter {
 
 /// A builder for [`Filter`](crate::types::Filter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FilterBuilder {
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) owner_id: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) criteria: std::option::Option<crate::types::FilterCriteria>,
-    pub(crate) action: std::option::Option<crate::types::FilterAction>,
-    pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) reason: std::option::Option<std::string::String>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) owner_id: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) criteria: ::std::option::Option<crate::types::FilterCriteria>,
+    pub(crate) action: ::std::option::Option<crate::types::FilterAction>,
+    pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) reason: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl FilterBuilder {
     /// <p>The Amazon Resource Number (ARN) associated with this filter.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Number (ARN) associated with this filter.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// <p>The Amazon Web Services account ID of the account that created the filter.</p>
-    pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.owner_id = Some(input.into());
+    pub fn owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.owner_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID of the account that created the filter.</p>
-    pub fn set_owner_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner_id = input;
         self
     }
     /// <p>The name of the filter.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the filter.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>Details on the filter criteria associated with this filter.</p>
     pub fn criteria(mut self, input: crate::types::FilterCriteria) -> Self {
-        self.criteria = Some(input);
+        self.criteria = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details on the filter criteria associated with this filter.</p>
     pub fn set_criteria(
         mut self,
-        input: std::option::Option<crate::types::FilterCriteria>,
+        input: ::std::option::Option<crate::types::FilterCriteria>,
     ) -> Self {
         self.criteria = input;
         self
     }
     /// <p>The action that is to be applied to the findings that match the filter.</p>
     pub fn action(mut self, input: crate::types::FilterAction) -> Self {
-        self.action = Some(input);
+        self.action = ::std::option::Option::Some(input);
         self
     }
     /// <p>The action that is to be applied to the findings that match the filter.</p>
-    pub fn set_action(mut self, input: std::option::Option<crate::types::FilterAction>) -> Self {
+    pub fn set_action(mut self, input: ::std::option::Option<crate::types::FilterAction>) -> Self {
         self.action = input;
         self
     }
     /// <p>The date and time this filter was created at.</p>
-    pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_at = Some(input);
+    pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time this filter was created at.</p>
     pub fn set_created_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_at = input;
         self
     }
     /// <p>The date and time the filter was last updated at.</p>
-    pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.updated_at = Some(input);
+    pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.updated_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time the filter was last updated at.</p>
     pub fn set_updated_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.updated_at = input;
         self
     }
     /// <p>A description of the filter.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of the filter.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>The reason for the filter.</p>
-    pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
-        self.reason = Some(input.into());
+    pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason for the filter.</p>
-    pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reason = input;
         self
     }
@@ -211,19 +216,19 @@ impl FilterBuilder {
     /// <p>The tags attached to the filter.</p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
+        self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags attached to the filter.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.tags = input;

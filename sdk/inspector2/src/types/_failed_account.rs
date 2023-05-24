@@ -2,43 +2,43 @@
 
 /// <p>An object with details on why an account failed to enable Amazon Inspector.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FailedAccount {
     /// <p>The Amazon Web Services account ID.</p>
     #[doc(hidden)]
-    pub account_id: std::option::Option<std::string::String>,
+    pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of Amazon Inspector for the account.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::Status>,
+    pub status: ::std::option::Option<crate::types::Status>,
     /// <p>An object detailing which resources Amazon Inspector is enabled to scan for the account.</p>
     #[doc(hidden)]
-    pub resource_status: std::option::Option<crate::types::ResourceStatus>,
+    pub resource_status: ::std::option::Option<crate::types::ResourceStatus>,
     /// <p>The error code explaining why the account failed to enable Amazon Inspector.</p>
     #[doc(hidden)]
-    pub error_code: std::option::Option<crate::types::ErrorCode>,
+    pub error_code: ::std::option::Option<crate::types::ErrorCode>,
     /// <p>The error message received when the account failed to enable Amazon Inspector.</p>
     #[doc(hidden)]
-    pub error_message: std::option::Option<std::string::String>,
+    pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl FailedAccount {
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The status of Amazon Inspector for the account.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::Status> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::Status> {
         self.status.as_ref()
     }
     /// <p>An object detailing which resources Amazon Inspector is enabled to scan for the account.</p>
-    pub fn resource_status(&self) -> std::option::Option<&crate::types::ResourceStatus> {
+    pub fn resource_status(&self) -> ::std::option::Option<&crate::types::ResourceStatus> {
         self.resource_status.as_ref()
     }
     /// <p>The error code explaining why the account failed to enable Amazon Inspector.</p>
-    pub fn error_code(&self) -> std::option::Option<&crate::types::ErrorCode> {
+    pub fn error_code(&self) -> ::std::option::Option<&crate::types::ErrorCode> {
         self.error_code.as_ref()
     }
     /// <p>The error message received when the account failed to enable Amazon Inspector.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<&str> {
         self.error_message.as_deref()
     }
 }
@@ -51,65 +51,73 @@ impl FailedAccount {
 
 /// A builder for [`FailedAccount`](crate::types::FailedAccount).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FailedAccountBuilder {
-    pub(crate) account_id: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::Status>,
-    pub(crate) resource_status: std::option::Option<crate::types::ResourceStatus>,
-    pub(crate) error_code: std::option::Option<crate::types::ErrorCode>,
-    pub(crate) error_message: std::option::Option<std::string::String>,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::Status>,
+    pub(crate) resource_status: ::std::option::Option<crate::types::ResourceStatus>,
+    pub(crate) error_code: ::std::option::Option<crate::types::ErrorCode>,
+    pub(crate) error_message: ::std::option::Option<::std::string::String>,
 }
 impl FailedAccountBuilder {
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.account_id = Some(input.into());
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
     }
     /// <p>The status of Amazon Inspector for the account.</p>
     pub fn status(mut self, input: crate::types::Status) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of Amazon Inspector for the account.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::Status>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
         self.status = input;
         self
     }
     /// <p>An object detailing which resources Amazon Inspector is enabled to scan for the account.</p>
     pub fn resource_status(mut self, input: crate::types::ResourceStatus) -> Self {
-        self.resource_status = Some(input);
+        self.resource_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object detailing which resources Amazon Inspector is enabled to scan for the account.</p>
     pub fn set_resource_status(
         mut self,
-        input: std::option::Option<crate::types::ResourceStatus>,
+        input: ::std::option::Option<crate::types::ResourceStatus>,
     ) -> Self {
         self.resource_status = input;
         self
     }
     /// <p>The error code explaining why the account failed to enable Amazon Inspector.</p>
     pub fn error_code(mut self, input: crate::types::ErrorCode) -> Self {
-        self.error_code = Some(input);
+        self.error_code = ::std::option::Option::Some(input);
         self
     }
     /// <p>The error code explaining why the account failed to enable Amazon Inspector.</p>
-    pub fn set_error_code(mut self, input: std::option::Option<crate::types::ErrorCode>) -> Self {
+    pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::ErrorCode>) -> Self {
         self.error_code = input;
         self
     }
     /// <p>The error message received when the account failed to enable Amazon Inspector.</p>
-    pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.error_message = Some(input.into());
+    pub fn error_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The error message received when the account failed to enable Amazon Inspector.</p>
-    pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_error_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.error_message = input;
         self
     }

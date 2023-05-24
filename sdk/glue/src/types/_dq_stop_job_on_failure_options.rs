@@ -2,17 +2,17 @@
 
 /// <p>Options to configure how your job will stop if your data quality evaluation fails.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DqStopJobOnFailureOptions {
     /// <p>When to stop job if your data quality evaluation fails. Options are Immediate or AfterDataLoad.</p>
     #[doc(hidden)]
-    pub stop_job_on_failure_timing: std::option::Option<crate::types::DqStopJobOnFailureTiming>,
+    pub stop_job_on_failure_timing: ::std::option::Option<crate::types::DqStopJobOnFailureTiming>,
 }
 impl DqStopJobOnFailureOptions {
     /// <p>When to stop job if your data quality evaluation fails. Options are Immediate or AfterDataLoad.</p>
     pub fn stop_job_on_failure_timing(
         &self,
-    ) -> std::option::Option<&crate::types::DqStopJobOnFailureTiming> {
+    ) -> ::std::option::Option<&crate::types::DqStopJobOnFailureTiming> {
         self.stop_job_on_failure_timing.as_ref()
     }
 }
@@ -25,10 +25,12 @@ impl DqStopJobOnFailureOptions {
 
 /// A builder for [`DqStopJobOnFailureOptions`](crate::types::DqStopJobOnFailureOptions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DqStopJobOnFailureOptionsBuilder {
     pub(crate) stop_job_on_failure_timing:
-        std::option::Option<crate::types::DqStopJobOnFailureTiming>,
+        ::std::option::Option<crate::types::DqStopJobOnFailureTiming>,
 }
 impl DqStopJobOnFailureOptionsBuilder {
     /// <p>When to stop job if your data quality evaluation fails. Options are Immediate or AfterDataLoad.</p>
@@ -36,13 +38,13 @@ impl DqStopJobOnFailureOptionsBuilder {
         mut self,
         input: crate::types::DqStopJobOnFailureTiming,
     ) -> Self {
-        self.stop_job_on_failure_timing = Some(input);
+        self.stop_job_on_failure_timing = ::std::option::Option::Some(input);
         self
     }
     /// <p>When to stop job if your data quality evaluation fails. Options are Immediate or AfterDataLoad.</p>
     pub fn set_stop_job_on_failure_timing(
         mut self,
-        input: std::option::Option<crate::types::DqStopJobOnFailureTiming>,
+        input: ::std::option::Option<crate::types::DqStopJobOnFailureTiming>,
     ) -> Self {
         self.stop_job_on_failure_timing = input;
         self

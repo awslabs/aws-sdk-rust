@@ -37,13 +37,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum GameSessionStatusReason {
     #[allow(missing_docs)] // documentation missing in model
@@ -51,7 +51,7 @@ pub enum GameSessionStatusReason {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for GameSessionStatusReason {
+impl ::std::convert::From<&str> for GameSessionStatusReason {
     fn from(s: &str) -> Self {
         match s {
             "INTERRUPTED" => GameSessionStatusReason::Interrupted,
@@ -61,11 +61,11 @@ impl std::convert::From<&str> for GameSessionStatusReason {
         }
     }
 }
-impl std::str::FromStr for GameSessionStatusReason {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for GameSessionStatusReason {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(GameSessionStatusReason::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(GameSessionStatusReason::from(s))
     }
 }
 impl GameSessionStatusReason {
@@ -81,7 +81,7 @@ impl GameSessionStatusReason {
         &["INTERRUPTED"]
     }
 }
-impl AsRef<str> for GameSessionStatusReason {
+impl ::std::convert::AsRef<str> for GameSessionStatusReason {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

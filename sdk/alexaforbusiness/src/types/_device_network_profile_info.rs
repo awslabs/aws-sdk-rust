@@ -2,29 +2,31 @@
 
 /// <p>Detailed information about a device's network profile.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeviceNetworkProfileInfo {
     /// <p>The ARN of the network profile associated with a device.</p>
     #[doc(hidden)]
-    pub network_profile_arn: std::option::Option<std::string::String>,
+    pub network_profile_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the certificate associated with a device.</p>
     #[doc(hidden)]
-    pub certificate_arn: std::option::Option<std::string::String>,
+    pub certificate_arn: ::std::option::Option<::std::string::String>,
     /// <p>The time (in epoch) when the certificate expires.</p>
     #[doc(hidden)]
-    pub certificate_expiration_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub certificate_expiration_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl DeviceNetworkProfileInfo {
     /// <p>The ARN of the network profile associated with a device.</p>
-    pub fn network_profile_arn(&self) -> std::option::Option<&str> {
+    pub fn network_profile_arn(&self) -> ::std::option::Option<&str> {
         self.network_profile_arn.as_deref()
     }
     /// <p>The ARN of the certificate associated with a device.</p>
-    pub fn certificate_arn(&self) -> std::option::Option<&str> {
+    pub fn certificate_arn(&self) -> ::std::option::Option<&str> {
         self.certificate_arn.as_deref()
     }
     /// <p>The time (in epoch) when the certificate expires.</p>
-    pub fn certificate_expiration_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn certificate_expiration_time(
+        &self,
+    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.certificate_expiration_time.as_ref()
     }
 }
@@ -37,45 +39,56 @@ impl DeviceNetworkProfileInfo {
 
 /// A builder for [`DeviceNetworkProfileInfo`](crate::types::DeviceNetworkProfileInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeviceNetworkProfileInfoBuilder {
-    pub(crate) network_profile_arn: std::option::Option<std::string::String>,
-    pub(crate) certificate_arn: std::option::Option<std::string::String>,
-    pub(crate) certificate_expiration_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) network_profile_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) certificate_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) certificate_expiration_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl DeviceNetworkProfileInfoBuilder {
     /// <p>The ARN of the network profile associated with a device.</p>
-    pub fn network_profile_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.network_profile_arn = Some(input.into());
+    pub fn network_profile_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.network_profile_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the network profile associated with a device.</p>
     pub fn set_network_profile_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.network_profile_arn = input;
         self
     }
     /// <p>The ARN of the certificate associated with a device.</p>
-    pub fn certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.certificate_arn = Some(input.into());
+    pub fn certificate_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.certificate_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the certificate associated with a device.</p>
-    pub fn set_certificate_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_certificate_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.certificate_arn = input;
         self
     }
     /// <p>The time (in epoch) when the certificate expires.</p>
-    pub fn certificate_expiration_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.certificate_expiration_time = Some(input);
+    pub fn certificate_expiration_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.certificate_expiration_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time (in epoch) when the certificate expires.</p>
     pub fn set_certificate_expiration_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.certificate_expiration_time = input;
         self

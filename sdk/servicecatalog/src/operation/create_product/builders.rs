@@ -8,56 +8,59 @@ pub use crate::operation::create_product::_create_product_input::CreateProductIn
 /// <p>Creates a product.</p>
 /// <p>A delegated admin is authorized to invoke this command.</p>
 /// <p>The user or role that performs this operation must have the <code>cloudformation:GetTemplate</code> IAM policy permission. This policy permission is required when using the <code>ImportFromPhysicalId</code> template source in the information data section.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateProductFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_product::builders::CreateProductInputBuilder,
 }
 impl CreateProductFluentBuilder {
     /// Creates a new `CreateProduct`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_product::CreateProduct,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_product::CreateProductError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_product::CreateProductError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_product::CreateProductOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_product::CreateProductError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_product::CreateProductError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -70,9 +73,9 @@ impl CreateProductFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_product::CreateProductOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_product::CreateProductError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_product::CreateProductError>,
     > {
         self.send_middleware().await
     }
@@ -81,7 +84,10 @@ impl CreateProductFluentBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn accept_language(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.accept_language(input.into());
         self
     }
@@ -90,82 +96,94 @@ impl CreateProductFluentBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn set_accept_language(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_accept_language(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_accept_language(input);
         self
     }
     /// <p>The name of the product.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// <p>The name of the product.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
     /// <p>The owner of the product.</p>
-    pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.owner(input.into());
         self
     }
     /// <p>The owner of the product.</p>
-    pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_owner(input);
         self
     }
     /// <p>The description of the product.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>The description of the product.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
     /// <p>The distributor of the product.</p>
-    pub fn distributor(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn distributor(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.distributor(input.into());
         self
     }
     /// <p>The distributor of the product.</p>
-    pub fn set_distributor(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_distributor(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_distributor(input);
         self
     }
     /// <p>The support information about the product.</p>
-    pub fn support_description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn support_description(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.support_description(input.into());
         self
     }
     /// <p>The support information about the product.</p>
     pub fn set_support_description(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_support_description(input);
         self
     }
     /// <p>The contact email for product support.</p>
-    pub fn support_email(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn support_email(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.support_email(input.into());
         self
     }
     /// <p>The contact email for product support.</p>
-    pub fn set_support_email(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_support_email(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_support_email(input);
         self
     }
     /// <p>The contact URL for product support.</p>
     /// <p> <code>^https?:\/\// </code>/ is the pattern used to validate SupportUrl.</p>
-    pub fn support_url(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn support_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.support_url(input.into());
         self
     }
     /// <p>The contact URL for product support.</p>
     /// <p> <code>^https?:\/\// </code>/ is the pattern used to validate SupportUrl.</p>
-    pub fn set_support_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_support_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_support_url(input);
         self
     }
@@ -177,7 +195,7 @@ impl CreateProductFluentBuilder {
     /// <p>The type of product.</p>
     pub fn set_product_type(
         mut self,
-        input: std::option::Option<crate::types::ProductType>,
+        input: ::std::option::Option<crate::types::ProductType>,
     ) -> Self {
         self.inner = self.inner.set_product_type(input);
         self
@@ -194,7 +212,7 @@ impl CreateProductFluentBuilder {
     /// <p>One or more tags.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
@@ -210,20 +228,23 @@ impl CreateProductFluentBuilder {
     /// <p>The configuration of the provisioning artifact. </p>
     pub fn set_provisioning_artifact_parameters(
         mut self,
-        input: std::option::Option<crate::types::ProvisioningArtifactProperties>,
+        input: ::std::option::Option<crate::types::ProvisioningArtifactProperties>,
     ) -> Self {
         self.inner = self.inner.set_provisioning_artifact_parameters(input);
         self
     }
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
-    pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn idempotency_token(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.idempotency_token(input.into());
         self
     }
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
     pub fn set_idempotency_token(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_idempotency_token(input);
         self
@@ -244,7 +265,7 @@ impl CreateProductFluentBuilder {
     /// </ul>
     pub fn set_source_connection(
         mut self,
-        input: std::option::Option<crate::types::SourceConnection>,
+        input: ::std::option::Option<crate::types::SourceConnection>,
     ) -> Self {
         self.inner = self.inner.set_source_connection(input);
         self

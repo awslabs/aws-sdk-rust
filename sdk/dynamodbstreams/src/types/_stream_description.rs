@@ -2,11 +2,11 @@
 
 /// <p>Represents all of the data describing a particular stream.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StreamDescription {
     /// <p>The Amazon Resource Name (ARN) for the stream.</p>
     #[doc(hidden)]
-    pub stream_arn: std::option::Option<std::string::String>,
+    pub stream_arn: ::std::option::Option<::std::string::String>,
     /// <p>A timestamp, in ISO 8601 format, for this stream.</p>
     /// <p>Note that <code>LatestStreamLabel</code> is not a unique identifier for the stream, because it is possible that a stream from another table might have the same timestamp. However, the combination of the following three elements is guaranteed to be unique:</p>
     /// <ul>
@@ -15,7 +15,7 @@ pub struct StreamDescription {
     /// <li> <p>the <code>StreamLabel</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub stream_label: std::option::Option<std::string::String>,
+    pub stream_label: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the current status of the stream:</p>
     /// <ul>
     /// <li> <p> <code>ENABLING</code> - Streams is currently being enabled on the DynamoDB table.</p> </li>
@@ -24,7 +24,7 @@ pub struct StreamDescription {
     /// <li> <p> <code>DISABLED</code> - the stream is disabled.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub stream_status: std::option::Option<crate::types::StreamStatus>,
+    pub stream_status: ::std::option::Option<crate::types::StreamStatus>,
     /// <p>Indicates the format of the records within this stream:</p>
     /// <ul>
     /// <li> <p> <code>KEYS_ONLY</code> - only the key attributes of items that were modified in the DynamoDB table.</p> </li>
@@ -33,28 +33,28 @@ pub struct StreamDescription {
     /// <li> <p> <code>NEW_AND_OLD_IMAGES</code> - both the new and the old images of the items from the table.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub stream_view_type: std::option::Option<crate::types::StreamViewType>,
+    pub stream_view_type: ::std::option::Option<crate::types::StreamViewType>,
     /// <p>The date and time when the request to create this stream was issued.</p>
     #[doc(hidden)]
-    pub creation_request_date_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_request_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The DynamoDB table with which the stream is associated.</p>
     #[doc(hidden)]
-    pub table_name: std::option::Option<std::string::String>,
+    pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>The key attribute(s) of the stream's DynamoDB table.</p>
     #[doc(hidden)]
-    pub key_schema: std::option::Option<std::vec::Vec<crate::types::KeySchemaElement>>,
+    pub key_schema: ::std::option::Option<::std::vec::Vec<crate::types::KeySchemaElement>>,
     /// <p>The shards that comprise the stream.</p>
     #[doc(hidden)]
-    pub shards: std::option::Option<std::vec::Vec<crate::types::Shard>>,
+    pub shards: ::std::option::Option<::std::vec::Vec<crate::types::Shard>>,
     /// <p>The shard ID of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p>
     /// <p>If <code>LastEvaluatedShardId</code> is empty, then the "last page" of results has been processed and there is currently no more data to be retrieved.</p>
     /// <p>If <code>LastEvaluatedShardId</code> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedShardId</code> is empty.</p>
     #[doc(hidden)]
-    pub last_evaluated_shard_id: std::option::Option<std::string::String>,
+    pub last_evaluated_shard_id: ::std::option::Option<::std::string::String>,
 }
 impl StreamDescription {
     /// <p>The Amazon Resource Name (ARN) for the stream.</p>
-    pub fn stream_arn(&self) -> std::option::Option<&str> {
+    pub fn stream_arn(&self) -> ::std::option::Option<&str> {
         self.stream_arn.as_deref()
     }
     /// <p>A timestamp, in ISO 8601 format, for this stream.</p>
@@ -64,7 +64,7 @@ impl StreamDescription {
     /// <li> <p>the table name</p> </li>
     /// <li> <p>the <code>StreamLabel</code> </p> </li>
     /// </ul>
-    pub fn stream_label(&self) -> std::option::Option<&str> {
+    pub fn stream_label(&self) -> ::std::option::Option<&str> {
         self.stream_label.as_deref()
     }
     /// <p>Indicates the current status of the stream:</p>
@@ -74,7 +74,7 @@ impl StreamDescription {
     /// <li> <p> <code>DISABLING</code> - Streams is currently being disabled on the DynamoDB table.</p> </li>
     /// <li> <p> <code>DISABLED</code> - the stream is disabled.</p> </li>
     /// </ul>
-    pub fn stream_status(&self) -> std::option::Option<&crate::types::StreamStatus> {
+    pub fn stream_status(&self) -> ::std::option::Option<&crate::types::StreamStatus> {
         self.stream_status.as_ref()
     }
     /// <p>Indicates the format of the records within this stream:</p>
@@ -84,29 +84,31 @@ impl StreamDescription {
     /// <li> <p> <code>OLD_IMAGE</code> - entire items from the table, as they appeared before they were modified.</p> </li>
     /// <li> <p> <code>NEW_AND_OLD_IMAGES</code> - both the new and the old images of the items from the table.</p> </li>
     /// </ul>
-    pub fn stream_view_type(&self) -> std::option::Option<&crate::types::StreamViewType> {
+    pub fn stream_view_type(&self) -> ::std::option::Option<&crate::types::StreamViewType> {
         self.stream_view_type.as_ref()
     }
     /// <p>The date and time when the request to create this stream was issued.</p>
-    pub fn creation_request_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_request_date_time(
+        &self,
+    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_request_date_time.as_ref()
     }
     /// <p>The DynamoDB table with which the stream is associated.</p>
-    pub fn table_name(&self) -> std::option::Option<&str> {
+    pub fn table_name(&self) -> ::std::option::Option<&str> {
         self.table_name.as_deref()
     }
     /// <p>The key attribute(s) of the stream's DynamoDB table.</p>
-    pub fn key_schema(&self) -> std::option::Option<&[crate::types::KeySchemaElement]> {
+    pub fn key_schema(&self) -> ::std::option::Option<&[crate::types::KeySchemaElement]> {
         self.key_schema.as_deref()
     }
     /// <p>The shards that comprise the stream.</p>
-    pub fn shards(&self) -> std::option::Option<&[crate::types::Shard]> {
+    pub fn shards(&self) -> ::std::option::Option<&[crate::types::Shard]> {
         self.shards.as_deref()
     }
     /// <p>The shard ID of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p>
     /// <p>If <code>LastEvaluatedShardId</code> is empty, then the "last page" of results has been processed and there is currently no more data to be retrieved.</p>
     /// <p>If <code>LastEvaluatedShardId</code> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedShardId</code> is empty.</p>
-    pub fn last_evaluated_shard_id(&self) -> std::option::Option<&str> {
+    pub fn last_evaluated_shard_id(&self) -> ::std::option::Option<&str> {
         self.last_evaluated_shard_id.as_deref()
     }
 }
@@ -119,26 +121,28 @@ impl StreamDescription {
 
 /// A builder for [`StreamDescription`](crate::types::StreamDescription).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StreamDescriptionBuilder {
-    pub(crate) stream_arn: std::option::Option<std::string::String>,
-    pub(crate) stream_label: std::option::Option<std::string::String>,
-    pub(crate) stream_status: std::option::Option<crate::types::StreamStatus>,
-    pub(crate) stream_view_type: std::option::Option<crate::types::StreamViewType>,
-    pub(crate) creation_request_date_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) table_name: std::option::Option<std::string::String>,
-    pub(crate) key_schema: std::option::Option<std::vec::Vec<crate::types::KeySchemaElement>>,
-    pub(crate) shards: std::option::Option<std::vec::Vec<crate::types::Shard>>,
-    pub(crate) last_evaluated_shard_id: std::option::Option<std::string::String>,
+    pub(crate) stream_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) stream_label: ::std::option::Option<::std::string::String>,
+    pub(crate) stream_status: ::std::option::Option<crate::types::StreamStatus>,
+    pub(crate) stream_view_type: ::std::option::Option<crate::types::StreamViewType>,
+    pub(crate) creation_request_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) table_name: ::std::option::Option<::std::string::String>,
+    pub(crate) key_schema: ::std::option::Option<::std::vec::Vec<crate::types::KeySchemaElement>>,
+    pub(crate) shards: ::std::option::Option<::std::vec::Vec<crate::types::Shard>>,
+    pub(crate) last_evaluated_shard_id: ::std::option::Option<::std::string::String>,
 }
 impl StreamDescriptionBuilder {
     /// <p>The Amazon Resource Name (ARN) for the stream.</p>
-    pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.stream_arn = Some(input.into());
+    pub fn stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.stream_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the stream.</p>
-    pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stream_arn = input;
         self
     }
@@ -149,8 +153,8 @@ impl StreamDescriptionBuilder {
     /// <li> <p>the table name</p> </li>
     /// <li> <p>the <code>StreamLabel</code> </p> </li>
     /// </ul>
-    pub fn stream_label(mut self, input: impl Into<std::string::String>) -> Self {
-        self.stream_label = Some(input.into());
+    pub fn stream_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.stream_label = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A timestamp, in ISO 8601 format, for this stream.</p>
@@ -160,7 +164,7 @@ impl StreamDescriptionBuilder {
     /// <li> <p>the table name</p> </li>
     /// <li> <p>the <code>StreamLabel</code> </p> </li>
     /// </ul>
-    pub fn set_stream_label(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_stream_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stream_label = input;
         self
     }
@@ -172,7 +176,7 @@ impl StreamDescriptionBuilder {
     /// <li> <p> <code>DISABLED</code> - the stream is disabled.</p> </li>
     /// </ul>
     pub fn stream_status(mut self, input: crate::types::StreamStatus) -> Self {
-        self.stream_status = Some(input);
+        self.stream_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates the current status of the stream:</p>
@@ -184,7 +188,7 @@ impl StreamDescriptionBuilder {
     /// </ul>
     pub fn set_stream_status(
         mut self,
-        input: std::option::Option<crate::types::StreamStatus>,
+        input: ::std::option::Option<crate::types::StreamStatus>,
     ) -> Self {
         self.stream_status = input;
         self
@@ -197,7 +201,7 @@ impl StreamDescriptionBuilder {
     /// <li> <p> <code>NEW_AND_OLD_IMAGES</code> - both the new and the old images of the items from the table.</p> </li>
     /// </ul>
     pub fn stream_view_type(mut self, input: crate::types::StreamViewType) -> Self {
-        self.stream_view_type = Some(input);
+        self.stream_view_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates the format of the records within this stream:</p>
@@ -209,31 +213,31 @@ impl StreamDescriptionBuilder {
     /// </ul>
     pub fn set_stream_view_type(
         mut self,
-        input: std::option::Option<crate::types::StreamViewType>,
+        input: ::std::option::Option<crate::types::StreamViewType>,
     ) -> Self {
         self.stream_view_type = input;
         self
     }
     /// <p>The date and time when the request to create this stream was issued.</p>
-    pub fn creation_request_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_request_date_time = Some(input);
+    pub fn creation_request_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_request_date_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time when the request to create this stream was issued.</p>
     pub fn set_creation_request_date_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_request_date_time = input;
         self
     }
     /// <p>The DynamoDB table with which the stream is associated.</p>
-    pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.table_name = Some(input.into());
+    pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.table_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The DynamoDB table with which the stream is associated.</p>
-    pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_name = input;
         self
     }
@@ -245,13 +249,13 @@ impl StreamDescriptionBuilder {
     pub fn key_schema(mut self, input: crate::types::KeySchemaElement) -> Self {
         let mut v = self.key_schema.unwrap_or_default();
         v.push(input);
-        self.key_schema = Some(v);
+        self.key_schema = ::std::option::Option::Some(v);
         self
     }
     /// <p>The key attribute(s) of the stream's DynamoDB table.</p>
     pub fn set_key_schema(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::KeySchemaElement>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::KeySchemaElement>>,
     ) -> Self {
         self.key_schema = input;
         self
@@ -264,13 +268,13 @@ impl StreamDescriptionBuilder {
     pub fn shards(mut self, input: crate::types::Shard) -> Self {
         let mut v = self.shards.unwrap_or_default();
         v.push(input);
-        self.shards = Some(v);
+        self.shards = ::std::option::Option::Some(v);
         self
     }
     /// <p>The shards that comprise the stream.</p>
     pub fn set_shards(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Shard>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Shard>>,
     ) -> Self {
         self.shards = input;
         self
@@ -278,8 +282,11 @@ impl StreamDescriptionBuilder {
     /// <p>The shard ID of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p>
     /// <p>If <code>LastEvaluatedShardId</code> is empty, then the "last page" of results has been processed and there is currently no more data to be retrieved.</p>
     /// <p>If <code>LastEvaluatedShardId</code> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedShardId</code> is empty.</p>
-    pub fn last_evaluated_shard_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.last_evaluated_shard_id = Some(input.into());
+    pub fn last_evaluated_shard_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.last_evaluated_shard_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The shard ID of the item where the operation stopped, inclusive of the previous result set. Use this value to start a new operation, excluding this value in the new request.</p>
@@ -287,7 +294,7 @@ impl StreamDescriptionBuilder {
     /// <p>If <code>LastEvaluatedShardId</code> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedShardId</code> is empty.</p>
     pub fn set_last_evaluated_shard_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.last_evaluated_shard_id = input;
         self

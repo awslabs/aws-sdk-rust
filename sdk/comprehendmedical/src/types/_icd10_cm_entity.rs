@@ -2,78 +2,78 @@
 
 /// <p>The collection of medical entities extracted from the input text and their associated information. For each entity, the response provides the entity text, the entity category, where the entity text begins and ends, and the level of confidence that Amazon Comprehend Medical has in the detection and analysis. Attributes and traits of the entity are also returned. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Icd10CmEntity {
     /// <p>The numeric identifier for the entity. This is a monotonically increasing id unique within this response rather than a global unique identifier.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<i32>,
+    pub id: ::std::option::Option<i32>,
     /// <p>The segment of input text that is matched to the detected entity.</p>
     #[doc(hidden)]
-    pub text: std::option::Option<std::string::String>,
+    pub text: ::std::option::Option<::std::string::String>,
     /// <p> The category of the entity. InferICD10CM detects entities in the <code>MEDICAL_CONDITION</code> category. </p>
     #[doc(hidden)]
-    pub category: std::option::Option<crate::types::Icd10CmEntityCategory>,
+    pub category: ::std::option::Option<crate::types::Icd10CmEntityCategory>,
     /// <p>Describes the specific type of entity with category of entities. InferICD10CM detects entities of the type <code>DX_NAME</code> and <code>TIME_EXPRESSION</code>.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::Icd10CmEntityType>,
+    pub r#type: ::std::option::Option<crate::types::Icd10CmEntityType>,
     /// <p>The level of confidence that Amazon Comprehend Medical has in the accuracy of the detection.</p>
     #[doc(hidden)]
-    pub score: std::option::Option<f32>,
+    pub score: ::std::option::Option<f32>,
     /// <p>The 0-based character offset in the input text that shows where the entity begins. The offset returns the UTF-8 code point in the string.</p>
     #[doc(hidden)]
-    pub begin_offset: std::option::Option<i32>,
+    pub begin_offset: ::std::option::Option<i32>,
     /// <p>The 0-based character offset in the input text that shows where the entity ends. The offset returns the UTF-8 code point in the string.</p>
     #[doc(hidden)]
-    pub end_offset: std::option::Option<i32>,
+    pub end_offset: ::std::option::Option<i32>,
     /// <p>The detected attributes that relate to the entity. An extracted segment of the text that is an attribute of an entity, or otherwise related to an entity, such as the nature of a medical condition.</p>
     #[doc(hidden)]
-    pub attributes: std::option::Option<std::vec::Vec<crate::types::Icd10CmAttribute>>,
+    pub attributes: ::std::option::Option<::std::vec::Vec<crate::types::Icd10CmAttribute>>,
     /// <p>Provides Contextual information for the entity. The traits recognized by InferICD10CM are <code>DIAGNOSIS</code>, <code>SIGN</code>, <code>SYMPTOM</code>, and <code>NEGATION.</code> </p>
     #[doc(hidden)]
-    pub traits: std::option::Option<std::vec::Vec<crate::types::Icd10CmTrait>>,
+    pub traits: ::std::option::Option<::std::vec::Vec<crate::types::Icd10CmTrait>>,
     /// <p>The ICD-10-CM concepts that the entity could refer to, along with a score indicating the likelihood of the match.</p>
     #[doc(hidden)]
-    pub icd10_cm_concepts: std::option::Option<std::vec::Vec<crate::types::Icd10CmConcept>>,
+    pub icd10_cm_concepts: ::std::option::Option<::std::vec::Vec<crate::types::Icd10CmConcept>>,
 }
 impl Icd10CmEntity {
     /// <p>The numeric identifier for the entity. This is a monotonically increasing id unique within this response rather than a global unique identifier.</p>
-    pub fn id(&self) -> std::option::Option<i32> {
+    pub fn id(&self) -> ::std::option::Option<i32> {
         self.id
     }
     /// <p>The segment of input text that is matched to the detected entity.</p>
-    pub fn text(&self) -> std::option::Option<&str> {
+    pub fn text(&self) -> ::std::option::Option<&str> {
         self.text.as_deref()
     }
     /// <p> The category of the entity. InferICD10CM detects entities in the <code>MEDICAL_CONDITION</code> category. </p>
-    pub fn category(&self) -> std::option::Option<&crate::types::Icd10CmEntityCategory> {
+    pub fn category(&self) -> ::std::option::Option<&crate::types::Icd10CmEntityCategory> {
         self.category.as_ref()
     }
     /// <p>Describes the specific type of entity with category of entities. InferICD10CM detects entities of the type <code>DX_NAME</code> and <code>TIME_EXPRESSION</code>.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::Icd10CmEntityType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::Icd10CmEntityType> {
         self.r#type.as_ref()
     }
     /// <p>The level of confidence that Amazon Comprehend Medical has in the accuracy of the detection.</p>
-    pub fn score(&self) -> std::option::Option<f32> {
+    pub fn score(&self) -> ::std::option::Option<f32> {
         self.score
     }
     /// <p>The 0-based character offset in the input text that shows where the entity begins. The offset returns the UTF-8 code point in the string.</p>
-    pub fn begin_offset(&self) -> std::option::Option<i32> {
+    pub fn begin_offset(&self) -> ::std::option::Option<i32> {
         self.begin_offset
     }
     /// <p>The 0-based character offset in the input text that shows where the entity ends. The offset returns the UTF-8 code point in the string.</p>
-    pub fn end_offset(&self) -> std::option::Option<i32> {
+    pub fn end_offset(&self) -> ::std::option::Option<i32> {
         self.end_offset
     }
     /// <p>The detected attributes that relate to the entity. An extracted segment of the text that is an attribute of an entity, or otherwise related to an entity, such as the nature of a medical condition.</p>
-    pub fn attributes(&self) -> std::option::Option<&[crate::types::Icd10CmAttribute]> {
+    pub fn attributes(&self) -> ::std::option::Option<&[crate::types::Icd10CmAttribute]> {
         self.attributes.as_deref()
     }
     /// <p>Provides Contextual information for the entity. The traits recognized by InferICD10CM are <code>DIAGNOSIS</code>, <code>SIGN</code>, <code>SYMPTOM</code>, and <code>NEGATION.</code> </p>
-    pub fn traits(&self) -> std::option::Option<&[crate::types::Icd10CmTrait]> {
+    pub fn traits(&self) -> ::std::option::Option<&[crate::types::Icd10CmTrait]> {
         self.traits.as_deref()
     }
     /// <p>The ICD-10-CM concepts that the entity could refer to, along with a score indicating the likelihood of the match.</p>
-    pub fn icd10_cm_concepts(&self) -> std::option::Option<&[crate::types::Icd10CmConcept]> {
+    pub fn icd10_cm_concepts(&self) -> ::std::option::Option<&[crate::types::Icd10CmConcept]> {
         self.icd10_cm_concepts.as_deref()
     }
 }
@@ -86,90 +86,96 @@ impl Icd10CmEntity {
 
 /// A builder for [`Icd10CmEntity`](crate::types::Icd10CmEntity).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct Icd10CmEntityBuilder {
-    pub(crate) id: std::option::Option<i32>,
-    pub(crate) text: std::option::Option<std::string::String>,
-    pub(crate) category: std::option::Option<crate::types::Icd10CmEntityCategory>,
-    pub(crate) r#type: std::option::Option<crate::types::Icd10CmEntityType>,
-    pub(crate) score: std::option::Option<f32>,
-    pub(crate) begin_offset: std::option::Option<i32>,
-    pub(crate) end_offset: std::option::Option<i32>,
-    pub(crate) attributes: std::option::Option<std::vec::Vec<crate::types::Icd10CmAttribute>>,
-    pub(crate) traits: std::option::Option<std::vec::Vec<crate::types::Icd10CmTrait>>,
-    pub(crate) icd10_cm_concepts: std::option::Option<std::vec::Vec<crate::types::Icd10CmConcept>>,
+    pub(crate) id: ::std::option::Option<i32>,
+    pub(crate) text: ::std::option::Option<::std::string::String>,
+    pub(crate) category: ::std::option::Option<crate::types::Icd10CmEntityCategory>,
+    pub(crate) r#type: ::std::option::Option<crate::types::Icd10CmEntityType>,
+    pub(crate) score: ::std::option::Option<f32>,
+    pub(crate) begin_offset: ::std::option::Option<i32>,
+    pub(crate) end_offset: ::std::option::Option<i32>,
+    pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::Icd10CmAttribute>>,
+    pub(crate) traits: ::std::option::Option<::std::vec::Vec<crate::types::Icd10CmTrait>>,
+    pub(crate) icd10_cm_concepts:
+        ::std::option::Option<::std::vec::Vec<crate::types::Icd10CmConcept>>,
 }
 impl Icd10CmEntityBuilder {
     /// <p>The numeric identifier for the entity. This is a monotonically increasing id unique within this response rather than a global unique identifier.</p>
     pub fn id(mut self, input: i32) -> Self {
-        self.id = Some(input);
+        self.id = ::std::option::Option::Some(input);
         self
     }
     /// <p>The numeric identifier for the entity. This is a monotonically increasing id unique within this response rather than a global unique identifier.</p>
-    pub fn set_id(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<i32>) -> Self {
         self.id = input;
         self
     }
     /// <p>The segment of input text that is matched to the detected entity.</p>
-    pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
-        self.text = Some(input.into());
+    pub fn text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.text = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The segment of input text that is matched to the detected entity.</p>
-    pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.text = input;
         self
     }
     /// <p> The category of the entity. InferICD10CM detects entities in the <code>MEDICAL_CONDITION</code> category. </p>
     pub fn category(mut self, input: crate::types::Icd10CmEntityCategory) -> Self {
-        self.category = Some(input);
+        self.category = ::std::option::Option::Some(input);
         self
     }
     /// <p> The category of the entity. InferICD10CM detects entities in the <code>MEDICAL_CONDITION</code> category. </p>
     pub fn set_category(
         mut self,
-        input: std::option::Option<crate::types::Icd10CmEntityCategory>,
+        input: ::std::option::Option<crate::types::Icd10CmEntityCategory>,
     ) -> Self {
         self.category = input;
         self
     }
     /// <p>Describes the specific type of entity with category of entities. InferICD10CM detects entities of the type <code>DX_NAME</code> and <code>TIME_EXPRESSION</code>.</p>
     pub fn r#type(mut self, input: crate::types::Icd10CmEntityType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes the specific type of entity with category of entities. InferICD10CM detects entities of the type <code>DX_NAME</code> and <code>TIME_EXPRESSION</code>.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::Icd10CmEntityType>) -> Self {
+    pub fn set_type(
+        mut self,
+        input: ::std::option::Option<crate::types::Icd10CmEntityType>,
+    ) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The level of confidence that Amazon Comprehend Medical has in the accuracy of the detection.</p>
     pub fn score(mut self, input: f32) -> Self {
-        self.score = Some(input);
+        self.score = ::std::option::Option::Some(input);
         self
     }
     /// <p>The level of confidence that Amazon Comprehend Medical has in the accuracy of the detection.</p>
-    pub fn set_score(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_score(mut self, input: ::std::option::Option<f32>) -> Self {
         self.score = input;
         self
     }
     /// <p>The 0-based character offset in the input text that shows where the entity begins. The offset returns the UTF-8 code point in the string.</p>
     pub fn begin_offset(mut self, input: i32) -> Self {
-        self.begin_offset = Some(input);
+        self.begin_offset = ::std::option::Option::Some(input);
         self
     }
     /// <p>The 0-based character offset in the input text that shows where the entity begins. The offset returns the UTF-8 code point in the string.</p>
-    pub fn set_begin_offset(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_begin_offset(mut self, input: ::std::option::Option<i32>) -> Self {
         self.begin_offset = input;
         self
     }
     /// <p>The 0-based character offset in the input text that shows where the entity ends. The offset returns the UTF-8 code point in the string.</p>
     pub fn end_offset(mut self, input: i32) -> Self {
-        self.end_offset = Some(input);
+        self.end_offset = ::std::option::Option::Some(input);
         self
     }
     /// <p>The 0-based character offset in the input text that shows where the entity ends. The offset returns the UTF-8 code point in the string.</p>
-    pub fn set_end_offset(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_end_offset(mut self, input: ::std::option::Option<i32>) -> Self {
         self.end_offset = input;
         self
     }
@@ -181,13 +187,13 @@ impl Icd10CmEntityBuilder {
     pub fn attributes(mut self, input: crate::types::Icd10CmAttribute) -> Self {
         let mut v = self.attributes.unwrap_or_default();
         v.push(input);
-        self.attributes = Some(v);
+        self.attributes = ::std::option::Option::Some(v);
         self
     }
     /// <p>The detected attributes that relate to the entity. An extracted segment of the text that is an attribute of an entity, or otherwise related to an entity, such as the nature of a medical condition.</p>
     pub fn set_attributes(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Icd10CmAttribute>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Icd10CmAttribute>>,
     ) -> Self {
         self.attributes = input;
         self
@@ -200,13 +206,13 @@ impl Icd10CmEntityBuilder {
     pub fn traits(mut self, input: crate::types::Icd10CmTrait) -> Self {
         let mut v = self.traits.unwrap_or_default();
         v.push(input);
-        self.traits = Some(v);
+        self.traits = ::std::option::Option::Some(v);
         self
     }
     /// <p>Provides Contextual information for the entity. The traits recognized by InferICD10CM are <code>DIAGNOSIS</code>, <code>SIGN</code>, <code>SYMPTOM</code>, and <code>NEGATION.</code> </p>
     pub fn set_traits(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Icd10CmTrait>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Icd10CmTrait>>,
     ) -> Self {
         self.traits = input;
         self
@@ -219,13 +225,13 @@ impl Icd10CmEntityBuilder {
     pub fn icd10_cm_concepts(mut self, input: crate::types::Icd10CmConcept) -> Self {
         let mut v = self.icd10_cm_concepts.unwrap_or_default();
         v.push(input);
-        self.icd10_cm_concepts = Some(v);
+        self.icd10_cm_concepts = ::std::option::Option::Some(v);
         self
     }
     /// <p>The ICD-10-CM concepts that the entity could refer to, along with a score indicating the likelihood of the match.</p>
     pub fn set_icd10_cm_concepts(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Icd10CmConcept>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Icd10CmConcept>>,
     ) -> Self {
         self.icd10_cm_concepts = input;
         self

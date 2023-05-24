@@ -2,24 +2,24 @@
 
 /// <p>Configuration of the encryption method that is used for the studio.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StudioEncryptionConfiguration {
     /// <p>The ARN for a KMS key that is used to encrypt studio data.</p>
     #[doc(hidden)]
-    pub key_arn: std::option::Option<std::string::String>,
+    pub key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of KMS key that is used to encrypt studio data.</p>
     #[doc(hidden)]
-    pub key_type: std::option::Option<crate::types::StudioEncryptionConfigurationKeyType>,
+    pub key_type: ::std::option::Option<crate::types::StudioEncryptionConfigurationKeyType>,
 }
 impl StudioEncryptionConfiguration {
     /// <p>The ARN for a KMS key that is used to encrypt studio data.</p>
-    pub fn key_arn(&self) -> std::option::Option<&str> {
+    pub fn key_arn(&self) -> ::std::option::Option<&str> {
         self.key_arn.as_deref()
     }
     /// <p>The type of KMS key that is used to encrypt studio data.</p>
     pub fn key_type(
         &self,
-    ) -> std::option::Option<&crate::types::StudioEncryptionConfigurationKeyType> {
+    ) -> ::std::option::Option<&crate::types::StudioEncryptionConfigurationKeyType> {
         self.key_type.as_ref()
     }
 }
@@ -32,31 +32,33 @@ impl StudioEncryptionConfiguration {
 
 /// A builder for [`StudioEncryptionConfiguration`](crate::types::StudioEncryptionConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StudioEncryptionConfigurationBuilder {
-    pub(crate) key_arn: std::option::Option<std::string::String>,
-    pub(crate) key_type: std::option::Option<crate::types::StudioEncryptionConfigurationKeyType>,
+    pub(crate) key_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) key_type: ::std::option::Option<crate::types::StudioEncryptionConfigurationKeyType>,
 }
 impl StudioEncryptionConfigurationBuilder {
     /// <p>The ARN for a KMS key that is used to encrypt studio data.</p>
-    pub fn key_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.key_arn = Some(input.into());
+    pub fn key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.key_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN for a KMS key that is used to encrypt studio data.</p>
-    pub fn set_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_arn = input;
         self
     }
     /// <p>The type of KMS key that is used to encrypt studio data.</p>
     pub fn key_type(mut self, input: crate::types::StudioEncryptionConfigurationKeyType) -> Self {
-        self.key_type = Some(input);
+        self.key_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of KMS key that is used to encrypt studio data.</p>
     pub fn set_key_type(
         mut self,
-        input: std::option::Option<crate::types::StudioEncryptionConfigurationKeyType>,
+        input: ::std::option::Option<crate::types::StudioEncryptionConfigurationKeyType>,
     ) -> Self {
         self.key_type = input;
         self

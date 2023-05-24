@@ -38,13 +38,13 @@
 /// M2ts Cc Descriptor
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum M2tsCcDescriptor {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum M2tsCcDescriptor {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for M2tsCcDescriptor {
+impl ::std::convert::From<&str> for M2tsCcDescriptor {
     fn from(s: &str) -> Self {
         match s {
             "DISABLED" => M2tsCcDescriptor::Disabled,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for M2tsCcDescriptor {
         }
     }
 }
-impl std::str::FromStr for M2tsCcDescriptor {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for M2tsCcDescriptor {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(M2tsCcDescriptor::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(M2tsCcDescriptor::from(s))
     }
 }
 impl M2tsCcDescriptor {
@@ -86,7 +86,7 @@ impl M2tsCcDescriptor {
         &["DISABLED", "ENABLED"]
     }
 }
-impl AsRef<str> for M2tsCcDescriptor {
+impl ::std::convert::AsRef<str> for M2tsCcDescriptor {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

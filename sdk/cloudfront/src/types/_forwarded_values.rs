@@ -5,7 +5,7 @@
 /// <p>If you want to send values to the origin but not include them in the cache key, use an origin request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy">Creating origin request policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
 /// <p>A complex type that specifies how CloudFront handles query strings, cookies, and HTTP headers.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ForwardedValues {
     /// <p>This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this field.</p>
     /// <p>If you want to include query strings in the cache key, use a cache policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
@@ -16,26 +16,26 @@ pub struct ForwardedValues {
     /// <p>If you specify false for <code>QueryString</code>, CloudFront doesn't forward any query string parameters to the origin, and doesn't cache based on query string parameters.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/QueryStringParameters.html">Configuring CloudFront to Cache Based on Query String Parameters</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     #[doc(hidden)]
-    pub query_string: std::option::Option<bool>,
+    pub query_string: ::std::option::Option<bool>,
     /// <p>This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this field.</p>
     /// <p>If you want to include cookies in the cache key, use a cache policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// <p>If you want to send cookies to the origin but not include them in the cache key, use an origin request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy">Creating origin request policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// <p>A complex type that specifies whether you want CloudFront to forward cookies to the origin and, if so, which ones. For more information about forwarding cookies to the origin, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html">How CloudFront Forwards, Caches, and Logs Cookies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     #[doc(hidden)]
-    pub cookies: std::option::Option<crate::types::CookiePreference>,
+    pub cookies: ::std::option::Option<crate::types::CookiePreference>,
     /// <p>This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this field.</p>
     /// <p>If you want to include headers in the cache key, use a cache policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// <p>If you want to send headers to the origin but not include them in the cache key, use an origin request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy">Creating origin request policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// <p>A complex type that specifies the <code>Headers</code>, if any, that you want CloudFront to forward to the origin for this cache behavior (whitelisted headers). For the headers that you specify, CloudFront also caches separate versions of a specified object that is based on the header values in viewer requests.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/header-caching.html"> Caching Content Based on Request Headers</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     #[doc(hidden)]
-    pub headers: std::option::Option<crate::types::Headers>,
+    pub headers: ::std::option::Option<crate::types::Headers>,
     /// <p>This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this field.</p>
     /// <p>If you want to include query strings in the cache key, use a cache policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// <p>If you want to send query strings to the origin but not include them in the cache key, use an origin request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy">Creating origin request policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// <p>A complex type that contains information about the query string parameters that you want CloudFront to use for caching for this cache behavior.</p>
     #[doc(hidden)]
-    pub query_string_cache_keys: std::option::Option<crate::types::QueryStringCacheKeys>,
+    pub query_string_cache_keys: ::std::option::Option<crate::types::QueryStringCacheKeys>,
 }
 impl ForwardedValues {
     /// <p>This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this field.</p>
@@ -46,14 +46,14 @@ impl ForwardedValues {
     /// <p>If you specify true for <code>QueryString</code> and you specify one or more values for <code>QueryStringCacheKeys</code>, CloudFront forwards all query string parameters to the origin, but it only caches based on the query string parameters that you specify.</p>
     /// <p>If you specify false for <code>QueryString</code>, CloudFront doesn't forward any query string parameters to the origin, and doesn't cache based on query string parameters.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/QueryStringParameters.html">Configuring CloudFront to Cache Based on Query String Parameters</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn query_string(&self) -> std::option::Option<bool> {
+    pub fn query_string(&self) -> ::std::option::Option<bool> {
         self.query_string
     }
     /// <p>This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this field.</p>
     /// <p>If you want to include cookies in the cache key, use a cache policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// <p>If you want to send cookies to the origin but not include them in the cache key, use an origin request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy">Creating origin request policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// <p>A complex type that specifies whether you want CloudFront to forward cookies to the origin and, if so, which ones. For more information about forwarding cookies to the origin, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html">How CloudFront Forwards, Caches, and Logs Cookies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn cookies(&self) -> std::option::Option<&crate::types::CookiePreference> {
+    pub fn cookies(&self) -> ::std::option::Option<&crate::types::CookiePreference> {
         self.cookies.as_ref()
     }
     /// <p>This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this field.</p>
@@ -61,7 +61,7 @@ impl ForwardedValues {
     /// <p>If you want to send headers to the origin but not include them in the cache key, use an origin request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy">Creating origin request policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// <p>A complex type that specifies the <code>Headers</code>, if any, that you want CloudFront to forward to the origin for this cache behavior (whitelisted headers). For the headers that you specify, CloudFront also caches separate versions of a specified object that is based on the header values in viewer requests.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/header-caching.html"> Caching Content Based on Request Headers</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn headers(&self) -> std::option::Option<&crate::types::Headers> {
+    pub fn headers(&self) -> ::std::option::Option<&crate::types::Headers> {
         self.headers.as_ref()
     }
     /// <p>This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this field.</p>
@@ -70,7 +70,7 @@ impl ForwardedValues {
     /// <p>A complex type that contains information about the query string parameters that you want CloudFront to use for caching for this cache behavior.</p>
     pub fn query_string_cache_keys(
         &self,
-    ) -> std::option::Option<&crate::types::QueryStringCacheKeys> {
+    ) -> ::std::option::Option<&crate::types::QueryStringCacheKeys> {
         self.query_string_cache_keys.as_ref()
     }
 }
@@ -83,12 +83,14 @@ impl ForwardedValues {
 
 /// A builder for [`ForwardedValues`](crate::types::ForwardedValues).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ForwardedValuesBuilder {
-    pub(crate) query_string: std::option::Option<bool>,
-    pub(crate) cookies: std::option::Option<crate::types::CookiePreference>,
-    pub(crate) headers: std::option::Option<crate::types::Headers>,
-    pub(crate) query_string_cache_keys: std::option::Option<crate::types::QueryStringCacheKeys>,
+    pub(crate) query_string: ::std::option::Option<bool>,
+    pub(crate) cookies: ::std::option::Option<crate::types::CookiePreference>,
+    pub(crate) headers: ::std::option::Option<crate::types::Headers>,
+    pub(crate) query_string_cache_keys: ::std::option::Option<crate::types::QueryStringCacheKeys>,
 }
 impl ForwardedValuesBuilder {
     /// <p>This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this field.</p>
@@ -100,7 +102,7 @@ impl ForwardedValuesBuilder {
     /// <p>If you specify false for <code>QueryString</code>, CloudFront doesn't forward any query string parameters to the origin, and doesn't cache based on query string parameters.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/QueryStringParameters.html">Configuring CloudFront to Cache Based on Query String Parameters</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub fn query_string(mut self, input: bool) -> Self {
-        self.query_string = Some(input);
+        self.query_string = ::std::option::Option::Some(input);
         self
     }
     /// <p>This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this field.</p>
@@ -111,7 +113,7 @@ impl ForwardedValuesBuilder {
     /// <p>If you specify true for <code>QueryString</code> and you specify one or more values for <code>QueryStringCacheKeys</code>, CloudFront forwards all query string parameters to the origin, but it only caches based on the query string parameters that you specify.</p>
     /// <p>If you specify false for <code>QueryString</code>, CloudFront doesn't forward any query string parameters to the origin, and doesn't cache based on query string parameters.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/QueryStringParameters.html">Configuring CloudFront to Cache Based on Query String Parameters</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn set_query_string(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_query_string(mut self, input: ::std::option::Option<bool>) -> Self {
         self.query_string = input;
         self
     }
@@ -120,7 +122,7 @@ impl ForwardedValuesBuilder {
     /// <p>If you want to send cookies to the origin but not include them in the cache key, use an origin request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy">Creating origin request policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// <p>A complex type that specifies whether you want CloudFront to forward cookies to the origin and, if so, which ones. For more information about forwarding cookies to the origin, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html">How CloudFront Forwards, Caches, and Logs Cookies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub fn cookies(mut self, input: crate::types::CookiePreference) -> Self {
-        self.cookies = Some(input);
+        self.cookies = ::std::option::Option::Some(input);
         self
     }
     /// <p>This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this field.</p>
@@ -129,7 +131,7 @@ impl ForwardedValuesBuilder {
     /// <p>A complex type that specifies whether you want CloudFront to forward cookies to the origin and, if so, which ones. For more information about forwarding cookies to the origin, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html">How CloudFront Forwards, Caches, and Logs Cookies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub fn set_cookies(
         mut self,
-        input: std::option::Option<crate::types::CookiePreference>,
+        input: ::std::option::Option<crate::types::CookiePreference>,
     ) -> Self {
         self.cookies = input;
         self
@@ -140,7 +142,7 @@ impl ForwardedValuesBuilder {
     /// <p>A complex type that specifies the <code>Headers</code>, if any, that you want CloudFront to forward to the origin for this cache behavior (whitelisted headers). For the headers that you specify, CloudFront also caches separate versions of a specified object that is based on the header values in viewer requests.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/header-caching.html"> Caching Content Based on Request Headers</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub fn headers(mut self, input: crate::types::Headers) -> Self {
-        self.headers = Some(input);
+        self.headers = ::std::option::Option::Some(input);
         self
     }
     /// <p>This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this field.</p>
@@ -148,7 +150,7 @@ impl ForwardedValuesBuilder {
     /// <p>If you want to send headers to the origin but not include them in the cache key, use an origin request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy">Creating origin request policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// <p>A complex type that specifies the <code>Headers</code>, if any, that you want CloudFront to forward to the origin for this cache behavior (whitelisted headers). For the headers that you specify, CloudFront also caches separate versions of a specified object that is based on the header values in viewer requests.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/header-caching.html"> Caching Content Based on Request Headers</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn set_headers(mut self, input: std::option::Option<crate::types::Headers>) -> Self {
+    pub fn set_headers(mut self, input: ::std::option::Option<crate::types::Headers>) -> Self {
         self.headers = input;
         self
     }
@@ -157,7 +159,7 @@ impl ForwardedValuesBuilder {
     /// <p>If you want to send query strings to the origin but not include them in the cache key, use an origin request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy">Creating origin request policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// <p>A complex type that contains information about the query string parameters that you want CloudFront to use for caching for this cache behavior.</p>
     pub fn query_string_cache_keys(mut self, input: crate::types::QueryStringCacheKeys) -> Self {
-        self.query_string_cache_keys = Some(input);
+        self.query_string_cache_keys = ::std::option::Option::Some(input);
         self
     }
     /// <p>This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this field.</p>
@@ -166,7 +168,7 @@ impl ForwardedValuesBuilder {
     /// <p>A complex type that contains information about the query string parameters that you want CloudFront to use for caching for this cache behavior.</p>
     pub fn set_query_string_cache_keys(
         mut self,
-        input: std::option::Option<crate::types::QueryStringCacheKeys>,
+        input: ::std::option::Option<crate::types::QueryStringCacheKeys>,
     ) -> Self {
         self.query_string_cache_keys = input;
         self

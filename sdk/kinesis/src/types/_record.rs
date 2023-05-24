@@ -2,45 +2,45 @@
 
 /// <p>The unit of data of the Kinesis data stream, which is composed of a sequence number, a partition key, and a data blob.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Record {
     /// <p>The unique identifier of the record within its shard.</p>
     #[doc(hidden)]
-    pub sequence_number: std::option::Option<std::string::String>,
+    pub sequence_number: ::std::option::Option<::std::string::String>,
     /// <p>The approximate time that the record was inserted into the stream.</p>
     #[doc(hidden)]
-    pub approximate_arrival_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub approximate_arrival_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The data blob. The data in the blob is both opaque and immutable to Kinesis Data Streams, which does not inspect, interpret, or change the data in the blob in any way. When the data blob (the payload before base64-encoding) is added to the partition key size, the total size must not exceed the maximum record size (1 MiB).</p>
     #[doc(hidden)]
-    pub data: std::option::Option<aws_smithy_types::Blob>,
+    pub data: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>Identifies which shard in the stream the data record is assigned to.</p>
     #[doc(hidden)]
-    pub partition_key: std::option::Option<std::string::String>,
+    pub partition_key: ::std::option::Option<::std::string::String>,
     /// <p>The encryption type used on the record. This parameter can be one of the following values:</p>
     /// <ul>
     /// <li> <p> <code>NONE</code>: Do not encrypt the records in the stream.</p> </li>
     /// <li> <p> <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed Amazon Web Services KMS key.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub encryption_type: std::option::Option<crate::types::EncryptionType>,
+    pub encryption_type: ::std::option::Option<crate::types::EncryptionType>,
 }
 impl Record {
     /// <p>The unique identifier of the record within its shard.</p>
-    pub fn sequence_number(&self) -> std::option::Option<&str> {
+    pub fn sequence_number(&self) -> ::std::option::Option<&str> {
         self.sequence_number.as_deref()
     }
     /// <p>The approximate time that the record was inserted into the stream.</p>
     pub fn approximate_arrival_timestamp(
         &self,
-    ) -> std::option::Option<&aws_smithy_types::DateTime> {
+    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.approximate_arrival_timestamp.as_ref()
     }
     /// <p>The data blob. The data in the blob is both opaque and immutable to Kinesis Data Streams, which does not inspect, interpret, or change the data in the blob in any way. When the data blob (the payload before base64-encoding) is added to the partition key size, the total size must not exceed the maximum record size (1 MiB).</p>
-    pub fn data(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn data(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
         self.data.as_ref()
     }
     /// <p>Identifies which shard in the stream the data record is assigned to.</p>
-    pub fn partition_key(&self) -> std::option::Option<&str> {
+    pub fn partition_key(&self) -> ::std::option::Option<&str> {
         self.partition_key.as_deref()
     }
     /// <p>The encryption type used on the record. This parameter can be one of the following values:</p>
@@ -48,7 +48,7 @@ impl Record {
     /// <li> <p> <code>NONE</code>: Do not encrypt the records in the stream.</p> </li>
     /// <li> <p> <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed Amazon Web Services KMS key.</p> </li>
     /// </ul>
-    pub fn encryption_type(&self) -> std::option::Option<&crate::types::EncryptionType> {
+    pub fn encryption_type(&self) -> ::std::option::Option<&crate::types::EncryptionType> {
         self.encryption_type.as_ref()
     }
 }
@@ -61,55 +61,69 @@ impl Record {
 
 /// A builder for [`Record`](crate::types::Record).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RecordBuilder {
-    pub(crate) sequence_number: std::option::Option<std::string::String>,
-    pub(crate) approximate_arrival_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) data: std::option::Option<aws_smithy_types::Blob>,
-    pub(crate) partition_key: std::option::Option<std::string::String>,
-    pub(crate) encryption_type: std::option::Option<crate::types::EncryptionType>,
+    pub(crate) sequence_number: ::std::option::Option<::std::string::String>,
+    pub(crate) approximate_arrival_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) data: ::std::option::Option<::aws_smithy_types::Blob>,
+    pub(crate) partition_key: ::std::option::Option<::std::string::String>,
+    pub(crate) encryption_type: ::std::option::Option<crate::types::EncryptionType>,
 }
 impl RecordBuilder {
     /// <p>The unique identifier of the record within its shard.</p>
-    pub fn sequence_number(mut self, input: impl Into<std::string::String>) -> Self {
-        self.sequence_number = Some(input.into());
+    pub fn sequence_number(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.sequence_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the record within its shard.</p>
-    pub fn set_sequence_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_sequence_number(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.sequence_number = input;
         self
     }
     /// <p>The approximate time that the record was inserted into the stream.</p>
-    pub fn approximate_arrival_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.approximate_arrival_timestamp = Some(input);
+    pub fn approximate_arrival_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.approximate_arrival_timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>The approximate time that the record was inserted into the stream.</p>
     pub fn set_approximate_arrival_timestamp(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.approximate_arrival_timestamp = input;
         self
     }
     /// <p>The data blob. The data in the blob is both opaque and immutable to Kinesis Data Streams, which does not inspect, interpret, or change the data in the blob in any way. When the data blob (the payload before base64-encoding) is added to the partition key size, the total size must not exceed the maximum record size (1 MiB).</p>
-    pub fn data(mut self, input: aws_smithy_types::Blob) -> Self {
-        self.data = Some(input);
+    pub fn data(mut self, input: ::aws_smithy_types::Blob) -> Self {
+        self.data = ::std::option::Option::Some(input);
         self
     }
     /// <p>The data blob. The data in the blob is both opaque and immutable to Kinesis Data Streams, which does not inspect, interpret, or change the data in the blob in any way. When the data blob (the payload before base64-encoding) is added to the partition key size, the total size must not exceed the maximum record size (1 MiB).</p>
-    pub fn set_data(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
+    pub fn set_data(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.data = input;
         self
     }
     /// <p>Identifies which shard in the stream the data record is assigned to.</p>
-    pub fn partition_key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.partition_key = Some(input.into());
+    pub fn partition_key(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.partition_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Identifies which shard in the stream the data record is assigned to.</p>
-    pub fn set_partition_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_partition_key(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.partition_key = input;
         self
     }
@@ -119,7 +133,7 @@ impl RecordBuilder {
     /// <li> <p> <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed Amazon Web Services KMS key.</p> </li>
     /// </ul>
     pub fn encryption_type(mut self, input: crate::types::EncryptionType) -> Self {
-        self.encryption_type = Some(input);
+        self.encryption_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The encryption type used on the record. This parameter can be one of the following values:</p>
@@ -129,7 +143,7 @@ impl RecordBuilder {
     /// </ul>
     pub fn set_encryption_type(
         mut self,
-        input: std::option::Option<crate::types::EncryptionType>,
+        input: ::std::option::Option<crate::types::EncryptionType>,
     ) -> Self {
         self.encryption_type = input;
         self

@@ -8,56 +8,59 @@ pub use crate::operation::delete_cluster::_delete_cluster_input::DeleteClusterIn
 /// <p>Deletes a previously provisioned cluster without its final snapshot being created. A successful response from the web service indicates that the request was received correctly. Use <code>DescribeClusters</code> to monitor the status of the deletion. The delete operation cannot be canceled or reverted once submitted. For more information about managing clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
 /// <p>If you want to shut down the cluster and retain it for future use, set <i>SkipFinalClusterSnapshot</i> to <code>false</code> and specify a name for <i>FinalClusterSnapshotIdentifier</i>. You can later restore this snapshot to resume using the cluster. If a final cluster snapshot is requested, the status of the cluster will be "final-snapshot" while the snapshot is being taken, then it's "deleting" once Amazon Redshift begins deleting the cluster. </p>
 /// <p> For more information about managing clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteClusterFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::delete_cluster::builders::DeleteClusterInputBuilder,
 }
 impl DeleteClusterFluentBuilder {
     /// Creates a new `DeleteCluster`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::delete_cluster::DeleteCluster,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::delete_cluster::DeleteClusterError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_cluster::DeleteClusterError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::delete_cluster::DeleteClusterOutput,
-        aws_smithy_http::result::SdkError<crate::operation::delete_cluster::DeleteClusterError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_cluster::DeleteClusterError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -70,9 +73,9 @@ impl DeleteClusterFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::delete_cluster::DeleteClusterOutput,
-        aws_smithy_http::result::SdkError<crate::operation::delete_cluster::DeleteClusterError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_cluster::DeleteClusterError>,
     > {
         self.send_middleware().await
     }
@@ -84,7 +87,10 @@ impl DeleteClusterFluentBuilder {
     /// <li> <p>First character must be a letter.</p> </li>
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
-    pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn cluster_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.cluster_identifier(input.into());
         self
     }
@@ -98,7 +104,7 @@ impl DeleteClusterFluentBuilder {
     /// </ul>
     pub fn set_cluster_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_cluster_identifier(input);
         self
@@ -115,7 +121,7 @@ impl DeleteClusterFluentBuilder {
     /// <p>The <i>FinalClusterSnapshotIdentifier</i> parameter must be specified if <i>SkipFinalClusterSnapshot</i> is <code>false</code>.</p>
     /// </note>
     /// <p>Default: <code>false</code> </p>
-    pub fn set_skip_final_cluster_snapshot(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_skip_final_cluster_snapshot(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_skip_final_cluster_snapshot(input);
         self
     }
@@ -128,7 +134,7 @@ impl DeleteClusterFluentBuilder {
     /// </ul>
     pub fn final_cluster_snapshot_identifier(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.final_cluster_snapshot_identifier(input.into());
         self
@@ -142,7 +148,7 @@ impl DeleteClusterFluentBuilder {
     /// </ul>
     pub fn set_final_cluster_snapshot_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_final_cluster_snapshot_identifier(input);
         self
@@ -159,7 +165,7 @@ impl DeleteClusterFluentBuilder {
     /// <p>The default value is -1.</p>
     pub fn set_final_cluster_snapshot_retention_period(
         mut self,
-        input: std::option::Option<i32>,
+        input: ::std::option::Option<i32>,
     ) -> Self {
         self.inner = self
             .inner

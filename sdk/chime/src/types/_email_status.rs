@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum EmailStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum EmailStatus {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for EmailStatus {
+impl ::std::convert::From<&str> for EmailStatus {
     fn from(s: &str) -> Self {
         match s {
             "Failed" => EmailStatus::Failed,
@@ -67,11 +67,11 @@ impl std::convert::From<&str> for EmailStatus {
         }
     }
 }
-impl std::str::FromStr for EmailStatus {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for EmailStatus {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EmailStatus::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(EmailStatus::from(s))
     }
 }
 impl EmailStatus {
@@ -89,7 +89,7 @@ impl EmailStatus {
         &["Failed", "NotSent", "Sent"]
     }
 }
-impl AsRef<str> for EmailStatus {
+impl ::std::convert::AsRef<str> for EmailStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

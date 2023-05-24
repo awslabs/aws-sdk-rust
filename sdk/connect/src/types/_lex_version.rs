@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum LexVersion {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum LexVersion {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for LexVersion {
+impl ::std::convert::From<&str> for LexVersion {
     fn from(s: &str) -> Self {
         match s {
             "V1" => LexVersion::V1,
@@ -63,11 +63,11 @@ impl std::convert::From<&str> for LexVersion {
         }
     }
 }
-impl std::str::FromStr for LexVersion {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for LexVersion {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LexVersion::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(LexVersion::from(s))
     }
 }
 impl LexVersion {
@@ -84,7 +84,7 @@ impl LexVersion {
         &["V1", "V2"]
     }
 }
-impl AsRef<str> for LexVersion {
+impl ::std::convert::AsRef<str> for LexVersion {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

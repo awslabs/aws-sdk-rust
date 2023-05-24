@@ -2,29 +2,29 @@
 
 /// Timecode Burnin Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimecodeBurninSettings {
     /// Choose a timecode burn-in font size
     #[doc(hidden)]
-    pub font_size: std::option::Option<crate::types::TimecodeBurninFontSize>,
+    pub font_size: ::std::option::Option<crate::types::TimecodeBurninFontSize>,
     /// Choose a timecode burn-in output position
     #[doc(hidden)]
-    pub position: std::option::Option<crate::types::TimecodeBurninPosition>,
+    pub position: ::std::option::Option<crate::types::TimecodeBurninPosition>,
     /// Create a timecode burn-in prefix (optional)
     #[doc(hidden)]
-    pub prefix: std::option::Option<std::string::String>,
+    pub prefix: ::std::option::Option<::std::string::String>,
 }
 impl TimecodeBurninSettings {
     /// Choose a timecode burn-in font size
-    pub fn font_size(&self) -> std::option::Option<&crate::types::TimecodeBurninFontSize> {
+    pub fn font_size(&self) -> ::std::option::Option<&crate::types::TimecodeBurninFontSize> {
         self.font_size.as_ref()
     }
     /// Choose a timecode burn-in output position
-    pub fn position(&self) -> std::option::Option<&crate::types::TimecodeBurninPosition> {
+    pub fn position(&self) -> ::std::option::Option<&crate::types::TimecodeBurninPosition> {
         self.position.as_ref()
     }
     /// Create a timecode burn-in prefix (optional)
-    pub fn prefix(&self) -> std::option::Option<&str> {
+    pub fn prefix(&self) -> ::std::option::Option<&str> {
         self.prefix.as_deref()
     }
 }
@@ -37,46 +37,48 @@ impl TimecodeBurninSettings {
 
 /// A builder for [`TimecodeBurninSettings`](crate::types::TimecodeBurninSettings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TimecodeBurninSettingsBuilder {
-    pub(crate) font_size: std::option::Option<crate::types::TimecodeBurninFontSize>,
-    pub(crate) position: std::option::Option<crate::types::TimecodeBurninPosition>,
-    pub(crate) prefix: std::option::Option<std::string::String>,
+    pub(crate) font_size: ::std::option::Option<crate::types::TimecodeBurninFontSize>,
+    pub(crate) position: ::std::option::Option<crate::types::TimecodeBurninPosition>,
+    pub(crate) prefix: ::std::option::Option<::std::string::String>,
 }
 impl TimecodeBurninSettingsBuilder {
     /// Choose a timecode burn-in font size
     pub fn font_size(mut self, input: crate::types::TimecodeBurninFontSize) -> Self {
-        self.font_size = Some(input);
+        self.font_size = ::std::option::Option::Some(input);
         self
     }
     /// Choose a timecode burn-in font size
     pub fn set_font_size(
         mut self,
-        input: std::option::Option<crate::types::TimecodeBurninFontSize>,
+        input: ::std::option::Option<crate::types::TimecodeBurninFontSize>,
     ) -> Self {
         self.font_size = input;
         self
     }
     /// Choose a timecode burn-in output position
     pub fn position(mut self, input: crate::types::TimecodeBurninPosition) -> Self {
-        self.position = Some(input);
+        self.position = ::std::option::Option::Some(input);
         self
     }
     /// Choose a timecode burn-in output position
     pub fn set_position(
         mut self,
-        input: std::option::Option<crate::types::TimecodeBurninPosition>,
+        input: ::std::option::Option<crate::types::TimecodeBurninPosition>,
     ) -> Self {
         self.position = input;
         self
     }
     /// Create a timecode burn-in prefix (optional)
-    pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
-        self.prefix = Some(input.into());
+    pub fn prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// Create a timecode burn-in prefix (optional)
-    pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.prefix = input;
         self
     }

@@ -2,29 +2,31 @@
 
 /// <p>Revocation information for a signing profile.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SigningProfileRevocationRecord {
     /// <p>The time when revocation becomes effective.</p>
     #[doc(hidden)]
-    pub revocation_effective_from: std::option::Option<aws_smithy_types::DateTime>,
+    pub revocation_effective_from: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when the signing profile was revoked.</p>
     #[doc(hidden)]
-    pub revoked_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub revoked_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The identity of the revoker.</p>
     #[doc(hidden)]
-    pub revoked_by: std::option::Option<std::string::String>,
+    pub revoked_by: ::std::option::Option<::std::string::String>,
 }
 impl SigningProfileRevocationRecord {
     /// <p>The time when revocation becomes effective.</p>
-    pub fn revocation_effective_from(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn revocation_effective_from(
+        &self,
+    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.revocation_effective_from.as_ref()
     }
     /// <p>The time when the signing profile was revoked.</p>
-    pub fn revoked_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn revoked_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.revoked_at.as_ref()
     }
     /// <p>The identity of the revoker.</p>
-    pub fn revoked_by(&self) -> std::option::Option<&str> {
+    pub fn revoked_by(&self) -> ::std::option::Option<&str> {
         self.revoked_by.as_deref()
     }
 }
@@ -37,46 +39,48 @@ impl SigningProfileRevocationRecord {
 
 /// A builder for [`SigningProfileRevocationRecord`](crate::types::SigningProfileRevocationRecord).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SigningProfileRevocationRecordBuilder {
-    pub(crate) revocation_effective_from: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) revoked_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) revoked_by: std::option::Option<std::string::String>,
+    pub(crate) revocation_effective_from: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) revoked_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) revoked_by: ::std::option::Option<::std::string::String>,
 }
 impl SigningProfileRevocationRecordBuilder {
     /// <p>The time when revocation becomes effective.</p>
-    pub fn revocation_effective_from(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.revocation_effective_from = Some(input);
+    pub fn revocation_effective_from(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.revocation_effective_from = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time when revocation becomes effective.</p>
     pub fn set_revocation_effective_from(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.revocation_effective_from = input;
         self
     }
     /// <p>The time when the signing profile was revoked.</p>
-    pub fn revoked_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.revoked_at = Some(input);
+    pub fn revoked_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.revoked_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time when the signing profile was revoked.</p>
     pub fn set_revoked_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.revoked_at = input;
         self
     }
     /// <p>The identity of the revoker.</p>
-    pub fn revoked_by(mut self, input: impl Into<std::string::String>) -> Self {
-        self.revoked_by = Some(input.into());
+    pub fn revoked_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.revoked_by = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identity of the revoker.</p>
-    pub fn set_revoked_by(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_revoked_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.revoked_by = input;
         self
     }

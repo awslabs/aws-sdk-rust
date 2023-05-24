@@ -2,11 +2,11 @@
 
 /// <p>If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutEmailIdentityConfigurationSetAttributesOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for PutEmailIdentityConfigurationSetAttributesOutput {
+impl ::aws_http::request_id::RequestId for PutEmailIdentityConfigurationSetAttributesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -20,7 +20,9 @@ impl PutEmailIdentityConfigurationSetAttributesOutput {
 
 /// A builder for [`PutEmailIdentityConfigurationSetAttributesOutput`](crate::operation::put_email_identity_configuration_set_attributes::PutEmailIdentityConfigurationSetAttributesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PutEmailIdentityConfigurationSetAttributesOutputBuilder {
     _request_id: Option<String>,
 }

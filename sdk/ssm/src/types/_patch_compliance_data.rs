@@ -2,59 +2,59 @@
 
 /// <p>Information about the state of a patch on a particular managed node as it relates to the patch baseline used to patch the node.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PatchComplianceData {
     /// <p>The title of the patch.</p>
     #[doc(hidden)]
-    pub title: std::option::Option<std::string::String>,
+    pub title: ::std::option::Option<::std::string::String>,
     /// <p>The operating system-specific ID of the patch.</p>
     #[doc(hidden)]
-    pub kb_id: std::option::Option<std::string::String>,
+    pub kb_id: ::std::option::Option<::std::string::String>,
     /// <p>The classification of the patch, such as <code>SecurityUpdates</code>, <code>Updates</code>, and <code>CriticalUpdates</code>.</p>
     #[doc(hidden)]
-    pub classification: std::option::Option<std::string::String>,
+    pub classification: ::std::option::Option<::std::string::String>,
     /// <p>The severity of the patch such as <code>Critical</code>, <code>Important</code>, and <code>Moderate</code>.</p>
     #[doc(hidden)]
-    pub severity: std::option::Option<std::string::String>,
+    pub severity: ::std::option::Option<::std::string::String>,
     /// <p>The state of the patch on the managed node, such as INSTALLED or FAILED.</p>
     /// <p>For descriptions of each patch state, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch">About patch compliance</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     #[doc(hidden)]
-    pub state: std::option::Option<crate::types::PatchComplianceDataState>,
+    pub state: ::std::option::Option<crate::types::PatchComplianceDataState>,
     /// <p>The date/time the patch was installed on the managed node. Not all operating systems provide this level of information.</p>
     #[doc(hidden)]
-    pub installed_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub installed_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The IDs of one or more Common Vulnerabilities and Exposure (CVE) issues that are resolved by the patch.</p>
     #[doc(hidden)]
-    pub cve_ids: std::option::Option<std::string::String>,
+    pub cve_ids: ::std::option::Option<::std::string::String>,
 }
 impl PatchComplianceData {
     /// <p>The title of the patch.</p>
-    pub fn title(&self) -> std::option::Option<&str> {
+    pub fn title(&self) -> ::std::option::Option<&str> {
         self.title.as_deref()
     }
     /// <p>The operating system-specific ID of the patch.</p>
-    pub fn kb_id(&self) -> std::option::Option<&str> {
+    pub fn kb_id(&self) -> ::std::option::Option<&str> {
         self.kb_id.as_deref()
     }
     /// <p>The classification of the patch, such as <code>SecurityUpdates</code>, <code>Updates</code>, and <code>CriticalUpdates</code>.</p>
-    pub fn classification(&self) -> std::option::Option<&str> {
+    pub fn classification(&self) -> ::std::option::Option<&str> {
         self.classification.as_deref()
     }
     /// <p>The severity of the patch such as <code>Critical</code>, <code>Important</code>, and <code>Moderate</code>.</p>
-    pub fn severity(&self) -> std::option::Option<&str> {
+    pub fn severity(&self) -> ::std::option::Option<&str> {
         self.severity.as_deref()
     }
     /// <p>The state of the patch on the managed node, such as INSTALLED or FAILED.</p>
     /// <p>For descriptions of each patch state, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch">About patch compliance</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::PatchComplianceDataState> {
+    pub fn state(&self) -> ::std::option::Option<&crate::types::PatchComplianceDataState> {
         self.state.as_ref()
     }
     /// <p>The date/time the patch was installed on the managed node. Not all operating systems provide this level of information.</p>
-    pub fn installed_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn installed_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.installed_time.as_ref()
     }
     /// <p>The IDs of one or more Common Vulnerabilities and Exposure (CVE) issues that are resolved by the patch.</p>
-    pub fn cve_ids(&self) -> std::option::Option<&str> {
+    pub fn cve_ids(&self) -> ::std::option::Option<&str> {
         self.cve_ids.as_deref()
     }
 }
@@ -67,92 +67,100 @@ impl PatchComplianceData {
 
 /// A builder for [`PatchComplianceData`](crate::types::PatchComplianceData).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PatchComplianceDataBuilder {
-    pub(crate) title: std::option::Option<std::string::String>,
-    pub(crate) kb_id: std::option::Option<std::string::String>,
-    pub(crate) classification: std::option::Option<std::string::String>,
-    pub(crate) severity: std::option::Option<std::string::String>,
-    pub(crate) state: std::option::Option<crate::types::PatchComplianceDataState>,
-    pub(crate) installed_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) cve_ids: std::option::Option<std::string::String>,
+    pub(crate) title: ::std::option::Option<::std::string::String>,
+    pub(crate) kb_id: ::std::option::Option<::std::string::String>,
+    pub(crate) classification: ::std::option::Option<::std::string::String>,
+    pub(crate) severity: ::std::option::Option<::std::string::String>,
+    pub(crate) state: ::std::option::Option<crate::types::PatchComplianceDataState>,
+    pub(crate) installed_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) cve_ids: ::std::option::Option<::std::string::String>,
 }
 impl PatchComplianceDataBuilder {
     /// <p>The title of the patch.</p>
-    pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
-        self.title = Some(input.into());
+    pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.title = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The title of the patch.</p>
-    pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.title = input;
         self
     }
     /// <p>The operating system-specific ID of the patch.</p>
-    pub fn kb_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.kb_id = Some(input.into());
+    pub fn kb_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kb_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The operating system-specific ID of the patch.</p>
-    pub fn set_kb_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_kb_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kb_id = input;
         self
     }
     /// <p>The classification of the patch, such as <code>SecurityUpdates</code>, <code>Updates</code>, and <code>CriticalUpdates</code>.</p>
-    pub fn classification(mut self, input: impl Into<std::string::String>) -> Self {
-        self.classification = Some(input.into());
+    pub fn classification(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.classification = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The classification of the patch, such as <code>SecurityUpdates</code>, <code>Updates</code>, and <code>CriticalUpdates</code>.</p>
-    pub fn set_classification(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_classification(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.classification = input;
         self
     }
     /// <p>The severity of the patch such as <code>Critical</code>, <code>Important</code>, and <code>Moderate</code>.</p>
-    pub fn severity(mut self, input: impl Into<std::string::String>) -> Self {
-        self.severity = Some(input.into());
+    pub fn severity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.severity = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The severity of the patch such as <code>Critical</code>, <code>Important</code>, and <code>Moderate</code>.</p>
-    pub fn set_severity(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_severity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.severity = input;
         self
     }
     /// <p>The state of the patch on the managed node, such as INSTALLED or FAILED.</p>
     /// <p>For descriptions of each patch state, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch">About patch compliance</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn state(mut self, input: crate::types::PatchComplianceDataState) -> Self {
-        self.state = Some(input);
+        self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The state of the patch on the managed node, such as INSTALLED or FAILED.</p>
     /// <p>For descriptions of each patch state, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch">About patch compliance</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn set_state(
         mut self,
-        input: std::option::Option<crate::types::PatchComplianceDataState>,
+        input: ::std::option::Option<crate::types::PatchComplianceDataState>,
     ) -> Self {
         self.state = input;
         self
     }
     /// <p>The date/time the patch was installed on the managed node. Not all operating systems provide this level of information.</p>
-    pub fn installed_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.installed_time = Some(input);
+    pub fn installed_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.installed_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date/time the patch was installed on the managed node. Not all operating systems provide this level of information.</p>
     pub fn set_installed_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.installed_time = input;
         self
     }
     /// <p>The IDs of one or more Common Vulnerabilities and Exposure (CVE) issues that are resolved by the patch.</p>
-    pub fn cve_ids(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cve_ids = Some(input.into());
+    pub fn cve_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cve_ids = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IDs of one or more Common Vulnerabilities and Exposure (CVE) issues that are resolved by the patch.</p>
-    pub fn set_cve_ids(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cve_ids(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cve_ids = input;
         self
     }

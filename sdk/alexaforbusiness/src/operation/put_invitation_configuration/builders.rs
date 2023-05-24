@@ -6,29 +6,29 @@ pub use crate::operation::put_invitation_configuration::_put_invitation_configur
 /// Fluent builder constructing a request to `PutInvitationConfiguration`.
 ///
 /// <p>Configures the email template for the user enrollment invitation with the specified attributes.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutInvitationConfigurationFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::put_invitation_configuration::builders::PutInvitationConfigurationInputBuilder,
 }
 impl PutInvitationConfigurationFluentBuilder {
     /// Creates a new `PutInvitationConfiguration`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::put_invitation_configuration::PutInvitationConfiguration,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::put_invitation_configuration::PutInvitationConfigurationError,
         >,
     > {
@@ -36,30 +36,33 @@ impl PutInvitationConfigurationFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::put_invitation_configuration::PutInvitationConfigurationOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::put_invitation_configuration::PutInvitationConfigurationError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,34 +75,43 @@ impl PutInvitationConfigurationFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::put_invitation_configuration::PutInvitationConfigurationOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::put_invitation_configuration::PutInvitationConfigurationError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the organization sending the enrollment invite to a user.</p>
-    pub fn organization_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn organization_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.organization_name(input.into());
         self
     }
     /// <p>The name of the organization sending the enrollment invite to a user.</p>
     pub fn set_organization_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_organization_name(input);
         self
     }
     /// <p>The email ID of the organization or individual contact that the enrolled user can use. </p>
-    pub fn contact_email(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn contact_email(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.contact_email(input.into());
         self
     }
     /// <p>The email ID of the organization or individual contact that the enrolled user can use. </p>
-    pub fn set_contact_email(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_contact_email(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_contact_email(input);
         self
     }
@@ -108,14 +120,17 @@ impl PutInvitationConfigurationFluentBuilder {
     /// To override the contents of this collection use [`set_private_skill_ids`](Self::set_private_skill_ids).
     ///
     /// <p>The list of private skill IDs that you want to recommend to the user to enable in the invitation.</p>
-    pub fn private_skill_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn private_skill_ids(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.private_skill_ids(input.into());
         self
     }
     /// <p>The list of private skill IDs that you want to recommend to the user to enable in the invitation.</p>
     pub fn set_private_skill_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_private_skill_ids(input);
         self

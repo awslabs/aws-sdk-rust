@@ -2,27 +2,27 @@
 
 /// <p>Metadata for column in the table.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ColumnMetadata {
     /// <p>The name of the column.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The format of the column.</p>
     #[doc(hidden)]
-    pub format: std::option::Option<crate::types::Format>,
+    pub format: ::std::option::Option<crate::types::Format>,
 }
 impl ColumnMetadata {
     /// <p>The name of the column.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The format of the column.</p>
-    pub fn format(&self) -> std::option::Option<&crate::types::Format> {
+    pub fn format(&self) -> ::std::option::Option<&crate::types::Format> {
         self.format.as_ref()
     }
 }
-impl std::fmt::Debug for ColumnMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for ColumnMetadata {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ColumnMetadata");
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("format", &self.format);
@@ -38,29 +38,29 @@ impl ColumnMetadata {
 
 /// A builder for [`ColumnMetadata`](crate::types::ColumnMetadata).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct ColumnMetadataBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) format: std::option::Option<crate::types::Format>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) format: ::std::option::Option<crate::types::Format>,
 }
 impl ColumnMetadataBuilder {
     /// <p>The name of the column.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the column.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The format of the column.</p>
     pub fn format(mut self, input: crate::types::Format) -> Self {
-        self.format = Some(input);
+        self.format = ::std::option::Option::Some(input);
         self
     }
     /// <p>The format of the column.</p>
-    pub fn set_format(mut self, input: std::option::Option<crate::types::Format>) -> Self {
+    pub fn set_format(mut self, input: ::std::option::Option<crate::types::Format>) -> Self {
         self.format = input;
         self
     }
@@ -72,8 +72,8 @@ impl ColumnMetadataBuilder {
         }
     }
 }
-impl std::fmt::Debug for ColumnMetadataBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for ColumnMetadataBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ColumnMetadataBuilder");
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("format", &self.format);

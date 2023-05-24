@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum DocumentThumbnailType {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum DocumentThumbnailType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for DocumentThumbnailType {
+impl ::std::convert::From<&str> for DocumentThumbnailType {
     fn from(s: &str) -> Self {
         match s {
             "LARGE" => DocumentThumbnailType::Large,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for DocumentThumbnailType {
         }
     }
 }
-impl std::str::FromStr for DocumentThumbnailType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for DocumentThumbnailType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DocumentThumbnailType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(DocumentThumbnailType::from(s))
     }
 }
 impl DocumentThumbnailType {
@@ -91,7 +91,7 @@ impl DocumentThumbnailType {
         &["LARGE", "SMALL", "SMALL_HQ"]
     }
 }
-impl AsRef<str> for DocumentThumbnailType {
+impl ::std::convert::AsRef<str> for DocumentThumbnailType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

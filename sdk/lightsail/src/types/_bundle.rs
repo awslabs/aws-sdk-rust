@@ -2,96 +2,96 @@
 
 /// <p>Describes a bundle, which is a set of specs describing your virtual private server (or <i>instance</i>).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Bundle {
     /// <p>The price in US dollars (e.g., <code>5.0</code>) of the bundle.</p>
     #[doc(hidden)]
-    pub price: std::option::Option<f32>,
+    pub price: ::std::option::Option<f32>,
     /// <p>The number of vCPUs included in the bundle (e.g., <code>2</code>).</p>
     #[doc(hidden)]
-    pub cpu_count: std::option::Option<i32>,
+    pub cpu_count: ::std::option::Option<i32>,
     /// <p>The size of the SSD (e.g., <code>30</code>).</p>
     #[doc(hidden)]
-    pub disk_size_in_gb: std::option::Option<i32>,
+    pub disk_size_in_gb: ::std::option::Option<i32>,
     /// <p>The bundle ID (e.g., <code>micro_1_0</code>).</p>
     #[doc(hidden)]
-    pub bundle_id: std::option::Option<std::string::String>,
+    pub bundle_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon EC2 instance type (e.g., <code>t2.micro</code>).</p>
     #[doc(hidden)]
-    pub instance_type: std::option::Option<std::string::String>,
+    pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean value indicating whether the bundle is active.</p>
     #[doc(hidden)]
-    pub is_active: std::option::Option<bool>,
+    pub is_active: ::std::option::Option<bool>,
     /// <p>A friendly name for the bundle (e.g., <code>Micro</code>).</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>A numeric value that represents the power of the bundle (e.g., <code>500</code>). You can use the bundle's power value in conjunction with a blueprint's minimum power value to determine whether the blueprint will run on the bundle. For example, you need a bundle with a power value of 500 or more to create an instance that uses a blueprint with a minimum power value of 500.</p>
     #[doc(hidden)]
-    pub power: std::option::Option<i32>,
+    pub power: ::std::option::Option<i32>,
     /// <p>The amount of RAM in GB (e.g., <code>2.0</code>).</p>
     #[doc(hidden)]
-    pub ram_size_in_gb: std::option::Option<f32>,
+    pub ram_size_in_gb: ::std::option::Option<f32>,
     /// <p>The data transfer rate per month in GB (e.g., <code>2000</code>).</p>
     #[doc(hidden)]
-    pub transfer_per_month_in_gb: std::option::Option<i32>,
+    pub transfer_per_month_in_gb: ::std::option::Option<i32>,
     /// <p>The operating system platform (Linux/Unix-based or Windows Server-based) that the bundle supports. You can only launch a <code>WINDOWS</code> bundle on a blueprint that supports the <code>WINDOWS</code> platform. <code>LINUX_UNIX</code> blueprints require a <code>LINUX_UNIX</code> bundle.</p>
     #[doc(hidden)]
-    pub supported_platforms: std::option::Option<std::vec::Vec<crate::types::InstancePlatform>>,
+    pub supported_platforms: ::std::option::Option<::std::vec::Vec<crate::types::InstancePlatform>>,
     /// <p>Virtual computer blueprints that are supported by a Lightsail for Research bundle.</p> <important>
     /// <p>This parameter only applies to Lightsail for Research resources.</p>
     /// </important>
     #[doc(hidden)]
-    pub supported_app_categories: std::option::Option<std::vec::Vec<crate::types::AppCategory>>,
+    pub supported_app_categories: ::std::option::Option<::std::vec::Vec<crate::types::AppCategory>>,
 }
 impl Bundle {
     /// <p>The price in US dollars (e.g., <code>5.0</code>) of the bundle.</p>
-    pub fn price(&self) -> std::option::Option<f32> {
+    pub fn price(&self) -> ::std::option::Option<f32> {
         self.price
     }
     /// <p>The number of vCPUs included in the bundle (e.g., <code>2</code>).</p>
-    pub fn cpu_count(&self) -> std::option::Option<i32> {
+    pub fn cpu_count(&self) -> ::std::option::Option<i32> {
         self.cpu_count
     }
     /// <p>The size of the SSD (e.g., <code>30</code>).</p>
-    pub fn disk_size_in_gb(&self) -> std::option::Option<i32> {
+    pub fn disk_size_in_gb(&self) -> ::std::option::Option<i32> {
         self.disk_size_in_gb
     }
     /// <p>The bundle ID (e.g., <code>micro_1_0</code>).</p>
-    pub fn bundle_id(&self) -> std::option::Option<&str> {
+    pub fn bundle_id(&self) -> ::std::option::Option<&str> {
         self.bundle_id.as_deref()
     }
     /// <p>The Amazon EC2 instance type (e.g., <code>t2.micro</code>).</p>
-    pub fn instance_type(&self) -> std::option::Option<&str> {
+    pub fn instance_type(&self) -> ::std::option::Option<&str> {
         self.instance_type.as_deref()
     }
     /// <p>A Boolean value indicating whether the bundle is active.</p>
-    pub fn is_active(&self) -> std::option::Option<bool> {
+    pub fn is_active(&self) -> ::std::option::Option<bool> {
         self.is_active
     }
     /// <p>A friendly name for the bundle (e.g., <code>Micro</code>).</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>A numeric value that represents the power of the bundle (e.g., <code>500</code>). You can use the bundle's power value in conjunction with a blueprint's minimum power value to determine whether the blueprint will run on the bundle. For example, you need a bundle with a power value of 500 or more to create an instance that uses a blueprint with a minimum power value of 500.</p>
-    pub fn power(&self) -> std::option::Option<i32> {
+    pub fn power(&self) -> ::std::option::Option<i32> {
         self.power
     }
     /// <p>The amount of RAM in GB (e.g., <code>2.0</code>).</p>
-    pub fn ram_size_in_gb(&self) -> std::option::Option<f32> {
+    pub fn ram_size_in_gb(&self) -> ::std::option::Option<f32> {
         self.ram_size_in_gb
     }
     /// <p>The data transfer rate per month in GB (e.g., <code>2000</code>).</p>
-    pub fn transfer_per_month_in_gb(&self) -> std::option::Option<i32> {
+    pub fn transfer_per_month_in_gb(&self) -> ::std::option::Option<i32> {
         self.transfer_per_month_in_gb
     }
     /// <p>The operating system platform (Linux/Unix-based or Windows Server-based) that the bundle supports. You can only launch a <code>WINDOWS</code> bundle on a blueprint that supports the <code>WINDOWS</code> platform. <code>LINUX_UNIX</code> blueprints require a <code>LINUX_UNIX</code> bundle.</p>
-    pub fn supported_platforms(&self) -> std::option::Option<&[crate::types::InstancePlatform]> {
+    pub fn supported_platforms(&self) -> ::std::option::Option<&[crate::types::InstancePlatform]> {
         self.supported_platforms.as_deref()
     }
     /// <p>Virtual computer blueprints that are supported by a Lightsail for Research bundle.</p> <important>
     /// <p>This parameter only applies to Lightsail for Research resources.</p>
     /// </important>
-    pub fn supported_app_categories(&self) -> std::option::Option<&[crate::types::AppCategory]> {
+    pub fn supported_app_categories(&self) -> ::std::option::Option<&[crate::types::AppCategory]> {
         self.supported_app_categories.as_deref()
     }
 }
@@ -104,121 +104,129 @@ impl Bundle {
 
 /// A builder for [`Bundle`](crate::types::Bundle).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BundleBuilder {
-    pub(crate) price: std::option::Option<f32>,
-    pub(crate) cpu_count: std::option::Option<i32>,
-    pub(crate) disk_size_in_gb: std::option::Option<i32>,
-    pub(crate) bundle_id: std::option::Option<std::string::String>,
-    pub(crate) instance_type: std::option::Option<std::string::String>,
-    pub(crate) is_active: std::option::Option<bool>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) power: std::option::Option<i32>,
-    pub(crate) ram_size_in_gb: std::option::Option<f32>,
-    pub(crate) transfer_per_month_in_gb: std::option::Option<i32>,
+    pub(crate) price: ::std::option::Option<f32>,
+    pub(crate) cpu_count: ::std::option::Option<i32>,
+    pub(crate) disk_size_in_gb: ::std::option::Option<i32>,
+    pub(crate) bundle_id: ::std::option::Option<::std::string::String>,
+    pub(crate) instance_type: ::std::option::Option<::std::string::String>,
+    pub(crate) is_active: ::std::option::Option<bool>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) power: ::std::option::Option<i32>,
+    pub(crate) ram_size_in_gb: ::std::option::Option<f32>,
+    pub(crate) transfer_per_month_in_gb: ::std::option::Option<i32>,
     pub(crate) supported_platforms:
-        std::option::Option<std::vec::Vec<crate::types::InstancePlatform>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::InstancePlatform>>,
     pub(crate) supported_app_categories:
-        std::option::Option<std::vec::Vec<crate::types::AppCategory>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::AppCategory>>,
 }
 impl BundleBuilder {
     /// <p>The price in US dollars (e.g., <code>5.0</code>) of the bundle.</p>
     pub fn price(mut self, input: f32) -> Self {
-        self.price = Some(input);
+        self.price = ::std::option::Option::Some(input);
         self
     }
     /// <p>The price in US dollars (e.g., <code>5.0</code>) of the bundle.</p>
-    pub fn set_price(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_price(mut self, input: ::std::option::Option<f32>) -> Self {
         self.price = input;
         self
     }
     /// <p>The number of vCPUs included in the bundle (e.g., <code>2</code>).</p>
     pub fn cpu_count(mut self, input: i32) -> Self {
-        self.cpu_count = Some(input);
+        self.cpu_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of vCPUs included in the bundle (e.g., <code>2</code>).</p>
-    pub fn set_cpu_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_cpu_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.cpu_count = input;
         self
     }
     /// <p>The size of the SSD (e.g., <code>30</code>).</p>
     pub fn disk_size_in_gb(mut self, input: i32) -> Self {
-        self.disk_size_in_gb = Some(input);
+        self.disk_size_in_gb = ::std::option::Option::Some(input);
         self
     }
     /// <p>The size of the SSD (e.g., <code>30</code>).</p>
-    pub fn set_disk_size_in_gb(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_disk_size_in_gb(mut self, input: ::std::option::Option<i32>) -> Self {
         self.disk_size_in_gb = input;
         self
     }
     /// <p>The bundle ID (e.g., <code>micro_1_0</code>).</p>
-    pub fn bundle_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.bundle_id = Some(input.into());
+    pub fn bundle_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.bundle_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The bundle ID (e.g., <code>micro_1_0</code>).</p>
-    pub fn set_bundle_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_bundle_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bundle_id = input;
         self
     }
     /// <p>The Amazon EC2 instance type (e.g., <code>t2.micro</code>).</p>
-    pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.instance_type = Some(input.into());
+    pub fn instance_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.instance_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon EC2 instance type (e.g., <code>t2.micro</code>).</p>
-    pub fn set_instance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_instance_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.instance_type = input;
         self
     }
     /// <p>A Boolean value indicating whether the bundle is active.</p>
     pub fn is_active(mut self, input: bool) -> Self {
-        self.is_active = Some(input);
+        self.is_active = ::std::option::Option::Some(input);
         self
     }
     /// <p>A Boolean value indicating whether the bundle is active.</p>
-    pub fn set_is_active(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_active(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_active = input;
         self
     }
     /// <p>A friendly name for the bundle (e.g., <code>Micro</code>).</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A friendly name for the bundle (e.g., <code>Micro</code>).</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>A numeric value that represents the power of the bundle (e.g., <code>500</code>). You can use the bundle's power value in conjunction with a blueprint's minimum power value to determine whether the blueprint will run on the bundle. For example, you need a bundle with a power value of 500 or more to create an instance that uses a blueprint with a minimum power value of 500.</p>
     pub fn power(mut self, input: i32) -> Self {
-        self.power = Some(input);
+        self.power = ::std::option::Option::Some(input);
         self
     }
     /// <p>A numeric value that represents the power of the bundle (e.g., <code>500</code>). You can use the bundle's power value in conjunction with a blueprint's minimum power value to determine whether the blueprint will run on the bundle. For example, you need a bundle with a power value of 500 or more to create an instance that uses a blueprint with a minimum power value of 500.</p>
-    pub fn set_power(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_power(mut self, input: ::std::option::Option<i32>) -> Self {
         self.power = input;
         self
     }
     /// <p>The amount of RAM in GB (e.g., <code>2.0</code>).</p>
     pub fn ram_size_in_gb(mut self, input: f32) -> Self {
-        self.ram_size_in_gb = Some(input);
+        self.ram_size_in_gb = ::std::option::Option::Some(input);
         self
     }
     /// <p>The amount of RAM in GB (e.g., <code>2.0</code>).</p>
-    pub fn set_ram_size_in_gb(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_ram_size_in_gb(mut self, input: ::std::option::Option<f32>) -> Self {
         self.ram_size_in_gb = input;
         self
     }
     /// <p>The data transfer rate per month in GB (e.g., <code>2000</code>).</p>
     pub fn transfer_per_month_in_gb(mut self, input: i32) -> Self {
-        self.transfer_per_month_in_gb = Some(input);
+        self.transfer_per_month_in_gb = ::std::option::Option::Some(input);
         self
     }
     /// <p>The data transfer rate per month in GB (e.g., <code>2000</code>).</p>
-    pub fn set_transfer_per_month_in_gb(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_transfer_per_month_in_gb(mut self, input: ::std::option::Option<i32>) -> Self {
         self.transfer_per_month_in_gb = input;
         self
     }
@@ -230,13 +238,13 @@ impl BundleBuilder {
     pub fn supported_platforms(mut self, input: crate::types::InstancePlatform) -> Self {
         let mut v = self.supported_platforms.unwrap_or_default();
         v.push(input);
-        self.supported_platforms = Some(v);
+        self.supported_platforms = ::std::option::Option::Some(v);
         self
     }
     /// <p>The operating system platform (Linux/Unix-based or Windows Server-based) that the bundle supports. You can only launch a <code>WINDOWS</code> bundle on a blueprint that supports the <code>WINDOWS</code> platform. <code>LINUX_UNIX</code> blueprints require a <code>LINUX_UNIX</code> bundle.</p>
     pub fn set_supported_platforms(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::InstancePlatform>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::InstancePlatform>>,
     ) -> Self {
         self.supported_platforms = input;
         self
@@ -251,7 +259,7 @@ impl BundleBuilder {
     pub fn supported_app_categories(mut self, input: crate::types::AppCategory) -> Self {
         let mut v = self.supported_app_categories.unwrap_or_default();
         v.push(input);
-        self.supported_app_categories = Some(v);
+        self.supported_app_categories = ::std::option::Option::Some(v);
         self
     }
     /// <p>Virtual computer blueprints that are supported by a Lightsail for Research bundle.</p> <important>
@@ -259,7 +267,7 @@ impl BundleBuilder {
     /// </important>
     pub fn set_supported_app_categories(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AppCategory>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AppCategory>>,
     ) -> Self {
         self.supported_app_categories = input;
         self

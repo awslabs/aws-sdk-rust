@@ -2,57 +2,57 @@
 
 /// <p>Data on the status of agent components.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComponentStatusData {
     /// <p>The Component type.</p>
     #[doc(hidden)]
-    pub component_type: std::option::Option<std::string::String>,
+    pub component_type: ::std::option::Option<::std::string::String>,
     /// <p>Capability ARN of the component.</p>
     #[doc(hidden)]
-    pub capability_arn: std::option::Option<std::string::String>,
+    pub capability_arn: ::std::option::Option<::std::string::String>,
     /// <p>Component status.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::AgentStatus>,
+    pub status: ::std::option::Option<crate::types::AgentStatus>,
     /// <p>Bytes sent by the component.</p>
     #[doc(hidden)]
-    pub bytes_sent: std::option::Option<i64>,
+    pub bytes_sent: ::std::option::Option<i64>,
     /// <p>Bytes received by the component.</p>
     #[doc(hidden)]
-    pub bytes_received: std::option::Option<i64>,
+    pub bytes_received: ::std::option::Option<i64>,
     /// <p>Packets dropped by component.</p>
     #[doc(hidden)]
-    pub packets_dropped: std::option::Option<i64>,
+    pub packets_dropped: ::std::option::Option<i64>,
     /// <p>Dataflow UUID associated with the component.</p>
     #[doc(hidden)]
-    pub dataflow_id: std::option::Option<std::string::String>,
+    pub dataflow_id: ::std::option::Option<::std::string::String>,
 }
 impl ComponentStatusData {
     /// <p>The Component type.</p>
-    pub fn component_type(&self) -> std::option::Option<&str> {
+    pub fn component_type(&self) -> ::std::option::Option<&str> {
         self.component_type.as_deref()
     }
     /// <p>Capability ARN of the component.</p>
-    pub fn capability_arn(&self) -> std::option::Option<&str> {
+    pub fn capability_arn(&self) -> ::std::option::Option<&str> {
         self.capability_arn.as_deref()
     }
     /// <p>Component status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::AgentStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::AgentStatus> {
         self.status.as_ref()
     }
     /// <p>Bytes sent by the component.</p>
-    pub fn bytes_sent(&self) -> std::option::Option<i64> {
+    pub fn bytes_sent(&self) -> ::std::option::Option<i64> {
         self.bytes_sent
     }
     /// <p>Bytes received by the component.</p>
-    pub fn bytes_received(&self) -> std::option::Option<i64> {
+    pub fn bytes_received(&self) -> ::std::option::Option<i64> {
         self.bytes_received
     }
     /// <p>Packets dropped by component.</p>
-    pub fn packets_dropped(&self) -> std::option::Option<i64> {
+    pub fn packets_dropped(&self) -> ::std::option::Option<i64> {
         self.packets_dropped
     }
     /// <p>Dataflow UUID associated with the component.</p>
-    pub fn dataflow_id(&self) -> std::option::Option<&str> {
+    pub fn dataflow_id(&self) -> ::std::option::Option<&str> {
         self.dataflow_id.as_deref()
     }
 }
@@ -65,84 +65,98 @@ impl ComponentStatusData {
 
 /// A builder for [`ComponentStatusData`](crate::types::ComponentStatusData).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ComponentStatusDataBuilder {
-    pub(crate) component_type: std::option::Option<std::string::String>,
-    pub(crate) capability_arn: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::AgentStatus>,
-    pub(crate) bytes_sent: std::option::Option<i64>,
-    pub(crate) bytes_received: std::option::Option<i64>,
-    pub(crate) packets_dropped: std::option::Option<i64>,
-    pub(crate) dataflow_id: std::option::Option<std::string::String>,
+    pub(crate) component_type: ::std::option::Option<::std::string::String>,
+    pub(crate) capability_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::AgentStatus>,
+    pub(crate) bytes_sent: ::std::option::Option<i64>,
+    pub(crate) bytes_received: ::std::option::Option<i64>,
+    pub(crate) packets_dropped: ::std::option::Option<i64>,
+    pub(crate) dataflow_id: ::std::option::Option<::std::string::String>,
 }
 impl ComponentStatusDataBuilder {
     /// <p>The Component type.</p>
-    pub fn component_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.component_type = Some(input.into());
+    pub fn component_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.component_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Component type.</p>
-    pub fn set_component_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_component_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.component_type = input;
         self
     }
     /// <p>Capability ARN of the component.</p>
-    pub fn capability_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.capability_arn = Some(input.into());
+    pub fn capability_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.capability_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Capability ARN of the component.</p>
-    pub fn set_capability_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_capability_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.capability_arn = input;
         self
     }
     /// <p>Component status.</p>
     pub fn status(mut self, input: crate::types::AgentStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Component status.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::AgentStatus>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::AgentStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>Bytes sent by the component.</p>
     pub fn bytes_sent(mut self, input: i64) -> Self {
-        self.bytes_sent = Some(input);
+        self.bytes_sent = ::std::option::Option::Some(input);
         self
     }
     /// <p>Bytes sent by the component.</p>
-    pub fn set_bytes_sent(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_bytes_sent(mut self, input: ::std::option::Option<i64>) -> Self {
         self.bytes_sent = input;
         self
     }
     /// <p>Bytes received by the component.</p>
     pub fn bytes_received(mut self, input: i64) -> Self {
-        self.bytes_received = Some(input);
+        self.bytes_received = ::std::option::Option::Some(input);
         self
     }
     /// <p>Bytes received by the component.</p>
-    pub fn set_bytes_received(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_bytes_received(mut self, input: ::std::option::Option<i64>) -> Self {
         self.bytes_received = input;
         self
     }
     /// <p>Packets dropped by component.</p>
     pub fn packets_dropped(mut self, input: i64) -> Self {
-        self.packets_dropped = Some(input);
+        self.packets_dropped = ::std::option::Option::Some(input);
         self
     }
     /// <p>Packets dropped by component.</p>
-    pub fn set_packets_dropped(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_packets_dropped(mut self, input: ::std::option::Option<i64>) -> Self {
         self.packets_dropped = input;
         self
     }
     /// <p>Dataflow UUID associated with the component.</p>
-    pub fn dataflow_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.dataflow_id = Some(input.into());
+    pub fn dataflow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.dataflow_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Dataflow UUID associated with the component.</p>
-    pub fn set_dataflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_dataflow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataflow_id = input;
         self
     }

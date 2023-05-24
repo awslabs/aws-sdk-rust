@@ -6,56 +6,63 @@ pub use crate::operation::update_ephemeris::_update_ephemeris_input::UpdateEphem
 /// Fluent builder constructing a request to `UpdateEphemeris`.
 ///
 /// <p>Updates an existing ephemeris</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateEphemerisFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::update_ephemeris::builders::UpdateEphemerisInputBuilder,
 }
 impl UpdateEphemerisFluentBuilder {
     /// Creates a new `UpdateEphemeris`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_ephemeris::UpdateEphemeris,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::update_ephemeris::UpdateEphemerisError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_ephemeris::UpdateEphemerisError,
+        >,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_ephemeris::UpdateEphemerisOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_ephemeris::UpdateEphemerisError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_ephemeris::UpdateEphemerisError,
+        >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,19 +75,21 @@ impl UpdateEphemerisFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_ephemeris::UpdateEphemerisOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_ephemeris::UpdateEphemerisError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_ephemeris::UpdateEphemerisError,
+        >,
     > {
         self.send_middleware().await
     }
     /// <p>The AWS Ground Station ephemeris ID.</p>
-    pub fn ephemeris_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn ephemeris_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ephemeris_id(input.into());
         self
     }
     /// <p>The AWS Ground Station ephemeris ID.</p>
-    pub fn set_ephemeris_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ephemeris_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ephemeris_id(input);
         self
     }
@@ -90,17 +99,17 @@ impl UpdateEphemerisFluentBuilder {
         self
     }
     /// <p>Whether the ephemeris is enabled or not. Changing this value will not require the ephemeris to be re-validated.</p>
-    pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enabled(input);
         self
     }
     /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
@@ -114,7 +123,7 @@ impl UpdateEphemerisFluentBuilder {
     /// <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p>
     /// <p>The default for customer-provided ephemeris priority is 1, and higher numbers take precedence.</p>
     /// <p>Priority must be 1 or greater</p>
-    pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_priority(input);
         self
     }

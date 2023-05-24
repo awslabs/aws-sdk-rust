@@ -2,17 +2,17 @@
 
 /// <p>Provides metadata for a dataset.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Dataset {
     /// <p>The name of the dataset.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the dataset that you want metadata for.</p>
     #[doc(hidden)]
-    pub dataset_arn: std::option::Option<std::string::String>,
+    pub dataset_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
     #[doc(hidden)]
-    pub dataset_group_arn: std::option::Option<std::string::String>,
+    pub dataset_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>One of the following values:</p>
     /// <ul>
     /// <li> <p>Interactions</p> </li>
@@ -20,10 +20,10 @@ pub struct Dataset {
     /// <li> <p>Users</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub dataset_type: std::option::Option<std::string::String>,
+    pub dataset_type: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the associated schema.</p>
     #[doc(hidden)]
-    pub schema_arn: std::option::Option<std::string::String>,
+    pub schema_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the dataset.</p>
     /// <p>A dataset can be in one of the following states:</p>
     /// <ul>
@@ -31,25 +31,25 @@ pub struct Dataset {
     /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub status: std::option::Option<std::string::String>,
+    pub status: ::std::option::Option<::std::string::String>,
     /// <p>The creation date and time (in Unix time) of the dataset.</p>
     #[doc(hidden)]
-    pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A time stamp that shows when the dataset was updated.</p>
     #[doc(hidden)]
-    pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Dataset {
     /// <p>The name of the dataset.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset that you want metadata for.</p>
-    pub fn dataset_arn(&self) -> std::option::Option<&str> {
+    pub fn dataset_arn(&self) -> ::std::option::Option<&str> {
         self.dataset_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
-    pub fn dataset_group_arn(&self) -> std::option::Option<&str> {
+    pub fn dataset_group_arn(&self) -> ::std::option::Option<&str> {
         self.dataset_group_arn.as_deref()
     }
     /// <p>One of the following values:</p>
@@ -58,11 +58,11 @@ impl Dataset {
     /// <li> <p>Items</p> </li>
     /// <li> <p>Users</p> </li>
     /// </ul>
-    pub fn dataset_type(&self) -> std::option::Option<&str> {
+    pub fn dataset_type(&self) -> ::std::option::Option<&str> {
         self.dataset_type.as_deref()
     }
     /// <p>The ARN of the associated schema.</p>
-    pub fn schema_arn(&self) -> std::option::Option<&str> {
+    pub fn schema_arn(&self) -> ::std::option::Option<&str> {
         self.schema_arn.as_deref()
     }
     /// <p>The status of the dataset.</p>
@@ -71,15 +71,15 @@ impl Dataset {
     /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
     /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
     /// <p>The creation date and time (in Unix time) of the dataset.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>A time stamp that shows when the dataset was updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
 }
@@ -92,47 +92,52 @@ impl Dataset {
 
 /// A builder for [`Dataset`](crate::types::Dataset).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DatasetBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) dataset_arn: std::option::Option<std::string::String>,
-    pub(crate) dataset_group_arn: std::option::Option<std::string::String>,
-    pub(crate) dataset_type: std::option::Option<std::string::String>,
-    pub(crate) schema_arn: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<std::string::String>,
-    pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) dataset_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) dataset_group_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) dataset_type: ::std::option::Option<::std::string::String>,
+    pub(crate) schema_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<::std::string::String>,
+    pub(crate) creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl DatasetBuilder {
     /// <p>The name of the dataset.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the dataset.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset that you want metadata for.</p>
-    pub fn dataset_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.dataset_arn = Some(input.into());
+    pub fn dataset_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.dataset_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset that you want metadata for.</p>
-    pub fn set_dataset_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_dataset_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataset_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
-    pub fn dataset_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.dataset_group_arn = Some(input.into());
+    pub fn dataset_group_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.dataset_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
     pub fn set_dataset_group_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.dataset_group_arn = input;
         self
@@ -143,8 +148,8 @@ impl DatasetBuilder {
     /// <li> <p>Items</p> </li>
     /// <li> <p>Users</p> </li>
     /// </ul>
-    pub fn dataset_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.dataset_type = Some(input.into());
+    pub fn dataset_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.dataset_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>One of the following values:</p>
@@ -153,17 +158,17 @@ impl DatasetBuilder {
     /// <li> <p>Items</p> </li>
     /// <li> <p>Users</p> </li>
     /// </ul>
-    pub fn set_dataset_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_dataset_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataset_type = input;
         self
     }
     /// <p>The ARN of the associated schema.</p>
-    pub fn schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.schema_arn = Some(input.into());
+    pub fn schema_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.schema_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the associated schema.</p>
-    pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_schema_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schema_arn = input;
         self
     }
@@ -173,8 +178,8 @@ impl DatasetBuilder {
     /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
     /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
     /// </ul>
-    pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status = Some(input.into());
+    pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the dataset.</p>
@@ -183,32 +188,32 @@ impl DatasetBuilder {
     /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
     /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
     /// </ul>
-    pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }
     /// <p>The creation date and time (in Unix time) of the dataset.</p>
-    pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_date_time = Some(input);
+    pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_date_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The creation date and time (in Unix time) of the dataset.</p>
     pub fn set_creation_date_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_date_time = input;
         self
     }
     /// <p>A time stamp that shows when the dataset was updated.</p>
-    pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_updated_date_time = Some(input);
+    pub fn last_updated_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_updated_date_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>A time stamp that shows when the dataset was updated.</p>
     pub fn set_last_updated_date_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_updated_date_time = input;
         self

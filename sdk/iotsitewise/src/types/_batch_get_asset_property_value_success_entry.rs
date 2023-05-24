@@ -2,22 +2,22 @@
 
 /// <p>Contains success information for an entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValue.html">BatchGetAssetPropertyValue</a> API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetAssetPropertyValueSuccessEntry {
     /// <p>The ID of the entry.</p>
     #[doc(hidden)]
-    pub entry_id: std::option::Option<std::string::String>,
+    pub entry_id: ::std::option::Option<::std::string::String>,
     /// <p>Contains asset property value information.</p>
     #[doc(hidden)]
-    pub asset_property_value: std::option::Option<crate::types::AssetPropertyValue>,
+    pub asset_property_value: ::std::option::Option<crate::types::AssetPropertyValue>,
 }
 impl BatchGetAssetPropertyValueSuccessEntry {
     /// <p>The ID of the entry.</p>
-    pub fn entry_id(&self) -> std::option::Option<&str> {
+    pub fn entry_id(&self) -> ::std::option::Option<&str> {
         self.entry_id.as_deref()
     }
     /// <p>Contains asset property value information.</p>
-    pub fn asset_property_value(&self) -> std::option::Option<&crate::types::AssetPropertyValue> {
+    pub fn asset_property_value(&self) -> ::std::option::Option<&crate::types::AssetPropertyValue> {
         self.asset_property_value.as_ref()
     }
 }
@@ -30,31 +30,33 @@ impl BatchGetAssetPropertyValueSuccessEntry {
 
 /// A builder for [`BatchGetAssetPropertyValueSuccessEntry`](crate::types::BatchGetAssetPropertyValueSuccessEntry).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BatchGetAssetPropertyValueSuccessEntryBuilder {
-    pub(crate) entry_id: std::option::Option<std::string::String>,
-    pub(crate) asset_property_value: std::option::Option<crate::types::AssetPropertyValue>,
+    pub(crate) entry_id: ::std::option::Option<::std::string::String>,
+    pub(crate) asset_property_value: ::std::option::Option<crate::types::AssetPropertyValue>,
 }
 impl BatchGetAssetPropertyValueSuccessEntryBuilder {
     /// <p>The ID of the entry.</p>
-    pub fn entry_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.entry_id = Some(input.into());
+    pub fn entry_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.entry_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the entry.</p>
-    pub fn set_entry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_entry_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.entry_id = input;
         self
     }
     /// <p>Contains asset property value information.</p>
     pub fn asset_property_value(mut self, input: crate::types::AssetPropertyValue) -> Self {
-        self.asset_property_value = Some(input);
+        self.asset_property_value = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains asset property value information.</p>
     pub fn set_asset_property_value(
         mut self,
-        input: std::option::Option<crate::types::AssetPropertyValue>,
+        input: ::std::option::Option<crate::types::AssetPropertyValue>,
     ) -> Self {
         self.asset_property_value = input;
         self

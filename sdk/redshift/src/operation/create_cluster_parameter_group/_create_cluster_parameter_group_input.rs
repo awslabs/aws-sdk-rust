@@ -2,7 +2,7 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateClusterParameterGroupInput {
     /// <p>The name of the cluster parameter group.</p>
     /// <p>Constraints:</p>
@@ -15,17 +15,17 @@ pub struct CreateClusterParameterGroupInput {
     /// <p>This value is stored as a lower-case string.</p>
     /// </note>
     #[doc(hidden)]
-    pub parameter_group_name: std::option::Option<std::string::String>,
+    pub parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Redshift engine version to which the cluster parameter group applies. The cluster engine version determines the set of parameters.</p>
     /// <p>To get a list of valid parameter group family names, you can call <code>DescribeClusterParameterGroups</code>. By default, Amazon Redshift returns a list of all the parameter groups that are owned by your Amazon Web Services account, including the default parameter groups for each Amazon Redshift engine version. The parameter group family names associated with the default parameter groups provide you the valid values. For example, a valid family name is "redshift-1.0". </p>
     #[doc(hidden)]
-    pub parameter_group_family: std::option::Option<std::string::String>,
+    pub parameter_group_family: ::std::option::Option<::std::string::String>,
     /// <p>A description of the parameter group.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>A list of tag instances.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateClusterParameterGroupInput {
     /// <p>The name of the cluster parameter group.</p>
@@ -38,20 +38,20 @@ impl CreateClusterParameterGroupInput {
     /// </ul> <note>
     /// <p>This value is stored as a lower-case string.</p>
     /// </note>
-    pub fn parameter_group_name(&self) -> std::option::Option<&str> {
+    pub fn parameter_group_name(&self) -> ::std::option::Option<&str> {
         self.parameter_group_name.as_deref()
     }
     /// <p>The Amazon Redshift engine version to which the cluster parameter group applies. The cluster engine version determines the set of parameters.</p>
     /// <p>To get a list of valid parameter group family names, you can call <code>DescribeClusterParameterGroups</code>. By default, Amazon Redshift returns a list of all the parameter groups that are owned by your Amazon Web Services account, including the default parameter groups for each Amazon Redshift engine version. The parameter group family names associated with the default parameter groups provide you the valid values. For example, a valid family name is "redshift-1.0". </p>
-    pub fn parameter_group_family(&self) -> std::option::Option<&str> {
+    pub fn parameter_group_family(&self) -> ::std::option::Option<&str> {
         self.parameter_group_family.as_deref()
     }
     /// <p>A description of the parameter group.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>A list of tag instances.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -64,12 +64,14 @@ impl CreateClusterParameterGroupInput {
 
 /// A builder for [`CreateClusterParameterGroupInput`](crate::operation::create_cluster_parameter_group::CreateClusterParameterGroupInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateClusterParameterGroupInputBuilder {
-    pub(crate) parameter_group_name: std::option::Option<std::string::String>,
-    pub(crate) parameter_group_family: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub(crate) parameter_group_name: ::std::option::Option<::std::string::String>,
+    pub(crate) parameter_group_family: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateClusterParameterGroupInputBuilder {
     /// <p>The name of the cluster parameter group.</p>
@@ -82,8 +84,11 @@ impl CreateClusterParameterGroupInputBuilder {
     /// </ul> <note>
     /// <p>This value is stored as a lower-case string.</p>
     /// </note>
-    pub fn parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.parameter_group_name = Some(input.into());
+    pub fn parameter_group_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.parameter_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the cluster parameter group.</p>
@@ -98,33 +103,36 @@ impl CreateClusterParameterGroupInputBuilder {
     /// </note>
     pub fn set_parameter_group_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.parameter_group_name = input;
         self
     }
     /// <p>The Amazon Redshift engine version to which the cluster parameter group applies. The cluster engine version determines the set of parameters.</p>
     /// <p>To get a list of valid parameter group family names, you can call <code>DescribeClusterParameterGroups</code>. By default, Amazon Redshift returns a list of all the parameter groups that are owned by your Amazon Web Services account, including the default parameter groups for each Amazon Redshift engine version. The parameter group family names associated with the default parameter groups provide you the valid values. For example, a valid family name is "redshift-1.0". </p>
-    pub fn parameter_group_family(mut self, input: impl Into<std::string::String>) -> Self {
-        self.parameter_group_family = Some(input.into());
+    pub fn parameter_group_family(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.parameter_group_family = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Redshift engine version to which the cluster parameter group applies. The cluster engine version determines the set of parameters.</p>
     /// <p>To get a list of valid parameter group family names, you can call <code>DescribeClusterParameterGroups</code>. By default, Amazon Redshift returns a list of all the parameter groups that are owned by your Amazon Web Services account, including the default parameter groups for each Amazon Redshift engine version. The parameter group family names associated with the default parameter groups provide you the valid values. For example, a valid family name is "redshift-1.0". </p>
     pub fn set_parameter_group_family(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.parameter_group_family = input;
         self
     }
     /// <p>A description of the parameter group.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of the parameter group.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
@@ -136,13 +144,13 @@ impl CreateClusterParameterGroupInputBuilder {
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
-        self.tags = Some(v);
+        self.tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of tag instances.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tags = input;
         self
@@ -150,11 +158,11 @@ impl CreateClusterParameterGroupInputBuilder {
     /// Consumes the builder and constructs a [`CreateClusterParameterGroupInput`](crate::operation::create_cluster_parameter_group::CreateClusterParameterGroupInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::create_cluster_parameter_group::CreateClusterParameterGroupInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::create_cluster_parameter_group::CreateClusterParameterGroupInput {
                 parameter_group_name: self.parameter_group_name,
                 parameter_group_family: self.parameter_group_family,

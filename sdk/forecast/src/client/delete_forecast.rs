@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteForecast`](crate::operation::delete_forecast::builders::DeleteForecastFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`forecast_arn(impl Into<String>)`](crate::operation::delete_forecast::builders::DeleteForecastFluentBuilder::forecast_arn) / [`set_forecast_arn(Option<String>)`](crate::operation::delete_forecast::builders::DeleteForecastFluentBuilder::set_forecast_arn): <p>The Amazon Resource Name (ARN) of the forecast to delete.</p>
+    ///   - [`forecast_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_forecast::builders::DeleteForecastFluentBuilder::forecast_arn) / [`set_forecast_arn(Option<String>)`](crate::operation::delete_forecast::builders::DeleteForecastFluentBuilder::set_forecast_arn): <p>The Amazon Resource Name (ARN) of the forecast to delete.</p>
     /// - On success, responds with [`DeleteForecastOutput`](crate::operation::delete_forecast::DeleteForecastOutput)
     /// - On failure, responds with [`SdkError<DeleteForecastError>`](crate::operation::delete_forecast::DeleteForecastError)
     pub fn delete_forecast(

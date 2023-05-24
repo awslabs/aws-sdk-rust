@@ -5,22 +5,22 @@
 /// <p>If you want to send query strings to the origin but not include them in the cache key, use <code>QueryStringsConfig</code> in an origin request policy. See <code>OriginRequestPolicy</code>.</p>
 /// <p>A complex type that contains information about the query string parameters that you want CloudFront to use for caching for a cache behavior.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QueryStringCacheKeys {
     /// <p>The number of <code>whitelisted</code> query string parameters for a cache behavior.</p>
     #[doc(hidden)]
-    pub quantity: std::option::Option<i32>,
+    pub quantity: ::std::option::Option<i32>,
     /// <p>A list that contains the query string parameters that you want CloudFront to use as a basis for caching for a cache behavior. If <code>Quantity</code> is 0, you can omit <code>Items</code>.</p>
     #[doc(hidden)]
-    pub items: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub items: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl QueryStringCacheKeys {
     /// <p>The number of <code>whitelisted</code> query string parameters for a cache behavior.</p>
-    pub fn quantity(&self) -> std::option::Option<i32> {
+    pub fn quantity(&self) -> ::std::option::Option<i32> {
         self.quantity
     }
     /// <p>A list that contains the query string parameters that you want CloudFront to use as a basis for caching for a cache behavior. If <code>Quantity</code> is 0, you can omit <code>Items</code>.</p>
-    pub fn items(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn items(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.items.as_deref()
     }
 }
@@ -33,19 +33,21 @@ impl QueryStringCacheKeys {
 
 /// A builder for [`QueryStringCacheKeys`](crate::types::QueryStringCacheKeys).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct QueryStringCacheKeysBuilder {
-    pub(crate) quantity: std::option::Option<i32>,
-    pub(crate) items: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) quantity: ::std::option::Option<i32>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl QueryStringCacheKeysBuilder {
     /// <p>The number of <code>whitelisted</code> query string parameters for a cache behavior.</p>
     pub fn quantity(mut self, input: i32) -> Self {
-        self.quantity = Some(input);
+        self.quantity = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of <code>whitelisted</code> query string parameters for a cache behavior.</p>
-    pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_quantity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.quantity = input;
         self
     }
@@ -54,16 +56,16 @@ impl QueryStringCacheKeysBuilder {
     /// To override the contents of this collection use [`set_items`](Self::set_items).
     ///
     /// <p>A list that contains the query string parameters that you want CloudFront to use as a basis for caching for a cache behavior. If <code>Quantity</code> is 0, you can omit <code>Items</code>.</p>
-    pub fn items(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn items(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.items.unwrap_or_default();
         v.push(input.into());
-        self.items = Some(v);
+        self.items = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list that contains the query string parameters that you want CloudFront to use as a basis for caching for a cache behavior. If <code>Quantity</code> is 0, you can omit <code>Items</code>.</p>
     pub fn set_items(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.items = input;
         self

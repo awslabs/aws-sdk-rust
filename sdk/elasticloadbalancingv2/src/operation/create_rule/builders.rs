@@ -7,56 +7,59 @@ pub use crate::operation::create_rule::_create_rule_input::CreateRuleInputBuilde
 ///
 /// <p>Creates a rule for the specified listener. The listener must be associated with an Application Load Balancer.</p>
 /// <p>Each rule consists of a priority, one or more actions, and one or more conditions. Rules are evaluated in priority order, from the lowest value to the highest value. When the conditions for a rule are met, its actions are performed. If the conditions for no rules are met, the actions for the default rule are performed. For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html#listener-rules">Listener rules</a> in the <i>Application Load Balancers Guide</i>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateRuleFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_rule::builders::CreateRuleInputBuilder,
 }
 impl CreateRuleFluentBuilder {
     /// Creates a new `CreateRule`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_rule::CreateRule,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_rule::CreateRuleError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_rule::CreateRuleError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_rule::CreateRuleOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_rule::CreateRuleError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_rule::CreateRuleError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -69,19 +72,19 @@ impl CreateRuleFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_rule::CreateRuleOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_rule::CreateRuleError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_rule::CreateRuleError>,
     > {
         self.send_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
-    pub fn listener_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn listener_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.listener_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
-    pub fn set_listener_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_listener_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_listener_arn(input);
         self
     }
@@ -97,7 +100,7 @@ impl CreateRuleFluentBuilder {
     /// <p>The conditions.</p>
     pub fn set_conditions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RuleCondition>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::RuleCondition>>,
     ) -> Self {
         self.inner = self.inner.set_conditions(input);
         self
@@ -108,7 +111,7 @@ impl CreateRuleFluentBuilder {
         self
     }
     /// <p>The rule priority. A listener can't have multiple rules with the same priority.</p>
-    pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_priority(input);
         self
     }
@@ -124,7 +127,7 @@ impl CreateRuleFluentBuilder {
     /// <p>The actions.</p>
     pub fn set_actions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Action>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Action>>,
     ) -> Self {
         self.inner = self.inner.set_actions(input);
         self
@@ -141,7 +144,7 @@ impl CreateRuleFluentBuilder {
     /// <p>The tags to assign to the rule.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self

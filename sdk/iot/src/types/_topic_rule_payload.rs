@@ -2,50 +2,50 @@
 
 /// <p>Describes a rule.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TopicRulePayload {
     /// <p>The SQL statement used to query the topic. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-sql-reference.html">IoT SQL Reference</a> in the <i>IoT Developer Guide</i>.</p>
     #[doc(hidden)]
-    pub sql: std::option::Option<std::string::String>,
+    pub sql: ::std::option::Option<::std::string::String>,
     /// <p>The description of the rule.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The actions associated with the rule.</p>
     #[doc(hidden)]
-    pub actions: std::option::Option<std::vec::Vec<crate::types::Action>>,
+    pub actions: ::std::option::Option<::std::vec::Vec<crate::types::Action>>,
     /// <p>Specifies whether the rule is disabled.</p>
     #[doc(hidden)]
-    pub rule_disabled: std::option::Option<bool>,
+    pub rule_disabled: ::std::option::Option<bool>,
     /// <p>The version of the SQL rules engine to use when evaluating the rule.</p>
     #[doc(hidden)]
-    pub aws_iot_sql_version: std::option::Option<std::string::String>,
+    pub aws_iot_sql_version: ::std::option::Option<::std::string::String>,
     /// <p>The action to take when an error occurs.</p>
     #[doc(hidden)]
-    pub error_action: std::option::Option<crate::types::Action>,
+    pub error_action: ::std::option::Option<crate::types::Action>,
 }
 impl TopicRulePayload {
     /// <p>The SQL statement used to query the topic. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-sql-reference.html">IoT SQL Reference</a> in the <i>IoT Developer Guide</i>.</p>
-    pub fn sql(&self) -> std::option::Option<&str> {
+    pub fn sql(&self) -> ::std::option::Option<&str> {
         self.sql.as_deref()
     }
     /// <p>The description of the rule.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The actions associated with the rule.</p>
-    pub fn actions(&self) -> std::option::Option<&[crate::types::Action]> {
+    pub fn actions(&self) -> ::std::option::Option<&[crate::types::Action]> {
         self.actions.as_deref()
     }
     /// <p>Specifies whether the rule is disabled.</p>
-    pub fn rule_disabled(&self) -> std::option::Option<bool> {
+    pub fn rule_disabled(&self) -> ::std::option::Option<bool> {
         self.rule_disabled
     }
     /// <p>The version of the SQL rules engine to use when evaluating the rule.</p>
-    pub fn aws_iot_sql_version(&self) -> std::option::Option<&str> {
+    pub fn aws_iot_sql_version(&self) -> ::std::option::Option<&str> {
         self.aws_iot_sql_version.as_deref()
     }
     /// <p>The action to take when an error occurs.</p>
-    pub fn error_action(&self) -> std::option::Option<&crate::types::Action> {
+    pub fn error_action(&self) -> ::std::option::Option<&crate::types::Action> {
         self.error_action.as_ref()
     }
 }
@@ -58,33 +58,35 @@ impl TopicRulePayload {
 
 /// A builder for [`TopicRulePayload`](crate::types::TopicRulePayload).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TopicRulePayloadBuilder {
-    pub(crate) sql: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) actions: std::option::Option<std::vec::Vec<crate::types::Action>>,
-    pub(crate) rule_disabled: std::option::Option<bool>,
-    pub(crate) aws_iot_sql_version: std::option::Option<std::string::String>,
-    pub(crate) error_action: std::option::Option<crate::types::Action>,
+    pub(crate) sql: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) actions: ::std::option::Option<::std::vec::Vec<crate::types::Action>>,
+    pub(crate) rule_disabled: ::std::option::Option<bool>,
+    pub(crate) aws_iot_sql_version: ::std::option::Option<::std::string::String>,
+    pub(crate) error_action: ::std::option::Option<crate::types::Action>,
 }
 impl TopicRulePayloadBuilder {
     /// <p>The SQL statement used to query the topic. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-sql-reference.html">IoT SQL Reference</a> in the <i>IoT Developer Guide</i>.</p>
-    pub fn sql(mut self, input: impl Into<std::string::String>) -> Self {
-        self.sql = Some(input.into());
+    pub fn sql(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.sql = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The SQL statement used to query the topic. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-sql-reference.html">IoT SQL Reference</a> in the <i>IoT Developer Guide</i>.</p>
-    pub fn set_sql(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_sql(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sql = input;
         self
     }
     /// <p>The description of the rule.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the rule.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
@@ -96,47 +98,50 @@ impl TopicRulePayloadBuilder {
     pub fn actions(mut self, input: crate::types::Action) -> Self {
         let mut v = self.actions.unwrap_or_default();
         v.push(input);
-        self.actions = Some(v);
+        self.actions = ::std::option::Option::Some(v);
         self
     }
     /// <p>The actions associated with the rule.</p>
     pub fn set_actions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Action>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Action>>,
     ) -> Self {
         self.actions = input;
         self
     }
     /// <p>Specifies whether the rule is disabled.</p>
     pub fn rule_disabled(mut self, input: bool) -> Self {
-        self.rule_disabled = Some(input);
+        self.rule_disabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether the rule is disabled.</p>
-    pub fn set_rule_disabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_rule_disabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.rule_disabled = input;
         self
     }
     /// <p>The version of the SQL rules engine to use when evaluating the rule.</p>
-    pub fn aws_iot_sql_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.aws_iot_sql_version = Some(input.into());
+    pub fn aws_iot_sql_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.aws_iot_sql_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the SQL rules engine to use when evaluating the rule.</p>
     pub fn set_aws_iot_sql_version(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.aws_iot_sql_version = input;
         self
     }
     /// <p>The action to take when an error occurs.</p>
     pub fn error_action(mut self, input: crate::types::Action) -> Self {
-        self.error_action = Some(input);
+        self.error_action = ::std::option::Option::Some(input);
         self
     }
     /// <p>The action to take when an error occurs.</p>
-    pub fn set_error_action(mut self, input: std::option::Option<crate::types::Action>) -> Self {
+    pub fn set_error_action(mut self, input: ::std::option::Option<crate::types::Action>) -> Self {
         self.error_action = input;
         self
     }

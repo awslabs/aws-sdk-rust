@@ -2,35 +2,35 @@
 
 /// <p>Attributes of a custom routing accelerator.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomRoutingAcceleratorAttributes {
     /// <p>Indicates whether flow logs are enabled. The default value is false. If the value is true, <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code> must be specified.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow logs</a> in the <i>Global Accelerator Developer Guide</i>.</p>
     #[doc(hidden)]
-    pub flow_logs_enabled: std::option::Option<bool>,
+    pub flow_logs_enabled: ::std::option::Option<bool>,
     /// <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. The bucket must exist and have a bucket policy that grants Global Accelerator permission to write to the bucket.</p>
     #[doc(hidden)]
-    pub flow_logs_s3_bucket: std::option::Option<std::string::String>,
+    pub flow_logs_s3_bucket: ::std::option::Option<::std::string::String>,
     /// <p>The prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>.</p>
     /// <p>If you don’t specify a prefix, the flow logs are stored in the root of the bucket. If you specify slash (/) for the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like the following:</p>
     /// <p>DOC-EXAMPLE-BUCKET//AWSLogs/aws_account_id</p>
     #[doc(hidden)]
-    pub flow_logs_s3_prefix: std::option::Option<std::string::String>,
+    pub flow_logs_s3_prefix: ::std::option::Option<::std::string::String>,
 }
 impl CustomRoutingAcceleratorAttributes {
     /// <p>Indicates whether flow logs are enabled. The default value is false. If the value is true, <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code> must be specified.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow logs</a> in the <i>Global Accelerator Developer Guide</i>.</p>
-    pub fn flow_logs_enabled(&self) -> std::option::Option<bool> {
+    pub fn flow_logs_enabled(&self) -> ::std::option::Option<bool> {
         self.flow_logs_enabled
     }
     /// <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. The bucket must exist and have a bucket policy that grants Global Accelerator permission to write to the bucket.</p>
-    pub fn flow_logs_s3_bucket(&self) -> std::option::Option<&str> {
+    pub fn flow_logs_s3_bucket(&self) -> ::std::option::Option<&str> {
         self.flow_logs_s3_bucket.as_deref()
     }
     /// <p>The prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>.</p>
     /// <p>If you don’t specify a prefix, the flow logs are stored in the root of the bucket. If you specify slash (/) for the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like the following:</p>
     /// <p>DOC-EXAMPLE-BUCKET//AWSLogs/aws_account_id</p>
-    pub fn flow_logs_s3_prefix(&self) -> std::option::Option<&str> {
+    pub fn flow_logs_s3_prefix(&self) -> ::std::option::Option<&str> {
         self.flow_logs_s3_prefix.as_deref()
     }
 }
@@ -43,34 +43,39 @@ impl CustomRoutingAcceleratorAttributes {
 
 /// A builder for [`CustomRoutingAcceleratorAttributes`](crate::types::CustomRoutingAcceleratorAttributes).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CustomRoutingAcceleratorAttributesBuilder {
-    pub(crate) flow_logs_enabled: std::option::Option<bool>,
-    pub(crate) flow_logs_s3_bucket: std::option::Option<std::string::String>,
-    pub(crate) flow_logs_s3_prefix: std::option::Option<std::string::String>,
+    pub(crate) flow_logs_enabled: ::std::option::Option<bool>,
+    pub(crate) flow_logs_s3_bucket: ::std::option::Option<::std::string::String>,
+    pub(crate) flow_logs_s3_prefix: ::std::option::Option<::std::string::String>,
 }
 impl CustomRoutingAcceleratorAttributesBuilder {
     /// <p>Indicates whether flow logs are enabled. The default value is false. If the value is true, <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code> must be specified.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow logs</a> in the <i>Global Accelerator Developer Guide</i>.</p>
     pub fn flow_logs_enabled(mut self, input: bool) -> Self {
-        self.flow_logs_enabled = Some(input);
+        self.flow_logs_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether flow logs are enabled. The default value is false. If the value is true, <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code> must be specified.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow logs</a> in the <i>Global Accelerator Developer Guide</i>.</p>
-    pub fn set_flow_logs_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_flow_logs_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.flow_logs_enabled = input;
         self
     }
     /// <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. The bucket must exist and have a bucket policy that grants Global Accelerator permission to write to the bucket.</p>
-    pub fn flow_logs_s3_bucket(mut self, input: impl Into<std::string::String>) -> Self {
-        self.flow_logs_s3_bucket = Some(input.into());
+    pub fn flow_logs_s3_bucket(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.flow_logs_s3_bucket = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. The bucket must exist and have a bucket policy that grants Global Accelerator permission to write to the bucket.</p>
     pub fn set_flow_logs_s3_bucket(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.flow_logs_s3_bucket = input;
         self
@@ -78,8 +83,11 @@ impl CustomRoutingAcceleratorAttributesBuilder {
     /// <p>The prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>.</p>
     /// <p>If you don’t specify a prefix, the flow logs are stored in the root of the bucket. If you specify slash (/) for the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like the following:</p>
     /// <p>DOC-EXAMPLE-BUCKET//AWSLogs/aws_account_id</p>
-    pub fn flow_logs_s3_prefix(mut self, input: impl Into<std::string::String>) -> Self {
-        self.flow_logs_s3_prefix = Some(input.into());
+    pub fn flow_logs_s3_prefix(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.flow_logs_s3_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>.</p>
@@ -87,7 +95,7 @@ impl CustomRoutingAcceleratorAttributesBuilder {
     /// <p>DOC-EXAMPLE-BUCKET//AWSLogs/aws_account_id</p>
     pub fn set_flow_logs_s3_prefix(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.flow_logs_s3_prefix = input;
         self

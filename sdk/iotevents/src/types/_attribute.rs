@@ -2,7 +2,7 @@
 
 /// <p>The attributes from the JSON payload that are made available by the input. Inputs are derived from messages sent to the AWS IoT Events system using <code>BatchPutMessage</code>. Each such message contains a JSON payload. Those attributes (and their paired values) specified here are available for use in the <code>condition</code> expressions used by detectors. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Attribute {
     /// <p>An expression that specifies an attribute-value pair in a JSON structure. Use this to specify an attribute from the JSON payload that is made available by the input. Inputs are derived from messages sent to AWS IoT Events (<code>BatchPutMessage</code>). Each such message contains a JSON payload. The attribute (and its paired value) specified here are available for use in the <code>condition</code> expressions used by detectors. </p>
     /// <p>Syntax: <code>
@@ -13,7 +13,7 @@ pub struct Attribute {
     /// </field-name>
     /// </field-name></code> </p>
     #[doc(hidden)]
-    pub json_path: std::option::Option<std::string::String>,
+    pub json_path: ::std::option::Option<::std::string::String>,
 }
 impl Attribute {
     /// <p>An expression that specifies an attribute-value pair in a JSON structure. Use this to specify an attribute from the JSON payload that is made available by the input. Inputs are derived from messages sent to AWS IoT Events (<code>BatchPutMessage</code>). Each such message contains a JSON payload. The attribute (and its paired value) specified here are available for use in the <code>condition</code> expressions used by detectors. </p>
@@ -24,7 +24,7 @@ impl Attribute {
     /// ...
     /// </field-name>
     /// </field-name></code> </p>
-    pub fn json_path(&self) -> std::option::Option<&str> {
+    pub fn json_path(&self) -> ::std::option::Option<&str> {
         self.json_path.as_deref()
     }
 }
@@ -37,9 +37,11 @@ impl Attribute {
 
 /// A builder for [`Attribute`](crate::types::Attribute).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AttributeBuilder {
-    pub(crate) json_path: std::option::Option<std::string::String>,
+    pub(crate) json_path: ::std::option::Option<::std::string::String>,
 }
 impl AttributeBuilder {
     /// <p>An expression that specifies an attribute-value pair in a JSON structure. Use this to specify an attribute from the JSON payload that is made available by the input. Inputs are derived from messages sent to AWS IoT Events (<code>BatchPutMessage</code>). Each such message contains a JSON payload. The attribute (and its paired value) specified here are available for use in the <code>condition</code> expressions used by detectors. </p>
@@ -50,8 +52,8 @@ impl AttributeBuilder {
     /// ...
     /// </field-name>
     /// </field-name></code> </p>
-    pub fn json_path(mut self, input: impl Into<std::string::String>) -> Self {
-        self.json_path = Some(input.into());
+    pub fn json_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.json_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An expression that specifies an attribute-value pair in a JSON structure. Use this to specify an attribute from the JSON payload that is made available by the input. Inputs are derived from messages sent to AWS IoT Events (<code>BatchPutMessage</code>). Each such message contains a JSON payload. The attribute (and its paired value) specified here are available for use in the <code>condition</code> expressions used by detectors. </p>
@@ -62,7 +64,7 @@ impl AttributeBuilder {
     /// ...
     /// </field-name>
     /// </field-name></code> </p>
-    pub fn set_json_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_json_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.json_path = input;
         self
     }

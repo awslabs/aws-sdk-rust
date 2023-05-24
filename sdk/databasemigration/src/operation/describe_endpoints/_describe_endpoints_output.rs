@@ -2,27 +2,27 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEndpointsOutput {
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     #[doc(hidden)]
-    pub marker: std::option::Option<std::string::String>,
+    pub marker: ::std::option::Option<::std::string::String>,
     /// <p>Endpoint description.</p>
     #[doc(hidden)]
-    pub endpoints: std::option::Option<std::vec::Vec<crate::types::Endpoint>>,
+    pub endpoints: ::std::option::Option<::std::vec::Vec<crate::types::Endpoint>>,
     _request_id: Option<String>,
 }
 impl DescribeEndpointsOutput {
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
     /// <p>Endpoint description.</p>
-    pub fn endpoints(&self) -> std::option::Option<&[crate::types::Endpoint]> {
+    pub fn endpoints(&self) -> ::std::option::Option<&[crate::types::Endpoint]> {
         self.endpoints.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeEndpointsOutput {
+impl ::aws_http::request_id::RequestId for DescribeEndpointsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -37,20 +37,22 @@ impl DescribeEndpointsOutput {
 
 /// A builder for [`DescribeEndpointsOutput`](crate::operation::describe_endpoints::DescribeEndpointsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeEndpointsOutputBuilder {
-    pub(crate) marker: std::option::Option<std::string::String>,
-    pub(crate) endpoints: std::option::Option<std::vec::Vec<crate::types::Endpoint>>,
+    pub(crate) marker: ::std::option::Option<::std::string::String>,
+    pub(crate) endpoints: ::std::option::Option<::std::vec::Vec<crate::types::Endpoint>>,
     _request_id: Option<String>,
 }
 impl DescribeEndpointsOutputBuilder {
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
-    pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-        self.marker = Some(input.into());
+    pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
-    pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
     }
@@ -62,13 +64,13 @@ impl DescribeEndpointsOutputBuilder {
     pub fn endpoints(mut self, input: crate::types::Endpoint) -> Self {
         let mut v = self.endpoints.unwrap_or_default();
         v.push(input);
-        self.endpoints = Some(v);
+        self.endpoints = ::std::option::Option::Some(v);
         self
     }
     /// <p>Endpoint description.</p>
     pub fn set_endpoints(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Endpoint>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Endpoint>>,
     ) -> Self {
         self.endpoints = input;
         self

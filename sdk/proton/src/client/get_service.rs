@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetService`](crate::operation::get_service::builders::GetServiceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::get_service::builders::GetServiceFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_service::builders::GetServiceFluentBuilder::set_name): <p>The name of the service that you want to get the detailed data for.</p>
+    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::get_service::builders::GetServiceFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_service::builders::GetServiceFluentBuilder::set_name): <p>The name of the service that you want to get the detailed data for.</p>
     /// - On success, responds with [`GetServiceOutput`](crate::operation::get_service::GetServiceOutput) with field(s):
     ///   - [`service(Option<Service>)`](crate::operation::get_service::GetServiceOutput::service): <p>The detailed data of the requested service.</p>
     /// - On failure, responds with [`SdkError<GetServiceError>`](crate::operation::get_service::GetServiceError)

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateConfig`](crate::operation::create_config::builders::CreateConfigFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::create_config::builders::CreateConfigFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::create_config::builders::CreateConfigFluentBuilder::set_name): <p>Name of a <code>Config</code>.</p>
+    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::create_config::builders::CreateConfigFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::create_config::builders::CreateConfigFluentBuilder::set_name): <p>Name of a <code>Config</code>.</p>
     ///   - [`config_data(ConfigTypeData)`](crate::operation::create_config::builders::CreateConfigFluentBuilder::config_data) / [`set_config_data(Option<ConfigTypeData>)`](crate::operation::create_config::builders::CreateConfigFluentBuilder::set_config_data): <p>Parameters of a <code>Config</code>.</p>
     ///   - [`tags(HashMap<String, String>)`](crate::operation::create_config::builders::CreateConfigFluentBuilder::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::operation::create_config::builders::CreateConfigFluentBuilder::set_tags): <p>Tags assigned to a <code>Config</code>.</p>
     /// - On success, responds with [`CreateConfigOutput`](crate::operation::create_config::CreateConfigOutput) with field(s):

@@ -2,15 +2,15 @@
 
 /// <p>A list of IP addresses and address ranges, in CIDR notation. This is part of a <code>RuleVariables</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IpSet {
     /// <p>The list of IP addresses and address ranges, in CIDR notation. </p>
     #[doc(hidden)]
-    pub definition: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub definition: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl IpSet {
     /// <p>The list of IP addresses and address ranges, in CIDR notation. </p>
-    pub fn definition(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn definition(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.definition.as_deref()
     }
 }
@@ -23,9 +23,11 @@ impl IpSet {
 
 /// A builder for [`IpSet`](crate::types::IpSet).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct IpSetBuilder {
-    pub(crate) definition: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) definition: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl IpSetBuilder {
     /// Appends an item to `definition`.
@@ -33,16 +35,16 @@ impl IpSetBuilder {
     /// To override the contents of this collection use [`set_definition`](Self::set_definition).
     ///
     /// <p>The list of IP addresses and address ranges, in CIDR notation. </p>
-    pub fn definition(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn definition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.definition.unwrap_or_default();
         v.push(input.into());
-        self.definition = Some(v);
+        self.definition = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of IP addresses and address ranges, in CIDR notation. </p>
     pub fn set_definition(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.definition = input;
         self

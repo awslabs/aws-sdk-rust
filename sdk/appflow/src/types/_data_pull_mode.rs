@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum DataPullMode {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum DataPullMode {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for DataPullMode {
+impl ::std::convert::From<&str> for DataPullMode {
     fn from(s: &str) -> Self {
         match s {
             "Complete" => DataPullMode::Complete,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for DataPullMode {
         }
     }
 }
-impl std::str::FromStr for DataPullMode {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for DataPullMode {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DataPullMode::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(DataPullMode::from(s))
     }
 }
 impl DataPullMode {
@@ -86,7 +86,7 @@ impl DataPullMode {
         &["Complete", "Incremental"]
     }
 }
-impl AsRef<str> for DataPullMode {
+impl ::std::convert::AsRef<str> for DataPullMode {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

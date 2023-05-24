@@ -2,15 +2,15 @@
 
 /// <p>Contains information about the client certificate authentication settings for the <code>RegisterCertificate</code> and <code>DescribeCertificate</code> operations. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClientCertAuthSettings {
     /// <p>Specifies the URL of the default OCSP server used to check for revocation status. A secondary value to any OCSP address found in the AIA extension of the user certificate.</p>
     #[doc(hidden)]
-    pub ocsp_url: std::option::Option<std::string::String>,
+    pub ocsp_url: ::std::option::Option<::std::string::String>,
 }
 impl ClientCertAuthSettings {
     /// <p>Specifies the URL of the default OCSP server used to check for revocation status. A secondary value to any OCSP address found in the AIA extension of the user certificate.</p>
-    pub fn ocsp_url(&self) -> std::option::Option<&str> {
+    pub fn ocsp_url(&self) -> ::std::option::Option<&str> {
         self.ocsp_url.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl ClientCertAuthSettings {
 
 /// A builder for [`ClientCertAuthSettings`](crate::types::ClientCertAuthSettings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ClientCertAuthSettingsBuilder {
-    pub(crate) ocsp_url: std::option::Option<std::string::String>,
+    pub(crate) ocsp_url: ::std::option::Option<::std::string::String>,
 }
 impl ClientCertAuthSettingsBuilder {
     /// <p>Specifies the URL of the default OCSP server used to check for revocation status. A secondary value to any OCSP address found in the AIA extension of the user certificate.</p>
-    pub fn ocsp_url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ocsp_url = Some(input.into());
+    pub fn ocsp_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ocsp_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the URL of the default OCSP server used to check for revocation status. A secondary value to any OCSP address found in the AIA extension of the user certificate.</p>
-    pub fn set_ocsp_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ocsp_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ocsp_url = input;
         self
     }

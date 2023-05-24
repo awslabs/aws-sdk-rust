@@ -2,7 +2,7 @@
 
 /// <p>A container for AwsLambdaTransformation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum ObjectLambdaContentTransformation {
     /// <p>A container for an Lambda function.</p>
     AwsLambda(crate::types::AwsLambdaTransformation),
@@ -22,11 +22,11 @@ impl ObjectLambdaContentTransformation {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_aws_lambda(
         &self,
-    ) -> std::result::Result<&crate::types::AwsLambdaTransformation, &Self> {
+    ) -> ::std::result::Result<&crate::types::AwsLambdaTransformation, &Self> {
         if let ObjectLambdaContentTransformation::AwsLambda(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`AwsLambda`](crate::types::ObjectLambdaContentTransformation::AwsLambda).

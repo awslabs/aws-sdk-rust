@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`channel_class(ChannelClass)`](crate::operation::update_channel_class::builders::UpdateChannelClassFluentBuilder::channel_class) / [`set_channel_class(Option<ChannelClass>)`](crate::operation::update_channel_class::builders::UpdateChannelClassFluentBuilder::set_channel_class): The channel class that you wish to update this channel to use.
-    ///   - [`channel_id(impl Into<String>)`](crate::operation::update_channel_class::builders::UpdateChannelClassFluentBuilder::channel_id) / [`set_channel_id(Option<String>)`](crate::operation::update_channel_class::builders::UpdateChannelClassFluentBuilder::set_channel_id): Channel Id of the channel whose class should be updated.
+    ///   - [`channel_id(impl ::std::convert::Into<String>)`](crate::operation::update_channel_class::builders::UpdateChannelClassFluentBuilder::channel_id) / [`set_channel_id(Option<String>)`](crate::operation::update_channel_class::builders::UpdateChannelClassFluentBuilder::set_channel_id): Channel Id of the channel whose class should be updated.
     ///   - [`destinations(Vec<OutputDestination>)`](crate::operation::update_channel_class::builders::UpdateChannelClassFluentBuilder::destinations) / [`set_destinations(Option<Vec<OutputDestination>>)`](crate::operation::update_channel_class::builders::UpdateChannelClassFluentBuilder::set_destinations): A list of output destinations for this channel.
     /// - On success, responds with [`UpdateChannelClassOutput`](crate::operation::update_channel_class::UpdateChannelClassOutput) with field(s):
     ///   - [`channel(Option<Channel>)`](crate::operation::update_channel_class::UpdateChannelClassOutput::channel): Placeholder documentation for Channel

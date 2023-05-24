@@ -2,15 +2,15 @@
 
 /// <p> OS version that the directory needs to be updated to. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OsUpdateSettings {
     /// <p> OS version that the directory needs to be updated to. </p>
     #[doc(hidden)]
-    pub os_version: std::option::Option<crate::types::OsVersion>,
+    pub os_version: ::std::option::Option<crate::types::OsVersion>,
 }
 impl OsUpdateSettings {
     /// <p> OS version that the directory needs to be updated to. </p>
-    pub fn os_version(&self) -> std::option::Option<&crate::types::OsVersion> {
+    pub fn os_version(&self) -> ::std::option::Option<&crate::types::OsVersion> {
         self.os_version.as_ref()
     }
 }
@@ -23,18 +23,20 @@ impl OsUpdateSettings {
 
 /// A builder for [`OsUpdateSettings`](crate::types::OsUpdateSettings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OsUpdateSettingsBuilder {
-    pub(crate) os_version: std::option::Option<crate::types::OsVersion>,
+    pub(crate) os_version: ::std::option::Option<crate::types::OsVersion>,
 }
 impl OsUpdateSettingsBuilder {
     /// <p> OS version that the directory needs to be updated to. </p>
     pub fn os_version(mut self, input: crate::types::OsVersion) -> Self {
-        self.os_version = Some(input);
+        self.os_version = ::std::option::Option::Some(input);
         self
     }
     /// <p> OS version that the directory needs to be updated to. </p>
-    pub fn set_os_version(mut self, input: std::option::Option<crate::types::OsVersion>) -> Self {
+    pub fn set_os_version(mut self, input: ::std::option::Option<crate::types::OsVersion>) -> Self {
         self.os_version = input;
         self
     }

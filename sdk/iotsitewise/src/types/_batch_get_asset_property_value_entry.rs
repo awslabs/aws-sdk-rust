@@ -7,36 +7,36 @@
 /// <li> <p>A <code>propertyAlias</code>, which is a data stream alias (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset property's alias, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetAssetPropertyValueEntry {
     /// <p>The ID of the entry.</p>
     #[doc(hidden)]
-    pub entry_id: std::option::Option<std::string::String>,
+    pub entry_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the asset in which the asset property was created.</p>
     #[doc(hidden)]
-    pub asset_id: std::option::Option<std::string::String>,
+    pub asset_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the asset property.</p>
     #[doc(hidden)]
-    pub property_id: std::option::Option<std::string::String>,
+    pub property_id: ::std::option::Option<::std::string::String>,
     /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
     #[doc(hidden)]
-    pub property_alias: std::option::Option<std::string::String>,
+    pub property_alias: ::std::option::Option<::std::string::String>,
 }
 impl BatchGetAssetPropertyValueEntry {
     /// <p>The ID of the entry.</p>
-    pub fn entry_id(&self) -> std::option::Option<&str> {
+    pub fn entry_id(&self) -> ::std::option::Option<&str> {
         self.entry_id.as_deref()
     }
     /// <p>The ID of the asset in which the asset property was created.</p>
-    pub fn asset_id(&self) -> std::option::Option<&str> {
+    pub fn asset_id(&self) -> ::std::option::Option<&str> {
         self.asset_id.as_deref()
     }
     /// <p>The ID of the asset property.</p>
-    pub fn property_id(&self) -> std::option::Option<&str> {
+    pub fn property_id(&self) -> ::std::option::Option<&str> {
         self.property_id.as_deref()
     }
     /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn property_alias(&self) -> std::option::Option<&str> {
+    pub fn property_alias(&self) -> ::std::option::Option<&str> {
         self.property_alias.as_deref()
     }
 }
@@ -49,51 +49,59 @@ impl BatchGetAssetPropertyValueEntry {
 
 /// A builder for [`BatchGetAssetPropertyValueEntry`](crate::types::BatchGetAssetPropertyValueEntry).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BatchGetAssetPropertyValueEntryBuilder {
-    pub(crate) entry_id: std::option::Option<std::string::String>,
-    pub(crate) asset_id: std::option::Option<std::string::String>,
-    pub(crate) property_id: std::option::Option<std::string::String>,
-    pub(crate) property_alias: std::option::Option<std::string::String>,
+    pub(crate) entry_id: ::std::option::Option<::std::string::String>,
+    pub(crate) asset_id: ::std::option::Option<::std::string::String>,
+    pub(crate) property_id: ::std::option::Option<::std::string::String>,
+    pub(crate) property_alias: ::std::option::Option<::std::string::String>,
 }
 impl BatchGetAssetPropertyValueEntryBuilder {
     /// <p>The ID of the entry.</p>
-    pub fn entry_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.entry_id = Some(input.into());
+    pub fn entry_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.entry_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the entry.</p>
-    pub fn set_entry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_entry_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.entry_id = input;
         self
     }
     /// <p>The ID of the asset in which the asset property was created.</p>
-    pub fn asset_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.asset_id = Some(input.into());
+    pub fn asset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.asset_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the asset in which the asset property was created.</p>
-    pub fn set_asset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_asset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.asset_id = input;
         self
     }
     /// <p>The ID of the asset property.</p>
-    pub fn property_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.property_id = Some(input.into());
+    pub fn property_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.property_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the asset property.</p>
-    pub fn set_property_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_property_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.property_id = input;
         self
     }
     /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn property_alias(mut self, input: impl Into<std::string::String>) -> Self {
-        self.property_alias = Some(input.into());
+    pub fn property_alias(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.property_alias = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn set_property_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_property_alias(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.property_alias = input;
         self
     }

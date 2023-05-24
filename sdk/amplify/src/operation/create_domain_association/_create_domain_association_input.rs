@@ -2,50 +2,53 @@
 
 /// <p> The request structure for the create domain association request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDomainAssociationInput {
     /// <p> The unique ID for an Amplify app. </p>
     #[doc(hidden)]
-    pub app_id: std::option::Option<std::string::String>,
+    pub app_id: ::std::option::Option<::std::string::String>,
     /// <p> The domain name for the domain association. </p>
     #[doc(hidden)]
-    pub domain_name: std::option::Option<std::string::String>,
+    pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p> Enables the automated creation of subdomains for branches. </p>
     #[doc(hidden)]
-    pub enable_auto_sub_domain: std::option::Option<bool>,
+    pub enable_auto_sub_domain: ::std::option::Option<bool>,
     /// <p> The setting for the subdomain. </p>
     #[doc(hidden)]
-    pub sub_domain_settings: std::option::Option<std::vec::Vec<crate::types::SubDomainSetting>>,
+    pub sub_domain_settings: ::std::option::Option<::std::vec::Vec<crate::types::SubDomainSetting>>,
     /// <p> Sets the branch patterns for automatic subdomain creation. </p>
     #[doc(hidden)]
-    pub auto_sub_domain_creation_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub auto_sub_domain_creation_patterns:
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) for automatically creating subdomains. </p>
     #[doc(hidden)]
-    pub auto_sub_domain_iam_role: std::option::Option<std::string::String>,
+    pub auto_sub_domain_iam_role: ::std::option::Option<::std::string::String>,
 }
 impl CreateDomainAssociationInput {
     /// <p> The unique ID for an Amplify app. </p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> ::std::option::Option<&str> {
         self.app_id.as_deref()
     }
     /// <p> The domain name for the domain association. </p>
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<&str> {
         self.domain_name.as_deref()
     }
     /// <p> Enables the automated creation of subdomains for branches. </p>
-    pub fn enable_auto_sub_domain(&self) -> std::option::Option<bool> {
+    pub fn enable_auto_sub_domain(&self) -> ::std::option::Option<bool> {
         self.enable_auto_sub_domain
     }
     /// <p> The setting for the subdomain. </p>
-    pub fn sub_domain_settings(&self) -> std::option::Option<&[crate::types::SubDomainSetting]> {
+    pub fn sub_domain_settings(&self) -> ::std::option::Option<&[crate::types::SubDomainSetting]> {
         self.sub_domain_settings.as_deref()
     }
     /// <p> Sets the branch patterns for automatic subdomain creation. </p>
-    pub fn auto_sub_domain_creation_patterns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn auto_sub_domain_creation_patterns(
+        &self,
+    ) -> ::std::option::Option<&[::std::string::String]> {
         self.auto_sub_domain_creation_patterns.as_deref()
     }
     /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) for automatically creating subdomains. </p>
-    pub fn auto_sub_domain_iam_role(&self) -> std::option::Option<&str> {
+    pub fn auto_sub_domain_iam_role(&self) -> ::std::option::Option<&str> {
         self.auto_sub_domain_iam_role.as_deref()
     }
 }
@@ -60,45 +63,47 @@ impl CreateDomainAssociationInput {
 
 /// A builder for [`CreateDomainAssociationInput`](crate::operation::create_domain_association::CreateDomainAssociationInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateDomainAssociationInputBuilder {
-    pub(crate) app_id: std::option::Option<std::string::String>,
-    pub(crate) domain_name: std::option::Option<std::string::String>,
-    pub(crate) enable_auto_sub_domain: std::option::Option<bool>,
+    pub(crate) app_id: ::std::option::Option<::std::string::String>,
+    pub(crate) domain_name: ::std::option::Option<::std::string::String>,
+    pub(crate) enable_auto_sub_domain: ::std::option::Option<bool>,
     pub(crate) sub_domain_settings:
-        std::option::Option<std::vec::Vec<crate::types::SubDomainSetting>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::SubDomainSetting>>,
     pub(crate) auto_sub_domain_creation_patterns:
-        std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) auto_sub_domain_iam_role: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) auto_sub_domain_iam_role: ::std::option::Option<::std::string::String>,
 }
 impl CreateDomainAssociationInputBuilder {
     /// <p> The unique ID for an Amplify app. </p>
-    pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.app_id = Some(input.into());
+    pub fn app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.app_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The unique ID for an Amplify app. </p>
-    pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_app_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_id = input;
         self
     }
     /// <p> The domain name for the domain association. </p>
-    pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.domain_name = Some(input.into());
+    pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.domain_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The domain name for the domain association. </p>
-    pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_name = input;
         self
     }
     /// <p> Enables the automated creation of subdomains for branches. </p>
     pub fn enable_auto_sub_domain(mut self, input: bool) -> Self {
-        self.enable_auto_sub_domain = Some(input);
+        self.enable_auto_sub_domain = ::std::option::Option::Some(input);
         self
     }
     /// <p> Enables the automated creation of subdomains for branches. </p>
-    pub fn set_enable_auto_sub_domain(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enable_auto_sub_domain(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_auto_sub_domain = input;
         self
     }
@@ -110,13 +115,13 @@ impl CreateDomainAssociationInputBuilder {
     pub fn sub_domain_settings(mut self, input: crate::types::SubDomainSetting) -> Self {
         let mut v = self.sub_domain_settings.unwrap_or_default();
         v.push(input);
-        self.sub_domain_settings = Some(v);
+        self.sub_domain_settings = ::std::option::Option::Some(v);
         self
     }
     /// <p> The setting for the subdomain. </p>
     pub fn set_sub_domain_settings(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SubDomainSetting>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SubDomainSetting>>,
     ) -> Self {
         self.sub_domain_settings = input;
         self
@@ -128,30 +133,33 @@ impl CreateDomainAssociationInputBuilder {
     /// <p> Sets the branch patterns for automatic subdomain creation. </p>
     pub fn auto_sub_domain_creation_patterns(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut v = self.auto_sub_domain_creation_patterns.unwrap_or_default();
         v.push(input.into());
-        self.auto_sub_domain_creation_patterns = Some(v);
+        self.auto_sub_domain_creation_patterns = ::std::option::Option::Some(v);
         self
     }
     /// <p> Sets the branch patterns for automatic subdomain creation. </p>
     pub fn set_auto_sub_domain_creation_patterns(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.auto_sub_domain_creation_patterns = input;
         self
     }
     /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) for automatically creating subdomains. </p>
-    pub fn auto_sub_domain_iam_role(mut self, input: impl Into<std::string::String>) -> Self {
-        self.auto_sub_domain_iam_role = Some(input.into());
+    pub fn auto_sub_domain_iam_role(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.auto_sub_domain_iam_role = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon Resource Name (ARN) for automatically creating subdomains. </p>
     pub fn set_auto_sub_domain_iam_role(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.auto_sub_domain_iam_role = input;
         self
@@ -159,11 +167,11 @@ impl CreateDomainAssociationInputBuilder {
     /// Consumes the builder and constructs a [`CreateDomainAssociationInput`](crate::operation::create_domain_association::CreateDomainAssociationInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::create_domain_association::CreateDomainAssociationInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::create_domain_association::CreateDomainAssociationInput {
                 app_id: self.app_id,
                 domain_name: self.domain_name,

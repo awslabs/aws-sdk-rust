@@ -2,43 +2,43 @@
 
 /// <p>Defines a condition under which a trigger fires.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Condition {
     /// <p>A logical operator.</p>
     #[doc(hidden)]
-    pub logical_operator: std::option::Option<crate::types::LogicalOperator>,
+    pub logical_operator: ::std::option::Option<crate::types::LogicalOperator>,
     /// <p>The name of the job whose <code>JobRuns</code> this condition applies to, and on which this trigger waits.</p>
     #[doc(hidden)]
-    pub job_name: std::option::Option<std::string::String>,
+    pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>The condition state. Currently, the only job states that a trigger can listen for are <code>SUCCEEDED</code>, <code>STOPPED</code>, <code>FAILED</code>, and <code>TIMEOUT</code>. The only crawler states that a trigger can listen for are <code>SUCCEEDED</code>, <code>FAILED</code>, and <code>CANCELLED</code>.</p>
     #[doc(hidden)]
-    pub state: std::option::Option<crate::types::JobRunState>,
+    pub state: ::std::option::Option<crate::types::JobRunState>,
     /// <p>The name of the crawler to which this condition applies.</p>
     #[doc(hidden)]
-    pub crawler_name: std::option::Option<std::string::String>,
+    pub crawler_name: ::std::option::Option<::std::string::String>,
     /// <p>The state of the crawler to which this condition applies.</p>
     #[doc(hidden)]
-    pub crawl_state: std::option::Option<crate::types::CrawlState>,
+    pub crawl_state: ::std::option::Option<crate::types::CrawlState>,
 }
 impl Condition {
     /// <p>A logical operator.</p>
-    pub fn logical_operator(&self) -> std::option::Option<&crate::types::LogicalOperator> {
+    pub fn logical_operator(&self) -> ::std::option::Option<&crate::types::LogicalOperator> {
         self.logical_operator.as_ref()
     }
     /// <p>The name of the job whose <code>JobRuns</code> this condition applies to, and on which this trigger waits.</p>
-    pub fn job_name(&self) -> std::option::Option<&str> {
+    pub fn job_name(&self) -> ::std::option::Option<&str> {
         self.job_name.as_deref()
     }
     /// <p>The condition state. Currently, the only job states that a trigger can listen for are <code>SUCCEEDED</code>, <code>STOPPED</code>, <code>FAILED</code>, and <code>TIMEOUT</code>. The only crawler states that a trigger can listen for are <code>SUCCEEDED</code>, <code>FAILED</code>, and <code>CANCELLED</code>.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::JobRunState> {
+    pub fn state(&self) -> ::std::option::Option<&crate::types::JobRunState> {
         self.state.as_ref()
     }
     /// <p>The name of the crawler to which this condition applies.</p>
-    pub fn crawler_name(&self) -> std::option::Option<&str> {
+    pub fn crawler_name(&self) -> ::std::option::Option<&str> {
         self.crawler_name.as_deref()
     }
     /// <p>The state of the crawler to which this condition applies.</p>
-    pub fn crawl_state(&self) -> std::option::Option<&crate::types::CrawlState> {
+    pub fn crawl_state(&self) -> ::std::option::Option<&crate::types::CrawlState> {
         self.crawl_state.as_ref()
     }
 }
@@ -51,65 +51,70 @@ impl Condition {
 
 /// A builder for [`Condition`](crate::types::Condition).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ConditionBuilder {
-    pub(crate) logical_operator: std::option::Option<crate::types::LogicalOperator>,
-    pub(crate) job_name: std::option::Option<std::string::String>,
-    pub(crate) state: std::option::Option<crate::types::JobRunState>,
-    pub(crate) crawler_name: std::option::Option<std::string::String>,
-    pub(crate) crawl_state: std::option::Option<crate::types::CrawlState>,
+    pub(crate) logical_operator: ::std::option::Option<crate::types::LogicalOperator>,
+    pub(crate) job_name: ::std::option::Option<::std::string::String>,
+    pub(crate) state: ::std::option::Option<crate::types::JobRunState>,
+    pub(crate) crawler_name: ::std::option::Option<::std::string::String>,
+    pub(crate) crawl_state: ::std::option::Option<crate::types::CrawlState>,
 }
 impl ConditionBuilder {
     /// <p>A logical operator.</p>
     pub fn logical_operator(mut self, input: crate::types::LogicalOperator) -> Self {
-        self.logical_operator = Some(input);
+        self.logical_operator = ::std::option::Option::Some(input);
         self
     }
     /// <p>A logical operator.</p>
     pub fn set_logical_operator(
         mut self,
-        input: std::option::Option<crate::types::LogicalOperator>,
+        input: ::std::option::Option<crate::types::LogicalOperator>,
     ) -> Self {
         self.logical_operator = input;
         self
     }
     /// <p>The name of the job whose <code>JobRuns</code> this condition applies to, and on which this trigger waits.</p>
-    pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.job_name = Some(input.into());
+    pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.job_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the job whose <code>JobRuns</code> this condition applies to, and on which this trigger waits.</p>
-    pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_name = input;
         self
     }
     /// <p>The condition state. Currently, the only job states that a trigger can listen for are <code>SUCCEEDED</code>, <code>STOPPED</code>, <code>FAILED</code>, and <code>TIMEOUT</code>. The only crawler states that a trigger can listen for are <code>SUCCEEDED</code>, <code>FAILED</code>, and <code>CANCELLED</code>.</p>
     pub fn state(mut self, input: crate::types::JobRunState) -> Self {
-        self.state = Some(input);
+        self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The condition state. Currently, the only job states that a trigger can listen for are <code>SUCCEEDED</code>, <code>STOPPED</code>, <code>FAILED</code>, and <code>TIMEOUT</code>. The only crawler states that a trigger can listen for are <code>SUCCEEDED</code>, <code>FAILED</code>, and <code>CANCELLED</code>.</p>
-    pub fn set_state(mut self, input: std::option::Option<crate::types::JobRunState>) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::JobRunState>) -> Self {
         self.state = input;
         self
     }
     /// <p>The name of the crawler to which this condition applies.</p>
-    pub fn crawler_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.crawler_name = Some(input.into());
+    pub fn crawler_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.crawler_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the crawler to which this condition applies.</p>
-    pub fn set_crawler_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_crawler_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.crawler_name = input;
         self
     }
     /// <p>The state of the crawler to which this condition applies.</p>
     pub fn crawl_state(mut self, input: crate::types::CrawlState) -> Self {
-        self.crawl_state = Some(input);
+        self.crawl_state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The state of the crawler to which this condition applies.</p>
-    pub fn set_crawl_state(mut self, input: std::option::Option<crate::types::CrawlState>) -> Self {
+    pub fn set_crawl_state(
+        mut self,
+        input: ::std::option::Option<crate::types::CrawlState>,
+    ) -> Self {
         self.crawl_state = input;
         self
     }

@@ -2,7 +2,7 @@
 
 /// <p> The memory information of an Elastic Inference Accelerator type. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MemoryInfo {
     /// <p> The size in mebibytes of the Elastic Inference Accelerator type. </p>
     #[doc(hidden)]
@@ -23,18 +23,20 @@ impl MemoryInfo {
 
 /// A builder for [`MemoryInfo`](crate::types::MemoryInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MemoryInfoBuilder {
-    pub(crate) size_in_mi_b: std::option::Option<i32>,
+    pub(crate) size_in_mi_b: ::std::option::Option<i32>,
 }
 impl MemoryInfoBuilder {
     /// <p> The size in mebibytes of the Elastic Inference Accelerator type. </p>
     pub fn size_in_mi_b(mut self, input: i32) -> Self {
-        self.size_in_mi_b = Some(input);
+        self.size_in_mi_b = ::std::option::Option::Some(input);
         self
     }
     /// <p> The size in mebibytes of the Elastic Inference Accelerator type. </p>
-    pub fn set_size_in_mi_b(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_size_in_mi_b(mut self, input: ::std::option::Option<i32>) -> Self {
         self.size_in_mi_b = input;
         self
     }

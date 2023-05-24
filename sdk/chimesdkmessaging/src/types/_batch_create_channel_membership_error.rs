@@ -2,29 +2,29 @@
 
 /// <p>A list of failed member ARNs, error codes, and error messages.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchCreateChannelMembershipError {
     /// <p>The <code>AppInstanceUserArn</code> of the member that the service couldn't add.</p>
     #[doc(hidden)]
-    pub member_arn: std::option::Option<std::string::String>,
+    pub member_arn: ::std::option::Option<::std::string::String>,
     /// <p>The error code.</p>
     #[doc(hidden)]
-    pub error_code: std::option::Option<crate::types::ErrorCode>,
+    pub error_code: ::std::option::Option<crate::types::ErrorCode>,
     /// <p>The error message.</p>
     #[doc(hidden)]
-    pub error_message: std::option::Option<std::string::String>,
+    pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl BatchCreateChannelMembershipError {
     /// <p>The <code>AppInstanceUserArn</code> of the member that the service couldn't add.</p>
-    pub fn member_arn(&self) -> std::option::Option<&str> {
+    pub fn member_arn(&self) -> ::std::option::Option<&str> {
         self.member_arn.as_deref()
     }
     /// <p>The error code.</p>
-    pub fn error_code(&self) -> std::option::Option<&crate::types::ErrorCode> {
+    pub fn error_code(&self) -> ::std::option::Option<&crate::types::ErrorCode> {
         self.error_code.as_ref()
     }
     /// <p>The error message.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<&str> {
         self.error_message.as_deref()
     }
 }
@@ -37,40 +37,48 @@ impl BatchCreateChannelMembershipError {
 
 /// A builder for [`BatchCreateChannelMembershipError`](crate::types::BatchCreateChannelMembershipError).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BatchCreateChannelMembershipErrorBuilder {
-    pub(crate) member_arn: std::option::Option<std::string::String>,
-    pub(crate) error_code: std::option::Option<crate::types::ErrorCode>,
-    pub(crate) error_message: std::option::Option<std::string::String>,
+    pub(crate) member_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) error_code: ::std::option::Option<crate::types::ErrorCode>,
+    pub(crate) error_message: ::std::option::Option<::std::string::String>,
 }
 impl BatchCreateChannelMembershipErrorBuilder {
     /// <p>The <code>AppInstanceUserArn</code> of the member that the service couldn't add.</p>
-    pub fn member_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.member_arn = Some(input.into());
+    pub fn member_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.member_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>AppInstanceUserArn</code> of the member that the service couldn't add.</p>
-    pub fn set_member_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_member_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.member_arn = input;
         self
     }
     /// <p>The error code.</p>
     pub fn error_code(mut self, input: crate::types::ErrorCode) -> Self {
-        self.error_code = Some(input);
+        self.error_code = ::std::option::Option::Some(input);
         self
     }
     /// <p>The error code.</p>
-    pub fn set_error_code(mut self, input: std::option::Option<crate::types::ErrorCode>) -> Self {
+    pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::ErrorCode>) -> Self {
         self.error_code = input;
         self
     }
     /// <p>The error message.</p>
-    pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.error_message = Some(input.into());
+    pub fn error_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The error message.</p>
-    pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_error_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.error_message = input;
         self
     }

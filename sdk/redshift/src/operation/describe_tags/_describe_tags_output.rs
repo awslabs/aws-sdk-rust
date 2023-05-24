@@ -2,27 +2,27 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTagsOutput {
     /// <p>A list of tags with their associated resources.</p>
     #[doc(hidden)]
-    pub tagged_resources: std::option::Option<std::vec::Vec<crate::types::TaggedResource>>,
+    pub tagged_resources: ::std::option::Option<::std::vec::Vec<crate::types::TaggedResource>>,
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
     #[doc(hidden)]
-    pub marker: std::option::Option<std::string::String>,
+    pub marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeTagsOutput {
     /// <p>A list of tags with their associated resources.</p>
-    pub fn tagged_resources(&self) -> std::option::Option<&[crate::types::TaggedResource]> {
+    pub fn tagged_resources(&self) -> ::std::option::Option<&[crate::types::TaggedResource]> {
         self.tagged_resources.as_deref()
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeTagsOutput {
+impl ::aws_http::request_id::RequestId for DescribeTagsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -36,10 +36,13 @@ impl DescribeTagsOutput {
 
 /// A builder for [`DescribeTagsOutput`](crate::operation::describe_tags::DescribeTagsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeTagsOutputBuilder {
-    pub(crate) tagged_resources: std::option::Option<std::vec::Vec<crate::types::TaggedResource>>,
-    pub(crate) marker: std::option::Option<std::string::String>,
+    pub(crate) tagged_resources:
+        ::std::option::Option<::std::vec::Vec<crate::types::TaggedResource>>,
+    pub(crate) marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeTagsOutputBuilder {
@@ -51,24 +54,24 @@ impl DescribeTagsOutputBuilder {
     pub fn tagged_resources(mut self, input: crate::types::TaggedResource) -> Self {
         let mut v = self.tagged_resources.unwrap_or_default();
         v.push(input);
-        self.tagged_resources = Some(v);
+        self.tagged_resources = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of tags with their associated resources.</p>
     pub fn set_tagged_resources(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TaggedResource>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::TaggedResource>>,
     ) -> Self {
         self.tagged_resources = input;
         self
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
-    pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-        self.marker = Some(input.into());
+    pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
-    pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
     }

@@ -2,7 +2,7 @@
 
 /// <p>Information required to publish the MQTT message through the AWS IoT message broker.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IotTopicPublishAction {
     /// <p>The MQTT topic of the message. You can use a string expression that includes variables (<code>$variable.
     /// <variable-name></variable-name></code>) and input values (<code>$input.
@@ -11,10 +11,10 @@ pub struct IotTopicPublishAction {
     /// <path-to-datum></path-to-datum>
     /// </input-name></code>) as the topic string.</p>
     #[doc(hidden)]
-    pub mqtt_topic: std::option::Option<std::string::String>,
+    pub mqtt_topic: ::std::option::Option<::std::string::String>,
     /// <p>You can configure the action payload when you publish a message to an AWS IoT Core topic.</p>
     #[doc(hidden)]
-    pub payload: std::option::Option<crate::types::Payload>,
+    pub payload: ::std::option::Option<crate::types::Payload>,
 }
 impl IotTopicPublishAction {
     /// <p>The MQTT topic of the message. You can use a string expression that includes variables (<code>$variable.
@@ -23,11 +23,11 @@ impl IotTopicPublishAction {
     /// .
     /// <path-to-datum></path-to-datum>
     /// </input-name></code>) as the topic string.</p>
-    pub fn mqtt_topic(&self) -> std::option::Option<&str> {
+    pub fn mqtt_topic(&self) -> ::std::option::Option<&str> {
         self.mqtt_topic.as_deref()
     }
     /// <p>You can configure the action payload when you publish a message to an AWS IoT Core topic.</p>
-    pub fn payload(&self) -> std::option::Option<&crate::types::Payload> {
+    pub fn payload(&self) -> ::std::option::Option<&crate::types::Payload> {
         self.payload.as_ref()
     }
 }
@@ -40,10 +40,12 @@ impl IotTopicPublishAction {
 
 /// A builder for [`IotTopicPublishAction`](crate::types::IotTopicPublishAction).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct IotTopicPublishActionBuilder {
-    pub(crate) mqtt_topic: std::option::Option<std::string::String>,
-    pub(crate) payload: std::option::Option<crate::types::Payload>,
+    pub(crate) mqtt_topic: ::std::option::Option<::std::string::String>,
+    pub(crate) payload: ::std::option::Option<crate::types::Payload>,
 }
 impl IotTopicPublishActionBuilder {
     /// <p>The MQTT topic of the message. You can use a string expression that includes variables (<code>$variable.
@@ -52,8 +54,8 @@ impl IotTopicPublishActionBuilder {
     /// .
     /// <path-to-datum></path-to-datum>
     /// </input-name></code>) as the topic string.</p>
-    pub fn mqtt_topic(mut self, input: impl Into<std::string::String>) -> Self {
-        self.mqtt_topic = Some(input.into());
+    pub fn mqtt_topic(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.mqtt_topic = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The MQTT topic of the message. You can use a string expression that includes variables (<code>$variable.
@@ -62,17 +64,17 @@ impl IotTopicPublishActionBuilder {
     /// .
     /// <path-to-datum></path-to-datum>
     /// </input-name></code>) as the topic string.</p>
-    pub fn set_mqtt_topic(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_mqtt_topic(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.mqtt_topic = input;
         self
     }
     /// <p>You can configure the action payload when you publish a message to an AWS IoT Core topic.</p>
     pub fn payload(mut self, input: crate::types::Payload) -> Self {
-        self.payload = Some(input);
+        self.payload = ::std::option::Option::Some(input);
         self
     }
     /// <p>You can configure the action payload when you publish a message to an AWS IoT Core topic.</p>
-    pub fn set_payload(mut self, input: std::option::Option<crate::types::Payload>) -> Self {
+    pub fn set_payload(mut self, input: ::std::option::Option<crate::types::Payload>) -> Self {
         self.payload = input;
         self
     }

@@ -2,17 +2,17 @@
 
 /// <p>The layout configuration of a section.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SectionLayoutConfiguration {
     /// <p>The free-form layout configuration of a section.</p>
     #[doc(hidden)]
-    pub free_form_layout: std::option::Option<crate::types::FreeFormSectionLayoutConfiguration>,
+    pub free_form_layout: ::std::option::Option<crate::types::FreeFormSectionLayoutConfiguration>,
 }
 impl SectionLayoutConfiguration {
     /// <p>The free-form layout configuration of a section.</p>
     pub fn free_form_layout(
         &self,
-    ) -> std::option::Option<&crate::types::FreeFormSectionLayoutConfiguration> {
+    ) -> ::std::option::Option<&crate::types::FreeFormSectionLayoutConfiguration> {
         self.free_form_layout.as_ref()
     }
 }
@@ -25,10 +25,12 @@ impl SectionLayoutConfiguration {
 
 /// A builder for [`SectionLayoutConfiguration`](crate::types::SectionLayoutConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SectionLayoutConfigurationBuilder {
     pub(crate) free_form_layout:
-        std::option::Option<crate::types::FreeFormSectionLayoutConfiguration>,
+        ::std::option::Option<crate::types::FreeFormSectionLayoutConfiguration>,
 }
 impl SectionLayoutConfigurationBuilder {
     /// <p>The free-form layout configuration of a section.</p>
@@ -36,13 +38,13 @@ impl SectionLayoutConfigurationBuilder {
         mut self,
         input: crate::types::FreeFormSectionLayoutConfiguration,
     ) -> Self {
-        self.free_form_layout = Some(input);
+        self.free_form_layout = ::std::option::Option::Some(input);
         self
     }
     /// <p>The free-form layout configuration of a section.</p>
     pub fn set_free_form_layout(
         mut self,
-        input: std::option::Option<crate::types::FreeFormSectionLayoutConfiguration>,
+        input: ::std::option::Option<crate::types::FreeFormSectionLayoutConfiguration>,
     ) -> Self {
         self.free_form_layout = input;
         self

@@ -2,54 +2,56 @@
 
 /// Represents a summary of the properties of a workspace.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorkspaceSummary {
     /// Unique string identifying this workspace.
     #[doc(hidden)]
-    pub workspace_id: std::option::Option<std::string::String>,
+    pub workspace_id: ::std::option::Option<::std::string::String>,
     /// Alias of this workspace.
     #[doc(hidden)]
-    pub alias: std::option::Option<std::string::String>,
+    pub alias: ::std::option::Option<::std::string::String>,
     /// The AmazonResourceName of this workspace.
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// The status of this workspace.
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::WorkspaceStatus>,
+    pub status: ::std::option::Option<crate::types::WorkspaceStatus>,
     /// The time when the workspace was created.
     #[doc(hidden)]
-    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// The tags of this workspace.
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl WorkspaceSummary {
     /// Unique string identifying this workspace.
-    pub fn workspace_id(&self) -> std::option::Option<&str> {
+    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
         self.workspace_id.as_deref()
     }
     /// Alias of this workspace.
-    pub fn alias(&self) -> std::option::Option<&str> {
+    pub fn alias(&self) -> ::std::option::Option<&str> {
         self.alias.as_deref()
     }
     /// The AmazonResourceName of this workspace.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// The status of this workspace.
-    pub fn status(&self) -> std::option::Option<&crate::types::WorkspaceStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::WorkspaceStatus> {
         self.status.as_ref()
     }
     /// The time when the workspace was created.
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// The tags of this workspace.
     pub fn tags(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.tags.as_ref()
     }
 }
@@ -62,66 +64,72 @@ impl WorkspaceSummary {
 
 /// A builder for [`WorkspaceSummary`](crate::types::WorkspaceSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct WorkspaceSummaryBuilder {
-    pub(crate) workspace_id: std::option::Option<std::string::String>,
-    pub(crate) alias: std::option::Option<std::string::String>,
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::WorkspaceStatus>,
-    pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
+    pub(crate) alias: ::std::option::Option<::std::string::String>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::WorkspaceStatus>,
+    pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl WorkspaceSummaryBuilder {
     /// Unique string identifying this workspace.
-    pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.workspace_id = Some(input.into());
+    pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.workspace_id = ::std::option::Option::Some(input.into());
         self
     }
     /// Unique string identifying this workspace.
-    pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workspace_id = input;
         self
     }
     /// Alias of this workspace.
-    pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
-        self.alias = Some(input.into());
+    pub fn alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.alias = ::std::option::Option::Some(input.into());
         self
     }
     /// Alias of this workspace.
-    pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.alias = input;
         self
     }
     /// The AmazonResourceName of this workspace.
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// The AmazonResourceName of this workspace.
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// The status of this workspace.
     pub fn status(mut self, input: crate::types::WorkspaceStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// The status of this workspace.
-    pub fn set_status(mut self, input: std::option::Option<crate::types::WorkspaceStatus>) -> Self {
+    pub fn set_status(
+        mut self,
+        input: ::std::option::Option<crate::types::WorkspaceStatus>,
+    ) -> Self {
         self.status = input;
         self
     }
     /// The time when the workspace was created.
-    pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_at = Some(input);
+    pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_at = ::std::option::Option::Some(input);
         self
     }
     /// The time when the workspace was created.
     pub fn set_created_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_at = input;
         self
@@ -133,19 +141,19 @@ impl WorkspaceSummaryBuilder {
     /// The tags of this workspace.
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
+        self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// The tags of this workspace.
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.tags = input;

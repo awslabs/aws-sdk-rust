@@ -13,47 +13,50 @@ pub use crate::operation::start_medical_stream_transcription::_start_medical_str
 /// <li> <p> <code>sample-rate</code> </p> </li>
 /// </ul>
 /// <p>For more information on streaming with Amazon Transcribe Medical, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html">Transcribing streaming audio</a>.</p>
-#[derive(std::fmt::Debug)]
+#[derive(::std::fmt::Debug)]
 pub struct StartMedicalStreamTranscriptionFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::start_medical_stream_transcription::builders::StartMedicalStreamTranscriptionInputBuilder,
 }
 impl StartMedicalStreamTranscriptionFluentBuilder {
     /// Creates a new `StartMedicalStreamTranscription`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscription, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError>
+                    pub async fn customize(self) -> ::std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscription, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                        ::aws_smithy_http::result::SdkError<crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError>
     >{
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionOutput, aws_smithy_http::result::SdkError<crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError>>
+                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionOutput, ::aws_smithy_http::result::SdkError<crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError>>
                      {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -64,7 +67,7 @@ impl StartMedicalStreamTranscriptionFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> std::result::Result<crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionOutput, aws_smithy_http::result::SdkError<crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError>>
+                        pub async fn send(self) -> ::std::result::Result<crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionOutput, ::aws_smithy_http::result::SdkError<crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError>>
                          {
         self.send_middleware().await
     }
@@ -80,7 +83,7 @@ impl StartMedicalStreamTranscriptionFluentBuilder {
     /// </important>
     pub fn set_language_code(
         mut self,
-        input: std::option::Option<crate::types::LanguageCode>,
+        input: ::std::option::Option<crate::types::LanguageCode>,
     ) -> Self {
         self.inner = self.inner.set_language_code(input);
         self
@@ -91,7 +94,7 @@ impl StartMedicalStreamTranscriptionFluentBuilder {
         self
     }
     /// <p>The sample rate of the input audio (in hertz). Amazon Transcribe Medical supports a range from 16,000 Hz to 48,000 Hz. Note that the sample rate you specify must match that of your audio.</p>
-    pub fn set_media_sample_rate_hertz(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_media_sample_rate_hertz(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_media_sample_rate_hertz(input);
         self
     }
@@ -115,18 +118,24 @@ impl StartMedicalStreamTranscriptionFluentBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio">Media formats</a>.</p>
     pub fn set_media_encoding(
         mut self,
-        input: std::option::Option<crate::types::MediaEncoding>,
+        input: ::std::option::Option<crate::types::MediaEncoding>,
     ) -> Self {
         self.inner = self.inner.set_media_encoding(input);
         self
     }
     /// <p>Specify the name of the custom vocabulary that you want to use when processing your transcription. Note that vocabulary names are case sensitive.</p>
-    pub fn vocabulary_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn vocabulary_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.vocabulary_name(input.into());
         self
     }
     /// <p>Specify the name of the custom vocabulary that you want to use when processing your transcription. Note that vocabulary names are case sensitive.</p>
-    pub fn set_vocabulary_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_vocabulary_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_vocabulary_name(input);
         self
     }
@@ -136,7 +145,7 @@ impl StartMedicalStreamTranscriptionFluentBuilder {
         self
     }
     /// <p>Specify the medical specialty contained in your audio.</p>
-    pub fn set_specialty(mut self, input: std::option::Option<crate::types::Specialty>) -> Self {
+    pub fn set_specialty(mut self, input: ::std::option::Option<crate::types::Specialty>) -> Self {
         self.inner = self.inner.set_specialty(input);
         self
     }
@@ -146,7 +155,7 @@ impl StartMedicalStreamTranscriptionFluentBuilder {
         self
     }
     /// <p>Specify the type of input audio. For example, choose <code>DICTATION</code> for a provider dictating patient notes and <code>CONVERSATION</code> for a dialogue between a patient and a medical professional.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::Type>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::Type>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }
@@ -158,19 +167,19 @@ impl StartMedicalStreamTranscriptionFluentBuilder {
     }
     /// <p>Enables speaker partitioning (diarization) in your transcription output. Speaker partitioning labels the speech from individual speakers in your media file.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Partitioning speakers (diarization)</a>.</p>
-    pub fn set_show_speaker_label(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_show_speaker_label(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_show_speaker_label(input);
         self
     }
     /// <p>Specify a name for your transcription session. If you don't include this parameter in your request, Amazon Transcribe Medical generates an ID and returns it in the response.</p>
     /// <p>You can use a session ID to retry a streaming session.</p>
-    pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.session_id(input.into());
         self
     }
     /// <p>Specify a name for your transcription session. If you don't include this parameter in your request, Amazon Transcribe Medical generates an ID and returns it in the response.</p>
     /// <p>You can use a session ID to retry a streaming session.</p>
-    pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_session_id(input);
         self
     }
@@ -178,7 +187,7 @@ impl StartMedicalStreamTranscriptionFluentBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html">Transcribing streaming audio</a>.</p>
     pub fn audio_stream(
         mut self,
-        input: aws_smithy_http::event_stream::EventStreamSender<
+        input: ::aws_smithy_http::event_stream::EventStreamSender<
             crate::types::AudioStream,
             crate::types::error::AudioStreamError,
         >,
@@ -190,8 +199,8 @@ impl StartMedicalStreamTranscriptionFluentBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html">Transcribing streaming audio</a>.</p>
     pub fn set_audio_stream(
         mut self,
-        input: std::option::Option<
-            aws_smithy_http::event_stream::EventStreamSender<
+        input: ::std::option::Option<
+            ::aws_smithy_http::event_stream::EventStreamSender<
                 crate::types::AudioStream,
                 crate::types::error::AudioStreamError,
             >,
@@ -212,7 +221,7 @@ impl StartMedicalStreamTranscriptionFluentBuilder {
     /// <p>Channel identification transcribes the audio on each channel independently, then appends the output for each channel into one transcript.</p>
     /// <p>If you have multi-channel audio and do not enable channel identification, your audio is transcribed in a continuous manner and your transcript is not separated by channel.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/channel-id.html">Transcribing multi-channel audio</a>.</p>
-    pub fn set_enable_channel_identification(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enable_channel_identification(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enable_channel_identification(input);
         self
     }
@@ -222,7 +231,7 @@ impl StartMedicalStreamTranscriptionFluentBuilder {
         self
     }
     /// <p>Specify the number of channels in your audio stream. Up to two channels are supported.</p>
-    pub fn set_number_of_channels(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_number_of_channels(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_number_of_channels(input);
         self
     }
@@ -241,7 +250,7 @@ impl StartMedicalStreamTranscriptionFluentBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/phi-id.html">Identifying personal health information (PHI) in a transcription</a>.</p>
     pub fn set_content_identification_type(
         mut self,
-        input: std::option::Option<crate::types::MedicalContentIdentificationType>,
+        input: ::std::option::Option<crate::types::MedicalContentIdentificationType>,
     ) -> Self {
         self.inner = self.inner.set_content_identification_type(input);
         self

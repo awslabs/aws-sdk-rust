@@ -2,20 +2,20 @@
 
 /// <p>Data associated with the QUERY RecommendationTriggerType.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct QueryRecommendationTriggerData {
     /// <p>The text associated with the recommendation trigger.</p>
     #[doc(hidden)]
-    pub text: std::option::Option<std::string::String>,
+    pub text: ::std::option::Option<::std::string::String>,
 }
 impl QueryRecommendationTriggerData {
     /// <p>The text associated with the recommendation trigger.</p>
-    pub fn text(&self) -> std::option::Option<&str> {
+    pub fn text(&self) -> ::std::option::Option<&str> {
         self.text.as_deref()
     }
 }
-impl std::fmt::Debug for QueryRecommendationTriggerData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for QueryRecommendationTriggerData {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("QueryRecommendationTriggerData");
         formatter.field("text", &"*** Sensitive Data Redacted ***");
         formatter.finish()
@@ -30,18 +30,18 @@ impl QueryRecommendationTriggerData {
 
 /// A builder for [`QueryRecommendationTriggerData`](crate::types::QueryRecommendationTriggerData).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct QueryRecommendationTriggerDataBuilder {
-    pub(crate) text: std::option::Option<std::string::String>,
+    pub(crate) text: ::std::option::Option<::std::string::String>,
 }
 impl QueryRecommendationTriggerDataBuilder {
     /// <p>The text associated with the recommendation trigger.</p>
-    pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
-        self.text = Some(input.into());
+    pub fn text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.text = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The text associated with the recommendation trigger.</p>
-    pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.text = input;
         self
     }
@@ -50,8 +50,8 @@ impl QueryRecommendationTriggerDataBuilder {
         crate::types::QueryRecommendationTriggerData { text: self.text }
     }
 }
-impl std::fmt::Debug for QueryRecommendationTriggerDataBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for QueryRecommendationTriggerDataBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("QueryRecommendationTriggerDataBuilder");
         formatter.field("text", &"*** Sensitive Data Redacted ***");
         formatter.finish()

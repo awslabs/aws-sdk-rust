@@ -4,8 +4,8 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`r#type(AccessPolicyType)`](crate::operation::delete_access_policy::builders::DeleteAccessPolicyFluentBuilder::type) / [`set_type(Option<AccessPolicyType>)`](crate::operation::delete_access_policy::builders::DeleteAccessPolicyFluentBuilder::set_type): <p>The type of policy.</p>
-    ///   - [`name(impl Into<String>)`](crate::operation::delete_access_policy::builders::DeleteAccessPolicyFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_access_policy::builders::DeleteAccessPolicyFluentBuilder::set_name): <p>The name of the policy to delete.</p>
-    ///   - [`client_token(impl Into<String>)`](crate::operation::delete_access_policy::builders::DeleteAccessPolicyFluentBuilder::client_token) / [`set_client_token(Option<String>)`](crate::operation::delete_access_policy::builders::DeleteAccessPolicyFluentBuilder::set_client_token): <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
+    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::delete_access_policy::builders::DeleteAccessPolicyFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_access_policy::builders::DeleteAccessPolicyFluentBuilder::set_name): <p>The name of the policy to delete.</p>
+    ///   - [`client_token(impl ::std::convert::Into<String>)`](crate::operation::delete_access_policy::builders::DeleteAccessPolicyFluentBuilder::client_token) / [`set_client_token(Option<String>)`](crate::operation::delete_access_policy::builders::DeleteAccessPolicyFluentBuilder::set_client_token): <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     /// - On success, responds with [`DeleteAccessPolicyOutput`](crate::operation::delete_access_policy::DeleteAccessPolicyOutput)
     /// - On failure, responds with [`SdkError<DeleteAccessPolicyError>`](crate::operation::delete_access_policy::DeleteAccessPolicyError)
     pub fn delete_access_policy(

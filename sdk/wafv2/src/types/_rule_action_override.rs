@@ -3,22 +3,22 @@
 /// <p>Action setting to use in the place of a rule action that is configured inside the rule group. You specify one override for each rule whose action you want to change. </p>
 /// <p>You can use overrides for testing, for example you can override all of rule actions to <code>Count</code> and then monitor the resulting count metrics to understand how the rule group would handle your web traffic. You can also permanently override some or all actions, to modify how the rule group manages your web traffic.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuleActionOverride {
     /// <p>The name of the rule to override.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The override action to use, in place of the configured action of the rule in the rule group. </p>
     #[doc(hidden)]
-    pub action_to_use: std::option::Option<crate::types::RuleAction>,
+    pub action_to_use: ::std::option::Option<crate::types::RuleAction>,
 }
 impl RuleActionOverride {
     /// <p>The name of the rule to override.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The override action to use, in place of the configured action of the rule in the rule group. </p>
-    pub fn action_to_use(&self) -> std::option::Option<&crate::types::RuleAction> {
+    pub fn action_to_use(&self) -> ::std::option::Option<&crate::types::RuleAction> {
         self.action_to_use.as_ref()
     }
 }
@@ -31,31 +31,33 @@ impl RuleActionOverride {
 
 /// A builder for [`RuleActionOverride`](crate::types::RuleActionOverride).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RuleActionOverrideBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) action_to_use: std::option::Option<crate::types::RuleAction>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) action_to_use: ::std::option::Option<crate::types::RuleAction>,
 }
 impl RuleActionOverrideBuilder {
     /// <p>The name of the rule to override.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the rule to override.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The override action to use, in place of the configured action of the rule in the rule group. </p>
     pub fn action_to_use(mut self, input: crate::types::RuleAction) -> Self {
-        self.action_to_use = Some(input);
+        self.action_to_use = ::std::option::Option::Some(input);
         self
     }
     /// <p>The override action to use, in place of the configured action of the rule in the rule group. </p>
     pub fn set_action_to_use(
         mut self,
-        input: std::option::Option<crate::types::RuleAction>,
+        input: ::std::option::Option<crate::types::RuleAction>,
     ) -> Self {
         self.action_to_use = input;
         self

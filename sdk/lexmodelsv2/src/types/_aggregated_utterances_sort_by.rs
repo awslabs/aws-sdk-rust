@@ -2,24 +2,24 @@
 
 /// <p>Specifies attributes for sorting a list of utterances.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AggregatedUtterancesSortBy {
     /// <p>The utterance attribute to sort by.</p>
     #[doc(hidden)]
-    pub attribute: std::option::Option<crate::types::AggregatedUtterancesSortAttribute>,
+    pub attribute: ::std::option::Option<crate::types::AggregatedUtterancesSortAttribute>,
     /// <p>Specifies whether to sort the aggregated utterances in ascending or descending order.</p>
     #[doc(hidden)]
-    pub order: std::option::Option<crate::types::SortOrder>,
+    pub order: ::std::option::Option<crate::types::SortOrder>,
 }
 impl AggregatedUtterancesSortBy {
     /// <p>The utterance attribute to sort by.</p>
     pub fn attribute(
         &self,
-    ) -> std::option::Option<&crate::types::AggregatedUtterancesSortAttribute> {
+    ) -> ::std::option::Option<&crate::types::AggregatedUtterancesSortAttribute> {
         self.attribute.as_ref()
     }
     /// <p>Specifies whether to sort the aggregated utterances in ascending or descending order.</p>
-    pub fn order(&self) -> std::option::Option<&crate::types::SortOrder> {
+    pub fn order(&self) -> ::std::option::Option<&crate::types::SortOrder> {
         self.order.as_ref()
     }
 }
@@ -32,32 +32,34 @@ impl AggregatedUtterancesSortBy {
 
 /// A builder for [`AggregatedUtterancesSortBy`](crate::types::AggregatedUtterancesSortBy).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AggregatedUtterancesSortByBuilder {
-    pub(crate) attribute: std::option::Option<crate::types::AggregatedUtterancesSortAttribute>,
-    pub(crate) order: std::option::Option<crate::types::SortOrder>,
+    pub(crate) attribute: ::std::option::Option<crate::types::AggregatedUtterancesSortAttribute>,
+    pub(crate) order: ::std::option::Option<crate::types::SortOrder>,
 }
 impl AggregatedUtterancesSortByBuilder {
     /// <p>The utterance attribute to sort by.</p>
     pub fn attribute(mut self, input: crate::types::AggregatedUtterancesSortAttribute) -> Self {
-        self.attribute = Some(input);
+        self.attribute = ::std::option::Option::Some(input);
         self
     }
     /// <p>The utterance attribute to sort by.</p>
     pub fn set_attribute(
         mut self,
-        input: std::option::Option<crate::types::AggregatedUtterancesSortAttribute>,
+        input: ::std::option::Option<crate::types::AggregatedUtterancesSortAttribute>,
     ) -> Self {
         self.attribute = input;
         self
     }
     /// <p>Specifies whether to sort the aggregated utterances in ascending or descending order.</p>
     pub fn order(mut self, input: crate::types::SortOrder) -> Self {
-        self.order = Some(input);
+        self.order = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether to sort the aggregated utterances in ascending or descending order.</p>
-    pub fn set_order(mut self, input: std::option::Option<crate::types::SortOrder>) -> Self {
+    pub fn set_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.order = input;
         self
     }

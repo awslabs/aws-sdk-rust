@@ -2,22 +2,22 @@
 
 /// <p>Provides information about the Regions that are configured for multi-Region replication.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegionsInfo {
     /// <p>The Region where the Managed Microsoft AD directory was originally created.</p>
     #[doc(hidden)]
-    pub primary_region: std::option::Option<std::string::String>,
+    pub primary_region: ::std::option::Option<::std::string::String>,
     /// <p>Lists the Regions where the directory has been replicated, excluding the primary Region.</p>
     #[doc(hidden)]
-    pub additional_regions: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub additional_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RegionsInfo {
     /// <p>The Region where the Managed Microsoft AD directory was originally created.</p>
-    pub fn primary_region(&self) -> std::option::Option<&str> {
+    pub fn primary_region(&self) -> ::std::option::Option<&str> {
         self.primary_region.as_deref()
     }
     /// <p>Lists the Regions where the directory has been replicated, excluding the primary Region.</p>
-    pub fn additional_regions(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn additional_regions(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.additional_regions.as_deref()
     }
 }
@@ -30,19 +30,27 @@ impl RegionsInfo {
 
 /// A builder for [`RegionsInfo`](crate::types::RegionsInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RegionsInfoBuilder {
-    pub(crate) primary_region: std::option::Option<std::string::String>,
-    pub(crate) additional_regions: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) primary_region: ::std::option::Option<::std::string::String>,
+    pub(crate) additional_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RegionsInfoBuilder {
     /// <p>The Region where the Managed Microsoft AD directory was originally created.</p>
-    pub fn primary_region(mut self, input: impl Into<std::string::String>) -> Self {
-        self.primary_region = Some(input.into());
+    pub fn primary_region(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.primary_region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Region where the Managed Microsoft AD directory was originally created.</p>
-    pub fn set_primary_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_primary_region(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.primary_region = input;
         self
     }
@@ -51,16 +59,19 @@ impl RegionsInfoBuilder {
     /// To override the contents of this collection use [`set_additional_regions`](Self::set_additional_regions).
     ///
     /// <p>Lists the Regions where the directory has been replicated, excluding the primary Region.</p>
-    pub fn additional_regions(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn additional_regions(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.additional_regions.unwrap_or_default();
         v.push(input.into());
-        self.additional_regions = Some(v);
+        self.additional_regions = ::std::option::Option::Some(v);
         self
     }
     /// <p>Lists the Regions where the directory has been replicated, excluding the primary Region.</p>
     pub fn set_additional_regions(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.additional_regions = input;
         self

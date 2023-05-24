@@ -2,30 +2,30 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeReservedNodeOfferingsOutput {
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
     #[doc(hidden)]
-    pub marker: std::option::Option<std::string::String>,
+    pub marker: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>ReservedNodeOffering</code> objects.</p>
     #[doc(hidden)]
     pub reserved_node_offerings:
-        std::option::Option<std::vec::Vec<crate::types::ReservedNodeOffering>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ReservedNodeOffering>>,
     _request_id: Option<String>,
 }
 impl DescribeReservedNodeOfferingsOutput {
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
     /// <p>A list of <code>ReservedNodeOffering</code> objects.</p>
     pub fn reserved_node_offerings(
         &self,
-    ) -> std::option::Option<&[crate::types::ReservedNodeOffering]> {
+    ) -> ::std::option::Option<&[crate::types::ReservedNodeOffering]> {
         self.reserved_node_offerings.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeReservedNodeOfferingsOutput {
+impl ::aws_http::request_id::RequestId for DescribeReservedNodeOfferingsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -39,21 +39,23 @@ impl DescribeReservedNodeOfferingsOutput {
 
 /// A builder for [`DescribeReservedNodeOfferingsOutput`](crate::operation::describe_reserved_node_offerings::DescribeReservedNodeOfferingsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeReservedNodeOfferingsOutputBuilder {
-    pub(crate) marker: std::option::Option<std::string::String>,
+    pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) reserved_node_offerings:
-        std::option::Option<std::vec::Vec<crate::types::ReservedNodeOffering>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ReservedNodeOffering>>,
     _request_id: Option<String>,
 }
 impl DescribeReservedNodeOfferingsOutputBuilder {
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
-    pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-        self.marker = Some(input.into());
+    pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
-    pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
     }
@@ -65,13 +67,13 @@ impl DescribeReservedNodeOfferingsOutputBuilder {
     pub fn reserved_node_offerings(mut self, input: crate::types::ReservedNodeOffering) -> Self {
         let mut v = self.reserved_node_offerings.unwrap_or_default();
         v.push(input);
-        self.reserved_node_offerings = Some(v);
+        self.reserved_node_offerings = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of <code>ReservedNodeOffering</code> objects.</p>
     pub fn set_reserved_node_offerings(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ReservedNodeOffering>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ReservedNodeOffering>>,
     ) -> Self {
         self.reserved_node_offerings = input;
         self

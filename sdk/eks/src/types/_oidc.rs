@@ -2,15 +2,15 @@
 
 /// <p>An object representing the <a href="https://openid.net/connect/">OpenID Connect</a> (OIDC) identity provider information for the cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Oidc {
     /// <p>The issuer URL for the OIDC identity provider.</p>
     #[doc(hidden)]
-    pub issuer: std::option::Option<std::string::String>,
+    pub issuer: ::std::option::Option<::std::string::String>,
 }
 impl Oidc {
     /// <p>The issuer URL for the OIDC identity provider.</p>
-    pub fn issuer(&self) -> std::option::Option<&str> {
+    pub fn issuer(&self) -> ::std::option::Option<&str> {
         self.issuer.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl Oidc {
 
 /// A builder for [`Oidc`](crate::types::Oidc).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OidcBuilder {
-    pub(crate) issuer: std::option::Option<std::string::String>,
+    pub(crate) issuer: ::std::option::Option<::std::string::String>,
 }
 impl OidcBuilder {
     /// <p>The issuer URL for the OIDC identity provider.</p>
-    pub fn issuer(mut self, input: impl Into<std::string::String>) -> Self {
-        self.issuer = Some(input.into());
+    pub fn issuer(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.issuer = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The issuer URL for the OIDC identity provider.</p>
-    pub fn set_issuer(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_issuer(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.issuer = input;
         self
     }

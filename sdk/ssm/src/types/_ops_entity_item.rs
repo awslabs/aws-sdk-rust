@@ -2,27 +2,28 @@
 
 /// <p>The OpsData summary.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OpsEntityItem {
     /// <p>The time the OpsData was captured.</p>
     #[doc(hidden)]
-    pub capture_time: std::option::Option<std::string::String>,
+    pub capture_time: ::std::option::Option<::std::string::String>,
     /// <p>The details of an OpsData summary.</p>
     #[doc(hidden)]
-    pub content: std::option::Option<
-        std::vec::Vec<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub content: ::std::option::Option<
+        ::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     >,
 }
 impl OpsEntityItem {
     /// <p>The time the OpsData was captured.</p>
-    pub fn capture_time(&self) -> std::option::Option<&str> {
+    pub fn capture_time(&self) -> ::std::option::Option<&str> {
         self.capture_time.as_deref()
     }
     /// <p>The details of an OpsData summary.</p>
     pub fn content(
         &self,
-    ) -> std::option::Option<&[std::collections::HashMap<std::string::String, std::string::String>]>
-    {
+    ) -> ::std::option::Option<
+        &[::std::collections::HashMap<::std::string::String, ::std::string::String>],
+    > {
         self.content.as_deref()
     }
 }
@@ -35,21 +36,23 @@ impl OpsEntityItem {
 
 /// A builder for [`OpsEntityItem`](crate::types::OpsEntityItem).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OpsEntityItemBuilder {
-    pub(crate) capture_time: std::option::Option<std::string::String>,
-    pub(crate) content: std::option::Option<
-        std::vec::Vec<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) capture_time: ::std::option::Option<::std::string::String>,
+    pub(crate) content: ::std::option::Option<
+        ::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     >,
 }
 impl OpsEntityItemBuilder {
     /// <p>The time the OpsData was captured.</p>
-    pub fn capture_time(mut self, input: impl Into<std::string::String>) -> Self {
-        self.capture_time = Some(input.into());
+    pub fn capture_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.capture_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The time the OpsData was captured.</p>
-    pub fn set_capture_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_capture_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.capture_time = input;
         self
     }
@@ -60,18 +63,20 @@ impl OpsEntityItemBuilder {
     /// <p>The details of an OpsData summary.</p>
     pub fn content(
         mut self,
-        input: std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
     ) -> Self {
         let mut v = self.content.unwrap_or_default();
         v.push(input);
-        self.content = Some(v);
+        self.content = ::std::option::Option::Some(v);
         self
     }
     /// <p>The details of an OpsData summary.</p>
     pub fn set_content(
         mut self,
-        input: std::option::Option<
-            std::vec::Vec<std::collections::HashMap<std::string::String, std::string::String>>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<
+                ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+            >,
         >,
     ) -> Self {
         self.content = input;

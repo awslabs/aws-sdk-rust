@@ -4,7 +4,7 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_trust_stores::builders::ListTrustStoresFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_trust_stores::builders::ListTrustStoresFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_trust_stores::builders::ListTrustStoresFluentBuilder::set_next_token): <p>The pagination token used to retrieve the next page of results for this operation.</p>
+    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_trust_stores::builders::ListTrustStoresFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_trust_stores::builders::ListTrustStoresFluentBuilder::set_next_token): <p>The pagination token used to retrieve the next page of results for this operation.</p>
     ///   - [`max_results(i32)`](crate::operation::list_trust_stores::builders::ListTrustStoresFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_trust_stores::builders::ListTrustStoresFluentBuilder::set_max_results): <p>The maximum number of results to be included in the next page.</p>
     /// - On success, responds with [`ListTrustStoresOutput`](crate::operation::list_trust_stores::ListTrustStoresOutput) with field(s):
     ///   - [`trust_stores(Option<Vec<TrustStoreSummary>>)`](crate::operation::list_trust_stores::ListTrustStoresOutput::trust_stores): <p>The trust stores.</p>

@@ -2,11 +2,11 @@
 
 /// <p>A list of continuous export descriptions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContinuousExportDescription {
     /// <p>The unique ID assigned to this export.</p>
     #[doc(hidden)]
-    pub export_id: std::option::Option<std::string::String>,
+    pub export_id: ::std::option::Option<::std::string::String>,
     /// <p>Describes the status of the export. Can be one of the following values:</p>
     /// <ul>
     /// <li> <p>START_IN_PROGRESS - setting up resources to start continuous export.</p> </li>
@@ -18,7 +18,7 @@ pub struct ContinuousExportDescription {
     /// <li> <p>INACTIVE - the continuous export has been stopped. Data is no longer being exported to the customer bucket.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::ContinuousExportStatus>,
+    pub status: ::std::option::Option<crate::types::ContinuousExportStatus>,
     /// <p>Contains information about any errors that have occurred. This data type can have the following values:</p>
     /// <ul>
     /// <li> <p>ACCESS_DENIED - You don’t have permission to start Data Exploration in Amazon Athena. Contact your Amazon Web Services administrator for help. For more information, see <a href="http://docs.aws.amazon.com/application-discovery/latest/userguide/setting-up.html">Setting Up Amazon Web Services Application Discovery Service</a> in the Application Discovery Service User Guide.</p> </li>
@@ -39,30 +39,31 @@ pub struct ContinuousExportDescription {
     /// <li> <p>S3_NOT_SIGNED_UP - Your account is not signed up for the Amazon S3 service. You must sign up before you can use Amazon S3. You can sign up at the following URL: <a href="https://aws.amazon.com/s3">https://aws.amazon.com/s3</a>.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub status_detail: std::option::Option<std::string::String>,
+    pub status_detail: ::std::option::Option<::std::string::String>,
     /// <p>The name of the s3 bucket where the export data parquet files are stored.</p>
     #[doc(hidden)]
-    pub s3_bucket: std::option::Option<std::string::String>,
+    pub s3_bucket: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp representing when the continuous export was started.</p>
     #[doc(hidden)]
-    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp that represents when this continuous export was stopped.</p>
     #[doc(hidden)]
-    pub stop_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub stop_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The type of data collector used to gather this data (currently only offered for AGENT).</p>
     #[doc(hidden)]
-    pub data_source: std::option::Option<crate::types::DataSource>,
+    pub data_source: ::std::option::Option<crate::types::DataSource>,
     /// <p>An object which describes how the data is stored.</p>
     /// <ul>
     /// <li> <p> <code>databaseName</code> - the name of the Glue database used to store the schema.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub schema_storage_config:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub schema_storage_config: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl ContinuousExportDescription {
     /// <p>The unique ID assigned to this export.</p>
-    pub fn export_id(&self) -> std::option::Option<&str> {
+    pub fn export_id(&self) -> ::std::option::Option<&str> {
         self.export_id.as_deref()
     }
     /// <p>Describes the status of the export. Can be one of the following values:</p>
@@ -75,7 +76,7 @@ impl ContinuousExportDescription {
     /// <li> <p>STOP_FAILED - an error occurred stopping the export. To recover, call stop-continuous-export again.</p> </li>
     /// <li> <p>INACTIVE - the continuous export has been stopped. Data is no longer being exported to the customer bucket.</p> </li>
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::types::ContinuousExportStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::ContinuousExportStatus> {
         self.status.as_ref()
     }
     /// <p>Contains information about any errors that have occurred. This data type can have the following values:</p>
@@ -97,23 +98,23 @@ impl ContinuousExportDescription {
     /// <li> <p>S3_BUCKET_LIMIT_FAILURE - You reached the limit for Amazon S3 buckets. Reduce the number of S3 buckets or request a limit increase and try again. For more information, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">Bucket Restrictions and Limitations</a> in the Amazon Simple Storage Service Developer Guide.</p> </li>
     /// <li> <p>S3_NOT_SIGNED_UP - Your account is not signed up for the Amazon S3 service. You must sign up before you can use Amazon S3. You can sign up at the following URL: <a href="https://aws.amazon.com/s3">https://aws.amazon.com/s3</a>.</p> </li>
     /// </ul>
-    pub fn status_detail(&self) -> std::option::Option<&str> {
+    pub fn status_detail(&self) -> ::std::option::Option<&str> {
         self.status_detail.as_deref()
     }
     /// <p>The name of the s3 bucket where the export data parquet files are stored.</p>
-    pub fn s3_bucket(&self) -> std::option::Option<&str> {
+    pub fn s3_bucket(&self) -> ::std::option::Option<&str> {
         self.s3_bucket.as_deref()
     }
     /// <p>The timestamp representing when the continuous export was started.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The timestamp that represents when this continuous export was stopped.</p>
-    pub fn stop_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn stop_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.stop_time.as_ref()
     }
     /// <p>The type of data collector used to gather this data (currently only offered for AGENT).</p>
-    pub fn data_source(&self) -> std::option::Option<&crate::types::DataSource> {
+    pub fn data_source(&self) -> ::std::option::Option<&crate::types::DataSource> {
         self.data_source.as_ref()
     }
     /// <p>An object which describes how the data is stored.</p>
@@ -122,8 +123,9 @@ impl ContinuousExportDescription {
     /// </ul>
     pub fn schema_storage_config(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.schema_storage_config.as_ref()
     }
 }
@@ -136,26 +138,29 @@ impl ContinuousExportDescription {
 
 /// A builder for [`ContinuousExportDescription`](crate::types::ContinuousExportDescription).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ContinuousExportDescriptionBuilder {
-    pub(crate) export_id: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::ContinuousExportStatus>,
-    pub(crate) status_detail: std::option::Option<std::string::String>,
-    pub(crate) s3_bucket: std::option::Option<std::string::String>,
-    pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) stop_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) data_source: std::option::Option<crate::types::DataSource>,
-    pub(crate) schema_storage_config:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) export_id: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::ContinuousExportStatus>,
+    pub(crate) status_detail: ::std::option::Option<::std::string::String>,
+    pub(crate) s3_bucket: ::std::option::Option<::std::string::String>,
+    pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) stop_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) data_source: ::std::option::Option<crate::types::DataSource>,
+    pub(crate) schema_storage_config: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl ContinuousExportDescriptionBuilder {
     /// <p>The unique ID assigned to this export.</p>
-    pub fn export_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.export_id = Some(input.into());
+    pub fn export_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.export_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ID assigned to this export.</p>
-    pub fn set_export_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_export_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.export_id = input;
         self
     }
@@ -170,7 +175,7 @@ impl ContinuousExportDescriptionBuilder {
     /// <li> <p>INACTIVE - the continuous export has been stopped. Data is no longer being exported to the customer bucket.</p> </li>
     /// </ul>
     pub fn status(mut self, input: crate::types::ContinuousExportStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes the status of the export. Can be one of the following values:</p>
@@ -185,7 +190,7 @@ impl ContinuousExportDescriptionBuilder {
     /// </ul>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::ContinuousExportStatus>,
+        input: ::std::option::Option<crate::types::ContinuousExportStatus>,
     ) -> Self {
         self.status = input;
         self
@@ -209,8 +214,11 @@ impl ContinuousExportDescriptionBuilder {
     /// <li> <p>S3_BUCKET_LIMIT_FAILURE - You reached the limit for Amazon S3 buckets. Reduce the number of S3 buckets or request a limit increase and try again. For more information, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">Bucket Restrictions and Limitations</a> in the Amazon Simple Storage Service Developer Guide.</p> </li>
     /// <li> <p>S3_NOT_SIGNED_UP - Your account is not signed up for the Amazon S3 service. You must sign up before you can use Amazon S3. You can sign up at the following URL: <a href="https://aws.amazon.com/s3">https://aws.amazon.com/s3</a>.</p> </li>
     /// </ul>
-    pub fn status_detail(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status_detail = Some(input.into());
+    pub fn status_detail(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.status_detail = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Contains information about any errors that have occurred. This data type can have the following values:</p>
@@ -232,50 +240,59 @@ impl ContinuousExportDescriptionBuilder {
     /// <li> <p>S3_BUCKET_LIMIT_FAILURE - You reached the limit for Amazon S3 buckets. Reduce the number of S3 buckets or request a limit increase and try again. For more information, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">Bucket Restrictions and Limitations</a> in the Amazon Simple Storage Service Developer Guide.</p> </li>
     /// <li> <p>S3_NOT_SIGNED_UP - Your account is not signed up for the Amazon S3 service. You must sign up before you can use Amazon S3. You can sign up at the following URL: <a href="https://aws.amazon.com/s3">https://aws.amazon.com/s3</a>.</p> </li>
     /// </ul>
-    pub fn set_status_detail(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status_detail(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.status_detail = input;
         self
     }
     /// <p>The name of the s3 bucket where the export data parquet files are stored.</p>
-    pub fn s3_bucket(mut self, input: impl Into<std::string::String>) -> Self {
-        self.s3_bucket = Some(input.into());
+    pub fn s3_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.s3_bucket = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the s3 bucket where the export data parquet files are stored.</p>
-    pub fn set_s3_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_s3_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_bucket = input;
         self
     }
     /// <p>The timestamp representing when the continuous export was started.</p>
-    pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.start_time = Some(input);
+    pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.start_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The timestamp representing when the continuous export was started.</p>
     pub fn set_start_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.start_time = input;
         self
     }
     /// <p>The timestamp that represents when this continuous export was stopped.</p>
-    pub fn stop_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.stop_time = Some(input);
+    pub fn stop_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.stop_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The timestamp that represents when this continuous export was stopped.</p>
-    pub fn set_stop_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_stop_time(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
         self.stop_time = input;
         self
     }
     /// <p>The type of data collector used to gather this data (currently only offered for AGENT).</p>
     pub fn data_source(mut self, input: crate::types::DataSource) -> Self {
-        self.data_source = Some(input);
+        self.data_source = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of data collector used to gather this data (currently only offered for AGENT).</p>
-    pub fn set_data_source(mut self, input: std::option::Option<crate::types::DataSource>) -> Self {
+    pub fn set_data_source(
+        mut self,
+        input: ::std::option::Option<crate::types::DataSource>,
+    ) -> Self {
         self.data_source = input;
         self
     }
@@ -289,12 +306,12 @@ impl ContinuousExportDescriptionBuilder {
     /// </ul>
     pub fn schema_storage_config(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.schema_storage_config.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.schema_storage_config = Some(hash_map);
+        self.schema_storage_config = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>An object which describes how the data is stored.</p>
@@ -303,8 +320,8 @@ impl ContinuousExportDescriptionBuilder {
     /// </ul>
     pub fn set_schema_storage_config(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.schema_storage_config = input;

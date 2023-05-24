@@ -47,13 +47,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ImageBuilderState {
     #[allow(missing_docs)] // documentation missing in model
@@ -81,7 +81,7 @@ pub enum ImageBuilderState {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ImageBuilderState {
+impl ::std::convert::From<&str> for ImageBuilderState {
     fn from(s: &str) -> Self {
         match s {
             "DELETING" => ImageBuilderState::Deleting,
@@ -101,11 +101,11 @@ impl std::convert::From<&str> for ImageBuilderState {
         }
     }
 }
-impl std::str::FromStr for ImageBuilderState {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ImageBuilderState {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ImageBuilderState::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ImageBuilderState::from(s))
     }
 }
 impl ImageBuilderState {
@@ -143,7 +143,7 @@ impl ImageBuilderState {
         ]
     }
 }
-impl AsRef<str> for ImageBuilderState {
+impl ::std::convert::AsRef<str> for ImageBuilderState {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

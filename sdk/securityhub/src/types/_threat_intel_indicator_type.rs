@@ -47,13 +47,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ThreatIntelIndicatorType {
     #[allow(missing_docs)] // documentation missing in model
@@ -81,7 +81,7 @@ pub enum ThreatIntelIndicatorType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ThreatIntelIndicatorType {
+impl ::std::convert::From<&str> for ThreatIntelIndicatorType {
     fn from(s: &str) -> Self {
         match s {
             "DOMAIN" => ThreatIntelIndicatorType::Domain,
@@ -101,11 +101,11 @@ impl std::convert::From<&str> for ThreatIntelIndicatorType {
         }
     }
 }
-impl std::str::FromStr for ThreatIntelIndicatorType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ThreatIntelIndicatorType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ThreatIntelIndicatorType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ThreatIntelIndicatorType::from(s))
     }
 }
 impl ThreatIntelIndicatorType {
@@ -143,7 +143,7 @@ impl ThreatIntelIndicatorType {
         ]
     }
 }
-impl AsRef<str> for ThreatIntelIndicatorType {
+impl ::std::convert::AsRef<str> for ThreatIntelIndicatorType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

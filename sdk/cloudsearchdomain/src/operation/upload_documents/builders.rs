@@ -8,56 +8,63 @@ pub use crate::operation::upload_documents::_upload_documents_input::UploadDocum
 /// <p>Posts a batch of documents to a search domain for indexing. A document batch is a collection of add and delete operations that represent the documents you want to add, update, or delete from your domain. Batches can be described in either JSON or XML. Each item that you want Amazon CloudSearch to return as a search result (such as a product) is represented as a document. Every document has a unique ID and one or more fields that contain the data that you want to search and return in results. Individual documents cannot contain more than 1 MB of data. The entire batch cannot exceed 5 MB. To get the best possible upload performance, group add and delete operations in batches that are close the 5 MB limit. Submitting a large volume of single-document batches can overload a domain's document service. </p>
 /// <p>The endpoint for submitting <code>UploadDocuments</code> requests is domain-specific. To get the document endpoint for your domain, use the Amazon CloudSearch configuration service <code>DescribeDomains</code> action. A domain's endpoints are also displayed on the domain dashboard in the Amazon CloudSearch console. </p>
 /// <p>For more information about formatting your data for Amazon CloudSearch, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/preparing-data.html">Preparing Your Data</a> in the <i>Amazon CloudSearch Developer Guide</i>. For more information about uploading data for indexing, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/uploading-data.html">Uploading Data</a> in the <i>Amazon CloudSearch Developer Guide</i>. </p>
-#[derive(std::fmt::Debug)]
+#[derive(::std::fmt::Debug)]
 pub struct UploadDocumentsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::upload_documents::builders::UploadDocumentsInputBuilder,
 }
 impl UploadDocumentsFluentBuilder {
     /// Creates a new `UploadDocuments`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::upload_documents::UploadDocuments,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::upload_documents::UploadDocumentsError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::upload_documents::UploadDocumentsError,
+        >,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::upload_documents::UploadDocumentsOutput,
-        aws_smithy_http::result::SdkError<crate::operation::upload_documents::UploadDocumentsError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::upload_documents::UploadDocumentsError,
+        >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -70,21 +77,23 @@ impl UploadDocumentsFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::upload_documents::UploadDocumentsOutput,
-        aws_smithy_http::result::SdkError<crate::operation::upload_documents::UploadDocumentsError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::upload_documents::UploadDocumentsError,
+        >,
     > {
         self.send_middleware().await
     }
     /// <p>A batch of documents formatted in JSON or HTML.</p>
-    pub fn documents(mut self, input: aws_smithy_http::byte_stream::ByteStream) -> Self {
+    pub fn documents(mut self, input: ::aws_smithy_http::byte_stream::ByteStream) -> Self {
         self.inner = self.inner.documents(input);
         self
     }
     /// <p>A batch of documents formatted in JSON or HTML.</p>
     pub fn set_documents(
         mut self,
-        input: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
+        input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>,
     ) -> Self {
         self.inner = self.inner.set_documents(input);
         self
@@ -105,7 +114,7 @@ impl UploadDocumentsFluentBuilder {
     /// </ul>
     pub fn set_content_type(
         mut self,
-        input: std::option::Option<crate::types::ContentType>,
+        input: ::std::option::Option<crate::types::ContentType>,
     ) -> Self {
         self.inner = self.inner.set_content_type(input);
         self

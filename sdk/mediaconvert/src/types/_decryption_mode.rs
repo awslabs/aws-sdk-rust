@@ -39,13 +39,13 @@
 /// Specify the encryption mode that you used to encrypt your input files.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum DecryptionMode {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum DecryptionMode {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for DecryptionMode {
+impl ::std::convert::From<&str> for DecryptionMode {
     fn from(s: &str) -> Self {
         match s {
             "AES_CBC" => DecryptionMode::AesCbc,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for DecryptionMode {
         }
     }
 }
-impl std::str::FromStr for DecryptionMode {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for DecryptionMode {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DecryptionMode::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(DecryptionMode::from(s))
     }
 }
 impl DecryptionMode {
@@ -91,7 +91,7 @@ impl DecryptionMode {
         &["AES_CBC", "AES_CTR", "AES_GCM"]
     }
 }
-impl AsRef<str> for DecryptionMode {
+impl ::std::convert::AsRef<str> for DecryptionMode {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -2,7 +2,7 @@
 
 /// <p>Specifies details about how containers in a multi-container endpoint are run.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InferenceExecutionConfig {
     /// <p>How containers in a multi-container are run. The following values are valid.</p>
     /// <ul>
@@ -10,7 +10,7 @@ pub struct InferenceExecutionConfig {
     /// <li> <p> <code>DIRECT</code> - Only the individual container that you specify is run.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub mode: std::option::Option<crate::types::InferenceExecutionMode>,
+    pub mode: ::std::option::Option<crate::types::InferenceExecutionMode>,
 }
 impl InferenceExecutionConfig {
     /// <p>How containers in a multi-container are run. The following values are valid.</p>
@@ -18,7 +18,7 @@ impl InferenceExecutionConfig {
     /// <li> <p> <code>SERIAL</code> - Containers run as a serial pipeline.</p> </li>
     /// <li> <p> <code>DIRECT</code> - Only the individual container that you specify is run.</p> </li>
     /// </ul>
-    pub fn mode(&self) -> std::option::Option<&crate::types::InferenceExecutionMode> {
+    pub fn mode(&self) -> ::std::option::Option<&crate::types::InferenceExecutionMode> {
         self.mode.as_ref()
     }
 }
@@ -31,9 +31,11 @@ impl InferenceExecutionConfig {
 
 /// A builder for [`InferenceExecutionConfig`](crate::types::InferenceExecutionConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InferenceExecutionConfigBuilder {
-    pub(crate) mode: std::option::Option<crate::types::InferenceExecutionMode>,
+    pub(crate) mode: ::std::option::Option<crate::types::InferenceExecutionMode>,
 }
 impl InferenceExecutionConfigBuilder {
     /// <p>How containers in a multi-container are run. The following values are valid.</p>
@@ -42,7 +44,7 @@ impl InferenceExecutionConfigBuilder {
     /// <li> <p> <code>DIRECT</code> - Only the individual container that you specify is run.</p> </li>
     /// </ul>
     pub fn mode(mut self, input: crate::types::InferenceExecutionMode) -> Self {
-        self.mode = Some(input);
+        self.mode = ::std::option::Option::Some(input);
         self
     }
     /// <p>How containers in a multi-container are run. The following values are valid.</p>
@@ -52,7 +54,7 @@ impl InferenceExecutionConfigBuilder {
     /// </ul>
     pub fn set_mode(
         mut self,
-        input: std::option::Option<crate::types::InferenceExecutionMode>,
+        input: ::std::option::Option<crate::types::InferenceExecutionMode>,
     ) -> Self {
         self.mode = input;
         self

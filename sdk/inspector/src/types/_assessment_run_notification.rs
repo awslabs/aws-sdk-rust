@@ -2,53 +2,53 @@
 
 /// <p>Used as one of the elements of the <code>AssessmentRun</code> data type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssessmentRunNotification {
     /// <p>The date of the notification.</p>
     #[doc(hidden)]
-    pub date: std::option::Option<aws_smithy_types::DateTime>,
+    pub date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The event for which a notification is sent.</p>
     #[doc(hidden)]
-    pub event: std::option::Option<crate::types::InspectorEvent>,
+    pub event: ::std::option::Option<crate::types::InspectorEvent>,
     /// <p>The message included in the notification.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
     /// <p>The Boolean value that specifies whether the notification represents an error.</p>
     #[doc(hidden)]
-    pub error: std::option::Option<bool>,
+    pub error: ::std::option::Option<bool>,
     /// <p>The SNS topic to which the SNS notification is sent.</p>
     #[doc(hidden)]
-    pub sns_topic_arn: std::option::Option<std::string::String>,
+    pub sns_topic_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status code of the SNS notification.</p>
     #[doc(hidden)]
     pub sns_publish_status_code:
-        std::option::Option<crate::types::AssessmentRunNotificationSnsStatusCode>,
+        ::std::option::Option<crate::types::AssessmentRunNotificationSnsStatusCode>,
 }
 impl AssessmentRunNotification {
     /// <p>The date of the notification.</p>
-    pub fn date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.date.as_ref()
     }
     /// <p>The event for which a notification is sent.</p>
-    pub fn event(&self) -> std::option::Option<&crate::types::InspectorEvent> {
+    pub fn event(&self) -> ::std::option::Option<&crate::types::InspectorEvent> {
         self.event.as_ref()
     }
     /// <p>The message included in the notification.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
     /// <p>The Boolean value that specifies whether the notification represents an error.</p>
-    pub fn error(&self) -> std::option::Option<bool> {
+    pub fn error(&self) -> ::std::option::Option<bool> {
         self.error
     }
     /// <p>The SNS topic to which the SNS notification is sent.</p>
-    pub fn sns_topic_arn(&self) -> std::option::Option<&str> {
+    pub fn sns_topic_arn(&self) -> ::std::option::Option<&str> {
         self.sns_topic_arn.as_deref()
     }
     /// <p>The status code of the SNS notification.</p>
     pub fn sns_publish_status_code(
         &self,
-    ) -> std::option::Option<&crate::types::AssessmentRunNotificationSnsStatusCode> {
+    ) -> ::std::option::Option<&crate::types::AssessmentRunNotificationSnsStatusCode> {
         self.sns_publish_status_code.as_ref()
     }
 }
@@ -61,64 +61,72 @@ impl AssessmentRunNotification {
 
 /// A builder for [`AssessmentRunNotification`](crate::types::AssessmentRunNotification).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AssessmentRunNotificationBuilder {
-    pub(crate) date: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) event: std::option::Option<crate::types::InspectorEvent>,
-    pub(crate) message: std::option::Option<std::string::String>,
-    pub(crate) error: std::option::Option<bool>,
-    pub(crate) sns_topic_arn: std::option::Option<std::string::String>,
+    pub(crate) date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) event: ::std::option::Option<crate::types::InspectorEvent>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
+    pub(crate) error: ::std::option::Option<bool>,
+    pub(crate) sns_topic_arn: ::std::option::Option<::std::string::String>,
     pub(crate) sns_publish_status_code:
-        std::option::Option<crate::types::AssessmentRunNotificationSnsStatusCode>,
+        ::std::option::Option<crate::types::AssessmentRunNotificationSnsStatusCode>,
 }
 impl AssessmentRunNotificationBuilder {
     /// <p>The date of the notification.</p>
-    pub fn date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.date = Some(input);
+    pub fn date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date of the notification.</p>
-    pub fn set_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.date = input;
         self
     }
     /// <p>The event for which a notification is sent.</p>
     pub fn event(mut self, input: crate::types::InspectorEvent) -> Self {
-        self.event = Some(input);
+        self.event = ::std::option::Option::Some(input);
         self
     }
     /// <p>The event for which a notification is sent.</p>
-    pub fn set_event(mut self, input: std::option::Option<crate::types::InspectorEvent>) -> Self {
+    pub fn set_event(mut self, input: ::std::option::Option<crate::types::InspectorEvent>) -> Self {
         self.event = input;
         self
     }
     /// <p>The message included in the notification.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The message included in the notification.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
     /// <p>The Boolean value that specifies whether the notification represents an error.</p>
     pub fn error(mut self, input: bool) -> Self {
-        self.error = Some(input);
+        self.error = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Boolean value that specifies whether the notification represents an error.</p>
-    pub fn set_error(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_error(mut self, input: ::std::option::Option<bool>) -> Self {
         self.error = input;
         self
     }
     /// <p>The SNS topic to which the SNS notification is sent.</p>
-    pub fn sns_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.sns_topic_arn = Some(input.into());
+    pub fn sns_topic_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.sns_topic_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The SNS topic to which the SNS notification is sent.</p>
-    pub fn set_sns_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_sns_topic_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.sns_topic_arn = input;
         self
     }
@@ -127,13 +135,13 @@ impl AssessmentRunNotificationBuilder {
         mut self,
         input: crate::types::AssessmentRunNotificationSnsStatusCode,
     ) -> Self {
-        self.sns_publish_status_code = Some(input);
+        self.sns_publish_status_code = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status code of the SNS notification.</p>
     pub fn set_sns_publish_status_code(
         mut self,
-        input: std::option::Option<crate::types::AssessmentRunNotificationSnsStatusCode>,
+        input: ::std::option::Option<crate::types::AssessmentRunNotificationSnsStatusCode>,
     ) -> Self {
         self.sns_publish_status_code = input;
         self

@@ -2,14 +2,14 @@
 
 /// <p>Information about an on-premises instance tag filter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TagFilter {
     /// <p>The on-premises instance tag filter key.</p>
     #[doc(hidden)]
-    pub key: std::option::Option<std::string::String>,
+    pub key: ::std::option::Option<::std::string::String>,
     /// <p>The on-premises instance tag filter value.</p>
     #[doc(hidden)]
-    pub value: std::option::Option<std::string::String>,
+    pub value: ::std::option::Option<::std::string::String>,
     /// <p>The on-premises instance tag filter type:</p>
     /// <ul>
     /// <li> <p>KEY_ONLY: Key only.</p> </li>
@@ -17,15 +17,15 @@ pub struct TagFilter {
     /// <li> <p>KEY_AND_VALUE: Key and value.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::TagFilterType>,
+    pub r#type: ::std::option::Option<crate::types::TagFilterType>,
 }
 impl TagFilter {
     /// <p>The on-premises instance tag filter key.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<&str> {
         self.key.as_deref()
     }
     /// <p>The on-premises instance tag filter value.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
     /// <p>The on-premises instance tag filter type:</p>
@@ -34,7 +34,7 @@ impl TagFilter {
     /// <li> <p>VALUE_ONLY: Value only.</p> </li>
     /// <li> <p>KEY_AND_VALUE: Key and value.</p> </li>
     /// </ul>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::TagFilterType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::TagFilterType> {
         self.r#type.as_ref()
     }
 }
@@ -47,30 +47,32 @@ impl TagFilter {
 
 /// A builder for [`TagFilter`](crate::types::TagFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TagFilterBuilder {
-    pub(crate) key: std::option::Option<std::string::String>,
-    pub(crate) value: std::option::Option<std::string::String>,
-    pub(crate) r#type: std::option::Option<crate::types::TagFilterType>,
+    pub(crate) key: ::std::option::Option<::std::string::String>,
+    pub(crate) value: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::TagFilterType>,
 }
 impl TagFilterBuilder {
     /// <p>The on-premises instance tag filter key.</p>
-    pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.key = Some(input.into());
+    pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The on-premises instance tag filter key.</p>
-    pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key = input;
         self
     }
     /// <p>The on-premises instance tag filter value.</p>
-    pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.value = Some(input.into());
+    pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The on-premises instance tag filter value.</p>
-    pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
     }
@@ -81,7 +83,7 @@ impl TagFilterBuilder {
     /// <li> <p>KEY_AND_VALUE: Key and value.</p> </li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::TagFilterType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The on-premises instance tag filter type:</p>
@@ -90,7 +92,7 @@ impl TagFilterBuilder {
     /// <li> <p>VALUE_ONLY: Value only.</p> </li>
     /// <li> <p>KEY_AND_VALUE: Key and value.</p> </li>
     /// </ul>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::TagFilterType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::TagFilterType>) -> Self {
         self.r#type = input;
         self
     }

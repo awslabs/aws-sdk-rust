@@ -40,13 +40,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum Duration {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,7 +60,7 @@ pub enum Duration {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for Duration {
+impl ::std::convert::From<&str> for Duration {
     fn from(s: &str) -> Self {
         match s {
             "DAY_14" => Duration::Day14,
@@ -71,11 +71,11 @@ impl std::convert::From<&str> for Duration {
         }
     }
 }
-impl std::str::FromStr for Duration {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for Duration {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Duration::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(Duration::from(s))
     }
 }
 impl Duration {
@@ -94,7 +94,7 @@ impl Duration {
         &["DAY_14", "DAY_30", "DAY_7", "HR_24"]
     }
 }
-impl AsRef<str> for Duration {
+impl ::std::convert::AsRef<str> for Duration {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

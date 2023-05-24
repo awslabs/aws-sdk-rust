@@ -2,18 +2,18 @@
 
 /// <p>The log configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsElasticsearchDomainLogPublishingOptionsLogConfig {
     /// <p>The ARN of the CloudWatch Logs group to publish the logs to.</p>
     #[doc(hidden)]
-    pub cloud_watch_logs_log_group_arn: std::option::Option<std::string::String>,
+    pub cloud_watch_logs_log_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>Whether the log publishing is enabled.</p>
     #[doc(hidden)]
     pub enabled: bool,
 }
 impl AwsElasticsearchDomainLogPublishingOptionsLogConfig {
     /// <p>The ARN of the CloudWatch Logs group to publish the logs to.</p>
-    pub fn cloud_watch_logs_log_group_arn(&self) -> std::option::Option<&str> {
+    pub fn cloud_watch_logs_log_group_arn(&self) -> ::std::option::Option<&str> {
         self.cloud_watch_logs_log_group_arn.as_deref()
     }
     /// <p>Whether the log publishing is enabled.</p>
@@ -32,32 +32,37 @@ impl AwsElasticsearchDomainLogPublishingOptionsLogConfig {
 
 /// A builder for [`AwsElasticsearchDomainLogPublishingOptionsLogConfig`](crate::types::AwsElasticsearchDomainLogPublishingOptionsLogConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsElasticsearchDomainLogPublishingOptionsLogConfigBuilder {
-    pub(crate) cloud_watch_logs_log_group_arn: std::option::Option<std::string::String>,
-    pub(crate) enabled: std::option::Option<bool>,
+    pub(crate) cloud_watch_logs_log_group_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) enabled: ::std::option::Option<bool>,
 }
 impl AwsElasticsearchDomainLogPublishingOptionsLogConfigBuilder {
     /// <p>The ARN of the CloudWatch Logs group to publish the logs to.</p>
-    pub fn cloud_watch_logs_log_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cloud_watch_logs_log_group_arn = Some(input.into());
+    pub fn cloud_watch_logs_log_group_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.cloud_watch_logs_log_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the CloudWatch Logs group to publish the logs to.</p>
     pub fn set_cloud_watch_logs_log_group_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.cloud_watch_logs_log_group_arn = input;
         self
     }
     /// <p>Whether the log publishing is enabled.</p>
     pub fn enabled(mut self, input: bool) -> Self {
-        self.enabled = Some(input);
+        self.enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether the log publishing is enabled.</p>
-    pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
     }

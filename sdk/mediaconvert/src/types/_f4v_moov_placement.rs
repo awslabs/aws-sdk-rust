@@ -38,13 +38,13 @@
 /// If set to PROGRESSIVE_DOWNLOAD, the MOOV atom is relocated to the beginning of the archive as required for progressive downloading. Otherwise it is placed normally at the end.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum F4vMoovPlacement {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum F4vMoovPlacement {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for F4vMoovPlacement {
+impl ::std::convert::From<&str> for F4vMoovPlacement {
     fn from(s: &str) -> Self {
         match s {
             "NORMAL" => F4vMoovPlacement::Normal,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for F4vMoovPlacement {
         }
     }
 }
-impl std::str::FromStr for F4vMoovPlacement {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for F4vMoovPlacement {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(F4vMoovPlacement::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(F4vMoovPlacement::from(s))
     }
 }
 impl F4vMoovPlacement {
@@ -86,7 +86,7 @@ impl F4vMoovPlacement {
         &["NORMAL", "PROGRESSIVE_DOWNLOAD"]
     }
 }
-impl AsRef<str> for F4vMoovPlacement {
+impl ::std::convert::AsRef<str> for F4vMoovPlacement {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

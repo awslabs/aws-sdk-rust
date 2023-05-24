@@ -2,45 +2,45 @@
 
 /// <p>Request object for UpdateStorage api. Its used to update the storage attributes for the cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateStorageInput {
     /// <p>The Amazon Resource Name (ARN) of the cluster to be updated.</p>
     #[doc(hidden)]
-    pub cluster_arn: std::option::Option<std::string::String>,
+    pub cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p>The version of cluster to update from. A successful operation will then generate a new version.</p>
     #[doc(hidden)]
-    pub current_version: std::option::Option<std::string::String>,
+    pub current_version: ::std::option::Option<::std::string::String>,
     /// <p>EBS volume provisioned throughput information.</p>
     #[doc(hidden)]
-    pub provisioned_throughput: std::option::Option<crate::types::ProvisionedThroughput>,
+    pub provisioned_throughput: ::std::option::Option<crate::types::ProvisionedThroughput>,
     /// <p>Controls storage mode for supported storage tiers.</p>
     #[doc(hidden)]
-    pub storage_mode: std::option::Option<crate::types::StorageMode>,
+    pub storage_mode: ::std::option::Option<crate::types::StorageMode>,
     /// <p>size of the EBS volume to update.</p>
     #[doc(hidden)]
-    pub volume_size_gb: std::option::Option<i32>,
+    pub volume_size_gb: ::std::option::Option<i32>,
 }
 impl UpdateStorageInput {
     /// <p>The Amazon Resource Name (ARN) of the cluster to be updated.</p>
-    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+    pub fn cluster_arn(&self) -> ::std::option::Option<&str> {
         self.cluster_arn.as_deref()
     }
     /// <p>The version of cluster to update from. A successful operation will then generate a new version.</p>
-    pub fn current_version(&self) -> std::option::Option<&str> {
+    pub fn current_version(&self) -> ::std::option::Option<&str> {
         self.current_version.as_deref()
     }
     /// <p>EBS volume provisioned throughput information.</p>
     pub fn provisioned_throughput(
         &self,
-    ) -> std::option::Option<&crate::types::ProvisionedThroughput> {
+    ) -> ::std::option::Option<&crate::types::ProvisionedThroughput> {
         self.provisioned_throughput.as_ref()
     }
     /// <p>Controls storage mode for supported storage tiers.</p>
-    pub fn storage_mode(&self) -> std::option::Option<&crate::types::StorageMode> {
+    pub fn storage_mode(&self) -> ::std::option::Option<&crate::types::StorageMode> {
         self.storage_mode.as_ref()
     }
     /// <p>size of the EBS volume to update.</p>
-    pub fn volume_size_gb(&self) -> std::option::Option<i32> {
+    pub fn volume_size_gb(&self) -> ::std::option::Option<i32> {
         self.volume_size_gb
     }
 }
@@ -53,79 +53,87 @@ impl UpdateStorageInput {
 
 /// A builder for [`UpdateStorageInput`](crate::operation::update_storage::UpdateStorageInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateStorageInputBuilder {
-    pub(crate) cluster_arn: std::option::Option<std::string::String>,
-    pub(crate) current_version: std::option::Option<std::string::String>,
-    pub(crate) provisioned_throughput: std::option::Option<crate::types::ProvisionedThroughput>,
-    pub(crate) storage_mode: std::option::Option<crate::types::StorageMode>,
-    pub(crate) volume_size_gb: std::option::Option<i32>,
+    pub(crate) cluster_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) current_version: ::std::option::Option<::std::string::String>,
+    pub(crate) provisioned_throughput: ::std::option::Option<crate::types::ProvisionedThroughput>,
+    pub(crate) storage_mode: ::std::option::Option<crate::types::StorageMode>,
+    pub(crate) volume_size_gb: ::std::option::Option<i32>,
 }
 impl UpdateStorageInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the cluster to be updated.</p>
-    pub fn cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cluster_arn = Some(input.into());
+    pub fn cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cluster_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the cluster to be updated.</p>
-    pub fn set_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cluster_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_arn = input;
         self
     }
     /// <p>The version of cluster to update from. A successful operation will then generate a new version.</p>
-    pub fn current_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.current_version = Some(input.into());
+    pub fn current_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.current_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of cluster to update from. A successful operation will then generate a new version.</p>
-    pub fn set_current_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_current_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.current_version = input;
         self
     }
     /// <p>EBS volume provisioned throughput information.</p>
     pub fn provisioned_throughput(mut self, input: crate::types::ProvisionedThroughput) -> Self {
-        self.provisioned_throughput = Some(input);
+        self.provisioned_throughput = ::std::option::Option::Some(input);
         self
     }
     /// <p>EBS volume provisioned throughput information.</p>
     pub fn set_provisioned_throughput(
         mut self,
-        input: std::option::Option<crate::types::ProvisionedThroughput>,
+        input: ::std::option::Option<crate::types::ProvisionedThroughput>,
     ) -> Self {
         self.provisioned_throughput = input;
         self
     }
     /// <p>Controls storage mode for supported storage tiers.</p>
     pub fn storage_mode(mut self, input: crate::types::StorageMode) -> Self {
-        self.storage_mode = Some(input);
+        self.storage_mode = ::std::option::Option::Some(input);
         self
     }
     /// <p>Controls storage mode for supported storage tiers.</p>
     pub fn set_storage_mode(
         mut self,
-        input: std::option::Option<crate::types::StorageMode>,
+        input: ::std::option::Option<crate::types::StorageMode>,
     ) -> Self {
         self.storage_mode = input;
         self
     }
     /// <p>size of the EBS volume to update.</p>
     pub fn volume_size_gb(mut self, input: i32) -> Self {
-        self.volume_size_gb = Some(input);
+        self.volume_size_gb = ::std::option::Option::Some(input);
         self
     }
     /// <p>size of the EBS volume to update.</p>
-    pub fn set_volume_size_gb(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_volume_size_gb(mut self, input: ::std::option::Option<i32>) -> Self {
         self.volume_size_gb = input;
         self
     }
     /// Consumes the builder and constructs a [`UpdateStorageInput`](crate::operation::update_storage::UpdateStorageInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::update_storage::UpdateStorageInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::update_storage::UpdateStorageInput {
+        ::std::result::Result::Ok(crate::operation::update_storage::UpdateStorageInput {
             cluster_arn: self.cluster_arn,
             current_version: self.current_version,
             provisioned_throughput: self.provisioned_throughput,

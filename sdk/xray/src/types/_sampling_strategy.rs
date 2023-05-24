@@ -2,22 +2,22 @@
 
 /// <p>The name and value of a sampling rule to apply to a trace summary.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SamplingStrategy {
     /// <p>The name of a sampling rule.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<crate::types::SamplingStrategyName>,
+    pub name: ::std::option::Option<crate::types::SamplingStrategyName>,
     /// <p>The value of a sampling rule.</p>
     #[doc(hidden)]
-    pub value: std::option::Option<f64>,
+    pub value: ::std::option::Option<f64>,
 }
 impl SamplingStrategy {
     /// <p>The name of a sampling rule.</p>
-    pub fn name(&self) -> std::option::Option<&crate::types::SamplingStrategyName> {
+    pub fn name(&self) -> ::std::option::Option<&crate::types::SamplingStrategyName> {
         self.name.as_ref()
     }
     /// <p>The value of a sampling rule.</p>
-    pub fn value(&self) -> std::option::Option<f64> {
+    pub fn value(&self) -> ::std::option::Option<f64> {
         self.value
     }
 }
@@ -30,32 +30,34 @@ impl SamplingStrategy {
 
 /// A builder for [`SamplingStrategy`](crate::types::SamplingStrategy).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SamplingStrategyBuilder {
-    pub(crate) name: std::option::Option<crate::types::SamplingStrategyName>,
-    pub(crate) value: std::option::Option<f64>,
+    pub(crate) name: ::std::option::Option<crate::types::SamplingStrategyName>,
+    pub(crate) value: ::std::option::Option<f64>,
 }
 impl SamplingStrategyBuilder {
     /// <p>The name of a sampling rule.</p>
     pub fn name(mut self, input: crate::types::SamplingStrategyName) -> Self {
-        self.name = Some(input);
+        self.name = ::std::option::Option::Some(input);
         self
     }
     /// <p>The name of a sampling rule.</p>
     pub fn set_name(
         mut self,
-        input: std::option::Option<crate::types::SamplingStrategyName>,
+        input: ::std::option::Option<crate::types::SamplingStrategyName>,
     ) -> Self {
         self.name = input;
         self
     }
     /// <p>The value of a sampling rule.</p>
     pub fn value(mut self, input: f64) -> Self {
-        self.value = Some(input);
+        self.value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The value of a sampling rule.</p>
-    pub fn set_value(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.value = input;
         self
     }

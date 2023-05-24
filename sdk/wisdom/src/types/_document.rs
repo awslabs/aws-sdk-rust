@@ -2,29 +2,29 @@
 
 /// <p>The document.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Document {
     /// <p>A reference to the content resource.</p>
     #[doc(hidden)]
-    pub content_reference: std::option::Option<crate::types::ContentReference>,
+    pub content_reference: ::std::option::Option<crate::types::ContentReference>,
     /// <p>The title of the document.</p>
     #[doc(hidden)]
-    pub title: std::option::Option<crate::types::DocumentText>,
+    pub title: ::std::option::Option<crate::types::DocumentText>,
     /// <p>The excerpt from the document.</p>
     #[doc(hidden)]
-    pub excerpt: std::option::Option<crate::types::DocumentText>,
+    pub excerpt: ::std::option::Option<crate::types::DocumentText>,
 }
 impl Document {
     /// <p>A reference to the content resource.</p>
-    pub fn content_reference(&self) -> std::option::Option<&crate::types::ContentReference> {
+    pub fn content_reference(&self) -> ::std::option::Option<&crate::types::ContentReference> {
         self.content_reference.as_ref()
     }
     /// <p>The title of the document.</p>
-    pub fn title(&self) -> std::option::Option<&crate::types::DocumentText> {
+    pub fn title(&self) -> ::std::option::Option<&crate::types::DocumentText> {
         self.title.as_ref()
     }
     /// <p>The excerpt from the document.</p>
-    pub fn excerpt(&self) -> std::option::Option<&crate::types::DocumentText> {
+    pub fn excerpt(&self) -> ::std::option::Option<&crate::types::DocumentText> {
         self.excerpt.as_ref()
     }
 }
@@ -37,43 +37,45 @@ impl Document {
 
 /// A builder for [`Document`](crate::types::Document).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DocumentBuilder {
-    pub(crate) content_reference: std::option::Option<crate::types::ContentReference>,
-    pub(crate) title: std::option::Option<crate::types::DocumentText>,
-    pub(crate) excerpt: std::option::Option<crate::types::DocumentText>,
+    pub(crate) content_reference: ::std::option::Option<crate::types::ContentReference>,
+    pub(crate) title: ::std::option::Option<crate::types::DocumentText>,
+    pub(crate) excerpt: ::std::option::Option<crate::types::DocumentText>,
 }
 impl DocumentBuilder {
     /// <p>A reference to the content resource.</p>
     pub fn content_reference(mut self, input: crate::types::ContentReference) -> Self {
-        self.content_reference = Some(input);
+        self.content_reference = ::std::option::Option::Some(input);
         self
     }
     /// <p>A reference to the content resource.</p>
     pub fn set_content_reference(
         mut self,
-        input: std::option::Option<crate::types::ContentReference>,
+        input: ::std::option::Option<crate::types::ContentReference>,
     ) -> Self {
         self.content_reference = input;
         self
     }
     /// <p>The title of the document.</p>
     pub fn title(mut self, input: crate::types::DocumentText) -> Self {
-        self.title = Some(input);
+        self.title = ::std::option::Option::Some(input);
         self
     }
     /// <p>The title of the document.</p>
-    pub fn set_title(mut self, input: std::option::Option<crate::types::DocumentText>) -> Self {
+    pub fn set_title(mut self, input: ::std::option::Option<crate::types::DocumentText>) -> Self {
         self.title = input;
         self
     }
     /// <p>The excerpt from the document.</p>
     pub fn excerpt(mut self, input: crate::types::DocumentText) -> Self {
-        self.excerpt = Some(input);
+        self.excerpt = ::std::option::Option::Some(input);
         self
     }
     /// <p>The excerpt from the document.</p>
-    pub fn set_excerpt(mut self, input: std::option::Option<crate::types::DocumentText>) -> Self {
+    pub fn set_excerpt(mut self, input: ::std::option::Option<crate::types::DocumentText>) -> Self {
         self.excerpt = input;
         self
     }

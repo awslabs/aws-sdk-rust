@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteRoleAlias`](crate::operation::delete_role_alias::builders::DeleteRoleAliasFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`role_alias(impl Into<String>)`](crate::operation::delete_role_alias::builders::DeleteRoleAliasFluentBuilder::role_alias) / [`set_role_alias(Option<String>)`](crate::operation::delete_role_alias::builders::DeleteRoleAliasFluentBuilder::set_role_alias): <p>The role alias to delete.</p>
+    ///   - [`role_alias(impl ::std::convert::Into<String>)`](crate::operation::delete_role_alias::builders::DeleteRoleAliasFluentBuilder::role_alias) / [`set_role_alias(Option<String>)`](crate::operation::delete_role_alias::builders::DeleteRoleAliasFluentBuilder::set_role_alias): <p>The role alias to delete.</p>
     /// - On success, responds with [`DeleteRoleAliasOutput`](crate::operation::delete_role_alias::DeleteRoleAliasOutput)
     /// - On failure, responds with [`SdkError<DeleteRoleAliasError>`](crate::operation::delete_role_alias::DeleteRoleAliasError)
     pub fn delete_role_alias(

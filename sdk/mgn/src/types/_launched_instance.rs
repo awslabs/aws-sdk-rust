@@ -2,29 +2,29 @@
 
 /// <p>Launched instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LaunchedInstance {
     /// <p>Launched instance EC2 ID.</p>
     #[doc(hidden)]
-    pub ec2_instance_id: std::option::Option<std::string::String>,
+    pub ec2_instance_id: ::std::option::Option<::std::string::String>,
     /// <p>Launched instance Job ID.</p>
     #[doc(hidden)]
-    pub job_id: std::option::Option<std::string::String>,
+    pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>Launched instance first boot.</p>
     #[doc(hidden)]
-    pub first_boot: std::option::Option<crate::types::FirstBoot>,
+    pub first_boot: ::std::option::Option<crate::types::FirstBoot>,
 }
 impl LaunchedInstance {
     /// <p>Launched instance EC2 ID.</p>
-    pub fn ec2_instance_id(&self) -> std::option::Option<&str> {
+    pub fn ec2_instance_id(&self) -> ::std::option::Option<&str> {
         self.ec2_instance_id.as_deref()
     }
     /// <p>Launched instance Job ID.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<&str> {
         self.job_id.as_deref()
     }
     /// <p>Launched instance first boot.</p>
-    pub fn first_boot(&self) -> std::option::Option<&crate::types::FirstBoot> {
+    pub fn first_boot(&self) -> ::std::option::Option<&crate::types::FirstBoot> {
         self.first_boot.as_ref()
     }
 }
@@ -37,40 +37,48 @@ impl LaunchedInstance {
 
 /// A builder for [`LaunchedInstance`](crate::types::LaunchedInstance).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LaunchedInstanceBuilder {
-    pub(crate) ec2_instance_id: std::option::Option<std::string::String>,
-    pub(crate) job_id: std::option::Option<std::string::String>,
-    pub(crate) first_boot: std::option::Option<crate::types::FirstBoot>,
+    pub(crate) ec2_instance_id: ::std::option::Option<::std::string::String>,
+    pub(crate) job_id: ::std::option::Option<::std::string::String>,
+    pub(crate) first_boot: ::std::option::Option<crate::types::FirstBoot>,
 }
 impl LaunchedInstanceBuilder {
     /// <p>Launched instance EC2 ID.</p>
-    pub fn ec2_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ec2_instance_id = Some(input.into());
+    pub fn ec2_instance_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.ec2_instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Launched instance EC2 ID.</p>
-    pub fn set_ec2_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ec2_instance_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.ec2_instance_id = input;
         self
     }
     /// <p>Launched instance Job ID.</p>
-    pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.job_id = Some(input.into());
+    pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.job_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Launched instance Job ID.</p>
-    pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_id = input;
         self
     }
     /// <p>Launched instance first boot.</p>
     pub fn first_boot(mut self, input: crate::types::FirstBoot) -> Self {
-        self.first_boot = Some(input);
+        self.first_boot = ::std::option::Option::Some(input);
         self
     }
     /// <p>Launched instance first boot.</p>
-    pub fn set_first_boot(mut self, input: std::option::Option<crate::types::FirstBoot>) -> Self {
+    pub fn set_first_boot(mut self, input: ::std::option::Option<crate::types::FirstBoot>) -> Self {
         self.first_boot = input;
         self
     }

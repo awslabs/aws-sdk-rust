@@ -2,15 +2,15 @@
 
 /// <p>Contains configuration information for the calculation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CalculationConfiguration {
     /// <p>A string that contains the code for the calculation.</p>
     #[doc(hidden)]
-    pub code_block: std::option::Option<std::string::String>,
+    pub code_block: ::std::option::Option<::std::string::String>,
 }
 impl CalculationConfiguration {
     /// <p>A string that contains the code for the calculation.</p>
-    pub fn code_block(&self) -> std::option::Option<&str> {
+    pub fn code_block(&self) -> ::std::option::Option<&str> {
         self.code_block.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl CalculationConfiguration {
 
 /// A builder for [`CalculationConfiguration`](crate::types::CalculationConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CalculationConfigurationBuilder {
-    pub(crate) code_block: std::option::Option<std::string::String>,
+    pub(crate) code_block: ::std::option::Option<::std::string::String>,
 }
 impl CalculationConfigurationBuilder {
     /// <p>A string that contains the code for the calculation.</p>
-    pub fn code_block(mut self, input: impl Into<std::string::String>) -> Self {
-        self.code_block = Some(input.into());
+    pub fn code_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.code_block = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A string that contains the code for the calculation.</p>
-    pub fn set_code_block(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_code_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.code_block = input;
         self
     }

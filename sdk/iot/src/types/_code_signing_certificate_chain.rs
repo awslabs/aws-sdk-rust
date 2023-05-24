@@ -2,22 +2,22 @@
 
 /// <p>Describes the certificate chain being used when code signing a file.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CodeSigningCertificateChain {
     /// <p>The name of the certificate.</p>
     #[doc(hidden)]
-    pub certificate_name: std::option::Option<std::string::String>,
+    pub certificate_name: ::std::option::Option<::std::string::String>,
     /// <p>A base64 encoded binary representation of the code signing certificate chain.</p>
     #[doc(hidden)]
-    pub inline_document: std::option::Option<std::string::String>,
+    pub inline_document: ::std::option::Option<::std::string::String>,
 }
 impl CodeSigningCertificateChain {
     /// <p>The name of the certificate.</p>
-    pub fn certificate_name(&self) -> std::option::Option<&str> {
+    pub fn certificate_name(&self) -> ::std::option::Option<&str> {
         self.certificate_name.as_deref()
     }
     /// <p>A base64 encoded binary representation of the code signing certificate chain.</p>
-    pub fn inline_document(&self) -> std::option::Option<&str> {
+    pub fn inline_document(&self) -> ::std::option::Option<&str> {
         self.inline_document.as_deref()
     }
 }
@@ -30,29 +30,43 @@ impl CodeSigningCertificateChain {
 
 /// A builder for [`CodeSigningCertificateChain`](crate::types::CodeSigningCertificateChain).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CodeSigningCertificateChainBuilder {
-    pub(crate) certificate_name: std::option::Option<std::string::String>,
-    pub(crate) inline_document: std::option::Option<std::string::String>,
+    pub(crate) certificate_name: ::std::option::Option<::std::string::String>,
+    pub(crate) inline_document: ::std::option::Option<::std::string::String>,
 }
 impl CodeSigningCertificateChainBuilder {
     /// <p>The name of the certificate.</p>
-    pub fn certificate_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.certificate_name = Some(input.into());
+    pub fn certificate_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.certificate_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the certificate.</p>
-    pub fn set_certificate_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_certificate_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.certificate_name = input;
         self
     }
     /// <p>A base64 encoded binary representation of the code signing certificate chain.</p>
-    pub fn inline_document(mut self, input: impl Into<std::string::String>) -> Self {
-        self.inline_document = Some(input.into());
+    pub fn inline_document(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.inline_document = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A base64 encoded binary representation of the code signing certificate chain.</p>
-    pub fn set_inline_document(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_inline_document(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inline_document = input;
         self
     }

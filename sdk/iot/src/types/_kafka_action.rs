@@ -2,47 +2,49 @@
 
 /// <p>Send messages to an Amazon Managed Streaming for Apache Kafka (Amazon MSK) or self-managed Apache Kafka cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KafkaAction {
     /// <p>The ARN of Kafka action's VPC <code>TopicRuleDestination</code>.</p>
     #[doc(hidden)]
-    pub destination_arn: std::option::Option<std::string::String>,
+    pub destination_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Kafka topic for messages to be sent to the Kafka broker.</p>
     #[doc(hidden)]
-    pub topic: std::option::Option<std::string::String>,
+    pub topic: ::std::option::Option<::std::string::String>,
     /// <p>The Kafka message key.</p>
     #[doc(hidden)]
-    pub key: std::option::Option<std::string::String>,
+    pub key: ::std::option::Option<::std::string::String>,
     /// <p>The Kafka message partition.</p>
     #[doc(hidden)]
-    pub partition: std::option::Option<std::string::String>,
+    pub partition: ::std::option::Option<::std::string::String>,
     /// <p>Properties of the Apache Kafka producer client.</p>
     #[doc(hidden)]
-    pub client_properties:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub client_properties: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl KafkaAction {
     /// <p>The ARN of Kafka action's VPC <code>TopicRuleDestination</code>.</p>
-    pub fn destination_arn(&self) -> std::option::Option<&str> {
+    pub fn destination_arn(&self) -> ::std::option::Option<&str> {
         self.destination_arn.as_deref()
     }
     /// <p>The Kafka topic for messages to be sent to the Kafka broker.</p>
-    pub fn topic(&self) -> std::option::Option<&str> {
+    pub fn topic(&self) -> ::std::option::Option<&str> {
         self.topic.as_deref()
     }
     /// <p>The Kafka message key.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<&str> {
         self.key.as_deref()
     }
     /// <p>The Kafka message partition.</p>
-    pub fn partition(&self) -> std::option::Option<&str> {
+    pub fn partition(&self) -> ::std::option::Option<&str> {
         self.partition.as_deref()
     }
     /// <p>Properties of the Apache Kafka producer client.</p>
     pub fn client_properties(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.client_properties.as_ref()
     }
 }
@@ -55,53 +57,62 @@ impl KafkaAction {
 
 /// A builder for [`KafkaAction`](crate::types::KafkaAction).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct KafkaActionBuilder {
-    pub(crate) destination_arn: std::option::Option<std::string::String>,
-    pub(crate) topic: std::option::Option<std::string::String>,
-    pub(crate) key: std::option::Option<std::string::String>,
-    pub(crate) partition: std::option::Option<std::string::String>,
-    pub(crate) client_properties:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) destination_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) topic: ::std::option::Option<::std::string::String>,
+    pub(crate) key: ::std::option::Option<::std::string::String>,
+    pub(crate) partition: ::std::option::Option<::std::string::String>,
+    pub(crate) client_properties: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl KafkaActionBuilder {
     /// <p>The ARN of Kafka action's VPC <code>TopicRuleDestination</code>.</p>
-    pub fn destination_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.destination_arn = Some(input.into());
+    pub fn destination_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.destination_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of Kafka action's VPC <code>TopicRuleDestination</code>.</p>
-    pub fn set_destination_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_destination_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.destination_arn = input;
         self
     }
     /// <p>The Kafka topic for messages to be sent to the Kafka broker.</p>
-    pub fn topic(mut self, input: impl Into<std::string::String>) -> Self {
-        self.topic = Some(input.into());
+    pub fn topic(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.topic = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Kafka topic for messages to be sent to the Kafka broker.</p>
-    pub fn set_topic(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_topic(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.topic = input;
         self
     }
     /// <p>The Kafka message key.</p>
-    pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.key = Some(input.into());
+    pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Kafka message key.</p>
-    pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key = input;
         self
     }
     /// <p>The Kafka message partition.</p>
-    pub fn partition(mut self, input: impl Into<std::string::String>) -> Self {
-        self.partition = Some(input.into());
+    pub fn partition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.partition = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Kafka message partition.</p>
-    pub fn set_partition(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_partition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.partition = input;
         self
     }
@@ -112,19 +123,19 @@ impl KafkaActionBuilder {
     /// <p>Properties of the Apache Kafka producer client.</p>
     pub fn client_properties(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.client_properties.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.client_properties = Some(hash_map);
+        self.client_properties = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Properties of the Apache Kafka producer client.</p>
     pub fn set_client_properties(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.client_properties = input;

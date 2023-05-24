@@ -2,7 +2,7 @@
 pub(crate) fn de_tags_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::types::Tags>,
+    ::std::option::Option<crate::types::Tags>,
     crate::operation::list_tags_for_resource::ListTagsForResourceError,
 > {
     (!body.is_empty())
@@ -14,13 +14,13 @@ pub(crate) fn de_tags_payload(
         .transpose()
 }
 
-pub fn de_tags(inp: &[u8]) -> Result<crate::types::Tags, aws_smithy_xml::decode::XmlDecodeError> {
-    let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
+pub fn de_tags(inp: &[u8]) -> Result<crate::types::Tags, ::aws_smithy_xml::decode::XmlDecodeError> {
+    let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
     let start_el = decoder.start_el();
     if !(start_el.matches("Tags")) {
-        return Err(aws_smithy_xml::decode::XmlDecodeError::custom(format!(
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected Tags got {:?}",
             start_el
         )));

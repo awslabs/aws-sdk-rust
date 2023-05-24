@@ -4,22 +4,22 @@
 /// <p>This data type is used as a response element in the <code>ListEntitiesForPolicy</code> operation. </p>
 /// <p>For more information about managed policies, refer to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed policies and inline policies</a> in the <i>IAM User Guide</i>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PolicyRole {
     /// <p>The name (friendly name, not ARN) identifying the role.</p>
     #[doc(hidden)]
-    pub role_name: std::option::Option<std::string::String>,
+    pub role_name: ::std::option::Option<::std::string::String>,
     /// <p>The stable and unique string identifying the role. For more information about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>.</p>
     #[doc(hidden)]
-    pub role_id: std::option::Option<std::string::String>,
+    pub role_id: ::std::option::Option<::std::string::String>,
 }
 impl PolicyRole {
     /// <p>The name (friendly name, not ARN) identifying the role.</p>
-    pub fn role_name(&self) -> std::option::Option<&str> {
+    pub fn role_name(&self) -> ::std::option::Option<&str> {
         self.role_name.as_deref()
     }
     /// <p>The stable and unique string identifying the role. For more information about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>.</p>
-    pub fn role_id(&self) -> std::option::Option<&str> {
+    pub fn role_id(&self) -> ::std::option::Option<&str> {
         self.role_id.as_deref()
     }
 }
@@ -32,29 +32,31 @@ impl PolicyRole {
 
 /// A builder for [`PolicyRole`](crate::types::PolicyRole).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PolicyRoleBuilder {
-    pub(crate) role_name: std::option::Option<std::string::String>,
-    pub(crate) role_id: std::option::Option<std::string::String>,
+    pub(crate) role_name: ::std::option::Option<::std::string::String>,
+    pub(crate) role_id: ::std::option::Option<::std::string::String>,
 }
 impl PolicyRoleBuilder {
     /// <p>The name (friendly name, not ARN) identifying the role.</p>
-    pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.role_name = Some(input.into());
+    pub fn role_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.role_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name (friendly name, not ARN) identifying the role.</p>
-    pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_role_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_name = input;
         self
     }
     /// <p>The stable and unique string identifying the role. For more information about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>.</p>
-    pub fn role_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.role_id = Some(input.into());
+    pub fn role_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.role_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The stable and unique string identifying the role. For more information about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>.</p>
-    pub fn set_role_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_role_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_id = input;
         self
     }

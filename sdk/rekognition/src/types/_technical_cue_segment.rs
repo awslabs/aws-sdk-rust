@@ -2,22 +2,22 @@
 
 /// <p>Information about a technical cue segment. For more information, see <code>SegmentDetection</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TechnicalCueSegment {
     /// <p>The type of the technical cue.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::TechnicalCueType>,
+    pub r#type: ::std::option::Option<crate::types::TechnicalCueType>,
     /// <p>The confidence that Amazon Rekognition Video has in the accuracy of the detected segment.</p>
     #[doc(hidden)]
-    pub confidence: std::option::Option<f32>,
+    pub confidence: ::std::option::Option<f32>,
 }
 impl TechnicalCueSegment {
     /// <p>The type of the technical cue.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::TechnicalCueType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::TechnicalCueType> {
         self.r#type.as_ref()
     }
     /// <p>The confidence that Amazon Rekognition Video has in the accuracy of the detected segment.</p>
-    pub fn confidence(&self) -> std::option::Option<f32> {
+    pub fn confidence(&self) -> ::std::option::Option<f32> {
         self.confidence
     }
 }
@@ -30,29 +30,34 @@ impl TechnicalCueSegment {
 
 /// A builder for [`TechnicalCueSegment`](crate::types::TechnicalCueSegment).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TechnicalCueSegmentBuilder {
-    pub(crate) r#type: std::option::Option<crate::types::TechnicalCueType>,
-    pub(crate) confidence: std::option::Option<f32>,
+    pub(crate) r#type: ::std::option::Option<crate::types::TechnicalCueType>,
+    pub(crate) confidence: ::std::option::Option<f32>,
 }
 impl TechnicalCueSegmentBuilder {
     /// <p>The type of the technical cue.</p>
     pub fn r#type(mut self, input: crate::types::TechnicalCueType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of the technical cue.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::TechnicalCueType>) -> Self {
+    pub fn set_type(
+        mut self,
+        input: ::std::option::Option<crate::types::TechnicalCueType>,
+    ) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The confidence that Amazon Rekognition Video has in the accuracy of the detected segment.</p>
     pub fn confidence(mut self, input: f32) -> Self {
-        self.confidence = Some(input);
+        self.confidence = ::std::option::Option::Some(input);
         self
     }
     /// <p>The confidence that Amazon Rekognition Video has in the accuracy of the detected segment.</p>
-    pub fn set_confidence(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
         self.confidence = input;
         self
     }

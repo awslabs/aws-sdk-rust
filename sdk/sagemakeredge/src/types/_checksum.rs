@@ -2,22 +2,22 @@
 
 /// <p>Information about the checksum of a model deployed on a device.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Checksum {
     /// <p>The type of the checksum.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::ChecksumType>,
+    pub r#type: ::std::option::Option<crate::types::ChecksumType>,
     /// <p>The checksum of the model.</p>
     #[doc(hidden)]
-    pub sum: std::option::Option<std::string::String>,
+    pub sum: ::std::option::Option<::std::string::String>,
 }
 impl Checksum {
     /// <p>The type of the checksum.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::ChecksumType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ChecksumType> {
         self.r#type.as_ref()
     }
     /// <p>The checksum of the model.</p>
-    pub fn sum(&self) -> std::option::Option<&str> {
+    pub fn sum(&self) -> ::std::option::Option<&str> {
         self.sum.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl Checksum {
 
 /// A builder for [`Checksum`](crate::types::Checksum).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ChecksumBuilder {
-    pub(crate) r#type: std::option::Option<crate::types::ChecksumType>,
-    pub(crate) sum: std::option::Option<std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::ChecksumType>,
+    pub(crate) sum: ::std::option::Option<::std::string::String>,
 }
 impl ChecksumBuilder {
     /// <p>The type of the checksum.</p>
     pub fn r#type(mut self, input: crate::types::ChecksumType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of the checksum.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::ChecksumType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ChecksumType>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The checksum of the model.</p>
-    pub fn sum(mut self, input: impl Into<std::string::String>) -> Self {
-        self.sum = Some(input.into());
+    pub fn sum(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.sum = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The checksum of the model.</p>
-    pub fn set_sum(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_sum(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sum = input;
         self
     }

@@ -2,18 +2,18 @@
 
 /// <p> Entity that comprises information of count and percentage. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CountPercent {
     /// <p> Indicates the count of occurences of the given statistic. </p>
     #[doc(hidden)]
-    pub count: std::option::Option<i32>,
+    pub count: ::std::option::Option<i32>,
     /// <p> Indicates the percentage of occurances of the given statistic. </p>
     #[doc(hidden)]
     pub percentage: f32,
 }
 impl CountPercent {
     /// <p> Indicates the count of occurences of the given statistic. </p>
-    pub fn count(&self) -> std::option::Option<i32> {
+    pub fn count(&self) -> ::std::option::Option<i32> {
         self.count
     }
     /// <p> Indicates the percentage of occurances of the given statistic. </p>
@@ -30,29 +30,31 @@ impl CountPercent {
 
 /// A builder for [`CountPercent`](crate::types::CountPercent).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CountPercentBuilder {
-    pub(crate) count: std::option::Option<i32>,
-    pub(crate) percentage: std::option::Option<f32>,
+    pub(crate) count: ::std::option::Option<i32>,
+    pub(crate) percentage: ::std::option::Option<f32>,
 }
 impl CountPercentBuilder {
     /// <p> Indicates the count of occurences of the given statistic. </p>
     pub fn count(mut self, input: i32) -> Self {
-        self.count = Some(input);
+        self.count = ::std::option::Option::Some(input);
         self
     }
     /// <p> Indicates the count of occurences of the given statistic. </p>
-    pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.count = input;
         self
     }
     /// <p> Indicates the percentage of occurances of the given statistic. </p>
     pub fn percentage(mut self, input: f32) -> Self {
-        self.percentage = Some(input);
+        self.percentage = ::std::option::Option::Some(input);
         self
     }
     /// <p> Indicates the percentage of occurances of the given statistic. </p>
-    pub fn set_percentage(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_percentage(mut self, input: ::std::option::Option<f32>) -> Self {
         self.percentage = input;
         self
     }

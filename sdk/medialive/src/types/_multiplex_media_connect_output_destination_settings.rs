@@ -2,15 +2,15 @@
 
 /// Multiplex MediaConnect output destination settings.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MultiplexMediaConnectOutputDestinationSettings {
     /// The MediaConnect entitlement ARN available as a Flow source.
     #[doc(hidden)]
-    pub entitlement_arn: std::option::Option<std::string::String>,
+    pub entitlement_arn: ::std::option::Option<::std::string::String>,
 }
 impl MultiplexMediaConnectOutputDestinationSettings {
     /// The MediaConnect entitlement ARN available as a Flow source.
-    pub fn entitlement_arn(&self) -> std::option::Option<&str> {
+    pub fn entitlement_arn(&self) -> ::std::option::Option<&str> {
         self.entitlement_arn.as_deref()
     }
 }
@@ -24,18 +24,26 @@ impl MultiplexMediaConnectOutputDestinationSettings {
 
 /// A builder for [`MultiplexMediaConnectOutputDestinationSettings`](crate::types::MultiplexMediaConnectOutputDestinationSettings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MultiplexMediaConnectOutputDestinationSettingsBuilder {
-    pub(crate) entitlement_arn: std::option::Option<std::string::String>,
+    pub(crate) entitlement_arn: ::std::option::Option<::std::string::String>,
 }
 impl MultiplexMediaConnectOutputDestinationSettingsBuilder {
     /// The MediaConnect entitlement ARN available as a Flow source.
-    pub fn entitlement_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.entitlement_arn = Some(input.into());
+    pub fn entitlement_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.entitlement_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// The MediaConnect entitlement ARN available as a Flow source.
-    pub fn set_entitlement_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_entitlement_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.entitlement_arn = input;
         self
     }

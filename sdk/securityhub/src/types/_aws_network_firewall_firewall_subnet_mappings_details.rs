@@ -2,15 +2,15 @@
 
 /// <p>A public subnet that Network Firewall uses for the firewall.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsNetworkFirewallFirewallSubnetMappingsDetails {
     /// <p>The identifier of the subnet</p>
     #[doc(hidden)]
-    pub subnet_id: std::option::Option<std::string::String>,
+    pub subnet_id: ::std::option::Option<::std::string::String>,
 }
 impl AwsNetworkFirewallFirewallSubnetMappingsDetails {
     /// <p>The identifier of the subnet</p>
-    pub fn subnet_id(&self) -> std::option::Option<&str> {
+    pub fn subnet_id(&self) -> ::std::option::Option<&str> {
         self.subnet_id.as_deref()
     }
 }
@@ -24,18 +24,20 @@ impl AwsNetworkFirewallFirewallSubnetMappingsDetails {
 
 /// A builder for [`AwsNetworkFirewallFirewallSubnetMappingsDetails`](crate::types::AwsNetworkFirewallFirewallSubnetMappingsDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsNetworkFirewallFirewallSubnetMappingsDetailsBuilder {
-    pub(crate) subnet_id: std::option::Option<std::string::String>,
+    pub(crate) subnet_id: ::std::option::Option<::std::string::String>,
 }
 impl AwsNetworkFirewallFirewallSubnetMappingsDetailsBuilder {
     /// <p>The identifier of the subnet</p>
-    pub fn subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.subnet_id = Some(input.into());
+    pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.subnet_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the subnet</p>
-    pub fn set_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subnet_id = input;
         self
     }

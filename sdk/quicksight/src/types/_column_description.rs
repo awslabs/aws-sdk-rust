@@ -2,15 +2,15 @@
 
 /// <p>Metadata that contains a description for a column.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ColumnDescription {
     /// <p>The text of a description for a column.</p>
     #[doc(hidden)]
-    pub text: std::option::Option<std::string::String>,
+    pub text: ::std::option::Option<::std::string::String>,
 }
 impl ColumnDescription {
     /// <p>The text of a description for a column.</p>
-    pub fn text(&self) -> std::option::Option<&str> {
+    pub fn text(&self) -> ::std::option::Option<&str> {
         self.text.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl ColumnDescription {
 
 /// A builder for [`ColumnDescription`](crate::types::ColumnDescription).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ColumnDescriptionBuilder {
-    pub(crate) text: std::option::Option<std::string::String>,
+    pub(crate) text: ::std::option::Option<::std::string::String>,
 }
 impl ColumnDescriptionBuilder {
     /// <p>The text of a description for a column.</p>
-    pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
-        self.text = Some(input.into());
+    pub fn text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.text = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The text of a description for a column.</p>
-    pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.text = input;
         self
     }

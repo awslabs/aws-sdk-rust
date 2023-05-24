@@ -38,13 +38,13 @@
 /// <p> The type of a notification. It must be ACTUAL or FORECASTED.</p>
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum NotificationType {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum NotificationType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for NotificationType {
+impl ::std::convert::From<&str> for NotificationType {
     fn from(s: &str) -> Self {
         match s {
             "ACTUAL" => NotificationType::Actual,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for NotificationType {
         }
     }
 }
-impl std::str::FromStr for NotificationType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for NotificationType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(NotificationType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(NotificationType::from(s))
     }
 }
 impl NotificationType {
@@ -86,7 +86,7 @@ impl NotificationType {
         &["ACTUAL", "FORECASTED"]
     }
 }
-impl AsRef<str> for NotificationType {
+impl ::std::convert::AsRef<str> for NotificationType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

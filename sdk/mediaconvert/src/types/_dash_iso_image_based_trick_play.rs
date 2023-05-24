@@ -40,13 +40,13 @@
 /// Specify whether MediaConvert generates images for trick play. Keep the default value, None (NONE), to not generate any images. Choose Thumbnail (THUMBNAIL) to generate tiled thumbnails. Choose Thumbnail and full frame (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution images of single frames. MediaConvert adds an entry in the .mpd manifest for each set of images that you generate. A common application for these images is Roku trick mode. The thumbnails and full-frame images that MediaConvert creates with this feature are compatible with this Roku specification: https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum DashIsoImageBasedTrickPlay {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,7 +60,7 @@ pub enum DashIsoImageBasedTrickPlay {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for DashIsoImageBasedTrickPlay {
+impl ::std::convert::From<&str> for DashIsoImageBasedTrickPlay {
     fn from(s: &str) -> Self {
         match s {
             "ADVANCED" => DashIsoImageBasedTrickPlay::Advanced,
@@ -73,11 +73,11 @@ impl std::convert::From<&str> for DashIsoImageBasedTrickPlay {
         }
     }
 }
-impl std::str::FromStr for DashIsoImageBasedTrickPlay {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for DashIsoImageBasedTrickPlay {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DashIsoImageBasedTrickPlay::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(DashIsoImageBasedTrickPlay::from(s))
     }
 }
 impl DashIsoImageBasedTrickPlay {
@@ -96,7 +96,7 @@ impl DashIsoImageBasedTrickPlay {
         &["ADVANCED", "NONE", "THUMBNAIL", "THUMBNAIL_AND_FULLFRAME"]
     }
 }
-impl AsRef<str> for DashIsoImageBasedTrickPlay {
+impl ::std::convert::AsRef<str> for DashIsoImageBasedTrickPlay {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

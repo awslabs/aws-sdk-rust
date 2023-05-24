@@ -2,7 +2,7 @@
 pub(crate) fn de_push_notification_template_response_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::types::PushNotificationTemplateResponse>,
+    ::std::option::Option<crate::types::PushNotificationTemplateResponse>,
     crate::operation::get_push_template::GetPushTemplateError,
 > {
     (!body.is_empty()).then(||{

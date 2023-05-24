@@ -2,36 +2,36 @@
 
 /// <p>Summary information for an Amazon OpenSearch Service-managed VPC endpoint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VpcEndpointSummary {
     /// <p>The unique identifier of the endpoint.</p>
     #[doc(hidden)]
-    pub vpc_endpoint_id: std::option::Option<std::string::String>,
+    pub vpc_endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>The creator of the endpoint.</p>
     #[doc(hidden)]
-    pub vpc_endpoint_owner: std::option::Option<std::string::String>,
+    pub vpc_endpoint_owner: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the domain associated with the endpoint.</p>
     #[doc(hidden)]
-    pub domain_arn: std::option::Option<std::string::String>,
+    pub domain_arn: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the endpoint.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::VpcEndpointStatus>,
+    pub status: ::std::option::Option<crate::types::VpcEndpointStatus>,
 }
 impl VpcEndpointSummary {
     /// <p>The unique identifier of the endpoint.</p>
-    pub fn vpc_endpoint_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_endpoint_id(&self) -> ::std::option::Option<&str> {
         self.vpc_endpoint_id.as_deref()
     }
     /// <p>The creator of the endpoint.</p>
-    pub fn vpc_endpoint_owner(&self) -> std::option::Option<&str> {
+    pub fn vpc_endpoint_owner(&self) -> ::std::option::Option<&str> {
         self.vpc_endpoint_owner.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the domain associated with the endpoint.</p>
-    pub fn domain_arn(&self) -> std::option::Option<&str> {
+    pub fn domain_arn(&self) -> ::std::option::Option<&str> {
         self.domain_arn.as_deref()
     }
     /// <p>The current status of the endpoint.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::VpcEndpointStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::VpcEndpointStatus> {
         self.status.as_ref()
     }
 }
@@ -44,56 +44,67 @@ impl VpcEndpointSummary {
 
 /// A builder for [`VpcEndpointSummary`](crate::types::VpcEndpointSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VpcEndpointSummaryBuilder {
-    pub(crate) vpc_endpoint_id: std::option::Option<std::string::String>,
-    pub(crate) vpc_endpoint_owner: std::option::Option<std::string::String>,
-    pub(crate) domain_arn: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::VpcEndpointStatus>,
+    pub(crate) vpc_endpoint_id: ::std::option::Option<::std::string::String>,
+    pub(crate) vpc_endpoint_owner: ::std::option::Option<::std::string::String>,
+    pub(crate) domain_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::VpcEndpointStatus>,
 }
 impl VpcEndpointSummaryBuilder {
     /// <p>The unique identifier of the endpoint.</p>
-    pub fn vpc_endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.vpc_endpoint_id = Some(input.into());
+    pub fn vpc_endpoint_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.vpc_endpoint_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the endpoint.</p>
-    pub fn set_vpc_endpoint_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_vpc_endpoint_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.vpc_endpoint_id = input;
         self
     }
     /// <p>The creator of the endpoint.</p>
-    pub fn vpc_endpoint_owner(mut self, input: impl Into<std::string::String>) -> Self {
-        self.vpc_endpoint_owner = Some(input.into());
+    pub fn vpc_endpoint_owner(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.vpc_endpoint_owner = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The creator of the endpoint.</p>
     pub fn set_vpc_endpoint_owner(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.vpc_endpoint_owner = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the domain associated with the endpoint.</p>
-    pub fn domain_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.domain_arn = Some(input.into());
+    pub fn domain_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.domain_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the domain associated with the endpoint.</p>
-    pub fn set_domain_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_domain_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_arn = input;
         self
     }
     /// <p>The current status of the endpoint.</p>
     pub fn status(mut self, input: crate::types::VpcEndpointStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current status of the endpoint.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::VpcEndpointStatus>,
+        input: ::std::option::Option<crate::types::VpcEndpointStatus>,
     ) -> Self {
         self.status = input;
         self

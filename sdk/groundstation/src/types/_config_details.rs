@@ -2,7 +2,7 @@
 
 /// <p>Details for certain <code>Config</code> object types in a contact.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum ConfigDetails {
     /// <p>Details for antenna demod decode <code>Config</code> in a contact.</p>
     AntennaDemodDecodeDetails(crate::types::AntennaDemodDecodeDetails),
@@ -25,11 +25,11 @@ impl ConfigDetails {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_antenna_demod_decode_details(
         &self,
-    ) -> std::result::Result<&crate::types::AntennaDemodDecodeDetails, &Self> {
+    ) -> ::std::result::Result<&crate::types::AntennaDemodDecodeDetails, &Self> {
         if let ConfigDetails::AntennaDemodDecodeDetails(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`AntennaDemodDecodeDetails`](crate::types::ConfigDetails::AntennaDemodDecodeDetails).
@@ -40,11 +40,11 @@ impl ConfigDetails {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_endpoint_details(
         &self,
-    ) -> std::result::Result<&crate::types::EndpointDetails, &Self> {
+    ) -> ::std::result::Result<&crate::types::EndpointDetails, &Self> {
         if let ConfigDetails::EndpointDetails(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`EndpointDetails`](crate::types::ConfigDetails::EndpointDetails).
@@ -55,11 +55,11 @@ impl ConfigDetails {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_s3_recording_details(
         &self,
-    ) -> std::result::Result<&crate::types::S3RecordingDetails, &Self> {
+    ) -> ::std::result::Result<&crate::types::S3RecordingDetails, &Self> {
         if let ConfigDetails::S3RecordingDetails(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`S3RecordingDetails`](crate::types::ConfigDetails::S3RecordingDetails).

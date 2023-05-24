@@ -2,22 +2,22 @@
 
 /// <p>Evaluation metrics provide an estimate of the quality of your machine learning transform.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluationMetrics {
     /// <p>The type of machine learning transform.</p>
     #[doc(hidden)]
-    pub transform_type: std::option::Option<crate::types::TransformType>,
+    pub transform_type: ::std::option::Option<crate::types::TransformType>,
     /// <p>The evaluation metrics for the find matches algorithm.</p>
     #[doc(hidden)]
-    pub find_matches_metrics: std::option::Option<crate::types::FindMatchesMetrics>,
+    pub find_matches_metrics: ::std::option::Option<crate::types::FindMatchesMetrics>,
 }
 impl EvaluationMetrics {
     /// <p>The type of machine learning transform.</p>
-    pub fn transform_type(&self) -> std::option::Option<&crate::types::TransformType> {
+    pub fn transform_type(&self) -> ::std::option::Option<&crate::types::TransformType> {
         self.transform_type.as_ref()
     }
     /// <p>The evaluation metrics for the find matches algorithm.</p>
-    pub fn find_matches_metrics(&self) -> std::option::Option<&crate::types::FindMatchesMetrics> {
+    pub fn find_matches_metrics(&self) -> ::std::option::Option<&crate::types::FindMatchesMetrics> {
         self.find_matches_metrics.as_ref()
     }
 }
@@ -30,34 +30,36 @@ impl EvaluationMetrics {
 
 /// A builder for [`EvaluationMetrics`](crate::types::EvaluationMetrics).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EvaluationMetricsBuilder {
-    pub(crate) transform_type: std::option::Option<crate::types::TransformType>,
-    pub(crate) find_matches_metrics: std::option::Option<crate::types::FindMatchesMetrics>,
+    pub(crate) transform_type: ::std::option::Option<crate::types::TransformType>,
+    pub(crate) find_matches_metrics: ::std::option::Option<crate::types::FindMatchesMetrics>,
 }
 impl EvaluationMetricsBuilder {
     /// <p>The type of machine learning transform.</p>
     pub fn transform_type(mut self, input: crate::types::TransformType) -> Self {
-        self.transform_type = Some(input);
+        self.transform_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of machine learning transform.</p>
     pub fn set_transform_type(
         mut self,
-        input: std::option::Option<crate::types::TransformType>,
+        input: ::std::option::Option<crate::types::TransformType>,
     ) -> Self {
         self.transform_type = input;
         self
     }
     /// <p>The evaluation metrics for the find matches algorithm.</p>
     pub fn find_matches_metrics(mut self, input: crate::types::FindMatchesMetrics) -> Self {
-        self.find_matches_metrics = Some(input);
+        self.find_matches_metrics = ::std::option::Option::Some(input);
         self
     }
     /// <p>The evaluation metrics for the find matches algorithm.</p>
     pub fn set_find_matches_metrics(
         mut self,
-        input: std::option::Option<crate::types::FindMatchesMetrics>,
+        input: ::std::option::Option<crate::types::FindMatchesMetrics>,
     ) -> Self {
         self.find_matches_metrics = input;
         self

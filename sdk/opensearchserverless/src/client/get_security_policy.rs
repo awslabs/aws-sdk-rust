@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`r#type(SecurityPolicyType)`](crate::operation::get_security_policy::builders::GetSecurityPolicyFluentBuilder::type) / [`set_type(Option<SecurityPolicyType>)`](crate::operation::get_security_policy::builders::GetSecurityPolicyFluentBuilder::set_type): <p>The type of security policy.</p>
-    ///   - [`name(impl Into<String>)`](crate::operation::get_security_policy::builders::GetSecurityPolicyFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_security_policy::builders::GetSecurityPolicyFluentBuilder::set_name): <p>The name of the security policy.</p>
+    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::get_security_policy::builders::GetSecurityPolicyFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_security_policy::builders::GetSecurityPolicyFluentBuilder::set_name): <p>The name of the security policy.</p>
     /// - On success, responds with [`GetSecurityPolicyOutput`](crate::operation::get_security_policy::GetSecurityPolicyOutput) with field(s):
     ///   - [`security_policy_detail(Option<SecurityPolicyDetail>)`](crate::operation::get_security_policy::GetSecurityPolicyOutput::security_policy_detail): <p>Details about the requested security policy.</p>
     /// - On failure, responds with [`SdkError<GetSecurityPolicyError>`](crate::operation::get_security_policy::GetSecurityPolicyError)

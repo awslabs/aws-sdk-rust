@@ -2,29 +2,29 @@
 
 /// <p>A structure containing a list of LF-tag conditions that apply to a resource's LF-tag policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LfTagPolicyResource {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     #[doc(hidden)]
-    pub catalog_id: std::option::Option<std::string::String>,
+    pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>The resource type for which the LF-tag policy applies.</p>
     #[doc(hidden)]
-    pub resource_type: std::option::Option<crate::types::ResourceType>,
+    pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>A list of LF-tag conditions that apply to the resource's LF-tag policy.</p>
     #[doc(hidden)]
-    pub expression: std::option::Option<std::vec::Vec<crate::types::LfTag>>,
+    pub expression: ::std::option::Option<::std::vec::Vec<crate::types::LfTag>>,
 }
 impl LfTagPolicyResource {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
-    pub fn catalog_id(&self) -> std::option::Option<&str> {
+    pub fn catalog_id(&self) -> ::std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
     /// <p>The resource type for which the LF-tag policy applies.</p>
-    pub fn resource_type(&self) -> std::option::Option<&crate::types::ResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>A list of LF-tag conditions that apply to the resource's LF-tag policy.</p>
-    pub fn expression(&self) -> std::option::Option<&[crate::types::LfTag]> {
+    pub fn expression(&self) -> ::std::option::Option<&[crate::types::LfTag]> {
         self.expression.as_deref()
     }
 }
@@ -37,32 +37,34 @@ impl LfTagPolicyResource {
 
 /// A builder for [`LfTagPolicyResource`](crate::types::LfTagPolicyResource).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LfTagPolicyResourceBuilder {
-    pub(crate) catalog_id: std::option::Option<std::string::String>,
-    pub(crate) resource_type: std::option::Option<crate::types::ResourceType>,
-    pub(crate) expression: std::option::Option<std::vec::Vec<crate::types::LfTag>>,
+    pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
+    pub(crate) expression: ::std::option::Option<::std::vec::Vec<crate::types::LfTag>>,
 }
 impl LfTagPolicyResourceBuilder {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
-    pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.catalog_id = Some(input.into());
+    pub fn catalog_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.catalog_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
-    pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_catalog_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.catalog_id = input;
         self
     }
     /// <p>The resource type for which the LF-tag policy applies.</p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
-        self.resource_type = Some(input);
+        self.resource_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The resource type for which the LF-tag policy applies.</p>
     pub fn set_resource_type(
         mut self,
-        input: std::option::Option<crate::types::ResourceType>,
+        input: ::std::option::Option<crate::types::ResourceType>,
     ) -> Self {
         self.resource_type = input;
         self
@@ -75,13 +77,13 @@ impl LfTagPolicyResourceBuilder {
     pub fn expression(mut self, input: crate::types::LfTag) -> Self {
         let mut v = self.expression.unwrap_or_default();
         v.push(input);
-        self.expression = Some(v);
+        self.expression = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of LF-tag conditions that apply to the resource's LF-tag policy.</p>
     pub fn set_expression(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::LfTag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::LfTag>>,
     ) -> Self {
         self.expression = input;
         self

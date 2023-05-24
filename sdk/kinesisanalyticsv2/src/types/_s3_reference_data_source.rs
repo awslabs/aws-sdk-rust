@@ -3,22 +3,22 @@
 /// <p>For a SQL-based Kinesis Data Analytics application, identifies the Amazon S3 bucket and object that contains the reference data.</p>
 /// <p>A Kinesis Data Analytics application loads reference data only once. If the data changes, you call the <code>UpdateApplication</code> operation to trigger reloading of data into your application. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3ReferenceDataSource {
     /// <p>The Amazon Resource Name (ARN) of the S3 bucket.</p>
     #[doc(hidden)]
-    pub bucket_arn: std::option::Option<std::string::String>,
+    pub bucket_arn: ::std::option::Option<::std::string::String>,
     /// <p>The object key name containing the reference data.</p>
     #[doc(hidden)]
-    pub file_key: std::option::Option<std::string::String>,
+    pub file_key: ::std::option::Option<::std::string::String>,
 }
 impl S3ReferenceDataSource {
     /// <p>The Amazon Resource Name (ARN) of the S3 bucket.</p>
-    pub fn bucket_arn(&self) -> std::option::Option<&str> {
+    pub fn bucket_arn(&self) -> ::std::option::Option<&str> {
         self.bucket_arn.as_deref()
     }
     /// <p>The object key name containing the reference data.</p>
-    pub fn file_key(&self) -> std::option::Option<&str> {
+    pub fn file_key(&self) -> ::std::option::Option<&str> {
         self.file_key.as_deref()
     }
 }
@@ -31,29 +31,31 @@ impl S3ReferenceDataSource {
 
 /// A builder for [`S3ReferenceDataSource`](crate::types::S3ReferenceDataSource).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct S3ReferenceDataSourceBuilder {
-    pub(crate) bucket_arn: std::option::Option<std::string::String>,
-    pub(crate) file_key: std::option::Option<std::string::String>,
+    pub(crate) bucket_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) file_key: ::std::option::Option<::std::string::String>,
 }
 impl S3ReferenceDataSourceBuilder {
     /// <p>The Amazon Resource Name (ARN) of the S3 bucket.</p>
-    pub fn bucket_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.bucket_arn = Some(input.into());
+    pub fn bucket_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.bucket_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the S3 bucket.</p>
-    pub fn set_bucket_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_bucket_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket_arn = input;
         self
     }
     /// <p>The object key name containing the reference data.</p>
-    pub fn file_key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.file_key = Some(input.into());
+    pub fn file_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.file_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The object key name containing the reference data.</p>
-    pub fn set_file_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_file_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_key = input;
         self
     }

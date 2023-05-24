@@ -2,43 +2,43 @@
 
 /// <p>A component for DNS/routing control readiness checks and architecture checks.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DnsTargetResource {
     /// <p>The domain name that acts as an ingress point to a portion of the customer application.</p>
     #[doc(hidden)]
-    pub domain_name: std::option::Option<std::string::String>,
+    pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The hosted zone Amazon Resource Name (ARN) that contains the DNS record with the provided name of the target resource.</p>
     #[doc(hidden)]
-    pub hosted_zone_arn: std::option::Option<std::string::String>,
+    pub hosted_zone_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Route 53 record set ID that uniquely identifies a DNS record, given a name and a type.</p>
     #[doc(hidden)]
-    pub record_set_id: std::option::Option<std::string::String>,
+    pub record_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of DNS record of the target resource.</p>
     #[doc(hidden)]
-    pub record_type: std::option::Option<std::string::String>,
+    pub record_type: ::std::option::Option<::std::string::String>,
     /// <p>The target resource of the DNS target resource.</p>
     #[doc(hidden)]
-    pub target_resource: std::option::Option<crate::types::TargetResource>,
+    pub target_resource: ::std::option::Option<crate::types::TargetResource>,
 }
 impl DnsTargetResource {
     /// <p>The domain name that acts as an ingress point to a portion of the customer application.</p>
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<&str> {
         self.domain_name.as_deref()
     }
     /// <p>The hosted zone Amazon Resource Name (ARN) that contains the DNS record with the provided name of the target resource.</p>
-    pub fn hosted_zone_arn(&self) -> std::option::Option<&str> {
+    pub fn hosted_zone_arn(&self) -> ::std::option::Option<&str> {
         self.hosted_zone_arn.as_deref()
     }
     /// <p>The Route 53 record set ID that uniquely identifies a DNS record, given a name and a type.</p>
-    pub fn record_set_id(&self) -> std::option::Option<&str> {
+    pub fn record_set_id(&self) -> ::std::option::Option<&str> {
         self.record_set_id.as_deref()
     }
     /// <p>The type of DNS record of the target resource.</p>
-    pub fn record_type(&self) -> std::option::Option<&str> {
+    pub fn record_type(&self) -> ::std::option::Option<&str> {
         self.record_type.as_deref()
     }
     /// <p>The target resource of the DNS target resource.</p>
-    pub fn target_resource(&self) -> std::option::Option<&crate::types::TargetResource> {
+    pub fn target_resource(&self) -> ::std::option::Option<&crate::types::TargetResource> {
         self.target_resource.as_ref()
     }
 }
@@ -51,64 +51,78 @@ impl DnsTargetResource {
 
 /// A builder for [`DnsTargetResource`](crate::types::DnsTargetResource).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DnsTargetResourceBuilder {
-    pub(crate) domain_name: std::option::Option<std::string::String>,
-    pub(crate) hosted_zone_arn: std::option::Option<std::string::String>,
-    pub(crate) record_set_id: std::option::Option<std::string::String>,
-    pub(crate) record_type: std::option::Option<std::string::String>,
-    pub(crate) target_resource: std::option::Option<crate::types::TargetResource>,
+    pub(crate) domain_name: ::std::option::Option<::std::string::String>,
+    pub(crate) hosted_zone_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) record_set_id: ::std::option::Option<::std::string::String>,
+    pub(crate) record_type: ::std::option::Option<::std::string::String>,
+    pub(crate) target_resource: ::std::option::Option<crate::types::TargetResource>,
 }
 impl DnsTargetResourceBuilder {
     /// <p>The domain name that acts as an ingress point to a portion of the customer application.</p>
-    pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.domain_name = Some(input.into());
+    pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.domain_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The domain name that acts as an ingress point to a portion of the customer application.</p>
-    pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_name = input;
         self
     }
     /// <p>The hosted zone Amazon Resource Name (ARN) that contains the DNS record with the provided name of the target resource.</p>
-    pub fn hosted_zone_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.hosted_zone_arn = Some(input.into());
+    pub fn hosted_zone_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.hosted_zone_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The hosted zone Amazon Resource Name (ARN) that contains the DNS record with the provided name of the target resource.</p>
-    pub fn set_hosted_zone_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_hosted_zone_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.hosted_zone_arn = input;
         self
     }
     /// <p>The Route 53 record set ID that uniquely identifies a DNS record, given a name and a type.</p>
-    pub fn record_set_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.record_set_id = Some(input.into());
+    pub fn record_set_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.record_set_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Route 53 record set ID that uniquely identifies a DNS record, given a name and a type.</p>
-    pub fn set_record_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_record_set_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.record_set_id = input;
         self
     }
     /// <p>The type of DNS record of the target resource.</p>
-    pub fn record_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.record_type = Some(input.into());
+    pub fn record_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.record_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of DNS record of the target resource.</p>
-    pub fn set_record_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_record_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.record_type = input;
         self
     }
     /// <p>The target resource of the DNS target resource.</p>
     pub fn target_resource(mut self, input: crate::types::TargetResource) -> Self {
-        self.target_resource = Some(input);
+        self.target_resource = ::std::option::Option::Some(input);
         self
     }
     /// <p>The target resource of the DNS target resource.</p>
     pub fn set_target_resource(
         mut self,
-        input: std::option::Option<crate::types::TargetResource>,
+        input: ::std::option::Option<crate::types::TargetResource>,
     ) -> Self {
         self.target_resource = input;
         self

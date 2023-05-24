@@ -2,32 +2,32 @@
 
 /// <p>Describes an endpoint authorization for authorizing Redshift-managed VPC endpoint access to a cluster across Amazon Web Services accounts.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RevokeEndpointAccessOutput {
     /// <p>The Amazon Web Services account ID of the cluster owner.</p>
     #[doc(hidden)]
-    pub grantor: std::option::Option<std::string::String>,
+    pub grantor: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID of the grantee of the cluster.</p>
     #[doc(hidden)]
-    pub grantee: std::option::Option<std::string::String>,
+    pub grantee: ::std::option::Option<::std::string::String>,
     /// <p>The cluster identifier.</p>
     #[doc(hidden)]
-    pub cluster_identifier: std::option::Option<std::string::String>,
+    pub cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The time (UTC) when the authorization was created.</p>
     #[doc(hidden)]
-    pub authorize_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub authorize_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the cluster.</p>
     #[doc(hidden)]
-    pub cluster_status: std::option::Option<std::string::String>,
+    pub cluster_status: ::std::option::Option<::std::string::String>,
     /// <p>The status of the authorization action.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::AuthorizationStatus>,
+    pub status: ::std::option::Option<crate::types::AuthorizationStatus>,
     /// <p>Indicates whether all VPCs in the grantee account are allowed access to the cluster.</p>
     #[doc(hidden)]
     pub allowed_all_vp_cs: bool,
     /// <p>The VPCs allowed access to the cluster.</p>
     #[doc(hidden)]
-    pub allowed_vp_cs: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub allowed_vp_cs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The number of Redshift-managed VPC endpoints created for the authorization.</p>
     #[doc(hidden)]
     pub endpoint_count: i32,
@@ -35,27 +35,27 @@ pub struct RevokeEndpointAccessOutput {
 }
 impl RevokeEndpointAccessOutput {
     /// <p>The Amazon Web Services account ID of the cluster owner.</p>
-    pub fn grantor(&self) -> std::option::Option<&str> {
+    pub fn grantor(&self) -> ::std::option::Option<&str> {
         self.grantor.as_deref()
     }
     /// <p>The Amazon Web Services account ID of the grantee of the cluster.</p>
-    pub fn grantee(&self) -> std::option::Option<&str> {
+    pub fn grantee(&self) -> ::std::option::Option<&str> {
         self.grantee.as_deref()
     }
     /// <p>The cluster identifier.</p>
-    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+    pub fn cluster_identifier(&self) -> ::std::option::Option<&str> {
         self.cluster_identifier.as_deref()
     }
     /// <p>The time (UTC) when the authorization was created.</p>
-    pub fn authorize_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn authorize_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.authorize_time.as_ref()
     }
     /// <p>The status of the cluster.</p>
-    pub fn cluster_status(&self) -> std::option::Option<&str> {
+    pub fn cluster_status(&self) -> ::std::option::Option<&str> {
         self.cluster_status.as_deref()
     }
     /// <p>The status of the authorization action.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::AuthorizationStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::AuthorizationStatus> {
         self.status.as_ref()
     }
     /// <p>Indicates whether all VPCs in the grantee account are allowed access to the cluster.</p>
@@ -63,7 +63,7 @@ impl RevokeEndpointAccessOutput {
         self.allowed_all_vp_cs
     }
     /// <p>The VPCs allowed access to the cluster.</p>
-    pub fn allowed_vp_cs(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn allowed_vp_cs(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.allowed_vp_cs.as_deref()
     }
     /// <p>The number of Redshift-managed VPC endpoints created for the authorization.</p>
@@ -71,7 +71,7 @@ impl RevokeEndpointAccessOutput {
         self.endpoint_count
     }
 }
-impl aws_http::request_id::RequestId for RevokeEndpointAccessOutput {
+impl ::aws_http::request_id::RequestId for RevokeEndpointAccessOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -86,96 +86,107 @@ impl RevokeEndpointAccessOutput {
 
 /// A builder for [`RevokeEndpointAccessOutput`](crate::operation::revoke_endpoint_access::RevokeEndpointAccessOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RevokeEndpointAccessOutputBuilder {
-    pub(crate) grantor: std::option::Option<std::string::String>,
-    pub(crate) grantee: std::option::Option<std::string::String>,
-    pub(crate) cluster_identifier: std::option::Option<std::string::String>,
-    pub(crate) authorize_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) cluster_status: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::AuthorizationStatus>,
-    pub(crate) allowed_all_vp_cs: std::option::Option<bool>,
-    pub(crate) allowed_vp_cs: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) endpoint_count: std::option::Option<i32>,
+    pub(crate) grantor: ::std::option::Option<::std::string::String>,
+    pub(crate) grantee: ::std::option::Option<::std::string::String>,
+    pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) authorize_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) cluster_status: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::AuthorizationStatus>,
+    pub(crate) allowed_all_vp_cs: ::std::option::Option<bool>,
+    pub(crate) allowed_vp_cs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) endpoint_count: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }
 impl RevokeEndpointAccessOutputBuilder {
     /// <p>The Amazon Web Services account ID of the cluster owner.</p>
-    pub fn grantor(mut self, input: impl Into<std::string::String>) -> Self {
-        self.grantor = Some(input.into());
+    pub fn grantor(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.grantor = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID of the cluster owner.</p>
-    pub fn set_grantor(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_grantor(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.grantor = input;
         self
     }
     /// <p>The Amazon Web Services account ID of the grantee of the cluster.</p>
-    pub fn grantee(mut self, input: impl Into<std::string::String>) -> Self {
-        self.grantee = Some(input.into());
+    pub fn grantee(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.grantee = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID of the grantee of the cluster.</p>
-    pub fn set_grantee(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_grantee(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.grantee = input;
         self
     }
     /// <p>The cluster identifier.</p>
-    pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cluster_identifier = Some(input.into());
+    pub fn cluster_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The cluster identifier.</p>
     pub fn set_cluster_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.cluster_identifier = input;
         self
     }
     /// <p>The time (UTC) when the authorization was created.</p>
-    pub fn authorize_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.authorize_time = Some(input);
+    pub fn authorize_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.authorize_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time (UTC) when the authorization was created.</p>
     pub fn set_authorize_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.authorize_time = input;
         self
     }
     /// <p>The status of the cluster.</p>
-    pub fn cluster_status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cluster_status = Some(input.into());
+    pub fn cluster_status(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.cluster_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the cluster.</p>
-    pub fn set_cluster_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cluster_status(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.cluster_status = input;
         self
     }
     /// <p>The status of the authorization action.</p>
     pub fn status(mut self, input: crate::types::AuthorizationStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the authorization action.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::AuthorizationStatus>,
+        input: ::std::option::Option<crate::types::AuthorizationStatus>,
     ) -> Self {
         self.status = input;
         self
     }
     /// <p>Indicates whether all VPCs in the grantee account are allowed access to the cluster.</p>
     pub fn allowed_all_vp_cs(mut self, input: bool) -> Self {
-        self.allowed_all_vp_cs = Some(input);
+        self.allowed_all_vp_cs = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether all VPCs in the grantee account are allowed access to the cluster.</p>
-    pub fn set_allowed_all_vp_cs(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_allowed_all_vp_cs(mut self, input: ::std::option::Option<bool>) -> Self {
         self.allowed_all_vp_cs = input;
         self
     }
@@ -184,27 +195,30 @@ impl RevokeEndpointAccessOutputBuilder {
     /// To override the contents of this collection use [`set_allowed_vp_cs`](Self::set_allowed_vp_cs).
     ///
     /// <p>The VPCs allowed access to the cluster.</p>
-    pub fn allowed_vp_cs(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn allowed_vp_cs(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.allowed_vp_cs.unwrap_or_default();
         v.push(input.into());
-        self.allowed_vp_cs = Some(v);
+        self.allowed_vp_cs = ::std::option::Option::Some(v);
         self
     }
     /// <p>The VPCs allowed access to the cluster.</p>
     pub fn set_allowed_vp_cs(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.allowed_vp_cs = input;
         self
     }
     /// <p>The number of Redshift-managed VPC endpoints created for the authorization.</p>
     pub fn endpoint_count(mut self, input: i32) -> Self {
-        self.endpoint_count = Some(input);
+        self.endpoint_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of Redshift-managed VPC endpoints created for the authorization.</p>
-    pub fn set_endpoint_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_endpoint_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.endpoint_count = input;
         self
     }

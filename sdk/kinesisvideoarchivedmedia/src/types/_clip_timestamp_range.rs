@@ -2,28 +2,28 @@
 
 /// <p>The range of timestamps for which to return fragments.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClipTimestampRange {
     /// <p>The starting timestamp in the range of timestamps for which to return fragments. </p>
     /// <p>Only fragments that start exactly at or after <code>StartTimestamp</code> are included in the session. Fragments that start before <code>StartTimestamp</code> and continue past it aren't included in the session. If <code>FragmentSelectorType</code> is <code>SERVER_TIMESTAMP</code>, the <code>StartTimestamp</code> must be later than the stream head. </p>
     #[doc(hidden)]
-    pub start_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub start_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The end of the timestamp range for the requested media.</p>
     /// <p>This value must be within 24 hours of the specified <code>StartTimestamp</code>, and it must be later than the <code>StartTimestamp</code> value. If <code>FragmentSelectorType</code> for the request is <code>SERVER_TIMESTAMP</code>, this value must be in the past. </p>
     /// <p>This value is inclusive. The <code>EndTimestamp</code> is compared to the (starting) timestamp of the fragment. Fragments that start before the <code>EndTimestamp</code> value and continue past it are included in the session. </p>
     #[doc(hidden)]
-    pub end_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub end_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ClipTimestampRange {
     /// <p>The starting timestamp in the range of timestamps for which to return fragments. </p>
     /// <p>Only fragments that start exactly at or after <code>StartTimestamp</code> are included in the session. Fragments that start before <code>StartTimestamp</code> and continue past it aren't included in the session. If <code>FragmentSelectorType</code> is <code>SERVER_TIMESTAMP</code>, the <code>StartTimestamp</code> must be later than the stream head. </p>
-    pub fn start_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.start_timestamp.as_ref()
     }
     /// <p>The end of the timestamp range for the requested media.</p>
     /// <p>This value must be within 24 hours of the specified <code>StartTimestamp</code>, and it must be later than the <code>StartTimestamp</code> value. If <code>FragmentSelectorType</code> for the request is <code>SERVER_TIMESTAMP</code>, this value must be in the past. </p>
     /// <p>This value is inclusive. The <code>EndTimestamp</code> is compared to the (starting) timestamp of the fragment. Fragments that start before the <code>EndTimestamp</code> value and continue past it are included in the session. </p>
-    pub fn end_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.end_timestamp.as_ref()
     }
 }
@@ -36,23 +36,25 @@ impl ClipTimestampRange {
 
 /// A builder for [`ClipTimestampRange`](crate::types::ClipTimestampRange).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ClipTimestampRangeBuilder {
-    pub(crate) start_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) end_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) start_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) end_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ClipTimestampRangeBuilder {
     /// <p>The starting timestamp in the range of timestamps for which to return fragments. </p>
     /// <p>Only fragments that start exactly at or after <code>StartTimestamp</code> are included in the session. Fragments that start before <code>StartTimestamp</code> and continue past it aren't included in the session. If <code>FragmentSelectorType</code> is <code>SERVER_TIMESTAMP</code>, the <code>StartTimestamp</code> must be later than the stream head. </p>
-    pub fn start_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.start_timestamp = Some(input);
+    pub fn start_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.start_timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>The starting timestamp in the range of timestamps for which to return fragments. </p>
     /// <p>Only fragments that start exactly at or after <code>StartTimestamp</code> are included in the session. Fragments that start before <code>StartTimestamp</code> and continue past it aren't included in the session. If <code>FragmentSelectorType</code> is <code>SERVER_TIMESTAMP</code>, the <code>StartTimestamp</code> must be later than the stream head. </p>
     pub fn set_start_timestamp(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.start_timestamp = input;
         self
@@ -60,8 +62,8 @@ impl ClipTimestampRangeBuilder {
     /// <p>The end of the timestamp range for the requested media.</p>
     /// <p>This value must be within 24 hours of the specified <code>StartTimestamp</code>, and it must be later than the <code>StartTimestamp</code> value. If <code>FragmentSelectorType</code> for the request is <code>SERVER_TIMESTAMP</code>, this value must be in the past. </p>
     /// <p>This value is inclusive. The <code>EndTimestamp</code> is compared to the (starting) timestamp of the fragment. Fragments that start before the <code>EndTimestamp</code> value and continue past it are included in the session. </p>
-    pub fn end_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.end_timestamp = Some(input);
+    pub fn end_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.end_timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>The end of the timestamp range for the requested media.</p>
@@ -69,7 +71,7 @@ impl ClipTimestampRangeBuilder {
     /// <p>This value is inclusive. The <code>EndTimestamp</code> is compared to the (starting) timestamp of the fragment. Fragments that start before the <code>EndTimestamp</code> value and continue past it are included in the session. </p>
     pub fn set_end_timestamp(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.end_timestamp = input;
         self

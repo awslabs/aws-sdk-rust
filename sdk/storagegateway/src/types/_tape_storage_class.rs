@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum TapeStorageClass {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum TapeStorageClass {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for TapeStorageClass {
+impl ::std::convert::From<&str> for TapeStorageClass {
     fn from(s: &str) -> Self {
         match s {
             "DEEP_ARCHIVE" => TapeStorageClass::DeepArchive,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for TapeStorageClass {
         }
     }
 }
-impl std::str::FromStr for TapeStorageClass {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for TapeStorageClass {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TapeStorageClass::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(TapeStorageClass::from(s))
     }
 }
 impl TapeStorageClass {
@@ -86,7 +86,7 @@ impl TapeStorageClass {
         &["DEEP_ARCHIVE", "GLACIER"]
     }
 }
-impl AsRef<str> for TapeStorageClass {
+impl ::std::convert::AsRef<str> for TapeStorageClass {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

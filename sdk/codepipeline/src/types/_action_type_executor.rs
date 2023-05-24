@@ -2,42 +2,42 @@
 
 /// <p>The action engine, or executor, for an action type created for a provider, where the action is to be used by customers of the provider. The action engine is associated with the model used to create and update the action, such as the Lambda integration model.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActionTypeExecutor {
     /// <p>The action configuration properties for the action type. These properties are specified in the action definition when the action type is created.</p>
     #[doc(hidden)]
-    pub configuration: std::option::Option<crate::types::ExecutorConfiguration>,
+    pub configuration: ::std::option::Option<crate::types::ExecutorConfiguration>,
     /// <p>The integration model used to create and update the action type, <code>Lambda</code> or <code>JobWorker</code>. </p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::ExecutorType>,
+    pub r#type: ::std::option::Option<crate::types::ExecutorType>,
     /// <p>The policy statement that specifies the permissions in the CodePipeline customer’s account that are needed to successfully run an action.</p>
     /// <p>To grant permission to another account, specify the account ID as the Principal, a domain-style identifier defined by the service, for example <code>codepipeline.amazonaws.com</code>.</p> <note>
     /// <p>The size of the passed JSON policy document cannot exceed 2048 characters.</p>
     /// </note>
     #[doc(hidden)]
-    pub policy_statements_template: std::option::Option<std::string::String>,
+    pub policy_statements_template: ::std::option::Option<::std::string::String>,
     /// <p>The timeout in seconds for the job. An action execution can have multiple jobs. This is the timeout for a single job, not the entire action execution.</p>
     #[doc(hidden)]
-    pub job_timeout: std::option::Option<i32>,
+    pub job_timeout: ::std::option::Option<i32>,
 }
 impl ActionTypeExecutor {
     /// <p>The action configuration properties for the action type. These properties are specified in the action definition when the action type is created.</p>
-    pub fn configuration(&self) -> std::option::Option<&crate::types::ExecutorConfiguration> {
+    pub fn configuration(&self) -> ::std::option::Option<&crate::types::ExecutorConfiguration> {
         self.configuration.as_ref()
     }
     /// <p>The integration model used to create and update the action type, <code>Lambda</code> or <code>JobWorker</code>. </p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::ExecutorType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ExecutorType> {
         self.r#type.as_ref()
     }
     /// <p>The policy statement that specifies the permissions in the CodePipeline customer’s account that are needed to successfully run an action.</p>
     /// <p>To grant permission to another account, specify the account ID as the Principal, a domain-style identifier defined by the service, for example <code>codepipeline.amazonaws.com</code>.</p> <note>
     /// <p>The size of the passed JSON policy document cannot exceed 2048 characters.</p>
     /// </note>
-    pub fn policy_statements_template(&self) -> std::option::Option<&str> {
+    pub fn policy_statements_template(&self) -> ::std::option::Option<&str> {
         self.policy_statements_template.as_deref()
     }
     /// <p>The timeout in seconds for the job. An action execution can have multiple jobs. This is the timeout for a single job, not the entire action execution.</p>
-    pub fn job_timeout(&self) -> std::option::Option<i32> {
+    pub fn job_timeout(&self) -> ::std::option::Option<i32> {
         self.job_timeout
     }
 }
@@ -50,34 +50,36 @@ impl ActionTypeExecutor {
 
 /// A builder for [`ActionTypeExecutor`](crate::types::ActionTypeExecutor).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ActionTypeExecutorBuilder {
-    pub(crate) configuration: std::option::Option<crate::types::ExecutorConfiguration>,
-    pub(crate) r#type: std::option::Option<crate::types::ExecutorType>,
-    pub(crate) policy_statements_template: std::option::Option<std::string::String>,
-    pub(crate) job_timeout: std::option::Option<i32>,
+    pub(crate) configuration: ::std::option::Option<crate::types::ExecutorConfiguration>,
+    pub(crate) r#type: ::std::option::Option<crate::types::ExecutorType>,
+    pub(crate) policy_statements_template: ::std::option::Option<::std::string::String>,
+    pub(crate) job_timeout: ::std::option::Option<i32>,
 }
 impl ActionTypeExecutorBuilder {
     /// <p>The action configuration properties for the action type. These properties are specified in the action definition when the action type is created.</p>
     pub fn configuration(mut self, input: crate::types::ExecutorConfiguration) -> Self {
-        self.configuration = Some(input);
+        self.configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The action configuration properties for the action type. These properties are specified in the action definition when the action type is created.</p>
     pub fn set_configuration(
         mut self,
-        input: std::option::Option<crate::types::ExecutorConfiguration>,
+        input: ::std::option::Option<crate::types::ExecutorConfiguration>,
     ) -> Self {
         self.configuration = input;
         self
     }
     /// <p>The integration model used to create and update the action type, <code>Lambda</code> or <code>JobWorker</code>. </p>
     pub fn r#type(mut self, input: crate::types::ExecutorType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The integration model used to create and update the action type, <code>Lambda</code> or <code>JobWorker</code>. </p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::ExecutorType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ExecutorType>) -> Self {
         self.r#type = input;
         self
     }
@@ -85,8 +87,11 @@ impl ActionTypeExecutorBuilder {
     /// <p>To grant permission to another account, specify the account ID as the Principal, a domain-style identifier defined by the service, for example <code>codepipeline.amazonaws.com</code>.</p> <note>
     /// <p>The size of the passed JSON policy document cannot exceed 2048 characters.</p>
     /// </note>
-    pub fn policy_statements_template(mut self, input: impl Into<std::string::String>) -> Self {
-        self.policy_statements_template = Some(input.into());
+    pub fn policy_statements_template(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.policy_statements_template = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The policy statement that specifies the permissions in the CodePipeline customer’s account that are needed to successfully run an action.</p>
@@ -95,18 +100,18 @@ impl ActionTypeExecutorBuilder {
     /// </note>
     pub fn set_policy_statements_template(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.policy_statements_template = input;
         self
     }
     /// <p>The timeout in seconds for the job. An action execution can have multiple jobs. This is the timeout for a single job, not the entire action execution.</p>
     pub fn job_timeout(mut self, input: i32) -> Self {
-        self.job_timeout = Some(input);
+        self.job_timeout = ::std::option::Option::Some(input);
         self
     }
     /// <p>The timeout in seconds for the job. An action execution can have multiple jobs. This is the timeout for a single job, not the entire action execution.</p>
-    pub fn set_job_timeout(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_job_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
         self.job_timeout = input;
         self
     }

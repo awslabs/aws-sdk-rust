@@ -2,24 +2,24 @@
 
 /// <p>Contains the parameters for ModifyLoadBalancerAttributes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyLoadBalancerAttributesInput {
     /// <p>The name of the load balancer.</p>
     #[doc(hidden)]
-    pub load_balancer_name: std::option::Option<std::string::String>,
+    pub load_balancer_name: ::std::option::Option<::std::string::String>,
     /// <p>The attributes for the load balancer.</p>
     #[doc(hidden)]
-    pub load_balancer_attributes: std::option::Option<crate::types::LoadBalancerAttributes>,
+    pub load_balancer_attributes: ::std::option::Option<crate::types::LoadBalancerAttributes>,
 }
 impl ModifyLoadBalancerAttributesInput {
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
+    pub fn load_balancer_name(&self) -> ::std::option::Option<&str> {
         self.load_balancer_name.as_deref()
     }
     /// <p>The attributes for the load balancer.</p>
     pub fn load_balancer_attributes(
         &self,
-    ) -> std::option::Option<&crate::types::LoadBalancerAttributes> {
+    ) -> ::std::option::Option<&crate::types::LoadBalancerAttributes> {
         self.load_balancer_attributes.as_ref()
     }
 }
@@ -32,34 +32,40 @@ impl ModifyLoadBalancerAttributesInput {
 
 /// A builder for [`ModifyLoadBalancerAttributesInput`](crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ModifyLoadBalancerAttributesInputBuilder {
-    pub(crate) load_balancer_name: std::option::Option<std::string::String>,
-    pub(crate) load_balancer_attributes: std::option::Option<crate::types::LoadBalancerAttributes>,
+    pub(crate) load_balancer_name: ::std::option::Option<::std::string::String>,
+    pub(crate) load_balancer_attributes:
+        ::std::option::Option<crate::types::LoadBalancerAttributes>,
 }
 impl ModifyLoadBalancerAttributesInputBuilder {
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.load_balancer_name = Some(input.into());
+    pub fn load_balancer_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.load_balancer_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the load balancer.</p>
     pub fn set_load_balancer_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.load_balancer_name = input;
         self
     }
     /// <p>The attributes for the load balancer.</p>
     pub fn load_balancer_attributes(mut self, input: crate::types::LoadBalancerAttributes) -> Self {
-        self.load_balancer_attributes = Some(input);
+        self.load_balancer_attributes = ::std::option::Option::Some(input);
         self
     }
     /// <p>The attributes for the load balancer.</p>
     pub fn set_load_balancer_attributes(
         mut self,
-        input: std::option::Option<crate::types::LoadBalancerAttributes>,
+        input: ::std::option::Option<crate::types::LoadBalancerAttributes>,
     ) -> Self {
         self.load_balancer_attributes = input;
         self
@@ -67,11 +73,11 @@ impl ModifyLoadBalancerAttributesInputBuilder {
     /// Consumes the builder and constructs a [`ModifyLoadBalancerAttributesInput`](crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesInput {
                 load_balancer_name: self.load_balancer_name,
                 load_balancer_attributes: self.load_balancer_attributes,

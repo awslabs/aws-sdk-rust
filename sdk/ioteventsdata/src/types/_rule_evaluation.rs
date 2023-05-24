@@ -2,17 +2,17 @@
 
 /// <p>Information needed to evaluate data.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuleEvaluation {
     /// <p>Information needed to compare two values with a comparison operator.</p>
     #[doc(hidden)]
-    pub simple_rule_evaluation: std::option::Option<crate::types::SimpleRuleEvaluation>,
+    pub simple_rule_evaluation: ::std::option::Option<crate::types::SimpleRuleEvaluation>,
 }
 impl RuleEvaluation {
     /// <p>Information needed to compare two values with a comparison operator.</p>
     pub fn simple_rule_evaluation(
         &self,
-    ) -> std::option::Option<&crate::types::SimpleRuleEvaluation> {
+    ) -> ::std::option::Option<&crate::types::SimpleRuleEvaluation> {
         self.simple_rule_evaluation.as_ref()
     }
 }
@@ -25,20 +25,22 @@ impl RuleEvaluation {
 
 /// A builder for [`RuleEvaluation`](crate::types::RuleEvaluation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RuleEvaluationBuilder {
-    pub(crate) simple_rule_evaluation: std::option::Option<crate::types::SimpleRuleEvaluation>,
+    pub(crate) simple_rule_evaluation: ::std::option::Option<crate::types::SimpleRuleEvaluation>,
 }
 impl RuleEvaluationBuilder {
     /// <p>Information needed to compare two values with a comparison operator.</p>
     pub fn simple_rule_evaluation(mut self, input: crate::types::SimpleRuleEvaluation) -> Self {
-        self.simple_rule_evaluation = Some(input);
+        self.simple_rule_evaluation = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information needed to compare two values with a comparison operator.</p>
     pub fn set_simple_rule_evaluation(
         mut self,
-        input: std::option::Option<crate::types::SimpleRuleEvaluation>,
+        input: ::std::option::Option<crate::types::SimpleRuleEvaluation>,
     ) -> Self {
         self.simple_rule_evaluation = input;
         self

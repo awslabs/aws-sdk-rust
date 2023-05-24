@@ -2,30 +2,30 @@
 
 /// <p>A list of available AWS Elastic Beanstalk solution stacks.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAvailableSolutionStacksOutput {
     /// <p>A list of available solution stacks.</p>
     #[doc(hidden)]
-    pub solution_stacks: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub solution_stacks: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> A list of available solution stacks and their <code>SolutionStackDescription</code>. </p>
     #[doc(hidden)]
     pub solution_stack_details:
-        std::option::Option<std::vec::Vec<crate::types::SolutionStackDescription>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::SolutionStackDescription>>,
     _request_id: Option<String>,
 }
 impl ListAvailableSolutionStacksOutput {
     /// <p>A list of available solution stacks.</p>
-    pub fn solution_stacks(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn solution_stacks(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.solution_stacks.as_deref()
     }
     /// <p> A list of available solution stacks and their <code>SolutionStackDescription</code>. </p>
     pub fn solution_stack_details(
         &self,
-    ) -> std::option::Option<&[crate::types::SolutionStackDescription]> {
+    ) -> ::std::option::Option<&[crate::types::SolutionStackDescription]> {
         self.solution_stack_details.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListAvailableSolutionStacksOutput {
+impl ::aws_http::request_id::RequestId for ListAvailableSolutionStacksOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -39,11 +39,13 @@ impl ListAvailableSolutionStacksOutput {
 
 /// A builder for [`ListAvailableSolutionStacksOutput`](crate::operation::list_available_solution_stacks::ListAvailableSolutionStacksOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListAvailableSolutionStacksOutputBuilder {
-    pub(crate) solution_stacks: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) solution_stacks: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) solution_stack_details:
-        std::option::Option<std::vec::Vec<crate::types::SolutionStackDescription>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::SolutionStackDescription>>,
     _request_id: Option<String>,
 }
 impl ListAvailableSolutionStacksOutputBuilder {
@@ -52,16 +54,19 @@ impl ListAvailableSolutionStacksOutputBuilder {
     /// To override the contents of this collection use [`set_solution_stacks`](Self::set_solution_stacks).
     ///
     /// <p>A list of available solution stacks.</p>
-    pub fn solution_stacks(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn solution_stacks(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.solution_stacks.unwrap_or_default();
         v.push(input.into());
-        self.solution_stacks = Some(v);
+        self.solution_stacks = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of available solution stacks.</p>
     pub fn set_solution_stacks(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.solution_stacks = input;
         self
@@ -74,13 +79,13 @@ impl ListAvailableSolutionStacksOutputBuilder {
     pub fn solution_stack_details(mut self, input: crate::types::SolutionStackDescription) -> Self {
         let mut v = self.solution_stack_details.unwrap_or_default();
         v.push(input);
-        self.solution_stack_details = Some(v);
+        self.solution_stack_details = ::std::option::Option::Some(v);
         self
     }
     /// <p> A list of available solution stacks and their <code>SolutionStackDescription</code>. </p>
     pub fn set_solution_stack_details(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SolutionStackDescription>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SolutionStackDescription>>,
     ) -> Self {
         self.solution_stack_details = input;
         self

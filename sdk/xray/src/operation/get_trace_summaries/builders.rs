@@ -11,29 +11,29 @@ pub use crate::operation::get_trace_summaries::_get_trace_summaries_input::GetTr
 /// <p>This filter expression finds traces that have an annotation named <code>account</code> with the value <code>12345</code>:</p>
 /// <p> <code>annotation.account = "12345"</code> </p>
 /// <p>For a full list of indexed fields and keywords that you can use in filter expressions, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-console-filters.html">Using Filter Expressions</a> in the <i>Amazon Web Services X-Ray Developer Guide</i>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetTraceSummariesFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::get_trace_summaries::builders::GetTraceSummariesInputBuilder,
 }
 impl GetTraceSummariesFluentBuilder {
     /// Creates a new `GetTraceSummaries`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::get_trace_summaries::GetTraceSummaries,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::get_trace_summaries::GetTraceSummariesError,
         >,
     > {
@@ -41,30 +41,33 @@ impl GetTraceSummariesFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_trace_summaries::GetTraceSummariesOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::get_trace_summaries::GetTraceSummariesError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -77,9 +80,9 @@ impl GetTraceSummariesFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_trace_summaries::GetTraceSummariesOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::get_trace_summaries::GetTraceSummariesError,
         >,
     > {
@@ -97,25 +100,28 @@ impl GetTraceSummariesFluentBuilder {
         )
     }
     /// <p>The start of the time frame for which to retrieve traces.</p>
-    pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+    pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.start_time(input);
         self
     }
     /// <p>The start of the time frame for which to retrieve traces.</p>
     pub fn set_start_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
     /// <p>The end of the time frame for which to retrieve traces.</p>
-    pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+    pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.end_time(input);
         self
     }
     /// <p>The end of the time frame for which to retrieve traces.</p>
-    pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_end_time(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }
@@ -127,7 +133,7 @@ impl GetTraceSummariesFluentBuilder {
     /// <p>A parameter to indicate whether to query trace summaries by TraceId or Event time.</p>
     pub fn set_time_range_type(
         mut self,
-        input: std::option::Option<crate::types::TimeRangeType>,
+        input: ::std::option::Option<crate::types::TimeRangeType>,
     ) -> Self {
         self.inner = self.inner.set_time_range_type(input);
         self
@@ -138,7 +144,7 @@ impl GetTraceSummariesFluentBuilder {
         self
     }
     /// <p>Set to <code>true</code> to get summaries for only a subset of available traces.</p>
-    pub fn set_sampling(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_sampling(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_sampling(input);
         self
     }
@@ -150,31 +156,34 @@ impl GetTraceSummariesFluentBuilder {
     /// <p>A parameter to indicate whether to enable sampling on trace summaries. Input parameters are Name and Value.</p>
     pub fn set_sampling_strategy(
         mut self,
-        input: std::option::Option<crate::types::SamplingStrategy>,
+        input: ::std::option::Option<crate::types::SamplingStrategy>,
     ) -> Self {
         self.inner = self.inner.set_sampling_strategy(input);
         self
     }
     /// <p>Specify a filter expression to retrieve trace summaries for services or requests that meet certain requirements.</p>
-    pub fn filter_expression(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn filter_expression(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.filter_expression(input.into());
         self
     }
     /// <p>Specify a filter expression to retrieve trace summaries for services or requests that meet certain requirements.</p>
     pub fn set_filter_expression(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_filter_expression(input);
         self
     }
     /// <p>Specify the pagination token returned by a previous request to retrieve the next page of results.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
     /// <p>Specify the pagination token returned by a previous request to retrieve the next page of results.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }

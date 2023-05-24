@@ -2,22 +2,22 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyReplicationSubnetGroupOutput {
     /// <p>The modified replication subnet group.</p>
     #[doc(hidden)]
-    pub replication_subnet_group: std::option::Option<crate::types::ReplicationSubnetGroup>,
+    pub replication_subnet_group: ::std::option::Option<crate::types::ReplicationSubnetGroup>,
     _request_id: Option<String>,
 }
 impl ModifyReplicationSubnetGroupOutput {
     /// <p>The modified replication subnet group.</p>
     pub fn replication_subnet_group(
         &self,
-    ) -> std::option::Option<&crate::types::ReplicationSubnetGroup> {
+    ) -> ::std::option::Option<&crate::types::ReplicationSubnetGroup> {
         self.replication_subnet_group.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for ModifyReplicationSubnetGroupOutput {
+impl ::aws_http::request_id::RequestId for ModifyReplicationSubnetGroupOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -31,21 +31,24 @@ impl ModifyReplicationSubnetGroupOutput {
 
 /// A builder for [`ModifyReplicationSubnetGroupOutput`](crate::operation::modify_replication_subnet_group::ModifyReplicationSubnetGroupOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ModifyReplicationSubnetGroupOutputBuilder {
-    pub(crate) replication_subnet_group: std::option::Option<crate::types::ReplicationSubnetGroup>,
+    pub(crate) replication_subnet_group:
+        ::std::option::Option<crate::types::ReplicationSubnetGroup>,
     _request_id: Option<String>,
 }
 impl ModifyReplicationSubnetGroupOutputBuilder {
     /// <p>The modified replication subnet group.</p>
     pub fn replication_subnet_group(mut self, input: crate::types::ReplicationSubnetGroup) -> Self {
-        self.replication_subnet_group = Some(input);
+        self.replication_subnet_group = ::std::option::Option::Some(input);
         self
     }
     /// <p>The modified replication subnet group.</p>
     pub fn set_replication_subnet_group(
         mut self,
-        input: std::option::Option<crate::types::ReplicationSubnetGroup>,
+        input: ::std::option::Option<crate::types::ReplicationSubnetGroup>,
     ) -> Self {
         self.replication_subnet_group = input;
         self

@@ -2,45 +2,45 @@
 
 /// <p>A control to display a text box that is used to enter multiple entries.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ParameterTextAreaControl {
     /// <p>The ID of the <code>ParameterTextAreaControl</code>.</p>
     #[doc(hidden)]
-    pub parameter_control_id: std::option::Option<std::string::String>,
+    pub parameter_control_id: ::std::option::Option<::std::string::String>,
     /// <p>The title of the <code>ParameterTextAreaControl</code>.</p>
     #[doc(hidden)]
-    pub title: std::option::Option<std::string::String>,
+    pub title: ::std::option::Option<::std::string::String>,
     /// <p>The source parameter name of the <code>ParameterTextAreaControl</code>.</p>
     #[doc(hidden)]
-    pub source_parameter_name: std::option::Option<std::string::String>,
+    pub source_parameter_name: ::std::option::Option<::std::string::String>,
     /// <p>The delimiter that is used to separate the lines in text.</p>
     #[doc(hidden)]
-    pub delimiter: std::option::Option<std::string::String>,
+    pub delimiter: ::std::option::Option<::std::string::String>,
     /// <p>The display options of a control.</p>
     #[doc(hidden)]
-    pub display_options: std::option::Option<crate::types::TextAreaControlDisplayOptions>,
+    pub display_options: ::std::option::Option<crate::types::TextAreaControlDisplayOptions>,
 }
 impl ParameterTextAreaControl {
     /// <p>The ID of the <code>ParameterTextAreaControl</code>.</p>
-    pub fn parameter_control_id(&self) -> std::option::Option<&str> {
+    pub fn parameter_control_id(&self) -> ::std::option::Option<&str> {
         self.parameter_control_id.as_deref()
     }
     /// <p>The title of the <code>ParameterTextAreaControl</code>.</p>
-    pub fn title(&self) -> std::option::Option<&str> {
+    pub fn title(&self) -> ::std::option::Option<&str> {
         self.title.as_deref()
     }
     /// <p>The source parameter name of the <code>ParameterTextAreaControl</code>.</p>
-    pub fn source_parameter_name(&self) -> std::option::Option<&str> {
+    pub fn source_parameter_name(&self) -> ::std::option::Option<&str> {
         self.source_parameter_name.as_deref()
     }
     /// <p>The delimiter that is used to separate the lines in text.</p>
-    pub fn delimiter(&self) -> std::option::Option<&str> {
+    pub fn delimiter(&self) -> ::std::option::Option<&str> {
         self.delimiter.as_deref()
     }
     /// <p>The display options of a control.</p>
     pub fn display_options(
         &self,
-    ) -> std::option::Option<&crate::types::TextAreaControlDisplayOptions> {
+    ) -> ::std::option::Option<&crate::types::TextAreaControlDisplayOptions> {
         self.display_options.as_ref()
     }
 }
@@ -53,70 +53,78 @@ impl ParameterTextAreaControl {
 
 /// A builder for [`ParameterTextAreaControl`](crate::types::ParameterTextAreaControl).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ParameterTextAreaControlBuilder {
-    pub(crate) parameter_control_id: std::option::Option<std::string::String>,
-    pub(crate) title: std::option::Option<std::string::String>,
-    pub(crate) source_parameter_name: std::option::Option<std::string::String>,
-    pub(crate) delimiter: std::option::Option<std::string::String>,
-    pub(crate) display_options: std::option::Option<crate::types::TextAreaControlDisplayOptions>,
+    pub(crate) parameter_control_id: ::std::option::Option<::std::string::String>,
+    pub(crate) title: ::std::option::Option<::std::string::String>,
+    pub(crate) source_parameter_name: ::std::option::Option<::std::string::String>,
+    pub(crate) delimiter: ::std::option::Option<::std::string::String>,
+    pub(crate) display_options: ::std::option::Option<crate::types::TextAreaControlDisplayOptions>,
 }
 impl ParameterTextAreaControlBuilder {
     /// <p>The ID of the <code>ParameterTextAreaControl</code>.</p>
-    pub fn parameter_control_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.parameter_control_id = Some(input.into());
+    pub fn parameter_control_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.parameter_control_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the <code>ParameterTextAreaControl</code>.</p>
     pub fn set_parameter_control_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.parameter_control_id = input;
         self
     }
     /// <p>The title of the <code>ParameterTextAreaControl</code>.</p>
-    pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
-        self.title = Some(input.into());
+    pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.title = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The title of the <code>ParameterTextAreaControl</code>.</p>
-    pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.title = input;
         self
     }
     /// <p>The source parameter name of the <code>ParameterTextAreaControl</code>.</p>
-    pub fn source_parameter_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.source_parameter_name = Some(input.into());
+    pub fn source_parameter_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.source_parameter_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The source parameter name of the <code>ParameterTextAreaControl</code>.</p>
     pub fn set_source_parameter_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.source_parameter_name = input;
         self
     }
     /// <p>The delimiter that is used to separate the lines in text.</p>
-    pub fn delimiter(mut self, input: impl Into<std::string::String>) -> Self {
-        self.delimiter = Some(input.into());
+    pub fn delimiter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.delimiter = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The delimiter that is used to separate the lines in text.</p>
-    pub fn set_delimiter(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_delimiter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.delimiter = input;
         self
     }
     /// <p>The display options of a control.</p>
     pub fn display_options(mut self, input: crate::types::TextAreaControlDisplayOptions) -> Self {
-        self.display_options = Some(input);
+        self.display_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The display options of a control.</p>
     pub fn set_display_options(
         mut self,
-        input: std::option::Option<crate::types::TextAreaControlDisplayOptions>,
+        input: ::std::option::Option<crate::types::TextAreaControlDisplayOptions>,
     ) -> Self {
         self.display_options = input;
         self

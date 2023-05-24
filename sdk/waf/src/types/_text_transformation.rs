@@ -42,13 +42,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum TextTransformation {
     #[allow(missing_docs)] // documentation missing in model
@@ -66,7 +66,7 @@ pub enum TextTransformation {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for TextTransformation {
+impl ::std::convert::From<&str> for TextTransformation {
     fn from(s: &str) -> Self {
         match s {
             "CMD_LINE" => TextTransformation::CmdLine,
@@ -81,11 +81,11 @@ impl std::convert::From<&str> for TextTransformation {
         }
     }
 }
-impl std::str::FromStr for TextTransformation {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for TextTransformation {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TextTransformation::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(TextTransformation::from(s))
     }
 }
 impl TextTransformation {
@@ -113,7 +113,7 @@ impl TextTransformation {
         ]
     }
 }
-impl AsRef<str> for TextTransformation {
+impl ::std::convert::AsRef<str> for TextTransformation {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

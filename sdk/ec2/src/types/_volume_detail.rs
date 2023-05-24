@@ -2,15 +2,15 @@
 
 /// <p>Describes an EBS volume.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VolumeDetail {
     /// <p>The size of the volume, in GiB.</p>
     #[doc(hidden)]
-    pub size: std::option::Option<i64>,
+    pub size: ::std::option::Option<i64>,
 }
 impl VolumeDetail {
     /// <p>The size of the volume, in GiB.</p>
-    pub fn size(&self) -> std::option::Option<i64> {
+    pub fn size(&self) -> ::std::option::Option<i64> {
         self.size
     }
 }
@@ -23,18 +23,20 @@ impl VolumeDetail {
 
 /// A builder for [`VolumeDetail`](crate::types::VolumeDetail).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VolumeDetailBuilder {
-    pub(crate) size: std::option::Option<i64>,
+    pub(crate) size: ::std::option::Option<i64>,
 }
 impl VolumeDetailBuilder {
     /// <p>The size of the volume, in GiB.</p>
     pub fn size(mut self, input: i64) -> Self {
-        self.size = Some(input);
+        self.size = ::std::option::Option::Some(input);
         self
     }
     /// <p>The size of the volume, in GiB.</p>
-    pub fn set_size(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_size(mut self, input: ::std::option::Option<i64>) -> Self {
         self.size = input;
         self
     }

@@ -3,15 +3,15 @@
 /// <p>Describes an instance reuse policy for a warm pool. </p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-warm-pools.html">Warm pools for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceReusePolicy {
     /// <p>Specifies whether instances in the Auto Scaling group can be returned to the warm pool on scale in. </p>
     #[doc(hidden)]
-    pub reuse_on_scale_in: std::option::Option<bool>,
+    pub reuse_on_scale_in: ::std::option::Option<bool>,
 }
 impl InstanceReusePolicy {
     /// <p>Specifies whether instances in the Auto Scaling group can be returned to the warm pool on scale in. </p>
-    pub fn reuse_on_scale_in(&self) -> std::option::Option<bool> {
+    pub fn reuse_on_scale_in(&self) -> ::std::option::Option<bool> {
         self.reuse_on_scale_in
     }
 }
@@ -24,18 +24,20 @@ impl InstanceReusePolicy {
 
 /// A builder for [`InstanceReusePolicy`](crate::types::InstanceReusePolicy).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InstanceReusePolicyBuilder {
-    pub(crate) reuse_on_scale_in: std::option::Option<bool>,
+    pub(crate) reuse_on_scale_in: ::std::option::Option<bool>,
 }
 impl InstanceReusePolicyBuilder {
     /// <p>Specifies whether instances in the Auto Scaling group can be returned to the warm pool on scale in. </p>
     pub fn reuse_on_scale_in(mut self, input: bool) -> Self {
-        self.reuse_on_scale_in = Some(input);
+        self.reuse_on_scale_in = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether instances in the Auto Scaling group can be returned to the warm pool on scale in. </p>
-    pub fn set_reuse_on_scale_in(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_reuse_on_scale_in(mut self, input: ::std::option::Option<bool>) -> Self {
         self.reuse_on_scale_in = input;
         self
     }

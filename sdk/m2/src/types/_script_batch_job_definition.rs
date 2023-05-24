@@ -2,15 +2,15 @@
 
 /// <p>A batch job definition contained in a script.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScriptBatchJobDefinition {
     /// <p>The name of the script containing the batch job definition.</p>
     #[doc(hidden)]
-    pub script_name: std::option::Option<std::string::String>,
+    pub script_name: ::std::option::Option<::std::string::String>,
 }
 impl ScriptBatchJobDefinition {
     /// <p>The name of the script containing the batch job definition.</p>
-    pub fn script_name(&self) -> std::option::Option<&str> {
+    pub fn script_name(&self) -> ::std::option::Option<&str> {
         self.script_name.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl ScriptBatchJobDefinition {
 
 /// A builder for [`ScriptBatchJobDefinition`](crate::types::ScriptBatchJobDefinition).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ScriptBatchJobDefinitionBuilder {
-    pub(crate) script_name: std::option::Option<std::string::String>,
+    pub(crate) script_name: ::std::option::Option<::std::string::String>,
 }
 impl ScriptBatchJobDefinitionBuilder {
     /// <p>The name of the script containing the batch job definition.</p>
-    pub fn script_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.script_name = Some(input.into());
+    pub fn script_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.script_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the script containing the batch job definition.</p>
-    pub fn set_script_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_script_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.script_name = input;
         self
     }

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteOpsMetadata`](crate::operation::delete_ops_metadata::builders::DeleteOpsMetadataFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`ops_metadata_arn(impl Into<String>)`](crate::operation::delete_ops_metadata::builders::DeleteOpsMetadataFluentBuilder::ops_metadata_arn) / [`set_ops_metadata_arn(Option<String>)`](crate::operation::delete_ops_metadata::builders::DeleteOpsMetadataFluentBuilder::set_ops_metadata_arn): <p>The Amazon Resource Name (ARN) of an OpsMetadata Object to delete.</p>
+    ///   - [`ops_metadata_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_ops_metadata::builders::DeleteOpsMetadataFluentBuilder::ops_metadata_arn) / [`set_ops_metadata_arn(Option<String>)`](crate::operation::delete_ops_metadata::builders::DeleteOpsMetadataFluentBuilder::set_ops_metadata_arn): <p>The Amazon Resource Name (ARN) of an OpsMetadata Object to delete.</p>
     /// - On success, responds with [`DeleteOpsMetadataOutput`](crate::operation::delete_ops_metadata::DeleteOpsMetadataOutput)
     /// - On failure, responds with [`SdkError<DeleteOpsMetadataError>`](crate::operation::delete_ops_metadata::DeleteOpsMetadataError)
     pub fn delete_ops_metadata(

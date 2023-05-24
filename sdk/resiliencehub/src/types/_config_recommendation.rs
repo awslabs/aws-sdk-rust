@@ -2,60 +2,64 @@
 
 /// <p>Defines a configuration recommendation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConfigRecommendation {
     /// <p>The cost for the application.</p>
     #[doc(hidden)]
-    pub cost: std::option::Option<crate::types::Cost>,
+    pub cost: ::std::option::Option<crate::types::Cost>,
     /// <p>The name of the Application Component.</p>
     #[doc(hidden)]
-    pub app_component_name: std::option::Option<std::string::String>,
+    pub app_component_name: ::std::option::Option<::std::string::String>,
     /// <p>The current compliance against the resiliency policy before applying the configuration change.</p>
     #[doc(hidden)]
-    pub compliance: std::option::Option<
-        std::collections::HashMap<crate::types::DisruptionType, crate::types::DisruptionCompliance>,
+    pub compliance: ::std::option::Option<
+        ::std::collections::HashMap<
+            crate::types::DisruptionType,
+            crate::types::DisruptionCompliance,
+        >,
     >,
     /// <p>The expected compliance against the resiliency policy after applying the configuration change.</p>
     #[doc(hidden)]
-    pub recommendation_compliance: std::option::Option<
-        std::collections::HashMap<
+    pub recommendation_compliance: ::std::option::Option<
+        ::std::collections::HashMap<
             crate::types::DisruptionType,
             crate::types::RecommendationDisruptionCompliance,
         >,
     >,
     /// <p>The type of optimization.</p>
     #[doc(hidden)]
-    pub optimization_type: std::option::Option<crate::types::ConfigRecommendationOptimizationType>,
+    pub optimization_type:
+        ::std::option::Option<crate::types::ConfigRecommendationOptimizationType>,
     /// <p>The name of the recommendation configuration.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The optional description for an app.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>List of the suggested configuration changes.</p>
     #[doc(hidden)]
-    pub suggested_changes: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub suggested_changes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The architecture type.</p>
     #[doc(hidden)]
-    pub ha_architecture: std::option::Option<crate::types::HaArchitecture>,
+    pub ha_architecture: ::std::option::Option<crate::types::HaArchitecture>,
     /// <p>The reference identifier for the recommendation configuration.</p>
     #[doc(hidden)]
-    pub reference_id: std::option::Option<std::string::String>,
+    pub reference_id: ::std::option::Option<::std::string::String>,
 }
 impl ConfigRecommendation {
     /// <p>The cost for the application.</p>
-    pub fn cost(&self) -> std::option::Option<&crate::types::Cost> {
+    pub fn cost(&self) -> ::std::option::Option<&crate::types::Cost> {
         self.cost.as_ref()
     }
     /// <p>The name of the Application Component.</p>
-    pub fn app_component_name(&self) -> std::option::Option<&str> {
+    pub fn app_component_name(&self) -> ::std::option::Option<&str> {
         self.app_component_name.as_deref()
     }
     /// <p>The current compliance against the resiliency policy before applying the configuration change.</p>
     pub fn compliance(
         &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<
             crate::types::DisruptionType,
             crate::types::DisruptionCompliance,
         >,
@@ -65,8 +69,8 @@ impl ConfigRecommendation {
     /// <p>The expected compliance against the resiliency policy after applying the configuration change.</p>
     pub fn recommendation_compliance(
         &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<
             crate::types::DisruptionType,
             crate::types::RecommendationDisruptionCompliance,
         >,
@@ -76,27 +80,27 @@ impl ConfigRecommendation {
     /// <p>The type of optimization.</p>
     pub fn optimization_type(
         &self,
-    ) -> std::option::Option<&crate::types::ConfigRecommendationOptimizationType> {
+    ) -> ::std::option::Option<&crate::types::ConfigRecommendationOptimizationType> {
         self.optimization_type.as_ref()
     }
     /// <p>The name of the recommendation configuration.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The optional description for an app.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>List of the suggested configuration changes.</p>
-    pub fn suggested_changes(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn suggested_changes(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.suggested_changes.as_deref()
     }
     /// <p>The architecture type.</p>
-    pub fn ha_architecture(&self) -> std::option::Option<&crate::types::HaArchitecture> {
+    pub fn ha_architecture(&self) -> ::std::option::Option<&crate::types::HaArchitecture> {
         self.ha_architecture.as_ref()
     }
     /// <p>The reference identifier for the recommendation configuration.</p>
-    pub fn reference_id(&self) -> std::option::Option<&str> {
+    pub fn reference_id(&self) -> ::std::option::Option<&str> {
         self.reference_id.as_deref()
     }
 }
@@ -109,47 +113,55 @@ impl ConfigRecommendation {
 
 /// A builder for [`ConfigRecommendation`](crate::types::ConfigRecommendation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ConfigRecommendationBuilder {
-    pub(crate) cost: std::option::Option<crate::types::Cost>,
-    pub(crate) app_component_name: std::option::Option<std::string::String>,
-    pub(crate) compliance: std::option::Option<
-        std::collections::HashMap<crate::types::DisruptionType, crate::types::DisruptionCompliance>,
+    pub(crate) cost: ::std::option::Option<crate::types::Cost>,
+    pub(crate) app_component_name: ::std::option::Option<::std::string::String>,
+    pub(crate) compliance: ::std::option::Option<
+        ::std::collections::HashMap<
+            crate::types::DisruptionType,
+            crate::types::DisruptionCompliance,
+        >,
     >,
-    pub(crate) recommendation_compliance: std::option::Option<
-        std::collections::HashMap<
+    pub(crate) recommendation_compliance: ::std::option::Option<
+        ::std::collections::HashMap<
             crate::types::DisruptionType,
             crate::types::RecommendationDisruptionCompliance,
         >,
     >,
     pub(crate) optimization_type:
-        std::option::Option<crate::types::ConfigRecommendationOptimizationType>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) suggested_changes: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) ha_architecture: std::option::Option<crate::types::HaArchitecture>,
-    pub(crate) reference_id: std::option::Option<std::string::String>,
+        ::std::option::Option<crate::types::ConfigRecommendationOptimizationType>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) suggested_changes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) ha_architecture: ::std::option::Option<crate::types::HaArchitecture>,
+    pub(crate) reference_id: ::std::option::Option<::std::string::String>,
 }
 impl ConfigRecommendationBuilder {
     /// <p>The cost for the application.</p>
     pub fn cost(mut self, input: crate::types::Cost) -> Self {
-        self.cost = Some(input);
+        self.cost = ::std::option::Option::Some(input);
         self
     }
     /// <p>The cost for the application.</p>
-    pub fn set_cost(mut self, input: std::option::Option<crate::types::Cost>) -> Self {
+    pub fn set_cost(mut self, input: ::std::option::Option<crate::types::Cost>) -> Self {
         self.cost = input;
         self
     }
     /// <p>The name of the Application Component.</p>
-    pub fn app_component_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.app_component_name = Some(input.into());
+    pub fn app_component_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.app_component_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Application Component.</p>
     pub fn set_app_component_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.app_component_name = input;
         self
@@ -166,14 +178,14 @@ impl ConfigRecommendationBuilder {
     ) -> Self {
         let mut hash_map = self.compliance.unwrap_or_default();
         hash_map.insert(k, v);
-        self.compliance = Some(hash_map);
+        self.compliance = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The current compliance against the resiliency policy before applying the configuration change.</p>
     pub fn set_compliance(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<
+        input: ::std::option::Option<
+            ::std::collections::HashMap<
                 crate::types::DisruptionType,
                 crate::types::DisruptionCompliance,
             >,
@@ -194,14 +206,14 @@ impl ConfigRecommendationBuilder {
     ) -> Self {
         let mut hash_map = self.recommendation_compliance.unwrap_or_default();
         hash_map.insert(k, v);
-        self.recommendation_compliance = Some(hash_map);
+        self.recommendation_compliance = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The expected compliance against the resiliency policy after applying the configuration change.</p>
     pub fn set_recommendation_compliance(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<
+        input: ::std::option::Option<
+            ::std::collections::HashMap<
                 crate::types::DisruptionType,
                 crate::types::RecommendationDisruptionCompliance,
             >,
@@ -215,34 +227,34 @@ impl ConfigRecommendationBuilder {
         mut self,
         input: crate::types::ConfigRecommendationOptimizationType,
     ) -> Self {
-        self.optimization_type = Some(input);
+        self.optimization_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of optimization.</p>
     pub fn set_optimization_type(
         mut self,
-        input: std::option::Option<crate::types::ConfigRecommendationOptimizationType>,
+        input: ::std::option::Option<crate::types::ConfigRecommendationOptimizationType>,
     ) -> Self {
         self.optimization_type = input;
         self
     }
     /// <p>The name of the recommendation configuration.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the recommendation configuration.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The optional description for an app.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The optional description for an app.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
@@ -251,40 +263,43 @@ impl ConfigRecommendationBuilder {
     /// To override the contents of this collection use [`set_suggested_changes`](Self::set_suggested_changes).
     ///
     /// <p>List of the suggested configuration changes.</p>
-    pub fn suggested_changes(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn suggested_changes(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.suggested_changes.unwrap_or_default();
         v.push(input.into());
-        self.suggested_changes = Some(v);
+        self.suggested_changes = ::std::option::Option::Some(v);
         self
     }
     /// <p>List of the suggested configuration changes.</p>
     pub fn set_suggested_changes(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.suggested_changes = input;
         self
     }
     /// <p>The architecture type.</p>
     pub fn ha_architecture(mut self, input: crate::types::HaArchitecture) -> Self {
-        self.ha_architecture = Some(input);
+        self.ha_architecture = ::std::option::Option::Some(input);
         self
     }
     /// <p>The architecture type.</p>
     pub fn set_ha_architecture(
         mut self,
-        input: std::option::Option<crate::types::HaArchitecture>,
+        input: ::std::option::Option<crate::types::HaArchitecture>,
     ) -> Self {
         self.ha_architecture = input;
         self
     }
     /// <p>The reference identifier for the recommendation configuration.</p>
-    pub fn reference_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.reference_id = Some(input.into());
+    pub fn reference_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.reference_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reference identifier for the recommendation configuration.</p>
-    pub fn set_reference_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_reference_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reference_id = input;
         self
     }

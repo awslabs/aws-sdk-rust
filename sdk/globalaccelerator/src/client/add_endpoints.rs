@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`endpoint_configurations(Vec<EndpointConfiguration>)`](crate::operation::add_endpoints::builders::AddEndpointsFluentBuilder::endpoint_configurations) / [`set_endpoint_configurations(Option<Vec<EndpointConfiguration>>)`](crate::operation::add_endpoints::builders::AddEndpointsFluentBuilder::set_endpoint_configurations): <p>The list of endpoint objects.</p>
-    ///   - [`endpoint_group_arn(impl Into<String>)`](crate::operation::add_endpoints::builders::AddEndpointsFluentBuilder::endpoint_group_arn) / [`set_endpoint_group_arn(Option<String>)`](crate::operation::add_endpoints::builders::AddEndpointsFluentBuilder::set_endpoint_group_arn): <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
+    ///   - [`endpoint_group_arn(impl ::std::convert::Into<String>)`](crate::operation::add_endpoints::builders::AddEndpointsFluentBuilder::endpoint_group_arn) / [`set_endpoint_group_arn(Option<String>)`](crate::operation::add_endpoints::builders::AddEndpointsFluentBuilder::set_endpoint_group_arn): <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
     /// - On success, responds with [`AddEndpointsOutput`](crate::operation::add_endpoints::AddEndpointsOutput) with field(s):
     ///   - [`endpoint_descriptions(Option<Vec<EndpointDescription>>)`](crate::operation::add_endpoints::AddEndpointsOutput::endpoint_descriptions): <p>The list of endpoint objects.</p>
     ///   - [`endpoint_group_arn(Option<String>)`](crate::operation::add_endpoints::AddEndpointsOutput::endpoint_group_arn): <p>The Amazon Resource Name (ARN) of the endpoint group.</p>

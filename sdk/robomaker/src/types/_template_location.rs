@@ -2,22 +2,22 @@
 
 /// <p>Information about a template location.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TemplateLocation {
     /// <p>The Amazon S3 bucket name.</p>
     #[doc(hidden)]
-    pub s3_bucket: std::option::Option<std::string::String>,
+    pub s3_bucket: ::std::option::Option<::std::string::String>,
     /// <p>The list of S3 keys identifying the data source files.</p>
     #[doc(hidden)]
-    pub s3_key: std::option::Option<std::string::String>,
+    pub s3_key: ::std::option::Option<::std::string::String>,
 }
 impl TemplateLocation {
     /// <p>The Amazon S3 bucket name.</p>
-    pub fn s3_bucket(&self) -> std::option::Option<&str> {
+    pub fn s3_bucket(&self) -> ::std::option::Option<&str> {
         self.s3_bucket.as_deref()
     }
     /// <p>The list of S3 keys identifying the data source files.</p>
-    pub fn s3_key(&self) -> std::option::Option<&str> {
+    pub fn s3_key(&self) -> ::std::option::Option<&str> {
         self.s3_key.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl TemplateLocation {
 
 /// A builder for [`TemplateLocation`](crate::types::TemplateLocation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TemplateLocationBuilder {
-    pub(crate) s3_bucket: std::option::Option<std::string::String>,
-    pub(crate) s3_key: std::option::Option<std::string::String>,
+    pub(crate) s3_bucket: ::std::option::Option<::std::string::String>,
+    pub(crate) s3_key: ::std::option::Option<::std::string::String>,
 }
 impl TemplateLocationBuilder {
     /// <p>The Amazon S3 bucket name.</p>
-    pub fn s3_bucket(mut self, input: impl Into<std::string::String>) -> Self {
-        self.s3_bucket = Some(input.into());
+    pub fn s3_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.s3_bucket = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon S3 bucket name.</p>
-    pub fn set_s3_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_s3_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_bucket = input;
         self
     }
     /// <p>The list of S3 keys identifying the data source files.</p>
-    pub fn s3_key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.s3_key = Some(input.into());
+    pub fn s3_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.s3_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The list of S3 keys identifying the data source files.</p>
-    pub fn set_s3_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_s3_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_key = input;
         self
     }

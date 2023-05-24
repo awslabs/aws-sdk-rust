@@ -2,22 +2,22 @@
 
 /// <p> Describes an execution job for an Amplify app. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Job {
     /// <p> Describes the summary for an execution job for an Amplify app. </p>
     #[doc(hidden)]
-    pub summary: std::option::Option<crate::types::JobSummary>,
+    pub summary: ::std::option::Option<crate::types::JobSummary>,
     /// <p> The execution steps for an execution job, for an Amplify app. </p>
     #[doc(hidden)]
-    pub steps: std::option::Option<std::vec::Vec<crate::types::Step>>,
+    pub steps: ::std::option::Option<::std::vec::Vec<crate::types::Step>>,
 }
 impl Job {
     /// <p> Describes the summary for an execution job for an Amplify app. </p>
-    pub fn summary(&self) -> std::option::Option<&crate::types::JobSummary> {
+    pub fn summary(&self) -> ::std::option::Option<&crate::types::JobSummary> {
         self.summary.as_ref()
     }
     /// <p> The execution steps for an execution job, for an Amplify app. </p>
-    pub fn steps(&self) -> std::option::Option<&[crate::types::Step]> {
+    pub fn steps(&self) -> ::std::option::Option<&[crate::types::Step]> {
         self.steps.as_deref()
     }
 }
@@ -30,19 +30,21 @@ impl Job {
 
 /// A builder for [`Job`](crate::types::Job).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct JobBuilder {
-    pub(crate) summary: std::option::Option<crate::types::JobSummary>,
-    pub(crate) steps: std::option::Option<std::vec::Vec<crate::types::Step>>,
+    pub(crate) summary: ::std::option::Option<crate::types::JobSummary>,
+    pub(crate) steps: ::std::option::Option<::std::vec::Vec<crate::types::Step>>,
 }
 impl JobBuilder {
     /// <p> Describes the summary for an execution job for an Amplify app. </p>
     pub fn summary(mut self, input: crate::types::JobSummary) -> Self {
-        self.summary = Some(input);
+        self.summary = ::std::option::Option::Some(input);
         self
     }
     /// <p> Describes the summary for an execution job for an Amplify app. </p>
-    pub fn set_summary(mut self, input: std::option::Option<crate::types::JobSummary>) -> Self {
+    pub fn set_summary(mut self, input: ::std::option::Option<crate::types::JobSummary>) -> Self {
         self.summary = input;
         self
     }
@@ -54,13 +56,13 @@ impl JobBuilder {
     pub fn steps(mut self, input: crate::types::Step) -> Self {
         let mut v = self.steps.unwrap_or_default();
         v.push(input);
-        self.steps = Some(v);
+        self.steps = ::std::option::Option::Some(v);
         self
     }
     /// <p> The execution steps for an execution job, for an Amplify app. </p>
     pub fn set_steps(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Step>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Step>>,
     ) -> Self {
         self.steps = input;
         self

@@ -2,24 +2,24 @@
 
 /// <p>Contains the parameters for RequestSpotFleet.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RequestSpotFleetInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
-    pub dry_run: std::option::Option<bool>,
+    pub dry_run: ::std::option::Option<bool>,
     /// <p>The configuration for the Spot Fleet request.</p>
     #[doc(hidden)]
-    pub spot_fleet_request_config: std::option::Option<crate::types::SpotFleetRequestConfigData>,
+    pub spot_fleet_request_config: ::std::option::Option<crate::types::SpotFleetRequestConfigData>,
 }
 impl RequestSpotFleetInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn dry_run(&self) -> std::option::Option<bool> {
+    pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
     /// <p>The configuration for the Spot Fleet request.</p>
     pub fn spot_fleet_request_config(
         &self,
-    ) -> std::option::Option<&crate::types::SpotFleetRequestConfigData> {
+    ) -> ::std::option::Option<&crate::types::SpotFleetRequestConfigData> {
         self.spot_fleet_request_config.as_ref()
     }
 }
@@ -33,20 +33,22 @@ impl RequestSpotFleetInput {
 
 /// A builder for [`RequestSpotFleetInput`](crate::operation::request_spot_fleet::RequestSpotFleetInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RequestSpotFleetInputBuilder {
-    pub(crate) dry_run: std::option::Option<bool>,
+    pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) spot_fleet_request_config:
-        std::option::Option<crate::types::SpotFleetRequestConfigData>,
+        ::std::option::Option<crate::types::SpotFleetRequestConfigData>,
 }
 impl RequestSpotFleetInputBuilder {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
-        self.dry_run = Some(input);
+        self.dry_run = ::std::option::Option::Some(input);
         self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
     }
@@ -55,13 +57,13 @@ impl RequestSpotFleetInputBuilder {
         mut self,
         input: crate::types::SpotFleetRequestConfigData,
     ) -> Self {
-        self.spot_fleet_request_config = Some(input);
+        self.spot_fleet_request_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration for the Spot Fleet request.</p>
     pub fn set_spot_fleet_request_config(
         mut self,
-        input: std::option::Option<crate::types::SpotFleetRequestConfigData>,
+        input: ::std::option::Option<crate::types::SpotFleetRequestConfigData>,
     ) -> Self {
         self.spot_fleet_request_config = input;
         self
@@ -69,11 +71,11 @@ impl RequestSpotFleetInputBuilder {
     /// Consumes the builder and constructs a [`RequestSpotFleetInput`](crate::operation::request_spot_fleet::RequestSpotFleetInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::request_spot_fleet::RequestSpotFleetInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::request_spot_fleet::RequestSpotFleetInput {
                 dry_run: self.dry_run,
                 spot_fleet_request_config: self.spot_fleet_request_config,

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ClaimDevicesByClaimCode`](crate::operation::claim_devices_by_claim_code::builders::ClaimDevicesByClaimCodeFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`claim_code(impl Into<String>)`](crate::operation::claim_devices_by_claim_code::builders::ClaimDevicesByClaimCodeFluentBuilder::claim_code) / [`set_claim_code(Option<String>)`](crate::operation::claim_devices_by_claim_code::builders::ClaimDevicesByClaimCodeFluentBuilder::set_claim_code): <p>The claim code, starting with "C-", as provided by the device manufacturer.</p>
+    ///   - [`claim_code(impl ::std::convert::Into<String>)`](crate::operation::claim_devices_by_claim_code::builders::ClaimDevicesByClaimCodeFluentBuilder::claim_code) / [`set_claim_code(Option<String>)`](crate::operation::claim_devices_by_claim_code::builders::ClaimDevicesByClaimCodeFluentBuilder::set_claim_code): <p>The claim code, starting with "C-", as provided by the device manufacturer.</p>
     /// - On success, responds with [`ClaimDevicesByClaimCodeOutput`](crate::operation::claim_devices_by_claim_code::ClaimDevicesByClaimCodeOutput) with field(s):
     ///   - [`claim_code(Option<String>)`](crate::operation::claim_devices_by_claim_code::ClaimDevicesByClaimCodeOutput::claim_code): <p>The claim code provided by the device manufacturer.</p>
     ///   - [`total(Option<i32>)`](crate::operation::claim_devices_by_claim_code::ClaimDevicesByClaimCodeOutput::total): <p>The total number of devices associated with the claim code that has been processed in the claim request.</p>

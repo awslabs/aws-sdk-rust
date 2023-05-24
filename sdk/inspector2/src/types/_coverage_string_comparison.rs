@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum CoverageStringComparison {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum CoverageStringComparison {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for CoverageStringComparison {
+impl ::std::convert::From<&str> for CoverageStringComparison {
     fn from(s: &str) -> Self {
         match s {
             "EQUALS" => CoverageStringComparison::Equals,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for CoverageStringComparison {
         }
     }
 }
-impl std::str::FromStr for CoverageStringComparison {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for CoverageStringComparison {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CoverageStringComparison::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(CoverageStringComparison::from(s))
     }
 }
 impl CoverageStringComparison {
@@ -86,7 +86,7 @@ impl CoverageStringComparison {
         &["EQUALS", "NOT_EQUALS"]
     }
 }
-impl AsRef<str> for CoverageStringComparison {
+impl ::std::convert::AsRef<str> for CoverageStringComparison {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

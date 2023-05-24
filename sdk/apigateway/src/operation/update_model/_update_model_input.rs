@@ -2,29 +2,29 @@
 
 /// <p>Request to update an existing model in an existing RestApi resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateModelInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
-    pub rest_api_id: std::option::Option<std::string::String>,
+    pub rest_api_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the model to update.</p>
     #[doc(hidden)]
-    pub model_name: std::option::Option<std::string::String>,
+    pub model_name: ::std::option::Option<::std::string::String>,
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
     #[doc(hidden)]
-    pub patch_operations: std::option::Option<std::vec::Vec<crate::types::PatchOperation>>,
+    pub patch_operations: ::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>>,
 }
 impl UpdateModelInput {
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+    pub fn rest_api_id(&self) -> ::std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
     /// <p>The name of the model to update.</p>
-    pub fn model_name(&self) -> std::option::Option<&str> {
+    pub fn model_name(&self) -> ::std::option::Option<&str> {
         self.model_name.as_deref()
     }
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
-    pub fn patch_operations(&self) -> std::option::Option<&[crate::types::PatchOperation]> {
+    pub fn patch_operations(&self) -> ::std::option::Option<&[crate::types::PatchOperation]> {
         self.patch_operations.as_deref()
     }
 }
@@ -37,30 +37,33 @@ impl UpdateModelInput {
 
 /// A builder for [`UpdateModelInput`](crate::operation::update_model::UpdateModelInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateModelInputBuilder {
-    pub(crate) rest_api_id: std::option::Option<std::string::String>,
-    pub(crate) model_name: std::option::Option<std::string::String>,
-    pub(crate) patch_operations: std::option::Option<std::vec::Vec<crate::types::PatchOperation>>,
+    pub(crate) rest_api_id: ::std::option::Option<::std::string::String>,
+    pub(crate) model_name: ::std::option::Option<::std::string::String>,
+    pub(crate) patch_operations:
+        ::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>>,
 }
 impl UpdateModelInputBuilder {
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.rest_api_id = Some(input.into());
+    pub fn rest_api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.rest_api_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_rest_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rest_api_id = input;
         self
     }
     /// <p>The name of the model to update.</p>
-    pub fn model_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.model_name = Some(input.into());
+    pub fn model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.model_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the model to update.</p>
-    pub fn set_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_name = input;
         self
     }
@@ -72,13 +75,13 @@ impl UpdateModelInputBuilder {
     pub fn patch_operations(mut self, input: crate::types::PatchOperation) -> Self {
         let mut v = self.patch_operations.unwrap_or_default();
         v.push(input);
-        self.patch_operations = Some(v);
+        self.patch_operations = ::std::option::Option::Some(v);
         self
     }
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
     pub fn set_patch_operations(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PatchOperation>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>>,
     ) -> Self {
         self.patch_operations = input;
         self
@@ -86,11 +89,11 @@ impl UpdateModelInputBuilder {
     /// Consumes the builder and constructs a [`UpdateModelInput`](crate::operation::update_model::UpdateModelInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::update_model::UpdateModelInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::update_model::UpdateModelInput {
+        ::std::result::Result::Ok(crate::operation::update_model::UpdateModelInput {
             rest_api_id: self.rest_api_id,
             model_name: self.model_name,
             patch_operations: self.patch_operations,

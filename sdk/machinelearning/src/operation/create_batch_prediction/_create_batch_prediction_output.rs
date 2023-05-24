@@ -3,20 +3,20 @@
 /// <p> Represents the output of a <code>CreateBatchPrediction</code> operation, and is an acknowledgement that Amazon ML received the request.</p>
 /// <p>The <code>CreateBatchPrediction</code> operation is asynchronous. You can poll for status updates by using the <code>&gt;GetBatchPrediction</code> operation and checking the <code>Status</code> parameter of the result. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateBatchPredictionOutput {
     /// <p>A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>. This value is identical to the value of the <code>BatchPredictionId</code> in the request.</p>
     #[doc(hidden)]
-    pub batch_prediction_id: std::option::Option<std::string::String>,
+    pub batch_prediction_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateBatchPredictionOutput {
     /// <p>A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>. This value is identical to the value of the <code>BatchPredictionId</code> in the request.</p>
-    pub fn batch_prediction_id(&self) -> std::option::Option<&str> {
+    pub fn batch_prediction_id(&self) -> ::std::option::Option<&str> {
         self.batch_prediction_id.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for CreateBatchPredictionOutput {
+impl ::aws_http::request_id::RequestId for CreateBatchPredictionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -32,21 +32,26 @@ impl CreateBatchPredictionOutput {
 
 /// A builder for [`CreateBatchPredictionOutput`](crate::operation::create_batch_prediction::CreateBatchPredictionOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateBatchPredictionOutputBuilder {
-    pub(crate) batch_prediction_id: std::option::Option<std::string::String>,
+    pub(crate) batch_prediction_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateBatchPredictionOutputBuilder {
     /// <p>A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>. This value is identical to the value of the <code>BatchPredictionId</code> in the request.</p>
-    pub fn batch_prediction_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.batch_prediction_id = Some(input.into());
+    pub fn batch_prediction_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.batch_prediction_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>. This value is identical to the value of the <code>BatchPredictionId</code> in the request.</p>
     pub fn set_batch_prediction_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.batch_prediction_id = input;
         self

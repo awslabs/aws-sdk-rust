@@ -2,43 +2,45 @@
 
 /// <p>The custom script to run tests on source or target environments.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StepAutomationConfiguration {
     /// <p>The Amazon S3 bucket where the script is located.</p>
     #[doc(hidden)]
-    pub script_location_s3_bucket: std::option::Option<std::string::String>,
+    pub script_location_s3_bucket: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 key for the script location.</p>
     #[doc(hidden)]
-    pub script_location_s3_key: std::option::Option<crate::types::PlatformScriptKey>,
+    pub script_location_s3_key: ::std::option::Option<crate::types::PlatformScriptKey>,
     /// <p>The command to run the script.</p>
     #[doc(hidden)]
-    pub command: std::option::Option<crate::types::PlatformCommand>,
+    pub command: ::std::option::Option<crate::types::PlatformCommand>,
     /// <p>The source or target environment.</p>
     #[doc(hidden)]
-    pub run_environment: std::option::Option<crate::types::RunEnvironment>,
+    pub run_environment: ::std::option::Option<crate::types::RunEnvironment>,
     /// <p>The servers on which to run the script.</p>
     #[doc(hidden)]
-    pub target_type: std::option::Option<crate::types::TargetType>,
+    pub target_type: ::std::option::Option<crate::types::TargetType>,
 }
 impl StepAutomationConfiguration {
     /// <p>The Amazon S3 bucket where the script is located.</p>
-    pub fn script_location_s3_bucket(&self) -> std::option::Option<&str> {
+    pub fn script_location_s3_bucket(&self) -> ::std::option::Option<&str> {
         self.script_location_s3_bucket.as_deref()
     }
     /// <p>The Amazon S3 key for the script location.</p>
-    pub fn script_location_s3_key(&self) -> std::option::Option<&crate::types::PlatformScriptKey> {
+    pub fn script_location_s3_key(
+        &self,
+    ) -> ::std::option::Option<&crate::types::PlatformScriptKey> {
         self.script_location_s3_key.as_ref()
     }
     /// <p>The command to run the script.</p>
-    pub fn command(&self) -> std::option::Option<&crate::types::PlatformCommand> {
+    pub fn command(&self) -> ::std::option::Option<&crate::types::PlatformCommand> {
         self.command.as_ref()
     }
     /// <p>The source or target environment.</p>
-    pub fn run_environment(&self) -> std::option::Option<&crate::types::RunEnvironment> {
+    pub fn run_environment(&self) -> ::std::option::Option<&crate::types::RunEnvironment> {
         self.run_environment.as_ref()
     }
     /// <p>The servers on which to run the script.</p>
-    pub fn target_type(&self) -> std::option::Option<&crate::types::TargetType> {
+    pub fn target_type(&self) -> ::std::option::Option<&crate::types::TargetType> {
         self.target_type.as_ref()
     }
 }
@@ -51,74 +53,82 @@ impl StepAutomationConfiguration {
 
 /// A builder for [`StepAutomationConfiguration`](crate::types::StepAutomationConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StepAutomationConfigurationBuilder {
-    pub(crate) script_location_s3_bucket: std::option::Option<std::string::String>,
-    pub(crate) script_location_s3_key: std::option::Option<crate::types::PlatformScriptKey>,
-    pub(crate) command: std::option::Option<crate::types::PlatformCommand>,
-    pub(crate) run_environment: std::option::Option<crate::types::RunEnvironment>,
-    pub(crate) target_type: std::option::Option<crate::types::TargetType>,
+    pub(crate) script_location_s3_bucket: ::std::option::Option<::std::string::String>,
+    pub(crate) script_location_s3_key: ::std::option::Option<crate::types::PlatformScriptKey>,
+    pub(crate) command: ::std::option::Option<crate::types::PlatformCommand>,
+    pub(crate) run_environment: ::std::option::Option<crate::types::RunEnvironment>,
+    pub(crate) target_type: ::std::option::Option<crate::types::TargetType>,
 }
 impl StepAutomationConfigurationBuilder {
     /// <p>The Amazon S3 bucket where the script is located.</p>
-    pub fn script_location_s3_bucket(mut self, input: impl Into<std::string::String>) -> Self {
-        self.script_location_s3_bucket = Some(input.into());
+    pub fn script_location_s3_bucket(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.script_location_s3_bucket = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon S3 bucket where the script is located.</p>
     pub fn set_script_location_s3_bucket(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.script_location_s3_bucket = input;
         self
     }
     /// <p>The Amazon S3 key for the script location.</p>
     pub fn script_location_s3_key(mut self, input: crate::types::PlatformScriptKey) -> Self {
-        self.script_location_s3_key = Some(input);
+        self.script_location_s3_key = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Amazon S3 key for the script location.</p>
     pub fn set_script_location_s3_key(
         mut self,
-        input: std::option::Option<crate::types::PlatformScriptKey>,
+        input: ::std::option::Option<crate::types::PlatformScriptKey>,
     ) -> Self {
         self.script_location_s3_key = input;
         self
     }
     /// <p>The command to run the script.</p>
     pub fn command(mut self, input: crate::types::PlatformCommand) -> Self {
-        self.command = Some(input);
+        self.command = ::std::option::Option::Some(input);
         self
     }
     /// <p>The command to run the script.</p>
     pub fn set_command(
         mut self,
-        input: std::option::Option<crate::types::PlatformCommand>,
+        input: ::std::option::Option<crate::types::PlatformCommand>,
     ) -> Self {
         self.command = input;
         self
     }
     /// <p>The source or target environment.</p>
     pub fn run_environment(mut self, input: crate::types::RunEnvironment) -> Self {
-        self.run_environment = Some(input);
+        self.run_environment = ::std::option::Option::Some(input);
         self
     }
     /// <p>The source or target environment.</p>
     pub fn set_run_environment(
         mut self,
-        input: std::option::Option<crate::types::RunEnvironment>,
+        input: ::std::option::Option<crate::types::RunEnvironment>,
     ) -> Self {
         self.run_environment = input;
         self
     }
     /// <p>The servers on which to run the script.</p>
     pub fn target_type(mut self, input: crate::types::TargetType) -> Self {
-        self.target_type = Some(input);
+        self.target_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The servers on which to run the script.</p>
-    pub fn set_target_type(mut self, input: std::option::Option<crate::types::TargetType>) -> Self {
+    pub fn set_target_type(
+        mut self,
+        input: ::std::option::Option<crate::types::TargetType>,
+    ) -> Self {
         self.target_type = input;
         self
     }

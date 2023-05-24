@@ -2,27 +2,27 @@
 
 /// <p>The SIP credentials used to authenticate requests to an Amazon Chime SDK Voice Connector.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Credential {
     /// <p>The RFC2617 compliant user name associated with the SIP credentials, in US-ASCII format.</p>
     #[doc(hidden)]
-    pub username: std::option::Option<std::string::String>,
+    pub username: ::std::option::Option<::std::string::String>,
     /// <p>The RFC2617 compliant password associated with the SIP credentials, in US-ASCII format.</p>
     #[doc(hidden)]
-    pub password: std::option::Option<std::string::String>,
+    pub password: ::std::option::Option<::std::string::String>,
 }
 impl Credential {
     /// <p>The RFC2617 compliant user name associated with the SIP credentials, in US-ASCII format.</p>
-    pub fn username(&self) -> std::option::Option<&str> {
+    pub fn username(&self) -> ::std::option::Option<&str> {
         self.username.as_deref()
     }
     /// <p>The RFC2617 compliant password associated with the SIP credentials, in US-ASCII format.</p>
-    pub fn password(&self) -> std::option::Option<&str> {
+    pub fn password(&self) -> ::std::option::Option<&str> {
         self.password.as_deref()
     }
 }
-impl std::fmt::Debug for Credential {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for Credential {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("Credential");
         formatter.field("username", &"*** Sensitive Data Redacted ***");
         formatter.field("password", &"*** Sensitive Data Redacted ***");
@@ -38,29 +38,29 @@ impl Credential {
 
 /// A builder for [`Credential`](crate::types::Credential).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct CredentialBuilder {
-    pub(crate) username: std::option::Option<std::string::String>,
-    pub(crate) password: std::option::Option<std::string::String>,
+    pub(crate) username: ::std::option::Option<::std::string::String>,
+    pub(crate) password: ::std::option::Option<::std::string::String>,
 }
 impl CredentialBuilder {
     /// <p>The RFC2617 compliant user name associated with the SIP credentials, in US-ASCII format.</p>
-    pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
-        self.username = Some(input.into());
+    pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.username = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The RFC2617 compliant user name associated with the SIP credentials, in US-ASCII format.</p>
-    pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.username = input;
         self
     }
     /// <p>The RFC2617 compliant password associated with the SIP credentials, in US-ASCII format.</p>
-    pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
-        self.password = Some(input.into());
+    pub fn password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.password = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The RFC2617 compliant password associated with the SIP credentials, in US-ASCII format.</p>
-    pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.password = input;
         self
     }
@@ -72,8 +72,8 @@ impl CredentialBuilder {
         }
     }
 }
-impl std::fmt::Debug for CredentialBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for CredentialBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CredentialBuilder");
         formatter.field("username", &"*** Sensitive Data Redacted ***");
         formatter.field("password", &"*** Sensitive Data Redacted ***");

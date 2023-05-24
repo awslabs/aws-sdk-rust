@@ -4,7 +4,7 @@
 /// <p>For each account and Region, CloudFormation lets you specify a Lambda function that encapsulates any requirements that must be met before CloudFormation can proceed with a stack set operation in that account and Region. CloudFormation invokes the function each time a stack set operation is requested for that account and Region; if the function returns <code>FAILED</code>, CloudFormation cancels the operation in that account and Region, and sets the stack set operation result status for that account and Region to <code>FAILED</code>.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-account-gating.html">Configuring a target account gate</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccountGateResult {
     /// <p>The status of the account gate function.</p>
     /// <ul>
@@ -18,10 +18,10 @@ pub struct AccountGateResult {
     /// </ul> </li>
     /// </ul>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::AccountGateStatus>,
+    pub status: ::std::option::Option<crate::types::AccountGateStatus>,
     /// <p>The reason for the account gate status assigned to this account and Region for the stack set operation.</p>
     #[doc(hidden)]
-    pub status_reason: std::option::Option<std::string::String>,
+    pub status_reason: ::std::option::Option<::std::string::String>,
 }
 impl AccountGateResult {
     /// <p>The status of the account gate function.</p>
@@ -35,11 +35,11 @@ impl AccountGateResult {
     /// <li> <p>Either no action is necessary, or no action is possible, on the stack. CloudFormation skips the stack set operation in this account and Region.</p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::types::AccountGateStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::AccountGateStatus> {
         self.status.as_ref()
     }
     /// <p>The reason for the account gate status assigned to this account and Region for the stack set operation.</p>
-    pub fn status_reason(&self) -> std::option::Option<&str> {
+    pub fn status_reason(&self) -> ::std::option::Option<&str> {
         self.status_reason.as_deref()
     }
 }
@@ -52,10 +52,12 @@ impl AccountGateResult {
 
 /// A builder for [`AccountGateResult`](crate::types::AccountGateResult).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AccountGateResultBuilder {
-    pub(crate) status: std::option::Option<crate::types::AccountGateStatus>,
-    pub(crate) status_reason: std::option::Option<std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::AccountGateStatus>,
+    pub(crate) status_reason: ::std::option::Option<::std::string::String>,
 }
 impl AccountGateResultBuilder {
     /// <p>The status of the account gate function.</p>
@@ -70,7 +72,7 @@ impl AccountGateResultBuilder {
     /// </ul> </li>
     /// </ul>
     pub fn status(mut self, input: crate::types::AccountGateStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the account gate function.</p>
@@ -86,18 +88,24 @@ impl AccountGateResultBuilder {
     /// </ul>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::AccountGateStatus>,
+        input: ::std::option::Option<crate::types::AccountGateStatus>,
     ) -> Self {
         self.status = input;
         self
     }
     /// <p>The reason for the account gate status assigned to this account and Region for the stack set operation.</p>
-    pub fn status_reason(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status_reason = Some(input.into());
+    pub fn status_reason(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.status_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason for the account gate status assigned to this account and Region for the stack set operation.</p>
-    pub fn set_status_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status_reason(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.status_reason = input;
         self
     }

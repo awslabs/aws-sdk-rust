@@ -4,17 +4,17 @@
 /// <p>To set up an IAM Identity Center identity source in the console to use with Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/getting-started-aws-sso.html">Getting started with an IAM Identity Center identity source</a>. You must also grant the required permissions to use IAM Identity Center with Amazon Kendra. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html#iam-roles-aws-sso">IAM roles for IAM Identity Center</a>.</p>
 /// <p>Amazon Kendra currently does not support using <code>UserGroupResolutionConfiguration</code> with an Amazon Web Services organization member account for your IAM Identity Center identify source. You must create your index in the management account for the organization in order to use <code>UserGroupResolutionConfiguration</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserGroupResolutionConfiguration {
     /// <p>The identity store provider (mode) you want to use to get users and groups. IAM Identity Center (successor to Single Sign-On) is currently the only available mode. Your users and groups must exist in an IAM Identity Center identity source in order to use this mode.</p>
     #[doc(hidden)]
-    pub user_group_resolution_mode: std::option::Option<crate::types::UserGroupResolutionMode>,
+    pub user_group_resolution_mode: ::std::option::Option<crate::types::UserGroupResolutionMode>,
 }
 impl UserGroupResolutionConfiguration {
     /// <p>The identity store provider (mode) you want to use to get users and groups. IAM Identity Center (successor to Single Sign-On) is currently the only available mode. Your users and groups must exist in an IAM Identity Center identity source in order to use this mode.</p>
     pub fn user_group_resolution_mode(
         &self,
-    ) -> std::option::Option<&crate::types::UserGroupResolutionMode> {
+    ) -> ::std::option::Option<&crate::types::UserGroupResolutionMode> {
         self.user_group_resolution_mode.as_ref()
     }
 }
@@ -27,10 +27,12 @@ impl UserGroupResolutionConfiguration {
 
 /// A builder for [`UserGroupResolutionConfiguration`](crate::types::UserGroupResolutionConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UserGroupResolutionConfigurationBuilder {
     pub(crate) user_group_resolution_mode:
-        std::option::Option<crate::types::UserGroupResolutionMode>,
+        ::std::option::Option<crate::types::UserGroupResolutionMode>,
 }
 impl UserGroupResolutionConfigurationBuilder {
     /// <p>The identity store provider (mode) you want to use to get users and groups. IAM Identity Center (successor to Single Sign-On) is currently the only available mode. Your users and groups must exist in an IAM Identity Center identity source in order to use this mode.</p>
@@ -38,13 +40,13 @@ impl UserGroupResolutionConfigurationBuilder {
         mut self,
         input: crate::types::UserGroupResolutionMode,
     ) -> Self {
-        self.user_group_resolution_mode = Some(input);
+        self.user_group_resolution_mode = ::std::option::Option::Some(input);
         self
     }
     /// <p>The identity store provider (mode) you want to use to get users and groups. IAM Identity Center (successor to Single Sign-On) is currently the only available mode. Your users and groups must exist in an IAM Identity Center identity source in order to use this mode.</p>
     pub fn set_user_group_resolution_mode(
         mut self,
-        input: std::option::Option<crate::types::UserGroupResolutionMode>,
+        input: ::std::option::Option<crate::types::UserGroupResolutionMode>,
     ) -> Self {
         self.user_group_resolution_mode = input;
         self

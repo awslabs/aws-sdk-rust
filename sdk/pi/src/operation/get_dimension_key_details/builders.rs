@@ -6,30 +6,30 @@ pub use crate::operation::get_dimension_key_details::_get_dimension_key_details_
 /// Fluent builder constructing a request to `GetDimensionKeyDetails`.
 ///
 /// <p>Get the attributes of the specified dimension group for a DB instance or data source. For example, if you specify a SQL ID, <code>GetDimensionKeyDetails</code> retrieves the full text of the dimension <code>db.sql.statement</code> associated with this ID. This operation is useful because <code>GetResourceMetrics</code> and <code>DescribeDimensionKeys</code> don't support retrieval of large SQL statement text.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetDimensionKeyDetailsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner:
         crate::operation::get_dimension_key_details::builders::GetDimensionKeyDetailsInputBuilder,
 }
 impl GetDimensionKeyDetailsFluentBuilder {
     /// Creates a new `GetDimensionKeyDetails`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::get_dimension_key_details::GetDimensionKeyDetails,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::get_dimension_key_details::GetDimensionKeyDetailsError,
         >,
     > {
@@ -37,30 +37,33 @@ impl GetDimensionKeyDetailsFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_dimension_key_details::GetDimensionKeyDetailsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::get_dimension_key_details::GetDimensionKeyDetailsError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -73,9 +76,9 @@ impl GetDimensionKeyDetailsFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_dimension_key_details::GetDimensionKeyDetailsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::get_dimension_key_details::GetDimensionKeyDetailsError,
         >,
     > {
@@ -89,18 +92,18 @@ impl GetDimensionKeyDetailsFluentBuilder {
     /// <p>The Amazon Web Services service for which Performance Insights returns data. The only valid value is <code>RDS</code>.</p>
     pub fn set_service_type(
         mut self,
-        input: std::option::Option<crate::types::ServiceType>,
+        input: ::std::option::Option<crate::types::ServiceType>,
     ) -> Self {
         self.inner = self.inner.set_service_type(input);
         self
     }
     /// <p>The ID for a data source from which to gather dimension data. This ID must be immutable and unique within an Amazon Web Services Region. When a DB instance is the data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>. </p>
-    pub fn identifier(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identifier(input.into());
         self
     }
     /// <p>The ID for a data source from which to gather dimension data. This ID must be immutable and unique within an Amazon Web Services Region. When a DB instance is the data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>. </p>
-    pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identifier(input);
         self
     }
@@ -109,7 +112,7 @@ impl GetDimensionKeyDetailsFluentBuilder {
     /// <li> <p> <code>db.query</code> (Amazon DocumentDB only)</p> </li>
     /// <li> <p> <code>db.sql</code> (Amazon RDS and Aurora only)</p> </li>
     /// </ul>
-    pub fn group(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.group(input.into());
         self
     }
@@ -118,7 +121,7 @@ impl GetDimensionKeyDetailsFluentBuilder {
     /// <li> <p> <code>db.query</code> (Amazon DocumentDB only)</p> </li>
     /// <li> <p> <code>db.sql</code> (Amazon RDS and Aurora only)</p> </li>
     /// </ul>
-    pub fn set_group(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_group(input);
         self
     }
@@ -127,7 +130,10 @@ impl GetDimensionKeyDetailsFluentBuilder {
     /// <li> <p> <code>db.sql.id</code> for dimension group <code>db.sql</code> (Aurora and RDS only)</p> </li>
     /// <li> <p> <code>db.query.id</code> for dimension group <code>db.query</code> (DocumentDB only)</p> </li>
     /// </ul>
-    pub fn group_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn group_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.group_identifier(input.into());
         self
     }
@@ -136,7 +142,10 @@ impl GetDimensionKeyDetailsFluentBuilder {
     /// <li> <p> <code>db.sql.id</code> for dimension group <code>db.sql</code> (Aurora and RDS only)</p> </li>
     /// <li> <p> <code>db.query.id</code> for dimension group <code>db.query</code> (DocumentDB only)</p> </li>
     /// </ul>
-    pub fn set_group_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_group_identifier(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_group_identifier(input);
         self
     }
@@ -149,7 +158,10 @@ impl GetDimensionKeyDetailsFluentBuilder {
     /// <li> <p> <code>db.sql</code> - Specify either the full dimension name <code>db.sql.statement</code> or the short dimension name <code>statement</code> (Aurora and RDS only).</p> </li>
     /// <li> <p> <code>db.query</code> - Specify either the full dimension name <code>db.query.statement</code> or the short dimension name <code>statement</code> (DocumentDB only).</p> </li>
     /// </ul>
-    pub fn requested_dimensions(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn requested_dimensions(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.requested_dimensions(input.into());
         self
     }
@@ -160,7 +172,7 @@ impl GetDimensionKeyDetailsFluentBuilder {
     /// </ul>
     pub fn set_requested_dimensions(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_requested_dimensions(input);
         self

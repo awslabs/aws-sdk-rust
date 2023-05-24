@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetDataQualityRuleRecommendationRun`](crate::operation::get_data_quality_rule_recommendation_run::builders::GetDataQualityRuleRecommendationRunFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`run_id(impl Into<String>)`](crate::operation::get_data_quality_rule_recommendation_run::builders::GetDataQualityRuleRecommendationRunFluentBuilder::run_id) / [`set_run_id(Option<String>)`](crate::operation::get_data_quality_rule_recommendation_run::builders::GetDataQualityRuleRecommendationRunFluentBuilder::set_run_id): <p>The unique run identifier associated with this run.</p>
+    ///   - [`run_id(impl ::std::convert::Into<String>)`](crate::operation::get_data_quality_rule_recommendation_run::builders::GetDataQualityRuleRecommendationRunFluentBuilder::run_id) / [`set_run_id(Option<String>)`](crate::operation::get_data_quality_rule_recommendation_run::builders::GetDataQualityRuleRecommendationRunFluentBuilder::set_run_id): <p>The unique run identifier associated with this run.</p>
     /// - On success, responds with [`GetDataQualityRuleRecommendationRunOutput`](crate::operation::get_data_quality_rule_recommendation_run::GetDataQualityRuleRecommendationRunOutput) with field(s):
     ///   - [`run_id(Option<String>)`](crate::operation::get_data_quality_rule_recommendation_run::GetDataQualityRuleRecommendationRunOutput::run_id): <p>The unique run identifier associated with this run.</p>
     ///   - [`data_source(Option<DataSource>)`](crate::operation::get_data_quality_rule_recommendation_run::GetDataQualityRuleRecommendationRunOutput::data_source): <p>The data source (an Glue table) associated with this run.</p>

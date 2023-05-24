@@ -2,15 +2,15 @@
 
 /// <p>Contains the configuration parameters for a PUT Object Tagging operation. S3 Batch Operations passes every object to the underlying <code>PutObjectTagging</code> API operation. For more information about the parameters for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPUTtagging.html">PutObjectTagging</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3SetObjectTaggingOperation {
     /// <p></p>
     #[doc(hidden)]
-    pub tag_set: std::option::Option<std::vec::Vec<crate::types::S3Tag>>,
+    pub tag_set: ::std::option::Option<::std::vec::Vec<crate::types::S3Tag>>,
 }
 impl S3SetObjectTaggingOperation {
     /// <p></p>
-    pub fn tag_set(&self) -> std::option::Option<&[crate::types::S3Tag]> {
+    pub fn tag_set(&self) -> ::std::option::Option<&[crate::types::S3Tag]> {
         self.tag_set.as_deref()
     }
 }
@@ -23,9 +23,11 @@ impl S3SetObjectTaggingOperation {
 
 /// A builder for [`S3SetObjectTaggingOperation`](crate::types::S3SetObjectTaggingOperation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct S3SetObjectTaggingOperationBuilder {
-    pub(crate) tag_set: std::option::Option<std::vec::Vec<crate::types::S3Tag>>,
+    pub(crate) tag_set: ::std::option::Option<::std::vec::Vec<crate::types::S3Tag>>,
 }
 impl S3SetObjectTaggingOperationBuilder {
     /// Appends an item to `tag_set`.
@@ -36,13 +38,13 @@ impl S3SetObjectTaggingOperationBuilder {
     pub fn tag_set(mut self, input: crate::types::S3Tag) -> Self {
         let mut v = self.tag_set.unwrap_or_default();
         v.push(input);
-        self.tag_set = Some(v);
+        self.tag_set = ::std::option::Option::Some(v);
         self
     }
     /// <p></p>
     pub fn set_tag_set(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::S3Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::S3Tag>>,
     ) -> Self {
         self.tag_set = input;
         self

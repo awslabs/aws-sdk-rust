@@ -2,29 +2,29 @@
 
 /// <p>The options for managing connection authorization for new client connections.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClientConnectResponseOptions {
     /// <p>Indicates whether client connect options are enabled.</p>
     #[doc(hidden)]
-    pub enabled: std::option::Option<bool>,
+    pub enabled: ::std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of the Lambda function used for connection authorization.</p>
     #[doc(hidden)]
-    pub lambda_function_arn: std::option::Option<std::string::String>,
+    pub lambda_function_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of any updates to the client connect options.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::ClientVpnEndpointAttributeStatus>,
+    pub status: ::std::option::Option<crate::types::ClientVpnEndpointAttributeStatus>,
 }
 impl ClientConnectResponseOptions {
     /// <p>Indicates whether client connect options are enabled.</p>
-    pub fn enabled(&self) -> std::option::Option<bool> {
+    pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
     /// <p>The Amazon Resource Name (ARN) of the Lambda function used for connection authorization.</p>
-    pub fn lambda_function_arn(&self) -> std::option::Option<&str> {
+    pub fn lambda_function_arn(&self) -> ::std::option::Option<&str> {
         self.lambda_function_arn.as_deref()
     }
     /// <p>The status of any updates to the client connect options.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::ClientVpnEndpointAttributeStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::ClientVpnEndpointAttributeStatus> {
         self.status.as_ref()
     }
 }
@@ -37,45 +37,50 @@ impl ClientConnectResponseOptions {
 
 /// A builder for [`ClientConnectResponseOptions`](crate::types::ClientConnectResponseOptions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ClientConnectResponseOptionsBuilder {
-    pub(crate) enabled: std::option::Option<bool>,
-    pub(crate) lambda_function_arn: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::ClientVpnEndpointAttributeStatus>,
+    pub(crate) enabled: ::std::option::Option<bool>,
+    pub(crate) lambda_function_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::ClientVpnEndpointAttributeStatus>,
 }
 impl ClientConnectResponseOptionsBuilder {
     /// <p>Indicates whether client connect options are enabled.</p>
     pub fn enabled(mut self, input: bool) -> Self {
-        self.enabled = Some(input);
+        self.enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether client connect options are enabled.</p>
-    pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Lambda function used for connection authorization.</p>
-    pub fn lambda_function_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.lambda_function_arn = Some(input.into());
+    pub fn lambda_function_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.lambda_function_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Lambda function used for connection authorization.</p>
     pub fn set_lambda_function_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.lambda_function_arn = input;
         self
     }
     /// <p>The status of any updates to the client connect options.</p>
     pub fn status(mut self, input: crate::types::ClientVpnEndpointAttributeStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of any updates to the client connect options.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::ClientVpnEndpointAttributeStatus>,
+        input: ::std::option::Option<crate::types::ClientVpnEndpointAttributeStatus>,
     ) -> Self {
         self.status = input;
         self

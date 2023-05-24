@@ -2,29 +2,29 @@
 
 /// <p>Details associated with the issuer of a license.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IssuerDetails {
     /// <p>Issuer name.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>Asymmetric KMS key from Key Management Service. The KMS key must have a key usage of sign and verify, and support the RSASSA-PSS SHA-256 signing algorithm.</p>
     #[doc(hidden)]
-    pub sign_key: std::option::Option<std::string::String>,
+    pub sign_key: ::std::option::Option<::std::string::String>,
     /// <p>Issuer key fingerprint.</p>
     #[doc(hidden)]
-    pub key_fingerprint: std::option::Option<std::string::String>,
+    pub key_fingerprint: ::std::option::Option<::std::string::String>,
 }
 impl IssuerDetails {
     /// <p>Issuer name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>Asymmetric KMS key from Key Management Service. The KMS key must have a key usage of sign and verify, and support the RSASSA-PSS SHA-256 signing algorithm.</p>
-    pub fn sign_key(&self) -> std::option::Option<&str> {
+    pub fn sign_key(&self) -> ::std::option::Option<&str> {
         self.sign_key.as_deref()
     }
     /// <p>Issuer key fingerprint.</p>
-    pub fn key_fingerprint(&self) -> std::option::Option<&str> {
+    pub fn key_fingerprint(&self) -> ::std::option::Option<&str> {
         self.key_fingerprint.as_deref()
     }
 }
@@ -37,40 +37,48 @@ impl IssuerDetails {
 
 /// A builder for [`IssuerDetails`](crate::types::IssuerDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct IssuerDetailsBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) sign_key: std::option::Option<std::string::String>,
-    pub(crate) key_fingerprint: std::option::Option<std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) sign_key: ::std::option::Option<::std::string::String>,
+    pub(crate) key_fingerprint: ::std::option::Option<::std::string::String>,
 }
 impl IssuerDetailsBuilder {
     /// <p>Issuer name.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Issuer name.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>Asymmetric KMS key from Key Management Service. The KMS key must have a key usage of sign and verify, and support the RSASSA-PSS SHA-256 signing algorithm.</p>
-    pub fn sign_key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.sign_key = Some(input.into());
+    pub fn sign_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.sign_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Asymmetric KMS key from Key Management Service. The KMS key must have a key usage of sign and verify, and support the RSASSA-PSS SHA-256 signing algorithm.</p>
-    pub fn set_sign_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_sign_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sign_key = input;
         self
     }
     /// <p>Issuer key fingerprint.</p>
-    pub fn key_fingerprint(mut self, input: impl Into<std::string::String>) -> Self {
-        self.key_fingerprint = Some(input.into());
+    pub fn key_fingerprint(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.key_fingerprint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Issuer key fingerprint.</p>
-    pub fn set_key_fingerprint(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_key_fingerprint(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.key_fingerprint = input;
         self
     }

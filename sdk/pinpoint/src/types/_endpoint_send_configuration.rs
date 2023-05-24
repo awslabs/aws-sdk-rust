@@ -2,55 +2,57 @@
 
 /// <p>Specifies the content, including message variables and attributes, to use in a message that's sent directly to an endpoint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EndpointSendConfiguration {
     /// <p>The body of the message. If specified, this value overrides the default message body.</p>
     #[doc(hidden)]
-    pub body_override: std::option::Option<std::string::String>,
+    pub body_override: ::std::option::Option<::std::string::String>,
     /// <p>A map of custom attributes to attach to the message for the address. Attribute names are case sensitive.</p>
     /// <p>For a push notification, this payload is added to the data.pinpoint object. For an email or text message, this payload is added to email/SMS delivery receipt event attributes.</p>
     #[doc(hidden)]
-    pub context:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub context: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>The raw, JSON-formatted string to use as the payload for the message. If specified, this value overrides all other values for the message.</p>
     #[doc(hidden)]
-    pub raw_content: std::option::Option<std::string::String>,
+    pub raw_content: ::std::option::Option<::std::string::String>,
     /// <p>A map of the message variables to merge with the variables specified for the default message (DefaultMessage.Substitutions). The variables specified in this map take precedence over all other variables.</p>
     #[doc(hidden)]
-    pub substitutions: std::option::Option<
-        std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    pub substitutions: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
     >,
     /// <p>The title or subject line of the message. If specified, this value overrides the default message title or subject line.</p>
     #[doc(hidden)]
-    pub title_override: std::option::Option<std::string::String>,
+    pub title_override: ::std::option::Option<::std::string::String>,
 }
 impl EndpointSendConfiguration {
     /// <p>The body of the message. If specified, this value overrides the default message body.</p>
-    pub fn body_override(&self) -> std::option::Option<&str> {
+    pub fn body_override(&self) -> ::std::option::Option<&str> {
         self.body_override.as_deref()
     }
     /// <p>A map of custom attributes to attach to the message for the address. Attribute names are case sensitive.</p>
     /// <p>For a push notification, this payload is added to the data.pinpoint object. For an email or text message, this payload is added to email/SMS delivery receipt event attributes.</p>
     pub fn context(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.context.as_ref()
     }
     /// <p>The raw, JSON-formatted string to use as the payload for the message. If specified, this value overrides all other values for the message.</p>
-    pub fn raw_content(&self) -> std::option::Option<&str> {
+    pub fn raw_content(&self) -> ::std::option::Option<&str> {
         self.raw_content.as_deref()
     }
     /// <p>A map of the message variables to merge with the variables specified for the default message (DefaultMessage.Substitutions). The variables specified in this map take precedence over all other variables.</p>
     pub fn substitutions(
         &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
     > {
         self.substitutions.as_ref()
     }
     /// <p>The title or subject line of the message. If specified, this value overrides the default message title or subject line.</p>
-    pub fn title_override(&self) -> std::option::Option<&str> {
+    pub fn title_override(&self) -> ::std::option::Option<&str> {
         self.title_override.as_deref()
     }
 }
@@ -63,25 +65,34 @@ impl EndpointSendConfiguration {
 
 /// A builder for [`EndpointSendConfiguration`](crate::types::EndpointSendConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EndpointSendConfigurationBuilder {
-    pub(crate) body_override: std::option::Option<std::string::String>,
-    pub(crate) context:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) raw_content: std::option::Option<std::string::String>,
-    pub(crate) substitutions: std::option::Option<
-        std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    pub(crate) body_override: ::std::option::Option<::std::string::String>,
+    pub(crate) context: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
     >,
-    pub(crate) title_override: std::option::Option<std::string::String>,
+    pub(crate) raw_content: ::std::option::Option<::std::string::String>,
+    pub(crate) substitutions: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
+    >,
+    pub(crate) title_override: ::std::option::Option<::std::string::String>,
 }
 impl EndpointSendConfigurationBuilder {
     /// <p>The body of the message. If specified, this value overrides the default message body.</p>
-    pub fn body_override(mut self, input: impl Into<std::string::String>) -> Self {
-        self.body_override = Some(input.into());
+    pub fn body_override(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.body_override = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The body of the message. If specified, this value overrides the default message body.</p>
-    pub fn set_body_override(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_body_override(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.body_override = input;
         self
     }
@@ -93,32 +104,32 @@ impl EndpointSendConfigurationBuilder {
     /// <p>For a push notification, this payload is added to the data.pinpoint object. For an email or text message, this payload is added to email/SMS delivery receipt event attributes.</p>
     pub fn context(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.context.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.context = Some(hash_map);
+        self.context = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A map of custom attributes to attach to the message for the address. Attribute names are case sensitive.</p>
     /// <p>For a push notification, this payload is added to the data.pinpoint object. For an email or text message, this payload is added to email/SMS delivery receipt event attributes.</p>
     pub fn set_context(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.context = input;
         self
     }
     /// <p>The raw, JSON-formatted string to use as the payload for the message. If specified, this value overrides all other values for the message.</p>
-    pub fn raw_content(mut self, input: impl Into<std::string::String>) -> Self {
-        self.raw_content = Some(input.into());
+    pub fn raw_content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.raw_content = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The raw, JSON-formatted string to use as the payload for the message. If specified, this value overrides all other values for the message.</p>
-    pub fn set_raw_content(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_raw_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.raw_content = input;
         self
     }
@@ -129,31 +140,40 @@ impl EndpointSendConfigurationBuilder {
     /// <p>A map of the message variables to merge with the variables specified for the default message (DefaultMessage.Substitutions). The variables specified in this map take precedence over all other variables.</p>
     pub fn substitutions(
         mut self,
-        k: impl Into<std::string::String>,
-        v: std::vec::Vec<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: ::std::vec::Vec<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.substitutions.unwrap_or_default();
         hash_map.insert(k.into(), v);
-        self.substitutions = Some(hash_map);
+        self.substitutions = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A map of the message variables to merge with the variables specified for the default message (DefaultMessage.Substitutions). The variables specified in this map take precedence over all other variables.</p>
     pub fn set_substitutions(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<
+                ::std::string::String,
+                ::std::vec::Vec<::std::string::String>,
+            >,
         >,
     ) -> Self {
         self.substitutions = input;
         self
     }
     /// <p>The title or subject line of the message. If specified, this value overrides the default message title or subject line.</p>
-    pub fn title_override(mut self, input: impl Into<std::string::String>) -> Self {
-        self.title_override = Some(input.into());
+    pub fn title_override(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.title_override = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The title or subject line of the message. If specified, this value overrides the default message title or subject line.</p>
-    pub fn set_title_override(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_title_override(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.title_override = input;
         self
     }

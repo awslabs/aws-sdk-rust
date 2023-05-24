@@ -2,15 +2,15 @@
 
 /// <p> The preferences and settings that will be used to compute the Amazon Web Services charges for a billing group. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComputationPreference {
     /// <p> The Amazon Resource Name (ARN) of the pricing plan that's used to compute the Amazon Web Services charges for a billing group. </p>
     #[doc(hidden)]
-    pub pricing_plan_arn: std::option::Option<std::string::String>,
+    pub pricing_plan_arn: ::std::option::Option<::std::string::String>,
 }
 impl ComputationPreference {
     /// <p> The Amazon Resource Name (ARN) of the pricing plan that's used to compute the Amazon Web Services charges for a billing group. </p>
-    pub fn pricing_plan_arn(&self) -> std::option::Option<&str> {
+    pub fn pricing_plan_arn(&self) -> ::std::option::Option<&str> {
         self.pricing_plan_arn.as_deref()
     }
 }
@@ -23,18 +23,26 @@ impl ComputationPreference {
 
 /// A builder for [`ComputationPreference`](crate::types::ComputationPreference).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ComputationPreferenceBuilder {
-    pub(crate) pricing_plan_arn: std::option::Option<std::string::String>,
+    pub(crate) pricing_plan_arn: ::std::option::Option<::std::string::String>,
 }
 impl ComputationPreferenceBuilder {
     /// <p> The Amazon Resource Name (ARN) of the pricing plan that's used to compute the Amazon Web Services charges for a billing group. </p>
-    pub fn pricing_plan_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.pricing_plan_arn = Some(input.into());
+    pub fn pricing_plan_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.pricing_plan_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Amazon Resource Name (ARN) of the pricing plan that's used to compute the Amazon Web Services charges for a billing group. </p>
-    pub fn set_pricing_plan_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_pricing_plan_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.pricing_plan_arn = input;
         self
     }

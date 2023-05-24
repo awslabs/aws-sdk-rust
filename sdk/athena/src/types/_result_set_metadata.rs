@@ -2,15 +2,15 @@
 
 /// <p>The metadata that describes the column structure and data types of a table of query results. To return a <code>ResultSetMetadata</code> object, use <code>GetQueryResults</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResultSetMetadata {
     /// <p>Information about the columns returned in a query result metadata.</p>
     #[doc(hidden)]
-    pub column_info: std::option::Option<std::vec::Vec<crate::types::ColumnInfo>>,
+    pub column_info: ::std::option::Option<::std::vec::Vec<crate::types::ColumnInfo>>,
 }
 impl ResultSetMetadata {
     /// <p>Information about the columns returned in a query result metadata.</p>
-    pub fn column_info(&self) -> std::option::Option<&[crate::types::ColumnInfo]> {
+    pub fn column_info(&self) -> ::std::option::Option<&[crate::types::ColumnInfo]> {
         self.column_info.as_deref()
     }
 }
@@ -23,9 +23,11 @@ impl ResultSetMetadata {
 
 /// A builder for [`ResultSetMetadata`](crate::types::ResultSetMetadata).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResultSetMetadataBuilder {
-    pub(crate) column_info: std::option::Option<std::vec::Vec<crate::types::ColumnInfo>>,
+    pub(crate) column_info: ::std::option::Option<::std::vec::Vec<crate::types::ColumnInfo>>,
 }
 impl ResultSetMetadataBuilder {
     /// Appends an item to `column_info`.
@@ -36,13 +38,13 @@ impl ResultSetMetadataBuilder {
     pub fn column_info(mut self, input: crate::types::ColumnInfo) -> Self {
         let mut v = self.column_info.unwrap_or_default();
         v.push(input);
-        self.column_info = Some(v);
+        self.column_info = ::std::option::Option::Some(v);
         self
     }
     /// <p>Information about the columns returned in a query result metadata.</p>
     pub fn set_column_info(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ColumnInfo>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnInfo>>,
     ) -> Self {
         self.column_info = input;
         self

@@ -2,15 +2,15 @@
 
 /// <p>Details about your login page username field for request inspection, used in the <code>AWSManagedRulesATPRuleSet</code> <code>RequestInspection</code> configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UsernameField {
     /// <p>The name of the username field. For example <code>/form/username</code>.</p>
     #[doc(hidden)]
-    pub identifier: std::option::Option<std::string::String>,
+    pub identifier: ::std::option::Option<::std::string::String>,
 }
 impl UsernameField {
     /// <p>The name of the username field. For example <code>/form/username</code>.</p>
-    pub fn identifier(&self) -> std::option::Option<&str> {
+    pub fn identifier(&self) -> ::std::option::Option<&str> {
         self.identifier.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl UsernameField {
 
 /// A builder for [`UsernameField`](crate::types::UsernameField).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UsernameFieldBuilder {
-    pub(crate) identifier: std::option::Option<std::string::String>,
+    pub(crate) identifier: ::std::option::Option<::std::string::String>,
 }
 impl UsernameFieldBuilder {
     /// <p>The name of the username field. For example <code>/form/username</code>.</p>
-    pub fn identifier(mut self, input: impl Into<std::string::String>) -> Self {
-        self.identifier = Some(input.into());
+    pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the username field. For example <code>/form/username</code>.</p>
-    pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identifier = input;
         self
     }

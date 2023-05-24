@@ -2,7 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_configuration_options_http_error(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::describe_configuration_options::DescribeConfigurationOptionsOutput,
@@ -10,7 +10,7 @@ pub fn de_describe_configuration_options_http_error(
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::describe_configuration_options::DescribeConfigurationOptionsError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
+    generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -42,7 +42,7 @@ pub fn de_describe_configuration_options_http_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_configuration_options_http_response_with_props(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::describe_configuration_options::DescribeConfigurationOptionsOutput,
@@ -53,22 +53,22 @@ pub fn de_describe_configuration_options_http_response_with_props(
         let mut output = crate::operation::describe_configuration_options::builders::DescribeConfigurationOptionsOutputBuilder::default();
         output = crate::protocol_serde::shape_describe_configuration_options::de_describe_configuration_options(_response_body, output).map_err(crate::operation::describe_configuration_options::DescribeConfigurationOptionsError::unhandled)?;
         output._set_request_id(
-            aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
+            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
         );
         output.build()
     })
 }
 
 #[allow(unused_mut)]
-pub fn de_describe_configuration_options(inp: &[u8], mut builder: crate::operation::describe_configuration_options::builders::DescribeConfigurationOptionsOutputBuilder) -> Result<crate::operation::describe_configuration_options::builders::DescribeConfigurationOptionsOutputBuilder, aws_smithy_xml::decode::XmlDecodeError>{
-    let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
+pub fn de_describe_configuration_options(inp: &[u8], mut builder: crate::operation::describe_configuration_options::builders::DescribeConfigurationOptionsOutputBuilder) -> Result<crate::operation::describe_configuration_options::builders::DescribeConfigurationOptionsOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>{
+    let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeConfigurationOptionsResponse")) {
-        return Err(aws_smithy_xml::decode::XmlDecodeError::custom(format!(
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeConfigurationOptionsResponse got {:?}",
             start_el
         )));
@@ -76,7 +76,7 @@ pub fn de_describe_configuration_options(inp: &[u8], mut builder: crate::operati
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("DescribeConfigurationOptionsResult")) {
-            return Err(aws_smithy_xml::decode::XmlDecodeError::custom(format!(
+            return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
                 "invalid result, expected DescribeConfigurationOptionsResult got {:?}",
                 start_el
             )));
@@ -86,8 +86,8 @@ pub fn de_describe_configuration_options(inp: &[u8], mut builder: crate::operati
             s if s.matches("SolutionStackName") /* SolutionStackName com.amazonaws.elasticbeanstalk.synthetic#DescribeConfigurationOptionsOutput$SolutionStackName */ =>  {
                 let var_1 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -99,8 +99,8 @@ pub fn de_describe_configuration_options(inp: &[u8], mut builder: crate::operati
             s if s.matches("PlatformArn") /* PlatformArn com.amazonaws.elasticbeanstalk.synthetic#DescribeConfigurationOptionsOutput$PlatformArn */ =>  {
                 let var_2 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -123,7 +123,7 @@ pub fn de_describe_configuration_options(inp: &[u8], mut builder: crate::operati
         }
         }
     } else {
-        return Err(aws_smithy_xml::decode::XmlDecodeError::custom(
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(
             "expected DescribeConfigurationOptionsResult tag",
         ));
     };

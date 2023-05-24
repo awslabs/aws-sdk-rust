@@ -2,33 +2,33 @@
 
 /// <p>Detail data for a provisioned resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProvisionedResource {
     /// <p>The provisioned resource name.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The provisioned resource identifier.</p>
     #[doc(hidden)]
-    pub identifier: std::option::Option<std::string::String>,
+    pub identifier: ::std::option::Option<::std::string::String>,
     /// <p>The resource provisioning engine. At this time, <code>CLOUDFORMATION</code> can be used for Amazon Web Services-managed provisioning, and <code>TERRAFORM</code> can be used for self-managed provisioning.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-works-prov-methods.html#ag-works-prov-methods-self">Self-managed provisioning</a> in the <i>Proton User Guide</i>.</p>
     #[doc(hidden)]
-    pub provisioning_engine: std::option::Option<crate::types::ProvisionedResourceEngine>,
+    pub provisioning_engine: ::std::option::Option<crate::types::ProvisionedResourceEngine>,
 }
 impl ProvisionedResource {
     /// <p>The provisioned resource name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The provisioned resource identifier.</p>
-    pub fn identifier(&self) -> std::option::Option<&str> {
+    pub fn identifier(&self) -> ::std::option::Option<&str> {
         self.identifier.as_deref()
     }
     /// <p>The resource provisioning engine. At this time, <code>CLOUDFORMATION</code> can be used for Amazon Web Services-managed provisioning, and <code>TERRAFORM</code> can be used for self-managed provisioning.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-works-prov-methods.html#ag-works-prov-methods-self">Self-managed provisioning</a> in the <i>Proton User Guide</i>.</p>
     pub fn provisioning_engine(
         &self,
-    ) -> std::option::Option<&crate::types::ProvisionedResourceEngine> {
+    ) -> ::std::option::Option<&crate::types::ProvisionedResourceEngine> {
         self.provisioning_engine.as_ref()
     }
 }
@@ -41,44 +41,46 @@ impl ProvisionedResource {
 
 /// A builder for [`ProvisionedResource`](crate::types::ProvisionedResource).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ProvisionedResourceBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) identifier: std::option::Option<std::string::String>,
-    pub(crate) provisioning_engine: std::option::Option<crate::types::ProvisionedResourceEngine>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) provisioning_engine: ::std::option::Option<crate::types::ProvisionedResourceEngine>,
 }
 impl ProvisionedResourceBuilder {
     /// <p>The provisioned resource name.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The provisioned resource name.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The provisioned resource identifier.</p>
-    pub fn identifier(mut self, input: impl Into<std::string::String>) -> Self {
-        self.identifier = Some(input.into());
+    pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The provisioned resource identifier.</p>
-    pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identifier = input;
         self
     }
     /// <p>The resource provisioning engine. At this time, <code>CLOUDFORMATION</code> can be used for Amazon Web Services-managed provisioning, and <code>TERRAFORM</code> can be used for self-managed provisioning.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-works-prov-methods.html#ag-works-prov-methods-self">Self-managed provisioning</a> in the <i>Proton User Guide</i>.</p>
     pub fn provisioning_engine(mut self, input: crate::types::ProvisionedResourceEngine) -> Self {
-        self.provisioning_engine = Some(input);
+        self.provisioning_engine = ::std::option::Option::Some(input);
         self
     }
     /// <p>The resource provisioning engine. At this time, <code>CLOUDFORMATION</code> can be used for Amazon Web Services-managed provisioning, and <code>TERRAFORM</code> can be used for self-managed provisioning.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-works-prov-methods.html#ag-works-prov-methods-self">Self-managed provisioning</a> in the <i>Proton User Guide</i>.</p>
     pub fn set_provisioning_engine(
         mut self,
-        input: std::option::Option<crate::types::ProvisionedResourceEngine>,
+        input: ::std::option::Option<crate::types::ProvisionedResourceEngine>,
     ) -> Self {
         self.provisioning_engine = input;
         self

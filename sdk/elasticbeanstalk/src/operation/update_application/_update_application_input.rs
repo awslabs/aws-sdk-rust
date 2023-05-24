@@ -2,24 +2,24 @@
 
 /// <p>Request to update an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateApplicationInput {
     /// <p>The name of the application to update. If no such application is found, <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code> error. </p>
     #[doc(hidden)]
-    pub application_name: std::option::Option<std::string::String>,
+    pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>A new description for the application.</p>
     /// <p>Default: If not specified, AWS Elastic Beanstalk does not update the description.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
 }
 impl UpdateApplicationInput {
     /// <p>The name of the application to update. If no such application is found, <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code> error. </p>
-    pub fn application_name(&self) -> std::option::Option<&str> {
+    pub fn application_name(&self) -> ::std::option::Option<&str> {
         self.application_name.as_deref()
     }
     /// <p>A new description for the application.</p>
     /// <p>Default: If not specified, AWS Elastic Beanstalk does not update the description.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
 }
@@ -33,42 +33,50 @@ impl UpdateApplicationInput {
 
 /// A builder for [`UpdateApplicationInput`](crate::operation::update_application::UpdateApplicationInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateApplicationInputBuilder {
-    pub(crate) application_name: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
+    pub(crate) application_name: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
 }
 impl UpdateApplicationInputBuilder {
     /// <p>The name of the application to update. If no such application is found, <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code> error. </p>
-    pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.application_name = Some(input.into());
+    pub fn application_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.application_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the application to update. If no such application is found, <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code> error. </p>
-    pub fn set_application_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_application_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.application_name = input;
         self
     }
     /// <p>A new description for the application.</p>
     /// <p>Default: If not specified, AWS Elastic Beanstalk does not update the description.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A new description for the application.</p>
     /// <p>Default: If not specified, AWS Elastic Beanstalk does not update the description.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// Consumes the builder and constructs a [`UpdateApplicationInput`](crate::operation::update_application::UpdateApplicationInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::update_application::UpdateApplicationInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::update_application::UpdateApplicationInput {
                 application_name: self.application_name,
                 description: self.description,

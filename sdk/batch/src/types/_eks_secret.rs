@@ -2,22 +2,22 @@
 
 /// <p>Specifies the configuration of a Kubernetes <code>secret</code> volume. For more information, see <a href="https://kubernetes.io/docs/concepts/storage/volumes/#secret">secret</a> in the <i>Kubernetes documentation</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EksSecret {
     /// <p>The name of the secret. The name must be allowed as a DNS subdomain name. For more information, see <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#dns-subdomain-names">DNS subdomain names</a> in the <i>Kubernetes documentation</i>.</p>
     #[doc(hidden)]
-    pub secret_name: std::option::Option<std::string::String>,
+    pub secret_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the secret or the secret's keys must be defined.</p>
     #[doc(hidden)]
-    pub optional: std::option::Option<bool>,
+    pub optional: ::std::option::Option<bool>,
 }
 impl EksSecret {
     /// <p>The name of the secret. The name must be allowed as a DNS subdomain name. For more information, see <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#dns-subdomain-names">DNS subdomain names</a> in the <i>Kubernetes documentation</i>.</p>
-    pub fn secret_name(&self) -> std::option::Option<&str> {
+    pub fn secret_name(&self) -> ::std::option::Option<&str> {
         self.secret_name.as_deref()
     }
     /// <p>Specifies whether the secret or the secret's keys must be defined.</p>
-    pub fn optional(&self) -> std::option::Option<bool> {
+    pub fn optional(&self) -> ::std::option::Option<bool> {
         self.optional
     }
 }
@@ -30,29 +30,31 @@ impl EksSecret {
 
 /// A builder for [`EksSecret`](crate::types::EksSecret).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EksSecretBuilder {
-    pub(crate) secret_name: std::option::Option<std::string::String>,
-    pub(crate) optional: std::option::Option<bool>,
+    pub(crate) secret_name: ::std::option::Option<::std::string::String>,
+    pub(crate) optional: ::std::option::Option<bool>,
 }
 impl EksSecretBuilder {
     /// <p>The name of the secret. The name must be allowed as a DNS subdomain name. For more information, see <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#dns-subdomain-names">DNS subdomain names</a> in the <i>Kubernetes documentation</i>.</p>
-    pub fn secret_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.secret_name = Some(input.into());
+    pub fn secret_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.secret_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the secret. The name must be allowed as a DNS subdomain name. For more information, see <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#dns-subdomain-names">DNS subdomain names</a> in the <i>Kubernetes documentation</i>.</p>
-    pub fn set_secret_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_secret_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secret_name = input;
         self
     }
     /// <p>Specifies whether the secret or the secret's keys must be defined.</p>
     pub fn optional(mut self, input: bool) -> Self {
-        self.optional = Some(input);
+        self.optional = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether the secret or the secret's keys must be defined.</p>
-    pub fn set_optional(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_optional(mut self, input: ::std::option::Option<bool>) -> Self {
         self.optional = input;
         self
     }

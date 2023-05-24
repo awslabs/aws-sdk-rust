@@ -6,29 +6,29 @@ pub use crate::operation::update_endpoint_group::_update_endpoint_group_input::U
 /// Fluent builder constructing a request to `UpdateEndpointGroup`.
 ///
 /// <p>Update an endpoint group. A resource must be valid and active when you add it as an endpoint.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateEndpointGroupFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::update_endpoint_group::builders::UpdateEndpointGroupInputBuilder,
 }
 impl UpdateEndpointGroupFluentBuilder {
     /// Creates a new `UpdateEndpointGroup`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_endpoint_group::UpdateEndpointGroup,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_endpoint_group::UpdateEndpointGroupError,
         >,
     > {
@@ -36,30 +36,33 @@ impl UpdateEndpointGroupFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_endpoint_group::UpdateEndpointGroupOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_endpoint_group::UpdateEndpointGroupError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,23 +75,26 @@ impl UpdateEndpointGroupFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_endpoint_group::UpdateEndpointGroupOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_endpoint_group::UpdateEndpointGroupError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
-    pub fn endpoint_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn endpoint_group_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.endpoint_group_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
     pub fn set_endpoint_group_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_endpoint_group_arn(input);
         self
@@ -105,7 +111,7 @@ impl UpdateEndpointGroupFluentBuilder {
     /// <p>The list of endpoint objects. A resource must be valid and active when you add it as an endpoint.</p>
     pub fn set_endpoint_configurations(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::EndpointConfiguration>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::EndpointConfiguration>>,
     ) -> Self {
         self.inner = self.inner.set_endpoint_configurations(input);
         self
@@ -120,7 +126,7 @@ impl UpdateEndpointGroupFluentBuilder {
     /// <p>The percentage of traffic to send to an Amazon Web Services Region. Additional traffic is distributed to other endpoint groups for this listener. </p>
     /// <p>Use this action to increase (dial up) or decrease (dial down) traffic to a specific Region. The percentage is applied to the traffic that would otherwise have been routed to the Region based on optimal routing.</p>
     /// <p>The default value is 100.</p>
-    pub fn set_traffic_dial_percentage(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_traffic_dial_percentage(mut self, input: ::std::option::Option<f32>) -> Self {
         self.inner = self.inner.set_traffic_dial_percentage(input);
         self
     }
@@ -130,7 +136,7 @@ impl UpdateEndpointGroupFluentBuilder {
         self
     }
     /// <p>The port that Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default port is the listener port that this endpoint group is associated with. If the listener port is a list of ports, Global Accelerator uses the first port in the list.</p>
-    pub fn set_health_check_port(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_health_check_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_health_check_port(input);
         self
     }
@@ -142,20 +148,23 @@ impl UpdateEndpointGroupFluentBuilder {
     /// <p>The protocol that Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default value is TCP.</p>
     pub fn set_health_check_protocol(
         mut self,
-        input: std::option::Option<crate::types::HealthCheckProtocol>,
+        input: ::std::option::Option<crate::types::HealthCheckProtocol>,
     ) -> Self {
         self.inner = self.inner.set_health_check_protocol(input);
         self
     }
     /// <p>If the protocol is HTTP/S, then this specifies the path that is the destination for health check targets. The default value is slash (/).</p>
-    pub fn health_check_path(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn health_check_path(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.health_check_path(input.into());
         self
     }
     /// <p>If the protocol is HTTP/S, then this specifies the path that is the destination for health check targets. The default value is slash (/).</p>
     pub fn set_health_check_path(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_health_check_path(input);
         self
@@ -166,7 +175,7 @@ impl UpdateEndpointGroupFluentBuilder {
         self
     }
     /// <p>The time—10 seconds or 30 seconds—between each health check for an endpoint. The default value is 30.</p>
-    pub fn set_health_check_interval_seconds(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_health_check_interval_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_health_check_interval_seconds(input);
         self
     }
@@ -176,7 +185,7 @@ impl UpdateEndpointGroupFluentBuilder {
         self
     }
     /// <p>The number of consecutive health checks required to set the state of a healthy endpoint to unhealthy, or to set an unhealthy endpoint to healthy. The default value is 3.</p>
-    pub fn set_threshold_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_threshold_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_threshold_count(input);
         self
     }
@@ -194,7 +203,7 @@ impl UpdateEndpointGroupFluentBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html"> Overriding listener ports</a> in the <i>Global Accelerator Developer Guide</i>.</p>
     pub fn set_port_overrides(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PortOverride>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PortOverride>>,
     ) -> Self {
         self.inner = self.inner.set_port_overrides(input);
         self

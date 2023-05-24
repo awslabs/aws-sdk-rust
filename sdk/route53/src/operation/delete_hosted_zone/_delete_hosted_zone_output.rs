@@ -2,20 +2,20 @@
 
 /// <p>A complex type that contains the response to a <code>DeleteHostedZone</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteHostedZoneOutput {
     /// <p>A complex type that contains the ID, the status, and the date and time of a request to delete a hosted zone.</p>
     #[doc(hidden)]
-    pub change_info: std::option::Option<crate::types::ChangeInfo>,
+    pub change_info: ::std::option::Option<crate::types::ChangeInfo>,
     _request_id: Option<String>,
 }
 impl DeleteHostedZoneOutput {
     /// <p>A complex type that contains the ID, the status, and the date and time of a request to delete a hosted zone.</p>
-    pub fn change_info(&self) -> std::option::Option<&crate::types::ChangeInfo> {
+    pub fn change_info(&self) -> ::std::option::Option<&crate::types::ChangeInfo> {
         self.change_info.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for DeleteHostedZoneOutput {
+impl ::aws_http::request_id::RequestId for DeleteHostedZoneOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,19 +30,24 @@ impl DeleteHostedZoneOutput {
 
 /// A builder for [`DeleteHostedZoneOutput`](crate::operation::delete_hosted_zone::DeleteHostedZoneOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteHostedZoneOutputBuilder {
-    pub(crate) change_info: std::option::Option<crate::types::ChangeInfo>,
+    pub(crate) change_info: ::std::option::Option<crate::types::ChangeInfo>,
     _request_id: Option<String>,
 }
 impl DeleteHostedZoneOutputBuilder {
     /// <p>A complex type that contains the ID, the status, and the date and time of a request to delete a hosted zone.</p>
     pub fn change_info(mut self, input: crate::types::ChangeInfo) -> Self {
-        self.change_info = Some(input);
+        self.change_info = ::std::option::Option::Some(input);
         self
     }
     /// <p>A complex type that contains the ID, the status, and the date and time of a request to delete a hosted zone.</p>
-    pub fn set_change_info(mut self, input: std::option::Option<crate::types::ChangeInfo>) -> Self {
+    pub fn set_change_info(
+        mut self,
+        input: ::std::option::Option<crate::types::ChangeInfo>,
+    ) -> Self {
         self.change_info = input;
         self
     }

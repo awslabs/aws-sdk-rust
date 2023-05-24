@@ -2,36 +2,36 @@
 
 /// <p>Describes a user in the user pool and the associated stack.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UserStackAssociation {
     /// <p>The name of the stack that is associated with the user.</p>
     #[doc(hidden)]
-    pub stack_name: std::option::Option<std::string::String>,
+    pub stack_name: ::std::option::Option<::std::string::String>,
     /// <p>The email address of the user who is associated with the stack.</p> <note>
     /// <p>Users' email addresses are case-sensitive.</p>
     /// </note>
     #[doc(hidden)]
-    pub user_name: std::option::Option<std::string::String>,
+    pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>The authentication type for the user.</p>
     #[doc(hidden)]
-    pub authentication_type: std::option::Option<crate::types::AuthenticationType>,
+    pub authentication_type: ::std::option::Option<crate::types::AuthenticationType>,
     /// <p>Specifies whether a welcome email is sent to a user after the user is created in the user pool.</p>
     #[doc(hidden)]
     pub send_email_notification: bool,
 }
 impl UserStackAssociation {
     /// <p>The name of the stack that is associated with the user.</p>
-    pub fn stack_name(&self) -> std::option::Option<&str> {
+    pub fn stack_name(&self) -> ::std::option::Option<&str> {
         self.stack_name.as_deref()
     }
     /// <p>The email address of the user who is associated with the stack.</p> <note>
     /// <p>Users' email addresses are case-sensitive.</p>
     /// </note>
-    pub fn user_name(&self) -> std::option::Option<&str> {
+    pub fn user_name(&self) -> ::std::option::Option<&str> {
         self.user_name.as_deref()
     }
     /// <p>The authentication type for the user.</p>
-    pub fn authentication_type(&self) -> std::option::Option<&crate::types::AuthenticationType> {
+    pub fn authentication_type(&self) -> ::std::option::Option<&crate::types::AuthenticationType> {
         self.authentication_type.as_ref()
     }
     /// <p>Specifies whether a welcome email is sent to a user after the user is created in the user pool.</p>
@@ -39,8 +39,8 @@ impl UserStackAssociation {
         self.send_email_notification
     }
 }
-impl std::fmt::Debug for UserStackAssociation {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for UserStackAssociation {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UserStackAssociation");
         formatter.field("stack_name", &self.stack_name);
         formatter.field("user_name", &"*** Sensitive Data Redacted ***");
@@ -58,58 +58,58 @@ impl UserStackAssociation {
 
 /// A builder for [`UserStackAssociation`](crate::types::UserStackAssociation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct UserStackAssociationBuilder {
-    pub(crate) stack_name: std::option::Option<std::string::String>,
-    pub(crate) user_name: std::option::Option<std::string::String>,
-    pub(crate) authentication_type: std::option::Option<crate::types::AuthenticationType>,
-    pub(crate) send_email_notification: std::option::Option<bool>,
+    pub(crate) stack_name: ::std::option::Option<::std::string::String>,
+    pub(crate) user_name: ::std::option::Option<::std::string::String>,
+    pub(crate) authentication_type: ::std::option::Option<crate::types::AuthenticationType>,
+    pub(crate) send_email_notification: ::std::option::Option<bool>,
 }
 impl UserStackAssociationBuilder {
     /// <p>The name of the stack that is associated with the user.</p>
-    pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.stack_name = Some(input.into());
+    pub fn stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.stack_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the stack that is associated with the user.</p>
-    pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_stack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stack_name = input;
         self
     }
     /// <p>The email address of the user who is associated with the stack.</p> <note>
     /// <p>Users' email addresses are case-sensitive.</p>
     /// </note>
-    pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.user_name = Some(input.into());
+    pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.user_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The email address of the user who is associated with the stack.</p> <note>
     /// <p>Users' email addresses are case-sensitive.</p>
     /// </note>
-    pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_name = input;
         self
     }
     /// <p>The authentication type for the user.</p>
     pub fn authentication_type(mut self, input: crate::types::AuthenticationType) -> Self {
-        self.authentication_type = Some(input);
+        self.authentication_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The authentication type for the user.</p>
     pub fn set_authentication_type(
         mut self,
-        input: std::option::Option<crate::types::AuthenticationType>,
+        input: ::std::option::Option<crate::types::AuthenticationType>,
     ) -> Self {
         self.authentication_type = input;
         self
     }
     /// <p>Specifies whether a welcome email is sent to a user after the user is created in the user pool.</p>
     pub fn send_email_notification(mut self, input: bool) -> Self {
-        self.send_email_notification = Some(input);
+        self.send_email_notification = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether a welcome email is sent to a user after the user is created in the user pool.</p>
-    pub fn set_send_email_notification(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_send_email_notification(mut self, input: ::std::option::Option<bool>) -> Self {
         self.send_email_notification = input;
         self
     }
@@ -123,8 +123,8 @@ impl UserStackAssociationBuilder {
         }
     }
 }
-impl std::fmt::Debug for UserStackAssociationBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for UserStackAssociationBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UserStackAssociationBuilder");
         formatter.field("stack_name", &self.stack_name);
         formatter.field("user_name", &"*** Sensitive Data Redacted ***");

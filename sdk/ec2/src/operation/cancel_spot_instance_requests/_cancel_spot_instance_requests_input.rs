@@ -2,22 +2,22 @@
 
 /// <p>Contains the parameters for CancelSpotInstanceRequests.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelSpotInstanceRequestsInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
-    pub dry_run: std::option::Option<bool>,
+    pub dry_run: ::std::option::Option<bool>,
     /// <p>The IDs of the Spot Instance requests.</p>
     #[doc(hidden)]
-    pub spot_instance_request_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub spot_instance_request_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CancelSpotInstanceRequestsInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn dry_run(&self) -> std::option::Option<bool> {
+    pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
     /// <p>The IDs of the Spot Instance requests.</p>
-    pub fn spot_instance_request_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn spot_instance_request_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.spot_instance_request_ids.as_deref()
     }
 }
@@ -30,19 +30,22 @@ impl CancelSpotInstanceRequestsInput {
 
 /// A builder for [`CancelSpotInstanceRequestsInput`](crate::operation::cancel_spot_instance_requests::CancelSpotInstanceRequestsInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CancelSpotInstanceRequestsInputBuilder {
-    pub(crate) dry_run: std::option::Option<bool>,
-    pub(crate) spot_instance_request_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) dry_run: ::std::option::Option<bool>,
+    pub(crate) spot_instance_request_ids:
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CancelSpotInstanceRequestsInputBuilder {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
-        self.dry_run = Some(input);
+        self.dry_run = ::std::option::Option::Some(input);
         self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
     }
@@ -51,16 +54,19 @@ impl CancelSpotInstanceRequestsInputBuilder {
     /// To override the contents of this collection use [`set_spot_instance_request_ids`](Self::set_spot_instance_request_ids).
     ///
     /// <p>The IDs of the Spot Instance requests.</p>
-    pub fn spot_instance_request_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn spot_instance_request_ids(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.spot_instance_request_ids.unwrap_or_default();
         v.push(input.into());
-        self.spot_instance_request_ids = Some(v);
+        self.spot_instance_request_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IDs of the Spot Instance requests.</p>
     pub fn set_spot_instance_request_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.spot_instance_request_ids = input;
         self
@@ -68,11 +74,11 @@ impl CancelSpotInstanceRequestsInputBuilder {
     /// Consumes the builder and constructs a [`CancelSpotInstanceRequestsInput`](crate::operation::cancel_spot_instance_requests::CancelSpotInstanceRequestsInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::cancel_spot_instance_requests::CancelSpotInstanceRequestsInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::cancel_spot_instance_requests::CancelSpotInstanceRequestsInput {
                 dry_run: self.dry_run,
                 spot_instance_request_ids: self.spot_instance_request_ids,

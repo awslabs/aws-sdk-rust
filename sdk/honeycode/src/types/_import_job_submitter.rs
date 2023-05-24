@@ -2,27 +2,27 @@
 
 /// <p>An object that contains the attributes of the submitter of the import job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ImportJobSubmitter {
     /// <p>The email id of the submitter of the import job, if available.</p>
     #[doc(hidden)]
-    pub email: std::option::Option<std::string::String>,
+    pub email: ::std::option::Option<::std::string::String>,
     /// <p>The AWS user ARN of the submitter of the import job, if available.</p>
     #[doc(hidden)]
-    pub user_arn: std::option::Option<std::string::String>,
+    pub user_arn: ::std::option::Option<::std::string::String>,
 }
 impl ImportJobSubmitter {
     /// <p>The email id of the submitter of the import job, if available.</p>
-    pub fn email(&self) -> std::option::Option<&str> {
+    pub fn email(&self) -> ::std::option::Option<&str> {
         self.email.as_deref()
     }
     /// <p>The AWS user ARN of the submitter of the import job, if available.</p>
-    pub fn user_arn(&self) -> std::option::Option<&str> {
+    pub fn user_arn(&self) -> ::std::option::Option<&str> {
         self.user_arn.as_deref()
     }
 }
-impl std::fmt::Debug for ImportJobSubmitter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for ImportJobSubmitter {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ImportJobSubmitter");
         formatter.field("email", &"*** Sensitive Data Redacted ***");
         formatter.field("user_arn", &self.user_arn);
@@ -38,29 +38,29 @@ impl ImportJobSubmitter {
 
 /// A builder for [`ImportJobSubmitter`](crate::types::ImportJobSubmitter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct ImportJobSubmitterBuilder {
-    pub(crate) email: std::option::Option<std::string::String>,
-    pub(crate) user_arn: std::option::Option<std::string::String>,
+    pub(crate) email: ::std::option::Option<::std::string::String>,
+    pub(crate) user_arn: ::std::option::Option<::std::string::String>,
 }
 impl ImportJobSubmitterBuilder {
     /// <p>The email id of the submitter of the import job, if available.</p>
-    pub fn email(mut self, input: impl Into<std::string::String>) -> Self {
-        self.email = Some(input.into());
+    pub fn email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.email = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The email id of the submitter of the import job, if available.</p>
-    pub fn set_email(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.email = input;
         self
     }
     /// <p>The AWS user ARN of the submitter of the import job, if available.</p>
-    pub fn user_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.user_arn = Some(input.into());
+    pub fn user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.user_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The AWS user ARN of the submitter of the import job, if available.</p>
-    pub fn set_user_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_arn = input;
         self
     }
@@ -72,8 +72,8 @@ impl ImportJobSubmitterBuilder {
         }
     }
 }
-impl std::fmt::Debug for ImportJobSubmitterBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for ImportJobSubmitterBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ImportJobSubmitterBuilder");
         formatter.field("email", &"*** Sensitive Data Redacted ***");
         formatter.field("user_arn", &self.user_arn);

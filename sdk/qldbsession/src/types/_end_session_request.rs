@@ -2,7 +2,7 @@
 
 /// <p>Specifies a request to end the session.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EndSessionRequest {}
 impl EndSessionRequest {
     /// Creates a new builder-style object to manufacture [`EndSessionRequest`](crate::types::EndSessionRequest).
@@ -13,7 +13,9 @@ impl EndSessionRequest {
 
 /// A builder for [`EndSessionRequest`](crate::types::EndSessionRequest).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EndSessionRequestBuilder {}
 impl EndSessionRequestBuilder {
     /// Consumes the builder and constructs a [`EndSessionRequest`](crate::types::EndSessionRequest).

@@ -38,13 +38,13 @@
 /// <p>Specifies how to handle response payload content type conversions. Supported only for WebSocket APIs.</p>
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ContentHandlingStrategy {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum ContentHandlingStrategy {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ContentHandlingStrategy {
+impl ::std::convert::From<&str> for ContentHandlingStrategy {
     fn from(s: &str) -> Self {
         match s {
             "CONVERT_TO_BINARY" => ContentHandlingStrategy::ConvertToBinary,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for ContentHandlingStrategy {
         }
     }
 }
-impl std::str::FromStr for ContentHandlingStrategy {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ContentHandlingStrategy {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ContentHandlingStrategy::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ContentHandlingStrategy::from(s))
     }
 }
 impl ContentHandlingStrategy {
@@ -86,7 +86,7 @@ impl ContentHandlingStrategy {
         &["CONVERT_TO_BINARY", "CONVERT_TO_TEXT"]
     }
 }
-impl AsRef<str> for ContentHandlingStrategy {
+impl ::std::convert::AsRef<str> for ContentHandlingStrategy {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

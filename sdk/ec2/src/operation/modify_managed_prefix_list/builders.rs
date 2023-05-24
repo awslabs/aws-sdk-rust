@@ -8,30 +8,30 @@ pub use crate::operation::modify_managed_prefix_list::_modify_managed_prefix_lis
 /// <p>Modifies the specified managed prefix list.</p>
 /// <p>Adding or removing entries in a prefix list creates a new version of the prefix list. Changing the name of the prefix list does not affect the version.</p>
 /// <p>If you specify a current version number that does not match the true current version number, the request fails.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyManagedPrefixListFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner:
         crate::operation::modify_managed_prefix_list::builders::ModifyManagedPrefixListInputBuilder,
 }
 impl ModifyManagedPrefixListFluentBuilder {
     /// Creates a new `ModifyManagedPrefixList`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::modify_managed_prefix_list::ModifyManagedPrefixList,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::modify_managed_prefix_list::ModifyManagedPrefixListError,
         >,
     > {
@@ -39,30 +39,33 @@ impl ModifyManagedPrefixListFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::modify_managed_prefix_list::ModifyManagedPrefixListOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::modify_managed_prefix_list::ModifyManagedPrefixListError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -75,9 +78,9 @@ impl ModifyManagedPrefixListFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::modify_managed_prefix_list::ModifyManagedPrefixListOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::modify_managed_prefix_list::ModifyManagedPrefixListError,
         >,
     > {
@@ -89,17 +92,23 @@ impl ModifyManagedPrefixListFluentBuilder {
         self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
     }
     /// <p>The ID of the prefix list.</p>
-    pub fn prefix_list_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn prefix_list_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.prefix_list_id(input.into());
         self
     }
     /// <p>The ID of the prefix list.</p>
-    pub fn set_prefix_list_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_prefix_list_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_prefix_list_id(input);
         self
     }
@@ -109,17 +118,23 @@ impl ModifyManagedPrefixListFluentBuilder {
         self
     }
     /// <p>The current version of the prefix list.</p>
-    pub fn set_current_version(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_current_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_current_version(input);
         self
     }
     /// <p>A name for the prefix list.</p>
-    pub fn prefix_list_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn prefix_list_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.prefix_list_name(input.into());
         self
     }
     /// <p>A name for the prefix list.</p>
-    pub fn set_prefix_list_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_prefix_list_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_prefix_list_name(input);
         self
     }
@@ -135,7 +150,7 @@ impl ModifyManagedPrefixListFluentBuilder {
     /// <p>One or more entries to add to the prefix list.</p>
     pub fn set_add_entries(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AddPrefixListEntry>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AddPrefixListEntry>>,
     ) -> Self {
         self.inner = self.inner.set_add_entries(input);
         self
@@ -152,7 +167,7 @@ impl ModifyManagedPrefixListFluentBuilder {
     /// <p>One or more entries to remove from the prefix list.</p>
     pub fn set_remove_entries(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RemovePrefixListEntry>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::RemovePrefixListEntry>>,
     ) -> Self {
         self.inner = self.inner.set_remove_entries(input);
         self
@@ -165,7 +180,7 @@ impl ModifyManagedPrefixListFluentBuilder {
     }
     /// <p>The maximum number of entries for the prefix list. You cannot modify the entries of a prefix list and modify the size of a prefix list at the same time.</p>
     /// <p>If any of the resources that reference the prefix list cannot support the new maximum size, the modify operation fails. Check the state message for the IDs of the first ten resources that do not support the new maximum size.</p>
-    pub fn set_max_entries(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_entries(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_entries(input);
         self
     }

@@ -2,22 +2,22 @@
 
 /// <p>Information about the destination of the next component in the network path.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkPathComponentDetails {
     /// <p>The IP addresses of the destination.</p>
     #[doc(hidden)]
-    pub address: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub address: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of port ranges for the destination.</p>
     #[doc(hidden)]
-    pub port_ranges: std::option::Option<std::vec::Vec<crate::types::PortRange>>,
+    pub port_ranges: ::std::option::Option<::std::vec::Vec<crate::types::PortRange>>,
 }
 impl NetworkPathComponentDetails {
     /// <p>The IP addresses of the destination.</p>
-    pub fn address(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn address(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.address.as_deref()
     }
     /// <p>A list of port ranges for the destination.</p>
-    pub fn port_ranges(&self) -> std::option::Option<&[crate::types::PortRange]> {
+    pub fn port_ranges(&self) -> ::std::option::Option<&[crate::types::PortRange]> {
         self.port_ranges.as_deref()
     }
 }
@@ -30,10 +30,12 @@ impl NetworkPathComponentDetails {
 
 /// A builder for [`NetworkPathComponentDetails`](crate::types::NetworkPathComponentDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NetworkPathComponentDetailsBuilder {
-    pub(crate) address: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) port_ranges: std::option::Option<std::vec::Vec<crate::types::PortRange>>,
+    pub(crate) address: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) port_ranges: ::std::option::Option<::std::vec::Vec<crate::types::PortRange>>,
 }
 impl NetworkPathComponentDetailsBuilder {
     /// Appends an item to `address`.
@@ -41,16 +43,16 @@ impl NetworkPathComponentDetailsBuilder {
     /// To override the contents of this collection use [`set_address`](Self::set_address).
     ///
     /// <p>The IP addresses of the destination.</p>
-    pub fn address(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.address.unwrap_or_default();
         v.push(input.into());
-        self.address = Some(v);
+        self.address = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IP addresses of the destination.</p>
     pub fn set_address(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.address = input;
         self
@@ -63,13 +65,13 @@ impl NetworkPathComponentDetailsBuilder {
     pub fn port_ranges(mut self, input: crate::types::PortRange) -> Self {
         let mut v = self.port_ranges.unwrap_or_default();
         v.push(input);
-        self.port_ranges = Some(v);
+        self.port_ranges = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of port ranges for the destination.</p>
     pub fn set_port_ranges(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PortRange>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PortRange>>,
     ) -> Self {
         self.port_ranges = input;
         self

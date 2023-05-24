@@ -7,29 +7,29 @@ pub use crate::operation::set_ip_address_type::_set_ip_address_type_input::SetIp
 ///
 /// <p>Sets the IP address type for an Amazon Lightsail resource.</p>
 /// <p>Use this action to enable dual-stack for a resource, which enables IPv4 and IPv6 for the specified resource. Alternately, you can use this action to disable dual-stack, and enable IPv4 only.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SetIpAddressTypeFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::set_ip_address_type::builders::SetIpAddressTypeInputBuilder,
 }
 impl SetIpAddressTypeFluentBuilder {
     /// Creates a new `SetIpAddressType`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::set_ip_address_type::SetIpAddressType,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::set_ip_address_type::SetIpAddressTypeError,
         >,
     > {
@@ -37,30 +37,33 @@ impl SetIpAddressTypeFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::set_ip_address_type::SetIpAddressTypeOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::set_ip_address_type::SetIpAddressTypeError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -73,9 +76,9 @@ impl SetIpAddressTypeFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::set_ip_address_type::SetIpAddressTypeOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::set_ip_address_type::SetIpAddressTypeError,
         >,
     > {
@@ -95,18 +98,24 @@ impl SetIpAddressTypeFluentBuilder {
     /// </note>
     pub fn set_resource_type(
         mut self,
-        input: std::option::Option<crate::types::ResourceType>,
+        input: ::std::option::Option<crate::types::ResourceType>,
     ) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
     }
     /// <p>The name of the resource for which to set the IP address type.</p>
-    pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn resource_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.resource_name(input.into());
         self
     }
     /// <p>The name of the resource for which to set the IP address type.</p>
-    pub fn set_resource_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_resource_name(input);
         self
     }
@@ -120,7 +129,7 @@ impl SetIpAddressTypeFluentBuilder {
     /// <p>The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.</p>
     pub fn set_ip_address_type(
         mut self,
-        input: std::option::Option<crate::types::IpAddressType>,
+        input: ::std::option::Option<crate::types::IpAddressType>,
     ) -> Self {
         self.inner = self.inner.set_ip_address_type(input);
         self

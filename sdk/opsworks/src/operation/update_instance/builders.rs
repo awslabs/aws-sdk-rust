@@ -7,56 +7,59 @@ pub use crate::operation::update_instance::_update_instance_input::UpdateInstanc
 ///
 /// <p>Updates a specified instance.</p>
 /// <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateInstanceFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::update_instance::builders::UpdateInstanceInputBuilder,
 }
 impl UpdateInstanceFluentBuilder {
     /// Creates a new `UpdateInstance`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_instance::UpdateInstance,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::update_instance::UpdateInstanceError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_instance::UpdateInstanceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_instance::UpdateInstanceOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_instance::UpdateInstanceError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_instance::UpdateInstanceError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -69,19 +72,19 @@ impl UpdateInstanceFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_instance::UpdateInstanceOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_instance::UpdateInstanceError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_instance::UpdateInstanceError>,
     > {
         self.send_middleware().await
     }
     /// <p>The instance ID.</p>
-    pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());
         self
     }
     /// <p>The instance ID.</p>
-    pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_id(input);
         self
     }
@@ -90,25 +93,31 @@ impl UpdateInstanceFluentBuilder {
     /// To override the contents of this collection use [`set_layer_ids`](Self::set_layer_ids).
     ///
     /// <p>The instance's layer IDs.</p>
-    pub fn layer_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn layer_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.layer_ids(input.into());
         self
     }
     /// <p>The instance's layer IDs.</p>
     pub fn set_layer_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_layer_ids(input);
         self
     }
     /// <p>The instance type, such as <code>t2.micro</code>. For a list of supported instance types, open the stack in the console, choose <b>Instances</b>, and choose <b>+ Instance</b>. The <b>Size</b> list contains the currently supported types. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>. The parameter values that you use to specify the various types are in the <b>API Name</b> column of the <b>Available Instance Types</b> table.</p>
-    pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn instance_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.instance_type(input.into());
         self
     }
     /// <p>The instance type, such as <code>t2.micro</code>. For a list of supported instance types, open the stack in the console, choose <b>Instances</b>, and choose <b>+ Instance</b>. The <b>Size</b> list contains the currently supported types. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>. The parameter values that you use to specify the various types are in the <b>API Name</b> column of the <b>Available Instance Types</b> table.</p>
-    pub fn set_instance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_instance_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_instance_type(input);
         self
     }
@@ -120,18 +129,18 @@ impl UpdateInstanceFluentBuilder {
     /// <p>For load-based or time-based instances, the type. Windows stacks can use only time-based instances.</p>
     pub fn set_auto_scaling_type(
         mut self,
-        input: std::option::Option<crate::types::AutoScalingType>,
+        input: ::std::option::Option<crate::types::AutoScalingType>,
     ) -> Self {
         self.inner = self.inner.set_auto_scaling_type(input);
         self
     }
     /// <p>The instance host name.</p>
-    pub fn hostname(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn hostname(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.hostname(input.into());
         self
     }
     /// <p>The instance host name.</p>
-    pub fn set_hostname(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_hostname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_hostname(input);
         self
     }
@@ -147,7 +156,7 @@ impl UpdateInstanceFluentBuilder {
     /// <p>The default option is the current Amazon Linux version. If you set this parameter to <code>Custom</code>, you must use the AmiId parameter to specify the custom AMI that you want to use. For more information about supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>. For more information about how to use custom AMIs with OpsWorks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p> <note>
     /// <p>You can specify a different Linux operating system for the updated stack, but you cannot change from Linux to Windows or Windows to Linux.</p>
     /// </note>
-    pub fn os(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn os(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.os(input.into());
         self
     }
@@ -163,27 +172,27 @@ impl UpdateInstanceFluentBuilder {
     /// <p>The default option is the current Amazon Linux version. If you set this parameter to <code>Custom</code>, you must use the AmiId parameter to specify the custom AMI that you want to use. For more information about supported operating systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>. For more information about how to use custom AMIs with OpsWorks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom AMIs</a>.</p> <note>
     /// <p>You can specify a different Linux operating system for the updated stack, but you cannot change from Linux to Windows or Windows to Linux.</p>
     /// </note>
-    pub fn set_os(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_os(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_os(input);
         self
     }
     /// <p>The ID of the AMI that was used to create the instance. The value of this parameter must be the same AMI ID that the instance is already using. You cannot apply a new AMI to an instance by running UpdateInstance. UpdateInstance does not work on instances that are using custom AMIs. </p>
-    pub fn ami_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn ami_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ami_id(input.into());
         self
     }
     /// <p>The ID of the AMI that was used to create the instance. The value of this parameter must be the same AMI ID that the instance is already using. You cannot apply a new AMI to an instance by running UpdateInstance. UpdateInstance does not work on instances that are using custom AMIs. </p>
-    pub fn set_ami_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ami_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ami_id(input);
         self
     }
     /// <p>The instance's Amazon EC2 key name.</p>
-    pub fn ssh_key_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn ssh_key_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ssh_key_name(input.into());
         self
     }
     /// <p>The instance's Amazon EC2 key name.</p>
-    pub fn set_ssh_key_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ssh_key_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ssh_key_name(input);
         self
     }
@@ -195,7 +204,7 @@ impl UpdateInstanceFluentBuilder {
     /// <p>The instance architecture. Instance types do not necessarily support both architectures. For a list of the architectures that are supported by the different instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and Types</a>.</p>
     pub fn set_architecture(
         mut self,
-        input: std::option::Option<crate::types::Architecture>,
+        input: ::std::option::Option<crate::types::Architecture>,
     ) -> Self {
         self.inner = self.inner.set_architecture(input);
         self
@@ -210,7 +219,7 @@ impl UpdateInstanceFluentBuilder {
     /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. To control when updates are installed, set this value to <code>false</code>. You must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
     /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest security updates.</p>
     /// </note>
-    pub fn set_install_updates_on_boot(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_install_updates_on_boot(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_install_updates_on_boot(input);
         self
     }
@@ -220,7 +229,7 @@ impl UpdateInstanceFluentBuilder {
         self
     }
     /// <p>This property cannot be updated.</p>
-    pub fn set_ebs_optimized(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_ebs_optimized(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_ebs_optimized(input);
         self
     }
@@ -231,7 +240,10 @@ impl UpdateInstanceFluentBuilder {
     /// </ul>
     /// <p>The default setting is <code>INHERIT</code>. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call <code>DescribeAgentVersions</code>.</p>
     /// <p>AgentVersion cannot be set to Chef 12.2.</p>
-    pub fn agent_version(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn agent_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.agent_version(input.into());
         self
     }
@@ -242,7 +254,10 @@ impl UpdateInstanceFluentBuilder {
     /// </ul>
     /// <p>The default setting is <code>INHERIT</code>. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call <code>DescribeAgentVersions</code>.</p>
     /// <p>AgentVersion cannot be set to Chef 12.2.</p>
-    pub fn set_agent_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_agent_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_agent_version(input);
         self
     }

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeEventsDetectionJob`](crate::operation::describe_events_detection_job::builders::DescribeEventsDetectionJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`job_id(impl Into<String>)`](crate::operation::describe_events_detection_job::builders::DescribeEventsDetectionJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::describe_events_detection_job::builders::DescribeEventsDetectionJobFluentBuilder::set_job_id): <p>The identifier of the events detection job.</p>
+    ///   - [`job_id(impl ::std::convert::Into<String>)`](crate::operation::describe_events_detection_job::builders::DescribeEventsDetectionJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::describe_events_detection_job::builders::DescribeEventsDetectionJobFluentBuilder::set_job_id): <p>The identifier of the events detection job.</p>
     /// - On success, responds with [`DescribeEventsDetectionJobOutput`](crate::operation::describe_events_detection_job::DescribeEventsDetectionJobOutput) with field(s):
     ///   - [`events_detection_job_properties(Option<EventsDetectionJobProperties>)`](crate::operation::describe_events_detection_job::DescribeEventsDetectionJobOutput::events_detection_job_properties): <p>An object that contains the properties associated with an event detection job.</p>
     /// - On failure, responds with [`SdkError<DescribeEventsDetectionJobError>`](crate::operation::describe_events_detection_job::DescribeEventsDetectionJobError)

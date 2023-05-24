@@ -2,7 +2,7 @@
 pub(crate) fn de_distribution_list_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::types::DistributionList>,
+    ::std::option::Option<crate::types::DistributionList>,
     crate::operation::list_distributions_by_web_acl_id::ListDistributionsByWebACLIdError,
 > {
     (!body.is_empty()).then(||{
@@ -12,13 +12,13 @@ pub(crate) fn de_distribution_list_payload(
 
 pub fn de_distribution_list(
     inp: &[u8],
-) -> Result<crate::types::DistributionList, aws_smithy_xml::decode::XmlDecodeError> {
-    let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
+) -> Result<crate::types::DistributionList, ::aws_smithy_xml::decode::XmlDecodeError> {
+    let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
     let start_el = decoder.start_el();
     if !(start_el.matches("DistributionList")) {
-        return Err(aws_smithy_xml::decode::XmlDecodeError::custom(format!(
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DistributionList got {:?}",
             start_el
         )));

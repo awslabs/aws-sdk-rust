@@ -2,22 +2,22 @@
 
 /// <p>The aggregated value for a metric.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetricValue {
     /// <p>The actual number that represents the metric.</p>
     #[doc(hidden)]
-    pub amount: std::option::Option<std::string::String>,
+    pub amount: ::std::option::Option<::std::string::String>,
     /// <p>The unit that the metric is given in.</p>
     #[doc(hidden)]
-    pub unit: std::option::Option<std::string::String>,
+    pub unit: ::std::option::Option<::std::string::String>,
 }
 impl MetricValue {
     /// <p>The actual number that represents the metric.</p>
-    pub fn amount(&self) -> std::option::Option<&str> {
+    pub fn amount(&self) -> ::std::option::Option<&str> {
         self.amount.as_deref()
     }
     /// <p>The unit that the metric is given in.</p>
-    pub fn unit(&self) -> std::option::Option<&str> {
+    pub fn unit(&self) -> ::std::option::Option<&str> {
         self.unit.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl MetricValue {
 
 /// A builder for [`MetricValue`](crate::types::MetricValue).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MetricValueBuilder {
-    pub(crate) amount: std::option::Option<std::string::String>,
-    pub(crate) unit: std::option::Option<std::string::String>,
+    pub(crate) amount: ::std::option::Option<::std::string::String>,
+    pub(crate) unit: ::std::option::Option<::std::string::String>,
 }
 impl MetricValueBuilder {
     /// <p>The actual number that represents the metric.</p>
-    pub fn amount(mut self, input: impl Into<std::string::String>) -> Self {
-        self.amount = Some(input.into());
+    pub fn amount(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.amount = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The actual number that represents the metric.</p>
-    pub fn set_amount(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_amount(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.amount = input;
         self
     }
     /// <p>The unit that the metric is given in.</p>
-    pub fn unit(mut self, input: impl Into<std::string::String>) -> Self {
-        self.unit = Some(input.into());
+    pub fn unit(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.unit = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unit that the metric is given in.</p>
-    pub fn set_unit(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_unit(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.unit = input;
         self
     }

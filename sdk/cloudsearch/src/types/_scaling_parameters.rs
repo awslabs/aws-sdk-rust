@@ -2,11 +2,11 @@
 
 /// <p>The desired instance type and desired number of replicas of each index partition.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScalingParameters {
     /// <p>The instance type that you want to preconfigure for your domain. For example, <code>search.m1.small</code>.</p>
     #[doc(hidden)]
-    pub desired_instance_type: std::option::Option<crate::types::PartitionInstanceType>,
+    pub desired_instance_type: ::std::option::Option<crate::types::PartitionInstanceType>,
     /// <p>The number of replicas you want to preconfigure for each index partition.</p>
     #[doc(hidden)]
     pub desired_replication_count: i32,
@@ -18,7 +18,7 @@ impl ScalingParameters {
     /// <p>The instance type that you want to preconfigure for your domain. For example, <code>search.m1.small</code>.</p>
     pub fn desired_instance_type(
         &self,
-    ) -> std::option::Option<&crate::types::PartitionInstanceType> {
+    ) -> ::std::option::Option<&crate::types::PartitionInstanceType> {
         self.desired_instance_type.as_ref()
     }
     /// <p>The number of replicas you want to preconfigure for each index partition.</p>
@@ -39,43 +39,45 @@ impl ScalingParameters {
 
 /// A builder for [`ScalingParameters`](crate::types::ScalingParameters).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ScalingParametersBuilder {
-    pub(crate) desired_instance_type: std::option::Option<crate::types::PartitionInstanceType>,
-    pub(crate) desired_replication_count: std::option::Option<i32>,
-    pub(crate) desired_partition_count: std::option::Option<i32>,
+    pub(crate) desired_instance_type: ::std::option::Option<crate::types::PartitionInstanceType>,
+    pub(crate) desired_replication_count: ::std::option::Option<i32>,
+    pub(crate) desired_partition_count: ::std::option::Option<i32>,
 }
 impl ScalingParametersBuilder {
     /// <p>The instance type that you want to preconfigure for your domain. For example, <code>search.m1.small</code>.</p>
     pub fn desired_instance_type(mut self, input: crate::types::PartitionInstanceType) -> Self {
-        self.desired_instance_type = Some(input);
+        self.desired_instance_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The instance type that you want to preconfigure for your domain. For example, <code>search.m1.small</code>.</p>
     pub fn set_desired_instance_type(
         mut self,
-        input: std::option::Option<crate::types::PartitionInstanceType>,
+        input: ::std::option::Option<crate::types::PartitionInstanceType>,
     ) -> Self {
         self.desired_instance_type = input;
         self
     }
     /// <p>The number of replicas you want to preconfigure for each index partition.</p>
     pub fn desired_replication_count(mut self, input: i32) -> Self {
-        self.desired_replication_count = Some(input);
+        self.desired_replication_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of replicas you want to preconfigure for each index partition.</p>
-    pub fn set_desired_replication_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_desired_replication_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.desired_replication_count = input;
         self
     }
     /// <p>The number of partitions you want to preconfigure for your domain. Only valid when you select <code>m2.2xlarge</code> as the desired instance type.</p>
     pub fn desired_partition_count(mut self, input: i32) -> Self {
-        self.desired_partition_count = Some(input);
+        self.desired_partition_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of partitions you want to preconfigure for your domain. Only valid when you select <code>m2.2xlarge</code> as the desired instance type.</p>
-    pub fn set_desired_partition_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_desired_partition_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.desired_partition_count = input;
         self
     }

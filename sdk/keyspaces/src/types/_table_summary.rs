@@ -2,29 +2,29 @@
 
 /// <p>Returns the name of the specified table, the keyspace it is stored in, and the unique identifier in the format of an Amazon Resource Name (ARN).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TableSummary {
     /// <p>The name of the keyspace that the table is stored in.</p>
     #[doc(hidden)]
-    pub keyspace_name: std::option::Option<std::string::String>,
+    pub keyspace_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the table.</p>
     #[doc(hidden)]
-    pub table_name: std::option::Option<std::string::String>,
+    pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the table in the format of an Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
-    pub resource_arn: std::option::Option<std::string::String>,
+    pub resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl TableSummary {
     /// <p>The name of the keyspace that the table is stored in.</p>
-    pub fn keyspace_name(&self) -> std::option::Option<&str> {
+    pub fn keyspace_name(&self) -> ::std::option::Option<&str> {
         self.keyspace_name.as_deref()
     }
     /// <p>The name of the table.</p>
-    pub fn table_name(&self) -> std::option::Option<&str> {
+    pub fn table_name(&self) -> ::std::option::Option<&str> {
         self.table_name.as_deref()
     }
     /// <p>The unique identifier of the table in the format of an Amazon Resource Name (ARN).</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
 }
@@ -37,40 +37,48 @@ impl TableSummary {
 
 /// A builder for [`TableSummary`](crate::types::TableSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TableSummaryBuilder {
-    pub(crate) keyspace_name: std::option::Option<std::string::String>,
-    pub(crate) table_name: std::option::Option<std::string::String>,
-    pub(crate) resource_arn: std::option::Option<std::string::String>,
+    pub(crate) keyspace_name: ::std::option::Option<::std::string::String>,
+    pub(crate) table_name: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl TableSummaryBuilder {
     /// <p>The name of the keyspace that the table is stored in.</p>
-    pub fn keyspace_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.keyspace_name = Some(input.into());
+    pub fn keyspace_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.keyspace_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the keyspace that the table is stored in.</p>
-    pub fn set_keyspace_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_keyspace_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.keyspace_name = input;
         self
     }
     /// <p>The name of the table.</p>
-    pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.table_name = Some(input.into());
+    pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.table_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the table.</p>
-    pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_name = input;
         self
     }
     /// <p>The unique identifier of the table in the format of an Amazon Resource Name (ARN).</p>
-    pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_arn = Some(input.into());
+    pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the table in the format of an Amazon Resource Name (ARN).</p>
-    pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
     }

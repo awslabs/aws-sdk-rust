@@ -2,22 +2,22 @@
 
 /// <p>Result message wrapping a single description of an application version.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateApplicationVersionOutput {
     /// <p> The <code>ApplicationVersionDescription</code> of the application version. </p>
     #[doc(hidden)]
-    pub application_version: std::option::Option<crate::types::ApplicationVersionDescription>,
+    pub application_version: ::std::option::Option<crate::types::ApplicationVersionDescription>,
     _request_id: Option<String>,
 }
 impl CreateApplicationVersionOutput {
     /// <p> The <code>ApplicationVersionDescription</code> of the application version. </p>
     pub fn application_version(
         &self,
-    ) -> std::option::Option<&crate::types::ApplicationVersionDescription> {
+    ) -> ::std::option::Option<&crate::types::ApplicationVersionDescription> {
         self.application_version.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for CreateApplicationVersionOutput {
+impl ::aws_http::request_id::RequestId for CreateApplicationVersionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -33,10 +33,12 @@ impl CreateApplicationVersionOutput {
 
 /// A builder for [`CreateApplicationVersionOutput`](crate::operation::create_application_version::CreateApplicationVersionOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateApplicationVersionOutputBuilder {
     pub(crate) application_version:
-        std::option::Option<crate::types::ApplicationVersionDescription>,
+        ::std::option::Option<crate::types::ApplicationVersionDescription>,
     _request_id: Option<String>,
 }
 impl CreateApplicationVersionOutputBuilder {
@@ -45,13 +47,13 @@ impl CreateApplicationVersionOutputBuilder {
         mut self,
         input: crate::types::ApplicationVersionDescription,
     ) -> Self {
-        self.application_version = Some(input);
+        self.application_version = ::std::option::Option::Some(input);
         self
     }
     /// <p> The <code>ApplicationVersionDescription</code> of the application version. </p>
     pub fn set_application_version(
         mut self,
-        input: std::option::Option<crate::types::ApplicationVersionDescription>,
+        input: ::std::option::Option<crate::types::ApplicationVersionDescription>,
     ) -> Self {
         self.application_version = input;
         self

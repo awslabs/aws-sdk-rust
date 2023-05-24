@@ -4,18 +4,18 @@
 /// <p>This data structure is only used with the deprecated <code>ExecuteSql</code> operation. Use the <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code> operation instead.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SqlStatementResult {
     /// <p>The result set of the SQL statement.</p>
     #[doc(hidden)]
-    pub result_frame: std::option::Option<crate::types::ResultFrame>,
+    pub result_frame: ::std::option::Option<crate::types::ResultFrame>,
     /// <p>The number of records updated by a SQL statement.</p>
     #[doc(hidden)]
     pub number_of_records_updated: i64,
 }
 impl SqlStatementResult {
     /// <p>The result set of the SQL statement.</p>
-    pub fn result_frame(&self) -> std::option::Option<&crate::types::ResultFrame> {
+    pub fn result_frame(&self) -> ::std::option::Option<&crate::types::ResultFrame> {
         self.result_frame.as_ref()
     }
     /// <p>The number of records updated by a SQL statement.</p>
@@ -32,32 +32,34 @@ impl SqlStatementResult {
 
 /// A builder for [`SqlStatementResult`](crate::types::SqlStatementResult).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SqlStatementResultBuilder {
-    pub(crate) result_frame: std::option::Option<crate::types::ResultFrame>,
-    pub(crate) number_of_records_updated: std::option::Option<i64>,
+    pub(crate) result_frame: ::std::option::Option<crate::types::ResultFrame>,
+    pub(crate) number_of_records_updated: ::std::option::Option<i64>,
 }
 impl SqlStatementResultBuilder {
     /// <p>The result set of the SQL statement.</p>
     pub fn result_frame(mut self, input: crate::types::ResultFrame) -> Self {
-        self.result_frame = Some(input);
+        self.result_frame = ::std::option::Option::Some(input);
         self
     }
     /// <p>The result set of the SQL statement.</p>
     pub fn set_result_frame(
         mut self,
-        input: std::option::Option<crate::types::ResultFrame>,
+        input: ::std::option::Option<crate::types::ResultFrame>,
     ) -> Self {
         self.result_frame = input;
         self
     }
     /// <p>The number of records updated by a SQL statement.</p>
     pub fn number_of_records_updated(mut self, input: i64) -> Self {
-        self.number_of_records_updated = Some(input);
+        self.number_of_records_updated = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of records updated by a SQL statement.</p>
-    pub fn set_number_of_records_updated(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_number_of_records_updated(mut self, input: ::std::option::Option<i64>) -> Self {
         self.number_of_records_updated = input;
         self
     }

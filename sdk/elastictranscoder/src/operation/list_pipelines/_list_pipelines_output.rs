@@ -2,27 +2,27 @@
 
 /// <p>A list of the pipelines associated with the current AWS account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPipelinesOutput {
     /// <p>An array of <code>Pipeline</code> objects.</p>
     #[doc(hidden)]
-    pub pipelines: std::option::Option<std::vec::Vec<crate::types::Pipeline>>,
+    pub pipelines: ::std::option::Option<::std::vec::Vec<crate::types::Pipeline>>,
     /// <p>A value that you use to access the second and subsequent pages of results, if any. When the pipelines fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>.</p>
     #[doc(hidden)]
-    pub next_page_token: std::option::Option<std::string::String>,
+    pub next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListPipelinesOutput {
     /// <p>An array of <code>Pipeline</code> objects.</p>
-    pub fn pipelines(&self) -> std::option::Option<&[crate::types::Pipeline]> {
+    pub fn pipelines(&self) -> ::std::option::Option<&[crate::types::Pipeline]> {
         self.pipelines.as_deref()
     }
     /// <p>A value that you use to access the second and subsequent pages of results, if any. When the pipelines fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>.</p>
-    pub fn next_page_token(&self) -> std::option::Option<&str> {
+    pub fn next_page_token(&self) -> ::std::option::Option<&str> {
         self.next_page_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListPipelinesOutput {
+impl ::aws_http::request_id::RequestId for ListPipelinesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -36,10 +36,12 @@ impl ListPipelinesOutput {
 
 /// A builder for [`ListPipelinesOutput`](crate::operation::list_pipelines::ListPipelinesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListPipelinesOutputBuilder {
-    pub(crate) pipelines: std::option::Option<std::vec::Vec<crate::types::Pipeline>>,
-    pub(crate) next_page_token: std::option::Option<std::string::String>,
+    pub(crate) pipelines: ::std::option::Option<::std::vec::Vec<crate::types::Pipeline>>,
+    pub(crate) next_page_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListPipelinesOutputBuilder {
@@ -51,24 +53,30 @@ impl ListPipelinesOutputBuilder {
     pub fn pipelines(mut self, input: crate::types::Pipeline) -> Self {
         let mut v = self.pipelines.unwrap_or_default();
         v.push(input);
-        self.pipelines = Some(v);
+        self.pipelines = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of <code>Pipeline</code> objects.</p>
     pub fn set_pipelines(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Pipeline>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Pipeline>>,
     ) -> Self {
         self.pipelines = input;
         self
     }
     /// <p>A value that you use to access the second and subsequent pages of results, if any. When the pipelines fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>.</p>
-    pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_page_token = Some(input.into());
+    pub fn next_page_token(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.next_page_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A value that you use to access the second and subsequent pages of results, if any. When the pipelines fit on one page or when you've reached the last page of results, the value of <code>NextPageToken</code> is <code>null</code>.</p>
-    pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_page_token(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.next_page_token = input;
         self
     }

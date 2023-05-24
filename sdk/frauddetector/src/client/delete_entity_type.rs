@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteEntityType`](crate::operation::delete_entity_type::builders::DeleteEntityTypeFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::delete_entity_type::builders::DeleteEntityTypeFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_entity_type::builders::DeleteEntityTypeFluentBuilder::set_name): <p>The name of the entity type to delete.</p>
+    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::delete_entity_type::builders::DeleteEntityTypeFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_entity_type::builders::DeleteEntityTypeFluentBuilder::set_name): <p>The name of the entity type to delete.</p>
     /// - On success, responds with [`DeleteEntityTypeOutput`](crate::operation::delete_entity_type::DeleteEntityTypeOutput)
     /// - On failure, responds with [`SdkError<DeleteEntityTypeError>`](crate::operation::delete_entity_type::DeleteEntityTypeError)
     pub fn delete_entity_type(

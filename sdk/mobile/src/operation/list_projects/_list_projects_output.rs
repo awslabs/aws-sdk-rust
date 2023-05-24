@@ -2,27 +2,27 @@
 
 /// <p> Result structure used for requests to list projects in AWS Mobile Hub. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListProjectsOutput {
     /// <p> List of projects. </p>
     #[doc(hidden)]
-    pub projects: std::option::Option<std::vec::Vec<crate::types::ProjectSummary>>,
+    pub projects: ::std::option::Option<::std::vec::Vec<crate::types::ProjectSummary>>,
     /// <p> Pagination token. Set to null to start listing records from start. If non-null pagination token is returned in a result, then pass its value in here in another request to list more entries. </p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListProjectsOutput {
     /// <p> List of projects. </p>
-    pub fn projects(&self) -> std::option::Option<&[crate::types::ProjectSummary]> {
+    pub fn projects(&self) -> ::std::option::Option<&[crate::types::ProjectSummary]> {
         self.projects.as_deref()
     }
     /// <p> Pagination token. Set to null to start listing records from start. If non-null pagination token is returned in a result, then pass its value in here in another request to list more entries. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListProjectsOutput {
+impl ::aws_http::request_id::RequestId for ListProjectsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -36,10 +36,12 @@ impl ListProjectsOutput {
 
 /// A builder for [`ListProjectsOutput`](crate::operation::list_projects::ListProjectsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListProjectsOutputBuilder {
-    pub(crate) projects: std::option::Option<std::vec::Vec<crate::types::ProjectSummary>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) projects: ::std::option::Option<::std::vec::Vec<crate::types::ProjectSummary>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListProjectsOutputBuilder {
@@ -51,24 +53,24 @@ impl ListProjectsOutputBuilder {
     pub fn projects(mut self, input: crate::types::ProjectSummary) -> Self {
         let mut v = self.projects.unwrap_or_default();
         v.push(input);
-        self.projects = Some(v);
+        self.projects = ::std::option::Option::Some(v);
         self
     }
     /// <p> List of projects. </p>
     pub fn set_projects(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ProjectSummary>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ProjectSummary>>,
     ) -> Self {
         self.projects = input;
         self
     }
     /// <p> Pagination token. Set to null to start listing records from start. If non-null pagination token is returned in a result, then pass its value in here in another request to list more entries. </p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Pagination token. Set to null to start listing records from start. If non-null pagination token is returned in a result, then pass its value in here in another request to list more entries. </p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

@@ -2,39 +2,39 @@
 
 /// <p> Information about a Lambda function specified in a deployment. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LambdaFunctionInfo {
     /// <p> The name of a Lambda function. </p>
     #[doc(hidden)]
-    pub function_name: std::option::Option<std::string::String>,
+    pub function_name: ::std::option::Option<::std::string::String>,
     /// <p> The alias of a Lambda function. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">Lambda Function Aliases</a> in the <i>Lambda Developer Guide</i>.</p>
     #[doc(hidden)]
-    pub function_alias: std::option::Option<std::string::String>,
+    pub function_alias: ::std::option::Option<::std::string::String>,
     /// <p> The version of a Lambda function that production traffic points to. </p>
     #[doc(hidden)]
-    pub current_version: std::option::Option<std::string::String>,
+    pub current_version: ::std::option::Option<::std::string::String>,
     /// <p> The version of a Lambda function that production traffic points to after the Lambda function is deployed. </p>
     #[doc(hidden)]
-    pub target_version: std::option::Option<std::string::String>,
+    pub target_version: ::std::option::Option<::std::string::String>,
     /// <p> The percentage of production traffic that the target version of a Lambda function receives. </p>
     #[doc(hidden)]
     pub target_version_weight: f64,
 }
 impl LambdaFunctionInfo {
     /// <p> The name of a Lambda function. </p>
-    pub fn function_name(&self) -> std::option::Option<&str> {
+    pub fn function_name(&self) -> ::std::option::Option<&str> {
         self.function_name.as_deref()
     }
     /// <p> The alias of a Lambda function. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">Lambda Function Aliases</a> in the <i>Lambda Developer Guide</i>.</p>
-    pub fn function_alias(&self) -> std::option::Option<&str> {
+    pub fn function_alias(&self) -> ::std::option::Option<&str> {
         self.function_alias.as_deref()
     }
     /// <p> The version of a Lambda function that production traffic points to. </p>
-    pub fn current_version(&self) -> std::option::Option<&str> {
+    pub fn current_version(&self) -> ::std::option::Option<&str> {
         self.current_version.as_deref()
     }
     /// <p> The version of a Lambda function that production traffic points to after the Lambda function is deployed. </p>
-    pub fn target_version(&self) -> std::option::Option<&str> {
+    pub fn target_version(&self) -> ::std::option::Option<&str> {
         self.target_version.as_deref()
     }
     /// <p> The percentage of production traffic that the target version of a Lambda function receives. </p>
@@ -51,62 +51,88 @@ impl LambdaFunctionInfo {
 
 /// A builder for [`LambdaFunctionInfo`](crate::types::LambdaFunctionInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LambdaFunctionInfoBuilder {
-    pub(crate) function_name: std::option::Option<std::string::String>,
-    pub(crate) function_alias: std::option::Option<std::string::String>,
-    pub(crate) current_version: std::option::Option<std::string::String>,
-    pub(crate) target_version: std::option::Option<std::string::String>,
-    pub(crate) target_version_weight: std::option::Option<f64>,
+    pub(crate) function_name: ::std::option::Option<::std::string::String>,
+    pub(crate) function_alias: ::std::option::Option<::std::string::String>,
+    pub(crate) current_version: ::std::option::Option<::std::string::String>,
+    pub(crate) target_version: ::std::option::Option<::std::string::String>,
+    pub(crate) target_version_weight: ::std::option::Option<f64>,
 }
 impl LambdaFunctionInfoBuilder {
     /// <p> The name of a Lambda function. </p>
-    pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.function_name = Some(input.into());
+    pub fn function_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.function_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of a Lambda function. </p>
-    pub fn set_function_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_function_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.function_name = input;
         self
     }
     /// <p> The alias of a Lambda function. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">Lambda Function Aliases</a> in the <i>Lambda Developer Guide</i>.</p>
-    pub fn function_alias(mut self, input: impl Into<std::string::String>) -> Self {
-        self.function_alias = Some(input.into());
+    pub fn function_alias(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.function_alias = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The alias of a Lambda function. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/aliases-intro.html">Lambda Function Aliases</a> in the <i>Lambda Developer Guide</i>.</p>
-    pub fn set_function_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_function_alias(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.function_alias = input;
         self
     }
     /// <p> The version of a Lambda function that production traffic points to. </p>
-    pub fn current_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.current_version = Some(input.into());
+    pub fn current_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.current_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The version of a Lambda function that production traffic points to. </p>
-    pub fn set_current_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_current_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.current_version = input;
         self
     }
     /// <p> The version of a Lambda function that production traffic points to after the Lambda function is deployed. </p>
-    pub fn target_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.target_version = Some(input.into());
+    pub fn target_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.target_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The version of a Lambda function that production traffic points to after the Lambda function is deployed. </p>
-    pub fn set_target_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_target_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.target_version = input;
         self
     }
     /// <p> The percentage of production traffic that the target version of a Lambda function receives. </p>
     pub fn target_version_weight(mut self, input: f64) -> Self {
-        self.target_version_weight = Some(input);
+        self.target_version_weight = ::std::option::Option::Some(input);
         self
     }
     /// <p> The percentage of production traffic that the target version of a Lambda function receives. </p>
-    pub fn set_target_version_weight(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_target_version_weight(mut self, input: ::std::option::Option<f64>) -> Self {
         self.target_version_weight = input;
         self
     }

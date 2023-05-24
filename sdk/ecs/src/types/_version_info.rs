@@ -2,29 +2,29 @@
 
 /// <p>The Docker and Amazon ECS container agent version information about a container instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VersionInfo {
     /// <p>The version number of the Amazon ECS container agent.</p>
     #[doc(hidden)]
-    pub agent_version: std::option::Option<std::string::String>,
+    pub agent_version: ::std::option::Option<::std::string::String>,
     /// <p>The Git commit hash for the Amazon ECS container agent build on the <a href="https://github.com/aws/amazon-ecs-agent/commits/master">amazon-ecs-agent </a> GitHub repository.</p>
     #[doc(hidden)]
-    pub agent_hash: std::option::Option<std::string::String>,
+    pub agent_hash: ::std::option::Option<::std::string::String>,
     /// <p>The Docker version that's running on the container instance.</p>
     #[doc(hidden)]
-    pub docker_version: std::option::Option<std::string::String>,
+    pub docker_version: ::std::option::Option<::std::string::String>,
 }
 impl VersionInfo {
     /// <p>The version number of the Amazon ECS container agent.</p>
-    pub fn agent_version(&self) -> std::option::Option<&str> {
+    pub fn agent_version(&self) -> ::std::option::Option<&str> {
         self.agent_version.as_deref()
     }
     /// <p>The Git commit hash for the Amazon ECS container agent build on the <a href="https://github.com/aws/amazon-ecs-agent/commits/master">amazon-ecs-agent </a> GitHub repository.</p>
-    pub fn agent_hash(&self) -> std::option::Option<&str> {
+    pub fn agent_hash(&self) -> ::std::option::Option<&str> {
         self.agent_hash.as_deref()
     }
     /// <p>The Docker version that's running on the container instance.</p>
-    pub fn docker_version(&self) -> std::option::Option<&str> {
+    pub fn docker_version(&self) -> ::std::option::Option<&str> {
         self.docker_version.as_deref()
     }
 }
@@ -37,40 +37,54 @@ impl VersionInfo {
 
 /// A builder for [`VersionInfo`](crate::types::VersionInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VersionInfoBuilder {
-    pub(crate) agent_version: std::option::Option<std::string::String>,
-    pub(crate) agent_hash: std::option::Option<std::string::String>,
-    pub(crate) docker_version: std::option::Option<std::string::String>,
+    pub(crate) agent_version: ::std::option::Option<::std::string::String>,
+    pub(crate) agent_hash: ::std::option::Option<::std::string::String>,
+    pub(crate) docker_version: ::std::option::Option<::std::string::String>,
 }
 impl VersionInfoBuilder {
     /// <p>The version number of the Amazon ECS container agent.</p>
-    pub fn agent_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.agent_version = Some(input.into());
+    pub fn agent_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.agent_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version number of the Amazon ECS container agent.</p>
-    pub fn set_agent_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_agent_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.agent_version = input;
         self
     }
     /// <p>The Git commit hash for the Amazon ECS container agent build on the <a href="https://github.com/aws/amazon-ecs-agent/commits/master">amazon-ecs-agent </a> GitHub repository.</p>
-    pub fn agent_hash(mut self, input: impl Into<std::string::String>) -> Self {
-        self.agent_hash = Some(input.into());
+    pub fn agent_hash(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.agent_hash = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Git commit hash for the Amazon ECS container agent build on the <a href="https://github.com/aws/amazon-ecs-agent/commits/master">amazon-ecs-agent </a> GitHub repository.</p>
-    pub fn set_agent_hash(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_agent_hash(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.agent_hash = input;
         self
     }
     /// <p>The Docker version that's running on the container instance.</p>
-    pub fn docker_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.docker_version = Some(input.into());
+    pub fn docker_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.docker_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Docker version that's running on the container instance.</p>
-    pub fn set_docker_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_docker_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.docker_version = input;
         self
     }

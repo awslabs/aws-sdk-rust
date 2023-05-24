@@ -2,11 +2,11 @@
 
 /// <p>An empty element returned on a successful request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SetIdentityHeadersInNotificationsEnabledOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for SetIdentityHeadersInNotificationsEnabledOutput {
+impl ::aws_http::request_id::RequestId for SetIdentityHeadersInNotificationsEnabledOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -20,7 +20,9 @@ impl SetIdentityHeadersInNotificationsEnabledOutput {
 
 /// A builder for [`SetIdentityHeadersInNotificationsEnabledOutput`](crate::operation::set_identity_headers_in_notifications_enabled::SetIdentityHeadersInNotificationsEnabledOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SetIdentityHeadersInNotificationsEnabledOutputBuilder {
     _request_id: Option<String>,
 }

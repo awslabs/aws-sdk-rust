@@ -2,27 +2,27 @@
 
 /// <p>Contains the output from the <code>DescribeClusterVersions</code> action. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeClusterVersionsOutput {
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
     #[doc(hidden)]
-    pub marker: std::option::Option<std::string::String>,
+    pub marker: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>Version</code> elements. </p>
     #[doc(hidden)]
-    pub cluster_versions: std::option::Option<std::vec::Vec<crate::types::ClusterVersion>>,
+    pub cluster_versions: ::std::option::Option<::std::vec::Vec<crate::types::ClusterVersion>>,
     _request_id: Option<String>,
 }
 impl DescribeClusterVersionsOutput {
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
     /// <p>A list of <code>Version</code> elements. </p>
-    pub fn cluster_versions(&self) -> std::option::Option<&[crate::types::ClusterVersion]> {
+    pub fn cluster_versions(&self) -> ::std::option::Option<&[crate::types::ClusterVersion]> {
         self.cluster_versions.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeClusterVersionsOutput {
+impl ::aws_http::request_id::RequestId for DescribeClusterVersionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -38,20 +38,23 @@ impl DescribeClusterVersionsOutput {
 
 /// A builder for [`DescribeClusterVersionsOutput`](crate::operation::describe_cluster_versions::DescribeClusterVersionsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeClusterVersionsOutputBuilder {
-    pub(crate) marker: std::option::Option<std::string::String>,
-    pub(crate) cluster_versions: std::option::Option<std::vec::Vec<crate::types::ClusterVersion>>,
+    pub(crate) marker: ::std::option::Option<::std::string::String>,
+    pub(crate) cluster_versions:
+        ::std::option::Option<::std::vec::Vec<crate::types::ClusterVersion>>,
     _request_id: Option<String>,
 }
 impl DescribeClusterVersionsOutputBuilder {
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
-    pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-        self.marker = Some(input.into());
+    pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>
-    pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
     }
@@ -63,13 +66,13 @@ impl DescribeClusterVersionsOutputBuilder {
     pub fn cluster_versions(mut self, input: crate::types::ClusterVersion) -> Self {
         let mut v = self.cluster_versions.unwrap_or_default();
         v.push(input);
-        self.cluster_versions = Some(v);
+        self.cluster_versions = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of <code>Version</code> elements. </p>
     pub fn set_cluster_versions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ClusterVersion>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ClusterVersion>>,
     ) -> Self {
         self.cluster_versions = input;
         self

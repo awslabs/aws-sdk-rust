@@ -2,7 +2,7 @@
 
 /// <p> Preferences for migrating a database to AWS. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum DatabaseMigrationPreference {
     /// <p> Indicates whether you are interested in moving from one type of database to another. For example, from SQL Server to Amazon Aurora MySQL-Compatible Edition. </p>
     Heterogeneous(crate::types::Heterogeneous),
@@ -23,11 +23,11 @@ pub enum DatabaseMigrationPreference {
 impl DatabaseMigrationPreference {
     /// Tries to convert the enum instance into [`Heterogeneous`](crate::types::DatabaseMigrationPreference::Heterogeneous), extracting the inner [`Heterogeneous`](crate::types::Heterogeneous).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_heterogeneous(&self) -> std::result::Result<&crate::types::Heterogeneous, &Self> {
+    pub fn as_heterogeneous(&self) -> ::std::result::Result<&crate::types::Heterogeneous, &Self> {
         if let DatabaseMigrationPreference::Heterogeneous(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Heterogeneous`](crate::types::DatabaseMigrationPreference::Heterogeneous).
@@ -36,11 +36,11 @@ impl DatabaseMigrationPreference {
     }
     /// Tries to convert the enum instance into [`Homogeneous`](crate::types::DatabaseMigrationPreference::Homogeneous), extracting the inner [`Homogeneous`](crate::types::Homogeneous).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_homogeneous(&self) -> std::result::Result<&crate::types::Homogeneous, &Self> {
+    pub fn as_homogeneous(&self) -> ::std::result::Result<&crate::types::Homogeneous, &Self> {
         if let DatabaseMigrationPreference::Homogeneous(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Homogeneous`](crate::types::DatabaseMigrationPreference::Homogeneous).
@@ -51,11 +51,11 @@ impl DatabaseMigrationPreference {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_no_preference(
         &self,
-    ) -> std::result::Result<&crate::types::NoDatabaseMigrationPreference, &Self> {
+    ) -> ::std::result::Result<&crate::types::NoDatabaseMigrationPreference, &Self> {
         if let DatabaseMigrationPreference::NoPreference(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`NoPreference`](crate::types::DatabaseMigrationPreference::NoPreference).

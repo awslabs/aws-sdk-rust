@@ -2,22 +2,22 @@
 
 /// <p>The Route 53 resource that a DNS target resource record points to.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct R53ResourceRecord {
     /// <p>The DNS target domain name.</p>
     #[doc(hidden)]
-    pub domain_name: std::option::Option<std::string::String>,
+    pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The Route 53 Resource Record Set ID.</p>
     #[doc(hidden)]
-    pub record_set_id: std::option::Option<std::string::String>,
+    pub record_set_id: ::std::option::Option<::std::string::String>,
 }
 impl R53ResourceRecord {
     /// <p>The DNS target domain name.</p>
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<&str> {
         self.domain_name.as_deref()
     }
     /// <p>The Route 53 Resource Record Set ID.</p>
-    pub fn record_set_id(&self) -> std::option::Option<&str> {
+    pub fn record_set_id(&self) -> ::std::option::Option<&str> {
         self.record_set_id.as_deref()
     }
 }
@@ -30,29 +30,37 @@ impl R53ResourceRecord {
 
 /// A builder for [`R53ResourceRecord`](crate::types::R53ResourceRecord).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct R53ResourceRecordBuilder {
-    pub(crate) domain_name: std::option::Option<std::string::String>,
-    pub(crate) record_set_id: std::option::Option<std::string::String>,
+    pub(crate) domain_name: ::std::option::Option<::std::string::String>,
+    pub(crate) record_set_id: ::std::option::Option<::std::string::String>,
 }
 impl R53ResourceRecordBuilder {
     /// <p>The DNS target domain name.</p>
-    pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.domain_name = Some(input.into());
+    pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.domain_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The DNS target domain name.</p>
-    pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_name = input;
         self
     }
     /// <p>The Route 53 Resource Record Set ID.</p>
-    pub fn record_set_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.record_set_id = Some(input.into());
+    pub fn record_set_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.record_set_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Route 53 Resource Record Set ID.</p>
-    pub fn set_record_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_record_set_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.record_set_id = input;
         self
     }

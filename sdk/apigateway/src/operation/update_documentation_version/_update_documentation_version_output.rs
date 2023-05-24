@@ -2,34 +2,34 @@
 
 /// <p>A snapshot of the documentation of an API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDocumentationVersionOutput {
     /// <p>The version identifier of the API documentation snapshot.</p>
     #[doc(hidden)]
-    pub version: std::option::Option<std::string::String>,
+    pub version: ::std::option::Option<::std::string::String>,
     /// <p>The date when the API documentation snapshot is created.</p>
     #[doc(hidden)]
-    pub created_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The description of the API documentation snapshot.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl UpdateDocumentationVersionOutput {
     /// <p>The version identifier of the API documentation snapshot.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<&str> {
         self.version.as_deref()
     }
     /// <p>The date when the API documentation snapshot is created.</p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>The description of the API documentation snapshot.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for UpdateDocumentationVersionOutput {
+impl ::aws_http::request_id::RequestId for UpdateDocumentationVersionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -43,44 +43,46 @@ impl UpdateDocumentationVersionOutput {
 
 /// A builder for [`UpdateDocumentationVersionOutput`](crate::operation::update_documentation_version::UpdateDocumentationVersionOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateDocumentationVersionOutputBuilder {
-    pub(crate) version: std::option::Option<std::string::String>,
-    pub(crate) created_date: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) description: std::option::Option<std::string::String>,
+    pub(crate) version: ::std::option::Option<::std::string::String>,
+    pub(crate) created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl UpdateDocumentationVersionOutputBuilder {
     /// <p>The version identifier of the API documentation snapshot.</p>
-    pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.version = Some(input.into());
+    pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version identifier of the API documentation snapshot.</p>
-    pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
     }
     /// <p>The date when the API documentation snapshot is created.</p>
-    pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_date = Some(input);
+    pub fn created_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date when the API documentation snapshot is created.</p>
     pub fn set_created_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_date = input;
         self
     }
     /// <p>The description of the API documentation snapshot.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the API documentation snapshot.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }

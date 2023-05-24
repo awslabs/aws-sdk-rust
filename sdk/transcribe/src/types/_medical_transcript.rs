@@ -2,17 +2,17 @@
 
 /// <p>Provides you with the Amazon S3 URI you can use to access your transcript.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MedicalTranscript {
     /// <p>The Amazon S3 location of your transcript. You can use this URI to access or download your transcript.</p>
     /// <p>Note that this is the Amazon S3 location you specified in your request using the <code>OutputBucketName</code> parameter.</p>
     #[doc(hidden)]
-    pub transcript_file_uri: std::option::Option<std::string::String>,
+    pub transcript_file_uri: ::std::option::Option<::std::string::String>,
 }
 impl MedicalTranscript {
     /// <p>The Amazon S3 location of your transcript. You can use this URI to access or download your transcript.</p>
     /// <p>Note that this is the Amazon S3 location you specified in your request using the <code>OutputBucketName</code> parameter.</p>
-    pub fn transcript_file_uri(&self) -> std::option::Option<&str> {
+    pub fn transcript_file_uri(&self) -> ::std::option::Option<&str> {
         self.transcript_file_uri.as_deref()
     }
 }
@@ -25,22 +25,27 @@ impl MedicalTranscript {
 
 /// A builder for [`MedicalTranscript`](crate::types::MedicalTranscript).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MedicalTranscriptBuilder {
-    pub(crate) transcript_file_uri: std::option::Option<std::string::String>,
+    pub(crate) transcript_file_uri: ::std::option::Option<::std::string::String>,
 }
 impl MedicalTranscriptBuilder {
     /// <p>The Amazon S3 location of your transcript. You can use this URI to access or download your transcript.</p>
     /// <p>Note that this is the Amazon S3 location you specified in your request using the <code>OutputBucketName</code> parameter.</p>
-    pub fn transcript_file_uri(mut self, input: impl Into<std::string::String>) -> Self {
-        self.transcript_file_uri = Some(input.into());
+    pub fn transcript_file_uri(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.transcript_file_uri = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon S3 location of your transcript. You can use this URI to access or download your transcript.</p>
     /// <p>Note that this is the Amazon S3 location you specified in your request using the <code>OutputBucketName</code> parameter.</p>
     pub fn set_transcript_file_uri(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.transcript_file_uri = input;
         self

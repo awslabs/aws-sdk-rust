@@ -2,7 +2,7 @@
 
 /// <p>The metadata for a feature. For example, the metadata might indicate that a feature is turned on or off on a specific DB instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FeatureMetadata {
     /// <p>The status of the feature on the DB instance. Possible values include the following:</p>
     /// <ul>
@@ -14,7 +14,7 @@ pub struct FeatureMetadata {
     /// <li> <p> <code>UNKNOWN</code> - The feature status couldn't be determined.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::FeatureStatus>,
+    pub status: ::std::option::Option<crate::types::FeatureStatus>,
 }
 impl FeatureMetadata {
     /// <p>The status of the feature on the DB instance. Possible values include the following:</p>
@@ -26,7 +26,7 @@ impl FeatureMetadata {
     /// <li> <p> <code>DISABLED_PENDING_REBOOT</code> - The feature is disabled on the instance but requires a reboot to take effect.</p> </li>
     /// <li> <p> <code>UNKNOWN</code> - The feature status couldn't be determined.</p> </li>
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::types::FeatureStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::FeatureStatus> {
         self.status.as_ref()
     }
 }
@@ -39,9 +39,11 @@ impl FeatureMetadata {
 
 /// A builder for [`FeatureMetadata`](crate::types::FeatureMetadata).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FeatureMetadataBuilder {
-    pub(crate) status: std::option::Option<crate::types::FeatureStatus>,
+    pub(crate) status: ::std::option::Option<crate::types::FeatureStatus>,
 }
 impl FeatureMetadataBuilder {
     /// <p>The status of the feature on the DB instance. Possible values include the following:</p>
@@ -54,7 +56,7 @@ impl FeatureMetadataBuilder {
     /// <li> <p> <code>UNKNOWN</code> - The feature status couldn't be determined.</p> </li>
     /// </ul>
     pub fn status(mut self, input: crate::types::FeatureStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the feature on the DB instance. Possible values include the following:</p>
@@ -66,7 +68,7 @@ impl FeatureMetadataBuilder {
     /// <li> <p> <code>DISABLED_PENDING_REBOOT</code> - The feature is disabled on the instance but requires a reboot to take effect.</p> </li>
     /// <li> <p> <code>UNKNOWN</code> - The feature status couldn't be determined.</p> </li>
     /// </ul>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::FeatureStatus>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::FeatureStatus>) -> Self {
         self.status = input;
         self
     }

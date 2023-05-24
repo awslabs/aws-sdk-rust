@@ -2,25 +2,25 @@
 
 /// <p>Information about the configuration of a Dev Environment session.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DevEnvironmentSessionConfiguration {
     /// <p>The type of the session.</p>
     #[doc(hidden)]
-    pub session_type: std::option::Option<crate::types::DevEnvironmentSessionType>,
+    pub session_type: ::std::option::Option<crate::types::DevEnvironmentSessionType>,
     /// <p>Information about optional commands that will be run on the Dev Environment when the SSH session begins.</p>
     #[doc(hidden)]
     pub execute_command_session_configuration:
-        std::option::Option<crate::types::ExecuteCommandSessionConfiguration>,
+        ::std::option::Option<crate::types::ExecuteCommandSessionConfiguration>,
 }
 impl DevEnvironmentSessionConfiguration {
     /// <p>The type of the session.</p>
-    pub fn session_type(&self) -> std::option::Option<&crate::types::DevEnvironmentSessionType> {
+    pub fn session_type(&self) -> ::std::option::Option<&crate::types::DevEnvironmentSessionType> {
         self.session_type.as_ref()
     }
     /// <p>Information about optional commands that will be run on the Dev Environment when the SSH session begins.</p>
     pub fn execute_command_session_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::ExecuteCommandSessionConfiguration> {
+    ) -> ::std::option::Option<&crate::types::ExecuteCommandSessionConfiguration> {
         self.execute_command_session_configuration.as_ref()
     }
 }
@@ -33,22 +33,24 @@ impl DevEnvironmentSessionConfiguration {
 
 /// A builder for [`DevEnvironmentSessionConfiguration`](crate::types::DevEnvironmentSessionConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DevEnvironmentSessionConfigurationBuilder {
-    pub(crate) session_type: std::option::Option<crate::types::DevEnvironmentSessionType>,
+    pub(crate) session_type: ::std::option::Option<crate::types::DevEnvironmentSessionType>,
     pub(crate) execute_command_session_configuration:
-        std::option::Option<crate::types::ExecuteCommandSessionConfiguration>,
+        ::std::option::Option<crate::types::ExecuteCommandSessionConfiguration>,
 }
 impl DevEnvironmentSessionConfigurationBuilder {
     /// <p>The type of the session.</p>
     pub fn session_type(mut self, input: crate::types::DevEnvironmentSessionType) -> Self {
-        self.session_type = Some(input);
+        self.session_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of the session.</p>
     pub fn set_session_type(
         mut self,
-        input: std::option::Option<crate::types::DevEnvironmentSessionType>,
+        input: ::std::option::Option<crate::types::DevEnvironmentSessionType>,
     ) -> Self {
         self.session_type = input;
         self
@@ -58,13 +60,13 @@ impl DevEnvironmentSessionConfigurationBuilder {
         mut self,
         input: crate::types::ExecuteCommandSessionConfiguration,
     ) -> Self {
-        self.execute_command_session_configuration = Some(input);
+        self.execute_command_session_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about optional commands that will be run on the Dev Environment when the SSH session begins.</p>
     pub fn set_execute_command_session_configuration(
         mut self,
-        input: std::option::Option<crate::types::ExecuteCommandSessionConfiguration>,
+        input: ::std::option::Option<crate::types::ExecuteCommandSessionConfiguration>,
     ) -> Self {
         self.execute_command_session_configuration = input;
         self

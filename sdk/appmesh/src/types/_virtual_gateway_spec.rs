@@ -2,31 +2,31 @@
 
 /// <p>An object that represents the specification of a service mesh resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VirtualGatewaySpec {
     /// <p>A reference to an object that represents the defaults for backends.</p>
     #[doc(hidden)]
-    pub backend_defaults: std::option::Option<crate::types::VirtualGatewayBackendDefaults>,
+    pub backend_defaults: ::std::option::Option<crate::types::VirtualGatewayBackendDefaults>,
     /// <p>The listeners that the mesh endpoint is expected to receive inbound traffic from. You can specify one listener.</p>
     #[doc(hidden)]
-    pub listeners: std::option::Option<std::vec::Vec<crate::types::VirtualGatewayListener>>,
+    pub listeners: ::std::option::Option<::std::vec::Vec<crate::types::VirtualGatewayListener>>,
     /// <p>An object that represents logging information.</p>
     #[doc(hidden)]
-    pub logging: std::option::Option<crate::types::VirtualGatewayLogging>,
+    pub logging: ::std::option::Option<crate::types::VirtualGatewayLogging>,
 }
 impl VirtualGatewaySpec {
     /// <p>A reference to an object that represents the defaults for backends.</p>
     pub fn backend_defaults(
         &self,
-    ) -> std::option::Option<&crate::types::VirtualGatewayBackendDefaults> {
+    ) -> ::std::option::Option<&crate::types::VirtualGatewayBackendDefaults> {
         self.backend_defaults.as_ref()
     }
     /// <p>The listeners that the mesh endpoint is expected to receive inbound traffic from. You can specify one listener.</p>
-    pub fn listeners(&self) -> std::option::Option<&[crate::types::VirtualGatewayListener]> {
+    pub fn listeners(&self) -> ::std::option::Option<&[crate::types::VirtualGatewayListener]> {
         self.listeners.as_deref()
     }
     /// <p>An object that represents logging information.</p>
-    pub fn logging(&self) -> std::option::Option<&crate::types::VirtualGatewayLogging> {
+    pub fn logging(&self) -> ::std::option::Option<&crate::types::VirtualGatewayLogging> {
         self.logging.as_ref()
     }
 }
@@ -39,22 +39,25 @@ impl VirtualGatewaySpec {
 
 /// A builder for [`VirtualGatewaySpec`](crate::types::VirtualGatewaySpec).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VirtualGatewaySpecBuilder {
-    pub(crate) backend_defaults: std::option::Option<crate::types::VirtualGatewayBackendDefaults>,
-    pub(crate) listeners: std::option::Option<std::vec::Vec<crate::types::VirtualGatewayListener>>,
-    pub(crate) logging: std::option::Option<crate::types::VirtualGatewayLogging>,
+    pub(crate) backend_defaults: ::std::option::Option<crate::types::VirtualGatewayBackendDefaults>,
+    pub(crate) listeners:
+        ::std::option::Option<::std::vec::Vec<crate::types::VirtualGatewayListener>>,
+    pub(crate) logging: ::std::option::Option<crate::types::VirtualGatewayLogging>,
 }
 impl VirtualGatewaySpecBuilder {
     /// <p>A reference to an object that represents the defaults for backends.</p>
     pub fn backend_defaults(mut self, input: crate::types::VirtualGatewayBackendDefaults) -> Self {
-        self.backend_defaults = Some(input);
+        self.backend_defaults = ::std::option::Option::Some(input);
         self
     }
     /// <p>A reference to an object that represents the defaults for backends.</p>
     pub fn set_backend_defaults(
         mut self,
-        input: std::option::Option<crate::types::VirtualGatewayBackendDefaults>,
+        input: ::std::option::Option<crate::types::VirtualGatewayBackendDefaults>,
     ) -> Self {
         self.backend_defaults = input;
         self
@@ -67,26 +70,26 @@ impl VirtualGatewaySpecBuilder {
     pub fn listeners(mut self, input: crate::types::VirtualGatewayListener) -> Self {
         let mut v = self.listeners.unwrap_or_default();
         v.push(input);
-        self.listeners = Some(v);
+        self.listeners = ::std::option::Option::Some(v);
         self
     }
     /// <p>The listeners that the mesh endpoint is expected to receive inbound traffic from. You can specify one listener.</p>
     pub fn set_listeners(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::VirtualGatewayListener>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::VirtualGatewayListener>>,
     ) -> Self {
         self.listeners = input;
         self
     }
     /// <p>An object that represents logging information.</p>
     pub fn logging(mut self, input: crate::types::VirtualGatewayLogging) -> Self {
-        self.logging = Some(input);
+        self.logging = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that represents logging information.</p>
     pub fn set_logging(
         mut self,
-        input: std::option::Option<crate::types::VirtualGatewayLogging>,
+        input: ::std::option::Option<crate::types::VirtualGatewayLogging>,
     ) -> Self {
         self.logging = input;
         self

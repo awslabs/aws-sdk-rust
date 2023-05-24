@@ -2,15 +2,15 @@
 
 /// <p>A processor's metadata.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProcessorConfiguration {
     /// <p>Indicates that the processor is of type Lambda.</p>
     #[doc(hidden)]
-    pub lambda: std::option::Option<crate::types::LambdaConfiguration>,
+    pub lambda: ::std::option::Option<crate::types::LambdaConfiguration>,
 }
 impl ProcessorConfiguration {
     /// <p>Indicates that the processor is of type Lambda.</p>
-    pub fn lambda(&self) -> std::option::Option<&crate::types::LambdaConfiguration> {
+    pub fn lambda(&self) -> ::std::option::Option<&crate::types::LambdaConfiguration> {
         self.lambda.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl ProcessorConfiguration {
 
 /// A builder for [`ProcessorConfiguration`](crate::types::ProcessorConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ProcessorConfigurationBuilder {
-    pub(crate) lambda: std::option::Option<crate::types::LambdaConfiguration>,
+    pub(crate) lambda: ::std::option::Option<crate::types::LambdaConfiguration>,
 }
 impl ProcessorConfigurationBuilder {
     /// <p>Indicates that the processor is of type Lambda.</p>
     pub fn lambda(mut self, input: crate::types::LambdaConfiguration) -> Self {
-        self.lambda = Some(input);
+        self.lambda = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates that the processor is of type Lambda.</p>
     pub fn set_lambda(
         mut self,
-        input: std::option::Option<crate::types::LambdaConfiguration>,
+        input: ::std::option::Option<crate::types::LambdaConfiguration>,
     ) -> Self {
         self.lambda = input;
         self

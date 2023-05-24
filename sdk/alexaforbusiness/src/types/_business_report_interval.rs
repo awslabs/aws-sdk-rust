@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum BusinessReportInterval {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum BusinessReportInterval {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for BusinessReportInterval {
+impl ::std::convert::From<&str> for BusinessReportInterval {
     fn from(s: &str) -> Self {
         match s {
             "ONE_DAY" => BusinessReportInterval::OneDay,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for BusinessReportInterval {
         }
     }
 }
-impl std::str::FromStr for BusinessReportInterval {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for BusinessReportInterval {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(BusinessReportInterval::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(BusinessReportInterval::from(s))
     }
 }
 impl BusinessReportInterval {
@@ -91,7 +91,7 @@ impl BusinessReportInterval {
         &["ONE_DAY", "ONE_WEEK", "THIRTY_DAYS"]
     }
 }
-impl AsRef<str> for BusinessReportInterval {
+impl ::std::convert::AsRef<str> for BusinessReportInterval {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

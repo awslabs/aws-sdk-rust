@@ -6,56 +6,59 @@ pub use crate::operation::create_label::_create_label_input::CreateLabelInputBui
 /// Fluent builder constructing a request to `CreateLabel`.
 ///
 /// <p> Creates a label for an event. </p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateLabelFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_label::builders::CreateLabelInputBuilder,
 }
 impl CreateLabelFluentBuilder {
     /// Creates a new `CreateLabel`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_label::CreateLabel,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_label::CreateLabelError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_label::CreateLabelError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_label::CreateLabelOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_label::CreateLabelError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_label::CreateLabelError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,44 +71,53 @@ impl CreateLabelFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_label::CreateLabelOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_label::CreateLabelError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_label::CreateLabelError>,
     > {
         self.send_middleware().await
     }
     /// <p> The name of a group of labels. </p>
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
-    pub fn label_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn label_group_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.label_group_name(input.into());
         self
     }
     /// <p> The name of a group of labels. </p>
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
-    pub fn set_label_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_label_group_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_label_group_name(input);
         self
     }
     /// <p> The start time of the labeled event. </p>
-    pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+    pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.start_time(input);
         self
     }
     /// <p> The start time of the labeled event. </p>
     pub fn set_start_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
     /// <p> The end time of the labeled event. </p>
-    pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+    pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.end_time(input);
         self
     }
     /// <p> The end time of the labeled event. </p>
-    pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_end_time(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }
@@ -115,53 +127,53 @@ impl CreateLabelFluentBuilder {
         self
     }
     /// <p> Indicates whether a labeled event represents an anomaly. </p>
-    pub fn set_rating(mut self, input: std::option::Option<crate::types::LabelRating>) -> Self {
+    pub fn set_rating(mut self, input: ::std::option::Option<crate::types::LabelRating>) -> Self {
         self.inner = self.inner.set_rating(input);
         self
     }
     /// <p> Provides additional information about the label. The fault code must be defined in the FaultCodes attribute of the label group.</p>
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
-    pub fn fault_code(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn fault_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.fault_code(input.into());
         self
     }
     /// <p> Provides additional information about the label. The fault code must be defined in the FaultCodes attribute of the label group.</p>
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
-    pub fn set_fault_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_fault_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_fault_code(input);
         self
     }
     /// <p> Metadata providing additional information about the label. </p>
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
-    pub fn notes(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn notes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.notes(input.into());
         self
     }
     /// <p> Metadata providing additional information about the label. </p>
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
-    pub fn set_notes(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_notes(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_notes(input);
         self
     }
     /// <p> Indicates that a label pertains to a particular piece of equipment. </p>
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
-    pub fn equipment(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn equipment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.equipment(input.into());
         self
     }
     /// <p> Indicates that a label pertains to a particular piece of equipment. </p>
     /// <p>Data in this field will be retained for service usage. Follow best practices for the security of your data.</p>
-    pub fn set_equipment(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_equipment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_equipment(input);
         self
     }
     /// <p> A unique identifier for the request to create a label. If you do not set the client request token, Lookout for Equipment generates one. </p>
-    pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
     /// <p> A unique identifier for the request to create a label. If you do not set the client request token, Lookout for Equipment generates one. </p>
-    pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }

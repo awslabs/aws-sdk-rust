@@ -4,7 +4,7 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_playback_key_pairs::builders::ListPlaybackKeyPairsFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_playback_key_pairs::builders::ListPlaybackKeyPairsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_playback_key_pairs::builders::ListPlaybackKeyPairsFluentBuilder::set_next_token): <p>The first key pair to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
+    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_playback_key_pairs::builders::ListPlaybackKeyPairsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_playback_key_pairs::builders::ListPlaybackKeyPairsFluentBuilder::set_next_token): <p>The first key pair to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     ///   - [`max_results(i32)`](crate::operation::list_playback_key_pairs::builders::ListPlaybackKeyPairsFluentBuilder::max_results) / [`set_max_results(i32)`](crate::operation::list_playback_key_pairs::builders::ListPlaybackKeyPairsFluentBuilder::set_max_results): <p>Maximum number of key pairs to return. Default: your service quota or 100, whichever is smaller.</p>
     /// - On success, responds with [`ListPlaybackKeyPairsOutput`](crate::operation::list_playback_key_pairs::ListPlaybackKeyPairsOutput) with field(s):
     ///   - [`key_pairs(Option<Vec<PlaybackKeyPairSummary>>)`](crate::operation::list_playback_key_pairs::ListPlaybackKeyPairsOutput::key_pairs): <p>List of key pairs.</p>

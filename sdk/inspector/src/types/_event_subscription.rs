@@ -2,22 +2,22 @@
 
 /// <p>This data type is used in the <code>Subscription</code> data type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventSubscription {
     /// <p>The event for which Amazon Simple Notification Service (SNS) notifications are sent.</p>
     #[doc(hidden)]
-    pub event: std::option::Option<crate::types::InspectorEvent>,
+    pub event: ::std::option::Option<crate::types::InspectorEvent>,
     /// <p>The time at which <code>SubscribeToEvent</code> is called.</p>
     #[doc(hidden)]
-    pub subscribed_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub subscribed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl EventSubscription {
     /// <p>The event for which Amazon Simple Notification Service (SNS) notifications are sent.</p>
-    pub fn event(&self) -> std::option::Option<&crate::types::InspectorEvent> {
+    pub fn event(&self) -> ::std::option::Option<&crate::types::InspectorEvent> {
         self.event.as_ref()
     }
     /// <p>The time at which <code>SubscribeToEvent</code> is called.</p>
-    pub fn subscribed_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn subscribed_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.subscribed_at.as_ref()
     }
 }
@@ -30,31 +30,33 @@ impl EventSubscription {
 
 /// A builder for [`EventSubscription`](crate::types::EventSubscription).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EventSubscriptionBuilder {
-    pub(crate) event: std::option::Option<crate::types::InspectorEvent>,
-    pub(crate) subscribed_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) event: ::std::option::Option<crate::types::InspectorEvent>,
+    pub(crate) subscribed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl EventSubscriptionBuilder {
     /// <p>The event for which Amazon Simple Notification Service (SNS) notifications are sent.</p>
     pub fn event(mut self, input: crate::types::InspectorEvent) -> Self {
-        self.event = Some(input);
+        self.event = ::std::option::Option::Some(input);
         self
     }
     /// <p>The event for which Amazon Simple Notification Service (SNS) notifications are sent.</p>
-    pub fn set_event(mut self, input: std::option::Option<crate::types::InspectorEvent>) -> Self {
+    pub fn set_event(mut self, input: ::std::option::Option<crate::types::InspectorEvent>) -> Self {
         self.event = input;
         self
     }
     /// <p>The time at which <code>SubscribeToEvent</code> is called.</p>
-    pub fn subscribed_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.subscribed_at = Some(input);
+    pub fn subscribed_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.subscribed_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time at which <code>SubscribeToEvent</code> is called.</p>
     pub fn set_subscribed_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.subscribed_at = input;
         self

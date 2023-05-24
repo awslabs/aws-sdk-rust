@@ -2,36 +2,36 @@
 
 /// <p>Contains information about the ISP organization of the remote IP address.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Organization {
     /// <p>The Autonomous System Number (ASN) of the internet provider of the remote IP address.</p>
     #[doc(hidden)]
-    pub asn: std::option::Option<std::string::String>,
+    pub asn: ::std::option::Option<::std::string::String>,
     /// <p>The organization that registered this ASN.</p>
     #[doc(hidden)]
-    pub asn_org: std::option::Option<std::string::String>,
+    pub asn_org: ::std::option::Option<::std::string::String>,
     /// <p>The ISP information for the internet provider.</p>
     #[doc(hidden)]
-    pub isp: std::option::Option<std::string::String>,
+    pub isp: ::std::option::Option<::std::string::String>,
     /// <p>The name of the internet provider.</p>
     #[doc(hidden)]
-    pub org: std::option::Option<std::string::String>,
+    pub org: ::std::option::Option<::std::string::String>,
 }
 impl Organization {
     /// <p>The Autonomous System Number (ASN) of the internet provider of the remote IP address.</p>
-    pub fn asn(&self) -> std::option::Option<&str> {
+    pub fn asn(&self) -> ::std::option::Option<&str> {
         self.asn.as_deref()
     }
     /// <p>The organization that registered this ASN.</p>
-    pub fn asn_org(&self) -> std::option::Option<&str> {
+    pub fn asn_org(&self) -> ::std::option::Option<&str> {
         self.asn_org.as_deref()
     }
     /// <p>The ISP information for the internet provider.</p>
-    pub fn isp(&self) -> std::option::Option<&str> {
+    pub fn isp(&self) -> ::std::option::Option<&str> {
         self.isp.as_deref()
     }
     /// <p>The name of the internet provider.</p>
-    pub fn org(&self) -> std::option::Option<&str> {
+    pub fn org(&self) -> ::std::option::Option<&str> {
         self.org.as_deref()
     }
 }
@@ -44,51 +44,53 @@ impl Organization {
 
 /// A builder for [`Organization`](crate::types::Organization).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OrganizationBuilder {
-    pub(crate) asn: std::option::Option<std::string::String>,
-    pub(crate) asn_org: std::option::Option<std::string::String>,
-    pub(crate) isp: std::option::Option<std::string::String>,
-    pub(crate) org: std::option::Option<std::string::String>,
+    pub(crate) asn: ::std::option::Option<::std::string::String>,
+    pub(crate) asn_org: ::std::option::Option<::std::string::String>,
+    pub(crate) isp: ::std::option::Option<::std::string::String>,
+    pub(crate) org: ::std::option::Option<::std::string::String>,
 }
 impl OrganizationBuilder {
     /// <p>The Autonomous System Number (ASN) of the internet provider of the remote IP address.</p>
-    pub fn asn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.asn = Some(input.into());
+    pub fn asn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.asn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Autonomous System Number (ASN) of the internet provider of the remote IP address.</p>
-    pub fn set_asn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_asn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.asn = input;
         self
     }
     /// <p>The organization that registered this ASN.</p>
-    pub fn asn_org(mut self, input: impl Into<std::string::String>) -> Self {
-        self.asn_org = Some(input.into());
+    pub fn asn_org(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.asn_org = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The organization that registered this ASN.</p>
-    pub fn set_asn_org(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_asn_org(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.asn_org = input;
         self
     }
     /// <p>The ISP information for the internet provider.</p>
-    pub fn isp(mut self, input: impl Into<std::string::String>) -> Self {
-        self.isp = Some(input.into());
+    pub fn isp(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.isp = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ISP information for the internet provider.</p>
-    pub fn set_isp(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_isp(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.isp = input;
         self
     }
     /// <p>The name of the internet provider.</p>
-    pub fn org(mut self, input: impl Into<std::string::String>) -> Self {
-        self.org = Some(input.into());
+    pub fn org(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.org = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the internet provider.</p>
-    pub fn set_org(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_org(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.org = input;
         self
     }

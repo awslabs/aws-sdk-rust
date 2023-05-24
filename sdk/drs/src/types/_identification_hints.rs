@@ -2,36 +2,36 @@
 
 /// <p>Hints used to uniquely identify a machine.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IdentificationHints {
     /// <p>Fully Qualified Domain Name identification hint.</p>
     #[doc(hidden)]
-    pub fqdn: std::option::Option<std::string::String>,
+    pub fqdn: ::std::option::Option<::std::string::String>,
     /// <p>Hostname identification hint.</p>
     #[doc(hidden)]
-    pub hostname: std::option::Option<std::string::String>,
+    pub hostname: ::std::option::Option<::std::string::String>,
     /// <p>vCenter VM path identification hint.</p>
     #[doc(hidden)]
-    pub vm_ware_uuid: std::option::Option<std::string::String>,
+    pub vm_ware_uuid: ::std::option::Option<::std::string::String>,
     /// <p>AWS Instance ID identification hint.</p>
     #[doc(hidden)]
-    pub aws_instance_id: std::option::Option<std::string::String>,
+    pub aws_instance_id: ::std::option::Option<::std::string::String>,
 }
 impl IdentificationHints {
     /// <p>Fully Qualified Domain Name identification hint.</p>
-    pub fn fqdn(&self) -> std::option::Option<&str> {
+    pub fn fqdn(&self) -> ::std::option::Option<&str> {
         self.fqdn.as_deref()
     }
     /// <p>Hostname identification hint.</p>
-    pub fn hostname(&self) -> std::option::Option<&str> {
+    pub fn hostname(&self) -> ::std::option::Option<&str> {
         self.hostname.as_deref()
     }
     /// <p>vCenter VM path identification hint.</p>
-    pub fn vm_ware_uuid(&self) -> std::option::Option<&str> {
+    pub fn vm_ware_uuid(&self) -> ::std::option::Option<&str> {
         self.vm_ware_uuid.as_deref()
     }
     /// <p>AWS Instance ID identification hint.</p>
-    pub fn aws_instance_id(&self) -> std::option::Option<&str> {
+    pub fn aws_instance_id(&self) -> ::std::option::Option<&str> {
         self.aws_instance_id.as_deref()
     }
 }
@@ -44,51 +44,59 @@ impl IdentificationHints {
 
 /// A builder for [`IdentificationHints`](crate::types::IdentificationHints).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct IdentificationHintsBuilder {
-    pub(crate) fqdn: std::option::Option<std::string::String>,
-    pub(crate) hostname: std::option::Option<std::string::String>,
-    pub(crate) vm_ware_uuid: std::option::Option<std::string::String>,
-    pub(crate) aws_instance_id: std::option::Option<std::string::String>,
+    pub(crate) fqdn: ::std::option::Option<::std::string::String>,
+    pub(crate) hostname: ::std::option::Option<::std::string::String>,
+    pub(crate) vm_ware_uuid: ::std::option::Option<::std::string::String>,
+    pub(crate) aws_instance_id: ::std::option::Option<::std::string::String>,
 }
 impl IdentificationHintsBuilder {
     /// <p>Fully Qualified Domain Name identification hint.</p>
-    pub fn fqdn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.fqdn = Some(input.into());
+    pub fn fqdn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.fqdn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Fully Qualified Domain Name identification hint.</p>
-    pub fn set_fqdn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_fqdn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fqdn = input;
         self
     }
     /// <p>Hostname identification hint.</p>
-    pub fn hostname(mut self, input: impl Into<std::string::String>) -> Self {
-        self.hostname = Some(input.into());
+    pub fn hostname(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.hostname = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Hostname identification hint.</p>
-    pub fn set_hostname(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_hostname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hostname = input;
         self
     }
     /// <p>vCenter VM path identification hint.</p>
-    pub fn vm_ware_uuid(mut self, input: impl Into<std::string::String>) -> Self {
-        self.vm_ware_uuid = Some(input.into());
+    pub fn vm_ware_uuid(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.vm_ware_uuid = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>vCenter VM path identification hint.</p>
-    pub fn set_vm_ware_uuid(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_vm_ware_uuid(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vm_ware_uuid = input;
         self
     }
     /// <p>AWS Instance ID identification hint.</p>
-    pub fn aws_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.aws_instance_id = Some(input.into());
+    pub fn aws_instance_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.aws_instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>AWS Instance ID identification hint.</p>
-    pub fn set_aws_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_aws_instance_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.aws_instance_id = input;
         self
     }

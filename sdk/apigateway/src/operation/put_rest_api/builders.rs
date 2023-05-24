@@ -6,56 +6,59 @@ pub use crate::operation::put_rest_api::_put_rest_api_input::PutRestApiInputBuil
 /// Fluent builder constructing a request to `PutRestApi`.
 ///
 /// <p>A feature of the API Gateway control service for updating an existing API with an input of external API definitions. The update can take the form of merging the supplied definition into the existing API or overwriting the existing API.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutRestApiFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::put_rest_api::builders::PutRestApiInputBuilder,
 }
 impl PutRestApiFluentBuilder {
     /// Creates a new `PutRestApi`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::put_rest_api::PutRestApi,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::put_rest_api::PutRestApiError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_rest_api::PutRestApiError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::put_rest_api::PutRestApiOutput,
-        aws_smithy_http::result::SdkError<crate::operation::put_rest_api::PutRestApiError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_rest_api::PutRestApiError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,19 +71,19 @@ impl PutRestApiFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::put_rest_api::PutRestApiOutput,
-        aws_smithy_http::result::SdkError<crate::operation::put_rest_api::PutRestApiError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_rest_api::PutRestApiError>,
     > {
         self.send_middleware().await
     }
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn rest_api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.rest_api_id(input.into());
         self
     }
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_rest_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_rest_api_id(input);
         self
     }
@@ -90,7 +93,7 @@ impl PutRestApiFluentBuilder {
         self
     }
     /// <p>The <code>mode</code> query parameter to specify the update mode. Valid values are "merge" and "overwrite". By default, the update mode is "merge".</p>
-    pub fn set_mode(mut self, input: std::option::Option<crate::types::PutMode>) -> Self {
+    pub fn set_mode(mut self, input: ::std::option::Option<crate::types::PutMode>) -> Self {
         self.inner = self.inner.set_mode(input);
         self
     }
@@ -100,7 +103,7 @@ impl PutRestApiFluentBuilder {
         self
     }
     /// <p>A query parameter to indicate whether to rollback the API update (<code>true</code>) or not (<code>false</code>) when a warning is encountered. The default value is <code>false</code>.</p>
-    pub fn set_fail_on_warnings(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_fail_on_warnings(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_fail_on_warnings(input);
         self
     }
@@ -111,8 +114,8 @@ impl PutRestApiFluentBuilder {
     /// <p>Custom header parameters as part of the request. For example, to exclude DocumentationParts from an imported API, set <code>ignore=documentation</code> as a <code>parameters</code> value, as in the AWS CLI command of <code>aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json'</code>.</p>
     pub fn parameters(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.parameters(k.into(), v.into());
         self
@@ -120,20 +123,20 @@ impl PutRestApiFluentBuilder {
     /// <p>Custom header parameters as part of the request. For example, to exclude DocumentationParts from an imported API, set <code>ignore=documentation</code> as a <code>parameters</code> value, as in the AWS CLI command of <code>aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json'</code>.</p>
     pub fn set_parameters(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_parameters(input);
         self
     }
     /// <p>The PUT request body containing external API definitions. Currently, only OpenAPI definition JSON/YAML files are supported. The maximum size of the API definition file is 6MB.</p>
-    pub fn body(mut self, input: aws_smithy_types::Blob) -> Self {
+    pub fn body(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.inner = self.inner.body(input);
         self
     }
     /// <p>The PUT request body containing external API definitions. Currently, only OpenAPI definition JSON/YAML files are supported. The maximum size of the API definition file is 6MB.</p>
-    pub fn set_body(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
+    pub fn set_body(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.inner = self.inner.set_body(input);
         self
     }

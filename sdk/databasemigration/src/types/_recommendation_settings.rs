@@ -2,22 +2,22 @@
 
 /// <p>Provides information about the required target engine settings.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecommendationSettings {
     /// <p>The size of your target instance. Fleet Advisor calculates this value based on your data collection type, such as total capacity and resource utilization. Valid values include <code>"total-capacity"</code> and <code>"utilization"</code>.</p>
     #[doc(hidden)]
-    pub instance_sizing_type: std::option::Option<std::string::String>,
+    pub instance_sizing_type: ::std::option::Option<::std::string::String>,
     /// <p>The deployment option for your target engine. For production databases, Fleet Advisor chooses Multi-AZ deployment. For development or test databases, Fleet Advisor chooses Single-AZ deployment. Valid values include <code>"development"</code> and <code>"production"</code>.</p>
     #[doc(hidden)]
-    pub workload_type: std::option::Option<std::string::String>,
+    pub workload_type: ::std::option::Option<::std::string::String>,
 }
 impl RecommendationSettings {
     /// <p>The size of your target instance. Fleet Advisor calculates this value based on your data collection type, such as total capacity and resource utilization. Valid values include <code>"total-capacity"</code> and <code>"utilization"</code>.</p>
-    pub fn instance_sizing_type(&self) -> std::option::Option<&str> {
+    pub fn instance_sizing_type(&self) -> ::std::option::Option<&str> {
         self.instance_sizing_type.as_deref()
     }
     /// <p>The deployment option for your target engine. For production databases, Fleet Advisor chooses Multi-AZ deployment. For development or test databases, Fleet Advisor chooses Single-AZ deployment. Valid values include <code>"development"</code> and <code>"production"</code>.</p>
-    pub fn workload_type(&self) -> std::option::Option<&str> {
+    pub fn workload_type(&self) -> ::std::option::Option<&str> {
         self.workload_type.as_deref()
     }
 }
@@ -30,32 +30,43 @@ impl RecommendationSettings {
 
 /// A builder for [`RecommendationSettings`](crate::types::RecommendationSettings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RecommendationSettingsBuilder {
-    pub(crate) instance_sizing_type: std::option::Option<std::string::String>,
-    pub(crate) workload_type: std::option::Option<std::string::String>,
+    pub(crate) instance_sizing_type: ::std::option::Option<::std::string::String>,
+    pub(crate) workload_type: ::std::option::Option<::std::string::String>,
 }
 impl RecommendationSettingsBuilder {
     /// <p>The size of your target instance. Fleet Advisor calculates this value based on your data collection type, such as total capacity and resource utilization. Valid values include <code>"total-capacity"</code> and <code>"utilization"</code>.</p>
-    pub fn instance_sizing_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.instance_sizing_type = Some(input.into());
+    pub fn instance_sizing_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.instance_sizing_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The size of your target instance. Fleet Advisor calculates this value based on your data collection type, such as total capacity and resource utilization. Valid values include <code>"total-capacity"</code> and <code>"utilization"</code>.</p>
     pub fn set_instance_sizing_type(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.instance_sizing_type = input;
         self
     }
     /// <p>The deployment option for your target engine. For production databases, Fleet Advisor chooses Multi-AZ deployment. For development or test databases, Fleet Advisor chooses Single-AZ deployment. Valid values include <code>"development"</code> and <code>"production"</code>.</p>
-    pub fn workload_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.workload_type = Some(input.into());
+    pub fn workload_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.workload_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The deployment option for your target engine. For production databases, Fleet Advisor chooses Multi-AZ deployment. For development or test databases, Fleet Advisor chooses Single-AZ deployment. Valid values include <code>"development"</code> and <code>"production"</code>.</p>
-    pub fn set_workload_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_workload_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.workload_type = input;
         self
     }

@@ -2,36 +2,36 @@
 
 /// <p>Represents the input of a <code>DisableStageTransition</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisableStageTransitionInput {
     /// <p>The name of the pipeline in which you want to disable the flow of artifacts from one stage to another.</p>
     #[doc(hidden)]
-    pub pipeline_name: std::option::Option<std::string::String>,
+    pub pipeline_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the stage where you want to disable the inbound or outbound transition of artifacts.</p>
     #[doc(hidden)]
-    pub stage_name: std::option::Option<std::string::String>,
+    pub stage_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether artifacts are prevented from transitioning into the stage and being processed by the actions in that stage (inbound), or prevented from transitioning from the stage after they have been processed by the actions in that stage (outbound).</p>
     #[doc(hidden)]
-    pub transition_type: std::option::Option<crate::types::StageTransitionType>,
+    pub transition_type: ::std::option::Option<crate::types::StageTransitionType>,
     /// <p>The reason given to the user that a stage is disabled, such as waiting for manual approval or manual tests. This message is displayed in the pipeline console UI.</p>
     #[doc(hidden)]
-    pub reason: std::option::Option<std::string::String>,
+    pub reason: ::std::option::Option<::std::string::String>,
 }
 impl DisableStageTransitionInput {
     /// <p>The name of the pipeline in which you want to disable the flow of artifacts from one stage to another.</p>
-    pub fn pipeline_name(&self) -> std::option::Option<&str> {
+    pub fn pipeline_name(&self) -> ::std::option::Option<&str> {
         self.pipeline_name.as_deref()
     }
     /// <p>The name of the stage where you want to disable the inbound or outbound transition of artifacts.</p>
-    pub fn stage_name(&self) -> std::option::Option<&str> {
+    pub fn stage_name(&self) -> ::std::option::Option<&str> {
         self.stage_name.as_deref()
     }
     /// <p>Specifies whether artifacts are prevented from transitioning into the stage and being processed by the actions in that stage (inbound), or prevented from transitioning from the stage after they have been processed by the actions in that stage (outbound).</p>
-    pub fn transition_type(&self) -> std::option::Option<&crate::types::StageTransitionType> {
+    pub fn transition_type(&self) -> ::std::option::Option<&crate::types::StageTransitionType> {
         self.transition_type.as_ref()
     }
     /// <p>The reason given to the user that a stage is disabled, such as waiting for manual approval or manual tests. This message is displayed in the pipeline console UI.</p>
-    pub fn reason(&self) -> std::option::Option<&str> {
+    pub fn reason(&self) -> ::std::option::Option<&str> {
         self.reason.as_deref()
     }
 }
@@ -46,65 +46,73 @@ impl DisableStageTransitionInput {
 
 /// A builder for [`DisableStageTransitionInput`](crate::operation::disable_stage_transition::DisableStageTransitionInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DisableStageTransitionInputBuilder {
-    pub(crate) pipeline_name: std::option::Option<std::string::String>,
-    pub(crate) stage_name: std::option::Option<std::string::String>,
-    pub(crate) transition_type: std::option::Option<crate::types::StageTransitionType>,
-    pub(crate) reason: std::option::Option<std::string::String>,
+    pub(crate) pipeline_name: ::std::option::Option<::std::string::String>,
+    pub(crate) stage_name: ::std::option::Option<::std::string::String>,
+    pub(crate) transition_type: ::std::option::Option<crate::types::StageTransitionType>,
+    pub(crate) reason: ::std::option::Option<::std::string::String>,
 }
 impl DisableStageTransitionInputBuilder {
     /// <p>The name of the pipeline in which you want to disable the flow of artifacts from one stage to another.</p>
-    pub fn pipeline_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.pipeline_name = Some(input.into());
+    pub fn pipeline_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.pipeline_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the pipeline in which you want to disable the flow of artifacts from one stage to another.</p>
-    pub fn set_pipeline_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_pipeline_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.pipeline_name = input;
         self
     }
     /// <p>The name of the stage where you want to disable the inbound or outbound transition of artifacts.</p>
-    pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.stage_name = Some(input.into());
+    pub fn stage_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.stage_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the stage where you want to disable the inbound or outbound transition of artifacts.</p>
-    pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_stage_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stage_name = input;
         self
     }
     /// <p>Specifies whether artifacts are prevented from transitioning into the stage and being processed by the actions in that stage (inbound), or prevented from transitioning from the stage after they have been processed by the actions in that stage (outbound).</p>
     pub fn transition_type(mut self, input: crate::types::StageTransitionType) -> Self {
-        self.transition_type = Some(input);
+        self.transition_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether artifacts are prevented from transitioning into the stage and being processed by the actions in that stage (inbound), or prevented from transitioning from the stage after they have been processed by the actions in that stage (outbound).</p>
     pub fn set_transition_type(
         mut self,
-        input: std::option::Option<crate::types::StageTransitionType>,
+        input: ::std::option::Option<crate::types::StageTransitionType>,
     ) -> Self {
         self.transition_type = input;
         self
     }
     /// <p>The reason given to the user that a stage is disabled, such as waiting for manual approval or manual tests. This message is displayed in the pipeline console UI.</p>
-    pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
-        self.reason = Some(input.into());
+    pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason given to the user that a stage is disabled, such as waiting for manual approval or manual tests. This message is displayed in the pipeline console UI.</p>
-    pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reason = input;
         self
     }
     /// Consumes the builder and constructs a [`DisableStageTransitionInput`](crate::operation::disable_stage_transition::DisableStageTransitionInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::disable_stage_transition::DisableStageTransitionInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::disable_stage_transition::DisableStageTransitionInput {
                 pipeline_name: self.pipeline_name,
                 stage_name: self.stage_name,

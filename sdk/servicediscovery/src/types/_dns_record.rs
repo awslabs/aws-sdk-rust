@@ -2,7 +2,7 @@
 
 /// <p>A complex type that contains information about the Route&nbsp;53 DNS records that you want Cloud Map to create when you register an instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DnsRecord {
     /// <p>The type of the resource, which indicates the type of value that Route&nbsp;53 returns in response to DNS queries. You can specify values for <code>Type</code> in the following combinations:</p>
     /// <ul>
@@ -64,12 +64,12 @@ pub struct DnsRecord {
     /// </dd>
     /// </dl>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::RecordType>,
+    pub r#type: ::std::option::Option<crate::types::RecordType>,
     /// <p>The amount of time, in seconds, that you want DNS resolvers to cache the settings for this record.</p> <note>
     /// <p>Alias records don't include a TTL because Route&nbsp;53 uses the TTL for the Amazon Web Services resource that an alias record routes traffic to. If you include the <code>AWS_ALIAS_DNS_NAME</code> attribute when you submit a <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a> request, the <code>TTL</code> value is ignored. Always specify a TTL for the service; you can use a service to register instances that create either alias or non-alias records.</p>
     /// </note>
     #[doc(hidden)]
-    pub ttl: std::option::Option<i64>,
+    pub ttl: ::std::option::Option<i64>,
 }
 impl DnsRecord {
     /// <p>The type of the resource, which indicates the type of value that Route&nbsp;53 returns in response to DNS queries. You can specify values for <code>Type</code> in the following combinations:</p>
@@ -131,13 +131,13 @@ impl DnsRecord {
     /// </ul>
     /// </dd>
     /// </dl>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::RecordType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::RecordType> {
         self.r#type.as_ref()
     }
     /// <p>The amount of time, in seconds, that you want DNS resolvers to cache the settings for this record.</p> <note>
     /// <p>Alias records don't include a TTL because Route&nbsp;53 uses the TTL for the Amazon Web Services resource that an alias record routes traffic to. If you include the <code>AWS_ALIAS_DNS_NAME</code> attribute when you submit a <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a> request, the <code>TTL</code> value is ignored. Always specify a TTL for the service; you can use a service to register instances that create either alias or non-alias records.</p>
     /// </note>
-    pub fn ttl(&self) -> std::option::Option<i64> {
+    pub fn ttl(&self) -> ::std::option::Option<i64> {
         self.ttl
     }
 }
@@ -150,10 +150,12 @@ impl DnsRecord {
 
 /// A builder for [`DnsRecord`](crate::types::DnsRecord).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DnsRecordBuilder {
-    pub(crate) r#type: std::option::Option<crate::types::RecordType>,
-    pub(crate) ttl: std::option::Option<i64>,
+    pub(crate) r#type: ::std::option::Option<crate::types::RecordType>,
+    pub(crate) ttl: ::std::option::Option<i64>,
 }
 impl DnsRecordBuilder {
     /// <p>The type of the resource, which indicates the type of value that Route&nbsp;53 returns in response to DNS queries. You can specify values for <code>Type</code> in the following combinations:</p>
@@ -216,7 +218,7 @@ impl DnsRecordBuilder {
     /// </dd>
     /// </dl>
     pub fn r#type(mut self, input: crate::types::RecordType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of the resource, which indicates the type of value that Route&nbsp;53 returns in response to DNS queries. You can specify values for <code>Type</code> in the following combinations:</p>
@@ -278,7 +280,7 @@ impl DnsRecordBuilder {
     /// </ul>
     /// </dd>
     /// </dl>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::RecordType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::RecordType>) -> Self {
         self.r#type = input;
         self
     }
@@ -286,13 +288,13 @@ impl DnsRecordBuilder {
     /// <p>Alias records don't include a TTL because Route&nbsp;53 uses the TTL for the Amazon Web Services resource that an alias record routes traffic to. If you include the <code>AWS_ALIAS_DNS_NAME</code> attribute when you submit a <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a> request, the <code>TTL</code> value is ignored. Always specify a TTL for the service; you can use a service to register instances that create either alias or non-alias records.</p>
     /// </note>
     pub fn ttl(mut self, input: i64) -> Self {
-        self.ttl = Some(input);
+        self.ttl = ::std::option::Option::Some(input);
         self
     }
     /// <p>The amount of time, in seconds, that you want DNS resolvers to cache the settings for this record.</p> <note>
     /// <p>Alias records don't include a TTL because Route&nbsp;53 uses the TTL for the Amazon Web Services resource that an alias record routes traffic to. If you include the <code>AWS_ALIAS_DNS_NAME</code> attribute when you submit a <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a> request, the <code>TTL</code> value is ignored. Always specify a TTL for the service; you can use a service to register instances that create either alias or non-alias records.</p>
     /// </note>
-    pub fn set_ttl(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_ttl(mut self, input: ::std::option::Option<i64>) -> Self {
         self.ttl = input;
         self
     }

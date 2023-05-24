@@ -6,47 +6,50 @@ pub use crate::operation::describe_client_authentication_settings::_describe_cli
 /// Fluent builder constructing a request to `DescribeClientAuthenticationSettings`.
 ///
 /// <p>Retrieves information about the type of client authentication for the specified directory, if the type is specified. If no type is specified, information about all client authentication types that are supported for the specified directory is retrieved. Currently, only <code>SmartCard</code> is supported. </p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeClientAuthenticationSettingsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::describe_client_authentication_settings::builders::DescribeClientAuthenticationSettingsInputBuilder,
 }
 impl DescribeClientAuthenticationSettingsFluentBuilder {
     /// Creates a new `DescribeClientAuthenticationSettings`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::describe_client_authentication_settings::DescribeClientAuthenticationSettings, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::describe_client_authentication_settings::DescribeClientAuthenticationSettingsError>
+                    pub async fn customize(self) -> ::std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::describe_client_authentication_settings::DescribeClientAuthenticationSettings, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                        ::aws_smithy_http::result::SdkError<crate::operation::describe_client_authentication_settings::DescribeClientAuthenticationSettingsError>
     >{
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::describe_client_authentication_settings::DescribeClientAuthenticationSettingsOutput, aws_smithy_http::result::SdkError<crate::operation::describe_client_authentication_settings::DescribeClientAuthenticationSettingsError>>
+                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::describe_client_authentication_settings::DescribeClientAuthenticationSettingsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_client_authentication_settings::DescribeClientAuthenticationSettingsError>>
                      {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -57,7 +60,7 @@ impl DescribeClientAuthenticationSettingsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> std::result::Result<crate::operation::describe_client_authentication_settings::DescribeClientAuthenticationSettingsOutput, aws_smithy_http::result::SdkError<crate::operation::describe_client_authentication_settings::DescribeClientAuthenticationSettingsError>>
+                        pub async fn send(self) -> ::std::result::Result<crate::operation::describe_client_authentication_settings::DescribeClientAuthenticationSettingsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_client_authentication_settings::DescribeClientAuthenticationSettingsError>>
                          {
         self.send_middleware().await
     }
@@ -68,12 +71,12 @@ impl DescribeClientAuthenticationSettingsFluentBuilder {
         crate::operation::describe_client_authentication_settings::paginator::DescribeClientAuthenticationSettingsPaginator::new(self.handle, self.inner)
     }
     /// <p>The identifier of the directory for which to retrieve information.</p>
-    pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.directory_id(input.into());
         self
     }
     /// <p>The identifier of the directory for which to retrieve information.</p>
-    pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_directory_id(input);
         self
     }
@@ -85,18 +88,18 @@ impl DescribeClientAuthenticationSettingsFluentBuilder {
     /// <p>The type of client authentication for which to retrieve information. If no type is specified, a list of all client authentication types that are supported for the specified directory is retrieved.</p>
     pub fn set_type(
         mut self,
-        input: std::option::Option<crate::types::ClientAuthenticationType>,
+        input: ::std::option::Option<crate::types::ClientAuthenticationType>,
     ) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }
     /// <p>The <i>DescribeClientAuthenticationSettingsResult.NextToken</i> value from a previous call to <code>DescribeClientAuthenticationSettings</code>. Pass null if this is the first call.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
     /// <p>The <i>DescribeClientAuthenticationSettingsResult.NextToken</i> value from a previous call to <code>DescribeClientAuthenticationSettings</code>. Pass null if this is the first call.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
@@ -106,7 +109,7 @@ impl DescribeClientAuthenticationSettingsFluentBuilder {
         self
     }
     /// <p>The maximum number of items to return. If this value is zero, the maximum number of items is specified by the limitations of the operation. </p>
-    pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_limit(input);
         self
     }

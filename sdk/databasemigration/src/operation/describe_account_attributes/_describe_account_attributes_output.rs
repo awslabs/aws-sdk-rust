@@ -2,31 +2,31 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAccountAttributesOutput {
     /// <p>Account quota information.</p>
     #[doc(hidden)]
-    pub account_quotas: std::option::Option<std::vec::Vec<crate::types::AccountQuota>>,
+    pub account_quotas: ::std::option::Option<::std::vec::Vec<crate::types::AccountQuota>>,
     /// <p>A unique DMS identifier for an account in a particular Amazon Web Services Region. The value of this identifier has the following format: <code>c99999999999</code>. DMS uses this identifier to name artifacts. For example, DMS uses this identifier to name the default Amazon S3 bucket for storing task assessment reports in a given Amazon Web Services Region. The format of this S3 bucket name is the following: <code>dms-<i>AccountNumber</i>-<i>UniqueAccountIdentifier</i>.</code> Here is an example name for this default S3 bucket: <code>dms-111122223333-c44445555666</code>.</p> <note>
     /// <p>DMS supports the <code>UniqueAccountIdentifier</code> parameter in versions 3.1.4 and later.</p>
     /// </note>
     #[doc(hidden)]
-    pub unique_account_identifier: std::option::Option<std::string::String>,
+    pub unique_account_identifier: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeAccountAttributesOutput {
     /// <p>Account quota information.</p>
-    pub fn account_quotas(&self) -> std::option::Option<&[crate::types::AccountQuota]> {
+    pub fn account_quotas(&self) -> ::std::option::Option<&[crate::types::AccountQuota]> {
         self.account_quotas.as_deref()
     }
     /// <p>A unique DMS identifier for an account in a particular Amazon Web Services Region. The value of this identifier has the following format: <code>c99999999999</code>. DMS uses this identifier to name artifacts. For example, DMS uses this identifier to name the default Amazon S3 bucket for storing task assessment reports in a given Amazon Web Services Region. The format of this S3 bucket name is the following: <code>dms-<i>AccountNumber</i>-<i>UniqueAccountIdentifier</i>.</code> Here is an example name for this default S3 bucket: <code>dms-111122223333-c44445555666</code>.</p> <note>
     /// <p>DMS supports the <code>UniqueAccountIdentifier</code> parameter in versions 3.1.4 and later.</p>
     /// </note>
-    pub fn unique_account_identifier(&self) -> std::option::Option<&str> {
+    pub fn unique_account_identifier(&self) -> ::std::option::Option<&str> {
         self.unique_account_identifier.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeAccountAttributesOutput {
+impl ::aws_http::request_id::RequestId for DescribeAccountAttributesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -40,10 +40,12 @@ impl DescribeAccountAttributesOutput {
 
 /// A builder for [`DescribeAccountAttributesOutput`](crate::operation::describe_account_attributes::DescribeAccountAttributesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeAccountAttributesOutputBuilder {
-    pub(crate) account_quotas: std::option::Option<std::vec::Vec<crate::types::AccountQuota>>,
-    pub(crate) unique_account_identifier: std::option::Option<std::string::String>,
+    pub(crate) account_quotas: ::std::option::Option<::std::vec::Vec<crate::types::AccountQuota>>,
+    pub(crate) unique_account_identifier: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeAccountAttributesOutputBuilder {
@@ -55,13 +57,13 @@ impl DescribeAccountAttributesOutputBuilder {
     pub fn account_quotas(mut self, input: crate::types::AccountQuota) -> Self {
         let mut v = self.account_quotas.unwrap_or_default();
         v.push(input);
-        self.account_quotas = Some(v);
+        self.account_quotas = ::std::option::Option::Some(v);
         self
     }
     /// <p>Account quota information.</p>
     pub fn set_account_quotas(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AccountQuota>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AccountQuota>>,
     ) -> Self {
         self.account_quotas = input;
         self
@@ -69,8 +71,11 @@ impl DescribeAccountAttributesOutputBuilder {
     /// <p>A unique DMS identifier for an account in a particular Amazon Web Services Region. The value of this identifier has the following format: <code>c99999999999</code>. DMS uses this identifier to name artifacts. For example, DMS uses this identifier to name the default Amazon S3 bucket for storing task assessment reports in a given Amazon Web Services Region. The format of this S3 bucket name is the following: <code>dms-<i>AccountNumber</i>-<i>UniqueAccountIdentifier</i>.</code> Here is an example name for this default S3 bucket: <code>dms-111122223333-c44445555666</code>.</p> <note>
     /// <p>DMS supports the <code>UniqueAccountIdentifier</code> parameter in versions 3.1.4 and later.</p>
     /// </note>
-    pub fn unique_account_identifier(mut self, input: impl Into<std::string::String>) -> Self {
-        self.unique_account_identifier = Some(input.into());
+    pub fn unique_account_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.unique_account_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique DMS identifier for an account in a particular Amazon Web Services Region. The value of this identifier has the following format: <code>c99999999999</code>. DMS uses this identifier to name artifacts. For example, DMS uses this identifier to name the default Amazon S3 bucket for storing task assessment reports in a given Amazon Web Services Region. The format of this S3 bucket name is the following: <code>dms-<i>AccountNumber</i>-<i>UniqueAccountIdentifier</i>.</code> Here is an example name for this default S3 bucket: <code>dms-111122223333-c44445555666</code>.</p> <note>
@@ -78,7 +83,7 @@ impl DescribeAccountAttributesOutputBuilder {
     /// </note>
     pub fn set_unique_account_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.unique_account_identifier = input;
         self

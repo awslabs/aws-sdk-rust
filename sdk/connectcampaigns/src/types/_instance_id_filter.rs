@@ -2,22 +2,22 @@
 
 /// Connect instance identifier filter
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceIdFilter {
     /// Amazon Connect Instance Id
     #[doc(hidden)]
-    pub value: std::option::Option<std::string::String>,
+    pub value: ::std::option::Option<::std::string::String>,
     /// Operators for Connect instance identifier filter
     #[doc(hidden)]
-    pub operator: std::option::Option<crate::types::InstanceIdFilterOperator>,
+    pub operator: ::std::option::Option<crate::types::InstanceIdFilterOperator>,
 }
 impl InstanceIdFilter {
     /// Amazon Connect Instance Id
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
     /// Operators for Connect instance identifier filter
-    pub fn operator(&self) -> std::option::Option<&crate::types::InstanceIdFilterOperator> {
+    pub fn operator(&self) -> ::std::option::Option<&crate::types::InstanceIdFilterOperator> {
         self.operator.as_ref()
     }
 }
@@ -30,31 +30,33 @@ impl InstanceIdFilter {
 
 /// A builder for [`InstanceIdFilter`](crate::types::InstanceIdFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InstanceIdFilterBuilder {
-    pub(crate) value: std::option::Option<std::string::String>,
-    pub(crate) operator: std::option::Option<crate::types::InstanceIdFilterOperator>,
+    pub(crate) value: ::std::option::Option<::std::string::String>,
+    pub(crate) operator: ::std::option::Option<crate::types::InstanceIdFilterOperator>,
 }
 impl InstanceIdFilterBuilder {
     /// Amazon Connect Instance Id
-    pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.value = Some(input.into());
+    pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.value = ::std::option::Option::Some(input.into());
         self
     }
     /// Amazon Connect Instance Id
-    pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
     }
     /// Operators for Connect instance identifier filter
     pub fn operator(mut self, input: crate::types::InstanceIdFilterOperator) -> Self {
-        self.operator = Some(input);
+        self.operator = ::std::option::Option::Some(input);
         self
     }
     /// Operators for Connect instance identifier filter
     pub fn set_operator(
         mut self,
-        input: std::option::Option<crate::types::InstanceIdFilterOperator>,
+        input: ::std::option::Option<crate::types::InstanceIdFilterOperator>,
     ) -> Self {
         self.operator = input;
         self

@@ -3,61 +3,61 @@
 /// <p>The control of a filter that is used to interact with a dashboard or an analysis.</p>
 /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FilterControl {
     /// <p>A control from a date filter that is used to specify date and time.</p>
     #[doc(hidden)]
-    pub date_time_picker: std::option::Option<crate::types::FilterDateTimePickerControl>,
+    pub date_time_picker: ::std::option::Option<crate::types::FilterDateTimePickerControl>,
     /// <p>A control to display a list of buttons or boxes. This is used to select either a single value or multiple values.</p>
     #[doc(hidden)]
-    pub list: std::option::Option<crate::types::FilterListControl>,
+    pub list: ::std::option::Option<crate::types::FilterListControl>,
     /// <p>A control to display a dropdown list with buttons that are used to select a single value.</p>
     #[doc(hidden)]
-    pub dropdown: std::option::Option<crate::types::FilterDropDownControl>,
+    pub dropdown: ::std::option::Option<crate::types::FilterDropDownControl>,
     /// <p>A control to display a text box that is used to enter a single entry.</p>
     #[doc(hidden)]
-    pub text_field: std::option::Option<crate::types::FilterTextFieldControl>,
+    pub text_field: ::std::option::Option<crate::types::FilterTextFieldControl>,
     /// <p>A control to display a text box that is used to enter multiple entries.</p>
     #[doc(hidden)]
-    pub text_area: std::option::Option<crate::types::FilterTextAreaControl>,
+    pub text_area: ::std::option::Option<crate::types::FilterTextAreaControl>,
     /// <p>A control to display a horizontal toggle bar. This is used to change a value by sliding the toggle.</p>
     #[doc(hidden)]
-    pub slider: std::option::Option<crate::types::FilterSliderControl>,
+    pub slider: ::std::option::Option<crate::types::FilterSliderControl>,
     /// <p>A control from a date filter that is used to specify the relative date.</p>
     #[doc(hidden)]
-    pub relative_date_time: std::option::Option<crate::types::FilterRelativeDateTimeControl>,
+    pub relative_date_time: ::std::option::Option<crate::types::FilterRelativeDateTimeControl>,
 }
 impl FilterControl {
     /// <p>A control from a date filter that is used to specify date and time.</p>
     pub fn date_time_picker(
         &self,
-    ) -> std::option::Option<&crate::types::FilterDateTimePickerControl> {
+    ) -> ::std::option::Option<&crate::types::FilterDateTimePickerControl> {
         self.date_time_picker.as_ref()
     }
     /// <p>A control to display a list of buttons or boxes. This is used to select either a single value or multiple values.</p>
-    pub fn list(&self) -> std::option::Option<&crate::types::FilterListControl> {
+    pub fn list(&self) -> ::std::option::Option<&crate::types::FilterListControl> {
         self.list.as_ref()
     }
     /// <p>A control to display a dropdown list with buttons that are used to select a single value.</p>
-    pub fn dropdown(&self) -> std::option::Option<&crate::types::FilterDropDownControl> {
+    pub fn dropdown(&self) -> ::std::option::Option<&crate::types::FilterDropDownControl> {
         self.dropdown.as_ref()
     }
     /// <p>A control to display a text box that is used to enter a single entry.</p>
-    pub fn text_field(&self) -> std::option::Option<&crate::types::FilterTextFieldControl> {
+    pub fn text_field(&self) -> ::std::option::Option<&crate::types::FilterTextFieldControl> {
         self.text_field.as_ref()
     }
     /// <p>A control to display a text box that is used to enter multiple entries.</p>
-    pub fn text_area(&self) -> std::option::Option<&crate::types::FilterTextAreaControl> {
+    pub fn text_area(&self) -> ::std::option::Option<&crate::types::FilterTextAreaControl> {
         self.text_area.as_ref()
     }
     /// <p>A control to display a horizontal toggle bar. This is used to change a value by sliding the toggle.</p>
-    pub fn slider(&self) -> std::option::Option<&crate::types::FilterSliderControl> {
+    pub fn slider(&self) -> ::std::option::Option<&crate::types::FilterSliderControl> {
         self.slider.as_ref()
     }
     /// <p>A control from a date filter that is used to specify the relative date.</p>
     pub fn relative_date_time(
         &self,
-    ) -> std::option::Option<&crate::types::FilterRelativeDateTimeControl> {
+    ) -> ::std::option::Option<&crate::types::FilterRelativeDateTimeControl> {
         self.relative_date_time.as_ref()
     }
 }
@@ -70,88 +70,94 @@ impl FilterControl {
 
 /// A builder for [`FilterControl`](crate::types::FilterControl).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FilterControlBuilder {
-    pub(crate) date_time_picker: std::option::Option<crate::types::FilterDateTimePickerControl>,
-    pub(crate) list: std::option::Option<crate::types::FilterListControl>,
-    pub(crate) dropdown: std::option::Option<crate::types::FilterDropDownControl>,
-    pub(crate) text_field: std::option::Option<crate::types::FilterTextFieldControl>,
-    pub(crate) text_area: std::option::Option<crate::types::FilterTextAreaControl>,
-    pub(crate) slider: std::option::Option<crate::types::FilterSliderControl>,
-    pub(crate) relative_date_time: std::option::Option<crate::types::FilterRelativeDateTimeControl>,
+    pub(crate) date_time_picker: ::std::option::Option<crate::types::FilterDateTimePickerControl>,
+    pub(crate) list: ::std::option::Option<crate::types::FilterListControl>,
+    pub(crate) dropdown: ::std::option::Option<crate::types::FilterDropDownControl>,
+    pub(crate) text_field: ::std::option::Option<crate::types::FilterTextFieldControl>,
+    pub(crate) text_area: ::std::option::Option<crate::types::FilterTextAreaControl>,
+    pub(crate) slider: ::std::option::Option<crate::types::FilterSliderControl>,
+    pub(crate) relative_date_time:
+        ::std::option::Option<crate::types::FilterRelativeDateTimeControl>,
 }
 impl FilterControlBuilder {
     /// <p>A control from a date filter that is used to specify date and time.</p>
     pub fn date_time_picker(mut self, input: crate::types::FilterDateTimePickerControl) -> Self {
-        self.date_time_picker = Some(input);
+        self.date_time_picker = ::std::option::Option::Some(input);
         self
     }
     /// <p>A control from a date filter that is used to specify date and time.</p>
     pub fn set_date_time_picker(
         mut self,
-        input: std::option::Option<crate::types::FilterDateTimePickerControl>,
+        input: ::std::option::Option<crate::types::FilterDateTimePickerControl>,
     ) -> Self {
         self.date_time_picker = input;
         self
     }
     /// <p>A control to display a list of buttons or boxes. This is used to select either a single value or multiple values.</p>
     pub fn list(mut self, input: crate::types::FilterListControl) -> Self {
-        self.list = Some(input);
+        self.list = ::std::option::Option::Some(input);
         self
     }
     /// <p>A control to display a list of buttons or boxes. This is used to select either a single value or multiple values.</p>
-    pub fn set_list(mut self, input: std::option::Option<crate::types::FilterListControl>) -> Self {
+    pub fn set_list(
+        mut self,
+        input: ::std::option::Option<crate::types::FilterListControl>,
+    ) -> Self {
         self.list = input;
         self
     }
     /// <p>A control to display a dropdown list with buttons that are used to select a single value.</p>
     pub fn dropdown(mut self, input: crate::types::FilterDropDownControl) -> Self {
-        self.dropdown = Some(input);
+        self.dropdown = ::std::option::Option::Some(input);
         self
     }
     /// <p>A control to display a dropdown list with buttons that are used to select a single value.</p>
     pub fn set_dropdown(
         mut self,
-        input: std::option::Option<crate::types::FilterDropDownControl>,
+        input: ::std::option::Option<crate::types::FilterDropDownControl>,
     ) -> Self {
         self.dropdown = input;
         self
     }
     /// <p>A control to display a text box that is used to enter a single entry.</p>
     pub fn text_field(mut self, input: crate::types::FilterTextFieldControl) -> Self {
-        self.text_field = Some(input);
+        self.text_field = ::std::option::Option::Some(input);
         self
     }
     /// <p>A control to display a text box that is used to enter a single entry.</p>
     pub fn set_text_field(
         mut self,
-        input: std::option::Option<crate::types::FilterTextFieldControl>,
+        input: ::std::option::Option<crate::types::FilterTextFieldControl>,
     ) -> Self {
         self.text_field = input;
         self
     }
     /// <p>A control to display a text box that is used to enter multiple entries.</p>
     pub fn text_area(mut self, input: crate::types::FilterTextAreaControl) -> Self {
-        self.text_area = Some(input);
+        self.text_area = ::std::option::Option::Some(input);
         self
     }
     /// <p>A control to display a text box that is used to enter multiple entries.</p>
     pub fn set_text_area(
         mut self,
-        input: std::option::Option<crate::types::FilterTextAreaControl>,
+        input: ::std::option::Option<crate::types::FilterTextAreaControl>,
     ) -> Self {
         self.text_area = input;
         self
     }
     /// <p>A control to display a horizontal toggle bar. This is used to change a value by sliding the toggle.</p>
     pub fn slider(mut self, input: crate::types::FilterSliderControl) -> Self {
-        self.slider = Some(input);
+        self.slider = ::std::option::Option::Some(input);
         self
     }
     /// <p>A control to display a horizontal toggle bar. This is used to change a value by sliding the toggle.</p>
     pub fn set_slider(
         mut self,
-        input: std::option::Option<crate::types::FilterSliderControl>,
+        input: ::std::option::Option<crate::types::FilterSliderControl>,
     ) -> Self {
         self.slider = input;
         self
@@ -161,13 +167,13 @@ impl FilterControlBuilder {
         mut self,
         input: crate::types::FilterRelativeDateTimeControl,
     ) -> Self {
-        self.relative_date_time = Some(input);
+        self.relative_date_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>A control from a date filter that is used to specify the relative date.</p>
     pub fn set_relative_date_time(
         mut self,
-        input: std::option::Option<crate::types::FilterRelativeDateTimeControl>,
+        input: ::std::option::Option<crate::types::FilterRelativeDateTimeControl>,
     ) -> Self {
         self.relative_date_time = input;
         self

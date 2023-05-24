@@ -2,30 +2,30 @@
 
 /// <p>Contains the output of DescribeSpotFleetRequests.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSpotFleetRequestsOutput {
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Information about the configuration of your Spot Fleet.</p>
     #[doc(hidden)]
     pub spot_fleet_request_configs:
-        std::option::Option<std::vec::Vec<crate::types::SpotFleetRequestConfig>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::SpotFleetRequestConfig>>,
     _request_id: Option<String>,
 }
 impl DescribeSpotFleetRequestsOutput {
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>Information about the configuration of your Spot Fleet.</p>
     pub fn spot_fleet_request_configs(
         &self,
-    ) -> std::option::Option<&[crate::types::SpotFleetRequestConfig]> {
+    ) -> ::std::option::Option<&[crate::types::SpotFleetRequestConfig]> {
         self.spot_fleet_request_configs.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeSpotFleetRequestsOutput {
+impl ::aws_http::request_id::RequestId for DescribeSpotFleetRequestsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -39,21 +39,23 @@ impl DescribeSpotFleetRequestsOutput {
 
 /// A builder for [`DescribeSpotFleetRequestsOutput`](crate::operation::describe_spot_fleet_requests::DescribeSpotFleetRequestsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeSpotFleetRequestsOutputBuilder {
-    pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) spot_fleet_request_configs:
-        std::option::Option<std::vec::Vec<crate::types::SpotFleetRequestConfig>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::SpotFleetRequestConfig>>,
     _request_id: Option<String>,
 }
 impl DescribeSpotFleetRequestsOutputBuilder {
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
@@ -68,13 +70,13 @@ impl DescribeSpotFleetRequestsOutputBuilder {
     ) -> Self {
         let mut v = self.spot_fleet_request_configs.unwrap_or_default();
         v.push(input);
-        self.spot_fleet_request_configs = Some(v);
+        self.spot_fleet_request_configs = ::std::option::Option::Some(v);
         self
     }
     /// <p>Information about the configuration of your Spot Fleet.</p>
     pub fn set_spot_fleet_request_configs(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SpotFleetRequestConfig>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SpotFleetRequestConfig>>,
     ) -> Self {
         self.spot_fleet_request_configs = input;
         self

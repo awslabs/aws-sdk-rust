@@ -2,15 +2,15 @@
 
 /// <p>Represents a request to begin email address verification with Amazon SES. For information about email address verification, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VerifyEmailIdentityInput {
     /// <p>The email address to be verified.</p>
     #[doc(hidden)]
-    pub email_address: std::option::Option<std::string::String>,
+    pub email_address: ::std::option::Option<::std::string::String>,
 }
 impl VerifyEmailIdentityInput {
     /// <p>The email address to be verified.</p>
-    pub fn email_address(&self) -> std::option::Option<&str> {
+    pub fn email_address(&self) -> ::std::option::Option<&str> {
         self.email_address.as_deref()
     }
 }
@@ -25,29 +25,37 @@ impl VerifyEmailIdentityInput {
 
 /// A builder for [`VerifyEmailIdentityInput`](crate::operation::verify_email_identity::VerifyEmailIdentityInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VerifyEmailIdentityInputBuilder {
-    pub(crate) email_address: std::option::Option<std::string::String>,
+    pub(crate) email_address: ::std::option::Option<::std::string::String>,
 }
 impl VerifyEmailIdentityInputBuilder {
     /// <p>The email address to be verified.</p>
-    pub fn email_address(mut self, input: impl Into<std::string::String>) -> Self {
-        self.email_address = Some(input.into());
+    pub fn email_address(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.email_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The email address to be verified.</p>
-    pub fn set_email_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_email_address(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.email_address = input;
         self
     }
     /// Consumes the builder and constructs a [`VerifyEmailIdentityInput`](crate::operation::verify_email_identity::VerifyEmailIdentityInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::verify_email_identity::VerifyEmailIdentityInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::verify_email_identity::VerifyEmailIdentityInput {
                 email_address: self.email_address,
             },

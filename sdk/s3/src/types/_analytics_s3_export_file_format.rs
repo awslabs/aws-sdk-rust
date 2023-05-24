@@ -37,13 +37,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum AnalyticsS3ExportFileFormat {
     #[allow(missing_docs)] // documentation missing in model
@@ -51,7 +51,7 @@ pub enum AnalyticsS3ExportFileFormat {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for AnalyticsS3ExportFileFormat {
+impl ::std::convert::From<&str> for AnalyticsS3ExportFileFormat {
     fn from(s: &str) -> Self {
         match s {
             "CSV" => AnalyticsS3ExportFileFormat::Csv,
@@ -61,11 +61,11 @@ impl std::convert::From<&str> for AnalyticsS3ExportFileFormat {
         }
     }
 }
-impl std::str::FromStr for AnalyticsS3ExportFileFormat {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for AnalyticsS3ExportFileFormat {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AnalyticsS3ExportFileFormat::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(AnalyticsS3ExportFileFormat::from(s))
     }
 }
 impl AnalyticsS3ExportFileFormat {
@@ -81,7 +81,7 @@ impl AnalyticsS3ExportFileFormat {
         &["CSV"]
     }
 }
-impl AsRef<str> for AnalyticsS3ExportFileFormat {
+impl ::std::convert::AsRef<str> for AnalyticsS3ExportFileFormat {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

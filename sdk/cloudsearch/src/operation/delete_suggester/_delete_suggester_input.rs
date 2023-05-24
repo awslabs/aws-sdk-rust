@@ -2,22 +2,22 @@
 
 /// <p>Container for the parameters to the <code><code>DeleteSuggester</code></code> operation. Specifies the name of the domain you want to update and name of the suggester you want to delete.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteSuggesterInput {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     #[doc(hidden)]
-    pub domain_name: std::option::Option<std::string::String>,
+    pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the name of the suggester you want to delete.</p>
     #[doc(hidden)]
-    pub suggester_name: std::option::Option<std::string::String>,
+    pub suggester_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteSuggesterInput {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<&str> {
         self.domain_name.as_deref()
     }
     /// <p>Specifies the name of the suggester you want to delete.</p>
-    pub fn suggester_name(&self) -> std::option::Option<&str> {
+    pub fn suggester_name(&self) -> ::std::option::Option<&str> {
         self.suggester_name.as_deref()
     }
 }
@@ -30,40 +30,48 @@ impl DeleteSuggesterInput {
 
 /// A builder for [`DeleteSuggesterInput`](crate::operation::delete_suggester::DeleteSuggesterInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteSuggesterInputBuilder {
-    pub(crate) domain_name: std::option::Option<std::string::String>,
-    pub(crate) suggester_name: std::option::Option<std::string::String>,
+    pub(crate) domain_name: ::std::option::Option<::std::string::String>,
+    pub(crate) suggester_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteSuggesterInputBuilder {
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-    pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.domain_name = Some(input.into());
+    pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.domain_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-    pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_name = input;
         self
     }
     /// <p>Specifies the name of the suggester you want to delete.</p>
-    pub fn suggester_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.suggester_name = Some(input.into());
+    pub fn suggester_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.suggester_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the name of the suggester you want to delete.</p>
-    pub fn set_suggester_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_suggester_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.suggester_name = input;
         self
     }
     /// Consumes the builder and constructs a [`DeleteSuggesterInput`](crate::operation::delete_suggester::DeleteSuggesterInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::delete_suggester::DeleteSuggesterInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::delete_suggester::DeleteSuggesterInput {
+        ::std::result::Result::Ok(crate::operation::delete_suggester::DeleteSuggesterInput {
             domain_name: self.domain_name,
             suggester_name: self.suggester_name,
         })

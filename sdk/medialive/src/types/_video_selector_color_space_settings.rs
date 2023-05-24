@@ -2,15 +2,15 @@
 
 /// Video Selector Color Space Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VideoSelectorColorSpaceSettings {
     /// Hdr10 Settings
     #[doc(hidden)]
-    pub hdr10_settings: std::option::Option<crate::types::Hdr10Settings>,
+    pub hdr10_settings: ::std::option::Option<crate::types::Hdr10Settings>,
 }
 impl VideoSelectorColorSpaceSettings {
     /// Hdr10 Settings
-    pub fn hdr10_settings(&self) -> std::option::Option<&crate::types::Hdr10Settings> {
+    pub fn hdr10_settings(&self) -> ::std::option::Option<&crate::types::Hdr10Settings> {
         self.hdr10_settings.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl VideoSelectorColorSpaceSettings {
 
 /// A builder for [`VideoSelectorColorSpaceSettings`](crate::types::VideoSelectorColorSpaceSettings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VideoSelectorColorSpaceSettingsBuilder {
-    pub(crate) hdr10_settings: std::option::Option<crate::types::Hdr10Settings>,
+    pub(crate) hdr10_settings: ::std::option::Option<crate::types::Hdr10Settings>,
 }
 impl VideoSelectorColorSpaceSettingsBuilder {
     /// Hdr10 Settings
     pub fn hdr10_settings(mut self, input: crate::types::Hdr10Settings) -> Self {
-        self.hdr10_settings = Some(input);
+        self.hdr10_settings = ::std::option::Option::Some(input);
         self
     }
     /// Hdr10 Settings
     pub fn set_hdr10_settings(
         mut self,
-        input: std::option::Option<crate::types::Hdr10Settings>,
+        input: ::std::option::Option<crate::types::Hdr10Settings>,
     ) -> Self {
         self.hdr10_settings = input;
         self

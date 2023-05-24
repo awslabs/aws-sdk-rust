@@ -2,15 +2,15 @@
 
 /// <p>Contains information on the status of VPC flow logs as a data source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FlowLogsConfigurationResult {
     /// <p>Denotes whether VPC flow logs is enabled as a data source.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::DataSourceStatus>,
+    pub status: ::std::option::Option<crate::types::DataSourceStatus>,
 }
 impl FlowLogsConfigurationResult {
     /// <p>Denotes whether VPC flow logs is enabled as a data source.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::DataSourceStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::DataSourceStatus> {
         self.status.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl FlowLogsConfigurationResult {
 
 /// A builder for [`FlowLogsConfigurationResult`](crate::types::FlowLogsConfigurationResult).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FlowLogsConfigurationResultBuilder {
-    pub(crate) status: std::option::Option<crate::types::DataSourceStatus>,
+    pub(crate) status: ::std::option::Option<crate::types::DataSourceStatus>,
 }
 impl FlowLogsConfigurationResultBuilder {
     /// <p>Denotes whether VPC flow logs is enabled as a data source.</p>
     pub fn status(mut self, input: crate::types::DataSourceStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Denotes whether VPC flow logs is enabled as a data source.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::DataSourceStatus>,
+        input: ::std::option::Option<crate::types::DataSourceStatus>,
     ) -> Self {
         self.status = input;
         self

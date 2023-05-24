@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CancelSimulationJob`](crate::operation::cancel_simulation_job::builders::CancelSimulationJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`job(impl Into<String>)`](crate::operation::cancel_simulation_job::builders::CancelSimulationJobFluentBuilder::job) / [`set_job(Option<String>)`](crate::operation::cancel_simulation_job::builders::CancelSimulationJobFluentBuilder::set_job): <p>The simulation job ARN to cancel.</p>
+    ///   - [`job(impl ::std::convert::Into<String>)`](crate::operation::cancel_simulation_job::builders::CancelSimulationJobFluentBuilder::job) / [`set_job(Option<String>)`](crate::operation::cancel_simulation_job::builders::CancelSimulationJobFluentBuilder::set_job): <p>The simulation job ARN to cancel.</p>
     /// - On success, responds with [`CancelSimulationJobOutput`](crate::operation::cancel_simulation_job::CancelSimulationJobOutput)
     /// - On failure, responds with [`SdkError<CancelSimulationJobError>`](crate::operation::cancel_simulation_job::CancelSimulationJobError)
     pub fn cancel_simulation_job(

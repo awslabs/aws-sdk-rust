@@ -2,7 +2,7 @@
 
 /// <p>Configures how labels are consolidated across human workers and processes output data. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnnotationConsolidationConfig {
     /// <p>The Amazon Resource Name (ARN) of a Lambda function implements the logic for <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">annotation consolidation</a> and to process output data.</p>
     /// <p>This parameter is required for all labeling jobs. For <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in task types</a>, use one of the following Amazon SageMaker Ground Truth Lambda function ARNs for <code>AnnotationConsolidationLambdaArn</code>. For custom labeling workflows, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates-step3.html#sms-custom-templates-step3-postlambda">Post-annotation Lambda</a>. </p>
@@ -340,7 +340,7 @@ pub struct AnnotationConsolidationConfig {
     /// <li> <p> <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub annotation_consolidation_lambda_arn: std::option::Option<std::string::String>,
+    pub annotation_consolidation_lambda_arn: ::std::option::Option<::std::string::String>,
 }
 impl AnnotationConsolidationConfig {
     /// <p>The Amazon Resource Name (ARN) of a Lambda function implements the logic for <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">annotation consolidation</a> and to process output data.</p>
@@ -678,7 +678,7 @@ impl AnnotationConsolidationConfig {
     /// <li> <p> <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code> </p> </li>
     /// <li> <p> <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-Adjustment3DPointCloudSemanticSegmentation</code> </p> </li>
     /// </ul>
-    pub fn annotation_consolidation_lambda_arn(&self) -> std::option::Option<&str> {
+    pub fn annotation_consolidation_lambda_arn(&self) -> ::std::option::Option<&str> {
         self.annotation_consolidation_lambda_arn.as_deref()
     }
 }
@@ -691,9 +691,11 @@ impl AnnotationConsolidationConfig {
 
 /// A builder for [`AnnotationConsolidationConfig`](crate::types::AnnotationConsolidationConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AnnotationConsolidationConfigBuilder {
-    pub(crate) annotation_consolidation_lambda_arn: std::option::Option<std::string::String>,
+    pub(crate) annotation_consolidation_lambda_arn: ::std::option::Option<::std::string::String>,
 }
 impl AnnotationConsolidationConfigBuilder {
     /// <p>The Amazon Resource Name (ARN) of a Lambda function implements the logic for <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">annotation consolidation</a> and to process output data.</p>
@@ -1033,9 +1035,9 @@ impl AnnotationConsolidationConfigBuilder {
     /// </ul>
     pub fn annotation_consolidation_lambda_arn(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.annotation_consolidation_lambda_arn = Some(input.into());
+        self.annotation_consolidation_lambda_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of a Lambda function implements the logic for <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">annotation consolidation</a> and to process output data.</p>
@@ -1375,7 +1377,7 @@ impl AnnotationConsolidationConfigBuilder {
     /// </ul>
     pub fn set_annotation_consolidation_lambda_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.annotation_consolidation_lambda_arn = input;
         self

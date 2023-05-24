@@ -2,15 +2,15 @@
 
 /// <p>Provides details about the IPv6 CIDR blocks for the VPC. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VpcInfoIpv6CidrBlockSetDetails {
     /// <p>The IPv6 CIDR block for the VPC. </p>
     #[doc(hidden)]
-    pub ipv6_cidr_block: std::option::Option<std::string::String>,
+    pub ipv6_cidr_block: ::std::option::Option<::std::string::String>,
 }
 impl VpcInfoIpv6CidrBlockSetDetails {
     /// <p>The IPv6 CIDR block for the VPC. </p>
-    pub fn ipv6_cidr_block(&self) -> std::option::Option<&str> {
+    pub fn ipv6_cidr_block(&self) -> ::std::option::Option<&str> {
         self.ipv6_cidr_block.as_deref()
     }
 }
@@ -23,18 +23,26 @@ impl VpcInfoIpv6CidrBlockSetDetails {
 
 /// A builder for [`VpcInfoIpv6CidrBlockSetDetails`](crate::types::VpcInfoIpv6CidrBlockSetDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VpcInfoIpv6CidrBlockSetDetailsBuilder {
-    pub(crate) ipv6_cidr_block: std::option::Option<std::string::String>,
+    pub(crate) ipv6_cidr_block: ::std::option::Option<::std::string::String>,
 }
 impl VpcInfoIpv6CidrBlockSetDetailsBuilder {
     /// <p>The IPv6 CIDR block for the VPC. </p>
-    pub fn ipv6_cidr_block(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ipv6_cidr_block = Some(input.into());
+    pub fn ipv6_cidr_block(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.ipv6_cidr_block = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IPv6 CIDR block for the VPC. </p>
-    pub fn set_ipv6_cidr_block(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ipv6_cidr_block(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.ipv6_cidr_block = input;
         self
     }

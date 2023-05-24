@@ -10,7 +10,7 @@
 /// <p> <code>DocumentReaderConfig</code> does not apply to plain text files or Word files.</p>
 /// <p> For image files and PDF documents, you can override these default actions using the fields listed below. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/idp-set-textract-options.html"> Setting text extraction options</a> in the Comprehend Developer Guide. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DocumentReaderConfig {
     /// <p>This field defines the Amazon Textract API operation that Amazon Comprehend uses to extract text from PDF files and image files. Enter one of the following values:</p>
     /// <ul>
@@ -18,21 +18,22 @@ pub struct DocumentReaderConfig {
     /// <li> <p> <code>TEXTRACT_ANALYZE_DOCUMENT</code> - The Amazon Comprehend service uses the <code>AnalyzeDocument</code> API operation. </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub document_read_action: std::option::Option<crate::types::DocumentReadAction>,
+    pub document_read_action: ::std::option::Option<crate::types::DocumentReadAction>,
     /// <p>Determines the text extraction actions for PDF files. Enter one of the following values:</p>
     /// <ul>
     /// <li> <p> <code>SERVICE_DEFAULT</code> - use the Amazon Comprehend service defaults for PDF files.</p> </li>
     /// <li> <p> <code>FORCE_DOCUMENT_READ_ACTION</code> - Amazon Comprehend uses the Textract API specified by DocumentReadAction for all PDF files, including digital PDF files. </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub document_read_mode: std::option::Option<crate::types::DocumentReadMode>,
+    pub document_read_mode: ::std::option::Option<crate::types::DocumentReadMode>,
     /// <p>Specifies the type of Amazon Textract features to apply. If you chose <code>TEXTRACT_ANALYZE_DOCUMENT</code> as the read action, you must specify one or both of the following values:</p>
     /// <ul>
     /// <li> <p> <code>TABLES</code> - Returns information about any tables that are detected in the input document. </p> </li>
     /// <li> <p> <code>FORMS</code> - Returns information and the data from any forms that are detected in the input document. </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub feature_types: std::option::Option<std::vec::Vec<crate::types::DocumentReadFeatureTypes>>,
+    pub feature_types:
+        ::std::option::Option<::std::vec::Vec<crate::types::DocumentReadFeatureTypes>>,
 }
 impl DocumentReaderConfig {
     /// <p>This field defines the Amazon Textract API operation that Amazon Comprehend uses to extract text from PDF files and image files. Enter one of the following values:</p>
@@ -40,7 +41,7 @@ impl DocumentReaderConfig {
     /// <li> <p> <code>TEXTRACT_DETECT_DOCUMENT_TEXT</code> - The Amazon Comprehend service uses the <code>DetectDocumentText</code> API operation. </p> </li>
     /// <li> <p> <code>TEXTRACT_ANALYZE_DOCUMENT</code> - The Amazon Comprehend service uses the <code>AnalyzeDocument</code> API operation. </p> </li>
     /// </ul>
-    pub fn document_read_action(&self) -> std::option::Option<&crate::types::DocumentReadAction> {
+    pub fn document_read_action(&self) -> ::std::option::Option<&crate::types::DocumentReadAction> {
         self.document_read_action.as_ref()
     }
     /// <p>Determines the text extraction actions for PDF files. Enter one of the following values:</p>
@@ -48,7 +49,7 @@ impl DocumentReaderConfig {
     /// <li> <p> <code>SERVICE_DEFAULT</code> - use the Amazon Comprehend service defaults for PDF files.</p> </li>
     /// <li> <p> <code>FORCE_DOCUMENT_READ_ACTION</code> - Amazon Comprehend uses the Textract API specified by DocumentReadAction for all PDF files, including digital PDF files. </p> </li>
     /// </ul>
-    pub fn document_read_mode(&self) -> std::option::Option<&crate::types::DocumentReadMode> {
+    pub fn document_read_mode(&self) -> ::std::option::Option<&crate::types::DocumentReadMode> {
         self.document_read_mode.as_ref()
     }
     /// <p>Specifies the type of Amazon Textract features to apply. If you chose <code>TEXTRACT_ANALYZE_DOCUMENT</code> as the read action, you must specify one or both of the following values:</p>
@@ -56,7 +57,9 @@ impl DocumentReaderConfig {
     /// <li> <p> <code>TABLES</code> - Returns information about any tables that are detected in the input document. </p> </li>
     /// <li> <p> <code>FORMS</code> - Returns information and the data from any forms that are detected in the input document. </p> </li>
     /// </ul>
-    pub fn feature_types(&self) -> std::option::Option<&[crate::types::DocumentReadFeatureTypes]> {
+    pub fn feature_types(
+        &self,
+    ) -> ::std::option::Option<&[crate::types::DocumentReadFeatureTypes]> {
         self.feature_types.as_deref()
     }
 }
@@ -69,12 +72,14 @@ impl DocumentReaderConfig {
 
 /// A builder for [`DocumentReaderConfig`](crate::types::DocumentReaderConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DocumentReaderConfigBuilder {
-    pub(crate) document_read_action: std::option::Option<crate::types::DocumentReadAction>,
-    pub(crate) document_read_mode: std::option::Option<crate::types::DocumentReadMode>,
+    pub(crate) document_read_action: ::std::option::Option<crate::types::DocumentReadAction>,
+    pub(crate) document_read_mode: ::std::option::Option<crate::types::DocumentReadMode>,
     pub(crate) feature_types:
-        std::option::Option<std::vec::Vec<crate::types::DocumentReadFeatureTypes>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::DocumentReadFeatureTypes>>,
 }
 impl DocumentReaderConfigBuilder {
     /// <p>This field defines the Amazon Textract API operation that Amazon Comprehend uses to extract text from PDF files and image files. Enter one of the following values:</p>
@@ -83,7 +88,7 @@ impl DocumentReaderConfigBuilder {
     /// <li> <p> <code>TEXTRACT_ANALYZE_DOCUMENT</code> - The Amazon Comprehend service uses the <code>AnalyzeDocument</code> API operation. </p> </li>
     /// </ul>
     pub fn document_read_action(mut self, input: crate::types::DocumentReadAction) -> Self {
-        self.document_read_action = Some(input);
+        self.document_read_action = ::std::option::Option::Some(input);
         self
     }
     /// <p>This field defines the Amazon Textract API operation that Amazon Comprehend uses to extract text from PDF files and image files. Enter one of the following values:</p>
@@ -93,7 +98,7 @@ impl DocumentReaderConfigBuilder {
     /// </ul>
     pub fn set_document_read_action(
         mut self,
-        input: std::option::Option<crate::types::DocumentReadAction>,
+        input: ::std::option::Option<crate::types::DocumentReadAction>,
     ) -> Self {
         self.document_read_action = input;
         self
@@ -104,7 +109,7 @@ impl DocumentReaderConfigBuilder {
     /// <li> <p> <code>FORCE_DOCUMENT_READ_ACTION</code> - Amazon Comprehend uses the Textract API specified by DocumentReadAction for all PDF files, including digital PDF files. </p> </li>
     /// </ul>
     pub fn document_read_mode(mut self, input: crate::types::DocumentReadMode) -> Self {
-        self.document_read_mode = Some(input);
+        self.document_read_mode = ::std::option::Option::Some(input);
         self
     }
     /// <p>Determines the text extraction actions for PDF files. Enter one of the following values:</p>
@@ -114,7 +119,7 @@ impl DocumentReaderConfigBuilder {
     /// </ul>
     pub fn set_document_read_mode(
         mut self,
-        input: std::option::Option<crate::types::DocumentReadMode>,
+        input: ::std::option::Option<crate::types::DocumentReadMode>,
     ) -> Self {
         self.document_read_mode = input;
         self
@@ -131,7 +136,7 @@ impl DocumentReaderConfigBuilder {
     pub fn feature_types(mut self, input: crate::types::DocumentReadFeatureTypes) -> Self {
         let mut v = self.feature_types.unwrap_or_default();
         v.push(input);
-        self.feature_types = Some(v);
+        self.feature_types = ::std::option::Option::Some(v);
         self
     }
     /// <p>Specifies the type of Amazon Textract features to apply. If you chose <code>TEXTRACT_ANALYZE_DOCUMENT</code> as the read action, you must specify one or both of the following values:</p>
@@ -141,7 +146,7 @@ impl DocumentReaderConfigBuilder {
     /// </ul>
     pub fn set_feature_types(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DocumentReadFeatureTypes>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DocumentReadFeatureTypes>>,
     ) -> Self {
         self.feature_types = input;
         self

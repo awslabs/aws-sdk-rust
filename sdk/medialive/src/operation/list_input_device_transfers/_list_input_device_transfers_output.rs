@@ -2,30 +2,30 @@
 
 /// Placeholder documentation for ListInputDeviceTransfersResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListInputDeviceTransfersOutput {
     /// The list of devices that you are transferring or are being transferred to you.
     #[doc(hidden)]
     pub input_device_transfers:
-        std::option::Option<std::vec::Vec<crate::types::TransferringInputDeviceSummary>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::TransferringInputDeviceSummary>>,
     /// A token to get additional list results.
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListInputDeviceTransfersOutput {
     /// The list of devices that you are transferring or are being transferred to you.
     pub fn input_device_transfers(
         &self,
-    ) -> std::option::Option<&[crate::types::TransferringInputDeviceSummary]> {
+    ) -> ::std::option::Option<&[crate::types::TransferringInputDeviceSummary]> {
         self.input_device_transfers.as_deref()
     }
     /// A token to get additional list results.
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListInputDeviceTransfersOutput {
+impl ::aws_http::request_id::RequestId for ListInputDeviceTransfersOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -39,11 +39,13 @@ impl ListInputDeviceTransfersOutput {
 
 /// A builder for [`ListInputDeviceTransfersOutput`](crate::operation::list_input_device_transfers::ListInputDeviceTransfersOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListInputDeviceTransfersOutputBuilder {
     pub(crate) input_device_transfers:
-        std::option::Option<std::vec::Vec<crate::types::TransferringInputDeviceSummary>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::TransferringInputDeviceSummary>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListInputDeviceTransfersOutputBuilder {
@@ -58,24 +60,24 @@ impl ListInputDeviceTransfersOutputBuilder {
     ) -> Self {
         let mut v = self.input_device_transfers.unwrap_or_default();
         v.push(input);
-        self.input_device_transfers = Some(v);
+        self.input_device_transfers = ::std::option::Option::Some(v);
         self
     }
     /// The list of devices that you are transferring or are being transferred to you.
     pub fn set_input_device_transfers(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TransferringInputDeviceSummary>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::TransferringInputDeviceSummary>>,
     ) -> Self {
         self.input_device_transfers = input;
         self
     }
     /// A token to get additional list results.
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// A token to get additional list results.
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

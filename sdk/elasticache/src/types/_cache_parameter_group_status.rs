@@ -2,29 +2,29 @@
 
 /// <p>Status of the cache parameter group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CacheParameterGroupStatus {
     /// <p>The name of the cache parameter group.</p>
     #[doc(hidden)]
-    pub cache_parameter_group_name: std::option::Option<std::string::String>,
+    pub cache_parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of parameter updates.</p>
     #[doc(hidden)]
-    pub parameter_apply_status: std::option::Option<std::string::String>,
+    pub parameter_apply_status: ::std::option::Option<::std::string::String>,
     /// <p>A list of the cache node IDs which need to be rebooted for parameter changes to be applied. A node ID is a numeric identifier (0001, 0002, etc.).</p>
     #[doc(hidden)]
-    pub cache_node_ids_to_reboot: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub cache_node_ids_to_reboot: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CacheParameterGroupStatus {
     /// <p>The name of the cache parameter group.</p>
-    pub fn cache_parameter_group_name(&self) -> std::option::Option<&str> {
+    pub fn cache_parameter_group_name(&self) -> ::std::option::Option<&str> {
         self.cache_parameter_group_name.as_deref()
     }
     /// <p>The status of parameter updates.</p>
-    pub fn parameter_apply_status(&self) -> std::option::Option<&str> {
+    pub fn parameter_apply_status(&self) -> ::std::option::Option<&str> {
         self.parameter_apply_status.as_deref()
     }
     /// <p>A list of the cache node IDs which need to be rebooted for parameter changes to be applied. A node ID is a numeric identifier (0001, 0002, etc.).</p>
-    pub fn cache_node_ids_to_reboot(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn cache_node_ids_to_reboot(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.cache_node_ids_to_reboot.as_deref()
     }
 }
@@ -37,35 +37,44 @@ impl CacheParameterGroupStatus {
 
 /// A builder for [`CacheParameterGroupStatus`](crate::types::CacheParameterGroupStatus).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CacheParameterGroupStatusBuilder {
-    pub(crate) cache_parameter_group_name: std::option::Option<std::string::String>,
-    pub(crate) parameter_apply_status: std::option::Option<std::string::String>,
-    pub(crate) cache_node_ids_to_reboot: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) cache_parameter_group_name: ::std::option::Option<::std::string::String>,
+    pub(crate) parameter_apply_status: ::std::option::Option<::std::string::String>,
+    pub(crate) cache_node_ids_to_reboot:
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CacheParameterGroupStatusBuilder {
     /// <p>The name of the cache parameter group.</p>
-    pub fn cache_parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cache_parameter_group_name = Some(input.into());
+    pub fn cache_parameter_group_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.cache_parameter_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the cache parameter group.</p>
     pub fn set_cache_parameter_group_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.cache_parameter_group_name = input;
         self
     }
     /// <p>The status of parameter updates.</p>
-    pub fn parameter_apply_status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.parameter_apply_status = Some(input.into());
+    pub fn parameter_apply_status(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.parameter_apply_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of parameter updates.</p>
     pub fn set_parameter_apply_status(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.parameter_apply_status = input;
         self
@@ -75,16 +84,19 @@ impl CacheParameterGroupStatusBuilder {
     /// To override the contents of this collection use [`set_cache_node_ids_to_reboot`](Self::set_cache_node_ids_to_reboot).
     ///
     /// <p>A list of the cache node IDs which need to be rebooted for parameter changes to be applied. A node ID is a numeric identifier (0001, 0002, etc.).</p>
-    pub fn cache_node_ids_to_reboot(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn cache_node_ids_to_reboot(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.cache_node_ids_to_reboot.unwrap_or_default();
         v.push(input.into());
-        self.cache_node_ids_to_reboot = Some(v);
+        self.cache_node_ids_to_reboot = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of the cache node IDs which need to be rebooted for parameter changes to be applied. A node ID is a numeric identifier (0001, 0002, etc.).</p>
     pub fn set_cache_node_ids_to_reboot(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.cache_node_ids_to_reboot = input;
         self

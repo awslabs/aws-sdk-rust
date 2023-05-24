@@ -2,36 +2,36 @@
 
 /// <p>Specifies a transform that splits a dataset into two, based on a filter condition.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Filter {
     /// <p>The name of the transform node.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The data inputs identified by their node names.</p>
     #[doc(hidden)]
-    pub inputs: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The operator used to filter rows by comparing the key value to a specified value.</p>
     #[doc(hidden)]
-    pub logical_operator: std::option::Option<crate::types::FilterLogicalOperator>,
+    pub logical_operator: ::std::option::Option<crate::types::FilterLogicalOperator>,
     /// <p>Specifies a filter expression.</p>
     #[doc(hidden)]
-    pub filters: std::option::Option<std::vec::Vec<crate::types::FilterExpression>>,
+    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::FilterExpression>>,
 }
 impl Filter {
     /// <p>The name of the transform node.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The data inputs identified by their node names.</p>
-    pub fn inputs(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn inputs(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.inputs.as_deref()
     }
     /// <p>The operator used to filter rows by comparing the key value to a specified value.</p>
-    pub fn logical_operator(&self) -> std::option::Option<&crate::types::FilterLogicalOperator> {
+    pub fn logical_operator(&self) -> ::std::option::Option<&crate::types::FilterLogicalOperator> {
         self.logical_operator.as_ref()
     }
     /// <p>Specifies a filter expression.</p>
-    pub fn filters(&self) -> std::option::Option<&[crate::types::FilterExpression]> {
+    pub fn filters(&self) -> ::std::option::Option<&[crate::types::FilterExpression]> {
         self.filters.as_deref()
     }
 }
@@ -44,21 +44,23 @@ impl Filter {
 
 /// A builder for [`Filter`](crate::types::Filter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FilterBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) inputs: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) logical_operator: std::option::Option<crate::types::FilterLogicalOperator>,
-    pub(crate) filters: std::option::Option<std::vec::Vec<crate::types::FilterExpression>>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) logical_operator: ::std::option::Option<crate::types::FilterLogicalOperator>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::FilterExpression>>,
 }
 impl FilterBuilder {
     /// <p>The name of the transform node.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the transform node.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
@@ -67,29 +69,29 @@ impl FilterBuilder {
     /// To override the contents of this collection use [`set_inputs`](Self::set_inputs).
     ///
     /// <p>The data inputs identified by their node names.</p>
-    pub fn inputs(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn inputs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.inputs.unwrap_or_default();
         v.push(input.into());
-        self.inputs = Some(v);
+        self.inputs = ::std::option::Option::Some(v);
         self
     }
     /// <p>The data inputs identified by their node names.</p>
     pub fn set_inputs(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inputs = input;
         self
     }
     /// <p>The operator used to filter rows by comparing the key value to a specified value.</p>
     pub fn logical_operator(mut self, input: crate::types::FilterLogicalOperator) -> Self {
-        self.logical_operator = Some(input);
+        self.logical_operator = ::std::option::Option::Some(input);
         self
     }
     /// <p>The operator used to filter rows by comparing the key value to a specified value.</p>
     pub fn set_logical_operator(
         mut self,
-        input: std::option::Option<crate::types::FilterLogicalOperator>,
+        input: ::std::option::Option<crate::types::FilterLogicalOperator>,
     ) -> Self {
         self.logical_operator = input;
         self
@@ -102,13 +104,13 @@ impl FilterBuilder {
     pub fn filters(mut self, input: crate::types::FilterExpression) -> Self {
         let mut v = self.filters.unwrap_or_default();
         v.push(input);
-        self.filters = Some(v);
+        self.filters = ::std::option::Option::Some(v);
         self
     }
     /// <p>Specifies a filter expression.</p>
     pub fn set_filters(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::FilterExpression>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::FilterExpression>>,
     ) -> Self {
         self.filters = input;
         self

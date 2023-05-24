@@ -2,11 +2,11 @@
 
 /// <p>Information about the runtime process details.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LineageObject {
     /// <p>The time when the process started. This is in UTC format.</p>
     #[doc(hidden)]
-    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The process ID of the child process.</p>
     #[doc(hidden)]
     pub namespace_pid: i32,
@@ -15,26 +15,26 @@ pub struct LineageObject {
     pub user_id: i32,
     /// <p>The name of the process.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the process.</p>
     #[doc(hidden)]
     pub pid: i32,
     /// <p>The unique ID assigned to the process by GuardDuty.</p>
     #[doc(hidden)]
-    pub uuid: std::option::Option<std::string::String>,
+    pub uuid: ::std::option::Option<::std::string::String>,
     /// <p>The absolute path of the process executable file.</p>
     #[doc(hidden)]
-    pub executable_path: std::option::Option<std::string::String>,
+    pub executable_path: ::std::option::Option<::std::string::String>,
     /// <p>The effective user ID that was used to execute the process.</p>
     #[doc(hidden)]
     pub euid: i32,
     /// <p>The unique ID of the parent process. This ID is assigned to the parent process by GuardDuty.</p>
     #[doc(hidden)]
-    pub parent_uuid: std::option::Option<std::string::String>,
+    pub parent_uuid: ::std::option::Option<::std::string::String>,
 }
 impl LineageObject {
     /// <p>The time when the process started. This is in UTC format.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The process ID of the child process.</p>
@@ -46,7 +46,7 @@ impl LineageObject {
         self.user_id
     }
     /// <p>The name of the process.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The ID of the process.</p>
@@ -54,11 +54,11 @@ impl LineageObject {
         self.pid
     }
     /// <p>The unique ID assigned to the process by GuardDuty.</p>
-    pub fn uuid(&self) -> std::option::Option<&str> {
+    pub fn uuid(&self) -> ::std::option::Option<&str> {
         self.uuid.as_deref()
     }
     /// <p>The absolute path of the process executable file.</p>
-    pub fn executable_path(&self) -> std::option::Option<&str> {
+    pub fn executable_path(&self) -> ::std::option::Option<&str> {
         self.executable_path.as_deref()
     }
     /// <p>The effective user ID that was used to execute the process.</p>
@@ -66,7 +66,7 @@ impl LineageObject {
         self.euid
     }
     /// <p>The unique ID of the parent process. This ID is assigned to the parent process by GuardDuty.</p>
-    pub fn parent_uuid(&self) -> std::option::Option<&str> {
+    pub fn parent_uuid(&self) -> ::std::option::Option<&str> {
         self.parent_uuid.as_deref()
     }
 }
@@ -79,109 +79,117 @@ impl LineageObject {
 
 /// A builder for [`LineageObject`](crate::types::LineageObject).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LineageObjectBuilder {
-    pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) namespace_pid: std::option::Option<i32>,
-    pub(crate) user_id: std::option::Option<i32>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) pid: std::option::Option<i32>,
-    pub(crate) uuid: std::option::Option<std::string::String>,
-    pub(crate) executable_path: std::option::Option<std::string::String>,
-    pub(crate) euid: std::option::Option<i32>,
-    pub(crate) parent_uuid: std::option::Option<std::string::String>,
+    pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) namespace_pid: ::std::option::Option<i32>,
+    pub(crate) user_id: ::std::option::Option<i32>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) pid: ::std::option::Option<i32>,
+    pub(crate) uuid: ::std::option::Option<::std::string::String>,
+    pub(crate) executable_path: ::std::option::Option<::std::string::String>,
+    pub(crate) euid: ::std::option::Option<i32>,
+    pub(crate) parent_uuid: ::std::option::Option<::std::string::String>,
 }
 impl LineageObjectBuilder {
     /// <p>The time when the process started. This is in UTC format.</p>
-    pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.start_time = Some(input);
+    pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.start_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time when the process started. This is in UTC format.</p>
     pub fn set_start_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.start_time = input;
         self
     }
     /// <p>The process ID of the child process.</p>
     pub fn namespace_pid(mut self, input: i32) -> Self {
-        self.namespace_pid = Some(input);
+        self.namespace_pid = ::std::option::Option::Some(input);
         self
     }
     /// <p>The process ID of the child process.</p>
-    pub fn set_namespace_pid(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_namespace_pid(mut self, input: ::std::option::Option<i32>) -> Self {
         self.namespace_pid = input;
         self
     }
     /// <p>The user ID of the user that executed the process.</p>
     pub fn user_id(mut self, input: i32) -> Self {
-        self.user_id = Some(input);
+        self.user_id = ::std::option::Option::Some(input);
         self
     }
     /// <p>The user ID of the user that executed the process.</p>
-    pub fn set_user_id(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_user_id(mut self, input: ::std::option::Option<i32>) -> Self {
         self.user_id = input;
         self
     }
     /// <p>The name of the process.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the process.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The ID of the process.</p>
     pub fn pid(mut self, input: i32) -> Self {
-        self.pid = Some(input);
+        self.pid = ::std::option::Option::Some(input);
         self
     }
     /// <p>The ID of the process.</p>
-    pub fn set_pid(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_pid(mut self, input: ::std::option::Option<i32>) -> Self {
         self.pid = input;
         self
     }
     /// <p>The unique ID assigned to the process by GuardDuty.</p>
-    pub fn uuid(mut self, input: impl Into<std::string::String>) -> Self {
-        self.uuid = Some(input.into());
+    pub fn uuid(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.uuid = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ID assigned to the process by GuardDuty.</p>
-    pub fn set_uuid(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_uuid(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.uuid = input;
         self
     }
     /// <p>The absolute path of the process executable file.</p>
-    pub fn executable_path(mut self, input: impl Into<std::string::String>) -> Self {
-        self.executable_path = Some(input.into());
+    pub fn executable_path(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.executable_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The absolute path of the process executable file.</p>
-    pub fn set_executable_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_executable_path(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.executable_path = input;
         self
     }
     /// <p>The effective user ID that was used to execute the process.</p>
     pub fn euid(mut self, input: i32) -> Self {
-        self.euid = Some(input);
+        self.euid = ::std::option::Option::Some(input);
         self
     }
     /// <p>The effective user ID that was used to execute the process.</p>
-    pub fn set_euid(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_euid(mut self, input: ::std::option::Option<i32>) -> Self {
         self.euid = input;
         self
     }
     /// <p>The unique ID of the parent process. This ID is assigned to the parent process by GuardDuty.</p>
-    pub fn parent_uuid(mut self, input: impl Into<std::string::String>) -> Self {
-        self.parent_uuid = Some(input.into());
+    pub fn parent_uuid(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.parent_uuid = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ID of the parent process. This ID is assigned to the parent process by GuardDuty.</p>
-    pub fn set_parent_uuid(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_parent_uuid(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parent_uuid = input;
         self
     }

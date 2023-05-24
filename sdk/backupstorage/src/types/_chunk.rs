@@ -2,7 +2,7 @@
 
 /// Chunk
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Chunk {
     /// Chunk index
     #[doc(hidden)]
@@ -12,13 +12,13 @@ pub struct Chunk {
     pub length: i64,
     /// Chunk checksum
     #[doc(hidden)]
-    pub checksum: std::option::Option<std::string::String>,
+    pub checksum: ::std::option::Option<::std::string::String>,
     /// Checksum algorithm
     #[doc(hidden)]
-    pub checksum_algorithm: std::option::Option<crate::types::DataChecksumAlgorithm>,
+    pub checksum_algorithm: ::std::option::Option<crate::types::DataChecksumAlgorithm>,
     /// Chunk token
     #[doc(hidden)]
-    pub chunk_token: std::option::Option<std::string::String>,
+    pub chunk_token: ::std::option::Option<::std::string::String>,
 }
 impl Chunk {
     /// Chunk index
@@ -30,15 +30,17 @@ impl Chunk {
         self.length
     }
     /// Chunk checksum
-    pub fn checksum(&self) -> std::option::Option<&str> {
+    pub fn checksum(&self) -> ::std::option::Option<&str> {
         self.checksum.as_deref()
     }
     /// Checksum algorithm
-    pub fn checksum_algorithm(&self) -> std::option::Option<&crate::types::DataChecksumAlgorithm> {
+    pub fn checksum_algorithm(
+        &self,
+    ) -> ::std::option::Option<&crate::types::DataChecksumAlgorithm> {
         self.checksum_algorithm.as_ref()
     }
     /// Chunk token
-    pub fn chunk_token(&self) -> std::option::Option<&str> {
+    pub fn chunk_token(&self) -> ::std::option::Option<&str> {
         self.chunk_token.as_deref()
     }
 }
@@ -51,65 +53,67 @@ impl Chunk {
 
 /// A builder for [`Chunk`](crate::types::Chunk).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ChunkBuilder {
-    pub(crate) index: std::option::Option<i64>,
-    pub(crate) length: std::option::Option<i64>,
-    pub(crate) checksum: std::option::Option<std::string::String>,
-    pub(crate) checksum_algorithm: std::option::Option<crate::types::DataChecksumAlgorithm>,
-    pub(crate) chunk_token: std::option::Option<std::string::String>,
+    pub(crate) index: ::std::option::Option<i64>,
+    pub(crate) length: ::std::option::Option<i64>,
+    pub(crate) checksum: ::std::option::Option<::std::string::String>,
+    pub(crate) checksum_algorithm: ::std::option::Option<crate::types::DataChecksumAlgorithm>,
+    pub(crate) chunk_token: ::std::option::Option<::std::string::String>,
 }
 impl ChunkBuilder {
     /// Chunk index
     pub fn index(mut self, input: i64) -> Self {
-        self.index = Some(input);
+        self.index = ::std::option::Option::Some(input);
         self
     }
     /// Chunk index
-    pub fn set_index(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_index(mut self, input: ::std::option::Option<i64>) -> Self {
         self.index = input;
         self
     }
     /// Chunk length
     pub fn length(mut self, input: i64) -> Self {
-        self.length = Some(input);
+        self.length = ::std::option::Option::Some(input);
         self
     }
     /// Chunk length
-    pub fn set_length(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_length(mut self, input: ::std::option::Option<i64>) -> Self {
         self.length = input;
         self
     }
     /// Chunk checksum
-    pub fn checksum(mut self, input: impl Into<std::string::String>) -> Self {
-        self.checksum = Some(input.into());
+    pub fn checksum(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.checksum = ::std::option::Option::Some(input.into());
         self
     }
     /// Chunk checksum
-    pub fn set_checksum(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_checksum(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.checksum = input;
         self
     }
     /// Checksum algorithm
     pub fn checksum_algorithm(mut self, input: crate::types::DataChecksumAlgorithm) -> Self {
-        self.checksum_algorithm = Some(input);
+        self.checksum_algorithm = ::std::option::Option::Some(input);
         self
     }
     /// Checksum algorithm
     pub fn set_checksum_algorithm(
         mut self,
-        input: std::option::Option<crate::types::DataChecksumAlgorithm>,
+        input: ::std::option::Option<crate::types::DataChecksumAlgorithm>,
     ) -> Self {
         self.checksum_algorithm = input;
         self
     }
     /// Chunk token
-    pub fn chunk_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.chunk_token = Some(input.into());
+    pub fn chunk_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.chunk_token = ::std::option::Option::Some(input.into());
         self
     }
     /// Chunk token
-    pub fn set_chunk_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_chunk_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.chunk_token = input;
         self
     }

@@ -2,28 +2,28 @@
 
 /// <p>Configuration details of either a CloudWatch Logs destination or Kinesis Data Firehose destination.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DestinationDetails {
     /// <p>The configuration details of the CloudWatch Logs destination.</p>
     #[doc(hidden)]
     pub cloud_watch_logs_details:
-        std::option::Option<crate::types::CloudWatchLogsDestinationDetails>,
+        ::std::option::Option<crate::types::CloudWatchLogsDestinationDetails>,
     /// <p>The configuration details of the Kinesis Data Firehose destination.</p>
     #[doc(hidden)]
     pub kinesis_firehose_details:
-        std::option::Option<crate::types::KinesisFirehoseDestinationDetails>,
+        ::std::option::Option<crate::types::KinesisFirehoseDestinationDetails>,
 }
 impl DestinationDetails {
     /// <p>The configuration details of the CloudWatch Logs destination.</p>
     pub fn cloud_watch_logs_details(
         &self,
-    ) -> std::option::Option<&crate::types::CloudWatchLogsDestinationDetails> {
+    ) -> ::std::option::Option<&crate::types::CloudWatchLogsDestinationDetails> {
         self.cloud_watch_logs_details.as_ref()
     }
     /// <p>The configuration details of the Kinesis Data Firehose destination.</p>
     pub fn kinesis_firehose_details(
         &self,
-    ) -> std::option::Option<&crate::types::KinesisFirehoseDestinationDetails> {
+    ) -> ::std::option::Option<&crate::types::KinesisFirehoseDestinationDetails> {
         self.kinesis_firehose_details.as_ref()
     }
 }
@@ -36,12 +36,14 @@ impl DestinationDetails {
 
 /// A builder for [`DestinationDetails`](crate::types::DestinationDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DestinationDetailsBuilder {
     pub(crate) cloud_watch_logs_details:
-        std::option::Option<crate::types::CloudWatchLogsDestinationDetails>,
+        ::std::option::Option<crate::types::CloudWatchLogsDestinationDetails>,
     pub(crate) kinesis_firehose_details:
-        std::option::Option<crate::types::KinesisFirehoseDestinationDetails>,
+        ::std::option::Option<crate::types::KinesisFirehoseDestinationDetails>,
 }
 impl DestinationDetailsBuilder {
     /// <p>The configuration details of the CloudWatch Logs destination.</p>
@@ -49,13 +51,13 @@ impl DestinationDetailsBuilder {
         mut self,
         input: crate::types::CloudWatchLogsDestinationDetails,
     ) -> Self {
-        self.cloud_watch_logs_details = Some(input);
+        self.cloud_watch_logs_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration details of the CloudWatch Logs destination.</p>
     pub fn set_cloud_watch_logs_details(
         mut self,
-        input: std::option::Option<crate::types::CloudWatchLogsDestinationDetails>,
+        input: ::std::option::Option<crate::types::CloudWatchLogsDestinationDetails>,
     ) -> Self {
         self.cloud_watch_logs_details = input;
         self
@@ -65,13 +67,13 @@ impl DestinationDetailsBuilder {
         mut self,
         input: crate::types::KinesisFirehoseDestinationDetails,
     ) -> Self {
-        self.kinesis_firehose_details = Some(input);
+        self.kinesis_firehose_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration details of the Kinesis Data Firehose destination.</p>
     pub fn set_kinesis_firehose_details(
         mut self,
-        input: std::option::Option<crate::types::KinesisFirehoseDestinationDetails>,
+        input: ::std::option::Option<crate::types::KinesisFirehoseDestinationDetails>,
     ) -> Self {
         self.kinesis_firehose_details = input;
         self

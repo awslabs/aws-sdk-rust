@@ -10,7 +10,7 @@ pub(super) fn resolve_endpoint(
     _params: &crate::endpoint::Params,
     _diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector,
     partition_resolver: &crate::endpoint_lib::partition::PartitionResolver,
-) -> aws_smithy_http::endpoint::Result {
+) -> ::aws_smithy_http::endpoint::Result {
     #[allow(unused_variables)]
     let region = &_params.region;
     #[allow(unused_variables)]
@@ -32,14 +32,14 @@ pub(super) fn resolve_endpoint(
                     if (*use_fips) == (false) {
                         if (*use_dual_stack) == (false) {
                             if (region) == ("ap-northeast-1") {
-                                return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                                return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                                     .url("https://sts.amazonaws.com".to_string())
                                     .property(
                                         "authSchemes",
-                                        vec![aws_smithy_types::Document::from({
-                                            let mut out = std::collections::HashMap::<
+                                        vec![::aws_smithy_types::Document::from({
+                                            let mut out = ::std::collections::HashMap::<
                                                 String,
-                                                aws_smithy_types::Document,
+                                                ::aws_smithy_types::Document,
                                             >::new(
                                             );
                                             out.insert(
@@ -60,14 +60,14 @@ pub(super) fn resolve_endpoint(
                                     .build());
                             }
                             if (region) == ("ap-south-1") {
-                                return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                                return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                                     .url("https://sts.amazonaws.com".to_string())
                                     .property(
                                         "authSchemes",
-                                        vec![aws_smithy_types::Document::from({
-                                            let mut out = std::collections::HashMap::<
+                                        vec![::aws_smithy_types::Document::from({
+                                            let mut out = ::std::collections::HashMap::<
                                                 String,
-                                                aws_smithy_types::Document,
+                                                ::aws_smithy_types::Document,
                                             >::new(
                                             );
                                             out.insert(
@@ -88,14 +88,14 @@ pub(super) fn resolve_endpoint(
                                     .build());
                             }
                             if (region) == ("ap-southeast-1") {
-                                return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                                return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                                     .url("https://sts.amazonaws.com".to_string())
                                     .property(
                                         "authSchemes",
-                                        vec![aws_smithy_types::Document::from({
-                                            let mut out = std::collections::HashMap::<
+                                        vec![::aws_smithy_types::Document::from({
+                                            let mut out = ::std::collections::HashMap::<
                                                 String,
-                                                aws_smithy_types::Document,
+                                                ::aws_smithy_types::Document,
                                             >::new(
                                             );
                                             out.insert(
@@ -116,14 +116,14 @@ pub(super) fn resolve_endpoint(
                                     .build());
                             }
                             if (region) == ("ap-southeast-2") {
-                                return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                                return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                                     .url("https://sts.amazonaws.com".to_string())
                                     .property(
                                         "authSchemes",
-                                        vec![aws_smithy_types::Document::from({
-                                            let mut out = std::collections::HashMap::<
+                                        vec![::aws_smithy_types::Document::from({
+                                            let mut out = ::std::collections::HashMap::<
                                                 String,
-                                                aws_smithy_types::Document,
+                                                ::aws_smithy_types::Document,
                                             >::new(
                                             );
                                             out.insert(
@@ -144,14 +144,14 @@ pub(super) fn resolve_endpoint(
                                     .build());
                             }
                             if (region) == ("aws-global") {
-                                return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                                return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                                     .url("https://sts.amazonaws.com".to_string())
                                     .property(
                                         "authSchemes",
-                                        vec![aws_smithy_types::Document::from({
-                                            let mut out = std::collections::HashMap::<
+                                        vec![::aws_smithy_types::Document::from({
+                                            let mut out = ::std::collections::HashMap::<
                                                 String,
-                                                aws_smithy_types::Document,
+                                                ::aws_smithy_types::Document,
                                             >::new(
                                             );
                                             out.insert(
@@ -172,14 +172,14 @@ pub(super) fn resolve_endpoint(
                                     .build());
                             }
                             if (region) == ("ca-central-1") {
-                                return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                                return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                                     .url("https://sts.amazonaws.com".to_string())
                                     .property(
                                         "authSchemes",
-                                        vec![aws_smithy_types::Document::from({
-                                            let mut out = std::collections::HashMap::<
+                                        vec![::aws_smithy_types::Document::from({
+                                            let mut out = ::std::collections::HashMap::<
                                                 String,
-                                                aws_smithy_types::Document,
+                                                ::aws_smithy_types::Document,
                                             >::new(
                                             );
                                             out.insert(
@@ -200,14 +200,14 @@ pub(super) fn resolve_endpoint(
                                     .build());
                             }
                             if (region) == ("eu-central-1") {
-                                return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                                return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                                     .url("https://sts.amazonaws.com".to_string())
                                     .property(
                                         "authSchemes",
-                                        vec![aws_smithy_types::Document::from({
-                                            let mut out = std::collections::HashMap::<
+                                        vec![::aws_smithy_types::Document::from({
+                                            let mut out = ::std::collections::HashMap::<
                                                 String,
-                                                aws_smithy_types::Document,
+                                                ::aws_smithy_types::Document,
                                             >::new(
                                             );
                                             out.insert(
@@ -228,14 +228,14 @@ pub(super) fn resolve_endpoint(
                                     .build());
                             }
                             if (region) == ("eu-north-1") {
-                                return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                                return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                                     .url("https://sts.amazonaws.com".to_string())
                                     .property(
                                         "authSchemes",
-                                        vec![aws_smithy_types::Document::from({
-                                            let mut out = std::collections::HashMap::<
+                                        vec![::aws_smithy_types::Document::from({
+                                            let mut out = ::std::collections::HashMap::<
                                                 String,
-                                                aws_smithy_types::Document,
+                                                ::aws_smithy_types::Document,
                                             >::new(
                                             );
                                             out.insert(
@@ -256,14 +256,14 @@ pub(super) fn resolve_endpoint(
                                     .build());
                             }
                             if (region) == ("eu-west-1") {
-                                return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                                return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                                     .url("https://sts.amazonaws.com".to_string())
                                     .property(
                                         "authSchemes",
-                                        vec![aws_smithy_types::Document::from({
-                                            let mut out = std::collections::HashMap::<
+                                        vec![::aws_smithy_types::Document::from({
+                                            let mut out = ::std::collections::HashMap::<
                                                 String,
-                                                aws_smithy_types::Document,
+                                                ::aws_smithy_types::Document,
                                             >::new(
                                             );
                                             out.insert(
@@ -284,14 +284,14 @@ pub(super) fn resolve_endpoint(
                                     .build());
                             }
                             if (region) == ("eu-west-2") {
-                                return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                                return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                                     .url("https://sts.amazonaws.com".to_string())
                                     .property(
                                         "authSchemes",
-                                        vec![aws_smithy_types::Document::from({
-                                            let mut out = std::collections::HashMap::<
+                                        vec![::aws_smithy_types::Document::from({
+                                            let mut out = ::std::collections::HashMap::<
                                                 String,
-                                                aws_smithy_types::Document,
+                                                ::aws_smithy_types::Document,
                                             >::new(
                                             );
                                             out.insert(
@@ -312,14 +312,14 @@ pub(super) fn resolve_endpoint(
                                     .build());
                             }
                             if (region) == ("eu-west-3") {
-                                return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                                return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                                     .url("https://sts.amazonaws.com".to_string())
                                     .property(
                                         "authSchemes",
-                                        vec![aws_smithy_types::Document::from({
-                                            let mut out = std::collections::HashMap::<
+                                        vec![::aws_smithy_types::Document::from({
+                                            let mut out = ::std::collections::HashMap::<
                                                 String,
-                                                aws_smithy_types::Document,
+                                                ::aws_smithy_types::Document,
                                             >::new(
                                             );
                                             out.insert(
@@ -340,14 +340,14 @@ pub(super) fn resolve_endpoint(
                                     .build());
                             }
                             if (region) == ("sa-east-1") {
-                                return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                                return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                                     .url("https://sts.amazonaws.com".to_string())
                                     .property(
                                         "authSchemes",
-                                        vec![aws_smithy_types::Document::from({
-                                            let mut out = std::collections::HashMap::<
+                                        vec![::aws_smithy_types::Document::from({
+                                            let mut out = ::std::collections::HashMap::<
                                                 String,
-                                                aws_smithy_types::Document,
+                                                ::aws_smithy_types::Document,
                                             >::new(
                                             );
                                             out.insert(
@@ -368,14 +368,14 @@ pub(super) fn resolve_endpoint(
                                     .build());
                             }
                             if (region) == ("us-east-1") {
-                                return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                                return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                                     .url("https://sts.amazonaws.com".to_string())
                                     .property(
                                         "authSchemes",
-                                        vec![aws_smithy_types::Document::from({
-                                            let mut out = std::collections::HashMap::<
+                                        vec![::aws_smithy_types::Document::from({
+                                            let mut out = ::std::collections::HashMap::<
                                                 String,
-                                                aws_smithy_types::Document,
+                                                ::aws_smithy_types::Document,
                                             >::new(
                                             );
                                             out.insert(
@@ -396,14 +396,14 @@ pub(super) fn resolve_endpoint(
                                     .build());
                             }
                             if (region) == ("us-east-2") {
-                                return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                                return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                                     .url("https://sts.amazonaws.com".to_string())
                                     .property(
                                         "authSchemes",
-                                        vec![aws_smithy_types::Document::from({
-                                            let mut out = std::collections::HashMap::<
+                                        vec![::aws_smithy_types::Document::from({
+                                            let mut out = ::std::collections::HashMap::<
                                                 String,
-                                                aws_smithy_types::Document,
+                                                ::aws_smithy_types::Document,
                                             >::new(
                                             );
                                             out.insert(
@@ -424,14 +424,14 @@ pub(super) fn resolve_endpoint(
                                     .build());
                             }
                             if (region) == ("us-west-1") {
-                                return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                                return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                                     .url("https://sts.amazonaws.com".to_string())
                                     .property(
                                         "authSchemes",
-                                        vec![aws_smithy_types::Document::from({
-                                            let mut out = std::collections::HashMap::<
+                                        vec![::aws_smithy_types::Document::from({
+                                            let mut out = ::std::collections::HashMap::<
                                                 String,
-                                                aws_smithy_types::Document,
+                                                ::aws_smithy_types::Document,
                                             >::new(
                                             );
                                             out.insert(
@@ -452,14 +452,14 @@ pub(super) fn resolve_endpoint(
                                     .build());
                             }
                             if (region) == ("us-west-2") {
-                                return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                                return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                                     .url("https://sts.amazonaws.com".to_string())
                                     .property(
                                         "authSchemes",
-                                        vec![aws_smithy_types::Document::from({
-                                            let mut out = std::collections::HashMap::<
+                                        vec![::aws_smithy_types::Document::from({
+                                            let mut out = ::std::collections::HashMap::<
                                                 String,
-                                                aws_smithy_types::Document,
+                                                ::aws_smithy_types::Document,
                                             >::new(
                                             );
                                             out.insert(
@@ -479,7 +479,7 @@ pub(super) fn resolve_endpoint(
                                     )
                                     .build());
                             }
-                            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                            return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                                 .url({
                                     let mut out = String::new();
                                     out.push_str("https://sts.");
@@ -492,10 +492,10 @@ pub(super) fn resolve_endpoint(
                                 })
                                 .property(
                                     "authSchemes",
-                                    vec![aws_smithy_types::Document::from({
-                                        let mut out = std::collections::HashMap::<
+                                    vec![::aws_smithy_types::Document::from({
+                                        let mut out = ::std::collections::HashMap::<
                                             String,
-                                            aws_smithy_types::Document,
+                                            ::aws_smithy_types::Document,
                                         >::new(
                                         );
                                         out.insert("name".to_string(), "sigv4".to_string().into());
@@ -520,17 +520,17 @@ pub(super) fn resolve_endpoint(
     #[allow(unused_variables)]
     if let Some(endpoint) = endpoint {
         if (*use_fips) == (true) {
-            return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
+            return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
                 "Invalid Configuration: FIPS and custom endpoint are not supported".to_string(),
             ));
         }
         if (*use_dual_stack) == (true) {
-            return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
+            return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
                 "Invalid Configuration: Dualstack and custom endpoint are not supported"
                     .to_string(),
             ));
         }
-        return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+        return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
             .url(endpoint.to_owned())
             .build());
     }
@@ -544,7 +544,7 @@ pub(super) fn resolve_endpoint(
                 if (*use_dual_stack) == (true) {
                     if (true) == (partition_result.supports_fips()) {
                         if (true) == (partition_result.supports_dual_stack()) {
-                            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                            return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                                 .url({
                                     let mut out = String::new();
                                     out.push_str("https://sts-fips.");
@@ -558,14 +558,14 @@ pub(super) fn resolve_endpoint(
                                 .build());
                         }
                     }
-                    return Err(aws_smithy_http::endpoint::ResolveEndpointError::message("FIPS and DualStack are enabled, but this partition does not support one or both"
+                    return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message("FIPS and DualStack are enabled, but this partition does not support one or both"
 .to_string()));
                 }
             }
             if (*use_fips) == (true) {
                 if (true) == (partition_result.supports_fips()) {
                     if ("aws-us-gov") == (partition_result.name()) {
-                        return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                        return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                             .url({
                                 let mut out = String::new();
                                 out.push_str("https://sts.");
@@ -576,7 +576,7 @@ pub(super) fn resolve_endpoint(
                             })
                             .build());
                     }
-                    return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                    return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                         .url({
                             let mut out = String::new();
                             out.push_str("https://sts-fips.");
@@ -589,13 +589,13 @@ pub(super) fn resolve_endpoint(
                         })
                         .build());
                 }
-                return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
+                return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
                     "FIPS is enabled but this partition does not support FIPS".to_string(),
                 ));
             }
             if (*use_dual_stack) == (true) {
                 if (true) == (partition_result.supports_dual_stack()) {
-                    return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                    return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                         .url({
                             let mut out = String::new();
                             out.push_str("https://sts.");
@@ -608,20 +608,20 @@ pub(super) fn resolve_endpoint(
                         })
                         .build());
                 }
-                return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
+                return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
                     "DualStack is enabled but this partition does not support DualStack"
                         .to_string(),
                 ));
             }
             if (region) == ("aws-global") {
-                return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+                return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                     .url("https://sts.amazonaws.com".to_string())
                     .property(
                         "authSchemes",
-                        vec![aws_smithy_types::Document::from({
-                            let mut out = std::collections::HashMap::<
+                        vec![::aws_smithy_types::Document::from({
+                            let mut out = ::std::collections::HashMap::<
                                 String,
-                                aws_smithy_types::Document,
+                                ::aws_smithy_types::Document,
                             >::new();
                             out.insert("name".to_string(), "sigv4".to_string().into());
                             out.insert("signingName".to_string(), "sts".to_string().into());
@@ -631,7 +631,7 @@ pub(super) fn resolve_endpoint(
                     )
                     .build());
             }
-            return Ok(aws_smithy_types::endpoint::Endpoint::builder()
+            return Ok(::aws_smithy_types::endpoint::Endpoint::builder()
                 .url({
                     let mut out = String::new();
                     out.push_str("https://sts.");
@@ -645,14 +645,14 @@ pub(super) fn resolve_endpoint(
                 .build());
         }
         #[allow(unreachable_code)]
-        return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
+        return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
             format!(
                 "No rules matched these parameters. This is a bug. {:?}",
                 _params
             ),
         ));
     }
-    return Err(aws_smithy_http::endpoint::ResolveEndpointError::message(
+    return Err(::aws_smithy_http::endpoint::ResolveEndpointError::message(
         "Invalid Configuration: Missing Region".to_string(),
     ));
 }

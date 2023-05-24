@@ -2,29 +2,29 @@
 
 /// <p>Describes a Kinesis data stream destination.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KinesisDataStreamDestination {
     /// <p>The ARN for a specific Kinesis data stream.</p>
     #[doc(hidden)]
-    pub stream_arn: std::option::Option<std::string::String>,
+    pub stream_arn: ::std::option::Option<::std::string::String>,
     /// <p>The current status of replication.</p>
     #[doc(hidden)]
-    pub destination_status: std::option::Option<crate::types::DestinationStatus>,
+    pub destination_status: ::std::option::Option<crate::types::DestinationStatus>,
     /// <p>The human-readable string that corresponds to the replica status.</p>
     #[doc(hidden)]
-    pub destination_status_description: std::option::Option<std::string::String>,
+    pub destination_status_description: ::std::option::Option<::std::string::String>,
 }
 impl KinesisDataStreamDestination {
     /// <p>The ARN for a specific Kinesis data stream.</p>
-    pub fn stream_arn(&self) -> std::option::Option<&str> {
+    pub fn stream_arn(&self) -> ::std::option::Option<&str> {
         self.stream_arn.as_deref()
     }
     /// <p>The current status of replication.</p>
-    pub fn destination_status(&self) -> std::option::Option<&crate::types::DestinationStatus> {
+    pub fn destination_status(&self) -> ::std::option::Option<&crate::types::DestinationStatus> {
         self.destination_status.as_ref()
     }
     /// <p>The human-readable string that corresponds to the replica status.</p>
-    pub fn destination_status_description(&self) -> std::option::Option<&str> {
+    pub fn destination_status_description(&self) -> ::std::option::Option<&str> {
         self.destination_status_description.as_deref()
     }
 }
@@ -37,45 +37,50 @@ impl KinesisDataStreamDestination {
 
 /// A builder for [`KinesisDataStreamDestination`](crate::types::KinesisDataStreamDestination).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct KinesisDataStreamDestinationBuilder {
-    pub(crate) stream_arn: std::option::Option<std::string::String>,
-    pub(crate) destination_status: std::option::Option<crate::types::DestinationStatus>,
-    pub(crate) destination_status_description: std::option::Option<std::string::String>,
+    pub(crate) stream_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) destination_status: ::std::option::Option<crate::types::DestinationStatus>,
+    pub(crate) destination_status_description: ::std::option::Option<::std::string::String>,
 }
 impl KinesisDataStreamDestinationBuilder {
     /// <p>The ARN for a specific Kinesis data stream.</p>
-    pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.stream_arn = Some(input.into());
+    pub fn stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.stream_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN for a specific Kinesis data stream.</p>
-    pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stream_arn = input;
         self
     }
     /// <p>The current status of replication.</p>
     pub fn destination_status(mut self, input: crate::types::DestinationStatus) -> Self {
-        self.destination_status = Some(input);
+        self.destination_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current status of replication.</p>
     pub fn set_destination_status(
         mut self,
-        input: std::option::Option<crate::types::DestinationStatus>,
+        input: ::std::option::Option<crate::types::DestinationStatus>,
     ) -> Self {
         self.destination_status = input;
         self
     }
     /// <p>The human-readable string that corresponds to the replica status.</p>
-    pub fn destination_status_description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.destination_status_description = Some(input.into());
+    pub fn destination_status_description(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.destination_status_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The human-readable string that corresponds to the replica status.</p>
     pub fn set_destination_status_description(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.destination_status_description = input;
         self

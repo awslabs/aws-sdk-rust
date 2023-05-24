@@ -38,13 +38,13 @@
 /// The service defaults to using RIFF for WAV outputs. If your output audio is likely to exceed 4 GB in file size, or if you otherwise need the extended support of the RF64 format, set your output WAV file format to RF64.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum WavFormat {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum WavFormat {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for WavFormat {
+impl ::std::convert::From<&str> for WavFormat {
     fn from(s: &str) -> Self {
         match s {
             "RF64" => WavFormat::Rf64,
@@ -63,11 +63,11 @@ impl std::convert::From<&str> for WavFormat {
         }
     }
 }
-impl std::str::FromStr for WavFormat {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for WavFormat {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(WavFormat::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(WavFormat::from(s))
     }
 }
 impl WavFormat {
@@ -84,7 +84,7 @@ impl WavFormat {
         &["RF64", "RIFF"]
     }
 }
-impl AsRef<str> for WavFormat {
+impl ::std::convert::AsRef<str> for WavFormat {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

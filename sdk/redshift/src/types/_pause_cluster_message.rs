@@ -2,15 +2,15 @@
 
 /// <p>Describes a pause cluster operation. For example, a scheduled action to run the <code>PauseCluster</code> API operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PauseClusterMessage {
     /// <p>The identifier of the cluster to be paused.</p>
     #[doc(hidden)]
-    pub cluster_identifier: std::option::Option<std::string::String>,
+    pub cluster_identifier: ::std::option::Option<::std::string::String>,
 }
 impl PauseClusterMessage {
     /// <p>The identifier of the cluster to be paused.</p>
-    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+    pub fn cluster_identifier(&self) -> ::std::option::Option<&str> {
         self.cluster_identifier.as_deref()
     }
 }
@@ -23,20 +23,25 @@ impl PauseClusterMessage {
 
 /// A builder for [`PauseClusterMessage`](crate::types::PauseClusterMessage).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PauseClusterMessageBuilder {
-    pub(crate) cluster_identifier: std::option::Option<std::string::String>,
+    pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,
 }
 impl PauseClusterMessageBuilder {
     /// <p>The identifier of the cluster to be paused.</p>
-    pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cluster_identifier = Some(input.into());
+    pub fn cluster_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the cluster to be paused.</p>
     pub fn set_cluster_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.cluster_identifier = input;
         self

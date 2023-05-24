@@ -2,7 +2,7 @@
 
 /// <p>The caching configuration for a resolver that has caching activated.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CachingConfig {
     /// <p>The TTL in seconds for a resolver that has caching activated.</p>
     /// <p>Valid values are 1–3,600 seconds.</p>
@@ -11,7 +11,7 @@ pub struct CachingConfig {
     /// <p>The caching keys for a resolver that has caching activated.</p>
     /// <p>Valid values are entries from the <code>$context.arguments</code>, <code>$context.source</code>, and <code>$context.identity</code> maps.</p>
     #[doc(hidden)]
-    pub caching_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub caching_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CachingConfig {
     /// <p>The TTL in seconds for a resolver that has caching activated.</p>
@@ -21,7 +21,7 @@ impl CachingConfig {
     }
     /// <p>The caching keys for a resolver that has caching activated.</p>
     /// <p>Valid values are entries from the <code>$context.arguments</code>, <code>$context.source</code>, and <code>$context.identity</code> maps.</p>
-    pub fn caching_keys(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn caching_keys(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.caching_keys.as_deref()
     }
 }
@@ -34,21 +34,23 @@ impl CachingConfig {
 
 /// A builder for [`CachingConfig`](crate::types::CachingConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CachingConfigBuilder {
-    pub(crate) ttl: std::option::Option<i64>,
-    pub(crate) caching_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) ttl: ::std::option::Option<i64>,
+    pub(crate) caching_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CachingConfigBuilder {
     /// <p>The TTL in seconds for a resolver that has caching activated.</p>
     /// <p>Valid values are 1–3,600 seconds.</p>
     pub fn ttl(mut self, input: i64) -> Self {
-        self.ttl = Some(input);
+        self.ttl = ::std::option::Option::Some(input);
         self
     }
     /// <p>The TTL in seconds for a resolver that has caching activated.</p>
     /// <p>Valid values are 1–3,600 seconds.</p>
-    pub fn set_ttl(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_ttl(mut self, input: ::std::option::Option<i64>) -> Self {
         self.ttl = input;
         self
     }
@@ -58,17 +60,17 @@ impl CachingConfigBuilder {
     ///
     /// <p>The caching keys for a resolver that has caching activated.</p>
     /// <p>Valid values are entries from the <code>$context.arguments</code>, <code>$context.source</code>, and <code>$context.identity</code> maps.</p>
-    pub fn caching_keys(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn caching_keys(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.caching_keys.unwrap_or_default();
         v.push(input.into());
-        self.caching_keys = Some(v);
+        self.caching_keys = ::std::option::Option::Some(v);
         self
     }
     /// <p>The caching keys for a resolver that has caching activated.</p>
     /// <p>Valid values are entries from the <code>$context.arguments</code>, <code>$context.source</code>, and <code>$context.identity</code> maps.</p>
     pub fn set_caching_keys(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.caching_keys = input;
         self

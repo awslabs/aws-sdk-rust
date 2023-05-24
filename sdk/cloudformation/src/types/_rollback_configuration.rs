@@ -3,7 +3,7 @@
 /// <p>Structure containing the rollback triggers for CloudFormation to monitor during stack creation and updating operations, and for the specified monitoring period afterwards.</p>
 /// <p>Rollback triggers enable you to have CloudFormation monitor the state of your application during stack creation and updating, and to roll back that operation if the application breaches the threshold of any of the alarms you've specified. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-rollback-triggers.html">Monitor and Roll Back Stack Operations</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RollbackConfiguration {
     /// <p>The triggers to monitor during stack creation or update actions.</p>
     /// <p>By default, CloudFormation saves the rollback triggers specified for a stack and applies them to any subsequent update operations for the stack, unless you specify otherwise. If you do specify rollback triggers for this parameter, those triggers replace any list of triggers previously specified for the stack. This means:</p>
@@ -14,13 +14,13 @@ pub struct RollbackConfiguration {
     /// </ul>
     /// <p>If a specified trigger is missing, the entire stack operation fails and is rolled back.</p>
     #[doc(hidden)]
-    pub rollback_triggers: std::option::Option<std::vec::Vec<crate::types::RollbackTrigger>>,
+    pub rollback_triggers: ::std::option::Option<::std::vec::Vec<crate::types::RollbackTrigger>>,
     /// <p>The amount of time, in minutes, during which CloudFormation should monitor all the rollback triggers after the stack creation or update operation deploys all necessary resources.</p>
     /// <p>The default is 0 minutes.</p>
     /// <p>If you specify a monitoring period but don't specify any rollback triggers, CloudFormation still waits the specified period of time before cleaning up old resources after update operations. You can use this monitoring period to perform any manual stack validation desired, and manually cancel the stack creation or update (using <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CancelUpdateStack.html">CancelUpdateStack</a>, for example) as necessary.</p>
     /// <p>If you specify 0 for this parameter, CloudFormation still monitors the specified rollback triggers during stack creation and update operations. Then, for update operations, it begins disposing of old resources immediately once the operation completes.</p>
     #[doc(hidden)]
-    pub monitoring_time_in_minutes: std::option::Option<i32>,
+    pub monitoring_time_in_minutes: ::std::option::Option<i32>,
 }
 impl RollbackConfiguration {
     /// <p>The triggers to monitor during stack creation or update actions.</p>
@@ -31,14 +31,14 @@ impl RollbackConfiguration {
     /// <li> <p>To remove all currently specified triggers, specify an empty list for this parameter.</p> </li>
     /// </ul>
     /// <p>If a specified trigger is missing, the entire stack operation fails and is rolled back.</p>
-    pub fn rollback_triggers(&self) -> std::option::Option<&[crate::types::RollbackTrigger]> {
+    pub fn rollback_triggers(&self) -> ::std::option::Option<&[crate::types::RollbackTrigger]> {
         self.rollback_triggers.as_deref()
     }
     /// <p>The amount of time, in minutes, during which CloudFormation should monitor all the rollback triggers after the stack creation or update operation deploys all necessary resources.</p>
     /// <p>The default is 0 minutes.</p>
     /// <p>If you specify a monitoring period but don't specify any rollback triggers, CloudFormation still waits the specified period of time before cleaning up old resources after update operations. You can use this monitoring period to perform any manual stack validation desired, and manually cancel the stack creation or update (using <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CancelUpdateStack.html">CancelUpdateStack</a>, for example) as necessary.</p>
     /// <p>If you specify 0 for this parameter, CloudFormation still monitors the specified rollback triggers during stack creation and update operations. Then, for update operations, it begins disposing of old resources immediately once the operation completes.</p>
-    pub fn monitoring_time_in_minutes(&self) -> std::option::Option<i32> {
+    pub fn monitoring_time_in_minutes(&self) -> ::std::option::Option<i32> {
         self.monitoring_time_in_minutes
     }
 }
@@ -51,10 +51,13 @@ impl RollbackConfiguration {
 
 /// A builder for [`RollbackConfiguration`](crate::types::RollbackConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RollbackConfigurationBuilder {
-    pub(crate) rollback_triggers: std::option::Option<std::vec::Vec<crate::types::RollbackTrigger>>,
-    pub(crate) monitoring_time_in_minutes: std::option::Option<i32>,
+    pub(crate) rollback_triggers:
+        ::std::option::Option<::std::vec::Vec<crate::types::RollbackTrigger>>,
+    pub(crate) monitoring_time_in_minutes: ::std::option::Option<i32>,
 }
 impl RollbackConfigurationBuilder {
     /// Appends an item to `rollback_triggers`.
@@ -72,7 +75,7 @@ impl RollbackConfigurationBuilder {
     pub fn rollback_triggers(mut self, input: crate::types::RollbackTrigger) -> Self {
         let mut v = self.rollback_triggers.unwrap_or_default();
         v.push(input);
-        self.rollback_triggers = Some(v);
+        self.rollback_triggers = ::std::option::Option::Some(v);
         self
     }
     /// <p>The triggers to monitor during stack creation or update actions.</p>
@@ -85,7 +88,7 @@ impl RollbackConfigurationBuilder {
     /// <p>If a specified trigger is missing, the entire stack operation fails and is rolled back.</p>
     pub fn set_rollback_triggers(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RollbackTrigger>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::RollbackTrigger>>,
     ) -> Self {
         self.rollback_triggers = input;
         self
@@ -95,14 +98,14 @@ impl RollbackConfigurationBuilder {
     /// <p>If you specify a monitoring period but don't specify any rollback triggers, CloudFormation still waits the specified period of time before cleaning up old resources after update operations. You can use this monitoring period to perform any manual stack validation desired, and manually cancel the stack creation or update (using <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CancelUpdateStack.html">CancelUpdateStack</a>, for example) as necessary.</p>
     /// <p>If you specify 0 for this parameter, CloudFormation still monitors the specified rollback triggers during stack creation and update operations. Then, for update operations, it begins disposing of old resources immediately once the operation completes.</p>
     pub fn monitoring_time_in_minutes(mut self, input: i32) -> Self {
-        self.monitoring_time_in_minutes = Some(input);
+        self.monitoring_time_in_minutes = ::std::option::Option::Some(input);
         self
     }
     /// <p>The amount of time, in minutes, during which CloudFormation should monitor all the rollback triggers after the stack creation or update operation deploys all necessary resources.</p>
     /// <p>The default is 0 minutes.</p>
     /// <p>If you specify a monitoring period but don't specify any rollback triggers, CloudFormation still waits the specified period of time before cleaning up old resources after update operations. You can use this monitoring period to perform any manual stack validation desired, and manually cancel the stack creation or update (using <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CancelUpdateStack.html">CancelUpdateStack</a>, for example) as necessary.</p>
     /// <p>If you specify 0 for this parameter, CloudFormation still monitors the specified rollback triggers during stack creation and update operations. Then, for update operations, it begins disposing of old resources immediately once the operation completes.</p>
-    pub fn set_monitoring_time_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_monitoring_time_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.monitoring_time_in_minutes = input;
         self
     }

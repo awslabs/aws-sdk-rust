@@ -7,29 +7,29 @@ pub use crate::operation::add_thing_to_thing_group::_add_thing_to_thing_group_in
 ///
 /// <p>Adds a thing to a thing group.</p>
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">AddThingToThingGroup</a> action.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AddThingToThingGroupFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::add_thing_to_thing_group::builders::AddThingToThingGroupInputBuilder,
 }
 impl AddThingToThingGroupFluentBuilder {
     /// Creates a new `AddThingToThingGroup`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::add_thing_to_thing_group::AddThingToThingGroup,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::add_thing_to_thing_group::AddThingToThingGroupError,
         >,
     > {
@@ -37,30 +37,33 @@ impl AddThingToThingGroupFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::add_thing_to_thing_group::AddThingToThingGroupOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::add_thing_to_thing_group::AddThingToThingGroupError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -73,51 +76,63 @@ impl AddThingToThingGroupFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::add_thing_to_thing_group::AddThingToThingGroupOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::add_thing_to_thing_group::AddThingToThingGroupError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the group to which you are adding a thing.</p>
-    pub fn thing_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn thing_group_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.thing_group_name(input.into());
         self
     }
     /// <p>The name of the group to which you are adding a thing.</p>
-    pub fn set_thing_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_thing_group_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_thing_group_name(input);
         self
     }
     /// <p>The ARN of the group to which you are adding a thing.</p>
-    pub fn thing_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn thing_group_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.thing_group_arn(input.into());
         self
     }
     /// <p>The ARN of the group to which you are adding a thing.</p>
-    pub fn set_thing_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_thing_group_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_thing_group_arn(input);
         self
     }
     /// <p>The name of the thing to add to a group.</p>
-    pub fn thing_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn thing_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.thing_name(input.into());
         self
     }
     /// <p>The name of the thing to add to a group.</p>
-    pub fn set_thing_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_thing_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_thing_name(input);
         self
     }
     /// <p>The ARN of the thing to add to a group.</p>
-    pub fn thing_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn thing_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.thing_arn(input.into());
         self
     }
     /// <p>The ARN of the thing to add to a group.</p>
-    pub fn set_thing_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_thing_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_thing_arn(input);
         self
     }
@@ -127,7 +142,7 @@ impl AddThingToThingGroupFluentBuilder {
         self
     }
     /// <p>Override dynamic thing groups with static thing groups when 10-group limit is reached. If a thing belongs to 10 thing groups, and one or more of those groups are dynamic thing groups, adding a thing to a static group removes the thing from the last dynamic group.</p>
-    pub fn set_override_dynamic_groups(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_override_dynamic_groups(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_override_dynamic_groups(input);
         self
     }

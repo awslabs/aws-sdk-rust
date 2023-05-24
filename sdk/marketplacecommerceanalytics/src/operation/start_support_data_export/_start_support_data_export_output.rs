@@ -2,20 +2,20 @@
 
 /// Container for the result of the StartSupportDataExport operation.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartSupportDataExportOutput {
     /// A unique identifier representing a specific request to the StartSupportDataExport operation. This identifier can be used to correlate a request with notifications from the SNS topic.
     #[doc(hidden)]
-    pub data_set_request_id: std::option::Option<std::string::String>,
+    pub data_set_request_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl StartSupportDataExportOutput {
     /// A unique identifier representing a specific request to the StartSupportDataExport operation. This identifier can be used to correlate a request with notifications from the SNS topic.
-    pub fn data_set_request_id(&self) -> std::option::Option<&str> {
+    pub fn data_set_request_id(&self) -> ::std::option::Option<&str> {
         self.data_set_request_id.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for StartSupportDataExportOutput {
+impl ::aws_http::request_id::RequestId for StartSupportDataExportOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -31,21 +31,26 @@ impl StartSupportDataExportOutput {
 
 /// A builder for [`StartSupportDataExportOutput`](crate::operation::start_support_data_export::StartSupportDataExportOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StartSupportDataExportOutputBuilder {
-    pub(crate) data_set_request_id: std::option::Option<std::string::String>,
+    pub(crate) data_set_request_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl StartSupportDataExportOutputBuilder {
     /// A unique identifier representing a specific request to the StartSupportDataExport operation. This identifier can be used to correlate a request with notifications from the SNS topic.
-    pub fn data_set_request_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.data_set_request_id = Some(input.into());
+    pub fn data_set_request_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.data_set_request_id = ::std::option::Option::Some(input.into());
         self
     }
     /// A unique identifier representing a specific request to the StartSupportDataExport operation. This identifier can be used to correlate a request with notifications from the SNS topic.
     pub fn set_data_set_request_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.data_set_request_id = input;
         self

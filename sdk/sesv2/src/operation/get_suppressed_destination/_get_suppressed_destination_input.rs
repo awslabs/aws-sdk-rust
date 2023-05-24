@@ -2,15 +2,15 @@
 
 /// <p>A request to retrieve information about an email address that's on the suppression list for your account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSuppressedDestinationInput {
     /// <p>The email address that's on the account suppression list.</p>
     #[doc(hidden)]
-    pub email_address: std::option::Option<std::string::String>,
+    pub email_address: ::std::option::Option<::std::string::String>,
 }
 impl GetSuppressedDestinationInput {
     /// <p>The email address that's on the account suppression list.</p>
-    pub fn email_address(&self) -> std::option::Option<&str> {
+    pub fn email_address(&self) -> ::std::option::Option<&str> {
         self.email_address.as_deref()
     }
 }
@@ -25,29 +25,37 @@ impl GetSuppressedDestinationInput {
 
 /// A builder for [`GetSuppressedDestinationInput`](crate::operation::get_suppressed_destination::GetSuppressedDestinationInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetSuppressedDestinationInputBuilder {
-    pub(crate) email_address: std::option::Option<std::string::String>,
+    pub(crate) email_address: ::std::option::Option<::std::string::String>,
 }
 impl GetSuppressedDestinationInputBuilder {
     /// <p>The email address that's on the account suppression list.</p>
-    pub fn email_address(mut self, input: impl Into<std::string::String>) -> Self {
-        self.email_address = Some(input.into());
+    pub fn email_address(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.email_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The email address that's on the account suppression list.</p>
-    pub fn set_email_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_email_address(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.email_address = input;
         self
     }
     /// Consumes the builder and constructs a [`GetSuppressedDestinationInput`](crate::operation::get_suppressed_destination::GetSuppressedDestinationInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::get_suppressed_destination::GetSuppressedDestinationInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::get_suppressed_destination::GetSuppressedDestinationInput {
                 email_address: self.email_address,
             },

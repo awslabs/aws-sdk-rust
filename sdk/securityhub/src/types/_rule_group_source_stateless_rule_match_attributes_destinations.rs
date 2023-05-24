@@ -2,15 +2,15 @@
 
 /// <p>A destination IP address or range.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuleGroupSourceStatelessRuleMatchAttributesDestinations {
     /// <p>An IP address or a block of IP addresses.</p>
     #[doc(hidden)]
-    pub address_definition: std::option::Option<std::string::String>,
+    pub address_definition: ::std::option::Option<::std::string::String>,
 }
 impl RuleGroupSourceStatelessRuleMatchAttributesDestinations {
     /// <p>An IP address or a block of IP addresses.</p>
-    pub fn address_definition(&self) -> std::option::Option<&str> {
+    pub fn address_definition(&self) -> ::std::option::Option<&str> {
         self.address_definition.as_deref()
     }
 }
@@ -25,20 +25,25 @@ impl RuleGroupSourceStatelessRuleMatchAttributesDestinations {
 
 /// A builder for [`RuleGroupSourceStatelessRuleMatchAttributesDestinations`](crate::types::RuleGroupSourceStatelessRuleMatchAttributesDestinations).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RuleGroupSourceStatelessRuleMatchAttributesDestinationsBuilder {
-    pub(crate) address_definition: std::option::Option<std::string::String>,
+    pub(crate) address_definition: ::std::option::Option<::std::string::String>,
 }
 impl RuleGroupSourceStatelessRuleMatchAttributesDestinationsBuilder {
     /// <p>An IP address or a block of IP addresses.</p>
-    pub fn address_definition(mut self, input: impl Into<std::string::String>) -> Self {
-        self.address_definition = Some(input.into());
+    pub fn address_definition(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.address_definition = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An IP address or a block of IP addresses.</p>
     pub fn set_address_definition(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.address_definition = input;
         self

@@ -2,23 +2,23 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEventCategoriesOutput {
     /// <p>A list of event categories.</p>
     #[doc(hidden)]
     pub event_category_group_list:
-        std::option::Option<std::vec::Vec<crate::types::EventCategoryGroup>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::EventCategoryGroup>>,
     _request_id: Option<String>,
 }
 impl DescribeEventCategoriesOutput {
     /// <p>A list of event categories.</p>
     pub fn event_category_group_list(
         &self,
-    ) -> std::option::Option<&[crate::types::EventCategoryGroup]> {
+    ) -> ::std::option::Option<&[crate::types::EventCategoryGroup]> {
         self.event_category_group_list.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeEventCategoriesOutput {
+impl ::aws_http::request_id::RequestId for DescribeEventCategoriesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -34,10 +34,12 @@ impl DescribeEventCategoriesOutput {
 
 /// A builder for [`DescribeEventCategoriesOutput`](crate::operation::describe_event_categories::DescribeEventCategoriesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeEventCategoriesOutputBuilder {
     pub(crate) event_category_group_list:
-        std::option::Option<std::vec::Vec<crate::types::EventCategoryGroup>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::EventCategoryGroup>>,
     _request_id: Option<String>,
 }
 impl DescribeEventCategoriesOutputBuilder {
@@ -49,13 +51,13 @@ impl DescribeEventCategoriesOutputBuilder {
     pub fn event_category_group_list(mut self, input: crate::types::EventCategoryGroup) -> Self {
         let mut v = self.event_category_group_list.unwrap_or_default();
         v.push(input);
-        self.event_category_group_list = Some(v);
+        self.event_category_group_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of event categories.</p>
     pub fn set_event_category_group_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::EventCategoryGroup>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::EventCategoryGroup>>,
     ) -> Self {
         self.event_category_group_list = input;
         self

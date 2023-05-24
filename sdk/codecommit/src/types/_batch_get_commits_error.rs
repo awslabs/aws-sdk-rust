@@ -2,29 +2,29 @@
 
 /// <p>Returns information about errors in a BatchGetCommits operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetCommitsError {
     /// <p>A commit ID that either could not be found or was not in a valid format.</p>
     #[doc(hidden)]
-    pub commit_id: std::option::Option<std::string::String>,
+    pub commit_id: ::std::option::Option<::std::string::String>,
     /// <p>An error code that specifies whether the commit ID was not valid or not found.</p>
     #[doc(hidden)]
-    pub error_code: std::option::Option<std::string::String>,
+    pub error_code: ::std::option::Option<::std::string::String>,
     /// <p>An error message that provides detail about why the commit ID either was not found or was not valid.</p>
     #[doc(hidden)]
-    pub error_message: std::option::Option<std::string::String>,
+    pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl BatchGetCommitsError {
     /// <p>A commit ID that either could not be found or was not in a valid format.</p>
-    pub fn commit_id(&self) -> std::option::Option<&str> {
+    pub fn commit_id(&self) -> ::std::option::Option<&str> {
         self.commit_id.as_deref()
     }
     /// <p>An error code that specifies whether the commit ID was not valid or not found.</p>
-    pub fn error_code(&self) -> std::option::Option<&str> {
+    pub fn error_code(&self) -> ::std::option::Option<&str> {
         self.error_code.as_deref()
     }
     /// <p>An error message that provides detail about why the commit ID either was not found or was not valid.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<&str> {
         self.error_message.as_deref()
     }
 }
@@ -37,40 +37,48 @@ impl BatchGetCommitsError {
 
 /// A builder for [`BatchGetCommitsError`](crate::types::BatchGetCommitsError).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BatchGetCommitsErrorBuilder {
-    pub(crate) commit_id: std::option::Option<std::string::String>,
-    pub(crate) error_code: std::option::Option<std::string::String>,
-    pub(crate) error_message: std::option::Option<std::string::String>,
+    pub(crate) commit_id: ::std::option::Option<::std::string::String>,
+    pub(crate) error_code: ::std::option::Option<::std::string::String>,
+    pub(crate) error_message: ::std::option::Option<::std::string::String>,
 }
 impl BatchGetCommitsErrorBuilder {
     /// <p>A commit ID that either could not be found or was not in a valid format.</p>
-    pub fn commit_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.commit_id = Some(input.into());
+    pub fn commit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.commit_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A commit ID that either could not be found or was not in a valid format.</p>
-    pub fn set_commit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_commit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.commit_id = input;
         self
     }
     /// <p>An error code that specifies whether the commit ID was not valid or not found.</p>
-    pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
-        self.error_code = Some(input.into());
+    pub fn error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.error_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An error code that specifies whether the commit ID was not valid or not found.</p>
-    pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_code = input;
         self
     }
     /// <p>An error message that provides detail about why the commit ID either was not found or was not valid.</p>
-    pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.error_message = Some(input.into());
+    pub fn error_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An error message that provides detail about why the commit ID either was not found or was not valid.</p>
-    pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_error_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.error_message = input;
         self
     }

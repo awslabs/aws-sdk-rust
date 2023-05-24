@@ -8,47 +8,50 @@ pub use crate::operation::export_lambda_function_recommendations::_export_lambda
 /// <p>Exports optimization recommendations for Lambda functions.</p>
 /// <p>Recommendations are exported in a comma-separated values (.csv) file, and its metadata in a JavaScript Object Notation (JSON) (.json) file, to an existing Amazon Simple Storage Service (Amazon S3) bucket that you specify. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting Recommendations</a> in the <i>Compute Optimizer User Guide</i>.</p>
 /// <p>You can have only one Lambda function export job in progress per Amazon Web Services Region.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ExportLambdaFunctionRecommendationsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::export_lambda_function_recommendations::builders::ExportLambdaFunctionRecommendationsInputBuilder,
 }
 impl ExportLambdaFunctionRecommendationsFluentBuilder {
     /// Creates a new `ExportLambdaFunctionRecommendations`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::export_lambda_function_recommendations::ExportLambdaFunctionRecommendations, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::export_lambda_function_recommendations::ExportLambdaFunctionRecommendationsError>
+                    pub async fn customize(self) -> ::std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::export_lambda_function_recommendations::ExportLambdaFunctionRecommendations, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                        ::aws_smithy_http::result::SdkError<crate::operation::export_lambda_function_recommendations::ExportLambdaFunctionRecommendationsError>
     >{
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::export_lambda_function_recommendations::ExportLambdaFunctionRecommendationsOutput, aws_smithy_http::result::SdkError<crate::operation::export_lambda_function_recommendations::ExportLambdaFunctionRecommendationsError>>
+                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::export_lambda_function_recommendations::ExportLambdaFunctionRecommendationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::export_lambda_function_recommendations::ExportLambdaFunctionRecommendationsError>>
                      {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -59,7 +62,7 @@ impl ExportLambdaFunctionRecommendationsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> std::result::Result<crate::operation::export_lambda_function_recommendations::ExportLambdaFunctionRecommendationsOutput, aws_smithy_http::result::SdkError<crate::operation::export_lambda_function_recommendations::ExportLambdaFunctionRecommendationsError>>
+                        pub async fn send(self) -> ::std::result::Result<crate::operation::export_lambda_function_recommendations::ExportLambdaFunctionRecommendationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::export_lambda_function_recommendations::ExportLambdaFunctionRecommendationsError>>
                          {
         self.send_middleware().await
     }
@@ -72,7 +75,7 @@ impl ExportLambdaFunctionRecommendationsFluentBuilder {
     /// <p>This parameter cannot be specified together with the include member accounts parameter. The parameters are mutually exclusive.</p>
     /// <p>Recommendations for member accounts are not included in the export if this parameter, or the include member accounts parameter, is omitted.</p>
     /// <p>You can specify multiple account IDs per request.</p>
-    pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn account_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.account_ids(input.into());
         self
     }
@@ -83,7 +86,7 @@ impl ExportLambdaFunctionRecommendationsFluentBuilder {
     /// <p>You can specify multiple account IDs per request.</p>
     pub fn set_account_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_account_ids(input);
         self
@@ -100,7 +103,9 @@ impl ExportLambdaFunctionRecommendationsFluentBuilder {
     /// <p>An array of objects to specify a filter that exports a more specific set of Lambda function recommendations.</p>
     pub fn set_filters(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::LambdaFunctionRecommendationFilter>>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::LambdaFunctionRecommendationFilter>,
+        >,
     ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
@@ -117,7 +122,7 @@ impl ExportLambdaFunctionRecommendationsFluentBuilder {
     /// <p>The recommendations data to include in the export file. For more information about the fields that can be exported, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files">Exported files</a> in the <i>Compute Optimizer User Guide</i>.</p>
     pub fn set_fields_to_export(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ExportableLambdaFunctionField>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ExportableLambdaFunctionField>>,
     ) -> Self {
         self.inner = self.inner.set_fields_to_export(input);
         self
@@ -132,7 +137,7 @@ impl ExportLambdaFunctionRecommendationsFluentBuilder {
     /// <p>You must create the destination Amazon S3 bucket for your recommendations export before you create the export job. Compute Optimizer does not create the S3 bucket for you. After you create the S3 bucket, ensure that it has the required permission policy to allow Compute Optimizer to write the export file to it. If you plan to specify an object prefix when you create the export job, you must include the object prefix in the policy that you add to the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/create-s3-bucket-policy-for-compute-optimizer.html">Amazon S3 Bucket Policy for Compute Optimizer</a> in the <i>Compute Optimizer User Guide</i>.</p>
     pub fn set_s3_destination_config(
         mut self,
-        input: std::option::Option<crate::types::S3DestinationConfig>,
+        input: ::std::option::Option<crate::types::S3DestinationConfig>,
     ) -> Self {
         self.inner = self.inner.set_s3_destination_config(input);
         self
@@ -145,7 +150,10 @@ impl ExportLambdaFunctionRecommendationsFluentBuilder {
     }
     /// <p>The format of the export file.</p>
     /// <p>The only export file format currently supported is <code>Csv</code>.</p>
-    pub fn set_file_format(mut self, input: std::option::Option<crate::types::FileFormat>) -> Self {
+    pub fn set_file_format(
+        mut self,
+        input: ::std::option::Option<crate::types::FileFormat>,
+    ) -> Self {
         self.inner = self.inner.set_file_format(input);
         self
     }
@@ -163,7 +171,7 @@ impl ExportLambdaFunctionRecommendationsFluentBuilder {
     /// <p>Recommendations for member accounts of the organization are not included in the export file if this parameter is omitted.</p>
     /// <p>This parameter cannot be specified together with the account IDs parameter. The parameters are mutually exclusive.</p>
     /// <p>Recommendations for member accounts are not included in the export if this parameter, or the account IDs parameter, is omitted.</p>
-    pub fn set_include_member_accounts(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_include_member_accounts(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_include_member_accounts(input);
         self
     }

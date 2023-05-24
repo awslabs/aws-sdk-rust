@@ -2,15 +2,15 @@
 
 /// <p>Used to filter the closed workflow executions in visibility APIs by their close status.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CloseStatusFilter {
     /// <p> The close status that must match the close status of an execution for it to meet the criteria of this filter.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::CloseStatus>,
+    pub status: ::std::option::Option<crate::types::CloseStatus>,
 }
 impl CloseStatusFilter {
     /// <p> The close status that must match the close status of an execution for it to meet the criteria of this filter.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::CloseStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::CloseStatus> {
         self.status.as_ref()
     }
 }
@@ -23,18 +23,20 @@ impl CloseStatusFilter {
 
 /// A builder for [`CloseStatusFilter`](crate::types::CloseStatusFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CloseStatusFilterBuilder {
-    pub(crate) status: std::option::Option<crate::types::CloseStatus>,
+    pub(crate) status: ::std::option::Option<crate::types::CloseStatus>,
 }
 impl CloseStatusFilterBuilder {
     /// <p> The close status that must match the close status of an execution for it to meet the criteria of this filter.</p>
     pub fn status(mut self, input: crate::types::CloseStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p> The close status that must match the close status of an execution for it to meet the criteria of this filter.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::CloseStatus>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::CloseStatus>) -> Self {
         self.status = input;
         self
     }

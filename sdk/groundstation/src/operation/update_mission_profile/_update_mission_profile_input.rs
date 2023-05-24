@@ -2,71 +2,74 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateMissionProfileInput {
     /// <p>UUID of a mission profile.</p>
     #[doc(hidden)]
-    pub mission_profile_id: std::option::Option<std::string::String>,
+    pub mission_profile_id: ::std::option::Option<::std::string::String>,
     /// <p>Name of a mission profile.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
     #[doc(hidden)]
-    pub contact_pre_pass_duration_seconds: std::option::Option<i32>,
+    pub contact_pre_pass_duration_seconds: ::std::option::Option<i32>,
     /// <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
     #[doc(hidden)]
-    pub contact_post_pass_duration_seconds: std::option::Option<i32>,
+    pub contact_post_pass_duration_seconds: ::std::option::Option<i32>,
     /// <p>Smallest amount of time in seconds that you’d like to see for an available contact. AWS Ground Station will not present you with contacts shorter than this duration.</p>
     #[doc(hidden)]
-    pub minimum_viable_contact_duration_seconds: std::option::Option<i32>,
+    pub minimum_viable_contact_duration_seconds: ::std::option::Option<i32>,
     /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i> <code>Config</code> and a <i>to</i> <code>Config</code>.</p>
     #[doc(hidden)]
-    pub dataflow_edges: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
+    pub dataflow_edges:
+        ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
     /// <p>ARN of a tracking <code>Config</code>.</p>
     #[doc(hidden)]
-    pub tracking_config_arn: std::option::Option<std::string::String>,
+    pub tracking_config_arn: ::std::option::Option<::std::string::String>,
     /// <p>KMS key to use for encrypting streams.</p>
     #[doc(hidden)]
-    pub streams_kms_key: std::option::Option<crate::types::KmsKey>,
+    pub streams_kms_key: ::std::option::Option<crate::types::KmsKey>,
     /// <p>Role to use for encrypting streams with KMS key.</p>
     #[doc(hidden)]
-    pub streams_kms_role: std::option::Option<std::string::String>,
+    pub streams_kms_role: ::std::option::Option<::std::string::String>,
 }
 impl UpdateMissionProfileInput {
     /// <p>UUID of a mission profile.</p>
-    pub fn mission_profile_id(&self) -> std::option::Option<&str> {
+    pub fn mission_profile_id(&self) -> ::std::option::Option<&str> {
         self.mission_profile_id.as_deref()
     }
     /// <p>Name of a mission profile.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
-    pub fn contact_pre_pass_duration_seconds(&self) -> std::option::Option<i32> {
+    pub fn contact_pre_pass_duration_seconds(&self) -> ::std::option::Option<i32> {
         self.contact_pre_pass_duration_seconds
     }
     /// <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
-    pub fn contact_post_pass_duration_seconds(&self) -> std::option::Option<i32> {
+    pub fn contact_post_pass_duration_seconds(&self) -> ::std::option::Option<i32> {
         self.contact_post_pass_duration_seconds
     }
     /// <p>Smallest amount of time in seconds that you’d like to see for an available contact. AWS Ground Station will not present you with contacts shorter than this duration.</p>
-    pub fn minimum_viable_contact_duration_seconds(&self) -> std::option::Option<i32> {
+    pub fn minimum_viable_contact_duration_seconds(&self) -> ::std::option::Option<i32> {
         self.minimum_viable_contact_duration_seconds
     }
     /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i> <code>Config</code> and a <i>to</i> <code>Config</code>.</p>
-    pub fn dataflow_edges(&self) -> std::option::Option<&[std::vec::Vec<std::string::String>]> {
+    pub fn dataflow_edges(
+        &self,
+    ) -> ::std::option::Option<&[::std::vec::Vec<::std::string::String>]> {
         self.dataflow_edges.as_deref()
     }
     /// <p>ARN of a tracking <code>Config</code>.</p>
-    pub fn tracking_config_arn(&self) -> std::option::Option<&str> {
+    pub fn tracking_config_arn(&self) -> ::std::option::Option<&str> {
         self.tracking_config_arn.as_deref()
     }
     /// <p>KMS key to use for encrypting streams.</p>
-    pub fn streams_kms_key(&self) -> std::option::Option<&crate::types::KmsKey> {
+    pub fn streams_kms_key(&self) -> ::std::option::Option<&crate::types::KmsKey> {
         self.streams_kms_key.as_ref()
     }
     /// <p>Role to use for encrypting streams with KMS key.</p>
-    pub fn streams_kms_role(&self) -> std::option::Option<&str> {
+    pub fn streams_kms_role(&self) -> ::std::option::Option<&str> {
         self.streams_kms_role.as_deref()
     }
 }
@@ -80,78 +83,83 @@ impl UpdateMissionProfileInput {
 
 /// A builder for [`UpdateMissionProfileInput`](crate::operation::update_mission_profile::UpdateMissionProfileInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateMissionProfileInputBuilder {
-    pub(crate) mission_profile_id: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) contact_pre_pass_duration_seconds: std::option::Option<i32>,
-    pub(crate) contact_post_pass_duration_seconds: std::option::Option<i32>,
-    pub(crate) minimum_viable_contact_duration_seconds: std::option::Option<i32>,
+    pub(crate) mission_profile_id: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) contact_pre_pass_duration_seconds: ::std::option::Option<i32>,
+    pub(crate) contact_post_pass_duration_seconds: ::std::option::Option<i32>,
+    pub(crate) minimum_viable_contact_duration_seconds: ::std::option::Option<i32>,
     pub(crate) dataflow_edges:
-        std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
-    pub(crate) tracking_config_arn: std::option::Option<std::string::String>,
-    pub(crate) streams_kms_key: std::option::Option<crate::types::KmsKey>,
-    pub(crate) streams_kms_role: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
+    pub(crate) tracking_config_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) streams_kms_key: ::std::option::Option<crate::types::KmsKey>,
+    pub(crate) streams_kms_role: ::std::option::Option<::std::string::String>,
 }
 impl UpdateMissionProfileInputBuilder {
     /// <p>UUID of a mission profile.</p>
-    pub fn mission_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.mission_profile_id = Some(input.into());
+    pub fn mission_profile_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.mission_profile_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>UUID of a mission profile.</p>
     pub fn set_mission_profile_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.mission_profile_id = input;
         self
     }
     /// <p>Name of a mission profile.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of a mission profile.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
     pub fn contact_pre_pass_duration_seconds(mut self, input: i32) -> Self {
-        self.contact_pre_pass_duration_seconds = Some(input);
+        self.contact_pre_pass_duration_seconds = ::std::option::Option::Some(input);
         self
     }
     /// <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
     pub fn set_contact_pre_pass_duration_seconds(
         mut self,
-        input: std::option::Option<i32>,
+        input: ::std::option::Option<i32>,
     ) -> Self {
         self.contact_pre_pass_duration_seconds = input;
         self
     }
     /// <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
     pub fn contact_post_pass_duration_seconds(mut self, input: i32) -> Self {
-        self.contact_post_pass_duration_seconds = Some(input);
+        self.contact_post_pass_duration_seconds = ::std::option::Option::Some(input);
         self
     }
     /// <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
     pub fn set_contact_post_pass_duration_seconds(
         mut self,
-        input: std::option::Option<i32>,
+        input: ::std::option::Option<i32>,
     ) -> Self {
         self.contact_post_pass_duration_seconds = input;
         self
     }
     /// <p>Smallest amount of time in seconds that you’d like to see for an available contact. AWS Ground Station will not present you with contacts shorter than this duration.</p>
     pub fn minimum_viable_contact_duration_seconds(mut self, input: i32) -> Self {
-        self.minimum_viable_contact_duration_seconds = Some(input);
+        self.minimum_viable_contact_duration_seconds = ::std::option::Option::Some(input);
         self
     }
     /// <p>Smallest amount of time in seconds that you’d like to see for an available contact. AWS Ground Station will not present you with contacts shorter than this duration.</p>
     pub fn set_minimum_viable_contact_duration_seconds(
         mut self,
-        input: std::option::Option<i32>,
+        input: ::std::option::Option<i32>,
     ) -> Self {
         self.minimum_viable_contact_duration_seconds = input;
         self
@@ -161,61 +169,73 @@ impl UpdateMissionProfileInputBuilder {
     /// To override the contents of this collection use [`set_dataflow_edges`](Self::set_dataflow_edges).
     ///
     /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i> <code>Config</code> and a <i>to</i> <code>Config</code>.</p>
-    pub fn dataflow_edges(mut self, input: std::vec::Vec<std::string::String>) -> Self {
+    pub fn dataflow_edges(mut self, input: ::std::vec::Vec<::std::string::String>) -> Self {
         let mut v = self.dataflow_edges.unwrap_or_default();
         v.push(input);
-        self.dataflow_edges = Some(v);
+        self.dataflow_edges = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i> <code>Config</code> and a <i>to</i> <code>Config</code>.</p>
     pub fn set_dataflow_edges(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
     ) -> Self {
         self.dataflow_edges = input;
         self
     }
     /// <p>ARN of a tracking <code>Config</code>.</p>
-    pub fn tracking_config_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.tracking_config_arn = Some(input.into());
+    pub fn tracking_config_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.tracking_config_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>ARN of a tracking <code>Config</code>.</p>
     pub fn set_tracking_config_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.tracking_config_arn = input;
         self
     }
     /// <p>KMS key to use for encrypting streams.</p>
     pub fn streams_kms_key(mut self, input: crate::types::KmsKey) -> Self {
-        self.streams_kms_key = Some(input);
+        self.streams_kms_key = ::std::option::Option::Some(input);
         self
     }
     /// <p>KMS key to use for encrypting streams.</p>
-    pub fn set_streams_kms_key(mut self, input: std::option::Option<crate::types::KmsKey>) -> Self {
+    pub fn set_streams_kms_key(
+        mut self,
+        input: ::std::option::Option<crate::types::KmsKey>,
+    ) -> Self {
         self.streams_kms_key = input;
         self
     }
     /// <p>Role to use for encrypting streams with KMS key.</p>
-    pub fn streams_kms_role(mut self, input: impl Into<std::string::String>) -> Self {
-        self.streams_kms_role = Some(input.into());
+    pub fn streams_kms_role(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.streams_kms_role = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Role to use for encrypting streams with KMS key.</p>
-    pub fn set_streams_kms_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_streams_kms_role(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.streams_kms_role = input;
         self
     }
     /// Consumes the builder and constructs a [`UpdateMissionProfileInput`](crate::operation::update_mission_profile::UpdateMissionProfileInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::update_mission_profile::UpdateMissionProfileInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::update_mission_profile::UpdateMissionProfileInput {
                 mission_profile_id: self.mission_profile_id,
                 name: self.name,

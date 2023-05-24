@@ -2,40 +2,42 @@
 
 /// <p>Information about the CloudWatch metric that reflects quota usage.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetricInfo {
     /// <p>The namespace of the metric.</p>
     #[doc(hidden)]
-    pub metric_namespace: std::option::Option<std::string::String>,
+    pub metric_namespace: ::std::option::Option<::std::string::String>,
     /// <p>The name of the metric.</p>
     #[doc(hidden)]
-    pub metric_name: std::option::Option<std::string::String>,
+    pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p>The metric dimension. This is a name/value pair that is part of the identity of a metric.</p>
     #[doc(hidden)]
-    pub metric_dimensions:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub metric_dimensions: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>The metric statistic that we recommend you use when determining quota usage.</p>
     #[doc(hidden)]
-    pub metric_statistic_recommendation: std::option::Option<std::string::String>,
+    pub metric_statistic_recommendation: ::std::option::Option<::std::string::String>,
 }
 impl MetricInfo {
     /// <p>The namespace of the metric.</p>
-    pub fn metric_namespace(&self) -> std::option::Option<&str> {
+    pub fn metric_namespace(&self) -> ::std::option::Option<&str> {
         self.metric_namespace.as_deref()
     }
     /// <p>The name of the metric.</p>
-    pub fn metric_name(&self) -> std::option::Option<&str> {
+    pub fn metric_name(&self) -> ::std::option::Option<&str> {
         self.metric_name.as_deref()
     }
     /// <p>The metric dimension. This is a name/value pair that is part of the identity of a metric.</p>
     pub fn metric_dimensions(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.metric_dimensions.as_ref()
     }
     /// <p>The metric statistic that we recommend you use when determining quota usage.</p>
-    pub fn metric_statistic_recommendation(&self) -> std::option::Option<&str> {
+    pub fn metric_statistic_recommendation(&self) -> ::std::option::Option<&str> {
         self.metric_statistic_recommendation.as_deref()
     }
 }
@@ -48,32 +50,41 @@ impl MetricInfo {
 
 /// A builder for [`MetricInfo`](crate::types::MetricInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MetricInfoBuilder {
-    pub(crate) metric_namespace: std::option::Option<std::string::String>,
-    pub(crate) metric_name: std::option::Option<std::string::String>,
-    pub(crate) metric_dimensions:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) metric_statistic_recommendation: std::option::Option<std::string::String>,
+    pub(crate) metric_namespace: ::std::option::Option<::std::string::String>,
+    pub(crate) metric_name: ::std::option::Option<::std::string::String>,
+    pub(crate) metric_dimensions: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) metric_statistic_recommendation: ::std::option::Option<::std::string::String>,
 }
 impl MetricInfoBuilder {
     /// <p>The namespace of the metric.</p>
-    pub fn metric_namespace(mut self, input: impl Into<std::string::String>) -> Self {
-        self.metric_namespace = Some(input.into());
+    pub fn metric_namespace(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.metric_namespace = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The namespace of the metric.</p>
-    pub fn set_metric_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_metric_namespace(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.metric_namespace = input;
         self
     }
     /// <p>The name of the metric.</p>
-    pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.metric_name = Some(input.into());
+    pub fn metric_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.metric_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the metric.</p>
-    pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_metric_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metric_name = input;
         self
     }
@@ -84,19 +95,19 @@ impl MetricInfoBuilder {
     /// <p>The metric dimension. This is a name/value pair that is part of the identity of a metric.</p>
     pub fn metric_dimensions(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.metric_dimensions.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.metric_dimensions = Some(hash_map);
+        self.metric_dimensions = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The metric dimension. This is a name/value pair that is part of the identity of a metric.</p>
     pub fn set_metric_dimensions(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.metric_dimensions = input;
@@ -105,15 +116,15 @@ impl MetricInfoBuilder {
     /// <p>The metric statistic that we recommend you use when determining quota usage.</p>
     pub fn metric_statistic_recommendation(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.metric_statistic_recommendation = Some(input.into());
+        self.metric_statistic_recommendation = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The metric statistic that we recommend you use when determining quota usage.</p>
     pub fn set_metric_statistic_recommendation(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.metric_statistic_recommendation = input;
         self

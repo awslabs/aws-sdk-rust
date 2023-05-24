@@ -6,56 +6,59 @@ pub use crate::operation::update_endpoint::_update_endpoint_input::UpdateEndpoin
 /// Fluent builder constructing a request to `UpdateEndpoint`.
 ///
 /// <p>Updates information about the specified endpoint. For information about endpoints, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing endpoints</a>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateEndpointFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::update_endpoint::builders::UpdateEndpointInputBuilder,
 }
 impl UpdateEndpointFluentBuilder {
     /// Creates a new `UpdateEndpoint`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_endpoint::UpdateEndpoint,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::update_endpoint::UpdateEndpointError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_endpoint::UpdateEndpointError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_endpoint::UpdateEndpointOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_endpoint::UpdateEndpointError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_endpoint::UpdateEndpointError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,31 +71,34 @@ impl UpdateEndpointFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_endpoint::UpdateEndpointOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_endpoint::UpdateEndpointError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_endpoint::UpdateEndpointError>,
     > {
         self.send_middleware().await
     }
     /// <p>The Amazon Resource Number (ARN) of the endpoint being updated.</p>
-    pub fn endpoint_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn endpoint_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.endpoint_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Number (ARN) of the endpoint being updated.</p>
-    pub fn set_endpoint_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_endpoint_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_endpoint_arn(input);
         self
     }
     /// <p>The ARN of the new model to use when updating an existing endpoint.</p>
-    pub fn desired_model_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn desired_model_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.desired_model_arn(input.into());
         self
     }
     /// <p>The ARN of the new model to use when updating an existing endpoint.</p>
     pub fn set_desired_model_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_desired_model_arn(input);
         self
@@ -103,30 +109,33 @@ impl UpdateEndpointFluentBuilder {
         self
     }
     /// <p> The desired number of inference units to be used by the model using this endpoint. Each inference unit represents of a throughput of 100 characters per second.</p>
-    pub fn set_desired_inference_units(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_desired_inference_units(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_desired_inference_units(input);
         self
     }
     /// <p>Data access role ARN to use in case the new model is encrypted with a customer CMK.</p>
-    pub fn desired_data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn desired_data_access_role_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.desired_data_access_role_arn(input.into());
         self
     }
     /// <p>Data access role ARN to use in case the new model is encrypted with a customer CMK.</p>
     pub fn set_desired_data_access_role_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_desired_data_access_role_arn(input);
         self
     }
     /// <p>The Amazon Resource Number (ARN) of the flywheel</p>
-    pub fn flywheel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn flywheel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.flywheel_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Number (ARN) of the flywheel</p>
-    pub fn set_flywheel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_flywheel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_flywheel_arn(input);
         self
     }

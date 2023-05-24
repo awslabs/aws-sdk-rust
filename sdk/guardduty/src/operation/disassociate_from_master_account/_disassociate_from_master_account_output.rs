@@ -4,11 +4,11 @@
     note = "This output is deprecated, use DisassociateFromAdministratorAccountResponse instead"
 )]
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateFromMasterAccountOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for DisassociateFromMasterAccountOutput {
+impl ::aws_http::request_id::RequestId for DisassociateFromMasterAccountOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -22,7 +22,9 @@ impl DisassociateFromMasterAccountOutput {
 
 /// A builder for [`DisassociateFromMasterAccountOutput`](crate::operation::disassociate_from_master_account::DisassociateFromMasterAccountOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DisassociateFromMasterAccountOutputBuilder {
     _request_id: Option<String>,
 }

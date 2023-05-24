@@ -2,27 +2,27 @@
 
 /// <p>Represents the response from the server to the request to list the user import jobs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListUserImportJobsOutput {
     /// <p>The user import jobs.</p>
     #[doc(hidden)]
-    pub user_import_jobs: std::option::Option<std::vec::Vec<crate::types::UserImportJobType>>,
+    pub user_import_jobs: ::std::option::Option<::std::vec::Vec<crate::types::UserImportJobType>>,
     /// <p>An identifier that can be used to return the next set of user import jobs in the list.</p>
     #[doc(hidden)]
-    pub pagination_token: std::option::Option<std::string::String>,
+    pub pagination_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListUserImportJobsOutput {
     /// <p>The user import jobs.</p>
-    pub fn user_import_jobs(&self) -> std::option::Option<&[crate::types::UserImportJobType]> {
+    pub fn user_import_jobs(&self) -> ::std::option::Option<&[crate::types::UserImportJobType]> {
         self.user_import_jobs.as_deref()
     }
     /// <p>An identifier that can be used to return the next set of user import jobs in the list.</p>
-    pub fn pagination_token(&self) -> std::option::Option<&str> {
+    pub fn pagination_token(&self) -> ::std::option::Option<&str> {
         self.pagination_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListUserImportJobsOutput {
+impl ::aws_http::request_id::RequestId for ListUserImportJobsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -38,11 +38,13 @@ impl ListUserImportJobsOutput {
 
 /// A builder for [`ListUserImportJobsOutput`](crate::operation::list_user_import_jobs::ListUserImportJobsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListUserImportJobsOutputBuilder {
     pub(crate) user_import_jobs:
-        std::option::Option<std::vec::Vec<crate::types::UserImportJobType>>,
-    pub(crate) pagination_token: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::UserImportJobType>>,
+    pub(crate) pagination_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListUserImportJobsOutputBuilder {
@@ -54,24 +56,30 @@ impl ListUserImportJobsOutputBuilder {
     pub fn user_import_jobs(mut self, input: crate::types::UserImportJobType) -> Self {
         let mut v = self.user_import_jobs.unwrap_or_default();
         v.push(input);
-        self.user_import_jobs = Some(v);
+        self.user_import_jobs = ::std::option::Option::Some(v);
         self
     }
     /// <p>The user import jobs.</p>
     pub fn set_user_import_jobs(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::UserImportJobType>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::UserImportJobType>>,
     ) -> Self {
         self.user_import_jobs = input;
         self
     }
     /// <p>An identifier that can be used to return the next set of user import jobs in the list.</p>
-    pub fn pagination_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.pagination_token = Some(input.into());
+    pub fn pagination_token(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.pagination_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An identifier that can be used to return the next set of user import jobs in the list.</p>
-    pub fn set_pagination_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_pagination_token(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.pagination_token = input;
         self
     }

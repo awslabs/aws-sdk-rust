@@ -2,76 +2,76 @@
 
 /// <p>Information about the instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct InstanceSummary {
     /// <p>The identifier of the instance.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the instance.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The identity management type of the instance.</p>
     #[doc(hidden)]
-    pub identity_management_type: std::option::Option<crate::types::DirectoryType>,
+    pub identity_management_type: ::std::option::Option<crate::types::DirectoryType>,
     /// <p>The alias of the instance.</p>
     #[doc(hidden)]
-    pub instance_alias: std::option::Option<std::string::String>,
+    pub instance_alias: ::std::option::Option<::std::string::String>,
     /// <p>When the instance was created.</p>
     #[doc(hidden)]
-    pub created_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The service role of the instance.</p>
     #[doc(hidden)]
-    pub service_role: std::option::Option<std::string::String>,
+    pub service_role: ::std::option::Option<::std::string::String>,
     /// <p>The state of the instance.</p>
     #[doc(hidden)]
-    pub instance_status: std::option::Option<crate::types::InstanceStatus>,
+    pub instance_status: ::std::option::Option<crate::types::InstanceStatus>,
     /// <p>Whether inbound calls are enabled.</p>
     #[doc(hidden)]
-    pub inbound_calls_enabled: std::option::Option<bool>,
+    pub inbound_calls_enabled: ::std::option::Option<bool>,
     /// <p>Whether outbound calls are enabled.</p>
     #[doc(hidden)]
-    pub outbound_calls_enabled: std::option::Option<bool>,
+    pub outbound_calls_enabled: ::std::option::Option<bool>,
 }
 impl InstanceSummary {
     /// <p>The identifier of the instance.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the instance.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The identity management type of the instance.</p>
-    pub fn identity_management_type(&self) -> std::option::Option<&crate::types::DirectoryType> {
+    pub fn identity_management_type(&self) -> ::std::option::Option<&crate::types::DirectoryType> {
         self.identity_management_type.as_ref()
     }
     /// <p>The alias of the instance.</p>
-    pub fn instance_alias(&self) -> std::option::Option<&str> {
+    pub fn instance_alias(&self) -> ::std::option::Option<&str> {
         self.instance_alias.as_deref()
     }
     /// <p>When the instance was created.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The service role of the instance.</p>
-    pub fn service_role(&self) -> std::option::Option<&str> {
+    pub fn service_role(&self) -> ::std::option::Option<&str> {
         self.service_role.as_deref()
     }
     /// <p>The state of the instance.</p>
-    pub fn instance_status(&self) -> std::option::Option<&crate::types::InstanceStatus> {
+    pub fn instance_status(&self) -> ::std::option::Option<&crate::types::InstanceStatus> {
         self.instance_status.as_ref()
     }
     /// <p>Whether inbound calls are enabled.</p>
-    pub fn inbound_calls_enabled(&self) -> std::option::Option<bool> {
+    pub fn inbound_calls_enabled(&self) -> ::std::option::Option<bool> {
         self.inbound_calls_enabled
     }
     /// <p>Whether outbound calls are enabled.</p>
-    pub fn outbound_calls_enabled(&self) -> std::option::Option<bool> {
+    pub fn outbound_calls_enabled(&self) -> ::std::option::Option<bool> {
         self.outbound_calls_enabled
     }
 }
-impl std::fmt::Debug for InstanceSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for InstanceSummary {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("InstanceSummary");
         formatter.field("id", &self.id);
         formatter.field("arn", &self.arn);
@@ -94,115 +94,121 @@ impl InstanceSummary {
 
 /// A builder for [`InstanceSummary`](crate::types::InstanceSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct InstanceSummaryBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) identity_management_type: std::option::Option<crate::types::DirectoryType>,
-    pub(crate) instance_alias: std::option::Option<std::string::String>,
-    pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) service_role: std::option::Option<std::string::String>,
-    pub(crate) instance_status: std::option::Option<crate::types::InstanceStatus>,
-    pub(crate) inbound_calls_enabled: std::option::Option<bool>,
-    pub(crate) outbound_calls_enabled: std::option::Option<bool>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) identity_management_type: ::std::option::Option<crate::types::DirectoryType>,
+    pub(crate) instance_alias: ::std::option::Option<::std::string::String>,
+    pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) service_role: ::std::option::Option<::std::string::String>,
+    pub(crate) instance_status: ::std::option::Option<crate::types::InstanceStatus>,
+    pub(crate) inbound_calls_enabled: ::std::option::Option<bool>,
+    pub(crate) outbound_calls_enabled: ::std::option::Option<bool>,
 }
 impl InstanceSummaryBuilder {
     /// <p>The identifier of the instance.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the instance.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the instance.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the instance.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// <p>The identity management type of the instance.</p>
     pub fn identity_management_type(mut self, input: crate::types::DirectoryType) -> Self {
-        self.identity_management_type = Some(input);
+        self.identity_management_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The identity management type of the instance.</p>
     pub fn set_identity_management_type(
         mut self,
-        input: std::option::Option<crate::types::DirectoryType>,
+        input: ::std::option::Option<crate::types::DirectoryType>,
     ) -> Self {
         self.identity_management_type = input;
         self
     }
     /// <p>The alias of the instance.</p>
-    pub fn instance_alias(mut self, input: impl Into<std::string::String>) -> Self {
-        self.instance_alias = Some(input.into());
+    pub fn instance_alias(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.instance_alias = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The alias of the instance.</p>
-    pub fn set_instance_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_instance_alias(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.instance_alias = input;
         self
     }
     /// <p>When the instance was created.</p>
-    pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_time = Some(input);
+    pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>When the instance was created.</p>
     pub fn set_created_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_time = input;
         self
     }
     /// <p>The service role of the instance.</p>
-    pub fn service_role(mut self, input: impl Into<std::string::String>) -> Self {
-        self.service_role = Some(input.into());
+    pub fn service_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.service_role = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The service role of the instance.</p>
-    pub fn set_service_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_service_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_role = input;
         self
     }
     /// <p>The state of the instance.</p>
     pub fn instance_status(mut self, input: crate::types::InstanceStatus) -> Self {
-        self.instance_status = Some(input);
+        self.instance_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The state of the instance.</p>
     pub fn set_instance_status(
         mut self,
-        input: std::option::Option<crate::types::InstanceStatus>,
+        input: ::std::option::Option<crate::types::InstanceStatus>,
     ) -> Self {
         self.instance_status = input;
         self
     }
     /// <p>Whether inbound calls are enabled.</p>
     pub fn inbound_calls_enabled(mut self, input: bool) -> Self {
-        self.inbound_calls_enabled = Some(input);
+        self.inbound_calls_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether inbound calls are enabled.</p>
-    pub fn set_inbound_calls_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_inbound_calls_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inbound_calls_enabled = input;
         self
     }
     /// <p>Whether outbound calls are enabled.</p>
     pub fn outbound_calls_enabled(mut self, input: bool) -> Self {
-        self.outbound_calls_enabled = Some(input);
+        self.outbound_calls_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether outbound calls are enabled.</p>
-    pub fn set_outbound_calls_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_outbound_calls_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.outbound_calls_enabled = input;
         self
     }
@@ -221,8 +227,8 @@ impl InstanceSummaryBuilder {
         }
     }
 }
-impl std::fmt::Debug for InstanceSummaryBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for InstanceSummaryBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("InstanceSummaryBuilder");
         formatter.field("id", &self.id);
         formatter.field("arn", &self.arn);

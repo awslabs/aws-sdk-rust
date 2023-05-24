@@ -2,22 +2,24 @@
 
 /// <p>A configuration that specifies the action to perform when anomalies are detected.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Action {
     /// <p>A configuration for an Amazon SNS channel.</p>
     #[doc(hidden)]
-    pub sns_configuration: std::option::Option<crate::types::SnsConfiguration>,
+    pub sns_configuration: ::std::option::Option<crate::types::SnsConfiguration>,
     /// <p>A configuration for an AWS Lambda channel.</p>
     #[doc(hidden)]
-    pub lambda_configuration: std::option::Option<crate::types::LambdaConfiguration>,
+    pub lambda_configuration: ::std::option::Option<crate::types::LambdaConfiguration>,
 }
 impl Action {
     /// <p>A configuration for an Amazon SNS channel.</p>
-    pub fn sns_configuration(&self) -> std::option::Option<&crate::types::SnsConfiguration> {
+    pub fn sns_configuration(&self) -> ::std::option::Option<&crate::types::SnsConfiguration> {
         self.sns_configuration.as_ref()
     }
     /// <p>A configuration for an AWS Lambda channel.</p>
-    pub fn lambda_configuration(&self) -> std::option::Option<&crate::types::LambdaConfiguration> {
+    pub fn lambda_configuration(
+        &self,
+    ) -> ::std::option::Option<&crate::types::LambdaConfiguration> {
         self.lambda_configuration.as_ref()
     }
 }
@@ -30,34 +32,36 @@ impl Action {
 
 /// A builder for [`Action`](crate::types::Action).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ActionBuilder {
-    pub(crate) sns_configuration: std::option::Option<crate::types::SnsConfiguration>,
-    pub(crate) lambda_configuration: std::option::Option<crate::types::LambdaConfiguration>,
+    pub(crate) sns_configuration: ::std::option::Option<crate::types::SnsConfiguration>,
+    pub(crate) lambda_configuration: ::std::option::Option<crate::types::LambdaConfiguration>,
 }
 impl ActionBuilder {
     /// <p>A configuration for an Amazon SNS channel.</p>
     pub fn sns_configuration(mut self, input: crate::types::SnsConfiguration) -> Self {
-        self.sns_configuration = Some(input);
+        self.sns_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>A configuration for an Amazon SNS channel.</p>
     pub fn set_sns_configuration(
         mut self,
-        input: std::option::Option<crate::types::SnsConfiguration>,
+        input: ::std::option::Option<crate::types::SnsConfiguration>,
     ) -> Self {
         self.sns_configuration = input;
         self
     }
     /// <p>A configuration for an AWS Lambda channel.</p>
     pub fn lambda_configuration(mut self, input: crate::types::LambdaConfiguration) -> Self {
-        self.lambda_configuration = Some(input);
+        self.lambda_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>A configuration for an AWS Lambda channel.</p>
     pub fn set_lambda_configuration(
         mut self,
-        input: std::option::Option<crate::types::LambdaConfiguration>,
+        input: ::std::option::Option<crate::types::LambdaConfiguration>,
     ) -> Self {
         self.lambda_configuration = input;
         self

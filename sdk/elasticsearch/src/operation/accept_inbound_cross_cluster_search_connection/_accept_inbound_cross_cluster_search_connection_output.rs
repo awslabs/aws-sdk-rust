@@ -2,23 +2,23 @@
 
 /// <p>The result of a <code><code>AcceptInboundCrossClusterSearchConnection</code></code> operation. Contains details of accepted inbound connection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AcceptInboundCrossClusterSearchConnectionOutput {
     /// <p>Specifies the <code><code>InboundCrossClusterSearchConnection</code></code> of accepted inbound connection. </p>
     #[doc(hidden)]
     pub cross_cluster_search_connection:
-        std::option::Option<crate::types::InboundCrossClusterSearchConnection>,
+        ::std::option::Option<crate::types::InboundCrossClusterSearchConnection>,
     _request_id: Option<String>,
 }
 impl AcceptInboundCrossClusterSearchConnectionOutput {
     /// <p>Specifies the <code><code>InboundCrossClusterSearchConnection</code></code> of accepted inbound connection. </p>
     pub fn cross_cluster_search_connection(
         &self,
-    ) -> std::option::Option<&crate::types::InboundCrossClusterSearchConnection> {
+    ) -> ::std::option::Option<&crate::types::InboundCrossClusterSearchConnection> {
         self.cross_cluster_search_connection.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for AcceptInboundCrossClusterSearchConnectionOutput {
+impl ::aws_http::request_id::RequestId for AcceptInboundCrossClusterSearchConnectionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -32,10 +32,12 @@ impl AcceptInboundCrossClusterSearchConnectionOutput {
 
 /// A builder for [`AcceptInboundCrossClusterSearchConnectionOutput`](crate::operation::accept_inbound_cross_cluster_search_connection::AcceptInboundCrossClusterSearchConnectionOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AcceptInboundCrossClusterSearchConnectionOutputBuilder {
     pub(crate) cross_cluster_search_connection:
-        std::option::Option<crate::types::InboundCrossClusterSearchConnection>,
+        ::std::option::Option<crate::types::InboundCrossClusterSearchConnection>,
     _request_id: Option<String>,
 }
 impl AcceptInboundCrossClusterSearchConnectionOutputBuilder {
@@ -44,13 +46,13 @@ impl AcceptInboundCrossClusterSearchConnectionOutputBuilder {
         mut self,
         input: crate::types::InboundCrossClusterSearchConnection,
     ) -> Self {
-        self.cross_cluster_search_connection = Some(input);
+        self.cross_cluster_search_connection = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the <code><code>InboundCrossClusterSearchConnection</code></code> of accepted inbound connection. </p>
     pub fn set_cross_cluster_search_connection(
         mut self,
-        input: std::option::Option<crate::types::InboundCrossClusterSearchConnection>,
+        input: ::std::option::Option<crate::types::InboundCrossClusterSearchConnection>,
     ) -> Self {
         self.cross_cluster_search_connection = input;
         self

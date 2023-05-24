@@ -2,15 +2,15 @@
 
 /// <p>The object that contains the statistical summary of the recommended slot type associated with the bot recommendation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SlotTypeStatistics {
     /// <p>The number of recommended slot types associated with the bot recommendation.</p>
     #[doc(hidden)]
-    pub discovered_slot_type_count: std::option::Option<i32>,
+    pub discovered_slot_type_count: ::std::option::Option<i32>,
 }
 impl SlotTypeStatistics {
     /// <p>The number of recommended slot types associated with the bot recommendation.</p>
-    pub fn discovered_slot_type_count(&self) -> std::option::Option<i32> {
+    pub fn discovered_slot_type_count(&self) -> ::std::option::Option<i32> {
         self.discovered_slot_type_count
     }
 }
@@ -23,18 +23,20 @@ impl SlotTypeStatistics {
 
 /// A builder for [`SlotTypeStatistics`](crate::types::SlotTypeStatistics).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SlotTypeStatisticsBuilder {
-    pub(crate) discovered_slot_type_count: std::option::Option<i32>,
+    pub(crate) discovered_slot_type_count: ::std::option::Option<i32>,
 }
 impl SlotTypeStatisticsBuilder {
     /// <p>The number of recommended slot types associated with the bot recommendation.</p>
     pub fn discovered_slot_type_count(mut self, input: i32) -> Self {
-        self.discovered_slot_type_count = Some(input);
+        self.discovered_slot_type_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of recommended slot types associated with the bot recommendation.</p>
-    pub fn set_discovered_slot_type_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_discovered_slot_type_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.discovered_slot_type_count = input;
         self
     }

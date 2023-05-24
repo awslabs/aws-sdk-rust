@@ -2,27 +2,27 @@
 
 /// <p>The upload storage root location (folder) on streaming workstations where files are uploaded.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct StreamingSessionStorageRoot {
     /// <p>The folder path in Linux workstations where files are uploaded.</p>
     #[doc(hidden)]
-    pub linux: std::option::Option<std::string::String>,
+    pub linux: ::std::option::Option<::std::string::String>,
     /// <p>The folder path in Windows workstations where files are uploaded.</p>
     #[doc(hidden)]
-    pub windows: std::option::Option<std::string::String>,
+    pub windows: ::std::option::Option<::std::string::String>,
 }
 impl StreamingSessionStorageRoot {
     /// <p>The folder path in Linux workstations where files are uploaded.</p>
-    pub fn linux(&self) -> std::option::Option<&str> {
+    pub fn linux(&self) -> ::std::option::Option<&str> {
         self.linux.as_deref()
     }
     /// <p>The folder path in Windows workstations where files are uploaded.</p>
-    pub fn windows(&self) -> std::option::Option<&str> {
+    pub fn windows(&self) -> ::std::option::Option<&str> {
         self.windows.as_deref()
     }
 }
-impl std::fmt::Debug for StreamingSessionStorageRoot {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for StreamingSessionStorageRoot {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("StreamingSessionStorageRoot");
         formatter.field("linux", &"*** Sensitive Data Redacted ***");
         formatter.field("windows", &"*** Sensitive Data Redacted ***");
@@ -38,29 +38,29 @@ impl StreamingSessionStorageRoot {
 
 /// A builder for [`StreamingSessionStorageRoot`](crate::types::StreamingSessionStorageRoot).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct StreamingSessionStorageRootBuilder {
-    pub(crate) linux: std::option::Option<std::string::String>,
-    pub(crate) windows: std::option::Option<std::string::String>,
+    pub(crate) linux: ::std::option::Option<::std::string::String>,
+    pub(crate) windows: ::std::option::Option<::std::string::String>,
 }
 impl StreamingSessionStorageRootBuilder {
     /// <p>The folder path in Linux workstations where files are uploaded.</p>
-    pub fn linux(mut self, input: impl Into<std::string::String>) -> Self {
-        self.linux = Some(input.into());
+    pub fn linux(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.linux = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The folder path in Linux workstations where files are uploaded.</p>
-    pub fn set_linux(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_linux(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.linux = input;
         self
     }
     /// <p>The folder path in Windows workstations where files are uploaded.</p>
-    pub fn windows(mut self, input: impl Into<std::string::String>) -> Self {
-        self.windows = Some(input.into());
+    pub fn windows(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.windows = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The folder path in Windows workstations where files are uploaded.</p>
-    pub fn set_windows(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_windows(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.windows = input;
         self
     }
@@ -72,8 +72,8 @@ impl StreamingSessionStorageRootBuilder {
         }
     }
 }
-impl std::fmt::Debug for StreamingSessionStorageRootBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for StreamingSessionStorageRootBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("StreamingSessionStorageRootBuilder");
         formatter.field("linux", &"*** Sensitive Data Redacted ***");
         formatter.field("windows", &"*** Sensitive Data Redacted ***");

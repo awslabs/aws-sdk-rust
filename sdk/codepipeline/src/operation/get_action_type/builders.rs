@@ -6,56 +6,59 @@ pub use crate::operation::get_action_type::_get_action_type_input::GetActionType
 /// Fluent builder constructing a request to `GetActionType`.
 ///
 /// <p>Returns information about an action type created for an external provider, where the action is to be used by customers of the external provider. The action can be created with any supported integration model.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetActionTypeFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::get_action_type::builders::GetActionTypeInputBuilder,
 }
 impl GetActionTypeFluentBuilder {
     /// Creates a new `GetActionType`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::get_action_type::GetActionType,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::get_action_type::GetActionTypeError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_action_type::GetActionTypeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_action_type::GetActionTypeOutput,
-        aws_smithy_http::result::SdkError<crate::operation::get_action_type::GetActionTypeError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_action_type::GetActionTypeError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,9 +71,9 @@ impl GetActionTypeFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_action_type::GetActionTypeOutput,
-        aws_smithy_http::result::SdkError<crate::operation::get_action_type::GetActionTypeError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_action_type::GetActionTypeError>,
     > {
         self.send_middleware().await
     }
@@ -98,38 +101,38 @@ impl GetActionTypeFluentBuilder {
     /// </ul>
     pub fn set_category(
         mut self,
-        input: std::option::Option<crate::types::ActionCategory>,
+        input: ::std::option::Option<crate::types::ActionCategory>,
     ) -> Self {
         self.inner = self.inner.set_category(input);
         self
     }
     /// <p>The creator of an action type that was created with any supported integration model. There are two valid values: <code>AWS</code> and <code>ThirdParty</code>.</p>
-    pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.owner(input.into());
         self
     }
     /// <p>The creator of an action type that was created with any supported integration model. There are two valid values: <code>AWS</code> and <code>ThirdParty</code>.</p>
-    pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_owner(input);
         self
     }
     /// <p>The provider of the action type being called. The provider name is specified when the action type is created.</p>
-    pub fn provider(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn provider(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.provider(input.into());
         self
     }
     /// <p>The provider of the action type being called. The provider name is specified when the action type is created.</p>
-    pub fn set_provider(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_provider(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_provider(input);
         self
     }
     /// <p>A string that describes the action type version.</p>
-    pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.version(input.into());
         self
     }
     /// <p>A string that describes the action type version.</p>
-    pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_version(input);
         self
     }

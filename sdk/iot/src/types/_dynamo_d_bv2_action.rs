@@ -3,26 +3,26 @@
 /// <p>Describes an action to write to a DynamoDB table.</p>
 /// <p>This DynamoDB action writes each attribute in the message payload into it's own column in the DynamoDB table.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DynamoDBv2Action {
     /// <p>The ARN of the IAM role that grants access to the DynamoDB table.</p>
     #[doc(hidden)]
-    pub role_arn: std::option::Option<std::string::String>,
+    pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the DynamoDB table to which the message data will be written. For example:</p>
     /// <p> <code>{ "dynamoDBv2": { "roleArn": "aws:iam:12341251:my-role" "putItem": { "tableName": "my-table" } } }</code> </p>
     /// <p>Each attribute in the message payload will be written to a separate column in the DynamoDB database.</p>
     #[doc(hidden)]
-    pub put_item: std::option::Option<crate::types::PutItemInput>,
+    pub put_item: ::std::option::Option<crate::types::PutItemInput>,
 }
 impl DynamoDBv2Action {
     /// <p>The ARN of the IAM role that grants access to the DynamoDB table.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
     /// <p>Specifies the DynamoDB table to which the message data will be written. For example:</p>
     /// <p> <code>{ "dynamoDBv2": { "roleArn": "aws:iam:12341251:my-role" "putItem": { "tableName": "my-table" } } }</code> </p>
     /// <p>Each attribute in the message payload will be written to a separate column in the DynamoDB database.</p>
-    pub fn put_item(&self) -> std::option::Option<&crate::types::PutItemInput> {
+    pub fn put_item(&self) -> ::std::option::Option<&crate::types::PutItemInput> {
         self.put_item.as_ref()
     }
 }
@@ -35,19 +35,21 @@ impl DynamoDBv2Action {
 
 /// A builder for [`DynamoDBv2Action`](crate::types::DynamoDBv2Action).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DynamoDBv2ActionBuilder {
-    pub(crate) role_arn: std::option::Option<std::string::String>,
-    pub(crate) put_item: std::option::Option<crate::types::PutItemInput>,
+    pub(crate) role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) put_item: ::std::option::Option<crate::types::PutItemInput>,
 }
 impl DynamoDBv2ActionBuilder {
     /// <p>The ARN of the IAM role that grants access to the DynamoDB table.</p>
-    pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.role_arn = Some(input.into());
+    pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the IAM role that grants access to the DynamoDB table.</p>
-    pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
@@ -55,13 +57,16 @@ impl DynamoDBv2ActionBuilder {
     /// <p> <code>{ "dynamoDBv2": { "roleArn": "aws:iam:12341251:my-role" "putItem": { "tableName": "my-table" } } }</code> </p>
     /// <p>Each attribute in the message payload will be written to a separate column in the DynamoDB database.</p>
     pub fn put_item(mut self, input: crate::types::PutItemInput) -> Self {
-        self.put_item = Some(input);
+        self.put_item = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the DynamoDB table to which the message data will be written. For example:</p>
     /// <p> <code>{ "dynamoDBv2": { "roleArn": "aws:iam:12341251:my-role" "putItem": { "tableName": "my-table" } } }</code> </p>
     /// <p>Each attribute in the message payload will be written to a separate column in the DynamoDB database.</p>
-    pub fn set_put_item(mut self, input: std::option::Option<crate::types::PutItemInput>) -> Self {
+    pub fn set_put_item(
+        mut self,
+        input: ::std::option::Option<crate::types::PutItemInput>,
+    ) -> Self {
         self.put_item = input;
         self
     }

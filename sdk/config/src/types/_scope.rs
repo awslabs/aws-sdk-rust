@@ -2,36 +2,36 @@
 
 /// <p>Defines which resources trigger an evaluation for an Config rule. The scope can include one or more resource types, a combination of a tag key and value, or a combination of one resource type and one resource ID. Specify a scope to constrain which resources trigger an evaluation for a rule. Otherwise, evaluations for the rule are triggered when any resource in your recording group changes in configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Scope {
     /// <p>The resource types of only those Amazon Web Services resources that you want to trigger an evaluation for the rule. You can only specify one type if you also specify a resource ID for <code>ComplianceResourceId</code>.</p>
     #[doc(hidden)]
-    pub compliance_resource_types: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub compliance_resource_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The tag key that is applied to only those Amazon Web Services resources that you want to trigger an evaluation for the rule.</p>
     #[doc(hidden)]
-    pub tag_key: std::option::Option<std::string::String>,
+    pub tag_key: ::std::option::Option<::std::string::String>,
     /// <p>The tag value applied to only those Amazon Web Services resources that you want to trigger an evaluation for the rule. If you specify a value for <code>TagValue</code>, you must also specify a value for <code>TagKey</code>.</p>
     #[doc(hidden)]
-    pub tag_value: std::option::Option<std::string::String>,
+    pub tag_value: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the only Amazon Web Services resource that you want to trigger an evaluation for the rule. If you specify a resource ID, you must specify one resource type for <code>ComplianceResourceTypes</code>.</p>
     #[doc(hidden)]
-    pub compliance_resource_id: std::option::Option<std::string::String>,
+    pub compliance_resource_id: ::std::option::Option<::std::string::String>,
 }
 impl Scope {
     /// <p>The resource types of only those Amazon Web Services resources that you want to trigger an evaluation for the rule. You can only specify one type if you also specify a resource ID for <code>ComplianceResourceId</code>.</p>
-    pub fn compliance_resource_types(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn compliance_resource_types(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.compliance_resource_types.as_deref()
     }
     /// <p>The tag key that is applied to only those Amazon Web Services resources that you want to trigger an evaluation for the rule.</p>
-    pub fn tag_key(&self) -> std::option::Option<&str> {
+    pub fn tag_key(&self) -> ::std::option::Option<&str> {
         self.tag_key.as_deref()
     }
     /// <p>The tag value applied to only those Amazon Web Services resources that you want to trigger an evaluation for the rule. If you specify a value for <code>TagValue</code>, you must also specify a value for <code>TagKey</code>.</p>
-    pub fn tag_value(&self) -> std::option::Option<&str> {
+    pub fn tag_value(&self) -> ::std::option::Option<&str> {
         self.tag_value.as_deref()
     }
     /// <p>The ID of the only Amazon Web Services resource that you want to trigger an evaluation for the rule. If you specify a resource ID, you must specify one resource type for <code>ComplianceResourceTypes</code>.</p>
-    pub fn compliance_resource_id(&self) -> std::option::Option<&str> {
+    pub fn compliance_resource_id(&self) -> ::std::option::Option<&str> {
         self.compliance_resource_id.as_deref()
     }
 }
@@ -44,12 +44,15 @@ impl Scope {
 
 /// A builder for [`Scope`](crate::types::Scope).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ScopeBuilder {
-    pub(crate) compliance_resource_types: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) tag_key: std::option::Option<std::string::String>,
-    pub(crate) tag_value: std::option::Option<std::string::String>,
-    pub(crate) compliance_resource_id: std::option::Option<std::string::String>,
+    pub(crate) compliance_resource_types:
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) tag_key: ::std::option::Option<::std::string::String>,
+    pub(crate) tag_value: ::std::option::Option<::std::string::String>,
+    pub(crate) compliance_resource_id: ::std::option::Option<::std::string::String>,
 }
 impl ScopeBuilder {
     /// Appends an item to `compliance_resource_types`.
@@ -57,49 +60,55 @@ impl ScopeBuilder {
     /// To override the contents of this collection use [`set_compliance_resource_types`](Self::set_compliance_resource_types).
     ///
     /// <p>The resource types of only those Amazon Web Services resources that you want to trigger an evaluation for the rule. You can only specify one type if you also specify a resource ID for <code>ComplianceResourceId</code>.</p>
-    pub fn compliance_resource_types(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn compliance_resource_types(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.compliance_resource_types.unwrap_or_default();
         v.push(input.into());
-        self.compliance_resource_types = Some(v);
+        self.compliance_resource_types = ::std::option::Option::Some(v);
         self
     }
     /// <p>The resource types of only those Amazon Web Services resources that you want to trigger an evaluation for the rule. You can only specify one type if you also specify a resource ID for <code>ComplianceResourceId</code>.</p>
     pub fn set_compliance_resource_types(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.compliance_resource_types = input;
         self
     }
     /// <p>The tag key that is applied to only those Amazon Web Services resources that you want to trigger an evaluation for the rule.</p>
-    pub fn tag_key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.tag_key = Some(input.into());
+    pub fn tag_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.tag_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The tag key that is applied to only those Amazon Web Services resources that you want to trigger an evaluation for the rule.</p>
-    pub fn set_tag_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_tag_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tag_key = input;
         self
     }
     /// <p>The tag value applied to only those Amazon Web Services resources that you want to trigger an evaluation for the rule. If you specify a value for <code>TagValue</code>, you must also specify a value for <code>TagKey</code>.</p>
-    pub fn tag_value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.tag_value = Some(input.into());
+    pub fn tag_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.tag_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The tag value applied to only those Amazon Web Services resources that you want to trigger an evaluation for the rule. If you specify a value for <code>TagValue</code>, you must also specify a value for <code>TagKey</code>.</p>
-    pub fn set_tag_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_tag_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tag_value = input;
         self
     }
     /// <p>The ID of the only Amazon Web Services resource that you want to trigger an evaluation for the rule. If you specify a resource ID, you must specify one resource type for <code>ComplianceResourceTypes</code>.</p>
-    pub fn compliance_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.compliance_resource_id = Some(input.into());
+    pub fn compliance_resource_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.compliance_resource_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the only Amazon Web Services resource that you want to trigger an evaluation for the rule. If you specify a resource ID, you must specify one resource type for <code>ComplianceResourceTypes</code>.</p>
     pub fn set_compliance_resource_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.compliance_resource_id = input;
         self

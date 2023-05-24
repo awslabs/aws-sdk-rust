@@ -2,34 +2,34 @@
 
 /// <p>The configurations for the Hive job driver.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Hive {
     /// <p>The query for the Hive job run.</p>
     #[doc(hidden)]
-    pub query: std::option::Option<std::string::String>,
+    pub query: ::std::option::Option<::std::string::String>,
     /// <p>The query file for the Hive job run.</p>
     #[doc(hidden)]
-    pub init_query_file: std::option::Option<std::string::String>,
+    pub init_query_file: ::std::option::Option<::std::string::String>,
     /// <p>The parameters for the Hive job run.</p>
     #[doc(hidden)]
-    pub parameters: std::option::Option<std::string::String>,
+    pub parameters: ::std::option::Option<::std::string::String>,
 }
 impl Hive {
     /// <p>The query for the Hive job run.</p>
-    pub fn query(&self) -> std::option::Option<&str> {
+    pub fn query(&self) -> ::std::option::Option<&str> {
         self.query.as_deref()
     }
     /// <p>The query file for the Hive job run.</p>
-    pub fn init_query_file(&self) -> std::option::Option<&str> {
+    pub fn init_query_file(&self) -> ::std::option::Option<&str> {
         self.init_query_file.as_deref()
     }
     /// <p>The parameters for the Hive job run.</p>
-    pub fn parameters(&self) -> std::option::Option<&str> {
+    pub fn parameters(&self) -> ::std::option::Option<&str> {
         self.parameters.as_deref()
     }
 }
-impl std::fmt::Debug for Hive {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for Hive {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("Hive");
         formatter.field("query", &"*** Sensitive Data Redacted ***");
         formatter.field("init_query_file", &"*** Sensitive Data Redacted ***");
@@ -46,40 +46,46 @@ impl Hive {
 
 /// A builder for [`Hive`](crate::types::Hive).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct HiveBuilder {
-    pub(crate) query: std::option::Option<std::string::String>,
-    pub(crate) init_query_file: std::option::Option<std::string::String>,
-    pub(crate) parameters: std::option::Option<std::string::String>,
+    pub(crate) query: ::std::option::Option<::std::string::String>,
+    pub(crate) init_query_file: ::std::option::Option<::std::string::String>,
+    pub(crate) parameters: ::std::option::Option<::std::string::String>,
 }
 impl HiveBuilder {
     /// <p>The query for the Hive job run.</p>
-    pub fn query(mut self, input: impl Into<std::string::String>) -> Self {
-        self.query = Some(input.into());
+    pub fn query(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.query = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The query for the Hive job run.</p>
-    pub fn set_query(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_query(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.query = input;
         self
     }
     /// <p>The query file for the Hive job run.</p>
-    pub fn init_query_file(mut self, input: impl Into<std::string::String>) -> Self {
-        self.init_query_file = Some(input.into());
+    pub fn init_query_file(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.init_query_file = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The query file for the Hive job run.</p>
-    pub fn set_init_query_file(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_init_query_file(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.init_query_file = input;
         self
     }
     /// <p>The parameters for the Hive job run.</p>
-    pub fn parameters(mut self, input: impl Into<std::string::String>) -> Self {
-        self.parameters = Some(input.into());
+    pub fn parameters(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.parameters = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The parameters for the Hive job run.</p>
-    pub fn set_parameters(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parameters = input;
         self
     }
@@ -92,8 +98,8 @@ impl HiveBuilder {
         }
     }
 }
-impl std::fmt::Debug for HiveBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for HiveBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("HiveBuilder");
         formatter.field("query", &"*** Sensitive Data Redacted ***");
         formatter.field("init_query_file", &"*** Sensitive Data Redacted ***");

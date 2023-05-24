@@ -2,15 +2,15 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMissionProfileInput {
     /// <p>UUID of a mission profile.</p>
     #[doc(hidden)]
-    pub mission_profile_id: std::option::Option<std::string::String>,
+    pub mission_profile_id: ::std::option::Option<::std::string::String>,
 }
 impl GetMissionProfileInput {
     /// <p>UUID of a mission profile.</p>
-    pub fn mission_profile_id(&self) -> std::option::Option<&str> {
+    pub fn mission_profile_id(&self) -> ::std::option::Option<&str> {
         self.mission_profile_id.as_deref()
     }
 }
@@ -24,20 +24,25 @@ impl GetMissionProfileInput {
 
 /// A builder for [`GetMissionProfileInput`](crate::operation::get_mission_profile::GetMissionProfileInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetMissionProfileInputBuilder {
-    pub(crate) mission_profile_id: std::option::Option<std::string::String>,
+    pub(crate) mission_profile_id: ::std::option::Option<::std::string::String>,
 }
 impl GetMissionProfileInputBuilder {
     /// <p>UUID of a mission profile.</p>
-    pub fn mission_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.mission_profile_id = Some(input.into());
+    pub fn mission_profile_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.mission_profile_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>UUID of a mission profile.</p>
     pub fn set_mission_profile_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.mission_profile_id = input;
         self
@@ -45,11 +50,11 @@ impl GetMissionProfileInputBuilder {
     /// Consumes the builder and constructs a [`GetMissionProfileInput`](crate::operation::get_mission_profile::GetMissionProfileInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::get_mission_profile::GetMissionProfileInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::get_mission_profile::GetMissionProfileInput {
                 mission_profile_id: self.mission_profile_id,
             },

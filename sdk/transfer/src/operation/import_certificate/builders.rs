@@ -6,29 +6,29 @@ pub use crate::operation::import_certificate::_import_certificate_input::ImportC
 /// Fluent builder constructing a request to `ImportCertificate`.
 ///
 /// <p>Imports the signing and encryption certificates that you need to create local (AS2) profiles and partner profiles.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ImportCertificateFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::import_certificate::builders::ImportCertificateInputBuilder,
 }
 impl ImportCertificateFluentBuilder {
     /// Creates a new `ImportCertificate`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::import_certificate::ImportCertificate,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::import_certificate::ImportCertificateError,
         >,
     > {
@@ -36,30 +36,33 @@ impl ImportCertificateFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::import_certificate::ImportCertificateOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::import_certificate::ImportCertificateError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,9 +75,9 @@ impl ImportCertificateFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::import_certificate::ImportCertificateOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::import_certificate::ImportCertificateError,
         >,
     > {
@@ -88,7 +91,7 @@ impl ImportCertificateFluentBuilder {
     /// <p>Specifies whether this certificate is used for signing or encryption.</p>
     pub fn set_usage(
         mut self,
-        input: std::option::Option<crate::types::CertificateUsageType>,
+        input: ::std::option::Option<crate::types::CertificateUsageType>,
     ) -> Self {
         self.inner = self.inner.set_usage(input);
         self
@@ -97,7 +100,7 @@ impl ImportCertificateFluentBuilder {
     /// <li> <p>For the CLI, provide a file path for a certificate in URI format. For example, <code>--certificate file://encryption-cert.pem</code>. Alternatively, you can provide the raw content.</p> </li>
     /// <li> <p>For the SDK, specify the raw content of a certificate file. For example, <code>--certificate "`cat encryption-cert.pem`"</code>.</p> </li>
     /// </ul>
-    pub fn certificate(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn certificate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.certificate(input.into());
         self
     }
@@ -105,19 +108,22 @@ impl ImportCertificateFluentBuilder {
     /// <li> <p>For the CLI, provide a file path for a certificate in URI format. For example, <code>--certificate file://encryption-cert.pem</code>. Alternatively, you can provide the raw content.</p> </li>
     /// <li> <p>For the SDK, specify the raw content of a certificate file. For example, <code>--certificate "`cat encryption-cert.pem`"</code>.</p> </li>
     /// </ul>
-    pub fn set_certificate(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_certificate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_certificate(input);
         self
     }
     /// <p>An optional list of certificates that make up the chain for the certificate that's being imported.</p>
-    pub fn certificate_chain(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn certificate_chain(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.certificate_chain(input.into());
         self
     }
     /// <p>An optional list of certificates that make up the chain for the certificate that's being imported.</p>
     pub fn set_certificate_chain(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_certificate_chain(input);
         self
@@ -126,7 +132,7 @@ impl ImportCertificateFluentBuilder {
     /// <li> <p>For the CLI, provide a file path for a private key in URI format.For example, <code>--private-key file://encryption-key.pem</code>. Alternatively, you can provide the raw content of the private key file.</p> </li>
     /// <li> <p>For the SDK, specify the raw content of a private key file. For example, <code>--private-key "`cat encryption-key.pem`"</code> </p> </li>
     /// </ul>
-    pub fn private_key(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn private_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.private_key(input.into());
         self
     }
@@ -134,43 +140,43 @@ impl ImportCertificateFluentBuilder {
     /// <li> <p>For the CLI, provide a file path for a private key in URI format.For example, <code>--private-key file://encryption-key.pem</code>. Alternatively, you can provide the raw content of the private key file.</p> </li>
     /// <li> <p>For the SDK, specify the raw content of a private key file. For example, <code>--private-key "`cat encryption-key.pem`"</code> </p> </li>
     /// </ul>
-    pub fn set_private_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_private_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_private_key(input);
         self
     }
     /// <p>An optional date that specifies when the certificate becomes active.</p>
-    pub fn active_date(mut self, input: aws_smithy_types::DateTime) -> Self {
+    pub fn active_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.active_date(input);
         self
     }
     /// <p>An optional date that specifies when the certificate becomes active.</p>
     pub fn set_active_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.inner = self.inner.set_active_date(input);
         self
     }
     /// <p>An optional date that specifies when the certificate becomes inactive.</p>
-    pub fn inactive_date(mut self, input: aws_smithy_types::DateTime) -> Self {
+    pub fn inactive_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.inactive_date(input);
         self
     }
     /// <p>An optional date that specifies when the certificate becomes inactive.</p>
     pub fn set_inactive_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.inner = self.inner.set_inactive_date(input);
         self
     }
     /// <p>A short description that helps identify the certificate. </p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>A short description that helps identify the certificate. </p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
@@ -186,7 +192,7 @@ impl ImportCertificateFluentBuilder {
     /// <p>Key-value pairs that can be used to group and search for certificates.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self

@@ -2,17 +2,17 @@
 
 /// <p>The feature configurations of an embedded Amazon QuickSight console.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisteredUserConsoleFeatureConfigurations {
     /// <p>The state persistence configurations of an embedded Amazon QuickSight console.</p>
     #[doc(hidden)]
-    pub state_persistence: std::option::Option<crate::types::StatePersistenceConfigurations>,
+    pub state_persistence: ::std::option::Option<crate::types::StatePersistenceConfigurations>,
 }
 impl RegisteredUserConsoleFeatureConfigurations {
     /// <p>The state persistence configurations of an embedded Amazon QuickSight console.</p>
     pub fn state_persistence(
         &self,
-    ) -> std::option::Option<&crate::types::StatePersistenceConfigurations> {
+    ) -> ::std::option::Option<&crate::types::StatePersistenceConfigurations> {
         self.state_persistence.as_ref()
     }
 }
@@ -25,9 +25,12 @@ impl RegisteredUserConsoleFeatureConfigurations {
 
 /// A builder for [`RegisteredUserConsoleFeatureConfigurations`](crate::types::RegisteredUserConsoleFeatureConfigurations).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RegisteredUserConsoleFeatureConfigurationsBuilder {
-    pub(crate) state_persistence: std::option::Option<crate::types::StatePersistenceConfigurations>,
+    pub(crate) state_persistence:
+        ::std::option::Option<crate::types::StatePersistenceConfigurations>,
 }
 impl RegisteredUserConsoleFeatureConfigurationsBuilder {
     /// <p>The state persistence configurations of an embedded Amazon QuickSight console.</p>
@@ -35,13 +38,13 @@ impl RegisteredUserConsoleFeatureConfigurationsBuilder {
         mut self,
         input: crate::types::StatePersistenceConfigurations,
     ) -> Self {
-        self.state_persistence = Some(input);
+        self.state_persistence = ::std::option::Option::Some(input);
         self
     }
     /// <p>The state persistence configurations of an embedded Amazon QuickSight console.</p>
     pub fn set_state_persistence(
         mut self,
-        input: std::option::Option<crate::types::StatePersistenceConfigurations>,
+        input: ::std::option::Option<crate::types::StatePersistenceConfigurations>,
     ) -> Self {
         self.state_persistence = input;
         self

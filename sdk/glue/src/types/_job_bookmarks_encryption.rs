@@ -2,25 +2,25 @@
 
 /// <p>Specifies how job bookmark data should be encrypted.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobBookmarksEncryption {
     /// <p>The encryption mode to use for job bookmarks data.</p>
     #[doc(hidden)]
     pub job_bookmarks_encryption_mode:
-        std::option::Option<crate::types::JobBookmarksEncryptionMode>,
+        ::std::option::Option<crate::types::JobBookmarksEncryptionMode>,
     /// <p>The Amazon Resource Name (ARN) of the KMS key to be used to encrypt the data.</p>
     #[doc(hidden)]
-    pub kms_key_arn: std::option::Option<std::string::String>,
+    pub kms_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl JobBookmarksEncryption {
     /// <p>The encryption mode to use for job bookmarks data.</p>
     pub fn job_bookmarks_encryption_mode(
         &self,
-    ) -> std::option::Option<&crate::types::JobBookmarksEncryptionMode> {
+    ) -> ::std::option::Option<&crate::types::JobBookmarksEncryptionMode> {
         self.job_bookmarks_encryption_mode.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the KMS key to be used to encrypt the data.</p>
-    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+    pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
 }
@@ -33,11 +33,13 @@ impl JobBookmarksEncryption {
 
 /// A builder for [`JobBookmarksEncryption`](crate::types::JobBookmarksEncryption).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct JobBookmarksEncryptionBuilder {
     pub(crate) job_bookmarks_encryption_mode:
-        std::option::Option<crate::types::JobBookmarksEncryptionMode>,
-    pub(crate) kms_key_arn: std::option::Option<std::string::String>,
+        ::std::option::Option<crate::types::JobBookmarksEncryptionMode>,
+    pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl JobBookmarksEncryptionBuilder {
     /// <p>The encryption mode to use for job bookmarks data.</p>
@@ -45,24 +47,24 @@ impl JobBookmarksEncryptionBuilder {
         mut self,
         input: crate::types::JobBookmarksEncryptionMode,
     ) -> Self {
-        self.job_bookmarks_encryption_mode = Some(input);
+        self.job_bookmarks_encryption_mode = ::std::option::Option::Some(input);
         self
     }
     /// <p>The encryption mode to use for job bookmarks data.</p>
     pub fn set_job_bookmarks_encryption_mode(
         mut self,
-        input: std::option::Option<crate::types::JobBookmarksEncryptionMode>,
+        input: ::std::option::Option<crate::types::JobBookmarksEncryptionMode>,
     ) -> Self {
         self.job_bookmarks_encryption_mode = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the KMS key to be used to encrypt the data.</p>
-    pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.kms_key_arn = Some(input.into());
+    pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the KMS key to be used to encrypt the data.</p>
-    pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_arn = input;
         self
     }

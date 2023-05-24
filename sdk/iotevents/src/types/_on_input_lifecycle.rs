@@ -2,22 +2,22 @@
 
 /// <p>Specifies the actions performed when the <code>condition</code> evaluates to TRUE.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OnInputLifecycle {
     /// <p>Specifies the actions performed when the <code>condition</code> evaluates to TRUE.</p>
     #[doc(hidden)]
-    pub events: std::option::Option<std::vec::Vec<crate::types::Event>>,
+    pub events: ::std::option::Option<::std::vec::Vec<crate::types::Event>>,
     /// <p>Specifies the actions performed, and the next state entered, when a <code>condition</code> evaluates to TRUE.</p>
     #[doc(hidden)]
-    pub transition_events: std::option::Option<std::vec::Vec<crate::types::TransitionEvent>>,
+    pub transition_events: ::std::option::Option<::std::vec::Vec<crate::types::TransitionEvent>>,
 }
 impl OnInputLifecycle {
     /// <p>Specifies the actions performed when the <code>condition</code> evaluates to TRUE.</p>
-    pub fn events(&self) -> std::option::Option<&[crate::types::Event]> {
+    pub fn events(&self) -> ::std::option::Option<&[crate::types::Event]> {
         self.events.as_deref()
     }
     /// <p>Specifies the actions performed, and the next state entered, when a <code>condition</code> evaluates to TRUE.</p>
-    pub fn transition_events(&self) -> std::option::Option<&[crate::types::TransitionEvent]> {
+    pub fn transition_events(&self) -> ::std::option::Option<&[crate::types::TransitionEvent]> {
         self.transition_events.as_deref()
     }
 }
@@ -30,10 +30,13 @@ impl OnInputLifecycle {
 
 /// A builder for [`OnInputLifecycle`](crate::types::OnInputLifecycle).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OnInputLifecycleBuilder {
-    pub(crate) events: std::option::Option<std::vec::Vec<crate::types::Event>>,
-    pub(crate) transition_events: std::option::Option<std::vec::Vec<crate::types::TransitionEvent>>,
+    pub(crate) events: ::std::option::Option<::std::vec::Vec<crate::types::Event>>,
+    pub(crate) transition_events:
+        ::std::option::Option<::std::vec::Vec<crate::types::TransitionEvent>>,
 }
 impl OnInputLifecycleBuilder {
     /// Appends an item to `events`.
@@ -44,13 +47,13 @@ impl OnInputLifecycleBuilder {
     pub fn events(mut self, input: crate::types::Event) -> Self {
         let mut v = self.events.unwrap_or_default();
         v.push(input);
-        self.events = Some(v);
+        self.events = ::std::option::Option::Some(v);
         self
     }
     /// <p>Specifies the actions performed when the <code>condition</code> evaluates to TRUE.</p>
     pub fn set_events(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Event>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Event>>,
     ) -> Self {
         self.events = input;
         self
@@ -63,13 +66,13 @@ impl OnInputLifecycleBuilder {
     pub fn transition_events(mut self, input: crate::types::TransitionEvent) -> Self {
         let mut v = self.transition_events.unwrap_or_default();
         v.push(input);
-        self.transition_events = Some(v);
+        self.transition_events = ::std::option::Option::Some(v);
         self
     }
     /// <p>Specifies the actions performed, and the next state entered, when a <code>condition</code> evaluates to TRUE.</p>
     pub fn set_transition_events(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TransitionEvent>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::TransitionEvent>>,
     ) -> Self {
         self.transition_events = input;
         self

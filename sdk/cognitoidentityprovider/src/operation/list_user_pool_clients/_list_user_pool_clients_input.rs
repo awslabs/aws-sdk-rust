@@ -2,21 +2,21 @@
 
 /// <p>Represents the request to list the user pool clients.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListUserPoolClientsInput {
     /// <p>The user pool ID for the user pool where you want to list user pool clients.</p>
     #[doc(hidden)]
-    pub user_pool_id: std::option::Option<std::string::String>,
+    pub user_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results you want the request to return when listing the user pool clients.</p>
     #[doc(hidden)]
     pub max_results: i32,
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListUserPoolClientsInput {
     /// <p>The user pool ID for the user pool where you want to list user pool clients.</p>
-    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+    pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
         self.user_pool_id.as_deref()
     }
     /// <p>The maximum number of results you want the request to return when listing the user pool clients.</p>
@@ -24,7 +24,7 @@ impl ListUserPoolClientsInput {
         self.max_results
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
@@ -39,51 +39,53 @@ impl ListUserPoolClientsInput {
 
 /// A builder for [`ListUserPoolClientsInput`](crate::operation::list_user_pool_clients::ListUserPoolClientsInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListUserPoolClientsInputBuilder {
-    pub(crate) user_pool_id: std::option::Option<std::string::String>,
-    pub(crate) max_results: std::option::Option<i32>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) user_pool_id: ::std::option::Option<::std::string::String>,
+    pub(crate) max_results: ::std::option::Option<i32>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListUserPoolClientsInputBuilder {
     /// <p>The user pool ID for the user pool where you want to list user pool clients.</p>
-    pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.user_pool_id = Some(input.into());
+    pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.user_pool_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user pool ID for the user pool where you want to list user pool clients.</p>
-    pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_pool_id = input;
         self
     }
     /// <p>The maximum number of results you want the request to return when listing the user pool clients.</p>
     pub fn max_results(mut self, input: i32) -> Self {
-        self.max_results = Some(input);
+        self.max_results = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum number of results you want the request to return when listing the user pool clients.</p>
-    pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
     /// Consumes the builder and constructs a [`ListUserPoolClientsInput`](crate::operation::list_user_pool_clients::ListUserPoolClientsInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::list_user_pool_clients::ListUserPoolClientsInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::list_user_pool_clients::ListUserPoolClientsInput {
                 user_pool_id: self.user_pool_id,
                 max_results: self.max_results.unwrap_or_default(),

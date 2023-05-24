@@ -2,22 +2,22 @@
 
 /// <p>Type that describes the face Amazon Rekognition chose to compare with the faces in the target. This contains a bounding box for the selected face and confidence level that the bounding box contains a face. Note that Amazon Rekognition selects the largest face in the source image for this comparison. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComparedSourceImageFace {
     /// <p>Bounding box of the face.</p>
     #[doc(hidden)]
-    pub bounding_box: std::option::Option<crate::types::BoundingBox>,
+    pub bounding_box: ::std::option::Option<crate::types::BoundingBox>,
     /// <p>Confidence level that the selected bounding box contains a face.</p>
     #[doc(hidden)]
-    pub confidence: std::option::Option<f32>,
+    pub confidence: ::std::option::Option<f32>,
 }
 impl ComparedSourceImageFace {
     /// <p>Bounding box of the face.</p>
-    pub fn bounding_box(&self) -> std::option::Option<&crate::types::BoundingBox> {
+    pub fn bounding_box(&self) -> ::std::option::Option<&crate::types::BoundingBox> {
         self.bounding_box.as_ref()
     }
     /// <p>Confidence level that the selected bounding box contains a face.</p>
-    pub fn confidence(&self) -> std::option::Option<f32> {
+    pub fn confidence(&self) -> ::std::option::Option<f32> {
         self.confidence
     }
 }
@@ -30,32 +30,34 @@ impl ComparedSourceImageFace {
 
 /// A builder for [`ComparedSourceImageFace`](crate::types::ComparedSourceImageFace).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ComparedSourceImageFaceBuilder {
-    pub(crate) bounding_box: std::option::Option<crate::types::BoundingBox>,
-    pub(crate) confidence: std::option::Option<f32>,
+    pub(crate) bounding_box: ::std::option::Option<crate::types::BoundingBox>,
+    pub(crate) confidence: ::std::option::Option<f32>,
 }
 impl ComparedSourceImageFaceBuilder {
     /// <p>Bounding box of the face.</p>
     pub fn bounding_box(mut self, input: crate::types::BoundingBox) -> Self {
-        self.bounding_box = Some(input);
+        self.bounding_box = ::std::option::Option::Some(input);
         self
     }
     /// <p>Bounding box of the face.</p>
     pub fn set_bounding_box(
         mut self,
-        input: std::option::Option<crate::types::BoundingBox>,
+        input: ::std::option::Option<crate::types::BoundingBox>,
     ) -> Self {
         self.bounding_box = input;
         self
     }
     /// <p>Confidence level that the selected bounding box contains a face.</p>
     pub fn confidence(mut self, input: f32) -> Self {
-        self.confidence = Some(input);
+        self.confidence = ::std::option::Option::Some(input);
         self
     }
     /// <p>Confidence level that the selected bounding box contains a face.</p>
-    pub fn set_confidence(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
         self.confidence = input;
         self
     }

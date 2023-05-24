@@ -2,43 +2,45 @@
 
 /// <p>Describes a warm pool configuration. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WarmPoolConfiguration {
     /// <p>The maximum number of instances that are allowed to be in the warm pool or in any state except <code>Terminated</code> for the Auto Scaling group.</p>
     #[doc(hidden)]
-    pub max_group_prepared_capacity: std::option::Option<i32>,
+    pub max_group_prepared_capacity: ::std::option::Option<i32>,
     /// <p>The minimum number of instances to maintain in the warm pool.</p>
     #[doc(hidden)]
-    pub min_size: std::option::Option<i32>,
+    pub min_size: ::std::option::Option<i32>,
     /// <p>The instance state to transition to after the lifecycle actions are complete.</p>
     #[doc(hidden)]
-    pub pool_state: std::option::Option<crate::types::WarmPoolState>,
+    pub pool_state: ::std::option::Option<crate::types::WarmPoolState>,
     /// <p>The status of a warm pool that is marked for deletion.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::WarmPoolStatus>,
+    pub status: ::std::option::Option<crate::types::WarmPoolStatus>,
     /// <p>The instance reuse policy.</p>
     #[doc(hidden)]
-    pub instance_reuse_policy: std::option::Option<crate::types::InstanceReusePolicy>,
+    pub instance_reuse_policy: ::std::option::Option<crate::types::InstanceReusePolicy>,
 }
 impl WarmPoolConfiguration {
     /// <p>The maximum number of instances that are allowed to be in the warm pool or in any state except <code>Terminated</code> for the Auto Scaling group.</p>
-    pub fn max_group_prepared_capacity(&self) -> std::option::Option<i32> {
+    pub fn max_group_prepared_capacity(&self) -> ::std::option::Option<i32> {
         self.max_group_prepared_capacity
     }
     /// <p>The minimum number of instances to maintain in the warm pool.</p>
-    pub fn min_size(&self) -> std::option::Option<i32> {
+    pub fn min_size(&self) -> ::std::option::Option<i32> {
         self.min_size
     }
     /// <p>The instance state to transition to after the lifecycle actions are complete.</p>
-    pub fn pool_state(&self) -> std::option::Option<&crate::types::WarmPoolState> {
+    pub fn pool_state(&self) -> ::std::option::Option<&crate::types::WarmPoolState> {
         self.pool_state.as_ref()
     }
     /// <p>The status of a warm pool that is marked for deletion.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::WarmPoolStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::WarmPoolStatus> {
         self.status.as_ref()
     }
     /// <p>The instance reuse policy.</p>
-    pub fn instance_reuse_policy(&self) -> std::option::Option<&crate::types::InstanceReusePolicy> {
+    pub fn instance_reuse_policy(
+        &self,
+    ) -> ::std::option::Option<&crate::types::InstanceReusePolicy> {
         self.instance_reuse_policy.as_ref()
     }
 }
@@ -51,67 +53,72 @@ impl WarmPoolConfiguration {
 
 /// A builder for [`WarmPoolConfiguration`](crate::types::WarmPoolConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct WarmPoolConfigurationBuilder {
-    pub(crate) max_group_prepared_capacity: std::option::Option<i32>,
-    pub(crate) min_size: std::option::Option<i32>,
-    pub(crate) pool_state: std::option::Option<crate::types::WarmPoolState>,
-    pub(crate) status: std::option::Option<crate::types::WarmPoolStatus>,
-    pub(crate) instance_reuse_policy: std::option::Option<crate::types::InstanceReusePolicy>,
+    pub(crate) max_group_prepared_capacity: ::std::option::Option<i32>,
+    pub(crate) min_size: ::std::option::Option<i32>,
+    pub(crate) pool_state: ::std::option::Option<crate::types::WarmPoolState>,
+    pub(crate) status: ::std::option::Option<crate::types::WarmPoolStatus>,
+    pub(crate) instance_reuse_policy: ::std::option::Option<crate::types::InstanceReusePolicy>,
 }
 impl WarmPoolConfigurationBuilder {
     /// <p>The maximum number of instances that are allowed to be in the warm pool or in any state except <code>Terminated</code> for the Auto Scaling group.</p>
     pub fn max_group_prepared_capacity(mut self, input: i32) -> Self {
-        self.max_group_prepared_capacity = Some(input);
+        self.max_group_prepared_capacity = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum number of instances that are allowed to be in the warm pool or in any state except <code>Terminated</code> for the Auto Scaling group.</p>
-    pub fn set_max_group_prepared_capacity(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_group_prepared_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_group_prepared_capacity = input;
         self
     }
     /// <p>The minimum number of instances to maintain in the warm pool.</p>
     pub fn min_size(mut self, input: i32) -> Self {
-        self.min_size = Some(input);
+        self.min_size = ::std::option::Option::Some(input);
         self
     }
     /// <p>The minimum number of instances to maintain in the warm pool.</p>
-    pub fn set_min_size(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_min_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.min_size = input;
         self
     }
     /// <p>The instance state to transition to after the lifecycle actions are complete.</p>
     pub fn pool_state(mut self, input: crate::types::WarmPoolState) -> Self {
-        self.pool_state = Some(input);
+        self.pool_state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The instance state to transition to after the lifecycle actions are complete.</p>
     pub fn set_pool_state(
         mut self,
-        input: std::option::Option<crate::types::WarmPoolState>,
+        input: ::std::option::Option<crate::types::WarmPoolState>,
     ) -> Self {
         self.pool_state = input;
         self
     }
     /// <p>The status of a warm pool that is marked for deletion.</p>
     pub fn status(mut self, input: crate::types::WarmPoolStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of a warm pool that is marked for deletion.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::WarmPoolStatus>) -> Self {
+    pub fn set_status(
+        mut self,
+        input: ::std::option::Option<crate::types::WarmPoolStatus>,
+    ) -> Self {
         self.status = input;
         self
     }
     /// <p>The instance reuse policy.</p>
     pub fn instance_reuse_policy(mut self, input: crate::types::InstanceReusePolicy) -> Self {
-        self.instance_reuse_policy = Some(input);
+        self.instance_reuse_policy = ::std::option::Option::Some(input);
         self
     }
     /// <p>The instance reuse policy.</p>
     pub fn set_instance_reuse_policy(
         mut self,
-        input: std::option::Option<crate::types::InstanceReusePolicy>,
+        input: ::std::option::Option<crate::types::InstanceReusePolicy>,
     ) -> Self {
         self.instance_reuse_policy = input;
         self

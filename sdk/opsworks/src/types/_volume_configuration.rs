@@ -2,20 +2,20 @@
 
 /// <p>Describes an Amazon EBS volume configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VolumeConfiguration {
     /// <p>The volume mount point. For example "/dev/sdh".</p>
     #[doc(hidden)]
-    pub mount_point: std::option::Option<std::string::String>,
+    pub mount_point: ::std::option::Option<::std::string::String>,
     /// <p>The volume <a href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID level</a>.</p>
     #[doc(hidden)]
-    pub raid_level: std::option::Option<i32>,
+    pub raid_level: ::std::option::Option<i32>,
     /// <p>The number of disks in the volume.</p>
     #[doc(hidden)]
-    pub number_of_disks: std::option::Option<i32>,
+    pub number_of_disks: ::std::option::Option<i32>,
     /// <p>The volume size.</p>
     #[doc(hidden)]
-    pub size: std::option::Option<i32>,
+    pub size: ::std::option::Option<i32>,
     /// <p>The volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"> Amazon EBS Volume Types</a>.</p>
     /// <ul>
     /// <li> <p> <code>standard</code> - Magnetic. Magnetic volumes must have a minimum size of 1 GiB and a maximum size of 1024 GiB.</p> </li>
@@ -25,29 +25,29 @@ pub struct VolumeConfiguration {
     /// <li> <p> <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub volume_type: std::option::Option<std::string::String>,
+    pub volume_type: ::std::option::Option<::std::string::String>,
     /// <p>For PIOPS volumes, the IOPS per disk.</p>
     #[doc(hidden)]
-    pub iops: std::option::Option<i32>,
+    pub iops: ::std::option::Option<i32>,
     /// <p>Specifies whether an Amazon EBS volume is encrypted. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.</p>
     #[doc(hidden)]
-    pub encrypted: std::option::Option<bool>,
+    pub encrypted: ::std::option::Option<bool>,
 }
 impl VolumeConfiguration {
     /// <p>The volume mount point. For example "/dev/sdh".</p>
-    pub fn mount_point(&self) -> std::option::Option<&str> {
+    pub fn mount_point(&self) -> ::std::option::Option<&str> {
         self.mount_point.as_deref()
     }
     /// <p>The volume <a href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID level</a>.</p>
-    pub fn raid_level(&self) -> std::option::Option<i32> {
+    pub fn raid_level(&self) -> ::std::option::Option<i32> {
         self.raid_level
     }
     /// <p>The number of disks in the volume.</p>
-    pub fn number_of_disks(&self) -> std::option::Option<i32> {
+    pub fn number_of_disks(&self) -> ::std::option::Option<i32> {
         self.number_of_disks
     }
     /// <p>The volume size.</p>
-    pub fn size(&self) -> std::option::Option<i32> {
+    pub fn size(&self) -> ::std::option::Option<i32> {
         self.size
     }
     /// <p>The volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"> Amazon EBS Volume Types</a>.</p>
@@ -58,15 +58,15 @@ impl VolumeConfiguration {
     /// <li> <p> <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li>
     /// <li> <p> <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li>
     /// </ul>
-    pub fn volume_type(&self) -> std::option::Option<&str> {
+    pub fn volume_type(&self) -> ::std::option::Option<&str> {
         self.volume_type.as_deref()
     }
     /// <p>For PIOPS volumes, the IOPS per disk.</p>
-    pub fn iops(&self) -> std::option::Option<i32> {
+    pub fn iops(&self) -> ::std::option::Option<i32> {
         self.iops
     }
     /// <p>Specifies whether an Amazon EBS volume is encrypted. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.</p>
-    pub fn encrypted(&self) -> std::option::Option<bool> {
+    pub fn encrypted(&self) -> ::std::option::Option<bool> {
         self.encrypted
     }
 }
@@ -79,54 +79,56 @@ impl VolumeConfiguration {
 
 /// A builder for [`VolumeConfiguration`](crate::types::VolumeConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VolumeConfigurationBuilder {
-    pub(crate) mount_point: std::option::Option<std::string::String>,
-    pub(crate) raid_level: std::option::Option<i32>,
-    pub(crate) number_of_disks: std::option::Option<i32>,
-    pub(crate) size: std::option::Option<i32>,
-    pub(crate) volume_type: std::option::Option<std::string::String>,
-    pub(crate) iops: std::option::Option<i32>,
-    pub(crate) encrypted: std::option::Option<bool>,
+    pub(crate) mount_point: ::std::option::Option<::std::string::String>,
+    pub(crate) raid_level: ::std::option::Option<i32>,
+    pub(crate) number_of_disks: ::std::option::Option<i32>,
+    pub(crate) size: ::std::option::Option<i32>,
+    pub(crate) volume_type: ::std::option::Option<::std::string::String>,
+    pub(crate) iops: ::std::option::Option<i32>,
+    pub(crate) encrypted: ::std::option::Option<bool>,
 }
 impl VolumeConfigurationBuilder {
     /// <p>The volume mount point. For example "/dev/sdh".</p>
-    pub fn mount_point(mut self, input: impl Into<std::string::String>) -> Self {
-        self.mount_point = Some(input.into());
+    pub fn mount_point(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.mount_point = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The volume mount point. For example "/dev/sdh".</p>
-    pub fn set_mount_point(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_mount_point(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.mount_point = input;
         self
     }
     /// <p>The volume <a href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID level</a>.</p>
     pub fn raid_level(mut self, input: i32) -> Self {
-        self.raid_level = Some(input);
+        self.raid_level = ::std::option::Option::Some(input);
         self
     }
     /// <p>The volume <a href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID level</a>.</p>
-    pub fn set_raid_level(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_raid_level(mut self, input: ::std::option::Option<i32>) -> Self {
         self.raid_level = input;
         self
     }
     /// <p>The number of disks in the volume.</p>
     pub fn number_of_disks(mut self, input: i32) -> Self {
-        self.number_of_disks = Some(input);
+        self.number_of_disks = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of disks in the volume.</p>
-    pub fn set_number_of_disks(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_number_of_disks(mut self, input: ::std::option::Option<i32>) -> Self {
         self.number_of_disks = input;
         self
     }
     /// <p>The volume size.</p>
     pub fn size(mut self, input: i32) -> Self {
-        self.size = Some(input);
+        self.size = ::std::option::Option::Some(input);
         self
     }
     /// <p>The volume size.</p>
-    pub fn set_size(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.size = input;
         self
     }
@@ -138,8 +140,8 @@ impl VolumeConfigurationBuilder {
     /// <li> <p> <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li>
     /// <li> <p> <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li>
     /// </ul>
-    pub fn volume_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.volume_type = Some(input.into());
+    pub fn volume_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.volume_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The volume type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html"> Amazon EBS Volume Types</a>.</p>
@@ -150,27 +152,27 @@ impl VolumeConfigurationBuilder {
     /// <li> <p> <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li>
     /// <li> <p> <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</p> </li>
     /// </ul>
-    pub fn set_volume_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_volume_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.volume_type = input;
         self
     }
     /// <p>For PIOPS volumes, the IOPS per disk.</p>
     pub fn iops(mut self, input: i32) -> Self {
-        self.iops = Some(input);
+        self.iops = ::std::option::Option::Some(input);
         self
     }
     /// <p>For PIOPS volumes, the IOPS per disk.</p>
-    pub fn set_iops(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_iops(mut self, input: ::std::option::Option<i32>) -> Self {
         self.iops = input;
         self
     }
     /// <p>Specifies whether an Amazon EBS volume is encrypted. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.</p>
     pub fn encrypted(mut self, input: bool) -> Self {
-        self.encrypted = Some(input);
+        self.encrypted = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether an Amazon EBS volume is encrypted. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>.</p>
-    pub fn set_encrypted(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_encrypted(mut self, input: ::std::option::Option<bool>) -> Self {
         self.encrypted = input;
         self
     }

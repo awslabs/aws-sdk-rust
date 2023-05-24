@@ -2,15 +2,15 @@
 
 /// <p>The templated target type for the Amazon Kinesis <a href="kinesis/latest/APIReference/API_PutRecord.html"> <code>PutRecord</code> </a> API operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KinesisParameters {
     /// <p>Specifies the shard to which EventBridge Scheduler sends the event. For more information, see <a href="https://docs.aws.amazon.com/streams/latest/dev/key-concepts.html">Amazon Kinesis Data Streams terminology and concepts</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.</p>
     #[doc(hidden)]
-    pub partition_key: std::option::Option<std::string::String>,
+    pub partition_key: ::std::option::Option<::std::string::String>,
 }
 impl KinesisParameters {
     /// <p>Specifies the shard to which EventBridge Scheduler sends the event. For more information, see <a href="https://docs.aws.amazon.com/streams/latest/dev/key-concepts.html">Amazon Kinesis Data Streams terminology and concepts</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.</p>
-    pub fn partition_key(&self) -> std::option::Option<&str> {
+    pub fn partition_key(&self) -> ::std::option::Option<&str> {
         self.partition_key.as_deref()
     }
 }
@@ -23,18 +23,26 @@ impl KinesisParameters {
 
 /// A builder for [`KinesisParameters`](crate::types::KinesisParameters).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct KinesisParametersBuilder {
-    pub(crate) partition_key: std::option::Option<std::string::String>,
+    pub(crate) partition_key: ::std::option::Option<::std::string::String>,
 }
 impl KinesisParametersBuilder {
     /// <p>Specifies the shard to which EventBridge Scheduler sends the event. For more information, see <a href="https://docs.aws.amazon.com/streams/latest/dev/key-concepts.html">Amazon Kinesis Data Streams terminology and concepts</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.</p>
-    pub fn partition_key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.partition_key = Some(input.into());
+    pub fn partition_key(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.partition_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the shard to which EventBridge Scheduler sends the event. For more information, see <a href="https://docs.aws.amazon.com/streams/latest/dev/key-concepts.html">Amazon Kinesis Data Streams terminology and concepts</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.</p>
-    pub fn set_partition_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_partition_key(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.partition_key = input;
         self
     }

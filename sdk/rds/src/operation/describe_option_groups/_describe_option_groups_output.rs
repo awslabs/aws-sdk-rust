@@ -2,27 +2,27 @@
 
 /// <p>List of option groups.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeOptionGroupsOutput {
     /// <p>List of option groups.</p>
     #[doc(hidden)]
-    pub option_groups_list: std::option::Option<std::vec::Vec<crate::types::OptionGroup>>,
+    pub option_groups_list: ::std::option::Option<::std::vec::Vec<crate::types::OptionGroup>>,
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     #[doc(hidden)]
-    pub marker: std::option::Option<std::string::String>,
+    pub marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeOptionGroupsOutput {
     /// <p>List of option groups.</p>
-    pub fn option_groups_list(&self) -> std::option::Option<&[crate::types::OptionGroup]> {
+    pub fn option_groups_list(&self) -> ::std::option::Option<&[crate::types::OptionGroup]> {
         self.option_groups_list.as_deref()
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeOptionGroupsOutput {
+impl ::aws_http::request_id::RequestId for DescribeOptionGroupsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -37,10 +37,13 @@ impl DescribeOptionGroupsOutput {
 
 /// A builder for [`DescribeOptionGroupsOutput`](crate::operation::describe_option_groups::DescribeOptionGroupsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeOptionGroupsOutputBuilder {
-    pub(crate) option_groups_list: std::option::Option<std::vec::Vec<crate::types::OptionGroup>>,
-    pub(crate) marker: std::option::Option<std::string::String>,
+    pub(crate) option_groups_list:
+        ::std::option::Option<::std::vec::Vec<crate::types::OptionGroup>>,
+    pub(crate) marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeOptionGroupsOutputBuilder {
@@ -52,24 +55,24 @@ impl DescribeOptionGroupsOutputBuilder {
     pub fn option_groups_list(mut self, input: crate::types::OptionGroup) -> Self {
         let mut v = self.option_groups_list.unwrap_or_default();
         v.push(input);
-        self.option_groups_list = Some(v);
+        self.option_groups_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>List of option groups.</p>
     pub fn set_option_groups_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::OptionGroup>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::OptionGroup>>,
     ) -> Self {
         self.option_groups_list = input;
         self
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-        self.marker = Some(input.into());
+    pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
     }

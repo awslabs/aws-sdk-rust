@@ -2,15 +2,15 @@
 
 /// <p>The incremental refresh configuration for a dataset.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IncrementalRefresh {
     /// <p>The lookback window setup for an incremental refresh configuration.</p>
     #[doc(hidden)]
-    pub lookback_window: std::option::Option<crate::types::LookbackWindow>,
+    pub lookback_window: ::std::option::Option<crate::types::LookbackWindow>,
 }
 impl IncrementalRefresh {
     /// <p>The lookback window setup for an incremental refresh configuration.</p>
-    pub fn lookback_window(&self) -> std::option::Option<&crate::types::LookbackWindow> {
+    pub fn lookback_window(&self) -> ::std::option::Option<&crate::types::LookbackWindow> {
         self.lookback_window.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl IncrementalRefresh {
 
 /// A builder for [`IncrementalRefresh`](crate::types::IncrementalRefresh).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct IncrementalRefreshBuilder {
-    pub(crate) lookback_window: std::option::Option<crate::types::LookbackWindow>,
+    pub(crate) lookback_window: ::std::option::Option<crate::types::LookbackWindow>,
 }
 impl IncrementalRefreshBuilder {
     /// <p>The lookback window setup for an incremental refresh configuration.</p>
     pub fn lookback_window(mut self, input: crate::types::LookbackWindow) -> Self {
-        self.lookback_window = Some(input);
+        self.lookback_window = ::std::option::Option::Some(input);
         self
     }
     /// <p>The lookback window setup for an incremental refresh configuration.</p>
     pub fn set_lookback_window(
         mut self,
-        input: std::option::Option<crate::types::LookbackWindow>,
+        input: ::std::option::Option<crate::types::LookbackWindow>,
     ) -> Self {
         self.lookback_window = input;
         self

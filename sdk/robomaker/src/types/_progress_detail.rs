@@ -2,7 +2,7 @@
 
 /// <p>Information about the progress of a deployment job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProgressDetail {
     /// <p>The current progress status.</p>
     /// <dl>
@@ -44,16 +44,16 @@ pub struct ProgressDetail {
     /// </dd>
     /// </dl>
     #[doc(hidden)]
-    pub current_progress: std::option::Option<crate::types::RobotDeploymentStep>,
+    pub current_progress: ::std::option::Option<crate::types::RobotDeploymentStep>,
     /// <p>Precentage of the step that is done. This currently only applies to the <code>Downloading/Extracting</code> step of the deployment. It is empty for other steps.</p>
     #[doc(hidden)]
-    pub percent_done: std::option::Option<f32>,
+    pub percent_done: ::std::option::Option<f32>,
     /// <p>Estimated amount of time in seconds remaining in the step. This currently only applies to the <code>Downloading/Extracting</code> step of the deployment. It is empty for other steps.</p>
     #[doc(hidden)]
-    pub estimated_time_remaining_seconds: std::option::Option<i32>,
+    pub estimated_time_remaining_seconds: ::std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) of the deployment job.</p>
     #[doc(hidden)]
-    pub target_resource: std::option::Option<std::string::String>,
+    pub target_resource: ::std::option::Option<::std::string::String>,
 }
 impl ProgressDetail {
     /// <p>The current progress status.</p>
@@ -95,19 +95,19 @@ impl ProgressDetail {
     /// <p>Deployment is complete.</p>
     /// </dd>
     /// </dl>
-    pub fn current_progress(&self) -> std::option::Option<&crate::types::RobotDeploymentStep> {
+    pub fn current_progress(&self) -> ::std::option::Option<&crate::types::RobotDeploymentStep> {
         self.current_progress.as_ref()
     }
     /// <p>Precentage of the step that is done. This currently only applies to the <code>Downloading/Extracting</code> step of the deployment. It is empty for other steps.</p>
-    pub fn percent_done(&self) -> std::option::Option<f32> {
+    pub fn percent_done(&self) -> ::std::option::Option<f32> {
         self.percent_done
     }
     /// <p>Estimated amount of time in seconds remaining in the step. This currently only applies to the <code>Downloading/Extracting</code> step of the deployment. It is empty for other steps.</p>
-    pub fn estimated_time_remaining_seconds(&self) -> std::option::Option<i32> {
+    pub fn estimated_time_remaining_seconds(&self) -> ::std::option::Option<i32> {
         self.estimated_time_remaining_seconds
     }
     /// <p>The Amazon Resource Name (ARN) of the deployment job.</p>
-    pub fn target_resource(&self) -> std::option::Option<&str> {
+    pub fn target_resource(&self) -> ::std::option::Option<&str> {
         self.target_resource.as_deref()
     }
 }
@@ -120,12 +120,14 @@ impl ProgressDetail {
 
 /// A builder for [`ProgressDetail`](crate::types::ProgressDetail).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ProgressDetailBuilder {
-    pub(crate) current_progress: std::option::Option<crate::types::RobotDeploymentStep>,
-    pub(crate) percent_done: std::option::Option<f32>,
-    pub(crate) estimated_time_remaining_seconds: std::option::Option<i32>,
-    pub(crate) target_resource: std::option::Option<std::string::String>,
+    pub(crate) current_progress: ::std::option::Option<crate::types::RobotDeploymentStep>,
+    pub(crate) percent_done: ::std::option::Option<f32>,
+    pub(crate) estimated_time_remaining_seconds: ::std::option::Option<i32>,
+    pub(crate) target_resource: ::std::option::Option<::std::string::String>,
 }
 impl ProgressDetailBuilder {
     /// <p>The current progress status.</p>
@@ -168,7 +170,7 @@ impl ProgressDetailBuilder {
     /// </dd>
     /// </dl>
     pub fn current_progress(mut self, input: crate::types::RobotDeploymentStep) -> Self {
-        self.current_progress = Some(input);
+        self.current_progress = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current progress status.</p>
@@ -212,38 +214,47 @@ impl ProgressDetailBuilder {
     /// </dl>
     pub fn set_current_progress(
         mut self,
-        input: std::option::Option<crate::types::RobotDeploymentStep>,
+        input: ::std::option::Option<crate::types::RobotDeploymentStep>,
     ) -> Self {
         self.current_progress = input;
         self
     }
     /// <p>Precentage of the step that is done. This currently only applies to the <code>Downloading/Extracting</code> step of the deployment. It is empty for other steps.</p>
     pub fn percent_done(mut self, input: f32) -> Self {
-        self.percent_done = Some(input);
+        self.percent_done = ::std::option::Option::Some(input);
         self
     }
     /// <p>Precentage of the step that is done. This currently only applies to the <code>Downloading/Extracting</code> step of the deployment. It is empty for other steps.</p>
-    pub fn set_percent_done(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_percent_done(mut self, input: ::std::option::Option<f32>) -> Self {
         self.percent_done = input;
         self
     }
     /// <p>Estimated amount of time in seconds remaining in the step. This currently only applies to the <code>Downloading/Extracting</code> step of the deployment. It is empty for other steps.</p>
     pub fn estimated_time_remaining_seconds(mut self, input: i32) -> Self {
-        self.estimated_time_remaining_seconds = Some(input);
+        self.estimated_time_remaining_seconds = ::std::option::Option::Some(input);
         self
     }
     /// <p>Estimated amount of time in seconds remaining in the step. This currently only applies to the <code>Downloading/Extracting</code> step of the deployment. It is empty for other steps.</p>
-    pub fn set_estimated_time_remaining_seconds(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_estimated_time_remaining_seconds(
+        mut self,
+        input: ::std::option::Option<i32>,
+    ) -> Self {
         self.estimated_time_remaining_seconds = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the deployment job.</p>
-    pub fn target_resource(mut self, input: impl Into<std::string::String>) -> Self {
-        self.target_resource = Some(input.into());
+    pub fn target_resource(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.target_resource = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the deployment job.</p>
-    pub fn set_target_resource(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_target_resource(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.target_resource = input;
         self
     }

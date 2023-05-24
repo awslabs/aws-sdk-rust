@@ -3,22 +3,22 @@
 /// <p>The range setup of a numeric axis display range.</p>
 /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AxisDisplayRange {
     /// <p>The minimum and maximum setup of an axis display range.</p>
     #[doc(hidden)]
-    pub min_max: std::option::Option<crate::types::AxisDisplayMinMaxRange>,
+    pub min_max: ::std::option::Option<crate::types::AxisDisplayMinMaxRange>,
     /// <p>The data-driven setup of an axis display range.</p>
     #[doc(hidden)]
-    pub data_driven: std::option::Option<crate::types::AxisDisplayDataDrivenRange>,
+    pub data_driven: ::std::option::Option<crate::types::AxisDisplayDataDrivenRange>,
 }
 impl AxisDisplayRange {
     /// <p>The minimum and maximum setup of an axis display range.</p>
-    pub fn min_max(&self) -> std::option::Option<&crate::types::AxisDisplayMinMaxRange> {
+    pub fn min_max(&self) -> ::std::option::Option<&crate::types::AxisDisplayMinMaxRange> {
         self.min_max.as_ref()
     }
     /// <p>The data-driven setup of an axis display range.</p>
-    pub fn data_driven(&self) -> std::option::Option<&crate::types::AxisDisplayDataDrivenRange> {
+    pub fn data_driven(&self) -> ::std::option::Option<&crate::types::AxisDisplayDataDrivenRange> {
         self.data_driven.as_ref()
     }
 }
@@ -31,34 +31,36 @@ impl AxisDisplayRange {
 
 /// A builder for [`AxisDisplayRange`](crate::types::AxisDisplayRange).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AxisDisplayRangeBuilder {
-    pub(crate) min_max: std::option::Option<crate::types::AxisDisplayMinMaxRange>,
-    pub(crate) data_driven: std::option::Option<crate::types::AxisDisplayDataDrivenRange>,
+    pub(crate) min_max: ::std::option::Option<crate::types::AxisDisplayMinMaxRange>,
+    pub(crate) data_driven: ::std::option::Option<crate::types::AxisDisplayDataDrivenRange>,
 }
 impl AxisDisplayRangeBuilder {
     /// <p>The minimum and maximum setup of an axis display range.</p>
     pub fn min_max(mut self, input: crate::types::AxisDisplayMinMaxRange) -> Self {
-        self.min_max = Some(input);
+        self.min_max = ::std::option::Option::Some(input);
         self
     }
     /// <p>The minimum and maximum setup of an axis display range.</p>
     pub fn set_min_max(
         mut self,
-        input: std::option::Option<crate::types::AxisDisplayMinMaxRange>,
+        input: ::std::option::Option<crate::types::AxisDisplayMinMaxRange>,
     ) -> Self {
         self.min_max = input;
         self
     }
     /// <p>The data-driven setup of an axis display range.</p>
     pub fn data_driven(mut self, input: crate::types::AxisDisplayDataDrivenRange) -> Self {
-        self.data_driven = Some(input);
+        self.data_driven = ::std::option::Option::Some(input);
         self
     }
     /// <p>The data-driven setup of an axis display range.</p>
     pub fn set_data_driven(
         mut self,
-        input: std::option::Option<crate::types::AxisDisplayDataDrivenRange>,
+        input: ::std::option::Option<crate::types::AxisDisplayDataDrivenRange>,
     ) -> Self {
         self.data_driven = input;
         self

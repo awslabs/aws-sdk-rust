@@ -2,22 +2,22 @@
 
 /// <p> The object containing information about distinct imports or groups for Strategy Recommendations. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Group {
     /// <p> The key of the specific import group. </p>
     #[doc(hidden)]
-    pub name: std::option::Option<crate::types::GroupName>,
+    pub name: ::std::option::Option<crate::types::GroupName>,
     /// <p> The value of the specific import group. </p>
     #[doc(hidden)]
-    pub value: std::option::Option<std::string::String>,
+    pub value: ::std::option::Option<::std::string::String>,
 }
 impl Group {
     /// <p> The key of the specific import group. </p>
-    pub fn name(&self) -> std::option::Option<&crate::types::GroupName> {
+    pub fn name(&self) -> ::std::option::Option<&crate::types::GroupName> {
         self.name.as_ref()
     }
     /// <p> The value of the specific import group. </p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl Group {
 
 /// A builder for [`Group`](crate::types::Group).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GroupBuilder {
-    pub(crate) name: std::option::Option<crate::types::GroupName>,
-    pub(crate) value: std::option::Option<std::string::String>,
+    pub(crate) name: ::std::option::Option<crate::types::GroupName>,
+    pub(crate) value: ::std::option::Option<::std::string::String>,
 }
 impl GroupBuilder {
     /// <p> The key of the specific import group. </p>
     pub fn name(mut self, input: crate::types::GroupName) -> Self {
-        self.name = Some(input);
+        self.name = ::std::option::Option::Some(input);
         self
     }
     /// <p> The key of the specific import group. </p>
-    pub fn set_name(mut self, input: std::option::Option<crate::types::GroupName>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::GroupName>) -> Self {
         self.name = input;
         self
     }
     /// <p> The value of the specific import group. </p>
-    pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.value = Some(input.into());
+    pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The value of the specific import group. </p>
-    pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
     }

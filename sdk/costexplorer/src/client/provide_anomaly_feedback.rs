@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ProvideAnomalyFeedback`](crate::operation::provide_anomaly_feedback::builders::ProvideAnomalyFeedbackFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`anomaly_id(impl Into<String>)`](crate::operation::provide_anomaly_feedback::builders::ProvideAnomalyFeedbackFluentBuilder::anomaly_id) / [`set_anomaly_id(Option<String>)`](crate::operation::provide_anomaly_feedback::builders::ProvideAnomalyFeedbackFluentBuilder::set_anomaly_id): <p>A cost anomaly ID. </p>
+    ///   - [`anomaly_id(impl ::std::convert::Into<String>)`](crate::operation::provide_anomaly_feedback::builders::ProvideAnomalyFeedbackFluentBuilder::anomaly_id) / [`set_anomaly_id(Option<String>)`](crate::operation::provide_anomaly_feedback::builders::ProvideAnomalyFeedbackFluentBuilder::set_anomaly_id): <p>A cost anomaly ID. </p>
     ///   - [`feedback(AnomalyFeedbackType)`](crate::operation::provide_anomaly_feedback::builders::ProvideAnomalyFeedbackFluentBuilder::feedback) / [`set_feedback(Option<AnomalyFeedbackType>)`](crate::operation::provide_anomaly_feedback::builders::ProvideAnomalyFeedbackFluentBuilder::set_feedback): <p>Describes whether the cost anomaly was a planned activity or you considered it an anomaly. </p>
     /// - On success, responds with [`ProvideAnomalyFeedbackOutput`](crate::operation::provide_anomaly_feedback::ProvideAnomalyFeedbackOutput) with field(s):
     ///   - [`anomaly_id(Option<String>)`](crate::operation::provide_anomaly_feedback::ProvideAnomalyFeedbackOutput::anomaly_id): <p>The ID of the modified cost anomaly. </p>

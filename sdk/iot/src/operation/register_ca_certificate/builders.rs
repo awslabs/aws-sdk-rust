@@ -7,29 +7,29 @@ pub use crate::operation::register_ca_certificate::_register_ca_certificate_inpu
 ///
 /// <p>Registers a CA certificate with Amazon Web Services IoT Core. There is no limit to the number of CA certificates you can register in your Amazon Web Services account. You can register up to 10 CA certificates with the same <code>CA subject field</code> per Amazon Web Services account.</p>
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">RegisterCACertificate</a> action.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RegisterCACertificateFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::register_ca_certificate::builders::RegisterCaCertificateInputBuilder,
 }
 impl RegisterCACertificateFluentBuilder {
     /// Creates a new `RegisterCACertificate`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::register_ca_certificate::RegisterCACertificate,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::register_ca_certificate::RegisterCACertificateError,
         >,
     > {
@@ -37,30 +37,33 @@ impl RegisterCACertificateFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::register_ca_certificate::RegisterCaCertificateOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::register_ca_certificate::RegisterCACertificateError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -73,33 +76,42 @@ impl RegisterCACertificateFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::register_ca_certificate::RegisterCaCertificateOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::register_ca_certificate::RegisterCACertificateError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The CA certificate.</p>
-    pub fn ca_certificate(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn ca_certificate(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.ca_certificate(input.into());
         self
     }
     /// <p>The CA certificate.</p>
-    pub fn set_ca_certificate(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ca_certificate(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_ca_certificate(input);
         self
     }
     /// <p>The private key verification certificate. If <code>certificateMode</code> is <code>SNI_ONLY</code>, the <code>verificationCertificate</code> field must be empty. If <code>certificateMode</code> is <code>DEFAULT</code> or not provided, the <code>verificationCertificate</code> field must not be empty. </p>
-    pub fn verification_certificate(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn verification_certificate(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.verification_certificate(input.into());
         self
     }
     /// <p>The private key verification certificate. If <code>certificateMode</code> is <code>SNI_ONLY</code>, the <code>verificationCertificate</code> field must be empty. If <code>certificateMode</code> is <code>DEFAULT</code> or not provided, the <code>verificationCertificate</code> field must not be empty. </p>
     pub fn set_verification_certificate(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_verification_certificate(input);
         self
@@ -112,7 +124,7 @@ impl RegisterCACertificateFluentBuilder {
     }
     /// <p>A boolean value that specifies if the CA certificate is set to active.</p>
     /// <p>Valid values: <code>ACTIVE | INACTIVE</code> </p>
-    pub fn set_set_as_active(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_set_as_active(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_set_as_active(input);
         self
     }
@@ -122,7 +134,7 @@ impl RegisterCACertificateFluentBuilder {
         self
     }
     /// <p>Allows this CA certificate to be used for auto registration of device certificates.</p>
-    pub fn set_allow_auto_registration(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_allow_auto_registration(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_allow_auto_registration(input);
         self
     }
@@ -134,7 +146,7 @@ impl RegisterCACertificateFluentBuilder {
     /// <p>Information about the registration configuration.</p>
     pub fn set_registration_config(
         mut self,
-        input: std::option::Option<crate::types::RegistrationConfig>,
+        input: ::std::option::Option<crate::types::RegistrationConfig>,
     ) -> Self {
         self.inner = self.inner.set_registration_config(input);
         self
@@ -159,7 +171,7 @@ impl RegisterCACertificateFluentBuilder {
     /// </note>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
@@ -172,7 +184,7 @@ impl RegisterCACertificateFluentBuilder {
     /// <p>Describes the certificate mode in which the Certificate Authority (CA) will be registered. If the <code>verificationCertificate</code> field is not provided, set <code>certificateMode</code> to be <code>SNI_ONLY</code>. If the <code>verificationCertificate</code> field is provided, set <code>certificateMode</code> to be <code>DEFAULT</code>. When <code>certificateMode</code> is not provided, it defaults to <code>DEFAULT</code>. All the device certificates that are registered using this CA will be registered in the same certificate mode as the CA. For more information about certificate mode for device certificates, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_CertificateDescription.html#iot-Type-CertificateDescription-certificateMode"> certificate mode</a>. </p>
     pub fn set_certificate_mode(
         mut self,
-        input: std::option::Option<crate::types::CertificateMode>,
+        input: ::std::option::Option<crate::types::CertificateMode>,
     ) -> Self {
         self.inner = self.inner.set_certificate_mode(input);
         self

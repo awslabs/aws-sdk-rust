@@ -2,29 +2,29 @@
 
 /// <p>Provides information about a document that could not be indexed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchPutDocumentResponseFailedDocument {
     /// <p>The identifier of the document.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The type of error that caused the document to fail to be indexed.</p>
     #[doc(hidden)]
-    pub error_code: std::option::Option<crate::types::ErrorCode>,
+    pub error_code: ::std::option::Option<crate::types::ErrorCode>,
     /// <p>A description of the reason why the document could not be indexed.</p>
     #[doc(hidden)]
-    pub error_message: std::option::Option<std::string::String>,
+    pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl BatchPutDocumentResponseFailedDocument {
     /// <p>The identifier of the document.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The type of error that caused the document to fail to be indexed.</p>
-    pub fn error_code(&self) -> std::option::Option<&crate::types::ErrorCode> {
+    pub fn error_code(&self) -> ::std::option::Option<&crate::types::ErrorCode> {
         self.error_code.as_ref()
     }
     /// <p>A description of the reason why the document could not be indexed.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<&str> {
         self.error_message.as_deref()
     }
 }
@@ -37,40 +37,48 @@ impl BatchPutDocumentResponseFailedDocument {
 
 /// A builder for [`BatchPutDocumentResponseFailedDocument`](crate::types::BatchPutDocumentResponseFailedDocument).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BatchPutDocumentResponseFailedDocumentBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) error_code: std::option::Option<crate::types::ErrorCode>,
-    pub(crate) error_message: std::option::Option<std::string::String>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) error_code: ::std::option::Option<crate::types::ErrorCode>,
+    pub(crate) error_message: ::std::option::Option<::std::string::String>,
 }
 impl BatchPutDocumentResponseFailedDocumentBuilder {
     /// <p>The identifier of the document.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the document.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>The type of error that caused the document to fail to be indexed.</p>
     pub fn error_code(mut self, input: crate::types::ErrorCode) -> Self {
-        self.error_code = Some(input);
+        self.error_code = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of error that caused the document to fail to be indexed.</p>
-    pub fn set_error_code(mut self, input: std::option::Option<crate::types::ErrorCode>) -> Self {
+    pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::ErrorCode>) -> Self {
         self.error_code = input;
         self
     }
     /// <p>A description of the reason why the document could not be indexed.</p>
-    pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.error_message = Some(input.into());
+    pub fn error_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of the reason why the document could not be indexed.</p>
-    pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_error_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.error_message = input;
         self
     }

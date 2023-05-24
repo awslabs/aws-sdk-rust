@@ -24,29 +24,29 @@ pub use crate::operation::put_compliance_items::_put_compliance_items_input::Put
 /// <li> <p>PatchGroup: The name of a patch group.</p> </li>
 /// <li> <p>InstalledTime: The time the association, patch, or custom compliance item was applied to the resource. Specify the time by using the following format: yyyy-MM-dd'T'HH:mm:ss'Z'</p> </li>
 /// </ul>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutComplianceItemsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::put_compliance_items::builders::PutComplianceItemsInputBuilder,
 }
 impl PutComplianceItemsFluentBuilder {
     /// Creates a new `PutComplianceItems`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::put_compliance_items::PutComplianceItems,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::put_compliance_items::PutComplianceItemsError,
         >,
     > {
@@ -54,30 +54,33 @@ impl PutComplianceItemsFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::put_compliance_items::PutComplianceItemsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::put_compliance_items::PutComplianceItemsError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -90,41 +93,53 @@ impl PutComplianceItemsFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::put_compliance_items::PutComplianceItemsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::put_compliance_items::PutComplianceItemsError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>Specify an ID for this resource. For a managed node, this is the node ID.</p>
-    pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_id(input.into());
         self
     }
     /// <p>Specify an ID for this resource. For a managed node, this is the node ID.</p>
-    pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_id(input);
         self
     }
     /// <p>Specify the type of resource. <code>ManagedInstance</code> is currently the only supported resource type.</p>
-    pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn resource_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.resource_type(input.into());
         self
     }
     /// <p>Specify the type of resource. <code>ManagedInstance</code> is currently the only supported resource type.</p>
-    pub fn set_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
     }
     /// <p>Specify the compliance type. For example, specify Association (for a State Manager association), Patch, or Custom:<code>string</code>.</p>
-    pub fn compliance_type(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn compliance_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.compliance_type(input.into());
         self
     }
     /// <p>Specify the compliance type. For example, specify Association (for a State Manager association), Patch, or Custom:<code>string</code>.</p>
-    pub fn set_compliance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_compliance_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_compliance_type(input);
         self
     }
@@ -136,7 +151,7 @@ impl PutComplianceItemsFluentBuilder {
     /// <p>A summary of the call execution that includes an execution ID, the type of execution (for example, <code>Command</code>), and the date/time of the execution using a datetime object that is saved in the following format: yyyy-MM-dd'T'HH:mm:ss'Z'.</p>
     pub fn set_execution_summary(
         mut self,
-        input: std::option::Option<crate::types::ComplianceExecutionSummary>,
+        input: ::std::option::Option<crate::types::ComplianceExecutionSummary>,
     ) -> Self {
         self.inner = self.inner.set_execution_summary(input);
         self
@@ -153,20 +168,23 @@ impl PutComplianceItemsFluentBuilder {
     /// <p>Information about the compliance as defined by the resource type. For example, for a patch compliance type, <code>Items</code> includes information about the PatchSeverity, Classification, and so on.</p>
     pub fn set_items(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ComplianceItemEntry>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ComplianceItemEntry>>,
     ) -> Self {
         self.inner = self.inner.set_items(input);
         self
     }
     /// <p>MD5 or SHA-256 content hash. The content hash is used to determine if existing information should be overwritten or ignored. If the content hashes match, the request to put compliance information is ignored.</p>
-    pub fn item_content_hash(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn item_content_hash(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.item_content_hash(input.into());
         self
     }
     /// <p>MD5 or SHA-256 content hash. The content hash is used to determine if existing information should be overwritten or ignored. If the content hashes match, the request to put compliance information is ignored.</p>
     pub fn set_item_content_hash(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_item_content_hash(input);
         self
@@ -185,7 +203,7 @@ impl PutComplianceItemsFluentBuilder {
     /// </note>
     pub fn set_upload_type(
         mut self,
-        input: std::option::Option<crate::types::ComplianceUploadType>,
+        input: ::std::option::Option<crate::types::ComplianceUploadType>,
     ) -> Self {
         self.inner = self.inner.set_upload_type(input);
         self

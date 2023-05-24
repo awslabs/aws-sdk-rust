@@ -2,22 +2,22 @@
 
 /// <p>Represents the properties of a global table.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GlobalTable {
     /// <p>The global table name.</p>
     #[doc(hidden)]
-    pub global_table_name: std::option::Option<std::string::String>,
+    pub global_table_name: ::std::option::Option<::std::string::String>,
     /// <p>The Regions where the global table has replicas.</p>
     #[doc(hidden)]
-    pub replication_group: std::option::Option<std::vec::Vec<crate::types::Replica>>,
+    pub replication_group: ::std::option::Option<::std::vec::Vec<crate::types::Replica>>,
 }
 impl GlobalTable {
     /// <p>The global table name.</p>
-    pub fn global_table_name(&self) -> std::option::Option<&str> {
+    pub fn global_table_name(&self) -> ::std::option::Option<&str> {
         self.global_table_name.as_deref()
     }
     /// <p>The Regions where the global table has replicas.</p>
-    pub fn replication_group(&self) -> std::option::Option<&[crate::types::Replica]> {
+    pub fn replication_group(&self) -> ::std::option::Option<&[crate::types::Replica]> {
         self.replication_group.as_deref()
     }
 }
@@ -30,21 +30,26 @@ impl GlobalTable {
 
 /// A builder for [`GlobalTable`](crate::types::GlobalTable).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GlobalTableBuilder {
-    pub(crate) global_table_name: std::option::Option<std::string::String>,
-    pub(crate) replication_group: std::option::Option<std::vec::Vec<crate::types::Replica>>,
+    pub(crate) global_table_name: ::std::option::Option<::std::string::String>,
+    pub(crate) replication_group: ::std::option::Option<::std::vec::Vec<crate::types::Replica>>,
 }
 impl GlobalTableBuilder {
     /// <p>The global table name.</p>
-    pub fn global_table_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.global_table_name = Some(input.into());
+    pub fn global_table_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.global_table_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The global table name.</p>
     pub fn set_global_table_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.global_table_name = input;
         self
@@ -57,13 +62,13 @@ impl GlobalTableBuilder {
     pub fn replication_group(mut self, input: crate::types::Replica) -> Self {
         let mut v = self.replication_group.unwrap_or_default();
         v.push(input);
-        self.replication_group = Some(v);
+        self.replication_group = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Regions where the global table has replicas.</p>
     pub fn set_replication_group(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Replica>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Replica>>,
     ) -> Self {
         self.replication_group = input;
         self

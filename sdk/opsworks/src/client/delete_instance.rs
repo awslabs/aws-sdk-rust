@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteInstance`](crate::operation::delete_instance::builders::DeleteInstanceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`instance_id(impl Into<String>)`](crate::operation::delete_instance::builders::DeleteInstanceFluentBuilder::instance_id) / [`set_instance_id(Option<String>)`](crate::operation::delete_instance::builders::DeleteInstanceFluentBuilder::set_instance_id): <p>The instance ID.</p>
+    ///   - [`instance_id(impl ::std::convert::Into<String>)`](crate::operation::delete_instance::builders::DeleteInstanceFluentBuilder::instance_id) / [`set_instance_id(Option<String>)`](crate::operation::delete_instance::builders::DeleteInstanceFluentBuilder::set_instance_id): <p>The instance ID.</p>
     ///   - [`delete_elastic_ip(bool)`](crate::operation::delete_instance::builders::DeleteInstanceFluentBuilder::delete_elastic_ip) / [`set_delete_elastic_ip(Option<bool>)`](crate::operation::delete_instance::builders::DeleteInstanceFluentBuilder::set_delete_elastic_ip): <p>Whether to delete the instance Elastic IP address.</p>
     ///   - [`delete_volumes(bool)`](crate::operation::delete_instance::builders::DeleteInstanceFluentBuilder::delete_volumes) / [`set_delete_volumes(Option<bool>)`](crate::operation::delete_instance::builders::DeleteInstanceFluentBuilder::set_delete_volumes): <p>Whether to delete the instance's Amazon EBS volumes.</p>
     /// - On success, responds with [`DeleteInstanceOutput`](crate::operation::delete_instance::DeleteInstanceOutput)

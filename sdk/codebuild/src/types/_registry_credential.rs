@@ -7,28 +7,28 @@
 /// </ul>
 /// <p> For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-private-registry.html">Private Registry with Secrets Manager Sample for CodeBuild</a>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegistryCredential {
     /// <p> The Amazon Resource Name (ARN) or name of credentials created using Secrets Manager. </p> <note>
     /// <p> The <code>credential</code> can use the name of the credentials only if they exist in your current Amazon Web Services Region. </p>
     /// </note>
     #[doc(hidden)]
-    pub credential: std::option::Option<std::string::String>,
+    pub credential: ::std::option::Option<::std::string::String>,
     /// <p> The service that created the credentials to access a private Docker registry. The valid value, SECRETS_MANAGER, is for Secrets Manager. </p>
     #[doc(hidden)]
-    pub credential_provider: std::option::Option<crate::types::CredentialProviderType>,
+    pub credential_provider: ::std::option::Option<crate::types::CredentialProviderType>,
 }
 impl RegistryCredential {
     /// <p> The Amazon Resource Name (ARN) or name of credentials created using Secrets Manager. </p> <note>
     /// <p> The <code>credential</code> can use the name of the credentials only if they exist in your current Amazon Web Services Region. </p>
     /// </note>
-    pub fn credential(&self) -> std::option::Option<&str> {
+    pub fn credential(&self) -> ::std::option::Option<&str> {
         self.credential.as_deref()
     }
     /// <p> The service that created the credentials to access a private Docker registry. The valid value, SECRETS_MANAGER, is for Secrets Manager. </p>
     pub fn credential_provider(
         &self,
-    ) -> std::option::Option<&crate::types::CredentialProviderType> {
+    ) -> ::std::option::Option<&crate::types::CredentialProviderType> {
         self.credential_provider.as_ref()
     }
 }
@@ -41,35 +41,37 @@ impl RegistryCredential {
 
 /// A builder for [`RegistryCredential`](crate::types::RegistryCredential).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RegistryCredentialBuilder {
-    pub(crate) credential: std::option::Option<std::string::String>,
-    pub(crate) credential_provider: std::option::Option<crate::types::CredentialProviderType>,
+    pub(crate) credential: ::std::option::Option<::std::string::String>,
+    pub(crate) credential_provider: ::std::option::Option<crate::types::CredentialProviderType>,
 }
 impl RegistryCredentialBuilder {
     /// <p> The Amazon Resource Name (ARN) or name of credentials created using Secrets Manager. </p> <note>
     /// <p> The <code>credential</code> can use the name of the credentials only if they exist in your current Amazon Web Services Region. </p>
     /// </note>
-    pub fn credential(mut self, input: impl Into<std::string::String>) -> Self {
-        self.credential = Some(input.into());
+    pub fn credential(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.credential = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Amazon Resource Name (ARN) or name of credentials created using Secrets Manager. </p> <note>
     /// <p> The <code>credential</code> can use the name of the credentials only if they exist in your current Amazon Web Services Region. </p>
     /// </note>
-    pub fn set_credential(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_credential(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.credential = input;
         self
     }
     /// <p> The service that created the credentials to access a private Docker registry. The valid value, SECRETS_MANAGER, is for Secrets Manager. </p>
     pub fn credential_provider(mut self, input: crate::types::CredentialProviderType) -> Self {
-        self.credential_provider = Some(input);
+        self.credential_provider = ::std::option::Option::Some(input);
         self
     }
     /// <p> The service that created the credentials to access a private Docker registry. The valid value, SECRETS_MANAGER, is for Secrets Manager. </p>
     pub fn set_credential_provider(
         mut self,
-        input: std::option::Option<crate::types::CredentialProviderType>,
+        input: ::std::option::Option<crate::types::CredentialProviderType>,
     ) -> Self {
         self.credential_provider = input;
         self

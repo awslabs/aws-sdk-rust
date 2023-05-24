@@ -2,30 +2,30 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeReplicationTaskIndividualAssessmentsOutput {
     /// <p>A pagination token returned for you to pass to a subsequent request. If you pass this token as the <code>Marker</code> value in a subsequent request, the response includes only records beyond the marker, up to the value specified in the request by <code>MaxRecords</code>.</p>
     #[doc(hidden)]
-    pub marker: std::option::Option<std::string::String>,
+    pub marker: ::std::option::Option<::std::string::String>,
     /// <p>One or more individual assessments as specified by <code>Filters</code>.</p>
     #[doc(hidden)]
     pub replication_task_individual_assessments:
-        std::option::Option<std::vec::Vec<crate::types::ReplicationTaskIndividualAssessment>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ReplicationTaskIndividualAssessment>>,
     _request_id: Option<String>,
 }
 impl DescribeReplicationTaskIndividualAssessmentsOutput {
     /// <p>A pagination token returned for you to pass to a subsequent request. If you pass this token as the <code>Marker</code> value in a subsequent request, the response includes only records beyond the marker, up to the value specified in the request by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
     /// <p>One or more individual assessments as specified by <code>Filters</code>.</p>
     pub fn replication_task_individual_assessments(
         &self,
-    ) -> std::option::Option<&[crate::types::ReplicationTaskIndividualAssessment]> {
+    ) -> ::std::option::Option<&[crate::types::ReplicationTaskIndividualAssessment]> {
         self.replication_task_individual_assessments.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeReplicationTaskIndividualAssessmentsOutput {
+impl ::aws_http::request_id::RequestId for DescribeReplicationTaskIndividualAssessmentsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -39,21 +39,23 @@ impl DescribeReplicationTaskIndividualAssessmentsOutput {
 
 /// A builder for [`DescribeReplicationTaskIndividualAssessmentsOutput`](crate::operation::describe_replication_task_individual_assessments::DescribeReplicationTaskIndividualAssessmentsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeReplicationTaskIndividualAssessmentsOutputBuilder {
-    pub(crate) marker: std::option::Option<std::string::String>,
+    pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) replication_task_individual_assessments:
-        std::option::Option<std::vec::Vec<crate::types::ReplicationTaskIndividualAssessment>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ReplicationTaskIndividualAssessment>>,
     _request_id: Option<String>,
 }
 impl DescribeReplicationTaskIndividualAssessmentsOutputBuilder {
     /// <p>A pagination token returned for you to pass to a subsequent request. If you pass this token as the <code>Marker</code> value in a subsequent request, the response includes only records beyond the marker, up to the value specified in the request by <code>MaxRecords</code>.</p>
-    pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-        self.marker = Some(input.into());
+    pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A pagination token returned for you to pass to a subsequent request. If you pass this token as the <code>Marker</code> value in a subsequent request, the response includes only records beyond the marker, up to the value specified in the request by <code>MaxRecords</code>.</p>
-    pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
     }
@@ -70,14 +72,14 @@ impl DescribeReplicationTaskIndividualAssessmentsOutputBuilder {
             .replication_task_individual_assessments
             .unwrap_or_default();
         v.push(input);
-        self.replication_task_individual_assessments = Some(v);
+        self.replication_task_individual_assessments = ::std::option::Option::Some(v);
         self
     }
     /// <p>One or more individual assessments as specified by <code>Filters</code>.</p>
     pub fn set_replication_task_individual_assessments(
         mut self,
-        input: std::option::Option<
-            std::vec::Vec<crate::types::ReplicationTaskIndividualAssessment>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::ReplicationTaskIndividualAssessment>,
         >,
     ) -> Self {
         self.replication_task_individual_assessments = input;

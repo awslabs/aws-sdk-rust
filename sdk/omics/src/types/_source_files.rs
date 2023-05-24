@@ -2,22 +2,22 @@
 
 /// <p>Source files for a sequence.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SourceFiles {
     /// <p>The location of the first file in Amazon S3.</p>
     #[doc(hidden)]
-    pub source1: std::option::Option<std::string::String>,
+    pub source1: ::std::option::Option<::std::string::String>,
     /// <p>The location of the second file in Amazon S3.</p>
     #[doc(hidden)]
-    pub source2: std::option::Option<std::string::String>,
+    pub source2: ::std::option::Option<::std::string::String>,
 }
 impl SourceFiles {
     /// <p>The location of the first file in Amazon S3.</p>
-    pub fn source1(&self) -> std::option::Option<&str> {
+    pub fn source1(&self) -> ::std::option::Option<&str> {
         self.source1.as_deref()
     }
     /// <p>The location of the second file in Amazon S3.</p>
-    pub fn source2(&self) -> std::option::Option<&str> {
+    pub fn source2(&self) -> ::std::option::Option<&str> {
         self.source2.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl SourceFiles {
 
 /// A builder for [`SourceFiles`](crate::types::SourceFiles).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SourceFilesBuilder {
-    pub(crate) source1: std::option::Option<std::string::String>,
-    pub(crate) source2: std::option::Option<std::string::String>,
+    pub(crate) source1: ::std::option::Option<::std::string::String>,
+    pub(crate) source2: ::std::option::Option<::std::string::String>,
 }
 impl SourceFilesBuilder {
     /// <p>The location of the first file in Amazon S3.</p>
-    pub fn source1(mut self, input: impl Into<std::string::String>) -> Self {
-        self.source1 = Some(input.into());
+    pub fn source1(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source1 = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The location of the first file in Amazon S3.</p>
-    pub fn set_source1(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_source1(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source1 = input;
         self
     }
     /// <p>The location of the second file in Amazon S3.</p>
-    pub fn source2(mut self, input: impl Into<std::string::String>) -> Self {
-        self.source2 = Some(input.into());
+    pub fn source2(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source2 = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The location of the second file in Amazon S3.</p>
-    pub fn set_source2(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_source2(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source2 = input;
         self
     }

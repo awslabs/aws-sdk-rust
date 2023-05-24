@@ -2,22 +2,22 @@
 
 /// <p> Status of the Elasticsearch version options for the specified Elasticsearch domain.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ElasticsearchVersionStatus {
     /// <p> Specifies the Elasticsearch version for the specified Elasticsearch domain.</p>
     #[doc(hidden)]
-    pub options: std::option::Option<std::string::String>,
+    pub options: ::std::option::Option<::std::string::String>,
     /// <p> Specifies the status of the Elasticsearch version options for the specified Elasticsearch domain.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::OptionStatus>,
+    pub status: ::std::option::Option<crate::types::OptionStatus>,
 }
 impl ElasticsearchVersionStatus {
     /// <p> Specifies the Elasticsearch version for the specified Elasticsearch domain.</p>
-    pub fn options(&self) -> std::option::Option<&str> {
+    pub fn options(&self) -> ::std::option::Option<&str> {
         self.options.as_deref()
     }
     /// <p> Specifies the status of the Elasticsearch version options for the specified Elasticsearch domain.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::OptionStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::OptionStatus> {
         self.status.as_ref()
     }
 }
@@ -30,29 +30,31 @@ impl ElasticsearchVersionStatus {
 
 /// A builder for [`ElasticsearchVersionStatus`](crate::types::ElasticsearchVersionStatus).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ElasticsearchVersionStatusBuilder {
-    pub(crate) options: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::OptionStatus>,
+    pub(crate) options: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::OptionStatus>,
 }
 impl ElasticsearchVersionStatusBuilder {
     /// <p> Specifies the Elasticsearch version for the specified Elasticsearch domain.</p>
-    pub fn options(mut self, input: impl Into<std::string::String>) -> Self {
-        self.options = Some(input.into());
+    pub fn options(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.options = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Specifies the Elasticsearch version for the specified Elasticsearch domain.</p>
-    pub fn set_options(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_options(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.options = input;
         self
     }
     /// <p> Specifies the status of the Elasticsearch version options for the specified Elasticsearch domain.</p>
     pub fn status(mut self, input: crate::types::OptionStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p> Specifies the status of the Elasticsearch version options for the specified Elasticsearch domain.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::OptionStatus>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::OptionStatus>) -> Self {
         self.status = input;
         self
     }

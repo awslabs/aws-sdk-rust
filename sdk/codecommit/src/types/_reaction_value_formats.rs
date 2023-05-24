@@ -2,29 +2,29 @@
 
 /// <p>Information about the values for reactions to a comment. AWS CodeCommit supports a limited set of reactions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReactionValueFormats {
     /// <p>The Emoji Version 1.0 graphic of the reaction. These graphics are interpreted slightly differently on different operating systems.</p>
     #[doc(hidden)]
-    pub emoji: std::option::Option<std::string::String>,
+    pub emoji: ::std::option::Option<::std::string::String>,
     /// <p>The emoji short code for the reaction. Short codes are interpreted slightly differently on different operating systems. </p>
     #[doc(hidden)]
-    pub short_code: std::option::Option<std::string::String>,
+    pub short_code: ::std::option::Option<::std::string::String>,
     /// <p>The Unicode codepoint for the reaction.</p>
     #[doc(hidden)]
-    pub unicode: std::option::Option<std::string::String>,
+    pub unicode: ::std::option::Option<::std::string::String>,
 }
 impl ReactionValueFormats {
     /// <p>The Emoji Version 1.0 graphic of the reaction. These graphics are interpreted slightly differently on different operating systems.</p>
-    pub fn emoji(&self) -> std::option::Option<&str> {
+    pub fn emoji(&self) -> ::std::option::Option<&str> {
         self.emoji.as_deref()
     }
     /// <p>The emoji short code for the reaction. Short codes are interpreted slightly differently on different operating systems. </p>
-    pub fn short_code(&self) -> std::option::Option<&str> {
+    pub fn short_code(&self) -> ::std::option::Option<&str> {
         self.short_code.as_deref()
     }
     /// <p>The Unicode codepoint for the reaction.</p>
-    pub fn unicode(&self) -> std::option::Option<&str> {
+    pub fn unicode(&self) -> ::std::option::Option<&str> {
         self.unicode.as_deref()
     }
 }
@@ -37,40 +37,42 @@ impl ReactionValueFormats {
 
 /// A builder for [`ReactionValueFormats`](crate::types::ReactionValueFormats).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ReactionValueFormatsBuilder {
-    pub(crate) emoji: std::option::Option<std::string::String>,
-    pub(crate) short_code: std::option::Option<std::string::String>,
-    pub(crate) unicode: std::option::Option<std::string::String>,
+    pub(crate) emoji: ::std::option::Option<::std::string::String>,
+    pub(crate) short_code: ::std::option::Option<::std::string::String>,
+    pub(crate) unicode: ::std::option::Option<::std::string::String>,
 }
 impl ReactionValueFormatsBuilder {
     /// <p>The Emoji Version 1.0 graphic of the reaction. These graphics are interpreted slightly differently on different operating systems.</p>
-    pub fn emoji(mut self, input: impl Into<std::string::String>) -> Self {
-        self.emoji = Some(input.into());
+    pub fn emoji(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.emoji = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Emoji Version 1.0 graphic of the reaction. These graphics are interpreted slightly differently on different operating systems.</p>
-    pub fn set_emoji(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_emoji(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.emoji = input;
         self
     }
     /// <p>The emoji short code for the reaction. Short codes are interpreted slightly differently on different operating systems. </p>
-    pub fn short_code(mut self, input: impl Into<std::string::String>) -> Self {
-        self.short_code = Some(input.into());
+    pub fn short_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.short_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The emoji short code for the reaction. Short codes are interpreted slightly differently on different operating systems. </p>
-    pub fn set_short_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_short_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.short_code = input;
         self
     }
     /// <p>The Unicode codepoint for the reaction.</p>
-    pub fn unicode(mut self, input: impl Into<std::string::String>) -> Self {
-        self.unicode = Some(input.into());
+    pub fn unicode(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.unicode = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Unicode codepoint for the reaction.</p>
-    pub fn set_unicode(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_unicode(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.unicode = input;
         self
     }

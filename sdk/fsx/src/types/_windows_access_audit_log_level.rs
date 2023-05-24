@@ -40,13 +40,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum WindowsAccessAuditLogLevel {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,7 +60,7 @@ pub enum WindowsAccessAuditLogLevel {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for WindowsAccessAuditLogLevel {
+impl ::std::convert::From<&str> for WindowsAccessAuditLogLevel {
     fn from(s: &str) -> Self {
         match s {
             "DISABLED" => WindowsAccessAuditLogLevel::Disabled,
@@ -73,11 +73,11 @@ impl std::convert::From<&str> for WindowsAccessAuditLogLevel {
         }
     }
 }
-impl std::str::FromStr for WindowsAccessAuditLogLevel {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for WindowsAccessAuditLogLevel {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(WindowsAccessAuditLogLevel::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(WindowsAccessAuditLogLevel::from(s))
     }
 }
 impl WindowsAccessAuditLogLevel {
@@ -101,7 +101,7 @@ impl WindowsAccessAuditLogLevel {
         ]
     }
 }
-impl AsRef<str> for WindowsAccessAuditLogLevel {
+impl ::std::convert::AsRef<str> for WindowsAccessAuditLogLevel {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

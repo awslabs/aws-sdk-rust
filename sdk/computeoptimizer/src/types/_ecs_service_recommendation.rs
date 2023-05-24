@@ -2,23 +2,23 @@
 
 /// <p> Describes an Amazon ECS service recommendation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EcsServiceRecommendation {
     /// <p> The Amazon Resource Name (ARN) of the current Amazon ECS service. </p>
     /// <p> The following is the format of the ARN: </p>
     /// <p> <code>arn:aws:ecs:region:aws_account_id:service/cluster-name/service-name</code> </p>
     #[doc(hidden)]
-    pub service_arn: std::option::Option<std::string::String>,
+    pub service_arn: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon Web Services account ID of the Amazon ECS service. </p>
     #[doc(hidden)]
-    pub account_id: std::option::Option<std::string::String>,
+    pub account_id: ::std::option::Option<::std::string::String>,
     /// <p> The configuration of the current Amazon ECS service. </p>
     #[doc(hidden)]
-    pub current_service_configuration: std::option::Option<crate::types::ServiceConfiguration>,
+    pub current_service_configuration: ::std::option::Option<crate::types::ServiceConfiguration>,
     /// <p> An array of objects that describe the utilization metrics of the Amazon ECS service. </p>
     #[doc(hidden)]
     pub utilization_metrics:
-        std::option::Option<std::vec::Vec<crate::types::EcsServiceUtilizationMetric>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::EcsServiceUtilizationMetric>>,
     /// <p> The number of days the Amazon ECS service utilization metrics were analyzed. </p>
     #[doc(hidden)]
     pub lookback_period_in_days: f64,
@@ -26,10 +26,10 @@ pub struct EcsServiceRecommendation {
     /// <p>Compute Optimizer only supports the Fargate launch type.</p>
     /// </note>
     #[doc(hidden)]
-    pub launch_type: std::option::Option<crate::types::EcsServiceLaunchType>,
+    pub launch_type: ::std::option::Option<crate::types::EcsServiceLaunchType>,
     /// <p> The timestamp of when the Amazon ECS service recommendation was last generated. </p>
     #[doc(hidden)]
-    pub last_refresh_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_refresh_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The finding classification of an Amazon ECS service. </p>
     /// <p>Findings for Amazon ECS services include:</p>
     /// <ul>
@@ -38,7 +38,7 @@ pub struct EcsServiceRecommendation {
     /// <li> <p> <b> <code>Optimized</code> </b> — When both the CPU and memory of your Amazon ECS service meet the performance requirements of your workload, the service is considered optimized.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub finding: std::option::Option<crate::types::EcsServiceRecommendationFinding>,
+    pub finding: ::std::option::Option<crate::types::EcsServiceRecommendationFinding>,
     /// <p> The reason for the finding classification of an Amazon ECS service. </p>
     /// <p>Finding reason codes for Amazon ECS services include:</p>
     /// <ul>
@@ -48,40 +48,41 @@ pub struct EcsServiceRecommendation {
     /// <li> <p> <b> <code>MemoryOverprovisioned</code> </b> — The service memory configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>MemoryUtilization</code> metric of the current service during the look-back period.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub finding_reason_codes:
-        std::option::Option<std::vec::Vec<crate::types::EcsServiceRecommendationFindingReasonCode>>,
+    pub finding_reason_codes: ::std::option::Option<
+        ::std::vec::Vec<crate::types::EcsServiceRecommendationFindingReasonCode>,
+    >,
     /// <p> An array of objects that describe the recommendation options for the Amazon ECS service. </p>
     #[doc(hidden)]
     pub service_recommendation_options:
-        std::option::Option<std::vec::Vec<crate::types::EcsServiceRecommendationOption>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::EcsServiceRecommendationOption>>,
     /// <p> The risk of the current Amazon ECS service not meeting the performance needs of its workloads. The higher the risk, the more likely the current service can't meet the performance requirements of its workload. </p>
     #[doc(hidden)]
-    pub current_performance_risk: std::option::Option<crate::types::CurrentPerformanceRisk>,
+    pub current_performance_risk: ::std::option::Option<crate::types::CurrentPerformanceRisk>,
     /// <p> A list of tags assigned to your Amazon ECS service recommendations. </p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl EcsServiceRecommendation {
     /// <p> The Amazon Resource Name (ARN) of the current Amazon ECS service. </p>
     /// <p> The following is the format of the ARN: </p>
     /// <p> <code>arn:aws:ecs:region:aws_account_id:service/cluster-name/service-name</code> </p>
-    pub fn service_arn(&self) -> std::option::Option<&str> {
+    pub fn service_arn(&self) -> ::std::option::Option<&str> {
         self.service_arn.as_deref()
     }
     /// <p> The Amazon Web Services account ID of the Amazon ECS service. </p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p> The configuration of the current Amazon ECS service. </p>
     pub fn current_service_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::ServiceConfiguration> {
+    ) -> ::std::option::Option<&crate::types::ServiceConfiguration> {
         self.current_service_configuration.as_ref()
     }
     /// <p> An array of objects that describe the utilization metrics of the Amazon ECS service. </p>
     pub fn utilization_metrics(
         &self,
-    ) -> std::option::Option<&[crate::types::EcsServiceUtilizationMetric]> {
+    ) -> ::std::option::Option<&[crate::types::EcsServiceUtilizationMetric]> {
         self.utilization_metrics.as_deref()
     }
     /// <p> The number of days the Amazon ECS service utilization metrics were analyzed. </p>
@@ -91,11 +92,11 @@ impl EcsServiceRecommendation {
     /// <p> The launch type the Amazon ECS service is using. </p> <note>
     /// <p>Compute Optimizer only supports the Fargate launch type.</p>
     /// </note>
-    pub fn launch_type(&self) -> std::option::Option<&crate::types::EcsServiceLaunchType> {
+    pub fn launch_type(&self) -> ::std::option::Option<&crate::types::EcsServiceLaunchType> {
         self.launch_type.as_ref()
     }
     /// <p> The timestamp of when the Amazon ECS service recommendation was last generated. </p>
-    pub fn last_refresh_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_refresh_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_refresh_timestamp.as_ref()
     }
     /// <p> The finding classification of an Amazon ECS service. </p>
@@ -105,7 +106,7 @@ impl EcsServiceRecommendation {
     /// <li> <p> <b> <code>Overprovisioned</code> </b> — When Compute Optimizer detects that there’s excessive memory or CPU, an Amazon ECS service is considered over-provisioned. An over-provisioned service might result in additional infrastructure costs. </p> </li>
     /// <li> <p> <b> <code>Optimized</code> </b> — When both the CPU and memory of your Amazon ECS service meet the performance requirements of your workload, the service is considered optimized.</p> </li>
     /// </ul>
-    pub fn finding(&self) -> std::option::Option<&crate::types::EcsServiceRecommendationFinding> {
+    pub fn finding(&self) -> ::std::option::Option<&crate::types::EcsServiceRecommendationFinding> {
         self.finding.as_ref()
     }
     /// <p> The reason for the finding classification of an Amazon ECS service. </p>
@@ -118,23 +119,23 @@ impl EcsServiceRecommendation {
     /// </ul>
     pub fn finding_reason_codes(
         &self,
-    ) -> std::option::Option<&[crate::types::EcsServiceRecommendationFindingReasonCode]> {
+    ) -> ::std::option::Option<&[crate::types::EcsServiceRecommendationFindingReasonCode]> {
         self.finding_reason_codes.as_deref()
     }
     /// <p> An array of objects that describe the recommendation options for the Amazon ECS service. </p>
     pub fn service_recommendation_options(
         &self,
-    ) -> std::option::Option<&[crate::types::EcsServiceRecommendationOption]> {
+    ) -> ::std::option::Option<&[crate::types::EcsServiceRecommendationOption]> {
         self.service_recommendation_options.as_deref()
     }
     /// <p> The risk of the current Amazon ECS service not meeting the performance needs of its workloads. The higher the risk, the more likely the current service can't meet the performance requirements of its workload. </p>
     pub fn current_performance_risk(
         &self,
-    ) -> std::option::Option<&crate::types::CurrentPerformanceRisk> {
+    ) -> ::std::option::Option<&crate::types::CurrentPerformanceRisk> {
         self.current_performance_risk.as_ref()
     }
     /// <p> A list of tags assigned to your Amazon ECS service recommendations. </p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -147,47 +148,51 @@ impl EcsServiceRecommendation {
 
 /// A builder for [`EcsServiceRecommendation`](crate::types::EcsServiceRecommendation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EcsServiceRecommendationBuilder {
-    pub(crate) service_arn: std::option::Option<std::string::String>,
-    pub(crate) account_id: std::option::Option<std::string::String>,
+    pub(crate) service_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) current_service_configuration:
-        std::option::Option<crate::types::ServiceConfiguration>,
+        ::std::option::Option<crate::types::ServiceConfiguration>,
     pub(crate) utilization_metrics:
-        std::option::Option<std::vec::Vec<crate::types::EcsServiceUtilizationMetric>>,
-    pub(crate) lookback_period_in_days: std::option::Option<f64>,
-    pub(crate) launch_type: std::option::Option<crate::types::EcsServiceLaunchType>,
-    pub(crate) last_refresh_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) finding: std::option::Option<crate::types::EcsServiceRecommendationFinding>,
-    pub(crate) finding_reason_codes:
-        std::option::Option<std::vec::Vec<crate::types::EcsServiceRecommendationFindingReasonCode>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::EcsServiceUtilizationMetric>>,
+    pub(crate) lookback_period_in_days: ::std::option::Option<f64>,
+    pub(crate) launch_type: ::std::option::Option<crate::types::EcsServiceLaunchType>,
+    pub(crate) last_refresh_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) finding: ::std::option::Option<crate::types::EcsServiceRecommendationFinding>,
+    pub(crate) finding_reason_codes: ::std::option::Option<
+        ::std::vec::Vec<crate::types::EcsServiceRecommendationFindingReasonCode>,
+    >,
     pub(crate) service_recommendation_options:
-        std::option::Option<std::vec::Vec<crate::types::EcsServiceRecommendationOption>>,
-    pub(crate) current_performance_risk: std::option::Option<crate::types::CurrentPerformanceRisk>,
-    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::EcsServiceRecommendationOption>>,
+    pub(crate) current_performance_risk:
+        ::std::option::Option<crate::types::CurrentPerformanceRisk>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl EcsServiceRecommendationBuilder {
     /// <p> The Amazon Resource Name (ARN) of the current Amazon ECS service. </p>
     /// <p> The following is the format of the ARN: </p>
     /// <p> <code>arn:aws:ecs:region:aws_account_id:service/cluster-name/service-name</code> </p>
-    pub fn service_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.service_arn = Some(input.into());
+    pub fn service_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.service_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Amazon Resource Name (ARN) of the current Amazon ECS service. </p>
     /// <p> The following is the format of the ARN: </p>
     /// <p> <code>arn:aws:ecs:region:aws_account_id:service/cluster-name/service-name</code> </p>
-    pub fn set_service_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_service_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_arn = input;
         self
     }
     /// <p> The Amazon Web Services account ID of the Amazon ECS service. </p>
-    pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.account_id = Some(input.into());
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Amazon Web Services account ID of the Amazon ECS service. </p>
-    pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
     }
@@ -196,13 +201,13 @@ impl EcsServiceRecommendationBuilder {
         mut self,
         input: crate::types::ServiceConfiguration,
     ) -> Self {
-        self.current_service_configuration = Some(input);
+        self.current_service_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p> The configuration of the current Amazon ECS service. </p>
     pub fn set_current_service_configuration(
         mut self,
-        input: std::option::Option<crate::types::ServiceConfiguration>,
+        input: ::std::option::Option<crate::types::ServiceConfiguration>,
     ) -> Self {
         self.current_service_configuration = input;
         self
@@ -215,24 +220,24 @@ impl EcsServiceRecommendationBuilder {
     pub fn utilization_metrics(mut self, input: crate::types::EcsServiceUtilizationMetric) -> Self {
         let mut v = self.utilization_metrics.unwrap_or_default();
         v.push(input);
-        self.utilization_metrics = Some(v);
+        self.utilization_metrics = ::std::option::Option::Some(v);
         self
     }
     /// <p> An array of objects that describe the utilization metrics of the Amazon ECS service. </p>
     pub fn set_utilization_metrics(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::EcsServiceUtilizationMetric>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::EcsServiceUtilizationMetric>>,
     ) -> Self {
         self.utilization_metrics = input;
         self
     }
     /// <p> The number of days the Amazon ECS service utilization metrics were analyzed. </p>
     pub fn lookback_period_in_days(mut self, input: f64) -> Self {
-        self.lookback_period_in_days = Some(input);
+        self.lookback_period_in_days = ::std::option::Option::Some(input);
         self
     }
     /// <p> The number of days the Amazon ECS service utilization metrics were analyzed. </p>
-    pub fn set_lookback_period_in_days(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_lookback_period_in_days(mut self, input: ::std::option::Option<f64>) -> Self {
         self.lookback_period_in_days = input;
         self
     }
@@ -240,7 +245,7 @@ impl EcsServiceRecommendationBuilder {
     /// <p>Compute Optimizer only supports the Fargate launch type.</p>
     /// </note>
     pub fn launch_type(mut self, input: crate::types::EcsServiceLaunchType) -> Self {
-        self.launch_type = Some(input);
+        self.launch_type = ::std::option::Option::Some(input);
         self
     }
     /// <p> The launch type the Amazon ECS service is using. </p> <note>
@@ -248,20 +253,20 @@ impl EcsServiceRecommendationBuilder {
     /// </note>
     pub fn set_launch_type(
         mut self,
-        input: std::option::Option<crate::types::EcsServiceLaunchType>,
+        input: ::std::option::Option<crate::types::EcsServiceLaunchType>,
     ) -> Self {
         self.launch_type = input;
         self
     }
     /// <p> The timestamp of when the Amazon ECS service recommendation was last generated. </p>
-    pub fn last_refresh_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_refresh_timestamp = Some(input);
+    pub fn last_refresh_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_refresh_timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p> The timestamp of when the Amazon ECS service recommendation was last generated. </p>
     pub fn set_last_refresh_timestamp(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_refresh_timestamp = input;
         self
@@ -274,7 +279,7 @@ impl EcsServiceRecommendationBuilder {
     /// <li> <p> <b> <code>Optimized</code> </b> — When both the CPU and memory of your Amazon ECS service meet the performance requirements of your workload, the service is considered optimized.</p> </li>
     /// </ul>
     pub fn finding(mut self, input: crate::types::EcsServiceRecommendationFinding) -> Self {
-        self.finding = Some(input);
+        self.finding = ::std::option::Option::Some(input);
         self
     }
     /// <p> The finding classification of an Amazon ECS service. </p>
@@ -286,7 +291,7 @@ impl EcsServiceRecommendationBuilder {
     /// </ul>
     pub fn set_finding(
         mut self,
-        input: std::option::Option<crate::types::EcsServiceRecommendationFinding>,
+        input: ::std::option::Option<crate::types::EcsServiceRecommendationFinding>,
     ) -> Self {
         self.finding = input;
         self
@@ -309,7 +314,7 @@ impl EcsServiceRecommendationBuilder {
     ) -> Self {
         let mut v = self.finding_reason_codes.unwrap_or_default();
         v.push(input);
-        self.finding_reason_codes = Some(v);
+        self.finding_reason_codes = ::std::option::Option::Some(v);
         self
     }
     /// <p> The reason for the finding classification of an Amazon ECS service. </p>
@@ -322,8 +327,8 @@ impl EcsServiceRecommendationBuilder {
     /// </ul>
     pub fn set_finding_reason_codes(
         mut self,
-        input: std::option::Option<
-            std::vec::Vec<crate::types::EcsServiceRecommendationFindingReasonCode>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::EcsServiceRecommendationFindingReasonCode>,
         >,
     ) -> Self {
         self.finding_reason_codes = input;
@@ -340,26 +345,26 @@ impl EcsServiceRecommendationBuilder {
     ) -> Self {
         let mut v = self.service_recommendation_options.unwrap_or_default();
         v.push(input);
-        self.service_recommendation_options = Some(v);
+        self.service_recommendation_options = ::std::option::Option::Some(v);
         self
     }
     /// <p> An array of objects that describe the recommendation options for the Amazon ECS service. </p>
     pub fn set_service_recommendation_options(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::EcsServiceRecommendationOption>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::EcsServiceRecommendationOption>>,
     ) -> Self {
         self.service_recommendation_options = input;
         self
     }
     /// <p> The risk of the current Amazon ECS service not meeting the performance needs of its workloads. The higher the risk, the more likely the current service can't meet the performance requirements of its workload. </p>
     pub fn current_performance_risk(mut self, input: crate::types::CurrentPerformanceRisk) -> Self {
-        self.current_performance_risk = Some(input);
+        self.current_performance_risk = ::std::option::Option::Some(input);
         self
     }
     /// <p> The risk of the current Amazon ECS service not meeting the performance needs of its workloads. The higher the risk, the more likely the current service can't meet the performance requirements of its workload. </p>
     pub fn set_current_performance_risk(
         mut self,
-        input: std::option::Option<crate::types::CurrentPerformanceRisk>,
+        input: ::std::option::Option<crate::types::CurrentPerformanceRisk>,
     ) -> Self {
         self.current_performance_risk = input;
         self
@@ -372,13 +377,13 @@ impl EcsServiceRecommendationBuilder {
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
-        self.tags = Some(v);
+        self.tags = ::std::option::Option::Some(v);
         self
     }
     /// <p> A list of tags assigned to your Amazon ECS service recommendations. </p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tags = input;
         self

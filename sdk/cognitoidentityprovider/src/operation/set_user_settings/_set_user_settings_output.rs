@@ -2,11 +2,11 @@
 
 /// <p>The response from the server for a set user settings request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SetUserSettingsOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for SetUserSettingsOutput {
+impl ::aws_http::request_id::RequestId for SetUserSettingsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -21,7 +21,9 @@ impl SetUserSettingsOutput {
 
 /// A builder for [`SetUserSettingsOutput`](crate::operation::set_user_settings::SetUserSettingsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SetUserSettingsOutputBuilder {
     _request_id: Option<String>,
 }

@@ -2,15 +2,15 @@
 
 /// <p>A request for a list of the configured Cognito Events</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCognitoEventsInput {
     /// <p>The Cognito Identity Pool ID for the request</p>
     #[doc(hidden)]
-    pub identity_pool_id: std::option::Option<std::string::String>,
+    pub identity_pool_id: ::std::option::Option<::std::string::String>,
 }
 impl GetCognitoEventsInput {
     /// <p>The Cognito Identity Pool ID for the request</p>
-    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
+    pub fn identity_pool_id(&self) -> ::std::option::Option<&str> {
         self.identity_pool_id.as_deref()
     }
 }
@@ -24,29 +24,37 @@ impl GetCognitoEventsInput {
 
 /// A builder for [`GetCognitoEventsInput`](crate::operation::get_cognito_events::GetCognitoEventsInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetCognitoEventsInputBuilder {
-    pub(crate) identity_pool_id: std::option::Option<std::string::String>,
+    pub(crate) identity_pool_id: ::std::option::Option<::std::string::String>,
 }
 impl GetCognitoEventsInputBuilder {
     /// <p>The Cognito Identity Pool ID for the request</p>
-    pub fn identity_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.identity_pool_id = Some(input.into());
+    pub fn identity_pool_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.identity_pool_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Cognito Identity Pool ID for the request</p>
-    pub fn set_identity_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_identity_pool_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.identity_pool_id = input;
         self
     }
     /// Consumes the builder and constructs a [`GetCognitoEventsInput`](crate::operation::get_cognito_events::GetCognitoEventsInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::get_cognito_events::GetCognitoEventsInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::get_cognito_events::GetCognitoEventsInput {
                 identity_pool_id: self.identity_pool_id,
             },

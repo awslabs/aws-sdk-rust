@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteVpcEndpoint`](crate::operation::delete_vpc_endpoint::builders::DeleteVpcEndpointFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::delete_vpc_endpoint::builders::DeleteVpcEndpointFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_vpc_endpoint::builders::DeleteVpcEndpointFluentBuilder::set_id): <p>The VPC endpoint identifier.</p>
-    ///   - [`client_token(impl Into<String>)`](crate::operation::delete_vpc_endpoint::builders::DeleteVpcEndpointFluentBuilder::client_token) / [`set_client_token(Option<String>)`](crate::operation::delete_vpc_endpoint::builders::DeleteVpcEndpointFluentBuilder::set_client_token): <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
+    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::delete_vpc_endpoint::builders::DeleteVpcEndpointFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_vpc_endpoint::builders::DeleteVpcEndpointFluentBuilder::set_id): <p>The VPC endpoint identifier.</p>
+    ///   - [`client_token(impl ::std::convert::Into<String>)`](crate::operation::delete_vpc_endpoint::builders::DeleteVpcEndpointFluentBuilder::client_token) / [`set_client_token(Option<String>)`](crate::operation::delete_vpc_endpoint::builders::DeleteVpcEndpointFluentBuilder::set_client_token): <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     /// - On success, responds with [`DeleteVpcEndpointOutput`](crate::operation::delete_vpc_endpoint::DeleteVpcEndpointOutput) with field(s):
     ///   - [`delete_vpc_endpoint_detail(Option<DeleteVpcEndpointDetail>)`](crate::operation::delete_vpc_endpoint::DeleteVpcEndpointOutput::delete_vpc_endpoint_detail): <p>Details about the deleted endpoint.</p>
     /// - On failure, responds with [`SdkError<DeleteVpcEndpointError>`](crate::operation::delete_vpc_endpoint::DeleteVpcEndpointError)

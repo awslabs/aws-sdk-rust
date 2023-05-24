@@ -2,14 +2,14 @@
 
 /// <p>The Common Vulnerability Scoring System (CVSS) version 2 details for the vulnerability.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Cvss2 {
     /// <p>The CVSS v2 base score for the vulnerability.</p>
     #[doc(hidden)]
     pub base_score: f64,
     /// <p>The scoring vector associated with the CVSS v2 score.</p>
     #[doc(hidden)]
-    pub scoring_vector: std::option::Option<std::string::String>,
+    pub scoring_vector: ::std::option::Option<::std::string::String>,
 }
 impl Cvss2 {
     /// <p>The CVSS v2 base score for the vulnerability.</p>
@@ -17,7 +17,7 @@ impl Cvss2 {
         self.base_score
     }
     /// <p>The scoring vector associated with the CVSS v2 score.</p>
-    pub fn scoring_vector(&self) -> std::option::Option<&str> {
+    pub fn scoring_vector(&self) -> ::std::option::Option<&str> {
         self.scoring_vector.as_deref()
     }
 }
@@ -30,29 +30,37 @@ impl Cvss2 {
 
 /// A builder for [`Cvss2`](crate::types::Cvss2).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct Cvss2Builder {
-    pub(crate) base_score: std::option::Option<f64>,
-    pub(crate) scoring_vector: std::option::Option<std::string::String>,
+    pub(crate) base_score: ::std::option::Option<f64>,
+    pub(crate) scoring_vector: ::std::option::Option<::std::string::String>,
 }
 impl Cvss2Builder {
     /// <p>The CVSS v2 base score for the vulnerability.</p>
     pub fn base_score(mut self, input: f64) -> Self {
-        self.base_score = Some(input);
+        self.base_score = ::std::option::Option::Some(input);
         self
     }
     /// <p>The CVSS v2 base score for the vulnerability.</p>
-    pub fn set_base_score(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_base_score(mut self, input: ::std::option::Option<f64>) -> Self {
         self.base_score = input;
         self
     }
     /// <p>The scoring vector associated with the CVSS v2 score.</p>
-    pub fn scoring_vector(mut self, input: impl Into<std::string::String>) -> Self {
-        self.scoring_vector = Some(input.into());
+    pub fn scoring_vector(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.scoring_vector = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The scoring vector associated with the CVSS v2 score.</p>
-    pub fn set_scoring_vector(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_scoring_vector(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.scoring_vector = input;
         self
     }

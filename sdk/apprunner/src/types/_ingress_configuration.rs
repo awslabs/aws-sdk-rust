@@ -2,7 +2,7 @@
 
 /// <p>Network configuration settings for inbound network traffic.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IngressConfiguration {
     /// <p>Specifies whether your App Runner service is publicly accessible. To make the service publicly accessible set it to <code>True</code>. To make the service privately accessible, from only within an Amazon VPC set it to <code>False</code>. </p>
     #[doc(hidden)]
@@ -23,18 +23,20 @@ impl IngressConfiguration {
 
 /// A builder for [`IngressConfiguration`](crate::types::IngressConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct IngressConfigurationBuilder {
-    pub(crate) is_publicly_accessible: std::option::Option<bool>,
+    pub(crate) is_publicly_accessible: ::std::option::Option<bool>,
 }
 impl IngressConfigurationBuilder {
     /// <p>Specifies whether your App Runner service is publicly accessible. To make the service publicly accessible set it to <code>True</code>. To make the service privately accessible, from only within an Amazon VPC set it to <code>False</code>. </p>
     pub fn is_publicly_accessible(mut self, input: bool) -> Self {
-        self.is_publicly_accessible = Some(input);
+        self.is_publicly_accessible = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether your App Runner service is publicly accessible. To make the service publicly accessible set it to <code>True</code>. To make the service privately accessible, from only within an Amazon VPC set it to <code>False</code>. </p>
-    pub fn set_is_publicly_accessible(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_publicly_accessible(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_publicly_accessible = input;
         self
     }

@@ -2,113 +2,113 @@
 
 /// <p>Describes a block storage disk snapshot.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DiskSnapshot {
     /// <p>The name of the disk snapshot (e.g., <code>my-disk-snapshot</code>).</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the disk snapshot.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The support code. Include this code in your email to support when you have questions about an instance or another resource in Lightsail. This code enables our support team to look up your Lightsail information more easily.</p>
     #[doc(hidden)]
-    pub support_code: std::option::Option<std::string::String>,
+    pub support_code: ::std::option::Option<::std::string::String>,
     /// <p>The date when the disk snapshot was created.</p>
     #[doc(hidden)]
-    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The AWS Region and Availability Zone where the disk snapshot was created.</p>
     #[doc(hidden)]
-    pub location: std::option::Option<crate::types::ResourceLocation>,
+    pub location: ::std::option::Option<crate::types::ResourceLocation>,
     /// <p>The Lightsail resource type (e.g., <code>DiskSnapshot</code>).</p>
     #[doc(hidden)]
-    pub resource_type: std::option::Option<crate::types::ResourceType>,
+    pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The size of the disk in GB.</p>
     #[doc(hidden)]
-    pub size_in_gb: std::option::Option<i32>,
+    pub size_in_gb: ::std::option::Option<i32>,
     /// <p>The status of the disk snapshot operation.</p>
     #[doc(hidden)]
-    pub state: std::option::Option<crate::types::DiskSnapshotState>,
+    pub state: ::std::option::Option<crate::types::DiskSnapshotState>,
     /// <p>The progress of the snapshot.</p>
     #[doc(hidden)]
-    pub progress: std::option::Option<std::string::String>,
+    pub progress: ::std::option::Option<::std::string::String>,
     /// <p>The unique name of the source disk from which the disk snapshot was created.</p>
     #[doc(hidden)]
-    pub from_disk_name: std::option::Option<std::string::String>,
+    pub from_disk_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the source disk from which the disk snapshot was created.</p>
     #[doc(hidden)]
-    pub from_disk_arn: std::option::Option<std::string::String>,
+    pub from_disk_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique name of the source instance from which the disk (system volume) snapshot was created.</p>
     #[doc(hidden)]
-    pub from_instance_name: std::option::Option<std::string::String>,
+    pub from_instance_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the source instance from which the disk (system volume) snapshot was created.</p>
     #[doc(hidden)]
-    pub from_instance_arn: std::option::Option<std::string::String>,
+    pub from_instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean value indicating whether the snapshot was created from an automatic snapshot.</p>
     #[doc(hidden)]
-    pub is_from_auto_snapshot: std::option::Option<bool>,
+    pub is_from_auto_snapshot: ::std::option::Option<bool>,
 }
 impl DiskSnapshot {
     /// <p>The name of the disk snapshot (e.g., <code>my-disk-snapshot</code>).</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the disk snapshot.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The support code. Include this code in your email to support when you have questions about an instance or another resource in Lightsail. This code enables our support team to look up your Lightsail information more easily.</p>
-    pub fn support_code(&self) -> std::option::Option<&str> {
+    pub fn support_code(&self) -> ::std::option::Option<&str> {
         self.support_code.as_deref()
     }
     /// <p>The date when the disk snapshot was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The AWS Region and Availability Zone where the disk snapshot was created.</p>
-    pub fn location(&self) -> std::option::Option<&crate::types::ResourceLocation> {
+    pub fn location(&self) -> ::std::option::Option<&crate::types::ResourceLocation> {
         self.location.as_ref()
     }
     /// <p>The Lightsail resource type (e.g., <code>DiskSnapshot</code>).</p>
-    pub fn resource_type(&self) -> std::option::Option<&crate::types::ResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The size of the disk in GB.</p>
-    pub fn size_in_gb(&self) -> std::option::Option<i32> {
+    pub fn size_in_gb(&self) -> ::std::option::Option<i32> {
         self.size_in_gb
     }
     /// <p>The status of the disk snapshot operation.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::DiskSnapshotState> {
+    pub fn state(&self) -> ::std::option::Option<&crate::types::DiskSnapshotState> {
         self.state.as_ref()
     }
     /// <p>The progress of the snapshot.</p>
-    pub fn progress(&self) -> std::option::Option<&str> {
+    pub fn progress(&self) -> ::std::option::Option<&str> {
         self.progress.as_deref()
     }
     /// <p>The unique name of the source disk from which the disk snapshot was created.</p>
-    pub fn from_disk_name(&self) -> std::option::Option<&str> {
+    pub fn from_disk_name(&self) -> ::std::option::Option<&str> {
         self.from_disk_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the source disk from which the disk snapshot was created.</p>
-    pub fn from_disk_arn(&self) -> std::option::Option<&str> {
+    pub fn from_disk_arn(&self) -> ::std::option::Option<&str> {
         self.from_disk_arn.as_deref()
     }
     /// <p>The unique name of the source instance from which the disk (system volume) snapshot was created.</p>
-    pub fn from_instance_name(&self) -> std::option::Option<&str> {
+    pub fn from_instance_name(&self) -> ::std::option::Option<&str> {
         self.from_instance_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the source instance from which the disk (system volume) snapshot was created.</p>
-    pub fn from_instance_arn(&self) -> std::option::Option<&str> {
+    pub fn from_instance_arn(&self) -> ::std::option::Option<&str> {
         self.from_instance_arn.as_deref()
     }
     /// <p>A Boolean value indicating whether the snapshot was created from an automatic snapshot.</p>
-    pub fn is_from_auto_snapshot(&self) -> std::option::Option<bool> {
+    pub fn is_from_auto_snapshot(&self) -> ::std::option::Option<bool> {
         self.is_from_auto_snapshot
     }
 }
@@ -121,90 +121,92 @@ impl DiskSnapshot {
 
 /// A builder for [`DiskSnapshot`](crate::types::DiskSnapshot).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DiskSnapshotBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) support_code: std::option::Option<std::string::String>,
-    pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) location: std::option::Option<crate::types::ResourceLocation>,
-    pub(crate) resource_type: std::option::Option<crate::types::ResourceType>,
-    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    pub(crate) size_in_gb: std::option::Option<i32>,
-    pub(crate) state: std::option::Option<crate::types::DiskSnapshotState>,
-    pub(crate) progress: std::option::Option<std::string::String>,
-    pub(crate) from_disk_name: std::option::Option<std::string::String>,
-    pub(crate) from_disk_arn: std::option::Option<std::string::String>,
-    pub(crate) from_instance_name: std::option::Option<std::string::String>,
-    pub(crate) from_instance_arn: std::option::Option<std::string::String>,
-    pub(crate) is_from_auto_snapshot: std::option::Option<bool>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) support_code: ::std::option::Option<::std::string::String>,
+    pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) location: ::std::option::Option<crate::types::ResourceLocation>,
+    pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) size_in_gb: ::std::option::Option<i32>,
+    pub(crate) state: ::std::option::Option<crate::types::DiskSnapshotState>,
+    pub(crate) progress: ::std::option::Option<::std::string::String>,
+    pub(crate) from_disk_name: ::std::option::Option<::std::string::String>,
+    pub(crate) from_disk_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) from_instance_name: ::std::option::Option<::std::string::String>,
+    pub(crate) from_instance_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) is_from_auto_snapshot: ::std::option::Option<bool>,
 }
 impl DiskSnapshotBuilder {
     /// <p>The name of the disk snapshot (e.g., <code>my-disk-snapshot</code>).</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the disk snapshot (e.g., <code>my-disk-snapshot</code>).</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the disk snapshot.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the disk snapshot.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// <p>The support code. Include this code in your email to support when you have questions about an instance or another resource in Lightsail. This code enables our support team to look up your Lightsail information more easily.</p>
-    pub fn support_code(mut self, input: impl Into<std::string::String>) -> Self {
-        self.support_code = Some(input.into());
+    pub fn support_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.support_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The support code. Include this code in your email to support when you have questions about an instance or another resource in Lightsail. This code enables our support team to look up your Lightsail information more easily.</p>
-    pub fn set_support_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_support_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.support_code = input;
         self
     }
     /// <p>The date when the disk snapshot was created.</p>
-    pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_at = Some(input);
+    pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date when the disk snapshot was created.</p>
     pub fn set_created_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_at = input;
         self
     }
     /// <p>The AWS Region and Availability Zone where the disk snapshot was created.</p>
     pub fn location(mut self, input: crate::types::ResourceLocation) -> Self {
-        self.location = Some(input);
+        self.location = ::std::option::Option::Some(input);
         self
     }
     /// <p>The AWS Region and Availability Zone where the disk snapshot was created.</p>
     pub fn set_location(
         mut self,
-        input: std::option::Option<crate::types::ResourceLocation>,
+        input: ::std::option::Option<crate::types::ResourceLocation>,
     ) -> Self {
         self.location = input;
         self
     }
     /// <p>The Lightsail resource type (e.g., <code>DiskSnapshot</code>).</p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
-        self.resource_type = Some(input);
+        self.resource_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Lightsail resource type (e.g., <code>DiskSnapshot</code>).</p>
     pub fn set_resource_type(
         mut self,
-        input: std::option::Option<crate::types::ResourceType>,
+        input: ::std::option::Option<crate::types::ResourceType>,
     ) -> Self {
         self.resource_type = input;
         self
@@ -217,103 +219,121 @@ impl DiskSnapshotBuilder {
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
-        self.tags = Some(v);
+        self.tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tags = input;
         self
     }
     /// <p>The size of the disk in GB.</p>
     pub fn size_in_gb(mut self, input: i32) -> Self {
-        self.size_in_gb = Some(input);
+        self.size_in_gb = ::std::option::Option::Some(input);
         self
     }
     /// <p>The size of the disk in GB.</p>
-    pub fn set_size_in_gb(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_size_in_gb(mut self, input: ::std::option::Option<i32>) -> Self {
         self.size_in_gb = input;
         self
     }
     /// <p>The status of the disk snapshot operation.</p>
     pub fn state(mut self, input: crate::types::DiskSnapshotState) -> Self {
-        self.state = Some(input);
+        self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the disk snapshot operation.</p>
     pub fn set_state(
         mut self,
-        input: std::option::Option<crate::types::DiskSnapshotState>,
+        input: ::std::option::Option<crate::types::DiskSnapshotState>,
     ) -> Self {
         self.state = input;
         self
     }
     /// <p>The progress of the snapshot.</p>
-    pub fn progress(mut self, input: impl Into<std::string::String>) -> Self {
-        self.progress = Some(input.into());
+    pub fn progress(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.progress = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The progress of the snapshot.</p>
-    pub fn set_progress(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_progress(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.progress = input;
         self
     }
     /// <p>The unique name of the source disk from which the disk snapshot was created.</p>
-    pub fn from_disk_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.from_disk_name = Some(input.into());
+    pub fn from_disk_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.from_disk_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique name of the source disk from which the disk snapshot was created.</p>
-    pub fn set_from_disk_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_from_disk_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.from_disk_name = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the source disk from which the disk snapshot was created.</p>
-    pub fn from_disk_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.from_disk_arn = Some(input.into());
+    pub fn from_disk_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.from_disk_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the source disk from which the disk snapshot was created.</p>
-    pub fn set_from_disk_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_from_disk_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.from_disk_arn = input;
         self
     }
     /// <p>The unique name of the source instance from which the disk (system volume) snapshot was created.</p>
-    pub fn from_instance_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.from_instance_name = Some(input.into());
+    pub fn from_instance_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.from_instance_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique name of the source instance from which the disk (system volume) snapshot was created.</p>
     pub fn set_from_instance_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.from_instance_name = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the source instance from which the disk (system volume) snapshot was created.</p>
-    pub fn from_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.from_instance_arn = Some(input.into());
+    pub fn from_instance_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.from_instance_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the source instance from which the disk (system volume) snapshot was created.</p>
     pub fn set_from_instance_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.from_instance_arn = input;
         self
     }
     /// <p>A Boolean value indicating whether the snapshot was created from an automatic snapshot.</p>
     pub fn is_from_auto_snapshot(mut self, input: bool) -> Self {
-        self.is_from_auto_snapshot = Some(input);
+        self.is_from_auto_snapshot = ::std::option::Option::Some(input);
         self
     }
     /// <p>A Boolean value indicating whether the snapshot was created from an automatic snapshot.</p>
-    pub fn set_is_from_auto_snapshot(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_from_auto_snapshot(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_from_auto_snapshot = input;
         self
     }

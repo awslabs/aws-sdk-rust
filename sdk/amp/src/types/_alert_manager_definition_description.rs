@@ -2,36 +2,36 @@
 
 /// Represents the properties of an alert manager definition.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AlertManagerDefinitionDescription {
     /// The status of alert manager definition.
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::AlertManagerDefinitionStatus>,
+    pub status: ::std::option::Option<crate::types::AlertManagerDefinitionStatus>,
     /// The alert manager definition.
     #[doc(hidden)]
-    pub data: std::option::Option<aws_smithy_types::Blob>,
+    pub data: ::std::option::Option<::aws_smithy_types::Blob>,
     /// The time when the alert manager definition was created.
     #[doc(hidden)]
-    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// The time when the alert manager definition was modified.
     #[doc(hidden)]
-    pub modified_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl AlertManagerDefinitionDescription {
     /// The status of alert manager definition.
-    pub fn status(&self) -> std::option::Option<&crate::types::AlertManagerDefinitionStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::AlertManagerDefinitionStatus> {
         self.status.as_ref()
     }
     /// The alert manager definition.
-    pub fn data(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn data(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
         self.data.as_ref()
     }
     /// The time when the alert manager definition was created.
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// The time when the alert manager definition was modified.
-    pub fn modified_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn modified_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.modified_at.as_ref()
     }
 }
@@ -44,59 +44,61 @@ impl AlertManagerDefinitionDescription {
 
 /// A builder for [`AlertManagerDefinitionDescription`](crate::types::AlertManagerDefinitionDescription).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AlertManagerDefinitionDescriptionBuilder {
-    pub(crate) status: std::option::Option<crate::types::AlertManagerDefinitionStatus>,
-    pub(crate) data: std::option::Option<aws_smithy_types::Blob>,
-    pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) modified_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) status: ::std::option::Option<crate::types::AlertManagerDefinitionStatus>,
+    pub(crate) data: ::std::option::Option<::aws_smithy_types::Blob>,
+    pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl AlertManagerDefinitionDescriptionBuilder {
     /// The status of alert manager definition.
     pub fn status(mut self, input: crate::types::AlertManagerDefinitionStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// The status of alert manager definition.
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::AlertManagerDefinitionStatus>,
+        input: ::std::option::Option<crate::types::AlertManagerDefinitionStatus>,
     ) -> Self {
         self.status = input;
         self
     }
     /// The alert manager definition.
-    pub fn data(mut self, input: aws_smithy_types::Blob) -> Self {
-        self.data = Some(input);
+    pub fn data(mut self, input: ::aws_smithy_types::Blob) -> Self {
+        self.data = ::std::option::Option::Some(input);
         self
     }
     /// The alert manager definition.
-    pub fn set_data(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
+    pub fn set_data(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.data = input;
         self
     }
     /// The time when the alert manager definition was created.
-    pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_at = Some(input);
+    pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_at = ::std::option::Option::Some(input);
         self
     }
     /// The time when the alert manager definition was created.
     pub fn set_created_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_at = input;
         self
     }
     /// The time when the alert manager definition was modified.
-    pub fn modified_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.modified_at = Some(input);
+    pub fn modified_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.modified_at = ::std::option::Option::Some(input);
         self
     }
     /// The time when the alert manager definition was modified.
     pub fn set_modified_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.modified_at = input;
         self

@@ -6,29 +6,29 @@ pub use crate::operation::associate_entities_to_experience::_associate_entities_
 /// Fluent builder constructing a request to `AssociateEntitiesToExperience`.
 ///
 /// <p>Grants users or groups in your IAM Identity Center identity source access to your Amazon Kendra experience. You can create an Amazon Kendra experience such as a search application. For more information on creating a search application experience, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building a search experience with no code</a>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateEntitiesToExperienceFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::associate_entities_to_experience::builders::AssociateEntitiesToExperienceInputBuilder,
 }
 impl AssociateEntitiesToExperienceFluentBuilder {
     /// Creates a new `AssociateEntitiesToExperience`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::associate_entities_to_experience::AssociateEntitiesToExperience,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::associate_entities_to_experience::AssociateEntitiesToExperienceError,
         >,
     > {
@@ -36,30 +36,33 @@ impl AssociateEntitiesToExperienceFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::associate_entities_to_experience::AssociateEntitiesToExperienceOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::associate_entities_to_experience::AssociateEntitiesToExperienceError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,31 +75,31 @@ impl AssociateEntitiesToExperienceFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::associate_entities_to_experience::AssociateEntitiesToExperienceOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::associate_entities_to_experience::AssociateEntitiesToExperienceError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The identifier of your Amazon Kendra experience.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.id(input.into());
         self
     }
     /// <p>The identifier of your Amazon Kendra experience.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_id(input);
         self
     }
     /// <p>The identifier of the index for your Amazon Kendra experience.</p>
-    pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.index_id(input.into());
         self
     }
     /// <p>The identifier of the index for your Amazon Kendra experience.</p>
-    pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_index_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_index_id(input);
         self
     }
@@ -112,7 +115,7 @@ impl AssociateEntitiesToExperienceFluentBuilder {
     /// <p>Lists users or groups in your IAM Identity Center identity source.</p>
     pub fn set_entity_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::EntityConfiguration>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::EntityConfiguration>>,
     ) -> Self {
         self.inner = self.inner.set_entity_list(input);
         self

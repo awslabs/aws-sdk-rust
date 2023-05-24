@@ -2,36 +2,36 @@
 
 /// <p>Contains metrics captured from a model.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModelMetrics {
     /// <p>Metrics that measure the quality of a model.</p>
     #[doc(hidden)]
-    pub model_quality: std::option::Option<crate::types::ModelQuality>,
+    pub model_quality: ::std::option::Option<crate::types::ModelQuality>,
     /// <p>Metrics that measure the quality of the input data for a model.</p>
     #[doc(hidden)]
-    pub model_data_quality: std::option::Option<crate::types::ModelDataQuality>,
+    pub model_data_quality: ::std::option::Option<crate::types::ModelDataQuality>,
     /// <p>Metrics that measure bais in a model.</p>
     #[doc(hidden)]
-    pub bias: std::option::Option<crate::types::Bias>,
+    pub bias: ::std::option::Option<crate::types::Bias>,
     /// <p>Metrics that help explain a model.</p>
     #[doc(hidden)]
-    pub explainability: std::option::Option<crate::types::Explainability>,
+    pub explainability: ::std::option::Option<crate::types::Explainability>,
 }
 impl ModelMetrics {
     /// <p>Metrics that measure the quality of a model.</p>
-    pub fn model_quality(&self) -> std::option::Option<&crate::types::ModelQuality> {
+    pub fn model_quality(&self) -> ::std::option::Option<&crate::types::ModelQuality> {
         self.model_quality.as_ref()
     }
     /// <p>Metrics that measure the quality of the input data for a model.</p>
-    pub fn model_data_quality(&self) -> std::option::Option<&crate::types::ModelDataQuality> {
+    pub fn model_data_quality(&self) -> ::std::option::Option<&crate::types::ModelDataQuality> {
         self.model_data_quality.as_ref()
     }
     /// <p>Metrics that measure bais in a model.</p>
-    pub fn bias(&self) -> std::option::Option<&crate::types::Bias> {
+    pub fn bias(&self) -> ::std::option::Option<&crate::types::Bias> {
         self.bias.as_ref()
     }
     /// <p>Metrics that help explain a model.</p>
-    pub fn explainability(&self) -> std::option::Option<&crate::types::Explainability> {
+    pub fn explainability(&self) -> ::std::option::Option<&crate::types::Explainability> {
         self.explainability.as_ref()
     }
 }
@@ -44,59 +44,61 @@ impl ModelMetrics {
 
 /// A builder for [`ModelMetrics`](crate::types::ModelMetrics).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ModelMetricsBuilder {
-    pub(crate) model_quality: std::option::Option<crate::types::ModelQuality>,
-    pub(crate) model_data_quality: std::option::Option<crate::types::ModelDataQuality>,
-    pub(crate) bias: std::option::Option<crate::types::Bias>,
-    pub(crate) explainability: std::option::Option<crate::types::Explainability>,
+    pub(crate) model_quality: ::std::option::Option<crate::types::ModelQuality>,
+    pub(crate) model_data_quality: ::std::option::Option<crate::types::ModelDataQuality>,
+    pub(crate) bias: ::std::option::Option<crate::types::Bias>,
+    pub(crate) explainability: ::std::option::Option<crate::types::Explainability>,
 }
 impl ModelMetricsBuilder {
     /// <p>Metrics that measure the quality of a model.</p>
     pub fn model_quality(mut self, input: crate::types::ModelQuality) -> Self {
-        self.model_quality = Some(input);
+        self.model_quality = ::std::option::Option::Some(input);
         self
     }
     /// <p>Metrics that measure the quality of a model.</p>
     pub fn set_model_quality(
         mut self,
-        input: std::option::Option<crate::types::ModelQuality>,
+        input: ::std::option::Option<crate::types::ModelQuality>,
     ) -> Self {
         self.model_quality = input;
         self
     }
     /// <p>Metrics that measure the quality of the input data for a model.</p>
     pub fn model_data_quality(mut self, input: crate::types::ModelDataQuality) -> Self {
-        self.model_data_quality = Some(input);
+        self.model_data_quality = ::std::option::Option::Some(input);
         self
     }
     /// <p>Metrics that measure the quality of the input data for a model.</p>
     pub fn set_model_data_quality(
         mut self,
-        input: std::option::Option<crate::types::ModelDataQuality>,
+        input: ::std::option::Option<crate::types::ModelDataQuality>,
     ) -> Self {
         self.model_data_quality = input;
         self
     }
     /// <p>Metrics that measure bais in a model.</p>
     pub fn bias(mut self, input: crate::types::Bias) -> Self {
-        self.bias = Some(input);
+        self.bias = ::std::option::Option::Some(input);
         self
     }
     /// <p>Metrics that measure bais in a model.</p>
-    pub fn set_bias(mut self, input: std::option::Option<crate::types::Bias>) -> Self {
+    pub fn set_bias(mut self, input: ::std::option::Option<crate::types::Bias>) -> Self {
         self.bias = input;
         self
     }
     /// <p>Metrics that help explain a model.</p>
     pub fn explainability(mut self, input: crate::types::Explainability) -> Self {
-        self.explainability = Some(input);
+        self.explainability = ::std::option::Option::Some(input);
         self
     }
     /// <p>Metrics that help explain a model.</p>
     pub fn set_explainability(
         mut self,
-        input: std::option::Option<crate::types::Explainability>,
+        input: ::std::option::Option<crate::types::Explainability>,
     ) -> Self {
         self.explainability = input;
         self

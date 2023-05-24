@@ -3,122 +3,122 @@
 /// <p>Describes the launch specification for a Scheduled Instance.</p>
 /// <p>If you are launching the Scheduled Instance in EC2-VPC, you must specify the ID of the subnet. You can specify the subnet using either <code>SubnetId</code> or <code>NetworkInterface</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ScheduledInstancesLaunchSpecification {
     /// <p>The block device mapping entries.</p>
     #[doc(hidden)]
     pub block_device_mappings:
-        std::option::Option<std::vec::Vec<crate::types::ScheduledInstancesBlockDeviceMapping>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ScheduledInstancesBlockDeviceMapping>>,
     /// <p>Indicates whether the instances are optimized for EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This optimization isn't available with all instance types. Additional usage charges apply when using an EBS-optimized instance.</p>
     /// <p>Default: <code>false</code> </p>
     #[doc(hidden)]
-    pub ebs_optimized: std::option::Option<bool>,
+    pub ebs_optimized: ::std::option::Option<bool>,
     /// <p>The IAM instance profile.</p>
     #[doc(hidden)]
     pub iam_instance_profile:
-        std::option::Option<crate::types::ScheduledInstancesIamInstanceProfile>,
+        ::std::option::Option<crate::types::ScheduledInstancesIamInstanceProfile>,
     /// <p>The ID of the Amazon Machine Image (AMI).</p>
     #[doc(hidden)]
-    pub image_id: std::option::Option<std::string::String>,
+    pub image_id: ::std::option::Option<::std::string::String>,
     /// <p>The instance type.</p>
     #[doc(hidden)]
-    pub instance_type: std::option::Option<std::string::String>,
+    pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the kernel.</p>
     #[doc(hidden)]
-    pub kernel_id: std::option::Option<std::string::String>,
+    pub kernel_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the key pair.</p>
     #[doc(hidden)]
-    pub key_name: std::option::Option<std::string::String>,
+    pub key_name: ::std::option::Option<::std::string::String>,
     /// <p>Enable or disable monitoring for the instances.</p>
     #[doc(hidden)]
-    pub monitoring: std::option::Option<crate::types::ScheduledInstancesMonitoring>,
+    pub monitoring: ::std::option::Option<crate::types::ScheduledInstancesMonitoring>,
     /// <p>The network interfaces.</p>
     #[doc(hidden)]
     pub network_interfaces:
-        std::option::Option<std::vec::Vec<crate::types::ScheduledInstancesNetworkInterface>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ScheduledInstancesNetworkInterface>>,
     /// <p>The placement information.</p>
     #[doc(hidden)]
-    pub placement: std::option::Option<crate::types::ScheduledInstancesPlacement>,
+    pub placement: ::std::option::Option<crate::types::ScheduledInstancesPlacement>,
     /// <p>The ID of the RAM disk.</p>
     #[doc(hidden)]
-    pub ramdisk_id: std::option::Option<std::string::String>,
+    pub ramdisk_id: ::std::option::Option<::std::string::String>,
     /// <p>The IDs of the security groups.</p>
     #[doc(hidden)]
-    pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ID of the subnet in which to launch the instances.</p>
     #[doc(hidden)]
-    pub subnet_id: std::option::Option<std::string::String>,
+    pub subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>The base64-encoded MIME user data.</p>
     #[doc(hidden)]
-    pub user_data: std::option::Option<std::string::String>,
+    pub user_data: ::std::option::Option<::std::string::String>,
 }
 impl ScheduledInstancesLaunchSpecification {
     /// <p>The block device mapping entries.</p>
     pub fn block_device_mappings(
         &self,
-    ) -> std::option::Option<&[crate::types::ScheduledInstancesBlockDeviceMapping]> {
+    ) -> ::std::option::Option<&[crate::types::ScheduledInstancesBlockDeviceMapping]> {
         self.block_device_mappings.as_deref()
     }
     /// <p>Indicates whether the instances are optimized for EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This optimization isn't available with all instance types. Additional usage charges apply when using an EBS-optimized instance.</p>
     /// <p>Default: <code>false</code> </p>
-    pub fn ebs_optimized(&self) -> std::option::Option<bool> {
+    pub fn ebs_optimized(&self) -> ::std::option::Option<bool> {
         self.ebs_optimized
     }
     /// <p>The IAM instance profile.</p>
     pub fn iam_instance_profile(
         &self,
-    ) -> std::option::Option<&crate::types::ScheduledInstancesIamInstanceProfile> {
+    ) -> ::std::option::Option<&crate::types::ScheduledInstancesIamInstanceProfile> {
         self.iam_instance_profile.as_ref()
     }
     /// <p>The ID of the Amazon Machine Image (AMI).</p>
-    pub fn image_id(&self) -> std::option::Option<&str> {
+    pub fn image_id(&self) -> ::std::option::Option<&str> {
         self.image_id.as_deref()
     }
     /// <p>The instance type.</p>
-    pub fn instance_type(&self) -> std::option::Option<&str> {
+    pub fn instance_type(&self) -> ::std::option::Option<&str> {
         self.instance_type.as_deref()
     }
     /// <p>The ID of the kernel.</p>
-    pub fn kernel_id(&self) -> std::option::Option<&str> {
+    pub fn kernel_id(&self) -> ::std::option::Option<&str> {
         self.kernel_id.as_deref()
     }
     /// <p>The name of the key pair.</p>
-    pub fn key_name(&self) -> std::option::Option<&str> {
+    pub fn key_name(&self) -> ::std::option::Option<&str> {
         self.key_name.as_deref()
     }
     /// <p>Enable or disable monitoring for the instances.</p>
-    pub fn monitoring(&self) -> std::option::Option<&crate::types::ScheduledInstancesMonitoring> {
+    pub fn monitoring(&self) -> ::std::option::Option<&crate::types::ScheduledInstancesMonitoring> {
         self.monitoring.as_ref()
     }
     /// <p>The network interfaces.</p>
     pub fn network_interfaces(
         &self,
-    ) -> std::option::Option<&[crate::types::ScheduledInstancesNetworkInterface]> {
+    ) -> ::std::option::Option<&[crate::types::ScheduledInstancesNetworkInterface]> {
         self.network_interfaces.as_deref()
     }
     /// <p>The placement information.</p>
-    pub fn placement(&self) -> std::option::Option<&crate::types::ScheduledInstancesPlacement> {
+    pub fn placement(&self) -> ::std::option::Option<&crate::types::ScheduledInstancesPlacement> {
         self.placement.as_ref()
     }
     /// <p>The ID of the RAM disk.</p>
-    pub fn ramdisk_id(&self) -> std::option::Option<&str> {
+    pub fn ramdisk_id(&self) -> ::std::option::Option<&str> {
         self.ramdisk_id.as_deref()
     }
     /// <p>The IDs of the security groups.</p>
-    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.security_group_ids.as_deref()
     }
     /// <p>The ID of the subnet in which to launch the instances.</p>
-    pub fn subnet_id(&self) -> std::option::Option<&str> {
+    pub fn subnet_id(&self) -> ::std::option::Option<&str> {
         self.subnet_id.as_deref()
     }
     /// <p>The base64-encoded MIME user data.</p>
-    pub fn user_data(&self) -> std::option::Option<&str> {
+    pub fn user_data(&self) -> ::std::option::Option<&str> {
         self.user_data.as_deref()
     }
 }
-impl std::fmt::Debug for ScheduledInstancesLaunchSpecification {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for ScheduledInstancesLaunchSpecification {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ScheduledInstancesLaunchSpecification");
         formatter.field("block_device_mappings", &"*** Sensitive Data Redacted ***");
         formatter.field("ebs_optimized", &"*** Sensitive Data Redacted ***");
@@ -146,25 +146,25 @@ impl ScheduledInstancesLaunchSpecification {
 
 /// A builder for [`ScheduledInstancesLaunchSpecification`](crate::types::ScheduledInstancesLaunchSpecification).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct ScheduledInstancesLaunchSpecificationBuilder {
     pub(crate) block_device_mappings:
-        std::option::Option<std::vec::Vec<crate::types::ScheduledInstancesBlockDeviceMapping>>,
-    pub(crate) ebs_optimized: std::option::Option<bool>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ScheduledInstancesBlockDeviceMapping>>,
+    pub(crate) ebs_optimized: ::std::option::Option<bool>,
     pub(crate) iam_instance_profile:
-        std::option::Option<crate::types::ScheduledInstancesIamInstanceProfile>,
-    pub(crate) image_id: std::option::Option<std::string::String>,
-    pub(crate) instance_type: std::option::Option<std::string::String>,
-    pub(crate) kernel_id: std::option::Option<std::string::String>,
-    pub(crate) key_name: std::option::Option<std::string::String>,
-    pub(crate) monitoring: std::option::Option<crate::types::ScheduledInstancesMonitoring>,
+        ::std::option::Option<crate::types::ScheduledInstancesIamInstanceProfile>,
+    pub(crate) image_id: ::std::option::Option<::std::string::String>,
+    pub(crate) instance_type: ::std::option::Option<::std::string::String>,
+    pub(crate) kernel_id: ::std::option::Option<::std::string::String>,
+    pub(crate) key_name: ::std::option::Option<::std::string::String>,
+    pub(crate) monitoring: ::std::option::Option<crate::types::ScheduledInstancesMonitoring>,
     pub(crate) network_interfaces:
-        std::option::Option<std::vec::Vec<crate::types::ScheduledInstancesNetworkInterface>>,
-    pub(crate) placement: std::option::Option<crate::types::ScheduledInstancesPlacement>,
-    pub(crate) ramdisk_id: std::option::Option<std::string::String>,
-    pub(crate) security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) subnet_id: std::option::Option<std::string::String>,
-    pub(crate) user_data: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ScheduledInstancesNetworkInterface>>,
+    pub(crate) placement: ::std::option::Option<crate::types::ScheduledInstancesPlacement>,
+    pub(crate) ramdisk_id: ::std::option::Option<::std::string::String>,
+    pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) subnet_id: ::std::option::Option<::std::string::String>,
+    pub(crate) user_data: ::std::option::Option<::std::string::String>,
 }
 impl ScheduledInstancesLaunchSpecificationBuilder {
     /// Appends an item to `block_device_mappings`.
@@ -178,14 +178,14 @@ impl ScheduledInstancesLaunchSpecificationBuilder {
     ) -> Self {
         let mut v = self.block_device_mappings.unwrap_or_default();
         v.push(input);
-        self.block_device_mappings = Some(v);
+        self.block_device_mappings = ::std::option::Option::Some(v);
         self
     }
     /// <p>The block device mapping entries.</p>
     pub fn set_block_device_mappings(
         mut self,
-        input: std::option::Option<
-            std::vec::Vec<crate::types::ScheduledInstancesBlockDeviceMapping>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::ScheduledInstancesBlockDeviceMapping>,
         >,
     ) -> Self {
         self.block_device_mappings = input;
@@ -194,12 +194,12 @@ impl ScheduledInstancesLaunchSpecificationBuilder {
     /// <p>Indicates whether the instances are optimized for EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This optimization isn't available with all instance types. Additional usage charges apply when using an EBS-optimized instance.</p>
     /// <p>Default: <code>false</code> </p>
     pub fn ebs_optimized(mut self, input: bool) -> Self {
-        self.ebs_optimized = Some(input);
+        self.ebs_optimized = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether the instances are optimized for EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal EBS I/O performance. This optimization isn't available with all instance types. Additional usage charges apply when using an EBS-optimized instance.</p>
     /// <p>Default: <code>false</code> </p>
-    pub fn set_ebs_optimized(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_ebs_optimized(mut self, input: ::std::option::Option<bool>) -> Self {
         self.ebs_optimized = input;
         self
     }
@@ -208,66 +208,72 @@ impl ScheduledInstancesLaunchSpecificationBuilder {
         mut self,
         input: crate::types::ScheduledInstancesIamInstanceProfile,
     ) -> Self {
-        self.iam_instance_profile = Some(input);
+        self.iam_instance_profile = ::std::option::Option::Some(input);
         self
     }
     /// <p>The IAM instance profile.</p>
     pub fn set_iam_instance_profile(
         mut self,
-        input: std::option::Option<crate::types::ScheduledInstancesIamInstanceProfile>,
+        input: ::std::option::Option<crate::types::ScheduledInstancesIamInstanceProfile>,
     ) -> Self {
         self.iam_instance_profile = input;
         self
     }
     /// <p>The ID of the Amazon Machine Image (AMI).</p>
-    pub fn image_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.image_id = Some(input.into());
+    pub fn image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.image_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Machine Image (AMI).</p>
-    pub fn set_image_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_id = input;
         self
     }
     /// <p>The instance type.</p>
-    pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.instance_type = Some(input.into());
+    pub fn instance_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.instance_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The instance type.</p>
-    pub fn set_instance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_instance_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.instance_type = input;
         self
     }
     /// <p>The ID of the kernel.</p>
-    pub fn kernel_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.kernel_id = Some(input.into());
+    pub fn kernel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kernel_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the kernel.</p>
-    pub fn set_kernel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_kernel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kernel_id = input;
         self
     }
     /// <p>The name of the key pair.</p>
-    pub fn key_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.key_name = Some(input.into());
+    pub fn key_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.key_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the key pair.</p>
-    pub fn set_key_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_key_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_name = input;
         self
     }
     /// <p>Enable or disable monitoring for the instances.</p>
     pub fn monitoring(mut self, input: crate::types::ScheduledInstancesMonitoring) -> Self {
-        self.monitoring = Some(input);
+        self.monitoring = ::std::option::Option::Some(input);
         self
     }
     /// <p>Enable or disable monitoring for the instances.</p>
     pub fn set_monitoring(
         mut self,
-        input: std::option::Option<crate::types::ScheduledInstancesMonitoring>,
+        input: ::std::option::Option<crate::types::ScheduledInstancesMonitoring>,
     ) -> Self {
         self.monitoring = input;
         self
@@ -283,37 +289,39 @@ impl ScheduledInstancesLaunchSpecificationBuilder {
     ) -> Self {
         let mut v = self.network_interfaces.unwrap_or_default();
         v.push(input);
-        self.network_interfaces = Some(v);
+        self.network_interfaces = ::std::option::Option::Some(v);
         self
     }
     /// <p>The network interfaces.</p>
     pub fn set_network_interfaces(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ScheduledInstancesNetworkInterface>>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::ScheduledInstancesNetworkInterface>,
+        >,
     ) -> Self {
         self.network_interfaces = input;
         self
     }
     /// <p>The placement information.</p>
     pub fn placement(mut self, input: crate::types::ScheduledInstancesPlacement) -> Self {
-        self.placement = Some(input);
+        self.placement = ::std::option::Option::Some(input);
         self
     }
     /// <p>The placement information.</p>
     pub fn set_placement(
         mut self,
-        input: std::option::Option<crate::types::ScheduledInstancesPlacement>,
+        input: ::std::option::Option<crate::types::ScheduledInstancesPlacement>,
     ) -> Self {
         self.placement = input;
         self
     }
     /// <p>The ID of the RAM disk.</p>
-    pub fn ramdisk_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ramdisk_id = Some(input.into());
+    pub fn ramdisk_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ramdisk_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the RAM disk.</p>
-    pub fn set_ramdisk_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ramdisk_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ramdisk_id = input;
         self
     }
@@ -322,37 +330,40 @@ impl ScheduledInstancesLaunchSpecificationBuilder {
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
     ///
     /// <p>The IDs of the security groups.</p>
-    pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn security_group_ids(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
         v.push(input.into());
-        self.security_group_ids = Some(v);
+        self.security_group_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IDs of the security groups.</p>
     pub fn set_security_group_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.security_group_ids = input;
         self
     }
     /// <p>The ID of the subnet in which to launch the instances.</p>
-    pub fn subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.subnet_id = Some(input.into());
+    pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.subnet_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the subnet in which to launch the instances.</p>
-    pub fn set_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subnet_id = input;
         self
     }
     /// <p>The base64-encoded MIME user data.</p>
-    pub fn user_data(mut self, input: impl Into<std::string::String>) -> Self {
-        self.user_data = Some(input.into());
+    pub fn user_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.user_data = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The base64-encoded MIME user data.</p>
-    pub fn set_user_data(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_user_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_data = input;
         self
     }
@@ -376,8 +387,8 @@ impl ScheduledInstancesLaunchSpecificationBuilder {
         }
     }
 }
-impl std::fmt::Debug for ScheduledInstancesLaunchSpecificationBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for ScheduledInstancesLaunchSpecificationBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ScheduledInstancesLaunchSpecificationBuilder");
         formatter.field("block_device_mappings", &"*** Sensitive Data Redacted ***");
         formatter.field("ebs_optimized", &"*** Sensitive Data Redacted ***");

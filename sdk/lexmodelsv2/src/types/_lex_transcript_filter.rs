@@ -2,15 +2,15 @@
 
 /// <p>The object that contains transcript filter details that are associated with a bot recommendation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LexTranscriptFilter {
     /// <p>The object that contains a date range filter that will be applied to the transcript. Specify this object if you want Amazon Lex to only read the files that are within the date range.</p>
     #[doc(hidden)]
-    pub date_range_filter: std::option::Option<crate::types::DateRangeFilter>,
+    pub date_range_filter: ::std::option::Option<crate::types::DateRangeFilter>,
 }
 impl LexTranscriptFilter {
     /// <p>The object that contains a date range filter that will be applied to the transcript. Specify this object if you want Amazon Lex to only read the files that are within the date range.</p>
-    pub fn date_range_filter(&self) -> std::option::Option<&crate::types::DateRangeFilter> {
+    pub fn date_range_filter(&self) -> ::std::option::Option<&crate::types::DateRangeFilter> {
         self.date_range_filter.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl LexTranscriptFilter {
 
 /// A builder for [`LexTranscriptFilter`](crate::types::LexTranscriptFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LexTranscriptFilterBuilder {
-    pub(crate) date_range_filter: std::option::Option<crate::types::DateRangeFilter>,
+    pub(crate) date_range_filter: ::std::option::Option<crate::types::DateRangeFilter>,
 }
 impl LexTranscriptFilterBuilder {
     /// <p>The object that contains a date range filter that will be applied to the transcript. Specify this object if you want Amazon Lex to only read the files that are within the date range.</p>
     pub fn date_range_filter(mut self, input: crate::types::DateRangeFilter) -> Self {
-        self.date_range_filter = Some(input);
+        self.date_range_filter = ::std::option::Option::Some(input);
         self
     }
     /// <p>The object that contains a date range filter that will be applied to the transcript. Specify this object if you want Amazon Lex to only read the files that are within the date range.</p>
     pub fn set_date_range_filter(
         mut self,
-        input: std::option::Option<crate::types::DateRangeFilter>,
+        input: ::std::option::Option<crate::types::DateRangeFilter>,
     ) -> Self {
         self.date_range_filter = input;
         self

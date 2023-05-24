@@ -2,15 +2,15 @@
 
 /// <p>Configures the quantum processing units (QPUs) or simulator used to create and run an Amazon Braket job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeviceConfig {
     /// <p>The primary quantum processing unit (QPU) or simulator used to create and run an Amazon Braket job.</p>
     #[doc(hidden)]
-    pub device: std::option::Option<std::string::String>,
+    pub device: ::std::option::Option<::std::string::String>,
 }
 impl DeviceConfig {
     /// <p>The primary quantum processing unit (QPU) or simulator used to create and run an Amazon Braket job.</p>
-    pub fn device(&self) -> std::option::Option<&str> {
+    pub fn device(&self) -> ::std::option::Option<&str> {
         self.device.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl DeviceConfig {
 
 /// A builder for [`DeviceConfig`](crate::types::DeviceConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeviceConfigBuilder {
-    pub(crate) device: std::option::Option<std::string::String>,
+    pub(crate) device: ::std::option::Option<::std::string::String>,
 }
 impl DeviceConfigBuilder {
     /// <p>The primary quantum processing unit (QPU) or simulator used to create and run an Amazon Braket job.</p>
-    pub fn device(mut self, input: impl Into<std::string::String>) -> Self {
-        self.device = Some(input.into());
+    pub fn device(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.device = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The primary quantum processing unit (QPU) or simulator used to create and run an Amazon Braket job.</p>
-    pub fn set_device(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_device(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device = input;
         self
     }

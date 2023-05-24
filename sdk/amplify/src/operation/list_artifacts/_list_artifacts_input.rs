@@ -2,39 +2,39 @@
 
 /// <p> Describes the request structure for the list artifacts request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListArtifactsInput {
     /// <p> The unique ID for an Amplify app. </p>
     #[doc(hidden)]
-    pub app_id: std::option::Option<std::string::String>,
+    pub app_id: ::std::option::Option<::std::string::String>,
     /// <p> The name of a branch that is part of an Amplify app. </p>
     #[doc(hidden)]
-    pub branch_name: std::option::Option<std::string::String>,
+    pub branch_name: ::std::option::Option<::std::string::String>,
     /// <p> The unique ID for a job. </p>
     #[doc(hidden)]
-    pub job_id: std::option::Option<std::string::String>,
+    pub job_id: ::std::option::Option<::std::string::String>,
     /// <p> A pagination token. Set to null to start listing artifacts from start. If a non-null pagination token is returned in a result, pass its value in here to list more artifacts. </p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     /// <p> The maximum number of records to list in a single response. </p>
     #[doc(hidden)]
     pub max_results: i32,
 }
 impl ListArtifactsInput {
     /// <p> The unique ID for an Amplify app. </p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> ::std::option::Option<&str> {
         self.app_id.as_deref()
     }
     /// <p> The name of a branch that is part of an Amplify app. </p>
-    pub fn branch_name(&self) -> std::option::Option<&str> {
+    pub fn branch_name(&self) -> ::std::option::Option<&str> {
         self.branch_name.as_deref()
     }
     /// <p> The unique ID for a job. </p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<&str> {
         self.job_id.as_deref()
     }
     /// <p> A pagination token. Set to null to start listing artifacts from start. If a non-null pagination token is returned in a result, pass its value in here to list more artifacts. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p> The maximum number of records to list in a single response. </p>
@@ -51,73 +51,75 @@ impl ListArtifactsInput {
 
 /// A builder for [`ListArtifactsInput`](crate::operation::list_artifacts::ListArtifactsInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListArtifactsInputBuilder {
-    pub(crate) app_id: std::option::Option<std::string::String>,
-    pub(crate) branch_name: std::option::Option<std::string::String>,
-    pub(crate) job_id: std::option::Option<std::string::String>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
-    pub(crate) max_results: std::option::Option<i32>,
+    pub(crate) app_id: ::std::option::Option<::std::string::String>,
+    pub(crate) branch_name: ::std::option::Option<::std::string::String>,
+    pub(crate) job_id: ::std::option::Option<::std::string::String>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
+    pub(crate) max_results: ::std::option::Option<i32>,
 }
 impl ListArtifactsInputBuilder {
     /// <p> The unique ID for an Amplify app. </p>
-    pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.app_id = Some(input.into());
+    pub fn app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.app_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The unique ID for an Amplify app. </p>
-    pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_app_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_id = input;
         self
     }
     /// <p> The name of a branch that is part of an Amplify app. </p>
-    pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.branch_name = Some(input.into());
+    pub fn branch_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.branch_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of a branch that is part of an Amplify app. </p>
-    pub fn set_branch_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_branch_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.branch_name = input;
         self
     }
     /// <p> The unique ID for a job. </p>
-    pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.job_id = Some(input.into());
+    pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.job_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The unique ID for a job. </p>
-    pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_id = input;
         self
     }
     /// <p> A pagination token. Set to null to start listing artifacts from start. If a non-null pagination token is returned in a result, pass its value in here to list more artifacts. </p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> A pagination token. Set to null to start listing artifacts from start. If a non-null pagination token is returned in a result, pass its value in here to list more artifacts. </p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
     /// <p> The maximum number of records to list in a single response. </p>
     pub fn max_results(mut self, input: i32) -> Self {
-        self.max_results = Some(input);
+        self.max_results = ::std::option::Option::Some(input);
         self
     }
     /// <p> The maximum number of records to list in a single response. </p>
-    pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
     /// Consumes the builder and constructs a [`ListArtifactsInput`](crate::operation::list_artifacts::ListArtifactsInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::list_artifacts::ListArtifactsInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::list_artifacts::ListArtifactsInput {
+        ::std::result::Result::Ok(crate::operation::list_artifacts::ListArtifactsInput {
             app_id: self.app_id,
             branch_name: self.branch_name,
             job_id: self.job_id,

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`BatchCreateAttendee`](crate::operation::batch_create_attendee::builders::BatchCreateAttendeeFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`meeting_id(impl Into<String>)`](crate::operation::batch_create_attendee::builders::BatchCreateAttendeeFluentBuilder::meeting_id) / [`set_meeting_id(Option<String>)`](crate::operation::batch_create_attendee::builders::BatchCreateAttendeeFluentBuilder::set_meeting_id): <p>The Amazon Chime SDK ID of the meeting to which you're adding attendees.</p>
+    ///   - [`meeting_id(impl ::std::convert::Into<String>)`](crate::operation::batch_create_attendee::builders::BatchCreateAttendeeFluentBuilder::meeting_id) / [`set_meeting_id(Option<String>)`](crate::operation::batch_create_attendee::builders::BatchCreateAttendeeFluentBuilder::set_meeting_id): <p>The Amazon Chime SDK ID of the meeting to which you're adding attendees.</p>
     ///   - [`attendees(Vec<CreateAttendeeRequestItem>)`](crate::operation::batch_create_attendee::builders::BatchCreateAttendeeFluentBuilder::attendees) / [`set_attendees(Option<Vec<CreateAttendeeRequestItem>>)`](crate::operation::batch_create_attendee::builders::BatchCreateAttendeeFluentBuilder::set_attendees): <p>The attendee information, including attendees' IDs and join tokens.</p>
     /// - On success, responds with [`BatchCreateAttendeeOutput`](crate::operation::batch_create_attendee::BatchCreateAttendeeOutput) with field(s):
     ///   - [`attendees(Option<Vec<Attendee>>)`](crate::operation::batch_create_attendee::BatchCreateAttendeeOutput::attendees): <p>The attendee information, including attendees' IDs and join tokens.</p>

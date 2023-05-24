@@ -2,17 +2,17 @@
 
 /// <p>The identity provider.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct IdentityProvider {
     /// <p>The ARN of the identity provider.</p>
     #[doc(hidden)]
-    pub identity_provider_arn: std::option::Option<std::string::String>,
+    pub identity_provider_arn: ::std::option::Option<::std::string::String>,
     /// <p>The identity provider name.</p>
     #[doc(hidden)]
-    pub identity_provider_name: std::option::Option<std::string::String>,
+    pub identity_provider_name: ::std::option::Option<::std::string::String>,
     /// <p>The identity provider type.</p>
     #[doc(hidden)]
-    pub identity_provider_type: std::option::Option<crate::types::IdentityProviderType>,
+    pub identity_provider_type: ::std::option::Option<crate::types::IdentityProviderType>,
     /// <p>The identity provider details. The following list describes the provider detail keys for each identity provider type. </p>
     /// <ul>
     /// <li> <p>For Google and Login with Amazon:</p>
@@ -55,22 +55,23 @@ pub struct IdentityProvider {
     /// </ul> </li>
     /// </ul>
     #[doc(hidden)]
-    pub identity_provider_details:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub identity_provider_details: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl IdentityProvider {
     /// <p>The ARN of the identity provider.</p>
-    pub fn identity_provider_arn(&self) -> std::option::Option<&str> {
+    pub fn identity_provider_arn(&self) -> ::std::option::Option<&str> {
         self.identity_provider_arn.as_deref()
     }
     /// <p>The identity provider name.</p>
-    pub fn identity_provider_name(&self) -> std::option::Option<&str> {
+    pub fn identity_provider_name(&self) -> ::std::option::Option<&str> {
         self.identity_provider_name.as_deref()
     }
     /// <p>The identity provider type.</p>
     pub fn identity_provider_type(
         &self,
-    ) -> std::option::Option<&crate::types::IdentityProviderType> {
+    ) -> ::std::option::Option<&crate::types::IdentityProviderType> {
         self.identity_provider_type.as_ref()
     }
     /// <p>The identity provider details. The following list describes the provider detail keys for each identity provider type. </p>
@@ -116,13 +117,14 @@ impl IdentityProvider {
     /// </ul>
     pub fn identity_provider_details(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.identity_provider_details.as_ref()
     }
 }
-impl std::fmt::Debug for IdentityProvider {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for IdentityProvider {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("IdentityProvider");
         formatter.field("identity_provider_arn", &self.identity_provider_arn);
         formatter.field("identity_provider_name", &"*** Sensitive Data Redacted ***");
@@ -143,50 +145,57 @@ impl IdentityProvider {
 
 /// A builder for [`IdentityProvider`](crate::types::IdentityProvider).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct IdentityProviderBuilder {
-    pub(crate) identity_provider_arn: std::option::Option<std::string::String>,
-    pub(crate) identity_provider_name: std::option::Option<std::string::String>,
-    pub(crate) identity_provider_type: std::option::Option<crate::types::IdentityProviderType>,
-    pub(crate) identity_provider_details:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) identity_provider_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) identity_provider_name: ::std::option::Option<::std::string::String>,
+    pub(crate) identity_provider_type: ::std::option::Option<crate::types::IdentityProviderType>,
+    pub(crate) identity_provider_details: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl IdentityProviderBuilder {
     /// <p>The ARN of the identity provider.</p>
-    pub fn identity_provider_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.identity_provider_arn = Some(input.into());
+    pub fn identity_provider_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.identity_provider_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the identity provider.</p>
     pub fn set_identity_provider_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.identity_provider_arn = input;
         self
     }
     /// <p>The identity provider name.</p>
-    pub fn identity_provider_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.identity_provider_name = Some(input.into());
+    pub fn identity_provider_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.identity_provider_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identity provider name.</p>
     pub fn set_identity_provider_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.identity_provider_name = input;
         self
     }
     /// <p>The identity provider type.</p>
     pub fn identity_provider_type(mut self, input: crate::types::IdentityProviderType) -> Self {
-        self.identity_provider_type = Some(input);
+        self.identity_provider_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The identity provider type.</p>
     pub fn set_identity_provider_type(
         mut self,
-        input: std::option::Option<crate::types::IdentityProviderType>,
+        input: ::std::option::Option<crate::types::IdentityProviderType>,
     ) -> Self {
         self.identity_provider_type = input;
         self
@@ -238,12 +247,12 @@ impl IdentityProviderBuilder {
     /// </ul>
     pub fn identity_provider_details(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.identity_provider_details.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.identity_provider_details = Some(hash_map);
+        self.identity_provider_details = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The identity provider details. The following list describes the provider detail keys for each identity provider type. </p>
@@ -289,8 +298,8 @@ impl IdentityProviderBuilder {
     /// </ul>
     pub fn set_identity_provider_details(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.identity_provider_details = input;
@@ -306,8 +315,8 @@ impl IdentityProviderBuilder {
         }
     }
 }
-impl std::fmt::Debug for IdentityProviderBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for IdentityProviderBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("IdentityProviderBuilder");
         formatter.field("identity_provider_arn", &self.identity_provider_arn);
         formatter.field("identity_provider_name", &"*** Sensitive Data Redacted ***");

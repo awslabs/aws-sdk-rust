@@ -2,7 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_export_http_error(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::describe_export::DescribeExportOutput,
@@ -15,7 +15,7 @@ pub fn de_describe_export_http_error(
         _response_body,
     )
     .map_err(crate::operation::describe_export::DescribeExportError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
+    generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
@@ -105,7 +105,7 @@ pub fn de_describe_export_http_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_export_http_response_with_props(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::describe_export::DescribeExportOutput,
@@ -121,7 +121,7 @@ pub fn de_describe_export_http_response_with_props(
         )
         .map_err(crate::operation::describe_export::DescribeExportError::unhandled)?;
         output._set_request_id(
-            aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
+            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
         );
         output.build()
     })
@@ -132,29 +132,29 @@ pub(crate) fn de_describe_export(
     mut builder: crate::operation::describe_export::builders::DescribeExportOutputBuilder,
 ) -> Result<
     crate::operation::describe_export::builders::DescribeExportOutputBuilder,
-    aws_smithy_json::deserialize::error::DeserializeError,
+    ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =
-        aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
+        ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
             .peekable();
     let tokens = &mut tokens_owned;
-    aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
-            Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+            Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "creationDateTime" => {
                         builder = builder.set_creation_date_time(
-                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),
-                                aws_smithy_types::date_time::Format::EpochSeconds,
+                                ::aws_smithy_types::date_time::Format::EpochSeconds,
                             )?,
                         );
                     }
                     "downloadUrl" => {
                         builder = builder.set_download_url(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -163,7 +163,7 @@ pub(crate) fn de_describe_export(
                     }
                     "exportId" => {
                         builder = builder.set_export_id(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -172,7 +172,7 @@ pub(crate) fn de_describe_export(
                     }
                     "exportStatus" => {
                         builder = builder.set_export_status(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| {
@@ -191,7 +191,7 @@ pub(crate) fn de_describe_export(
                     }
                     "fileFormat" => {
                         builder = builder.set_file_format(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| {
@@ -203,9 +203,9 @@ pub(crate) fn de_describe_export(
                     }
                     "lastUpdatedDateTime" => {
                         builder = builder.set_last_updated_date_time(
-                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),
-                                aws_smithy_types::date_time::Format::EpochSeconds,
+                                ::aws_smithy_types::date_time::Format::EpochSeconds,
                             )?,
                         );
                     }
@@ -214,12 +214,12 @@ pub(crate) fn de_describe_export(
                             crate::protocol_serde::shape_export_resource_specification::de_export_resource_specification(tokens)?
                         );
                     }
-                    _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }
             other => {
                 return Err(
-                    aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                         "expected object key or end object, found: {:?}",
                         other
                     )),
@@ -229,7 +229,7 @@ pub(crate) fn de_describe_export(
     }
     if tokens.next().is_some() {
         return Err(
-            aws_smithy_json::deserialize::error::DeserializeError::custom(
+            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
                 "found more JSON tokens after completing parsing",
             ),
         );

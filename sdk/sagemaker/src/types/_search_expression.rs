@@ -9,36 +9,36 @@
 /// <li> <p>A Boolean operator: <code>And</code> or <code>Or</code>.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchExpression {
     /// <p>A list of filter objects.</p>
     #[doc(hidden)]
-    pub filters: std::option::Option<std::vec::Vec<crate::types::Filter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>A list of nested filter objects.</p>
     #[doc(hidden)]
-    pub nested_filters: std::option::Option<std::vec::Vec<crate::types::NestedFilters>>,
+    pub nested_filters: ::std::option::Option<::std::vec::Vec<crate::types::NestedFilters>>,
     /// <p>A list of search expression objects.</p>
     #[doc(hidden)]
-    pub sub_expressions: std::option::Option<std::vec::Vec<crate::types::SearchExpression>>,
+    pub sub_expressions: ::std::option::Option<::std::vec::Vec<crate::types::SearchExpression>>,
     /// <p>A Boolean operator used to evaluate the search expression. If you want every conditional statement in all lists to be satisfied for the entire search expression to be true, specify <code>And</code>. If only a single conditional statement needs to be true for the entire search expression to be true, specify <code>Or</code>. The default value is <code>And</code>.</p>
     #[doc(hidden)]
-    pub operator: std::option::Option<crate::types::BooleanOperator>,
+    pub operator: ::std::option::Option<crate::types::BooleanOperator>,
 }
 impl SearchExpression {
     /// <p>A list of filter objects.</p>
-    pub fn filters(&self) -> std::option::Option<&[crate::types::Filter]> {
+    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
         self.filters.as_deref()
     }
     /// <p>A list of nested filter objects.</p>
-    pub fn nested_filters(&self) -> std::option::Option<&[crate::types::NestedFilters]> {
+    pub fn nested_filters(&self) -> ::std::option::Option<&[crate::types::NestedFilters]> {
         self.nested_filters.as_deref()
     }
     /// <p>A list of search expression objects.</p>
-    pub fn sub_expressions(&self) -> std::option::Option<&[crate::types::SearchExpression]> {
+    pub fn sub_expressions(&self) -> ::std::option::Option<&[crate::types::SearchExpression]> {
         self.sub_expressions.as_deref()
     }
     /// <p>A Boolean operator used to evaluate the search expression. If you want every conditional statement in all lists to be satisfied for the entire search expression to be true, specify <code>And</code>. If only a single conditional statement needs to be true for the entire search expression to be true, specify <code>Or</code>. The default value is <code>And</code>.</p>
-    pub fn operator(&self) -> std::option::Option<&crate::types::BooleanOperator> {
+    pub fn operator(&self) -> ::std::option::Option<&crate::types::BooleanOperator> {
         self.operator.as_ref()
     }
 }
@@ -51,12 +51,15 @@ impl SearchExpression {
 
 /// A builder for [`SearchExpression`](crate::types::SearchExpression).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SearchExpressionBuilder {
-    pub(crate) filters: std::option::Option<std::vec::Vec<crate::types::Filter>>,
-    pub(crate) nested_filters: std::option::Option<std::vec::Vec<crate::types::NestedFilters>>,
-    pub(crate) sub_expressions: std::option::Option<std::vec::Vec<crate::types::SearchExpression>>,
-    pub(crate) operator: std::option::Option<crate::types::BooleanOperator>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub(crate) nested_filters: ::std::option::Option<::std::vec::Vec<crate::types::NestedFilters>>,
+    pub(crate) sub_expressions:
+        ::std::option::Option<::std::vec::Vec<crate::types::SearchExpression>>,
+    pub(crate) operator: ::std::option::Option<crate::types::BooleanOperator>,
 }
 impl SearchExpressionBuilder {
     /// Appends an item to `filters`.
@@ -67,13 +70,13 @@ impl SearchExpressionBuilder {
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
         v.push(input);
-        self.filters = Some(v);
+        self.filters = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of filter objects.</p>
     pub fn set_filters(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     ) -> Self {
         self.filters = input;
         self
@@ -86,13 +89,13 @@ impl SearchExpressionBuilder {
     pub fn nested_filters(mut self, input: crate::types::NestedFilters) -> Self {
         let mut v = self.nested_filters.unwrap_or_default();
         v.push(input);
-        self.nested_filters = Some(v);
+        self.nested_filters = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of nested filter objects.</p>
     pub fn set_nested_filters(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::NestedFilters>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::NestedFilters>>,
     ) -> Self {
         self.nested_filters = input;
         self
@@ -105,26 +108,26 @@ impl SearchExpressionBuilder {
     pub fn sub_expressions(mut self, input: crate::types::SearchExpression) -> Self {
         let mut v = self.sub_expressions.unwrap_or_default();
         v.push(input);
-        self.sub_expressions = Some(v);
+        self.sub_expressions = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of search expression objects.</p>
     pub fn set_sub_expressions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SearchExpression>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SearchExpression>>,
     ) -> Self {
         self.sub_expressions = input;
         self
     }
     /// <p>A Boolean operator used to evaluate the search expression. If you want every conditional statement in all lists to be satisfied for the entire search expression to be true, specify <code>And</code>. If only a single conditional statement needs to be true for the entire search expression to be true, specify <code>Or</code>. The default value is <code>And</code>.</p>
     pub fn operator(mut self, input: crate::types::BooleanOperator) -> Self {
-        self.operator = Some(input);
+        self.operator = ::std::option::Option::Some(input);
         self
     }
     /// <p>A Boolean operator used to evaluate the search expression. If you want every conditional statement in all lists to be satisfied for the entire search expression to be true, specify <code>And</code>. If only a single conditional statement needs to be true for the entire search expression to be true, specify <code>Or</code>. The default value is <code>And</code>.</p>
     pub fn set_operator(
         mut self,
-        input: std::option::Option<crate::types::BooleanOperator>,
+        input: ::std::option::Option<crate::types::BooleanOperator>,
     ) -> Self {
         self.operator = input;
         self

@@ -2,15 +2,15 @@
 
 /// <p>The private repository authentication credentials to use.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails {
     /// <p>The ARN of the secret that contains the private repository credentials.</p>
     #[doc(hidden)]
-    pub credentials_parameter: std::option::Option<std::string::String>,
+    pub credentials_parameter: ::std::option::Option<::std::string::String>,
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails {
     /// <p>The ARN of the secret that contains the private repository credentials.</p>
-    pub fn credentials_parameter(&self) -> std::option::Option<&str> {
+    pub fn credentials_parameter(&self) -> ::std::option::Option<&str> {
         self.credentials_parameter.as_deref()
     }
 }
@@ -23,20 +23,25 @@ impl AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails {
 
 /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetailsBuilder {
-    pub(crate) credentials_parameter: std::option::Option<std::string::String>,
+    pub(crate) credentials_parameter: ::std::option::Option<::std::string::String>,
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsRepositoryCredentialsDetailsBuilder {
     /// <p>The ARN of the secret that contains the private repository credentials.</p>
-    pub fn credentials_parameter(mut self, input: impl Into<std::string::String>) -> Self {
-        self.credentials_parameter = Some(input.into());
+    pub fn credentials_parameter(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.credentials_parameter = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the secret that contains the private repository credentials.</p>
     pub fn set_credentials_parameter(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.credentials_parameter = input;
         self

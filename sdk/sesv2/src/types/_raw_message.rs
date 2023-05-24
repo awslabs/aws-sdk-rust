@@ -2,7 +2,7 @@
 
 /// <p>Represents the raw content of an email message.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RawMessage {
     /// <p>The raw email message. The message has to meet the following criteria:</p>
     /// <ul>
@@ -15,7 +15,7 @@ pub struct RawMessage {
     /// <li> <p>The length of any single line of text in the message can't exceed 1,000 characters. This restriction is defined in <a href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub data: std::option::Option<aws_smithy_types::Blob>,
+    pub data: ::std::option::Option<::aws_smithy_types::Blob>,
 }
 impl RawMessage {
     /// <p>The raw email message. The message has to meet the following criteria:</p>
@@ -28,7 +28,7 @@ impl RawMessage {
     /// <li> <p>If any of the MIME parts in your message contain content that is outside of the 7-bit ASCII character range, you should encode that content to ensure that recipients' email clients render the message properly.</p> </li>
     /// <li> <p>The length of any single line of text in the message can't exceed 1,000 characters. This restriction is defined in <a href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.</p> </li>
     /// </ul>
-    pub fn data(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn data(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
         self.data.as_ref()
     }
 }
@@ -41,9 +41,11 @@ impl RawMessage {
 
 /// A builder for [`RawMessage`](crate::types::RawMessage).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RawMessageBuilder {
-    pub(crate) data: std::option::Option<aws_smithy_types::Blob>,
+    pub(crate) data: ::std::option::Option<::aws_smithy_types::Blob>,
 }
 impl RawMessageBuilder {
     /// <p>The raw email message. The message has to meet the following criteria:</p>
@@ -56,8 +58,8 @@ impl RawMessageBuilder {
     /// <li> <p>If any of the MIME parts in your message contain content that is outside of the 7-bit ASCII character range, you should encode that content to ensure that recipients' email clients render the message properly.</p> </li>
     /// <li> <p>The length of any single line of text in the message can't exceed 1,000 characters. This restriction is defined in <a href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.</p> </li>
     /// </ul>
-    pub fn data(mut self, input: aws_smithy_types::Blob) -> Self {
-        self.data = Some(input);
+    pub fn data(mut self, input: ::aws_smithy_types::Blob) -> Self {
+        self.data = ::std::option::Option::Some(input);
         self
     }
     /// <p>The raw email message. The message has to meet the following criteria:</p>
@@ -70,7 +72,7 @@ impl RawMessageBuilder {
     /// <li> <p>If any of the MIME parts in your message contain content that is outside of the 7-bit ASCII character range, you should encode that content to ensure that recipients' email clients render the message properly.</p> </li>
     /// <li> <p>The length of any single line of text in the message can't exceed 1,000 characters. This restriction is defined in <a href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.</p> </li>
     /// </ul>
-    pub fn set_data(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
+    pub fn set_data(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.data = input;
         self
     }

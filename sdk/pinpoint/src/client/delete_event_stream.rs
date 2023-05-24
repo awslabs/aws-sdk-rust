@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteEventStream`](crate::operation::delete_event_stream::builders::DeleteEventStreamFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::operation::delete_event_stream::builders::DeleteEventStreamFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::delete_event_stream::builders::DeleteEventStreamFluentBuilder::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    ///   - [`application_id(impl ::std::convert::Into<String>)`](crate::operation::delete_event_stream::builders::DeleteEventStreamFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::delete_event_stream::builders::DeleteEventStreamFluentBuilder::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     /// - On success, responds with [`DeleteEventStreamOutput`](crate::operation::delete_event_stream::DeleteEventStreamOutput) with field(s):
     ///   - [`event_stream(Option<EventStream>)`](crate::operation::delete_event_stream::DeleteEventStreamOutput::event_stream): <p>Specifies settings for publishing event data to an Amazon Kinesis data stream or an Amazon Kinesis Data Firehose delivery stream.</p>
     /// - On failure, responds with [`SdkError<DeleteEventStreamError>`](crate::operation::delete_event_stream::DeleteEventStreamError)

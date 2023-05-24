@@ -2,83 +2,83 @@
 
 /// <p>Describes the snapshot created from the imported disk.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SnapshotDetail {
     /// <p>A description for the snapshot.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The block device mapping for the snapshot.</p>
     #[doc(hidden)]
-    pub device_name: std::option::Option<std::string::String>,
+    pub device_name: ::std::option::Option<::std::string::String>,
     /// <p>The size of the disk in the snapshot, in GiB.</p>
     #[doc(hidden)]
-    pub disk_image_size: std::option::Option<f64>,
+    pub disk_image_size: ::std::option::Option<f64>,
     /// <p>The format of the disk image from which the snapshot is created.</p>
     #[doc(hidden)]
-    pub format: std::option::Option<std::string::String>,
+    pub format: ::std::option::Option<::std::string::String>,
     /// <p>The percentage of progress for the task.</p>
     #[doc(hidden)]
-    pub progress: std::option::Option<std::string::String>,
+    pub progress: ::std::option::Option<::std::string::String>,
     /// <p>The snapshot ID of the disk being imported.</p>
     #[doc(hidden)]
-    pub snapshot_id: std::option::Option<std::string::String>,
+    pub snapshot_id: ::std::option::Option<::std::string::String>,
     /// <p>A brief status of the snapshot creation.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<std::string::String>,
+    pub status: ::std::option::Option<::std::string::String>,
     /// <p>A detailed status message for the snapshot creation.</p>
     #[doc(hidden)]
-    pub status_message: std::option::Option<std::string::String>,
+    pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The URL used to access the disk image.</p>
     #[doc(hidden)]
-    pub url: std::option::Option<std::string::String>,
+    pub url: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 bucket for the disk image.</p>
     #[doc(hidden)]
-    pub user_bucket: std::option::Option<crate::types::UserBucketDetails>,
+    pub user_bucket: ::std::option::Option<crate::types::UserBucketDetails>,
 }
 impl SnapshotDetail {
     /// <p>A description for the snapshot.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The block device mapping for the snapshot.</p>
-    pub fn device_name(&self) -> std::option::Option<&str> {
+    pub fn device_name(&self) -> ::std::option::Option<&str> {
         self.device_name.as_deref()
     }
     /// <p>The size of the disk in the snapshot, in GiB.</p>
-    pub fn disk_image_size(&self) -> std::option::Option<f64> {
+    pub fn disk_image_size(&self) -> ::std::option::Option<f64> {
         self.disk_image_size
     }
     /// <p>The format of the disk image from which the snapshot is created.</p>
-    pub fn format(&self) -> std::option::Option<&str> {
+    pub fn format(&self) -> ::std::option::Option<&str> {
         self.format.as_deref()
     }
     /// <p>The percentage of progress for the task.</p>
-    pub fn progress(&self) -> std::option::Option<&str> {
+    pub fn progress(&self) -> ::std::option::Option<&str> {
         self.progress.as_deref()
     }
     /// <p>The snapshot ID of the disk being imported.</p>
-    pub fn snapshot_id(&self) -> std::option::Option<&str> {
+    pub fn snapshot_id(&self) -> ::std::option::Option<&str> {
         self.snapshot_id.as_deref()
     }
     /// <p>A brief status of the snapshot creation.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
     /// <p>A detailed status message for the snapshot creation.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<&str> {
         self.status_message.as_deref()
     }
     /// <p>The URL used to access the disk image.</p>
-    pub fn url(&self) -> std::option::Option<&str> {
+    pub fn url(&self) -> ::std::option::Option<&str> {
         self.url.as_deref()
     }
     /// <p>The Amazon S3 bucket for the disk image.</p>
-    pub fn user_bucket(&self) -> std::option::Option<&crate::types::UserBucketDetails> {
+    pub fn user_bucket(&self) -> ::std::option::Option<&crate::types::UserBucketDetails> {
         self.user_bucket.as_ref()
     }
 }
-impl std::fmt::Debug for SnapshotDetail {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for SnapshotDetail {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SnapshotDetail");
         formatter.field("description", &self.description);
         formatter.field("device_name", &self.device_name);
@@ -102,119 +102,125 @@ impl SnapshotDetail {
 
 /// A builder for [`SnapshotDetail`](crate::types::SnapshotDetail).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct SnapshotDetailBuilder {
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) device_name: std::option::Option<std::string::String>,
-    pub(crate) disk_image_size: std::option::Option<f64>,
-    pub(crate) format: std::option::Option<std::string::String>,
-    pub(crate) progress: std::option::Option<std::string::String>,
-    pub(crate) snapshot_id: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<std::string::String>,
-    pub(crate) status_message: std::option::Option<std::string::String>,
-    pub(crate) url: std::option::Option<std::string::String>,
-    pub(crate) user_bucket: std::option::Option<crate::types::UserBucketDetails>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) device_name: ::std::option::Option<::std::string::String>,
+    pub(crate) disk_image_size: ::std::option::Option<f64>,
+    pub(crate) format: ::std::option::Option<::std::string::String>,
+    pub(crate) progress: ::std::option::Option<::std::string::String>,
+    pub(crate) snapshot_id: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<::std::string::String>,
+    pub(crate) status_message: ::std::option::Option<::std::string::String>,
+    pub(crate) url: ::std::option::Option<::std::string::String>,
+    pub(crate) user_bucket: ::std::option::Option<crate::types::UserBucketDetails>,
 }
 impl SnapshotDetailBuilder {
     /// <p>A description for the snapshot.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description for the snapshot.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>The block device mapping for the snapshot.</p>
-    pub fn device_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.device_name = Some(input.into());
+    pub fn device_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.device_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The block device mapping for the snapshot.</p>
-    pub fn set_device_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_device_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_name = input;
         self
     }
     /// <p>The size of the disk in the snapshot, in GiB.</p>
     pub fn disk_image_size(mut self, input: f64) -> Self {
-        self.disk_image_size = Some(input);
+        self.disk_image_size = ::std::option::Option::Some(input);
         self
     }
     /// <p>The size of the disk in the snapshot, in GiB.</p>
-    pub fn set_disk_image_size(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_disk_image_size(mut self, input: ::std::option::Option<f64>) -> Self {
         self.disk_image_size = input;
         self
     }
     /// <p>The format of the disk image from which the snapshot is created.</p>
-    pub fn format(mut self, input: impl Into<std::string::String>) -> Self {
-        self.format = Some(input.into());
+    pub fn format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.format = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The format of the disk image from which the snapshot is created.</p>
-    pub fn set_format(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.format = input;
         self
     }
     /// <p>The percentage of progress for the task.</p>
-    pub fn progress(mut self, input: impl Into<std::string::String>) -> Self {
-        self.progress = Some(input.into());
+    pub fn progress(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.progress = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The percentage of progress for the task.</p>
-    pub fn set_progress(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_progress(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.progress = input;
         self
     }
     /// <p>The snapshot ID of the disk being imported.</p>
-    pub fn snapshot_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.snapshot_id = Some(input.into());
+    pub fn snapshot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.snapshot_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The snapshot ID of the disk being imported.</p>
-    pub fn set_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_snapshot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_id = input;
         self
     }
     /// <p>A brief status of the snapshot creation.</p>
-    pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status = Some(input.into());
+    pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A brief status of the snapshot creation.</p>
-    pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }
     /// <p>A detailed status message for the snapshot creation.</p>
-    pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status_message = Some(input.into());
+    pub fn status_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A detailed status message for the snapshot creation.</p>
-    pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.status_message = input;
         self
     }
     /// <p>The URL used to access the disk image.</p>
-    pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.url = Some(input.into());
+    pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL used to access the disk image.</p>
-    pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.url = input;
         self
     }
     /// <p>The Amazon S3 bucket for the disk image.</p>
     pub fn user_bucket(mut self, input: crate::types::UserBucketDetails) -> Self {
-        self.user_bucket = Some(input);
+        self.user_bucket = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Amazon S3 bucket for the disk image.</p>
     pub fn set_user_bucket(
         mut self,
-        input: std::option::Option<crate::types::UserBucketDetails>,
+        input: ::std::option::Option<crate::types::UserBucketDetails>,
     ) -> Self {
         self.user_bucket = input;
         self
@@ -235,8 +241,8 @@ impl SnapshotDetailBuilder {
         }
     }
 }
-impl std::fmt::Debug for SnapshotDetailBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for SnapshotDetailBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SnapshotDetailBuilder");
         formatter.field("description", &self.description);
         formatter.field("device_name", &self.device_name);

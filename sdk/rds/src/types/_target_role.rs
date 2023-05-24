@@ -39,13 +39,13 @@
 /// _Note: `TargetRole::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum TargetRole {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum TargetRole {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for TargetRole {
+impl ::std::convert::From<&str> for TargetRole {
     fn from(s: &str) -> Self {
         match s {
             "READ_ONLY" => TargetRole::ReadOnly,
@@ -67,11 +67,11 @@ impl std::convert::From<&str> for TargetRole {
         }
     }
 }
-impl std::str::FromStr for TargetRole {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for TargetRole {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TargetRole::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(TargetRole::from(s))
     }
 }
 impl TargetRole {
@@ -89,7 +89,7 @@ impl TargetRole {
         &["READ_ONLY", "READ_WRITE", "UNKNOWN"]
     }
 }
-impl AsRef<str> for TargetRole {
+impl ::std::convert::AsRef<str> for TargetRole {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

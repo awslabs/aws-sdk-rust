@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`PutFeedback`](crate::operation::put_feedback::builders::PutFeedbackFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`anomaly_detector_arn(impl Into<String>)`](crate::operation::put_feedback::builders::PutFeedbackFluentBuilder::anomaly_detector_arn) / [`set_anomaly_detector_arn(Option<String>)`](crate::operation::put_feedback::builders::PutFeedbackFluentBuilder::set_anomaly_detector_arn): <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
+    ///   - [`anomaly_detector_arn(impl ::std::convert::Into<String>)`](crate::operation::put_feedback::builders::PutFeedbackFluentBuilder::anomaly_detector_arn) / [`set_anomaly_detector_arn(Option<String>)`](crate::operation::put_feedback::builders::PutFeedbackFluentBuilder::set_anomaly_detector_arn): <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
     ///   - [`anomaly_group_time_series_feedback(AnomalyGroupTimeSeriesFeedback)`](crate::operation::put_feedback::builders::PutFeedbackFluentBuilder::anomaly_group_time_series_feedback) / [`set_anomaly_group_time_series_feedback(Option<AnomalyGroupTimeSeriesFeedback>)`](crate::operation::put_feedback::builders::PutFeedbackFluentBuilder::set_anomaly_group_time_series_feedback): <p>Feedback for an anomalous metric.</p>
     /// - On success, responds with [`PutFeedbackOutput`](crate::operation::put_feedback::PutFeedbackOutput)
     /// - On failure, responds with [`SdkError<PutFeedbackError>`](crate::operation::put_feedback::PutFeedbackError)

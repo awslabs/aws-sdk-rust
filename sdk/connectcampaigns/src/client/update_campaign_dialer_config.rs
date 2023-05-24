@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateCampaignDialerConfig`](crate::operation::update_campaign_dialer_config::builders::UpdateCampaignDialerConfigFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::update_campaign_dialer_config::builders::UpdateCampaignDialerConfigFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::update_campaign_dialer_config::builders::UpdateCampaignDialerConfigFluentBuilder::set_id): Identifier representing a Campaign
+    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::update_campaign_dialer_config::builders::UpdateCampaignDialerConfigFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::update_campaign_dialer_config::builders::UpdateCampaignDialerConfigFluentBuilder::set_id): Identifier representing a Campaign
     ///   - [`dialer_config(DialerConfig)`](crate::operation::update_campaign_dialer_config::builders::UpdateCampaignDialerConfigFluentBuilder::dialer_config) / [`set_dialer_config(Option<DialerConfig>)`](crate::operation::update_campaign_dialer_config::builders::UpdateCampaignDialerConfigFluentBuilder::set_dialer_config): The possible types of dialer config parameters
     /// - On success, responds with [`UpdateCampaignDialerConfigOutput`](crate::operation::update_campaign_dialer_config::UpdateCampaignDialerConfigOutput)
     /// - On failure, responds with [`SdkError<UpdateCampaignDialerConfigError>`](crate::operation::update_campaign_dialer_config::UpdateCampaignDialerConfigError)

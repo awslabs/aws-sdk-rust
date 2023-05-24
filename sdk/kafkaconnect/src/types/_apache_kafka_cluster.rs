@@ -2,22 +2,22 @@
 
 /// <p>The details of the Apache Kafka cluster to which the connector is connected.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApacheKafkaCluster {
     /// <p>The bootstrap servers of the cluster.</p>
     #[doc(hidden)]
-    pub bootstrap_servers: std::option::Option<std::string::String>,
+    pub bootstrap_servers: ::std::option::Option<::std::string::String>,
     /// <p>Details of an Amazon VPC which has network connectivity to the Apache Kafka cluster.</p>
     #[doc(hidden)]
-    pub vpc: std::option::Option<crate::types::Vpc>,
+    pub vpc: ::std::option::Option<crate::types::Vpc>,
 }
 impl ApacheKafkaCluster {
     /// <p>The bootstrap servers of the cluster.</p>
-    pub fn bootstrap_servers(&self) -> std::option::Option<&str> {
+    pub fn bootstrap_servers(&self) -> ::std::option::Option<&str> {
         self.bootstrap_servers.as_deref()
     }
     /// <p>Details of an Amazon VPC which has network connectivity to the Apache Kafka cluster.</p>
-    pub fn vpc(&self) -> std::option::Option<&crate::types::Vpc> {
+    pub fn vpc(&self) -> ::std::option::Option<&crate::types::Vpc> {
         self.vpc.as_ref()
     }
 }
@@ -30,32 +30,37 @@ impl ApacheKafkaCluster {
 
 /// A builder for [`ApacheKafkaCluster`](crate::types::ApacheKafkaCluster).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ApacheKafkaClusterBuilder {
-    pub(crate) bootstrap_servers: std::option::Option<std::string::String>,
-    pub(crate) vpc: std::option::Option<crate::types::Vpc>,
+    pub(crate) bootstrap_servers: ::std::option::Option<::std::string::String>,
+    pub(crate) vpc: ::std::option::Option<crate::types::Vpc>,
 }
 impl ApacheKafkaClusterBuilder {
     /// <p>The bootstrap servers of the cluster.</p>
-    pub fn bootstrap_servers(mut self, input: impl Into<std::string::String>) -> Self {
-        self.bootstrap_servers = Some(input.into());
+    pub fn bootstrap_servers(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.bootstrap_servers = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The bootstrap servers of the cluster.</p>
     pub fn set_bootstrap_servers(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.bootstrap_servers = input;
         self
     }
     /// <p>Details of an Amazon VPC which has network connectivity to the Apache Kafka cluster.</p>
     pub fn vpc(mut self, input: crate::types::Vpc) -> Self {
-        self.vpc = Some(input);
+        self.vpc = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details of an Amazon VPC which has network connectivity to the Apache Kafka cluster.</p>
-    pub fn set_vpc(mut self, input: std::option::Option<crate::types::Vpc>) -> Self {
+    pub fn set_vpc(mut self, input: ::std::option::Option<crate::types::Vpc>) -> Self {
         self.vpc = input;
         self
     }

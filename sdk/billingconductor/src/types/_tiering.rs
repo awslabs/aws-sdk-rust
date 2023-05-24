@@ -2,15 +2,15 @@
 
 /// <p> The set of tiering configurations for the pricing rule. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Tiering {
     /// <p> The possible Amazon Web Services Free Tier configurations. </p>
     #[doc(hidden)]
-    pub free_tier: std::option::Option<crate::types::FreeTierConfig>,
+    pub free_tier: ::std::option::Option<crate::types::FreeTierConfig>,
 }
 impl Tiering {
     /// <p> The possible Amazon Web Services Free Tier configurations. </p>
-    pub fn free_tier(&self) -> std::option::Option<&crate::types::FreeTierConfig> {
+    pub fn free_tier(&self) -> ::std::option::Option<&crate::types::FreeTierConfig> {
         self.free_tier.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl Tiering {
 
 /// A builder for [`Tiering`](crate::types::Tiering).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TieringBuilder {
-    pub(crate) free_tier: std::option::Option<crate::types::FreeTierConfig>,
+    pub(crate) free_tier: ::std::option::Option<crate::types::FreeTierConfig>,
 }
 impl TieringBuilder {
     /// <p> The possible Amazon Web Services Free Tier configurations. </p>
     pub fn free_tier(mut self, input: crate::types::FreeTierConfig) -> Self {
-        self.free_tier = Some(input);
+        self.free_tier = ::std::option::Option::Some(input);
         self
     }
     /// <p> The possible Amazon Web Services Free Tier configurations. </p>
     pub fn set_free_tier(
         mut self,
-        input: std::option::Option<crate::types::FreeTierConfig>,
+        input: ::std::option::Option<crate::types::FreeTierConfig>,
     ) -> Self {
         self.free_tier = input;
         self

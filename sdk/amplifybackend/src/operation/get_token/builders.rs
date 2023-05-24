@@ -6,56 +6,59 @@ pub use crate::operation::get_token::_get_token_input::GetTokenInputBuilder;
 /// Fluent builder constructing a request to `GetToken`.
 ///
 /// <p>Gets the challenge token based on the given appId and sessionId.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetTokenFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::get_token::builders::GetTokenInputBuilder,
 }
 impl GetTokenFluentBuilder {
     /// Creates a new `GetToken`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::get_token::GetToken,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::get_token::GetTokenError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_token::GetTokenError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_token::GetTokenOutput,
-        aws_smithy_http::result::SdkError<crate::operation::get_token::GetTokenError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_token::GetTokenError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,29 +71,29 @@ impl GetTokenFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_token::GetTokenOutput,
-        aws_smithy_http::result::SdkError<crate::operation::get_token::GetTokenError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_token::GetTokenError>,
     > {
         self.send_middleware().await
     }
     /// <p>The app ID.</p>
-    pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.app_id(input.into());
         self
     }
     /// <p>The app ID.</p>
-    pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_app_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_app_id(input);
         self
     }
     /// <p>The session ID.</p>
-    pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.session_id(input.into());
         self
     }
     /// <p>The session ID.</p>
-    pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_session_id(input);
         self
     }

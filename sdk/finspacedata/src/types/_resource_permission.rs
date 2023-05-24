@@ -12,15 +12,15 @@
 /// </ul>
 /// <p>For more information on the dataset permissions, see <a href="https://docs.aws.amazon.com/finspace/latest/userguide/managing-user-permissions.html#supported-dataset-permissions">Supported Dataset Permissions</a> in the FinSpace User Guide.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourcePermission {
     /// <p>Permission for a resource.</p>
     #[doc(hidden)]
-    pub permission: std::option::Option<std::string::String>,
+    pub permission: ::std::option::Option<::std::string::String>,
 }
 impl ResourcePermission {
     /// <p>Permission for a resource.</p>
-    pub fn permission(&self) -> std::option::Option<&str> {
+    pub fn permission(&self) -> ::std::option::Option<&str> {
         self.permission.as_deref()
     }
 }
@@ -33,18 +33,20 @@ impl ResourcePermission {
 
 /// A builder for [`ResourcePermission`](crate::types::ResourcePermission).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResourcePermissionBuilder {
-    pub(crate) permission: std::option::Option<std::string::String>,
+    pub(crate) permission: ::std::option::Option<::std::string::String>,
 }
 impl ResourcePermissionBuilder {
     /// <p>Permission for a resource.</p>
-    pub fn permission(mut self, input: impl Into<std::string::String>) -> Self {
-        self.permission = Some(input.into());
+    pub fn permission(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.permission = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Permission for a resource.</p>
-    pub fn set_permission(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_permission(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.permission = input;
         self
     }

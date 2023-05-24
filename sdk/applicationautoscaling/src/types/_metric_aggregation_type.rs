@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum MetricAggregationType {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum MetricAggregationType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for MetricAggregationType {
+impl ::std::convert::From<&str> for MetricAggregationType {
     fn from(s: &str) -> Self {
         match s {
             "Average" => MetricAggregationType::Average,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for MetricAggregationType {
         }
     }
 }
-impl std::str::FromStr for MetricAggregationType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for MetricAggregationType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(MetricAggregationType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(MetricAggregationType::from(s))
     }
 }
 impl MetricAggregationType {
@@ -91,7 +91,7 @@ impl MetricAggregationType {
         &["Average", "Maximum", "Minimum"]
     }
 }
-impl AsRef<str> for MetricAggregationType {
+impl ::std::convert::AsRef<str> for MetricAggregationType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

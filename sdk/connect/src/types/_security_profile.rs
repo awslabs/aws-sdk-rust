@@ -2,72 +2,76 @@
 
 /// <p>Contains information about a security profile.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SecurityProfile {
     /// <p>The identifier for the security profile.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The organization resource identifier for the security profile.</p>
     #[doc(hidden)]
-    pub organization_resource_id: std::option::Option<std::string::String>,
+    pub organization_resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the secruity profile.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name for the security profile.</p>
     #[doc(hidden)]
-    pub security_profile_name: std::option::Option<std::string::String>,
+    pub security_profile_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the security profile.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>The list of tags that a security profile uses to restrict access to resources in Amazon Connect.</p>
     #[doc(hidden)]
-    pub allowed_access_control_tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub allowed_access_control_tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>The list of resources that a security profile applies tag restrictions to in Amazon Connect.</p>
     #[doc(hidden)]
-    pub tag_restricted_resources: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub tag_restricted_resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SecurityProfile {
     /// <p>The identifier for the security profile.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The organization resource identifier for the security profile.</p>
-    pub fn organization_resource_id(&self) -> std::option::Option<&str> {
+    pub fn organization_resource_id(&self) -> ::std::option::Option<&str> {
         self.organization_resource_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the secruity profile.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The name for the security profile.</p>
-    pub fn security_profile_name(&self) -> std::option::Option<&str> {
+    pub fn security_profile_name(&self) -> ::std::option::Option<&str> {
         self.security_profile_name.as_deref()
     }
     /// <p>The description of the security profile.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn tags(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.tags.as_ref()
     }
     /// <p>The list of tags that a security profile uses to restrict access to resources in Amazon Connect.</p>
     pub fn allowed_access_control_tags(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.allowed_access_control_tags.as_ref()
     }
     /// <p>The list of resources that a security profile applies tag restrictions to in Amazon Connect.</p>
-    pub fn tag_restricted_resources(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn tag_restricted_resources(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.tag_restricted_resources.as_deref()
     }
 }
@@ -80,73 +84,84 @@ impl SecurityProfile {
 
 /// A builder for [`SecurityProfile`](crate::types::SecurityProfile).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SecurityProfileBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) organization_resource_id: std::option::Option<std::string::String>,
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) security_profile_name: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) allowed_access_control_tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) tag_restricted_resources: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) organization_resource_id: ::std::option::Option<::std::string::String>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) security_profile_name: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) allowed_access_control_tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) tag_restricted_resources:
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SecurityProfileBuilder {
     /// <p>The identifier for the security profile.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for the security profile.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>The organization resource identifier for the security profile.</p>
-    pub fn organization_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.organization_resource_id = Some(input.into());
+    pub fn organization_resource_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.organization_resource_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The organization resource identifier for the security profile.</p>
     pub fn set_organization_resource_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.organization_resource_id = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the secruity profile.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the secruity profile.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// <p>The name for the security profile.</p>
-    pub fn security_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.security_profile_name = Some(input.into());
+    pub fn security_profile_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.security_profile_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name for the security profile.</p>
     pub fn set_security_profile_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.security_profile_name = input;
         self
     }
     /// <p>The description of the security profile.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the security profile.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
@@ -157,19 +172,19 @@ impl SecurityProfileBuilder {
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
+        self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.tags = input;
@@ -182,19 +197,19 @@ impl SecurityProfileBuilder {
     /// <p>The list of tags that a security profile uses to restrict access to resources in Amazon Connect.</p>
     pub fn allowed_access_control_tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.allowed_access_control_tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.allowed_access_control_tags = Some(hash_map);
+        self.allowed_access_control_tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The list of tags that a security profile uses to restrict access to resources in Amazon Connect.</p>
     pub fn set_allowed_access_control_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.allowed_access_control_tags = input;
@@ -205,16 +220,19 @@ impl SecurityProfileBuilder {
     /// To override the contents of this collection use [`set_tag_restricted_resources`](Self::set_tag_restricted_resources).
     ///
     /// <p>The list of resources that a security profile applies tag restrictions to in Amazon Connect.</p>
-    pub fn tag_restricted_resources(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn tag_restricted_resources(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.tag_restricted_resources.unwrap_or_default();
         v.push(input.into());
-        self.tag_restricted_resources = Some(v);
+        self.tag_restricted_resources = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of resources that a security profile applies tag restrictions to in Amazon Connect.</p>
     pub fn set_tag_restricted_resources(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.tag_restricted_resources = input;
         self

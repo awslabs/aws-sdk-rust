@@ -2,31 +2,31 @@
 
 /// <p>Describes where logs are stored and the prefix that Amazon S3 assigns to all log object keys for a bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTlogging.html">PUT Bucket logging</a> in the <i>Amazon S3 API Reference</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoggingEnabled {
     /// <p>Specifies the bucket where you want Amazon S3 to store server access logs. You can have your logs delivered to any bucket that you own, including the same bucket that is being logged. You can also configure multiple buckets to deliver their logs to the same target bucket. In this case, you should choose a different <code>TargetPrefix</code> for each source bucket so that the delivered log files can be distinguished by key.</p>
     #[doc(hidden)]
-    pub target_bucket: std::option::Option<std::string::String>,
+    pub target_bucket: ::std::option::Option<::std::string::String>,
     /// <p>Container for granting information.</p>
     /// <p>Buckets that use the bucket owner enforced setting for Object Ownership don't support target grants. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/enable-server-access-logging.html#grant-log-delivery-permissions-general">Permissions for server access log delivery</a> in the <i>Amazon S3 User Guide</i>.</p>
     #[doc(hidden)]
-    pub target_grants: std::option::Option<std::vec::Vec<crate::types::TargetGrant>>,
+    pub target_grants: ::std::option::Option<::std::vec::Vec<crate::types::TargetGrant>>,
     /// <p>A prefix for all log object keys. If you store log files from multiple Amazon S3 buckets in a single bucket, you can use a prefix to distinguish which log files came from which bucket.</p>
     #[doc(hidden)]
-    pub target_prefix: std::option::Option<std::string::String>,
+    pub target_prefix: ::std::option::Option<::std::string::String>,
 }
 impl LoggingEnabled {
     /// <p>Specifies the bucket where you want Amazon S3 to store server access logs. You can have your logs delivered to any bucket that you own, including the same bucket that is being logged. You can also configure multiple buckets to deliver their logs to the same target bucket. In this case, you should choose a different <code>TargetPrefix</code> for each source bucket so that the delivered log files can be distinguished by key.</p>
-    pub fn target_bucket(&self) -> std::option::Option<&str> {
+    pub fn target_bucket(&self) -> ::std::option::Option<&str> {
         self.target_bucket.as_deref()
     }
     /// <p>Container for granting information.</p>
     /// <p>Buckets that use the bucket owner enforced setting for Object Ownership don't support target grants. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/enable-server-access-logging.html#grant-log-delivery-permissions-general">Permissions for server access log delivery</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn target_grants(&self) -> std::option::Option<&[crate::types::TargetGrant]> {
+    pub fn target_grants(&self) -> ::std::option::Option<&[crate::types::TargetGrant]> {
         self.target_grants.as_deref()
     }
     /// <p>A prefix for all log object keys. If you store log files from multiple Amazon S3 buckets in a single bucket, you can use a prefix to distinguish which log files came from which bucket.</p>
-    pub fn target_prefix(&self) -> std::option::Option<&str> {
+    pub fn target_prefix(&self) -> ::std::option::Option<&str> {
         self.target_prefix.as_deref()
     }
 }
@@ -39,20 +39,28 @@ impl LoggingEnabled {
 
 /// A builder for [`LoggingEnabled`](crate::types::LoggingEnabled).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LoggingEnabledBuilder {
-    pub(crate) target_bucket: std::option::Option<std::string::String>,
-    pub(crate) target_grants: std::option::Option<std::vec::Vec<crate::types::TargetGrant>>,
-    pub(crate) target_prefix: std::option::Option<std::string::String>,
+    pub(crate) target_bucket: ::std::option::Option<::std::string::String>,
+    pub(crate) target_grants: ::std::option::Option<::std::vec::Vec<crate::types::TargetGrant>>,
+    pub(crate) target_prefix: ::std::option::Option<::std::string::String>,
 }
 impl LoggingEnabledBuilder {
     /// <p>Specifies the bucket where you want Amazon S3 to store server access logs. You can have your logs delivered to any bucket that you own, including the same bucket that is being logged. You can also configure multiple buckets to deliver their logs to the same target bucket. In this case, you should choose a different <code>TargetPrefix</code> for each source bucket so that the delivered log files can be distinguished by key.</p>
-    pub fn target_bucket(mut self, input: impl Into<std::string::String>) -> Self {
-        self.target_bucket = Some(input.into());
+    pub fn target_bucket(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.target_bucket = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the bucket where you want Amazon S3 to store server access logs. You can have your logs delivered to any bucket that you own, including the same bucket that is being logged. You can also configure multiple buckets to deliver their logs to the same target bucket. In this case, you should choose a different <code>TargetPrefix</code> for each source bucket so that the delivered log files can be distinguished by key.</p>
-    pub fn set_target_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_target_bucket(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.target_bucket = input;
         self
     }
@@ -65,25 +73,31 @@ impl LoggingEnabledBuilder {
     pub fn target_grants(mut self, input: crate::types::TargetGrant) -> Self {
         let mut v = self.target_grants.unwrap_or_default();
         v.push(input);
-        self.target_grants = Some(v);
+        self.target_grants = ::std::option::Option::Some(v);
         self
     }
     /// <p>Container for granting information.</p>
     /// <p>Buckets that use the bucket owner enforced setting for Object Ownership don't support target grants. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/enable-server-access-logging.html#grant-log-delivery-permissions-general">Permissions for server access log delivery</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn set_target_grants(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TargetGrant>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::TargetGrant>>,
     ) -> Self {
         self.target_grants = input;
         self
     }
     /// <p>A prefix for all log object keys. If you store log files from multiple Amazon S3 buckets in a single bucket, you can use a prefix to distinguish which log files came from which bucket.</p>
-    pub fn target_prefix(mut self, input: impl Into<std::string::String>) -> Self {
-        self.target_prefix = Some(input.into());
+    pub fn target_prefix(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.target_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A prefix for all log object keys. If you store log files from multiple Amazon S3 buckets in a single bucket, you can use a prefix to distinguish which log files came from which bucket.</p>
-    pub fn set_target_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_target_prefix(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.target_prefix = input;
         self
     }

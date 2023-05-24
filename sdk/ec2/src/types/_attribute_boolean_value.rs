@@ -2,15 +2,15 @@
 
 /// <p>Describes a value for a resource attribute that is a Boolean value.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AttributeBooleanValue {
     /// <p>The attribute value. The valid values are <code>true</code> or <code>false</code>.</p>
     #[doc(hidden)]
-    pub value: std::option::Option<bool>,
+    pub value: ::std::option::Option<bool>,
 }
 impl AttributeBooleanValue {
     /// <p>The attribute value. The valid values are <code>true</code> or <code>false</code>.</p>
-    pub fn value(&self) -> std::option::Option<bool> {
+    pub fn value(&self) -> ::std::option::Option<bool> {
         self.value
     }
 }
@@ -23,18 +23,20 @@ impl AttributeBooleanValue {
 
 /// A builder for [`AttributeBooleanValue`](crate::types::AttributeBooleanValue).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AttributeBooleanValueBuilder {
-    pub(crate) value: std::option::Option<bool>,
+    pub(crate) value: ::std::option::Option<bool>,
 }
 impl AttributeBooleanValueBuilder {
     /// <p>The attribute value. The valid values are <code>true</code> or <code>false</code>.</p>
     pub fn value(mut self, input: bool) -> Self {
-        self.value = Some(input);
+        self.value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The attribute value. The valid values are <code>true</code> or <code>false</code>.</p>
-    pub fn set_value(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<bool>) -> Self {
         self.value = input;
         self
     }

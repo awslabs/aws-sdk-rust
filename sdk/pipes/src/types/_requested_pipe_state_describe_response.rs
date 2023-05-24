@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum RequestedPipeStateDescribeResponse {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum RequestedPipeStateDescribeResponse {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for RequestedPipeStateDescribeResponse {
+impl ::std::convert::From<&str> for RequestedPipeStateDescribeResponse {
     fn from(s: &str) -> Self {
         match s {
             "DELETED" => RequestedPipeStateDescribeResponse::Deleted,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for RequestedPipeStateDescribeResponse {
         }
     }
 }
-impl std::str::FromStr for RequestedPipeStateDescribeResponse {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for RequestedPipeStateDescribeResponse {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RequestedPipeStateDescribeResponse::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(RequestedPipeStateDescribeResponse::from(s))
     }
 }
 impl RequestedPipeStateDescribeResponse {
@@ -91,7 +91,7 @@ impl RequestedPipeStateDescribeResponse {
         &["DELETED", "RUNNING", "STOPPED"]
     }
 }
-impl AsRef<str> for RequestedPipeStateDescribeResponse {
+impl ::std::convert::AsRef<str> for RequestedPipeStateDescribeResponse {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

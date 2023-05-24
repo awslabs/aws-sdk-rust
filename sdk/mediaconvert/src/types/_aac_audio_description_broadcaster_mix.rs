@@ -38,13 +38,13 @@
 /// Choose BROADCASTER_MIXED_AD when the input contains pre-mixed main audio + audio description (AD) as a stereo pair. The value for AudioType will be set to 3, which signals to downstream systems that this stream contains "broadcaster mixed AD". Note that the input received by the encoder must contain pre-mixed audio; the encoder does not perform the mixing. When you choose BROADCASTER_MIXED_AD, the encoder ignores any values you provide in AudioType and FollowInputAudioType. Choose NORMAL when the input does not contain pre-mixed audio + audio description (AD). In this case, the encoder will use any values you provide for AudioType and FollowInputAudioType.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum AacAudioDescriptionBroadcasterMix {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum AacAudioDescriptionBroadcasterMix {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for AacAudioDescriptionBroadcasterMix {
+impl ::std::convert::From<&str> for AacAudioDescriptionBroadcasterMix {
     fn from(s: &str) -> Self {
         match s {
             "BROADCASTER_MIXED_AD" => AacAudioDescriptionBroadcasterMix::BroadcasterMixedAd,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for AacAudioDescriptionBroadcasterMix {
         }
     }
 }
-impl std::str::FromStr for AacAudioDescriptionBroadcasterMix {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for AacAudioDescriptionBroadcasterMix {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AacAudioDescriptionBroadcasterMix::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(AacAudioDescriptionBroadcasterMix::from(s))
     }
 }
 impl AacAudioDescriptionBroadcasterMix {
@@ -86,7 +86,7 @@ impl AacAudioDescriptionBroadcasterMix {
         &["BROADCASTER_MIXED_AD", "NORMAL"]
     }
 }
-impl AsRef<str> for AacAudioDescriptionBroadcasterMix {
+impl ::std::convert::AsRef<str> for AacAudioDescriptionBroadcasterMix {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

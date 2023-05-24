@@ -42,13 +42,13 @@
 /// Inserts segmentation markers at each segmentation_time period. rai_segstart sets the Random Access Indicator bit in the adaptation field. rai_adapt sets the RAI bit and adds the current timecode in the private data bytes. psi_segstart inserts PAT and PMT tables at the start of segments. ebp adds Encoder Boundary Point information to the adaptation field as per OpenCable specification OC-SP-EBP-I01-130118. ebp_legacy adds Encoder Boundary Point information to the adaptation field using a legacy proprietary format.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum M2tsSegmentationMarkers {
     #[allow(missing_docs)] // documentation missing in model
@@ -66,7 +66,7 @@ pub enum M2tsSegmentationMarkers {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for M2tsSegmentationMarkers {
+impl ::std::convert::From<&str> for M2tsSegmentationMarkers {
     fn from(s: &str) -> Self {
         match s {
             "EBP" => M2tsSegmentationMarkers::Ebp,
@@ -81,11 +81,11 @@ impl std::convert::From<&str> for M2tsSegmentationMarkers {
         }
     }
 }
-impl std::str::FromStr for M2tsSegmentationMarkers {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for M2tsSegmentationMarkers {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(M2tsSegmentationMarkers::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(M2tsSegmentationMarkers::from(s))
     }
 }
 impl M2tsSegmentationMarkers {
@@ -113,7 +113,7 @@ impl M2tsSegmentationMarkers {
         ]
     }
 }
-impl AsRef<str> for M2tsSegmentationMarkers {
+impl ::std::convert::AsRef<str> for M2tsSegmentationMarkers {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

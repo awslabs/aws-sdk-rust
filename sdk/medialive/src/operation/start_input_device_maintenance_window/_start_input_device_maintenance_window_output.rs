@@ -2,11 +2,11 @@
 
 /// Placeholder documentation for StartInputDeviceMaintenanceWindowResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartInputDeviceMaintenanceWindowOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for StartInputDeviceMaintenanceWindowOutput {
+impl ::aws_http::request_id::RequestId for StartInputDeviceMaintenanceWindowOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -20,7 +20,9 @@ impl StartInputDeviceMaintenanceWindowOutput {
 
 /// A builder for [`StartInputDeviceMaintenanceWindowOutput`](crate::operation::start_input_device_maintenance_window::StartInputDeviceMaintenanceWindowOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StartInputDeviceMaintenanceWindowOutputBuilder {
     _request_id: Option<String>,
 }

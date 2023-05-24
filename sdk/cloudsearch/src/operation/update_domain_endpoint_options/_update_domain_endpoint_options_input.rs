@@ -2,24 +2,24 @@
 
 /// <p>Container for the parameters to the <code><code>UpdateDomainEndpointOptions</code></code> operation. Specifies the name of the domain you want to update and the domain endpoint options.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDomainEndpointOptionsInput {
     /// <p>A string that represents the name of a domain.</p>
     #[doc(hidden)]
-    pub domain_name: std::option::Option<std::string::String>,
+    pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>Whether to require that all requests to the domain arrive over HTTPS. We recommend Policy-Min-TLS-1-2-2019-07 for TLSSecurityPolicy. For compatibility with older clients, the default is Policy-Min-TLS-1-0-2019-07. </p>
     #[doc(hidden)]
-    pub domain_endpoint_options: std::option::Option<crate::types::DomainEndpointOptions>,
+    pub domain_endpoint_options: ::std::option::Option<crate::types::DomainEndpointOptions>,
 }
 impl UpdateDomainEndpointOptionsInput {
     /// <p>A string that represents the name of a domain.</p>
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<&str> {
         self.domain_name.as_deref()
     }
     /// <p>Whether to require that all requests to the domain arrive over HTTPS. We recommend Policy-Min-TLS-1-2-2019-07 for TLSSecurityPolicy. For compatibility with older clients, the default is Policy-Min-TLS-1-0-2019-07. </p>
     pub fn domain_endpoint_options(
         &self,
-    ) -> std::option::Option<&crate::types::DomainEndpointOptions> {
+    ) -> ::std::option::Option<&crate::types::DomainEndpointOptions> {
         self.domain_endpoint_options.as_ref()
     }
 }
@@ -32,31 +32,33 @@ impl UpdateDomainEndpointOptionsInput {
 
 /// A builder for [`UpdateDomainEndpointOptionsInput`](crate::operation::update_domain_endpoint_options::UpdateDomainEndpointOptionsInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateDomainEndpointOptionsInputBuilder {
-    pub(crate) domain_name: std::option::Option<std::string::String>,
-    pub(crate) domain_endpoint_options: std::option::Option<crate::types::DomainEndpointOptions>,
+    pub(crate) domain_name: ::std::option::Option<::std::string::String>,
+    pub(crate) domain_endpoint_options: ::std::option::Option<crate::types::DomainEndpointOptions>,
 }
 impl UpdateDomainEndpointOptionsInputBuilder {
     /// <p>A string that represents the name of a domain.</p>
-    pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.domain_name = Some(input.into());
+    pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.domain_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A string that represents the name of a domain.</p>
-    pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_name = input;
         self
     }
     /// <p>Whether to require that all requests to the domain arrive over HTTPS. We recommend Policy-Min-TLS-1-2-2019-07 for TLSSecurityPolicy. For compatibility with older clients, the default is Policy-Min-TLS-1-0-2019-07. </p>
     pub fn domain_endpoint_options(mut self, input: crate::types::DomainEndpointOptions) -> Self {
-        self.domain_endpoint_options = Some(input);
+        self.domain_endpoint_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether to require that all requests to the domain arrive over HTTPS. We recommend Policy-Min-TLS-1-2-2019-07 for TLSSecurityPolicy. For compatibility with older clients, the default is Policy-Min-TLS-1-0-2019-07. </p>
     pub fn set_domain_endpoint_options(
         mut self,
-        input: std::option::Option<crate::types::DomainEndpointOptions>,
+        input: ::std::option::Option<crate::types::DomainEndpointOptions>,
     ) -> Self {
         self.domain_endpoint_options = input;
         self
@@ -64,11 +66,11 @@ impl UpdateDomainEndpointOptionsInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDomainEndpointOptionsInput`](crate::operation::update_domain_endpoint_options::UpdateDomainEndpointOptionsInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::update_domain_endpoint_options::UpdateDomainEndpointOptionsInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::update_domain_endpoint_options::UpdateDomainEndpointOptionsInput {
                 domain_name: self.domain_name,
                 domain_endpoint_options: self.domain_endpoint_options,

@@ -2,27 +2,27 @@
 
 /// <p>Describes the HTTP endpoint selected as the destination. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct HttpEndpointDescription {
     /// <p>The URL of the HTTP endpoint selected as the destination.</p>
     #[doc(hidden)]
-    pub url: std::option::Option<std::string::String>,
+    pub url: ::std::option::Option<::std::string::String>,
     /// <p>The name of the HTTP endpoint selected as the destination.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
 }
 impl HttpEndpointDescription {
     /// <p>The URL of the HTTP endpoint selected as the destination.</p>
-    pub fn url(&self) -> std::option::Option<&str> {
+    pub fn url(&self) -> ::std::option::Option<&str> {
         self.url.as_deref()
     }
     /// <p>The name of the HTTP endpoint selected as the destination.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
 }
-impl std::fmt::Debug for HttpEndpointDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for HttpEndpointDescription {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("HttpEndpointDescription");
         formatter.field("url", &"*** Sensitive Data Redacted ***");
         formatter.field("name", &self.name);
@@ -38,29 +38,29 @@ impl HttpEndpointDescription {
 
 /// A builder for [`HttpEndpointDescription`](crate::types::HttpEndpointDescription).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct HttpEndpointDescriptionBuilder {
-    pub(crate) url: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
+    pub(crate) url: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
 }
 impl HttpEndpointDescriptionBuilder {
     /// <p>The URL of the HTTP endpoint selected as the destination.</p>
-    pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.url = Some(input.into());
+    pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL of the HTTP endpoint selected as the destination.</p>
-    pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.url = input;
         self
     }
     /// <p>The name of the HTTP endpoint selected as the destination.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the HTTP endpoint selected as the destination.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
@@ -72,8 +72,8 @@ impl HttpEndpointDescriptionBuilder {
         }
     }
 }
-impl std::fmt::Debug for HttpEndpointDescriptionBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for HttpEndpointDescriptionBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("HttpEndpointDescriptionBuilder");
         formatter.field("url", &"*** Sensitive Data Redacted ***");
         formatter.field("name", &self.name);

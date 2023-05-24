@@ -2,15 +2,15 @@
 
 /// <p>The URL of S3 bucket where you want to store the results of this request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceAssociationOutputUrl {
     /// <p>The URL of S3 bucket where you want to store the results of this request.</p>
     #[doc(hidden)]
-    pub s3_output_url: std::option::Option<crate::types::S3OutputUrl>,
+    pub s3_output_url: ::std::option::Option<crate::types::S3OutputUrl>,
 }
 impl InstanceAssociationOutputUrl {
     /// <p>The URL of S3 bucket where you want to store the results of this request.</p>
-    pub fn s3_output_url(&self) -> std::option::Option<&crate::types::S3OutputUrl> {
+    pub fn s3_output_url(&self) -> ::std::option::Option<&crate::types::S3OutputUrl> {
         self.s3_output_url.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl InstanceAssociationOutputUrl {
 
 /// A builder for [`InstanceAssociationOutputUrl`](crate::types::InstanceAssociationOutputUrl).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InstanceAssociationOutputUrlBuilder {
-    pub(crate) s3_output_url: std::option::Option<crate::types::S3OutputUrl>,
+    pub(crate) s3_output_url: ::std::option::Option<crate::types::S3OutputUrl>,
 }
 impl InstanceAssociationOutputUrlBuilder {
     /// <p>The URL of S3 bucket where you want to store the results of this request.</p>
     pub fn s3_output_url(mut self, input: crate::types::S3OutputUrl) -> Self {
-        self.s3_output_url = Some(input);
+        self.s3_output_url = ::std::option::Option::Some(input);
         self
     }
     /// <p>The URL of S3 bucket where you want to store the results of this request.</p>
     pub fn set_s3_output_url(
         mut self,
-        input: std::option::Option<crate::types::S3OutputUrl>,
+        input: ::std::option::Option<crate::types::S3OutputUrl>,
     ) -> Self {
         self.s3_output_url = input;
         self

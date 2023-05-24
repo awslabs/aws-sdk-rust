@@ -2,11 +2,11 @@
 
 /// <p>Describes a state change.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StateReason {
     /// <p>The reason code for the state change.</p>
     #[doc(hidden)]
-    pub code: std::option::Option<std::string::String>,
+    pub code: ::std::option::Option<::std::string::String>,
     /// <p>The message for the state change.</p>
     /// <ul>
     /// <li> <p> <code>Server.InsufficientInstanceCapacity</code>: There was insufficient capacity available to satisfy the launch request.</p> </li>
@@ -23,11 +23,11 @@ pub struct StateReason {
     /// <li> <p> <code>Client.VolumeLimitExceeded</code>: The limit on the number of EBS volumes or total storage was exceeded. Decrease usage or request an increase in your account limits.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
 }
 impl StateReason {
     /// <p>The reason code for the state change.</p>
-    pub fn code(&self) -> std::option::Option<&str> {
+    pub fn code(&self) -> ::std::option::Option<&str> {
         self.code.as_deref()
     }
     /// <p>The message for the state change.</p>
@@ -45,7 +45,7 @@ impl StateReason {
     /// <li> <p> <code>Client.UserInitiatedShutdown</code>: The instance was shut down using the Amazon EC2 API.</p> </li>
     /// <li> <p> <code>Client.VolumeLimitExceeded</code>: The limit on the number of EBS volumes or total storage was exceeded. Decrease usage or request an increase in your account limits.</p> </li>
     /// </ul>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -58,19 +58,21 @@ impl StateReason {
 
 /// A builder for [`StateReason`](crate::types::StateReason).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StateReasonBuilder {
-    pub(crate) code: std::option::Option<std::string::String>,
-    pub(crate) message: std::option::Option<std::string::String>,
+    pub(crate) code: ::std::option::Option<::std::string::String>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
 }
 impl StateReasonBuilder {
     /// <p>The reason code for the state change.</p>
-    pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
-        self.code = Some(input.into());
+    pub fn code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason code for the state change.</p>
-    pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.code = input;
         self
     }
@@ -89,8 +91,8 @@ impl StateReasonBuilder {
     /// <li> <p> <code>Client.UserInitiatedShutdown</code>: The instance was shut down using the Amazon EC2 API.</p> </li>
     /// <li> <p> <code>Client.VolumeLimitExceeded</code>: The limit on the number of EBS volumes or total storage was exceeded. Decrease usage or request an increase in your account limits.</p> </li>
     /// </ul>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The message for the state change.</p>
@@ -108,7 +110,7 @@ impl StateReasonBuilder {
     /// <li> <p> <code>Client.UserInitiatedShutdown</code>: The instance was shut down using the Amazon EC2 API.</p> </li>
     /// <li> <p> <code>Client.VolumeLimitExceeded</code>: The limit on the number of EBS volumes or total storage was exceeded. Decrease usage or request an increase in your account limits.</p> </li>
     /// </ul>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }

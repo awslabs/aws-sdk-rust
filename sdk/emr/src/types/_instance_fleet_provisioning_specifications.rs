@@ -4,23 +4,23 @@
 /// <p>The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x versions. On-Demand and Spot instance allocation strategies are available in Amazon EMR releases 5.12.1 and later.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceFleetProvisioningSpecifications {
     /// <p>The launch specification for Spot instances in the fleet, which determines the defined duration, provisioning timeout behavior, and allocation strategy.</p>
     #[doc(hidden)]
-    pub spot_specification: std::option::Option<crate::types::SpotProvisioningSpecification>,
+    pub spot_specification: ::std::option::Option<crate::types::SpotProvisioningSpecification>,
     /// <p> The launch specification for On-Demand Instances in the instance fleet, which determines the allocation strategy. </p> <note>
     /// <p>The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x versions. On-Demand Instances allocation strategy is available in Amazon EMR releases 5.12.1 and later.</p>
     /// </note>
     #[doc(hidden)]
     pub on_demand_specification:
-        std::option::Option<crate::types::OnDemandProvisioningSpecification>,
+        ::std::option::Option<crate::types::OnDemandProvisioningSpecification>,
 }
 impl InstanceFleetProvisioningSpecifications {
     /// <p>The launch specification for Spot instances in the fleet, which determines the defined duration, provisioning timeout behavior, and allocation strategy.</p>
     pub fn spot_specification(
         &self,
-    ) -> std::option::Option<&crate::types::SpotProvisioningSpecification> {
+    ) -> ::std::option::Option<&crate::types::SpotProvisioningSpecification> {
         self.spot_specification.as_ref()
     }
     /// <p> The launch specification for On-Demand Instances in the instance fleet, which determines the allocation strategy. </p> <note>
@@ -28,7 +28,7 @@ impl InstanceFleetProvisioningSpecifications {
     /// </note>
     pub fn on_demand_specification(
         &self,
-    ) -> std::option::Option<&crate::types::OnDemandProvisioningSpecification> {
+    ) -> ::std::option::Option<&crate::types::OnDemandProvisioningSpecification> {
         self.on_demand_specification.as_ref()
     }
 }
@@ -41,11 +41,14 @@ impl InstanceFleetProvisioningSpecifications {
 
 /// A builder for [`InstanceFleetProvisioningSpecifications`](crate::types::InstanceFleetProvisioningSpecifications).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InstanceFleetProvisioningSpecificationsBuilder {
-    pub(crate) spot_specification: std::option::Option<crate::types::SpotProvisioningSpecification>,
+    pub(crate) spot_specification:
+        ::std::option::Option<crate::types::SpotProvisioningSpecification>,
     pub(crate) on_demand_specification:
-        std::option::Option<crate::types::OnDemandProvisioningSpecification>,
+        ::std::option::Option<crate::types::OnDemandProvisioningSpecification>,
 }
 impl InstanceFleetProvisioningSpecificationsBuilder {
     /// <p>The launch specification for Spot instances in the fleet, which determines the defined duration, provisioning timeout behavior, and allocation strategy.</p>
@@ -53,13 +56,13 @@ impl InstanceFleetProvisioningSpecificationsBuilder {
         mut self,
         input: crate::types::SpotProvisioningSpecification,
     ) -> Self {
-        self.spot_specification = Some(input);
+        self.spot_specification = ::std::option::Option::Some(input);
         self
     }
     /// <p>The launch specification for Spot instances in the fleet, which determines the defined duration, provisioning timeout behavior, and allocation strategy.</p>
     pub fn set_spot_specification(
         mut self,
-        input: std::option::Option<crate::types::SpotProvisioningSpecification>,
+        input: ::std::option::Option<crate::types::SpotProvisioningSpecification>,
     ) -> Self {
         self.spot_specification = input;
         self
@@ -71,7 +74,7 @@ impl InstanceFleetProvisioningSpecificationsBuilder {
         mut self,
         input: crate::types::OnDemandProvisioningSpecification,
     ) -> Self {
-        self.on_demand_specification = Some(input);
+        self.on_demand_specification = ::std::option::Option::Some(input);
         self
     }
     /// <p> The launch specification for On-Demand Instances in the instance fleet, which determines the allocation strategy. </p> <note>
@@ -79,7 +82,7 @@ impl InstanceFleetProvisioningSpecificationsBuilder {
     /// </note>
     pub fn set_on_demand_specification(
         mut self,
-        input: std::option::Option<crate::types::OnDemandProvisioningSpecification>,
+        input: ::std::option::Option<crate::types::OnDemandProvisioningSpecification>,
     ) -> Self {
         self.on_demand_specification = input;
         self

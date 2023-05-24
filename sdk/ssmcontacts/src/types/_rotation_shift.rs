@@ -2,43 +2,43 @@
 
 /// <p>Information about a shift that belongs to an on-call rotation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RotationShift {
     /// <p>The Amazon Resource Names (ARNs) of the contacts who are part of the shift rotation. </p>
     #[doc(hidden)]
-    pub contact_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub contact_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The time a shift rotation begins.</p>
     #[doc(hidden)]
-    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time a shift rotation ends.</p>
     #[doc(hidden)]
-    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The type of shift rotation.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::ShiftType>,
+    pub r#type: ::std::option::Option<crate::types::ShiftType>,
     /// <p>Additional information about an on-call rotation shift.</p>
     #[doc(hidden)]
-    pub shift_details: std::option::Option<crate::types::ShiftDetails>,
+    pub shift_details: ::std::option::Option<crate::types::ShiftDetails>,
 }
 impl RotationShift {
     /// <p>The Amazon Resource Names (ARNs) of the contacts who are part of the shift rotation. </p>
-    pub fn contact_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn contact_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.contact_ids.as_deref()
     }
     /// <p>The time a shift rotation begins.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The time a shift rotation ends.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The type of shift rotation.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::ShiftType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ShiftType> {
         self.r#type.as_ref()
     }
     /// <p>Additional information about an on-call rotation shift.</p>
-    pub fn shift_details(&self) -> std::option::Option<&crate::types::ShiftDetails> {
+    pub fn shift_details(&self) -> ::std::option::Option<&crate::types::ShiftDetails> {
         self.shift_details.as_ref()
     }
 }
@@ -51,13 +51,15 @@ impl RotationShift {
 
 /// A builder for [`RotationShift`](crate::types::RotationShift).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RotationShiftBuilder {
-    pub(crate) contact_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) r#type: std::option::Option<crate::types::ShiftType>,
-    pub(crate) shift_details: std::option::Option<crate::types::ShiftDetails>,
+    pub(crate) contact_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) r#type: ::std::option::Option<crate::types::ShiftType>,
+    pub(crate) shift_details: ::std::option::Option<crate::types::ShiftDetails>,
 }
 impl RotationShiftBuilder {
     /// Appends an item to `contact_ids`.
@@ -65,62 +67,65 @@ impl RotationShiftBuilder {
     /// To override the contents of this collection use [`set_contact_ids`](Self::set_contact_ids).
     ///
     /// <p>The Amazon Resource Names (ARNs) of the contacts who are part of the shift rotation. </p>
-    pub fn contact_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn contact_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.contact_ids.unwrap_or_default();
         v.push(input.into());
-        self.contact_ids = Some(v);
+        self.contact_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Amazon Resource Names (ARNs) of the contacts who are part of the shift rotation. </p>
     pub fn set_contact_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.contact_ids = input;
         self
     }
     /// <p>The time a shift rotation begins.</p>
-    pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.start_time = Some(input);
+    pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.start_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time a shift rotation begins.</p>
     pub fn set_start_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.start_time = input;
         self
     }
     /// <p>The time a shift rotation ends.</p>
-    pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.end_time = Some(input);
+    pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.end_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time a shift rotation ends.</p>
-    pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_end_time(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
         self.end_time = input;
         self
     }
     /// <p>The type of shift rotation.</p>
     pub fn r#type(mut self, input: crate::types::ShiftType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of shift rotation.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::ShiftType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ShiftType>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>Additional information about an on-call rotation shift.</p>
     pub fn shift_details(mut self, input: crate::types::ShiftDetails) -> Self {
-        self.shift_details = Some(input);
+        self.shift_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>Additional information about an on-call rotation shift.</p>
     pub fn set_shift_details(
         mut self,
-        input: std::option::Option<crate::types::ShiftDetails>,
+        input: ::std::option::Option<crate::types::ShiftDetails>,
     ) -> Self {
         self.shift_details = input;
         self

@@ -2,43 +2,43 @@
 
 /// <p>Describes an Amazon Lightsail SSL/TLS certificate.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CertificateSummary {
     /// <p>The Amazon Resource Name (ARN) of the certificate.</p>
     #[doc(hidden)]
-    pub certificate_arn: std::option::Option<std::string::String>,
+    pub certificate_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the certificate.</p>
     #[doc(hidden)]
-    pub certificate_name: std::option::Option<std::string::String>,
+    pub certificate_name: ::std::option::Option<::std::string::String>,
     /// <p>The domain name of the certificate.</p>
     #[doc(hidden)]
-    pub domain_name: std::option::Option<std::string::String>,
+    pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>An object that describes a certificate in detail.</p>
     #[doc(hidden)]
-    pub certificate_detail: std::option::Option<crate::types::Certificate>,
+    pub certificate_detail: ::std::option::Option<crate::types::Certificate>,
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CertificateSummary {
     /// <p>The Amazon Resource Name (ARN) of the certificate.</p>
-    pub fn certificate_arn(&self) -> std::option::Option<&str> {
+    pub fn certificate_arn(&self) -> ::std::option::Option<&str> {
         self.certificate_arn.as_deref()
     }
     /// <p>The name of the certificate.</p>
-    pub fn certificate_name(&self) -> std::option::Option<&str> {
+    pub fn certificate_name(&self) -> ::std::option::Option<&str> {
         self.certificate_name.as_deref()
     }
     /// <p>The domain name of the certificate.</p>
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<&str> {
         self.domain_name.as_deref()
     }
     /// <p>An object that describes a certificate in detail.</p>
-    pub fn certificate_detail(&self) -> std::option::Option<&crate::types::Certificate> {
+    pub fn certificate_detail(&self) -> ::std::option::Option<&crate::types::Certificate> {
         self.certificate_detail.as_ref()
     }
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -51,54 +51,68 @@ impl CertificateSummary {
 
 /// A builder for [`CertificateSummary`](crate::types::CertificateSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CertificateSummaryBuilder {
-    pub(crate) certificate_arn: std::option::Option<std::string::String>,
-    pub(crate) certificate_name: std::option::Option<std::string::String>,
-    pub(crate) domain_name: std::option::Option<std::string::String>,
-    pub(crate) certificate_detail: std::option::Option<crate::types::Certificate>,
-    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub(crate) certificate_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) certificate_name: ::std::option::Option<::std::string::String>,
+    pub(crate) domain_name: ::std::option::Option<::std::string::String>,
+    pub(crate) certificate_detail: ::std::option::Option<crate::types::Certificate>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CertificateSummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the certificate.</p>
-    pub fn certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.certificate_arn = Some(input.into());
+    pub fn certificate_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.certificate_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the certificate.</p>
-    pub fn set_certificate_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_certificate_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.certificate_arn = input;
         self
     }
     /// <p>The name of the certificate.</p>
-    pub fn certificate_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.certificate_name = Some(input.into());
+    pub fn certificate_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.certificate_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the certificate.</p>
-    pub fn set_certificate_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_certificate_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.certificate_name = input;
         self
     }
     /// <p>The domain name of the certificate.</p>
-    pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.domain_name = Some(input.into());
+    pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.domain_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The domain name of the certificate.</p>
-    pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_name = input;
         self
     }
     /// <p>An object that describes a certificate in detail.</p>
     pub fn certificate_detail(mut self, input: crate::types::Certificate) -> Self {
-        self.certificate_detail = Some(input);
+        self.certificate_detail = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that describes a certificate in detail.</p>
     pub fn set_certificate_detail(
         mut self,
-        input: std::option::Option<crate::types::Certificate>,
+        input: ::std::option::Option<crate::types::Certificate>,
     ) -> Self {
         self.certificate_detail = input;
         self
@@ -111,13 +125,13 @@ impl CertificateSummaryBuilder {
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
-        self.tags = Some(v);
+        self.tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>The tag keys and optional values for the resource. For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tags = input;
         self

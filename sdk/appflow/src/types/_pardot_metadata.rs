@@ -2,7 +2,7 @@
 
 /// <p>The connector metadata specific to Salesforce Pardot.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PardotMetadata {}
 impl PardotMetadata {
     /// Creates a new builder-style object to manufacture [`PardotMetadata`](crate::types::PardotMetadata).
@@ -13,7 +13,9 @@ impl PardotMetadata {
 
 /// A builder for [`PardotMetadata`](crate::types::PardotMetadata).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PardotMetadataBuilder {}
 impl PardotMetadataBuilder {
     /// Consumes the builder and constructs a [`PardotMetadata`](crate::types::PardotMetadata).

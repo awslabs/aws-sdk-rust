@@ -2,57 +2,57 @@
 
 /// <p>Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition video operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VideoMetadata {
     /// <p>Type of compression used in the analyzed video. </p>
     #[doc(hidden)]
-    pub codec: std::option::Option<std::string::String>,
+    pub codec: ::std::option::Option<::std::string::String>,
     /// <p>Length of the video in milliseconds.</p>
     #[doc(hidden)]
-    pub duration_millis: std::option::Option<i64>,
+    pub duration_millis: ::std::option::Option<i64>,
     /// <p>Format of the analyzed video. Possible values are MP4, MOV and AVI. </p>
     #[doc(hidden)]
-    pub format: std::option::Option<std::string::String>,
+    pub format: ::std::option::Option<::std::string::String>,
     /// <p>Number of frames per second in the video.</p>
     #[doc(hidden)]
-    pub frame_rate: std::option::Option<f32>,
+    pub frame_rate: ::std::option::Option<f32>,
     /// <p>Vertical pixel dimension of the video.</p>
     #[doc(hidden)]
-    pub frame_height: std::option::Option<i64>,
+    pub frame_height: ::std::option::Option<i64>,
     /// <p>Horizontal pixel dimension of the video.</p>
     #[doc(hidden)]
-    pub frame_width: std::option::Option<i64>,
+    pub frame_width: ::std::option::Option<i64>,
     /// <p> A description of the range of luminance values in a video, either LIMITED (16 to 235) or FULL (0 to 255). </p>
     #[doc(hidden)]
-    pub color_range: std::option::Option<crate::types::VideoColorRange>,
+    pub color_range: ::std::option::Option<crate::types::VideoColorRange>,
 }
 impl VideoMetadata {
     /// <p>Type of compression used in the analyzed video. </p>
-    pub fn codec(&self) -> std::option::Option<&str> {
+    pub fn codec(&self) -> ::std::option::Option<&str> {
         self.codec.as_deref()
     }
     /// <p>Length of the video in milliseconds.</p>
-    pub fn duration_millis(&self) -> std::option::Option<i64> {
+    pub fn duration_millis(&self) -> ::std::option::Option<i64> {
         self.duration_millis
     }
     /// <p>Format of the analyzed video. Possible values are MP4, MOV and AVI. </p>
-    pub fn format(&self) -> std::option::Option<&str> {
+    pub fn format(&self) -> ::std::option::Option<&str> {
         self.format.as_deref()
     }
     /// <p>Number of frames per second in the video.</p>
-    pub fn frame_rate(&self) -> std::option::Option<f32> {
+    pub fn frame_rate(&self) -> ::std::option::Option<f32> {
         self.frame_rate
     }
     /// <p>Vertical pixel dimension of the video.</p>
-    pub fn frame_height(&self) -> std::option::Option<i64> {
+    pub fn frame_height(&self) -> ::std::option::Option<i64> {
         self.frame_height
     }
     /// <p>Horizontal pixel dimension of the video.</p>
-    pub fn frame_width(&self) -> std::option::Option<i64> {
+    pub fn frame_width(&self) -> ::std::option::Option<i64> {
         self.frame_width
     }
     /// <p> A description of the range of luminance values in a video, either LIMITED (16 to 235) or FULL (0 to 255). </p>
-    pub fn color_range(&self) -> std::option::Option<&crate::types::VideoColorRange> {
+    pub fn color_range(&self) -> ::std::option::Option<&crate::types::VideoColorRange> {
         self.color_range.as_ref()
     }
 }
@@ -65,86 +65,88 @@ impl VideoMetadata {
 
 /// A builder for [`VideoMetadata`](crate::types::VideoMetadata).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VideoMetadataBuilder {
-    pub(crate) codec: std::option::Option<std::string::String>,
-    pub(crate) duration_millis: std::option::Option<i64>,
-    pub(crate) format: std::option::Option<std::string::String>,
-    pub(crate) frame_rate: std::option::Option<f32>,
-    pub(crate) frame_height: std::option::Option<i64>,
-    pub(crate) frame_width: std::option::Option<i64>,
-    pub(crate) color_range: std::option::Option<crate::types::VideoColorRange>,
+    pub(crate) codec: ::std::option::Option<::std::string::String>,
+    pub(crate) duration_millis: ::std::option::Option<i64>,
+    pub(crate) format: ::std::option::Option<::std::string::String>,
+    pub(crate) frame_rate: ::std::option::Option<f32>,
+    pub(crate) frame_height: ::std::option::Option<i64>,
+    pub(crate) frame_width: ::std::option::Option<i64>,
+    pub(crate) color_range: ::std::option::Option<crate::types::VideoColorRange>,
 }
 impl VideoMetadataBuilder {
     /// <p>Type of compression used in the analyzed video. </p>
-    pub fn codec(mut self, input: impl Into<std::string::String>) -> Self {
-        self.codec = Some(input.into());
+    pub fn codec(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.codec = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Type of compression used in the analyzed video. </p>
-    pub fn set_codec(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_codec(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.codec = input;
         self
     }
     /// <p>Length of the video in milliseconds.</p>
     pub fn duration_millis(mut self, input: i64) -> Self {
-        self.duration_millis = Some(input);
+        self.duration_millis = ::std::option::Option::Some(input);
         self
     }
     /// <p>Length of the video in milliseconds.</p>
-    pub fn set_duration_millis(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_duration_millis(mut self, input: ::std::option::Option<i64>) -> Self {
         self.duration_millis = input;
         self
     }
     /// <p>Format of the analyzed video. Possible values are MP4, MOV and AVI. </p>
-    pub fn format(mut self, input: impl Into<std::string::String>) -> Self {
-        self.format = Some(input.into());
+    pub fn format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.format = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Format of the analyzed video. Possible values are MP4, MOV and AVI. </p>
-    pub fn set_format(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.format = input;
         self
     }
     /// <p>Number of frames per second in the video.</p>
     pub fn frame_rate(mut self, input: f32) -> Self {
-        self.frame_rate = Some(input);
+        self.frame_rate = ::std::option::Option::Some(input);
         self
     }
     /// <p>Number of frames per second in the video.</p>
-    pub fn set_frame_rate(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_frame_rate(mut self, input: ::std::option::Option<f32>) -> Self {
         self.frame_rate = input;
         self
     }
     /// <p>Vertical pixel dimension of the video.</p>
     pub fn frame_height(mut self, input: i64) -> Self {
-        self.frame_height = Some(input);
+        self.frame_height = ::std::option::Option::Some(input);
         self
     }
     /// <p>Vertical pixel dimension of the video.</p>
-    pub fn set_frame_height(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_frame_height(mut self, input: ::std::option::Option<i64>) -> Self {
         self.frame_height = input;
         self
     }
     /// <p>Horizontal pixel dimension of the video.</p>
     pub fn frame_width(mut self, input: i64) -> Self {
-        self.frame_width = Some(input);
+        self.frame_width = ::std::option::Option::Some(input);
         self
     }
     /// <p>Horizontal pixel dimension of the video.</p>
-    pub fn set_frame_width(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_frame_width(mut self, input: ::std::option::Option<i64>) -> Self {
         self.frame_width = input;
         self
     }
     /// <p> A description of the range of luminance values in a video, either LIMITED (16 to 235) or FULL (0 to 255). </p>
     pub fn color_range(mut self, input: crate::types::VideoColorRange) -> Self {
-        self.color_range = Some(input);
+        self.color_range = ::std::option::Option::Some(input);
         self
     }
     /// <p> A description of the range of luminance values in a video, either LIMITED (16 to 235) or FULL (0 to 255). </p>
     pub fn set_color_range(
         mut self,
-        input: std::option::Option<crate::types::VideoColorRange>,
+        input: ::std::option::Option<crate::types::VideoColorRange>,
     ) -> Self {
         self.color_range = input;
         self

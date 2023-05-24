@@ -2,50 +2,50 @@
 
 /// <p>Specifies geographic information about an endpoint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EndpointLocation {
     /// <p>The name of the city where the endpoint is located.</p>
     #[doc(hidden)]
-    pub city: std::option::Option<std::string::String>,
+    pub city: ::std::option::Option<::std::string::String>,
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region where the endpoint is located. For example, US for the United States.</p>
     #[doc(hidden)]
-    pub country: std::option::Option<std::string::String>,
+    pub country: ::std::option::Option<::std::string::String>,
     /// <p>The latitude coordinate of the endpoint location, rounded to one decimal place.</p>
     #[doc(hidden)]
-    pub latitude: std::option::Option<f64>,
+    pub latitude: ::std::option::Option<f64>,
     /// <p>The longitude coordinate of the endpoint location, rounded to one decimal place.</p>
     #[doc(hidden)]
-    pub longitude: std::option::Option<f64>,
+    pub longitude: ::std::option::Option<f64>,
     /// <p>The postal or ZIP code for the area where the endpoint is located.</p>
     #[doc(hidden)]
-    pub postal_code: std::option::Option<std::string::String>,
+    pub postal_code: ::std::option::Option<::std::string::String>,
     /// <p>The name of the region where the endpoint is located. For locations in the United States, this value is the name of a state.</p>
     #[doc(hidden)]
-    pub region: std::option::Option<std::string::String>,
+    pub region: ::std::option::Option<::std::string::String>,
 }
 impl EndpointLocation {
     /// <p>The name of the city where the endpoint is located.</p>
-    pub fn city(&self) -> std::option::Option<&str> {
+    pub fn city(&self) -> ::std::option::Option<&str> {
         self.city.as_deref()
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region where the endpoint is located. For example, US for the United States.</p>
-    pub fn country(&self) -> std::option::Option<&str> {
+    pub fn country(&self) -> ::std::option::Option<&str> {
         self.country.as_deref()
     }
     /// <p>The latitude coordinate of the endpoint location, rounded to one decimal place.</p>
-    pub fn latitude(&self) -> std::option::Option<f64> {
+    pub fn latitude(&self) -> ::std::option::Option<f64> {
         self.latitude
     }
     /// <p>The longitude coordinate of the endpoint location, rounded to one decimal place.</p>
-    pub fn longitude(&self) -> std::option::Option<f64> {
+    pub fn longitude(&self) -> ::std::option::Option<f64> {
         self.longitude
     }
     /// <p>The postal or ZIP code for the area where the endpoint is located.</p>
-    pub fn postal_code(&self) -> std::option::Option<&str> {
+    pub fn postal_code(&self) -> ::std::option::Option<&str> {
         self.postal_code.as_deref()
     }
     /// <p>The name of the region where the endpoint is located. For locations in the United States, this value is the name of a state.</p>
-    pub fn region(&self) -> std::option::Option<&str> {
+    pub fn region(&self) -> ::std::option::Option<&str> {
         self.region.as_deref()
     }
 }
@@ -58,73 +58,75 @@ impl EndpointLocation {
 
 /// A builder for [`EndpointLocation`](crate::types::EndpointLocation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EndpointLocationBuilder {
-    pub(crate) city: std::option::Option<std::string::String>,
-    pub(crate) country: std::option::Option<std::string::String>,
-    pub(crate) latitude: std::option::Option<f64>,
-    pub(crate) longitude: std::option::Option<f64>,
-    pub(crate) postal_code: std::option::Option<std::string::String>,
-    pub(crate) region: std::option::Option<std::string::String>,
+    pub(crate) city: ::std::option::Option<::std::string::String>,
+    pub(crate) country: ::std::option::Option<::std::string::String>,
+    pub(crate) latitude: ::std::option::Option<f64>,
+    pub(crate) longitude: ::std::option::Option<f64>,
+    pub(crate) postal_code: ::std::option::Option<::std::string::String>,
+    pub(crate) region: ::std::option::Option<::std::string::String>,
 }
 impl EndpointLocationBuilder {
     /// <p>The name of the city where the endpoint is located.</p>
-    pub fn city(mut self, input: impl Into<std::string::String>) -> Self {
-        self.city = Some(input.into());
+    pub fn city(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.city = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the city where the endpoint is located.</p>
-    pub fn set_city(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_city(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.city = input;
         self
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region where the endpoint is located. For example, US for the United States.</p>
-    pub fn country(mut self, input: impl Into<std::string::String>) -> Self {
-        self.country = Some(input.into());
+    pub fn country(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.country = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region where the endpoint is located. For example, US for the United States.</p>
-    pub fn set_country(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_country(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.country = input;
         self
     }
     /// <p>The latitude coordinate of the endpoint location, rounded to one decimal place.</p>
     pub fn latitude(mut self, input: f64) -> Self {
-        self.latitude = Some(input);
+        self.latitude = ::std::option::Option::Some(input);
         self
     }
     /// <p>The latitude coordinate of the endpoint location, rounded to one decimal place.</p>
-    pub fn set_latitude(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_latitude(mut self, input: ::std::option::Option<f64>) -> Self {
         self.latitude = input;
         self
     }
     /// <p>The longitude coordinate of the endpoint location, rounded to one decimal place.</p>
     pub fn longitude(mut self, input: f64) -> Self {
-        self.longitude = Some(input);
+        self.longitude = ::std::option::Option::Some(input);
         self
     }
     /// <p>The longitude coordinate of the endpoint location, rounded to one decimal place.</p>
-    pub fn set_longitude(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_longitude(mut self, input: ::std::option::Option<f64>) -> Self {
         self.longitude = input;
         self
     }
     /// <p>The postal or ZIP code for the area where the endpoint is located.</p>
-    pub fn postal_code(mut self, input: impl Into<std::string::String>) -> Self {
-        self.postal_code = Some(input.into());
+    pub fn postal_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.postal_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The postal or ZIP code for the area where the endpoint is located.</p>
-    pub fn set_postal_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_postal_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.postal_code = input;
         self
     }
     /// <p>The name of the region where the endpoint is located. For locations in the United States, this value is the name of a state.</p>
-    pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
-        self.region = Some(input.into());
+    pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the region where the endpoint is located. For locations in the United States, this value is the name of a state.</p>
-    pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region = input;
         self
     }

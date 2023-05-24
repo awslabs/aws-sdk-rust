@@ -2,29 +2,29 @@
 
 /// <p>Information about the AWS IoT Greengrass component created by a model packaging job. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GreengrassOutputDetails {
     /// <p> The Amazon Resource Name (ARN) of the component. </p>
     #[doc(hidden)]
-    pub component_version_arn: std::option::Option<std::string::String>,
+    pub component_version_arn: ::std::option::Option<::std::string::String>,
     /// <p> The name of the component. </p>
     #[doc(hidden)]
-    pub component_name: std::option::Option<std::string::String>,
+    pub component_name: ::std::option::Option<::std::string::String>,
     /// <p> The version of the component. </p>
     #[doc(hidden)]
-    pub component_version: std::option::Option<std::string::String>,
+    pub component_version: ::std::option::Option<::std::string::String>,
 }
 impl GreengrassOutputDetails {
     /// <p> The Amazon Resource Name (ARN) of the component. </p>
-    pub fn component_version_arn(&self) -> std::option::Option<&str> {
+    pub fn component_version_arn(&self) -> ::std::option::Option<&str> {
         self.component_version_arn.as_deref()
     }
     /// <p> The name of the component. </p>
-    pub fn component_name(&self) -> std::option::Option<&str> {
+    pub fn component_name(&self) -> ::std::option::Option<&str> {
         self.component_name.as_deref()
     }
     /// <p> The version of the component. </p>
-    pub fn component_version(&self) -> std::option::Option<&str> {
+    pub fn component_version(&self) -> ::std::option::Option<&str> {
         self.component_version.as_deref()
     }
 }
@@ -37,45 +37,59 @@ impl GreengrassOutputDetails {
 
 /// A builder for [`GreengrassOutputDetails`](crate::types::GreengrassOutputDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GreengrassOutputDetailsBuilder {
-    pub(crate) component_version_arn: std::option::Option<std::string::String>,
-    pub(crate) component_name: std::option::Option<std::string::String>,
-    pub(crate) component_version: std::option::Option<std::string::String>,
+    pub(crate) component_version_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) component_name: ::std::option::Option<::std::string::String>,
+    pub(crate) component_version: ::std::option::Option<::std::string::String>,
 }
 impl GreengrassOutputDetailsBuilder {
     /// <p> The Amazon Resource Name (ARN) of the component. </p>
-    pub fn component_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.component_version_arn = Some(input.into());
+    pub fn component_version_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.component_version_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Amazon Resource Name (ARN) of the component. </p>
     pub fn set_component_version_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.component_version_arn = input;
         self
     }
     /// <p> The name of the component. </p>
-    pub fn component_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.component_name = Some(input.into());
+    pub fn component_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.component_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the component. </p>
-    pub fn set_component_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_component_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.component_name = input;
         self
     }
     /// <p> The version of the component. </p>
-    pub fn component_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.component_version = Some(input.into());
+    pub fn component_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.component_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The version of the component. </p>
     pub fn set_component_version(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.component_version = input;
         self

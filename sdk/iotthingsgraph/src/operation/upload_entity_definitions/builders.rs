@@ -10,30 +10,30 @@ pub use crate::operation::upload_entity_definitions::_upload_entity_definitions_
 /// <p>The IDs for all of the entities should be in URN format. Each entity must be in the user's namespace. Users can't create entities in the public namespace, but entity definitions can refer to entities in the public namespace.</p>
 /// <p>Valid entities are <code>Device</code>, <code>DeviceModel</code>, <code>Service</code>, <code>Capability</code>, <code>State</code>, <code>Action</code>, <code>Event</code>, <code>Property</code>, <code>Mapping</code>, <code>Enum</code>. </p>
 #[deprecated(note = "since: 2022-08-30")]
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UploadEntityDefinitionsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner:
         crate::operation::upload_entity_definitions::builders::UploadEntityDefinitionsInputBuilder,
 }
 impl UploadEntityDefinitionsFluentBuilder {
     /// Creates a new `UploadEntityDefinitions`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::upload_entity_definitions::UploadEntityDefinitions,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::upload_entity_definitions::UploadEntityDefinitionsError,
         >,
     > {
@@ -41,30 +41,33 @@ impl UploadEntityDefinitionsFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::upload_entity_definitions::UploadEntityDefinitionsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::upload_entity_definitions::UploadEntityDefinitionsError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -77,9 +80,9 @@ impl UploadEntityDefinitionsFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::upload_entity_definitions::UploadEntityDefinitionsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::upload_entity_definitions::UploadEntityDefinitionsError,
         >,
     > {
@@ -93,7 +96,7 @@ impl UploadEntityDefinitionsFluentBuilder {
     /// <p>The <code>DefinitionDocument</code> that defines the updated entities.</p>
     pub fn set_document(
         mut self,
-        input: std::option::Option<crate::types::DefinitionDocument>,
+        input: ::std::option::Option<crate::types::DefinitionDocument>,
     ) -> Self {
         self.inner = self.inner.set_document(input);
         self
@@ -104,7 +107,7 @@ impl UploadEntityDefinitionsFluentBuilder {
         self
     }
     /// <p>A Boolean that specifies whether to synchronize with the latest version of the public namespace. If set to <code>true</code>, the upload will create a new namespace version.</p>
-    pub fn set_sync_with_public_namespace(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_sync_with_public_namespace(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_sync_with_public_namespace(input);
         self
     }
@@ -114,7 +117,7 @@ impl UploadEntityDefinitionsFluentBuilder {
         self
     }
     /// <p>A Boolean that specifies whether to deprecate all entities in the latest version before uploading the new <code>DefinitionDocument</code>. If set to <code>true</code>, the upload will create a new namespace version.</p>
-    pub fn set_deprecate_existing_entities(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_deprecate_existing_entities(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_deprecate_existing_entities(input);
         self
     }

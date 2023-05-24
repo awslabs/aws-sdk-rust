@@ -2,7 +2,7 @@
 
 /// <p>Describes the configuration of an Auto Scaling group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoScalingGroupConfiguration {
     /// <p>The desired capacity, or number of instances, for the Auto Scaling group.</p>
     #[doc(hidden)]
@@ -15,7 +15,7 @@ pub struct AutoScalingGroupConfiguration {
     pub max_size: i32,
     /// <p>The instance type for the Auto Scaling group.</p>
     #[doc(hidden)]
-    pub instance_type: std::option::Option<std::string::String>,
+    pub instance_type: ::std::option::Option<::std::string::String>,
 }
 impl AutoScalingGroupConfiguration {
     /// <p>The desired capacity, or number of instances, for the Auto Scaling group.</p>
@@ -31,7 +31,7 @@ impl AutoScalingGroupConfiguration {
         self.max_size
     }
     /// <p>The instance type for the Auto Scaling group.</p>
-    pub fn instance_type(&self) -> std::option::Option<&str> {
+    pub fn instance_type(&self) -> ::std::option::Option<&str> {
         self.instance_type.as_deref()
     }
 }
@@ -44,51 +44,59 @@ impl AutoScalingGroupConfiguration {
 
 /// A builder for [`AutoScalingGroupConfiguration`](crate::types::AutoScalingGroupConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AutoScalingGroupConfigurationBuilder {
-    pub(crate) desired_capacity: std::option::Option<i32>,
-    pub(crate) min_size: std::option::Option<i32>,
-    pub(crate) max_size: std::option::Option<i32>,
-    pub(crate) instance_type: std::option::Option<std::string::String>,
+    pub(crate) desired_capacity: ::std::option::Option<i32>,
+    pub(crate) min_size: ::std::option::Option<i32>,
+    pub(crate) max_size: ::std::option::Option<i32>,
+    pub(crate) instance_type: ::std::option::Option<::std::string::String>,
 }
 impl AutoScalingGroupConfigurationBuilder {
     /// <p>The desired capacity, or number of instances, for the Auto Scaling group.</p>
     pub fn desired_capacity(mut self, input: i32) -> Self {
-        self.desired_capacity = Some(input);
+        self.desired_capacity = ::std::option::Option::Some(input);
         self
     }
     /// <p>The desired capacity, or number of instances, for the Auto Scaling group.</p>
-    pub fn set_desired_capacity(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_desired_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.desired_capacity = input;
         self
     }
     /// <p>The minimum size, or minimum number of instances, for the Auto Scaling group.</p>
     pub fn min_size(mut self, input: i32) -> Self {
-        self.min_size = Some(input);
+        self.min_size = ::std::option::Option::Some(input);
         self
     }
     /// <p>The minimum size, or minimum number of instances, for the Auto Scaling group.</p>
-    pub fn set_min_size(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_min_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.min_size = input;
         self
     }
     /// <p>The maximum size, or maximum number of instances, for the Auto Scaling group.</p>
     pub fn max_size(mut self, input: i32) -> Self {
-        self.max_size = Some(input);
+        self.max_size = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum size, or maximum number of instances, for the Auto Scaling group.</p>
-    pub fn set_max_size(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_size = input;
         self
     }
     /// <p>The instance type for the Auto Scaling group.</p>
-    pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.instance_type = Some(input.into());
+    pub fn instance_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.instance_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The instance type for the Auto Scaling group.</p>
-    pub fn set_instance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_instance_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.instance_type = input;
         self
     }

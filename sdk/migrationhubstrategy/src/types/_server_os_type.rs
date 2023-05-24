@@ -41,13 +41,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ServerOsType {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,7 +63,7 @@ pub enum ServerOsType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ServerOsType {
+impl ::std::convert::From<&str> for ServerOsType {
     fn from(s: &str) -> Self {
         match s {
             "AmazonLinux" => ServerOsType::AmazonLinux,
@@ -77,11 +77,11 @@ impl std::convert::From<&str> for ServerOsType {
         }
     }
 }
-impl std::str::FromStr for ServerOsType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ServerOsType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ServerOsType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ServerOsType::from(s))
     }
 }
 impl ServerOsType {
@@ -107,7 +107,7 @@ impl ServerOsType {
         ]
     }
 }
-impl AsRef<str> for ServerOsType {
+impl ::std::convert::AsRef<str> for ServerOsType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -2,22 +2,22 @@
 
 /// <p>Describes a load permission.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoadPermissionRequest {
     /// <p>The name of the group.</p>
     #[doc(hidden)]
-    pub group: std::option::Option<crate::types::PermissionGroup>,
+    pub group: ::std::option::Option<crate::types::PermissionGroup>,
     /// <p>The Amazon Web Services account ID.</p>
     #[doc(hidden)]
-    pub user_id: std::option::Option<std::string::String>,
+    pub user_id: ::std::option::Option<::std::string::String>,
 }
 impl LoadPermissionRequest {
     /// <p>The name of the group.</p>
-    pub fn group(&self) -> std::option::Option<&crate::types::PermissionGroup> {
+    pub fn group(&self) -> ::std::option::Option<&crate::types::PermissionGroup> {
         self.group.as_ref()
     }
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn user_id(&self) -> std::option::Option<&str> {
+    pub fn user_id(&self) -> ::std::option::Option<&str> {
         self.user_id.as_deref()
     }
 }
@@ -30,29 +30,34 @@ impl LoadPermissionRequest {
 
 /// A builder for [`LoadPermissionRequest`](crate::types::LoadPermissionRequest).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LoadPermissionRequestBuilder {
-    pub(crate) group: std::option::Option<crate::types::PermissionGroup>,
-    pub(crate) user_id: std::option::Option<std::string::String>,
+    pub(crate) group: ::std::option::Option<crate::types::PermissionGroup>,
+    pub(crate) user_id: ::std::option::Option<::std::string::String>,
 }
 impl LoadPermissionRequestBuilder {
     /// <p>The name of the group.</p>
     pub fn group(mut self, input: crate::types::PermissionGroup) -> Self {
-        self.group = Some(input);
+        self.group = ::std::option::Option::Some(input);
         self
     }
     /// <p>The name of the group.</p>
-    pub fn set_group(mut self, input: std::option::Option<crate::types::PermissionGroup>) -> Self {
+    pub fn set_group(
+        mut self,
+        input: ::std::option::Option<crate::types::PermissionGroup>,
+    ) -> Self {
         self.group = input;
         self
     }
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.user_id = Some(input.into());
+    pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.user_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_id = input;
         self
     }

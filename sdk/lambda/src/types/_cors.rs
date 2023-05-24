@@ -2,52 +2,52 @@
 
 /// <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">cross-origin resource sharing (CORS)</a> settings for your Lambda function URL. Use CORS to grant access to your function URL from any origin. You can also use CORS to control access for specific HTTP headers and methods in requests to your function URL.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Cors {
     /// <p>Whether to allow cookies or other credentials in requests to your function URL. The default is <code>false</code>.</p>
     #[doc(hidden)]
-    pub allow_credentials: std::option::Option<bool>,
+    pub allow_credentials: ::std::option::Option<bool>,
     /// <p>The HTTP headers that origins can include in requests to your function URL. For example: <code>Date</code>, <code>Keep-Alive</code>, <code>X-Custom-Header</code>.</p>
     #[doc(hidden)]
-    pub allow_headers: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub allow_headers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The HTTP methods that are allowed when calling your function URL. For example: <code>GET</code>, <code>POST</code>, <code>DELETE</code>, or the wildcard character (<code>*</code>).</p>
     #[doc(hidden)]
-    pub allow_methods: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub allow_methods: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The origins that can access your function URL. You can list any number of specific origins, separated by a comma. For example: <code>https://www.example.com</code>, <code>http://localhost:60905</code>.</p>
     /// <p>Alternatively, you can grant access to all origins using the wildcard character (<code>*</code>).</p>
     #[doc(hidden)]
-    pub allow_origins: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub allow_origins: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The HTTP headers in your function response that you want to expose to origins that call your function URL. For example: <code>Date</code>, <code>Keep-Alive</code>, <code>X-Custom-Header</code>.</p>
     #[doc(hidden)]
-    pub expose_headers: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub expose_headers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The maximum amount of time, in seconds, that web browsers can cache results of a preflight request. By default, this is set to <code>0</code>, which means that the browser doesn't cache results.</p>
     #[doc(hidden)]
-    pub max_age: std::option::Option<i32>,
+    pub max_age: ::std::option::Option<i32>,
 }
 impl Cors {
     /// <p>Whether to allow cookies or other credentials in requests to your function URL. The default is <code>false</code>.</p>
-    pub fn allow_credentials(&self) -> std::option::Option<bool> {
+    pub fn allow_credentials(&self) -> ::std::option::Option<bool> {
         self.allow_credentials
     }
     /// <p>The HTTP headers that origins can include in requests to your function URL. For example: <code>Date</code>, <code>Keep-Alive</code>, <code>X-Custom-Header</code>.</p>
-    pub fn allow_headers(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn allow_headers(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.allow_headers.as_deref()
     }
     /// <p>The HTTP methods that are allowed when calling your function URL. For example: <code>GET</code>, <code>POST</code>, <code>DELETE</code>, or the wildcard character (<code>*</code>).</p>
-    pub fn allow_methods(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn allow_methods(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.allow_methods.as_deref()
     }
     /// <p>The origins that can access your function URL. You can list any number of specific origins, separated by a comma. For example: <code>https://www.example.com</code>, <code>http://localhost:60905</code>.</p>
     /// <p>Alternatively, you can grant access to all origins using the wildcard character (<code>*</code>).</p>
-    pub fn allow_origins(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn allow_origins(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.allow_origins.as_deref()
     }
     /// <p>The HTTP headers in your function response that you want to expose to origins that call your function URL. For example: <code>Date</code>, <code>Keep-Alive</code>, <code>X-Custom-Header</code>.</p>
-    pub fn expose_headers(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn expose_headers(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.expose_headers.as_deref()
     }
     /// <p>The maximum amount of time, in seconds, that web browsers can cache results of a preflight request. By default, this is set to <code>0</code>, which means that the browser doesn't cache results.</p>
-    pub fn max_age(&self) -> std::option::Option<i32> {
+    pub fn max_age(&self) -> ::std::option::Option<i32> {
         self.max_age
     }
 }
@@ -60,23 +60,25 @@ impl Cors {
 
 /// A builder for [`Cors`](crate::types::Cors).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CorsBuilder {
-    pub(crate) allow_credentials: std::option::Option<bool>,
-    pub(crate) allow_headers: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) allow_methods: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) allow_origins: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) expose_headers: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) max_age: std::option::Option<i32>,
+    pub(crate) allow_credentials: ::std::option::Option<bool>,
+    pub(crate) allow_headers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) allow_methods: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) allow_origins: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) expose_headers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) max_age: ::std::option::Option<i32>,
 }
 impl CorsBuilder {
     /// <p>Whether to allow cookies or other credentials in requests to your function URL. The default is <code>false</code>.</p>
     pub fn allow_credentials(mut self, input: bool) -> Self {
-        self.allow_credentials = Some(input);
+        self.allow_credentials = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether to allow cookies or other credentials in requests to your function URL. The default is <code>false</code>.</p>
-    pub fn set_allow_credentials(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_allow_credentials(mut self, input: ::std::option::Option<bool>) -> Self {
         self.allow_credentials = input;
         self
     }
@@ -85,16 +87,19 @@ impl CorsBuilder {
     /// To override the contents of this collection use [`set_allow_headers`](Self::set_allow_headers).
     ///
     /// <p>The HTTP headers that origins can include in requests to your function URL. For example: <code>Date</code>, <code>Keep-Alive</code>, <code>X-Custom-Header</code>.</p>
-    pub fn allow_headers(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn allow_headers(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.allow_headers.unwrap_or_default();
         v.push(input.into());
-        self.allow_headers = Some(v);
+        self.allow_headers = ::std::option::Option::Some(v);
         self
     }
     /// <p>The HTTP headers that origins can include in requests to your function URL. For example: <code>Date</code>, <code>Keep-Alive</code>, <code>X-Custom-Header</code>.</p>
     pub fn set_allow_headers(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.allow_headers = input;
         self
@@ -104,16 +109,19 @@ impl CorsBuilder {
     /// To override the contents of this collection use [`set_allow_methods`](Self::set_allow_methods).
     ///
     /// <p>The HTTP methods that are allowed when calling your function URL. For example: <code>GET</code>, <code>POST</code>, <code>DELETE</code>, or the wildcard character (<code>*</code>).</p>
-    pub fn allow_methods(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn allow_methods(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.allow_methods.unwrap_or_default();
         v.push(input.into());
-        self.allow_methods = Some(v);
+        self.allow_methods = ::std::option::Option::Some(v);
         self
     }
     /// <p>The HTTP methods that are allowed when calling your function URL. For example: <code>GET</code>, <code>POST</code>, <code>DELETE</code>, or the wildcard character (<code>*</code>).</p>
     pub fn set_allow_methods(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.allow_methods = input;
         self
@@ -124,17 +132,20 @@ impl CorsBuilder {
     ///
     /// <p>The origins that can access your function URL. You can list any number of specific origins, separated by a comma. For example: <code>https://www.example.com</code>, <code>http://localhost:60905</code>.</p>
     /// <p>Alternatively, you can grant access to all origins using the wildcard character (<code>*</code>).</p>
-    pub fn allow_origins(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn allow_origins(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.allow_origins.unwrap_or_default();
         v.push(input.into());
-        self.allow_origins = Some(v);
+        self.allow_origins = ::std::option::Option::Some(v);
         self
     }
     /// <p>The origins that can access your function URL. You can list any number of specific origins, separated by a comma. For example: <code>https://www.example.com</code>, <code>http://localhost:60905</code>.</p>
     /// <p>Alternatively, you can grant access to all origins using the wildcard character (<code>*</code>).</p>
     pub fn set_allow_origins(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.allow_origins = input;
         self
@@ -144,27 +155,30 @@ impl CorsBuilder {
     /// To override the contents of this collection use [`set_expose_headers`](Self::set_expose_headers).
     ///
     /// <p>The HTTP headers in your function response that you want to expose to origins that call your function URL. For example: <code>Date</code>, <code>Keep-Alive</code>, <code>X-Custom-Header</code>.</p>
-    pub fn expose_headers(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn expose_headers(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.expose_headers.unwrap_or_default();
         v.push(input.into());
-        self.expose_headers = Some(v);
+        self.expose_headers = ::std::option::Option::Some(v);
         self
     }
     /// <p>The HTTP headers in your function response that you want to expose to origins that call your function URL. For example: <code>Date</code>, <code>Keep-Alive</code>, <code>X-Custom-Header</code>.</p>
     pub fn set_expose_headers(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.expose_headers = input;
         self
     }
     /// <p>The maximum amount of time, in seconds, that web browsers can cache results of a preflight request. By default, this is set to <code>0</code>, which means that the browser doesn't cache results.</p>
     pub fn max_age(mut self, input: i32) -> Self {
-        self.max_age = Some(input);
+        self.max_age = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum amount of time, in seconds, that web browsers can cache results of a preflight request. By default, this is set to <code>0</code>, which means that the browser doesn't cache results.</p>
-    pub fn set_max_age(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_age(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_age = input;
         self
     }

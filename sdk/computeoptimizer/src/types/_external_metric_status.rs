@@ -2,22 +2,22 @@
 
 /// <p> Describes Compute Optimizer's integration status with your chosen external metric provider. For example, Datadog. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExternalMetricStatus {
     /// <p> The status code for Compute Optimizer's integration with an external metrics provider. </p>
     #[doc(hidden)]
-    pub status_code: std::option::Option<crate::types::ExternalMetricStatusCode>,
+    pub status_code: ::std::option::Option<crate::types::ExternalMetricStatusCode>,
     /// <p> The reason for Compute Optimizer's integration status with your external metric provider. </p>
     #[doc(hidden)]
-    pub status_reason: std::option::Option<std::string::String>,
+    pub status_reason: ::std::option::Option<::std::string::String>,
 }
 impl ExternalMetricStatus {
     /// <p> The status code for Compute Optimizer's integration with an external metrics provider. </p>
-    pub fn status_code(&self) -> std::option::Option<&crate::types::ExternalMetricStatusCode> {
+    pub fn status_code(&self) -> ::std::option::Option<&crate::types::ExternalMetricStatusCode> {
         self.status_code.as_ref()
     }
     /// <p> The reason for Compute Optimizer's integration status with your external metric provider. </p>
-    pub fn status_reason(&self) -> std::option::Option<&str> {
+    pub fn status_reason(&self) -> ::std::option::Option<&str> {
         self.status_reason.as_deref()
     }
 }
@@ -30,32 +30,40 @@ impl ExternalMetricStatus {
 
 /// A builder for [`ExternalMetricStatus`](crate::types::ExternalMetricStatus).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ExternalMetricStatusBuilder {
-    pub(crate) status_code: std::option::Option<crate::types::ExternalMetricStatusCode>,
-    pub(crate) status_reason: std::option::Option<std::string::String>,
+    pub(crate) status_code: ::std::option::Option<crate::types::ExternalMetricStatusCode>,
+    pub(crate) status_reason: ::std::option::Option<::std::string::String>,
 }
 impl ExternalMetricStatusBuilder {
     /// <p> The status code for Compute Optimizer's integration with an external metrics provider. </p>
     pub fn status_code(mut self, input: crate::types::ExternalMetricStatusCode) -> Self {
-        self.status_code = Some(input);
+        self.status_code = ::std::option::Option::Some(input);
         self
     }
     /// <p> The status code for Compute Optimizer's integration with an external metrics provider. </p>
     pub fn set_status_code(
         mut self,
-        input: std::option::Option<crate::types::ExternalMetricStatusCode>,
+        input: ::std::option::Option<crate::types::ExternalMetricStatusCode>,
     ) -> Self {
         self.status_code = input;
         self
     }
     /// <p> The reason for Compute Optimizer's integration status with your external metric provider. </p>
-    pub fn status_reason(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status_reason = Some(input.into());
+    pub fn status_reason(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.status_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The reason for Compute Optimizer's integration status with your external metric provider. </p>
-    pub fn set_status_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status_reason(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.status_reason = input;
         self
     }

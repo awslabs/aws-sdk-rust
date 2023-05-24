@@ -2,7 +2,7 @@
 
 /// <p>A request for the number of health checks that are associated with the current Amazon Web Services account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetHealthCheckCountInput {}
 impl GetHealthCheckCountInput {
     /// Creates a new builder-style object to manufacture [`GetHealthCheckCountInput`](crate::operation::get_health_check_count::GetHealthCheckCountInput).
@@ -15,16 +15,20 @@ impl GetHealthCheckCountInput {
 
 /// A builder for [`GetHealthCheckCountInput`](crate::operation::get_health_check_count::GetHealthCheckCountInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetHealthCheckCountInputBuilder {}
 impl GetHealthCheckCountInputBuilder {
     /// Consumes the builder and constructs a [`GetHealthCheckCountInput`](crate::operation::get_health_check_count::GetHealthCheckCountInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::get_health_check_count::GetHealthCheckCountInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::get_health_check_count::GetHealthCheckCountInput {})
+        ::std::result::Result::Ok(
+            crate::operation::get_health_check_count::GetHealthCheckCountInput {},
+        )
     }
 }

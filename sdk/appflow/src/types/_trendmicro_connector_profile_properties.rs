@@ -2,7 +2,7 @@
 
 /// <p> The connector-specific profile properties required when using Trend Micro. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrendmicroConnectorProfileProperties {}
 impl TrendmicroConnectorProfileProperties {
     /// Creates a new builder-style object to manufacture [`TrendmicroConnectorProfileProperties`](crate::types::TrendmicroConnectorProfileProperties).
@@ -13,7 +13,9 @@ impl TrendmicroConnectorProfileProperties {
 
 /// A builder for [`TrendmicroConnectorProfileProperties`](crate::types::TrendmicroConnectorProfileProperties).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TrendmicroConnectorProfilePropertiesBuilder {}
 impl TrendmicroConnectorProfilePropertiesBuilder {
     /// Consumes the builder and constructs a [`TrendmicroConnectorProfileProperties`](crate::types::TrendmicroConnectorProfileProperties).

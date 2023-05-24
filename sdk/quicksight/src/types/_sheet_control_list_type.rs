@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum SheetControlListType {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum SheetControlListType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for SheetControlListType {
+impl ::std::convert::From<&str> for SheetControlListType {
     fn from(s: &str) -> Self {
         match s {
             "MULTI_SELECT" => SheetControlListType::MultiSelect,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for SheetControlListType {
         }
     }
 }
-impl std::str::FromStr for SheetControlListType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for SheetControlListType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SheetControlListType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(SheetControlListType::from(s))
     }
 }
 impl SheetControlListType {
@@ -86,7 +86,7 @@ impl SheetControlListType {
         &["MULTI_SELECT", "SINGLE_SELECT"]
     }
 }
-impl AsRef<str> for SheetControlListType {
+impl ::std::convert::AsRef<str> for SheetControlListType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

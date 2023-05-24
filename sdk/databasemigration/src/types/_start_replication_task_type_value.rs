@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum StartReplicationTaskTypeValue {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum StartReplicationTaskTypeValue {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for StartReplicationTaskTypeValue {
+impl ::std::convert::From<&str> for StartReplicationTaskTypeValue {
     fn from(s: &str) -> Self {
         match s {
             "reload-target" => StartReplicationTaskTypeValue::ReloadTarget,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for StartReplicationTaskTypeValue {
         }
     }
 }
-impl std::str::FromStr for StartReplicationTaskTypeValue {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for StartReplicationTaskTypeValue {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(StartReplicationTaskTypeValue::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(StartReplicationTaskTypeValue::from(s))
     }
 }
 impl StartReplicationTaskTypeValue {
@@ -91,7 +91,7 @@ impl StartReplicationTaskTypeValue {
         &["reload-target", "resume-processing", "start-replication"]
     }
 }
-impl AsRef<str> for StartReplicationTaskTypeValue {
+impl ::std::convert::AsRef<str> for StartReplicationTaskTypeValue {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

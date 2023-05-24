@@ -10,29 +10,29 @@ pub use crate::operation::start_sync_execution::_start_sync_execution_input::Sta
 /// </note> <note>
 /// <p>This API action isn't logged in CloudTrail.</p>
 /// </note>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartSyncExecutionFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::start_sync_execution::builders::StartSyncExecutionInputBuilder,
 }
 impl StartSyncExecutionFluentBuilder {
     /// Creates a new `StartSyncExecution`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::start_sync_execution::StartSyncExecution,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::start_sync_execution::StartSyncExecutionError,
         >,
     > {
@@ -40,30 +40,33 @@ impl StartSyncExecutionFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::start_sync_execution::StartSyncExecutionOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::start_sync_execution::StartSyncExecutionError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -76,34 +79,37 @@ impl StartSyncExecutionFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::start_sync_execution::StartSyncExecutionOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::start_sync_execution::StartSyncExecutionError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the state machine to execute.</p>
-    pub fn state_machine_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn state_machine_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.state_machine_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the state machine to execute.</p>
     pub fn set_state_machine_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_state_machine_arn(input);
         self
     }
     /// <p>The name of the execution.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// <p>The name of the execution.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
@@ -112,7 +118,7 @@ impl StartSyncExecutionFluentBuilder {
     /// <p>If you don't include any JSON input data, you still must include the two braces, for example: <code>"input": "{}"</code> </p>
     /// </note>
     /// <p>Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
-    pub fn input(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn input(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.input(input.into());
         self
     }
@@ -121,17 +127,17 @@ impl StartSyncExecutionFluentBuilder {
     /// <p>If you don't include any JSON input data, you still must include the two braces, for example: <code>"input": "{}"</code> </p>
     /// </note>
     /// <p>Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
-    pub fn set_input(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_input(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_input(input);
         self
     }
     /// <p>Passes the X-Ray trace header. The trace header can also be passed in the request payload.</p>
-    pub fn trace_header(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn trace_header(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.trace_header(input.into());
         self
     }
     /// <p>Passes the X-Ray trace header. The trace header can also be passed in the request payload.</p>
-    pub fn set_trace_header(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_trace_header(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_trace_header(input);
         self
     }

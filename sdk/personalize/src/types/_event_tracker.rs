@@ -2,23 +2,23 @@
 
 /// <p>Provides information about an event tracker.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventTracker {
     /// <p>The name of the event tracker.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the event tracker.</p>
     #[doc(hidden)]
-    pub event_tracker_arn: std::option::Option<std::string::String>,
+    pub event_tracker_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account that owns the event tracker.</p>
     #[doc(hidden)]
-    pub account_id: std::option::Option<std::string::String>,
+    pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the event tracker. Include this ID in requests to the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutEvents.html">PutEvents</a> API.</p>
     #[doc(hidden)]
-    pub tracking_id: std::option::Option<std::string::String>,
+    pub tracking_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the dataset group that receives the event data.</p>
     #[doc(hidden)]
-    pub dataset_group_arn: std::option::Option<std::string::String>,
+    pub dataset_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the event tracker.</p>
     /// <p>An event tracker can be in one of the following states:</p>
     /// <ul>
@@ -26,33 +26,33 @@ pub struct EventTracker {
     /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub status: std::option::Option<std::string::String>,
+    pub status: ::std::option::Option<::std::string::String>,
     /// <p>The date and time (in Unix format) that the event tracker was created.</p>
     #[doc(hidden)]
-    pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time (in Unix time) that the event tracker was last updated.</p>
     #[doc(hidden)]
-    pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl EventTracker {
     /// <p>The name of the event tracker.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The ARN of the event tracker.</p>
-    pub fn event_tracker_arn(&self) -> std::option::Option<&str> {
+    pub fn event_tracker_arn(&self) -> ::std::option::Option<&str> {
         self.event_tracker_arn.as_deref()
     }
     /// <p>The Amazon Web Services account that owns the event tracker.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The ID of the event tracker. Include this ID in requests to the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutEvents.html">PutEvents</a> API.</p>
-    pub fn tracking_id(&self) -> std::option::Option<&str> {
+    pub fn tracking_id(&self) -> ::std::option::Option<&str> {
         self.tracking_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset group that receives the event data.</p>
-    pub fn dataset_group_arn(&self) -> std::option::Option<&str> {
+    pub fn dataset_group_arn(&self) -> ::std::option::Option<&str> {
         self.dataset_group_arn.as_deref()
     }
     /// <p>The status of the event tracker.</p>
@@ -61,15 +61,15 @@ impl EventTracker {
     /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
     /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
     /// <p>The date and time (in Unix format) that the event tracker was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time (in Unix time) that the event tracker was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
 }
@@ -82,70 +82,78 @@ impl EventTracker {
 
 /// A builder for [`EventTracker`](crate::types::EventTracker).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EventTrackerBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) event_tracker_arn: std::option::Option<std::string::String>,
-    pub(crate) account_id: std::option::Option<std::string::String>,
-    pub(crate) tracking_id: std::option::Option<std::string::String>,
-    pub(crate) dataset_group_arn: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<std::string::String>,
-    pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) event_tracker_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) tracking_id: ::std::option::Option<::std::string::String>,
+    pub(crate) dataset_group_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<::std::string::String>,
+    pub(crate) creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl EventTrackerBuilder {
     /// <p>The name of the event tracker.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the event tracker.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The ARN of the event tracker.</p>
-    pub fn event_tracker_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.event_tracker_arn = Some(input.into());
+    pub fn event_tracker_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.event_tracker_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the event tracker.</p>
     pub fn set_event_tracker_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.event_tracker_arn = input;
         self
     }
     /// <p>The Amazon Web Services account that owns the event tracker.</p>
-    pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.account_id = Some(input.into());
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account that owns the event tracker.</p>
-    pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
     }
     /// <p>The ID of the event tracker. Include this ID in requests to the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutEvents.html">PutEvents</a> API.</p>
-    pub fn tracking_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.tracking_id = Some(input.into());
+    pub fn tracking_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.tracking_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the event tracker. Include this ID in requests to the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutEvents.html">PutEvents</a> API.</p>
-    pub fn set_tracking_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_tracking_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tracking_id = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset group that receives the event data.</p>
-    pub fn dataset_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.dataset_group_arn = Some(input.into());
+    pub fn dataset_group_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.dataset_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset group that receives the event data.</p>
     pub fn set_dataset_group_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.dataset_group_arn = input;
         self
@@ -156,8 +164,8 @@ impl EventTrackerBuilder {
     /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
     /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
     /// </ul>
-    pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status = Some(input.into());
+    pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the event tracker.</p>
@@ -166,32 +174,32 @@ impl EventTrackerBuilder {
     /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
     /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
     /// </ul>
-    pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }
     /// <p>The date and time (in Unix format) that the event tracker was created.</p>
-    pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_date_time = Some(input);
+    pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_date_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time (in Unix format) that the event tracker was created.</p>
     pub fn set_creation_date_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_date_time = input;
         self
     }
     /// <p>The date and time (in Unix time) that the event tracker was last updated.</p>
-    pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_updated_date_time = Some(input);
+    pub fn last_updated_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_updated_date_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time (in Unix time) that the event tracker was last updated.</p>
     pub fn set_last_updated_date_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_updated_date_time = input;
         self

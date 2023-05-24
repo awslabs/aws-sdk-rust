@@ -2,7 +2,7 @@
 
 /// <p>Information about a single controller area network (CAN) signal and the messages it receives and transmits.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CanSignal {
     /// <p>The ID of the message.</p>
     #[doc(hidden)]
@@ -18,16 +18,16 @@ pub struct CanSignal {
     pub start_bit: i32,
     /// <p>Indicates where data appears in the CAN message.</p>
     #[doc(hidden)]
-    pub offset: std::option::Option<f64>,
+    pub offset: ::std::option::Option<f64>,
     /// <p>A multiplier used to decode the CAN message.</p>
     #[doc(hidden)]
-    pub factor: std::option::Option<f64>,
+    pub factor: ::std::option::Option<f64>,
     /// <p>How many bytes of data are in the message.</p>
     #[doc(hidden)]
     pub length: i32,
     /// <p>The name of the signal.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
 }
 impl CanSignal {
     /// <p>The ID of the message.</p>
@@ -47,11 +47,11 @@ impl CanSignal {
         self.start_bit
     }
     /// <p>Indicates where data appears in the CAN message.</p>
-    pub fn offset(&self) -> std::option::Option<f64> {
+    pub fn offset(&self) -> ::std::option::Option<f64> {
         self.offset
     }
     /// <p>A multiplier used to decode the CAN message.</p>
-    pub fn factor(&self) -> std::option::Option<f64> {
+    pub fn factor(&self) -> ::std::option::Option<f64> {
         self.factor
     }
     /// <p>How many bytes of data are in the message.</p>
@@ -59,7 +59,7 @@ impl CanSignal {
         self.length
     }
     /// <p>The name of the signal.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
 }
@@ -72,95 +72,97 @@ impl CanSignal {
 
 /// A builder for [`CanSignal`](crate::types::CanSignal).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CanSignalBuilder {
-    pub(crate) message_id: std::option::Option<i32>,
-    pub(crate) is_big_endian: std::option::Option<bool>,
-    pub(crate) is_signed: std::option::Option<bool>,
-    pub(crate) start_bit: std::option::Option<i32>,
-    pub(crate) offset: std::option::Option<f64>,
-    pub(crate) factor: std::option::Option<f64>,
-    pub(crate) length: std::option::Option<i32>,
-    pub(crate) name: std::option::Option<std::string::String>,
+    pub(crate) message_id: ::std::option::Option<i32>,
+    pub(crate) is_big_endian: ::std::option::Option<bool>,
+    pub(crate) is_signed: ::std::option::Option<bool>,
+    pub(crate) start_bit: ::std::option::Option<i32>,
+    pub(crate) offset: ::std::option::Option<f64>,
+    pub(crate) factor: ::std::option::Option<f64>,
+    pub(crate) length: ::std::option::Option<i32>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
 }
 impl CanSignalBuilder {
     /// <p>The ID of the message.</p>
     pub fn message_id(mut self, input: i32) -> Self {
-        self.message_id = Some(input);
+        self.message_id = ::std::option::Option::Some(input);
         self
     }
     /// <p>The ID of the message.</p>
-    pub fn set_message_id(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_message_id(mut self, input: ::std::option::Option<i32>) -> Self {
         self.message_id = input;
         self
     }
     /// <p>Whether the byte ordering of a CAN message is big-endian.</p>
     pub fn is_big_endian(mut self, input: bool) -> Self {
-        self.is_big_endian = Some(input);
+        self.is_big_endian = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether the byte ordering of a CAN message is big-endian.</p>
-    pub fn set_is_big_endian(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_big_endian(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_big_endian = input;
         self
     }
     /// <p>Whether the message data is specified as a signed value.</p>
     pub fn is_signed(mut self, input: bool) -> Self {
-        self.is_signed = Some(input);
+        self.is_signed = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether the message data is specified as a signed value.</p>
-    pub fn set_is_signed(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_signed(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_signed = input;
         self
     }
     /// <p>Indicates the beginning of the CAN message.</p>
     pub fn start_bit(mut self, input: i32) -> Self {
-        self.start_bit = Some(input);
+        self.start_bit = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates the beginning of the CAN message.</p>
-    pub fn set_start_bit(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_start_bit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.start_bit = input;
         self
     }
     /// <p>Indicates where data appears in the CAN message.</p>
     pub fn offset(mut self, input: f64) -> Self {
-        self.offset = Some(input);
+        self.offset = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates where data appears in the CAN message.</p>
-    pub fn set_offset(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_offset(mut self, input: ::std::option::Option<f64>) -> Self {
         self.offset = input;
         self
     }
     /// <p>A multiplier used to decode the CAN message.</p>
     pub fn factor(mut self, input: f64) -> Self {
-        self.factor = Some(input);
+        self.factor = ::std::option::Option::Some(input);
         self
     }
     /// <p>A multiplier used to decode the CAN message.</p>
-    pub fn set_factor(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_factor(mut self, input: ::std::option::Option<f64>) -> Self {
         self.factor = input;
         self
     }
     /// <p>How many bytes of data are in the message.</p>
     pub fn length(mut self, input: i32) -> Self {
-        self.length = Some(input);
+        self.length = ::std::option::Option::Some(input);
         self
     }
     /// <p>How many bytes of data are in the message.</p>
-    pub fn set_length(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_length(mut self, input: ::std::option::Option<i32>) -> Self {
         self.length = input;
         self
     }
     /// <p>The name of the signal.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the signal.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }

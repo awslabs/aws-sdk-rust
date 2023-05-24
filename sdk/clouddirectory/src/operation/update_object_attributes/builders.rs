@@ -6,29 +6,29 @@ pub use crate::operation::update_object_attributes::_update_object_attributes_in
 /// Fluent builder constructing a request to `UpdateObjectAttributes`.
 ///
 /// <p>Updates a given object's attributes.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateObjectAttributesFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::update_object_attributes::builders::UpdateObjectAttributesInputBuilder,
 }
 impl UpdateObjectAttributesFluentBuilder {
     /// Creates a new `UpdateObjectAttributes`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_object_attributes::UpdateObjectAttributes,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_object_attributes::UpdateObjectAttributesError,
         >,
     > {
@@ -36,30 +36,33 @@ impl UpdateObjectAttributesFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_object_attributes::UpdateObjectAttributesOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_object_attributes::UpdateObjectAttributesError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,21 +75,27 @@ impl UpdateObjectAttributesFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_object_attributes::UpdateObjectAttributesOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_object_attributes::UpdateObjectAttributesError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
-    pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn directory_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.directory_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
-    pub fn set_directory_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_directory_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_directory_arn(input);
         self
     }
@@ -98,7 +107,7 @@ impl UpdateObjectAttributesFluentBuilder {
     /// <p>The reference that identifies the object.</p>
     pub fn set_object_reference(
         mut self,
-        input: std::option::Option<crate::types::ObjectReference>,
+        input: ::std::option::Option<crate::types::ObjectReference>,
     ) -> Self {
         self.inner = self.inner.set_object_reference(input);
         self
@@ -115,7 +124,7 @@ impl UpdateObjectAttributesFluentBuilder {
     /// <p>The attributes update structure.</p>
     pub fn set_attribute_updates(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ObjectAttributeUpdate>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ObjectAttributeUpdate>>,
     ) -> Self {
         self.inner = self.inner.set_attribute_updates(input);
         self

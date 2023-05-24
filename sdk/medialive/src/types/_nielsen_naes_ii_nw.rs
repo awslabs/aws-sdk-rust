@@ -2,29 +2,29 @@
 
 /// Nielsen Naes Ii Nw
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NielsenNaesIiNw {
     /// Enter the check digit string for the watermark
     #[doc(hidden)]
-    pub check_digit_string: std::option::Option<std::string::String>,
+    pub check_digit_string: ::std::option::Option<::std::string::String>,
     /// Enter the Nielsen Source ID (SID) to include in the watermark
     #[doc(hidden)]
-    pub sid: std::option::Option<f64>,
+    pub sid: ::std::option::Option<f64>,
     /// Choose the timezone for the time stamps in the watermark. If not provided, the timestamps will be in Coordinated Universal Time (UTC)
     #[doc(hidden)]
-    pub timezone: std::option::Option<crate::types::NielsenWatermarkTimezones>,
+    pub timezone: ::std::option::Option<crate::types::NielsenWatermarkTimezones>,
 }
 impl NielsenNaesIiNw {
     /// Enter the check digit string for the watermark
-    pub fn check_digit_string(&self) -> std::option::Option<&str> {
+    pub fn check_digit_string(&self) -> ::std::option::Option<&str> {
         self.check_digit_string.as_deref()
     }
     /// Enter the Nielsen Source ID (SID) to include in the watermark
-    pub fn sid(&self) -> std::option::Option<f64> {
+    pub fn sid(&self) -> ::std::option::Option<f64> {
         self.sid
     }
     /// Choose the timezone for the time stamps in the watermark. If not provided, the timestamps will be in Coordinated Universal Time (UTC)
-    pub fn timezone(&self) -> std::option::Option<&crate::types::NielsenWatermarkTimezones> {
+    pub fn timezone(&self) -> ::std::option::Option<&crate::types::NielsenWatermarkTimezones> {
         self.timezone.as_ref()
     }
 }
@@ -37,45 +37,50 @@ impl NielsenNaesIiNw {
 
 /// A builder for [`NielsenNaesIiNw`](crate::types::NielsenNaesIiNw).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NielsenNaesIiNwBuilder {
-    pub(crate) check_digit_string: std::option::Option<std::string::String>,
-    pub(crate) sid: std::option::Option<f64>,
-    pub(crate) timezone: std::option::Option<crate::types::NielsenWatermarkTimezones>,
+    pub(crate) check_digit_string: ::std::option::Option<::std::string::String>,
+    pub(crate) sid: ::std::option::Option<f64>,
+    pub(crate) timezone: ::std::option::Option<crate::types::NielsenWatermarkTimezones>,
 }
 impl NielsenNaesIiNwBuilder {
     /// Enter the check digit string for the watermark
-    pub fn check_digit_string(mut self, input: impl Into<std::string::String>) -> Self {
-        self.check_digit_string = Some(input.into());
+    pub fn check_digit_string(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.check_digit_string = ::std::option::Option::Some(input.into());
         self
     }
     /// Enter the check digit string for the watermark
     pub fn set_check_digit_string(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.check_digit_string = input;
         self
     }
     /// Enter the Nielsen Source ID (SID) to include in the watermark
     pub fn sid(mut self, input: f64) -> Self {
-        self.sid = Some(input);
+        self.sid = ::std::option::Option::Some(input);
         self
     }
     /// Enter the Nielsen Source ID (SID) to include in the watermark
-    pub fn set_sid(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_sid(mut self, input: ::std::option::Option<f64>) -> Self {
         self.sid = input;
         self
     }
     /// Choose the timezone for the time stamps in the watermark. If not provided, the timestamps will be in Coordinated Universal Time (UTC)
     pub fn timezone(mut self, input: crate::types::NielsenWatermarkTimezones) -> Self {
-        self.timezone = Some(input);
+        self.timezone = ::std::option::Option::Some(input);
         self
     }
     /// Choose the timezone for the time stamps in the watermark. If not provided, the timestamps will be in Coordinated Universal Time (UTC)
     pub fn set_timezone(
         mut self,
-        input: std::option::Option<crate::types::NielsenWatermarkTimezones>,
+        input: ::std::option::Option<crate::types::NielsenWatermarkTimezones>,
     ) -> Self {
         self.timezone = input;
         self

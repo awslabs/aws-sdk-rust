@@ -2,19 +2,19 @@
 
 /// <p> Contains an array of <code>RecommendationRelatedCloudWatchMetricsSourceDetail</code> objects that contain the name and namespace of an Amazon CloudWatch metric. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecommendationRelatedAnomalySourceDetail {
     /// <p> An array of <code>CloudWatchMetricsDetail</code> objects that contains information about the analyzed metrics that displayed anomalous behavior. </p>
     #[doc(hidden)]
-    pub cloud_watch_metrics: std::option::Option<
-        std::vec::Vec<crate::types::RecommendationRelatedCloudWatchMetricsSourceDetail>,
+    pub cloud_watch_metrics: ::std::option::Option<
+        ::std::vec::Vec<crate::types::RecommendationRelatedCloudWatchMetricsSourceDetail>,
     >,
 }
 impl RecommendationRelatedAnomalySourceDetail {
     /// <p> An array of <code>CloudWatchMetricsDetail</code> objects that contains information about the analyzed metrics that displayed anomalous behavior. </p>
     pub fn cloud_watch_metrics(
         &self,
-    ) -> std::option::Option<&[crate::types::RecommendationRelatedCloudWatchMetricsSourceDetail]>
+    ) -> ::std::option::Option<&[crate::types::RecommendationRelatedCloudWatchMetricsSourceDetail]>
     {
         self.cloud_watch_metrics.as_deref()
     }
@@ -28,10 +28,12 @@ impl RecommendationRelatedAnomalySourceDetail {
 
 /// A builder for [`RecommendationRelatedAnomalySourceDetail`](crate::types::RecommendationRelatedAnomalySourceDetail).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RecommendationRelatedAnomalySourceDetailBuilder {
-    pub(crate) cloud_watch_metrics: std::option::Option<
-        std::vec::Vec<crate::types::RecommendationRelatedCloudWatchMetricsSourceDetail>,
+    pub(crate) cloud_watch_metrics: ::std::option::Option<
+        ::std::vec::Vec<crate::types::RecommendationRelatedCloudWatchMetricsSourceDetail>,
     >,
 }
 impl RecommendationRelatedAnomalySourceDetailBuilder {
@@ -46,14 +48,14 @@ impl RecommendationRelatedAnomalySourceDetailBuilder {
     ) -> Self {
         let mut v = self.cloud_watch_metrics.unwrap_or_default();
         v.push(input);
-        self.cloud_watch_metrics = Some(v);
+        self.cloud_watch_metrics = ::std::option::Option::Some(v);
         self
     }
     /// <p> An array of <code>CloudWatchMetricsDetail</code> objects that contains information about the analyzed metrics that displayed anomalous behavior. </p>
     pub fn set_cloud_watch_metrics(
         mut self,
-        input: std::option::Option<
-            std::vec::Vec<crate::types::RecommendationRelatedCloudWatchMetricsSourceDetail>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::RecommendationRelatedCloudWatchMetricsSourceDetail>,
         >,
     ) -> Self {
         self.cloud_watch_metrics = input;

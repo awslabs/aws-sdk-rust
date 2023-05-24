@@ -2,7 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_create_login_profile_http_error(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::create_login_profile::CreateLoginProfileOutput,
@@ -15,7 +15,7 @@ pub fn de_create_login_profile_http_error(
         _response_body,
     )
     .map_err(crate::operation::create_login_profile::CreateLoginProfileError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
+    generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
@@ -115,7 +115,7 @@ pub fn de_create_login_profile_http_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_create_login_profile_http_response_with_props(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::create_login_profile::CreateLoginProfileOutput,
@@ -130,7 +130,7 @@ pub fn de_create_login_profile_http_response_with_props(
         )
         .map_err(crate::operation::create_login_profile::CreateLoginProfileError::unhandled)?;
         output._set_request_id(
-            aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
+            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
         );
         output.build()
     })
@@ -142,16 +142,16 @@ pub fn de_create_login_profile(
     mut builder: crate::operation::create_login_profile::builders::CreateLoginProfileOutputBuilder,
 ) -> Result<
     crate::operation::create_login_profile::builders::CreateLoginProfileOutputBuilder,
-    aws_smithy_xml::decode::XmlDecodeError,
+    ::aws_smithy_xml::decode::XmlDecodeError,
 > {
-    let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
+    let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateLoginProfileResponse")) {
-        return Err(aws_smithy_xml::decode::XmlDecodeError::custom(format!(
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected CreateLoginProfileResponse got {:?}",
             start_el
         )));
@@ -159,7 +159,7 @@ pub fn de_create_login_profile(
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("CreateLoginProfileResult")) {
-            return Err(aws_smithy_xml::decode::XmlDecodeError::custom(format!(
+            return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
                 "invalid result, expected CreateLoginProfileResult got {:?}",
                 start_el
             )));
@@ -180,7 +180,7 @@ pub fn de_create_login_profile(
         }
         }
     } else {
-        return Err(aws_smithy_xml::decode::XmlDecodeError::custom(
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(
             "expected CreateLoginProfileResult tag",
         ));
     };

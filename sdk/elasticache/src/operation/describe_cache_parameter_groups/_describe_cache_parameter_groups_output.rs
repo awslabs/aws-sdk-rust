@@ -2,30 +2,30 @@
 
 /// <p>Represents the output of a <code>DescribeCacheParameterGroups</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeCacheParameterGroupsOutput {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
     #[doc(hidden)]
-    pub marker: std::option::Option<std::string::String>,
+    pub marker: ::std::option::Option<::std::string::String>,
     /// <p>A list of cache parameter groups. Each element in the list contains detailed information about one cache parameter group.</p>
     #[doc(hidden)]
     pub cache_parameter_groups:
-        std::option::Option<std::vec::Vec<crate::types::CacheParameterGroup>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::CacheParameterGroup>>,
     _request_id: Option<String>,
 }
 impl DescribeCacheParameterGroupsOutput {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
     /// <p>A list of cache parameter groups. Each element in the list contains detailed information about one cache parameter group.</p>
     pub fn cache_parameter_groups(
         &self,
-    ) -> std::option::Option<&[crate::types::CacheParameterGroup]> {
+    ) -> ::std::option::Option<&[crate::types::CacheParameterGroup]> {
         self.cache_parameter_groups.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeCacheParameterGroupsOutput {
+impl ::aws_http::request_id::RequestId for DescribeCacheParameterGroupsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -39,21 +39,23 @@ impl DescribeCacheParameterGroupsOutput {
 
 /// A builder for [`DescribeCacheParameterGroupsOutput`](crate::operation::describe_cache_parameter_groups::DescribeCacheParameterGroupsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeCacheParameterGroupsOutputBuilder {
-    pub(crate) marker: std::option::Option<std::string::String>,
+    pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) cache_parameter_groups:
-        std::option::Option<std::vec::Vec<crate::types::CacheParameterGroup>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::CacheParameterGroup>>,
     _request_id: Option<String>,
 }
 impl DescribeCacheParameterGroupsOutputBuilder {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
-    pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-        self.marker = Some(input.into());
+    pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
-    pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
     }
@@ -65,13 +67,13 @@ impl DescribeCacheParameterGroupsOutputBuilder {
     pub fn cache_parameter_groups(mut self, input: crate::types::CacheParameterGroup) -> Self {
         let mut v = self.cache_parameter_groups.unwrap_or_default();
         v.push(input);
-        self.cache_parameter_groups = Some(v);
+        self.cache_parameter_groups = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of cache parameter groups. Each element in the list contains detailed information about one cache parameter group.</p>
     pub fn set_cache_parameter_groups(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CacheParameterGroup>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::CacheParameterGroup>>,
     ) -> Self {
         self.cache_parameter_groups = input;
         self

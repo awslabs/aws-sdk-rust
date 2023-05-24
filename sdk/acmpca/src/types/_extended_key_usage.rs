@@ -2,24 +2,24 @@
 
 /// <p>Specifies additional purposes for which the certified public key may be used other than basic purposes indicated in the <code>KeyUsage</code> extension.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExtendedKeyUsage {
     /// <p>Specifies a standard <code>ExtendedKeyUsage</code> as defined as in <a href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.1.12">RFC 5280</a>.</p>
     #[doc(hidden)]
-    pub extended_key_usage_type: std::option::Option<crate::types::ExtendedKeyUsageType>,
+    pub extended_key_usage_type: ::std::option::Option<crate::types::ExtendedKeyUsageType>,
     /// <p>Specifies a custom <code>ExtendedKeyUsage</code> with an object identifier (OID).</p>
     #[doc(hidden)]
-    pub extended_key_usage_object_identifier: std::option::Option<std::string::String>,
+    pub extended_key_usage_object_identifier: ::std::option::Option<::std::string::String>,
 }
 impl ExtendedKeyUsage {
     /// <p>Specifies a standard <code>ExtendedKeyUsage</code> as defined as in <a href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.1.12">RFC 5280</a>.</p>
     pub fn extended_key_usage_type(
         &self,
-    ) -> std::option::Option<&crate::types::ExtendedKeyUsageType> {
+    ) -> ::std::option::Option<&crate::types::ExtendedKeyUsageType> {
         self.extended_key_usage_type.as_ref()
     }
     /// <p>Specifies a custom <code>ExtendedKeyUsage</code> with an object identifier (OID).</p>
-    pub fn extended_key_usage_object_identifier(&self) -> std::option::Option<&str> {
+    pub fn extended_key_usage_object_identifier(&self) -> ::std::option::Option<&str> {
         self.extended_key_usage_object_identifier.as_deref()
     }
 }
@@ -32,21 +32,23 @@ impl ExtendedKeyUsage {
 
 /// A builder for [`ExtendedKeyUsage`](crate::types::ExtendedKeyUsage).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ExtendedKeyUsageBuilder {
-    pub(crate) extended_key_usage_type: std::option::Option<crate::types::ExtendedKeyUsageType>,
-    pub(crate) extended_key_usage_object_identifier: std::option::Option<std::string::String>,
+    pub(crate) extended_key_usage_type: ::std::option::Option<crate::types::ExtendedKeyUsageType>,
+    pub(crate) extended_key_usage_object_identifier: ::std::option::Option<::std::string::String>,
 }
 impl ExtendedKeyUsageBuilder {
     /// <p>Specifies a standard <code>ExtendedKeyUsage</code> as defined as in <a href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.1.12">RFC 5280</a>.</p>
     pub fn extended_key_usage_type(mut self, input: crate::types::ExtendedKeyUsageType) -> Self {
-        self.extended_key_usage_type = Some(input);
+        self.extended_key_usage_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies a standard <code>ExtendedKeyUsage</code> as defined as in <a href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.1.12">RFC 5280</a>.</p>
     pub fn set_extended_key_usage_type(
         mut self,
-        input: std::option::Option<crate::types::ExtendedKeyUsageType>,
+        input: ::std::option::Option<crate::types::ExtendedKeyUsageType>,
     ) -> Self {
         self.extended_key_usage_type = input;
         self
@@ -54,15 +56,15 @@ impl ExtendedKeyUsageBuilder {
     /// <p>Specifies a custom <code>ExtendedKeyUsage</code> with an object identifier (OID).</p>
     pub fn extended_key_usage_object_identifier(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.extended_key_usage_object_identifier = Some(input.into());
+        self.extended_key_usage_object_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies a custom <code>ExtendedKeyUsage</code> with an object identifier (OID).</p>
     pub fn set_extended_key_usage_object_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.extended_key_usage_object_identifier = input;
         self

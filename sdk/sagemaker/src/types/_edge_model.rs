@@ -2,36 +2,36 @@
 
 /// <p>The model on the edge device.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EdgeModel {
     /// <p>The name of the model.</p>
     #[doc(hidden)]
-    pub model_name: std::option::Option<std::string::String>,
+    pub model_name: ::std::option::Option<::std::string::String>,
     /// <p>The model version.</p>
     #[doc(hidden)]
-    pub model_version: std::option::Option<std::string::String>,
+    pub model_version: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp of the last data sample taken.</p>
     #[doc(hidden)]
-    pub latest_sample_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub latest_sample_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp of the last inference that was made.</p>
     #[doc(hidden)]
-    pub latest_inference: std::option::Option<aws_smithy_types::DateTime>,
+    pub latest_inference: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl EdgeModel {
     /// <p>The name of the model.</p>
-    pub fn model_name(&self) -> std::option::Option<&str> {
+    pub fn model_name(&self) -> ::std::option::Option<&str> {
         self.model_name.as_deref()
     }
     /// <p>The model version.</p>
-    pub fn model_version(&self) -> std::option::Option<&str> {
+    pub fn model_version(&self) -> ::std::option::Option<&str> {
         self.model_version.as_deref()
     }
     /// <p>The timestamp of the last data sample taken.</p>
-    pub fn latest_sample_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn latest_sample_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.latest_sample_time.as_ref()
     }
     /// <p>The timestamp of the last inference that was made.</p>
-    pub fn latest_inference(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn latest_inference(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.latest_inference.as_ref()
     }
 }
@@ -44,56 +44,64 @@ impl EdgeModel {
 
 /// A builder for [`EdgeModel`](crate::types::EdgeModel).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EdgeModelBuilder {
-    pub(crate) model_name: std::option::Option<std::string::String>,
-    pub(crate) model_version: std::option::Option<std::string::String>,
-    pub(crate) latest_sample_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) latest_inference: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) model_name: ::std::option::Option<::std::string::String>,
+    pub(crate) model_version: ::std::option::Option<::std::string::String>,
+    pub(crate) latest_sample_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) latest_inference: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl EdgeModelBuilder {
     /// <p>The name of the model.</p>
-    pub fn model_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.model_name = Some(input.into());
+    pub fn model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.model_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the model.</p>
-    pub fn set_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_name = input;
         self
     }
     /// <p>The model version.</p>
-    pub fn model_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.model_version = Some(input.into());
+    pub fn model_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.model_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The model version.</p>
-    pub fn set_model_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_model_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.model_version = input;
         self
     }
     /// <p>The timestamp of the last data sample taken.</p>
-    pub fn latest_sample_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.latest_sample_time = Some(input);
+    pub fn latest_sample_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.latest_sample_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The timestamp of the last data sample taken.</p>
     pub fn set_latest_sample_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.latest_sample_time = input;
         self
     }
     /// <p>The timestamp of the last inference that was made.</p>
-    pub fn latest_inference(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.latest_inference = Some(input);
+    pub fn latest_inference(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.latest_inference = ::std::option::Option::Some(input);
         self
     }
     /// <p>The timestamp of the last inference that was made.</p>
     pub fn set_latest_inference(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.latest_inference = input;
         self

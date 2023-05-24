@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`AssociateApplications`](crate::operation::associate_applications::builders::AssociateApplicationsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`wave_id(impl Into<String>)`](crate::operation::associate_applications::builders::AssociateApplicationsFluentBuilder::wave_id) / [`set_wave_id(Option<String>)`](crate::operation::associate_applications::builders::AssociateApplicationsFluentBuilder::set_wave_id): <p>Wave ID.</p>
+    ///   - [`wave_id(impl ::std::convert::Into<String>)`](crate::operation::associate_applications::builders::AssociateApplicationsFluentBuilder::wave_id) / [`set_wave_id(Option<String>)`](crate::operation::associate_applications::builders::AssociateApplicationsFluentBuilder::set_wave_id): <p>Wave ID.</p>
     ///   - [`application_i_ds(Vec<String>)`](crate::operation::associate_applications::builders::AssociateApplicationsFluentBuilder::application_i_ds) / [`set_application_i_ds(Option<Vec<String>>)`](crate::operation::associate_applications::builders::AssociateApplicationsFluentBuilder::set_application_i_ds): <p>Application IDs list.</p>
     /// - On success, responds with [`AssociateApplicationsOutput`](crate::operation::associate_applications::AssociateApplicationsOutput)
     /// - On failure, responds with [`SdkError<AssociateApplicationsError>`](crate::operation::associate_applications::AssociateApplicationsError)

@@ -2,68 +2,70 @@
 
 /// <p>An object representing an OpenID Connect (OIDC) configuration. Before associating an OIDC identity provider to your cluster, review the considerations in <a href="https://docs.aws.amazon.com/eks/latest/userguide/authenticate-oidc-identity-provider.html">Authenticating users for your cluster from an OpenID Connect identity provider</a> in the <i>Amazon EKS User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OidcIdentityProviderConfigRequest {
     /// <p>The name of the OIDC provider configuration.</p>
     #[doc(hidden)]
-    pub identity_provider_config_name: std::option::Option<std::string::String>,
+    pub identity_provider_config_name: ::std::option::Option<::std::string::String>,
     /// <p>The URL of the OpenID identity provider that allows the API server to discover public signing keys for verifying tokens. The URL must begin with <code>https://</code> and should correspond to the <code>iss</code> claim in the provider's OIDC ID tokens. Per the OIDC standard, path components are allowed but query parameters are not. Typically the URL consists of only a hostname, like <code>https://server.example.org</code> or <code>https://example.com</code>. This URL should point to the level below <code>.well-known/openid-configuration</code> and must be publicly accessible over the internet.</p>
     #[doc(hidden)]
-    pub issuer_url: std::option::Option<std::string::String>,
+    pub issuer_url: ::std::option::Option<::std::string::String>,
     /// <p>This is also known as <i>audience</i>. The ID for the client application that makes authentication requests to the OpenID identity provider.</p>
     #[doc(hidden)]
-    pub client_id: std::option::Option<std::string::String>,
+    pub client_id: ::std::option::Option<::std::string::String>,
     /// <p>The JSON Web Token (JWT) claim to use as the username. The default is <code>sub</code>, which is expected to be a unique identifier of the end user. You can choose other claims, such as <code>email</code> or <code>name</code>, depending on the OpenID identity provider. Claims other than <code>email</code> are prefixed with the issuer URL to prevent naming clashes with other plug-ins.</p>
     #[doc(hidden)]
-    pub username_claim: std::option::Option<std::string::String>,
+    pub username_claim: ::std::option::Option<::std::string::String>,
     /// <p>The prefix that is prepended to username claims to prevent clashes with existing names. If you do not provide this field, and <code>username</code> is a value other than <code>email</code>, the prefix defaults to <code>issuerurl#</code>. You can use the value <code>-</code> to disable all prefixing.</p>
     #[doc(hidden)]
-    pub username_prefix: std::option::Option<std::string::String>,
+    pub username_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The JWT claim that the provider uses to return your groups.</p>
     #[doc(hidden)]
-    pub groups_claim: std::option::Option<std::string::String>,
+    pub groups_claim: ::std::option::Option<::std::string::String>,
     /// <p>The prefix that is prepended to group claims to prevent clashes with existing names (such as <code>system:</code> groups). For example, the value<code> oidc:</code> will create group names like <code>oidc:engineering</code> and <code>oidc:infra</code>.</p>
     #[doc(hidden)]
-    pub groups_prefix: std::option::Option<std::string::String>,
+    pub groups_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The key value pairs that describe required claims in the identity token. If set, each claim is verified to be present in the token with a matching value. For the maximum number of claims that you can require, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/service-quotas.html">Amazon EKS service quotas</a> in the <i>Amazon EKS User Guide</i>.</p>
     #[doc(hidden)]
-    pub required_claims:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub required_claims: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl OidcIdentityProviderConfigRequest {
     /// <p>The name of the OIDC provider configuration.</p>
-    pub fn identity_provider_config_name(&self) -> std::option::Option<&str> {
+    pub fn identity_provider_config_name(&self) -> ::std::option::Option<&str> {
         self.identity_provider_config_name.as_deref()
     }
     /// <p>The URL of the OpenID identity provider that allows the API server to discover public signing keys for verifying tokens. The URL must begin with <code>https://</code> and should correspond to the <code>iss</code> claim in the provider's OIDC ID tokens. Per the OIDC standard, path components are allowed but query parameters are not. Typically the URL consists of only a hostname, like <code>https://server.example.org</code> or <code>https://example.com</code>. This URL should point to the level below <code>.well-known/openid-configuration</code> and must be publicly accessible over the internet.</p>
-    pub fn issuer_url(&self) -> std::option::Option<&str> {
+    pub fn issuer_url(&self) -> ::std::option::Option<&str> {
         self.issuer_url.as_deref()
     }
     /// <p>This is also known as <i>audience</i>. The ID for the client application that makes authentication requests to the OpenID identity provider.</p>
-    pub fn client_id(&self) -> std::option::Option<&str> {
+    pub fn client_id(&self) -> ::std::option::Option<&str> {
         self.client_id.as_deref()
     }
     /// <p>The JSON Web Token (JWT) claim to use as the username. The default is <code>sub</code>, which is expected to be a unique identifier of the end user. You can choose other claims, such as <code>email</code> or <code>name</code>, depending on the OpenID identity provider. Claims other than <code>email</code> are prefixed with the issuer URL to prevent naming clashes with other plug-ins.</p>
-    pub fn username_claim(&self) -> std::option::Option<&str> {
+    pub fn username_claim(&self) -> ::std::option::Option<&str> {
         self.username_claim.as_deref()
     }
     /// <p>The prefix that is prepended to username claims to prevent clashes with existing names. If you do not provide this field, and <code>username</code> is a value other than <code>email</code>, the prefix defaults to <code>issuerurl#</code>. You can use the value <code>-</code> to disable all prefixing.</p>
-    pub fn username_prefix(&self) -> std::option::Option<&str> {
+    pub fn username_prefix(&self) -> ::std::option::Option<&str> {
         self.username_prefix.as_deref()
     }
     /// <p>The JWT claim that the provider uses to return your groups.</p>
-    pub fn groups_claim(&self) -> std::option::Option<&str> {
+    pub fn groups_claim(&self) -> ::std::option::Option<&str> {
         self.groups_claim.as_deref()
     }
     /// <p>The prefix that is prepended to group claims to prevent clashes with existing names (such as <code>system:</code> groups). For example, the value<code> oidc:</code> will create group names like <code>oidc:engineering</code> and <code>oidc:infra</code>.</p>
-    pub fn groups_prefix(&self) -> std::option::Option<&str> {
+    pub fn groups_prefix(&self) -> ::std::option::Option<&str> {
         self.groups_prefix.as_deref()
     }
     /// <p>The key value pairs that describe required claims in the identity token. If set, each claim is verified to be present in the token with a matching value. For the maximum number of claims that you can require, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/service-quotas.html">Amazon EKS service quotas</a> in the <i>Amazon EKS User Guide</i>.</p>
     pub fn required_claims(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.required_claims.as_ref()
     }
 }
@@ -76,89 +78,113 @@ impl OidcIdentityProviderConfigRequest {
 
 /// A builder for [`OidcIdentityProviderConfigRequest`](crate::types::OidcIdentityProviderConfigRequest).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OidcIdentityProviderConfigRequestBuilder {
-    pub(crate) identity_provider_config_name: std::option::Option<std::string::String>,
-    pub(crate) issuer_url: std::option::Option<std::string::String>,
-    pub(crate) client_id: std::option::Option<std::string::String>,
-    pub(crate) username_claim: std::option::Option<std::string::String>,
-    pub(crate) username_prefix: std::option::Option<std::string::String>,
-    pub(crate) groups_claim: std::option::Option<std::string::String>,
-    pub(crate) groups_prefix: std::option::Option<std::string::String>,
-    pub(crate) required_claims:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) identity_provider_config_name: ::std::option::Option<::std::string::String>,
+    pub(crate) issuer_url: ::std::option::Option<::std::string::String>,
+    pub(crate) client_id: ::std::option::Option<::std::string::String>,
+    pub(crate) username_claim: ::std::option::Option<::std::string::String>,
+    pub(crate) username_prefix: ::std::option::Option<::std::string::String>,
+    pub(crate) groups_claim: ::std::option::Option<::std::string::String>,
+    pub(crate) groups_prefix: ::std::option::Option<::std::string::String>,
+    pub(crate) required_claims: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl OidcIdentityProviderConfigRequestBuilder {
     /// <p>The name of the OIDC provider configuration.</p>
-    pub fn identity_provider_config_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.identity_provider_config_name = Some(input.into());
+    pub fn identity_provider_config_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.identity_provider_config_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the OIDC provider configuration.</p>
     pub fn set_identity_provider_config_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.identity_provider_config_name = input;
         self
     }
     /// <p>The URL of the OpenID identity provider that allows the API server to discover public signing keys for verifying tokens. The URL must begin with <code>https://</code> and should correspond to the <code>iss</code> claim in the provider's OIDC ID tokens. Per the OIDC standard, path components are allowed but query parameters are not. Typically the URL consists of only a hostname, like <code>https://server.example.org</code> or <code>https://example.com</code>. This URL should point to the level below <code>.well-known/openid-configuration</code> and must be publicly accessible over the internet.</p>
-    pub fn issuer_url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.issuer_url = Some(input.into());
+    pub fn issuer_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.issuer_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL of the OpenID identity provider that allows the API server to discover public signing keys for verifying tokens. The URL must begin with <code>https://</code> and should correspond to the <code>iss</code> claim in the provider's OIDC ID tokens. Per the OIDC standard, path components are allowed but query parameters are not. Typically the URL consists of only a hostname, like <code>https://server.example.org</code> or <code>https://example.com</code>. This URL should point to the level below <code>.well-known/openid-configuration</code> and must be publicly accessible over the internet.</p>
-    pub fn set_issuer_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_issuer_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.issuer_url = input;
         self
     }
     /// <p>This is also known as <i>audience</i>. The ID for the client application that makes authentication requests to the OpenID identity provider.</p>
-    pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.client_id = Some(input.into());
+    pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.client_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>This is also known as <i>audience</i>. The ID for the client application that makes authentication requests to the OpenID identity provider.</p>
-    pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_id = input;
         self
     }
     /// <p>The JSON Web Token (JWT) claim to use as the username. The default is <code>sub</code>, which is expected to be a unique identifier of the end user. You can choose other claims, such as <code>email</code> or <code>name</code>, depending on the OpenID identity provider. Claims other than <code>email</code> are prefixed with the issuer URL to prevent naming clashes with other plug-ins.</p>
-    pub fn username_claim(mut self, input: impl Into<std::string::String>) -> Self {
-        self.username_claim = Some(input.into());
+    pub fn username_claim(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.username_claim = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The JSON Web Token (JWT) claim to use as the username. The default is <code>sub</code>, which is expected to be a unique identifier of the end user. You can choose other claims, such as <code>email</code> or <code>name</code>, depending on the OpenID identity provider. Claims other than <code>email</code> are prefixed with the issuer URL to prevent naming clashes with other plug-ins.</p>
-    pub fn set_username_claim(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_username_claim(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.username_claim = input;
         self
     }
     /// <p>The prefix that is prepended to username claims to prevent clashes with existing names. If you do not provide this field, and <code>username</code> is a value other than <code>email</code>, the prefix defaults to <code>issuerurl#</code>. You can use the value <code>-</code> to disable all prefixing.</p>
-    pub fn username_prefix(mut self, input: impl Into<std::string::String>) -> Self {
-        self.username_prefix = Some(input.into());
+    pub fn username_prefix(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.username_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The prefix that is prepended to username claims to prevent clashes with existing names. If you do not provide this field, and <code>username</code> is a value other than <code>email</code>, the prefix defaults to <code>issuerurl#</code>. You can use the value <code>-</code> to disable all prefixing.</p>
-    pub fn set_username_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_username_prefix(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.username_prefix = input;
         self
     }
     /// <p>The JWT claim that the provider uses to return your groups.</p>
-    pub fn groups_claim(mut self, input: impl Into<std::string::String>) -> Self {
-        self.groups_claim = Some(input.into());
+    pub fn groups_claim(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.groups_claim = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The JWT claim that the provider uses to return your groups.</p>
-    pub fn set_groups_claim(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_groups_claim(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.groups_claim = input;
         self
     }
     /// <p>The prefix that is prepended to group claims to prevent clashes with existing names (such as <code>system:</code> groups). For example, the value<code> oidc:</code> will create group names like <code>oidc:engineering</code> and <code>oidc:infra</code>.</p>
-    pub fn groups_prefix(mut self, input: impl Into<std::string::String>) -> Self {
-        self.groups_prefix = Some(input.into());
+    pub fn groups_prefix(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.groups_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The prefix that is prepended to group claims to prevent clashes with existing names (such as <code>system:</code> groups). For example, the value<code> oidc:</code> will create group names like <code>oidc:engineering</code> and <code>oidc:infra</code>.</p>
-    pub fn set_groups_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_groups_prefix(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.groups_prefix = input;
         self
     }
@@ -169,19 +195,19 @@ impl OidcIdentityProviderConfigRequestBuilder {
     /// <p>The key value pairs that describe required claims in the identity token. If set, each claim is verified to be present in the token with a matching value. For the maximum number of claims that you can require, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/service-quotas.html">Amazon EKS service quotas</a> in the <i>Amazon EKS User Guide</i>.</p>
     pub fn required_claims(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.required_claims.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.required_claims = Some(hash_map);
+        self.required_claims = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The key value pairs that describe required claims in the identity token. If set, each claim is verified to be present in the token with a matching value. For the maximum number of claims that you can require, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/service-quotas.html">Amazon EKS service quotas</a> in the <i>Amazon EKS User Guide</i>.</p>
     pub fn set_required_claims(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.required_claims = input;

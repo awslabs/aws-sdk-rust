@@ -2,48 +2,48 @@
 
 /// <p>A complex type containing the response information for the hosted zone.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateHostedZoneOutput {
     /// <p>A complex type that contains general information about the hosted zone.</p>
     #[doc(hidden)]
-    pub hosted_zone: std::option::Option<crate::types::HostedZone>,
+    pub hosted_zone: ::std::option::Option<crate::types::HostedZone>,
     /// <p>A complex type that contains information about the <code>CreateHostedZone</code> request.</p>
     #[doc(hidden)]
-    pub change_info: std::option::Option<crate::types::ChangeInfo>,
+    pub change_info: ::std::option::Option<crate::types::ChangeInfo>,
     /// <p>A complex type that describes the name servers for this hosted zone.</p>
     #[doc(hidden)]
-    pub delegation_set: std::option::Option<crate::types::DelegationSet>,
+    pub delegation_set: ::std::option::Option<crate::types::DelegationSet>,
     /// <p>A complex type that contains information about an Amazon VPC that you associated with this hosted zone.</p>
     #[doc(hidden)]
-    pub vpc: std::option::Option<crate::types::Vpc>,
+    pub vpc: ::std::option::Option<crate::types::Vpc>,
     /// <p>The unique URL representing the new hosted zone.</p>
     #[doc(hidden)]
-    pub location: std::option::Option<std::string::String>,
+    pub location: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateHostedZoneOutput {
     /// <p>A complex type that contains general information about the hosted zone.</p>
-    pub fn hosted_zone(&self) -> std::option::Option<&crate::types::HostedZone> {
+    pub fn hosted_zone(&self) -> ::std::option::Option<&crate::types::HostedZone> {
         self.hosted_zone.as_ref()
     }
     /// <p>A complex type that contains information about the <code>CreateHostedZone</code> request.</p>
-    pub fn change_info(&self) -> std::option::Option<&crate::types::ChangeInfo> {
+    pub fn change_info(&self) -> ::std::option::Option<&crate::types::ChangeInfo> {
         self.change_info.as_ref()
     }
     /// <p>A complex type that describes the name servers for this hosted zone.</p>
-    pub fn delegation_set(&self) -> std::option::Option<&crate::types::DelegationSet> {
+    pub fn delegation_set(&self) -> ::std::option::Option<&crate::types::DelegationSet> {
         self.delegation_set.as_ref()
     }
     /// <p>A complex type that contains information about an Amazon VPC that you associated with this hosted zone.</p>
-    pub fn vpc(&self) -> std::option::Option<&crate::types::Vpc> {
+    pub fn vpc(&self) -> ::std::option::Option<&crate::types::Vpc> {
         self.vpc.as_ref()
     }
     /// <p>The unique URL representing the new hosted zone.</p>
-    pub fn location(&self) -> std::option::Option<&str> {
+    pub fn location(&self) -> ::std::option::Option<&str> {
         self.location.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for CreateHostedZoneOutput {
+impl ::aws_http::request_id::RequestId for CreateHostedZoneOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -58,66 +58,74 @@ impl CreateHostedZoneOutput {
 
 /// A builder for [`CreateHostedZoneOutput`](crate::operation::create_hosted_zone::CreateHostedZoneOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateHostedZoneOutputBuilder {
-    pub(crate) hosted_zone: std::option::Option<crate::types::HostedZone>,
-    pub(crate) change_info: std::option::Option<crate::types::ChangeInfo>,
-    pub(crate) delegation_set: std::option::Option<crate::types::DelegationSet>,
-    pub(crate) vpc: std::option::Option<crate::types::Vpc>,
-    pub(crate) location: std::option::Option<std::string::String>,
+    pub(crate) hosted_zone: ::std::option::Option<crate::types::HostedZone>,
+    pub(crate) change_info: ::std::option::Option<crate::types::ChangeInfo>,
+    pub(crate) delegation_set: ::std::option::Option<crate::types::DelegationSet>,
+    pub(crate) vpc: ::std::option::Option<crate::types::Vpc>,
+    pub(crate) location: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateHostedZoneOutputBuilder {
     /// <p>A complex type that contains general information about the hosted zone.</p>
     pub fn hosted_zone(mut self, input: crate::types::HostedZone) -> Self {
-        self.hosted_zone = Some(input);
+        self.hosted_zone = ::std::option::Option::Some(input);
         self
     }
     /// <p>A complex type that contains general information about the hosted zone.</p>
-    pub fn set_hosted_zone(mut self, input: std::option::Option<crate::types::HostedZone>) -> Self {
+    pub fn set_hosted_zone(
+        mut self,
+        input: ::std::option::Option<crate::types::HostedZone>,
+    ) -> Self {
         self.hosted_zone = input;
         self
     }
     /// <p>A complex type that contains information about the <code>CreateHostedZone</code> request.</p>
     pub fn change_info(mut self, input: crate::types::ChangeInfo) -> Self {
-        self.change_info = Some(input);
+        self.change_info = ::std::option::Option::Some(input);
         self
     }
     /// <p>A complex type that contains information about the <code>CreateHostedZone</code> request.</p>
-    pub fn set_change_info(mut self, input: std::option::Option<crate::types::ChangeInfo>) -> Self {
+    pub fn set_change_info(
+        mut self,
+        input: ::std::option::Option<crate::types::ChangeInfo>,
+    ) -> Self {
         self.change_info = input;
         self
     }
     /// <p>A complex type that describes the name servers for this hosted zone.</p>
     pub fn delegation_set(mut self, input: crate::types::DelegationSet) -> Self {
-        self.delegation_set = Some(input);
+        self.delegation_set = ::std::option::Option::Some(input);
         self
     }
     /// <p>A complex type that describes the name servers for this hosted zone.</p>
     pub fn set_delegation_set(
         mut self,
-        input: std::option::Option<crate::types::DelegationSet>,
+        input: ::std::option::Option<crate::types::DelegationSet>,
     ) -> Self {
         self.delegation_set = input;
         self
     }
     /// <p>A complex type that contains information about an Amazon VPC that you associated with this hosted zone.</p>
     pub fn vpc(mut self, input: crate::types::Vpc) -> Self {
-        self.vpc = Some(input);
+        self.vpc = ::std::option::Option::Some(input);
         self
     }
     /// <p>A complex type that contains information about an Amazon VPC that you associated with this hosted zone.</p>
-    pub fn set_vpc(mut self, input: std::option::Option<crate::types::Vpc>) -> Self {
+    pub fn set_vpc(mut self, input: ::std::option::Option<crate::types::Vpc>) -> Self {
         self.vpc = input;
         self
     }
     /// <p>The unique URL representing the new hosted zone.</p>
-    pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
-        self.location = Some(input.into());
+    pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.location = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique URL representing the new hosted zone.</p>
-    pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location = input;
         self
     }

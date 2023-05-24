@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum StandbyInstances {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum StandbyInstances {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for StandbyInstances {
+impl ::std::convert::From<&str> for StandbyInstances {
     fn from(s: &str) -> Self {
         match s {
             "Ignore" => StandbyInstances::Ignore,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for StandbyInstances {
         }
     }
 }
-impl std::str::FromStr for StandbyInstances {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for StandbyInstances {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(StandbyInstances::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(StandbyInstances::from(s))
     }
 }
 impl StandbyInstances {
@@ -91,7 +91,7 @@ impl StandbyInstances {
         &["Ignore", "Terminate", "Wait"]
     }
 }
-impl AsRef<str> for StandbyInstances {
+impl ::std::convert::AsRef<str> for StandbyInstances {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

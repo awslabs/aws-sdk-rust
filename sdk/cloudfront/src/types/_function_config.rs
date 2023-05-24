@@ -2,22 +2,22 @@
 
 /// <p>Contains configuration information about a CloudFront function.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FunctionConfig {
     /// <p>A comment to describe the function.</p>
     #[doc(hidden)]
-    pub comment: std::option::Option<std::string::String>,
+    pub comment: ::std::option::Option<::std::string::String>,
     /// <p>The function's runtime environment. The only valid value is <code>cloudfront-js-1.0</code>.</p>
     #[doc(hidden)]
-    pub runtime: std::option::Option<crate::types::FunctionRuntime>,
+    pub runtime: ::std::option::Option<crate::types::FunctionRuntime>,
 }
 impl FunctionConfig {
     /// <p>A comment to describe the function.</p>
-    pub fn comment(&self) -> std::option::Option<&str> {
+    pub fn comment(&self) -> ::std::option::Option<&str> {
         self.comment.as_deref()
     }
     /// <p>The function's runtime environment. The only valid value is <code>cloudfront-js-1.0</code>.</p>
-    pub fn runtime(&self) -> std::option::Option<&crate::types::FunctionRuntime> {
+    pub fn runtime(&self) -> ::std::option::Option<&crate::types::FunctionRuntime> {
         self.runtime.as_ref()
     }
 }
@@ -30,31 +30,33 @@ impl FunctionConfig {
 
 /// A builder for [`FunctionConfig`](crate::types::FunctionConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FunctionConfigBuilder {
-    pub(crate) comment: std::option::Option<std::string::String>,
-    pub(crate) runtime: std::option::Option<crate::types::FunctionRuntime>,
+    pub(crate) comment: ::std::option::Option<::std::string::String>,
+    pub(crate) runtime: ::std::option::Option<crate::types::FunctionRuntime>,
 }
 impl FunctionConfigBuilder {
     /// <p>A comment to describe the function.</p>
-    pub fn comment(mut self, input: impl Into<std::string::String>) -> Self {
-        self.comment = Some(input.into());
+    pub fn comment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.comment = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A comment to describe the function.</p>
-    pub fn set_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.comment = input;
         self
     }
     /// <p>The function's runtime environment. The only valid value is <code>cloudfront-js-1.0</code>.</p>
     pub fn runtime(mut self, input: crate::types::FunctionRuntime) -> Self {
-        self.runtime = Some(input);
+        self.runtime = ::std::option::Option::Some(input);
         self
     }
     /// <p>The function's runtime environment. The only valid value is <code>cloudfront-js-1.0</code>.</p>
     pub fn set_runtime(
         mut self,
-        input: std::option::Option<crate::types::FunctionRuntime>,
+        input: ::std::option::Option<crate::types::FunctionRuntime>,
     ) -> Self {
         self.runtime = input;
         self

@@ -2,15 +2,15 @@
 
 /// <p>The image configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImageConfigurationInput {
     /// <p>The URI of an image in the Amazon ECR registry. This field is required when you create a new application. If you leave this field blank in an update, Amazon EMR will remove the image configuration.</p>
     #[doc(hidden)]
-    pub image_uri: std::option::Option<std::string::String>,
+    pub image_uri: ::std::option::Option<::std::string::String>,
 }
 impl ImageConfigurationInput {
     /// <p>The URI of an image in the Amazon ECR registry. This field is required when you create a new application. If you leave this field blank in an update, Amazon EMR will remove the image configuration.</p>
-    pub fn image_uri(&self) -> std::option::Option<&str> {
+    pub fn image_uri(&self) -> ::std::option::Option<&str> {
         self.image_uri.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl ImageConfigurationInput {
 
 /// A builder for [`ImageConfigurationInput`](crate::types::ImageConfigurationInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ImageConfigurationInputBuilder {
-    pub(crate) image_uri: std::option::Option<std::string::String>,
+    pub(crate) image_uri: ::std::option::Option<::std::string::String>,
 }
 impl ImageConfigurationInputBuilder {
     /// <p>The URI of an image in the Amazon ECR registry. This field is required when you create a new application. If you leave this field blank in an update, Amazon EMR will remove the image configuration.</p>
-    pub fn image_uri(mut self, input: impl Into<std::string::String>) -> Self {
-        self.image_uri = Some(input.into());
+    pub fn image_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.image_uri = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URI of an image in the Amazon ECR registry. This field is required when you create a new application. If you leave this field blank in an update, Amazon EMR will remove the image configuration.</p>
-    pub fn set_image_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_image_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_uri = input;
         self
     }

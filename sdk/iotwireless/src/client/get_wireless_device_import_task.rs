@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetWirelessDeviceImportTask`](crate::operation::get_wireless_device_import_task::builders::GetWirelessDeviceImportTaskFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::get_wireless_device_import_task::builders::GetWirelessDeviceImportTaskFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_wireless_device_import_task::builders::GetWirelessDeviceImportTaskFluentBuilder::set_id): <p>The identifier of the import task for which information is requested.</p>
+    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::get_wireless_device_import_task::builders::GetWirelessDeviceImportTaskFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_wireless_device_import_task::builders::GetWirelessDeviceImportTaskFluentBuilder::set_id): <p>The identifier of the import task for which information is requested.</p>
     /// - On success, responds with [`GetWirelessDeviceImportTaskOutput`](crate::operation::get_wireless_device_import_task::GetWirelessDeviceImportTaskOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::get_wireless_device_import_task::GetWirelessDeviceImportTaskOutput::id): <p>The identifier of the import task for which information is retrieved.</p>
     ///   - [`arn(Option<String>)`](crate::operation::get_wireless_device_import_task::GetWirelessDeviceImportTaskOutput::arn): <p>The ARN (Amazon Resource Name) of the import task.</p>

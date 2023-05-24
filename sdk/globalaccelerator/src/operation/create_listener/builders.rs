@@ -6,56 +6,59 @@ pub use crate::operation::create_listener::_create_listener_input::CreateListene
 /// Fluent builder constructing a request to `CreateListener`.
 ///
 /// <p>Create a listener to process inbound connections from clients to an accelerator. Connections arrive to assigned static IP addresses on a port, port range, or list of port ranges that you specify. </p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateListenerFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_listener::builders::CreateListenerInputBuilder,
 }
 impl CreateListenerFluentBuilder {
     /// Creates a new `CreateListener`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_listener::CreateListener,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_listener::CreateListenerError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_listener::CreateListenerError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_listener::CreateListenerOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_listener::CreateListenerError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_listener::CreateListenerError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,19 +71,25 @@ impl CreateListenerFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_listener::CreateListenerOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_listener::CreateListenerError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_listener::CreateListenerError>,
     > {
         self.send_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of your accelerator.</p>
-    pub fn accelerator_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn accelerator_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.accelerator_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of your accelerator.</p>
-    pub fn set_accelerator_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_accelerator_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_accelerator_arn(input);
         self
     }
@@ -96,7 +105,7 @@ impl CreateListenerFluentBuilder {
     /// <p>The list of port ranges to support for connections from clients to your accelerator.</p>
     pub fn set_port_ranges(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PortRange>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PortRange>>,
     ) -> Self {
         self.inner = self.inner.set_port_ranges(input);
         self
@@ -107,7 +116,7 @@ impl CreateListenerFluentBuilder {
         self
     }
     /// <p>The protocol for connections from clients to your accelerator.</p>
-    pub fn set_protocol(mut self, input: std::option::Option<crate::types::Protocol>) -> Self {
+    pub fn set_protocol(mut self, input: ::std::option::Option<crate::types::Protocol>) -> Self {
         self.inner = self.inner.set_protocol(input);
         self
     }
@@ -125,20 +134,23 @@ impl CreateListenerFluentBuilder {
     /// <p>The default value is <code>NONE</code>.</p>
     pub fn set_client_affinity(
         mut self,
-        input: std::option::Option<crate::types::ClientAffinity>,
+        input: ::std::option::Option<crate::types::ClientAffinity>,
     ) -> Self {
         self.inner = self.inner.set_client_affinity(input);
         self
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>
-    pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn idempotency_token(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.idempotency_token(input.into());
         self
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>
     pub fn set_idempotency_token(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_idempotency_token(input);
         self

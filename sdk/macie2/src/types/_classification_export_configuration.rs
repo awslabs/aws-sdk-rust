@@ -2,15 +2,15 @@
 
 /// <p>Specifies where to store data classification results, and the encryption settings to use when storing results in that location. The location must be an S3 bucket.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClassificationExportConfiguration {
     /// <p>The S3 bucket to store data classification results in, and the encryption settings to use when storing results in that bucket.</p>
     #[doc(hidden)]
-    pub s3_destination: std::option::Option<crate::types::S3Destination>,
+    pub s3_destination: ::std::option::Option<crate::types::S3Destination>,
 }
 impl ClassificationExportConfiguration {
     /// <p>The S3 bucket to store data classification results in, and the encryption settings to use when storing results in that bucket.</p>
-    pub fn s3_destination(&self) -> std::option::Option<&crate::types::S3Destination> {
+    pub fn s3_destination(&self) -> ::std::option::Option<&crate::types::S3Destination> {
         self.s3_destination.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl ClassificationExportConfiguration {
 
 /// A builder for [`ClassificationExportConfiguration`](crate::types::ClassificationExportConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ClassificationExportConfigurationBuilder {
-    pub(crate) s3_destination: std::option::Option<crate::types::S3Destination>,
+    pub(crate) s3_destination: ::std::option::Option<crate::types::S3Destination>,
 }
 impl ClassificationExportConfigurationBuilder {
     /// <p>The S3 bucket to store data classification results in, and the encryption settings to use when storing results in that bucket.</p>
     pub fn s3_destination(mut self, input: crate::types::S3Destination) -> Self {
-        self.s3_destination = Some(input);
+        self.s3_destination = ::std::option::Option::Some(input);
         self
     }
     /// <p>The S3 bucket to store data classification results in, and the encryption settings to use when storing results in that bucket.</p>
     pub fn set_s3_destination(
         mut self,
-        input: std::option::Option<crate::types::S3Destination>,
+        input: ::std::option::Option<crate::types::S3Destination>,
     ) -> Self {
         self.s3_destination = input;
         self

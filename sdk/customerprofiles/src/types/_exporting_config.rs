@@ -4,15 +4,15 @@
 /// <p>You need to give Customer Profiles service principal write permission to your S3 bucket. Otherwise, you'll get an exception in the API response. For an example policy, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cross-service-confused-deputy-prevention.html#customer-profiles-cross-service">Amazon Connect Customer Profiles cross-service confused deputy prevention</a>. </p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportingConfig {
     /// <p>The S3 location where Identity Resolution Jobs write result files.</p>
     #[doc(hidden)]
-    pub s3_exporting: std::option::Option<crate::types::S3ExportingConfig>,
+    pub s3_exporting: ::std::option::Option<crate::types::S3ExportingConfig>,
 }
 impl ExportingConfig {
     /// <p>The S3 location where Identity Resolution Jobs write result files.</p>
-    pub fn s3_exporting(&self) -> std::option::Option<&crate::types::S3ExportingConfig> {
+    pub fn s3_exporting(&self) -> ::std::option::Option<&crate::types::S3ExportingConfig> {
         self.s3_exporting.as_ref()
     }
 }
@@ -25,20 +25,22 @@ impl ExportingConfig {
 
 /// A builder for [`ExportingConfig`](crate::types::ExportingConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ExportingConfigBuilder {
-    pub(crate) s3_exporting: std::option::Option<crate::types::S3ExportingConfig>,
+    pub(crate) s3_exporting: ::std::option::Option<crate::types::S3ExportingConfig>,
 }
 impl ExportingConfigBuilder {
     /// <p>The S3 location where Identity Resolution Jobs write result files.</p>
     pub fn s3_exporting(mut self, input: crate::types::S3ExportingConfig) -> Self {
-        self.s3_exporting = Some(input);
+        self.s3_exporting = ::std::option::Option::Some(input);
         self
     }
     /// <p>The S3 location where Identity Resolution Jobs write result files.</p>
     pub fn set_s3_exporting(
         mut self,
-        input: std::option::Option<crate::types::S3ExportingConfig>,
+        input: ::std::option::Option<crate::types::S3ExportingConfig>,
     ) -> Self {
         self.s3_exporting = input;
         self

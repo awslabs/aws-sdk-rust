@@ -2,50 +2,50 @@
 
 /// <p>An object that contains details about a resource covered by Amazon Inspector.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CoveredResource {
     /// <p>The type of the covered resource.</p>
     #[doc(hidden)]
-    pub resource_type: std::option::Option<crate::types::CoverageResourceType>,
+    pub resource_type: ::std::option::Option<crate::types::CoverageResourceType>,
     /// <p>The ID of the covered resource.</p>
     #[doc(hidden)]
-    pub resource_id: std::option::Option<std::string::String>,
+    pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID of the covered resource.</p>
     #[doc(hidden)]
-    pub account_id: std::option::Option<std::string::String>,
+    pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Inspector scan type covering the resource.</p>
     #[doc(hidden)]
-    pub scan_type: std::option::Option<crate::types::ScanType>,
+    pub scan_type: ::std::option::Option<crate::types::ScanType>,
     /// <p>The status of the scan covering the resource.</p>
     #[doc(hidden)]
-    pub scan_status: std::option::Option<crate::types::ScanStatus>,
+    pub scan_status: ::std::option::Option<crate::types::ScanStatus>,
     /// <p>An object that contains details about the metadata.</p>
     #[doc(hidden)]
-    pub resource_metadata: std::option::Option<crate::types::ResourceScanMetadata>,
+    pub resource_metadata: ::std::option::Option<crate::types::ResourceScanMetadata>,
 }
 impl CoveredResource {
     /// <p>The type of the covered resource.</p>
-    pub fn resource_type(&self) -> std::option::Option<&crate::types::CoverageResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::CoverageResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The ID of the covered resource.</p>
-    pub fn resource_id(&self) -> std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<&str> {
         self.resource_id.as_deref()
     }
     /// <p>The Amazon Web Services account ID of the covered resource.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The Amazon Inspector scan type covering the resource.</p>
-    pub fn scan_type(&self) -> std::option::Option<&crate::types::ScanType> {
+    pub fn scan_type(&self) -> ::std::option::Option<&crate::types::ScanType> {
         self.scan_type.as_ref()
     }
     /// <p>The status of the scan covering the resource.</p>
-    pub fn scan_status(&self) -> std::option::Option<&crate::types::ScanStatus> {
+    pub fn scan_status(&self) -> ::std::option::Option<&crate::types::ScanStatus> {
         self.scan_status.as_ref()
     }
     /// <p>An object that contains details about the metadata.</p>
-    pub fn resource_metadata(&self) -> std::option::Option<&crate::types::ResourceScanMetadata> {
+    pub fn resource_metadata(&self) -> ::std::option::Option<&crate::types::ResourceScanMetadata> {
         self.resource_metadata.as_ref()
     }
 }
@@ -58,78 +58,83 @@ impl CoveredResource {
 
 /// A builder for [`CoveredResource`](crate::types::CoveredResource).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CoveredResourceBuilder {
-    pub(crate) resource_type: std::option::Option<crate::types::CoverageResourceType>,
-    pub(crate) resource_id: std::option::Option<std::string::String>,
-    pub(crate) account_id: std::option::Option<std::string::String>,
-    pub(crate) scan_type: std::option::Option<crate::types::ScanType>,
-    pub(crate) scan_status: std::option::Option<crate::types::ScanStatus>,
-    pub(crate) resource_metadata: std::option::Option<crate::types::ResourceScanMetadata>,
+    pub(crate) resource_type: ::std::option::Option<crate::types::CoverageResourceType>,
+    pub(crate) resource_id: ::std::option::Option<::std::string::String>,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) scan_type: ::std::option::Option<crate::types::ScanType>,
+    pub(crate) scan_status: ::std::option::Option<crate::types::ScanStatus>,
+    pub(crate) resource_metadata: ::std::option::Option<crate::types::ResourceScanMetadata>,
 }
 impl CoveredResourceBuilder {
     /// <p>The type of the covered resource.</p>
     pub fn resource_type(mut self, input: crate::types::CoverageResourceType) -> Self {
-        self.resource_type = Some(input);
+        self.resource_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of the covered resource.</p>
     pub fn set_resource_type(
         mut self,
-        input: std::option::Option<crate::types::CoverageResourceType>,
+        input: ::std::option::Option<crate::types::CoverageResourceType>,
     ) -> Self {
         self.resource_type = input;
         self
     }
     /// <p>The ID of the covered resource.</p>
-    pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_id = Some(input.into());
+    pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the covered resource.</p>
-    pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
     }
     /// <p>The Amazon Web Services account ID of the covered resource.</p>
-    pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.account_id = Some(input.into());
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID of the covered resource.</p>
-    pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
     }
     /// <p>The Amazon Inspector scan type covering the resource.</p>
     pub fn scan_type(mut self, input: crate::types::ScanType) -> Self {
-        self.scan_type = Some(input);
+        self.scan_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Amazon Inspector scan type covering the resource.</p>
-    pub fn set_scan_type(mut self, input: std::option::Option<crate::types::ScanType>) -> Self {
+    pub fn set_scan_type(mut self, input: ::std::option::Option<crate::types::ScanType>) -> Self {
         self.scan_type = input;
         self
     }
     /// <p>The status of the scan covering the resource.</p>
     pub fn scan_status(mut self, input: crate::types::ScanStatus) -> Self {
-        self.scan_status = Some(input);
+        self.scan_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the scan covering the resource.</p>
-    pub fn set_scan_status(mut self, input: std::option::Option<crate::types::ScanStatus>) -> Self {
+    pub fn set_scan_status(
+        mut self,
+        input: ::std::option::Option<crate::types::ScanStatus>,
+    ) -> Self {
         self.scan_status = input;
         self
     }
     /// <p>An object that contains details about the metadata.</p>
     pub fn resource_metadata(mut self, input: crate::types::ResourceScanMetadata) -> Self {
-        self.resource_metadata = Some(input);
+        self.resource_metadata = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that contains details about the metadata.</p>
     pub fn set_resource_metadata(
         mut self,
-        input: std::option::Option<crate::types::ResourceScanMetadata>,
+        input: ::std::option::Option<crate::types::ResourceScanMetadata>,
     ) -> Self {
         self.resource_metadata = input;
         self

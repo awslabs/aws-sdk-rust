@@ -2,22 +2,22 @@
 
 /// <p>A wrapper type for the attributes of an Amazon SNS subscription.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsSnsTopicSubscription {
     /// <p>The subscription's endpoint (format depends on the protocol).</p>
     #[doc(hidden)]
-    pub endpoint: std::option::Option<std::string::String>,
+    pub endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The subscription's protocol.</p>
     #[doc(hidden)]
-    pub protocol: std::option::Option<std::string::String>,
+    pub protocol: ::std::option::Option<::std::string::String>,
 }
 impl AwsSnsTopicSubscription {
     /// <p>The subscription's endpoint (format depends on the protocol).</p>
-    pub fn endpoint(&self) -> std::option::Option<&str> {
+    pub fn endpoint(&self) -> ::std::option::Option<&str> {
         self.endpoint.as_deref()
     }
     /// <p>The subscription's protocol.</p>
-    pub fn protocol(&self) -> std::option::Option<&str> {
+    pub fn protocol(&self) -> ::std::option::Option<&str> {
         self.protocol.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl AwsSnsTopicSubscription {
 
 /// A builder for [`AwsSnsTopicSubscription`](crate::types::AwsSnsTopicSubscription).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsSnsTopicSubscriptionBuilder {
-    pub(crate) endpoint: std::option::Option<std::string::String>,
-    pub(crate) protocol: std::option::Option<std::string::String>,
+    pub(crate) endpoint: ::std::option::Option<::std::string::String>,
+    pub(crate) protocol: ::std::option::Option<::std::string::String>,
 }
 impl AwsSnsTopicSubscriptionBuilder {
     /// <p>The subscription's endpoint (format depends on the protocol).</p>
-    pub fn endpoint(mut self, input: impl Into<std::string::String>) -> Self {
-        self.endpoint = Some(input.into());
+    pub fn endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.endpoint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The subscription's endpoint (format depends on the protocol).</p>
-    pub fn set_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint = input;
         self
     }
     /// <p>The subscription's protocol.</p>
-    pub fn protocol(mut self, input: impl Into<std::string::String>) -> Self {
-        self.protocol = Some(input.into());
+    pub fn protocol(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.protocol = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The subscription's protocol.</p>
-    pub fn set_protocol(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_protocol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.protocol = input;
         self
     }

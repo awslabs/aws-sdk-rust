@@ -2,22 +2,22 @@
 
 /// <p>Clears any customization of a GatewayResponse of a specified response type on the given RestApi and resets it with the default settings.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteGatewayResponseInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
-    pub rest_api_id: std::option::Option<std::string::String>,
+    pub rest_api_id: ::std::option::Option<::std::string::String>,
     /// <p>The response type of the associated GatewayResponse.</p>
     #[doc(hidden)]
-    pub response_type: std::option::Option<crate::types::GatewayResponseType>,
+    pub response_type: ::std::option::Option<crate::types::GatewayResponseType>,
 }
 impl DeleteGatewayResponseInput {
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+    pub fn rest_api_id(&self) -> ::std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
     /// <p>The response type of the associated GatewayResponse.</p>
-    pub fn response_type(&self) -> std::option::Option<&crate::types::GatewayResponseType> {
+    pub fn response_type(&self) -> ::std::option::Option<&crate::types::GatewayResponseType> {
         self.response_type.as_ref()
     }
 }
@@ -32,31 +32,33 @@ impl DeleteGatewayResponseInput {
 
 /// A builder for [`DeleteGatewayResponseInput`](crate::operation::delete_gateway_response::DeleteGatewayResponseInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteGatewayResponseInputBuilder {
-    pub(crate) rest_api_id: std::option::Option<std::string::String>,
-    pub(crate) response_type: std::option::Option<crate::types::GatewayResponseType>,
+    pub(crate) rest_api_id: ::std::option::Option<::std::string::String>,
+    pub(crate) response_type: ::std::option::Option<crate::types::GatewayResponseType>,
 }
 impl DeleteGatewayResponseInputBuilder {
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.rest_api_id = Some(input.into());
+    pub fn rest_api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.rest_api_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_rest_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rest_api_id = input;
         self
     }
     /// <p>The response type of the associated GatewayResponse.</p>
     pub fn response_type(mut self, input: crate::types::GatewayResponseType) -> Self {
-        self.response_type = Some(input);
+        self.response_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The response type of the associated GatewayResponse.</p>
     pub fn set_response_type(
         mut self,
-        input: std::option::Option<crate::types::GatewayResponseType>,
+        input: ::std::option::Option<crate::types::GatewayResponseType>,
     ) -> Self {
         self.response_type = input;
         self
@@ -64,11 +66,11 @@ impl DeleteGatewayResponseInputBuilder {
     /// Consumes the builder and constructs a [`DeleteGatewayResponseInput`](crate::operation::delete_gateway_response::DeleteGatewayResponseInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::delete_gateway_response::DeleteGatewayResponseInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::delete_gateway_response::DeleteGatewayResponseInput {
                 rest_api_id: self.rest_api_id,
                 response_type: self.response_type,

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetOrder`](crate::operation::get_order::builders::GetOrderFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`order_arn(impl Into<String>)`](crate::operation::get_order::builders::GetOrderFluentBuilder::order_arn) / [`set_order_arn(Option<String>)`](crate::operation::get_order::builders::GetOrderFluentBuilder::set_order_arn): <p>The Amazon Resource Name (ARN) of the order.</p>
+    ///   - [`order_arn(impl ::std::convert::Into<String>)`](crate::operation::get_order::builders::GetOrderFluentBuilder::order_arn) / [`set_order_arn(Option<String>)`](crate::operation::get_order::builders::GetOrderFluentBuilder::set_order_arn): <p>The Amazon Resource Name (ARN) of the order.</p>
     /// - On success, responds with [`GetOrderOutput`](crate::operation::get_order::GetOrderOutput) with field(s):
     ///   - [`order(Option<Order>)`](crate::operation::get_order::GetOrderOutput::order): <p>Information about the order.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_order::GetOrderOutput::tags): <p> The order tags. </p>

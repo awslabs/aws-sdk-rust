@@ -2,17 +2,17 @@
 
 /// <p>The compromised credentials actions type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CompromisedCredentialsActionsType {
     /// <p>The event action.</p>
     #[doc(hidden)]
-    pub event_action: std::option::Option<crate::types::CompromisedCredentialsEventActionType>,
+    pub event_action: ::std::option::Option<crate::types::CompromisedCredentialsEventActionType>,
 }
 impl CompromisedCredentialsActionsType {
     /// <p>The event action.</p>
     pub fn event_action(
         &self,
-    ) -> std::option::Option<&crate::types::CompromisedCredentialsEventActionType> {
+    ) -> ::std::option::Option<&crate::types::CompromisedCredentialsEventActionType> {
         self.event_action.as_ref()
     }
 }
@@ -25,10 +25,12 @@ impl CompromisedCredentialsActionsType {
 
 /// A builder for [`CompromisedCredentialsActionsType`](crate::types::CompromisedCredentialsActionsType).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CompromisedCredentialsActionsTypeBuilder {
     pub(crate) event_action:
-        std::option::Option<crate::types::CompromisedCredentialsEventActionType>,
+        ::std::option::Option<crate::types::CompromisedCredentialsEventActionType>,
 }
 impl CompromisedCredentialsActionsTypeBuilder {
     /// <p>The event action.</p>
@@ -36,13 +38,13 @@ impl CompromisedCredentialsActionsTypeBuilder {
         mut self,
         input: crate::types::CompromisedCredentialsEventActionType,
     ) -> Self {
-        self.event_action = Some(input);
+        self.event_action = ::std::option::Option::Some(input);
         self
     }
     /// <p>The event action.</p>
     pub fn set_event_action(
         mut self,
-        input: std::option::Option<crate::types::CompromisedCredentialsEventActionType>,
+        input: ::std::option::Option<crate::types::CompromisedCredentialsEventActionType>,
     ) -> Self {
         self.event_action = input;
         self

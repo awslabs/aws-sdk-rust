@@ -2,10 +2,10 @@
 
 /// <p>Parameter overrides for an application instance. This is a JSON document that has a single key (<code>PayloadData</code>) where the value is an escaped string representation of the overrides document.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum ManifestOverridesPayload {
     /// <p>The overrides document.</p>
-    PayloadData(std::string::String),
+    PayloadData(::std::string::String),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -18,13 +18,13 @@ pub enum ManifestOverridesPayload {
 }
 impl ManifestOverridesPayload {
     #[allow(irrefutable_let_patterns)]
-    /// Tries to convert the enum instance into [`PayloadData`](crate::types::ManifestOverridesPayload::PayloadData), extracting the inner [`String`](std::string::String).
+    /// Tries to convert the enum instance into [`PayloadData`](crate::types::ManifestOverridesPayload::PayloadData), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_payload_data(&self) -> std::result::Result<&std::string::String, &Self> {
+    pub fn as_payload_data(&self) -> ::std::result::Result<&::std::string::String, &Self> {
         if let ManifestOverridesPayload::PayloadData(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`PayloadData`](crate::types::ManifestOverridesPayload::PayloadData).

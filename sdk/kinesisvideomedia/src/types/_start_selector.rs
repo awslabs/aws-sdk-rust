@@ -7,7 +7,7 @@
 /// <li> <p>Each chunk's metadata includes a continuation token as a Matroska (MKV) tag (<code>AWS_KINESISVIDEO_CONTINUATION_TOKEN</code>). If your previous <code>GetMedia</code> request terminated, you can use this tag value in your next <code>GetMedia</code> request. The API then starts returning chunks starting where the last API ended.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartSelector {
     /// <p>Identifies the fragment on the Kinesis video stream where you want to start getting the data from.</p>
     /// <ul>
@@ -20,16 +20,16 @@ pub struct StartSelector {
     /// <p>If you choose the NOW, EARLIEST, or CONTINUATION_TOKEN as the <code>startSelectorType</code>, you don't provide any additional information in the <code>startSelector</code>.</p>
     /// </note>
     #[doc(hidden)]
-    pub start_selector_type: std::option::Option<crate::types::StartSelectorType>,
+    pub start_selector_type: ::std::option::Option<crate::types::StartSelectorType>,
     /// <p>Specifies the fragment number from where you want the <code>GetMedia</code> API to start returning the fragments. </p>
     #[doc(hidden)]
-    pub after_fragment_number: std::option::Option<std::string::String>,
+    pub after_fragment_number: ::std::option::Option<::std::string::String>,
     /// <p>A timestamp value. This value is required if you choose the PRODUCER_TIMESTAMP or the SERVER_TIMESTAMP as the <code>startSelectorType</code>. The <code>GetMedia</code> API then starts with the chunk containing the fragment that has the specified timestamp.</p>
     #[doc(hidden)]
-    pub start_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub start_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Continuation token that Kinesis Video Streams returned in the previous <code>GetMedia</code> response. The <code>GetMedia</code> API then starts with the chunk identified by the continuation token.</p>
     #[doc(hidden)]
-    pub continuation_token: std::option::Option<std::string::String>,
+    pub continuation_token: ::std::option::Option<::std::string::String>,
 }
 impl StartSelector {
     /// <p>Identifies the fragment on the Kinesis video stream where you want to start getting the data from.</p>
@@ -42,19 +42,19 @@ impl StartSelector {
     /// </ul> <note>
     /// <p>If you choose the NOW, EARLIEST, or CONTINUATION_TOKEN as the <code>startSelectorType</code>, you don't provide any additional information in the <code>startSelector</code>.</p>
     /// </note>
-    pub fn start_selector_type(&self) -> std::option::Option<&crate::types::StartSelectorType> {
+    pub fn start_selector_type(&self) -> ::std::option::Option<&crate::types::StartSelectorType> {
         self.start_selector_type.as_ref()
     }
     /// <p>Specifies the fragment number from where you want the <code>GetMedia</code> API to start returning the fragments. </p>
-    pub fn after_fragment_number(&self) -> std::option::Option<&str> {
+    pub fn after_fragment_number(&self) -> ::std::option::Option<&str> {
         self.after_fragment_number.as_deref()
     }
     /// <p>A timestamp value. This value is required if you choose the PRODUCER_TIMESTAMP or the SERVER_TIMESTAMP as the <code>startSelectorType</code>. The <code>GetMedia</code> API then starts with the chunk containing the fragment that has the specified timestamp.</p>
-    pub fn start_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.start_timestamp.as_ref()
     }
     /// <p>Continuation token that Kinesis Video Streams returned in the previous <code>GetMedia</code> response. The <code>GetMedia</code> API then starts with the chunk identified by the continuation token.</p>
-    pub fn continuation_token(&self) -> std::option::Option<&str> {
+    pub fn continuation_token(&self) -> ::std::option::Option<&str> {
         self.continuation_token.as_deref()
     }
 }
@@ -67,12 +67,14 @@ impl StartSelector {
 
 /// A builder for [`StartSelector`](crate::types::StartSelector).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StartSelectorBuilder {
-    pub(crate) start_selector_type: std::option::Option<crate::types::StartSelectorType>,
-    pub(crate) after_fragment_number: std::option::Option<std::string::String>,
-    pub(crate) start_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) continuation_token: std::option::Option<std::string::String>,
+    pub(crate) start_selector_type: ::std::option::Option<crate::types::StartSelectorType>,
+    pub(crate) after_fragment_number: ::std::option::Option<::std::string::String>,
+    pub(crate) start_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) continuation_token: ::std::option::Option<::std::string::String>,
 }
 impl StartSelectorBuilder {
     /// <p>Identifies the fragment on the Kinesis video stream where you want to start getting the data from.</p>
@@ -86,7 +88,7 @@ impl StartSelectorBuilder {
     /// <p>If you choose the NOW, EARLIEST, or CONTINUATION_TOKEN as the <code>startSelectorType</code>, you don't provide any additional information in the <code>startSelector</code>.</p>
     /// </note>
     pub fn start_selector_type(mut self, input: crate::types::StartSelectorType) -> Self {
-        self.start_selector_type = Some(input);
+        self.start_selector_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Identifies the fragment on the Kinesis video stream where you want to start getting the data from.</p>
@@ -101,46 +103,52 @@ impl StartSelectorBuilder {
     /// </note>
     pub fn set_start_selector_type(
         mut self,
-        input: std::option::Option<crate::types::StartSelectorType>,
+        input: ::std::option::Option<crate::types::StartSelectorType>,
     ) -> Self {
         self.start_selector_type = input;
         self
     }
     /// <p>Specifies the fragment number from where you want the <code>GetMedia</code> API to start returning the fragments. </p>
-    pub fn after_fragment_number(mut self, input: impl Into<std::string::String>) -> Self {
-        self.after_fragment_number = Some(input.into());
+    pub fn after_fragment_number(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.after_fragment_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the fragment number from where you want the <code>GetMedia</code> API to start returning the fragments. </p>
     pub fn set_after_fragment_number(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.after_fragment_number = input;
         self
     }
     /// <p>A timestamp value. This value is required if you choose the PRODUCER_TIMESTAMP or the SERVER_TIMESTAMP as the <code>startSelectorType</code>. The <code>GetMedia</code> API then starts with the chunk containing the fragment that has the specified timestamp.</p>
-    pub fn start_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.start_timestamp = Some(input);
+    pub fn start_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.start_timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>A timestamp value. This value is required if you choose the PRODUCER_TIMESTAMP or the SERVER_TIMESTAMP as the <code>startSelectorType</code>. The <code>GetMedia</code> API then starts with the chunk containing the fragment that has the specified timestamp.</p>
     pub fn set_start_timestamp(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.start_timestamp = input;
         self
     }
     /// <p>Continuation token that Kinesis Video Streams returned in the previous <code>GetMedia</code> response. The <code>GetMedia</code> API then starts with the chunk identified by the continuation token.</p>
-    pub fn continuation_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.continuation_token = Some(input.into());
+    pub fn continuation_token(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.continuation_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Continuation token that Kinesis Video Streams returned in the previous <code>GetMedia</code> response. The <code>GetMedia</code> API then starts with the chunk identified by the continuation token.</p>
     pub fn set_continuation_token(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.continuation_token = input;
         self

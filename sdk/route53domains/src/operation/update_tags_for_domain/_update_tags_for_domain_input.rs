@@ -2,22 +2,22 @@
 
 /// <p>The UpdateTagsForDomainRequest includes the following elements.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateTagsForDomainInput {
     /// <p>The domain for which you want to add or update tags.</p>
     #[doc(hidden)]
-    pub domain_name: std::option::Option<std::string::String>,
+    pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of the tag keys and values that you want to add or update. If you specify a key that already exists, the corresponding value will be replaced.</p>
     #[doc(hidden)]
-    pub tags_to_update: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tags_to_update: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl UpdateTagsForDomainInput {
     /// <p>The domain for which you want to add or update tags.</p>
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<&str> {
         self.domain_name.as_deref()
     }
     /// <p>A list of the tag keys and values that you want to add or update. If you specify a key that already exists, the corresponding value will be replaced.</p>
-    pub fn tags_to_update(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags_to_update(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags_to_update.as_deref()
     }
 }
@@ -32,19 +32,21 @@ impl UpdateTagsForDomainInput {
 
 /// A builder for [`UpdateTagsForDomainInput`](crate::operation::update_tags_for_domain::UpdateTagsForDomainInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateTagsForDomainInputBuilder {
-    pub(crate) domain_name: std::option::Option<std::string::String>,
-    pub(crate) tags_to_update: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub(crate) domain_name: ::std::option::Option<::std::string::String>,
+    pub(crate) tags_to_update: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl UpdateTagsForDomainInputBuilder {
     /// <p>The domain for which you want to add or update tags.</p>
-    pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.domain_name = Some(input.into());
+    pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.domain_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The domain for which you want to add or update tags.</p>
-    pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_name = input;
         self
     }
@@ -56,13 +58,13 @@ impl UpdateTagsForDomainInputBuilder {
     pub fn tags_to_update(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags_to_update.unwrap_or_default();
         v.push(input);
-        self.tags_to_update = Some(v);
+        self.tags_to_update = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of the tag keys and values that you want to add or update. If you specify a key that already exists, the corresponding value will be replaced.</p>
     pub fn set_tags_to_update(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tags_to_update = input;
         self
@@ -70,11 +72,11 @@ impl UpdateTagsForDomainInputBuilder {
     /// Consumes the builder and constructs a [`UpdateTagsForDomainInput`](crate::operation::update_tags_for_domain::UpdateTagsForDomainInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::update_tags_for_domain::UpdateTagsForDomainInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::update_tags_for_domain::UpdateTagsForDomainInput {
                 domain_name: self.domain_name,
                 tags_to_update: self.tags_to_update,

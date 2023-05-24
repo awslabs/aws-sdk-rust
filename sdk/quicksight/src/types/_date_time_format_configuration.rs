@@ -2,34 +2,35 @@
 
 /// <p>Formatting configuration for <code>DateTime</code> fields.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DateTimeFormatConfiguration {
     /// <p>Determines the <code>DateTime</code> format.</p>
     #[doc(hidden)]
-    pub date_time_format: std::option::Option<std::string::String>,
+    pub date_time_format: ::std::option::Option<::std::string::String>,
     /// <p>The options that determine the null value format configuration.</p>
     #[doc(hidden)]
     pub null_value_format_configuration:
-        std::option::Option<crate::types::NullValueFormatConfiguration>,
+        ::std::option::Option<crate::types::NullValueFormatConfiguration>,
     /// <p>The formatting configuration for numeric <code>DateTime</code> fields.</p>
     #[doc(hidden)]
-    pub numeric_format_configuration: std::option::Option<crate::types::NumericFormatConfiguration>,
+    pub numeric_format_configuration:
+        ::std::option::Option<crate::types::NumericFormatConfiguration>,
 }
 impl DateTimeFormatConfiguration {
     /// <p>Determines the <code>DateTime</code> format.</p>
-    pub fn date_time_format(&self) -> std::option::Option<&str> {
+    pub fn date_time_format(&self) -> ::std::option::Option<&str> {
         self.date_time_format.as_deref()
     }
     /// <p>The options that determine the null value format configuration.</p>
     pub fn null_value_format_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::NullValueFormatConfiguration> {
+    ) -> ::std::option::Option<&crate::types::NullValueFormatConfiguration> {
         self.null_value_format_configuration.as_ref()
     }
     /// <p>The formatting configuration for numeric <code>DateTime</code> fields.</p>
     pub fn numeric_format_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::NumericFormatConfiguration> {
+    ) -> ::std::option::Option<&crate::types::NumericFormatConfiguration> {
         self.numeric_format_configuration.as_ref()
     }
 }
@@ -42,22 +43,30 @@ impl DateTimeFormatConfiguration {
 
 /// A builder for [`DateTimeFormatConfiguration`](crate::types::DateTimeFormatConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DateTimeFormatConfigurationBuilder {
-    pub(crate) date_time_format: std::option::Option<std::string::String>,
+    pub(crate) date_time_format: ::std::option::Option<::std::string::String>,
     pub(crate) null_value_format_configuration:
-        std::option::Option<crate::types::NullValueFormatConfiguration>,
+        ::std::option::Option<crate::types::NullValueFormatConfiguration>,
     pub(crate) numeric_format_configuration:
-        std::option::Option<crate::types::NumericFormatConfiguration>,
+        ::std::option::Option<crate::types::NumericFormatConfiguration>,
 }
 impl DateTimeFormatConfigurationBuilder {
     /// <p>Determines the <code>DateTime</code> format.</p>
-    pub fn date_time_format(mut self, input: impl Into<std::string::String>) -> Self {
-        self.date_time_format = Some(input.into());
+    pub fn date_time_format(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.date_time_format = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Determines the <code>DateTime</code> format.</p>
-    pub fn set_date_time_format(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_date_time_format(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.date_time_format = input;
         self
     }
@@ -66,13 +75,13 @@ impl DateTimeFormatConfigurationBuilder {
         mut self,
         input: crate::types::NullValueFormatConfiguration,
     ) -> Self {
-        self.null_value_format_configuration = Some(input);
+        self.null_value_format_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The options that determine the null value format configuration.</p>
     pub fn set_null_value_format_configuration(
         mut self,
-        input: std::option::Option<crate::types::NullValueFormatConfiguration>,
+        input: ::std::option::Option<crate::types::NullValueFormatConfiguration>,
     ) -> Self {
         self.null_value_format_configuration = input;
         self
@@ -82,13 +91,13 @@ impl DateTimeFormatConfigurationBuilder {
         mut self,
         input: crate::types::NumericFormatConfiguration,
     ) -> Self {
-        self.numeric_format_configuration = Some(input);
+        self.numeric_format_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The formatting configuration for numeric <code>DateTime</code> fields.</p>
     pub fn set_numeric_format_configuration(
         mut self,
-        input: std::option::Option<crate::types::NumericFormatConfiguration>,
+        input: ::std::option::Option<crate::types::NumericFormatConfiguration>,
     ) -> Self {
         self.numeric_format_configuration = input;
         self

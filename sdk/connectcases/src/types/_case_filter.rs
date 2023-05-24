@@ -2,14 +2,14 @@
 
 /// <p>A filter for cases. Only one value can be provided.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum CaseFilter {
     /// <p>Provides "and all" filtering.</p>
-    AndAll(std::vec::Vec<crate::types::CaseFilter>),
+    AndAll(::std::vec::Vec<crate::types::CaseFilter>),
     /// <p>A list of fields to filter on.</p>
     Field(crate::types::FieldFilter),
     /// <p>A filter for cases. Only one value can be provided.</p>
-    Not(std::boxed::Box<crate::types::CaseFilter>),
+    Not(::std::boxed::Box<crate::types::CaseFilter>),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -21,15 +21,15 @@ pub enum CaseFilter {
     Unknown,
 }
 impl CaseFilter {
-    /// Tries to convert the enum instance into [`AndAll`](crate::types::CaseFilter::AndAll), extracting the inner [`Vec`](std::vec::Vec).
+    /// Tries to convert the enum instance into [`AndAll`](crate::types::CaseFilter::AndAll), extracting the inner [`Vec`](::std::vec::Vec).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_and_all(
         &self,
-    ) -> std::result::Result<&std::vec::Vec<crate::types::CaseFilter>, &Self> {
+    ) -> ::std::result::Result<&::std::vec::Vec<crate::types::CaseFilter>, &Self> {
         if let CaseFilter::AndAll(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`AndAll`](crate::types::CaseFilter::AndAll).
@@ -38,11 +38,11 @@ impl CaseFilter {
     }
     /// Tries to convert the enum instance into [`Field`](crate::types::CaseFilter::Field), extracting the inner [`FieldFilter`](crate::types::FieldFilter).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_field(&self) -> std::result::Result<&crate::types::FieldFilter, &Self> {
+    pub fn as_field(&self) -> ::std::result::Result<&crate::types::FieldFilter, &Self> {
         if let CaseFilter::Field(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Field`](crate::types::CaseFilter::Field).
@@ -51,11 +51,13 @@ impl CaseFilter {
     }
     /// Tries to convert the enum instance into [`Not`](crate::types::CaseFilter::Not), extracting the inner [`CaseFilter`](crate::types::CaseFilter).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_not(&self) -> std::result::Result<&std::boxed::Box<crate::types::CaseFilter>, &Self> {
+    pub fn as_not(
+        &self,
+    ) -> ::std::result::Result<&::std::boxed::Box<crate::types::CaseFilter>, &Self> {
         if let CaseFilter::Not(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Not`](crate::types::CaseFilter::Not).

@@ -2,36 +2,36 @@
 
 /// <p>Designates the CloudWatch metric and statistic that provides the time series the anomaly detector uses as input.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SingleMetricAnomalyDetector {
     /// <p>The namespace of the metric to create the anomaly detection model for.</p>
     #[doc(hidden)]
-    pub namespace: std::option::Option<std::string::String>,
+    pub namespace: ::std::option::Option<::std::string::String>,
     /// <p>The name of the metric to create the anomaly detection model for.</p>
     #[doc(hidden)]
-    pub metric_name: std::option::Option<std::string::String>,
+    pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p>The metric dimensions to create the anomaly detection model for.</p>
     #[doc(hidden)]
-    pub dimensions: std::option::Option<std::vec::Vec<crate::types::Dimension>>,
+    pub dimensions: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>,
     /// <p>The statistic to use for the metric and anomaly detection model.</p>
     #[doc(hidden)]
-    pub stat: std::option::Option<std::string::String>,
+    pub stat: ::std::option::Option<::std::string::String>,
 }
 impl SingleMetricAnomalyDetector {
     /// <p>The namespace of the metric to create the anomaly detection model for.</p>
-    pub fn namespace(&self) -> std::option::Option<&str> {
+    pub fn namespace(&self) -> ::std::option::Option<&str> {
         self.namespace.as_deref()
     }
     /// <p>The name of the metric to create the anomaly detection model for.</p>
-    pub fn metric_name(&self) -> std::option::Option<&str> {
+    pub fn metric_name(&self) -> ::std::option::Option<&str> {
         self.metric_name.as_deref()
     }
     /// <p>The metric dimensions to create the anomaly detection model for.</p>
-    pub fn dimensions(&self) -> std::option::Option<&[crate::types::Dimension]> {
+    pub fn dimensions(&self) -> ::std::option::Option<&[crate::types::Dimension]> {
         self.dimensions.as_deref()
     }
     /// <p>The statistic to use for the metric and anomaly detection model.</p>
-    pub fn stat(&self) -> std::option::Option<&str> {
+    pub fn stat(&self) -> ::std::option::Option<&str> {
         self.stat.as_deref()
     }
 }
@@ -44,31 +44,33 @@ impl SingleMetricAnomalyDetector {
 
 /// A builder for [`SingleMetricAnomalyDetector`](crate::types::SingleMetricAnomalyDetector).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SingleMetricAnomalyDetectorBuilder {
-    pub(crate) namespace: std::option::Option<std::string::String>,
-    pub(crate) metric_name: std::option::Option<std::string::String>,
-    pub(crate) dimensions: std::option::Option<std::vec::Vec<crate::types::Dimension>>,
-    pub(crate) stat: std::option::Option<std::string::String>,
+    pub(crate) namespace: ::std::option::Option<::std::string::String>,
+    pub(crate) metric_name: ::std::option::Option<::std::string::String>,
+    pub(crate) dimensions: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>,
+    pub(crate) stat: ::std::option::Option<::std::string::String>,
 }
 impl SingleMetricAnomalyDetectorBuilder {
     /// <p>The namespace of the metric to create the anomaly detection model for.</p>
-    pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
-        self.namespace = Some(input.into());
+    pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.namespace = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The namespace of the metric to create the anomaly detection model for.</p>
-    pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.namespace = input;
         self
     }
     /// <p>The name of the metric to create the anomaly detection model for.</p>
-    pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.metric_name = Some(input.into());
+    pub fn metric_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.metric_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the metric to create the anomaly detection model for.</p>
-    pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_metric_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metric_name = input;
         self
     }
@@ -80,24 +82,24 @@ impl SingleMetricAnomalyDetectorBuilder {
     pub fn dimensions(mut self, input: crate::types::Dimension) -> Self {
         let mut v = self.dimensions.unwrap_or_default();
         v.push(input);
-        self.dimensions = Some(v);
+        self.dimensions = ::std::option::Option::Some(v);
         self
     }
     /// <p>The metric dimensions to create the anomaly detection model for.</p>
     pub fn set_dimensions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Dimension>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>,
     ) -> Self {
         self.dimensions = input;
         self
     }
     /// <p>The statistic to use for the metric and anomaly detection model.</p>
-    pub fn stat(mut self, input: impl Into<std::string::String>) -> Self {
-        self.stat = Some(input.into());
+    pub fn stat(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.stat = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The statistic to use for the metric and anomaly detection model.</p>
-    pub fn set_stat(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_stat(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stat = input;
         self
     }

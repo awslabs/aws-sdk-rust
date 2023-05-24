@@ -2,26 +2,28 @@
 
 /// <p>Specifies the HTTP context to use for the test authorizer request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HttpContext {
     /// <p>The header keys and values in an HTTP authorization request.</p>
     #[doc(hidden)]
-    pub headers:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub headers: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>The query string keys and values in an HTTP authorization request.</p>
     #[doc(hidden)]
-    pub query_string: std::option::Option<std::string::String>,
+    pub query_string: ::std::option::Option<::std::string::String>,
 }
 impl HttpContext {
     /// <p>The header keys and values in an HTTP authorization request.</p>
     pub fn headers(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.headers.as_ref()
     }
     /// <p>The query string keys and values in an HTTP authorization request.</p>
-    pub fn query_string(&self) -> std::option::Option<&str> {
+    pub fn query_string(&self) -> ::std::option::Option<&str> {
         self.query_string.as_deref()
     }
 }
@@ -34,11 +36,14 @@ impl HttpContext {
 
 /// A builder for [`HttpContext`](crate::types::HttpContext).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct HttpContextBuilder {
-    pub(crate) headers:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) query_string: std::option::Option<std::string::String>,
+    pub(crate) headers: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) query_string: ::std::option::Option<::std::string::String>,
 }
 impl HttpContextBuilder {
     /// Adds a key-value pair to `headers`.
@@ -48,31 +53,31 @@ impl HttpContextBuilder {
     /// <p>The header keys and values in an HTTP authorization request.</p>
     pub fn headers(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.headers.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.headers = Some(hash_map);
+        self.headers = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The header keys and values in an HTTP authorization request.</p>
     pub fn set_headers(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.headers = input;
         self
     }
     /// <p>The query string keys and values in an HTTP authorization request.</p>
-    pub fn query_string(mut self, input: impl Into<std::string::String>) -> Self {
-        self.query_string = Some(input.into());
+    pub fn query_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.query_string = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The query string keys and values in an HTTP authorization request.</p>
-    pub fn set_query_string(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_query_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.query_string = input;
         self
     }

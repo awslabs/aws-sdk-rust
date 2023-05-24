@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetPlaybackKeyPair`](crate::operation::get_playback_key_pair::builders::GetPlaybackKeyPairFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl Into<String>)`](crate::operation::get_playback_key_pair::builders::GetPlaybackKeyPairFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::get_playback_key_pair::builders::GetPlaybackKeyPairFluentBuilder::set_arn): <p>ARN of the key pair to be returned.</p>
+    ///   - [`arn(impl ::std::convert::Into<String>)`](crate::operation::get_playback_key_pair::builders::GetPlaybackKeyPairFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::get_playback_key_pair::builders::GetPlaybackKeyPairFluentBuilder::set_arn): <p>ARN of the key pair to be returned.</p>
     /// - On success, responds with [`GetPlaybackKeyPairOutput`](crate::operation::get_playback_key_pair::GetPlaybackKeyPairOutput) with field(s):
     ///   - [`key_pair(Option<PlaybackKeyPair>)`](crate::operation::get_playback_key_pair::GetPlaybackKeyPairOutput::key_pair): (undocumented)
     /// - On failure, responds with [`SdkError<GetPlaybackKeyPairError>`](crate::operation::get_playback_key_pair::GetPlaybackKeyPairError)

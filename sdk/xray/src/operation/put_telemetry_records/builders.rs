@@ -6,29 +6,29 @@ pub use crate::operation::put_telemetry_records::_put_telemetry_records_input::P
 /// Fluent builder constructing a request to `PutTelemetryRecords`.
 ///
 /// <p>Used by the Amazon Web Services X-Ray daemon to upload telemetry.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutTelemetryRecordsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::put_telemetry_records::builders::PutTelemetryRecordsInputBuilder,
 }
 impl PutTelemetryRecordsFluentBuilder {
     /// Creates a new `PutTelemetryRecords`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::put_telemetry_records::PutTelemetryRecords,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::put_telemetry_records::PutTelemetryRecordsError,
         >,
     > {
@@ -36,30 +36,33 @@ impl PutTelemetryRecordsFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::put_telemetry_records::PutTelemetryRecordsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::put_telemetry_records::PutTelemetryRecordsError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,9 +75,9 @@ impl PutTelemetryRecordsFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::put_telemetry_records::PutTelemetryRecordsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::put_telemetry_records::PutTelemetryRecordsError,
         >,
     > {
@@ -92,38 +95,44 @@ impl PutTelemetryRecordsFluentBuilder {
     /// <p></p>
     pub fn set_telemetry_records(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TelemetryRecord>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::TelemetryRecord>>,
     ) -> Self {
         self.inner = self.inner.set_telemetry_records(input);
         self
     }
     /// <p></p>
-    pub fn ec2_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn ec2_instance_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.ec2_instance_id(input.into());
         self
     }
     /// <p></p>
-    pub fn set_ec2_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ec2_instance_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_ec2_instance_id(input);
         self
     }
     /// <p></p>
-    pub fn hostname(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn hostname(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.hostname(input.into());
         self
     }
     /// <p></p>
-    pub fn set_hostname(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_hostname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_hostname(input);
         self
     }
     /// <p></p>
-    pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_arn(input.into());
         self
     }
     /// <p></p>
-    pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_arn(input);
         self
     }

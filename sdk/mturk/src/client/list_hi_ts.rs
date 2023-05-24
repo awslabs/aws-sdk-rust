@@ -4,7 +4,7 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_hi_ts::builders::ListHITsFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_hi_ts::builders::ListHITsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_hi_ts::builders::ListHITsFluentBuilder::set_next_token): <p>Pagination token</p>
+    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_hi_ts::builders::ListHITsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_hi_ts::builders::ListHITsFluentBuilder::set_next_token): <p>Pagination token</p>
     ///   - [`max_results(i32)`](crate::operation::list_hi_ts::builders::ListHITsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_hi_ts::builders::ListHITsFluentBuilder::set_max_results): (undocumented)
     /// - On success, responds with [`ListHiTsOutput`](crate::operation::list_hi_ts::ListHiTsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_hi_ts::ListHiTsOutput::next_token): <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>

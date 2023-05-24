@@ -2,7 +2,7 @@
 
 /// <p>Defines the storage configuration for a runtime environment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum StorageConfiguration {
     /// <p>Defines the storage configuration for an Amazon EFS file system.</p>
     Efs(crate::types::EfsStorageConfiguration),
@@ -21,11 +21,11 @@ pub enum StorageConfiguration {
 impl StorageConfiguration {
     /// Tries to convert the enum instance into [`Efs`](crate::types::StorageConfiguration::Efs), extracting the inner [`EfsStorageConfiguration`](crate::types::EfsStorageConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_efs(&self) -> std::result::Result<&crate::types::EfsStorageConfiguration, &Self> {
+    pub fn as_efs(&self) -> ::std::result::Result<&crate::types::EfsStorageConfiguration, &Self> {
         if let StorageConfiguration::Efs(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Efs`](crate::types::StorageConfiguration::Efs).
@@ -34,11 +34,11 @@ impl StorageConfiguration {
     }
     /// Tries to convert the enum instance into [`Fsx`](crate::types::StorageConfiguration::Fsx), extracting the inner [`FsxStorageConfiguration`](crate::types::FsxStorageConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_fsx(&self) -> std::result::Result<&crate::types::FsxStorageConfiguration, &Self> {
+    pub fn as_fsx(&self) -> ::std::result::Result<&crate::types::FsxStorageConfiguration, &Self> {
         if let StorageConfiguration::Fsx(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Fsx`](crate::types::StorageConfiguration::Fsx).

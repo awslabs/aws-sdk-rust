@@ -2,7 +2,7 @@
 
 /// <p>A collection of settings specific to the problem type used to configure an AutoML job using the V2 API. There must be one and only one config of the following type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum AutoMlProblemTypeConfig {
     /// <p>Settings used to configure an AutoML job using the V2 API for the image classification problem type.</p>
     ImageClassificationJobConfig(crate::types::ImageClassificationJobConfig),
@@ -23,11 +23,11 @@ impl AutoMlProblemTypeConfig {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_image_classification_job_config(
         &self,
-    ) -> std::result::Result<&crate::types::ImageClassificationJobConfig, &Self> {
+    ) -> ::std::result::Result<&crate::types::ImageClassificationJobConfig, &Self> {
         if let AutoMlProblemTypeConfig::ImageClassificationJobConfig(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`ImageClassificationJobConfig`](crate::types::AutoMlProblemTypeConfig::ImageClassificationJobConfig).
@@ -38,11 +38,11 @@ impl AutoMlProblemTypeConfig {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_text_classification_job_config(
         &self,
-    ) -> std::result::Result<&crate::types::TextClassificationJobConfig, &Self> {
+    ) -> ::std::result::Result<&crate::types::TextClassificationJobConfig, &Self> {
         if let AutoMlProblemTypeConfig::TextClassificationJobConfig(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`TextClassificationJobConfig`](crate::types::AutoMlProblemTypeConfig::TextClassificationJobConfig).

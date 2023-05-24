@@ -2,11 +2,11 @@
 
 /// <p>Represents a request to the list uploads operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListUploadsInput {
     /// <p>The Amazon Resource Name (ARN) of the project for which you want to list uploads.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of upload.</p>
     /// <p>Must be one of the following values:</p>
     /// <ul>
@@ -44,14 +44,14 @@ pub struct ListUploadsInput {
     /// <li> <p>XCTEST_UI_TEST_SPEC</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::UploadType>,
+    pub r#type: ::std::option::Option<crate::types::UploadType>,
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListUploadsInput {
     /// <p>The Amazon Resource Name (ARN) of the project for which you want to list uploads.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The type of upload.</p>
@@ -90,11 +90,11 @@ impl ListUploadsInput {
     /// <li> <p>INSTRUMENTATION_TEST_SPEC</p> </li>
     /// <li> <p>XCTEST_UI_TEST_SPEC</p> </li>
     /// </ul>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::UploadType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::UploadType> {
         self.r#type.as_ref()
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
@@ -107,20 +107,22 @@ impl ListUploadsInput {
 
 /// A builder for [`ListUploadsInput`](crate::operation::list_uploads::ListUploadsInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListUploadsInputBuilder {
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) r#type: std::option::Option<crate::types::UploadType>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::UploadType>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListUploadsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the project for which you want to list uploads.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the project for which you want to list uploads.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
@@ -161,7 +163,7 @@ impl ListUploadsInputBuilder {
     /// <li> <p>XCTEST_UI_TEST_SPEC</p> </li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::UploadType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of upload.</p>
@@ -200,28 +202,28 @@ impl ListUploadsInputBuilder {
     /// <li> <p>INSTRUMENTATION_TEST_SPEC</p> </li>
     /// <li> <p>XCTEST_UI_TEST_SPEC</p> </li>
     /// </ul>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::UploadType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::UploadType>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
     /// Consumes the builder and constructs a [`ListUploadsInput`](crate::operation::list_uploads::ListUploadsInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::list_uploads::ListUploadsInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::list_uploads::ListUploadsInput {
+        ::std::result::Result::Ok(crate::operation::list_uploads::ListUploadsInput {
             arn: self.arn,
             r#type: self.r#type,
             next_token: self.next_token,

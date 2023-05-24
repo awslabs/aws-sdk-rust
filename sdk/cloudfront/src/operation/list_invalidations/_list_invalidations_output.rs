@@ -2,20 +2,20 @@
 
 /// <p>The returned result of the corresponding request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListInvalidationsOutput {
     /// <p>Information about invalidation batches.</p>
     #[doc(hidden)]
-    pub invalidation_list: std::option::Option<crate::types::InvalidationList>,
+    pub invalidation_list: ::std::option::Option<crate::types::InvalidationList>,
     _request_id: Option<String>,
 }
 impl ListInvalidationsOutput {
     /// <p>Information about invalidation batches.</p>
-    pub fn invalidation_list(&self) -> std::option::Option<&crate::types::InvalidationList> {
+    pub fn invalidation_list(&self) -> ::std::option::Option<&crate::types::InvalidationList> {
         self.invalidation_list.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for ListInvalidationsOutput {
+impl ::aws_http::request_id::RequestId for ListInvalidationsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,21 +30,23 @@ impl ListInvalidationsOutput {
 
 /// A builder for [`ListInvalidationsOutput`](crate::operation::list_invalidations::ListInvalidationsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListInvalidationsOutputBuilder {
-    pub(crate) invalidation_list: std::option::Option<crate::types::InvalidationList>,
+    pub(crate) invalidation_list: ::std::option::Option<crate::types::InvalidationList>,
     _request_id: Option<String>,
 }
 impl ListInvalidationsOutputBuilder {
     /// <p>Information about invalidation batches.</p>
     pub fn invalidation_list(mut self, input: crate::types::InvalidationList) -> Self {
-        self.invalidation_list = Some(input);
+        self.invalidation_list = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about invalidation batches.</p>
     pub fn set_invalidation_list(
         mut self,
-        input: std::option::Option<crate::types::InvalidationList>,
+        input: ::std::option::Option<crate::types::InvalidationList>,
     ) -> Self {
         self.invalidation_list = input;
         self

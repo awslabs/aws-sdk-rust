@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopCanary`](crate::operation::stop_canary::builders::StopCanaryFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::stop_canary::builders::StopCanaryFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::stop_canary::builders::StopCanaryFluentBuilder::set_name): <p>The name of the canary that you want to stop. To find the names of your canaries, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">ListCanaries</a>.</p>
+    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::stop_canary::builders::StopCanaryFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::stop_canary::builders::StopCanaryFluentBuilder::set_name): <p>The name of the canary that you want to stop. To find the names of your canaries, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">ListCanaries</a>.</p>
     /// - On success, responds with [`StopCanaryOutput`](crate::operation::stop_canary::StopCanaryOutput)
     /// - On failure, responds with [`SdkError<StopCanaryError>`](crate::operation::stop_canary::StopCanaryError)
     pub fn stop_canary(&self) -> crate::operation::stop_canary::builders::StopCanaryFluentBuilder {

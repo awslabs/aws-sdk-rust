@@ -2,7 +2,7 @@
 
 /// The possible types of dialer config parameters
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum DialerConfig {
     /// Predictive Dialer config
     PredictiveDialerConfig(crate::types::PredictiveDialerConfig),
@@ -23,11 +23,11 @@ impl DialerConfig {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_predictive_dialer_config(
         &self,
-    ) -> std::result::Result<&crate::types::PredictiveDialerConfig, &Self> {
+    ) -> ::std::result::Result<&crate::types::PredictiveDialerConfig, &Self> {
         if let DialerConfig::PredictiveDialerConfig(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`PredictiveDialerConfig`](crate::types::DialerConfig::PredictiveDialerConfig).
@@ -38,11 +38,11 @@ impl DialerConfig {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_progressive_dialer_config(
         &self,
-    ) -> std::result::Result<&crate::types::ProgressiveDialerConfig, &Self> {
+    ) -> ::std::result::Result<&crate::types::ProgressiveDialerConfig, &Self> {
         if let DialerConfig::ProgressiveDialerConfig(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`ProgressiveDialerConfig`](crate::types::DialerConfig::ProgressiveDialerConfig).

@@ -2,48 +2,50 @@
 
 /// <p>Details about the asset.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssetDetails {
     /// <p>The Amazon S3 object that is the asset.</p>
     #[doc(hidden)]
-    pub s3_snapshot_asset: std::option::Option<crate::types::S3SnapshotAsset>,
+    pub s3_snapshot_asset: ::std::option::Option<crate::types::S3SnapshotAsset>,
     /// <p>The Amazon Redshift datashare that is the asset.</p>
     #[doc(hidden)]
-    pub redshift_data_share_asset: std::option::Option<crate::types::RedshiftDataShareAsset>,
+    pub redshift_data_share_asset: ::std::option::Option<crate::types::RedshiftDataShareAsset>,
     /// <p>Information about the API Gateway API asset.</p>
     #[doc(hidden)]
-    pub api_gateway_api_asset: std::option::Option<crate::types::ApiGatewayApiAsset>,
+    pub api_gateway_api_asset: ::std::option::Option<crate::types::ApiGatewayApiAsset>,
     /// <p>The Amazon S3 data access that is the asset.</p>
     #[doc(hidden)]
-    pub s3_data_access_asset: std::option::Option<crate::types::S3DataAccessAsset>,
+    pub s3_data_access_asset: ::std::option::Option<crate::types::S3DataAccessAsset>,
     /// <p>The AWS Lake Formation data permission that is the asset.</p>
     #[doc(hidden)]
     pub lake_formation_data_permission_asset:
-        std::option::Option<crate::types::LakeFormationDataPermissionAsset>,
+        ::std::option::Option<crate::types::LakeFormationDataPermissionAsset>,
 }
 impl AssetDetails {
     /// <p>The Amazon S3 object that is the asset.</p>
-    pub fn s3_snapshot_asset(&self) -> std::option::Option<&crate::types::S3SnapshotAsset> {
+    pub fn s3_snapshot_asset(&self) -> ::std::option::Option<&crate::types::S3SnapshotAsset> {
         self.s3_snapshot_asset.as_ref()
     }
     /// <p>The Amazon Redshift datashare that is the asset.</p>
     pub fn redshift_data_share_asset(
         &self,
-    ) -> std::option::Option<&crate::types::RedshiftDataShareAsset> {
+    ) -> ::std::option::Option<&crate::types::RedshiftDataShareAsset> {
         self.redshift_data_share_asset.as_ref()
     }
     /// <p>Information about the API Gateway API asset.</p>
-    pub fn api_gateway_api_asset(&self) -> std::option::Option<&crate::types::ApiGatewayApiAsset> {
+    pub fn api_gateway_api_asset(
+        &self,
+    ) -> ::std::option::Option<&crate::types::ApiGatewayApiAsset> {
         self.api_gateway_api_asset.as_ref()
     }
     /// <p>The Amazon S3 data access that is the asset.</p>
-    pub fn s3_data_access_asset(&self) -> std::option::Option<&crate::types::S3DataAccessAsset> {
+    pub fn s3_data_access_asset(&self) -> ::std::option::Option<&crate::types::S3DataAccessAsset> {
         self.s3_data_access_asset.as_ref()
     }
     /// <p>The AWS Lake Formation data permission that is the asset.</p>
     pub fn lake_formation_data_permission_asset(
         &self,
-    ) -> std::option::Option<&crate::types::LakeFormationDataPermissionAsset> {
+    ) -> ::std::option::Option<&crate::types::LakeFormationDataPermissionAsset> {
         self.lake_formation_data_permission_asset.as_ref()
     }
 }
@@ -56,25 +58,28 @@ impl AssetDetails {
 
 /// A builder for [`AssetDetails`](crate::types::AssetDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AssetDetailsBuilder {
-    pub(crate) s3_snapshot_asset: std::option::Option<crate::types::S3SnapshotAsset>,
-    pub(crate) redshift_data_share_asset: std::option::Option<crate::types::RedshiftDataShareAsset>,
-    pub(crate) api_gateway_api_asset: std::option::Option<crate::types::ApiGatewayApiAsset>,
-    pub(crate) s3_data_access_asset: std::option::Option<crate::types::S3DataAccessAsset>,
+    pub(crate) s3_snapshot_asset: ::std::option::Option<crate::types::S3SnapshotAsset>,
+    pub(crate) redshift_data_share_asset:
+        ::std::option::Option<crate::types::RedshiftDataShareAsset>,
+    pub(crate) api_gateway_api_asset: ::std::option::Option<crate::types::ApiGatewayApiAsset>,
+    pub(crate) s3_data_access_asset: ::std::option::Option<crate::types::S3DataAccessAsset>,
     pub(crate) lake_formation_data_permission_asset:
-        std::option::Option<crate::types::LakeFormationDataPermissionAsset>,
+        ::std::option::Option<crate::types::LakeFormationDataPermissionAsset>,
 }
 impl AssetDetailsBuilder {
     /// <p>The Amazon S3 object that is the asset.</p>
     pub fn s3_snapshot_asset(mut self, input: crate::types::S3SnapshotAsset) -> Self {
-        self.s3_snapshot_asset = Some(input);
+        self.s3_snapshot_asset = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Amazon S3 object that is the asset.</p>
     pub fn set_s3_snapshot_asset(
         mut self,
-        input: std::option::Option<crate::types::S3SnapshotAsset>,
+        input: ::std::option::Option<crate::types::S3SnapshotAsset>,
     ) -> Self {
         self.s3_snapshot_asset = input;
         self
@@ -84,39 +89,39 @@ impl AssetDetailsBuilder {
         mut self,
         input: crate::types::RedshiftDataShareAsset,
     ) -> Self {
-        self.redshift_data_share_asset = Some(input);
+        self.redshift_data_share_asset = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Amazon Redshift datashare that is the asset.</p>
     pub fn set_redshift_data_share_asset(
         mut self,
-        input: std::option::Option<crate::types::RedshiftDataShareAsset>,
+        input: ::std::option::Option<crate::types::RedshiftDataShareAsset>,
     ) -> Self {
         self.redshift_data_share_asset = input;
         self
     }
     /// <p>Information about the API Gateway API asset.</p>
     pub fn api_gateway_api_asset(mut self, input: crate::types::ApiGatewayApiAsset) -> Self {
-        self.api_gateway_api_asset = Some(input);
+        self.api_gateway_api_asset = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the API Gateway API asset.</p>
     pub fn set_api_gateway_api_asset(
         mut self,
-        input: std::option::Option<crate::types::ApiGatewayApiAsset>,
+        input: ::std::option::Option<crate::types::ApiGatewayApiAsset>,
     ) -> Self {
         self.api_gateway_api_asset = input;
         self
     }
     /// <p>The Amazon S3 data access that is the asset.</p>
     pub fn s3_data_access_asset(mut self, input: crate::types::S3DataAccessAsset) -> Self {
-        self.s3_data_access_asset = Some(input);
+        self.s3_data_access_asset = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Amazon S3 data access that is the asset.</p>
     pub fn set_s3_data_access_asset(
         mut self,
-        input: std::option::Option<crate::types::S3DataAccessAsset>,
+        input: ::std::option::Option<crate::types::S3DataAccessAsset>,
     ) -> Self {
         self.s3_data_access_asset = input;
         self
@@ -126,13 +131,13 @@ impl AssetDetailsBuilder {
         mut self,
         input: crate::types::LakeFormationDataPermissionAsset,
     ) -> Self {
-        self.lake_formation_data_permission_asset = Some(input);
+        self.lake_formation_data_permission_asset = ::std::option::Option::Some(input);
         self
     }
     /// <p>The AWS Lake Formation data permission that is the asset.</p>
     pub fn set_lake_formation_data_permission_asset(
         mut self,
-        input: std::option::Option<crate::types::LakeFormationDataPermissionAsset>,
+        input: ::std::option::Option<crate::types::LakeFormationDataPermissionAsset>,
     ) -> Self {
         self.lake_formation_data_permission_asset = input;
         self

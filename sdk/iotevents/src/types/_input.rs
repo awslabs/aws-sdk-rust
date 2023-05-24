@@ -2,22 +2,22 @@
 
 /// <p>Information about the input.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Input {
     /// <p>Information about the configuration of an input.</p>
     #[doc(hidden)]
-    pub input_configuration: std::option::Option<crate::types::InputConfiguration>,
+    pub input_configuration: ::std::option::Option<crate::types::InputConfiguration>,
     /// <p>The definition of the input.</p>
     #[doc(hidden)]
-    pub input_definition: std::option::Option<crate::types::InputDefinition>,
+    pub input_definition: ::std::option::Option<crate::types::InputDefinition>,
 }
 impl Input {
     /// <p>Information about the configuration of an input.</p>
-    pub fn input_configuration(&self) -> std::option::Option<&crate::types::InputConfiguration> {
+    pub fn input_configuration(&self) -> ::std::option::Option<&crate::types::InputConfiguration> {
         self.input_configuration.as_ref()
     }
     /// <p>The definition of the input.</p>
-    pub fn input_definition(&self) -> std::option::Option<&crate::types::InputDefinition> {
+    pub fn input_definition(&self) -> ::std::option::Option<&crate::types::InputDefinition> {
         self.input_definition.as_ref()
     }
 }
@@ -30,34 +30,36 @@ impl Input {
 
 /// A builder for [`Input`](crate::types::Input).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InputBuilder {
-    pub(crate) input_configuration: std::option::Option<crate::types::InputConfiguration>,
-    pub(crate) input_definition: std::option::Option<crate::types::InputDefinition>,
+    pub(crate) input_configuration: ::std::option::Option<crate::types::InputConfiguration>,
+    pub(crate) input_definition: ::std::option::Option<crate::types::InputDefinition>,
 }
 impl InputBuilder {
     /// <p>Information about the configuration of an input.</p>
     pub fn input_configuration(mut self, input: crate::types::InputConfiguration) -> Self {
-        self.input_configuration = Some(input);
+        self.input_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the configuration of an input.</p>
     pub fn set_input_configuration(
         mut self,
-        input: std::option::Option<crate::types::InputConfiguration>,
+        input: ::std::option::Option<crate::types::InputConfiguration>,
     ) -> Self {
         self.input_configuration = input;
         self
     }
     /// <p>The definition of the input.</p>
     pub fn input_definition(mut self, input: crate::types::InputDefinition) -> Self {
-        self.input_definition = Some(input);
+        self.input_definition = ::std::option::Option::Some(input);
         self
     }
     /// <p>The definition of the input.</p>
     pub fn set_input_definition(
         mut self,
-        input: std::option::Option<crate::types::InputDefinition>,
+        input: ::std::option::Option<crate::types::InputDefinition>,
     ) -> Self {
         self.input_definition = input;
         self

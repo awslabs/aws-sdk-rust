@@ -2,22 +2,22 @@
 
 /// <p>Represents the output of a <code>ListObjectAttributes</code> response operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchListObjectAttributesResponse {
     /// <p>The attributes map that is associated with the object. <code>AttributeArn</code> is the key; attribute value is the value.</p>
     #[doc(hidden)]
-    pub attributes: std::option::Option<std::vec::Vec<crate::types::AttributeKeyAndValue>>,
+    pub attributes: ::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>>,
     /// <p>The pagination token.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl BatchListObjectAttributesResponse {
     /// <p>The attributes map that is associated with the object. <code>AttributeArn</code> is the key; attribute value is the value.</p>
-    pub fn attributes(&self) -> std::option::Option<&[crate::types::AttributeKeyAndValue]> {
+    pub fn attributes(&self) -> ::std::option::Option<&[crate::types::AttributeKeyAndValue]> {
         self.attributes.as_deref()
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
@@ -30,10 +30,13 @@ impl BatchListObjectAttributesResponse {
 
 /// A builder for [`BatchListObjectAttributesResponse`](crate::types::BatchListObjectAttributesResponse).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BatchListObjectAttributesResponseBuilder {
-    pub(crate) attributes: std::option::Option<std::vec::Vec<crate::types::AttributeKeyAndValue>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) attributes:
+        ::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl BatchListObjectAttributesResponseBuilder {
     /// Appends an item to `attributes`.
@@ -44,24 +47,24 @@ impl BatchListObjectAttributesResponseBuilder {
     pub fn attributes(mut self, input: crate::types::AttributeKeyAndValue) -> Self {
         let mut v = self.attributes.unwrap_or_default();
         v.push(input);
-        self.attributes = Some(v);
+        self.attributes = ::std::option::Option::Some(v);
         self
     }
     /// <p>The attributes map that is associated with the object. <code>AttributeArn</code> is the key; attribute value is the value.</p>
     pub fn set_attributes(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AttributeKeyAndValue>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>>,
     ) -> Self {
         self.attributes = input;
         self
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The pagination token.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

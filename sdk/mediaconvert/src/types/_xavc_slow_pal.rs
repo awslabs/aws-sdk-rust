@@ -38,13 +38,13 @@
 /// Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL to create a 25 fps output by relabeling the video frames and resampling your audio. Note that enabling this setting will slightly reduce the duration of your video. Related settings: You must also set Frame rate to 25. In your JSON job specification, set (framerateControl) to (SPECIFIED), (framerateNumerator) to 25 and (framerateDenominator) to 1.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum XavcSlowPal {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum XavcSlowPal {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for XavcSlowPal {
+impl ::std::convert::From<&str> for XavcSlowPal {
     fn from(s: &str) -> Self {
         match s {
             "DISABLED" => XavcSlowPal::Disabled,
@@ -63,11 +63,11 @@ impl std::convert::From<&str> for XavcSlowPal {
         }
     }
 }
-impl std::str::FromStr for XavcSlowPal {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for XavcSlowPal {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(XavcSlowPal::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(XavcSlowPal::from(s))
     }
 }
 impl XavcSlowPal {
@@ -84,7 +84,7 @@ impl XavcSlowPal {
         &["DISABLED", "ENABLED"]
     }
 }
-impl AsRef<str> for XavcSlowPal {
+impl ::std::convert::AsRef<str> for XavcSlowPal {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

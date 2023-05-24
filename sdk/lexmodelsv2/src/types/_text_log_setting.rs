@@ -2,14 +2,14 @@
 
 /// <p>Defines settings to enable text conversation logs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TextLogSetting {
     /// <p>Determines whether conversation logs should be stored for an alias.</p>
     #[doc(hidden)]
     pub enabled: bool,
     /// <p>Defines the Amazon CloudWatch Logs destination log group for conversation text logs.</p>
     #[doc(hidden)]
-    pub destination: std::option::Option<crate::types::TextLogDestination>,
+    pub destination: ::std::option::Option<crate::types::TextLogDestination>,
 }
 impl TextLogSetting {
     /// <p>Determines whether conversation logs should be stored for an alias.</p>
@@ -17,7 +17,7 @@ impl TextLogSetting {
         self.enabled
     }
     /// <p>Defines the Amazon CloudWatch Logs destination log group for conversation text logs.</p>
-    pub fn destination(&self) -> std::option::Option<&crate::types::TextLogDestination> {
+    pub fn destination(&self) -> ::std::option::Option<&crate::types::TextLogDestination> {
         self.destination.as_ref()
     }
 }
@@ -30,31 +30,33 @@ impl TextLogSetting {
 
 /// A builder for [`TextLogSetting`](crate::types::TextLogSetting).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TextLogSettingBuilder {
-    pub(crate) enabled: std::option::Option<bool>,
-    pub(crate) destination: std::option::Option<crate::types::TextLogDestination>,
+    pub(crate) enabled: ::std::option::Option<bool>,
+    pub(crate) destination: ::std::option::Option<crate::types::TextLogDestination>,
 }
 impl TextLogSettingBuilder {
     /// <p>Determines whether conversation logs should be stored for an alias.</p>
     pub fn enabled(mut self, input: bool) -> Self {
-        self.enabled = Some(input);
+        self.enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Determines whether conversation logs should be stored for an alias.</p>
-    pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
     }
     /// <p>Defines the Amazon CloudWatch Logs destination log group for conversation text logs.</p>
     pub fn destination(mut self, input: crate::types::TextLogDestination) -> Self {
-        self.destination = Some(input);
+        self.destination = ::std::option::Option::Some(input);
         self
     }
     /// <p>Defines the Amazon CloudWatch Logs destination log group for conversation text logs.</p>
     pub fn set_destination(
         mut self,
-        input: std::option::Option<crate::types::TextLogDestination>,
+        input: ::std::option::Option<crate::types::TextLogDestination>,
     ) -> Self {
         self.destination = input;
         self

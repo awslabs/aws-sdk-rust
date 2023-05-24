@@ -2,29 +2,29 @@
 
 /// <p>Specifies a DynamoDB data source in the Glue Data Catalog.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DynamoDbCatalogSource {
     /// <p>The name of the data source.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database to read from.</p>
     #[doc(hidden)]
-    pub database: std::option::Option<std::string::String>,
+    pub database: ::std::option::Option<::std::string::String>,
     /// <p>The name of the table in the database to read from.</p>
     #[doc(hidden)]
-    pub table: std::option::Option<std::string::String>,
+    pub table: ::std::option::Option<::std::string::String>,
 }
 impl DynamoDbCatalogSource {
     /// <p>The name of the data source.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The name of the database to read from.</p>
-    pub fn database(&self) -> std::option::Option<&str> {
+    pub fn database(&self) -> ::std::option::Option<&str> {
         self.database.as_deref()
     }
     /// <p>The name of the table in the database to read from.</p>
-    pub fn table(&self) -> std::option::Option<&str> {
+    pub fn table(&self) -> ::std::option::Option<&str> {
         self.table.as_deref()
     }
 }
@@ -37,40 +37,42 @@ impl DynamoDbCatalogSource {
 
 /// A builder for [`DynamoDbCatalogSource`](crate::types::DynamoDbCatalogSource).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DynamoDbCatalogSourceBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) database: std::option::Option<std::string::String>,
-    pub(crate) table: std::option::Option<std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) database: ::std::option::Option<::std::string::String>,
+    pub(crate) table: ::std::option::Option<::std::string::String>,
 }
 impl DynamoDbCatalogSourceBuilder {
     /// <p>The name of the data source.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the data source.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The name of the database to read from.</p>
-    pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
-        self.database = Some(input.into());
+    pub fn database(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.database = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the database to read from.</p>
-    pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_database(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database = input;
         self
     }
     /// <p>The name of the table in the database to read from.</p>
-    pub fn table(mut self, input: impl Into<std::string::String>) -> Self {
-        self.table = Some(input.into());
+    pub fn table(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.table = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the table in the database to read from.</p>
-    pub fn set_table(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_table(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table = input;
         self
     }

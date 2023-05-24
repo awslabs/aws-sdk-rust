@@ -2,22 +2,22 @@
 
 /// <p> Specifies the status of advanced security options for the specified Elasticsearch domain.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AdvancedSecurityOptionsStatus {
     /// <p> Specifies advanced security options for the specified Elasticsearch domain.</p>
     #[doc(hidden)]
-    pub options: std::option::Option<crate::types::AdvancedSecurityOptions>,
+    pub options: ::std::option::Option<crate::types::AdvancedSecurityOptions>,
     /// <p> Status of the advanced security options for the specified Elasticsearch domain.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::OptionStatus>,
+    pub status: ::std::option::Option<crate::types::OptionStatus>,
 }
 impl AdvancedSecurityOptionsStatus {
     /// <p> Specifies advanced security options for the specified Elasticsearch domain.</p>
-    pub fn options(&self) -> std::option::Option<&crate::types::AdvancedSecurityOptions> {
+    pub fn options(&self) -> ::std::option::Option<&crate::types::AdvancedSecurityOptions> {
         self.options.as_ref()
     }
     /// <p> Status of the advanced security options for the specified Elasticsearch domain.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::OptionStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::OptionStatus> {
         self.status.as_ref()
     }
 }
@@ -30,32 +30,34 @@ impl AdvancedSecurityOptionsStatus {
 
 /// A builder for [`AdvancedSecurityOptionsStatus`](crate::types::AdvancedSecurityOptionsStatus).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AdvancedSecurityOptionsStatusBuilder {
-    pub(crate) options: std::option::Option<crate::types::AdvancedSecurityOptions>,
-    pub(crate) status: std::option::Option<crate::types::OptionStatus>,
+    pub(crate) options: ::std::option::Option<crate::types::AdvancedSecurityOptions>,
+    pub(crate) status: ::std::option::Option<crate::types::OptionStatus>,
 }
 impl AdvancedSecurityOptionsStatusBuilder {
     /// <p> Specifies advanced security options for the specified Elasticsearch domain.</p>
     pub fn options(mut self, input: crate::types::AdvancedSecurityOptions) -> Self {
-        self.options = Some(input);
+        self.options = ::std::option::Option::Some(input);
         self
     }
     /// <p> Specifies advanced security options for the specified Elasticsearch domain.</p>
     pub fn set_options(
         mut self,
-        input: std::option::Option<crate::types::AdvancedSecurityOptions>,
+        input: ::std::option::Option<crate::types::AdvancedSecurityOptions>,
     ) -> Self {
         self.options = input;
         self
     }
     /// <p> Status of the advanced security options for the specified Elasticsearch domain.</p>
     pub fn status(mut self, input: crate::types::OptionStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p> Status of the advanced security options for the specified Elasticsearch domain.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::OptionStatus>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::OptionStatus>) -> Self {
         self.status = input;
         self
     }

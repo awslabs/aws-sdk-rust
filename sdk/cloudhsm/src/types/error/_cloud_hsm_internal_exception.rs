@@ -2,15 +2,15 @@
 
 /// <p>Indicates that an internal error occurred.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CloudHsmInternalException {
     /// <p>Additional information about the error.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
     /// <p>Indicates if the action can be retried.</p>
     #[doc(hidden)]
     pub retryable: bool,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
+    pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl CloudHsmInternalException {
     /// <p>Indicates if the action can be retried.</p>
@@ -20,30 +20,30 @@ impl CloudHsmInternalException {
 }
 impl CloudHsmInternalException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for CloudHsmInternalException {
+impl ::std::fmt::Display for CloudHsmInternalException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "CloudHsmInternalException")?;
-        if let Some(inner_1) = &self.message {
+        ::std::write!(f, "CloudHsmInternalException")?;
+        if let ::std::option::Option::Some(inner_1) = &self.message {
             {
-                write!(f, ": {}", inner_1)?;
+                ::std::write!(f, ": {}", inner_1)?;
             }
         }
         Ok(())
     }
 }
-impl std::error::Error for CloudHsmInternalException {}
-impl aws_http::request_id::RequestId for crate::types::error::CloudHsmInternalException {
+impl ::std::error::Error for CloudHsmInternalException {}
+impl ::aws_http::request_id::RequestId for crate::types::error::CloudHsmInternalException {
     fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for CloudHsmInternalException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CloudHsmInternalException {
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
@@ -56,35 +56,37 @@ impl CloudHsmInternalException {
 
 /// A builder for [`CloudHsmInternalException`](crate::types::error::CloudHsmInternalException).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CloudHsmInternalExceptionBuilder {
-    pub(crate) message: std::option::Option<std::string::String>,
-    pub(crate) retryable: std::option::Option<bool>,
-    meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
+    pub(crate) retryable: ::std::option::Option<bool>,
+    meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl CloudHsmInternalExceptionBuilder {
     /// <p>Additional information about the error.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Additional information about the error.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
     /// <p>Indicates if the action can be retried.</p>
     pub fn retryable(mut self, input: bool) -> Self {
-        self.retryable = Some(input);
+        self.retryable = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates if the action can be retried.</p>
-    pub fn set_retryable(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_retryable(mut self, input: ::std::option::Option<bool>) -> Self {
         self.retryable = input;
         self
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
         self.meta = Some(meta);
         self
     }
@@ -92,7 +94,7 @@ impl CloudHsmInternalExceptionBuilder {
     /// Sets error metadata
     pub fn set_meta(
         &mut self,
-        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
     ) -> &mut Self {
         self.meta = meta;
         self

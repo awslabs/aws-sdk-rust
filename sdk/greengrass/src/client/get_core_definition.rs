@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetCoreDefinition`](crate::operation::get_core_definition::builders::GetCoreDefinitionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`core_definition_id(impl Into<String>)`](crate::operation::get_core_definition::builders::GetCoreDefinitionFluentBuilder::core_definition_id) / [`set_core_definition_id(Option<String>)`](crate::operation::get_core_definition::builders::GetCoreDefinitionFluentBuilder::set_core_definition_id): The ID of the core definition.
+    ///   - [`core_definition_id(impl ::std::convert::Into<String>)`](crate::operation::get_core_definition::builders::GetCoreDefinitionFluentBuilder::core_definition_id) / [`set_core_definition_id(Option<String>)`](crate::operation::get_core_definition::builders::GetCoreDefinitionFluentBuilder::set_core_definition_id): The ID of the core definition.
     /// - On success, responds with [`GetCoreDefinitionOutput`](crate::operation::get_core_definition::GetCoreDefinitionOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::get_core_definition::GetCoreDefinitionOutput::arn): The ARN of the definition.
     ///   - [`creation_timestamp(Option<String>)`](crate::operation::get_core_definition::GetCoreDefinitionOutput::creation_timestamp): The time, in milliseconds since the epoch, when the definition was created.

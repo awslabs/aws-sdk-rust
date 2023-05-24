@@ -2,19 +2,19 @@
 
 /// <p>The strategy to use when Amazon EC2 emits a signal that your Spot Instance is at an elevated risk of being interrupted.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FleetSpotCapacityRebalance {
     /// <p>The replacement strategy to use. Only available for fleets of type <code>maintain</code>.</p>
     /// <p> <code>launch</code> - EC2 Fleet launches a new replacement Spot Instance when a rebalance notification is emitted for an existing Spot Instance in the fleet. EC2 Fleet does not terminate the instances that receive a rebalance notification. You can terminate the old instances, or you can leave them running. You are charged for all instances while they are running. </p>
     /// <p> <code>launch-before-terminate</code> - EC2 Fleet launches a new replacement Spot Instance when a rebalance notification is emitted for an existing Spot Instance in the fleet, and then, after a delay that you specify (in <code>TerminationDelay</code>), terminates the instances that received a rebalance notification.</p>
     #[doc(hidden)]
-    pub replacement_strategy: std::option::Option<crate::types::FleetReplacementStrategy>,
+    pub replacement_strategy: ::std::option::Option<crate::types::FleetReplacementStrategy>,
     /// <p>The amount of time (in seconds) that Amazon EC2 waits before terminating the old Spot Instance after launching a new replacement Spot Instance.</p>
     /// <p>Required when <code>ReplacementStrategy</code> is set to <code>launch-before-terminate</code>.</p>
     /// <p>Not valid when <code>ReplacementStrategy</code> is set to <code>launch</code>.</p>
     /// <p>Valid values: Minimum value of <code>120</code> seconds. Maximum value of <code>7200</code> seconds.</p>
     #[doc(hidden)]
-    pub termination_delay: std::option::Option<i32>,
+    pub termination_delay: ::std::option::Option<i32>,
 }
 impl FleetSpotCapacityRebalance {
     /// <p>The replacement strategy to use. Only available for fleets of type <code>maintain</code>.</p>
@@ -22,14 +22,14 @@ impl FleetSpotCapacityRebalance {
     /// <p> <code>launch-before-terminate</code> - EC2 Fleet launches a new replacement Spot Instance when a rebalance notification is emitted for an existing Spot Instance in the fleet, and then, after a delay that you specify (in <code>TerminationDelay</code>), terminates the instances that received a rebalance notification.</p>
     pub fn replacement_strategy(
         &self,
-    ) -> std::option::Option<&crate::types::FleetReplacementStrategy> {
+    ) -> ::std::option::Option<&crate::types::FleetReplacementStrategy> {
         self.replacement_strategy.as_ref()
     }
     /// <p>The amount of time (in seconds) that Amazon EC2 waits before terminating the old Spot Instance after launching a new replacement Spot Instance.</p>
     /// <p>Required when <code>ReplacementStrategy</code> is set to <code>launch-before-terminate</code>.</p>
     /// <p>Not valid when <code>ReplacementStrategy</code> is set to <code>launch</code>.</p>
     /// <p>Valid values: Minimum value of <code>120</code> seconds. Maximum value of <code>7200</code> seconds.</p>
-    pub fn termination_delay(&self) -> std::option::Option<i32> {
+    pub fn termination_delay(&self) -> ::std::option::Option<i32> {
         self.termination_delay
     }
 }
@@ -42,17 +42,19 @@ impl FleetSpotCapacityRebalance {
 
 /// A builder for [`FleetSpotCapacityRebalance`](crate::types::FleetSpotCapacityRebalance).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FleetSpotCapacityRebalanceBuilder {
-    pub(crate) replacement_strategy: std::option::Option<crate::types::FleetReplacementStrategy>,
-    pub(crate) termination_delay: std::option::Option<i32>,
+    pub(crate) replacement_strategy: ::std::option::Option<crate::types::FleetReplacementStrategy>,
+    pub(crate) termination_delay: ::std::option::Option<i32>,
 }
 impl FleetSpotCapacityRebalanceBuilder {
     /// <p>The replacement strategy to use. Only available for fleets of type <code>maintain</code>.</p>
     /// <p> <code>launch</code> - EC2 Fleet launches a new replacement Spot Instance when a rebalance notification is emitted for an existing Spot Instance in the fleet. EC2 Fleet does not terminate the instances that receive a rebalance notification. You can terminate the old instances, or you can leave them running. You are charged for all instances while they are running. </p>
     /// <p> <code>launch-before-terminate</code> - EC2 Fleet launches a new replacement Spot Instance when a rebalance notification is emitted for an existing Spot Instance in the fleet, and then, after a delay that you specify (in <code>TerminationDelay</code>), terminates the instances that received a rebalance notification.</p>
     pub fn replacement_strategy(mut self, input: crate::types::FleetReplacementStrategy) -> Self {
-        self.replacement_strategy = Some(input);
+        self.replacement_strategy = ::std::option::Option::Some(input);
         self
     }
     /// <p>The replacement strategy to use. Only available for fleets of type <code>maintain</code>.</p>
@@ -60,7 +62,7 @@ impl FleetSpotCapacityRebalanceBuilder {
     /// <p> <code>launch-before-terminate</code> - EC2 Fleet launches a new replacement Spot Instance when a rebalance notification is emitted for an existing Spot Instance in the fleet, and then, after a delay that you specify (in <code>TerminationDelay</code>), terminates the instances that received a rebalance notification.</p>
     pub fn set_replacement_strategy(
         mut self,
-        input: std::option::Option<crate::types::FleetReplacementStrategy>,
+        input: ::std::option::Option<crate::types::FleetReplacementStrategy>,
     ) -> Self {
         self.replacement_strategy = input;
         self
@@ -70,14 +72,14 @@ impl FleetSpotCapacityRebalanceBuilder {
     /// <p>Not valid when <code>ReplacementStrategy</code> is set to <code>launch</code>.</p>
     /// <p>Valid values: Minimum value of <code>120</code> seconds. Maximum value of <code>7200</code> seconds.</p>
     pub fn termination_delay(mut self, input: i32) -> Self {
-        self.termination_delay = Some(input);
+        self.termination_delay = ::std::option::Option::Some(input);
         self
     }
     /// <p>The amount of time (in seconds) that Amazon EC2 waits before terminating the old Spot Instance after launching a new replacement Spot Instance.</p>
     /// <p>Required when <code>ReplacementStrategy</code> is set to <code>launch-before-terminate</code>.</p>
     /// <p>Not valid when <code>ReplacementStrategy</code> is set to <code>launch</code>.</p>
     /// <p>Valid values: Minimum value of <code>120</code> seconds. Maximum value of <code>7200</code> seconds.</p>
-    pub fn set_termination_delay(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_termination_delay(mut self, input: ::std::option::Option<i32>) -> Self {
         self.termination_delay = input;
         self
     }

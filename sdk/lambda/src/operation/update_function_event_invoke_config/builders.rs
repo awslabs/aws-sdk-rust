@@ -7,47 +7,50 @@ pub use crate::operation::update_function_event_invoke_config::_update_function_
 ///
 /// <p>Updates the configuration for asynchronous invocation for a function, version, or alias.</p>
 /// <p>To configure options for asynchronous invocation, use <code>PutFunctionEventInvokeConfig</code>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateFunctionEventInvokeConfigFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::update_function_event_invoke_config::builders::UpdateFunctionEventInvokeConfigInputBuilder,
 }
 impl UpdateFunctionEventInvokeConfigFluentBuilder {
     /// Creates a new `UpdateFunctionEventInvokeConfig`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_function_event_invoke_config::UpdateFunctionEventInvokeConfig, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::update_function_event_invoke_config::UpdateFunctionEventInvokeConfigError>
+                    pub async fn customize(self) -> ::std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::update_function_event_invoke_config::UpdateFunctionEventInvokeConfig, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                        ::aws_smithy_http::result::SdkError<crate::operation::update_function_event_invoke_config::UpdateFunctionEventInvokeConfigError>
     >{
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::update_function_event_invoke_config::UpdateFunctionEventInvokeConfigOutput, aws_smithy_http::result::SdkError<crate::operation::update_function_event_invoke_config::UpdateFunctionEventInvokeConfigError>>
+                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_function_event_invoke_config::UpdateFunctionEventInvokeConfigOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_function_event_invoke_config::UpdateFunctionEventInvokeConfigError>>
                      {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -58,7 +61,7 @@ impl UpdateFunctionEventInvokeConfigFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> std::result::Result<crate::operation::update_function_event_invoke_config::UpdateFunctionEventInvokeConfigOutput, aws_smithy_http::result::SdkError<crate::operation::update_function_event_invoke_config::UpdateFunctionEventInvokeConfigError>>
+                        pub async fn send(self) -> ::std::result::Result<crate::operation::update_function_event_invoke_config::UpdateFunctionEventInvokeConfigOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_function_event_invoke_config::UpdateFunctionEventInvokeConfigError>>
                          {
         self.send_middleware().await
     }
@@ -70,7 +73,10 @@ impl UpdateFunctionEventInvokeConfigFluentBuilder {
     /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
     /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn function_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.function_name(input.into());
         self
     }
@@ -82,17 +88,20 @@ impl UpdateFunctionEventInvokeConfigFluentBuilder {
     /// <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li>
     /// </ul>
     /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub fn set_function_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_function_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_function_name(input);
         self
     }
     /// <p>A version number or alias name.</p>
-    pub fn qualifier(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn qualifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.qualifier(input.into());
         self
     }
     /// <p>A version number or alias name.</p>
-    pub fn set_qualifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_qualifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_qualifier(input);
         self
     }
@@ -102,7 +111,7 @@ impl UpdateFunctionEventInvokeConfigFluentBuilder {
         self
     }
     /// <p>The maximum number of times to retry when the function returns an error.</p>
-    pub fn set_maximum_retry_attempts(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_maximum_retry_attempts(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_maximum_retry_attempts(input);
         self
     }
@@ -112,7 +121,7 @@ impl UpdateFunctionEventInvokeConfigFluentBuilder {
         self
     }
     /// <p>The maximum age of a request that Lambda sends to a function for processing.</p>
-    pub fn set_maximum_event_age_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_maximum_event_age_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_maximum_event_age_in_seconds(input);
         self
     }
@@ -138,7 +147,7 @@ impl UpdateFunctionEventInvokeConfigFluentBuilder {
     /// </ul>
     pub fn set_destination_config(
         mut self,
-        input: std::option::Option<crate::types::DestinationConfig>,
+        input: ::std::option::Option<crate::types::DestinationConfig>,
     ) -> Self {
         self.inner = self.inner.set_destination_config(input);
         self

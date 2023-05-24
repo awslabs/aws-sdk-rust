@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateIpGroup`](crate::operation::create_ip_group::builders::CreateIpGroupFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`group_name(impl Into<String>)`](crate::operation::create_ip_group::builders::CreateIpGroupFluentBuilder::group_name) / [`set_group_name(Option<String>)`](crate::operation::create_ip_group::builders::CreateIpGroupFluentBuilder::set_group_name): <p>The name of the group.</p>
-    ///   - [`group_desc(impl Into<String>)`](crate::operation::create_ip_group::builders::CreateIpGroupFluentBuilder::group_desc) / [`set_group_desc(Option<String>)`](crate::operation::create_ip_group::builders::CreateIpGroupFluentBuilder::set_group_desc): <p>The description of the group.</p>
+    ///   - [`group_name(impl ::std::convert::Into<String>)`](crate::operation::create_ip_group::builders::CreateIpGroupFluentBuilder::group_name) / [`set_group_name(Option<String>)`](crate::operation::create_ip_group::builders::CreateIpGroupFluentBuilder::set_group_name): <p>The name of the group.</p>
+    ///   - [`group_desc(impl ::std::convert::Into<String>)`](crate::operation::create_ip_group::builders::CreateIpGroupFluentBuilder::group_desc) / [`set_group_desc(Option<String>)`](crate::operation::create_ip_group::builders::CreateIpGroupFluentBuilder::set_group_desc): <p>The description of the group.</p>
     ///   - [`user_rules(Vec<IpRuleItem>)`](crate::operation::create_ip_group::builders::CreateIpGroupFluentBuilder::user_rules) / [`set_user_rules(Option<Vec<IpRuleItem>>)`](crate::operation::create_ip_group::builders::CreateIpGroupFluentBuilder::set_user_rules): <p>The rules to add to the group.</p>
     ///   - [`tags(Vec<Tag>)`](crate::operation::create_ip_group::builders::CreateIpGroupFluentBuilder::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::operation::create_ip_group::builders::CreateIpGroupFluentBuilder::set_tags): <p>The tags. Each WorkSpaces resource can have a maximum of 50 tags.</p>
     /// - On success, responds with [`CreateIpGroupOutput`](crate::operation::create_ip_group::CreateIpGroupOutput) with field(s):

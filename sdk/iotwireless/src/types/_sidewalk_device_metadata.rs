@@ -2,36 +2,36 @@
 
 /// <p>MetaData for Sidewalk device.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SidewalkDeviceMetadata {
     /// <p>The RSSI value.</p>
     #[doc(hidden)]
-    pub rssi: std::option::Option<i32>,
+    pub rssi: ::std::option::Option<i32>,
     /// <p>Sidewalk device battery level.</p>
     #[doc(hidden)]
-    pub battery_level: std::option::Option<crate::types::BatteryLevel>,
+    pub battery_level: ::std::option::Option<crate::types::BatteryLevel>,
     /// <p>Sidewalk device status notification.</p>
     #[doc(hidden)]
-    pub event: std::option::Option<crate::types::Event>,
+    pub event: ::std::option::Option<crate::types::Event>,
     /// <p>Device state defines the device status of sidewalk device.</p>
     #[doc(hidden)]
-    pub device_state: std::option::Option<crate::types::DeviceState>,
+    pub device_state: ::std::option::Option<crate::types::DeviceState>,
 }
 impl SidewalkDeviceMetadata {
     /// <p>The RSSI value.</p>
-    pub fn rssi(&self) -> std::option::Option<i32> {
+    pub fn rssi(&self) -> ::std::option::Option<i32> {
         self.rssi
     }
     /// <p>Sidewalk device battery level.</p>
-    pub fn battery_level(&self) -> std::option::Option<&crate::types::BatteryLevel> {
+    pub fn battery_level(&self) -> ::std::option::Option<&crate::types::BatteryLevel> {
         self.battery_level.as_ref()
     }
     /// <p>Sidewalk device status notification.</p>
-    pub fn event(&self) -> std::option::Option<&crate::types::Event> {
+    pub fn event(&self) -> ::std::option::Option<&crate::types::Event> {
         self.event.as_ref()
     }
     /// <p>Device state defines the device status of sidewalk device.</p>
-    pub fn device_state(&self) -> std::option::Option<&crate::types::DeviceState> {
+    pub fn device_state(&self) -> ::std::option::Option<&crate::types::DeviceState> {
         self.device_state.as_ref()
     }
 }
@@ -44,56 +44,58 @@ impl SidewalkDeviceMetadata {
 
 /// A builder for [`SidewalkDeviceMetadata`](crate::types::SidewalkDeviceMetadata).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SidewalkDeviceMetadataBuilder {
-    pub(crate) rssi: std::option::Option<i32>,
-    pub(crate) battery_level: std::option::Option<crate::types::BatteryLevel>,
-    pub(crate) event: std::option::Option<crate::types::Event>,
-    pub(crate) device_state: std::option::Option<crate::types::DeviceState>,
+    pub(crate) rssi: ::std::option::Option<i32>,
+    pub(crate) battery_level: ::std::option::Option<crate::types::BatteryLevel>,
+    pub(crate) event: ::std::option::Option<crate::types::Event>,
+    pub(crate) device_state: ::std::option::Option<crate::types::DeviceState>,
 }
 impl SidewalkDeviceMetadataBuilder {
     /// <p>The RSSI value.</p>
     pub fn rssi(mut self, input: i32) -> Self {
-        self.rssi = Some(input);
+        self.rssi = ::std::option::Option::Some(input);
         self
     }
     /// <p>The RSSI value.</p>
-    pub fn set_rssi(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_rssi(mut self, input: ::std::option::Option<i32>) -> Self {
         self.rssi = input;
         self
     }
     /// <p>Sidewalk device battery level.</p>
     pub fn battery_level(mut self, input: crate::types::BatteryLevel) -> Self {
-        self.battery_level = Some(input);
+        self.battery_level = ::std::option::Option::Some(input);
         self
     }
     /// <p>Sidewalk device battery level.</p>
     pub fn set_battery_level(
         mut self,
-        input: std::option::Option<crate::types::BatteryLevel>,
+        input: ::std::option::Option<crate::types::BatteryLevel>,
     ) -> Self {
         self.battery_level = input;
         self
     }
     /// <p>Sidewalk device status notification.</p>
     pub fn event(mut self, input: crate::types::Event) -> Self {
-        self.event = Some(input);
+        self.event = ::std::option::Option::Some(input);
         self
     }
     /// <p>Sidewalk device status notification.</p>
-    pub fn set_event(mut self, input: std::option::Option<crate::types::Event>) -> Self {
+    pub fn set_event(mut self, input: ::std::option::Option<crate::types::Event>) -> Self {
         self.event = input;
         self
     }
     /// <p>Device state defines the device status of sidewalk device.</p>
     pub fn device_state(mut self, input: crate::types::DeviceState) -> Self {
-        self.device_state = Some(input);
+        self.device_state = ::std::option::Option::Some(input);
         self
     }
     /// <p>Device state defines the device status of sidewalk device.</p>
     pub fn set_device_state(
         mut self,
-        input: std::option::Option<crate::types::DeviceState>,
+        input: ::std::option::Option<crate::types::DeviceState>,
     ) -> Self {
         self.device_state = input;
         self

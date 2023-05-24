@@ -2,22 +2,22 @@
 
 /// Represents the output of a DescribeLoggingConfiguration operation.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeLoggingConfigurationOutput {
     /// Metadata object containing information about the logging configuration of a workspace.
     #[doc(hidden)]
-    pub logging_configuration: std::option::Option<crate::types::LoggingConfigurationMetadata>,
+    pub logging_configuration: ::std::option::Option<crate::types::LoggingConfigurationMetadata>,
     _request_id: Option<String>,
 }
 impl DescribeLoggingConfigurationOutput {
     /// Metadata object containing information about the logging configuration of a workspace.
     pub fn logging_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::LoggingConfigurationMetadata> {
+    ) -> ::std::option::Option<&crate::types::LoggingConfigurationMetadata> {
         self.logging_configuration.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeLoggingConfigurationOutput {
+impl ::aws_http::request_id::RequestId for DescribeLoggingConfigurationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -31,10 +31,12 @@ impl DescribeLoggingConfigurationOutput {
 
 /// A builder for [`DescribeLoggingConfigurationOutput`](crate::operation::describe_logging_configuration::DescribeLoggingConfigurationOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeLoggingConfigurationOutputBuilder {
     pub(crate) logging_configuration:
-        std::option::Option<crate::types::LoggingConfigurationMetadata>,
+        ::std::option::Option<crate::types::LoggingConfigurationMetadata>,
     _request_id: Option<String>,
 }
 impl DescribeLoggingConfigurationOutputBuilder {
@@ -43,13 +45,13 @@ impl DescribeLoggingConfigurationOutputBuilder {
         mut self,
         input: crate::types::LoggingConfigurationMetadata,
     ) -> Self {
-        self.logging_configuration = Some(input);
+        self.logging_configuration = ::std::option::Option::Some(input);
         self
     }
     /// Metadata object containing information about the logging configuration of a workspace.
     pub fn set_logging_configuration(
         mut self,
-        input: std::option::Option<crate::types::LoggingConfigurationMetadata>,
+        input: ::std::option::Option<crate::types::LoggingConfigurationMetadata>,
     ) -> Self {
         self.logging_configuration = input;
         self

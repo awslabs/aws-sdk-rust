@@ -2,7 +2,7 @@
 
 /// <p>The response to a <code>GetSqlInjectionMatchSet</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSqlInjectionMatchSetOutput {
     /// <p>Information about the <code>SqlInjectionMatchSet</code> that you specified in the <code>GetSqlInjectionMatchSet</code> request. For more information, see the following topics:</p>
     /// <ul>
@@ -11,7 +11,7 @@ pub struct GetSqlInjectionMatchSetOutput {
     /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub sql_injection_match_set: std::option::Option<crate::types::SqlInjectionMatchSet>,
+    pub sql_injection_match_set: ::std::option::Option<crate::types::SqlInjectionMatchSet>,
     _request_id: Option<String>,
 }
 impl GetSqlInjectionMatchSetOutput {
@@ -23,11 +23,11 @@ impl GetSqlInjectionMatchSetOutput {
     /// </ul>
     pub fn sql_injection_match_set(
         &self,
-    ) -> std::option::Option<&crate::types::SqlInjectionMatchSet> {
+    ) -> ::std::option::Option<&crate::types::SqlInjectionMatchSet> {
         self.sql_injection_match_set.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for GetSqlInjectionMatchSetOutput {
+impl ::aws_http::request_id::RequestId for GetSqlInjectionMatchSetOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -43,9 +43,11 @@ impl GetSqlInjectionMatchSetOutput {
 
 /// A builder for [`GetSqlInjectionMatchSetOutput`](crate::operation::get_sql_injection_match_set::GetSqlInjectionMatchSetOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetSqlInjectionMatchSetOutputBuilder {
-    pub(crate) sql_injection_match_set: std::option::Option<crate::types::SqlInjectionMatchSet>,
+    pub(crate) sql_injection_match_set: ::std::option::Option<crate::types::SqlInjectionMatchSet>,
     _request_id: Option<String>,
 }
 impl GetSqlInjectionMatchSetOutputBuilder {
@@ -56,7 +58,7 @@ impl GetSqlInjectionMatchSetOutputBuilder {
     /// <li> <p> <code>FieldToMatch</code>: Contains <code>Data</code> and <code>Type</code> </p> </li>
     /// </ul>
     pub fn sql_injection_match_set(mut self, input: crate::types::SqlInjectionMatchSet) -> Self {
-        self.sql_injection_match_set = Some(input);
+        self.sql_injection_match_set = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the <code>SqlInjectionMatchSet</code> that you specified in the <code>GetSqlInjectionMatchSet</code> request. For more information, see the following topics:</p>
@@ -67,7 +69,7 @@ impl GetSqlInjectionMatchSetOutputBuilder {
     /// </ul>
     pub fn set_sql_injection_match_set(
         mut self,
-        input: std::option::Option<crate::types::SqlInjectionMatchSet>,
+        input: ::std::option::Option<crate::types::SqlInjectionMatchSet>,
     ) -> Self {
         self.sql_injection_match_set = input;
         self

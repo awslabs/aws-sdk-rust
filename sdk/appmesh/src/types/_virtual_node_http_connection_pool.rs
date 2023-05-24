@@ -2,14 +2,14 @@
 
 /// <p>An object that represents a type of connection pool.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VirtualNodeHttpConnectionPool {
     /// <p>Maximum number of outbound TCP connections Envoy can establish concurrently with all hosts in upstream cluster.</p>
     #[doc(hidden)]
     pub max_connections: i32,
     /// <p>Number of overflowing requests after <code>max_connections</code> Envoy will queue to upstream cluster.</p>
     #[doc(hidden)]
-    pub max_pending_requests: std::option::Option<i32>,
+    pub max_pending_requests: ::std::option::Option<i32>,
 }
 impl VirtualNodeHttpConnectionPool {
     /// <p>Maximum number of outbound TCP connections Envoy can establish concurrently with all hosts in upstream cluster.</p>
@@ -17,7 +17,7 @@ impl VirtualNodeHttpConnectionPool {
         self.max_connections
     }
     /// <p>Number of overflowing requests after <code>max_connections</code> Envoy will queue to upstream cluster.</p>
-    pub fn max_pending_requests(&self) -> std::option::Option<i32> {
+    pub fn max_pending_requests(&self) -> ::std::option::Option<i32> {
         self.max_pending_requests
     }
 }
@@ -30,29 +30,31 @@ impl VirtualNodeHttpConnectionPool {
 
 /// A builder for [`VirtualNodeHttpConnectionPool`](crate::types::VirtualNodeHttpConnectionPool).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VirtualNodeHttpConnectionPoolBuilder {
-    pub(crate) max_connections: std::option::Option<i32>,
-    pub(crate) max_pending_requests: std::option::Option<i32>,
+    pub(crate) max_connections: ::std::option::Option<i32>,
+    pub(crate) max_pending_requests: ::std::option::Option<i32>,
 }
 impl VirtualNodeHttpConnectionPoolBuilder {
     /// <p>Maximum number of outbound TCP connections Envoy can establish concurrently with all hosts in upstream cluster.</p>
     pub fn max_connections(mut self, input: i32) -> Self {
-        self.max_connections = Some(input);
+        self.max_connections = ::std::option::Option::Some(input);
         self
     }
     /// <p>Maximum number of outbound TCP connections Envoy can establish concurrently with all hosts in upstream cluster.</p>
-    pub fn set_max_connections(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_connections(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_connections = input;
         self
     }
     /// <p>Number of overflowing requests after <code>max_connections</code> Envoy will queue to upstream cluster.</p>
     pub fn max_pending_requests(mut self, input: i32) -> Self {
-        self.max_pending_requests = Some(input);
+        self.max_pending_requests = ::std::option::Option::Some(input);
         self
     }
     /// <p>Number of overflowing requests after <code>max_connections</code> Envoy will queue to upstream cluster.</p>
-    pub fn set_max_pending_requests(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_pending_requests(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_pending_requests = input;
         self
     }

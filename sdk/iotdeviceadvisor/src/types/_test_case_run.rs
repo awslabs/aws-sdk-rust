@@ -2,17 +2,17 @@
 
 /// <p>Provides the test case run.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TestCaseRun {
     /// <p>Provides the test case run ID.</p>
     #[doc(hidden)]
-    pub test_case_run_id: std::option::Option<std::string::String>,
+    pub test_case_run_id: ::std::option::Option<::std::string::String>,
     /// <p>Provides the test case run definition ID.</p>
     #[doc(hidden)]
-    pub test_case_definition_id: std::option::Option<std::string::String>,
+    pub test_case_definition_id: ::std::option::Option<::std::string::String>,
     /// <p>Provides the test case run definition name.</p>
     #[doc(hidden)]
-    pub test_case_definition_name: std::option::Option<std::string::String>,
+    pub test_case_definition_name: ::std::option::Option<::std::string::String>,
     /// <p>Provides the test case run status. Status is one of the following:</p>
     /// <ul>
     /// <li> <p> <code>PASS</code>: Test passed.</p> </li>
@@ -25,37 +25,37 @@ pub struct TestCaseRun {
     /// <li> <p> <code>ERORR</code>: Test faced an error when running due to an internal issue.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::Status>,
+    pub status: ::std::option::Option<crate::types::Status>,
     /// <p>Provides test case run start time.</p>
     #[doc(hidden)]
-    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Provides test case run end time.</p>
     #[doc(hidden)]
-    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Provides test case run log URL.</p>
     #[doc(hidden)]
-    pub log_url: std::option::Option<std::string::String>,
+    pub log_url: ::std::option::Option<::std::string::String>,
     /// <p>Provides test case run warnings.</p>
     #[doc(hidden)]
-    pub warnings: std::option::Option<std::string::String>,
+    pub warnings: ::std::option::Option<::std::string::String>,
     /// <p>Provides test case run failure result.</p>
     #[doc(hidden)]
-    pub failure: std::option::Option<std::string::String>,
+    pub failure: ::std::option::Option<::std::string::String>,
     /// <p> Provides the test scenarios for the test case run. </p>
     #[doc(hidden)]
-    pub test_scenarios: std::option::Option<std::vec::Vec<crate::types::TestCaseScenario>>,
+    pub test_scenarios: ::std::option::Option<::std::vec::Vec<crate::types::TestCaseScenario>>,
 }
 impl TestCaseRun {
     /// <p>Provides the test case run ID.</p>
-    pub fn test_case_run_id(&self) -> std::option::Option<&str> {
+    pub fn test_case_run_id(&self) -> ::std::option::Option<&str> {
         self.test_case_run_id.as_deref()
     }
     /// <p>Provides the test case run definition ID.</p>
-    pub fn test_case_definition_id(&self) -> std::option::Option<&str> {
+    pub fn test_case_definition_id(&self) -> ::std::option::Option<&str> {
         self.test_case_definition_id.as_deref()
     }
     /// <p>Provides the test case run definition name.</p>
-    pub fn test_case_definition_name(&self) -> std::option::Option<&str> {
+    pub fn test_case_definition_name(&self) -> ::std::option::Option<&str> {
         self.test_case_definition_name.as_deref()
     }
     /// <p>Provides the test case run status. Status is one of the following:</p>
@@ -69,31 +69,31 @@ impl TestCaseRun {
     /// <li> <p> <code>PASS_WITH_WARNINGS</code>: Test passed with warnings.</p> </li>
     /// <li> <p> <code>ERORR</code>: Test faced an error when running due to an internal issue.</p> </li>
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::types::Status> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::Status> {
         self.status.as_ref()
     }
     /// <p>Provides test case run start time.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>Provides test case run end time.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>Provides test case run log URL.</p>
-    pub fn log_url(&self) -> std::option::Option<&str> {
+    pub fn log_url(&self) -> ::std::option::Option<&str> {
         self.log_url.as_deref()
     }
     /// <p>Provides test case run warnings.</p>
-    pub fn warnings(&self) -> std::option::Option<&str> {
+    pub fn warnings(&self) -> ::std::option::Option<&str> {
         self.warnings.as_deref()
     }
     /// <p>Provides test case run failure result.</p>
-    pub fn failure(&self) -> std::option::Option<&str> {
+    pub fn failure(&self) -> ::std::option::Option<&str> {
         self.failure.as_deref()
     }
     /// <p> Provides the test scenarios for the test case run. </p>
-    pub fn test_scenarios(&self) -> std::option::Option<&[crate::types::TestCaseScenario]> {
+    pub fn test_scenarios(&self) -> ::std::option::Option<&[crate::types::TestCaseScenario]> {
         self.test_scenarios.as_deref()
     }
 }
@@ -106,52 +106,67 @@ impl TestCaseRun {
 
 /// A builder for [`TestCaseRun`](crate::types::TestCaseRun).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TestCaseRunBuilder {
-    pub(crate) test_case_run_id: std::option::Option<std::string::String>,
-    pub(crate) test_case_definition_id: std::option::Option<std::string::String>,
-    pub(crate) test_case_definition_name: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::Status>,
-    pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) log_url: std::option::Option<std::string::String>,
-    pub(crate) warnings: std::option::Option<std::string::String>,
-    pub(crate) failure: std::option::Option<std::string::String>,
-    pub(crate) test_scenarios: std::option::Option<std::vec::Vec<crate::types::TestCaseScenario>>,
+    pub(crate) test_case_run_id: ::std::option::Option<::std::string::String>,
+    pub(crate) test_case_definition_id: ::std::option::Option<::std::string::String>,
+    pub(crate) test_case_definition_name: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::Status>,
+    pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) log_url: ::std::option::Option<::std::string::String>,
+    pub(crate) warnings: ::std::option::Option<::std::string::String>,
+    pub(crate) failure: ::std::option::Option<::std::string::String>,
+    pub(crate) test_scenarios:
+        ::std::option::Option<::std::vec::Vec<crate::types::TestCaseScenario>>,
 }
 impl TestCaseRunBuilder {
     /// <p>Provides the test case run ID.</p>
-    pub fn test_case_run_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.test_case_run_id = Some(input.into());
+    pub fn test_case_run_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.test_case_run_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Provides the test case run ID.</p>
-    pub fn set_test_case_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_test_case_run_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.test_case_run_id = input;
         self
     }
     /// <p>Provides the test case run definition ID.</p>
-    pub fn test_case_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.test_case_definition_id = Some(input.into());
+    pub fn test_case_definition_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.test_case_definition_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Provides the test case run definition ID.</p>
     pub fn set_test_case_definition_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.test_case_definition_id = input;
         self
     }
     /// <p>Provides the test case run definition name.</p>
-    pub fn test_case_definition_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.test_case_definition_name = Some(input.into());
+    pub fn test_case_definition_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.test_case_definition_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Provides the test case run definition name.</p>
     pub fn set_test_case_definition_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.test_case_definition_name = input;
         self
@@ -168,7 +183,7 @@ impl TestCaseRunBuilder {
     /// <li> <p> <code>ERORR</code>: Test faced an error when running due to an internal issue.</p> </li>
     /// </ul>
     pub fn status(mut self, input: crate::types::Status) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides the test case run status. Status is one of the following:</p>
@@ -182,60 +197,63 @@ impl TestCaseRunBuilder {
     /// <li> <p> <code>PASS_WITH_WARNINGS</code>: Test passed with warnings.</p> </li>
     /// <li> <p> <code>ERORR</code>: Test faced an error when running due to an internal issue.</p> </li>
     /// </ul>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::Status>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
         self.status = input;
         self
     }
     /// <p>Provides test case run start time.</p>
-    pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.start_time = Some(input);
+    pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.start_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides test case run start time.</p>
     pub fn set_start_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.start_time = input;
         self
     }
     /// <p>Provides test case run end time.</p>
-    pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.end_time = Some(input);
+    pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.end_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides test case run end time.</p>
-    pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_end_time(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
         self.end_time = input;
         self
     }
     /// <p>Provides test case run log URL.</p>
-    pub fn log_url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.log_url = Some(input.into());
+    pub fn log_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.log_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Provides test case run log URL.</p>
-    pub fn set_log_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_log_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_url = input;
         self
     }
     /// <p>Provides test case run warnings.</p>
-    pub fn warnings(mut self, input: impl Into<std::string::String>) -> Self {
-        self.warnings = Some(input.into());
+    pub fn warnings(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.warnings = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Provides test case run warnings.</p>
-    pub fn set_warnings(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_warnings(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.warnings = input;
         self
     }
     /// <p>Provides test case run failure result.</p>
-    pub fn failure(mut self, input: impl Into<std::string::String>) -> Self {
-        self.failure = Some(input.into());
+    pub fn failure(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.failure = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Provides test case run failure result.</p>
-    pub fn set_failure(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_failure(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure = input;
         self
     }
@@ -247,13 +265,13 @@ impl TestCaseRunBuilder {
     pub fn test_scenarios(mut self, input: crate::types::TestCaseScenario) -> Self {
         let mut v = self.test_scenarios.unwrap_or_default();
         v.push(input);
-        self.test_scenarios = Some(v);
+        self.test_scenarios = ::std::option::Option::Some(v);
         self
     }
     /// <p> Provides the test scenarios for the test case run. </p>
     pub fn set_test_scenarios(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TestCaseScenario>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::TestCaseScenario>>,
     ) -> Self {
         self.test_scenarios = input;
         self

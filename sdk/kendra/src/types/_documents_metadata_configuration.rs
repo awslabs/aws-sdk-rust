@@ -2,15 +2,15 @@
 
 /// <p>Document metadata files that contain information such as the document access control information, source URI, document author, and custom attributes. Each metadata file contains metadata about a single document.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DocumentsMetadataConfiguration {
     /// <p>A prefix used to filter metadata configuration files in the Amazon Web Services S3 bucket. The S3 bucket might contain multiple metadata files. Use <code>S3Prefix</code> to include only the desired metadata files.</p>
     #[doc(hidden)]
-    pub s3_prefix: std::option::Option<std::string::String>,
+    pub s3_prefix: ::std::option::Option<::std::string::String>,
 }
 impl DocumentsMetadataConfiguration {
     /// <p>A prefix used to filter metadata configuration files in the Amazon Web Services S3 bucket. The S3 bucket might contain multiple metadata files. Use <code>S3Prefix</code> to include only the desired metadata files.</p>
-    pub fn s3_prefix(&self) -> std::option::Option<&str> {
+    pub fn s3_prefix(&self) -> ::std::option::Option<&str> {
         self.s3_prefix.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl DocumentsMetadataConfiguration {
 
 /// A builder for [`DocumentsMetadataConfiguration`](crate::types::DocumentsMetadataConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DocumentsMetadataConfigurationBuilder {
-    pub(crate) s3_prefix: std::option::Option<std::string::String>,
+    pub(crate) s3_prefix: ::std::option::Option<::std::string::String>,
 }
 impl DocumentsMetadataConfigurationBuilder {
     /// <p>A prefix used to filter metadata configuration files in the Amazon Web Services S3 bucket. The S3 bucket might contain multiple metadata files. Use <code>S3Prefix</code> to include only the desired metadata files.</p>
-    pub fn s3_prefix(mut self, input: impl Into<std::string::String>) -> Self {
-        self.s3_prefix = Some(input.into());
+    pub fn s3_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.s3_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A prefix used to filter metadata configuration files in the Amazon Web Services S3 bucket. The S3 bucket might contain multiple metadata files. Use <code>S3Prefix</code> to include only the desired metadata files.</p>
-    pub fn set_s3_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_s3_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_prefix = input;
         self
     }

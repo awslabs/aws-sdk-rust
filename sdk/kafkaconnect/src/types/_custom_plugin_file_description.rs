@@ -2,18 +2,18 @@
 
 /// <p>Details about a custom plugin file.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomPluginFileDescription {
     /// <p>The hex-encoded MD5 checksum of the custom plugin file. You can use it to validate the file.</p>
     #[doc(hidden)]
-    pub file_md5: std::option::Option<std::string::String>,
+    pub file_md5: ::std::option::Option<::std::string::String>,
     /// <p>The size in bytes of the custom plugin file. You can use it to validate the file.</p>
     #[doc(hidden)]
     pub file_size: i64,
 }
 impl CustomPluginFileDescription {
     /// <p>The hex-encoded MD5 checksum of the custom plugin file. You can use it to validate the file.</p>
-    pub fn file_md5(&self) -> std::option::Option<&str> {
+    pub fn file_md5(&self) -> ::std::option::Option<&str> {
         self.file_md5.as_deref()
     }
     /// <p>The size in bytes of the custom plugin file. You can use it to validate the file.</p>
@@ -30,29 +30,31 @@ impl CustomPluginFileDescription {
 
 /// A builder for [`CustomPluginFileDescription`](crate::types::CustomPluginFileDescription).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CustomPluginFileDescriptionBuilder {
-    pub(crate) file_md5: std::option::Option<std::string::String>,
-    pub(crate) file_size: std::option::Option<i64>,
+    pub(crate) file_md5: ::std::option::Option<::std::string::String>,
+    pub(crate) file_size: ::std::option::Option<i64>,
 }
 impl CustomPluginFileDescriptionBuilder {
     /// <p>The hex-encoded MD5 checksum of the custom plugin file. You can use it to validate the file.</p>
-    pub fn file_md5(mut self, input: impl Into<std::string::String>) -> Self {
-        self.file_md5 = Some(input.into());
+    pub fn file_md5(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.file_md5 = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The hex-encoded MD5 checksum of the custom plugin file. You can use it to validate the file.</p>
-    pub fn set_file_md5(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_file_md5(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_md5 = input;
         self
     }
     /// <p>The size in bytes of the custom plugin file. You can use it to validate the file.</p>
     pub fn file_size(mut self, input: i64) -> Self {
-        self.file_size = Some(input);
+        self.file_size = ::std::option::Option::Some(input);
         self
     }
     /// <p>The size in bytes of the custom plugin file. You can use it to validate the file.</p>
-    pub fn set_file_size(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_file_size(mut self, input: ::std::option::Option<i64>) -> Self {
         self.file_size = input;
         self
     }

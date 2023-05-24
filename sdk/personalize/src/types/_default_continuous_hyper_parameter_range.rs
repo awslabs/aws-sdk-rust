@@ -2,11 +2,11 @@
 
 /// <p>Provides the name and default range of a continuous hyperparameter and whether the hyperparameter is tunable. A tunable hyperparameter can have its value determined during hyperparameter optimization (HPO).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DefaultContinuousHyperParameterRange {
     /// <p>The name of the hyperparameter.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The minimum allowable value for the hyperparameter.</p>
     #[doc(hidden)]
     pub min_value: f64,
@@ -19,7 +19,7 @@ pub struct DefaultContinuousHyperParameterRange {
 }
 impl DefaultContinuousHyperParameterRange {
     /// <p>The name of the hyperparameter.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The minimum allowable value for the hyperparameter.</p>
@@ -44,51 +44,53 @@ impl DefaultContinuousHyperParameterRange {
 
 /// A builder for [`DefaultContinuousHyperParameterRange`](crate::types::DefaultContinuousHyperParameterRange).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DefaultContinuousHyperParameterRangeBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) min_value: std::option::Option<f64>,
-    pub(crate) max_value: std::option::Option<f64>,
-    pub(crate) is_tunable: std::option::Option<bool>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) min_value: ::std::option::Option<f64>,
+    pub(crate) max_value: ::std::option::Option<f64>,
+    pub(crate) is_tunable: ::std::option::Option<bool>,
 }
 impl DefaultContinuousHyperParameterRangeBuilder {
     /// <p>The name of the hyperparameter.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the hyperparameter.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The minimum allowable value for the hyperparameter.</p>
     pub fn min_value(mut self, input: f64) -> Self {
-        self.min_value = Some(input);
+        self.min_value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The minimum allowable value for the hyperparameter.</p>
-    pub fn set_min_value(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_min_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.min_value = input;
         self
     }
     /// <p>The maximum allowable value for the hyperparameter.</p>
     pub fn max_value(mut self, input: f64) -> Self {
-        self.max_value = Some(input);
+        self.max_value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum allowable value for the hyperparameter.</p>
-    pub fn set_max_value(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_max_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.max_value = input;
         self
     }
     /// <p>Whether the hyperparameter is tunable.</p>
     pub fn is_tunable(mut self, input: bool) -> Self {
-        self.is_tunable = Some(input);
+        self.is_tunable = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether the hyperparameter is tunable.</p>
-    pub fn set_is_tunable(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_tunable(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_tunable = input;
         self
     }

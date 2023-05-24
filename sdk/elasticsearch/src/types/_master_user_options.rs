@@ -2,34 +2,34 @@
 
 /// <p>Credentials for the master user: username and password, ARN, or both.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct MasterUserOptions {
     /// <p>ARN for the master user (if IAM is enabled).</p>
     #[doc(hidden)]
-    pub master_user_arn: std::option::Option<std::string::String>,
+    pub master_user_arn: ::std::option::Option<::std::string::String>,
     /// <p>The master user's username, which is stored in the Amazon Elasticsearch Service domain's internal database.</p>
     #[doc(hidden)]
-    pub master_user_name: std::option::Option<std::string::String>,
+    pub master_user_name: ::std::option::Option<::std::string::String>,
     /// <p>The master user's password, which is stored in the Amazon Elasticsearch Service domain's internal database.</p>
     #[doc(hidden)]
-    pub master_user_password: std::option::Option<std::string::String>,
+    pub master_user_password: ::std::option::Option<::std::string::String>,
 }
 impl MasterUserOptions {
     /// <p>ARN for the master user (if IAM is enabled).</p>
-    pub fn master_user_arn(&self) -> std::option::Option<&str> {
+    pub fn master_user_arn(&self) -> ::std::option::Option<&str> {
         self.master_user_arn.as_deref()
     }
     /// <p>The master user's username, which is stored in the Amazon Elasticsearch Service domain's internal database.</p>
-    pub fn master_user_name(&self) -> std::option::Option<&str> {
+    pub fn master_user_name(&self) -> ::std::option::Option<&str> {
         self.master_user_name.as_deref()
     }
     /// <p>The master user's password, which is stored in the Amazon Elasticsearch Service domain's internal database.</p>
-    pub fn master_user_password(&self) -> std::option::Option<&str> {
+    pub fn master_user_password(&self) -> ::std::option::Option<&str> {
         self.master_user_password.as_deref()
     }
 }
-impl std::fmt::Debug for MasterUserOptions {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for MasterUserOptions {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("MasterUserOptions");
         formatter.field("master_user_arn", &self.master_user_arn);
         formatter.field("master_user_name", &"*** Sensitive Data Redacted ***");
@@ -46,42 +46,57 @@ impl MasterUserOptions {
 
 /// A builder for [`MasterUserOptions`](crate::types::MasterUserOptions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct MasterUserOptionsBuilder {
-    pub(crate) master_user_arn: std::option::Option<std::string::String>,
-    pub(crate) master_user_name: std::option::Option<std::string::String>,
-    pub(crate) master_user_password: std::option::Option<std::string::String>,
+    pub(crate) master_user_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) master_user_name: ::std::option::Option<::std::string::String>,
+    pub(crate) master_user_password: ::std::option::Option<::std::string::String>,
 }
 impl MasterUserOptionsBuilder {
     /// <p>ARN for the master user (if IAM is enabled).</p>
-    pub fn master_user_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.master_user_arn = Some(input.into());
+    pub fn master_user_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.master_user_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>ARN for the master user (if IAM is enabled).</p>
-    pub fn set_master_user_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_master_user_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.master_user_arn = input;
         self
     }
     /// <p>The master user's username, which is stored in the Amazon Elasticsearch Service domain's internal database.</p>
-    pub fn master_user_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.master_user_name = Some(input.into());
+    pub fn master_user_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.master_user_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The master user's username, which is stored in the Amazon Elasticsearch Service domain's internal database.</p>
-    pub fn set_master_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_master_user_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.master_user_name = input;
         self
     }
     /// <p>The master user's password, which is stored in the Amazon Elasticsearch Service domain's internal database.</p>
-    pub fn master_user_password(mut self, input: impl Into<std::string::String>) -> Self {
-        self.master_user_password = Some(input.into());
+    pub fn master_user_password(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.master_user_password = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The master user's password, which is stored in the Amazon Elasticsearch Service domain's internal database.</p>
     pub fn set_master_user_password(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.master_user_password = input;
         self
@@ -95,8 +110,8 @@ impl MasterUserOptionsBuilder {
         }
     }
 }
-impl std::fmt::Debug for MasterUserOptionsBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for MasterUserOptionsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("MasterUserOptionsBuilder");
         formatter.field("master_user_arn", &self.master_user_arn);
         formatter.field("master_user_name", &"*** Sensitive Data Redacted ***");

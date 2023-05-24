@@ -68,13 +68,13 @@
 /// </ul>
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum EntityStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -90,7 +90,7 @@ pub enum EntityStatus {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for EntityStatus {
+impl ::std::convert::From<&str> for EntityStatus {
     fn from(s: &str) -> Self {
         match s {
             "COMPLETED" => EntityStatus::Completed,
@@ -104,11 +104,11 @@ impl std::convert::From<&str> for EntityStatus {
         }
     }
 }
-impl std::str::FromStr for EntityStatus {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for EntityStatus {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EntityStatus::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(EntityStatus::from(s))
     }
 }
 impl EntityStatus {
@@ -128,7 +128,7 @@ impl EntityStatus {
         &["COMPLETED", "DELETED", "FAILED", "INPROGRESS", "PENDING"]
     }
 }
-impl AsRef<str> for EntityStatus {
+impl ::std::convert::AsRef<str> for EntityStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

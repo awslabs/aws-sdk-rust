@@ -2,64 +2,64 @@
 
 /// <p>Provides information about the Amazon Redshift database configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RedshiftSourceConfig {
     /// <p>A string identifying the Redshift cluster.</p>
     #[doc(hidden)]
-    pub cluster_identifier: std::option::Option<std::string::String>,
+    pub cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database host.</p>
     #[doc(hidden)]
-    pub database_host: std::option::Option<std::string::String>,
+    pub database_host: ::std::option::Option<::std::string::String>,
     /// <p>The port number where the database can be accessed.</p>
     #[doc(hidden)]
-    pub database_port: std::option::Option<i32>,
+    pub database_port: ::std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) of the AWS Secrets Manager role.</p>
     #[doc(hidden)]
-    pub secret_manager_arn: std::option::Option<std::string::String>,
+    pub secret_manager_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Redshift database name.</p>
     #[doc(hidden)]
-    pub database_name: std::option::Option<std::string::String>,
+    pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>The table name of the Redshift database.</p>
     #[doc(hidden)]
-    pub table_name: std::option::Option<std::string::String>,
+    pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the role providing access to the database.</p>
     #[doc(hidden)]
-    pub role_arn: std::option::Option<std::string::String>,
+    pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Contains information about the Amazon Virtual Private Cloud (VPC) configuration.</p>
     #[doc(hidden)]
-    pub vpc_configuration: std::option::Option<crate::types::VpcConfiguration>,
+    pub vpc_configuration: ::std::option::Option<crate::types::VpcConfiguration>,
 }
 impl RedshiftSourceConfig {
     /// <p>A string identifying the Redshift cluster.</p>
-    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+    pub fn cluster_identifier(&self) -> ::std::option::Option<&str> {
         self.cluster_identifier.as_deref()
     }
     /// <p>The name of the database host.</p>
-    pub fn database_host(&self) -> std::option::Option<&str> {
+    pub fn database_host(&self) -> ::std::option::Option<&str> {
         self.database_host.as_deref()
     }
     /// <p>The port number where the database can be accessed.</p>
-    pub fn database_port(&self) -> std::option::Option<i32> {
+    pub fn database_port(&self) -> ::std::option::Option<i32> {
         self.database_port
     }
     /// <p>The Amazon Resource Name (ARN) of the AWS Secrets Manager role.</p>
-    pub fn secret_manager_arn(&self) -> std::option::Option<&str> {
+    pub fn secret_manager_arn(&self) -> ::std::option::Option<&str> {
         self.secret_manager_arn.as_deref()
     }
     /// <p>The Redshift database name.</p>
-    pub fn database_name(&self) -> std::option::Option<&str> {
+    pub fn database_name(&self) -> ::std::option::Option<&str> {
         self.database_name.as_deref()
     }
     /// <p>The table name of the Redshift database.</p>
-    pub fn table_name(&self) -> std::option::Option<&str> {
+    pub fn table_name(&self) -> ::std::option::Option<&str> {
         self.table_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the role providing access to the database.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
     /// <p>Contains information about the Amazon Virtual Private Cloud (VPC) configuration.</p>
-    pub fn vpc_configuration(&self) -> std::option::Option<&crate::types::VpcConfiguration> {
+    pub fn vpc_configuration(&self) -> ::std::option::Option<&crate::types::VpcConfiguration> {
         self.vpc_configuration.as_ref()
     }
 }
@@ -72,103 +72,123 @@ impl RedshiftSourceConfig {
 
 /// A builder for [`RedshiftSourceConfig`](crate::types::RedshiftSourceConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RedshiftSourceConfigBuilder {
-    pub(crate) cluster_identifier: std::option::Option<std::string::String>,
-    pub(crate) database_host: std::option::Option<std::string::String>,
-    pub(crate) database_port: std::option::Option<i32>,
-    pub(crate) secret_manager_arn: std::option::Option<std::string::String>,
-    pub(crate) database_name: std::option::Option<std::string::String>,
-    pub(crate) table_name: std::option::Option<std::string::String>,
-    pub(crate) role_arn: std::option::Option<std::string::String>,
-    pub(crate) vpc_configuration: std::option::Option<crate::types::VpcConfiguration>,
+    pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) database_host: ::std::option::Option<::std::string::String>,
+    pub(crate) database_port: ::std::option::Option<i32>,
+    pub(crate) secret_manager_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) database_name: ::std::option::Option<::std::string::String>,
+    pub(crate) table_name: ::std::option::Option<::std::string::String>,
+    pub(crate) role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) vpc_configuration: ::std::option::Option<crate::types::VpcConfiguration>,
 }
 impl RedshiftSourceConfigBuilder {
     /// <p>A string identifying the Redshift cluster.</p>
-    pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cluster_identifier = Some(input.into());
+    pub fn cluster_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A string identifying the Redshift cluster.</p>
     pub fn set_cluster_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.cluster_identifier = input;
         self
     }
     /// <p>The name of the database host.</p>
-    pub fn database_host(mut self, input: impl Into<std::string::String>) -> Self {
-        self.database_host = Some(input.into());
+    pub fn database_host(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.database_host = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the database host.</p>
-    pub fn set_database_host(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_database_host(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.database_host = input;
         self
     }
     /// <p>The port number where the database can be accessed.</p>
     pub fn database_port(mut self, input: i32) -> Self {
-        self.database_port = Some(input);
+        self.database_port = ::std::option::Option::Some(input);
         self
     }
     /// <p>The port number where the database can be accessed.</p>
-    pub fn set_database_port(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_database_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.database_port = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the AWS Secrets Manager role.</p>
-    pub fn secret_manager_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.secret_manager_arn = Some(input.into());
+    pub fn secret_manager_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.secret_manager_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the AWS Secrets Manager role.</p>
     pub fn set_secret_manager_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.secret_manager_arn = input;
         self
     }
     /// <p>The Redshift database name.</p>
-    pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.database_name = Some(input.into());
+    pub fn database_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Redshift database name.</p>
-    pub fn set_database_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_database_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.database_name = input;
         self
     }
     /// <p>The table name of the Redshift database.</p>
-    pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.table_name = Some(input.into());
+    pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.table_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The table name of the Redshift database.</p>
-    pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_name = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the role providing access to the database.</p>
-    pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.role_arn = Some(input.into());
+    pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the role providing access to the database.</p>
-    pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
     /// <p>Contains information about the Amazon Virtual Private Cloud (VPC) configuration.</p>
     pub fn vpc_configuration(mut self, input: crate::types::VpcConfiguration) -> Self {
-        self.vpc_configuration = Some(input);
+        self.vpc_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains information about the Amazon Virtual Private Cloud (VPC) configuration.</p>
     pub fn set_vpc_configuration(
         mut self,
-        input: std::option::Option<crate::types::VpcConfiguration>,
+        input: ::std::option::Option<crate::types::VpcConfiguration>,
     ) -> Self {
         self.vpc_configuration = input;
         self

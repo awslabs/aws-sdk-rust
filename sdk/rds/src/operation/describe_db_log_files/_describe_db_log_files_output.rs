@@ -2,30 +2,30 @@
 
 /// <p>The response from a call to <code>DescribeDBLogFiles</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDbLogFilesOutput {
     /// <p>The DB log files returned.</p>
     #[doc(hidden)]
     pub describe_db_log_files:
-        std::option::Option<std::vec::Vec<crate::types::DescribeDbLogFilesDetails>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::DescribeDbLogFilesDetails>>,
     /// <p>A pagination token that can be used in a later <code>DescribeDBLogFiles</code> request.</p>
     #[doc(hidden)]
-    pub marker: std::option::Option<std::string::String>,
+    pub marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeDbLogFilesOutput {
     /// <p>The DB log files returned.</p>
     pub fn describe_db_log_files(
         &self,
-    ) -> std::option::Option<&[crate::types::DescribeDbLogFilesDetails]> {
+    ) -> ::std::option::Option<&[crate::types::DescribeDbLogFilesDetails]> {
         self.describe_db_log_files.as_deref()
     }
     /// <p>A pagination token that can be used in a later <code>DescribeDBLogFiles</code> request.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeDbLogFilesOutput {
+impl ::aws_http::request_id::RequestId for DescribeDbLogFilesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -41,11 +41,13 @@ impl DescribeDbLogFilesOutput {
 
 /// A builder for [`DescribeDbLogFilesOutput`](crate::operation::describe_db_log_files::DescribeDbLogFilesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeDbLogFilesOutputBuilder {
     pub(crate) describe_db_log_files:
-        std::option::Option<std::vec::Vec<crate::types::DescribeDbLogFilesDetails>>,
-    pub(crate) marker: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::DescribeDbLogFilesDetails>>,
+    pub(crate) marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeDbLogFilesOutputBuilder {
@@ -57,24 +59,24 @@ impl DescribeDbLogFilesOutputBuilder {
     pub fn describe_db_log_files(mut self, input: crate::types::DescribeDbLogFilesDetails) -> Self {
         let mut v = self.describe_db_log_files.unwrap_or_default();
         v.push(input);
-        self.describe_db_log_files = Some(v);
+        self.describe_db_log_files = ::std::option::Option::Some(v);
         self
     }
     /// <p>The DB log files returned.</p>
     pub fn set_describe_db_log_files(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DescribeDbLogFilesDetails>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DescribeDbLogFilesDetails>>,
     ) -> Self {
         self.describe_db_log_files = input;
         self
     }
     /// <p>A pagination token that can be used in a later <code>DescribeDBLogFiles</code> request.</p>
-    pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-        self.marker = Some(input.into());
+    pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A pagination token that can be used in a later <code>DescribeDBLogFiles</code> request.</p>
-    pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
     }

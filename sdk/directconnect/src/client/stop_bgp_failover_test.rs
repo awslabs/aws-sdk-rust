@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopBgpFailoverTest`](crate::operation::stop_bgp_failover_test::builders::StopBgpFailoverTestFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`virtual_interface_id(impl Into<String>)`](crate::operation::stop_bgp_failover_test::builders::StopBgpFailoverTestFluentBuilder::virtual_interface_id) / [`set_virtual_interface_id(Option<String>)`](crate::operation::stop_bgp_failover_test::builders::StopBgpFailoverTestFluentBuilder::set_virtual_interface_id): <p>The ID of the virtual interface you no longer want to test.</p>
+    ///   - [`virtual_interface_id(impl ::std::convert::Into<String>)`](crate::operation::stop_bgp_failover_test::builders::StopBgpFailoverTestFluentBuilder::virtual_interface_id) / [`set_virtual_interface_id(Option<String>)`](crate::operation::stop_bgp_failover_test::builders::StopBgpFailoverTestFluentBuilder::set_virtual_interface_id): <p>The ID of the virtual interface you no longer want to test.</p>
     /// - On success, responds with [`StopBgpFailoverTestOutput`](crate::operation::stop_bgp_failover_test::StopBgpFailoverTestOutput) with field(s):
     ///   - [`virtual_interface_test(Option<VirtualInterfaceTestHistory>)`](crate::operation::stop_bgp_failover_test::StopBgpFailoverTestOutput::virtual_interface_test): <p>Information about the virtual interface failover test.</p>
     /// - On failure, responds with [`SdkError<StopBgpFailoverTestError>`](crate::operation::stop_bgp_failover_test::StopBgpFailoverTestError)

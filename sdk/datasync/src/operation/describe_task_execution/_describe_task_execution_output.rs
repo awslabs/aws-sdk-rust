@@ -2,29 +2,29 @@
 
 /// <p>DescribeTaskExecutionResponse</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTaskExecutionOutput {
     /// <p>The Amazon Resource Name (ARN) of the task execution that was described. <code>TaskExecutionArn</code> is hierarchical and includes <code>TaskArn</code> for the task that was executed. </p>
     /// <p>For example, a <code>TaskExecution</code> value with the ARN <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2/execution/exec-08ef1e88ec491019b</code> executed the task with the ARN <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2</code>. </p>
     #[doc(hidden)]
-    pub task_execution_arn: std::option::Option<std::string::String>,
+    pub task_execution_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the task execution. </p>
     /// <p>For detailed information about task execution statuses, see Understanding Task Statuses in the <i>DataSync User Guide.</i> </p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::TaskExecutionStatus>,
+    pub status: ::std::option::Option<crate::types::TaskExecutionStatus>,
     /// <p>Configures your DataSync task settings. These options include how DataSync handles files, objects, and their associated metadata. You also can specify how DataSync verifies data integrity, set bandwidth limits for your task, among other options.</p>
     /// <p>Each task setting has a default value. Unless you need to, you don't have to configure any of these <code>Options</code> before starting your task.</p>
     #[doc(hidden)]
-    pub options: std::option::Option<crate::types::Options>,
+    pub options: ::std::option::Option<crate::types::Options>,
     /// <p>A list of filter rules that exclude specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
     #[doc(hidden)]
-    pub excludes: std::option::Option<std::vec::Vec<crate::types::FilterRule>>,
+    pub excludes: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>,
     /// <p>A list of filter rules that include specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
     #[doc(hidden)]
-    pub includes: std::option::Option<std::vec::Vec<crate::types::FilterRule>>,
+    pub includes: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>,
     /// <p>The time that the task execution was started.</p>
     #[doc(hidden)]
-    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The expected number of files that is to be transferred over the network. This value is calculated during the <code>PREPARING</code> phase before the <code>TRANSFERRING</code> phase of the task execution. This value is the expected number of files to be transferred. It's calculated based on comparing the content of the source and destination locations and finding the delta that needs to be transferred. </p>
     #[doc(hidden)]
     pub estimated_files_to_transfer: i64,
@@ -43,7 +43,7 @@ pub struct DescribeTaskExecutionOutput {
     pub bytes_transferred: i64,
     /// <p>The result of the task execution.</p>
     #[doc(hidden)]
-    pub result: std::option::Option<crate::types::TaskExecutionResultDetail>,
+    pub result: ::std::option::Option<crate::types::TaskExecutionResultDetail>,
     /// <p>The physical number of bytes transferred over the network after compression was applied. In most cases, this number is less than <code>BytesTransferred</code> unless the data isn't compressible.</p>
     #[doc(hidden)]
     pub bytes_compressed: i64,
@@ -52,29 +52,29 @@ pub struct DescribeTaskExecutionOutput {
 impl DescribeTaskExecutionOutput {
     /// <p>The Amazon Resource Name (ARN) of the task execution that was described. <code>TaskExecutionArn</code> is hierarchical and includes <code>TaskArn</code> for the task that was executed. </p>
     /// <p>For example, a <code>TaskExecution</code> value with the ARN <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2/execution/exec-08ef1e88ec491019b</code> executed the task with the ARN <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2</code>. </p>
-    pub fn task_execution_arn(&self) -> std::option::Option<&str> {
+    pub fn task_execution_arn(&self) -> ::std::option::Option<&str> {
         self.task_execution_arn.as_deref()
     }
     /// <p>The status of the task execution. </p>
     /// <p>For detailed information about task execution statuses, see Understanding Task Statuses in the <i>DataSync User Guide.</i> </p>
-    pub fn status(&self) -> std::option::Option<&crate::types::TaskExecutionStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::TaskExecutionStatus> {
         self.status.as_ref()
     }
     /// <p>Configures your DataSync task settings. These options include how DataSync handles files, objects, and their associated metadata. You also can specify how DataSync verifies data integrity, set bandwidth limits for your task, among other options.</p>
     /// <p>Each task setting has a default value. Unless you need to, you don't have to configure any of these <code>Options</code> before starting your task.</p>
-    pub fn options(&self) -> std::option::Option<&crate::types::Options> {
+    pub fn options(&self) -> ::std::option::Option<&crate::types::Options> {
         self.options.as_ref()
     }
     /// <p>A list of filter rules that exclude specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
-    pub fn excludes(&self) -> std::option::Option<&[crate::types::FilterRule]> {
+    pub fn excludes(&self) -> ::std::option::Option<&[crate::types::FilterRule]> {
         self.excludes.as_deref()
     }
     /// <p>A list of filter rules that include specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
-    pub fn includes(&self) -> std::option::Option<&[crate::types::FilterRule]> {
+    pub fn includes(&self) -> ::std::option::Option<&[crate::types::FilterRule]> {
         self.includes.as_deref()
     }
     /// <p>The time that the task execution was started.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The expected number of files that is to be transferred over the network. This value is calculated during the <code>PREPARING</code> phase before the <code>TRANSFERRING</code> phase of the task execution. This value is the expected number of files to be transferred. It's calculated based on comparing the content of the source and destination locations and finding the delta that needs to be transferred. </p>
@@ -99,7 +99,7 @@ impl DescribeTaskExecutionOutput {
         self.bytes_transferred
     }
     /// <p>The result of the task execution.</p>
-    pub fn result(&self) -> std::option::Option<&crate::types::TaskExecutionResultDetail> {
+    pub fn result(&self) -> ::std::option::Option<&crate::types::TaskExecutionResultDetail> {
         self.result.as_ref()
     }
     /// <p>The physical number of bytes transferred over the network after compression was applied. In most cases, this number is less than <code>BytesTransferred</code> unless the data isn't compressible.</p>
@@ -107,7 +107,7 @@ impl DescribeTaskExecutionOutput {
         self.bytes_compressed
     }
 }
-impl aws_http::request_id::RequestId for DescribeTaskExecutionOutput {
+impl ::aws_http::request_id::RequestId for DescribeTaskExecutionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -123,35 +123,40 @@ impl DescribeTaskExecutionOutput {
 
 /// A builder for [`DescribeTaskExecutionOutput`](crate::operation::describe_task_execution::DescribeTaskExecutionOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeTaskExecutionOutputBuilder {
-    pub(crate) task_execution_arn: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::TaskExecutionStatus>,
-    pub(crate) options: std::option::Option<crate::types::Options>,
-    pub(crate) excludes: std::option::Option<std::vec::Vec<crate::types::FilterRule>>,
-    pub(crate) includes: std::option::Option<std::vec::Vec<crate::types::FilterRule>>,
-    pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) estimated_files_to_transfer: std::option::Option<i64>,
-    pub(crate) estimated_bytes_to_transfer: std::option::Option<i64>,
-    pub(crate) files_transferred: std::option::Option<i64>,
-    pub(crate) bytes_written: std::option::Option<i64>,
-    pub(crate) bytes_transferred: std::option::Option<i64>,
-    pub(crate) result: std::option::Option<crate::types::TaskExecutionResultDetail>,
-    pub(crate) bytes_compressed: std::option::Option<i64>,
+    pub(crate) task_execution_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::TaskExecutionStatus>,
+    pub(crate) options: ::std::option::Option<crate::types::Options>,
+    pub(crate) excludes: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>,
+    pub(crate) includes: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>,
+    pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) estimated_files_to_transfer: ::std::option::Option<i64>,
+    pub(crate) estimated_bytes_to_transfer: ::std::option::Option<i64>,
+    pub(crate) files_transferred: ::std::option::Option<i64>,
+    pub(crate) bytes_written: ::std::option::Option<i64>,
+    pub(crate) bytes_transferred: ::std::option::Option<i64>,
+    pub(crate) result: ::std::option::Option<crate::types::TaskExecutionResultDetail>,
+    pub(crate) bytes_compressed: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }
 impl DescribeTaskExecutionOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the task execution that was described. <code>TaskExecutionArn</code> is hierarchical and includes <code>TaskArn</code> for the task that was executed. </p>
     /// <p>For example, a <code>TaskExecution</code> value with the ARN <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2/execution/exec-08ef1e88ec491019b</code> executed the task with the ARN <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2</code>. </p>
-    pub fn task_execution_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.task_execution_arn = Some(input.into());
+    pub fn task_execution_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.task_execution_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the task execution that was described. <code>TaskExecutionArn</code> is hierarchical and includes <code>TaskArn</code> for the task that was executed. </p>
     /// <p>For example, a <code>TaskExecution</code> value with the ARN <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2/execution/exec-08ef1e88ec491019b</code> executed the task with the ARN <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2</code>. </p>
     pub fn set_task_execution_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.task_execution_arn = input;
         self
@@ -159,14 +164,14 @@ impl DescribeTaskExecutionOutputBuilder {
     /// <p>The status of the task execution. </p>
     /// <p>For detailed information about task execution statuses, see Understanding Task Statuses in the <i>DataSync User Guide.</i> </p>
     pub fn status(mut self, input: crate::types::TaskExecutionStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the task execution. </p>
     /// <p>For detailed information about task execution statuses, see Understanding Task Statuses in the <i>DataSync User Guide.</i> </p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::TaskExecutionStatus>,
+        input: ::std::option::Option<crate::types::TaskExecutionStatus>,
     ) -> Self {
         self.status = input;
         self
@@ -174,12 +179,12 @@ impl DescribeTaskExecutionOutputBuilder {
     /// <p>Configures your DataSync task settings. These options include how DataSync handles files, objects, and their associated metadata. You also can specify how DataSync verifies data integrity, set bandwidth limits for your task, among other options.</p>
     /// <p>Each task setting has a default value. Unless you need to, you don't have to configure any of these <code>Options</code> before starting your task.</p>
     pub fn options(mut self, input: crate::types::Options) -> Self {
-        self.options = Some(input);
+        self.options = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configures your DataSync task settings. These options include how DataSync handles files, objects, and their associated metadata. You also can specify how DataSync verifies data integrity, set bandwidth limits for your task, among other options.</p>
     /// <p>Each task setting has a default value. Unless you need to, you don't have to configure any of these <code>Options</code> before starting your task.</p>
-    pub fn set_options(mut self, input: std::option::Option<crate::types::Options>) -> Self {
+    pub fn set_options(mut self, input: ::std::option::Option<crate::types::Options>) -> Self {
         self.options = input;
         self
     }
@@ -191,13 +196,13 @@ impl DescribeTaskExecutionOutputBuilder {
     pub fn excludes(mut self, input: crate::types::FilterRule) -> Self {
         let mut v = self.excludes.unwrap_or_default();
         v.push(input);
-        self.excludes = Some(v);
+        self.excludes = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of filter rules that exclude specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
     pub fn set_excludes(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::FilterRule>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>,
     ) -> Self {
         self.excludes = input;
         self
@@ -210,102 +215,102 @@ impl DescribeTaskExecutionOutputBuilder {
     pub fn includes(mut self, input: crate::types::FilterRule) -> Self {
         let mut v = self.includes.unwrap_or_default();
         v.push(input);
-        self.includes = Some(v);
+        self.includes = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of filter rules that include specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
     pub fn set_includes(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::FilterRule>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>,
     ) -> Self {
         self.includes = input;
         self
     }
     /// <p>The time that the task execution was started.</p>
-    pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.start_time = Some(input);
+    pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.start_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time that the task execution was started.</p>
     pub fn set_start_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.start_time = input;
         self
     }
     /// <p>The expected number of files that is to be transferred over the network. This value is calculated during the <code>PREPARING</code> phase before the <code>TRANSFERRING</code> phase of the task execution. This value is the expected number of files to be transferred. It's calculated based on comparing the content of the source and destination locations and finding the delta that needs to be transferred. </p>
     pub fn estimated_files_to_transfer(mut self, input: i64) -> Self {
-        self.estimated_files_to_transfer = Some(input);
+        self.estimated_files_to_transfer = ::std::option::Option::Some(input);
         self
     }
     /// <p>The expected number of files that is to be transferred over the network. This value is calculated during the <code>PREPARING</code> phase before the <code>TRANSFERRING</code> phase of the task execution. This value is the expected number of files to be transferred. It's calculated based on comparing the content of the source and destination locations and finding the delta that needs to be transferred. </p>
-    pub fn set_estimated_files_to_transfer(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_estimated_files_to_transfer(mut self, input: ::std::option::Option<i64>) -> Self {
         self.estimated_files_to_transfer = input;
         self
     }
     /// <p>The estimated physical number of bytes that is to be transferred over the network.</p>
     pub fn estimated_bytes_to_transfer(mut self, input: i64) -> Self {
-        self.estimated_bytes_to_transfer = Some(input);
+        self.estimated_bytes_to_transfer = ::std::option::Option::Some(input);
         self
     }
     /// <p>The estimated physical number of bytes that is to be transferred over the network.</p>
-    pub fn set_estimated_bytes_to_transfer(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_estimated_bytes_to_transfer(mut self, input: ::std::option::Option<i64>) -> Self {
         self.estimated_bytes_to_transfer = input;
         self
     }
     /// <p>The actual number of files that was transferred over the network. This value is calculated and updated on an ongoing basis during the <code>TRANSFERRING</code> phase of the task execution. It's updated periodically when each file is read from the source and sent over the network. </p>
     /// <p>If failures occur during a transfer, this value can be less than <code>EstimatedFilesToTransfer</code>. In some cases, this value can also be greater than <code>EstimatedFilesToTransfer</code>. This element is implementation-specific for some location types, so don't use it as an indicator for a correct file number or to monitor your task execution.</p>
     pub fn files_transferred(mut self, input: i64) -> Self {
-        self.files_transferred = Some(input);
+        self.files_transferred = ::std::option::Option::Some(input);
         self
     }
     /// <p>The actual number of files that was transferred over the network. This value is calculated and updated on an ongoing basis during the <code>TRANSFERRING</code> phase of the task execution. It's updated periodically when each file is read from the source and sent over the network. </p>
     /// <p>If failures occur during a transfer, this value can be less than <code>EstimatedFilesToTransfer</code>. In some cases, this value can also be greater than <code>EstimatedFilesToTransfer</code>. This element is implementation-specific for some location types, so don't use it as an indicator for a correct file number or to monitor your task execution.</p>
-    pub fn set_files_transferred(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_files_transferred(mut self, input: ::std::option::Option<i64>) -> Self {
         self.files_transferred = input;
         self
     }
     /// <p>The number of logical bytes written to the destination Amazon Web Services storage resource.</p>
     pub fn bytes_written(mut self, input: i64) -> Self {
-        self.bytes_written = Some(input);
+        self.bytes_written = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of logical bytes written to the destination Amazon Web Services storage resource.</p>
-    pub fn set_bytes_written(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_bytes_written(mut self, input: ::std::option::Option<i64>) -> Self {
         self.bytes_written = input;
         self
     }
     /// <p>The total number of bytes that are involved in the transfer. For the number of bytes sent over the network, see <code>BytesCompressed</code>. </p>
     pub fn bytes_transferred(mut self, input: i64) -> Self {
-        self.bytes_transferred = Some(input);
+        self.bytes_transferred = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total number of bytes that are involved in the transfer. For the number of bytes sent over the network, see <code>BytesCompressed</code>. </p>
-    pub fn set_bytes_transferred(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_bytes_transferred(mut self, input: ::std::option::Option<i64>) -> Self {
         self.bytes_transferred = input;
         self
     }
     /// <p>The result of the task execution.</p>
     pub fn result(mut self, input: crate::types::TaskExecutionResultDetail) -> Self {
-        self.result = Some(input);
+        self.result = ::std::option::Option::Some(input);
         self
     }
     /// <p>The result of the task execution.</p>
     pub fn set_result(
         mut self,
-        input: std::option::Option<crate::types::TaskExecutionResultDetail>,
+        input: ::std::option::Option<crate::types::TaskExecutionResultDetail>,
     ) -> Self {
         self.result = input;
         self
     }
     /// <p>The physical number of bytes transferred over the network after compression was applied. In most cases, this number is less than <code>BytesTransferred</code> unless the data isn't compressible.</p>
     pub fn bytes_compressed(mut self, input: i64) -> Self {
-        self.bytes_compressed = Some(input);
+        self.bytes_compressed = ::std::option::Option::Some(input);
         self
     }
     /// <p>The physical number of bytes transferred over the network after compression was applied. In most cases, this number is less than <code>BytesTransferred</code> unless the data isn't compressible.</p>
-    pub fn set_bytes_compressed(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_bytes_compressed(mut self, input: ::std::option::Option<i64>) -> Self {
         self.bytes_compressed = input;
         self
     }

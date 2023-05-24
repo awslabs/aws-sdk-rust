@@ -40,13 +40,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum KeyAlgorithm {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,7 +60,7 @@ pub enum KeyAlgorithm {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for KeyAlgorithm {
+impl ::std::convert::From<&str> for KeyAlgorithm {
     fn from(s: &str) -> Self {
         match s {
             "EC_prime256v1" => KeyAlgorithm::EcPrime256v1,
@@ -73,11 +73,11 @@ impl std::convert::From<&str> for KeyAlgorithm {
         }
     }
 }
-impl std::str::FromStr for KeyAlgorithm {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for KeyAlgorithm {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(KeyAlgorithm::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(KeyAlgorithm::from(s))
     }
 }
 impl KeyAlgorithm {
@@ -96,7 +96,7 @@ impl KeyAlgorithm {
         &["EC_prime256v1", "EC_secp384r1", "RSA_2048", "RSA_4096"]
     }
 }
-impl AsRef<str> for KeyAlgorithm {
+impl ::std::convert::AsRef<str> for KeyAlgorithm {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -4,64 +4,64 @@
 /// <p> <code>segmentation_descriptor</code> messages must be sent with the <code>time_signal</code> message type.</p>
 /// <p>See the <code>segmentation_descriptor()</code> table of the 2022 SCTE-35 specification for more information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SegmentationDescriptor {
     /// <p>The Event Identifier to assign to the <code>segmentation_descriptor.segmentation_event_id</code> message, as defined in section 10.3.3.1 of the 2022 SCTE-35 specification. The default value is 1.</p>
     #[doc(hidden)]
-    pub segmentation_event_id: std::option::Option<i32>,
+    pub segmentation_event_id: ::std::option::Option<i32>,
     /// <p>The Upid Type to assign to the <code>segmentation_descriptor.segmentation_upid_type</code> message, as defined in section 10.3.3.1 of the 2022 SCTE-35 specification. Values must be between 0 and 256, inclusive. The default value is 14.</p>
     #[doc(hidden)]
-    pub segmentation_upid_type: std::option::Option<i32>,
+    pub segmentation_upid_type: ::std::option::Option<i32>,
     /// <p>The Upid to assign to the <code>segmentation_descriptor.segmentation_upid</code> message, as defined in section 10.3.3.1 of the 2022 SCTE-35 specification. The value must be a hexadecimal string containing only the characters 0 though 9 and A through F. The default value is "" (an empty string).</p>
     #[doc(hidden)]
-    pub segmentation_upid: std::option::Option<std::string::String>,
+    pub segmentation_upid: ::std::option::Option<::std::string::String>,
     /// <p>The Type Identifier to assign to the <code>segmentation_descriptor.segmentation_type_id</code> message, as defined in section 10.3.3.1 of the 2022 SCTE-35 specification. Values must be between 0 and 256, inclusive. The default value is 48.</p>
     #[doc(hidden)]
-    pub segmentation_type_id: std::option::Option<i32>,
+    pub segmentation_type_id: ::std::option::Option<i32>,
     /// <p>The segment number to assign to the <code>segmentation_descriptor.segment_num</code> message, as defined in section 10.3.3.1 of the 2022 SCTE-35 specification Values must be between 0 and 256, inclusive. The default value is 0.</p>
     #[doc(hidden)]
-    pub segment_num: std::option::Option<i32>,
+    pub segment_num: ::std::option::Option<i32>,
     /// <p>The number of segments expected, which is assigned to the <code>segmentation_descriptor.segments_expectedS</code> message, as defined in section 10.3.3.1 of the 2022 SCTE-35 specification Values must be between 0 and 256, inclusive. The default value is 0.</p>
     #[doc(hidden)]
-    pub segments_expected: std::option::Option<i32>,
+    pub segments_expected: ::std::option::Option<i32>,
     /// <p>The sub-segment number to assign to the <code>segmentation_descriptor.sub_segment_num</code> message, as defined in section 10.3.3.1 of the 2022 SCTE-35 specification. Values must be between 0 and 256, inclusive. The defualt value is null.</p>
     #[doc(hidden)]
-    pub sub_segment_num: std::option::Option<i32>,
+    pub sub_segment_num: ::std::option::Option<i32>,
     /// <p>The number of sub-segments expected, which is assigned to the <code>segmentation_descriptor.sub_segments_expected</code> message, as defined in section 10.3.3.1 of the 2022 SCTE-35 specification. Values must be between 0 and 256, inclusive. The default value is null.</p>
     #[doc(hidden)]
-    pub sub_segments_expected: std::option::Option<i32>,
+    pub sub_segments_expected: ::std::option::Option<i32>,
 }
 impl SegmentationDescriptor {
     /// <p>The Event Identifier to assign to the <code>segmentation_descriptor.segmentation_event_id</code> message, as defined in section 10.3.3.1 of the 2022 SCTE-35 specification. The default value is 1.</p>
-    pub fn segmentation_event_id(&self) -> std::option::Option<i32> {
+    pub fn segmentation_event_id(&self) -> ::std::option::Option<i32> {
         self.segmentation_event_id
     }
     /// <p>The Upid Type to assign to the <code>segmentation_descriptor.segmentation_upid_type</code> message, as defined in section 10.3.3.1 of the 2022 SCTE-35 specification. Values must be between 0 and 256, inclusive. The default value is 14.</p>
-    pub fn segmentation_upid_type(&self) -> std::option::Option<i32> {
+    pub fn segmentation_upid_type(&self) -> ::std::option::Option<i32> {
         self.segmentation_upid_type
     }
     /// <p>The Upid to assign to the <code>segmentation_descriptor.segmentation_upid</code> message, as defined in section 10.3.3.1 of the 2022 SCTE-35 specification. The value must be a hexadecimal string containing only the characters 0 though 9 and A through F. The default value is "" (an empty string).</p>
-    pub fn segmentation_upid(&self) -> std::option::Option<&str> {
+    pub fn segmentation_upid(&self) -> ::std::option::Option<&str> {
         self.segmentation_upid.as_deref()
     }
     /// <p>The Type Identifier to assign to the <code>segmentation_descriptor.segmentation_type_id</code> message, as defined in section 10.3.3.1 of the 2022 SCTE-35 specification. Values must be between 0 and 256, inclusive. The default value is 48.</p>
-    pub fn segmentation_type_id(&self) -> std::option::Option<i32> {
+    pub fn segmentation_type_id(&self) -> ::std::option::Option<i32> {
         self.segmentation_type_id
     }
     /// <p>The segment number to assign to the <code>segmentation_descriptor.segment_num</code> message, as defined in section 10.3.3.1 of the 2022 SCTE-35 specification Values must be between 0 and 256, inclusive. The default value is 0.</p>
-    pub fn segment_num(&self) -> std::option::Option<i32> {
+    pub fn segment_num(&self) -> ::std::option::Option<i32> {
         self.segment_num
     }
     /// <p>The number of segments expected, which is assigned to the <code>segmentation_descriptor.segments_expectedS</code> message, as defined in section 10.3.3.1 of the 2022 SCTE-35 specification Values must be between 0 and 256, inclusive. The default value is 0.</p>
-    pub fn segments_expected(&self) -> std::option::Option<i32> {
+    pub fn segments_expected(&self) -> ::std::option::Option<i32> {
         self.segments_expected
     }
     /// <p>The sub-segment number to assign to the <code>segmentation_descriptor.sub_segment_num</code> message, as defined in section 10.3.3.1 of the 2022 SCTE-35 specification. Values must be between 0 and 256, inclusive. The defualt value is null.</p>
-    pub fn sub_segment_num(&self) -> std::option::Option<i32> {
+    pub fn sub_segment_num(&self) -> ::std::option::Option<i32> {
         self.sub_segment_num
     }
     /// <p>The number of sub-segments expected, which is assigned to the <code>segmentation_descriptor.sub_segments_expected</code> message, as defined in section 10.3.3.1 of the 2022 SCTE-35 specification. Values must be between 0 and 256, inclusive. The default value is null.</p>
-    pub fn sub_segments_expected(&self) -> std::option::Option<i32> {
+    pub fn sub_segments_expected(&self) -> ::std::option::Option<i32> {
         self.sub_segments_expected
     }
 }
@@ -74,98 +74,103 @@ impl SegmentationDescriptor {
 
 /// A builder for [`SegmentationDescriptor`](crate::types::SegmentationDescriptor).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SegmentationDescriptorBuilder {
-    pub(crate) segmentation_event_id: std::option::Option<i32>,
-    pub(crate) segmentation_upid_type: std::option::Option<i32>,
-    pub(crate) segmentation_upid: std::option::Option<std::string::String>,
-    pub(crate) segmentation_type_id: std::option::Option<i32>,
-    pub(crate) segment_num: std::option::Option<i32>,
-    pub(crate) segments_expected: std::option::Option<i32>,
-    pub(crate) sub_segment_num: std::option::Option<i32>,
-    pub(crate) sub_segments_expected: std::option::Option<i32>,
+    pub(crate) segmentation_event_id: ::std::option::Option<i32>,
+    pub(crate) segmentation_upid_type: ::std::option::Option<i32>,
+    pub(crate) segmentation_upid: ::std::option::Option<::std::string::String>,
+    pub(crate) segmentation_type_id: ::std::option::Option<i32>,
+    pub(crate) segment_num: ::std::option::Option<i32>,
+    pub(crate) segments_expected: ::std::option::Option<i32>,
+    pub(crate) sub_segment_num: ::std::option::Option<i32>,
+    pub(crate) sub_segments_expected: ::std::option::Option<i32>,
 }
 impl SegmentationDescriptorBuilder {
     /// <p>The Event Identifier to assign to the <code>segmentation_descriptor.segmentation_event_id</code> message, as defined in section 10.3.3.1 of the 2022 SCTE-35 specification. The default value is 1.</p>
     pub fn segmentation_event_id(mut self, input: i32) -> Self {
-        self.segmentation_event_id = Some(input);
+        self.segmentation_event_id = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Event Identifier to assign to the <code>segmentation_descriptor.segmentation_event_id</code> message, as defined in section 10.3.3.1 of the 2022 SCTE-35 specification. The default value is 1.</p>
-    pub fn set_segmentation_event_id(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_segmentation_event_id(mut self, input: ::std::option::Option<i32>) -> Self {
         self.segmentation_event_id = input;
         self
     }
     /// <p>The Upid Type to assign to the <code>segmentation_descriptor.segmentation_upid_type</code> message, as defined in section 10.3.3.1 of the 2022 SCTE-35 specification. Values must be between 0 and 256, inclusive. The default value is 14.</p>
     pub fn segmentation_upid_type(mut self, input: i32) -> Self {
-        self.segmentation_upid_type = Some(input);
+        self.segmentation_upid_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Upid Type to assign to the <code>segmentation_descriptor.segmentation_upid_type</code> message, as defined in section 10.3.3.1 of the 2022 SCTE-35 specification. Values must be between 0 and 256, inclusive. The default value is 14.</p>
-    pub fn set_segmentation_upid_type(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_segmentation_upid_type(mut self, input: ::std::option::Option<i32>) -> Self {
         self.segmentation_upid_type = input;
         self
     }
     /// <p>The Upid to assign to the <code>segmentation_descriptor.segmentation_upid</code> message, as defined in section 10.3.3.1 of the 2022 SCTE-35 specification. The value must be a hexadecimal string containing only the characters 0 though 9 and A through F. The default value is "" (an empty string).</p>
-    pub fn segmentation_upid(mut self, input: impl Into<std::string::String>) -> Self {
-        self.segmentation_upid = Some(input.into());
+    pub fn segmentation_upid(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.segmentation_upid = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Upid to assign to the <code>segmentation_descriptor.segmentation_upid</code> message, as defined in section 10.3.3.1 of the 2022 SCTE-35 specification. The value must be a hexadecimal string containing only the characters 0 though 9 and A through F. The default value is "" (an empty string).</p>
     pub fn set_segmentation_upid(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.segmentation_upid = input;
         self
     }
     /// <p>The Type Identifier to assign to the <code>segmentation_descriptor.segmentation_type_id</code> message, as defined in section 10.3.3.1 of the 2022 SCTE-35 specification. Values must be between 0 and 256, inclusive. The default value is 48.</p>
     pub fn segmentation_type_id(mut self, input: i32) -> Self {
-        self.segmentation_type_id = Some(input);
+        self.segmentation_type_id = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Type Identifier to assign to the <code>segmentation_descriptor.segmentation_type_id</code> message, as defined in section 10.3.3.1 of the 2022 SCTE-35 specification. Values must be between 0 and 256, inclusive. The default value is 48.</p>
-    pub fn set_segmentation_type_id(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_segmentation_type_id(mut self, input: ::std::option::Option<i32>) -> Self {
         self.segmentation_type_id = input;
         self
     }
     /// <p>The segment number to assign to the <code>segmentation_descriptor.segment_num</code> message, as defined in section 10.3.3.1 of the 2022 SCTE-35 specification Values must be between 0 and 256, inclusive. The default value is 0.</p>
     pub fn segment_num(mut self, input: i32) -> Self {
-        self.segment_num = Some(input);
+        self.segment_num = ::std::option::Option::Some(input);
         self
     }
     /// <p>The segment number to assign to the <code>segmentation_descriptor.segment_num</code> message, as defined in section 10.3.3.1 of the 2022 SCTE-35 specification Values must be between 0 and 256, inclusive. The default value is 0.</p>
-    pub fn set_segment_num(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_segment_num(mut self, input: ::std::option::Option<i32>) -> Self {
         self.segment_num = input;
         self
     }
     /// <p>The number of segments expected, which is assigned to the <code>segmentation_descriptor.segments_expectedS</code> message, as defined in section 10.3.3.1 of the 2022 SCTE-35 specification Values must be between 0 and 256, inclusive. The default value is 0.</p>
     pub fn segments_expected(mut self, input: i32) -> Self {
-        self.segments_expected = Some(input);
+        self.segments_expected = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of segments expected, which is assigned to the <code>segmentation_descriptor.segments_expectedS</code> message, as defined in section 10.3.3.1 of the 2022 SCTE-35 specification Values must be between 0 and 256, inclusive. The default value is 0.</p>
-    pub fn set_segments_expected(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_segments_expected(mut self, input: ::std::option::Option<i32>) -> Self {
         self.segments_expected = input;
         self
     }
     /// <p>The sub-segment number to assign to the <code>segmentation_descriptor.sub_segment_num</code> message, as defined in section 10.3.3.1 of the 2022 SCTE-35 specification. Values must be between 0 and 256, inclusive. The defualt value is null.</p>
     pub fn sub_segment_num(mut self, input: i32) -> Self {
-        self.sub_segment_num = Some(input);
+        self.sub_segment_num = ::std::option::Option::Some(input);
         self
     }
     /// <p>The sub-segment number to assign to the <code>segmentation_descriptor.sub_segment_num</code> message, as defined in section 10.3.3.1 of the 2022 SCTE-35 specification. Values must be between 0 and 256, inclusive. The defualt value is null.</p>
-    pub fn set_sub_segment_num(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_sub_segment_num(mut self, input: ::std::option::Option<i32>) -> Self {
         self.sub_segment_num = input;
         self
     }
     /// <p>The number of sub-segments expected, which is assigned to the <code>segmentation_descriptor.sub_segments_expected</code> message, as defined in section 10.3.3.1 of the 2022 SCTE-35 specification. Values must be between 0 and 256, inclusive. The default value is null.</p>
     pub fn sub_segments_expected(mut self, input: i32) -> Self {
-        self.sub_segments_expected = Some(input);
+        self.sub_segments_expected = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of sub-segments expected, which is assigned to the <code>segmentation_descriptor.sub_segments_expected</code> message, as defined in section 10.3.3.1 of the 2022 SCTE-35 specification. Values must be between 0 and 256, inclusive. The default value is null.</p>
-    pub fn set_sub_segments_expected(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_sub_segments_expected(mut self, input: ::std::option::Option<i32>) -> Self {
         self.sub_segments_expected = input;
         self
     }

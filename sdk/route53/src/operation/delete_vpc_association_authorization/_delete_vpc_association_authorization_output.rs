@@ -2,11 +2,11 @@
 
 /// <p>Empty response for the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteVpcAssociationAuthorizationOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for DeleteVpcAssociationAuthorizationOutput {
+impl ::aws_http::request_id::RequestId for DeleteVpcAssociationAuthorizationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -20,7 +20,9 @@ impl DeleteVpcAssociationAuthorizationOutput {
 
 /// A builder for [`DeleteVpcAssociationAuthorizationOutput`](crate::operation::delete_vpc_association_authorization::DeleteVpcAssociationAuthorizationOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteVpcAssociationAuthorizationOutputBuilder {
     _request_id: Option<String>,
 }

@@ -2,36 +2,36 @@
 
 /// <p>Identifies an Config rule that evaluated an Amazon Web Services resource, and provides the type and ID of the resource that the rule evaluated.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluationResultQualifier {
     /// <p>The name of the Config rule that was used in the evaluation.</p>
     #[doc(hidden)]
-    pub config_rule_name: std::option::Option<std::string::String>,
+    pub config_rule_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of Amazon Web Services resource that was evaluated.</p>
     #[doc(hidden)]
-    pub resource_type: std::option::Option<std::string::String>,
+    pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the evaluated Amazon Web Services resource.</p>
     #[doc(hidden)]
-    pub resource_id: std::option::Option<std::string::String>,
+    pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The mode of an evaluation. The valid values are Detective or Proactive.</p>
     #[doc(hidden)]
-    pub evaluation_mode: std::option::Option<crate::types::EvaluationMode>,
+    pub evaluation_mode: ::std::option::Option<crate::types::EvaluationMode>,
 }
 impl EvaluationResultQualifier {
     /// <p>The name of the Config rule that was used in the evaluation.</p>
-    pub fn config_rule_name(&self) -> std::option::Option<&str> {
+    pub fn config_rule_name(&self) -> ::std::option::Option<&str> {
         self.config_rule_name.as_deref()
     }
     /// <p>The type of Amazon Web Services resource that was evaluated.</p>
-    pub fn resource_type(&self) -> std::option::Option<&str> {
+    pub fn resource_type(&self) -> ::std::option::Option<&str> {
         self.resource_type.as_deref()
     }
     /// <p>The ID of the evaluated Amazon Web Services resource.</p>
-    pub fn resource_id(&self) -> std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<&str> {
         self.resource_id.as_deref()
     }
     /// <p>The mode of an evaluation. The valid values are Detective or Proactive.</p>
-    pub fn evaluation_mode(&self) -> std::option::Option<&crate::types::EvaluationMode> {
+    pub fn evaluation_mode(&self) -> ::std::option::Option<&crate::types::EvaluationMode> {
         self.evaluation_mode.as_ref()
     }
 }
@@ -44,53 +44,67 @@ impl EvaluationResultQualifier {
 
 /// A builder for [`EvaluationResultQualifier`](crate::types::EvaluationResultQualifier).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EvaluationResultQualifierBuilder {
-    pub(crate) config_rule_name: std::option::Option<std::string::String>,
-    pub(crate) resource_type: std::option::Option<std::string::String>,
-    pub(crate) resource_id: std::option::Option<std::string::String>,
-    pub(crate) evaluation_mode: std::option::Option<crate::types::EvaluationMode>,
+    pub(crate) config_rule_name: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_type: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_id: ::std::option::Option<::std::string::String>,
+    pub(crate) evaluation_mode: ::std::option::Option<crate::types::EvaluationMode>,
 }
 impl EvaluationResultQualifierBuilder {
     /// <p>The name of the Config rule that was used in the evaluation.</p>
-    pub fn config_rule_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.config_rule_name = Some(input.into());
+    pub fn config_rule_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.config_rule_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Config rule that was used in the evaluation.</p>
-    pub fn set_config_rule_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_config_rule_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.config_rule_name = input;
         self
     }
     /// <p>The type of Amazon Web Services resource that was evaluated.</p>
-    pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_type = Some(input.into());
+    pub fn resource_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of Amazon Web Services resource that was evaluated.</p>
-    pub fn set_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.resource_type = input;
         self
     }
     /// <p>The ID of the evaluated Amazon Web Services resource.</p>
-    pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_id = Some(input.into());
+    pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the evaluated Amazon Web Services resource.</p>
-    pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
     }
     /// <p>The mode of an evaluation. The valid values are Detective or Proactive.</p>
     pub fn evaluation_mode(mut self, input: crate::types::EvaluationMode) -> Self {
-        self.evaluation_mode = Some(input);
+        self.evaluation_mode = ::std::option::Option::Some(input);
         self
     }
     /// <p>The mode of an evaluation. The valid values are Detective or Proactive.</p>
     pub fn set_evaluation_mode(
         mut self,
-        input: std::option::Option<crate::types::EvaluationMode>,
+        input: ::std::option::Option<crate::types::EvaluationMode>,
     ) -> Self {
         self.evaluation_mode = input;
         self

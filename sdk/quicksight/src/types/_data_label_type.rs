@@ -3,43 +3,45 @@
 /// <p>The option that determines the data label type.</p>
 /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataLabelType {
     /// <p>Determines the label configuration for the entire field.</p>
     #[doc(hidden)]
-    pub field_label_type: std::option::Option<crate::types::FieldLabelType>,
+    pub field_label_type: ::std::option::Option<crate::types::FieldLabelType>,
     /// <p>The option that specifies individual data values for labels.</p>
     #[doc(hidden)]
-    pub data_path_label_type: std::option::Option<crate::types::DataPathLabelType>,
+    pub data_path_label_type: ::std::option::Option<crate::types::DataPathLabelType>,
     /// <p>Determines the label configuration for range end value in a visual.</p>
     #[doc(hidden)]
-    pub range_ends_label_type: std::option::Option<crate::types::RangeEndsLabelType>,
+    pub range_ends_label_type: ::std::option::Option<crate::types::RangeEndsLabelType>,
     /// <p>Determines the label configuration for the minimum value in a visual.</p>
     #[doc(hidden)]
-    pub minimum_label_type: std::option::Option<crate::types::MinimumLabelType>,
+    pub minimum_label_type: ::std::option::Option<crate::types::MinimumLabelType>,
     /// <p>Determines the label configuration for the maximum value in a visual.</p>
     #[doc(hidden)]
-    pub maximum_label_type: std::option::Option<crate::types::MaximumLabelType>,
+    pub maximum_label_type: ::std::option::Option<crate::types::MaximumLabelType>,
 }
 impl DataLabelType {
     /// <p>Determines the label configuration for the entire field.</p>
-    pub fn field_label_type(&self) -> std::option::Option<&crate::types::FieldLabelType> {
+    pub fn field_label_type(&self) -> ::std::option::Option<&crate::types::FieldLabelType> {
         self.field_label_type.as_ref()
     }
     /// <p>The option that specifies individual data values for labels.</p>
-    pub fn data_path_label_type(&self) -> std::option::Option<&crate::types::DataPathLabelType> {
+    pub fn data_path_label_type(&self) -> ::std::option::Option<&crate::types::DataPathLabelType> {
         self.data_path_label_type.as_ref()
     }
     /// <p>Determines the label configuration for range end value in a visual.</p>
-    pub fn range_ends_label_type(&self) -> std::option::Option<&crate::types::RangeEndsLabelType> {
+    pub fn range_ends_label_type(
+        &self,
+    ) -> ::std::option::Option<&crate::types::RangeEndsLabelType> {
         self.range_ends_label_type.as_ref()
     }
     /// <p>Determines the label configuration for the minimum value in a visual.</p>
-    pub fn minimum_label_type(&self) -> std::option::Option<&crate::types::MinimumLabelType> {
+    pub fn minimum_label_type(&self) -> ::std::option::Option<&crate::types::MinimumLabelType> {
         self.minimum_label_type.as_ref()
     }
     /// <p>Determines the label configuration for the maximum value in a visual.</p>
-    pub fn maximum_label_type(&self) -> std::option::Option<&crate::types::MaximumLabelType> {
+    pub fn maximum_label_type(&self) -> ::std::option::Option<&crate::types::MaximumLabelType> {
         self.maximum_label_type.as_ref()
     }
 }
@@ -52,76 +54,78 @@ impl DataLabelType {
 
 /// A builder for [`DataLabelType`](crate::types::DataLabelType).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DataLabelTypeBuilder {
-    pub(crate) field_label_type: std::option::Option<crate::types::FieldLabelType>,
-    pub(crate) data_path_label_type: std::option::Option<crate::types::DataPathLabelType>,
-    pub(crate) range_ends_label_type: std::option::Option<crate::types::RangeEndsLabelType>,
-    pub(crate) minimum_label_type: std::option::Option<crate::types::MinimumLabelType>,
-    pub(crate) maximum_label_type: std::option::Option<crate::types::MaximumLabelType>,
+    pub(crate) field_label_type: ::std::option::Option<crate::types::FieldLabelType>,
+    pub(crate) data_path_label_type: ::std::option::Option<crate::types::DataPathLabelType>,
+    pub(crate) range_ends_label_type: ::std::option::Option<crate::types::RangeEndsLabelType>,
+    pub(crate) minimum_label_type: ::std::option::Option<crate::types::MinimumLabelType>,
+    pub(crate) maximum_label_type: ::std::option::Option<crate::types::MaximumLabelType>,
 }
 impl DataLabelTypeBuilder {
     /// <p>Determines the label configuration for the entire field.</p>
     pub fn field_label_type(mut self, input: crate::types::FieldLabelType) -> Self {
-        self.field_label_type = Some(input);
+        self.field_label_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Determines the label configuration for the entire field.</p>
     pub fn set_field_label_type(
         mut self,
-        input: std::option::Option<crate::types::FieldLabelType>,
+        input: ::std::option::Option<crate::types::FieldLabelType>,
     ) -> Self {
         self.field_label_type = input;
         self
     }
     /// <p>The option that specifies individual data values for labels.</p>
     pub fn data_path_label_type(mut self, input: crate::types::DataPathLabelType) -> Self {
-        self.data_path_label_type = Some(input);
+        self.data_path_label_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The option that specifies individual data values for labels.</p>
     pub fn set_data_path_label_type(
         mut self,
-        input: std::option::Option<crate::types::DataPathLabelType>,
+        input: ::std::option::Option<crate::types::DataPathLabelType>,
     ) -> Self {
         self.data_path_label_type = input;
         self
     }
     /// <p>Determines the label configuration for range end value in a visual.</p>
     pub fn range_ends_label_type(mut self, input: crate::types::RangeEndsLabelType) -> Self {
-        self.range_ends_label_type = Some(input);
+        self.range_ends_label_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Determines the label configuration for range end value in a visual.</p>
     pub fn set_range_ends_label_type(
         mut self,
-        input: std::option::Option<crate::types::RangeEndsLabelType>,
+        input: ::std::option::Option<crate::types::RangeEndsLabelType>,
     ) -> Self {
         self.range_ends_label_type = input;
         self
     }
     /// <p>Determines the label configuration for the minimum value in a visual.</p>
     pub fn minimum_label_type(mut self, input: crate::types::MinimumLabelType) -> Self {
-        self.minimum_label_type = Some(input);
+        self.minimum_label_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Determines the label configuration for the minimum value in a visual.</p>
     pub fn set_minimum_label_type(
         mut self,
-        input: std::option::Option<crate::types::MinimumLabelType>,
+        input: ::std::option::Option<crate::types::MinimumLabelType>,
     ) -> Self {
         self.minimum_label_type = input;
         self
     }
     /// <p>Determines the label configuration for the maximum value in a visual.</p>
     pub fn maximum_label_type(mut self, input: crate::types::MaximumLabelType) -> Self {
-        self.maximum_label_type = Some(input);
+        self.maximum_label_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Determines the label configuration for the maximum value in a visual.</p>
     pub fn set_maximum_label_type(
         mut self,
-        input: std::option::Option<crate::types::MaximumLabelType>,
+        input: ::std::option::Option<crate::types::MaximumLabelType>,
     ) -> Self {
         self.maximum_label_type = input;
         self

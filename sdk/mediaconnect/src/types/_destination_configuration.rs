@@ -2,36 +2,36 @@
 
 /// The transport parameters that are associated with an outbound media stream.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DestinationConfiguration {
     /// The IP address where contents of the media stream will be sent.
     #[doc(hidden)]
-    pub destination_ip: std::option::Option<std::string::String>,
+    pub destination_ip: ::std::option::Option<::std::string::String>,
     /// The port to use when the content of the media stream is distributed to the output.
     #[doc(hidden)]
-    pub destination_port: std::option::Option<i32>,
+    pub destination_port: ::std::option::Option<i32>,
     /// The VPC interface that is used for the media stream associated with the output.
     #[doc(hidden)]
-    pub interface: std::option::Option<crate::types::Interface>,
+    pub interface: ::std::option::Option<crate::types::Interface>,
     /// The IP address that the receiver requires in order to establish a connection with the flow. This value is represented by the elastic network interface IP address of the VPC. This field applies only to outputs that use the CDI or ST 2110 JPEG XS protocol.
     #[doc(hidden)]
-    pub outbound_ip: std::option::Option<std::string::String>,
+    pub outbound_ip: ::std::option::Option<::std::string::String>,
 }
 impl DestinationConfiguration {
     /// The IP address where contents of the media stream will be sent.
-    pub fn destination_ip(&self) -> std::option::Option<&str> {
+    pub fn destination_ip(&self) -> ::std::option::Option<&str> {
         self.destination_ip.as_deref()
     }
     /// The port to use when the content of the media stream is distributed to the output.
-    pub fn destination_port(&self) -> std::option::Option<i32> {
+    pub fn destination_port(&self) -> ::std::option::Option<i32> {
         self.destination_port
     }
     /// The VPC interface that is used for the media stream associated with the output.
-    pub fn interface(&self) -> std::option::Option<&crate::types::Interface> {
+    pub fn interface(&self) -> ::std::option::Option<&crate::types::Interface> {
         self.interface.as_ref()
     }
     /// The IP address that the receiver requires in order to establish a connection with the flow. This value is represented by the elastic network interface IP address of the VPC. This field applies only to outputs that use the CDI or ST 2110 JPEG XS protocol.
-    pub fn outbound_ip(&self) -> std::option::Option<&str> {
+    pub fn outbound_ip(&self) -> ::std::option::Option<&str> {
         self.outbound_ip.as_deref()
     }
 }
@@ -44,51 +44,59 @@ impl DestinationConfiguration {
 
 /// A builder for [`DestinationConfiguration`](crate::types::DestinationConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DestinationConfigurationBuilder {
-    pub(crate) destination_ip: std::option::Option<std::string::String>,
-    pub(crate) destination_port: std::option::Option<i32>,
-    pub(crate) interface: std::option::Option<crate::types::Interface>,
-    pub(crate) outbound_ip: std::option::Option<std::string::String>,
+    pub(crate) destination_ip: ::std::option::Option<::std::string::String>,
+    pub(crate) destination_port: ::std::option::Option<i32>,
+    pub(crate) interface: ::std::option::Option<crate::types::Interface>,
+    pub(crate) outbound_ip: ::std::option::Option<::std::string::String>,
 }
 impl DestinationConfigurationBuilder {
     /// The IP address where contents of the media stream will be sent.
-    pub fn destination_ip(mut self, input: impl Into<std::string::String>) -> Self {
-        self.destination_ip = Some(input.into());
+    pub fn destination_ip(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.destination_ip = ::std::option::Option::Some(input.into());
         self
     }
     /// The IP address where contents of the media stream will be sent.
-    pub fn set_destination_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_destination_ip(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.destination_ip = input;
         self
     }
     /// The port to use when the content of the media stream is distributed to the output.
     pub fn destination_port(mut self, input: i32) -> Self {
-        self.destination_port = Some(input);
+        self.destination_port = ::std::option::Option::Some(input);
         self
     }
     /// The port to use when the content of the media stream is distributed to the output.
-    pub fn set_destination_port(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_destination_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.destination_port = input;
         self
     }
     /// The VPC interface that is used for the media stream associated with the output.
     pub fn interface(mut self, input: crate::types::Interface) -> Self {
-        self.interface = Some(input);
+        self.interface = ::std::option::Option::Some(input);
         self
     }
     /// The VPC interface that is used for the media stream associated with the output.
-    pub fn set_interface(mut self, input: std::option::Option<crate::types::Interface>) -> Self {
+    pub fn set_interface(mut self, input: ::std::option::Option<crate::types::Interface>) -> Self {
         self.interface = input;
         self
     }
     /// The IP address that the receiver requires in order to establish a connection with the flow. This value is represented by the elastic network interface IP address of the VPC. This field applies only to outputs that use the CDI or ST 2110 JPEG XS protocol.
-    pub fn outbound_ip(mut self, input: impl Into<std::string::String>) -> Self {
-        self.outbound_ip = Some(input.into());
+    pub fn outbound_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.outbound_ip = ::std::option::Option::Some(input.into());
         self
     }
     /// The IP address that the receiver requires in order to establish a connection with the flow. This value is represented by the elastic network interface IP address of the VPC. This field applies only to outputs that use the CDI or ST 2110 JPEG XS protocol.
-    pub fn set_outbound_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_outbound_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.outbound_ip = input;
         self
     }

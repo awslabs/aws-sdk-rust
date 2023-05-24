@@ -2,22 +2,22 @@
 
 /// To insert ID3 tags in your output, specify two values. Use ID3 tag (Id3) to specify the base 64 encoded string and use Timecode (TimeCode) to specify the time when the tag should be inserted. To insert multiple ID3 tags in your output, create multiple instances of ID3 insertion (Id3Insertion).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Id3Insertion {
     /// Use ID3 tag (Id3) to provide a fully formed ID3 tag in base64-encode format.
     #[doc(hidden)]
-    pub id3: std::option::Option<std::string::String>,
+    pub id3: ::std::option::Option<::std::string::String>,
     /// Provide a Timecode (TimeCode) in HH:MM:SS:FF or HH:MM:SS;FF format.
     #[doc(hidden)]
-    pub timecode: std::option::Option<std::string::String>,
+    pub timecode: ::std::option::Option<::std::string::String>,
 }
 impl Id3Insertion {
     /// Use ID3 tag (Id3) to provide a fully formed ID3 tag in base64-encode format.
-    pub fn id3(&self) -> std::option::Option<&str> {
+    pub fn id3(&self) -> ::std::option::Option<&str> {
         self.id3.as_deref()
     }
     /// Provide a Timecode (TimeCode) in HH:MM:SS:FF or HH:MM:SS;FF format.
-    pub fn timecode(&self) -> std::option::Option<&str> {
+    pub fn timecode(&self) -> ::std::option::Option<&str> {
         self.timecode.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl Id3Insertion {
 
 /// A builder for [`Id3Insertion`](crate::types::Id3Insertion).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct Id3InsertionBuilder {
-    pub(crate) id3: std::option::Option<std::string::String>,
-    pub(crate) timecode: std::option::Option<std::string::String>,
+    pub(crate) id3: ::std::option::Option<::std::string::String>,
+    pub(crate) timecode: ::std::option::Option<::std::string::String>,
 }
 impl Id3InsertionBuilder {
     /// Use ID3 tag (Id3) to provide a fully formed ID3 tag in base64-encode format.
-    pub fn id3(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id3 = Some(input.into());
+    pub fn id3(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id3 = ::std::option::Option::Some(input.into());
         self
     }
     /// Use ID3 tag (Id3) to provide a fully formed ID3 tag in base64-encode format.
-    pub fn set_id3(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id3(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id3 = input;
         self
     }
     /// Provide a Timecode (TimeCode) in HH:MM:SS:FF or HH:MM:SS;FF format.
-    pub fn timecode(mut self, input: impl Into<std::string::String>) -> Self {
-        self.timecode = Some(input.into());
+    pub fn timecode(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.timecode = ::std::option::Option::Some(input.into());
         self
     }
     /// Provide a Timecode (TimeCode) in HH:MM:SS:FF or HH:MM:SS;FF format.
-    pub fn set_timecode(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_timecode(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.timecode = input;
         self
     }

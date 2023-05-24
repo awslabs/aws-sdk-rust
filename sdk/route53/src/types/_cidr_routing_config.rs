@@ -3,22 +3,22 @@
 /// <p>The object that is specified in resource record set object when you are linking a resource record set to a CIDR location.</p>
 /// <p>A <code>LocationName</code> with an asterisk “*” can be used to create a default CIDR record. <code>CollectionId</code> is still required for default record.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CidrRoutingConfig {
     /// <p>The CIDR collection ID.</p>
     #[doc(hidden)]
-    pub collection_id: std::option::Option<std::string::String>,
+    pub collection_id: ::std::option::Option<::std::string::String>,
     /// <p>The CIDR collection location name.</p>
     #[doc(hidden)]
-    pub location_name: std::option::Option<std::string::String>,
+    pub location_name: ::std::option::Option<::std::string::String>,
 }
 impl CidrRoutingConfig {
     /// <p>The CIDR collection ID.</p>
-    pub fn collection_id(&self) -> std::option::Option<&str> {
+    pub fn collection_id(&self) -> ::std::option::Option<&str> {
         self.collection_id.as_deref()
     }
     /// <p>The CIDR collection location name.</p>
-    pub fn location_name(&self) -> std::option::Option<&str> {
+    pub fn location_name(&self) -> ::std::option::Option<&str> {
         self.location_name.as_deref()
     }
 }
@@ -31,29 +31,43 @@ impl CidrRoutingConfig {
 
 /// A builder for [`CidrRoutingConfig`](crate::types::CidrRoutingConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CidrRoutingConfigBuilder {
-    pub(crate) collection_id: std::option::Option<std::string::String>,
-    pub(crate) location_name: std::option::Option<std::string::String>,
+    pub(crate) collection_id: ::std::option::Option<::std::string::String>,
+    pub(crate) location_name: ::std::option::Option<::std::string::String>,
 }
 impl CidrRoutingConfigBuilder {
     /// <p>The CIDR collection ID.</p>
-    pub fn collection_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.collection_id = Some(input.into());
+    pub fn collection_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.collection_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The CIDR collection ID.</p>
-    pub fn set_collection_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_collection_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.collection_id = input;
         self
     }
     /// <p>The CIDR collection location name.</p>
-    pub fn location_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.location_name = Some(input.into());
+    pub fn location_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.location_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The CIDR collection location name.</p>
-    pub fn set_location_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_location_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.location_name = input;
         self
     }

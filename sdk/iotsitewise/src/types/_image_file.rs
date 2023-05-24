@@ -2,22 +2,22 @@
 
 /// <p>Contains an image file.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImageFile {
     /// <p>The image file contents, represented as a base64-encoded string. The file size must be less than 1 MB.</p>
     #[doc(hidden)]
-    pub data: std::option::Option<aws_smithy_types::Blob>,
+    pub data: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The file type of the image.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::ImageFileType>,
+    pub r#type: ::std::option::Option<crate::types::ImageFileType>,
 }
 impl ImageFile {
     /// <p>The image file contents, represented as a base64-encoded string. The file size must be less than 1 MB.</p>
-    pub fn data(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn data(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
         self.data.as_ref()
     }
     /// <p>The file type of the image.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::ImageFileType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ImageFileType> {
         self.r#type.as_ref()
     }
 }
@@ -30,29 +30,31 @@ impl ImageFile {
 
 /// A builder for [`ImageFile`](crate::types::ImageFile).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ImageFileBuilder {
-    pub(crate) data: std::option::Option<aws_smithy_types::Blob>,
-    pub(crate) r#type: std::option::Option<crate::types::ImageFileType>,
+    pub(crate) data: ::std::option::Option<::aws_smithy_types::Blob>,
+    pub(crate) r#type: ::std::option::Option<crate::types::ImageFileType>,
 }
 impl ImageFileBuilder {
     /// <p>The image file contents, represented as a base64-encoded string. The file size must be less than 1 MB.</p>
-    pub fn data(mut self, input: aws_smithy_types::Blob) -> Self {
-        self.data = Some(input);
+    pub fn data(mut self, input: ::aws_smithy_types::Blob) -> Self {
+        self.data = ::std::option::Option::Some(input);
         self
     }
     /// <p>The image file contents, represented as a base64-encoded string. The file size must be less than 1 MB.</p>
-    pub fn set_data(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
+    pub fn set_data(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.data = input;
         self
     }
     /// <p>The file type of the image.</p>
     pub fn r#type(mut self, input: crate::types::ImageFileType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The file type of the image.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::ImageFileType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ImageFileType>) -> Self {
         self.r#type = input;
         self
     }

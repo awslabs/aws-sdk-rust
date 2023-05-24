@@ -2,15 +2,15 @@
 
 /// <p>Detaches a typed link from a specified source and target object inside a <code>BatchRead</code> operation. For more information, see <code>DetachTypedLink</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDetachTypedLink {
     /// <p>Used to accept a typed link specifier as input.</p>
     #[doc(hidden)]
-    pub typed_link_specifier: std::option::Option<crate::types::TypedLinkSpecifier>,
+    pub typed_link_specifier: ::std::option::Option<crate::types::TypedLinkSpecifier>,
 }
 impl BatchDetachTypedLink {
     /// <p>Used to accept a typed link specifier as input.</p>
-    pub fn typed_link_specifier(&self) -> std::option::Option<&crate::types::TypedLinkSpecifier> {
+    pub fn typed_link_specifier(&self) -> ::std::option::Option<&crate::types::TypedLinkSpecifier> {
         self.typed_link_specifier.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl BatchDetachTypedLink {
 
 /// A builder for [`BatchDetachTypedLink`](crate::types::BatchDetachTypedLink).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BatchDetachTypedLinkBuilder {
-    pub(crate) typed_link_specifier: std::option::Option<crate::types::TypedLinkSpecifier>,
+    pub(crate) typed_link_specifier: ::std::option::Option<crate::types::TypedLinkSpecifier>,
 }
 impl BatchDetachTypedLinkBuilder {
     /// <p>Used to accept a typed link specifier as input.</p>
     pub fn typed_link_specifier(mut self, input: crate::types::TypedLinkSpecifier) -> Self {
-        self.typed_link_specifier = Some(input);
+        self.typed_link_specifier = ::std::option::Option::Some(input);
         self
     }
     /// <p>Used to accept a typed link specifier as input.</p>
     pub fn set_typed_link_specifier(
         mut self,
-        input: std::option::Option<crate::types::TypedLinkSpecifier>,
+        input: ::std::option::Option<crate::types::TypedLinkSpecifier>,
     ) -> Self {
         self.typed_link_specifier = input;
         self

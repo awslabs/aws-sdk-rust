@@ -2,22 +2,22 @@
 
 /// <p>Details about the port range associated with a finding.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PortRange {
     /// <p>The beginning port in a port range.</p>
     #[doc(hidden)]
-    pub begin: std::option::Option<i32>,
+    pub begin: ::std::option::Option<i32>,
     /// <p>The ending port in a port range.</p>
     #[doc(hidden)]
-    pub end: std::option::Option<i32>,
+    pub end: ::std::option::Option<i32>,
 }
 impl PortRange {
     /// <p>The beginning port in a port range.</p>
-    pub fn begin(&self) -> std::option::Option<i32> {
+    pub fn begin(&self) -> ::std::option::Option<i32> {
         self.begin
     }
     /// <p>The ending port in a port range.</p>
-    pub fn end(&self) -> std::option::Option<i32> {
+    pub fn end(&self) -> ::std::option::Option<i32> {
         self.end
     }
 }
@@ -30,29 +30,31 @@ impl PortRange {
 
 /// A builder for [`PortRange`](crate::types::PortRange).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PortRangeBuilder {
-    pub(crate) begin: std::option::Option<i32>,
-    pub(crate) end: std::option::Option<i32>,
+    pub(crate) begin: ::std::option::Option<i32>,
+    pub(crate) end: ::std::option::Option<i32>,
 }
 impl PortRangeBuilder {
     /// <p>The beginning port in a port range.</p>
     pub fn begin(mut self, input: i32) -> Self {
-        self.begin = Some(input);
+        self.begin = ::std::option::Option::Some(input);
         self
     }
     /// <p>The beginning port in a port range.</p>
-    pub fn set_begin(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_begin(mut self, input: ::std::option::Option<i32>) -> Self {
         self.begin = input;
         self
     }
     /// <p>The ending port in a port range.</p>
     pub fn end(mut self, input: i32) -> Self {
-        self.end = Some(input);
+        self.end = ::std::option::Option::Some(input);
         self
     }
     /// <p>The ending port in a port range.</p>
-    pub fn set_end(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_end(mut self, input: ::std::option::Option<i32>) -> Self {
         self.end = input;
         self
     }

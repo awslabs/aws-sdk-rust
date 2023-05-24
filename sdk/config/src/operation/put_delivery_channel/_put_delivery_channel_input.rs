@@ -2,15 +2,15 @@
 
 /// <p>The input for the <code>PutDeliveryChannel</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutDeliveryChannelInput {
     /// <p>The configuration delivery channel object that delivers the configuration information to an Amazon S3 bucket and to an Amazon SNS topic.</p>
     #[doc(hidden)]
-    pub delivery_channel: std::option::Option<crate::types::DeliveryChannel>,
+    pub delivery_channel: ::std::option::Option<crate::types::DeliveryChannel>,
 }
 impl PutDeliveryChannelInput {
     /// <p>The configuration delivery channel object that delivers the configuration information to an Amazon S3 bucket and to an Amazon SNS topic.</p>
-    pub fn delivery_channel(&self) -> std::option::Option<&crate::types::DeliveryChannel> {
+    pub fn delivery_channel(&self) -> ::std::option::Option<&crate::types::DeliveryChannel> {
         self.delivery_channel.as_ref()
     }
 }
@@ -24,20 +24,22 @@ impl PutDeliveryChannelInput {
 
 /// A builder for [`PutDeliveryChannelInput`](crate::operation::put_delivery_channel::PutDeliveryChannelInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PutDeliveryChannelInputBuilder {
-    pub(crate) delivery_channel: std::option::Option<crate::types::DeliveryChannel>,
+    pub(crate) delivery_channel: ::std::option::Option<crate::types::DeliveryChannel>,
 }
 impl PutDeliveryChannelInputBuilder {
     /// <p>The configuration delivery channel object that delivers the configuration information to an Amazon S3 bucket and to an Amazon SNS topic.</p>
     pub fn delivery_channel(mut self, input: crate::types::DeliveryChannel) -> Self {
-        self.delivery_channel = Some(input);
+        self.delivery_channel = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration delivery channel object that delivers the configuration information to an Amazon S3 bucket and to an Amazon SNS topic.</p>
     pub fn set_delivery_channel(
         mut self,
-        input: std::option::Option<crate::types::DeliveryChannel>,
+        input: ::std::option::Option<crate::types::DeliveryChannel>,
     ) -> Self {
         self.delivery_channel = input;
         self
@@ -45,11 +47,11 @@ impl PutDeliveryChannelInputBuilder {
     /// Consumes the builder and constructs a [`PutDeliveryChannelInput`](crate::operation::put_delivery_channel::PutDeliveryChannelInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::put_delivery_channel::PutDeliveryChannelInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::put_delivery_channel::PutDeliveryChannelInput {
                 delivery_channel: self.delivery_channel,
             },

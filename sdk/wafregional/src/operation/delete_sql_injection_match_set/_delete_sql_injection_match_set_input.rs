@@ -2,22 +2,22 @@
 
 /// <p>A request to delete a <code>SqlInjectionMatchSet</code> from AWS WAF.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteSqlInjectionMatchSetInput {
     /// <p>The <code>SqlInjectionMatchSetId</code> of the <code>SqlInjectionMatchSet</code> that you want to delete. <code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
     #[doc(hidden)]
-    pub sql_injection_match_set_id: std::option::Option<std::string::String>,
+    pub sql_injection_match_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     #[doc(hidden)]
-    pub change_token: std::option::Option<std::string::String>,
+    pub change_token: ::std::option::Option<::std::string::String>,
 }
 impl DeleteSqlInjectionMatchSetInput {
     /// <p>The <code>SqlInjectionMatchSetId</code> of the <code>SqlInjectionMatchSet</code> that you want to delete. <code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
-    pub fn sql_injection_match_set_id(&self) -> std::option::Option<&str> {
+    pub fn sql_injection_match_set_id(&self) -> ::std::option::Option<&str> {
         self.sql_injection_match_set_id.as_deref()
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
-    pub fn change_token(&self) -> std::option::Option<&str> {
+    pub fn change_token(&self) -> ::std::option::Option<&str> {
         self.change_token.as_deref()
     }
 }
@@ -30,43 +30,48 @@ impl DeleteSqlInjectionMatchSetInput {
 
 /// A builder for [`DeleteSqlInjectionMatchSetInput`](crate::operation::delete_sql_injection_match_set::DeleteSqlInjectionMatchSetInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteSqlInjectionMatchSetInputBuilder {
-    pub(crate) sql_injection_match_set_id: std::option::Option<std::string::String>,
-    pub(crate) change_token: std::option::Option<std::string::String>,
+    pub(crate) sql_injection_match_set_id: ::std::option::Option<::std::string::String>,
+    pub(crate) change_token: ::std::option::Option<::std::string::String>,
 }
 impl DeleteSqlInjectionMatchSetInputBuilder {
     /// <p>The <code>SqlInjectionMatchSetId</code> of the <code>SqlInjectionMatchSet</code> that you want to delete. <code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
-    pub fn sql_injection_match_set_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.sql_injection_match_set_id = Some(input.into());
+    pub fn sql_injection_match_set_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.sql_injection_match_set_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>SqlInjectionMatchSetId</code> of the <code>SqlInjectionMatchSet</code> that you want to delete. <code>SqlInjectionMatchSetId</code> is returned by <code>CreateSqlInjectionMatchSet</code> and by <code>ListSqlInjectionMatchSets</code>.</p>
     pub fn set_sql_injection_match_set_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.sql_injection_match_set_id = input;
         self
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
-    pub fn change_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.change_token = Some(input.into());
+    pub fn change_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.change_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
-    pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_change_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.change_token = input;
         self
     }
     /// Consumes the builder and constructs a [`DeleteSqlInjectionMatchSetInput`](crate::operation::delete_sql_injection_match_set::DeleteSqlInjectionMatchSetInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::delete_sql_injection_match_set::DeleteSqlInjectionMatchSetInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::delete_sql_injection_match_set::DeleteSqlInjectionMatchSetInput {
                 sql_injection_match_set_id: self.sql_injection_match_set_id,
                 change_token: self.change_token,

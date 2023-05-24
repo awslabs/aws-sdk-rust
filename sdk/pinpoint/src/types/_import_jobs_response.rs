@@ -2,22 +2,22 @@
 
 /// <p>Provides information about the status and settings of all the import jobs that are associated with an application or segment. An import job is a job that imports endpoint definitions from one or more files.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportJobsResponse {
     /// <p>An array of responses, one for each import job that's associated with the application (Import Jobs resource) or segment (Segment Import Jobs resource).</p>
     #[doc(hidden)]
-    pub item: std::option::Option<std::vec::Vec<crate::types::ImportJobResponse>>,
+    pub item: ::std::option::Option<::std::vec::Vec<crate::types::ImportJobResponse>>,
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ImportJobsResponse {
     /// <p>An array of responses, one for each import job that's associated with the application (Import Jobs resource) or segment (Segment Import Jobs resource).</p>
-    pub fn item(&self) -> std::option::Option<&[crate::types::ImportJobResponse]> {
+    pub fn item(&self) -> ::std::option::Option<&[crate::types::ImportJobResponse]> {
         self.item.as_deref()
     }
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
@@ -30,10 +30,12 @@ impl ImportJobsResponse {
 
 /// A builder for [`ImportJobsResponse`](crate::types::ImportJobsResponse).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ImportJobsResponseBuilder {
-    pub(crate) item: std::option::Option<std::vec::Vec<crate::types::ImportJobResponse>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) item: ::std::option::Option<::std::vec::Vec<crate::types::ImportJobResponse>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ImportJobsResponseBuilder {
     /// Appends an item to `item`.
@@ -44,24 +46,24 @@ impl ImportJobsResponseBuilder {
     pub fn item(mut self, input: crate::types::ImportJobResponse) -> Self {
         let mut v = self.item.unwrap_or_default();
         v.push(input);
-        self.item = Some(v);
+        self.item = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of responses, one for each import job that's associated with the application (Import Jobs resource) or segment (Segment Import Jobs resource).</p>
     pub fn set_item(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ImportJobResponse>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ImportJobResponse>>,
     ) -> Self {
         self.item = input;
         self
     }
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

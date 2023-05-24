@@ -7,29 +7,29 @@ pub use crate::operation::associate_connect_peer::_associate_connect_peer_input:
 ///
 /// <p>Associates a core network Connect peer with a device and optionally, with a link. </p>
 /// <p>If you specify a link, it must be associated with the specified device. You can only associate core network Connect peers that have been created on a core network Connect attachment on a core network. </p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateConnectPeerFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::associate_connect_peer::builders::AssociateConnectPeerInputBuilder,
 }
 impl AssociateConnectPeerFluentBuilder {
     /// Creates a new `AssociateConnectPeer`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::associate_connect_peer::AssociateConnectPeer,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::associate_connect_peer::AssociateConnectPeerError,
         >,
     > {
@@ -37,30 +37,33 @@ impl AssociateConnectPeerFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::associate_connect_peer::AssociateConnectPeerOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::associate_connect_peer::AssociateConnectPeerError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -73,54 +76,63 @@ impl AssociateConnectPeerFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::associate_connect_peer::AssociateConnectPeerOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::associate_connect_peer::AssociateConnectPeerError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The ID of your global network.</p>
-    pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn global_network_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.global_network_id(input.into());
         self
     }
     /// <p>The ID of your global network.</p>
     pub fn set_global_network_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_global_network_id(input);
         self
     }
     /// <p>The ID of the Connect peer.</p>
-    pub fn connect_peer_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn connect_peer_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.connect_peer_id(input.into());
         self
     }
     /// <p>The ID of the Connect peer.</p>
-    pub fn set_connect_peer_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_connect_peer_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_connect_peer_id(input);
         self
     }
     /// <p>The ID of the device.</p>
-    pub fn device_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.device_id(input.into());
         self
     }
     /// <p>The ID of the device.</p>
-    pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_device_id(input);
         self
     }
     /// <p>The ID of the link.</p>
-    pub fn link_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn link_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.link_id(input.into());
         self
     }
     /// <p>The ID of the link.</p>
-    pub fn set_link_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_link_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_link_id(input);
         self
     }

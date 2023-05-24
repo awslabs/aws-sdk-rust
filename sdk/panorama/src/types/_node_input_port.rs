@@ -2,39 +2,39 @@
 
 /// <p>A node input port.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NodeInputPort {
     /// <p>The input port's name.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The input port's description.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The input port's type.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::PortType>,
+    pub r#type: ::std::option::Option<crate::types::PortType>,
     /// <p>The input port's default value.</p>
     #[doc(hidden)]
-    pub default_value: std::option::Option<std::string::String>,
+    pub default_value: ::std::option::Option<::std::string::String>,
     /// <p>The input port's max connections.</p>
     #[doc(hidden)]
     pub max_connections: i32,
 }
 impl NodeInputPort {
     /// <p>The input port's name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The input port's description.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The input port's type.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::PortType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::PortType> {
         self.r#type.as_ref()
     }
     /// <p>The input port's default value.</p>
-    pub fn default_value(&self) -> std::option::Option<&str> {
+    pub fn default_value(&self) -> ::std::option::Option<&str> {
         self.default_value.as_deref()
     }
     /// <p>The input port's max connections.</p>
@@ -51,62 +51,70 @@ impl NodeInputPort {
 
 /// A builder for [`NodeInputPort`](crate::types::NodeInputPort).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NodeInputPortBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) r#type: std::option::Option<crate::types::PortType>,
-    pub(crate) default_value: std::option::Option<std::string::String>,
-    pub(crate) max_connections: std::option::Option<i32>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::PortType>,
+    pub(crate) default_value: ::std::option::Option<::std::string::String>,
+    pub(crate) max_connections: ::std::option::Option<i32>,
 }
 impl NodeInputPortBuilder {
     /// <p>The input port's name.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The input port's name.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The input port's description.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The input port's description.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>The input port's type.</p>
     pub fn r#type(mut self, input: crate::types::PortType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The input port's type.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::PortType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::PortType>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The input port's default value.</p>
-    pub fn default_value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.default_value = Some(input.into());
+    pub fn default_value(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.default_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The input port's default value.</p>
-    pub fn set_default_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_default_value(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.default_value = input;
         self
     }
     /// <p>The input port's max connections.</p>
     pub fn max_connections(mut self, input: i32) -> Self {
-        self.max_connections = Some(input);
+        self.max_connections = ::std::option::Option::Some(input);
         self
     }
     /// <p>The input port's max connections.</p>
-    pub fn set_max_connections(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_connections(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_connections = input;
         self
     }

@@ -2,31 +2,31 @@
 
 /// <p>An object representing a custom pattern for detecting sensitive data across the columns and rows of your structured data.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomEntityType {
     /// <p>A name for the custom pattern that allows it to be retrieved or deleted later. This name must be unique per Amazon Web Services account.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>A regular expression string that is used for detecting sensitive data in a custom pattern.</p>
     #[doc(hidden)]
-    pub regex_string: std::option::Option<std::string::String>,
+    pub regex_string: ::std::option::Option<::std::string::String>,
     /// <p>A list of context words. If none of these context words are found within the vicinity of the regular expression the data will not be detected as sensitive data.</p>
     /// <p>If no context words are passed only a regular expression is checked.</p>
     #[doc(hidden)]
-    pub context_words: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub context_words: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CustomEntityType {
     /// <p>A name for the custom pattern that allows it to be retrieved or deleted later. This name must be unique per Amazon Web Services account.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>A regular expression string that is used for detecting sensitive data in a custom pattern.</p>
-    pub fn regex_string(&self) -> std::option::Option<&str> {
+    pub fn regex_string(&self) -> ::std::option::Option<&str> {
         self.regex_string.as_deref()
     }
     /// <p>A list of context words. If none of these context words are found within the vicinity of the regular expression the data will not be detected as sensitive data.</p>
     /// <p>If no context words are passed only a regular expression is checked.</p>
-    pub fn context_words(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn context_words(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.context_words.as_deref()
     }
 }
@@ -39,30 +39,32 @@ impl CustomEntityType {
 
 /// A builder for [`CustomEntityType`](crate::types::CustomEntityType).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CustomEntityTypeBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) regex_string: std::option::Option<std::string::String>,
-    pub(crate) context_words: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) regex_string: ::std::option::Option<::std::string::String>,
+    pub(crate) context_words: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CustomEntityTypeBuilder {
     /// <p>A name for the custom pattern that allows it to be retrieved or deleted later. This name must be unique per Amazon Web Services account.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A name for the custom pattern that allows it to be retrieved or deleted later. This name must be unique per Amazon Web Services account.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>A regular expression string that is used for detecting sensitive data in a custom pattern.</p>
-    pub fn regex_string(mut self, input: impl Into<std::string::String>) -> Self {
-        self.regex_string = Some(input.into());
+    pub fn regex_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.regex_string = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A regular expression string that is used for detecting sensitive data in a custom pattern.</p>
-    pub fn set_regex_string(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_regex_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.regex_string = input;
         self
     }
@@ -72,17 +74,20 @@ impl CustomEntityTypeBuilder {
     ///
     /// <p>A list of context words. If none of these context words are found within the vicinity of the regular expression the data will not be detected as sensitive data.</p>
     /// <p>If no context words are passed only a regular expression is checked.</p>
-    pub fn context_words(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn context_words(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.context_words.unwrap_or_default();
         v.push(input.into());
-        self.context_words = Some(v);
+        self.context_words = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of context words. If none of these context words are found within the vicinity of the regular expression the data will not be detected as sensitive data.</p>
     /// <p>If no context words are passed only a regular expression is checked.</p>
     pub fn set_context_words(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.context_words = input;
         self

@@ -2,7 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_hosted_zone_count_http_error(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::get_hosted_zone_count::GetHostedZoneCountOutput,
@@ -15,7 +15,7 @@ pub fn de_get_hosted_zone_count_http_error(
         _response_body,
     )
     .map_err(crate::operation::get_hosted_zone_count::GetHostedZoneCountError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
+    generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
@@ -59,7 +59,7 @@ pub fn de_get_hosted_zone_count_http_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_hosted_zone_count_http_response_with_props(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::get_hosted_zone_count::GetHostedZoneCountOutput,
@@ -74,7 +74,7 @@ pub fn de_get_hosted_zone_count_http_response_with_props(
         )
         .map_err(crate::operation::get_hosted_zone_count::GetHostedZoneCountError::unhandled)?;
         output._set_request_id(
-            aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
+            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
         );
         output.build()
     })
@@ -86,9 +86,9 @@ pub fn de_get_hosted_zone_count(
     mut builder: crate::operation::get_hosted_zone_count::builders::GetHostedZoneCountOutputBuilder,
 ) -> Result<
     crate::operation::get_hosted_zone_count::builders::GetHostedZoneCountOutputBuilder,
-    aws_smithy_xml::decode::XmlDecodeError,
+    ::aws_smithy_xml::decode::XmlDecodeError,
 > {
-    let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
+    let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
@@ -96,7 +96,7 @@ pub fn de_get_hosted_zone_count(
     let start_el = decoder.start_el();
     if !start_el.matches("GetHostedZoneCountResponse") {
         return Err(
-                                aws_smithy_xml::decode::XmlDecodeError::custom(
+                                ::aws_smithy_xml::decode::XmlDecodeError::custom(
                                     format!("encountered invalid XML root: expected GetHostedZoneCountResponse but got {:?}. This is likely a bug in the SDK.", start_el)
                                 )
                             );
@@ -107,10 +107,10 @@ pub fn de_get_hosted_zone_count(
                 let var_1 =
                     Some(
                          {
-                            <i64 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            <i64 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
-                            .map_err(|_|aws_smithy_xml::decode::XmlDecodeError::custom("expected (long: `com.amazonaws.route53#HostedZoneCount`)"))
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (long: `com.amazonaws.route53#HostedZoneCount`)"))
                         }
                         ?
                     )

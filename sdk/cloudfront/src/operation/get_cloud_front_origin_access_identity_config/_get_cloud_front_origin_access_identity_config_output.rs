@@ -2,30 +2,30 @@
 
 /// <p>The returned result of the corresponding request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCloudFrontOriginAccessIdentityConfigOutput {
     /// <p>The origin access identity's configuration information.</p>
     #[doc(hidden)]
     pub cloud_front_origin_access_identity_config:
-        std::option::Option<crate::types::CloudFrontOriginAccessIdentityConfig>,
+        ::std::option::Option<crate::types::CloudFrontOriginAccessIdentityConfig>,
     /// <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
     #[doc(hidden)]
-    pub e_tag: std::option::Option<std::string::String>,
+    pub e_tag: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetCloudFrontOriginAccessIdentityConfigOutput {
     /// <p>The origin access identity's configuration information.</p>
     pub fn cloud_front_origin_access_identity_config(
         &self,
-    ) -> std::option::Option<&crate::types::CloudFrontOriginAccessIdentityConfig> {
+    ) -> ::std::option::Option<&crate::types::CloudFrontOriginAccessIdentityConfig> {
         self.cloud_front_origin_access_identity_config.as_ref()
     }
     /// <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-    pub fn e_tag(&self) -> std::option::Option<&str> {
+    pub fn e_tag(&self) -> ::std::option::Option<&str> {
         self.e_tag.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for GetCloudFrontOriginAccessIdentityConfigOutput {
+impl ::aws_http::request_id::RequestId for GetCloudFrontOriginAccessIdentityConfigOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -39,11 +39,13 @@ impl GetCloudFrontOriginAccessIdentityConfigOutput {
 
 /// A builder for [`GetCloudFrontOriginAccessIdentityConfigOutput`](crate::operation::get_cloud_front_origin_access_identity_config::GetCloudFrontOriginAccessIdentityConfigOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetCloudFrontOriginAccessIdentityConfigOutputBuilder {
     pub(crate) cloud_front_origin_access_identity_config:
-        std::option::Option<crate::types::CloudFrontOriginAccessIdentityConfig>,
-    pub(crate) e_tag: std::option::Option<std::string::String>,
+        ::std::option::Option<crate::types::CloudFrontOriginAccessIdentityConfig>,
+    pub(crate) e_tag: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetCloudFrontOriginAccessIdentityConfigOutputBuilder {
@@ -52,24 +54,24 @@ impl GetCloudFrontOriginAccessIdentityConfigOutputBuilder {
         mut self,
         input: crate::types::CloudFrontOriginAccessIdentityConfig,
     ) -> Self {
-        self.cloud_front_origin_access_identity_config = Some(input);
+        self.cloud_front_origin_access_identity_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The origin access identity's configuration information.</p>
     pub fn set_cloud_front_origin_access_identity_config(
         mut self,
-        input: std::option::Option<crate::types::CloudFrontOriginAccessIdentityConfig>,
+        input: ::std::option::Option<crate::types::CloudFrontOriginAccessIdentityConfig>,
     ) -> Self {
         self.cloud_front_origin_access_identity_config = input;
         self
     }
     /// <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-    pub fn e_tag(mut self, input: impl Into<std::string::String>) -> Self {
-        self.e_tag = Some(input.into());
+    pub fn e_tag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.e_tag = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-    pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_e_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.e_tag = input;
         self
     }

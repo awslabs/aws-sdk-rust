@@ -40,13 +40,13 @@
 /// <p>The property to use in a condition that determines whether an S3 bucket is included or excluded from a classification job. Valid values are:</p>
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum SimpleCriterionKeyForJob {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,7 +60,7 @@ pub enum SimpleCriterionKeyForJob {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for SimpleCriterionKeyForJob {
+impl ::std::convert::From<&str> for SimpleCriterionKeyForJob {
     fn from(s: &str) -> Self {
         match s {
             "ACCOUNT_ID" => SimpleCriterionKeyForJob::AccountId,
@@ -75,11 +75,11 @@ impl std::convert::From<&str> for SimpleCriterionKeyForJob {
         }
     }
 }
-impl std::str::FromStr for SimpleCriterionKeyForJob {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for SimpleCriterionKeyForJob {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SimpleCriterionKeyForJob::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(SimpleCriterionKeyForJob::from(s))
     }
 }
 impl SimpleCriterionKeyForJob {
@@ -105,7 +105,7 @@ impl SimpleCriterionKeyForJob {
         ]
     }
 }
-impl AsRef<str> for SimpleCriterionKeyForJob {
+impl ::std::convert::AsRef<str> for SimpleCriterionKeyForJob {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

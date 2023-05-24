@@ -2,45 +2,45 @@
 
 /// <p>A real-time log configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RealtimeLogConfig {
     /// <p>The Amazon Resource Name (ARN) of this real-time log configuration.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique name of this real-time log configuration.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The sampling rate for this real-time log configuration. The sampling rate determines the percentage of viewer requests that are represented in the real-time log data. The sampling rate is an integer between 1 and 100, inclusive.</p>
     #[doc(hidden)]
-    pub sampling_rate: std::option::Option<i64>,
+    pub sampling_rate: ::std::option::Option<i64>,
     /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time log data for this real-time log configuration.</p>
     #[doc(hidden)]
-    pub end_points: std::option::Option<std::vec::Vec<crate::types::EndPoint>>,
+    pub end_points: ::std::option::Option<::std::vec::Vec<crate::types::EndPoint>>,
     /// <p>A list of fields that are included in each real-time log record. In an API response, the fields are provided in the same order in which they are sent to the Amazon Kinesis data stream.</p>
     /// <p>For more information about fields, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-fields">Real-time log configuration fields</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     #[doc(hidden)]
-    pub fields: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub fields: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RealtimeLogConfig {
     /// <p>The Amazon Resource Name (ARN) of this real-time log configuration.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The unique name of this real-time log configuration.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The sampling rate for this real-time log configuration. The sampling rate determines the percentage of viewer requests that are represented in the real-time log data. The sampling rate is an integer between 1 and 100, inclusive.</p>
-    pub fn sampling_rate(&self) -> std::option::Option<i64> {
+    pub fn sampling_rate(&self) -> ::std::option::Option<i64> {
         self.sampling_rate
     }
     /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time log data for this real-time log configuration.</p>
-    pub fn end_points(&self) -> std::option::Option<&[crate::types::EndPoint]> {
+    pub fn end_points(&self) -> ::std::option::Option<&[crate::types::EndPoint]> {
         self.end_points.as_deref()
     }
     /// <p>A list of fields that are included in each real-time log record. In an API response, the fields are provided in the same order in which they are sent to the Amazon Kinesis data stream.</p>
     /// <p>For more information about fields, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-fields">Real-time log configuration fields</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn fields(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn fields(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.fields.as_deref()
     }
 }
@@ -53,42 +53,44 @@ impl RealtimeLogConfig {
 
 /// A builder for [`RealtimeLogConfig`](crate::types::RealtimeLogConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RealtimeLogConfigBuilder {
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) sampling_rate: std::option::Option<i64>,
-    pub(crate) end_points: std::option::Option<std::vec::Vec<crate::types::EndPoint>>,
-    pub(crate) fields: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) sampling_rate: ::std::option::Option<i64>,
+    pub(crate) end_points: ::std::option::Option<::std::vec::Vec<crate::types::EndPoint>>,
+    pub(crate) fields: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RealtimeLogConfigBuilder {
     /// <p>The Amazon Resource Name (ARN) of this real-time log configuration.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of this real-time log configuration.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// <p>The unique name of this real-time log configuration.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique name of this real-time log configuration.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The sampling rate for this real-time log configuration. The sampling rate determines the percentage of viewer requests that are represented in the real-time log data. The sampling rate is an integer between 1 and 100, inclusive.</p>
     pub fn sampling_rate(mut self, input: i64) -> Self {
-        self.sampling_rate = Some(input);
+        self.sampling_rate = ::std::option::Option::Some(input);
         self
     }
     /// <p>The sampling rate for this real-time log configuration. The sampling rate determines the percentage of viewer requests that are represented in the real-time log data. The sampling rate is an integer between 1 and 100, inclusive.</p>
-    pub fn set_sampling_rate(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_sampling_rate(mut self, input: ::std::option::Option<i64>) -> Self {
         self.sampling_rate = input;
         self
     }
@@ -100,13 +102,13 @@ impl RealtimeLogConfigBuilder {
     pub fn end_points(mut self, input: crate::types::EndPoint) -> Self {
         let mut v = self.end_points.unwrap_or_default();
         v.push(input);
-        self.end_points = Some(v);
+        self.end_points = ::std::option::Option::Some(v);
         self
     }
     /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time log data for this real-time log configuration.</p>
     pub fn set_end_points(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::EndPoint>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::EndPoint>>,
     ) -> Self {
         self.end_points = input;
         self
@@ -117,17 +119,17 @@ impl RealtimeLogConfigBuilder {
     ///
     /// <p>A list of fields that are included in each real-time log record. In an API response, the fields are provided in the same order in which they are sent to the Amazon Kinesis data stream.</p>
     /// <p>For more information about fields, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-fields">Real-time log configuration fields</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn fields(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn fields(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.fields.unwrap_or_default();
         v.push(input.into());
-        self.fields = Some(v);
+        self.fields = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of fields that are included in each real-time log record. In an API response, the fields are provided in the same order in which they are sent to the Amazon Kinesis data stream.</p>
     /// <p>For more information about fields, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-fields">Real-time log configuration fields</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub fn set_fields(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.fields = input;
         self

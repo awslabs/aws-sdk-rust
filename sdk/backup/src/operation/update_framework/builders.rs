@@ -6,56 +6,63 @@ pub use crate::operation::update_framework::_update_framework_input::UpdateFrame
 /// Fluent builder constructing a request to `UpdateFramework`.
 ///
 /// <p>Updates an existing framework identified by its <code>FrameworkName</code> with the input document in JSON format.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateFrameworkFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::update_framework::builders::UpdateFrameworkInputBuilder,
 }
 impl UpdateFrameworkFluentBuilder {
     /// Creates a new `UpdateFramework`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_framework::UpdateFramework,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::update_framework::UpdateFrameworkError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_framework::UpdateFrameworkError,
+        >,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_framework::UpdateFrameworkOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_framework::UpdateFrameworkError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_framework::UpdateFrameworkError,
+        >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,31 +75,42 @@ impl UpdateFrameworkFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_framework::UpdateFrameworkOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_framework::UpdateFrameworkError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_framework::UpdateFrameworkError,
+        >,
     > {
         self.send_middleware().await
     }
     /// <p>The unique name of a framework. This name is between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
-    pub fn framework_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn framework_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.framework_name(input.into());
         self
     }
     /// <p>The unique name of a framework. This name is between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
-    pub fn set_framework_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_framework_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_framework_name(input);
         self
     }
     /// <p>An optional description of the framework with a maximum 1,024 characters.</p>
-    pub fn framework_description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn framework_description(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.framework_description(input.into());
         self
     }
     /// <p>An optional description of the framework with a maximum 1,024 characters.</p>
     pub fn set_framework_description(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_framework_description(input);
         self
@@ -109,20 +127,23 @@ impl UpdateFrameworkFluentBuilder {
     /// <p>A list of the controls that make up the framework. Each control in the list has a name, input parameters, and scope.</p>
     pub fn set_framework_controls(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::FrameworkControl>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::FrameworkControl>>,
     ) -> Self {
         self.inner = self.inner.set_framework_controls(input);
         self
     }
     /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>UpdateFrameworkInput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
-    pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn idempotency_token(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.idempotency_token(input.into());
         self
     }
     /// <p>A customer-chosen string that you can use to distinguish between otherwise identical calls to <code>UpdateFrameworkInput</code>. Retrying a successful request with the same idempotency token results in a success message with no action taken.</p>
     pub fn set_idempotency_token(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_idempotency_token(input);
         self

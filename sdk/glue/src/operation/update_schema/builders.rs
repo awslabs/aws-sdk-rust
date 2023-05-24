@@ -9,56 +9,59 @@ pub use crate::operation::update_schema::_update_schema_input::UpdateSchemaInput
 /// <p>For updating the compatibility setting, the call will not validate compatibility for the entire set of schema versions with the new compatibility setting. If the value for <code>Compatibility</code> is provided, the <code>VersionNumber</code> (a checkpoint) is also required. The API will validate the checkpoint version number for consistency.</p>
 /// <p>If the value for the <code>VersionNumber</code> (checkpoint) is provided, <code>Compatibility</code> is optional and this can be used to set/reset a checkpoint for the schema.</p>
 /// <p>This update will happen only if the schema is in the AVAILABLE state.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateSchemaFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::update_schema::builders::UpdateSchemaInputBuilder,
 }
 impl UpdateSchemaFluentBuilder {
     /// Creates a new `UpdateSchema`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_schema::UpdateSchema,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::update_schema::UpdateSchemaError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_schema::UpdateSchemaError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_schema::UpdateSchemaOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_schema::UpdateSchemaError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_schema::UpdateSchemaError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -71,9 +74,9 @@ impl UpdateSchemaFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_schema::UpdateSchemaOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_schema::UpdateSchemaError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_schema::UpdateSchemaError>,
     > {
         self.send_middleware().await
     }
@@ -91,7 +94,7 @@ impl UpdateSchemaFluentBuilder {
     /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
     /// <li> <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
     /// </ul>
-    pub fn set_schema_id(mut self, input: std::option::Option<crate::types::SchemaId>) -> Self {
+    pub fn set_schema_id(mut self, input: ::std::option::Option<crate::types::SchemaId>) -> Self {
         self.inner = self.inner.set_schema_id(input);
         self
     }
@@ -103,7 +106,7 @@ impl UpdateSchemaFluentBuilder {
     /// <p>Version number required for check pointing. One of <code>VersionNumber</code> or <code>Compatibility</code> has to be provided.</p>
     pub fn set_schema_version_number(
         mut self,
-        input: std::option::Option<crate::types::SchemaVersionNumber>,
+        input: ::std::option::Option<crate::types::SchemaVersionNumber>,
     ) -> Self {
         self.inner = self.inner.set_schema_version_number(input);
         self
@@ -116,18 +119,18 @@ impl UpdateSchemaFluentBuilder {
     /// <p>The new compatibility setting for the schema.</p>
     pub fn set_compatibility(
         mut self,
-        input: std::option::Option<crate::types::Compatibility>,
+        input: ::std::option::Option<crate::types::Compatibility>,
     ) -> Self {
         self.inner = self.inner.set_compatibility(input);
         self
     }
     /// <p>The new description for the schema.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>The new description for the schema.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }

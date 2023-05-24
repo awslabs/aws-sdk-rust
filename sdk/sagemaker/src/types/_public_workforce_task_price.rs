@@ -112,15 +112,15 @@
 /// <li> <p>0.012 </p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PublicWorkforceTaskPrice {
     /// <p>Defines the amount of money paid to an Amazon Mechanical Turk worker in United States dollars.</p>
     #[doc(hidden)]
-    pub amount_in_usd: std::option::Option<crate::types::Usd>,
+    pub amount_in_usd: ::std::option::Option<crate::types::Usd>,
 }
 impl PublicWorkforceTaskPrice {
     /// <p>Defines the amount of money paid to an Amazon Mechanical Turk worker in United States dollars.</p>
-    pub fn amount_in_usd(&self) -> std::option::Option<&crate::types::Usd> {
+    pub fn amount_in_usd(&self) -> ::std::option::Option<&crate::types::Usd> {
         self.amount_in_usd.as_ref()
     }
 }
@@ -133,18 +133,20 @@ impl PublicWorkforceTaskPrice {
 
 /// A builder for [`PublicWorkforceTaskPrice`](crate::types::PublicWorkforceTaskPrice).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PublicWorkforceTaskPriceBuilder {
-    pub(crate) amount_in_usd: std::option::Option<crate::types::Usd>,
+    pub(crate) amount_in_usd: ::std::option::Option<crate::types::Usd>,
 }
 impl PublicWorkforceTaskPriceBuilder {
     /// <p>Defines the amount of money paid to an Amazon Mechanical Turk worker in United States dollars.</p>
     pub fn amount_in_usd(mut self, input: crate::types::Usd) -> Self {
-        self.amount_in_usd = Some(input);
+        self.amount_in_usd = ::std::option::Option::Some(input);
         self
     }
     /// <p>Defines the amount of money paid to an Amazon Mechanical Turk worker in United States dollars.</p>
-    pub fn set_amount_in_usd(mut self, input: std::option::Option<crate::types::Usd>) -> Self {
+    pub fn set_amount_in_usd(mut self, input: ::std::option::Option<crate::types::Usd>) -> Self {
         self.amount_in_usd = input;
         self
     }

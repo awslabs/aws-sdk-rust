@@ -2,27 +2,27 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSchemasOutput {
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     #[doc(hidden)]
-    pub marker: std::option::Option<std::string::String>,
+    pub marker: ::std::option::Option<::std::string::String>,
     /// <p>The described schema.</p>
     #[doc(hidden)]
-    pub schemas: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub schemas: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl DescribeSchemasOutput {
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
     /// <p>The described schema.</p>
-    pub fn schemas(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn schemas(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.schemas.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeSchemasOutput {
+impl ::aws_http::request_id::RequestId for DescribeSchemasOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -36,20 +36,22 @@ impl DescribeSchemasOutput {
 
 /// A builder for [`DescribeSchemasOutput`](crate::operation::describe_schemas::DescribeSchemasOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeSchemasOutputBuilder {
-    pub(crate) marker: std::option::Option<std::string::String>,
-    pub(crate) schemas: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) marker: ::std::option::Option<::std::string::String>,
+    pub(crate) schemas: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl DescribeSchemasOutputBuilder {
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
-    pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-        self.marker = Some(input.into());
+    pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
-    pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
     }
@@ -58,16 +60,16 @@ impl DescribeSchemasOutputBuilder {
     /// To override the contents of this collection use [`set_schemas`](Self::set_schemas).
     ///
     /// <p>The described schema.</p>
-    pub fn schemas(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn schemas(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.schemas.unwrap_or_default();
         v.push(input.into());
-        self.schemas = Some(v);
+        self.schemas = ::std::option::Option::Some(v);
         self
     }
     /// <p>The described schema.</p>
     pub fn set_schemas(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.schemas = input;
         self

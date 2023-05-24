@@ -2,43 +2,43 @@
 
 /// <p>Contains details about the policy generation request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobDetails {
     /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.</p>
     #[doc(hidden)]
-    pub job_id: std::option::Option<std::string::String>,
+    pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the job request.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::JobStatus>,
+    pub status: ::std::option::Option<crate::types::JobStatus>,
     /// <p>A timestamp of when the job was started.</p>
     #[doc(hidden)]
-    pub started_on: std::option::Option<aws_smithy_types::DateTime>,
+    pub started_on: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A timestamp of when the job was completed.</p>
     #[doc(hidden)]
-    pub completed_on: std::option::Option<aws_smithy_types::DateTime>,
+    pub completed_on: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The job error for the policy generation request.</p>
     #[doc(hidden)]
-    pub job_error: std::option::Option<crate::types::JobError>,
+    pub job_error: ::std::option::Option<crate::types::JobError>,
 }
 impl JobDetails {
     /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<&str> {
         self.job_id.as_deref()
     }
     /// <p>The status of the job request.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::JobStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::JobStatus> {
         self.status.as_ref()
     }
     /// <p>A timestamp of when the job was started.</p>
-    pub fn started_on(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn started_on(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.started_on.as_ref()
     }
     /// <p>A timestamp of when the job was completed.</p>
-    pub fn completed_on(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn completed_on(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.completed_on.as_ref()
     }
     /// <p>The job error for the policy generation request.</p>
-    pub fn job_error(&self) -> std::option::Option<&crate::types::JobError> {
+    pub fn job_error(&self) -> ::std::option::Option<&crate::types::JobError> {
         self.job_error.as_ref()
     }
 }
@@ -51,68 +51,70 @@ impl JobDetails {
 
 /// A builder for [`JobDetails`](crate::types::JobDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct JobDetailsBuilder {
-    pub(crate) job_id: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::JobStatus>,
-    pub(crate) started_on: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) completed_on: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) job_error: std::option::Option<crate::types::JobError>,
+    pub(crate) job_id: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::JobStatus>,
+    pub(crate) started_on: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) completed_on: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) job_error: ::std::option::Option<crate::types::JobError>,
 }
 impl JobDetailsBuilder {
     /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.</p>
-    pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.job_id = Some(input.into());
+    pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.job_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.</p>
-    pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_id = input;
         self
     }
     /// <p>The status of the job request.</p>
     pub fn status(mut self, input: crate::types::JobStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the job request.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::JobStatus>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::JobStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>A timestamp of when the job was started.</p>
-    pub fn started_on(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.started_on = Some(input);
+    pub fn started_on(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.started_on = ::std::option::Option::Some(input);
         self
     }
     /// <p>A timestamp of when the job was started.</p>
     pub fn set_started_on(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.started_on = input;
         self
     }
     /// <p>A timestamp of when the job was completed.</p>
-    pub fn completed_on(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.completed_on = Some(input);
+    pub fn completed_on(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.completed_on = ::std::option::Option::Some(input);
         self
     }
     /// <p>A timestamp of when the job was completed.</p>
     pub fn set_completed_on(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.completed_on = input;
         self
     }
     /// <p>The job error for the policy generation request.</p>
     pub fn job_error(mut self, input: crate::types::JobError) -> Self {
-        self.job_error = Some(input);
+        self.job_error = ::std::option::Option::Some(input);
         self
     }
     /// <p>The job error for the policy generation request.</p>
-    pub fn set_job_error(mut self, input: std::option::Option<crate::types::JobError>) -> Self {
+    pub fn set_job_error(mut self, input: ::std::option::Option<crate::types::JobError>) -> Self {
         self.job_error = input;
         self
     }

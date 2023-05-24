@@ -2,29 +2,29 @@
 
 /// <p>Information about the ground station data.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GroundStationData {
     /// <p>UUID of a ground station.</p>
     #[doc(hidden)]
-    pub ground_station_id: std::option::Option<std::string::String>,
+    pub ground_station_id: ::std::option::Option<::std::string::String>,
     /// <p>Name of a ground station.</p>
     #[doc(hidden)]
-    pub ground_station_name: std::option::Option<std::string::String>,
+    pub ground_station_name: ::std::option::Option<::std::string::String>,
     /// <p>Ground station Region.</p>
     #[doc(hidden)]
-    pub region: std::option::Option<std::string::String>,
+    pub region: ::std::option::Option<::std::string::String>,
 }
 impl GroundStationData {
     /// <p>UUID of a ground station.</p>
-    pub fn ground_station_id(&self) -> std::option::Option<&str> {
+    pub fn ground_station_id(&self) -> ::std::option::Option<&str> {
         self.ground_station_id.as_deref()
     }
     /// <p>Name of a ground station.</p>
-    pub fn ground_station_name(&self) -> std::option::Option<&str> {
+    pub fn ground_station_name(&self) -> ::std::option::Option<&str> {
         self.ground_station_name.as_deref()
     }
     /// <p>Ground station Region.</p>
-    pub fn region(&self) -> std::option::Option<&str> {
+    pub fn region(&self) -> ::std::option::Option<&str> {
         self.region.as_deref()
     }
 }
@@ -37,46 +37,54 @@ impl GroundStationData {
 
 /// A builder for [`GroundStationData`](crate::types::GroundStationData).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GroundStationDataBuilder {
-    pub(crate) ground_station_id: std::option::Option<std::string::String>,
-    pub(crate) ground_station_name: std::option::Option<std::string::String>,
-    pub(crate) region: std::option::Option<std::string::String>,
+    pub(crate) ground_station_id: ::std::option::Option<::std::string::String>,
+    pub(crate) ground_station_name: ::std::option::Option<::std::string::String>,
+    pub(crate) region: ::std::option::Option<::std::string::String>,
 }
 impl GroundStationDataBuilder {
     /// <p>UUID of a ground station.</p>
-    pub fn ground_station_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ground_station_id = Some(input.into());
+    pub fn ground_station_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.ground_station_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>UUID of a ground station.</p>
     pub fn set_ground_station_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.ground_station_id = input;
         self
     }
     /// <p>Name of a ground station.</p>
-    pub fn ground_station_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ground_station_name = Some(input.into());
+    pub fn ground_station_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.ground_station_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of a ground station.</p>
     pub fn set_ground_station_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.ground_station_name = input;
         self
     }
     /// <p>Ground station Region.</p>
-    pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
-        self.region = Some(input.into());
+    pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Ground station Region.</p>
-    pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region = input;
         self
     }

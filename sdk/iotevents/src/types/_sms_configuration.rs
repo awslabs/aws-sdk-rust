@@ -2,33 +2,33 @@
 
 /// <p>Contains the configuration information of SMS notifications.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SmsConfiguration {
     /// <p>The sender ID.</p>
     #[doc(hidden)]
-    pub sender_id: std::option::Option<std::string::String>,
+    pub sender_id: ::std::option::Option<::std::string::String>,
     /// <p>The message that you want to send. The message can be up to 200 characters.</p>
     #[doc(hidden)]
-    pub additional_message: std::option::Option<std::string::String>,
+    pub additional_message: ::std::option::Option<::std::string::String>,
     /// <p>Specifies one or more recipients who receive the message.</p> <important>
     /// <p>You must <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/addusers.html">add the users that receive SMS messages to your AWS SSO store</a>.</p>
     /// </important>
     #[doc(hidden)]
-    pub recipients: std::option::Option<std::vec::Vec<crate::types::RecipientDetail>>,
+    pub recipients: ::std::option::Option<::std::vec::Vec<crate::types::RecipientDetail>>,
 }
 impl SmsConfiguration {
     /// <p>The sender ID.</p>
-    pub fn sender_id(&self) -> std::option::Option<&str> {
+    pub fn sender_id(&self) -> ::std::option::Option<&str> {
         self.sender_id.as_deref()
     }
     /// <p>The message that you want to send. The message can be up to 200 characters.</p>
-    pub fn additional_message(&self) -> std::option::Option<&str> {
+    pub fn additional_message(&self) -> ::std::option::Option<&str> {
         self.additional_message.as_deref()
     }
     /// <p>Specifies one or more recipients who receive the message.</p> <important>
     /// <p>You must <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/addusers.html">add the users that receive SMS messages to your AWS SSO store</a>.</p>
     /// </important>
-    pub fn recipients(&self) -> std::option::Option<&[crate::types::RecipientDetail]> {
+    pub fn recipients(&self) -> ::std::option::Option<&[crate::types::RecipientDetail]> {
         self.recipients.as_deref()
     }
 }
@@ -41,32 +41,37 @@ impl SmsConfiguration {
 
 /// A builder for [`SmsConfiguration`](crate::types::SmsConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SmsConfigurationBuilder {
-    pub(crate) sender_id: std::option::Option<std::string::String>,
-    pub(crate) additional_message: std::option::Option<std::string::String>,
-    pub(crate) recipients: std::option::Option<std::vec::Vec<crate::types::RecipientDetail>>,
+    pub(crate) sender_id: ::std::option::Option<::std::string::String>,
+    pub(crate) additional_message: ::std::option::Option<::std::string::String>,
+    pub(crate) recipients: ::std::option::Option<::std::vec::Vec<crate::types::RecipientDetail>>,
 }
 impl SmsConfigurationBuilder {
     /// <p>The sender ID.</p>
-    pub fn sender_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.sender_id = Some(input.into());
+    pub fn sender_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.sender_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The sender ID.</p>
-    pub fn set_sender_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_sender_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sender_id = input;
         self
     }
     /// <p>The message that you want to send. The message can be up to 200 characters.</p>
-    pub fn additional_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.additional_message = Some(input.into());
+    pub fn additional_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.additional_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The message that you want to send. The message can be up to 200 characters.</p>
     pub fn set_additional_message(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.additional_message = input;
         self
@@ -81,7 +86,7 @@ impl SmsConfigurationBuilder {
     pub fn recipients(mut self, input: crate::types::RecipientDetail) -> Self {
         let mut v = self.recipients.unwrap_or_default();
         v.push(input);
-        self.recipients = Some(v);
+        self.recipients = ::std::option::Option::Some(v);
         self
     }
     /// <p>Specifies one or more recipients who receive the message.</p> <important>
@@ -89,7 +94,7 @@ impl SmsConfigurationBuilder {
     /// </important>
     pub fn set_recipients(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RecipientDetail>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::RecipientDetail>>,
     ) -> Self {
         self.recipients = input;
         self

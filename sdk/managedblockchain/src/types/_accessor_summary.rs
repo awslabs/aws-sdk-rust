@@ -2,47 +2,47 @@
 
 /// <p>A summary of accessor properties.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccessorSummary {
     /// <p>The unique identifier of the accessor.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The type of the accessor.</p> <note>
     /// <p>Currently accessor type is restricted to <code>BILLING_TOKEN</code>.</p>
     /// </note>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::AccessorType>,
+    pub r#type: ::std::option::Option<crate::types::AccessorType>,
     /// <p>The current status of the accessor.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::AccessorStatus>,
+    pub status: ::std::option::Option<crate::types::AccessorStatus>,
     /// <p>The creation date and time of the accessor.</p>
     #[doc(hidden)]
-    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the accessor. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
 }
 impl AccessorSummary {
     /// <p>The unique identifier of the accessor.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The type of the accessor.</p> <note>
     /// <p>Currently accessor type is restricted to <code>BILLING_TOKEN</code>.</p>
     /// </note>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::AccessorType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::AccessorType> {
         self.r#type.as_ref()
     }
     /// <p>The current status of the accessor.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::AccessorStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::AccessorStatus> {
         self.status.as_ref()
     }
     /// <p>The creation date and time of the accessor.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the accessor. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
 }
@@ -55,22 +55,24 @@ impl AccessorSummary {
 
 /// A builder for [`AccessorSummary`](crate::types::AccessorSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AccessorSummaryBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) r#type: std::option::Option<crate::types::AccessorType>,
-    pub(crate) status: std::option::Option<crate::types::AccessorStatus>,
-    pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) arn: std::option::Option<std::string::String>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::AccessorType>,
+    pub(crate) status: ::std::option::Option<crate::types::AccessorStatus>,
+    pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
 impl AccessorSummaryBuilder {
     /// <p>The unique identifier of the accessor.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the accessor.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
@@ -78,46 +80,49 @@ impl AccessorSummaryBuilder {
     /// <p>Currently accessor type is restricted to <code>BILLING_TOKEN</code>.</p>
     /// </note>
     pub fn r#type(mut self, input: crate::types::AccessorType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of the accessor.</p> <note>
     /// <p>Currently accessor type is restricted to <code>BILLING_TOKEN</code>.</p>
     /// </note>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::AccessorType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::AccessorType>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The current status of the accessor.</p>
     pub fn status(mut self, input: crate::types::AccessorStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current status of the accessor.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::AccessorStatus>) -> Self {
+    pub fn set_status(
+        mut self,
+        input: ::std::option::Option<crate::types::AccessorStatus>,
+    ) -> Self {
         self.status = input;
         self
     }
     /// <p>The creation date and time of the accessor.</p>
-    pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_date = Some(input);
+    pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The creation date and time of the accessor.</p>
     pub fn set_creation_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_date = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the accessor. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the accessor. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }

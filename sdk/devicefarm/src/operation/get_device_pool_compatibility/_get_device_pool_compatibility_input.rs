@@ -2,14 +2,14 @@
 
 /// <p>Represents a request to the get device pool compatibility operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDevicePoolCompatibilityInput {
     /// <p>The device pool's ARN.</p>
     #[doc(hidden)]
-    pub device_pool_arn: std::option::Option<std::string::String>,
+    pub device_pool_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the app that is associated with the specified device pool.</p>
     #[doc(hidden)]
-    pub app_arn: std::option::Option<std::string::String>,
+    pub app_arn: ::std::option::Option<::std::string::String>,
     /// <p>The test type for the specified device pool.</p>
     /// <p>Allowed values include the following:</p>
     /// <ul>
@@ -33,21 +33,21 @@ pub struct GetDevicePoolCompatibilityInput {
     /// <li> <p>XCTEST_UI.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub test_type: std::option::Option<crate::types::TestType>,
+    pub test_type: ::std::option::Option<crate::types::TestType>,
     /// <p>Information about the uploaded test to be run against the device pool.</p>
     #[doc(hidden)]
-    pub test: std::option::Option<crate::types::ScheduleRunTest>,
+    pub test: ::std::option::Option<crate::types::ScheduleRunTest>,
     /// <p>An object that contains information about the settings for a run.</p>
     #[doc(hidden)]
-    pub configuration: std::option::Option<crate::types::ScheduleRunConfiguration>,
+    pub configuration: ::std::option::Option<crate::types::ScheduleRunConfiguration>,
 }
 impl GetDevicePoolCompatibilityInput {
     /// <p>The device pool's ARN.</p>
-    pub fn device_pool_arn(&self) -> std::option::Option<&str> {
+    pub fn device_pool_arn(&self) -> ::std::option::Option<&str> {
         self.device_pool_arn.as_deref()
     }
     /// <p>The ARN of the app that is associated with the specified device pool.</p>
-    pub fn app_arn(&self) -> std::option::Option<&str> {
+    pub fn app_arn(&self) -> ::std::option::Option<&str> {
         self.app_arn.as_deref()
     }
     /// <p>The test type for the specified device pool.</p>
@@ -72,15 +72,15 @@ impl GetDevicePoolCompatibilityInput {
     /// <li> <p>XCTEST.</p> </li>
     /// <li> <p>XCTEST_UI.</p> </li>
     /// </ul>
-    pub fn test_type(&self) -> std::option::Option<&crate::types::TestType> {
+    pub fn test_type(&self) -> ::std::option::Option<&crate::types::TestType> {
         self.test_type.as_ref()
     }
     /// <p>Information about the uploaded test to be run against the device pool.</p>
-    pub fn test(&self) -> std::option::Option<&crate::types::ScheduleRunTest> {
+    pub fn test(&self) -> ::std::option::Option<&crate::types::ScheduleRunTest> {
         self.test.as_ref()
     }
     /// <p>An object that contains information about the settings for a run.</p>
-    pub fn configuration(&self) -> std::option::Option<&crate::types::ScheduleRunConfiguration> {
+    pub fn configuration(&self) -> ::std::option::Option<&crate::types::ScheduleRunConfiguration> {
         self.configuration.as_ref()
     }
 }
@@ -93,32 +93,40 @@ impl GetDevicePoolCompatibilityInput {
 
 /// A builder for [`GetDevicePoolCompatibilityInput`](crate::operation::get_device_pool_compatibility::GetDevicePoolCompatibilityInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetDevicePoolCompatibilityInputBuilder {
-    pub(crate) device_pool_arn: std::option::Option<std::string::String>,
-    pub(crate) app_arn: std::option::Option<std::string::String>,
-    pub(crate) test_type: std::option::Option<crate::types::TestType>,
-    pub(crate) test: std::option::Option<crate::types::ScheduleRunTest>,
-    pub(crate) configuration: std::option::Option<crate::types::ScheduleRunConfiguration>,
+    pub(crate) device_pool_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) app_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) test_type: ::std::option::Option<crate::types::TestType>,
+    pub(crate) test: ::std::option::Option<crate::types::ScheduleRunTest>,
+    pub(crate) configuration: ::std::option::Option<crate::types::ScheduleRunConfiguration>,
 }
 impl GetDevicePoolCompatibilityInputBuilder {
     /// <p>The device pool's ARN.</p>
-    pub fn device_pool_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.device_pool_arn = Some(input.into());
+    pub fn device_pool_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.device_pool_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The device pool's ARN.</p>
-    pub fn set_device_pool_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_device_pool_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.device_pool_arn = input;
         self
     }
     /// <p>The ARN of the app that is associated with the specified device pool.</p>
-    pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.app_arn = Some(input.into());
+    pub fn app_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.app_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the app that is associated with the specified device pool.</p>
-    pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_app_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_arn = input;
         self
     }
@@ -145,7 +153,7 @@ impl GetDevicePoolCompatibilityInputBuilder {
     /// <li> <p>XCTEST_UI.</p> </li>
     /// </ul>
     pub fn test_type(mut self, input: crate::types::TestType) -> Self {
-        self.test_type = Some(input);
+        self.test_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The test type for the specified device pool.</p>
@@ -170,29 +178,29 @@ impl GetDevicePoolCompatibilityInputBuilder {
     /// <li> <p>XCTEST.</p> </li>
     /// <li> <p>XCTEST_UI.</p> </li>
     /// </ul>
-    pub fn set_test_type(mut self, input: std::option::Option<crate::types::TestType>) -> Self {
+    pub fn set_test_type(mut self, input: ::std::option::Option<crate::types::TestType>) -> Self {
         self.test_type = input;
         self
     }
     /// <p>Information about the uploaded test to be run against the device pool.</p>
     pub fn test(mut self, input: crate::types::ScheduleRunTest) -> Self {
-        self.test = Some(input);
+        self.test = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the uploaded test to be run against the device pool.</p>
-    pub fn set_test(mut self, input: std::option::Option<crate::types::ScheduleRunTest>) -> Self {
+    pub fn set_test(mut self, input: ::std::option::Option<crate::types::ScheduleRunTest>) -> Self {
         self.test = input;
         self
     }
     /// <p>An object that contains information about the settings for a run.</p>
     pub fn configuration(mut self, input: crate::types::ScheduleRunConfiguration) -> Self {
-        self.configuration = Some(input);
+        self.configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that contains information about the settings for a run.</p>
     pub fn set_configuration(
         mut self,
-        input: std::option::Option<crate::types::ScheduleRunConfiguration>,
+        input: ::std::option::Option<crate::types::ScheduleRunConfiguration>,
     ) -> Self {
         self.configuration = input;
         self
@@ -200,11 +208,11 @@ impl GetDevicePoolCompatibilityInputBuilder {
     /// Consumes the builder and constructs a [`GetDevicePoolCompatibilityInput`](crate::operation::get_device_pool_compatibility::GetDevicePoolCompatibilityInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::get_device_pool_compatibility::GetDevicePoolCompatibilityInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::get_device_pool_compatibility::GetDevicePoolCompatibilityInput {
                 device_pool_arn: self.device_pool_arn,
                 app_arn: self.app_arn,

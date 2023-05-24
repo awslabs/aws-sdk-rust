@@ -2,99 +2,99 @@
 
 /// <p>Contains information about the details of an instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceDetails {
     /// <p>The Availability Zone of the EC2 instance.</p>
     #[doc(hidden)]
-    pub availability_zone: std::option::Option<std::string::String>,
+    pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The profile information of the EC2 instance.</p>
     #[doc(hidden)]
-    pub iam_instance_profile: std::option::Option<crate::types::IamInstanceProfile>,
+    pub iam_instance_profile: ::std::option::Option<crate::types::IamInstanceProfile>,
     /// <p>The image description of the EC2 instance.</p>
     #[doc(hidden)]
-    pub image_description: std::option::Option<std::string::String>,
+    pub image_description: ::std::option::Option<::std::string::String>,
     /// <p>The image ID of the EC2 instance.</p>
     #[doc(hidden)]
-    pub image_id: std::option::Option<std::string::String>,
+    pub image_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the EC2 instance.</p>
     #[doc(hidden)]
-    pub instance_id: std::option::Option<std::string::String>,
+    pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The state of the EC2 instance.</p>
     #[doc(hidden)]
-    pub instance_state: std::option::Option<std::string::String>,
+    pub instance_state: ::std::option::Option<::std::string::String>,
     /// <p>The type of the EC2 instance.</p>
     #[doc(hidden)]
-    pub instance_type: std::option::Option<std::string::String>,
+    pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Outpost. Only applicable to Amazon Web Services Outposts instances.</p>
     #[doc(hidden)]
-    pub outpost_arn: std::option::Option<std::string::String>,
+    pub outpost_arn: ::std::option::Option<::std::string::String>,
     /// <p>The launch time of the EC2 instance.</p>
     #[doc(hidden)]
-    pub launch_time: std::option::Option<std::string::String>,
+    pub launch_time: ::std::option::Option<::std::string::String>,
     /// <p>The elastic network interface information of the EC2 instance.</p>
     #[doc(hidden)]
-    pub network_interfaces: std::option::Option<std::vec::Vec<crate::types::NetworkInterface>>,
+    pub network_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>,
     /// <p>The platform of the EC2 instance.</p>
     #[doc(hidden)]
-    pub platform: std::option::Option<std::string::String>,
+    pub platform: ::std::option::Option<::std::string::String>,
     /// <p>The product code of the EC2 instance.</p>
     #[doc(hidden)]
-    pub product_codes: std::option::Option<std::vec::Vec<crate::types::ProductCode>>,
+    pub product_codes: ::std::option::Option<::std::vec::Vec<crate::types::ProductCode>>,
     /// <p>The tags of the EC2 instance.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl InstanceDetails {
     /// <p>The Availability Zone of the EC2 instance.</p>
-    pub fn availability_zone(&self) -> std::option::Option<&str> {
+    pub fn availability_zone(&self) -> ::std::option::Option<&str> {
         self.availability_zone.as_deref()
     }
     /// <p>The profile information of the EC2 instance.</p>
-    pub fn iam_instance_profile(&self) -> std::option::Option<&crate::types::IamInstanceProfile> {
+    pub fn iam_instance_profile(&self) -> ::std::option::Option<&crate::types::IamInstanceProfile> {
         self.iam_instance_profile.as_ref()
     }
     /// <p>The image description of the EC2 instance.</p>
-    pub fn image_description(&self) -> std::option::Option<&str> {
+    pub fn image_description(&self) -> ::std::option::Option<&str> {
         self.image_description.as_deref()
     }
     /// <p>The image ID of the EC2 instance.</p>
-    pub fn image_id(&self) -> std::option::Option<&str> {
+    pub fn image_id(&self) -> ::std::option::Option<&str> {
         self.image_id.as_deref()
     }
     /// <p>The ID of the EC2 instance.</p>
-    pub fn instance_id(&self) -> std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<&str> {
         self.instance_id.as_deref()
     }
     /// <p>The state of the EC2 instance.</p>
-    pub fn instance_state(&self) -> std::option::Option<&str> {
+    pub fn instance_state(&self) -> ::std::option::Option<&str> {
         self.instance_state.as_deref()
     }
     /// <p>The type of the EC2 instance.</p>
-    pub fn instance_type(&self) -> std::option::Option<&str> {
+    pub fn instance_type(&self) -> ::std::option::Option<&str> {
         self.instance_type.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Outpost. Only applicable to Amazon Web Services Outposts instances.</p>
-    pub fn outpost_arn(&self) -> std::option::Option<&str> {
+    pub fn outpost_arn(&self) -> ::std::option::Option<&str> {
         self.outpost_arn.as_deref()
     }
     /// <p>The launch time of the EC2 instance.</p>
-    pub fn launch_time(&self) -> std::option::Option<&str> {
+    pub fn launch_time(&self) -> ::std::option::Option<&str> {
         self.launch_time.as_deref()
     }
     /// <p>The elastic network interface information of the EC2 instance.</p>
-    pub fn network_interfaces(&self) -> std::option::Option<&[crate::types::NetworkInterface]> {
+    pub fn network_interfaces(&self) -> ::std::option::Option<&[crate::types::NetworkInterface]> {
         self.network_interfaces.as_deref()
     }
     /// <p>The platform of the EC2 instance.</p>
-    pub fn platform(&self) -> std::option::Option<&str> {
+    pub fn platform(&self) -> ::std::option::Option<&str> {
         self.platform.as_deref()
     }
     /// <p>The product code of the EC2 instance.</p>
-    pub fn product_codes(&self) -> std::option::Option<&[crate::types::ProductCode]> {
+    pub fn product_codes(&self) -> ::std::option::Option<&[crate::types::ProductCode]> {
         self.product_codes.as_deref()
     }
     /// <p>The tags of the EC2 instance.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -107,120 +107,140 @@ impl InstanceDetails {
 
 /// A builder for [`InstanceDetails`](crate::types::InstanceDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InstanceDetailsBuilder {
-    pub(crate) availability_zone: std::option::Option<std::string::String>,
-    pub(crate) iam_instance_profile: std::option::Option<crate::types::IamInstanceProfile>,
-    pub(crate) image_description: std::option::Option<std::string::String>,
-    pub(crate) image_id: std::option::Option<std::string::String>,
-    pub(crate) instance_id: std::option::Option<std::string::String>,
-    pub(crate) instance_state: std::option::Option<std::string::String>,
-    pub(crate) instance_type: std::option::Option<std::string::String>,
-    pub(crate) outpost_arn: std::option::Option<std::string::String>,
-    pub(crate) launch_time: std::option::Option<std::string::String>,
+    pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
+    pub(crate) iam_instance_profile: ::std::option::Option<crate::types::IamInstanceProfile>,
+    pub(crate) image_description: ::std::option::Option<::std::string::String>,
+    pub(crate) image_id: ::std::option::Option<::std::string::String>,
+    pub(crate) instance_id: ::std::option::Option<::std::string::String>,
+    pub(crate) instance_state: ::std::option::Option<::std::string::String>,
+    pub(crate) instance_type: ::std::option::Option<::std::string::String>,
+    pub(crate) outpost_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) launch_time: ::std::option::Option<::std::string::String>,
     pub(crate) network_interfaces:
-        std::option::Option<std::vec::Vec<crate::types::NetworkInterface>>,
-    pub(crate) platform: std::option::Option<std::string::String>,
-    pub(crate) product_codes: std::option::Option<std::vec::Vec<crate::types::ProductCode>>,
-    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>,
+    pub(crate) platform: ::std::option::Option<::std::string::String>,
+    pub(crate) product_codes: ::std::option::Option<::std::vec::Vec<crate::types::ProductCode>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl InstanceDetailsBuilder {
     /// <p>The Availability Zone of the EC2 instance.</p>
-    pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
-        self.availability_zone = Some(input.into());
+    pub fn availability_zone(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Availability Zone of the EC2 instance.</p>
     pub fn set_availability_zone(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.availability_zone = input;
         self
     }
     /// <p>The profile information of the EC2 instance.</p>
     pub fn iam_instance_profile(mut self, input: crate::types::IamInstanceProfile) -> Self {
-        self.iam_instance_profile = Some(input);
+        self.iam_instance_profile = ::std::option::Option::Some(input);
         self
     }
     /// <p>The profile information of the EC2 instance.</p>
     pub fn set_iam_instance_profile(
         mut self,
-        input: std::option::Option<crate::types::IamInstanceProfile>,
+        input: ::std::option::Option<crate::types::IamInstanceProfile>,
     ) -> Self {
         self.iam_instance_profile = input;
         self
     }
     /// <p>The image description of the EC2 instance.</p>
-    pub fn image_description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.image_description = Some(input.into());
+    pub fn image_description(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.image_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The image description of the EC2 instance.</p>
     pub fn set_image_description(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.image_description = input;
         self
     }
     /// <p>The image ID of the EC2 instance.</p>
-    pub fn image_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.image_id = Some(input.into());
+    pub fn image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.image_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The image ID of the EC2 instance.</p>
-    pub fn set_image_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_id = input;
         self
     }
     /// <p>The ID of the EC2 instance.</p>
-    pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.instance_id = Some(input.into());
+    pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the EC2 instance.</p>
-    pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
     }
     /// <p>The state of the EC2 instance.</p>
-    pub fn instance_state(mut self, input: impl Into<std::string::String>) -> Self {
-        self.instance_state = Some(input.into());
+    pub fn instance_state(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.instance_state = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The state of the EC2 instance.</p>
-    pub fn set_instance_state(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_instance_state(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.instance_state = input;
         self
     }
     /// <p>The type of the EC2 instance.</p>
-    pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.instance_type = Some(input.into());
+    pub fn instance_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.instance_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of the EC2 instance.</p>
-    pub fn set_instance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_instance_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.instance_type = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Outpost. Only applicable to Amazon Web Services Outposts instances.</p>
-    pub fn outpost_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.outpost_arn = Some(input.into());
+    pub fn outpost_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.outpost_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Outpost. Only applicable to Amazon Web Services Outposts instances.</p>
-    pub fn set_outpost_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_outpost_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.outpost_arn = input;
         self
     }
     /// <p>The launch time of the EC2 instance.</p>
-    pub fn launch_time(mut self, input: impl Into<std::string::String>) -> Self {
-        self.launch_time = Some(input.into());
+    pub fn launch_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.launch_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The launch time of the EC2 instance.</p>
-    pub fn set_launch_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_launch_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.launch_time = input;
         self
     }
@@ -232,24 +252,24 @@ impl InstanceDetailsBuilder {
     pub fn network_interfaces(mut self, input: crate::types::NetworkInterface) -> Self {
         let mut v = self.network_interfaces.unwrap_or_default();
         v.push(input);
-        self.network_interfaces = Some(v);
+        self.network_interfaces = ::std::option::Option::Some(v);
         self
     }
     /// <p>The elastic network interface information of the EC2 instance.</p>
     pub fn set_network_interfaces(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::NetworkInterface>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>,
     ) -> Self {
         self.network_interfaces = input;
         self
     }
     /// <p>The platform of the EC2 instance.</p>
-    pub fn platform(mut self, input: impl Into<std::string::String>) -> Self {
-        self.platform = Some(input.into());
+    pub fn platform(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.platform = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The platform of the EC2 instance.</p>
-    pub fn set_platform(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_platform(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.platform = input;
         self
     }
@@ -261,13 +281,13 @@ impl InstanceDetailsBuilder {
     pub fn product_codes(mut self, input: crate::types::ProductCode) -> Self {
         let mut v = self.product_codes.unwrap_or_default();
         v.push(input);
-        self.product_codes = Some(v);
+        self.product_codes = ::std::option::Option::Some(v);
         self
     }
     /// <p>The product code of the EC2 instance.</p>
     pub fn set_product_codes(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ProductCode>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ProductCode>>,
     ) -> Self {
         self.product_codes = input;
         self
@@ -280,13 +300,13 @@ impl InstanceDetailsBuilder {
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
-        self.tags = Some(v);
+        self.tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>The tags of the EC2 instance.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tags = input;
         self

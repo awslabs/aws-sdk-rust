@@ -2,39 +2,39 @@
 
 /// <p>Contains information about the features for the member account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MemberFeaturesConfigurationResult {
     /// <p>Indicates the name of the feature that is enabled for the detector.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<crate::types::OrgFeature>,
+    pub name: ::std::option::Option<crate::types::OrgFeature>,
     /// <p>Indicates the status of the feature that is enabled for the detector.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::FeatureStatus>,
+    pub status: ::std::option::Option<crate::types::FeatureStatus>,
     /// <p>The timestamp at which the feature object was updated.</p>
     #[doc(hidden)]
-    pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates the additional configuration of the feature that is configured for the member account.</p>
     #[doc(hidden)]
     pub additional_configuration:
-        std::option::Option<std::vec::Vec<crate::types::MemberAdditionalConfigurationResult>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::MemberAdditionalConfigurationResult>>,
 }
 impl MemberFeaturesConfigurationResult {
     /// <p>Indicates the name of the feature that is enabled for the detector.</p>
-    pub fn name(&self) -> std::option::Option<&crate::types::OrgFeature> {
+    pub fn name(&self) -> ::std::option::Option<&crate::types::OrgFeature> {
         self.name.as_ref()
     }
     /// <p>Indicates the status of the feature that is enabled for the detector.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::FeatureStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::FeatureStatus> {
         self.status.as_ref()
     }
     /// <p>The timestamp at which the feature object was updated.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>Indicates the additional configuration of the feature that is configured for the member account.</p>
     pub fn additional_configuration(
         &self,
-    ) -> std::option::Option<&[crate::types::MemberAdditionalConfigurationResult]> {
+    ) -> ::std::option::Option<&[crate::types::MemberAdditionalConfigurationResult]> {
         self.additional_configuration.as_deref()
     }
 }
@@ -47,44 +47,46 @@ impl MemberFeaturesConfigurationResult {
 
 /// A builder for [`MemberFeaturesConfigurationResult`](crate::types::MemberFeaturesConfigurationResult).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MemberFeaturesConfigurationResultBuilder {
-    pub(crate) name: std::option::Option<crate::types::OrgFeature>,
-    pub(crate) status: std::option::Option<crate::types::FeatureStatus>,
-    pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) name: ::std::option::Option<crate::types::OrgFeature>,
+    pub(crate) status: ::std::option::Option<crate::types::FeatureStatus>,
+    pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) additional_configuration:
-        std::option::Option<std::vec::Vec<crate::types::MemberAdditionalConfigurationResult>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::MemberAdditionalConfigurationResult>>,
 }
 impl MemberFeaturesConfigurationResultBuilder {
     /// <p>Indicates the name of the feature that is enabled for the detector.</p>
     pub fn name(mut self, input: crate::types::OrgFeature) -> Self {
-        self.name = Some(input);
+        self.name = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates the name of the feature that is enabled for the detector.</p>
-    pub fn set_name(mut self, input: std::option::Option<crate::types::OrgFeature>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::OrgFeature>) -> Self {
         self.name = input;
         self
     }
     /// <p>Indicates the status of the feature that is enabled for the detector.</p>
     pub fn status(mut self, input: crate::types::FeatureStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates the status of the feature that is enabled for the detector.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::FeatureStatus>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::FeatureStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>The timestamp at which the feature object was updated.</p>
-    pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.updated_at = Some(input);
+    pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.updated_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The timestamp at which the feature object was updated.</p>
     pub fn set_updated_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.updated_at = input;
         self
@@ -100,14 +102,14 @@ impl MemberFeaturesConfigurationResultBuilder {
     ) -> Self {
         let mut v = self.additional_configuration.unwrap_or_default();
         v.push(input);
-        self.additional_configuration = Some(v);
+        self.additional_configuration = ::std::option::Option::Some(v);
         self
     }
     /// <p>Indicates the additional configuration of the feature that is configured for the member account.</p>
     pub fn set_additional_configuration(
         mut self,
-        input: std::option::Option<
-            std::vec::Vec<crate::types::MemberAdditionalConfigurationResult>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::MemberAdditionalConfigurationResult>,
         >,
     ) -> Self {
         self.additional_configuration = input;

@@ -2,29 +2,29 @@
 
 /// <p>One or more targets associated with the event window.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceEventWindowAssociationTarget {
     /// <p>The IDs of the instances associated with the event window.</p>
     #[doc(hidden)]
-    pub instance_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The instance tags associated with the event window. Any instances associated with the tags will be associated with the event window.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The IDs of the Dedicated Hosts associated with the event window.</p>
     #[doc(hidden)]
-    pub dedicated_host_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub dedicated_host_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl InstanceEventWindowAssociationTarget {
     /// <p>The IDs of the instances associated with the event window.</p>
-    pub fn instance_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn instance_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.instance_ids.as_deref()
     }
     /// <p>The instance tags associated with the event window. Any instances associated with the tags will be associated with the event window.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The IDs of the Dedicated Hosts associated with the event window.</p>
-    pub fn dedicated_host_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn dedicated_host_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.dedicated_host_ids.as_deref()
     }
 }
@@ -37,11 +37,13 @@ impl InstanceEventWindowAssociationTarget {
 
 /// A builder for [`InstanceEventWindowAssociationTarget`](crate::types::InstanceEventWindowAssociationTarget).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InstanceEventWindowAssociationTargetBuilder {
-    pub(crate) instance_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    pub(crate) dedicated_host_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) dedicated_host_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl InstanceEventWindowAssociationTargetBuilder {
     /// Appends an item to `instance_ids`.
@@ -49,16 +51,16 @@ impl InstanceEventWindowAssociationTargetBuilder {
     /// To override the contents of this collection use [`set_instance_ids`](Self::set_instance_ids).
     ///
     /// <p>The IDs of the instances associated with the event window.</p>
-    pub fn instance_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn instance_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.instance_ids.unwrap_or_default();
         v.push(input.into());
-        self.instance_ids = Some(v);
+        self.instance_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IDs of the instances associated with the event window.</p>
     pub fn set_instance_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.instance_ids = input;
         self
@@ -71,13 +73,13 @@ impl InstanceEventWindowAssociationTargetBuilder {
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
-        self.tags = Some(v);
+        self.tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>The instance tags associated with the event window. Any instances associated with the tags will be associated with the event window.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tags = input;
         self
@@ -87,16 +89,19 @@ impl InstanceEventWindowAssociationTargetBuilder {
     /// To override the contents of this collection use [`set_dedicated_host_ids`](Self::set_dedicated_host_ids).
     ///
     /// <p>The IDs of the Dedicated Hosts associated with the event window.</p>
-    pub fn dedicated_host_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn dedicated_host_ids(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.dedicated_host_ids.unwrap_or_default();
         v.push(input.into());
-        self.dedicated_host_ids = Some(v);
+        self.dedicated_host_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IDs of the Dedicated Hosts associated with the event window.</p>
     pub fn set_dedicated_host_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.dedicated_host_ids = input;
         self

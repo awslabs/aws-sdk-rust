@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteTrustStore`](crate::operation::delete_trust_store::builders::DeleteTrustStoreFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`trust_store_arn(impl Into<String>)`](crate::operation::delete_trust_store::builders::DeleteTrustStoreFluentBuilder::trust_store_arn) / [`set_trust_store_arn(Option<String>)`](crate::operation::delete_trust_store::builders::DeleteTrustStoreFluentBuilder::set_trust_store_arn): <p>The ARN of the trust store.</p>
+    ///   - [`trust_store_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_trust_store::builders::DeleteTrustStoreFluentBuilder::trust_store_arn) / [`set_trust_store_arn(Option<String>)`](crate::operation::delete_trust_store::builders::DeleteTrustStoreFluentBuilder::set_trust_store_arn): <p>The ARN of the trust store.</p>
     /// - On success, responds with [`DeleteTrustStoreOutput`](crate::operation::delete_trust_store::DeleteTrustStoreOutput)
     /// - On failure, responds with [`SdkError<DeleteTrustStoreError>`](crate::operation::delete_trust_store::DeleteTrustStoreError)
     pub fn delete_trust_store(

@@ -2,15 +2,15 @@
 
 /// <p>Parameters to define a mitigation action that publishes findings to Amazon SNS. You can implement your own custom actions in response to the Amazon SNS messages.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PublishFindingToSnsParams {
     /// <p>The ARN of the topic to which you want to publish the findings.</p>
     #[doc(hidden)]
-    pub topic_arn: std::option::Option<std::string::String>,
+    pub topic_arn: ::std::option::Option<::std::string::String>,
 }
 impl PublishFindingToSnsParams {
     /// <p>The ARN of the topic to which you want to publish the findings.</p>
-    pub fn topic_arn(&self) -> std::option::Option<&str> {
+    pub fn topic_arn(&self) -> ::std::option::Option<&str> {
         self.topic_arn.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl PublishFindingToSnsParams {
 
 /// A builder for [`PublishFindingToSnsParams`](crate::types::PublishFindingToSnsParams).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PublishFindingToSnsParamsBuilder {
-    pub(crate) topic_arn: std::option::Option<std::string::String>,
+    pub(crate) topic_arn: ::std::option::Option<::std::string::String>,
 }
 impl PublishFindingToSnsParamsBuilder {
     /// <p>The ARN of the topic to which you want to publish the findings.</p>
-    pub fn topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.topic_arn = Some(input.into());
+    pub fn topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.topic_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the topic to which you want to publish the findings.</p>
-    pub fn set_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.topic_arn = input;
         self
     }

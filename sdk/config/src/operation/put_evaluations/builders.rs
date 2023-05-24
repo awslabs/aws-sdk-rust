@@ -6,56 +6,59 @@ pub use crate::operation::put_evaluations::_put_evaluations_input::PutEvaluation
 /// Fluent builder constructing a request to `PutEvaluations`.
 ///
 /// <p>Used by an Lambda function to deliver evaluation results to Config. This action is required in every Lambda function that is invoked by an Config rule.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutEvaluationsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::put_evaluations::builders::PutEvaluationsInputBuilder,
 }
 impl PutEvaluationsFluentBuilder {
     /// Creates a new `PutEvaluations`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::put_evaluations::PutEvaluations,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::put_evaluations::PutEvaluationsError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_evaluations::PutEvaluationsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::put_evaluations::PutEvaluationsOutput,
-        aws_smithy_http::result::SdkError<crate::operation::put_evaluations::PutEvaluationsError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_evaluations::PutEvaluationsError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,9 +71,9 @@ impl PutEvaluationsFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::put_evaluations::PutEvaluationsOutput,
-        aws_smithy_http::result::SdkError<crate::operation::put_evaluations::PutEvaluationsError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_evaluations::PutEvaluationsError>,
     > {
         self.send_middleware().await
     }
@@ -86,18 +89,18 @@ impl PutEvaluationsFluentBuilder {
     /// <p>The assessments that the Lambda function performs. Each evaluation identifies an Amazon Web Services resource and indicates whether it complies with the Config rule that invokes the Lambda function.</p>
     pub fn set_evaluations(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Evaluation>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Evaluation>>,
     ) -> Self {
         self.inner = self.inner.set_evaluations(input);
         self
     }
     /// <p>An encrypted token that associates an evaluation with an Config rule. Identifies the rule and the event that triggered the evaluation.</p>
-    pub fn result_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn result_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.result_token(input.into());
         self
     }
     /// <p>An encrypted token that associates an evaluation with an Config rule. Identifies the rule and the event that triggered the evaluation.</p>
-    pub fn set_result_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_result_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_result_token(input);
         self
     }
@@ -111,7 +114,7 @@ impl PutEvaluationsFluentBuilder {
     /// <p>Use this parameter to specify a test run for <code>PutEvaluations</code>. You can verify whether your Lambda function will deliver evaluation results to Config. No updates occur to your existing evaluations, and evaluation results are not sent to Config.</p> <note>
     /// <p>When <code>TestMode</code> is <code>true</code>, <code>PutEvaluations</code> doesn't require a valid value for the <code>ResultToken</code> parameter, but the value cannot be null.</p>
     /// </note>
-    pub fn set_test_mode(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_test_mode(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_test_mode(input);
         self
     }

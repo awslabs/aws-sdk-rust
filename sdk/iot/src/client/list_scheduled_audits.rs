@@ -4,7 +4,7 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_scheduled_audits::builders::ListScheduledAuditsFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_scheduled_audits::builders::ListScheduledAuditsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_scheduled_audits::builders::ListScheduledAuditsFluentBuilder::set_next_token): <p>The token for the next set of results.</p>
+    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_scheduled_audits::builders::ListScheduledAuditsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_scheduled_audits::builders::ListScheduledAuditsFluentBuilder::set_next_token): <p>The token for the next set of results.</p>
     ///   - [`max_results(i32)`](crate::operation::list_scheduled_audits::builders::ListScheduledAuditsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_scheduled_audits::builders::ListScheduledAuditsFluentBuilder::set_max_results): <p>The maximum number of results to return at one time. The default is 25.</p>
     /// - On success, responds with [`ListScheduledAuditsOutput`](crate::operation::list_scheduled_audits::ListScheduledAuditsOutput) with field(s):
     ///   - [`scheduled_audits(Option<Vec<ScheduledAuditMetadata>>)`](crate::operation::list_scheduled_audits::ListScheduledAuditsOutput::scheduled_audits): <p>The list of scheduled audits.</p>

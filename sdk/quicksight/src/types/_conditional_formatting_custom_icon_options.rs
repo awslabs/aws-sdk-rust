@@ -2,22 +2,22 @@
 
 /// <p>Custom icon options for an icon set.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConditionalFormattingCustomIconOptions {
     /// <p>Determines the type of icon.</p>
     #[doc(hidden)]
-    pub icon: std::option::Option<crate::types::Icon>,
+    pub icon: ::std::option::Option<crate::types::Icon>,
     /// <p>Determines the Unicode icon type.</p>
     #[doc(hidden)]
-    pub unicode_icon: std::option::Option<std::string::String>,
+    pub unicode_icon: ::std::option::Option<::std::string::String>,
 }
 impl ConditionalFormattingCustomIconOptions {
     /// <p>Determines the type of icon.</p>
-    pub fn icon(&self) -> std::option::Option<&crate::types::Icon> {
+    pub fn icon(&self) -> ::std::option::Option<&crate::types::Icon> {
         self.icon.as_ref()
     }
     /// <p>Determines the Unicode icon type.</p>
-    pub fn unicode_icon(&self) -> std::option::Option<&str> {
+    pub fn unicode_icon(&self) -> ::std::option::Option<&str> {
         self.unicode_icon.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl ConditionalFormattingCustomIconOptions {
 
 /// A builder for [`ConditionalFormattingCustomIconOptions`](crate::types::ConditionalFormattingCustomIconOptions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ConditionalFormattingCustomIconOptionsBuilder {
-    pub(crate) icon: std::option::Option<crate::types::Icon>,
-    pub(crate) unicode_icon: std::option::Option<std::string::String>,
+    pub(crate) icon: ::std::option::Option<crate::types::Icon>,
+    pub(crate) unicode_icon: ::std::option::Option<::std::string::String>,
 }
 impl ConditionalFormattingCustomIconOptionsBuilder {
     /// <p>Determines the type of icon.</p>
     pub fn icon(mut self, input: crate::types::Icon) -> Self {
-        self.icon = Some(input);
+        self.icon = ::std::option::Option::Some(input);
         self
     }
     /// <p>Determines the type of icon.</p>
-    pub fn set_icon(mut self, input: std::option::Option<crate::types::Icon>) -> Self {
+    pub fn set_icon(mut self, input: ::std::option::Option<crate::types::Icon>) -> Self {
         self.icon = input;
         self
     }
     /// <p>Determines the Unicode icon type.</p>
-    pub fn unicode_icon(mut self, input: impl Into<std::string::String>) -> Self {
-        self.unicode_icon = Some(input.into());
+    pub fn unicode_icon(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.unicode_icon = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Determines the Unicode icon type.</p>
-    pub fn set_unicode_icon(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_unicode_icon(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.unicode_icon = input;
         self
     }

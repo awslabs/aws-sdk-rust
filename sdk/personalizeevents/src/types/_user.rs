@@ -2,29 +2,29 @@
 
 /// <p>Represents user metadata added to a Users dataset using the <code>PutUsers</code> API. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/importing-users.html">Importing Users Incrementally</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct User {
     /// <p>The ID associated with the user.</p>
     #[doc(hidden)]
-    pub user_id: std::option::Option<std::string::String>,
+    pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>A string map of user-specific metadata. Each element in the map consists of a key-value pair. For example, <code>{"numberOfVideosWatched": "45"}</code>.</p>
     /// <p>The keys use camel case names that match the fields in the schema for the Users dataset. In the previous example, the <code>numberOfVideosWatched</code> matches the 'NUMBER_OF_VIDEOS_WATCHED' field defined in the Users schema. For categorical string data, to include multiple categories for a single user, separate each category with a pipe separator (<code>|</code>). For example, <code>\"Member|Frequent shopper\"</code>.</p>
     #[doc(hidden)]
-    pub properties: std::option::Option<std::string::String>,
+    pub properties: ::std::option::Option<::std::string::String>,
 }
 impl User {
     /// <p>The ID associated with the user.</p>
-    pub fn user_id(&self) -> std::option::Option<&str> {
+    pub fn user_id(&self) -> ::std::option::Option<&str> {
         self.user_id.as_deref()
     }
     /// <p>A string map of user-specific metadata. Each element in the map consists of a key-value pair. For example, <code>{"numberOfVideosWatched": "45"}</code>.</p>
     /// <p>The keys use camel case names that match the fields in the schema for the Users dataset. In the previous example, the <code>numberOfVideosWatched</code> matches the 'NUMBER_OF_VIDEOS_WATCHED' field defined in the Users schema. For categorical string data, to include multiple categories for a single user, separate each category with a pipe separator (<code>|</code>). For example, <code>\"Member|Frequent shopper\"</code>.</p>
-    pub fn properties(&self) -> std::option::Option<&str> {
+    pub fn properties(&self) -> ::std::option::Option<&str> {
         self.properties.as_deref()
     }
 }
-impl std::fmt::Debug for User {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for User {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("User");
         formatter.field("user_id", &self.user_id);
         formatter.field("properties", &"*** Sensitive Data Redacted ***");
@@ -40,31 +40,31 @@ impl User {
 
 /// A builder for [`User`](crate::types::User).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct UserBuilder {
-    pub(crate) user_id: std::option::Option<std::string::String>,
-    pub(crate) properties: std::option::Option<std::string::String>,
+    pub(crate) user_id: ::std::option::Option<::std::string::String>,
+    pub(crate) properties: ::std::option::Option<::std::string::String>,
 }
 impl UserBuilder {
     /// <p>The ID associated with the user.</p>
-    pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.user_id = Some(input.into());
+    pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.user_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID associated with the user.</p>
-    pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_id = input;
         self
     }
     /// <p>A string map of user-specific metadata. Each element in the map consists of a key-value pair. For example, <code>{"numberOfVideosWatched": "45"}</code>.</p>
     /// <p>The keys use camel case names that match the fields in the schema for the Users dataset. In the previous example, the <code>numberOfVideosWatched</code> matches the 'NUMBER_OF_VIDEOS_WATCHED' field defined in the Users schema. For categorical string data, to include multiple categories for a single user, separate each category with a pipe separator (<code>|</code>). For example, <code>\"Member|Frequent shopper\"</code>.</p>
-    pub fn properties(mut self, input: impl Into<std::string::String>) -> Self {
-        self.properties = Some(input.into());
+    pub fn properties(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.properties = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A string map of user-specific metadata. Each element in the map consists of a key-value pair. For example, <code>{"numberOfVideosWatched": "45"}</code>.</p>
     /// <p>The keys use camel case names that match the fields in the schema for the Users dataset. In the previous example, the <code>numberOfVideosWatched</code> matches the 'NUMBER_OF_VIDEOS_WATCHED' field defined in the Users schema. For categorical string data, to include multiple categories for a single user, separate each category with a pipe separator (<code>|</code>). For example, <code>\"Member|Frequent shopper\"</code>.</p>
-    pub fn set_properties(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_properties(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.properties = input;
         self
     }
@@ -76,8 +76,8 @@ impl UserBuilder {
         }
     }
 }
-impl std::fmt::Debug for UserBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for UserBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UserBuilder");
         formatter.field("user_id", &self.user_id);
         formatter.field("properties", &"*** Sensitive Data Redacted ***");

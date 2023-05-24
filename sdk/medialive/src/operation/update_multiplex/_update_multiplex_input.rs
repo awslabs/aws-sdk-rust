@@ -2,29 +2,29 @@
 
 /// A request to update a multiplex.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateMultiplexInput {
     /// ID of the multiplex to update.
     #[doc(hidden)]
-    pub multiplex_id: std::option::Option<std::string::String>,
+    pub multiplex_id: ::std::option::Option<::std::string::String>,
     /// The new settings for a multiplex.
     #[doc(hidden)]
-    pub multiplex_settings: std::option::Option<crate::types::MultiplexSettings>,
+    pub multiplex_settings: ::std::option::Option<crate::types::MultiplexSettings>,
     /// Name of the multiplex.
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateMultiplexInput {
     /// ID of the multiplex to update.
-    pub fn multiplex_id(&self) -> std::option::Option<&str> {
+    pub fn multiplex_id(&self) -> ::std::option::Option<&str> {
         self.multiplex_id.as_deref()
     }
     /// The new settings for a multiplex.
-    pub fn multiplex_settings(&self) -> std::option::Option<&crate::types::MultiplexSettings> {
+    pub fn multiplex_settings(&self) -> ::std::option::Option<&crate::types::MultiplexSettings> {
         self.multiplex_settings.as_ref()
     }
     /// Name of the multiplex.
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
 }
@@ -37,54 +37,56 @@ impl UpdateMultiplexInput {
 
 /// A builder for [`UpdateMultiplexInput`](crate::operation::update_multiplex::UpdateMultiplexInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateMultiplexInputBuilder {
-    pub(crate) multiplex_id: std::option::Option<std::string::String>,
-    pub(crate) multiplex_settings: std::option::Option<crate::types::MultiplexSettings>,
-    pub(crate) name: std::option::Option<std::string::String>,
+    pub(crate) multiplex_id: ::std::option::Option<::std::string::String>,
+    pub(crate) multiplex_settings: ::std::option::Option<crate::types::MultiplexSettings>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateMultiplexInputBuilder {
     /// ID of the multiplex to update.
-    pub fn multiplex_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.multiplex_id = Some(input.into());
+    pub fn multiplex_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.multiplex_id = ::std::option::Option::Some(input.into());
         self
     }
     /// ID of the multiplex to update.
-    pub fn set_multiplex_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_multiplex_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.multiplex_id = input;
         self
     }
     /// The new settings for a multiplex.
     pub fn multiplex_settings(mut self, input: crate::types::MultiplexSettings) -> Self {
-        self.multiplex_settings = Some(input);
+        self.multiplex_settings = ::std::option::Option::Some(input);
         self
     }
     /// The new settings for a multiplex.
     pub fn set_multiplex_settings(
         mut self,
-        input: std::option::Option<crate::types::MultiplexSettings>,
+        input: ::std::option::Option<crate::types::MultiplexSettings>,
     ) -> Self {
         self.multiplex_settings = input;
         self
     }
     /// Name of the multiplex.
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// Name of the multiplex.
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// Consumes the builder and constructs a [`UpdateMultiplexInput`](crate::operation::update_multiplex::UpdateMultiplexInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::update_multiplex::UpdateMultiplexInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::update_multiplex::UpdateMultiplexInput {
+        ::std::result::Result::Ok(crate::operation::update_multiplex::UpdateMultiplexInput {
             multiplex_id: self.multiplex_id,
             multiplex_settings: self.multiplex_settings,
             name: self.name,

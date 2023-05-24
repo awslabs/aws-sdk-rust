@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetGroup`](crate::operation::get_group::builders::GetGroupFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`group_id(impl Into<String>)`](crate::operation::get_group::builders::GetGroupFluentBuilder::group_id) / [`set_group_id(Option<String>)`](crate::operation::get_group::builders::GetGroupFluentBuilder::set_group_id): The ID of the Greengrass group.
+    ///   - [`group_id(impl ::std::convert::Into<String>)`](crate::operation::get_group::builders::GetGroupFluentBuilder::group_id) / [`set_group_id(Option<String>)`](crate::operation::get_group::builders::GetGroupFluentBuilder::set_group_id): The ID of the Greengrass group.
     /// - On success, responds with [`GetGroupOutput`](crate::operation::get_group::GetGroupOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::get_group::GetGroupOutput::arn): The ARN of the definition.
     ///   - [`creation_timestamp(Option<String>)`](crate::operation::get_group::GetGroupOutput::creation_timestamp): The time, in milliseconds since the epoch, when the definition was created.

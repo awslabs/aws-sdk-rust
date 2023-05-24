@@ -2,17 +2,17 @@
 
 /// <p> Includes all of the AppRegistry settings. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AppRegistryConfiguration {
     /// <p> Includes the definition of a <code>tagQuery</code>. </p>
     #[doc(hidden)]
-    pub tag_query_configuration: std::option::Option<crate::types::TagQueryConfiguration>,
+    pub tag_query_configuration: ::std::option::Option<crate::types::TagQueryConfiguration>,
 }
 impl AppRegistryConfiguration {
     /// <p> Includes the definition of a <code>tagQuery</code>. </p>
     pub fn tag_query_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::TagQueryConfiguration> {
+    ) -> ::std::option::Option<&crate::types::TagQueryConfiguration> {
         self.tag_query_configuration.as_ref()
     }
 }
@@ -25,20 +25,22 @@ impl AppRegistryConfiguration {
 
 /// A builder for [`AppRegistryConfiguration`](crate::types::AppRegistryConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AppRegistryConfigurationBuilder {
-    pub(crate) tag_query_configuration: std::option::Option<crate::types::TagQueryConfiguration>,
+    pub(crate) tag_query_configuration: ::std::option::Option<crate::types::TagQueryConfiguration>,
 }
 impl AppRegistryConfigurationBuilder {
     /// <p> Includes the definition of a <code>tagQuery</code>. </p>
     pub fn tag_query_configuration(mut self, input: crate::types::TagQueryConfiguration) -> Self {
-        self.tag_query_configuration = Some(input);
+        self.tag_query_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p> Includes the definition of a <code>tagQuery</code>. </p>
     pub fn set_tag_query_configuration(
         mut self,
-        input: std::option::Option<crate::types::TagQueryConfiguration>,
+        input: ::std::option::Option<crate::types::TagQueryConfiguration>,
     ) -> Self {
         self.tag_query_configuration = input;
         self

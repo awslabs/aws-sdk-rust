@@ -6,29 +6,29 @@ pub use crate::operation::update_data_source::_update_data_source_input::UpdateD
 /// Fluent builder constructing a request to `UpdateDataSource`.
 ///
 /// <p>Updates a <code>DataSource</code> object.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateDataSourceFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::update_data_source::builders::UpdateDataSourceInputBuilder,
 }
 impl UpdateDataSourceFluentBuilder {
     /// Creates a new `UpdateDataSource`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_data_source::UpdateDataSource,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_data_source::UpdateDataSourceError,
         >,
     > {
@@ -36,30 +36,33 @@ impl UpdateDataSourceFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_data_source::UpdateDataSourceOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_data_source::UpdateDataSourceError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,41 +75,41 @@ impl UpdateDataSourceFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_data_source::UpdateDataSourceOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_data_source::UpdateDataSourceError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The API ID.</p>
-    pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.api_id(input.into());
         self
     }
     /// <p>The API ID.</p>
-    pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_api_id(input);
         self
     }
     /// <p>The new name for the data source.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// <p>The new name for the data source.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
     /// <p>The new description for the data source.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>The new description for the data source.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
@@ -116,17 +119,23 @@ impl UpdateDataSourceFluentBuilder {
         self
     }
     /// <p>The new data source type.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::DataSourceType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::DataSourceType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }
     /// <p>The new service role Amazon Resource Name (ARN) for the data source.</p>
-    pub fn service_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn service_role_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.service_role_arn(input.into());
         self
     }
     /// <p>The new service role Amazon Resource Name (ARN) for the data source.</p>
-    pub fn set_service_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_service_role_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_service_role_arn(input);
         self
     }
@@ -138,7 +147,7 @@ impl UpdateDataSourceFluentBuilder {
     /// <p>The new Amazon DynamoDB configuration.</p>
     pub fn set_dynamodb_config(
         mut self,
-        input: std::option::Option<crate::types::DynamodbDataSourceConfig>,
+        input: ::std::option::Option<crate::types::DynamodbDataSourceConfig>,
     ) -> Self {
         self.inner = self.inner.set_dynamodb_config(input);
         self
@@ -151,7 +160,7 @@ impl UpdateDataSourceFluentBuilder {
     /// <p>The new Lambda configuration.</p>
     pub fn set_lambda_config(
         mut self,
-        input: std::option::Option<crate::types::LambdaDataSourceConfig>,
+        input: ::std::option::Option<crate::types::LambdaDataSourceConfig>,
     ) -> Self {
         self.inner = self.inner.set_lambda_config(input);
         self
@@ -169,7 +178,7 @@ impl UpdateDataSourceFluentBuilder {
     /// <p>As of September 2021, Amazon Elasticsearch service is Amazon OpenSearch Service. This configuration is deprecated. Instead, use <code>UpdateDataSourceRequest$openSearchServiceConfig</code> to update an OpenSearch data source.</p>
     pub fn set_elasticsearch_config(
         mut self,
-        input: std::option::Option<crate::types::ElasticsearchDataSourceConfig>,
+        input: ::std::option::Option<crate::types::ElasticsearchDataSourceConfig>,
     ) -> Self {
         self.inner = self.inner.set_elasticsearch_config(input);
         self
@@ -185,7 +194,7 @@ impl UpdateDataSourceFluentBuilder {
     /// <p>The new OpenSearch configuration.</p>
     pub fn set_open_search_service_config(
         mut self,
-        input: std::option::Option<crate::types::OpenSearchServiceDataSourceConfig>,
+        input: ::std::option::Option<crate::types::OpenSearchServiceDataSourceConfig>,
     ) -> Self {
         self.inner = self.inner.set_open_search_service_config(input);
         self
@@ -198,7 +207,7 @@ impl UpdateDataSourceFluentBuilder {
     /// <p>The new HTTP endpoint configuration.</p>
     pub fn set_http_config(
         mut self,
-        input: std::option::Option<crate::types::HttpDataSourceConfig>,
+        input: ::std::option::Option<crate::types::HttpDataSourceConfig>,
     ) -> Self {
         self.inner = self.inner.set_http_config(input);
         self
@@ -214,7 +223,7 @@ impl UpdateDataSourceFluentBuilder {
     /// <p>The new relational database configuration.</p>
     pub fn set_relational_database_config(
         mut self,
-        input: std::option::Option<crate::types::RelationalDatabaseDataSourceConfig>,
+        input: ::std::option::Option<crate::types::RelationalDatabaseDataSourceConfig>,
     ) -> Self {
         self.inner = self.inner.set_relational_database_config(input);
         self
@@ -227,7 +236,7 @@ impl UpdateDataSourceFluentBuilder {
     /// <p>The new Amazon EventBridge settings.</p>
     pub fn set_event_bridge_config(
         mut self,
-        input: std::option::Option<crate::types::EventBridgeDataSourceConfig>,
+        input: ::std::option::Option<crate::types::EventBridgeDataSourceConfig>,
     ) -> Self {
         self.inner = self.inner.set_event_bridge_config(input);
         self

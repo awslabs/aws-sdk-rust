@@ -2,22 +2,22 @@
 
 /// <p>The request body for RemoveAllBackends.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemoveAllBackendsInput {
     /// <p>The app ID.</p>
     #[doc(hidden)]
-    pub app_id: std::option::Option<std::string::String>,
+    pub app_id: ::std::option::Option<::std::string::String>,
     /// <p>Cleans up the Amplify Console app if this value is set to true.</p>
     #[doc(hidden)]
-    pub clean_amplify_app: std::option::Option<bool>,
+    pub clean_amplify_app: ::std::option::Option<bool>,
 }
 impl RemoveAllBackendsInput {
     /// <p>The app ID.</p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> ::std::option::Option<&str> {
         self.app_id.as_deref()
     }
     /// <p>Cleans up the Amplify Console app if this value is set to true.</p>
-    pub fn clean_amplify_app(&self) -> std::option::Option<bool> {
+    pub fn clean_amplify_app(&self) -> ::std::option::Option<bool> {
         self.clean_amplify_app
     }
 }
@@ -31,40 +31,42 @@ impl RemoveAllBackendsInput {
 
 /// A builder for [`RemoveAllBackendsInput`](crate::operation::remove_all_backends::RemoveAllBackendsInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RemoveAllBackendsInputBuilder {
-    pub(crate) app_id: std::option::Option<std::string::String>,
-    pub(crate) clean_amplify_app: std::option::Option<bool>,
+    pub(crate) app_id: ::std::option::Option<::std::string::String>,
+    pub(crate) clean_amplify_app: ::std::option::Option<bool>,
 }
 impl RemoveAllBackendsInputBuilder {
     /// <p>The app ID.</p>
-    pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.app_id = Some(input.into());
+    pub fn app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.app_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The app ID.</p>
-    pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_app_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_id = input;
         self
     }
     /// <p>Cleans up the Amplify Console app if this value is set to true.</p>
     pub fn clean_amplify_app(mut self, input: bool) -> Self {
-        self.clean_amplify_app = Some(input);
+        self.clean_amplify_app = ::std::option::Option::Some(input);
         self
     }
     /// <p>Cleans up the Amplify Console app if this value is set to true.</p>
-    pub fn set_clean_amplify_app(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_clean_amplify_app(mut self, input: ::std::option::Option<bool>) -> Self {
         self.clean_amplify_app = input;
         self
     }
     /// Consumes the builder and constructs a [`RemoveAllBackendsInput`](crate::operation::remove_all_backends::RemoveAllBackendsInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::remove_all_backends::RemoveAllBackendsInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::remove_all_backends::RemoveAllBackendsInput {
                 app_id: self.app_id,
                 clean_amplify_app: self.clean_amplify_app,

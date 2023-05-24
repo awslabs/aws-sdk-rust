@@ -2,38 +2,38 @@
 
 /// <p>Configures the CloudWatch Logs to publish for the OpenSearch domain.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsOpenSearchServiceDomainLogPublishingOptionsDetails {
     /// <p>Configures the OpenSearch index logs publishing.</p>
     #[doc(hidden)]
     pub index_slow_logs:
-        std::option::Option<crate::types::AwsOpenSearchServiceDomainLogPublishingOption>,
+        ::std::option::Option<crate::types::AwsOpenSearchServiceDomainLogPublishingOption>,
     /// <p>Configures the OpenSearch search slow log publishing.</p>
     #[doc(hidden)]
     pub search_slow_logs:
-        std::option::Option<crate::types::AwsOpenSearchServiceDomainLogPublishingOption>,
+        ::std::option::Option<crate::types::AwsOpenSearchServiceDomainLogPublishingOption>,
     /// <p>Configures the OpenSearch audit logs publishing.</p>
     #[doc(hidden)]
     pub audit_logs:
-        std::option::Option<crate::types::AwsOpenSearchServiceDomainLogPublishingOption>,
+        ::std::option::Option<crate::types::AwsOpenSearchServiceDomainLogPublishingOption>,
 }
 impl AwsOpenSearchServiceDomainLogPublishingOptionsDetails {
     /// <p>Configures the OpenSearch index logs publishing.</p>
     pub fn index_slow_logs(
         &self,
-    ) -> std::option::Option<&crate::types::AwsOpenSearchServiceDomainLogPublishingOption> {
+    ) -> ::std::option::Option<&crate::types::AwsOpenSearchServiceDomainLogPublishingOption> {
         self.index_slow_logs.as_ref()
     }
     /// <p>Configures the OpenSearch search slow log publishing.</p>
     pub fn search_slow_logs(
         &self,
-    ) -> std::option::Option<&crate::types::AwsOpenSearchServiceDomainLogPublishingOption> {
+    ) -> ::std::option::Option<&crate::types::AwsOpenSearchServiceDomainLogPublishingOption> {
         self.search_slow_logs.as_ref()
     }
     /// <p>Configures the OpenSearch audit logs publishing.</p>
     pub fn audit_logs(
         &self,
-    ) -> std::option::Option<&crate::types::AwsOpenSearchServiceDomainLogPublishingOption> {
+    ) -> ::std::option::Option<&crate::types::AwsOpenSearchServiceDomainLogPublishingOption> {
         self.audit_logs.as_ref()
     }
 }
@@ -47,14 +47,16 @@ impl AwsOpenSearchServiceDomainLogPublishingOptionsDetails {
 
 /// A builder for [`AwsOpenSearchServiceDomainLogPublishingOptionsDetails`](crate::types::AwsOpenSearchServiceDomainLogPublishingOptionsDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsOpenSearchServiceDomainLogPublishingOptionsDetailsBuilder {
     pub(crate) index_slow_logs:
-        std::option::Option<crate::types::AwsOpenSearchServiceDomainLogPublishingOption>,
+        ::std::option::Option<crate::types::AwsOpenSearchServiceDomainLogPublishingOption>,
     pub(crate) search_slow_logs:
-        std::option::Option<crate::types::AwsOpenSearchServiceDomainLogPublishingOption>,
+        ::std::option::Option<crate::types::AwsOpenSearchServiceDomainLogPublishingOption>,
     pub(crate) audit_logs:
-        std::option::Option<crate::types::AwsOpenSearchServiceDomainLogPublishingOption>,
+        ::std::option::Option<crate::types::AwsOpenSearchServiceDomainLogPublishingOption>,
 }
 impl AwsOpenSearchServiceDomainLogPublishingOptionsDetailsBuilder {
     /// <p>Configures the OpenSearch index logs publishing.</p>
@@ -62,13 +64,13 @@ impl AwsOpenSearchServiceDomainLogPublishingOptionsDetailsBuilder {
         mut self,
         input: crate::types::AwsOpenSearchServiceDomainLogPublishingOption,
     ) -> Self {
-        self.index_slow_logs = Some(input);
+        self.index_slow_logs = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configures the OpenSearch index logs publishing.</p>
     pub fn set_index_slow_logs(
         mut self,
-        input: std::option::Option<crate::types::AwsOpenSearchServiceDomainLogPublishingOption>,
+        input: ::std::option::Option<crate::types::AwsOpenSearchServiceDomainLogPublishingOption>,
     ) -> Self {
         self.index_slow_logs = input;
         self
@@ -78,13 +80,13 @@ impl AwsOpenSearchServiceDomainLogPublishingOptionsDetailsBuilder {
         mut self,
         input: crate::types::AwsOpenSearchServiceDomainLogPublishingOption,
     ) -> Self {
-        self.search_slow_logs = Some(input);
+        self.search_slow_logs = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configures the OpenSearch search slow log publishing.</p>
     pub fn set_search_slow_logs(
         mut self,
-        input: std::option::Option<crate::types::AwsOpenSearchServiceDomainLogPublishingOption>,
+        input: ::std::option::Option<crate::types::AwsOpenSearchServiceDomainLogPublishingOption>,
     ) -> Self {
         self.search_slow_logs = input;
         self
@@ -94,13 +96,13 @@ impl AwsOpenSearchServiceDomainLogPublishingOptionsDetailsBuilder {
         mut self,
         input: crate::types::AwsOpenSearchServiceDomainLogPublishingOption,
     ) -> Self {
-        self.audit_logs = Some(input);
+        self.audit_logs = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configures the OpenSearch audit logs publishing.</p>
     pub fn set_audit_logs(
         mut self,
-        input: std::option::Option<crate::types::AwsOpenSearchServiceDomainLogPublishingOption>,
+        input: ::std::option::Option<crate::types::AwsOpenSearchServiceDomainLogPublishingOption>,
     ) -> Self {
         self.audit_logs = input;
         self

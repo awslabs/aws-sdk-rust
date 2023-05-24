@@ -2,15 +2,15 @@
 
 /// <p>Contains details for a gateway that runs on IoT Greengrass V2. To create a gateway that runs on IoT Greengrass V2, you must deploy the IoT SiteWise Edge component to your gateway device. Your <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/device-service-role.html">Greengrass device role</a> must use the <code>AWSIoTSiteWiseEdgeAccess</code> policy. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/sw-gateways.html">Using IoT SiteWise at the edge</a> in the <i>IoT SiteWise User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GreengrassV2 {
     /// <p>The name of the IoT thing for your IoT Greengrass V2 core device.</p>
     #[doc(hidden)]
-    pub core_device_thing_name: std::option::Option<std::string::String>,
+    pub core_device_thing_name: ::std::option::Option<::std::string::String>,
 }
 impl GreengrassV2 {
     /// <p>The name of the IoT thing for your IoT Greengrass V2 core device.</p>
-    pub fn core_device_thing_name(&self) -> std::option::Option<&str> {
+    pub fn core_device_thing_name(&self) -> ::std::option::Option<&str> {
         self.core_device_thing_name.as_deref()
     }
 }
@@ -23,20 +23,25 @@ impl GreengrassV2 {
 
 /// A builder for [`GreengrassV2`](crate::types::GreengrassV2).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GreengrassV2Builder {
-    pub(crate) core_device_thing_name: std::option::Option<std::string::String>,
+    pub(crate) core_device_thing_name: ::std::option::Option<::std::string::String>,
 }
 impl GreengrassV2Builder {
     /// <p>The name of the IoT thing for your IoT Greengrass V2 core device.</p>
-    pub fn core_device_thing_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.core_device_thing_name = Some(input.into());
+    pub fn core_device_thing_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.core_device_thing_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the IoT thing for your IoT Greengrass V2 core device.</p>
     pub fn set_core_device_thing_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.core_device_thing_name = input;
         self

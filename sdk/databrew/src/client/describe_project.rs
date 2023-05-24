@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeProject`](crate::operation::describe_project::builders::DescribeProjectFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::describe_project::builders::DescribeProjectFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::describe_project::builders::DescribeProjectFluentBuilder::set_name): <p>The name of the project to be described.</p>
+    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::describe_project::builders::DescribeProjectFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::describe_project::builders::DescribeProjectFluentBuilder::set_name): <p>The name of the project to be described.</p>
     /// - On success, responds with [`DescribeProjectOutput`](crate::operation::describe_project::DescribeProjectOutput) with field(s):
     ///   - [`create_date(Option<DateTime>)`](crate::operation::describe_project::DescribeProjectOutput::create_date): <p>The date and time that the project was created.</p>
     ///   - [`created_by(Option<String>)`](crate::operation::describe_project::DescribeProjectOutput::created_by): <p>The identifier (user name) of the user who created the project.</p>

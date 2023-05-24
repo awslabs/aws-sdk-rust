@@ -2,24 +2,24 @@
 
 /// <p>A code review type that analyzes all code under a specified branch in an associated repository. The associated repository is specified using its ARN when you call <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">CreateCodeReview</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RepositoryAnalysis {
     /// <p>A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that specifies the tip of a branch in an associated repository.</p>
     #[doc(hidden)]
-    pub repository_head: std::option::Option<crate::types::RepositoryHeadSourceCodeType>,
+    pub repository_head: ::std::option::Option<crate::types::RepositoryHeadSourceCodeType>,
     /// <p>Specifies the source code that is analyzed in a code review.</p>
     #[doc(hidden)]
-    pub source_code_type: std::option::Option<crate::types::SourceCodeType>,
+    pub source_code_type: ::std::option::Option<crate::types::SourceCodeType>,
 }
 impl RepositoryAnalysis {
     /// <p>A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that specifies the tip of a branch in an associated repository.</p>
     pub fn repository_head(
         &self,
-    ) -> std::option::Option<&crate::types::RepositoryHeadSourceCodeType> {
+    ) -> ::std::option::Option<&crate::types::RepositoryHeadSourceCodeType> {
         self.repository_head.as_ref()
     }
     /// <p>Specifies the source code that is analyzed in a code review.</p>
-    pub fn source_code_type(&self) -> std::option::Option<&crate::types::SourceCodeType> {
+    pub fn source_code_type(&self) -> ::std::option::Option<&crate::types::SourceCodeType> {
         self.source_code_type.as_ref()
     }
 }
@@ -32,34 +32,36 @@ impl RepositoryAnalysis {
 
 /// A builder for [`RepositoryAnalysis`](crate::types::RepositoryAnalysis).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RepositoryAnalysisBuilder {
-    pub(crate) repository_head: std::option::Option<crate::types::RepositoryHeadSourceCodeType>,
-    pub(crate) source_code_type: std::option::Option<crate::types::SourceCodeType>,
+    pub(crate) repository_head: ::std::option::Option<crate::types::RepositoryHeadSourceCodeType>,
+    pub(crate) source_code_type: ::std::option::Option<crate::types::SourceCodeType>,
 }
 impl RepositoryAnalysisBuilder {
     /// <p>A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that specifies the tip of a branch in an associated repository.</p>
     pub fn repository_head(mut self, input: crate::types::RepositoryHeadSourceCodeType) -> Self {
-        self.repository_head = Some(input);
+        self.repository_head = ::std::option::Option::Some(input);
         self
     }
     /// <p>A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that specifies the tip of a branch in an associated repository.</p>
     pub fn set_repository_head(
         mut self,
-        input: std::option::Option<crate::types::RepositoryHeadSourceCodeType>,
+        input: ::std::option::Option<crate::types::RepositoryHeadSourceCodeType>,
     ) -> Self {
         self.repository_head = input;
         self
     }
     /// <p>Specifies the source code that is analyzed in a code review.</p>
     pub fn source_code_type(mut self, input: crate::types::SourceCodeType) -> Self {
-        self.source_code_type = Some(input);
+        self.source_code_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the source code that is analyzed in a code review.</p>
     pub fn set_source_code_type(
         mut self,
-        input: std::option::Option<crate::types::SourceCodeType>,
+        input: ::std::option::Option<crate::types::SourceCodeType>,
     ) -> Self {
         self.source_code_type = input;
         self

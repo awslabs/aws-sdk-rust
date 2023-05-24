@@ -2,11 +2,11 @@
 
 /// <p>This data type is used as a response element to <code>DescribeDBLogFiles</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDbLogFilesDetails {
     /// <p>The name of the log file for the specified DB instance.</p>
     #[doc(hidden)]
-    pub log_file_name: std::option::Option<std::string::String>,
+    pub log_file_name: ::std::option::Option<::std::string::String>,
     /// <p>A POSIX timestamp when the last log entry was written.</p>
     #[doc(hidden)]
     pub last_written: i64,
@@ -16,7 +16,7 @@ pub struct DescribeDbLogFilesDetails {
 }
 impl DescribeDbLogFilesDetails {
     /// <p>The name of the log file for the specified DB instance.</p>
-    pub fn log_file_name(&self) -> std::option::Option<&str> {
+    pub fn log_file_name(&self) -> ::std::option::Option<&str> {
         self.log_file_name.as_deref()
     }
     /// <p>A POSIX timestamp when the last log entry was written.</p>
@@ -37,40 +37,48 @@ impl DescribeDbLogFilesDetails {
 
 /// A builder for [`DescribeDbLogFilesDetails`](crate::types::DescribeDbLogFilesDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeDbLogFilesDetailsBuilder {
-    pub(crate) log_file_name: std::option::Option<std::string::String>,
-    pub(crate) last_written: std::option::Option<i64>,
-    pub(crate) size: std::option::Option<i64>,
+    pub(crate) log_file_name: ::std::option::Option<::std::string::String>,
+    pub(crate) last_written: ::std::option::Option<i64>,
+    pub(crate) size: ::std::option::Option<i64>,
 }
 impl DescribeDbLogFilesDetailsBuilder {
     /// <p>The name of the log file for the specified DB instance.</p>
-    pub fn log_file_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.log_file_name = Some(input.into());
+    pub fn log_file_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.log_file_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the log file for the specified DB instance.</p>
-    pub fn set_log_file_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_log_file_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.log_file_name = input;
         self
     }
     /// <p>A POSIX timestamp when the last log entry was written.</p>
     pub fn last_written(mut self, input: i64) -> Self {
-        self.last_written = Some(input);
+        self.last_written = ::std::option::Option::Some(input);
         self
     }
     /// <p>A POSIX timestamp when the last log entry was written.</p>
-    pub fn set_last_written(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_last_written(mut self, input: ::std::option::Option<i64>) -> Self {
         self.last_written = input;
         self
     }
     /// <p>The size, in bytes, of the log file for the specified DB instance.</p>
     pub fn size(mut self, input: i64) -> Self {
-        self.size = Some(input);
+        self.size = ::std::option::Option::Some(input);
         self
     }
     /// <p>The size, in bytes, of the log file for the specified DB instance.</p>
-    pub fn set_size(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_size(mut self, input: ::std::option::Option<i64>) -> Self {
         self.size = input;
         self
     }

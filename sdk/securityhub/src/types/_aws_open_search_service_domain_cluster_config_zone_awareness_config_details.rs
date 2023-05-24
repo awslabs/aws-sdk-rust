@@ -2,7 +2,7 @@
 
 /// <p>Configuration options for zone awareness.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails {
     /// <p>The number of Availability Zones that the domain uses. Valid values are <code>2</code> or <code>3</code>. The default is <code>2</code>.</p>
     #[doc(hidden)]
@@ -23,18 +23,20 @@ impl AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails {
 
 /// A builder for [`AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails`](crate::types::AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetailsBuilder {
-    pub(crate) availability_zone_count: std::option::Option<i32>,
+    pub(crate) availability_zone_count: ::std::option::Option<i32>,
 }
 impl AwsOpenSearchServiceDomainClusterConfigZoneAwarenessConfigDetailsBuilder {
     /// <p>The number of Availability Zones that the domain uses. Valid values are <code>2</code> or <code>3</code>. The default is <code>2</code>.</p>
     pub fn availability_zone_count(mut self, input: i32) -> Self {
-        self.availability_zone_count = Some(input);
+        self.availability_zone_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of Availability Zones that the domain uses. Valid values are <code>2</code> or <code>3</code>. The default is <code>2</code>.</p>
-    pub fn set_availability_zone_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_availability_zone_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.availability_zone_count = input;
         self
     }

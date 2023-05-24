@@ -39,13 +39,13 @@
 /// Optional. When you request a list of job templates, you can choose to list them alphabetically by NAME or chronologically by CREATION_DATE. If you don't specify, the service will list them by name.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum JobTemplateListBy {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum JobTemplateListBy {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for JobTemplateListBy {
+impl ::std::convert::From<&str> for JobTemplateListBy {
     fn from(s: &str) -> Self {
         match s {
             "CREATION_DATE" => JobTemplateListBy::CreationDate,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for JobTemplateListBy {
         }
     }
 }
-impl std::str::FromStr for JobTemplateListBy {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for JobTemplateListBy {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(JobTemplateListBy::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(JobTemplateListBy::from(s))
     }
 }
 impl JobTemplateListBy {
@@ -91,7 +91,7 @@ impl JobTemplateListBy {
         &["CREATION_DATE", "NAME", "SYSTEM"]
     }
 }
-impl AsRef<str> for JobTemplateListBy {
+impl ::std::convert::AsRef<str> for JobTemplateListBy {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -2,22 +2,22 @@
 
 /// <p>Membership details, such as member ID and member role.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MembershipItem {
     /// <p>The member ID.</p>
     #[doc(hidden)]
-    pub member_id: std::option::Option<std::string::String>,
+    pub member_id: ::std::option::Option<::std::string::String>,
     /// <p>The member role.</p>
     #[doc(hidden)]
-    pub role: std::option::Option<crate::types::RoomMembershipRole>,
+    pub role: ::std::option::Option<crate::types::RoomMembershipRole>,
 }
 impl MembershipItem {
     /// <p>The member ID.</p>
-    pub fn member_id(&self) -> std::option::Option<&str> {
+    pub fn member_id(&self) -> ::std::option::Option<&str> {
         self.member_id.as_deref()
     }
     /// <p>The member role.</p>
-    pub fn role(&self) -> std::option::Option<&crate::types::RoomMembershipRole> {
+    pub fn role(&self) -> ::std::option::Option<&crate::types::RoomMembershipRole> {
         self.role.as_ref()
     }
 }
@@ -30,31 +30,33 @@ impl MembershipItem {
 
 /// A builder for [`MembershipItem`](crate::types::MembershipItem).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MembershipItemBuilder {
-    pub(crate) member_id: std::option::Option<std::string::String>,
-    pub(crate) role: std::option::Option<crate::types::RoomMembershipRole>,
+    pub(crate) member_id: ::std::option::Option<::std::string::String>,
+    pub(crate) role: ::std::option::Option<crate::types::RoomMembershipRole>,
 }
 impl MembershipItemBuilder {
     /// <p>The member ID.</p>
-    pub fn member_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.member_id = Some(input.into());
+    pub fn member_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.member_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The member ID.</p>
-    pub fn set_member_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_member_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.member_id = input;
         self
     }
     /// <p>The member role.</p>
     pub fn role(mut self, input: crate::types::RoomMembershipRole) -> Self {
-        self.role = Some(input);
+        self.role = ::std::option::Option::Some(input);
         self
     }
     /// <p>The member role.</p>
     pub fn set_role(
         mut self,
-        input: std::option::Option<crate::types::RoomMembershipRole>,
+        input: ::std::option::Option<crate::types::RoomMembershipRole>,
     ) -> Self {
         self.role = input;
         self

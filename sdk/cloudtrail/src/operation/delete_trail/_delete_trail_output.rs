@@ -2,11 +2,11 @@
 
 /// <p>Returns the objects or data listed below if successful. Otherwise, returns an error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteTrailOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for DeleteTrailOutput {
+impl ::aws_http::request_id::RequestId for DeleteTrailOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -20,7 +20,9 @@ impl DeleteTrailOutput {
 
 /// A builder for [`DeleteTrailOutput`](crate::operation::delete_trail::DeleteTrailOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteTrailOutputBuilder {
     _request_id: Option<String>,
 }

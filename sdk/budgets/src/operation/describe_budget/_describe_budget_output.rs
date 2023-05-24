@@ -2,20 +2,20 @@
 
 /// <p> Response of DescribeBudget </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeBudgetOutput {
     /// <p>The description of the budget.</p>
     #[doc(hidden)]
-    pub budget: std::option::Option<crate::types::Budget>,
+    pub budget: ::std::option::Option<crate::types::Budget>,
     _request_id: Option<String>,
 }
 impl DescribeBudgetOutput {
     /// <p>The description of the budget.</p>
-    pub fn budget(&self) -> std::option::Option<&crate::types::Budget> {
+    pub fn budget(&self) -> ::std::option::Option<&crate::types::Budget> {
         self.budget.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeBudgetOutput {
+impl ::aws_http::request_id::RequestId for DescribeBudgetOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,21 @@ impl DescribeBudgetOutput {
 
 /// A builder for [`DescribeBudgetOutput`](crate::operation::describe_budget::DescribeBudgetOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeBudgetOutputBuilder {
-    pub(crate) budget: std::option::Option<crate::types::Budget>,
+    pub(crate) budget: ::std::option::Option<crate::types::Budget>,
     _request_id: Option<String>,
 }
 impl DescribeBudgetOutputBuilder {
     /// <p>The description of the budget.</p>
     pub fn budget(mut self, input: crate::types::Budget) -> Self {
-        self.budget = Some(input);
+        self.budget = ::std::option::Option::Some(input);
         self
     }
     /// <p>The description of the budget.</p>
-    pub fn set_budget(mut self, input: std::option::Option<crate::types::Budget>) -> Self {
+    pub fn set_budget(mut self, input: ::std::option::Option<crate::types::Budget>) -> Self {
         self.budget = input;
         self
     }

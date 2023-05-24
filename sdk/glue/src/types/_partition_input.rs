@@ -2,49 +2,51 @@
 
 /// <p>The structure used to create and update a partition.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PartitionInput {
     /// <p>The values of the partition. Although this parameter is not required by the SDK, you must specify this parameter for a valid input.</p>
     /// <p>The values for the keys for the new partition must be passed as an array of String objects that must be ordered in the same order as the partition keys appearing in the Amazon S3 prefix. Otherwise Glue will add the values to the wrong keys.</p>
     #[doc(hidden)]
-    pub values: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The last time at which the partition was accessed.</p>
     #[doc(hidden)]
-    pub last_access_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_access_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Provides information about the physical location where the partition is stored.</p>
     #[doc(hidden)]
-    pub storage_descriptor: std::option::Option<crate::types::StorageDescriptor>,
+    pub storage_descriptor: ::std::option::Option<crate::types::StorageDescriptor>,
     /// <p>These key-value pairs define partition parameters.</p>
     #[doc(hidden)]
-    pub parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub parameters: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>The last time at which column statistics were computed for this partition.</p>
     #[doc(hidden)]
-    pub last_analyzed_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_analyzed_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl PartitionInput {
     /// <p>The values of the partition. Although this parameter is not required by the SDK, you must specify this parameter for a valid input.</p>
     /// <p>The values for the keys for the new partition must be passed as an array of String objects that must be ordered in the same order as the partition keys appearing in the Amazon S3 prefix. Otherwise Glue will add the values to the wrong keys.</p>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.values.as_deref()
     }
     /// <p>The last time at which the partition was accessed.</p>
-    pub fn last_access_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_access_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_access_time.as_ref()
     }
     /// <p>Provides information about the physical location where the partition is stored.</p>
-    pub fn storage_descriptor(&self) -> std::option::Option<&crate::types::StorageDescriptor> {
+    pub fn storage_descriptor(&self) -> ::std::option::Option<&crate::types::StorageDescriptor> {
         self.storage_descriptor.as_ref()
     }
     /// <p>These key-value pairs define partition parameters.</p>
     pub fn parameters(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.parameters.as_ref()
     }
     /// <p>The last time at which column statistics were computed for this partition.</p>
-    pub fn last_analyzed_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_analyzed_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_analyzed_time.as_ref()
     }
 }
@@ -57,14 +59,17 @@ impl PartitionInput {
 
 /// A builder for [`PartitionInput`](crate::types::PartitionInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PartitionInputBuilder {
-    pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) last_access_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) storage_descriptor: std::option::Option<crate::types::StorageDescriptor>,
-    pub(crate) parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) last_analyzed_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) last_access_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) storage_descriptor: ::std::option::Option<crate::types::StorageDescriptor>,
+    pub(crate) parameters: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) last_analyzed_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl PartitionInputBuilder {
     /// Appends an item to `values`.
@@ -73,43 +78,43 @@ impl PartitionInputBuilder {
     ///
     /// <p>The values of the partition. Although this parameter is not required by the SDK, you must specify this parameter for a valid input.</p>
     /// <p>The values for the keys for the new partition must be passed as an array of String objects that must be ordered in the same order as the partition keys appearing in the Amazon S3 prefix. Otherwise Glue will add the values to the wrong keys.</p>
-    pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
         v.push(input.into());
-        self.values = Some(v);
+        self.values = ::std::option::Option::Some(v);
         self
     }
     /// <p>The values of the partition. Although this parameter is not required by the SDK, you must specify this parameter for a valid input.</p>
     /// <p>The values for the keys for the new partition must be passed as an array of String objects that must be ordered in the same order as the partition keys appearing in the Amazon S3 prefix. Otherwise Glue will add the values to the wrong keys.</p>
     pub fn set_values(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.values = input;
         self
     }
     /// <p>The last time at which the partition was accessed.</p>
-    pub fn last_access_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_access_time = Some(input);
+    pub fn last_access_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_access_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The last time at which the partition was accessed.</p>
     pub fn set_last_access_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_access_time = input;
         self
     }
     /// <p>Provides information about the physical location where the partition is stored.</p>
     pub fn storage_descriptor(mut self, input: crate::types::StorageDescriptor) -> Self {
-        self.storage_descriptor = Some(input);
+        self.storage_descriptor = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides information about the physical location where the partition is stored.</p>
     pub fn set_storage_descriptor(
         mut self,
-        input: std::option::Option<crate::types::StorageDescriptor>,
+        input: ::std::option::Option<crate::types::StorageDescriptor>,
     ) -> Self {
         self.storage_descriptor = input;
         self
@@ -121,33 +126,33 @@ impl PartitionInputBuilder {
     /// <p>These key-value pairs define partition parameters.</p>
     pub fn parameters(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.parameters = Some(hash_map);
+        self.parameters = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>These key-value pairs define partition parameters.</p>
     pub fn set_parameters(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.parameters = input;
         self
     }
     /// <p>The last time at which column statistics were computed for this partition.</p>
-    pub fn last_analyzed_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_analyzed_time = Some(input);
+    pub fn last_analyzed_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_analyzed_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The last time at which column statistics were computed for this partition.</p>
     pub fn set_last_analyzed_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_analyzed_time = input;
         self

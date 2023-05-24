@@ -2,22 +2,22 @@
 
 /// <p>A container for what Amazon S3 Storage Lens configuration includes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Include {
     /// <p>A container for the S3 Storage Lens bucket includes.</p>
     #[doc(hidden)]
-    pub buckets: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub buckets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A container for the S3 Storage Lens Region includes.</p>
     #[doc(hidden)]
-    pub regions: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Include {
     /// <p>A container for the S3 Storage Lens bucket includes.</p>
-    pub fn buckets(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn buckets(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.buckets.as_deref()
     }
     /// <p>A container for the S3 Storage Lens Region includes.</p>
-    pub fn regions(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn regions(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.regions.as_deref()
     }
 }
@@ -30,10 +30,12 @@ impl Include {
 
 /// A builder for [`Include`](crate::types::Include).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct IncludeBuilder {
-    pub(crate) buckets: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) regions: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) buckets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl IncludeBuilder {
     /// Appends an item to `buckets`.
@@ -41,16 +43,16 @@ impl IncludeBuilder {
     /// To override the contents of this collection use [`set_buckets`](Self::set_buckets).
     ///
     /// <p>A container for the S3 Storage Lens bucket includes.</p>
-    pub fn buckets(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn buckets(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.buckets.unwrap_or_default();
         v.push(input.into());
-        self.buckets = Some(v);
+        self.buckets = ::std::option::Option::Some(v);
         self
     }
     /// <p>A container for the S3 Storage Lens bucket includes.</p>
     pub fn set_buckets(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.buckets = input;
         self
@@ -60,16 +62,16 @@ impl IncludeBuilder {
     /// To override the contents of this collection use [`set_regions`](Self::set_regions).
     ///
     /// <p>A container for the S3 Storage Lens Region includes.</p>
-    pub fn regions(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn regions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.regions.unwrap_or_default();
         v.push(input.into());
-        self.regions = Some(v);
+        self.regions = ::std::option::Option::Some(v);
         self
     }
     /// <p>A container for the S3 Storage Lens Region includes.</p>
     pub fn set_regions(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.regions = input;
         self

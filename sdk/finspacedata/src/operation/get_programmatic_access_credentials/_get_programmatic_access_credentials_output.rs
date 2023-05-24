@@ -2,11 +2,11 @@
 
 /// Response for GetProgrammaticAccessCredentials operation
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetProgrammaticAccessCredentialsOutput {
     /// <p>Returns the programmatic credentials.</p>
     #[doc(hidden)]
-    pub credentials: std::option::Option<crate::types::Credentials>,
+    pub credentials: ::std::option::Option<crate::types::Credentials>,
     /// <p>Returns the duration in which the credentials will remain valid.</p>
     #[doc(hidden)]
     pub duration_in_minutes: i64,
@@ -14,7 +14,7 @@ pub struct GetProgrammaticAccessCredentialsOutput {
 }
 impl GetProgrammaticAccessCredentialsOutput {
     /// <p>Returns the programmatic credentials.</p>
-    pub fn credentials(&self) -> std::option::Option<&crate::types::Credentials> {
+    pub fn credentials(&self) -> ::std::option::Option<&crate::types::Credentials> {
         self.credentials.as_ref()
     }
     /// <p>Returns the duration in which the credentials will remain valid.</p>
@@ -22,7 +22,7 @@ impl GetProgrammaticAccessCredentialsOutput {
         self.duration_in_minutes
     }
 }
-impl aws_http::request_id::RequestId for GetProgrammaticAccessCredentialsOutput {
+impl ::aws_http::request_id::RequestId for GetProgrammaticAccessCredentialsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -36,33 +36,35 @@ impl GetProgrammaticAccessCredentialsOutput {
 
 /// A builder for [`GetProgrammaticAccessCredentialsOutput`](crate::operation::get_programmatic_access_credentials::GetProgrammaticAccessCredentialsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetProgrammaticAccessCredentialsOutputBuilder {
-    pub(crate) credentials: std::option::Option<crate::types::Credentials>,
-    pub(crate) duration_in_minutes: std::option::Option<i64>,
+    pub(crate) credentials: ::std::option::Option<crate::types::Credentials>,
+    pub(crate) duration_in_minutes: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }
 impl GetProgrammaticAccessCredentialsOutputBuilder {
     /// <p>Returns the programmatic credentials.</p>
     pub fn credentials(mut self, input: crate::types::Credentials) -> Self {
-        self.credentials = Some(input);
+        self.credentials = ::std::option::Option::Some(input);
         self
     }
     /// <p>Returns the programmatic credentials.</p>
     pub fn set_credentials(
         mut self,
-        input: std::option::Option<crate::types::Credentials>,
+        input: ::std::option::Option<crate::types::Credentials>,
     ) -> Self {
         self.credentials = input;
         self
     }
     /// <p>Returns the duration in which the credentials will remain valid.</p>
     pub fn duration_in_minutes(mut self, input: i64) -> Self {
-        self.duration_in_minutes = Some(input);
+        self.duration_in_minutes = ::std::option::Option::Some(input);
         self
     }
     /// <p>Returns the duration in which the credentials will remain valid.</p>
-    pub fn set_duration_in_minutes(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_duration_in_minutes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.duration_in_minutes = input;
         self
     }

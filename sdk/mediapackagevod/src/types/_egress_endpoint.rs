@@ -2,29 +2,29 @@
 
 /// The endpoint URL used to access an Asset using one PackagingConfiguration.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EgressEndpoint {
     /// The ID of the PackagingConfiguration being applied to the Asset.
     #[doc(hidden)]
-    pub packaging_configuration_id: std::option::Option<std::string::String>,
+    pub packaging_configuration_id: ::std::option::Option<::std::string::String>,
     /// The current processing status of the asset used for the packaging configuration. The status can be either QUEUED, PROCESSING, PLAYABLE, or FAILED. Status information won't be available for most assets ingested before 2021-09-30.
     #[doc(hidden)]
-    pub status: std::option::Option<std::string::String>,
+    pub status: ::std::option::Option<::std::string::String>,
     /// The URL of the parent manifest for the repackaged Asset.
     #[doc(hidden)]
-    pub url: std::option::Option<std::string::String>,
+    pub url: ::std::option::Option<::std::string::String>,
 }
 impl EgressEndpoint {
     /// The ID of the PackagingConfiguration being applied to the Asset.
-    pub fn packaging_configuration_id(&self) -> std::option::Option<&str> {
+    pub fn packaging_configuration_id(&self) -> ::std::option::Option<&str> {
         self.packaging_configuration_id.as_deref()
     }
     /// The current processing status of the asset used for the packaging configuration. The status can be either QUEUED, PROCESSING, PLAYABLE, or FAILED. Status information won't be available for most assets ingested before 2021-09-30.
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
     /// The URL of the parent manifest for the repackaged Asset.
-    pub fn url(&self) -> std::option::Option<&str> {
+    pub fn url(&self) -> ::std::option::Option<&str> {
         self.url.as_deref()
     }
 }
@@ -37,43 +37,48 @@ impl EgressEndpoint {
 
 /// A builder for [`EgressEndpoint`](crate::types::EgressEndpoint).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EgressEndpointBuilder {
-    pub(crate) packaging_configuration_id: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<std::string::String>,
-    pub(crate) url: std::option::Option<std::string::String>,
+    pub(crate) packaging_configuration_id: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<::std::string::String>,
+    pub(crate) url: ::std::option::Option<::std::string::String>,
 }
 impl EgressEndpointBuilder {
     /// The ID of the PackagingConfiguration being applied to the Asset.
-    pub fn packaging_configuration_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.packaging_configuration_id = Some(input.into());
+    pub fn packaging_configuration_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.packaging_configuration_id = ::std::option::Option::Some(input.into());
         self
     }
     /// The ID of the PackagingConfiguration being applied to the Asset.
     pub fn set_packaging_configuration_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.packaging_configuration_id = input;
         self
     }
     /// The current processing status of the asset used for the packaging configuration. The status can be either QUEUED, PROCESSING, PLAYABLE, or FAILED. Status information won't be available for most assets ingested before 2021-09-30.
-    pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status = Some(input.into());
+    pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status = ::std::option::Option::Some(input.into());
         self
     }
     /// The current processing status of the asset used for the packaging configuration. The status can be either QUEUED, PROCESSING, PLAYABLE, or FAILED. Status information won't be available for most assets ingested before 2021-09-30.
-    pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }
     /// The URL of the parent manifest for the repackaged Asset.
-    pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.url = Some(input.into());
+    pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.url = ::std::option::Option::Some(input.into());
         self
     }
     /// The URL of the parent manifest for the repackaged Asset.
-    pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.url = input;
         self
     }

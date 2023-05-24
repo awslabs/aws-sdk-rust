@@ -2,22 +2,22 @@
 
 /// <p>A reason a vehicle network interface isn't valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InvalidNetworkInterface {
     /// <p>The ID of the interface that isn't valid.</p>
     #[doc(hidden)]
-    pub interface_id: std::option::Option<std::string::String>,
+    pub interface_id: ::std::option::Option<::std::string::String>,
     /// <p>A message about why the interface isn't valid. </p>
     #[doc(hidden)]
-    pub reason: std::option::Option<crate::types::NetworkInterfaceFailureReason>,
+    pub reason: ::std::option::Option<crate::types::NetworkInterfaceFailureReason>,
 }
 impl InvalidNetworkInterface {
     /// <p>The ID of the interface that isn't valid.</p>
-    pub fn interface_id(&self) -> std::option::Option<&str> {
+    pub fn interface_id(&self) -> ::std::option::Option<&str> {
         self.interface_id.as_deref()
     }
     /// <p>A message about why the interface isn't valid. </p>
-    pub fn reason(&self) -> std::option::Option<&crate::types::NetworkInterfaceFailureReason> {
+    pub fn reason(&self) -> ::std::option::Option<&crate::types::NetworkInterfaceFailureReason> {
         self.reason.as_ref()
     }
 }
@@ -30,31 +30,33 @@ impl InvalidNetworkInterface {
 
 /// A builder for [`InvalidNetworkInterface`](crate::types::InvalidNetworkInterface).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InvalidNetworkInterfaceBuilder {
-    pub(crate) interface_id: std::option::Option<std::string::String>,
-    pub(crate) reason: std::option::Option<crate::types::NetworkInterfaceFailureReason>,
+    pub(crate) interface_id: ::std::option::Option<::std::string::String>,
+    pub(crate) reason: ::std::option::Option<crate::types::NetworkInterfaceFailureReason>,
 }
 impl InvalidNetworkInterfaceBuilder {
     /// <p>The ID of the interface that isn't valid.</p>
-    pub fn interface_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.interface_id = Some(input.into());
+    pub fn interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.interface_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the interface that isn't valid.</p>
-    pub fn set_interface_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.interface_id = input;
         self
     }
     /// <p>A message about why the interface isn't valid. </p>
     pub fn reason(mut self, input: crate::types::NetworkInterfaceFailureReason) -> Self {
-        self.reason = Some(input);
+        self.reason = ::std::option::Option::Some(input);
         self
     }
     /// <p>A message about why the interface isn't valid. </p>
     pub fn set_reason(
         mut self,
-        input: std::option::Option<crate::types::NetworkInterfaceFailureReason>,
+        input: ::std::option::Option<crate::types::NetworkInterfaceFailureReason>,
     ) -> Self {
         self.reason = input;
         self

@@ -3,36 +3,36 @@
 /// <p>Aggregated details about the measures contributing to the anomaly group, and the measures potentially impacted by the anomaly group.</p>
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InterMetricImpactDetails {
     /// <p>The name of the measure.</p>
     #[doc(hidden)]
-    pub metric_name: std::option::Option<std::string::String>,
+    pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the anomaly group.</p>
     #[doc(hidden)]
-    pub anomaly_group_id: std::option::Option<std::string::String>,
+    pub anomaly_group_id: ::std::option::Option<::std::string::String>,
     /// <p>Whether a measure is a potential cause of the anomaly group (<code>CAUSE_OF_INPUT_ANOMALY_GROUP</code>), or whether the measure is impacted by the anomaly group (<code>EFFECT_OF_INPUT_ANOMALY_GROUP</code>).</p>
     #[doc(hidden)]
-    pub relationship_type: std::option::Option<crate::types::RelationshipType>,
+    pub relationship_type: ::std::option::Option<crate::types::RelationshipType>,
     /// <p>For potential causes (<code>CAUSE_OF_INPUT_ANOMALY_GROUP</code>), the percentage contribution the measure has in causing the anomalies.</p>
     #[doc(hidden)]
-    pub contribution_percentage: std::option::Option<f64>,
+    pub contribution_percentage: ::std::option::Option<f64>,
 }
 impl InterMetricImpactDetails {
     /// <p>The name of the measure.</p>
-    pub fn metric_name(&self) -> std::option::Option<&str> {
+    pub fn metric_name(&self) -> ::std::option::Option<&str> {
         self.metric_name.as_deref()
     }
     /// <p>The ID of the anomaly group.</p>
-    pub fn anomaly_group_id(&self) -> std::option::Option<&str> {
+    pub fn anomaly_group_id(&self) -> ::std::option::Option<&str> {
         self.anomaly_group_id.as_deref()
     }
     /// <p>Whether a measure is a potential cause of the anomaly group (<code>CAUSE_OF_INPUT_ANOMALY_GROUP</code>), or whether the measure is impacted by the anomaly group (<code>EFFECT_OF_INPUT_ANOMALY_GROUP</code>).</p>
-    pub fn relationship_type(&self) -> std::option::Option<&crate::types::RelationshipType> {
+    pub fn relationship_type(&self) -> ::std::option::Option<&crate::types::RelationshipType> {
         self.relationship_type.as_ref()
     }
     /// <p>For potential causes (<code>CAUSE_OF_INPUT_ANOMALY_GROUP</code>), the percentage contribution the measure has in causing the anomalies.</p>
-    pub fn contribution_percentage(&self) -> std::option::Option<f64> {
+    pub fn contribution_percentage(&self) -> ::std::option::Option<f64> {
         self.contribution_percentage
     }
 }
@@ -45,54 +45,62 @@ impl InterMetricImpactDetails {
 
 /// A builder for [`InterMetricImpactDetails`](crate::types::InterMetricImpactDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InterMetricImpactDetailsBuilder {
-    pub(crate) metric_name: std::option::Option<std::string::String>,
-    pub(crate) anomaly_group_id: std::option::Option<std::string::String>,
-    pub(crate) relationship_type: std::option::Option<crate::types::RelationshipType>,
-    pub(crate) contribution_percentage: std::option::Option<f64>,
+    pub(crate) metric_name: ::std::option::Option<::std::string::String>,
+    pub(crate) anomaly_group_id: ::std::option::Option<::std::string::String>,
+    pub(crate) relationship_type: ::std::option::Option<crate::types::RelationshipType>,
+    pub(crate) contribution_percentage: ::std::option::Option<f64>,
 }
 impl InterMetricImpactDetailsBuilder {
     /// <p>The name of the measure.</p>
-    pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.metric_name = Some(input.into());
+    pub fn metric_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.metric_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the measure.</p>
-    pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_metric_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metric_name = input;
         self
     }
     /// <p>The ID of the anomaly group.</p>
-    pub fn anomaly_group_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.anomaly_group_id = Some(input.into());
+    pub fn anomaly_group_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.anomaly_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the anomaly group.</p>
-    pub fn set_anomaly_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_anomaly_group_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.anomaly_group_id = input;
         self
     }
     /// <p>Whether a measure is a potential cause of the anomaly group (<code>CAUSE_OF_INPUT_ANOMALY_GROUP</code>), or whether the measure is impacted by the anomaly group (<code>EFFECT_OF_INPUT_ANOMALY_GROUP</code>).</p>
     pub fn relationship_type(mut self, input: crate::types::RelationshipType) -> Self {
-        self.relationship_type = Some(input);
+        self.relationship_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether a measure is a potential cause of the anomaly group (<code>CAUSE_OF_INPUT_ANOMALY_GROUP</code>), or whether the measure is impacted by the anomaly group (<code>EFFECT_OF_INPUT_ANOMALY_GROUP</code>).</p>
     pub fn set_relationship_type(
         mut self,
-        input: std::option::Option<crate::types::RelationshipType>,
+        input: ::std::option::Option<crate::types::RelationshipType>,
     ) -> Self {
         self.relationship_type = input;
         self
     }
     /// <p>For potential causes (<code>CAUSE_OF_INPUT_ANOMALY_GROUP</code>), the percentage contribution the measure has in causing the anomalies.</p>
     pub fn contribution_percentage(mut self, input: f64) -> Self {
-        self.contribution_percentage = Some(input);
+        self.contribution_percentage = ::std::option::Option::Some(input);
         self
     }
     /// <p>For potential causes (<code>CAUSE_OF_INPUT_ANOMALY_GROUP</code>), the percentage contribution the measure has in causing the anomalies.</p>
-    pub fn set_contribution_percentage(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_contribution_percentage(mut self, input: ::std::option::Option<f64>) -> Self {
         self.contribution_percentage = input;
         self
     }

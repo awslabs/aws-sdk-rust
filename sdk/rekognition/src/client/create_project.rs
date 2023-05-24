@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateProject`](crate::operation::create_project::builders::CreateProjectFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`project_name(impl Into<String>)`](crate::operation::create_project::builders::CreateProjectFluentBuilder::project_name) / [`set_project_name(Option<String>)`](crate::operation::create_project::builders::CreateProjectFluentBuilder::set_project_name): <p>The name of the project to create.</p>
+    ///   - [`project_name(impl ::std::convert::Into<String>)`](crate::operation::create_project::builders::CreateProjectFluentBuilder::project_name) / [`set_project_name(Option<String>)`](crate::operation::create_project::builders::CreateProjectFluentBuilder::set_project_name): <p>The name of the project to create.</p>
     /// - On success, responds with [`CreateProjectOutput`](crate::operation::create_project::CreateProjectOutput) with field(s):
     ///   - [`project_arn(Option<String>)`](crate::operation::create_project::CreateProjectOutput::project_arn): <p>The Amazon Resource Name (ARN) of the new project. You can use the ARN to configure IAM access to the project. </p>
     /// - On failure, responds with [`SdkError<CreateProjectError>`](crate::operation::create_project::CreateProjectError)

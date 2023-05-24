@@ -12,29 +12,29 @@ pub use crate::operation::create_endpoint_config::_create_endpoint_config_input:
 /// <p>If you are hosting multiple models, you also assign a <code>VariantWeight</code> to specify how much traffic you want to allocate to each model. For example, suppose that you want to host two models, A and B, and you assign traffic weight 2 for model A and 1 for model B. SageMaker distributes two-thirds of the traffic to Model A, and one-third to model B. </p> <note>
 /// <p>When you call <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">CreateEndpoint</a>, a load call is made to DynamoDB to verify that your endpoint configuration exists. When you read data from a DynamoDB table supporting <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html"> <code>Eventually Consistent Reads</code> </a>, the response might not reflect the results of a recently completed write operation. The response might include some stale data. If the dependent entities are not yet in DynamoDB, this causes a validation error. If you repeat your read request after a short time, the response should return the latest data. So retry logic is recommended to handle these possible issues. We also recommend that customers call <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeEndpointConfig.html">DescribeEndpointConfig</a> before calling <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">CreateEndpoint</a> to minimize the potential impact of a DynamoDB eventually consistent read.</p>
 /// </note>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateEndpointConfigFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_endpoint_config::builders::CreateEndpointConfigInputBuilder,
 }
 impl CreateEndpointConfigFluentBuilder {
     /// Creates a new `CreateEndpointConfig`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_endpoint_config::CreateEndpointConfig,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_endpoint_config::CreateEndpointConfigError,
         >,
     > {
@@ -42,30 +42,33 @@ impl CreateEndpointConfigFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_endpoint_config::CreateEndpointConfigOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_endpoint_config::CreateEndpointConfigError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -78,23 +81,26 @@ impl CreateEndpointConfigFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_endpoint_config::CreateEndpointConfigOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_endpoint_config::CreateEndpointConfigError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the endpoint configuration. You specify this name in a <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">CreateEndpoint</a> request. </p>
-    pub fn endpoint_config_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn endpoint_config_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.endpoint_config_name(input.into());
         self
     }
     /// <p>The name of the endpoint configuration. You specify this name in a <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">CreateEndpoint</a> request. </p>
     pub fn set_endpoint_config_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_endpoint_config_name(input);
         self
@@ -111,7 +117,7 @@ impl CreateEndpointConfigFluentBuilder {
     /// <p>An array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint.</p>
     pub fn set_production_variants(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ProductionVariant>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ProductionVariant>>,
     ) -> Self {
         self.inner = self.inner.set_production_variants(input);
         self
@@ -124,7 +130,7 @@ impl CreateEndpointConfigFluentBuilder {
     /// <p>Configuration to control how SageMaker captures inference data.</p>
     pub fn set_data_capture_config(
         mut self,
-        input: std::option::Option<crate::types::DataCaptureConfig>,
+        input: ::std::option::Option<crate::types::DataCaptureConfig>,
     ) -> Self {
         self.inner = self.inner.set_data_capture_config(input);
         self
@@ -141,7 +147,7 @@ impl CreateEndpointConfigFluentBuilder {
     /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
@@ -159,7 +165,7 @@ impl CreateEndpointConfigFluentBuilder {
     /// <p>For a list of instance types that support local instance storage, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance Store Volumes</a>.</p>
     /// <p>For more information about local instance storage encryption, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">SSD Instance Store Volumes</a>.</p>
     /// </note>
-    pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kms_key_id(input.into());
         self
     }
@@ -176,7 +182,7 @@ impl CreateEndpointConfigFluentBuilder {
     /// <p>For a list of instance types that support local instance storage, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance Store Volumes</a>.</p>
     /// <p>For more information about local instance storage encryption, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">SSD Instance Store Volumes</a>.</p>
     /// </note>
-    pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kms_key_id(input);
         self
     }
@@ -188,7 +194,7 @@ impl CreateEndpointConfigFluentBuilder {
     /// <p>Specifies configuration for how an endpoint performs asynchronous inference. This is a required field in order for your Endpoint to be invoked using <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpointAsync.html">InvokeEndpointAsync</a>.</p>
     pub fn set_async_inference_config(
         mut self,
-        input: std::option::Option<crate::types::AsyncInferenceConfig>,
+        input: ::std::option::Option<crate::types::AsyncInferenceConfig>,
     ) -> Self {
         self.inner = self.inner.set_async_inference_config(input);
         self
@@ -201,7 +207,7 @@ impl CreateEndpointConfigFluentBuilder {
     /// <p>A member of <code>CreateEndpointConfig</code> that enables explainers.</p>
     pub fn set_explainer_config(
         mut self,
-        input: std::option::Option<crate::types::ExplainerConfig>,
+        input: ::std::option::Option<crate::types::ExplainerConfig>,
     ) -> Self {
         self.inner = self.inner.set_explainer_config(input);
         self
@@ -218,7 +224,7 @@ impl CreateEndpointConfigFluentBuilder {
     /// <p>An array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint in shadow mode with production traffic replicated from the model specified on <code>ProductionVariants</code>. If you use this field, you can only specify one variant for <code>ProductionVariants</code> and one variant for <code>ShadowProductionVariants</code>.</p>
     pub fn set_shadow_production_variants(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ProductionVariant>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ProductionVariant>>,
     ) -> Self {
         self.inner = self.inner.set_shadow_production_variants(input);
         self

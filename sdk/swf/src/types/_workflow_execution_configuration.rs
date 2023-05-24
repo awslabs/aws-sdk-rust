@@ -2,23 +2,23 @@
 
 /// <p>The configuration settings for a workflow execution including timeout values, tasklist etc. These configuration settings are determined from the defaults specified when registering the workflow type and those specified when starting the workflow execution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorkflowExecutionConfiguration {
     /// <p>The maximum duration allowed for decision tasks for this workflow execution.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
     #[doc(hidden)]
-    pub task_start_to_close_timeout: std::option::Option<std::string::String>,
+    pub task_start_to_close_timeout: ::std::option::Option<::std::string::String>,
     /// <p>The total duration for this workflow execution.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
     #[doc(hidden)]
-    pub execution_start_to_close_timeout: std::option::Option<std::string::String>,
+    pub execution_start_to_close_timeout: ::std::option::Option<::std::string::String>,
     /// <p>The task list used for the decision tasks generated for this workflow execution.</p>
     #[doc(hidden)]
-    pub task_list: std::option::Option<crate::types::TaskList>,
+    pub task_list: ::std::option::Option<crate::types::TaskList>,
     /// <p>The priority assigned to decision tasks for this workflow execution. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
     /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
     #[doc(hidden)]
-    pub task_priority: std::option::Option<std::string::String>,
+    pub task_priority: ::std::option::Option<::std::string::String>,
     /// <p>The policy to use for the child workflow executions if this workflow execution is terminated, by calling the <code>TerminateWorkflowExecution</code> action explicitly or due to an expired timeout.</p>
     /// <p>The supported child policies are:</p>
     /// <ul>
@@ -27,29 +27,29 @@ pub struct WorkflowExecutionConfiguration {
     /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub child_policy: std::option::Option<crate::types::ChildPolicy>,
+    pub child_policy: ::std::option::Option<crate::types::ChildPolicy>,
     /// <p>The IAM role attached to the child workflow execution.</p>
     #[doc(hidden)]
-    pub lambda_role: std::option::Option<std::string::String>,
+    pub lambda_role: ::std::option::Option<::std::string::String>,
 }
 impl WorkflowExecutionConfiguration {
     /// <p>The maximum duration allowed for decision tasks for this workflow execution.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
-    pub fn task_start_to_close_timeout(&self) -> std::option::Option<&str> {
+    pub fn task_start_to_close_timeout(&self) -> ::std::option::Option<&str> {
         self.task_start_to_close_timeout.as_deref()
     }
     /// <p>The total duration for this workflow execution.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
-    pub fn execution_start_to_close_timeout(&self) -> std::option::Option<&str> {
+    pub fn execution_start_to_close_timeout(&self) -> ::std::option::Option<&str> {
         self.execution_start_to_close_timeout.as_deref()
     }
     /// <p>The task list used for the decision tasks generated for this workflow execution.</p>
-    pub fn task_list(&self) -> std::option::Option<&crate::types::TaskList> {
+    pub fn task_list(&self) -> ::std::option::Option<&crate::types::TaskList> {
         self.task_list.as_ref()
     }
     /// <p>The priority assigned to decision tasks for this workflow execution. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
     /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    pub fn task_priority(&self) -> std::option::Option<&str> {
+    pub fn task_priority(&self) -> ::std::option::Option<&str> {
         self.task_priority.as_deref()
     }
     /// <p>The policy to use for the child workflow executions if this workflow execution is terminated, by calling the <code>TerminateWorkflowExecution</code> action explicitly or due to an expired timeout.</p>
@@ -59,11 +59,11 @@ impl WorkflowExecutionConfiguration {
     /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
     /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
     /// </ul>
-    pub fn child_policy(&self) -> std::option::Option<&crate::types::ChildPolicy> {
+    pub fn child_policy(&self) -> ::std::option::Option<&crate::types::ChildPolicy> {
         self.child_policy.as_ref()
     }
     /// <p>The IAM role attached to the child workflow execution.</p>
-    pub fn lambda_role(&self) -> std::option::Option<&str> {
+    pub fn lambda_role(&self) -> ::std::option::Option<&str> {
         self.lambda_role.as_deref()
     }
 }
@@ -76,27 +76,32 @@ impl WorkflowExecutionConfiguration {
 
 /// A builder for [`WorkflowExecutionConfiguration`](crate::types::WorkflowExecutionConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct WorkflowExecutionConfigurationBuilder {
-    pub(crate) task_start_to_close_timeout: std::option::Option<std::string::String>,
-    pub(crate) execution_start_to_close_timeout: std::option::Option<std::string::String>,
-    pub(crate) task_list: std::option::Option<crate::types::TaskList>,
-    pub(crate) task_priority: std::option::Option<std::string::String>,
-    pub(crate) child_policy: std::option::Option<crate::types::ChildPolicy>,
-    pub(crate) lambda_role: std::option::Option<std::string::String>,
+    pub(crate) task_start_to_close_timeout: ::std::option::Option<::std::string::String>,
+    pub(crate) execution_start_to_close_timeout: ::std::option::Option<::std::string::String>,
+    pub(crate) task_list: ::std::option::Option<crate::types::TaskList>,
+    pub(crate) task_priority: ::std::option::Option<::std::string::String>,
+    pub(crate) child_policy: ::std::option::Option<crate::types::ChildPolicy>,
+    pub(crate) lambda_role: ::std::option::Option<::std::string::String>,
 }
 impl WorkflowExecutionConfigurationBuilder {
     /// <p>The maximum duration allowed for decision tasks for this workflow execution.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
-    pub fn task_start_to_close_timeout(mut self, input: impl Into<std::string::String>) -> Self {
-        self.task_start_to_close_timeout = Some(input.into());
+    pub fn task_start_to_close_timeout(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.task_start_to_close_timeout = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The maximum duration allowed for decision tasks for this workflow execution.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
     pub fn set_task_start_to_close_timeout(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.task_start_to_close_timeout = input;
         self
@@ -105,39 +110,45 @@ impl WorkflowExecutionConfigurationBuilder {
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
     pub fn execution_start_to_close_timeout(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.execution_start_to_close_timeout = Some(input.into());
+        self.execution_start_to_close_timeout = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The total duration for this workflow execution.</p>
     /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
     pub fn set_execution_start_to_close_timeout(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.execution_start_to_close_timeout = input;
         self
     }
     /// <p>The task list used for the decision tasks generated for this workflow execution.</p>
     pub fn task_list(mut self, input: crate::types::TaskList) -> Self {
-        self.task_list = Some(input);
+        self.task_list = ::std::option::Option::Some(input);
         self
     }
     /// <p>The task list used for the decision tasks generated for this workflow execution.</p>
-    pub fn set_task_list(mut self, input: std::option::Option<crate::types::TaskList>) -> Self {
+    pub fn set_task_list(mut self, input: ::std::option::Option<crate::types::TaskList>) -> Self {
         self.task_list = input;
         self
     }
     /// <p>The priority assigned to decision tasks for this workflow execution. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
     /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    pub fn task_priority(mut self, input: impl Into<std::string::String>) -> Self {
-        self.task_priority = Some(input.into());
+    pub fn task_priority(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.task_priority = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The priority assigned to decision tasks for this workflow execution. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
     /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-    pub fn set_task_priority(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_task_priority(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.task_priority = input;
         self
     }
@@ -149,7 +160,7 @@ impl WorkflowExecutionConfigurationBuilder {
     /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
     /// </ul>
     pub fn child_policy(mut self, input: crate::types::ChildPolicy) -> Self {
-        self.child_policy = Some(input);
+        self.child_policy = ::std::option::Option::Some(input);
         self
     }
     /// <p>The policy to use for the child workflow executions if this workflow execution is terminated, by calling the <code>TerminateWorkflowExecution</code> action explicitly or due to an expired timeout.</p>
@@ -161,18 +172,18 @@ impl WorkflowExecutionConfigurationBuilder {
     /// </ul>
     pub fn set_child_policy(
         mut self,
-        input: std::option::Option<crate::types::ChildPolicy>,
+        input: ::std::option::Option<crate::types::ChildPolicy>,
     ) -> Self {
         self.child_policy = input;
         self
     }
     /// <p>The IAM role attached to the child workflow execution.</p>
-    pub fn lambda_role(mut self, input: impl Into<std::string::String>) -> Self {
-        self.lambda_role = Some(input.into());
+    pub fn lambda_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.lambda_role = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IAM role attached to the child workflow execution.</p>
-    pub fn set_lambda_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_lambda_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lambda_role = input;
         self
     }

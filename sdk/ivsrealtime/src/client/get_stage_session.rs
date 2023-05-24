@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetStageSession`](crate::operation::get_stage_session::builders::GetStageSessionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`stage_arn(impl Into<String>)`](crate::operation::get_stage_session::builders::GetStageSessionFluentBuilder::stage_arn) / [`set_stage_arn(Option<String>)`](crate::operation::get_stage_session::builders::GetStageSessionFluentBuilder::set_stage_arn): <p>ARN of the stage for which the information is to be retrieved.</p>
-    ///   - [`session_id(impl Into<String>)`](crate::operation::get_stage_session::builders::GetStageSessionFluentBuilder::session_id) / [`set_session_id(Option<String>)`](crate::operation::get_stage_session::builders::GetStageSessionFluentBuilder::set_session_id): <p>ID of a session within the stage.</p>
+    ///   - [`stage_arn(impl ::std::convert::Into<String>)`](crate::operation::get_stage_session::builders::GetStageSessionFluentBuilder::stage_arn) / [`set_stage_arn(Option<String>)`](crate::operation::get_stage_session::builders::GetStageSessionFluentBuilder::set_stage_arn): <p>ARN of the stage for which the information is to be retrieved.</p>
+    ///   - [`session_id(impl ::std::convert::Into<String>)`](crate::operation::get_stage_session::builders::GetStageSessionFluentBuilder::session_id) / [`set_session_id(Option<String>)`](crate::operation::get_stage_session::builders::GetStageSessionFluentBuilder::set_session_id): <p>ID of a session within the stage.</p>
     /// - On success, responds with [`GetStageSessionOutput`](crate::operation::get_stage_session::GetStageSessionOutput) with field(s):
     ///   - [`stage_session(Option<StageSession>)`](crate::operation::get_stage_session::GetStageSessionOutput::stage_session): <p>The stage session that is returned.</p>
     /// - On failure, responds with [`SdkError<GetStageSessionError>`](crate::operation::get_stage_session::GetStageSessionError)

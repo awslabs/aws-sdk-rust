@@ -6,22 +6,22 @@
 /// <li> <p>The ID of an existing image. Choose this option to keep an existing image.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Image {
     /// <p>The ID of an existing image. Specify this parameter to keep an existing image.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>Contains an image file.</p>
     #[doc(hidden)]
-    pub file: std::option::Option<crate::types::ImageFile>,
+    pub file: ::std::option::Option<crate::types::ImageFile>,
 }
 impl Image {
     /// <p>The ID of an existing image. Specify this parameter to keep an existing image.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>Contains an image file.</p>
-    pub fn file(&self) -> std::option::Option<&crate::types::ImageFile> {
+    pub fn file(&self) -> ::std::option::Option<&crate::types::ImageFile> {
         self.file.as_ref()
     }
 }
@@ -34,29 +34,31 @@ impl Image {
 
 /// A builder for [`Image`](crate::types::Image).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ImageBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) file: std::option::Option<crate::types::ImageFile>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) file: ::std::option::Option<crate::types::ImageFile>,
 }
 impl ImageBuilder {
     /// <p>The ID of an existing image. Specify this parameter to keep an existing image.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of an existing image. Specify this parameter to keep an existing image.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>Contains an image file.</p>
     pub fn file(mut self, input: crate::types::ImageFile) -> Self {
-        self.file = Some(input);
+        self.file = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains an image file.</p>
-    pub fn set_file(mut self, input: std::option::Option<crate::types::ImageFile>) -> Self {
+    pub fn set_file(mut self, input: ::std::option::Option<crate::types::ImageFile>) -> Self {
         self.file = input;
         self
     }

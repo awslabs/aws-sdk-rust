@@ -2,11 +2,11 @@
 
 /// <p>Represents sending statistics data. Each <code>SendDataPoint</code> contains statistics for a 15-minute period of sending activity. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SendDataPoint {
     /// <p>Time of the data point.</p>
     #[doc(hidden)]
-    pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Number of emails that have been sent.</p>
     #[doc(hidden)]
     pub delivery_attempts: i64,
@@ -22,7 +22,7 @@ pub struct SendDataPoint {
 }
 impl SendDataPoint {
     /// <p>Time of the data point.</p>
-    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
     /// <p>Number of emails that have been sent.</p>
@@ -51,62 +51,67 @@ impl SendDataPoint {
 
 /// A builder for [`SendDataPoint`](crate::types::SendDataPoint).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SendDataPointBuilder {
-    pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) delivery_attempts: std::option::Option<i64>,
-    pub(crate) bounces: std::option::Option<i64>,
-    pub(crate) complaints: std::option::Option<i64>,
-    pub(crate) rejects: std::option::Option<i64>,
+    pub(crate) timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) delivery_attempts: ::std::option::Option<i64>,
+    pub(crate) bounces: ::std::option::Option<i64>,
+    pub(crate) complaints: ::std::option::Option<i64>,
+    pub(crate) rejects: ::std::option::Option<i64>,
 }
 impl SendDataPointBuilder {
     /// <p>Time of the data point.</p>
-    pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.timestamp = Some(input);
+    pub fn timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>Time of the data point.</p>
-    pub fn set_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_timestamp(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
         self.timestamp = input;
         self
     }
     /// <p>Number of emails that have been sent.</p>
     pub fn delivery_attempts(mut self, input: i64) -> Self {
-        self.delivery_attempts = Some(input);
+        self.delivery_attempts = ::std::option::Option::Some(input);
         self
     }
     /// <p>Number of emails that have been sent.</p>
-    pub fn set_delivery_attempts(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_delivery_attempts(mut self, input: ::std::option::Option<i64>) -> Self {
         self.delivery_attempts = input;
         self
     }
     /// <p>Number of emails that have bounced.</p>
     pub fn bounces(mut self, input: i64) -> Self {
-        self.bounces = Some(input);
+        self.bounces = ::std::option::Option::Some(input);
         self
     }
     /// <p>Number of emails that have bounced.</p>
-    pub fn set_bounces(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_bounces(mut self, input: ::std::option::Option<i64>) -> Self {
         self.bounces = input;
         self
     }
     /// <p>Number of unwanted emails that were rejected by recipients.</p>
     pub fn complaints(mut self, input: i64) -> Self {
-        self.complaints = Some(input);
+        self.complaints = ::std::option::Option::Some(input);
         self
     }
     /// <p>Number of unwanted emails that were rejected by recipients.</p>
-    pub fn set_complaints(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_complaints(mut self, input: ::std::option::Option<i64>) -> Self {
         self.complaints = input;
         self
     }
     /// <p>Number of emails rejected by Amazon SES.</p>
     pub fn rejects(mut self, input: i64) -> Self {
-        self.rejects = Some(input);
+        self.rejects = ::std::option::Option::Some(input);
         self
     }
     /// <p>Number of emails rejected by Amazon SES.</p>
-    pub fn set_rejects(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_rejects(mut self, input: ::std::option::Option<i64>) -> Self {
         self.rejects = input;
         self
     }

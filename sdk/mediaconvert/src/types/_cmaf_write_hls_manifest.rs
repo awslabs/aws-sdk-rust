@@ -38,13 +38,13 @@
 /// When set to ENABLED, an Apple HLS manifest will be generated for this output.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum CmafWriteHlsManifest {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum CmafWriteHlsManifest {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for CmafWriteHlsManifest {
+impl ::std::convert::From<&str> for CmafWriteHlsManifest {
     fn from(s: &str) -> Self {
         match s {
             "DISABLED" => CmafWriteHlsManifest::Disabled,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for CmafWriteHlsManifest {
         }
     }
 }
-impl std::str::FromStr for CmafWriteHlsManifest {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for CmafWriteHlsManifest {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CmafWriteHlsManifest::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(CmafWriteHlsManifest::from(s))
     }
 }
 impl CmafWriteHlsManifest {
@@ -86,7 +86,7 @@ impl CmafWriteHlsManifest {
         &["DISABLED", "ENABLED"]
     }
 }
-impl AsRef<str> for CmafWriteHlsManifest {
+impl ::std::convert::AsRef<str> for CmafWriteHlsManifest {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

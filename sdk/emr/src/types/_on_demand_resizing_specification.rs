@@ -2,15 +2,15 @@
 
 /// <p>The resize specification for On-Demand Instances in the instance fleet, which contains the resize timeout period. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OnDemandResizingSpecification {
     /// <p>On-Demand resize timeout in minutes. If On-Demand Instances are not provisioned within this time, the resize workflow stops. The minimum value is 5 minutes, and the maximum value is 10,080 minutes (7 days). The timeout applies to all resize workflows on the Instance Fleet. The resize could be triggered by Amazon EMR Managed Scaling or by the customer (via Amazon EMR Console, Amazon EMR CLI modify-instance-fleet or Amazon EMR SDK ModifyInstanceFleet API) or by Amazon EMR due to Amazon EC2 Spot Reclamation.</p>
     #[doc(hidden)]
-    pub timeout_duration_minutes: std::option::Option<i32>,
+    pub timeout_duration_minutes: ::std::option::Option<i32>,
 }
 impl OnDemandResizingSpecification {
     /// <p>On-Demand resize timeout in minutes. If On-Demand Instances are not provisioned within this time, the resize workflow stops. The minimum value is 5 minutes, and the maximum value is 10,080 minutes (7 days). The timeout applies to all resize workflows on the Instance Fleet. The resize could be triggered by Amazon EMR Managed Scaling or by the customer (via Amazon EMR Console, Amazon EMR CLI modify-instance-fleet or Amazon EMR SDK ModifyInstanceFleet API) or by Amazon EMR due to Amazon EC2 Spot Reclamation.</p>
-    pub fn timeout_duration_minutes(&self) -> std::option::Option<i32> {
+    pub fn timeout_duration_minutes(&self) -> ::std::option::Option<i32> {
         self.timeout_duration_minutes
     }
 }
@@ -23,18 +23,20 @@ impl OnDemandResizingSpecification {
 
 /// A builder for [`OnDemandResizingSpecification`](crate::types::OnDemandResizingSpecification).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OnDemandResizingSpecificationBuilder {
-    pub(crate) timeout_duration_minutes: std::option::Option<i32>,
+    pub(crate) timeout_duration_minutes: ::std::option::Option<i32>,
 }
 impl OnDemandResizingSpecificationBuilder {
     /// <p>On-Demand resize timeout in minutes. If On-Demand Instances are not provisioned within this time, the resize workflow stops. The minimum value is 5 minutes, and the maximum value is 10,080 minutes (7 days). The timeout applies to all resize workflows on the Instance Fleet. The resize could be triggered by Amazon EMR Managed Scaling or by the customer (via Amazon EMR Console, Amazon EMR CLI modify-instance-fleet or Amazon EMR SDK ModifyInstanceFleet API) or by Amazon EMR due to Amazon EC2 Spot Reclamation.</p>
     pub fn timeout_duration_minutes(mut self, input: i32) -> Self {
-        self.timeout_duration_minutes = Some(input);
+        self.timeout_duration_minutes = ::std::option::Option::Some(input);
         self
     }
     /// <p>On-Demand resize timeout in minutes. If On-Demand Instances are not provisioned within this time, the resize workflow stops. The minimum value is 5 minutes, and the maximum value is 10,080 minutes (7 days). The timeout applies to all resize workflows on the Instance Fleet. The resize could be triggered by Amazon EMR Managed Scaling or by the customer (via Amazon EMR Console, Amazon EMR CLI modify-instance-fleet or Amazon EMR SDK ModifyInstanceFleet API) or by Amazon EMR due to Amazon EC2 Spot Reclamation.</p>
-    pub fn set_timeout_duration_minutes(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_timeout_duration_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.timeout_duration_minutes = input;
         self
     }

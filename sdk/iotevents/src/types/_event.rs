@@ -2,29 +2,29 @@
 
 /// <p>Specifies the <code>actions</code> to be performed when the <code>condition</code> evaluates to TRUE.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Event {
     /// <p>The name of the event.</p>
     #[doc(hidden)]
-    pub event_name: std::option::Option<std::string::String>,
+    pub event_name: ::std::option::Option<::std::string::String>,
     /// <p>Optional. The Boolean expression that, when TRUE, causes the <code>actions</code> to be performed. If not present, the actions are performed (=TRUE). If the expression result is not a Boolean value, the actions are not performed (=FALSE).</p>
     #[doc(hidden)]
-    pub condition: std::option::Option<std::string::String>,
+    pub condition: ::std::option::Option<::std::string::String>,
     /// <p>The actions to be performed.</p>
     #[doc(hidden)]
-    pub actions: std::option::Option<std::vec::Vec<crate::types::Action>>,
+    pub actions: ::std::option::Option<::std::vec::Vec<crate::types::Action>>,
 }
 impl Event {
     /// <p>The name of the event.</p>
-    pub fn event_name(&self) -> std::option::Option<&str> {
+    pub fn event_name(&self) -> ::std::option::Option<&str> {
         self.event_name.as_deref()
     }
     /// <p>Optional. The Boolean expression that, when TRUE, causes the <code>actions</code> to be performed. If not present, the actions are performed (=TRUE). If the expression result is not a Boolean value, the actions are not performed (=FALSE).</p>
-    pub fn condition(&self) -> std::option::Option<&str> {
+    pub fn condition(&self) -> ::std::option::Option<&str> {
         self.condition.as_deref()
     }
     /// <p>The actions to be performed.</p>
-    pub fn actions(&self) -> std::option::Option<&[crate::types::Action]> {
+    pub fn actions(&self) -> ::std::option::Option<&[crate::types::Action]> {
         self.actions.as_deref()
     }
 }
@@ -37,30 +37,32 @@ impl Event {
 
 /// A builder for [`Event`](crate::types::Event).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EventBuilder {
-    pub(crate) event_name: std::option::Option<std::string::String>,
-    pub(crate) condition: std::option::Option<std::string::String>,
-    pub(crate) actions: std::option::Option<std::vec::Vec<crate::types::Action>>,
+    pub(crate) event_name: ::std::option::Option<::std::string::String>,
+    pub(crate) condition: ::std::option::Option<::std::string::String>,
+    pub(crate) actions: ::std::option::Option<::std::vec::Vec<crate::types::Action>>,
 }
 impl EventBuilder {
     /// <p>The name of the event.</p>
-    pub fn event_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.event_name = Some(input.into());
+    pub fn event_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.event_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the event.</p>
-    pub fn set_event_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_event_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_name = input;
         self
     }
     /// <p>Optional. The Boolean expression that, when TRUE, causes the <code>actions</code> to be performed. If not present, the actions are performed (=TRUE). If the expression result is not a Boolean value, the actions are not performed (=FALSE).</p>
-    pub fn condition(mut self, input: impl Into<std::string::String>) -> Self {
-        self.condition = Some(input.into());
+    pub fn condition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.condition = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Optional. The Boolean expression that, when TRUE, causes the <code>actions</code> to be performed. If not present, the actions are performed (=TRUE). If the expression result is not a Boolean value, the actions are not performed (=FALSE).</p>
-    pub fn set_condition(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_condition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.condition = input;
         self
     }
@@ -72,13 +74,13 @@ impl EventBuilder {
     pub fn actions(mut self, input: crate::types::Action) -> Self {
         let mut v = self.actions.unwrap_or_default();
         v.push(input);
-        self.actions = Some(v);
+        self.actions = ::std::option::Option::Some(v);
         self
     }
     /// <p>The actions to be performed.</p>
     pub fn set_actions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Action>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Action>>,
     ) -> Self {
         self.actions = input;
         self

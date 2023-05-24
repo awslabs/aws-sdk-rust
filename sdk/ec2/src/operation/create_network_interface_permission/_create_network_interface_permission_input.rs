@@ -2,43 +2,43 @@
 
 /// <p>Contains the parameters for CreateNetworkInterfacePermission.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateNetworkInterfacePermissionInput {
     /// <p>The ID of the network interface.</p>
     #[doc(hidden)]
-    pub network_interface_id: std::option::Option<std::string::String>,
+    pub network_interface_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID.</p>
     #[doc(hidden)]
-    pub aws_account_id: std::option::Option<std::string::String>,
+    pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Service. Currently not supported.</p>
     #[doc(hidden)]
-    pub aws_service: std::option::Option<std::string::String>,
+    pub aws_service: ::std::option::Option<::std::string::String>,
     /// <p>The type of permission to grant.</p>
     #[doc(hidden)]
-    pub permission: std::option::Option<crate::types::InterfacePermissionType>,
+    pub permission: ::std::option::Option<crate::types::InterfacePermissionType>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
-    pub dry_run: std::option::Option<bool>,
+    pub dry_run: ::std::option::Option<bool>,
 }
 impl CreateNetworkInterfacePermissionInput {
     /// <p>The ID of the network interface.</p>
-    pub fn network_interface_id(&self) -> std::option::Option<&str> {
+    pub fn network_interface_id(&self) -> ::std::option::Option<&str> {
         self.network_interface_id.as_deref()
     }
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The Amazon Web Service. Currently not supported.</p>
-    pub fn aws_service(&self) -> std::option::Option<&str> {
+    pub fn aws_service(&self) -> ::std::option::Option<&str> {
         self.aws_service.as_deref()
     }
     /// <p>The type of permission to grant.</p>
-    pub fn permission(&self) -> std::option::Option<&crate::types::InterfacePermissionType> {
+    pub fn permission(&self) -> ::std::option::Option<&crate::types::InterfacePermissionType> {
         self.permission.as_ref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn dry_run(&self) -> std::option::Option<bool> {
+    pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
 }
@@ -51,74 +51,85 @@ impl CreateNetworkInterfacePermissionInput {
 
 /// A builder for [`CreateNetworkInterfacePermissionInput`](crate::operation::create_network_interface_permission::CreateNetworkInterfacePermissionInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateNetworkInterfacePermissionInputBuilder {
-    pub(crate) network_interface_id: std::option::Option<std::string::String>,
-    pub(crate) aws_account_id: std::option::Option<std::string::String>,
-    pub(crate) aws_service: std::option::Option<std::string::String>,
-    pub(crate) permission: std::option::Option<crate::types::InterfacePermissionType>,
-    pub(crate) dry_run: std::option::Option<bool>,
+    pub(crate) network_interface_id: ::std::option::Option<::std::string::String>,
+    pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) aws_service: ::std::option::Option<::std::string::String>,
+    pub(crate) permission: ::std::option::Option<crate::types::InterfacePermissionType>,
+    pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl CreateNetworkInterfacePermissionInputBuilder {
     /// <p>The ID of the network interface.</p>
-    pub fn network_interface_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.network_interface_id = Some(input.into());
+    pub fn network_interface_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.network_interface_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the network interface.</p>
     pub fn set_network_interface_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.network_interface_id = input;
         self
     }
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.aws_account_id = Some(input.into());
+    pub fn aws_account_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn set_aws_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_aws_account_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.aws_account_id = input;
         self
     }
     /// <p>The Amazon Web Service. Currently not supported.</p>
-    pub fn aws_service(mut self, input: impl Into<std::string::String>) -> Self {
-        self.aws_service = Some(input.into());
+    pub fn aws_service(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.aws_service = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Service. Currently not supported.</p>
-    pub fn set_aws_service(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_aws_service(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_service = input;
         self
     }
     /// <p>The type of permission to grant.</p>
     pub fn permission(mut self, input: crate::types::InterfacePermissionType) -> Self {
-        self.permission = Some(input);
+        self.permission = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of permission to grant.</p>
     pub fn set_permission(
         mut self,
-        input: std::option::Option<crate::types::InterfacePermissionType>,
+        input: ::std::option::Option<crate::types::InterfacePermissionType>,
     ) -> Self {
         self.permission = input;
         self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
-        self.dry_run = Some(input);
+        self.dry_run = ::std::option::Option::Some(input);
         self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
     }
     /// Consumes the builder and constructs a [`CreateNetworkInterfacePermissionInput`](crate::operation::create_network_interface_permission::CreateNetworkInterfacePermissionInput).
-    pub fn build(self) -> Result<crate::operation::create_network_interface_permission::CreateNetworkInterfacePermissionInput, aws_smithy_http::operation::error::BuildError>{
-        Ok(
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_network_interface_permission::CreateNetworkInterfacePermissionInput, ::aws_smithy_http::operation::error::BuildError>{
+        ::std::result::Result::Ok(
             crate::operation::create_network_interface_permission::CreateNetworkInterfacePermissionInput {
                 network_interface_id: self.network_interface_id
                 ,

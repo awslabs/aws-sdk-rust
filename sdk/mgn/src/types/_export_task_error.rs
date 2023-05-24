@@ -2,22 +2,22 @@
 
 /// <p>Export task error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportTaskError {
     /// <p>Export task error datetime.</p>
     #[doc(hidden)]
-    pub error_date_time: std::option::Option<std::string::String>,
+    pub error_date_time: ::std::option::Option<::std::string::String>,
     /// <p>Export task error data.</p>
     #[doc(hidden)]
-    pub error_data: std::option::Option<crate::types::ExportErrorData>,
+    pub error_data: ::std::option::Option<crate::types::ExportErrorData>,
 }
 impl ExportTaskError {
     /// <p>Export task error datetime.</p>
-    pub fn error_date_time(&self) -> std::option::Option<&str> {
+    pub fn error_date_time(&self) -> ::std::option::Option<&str> {
         self.error_date_time.as_deref()
     }
     /// <p>Export task error data.</p>
-    pub fn error_data(&self) -> std::option::Option<&crate::types::ExportErrorData> {
+    pub fn error_data(&self) -> ::std::option::Option<&crate::types::ExportErrorData> {
         self.error_data.as_ref()
     }
 }
@@ -30,31 +30,39 @@ impl ExportTaskError {
 
 /// A builder for [`ExportTaskError`](crate::types::ExportTaskError).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ExportTaskErrorBuilder {
-    pub(crate) error_date_time: std::option::Option<std::string::String>,
-    pub(crate) error_data: std::option::Option<crate::types::ExportErrorData>,
+    pub(crate) error_date_time: ::std::option::Option<::std::string::String>,
+    pub(crate) error_data: ::std::option::Option<crate::types::ExportErrorData>,
 }
 impl ExportTaskErrorBuilder {
     /// <p>Export task error datetime.</p>
-    pub fn error_date_time(mut self, input: impl Into<std::string::String>) -> Self {
-        self.error_date_time = Some(input.into());
+    pub fn error_date_time(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.error_date_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Export task error datetime.</p>
-    pub fn set_error_date_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_error_date_time(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.error_date_time = input;
         self
     }
     /// <p>Export task error data.</p>
     pub fn error_data(mut self, input: crate::types::ExportErrorData) -> Self {
-        self.error_data = Some(input);
+        self.error_data = ::std::option::Option::Some(input);
         self
     }
     /// <p>Export task error data.</p>
     pub fn set_error_data(
         mut self,
-        input: std::option::Option<crate::types::ExportErrorData>,
+        input: ::std::option::Option<crate::types::ExportErrorData>,
     ) -> Self {
         self.error_data = input;
         self

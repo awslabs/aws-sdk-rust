@@ -2,12 +2,12 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReceiveMessageInput {
     /// <p>The URL of the Amazon SQS queue from which messages are received.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
     #[doc(hidden)]
-    pub queue_url: std::option::Option<std::string::String>,
+    pub queue_url: ::std::option::Option<::std::string::String>,
     /// <p>A list of attributes that need to be returned along with each message. These attributes include:</p>
     /// <ul>
     /// <li> <p> <code>All</code> – Returns all values.</p> </li>
@@ -26,7 +26,7 @@ pub struct ReceiveMessageInput {
     /// <li> <p> <code>SequenceNumber</code> – Returns the value provided by Amazon SQS.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub attribute_names: std::option::Option<std::vec::Vec<crate::types::QueueAttributeName>>,
+    pub attribute_names: ::std::option::Option<::std::vec::Vec<crate::types::QueueAttributeName>>,
     /// <p>The name of the message attribute, where <i>N</i> is the index.</p>
     /// <ul>
     /// <li> <p>The name can contain alphanumeric characters and the underscore (<code>_</code>), hyphen (<code>-</code>), and period (<code>.</code>).</p> </li>
@@ -37,18 +37,18 @@ pub struct ReceiveMessageInput {
     /// </ul>
     /// <p>When using <code>ReceiveMessage</code>, you can send a list of attribute names to receive, or you can return all of the attributes by specifying <code>All</code> or <code>.*</code> in your request. You can also use all message attributes starting with a prefix, for example <code>bar.*</code>.</p>
     #[doc(hidden)]
-    pub message_attribute_names: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub message_attribute_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The maximum number of messages to return. Amazon SQS never returns more messages than this value (however, fewer messages might be returned). Valid values: 1 to 10. Default: 1.</p>
     #[doc(hidden)]
-    pub max_number_of_messages: std::option::Option<i32>,
+    pub max_number_of_messages: ::std::option::Option<i32>,
     /// <p>The duration (in seconds) that the received messages are hidden from subsequent retrieve requests after being retrieved by a <code>ReceiveMessage</code> request.</p>
     #[doc(hidden)]
-    pub visibility_timeout: std::option::Option<i32>,
+    pub visibility_timeout: ::std::option::Option<i32>,
     /// <p>The duration (in seconds) for which the call waits for a message to arrive in the queue before returning. If a message is available, the call returns sooner than <code>WaitTimeSeconds</code>. If no messages are available and the wait time expires, the call returns successfully with an empty list of messages.</p> <important>
     /// <p>To avoid HTTP errors, ensure that the HTTP response timeout for <code>ReceiveMessage</code> requests is longer than the <code>WaitTimeSeconds</code> parameter. For example, with the Java SDK, you can set HTTP transport settings using the <a href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/http/nio/netty/NettyNioAsyncHttpClient.html"> NettyNioAsyncHttpClient</a> for asynchronous clients, or the <a href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/http/apache/ApacheHttpClient.html"> ApacheHttpClient</a> for synchronous clients. </p>
     /// </important>
     #[doc(hidden)]
-    pub wait_time_seconds: std::option::Option<i32>,
+    pub wait_time_seconds: ::std::option::Option<i32>,
     /// <p>This parameter applies only to FIFO (first-in-first-out) queues.</p>
     /// <p>The token used for deduplication of <code>ReceiveMessage</code> calls. If a networking issue occurs after a <code>ReceiveMessage</code> action, and instead of a response you receive a generic error, it is possible to retry the same action with an identical <code>ReceiveRequestAttemptId</code> to retrieve the same set of messages, even if their visibility timeout has not yet expired.</p>
     /// <ul>
@@ -66,12 +66,12 @@ pub struct ReceiveMessageInput {
     /// <p>The maximum length of <code>ReceiveRequestAttemptId</code> is 128 characters. <code>ReceiveRequestAttemptId</code> can contain alphanumeric characters (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p>
     /// <p>For best practices of using <code>ReceiveRequestAttemptId</code>, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-receiverequestattemptid-request-parameter.html">Using the ReceiveRequestAttemptId Request Parameter</a> in the <i>Amazon SQS Developer Guide</i>.</p>
     #[doc(hidden)]
-    pub receive_request_attempt_id: std::option::Option<std::string::String>,
+    pub receive_request_attempt_id: ::std::option::Option<::std::string::String>,
 }
 impl ReceiveMessageInput {
     /// <p>The URL of the Amazon SQS queue from which messages are received.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
-    pub fn queue_url(&self) -> std::option::Option<&str> {
+    pub fn queue_url(&self) -> ::std::option::Option<&str> {
         self.queue_url.as_deref()
     }
     /// <p>A list of attributes that need to be returned along with each message. These attributes include:</p>
@@ -91,7 +91,7 @@ impl ReceiveMessageInput {
     /// <li> <p> <code>MessageGroupId</code> – Returns the value provided by the producer that calls the <code> <code>SendMessage</code> </code> action. Messages with the same <code>MessageGroupId</code> are returned in sequence.</p> </li>
     /// <li> <p> <code>SequenceNumber</code> – Returns the value provided by Amazon SQS.</p> </li>
     /// </ul>
-    pub fn attribute_names(&self) -> std::option::Option<&[crate::types::QueueAttributeName]> {
+    pub fn attribute_names(&self) -> ::std::option::Option<&[crate::types::QueueAttributeName]> {
         self.attribute_names.as_deref()
     }
     /// <p>The name of the message attribute, where <i>N</i> is the index.</p>
@@ -103,21 +103,21 @@ impl ReceiveMessageInput {
     /// <li> <p>The name can be up to 256 characters long.</p> </li>
     /// </ul>
     /// <p>When using <code>ReceiveMessage</code>, you can send a list of attribute names to receive, or you can return all of the attributes by specifying <code>All</code> or <code>.*</code> in your request. You can also use all message attributes starting with a prefix, for example <code>bar.*</code>.</p>
-    pub fn message_attribute_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn message_attribute_names(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.message_attribute_names.as_deref()
     }
     /// <p>The maximum number of messages to return. Amazon SQS never returns more messages than this value (however, fewer messages might be returned). Valid values: 1 to 10. Default: 1.</p>
-    pub fn max_number_of_messages(&self) -> std::option::Option<i32> {
+    pub fn max_number_of_messages(&self) -> ::std::option::Option<i32> {
         self.max_number_of_messages
     }
     /// <p>The duration (in seconds) that the received messages are hidden from subsequent retrieve requests after being retrieved by a <code>ReceiveMessage</code> request.</p>
-    pub fn visibility_timeout(&self) -> std::option::Option<i32> {
+    pub fn visibility_timeout(&self) -> ::std::option::Option<i32> {
         self.visibility_timeout
     }
     /// <p>The duration (in seconds) for which the call waits for a message to arrive in the queue before returning. If a message is available, the call returns sooner than <code>WaitTimeSeconds</code>. If no messages are available and the wait time expires, the call returns successfully with an empty list of messages.</p> <important>
     /// <p>To avoid HTTP errors, ensure that the HTTP response timeout for <code>ReceiveMessage</code> requests is longer than the <code>WaitTimeSeconds</code> parameter. For example, with the Java SDK, you can set HTTP transport settings using the <a href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/http/nio/netty/NettyNioAsyncHttpClient.html"> NettyNioAsyncHttpClient</a> for asynchronous clients, or the <a href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/http/apache/ApacheHttpClient.html"> ApacheHttpClient</a> for synchronous clients. </p>
     /// </important>
-    pub fn wait_time_seconds(&self) -> std::option::Option<i32> {
+    pub fn wait_time_seconds(&self) -> ::std::option::Option<i32> {
         self.wait_time_seconds
     }
     /// <p>This parameter applies only to FIFO (first-in-first-out) queues.</p>
@@ -136,7 +136,7 @@ impl ReceiveMessageInput {
     /// </ul>
     /// <p>The maximum length of <code>ReceiveRequestAttemptId</code> is 128 characters. <code>ReceiveRequestAttemptId</code> can contain alphanumeric characters (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p>
     /// <p>For best practices of using <code>ReceiveRequestAttemptId</code>, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-receiverequestattemptid-request-parameter.html">Using the ReceiveRequestAttemptId Request Parameter</a> in the <i>Amazon SQS Developer Guide</i>.</p>
-    pub fn receive_request_attempt_id(&self) -> std::option::Option<&str> {
+    pub fn receive_request_attempt_id(&self) -> ::std::option::Option<&str> {
         self.receive_request_attempt_id.as_deref()
     }
 }
@@ -149,27 +149,30 @@ impl ReceiveMessageInput {
 
 /// A builder for [`ReceiveMessageInput`](crate::operation::receive_message::ReceiveMessageInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ReceiveMessageInputBuilder {
-    pub(crate) queue_url: std::option::Option<std::string::String>,
+    pub(crate) queue_url: ::std::option::Option<::std::string::String>,
     pub(crate) attribute_names:
-        std::option::Option<std::vec::Vec<crate::types::QueueAttributeName>>,
-    pub(crate) message_attribute_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) max_number_of_messages: std::option::Option<i32>,
-    pub(crate) visibility_timeout: std::option::Option<i32>,
-    pub(crate) wait_time_seconds: std::option::Option<i32>,
-    pub(crate) receive_request_attempt_id: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::QueueAttributeName>>,
+    pub(crate) message_attribute_names:
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) max_number_of_messages: ::std::option::Option<i32>,
+    pub(crate) visibility_timeout: ::std::option::Option<i32>,
+    pub(crate) wait_time_seconds: ::std::option::Option<i32>,
+    pub(crate) receive_request_attempt_id: ::std::option::Option<::std::string::String>,
 }
 impl ReceiveMessageInputBuilder {
     /// <p>The URL of the Amazon SQS queue from which messages are received.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
-    pub fn queue_url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.queue_url = Some(input.into());
+    pub fn queue_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.queue_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL of the Amazon SQS queue from which messages are received.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
-    pub fn set_queue_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_queue_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.queue_url = input;
         self
     }
@@ -197,7 +200,7 @@ impl ReceiveMessageInputBuilder {
     pub fn attribute_names(mut self, input: crate::types::QueueAttributeName) -> Self {
         let mut v = self.attribute_names.unwrap_or_default();
         v.push(input);
-        self.attribute_names = Some(v);
+        self.attribute_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of attributes that need to be returned along with each message. These attributes include:</p>
@@ -219,7 +222,7 @@ impl ReceiveMessageInputBuilder {
     /// </ul>
     pub fn set_attribute_names(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::QueueAttributeName>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::QueueAttributeName>>,
     ) -> Self {
         self.attribute_names = input;
         self
@@ -237,10 +240,13 @@ impl ReceiveMessageInputBuilder {
     /// <li> <p>The name can be up to 256 characters long.</p> </li>
     /// </ul>
     /// <p>When using <code>ReceiveMessage</code>, you can send a list of attribute names to receive, or you can return all of the attributes by specifying <code>All</code> or <code>.*</code> in your request. You can also use all message attributes starting with a prefix, for example <code>bar.*</code>.</p>
-    pub fn message_attribute_names(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn message_attribute_names(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.message_attribute_names.unwrap_or_default();
         v.push(input.into());
-        self.message_attribute_names = Some(v);
+        self.message_attribute_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>The name of the message attribute, where <i>N</i> is the index.</p>
@@ -254,28 +260,28 @@ impl ReceiveMessageInputBuilder {
     /// <p>When using <code>ReceiveMessage</code>, you can send a list of attribute names to receive, or you can return all of the attributes by specifying <code>All</code> or <code>.*</code> in your request. You can also use all message attributes starting with a prefix, for example <code>bar.*</code>.</p>
     pub fn set_message_attribute_names(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.message_attribute_names = input;
         self
     }
     /// <p>The maximum number of messages to return. Amazon SQS never returns more messages than this value (however, fewer messages might be returned). Valid values: 1 to 10. Default: 1.</p>
     pub fn max_number_of_messages(mut self, input: i32) -> Self {
-        self.max_number_of_messages = Some(input);
+        self.max_number_of_messages = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum number of messages to return. Amazon SQS never returns more messages than this value (however, fewer messages might be returned). Valid values: 1 to 10. Default: 1.</p>
-    pub fn set_max_number_of_messages(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_number_of_messages(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_number_of_messages = input;
         self
     }
     /// <p>The duration (in seconds) that the received messages are hidden from subsequent retrieve requests after being retrieved by a <code>ReceiveMessage</code> request.</p>
     pub fn visibility_timeout(mut self, input: i32) -> Self {
-        self.visibility_timeout = Some(input);
+        self.visibility_timeout = ::std::option::Option::Some(input);
         self
     }
     /// <p>The duration (in seconds) that the received messages are hidden from subsequent retrieve requests after being retrieved by a <code>ReceiveMessage</code> request.</p>
-    pub fn set_visibility_timeout(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_visibility_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
         self.visibility_timeout = input;
         self
     }
@@ -283,13 +289,13 @@ impl ReceiveMessageInputBuilder {
     /// <p>To avoid HTTP errors, ensure that the HTTP response timeout for <code>ReceiveMessage</code> requests is longer than the <code>WaitTimeSeconds</code> parameter. For example, with the Java SDK, you can set HTTP transport settings using the <a href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/http/nio/netty/NettyNioAsyncHttpClient.html"> NettyNioAsyncHttpClient</a> for asynchronous clients, or the <a href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/http/apache/ApacheHttpClient.html"> ApacheHttpClient</a> for synchronous clients. </p>
     /// </important>
     pub fn wait_time_seconds(mut self, input: i32) -> Self {
-        self.wait_time_seconds = Some(input);
+        self.wait_time_seconds = ::std::option::Option::Some(input);
         self
     }
     /// <p>The duration (in seconds) for which the call waits for a message to arrive in the queue before returning. If a message is available, the call returns sooner than <code>WaitTimeSeconds</code>. If no messages are available and the wait time expires, the call returns successfully with an empty list of messages.</p> <important>
     /// <p>To avoid HTTP errors, ensure that the HTTP response timeout for <code>ReceiveMessage</code> requests is longer than the <code>WaitTimeSeconds</code> parameter. For example, with the Java SDK, you can set HTTP transport settings using the <a href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/http/nio/netty/NettyNioAsyncHttpClient.html"> NettyNioAsyncHttpClient</a> for asynchronous clients, or the <a href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/http/apache/ApacheHttpClient.html"> ApacheHttpClient</a> for synchronous clients. </p>
     /// </important>
-    pub fn set_wait_time_seconds(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_wait_time_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.wait_time_seconds = input;
         self
     }
@@ -309,8 +315,11 @@ impl ReceiveMessageInputBuilder {
     /// </ul>
     /// <p>The maximum length of <code>ReceiveRequestAttemptId</code> is 128 characters. <code>ReceiveRequestAttemptId</code> can contain alphanumeric characters (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p>
     /// <p>For best practices of using <code>ReceiveRequestAttemptId</code>, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-receiverequestattemptid-request-parameter.html">Using the ReceiveRequestAttemptId Request Parameter</a> in the <i>Amazon SQS Developer Guide</i>.</p>
-    pub fn receive_request_attempt_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.receive_request_attempt_id = Some(input.into());
+    pub fn receive_request_attempt_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.receive_request_attempt_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>This parameter applies only to FIFO (first-in-first-out) queues.</p>
@@ -331,7 +340,7 @@ impl ReceiveMessageInputBuilder {
     /// <p>For best practices of using <code>ReceiveRequestAttemptId</code>, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-receiverequestattemptid-request-parameter.html">Using the ReceiveRequestAttemptId Request Parameter</a> in the <i>Amazon SQS Developer Guide</i>.</p>
     pub fn set_receive_request_attempt_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.receive_request_attempt_id = input;
         self
@@ -339,11 +348,11 @@ impl ReceiveMessageInputBuilder {
     /// Consumes the builder and constructs a [`ReceiveMessageInput`](crate::operation::receive_message::ReceiveMessageInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::receive_message::ReceiveMessageInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::receive_message::ReceiveMessageInput {
+        ::std::result::Result::Ok(crate::operation::receive_message::ReceiveMessageInput {
             queue_url: self.queue_url,
             attribute_names: self.attribute_names,
             message_attribute_names: self.message_attribute_names,

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`TagResource`](crate::operation::tag_resource::builders::TagResourceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`workload_arn(impl Into<String>)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::workload_arn) / [`set_workload_arn(Option<String>)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::set_workload_arn): <p>The ARN for the workload.</p>
+    ///   - [`workload_arn(impl ::std::convert::Into<String>)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::workload_arn) / [`set_workload_arn(Option<String>)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::set_workload_arn): <p>The ARN for the workload.</p>
     ///   - [`tags(HashMap<String, String>)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::operation::tag_resource::builders::TagResourceFluentBuilder::set_tags): <p>The tags for the resource.</p>
     /// - On success, responds with [`TagResourceOutput`](crate::operation::tag_resource::TagResourceOutput)
     /// - On failure, responds with [`SdkError<TagResourceError>`](crate::operation::tag_resource::TagResourceError)

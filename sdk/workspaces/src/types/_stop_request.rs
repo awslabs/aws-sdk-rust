@@ -2,15 +2,15 @@
 
 /// <p>Describes the information used to stop a WorkSpace.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopRequest {
     /// <p>The identifier of the WorkSpace.</p>
     #[doc(hidden)]
-    pub workspace_id: std::option::Option<std::string::String>,
+    pub workspace_id: ::std::option::Option<::std::string::String>,
 }
 impl StopRequest {
     /// <p>The identifier of the WorkSpace.</p>
-    pub fn workspace_id(&self) -> std::option::Option<&str> {
+    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
         self.workspace_id.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl StopRequest {
 
 /// A builder for [`StopRequest`](crate::types::StopRequest).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StopRequestBuilder {
-    pub(crate) workspace_id: std::option::Option<std::string::String>,
+    pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
 }
 impl StopRequestBuilder {
     /// <p>The identifier of the WorkSpace.</p>
-    pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.workspace_id = Some(input.into());
+    pub fn workspace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.workspace_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the WorkSpace.</p>
-    pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_workspace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workspace_id = input;
         self
     }

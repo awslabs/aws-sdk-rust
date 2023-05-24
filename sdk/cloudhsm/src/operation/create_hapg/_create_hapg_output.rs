@@ -2,20 +2,20 @@
 
 /// <p>Contains the output of the <code>CreateHAPartitionGroup</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateHapgOutput {
     /// <p>The ARN of the high-availability partition group.</p>
     #[doc(hidden)]
-    pub hapg_arn: std::option::Option<std::string::String>,
+    pub hapg_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateHapgOutput {
     /// <p>The ARN of the high-availability partition group.</p>
-    pub fn hapg_arn(&self) -> std::option::Option<&str> {
+    pub fn hapg_arn(&self) -> ::std::option::Option<&str> {
         self.hapg_arn.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for CreateHapgOutput {
+impl ::aws_http::request_id::RequestId for CreateHapgOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,21 @@ impl CreateHapgOutput {
 
 /// A builder for [`CreateHapgOutput`](crate::operation::create_hapg::CreateHapgOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateHapgOutputBuilder {
-    pub(crate) hapg_arn: std::option::Option<std::string::String>,
+    pub(crate) hapg_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateHapgOutputBuilder {
     /// <p>The ARN of the high-availability partition group.</p>
-    pub fn hapg_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.hapg_arn = Some(input.into());
+    pub fn hapg_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.hapg_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the high-availability partition group.</p>
-    pub fn set_hapg_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_hapg_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hapg_arn = input;
         self
     }

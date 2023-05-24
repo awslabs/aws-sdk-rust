@@ -2,7 +2,7 @@
 
 /// <p>Provides information that describes a replication task created by the <code>CreateReplicationTask</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplicationTask {
     /// <p>The user-assigned replication task identifier or name.</p>
     /// <p>Constraints:</p>
@@ -12,25 +12,25 @@ pub struct ReplicationTask {
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub replication_task_identifier: std::option::Option<std::string::String>,
+    pub replication_task_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the endpoint.</p>
     #[doc(hidden)]
-    pub source_endpoint_arn: std::option::Option<std::string::String>,
+    pub source_endpoint_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN that uniquely identifies the endpoint.</p>
     #[doc(hidden)]
-    pub target_endpoint_arn: std::option::Option<std::string::String>,
+    pub target_endpoint_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the replication instance.</p>
     #[doc(hidden)]
-    pub replication_instance_arn: std::option::Option<std::string::String>,
+    pub replication_instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of migration.</p>
     #[doc(hidden)]
-    pub migration_type: std::option::Option<crate::types::MigrationTypeValue>,
+    pub migration_type: ::std::option::Option<crate::types::MigrationTypeValue>,
     /// <p>Table mappings specified in the task.</p>
     #[doc(hidden)]
-    pub table_mappings: std::option::Option<std::string::String>,
+    pub table_mappings: ::std::option::Option<::std::string::String>,
     /// <p>The settings for the replication task.</p>
     #[doc(hidden)]
-    pub replication_task_settings: std::option::Option<std::string::String>,
+    pub replication_task_settings: ::std::option::Option<::std::string::String>,
     /// <p>The status of the replication task. This response parameter can return one of the following values:</p>
     /// <ul>
     /// <li> <p> <code>"moving"</code> – The task is being moved in response to running the <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_MoveReplicationTask.html"> <code>MoveReplicationTask</code> </a> operation.</p> </li>
@@ -49,10 +49,10 @@ pub struct ReplicationTask {
     /// </note> </li>
     /// </ul>
     #[doc(hidden)]
-    pub status: std::option::Option<std::string::String>,
+    pub status: ::std::option::Option<::std::string::String>,
     /// <p>The last error (failure) message generated for the replication task.</p>
     #[doc(hidden)]
-    pub last_failure_message: std::option::Option<std::string::String>,
+    pub last_failure_message: ::std::option::Option<::std::string::String>,
     /// <p>The reason the replication task was stopped. This response parameter can return one of the following values:</p>
     /// <ul>
     /// <li> <p> <code>"Stop Reason NORMAL"</code> </p> </li>
@@ -71,40 +71,40 @@ pub struct ReplicationTask {
     /// <li> <p> <code>"Stop Reason RECYCLE_TASK"</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub stop_reason: std::option::Option<std::string::String>,
+    pub stop_reason: ::std::option::Option<::std::string::String>,
     /// <p>The date the replication task was created.</p>
     #[doc(hidden)]
-    pub replication_task_creation_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub replication_task_creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date the replication task is scheduled to start.</p>
     #[doc(hidden)]
-    pub replication_task_start_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub replication_task_start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates when you want a change data capture (CDC) operation to start. Use either <code>CdcStartPosition</code> or <code>CdcStartTime</code> to specify when you want the CDC operation to start. Specifying both values results in an error.</p>
     /// <p>The value can be in date, checkpoint, or LSN/SCN format.</p>
     /// <p>Date Example: --cdc-start-position “2018-03-08T12:12:12”</p>
     /// <p>Checkpoint Example: --cdc-start-position "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
     /// <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p>
     #[doc(hidden)]
-    pub cdc_start_position: std::option::Option<std::string::String>,
+    pub cdc_start_position: ::std::option::Option<::std::string::String>,
     /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or commit time.</p>
     /// <p>Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”</p>
     /// <p>Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12“</p>
     #[doc(hidden)]
-    pub cdc_stop_position: std::option::Option<std::string::String>,
+    pub cdc_stop_position: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the last checkpoint that occurred during a change data capture (CDC) operation. You can provide this value to the <code>CdcStartPosition</code> parameter to start a CDC operation that begins at that checkpoint.</p>
     #[doc(hidden)]
-    pub recovery_checkpoint: std::option::Option<std::string::String>,
+    pub recovery_checkpoint: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the replication task.</p>
     #[doc(hidden)]
-    pub replication_task_arn: std::option::Option<std::string::String>,
+    pub replication_task_arn: ::std::option::Option<::std::string::String>,
     /// <p>The statistics for the task, including elapsed time, tables loaded, and table errors.</p>
     #[doc(hidden)]
-    pub replication_task_stats: std::option::Option<crate::types::ReplicationTaskStats>,
+    pub replication_task_stats: ::std::option::Option<crate::types::ReplicationTaskStats>,
     /// <p>Supplemental information that the task requires to migrate the data for certain source and target endpoints. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for Task Settings</a> in the <i>Database Migration Service User Guide.</i> </p>
     #[doc(hidden)]
-    pub task_data: std::option::Option<std::string::String>,
+    pub task_data: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the replication instance to which this task is moved in response to running the <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_MoveReplicationTask.html"> <code>MoveReplicationTask</code> </a> operation. Otherwise, this response parameter isn't a member of the <code>ReplicationTask</code> object.</p>
     #[doc(hidden)]
-    pub target_replication_instance_arn: std::option::Option<std::string::String>,
+    pub target_replication_instance_arn: ::std::option::Option<::std::string::String>,
 }
 impl ReplicationTask {
     /// <p>The user-assigned replication task identifier or name.</p>
@@ -114,31 +114,31 @@ impl ReplicationTask {
     /// <li> <p>First character must be a letter.</p> </li>
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
-    pub fn replication_task_identifier(&self) -> std::option::Option<&str> {
+    pub fn replication_task_identifier(&self) -> ::std::option::Option<&str> {
         self.replication_task_identifier.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the endpoint.</p>
-    pub fn source_endpoint_arn(&self) -> std::option::Option<&str> {
+    pub fn source_endpoint_arn(&self) -> ::std::option::Option<&str> {
         self.source_endpoint_arn.as_deref()
     }
     /// <p>The ARN that uniquely identifies the endpoint.</p>
-    pub fn target_endpoint_arn(&self) -> std::option::Option<&str> {
+    pub fn target_endpoint_arn(&self) -> ::std::option::Option<&str> {
         self.target_endpoint_arn.as_deref()
     }
     /// <p>The ARN of the replication instance.</p>
-    pub fn replication_instance_arn(&self) -> std::option::Option<&str> {
+    pub fn replication_instance_arn(&self) -> ::std::option::Option<&str> {
         self.replication_instance_arn.as_deref()
     }
     /// <p>The type of migration.</p>
-    pub fn migration_type(&self) -> std::option::Option<&crate::types::MigrationTypeValue> {
+    pub fn migration_type(&self) -> ::std::option::Option<&crate::types::MigrationTypeValue> {
         self.migration_type.as_ref()
     }
     /// <p>Table mappings specified in the task.</p>
-    pub fn table_mappings(&self) -> std::option::Option<&str> {
+    pub fn table_mappings(&self) -> ::std::option::Option<&str> {
         self.table_mappings.as_deref()
     }
     /// <p>The settings for the replication task.</p>
-    pub fn replication_task_settings(&self) -> std::option::Option<&str> {
+    pub fn replication_task_settings(&self) -> ::std::option::Option<&str> {
         self.replication_task_settings.as_deref()
     }
     /// <p>The status of the replication task. This response parameter can return one of the following values:</p>
@@ -158,11 +158,11 @@ impl ReplicationTask {
     /// <p> <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTaskAssessmentRun.html"> <code>StartReplicationTaskAssessmentRun</code> </a> is an improved premigration task assessment operation. The <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTaskAssessment.html"> <code>StartReplicationTaskAssessment</code> </a> operation assesses data type compatibility only between the source and target database of a given migration task. In contrast, <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTaskAssessmentRun.html"> <code>StartReplicationTaskAssessmentRun</code> </a> enables you to specify a variety of premigration task assessments in addition to data type compatibility. These assessments include ones for the validity of primary key definitions and likely issues with database migration performance, among others.</p>
     /// </note> </li>
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
     /// <p>The last error (failure) message generated for the replication task.</p>
-    pub fn last_failure_message(&self) -> std::option::Option<&str> {
+    pub fn last_failure_message(&self) -> ::std::option::Option<&str> {
         self.last_failure_message.as_deref()
     }
     /// <p>The reason the replication task was stopped. This response parameter can return one of the following values:</p>
@@ -182,17 +182,19 @@ impl ReplicationTask {
     /// <li> <p> <code>"Stop Reason RECONFIGURATION_RESTART"</code> </p> </li>
     /// <li> <p> <code>"Stop Reason RECYCLE_TASK"</code> </p> </li>
     /// </ul>
-    pub fn stop_reason(&self) -> std::option::Option<&str> {
+    pub fn stop_reason(&self) -> ::std::option::Option<&str> {
         self.stop_reason.as_deref()
     }
     /// <p>The date the replication task was created.</p>
     pub fn replication_task_creation_date(
         &self,
-    ) -> std::option::Option<&aws_smithy_types::DateTime> {
+    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.replication_task_creation_date.as_ref()
     }
     /// <p>The date the replication task is scheduled to start.</p>
-    pub fn replication_task_start_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn replication_task_start_date(
+        &self,
+    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.replication_task_start_date.as_ref()
     }
     /// <p>Indicates when you want a change data capture (CDC) operation to start. Use either <code>CdcStartPosition</code> or <code>CdcStartTime</code> to specify when you want the CDC operation to start. Specifying both values results in an error.</p>
@@ -200,35 +202,35 @@ impl ReplicationTask {
     /// <p>Date Example: --cdc-start-position “2018-03-08T12:12:12”</p>
     /// <p>Checkpoint Example: --cdc-start-position "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
     /// <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p>
-    pub fn cdc_start_position(&self) -> std::option::Option<&str> {
+    pub fn cdc_start_position(&self) -> ::std::option::Option<&str> {
         self.cdc_start_position.as_deref()
     }
     /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or commit time.</p>
     /// <p>Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”</p>
     /// <p>Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12“</p>
-    pub fn cdc_stop_position(&self) -> std::option::Option<&str> {
+    pub fn cdc_stop_position(&self) -> ::std::option::Option<&str> {
         self.cdc_stop_position.as_deref()
     }
     /// <p>Indicates the last checkpoint that occurred during a change data capture (CDC) operation. You can provide this value to the <code>CdcStartPosition</code> parameter to start a CDC operation that begins at that checkpoint.</p>
-    pub fn recovery_checkpoint(&self) -> std::option::Option<&str> {
+    pub fn recovery_checkpoint(&self) -> ::std::option::Option<&str> {
         self.recovery_checkpoint.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the replication task.</p>
-    pub fn replication_task_arn(&self) -> std::option::Option<&str> {
+    pub fn replication_task_arn(&self) -> ::std::option::Option<&str> {
         self.replication_task_arn.as_deref()
     }
     /// <p>The statistics for the task, including elapsed time, tables loaded, and table errors.</p>
     pub fn replication_task_stats(
         &self,
-    ) -> std::option::Option<&crate::types::ReplicationTaskStats> {
+    ) -> ::std::option::Option<&crate::types::ReplicationTaskStats> {
         self.replication_task_stats.as_ref()
     }
     /// <p>Supplemental information that the task requires to migrate the data for certain source and target endpoints. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for Task Settings</a> in the <i>Database Migration Service User Guide.</i> </p>
-    pub fn task_data(&self) -> std::option::Option<&str> {
+    pub fn task_data(&self) -> ::std::option::Option<&str> {
         self.task_data.as_deref()
     }
     /// <p>The ARN of the replication instance to which this task is moved in response to running the <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_MoveReplicationTask.html"> <code>MoveReplicationTask</code> </a> operation. Otherwise, this response parameter isn't a member of the <code>ReplicationTask</code> object.</p>
-    pub fn target_replication_instance_arn(&self) -> std::option::Option<&str> {
+    pub fn target_replication_instance_arn(&self) -> ::std::option::Option<&str> {
         self.target_replication_instance_arn.as_deref()
     }
 }
@@ -241,27 +243,29 @@ impl ReplicationTask {
 
 /// A builder for [`ReplicationTask`](crate::types::ReplicationTask).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ReplicationTaskBuilder {
-    pub(crate) replication_task_identifier: std::option::Option<std::string::String>,
-    pub(crate) source_endpoint_arn: std::option::Option<std::string::String>,
-    pub(crate) target_endpoint_arn: std::option::Option<std::string::String>,
-    pub(crate) replication_instance_arn: std::option::Option<std::string::String>,
-    pub(crate) migration_type: std::option::Option<crate::types::MigrationTypeValue>,
-    pub(crate) table_mappings: std::option::Option<std::string::String>,
-    pub(crate) replication_task_settings: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<std::string::String>,
-    pub(crate) last_failure_message: std::option::Option<std::string::String>,
-    pub(crate) stop_reason: std::option::Option<std::string::String>,
-    pub(crate) replication_task_creation_date: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) replication_task_start_date: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) cdc_start_position: std::option::Option<std::string::String>,
-    pub(crate) cdc_stop_position: std::option::Option<std::string::String>,
-    pub(crate) recovery_checkpoint: std::option::Option<std::string::String>,
-    pub(crate) replication_task_arn: std::option::Option<std::string::String>,
-    pub(crate) replication_task_stats: std::option::Option<crate::types::ReplicationTaskStats>,
-    pub(crate) task_data: std::option::Option<std::string::String>,
-    pub(crate) target_replication_instance_arn: std::option::Option<std::string::String>,
+    pub(crate) replication_task_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) source_endpoint_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) target_endpoint_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) replication_instance_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) migration_type: ::std::option::Option<crate::types::MigrationTypeValue>,
+    pub(crate) table_mappings: ::std::option::Option<::std::string::String>,
+    pub(crate) replication_task_settings: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<::std::string::String>,
+    pub(crate) last_failure_message: ::std::option::Option<::std::string::String>,
+    pub(crate) stop_reason: ::std::option::Option<::std::string::String>,
+    pub(crate) replication_task_creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) replication_task_start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) cdc_start_position: ::std::option::Option<::std::string::String>,
+    pub(crate) cdc_stop_position: ::std::option::Option<::std::string::String>,
+    pub(crate) recovery_checkpoint: ::std::option::Option<::std::string::String>,
+    pub(crate) replication_task_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) replication_task_stats: ::std::option::Option<crate::types::ReplicationTaskStats>,
+    pub(crate) task_data: ::std::option::Option<::std::string::String>,
+    pub(crate) target_replication_instance_arn: ::std::option::Option<::std::string::String>,
 }
 impl ReplicationTaskBuilder {
     /// <p>The user-assigned replication task identifier or name.</p>
@@ -271,8 +275,11 @@ impl ReplicationTaskBuilder {
     /// <li> <p>First character must be a letter.</p> </li>
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
-    pub fn replication_task_identifier(mut self, input: impl Into<std::string::String>) -> Self {
-        self.replication_task_identifier = Some(input.into());
+    pub fn replication_task_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.replication_task_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user-assigned replication task identifier or name.</p>
@@ -284,82 +291,100 @@ impl ReplicationTaskBuilder {
     /// </ul>
     pub fn set_replication_task_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.replication_task_identifier = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the endpoint.</p>
-    pub fn source_endpoint_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.source_endpoint_arn = Some(input.into());
+    pub fn source_endpoint_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.source_endpoint_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the endpoint.</p>
     pub fn set_source_endpoint_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.source_endpoint_arn = input;
         self
     }
     /// <p>The ARN that uniquely identifies the endpoint.</p>
-    pub fn target_endpoint_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.target_endpoint_arn = Some(input.into());
+    pub fn target_endpoint_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.target_endpoint_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN that uniquely identifies the endpoint.</p>
     pub fn set_target_endpoint_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.target_endpoint_arn = input;
         self
     }
     /// <p>The ARN of the replication instance.</p>
-    pub fn replication_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.replication_instance_arn = Some(input.into());
+    pub fn replication_instance_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.replication_instance_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the replication instance.</p>
     pub fn set_replication_instance_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.replication_instance_arn = input;
         self
     }
     /// <p>The type of migration.</p>
     pub fn migration_type(mut self, input: crate::types::MigrationTypeValue) -> Self {
-        self.migration_type = Some(input);
+        self.migration_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of migration.</p>
     pub fn set_migration_type(
         mut self,
-        input: std::option::Option<crate::types::MigrationTypeValue>,
+        input: ::std::option::Option<crate::types::MigrationTypeValue>,
     ) -> Self {
         self.migration_type = input;
         self
     }
     /// <p>Table mappings specified in the task.</p>
-    pub fn table_mappings(mut self, input: impl Into<std::string::String>) -> Self {
-        self.table_mappings = Some(input.into());
+    pub fn table_mappings(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.table_mappings = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Table mappings specified in the task.</p>
-    pub fn set_table_mappings(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_table_mappings(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.table_mappings = input;
         self
     }
     /// <p>The settings for the replication task.</p>
-    pub fn replication_task_settings(mut self, input: impl Into<std::string::String>) -> Self {
-        self.replication_task_settings = Some(input.into());
+    pub fn replication_task_settings(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.replication_task_settings = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The settings for the replication task.</p>
     pub fn set_replication_task_settings(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.replication_task_settings = input;
         self
@@ -381,8 +406,8 @@ impl ReplicationTaskBuilder {
     /// <p> <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTaskAssessmentRun.html"> <code>StartReplicationTaskAssessmentRun</code> </a> is an improved premigration task assessment operation. The <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTaskAssessment.html"> <code>StartReplicationTaskAssessment</code> </a> operation assesses data type compatibility only between the source and target database of a given migration task. In contrast, <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTaskAssessmentRun.html"> <code>StartReplicationTaskAssessmentRun</code> </a> enables you to specify a variety of premigration task assessments in addition to data type compatibility. These assessments include ones for the validity of primary key definitions and likely issues with database migration performance, among others.</p>
     /// </note> </li>
     /// </ul>
-    pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status = Some(input.into());
+    pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the replication task. This response parameter can return one of the following values:</p>
@@ -402,19 +427,22 @@ impl ReplicationTaskBuilder {
     /// <p> <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTaskAssessmentRun.html"> <code>StartReplicationTaskAssessmentRun</code> </a> is an improved premigration task assessment operation. The <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTaskAssessment.html"> <code>StartReplicationTaskAssessment</code> </a> operation assesses data type compatibility only between the source and target database of a given migration task. In contrast, <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTaskAssessmentRun.html"> <code>StartReplicationTaskAssessmentRun</code> </a> enables you to specify a variety of premigration task assessments in addition to data type compatibility. These assessments include ones for the validity of primary key definitions and likely issues with database migration performance, among others.</p>
     /// </note> </li>
     /// </ul>
-    pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }
     /// <p>The last error (failure) message generated for the replication task.</p>
-    pub fn last_failure_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.last_failure_message = Some(input.into());
+    pub fn last_failure_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.last_failure_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The last error (failure) message generated for the replication task.</p>
     pub fn set_last_failure_message(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.last_failure_message = input;
         self
@@ -436,8 +464,8 @@ impl ReplicationTaskBuilder {
     /// <li> <p> <code>"Stop Reason RECONFIGURATION_RESTART"</code> </p> </li>
     /// <li> <p> <code>"Stop Reason RECYCLE_TASK"</code> </p> </li>
     /// </ul>
-    pub fn stop_reason(mut self, input: impl Into<std::string::String>) -> Self {
-        self.stop_reason = Some(input.into());
+    pub fn stop_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.stop_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason the replication task was stopped. This response parameter can return one of the following values:</p>
@@ -457,32 +485,32 @@ impl ReplicationTaskBuilder {
     /// <li> <p> <code>"Stop Reason RECONFIGURATION_RESTART"</code> </p> </li>
     /// <li> <p> <code>"Stop Reason RECYCLE_TASK"</code> </p> </li>
     /// </ul>
-    pub fn set_stop_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_stop_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stop_reason = input;
         self
     }
     /// <p>The date the replication task was created.</p>
-    pub fn replication_task_creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.replication_task_creation_date = Some(input);
+    pub fn replication_task_creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.replication_task_creation_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date the replication task was created.</p>
     pub fn set_replication_task_creation_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.replication_task_creation_date = input;
         self
     }
     /// <p>The date the replication task is scheduled to start.</p>
-    pub fn replication_task_start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.replication_task_start_date = Some(input);
+    pub fn replication_task_start_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.replication_task_start_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date the replication task is scheduled to start.</p>
     pub fn set_replication_task_start_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.replication_task_start_date = input;
         self
@@ -492,8 +520,11 @@ impl ReplicationTaskBuilder {
     /// <p>Date Example: --cdc-start-position “2018-03-08T12:12:12”</p>
     /// <p>Checkpoint Example: --cdc-start-position "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
     /// <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p>
-    pub fn cdc_start_position(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cdc_start_position = Some(input.into());
+    pub fn cdc_start_position(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.cdc_start_position = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates when you want a change data capture (CDC) operation to start. Use either <code>CdcStartPosition</code> or <code>CdcStartTime</code> to specify when you want the CDC operation to start. Specifying both values results in an error.</p>
@@ -503,7 +534,7 @@ impl ReplicationTaskBuilder {
     /// <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p>
     pub fn set_cdc_start_position(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.cdc_start_position = input;
         self
@@ -511,8 +542,11 @@ impl ReplicationTaskBuilder {
     /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or commit time.</p>
     /// <p>Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”</p>
     /// <p>Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12“</p>
-    pub fn cdc_stop_position(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cdc_stop_position = Some(input.into());
+    pub fn cdc_stop_position(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.cdc_stop_position = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or commit time.</p>
@@ -520,72 +554,78 @@ impl ReplicationTaskBuilder {
     /// <p>Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12“</p>
     pub fn set_cdc_stop_position(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.cdc_stop_position = input;
         self
     }
     /// <p>Indicates the last checkpoint that occurred during a change data capture (CDC) operation. You can provide this value to the <code>CdcStartPosition</code> parameter to start a CDC operation that begins at that checkpoint.</p>
-    pub fn recovery_checkpoint(mut self, input: impl Into<std::string::String>) -> Self {
-        self.recovery_checkpoint = Some(input.into());
+    pub fn recovery_checkpoint(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.recovery_checkpoint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates the last checkpoint that occurred during a change data capture (CDC) operation. You can provide this value to the <code>CdcStartPosition</code> parameter to start a CDC operation that begins at that checkpoint.</p>
     pub fn set_recovery_checkpoint(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.recovery_checkpoint = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the replication task.</p>
-    pub fn replication_task_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.replication_task_arn = Some(input.into());
+    pub fn replication_task_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.replication_task_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the replication task.</p>
     pub fn set_replication_task_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.replication_task_arn = input;
         self
     }
     /// <p>The statistics for the task, including elapsed time, tables loaded, and table errors.</p>
     pub fn replication_task_stats(mut self, input: crate::types::ReplicationTaskStats) -> Self {
-        self.replication_task_stats = Some(input);
+        self.replication_task_stats = ::std::option::Option::Some(input);
         self
     }
     /// <p>The statistics for the task, including elapsed time, tables loaded, and table errors.</p>
     pub fn set_replication_task_stats(
         mut self,
-        input: std::option::Option<crate::types::ReplicationTaskStats>,
+        input: ::std::option::Option<crate::types::ReplicationTaskStats>,
     ) -> Self {
         self.replication_task_stats = input;
         self
     }
     /// <p>Supplemental information that the task requires to migrate the data for certain source and target endpoints. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for Task Settings</a> in the <i>Database Migration Service User Guide.</i> </p>
-    pub fn task_data(mut self, input: impl Into<std::string::String>) -> Self {
-        self.task_data = Some(input.into());
+    pub fn task_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.task_data = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Supplemental information that the task requires to migrate the data for certain source and target endpoints. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for Task Settings</a> in the <i>Database Migration Service User Guide.</i> </p>
-    pub fn set_task_data(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_task_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.task_data = input;
         self
     }
     /// <p>The ARN of the replication instance to which this task is moved in response to running the <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_MoveReplicationTask.html"> <code>MoveReplicationTask</code> </a> operation. Otherwise, this response parameter isn't a member of the <code>ReplicationTask</code> object.</p>
     pub fn target_replication_instance_arn(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.target_replication_instance_arn = Some(input.into());
+        self.target_replication_instance_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the replication instance to which this task is moved in response to running the <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_MoveReplicationTask.html"> <code>MoveReplicationTask</code> </a> operation. Otherwise, this response parameter isn't a member of the <code>ReplicationTask</code> object.</p>
     pub fn set_target_replication_instance_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.target_replication_instance_arn = input;
         self

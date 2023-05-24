@@ -2,15 +2,15 @@
 
 /// <p>Information about a retention rule lock configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LockConfiguration {
     /// <p>Information about the retention rule unlock delay.</p>
     #[doc(hidden)]
-    pub unlock_delay: std::option::Option<crate::types::UnlockDelay>,
+    pub unlock_delay: ::std::option::Option<crate::types::UnlockDelay>,
 }
 impl LockConfiguration {
     /// <p>Information about the retention rule unlock delay.</p>
-    pub fn unlock_delay(&self) -> std::option::Option<&crate::types::UnlockDelay> {
+    pub fn unlock_delay(&self) -> ::std::option::Option<&crate::types::UnlockDelay> {
         self.unlock_delay.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl LockConfiguration {
 
 /// A builder for [`LockConfiguration`](crate::types::LockConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LockConfigurationBuilder {
-    pub(crate) unlock_delay: std::option::Option<crate::types::UnlockDelay>,
+    pub(crate) unlock_delay: ::std::option::Option<crate::types::UnlockDelay>,
 }
 impl LockConfigurationBuilder {
     /// <p>Information about the retention rule unlock delay.</p>
     pub fn unlock_delay(mut self, input: crate::types::UnlockDelay) -> Self {
-        self.unlock_delay = Some(input);
+        self.unlock_delay = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the retention rule unlock delay.</p>
     pub fn set_unlock_delay(
         mut self,
-        input: std::option::Option<crate::types::UnlockDelay>,
+        input: ::std::option::Option<crate::types::UnlockDelay>,
     ) -> Self {
         self.unlock_delay = input;
         self

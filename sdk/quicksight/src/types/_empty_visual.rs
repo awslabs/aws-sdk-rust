@@ -3,29 +3,29 @@
 /// <p>An empty visual.</p>
 /// <p>Empty visuals are used in layouts but have not been configured to show any data. A new visual created in the Amazon QuickSight console is considered an <code>EmptyVisual</code> until a visual type is selected.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EmptyVisual {
     /// <p>The unique identifier of a visual. This identifier must be unique within the context of a dashboard, template, or analysis. Two dashboards, analyses, or templates can have visuals with the same identifiers.</p>
     #[doc(hidden)]
-    pub visual_id: std::option::Option<std::string::String>,
+    pub visual_id: ::std::option::Option<::std::string::String>,
     /// <p>The data set that is used in the empty visual. Every visual requires a dataset to render.</p>
     #[doc(hidden)]
-    pub data_set_identifier: std::option::Option<std::string::String>,
+    pub data_set_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The list of custom actions that are configured for a visual.</p>
     #[doc(hidden)]
-    pub actions: std::option::Option<std::vec::Vec<crate::types::VisualCustomAction>>,
+    pub actions: ::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>>,
 }
 impl EmptyVisual {
     /// <p>The unique identifier of a visual. This identifier must be unique within the context of a dashboard, template, or analysis. Two dashboards, analyses, or templates can have visuals with the same identifiers.</p>
-    pub fn visual_id(&self) -> std::option::Option<&str> {
+    pub fn visual_id(&self) -> ::std::option::Option<&str> {
         self.visual_id.as_deref()
     }
     /// <p>The data set that is used in the empty visual. Every visual requires a dataset to render.</p>
-    pub fn data_set_identifier(&self) -> std::option::Option<&str> {
+    pub fn data_set_identifier(&self) -> ::std::option::Option<&str> {
         self.data_set_identifier.as_deref()
     }
     /// <p>The list of custom actions that are configured for a visual.</p>
-    pub fn actions(&self) -> std::option::Option<&[crate::types::VisualCustomAction]> {
+    pub fn actions(&self) -> ::std::option::Option<&[crate::types::VisualCustomAction]> {
         self.actions.as_deref()
     }
 }
@@ -38,32 +38,37 @@ impl EmptyVisual {
 
 /// A builder for [`EmptyVisual`](crate::types::EmptyVisual).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EmptyVisualBuilder {
-    pub(crate) visual_id: std::option::Option<std::string::String>,
-    pub(crate) data_set_identifier: std::option::Option<std::string::String>,
-    pub(crate) actions: std::option::Option<std::vec::Vec<crate::types::VisualCustomAction>>,
+    pub(crate) visual_id: ::std::option::Option<::std::string::String>,
+    pub(crate) data_set_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) actions: ::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>>,
 }
 impl EmptyVisualBuilder {
     /// <p>The unique identifier of a visual. This identifier must be unique within the context of a dashboard, template, or analysis. Two dashboards, analyses, or templates can have visuals with the same identifiers.</p>
-    pub fn visual_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.visual_id = Some(input.into());
+    pub fn visual_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.visual_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of a visual. This identifier must be unique within the context of a dashboard, template, or analysis. Two dashboards, analyses, or templates can have visuals with the same identifiers.</p>
-    pub fn set_visual_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_visual_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.visual_id = input;
         self
     }
     /// <p>The data set that is used in the empty visual. Every visual requires a dataset to render.</p>
-    pub fn data_set_identifier(mut self, input: impl Into<std::string::String>) -> Self {
-        self.data_set_identifier = Some(input.into());
+    pub fn data_set_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.data_set_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The data set that is used in the empty visual. Every visual requires a dataset to render.</p>
     pub fn set_data_set_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.data_set_identifier = input;
         self
@@ -76,13 +81,13 @@ impl EmptyVisualBuilder {
     pub fn actions(mut self, input: crate::types::VisualCustomAction) -> Self {
         let mut v = self.actions.unwrap_or_default();
         v.push(input);
-        self.actions = Some(v);
+        self.actions = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of custom actions that are configured for a visual.</p>
     pub fn set_actions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::VisualCustomAction>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>>,
     ) -> Self {
         self.actions = input;
         self

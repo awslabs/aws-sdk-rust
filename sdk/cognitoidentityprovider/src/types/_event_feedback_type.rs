@@ -2,29 +2,29 @@
 
 /// <p>Specifies the event feedback type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventFeedbackType {
     /// <p>The event feedback value.</p>
     #[doc(hidden)]
-    pub feedback_value: std::option::Option<crate::types::FeedbackValueType>,
+    pub feedback_value: ::std::option::Option<crate::types::FeedbackValueType>,
     /// <p>The provider.</p>
     #[doc(hidden)]
-    pub provider: std::option::Option<std::string::String>,
+    pub provider: ::std::option::Option<::std::string::String>,
     /// <p>The event feedback date.</p>
     #[doc(hidden)]
-    pub feedback_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub feedback_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl EventFeedbackType {
     /// <p>The event feedback value.</p>
-    pub fn feedback_value(&self) -> std::option::Option<&crate::types::FeedbackValueType> {
+    pub fn feedback_value(&self) -> ::std::option::Option<&crate::types::FeedbackValueType> {
         self.feedback_value.as_ref()
     }
     /// <p>The provider.</p>
-    pub fn provider(&self) -> std::option::Option<&str> {
+    pub fn provider(&self) -> ::std::option::Option<&str> {
         self.provider.as_deref()
     }
     /// <p>The event feedback date.</p>
-    pub fn feedback_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn feedback_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.feedback_date.as_ref()
     }
 }
@@ -37,45 +37,47 @@ impl EventFeedbackType {
 
 /// A builder for [`EventFeedbackType`](crate::types::EventFeedbackType).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EventFeedbackTypeBuilder {
-    pub(crate) feedback_value: std::option::Option<crate::types::FeedbackValueType>,
-    pub(crate) provider: std::option::Option<std::string::String>,
-    pub(crate) feedback_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) feedback_value: ::std::option::Option<crate::types::FeedbackValueType>,
+    pub(crate) provider: ::std::option::Option<::std::string::String>,
+    pub(crate) feedback_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl EventFeedbackTypeBuilder {
     /// <p>The event feedback value.</p>
     pub fn feedback_value(mut self, input: crate::types::FeedbackValueType) -> Self {
-        self.feedback_value = Some(input);
+        self.feedback_value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The event feedback value.</p>
     pub fn set_feedback_value(
         mut self,
-        input: std::option::Option<crate::types::FeedbackValueType>,
+        input: ::std::option::Option<crate::types::FeedbackValueType>,
     ) -> Self {
         self.feedback_value = input;
         self
     }
     /// <p>The provider.</p>
-    pub fn provider(mut self, input: impl Into<std::string::String>) -> Self {
-        self.provider = Some(input.into());
+    pub fn provider(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.provider = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The provider.</p>
-    pub fn set_provider(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_provider(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.provider = input;
         self
     }
     /// <p>The event feedback date.</p>
-    pub fn feedback_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.feedback_date = Some(input);
+    pub fn feedback_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.feedback_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The event feedback date.</p>
     pub fn set_feedback_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.feedback_date = input;
         self

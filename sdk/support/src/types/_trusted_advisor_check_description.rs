@@ -2,43 +2,46 @@
 
 /// <p>The description and metadata for a Trusted Advisor check.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrustedAdvisorCheckDescription {
     /// <p>The unique identifier for the Trusted Advisor check.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The display name for the Trusted Advisor check.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the Trusted Advisor check, which includes the alert criteria and recommended operations (contains HTML markup).</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The category of the Trusted Advisor check.</p>
     #[doc(hidden)]
-    pub category: std::option::Option<std::string::String>,
+    pub category: ::std::option::Option<::std::string::String>,
     /// <p>The column headings for the data returned by the Trusted Advisor check. The order of the headings corresponds to the order of the data in the <b>Metadata</b> element of the <code>TrustedAdvisorResourceDetail</code> for the check. <b>Metadata</b> contains all the data that is shown in the Excel download, even in those cases where the UI shows just summary data. </p>
     #[doc(hidden)]
-    pub metadata: std::option::Option<std::vec::Vec<std::option::Option<std::string::String>>>,
+    pub metadata:
+        ::std::option::Option<::std::vec::Vec<::std::option::Option<::std::string::String>>>,
 }
 impl TrustedAdvisorCheckDescription {
     /// <p>The unique identifier for the Trusted Advisor check.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The display name for the Trusted Advisor check.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The description of the Trusted Advisor check, which includes the alert criteria and recommended operations (contains HTML markup).</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The category of the Trusted Advisor check.</p>
-    pub fn category(&self) -> std::option::Option<&str> {
+    pub fn category(&self) -> ::std::option::Option<&str> {
         self.category.as_deref()
     }
     /// <p>The column headings for the data returned by the Trusted Advisor check. The order of the headings corresponds to the order of the data in the <b>Metadata</b> element of the <code>TrustedAdvisorResourceDetail</code> for the check. <b>Metadata</b> contains all the data that is shown in the Excel download, even in those cases where the UI shows just summary data. </p>
-    pub fn metadata(&self) -> std::option::Option<&[std::option::Option<std::string::String>]> {
+    pub fn metadata(
+        &self,
+    ) -> ::std::option::Option<&[::std::option::Option<::std::string::String>]> {
         self.metadata.as_deref()
     }
 }
@@ -51,53 +54,55 @@ impl TrustedAdvisorCheckDescription {
 
 /// A builder for [`TrustedAdvisorCheckDescription`](crate::types::TrustedAdvisorCheckDescription).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TrustedAdvisorCheckDescriptionBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) category: std::option::Option<std::string::String>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) category: ::std::option::Option<::std::string::String>,
     pub(crate) metadata:
-        std::option::Option<std::vec::Vec<std::option::Option<std::string::String>>>,
+        ::std::option::Option<::std::vec::Vec<::std::option::Option<::std::string::String>>>,
 }
 impl TrustedAdvisorCheckDescriptionBuilder {
     /// <p>The unique identifier for the Trusted Advisor check.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the Trusted Advisor check.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>The display name for the Trusted Advisor check.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The display name for the Trusted Advisor check.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The description of the Trusted Advisor check, which includes the alert criteria and recommended operations (contains HTML markup).</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the Trusted Advisor check, which includes the alert criteria and recommended operations (contains HTML markup).</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>The category of the Trusted Advisor check.</p>
-    pub fn category(mut self, input: impl Into<std::string::String>) -> Self {
-        self.category = Some(input.into());
+    pub fn category(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.category = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The category of the Trusted Advisor check.</p>
-    pub fn set_category(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_category(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.category = input;
         self
     }
@@ -106,16 +111,16 @@ impl TrustedAdvisorCheckDescriptionBuilder {
     /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
     ///
     /// <p>The column headings for the data returned by the Trusted Advisor check. The order of the headings corresponds to the order of the data in the <b>Metadata</b> element of the <code>TrustedAdvisorResourceDetail</code> for the check. <b>Metadata</b> contains all the data that is shown in the Excel download, even in those cases where the UI shows just summary data. </p>
-    pub fn metadata(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn metadata(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         let mut v = self.metadata.unwrap_or_default();
         v.push(input);
-        self.metadata = Some(v);
+        self.metadata = ::std::option::Option::Some(v);
         self
     }
     /// <p>The column headings for the data returned by the Trusted Advisor check. The order of the headings corresponds to the order of the data in the <b>Metadata</b> element of the <code>TrustedAdvisorResourceDetail</code> for the check. <b>Metadata</b> contains all the data that is shown in the Excel download, even in those cases where the UI shows just summary data. </p>
     pub fn set_metadata(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::option::Option<std::string::String>>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::option::Option<::std::string::String>>>,
     ) -> Self {
         self.metadata = input;
         self

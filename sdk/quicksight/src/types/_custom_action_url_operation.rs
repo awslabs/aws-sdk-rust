@@ -2,11 +2,11 @@
 
 /// <p>The URL operation that opens a link to another webpage.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomActionUrlOperation {
     /// <p>THe URL link of the <code>CustomActionURLOperation</code>.</p>
     #[doc(hidden)]
-    pub url_template: std::option::Option<std::string::String>,
+    pub url_template: ::std::option::Option<::std::string::String>,
     /// <p>The target of the <code>CustomActionURLOperation</code>.</p>
     /// <p>Valid values are defined as follows:</p>
     /// <ul>
@@ -15,11 +15,11 @@ pub struct CustomActionUrlOperation {
     /// <li> <p> <code>SAME_TAB</code>: Opens the target URL in the same browser tab.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub url_target: std::option::Option<crate::types::UrlTargetConfiguration>,
+    pub url_target: ::std::option::Option<crate::types::UrlTargetConfiguration>,
 }
 impl CustomActionUrlOperation {
     /// <p>THe URL link of the <code>CustomActionURLOperation</code>.</p>
-    pub fn url_template(&self) -> std::option::Option<&str> {
+    pub fn url_template(&self) -> ::std::option::Option<&str> {
         self.url_template.as_deref()
     }
     /// <p>The target of the <code>CustomActionURLOperation</code>.</p>
@@ -29,7 +29,7 @@ impl CustomActionUrlOperation {
     /// <li> <p> <code>NEW_WINDOW</code>: Opens the target URL in a new browser window.</p> </li>
     /// <li> <p> <code>SAME_TAB</code>: Opens the target URL in the same browser tab.</p> </li>
     /// </ul>
-    pub fn url_target(&self) -> std::option::Option<&crate::types::UrlTargetConfiguration> {
+    pub fn url_target(&self) -> ::std::option::Option<&crate::types::UrlTargetConfiguration> {
         self.url_target.as_ref()
     }
 }
@@ -42,19 +42,21 @@ impl CustomActionUrlOperation {
 
 /// A builder for [`CustomActionUrlOperation`](crate::types::CustomActionUrlOperation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CustomActionUrlOperationBuilder {
-    pub(crate) url_template: std::option::Option<std::string::String>,
-    pub(crate) url_target: std::option::Option<crate::types::UrlTargetConfiguration>,
+    pub(crate) url_template: ::std::option::Option<::std::string::String>,
+    pub(crate) url_target: ::std::option::Option<crate::types::UrlTargetConfiguration>,
 }
 impl CustomActionUrlOperationBuilder {
     /// <p>THe URL link of the <code>CustomActionURLOperation</code>.</p>
-    pub fn url_template(mut self, input: impl Into<std::string::String>) -> Self {
-        self.url_template = Some(input.into());
+    pub fn url_template(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.url_template = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>THe URL link of the <code>CustomActionURLOperation</code>.</p>
-    pub fn set_url_template(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_url_template(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.url_template = input;
         self
     }
@@ -66,7 +68,7 @@ impl CustomActionUrlOperationBuilder {
     /// <li> <p> <code>SAME_TAB</code>: Opens the target URL in the same browser tab.</p> </li>
     /// </ul>
     pub fn url_target(mut self, input: crate::types::UrlTargetConfiguration) -> Self {
-        self.url_target = Some(input);
+        self.url_target = ::std::option::Option::Some(input);
         self
     }
     /// <p>The target of the <code>CustomActionURLOperation</code>.</p>
@@ -78,7 +80,7 @@ impl CustomActionUrlOperationBuilder {
     /// </ul>
     pub fn set_url_target(
         mut self,
-        input: std::option::Option<crate::types::UrlTargetConfiguration>,
+        input: ::std::option::Option<crate::types::UrlTargetConfiguration>,
     ) -> Self {
         self.url_target = input;
         self

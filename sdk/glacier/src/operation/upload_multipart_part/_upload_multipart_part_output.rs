@@ -2,20 +2,20 @@
 
 /// <p>Contains the Amazon S3 Glacier response to your request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UploadMultipartPartOutput {
     /// <p>The SHA256 tree hash that Amazon S3 Glacier computed for the uploaded part.</p>
     #[doc(hidden)]
-    pub checksum: std::option::Option<std::string::String>,
+    pub checksum: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl UploadMultipartPartOutput {
     /// <p>The SHA256 tree hash that Amazon S3 Glacier computed for the uploaded part.</p>
-    pub fn checksum(&self) -> std::option::Option<&str> {
+    pub fn checksum(&self) -> ::std::option::Option<&str> {
         self.checksum.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for UploadMultipartPartOutput {
+impl ::aws_http::request_id::RequestId for UploadMultipartPartOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -31,19 +31,21 @@ impl UploadMultipartPartOutput {
 
 /// A builder for [`UploadMultipartPartOutput`](crate::operation::upload_multipart_part::UploadMultipartPartOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UploadMultipartPartOutputBuilder {
-    pub(crate) checksum: std::option::Option<std::string::String>,
+    pub(crate) checksum: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl UploadMultipartPartOutputBuilder {
     /// <p>The SHA256 tree hash that Amazon S3 Glacier computed for the uploaded part.</p>
-    pub fn checksum(mut self, input: impl Into<std::string::String>) -> Self {
-        self.checksum = Some(input.into());
+    pub fn checksum(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.checksum = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The SHA256 tree hash that Amazon S3 Glacier computed for the uploaded part.</p>
-    pub fn set_checksum(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_checksum(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.checksum = input;
         self
     }

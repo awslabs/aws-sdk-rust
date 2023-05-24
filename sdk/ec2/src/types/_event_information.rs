@@ -2,11 +2,11 @@
 
 /// <p>Describes an EC2 Fleet or Spot Fleet event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventInformation {
     /// <p>The description of the event.</p>
     #[doc(hidden)]
-    pub event_description: std::option::Option<std::string::String>,
+    pub event_description: ::std::option::Option<::std::string::String>,
     /// <p>The event.</p>
     /// <p> <code>error</code> events:</p>
     /// <ul>
@@ -41,14 +41,14 @@ pub struct EventInformation {
     /// <li> <p> <code>registerWithLoadBalancersFailed</code> - An attempt to register instances with load balancers failed. For more information, see the description of the event.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub event_sub_type: std::option::Option<std::string::String>,
+    pub event_sub_type: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the instance. This information is available only for <code>instanceChange</code> events.</p>
     #[doc(hidden)]
-    pub instance_id: std::option::Option<std::string::String>,
+    pub instance_id: ::std::option::Option<::std::string::String>,
 }
 impl EventInformation {
     /// <p>The description of the event.</p>
-    pub fn event_description(&self) -> std::option::Option<&str> {
+    pub fn event_description(&self) -> ::std::option::Option<&str> {
         self.event_description.as_deref()
     }
     /// <p>The event.</p>
@@ -84,11 +84,11 @@ impl EventInformation {
     /// <li> <p> <code>launchSpecUnusable</code> - The price in a launch specification is not valid because it is below the Spot price.</p> </li>
     /// <li> <p> <code>registerWithLoadBalancersFailed</code> - An attempt to register instances with load balancers failed. For more information, see the description of the event.</p> </li>
     /// </ul>
-    pub fn event_sub_type(&self) -> std::option::Option<&str> {
+    pub fn event_sub_type(&self) -> ::std::option::Option<&str> {
         self.event_sub_type.as_deref()
     }
     /// <p>The ID of the instance. This information is available only for <code>instanceChange</code> events.</p>
-    pub fn instance_id(&self) -> std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<&str> {
         self.instance_id.as_deref()
     }
 }
@@ -101,22 +101,27 @@ impl EventInformation {
 
 /// A builder for [`EventInformation`](crate::types::EventInformation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EventInformationBuilder {
-    pub(crate) event_description: std::option::Option<std::string::String>,
-    pub(crate) event_sub_type: std::option::Option<std::string::String>,
-    pub(crate) instance_id: std::option::Option<std::string::String>,
+    pub(crate) event_description: ::std::option::Option<::std::string::String>,
+    pub(crate) event_sub_type: ::std::option::Option<::std::string::String>,
+    pub(crate) instance_id: ::std::option::Option<::std::string::String>,
 }
 impl EventInformationBuilder {
     /// <p>The description of the event.</p>
-    pub fn event_description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.event_description = Some(input.into());
+    pub fn event_description(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.event_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the event.</p>
     pub fn set_event_description(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.event_description = input;
         self
@@ -154,8 +159,11 @@ impl EventInformationBuilder {
     /// <li> <p> <code>launchSpecUnusable</code> - The price in a launch specification is not valid because it is below the Spot price.</p> </li>
     /// <li> <p> <code>registerWithLoadBalancersFailed</code> - An attempt to register instances with load balancers failed. For more information, see the description of the event.</p> </li>
     /// </ul>
-    pub fn event_sub_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.event_sub_type = Some(input.into());
+    pub fn event_sub_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.event_sub_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The event.</p>
@@ -191,17 +199,20 @@ impl EventInformationBuilder {
     /// <li> <p> <code>launchSpecUnusable</code> - The price in a launch specification is not valid because it is below the Spot price.</p> </li>
     /// <li> <p> <code>registerWithLoadBalancersFailed</code> - An attempt to register instances with load balancers failed. For more information, see the description of the event.</p> </li>
     /// </ul>
-    pub fn set_event_sub_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_event_sub_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.event_sub_type = input;
         self
     }
     /// <p>The ID of the instance. This information is available only for <code>instanceChange</code> events.</p>
-    pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.instance_id = Some(input.into());
+    pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the instance. This information is available only for <code>instanceChange</code> events.</p>
-    pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
     }

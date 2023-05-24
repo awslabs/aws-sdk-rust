@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DisableClientAuthentication`](crate::operation::disable_client_authentication::builders::DisableClientAuthenticationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`directory_id(impl Into<String>)`](crate::operation::disable_client_authentication::builders::DisableClientAuthenticationFluentBuilder::directory_id) / [`set_directory_id(Option<String>)`](crate::operation::disable_client_authentication::builders::DisableClientAuthenticationFluentBuilder::set_directory_id): <p>The identifier of the directory </p>
+    ///   - [`directory_id(impl ::std::convert::Into<String>)`](crate::operation::disable_client_authentication::builders::DisableClientAuthenticationFluentBuilder::directory_id) / [`set_directory_id(Option<String>)`](crate::operation::disable_client_authentication::builders::DisableClientAuthenticationFluentBuilder::set_directory_id): <p>The identifier of the directory </p>
     ///   - [`r#type(ClientAuthenticationType)`](crate::operation::disable_client_authentication::builders::DisableClientAuthenticationFluentBuilder::type) / [`set_type(Option<ClientAuthenticationType>)`](crate::operation::disable_client_authentication::builders::DisableClientAuthenticationFluentBuilder::set_type): <p>The type of client authentication to disable. Currently, only the parameter, <code>SmartCard</code> is supported.</p>
     /// - On success, responds with [`DisableClientAuthenticationOutput`](crate::operation::disable_client_authentication::DisableClientAuthenticationOutput)
     /// - On failure, responds with [`SdkError<DisableClientAuthenticationError>`](crate::operation::disable_client_authentication::DisableClientAuthenticationError)

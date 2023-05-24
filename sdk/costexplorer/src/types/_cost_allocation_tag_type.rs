@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum CostAllocationTagType {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum CostAllocationTagType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for CostAllocationTagType {
+impl ::std::convert::From<&str> for CostAllocationTagType {
     fn from(s: &str) -> Self {
         match s {
             "AWSGenerated" => CostAllocationTagType::AwsGenerated,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for CostAllocationTagType {
         }
     }
 }
-impl std::str::FromStr for CostAllocationTagType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for CostAllocationTagType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CostAllocationTagType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(CostAllocationTagType::from(s))
     }
 }
 impl CostAllocationTagType {
@@ -86,7 +86,7 @@ impl CostAllocationTagType {
         &["AWSGenerated", "UserDefined"]
     }
 }
-impl AsRef<str> for CostAllocationTagType {
+impl ::std::convert::AsRef<str> for CostAllocationTagType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

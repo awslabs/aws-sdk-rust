@@ -2,7 +2,7 @@
 
 /// <p>Describes a rule match.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum RuleMatch {
     /// <p>The HTTP criteria that a rule must match.</p>
     HttpMatch(crate::types::HttpMatch),
@@ -20,11 +20,11 @@ impl RuleMatch {
     #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`HttpMatch`](crate::types::RuleMatch::HttpMatch), extracting the inner [`HttpMatch`](crate::types::HttpMatch).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_http_match(&self) -> std::result::Result<&crate::types::HttpMatch, &Self> {
+    pub fn as_http_match(&self) -> ::std::result::Result<&crate::types::HttpMatch, &Self> {
         if let RuleMatch::HttpMatch(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`HttpMatch`](crate::types::RuleMatch::HttpMatch).

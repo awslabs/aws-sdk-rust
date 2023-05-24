@@ -2,23 +2,23 @@
 
 /// <p>Information about a new BGP peer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NewBgpPeer {
     /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
     #[doc(hidden)]
     pub asn: i32,
     /// <p>The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun lenth of 80 characters.</p>
     #[doc(hidden)]
-    pub auth_key: std::option::Option<std::string::String>,
+    pub auth_key: ::std::option::Option<::std::string::String>,
     /// <p>The address family for the BGP peer.</p>
     #[doc(hidden)]
-    pub address_family: std::option::Option<crate::types::AddressFamily>,
+    pub address_family: ::std::option::Option<crate::types::AddressFamily>,
     /// <p>The IP address assigned to the Amazon interface.</p>
     #[doc(hidden)]
-    pub amazon_address: std::option::Option<std::string::String>,
+    pub amazon_address: ::std::option::Option<::std::string::String>,
     /// <p>The IP address assigned to the customer interface.</p>
     #[doc(hidden)]
-    pub customer_address: std::option::Option<std::string::String>,
+    pub customer_address: ::std::option::Option<::std::string::String>,
 }
 impl NewBgpPeer {
     /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
@@ -26,19 +26,19 @@ impl NewBgpPeer {
         self.asn
     }
     /// <p>The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun lenth of 80 characters.</p>
-    pub fn auth_key(&self) -> std::option::Option<&str> {
+    pub fn auth_key(&self) -> ::std::option::Option<&str> {
         self.auth_key.as_deref()
     }
     /// <p>The address family for the BGP peer.</p>
-    pub fn address_family(&self) -> std::option::Option<&crate::types::AddressFamily> {
+    pub fn address_family(&self) -> ::std::option::Option<&crate::types::AddressFamily> {
         self.address_family.as_ref()
     }
     /// <p>The IP address assigned to the Amazon interface.</p>
-    pub fn amazon_address(&self) -> std::option::Option<&str> {
+    pub fn amazon_address(&self) -> ::std::option::Option<&str> {
         self.amazon_address.as_deref()
     }
     /// <p>The IP address assigned to the customer interface.</p>
-    pub fn customer_address(&self) -> std::option::Option<&str> {
+    pub fn customer_address(&self) -> ::std::option::Option<&str> {
         self.customer_address.as_deref()
     }
 }
@@ -51,65 +51,79 @@ impl NewBgpPeer {
 
 /// A builder for [`NewBgpPeer`](crate::types::NewBgpPeer).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NewBgpPeerBuilder {
-    pub(crate) asn: std::option::Option<i32>,
-    pub(crate) auth_key: std::option::Option<std::string::String>,
-    pub(crate) address_family: std::option::Option<crate::types::AddressFamily>,
-    pub(crate) amazon_address: std::option::Option<std::string::String>,
-    pub(crate) customer_address: std::option::Option<std::string::String>,
+    pub(crate) asn: ::std::option::Option<i32>,
+    pub(crate) auth_key: ::std::option::Option<::std::string::String>,
+    pub(crate) address_family: ::std::option::Option<crate::types::AddressFamily>,
+    pub(crate) amazon_address: ::std::option::Option<::std::string::String>,
+    pub(crate) customer_address: ::std::option::Option<::std::string::String>,
 }
 impl NewBgpPeerBuilder {
     /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
     pub fn asn(mut self, input: i32) -> Self {
-        self.asn = Some(input);
+        self.asn = ::std::option::Option::Some(input);
         self
     }
     /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
-    pub fn set_asn(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_asn(mut self, input: ::std::option::Option<i32>) -> Self {
         self.asn = input;
         self
     }
     /// <p>The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun lenth of 80 characters.</p>
-    pub fn auth_key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.auth_key = Some(input.into());
+    pub fn auth_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.auth_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The authentication key for BGP configuration. This string has a minimum length of 6 characters and and a maximun lenth of 80 characters.</p>
-    pub fn set_auth_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_auth_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.auth_key = input;
         self
     }
     /// <p>The address family for the BGP peer.</p>
     pub fn address_family(mut self, input: crate::types::AddressFamily) -> Self {
-        self.address_family = Some(input);
+        self.address_family = ::std::option::Option::Some(input);
         self
     }
     /// <p>The address family for the BGP peer.</p>
     pub fn set_address_family(
         mut self,
-        input: std::option::Option<crate::types::AddressFamily>,
+        input: ::std::option::Option<crate::types::AddressFamily>,
     ) -> Self {
         self.address_family = input;
         self
     }
     /// <p>The IP address assigned to the Amazon interface.</p>
-    pub fn amazon_address(mut self, input: impl Into<std::string::String>) -> Self {
-        self.amazon_address = Some(input.into());
+    pub fn amazon_address(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.amazon_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IP address assigned to the Amazon interface.</p>
-    pub fn set_amazon_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_amazon_address(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.amazon_address = input;
         self
     }
     /// <p>The IP address assigned to the customer interface.</p>
-    pub fn customer_address(mut self, input: impl Into<std::string::String>) -> Self {
-        self.customer_address = Some(input.into());
+    pub fn customer_address(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.customer_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IP address assigned to the customer interface.</p>
-    pub fn set_customer_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_customer_address(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.customer_address = input;
         self
     }

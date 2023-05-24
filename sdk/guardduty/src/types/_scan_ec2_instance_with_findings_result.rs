@@ -2,15 +2,15 @@
 
 /// <p>An object that contains information on the status of whether Malware Protection for EC2 instances with findings will be enabled as a data source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScanEc2InstanceWithFindingsResult {
     /// <p>Describes the configuration of scanning EBS volumes as a data source.</p>
     #[doc(hidden)]
-    pub ebs_volumes: std::option::Option<crate::types::EbsVolumesResult>,
+    pub ebs_volumes: ::std::option::Option<crate::types::EbsVolumesResult>,
 }
 impl ScanEc2InstanceWithFindingsResult {
     /// <p>Describes the configuration of scanning EBS volumes as a data source.</p>
-    pub fn ebs_volumes(&self) -> std::option::Option<&crate::types::EbsVolumesResult> {
+    pub fn ebs_volumes(&self) -> ::std::option::Option<&crate::types::EbsVolumesResult> {
         self.ebs_volumes.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl ScanEc2InstanceWithFindingsResult {
 
 /// A builder for [`ScanEc2InstanceWithFindingsResult`](crate::types::ScanEc2InstanceWithFindingsResult).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ScanEc2InstanceWithFindingsResultBuilder {
-    pub(crate) ebs_volumes: std::option::Option<crate::types::EbsVolumesResult>,
+    pub(crate) ebs_volumes: ::std::option::Option<crate::types::EbsVolumesResult>,
 }
 impl ScanEc2InstanceWithFindingsResultBuilder {
     /// <p>Describes the configuration of scanning EBS volumes as a data source.</p>
     pub fn ebs_volumes(mut self, input: crate::types::EbsVolumesResult) -> Self {
-        self.ebs_volumes = Some(input);
+        self.ebs_volumes = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes the configuration of scanning EBS volumes as a data source.</p>
     pub fn set_ebs_volumes(
         mut self,
-        input: std::option::Option<crate::types::EbsVolumesResult>,
+        input: ::std::option::Option<crate::types::EbsVolumesResult>,
     ) -> Self {
         self.ebs_volumes = input;
         self

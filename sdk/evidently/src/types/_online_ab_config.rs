@@ -2,24 +2,25 @@
 
 /// <p>A structure that contains the configuration of which variation to use as the "control" version. The "control" version is used for comparison with other variations. This structure also specifies how much experiment traffic is allocated to each variation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OnlineAbConfig {
     /// <p>The name of the variation that is to be the default variation that the other variations are compared to.</p>
     #[doc(hidden)]
-    pub control_treatment_name: std::option::Option<std::string::String>,
+    pub control_treatment_name: ::std::option::Option<::std::string::String>,
     /// <p>A set of key-value pairs. The keys are variation names, and the values are the portion of experiment traffic to be assigned to that variation. Specify the traffic portion in thousandths of a percent, so 20,000 for a variation would allocate 20% of the experiment traffic to that variation.</p>
     #[doc(hidden)]
-    pub treatment_weights: std::option::Option<std::collections::HashMap<std::string::String, i64>>,
+    pub treatment_weights:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, i64>>,
 }
 impl OnlineAbConfig {
     /// <p>The name of the variation that is to be the default variation that the other variations are compared to.</p>
-    pub fn control_treatment_name(&self) -> std::option::Option<&str> {
+    pub fn control_treatment_name(&self) -> ::std::option::Option<&str> {
         self.control_treatment_name.as_deref()
     }
     /// <p>A set of key-value pairs. The keys are variation names, and the values are the portion of experiment traffic to be assigned to that variation. Specify the traffic portion in thousandths of a percent, so 20,000 for a variation would allocate 20% of the experiment traffic to that variation.</p>
     pub fn treatment_weights(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, i64>> {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, i64>> {
         self.treatment_weights.as_ref()
     }
 }
@@ -32,22 +33,27 @@ impl OnlineAbConfig {
 
 /// A builder for [`OnlineAbConfig`](crate::types::OnlineAbConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OnlineAbConfigBuilder {
-    pub(crate) control_treatment_name: std::option::Option<std::string::String>,
+    pub(crate) control_treatment_name: ::std::option::Option<::std::string::String>,
     pub(crate) treatment_weights:
-        std::option::Option<std::collections::HashMap<std::string::String, i64>>,
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, i64>>,
 }
 impl OnlineAbConfigBuilder {
     /// <p>The name of the variation that is to be the default variation that the other variations are compared to.</p>
-    pub fn control_treatment_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.control_treatment_name = Some(input.into());
+    pub fn control_treatment_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.control_treatment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the variation that is to be the default variation that the other variations are compared to.</p>
     pub fn set_control_treatment_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.control_treatment_name = input;
         self
@@ -57,16 +63,20 @@ impl OnlineAbConfigBuilder {
     /// To override the contents of this collection use [`set_treatment_weights`](Self::set_treatment_weights).
     ///
     /// <p>A set of key-value pairs. The keys are variation names, and the values are the portion of experiment traffic to be assigned to that variation. Specify the traffic portion in thousandths of a percent, so 20,000 for a variation would allocate 20% of the experiment traffic to that variation.</p>
-    pub fn treatment_weights(mut self, k: impl Into<std::string::String>, v: i64) -> Self {
+    pub fn treatment_weights(
+        mut self,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: i64,
+    ) -> Self {
         let mut hash_map = self.treatment_weights.unwrap_or_default();
         hash_map.insert(k.into(), v);
-        self.treatment_weights = Some(hash_map);
+        self.treatment_weights = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A set of key-value pairs. The keys are variation names, and the values are the portion of experiment traffic to be assigned to that variation. Specify the traffic portion in thousandths of a percent, so 20,000 for a variation would allocate 20% of the experiment traffic to that variation.</p>
     pub fn set_treatment_weights(
         mut self,
-        input: std::option::Option<std::collections::HashMap<std::string::String, i64>>,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, i64>>,
     ) -> Self {
         self.treatment_weights = input;
         self

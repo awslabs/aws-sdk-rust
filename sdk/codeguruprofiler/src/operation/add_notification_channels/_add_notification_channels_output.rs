@@ -2,22 +2,22 @@
 
 /// <p>The structure representing the AddNotificationChannelsResponse.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddNotificationChannelsOutput {
     /// <p>The new notification configuration for this profiling group.</p>
     #[doc(hidden)]
-    pub notification_configuration: std::option::Option<crate::types::NotificationConfiguration>,
+    pub notification_configuration: ::std::option::Option<crate::types::NotificationConfiguration>,
     _request_id: Option<String>,
 }
 impl AddNotificationChannelsOutput {
     /// <p>The new notification configuration for this profiling group.</p>
     pub fn notification_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::NotificationConfiguration> {
+    ) -> ::std::option::Option<&crate::types::NotificationConfiguration> {
         self.notification_configuration.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for AddNotificationChannelsOutput {
+impl ::aws_http::request_id::RequestId for AddNotificationChannelsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -33,10 +33,12 @@ impl AddNotificationChannelsOutput {
 
 /// A builder for [`AddNotificationChannelsOutput`](crate::operation::add_notification_channels::AddNotificationChannelsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AddNotificationChannelsOutputBuilder {
     pub(crate) notification_configuration:
-        std::option::Option<crate::types::NotificationConfiguration>,
+        ::std::option::Option<crate::types::NotificationConfiguration>,
     _request_id: Option<String>,
 }
 impl AddNotificationChannelsOutputBuilder {
@@ -45,13 +47,13 @@ impl AddNotificationChannelsOutputBuilder {
         mut self,
         input: crate::types::NotificationConfiguration,
     ) -> Self {
-        self.notification_configuration = Some(input);
+        self.notification_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The new notification configuration for this profiling group.</p>
     pub fn set_notification_configuration(
         mut self,
-        input: std::option::Option<crate::types::NotificationConfiguration>,
+        input: ::std::option::Option<crate::types::NotificationConfiguration>,
     ) -> Self {
         self.notification_configuration = input;
         self

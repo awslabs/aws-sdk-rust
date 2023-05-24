@@ -2,22 +2,22 @@
 
 /// <p>A request to add specific VDM settings to a configuration set.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutConfigurationSetVdmOptionsInput {
     /// <p>The name of the configuration set.</p>
     #[doc(hidden)]
-    pub configuration_set_name: std::option::Option<std::string::String>,
+    pub configuration_set_name: ::std::option::Option<::std::string::String>,
     /// <p>The VDM options to apply to the configuration set.</p>
     #[doc(hidden)]
-    pub vdm_options: std::option::Option<crate::types::VdmOptions>,
+    pub vdm_options: ::std::option::Option<crate::types::VdmOptions>,
 }
 impl PutConfigurationSetVdmOptionsInput {
     /// <p>The name of the configuration set.</p>
-    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+    pub fn configuration_set_name(&self) -> ::std::option::Option<&str> {
         self.configuration_set_name.as_deref()
     }
     /// <p>The VDM options to apply to the configuration set.</p>
-    pub fn vdm_options(&self) -> std::option::Option<&crate::types::VdmOptions> {
+    pub fn vdm_options(&self) -> ::std::option::Option<&crate::types::VdmOptions> {
         self.vdm_options.as_ref()
     }
 }
@@ -30,43 +30,51 @@ impl PutConfigurationSetVdmOptionsInput {
 
 /// A builder for [`PutConfigurationSetVdmOptionsInput`](crate::operation::put_configuration_set_vdm_options::PutConfigurationSetVdmOptionsInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PutConfigurationSetVdmOptionsInputBuilder {
-    pub(crate) configuration_set_name: std::option::Option<std::string::String>,
-    pub(crate) vdm_options: std::option::Option<crate::types::VdmOptions>,
+    pub(crate) configuration_set_name: ::std::option::Option<::std::string::String>,
+    pub(crate) vdm_options: ::std::option::Option<crate::types::VdmOptions>,
 }
 impl PutConfigurationSetVdmOptionsInputBuilder {
     /// <p>The name of the configuration set.</p>
-    pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.configuration_set_name = Some(input.into());
+    pub fn configuration_set_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.configuration_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the configuration set.</p>
     pub fn set_configuration_set_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.configuration_set_name = input;
         self
     }
     /// <p>The VDM options to apply to the configuration set.</p>
     pub fn vdm_options(mut self, input: crate::types::VdmOptions) -> Self {
-        self.vdm_options = Some(input);
+        self.vdm_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The VDM options to apply to the configuration set.</p>
-    pub fn set_vdm_options(mut self, input: std::option::Option<crate::types::VdmOptions>) -> Self {
+    pub fn set_vdm_options(
+        mut self,
+        input: ::std::option::Option<crate::types::VdmOptions>,
+    ) -> Self {
         self.vdm_options = input;
         self
     }
     /// Consumes the builder and constructs a [`PutConfigurationSetVdmOptionsInput`](crate::operation::put_configuration_set_vdm_options::PutConfigurationSetVdmOptionsInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::put_configuration_set_vdm_options::PutConfigurationSetVdmOptionsInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::put_configuration_set_vdm_options::PutConfigurationSetVdmOptionsInput {
                 configuration_set_name: self.configuration_set_name
                 ,

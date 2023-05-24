@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateGameConfiguration`](crate::operation::update_game_configuration::builders::UpdateGameConfigurationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`game_name(impl Into<String>)`](crate::operation::update_game_configuration::builders::UpdateGameConfigurationFluentBuilder::game_name) / [`set_game_name(Option<String>)`](crate::operation::update_game_configuration::builders::UpdateGameConfigurationFluentBuilder::set_game_name): <p>The name of the game.</p>
+    ///   - [`game_name(impl ::std::convert::Into<String>)`](crate::operation::update_game_configuration::builders::UpdateGameConfigurationFluentBuilder::game_name) / [`set_game_name(Option<String>)`](crate::operation::update_game_configuration::builders::UpdateGameConfigurationFluentBuilder::set_game_name): <p>The name of the game.</p>
     ///   - [`modifications(Vec<SectionModification>)`](crate::operation::update_game_configuration::builders::UpdateGameConfigurationFluentBuilder::modifications) / [`set_modifications(Option<Vec<SectionModification>>)`](crate::operation::update_game_configuration::builders::UpdateGameConfigurationFluentBuilder::set_modifications): <p>The list of modifications to make.</p>
     /// - On success, responds with [`UpdateGameConfigurationOutput`](crate::operation::update_game_configuration::UpdateGameConfigurationOutput) with field(s):
     ///   - [`game_configuration(Option<GameConfigurationDetails>)`](crate::operation::update_game_configuration::UpdateGameConfigurationOutput::game_configuration): <p>Details about the game configuration.</p>

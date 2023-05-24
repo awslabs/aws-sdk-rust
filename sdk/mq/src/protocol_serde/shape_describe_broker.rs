@@ -2,7 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_broker_http_error(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::describe_broker::DescribeBrokerOutput,
@@ -15,7 +15,7 @@ pub fn de_describe_broker_http_error(
         _response_body,
     )
     .map_err(crate::operation::describe_broker::DescribeBrokerError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
+    generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
@@ -102,7 +102,7 @@ pub fn de_describe_broker_http_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_broker_http_response_with_props(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::describe_broker::DescribeBrokerOutput,
@@ -118,7 +118,7 @@ pub fn de_describe_broker_http_response_with_props(
         )
         .map_err(crate::operation::describe_broker::DescribeBrokerError::unhandled)?;
         output._set_request_id(
-            aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
+            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
         );
         output.build()
     })
@@ -129,17 +129,17 @@ pub(crate) fn de_describe_broker(
     mut builder: crate::operation::describe_broker::builders::DescribeBrokerOutputBuilder,
 ) -> Result<
     crate::operation::describe_broker::builders::DescribeBrokerOutputBuilder,
-    aws_smithy_json::deserialize::error::DeserializeError,
+    ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =
-        aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
+        ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
             .peekable();
     let tokens = &mut tokens_owned;
-    aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
-            Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+            Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "actionsRequired" => {
                         builder = builder.set_actions_required(
@@ -148,7 +148,7 @@ pub(crate) fn de_describe_broker(
                     }
                     "authenticationStrategy" => {
                         builder = builder.set_authentication_strategy(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| {
@@ -160,14 +160,14 @@ pub(crate) fn de_describe_broker(
                     }
                     "autoMinorVersionUpgrade" => {
                         builder = builder.set_auto_minor_version_upgrade(
-                            aws_smithy_json::deserialize::token::expect_bool_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_bool_or_null(
                                 tokens.next(),
                             )?,
                         );
                     }
                     "brokerArn" => {
                         builder = builder.set_broker_arn(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -176,7 +176,7 @@ pub(crate) fn de_describe_broker(
                     }
                     "brokerId" => {
                         builder = builder.set_broker_id(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -190,7 +190,7 @@ pub(crate) fn de_describe_broker(
                     }
                     "brokerName" => {
                         builder = builder.set_broker_name(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -199,7 +199,7 @@ pub(crate) fn de_describe_broker(
                     }
                     "brokerState" => {
                         builder = builder.set_broker_state(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| {
@@ -216,15 +216,15 @@ pub(crate) fn de_describe_broker(
                     }
                     "created" => {
                         builder = builder.set_created(
-                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),
-                                aws_smithy_types::date_time::Format::DateTimeWithOffset,
+                                ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
                             )?,
                         );
                     }
                     "deploymentMode" => {
                         builder = builder.set_deployment_mode(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| {
@@ -243,7 +243,7 @@ pub(crate) fn de_describe_broker(
                     }
                     "engineType" => {
                         builder = builder.set_engine_type(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| {
@@ -255,7 +255,7 @@ pub(crate) fn de_describe_broker(
                     }
                     "engineVersion" => {
                         builder = builder.set_engine_version(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -264,7 +264,7 @@ pub(crate) fn de_describe_broker(
                     }
                     "hostInstanceType" => {
                         builder = builder.set_host_instance_type(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -290,7 +290,7 @@ pub(crate) fn de_describe_broker(
                     }
                     "pendingAuthenticationStrategy" => {
                         builder = builder.set_pending_authentication_strategy(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| {
@@ -302,7 +302,7 @@ pub(crate) fn de_describe_broker(
                     }
                     "pendingEngineVersion" => {
                         builder = builder.set_pending_engine_version(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -311,7 +311,7 @@ pub(crate) fn de_describe_broker(
                     }
                     "pendingHostInstanceType" => {
                         builder = builder.set_pending_host_instance_type(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -332,7 +332,7 @@ pub(crate) fn de_describe_broker(
                     }
                     "publiclyAccessible" => {
                         builder = builder.set_publicly_accessible(
-                            aws_smithy_json::deserialize::token::expect_bool_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_bool_or_null(
                                 tokens.next(),
                             )?,
                         );
@@ -346,7 +346,7 @@ pub(crate) fn de_describe_broker(
                     }
                     "storageType" => {
                         builder = builder.set_storage_type(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| {
@@ -375,12 +375,12 @@ pub(crate) fn de_describe_broker(
                             crate::protocol_serde::shape___list_of_user_summary::de___list_of_user_summary(tokens)?
                         );
                     }
-                    _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }
             other => {
                 return Err(
-                    aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                         "expected object key or end object, found: {:?}",
                         other
                     )),
@@ -390,7 +390,7 @@ pub(crate) fn de_describe_broker(
     }
     if tokens.next().is_some() {
         return Err(
-            aws_smithy_json::deserialize::error::DeserializeError::custom(
+            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
                 "found more JSON tokens after completing parsing",
             ),
         );

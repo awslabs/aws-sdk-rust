@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetOnPremisesInstance`](crate::operation::get_on_premises_instance::builders::GetOnPremisesInstanceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`instance_name(impl Into<String>)`](crate::operation::get_on_premises_instance::builders::GetOnPremisesInstanceFluentBuilder::instance_name) / [`set_instance_name(Option<String>)`](crate::operation::get_on_premises_instance::builders::GetOnPremisesInstanceFluentBuilder::set_instance_name): <p> The name of the on-premises instance about which to get information. </p>
+    ///   - [`instance_name(impl ::std::convert::Into<String>)`](crate::operation::get_on_premises_instance::builders::GetOnPremisesInstanceFluentBuilder::instance_name) / [`set_instance_name(Option<String>)`](crate::operation::get_on_premises_instance::builders::GetOnPremisesInstanceFluentBuilder::set_instance_name): <p> The name of the on-premises instance about which to get information. </p>
     /// - On success, responds with [`GetOnPremisesInstanceOutput`](crate::operation::get_on_premises_instance::GetOnPremisesInstanceOutput) with field(s):
     ///   - [`instance_info(Option<InstanceInfo>)`](crate::operation::get_on_premises_instance::GetOnPremisesInstanceOutput::instance_info): <p> Information about the on-premises instance. </p>
     /// - On failure, responds with [`SdkError<GetOnPremisesInstanceError>`](crate::operation::get_on_premises_instance::GetOnPremisesInstanceError)

@@ -4,10 +4,10 @@
 pub struct PostContentInput {
     /// <p>Name of the Amazon Lex bot.</p>
     #[doc(hidden)]
-    pub bot_name: std::option::Option<std::string::String>,
+    pub bot_name: ::std::option::Option<::std::string::String>,
     /// <p>Alias of the Amazon Lex bot.</p>
     #[doc(hidden)]
-    pub bot_alias: std::option::Option<std::string::String>,
+    pub bot_alias: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the client application user. Amazon Lex uses this to identify a user's conversation with your bot. At runtime, each request must contain the <code>userID</code> field.</p>
     /// <p>To decide the user ID to use for your application, consider the following factors.</p>
     /// <ul>
@@ -17,18 +17,18 @@ pub struct PostContentInput {
     /// <li> <p>A user can't have two independent conversations with two different versions of the same bot. For example, a user can't have a conversation with the PROD and BETA versions of the same bot. If you anticipate that a user will need to have conversation with two different versions, for example, while testing, include the bot alias in the user ID to separate the two conversations.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub user_id: std::option::Option<std::string::String>,
+    pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>You pass this value as the <code>x-amz-lex-session-attributes</code> HTTP header.</p>
     /// <p>Application-specific information passed between Amazon Lex and a client application. The value must be a JSON serialized and base64 encoded map with string keys and values. The total size of the <code>sessionAttributes</code> and <code>requestAttributes</code> headers is limited to 12 KB.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-session-attribs">Setting Session Attributes</a>.</p>
     #[doc(hidden)]
-    pub session_attributes: std::option::Option<std::string::String>,
+    pub session_attributes: ::std::option::Option<::std::string::String>,
     /// <p>You pass this value as the <code>x-amz-lex-request-attributes</code> HTTP header.</p>
     /// <p>Request-specific information passed between Amazon Lex and a client application. The value must be a JSON serialized and base64 encoded map with string keys and values. The total size of the <code>requestAttributes</code> and <code>sessionAttributes</code> headers is limited to 12 KB.</p>
     /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes with the prefix <code>x-amz-lex:</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-request-attribs">Setting Request Attributes</a>.</p>
     #[doc(hidden)]
-    pub request_attributes: std::option::Option<std::string::String>,
+    pub request_attributes: ::std::option::Option<::std::string::String>,
     /// <p> You pass this value as the <code>Content-Type</code> HTTP header. </p>
     /// <p> Indicates the audio format or text. The header value must start with one of the following prefixes: </p>
     /// <ul>
@@ -48,7 +48,7 @@ pub struct PostContentInput {
     /// </ul> </li>
     /// </ul>
     #[doc(hidden)]
-    pub content_type: std::option::Option<std::string::String>,
+    pub content_type: ::std::option::Option<::std::string::String>,
     /// <p> You pass this value as the <code>Accept</code> HTTP header. </p>
     /// <p> The message Amazon Lex returns in the response can be either text or speech based on the <code>Accept</code> HTTP header value in the request. </p>
     /// <ul>
@@ -65,22 +65,22 @@ pub struct PostContentInput {
     /// </ul> </li>
     /// </ul>
     #[doc(hidden)]
-    pub accept: std::option::Option<std::string::String>,
+    pub accept: ::std::option::Option<::std::string::String>,
     /// <p> User input in PCM or Opus audio format or text format as described in the <code>Content-Type</code> HTTP header. </p>
     /// <p>You can stream audio data to Amazon Lex or you can create a local buffer that captures all of the audio data before sending. In general, you get better performance if you stream audio data rather than buffering the data locally.</p>
-    pub input_stream: aws_smithy_http::byte_stream::ByteStream,
+    pub input_stream: ::aws_smithy_http::byte_stream::ByteStream,
     /// <p>A list of contexts active for the request. A context can be activated when a previous intent is fulfilled, or by including the context in the request,</p>
     /// <p>If you don't specify a list of contexts, Amazon Lex will use the current list of contexts for the session. If you specify an empty list, all contexts for the session are cleared.</p>
     #[doc(hidden)]
-    pub active_contexts: std::option::Option<std::string::String>,
+    pub active_contexts: ::std::option::Option<::std::string::String>,
 }
 impl PostContentInput {
     /// <p>Name of the Amazon Lex bot.</p>
-    pub fn bot_name(&self) -> std::option::Option<&str> {
+    pub fn bot_name(&self) -> ::std::option::Option<&str> {
         self.bot_name.as_deref()
     }
     /// <p>Alias of the Amazon Lex bot.</p>
-    pub fn bot_alias(&self) -> std::option::Option<&str> {
+    pub fn bot_alias(&self) -> ::std::option::Option<&str> {
         self.bot_alias.as_deref()
     }
     /// <p>The ID of the client application user. Amazon Lex uses this to identify a user's conversation with your bot. At runtime, each request must contain the <code>userID</code> field.</p>
@@ -91,20 +91,20 @@ impl PostContentInput {
     /// <li> <p>If you want the same user to be able to have two independent conversations on two different devices, choose a device-specific identifier.</p> </li>
     /// <li> <p>A user can't have two independent conversations with two different versions of the same bot. For example, a user can't have a conversation with the PROD and BETA versions of the same bot. If you anticipate that a user will need to have conversation with two different versions, for example, while testing, include the bot alias in the user ID to separate the two conversations.</p> </li>
     /// </ul>
-    pub fn user_id(&self) -> std::option::Option<&str> {
+    pub fn user_id(&self) -> ::std::option::Option<&str> {
         self.user_id.as_deref()
     }
     /// <p>You pass this value as the <code>x-amz-lex-session-attributes</code> HTTP header.</p>
     /// <p>Application-specific information passed between Amazon Lex and a client application. The value must be a JSON serialized and base64 encoded map with string keys and values. The total size of the <code>sessionAttributes</code> and <code>requestAttributes</code> headers is limited to 12 KB.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-session-attribs">Setting Session Attributes</a>.</p>
-    pub fn session_attributes(&self) -> std::option::Option<&str> {
+    pub fn session_attributes(&self) -> ::std::option::Option<&str> {
         self.session_attributes.as_deref()
     }
     /// <p>You pass this value as the <code>x-amz-lex-request-attributes</code> HTTP header.</p>
     /// <p>Request-specific information passed between Amazon Lex and a client application. The value must be a JSON serialized and base64 encoded map with string keys and values. The total size of the <code>requestAttributes</code> and <code>sessionAttributes</code> headers is limited to 12 KB.</p>
     /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes with the prefix <code>x-amz-lex:</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-request-attribs">Setting Request Attributes</a>.</p>
-    pub fn request_attributes(&self) -> std::option::Option<&str> {
+    pub fn request_attributes(&self) -> ::std::option::Option<&str> {
         self.request_attributes.as_deref()
     }
     /// <p> You pass this value as the <code>Content-Type</code> HTTP header. </p>
@@ -125,7 +125,7 @@ impl PostContentInput {
     /// <li> <p>text/plain; charset=utf-8</p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn content_type(&self) -> std::option::Option<&str> {
+    pub fn content_type(&self) -> ::std::option::Option<&str> {
         self.content_type.as_deref()
     }
     /// <p> You pass this value as the <code>Accept</code> HTTP header. </p>
@@ -143,22 +143,22 @@ impl PostContentInput {
     /// <li> <p>audio/* (defaults to mpeg)</p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn accept(&self) -> std::option::Option<&str> {
+    pub fn accept(&self) -> ::std::option::Option<&str> {
         self.accept.as_deref()
     }
     /// <p> User input in PCM or Opus audio format or text format as described in the <code>Content-Type</code> HTTP header. </p>
     /// <p>You can stream audio data to Amazon Lex or you can create a local buffer that captures all of the audio data before sending. In general, you get better performance if you stream audio data rather than buffering the data locally.</p>
-    pub fn input_stream(&self) -> &aws_smithy_http::byte_stream::ByteStream {
+    pub fn input_stream(&self) -> &::aws_smithy_http::byte_stream::ByteStream {
         &self.input_stream
     }
     /// <p>A list of contexts active for the request. A context can be activated when a previous intent is fulfilled, or by including the context in the request,</p>
     /// <p>If you don't specify a list of contexts, Amazon Lex will use the current list of contexts for the session. If you specify an empty list, all contexts for the session are cleared.</p>
-    pub fn active_contexts(&self) -> std::option::Option<&str> {
+    pub fn active_contexts(&self) -> ::std::option::Option<&str> {
         self.active_contexts.as_deref()
     }
 }
-impl std::fmt::Debug for PostContentInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for PostContentInput {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("PostContentInput");
         formatter.field("bot_name", &self.bot_name);
         formatter.field("bot_alias", &self.bot_alias);
@@ -181,36 +181,36 @@ impl PostContentInput {
 
 /// A builder for [`PostContentInput`](crate::operation::post_content::PostContentInput).
 #[non_exhaustive]
-#[derive(std::default::Default)]
+#[derive(::std::default::Default)]
 pub struct PostContentInputBuilder {
-    pub(crate) bot_name: std::option::Option<std::string::String>,
-    pub(crate) bot_alias: std::option::Option<std::string::String>,
-    pub(crate) user_id: std::option::Option<std::string::String>,
-    pub(crate) session_attributes: std::option::Option<std::string::String>,
-    pub(crate) request_attributes: std::option::Option<std::string::String>,
-    pub(crate) content_type: std::option::Option<std::string::String>,
-    pub(crate) accept: std::option::Option<std::string::String>,
-    pub(crate) input_stream: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
-    pub(crate) active_contexts: std::option::Option<std::string::String>,
+    pub(crate) bot_name: ::std::option::Option<::std::string::String>,
+    pub(crate) bot_alias: ::std::option::Option<::std::string::String>,
+    pub(crate) user_id: ::std::option::Option<::std::string::String>,
+    pub(crate) session_attributes: ::std::option::Option<::std::string::String>,
+    pub(crate) request_attributes: ::std::option::Option<::std::string::String>,
+    pub(crate) content_type: ::std::option::Option<::std::string::String>,
+    pub(crate) accept: ::std::option::Option<::std::string::String>,
+    pub(crate) input_stream: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>,
+    pub(crate) active_contexts: ::std::option::Option<::std::string::String>,
 }
 impl PostContentInputBuilder {
     /// <p>Name of the Amazon Lex bot.</p>
-    pub fn bot_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.bot_name = Some(input.into());
+    pub fn bot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.bot_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of the Amazon Lex bot.</p>
-    pub fn set_bot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_bot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bot_name = input;
         self
     }
     /// <p>Alias of the Amazon Lex bot.</p>
-    pub fn bot_alias(mut self, input: impl Into<std::string::String>) -> Self {
-        self.bot_alias = Some(input.into());
+    pub fn bot_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.bot_alias = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Alias of the Amazon Lex bot.</p>
-    pub fn set_bot_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_bot_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bot_alias = input;
         self
     }
@@ -222,8 +222,8 @@ impl PostContentInputBuilder {
     /// <li> <p>If you want the same user to be able to have two independent conversations on two different devices, choose a device-specific identifier.</p> </li>
     /// <li> <p>A user can't have two independent conversations with two different versions of the same bot. For example, a user can't have a conversation with the PROD and BETA versions of the same bot. If you anticipate that a user will need to have conversation with two different versions, for example, while testing, include the bot alias in the user ID to separate the two conversations.</p> </li>
     /// </ul>
-    pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.user_id = Some(input.into());
+    pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.user_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the client application user. Amazon Lex uses this to identify a user's conversation with your bot. At runtime, each request must contain the <code>userID</code> field.</p>
@@ -234,15 +234,18 @@ impl PostContentInputBuilder {
     /// <li> <p>If you want the same user to be able to have two independent conversations on two different devices, choose a device-specific identifier.</p> </li>
     /// <li> <p>A user can't have two independent conversations with two different versions of the same bot. For example, a user can't have a conversation with the PROD and BETA versions of the same bot. If you anticipate that a user will need to have conversation with two different versions, for example, while testing, include the bot alias in the user ID to separate the two conversations.</p> </li>
     /// </ul>
-    pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_id = input;
         self
     }
     /// <p>You pass this value as the <code>x-amz-lex-session-attributes</code> HTTP header.</p>
     /// <p>Application-specific information passed between Amazon Lex and a client application. The value must be a JSON serialized and base64 encoded map with string keys and values. The total size of the <code>sessionAttributes</code> and <code>requestAttributes</code> headers is limited to 12 KB.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-session-attribs">Setting Session Attributes</a>.</p>
-    pub fn session_attributes(mut self, input: impl Into<std::string::String>) -> Self {
-        self.session_attributes = Some(input.into());
+    pub fn session_attributes(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.session_attributes = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>You pass this value as the <code>x-amz-lex-session-attributes</code> HTTP header.</p>
@@ -250,7 +253,7 @@ impl PostContentInputBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-session-attribs">Setting Session Attributes</a>.</p>
     pub fn set_session_attributes(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.session_attributes = input;
         self
@@ -259,8 +262,11 @@ impl PostContentInputBuilder {
     /// <p>Request-specific information passed between Amazon Lex and a client application. The value must be a JSON serialized and base64 encoded map with string keys and values. The total size of the <code>requestAttributes</code> and <code>sessionAttributes</code> headers is limited to 12 KB.</p>
     /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes with the prefix <code>x-amz-lex:</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-request-attribs">Setting Request Attributes</a>.</p>
-    pub fn request_attributes(mut self, input: impl Into<std::string::String>) -> Self {
-        self.request_attributes = Some(input.into());
+    pub fn request_attributes(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.request_attributes = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>You pass this value as the <code>x-amz-lex-request-attributes</code> HTTP header.</p>
@@ -269,7 +275,7 @@ impl PostContentInputBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-request-attribs">Setting Request Attributes</a>.</p>
     pub fn set_request_attributes(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.request_attributes = input;
         self
@@ -292,8 +298,8 @@ impl PostContentInputBuilder {
     /// <li> <p>text/plain; charset=utf-8</p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.content_type = Some(input.into());
+    pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.content_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> You pass this value as the <code>Content-Type</code> HTTP header. </p>
@@ -314,7 +320,7 @@ impl PostContentInputBuilder {
     /// <li> <p>text/plain; charset=utf-8</p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_type = input;
         self
     }
@@ -333,8 +339,8 @@ impl PostContentInputBuilder {
     /// <li> <p>audio/* (defaults to mpeg)</p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn accept(mut self, input: impl Into<std::string::String>) -> Self {
-        self.accept = Some(input.into());
+    pub fn accept(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.accept = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> You pass this value as the <code>Accept</code> HTTP header. </p>
@@ -352,45 +358,51 @@ impl PostContentInputBuilder {
     /// <li> <p>audio/* (defaults to mpeg)</p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn set_accept(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_accept(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.accept = input;
         self
     }
     /// <p> User input in PCM or Opus audio format or text format as described in the <code>Content-Type</code> HTTP header. </p>
     /// <p>You can stream audio data to Amazon Lex or you can create a local buffer that captures all of the audio data before sending. In general, you get better performance if you stream audio data rather than buffering the data locally.</p>
-    pub fn input_stream(mut self, input: aws_smithy_http::byte_stream::ByteStream) -> Self {
-        self.input_stream = Some(input);
+    pub fn input_stream(mut self, input: ::aws_smithy_http::byte_stream::ByteStream) -> Self {
+        self.input_stream = ::std::option::Option::Some(input);
         self
     }
     /// <p> User input in PCM or Opus audio format or text format as described in the <code>Content-Type</code> HTTP header. </p>
     /// <p>You can stream audio data to Amazon Lex or you can create a local buffer that captures all of the audio data before sending. In general, you get better performance if you stream audio data rather than buffering the data locally.</p>
     pub fn set_input_stream(
         mut self,
-        input: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
+        input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>,
     ) -> Self {
         self.input_stream = input;
         self
     }
     /// <p>A list of contexts active for the request. A context can be activated when a previous intent is fulfilled, or by including the context in the request,</p>
     /// <p>If you don't specify a list of contexts, Amazon Lex will use the current list of contexts for the session. If you specify an empty list, all contexts for the session are cleared.</p>
-    pub fn active_contexts(mut self, input: impl Into<std::string::String>) -> Self {
-        self.active_contexts = Some(input.into());
+    pub fn active_contexts(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.active_contexts = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A list of contexts active for the request. A context can be activated when a previous intent is fulfilled, or by including the context in the request,</p>
     /// <p>If you don't specify a list of contexts, Amazon Lex will use the current list of contexts for the session. If you specify an empty list, all contexts for the session are cleared.</p>
-    pub fn set_active_contexts(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_active_contexts(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.active_contexts = input;
         self
     }
     /// Consumes the builder and constructs a [`PostContentInput`](crate::operation::post_content::PostContentInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::post_content::PostContentInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::post_content::PostContentInput {
+        ::std::result::Result::Ok(crate::operation::post_content::PostContentInput {
             bot_name: self.bot_name,
             bot_alias: self.bot_alias,
             user_id: self.user_id,
@@ -403,8 +415,8 @@ impl PostContentInputBuilder {
         })
     }
 }
-impl std::fmt::Debug for PostContentInputBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for PostContentInputBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("PostContentInputBuilder");
         formatter.field("bot_name", &self.bot_name);
         formatter.field("bot_alias", &self.bot_alias);

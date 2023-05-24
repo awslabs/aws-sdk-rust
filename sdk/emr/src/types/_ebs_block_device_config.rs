@@ -2,22 +2,24 @@
 
 /// <p>Configuration of requested EBS block device associated with the instance group with count of volumes that are associated to every instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EbsBlockDeviceConfig {
     /// <p>EBS volume specifications such as volume type, IOPS, size (GiB) and throughput (MiB/s) that are requested for the EBS volume attached to an Amazon EC2 instance in the cluster.</p>
     #[doc(hidden)]
-    pub volume_specification: std::option::Option<crate::types::VolumeSpecification>,
+    pub volume_specification: ::std::option::Option<crate::types::VolumeSpecification>,
     /// <p>Number of EBS volumes with a specific volume configuration that are associated with every instance in the instance group</p>
     #[doc(hidden)]
-    pub volumes_per_instance: std::option::Option<i32>,
+    pub volumes_per_instance: ::std::option::Option<i32>,
 }
 impl EbsBlockDeviceConfig {
     /// <p>EBS volume specifications such as volume type, IOPS, size (GiB) and throughput (MiB/s) that are requested for the EBS volume attached to an Amazon EC2 instance in the cluster.</p>
-    pub fn volume_specification(&self) -> std::option::Option<&crate::types::VolumeSpecification> {
+    pub fn volume_specification(
+        &self,
+    ) -> ::std::option::Option<&crate::types::VolumeSpecification> {
         self.volume_specification.as_ref()
     }
     /// <p>Number of EBS volumes with a specific volume configuration that are associated with every instance in the instance group</p>
-    pub fn volumes_per_instance(&self) -> std::option::Option<i32> {
+    pub fn volumes_per_instance(&self) -> ::std::option::Option<i32> {
         self.volumes_per_instance
     }
 }
@@ -30,32 +32,34 @@ impl EbsBlockDeviceConfig {
 
 /// A builder for [`EbsBlockDeviceConfig`](crate::types::EbsBlockDeviceConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EbsBlockDeviceConfigBuilder {
-    pub(crate) volume_specification: std::option::Option<crate::types::VolumeSpecification>,
-    pub(crate) volumes_per_instance: std::option::Option<i32>,
+    pub(crate) volume_specification: ::std::option::Option<crate::types::VolumeSpecification>,
+    pub(crate) volumes_per_instance: ::std::option::Option<i32>,
 }
 impl EbsBlockDeviceConfigBuilder {
     /// <p>EBS volume specifications such as volume type, IOPS, size (GiB) and throughput (MiB/s) that are requested for the EBS volume attached to an Amazon EC2 instance in the cluster.</p>
     pub fn volume_specification(mut self, input: crate::types::VolumeSpecification) -> Self {
-        self.volume_specification = Some(input);
+        self.volume_specification = ::std::option::Option::Some(input);
         self
     }
     /// <p>EBS volume specifications such as volume type, IOPS, size (GiB) and throughput (MiB/s) that are requested for the EBS volume attached to an Amazon EC2 instance in the cluster.</p>
     pub fn set_volume_specification(
         mut self,
-        input: std::option::Option<crate::types::VolumeSpecification>,
+        input: ::std::option::Option<crate::types::VolumeSpecification>,
     ) -> Self {
         self.volume_specification = input;
         self
     }
     /// <p>Number of EBS volumes with a specific volume configuration that are associated with every instance in the instance group</p>
     pub fn volumes_per_instance(mut self, input: i32) -> Self {
-        self.volumes_per_instance = Some(input);
+        self.volumes_per_instance = ::std::option::Option::Some(input);
         self
     }
     /// <p>Number of EBS volumes with a specific volume configuration that are associated with every instance in the instance group</p>
-    pub fn set_volumes_per_instance(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_volumes_per_instance(mut self, input: ::std::option::Option<i32>) -> Self {
         self.volumes_per_instance = input;
         self
     }

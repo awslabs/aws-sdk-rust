@@ -3,20 +3,20 @@
 /// <p>Represents the output of an <code>UpdateEvaluation</code> operation.</p>
 /// <p>You can see the updated content by using the <code>GetEvaluation</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateEvaluationOutput {
     /// <p>The ID assigned to the <code>Evaluation</code> during creation. This value should be identical to the value of the <code>Evaluation</code> in the request.</p>
     #[doc(hidden)]
-    pub evaluation_id: std::option::Option<std::string::String>,
+    pub evaluation_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl UpdateEvaluationOutput {
     /// <p>The ID assigned to the <code>Evaluation</code> during creation. This value should be identical to the value of the <code>Evaluation</code> in the request.</p>
-    pub fn evaluation_id(&self) -> std::option::Option<&str> {
+    pub fn evaluation_id(&self) -> ::std::option::Option<&str> {
         self.evaluation_id.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for UpdateEvaluationOutput {
+impl ::aws_http::request_id::RequestId for UpdateEvaluationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -31,19 +31,27 @@ impl UpdateEvaluationOutput {
 
 /// A builder for [`UpdateEvaluationOutput`](crate::operation::update_evaluation::UpdateEvaluationOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateEvaluationOutputBuilder {
-    pub(crate) evaluation_id: std::option::Option<std::string::String>,
+    pub(crate) evaluation_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl UpdateEvaluationOutputBuilder {
     /// <p>The ID assigned to the <code>Evaluation</code> during creation. This value should be identical to the value of the <code>Evaluation</code> in the request.</p>
-    pub fn evaluation_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.evaluation_id = Some(input.into());
+    pub fn evaluation_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.evaluation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID assigned to the <code>Evaluation</code> during creation. This value should be identical to the value of the <code>Evaluation</code> in the request.</p>
-    pub fn set_evaluation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_evaluation_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.evaluation_id = input;
         self
     }

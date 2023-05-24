@@ -2,31 +2,31 @@
 
 /// <p>An object containing the details about a schema version.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SchemaVersionListItem {
     /// <p>The Amazon Resource Name (ARN) of the schema.</p>
     #[doc(hidden)]
-    pub schema_arn: std::option::Option<std::string::String>,
+    pub schema_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the schema version.</p>
     #[doc(hidden)]
-    pub schema_version_id: std::option::Option<std::string::String>,
+    pub schema_version_id: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the schema.</p>
     #[doc(hidden)]
     pub version_number: i64,
     /// <p>The status of the schema version.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::SchemaVersionStatus>,
+    pub status: ::std::option::Option<crate::types::SchemaVersionStatus>,
     /// <p>The date and time the schema version was created.</p>
     #[doc(hidden)]
-    pub created_time: std::option::Option<std::string::String>,
+    pub created_time: ::std::option::Option<::std::string::String>,
 }
 impl SchemaVersionListItem {
     /// <p>The Amazon Resource Name (ARN) of the schema.</p>
-    pub fn schema_arn(&self) -> std::option::Option<&str> {
+    pub fn schema_arn(&self) -> ::std::option::Option<&str> {
         self.schema_arn.as_deref()
     }
     /// <p>The unique identifier of the schema version.</p>
-    pub fn schema_version_id(&self) -> std::option::Option<&str> {
+    pub fn schema_version_id(&self) -> ::std::option::Option<&str> {
         self.schema_version_id.as_deref()
     }
     /// <p>The version number of the schema.</p>
@@ -34,11 +34,11 @@ impl SchemaVersionListItem {
         self.version_number
     }
     /// <p>The status of the schema version.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::SchemaVersionStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::SchemaVersionStatus> {
         self.status.as_ref()
     }
     /// <p>The date and time the schema version was created.</p>
-    pub fn created_time(&self) -> std::option::Option<&str> {
+    pub fn created_time(&self) -> ::std::option::Option<&str> {
         self.created_time.as_deref()
     }
 }
@@ -51,68 +51,73 @@ impl SchemaVersionListItem {
 
 /// A builder for [`SchemaVersionListItem`](crate::types::SchemaVersionListItem).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SchemaVersionListItemBuilder {
-    pub(crate) schema_arn: std::option::Option<std::string::String>,
-    pub(crate) schema_version_id: std::option::Option<std::string::String>,
-    pub(crate) version_number: std::option::Option<i64>,
-    pub(crate) status: std::option::Option<crate::types::SchemaVersionStatus>,
-    pub(crate) created_time: std::option::Option<std::string::String>,
+    pub(crate) schema_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) schema_version_id: ::std::option::Option<::std::string::String>,
+    pub(crate) version_number: ::std::option::Option<i64>,
+    pub(crate) status: ::std::option::Option<crate::types::SchemaVersionStatus>,
+    pub(crate) created_time: ::std::option::Option<::std::string::String>,
 }
 impl SchemaVersionListItemBuilder {
     /// <p>The Amazon Resource Name (ARN) of the schema.</p>
-    pub fn schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.schema_arn = Some(input.into());
+    pub fn schema_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.schema_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the schema.</p>
-    pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_schema_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schema_arn = input;
         self
     }
     /// <p>The unique identifier of the schema version.</p>
-    pub fn schema_version_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.schema_version_id = Some(input.into());
+    pub fn schema_version_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.schema_version_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the schema version.</p>
     pub fn set_schema_version_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.schema_version_id = input;
         self
     }
     /// <p>The version number of the schema.</p>
     pub fn version_number(mut self, input: i64) -> Self {
-        self.version_number = Some(input);
+        self.version_number = ::std::option::Option::Some(input);
         self
     }
     /// <p>The version number of the schema.</p>
-    pub fn set_version_number(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_version_number(mut self, input: ::std::option::Option<i64>) -> Self {
         self.version_number = input;
         self
     }
     /// <p>The status of the schema version.</p>
     pub fn status(mut self, input: crate::types::SchemaVersionStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the schema version.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::SchemaVersionStatus>,
+        input: ::std::option::Option<crate::types::SchemaVersionStatus>,
     ) -> Self {
         self.status = input;
         self
     }
     /// <p>The date and time the schema version was created.</p>
-    pub fn created_time(mut self, input: impl Into<std::string::String>) -> Self {
-        self.created_time = Some(input.into());
+    pub fn created_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.created_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date and time the schema version was created.</p>
-    pub fn set_created_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_created_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_time = input;
         self
     }

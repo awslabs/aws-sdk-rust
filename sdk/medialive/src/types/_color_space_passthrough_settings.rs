@@ -2,7 +2,7 @@
 
 /// Passthrough applies no color space conversion to the output
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ColorSpacePassthroughSettings {}
 impl ColorSpacePassthroughSettings {
     /// Creates a new builder-style object to manufacture [`ColorSpacePassthroughSettings`](crate::types::ColorSpacePassthroughSettings).
@@ -13,7 +13,9 @@ impl ColorSpacePassthroughSettings {
 
 /// A builder for [`ColorSpacePassthroughSettings`](crate::types::ColorSpacePassthroughSettings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ColorSpacePassthroughSettingsBuilder {}
 impl ColorSpacePassthroughSettingsBuilder {
     /// Consumes the builder and constructs a [`ColorSpacePassthroughSettings`](crate::types::ColorSpacePassthroughSettings).

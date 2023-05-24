@@ -2,18 +2,18 @@
 
 /// <p>The configuration for default analysis settings.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnalysisDefaults {
     /// <p>The configuration for default new sheet settings.</p>
     #[doc(hidden)]
     pub default_new_sheet_configuration:
-        std::option::Option<crate::types::DefaultNewSheetConfiguration>,
+        ::std::option::Option<crate::types::DefaultNewSheetConfiguration>,
 }
 impl AnalysisDefaults {
     /// <p>The configuration for default new sheet settings.</p>
     pub fn default_new_sheet_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::DefaultNewSheetConfiguration> {
+    ) -> ::std::option::Option<&crate::types::DefaultNewSheetConfiguration> {
         self.default_new_sheet_configuration.as_ref()
     }
 }
@@ -26,10 +26,12 @@ impl AnalysisDefaults {
 
 /// A builder for [`AnalysisDefaults`](crate::types::AnalysisDefaults).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AnalysisDefaultsBuilder {
     pub(crate) default_new_sheet_configuration:
-        std::option::Option<crate::types::DefaultNewSheetConfiguration>,
+        ::std::option::Option<crate::types::DefaultNewSheetConfiguration>,
 }
 impl AnalysisDefaultsBuilder {
     /// <p>The configuration for default new sheet settings.</p>
@@ -37,13 +39,13 @@ impl AnalysisDefaultsBuilder {
         mut self,
         input: crate::types::DefaultNewSheetConfiguration,
     ) -> Self {
-        self.default_new_sheet_configuration = Some(input);
+        self.default_new_sheet_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration for default new sheet settings.</p>
     pub fn set_default_new_sheet_configuration(
         mut self,
-        input: std::option::Option<crate::types::DefaultNewSheetConfiguration>,
+        input: ::std::option::Option<crate::types::DefaultNewSheetConfiguration>,
     ) -> Self {
         self.default_new_sheet_configuration = input;
         self

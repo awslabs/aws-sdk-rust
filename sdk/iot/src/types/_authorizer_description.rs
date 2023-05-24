@@ -2,82 +2,84 @@
 
 /// <p>The authorizer description.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AuthorizerDescription {
     /// <p>The authorizer name.</p>
     #[doc(hidden)]
-    pub authorizer_name: std::option::Option<std::string::String>,
+    pub authorizer_name: ::std::option::Option<::std::string::String>,
     /// <p>The authorizer ARN.</p>
     #[doc(hidden)]
-    pub authorizer_arn: std::option::Option<std::string::String>,
+    pub authorizer_arn: ::std::option::Option<::std::string::String>,
     /// <p>The authorizer's Lambda function ARN.</p>
     #[doc(hidden)]
-    pub authorizer_function_arn: std::option::Option<std::string::String>,
+    pub authorizer_function_arn: ::std::option::Option<::std::string::String>,
     /// <p>The key used to extract the token from the HTTP headers.</p>
     #[doc(hidden)]
-    pub token_key_name: std::option::Option<std::string::String>,
+    pub token_key_name: ::std::option::Option<::std::string::String>,
     /// <p>The public keys used to validate the token signature returned by your custom authentication service.</p>
     #[doc(hidden)]
-    pub token_signing_public_keys:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub token_signing_public_keys: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>The status of the authorizer.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::AuthorizerStatus>,
+    pub status: ::std::option::Option<crate::types::AuthorizerStatus>,
     /// <p>The UNIX timestamp of when the authorizer was created.</p>
     #[doc(hidden)]
-    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The UNIX timestamp of when the authorizer was last updated.</p>
     #[doc(hidden)]
-    pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Specifies whether IoT validates the token signature in an authorization request.</p>
     #[doc(hidden)]
-    pub signing_disabled: std::option::Option<bool>,
+    pub signing_disabled: ::std::option::Option<bool>,
     /// <p>When <code>true</code>, the result from the authorizer’s Lambda function is cached for the time specified in <code>refreshAfterInSeconds</code>. The cached result is used while the device reuses the same HTTP connection.</p>
     #[doc(hidden)]
-    pub enable_caching_for_http: std::option::Option<bool>,
+    pub enable_caching_for_http: ::std::option::Option<bool>,
 }
 impl AuthorizerDescription {
     /// <p>The authorizer name.</p>
-    pub fn authorizer_name(&self) -> std::option::Option<&str> {
+    pub fn authorizer_name(&self) -> ::std::option::Option<&str> {
         self.authorizer_name.as_deref()
     }
     /// <p>The authorizer ARN.</p>
-    pub fn authorizer_arn(&self) -> std::option::Option<&str> {
+    pub fn authorizer_arn(&self) -> ::std::option::Option<&str> {
         self.authorizer_arn.as_deref()
     }
     /// <p>The authorizer's Lambda function ARN.</p>
-    pub fn authorizer_function_arn(&self) -> std::option::Option<&str> {
+    pub fn authorizer_function_arn(&self) -> ::std::option::Option<&str> {
         self.authorizer_function_arn.as_deref()
     }
     /// <p>The key used to extract the token from the HTTP headers.</p>
-    pub fn token_key_name(&self) -> std::option::Option<&str> {
+    pub fn token_key_name(&self) -> ::std::option::Option<&str> {
         self.token_key_name.as_deref()
     }
     /// <p>The public keys used to validate the token signature returned by your custom authentication service.</p>
     pub fn token_signing_public_keys(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.token_signing_public_keys.as_ref()
     }
     /// <p>The status of the authorizer.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::AuthorizerStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::AuthorizerStatus> {
         self.status.as_ref()
     }
     /// <p>The UNIX timestamp of when the authorizer was created.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The UNIX timestamp of when the authorizer was last updated.</p>
-    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
     /// <p>Specifies whether IoT validates the token signature in an authorization request.</p>
-    pub fn signing_disabled(&self) -> std::option::Option<bool> {
+    pub fn signing_disabled(&self) -> ::std::option::Option<bool> {
         self.signing_disabled
     }
     /// <p>When <code>true</code>, the result from the authorizer’s Lambda function is cached for the time specified in <code>refreshAfterInSeconds</code>. The cached result is used while the device reuses the same HTTP connection.</p>
-    pub fn enable_caching_for_http(&self) -> std::option::Option<bool> {
+    pub fn enable_caching_for_http(&self) -> ::std::option::Option<bool> {
         self.enable_caching_for_http
     }
 }
@@ -90,61 +92,85 @@ impl AuthorizerDescription {
 
 /// A builder for [`AuthorizerDescription`](crate::types::AuthorizerDescription).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AuthorizerDescriptionBuilder {
-    pub(crate) authorizer_name: std::option::Option<std::string::String>,
-    pub(crate) authorizer_arn: std::option::Option<std::string::String>,
-    pub(crate) authorizer_function_arn: std::option::Option<std::string::String>,
-    pub(crate) token_key_name: std::option::Option<std::string::String>,
-    pub(crate) token_signing_public_keys:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) status: std::option::Option<crate::types::AuthorizerStatus>,
-    pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) signing_disabled: std::option::Option<bool>,
-    pub(crate) enable_caching_for_http: std::option::Option<bool>,
+    pub(crate) authorizer_name: ::std::option::Option<::std::string::String>,
+    pub(crate) authorizer_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) authorizer_function_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) token_key_name: ::std::option::Option<::std::string::String>,
+    pub(crate) token_signing_public_keys: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) status: ::std::option::Option<crate::types::AuthorizerStatus>,
+    pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) signing_disabled: ::std::option::Option<bool>,
+    pub(crate) enable_caching_for_http: ::std::option::Option<bool>,
 }
 impl AuthorizerDescriptionBuilder {
     /// <p>The authorizer name.</p>
-    pub fn authorizer_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.authorizer_name = Some(input.into());
+    pub fn authorizer_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.authorizer_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The authorizer name.</p>
-    pub fn set_authorizer_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_authorizer_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.authorizer_name = input;
         self
     }
     /// <p>The authorizer ARN.</p>
-    pub fn authorizer_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.authorizer_arn = Some(input.into());
+    pub fn authorizer_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.authorizer_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The authorizer ARN.</p>
-    pub fn set_authorizer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_authorizer_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.authorizer_arn = input;
         self
     }
     /// <p>The authorizer's Lambda function ARN.</p>
-    pub fn authorizer_function_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.authorizer_function_arn = Some(input.into());
+    pub fn authorizer_function_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.authorizer_function_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The authorizer's Lambda function ARN.</p>
     pub fn set_authorizer_function_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.authorizer_function_arn = input;
         self
     }
     /// <p>The key used to extract the token from the HTTP headers.</p>
-    pub fn token_key_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.token_key_name = Some(input.into());
+    pub fn token_key_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.token_key_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The key used to extract the token from the HTTP headers.</p>
-    pub fn set_token_key_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_token_key_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.token_key_name = input;
         self
     }
@@ -155,19 +181,19 @@ impl AuthorizerDescriptionBuilder {
     /// <p>The public keys used to validate the token signature returned by your custom authentication service.</p>
     pub fn token_signing_public_keys(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.token_signing_public_keys.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.token_signing_public_keys = Some(hash_map);
+        self.token_signing_public_keys = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The public keys used to validate the token signature returned by your custom authentication service.</p>
     pub fn set_token_signing_public_keys(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.token_signing_public_keys = input;
@@ -175,60 +201,60 @@ impl AuthorizerDescriptionBuilder {
     }
     /// <p>The status of the authorizer.</p>
     pub fn status(mut self, input: crate::types::AuthorizerStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the authorizer.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::AuthorizerStatus>,
+        input: ::std::option::Option<crate::types::AuthorizerStatus>,
     ) -> Self {
         self.status = input;
         self
     }
     /// <p>The UNIX timestamp of when the authorizer was created.</p>
-    pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_date = Some(input);
+    pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The UNIX timestamp of when the authorizer was created.</p>
     pub fn set_creation_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_date = input;
         self
     }
     /// <p>The UNIX timestamp of when the authorizer was last updated.</p>
-    pub fn last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_modified_date = Some(input);
+    pub fn last_modified_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_modified_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The UNIX timestamp of when the authorizer was last updated.</p>
     pub fn set_last_modified_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_modified_date = input;
         self
     }
     /// <p>Specifies whether IoT validates the token signature in an authorization request.</p>
     pub fn signing_disabled(mut self, input: bool) -> Self {
-        self.signing_disabled = Some(input);
+        self.signing_disabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether IoT validates the token signature in an authorization request.</p>
-    pub fn set_signing_disabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_signing_disabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.signing_disabled = input;
         self
     }
     /// <p>When <code>true</code>, the result from the authorizer’s Lambda function is cached for the time specified in <code>refreshAfterInSeconds</code>. The cached result is used while the device reuses the same HTTP connection.</p>
     pub fn enable_caching_for_http(mut self, input: bool) -> Self {
-        self.enable_caching_for_http = Some(input);
+        self.enable_caching_for_http = ::std::option::Option::Some(input);
         self
     }
     /// <p>When <code>true</code>, the result from the authorizer’s Lambda function is cached for the time specified in <code>refreshAfterInSeconds</code>. The cached result is used while the device reuses the same HTTP connection.</p>
-    pub fn set_enable_caching_for_http(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enable_caching_for_http(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_caching_for_http = input;
         self
     }

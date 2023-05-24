@@ -2,26 +2,26 @@
 
 /// <p>Data replication initiation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecoveryInstanceDataReplicationInitiation {
     /// <p>The date and time of the current attempt to initiate data replication.</p>
     #[doc(hidden)]
-    pub start_date_time: std::option::Option<std::string::String>,
+    pub start_date_time: ::std::option::Option<::std::string::String>,
     /// <p>The steps of the current attempt to initiate data replication.</p>
     #[doc(hidden)]
-    pub steps: std::option::Option<
-        std::vec::Vec<crate::types::RecoveryInstanceDataReplicationInitiationStep>,
+    pub steps: ::std::option::Option<
+        ::std::vec::Vec<crate::types::RecoveryInstanceDataReplicationInitiationStep>,
     >,
 }
 impl RecoveryInstanceDataReplicationInitiation {
     /// <p>The date and time of the current attempt to initiate data replication.</p>
-    pub fn start_date_time(&self) -> std::option::Option<&str> {
+    pub fn start_date_time(&self) -> ::std::option::Option<&str> {
         self.start_date_time.as_deref()
     }
     /// <p>The steps of the current attempt to initiate data replication.</p>
     pub fn steps(
         &self,
-    ) -> std::option::Option<&[crate::types::RecoveryInstanceDataReplicationInitiationStep]> {
+    ) -> ::std::option::Option<&[crate::types::RecoveryInstanceDataReplicationInitiationStep]> {
         self.steps.as_deref()
     }
 }
@@ -34,21 +34,29 @@ impl RecoveryInstanceDataReplicationInitiation {
 
 /// A builder for [`RecoveryInstanceDataReplicationInitiation`](crate::types::RecoveryInstanceDataReplicationInitiation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RecoveryInstanceDataReplicationInitiationBuilder {
-    pub(crate) start_date_time: std::option::Option<std::string::String>,
-    pub(crate) steps: std::option::Option<
-        std::vec::Vec<crate::types::RecoveryInstanceDataReplicationInitiationStep>,
+    pub(crate) start_date_time: ::std::option::Option<::std::string::String>,
+    pub(crate) steps: ::std::option::Option<
+        ::std::vec::Vec<crate::types::RecoveryInstanceDataReplicationInitiationStep>,
     >,
 }
 impl RecoveryInstanceDataReplicationInitiationBuilder {
     /// <p>The date and time of the current attempt to initiate data replication.</p>
-    pub fn start_date_time(mut self, input: impl Into<std::string::String>) -> Self {
-        self.start_date_time = Some(input.into());
+    pub fn start_date_time(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.start_date_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date and time of the current attempt to initiate data replication.</p>
-    pub fn set_start_date_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_start_date_time(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.start_date_time = input;
         self
     }
@@ -63,14 +71,14 @@ impl RecoveryInstanceDataReplicationInitiationBuilder {
     ) -> Self {
         let mut v = self.steps.unwrap_or_default();
         v.push(input);
-        self.steps = Some(v);
+        self.steps = ::std::option::Option::Some(v);
         self
     }
     /// <p>The steps of the current attempt to initiate data replication.</p>
     pub fn set_steps(
         mut self,
-        input: std::option::Option<
-            std::vec::Vec<crate::types::RecoveryInstanceDataReplicationInitiationStep>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::RecoveryInstanceDataReplicationInitiationStep>,
         >,
     ) -> Self {
         self.steps = input;

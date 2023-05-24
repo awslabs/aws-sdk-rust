@@ -2,11 +2,11 @@
 
 /// <p>Represents information about each property specified in the action configuration, such as the description and key name that display for the customer using the action type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActionTypeProperty {
     /// <p>The property name that is displayed to users.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>Whether the configuration property is an optional value.</p>
     #[doc(hidden)]
     pub optional: bool,
@@ -21,11 +21,11 @@ pub struct ActionTypeProperty {
     pub queryable: bool,
     /// <p>The description of the property that is displayed to users.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
 }
 impl ActionTypeProperty {
     /// <p>The property name that is displayed to users.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>Whether the configuration property is an optional value.</p>
@@ -45,7 +45,7 @@ impl ActionTypeProperty {
         self.queryable
     }
     /// <p>The description of the property that is displayed to users.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
 }
@@ -58,73 +58,75 @@ impl ActionTypeProperty {
 
 /// A builder for [`ActionTypeProperty`](crate::types::ActionTypeProperty).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ActionTypePropertyBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) optional: std::option::Option<bool>,
-    pub(crate) key: std::option::Option<bool>,
-    pub(crate) no_echo: std::option::Option<bool>,
-    pub(crate) queryable: std::option::Option<bool>,
-    pub(crate) description: std::option::Option<std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) optional: ::std::option::Option<bool>,
+    pub(crate) key: ::std::option::Option<bool>,
+    pub(crate) no_echo: ::std::option::Option<bool>,
+    pub(crate) queryable: ::std::option::Option<bool>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
 }
 impl ActionTypePropertyBuilder {
     /// <p>The property name that is displayed to users.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The property name that is displayed to users.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>Whether the configuration property is an optional value.</p>
     pub fn optional(mut self, input: bool) -> Self {
-        self.optional = Some(input);
+        self.optional = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether the configuration property is an optional value.</p>
-    pub fn set_optional(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_optional(mut self, input: ::std::option::Option<bool>) -> Self {
         self.optional = input;
         self
     }
     /// <p>Whether the configuration property is a key.</p>
     pub fn key(mut self, input: bool) -> Self {
-        self.key = Some(input);
+        self.key = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether the configuration property is a key.</p>
-    pub fn set_key(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_key(mut self, input: ::std::option::Option<bool>) -> Self {
         self.key = input;
         self
     }
     /// <p>Whether to omit the field value entered by the customer in the log. If <code>true</code>, the value is not saved in CloudTrail logs for the action execution.</p>
     pub fn no_echo(mut self, input: bool) -> Self {
-        self.no_echo = Some(input);
+        self.no_echo = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether to omit the field value entered by the customer in the log. If <code>true</code>, the value is not saved in CloudTrail logs for the action execution.</p>
-    pub fn set_no_echo(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_no_echo(mut self, input: ::std::option::Option<bool>) -> Self {
         self.no_echo = input;
         self
     }
     /// <p>Indicates that the property is used with polling. An action type can have up to one queryable property. If it has one, that property must be both required and not secret.</p>
     pub fn queryable(mut self, input: bool) -> Self {
-        self.queryable = Some(input);
+        self.queryable = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates that the property is used with polling. An action type can have up to one queryable property. If it has one, that property must be both required and not secret.</p>
-    pub fn set_queryable(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_queryable(mut self, input: ::std::option::Option<bool>) -> Self {
         self.queryable = input;
         self
     }
     /// <p>The description of the property that is displayed to users.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the property that is displayed to users.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }

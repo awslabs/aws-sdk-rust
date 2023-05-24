@@ -2,31 +2,31 @@
 
 /// <p>Describes updates to configuration parameters for Amazon CloudWatch logging for an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MonitoringConfigurationUpdate {
     /// <p>Describes updates to whether to use the default CloudWatch logging configuration for an application. You must set this property to <code>CUSTOM</code> in order to set the <code>LogLevel</code> or <code>MetricsLevel</code> parameters.</p>
     #[doc(hidden)]
-    pub configuration_type_update: std::option::Option<crate::types::ConfigurationType>,
+    pub configuration_type_update: ::std::option::Option<crate::types::ConfigurationType>,
     /// <p>Describes updates to the granularity of the CloudWatch Logs for an application. The <code>Parallelism</code> level is not recommended for applications with a Parallelism over 64 due to excessive costs.</p>
     #[doc(hidden)]
-    pub metrics_level_update: std::option::Option<crate::types::MetricsLevel>,
+    pub metrics_level_update: ::std::option::Option<crate::types::MetricsLevel>,
     /// <p>Describes updates to the verbosity of the CloudWatch Logs for an application.</p>
     #[doc(hidden)]
-    pub log_level_update: std::option::Option<crate::types::LogLevel>,
+    pub log_level_update: ::std::option::Option<crate::types::LogLevel>,
 }
 impl MonitoringConfigurationUpdate {
     /// <p>Describes updates to whether to use the default CloudWatch logging configuration for an application. You must set this property to <code>CUSTOM</code> in order to set the <code>LogLevel</code> or <code>MetricsLevel</code> parameters.</p>
     pub fn configuration_type_update(
         &self,
-    ) -> std::option::Option<&crate::types::ConfigurationType> {
+    ) -> ::std::option::Option<&crate::types::ConfigurationType> {
         self.configuration_type_update.as_ref()
     }
     /// <p>Describes updates to the granularity of the CloudWatch Logs for an application. The <code>Parallelism</code> level is not recommended for applications with a Parallelism over 64 due to excessive costs.</p>
-    pub fn metrics_level_update(&self) -> std::option::Option<&crate::types::MetricsLevel> {
+    pub fn metrics_level_update(&self) -> ::std::option::Option<&crate::types::MetricsLevel> {
         self.metrics_level_update.as_ref()
     }
     /// <p>Describes updates to the verbosity of the CloudWatch Logs for an application.</p>
-    pub fn log_level_update(&self) -> std::option::Option<&crate::types::LogLevel> {
+    pub fn log_level_update(&self) -> ::std::option::Option<&crate::types::LogLevel> {
         self.log_level_update.as_ref()
     }
 }
@@ -39,48 +39,50 @@ impl MonitoringConfigurationUpdate {
 
 /// A builder for [`MonitoringConfigurationUpdate`](crate::types::MonitoringConfigurationUpdate).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MonitoringConfigurationUpdateBuilder {
-    pub(crate) configuration_type_update: std::option::Option<crate::types::ConfigurationType>,
-    pub(crate) metrics_level_update: std::option::Option<crate::types::MetricsLevel>,
-    pub(crate) log_level_update: std::option::Option<crate::types::LogLevel>,
+    pub(crate) configuration_type_update: ::std::option::Option<crate::types::ConfigurationType>,
+    pub(crate) metrics_level_update: ::std::option::Option<crate::types::MetricsLevel>,
+    pub(crate) log_level_update: ::std::option::Option<crate::types::LogLevel>,
 }
 impl MonitoringConfigurationUpdateBuilder {
     /// <p>Describes updates to whether to use the default CloudWatch logging configuration for an application. You must set this property to <code>CUSTOM</code> in order to set the <code>LogLevel</code> or <code>MetricsLevel</code> parameters.</p>
     pub fn configuration_type_update(mut self, input: crate::types::ConfigurationType) -> Self {
-        self.configuration_type_update = Some(input);
+        self.configuration_type_update = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes updates to whether to use the default CloudWatch logging configuration for an application. You must set this property to <code>CUSTOM</code> in order to set the <code>LogLevel</code> or <code>MetricsLevel</code> parameters.</p>
     pub fn set_configuration_type_update(
         mut self,
-        input: std::option::Option<crate::types::ConfigurationType>,
+        input: ::std::option::Option<crate::types::ConfigurationType>,
     ) -> Self {
         self.configuration_type_update = input;
         self
     }
     /// <p>Describes updates to the granularity of the CloudWatch Logs for an application. The <code>Parallelism</code> level is not recommended for applications with a Parallelism over 64 due to excessive costs.</p>
     pub fn metrics_level_update(mut self, input: crate::types::MetricsLevel) -> Self {
-        self.metrics_level_update = Some(input);
+        self.metrics_level_update = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes updates to the granularity of the CloudWatch Logs for an application. The <code>Parallelism</code> level is not recommended for applications with a Parallelism over 64 due to excessive costs.</p>
     pub fn set_metrics_level_update(
         mut self,
-        input: std::option::Option<crate::types::MetricsLevel>,
+        input: ::std::option::Option<crate::types::MetricsLevel>,
     ) -> Self {
         self.metrics_level_update = input;
         self
     }
     /// <p>Describes updates to the verbosity of the CloudWatch Logs for an application.</p>
     pub fn log_level_update(mut self, input: crate::types::LogLevel) -> Self {
-        self.log_level_update = Some(input);
+        self.log_level_update = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes updates to the verbosity of the CloudWatch Logs for an application.</p>
     pub fn set_log_level_update(
         mut self,
-        input: std::option::Option<crate::types::LogLevel>,
+        input: ::std::option::Option<crate::types::LogLevel>,
     ) -> Self {
         self.log_level_update = input;
         self

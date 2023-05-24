@@ -2,17 +2,17 @@
 
 /// <p>Provides configuration information for a slot type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SlotTypeConfiguration {
     /// <p>A regular expression used to validate the value of a slot.</p>
     #[doc(hidden)]
-    pub regex_configuration: std::option::Option<crate::types::SlotTypeRegexConfiguration>,
+    pub regex_configuration: ::std::option::Option<crate::types::SlotTypeRegexConfiguration>,
 }
 impl SlotTypeConfiguration {
     /// <p>A regular expression used to validate the value of a slot.</p>
     pub fn regex_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::SlotTypeRegexConfiguration> {
+    ) -> ::std::option::Option<&crate::types::SlotTypeRegexConfiguration> {
         self.regex_configuration.as_ref()
     }
 }
@@ -25,20 +25,22 @@ impl SlotTypeConfiguration {
 
 /// A builder for [`SlotTypeConfiguration`](crate::types::SlotTypeConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SlotTypeConfigurationBuilder {
-    pub(crate) regex_configuration: std::option::Option<crate::types::SlotTypeRegexConfiguration>,
+    pub(crate) regex_configuration: ::std::option::Option<crate::types::SlotTypeRegexConfiguration>,
 }
 impl SlotTypeConfigurationBuilder {
     /// <p>A regular expression used to validate the value of a slot.</p>
     pub fn regex_configuration(mut self, input: crate::types::SlotTypeRegexConfiguration) -> Self {
-        self.regex_configuration = Some(input);
+        self.regex_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>A regular expression used to validate the value of a slot.</p>
     pub fn set_regex_configuration(
         mut self,
-        input: std::option::Option<crate::types::SlotTypeRegexConfiguration>,
+        input: ::std::option::Option<crate::types::SlotTypeRegexConfiguration>,
     ) -> Self {
         self.regex_configuration = input;
         self

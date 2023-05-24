@@ -11,30 +11,30 @@ pub use crate::operation::create_resource_data_sync::_create_resource_data_sync_
 /// <p>A resource data sync is an asynchronous operation that returns immediately. After a successful initial sync is completed, the system continuously syncs data. To check the status of a sync, use the <code>ListResourceDataSync</code>.</p> <note>
 /// <p>By default, data isn't encrypted in Amazon S3. We strongly recommend that you enable encryption in Amazon S3 to ensure secure data storage. We also recommend that you secure access to the Amazon S3 bucket by creating a restrictive bucket policy. </p>
 /// </note>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateResourceDataSyncFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner:
         crate::operation::create_resource_data_sync::builders::CreateResourceDataSyncInputBuilder,
 }
 impl CreateResourceDataSyncFluentBuilder {
     /// Creates a new `CreateResourceDataSync`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_resource_data_sync::CreateResourceDataSync,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_resource_data_sync::CreateResourceDataSyncError,
         >,
     > {
@@ -42,30 +42,33 @@ impl CreateResourceDataSyncFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_resource_data_sync::CreateResourceDataSyncOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_resource_data_sync::CreateResourceDataSyncError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -78,21 +81,21 @@ impl CreateResourceDataSyncFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_resource_data_sync::CreateResourceDataSyncOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_resource_data_sync::CreateResourceDataSyncError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>A name for the configuration.</p>
-    pub fn sync_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn sync_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sync_name(input.into());
         self
     }
     /// <p>A name for the configuration.</p>
-    pub fn set_sync_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_sync_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sync_name(input);
         self
     }
@@ -104,18 +107,18 @@ impl CreateResourceDataSyncFluentBuilder {
     /// <p>Amazon S3 configuration details for the sync. This parameter is required if the <code>SyncType</code> value is SyncToDestination.</p>
     pub fn set_s3_destination(
         mut self,
-        input: std::option::Option<crate::types::ResourceDataSyncS3Destination>,
+        input: ::std::option::Option<crate::types::ResourceDataSyncS3Destination>,
     ) -> Self {
         self.inner = self.inner.set_s3_destination(input);
         self
     }
     /// <p>Specify <code>SyncToDestination</code> to create a resource data sync that synchronizes data to an S3 bucket for Inventory. If you specify <code>SyncToDestination</code>, you must provide a value for <code>S3Destination</code>. Specify <code>SyncFromSource</code> to synchronize data from a single account and multiple Regions, or multiple Amazon Web Services accounts and Amazon Web Services Regions, as listed in Organizations for Explorer. If you specify <code>SyncFromSource</code>, you must provide a value for <code>SyncSource</code>. The default value is <code>SyncToDestination</code>.</p>
-    pub fn sync_type(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn sync_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sync_type(input.into());
         self
     }
     /// <p>Specify <code>SyncToDestination</code> to create a resource data sync that synchronizes data to an S3 bucket for Inventory. If you specify <code>SyncToDestination</code>, you must provide a value for <code>S3Destination</code>. Specify <code>SyncFromSource</code> to synchronize data from a single account and multiple Regions, or multiple Amazon Web Services accounts and Amazon Web Services Regions, as listed in Organizations for Explorer. If you specify <code>SyncFromSource</code>, you must provide a value for <code>SyncSource</code>. The default value is <code>SyncToDestination</code>.</p>
-    pub fn set_sync_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_sync_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sync_type(input);
         self
     }
@@ -127,7 +130,7 @@ impl CreateResourceDataSyncFluentBuilder {
     /// <p>Specify information about the data sources to synchronize. This parameter is required if the <code>SyncType</code> value is SyncFromSource.</p>
     pub fn set_sync_source(
         mut self,
-        input: std::option::Option<crate::types::ResourceDataSyncSource>,
+        input: ::std::option::Option<crate::types::ResourceDataSyncSource>,
     ) -> Self {
         self.inner = self.inner.set_sync_source(input);
         self

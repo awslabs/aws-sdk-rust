@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetRealtimeLogConfig`](crate::operation::get_realtime_log_config::builders::GetRealtimeLogConfigFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::get_realtime_log_config::builders::GetRealtimeLogConfigFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_realtime_log_config::builders::GetRealtimeLogConfigFluentBuilder::set_name): <p>The name of the real-time log configuration to get.</p>
-    ///   - [`arn(impl Into<String>)`](crate::operation::get_realtime_log_config::builders::GetRealtimeLogConfigFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::get_realtime_log_config::builders::GetRealtimeLogConfigFluentBuilder::set_arn): <p>The Amazon Resource Name (ARN) of the real-time log configuration to get.</p>
+    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::get_realtime_log_config::builders::GetRealtimeLogConfigFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_realtime_log_config::builders::GetRealtimeLogConfigFluentBuilder::set_name): <p>The name of the real-time log configuration to get.</p>
+    ///   - [`arn(impl ::std::convert::Into<String>)`](crate::operation::get_realtime_log_config::builders::GetRealtimeLogConfigFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::get_realtime_log_config::builders::GetRealtimeLogConfigFluentBuilder::set_arn): <p>The Amazon Resource Name (ARN) of the real-time log configuration to get.</p>
     /// - On success, responds with [`GetRealtimeLogConfigOutput`](crate::operation::get_realtime_log_config::GetRealtimeLogConfigOutput) with field(s):
     ///   - [`realtime_log_config(Option<RealtimeLogConfig>)`](crate::operation::get_realtime_log_config::GetRealtimeLogConfigOutput::realtime_log_config): <p>A real-time log configuration.</p>
     /// - On failure, responds with [`SdkError<GetRealtimeLogConfigError>`](crate::operation::get_realtime_log_config::GetRealtimeLogConfigError)

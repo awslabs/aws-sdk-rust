@@ -2,17 +2,17 @@
 
 /// <p>Object for LoRaWAN connection status resource type event configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoRaWanConnectionStatusEventNotificationConfigurations {
     /// <p>Denotes whether the gateway EUI connection status event topic is enabled or disabled.</p>
     #[doc(hidden)]
-    pub gateway_eui_event_topic: std::option::Option<crate::types::EventNotificationTopicStatus>,
+    pub gateway_eui_event_topic: ::std::option::Option<crate::types::EventNotificationTopicStatus>,
 }
 impl LoRaWanConnectionStatusEventNotificationConfigurations {
     /// <p>Denotes whether the gateway EUI connection status event topic is enabled or disabled.</p>
     pub fn gateway_eui_event_topic(
         &self,
-    ) -> std::option::Option<&crate::types::EventNotificationTopicStatus> {
+    ) -> ::std::option::Option<&crate::types::EventNotificationTopicStatus> {
         self.gateway_eui_event_topic.as_ref()
     }
 }
@@ -26,10 +26,12 @@ impl LoRaWanConnectionStatusEventNotificationConfigurations {
 
 /// A builder for [`LoRaWanConnectionStatusEventNotificationConfigurations`](crate::types::LoRaWanConnectionStatusEventNotificationConfigurations).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LoRaWanConnectionStatusEventNotificationConfigurationsBuilder {
     pub(crate) gateway_eui_event_topic:
-        std::option::Option<crate::types::EventNotificationTopicStatus>,
+        ::std::option::Option<crate::types::EventNotificationTopicStatus>,
 }
 impl LoRaWanConnectionStatusEventNotificationConfigurationsBuilder {
     /// <p>Denotes whether the gateway EUI connection status event topic is enabled or disabled.</p>
@@ -37,13 +39,13 @@ impl LoRaWanConnectionStatusEventNotificationConfigurationsBuilder {
         mut self,
         input: crate::types::EventNotificationTopicStatus,
     ) -> Self {
-        self.gateway_eui_event_topic = Some(input);
+        self.gateway_eui_event_topic = ::std::option::Option::Some(input);
         self
     }
     /// <p>Denotes whether the gateway EUI connection status event topic is enabled or disabled.</p>
     pub fn set_gateway_eui_event_topic(
         mut self,
-        input: std::option::Option<crate::types::EventNotificationTopicStatus>,
+        input: ::std::option::Option<crate::types::EventNotificationTopicStatus>,
     ) -> Self {
         self.gateway_eui_event_topic = input;
         self

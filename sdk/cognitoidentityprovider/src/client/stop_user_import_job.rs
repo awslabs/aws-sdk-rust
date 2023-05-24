@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopUserImportJob`](crate::operation::stop_user_import_job::builders::StopUserImportJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`user_pool_id(impl Into<String>)`](crate::operation::stop_user_import_job::builders::StopUserImportJobFluentBuilder::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::operation::stop_user_import_job::builders::StopUserImportJobFluentBuilder::set_user_pool_id): <p>The user pool ID for the user pool that the users are being imported into.</p>
-    ///   - [`job_id(impl Into<String>)`](crate::operation::stop_user_import_job::builders::StopUserImportJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::stop_user_import_job::builders::StopUserImportJobFluentBuilder::set_job_id): <p>The job ID for the user import job.</p>
+    ///   - [`user_pool_id(impl ::std::convert::Into<String>)`](crate::operation::stop_user_import_job::builders::StopUserImportJobFluentBuilder::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::operation::stop_user_import_job::builders::StopUserImportJobFluentBuilder::set_user_pool_id): <p>The user pool ID for the user pool that the users are being imported into.</p>
+    ///   - [`job_id(impl ::std::convert::Into<String>)`](crate::operation::stop_user_import_job::builders::StopUserImportJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::stop_user_import_job::builders::StopUserImportJobFluentBuilder::set_job_id): <p>The job ID for the user import job.</p>
     /// - On success, responds with [`StopUserImportJobOutput`](crate::operation::stop_user_import_job::StopUserImportJobOutput) with field(s):
     ///   - [`user_import_job(Option<UserImportJobType>)`](crate::operation::stop_user_import_job::StopUserImportJobOutput::user_import_job): <p>The job object that represents the user import job.</p>
     /// - On failure, responds with [`SdkError<StopUserImportJobError>`](crate::operation::stop_user_import_job::StopUserImportJobError)

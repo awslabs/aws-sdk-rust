@@ -2,36 +2,36 @@
 
 /// <p>Describes a user's SSH information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SelfUserProfile {
     /// <p>The user's IAM ARN.</p>
     #[doc(hidden)]
-    pub iam_user_arn: std::option::Option<std::string::String>,
+    pub iam_user_arn: ::std::option::Option<::std::string::String>,
     /// <p>The user's name.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The user's SSH user name.</p>
     #[doc(hidden)]
-    pub ssh_username: std::option::Option<std::string::String>,
+    pub ssh_username: ::std::option::Option<::std::string::String>,
     /// <p>The user's SSH public key.</p>
     #[doc(hidden)]
-    pub ssh_public_key: std::option::Option<std::string::String>,
+    pub ssh_public_key: ::std::option::Option<::std::string::String>,
 }
 impl SelfUserProfile {
     /// <p>The user's IAM ARN.</p>
-    pub fn iam_user_arn(&self) -> std::option::Option<&str> {
+    pub fn iam_user_arn(&self) -> ::std::option::Option<&str> {
         self.iam_user_arn.as_deref()
     }
     /// <p>The user's name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The user's SSH user name.</p>
-    pub fn ssh_username(&self) -> std::option::Option<&str> {
+    pub fn ssh_username(&self) -> ::std::option::Option<&str> {
         self.ssh_username.as_deref()
     }
     /// <p>The user's SSH public key.</p>
-    pub fn ssh_public_key(&self) -> std::option::Option<&str> {
+    pub fn ssh_public_key(&self) -> ::std::option::Option<&str> {
         self.ssh_public_key.as_deref()
     }
 }
@@ -44,51 +44,59 @@ impl SelfUserProfile {
 
 /// A builder for [`SelfUserProfile`](crate::types::SelfUserProfile).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SelfUserProfileBuilder {
-    pub(crate) iam_user_arn: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) ssh_username: std::option::Option<std::string::String>,
-    pub(crate) ssh_public_key: std::option::Option<std::string::String>,
+    pub(crate) iam_user_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) ssh_username: ::std::option::Option<::std::string::String>,
+    pub(crate) ssh_public_key: ::std::option::Option<::std::string::String>,
 }
 impl SelfUserProfileBuilder {
     /// <p>The user's IAM ARN.</p>
-    pub fn iam_user_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.iam_user_arn = Some(input.into());
+    pub fn iam_user_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.iam_user_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user's IAM ARN.</p>
-    pub fn set_iam_user_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_iam_user_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.iam_user_arn = input;
         self
     }
     /// <p>The user's name.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user's name.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The user's SSH user name.</p>
-    pub fn ssh_username(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ssh_username = Some(input.into());
+    pub fn ssh_username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ssh_username = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user's SSH user name.</p>
-    pub fn set_ssh_username(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ssh_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ssh_username = input;
         self
     }
     /// <p>The user's SSH public key.</p>
-    pub fn ssh_public_key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ssh_public_key = Some(input.into());
+    pub fn ssh_public_key(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.ssh_public_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user's SSH public key.</p>
-    pub fn set_ssh_public_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ssh_public_key(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.ssh_public_key = input;
         self
     }

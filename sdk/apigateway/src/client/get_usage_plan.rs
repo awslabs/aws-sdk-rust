@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetUsagePlan`](crate::operation::get_usage_plan::builders::GetUsagePlanFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`usage_plan_id(impl Into<String>)`](crate::operation::get_usage_plan::builders::GetUsagePlanFluentBuilder::usage_plan_id) / [`set_usage_plan_id(Option<String>)`](crate::operation::get_usage_plan::builders::GetUsagePlanFluentBuilder::set_usage_plan_id): <p>The identifier of the UsagePlan resource to be retrieved.</p>
+    ///   - [`usage_plan_id(impl ::std::convert::Into<String>)`](crate::operation::get_usage_plan::builders::GetUsagePlanFluentBuilder::usage_plan_id) / [`set_usage_plan_id(Option<String>)`](crate::operation::get_usage_plan::builders::GetUsagePlanFluentBuilder::set_usage_plan_id): <p>The identifier of the UsagePlan resource to be retrieved.</p>
     /// - On success, responds with [`GetUsagePlanOutput`](crate::operation::get_usage_plan::GetUsagePlanOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::get_usage_plan::GetUsagePlanOutput::id): <p>The identifier of a UsagePlan resource.</p>
     ///   - [`name(Option<String>)`](crate::operation::get_usage_plan::GetUsagePlanOutput::name): <p>The name of a usage plan.</p>

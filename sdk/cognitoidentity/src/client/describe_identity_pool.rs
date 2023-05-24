@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeIdentityPool`](crate::operation::describe_identity_pool::builders::DescribeIdentityPoolFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`identity_pool_id(impl Into<String>)`](crate::operation::describe_identity_pool::builders::DescribeIdentityPoolFluentBuilder::identity_pool_id) / [`set_identity_pool_id(Option<String>)`](crate::operation::describe_identity_pool::builders::DescribeIdentityPoolFluentBuilder::set_identity_pool_id): <p>An identity pool ID in the format REGION:GUID.</p>
+    ///   - [`identity_pool_id(impl ::std::convert::Into<String>)`](crate::operation::describe_identity_pool::builders::DescribeIdentityPoolFluentBuilder::identity_pool_id) / [`set_identity_pool_id(Option<String>)`](crate::operation::describe_identity_pool::builders::DescribeIdentityPoolFluentBuilder::set_identity_pool_id): <p>An identity pool ID in the format REGION:GUID.</p>
     /// - On success, responds with [`DescribeIdentityPoolOutput`](crate::operation::describe_identity_pool::DescribeIdentityPoolOutput) with field(s):
     ///   - [`identity_pool_id(Option<String>)`](crate::operation::describe_identity_pool::DescribeIdentityPoolOutput::identity_pool_id): <p>An identity pool ID in the format REGION:GUID.</p>
     ///   - [`identity_pool_name(Option<String>)`](crate::operation::describe_identity_pool::DescribeIdentityPoolOutput::identity_pool_name): <p>A string that you provide.</p>

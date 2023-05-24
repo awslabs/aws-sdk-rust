@@ -16,56 +16,59 @@ pub use crate::operation::run_task::_run_task_input::RunTaskInputBuilder;
 /// <li> <p>Confirm the state of the resource before you run a command to modify it. Run the DescribeTasks command using an exponential backoff algorithm to ensure that you allow enough time for the previous command to propagate through the system. To do this, run the DescribeTasks command repeatedly, starting with a couple of seconds of wait time and increasing gradually up to five minutes of wait time.</p> </li>
 /// <li> <p>Add wait time between subsequent commands, even if the DescribeTasks command returns an accurate response. Apply an exponential backoff algorithm starting with a couple of seconds of wait time, and increase gradually up to about five minutes of wait time.</p> </li>
 /// </ul>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RunTaskFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::run_task::builders::RunTaskInputBuilder,
 }
 impl RunTaskFluentBuilder {
     /// Creates a new `RunTask`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::run_task::RunTask,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::run_task::RunTaskError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::run_task::RunTaskError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::run_task::RunTaskOutput,
-        aws_smithy_http::result::SdkError<crate::operation::run_task::RunTaskError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::run_task::RunTaskError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -78,9 +81,9 @@ impl RunTaskFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::run_task::RunTaskOutput,
-        aws_smithy_http::result::SdkError<crate::operation::run_task::RunTaskError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::run_task::RunTaskError>,
     > {
         self.send_middleware().await
     }
@@ -105,18 +108,18 @@ impl RunTaskFluentBuilder {
     /// <p>A capacity provider strategy may contain a maximum of 6 capacity providers.</p>
     pub fn set_capacity_provider_strategy(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CapacityProviderStrategyItem>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderStrategyItem>>,
     ) -> Self {
         self.inner = self.inner.set_capacity_provider_strategy(input);
         self
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to run your task on. If you do not specify a cluster, the default cluster is assumed.</p>
-    pub fn cluster(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn cluster(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster(input.into());
         self
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to run your task on. If you do not specify a cluster, the default cluster is assumed.</p>
-    pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cluster(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster(input);
         self
     }
@@ -126,7 +129,7 @@ impl RunTaskFluentBuilder {
         self
     }
     /// <p>The number of instantiations of the specified task to place on your cluster. You can specify up to 10 tasks for each call.</p>
-    pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_count(input);
         self
     }
@@ -136,7 +139,7 @@ impl RunTaskFluentBuilder {
         self
     }
     /// <p>Specifies whether to use Amazon ECS managed tags for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn set_enable_ecs_managed_tags(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enable_ecs_managed_tags(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enable_ecs_managed_tags(input);
         self
     }
@@ -148,17 +151,17 @@ impl RunTaskFluentBuilder {
     }
     /// <p>Determines whether to use the execute command functionality for the containers in this task. If <code>true</code>, this enables execute command functionality on all containers in the task.</p>
     /// <p>If <code>true</code>, then the task definition must have a task role, or you must provide one as an override.</p>
-    pub fn set_enable_execute_command(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enable_execute_command(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enable_execute_command(input);
         self
     }
     /// <p>The name of the task group to associate with the task. The default value is the family name of the task definition (for example, <code>family:my-family-name</code>).</p>
-    pub fn group(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.group(input.into());
         self
     }
     /// <p>The name of the task group to associate with the task. The default value is the family name of the task definition (for example, <code>family:my-family-name</code>).</p>
-    pub fn set_group(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_group(input);
         self
     }
@@ -182,7 +185,10 @@ impl RunTaskFluentBuilder {
     /// <p>The <code>EXTERNAL</code> launch type runs your tasks on your on-premises server or virtual machine (VM) capacity registered to your cluster.</p>
     /// <p>A task can use either a launch type or a capacity provider strategy. If a <code>launchType</code> is specified, the <code>capacityProviderStrategy</code> parameter must be omitted.</p>
     /// <p>When you use cluster auto scaling, you must specify <code>capacityProviderStrategy</code> and not <code>launchType</code>. </p>
-    pub fn set_launch_type(mut self, input: std::option::Option<crate::types::LaunchType>) -> Self {
+    pub fn set_launch_type(
+        mut self,
+        input: ::std::option::Option<crate::types::LaunchType>,
+    ) -> Self {
         self.inner = self.inner.set_launch_type(input);
         self
     }
@@ -194,7 +200,7 @@ impl RunTaskFluentBuilder {
     /// <p>The network configuration for the task. This parameter is required for task definitions that use the <code>awsvpc</code> network mode to receive their own elastic network interface, and it isn't supported for other network modes. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn set_network_configuration(
         mut self,
-        input: std::option::Option<crate::types::NetworkConfiguration>,
+        input: ::std::option::Option<crate::types::NetworkConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_network_configuration(input);
         self
@@ -207,7 +213,10 @@ impl RunTaskFluentBuilder {
     }
     /// <p>A list of container overrides in JSON format that specify the name of a container in the specified task definition and the overrides it should receive. You can override the default command for a container (that's specified in the task definition or Docker image) with a <code>command</code> override. You can also override existing environment variables (that are specified in the task definition or Docker image) on a container or add new environment variables to it with an <code>environment</code> override.</p>
     /// <p>A total of 8192 characters are allowed for overrides. This limit includes the JSON formatting characters of the override structure.</p>
-    pub fn set_overrides(mut self, input: std::option::Option<crate::types::TaskOverride>) -> Self {
+    pub fn set_overrides(
+        mut self,
+        input: ::std::option::Option<crate::types::TaskOverride>,
+    ) -> Self {
         self.inner = self.inner.set_overrides(input);
         self
     }
@@ -223,7 +232,7 @@ impl RunTaskFluentBuilder {
     /// <p>An array of placement constraint objects to use for the task. You can specify up to 10 constraints for each task (including constraints in the task definition and those specified at runtime).</p>
     pub fn set_placement_constraints(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PlacementConstraint>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PlacementConstraint>>,
     ) -> Self {
         self.inner = self.inner.set_placement_constraints(input);
         self
@@ -240,18 +249,24 @@ impl RunTaskFluentBuilder {
     /// <p>The placement strategy objects to use for the task. You can specify a maximum of 5 strategy rules for each task.</p>
     pub fn set_placement_strategy(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PlacementStrategy>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PlacementStrategy>>,
     ) -> Self {
         self.inner = self.inner.set_placement_strategy(input);
         self
     }
     /// <p>The platform version the task uses. A platform version is only specified for tasks hosted on Fargate. If one isn't specified, the <code>LATEST</code> platform version is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn platform_version(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn platform_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.platform_version(input.into());
         self
     }
     /// <p>The platform version the task uses. A platform version is only specified for tasks hosted on Fargate. If one isn't specified, the <code>LATEST</code> platform version is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn set_platform_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_platform_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_platform_version(input);
         self
     }
@@ -267,30 +282,30 @@ impl RunTaskFluentBuilder {
     /// </note>
     pub fn set_propagate_tags(
         mut self,
-        input: std::option::Option<crate::types::PropagateTags>,
+        input: ::std::option::Option<crate::types::PropagateTags>,
     ) -> Self {
         self.inner = self.inner.set_propagate_tags(input);
         self
     }
     /// <p>The reference ID to use for the task. The reference ID can have a maximum length of 1024 characters.</p>
-    pub fn reference_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn reference_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.reference_id(input.into());
         self
     }
     /// <p>The reference ID to use for the task. The reference ID can have a maximum length of 1024 characters.</p>
-    pub fn set_reference_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_reference_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_reference_id(input);
         self
     }
     /// <p>An optional tag specified when a task is started. For example, if you automatically trigger a task to run a batch process job, you could apply a unique identifier for that job to your task with the <code>startedBy</code> parameter. You can then identify which tasks belong to that job by filtering the results of a <code>ListTasks</code> call with the <code>startedBy</code> value. Up to 36 letters (uppercase and lowercase), numbers, hyphens (-), and underscores (_) are allowed.</p>
     /// <p>If a task is started by an Amazon ECS service, then the <code>startedBy</code> parameter contains the deployment ID of the service that starts it.</p>
-    pub fn started_by(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn started_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.started_by(input.into());
         self
     }
     /// <p>An optional tag specified when a task is started. For example, if you automatically trigger a task to run a batch process job, you could apply a unique identifier for that job to your task with the <code>startedBy</code> parameter. You can then identify which tasks belong to that job by filtering the results of a <code>ListTasks</code> call with the <code>startedBy</code> value. Up to 36 letters (uppercase and lowercase), numbers, hyphens (-), and underscores (_) are allowed.</p>
     /// <p>If a task is started by an Amazon ECS service, then the <code>startedBy</code> parameter contains the deployment ID of the service that starts it.</p>
-    pub fn set_started_by(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_started_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_started_by(input);
         self
     }
@@ -326,7 +341,7 @@ impl RunTaskFluentBuilder {
     /// </ul>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
@@ -337,7 +352,10 @@ impl RunTaskFluentBuilder {
     /// <p>When you specify the policy resource as the latest task definition version (by setting the <code>Resource</code> in the policy to <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>), then set this value to <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>.</p>
     /// <p>When you specify the policy resource as a specific task definition version (by setting the <code>Resource</code> in the policy to <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:1</code> or <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*</code>), then set this value to <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:1</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-resources">Policy Resources for Amazon ECS</a> in the Amazon Elastic Container Service developer Guide.</p>
-    pub fn task_definition(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn task_definition(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.task_definition(input.into());
         self
     }
@@ -347,7 +365,10 @@ impl RunTaskFluentBuilder {
     /// <p>When you specify the policy resource as the latest task definition version (by setting the <code>Resource</code> in the policy to <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>), then set this value to <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>.</p>
     /// <p>When you specify the policy resource as a specific task definition version (by setting the <code>Resource</code> in the policy to <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:1</code> or <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*</code>), then set this value to <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:1</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-resources">Policy Resources for Amazon ECS</a> in the Amazon Elastic Container Service developer Guide.</p>
-    pub fn set_task_definition(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_task_definition(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_task_definition(input);
         self
     }

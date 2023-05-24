@@ -2,21 +2,22 @@
 
 /// <p>The summary of a recommendation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Summary {
     /// <p>The finding classification of the recommendation.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<crate::types::Finding>,
+    pub name: ::std::option::Option<crate::types::Finding>,
     /// <p>The value of the recommendation summary.</p>
     #[doc(hidden)]
     pub value: f64,
     /// <p>An array of objects that summarize a finding reason code.</p>
     #[doc(hidden)]
-    pub reason_code_summaries: std::option::Option<std::vec::Vec<crate::types::ReasonCodeSummary>>,
+    pub reason_code_summaries:
+        ::std::option::Option<::std::vec::Vec<crate::types::ReasonCodeSummary>>,
 }
 impl Summary {
     /// <p>The finding classification of the recommendation.</p>
-    pub fn name(&self) -> std::option::Option<&crate::types::Finding> {
+    pub fn name(&self) -> ::std::option::Option<&crate::types::Finding> {
         self.name.as_ref()
     }
     /// <p>The value of the recommendation summary.</p>
@@ -24,7 +25,9 @@ impl Summary {
         self.value
     }
     /// <p>An array of objects that summarize a finding reason code.</p>
-    pub fn reason_code_summaries(&self) -> std::option::Option<&[crate::types::ReasonCodeSummary]> {
+    pub fn reason_code_summaries(
+        &self,
+    ) -> ::std::option::Option<&[crate::types::ReasonCodeSummary]> {
         self.reason_code_summaries.as_deref()
     }
 }
@@ -37,31 +40,33 @@ impl Summary {
 
 /// A builder for [`Summary`](crate::types::Summary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SummaryBuilder {
-    pub(crate) name: std::option::Option<crate::types::Finding>,
-    pub(crate) value: std::option::Option<f64>,
+    pub(crate) name: ::std::option::Option<crate::types::Finding>,
+    pub(crate) value: ::std::option::Option<f64>,
     pub(crate) reason_code_summaries:
-        std::option::Option<std::vec::Vec<crate::types::ReasonCodeSummary>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ReasonCodeSummary>>,
 }
 impl SummaryBuilder {
     /// <p>The finding classification of the recommendation.</p>
     pub fn name(mut self, input: crate::types::Finding) -> Self {
-        self.name = Some(input);
+        self.name = ::std::option::Option::Some(input);
         self
     }
     /// <p>The finding classification of the recommendation.</p>
-    pub fn set_name(mut self, input: std::option::Option<crate::types::Finding>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::Finding>) -> Self {
         self.name = input;
         self
     }
     /// <p>The value of the recommendation summary.</p>
     pub fn value(mut self, input: f64) -> Self {
-        self.value = Some(input);
+        self.value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The value of the recommendation summary.</p>
-    pub fn set_value(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.value = input;
         self
     }
@@ -73,13 +78,13 @@ impl SummaryBuilder {
     pub fn reason_code_summaries(mut self, input: crate::types::ReasonCodeSummary) -> Self {
         let mut v = self.reason_code_summaries.unwrap_or_default();
         v.push(input);
-        self.reason_code_summaries = Some(v);
+        self.reason_code_summaries = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of objects that summarize a finding reason code.</p>
     pub fn set_reason_code_summaries(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ReasonCodeSummary>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ReasonCodeSummary>>,
     ) -> Self {
         self.reason_code_summaries = input;
         self

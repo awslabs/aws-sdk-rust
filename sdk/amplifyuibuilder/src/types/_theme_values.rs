@@ -2,22 +2,22 @@
 
 /// <p>A key-value pair that defines a property of a theme.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ThemeValues {
     /// <p>The name of the property.</p>
     #[doc(hidden)]
-    pub key: std::option::Option<std::string::String>,
+    pub key: ::std::option::Option<::std::string::String>,
     /// <p>The value of the property.</p>
     #[doc(hidden)]
-    pub value: std::option::Option<crate::types::ThemeValue>,
+    pub value: ::std::option::Option<crate::types::ThemeValue>,
 }
 impl ThemeValues {
     /// <p>The name of the property.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<&str> {
         self.key.as_deref()
     }
     /// <p>The value of the property.</p>
-    pub fn value(&self) -> std::option::Option<&crate::types::ThemeValue> {
+    pub fn value(&self) -> ::std::option::Option<&crate::types::ThemeValue> {
         self.value.as_ref()
     }
 }
@@ -30,29 +30,31 @@ impl ThemeValues {
 
 /// A builder for [`ThemeValues`](crate::types::ThemeValues).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ThemeValuesBuilder {
-    pub(crate) key: std::option::Option<std::string::String>,
-    pub(crate) value: std::option::Option<crate::types::ThemeValue>,
+    pub(crate) key: ::std::option::Option<::std::string::String>,
+    pub(crate) value: ::std::option::Option<crate::types::ThemeValue>,
 }
 impl ThemeValuesBuilder {
     /// <p>The name of the property.</p>
-    pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.key = Some(input.into());
+    pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the property.</p>
-    pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key = input;
         self
     }
     /// <p>The value of the property.</p>
     pub fn value(mut self, input: crate::types::ThemeValue) -> Self {
-        self.value = Some(input);
+        self.value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The value of the property.</p>
-    pub fn set_value(mut self, input: std::option::Option<crate::types::ThemeValue>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<crate::types::ThemeValue>) -> Self {
         self.value = input;
         self
     }

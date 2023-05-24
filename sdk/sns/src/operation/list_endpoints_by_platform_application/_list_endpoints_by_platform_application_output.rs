@@ -2,27 +2,27 @@
 
 /// <p>Response for ListEndpointsByPlatformApplication action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEndpointsByPlatformApplicationOutput {
     /// <p>Endpoints returned for ListEndpointsByPlatformApplication action.</p>
     #[doc(hidden)]
-    pub endpoints: std::option::Option<std::vec::Vec<crate::types::Endpoint>>,
+    pub endpoints: ::std::option::Option<::std::vec::Vec<crate::types::Endpoint>>,
     /// <p>NextToken string is returned when calling ListEndpointsByPlatformApplication action if additional records are available after the first page results.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListEndpointsByPlatformApplicationOutput {
     /// <p>Endpoints returned for ListEndpointsByPlatformApplication action.</p>
-    pub fn endpoints(&self) -> std::option::Option<&[crate::types::Endpoint]> {
+    pub fn endpoints(&self) -> ::std::option::Option<&[crate::types::Endpoint]> {
         self.endpoints.as_deref()
     }
     /// <p>NextToken string is returned when calling ListEndpointsByPlatformApplication action if additional records are available after the first page results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListEndpointsByPlatformApplicationOutput {
+impl ::aws_http::request_id::RequestId for ListEndpointsByPlatformApplicationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -36,10 +36,12 @@ impl ListEndpointsByPlatformApplicationOutput {
 
 /// A builder for [`ListEndpointsByPlatformApplicationOutput`](crate::operation::list_endpoints_by_platform_application::ListEndpointsByPlatformApplicationOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListEndpointsByPlatformApplicationOutputBuilder {
-    pub(crate) endpoints: std::option::Option<std::vec::Vec<crate::types::Endpoint>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) endpoints: ::std::option::Option<::std::vec::Vec<crate::types::Endpoint>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListEndpointsByPlatformApplicationOutputBuilder {
@@ -51,24 +53,24 @@ impl ListEndpointsByPlatformApplicationOutputBuilder {
     pub fn endpoints(mut self, input: crate::types::Endpoint) -> Self {
         let mut v = self.endpoints.unwrap_or_default();
         v.push(input);
-        self.endpoints = Some(v);
+        self.endpoints = ::std::option::Option::Some(v);
         self
     }
     /// <p>Endpoints returned for ListEndpointsByPlatformApplication action.</p>
     pub fn set_endpoints(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Endpoint>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Endpoint>>,
     ) -> Self {
         self.endpoints = input;
         self
     }
     /// <p>NextToken string is returned when calling ListEndpointsByPlatformApplication action if additional records are available after the first page results.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>NextToken string is returned when calling ListEndpointsByPlatformApplication action if additional records are available after the first page results.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DisassociateIamInstanceProfile`](crate::operation::disassociate_iam_instance_profile::builders::DisassociateIamInstanceProfileFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`association_id(impl Into<String>)`](crate::operation::disassociate_iam_instance_profile::builders::DisassociateIamInstanceProfileFluentBuilder::association_id) / [`set_association_id(Option<String>)`](crate::operation::disassociate_iam_instance_profile::builders::DisassociateIamInstanceProfileFluentBuilder::set_association_id): <p>The ID of the IAM instance profile association.</p>
+    ///   - [`association_id(impl ::std::convert::Into<String>)`](crate::operation::disassociate_iam_instance_profile::builders::DisassociateIamInstanceProfileFluentBuilder::association_id) / [`set_association_id(Option<String>)`](crate::operation::disassociate_iam_instance_profile::builders::DisassociateIamInstanceProfileFluentBuilder::set_association_id): <p>The ID of the IAM instance profile association.</p>
     /// - On success, responds with [`DisassociateIamInstanceProfileOutput`](crate::operation::disassociate_iam_instance_profile::DisassociateIamInstanceProfileOutput) with field(s):
     ///   - [`iam_instance_profile_association(Option<IamInstanceProfileAssociation>)`](crate::operation::disassociate_iam_instance_profile::DisassociateIamInstanceProfileOutput::iam_instance_profile_association): <p>Information about the IAM instance profile association.</p>
     /// - On failure, responds with [`SdkError<DisassociateIamInstanceProfileError>`](crate::operation::disassociate_iam_instance_profile::DisassociateIamInstanceProfileError)

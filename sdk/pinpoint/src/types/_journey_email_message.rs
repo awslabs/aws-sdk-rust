@@ -2,15 +2,15 @@
 
 /// <p>Specifies the "From" address for an email message that's sent to participants in a journey.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JourneyEmailMessage {
     /// <p>The verified email address to send the email message from. The default address is the FromAddress specified for the email channel for the application.</p>
     #[doc(hidden)]
-    pub from_address: std::option::Option<std::string::String>,
+    pub from_address: ::std::option::Option<::std::string::String>,
 }
 impl JourneyEmailMessage {
     /// <p>The verified email address to send the email message from. The default address is the FromAddress specified for the email channel for the application.</p>
-    pub fn from_address(&self) -> std::option::Option<&str> {
+    pub fn from_address(&self) -> ::std::option::Option<&str> {
         self.from_address.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl JourneyEmailMessage {
 
 /// A builder for [`JourneyEmailMessage`](crate::types::JourneyEmailMessage).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct JourneyEmailMessageBuilder {
-    pub(crate) from_address: std::option::Option<std::string::String>,
+    pub(crate) from_address: ::std::option::Option<::std::string::String>,
 }
 impl JourneyEmailMessageBuilder {
     /// <p>The verified email address to send the email message from. The default address is the FromAddress specified for the email channel for the application.</p>
-    pub fn from_address(mut self, input: impl Into<std::string::String>) -> Self {
-        self.from_address = Some(input.into());
+    pub fn from_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.from_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The verified email address to send the email message from. The default address is the FromAddress specified for the email channel for the application.</p>
-    pub fn set_from_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_from_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.from_address = input;
         self
     }

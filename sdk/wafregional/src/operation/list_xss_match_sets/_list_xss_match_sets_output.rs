@@ -2,27 +2,27 @@
 
 /// <p>The response to a <code>ListXssMatchSets</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListXssMatchSetsOutput {
     /// <p>If you have more <code>XssMatchSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>XssMatchSet</code> objects, submit another <code>ListXssMatchSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
     #[doc(hidden)]
-    pub next_marker: std::option::Option<std::string::String>,
+    pub next_marker: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>XssMatchSetSummary</code> objects.</p>
     #[doc(hidden)]
-    pub xss_match_sets: std::option::Option<std::vec::Vec<crate::types::XssMatchSetSummary>>,
+    pub xss_match_sets: ::std::option::Option<::std::vec::Vec<crate::types::XssMatchSetSummary>>,
     _request_id: Option<String>,
 }
 impl ListXssMatchSetsOutput {
     /// <p>If you have more <code>XssMatchSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>XssMatchSet</code> objects, submit another <code>ListXssMatchSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
-    pub fn next_marker(&self) -> std::option::Option<&str> {
+    pub fn next_marker(&self) -> ::std::option::Option<&str> {
         self.next_marker.as_deref()
     }
     /// <p>An array of <code>XssMatchSetSummary</code> objects.</p>
-    pub fn xss_match_sets(&self) -> std::option::Option<&[crate::types::XssMatchSetSummary]> {
+    pub fn xss_match_sets(&self) -> ::std::option::Option<&[crate::types::XssMatchSetSummary]> {
         self.xss_match_sets.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListXssMatchSetsOutput {
+impl ::aws_http::request_id::RequestId for ListXssMatchSetsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -37,20 +37,23 @@ impl ListXssMatchSetsOutput {
 
 /// A builder for [`ListXssMatchSetsOutput`](crate::operation::list_xss_match_sets::ListXssMatchSetsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListXssMatchSetsOutputBuilder {
-    pub(crate) next_marker: std::option::Option<std::string::String>,
-    pub(crate) xss_match_sets: std::option::Option<std::vec::Vec<crate::types::XssMatchSetSummary>>,
+    pub(crate) next_marker: ::std::option::Option<::std::string::String>,
+    pub(crate) xss_match_sets:
+        ::std::option::Option<::std::vec::Vec<crate::types::XssMatchSetSummary>>,
     _request_id: Option<String>,
 }
 impl ListXssMatchSetsOutputBuilder {
     /// <p>If you have more <code>XssMatchSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>XssMatchSet</code> objects, submit another <code>ListXssMatchSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
-    pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_marker = Some(input.into());
+    pub fn next_marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If you have more <code>XssMatchSet</code> objects than the number that you specified for <code>Limit</code> in the request, the response includes a <code>NextMarker</code> value. To list more <code>XssMatchSet</code> objects, submit another <code>ListXssMatchSets</code> request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code> value in the next request.</p>
-    pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_marker = input;
         self
     }
@@ -62,13 +65,13 @@ impl ListXssMatchSetsOutputBuilder {
     pub fn xss_match_sets(mut self, input: crate::types::XssMatchSetSummary) -> Self {
         let mut v = self.xss_match_sets.unwrap_or_default();
         v.push(input);
-        self.xss_match_sets = Some(v);
+        self.xss_match_sets = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of <code>XssMatchSetSummary</code> objects.</p>
     pub fn set_xss_match_sets(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::XssMatchSetSummary>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::XssMatchSetSummary>>,
     ) -> Self {
         self.xss_match_sets = input;
         self

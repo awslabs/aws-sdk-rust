@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ImageFormat {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum ImageFormat {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ImageFormat {
+impl ::std::convert::From<&str> for ImageFormat {
     fn from(s: &str) -> Self {
         match s {
             "JSON" => ImageFormat::Json,
@@ -67,11 +67,11 @@ impl std::convert::From<&str> for ImageFormat {
         }
     }
 }
-impl std::str::FromStr for ImageFormat {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ImageFormat {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ImageFormat::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ImageFormat::from(s))
     }
 }
 impl ImageFormat {
@@ -89,7 +89,7 @@ impl ImageFormat {
         &["JSON", "JSONDetached", "JSONEmbedded"]
     }
 }
-impl AsRef<str> for ImageFormat {
+impl ::std::convert::AsRef<str> for ImageFormat {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

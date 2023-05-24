@@ -38,13 +38,13 @@
 /// Required when you enable Dolby Vision. Use Profile 5 to include frame-interleaved Dolby Vision metadata in your output. Your input must include Dolby Vision metadata or an HDR10 YUV color space. Use Profile 8.1 to include frame-interleaved Dolby Vision metadata and HDR10 metadata in your output. Your input must include Dolby Vision metadata.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum DolbyVisionProfile {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum DolbyVisionProfile {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for DolbyVisionProfile {
+impl ::std::convert::From<&str> for DolbyVisionProfile {
     fn from(s: &str) -> Self {
         match s {
             "PROFILE_5" => DolbyVisionProfile::Profile5,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for DolbyVisionProfile {
         }
     }
 }
-impl std::str::FromStr for DolbyVisionProfile {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for DolbyVisionProfile {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DolbyVisionProfile::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(DolbyVisionProfile::from(s))
     }
 }
 impl DolbyVisionProfile {
@@ -86,7 +86,7 @@ impl DolbyVisionProfile {
         &["PROFILE_5", "PROFILE_8_1"]
     }
 }
-impl AsRef<str> for DolbyVisionProfile {
+impl ::std::convert::AsRef<str> for DolbyVisionProfile {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -2,20 +2,20 @@
 
 /// <p>Represents the output of a <code>RetryStageExecution</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RetryStageExecutionOutput {
     /// <p>The ID of the current workflow execution in the failed stage.</p>
     #[doc(hidden)]
-    pub pipeline_execution_id: std::option::Option<std::string::String>,
+    pub pipeline_execution_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl RetryStageExecutionOutput {
     /// <p>The ID of the current workflow execution in the failed stage.</p>
-    pub fn pipeline_execution_id(&self) -> std::option::Option<&str> {
+    pub fn pipeline_execution_id(&self) -> ::std::option::Option<&str> {
         self.pipeline_execution_id.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for RetryStageExecutionOutput {
+impl ::aws_http::request_id::RequestId for RetryStageExecutionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -31,21 +31,26 @@ impl RetryStageExecutionOutput {
 
 /// A builder for [`RetryStageExecutionOutput`](crate::operation::retry_stage_execution::RetryStageExecutionOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RetryStageExecutionOutputBuilder {
-    pub(crate) pipeline_execution_id: std::option::Option<std::string::String>,
+    pub(crate) pipeline_execution_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl RetryStageExecutionOutputBuilder {
     /// <p>The ID of the current workflow execution in the failed stage.</p>
-    pub fn pipeline_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.pipeline_execution_id = Some(input.into());
+    pub fn pipeline_execution_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.pipeline_execution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the current workflow execution in the failed stage.</p>
     pub fn set_pipeline_execution_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.pipeline_execution_id = input;
         self

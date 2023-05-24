@@ -2,7 +2,7 @@
 
 /// <p>Information about an Elastic Load Balancing resource limit for your AWS account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Limit {
     /// <p>The name of the limit. The possible values are:</p>
     /// <ul>
@@ -11,10 +11,10 @@ pub struct Limit {
     /// <li> <p>classic-registered-instances</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The maximum value of the limit.</p>
     #[doc(hidden)]
-    pub max: std::option::Option<std::string::String>,
+    pub max: ::std::option::Option<::std::string::String>,
 }
 impl Limit {
     /// <p>The name of the limit. The possible values are:</p>
@@ -23,11 +23,11 @@ impl Limit {
     /// <li> <p>classic-load-balancers</p> </li>
     /// <li> <p>classic-registered-instances</p> </li>
     /// </ul>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The maximum value of the limit.</p>
-    pub fn max(&self) -> std::option::Option<&str> {
+    pub fn max(&self) -> ::std::option::Option<&str> {
         self.max.as_deref()
     }
 }
@@ -40,10 +40,12 @@ impl Limit {
 
 /// A builder for [`Limit`](crate::types::Limit).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LimitBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) max: std::option::Option<std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) max: ::std::option::Option<::std::string::String>,
 }
 impl LimitBuilder {
     /// <p>The name of the limit. The possible values are:</p>
@@ -52,8 +54,8 @@ impl LimitBuilder {
     /// <li> <p>classic-load-balancers</p> </li>
     /// <li> <p>classic-registered-instances</p> </li>
     /// </ul>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the limit. The possible values are:</p>
@@ -62,17 +64,17 @@ impl LimitBuilder {
     /// <li> <p>classic-load-balancers</p> </li>
     /// <li> <p>classic-registered-instances</p> </li>
     /// </ul>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The maximum value of the limit.</p>
-    pub fn max(mut self, input: impl Into<std::string::String>) -> Self {
-        self.max = Some(input.into());
+    pub fn max(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.max = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The maximum value of the limit.</p>
-    pub fn set_max(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_max(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.max = input;
         self
     }

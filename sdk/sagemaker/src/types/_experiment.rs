@@ -2,78 +2,78 @@
 
 /// <p>The properties of an experiment as returned by the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a> API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Experiment {
     /// <p>The name of the experiment.</p>
     #[doc(hidden)]
-    pub experiment_name: std::option::Option<std::string::String>,
+    pub experiment_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the experiment.</p>
     #[doc(hidden)]
-    pub experiment_arn: std::option::Option<std::string::String>,
+    pub experiment_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the experiment as displayed. If <code>DisplayName</code> isn't specified, <code>ExperimentName</code> is displayed.</p>
     #[doc(hidden)]
-    pub display_name: std::option::Option<std::string::String>,
+    pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The source of the experiment.</p>
     #[doc(hidden)]
-    pub source: std::option::Option<crate::types::ExperimentSource>,
+    pub source: ::std::option::Option<crate::types::ExperimentSource>,
     /// <p>The description of the experiment.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>When the experiment was created.</p>
     #[doc(hidden)]
-    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Who created the experiment.</p>
     #[doc(hidden)]
-    pub created_by: std::option::Option<crate::types::UserContext>,
+    pub created_by: ::std::option::Option<crate::types::UserContext>,
     /// <p>When the experiment was last modified.</p>
     #[doc(hidden)]
-    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     #[doc(hidden)]
-    pub last_modified_by: std::option::Option<crate::types::UserContext>,
+    pub last_modified_by: ::std::option::Option<crate::types::UserContext>,
     /// <p>The list of tags that are associated with the experiment. You can use <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a> API to search on the tags.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl Experiment {
     /// <p>The name of the experiment.</p>
-    pub fn experiment_name(&self) -> std::option::Option<&str> {
+    pub fn experiment_name(&self) -> ::std::option::Option<&str> {
         self.experiment_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the experiment.</p>
-    pub fn experiment_arn(&self) -> std::option::Option<&str> {
+    pub fn experiment_arn(&self) -> ::std::option::Option<&str> {
         self.experiment_arn.as_deref()
     }
     /// <p>The name of the experiment as displayed. If <code>DisplayName</code> isn't specified, <code>ExperimentName</code> is displayed.</p>
-    pub fn display_name(&self) -> std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<&str> {
         self.display_name.as_deref()
     }
     /// <p>The source of the experiment.</p>
-    pub fn source(&self) -> std::option::Option<&crate::types::ExperimentSource> {
+    pub fn source(&self) -> ::std::option::Option<&crate::types::ExperimentSource> {
         self.source.as_ref()
     }
     /// <p>The description of the experiment.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>When the experiment was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>Who created the experiment.</p>
-    pub fn created_by(&self) -> std::option::Option<&crate::types::UserContext> {
+    pub fn created_by(&self) -> ::std::option::Option<&crate::types::UserContext> {
         self.created_by.as_ref()
     }
     /// <p>When the experiment was last modified.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
-    pub fn last_modified_by(&self) -> std::option::Option<&crate::types::UserContext> {
+    pub fn last_modified_by(&self) -> ::std::option::Option<&crate::types::UserContext> {
         self.last_modified_by.as_ref()
     }
     /// <p>The list of tags that are associated with the experiment. You can use <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a> API to search on the tags.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -86,118 +86,135 @@ impl Experiment {
 
 /// A builder for [`Experiment`](crate::types::Experiment).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ExperimentBuilder {
-    pub(crate) experiment_name: std::option::Option<std::string::String>,
-    pub(crate) experiment_arn: std::option::Option<std::string::String>,
-    pub(crate) display_name: std::option::Option<std::string::String>,
-    pub(crate) source: std::option::Option<crate::types::ExperimentSource>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) created_by: std::option::Option<crate::types::UserContext>,
-    pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_modified_by: std::option::Option<crate::types::UserContext>,
-    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub(crate) experiment_name: ::std::option::Option<::std::string::String>,
+    pub(crate) experiment_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) display_name: ::std::option::Option<::std::string::String>,
+    pub(crate) source: ::std::option::Option<crate::types::ExperimentSource>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) created_by: ::std::option::Option<crate::types::UserContext>,
+    pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_modified_by: ::std::option::Option<crate::types::UserContext>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl ExperimentBuilder {
     /// <p>The name of the experiment.</p>
-    pub fn experiment_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.experiment_name = Some(input.into());
+    pub fn experiment_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.experiment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the experiment.</p>
-    pub fn set_experiment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_experiment_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.experiment_name = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the experiment.</p>
-    pub fn experiment_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.experiment_arn = Some(input.into());
+    pub fn experiment_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.experiment_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the experiment.</p>
-    pub fn set_experiment_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_experiment_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.experiment_arn = input;
         self
     }
     /// <p>The name of the experiment as displayed. If <code>DisplayName</code> isn't specified, <code>ExperimentName</code> is displayed.</p>
-    pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.display_name = Some(input.into());
+    pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.display_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the experiment as displayed. If <code>DisplayName</code> isn't specified, <code>ExperimentName</code> is displayed.</p>
-    pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
     }
     /// <p>The source of the experiment.</p>
     pub fn source(mut self, input: crate::types::ExperimentSource) -> Self {
-        self.source = Some(input);
+        self.source = ::std::option::Option::Some(input);
         self
     }
     /// <p>The source of the experiment.</p>
     pub fn set_source(
         mut self,
-        input: std::option::Option<crate::types::ExperimentSource>,
+        input: ::std::option::Option<crate::types::ExperimentSource>,
     ) -> Self {
         self.source = input;
         self
     }
     /// <p>The description of the experiment.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the experiment.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>When the experiment was created.</p>
-    pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_time = Some(input);
+    pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>When the experiment was created.</p>
     pub fn set_creation_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_time = input;
         self
     }
     /// <p>Who created the experiment.</p>
     pub fn created_by(mut self, input: crate::types::UserContext) -> Self {
-        self.created_by = Some(input);
+        self.created_by = ::std::option::Option::Some(input);
         self
     }
     /// <p>Who created the experiment.</p>
-    pub fn set_created_by(mut self, input: std::option::Option<crate::types::UserContext>) -> Self {
+    pub fn set_created_by(
+        mut self,
+        input: ::std::option::Option<crate::types::UserContext>,
+    ) -> Self {
         self.created_by = input;
         self
     }
     /// <p>When the experiment was last modified.</p>
-    pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_modified_time = Some(input);
+    pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_modified_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>When the experiment was last modified.</p>
     pub fn set_last_modified_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_modified_time = input;
         self
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     pub fn last_modified_by(mut self, input: crate::types::UserContext) -> Self {
-        self.last_modified_by = Some(input);
+        self.last_modified_by = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     pub fn set_last_modified_by(
         mut self,
-        input: std::option::Option<crate::types::UserContext>,
+        input: ::std::option::Option<crate::types::UserContext>,
     ) -> Self {
         self.last_modified_by = input;
         self
@@ -210,13 +227,13 @@ impl ExperimentBuilder {
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
-        self.tags = Some(v);
+        self.tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of tags that are associated with the experiment. You can use <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a> API to search on the tags.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tags = input;
         self

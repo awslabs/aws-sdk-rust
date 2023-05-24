@@ -19,29 +19,29 @@ pub use crate::operation::start_call_analytics_job::_start_call_analytics_job_in
 /// </ul> <note>
 /// <p>With Call Analytics, you can redact the audio contained in your media file by including <code>RedactedMediaFileUri</code>, instead of <code>MediaFileUri</code>, to specify the location of your input audio. If you choose to redact your audio, you can find your redacted media at the location specified in the <code>RedactedMediaFileUri</code> field of your response.</p>
 /// </note>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartCallAnalyticsJobFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::start_call_analytics_job::builders::StartCallAnalyticsJobInputBuilder,
 }
 impl StartCallAnalyticsJobFluentBuilder {
     /// Creates a new `StartCallAnalyticsJob`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::start_call_analytics_job::StartCallAnalyticsJob,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::start_call_analytics_job::StartCallAnalyticsJobError,
         >,
     > {
@@ -49,30 +49,33 @@ impl StartCallAnalyticsJobFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::start_call_analytics_job::StartCallAnalyticsJobOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::start_call_analytics_job::StartCallAnalyticsJobError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -85,9 +88,9 @@ impl StartCallAnalyticsJobFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::start_call_analytics_job::StartCallAnalyticsJobOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::start_call_analytics_job::StartCallAnalyticsJobError,
         >,
     > {
@@ -95,7 +98,10 @@ impl StartCallAnalyticsJobFluentBuilder {
     }
     /// <p>A unique name, chosen by you, for your Call Analytics job.</p>
     /// <p>This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account. If you try to create a new job with the same name as an existing job, you get a <code>ConflictException</code> error.</p>
-    pub fn call_analytics_job_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn call_analytics_job_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.call_analytics_job_name(input.into());
         self
     }
@@ -103,7 +109,7 @@ impl StartCallAnalyticsJobFluentBuilder {
     /// <p>This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account. If you try to create a new job with the same name as an existing job, you get a <code>ConflictException</code> error.</p>
     pub fn set_call_analytics_job_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_call_analytics_job_name(input);
         self
@@ -114,7 +120,7 @@ impl StartCallAnalyticsJobFluentBuilder {
         self
     }
     /// <p>Describes the Amazon S3 location of the media file you want to use in your Call Analytics request.</p>
-    pub fn set_media(mut self, input: std::option::Option<crate::types::Media>) -> Self {
+    pub fn set_media(mut self, input: ::std::option::Option<crate::types::Media>) -> Self {
         self.inner = self.inner.set_media(input);
         self
     }
@@ -127,7 +133,10 @@ impl StartCallAnalyticsJobFluentBuilder {
     /// <p>Unless you specify a file name (option 3), the name of your output file has a default value that matches the name you specified for your transcription job using the <code>CallAnalyticsJobName</code> parameter.</p>
     /// <p>You can specify a KMS key to encrypt your output using the <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify a KMS key, Amazon Transcribe uses the default Amazon S3 key for server-side encryption.</p>
     /// <p>If you don't specify <code>OutputLocation</code>, your transcript is placed in a service-managed Amazon S3 bucket and you are provided with a URI to access your transcript.</p>
-    pub fn output_location(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn output_location(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.output_location(input.into());
         self
     }
@@ -140,7 +149,10 @@ impl StartCallAnalyticsJobFluentBuilder {
     /// <p>Unless you specify a file name (option 3), the name of your output file has a default value that matches the name you specified for your transcription job using the <code>CallAnalyticsJobName</code> parameter.</p>
     /// <p>You can specify a KMS key to encrypt your output using the <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify a KMS key, Amazon Transcribe uses the default Amazon S3 key for server-side encryption.</p>
     /// <p>If you don't specify <code>OutputLocation</code>, your transcript is placed in a service-managed Amazon S3 bucket and you are provided with a URI to access your transcript.</p>
-    pub fn set_output_location(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_output_location(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_output_location(input);
         self
     }
@@ -160,7 +172,10 @@ impl StartCallAnalyticsJobFluentBuilder {
     /// <p>If you don't specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).</p>
     /// <p>If you specify a KMS key to encrypt your output, you must also specify an output location using the <code>OutputLocation</code> parameter.</p>
     /// <p>Note that the role making the request must have permission to use the specified KMS key.</p>
-    pub fn output_encryption_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn output_encryption_kms_key_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.output_encryption_kms_key_id(input.into());
         self
     }
@@ -182,7 +197,7 @@ impl StartCallAnalyticsJobFluentBuilder {
     /// <p>Note that the role making the request must have permission to use the specified KMS key.</p>
     pub fn set_output_encryption_kms_key_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_output_encryption_kms_key_id(input);
         self
@@ -190,7 +205,10 @@ impl StartCallAnalyticsJobFluentBuilder {
     /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files. If the role that you specify doesn’t have the appropriate permissions to access the specified Amazon S3 location, your request fails.</p>
     /// <p>IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example: <code>arn:aws:iam::111122223333:role/Admin</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a>.</p>
-    pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn data_access_role_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.data_access_role_arn(input.into());
         self
     }
@@ -199,7 +217,7 @@ impl StartCallAnalyticsJobFluentBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a>.</p>
     pub fn set_data_access_role_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_data_access_role_arn(input);
         self
@@ -212,7 +230,7 @@ impl StartCallAnalyticsJobFluentBuilder {
     /// <p>Specify additional optional settings in your request, including content redaction; allows you to apply custom language models, vocabulary filters, and custom vocabularies to your Call Analytics job.</p>
     pub fn set_settings(
         mut self,
-        input: std::option::Option<crate::types::CallAnalyticsJobSettings>,
+        input: ::std::option::Option<crate::types::CallAnalyticsJobSettings>,
     ) -> Self {
         self.inner = self.inner.set_settings(input);
         self
@@ -229,7 +247,7 @@ impl StartCallAnalyticsJobFluentBuilder {
     /// <p>Makes it possible to specify which speaker is on which channel. For example, if your agent is the first participant to speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the first channel) and <code>ParticipantRole</code> to <code>AGENT</code> (to indicate that it's the agent speaking).</p>
     pub fn set_channel_definitions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ChannelDefinition>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ChannelDefinition>>,
     ) -> Self {
         self.inner = self.inner.set_channel_definitions(input);
         self

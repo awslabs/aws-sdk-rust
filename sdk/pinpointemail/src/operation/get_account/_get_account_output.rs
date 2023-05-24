@@ -2,11 +2,11 @@
 
 /// <p>A list of details about the email-sending capabilities of your Amazon Pinpoint account in the current AWS Region.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAccountOutput {
     /// <p>An object that contains information about the per-day and per-second sending limits for your Amazon Pinpoint account in the current AWS Region.</p>
     #[doc(hidden)]
-    pub send_quota: std::option::Option<crate::types::SendQuota>,
+    pub send_quota: ::std::option::Option<crate::types::SendQuota>,
     /// <p>Indicates whether or not email sending is enabled for your Amazon Pinpoint account in the current AWS Region.</p>
     #[doc(hidden)]
     pub sending_enabled: bool,
@@ -20,7 +20,7 @@ pub struct GetAccountOutput {
     /// <li> <p> <code>SHUTDOWN</code> – Your account's ability to send email is currently paused because of an issue with the email sent from your account. When you correct the issue, you can contact us and request that your account's ability to send email is resumed.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub enforcement_status: std::option::Option<std::string::String>,
+    pub enforcement_status: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether or not your account has production access in the current AWS Region.</p>
     /// <p>If the value is <code>false</code>, then your account is in the <i>sandbox</i>. When your account is in the sandbox, you can only send email to verified identities. Additionally, the maximum number of emails you can send in a 24-hour period (your sending quota) is 200, and the maximum number of emails you can send per second (your maximum sending rate) is 1.</p>
     /// <p>If the value is <code>true</code>, then your account has production access. When your account has production access, you can send email to any address. The sending quota and maximum sending rate for your account vary based on your specific use case.</p>
@@ -30,7 +30,7 @@ pub struct GetAccountOutput {
 }
 impl GetAccountOutput {
     /// <p>An object that contains information about the per-day and per-second sending limits for your Amazon Pinpoint account in the current AWS Region.</p>
-    pub fn send_quota(&self) -> std::option::Option<&crate::types::SendQuota> {
+    pub fn send_quota(&self) -> ::std::option::Option<&crate::types::SendQuota> {
         self.send_quota.as_ref()
     }
     /// <p>Indicates whether or not email sending is enabled for your Amazon Pinpoint account in the current AWS Region.</p>
@@ -47,7 +47,7 @@ impl GetAccountOutput {
     /// <li> <p> <code>PROBATION</code> – We've identified some issues with your Amazon Pinpoint account. We're placing your account under review while you work on correcting these issues.</p> </li>
     /// <li> <p> <code>SHUTDOWN</code> – Your account's ability to send email is currently paused because of an issue with the email sent from your account. When you correct the issue, you can contact us and request that your account's ability to send email is resumed.</p> </li>
     /// </ul>
-    pub fn enforcement_status(&self) -> std::option::Option<&str> {
+    pub fn enforcement_status(&self) -> ::std::option::Option<&str> {
         self.enforcement_status.as_deref()
     }
     /// <p>Indicates whether or not your account has production access in the current AWS Region.</p>
@@ -57,7 +57,7 @@ impl GetAccountOutput {
         self.production_access_enabled
     }
 }
-impl aws_http::request_id::RequestId for GetAccountOutput {
+impl ::aws_http::request_id::RequestId for GetAccountOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -71,45 +71,47 @@ impl GetAccountOutput {
 
 /// A builder for [`GetAccountOutput`](crate::operation::get_account::GetAccountOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetAccountOutputBuilder {
-    pub(crate) send_quota: std::option::Option<crate::types::SendQuota>,
-    pub(crate) sending_enabled: std::option::Option<bool>,
-    pub(crate) dedicated_ip_auto_warmup_enabled: std::option::Option<bool>,
-    pub(crate) enforcement_status: std::option::Option<std::string::String>,
-    pub(crate) production_access_enabled: std::option::Option<bool>,
+    pub(crate) send_quota: ::std::option::Option<crate::types::SendQuota>,
+    pub(crate) sending_enabled: ::std::option::Option<bool>,
+    pub(crate) dedicated_ip_auto_warmup_enabled: ::std::option::Option<bool>,
+    pub(crate) enforcement_status: ::std::option::Option<::std::string::String>,
+    pub(crate) production_access_enabled: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl GetAccountOutputBuilder {
     /// <p>An object that contains information about the per-day and per-second sending limits for your Amazon Pinpoint account in the current AWS Region.</p>
     pub fn send_quota(mut self, input: crate::types::SendQuota) -> Self {
-        self.send_quota = Some(input);
+        self.send_quota = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that contains information about the per-day and per-second sending limits for your Amazon Pinpoint account in the current AWS Region.</p>
-    pub fn set_send_quota(mut self, input: std::option::Option<crate::types::SendQuota>) -> Self {
+    pub fn set_send_quota(mut self, input: ::std::option::Option<crate::types::SendQuota>) -> Self {
         self.send_quota = input;
         self
     }
     /// <p>Indicates whether or not email sending is enabled for your Amazon Pinpoint account in the current AWS Region.</p>
     pub fn sending_enabled(mut self, input: bool) -> Self {
-        self.sending_enabled = Some(input);
+        self.sending_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether or not email sending is enabled for your Amazon Pinpoint account in the current AWS Region.</p>
-    pub fn set_sending_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_sending_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.sending_enabled = input;
         self
     }
     /// <p>Indicates whether or not the automatic warm-up feature is enabled for dedicated IP addresses that are associated with your account.</p>
     pub fn dedicated_ip_auto_warmup_enabled(mut self, input: bool) -> Self {
-        self.dedicated_ip_auto_warmup_enabled = Some(input);
+        self.dedicated_ip_auto_warmup_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether or not the automatic warm-up feature is enabled for dedicated IP addresses that are associated with your account.</p>
     pub fn set_dedicated_ip_auto_warmup_enabled(
         mut self,
-        input: std::option::Option<bool>,
+        input: ::std::option::Option<bool>,
     ) -> Self {
         self.dedicated_ip_auto_warmup_enabled = input;
         self
@@ -120,8 +122,11 @@ impl GetAccountOutputBuilder {
     /// <li> <p> <code>PROBATION</code> – We've identified some issues with your Amazon Pinpoint account. We're placing your account under review while you work on correcting these issues.</p> </li>
     /// <li> <p> <code>SHUTDOWN</code> – Your account's ability to send email is currently paused because of an issue with the email sent from your account. When you correct the issue, you can contact us and request that your account's ability to send email is resumed.</p> </li>
     /// </ul>
-    pub fn enforcement_status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.enforcement_status = Some(input.into());
+    pub fn enforcement_status(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.enforcement_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reputation status of your Amazon Pinpoint account. The status can be one of the following:</p>
@@ -132,7 +137,7 @@ impl GetAccountOutputBuilder {
     /// </ul>
     pub fn set_enforcement_status(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.enforcement_status = input;
         self
@@ -141,13 +146,13 @@ impl GetAccountOutputBuilder {
     /// <p>If the value is <code>false</code>, then your account is in the <i>sandbox</i>. When your account is in the sandbox, you can only send email to verified identities. Additionally, the maximum number of emails you can send in a 24-hour period (your sending quota) is 200, and the maximum number of emails you can send per second (your maximum sending rate) is 1.</p>
     /// <p>If the value is <code>true</code>, then your account has production access. When your account has production access, you can send email to any address. The sending quota and maximum sending rate for your account vary based on your specific use case.</p>
     pub fn production_access_enabled(mut self, input: bool) -> Self {
-        self.production_access_enabled = Some(input);
+        self.production_access_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether or not your account has production access in the current AWS Region.</p>
     /// <p>If the value is <code>false</code>, then your account is in the <i>sandbox</i>. When your account is in the sandbox, you can only send email to verified identities. Additionally, the maximum number of emails you can send in a 24-hour period (your sending quota) is 200, and the maximum number of emails you can send per second (your maximum sending rate) is 1.</p>
     /// <p>If the value is <code>true</code>, then your account has production access. When your account has production access, you can send email to any address. The sending quota and maximum sending rate for your account vary based on your specific use case.</p>
-    pub fn set_production_access_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_production_access_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.production_access_enabled = input;
         self
     }

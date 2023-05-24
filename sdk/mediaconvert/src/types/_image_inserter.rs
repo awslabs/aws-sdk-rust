@@ -2,22 +2,22 @@
 
 /// Use the image inserter feature to include a graphic overlay on your video. Enable or disable this feature for each input or output individually. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/graphic-overlay.html. This setting is disabled by default.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImageInserter {
     /// Specify the images that you want to overlay on your video. The images must be PNG or TGA files.
     #[doc(hidden)]
-    pub insertable_images: std::option::Option<std::vec::Vec<crate::types::InsertableImage>>,
+    pub insertable_images: ::std::option::Option<::std::vec::Vec<crate::types::InsertableImage>>,
     /// Specify the reference white level, in nits, for all of your image inserter images. Use to correct brightness levels within HDR10 outputs. For 1,000 nit peak brightness displays, we recommend that you set SDR reference white level to 203 (according to ITU-R BT.2408). Leave blank to use the default value of 100, or specify an integer from 100 to 1000.
     #[doc(hidden)]
-    pub sdr_reference_white_level: std::option::Option<i32>,
+    pub sdr_reference_white_level: ::std::option::Option<i32>,
 }
 impl ImageInserter {
     /// Specify the images that you want to overlay on your video. The images must be PNG or TGA files.
-    pub fn insertable_images(&self) -> std::option::Option<&[crate::types::InsertableImage]> {
+    pub fn insertable_images(&self) -> ::std::option::Option<&[crate::types::InsertableImage]> {
         self.insertable_images.as_deref()
     }
     /// Specify the reference white level, in nits, for all of your image inserter images. Use to correct brightness levels within HDR10 outputs. For 1,000 nit peak brightness displays, we recommend that you set SDR reference white level to 203 (according to ITU-R BT.2408). Leave blank to use the default value of 100, or specify an integer from 100 to 1000.
-    pub fn sdr_reference_white_level(&self) -> std::option::Option<i32> {
+    pub fn sdr_reference_white_level(&self) -> ::std::option::Option<i32> {
         self.sdr_reference_white_level
     }
 }
@@ -30,10 +30,13 @@ impl ImageInserter {
 
 /// A builder for [`ImageInserter`](crate::types::ImageInserter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ImageInserterBuilder {
-    pub(crate) insertable_images: std::option::Option<std::vec::Vec<crate::types::InsertableImage>>,
-    pub(crate) sdr_reference_white_level: std::option::Option<i32>,
+    pub(crate) insertable_images:
+        ::std::option::Option<::std::vec::Vec<crate::types::InsertableImage>>,
+    pub(crate) sdr_reference_white_level: ::std::option::Option<i32>,
 }
 impl ImageInserterBuilder {
     /// Appends an item to `insertable_images`.
@@ -44,24 +47,24 @@ impl ImageInserterBuilder {
     pub fn insertable_images(mut self, input: crate::types::InsertableImage) -> Self {
         let mut v = self.insertable_images.unwrap_or_default();
         v.push(input);
-        self.insertable_images = Some(v);
+        self.insertable_images = ::std::option::Option::Some(v);
         self
     }
     /// Specify the images that you want to overlay on your video. The images must be PNG or TGA files.
     pub fn set_insertable_images(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::InsertableImage>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::InsertableImage>>,
     ) -> Self {
         self.insertable_images = input;
         self
     }
     /// Specify the reference white level, in nits, for all of your image inserter images. Use to correct brightness levels within HDR10 outputs. For 1,000 nit peak brightness displays, we recommend that you set SDR reference white level to 203 (according to ITU-R BT.2408). Leave blank to use the default value of 100, or specify an integer from 100 to 1000.
     pub fn sdr_reference_white_level(mut self, input: i32) -> Self {
-        self.sdr_reference_white_level = Some(input);
+        self.sdr_reference_white_level = ::std::option::Option::Some(input);
         self
     }
     /// Specify the reference white level, in nits, for all of your image inserter images. Use to correct brightness levels within HDR10 outputs. For 1,000 nit peak brightness displays, we recommend that you set SDR reference white level to 203 (according to ITU-R BT.2408). Leave blank to use the default value of 100, or specify an integer from 100 to 1000.
-    pub fn set_sdr_reference_white_level(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_sdr_reference_white_level(mut self, input: ::std::option::Option<i32>) -> Self {
         self.sdr_reference_white_level = input;
         self
     }

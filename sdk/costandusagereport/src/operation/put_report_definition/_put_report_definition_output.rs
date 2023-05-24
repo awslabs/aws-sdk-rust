@@ -2,11 +2,11 @@
 
 /// <p>If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutReportDefinitionOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for PutReportDefinitionOutput {
+impl ::aws_http::request_id::RequestId for PutReportDefinitionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -22,7 +22,9 @@ impl PutReportDefinitionOutput {
 
 /// A builder for [`PutReportDefinitionOutput`](crate::operation::put_report_definition::PutReportDefinitionOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PutReportDefinitionOutputBuilder {
     _request_id: Option<String>,
 }

@@ -2,30 +2,30 @@
 
 /// <p>Discovery configuration associated to the workload.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorkloadDiscoveryConfig {
     /// <p>Discovery integration status in respect to Trusted Advisor for the workload.</p>
     #[doc(hidden)]
     pub trusted_advisor_integration_status:
-        std::option::Option<crate::types::TrustedAdvisorIntegrationStatus>,
+        ::std::option::Option<crate::types::TrustedAdvisorIntegrationStatus>,
     /// <p>The mode to use for identifying resources associated with the workload.</p>
     /// <p>You can specify <code>WORKLOAD_METADATA</code>, <code>APP_REGISTRY</code>, or both.</p>
     #[doc(hidden)]
     pub workload_resource_definition:
-        std::option::Option<std::vec::Vec<crate::types::DefinitionType>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::DefinitionType>>,
 }
 impl WorkloadDiscoveryConfig {
     /// <p>Discovery integration status in respect to Trusted Advisor for the workload.</p>
     pub fn trusted_advisor_integration_status(
         &self,
-    ) -> std::option::Option<&crate::types::TrustedAdvisorIntegrationStatus> {
+    ) -> ::std::option::Option<&crate::types::TrustedAdvisorIntegrationStatus> {
         self.trusted_advisor_integration_status.as_ref()
     }
     /// <p>The mode to use for identifying resources associated with the workload.</p>
     /// <p>You can specify <code>WORKLOAD_METADATA</code>, <code>APP_REGISTRY</code>, or both.</p>
     pub fn workload_resource_definition(
         &self,
-    ) -> std::option::Option<&[crate::types::DefinitionType]> {
+    ) -> ::std::option::Option<&[crate::types::DefinitionType]> {
         self.workload_resource_definition.as_deref()
     }
 }
@@ -38,12 +38,14 @@ impl WorkloadDiscoveryConfig {
 
 /// A builder for [`WorkloadDiscoveryConfig`](crate::types::WorkloadDiscoveryConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct WorkloadDiscoveryConfigBuilder {
     pub(crate) trusted_advisor_integration_status:
-        std::option::Option<crate::types::TrustedAdvisorIntegrationStatus>,
+        ::std::option::Option<crate::types::TrustedAdvisorIntegrationStatus>,
     pub(crate) workload_resource_definition:
-        std::option::Option<std::vec::Vec<crate::types::DefinitionType>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::DefinitionType>>,
 }
 impl WorkloadDiscoveryConfigBuilder {
     /// <p>Discovery integration status in respect to Trusted Advisor for the workload.</p>
@@ -51,13 +53,13 @@ impl WorkloadDiscoveryConfigBuilder {
         mut self,
         input: crate::types::TrustedAdvisorIntegrationStatus,
     ) -> Self {
-        self.trusted_advisor_integration_status = Some(input);
+        self.trusted_advisor_integration_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Discovery integration status in respect to Trusted Advisor for the workload.</p>
     pub fn set_trusted_advisor_integration_status(
         mut self,
-        input: std::option::Option<crate::types::TrustedAdvisorIntegrationStatus>,
+        input: ::std::option::Option<crate::types::TrustedAdvisorIntegrationStatus>,
     ) -> Self {
         self.trusted_advisor_integration_status = input;
         self
@@ -71,14 +73,14 @@ impl WorkloadDiscoveryConfigBuilder {
     pub fn workload_resource_definition(mut self, input: crate::types::DefinitionType) -> Self {
         let mut v = self.workload_resource_definition.unwrap_or_default();
         v.push(input);
-        self.workload_resource_definition = Some(v);
+        self.workload_resource_definition = ::std::option::Option::Some(v);
         self
     }
     /// <p>The mode to use for identifying resources associated with the workload.</p>
     /// <p>You can specify <code>WORKLOAD_METADATA</code>, <code>APP_REGISTRY</code>, or both.</p>
     pub fn set_workload_resource_definition(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DefinitionType>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DefinitionType>>,
     ) -> Self {
         self.workload_resource_definition = input;
         self

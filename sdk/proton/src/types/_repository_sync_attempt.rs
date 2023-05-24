@@ -2,29 +2,29 @@
 
 /// <p>Detail data for a repository sync attempt activated by a push to a repository.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RepositorySyncAttempt {
     /// <p>The time when the sync attempt started.</p>
     #[doc(hidden)]
-    pub started_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The sync attempt status.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::RepositorySyncStatus>,
+    pub status: ::std::option::Option<crate::types::RepositorySyncStatus>,
     /// <p>Detail data for sync attempt events.</p>
     #[doc(hidden)]
-    pub events: std::option::Option<std::vec::Vec<crate::types::RepositorySyncEvent>>,
+    pub events: ::std::option::Option<::std::vec::Vec<crate::types::RepositorySyncEvent>>,
 }
 impl RepositorySyncAttempt {
     /// <p>The time when the sync attempt started.</p>
-    pub fn started_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn started_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.started_at.as_ref()
     }
     /// <p>The sync attempt status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::RepositorySyncStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::RepositorySyncStatus> {
         self.status.as_ref()
     }
     /// <p>Detail data for sync attempt events.</p>
-    pub fn events(&self) -> std::option::Option<&[crate::types::RepositorySyncEvent]> {
+    pub fn events(&self) -> ::std::option::Option<&[crate::types::RepositorySyncEvent]> {
         self.events.as_deref()
     }
 }
@@ -37,35 +37,37 @@ impl RepositorySyncAttempt {
 
 /// A builder for [`RepositorySyncAttempt`](crate::types::RepositorySyncAttempt).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RepositorySyncAttemptBuilder {
-    pub(crate) started_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) status: std::option::Option<crate::types::RepositorySyncStatus>,
-    pub(crate) events: std::option::Option<std::vec::Vec<crate::types::RepositorySyncEvent>>,
+    pub(crate) started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) status: ::std::option::Option<crate::types::RepositorySyncStatus>,
+    pub(crate) events: ::std::option::Option<::std::vec::Vec<crate::types::RepositorySyncEvent>>,
 }
 impl RepositorySyncAttemptBuilder {
     /// <p>The time when the sync attempt started.</p>
-    pub fn started_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.started_at = Some(input);
+    pub fn started_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.started_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time when the sync attempt started.</p>
     pub fn set_started_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.started_at = input;
         self
     }
     /// <p>The sync attempt status.</p>
     pub fn status(mut self, input: crate::types::RepositorySyncStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The sync attempt status.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::RepositorySyncStatus>,
+        input: ::std::option::Option<crate::types::RepositorySyncStatus>,
     ) -> Self {
         self.status = input;
         self
@@ -78,13 +80,13 @@ impl RepositorySyncAttemptBuilder {
     pub fn events(mut self, input: crate::types::RepositorySyncEvent) -> Self {
         let mut v = self.events.unwrap_or_default();
         v.push(input);
-        self.events = Some(v);
+        self.events = ::std::option::Option::Some(v);
         self
     }
     /// <p>Detail data for sync attempt events.</p>
     pub fn set_events(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RepositorySyncEvent>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::RepositorySyncEvent>>,
     ) -> Self {
         self.events = input;
         self

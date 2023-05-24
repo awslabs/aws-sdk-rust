@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ListTargetsFilterName {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum ListTargetsFilterName {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ListTargetsFilterName {
+impl ::std::convert::From<&str> for ListTargetsFilterName {
     fn from(s: &str) -> Self {
         match s {
             "TARGET_ADDRESS" => ListTargetsFilterName::TargetAddress,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for ListTargetsFilterName {
         }
     }
 }
-impl std::str::FromStr for ListTargetsFilterName {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ListTargetsFilterName {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ListTargetsFilterName::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ListTargetsFilterName::from(s))
     }
 }
 impl ListTargetsFilterName {
@@ -91,7 +91,7 @@ impl ListTargetsFilterName {
         &["TARGET_ADDRESS", "TARGET_STATUS", "TARGET_TYPE"]
     }
 }
-impl AsRef<str> for ListTargetsFilterName {
+impl ::std::convert::AsRef<str> for ListTargetsFilterName {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

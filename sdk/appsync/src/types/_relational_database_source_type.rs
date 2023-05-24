@@ -37,13 +37,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum RelationalDatabaseSourceType {
     #[allow(missing_docs)] // documentation missing in model
@@ -51,7 +51,7 @@ pub enum RelationalDatabaseSourceType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for RelationalDatabaseSourceType {
+impl ::std::convert::From<&str> for RelationalDatabaseSourceType {
     fn from(s: &str) -> Self {
         match s {
             "RDS_HTTP_ENDPOINT" => RelationalDatabaseSourceType::RdsHttpEndpoint,
@@ -61,11 +61,11 @@ impl std::convert::From<&str> for RelationalDatabaseSourceType {
         }
     }
 }
-impl std::str::FromStr for RelationalDatabaseSourceType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for RelationalDatabaseSourceType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RelationalDatabaseSourceType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(RelationalDatabaseSourceType::from(s))
     }
 }
 impl RelationalDatabaseSourceType {
@@ -81,7 +81,7 @@ impl RelationalDatabaseSourceType {
         &["RDS_HTTP_ENDPOINT"]
     }
 }
-impl AsRef<str> for RelationalDatabaseSourceType {
+impl ::std::convert::AsRef<str> for RelationalDatabaseSourceType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

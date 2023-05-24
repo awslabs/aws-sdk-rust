@@ -15,56 +15,59 @@ pub use crate::operation::register_type::_register_type_input::RegisterTypeInput
 /// <p>You can have a maximum of 50 resource extension versions registered at a time. This maximum is per account and per region. Use <a href="AWSCloudFormation/latest/APIReference/API_DeregisterType.html">DeregisterType</a> to deregister specific extension versions if necessary.</p>
 /// <p>Once you have initiated a registration request using <code> <code>RegisterType</code> </code>, you can use <code> <code>DescribeTypeRegistration</code> </code> to monitor the progress of the registration request.</p>
 /// <p>Once you have registered a private extension in your account and region, use <a href="AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a> to specify configuration properties for the extension. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring extensions at the account level</a> in the <i>CloudFormation User Guide</i>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RegisterTypeFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::register_type::builders::RegisterTypeInputBuilder,
 }
 impl RegisterTypeFluentBuilder {
     /// Creates a new `RegisterType`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::register_type::RegisterType,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::register_type::RegisterTypeError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_type::RegisterTypeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::register_type::RegisterTypeOutput,
-        aws_smithy_http::result::SdkError<crate::operation::register_type::RegisterTypeError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_type::RegisterTypeError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -77,9 +80,9 @@ impl RegisterTypeFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::register_type::RegisterTypeOutput,
-        aws_smithy_http::result::SdkError<crate::operation::register_type::RegisterTypeError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::register_type::RegisterTypeError>,
     > {
         self.send_middleware().await
     }
@@ -89,7 +92,7 @@ impl RegisterTypeFluentBuilder {
         self
     }
     /// <p>The kind of extension.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::RegistryType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::RegistryType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }
@@ -110,7 +113,7 @@ impl RegisterTypeFluentBuilder {
     /// <li> <p> <code>Dev</code> </p> </li>
     /// </ul>
     /// </note>
-    pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.type_name(input.into());
         self
     }
@@ -131,7 +134,7 @@ impl RegisterTypeFluentBuilder {
     /// <li> <p> <code>Dev</code> </p> </li>
     /// </ul>
     /// </note>
-    pub fn set_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_type_name(input);
         self
     }
@@ -139,7 +142,10 @@ impl RegisterTypeFluentBuilder {
     /// <p>For information about generating a schema handler package for the extension you want to register, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-cli-submit.html">submit</a> in the <i>CloudFormation CLI User Guide</i>.</p> <note>
     /// <p>The user registering the extension must be able to access the package in the S3 bucket. That's, the user needs to have <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a> permissions for the schema handler package. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazons3.html">Actions, Resources, and Condition Keys for Amazon S3</a> in the <i>Identity and Access Management User Guide</i>.</p>
     /// </note>
-    pub fn schema_handler_package(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn schema_handler_package(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.schema_handler_package(input.into());
         self
     }
@@ -149,7 +155,7 @@ impl RegisterTypeFluentBuilder {
     /// </note>
     pub fn set_schema_handler_package(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_schema_handler_package(input);
         self
@@ -162,7 +168,7 @@ impl RegisterTypeFluentBuilder {
     /// <p>Specifies logging configuration information for an extension.</p>
     pub fn set_logging_config(
         mut self,
-        input: std::option::Option<crate::types::LoggingConfig>,
+        input: ::std::option::Option<crate::types::LoggingConfig>,
     ) -> Self {
         self.inner = self.inner.set_logging_config(input);
         self
@@ -170,7 +176,10 @@ impl RegisterTypeFluentBuilder {
     /// <p>The Amazon Resource Name (ARN) of the IAM role for CloudFormation to assume when invoking the extension.</p>
     /// <p>For CloudFormation to assume the specified execution role, the role must contain a trust relationship with the CloudFormation service principle (<code>resources.cloudformation.amazonaws.com</code>). For more information about adding trust relationships, see <a href="IAM/latest/UserGuide/roles-managingrole-editing-console.html#roles-managingrole_edit-trust-policy">Modifying a role trust policy</a> in the <i>Identity and Access Management User Guide</i>.</p>
     /// <p>If your extension calls Amazon Web Services APIs in any of its handlers, you must create an <i> <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM execution role</a> </i> that includes the necessary permissions to call those Amazon Web Services APIs, and provision that execution role in your account. When CloudFormation needs to invoke the resource type handler, CloudFormation assumes this execution role to create a temporary session token, which it then passes to the resource type handler, thereby supplying your resource type with the appropriate credentials.</p>
-    pub fn execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn execution_role_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.execution_role_arn(input.into());
         self
     }
@@ -179,20 +188,23 @@ impl RegisterTypeFluentBuilder {
     /// <p>If your extension calls Amazon Web Services APIs in any of its handlers, you must create an <i> <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM execution role</a> </i> that includes the necessary permissions to call those Amazon Web Services APIs, and provision that execution role in your account. When CloudFormation needs to invoke the resource type handler, CloudFormation assumes this execution role to create a temporary session token, which it then passes to the resource type handler, thereby supplying your resource type with the appropriate credentials.</p>
     pub fn set_execution_role_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_execution_role_arn(input);
         self
     }
     /// <p>A unique identifier that acts as an idempotency key for this registration request. Specifying a client request token prevents CloudFormation from generating more than one version of an extension from the same registration request, even if the request is submitted multiple times.</p>
-    pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn client_request_token(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>A unique identifier that acts as an idempotency key for this registration request. Specifying a client request token prevents CloudFormation from generating more than one version of an extension from the same registration request, even if the request is submitted multiple times.</p>
     pub fn set_client_request_token(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self

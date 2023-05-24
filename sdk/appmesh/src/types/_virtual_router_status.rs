@@ -2,15 +2,15 @@
 
 /// <p>An object that represents the status of a virtual router. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VirtualRouterStatus {
     /// <p>The current status of the virtual router.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::VirtualRouterStatusCode>,
+    pub status: ::std::option::Option<crate::types::VirtualRouterStatusCode>,
 }
 impl VirtualRouterStatus {
     /// <p>The current status of the virtual router.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::VirtualRouterStatusCode> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::VirtualRouterStatusCode> {
         self.status.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl VirtualRouterStatus {
 
 /// A builder for [`VirtualRouterStatus`](crate::types::VirtualRouterStatus).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VirtualRouterStatusBuilder {
-    pub(crate) status: std::option::Option<crate::types::VirtualRouterStatusCode>,
+    pub(crate) status: ::std::option::Option<crate::types::VirtualRouterStatusCode>,
 }
 impl VirtualRouterStatusBuilder {
     /// <p>The current status of the virtual router.</p>
     pub fn status(mut self, input: crate::types::VirtualRouterStatusCode) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current status of the virtual router.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::VirtualRouterStatusCode>,
+        input: ::std::option::Option<crate::types::VirtualRouterStatusCode>,
     ) -> Self {
         self.status = input;
         self

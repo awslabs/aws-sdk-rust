@@ -2,7 +2,7 @@
 pub(crate) fn de_storage_lens_configuration_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::types::StorageLensConfiguration>,
+    ::std::option::Option<crate::types::StorageLensConfiguration>,
     crate::operation::get_storage_lens_configuration::GetStorageLensConfigurationError,
 > {
     (!body.is_empty()).then(||{
@@ -12,13 +12,13 @@ pub(crate) fn de_storage_lens_configuration_payload(
 
 pub fn de_storage_lens_configuration(
     inp: &[u8],
-) -> Result<crate::types::StorageLensConfiguration, aws_smithy_xml::decode::XmlDecodeError> {
-    let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
+) -> Result<crate::types::StorageLensConfiguration, ::aws_smithy_xml::decode::XmlDecodeError> {
+    let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
     let start_el = decoder.start_el();
     if !(start_el.matches("StorageLensConfiguration")) {
-        return Err(aws_smithy_xml::decode::XmlDecodeError::custom(format!(
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected StorageLensConfiguration got {:?}",
             start_el
         )));

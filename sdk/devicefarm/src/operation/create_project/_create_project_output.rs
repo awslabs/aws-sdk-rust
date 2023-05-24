@@ -2,20 +2,20 @@
 
 /// <p>Represents the result of a create project request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateProjectOutput {
     /// <p>The newly created project.</p>
     #[doc(hidden)]
-    pub project: std::option::Option<crate::types::Project>,
+    pub project: ::std::option::Option<crate::types::Project>,
     _request_id: Option<String>,
 }
 impl CreateProjectOutput {
     /// <p>The newly created project.</p>
-    pub fn project(&self) -> std::option::Option<&crate::types::Project> {
+    pub fn project(&self) -> ::std::option::Option<&crate::types::Project> {
         self.project.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for CreateProjectOutput {
+impl ::aws_http::request_id::RequestId for CreateProjectOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,21 @@ impl CreateProjectOutput {
 
 /// A builder for [`CreateProjectOutput`](crate::operation::create_project::CreateProjectOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateProjectOutputBuilder {
-    pub(crate) project: std::option::Option<crate::types::Project>,
+    pub(crate) project: ::std::option::Option<crate::types::Project>,
     _request_id: Option<String>,
 }
 impl CreateProjectOutputBuilder {
     /// <p>The newly created project.</p>
     pub fn project(mut self, input: crate::types::Project) -> Self {
-        self.project = Some(input);
+        self.project = ::std::option::Option::Some(input);
         self
     }
     /// <p>The newly created project.</p>
-    pub fn set_project(mut self, input: std::option::Option<crate::types::Project>) -> Self {
+    pub fn set_project(mut self, input: ::std::option::Option<crate::types::Project>) -> Self {
         self.project = input;
         self
     }

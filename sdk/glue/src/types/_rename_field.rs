@@ -2,36 +2,36 @@
 
 /// <p>Specifies a transform that renames a single data property key.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RenameField {
     /// <p>The name of the transform node.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The data inputs identified by their node names.</p>
     #[doc(hidden)]
-    pub inputs: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A JSON path to a variable in the data structure for the source data.</p>
     #[doc(hidden)]
-    pub source_path: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub source_path: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A JSON path to a variable in the data structure for the target data.</p>
     #[doc(hidden)]
-    pub target_path: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub target_path: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RenameField {
     /// <p>The name of the transform node.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The data inputs identified by their node names.</p>
-    pub fn inputs(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn inputs(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.inputs.as_deref()
     }
     /// <p>A JSON path to a variable in the data structure for the source data.</p>
-    pub fn source_path(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn source_path(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.source_path.as_deref()
     }
     /// <p>A JSON path to a variable in the data structure for the target data.</p>
-    pub fn target_path(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn target_path(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.target_path.as_deref()
     }
 }
@@ -44,21 +44,23 @@ impl RenameField {
 
 /// A builder for [`RenameField`](crate::types::RenameField).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RenameFieldBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) inputs: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) source_path: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) target_path: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) source_path: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) target_path: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RenameFieldBuilder {
     /// <p>The name of the transform node.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the transform node.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
@@ -67,16 +69,16 @@ impl RenameFieldBuilder {
     /// To override the contents of this collection use [`set_inputs`](Self::set_inputs).
     ///
     /// <p>The data inputs identified by their node names.</p>
-    pub fn inputs(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn inputs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.inputs.unwrap_or_default();
         v.push(input.into());
-        self.inputs = Some(v);
+        self.inputs = ::std::option::Option::Some(v);
         self
     }
     /// <p>The data inputs identified by their node names.</p>
     pub fn set_inputs(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inputs = input;
         self
@@ -86,16 +88,16 @@ impl RenameFieldBuilder {
     /// To override the contents of this collection use [`set_source_path`](Self::set_source_path).
     ///
     /// <p>A JSON path to a variable in the data structure for the source data.</p>
-    pub fn source_path(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn source_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.source_path.unwrap_or_default();
         v.push(input.into());
-        self.source_path = Some(v);
+        self.source_path = ::std::option::Option::Some(v);
         self
     }
     /// <p>A JSON path to a variable in the data structure for the source data.</p>
     pub fn set_source_path(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.source_path = input;
         self
@@ -105,16 +107,16 @@ impl RenameFieldBuilder {
     /// To override the contents of this collection use [`set_target_path`](Self::set_target_path).
     ///
     /// <p>A JSON path to a variable in the data structure for the target data.</p>
-    pub fn target_path(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn target_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.target_path.unwrap_or_default();
         v.push(input.into());
-        self.target_path = Some(v);
+        self.target_path = ::std::option::Option::Some(v);
         self
     }
     /// <p>A JSON path to a variable in the data structure for the target data.</p>
     pub fn set_target_path(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.target_path = input;
         self

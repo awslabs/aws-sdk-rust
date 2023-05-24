@@ -2,22 +2,22 @@
 
 /// <p>Describes a stop condition for an experiment template.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExperimentTemplateStopCondition {
     /// <p>The source for the stop condition.</p>
     #[doc(hidden)]
-    pub source: std::option::Option<std::string::String>,
+    pub source: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch alarm, if applicable.</p>
     #[doc(hidden)]
-    pub value: std::option::Option<std::string::String>,
+    pub value: ::std::option::Option<::std::string::String>,
 }
 impl ExperimentTemplateStopCondition {
     /// <p>The source for the stop condition.</p>
-    pub fn source(&self) -> std::option::Option<&str> {
+    pub fn source(&self) -> ::std::option::Option<&str> {
         self.source.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch alarm, if applicable.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl ExperimentTemplateStopCondition {
 
 /// A builder for [`ExperimentTemplateStopCondition`](crate::types::ExperimentTemplateStopCondition).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ExperimentTemplateStopConditionBuilder {
-    pub(crate) source: std::option::Option<std::string::String>,
-    pub(crate) value: std::option::Option<std::string::String>,
+    pub(crate) source: ::std::option::Option<::std::string::String>,
+    pub(crate) value: ::std::option::Option<::std::string::String>,
 }
 impl ExperimentTemplateStopConditionBuilder {
     /// <p>The source for the stop condition.</p>
-    pub fn source(mut self, input: impl Into<std::string::String>) -> Self {
-        self.source = Some(input.into());
+    pub fn source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The source for the stop condition.</p>
-    pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch alarm, if applicable.</p>
-    pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.value = Some(input.into());
+    pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch alarm, if applicable.</p>
-    pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
     }

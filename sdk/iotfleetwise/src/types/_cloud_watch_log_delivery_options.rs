@@ -2,22 +2,22 @@
 
 /// <p>The log delivery option to send data to Amazon CloudWatch Logs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CloudWatchLogDeliveryOptions {
     /// <p>The type of log to send data to Amazon CloudWatch Logs.</p>
     #[doc(hidden)]
-    pub log_type: std::option::Option<crate::types::LogType>,
+    pub log_type: ::std::option::Option<crate::types::LogType>,
     /// <p>The Amazon CloudWatch Logs group the operation sends data to.</p>
     #[doc(hidden)]
-    pub log_group_name: std::option::Option<std::string::String>,
+    pub log_group_name: ::std::option::Option<::std::string::String>,
 }
 impl CloudWatchLogDeliveryOptions {
     /// <p>The type of log to send data to Amazon CloudWatch Logs.</p>
-    pub fn log_type(&self) -> std::option::Option<&crate::types::LogType> {
+    pub fn log_type(&self) -> ::std::option::Option<&crate::types::LogType> {
         self.log_type.as_ref()
     }
     /// <p>The Amazon CloudWatch Logs group the operation sends data to.</p>
-    pub fn log_group_name(&self) -> std::option::Option<&str> {
+    pub fn log_group_name(&self) -> ::std::option::Option<&str> {
         self.log_group_name.as_deref()
     }
 }
@@ -30,29 +30,37 @@ impl CloudWatchLogDeliveryOptions {
 
 /// A builder for [`CloudWatchLogDeliveryOptions`](crate::types::CloudWatchLogDeliveryOptions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CloudWatchLogDeliveryOptionsBuilder {
-    pub(crate) log_type: std::option::Option<crate::types::LogType>,
-    pub(crate) log_group_name: std::option::Option<std::string::String>,
+    pub(crate) log_type: ::std::option::Option<crate::types::LogType>,
+    pub(crate) log_group_name: ::std::option::Option<::std::string::String>,
 }
 impl CloudWatchLogDeliveryOptionsBuilder {
     /// <p>The type of log to send data to Amazon CloudWatch Logs.</p>
     pub fn log_type(mut self, input: crate::types::LogType) -> Self {
-        self.log_type = Some(input);
+        self.log_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of log to send data to Amazon CloudWatch Logs.</p>
-    pub fn set_log_type(mut self, input: std::option::Option<crate::types::LogType>) -> Self {
+    pub fn set_log_type(mut self, input: ::std::option::Option<crate::types::LogType>) -> Self {
         self.log_type = input;
         self
     }
     /// <p>The Amazon CloudWatch Logs group the operation sends data to.</p>
-    pub fn log_group_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.log_group_name = Some(input.into());
+    pub fn log_group_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.log_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon CloudWatch Logs group the operation sends data to.</p>
-    pub fn set_log_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_log_group_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.log_group_name = input;
         self
     }

@@ -2,15 +2,15 @@
 
 /// <p> The information about the service integration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Integrations {
     /// <p> The information about the resource group integration.</p>
     #[doc(hidden)]
-    pub resource_group: std::option::Option<crate::types::ResourceGroup>,
+    pub resource_group: ::std::option::Option<crate::types::ResourceGroup>,
 }
 impl Integrations {
     /// <p> The information about the resource group integration.</p>
-    pub fn resource_group(&self) -> std::option::Option<&crate::types::ResourceGroup> {
+    pub fn resource_group(&self) -> ::std::option::Option<&crate::types::ResourceGroup> {
         self.resource_group.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl Integrations {
 
 /// A builder for [`Integrations`](crate::types::Integrations).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct IntegrationsBuilder {
-    pub(crate) resource_group: std::option::Option<crate::types::ResourceGroup>,
+    pub(crate) resource_group: ::std::option::Option<crate::types::ResourceGroup>,
 }
 impl IntegrationsBuilder {
     /// <p> The information about the resource group integration.</p>
     pub fn resource_group(mut self, input: crate::types::ResourceGroup) -> Self {
-        self.resource_group = Some(input);
+        self.resource_group = ::std::option::Option::Some(input);
         self
     }
     /// <p> The information about the resource group integration.</p>
     pub fn set_resource_group(
         mut self,
-        input: std::option::Option<crate::types::ResourceGroup>,
+        input: ::std::option::Option<crate::types::ResourceGroup>,
     ) -> Self {
         self.resource_group = input;
         self

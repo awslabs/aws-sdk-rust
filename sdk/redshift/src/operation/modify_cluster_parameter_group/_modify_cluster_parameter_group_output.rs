@@ -2,27 +2,27 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyClusterParameterGroupOutput {
     /// <p>The name of the cluster parameter group.</p>
     #[doc(hidden)]
-    pub parameter_group_name: std::option::Option<std::string::String>,
+    pub parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the parameter group. For example, if you made a change to a parameter group name-value pair, then the change could be pending a reboot of an associated cluster.</p>
     #[doc(hidden)]
-    pub parameter_group_status: std::option::Option<std::string::String>,
+    pub parameter_group_status: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ModifyClusterParameterGroupOutput {
     /// <p>The name of the cluster parameter group.</p>
-    pub fn parameter_group_name(&self) -> std::option::Option<&str> {
+    pub fn parameter_group_name(&self) -> ::std::option::Option<&str> {
         self.parameter_group_name.as_deref()
     }
     /// <p>The status of the parameter group. For example, if you made a change to a parameter group name-value pair, then the change could be pending a reboot of an associated cluster.</p>
-    pub fn parameter_group_status(&self) -> std::option::Option<&str> {
+    pub fn parameter_group_status(&self) -> ::std::option::Option<&str> {
         self.parameter_group_status.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ModifyClusterParameterGroupOutput {
+impl ::aws_http::request_id::RequestId for ModifyClusterParameterGroupOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -36,35 +36,43 @@ impl ModifyClusterParameterGroupOutput {
 
 /// A builder for [`ModifyClusterParameterGroupOutput`](crate::operation::modify_cluster_parameter_group::ModifyClusterParameterGroupOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ModifyClusterParameterGroupOutputBuilder {
-    pub(crate) parameter_group_name: std::option::Option<std::string::String>,
-    pub(crate) parameter_group_status: std::option::Option<std::string::String>,
+    pub(crate) parameter_group_name: ::std::option::Option<::std::string::String>,
+    pub(crate) parameter_group_status: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ModifyClusterParameterGroupOutputBuilder {
     /// <p>The name of the cluster parameter group.</p>
-    pub fn parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.parameter_group_name = Some(input.into());
+    pub fn parameter_group_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.parameter_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the cluster parameter group.</p>
     pub fn set_parameter_group_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.parameter_group_name = input;
         self
     }
     /// <p>The status of the parameter group. For example, if you made a change to a parameter group name-value pair, then the change could be pending a reboot of an associated cluster.</p>
-    pub fn parameter_group_status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.parameter_group_status = Some(input.into());
+    pub fn parameter_group_status(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.parameter_group_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the parameter group. For example, if you made a change to a parameter group name-value pair, then the change could be pending a reboot of an associated cluster.</p>
     pub fn set_parameter_group_status(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.parameter_group_status = input;
         self

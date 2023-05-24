@@ -40,13 +40,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ExperienceStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,7 +60,7 @@ pub enum ExperienceStatus {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ExperienceStatus {
+impl ::std::convert::From<&str> for ExperienceStatus {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVE" => ExperienceStatus::Active,
@@ -73,11 +73,11 @@ impl std::convert::From<&str> for ExperienceStatus {
         }
     }
 }
-impl std::str::FromStr for ExperienceStatus {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ExperienceStatus {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ExperienceStatus::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ExperienceStatus::from(s))
     }
 }
 impl ExperienceStatus {
@@ -96,7 +96,7 @@ impl ExperienceStatus {
         &["ACTIVE", "CREATING", "DELETING", "FAILED"]
     }
 }
-impl AsRef<str> for ExperienceStatus {
+impl ::std::convert::AsRef<str> for ExperienceStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

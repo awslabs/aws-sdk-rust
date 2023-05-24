@@ -2,22 +2,22 @@
 
 /// <p>Contains the configuration information for a job's manifest.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobManifest {
     /// <p>Describes the format of the specified job's manifest. If the manifest is in CSV format, also describes the columns contained within the manifest.</p>
     #[doc(hidden)]
-    pub spec: std::option::Option<crate::types::JobManifestSpec>,
+    pub spec: ::std::option::Option<crate::types::JobManifestSpec>,
     /// <p>Contains the information required to locate the specified job's manifest.</p>
     #[doc(hidden)]
-    pub location: std::option::Option<crate::types::JobManifestLocation>,
+    pub location: ::std::option::Option<crate::types::JobManifestLocation>,
 }
 impl JobManifest {
     /// <p>Describes the format of the specified job's manifest. If the manifest is in CSV format, also describes the columns contained within the manifest.</p>
-    pub fn spec(&self) -> std::option::Option<&crate::types::JobManifestSpec> {
+    pub fn spec(&self) -> ::std::option::Option<&crate::types::JobManifestSpec> {
         self.spec.as_ref()
     }
     /// <p>Contains the information required to locate the specified job's manifest.</p>
-    pub fn location(&self) -> std::option::Option<&crate::types::JobManifestLocation> {
+    pub fn location(&self) -> ::std::option::Option<&crate::types::JobManifestLocation> {
         self.location.as_ref()
     }
 }
@@ -30,31 +30,33 @@ impl JobManifest {
 
 /// A builder for [`JobManifest`](crate::types::JobManifest).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct JobManifestBuilder {
-    pub(crate) spec: std::option::Option<crate::types::JobManifestSpec>,
-    pub(crate) location: std::option::Option<crate::types::JobManifestLocation>,
+    pub(crate) spec: ::std::option::Option<crate::types::JobManifestSpec>,
+    pub(crate) location: ::std::option::Option<crate::types::JobManifestLocation>,
 }
 impl JobManifestBuilder {
     /// <p>Describes the format of the specified job's manifest. If the manifest is in CSV format, also describes the columns contained within the manifest.</p>
     pub fn spec(mut self, input: crate::types::JobManifestSpec) -> Self {
-        self.spec = Some(input);
+        self.spec = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes the format of the specified job's manifest. If the manifest is in CSV format, also describes the columns contained within the manifest.</p>
-    pub fn set_spec(mut self, input: std::option::Option<crate::types::JobManifestSpec>) -> Self {
+    pub fn set_spec(mut self, input: ::std::option::Option<crate::types::JobManifestSpec>) -> Self {
         self.spec = input;
         self
     }
     /// <p>Contains the information required to locate the specified job's manifest.</p>
     pub fn location(mut self, input: crate::types::JobManifestLocation) -> Self {
-        self.location = Some(input);
+        self.location = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains the information required to locate the specified job's manifest.</p>
     pub fn set_location(
         mut self,
-        input: std::option::Option<crate::types::JobManifestLocation>,
+        input: ::std::option::Option<crate::types::JobManifestLocation>,
     ) -> Self {
         self.location = input;
         self

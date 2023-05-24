@@ -2,22 +2,22 @@
 
 /// <p>An object representing the path to match in the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HttpPathMatch {
     /// <p>The exact path to match on.</p>
     #[doc(hidden)]
-    pub exact: std::option::Option<std::string::String>,
+    pub exact: ::std::option::Option<::std::string::String>,
     /// <p>The regex used to match the path.</p>
     #[doc(hidden)]
-    pub regex: std::option::Option<std::string::String>,
+    pub regex: ::std::option::Option<::std::string::String>,
 }
 impl HttpPathMatch {
     /// <p>The exact path to match on.</p>
-    pub fn exact(&self) -> std::option::Option<&str> {
+    pub fn exact(&self) -> ::std::option::Option<&str> {
         self.exact.as_deref()
     }
     /// <p>The regex used to match the path.</p>
-    pub fn regex(&self) -> std::option::Option<&str> {
+    pub fn regex(&self) -> ::std::option::Option<&str> {
         self.regex.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl HttpPathMatch {
 
 /// A builder for [`HttpPathMatch`](crate::types::HttpPathMatch).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct HttpPathMatchBuilder {
-    pub(crate) exact: std::option::Option<std::string::String>,
-    pub(crate) regex: std::option::Option<std::string::String>,
+    pub(crate) exact: ::std::option::Option<::std::string::String>,
+    pub(crate) regex: ::std::option::Option<::std::string::String>,
 }
 impl HttpPathMatchBuilder {
     /// <p>The exact path to match on.</p>
-    pub fn exact(mut self, input: impl Into<std::string::String>) -> Self {
-        self.exact = Some(input.into());
+    pub fn exact(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.exact = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The exact path to match on.</p>
-    pub fn set_exact(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_exact(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.exact = input;
         self
     }
     /// <p>The regex used to match the path.</p>
-    pub fn regex(mut self, input: impl Into<std::string::String>) -> Self {
-        self.regex = Some(input.into());
+    pub fn regex(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.regex = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The regex used to match the path.</p>
-    pub fn set_regex(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_regex(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.regex = input;
         self
     }

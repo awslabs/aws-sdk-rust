@@ -7,29 +7,29 @@ pub use crate::operation::create_ota_update::_create_ota_update_input::CreateOta
 ///
 /// <p>Creates an IoT OTA update on a target group of things or groups.</p>
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateOTAUpdate</a> action.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateOTAUpdateFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_ota_update::builders::CreateOtaUpdateInputBuilder,
 }
 impl CreateOTAUpdateFluentBuilder {
     /// Creates a new `CreateOTAUpdate`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_ota_update::CreateOTAUpdate,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_ota_update::CreateOTAUpdateError,
         >,
     > {
@@ -37,30 +37,33 @@ impl CreateOTAUpdateFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_ota_update::CreateOtaUpdateOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_ota_update::CreateOTAUpdateError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -73,31 +76,37 @@ impl CreateOTAUpdateFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_ota_update::CreateOtaUpdateOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_ota_update::CreateOTAUpdateError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The ID of the OTA update to be created.</p>
-    pub fn ota_update_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn ota_update_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.ota_update_id(input.into());
         self
     }
     /// <p>The ID of the OTA update to be created.</p>
-    pub fn set_ota_update_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ota_update_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_ota_update_id(input);
         self
     }
     /// <p>The description of the OTA update.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>The description of the OTA update.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
@@ -106,14 +115,14 @@ impl CreateOTAUpdateFluentBuilder {
     /// To override the contents of this collection use [`set_targets`](Self::set_targets).
     ///
     /// <p>The devices targeted to receive OTA updates.</p>
-    pub fn targets(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn targets(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.targets(input.into());
         self
     }
     /// <p>The devices targeted to receive OTA updates.</p>
     pub fn set_targets(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_targets(input);
         self
@@ -130,7 +139,7 @@ impl CreateOTAUpdateFluentBuilder {
     /// <p>The protocol used to transfer the OTA update image. Valid values are [HTTP], [MQTT], [HTTP, MQTT]. When both HTTP and MQTT are specified, the target device can choose the protocol.</p>
     pub fn set_protocols(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Protocol>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Protocol>>,
     ) -> Self {
         self.inner = self.inner.set_protocols(input);
         self
@@ -143,7 +152,7 @@ impl CreateOTAUpdateFluentBuilder {
     /// <p>Specifies whether the update will continue to run (CONTINUOUS), or will be complete after all the things specified as targets have completed the update (SNAPSHOT). If continuous, the update may also be run on a thing when a change is detected in a target. For example, an update will run on a thing when the thing is added to a target group, even after the update was completed by all things originally in the group. Valid values: CONTINUOUS | SNAPSHOT.</p>
     pub fn set_target_selection(
         mut self,
-        input: std::option::Option<crate::types::TargetSelection>,
+        input: ::std::option::Option<crate::types::TargetSelection>,
     ) -> Self {
         self.inner = self.inner.set_target_selection(input);
         self
@@ -159,7 +168,7 @@ impl CreateOTAUpdateFluentBuilder {
     /// <p>Configuration for the rollout of OTA updates.</p>
     pub fn set_aws_job_executions_rollout_config(
         mut self,
-        input: std::option::Option<crate::types::AwsJobExecutionsRolloutConfig>,
+        input: ::std::option::Option<crate::types::AwsJobExecutionsRolloutConfig>,
     ) -> Self {
         self.inner = self.inner.set_aws_job_executions_rollout_config(input);
         self
@@ -175,7 +184,7 @@ impl CreateOTAUpdateFluentBuilder {
     /// <p>Configuration information for pre-signed URLs.</p>
     pub fn set_aws_job_presigned_url_config(
         mut self,
-        input: std::option::Option<crate::types::AwsJobPresignedUrlConfig>,
+        input: ::std::option::Option<crate::types::AwsJobPresignedUrlConfig>,
     ) -> Self {
         self.inner = self.inner.set_aws_job_presigned_url_config(input);
         self
@@ -188,7 +197,7 @@ impl CreateOTAUpdateFluentBuilder {
     /// <p>The criteria that determine when and how a job abort takes place.</p>
     pub fn set_aws_job_abort_config(
         mut self,
-        input: std::option::Option<crate::types::AwsJobAbortConfig>,
+        input: ::std::option::Option<crate::types::AwsJobAbortConfig>,
     ) -> Self {
         self.inner = self.inner.set_aws_job_abort_config(input);
         self
@@ -201,7 +210,7 @@ impl CreateOTAUpdateFluentBuilder {
     /// <p>Specifies the amount of time each device has to finish its execution of the job. A timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>.</p>
     pub fn set_aws_job_timeout_config(
         mut self,
-        input: std::option::Option<crate::types::AwsJobTimeoutConfig>,
+        input: ::std::option::Option<crate::types::AwsJobTimeoutConfig>,
     ) -> Self {
         self.inner = self.inner.set_aws_job_timeout_config(input);
         self
@@ -218,18 +227,18 @@ impl CreateOTAUpdateFluentBuilder {
     /// <p>The files to be streamed by the OTA update.</p>
     pub fn set_files(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::OtaUpdateFile>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::OtaUpdateFile>>,
     ) -> Self {
         self.inner = self.inner.set_files(input);
         self
     }
     /// <p>The IAM role that grants Amazon Web Services IoT Core access to the Amazon S3, IoT jobs and Amazon Web Services Code Signing resources to create an OTA update job.</p>
-    pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
         self
     }
     /// <p>The IAM role that grants Amazon Web Services IoT Core access to the Amazon S3, IoT jobs and Amazon Web Services Code Signing resources to create an OTA update job.</p>
-    pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
     }
@@ -240,8 +249,8 @@ impl CreateOTAUpdateFluentBuilder {
     /// <p>A list of additional OTA update parameters which are name-value pairs.</p>
     pub fn additional_parameters(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.additional_parameters(k.into(), v.into());
         self
@@ -249,8 +258,8 @@ impl CreateOTAUpdateFluentBuilder {
     /// <p>A list of additional OTA update parameters which are name-value pairs.</p>
     pub fn set_additional_parameters(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_additional_parameters(input);
@@ -268,7 +277,7 @@ impl CreateOTAUpdateFluentBuilder {
     /// <p>Metadata which can be used to manage updates.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self

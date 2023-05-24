@@ -2,29 +2,29 @@
 
 /// <p>The recipient of <code>AnomalySubscription</code> notifications. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Subscriber {
     /// <p>The email address or SNS Amazon Resource Name (ARN). This depends on the <code>Type</code>. </p>
     #[doc(hidden)]
-    pub address: std::option::Option<std::string::String>,
+    pub address: ::std::option::Option<::std::string::String>,
     /// <p>The notification delivery channel. </p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::SubscriberType>,
+    pub r#type: ::std::option::Option<crate::types::SubscriberType>,
     /// <p>Indicates if the subscriber accepts the notifications. </p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::SubscriberStatus>,
+    pub status: ::std::option::Option<crate::types::SubscriberStatus>,
 }
 impl Subscriber {
     /// <p>The email address or SNS Amazon Resource Name (ARN). This depends on the <code>Type</code>. </p>
-    pub fn address(&self) -> std::option::Option<&str> {
+    pub fn address(&self) -> ::std::option::Option<&str> {
         self.address.as_deref()
     }
     /// <p>The notification delivery channel. </p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::SubscriberType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::SubscriberType> {
         self.r#type.as_ref()
     }
     /// <p>Indicates if the subscriber accepts the notifications. </p>
-    pub fn status(&self) -> std::option::Option<&crate::types::SubscriberStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::SubscriberStatus> {
         self.status.as_ref()
     }
 }
@@ -37,42 +37,44 @@ impl Subscriber {
 
 /// A builder for [`Subscriber`](crate::types::Subscriber).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SubscriberBuilder {
-    pub(crate) address: std::option::Option<std::string::String>,
-    pub(crate) r#type: std::option::Option<crate::types::SubscriberType>,
-    pub(crate) status: std::option::Option<crate::types::SubscriberStatus>,
+    pub(crate) address: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::SubscriberType>,
+    pub(crate) status: ::std::option::Option<crate::types::SubscriberStatus>,
 }
 impl SubscriberBuilder {
     /// <p>The email address or SNS Amazon Resource Name (ARN). This depends on the <code>Type</code>. </p>
-    pub fn address(mut self, input: impl Into<std::string::String>) -> Self {
-        self.address = Some(input.into());
+    pub fn address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The email address or SNS Amazon Resource Name (ARN). This depends on the <code>Type</code>. </p>
-    pub fn set_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.address = input;
         self
     }
     /// <p>The notification delivery channel. </p>
     pub fn r#type(mut self, input: crate::types::SubscriberType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The notification delivery channel. </p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::SubscriberType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::SubscriberType>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>Indicates if the subscriber accepts the notifications. </p>
     pub fn status(mut self, input: crate::types::SubscriberStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates if the subscriber accepts the notifications. </p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::SubscriberStatus>,
+        input: ::std::option::Option<crate::types::SubscriberStatus>,
     ) -> Self {
         self.status = input;
         self

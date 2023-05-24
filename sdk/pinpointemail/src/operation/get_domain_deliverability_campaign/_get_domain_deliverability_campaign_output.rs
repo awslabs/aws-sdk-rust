@@ -2,23 +2,23 @@
 
 /// <p>An object that contains all the deliverability data for a specific campaign. This data is available for a campaign only if the campaign sent email by using a domain that the Deliverability dashboard is enabled for (<code>PutDeliverabilityDashboardOption</code> operation).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDomainDeliverabilityCampaignOutput {
     /// <p>An object that contains the deliverability data for the campaign.</p>
     #[doc(hidden)]
     pub domain_deliverability_campaign:
-        std::option::Option<crate::types::DomainDeliverabilityCampaign>,
+        ::std::option::Option<crate::types::DomainDeliverabilityCampaign>,
     _request_id: Option<String>,
 }
 impl GetDomainDeliverabilityCampaignOutput {
     /// <p>An object that contains the deliverability data for the campaign.</p>
     pub fn domain_deliverability_campaign(
         &self,
-    ) -> std::option::Option<&crate::types::DomainDeliverabilityCampaign> {
+    ) -> ::std::option::Option<&crate::types::DomainDeliverabilityCampaign> {
         self.domain_deliverability_campaign.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for GetDomainDeliverabilityCampaignOutput {
+impl ::aws_http::request_id::RequestId for GetDomainDeliverabilityCampaignOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -32,10 +32,12 @@ impl GetDomainDeliverabilityCampaignOutput {
 
 /// A builder for [`GetDomainDeliverabilityCampaignOutput`](crate::operation::get_domain_deliverability_campaign::GetDomainDeliverabilityCampaignOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetDomainDeliverabilityCampaignOutputBuilder {
     pub(crate) domain_deliverability_campaign:
-        std::option::Option<crate::types::DomainDeliverabilityCampaign>,
+        ::std::option::Option<crate::types::DomainDeliverabilityCampaign>,
     _request_id: Option<String>,
 }
 impl GetDomainDeliverabilityCampaignOutputBuilder {
@@ -44,13 +46,13 @@ impl GetDomainDeliverabilityCampaignOutputBuilder {
         mut self,
         input: crate::types::DomainDeliverabilityCampaign,
     ) -> Self {
-        self.domain_deliverability_campaign = Some(input);
+        self.domain_deliverability_campaign = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that contains the deliverability data for the campaign.</p>
     pub fn set_domain_deliverability_campaign(
         mut self,
-        input: std::option::Option<crate::types::DomainDeliverabilityCampaign>,
+        input: ::std::option::Option<crate::types::DomainDeliverabilityCampaign>,
     ) -> Self {
         self.domain_deliverability_campaign = input;
         self

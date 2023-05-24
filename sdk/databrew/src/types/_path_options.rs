@@ -2,36 +2,36 @@
 
 /// <p>Represents a set of options that define how DataBrew selects files for a given Amazon S3 path in a dataset.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PathOptions {
     /// <p>If provided, this structure defines a date range for matching Amazon S3 objects based on their LastModifiedDate attribute in Amazon S3.</p>
     #[doc(hidden)]
-    pub last_modified_date_condition: std::option::Option<crate::types::FilterExpression>,
+    pub last_modified_date_condition: ::std::option::Option<crate::types::FilterExpression>,
     /// <p>If provided, this structure imposes a limit on a number of files that should be selected.</p>
     #[doc(hidden)]
-    pub files_limit: std::option::Option<crate::types::FilesLimit>,
+    pub files_limit: ::std::option::Option<crate::types::FilesLimit>,
     /// <p>A structure that maps names of parameters used in the Amazon S3 path of a dataset to their definitions.</p>
     #[doc(hidden)]
-    pub parameters: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::DatasetParameter>,
+    pub parameters: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::DatasetParameter>,
     >,
 }
 impl PathOptions {
     /// <p>If provided, this structure defines a date range for matching Amazon S3 objects based on their LastModifiedDate attribute in Amazon S3.</p>
     pub fn last_modified_date_condition(
         &self,
-    ) -> std::option::Option<&crate::types::FilterExpression> {
+    ) -> ::std::option::Option<&crate::types::FilterExpression> {
         self.last_modified_date_condition.as_ref()
     }
     /// <p>If provided, this structure imposes a limit on a number of files that should be selected.</p>
-    pub fn files_limit(&self) -> std::option::Option<&crate::types::FilesLimit> {
+    pub fn files_limit(&self) -> ::std::option::Option<&crate::types::FilesLimit> {
         self.files_limit.as_ref()
     }
     /// <p>A structure that maps names of parameters used in the Amazon S3 path of a dataset to their definitions.</p>
     pub fn parameters(
         &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::types::DatasetParameter>,
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, crate::types::DatasetParameter>,
     > {
         self.parameters.as_ref()
     }
@@ -45,35 +45,40 @@ impl PathOptions {
 
 /// A builder for [`PathOptions`](crate::types::PathOptions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PathOptionsBuilder {
-    pub(crate) last_modified_date_condition: std::option::Option<crate::types::FilterExpression>,
-    pub(crate) files_limit: std::option::Option<crate::types::FilesLimit>,
-    pub(crate) parameters: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::DatasetParameter>,
+    pub(crate) last_modified_date_condition: ::std::option::Option<crate::types::FilterExpression>,
+    pub(crate) files_limit: ::std::option::Option<crate::types::FilesLimit>,
+    pub(crate) parameters: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::DatasetParameter>,
     >,
 }
 impl PathOptionsBuilder {
     /// <p>If provided, this structure defines a date range for matching Amazon S3 objects based on their LastModifiedDate attribute in Amazon S3.</p>
     pub fn last_modified_date_condition(mut self, input: crate::types::FilterExpression) -> Self {
-        self.last_modified_date_condition = Some(input);
+        self.last_modified_date_condition = ::std::option::Option::Some(input);
         self
     }
     /// <p>If provided, this structure defines a date range for matching Amazon S3 objects based on their LastModifiedDate attribute in Amazon S3.</p>
     pub fn set_last_modified_date_condition(
         mut self,
-        input: std::option::Option<crate::types::FilterExpression>,
+        input: ::std::option::Option<crate::types::FilterExpression>,
     ) -> Self {
         self.last_modified_date_condition = input;
         self
     }
     /// <p>If provided, this structure imposes a limit on a number of files that should be selected.</p>
     pub fn files_limit(mut self, input: crate::types::FilesLimit) -> Self {
-        self.files_limit = Some(input);
+        self.files_limit = ::std::option::Option::Some(input);
         self
     }
     /// <p>If provided, this structure imposes a limit on a number of files that should be selected.</p>
-    pub fn set_files_limit(mut self, input: std::option::Option<crate::types::FilesLimit>) -> Self {
+    pub fn set_files_limit(
+        mut self,
+        input: ::std::option::Option<crate::types::FilesLimit>,
+    ) -> Self {
         self.files_limit = input;
         self
     }
@@ -84,19 +89,19 @@ impl PathOptionsBuilder {
     /// <p>A structure that maps names of parameters used in the Amazon S3 path of a dataset to their definitions.</p>
     pub fn parameters(
         mut self,
-        k: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
         v: crate::types::DatasetParameter,
     ) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
         hash_map.insert(k.into(), v);
-        self.parameters = Some(hash_map);
+        self.parameters = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A structure that maps names of parameters used in the Amazon S3 path of a dataset to their definitions.</p>
     pub fn set_parameters(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::types::DatasetParameter>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, crate::types::DatasetParameter>,
         >,
     ) -> Self {
         self.parameters = input;

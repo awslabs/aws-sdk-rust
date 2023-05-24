@@ -6,56 +6,59 @@ pub use crate::operation::update_resolver::_update_resolver_input::UpdateResolve
 /// Fluent builder constructing a request to `UpdateResolver`.
 ///
 /// <p>Updates a <code>Resolver</code> object.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateResolverFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::update_resolver::builders::UpdateResolverInputBuilder,
 }
 impl UpdateResolverFluentBuilder {
     /// Creates a new `UpdateResolver`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_resolver::UpdateResolver,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::update_resolver::UpdateResolverError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_resolver::UpdateResolverError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_resolver::UpdateResolverOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_resolver::UpdateResolverError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_resolver::UpdateResolverError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,56 +71,65 @@ impl UpdateResolverFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_resolver::UpdateResolverOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_resolver::UpdateResolverError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_resolver::UpdateResolverError>,
     > {
         self.send_middleware().await
     }
     /// <p>The API ID.</p>
-    pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.api_id(input.into());
         self
     }
     /// <p>The API ID.</p>
-    pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_api_id(input);
         self
     }
     /// <p>The new type name.</p>
-    pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.type_name(input.into());
         self
     }
     /// <p>The new type name.</p>
-    pub fn set_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_type_name(input);
         self
     }
     /// <p>The new field name.</p>
-    pub fn field_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn field_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.field_name(input.into());
         self
     }
     /// <p>The new field name.</p>
-    pub fn set_field_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_field_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_field_name(input);
         self
     }
     /// <p>The new data source name.</p>
-    pub fn data_source_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn data_source_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.data_source_name(input.into());
         self
     }
     /// <p>The new data source name.</p>
-    pub fn set_data_source_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_data_source_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_data_source_name(input);
         self
     }
     /// <p>The new request mapping template.</p>
     /// <p>A resolver uses a request mapping template to convert a GraphQL expression into a format that a data source can understand. Mapping templates are written in Apache Velocity Template Language (VTL).</p>
     /// <p>VTL request mapping templates are optional when using an Lambda data source. For all other data sources, VTL request and response mapping templates are required.</p>
-    pub fn request_mapping_template(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn request_mapping_template(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.request_mapping_template(input.into());
         self
     }
@@ -126,20 +138,23 @@ impl UpdateResolverFluentBuilder {
     /// <p>VTL request mapping templates are optional when using an Lambda data source. For all other data sources, VTL request and response mapping templates are required.</p>
     pub fn set_request_mapping_template(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_request_mapping_template(input);
         self
     }
     /// <p>The new response mapping template.</p>
-    pub fn response_mapping_template(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn response_mapping_template(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.response_mapping_template(input.into());
         self
     }
     /// <p>The new response mapping template.</p>
     pub fn set_response_mapping_template(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_response_mapping_template(input);
         self
@@ -158,7 +173,7 @@ impl UpdateResolverFluentBuilder {
     /// <li> <p> <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is the default resolver type. You can use a UNIT resolver to run a GraphQL query against a single data source.</p> </li>
     /// <li> <p> <b>PIPELINE</b>: A PIPELINE resolver type. You can use a PIPELINE resolver to invoke a series of <code>Function</code> objects in a serial manner. You can use a pipeline resolver to run a GraphQL query against multiple data sources.</p> </li>
     /// </ul>
-    pub fn set_kind(mut self, input: std::option::Option<crate::types::ResolverKind>) -> Self {
+    pub fn set_kind(mut self, input: ::std::option::Option<crate::types::ResolverKind>) -> Self {
         self.inner = self.inner.set_kind(input);
         self
     }
@@ -170,7 +185,7 @@ impl UpdateResolverFluentBuilder {
     /// <p>The <code>PipelineConfig</code>.</p>
     pub fn set_pipeline_config(
         mut self,
-        input: std::option::Option<crate::types::PipelineConfig>,
+        input: ::std::option::Option<crate::types::PipelineConfig>,
     ) -> Self {
         self.inner = self.inner.set_pipeline_config(input);
         self
@@ -181,7 +196,10 @@ impl UpdateResolverFluentBuilder {
         self
     }
     /// <p>The <code>SyncConfig</code> for a resolver attached to a versioned data source.</p>
-    pub fn set_sync_config(mut self, input: std::option::Option<crate::types::SyncConfig>) -> Self {
+    pub fn set_sync_config(
+        mut self,
+        input: ::std::option::Option<crate::types::SyncConfig>,
+    ) -> Self {
         self.inner = self.inner.set_sync_config(input);
         self
     }
@@ -193,7 +211,7 @@ impl UpdateResolverFluentBuilder {
     /// <p>The caching configuration for the resolver.</p>
     pub fn set_caching_config(
         mut self,
-        input: std::option::Option<crate::types::CachingConfig>,
+        input: ::std::option::Option<crate::types::CachingConfig>,
     ) -> Self {
         self.inner = self.inner.set_caching_config(input);
         self
@@ -204,7 +222,7 @@ impl UpdateResolverFluentBuilder {
         self
     }
     /// <p>The maximum batching size for a resolver.</p>
-    pub fn set_max_batch_size(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_batch_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_batch_size(input);
         self
     }
@@ -214,17 +232,20 @@ impl UpdateResolverFluentBuilder {
         self
     }
     /// <p>Describes a runtime used by an Amazon Web Services AppSync pipeline resolver or Amazon Web Services AppSync function. Specifies the name and version of the runtime to use. Note that if a runtime is specified, code must also be specified.</p>
-    pub fn set_runtime(mut self, input: std::option::Option<crate::types::AppSyncRuntime>) -> Self {
+    pub fn set_runtime(
+        mut self,
+        input: ::std::option::Option<crate::types::AppSyncRuntime>,
+    ) -> Self {
         self.inner = self.inner.set_runtime(input);
         self
     }
     /// <p>The <code>resolver</code> code that contains the request and response functions. When code is used, the <code>runtime</code> is required. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
-    pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.code(input.into());
         self
     }
     /// <p>The <code>resolver</code> code that contains the request and response functions. When code is used, the <code>runtime</code> is required. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.</p>
-    pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_code(input);
         self
     }

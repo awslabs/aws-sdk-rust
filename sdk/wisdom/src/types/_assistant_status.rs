@@ -42,13 +42,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum AssistantStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -66,7 +66,7 @@ pub enum AssistantStatus {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for AssistantStatus {
+impl ::std::convert::From<&str> for AssistantStatus {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVE" => AssistantStatus::Active,
@@ -81,11 +81,11 @@ impl std::convert::From<&str> for AssistantStatus {
         }
     }
 }
-impl std::str::FromStr for AssistantStatus {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for AssistantStatus {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AssistantStatus::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(AssistantStatus::from(s))
     }
 }
 impl AssistantStatus {
@@ -113,7 +113,7 @@ impl AssistantStatus {
         ]
     }
 }
-impl AsRef<str> for AssistantStatus {
+impl ::std::convert::AsRef<str> for AssistantStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

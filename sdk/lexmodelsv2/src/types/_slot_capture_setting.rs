@@ -2,71 +2,73 @@
 
 /// <p>Settings used when Amazon Lex successfully captures a slot value from a user.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SlotCaptureSetting {
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
     #[doc(hidden)]
-    pub capture_response: std::option::Option<crate::types::ResponseSpecification>,
+    pub capture_response: ::std::option::Option<crate::types::ResponseSpecification>,
     /// <p>Specifies the next step that the bot runs when the slot value is captured before the code hook times out.</p>
     #[doc(hidden)]
-    pub capture_next_step: std::option::Option<crate::types::DialogState>,
+    pub capture_next_step: ::std::option::Option<crate::types::DialogState>,
     /// <p>A list of conditional branches to evaluate after the slot value is captured.</p>
     #[doc(hidden)]
-    pub capture_conditional: std::option::Option<crate::types::ConditionalSpecification>,
+    pub capture_conditional: ::std::option::Option<crate::types::ConditionalSpecification>,
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
     #[doc(hidden)]
-    pub failure_response: std::option::Option<crate::types::ResponseSpecification>,
+    pub failure_response: ::std::option::Option<crate::types::ResponseSpecification>,
     /// <p>Specifies the next step that the bot runs when the slot value code is not recognized.</p>
     #[doc(hidden)]
-    pub failure_next_step: std::option::Option<crate::types::DialogState>,
+    pub failure_next_step: ::std::option::Option<crate::types::DialogState>,
     /// <p>A list of conditional branches to evaluate when the slot value isn't captured.</p>
     #[doc(hidden)]
-    pub failure_conditional: std::option::Option<crate::types::ConditionalSpecification>,
+    pub failure_conditional: ::std::option::Option<crate::types::ConditionalSpecification>,
     /// <p>Code hook called after Amazon Lex successfully captures a slot value.</p>
     #[doc(hidden)]
-    pub code_hook: std::option::Option<crate::types::DialogCodeHookInvocationSetting>,
+    pub code_hook: ::std::option::Option<crate::types::DialogCodeHookInvocationSetting>,
     /// <p>Code hook called when Amazon Lex doesn't capture a slot value.</p>
     #[doc(hidden)]
     pub elicitation_code_hook:
-        std::option::Option<crate::types::ElicitationCodeHookInvocationSetting>,
+        ::std::option::Option<crate::types::ElicitationCodeHookInvocationSetting>,
 }
 impl SlotCaptureSetting {
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
-    pub fn capture_response(&self) -> std::option::Option<&crate::types::ResponseSpecification> {
+    pub fn capture_response(&self) -> ::std::option::Option<&crate::types::ResponseSpecification> {
         self.capture_response.as_ref()
     }
     /// <p>Specifies the next step that the bot runs when the slot value is captured before the code hook times out.</p>
-    pub fn capture_next_step(&self) -> std::option::Option<&crate::types::DialogState> {
+    pub fn capture_next_step(&self) -> ::std::option::Option<&crate::types::DialogState> {
         self.capture_next_step.as_ref()
     }
     /// <p>A list of conditional branches to evaluate after the slot value is captured.</p>
     pub fn capture_conditional(
         &self,
-    ) -> std::option::Option<&crate::types::ConditionalSpecification> {
+    ) -> ::std::option::Option<&crate::types::ConditionalSpecification> {
         self.capture_conditional.as_ref()
     }
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
-    pub fn failure_response(&self) -> std::option::Option<&crate::types::ResponseSpecification> {
+    pub fn failure_response(&self) -> ::std::option::Option<&crate::types::ResponseSpecification> {
         self.failure_response.as_ref()
     }
     /// <p>Specifies the next step that the bot runs when the slot value code is not recognized.</p>
-    pub fn failure_next_step(&self) -> std::option::Option<&crate::types::DialogState> {
+    pub fn failure_next_step(&self) -> ::std::option::Option<&crate::types::DialogState> {
         self.failure_next_step.as_ref()
     }
     /// <p>A list of conditional branches to evaluate when the slot value isn't captured.</p>
     pub fn failure_conditional(
         &self,
-    ) -> std::option::Option<&crate::types::ConditionalSpecification> {
+    ) -> ::std::option::Option<&crate::types::ConditionalSpecification> {
         self.failure_conditional.as_ref()
     }
     /// <p>Code hook called after Amazon Lex successfully captures a slot value.</p>
-    pub fn code_hook(&self) -> std::option::Option<&crate::types::DialogCodeHookInvocationSetting> {
+    pub fn code_hook(
+        &self,
+    ) -> ::std::option::Option<&crate::types::DialogCodeHookInvocationSetting> {
         self.code_hook.as_ref()
     }
     /// <p>Code hook called when Amazon Lex doesn't capture a slot value.</p>
     pub fn elicitation_code_hook(
         &self,
-    ) -> std::option::Option<&crate::types::ElicitationCodeHookInvocationSetting> {
+    ) -> ::std::option::Option<&crate::types::ElicitationCodeHookInvocationSetting> {
         self.elicitation_code_hook.as_ref()
     }
 }
@@ -79,106 +81,108 @@ impl SlotCaptureSetting {
 
 /// A builder for [`SlotCaptureSetting`](crate::types::SlotCaptureSetting).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SlotCaptureSettingBuilder {
-    pub(crate) capture_response: std::option::Option<crate::types::ResponseSpecification>,
-    pub(crate) capture_next_step: std::option::Option<crate::types::DialogState>,
-    pub(crate) capture_conditional: std::option::Option<crate::types::ConditionalSpecification>,
-    pub(crate) failure_response: std::option::Option<crate::types::ResponseSpecification>,
-    pub(crate) failure_next_step: std::option::Option<crate::types::DialogState>,
-    pub(crate) failure_conditional: std::option::Option<crate::types::ConditionalSpecification>,
-    pub(crate) code_hook: std::option::Option<crate::types::DialogCodeHookInvocationSetting>,
+    pub(crate) capture_response: ::std::option::Option<crate::types::ResponseSpecification>,
+    pub(crate) capture_next_step: ::std::option::Option<crate::types::DialogState>,
+    pub(crate) capture_conditional: ::std::option::Option<crate::types::ConditionalSpecification>,
+    pub(crate) failure_response: ::std::option::Option<crate::types::ResponseSpecification>,
+    pub(crate) failure_next_step: ::std::option::Option<crate::types::DialogState>,
+    pub(crate) failure_conditional: ::std::option::Option<crate::types::ConditionalSpecification>,
+    pub(crate) code_hook: ::std::option::Option<crate::types::DialogCodeHookInvocationSetting>,
     pub(crate) elicitation_code_hook:
-        std::option::Option<crate::types::ElicitationCodeHookInvocationSetting>,
+        ::std::option::Option<crate::types::ElicitationCodeHookInvocationSetting>,
 }
 impl SlotCaptureSettingBuilder {
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
     pub fn capture_response(mut self, input: crate::types::ResponseSpecification) -> Self {
-        self.capture_response = Some(input);
+        self.capture_response = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
     pub fn set_capture_response(
         mut self,
-        input: std::option::Option<crate::types::ResponseSpecification>,
+        input: ::std::option::Option<crate::types::ResponseSpecification>,
     ) -> Self {
         self.capture_response = input;
         self
     }
     /// <p>Specifies the next step that the bot runs when the slot value is captured before the code hook times out.</p>
     pub fn capture_next_step(mut self, input: crate::types::DialogState) -> Self {
-        self.capture_next_step = Some(input);
+        self.capture_next_step = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the next step that the bot runs when the slot value is captured before the code hook times out.</p>
     pub fn set_capture_next_step(
         mut self,
-        input: std::option::Option<crate::types::DialogState>,
+        input: ::std::option::Option<crate::types::DialogState>,
     ) -> Self {
         self.capture_next_step = input;
         self
     }
     /// <p>A list of conditional branches to evaluate after the slot value is captured.</p>
     pub fn capture_conditional(mut self, input: crate::types::ConditionalSpecification) -> Self {
-        self.capture_conditional = Some(input);
+        self.capture_conditional = ::std::option::Option::Some(input);
         self
     }
     /// <p>A list of conditional branches to evaluate after the slot value is captured.</p>
     pub fn set_capture_conditional(
         mut self,
-        input: std::option::Option<crate::types::ConditionalSpecification>,
+        input: ::std::option::Option<crate::types::ConditionalSpecification>,
     ) -> Self {
         self.capture_conditional = input;
         self
     }
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
     pub fn failure_response(mut self, input: crate::types::ResponseSpecification) -> Self {
-        self.failure_response = Some(input);
+        self.failure_response = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
     pub fn set_failure_response(
         mut self,
-        input: std::option::Option<crate::types::ResponseSpecification>,
+        input: ::std::option::Option<crate::types::ResponseSpecification>,
     ) -> Self {
         self.failure_response = input;
         self
     }
     /// <p>Specifies the next step that the bot runs when the slot value code is not recognized.</p>
     pub fn failure_next_step(mut self, input: crate::types::DialogState) -> Self {
-        self.failure_next_step = Some(input);
+        self.failure_next_step = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the next step that the bot runs when the slot value code is not recognized.</p>
     pub fn set_failure_next_step(
         mut self,
-        input: std::option::Option<crate::types::DialogState>,
+        input: ::std::option::Option<crate::types::DialogState>,
     ) -> Self {
         self.failure_next_step = input;
         self
     }
     /// <p>A list of conditional branches to evaluate when the slot value isn't captured.</p>
     pub fn failure_conditional(mut self, input: crate::types::ConditionalSpecification) -> Self {
-        self.failure_conditional = Some(input);
+        self.failure_conditional = ::std::option::Option::Some(input);
         self
     }
     /// <p>A list of conditional branches to evaluate when the slot value isn't captured.</p>
     pub fn set_failure_conditional(
         mut self,
-        input: std::option::Option<crate::types::ConditionalSpecification>,
+        input: ::std::option::Option<crate::types::ConditionalSpecification>,
     ) -> Self {
         self.failure_conditional = input;
         self
     }
     /// <p>Code hook called after Amazon Lex successfully captures a slot value.</p>
     pub fn code_hook(mut self, input: crate::types::DialogCodeHookInvocationSetting) -> Self {
-        self.code_hook = Some(input);
+        self.code_hook = ::std::option::Option::Some(input);
         self
     }
     /// <p>Code hook called after Amazon Lex successfully captures a slot value.</p>
     pub fn set_code_hook(
         mut self,
-        input: std::option::Option<crate::types::DialogCodeHookInvocationSetting>,
+        input: ::std::option::Option<crate::types::DialogCodeHookInvocationSetting>,
     ) -> Self {
         self.code_hook = input;
         self
@@ -188,13 +192,13 @@ impl SlotCaptureSettingBuilder {
         mut self,
         input: crate::types::ElicitationCodeHookInvocationSetting,
     ) -> Self {
-        self.elicitation_code_hook = Some(input);
+        self.elicitation_code_hook = ::std::option::Option::Some(input);
         self
     }
     /// <p>Code hook called when Amazon Lex doesn't capture a slot value.</p>
     pub fn set_elicitation_code_hook(
         mut self,
-        input: std::option::Option<crate::types::ElicitationCodeHookInvocationSetting>,
+        input: ::std::option::Option<crate::types::ElicitationCodeHookInvocationSetting>,
     ) -> Self {
         self.elicitation_code_hook = input;
         self

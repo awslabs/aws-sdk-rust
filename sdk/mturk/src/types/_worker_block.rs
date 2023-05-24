@@ -2,22 +2,22 @@
 
 /// <p> The WorkerBlock data structure represents a Worker who has been blocked. It has two elements: the WorkerId and the Reason for the block. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorkerBlock {
     /// <p> The ID of the Worker who accepted the HIT.</p>
     #[doc(hidden)]
-    pub worker_id: std::option::Option<std::string::String>,
+    pub worker_id: ::std::option::Option<::std::string::String>,
     /// <p> A message explaining the reason the Worker was blocked. </p>
     #[doc(hidden)]
-    pub reason: std::option::Option<std::string::String>,
+    pub reason: ::std::option::Option<::std::string::String>,
 }
 impl WorkerBlock {
     /// <p> The ID of the Worker who accepted the HIT.</p>
-    pub fn worker_id(&self) -> std::option::Option<&str> {
+    pub fn worker_id(&self) -> ::std::option::Option<&str> {
         self.worker_id.as_deref()
     }
     /// <p> A message explaining the reason the Worker was blocked. </p>
-    pub fn reason(&self) -> std::option::Option<&str> {
+    pub fn reason(&self) -> ::std::option::Option<&str> {
         self.reason.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl WorkerBlock {
 
 /// A builder for [`WorkerBlock`](crate::types::WorkerBlock).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct WorkerBlockBuilder {
-    pub(crate) worker_id: std::option::Option<std::string::String>,
-    pub(crate) reason: std::option::Option<std::string::String>,
+    pub(crate) worker_id: ::std::option::Option<::std::string::String>,
+    pub(crate) reason: ::std::option::Option<::std::string::String>,
 }
 impl WorkerBlockBuilder {
     /// <p> The ID of the Worker who accepted the HIT.</p>
-    pub fn worker_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.worker_id = Some(input.into());
+    pub fn worker_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.worker_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The ID of the Worker who accepted the HIT.</p>
-    pub fn set_worker_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_worker_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.worker_id = input;
         self
     }
     /// <p> A message explaining the reason the Worker was blocked. </p>
-    pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
-        self.reason = Some(input.into());
+    pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> A message explaining the reason the Worker was blocked. </p>
-    pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reason = input;
         self
     }

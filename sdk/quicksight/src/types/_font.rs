@@ -2,15 +2,15 @@
 
 /// <p>Determines the font settings.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Font {
     /// <p>Determines the font family settings.</p>
     #[doc(hidden)]
-    pub font_family: std::option::Option<std::string::String>,
+    pub font_family: ::std::option::Option<::std::string::String>,
 }
 impl Font {
     /// <p>Determines the font family settings.</p>
-    pub fn font_family(&self) -> std::option::Option<&str> {
+    pub fn font_family(&self) -> ::std::option::Option<&str> {
         self.font_family.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl Font {
 
 /// A builder for [`Font`](crate::types::Font).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FontBuilder {
-    pub(crate) font_family: std::option::Option<std::string::String>,
+    pub(crate) font_family: ::std::option::Option<::std::string::String>,
 }
 impl FontBuilder {
     /// <p>Determines the font family settings.</p>
-    pub fn font_family(mut self, input: impl Into<std::string::String>) -> Self {
-        self.font_family = Some(input.into());
+    pub fn font_family(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.font_family = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Determines the font family settings.</p>
-    pub fn set_font_family(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_font_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.font_family = input;
         self
     }

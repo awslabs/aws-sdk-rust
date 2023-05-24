@@ -2,22 +2,22 @@
 
 /// <p>Summary information about a managed resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ManagedResourceSummary {
     /// <p>Type of resource associated with a license.</p>
     #[doc(hidden)]
-    pub resource_type: std::option::Option<crate::types::ResourceType>,
+    pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>Number of resources associated with licenses.</p>
     #[doc(hidden)]
-    pub association_count: std::option::Option<i64>,
+    pub association_count: ::std::option::Option<i64>,
 }
 impl ManagedResourceSummary {
     /// <p>Type of resource associated with a license.</p>
-    pub fn resource_type(&self) -> std::option::Option<&crate::types::ResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>Number of resources associated with licenses.</p>
-    pub fn association_count(&self) -> std::option::Option<i64> {
+    pub fn association_count(&self) -> ::std::option::Option<i64> {
         self.association_count
     }
 }
@@ -30,32 +30,34 @@ impl ManagedResourceSummary {
 
 /// A builder for [`ManagedResourceSummary`](crate::types::ManagedResourceSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ManagedResourceSummaryBuilder {
-    pub(crate) resource_type: std::option::Option<crate::types::ResourceType>,
-    pub(crate) association_count: std::option::Option<i64>,
+    pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
+    pub(crate) association_count: ::std::option::Option<i64>,
 }
 impl ManagedResourceSummaryBuilder {
     /// <p>Type of resource associated with a license.</p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
-        self.resource_type = Some(input);
+        self.resource_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Type of resource associated with a license.</p>
     pub fn set_resource_type(
         mut self,
-        input: std::option::Option<crate::types::ResourceType>,
+        input: ::std::option::Option<crate::types::ResourceType>,
     ) -> Self {
         self.resource_type = input;
         self
     }
     /// <p>Number of resources associated with licenses.</p>
     pub fn association_count(mut self, input: i64) -> Self {
-        self.association_count = Some(input);
+        self.association_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>Number of resources associated with licenses.</p>
-    pub fn set_association_count(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_association_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.association_count = input;
         self
     }

@@ -2,7 +2,7 @@
 pub(crate) fn de_sms_channel_response_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::types::SmsChannelResponse>,
+    ::std::option::Option<crate::types::SmsChannelResponse>,
     crate::operation::update_sms_channel::UpdateSmsChannelError,
 > {
     (!body.is_empty())

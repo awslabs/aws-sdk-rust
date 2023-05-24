@@ -8,56 +8,59 @@ pub use crate::operation::delete_analysis::_delete_analysis_input::DeleteAnalysi
 /// <p>Deletes an analysis from Amazon QuickSight. You can optionally include a recovery window during which you can restore the analysis. If you don't specify a recovery window value, the operation defaults to 30 days. Amazon QuickSight attaches a <code>DeletionTime</code> stamp to the response that specifies the end of the recovery window. At the end of the recovery window, Amazon QuickSight deletes the analysis permanently.</p>
 /// <p>At any time before recovery window ends, you can use the <code>RestoreAnalysis</code> API operation to remove the <code>DeletionTime</code> stamp and cancel the deletion of the analysis. The analysis remains visible in the API until it's deleted, so you can describe it but you can't make a template from it.</p>
 /// <p>An analysis that's scheduled for deletion isn't accessible in the Amazon QuickSight console. To access it in the console, restore it. Deleting an analysis doesn't delete the dashboards that you publish from it.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteAnalysisFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::delete_analysis::builders::DeleteAnalysisInputBuilder,
 }
 impl DeleteAnalysisFluentBuilder {
     /// Creates a new `DeleteAnalysis`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::delete_analysis::DeleteAnalysis,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::delete_analysis::DeleteAnalysisError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_analysis::DeleteAnalysisError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::delete_analysis::DeleteAnalysisOutput,
-        aws_smithy_http::result::SdkError<crate::operation::delete_analysis::DeleteAnalysisError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_analysis::DeleteAnalysisError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -70,29 +73,35 @@ impl DeleteAnalysisFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::delete_analysis::DeleteAnalysisOutput,
-        aws_smithy_http::result::SdkError<crate::operation::delete_analysis::DeleteAnalysisError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_analysis::DeleteAnalysisError>,
     > {
         self.send_middleware().await
     }
     /// <p>The ID of the Amazon Web Services account where you want to delete an analysis.</p>
-    pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn aws_account_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account where you want to delete an analysis.</p>
-    pub fn set_aws_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_aws_account_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
     /// <p>The ID of the analysis that you're deleting.</p>
-    pub fn analysis_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn analysis_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.analysis_id(input.into());
         self
     }
     /// <p>The ID of the analysis that you're deleting.</p>
-    pub fn set_analysis_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_analysis_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_analysis_id(input);
         self
     }
@@ -102,7 +111,7 @@ impl DeleteAnalysisFluentBuilder {
         self
     }
     /// <p>A value that specifies the number of days that Amazon QuickSight waits before it deletes the analysis. You can't use this parameter with the <code>ForceDeleteWithoutRecovery</code> option in the same API call. The default value is 30.</p>
-    pub fn set_recovery_window_in_days(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_recovery_window_in_days(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_recovery_window_in_days(input);
         self
     }
@@ -112,7 +121,7 @@ impl DeleteAnalysisFluentBuilder {
         self
     }
     /// <p>This option defaults to the value <code>NoForceDeleteWithoutRecovery</code>. To immediately delete the analysis, add the <code>ForceDeleteWithoutRecovery</code> option. You can't restore an analysis after it's deleted. </p>
-    pub fn set_force_delete_without_recovery(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_force_delete_without_recovery(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_force_delete_without_recovery(input);
         self
     }

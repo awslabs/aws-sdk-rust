@@ -2,22 +2,22 @@
 
 /// <p>Describes an Electronic Data Interchange (EDI) entity as described in as defined in <a href="https://datatracker.ietf.org/doc/html/rfc5280">Subject Alternative Name</a> in RFC 5280.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EdiPartyName {
     /// <p>Specifies the party name.</p>
     #[doc(hidden)]
-    pub party_name: std::option::Option<std::string::String>,
+    pub party_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the name assigner.</p>
     #[doc(hidden)]
-    pub name_assigner: std::option::Option<std::string::String>,
+    pub name_assigner: ::std::option::Option<::std::string::String>,
 }
 impl EdiPartyName {
     /// <p>Specifies the party name.</p>
-    pub fn party_name(&self) -> std::option::Option<&str> {
+    pub fn party_name(&self) -> ::std::option::Option<&str> {
         self.party_name.as_deref()
     }
     /// <p>Specifies the name assigner.</p>
-    pub fn name_assigner(&self) -> std::option::Option<&str> {
+    pub fn name_assigner(&self) -> ::std::option::Option<&str> {
         self.name_assigner.as_deref()
     }
 }
@@ -30,29 +30,37 @@ impl EdiPartyName {
 
 /// A builder for [`EdiPartyName`](crate::types::EdiPartyName).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EdiPartyNameBuilder {
-    pub(crate) party_name: std::option::Option<std::string::String>,
-    pub(crate) name_assigner: std::option::Option<std::string::String>,
+    pub(crate) party_name: ::std::option::Option<::std::string::String>,
+    pub(crate) name_assigner: ::std::option::Option<::std::string::String>,
 }
 impl EdiPartyNameBuilder {
     /// <p>Specifies the party name.</p>
-    pub fn party_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.party_name = Some(input.into());
+    pub fn party_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.party_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the party name.</p>
-    pub fn set_party_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_party_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.party_name = input;
         self
     }
     /// <p>Specifies the name assigner.</p>
-    pub fn name_assigner(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name_assigner = Some(input.into());
+    pub fn name_assigner(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.name_assigner = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the name assigner.</p>
-    pub fn set_name_assigner(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name_assigner(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.name_assigner = input;
         self
     }

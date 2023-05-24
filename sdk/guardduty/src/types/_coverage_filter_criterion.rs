@@ -2,22 +2,26 @@
 
 /// <p>Represents a condition that when matched will be added to the response of the operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CoverageFilterCriterion {
     /// <p>An enum value representing possible filter fields.</p>
     #[doc(hidden)]
-    pub criterion_key: std::option::Option<crate::types::CoverageFilterCriterionKey>,
+    pub criterion_key: ::std::option::Option<crate::types::CoverageFilterCriterionKey>,
     /// <p>Contains information about the condition.</p>
     #[doc(hidden)]
-    pub filter_condition: std::option::Option<crate::types::CoverageFilterCondition>,
+    pub filter_condition: ::std::option::Option<crate::types::CoverageFilterCondition>,
 }
 impl CoverageFilterCriterion {
     /// <p>An enum value representing possible filter fields.</p>
-    pub fn criterion_key(&self) -> std::option::Option<&crate::types::CoverageFilterCriterionKey> {
+    pub fn criterion_key(
+        &self,
+    ) -> ::std::option::Option<&crate::types::CoverageFilterCriterionKey> {
         self.criterion_key.as_ref()
     }
     /// <p>Contains information about the condition.</p>
-    pub fn filter_condition(&self) -> std::option::Option<&crate::types::CoverageFilterCondition> {
+    pub fn filter_condition(
+        &self,
+    ) -> ::std::option::Option<&crate::types::CoverageFilterCondition> {
         self.filter_condition.as_ref()
     }
 }
@@ -30,34 +34,36 @@ impl CoverageFilterCriterion {
 
 /// A builder for [`CoverageFilterCriterion`](crate::types::CoverageFilterCriterion).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CoverageFilterCriterionBuilder {
-    pub(crate) criterion_key: std::option::Option<crate::types::CoverageFilterCriterionKey>,
-    pub(crate) filter_condition: std::option::Option<crate::types::CoverageFilterCondition>,
+    pub(crate) criterion_key: ::std::option::Option<crate::types::CoverageFilterCriterionKey>,
+    pub(crate) filter_condition: ::std::option::Option<crate::types::CoverageFilterCondition>,
 }
 impl CoverageFilterCriterionBuilder {
     /// <p>An enum value representing possible filter fields.</p>
     pub fn criterion_key(mut self, input: crate::types::CoverageFilterCriterionKey) -> Self {
-        self.criterion_key = Some(input);
+        self.criterion_key = ::std::option::Option::Some(input);
         self
     }
     /// <p>An enum value representing possible filter fields.</p>
     pub fn set_criterion_key(
         mut self,
-        input: std::option::Option<crate::types::CoverageFilterCriterionKey>,
+        input: ::std::option::Option<crate::types::CoverageFilterCriterionKey>,
     ) -> Self {
         self.criterion_key = input;
         self
     }
     /// <p>Contains information about the condition.</p>
     pub fn filter_condition(mut self, input: crate::types::CoverageFilterCondition) -> Self {
-        self.filter_condition = Some(input);
+        self.filter_condition = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains information about the condition.</p>
     pub fn set_filter_condition(
         mut self,
-        input: std::option::Option<crate::types::CoverageFilterCondition>,
+        input: ::std::option::Option<crate::types::CoverageFilterCondition>,
     ) -> Self {
         self.filter_condition = input;
         self

@@ -2,57 +2,57 @@
 
 /// A container for resource data. The container takes only one of the following supported resource data types: ''LocalDeviceResourceData'', ''LocalVolumeResourceData'', ''SageMakerMachineLearningModelResourceData'', ''S3MachineLearningModelResourceData'', ''SecretsManagerSecretResourceData''.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceDataContainer {
     /// Attributes that define the local device resource.
     #[doc(hidden)]
-    pub local_device_resource_data: std::option::Option<crate::types::LocalDeviceResourceData>,
+    pub local_device_resource_data: ::std::option::Option<crate::types::LocalDeviceResourceData>,
     /// Attributes that define the local volume resource.
     #[doc(hidden)]
-    pub local_volume_resource_data: std::option::Option<crate::types::LocalVolumeResourceData>,
+    pub local_volume_resource_data: ::std::option::Option<crate::types::LocalVolumeResourceData>,
     /// Attributes that define an Amazon S3 machine learning resource.
     #[doc(hidden)]
     pub s3_machine_learning_model_resource_data:
-        std::option::Option<crate::types::S3MachineLearningModelResourceData>,
+        ::std::option::Option<crate::types::S3MachineLearningModelResourceData>,
     /// Attributes that define an Amazon SageMaker machine learning resource.
     #[doc(hidden)]
     pub sage_maker_machine_learning_model_resource_data:
-        std::option::Option<crate::types::SageMakerMachineLearningModelResourceData>,
+        ::std::option::Option<crate::types::SageMakerMachineLearningModelResourceData>,
     /// Attributes that define a secret resource, which references a secret from AWS Secrets Manager.
     #[doc(hidden)]
     pub secrets_manager_secret_resource_data:
-        std::option::Option<crate::types::SecretsManagerSecretResourceData>,
+        ::std::option::Option<crate::types::SecretsManagerSecretResourceData>,
 }
 impl ResourceDataContainer {
     /// Attributes that define the local device resource.
     pub fn local_device_resource_data(
         &self,
-    ) -> std::option::Option<&crate::types::LocalDeviceResourceData> {
+    ) -> ::std::option::Option<&crate::types::LocalDeviceResourceData> {
         self.local_device_resource_data.as_ref()
     }
     /// Attributes that define the local volume resource.
     pub fn local_volume_resource_data(
         &self,
-    ) -> std::option::Option<&crate::types::LocalVolumeResourceData> {
+    ) -> ::std::option::Option<&crate::types::LocalVolumeResourceData> {
         self.local_volume_resource_data.as_ref()
     }
     /// Attributes that define an Amazon S3 machine learning resource.
     pub fn s3_machine_learning_model_resource_data(
         &self,
-    ) -> std::option::Option<&crate::types::S3MachineLearningModelResourceData> {
+    ) -> ::std::option::Option<&crate::types::S3MachineLearningModelResourceData> {
         self.s3_machine_learning_model_resource_data.as_ref()
     }
     /// Attributes that define an Amazon SageMaker machine learning resource.
     pub fn sage_maker_machine_learning_model_resource_data(
         &self,
-    ) -> std::option::Option<&crate::types::SageMakerMachineLearningModelResourceData> {
+    ) -> ::std::option::Option<&crate::types::SageMakerMachineLearningModelResourceData> {
         self.sage_maker_machine_learning_model_resource_data
             .as_ref()
     }
     /// Attributes that define a secret resource, which references a secret from AWS Secrets Manager.
     pub fn secrets_manager_secret_resource_data(
         &self,
-    ) -> std::option::Option<&crate::types::SecretsManagerSecretResourceData> {
+    ) -> ::std::option::Option<&crate::types::SecretsManagerSecretResourceData> {
         self.secrets_manager_secret_resource_data.as_ref()
     }
 }
@@ -65,18 +65,20 @@ impl ResourceDataContainer {
 
 /// A builder for [`ResourceDataContainer`](crate::types::ResourceDataContainer).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResourceDataContainerBuilder {
     pub(crate) local_device_resource_data:
-        std::option::Option<crate::types::LocalDeviceResourceData>,
+        ::std::option::Option<crate::types::LocalDeviceResourceData>,
     pub(crate) local_volume_resource_data:
-        std::option::Option<crate::types::LocalVolumeResourceData>,
+        ::std::option::Option<crate::types::LocalVolumeResourceData>,
     pub(crate) s3_machine_learning_model_resource_data:
-        std::option::Option<crate::types::S3MachineLearningModelResourceData>,
+        ::std::option::Option<crate::types::S3MachineLearningModelResourceData>,
     pub(crate) sage_maker_machine_learning_model_resource_data:
-        std::option::Option<crate::types::SageMakerMachineLearningModelResourceData>,
+        ::std::option::Option<crate::types::SageMakerMachineLearningModelResourceData>,
     pub(crate) secrets_manager_secret_resource_data:
-        std::option::Option<crate::types::SecretsManagerSecretResourceData>,
+        ::std::option::Option<crate::types::SecretsManagerSecretResourceData>,
 }
 impl ResourceDataContainerBuilder {
     /// Attributes that define the local device resource.
@@ -84,13 +86,13 @@ impl ResourceDataContainerBuilder {
         mut self,
         input: crate::types::LocalDeviceResourceData,
     ) -> Self {
-        self.local_device_resource_data = Some(input);
+        self.local_device_resource_data = ::std::option::Option::Some(input);
         self
     }
     /// Attributes that define the local device resource.
     pub fn set_local_device_resource_data(
         mut self,
-        input: std::option::Option<crate::types::LocalDeviceResourceData>,
+        input: ::std::option::Option<crate::types::LocalDeviceResourceData>,
     ) -> Self {
         self.local_device_resource_data = input;
         self
@@ -100,13 +102,13 @@ impl ResourceDataContainerBuilder {
         mut self,
         input: crate::types::LocalVolumeResourceData,
     ) -> Self {
-        self.local_volume_resource_data = Some(input);
+        self.local_volume_resource_data = ::std::option::Option::Some(input);
         self
     }
     /// Attributes that define the local volume resource.
     pub fn set_local_volume_resource_data(
         mut self,
-        input: std::option::Option<crate::types::LocalVolumeResourceData>,
+        input: ::std::option::Option<crate::types::LocalVolumeResourceData>,
     ) -> Self {
         self.local_volume_resource_data = input;
         self
@@ -116,13 +118,13 @@ impl ResourceDataContainerBuilder {
         mut self,
         input: crate::types::S3MachineLearningModelResourceData,
     ) -> Self {
-        self.s3_machine_learning_model_resource_data = Some(input);
+        self.s3_machine_learning_model_resource_data = ::std::option::Option::Some(input);
         self
     }
     /// Attributes that define an Amazon S3 machine learning resource.
     pub fn set_s3_machine_learning_model_resource_data(
         mut self,
-        input: std::option::Option<crate::types::S3MachineLearningModelResourceData>,
+        input: ::std::option::Option<crate::types::S3MachineLearningModelResourceData>,
     ) -> Self {
         self.s3_machine_learning_model_resource_data = input;
         self
@@ -132,13 +134,13 @@ impl ResourceDataContainerBuilder {
         mut self,
         input: crate::types::SageMakerMachineLearningModelResourceData,
     ) -> Self {
-        self.sage_maker_machine_learning_model_resource_data = Some(input);
+        self.sage_maker_machine_learning_model_resource_data = ::std::option::Option::Some(input);
         self
     }
     /// Attributes that define an Amazon SageMaker machine learning resource.
     pub fn set_sage_maker_machine_learning_model_resource_data(
         mut self,
-        input: std::option::Option<crate::types::SageMakerMachineLearningModelResourceData>,
+        input: ::std::option::Option<crate::types::SageMakerMachineLearningModelResourceData>,
     ) -> Self {
         self.sage_maker_machine_learning_model_resource_data = input;
         self
@@ -148,13 +150,13 @@ impl ResourceDataContainerBuilder {
         mut self,
         input: crate::types::SecretsManagerSecretResourceData,
     ) -> Self {
-        self.secrets_manager_secret_resource_data = Some(input);
+        self.secrets_manager_secret_resource_data = ::std::option::Option::Some(input);
         self
     }
     /// Attributes that define a secret resource, which references a secret from AWS Secrets Manager.
     pub fn set_secrets_manager_secret_resource_data(
         mut self,
-        input: std::option::Option<crate::types::SecretsManagerSecretResourceData>,
+        input: ::std::option::Option<crate::types::SecretsManagerSecretResourceData>,
     ) -> Self {
         self.secrets_manager_secret_resource_data = input;
         self

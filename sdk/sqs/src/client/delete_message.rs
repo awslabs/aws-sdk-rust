@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteMessage`](crate::operation::delete_message::builders::DeleteMessageFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`queue_url(impl Into<String>)`](crate::operation::delete_message::builders::DeleteMessageFluentBuilder::queue_url) / [`set_queue_url(Option<String>)`](crate::operation::delete_message::builders::DeleteMessageFluentBuilder::set_queue_url): <p>The URL of the Amazon SQS queue from which messages are deleted.</p>  <p>Queue URLs and names are case-sensitive.</p>
-    ///   - [`receipt_handle(impl Into<String>)`](crate::operation::delete_message::builders::DeleteMessageFluentBuilder::receipt_handle) / [`set_receipt_handle(Option<String>)`](crate::operation::delete_message::builders::DeleteMessageFluentBuilder::set_receipt_handle): <p>The receipt handle associated with the message to delete.</p>
+    ///   - [`queue_url(impl ::std::convert::Into<String>)`](crate::operation::delete_message::builders::DeleteMessageFluentBuilder::queue_url) / [`set_queue_url(Option<String>)`](crate::operation::delete_message::builders::DeleteMessageFluentBuilder::set_queue_url): <p>The URL of the Amazon SQS queue from which messages are deleted.</p>  <p>Queue URLs and names are case-sensitive.</p>
+    ///   - [`receipt_handle(impl ::std::convert::Into<String>)`](crate::operation::delete_message::builders::DeleteMessageFluentBuilder::receipt_handle) / [`set_receipt_handle(Option<String>)`](crate::operation::delete_message::builders::DeleteMessageFluentBuilder::set_receipt_handle): <p>The receipt handle associated with the message to delete.</p>
     /// - On success, responds with [`DeleteMessageOutput`](crate::operation::delete_message::DeleteMessageOutput)
     /// - On failure, responds with [`SdkError<DeleteMessageError>`](crate::operation::delete_message::DeleteMessageError)
     pub fn delete_message(

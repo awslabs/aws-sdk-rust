@@ -2,20 +2,20 @@
 
 /// <p>Represents the response from the server from a request to describe the user pool client.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeUserPoolClientOutput {
     /// <p>The user pool client from a server response to describe the user pool client.</p>
     #[doc(hidden)]
-    pub user_pool_client: std::option::Option<crate::types::UserPoolClientType>,
+    pub user_pool_client: ::std::option::Option<crate::types::UserPoolClientType>,
     _request_id: Option<String>,
 }
 impl DescribeUserPoolClientOutput {
     /// <p>The user pool client from a server response to describe the user pool client.</p>
-    pub fn user_pool_client(&self) -> std::option::Option<&crate::types::UserPoolClientType> {
+    pub fn user_pool_client(&self) -> ::std::option::Option<&crate::types::UserPoolClientType> {
         self.user_pool_client.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeUserPoolClientOutput {
+impl ::aws_http::request_id::RequestId for DescribeUserPoolClientOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -31,21 +31,23 @@ impl DescribeUserPoolClientOutput {
 
 /// A builder for [`DescribeUserPoolClientOutput`](crate::operation::describe_user_pool_client::DescribeUserPoolClientOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeUserPoolClientOutputBuilder {
-    pub(crate) user_pool_client: std::option::Option<crate::types::UserPoolClientType>,
+    pub(crate) user_pool_client: ::std::option::Option<crate::types::UserPoolClientType>,
     _request_id: Option<String>,
 }
 impl DescribeUserPoolClientOutputBuilder {
     /// <p>The user pool client from a server response to describe the user pool client.</p>
     pub fn user_pool_client(mut self, input: crate::types::UserPoolClientType) -> Self {
-        self.user_pool_client = Some(input);
+        self.user_pool_client = ::std::option::Option::Some(input);
         self
     }
     /// <p>The user pool client from a server response to describe the user pool client.</p>
     pub fn set_user_pool_client(
         mut self,
-        input: std::option::Option<crate::types::UserPoolClientType>,
+        input: ::std::option::Option<crate::types::UserPoolClientType>,
     ) -> Self {
         self.user_pool_client = input;
         self

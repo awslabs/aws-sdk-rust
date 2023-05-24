@@ -2,22 +2,22 @@
 
 /// <p>Output returned from the <code>GetDashboardEmbedUrl</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetDashboardEmbedUrlOutput {
     /// <p>A single-use URL that you can put into your server-side webpage to embed your dashboard. This URL is valid for 5 minutes. The API operation provides the URL with an <code>auth_code</code> value that enables one (and only one) sign-on to a user session that is valid for 10 hours. </p>
     #[doc(hidden)]
-    pub embed_url: std::option::Option<std::string::String>,
+    pub embed_url: ::std::option::Option<::std::string::String>,
     /// <p>The HTTP status of the request.</p>
     #[doc(hidden)]
     pub status: i32,
     /// <p>The Amazon Web Services request ID for this operation.</p>
     #[doc(hidden)]
-    pub request_id: std::option::Option<std::string::String>,
+    pub request_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetDashboardEmbedUrlOutput {
     /// <p>A single-use URL that you can put into your server-side webpage to embed your dashboard. This URL is valid for 5 minutes. The API operation provides the URL with an <code>auth_code</code> value that enables one (and only one) sign-on to a user session that is valid for 10 hours. </p>
-    pub fn embed_url(&self) -> std::option::Option<&str> {
+    pub fn embed_url(&self) -> ::std::option::Option<&str> {
         self.embed_url.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -25,12 +25,12 @@ impl GetDashboardEmbedUrlOutput {
         self.status
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> ::std::option::Option<&str> {
         self.request_id.as_deref()
     }
 }
-impl std::fmt::Debug for GetDashboardEmbedUrlOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for GetDashboardEmbedUrlOutput {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetDashboardEmbedUrlOutput");
         formatter.field("embed_url", &"*** Sensitive Data Redacted ***");
         formatter.field("status", &self.status);
@@ -39,7 +39,7 @@ impl std::fmt::Debug for GetDashboardEmbedUrlOutput {
         formatter.finish()
     }
 }
-impl aws_http::request_id::RequestId for GetDashboardEmbedUrlOutput {
+impl ::aws_http::request_id::RequestId for GetDashboardEmbedUrlOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -55,41 +55,41 @@ impl GetDashboardEmbedUrlOutput {
 
 /// A builder for [`GetDashboardEmbedUrlOutput`](crate::operation::get_dashboard_embed_url::GetDashboardEmbedUrlOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct GetDashboardEmbedUrlOutputBuilder {
-    pub(crate) embed_url: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<i32>,
-    pub(crate) request_id: std::option::Option<std::string::String>,
+    pub(crate) embed_url: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<i32>,
+    pub(crate) request_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetDashboardEmbedUrlOutputBuilder {
     /// <p>A single-use URL that you can put into your server-side webpage to embed your dashboard. This URL is valid for 5 minutes. The API operation provides the URL with an <code>auth_code</code> value that enables one (and only one) sign-on to a user session that is valid for 10 hours. </p>
-    pub fn embed_url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.embed_url = Some(input.into());
+    pub fn embed_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.embed_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A single-use URL that you can put into your server-side webpage to embed your dashboard. This URL is valid for 5 minutes. The API operation provides the URL with an <code>auth_code</code> value that enables one (and only one) sign-on to a user session that is valid for 10 hours. </p>
-    pub fn set_embed_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_embed_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.embed_url = input;
         self
     }
     /// <p>The HTTP status of the request.</p>
     pub fn status(mut self, input: i32) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The HTTP status of the request.</p>
-    pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<i32>) -> Self {
         self.status = input;
         self
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.request_id = Some(input.into());
+    pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.request_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.request_id = input;
         self
     }
@@ -112,8 +112,8 @@ impl GetDashboardEmbedUrlOutputBuilder {
         }
     }
 }
-impl std::fmt::Debug for GetDashboardEmbedUrlOutputBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for GetDashboardEmbedUrlOutputBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetDashboardEmbedUrlOutputBuilder");
         formatter.field("embed_url", &"*** Sensitive Data Redacted ***");
         formatter.field("status", &self.status);

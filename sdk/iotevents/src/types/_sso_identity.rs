@@ -2,22 +2,22 @@
 
 /// <p>Contains information about your identity source in AWS Single Sign-On. For more information, see the <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html">AWS Single Sign-On User Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SsoIdentity {
     /// <p>The ID of the AWS SSO identity store.</p>
     #[doc(hidden)]
-    pub identity_store_id: std::option::Option<std::string::String>,
+    pub identity_store_id: ::std::option::Option<::std::string::String>,
     /// <p>The user ID.</p>
     #[doc(hidden)]
-    pub user_id: std::option::Option<std::string::String>,
+    pub user_id: ::std::option::Option<::std::string::String>,
 }
 impl SsoIdentity {
     /// <p>The ID of the AWS SSO identity store.</p>
-    pub fn identity_store_id(&self) -> std::option::Option<&str> {
+    pub fn identity_store_id(&self) -> ::std::option::Option<&str> {
         self.identity_store_id.as_deref()
     }
     /// <p>The user ID.</p>
-    pub fn user_id(&self) -> std::option::Option<&str> {
+    pub fn user_id(&self) -> ::std::option::Option<&str> {
         self.user_id.as_deref()
     }
 }
@@ -30,32 +30,37 @@ impl SsoIdentity {
 
 /// A builder for [`SsoIdentity`](crate::types::SsoIdentity).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SsoIdentityBuilder {
-    pub(crate) identity_store_id: std::option::Option<std::string::String>,
-    pub(crate) user_id: std::option::Option<std::string::String>,
+    pub(crate) identity_store_id: ::std::option::Option<::std::string::String>,
+    pub(crate) user_id: ::std::option::Option<::std::string::String>,
 }
 impl SsoIdentityBuilder {
     /// <p>The ID of the AWS SSO identity store.</p>
-    pub fn identity_store_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.identity_store_id = Some(input.into());
+    pub fn identity_store_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.identity_store_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the AWS SSO identity store.</p>
     pub fn set_identity_store_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.identity_store_id = input;
         self
     }
     /// <p>The user ID.</p>
-    pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.user_id = Some(input.into());
+    pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.user_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user ID.</p>
-    pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_id = input;
         self
     }

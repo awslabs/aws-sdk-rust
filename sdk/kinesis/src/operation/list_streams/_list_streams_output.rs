@@ -2,41 +2,41 @@
 
 /// <p>Represents the output for <code>ListStreams</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListStreamsOutput {
     /// <p>The names of the streams that are associated with the Amazon Web Services account making the <code>ListStreams</code> request.</p>
     #[doc(hidden)]
-    pub stream_names: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub stream_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>If set to <code>true</code>, there are more streams available to list.</p>
     #[doc(hidden)]
-    pub has_more_streams: std::option::Option<bool>,
+    pub has_more_streams: ::std::option::Option<bool>,
     /// <p></p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     /// <p></p>
     #[doc(hidden)]
-    pub stream_summaries: std::option::Option<std::vec::Vec<crate::types::StreamSummary>>,
+    pub stream_summaries: ::std::option::Option<::std::vec::Vec<crate::types::StreamSummary>>,
     _request_id: Option<String>,
 }
 impl ListStreamsOutput {
     /// <p>The names of the streams that are associated with the Amazon Web Services account making the <code>ListStreams</code> request.</p>
-    pub fn stream_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn stream_names(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.stream_names.as_deref()
     }
     /// <p>If set to <code>true</code>, there are more streams available to list.</p>
-    pub fn has_more_streams(&self) -> std::option::Option<bool> {
+    pub fn has_more_streams(&self) -> ::std::option::Option<bool> {
         self.has_more_streams
     }
     /// <p></p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p></p>
-    pub fn stream_summaries(&self) -> std::option::Option<&[crate::types::StreamSummary]> {
+    pub fn stream_summaries(&self) -> ::std::option::Option<&[crate::types::StreamSummary]> {
         self.stream_summaries.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListStreamsOutput {
+impl ::aws_http::request_id::RequestId for ListStreamsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -50,12 +50,15 @@ impl ListStreamsOutput {
 
 /// A builder for [`ListStreamsOutput`](crate::operation::list_streams::ListStreamsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListStreamsOutputBuilder {
-    pub(crate) stream_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) has_more_streams: std::option::Option<bool>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
-    pub(crate) stream_summaries: std::option::Option<std::vec::Vec<crate::types::StreamSummary>>,
+    pub(crate) stream_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) has_more_streams: ::std::option::Option<bool>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
+    pub(crate) stream_summaries:
+        ::std::option::Option<::std::vec::Vec<crate::types::StreamSummary>>,
     _request_id: Option<String>,
 }
 impl ListStreamsOutputBuilder {
@@ -64,37 +67,37 @@ impl ListStreamsOutputBuilder {
     /// To override the contents of this collection use [`set_stream_names`](Self::set_stream_names).
     ///
     /// <p>The names of the streams that are associated with the Amazon Web Services account making the <code>ListStreams</code> request.</p>
-    pub fn stream_names(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn stream_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.stream_names.unwrap_or_default();
         v.push(input.into());
-        self.stream_names = Some(v);
+        self.stream_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>The names of the streams that are associated with the Amazon Web Services account making the <code>ListStreams</code> request.</p>
     pub fn set_stream_names(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.stream_names = input;
         self
     }
     /// <p>If set to <code>true</code>, there are more streams available to list.</p>
     pub fn has_more_streams(mut self, input: bool) -> Self {
-        self.has_more_streams = Some(input);
+        self.has_more_streams = ::std::option::Option::Some(input);
         self
     }
     /// <p>If set to <code>true</code>, there are more streams available to list.</p>
-    pub fn set_has_more_streams(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_has_more_streams(mut self, input: ::std::option::Option<bool>) -> Self {
         self.has_more_streams = input;
         self
     }
     /// <p></p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p></p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
@@ -106,13 +109,13 @@ impl ListStreamsOutputBuilder {
     pub fn stream_summaries(mut self, input: crate::types::StreamSummary) -> Self {
         let mut v = self.stream_summaries.unwrap_or_default();
         v.push(input);
-        self.stream_summaries = Some(v);
+        self.stream_summaries = ::std::option::Option::Some(v);
         self
     }
     /// <p></p>
     pub fn set_stream_summaries(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::StreamSummary>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::StreamSummary>>,
     ) -> Self {
         self.stream_summaries = input;
         self

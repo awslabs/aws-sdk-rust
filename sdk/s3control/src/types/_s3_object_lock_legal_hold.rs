@@ -2,15 +2,15 @@
 
 /// <p>Whether S3 Object Lock legal hold will be applied to objects in an S3 Batch Operations job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3ObjectLockLegalHold {
     /// <p>The Object Lock legal hold status to be applied to all objects in the Batch Operations job.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::S3ObjectLockLegalHoldStatus>,
+    pub status: ::std::option::Option<crate::types::S3ObjectLockLegalHoldStatus>,
 }
 impl S3ObjectLockLegalHold {
     /// <p>The Object Lock legal hold status to be applied to all objects in the Batch Operations job.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::S3ObjectLockLegalHoldStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::S3ObjectLockLegalHoldStatus> {
         self.status.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl S3ObjectLockLegalHold {
 
 /// A builder for [`S3ObjectLockLegalHold`](crate::types::S3ObjectLockLegalHold).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct S3ObjectLockLegalHoldBuilder {
-    pub(crate) status: std::option::Option<crate::types::S3ObjectLockLegalHoldStatus>,
+    pub(crate) status: ::std::option::Option<crate::types::S3ObjectLockLegalHoldStatus>,
 }
 impl S3ObjectLockLegalHoldBuilder {
     /// <p>The Object Lock legal hold status to be applied to all objects in the Batch Operations job.</p>
     pub fn status(mut self, input: crate::types::S3ObjectLockLegalHoldStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Object Lock legal hold status to be applied to all objects in the Batch Operations job.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::S3ObjectLockLegalHoldStatus>,
+        input: ::std::option::Option<crate::types::S3ObjectLockLegalHoldStatus>,
     ) -> Self {
         self.status = input;
         self

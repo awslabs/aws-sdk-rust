@@ -2,26 +2,28 @@
 
 /// <p>An object representing a Kubernetes label change for a managed node group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateLabelsPayload {
     /// <p>Kubernetes labels to be added or updated.</p>
     #[doc(hidden)]
-    pub add_or_update_labels:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub add_or_update_labels: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>Kubernetes labels to be removed.</p>
     #[doc(hidden)]
-    pub remove_labels: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub remove_labels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateLabelsPayload {
     /// <p>Kubernetes labels to be added or updated.</p>
     pub fn add_or_update_labels(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.add_or_update_labels.as_ref()
     }
     /// <p>Kubernetes labels to be removed.</p>
-    pub fn remove_labels(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn remove_labels(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.remove_labels.as_deref()
     }
 }
@@ -34,11 +36,14 @@ impl UpdateLabelsPayload {
 
 /// A builder for [`UpdateLabelsPayload`](crate::types::UpdateLabelsPayload).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateLabelsPayloadBuilder {
-    pub(crate) add_or_update_labels:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) remove_labels: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) add_or_update_labels: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) remove_labels: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateLabelsPayloadBuilder {
     /// Adds a key-value pair to `add_or_update_labels`.
@@ -48,19 +53,19 @@ impl UpdateLabelsPayloadBuilder {
     /// <p>Kubernetes labels to be added or updated.</p>
     pub fn add_or_update_labels(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.add_or_update_labels.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.add_or_update_labels = Some(hash_map);
+        self.add_or_update_labels = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Kubernetes labels to be added or updated.</p>
     pub fn set_add_or_update_labels(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.add_or_update_labels = input;
@@ -71,16 +76,19 @@ impl UpdateLabelsPayloadBuilder {
     /// To override the contents of this collection use [`set_remove_labels`](Self::set_remove_labels).
     ///
     /// <p>Kubernetes labels to be removed.</p>
-    pub fn remove_labels(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn remove_labels(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.remove_labels.unwrap_or_default();
         v.push(input.into());
-        self.remove_labels = Some(v);
+        self.remove_labels = ::std::option::Option::Some(v);
         self
     }
     /// <p>Kubernetes labels to be removed.</p>
     pub fn set_remove_labels(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.remove_labels = input;
         self

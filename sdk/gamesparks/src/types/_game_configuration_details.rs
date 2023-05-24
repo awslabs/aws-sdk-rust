@@ -3,33 +3,35 @@
 /// <p>Details about the game configuration.</p>
 /// <p> The game configuration is organized into named sections, where the schema of each section is defined by an extension. The schema for these sections can be retrieved using the <code>GetExtensionVersion</code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GameConfigurationDetails {
     /// <p>Configuration data, organized by section name.</p>
     #[doc(hidden)]
-    pub sections:
-        std::option::Option<std::collections::HashMap<std::string::String, crate::types::Section>>,
+    pub sections: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::Section>,
+    >,
     /// <p>The date when the game was created.</p>
     #[doc(hidden)]
-    pub created: std::option::Option<aws_smithy_types::DateTime>,
+    pub created: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date when the game was last modified.</p>
     #[doc(hidden)]
-    pub last_updated: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl GameConfigurationDetails {
     /// <p>Configuration data, organized by section name.</p>
     pub fn sections(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::types::Section>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, crate::types::Section>,
+    > {
         self.sections.as_ref()
     }
     /// <p>The date when the game was created.</p>
-    pub fn created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
     /// <p>The date when the game was last modified.</p>
-    pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated.as_ref()
     }
 }
@@ -42,12 +44,15 @@ impl GameConfigurationDetails {
 
 /// A builder for [`GameConfigurationDetails`](crate::types::GameConfigurationDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GameConfigurationDetailsBuilder {
-    pub(crate) sections:
-        std::option::Option<std::collections::HashMap<std::string::String, crate::types::Section>>,
-    pub(crate) created: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_updated: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) sections: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::Section>,
+    >,
+    pub(crate) created: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl GameConfigurationDetailsBuilder {
     /// Adds a key-value pair to `sections`.
@@ -55,41 +60,48 @@ impl GameConfigurationDetailsBuilder {
     /// To override the contents of this collection use [`set_sections`](Self::set_sections).
     ///
     /// <p>Configuration data, organized by section name.</p>
-    pub fn sections(mut self, k: impl Into<std::string::String>, v: crate::types::Section) -> Self {
+    pub fn sections(
+        mut self,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: crate::types::Section,
+    ) -> Self {
         let mut hash_map = self.sections.unwrap_or_default();
         hash_map.insert(k.into(), v);
-        self.sections = Some(hash_map);
+        self.sections = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Configuration data, organized by section name.</p>
     pub fn set_sections(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::types::Section>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, crate::types::Section>,
         >,
     ) -> Self {
         self.sections = input;
         self
     }
     /// <p>The date when the game was created.</p>
-    pub fn created(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created = Some(input);
+    pub fn created(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date when the game was created.</p>
-    pub fn set_created(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_created(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
         self.created = input;
         self
     }
     /// <p>The date when the game was last modified.</p>
-    pub fn last_updated(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_updated = Some(input);
+    pub fn last_updated(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_updated = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date when the game was last modified.</p>
     pub fn set_last_updated(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_updated = input;
         self

@@ -2,22 +2,22 @@
 
 /// <p>The number of Amazon Web Services resources of a specific type that are compliant or noncompliant, up to a maximum of 100 for each.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComplianceSummaryByResourceType {
     /// <p>The type of Amazon Web Services resource.</p>
     #[doc(hidden)]
-    pub resource_type: std::option::Option<std::string::String>,
+    pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>The number of Amazon Web Services resources that are compliant or noncompliant, up to a maximum of 100 for each.</p>
     #[doc(hidden)]
-    pub compliance_summary: std::option::Option<crate::types::ComplianceSummary>,
+    pub compliance_summary: ::std::option::Option<crate::types::ComplianceSummary>,
 }
 impl ComplianceSummaryByResourceType {
     /// <p>The type of Amazon Web Services resource.</p>
-    pub fn resource_type(&self) -> std::option::Option<&str> {
+    pub fn resource_type(&self) -> ::std::option::Option<&str> {
         self.resource_type.as_deref()
     }
     /// <p>The number of Amazon Web Services resources that are compliant or noncompliant, up to a maximum of 100 for each.</p>
-    pub fn compliance_summary(&self) -> std::option::Option<&crate::types::ComplianceSummary> {
+    pub fn compliance_summary(&self) -> ::std::option::Option<&crate::types::ComplianceSummary> {
         self.compliance_summary.as_ref()
     }
 }
@@ -30,31 +30,39 @@ impl ComplianceSummaryByResourceType {
 
 /// A builder for [`ComplianceSummaryByResourceType`](crate::types::ComplianceSummaryByResourceType).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ComplianceSummaryByResourceTypeBuilder {
-    pub(crate) resource_type: std::option::Option<std::string::String>,
-    pub(crate) compliance_summary: std::option::Option<crate::types::ComplianceSummary>,
+    pub(crate) resource_type: ::std::option::Option<::std::string::String>,
+    pub(crate) compliance_summary: ::std::option::Option<crate::types::ComplianceSummary>,
 }
 impl ComplianceSummaryByResourceTypeBuilder {
     /// <p>The type of Amazon Web Services resource.</p>
-    pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_type = Some(input.into());
+    pub fn resource_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of Amazon Web Services resource.</p>
-    pub fn set_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.resource_type = input;
         self
     }
     /// <p>The number of Amazon Web Services resources that are compliant or noncompliant, up to a maximum of 100 for each.</p>
     pub fn compliance_summary(mut self, input: crate::types::ComplianceSummary) -> Self {
-        self.compliance_summary = Some(input);
+        self.compliance_summary = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of Amazon Web Services resources that are compliant or noncompliant, up to a maximum of 100 for each.</p>
     pub fn set_compliance_summary(
         mut self,
-        input: std::option::Option<crate::types::ComplianceSummary>,
+        input: ::std::option::Option<crate::types::ComplianceSummary>,
     ) -> Self {
         self.compliance_summary = input;
         self

@@ -7,56 +7,59 @@ pub use crate::operation::update_server::_update_server_input::UpdateServerInput
 ///
 /// <p>Updates the file transfer protocol-enabled server's properties after that server has been created.</p>
 /// <p>The <code>UpdateServer</code> call returns the <code>ServerId</code> of the server you updated.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateServerFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::update_server::builders::UpdateServerInputBuilder,
 }
 impl UpdateServerFluentBuilder {
     /// Creates a new `UpdateServer`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_server::UpdateServer,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::update_server::UpdateServerError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_server::UpdateServerError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_server::UpdateServerOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_server::UpdateServerError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_server::UpdateServerError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -69,9 +72,9 @@ impl UpdateServerFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_server::UpdateServerOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_server::UpdateServerError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_server::UpdateServerError>,
     > {
         self.send_middleware().await
     }
@@ -89,7 +92,7 @@ impl UpdateServerFluentBuilder {
     /// </ul> <note>
     /// <p>The certificate must be a valid SSL/TLS X.509 version 3 certificate with FQDN or IP address specified and information about the issuer.</p>
     /// </note>
-    pub fn certificate(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn certificate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.certificate(input.into());
         self
     }
@@ -107,7 +110,7 @@ impl UpdateServerFluentBuilder {
     /// </ul> <note>
     /// <p>The certificate must be a valid SSL/TLS X.509 version 3 certificate with FQDN or IP address specified and information about the issuer.</p>
     /// </note>
-    pub fn set_certificate(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_certificate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_certificate(input);
         self
     }
@@ -131,7 +134,7 @@ impl UpdateServerFluentBuilder {
     /// </ul>
     pub fn set_protocol_details(
         mut self,
-        input: std::option::Option<crate::types::ProtocolDetails>,
+        input: ::std::option::Option<crate::types::ProtocolDetails>,
     ) -> Self {
         self.inner = self.inner.set_protocol_details(input);
         self
@@ -144,7 +147,7 @@ impl UpdateServerFluentBuilder {
     /// <p>The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your endpoint within your VPC, you can make your endpoint accessible only to resources within your VPC, or you can attach Elastic IP addresses and make your endpoint accessible to clients over the internet. Your VPC's default security groups are automatically assigned to your endpoint.</p>
     pub fn set_endpoint_details(
         mut self,
-        input: std::option::Option<crate::types::EndpointDetails>,
+        input: ::std::option::Option<crate::types::EndpointDetails>,
     ) -> Self {
         self.inner = self.inner.set_endpoint_details(input);
         self
@@ -165,7 +168,7 @@ impl UpdateServerFluentBuilder {
     /// </note>
     pub fn set_endpoint_type(
         mut self,
-        input: std::option::Option<crate::types::EndpointType>,
+        input: ::std::option::Option<crate::types::EndpointType>,
     ) -> Self {
         self.inner = self.inner.set_endpoint_type(input);
         self
@@ -183,7 +186,7 @@ impl UpdateServerFluentBuilder {
     /// <p>If you aren't planning to migrate existing users from an existing SFTP-enabled server to a new server, don't update the host key. Accidentally changing a server's host key can be disruptive.</p>
     /// </important>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Manage host keys for your SFTP-enabled server</a> in the <i>Transfer Family User Guide</i>.</p>
-    pub fn host_key(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn host_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.host_key(input.into());
         self
     }
@@ -200,7 +203,7 @@ impl UpdateServerFluentBuilder {
     /// <p>If you aren't planning to migrate existing users from an existing SFTP-enabled server to a new server, don't update the host key. Accidentally changing a server's host key can be disruptive.</p>
     /// </important>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Manage host keys for your SFTP-enabled server</a> in the <i>Transfer Family User Guide</i>.</p>
-    pub fn set_host_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_host_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_host_key(input);
         self
     }
@@ -215,18 +218,18 @@ impl UpdateServerFluentBuilder {
     /// <p>An array containing all of the information required to call a customer's authentication API method.</p>
     pub fn set_identity_provider_details(
         mut self,
-        input: std::option::Option<crate::types::IdentityProviderDetails>,
+        input: ::std::option::Option<crate::types::IdentityProviderDetails>,
     ) -> Self {
         self.inner = self.inner.set_identity_provider_details(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFSevents. When set, you can view user activity in your CloudWatch logs.</p>
-    pub fn logging_role(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn logging_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.logging_role(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFSevents. When set, you can view user activity in your CloudWatch logs.</p>
-    pub fn set_logging_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_logging_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_logging_role(input);
         self
     }
@@ -235,7 +238,7 @@ impl UpdateServerFluentBuilder {
     /// </note>
     pub fn post_authentication_login_banner(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.post_authentication_login_banner(input.into());
         self
@@ -245,7 +248,7 @@ impl UpdateServerFluentBuilder {
     /// </note>
     pub fn set_post_authentication_login_banner(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_post_authentication_login_banner(input);
         self
@@ -254,7 +257,7 @@ impl UpdateServerFluentBuilder {
     /// <p> <code>This system is for the use of authorized users only. Individuals using this computer system without authority, or in excess of their authority, are subject to having all of their activities on this system monitored and recorded by system personnel.</code> </p>
     pub fn pre_authentication_login_banner(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.pre_authentication_login_banner(input.into());
         self
@@ -263,7 +266,7 @@ impl UpdateServerFluentBuilder {
     /// <p> <code>This system is for the use of authorized users only. Individuals using this computer system without authority, or in excess of their authority, are subject to having all of their activities on this system monitored and recorded by system personnel.</code> </p>
     pub fn set_pre_authentication_login_banner(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_pre_authentication_login_banner(input);
         self
@@ -308,31 +311,34 @@ impl UpdateServerFluentBuilder {
     /// </note>
     pub fn set_protocols(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Protocol>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Protocol>>,
     ) -> Self {
         self.inner = self.inner.set_protocols(input);
         self
     }
     /// <p>Specifies the name of the security policy that is attached to the server.</p>
-    pub fn security_policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn security_policy_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.security_policy_name(input.into());
         self
     }
     /// <p>Specifies the name of the security policy that is attached to the server.</p>
     pub fn set_security_policy_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_security_policy_name(input);
         self
     }
     /// <p>A system-assigned unique identifier for a server instance that the Transfer Family user is assigned to.</p>
-    pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.server_id(input.into());
         self
     }
     /// <p>A system-assigned unique identifier for a server instance that the Transfer Family user is assigned to.</p>
-    pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_server_id(input);
         self
     }
@@ -350,7 +356,7 @@ impl UpdateServerFluentBuilder {
     /// <p> <code>aws transfer update-server --server-id s-01234567890abcdef --workflow-details '{"OnUpload":[]}'</code> </p>
     pub fn set_workflow_details(
         mut self,
-        input: std::option::Option<crate::types::WorkflowDetails>,
+        input: ::std::option::Option<crate::types::WorkflowDetails>,
     ) -> Self {
         self.inner = self.inner.set_workflow_details(input);
         self

@@ -2,27 +2,27 @@
 
 /// <p>Formatting configuration for solid color.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ConditionalFormattingSolidColor {
     /// <p>The expression that determines the formatting configuration for solid color.</p>
     #[doc(hidden)]
-    pub expression: std::option::Option<std::string::String>,
+    pub expression: ::std::option::Option<::std::string::String>,
     /// <p>Determines the color.</p>
     #[doc(hidden)]
-    pub color: std::option::Option<std::string::String>,
+    pub color: ::std::option::Option<::std::string::String>,
 }
 impl ConditionalFormattingSolidColor {
     /// <p>The expression that determines the formatting configuration for solid color.</p>
-    pub fn expression(&self) -> std::option::Option<&str> {
+    pub fn expression(&self) -> ::std::option::Option<&str> {
         self.expression.as_deref()
     }
     /// <p>Determines the color.</p>
-    pub fn color(&self) -> std::option::Option<&str> {
+    pub fn color(&self) -> ::std::option::Option<&str> {
         self.color.as_deref()
     }
 }
-impl std::fmt::Debug for ConditionalFormattingSolidColor {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for ConditionalFormattingSolidColor {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ConditionalFormattingSolidColor");
         formatter.field("expression", &"*** Sensitive Data Redacted ***");
         formatter.field("color", &self.color);
@@ -38,29 +38,29 @@ impl ConditionalFormattingSolidColor {
 
 /// A builder for [`ConditionalFormattingSolidColor`](crate::types::ConditionalFormattingSolidColor).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct ConditionalFormattingSolidColorBuilder {
-    pub(crate) expression: std::option::Option<std::string::String>,
-    pub(crate) color: std::option::Option<std::string::String>,
+    pub(crate) expression: ::std::option::Option<::std::string::String>,
+    pub(crate) color: ::std::option::Option<::std::string::String>,
 }
 impl ConditionalFormattingSolidColorBuilder {
     /// <p>The expression that determines the formatting configuration for solid color.</p>
-    pub fn expression(mut self, input: impl Into<std::string::String>) -> Self {
-        self.expression = Some(input.into());
+    pub fn expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.expression = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The expression that determines the formatting configuration for solid color.</p>
-    pub fn set_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.expression = input;
         self
     }
     /// <p>Determines the color.</p>
-    pub fn color(mut self, input: impl Into<std::string::String>) -> Self {
-        self.color = Some(input.into());
+    pub fn color(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.color = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Determines the color.</p>
-    pub fn set_color(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_color(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.color = input;
         self
     }
@@ -72,8 +72,8 @@ impl ConditionalFormattingSolidColorBuilder {
         }
     }
 }
-impl std::fmt::Debug for ConditionalFormattingSolidColorBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for ConditionalFormattingSolidColorBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ConditionalFormattingSolidColorBuilder");
         formatter.field("expression", &"*** Sensitive Data Redacted ***");
         formatter.field("color", &self.color);

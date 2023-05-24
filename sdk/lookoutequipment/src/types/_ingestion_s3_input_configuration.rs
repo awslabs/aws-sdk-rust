@@ -2,29 +2,29 @@
 
 /// <p> Specifies S3 configuration information for the input data for the data ingestion job. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IngestionS3InputConfiguration {
     /// <p>The name of the S3 bucket used for the input data for the data ingestion. </p>
     #[doc(hidden)]
-    pub bucket: std::option::Option<std::string::String>,
+    pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>The prefix for the S3 location being used for the input data for the data ingestion. </p>
     #[doc(hidden)]
-    pub prefix: std::option::Option<std::string::String>,
+    pub prefix: ::std::option::Option<::std::string::String>,
     /// <p> Pattern for matching the Amazon S3 files which will be used for ingestion. If no KeyPattern is provided, we will use the default hierarchy file structure, which is same as KeyPattern {prefix}/{component_name}/* </p>
     #[doc(hidden)]
-    pub key_pattern: std::option::Option<std::string::String>,
+    pub key_pattern: ::std::option::Option<::std::string::String>,
 }
 impl IngestionS3InputConfiguration {
     /// <p>The name of the S3 bucket used for the input data for the data ingestion. </p>
-    pub fn bucket(&self) -> std::option::Option<&str> {
+    pub fn bucket(&self) -> ::std::option::Option<&str> {
         self.bucket.as_deref()
     }
     /// <p>The prefix for the S3 location being used for the input data for the data ingestion. </p>
-    pub fn prefix(&self) -> std::option::Option<&str> {
+    pub fn prefix(&self) -> ::std::option::Option<&str> {
         self.prefix.as_deref()
     }
     /// <p> Pattern for matching the Amazon S3 files which will be used for ingestion. If no KeyPattern is provided, we will use the default hierarchy file structure, which is same as KeyPattern {prefix}/{component_name}/* </p>
-    pub fn key_pattern(&self) -> std::option::Option<&str> {
+    pub fn key_pattern(&self) -> ::std::option::Option<&str> {
         self.key_pattern.as_deref()
     }
 }
@@ -37,40 +37,42 @@ impl IngestionS3InputConfiguration {
 
 /// A builder for [`IngestionS3InputConfiguration`](crate::types::IngestionS3InputConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct IngestionS3InputConfigurationBuilder {
-    pub(crate) bucket: std::option::Option<std::string::String>,
-    pub(crate) prefix: std::option::Option<std::string::String>,
-    pub(crate) key_pattern: std::option::Option<std::string::String>,
+    pub(crate) bucket: ::std::option::Option<::std::string::String>,
+    pub(crate) prefix: ::std::option::Option<::std::string::String>,
+    pub(crate) key_pattern: ::std::option::Option<::std::string::String>,
 }
 impl IngestionS3InputConfigurationBuilder {
     /// <p>The name of the S3 bucket used for the input data for the data ingestion. </p>
-    pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
-        self.bucket = Some(input.into());
+    pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.bucket = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the S3 bucket used for the input data for the data ingestion. </p>
-    pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket = input;
         self
     }
     /// <p>The prefix for the S3 location being used for the input data for the data ingestion. </p>
-    pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
-        self.prefix = Some(input.into());
+    pub fn prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The prefix for the S3 location being used for the input data for the data ingestion. </p>
-    pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.prefix = input;
         self
     }
     /// <p> Pattern for matching the Amazon S3 files which will be used for ingestion. If no KeyPattern is provided, we will use the default hierarchy file structure, which is same as KeyPattern {prefix}/{component_name}/* </p>
-    pub fn key_pattern(mut self, input: impl Into<std::string::String>) -> Self {
-        self.key_pattern = Some(input.into());
+    pub fn key_pattern(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.key_pattern = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Pattern for matching the Amazon S3 files which will be used for ingestion. If no KeyPattern is provided, we will use the default hierarchy file structure, which is same as KeyPattern {prefix}/{component_name}/* </p>
-    pub fn set_key_pattern(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_key_pattern(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_pattern = input;
         self
     }

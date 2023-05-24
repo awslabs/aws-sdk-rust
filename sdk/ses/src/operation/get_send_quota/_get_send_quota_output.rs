@@ -2,7 +2,7 @@
 
 /// <p>Represents your Amazon SES daily sending quota, maximum send rate, and the number of emails you have sent in the last 24 hours.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSendQuotaOutput {
     /// <p>The maximum number of emails the user is allowed to send in a 24-hour interval. A value of -1 signifies an unlimited quota.</p>
     #[doc(hidden)]
@@ -33,7 +33,7 @@ impl GetSendQuotaOutput {
         self.sent_last24_hours
     }
 }
-impl aws_http::request_id::RequestId for GetSendQuotaOutput {
+impl ::aws_http::request_id::RequestId for GetSendQuotaOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -47,21 +47,23 @@ impl GetSendQuotaOutput {
 
 /// A builder for [`GetSendQuotaOutput`](crate::operation::get_send_quota::GetSendQuotaOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetSendQuotaOutputBuilder {
-    pub(crate) max24_hour_send: std::option::Option<f64>,
-    pub(crate) max_send_rate: std::option::Option<f64>,
-    pub(crate) sent_last24_hours: std::option::Option<f64>,
+    pub(crate) max24_hour_send: ::std::option::Option<f64>,
+    pub(crate) max_send_rate: ::std::option::Option<f64>,
+    pub(crate) sent_last24_hours: ::std::option::Option<f64>,
     _request_id: Option<String>,
 }
 impl GetSendQuotaOutputBuilder {
     /// <p>The maximum number of emails the user is allowed to send in a 24-hour interval. A value of -1 signifies an unlimited quota.</p>
     pub fn max24_hour_send(mut self, input: f64) -> Self {
-        self.max24_hour_send = Some(input);
+        self.max24_hour_send = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum number of emails the user is allowed to send in a 24-hour interval. A value of -1 signifies an unlimited quota.</p>
-    pub fn set_max24_hour_send(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_max24_hour_send(mut self, input: ::std::option::Option<f64>) -> Self {
         self.max24_hour_send = input;
         self
     }
@@ -69,23 +71,23 @@ impl GetSendQuotaOutputBuilder {
     /// <p>The rate at which Amazon SES accepts the user's messages might be less than the maximum send rate.</p>
     /// </note>
     pub fn max_send_rate(mut self, input: f64) -> Self {
-        self.max_send_rate = Some(input);
+        self.max_send_rate = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum number of emails that Amazon SES can accept from the user's account per second.</p> <note>
     /// <p>The rate at which Amazon SES accepts the user's messages might be less than the maximum send rate.</p>
     /// </note>
-    pub fn set_max_send_rate(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_max_send_rate(mut self, input: ::std::option::Option<f64>) -> Self {
         self.max_send_rate = input;
         self
     }
     /// <p>The number of emails sent during the previous 24 hours.</p>
     pub fn sent_last24_hours(mut self, input: f64) -> Self {
-        self.sent_last24_hours = Some(input);
+        self.sent_last24_hours = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of emails sent during the previous 24 hours.</p>
-    pub fn set_sent_last24_hours(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_sent_last24_hours(mut self, input: ::std::option::Option<f64>) -> Self {
         self.sent_last24_hours = input;
         self
     }

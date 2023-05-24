@@ -44,13 +44,13 @@
 /// The minimum level of log statements that should be logged by the OTA Agent during an update.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum UpdateAgentLogLevel {
     #[allow(missing_docs)] // documentation missing in model
@@ -72,7 +72,7 @@ pub enum UpdateAgentLogLevel {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for UpdateAgentLogLevel {
+impl ::std::convert::From<&str> for UpdateAgentLogLevel {
     fn from(s: &str) -> Self {
         match s {
             "DEBUG" => UpdateAgentLogLevel::Debug,
@@ -89,11 +89,11 @@ impl std::convert::From<&str> for UpdateAgentLogLevel {
         }
     }
 }
-impl std::str::FromStr for UpdateAgentLogLevel {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for UpdateAgentLogLevel {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(UpdateAgentLogLevel::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(UpdateAgentLogLevel::from(s))
     }
 }
 impl UpdateAgentLogLevel {
@@ -118,7 +118,7 @@ impl UpdateAgentLogLevel {
         ]
     }
 }
-impl AsRef<str> for UpdateAgentLogLevel {
+impl ::std::convert::AsRef<str> for UpdateAgentLogLevel {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

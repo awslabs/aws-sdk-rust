@@ -2,17 +2,17 @@
 
 /// <p>The connectivity status of the thing.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ThingConnectivity {
     /// <p>True if the thing is connected to the Amazon Web Services IoT Core service; false if it is not connected.</p>
     #[doc(hidden)]
     pub connected: bool,
     /// <p>The epoch time (in milliseconds) when the thing last connected or disconnected. If the thing has been disconnected for approximately an hour, the time value might be missing.</p>
     #[doc(hidden)]
-    pub timestamp: std::option::Option<i64>,
+    pub timestamp: ::std::option::Option<i64>,
     /// <p>The reason why the client is disconnected. If the thing has been disconnected for approximately an hour, the <code>disconnectReason</code> value might be missing.</p>
     #[doc(hidden)]
-    pub disconnect_reason: std::option::Option<std::string::String>,
+    pub disconnect_reason: ::std::option::Option<::std::string::String>,
 }
 impl ThingConnectivity {
     /// <p>True if the thing is connected to the Amazon Web Services IoT Core service; false if it is not connected.</p>
@@ -20,11 +20,11 @@ impl ThingConnectivity {
         self.connected
     }
     /// <p>The epoch time (in milliseconds) when the thing last connected or disconnected. If the thing has been disconnected for approximately an hour, the time value might be missing.</p>
-    pub fn timestamp(&self) -> std::option::Option<i64> {
+    pub fn timestamp(&self) -> ::std::option::Option<i64> {
         self.timestamp
     }
     /// <p>The reason why the client is disconnected. If the thing has been disconnected for approximately an hour, the <code>disconnectReason</code> value might be missing.</p>
-    pub fn disconnect_reason(&self) -> std::option::Option<&str> {
+    pub fn disconnect_reason(&self) -> ::std::option::Option<&str> {
         self.disconnect_reason.as_deref()
     }
 }
@@ -37,42 +37,47 @@ impl ThingConnectivity {
 
 /// A builder for [`ThingConnectivity`](crate::types::ThingConnectivity).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ThingConnectivityBuilder {
-    pub(crate) connected: std::option::Option<bool>,
-    pub(crate) timestamp: std::option::Option<i64>,
-    pub(crate) disconnect_reason: std::option::Option<std::string::String>,
+    pub(crate) connected: ::std::option::Option<bool>,
+    pub(crate) timestamp: ::std::option::Option<i64>,
+    pub(crate) disconnect_reason: ::std::option::Option<::std::string::String>,
 }
 impl ThingConnectivityBuilder {
     /// <p>True if the thing is connected to the Amazon Web Services IoT Core service; false if it is not connected.</p>
     pub fn connected(mut self, input: bool) -> Self {
-        self.connected = Some(input);
+        self.connected = ::std::option::Option::Some(input);
         self
     }
     /// <p>True if the thing is connected to the Amazon Web Services IoT Core service; false if it is not connected.</p>
-    pub fn set_connected(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_connected(mut self, input: ::std::option::Option<bool>) -> Self {
         self.connected = input;
         self
     }
     /// <p>The epoch time (in milliseconds) when the thing last connected or disconnected. If the thing has been disconnected for approximately an hour, the time value might be missing.</p>
     pub fn timestamp(mut self, input: i64) -> Self {
-        self.timestamp = Some(input);
+        self.timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>The epoch time (in milliseconds) when the thing last connected or disconnected. If the thing has been disconnected for approximately an hour, the time value might be missing.</p>
-    pub fn set_timestamp(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_timestamp(mut self, input: ::std::option::Option<i64>) -> Self {
         self.timestamp = input;
         self
     }
     /// <p>The reason why the client is disconnected. If the thing has been disconnected for approximately an hour, the <code>disconnectReason</code> value might be missing.</p>
-    pub fn disconnect_reason(mut self, input: impl Into<std::string::String>) -> Self {
-        self.disconnect_reason = Some(input.into());
+    pub fn disconnect_reason(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.disconnect_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason why the client is disconnected. If the thing has been disconnected for approximately an hour, the <code>disconnectReason</code> value might be missing.</p>
     pub fn set_disconnect_reason(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.disconnect_reason = input;
         self

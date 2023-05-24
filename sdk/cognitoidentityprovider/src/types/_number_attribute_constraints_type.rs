@@ -2,22 +2,22 @@
 
 /// <p>The minimum and maximum values of an attribute that is of the number data type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NumberAttributeConstraintsType {
     /// <p>The minimum value of an attribute that is of the number data type.</p>
     #[doc(hidden)]
-    pub min_value: std::option::Option<std::string::String>,
+    pub min_value: ::std::option::Option<::std::string::String>,
     /// <p>The maximum value of an attribute that is of the number data type.</p>
     #[doc(hidden)]
-    pub max_value: std::option::Option<std::string::String>,
+    pub max_value: ::std::option::Option<::std::string::String>,
 }
 impl NumberAttributeConstraintsType {
     /// <p>The minimum value of an attribute that is of the number data type.</p>
-    pub fn min_value(&self) -> std::option::Option<&str> {
+    pub fn min_value(&self) -> ::std::option::Option<&str> {
         self.min_value.as_deref()
     }
     /// <p>The maximum value of an attribute that is of the number data type.</p>
-    pub fn max_value(&self) -> std::option::Option<&str> {
+    pub fn max_value(&self) -> ::std::option::Option<&str> {
         self.max_value.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl NumberAttributeConstraintsType {
 
 /// A builder for [`NumberAttributeConstraintsType`](crate::types::NumberAttributeConstraintsType).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NumberAttributeConstraintsTypeBuilder {
-    pub(crate) min_value: std::option::Option<std::string::String>,
-    pub(crate) max_value: std::option::Option<std::string::String>,
+    pub(crate) min_value: ::std::option::Option<::std::string::String>,
+    pub(crate) max_value: ::std::option::Option<::std::string::String>,
 }
 impl NumberAttributeConstraintsTypeBuilder {
     /// <p>The minimum value of an attribute that is of the number data type.</p>
-    pub fn min_value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.min_value = Some(input.into());
+    pub fn min_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.min_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The minimum value of an attribute that is of the number data type.</p>
-    pub fn set_min_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_min_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.min_value = input;
         self
     }
     /// <p>The maximum value of an attribute that is of the number data type.</p>
-    pub fn max_value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.max_value = Some(input.into());
+    pub fn max_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.max_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The maximum value of an attribute that is of the number data type.</p>
-    pub fn set_max_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_max_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.max_value = input;
         self
     }

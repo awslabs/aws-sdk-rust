@@ -2,43 +2,43 @@
 
 /// <p>Detailed information about the bad request exception error when creating a hosted configuration version.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InvalidConfigurationDetail {
     /// <p>The invalid or out-of-range validation constraint in your JSON schema that failed validation.</p>
     #[doc(hidden)]
-    pub constraint: std::option::Option<std::string::String>,
+    pub constraint: ::std::option::Option<::std::string::String>,
     /// <p>Location of the validation constraint in the configuration JSON schema that failed validation.</p>
     #[doc(hidden)]
-    pub location: std::option::Option<std::string::String>,
+    pub location: ::std::option::Option<::std::string::String>,
     /// <p>The reason for an invalid configuration error.</p>
     #[doc(hidden)]
-    pub reason: std::option::Option<std::string::String>,
+    pub reason: ::std::option::Option<::std::string::String>,
     /// <p>The type of error for an invalid configuration.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<std::string::String>,
+    pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>Details about an error with Lambda when a synchronous extension experiences an error during an invocation.</p>
     #[doc(hidden)]
-    pub value: std::option::Option<std::string::String>,
+    pub value: ::std::option::Option<::std::string::String>,
 }
 impl InvalidConfigurationDetail {
     /// <p>The invalid or out-of-range validation constraint in your JSON schema that failed validation.</p>
-    pub fn constraint(&self) -> std::option::Option<&str> {
+    pub fn constraint(&self) -> ::std::option::Option<&str> {
         self.constraint.as_deref()
     }
     /// <p>Location of the validation constraint in the configuration JSON schema that failed validation.</p>
-    pub fn location(&self) -> std::option::Option<&str> {
+    pub fn location(&self) -> ::std::option::Option<&str> {
         self.location.as_deref()
     }
     /// <p>The reason for an invalid configuration error.</p>
-    pub fn reason(&self) -> std::option::Option<&str> {
+    pub fn reason(&self) -> ::std::option::Option<&str> {
         self.reason.as_deref()
     }
     /// <p>The type of error for an invalid configuration.</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
     }
     /// <p>Details about an error with Lambda when a synchronous extension experiences an error during an invocation.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
 }
@@ -51,62 +51,64 @@ impl InvalidConfigurationDetail {
 
 /// A builder for [`InvalidConfigurationDetail`](crate::types::InvalidConfigurationDetail).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InvalidConfigurationDetailBuilder {
-    pub(crate) constraint: std::option::Option<std::string::String>,
-    pub(crate) location: std::option::Option<std::string::String>,
-    pub(crate) reason: std::option::Option<std::string::String>,
-    pub(crate) r#type: std::option::Option<std::string::String>,
-    pub(crate) value: std::option::Option<std::string::String>,
+    pub(crate) constraint: ::std::option::Option<::std::string::String>,
+    pub(crate) location: ::std::option::Option<::std::string::String>,
+    pub(crate) reason: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<::std::string::String>,
+    pub(crate) value: ::std::option::Option<::std::string::String>,
 }
 impl InvalidConfigurationDetailBuilder {
     /// <p>The invalid or out-of-range validation constraint in your JSON schema that failed validation.</p>
-    pub fn constraint(mut self, input: impl Into<std::string::String>) -> Self {
-        self.constraint = Some(input.into());
+    pub fn constraint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.constraint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The invalid or out-of-range validation constraint in your JSON schema that failed validation.</p>
-    pub fn set_constraint(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_constraint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.constraint = input;
         self
     }
     /// <p>Location of the validation constraint in the configuration JSON schema that failed validation.</p>
-    pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
-        self.location = Some(input.into());
+    pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.location = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Location of the validation constraint in the configuration JSON schema that failed validation.</p>
-    pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location = input;
         self
     }
     /// <p>The reason for an invalid configuration error.</p>
-    pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
-        self.reason = Some(input.into());
+    pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason for an invalid configuration error.</p>
-    pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reason = input;
         self
     }
     /// <p>The type of error for an invalid configuration.</p>
-    pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.r#type = Some(input.into());
+    pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.r#type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of error for an invalid configuration.</p>
-    pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>Details about an error with Lambda when a synchronous extension experiences an error during an invocation.</p>
-    pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.value = Some(input.into());
+    pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Details about an error with Lambda when a synchronous extension experiences an error during an invocation.</p>
-    pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
     }

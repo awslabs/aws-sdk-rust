@@ -2,22 +2,22 @@
 
 /// <p>A set amount of time that an escalation plan or engagement plan engages the specified contacts or contact methods.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Stage {
     /// <p>The time to wait until beginning the next stage. The duration can only be set to 0 if a target is specified.</p>
     #[doc(hidden)]
-    pub duration_in_minutes: std::option::Option<i32>,
+    pub duration_in_minutes: ::std::option::Option<i32>,
     /// <p>The contacts or contact methods that the escalation plan or engagement plan is engaging.</p>
     #[doc(hidden)]
-    pub targets: std::option::Option<std::vec::Vec<crate::types::Target>>,
+    pub targets: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
 }
 impl Stage {
     /// <p>The time to wait until beginning the next stage. The duration can only be set to 0 if a target is specified.</p>
-    pub fn duration_in_minutes(&self) -> std::option::Option<i32> {
+    pub fn duration_in_minutes(&self) -> ::std::option::Option<i32> {
         self.duration_in_minutes
     }
     /// <p>The contacts or contact methods that the escalation plan or engagement plan is engaging.</p>
-    pub fn targets(&self) -> std::option::Option<&[crate::types::Target]> {
+    pub fn targets(&self) -> ::std::option::Option<&[crate::types::Target]> {
         self.targets.as_deref()
     }
 }
@@ -30,19 +30,21 @@ impl Stage {
 
 /// A builder for [`Stage`](crate::types::Stage).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StageBuilder {
-    pub(crate) duration_in_minutes: std::option::Option<i32>,
-    pub(crate) targets: std::option::Option<std::vec::Vec<crate::types::Target>>,
+    pub(crate) duration_in_minutes: ::std::option::Option<i32>,
+    pub(crate) targets: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
 }
 impl StageBuilder {
     /// <p>The time to wait until beginning the next stage. The duration can only be set to 0 if a target is specified.</p>
     pub fn duration_in_minutes(mut self, input: i32) -> Self {
-        self.duration_in_minutes = Some(input);
+        self.duration_in_minutes = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time to wait until beginning the next stage. The duration can only be set to 0 if a target is specified.</p>
-    pub fn set_duration_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_duration_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.duration_in_minutes = input;
         self
     }
@@ -54,13 +56,13 @@ impl StageBuilder {
     pub fn targets(mut self, input: crate::types::Target) -> Self {
         let mut v = self.targets.unwrap_or_default();
         v.push(input);
-        self.targets = Some(v);
+        self.targets = ::std::option::Option::Some(v);
         self
     }
     /// <p>The contacts or contact methods that the escalation plan or engagement plan is engaging.</p>
     pub fn set_targets(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Target>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
     ) -> Self {
         self.targets = input;
         self

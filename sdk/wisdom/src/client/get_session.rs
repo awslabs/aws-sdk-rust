@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetSession`](crate::operation::get_session::builders::GetSessionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`assistant_id(impl Into<String>)`](crate::operation::get_session::builders::GetSessionFluentBuilder::assistant_id) / [`set_assistant_id(Option<String>)`](crate::operation::get_session::builders::GetSessionFluentBuilder::set_assistant_id): <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    ///   - [`session_id(impl Into<String>)`](crate::operation::get_session::builders::GetSessionFluentBuilder::session_id) / [`set_session_id(Option<String>)`](crate::operation::get_session::builders::GetSessionFluentBuilder::set_session_id): <p>The identifier of the session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    ///   - [`assistant_id(impl ::std::convert::Into<String>)`](crate::operation::get_session::builders::GetSessionFluentBuilder::assistant_id) / [`set_assistant_id(Option<String>)`](crate::operation::get_session::builders::GetSessionFluentBuilder::set_assistant_id): <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
+    ///   - [`session_id(impl ::std::convert::Into<String>)`](crate::operation::get_session::builders::GetSessionFluentBuilder::session_id) / [`set_session_id(Option<String>)`](crate::operation::get_session::builders::GetSessionFluentBuilder::set_session_id): <p>The identifier of the session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     /// - On success, responds with [`GetSessionOutput`](crate::operation::get_session::GetSessionOutput) with field(s):
     ///   - [`session(Option<SessionData>)`](crate::operation::get_session::GetSessionOutput::session): <p>The session.</p>
     /// - On failure, responds with [`SdkError<GetSessionError>`](crate::operation::get_session::GetSessionError)

@@ -2,18 +2,18 @@
 
 /// <p>Specifies the infrastructure update policy for the compute environment. For more information about infrastructure updates, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdatePolicy {
     /// <p>Specifies whether jobs are automatically terminated when the computer environment infrastructure is updated. The default value is <code>false</code>.</p>
     #[doc(hidden)]
-    pub terminate_jobs_on_update: std::option::Option<bool>,
+    pub terminate_jobs_on_update: ::std::option::Option<bool>,
     /// <p>Specifies the job timeout (in minutes) when the compute environment infrastructure is updated. The default value is 30.</p>
     #[doc(hidden)]
     pub job_execution_timeout_minutes: i64,
 }
 impl UpdatePolicy {
     /// <p>Specifies whether jobs are automatically terminated when the computer environment infrastructure is updated. The default value is <code>false</code>.</p>
-    pub fn terminate_jobs_on_update(&self) -> std::option::Option<bool> {
+    pub fn terminate_jobs_on_update(&self) -> ::std::option::Option<bool> {
         self.terminate_jobs_on_update
     }
     /// <p>Specifies the job timeout (in minutes) when the compute environment infrastructure is updated. The default value is 30.</p>
@@ -30,29 +30,31 @@ impl UpdatePolicy {
 
 /// A builder for [`UpdatePolicy`](crate::types::UpdatePolicy).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdatePolicyBuilder {
-    pub(crate) terminate_jobs_on_update: std::option::Option<bool>,
-    pub(crate) job_execution_timeout_minutes: std::option::Option<i64>,
+    pub(crate) terminate_jobs_on_update: ::std::option::Option<bool>,
+    pub(crate) job_execution_timeout_minutes: ::std::option::Option<i64>,
 }
 impl UpdatePolicyBuilder {
     /// <p>Specifies whether jobs are automatically terminated when the computer environment infrastructure is updated. The default value is <code>false</code>.</p>
     pub fn terminate_jobs_on_update(mut self, input: bool) -> Self {
-        self.terminate_jobs_on_update = Some(input);
+        self.terminate_jobs_on_update = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether jobs are automatically terminated when the computer environment infrastructure is updated. The default value is <code>false</code>.</p>
-    pub fn set_terminate_jobs_on_update(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_terminate_jobs_on_update(mut self, input: ::std::option::Option<bool>) -> Self {
         self.terminate_jobs_on_update = input;
         self
     }
     /// <p>Specifies the job timeout (in minutes) when the compute environment infrastructure is updated. The default value is 30.</p>
     pub fn job_execution_timeout_minutes(mut self, input: i64) -> Self {
-        self.job_execution_timeout_minutes = Some(input);
+        self.job_execution_timeout_minutes = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the job timeout (in minutes) when the compute environment infrastructure is updated. The default value is 30.</p>
-    pub fn set_job_execution_timeout_minutes(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_job_execution_timeout_minutes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.job_execution_timeout_minutes = input;
         self
     }

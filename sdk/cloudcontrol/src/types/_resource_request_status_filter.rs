@@ -2,11 +2,11 @@
 
 /// <p>The filter criteria to use in determining the requests returned.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceRequestStatusFilter {
     /// <p>The operation types to include in the filter.</p>
     #[doc(hidden)]
-    pub operations: std::option::Option<std::vec::Vec<crate::types::Operation>>,
+    pub operations: ::std::option::Option<::std::vec::Vec<crate::types::Operation>>,
     /// <p>The operation statuses to include in the filter.</p>
     /// <ul>
     /// <li> <p> <code>PENDING</code>: The operation has been requested, but not yet initiated.</p> </li>
@@ -17,11 +17,11 @@ pub struct ResourceRequestStatusFilter {
     /// <li> <p> <code>CANCEL_COMPLETE</code>: The operation has been canceled.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub operation_statuses: std::option::Option<std::vec::Vec<crate::types::OperationStatus>>,
+    pub operation_statuses: ::std::option::Option<::std::vec::Vec<crate::types::OperationStatus>>,
 }
 impl ResourceRequestStatusFilter {
     /// <p>The operation types to include in the filter.</p>
-    pub fn operations(&self) -> std::option::Option<&[crate::types::Operation]> {
+    pub fn operations(&self) -> ::std::option::Option<&[crate::types::Operation]> {
         self.operations.as_deref()
     }
     /// <p>The operation statuses to include in the filter.</p>
@@ -33,7 +33,7 @@ impl ResourceRequestStatusFilter {
     /// <li> <p> <code>CANCEL_IN_PROGRESS</code>: The operation is in the process of being canceled.</p> </li>
     /// <li> <p> <code>CANCEL_COMPLETE</code>: The operation has been canceled.</p> </li>
     /// </ul>
-    pub fn operation_statuses(&self) -> std::option::Option<&[crate::types::OperationStatus]> {
+    pub fn operation_statuses(&self) -> ::std::option::Option<&[crate::types::OperationStatus]> {
         self.operation_statuses.as_deref()
     }
 }
@@ -46,11 +46,13 @@ impl ResourceRequestStatusFilter {
 
 /// A builder for [`ResourceRequestStatusFilter`](crate::types::ResourceRequestStatusFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResourceRequestStatusFilterBuilder {
-    pub(crate) operations: std::option::Option<std::vec::Vec<crate::types::Operation>>,
+    pub(crate) operations: ::std::option::Option<::std::vec::Vec<crate::types::Operation>>,
     pub(crate) operation_statuses:
-        std::option::Option<std::vec::Vec<crate::types::OperationStatus>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::OperationStatus>>,
 }
 impl ResourceRequestStatusFilterBuilder {
     /// Appends an item to `operations`.
@@ -61,13 +63,13 @@ impl ResourceRequestStatusFilterBuilder {
     pub fn operations(mut self, input: crate::types::Operation) -> Self {
         let mut v = self.operations.unwrap_or_default();
         v.push(input);
-        self.operations = Some(v);
+        self.operations = ::std::option::Option::Some(v);
         self
     }
     /// <p>The operation types to include in the filter.</p>
     pub fn set_operations(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Operation>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Operation>>,
     ) -> Self {
         self.operations = input;
         self
@@ -88,7 +90,7 @@ impl ResourceRequestStatusFilterBuilder {
     pub fn operation_statuses(mut self, input: crate::types::OperationStatus) -> Self {
         let mut v = self.operation_statuses.unwrap_or_default();
         v.push(input);
-        self.operation_statuses = Some(v);
+        self.operation_statuses = ::std::option::Option::Some(v);
         self
     }
     /// <p>The operation statuses to include in the filter.</p>
@@ -102,7 +104,7 @@ impl ResourceRequestStatusFilterBuilder {
     /// </ul>
     pub fn set_operation_statuses(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::OperationStatus>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::OperationStatus>>,
     ) -> Self {
         self.operation_statuses = input;
         self

@@ -7,56 +7,59 @@ pub use crate::operation::test_alarm::_test_alarm_input::TestAlarmInputBuilder;
 ///
 /// <p>Tests an alarm by displaying a banner on the Amazon Lightsail console. If a notification trigger is configured for the specified alarm, the test also sends a notification to the notification protocol (<code>Email</code> and/or <code>SMS</code>) configured for the alarm.</p>
 /// <p>An alarm is used to monitor a single metric for one of your resources. When a metric condition is met, the alarm can notify you by email, SMS text message, and a banner displayed on the Amazon Lightsail console. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-alarms">Alarms in Amazon Lightsail</a>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct TestAlarmFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::test_alarm::builders::TestAlarmInputBuilder,
 }
 impl TestAlarmFluentBuilder {
     /// Creates a new `TestAlarm`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::test_alarm::TestAlarm,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::test_alarm::TestAlarmError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::test_alarm::TestAlarmError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::test_alarm::TestAlarmOutput,
-        aws_smithy_http::result::SdkError<crate::operation::test_alarm::TestAlarmError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::test_alarm::TestAlarmError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -69,19 +72,19 @@ impl TestAlarmFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::test_alarm::TestAlarmOutput,
-        aws_smithy_http::result::SdkError<crate::operation::test_alarm::TestAlarmError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::test_alarm::TestAlarmError>,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the alarm to test.</p>
-    pub fn alarm_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn alarm_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.alarm_name(input.into());
         self
     }
     /// <p>The name of the alarm to test.</p>
-    pub fn set_alarm_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_alarm_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_alarm_name(input);
         self
     }
@@ -103,7 +106,7 @@ impl TestAlarmFluentBuilder {
     /// <li> <p> <code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not available, or not enough data is available for the metric to determine the alarm state.</p> </li>
     /// <li> <p> <code>OK</code> - The metric is within the defined threshold.</p> </li>
     /// </ul>
-    pub fn set_state(mut self, input: std::option::Option<crate::types::AlarmState>) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::AlarmState>) -> Self {
         self.inner = self.inner.set_state(input);
         self
     }

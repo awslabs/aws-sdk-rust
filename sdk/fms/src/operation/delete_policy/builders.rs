@@ -6,56 +6,59 @@ pub use crate::operation::delete_policy::_delete_policy_input::DeletePolicyInput
 /// Fluent builder constructing a request to `DeletePolicy`.
 ///
 /// <p>Permanently deletes an Firewall Manager policy. </p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeletePolicyFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::delete_policy::builders::DeletePolicyInputBuilder,
 }
 impl DeletePolicyFluentBuilder {
     /// Creates a new `DeletePolicy`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::delete_policy::DeletePolicy,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::delete_policy::DeletePolicyError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_policy::DeletePolicyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::delete_policy::DeletePolicyOutput,
-        aws_smithy_http::result::SdkError<crate::operation::delete_policy::DeletePolicyError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_policy::DeletePolicyError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,19 +71,19 @@ impl DeletePolicyFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::delete_policy::DeletePolicyOutput,
-        aws_smithy_http::result::SdkError<crate::operation::delete_policy::DeletePolicyError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_policy::DeletePolicyError>,
     > {
         self.send_middleware().await
     }
     /// <p>The ID of the policy that you want to delete. You can retrieve this ID from <code>PutPolicy</code> and <code>ListPolicies</code>.</p>
-    pub fn policy_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn policy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy_id(input.into());
         self
     }
     /// <p>The ID of the policy that you want to delete. You can retrieve this ID from <code>PutPolicy</code> and <code>ListPolicies</code>.</p>
-    pub fn set_policy_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_policy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy_id(input);
         self
     }
@@ -114,7 +117,7 @@ impl DeletePolicyFluentBuilder {
     /// <li> <p>Deletes the security group if it was created through Firewall Manager and if it's no longer associated with any resources through another policy</p> </li>
     /// </ul>
     /// <p>After the cleanup, in-scope resources are no longer protected by web ACLs in this policy. Protection of out-of-scope resources remains unchanged. Scope is determined by tags that you create and accounts that you associate with the policy. When creating the policy, if you specify that only resources in specific accounts or with specific tags are in scope of the policy, those accounts and resources are handled by the policy. All others are out of scope. If you don't specify tags or accounts, all resources are in scope. </p>
-    pub fn set_delete_all_policy_resources(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_delete_all_policy_resources(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_delete_all_policy_resources(input);
         self
     }

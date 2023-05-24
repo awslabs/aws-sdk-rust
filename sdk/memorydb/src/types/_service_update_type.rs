@@ -37,13 +37,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ServiceUpdateType {
     #[allow(missing_docs)] // documentation missing in model
@@ -51,7 +51,7 @@ pub enum ServiceUpdateType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ServiceUpdateType {
+impl ::std::convert::From<&str> for ServiceUpdateType {
     fn from(s: &str) -> Self {
         match s {
             "security-update" => ServiceUpdateType::SecurityUpdate,
@@ -61,11 +61,11 @@ impl std::convert::From<&str> for ServiceUpdateType {
         }
     }
 }
-impl std::str::FromStr for ServiceUpdateType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ServiceUpdateType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ServiceUpdateType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ServiceUpdateType::from(s))
     }
 }
 impl ServiceUpdateType {
@@ -81,7 +81,7 @@ impl ServiceUpdateType {
         &["security-update"]
     }
 }
-impl AsRef<str> for ServiceUpdateType {
+impl ::std::convert::AsRef<str> for ServiceUpdateType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

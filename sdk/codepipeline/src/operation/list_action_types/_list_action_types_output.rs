@@ -2,27 +2,27 @@
 
 /// <p>Represents the output of a <code>ListActionTypes</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListActionTypesOutput {
     /// <p>Provides details of the action types.</p>
     #[doc(hidden)]
-    pub action_types: std::option::Option<std::vec::Vec<crate::types::ActionType>>,
+    pub action_types: ::std::option::Option<::std::vec::Vec<crate::types::ActionType>>,
     /// <p>If the amount of returned information is significantly large, an identifier is also returned. It can be used in a subsequent list action types call to return the next set of action types in the list.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListActionTypesOutput {
     /// <p>Provides details of the action types.</p>
-    pub fn action_types(&self) -> std::option::Option<&[crate::types::ActionType]> {
+    pub fn action_types(&self) -> ::std::option::Option<&[crate::types::ActionType]> {
         self.action_types.as_deref()
     }
     /// <p>If the amount of returned information is significantly large, an identifier is also returned. It can be used in a subsequent list action types call to return the next set of action types in the list.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListActionTypesOutput {
+impl ::aws_http::request_id::RequestId for ListActionTypesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -37,10 +37,12 @@ impl ListActionTypesOutput {
 
 /// A builder for [`ListActionTypesOutput`](crate::operation::list_action_types::ListActionTypesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListActionTypesOutputBuilder {
-    pub(crate) action_types: std::option::Option<std::vec::Vec<crate::types::ActionType>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) action_types: ::std::option::Option<::std::vec::Vec<crate::types::ActionType>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListActionTypesOutputBuilder {
@@ -52,24 +54,24 @@ impl ListActionTypesOutputBuilder {
     pub fn action_types(mut self, input: crate::types::ActionType) -> Self {
         let mut v = self.action_types.unwrap_or_default();
         v.push(input);
-        self.action_types = Some(v);
+        self.action_types = ::std::option::Option::Some(v);
         self
     }
     /// <p>Provides details of the action types.</p>
     pub fn set_action_types(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ActionType>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ActionType>>,
     ) -> Self {
         self.action_types = input;
         self
     }
     /// <p>If the amount of returned information is significantly large, an identifier is also returned. It can be used in a subsequent list action types call to return the next set of action types in the list.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the amount of returned information is significantly large, an identifier is also returned. It can be used in a subsequent list action types call to return the next set of action types in the list.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

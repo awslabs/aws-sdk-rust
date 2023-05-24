@@ -18,56 +18,59 @@ pub use crate::operation::refresh_cache::_refresh_cache_input::RefreshCacheInput
 /// <p>The S3 bucket name does not need to be included when entering the list of folders in the FolderList parameter.</p>
 /// </note>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification">Getting notified about file operations</a> in the <i>Storage Gateway User Guide</i>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RefreshCacheFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::refresh_cache::builders::RefreshCacheInputBuilder,
 }
 impl RefreshCacheFluentBuilder {
     /// Creates a new `RefreshCache`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::refresh_cache::RefreshCache,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::refresh_cache::RefreshCacheError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::refresh_cache::RefreshCacheError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::refresh_cache::RefreshCacheOutput,
-        aws_smithy_http::result::SdkError<crate::operation::refresh_cache::RefreshCacheError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::refresh_cache::RefreshCacheError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -80,19 +83,25 @@ impl RefreshCacheFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::refresh_cache::RefreshCacheOutput,
-        aws_smithy_http::result::SdkError<crate::operation::refresh_cache::RefreshCacheError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::refresh_cache::RefreshCacheError>,
     > {
         self.send_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the file share you want to refresh.</p>
-    pub fn file_share_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn file_share_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.file_share_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the file share you want to refresh.</p>
-    pub fn set_file_share_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_file_share_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_file_share_arn(input);
         self
     }
@@ -101,14 +110,14 @@ impl RefreshCacheFluentBuilder {
     /// To override the contents of this collection use [`set_folder_list`](Self::set_folder_list).
     ///
     /// <p>A comma-separated list of the paths of folders to refresh in the cache. The default is [<code>"/"</code>]. The default refreshes objects and folders at the root of the Amazon S3 bucket. If <code>Recursive</code> is set to <code>true</code>, the entire S3 bucket that the file share has access to is refreshed.</p>
-    pub fn folder_list(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn folder_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.folder_list(input.into());
         self
     }
     /// <p>A comma-separated list of the paths of folders to refresh in the cache. The default is [<code>"/"</code>]. The default refreshes objects and folders at the root of the Amazon S3 bucket. If <code>Recursive</code> is set to <code>true</code>, the entire S3 bucket that the file share has access to is refreshed.</p>
     pub fn set_folder_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_folder_list(input);
         self
@@ -121,7 +130,7 @@ impl RefreshCacheFluentBuilder {
     }
     /// <p>A value that specifies whether to recursively refresh folders in the cache. The refresh includes folders that were in the cache the last time the gateway listed the folder's contents. If this value set to <code>true</code>, each folder that is listed in <code>FolderList</code> is recursively updated. Otherwise, subfolders listed in <code>FolderList</code> are not refreshed. Only objects that are in folders listed directly under <code>FolderList</code> are found and used for the update. The default is <code>true</code>.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
-    pub fn set_recursive(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_recursive(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_recursive(input);
         self
     }

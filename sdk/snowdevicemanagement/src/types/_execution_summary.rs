@@ -2,36 +2,36 @@
 
 /// <p>The summary of a task execution on a specified device.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExecutionSummary {
     /// <p>The ID of the task.</p>
     #[doc(hidden)]
-    pub task_id: std::option::Option<std::string::String>,
+    pub task_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the execution.</p>
     #[doc(hidden)]
-    pub execution_id: std::option::Option<std::string::String>,
+    pub execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the managed device that the task is being executed on.</p>
     #[doc(hidden)]
-    pub managed_device_id: std::option::Option<std::string::String>,
+    pub managed_device_id: ::std::option::Option<::std::string::String>,
     /// <p>The state of the execution.</p>
     #[doc(hidden)]
-    pub state: std::option::Option<crate::types::ExecutionState>,
+    pub state: ::std::option::Option<crate::types::ExecutionState>,
 }
 impl ExecutionSummary {
     /// <p>The ID of the task.</p>
-    pub fn task_id(&self) -> std::option::Option<&str> {
+    pub fn task_id(&self) -> ::std::option::Option<&str> {
         self.task_id.as_deref()
     }
     /// <p>The ID of the execution.</p>
-    pub fn execution_id(&self) -> std::option::Option<&str> {
+    pub fn execution_id(&self) -> ::std::option::Option<&str> {
         self.execution_id.as_deref()
     }
     /// <p>The ID of the managed device that the task is being executed on.</p>
-    pub fn managed_device_id(&self) -> std::option::Option<&str> {
+    pub fn managed_device_id(&self) -> ::std::option::Option<&str> {
         self.managed_device_id.as_deref()
     }
     /// <p>The state of the execution.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::ExecutionState> {
+    pub fn state(&self) -> ::std::option::Option<&crate::types::ExecutionState> {
         self.state.as_ref()
     }
 }
@@ -44,54 +44,59 @@ impl ExecutionSummary {
 
 /// A builder for [`ExecutionSummary`](crate::types::ExecutionSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ExecutionSummaryBuilder {
-    pub(crate) task_id: std::option::Option<std::string::String>,
-    pub(crate) execution_id: std::option::Option<std::string::String>,
-    pub(crate) managed_device_id: std::option::Option<std::string::String>,
-    pub(crate) state: std::option::Option<crate::types::ExecutionState>,
+    pub(crate) task_id: ::std::option::Option<::std::string::String>,
+    pub(crate) execution_id: ::std::option::Option<::std::string::String>,
+    pub(crate) managed_device_id: ::std::option::Option<::std::string::String>,
+    pub(crate) state: ::std::option::Option<crate::types::ExecutionState>,
 }
 impl ExecutionSummaryBuilder {
     /// <p>The ID of the task.</p>
-    pub fn task_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.task_id = Some(input.into());
+    pub fn task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.task_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the task.</p>
-    pub fn set_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.task_id = input;
         self
     }
     /// <p>The ID of the execution.</p>
-    pub fn execution_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.execution_id = Some(input.into());
+    pub fn execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.execution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the execution.</p>
-    pub fn set_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_id = input;
         self
     }
     /// <p>The ID of the managed device that the task is being executed on.</p>
-    pub fn managed_device_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.managed_device_id = Some(input.into());
+    pub fn managed_device_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.managed_device_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the managed device that the task is being executed on.</p>
     pub fn set_managed_device_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.managed_device_id = input;
         self
     }
     /// <p>The state of the execution.</p>
     pub fn state(mut self, input: crate::types::ExecutionState) -> Self {
-        self.state = Some(input);
+        self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The state of the execution.</p>
-    pub fn set_state(mut self, input: std::option::Option<crate::types::ExecutionState>) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::ExecutionState>) -> Self {
         self.state = input;
         self
     }

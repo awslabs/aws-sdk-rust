@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`RejectInvitation`](crate::operation::reject_invitation::builders::RejectInvitationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`invitation_id(impl Into<String>)`](crate::operation::reject_invitation::builders::RejectInvitationFluentBuilder::invitation_id) / [`set_invitation_id(Option<String>)`](crate::operation::reject_invitation::builders::RejectInvitationFluentBuilder::set_invitation_id): <p>The unique identifier of the invitation to reject.</p>
+    ///   - [`invitation_id(impl ::std::convert::Into<String>)`](crate::operation::reject_invitation::builders::RejectInvitationFluentBuilder::invitation_id) / [`set_invitation_id(Option<String>)`](crate::operation::reject_invitation::builders::RejectInvitationFluentBuilder::set_invitation_id): <p>The unique identifier of the invitation to reject.</p>
     /// - On success, responds with [`RejectInvitationOutput`](crate::operation::reject_invitation::RejectInvitationOutput)
     /// - On failure, responds with [`SdkError<RejectInvitationError>`](crate::operation::reject_invitation::RejectInvitationError)
     pub fn reject_invitation(

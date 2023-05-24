@@ -2,20 +2,20 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateSubscriptionsToEventBridgeOutput {
     /// <p>A string that indicates how many event subscriptions were migrated and how many remain to be migrated.</p>
     #[doc(hidden)]
-    pub result: std::option::Option<std::string::String>,
+    pub result: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl UpdateSubscriptionsToEventBridgeOutput {
     /// <p>A string that indicates how many event subscriptions were migrated and how many remain to be migrated.</p>
-    pub fn result(&self) -> std::option::Option<&str> {
+    pub fn result(&self) -> ::std::option::Option<&str> {
         self.result.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for UpdateSubscriptionsToEventBridgeOutput {
+impl ::aws_http::request_id::RequestId for UpdateSubscriptionsToEventBridgeOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,21 @@ impl UpdateSubscriptionsToEventBridgeOutput {
 
 /// A builder for [`UpdateSubscriptionsToEventBridgeOutput`](crate::operation::update_subscriptions_to_event_bridge::UpdateSubscriptionsToEventBridgeOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateSubscriptionsToEventBridgeOutputBuilder {
-    pub(crate) result: std::option::Option<std::string::String>,
+    pub(crate) result: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl UpdateSubscriptionsToEventBridgeOutputBuilder {
     /// <p>A string that indicates how many event subscriptions were migrated and how many remain to be migrated.</p>
-    pub fn result(mut self, input: impl Into<std::string::String>) -> Self {
-        self.result = Some(input.into());
+    pub fn result(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.result = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A string that indicates how many event subscriptions were migrated and how many remain to be migrated.</p>
-    pub fn set_result(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_result(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.result = input;
         self
     }

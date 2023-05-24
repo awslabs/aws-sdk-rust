@@ -2,11 +2,11 @@
 
 /// <p>A technical cue or shot detection segment detected in a video. An array of <code>SegmentDetection</code> objects containing all segments detected in a stored video is returned by <code>GetSegmentDetection</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SegmentDetection {
     /// <p>The type of the segment. Valid values are <code>TECHNICAL_CUE</code> and <code>SHOT</code>.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::SegmentType>,
+    pub r#type: ::std::option::Option<crate::types::SegmentType>,
     /// <p>The start time of the detected segment in milliseconds from the start of the video. This value is rounded down. For example, if the actual timestamp is 100.6667 milliseconds, Amazon Rekognition Video returns a value of 100 millis.</p>
     #[doc(hidden)]
     pub start_timestamp_millis: i64,
@@ -15,35 +15,35 @@ pub struct SegmentDetection {
     pub end_timestamp_millis: i64,
     /// <p>The duration of the detected segment in milliseconds. </p>
     #[doc(hidden)]
-    pub duration_millis: std::option::Option<i64>,
+    pub duration_millis: ::std::option::Option<i64>,
     /// <p>The frame-accurate SMPTE timecode, from the start of a video, for the start of a detected segment. <code>StartTimecode</code> is in <i>HH:MM:SS:fr</i> format (and <i>;fr</i> for drop frame-rates). </p>
     #[doc(hidden)]
-    pub start_timecode_smpte: std::option::Option<std::string::String>,
+    pub start_timecode_smpte: ::std::option::Option<::std::string::String>,
     /// <p>The frame-accurate SMPTE timecode, from the start of a video, for the end of a detected segment. <code>EndTimecode</code> is in <i>HH:MM:SS:fr</i> format (and <i>;fr</i> for drop frame-rates).</p>
     #[doc(hidden)]
-    pub end_timecode_smpte: std::option::Option<std::string::String>,
+    pub end_timecode_smpte: ::std::option::Option<::std::string::String>,
     /// <p>The duration of the timecode for the detected segment in SMPTE format.</p>
     #[doc(hidden)]
-    pub duration_smpte: std::option::Option<std::string::String>,
+    pub duration_smpte: ::std::option::Option<::std::string::String>,
     /// <p>If the segment is a technical cue, contains information about the technical cue.</p>
     #[doc(hidden)]
-    pub technical_cue_segment: std::option::Option<crate::types::TechnicalCueSegment>,
+    pub technical_cue_segment: ::std::option::Option<crate::types::TechnicalCueSegment>,
     /// <p>If the segment is a shot detection, contains information about the shot detection.</p>
     #[doc(hidden)]
-    pub shot_segment: std::option::Option<crate::types::ShotSegment>,
+    pub shot_segment: ::std::option::Option<crate::types::ShotSegment>,
     /// <p> The frame number of the start of a video segment, using a frame index that starts with 0. </p>
     #[doc(hidden)]
-    pub start_frame_number: std::option::Option<i64>,
+    pub start_frame_number: ::std::option::Option<i64>,
     /// <p> The frame number at the end of a video segment, using a frame index that starts with 0. </p>
     #[doc(hidden)]
-    pub end_frame_number: std::option::Option<i64>,
+    pub end_frame_number: ::std::option::Option<i64>,
     /// <p> The duration of a video segment, expressed in frames. </p>
     #[doc(hidden)]
-    pub duration_frames: std::option::Option<i64>,
+    pub duration_frames: ::std::option::Option<i64>,
 }
 impl SegmentDetection {
     /// <p>The type of the segment. Valid values are <code>TECHNICAL_CUE</code> and <code>SHOT</code>.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::SegmentType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::SegmentType> {
         self.r#type.as_ref()
     }
     /// <p>The start time of the detected segment in milliseconds from the start of the video. This value is rounded down. For example, if the actual timestamp is 100.6667 milliseconds, Amazon Rekognition Video returns a value of 100 millis.</p>
@@ -55,39 +55,41 @@ impl SegmentDetection {
         self.end_timestamp_millis
     }
     /// <p>The duration of the detected segment in milliseconds. </p>
-    pub fn duration_millis(&self) -> std::option::Option<i64> {
+    pub fn duration_millis(&self) -> ::std::option::Option<i64> {
         self.duration_millis
     }
     /// <p>The frame-accurate SMPTE timecode, from the start of a video, for the start of a detected segment. <code>StartTimecode</code> is in <i>HH:MM:SS:fr</i> format (and <i>;fr</i> for drop frame-rates). </p>
-    pub fn start_timecode_smpte(&self) -> std::option::Option<&str> {
+    pub fn start_timecode_smpte(&self) -> ::std::option::Option<&str> {
         self.start_timecode_smpte.as_deref()
     }
     /// <p>The frame-accurate SMPTE timecode, from the start of a video, for the end of a detected segment. <code>EndTimecode</code> is in <i>HH:MM:SS:fr</i> format (and <i>;fr</i> for drop frame-rates).</p>
-    pub fn end_timecode_smpte(&self) -> std::option::Option<&str> {
+    pub fn end_timecode_smpte(&self) -> ::std::option::Option<&str> {
         self.end_timecode_smpte.as_deref()
     }
     /// <p>The duration of the timecode for the detected segment in SMPTE format.</p>
-    pub fn duration_smpte(&self) -> std::option::Option<&str> {
+    pub fn duration_smpte(&self) -> ::std::option::Option<&str> {
         self.duration_smpte.as_deref()
     }
     /// <p>If the segment is a technical cue, contains information about the technical cue.</p>
-    pub fn technical_cue_segment(&self) -> std::option::Option<&crate::types::TechnicalCueSegment> {
+    pub fn technical_cue_segment(
+        &self,
+    ) -> ::std::option::Option<&crate::types::TechnicalCueSegment> {
         self.technical_cue_segment.as_ref()
     }
     /// <p>If the segment is a shot detection, contains information about the shot detection.</p>
-    pub fn shot_segment(&self) -> std::option::Option<&crate::types::ShotSegment> {
+    pub fn shot_segment(&self) -> ::std::option::Option<&crate::types::ShotSegment> {
         self.shot_segment.as_ref()
     }
     /// <p> The frame number of the start of a video segment, using a frame index that starts with 0. </p>
-    pub fn start_frame_number(&self) -> std::option::Option<i64> {
+    pub fn start_frame_number(&self) -> ::std::option::Option<i64> {
         self.start_frame_number
     }
     /// <p> The frame number at the end of a video segment, using a frame index that starts with 0. </p>
-    pub fn end_frame_number(&self) -> std::option::Option<i64> {
+    pub fn end_frame_number(&self) -> ::std::option::Option<i64> {
         self.end_frame_number
     }
     /// <p> The duration of a video segment, expressed in frames. </p>
-    pub fn duration_frames(&self) -> std::option::Option<i64> {
+    pub fn duration_frames(&self) -> ::std::option::Option<i64> {
         self.duration_frames
     }
 }
@@ -100,151 +102,165 @@ impl SegmentDetection {
 
 /// A builder for [`SegmentDetection`](crate::types::SegmentDetection).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SegmentDetectionBuilder {
-    pub(crate) r#type: std::option::Option<crate::types::SegmentType>,
-    pub(crate) start_timestamp_millis: std::option::Option<i64>,
-    pub(crate) end_timestamp_millis: std::option::Option<i64>,
-    pub(crate) duration_millis: std::option::Option<i64>,
-    pub(crate) start_timecode_smpte: std::option::Option<std::string::String>,
-    pub(crate) end_timecode_smpte: std::option::Option<std::string::String>,
-    pub(crate) duration_smpte: std::option::Option<std::string::String>,
-    pub(crate) technical_cue_segment: std::option::Option<crate::types::TechnicalCueSegment>,
-    pub(crate) shot_segment: std::option::Option<crate::types::ShotSegment>,
-    pub(crate) start_frame_number: std::option::Option<i64>,
-    pub(crate) end_frame_number: std::option::Option<i64>,
-    pub(crate) duration_frames: std::option::Option<i64>,
+    pub(crate) r#type: ::std::option::Option<crate::types::SegmentType>,
+    pub(crate) start_timestamp_millis: ::std::option::Option<i64>,
+    pub(crate) end_timestamp_millis: ::std::option::Option<i64>,
+    pub(crate) duration_millis: ::std::option::Option<i64>,
+    pub(crate) start_timecode_smpte: ::std::option::Option<::std::string::String>,
+    pub(crate) end_timecode_smpte: ::std::option::Option<::std::string::String>,
+    pub(crate) duration_smpte: ::std::option::Option<::std::string::String>,
+    pub(crate) technical_cue_segment: ::std::option::Option<crate::types::TechnicalCueSegment>,
+    pub(crate) shot_segment: ::std::option::Option<crate::types::ShotSegment>,
+    pub(crate) start_frame_number: ::std::option::Option<i64>,
+    pub(crate) end_frame_number: ::std::option::Option<i64>,
+    pub(crate) duration_frames: ::std::option::Option<i64>,
 }
 impl SegmentDetectionBuilder {
     /// <p>The type of the segment. Valid values are <code>TECHNICAL_CUE</code> and <code>SHOT</code>.</p>
     pub fn r#type(mut self, input: crate::types::SegmentType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of the segment. Valid values are <code>TECHNICAL_CUE</code> and <code>SHOT</code>.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::SegmentType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::SegmentType>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The start time of the detected segment in milliseconds from the start of the video. This value is rounded down. For example, if the actual timestamp is 100.6667 milliseconds, Amazon Rekognition Video returns a value of 100 millis.</p>
     pub fn start_timestamp_millis(mut self, input: i64) -> Self {
-        self.start_timestamp_millis = Some(input);
+        self.start_timestamp_millis = ::std::option::Option::Some(input);
         self
     }
     /// <p>The start time of the detected segment in milliseconds from the start of the video. This value is rounded down. For example, if the actual timestamp is 100.6667 milliseconds, Amazon Rekognition Video returns a value of 100 millis.</p>
-    pub fn set_start_timestamp_millis(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_start_timestamp_millis(mut self, input: ::std::option::Option<i64>) -> Self {
         self.start_timestamp_millis = input;
         self
     }
     /// <p>The end time of the detected segment, in milliseconds, from the start of the video. This value is rounded down.</p>
     pub fn end_timestamp_millis(mut self, input: i64) -> Self {
-        self.end_timestamp_millis = Some(input);
+        self.end_timestamp_millis = ::std::option::Option::Some(input);
         self
     }
     /// <p>The end time of the detected segment, in milliseconds, from the start of the video. This value is rounded down.</p>
-    pub fn set_end_timestamp_millis(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_end_timestamp_millis(mut self, input: ::std::option::Option<i64>) -> Self {
         self.end_timestamp_millis = input;
         self
     }
     /// <p>The duration of the detected segment in milliseconds. </p>
     pub fn duration_millis(mut self, input: i64) -> Self {
-        self.duration_millis = Some(input);
+        self.duration_millis = ::std::option::Option::Some(input);
         self
     }
     /// <p>The duration of the detected segment in milliseconds. </p>
-    pub fn set_duration_millis(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_duration_millis(mut self, input: ::std::option::Option<i64>) -> Self {
         self.duration_millis = input;
         self
     }
     /// <p>The frame-accurate SMPTE timecode, from the start of a video, for the start of a detected segment. <code>StartTimecode</code> is in <i>HH:MM:SS:fr</i> format (and <i>;fr</i> for drop frame-rates). </p>
-    pub fn start_timecode_smpte(mut self, input: impl Into<std::string::String>) -> Self {
-        self.start_timecode_smpte = Some(input.into());
+    pub fn start_timecode_smpte(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.start_timecode_smpte = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The frame-accurate SMPTE timecode, from the start of a video, for the start of a detected segment. <code>StartTimecode</code> is in <i>HH:MM:SS:fr</i> format (and <i>;fr</i> for drop frame-rates). </p>
     pub fn set_start_timecode_smpte(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.start_timecode_smpte = input;
         self
     }
     /// <p>The frame-accurate SMPTE timecode, from the start of a video, for the end of a detected segment. <code>EndTimecode</code> is in <i>HH:MM:SS:fr</i> format (and <i>;fr</i> for drop frame-rates).</p>
-    pub fn end_timecode_smpte(mut self, input: impl Into<std::string::String>) -> Self {
-        self.end_timecode_smpte = Some(input.into());
+    pub fn end_timecode_smpte(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.end_timecode_smpte = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The frame-accurate SMPTE timecode, from the start of a video, for the end of a detected segment. <code>EndTimecode</code> is in <i>HH:MM:SS:fr</i> format (and <i>;fr</i> for drop frame-rates).</p>
     pub fn set_end_timecode_smpte(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.end_timecode_smpte = input;
         self
     }
     /// <p>The duration of the timecode for the detected segment in SMPTE format.</p>
-    pub fn duration_smpte(mut self, input: impl Into<std::string::String>) -> Self {
-        self.duration_smpte = Some(input.into());
+    pub fn duration_smpte(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.duration_smpte = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The duration of the timecode for the detected segment in SMPTE format.</p>
-    pub fn set_duration_smpte(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_duration_smpte(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.duration_smpte = input;
         self
     }
     /// <p>If the segment is a technical cue, contains information about the technical cue.</p>
     pub fn technical_cue_segment(mut self, input: crate::types::TechnicalCueSegment) -> Self {
-        self.technical_cue_segment = Some(input);
+        self.technical_cue_segment = ::std::option::Option::Some(input);
         self
     }
     /// <p>If the segment is a technical cue, contains information about the technical cue.</p>
     pub fn set_technical_cue_segment(
         mut self,
-        input: std::option::Option<crate::types::TechnicalCueSegment>,
+        input: ::std::option::Option<crate::types::TechnicalCueSegment>,
     ) -> Self {
         self.technical_cue_segment = input;
         self
     }
     /// <p>If the segment is a shot detection, contains information about the shot detection.</p>
     pub fn shot_segment(mut self, input: crate::types::ShotSegment) -> Self {
-        self.shot_segment = Some(input);
+        self.shot_segment = ::std::option::Option::Some(input);
         self
     }
     /// <p>If the segment is a shot detection, contains information about the shot detection.</p>
     pub fn set_shot_segment(
         mut self,
-        input: std::option::Option<crate::types::ShotSegment>,
+        input: ::std::option::Option<crate::types::ShotSegment>,
     ) -> Self {
         self.shot_segment = input;
         self
     }
     /// <p> The frame number of the start of a video segment, using a frame index that starts with 0. </p>
     pub fn start_frame_number(mut self, input: i64) -> Self {
-        self.start_frame_number = Some(input);
+        self.start_frame_number = ::std::option::Option::Some(input);
         self
     }
     /// <p> The frame number of the start of a video segment, using a frame index that starts with 0. </p>
-    pub fn set_start_frame_number(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_start_frame_number(mut self, input: ::std::option::Option<i64>) -> Self {
         self.start_frame_number = input;
         self
     }
     /// <p> The frame number at the end of a video segment, using a frame index that starts with 0. </p>
     pub fn end_frame_number(mut self, input: i64) -> Self {
-        self.end_frame_number = Some(input);
+        self.end_frame_number = ::std::option::Option::Some(input);
         self
     }
     /// <p> The frame number at the end of a video segment, using a frame index that starts with 0. </p>
-    pub fn set_end_frame_number(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_end_frame_number(mut self, input: ::std::option::Option<i64>) -> Self {
         self.end_frame_number = input;
         self
     }
     /// <p> The duration of a video segment, expressed in frames. </p>
     pub fn duration_frames(mut self, input: i64) -> Self {
-        self.duration_frames = Some(input);
+        self.duration_frames = ::std::option::Option::Some(input);
         self
     }
     /// <p> The duration of a video segment, expressed in frames. </p>
-    pub fn set_duration_frames(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_duration_frames(mut self, input: ::std::option::Option<i64>) -> Self {
         self.duration_frames = input;
         self
     }

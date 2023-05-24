@@ -9,29 +9,29 @@ pub use crate::operation::start_bgp_failover_test::_start_bgp_failover_test_inpu
 /// <p>You can run the test on public, private, transit, and hosted virtual interfaces.</p>
 /// <p>You can use <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_ListVirtualInterfaceTestHistory.html">ListVirtualInterfaceTestHistory</a> to view the virtual interface test history.</p>
 /// <p>If you need to stop the test before the test interval completes, use <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_StopBgpFailoverTest.html">StopBgpFailoverTest</a>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartBgpFailoverTestFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::start_bgp_failover_test::builders::StartBgpFailoverTestInputBuilder,
 }
 impl StartBgpFailoverTestFluentBuilder {
     /// Creates a new `StartBgpFailoverTest`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::start_bgp_failover_test::StartBgpFailoverTest,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::start_bgp_failover_test::StartBgpFailoverTestError,
         >,
     > {
@@ -39,30 +39,33 @@ impl StartBgpFailoverTestFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::start_bgp_failover_test::StartBgpFailoverTestOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::start_bgp_failover_test::StartBgpFailoverTestError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -75,23 +78,26 @@ impl StartBgpFailoverTestFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::start_bgp_failover_test::StartBgpFailoverTestOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::start_bgp_failover_test::StartBgpFailoverTestError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The ID of the virtual interface you want to test.</p>
-    pub fn virtual_interface_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn virtual_interface_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.virtual_interface_id(input.into());
         self
     }
     /// <p>The ID of the virtual interface you want to test.</p>
     pub fn set_virtual_interface_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_virtual_interface_id(input);
         self
@@ -101,14 +107,14 @@ impl StartBgpFailoverTestFluentBuilder {
     /// To override the contents of this collection use [`set_bgp_peers`](Self::set_bgp_peers).
     ///
     /// <p>The BGP peers to place in the DOWN state.</p>
-    pub fn bgp_peers(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn bgp_peers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bgp_peers(input.into());
         self
     }
     /// <p>The BGP peers to place in the DOWN state.</p>
     pub fn set_bgp_peers(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_bgp_peers(input);
         self
@@ -123,7 +129,7 @@ impl StartBgpFailoverTestFluentBuilder {
     /// <p>The time in minutes that the virtual interface failover test will last.</p>
     /// <p>Maximum value: 4,320 minutes (72 hours).</p>
     /// <p>Default: 180 minutes (3 hours).</p>
-    pub fn set_test_duration_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_test_duration_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_test_duration_in_minutes(input);
         self
     }

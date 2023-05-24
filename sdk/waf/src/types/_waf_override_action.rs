@@ -6,15 +6,15 @@
 /// </note>
 /// <p>The action to take if any rule within the <code>RuleGroup</code> matches a request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WafOverrideAction {
     /// <p> <code>COUNT</code> overrides the action specified by the individual rule within a <code>RuleGroup</code> . If set to <code>NONE</code>, the rule's action will take place.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::WafOverrideActionType>,
+    pub r#type: ::std::option::Option<crate::types::WafOverrideActionType>,
 }
 impl WafOverrideAction {
     /// <p> <code>COUNT</code> overrides the action specified by the individual rule within a <code>RuleGroup</code> . If set to <code>NONE</code>, the rule's action will take place.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::WafOverrideActionType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::WafOverrideActionType> {
         self.r#type.as_ref()
     }
 }
@@ -27,20 +27,22 @@ impl WafOverrideAction {
 
 /// A builder for [`WafOverrideAction`](crate::types::WafOverrideAction).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct WafOverrideActionBuilder {
-    pub(crate) r#type: std::option::Option<crate::types::WafOverrideActionType>,
+    pub(crate) r#type: ::std::option::Option<crate::types::WafOverrideActionType>,
 }
 impl WafOverrideActionBuilder {
     /// <p> <code>COUNT</code> overrides the action specified by the individual rule within a <code>RuleGroup</code> . If set to <code>NONE</code>, the rule's action will take place.</p>
     pub fn r#type(mut self, input: crate::types::WafOverrideActionType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p> <code>COUNT</code> overrides the action specified by the individual rule within a <code>RuleGroup</code> . If set to <code>NONE</code>, the rule's action will take place.</p>
     pub fn set_type(
         mut self,
-        input: std::option::Option<crate::types::WafOverrideActionType>,
+        input: ::std::option::Option<crate::types::WafOverrideActionType>,
     ) -> Self {
         self.r#type = input;
         self

@@ -2,15 +2,15 @@
 
 /// <p>The tax documents required in Amazon Web Services Region in India.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IndTaxDocuments {
     /// <p>The Goods and Services Tax (GST) documents required in Amazon Web Services Region in India.</p>
     #[doc(hidden)]
-    pub gstin: std::option::Option<std::string::String>,
+    pub gstin: ::std::option::Option<::std::string::String>,
 }
 impl IndTaxDocuments {
     /// <p>The Goods and Services Tax (GST) documents required in Amazon Web Services Region in India.</p>
-    pub fn gstin(&self) -> std::option::Option<&str> {
+    pub fn gstin(&self) -> ::std::option::Option<&str> {
         self.gstin.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl IndTaxDocuments {
 
 /// A builder for [`IndTaxDocuments`](crate::types::IndTaxDocuments).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct IndTaxDocumentsBuilder {
-    pub(crate) gstin: std::option::Option<std::string::String>,
+    pub(crate) gstin: ::std::option::Option<::std::string::String>,
 }
 impl IndTaxDocumentsBuilder {
     /// <p>The Goods and Services Tax (GST) documents required in Amazon Web Services Region in India.</p>
-    pub fn gstin(mut self, input: impl Into<std::string::String>) -> Self {
-        self.gstin = Some(input.into());
+    pub fn gstin(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.gstin = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Goods and Services Tax (GST) documents required in Amazon Web Services Region in India.</p>
-    pub fn set_gstin(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_gstin(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.gstin = input;
         self
     }

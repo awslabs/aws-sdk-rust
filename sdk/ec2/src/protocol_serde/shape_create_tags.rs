@@ -2,7 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_create_tags_http_error(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::create_tags::CreateTagsOutput,
@@ -15,7 +15,7 @@ pub fn de_create_tags_http_error(
         _response_body,
     )
     .map_err(crate::operation::create_tags::CreateTagsError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
+    generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     Err(crate::operation::create_tags::CreateTagsError::generic(
         generic,
@@ -25,7 +25,7 @@ pub fn de_create_tags_http_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_create_tags_http_response_with_props(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::create_tags::CreateTagsOutput,
@@ -36,7 +36,7 @@ pub fn de_create_tags_http_response_with_props(
         let mut output =
             crate::operation::create_tags::builders::CreateTagsOutputBuilder::default();
         output._set_request_id(
-            aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
+            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
         );
         output.build()
     })

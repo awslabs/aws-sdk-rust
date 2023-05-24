@@ -2,57 +2,57 @@
 
 /// <p>A description of the dominant colors in an image.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DominantColor {
     /// <p>The Red RGB value for a dominant color.</p>
     #[doc(hidden)]
-    pub red: std::option::Option<i32>,
+    pub red: ::std::option::Option<i32>,
     /// <p>The Blue RGB value for a dominant color.</p>
     #[doc(hidden)]
-    pub blue: std::option::Option<i32>,
+    pub blue: ::std::option::Option<i32>,
     /// <p>The Green RGB value for a dominant color.</p>
     #[doc(hidden)]
-    pub green: std::option::Option<i32>,
+    pub green: ::std::option::Option<i32>,
     /// <p>The Hex code equivalent of the RGB values for a dominant color.</p>
     #[doc(hidden)]
-    pub hex_code: std::option::Option<std::string::String>,
+    pub hex_code: ::std::option::Option<::std::string::String>,
     /// <p>The CSS color name of a dominant color.</p>
     #[doc(hidden)]
-    pub css_color: std::option::Option<std::string::String>,
+    pub css_color: ::std::option::Option<::std::string::String>,
     /// <p>One of 12 simplified color names applied to a dominant color.</p>
     #[doc(hidden)]
-    pub simplified_color: std::option::Option<std::string::String>,
+    pub simplified_color: ::std::option::Option<::std::string::String>,
     /// <p>The percentage of image pixels that have a given dominant color.</p>
     #[doc(hidden)]
-    pub pixel_percent: std::option::Option<f32>,
+    pub pixel_percent: ::std::option::Option<f32>,
 }
 impl DominantColor {
     /// <p>The Red RGB value for a dominant color.</p>
-    pub fn red(&self) -> std::option::Option<i32> {
+    pub fn red(&self) -> ::std::option::Option<i32> {
         self.red
     }
     /// <p>The Blue RGB value for a dominant color.</p>
-    pub fn blue(&self) -> std::option::Option<i32> {
+    pub fn blue(&self) -> ::std::option::Option<i32> {
         self.blue
     }
     /// <p>The Green RGB value for a dominant color.</p>
-    pub fn green(&self) -> std::option::Option<i32> {
+    pub fn green(&self) -> ::std::option::Option<i32> {
         self.green
     }
     /// <p>The Hex code equivalent of the RGB values for a dominant color.</p>
-    pub fn hex_code(&self) -> std::option::Option<&str> {
+    pub fn hex_code(&self) -> ::std::option::Option<&str> {
         self.hex_code.as_deref()
     }
     /// <p>The CSS color name of a dominant color.</p>
-    pub fn css_color(&self) -> std::option::Option<&str> {
+    pub fn css_color(&self) -> ::std::option::Option<&str> {
         self.css_color.as_deref()
     }
     /// <p>One of 12 simplified color names applied to a dominant color.</p>
-    pub fn simplified_color(&self) -> std::option::Option<&str> {
+    pub fn simplified_color(&self) -> ::std::option::Option<&str> {
         self.simplified_color.as_deref()
     }
     /// <p>The percentage of image pixels that have a given dominant color.</p>
-    pub fn pixel_percent(&self) -> std::option::Option<f32> {
+    pub fn pixel_percent(&self) -> ::std::option::Option<f32> {
         self.pixel_percent
     }
 }
@@ -65,84 +65,92 @@ impl DominantColor {
 
 /// A builder for [`DominantColor`](crate::types::DominantColor).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DominantColorBuilder {
-    pub(crate) red: std::option::Option<i32>,
-    pub(crate) blue: std::option::Option<i32>,
-    pub(crate) green: std::option::Option<i32>,
-    pub(crate) hex_code: std::option::Option<std::string::String>,
-    pub(crate) css_color: std::option::Option<std::string::String>,
-    pub(crate) simplified_color: std::option::Option<std::string::String>,
-    pub(crate) pixel_percent: std::option::Option<f32>,
+    pub(crate) red: ::std::option::Option<i32>,
+    pub(crate) blue: ::std::option::Option<i32>,
+    pub(crate) green: ::std::option::Option<i32>,
+    pub(crate) hex_code: ::std::option::Option<::std::string::String>,
+    pub(crate) css_color: ::std::option::Option<::std::string::String>,
+    pub(crate) simplified_color: ::std::option::Option<::std::string::String>,
+    pub(crate) pixel_percent: ::std::option::Option<f32>,
 }
 impl DominantColorBuilder {
     /// <p>The Red RGB value for a dominant color.</p>
     pub fn red(mut self, input: i32) -> Self {
-        self.red = Some(input);
+        self.red = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Red RGB value for a dominant color.</p>
-    pub fn set_red(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_red(mut self, input: ::std::option::Option<i32>) -> Self {
         self.red = input;
         self
     }
     /// <p>The Blue RGB value for a dominant color.</p>
     pub fn blue(mut self, input: i32) -> Self {
-        self.blue = Some(input);
+        self.blue = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Blue RGB value for a dominant color.</p>
-    pub fn set_blue(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_blue(mut self, input: ::std::option::Option<i32>) -> Self {
         self.blue = input;
         self
     }
     /// <p>The Green RGB value for a dominant color.</p>
     pub fn green(mut self, input: i32) -> Self {
-        self.green = Some(input);
+        self.green = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Green RGB value for a dominant color.</p>
-    pub fn set_green(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_green(mut self, input: ::std::option::Option<i32>) -> Self {
         self.green = input;
         self
     }
     /// <p>The Hex code equivalent of the RGB values for a dominant color.</p>
-    pub fn hex_code(mut self, input: impl Into<std::string::String>) -> Self {
-        self.hex_code = Some(input.into());
+    pub fn hex_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.hex_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Hex code equivalent of the RGB values for a dominant color.</p>
-    pub fn set_hex_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_hex_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hex_code = input;
         self
     }
     /// <p>The CSS color name of a dominant color.</p>
-    pub fn css_color(mut self, input: impl Into<std::string::String>) -> Self {
-        self.css_color = Some(input.into());
+    pub fn css_color(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.css_color = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The CSS color name of a dominant color.</p>
-    pub fn set_css_color(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_css_color(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.css_color = input;
         self
     }
     /// <p>One of 12 simplified color names applied to a dominant color.</p>
-    pub fn simplified_color(mut self, input: impl Into<std::string::String>) -> Self {
-        self.simplified_color = Some(input.into());
+    pub fn simplified_color(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.simplified_color = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>One of 12 simplified color names applied to a dominant color.</p>
-    pub fn set_simplified_color(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_simplified_color(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.simplified_color = input;
         self
     }
     /// <p>The percentage of image pixels that have a given dominant color.</p>
     pub fn pixel_percent(mut self, input: f32) -> Self {
-        self.pixel_percent = Some(input);
+        self.pixel_percent = ::std::option::Option::Some(input);
         self
     }
     /// <p>The percentage of image pixels that have a given dominant color.</p>
-    pub fn set_pixel_percent(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_pixel_percent(mut self, input: ::std::option::Option<f32>) -> Self {
         self.pixel_percent = input;
         self
     }

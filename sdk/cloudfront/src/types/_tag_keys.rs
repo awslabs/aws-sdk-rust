@@ -2,15 +2,15 @@
 
 /// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TagKeys {
     /// <p>A complex type that contains <code>Tag</code> key elements.</p>
     #[doc(hidden)]
-    pub items: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub items: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl TagKeys {
     /// <p>A complex type that contains <code>Tag</code> key elements.</p>
-    pub fn items(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn items(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.items.as_deref()
     }
 }
@@ -23,9 +23,11 @@ impl TagKeys {
 
 /// A builder for [`TagKeys`](crate::types::TagKeys).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TagKeysBuilder {
-    pub(crate) items: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl TagKeysBuilder {
     /// Appends an item to `items`.
@@ -33,16 +35,16 @@ impl TagKeysBuilder {
     /// To override the contents of this collection use [`set_items`](Self::set_items).
     ///
     /// <p>A complex type that contains <code>Tag</code> key elements.</p>
-    pub fn items(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn items(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.items.unwrap_or_default();
         v.push(input.into());
-        self.items = Some(v);
+        self.items = ::std::option::Option::Some(v);
         self
     }
     /// <p>A complex type that contains <code>Tag</code> key elements.</p>
     pub fn set_items(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.items = input;
         self

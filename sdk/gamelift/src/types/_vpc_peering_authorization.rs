@@ -4,43 +4,43 @@
 /// <p> <b>Related actions</b> </p>
 /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VpcPeeringAuthorization {
     /// <p>A unique identifier for the Amazon Web Services account that you use to manage your Amazon GameLift fleet. You can find your Account ID in the Amazon Web Services Management Console under account settings.</p>
     #[doc(hidden)]
-    pub game_lift_aws_account_id: std::option::Option<std::string::String>,
+    pub game_lift_aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The authorization's peer VPC Amazon Web Services account ID.</p>
     #[doc(hidden)]
-    pub peer_vpc_aws_account_id: std::option::Option<std::string::String>,
+    pub peer_vpc_aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for a VPC with resources to be accessed by your Amazon GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the Amazon Web Services Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with Amazon GameLift Fleets</a>.</p>
     #[doc(hidden)]
-    pub peer_vpc_id: std::option::Option<std::string::String>,
+    pub peer_vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>Time stamp indicating when this authorization was issued. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
     #[doc(hidden)]
-    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Time stamp indicating when this authorization expires (24 hours after issuance). Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
     #[doc(hidden)]
-    pub expiration_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub expiration_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl VpcPeeringAuthorization {
     /// <p>A unique identifier for the Amazon Web Services account that you use to manage your Amazon GameLift fleet. You can find your Account ID in the Amazon Web Services Management Console under account settings.</p>
-    pub fn game_lift_aws_account_id(&self) -> std::option::Option<&str> {
+    pub fn game_lift_aws_account_id(&self) -> ::std::option::Option<&str> {
         self.game_lift_aws_account_id.as_deref()
     }
     /// <p>The authorization's peer VPC Amazon Web Services account ID.</p>
-    pub fn peer_vpc_aws_account_id(&self) -> std::option::Option<&str> {
+    pub fn peer_vpc_aws_account_id(&self) -> ::std::option::Option<&str> {
         self.peer_vpc_aws_account_id.as_deref()
     }
     /// <p>A unique identifier for a VPC with resources to be accessed by your Amazon GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the Amazon Web Services Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with Amazon GameLift Fleets</a>.</p>
-    pub fn peer_vpc_id(&self) -> std::option::Option<&str> {
+    pub fn peer_vpc_id(&self) -> ::std::option::Option<&str> {
         self.peer_vpc_id.as_deref()
     }
     /// <p>Time stamp indicating when this authorization was issued. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>Time stamp indicating when this authorization expires (24 hours after issuance). Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    pub fn expiration_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn expiration_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.expiration_time.as_ref()
     }
 }
@@ -53,73 +53,81 @@ impl VpcPeeringAuthorization {
 
 /// A builder for [`VpcPeeringAuthorization`](crate::types::VpcPeeringAuthorization).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VpcPeeringAuthorizationBuilder {
-    pub(crate) game_lift_aws_account_id: std::option::Option<std::string::String>,
-    pub(crate) peer_vpc_aws_account_id: std::option::Option<std::string::String>,
-    pub(crate) peer_vpc_id: std::option::Option<std::string::String>,
-    pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) expiration_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) game_lift_aws_account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) peer_vpc_aws_account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) peer_vpc_id: ::std::option::Option<::std::string::String>,
+    pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) expiration_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl VpcPeeringAuthorizationBuilder {
     /// <p>A unique identifier for the Amazon Web Services account that you use to manage your Amazon GameLift fleet. You can find your Account ID in the Amazon Web Services Management Console under account settings.</p>
-    pub fn game_lift_aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.game_lift_aws_account_id = Some(input.into());
+    pub fn game_lift_aws_account_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.game_lift_aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the Amazon Web Services account that you use to manage your Amazon GameLift fleet. You can find your Account ID in the Amazon Web Services Management Console under account settings.</p>
     pub fn set_game_lift_aws_account_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.game_lift_aws_account_id = input;
         self
     }
     /// <p>The authorization's peer VPC Amazon Web Services account ID.</p>
-    pub fn peer_vpc_aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.peer_vpc_aws_account_id = Some(input.into());
+    pub fn peer_vpc_aws_account_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.peer_vpc_aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The authorization's peer VPC Amazon Web Services account ID.</p>
     pub fn set_peer_vpc_aws_account_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.peer_vpc_aws_account_id = input;
         self
     }
     /// <p>A unique identifier for a VPC with resources to be accessed by your Amazon GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the Amazon Web Services Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with Amazon GameLift Fleets</a>.</p>
-    pub fn peer_vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.peer_vpc_id = Some(input.into());
+    pub fn peer_vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.peer_vpc_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for a VPC with resources to be accessed by your Amazon GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the Amazon Web Services Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with Amazon GameLift Fleets</a>.</p>
-    pub fn set_peer_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_peer_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.peer_vpc_id = input;
         self
     }
     /// <p>Time stamp indicating when this authorization was issued. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_time = Some(input);
+    pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>Time stamp indicating when this authorization was issued. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
     pub fn set_creation_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_time = input;
         self
     }
     /// <p>Time stamp indicating when this authorization expires (24 hours after issuance). Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    pub fn expiration_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.expiration_time = Some(input);
+    pub fn expiration_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.expiration_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>Time stamp indicating when this authorization expires (24 hours after issuance). Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
     pub fn set_expiration_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.expiration_time = input;
         self

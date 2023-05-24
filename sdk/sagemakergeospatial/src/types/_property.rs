@@ -2,7 +2,7 @@
 
 /// <p>Represents a single searchable property to search on.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum Property {
     /// <p>The structure representing EoCloudCover property filter containing a lower bound and upper bound.</p>
     EoCloudCover(crate::types::EoCloudCoverInput),
@@ -31,11 +31,11 @@ impl Property {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_eo_cloud_cover(
         &self,
-    ) -> std::result::Result<&crate::types::EoCloudCoverInput, &Self> {
+    ) -> ::std::result::Result<&crate::types::EoCloudCoverInput, &Self> {
         if let Property::EoCloudCover(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`EoCloudCover`](crate::types::Property::EoCloudCover).
@@ -46,11 +46,11 @@ impl Property {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_landsat_cloud_cover_land(
         &self,
-    ) -> std::result::Result<&crate::types::LandsatCloudCoverLandInput, &Self> {
+    ) -> ::std::result::Result<&crate::types::LandsatCloudCoverLandInput, &Self> {
         if let Property::LandsatCloudCoverLand(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`LandsatCloudCoverLand`](crate::types::Property::LandsatCloudCoverLand).
@@ -59,11 +59,11 @@ impl Property {
     }
     /// Tries to convert the enum instance into [`Platform`](crate::types::Property::Platform), extracting the inner [`PlatformInput`](crate::types::PlatformInput).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_platform(&self) -> std::result::Result<&crate::types::PlatformInput, &Self> {
+    pub fn as_platform(&self) -> ::std::result::Result<&crate::types::PlatformInput, &Self> {
         if let Property::Platform(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Platform`](crate::types::Property::Platform).
@@ -74,11 +74,11 @@ impl Property {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_view_off_nadir(
         &self,
-    ) -> std::result::Result<&crate::types::ViewOffNadirInput, &Self> {
+    ) -> ::std::result::Result<&crate::types::ViewOffNadirInput, &Self> {
         if let Property::ViewOffNadir(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`ViewOffNadir`](crate::types::Property::ViewOffNadir).
@@ -89,11 +89,11 @@ impl Property {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_view_sun_azimuth(
         &self,
-    ) -> std::result::Result<&crate::types::ViewSunAzimuthInput, &Self> {
+    ) -> ::std::result::Result<&crate::types::ViewSunAzimuthInput, &Self> {
         if let Property::ViewSunAzimuth(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`ViewSunAzimuth`](crate::types::Property::ViewSunAzimuth).
@@ -104,11 +104,11 @@ impl Property {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_view_sun_elevation(
         &self,
-    ) -> std::result::Result<&crate::types::ViewSunElevationInput, &Self> {
+    ) -> ::std::result::Result<&crate::types::ViewSunElevationInput, &Self> {
         if let Property::ViewSunElevation(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`ViewSunElevation`](crate::types::Property::ViewSunElevation).

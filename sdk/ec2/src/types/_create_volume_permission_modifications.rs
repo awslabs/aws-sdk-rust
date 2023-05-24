@@ -2,22 +2,22 @@
 
 /// <p>Describes modifications to the list of create volume permissions for a volume.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateVolumePermissionModifications {
     /// <p>Adds the specified Amazon Web Services account ID or group to the list.</p>
     #[doc(hidden)]
-    pub add: std::option::Option<std::vec::Vec<crate::types::CreateVolumePermission>>,
+    pub add: ::std::option::Option<::std::vec::Vec<crate::types::CreateVolumePermission>>,
     /// <p>Removes the specified Amazon Web Services account ID or group from the list.</p>
     #[doc(hidden)]
-    pub remove: std::option::Option<std::vec::Vec<crate::types::CreateVolumePermission>>,
+    pub remove: ::std::option::Option<::std::vec::Vec<crate::types::CreateVolumePermission>>,
 }
 impl CreateVolumePermissionModifications {
     /// <p>Adds the specified Amazon Web Services account ID or group to the list.</p>
-    pub fn add(&self) -> std::option::Option<&[crate::types::CreateVolumePermission]> {
+    pub fn add(&self) -> ::std::option::Option<&[crate::types::CreateVolumePermission]> {
         self.add.as_deref()
     }
     /// <p>Removes the specified Amazon Web Services account ID or group from the list.</p>
-    pub fn remove(&self) -> std::option::Option<&[crate::types::CreateVolumePermission]> {
+    pub fn remove(&self) -> ::std::option::Option<&[crate::types::CreateVolumePermission]> {
         self.remove.as_deref()
     }
 }
@@ -30,10 +30,12 @@ impl CreateVolumePermissionModifications {
 
 /// A builder for [`CreateVolumePermissionModifications`](crate::types::CreateVolumePermissionModifications).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateVolumePermissionModificationsBuilder {
-    pub(crate) add: std::option::Option<std::vec::Vec<crate::types::CreateVolumePermission>>,
-    pub(crate) remove: std::option::Option<std::vec::Vec<crate::types::CreateVolumePermission>>,
+    pub(crate) add: ::std::option::Option<::std::vec::Vec<crate::types::CreateVolumePermission>>,
+    pub(crate) remove: ::std::option::Option<::std::vec::Vec<crate::types::CreateVolumePermission>>,
 }
 impl CreateVolumePermissionModificationsBuilder {
     /// Appends an item to `add`.
@@ -44,13 +46,13 @@ impl CreateVolumePermissionModificationsBuilder {
     pub fn add(mut self, input: crate::types::CreateVolumePermission) -> Self {
         let mut v = self.add.unwrap_or_default();
         v.push(input);
-        self.add = Some(v);
+        self.add = ::std::option::Option::Some(v);
         self
     }
     /// <p>Adds the specified Amazon Web Services account ID or group to the list.</p>
     pub fn set_add(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CreateVolumePermission>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::CreateVolumePermission>>,
     ) -> Self {
         self.add = input;
         self
@@ -63,13 +65,13 @@ impl CreateVolumePermissionModificationsBuilder {
     pub fn remove(mut self, input: crate::types::CreateVolumePermission) -> Self {
         let mut v = self.remove.unwrap_or_default();
         v.push(input);
-        self.remove = Some(v);
+        self.remove = ::std::option::Option::Some(v);
         self
     }
     /// <p>Removes the specified Amazon Web Services account ID or group from the list.</p>
     pub fn set_remove(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CreateVolumePermission>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::CreateVolumePermission>>,
     ) -> Self {
         self.remove = input;
         self

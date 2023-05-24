@@ -2,36 +2,36 @@
 
 /// <p>Describes the serialization format of the object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InputSerialization {
     /// <p>Describes the serialization of a CSV-encoded object.</p>
     #[doc(hidden)]
-    pub csv: std::option::Option<crate::types::CsvInput>,
+    pub csv: ::std::option::Option<crate::types::CsvInput>,
     /// <p>Specifies object's compression format. Valid values: NONE, GZIP, BZIP2. Default Value: NONE.</p>
     #[doc(hidden)]
-    pub compression_type: std::option::Option<crate::types::CompressionType>,
+    pub compression_type: ::std::option::Option<crate::types::CompressionType>,
     /// <p>Specifies JSON as object's input serialization format.</p>
     #[doc(hidden)]
-    pub json: std::option::Option<crate::types::JsonInput>,
+    pub json: ::std::option::Option<crate::types::JsonInput>,
     /// <p>Specifies Parquet as object's input serialization format.</p>
     #[doc(hidden)]
-    pub parquet: std::option::Option<crate::types::ParquetInput>,
+    pub parquet: ::std::option::Option<crate::types::ParquetInput>,
 }
 impl InputSerialization {
     /// <p>Describes the serialization of a CSV-encoded object.</p>
-    pub fn csv(&self) -> std::option::Option<&crate::types::CsvInput> {
+    pub fn csv(&self) -> ::std::option::Option<&crate::types::CsvInput> {
         self.csv.as_ref()
     }
     /// <p>Specifies object's compression format. Valid values: NONE, GZIP, BZIP2. Default Value: NONE.</p>
-    pub fn compression_type(&self) -> std::option::Option<&crate::types::CompressionType> {
+    pub fn compression_type(&self) -> ::std::option::Option<&crate::types::CompressionType> {
         self.compression_type.as_ref()
     }
     /// <p>Specifies JSON as object's input serialization format.</p>
-    pub fn json(&self) -> std::option::Option<&crate::types::JsonInput> {
+    pub fn json(&self) -> ::std::option::Option<&crate::types::JsonInput> {
         self.json.as_ref()
     }
     /// <p>Specifies Parquet as object's input serialization format.</p>
-    pub fn parquet(&self) -> std::option::Option<&crate::types::ParquetInput> {
+    pub fn parquet(&self) -> ::std::option::Option<&crate::types::ParquetInput> {
         self.parquet.as_ref()
     }
 }
@@ -44,54 +44,56 @@ impl InputSerialization {
 
 /// A builder for [`InputSerialization`](crate::types::InputSerialization).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InputSerializationBuilder {
-    pub(crate) csv: std::option::Option<crate::types::CsvInput>,
-    pub(crate) compression_type: std::option::Option<crate::types::CompressionType>,
-    pub(crate) json: std::option::Option<crate::types::JsonInput>,
-    pub(crate) parquet: std::option::Option<crate::types::ParquetInput>,
+    pub(crate) csv: ::std::option::Option<crate::types::CsvInput>,
+    pub(crate) compression_type: ::std::option::Option<crate::types::CompressionType>,
+    pub(crate) json: ::std::option::Option<crate::types::JsonInput>,
+    pub(crate) parquet: ::std::option::Option<crate::types::ParquetInput>,
 }
 impl InputSerializationBuilder {
     /// <p>Describes the serialization of a CSV-encoded object.</p>
     pub fn csv(mut self, input: crate::types::CsvInput) -> Self {
-        self.csv = Some(input);
+        self.csv = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes the serialization of a CSV-encoded object.</p>
-    pub fn set_csv(mut self, input: std::option::Option<crate::types::CsvInput>) -> Self {
+    pub fn set_csv(mut self, input: ::std::option::Option<crate::types::CsvInput>) -> Self {
         self.csv = input;
         self
     }
     /// <p>Specifies object's compression format. Valid values: NONE, GZIP, BZIP2. Default Value: NONE.</p>
     pub fn compression_type(mut self, input: crate::types::CompressionType) -> Self {
-        self.compression_type = Some(input);
+        self.compression_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies object's compression format. Valid values: NONE, GZIP, BZIP2. Default Value: NONE.</p>
     pub fn set_compression_type(
         mut self,
-        input: std::option::Option<crate::types::CompressionType>,
+        input: ::std::option::Option<crate::types::CompressionType>,
     ) -> Self {
         self.compression_type = input;
         self
     }
     /// <p>Specifies JSON as object's input serialization format.</p>
     pub fn json(mut self, input: crate::types::JsonInput) -> Self {
-        self.json = Some(input);
+        self.json = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies JSON as object's input serialization format.</p>
-    pub fn set_json(mut self, input: std::option::Option<crate::types::JsonInput>) -> Self {
+    pub fn set_json(mut self, input: ::std::option::Option<crate::types::JsonInput>) -> Self {
         self.json = input;
         self
     }
     /// <p>Specifies Parquet as object's input serialization format.</p>
     pub fn parquet(mut self, input: crate::types::ParquetInput) -> Self {
-        self.parquet = Some(input);
+        self.parquet = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies Parquet as object's input serialization format.</p>
-    pub fn set_parquet(mut self, input: std::option::Option<crate::types::ParquetInput>) -> Self {
+    pub fn set_parquet(mut self, input: ::std::option::Option<crate::types::ParquetInput>) -> Self {
         self.parquet = input;
         self
     }

@@ -2,22 +2,22 @@
 
 /// <p>Information about the Capacity Reservation usage.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceUsage {
     /// <p>The ID of the Amazon Web Services account that is making use of the Capacity Reservation.</p>
     #[doc(hidden)]
-    pub account_id: std::option::Option<std::string::String>,
+    pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The number of instances the Amazon Web Services account currently has in the Capacity Reservation.</p>
     #[doc(hidden)]
-    pub used_instance_count: std::option::Option<i32>,
+    pub used_instance_count: ::std::option::Option<i32>,
 }
 impl InstanceUsage {
     /// <p>The ID of the Amazon Web Services account that is making use of the Capacity Reservation.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The number of instances the Amazon Web Services account currently has in the Capacity Reservation.</p>
-    pub fn used_instance_count(&self) -> std::option::Option<i32> {
+    pub fn used_instance_count(&self) -> ::std::option::Option<i32> {
         self.used_instance_count
     }
 }
@@ -30,29 +30,31 @@ impl InstanceUsage {
 
 /// A builder for [`InstanceUsage`](crate::types::InstanceUsage).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InstanceUsageBuilder {
-    pub(crate) account_id: std::option::Option<std::string::String>,
-    pub(crate) used_instance_count: std::option::Option<i32>,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) used_instance_count: ::std::option::Option<i32>,
 }
 impl InstanceUsageBuilder {
     /// <p>The ID of the Amazon Web Services account that is making use of the Capacity Reservation.</p>
-    pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.account_id = Some(input.into());
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that is making use of the Capacity Reservation.</p>
-    pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
     }
     /// <p>The number of instances the Amazon Web Services account currently has in the Capacity Reservation.</p>
     pub fn used_instance_count(mut self, input: i32) -> Self {
-        self.used_instance_count = Some(input);
+        self.used_instance_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of instances the Amazon Web Services account currently has in the Capacity Reservation.</p>
-    pub fn set_used_instance_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_used_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.used_instance_count = input;
         self
     }

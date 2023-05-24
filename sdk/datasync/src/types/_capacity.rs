@@ -2,29 +2,29 @@
 
 /// <p>The storage capacity of an on-premises storage system resource (for example, a volume).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Capacity {
     /// <p>The amount of space that's being used in a storage system resource.</p>
     #[doc(hidden)]
-    pub used: std::option::Option<i64>,
+    pub used: ::std::option::Option<i64>,
     /// <p>The total amount of space available in a storage system resource.</p>
     #[doc(hidden)]
-    pub provisioned: std::option::Option<i64>,
+    pub provisioned: ::std::option::Option<i64>,
     /// <p>The amount of space that's being used in a storage system resource without accounting for compression or deduplication.</p>
     #[doc(hidden)]
-    pub logical_used: std::option::Option<i64>,
+    pub logical_used: ::std::option::Option<i64>,
 }
 impl Capacity {
     /// <p>The amount of space that's being used in a storage system resource.</p>
-    pub fn used(&self) -> std::option::Option<i64> {
+    pub fn used(&self) -> ::std::option::Option<i64> {
         self.used
     }
     /// <p>The total amount of space available in a storage system resource.</p>
-    pub fn provisioned(&self) -> std::option::Option<i64> {
+    pub fn provisioned(&self) -> ::std::option::Option<i64> {
         self.provisioned
     }
     /// <p>The amount of space that's being used in a storage system resource without accounting for compression or deduplication.</p>
-    pub fn logical_used(&self) -> std::option::Option<i64> {
+    pub fn logical_used(&self) -> ::std::option::Option<i64> {
         self.logical_used
     }
 }
@@ -37,40 +37,42 @@ impl Capacity {
 
 /// A builder for [`Capacity`](crate::types::Capacity).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CapacityBuilder {
-    pub(crate) used: std::option::Option<i64>,
-    pub(crate) provisioned: std::option::Option<i64>,
-    pub(crate) logical_used: std::option::Option<i64>,
+    pub(crate) used: ::std::option::Option<i64>,
+    pub(crate) provisioned: ::std::option::Option<i64>,
+    pub(crate) logical_used: ::std::option::Option<i64>,
 }
 impl CapacityBuilder {
     /// <p>The amount of space that's being used in a storage system resource.</p>
     pub fn used(mut self, input: i64) -> Self {
-        self.used = Some(input);
+        self.used = ::std::option::Option::Some(input);
         self
     }
     /// <p>The amount of space that's being used in a storage system resource.</p>
-    pub fn set_used(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_used(mut self, input: ::std::option::Option<i64>) -> Self {
         self.used = input;
         self
     }
     /// <p>The total amount of space available in a storage system resource.</p>
     pub fn provisioned(mut self, input: i64) -> Self {
-        self.provisioned = Some(input);
+        self.provisioned = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total amount of space available in a storage system resource.</p>
-    pub fn set_provisioned(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_provisioned(mut self, input: ::std::option::Option<i64>) -> Self {
         self.provisioned = input;
         self
     }
     /// <p>The amount of space that's being used in a storage system resource without accounting for compression or deduplication.</p>
     pub fn logical_used(mut self, input: i64) -> Self {
-        self.logical_used = Some(input);
+        self.logical_used = ::std::option::Option::Some(input);
         self
     }
     /// <p>The amount of space that's being used in a storage system resource without accounting for compression or deduplication.</p>
-    pub fn set_logical_used(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_logical_used(mut self, input: ::std::option::Option<i64>) -> Self {
         self.logical_used = input;
         self
     }

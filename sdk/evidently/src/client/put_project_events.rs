@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`PutProjectEvents`](crate::operation::put_project_events::builders::PutProjectEventsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`project(impl Into<String>)`](crate::operation::put_project_events::builders::PutProjectEventsFluentBuilder::project) / [`set_project(Option<String>)`](crate::operation::put_project_events::builders::PutProjectEventsFluentBuilder::set_project): <p>The name or ARN of the project to write the events to.</p>
+    ///   - [`project(impl ::std::convert::Into<String>)`](crate::operation::put_project_events::builders::PutProjectEventsFluentBuilder::project) / [`set_project(Option<String>)`](crate::operation::put_project_events::builders::PutProjectEventsFluentBuilder::set_project): <p>The name or ARN of the project to write the events to.</p>
     ///   - [`events(Vec<Event>)`](crate::operation::put_project_events::builders::PutProjectEventsFluentBuilder::events) / [`set_events(Option<Vec<Event>>)`](crate::operation::put_project_events::builders::PutProjectEventsFluentBuilder::set_events): <p>An array of event structures that contain the performance data that is being sent to Evidently.</p>
     /// - On success, responds with [`PutProjectEventsOutput`](crate::operation::put_project_events::PutProjectEventsOutput) with field(s):
     ///   - [`failed_event_count(Option<i32>)`](crate::operation::put_project_events::PutProjectEventsOutput::failed_event_count): <p>The number of events in the operation that could not be used by Evidently.</p>

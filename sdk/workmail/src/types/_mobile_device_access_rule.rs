@@ -2,106 +2,106 @@
 
 /// <p>A rule that controls access to mobile devices for an WorkMail group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MobileDeviceAccessRule {
     /// <p>The ID assigned to a mobile access rule.</p>
     #[doc(hidden)]
-    pub mobile_device_access_rule_id: std::option::Option<std::string::String>,
+    pub mobile_device_access_rule_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of a mobile access rule.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of a mobile access rule.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The effect of the rule when it matches. Allowed values are <code>ALLOW</code> or <code>DENY</code>.</p>
     #[doc(hidden)]
-    pub effect: std::option::Option<crate::types::MobileDeviceAccessRuleEffect>,
+    pub effect: ::std::option::Option<crate::types::MobileDeviceAccessRuleEffect>,
     /// <p>Device types that a rule will match.</p>
     #[doc(hidden)]
-    pub device_types: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub device_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Device types that a rule <b>will not</b> match. All other device types will match.</p>
     #[doc(hidden)]
-    pub not_device_types: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub not_device_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Device models that a rule will match.</p>
     #[doc(hidden)]
-    pub device_models: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub device_models: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Device models that a rule <b>will not</b> match. All other device models will match.</p>
     #[doc(hidden)]
-    pub not_device_models: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub not_device_models: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Device operating systems that a rule will match.</p>
     #[doc(hidden)]
-    pub device_operating_systems: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub device_operating_systems: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Device operating systems that a rule <b>will not</b> match. All other device types will match.</p>
     #[doc(hidden)]
-    pub not_device_operating_systems: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub not_device_operating_systems: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Device user agents that a rule will match.</p>
     #[doc(hidden)]
-    pub device_user_agents: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub device_user_agents: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Device user agents that a rule <b>will not</b> match. All other device user agents will match.</p>
     #[doc(hidden)]
-    pub not_device_user_agents: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub not_device_user_agents: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The date and time at which an access rule was created.</p>
     #[doc(hidden)]
-    pub date_created: std::option::Option<aws_smithy_types::DateTime>,
+    pub date_created: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time at which an access rule was modified.</p>
     #[doc(hidden)]
-    pub date_modified: std::option::Option<aws_smithy_types::DateTime>,
+    pub date_modified: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl MobileDeviceAccessRule {
     /// <p>The ID assigned to a mobile access rule.</p>
-    pub fn mobile_device_access_rule_id(&self) -> std::option::Option<&str> {
+    pub fn mobile_device_access_rule_id(&self) -> ::std::option::Option<&str> {
         self.mobile_device_access_rule_id.as_deref()
     }
     /// <p>The name of a mobile access rule.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The description of a mobile access rule.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The effect of the rule when it matches. Allowed values are <code>ALLOW</code> or <code>DENY</code>.</p>
-    pub fn effect(&self) -> std::option::Option<&crate::types::MobileDeviceAccessRuleEffect> {
+    pub fn effect(&self) -> ::std::option::Option<&crate::types::MobileDeviceAccessRuleEffect> {
         self.effect.as_ref()
     }
     /// <p>Device types that a rule will match.</p>
-    pub fn device_types(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn device_types(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.device_types.as_deref()
     }
     /// <p>Device types that a rule <b>will not</b> match. All other device types will match.</p>
-    pub fn not_device_types(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn not_device_types(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.not_device_types.as_deref()
     }
     /// <p>Device models that a rule will match.</p>
-    pub fn device_models(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn device_models(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.device_models.as_deref()
     }
     /// <p>Device models that a rule <b>will not</b> match. All other device models will match.</p>
-    pub fn not_device_models(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn not_device_models(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.not_device_models.as_deref()
     }
     /// <p>Device operating systems that a rule will match.</p>
-    pub fn device_operating_systems(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn device_operating_systems(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.device_operating_systems.as_deref()
     }
     /// <p>Device operating systems that a rule <b>will not</b> match. All other device types will match.</p>
-    pub fn not_device_operating_systems(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn not_device_operating_systems(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.not_device_operating_systems.as_deref()
     }
     /// <p>Device user agents that a rule will match.</p>
-    pub fn device_user_agents(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn device_user_agents(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.device_user_agents.as_deref()
     }
     /// <p>Device user agents that a rule <b>will not</b> match. All other device user agents will match.</p>
-    pub fn not_device_user_agents(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn not_device_user_agents(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.not_device_user_agents.as_deref()
     }
     /// <p>The date and time at which an access rule was created.</p>
-    pub fn date_created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn date_created(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.date_created.as_ref()
     }
     /// <p>The date and time at which an access rule was modified.</p>
-    pub fn date_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn date_modified(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.date_modified.as_ref()
     }
 }
@@ -114,67 +114,74 @@ impl MobileDeviceAccessRule {
 
 /// A builder for [`MobileDeviceAccessRule`](crate::types::MobileDeviceAccessRule).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MobileDeviceAccessRuleBuilder {
-    pub(crate) mobile_device_access_rule_id: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) effect: std::option::Option<crate::types::MobileDeviceAccessRuleEffect>,
-    pub(crate) device_types: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) not_device_types: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) device_models: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) not_device_models: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) device_operating_systems: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) mobile_device_access_rule_id: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) effect: ::std::option::Option<crate::types::MobileDeviceAccessRuleEffect>,
+    pub(crate) device_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) not_device_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) device_models: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) not_device_models: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) device_operating_systems:
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) not_device_operating_systems:
-        std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) device_user_agents: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) not_device_user_agents: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) date_created: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) date_modified: std::option::Option<aws_smithy_types::DateTime>,
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) device_user_agents: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) not_device_user_agents:
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) date_created: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) date_modified: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl MobileDeviceAccessRuleBuilder {
     /// <p>The ID assigned to a mobile access rule.</p>
-    pub fn mobile_device_access_rule_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.mobile_device_access_rule_id = Some(input.into());
+    pub fn mobile_device_access_rule_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.mobile_device_access_rule_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID assigned to a mobile access rule.</p>
     pub fn set_mobile_device_access_rule_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.mobile_device_access_rule_id = input;
         self
     }
     /// <p>The name of a mobile access rule.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a mobile access rule.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The description of a mobile access rule.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of a mobile access rule.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>The effect of the rule when it matches. Allowed values are <code>ALLOW</code> or <code>DENY</code>.</p>
     pub fn effect(mut self, input: crate::types::MobileDeviceAccessRuleEffect) -> Self {
-        self.effect = Some(input);
+        self.effect = ::std::option::Option::Some(input);
         self
     }
     /// <p>The effect of the rule when it matches. Allowed values are <code>ALLOW</code> or <code>DENY</code>.</p>
     pub fn set_effect(
         mut self,
-        input: std::option::Option<crate::types::MobileDeviceAccessRuleEffect>,
+        input: ::std::option::Option<crate::types::MobileDeviceAccessRuleEffect>,
     ) -> Self {
         self.effect = input;
         self
@@ -184,16 +191,16 @@ impl MobileDeviceAccessRuleBuilder {
     /// To override the contents of this collection use [`set_device_types`](Self::set_device_types).
     ///
     /// <p>Device types that a rule will match.</p>
-    pub fn device_types(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn device_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.device_types.unwrap_or_default();
         v.push(input.into());
-        self.device_types = Some(v);
+        self.device_types = ::std::option::Option::Some(v);
         self
     }
     /// <p>Device types that a rule will match.</p>
     pub fn set_device_types(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.device_types = input;
         self
@@ -203,16 +210,19 @@ impl MobileDeviceAccessRuleBuilder {
     /// To override the contents of this collection use [`set_not_device_types`](Self::set_not_device_types).
     ///
     /// <p>Device types that a rule <b>will not</b> match. All other device types will match.</p>
-    pub fn not_device_types(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn not_device_types(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.not_device_types.unwrap_or_default();
         v.push(input.into());
-        self.not_device_types = Some(v);
+        self.not_device_types = ::std::option::Option::Some(v);
         self
     }
     /// <p>Device types that a rule <b>will not</b> match. All other device types will match.</p>
     pub fn set_not_device_types(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.not_device_types = input;
         self
@@ -222,16 +232,19 @@ impl MobileDeviceAccessRuleBuilder {
     /// To override the contents of this collection use [`set_device_models`](Self::set_device_models).
     ///
     /// <p>Device models that a rule will match.</p>
-    pub fn device_models(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn device_models(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.device_models.unwrap_or_default();
         v.push(input.into());
-        self.device_models = Some(v);
+        self.device_models = ::std::option::Option::Some(v);
         self
     }
     /// <p>Device models that a rule will match.</p>
     pub fn set_device_models(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.device_models = input;
         self
@@ -241,16 +254,19 @@ impl MobileDeviceAccessRuleBuilder {
     /// To override the contents of this collection use [`set_not_device_models`](Self::set_not_device_models).
     ///
     /// <p>Device models that a rule <b>will not</b> match. All other device models will match.</p>
-    pub fn not_device_models(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn not_device_models(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.not_device_models.unwrap_or_default();
         v.push(input.into());
-        self.not_device_models = Some(v);
+        self.not_device_models = ::std::option::Option::Some(v);
         self
     }
     /// <p>Device models that a rule <b>will not</b> match. All other device models will match.</p>
     pub fn set_not_device_models(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.not_device_models = input;
         self
@@ -260,16 +276,19 @@ impl MobileDeviceAccessRuleBuilder {
     /// To override the contents of this collection use [`set_device_operating_systems`](Self::set_device_operating_systems).
     ///
     /// <p>Device operating systems that a rule will match.</p>
-    pub fn device_operating_systems(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn device_operating_systems(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.device_operating_systems.unwrap_or_default();
         v.push(input.into());
-        self.device_operating_systems = Some(v);
+        self.device_operating_systems = ::std::option::Option::Some(v);
         self
     }
     /// <p>Device operating systems that a rule will match.</p>
     pub fn set_device_operating_systems(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.device_operating_systems = input;
         self
@@ -279,16 +298,19 @@ impl MobileDeviceAccessRuleBuilder {
     /// To override the contents of this collection use [`set_not_device_operating_systems`](Self::set_not_device_operating_systems).
     ///
     /// <p>Device operating systems that a rule <b>will not</b> match. All other device types will match.</p>
-    pub fn not_device_operating_systems(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn not_device_operating_systems(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.not_device_operating_systems.unwrap_or_default();
         v.push(input.into());
-        self.not_device_operating_systems = Some(v);
+        self.not_device_operating_systems = ::std::option::Option::Some(v);
         self
     }
     /// <p>Device operating systems that a rule <b>will not</b> match. All other device types will match.</p>
     pub fn set_not_device_operating_systems(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.not_device_operating_systems = input;
         self
@@ -298,16 +320,19 @@ impl MobileDeviceAccessRuleBuilder {
     /// To override the contents of this collection use [`set_device_user_agents`](Self::set_device_user_agents).
     ///
     /// <p>Device user agents that a rule will match.</p>
-    pub fn device_user_agents(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn device_user_agents(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.device_user_agents.unwrap_or_default();
         v.push(input.into());
-        self.device_user_agents = Some(v);
+        self.device_user_agents = ::std::option::Option::Some(v);
         self
     }
     /// <p>Device user agents that a rule will match.</p>
     pub fn set_device_user_agents(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.device_user_agents = input;
         self
@@ -317,42 +342,45 @@ impl MobileDeviceAccessRuleBuilder {
     /// To override the contents of this collection use [`set_not_device_user_agents`](Self::set_not_device_user_agents).
     ///
     /// <p>Device user agents that a rule <b>will not</b> match. All other device user agents will match.</p>
-    pub fn not_device_user_agents(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn not_device_user_agents(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.not_device_user_agents.unwrap_or_default();
         v.push(input.into());
-        self.not_device_user_agents = Some(v);
+        self.not_device_user_agents = ::std::option::Option::Some(v);
         self
     }
     /// <p>Device user agents that a rule <b>will not</b> match. All other device user agents will match.</p>
     pub fn set_not_device_user_agents(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.not_device_user_agents = input;
         self
     }
     /// <p>The date and time at which an access rule was created.</p>
-    pub fn date_created(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.date_created = Some(input);
+    pub fn date_created(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.date_created = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time at which an access rule was created.</p>
     pub fn set_date_created(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.date_created = input;
         self
     }
     /// <p>The date and time at which an access rule was modified.</p>
-    pub fn date_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.date_modified = Some(input);
+    pub fn date_modified(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.date_modified = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time at which an access rule was modified.</p>
     pub fn set_date_modified(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.date_modified = input;
         self

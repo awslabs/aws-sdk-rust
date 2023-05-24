@@ -4,7 +4,7 @@
 /// <p>When a <code>CreationConnection</code> request arrives containing a password, the Data Catalog first encrypts the password using your KMS key. It then encrypts the whole connection object again if catalog encryption is also enabled.</p>
 /// <p>This encryption requires that you set KMS key permissions to enable or restrict access on the password key according to your security requirements. For example, you might want only administrators to have decrypt permission on the password key.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConnectionPasswordEncryption {
     /// <p>When the <code>ReturnConnectionPasswordEncrypted</code> flag is set to "true", passwords remain encrypted in the responses of <code>GetConnection</code> and <code>GetConnections</code>. This encryption takes effect independently from catalog encryption. </p>
     #[doc(hidden)]
@@ -13,7 +13,7 @@ pub struct ConnectionPasswordEncryption {
     /// <p>If connection password protection is enabled, the caller of <code>CreateConnection</code> and <code>UpdateConnection</code> needs at least <code>kms:Encrypt</code> permission on the specified KMS key, to encrypt passwords before storing them in the Data Catalog. </p>
     /// <p>You can set the decrypt permission to enable or restrict access on the password key according to your security requirements.</p>
     #[doc(hidden)]
-    pub aws_kms_key_id: std::option::Option<std::string::String>,
+    pub aws_kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl ConnectionPasswordEncryption {
     /// <p>When the <code>ReturnConnectionPasswordEncrypted</code> flag is set to "true", passwords remain encrypted in the responses of <code>GetConnection</code> and <code>GetConnections</code>. This encryption takes effect independently from catalog encryption. </p>
@@ -23,7 +23,7 @@ impl ConnectionPasswordEncryption {
     /// <p>An KMS key that is used to encrypt the connection password. </p>
     /// <p>If connection password protection is enabled, the caller of <code>CreateConnection</code> and <code>UpdateConnection</code> needs at least <code>kms:Encrypt</code> permission on the specified KMS key, to encrypt passwords before storing them in the Data Catalog. </p>
     /// <p>You can set the decrypt permission to enable or restrict access on the password key according to your security requirements.</p>
-    pub fn aws_kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn aws_kms_key_id(&self) -> ::std::option::Option<&str> {
         self.aws_kms_key_id.as_deref()
     }
 }
@@ -36,21 +36,23 @@ impl ConnectionPasswordEncryption {
 
 /// A builder for [`ConnectionPasswordEncryption`](crate::types::ConnectionPasswordEncryption).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ConnectionPasswordEncryptionBuilder {
-    pub(crate) return_connection_password_encrypted: std::option::Option<bool>,
-    pub(crate) aws_kms_key_id: std::option::Option<std::string::String>,
+    pub(crate) return_connection_password_encrypted: ::std::option::Option<bool>,
+    pub(crate) aws_kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl ConnectionPasswordEncryptionBuilder {
     /// <p>When the <code>ReturnConnectionPasswordEncrypted</code> flag is set to "true", passwords remain encrypted in the responses of <code>GetConnection</code> and <code>GetConnections</code>. This encryption takes effect independently from catalog encryption. </p>
     pub fn return_connection_password_encrypted(mut self, input: bool) -> Self {
-        self.return_connection_password_encrypted = Some(input);
+        self.return_connection_password_encrypted = ::std::option::Option::Some(input);
         self
     }
     /// <p>When the <code>ReturnConnectionPasswordEncrypted</code> flag is set to "true", passwords remain encrypted in the responses of <code>GetConnection</code> and <code>GetConnections</code>. This encryption takes effect independently from catalog encryption. </p>
     pub fn set_return_connection_password_encrypted(
         mut self,
-        input: std::option::Option<bool>,
+        input: ::std::option::Option<bool>,
     ) -> Self {
         self.return_connection_password_encrypted = input;
         self
@@ -58,14 +60,20 @@ impl ConnectionPasswordEncryptionBuilder {
     /// <p>An KMS key that is used to encrypt the connection password. </p>
     /// <p>If connection password protection is enabled, the caller of <code>CreateConnection</code> and <code>UpdateConnection</code> needs at least <code>kms:Encrypt</code> permission on the specified KMS key, to encrypt passwords before storing them in the Data Catalog. </p>
     /// <p>You can set the decrypt permission to enable or restrict access on the password key according to your security requirements.</p>
-    pub fn aws_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.aws_kms_key_id = Some(input.into());
+    pub fn aws_kms_key_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.aws_kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An KMS key that is used to encrypt the connection password. </p>
     /// <p>If connection password protection is enabled, the caller of <code>CreateConnection</code> and <code>UpdateConnection</code> needs at least <code>kms:Encrypt</code> permission on the specified KMS key, to encrypt passwords before storing them in the Data Catalog. </p>
     /// <p>You can set the decrypt permission to enable or restrict access on the password key according to your security requirements.</p>
-    pub fn set_aws_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_aws_kms_key_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.aws_kms_key_id = input;
         self
     }

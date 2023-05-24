@@ -38,13 +38,13 @@
 /// Specify whether your motion graphic overlay repeats on a loop or plays only once.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum MotionImagePlayback {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum MotionImagePlayback {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for MotionImagePlayback {
+impl ::std::convert::From<&str> for MotionImagePlayback {
     fn from(s: &str) -> Self {
         match s {
             "ONCE" => MotionImagePlayback::Once,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for MotionImagePlayback {
         }
     }
 }
-impl std::str::FromStr for MotionImagePlayback {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for MotionImagePlayback {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(MotionImagePlayback::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(MotionImagePlayback::from(s))
     }
 }
 impl MotionImagePlayback {
@@ -86,7 +86,7 @@ impl MotionImagePlayback {
         &["ONCE", "REPEAT"]
     }
 }
-impl AsRef<str> for MotionImagePlayback {
+impl ::std::convert::AsRef<str> for MotionImagePlayback {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

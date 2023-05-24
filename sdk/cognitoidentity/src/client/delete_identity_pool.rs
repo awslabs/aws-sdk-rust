@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteIdentityPool`](crate::operation::delete_identity_pool::builders::DeleteIdentityPoolFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`identity_pool_id(impl Into<String>)`](crate::operation::delete_identity_pool::builders::DeleteIdentityPoolFluentBuilder::identity_pool_id) / [`set_identity_pool_id(Option<String>)`](crate::operation::delete_identity_pool::builders::DeleteIdentityPoolFluentBuilder::set_identity_pool_id): <p>An identity pool ID in the format REGION:GUID.</p>
+    ///   - [`identity_pool_id(impl ::std::convert::Into<String>)`](crate::operation::delete_identity_pool::builders::DeleteIdentityPoolFluentBuilder::identity_pool_id) / [`set_identity_pool_id(Option<String>)`](crate::operation::delete_identity_pool::builders::DeleteIdentityPoolFluentBuilder::set_identity_pool_id): <p>An identity pool ID in the format REGION:GUID.</p>
     /// - On success, responds with [`DeleteIdentityPoolOutput`](crate::operation::delete_identity_pool::DeleteIdentityPoolOutput)
     /// - On failure, responds with [`SdkError<DeleteIdentityPoolError>`](crate::operation::delete_identity_pool::DeleteIdentityPoolError)
     pub fn delete_identity_pool(

@@ -2,22 +2,22 @@
 
 /// <p>The foreground of the image with regard to image quality and dominant colors.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetectLabelsImageForeground {
     /// <p>The quality of the image foreground as defined by brightness and sharpness.</p>
     #[doc(hidden)]
-    pub quality: std::option::Option<crate::types::DetectLabelsImageQuality>,
+    pub quality: ::std::option::Option<crate::types::DetectLabelsImageQuality>,
     /// <p>The dominant colors found in the foreground of an image, defined with RGB values, CSS color name, simplified color name, and PixelPercentage (the percentage of image pixels that have a particular color).</p>
     #[doc(hidden)]
-    pub dominant_colors: std::option::Option<std::vec::Vec<crate::types::DominantColor>>,
+    pub dominant_colors: ::std::option::Option<::std::vec::Vec<crate::types::DominantColor>>,
 }
 impl DetectLabelsImageForeground {
     /// <p>The quality of the image foreground as defined by brightness and sharpness.</p>
-    pub fn quality(&self) -> std::option::Option<&crate::types::DetectLabelsImageQuality> {
+    pub fn quality(&self) -> ::std::option::Option<&crate::types::DetectLabelsImageQuality> {
         self.quality.as_ref()
     }
     /// <p>The dominant colors found in the foreground of an image, defined with RGB values, CSS color name, simplified color name, and PixelPercentage (the percentage of image pixels that have a particular color).</p>
-    pub fn dominant_colors(&self) -> std::option::Option<&[crate::types::DominantColor]> {
+    pub fn dominant_colors(&self) -> ::std::option::Option<&[crate::types::DominantColor]> {
         self.dominant_colors.as_deref()
     }
 }
@@ -30,21 +30,23 @@ impl DetectLabelsImageForeground {
 
 /// A builder for [`DetectLabelsImageForeground`](crate::types::DetectLabelsImageForeground).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DetectLabelsImageForegroundBuilder {
-    pub(crate) quality: std::option::Option<crate::types::DetectLabelsImageQuality>,
-    pub(crate) dominant_colors: std::option::Option<std::vec::Vec<crate::types::DominantColor>>,
+    pub(crate) quality: ::std::option::Option<crate::types::DetectLabelsImageQuality>,
+    pub(crate) dominant_colors: ::std::option::Option<::std::vec::Vec<crate::types::DominantColor>>,
 }
 impl DetectLabelsImageForegroundBuilder {
     /// <p>The quality of the image foreground as defined by brightness and sharpness.</p>
     pub fn quality(mut self, input: crate::types::DetectLabelsImageQuality) -> Self {
-        self.quality = Some(input);
+        self.quality = ::std::option::Option::Some(input);
         self
     }
     /// <p>The quality of the image foreground as defined by brightness and sharpness.</p>
     pub fn set_quality(
         mut self,
-        input: std::option::Option<crate::types::DetectLabelsImageQuality>,
+        input: ::std::option::Option<crate::types::DetectLabelsImageQuality>,
     ) -> Self {
         self.quality = input;
         self
@@ -57,13 +59,13 @@ impl DetectLabelsImageForegroundBuilder {
     pub fn dominant_colors(mut self, input: crate::types::DominantColor) -> Self {
         let mut v = self.dominant_colors.unwrap_or_default();
         v.push(input);
-        self.dominant_colors = Some(v);
+        self.dominant_colors = ::std::option::Option::Some(v);
         self
     }
     /// <p>The dominant colors found in the foreground of an image, defined with RGB values, CSS color name, simplified color name, and PixelPercentage (the percentage of image pixels that have a particular color).</p>
     pub fn set_dominant_colors(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DominantColor>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DominantColor>>,
     ) -> Self {
         self.dominant_colors = input;
         self

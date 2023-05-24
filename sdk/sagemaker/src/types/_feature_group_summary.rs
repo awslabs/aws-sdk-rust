@@ -2,43 +2,43 @@
 
 /// <p>The name, Arn, <code>CreationTime</code>, <code>FeatureGroup</code> values, <code>LastUpdatedTime</code> and <code>EnableOnlineStorage</code> status of a <code>FeatureGroup</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FeatureGroupSummary {
     /// <p>The name of <code>FeatureGroup</code>.</p>
     #[doc(hidden)]
-    pub feature_group_name: std::option::Option<std::string::String>,
+    pub feature_group_name: ::std::option::Option<::std::string::String>,
     /// <p>Unique identifier for the <code>FeatureGroup</code>.</p>
     #[doc(hidden)]
-    pub feature_group_arn: std::option::Option<std::string::String>,
+    pub feature_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>A timestamp indicating the time of creation time of the <code>FeatureGroup</code>.</p>
     #[doc(hidden)]
-    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of a FeatureGroup. The status can be any of the following: <code>Creating</code>, <code>Created</code>, <code>CreateFail</code>, <code>Deleting</code> or <code>DetailFail</code>. </p>
     #[doc(hidden)]
-    pub feature_group_status: std::option::Option<crate::types::FeatureGroupStatus>,
+    pub feature_group_status: ::std::option::Option<crate::types::FeatureGroupStatus>,
     /// <p>Notifies you if replicating data into the <code>OfflineStore</code> has failed. Returns either: <code>Active</code> or <code>Blocked</code>.</p>
     #[doc(hidden)]
-    pub offline_store_status: std::option::Option<crate::types::OfflineStoreStatus>,
+    pub offline_store_status: ::std::option::Option<crate::types::OfflineStoreStatus>,
 }
 impl FeatureGroupSummary {
     /// <p>The name of <code>FeatureGroup</code>.</p>
-    pub fn feature_group_name(&self) -> std::option::Option<&str> {
+    pub fn feature_group_name(&self) -> ::std::option::Option<&str> {
         self.feature_group_name.as_deref()
     }
     /// <p>Unique identifier for the <code>FeatureGroup</code>.</p>
-    pub fn feature_group_arn(&self) -> std::option::Option<&str> {
+    pub fn feature_group_arn(&self) -> ::std::option::Option<&str> {
         self.feature_group_arn.as_deref()
     }
     /// <p>A timestamp indicating the time of creation time of the <code>FeatureGroup</code>.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The status of a FeatureGroup. The status can be any of the following: <code>Creating</code>, <code>Created</code>, <code>CreateFail</code>, <code>Deleting</code> or <code>DetailFail</code>. </p>
-    pub fn feature_group_status(&self) -> std::option::Option<&crate::types::FeatureGroupStatus> {
+    pub fn feature_group_status(&self) -> ::std::option::Option<&crate::types::FeatureGroupStatus> {
         self.feature_group_status.as_ref()
     }
     /// <p>Notifies you if replicating data into the <code>OfflineStore</code> has failed. Returns either: <code>Active</code> or <code>Blocked</code>.</p>
-    pub fn offline_store_status(&self) -> std::option::Option<&crate::types::OfflineStoreStatus> {
+    pub fn offline_store_status(&self) -> ::std::option::Option<&crate::types::OfflineStoreStatus> {
         self.offline_store_status.as_ref()
     }
 }
@@ -51,76 +51,84 @@ impl FeatureGroupSummary {
 
 /// A builder for [`FeatureGroupSummary`](crate::types::FeatureGroupSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FeatureGroupSummaryBuilder {
-    pub(crate) feature_group_name: std::option::Option<std::string::String>,
-    pub(crate) feature_group_arn: std::option::Option<std::string::String>,
-    pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) feature_group_status: std::option::Option<crate::types::FeatureGroupStatus>,
-    pub(crate) offline_store_status: std::option::Option<crate::types::OfflineStoreStatus>,
+    pub(crate) feature_group_name: ::std::option::Option<::std::string::String>,
+    pub(crate) feature_group_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) feature_group_status: ::std::option::Option<crate::types::FeatureGroupStatus>,
+    pub(crate) offline_store_status: ::std::option::Option<crate::types::OfflineStoreStatus>,
 }
 impl FeatureGroupSummaryBuilder {
     /// <p>The name of <code>FeatureGroup</code>.</p>
-    pub fn feature_group_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.feature_group_name = Some(input.into());
+    pub fn feature_group_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.feature_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of <code>FeatureGroup</code>.</p>
     pub fn set_feature_group_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.feature_group_name = input;
         self
     }
     /// <p>Unique identifier for the <code>FeatureGroup</code>.</p>
-    pub fn feature_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.feature_group_arn = Some(input.into());
+    pub fn feature_group_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.feature_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Unique identifier for the <code>FeatureGroup</code>.</p>
     pub fn set_feature_group_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.feature_group_arn = input;
         self
     }
     /// <p>A timestamp indicating the time of creation time of the <code>FeatureGroup</code>.</p>
-    pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_time = Some(input);
+    pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>A timestamp indicating the time of creation time of the <code>FeatureGroup</code>.</p>
     pub fn set_creation_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_time = input;
         self
     }
     /// <p>The status of a FeatureGroup. The status can be any of the following: <code>Creating</code>, <code>Created</code>, <code>CreateFail</code>, <code>Deleting</code> or <code>DetailFail</code>. </p>
     pub fn feature_group_status(mut self, input: crate::types::FeatureGroupStatus) -> Self {
-        self.feature_group_status = Some(input);
+        self.feature_group_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of a FeatureGroup. The status can be any of the following: <code>Creating</code>, <code>Created</code>, <code>CreateFail</code>, <code>Deleting</code> or <code>DetailFail</code>. </p>
     pub fn set_feature_group_status(
         mut self,
-        input: std::option::Option<crate::types::FeatureGroupStatus>,
+        input: ::std::option::Option<crate::types::FeatureGroupStatus>,
     ) -> Self {
         self.feature_group_status = input;
         self
     }
     /// <p>Notifies you if replicating data into the <code>OfflineStore</code> has failed. Returns either: <code>Active</code> or <code>Blocked</code>.</p>
     pub fn offline_store_status(mut self, input: crate::types::OfflineStoreStatus) -> Self {
-        self.offline_store_status = Some(input);
+        self.offline_store_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Notifies you if replicating data into the <code>OfflineStore</code> has failed. Returns either: <code>Active</code> or <code>Blocked</code>.</p>
     pub fn set_offline_store_status(
         mut self,
-        input: std::option::Option<crate::types::OfflineStoreStatus>,
+        input: ::std::option::Option<crate::types::OfflineStoreStatus>,
     ) -> Self {
         self.offline_store_status = input;
         self

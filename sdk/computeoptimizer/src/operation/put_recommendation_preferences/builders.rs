@@ -7,29 +7,29 @@ pub use crate::operation::put_recommendation_preferences::_put_recommendation_pr
 ///
 /// <p>Creates a new recommendation preference or updates an existing recommendation preference, such as enhanced infrastructure metrics.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutRecommendationPreferencesFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::put_recommendation_preferences::builders::PutRecommendationPreferencesInputBuilder,
 }
 impl PutRecommendationPreferencesFluentBuilder {
     /// Creates a new `PutRecommendationPreferences`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::put_recommendation_preferences::PutRecommendationPreferences,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::put_recommendation_preferences::PutRecommendationPreferencesError,
         >,
     > {
@@ -37,30 +37,33 @@ impl PutRecommendationPreferencesFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::put_recommendation_preferences::PutRecommendationPreferencesOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::put_recommendation_preferences::PutRecommendationPreferencesError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -73,9 +76,9 @@ impl PutRecommendationPreferencesFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::put_recommendation_preferences::PutRecommendationPreferencesOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::put_recommendation_preferences::PutRecommendationPreferencesError,
         >,
     > {
@@ -95,7 +98,7 @@ impl PutRecommendationPreferencesFluentBuilder {
     /// </note>
     pub fn set_resource_type(
         mut self,
-        input: std::option::Option<crate::types::ResourceType>,
+        input: ::std::option::Option<crate::types::ResourceType>,
     ) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
@@ -112,7 +115,7 @@ impl PutRecommendationPreferencesFluentBuilder {
     /// <p>You can create recommendation preferences at the organization level (for management accounts of an organization only), account level, and resource level. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p> <note>
     /// <p>You cannot create recommendation preferences for Auto Scaling groups at the organization and account levels. You can create recommendation preferences for Auto Scaling groups only at the resource level by specifying a scope name of <code>ResourceArn</code> and a scope value of the Auto Scaling group Amazon Resource Name (ARN). This will configure the preference for all instances that are part of the specified Auto Scaling group. You also cannot create recommendation preferences at the resource level for instances that are part of an Auto Scaling group. You can create recommendation preferences at the resource level only for standalone instances.</p>
     /// </note>
-    pub fn set_scope(mut self, input: std::option::Option<crate::types::Scope>) -> Self {
+    pub fn set_scope(mut self, input: ::std::option::Option<crate::types::Scope>) -> Self {
         self.inner = self.inner.set_scope(input);
         self
     }
@@ -131,7 +134,7 @@ impl PutRecommendationPreferencesFluentBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Enhanced infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.</p>
     pub fn set_enhanced_infrastructure_metrics(
         mut self,
-        input: std::option::Option<crate::types::EnhancedInfrastructureMetrics>,
+        input: ::std::option::Option<crate::types::EnhancedInfrastructureMetrics>,
     ) -> Self {
         self.inner = self.inner.set_enhanced_infrastructure_metrics(input);
         self
@@ -155,7 +158,7 @@ impl PutRecommendationPreferencesFluentBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/inferred-workload-types.html">Inferred workload types</a> in the <i>Compute Optimizer User Guide</i>.</p>
     pub fn set_inferred_workload_types(
         mut self,
-        input: std::option::Option<crate::types::InferredWorkloadTypesPreference>,
+        input: ::std::option::Option<crate::types::InferredWorkloadTypesPreference>,
     ) -> Self {
         self.inner = self.inner.set_inferred_workload_types(input);
         self
@@ -177,7 +180,7 @@ impl PutRecommendationPreferencesFluentBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/external-metrics-ingestion.html">External metrics ingestion</a> in the <i>Compute Optimizer User Guide</i>.</p>
     pub fn set_external_metrics_preference(
         mut self,
-        input: std::option::Option<crate::types::ExternalMetricsPreference>,
+        input: ::std::option::Option<crate::types::ExternalMetricsPreference>,
     ) -> Self {
         self.inner = self.inner.set_external_metrics_preference(input);
         self

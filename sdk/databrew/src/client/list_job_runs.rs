@@ -4,9 +4,9 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_job_runs::builders::ListJobRunsFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::list_job_runs::builders::ListJobRunsFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::list_job_runs::builders::ListJobRunsFluentBuilder::set_name): <p>The name of the job.</p>
+    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::list_job_runs::builders::ListJobRunsFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::list_job_runs::builders::ListJobRunsFluentBuilder::set_name): <p>The name of the job.</p>
     ///   - [`max_results(i32)`](crate::operation::list_job_runs::builders::ListJobRunsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_job_runs::builders::ListJobRunsFluentBuilder::set_max_results): <p>The maximum number of results to return in this request. </p>
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_job_runs::builders::ListJobRunsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_job_runs::builders::ListJobRunsFluentBuilder::set_next_token): <p>The token returned by a previous call to retrieve the next set of results.</p>
+    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_job_runs::builders::ListJobRunsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_job_runs::builders::ListJobRunsFluentBuilder::set_next_token): <p>The token returned by a previous call to retrieve the next set of results.</p>
     /// - On success, responds with [`ListJobRunsOutput`](crate::operation::list_job_runs::ListJobRunsOutput) with field(s):
     ///   - [`job_runs(Option<Vec<JobRun>>)`](crate::operation::list_job_runs::ListJobRunsOutput::job_runs): <p>A list of job runs that have occurred for the specified job.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_job_runs::ListJobRunsOutput::next_token): <p>A token that you can use in a subsequent call to retrieve the next set of results.</p>

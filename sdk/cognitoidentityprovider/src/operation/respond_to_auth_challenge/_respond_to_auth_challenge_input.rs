@@ -2,18 +2,18 @@
 
 /// <p>The request to respond to an authentication challenge.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RespondToAuthChallengeInput {
     /// <p>The app client ID.</p>
     #[doc(hidden)]
-    pub client_id: std::option::Option<std::string::String>,
+    pub client_id: ::std::option::Option<::std::string::String>,
     /// <p>The challenge name. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html">InitiateAuth</a>.</p>
     /// <p> <code>ADMIN_NO_SRP_AUTH</code> isn't a valid value.</p>
     #[doc(hidden)]
-    pub challenge_name: std::option::Option<crate::types::ChallengeNameType>,
+    pub challenge_name: ::std::option::Option<crate::types::ChallengeNameType>,
     /// <p>The session that should be passed both ways in challenge-response calls to the service. If <code>InitiateAuth</code> or <code>RespondToAuthChallenge</code> API call determines that the caller must pass another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
     #[doc(hidden)]
-    pub session: std::option::Option<std::string::String>,
+    pub session: ::std::option::Option<::std::string::String>,
     /// <p>The challenge responses. These are inputs corresponding to the value of <code>ChallengeName</code>, for example:</p> <note>
     /// <p> <code>SECRET_HASH</code> (if app client is configured with client secret) applies to all of the inputs that follow (including <code>SOFTWARE_TOKEN_MFA</code>).</p>
     /// </note>
@@ -31,14 +31,15 @@ pub struct RespondToAuthChallengeInput {
     /// <li> <p> <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you must use the session value returned by <code>VerifySoftwareToken</code> in the <code>Session</code> parameter.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub challenge_responses:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub challenge_responses: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>RespondToAuthChallenge</code> calls.</p>
     #[doc(hidden)]
-    pub analytics_metadata: std::option::Option<crate::types::AnalyticsMetadataType>,
+    pub analytics_metadata: ::std::option::Option<crate::types::AnalyticsMetadataType>,
     /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
     #[doc(hidden)]
-    pub user_context_data: std::option::Option<crate::types::UserContextDataType>,
+    pub user_context_data: ::std::option::Option<crate::types::UserContextDataType>,
     /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers.</p>
     /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the RespondToAuthChallenge API action, Amazon Cognito invokes any functions that are assigned to the following triggers: <i>post authentication</i>, <i>pre token generation</i>, <i>define auth challenge</i>, <i>create auth challenge</i>, and <i>verify auth challenge</i>. When Amazon Cognito invokes any of these functions, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your RespondToAuthChallenge request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html"> Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>
@@ -50,21 +51,22 @@ pub struct RespondToAuthChallengeInput {
     /// </ul>
     /// </note>
     #[doc(hidden)]
-    pub client_metadata:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub client_metadata: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl RespondToAuthChallengeInput {
     /// <p>The app client ID.</p>
-    pub fn client_id(&self) -> std::option::Option<&str> {
+    pub fn client_id(&self) -> ::std::option::Option<&str> {
         self.client_id.as_deref()
     }
     /// <p>The challenge name. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html">InitiateAuth</a>.</p>
     /// <p> <code>ADMIN_NO_SRP_AUTH</code> isn't a valid value.</p>
-    pub fn challenge_name(&self) -> std::option::Option<&crate::types::ChallengeNameType> {
+    pub fn challenge_name(&self) -> ::std::option::Option<&crate::types::ChallengeNameType> {
         self.challenge_name.as_ref()
     }
     /// <p>The session that should be passed both ways in challenge-response calls to the service. If <code>InitiateAuth</code> or <code>RespondToAuthChallenge</code> API call determines that the caller must pass another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
-    pub fn session(&self) -> std::option::Option<&str> {
+    pub fn session(&self) -> ::std::option::Option<&str> {
         self.session.as_deref()
     }
     /// <p>The challenge responses. These are inputs corresponding to the value of <code>ChallengeName</code>, for example:</p> <note>
@@ -85,16 +87,19 @@ impl RespondToAuthChallengeInput {
     /// </ul>
     pub fn challenge_responses(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.challenge_responses.as_ref()
     }
     /// <p>The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>RespondToAuthChallenge</code> calls.</p>
-    pub fn analytics_metadata(&self) -> std::option::Option<&crate::types::AnalyticsMetadataType> {
+    pub fn analytics_metadata(
+        &self,
+    ) -> ::std::option::Option<&crate::types::AnalyticsMetadataType> {
         self.analytics_metadata.as_ref()
     }
     /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
-    pub fn user_context_data(&self) -> std::option::Option<&crate::types::UserContextDataType> {
+    pub fn user_context_data(&self) -> ::std::option::Option<&crate::types::UserContextDataType> {
         self.user_context_data.as_ref()
     }
     /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers.</p>
@@ -109,13 +114,14 @@ impl RespondToAuthChallengeInput {
     /// </note>
     pub fn client_metadata(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.client_metadata.as_ref()
     }
 }
-impl std::fmt::Debug for RespondToAuthChallengeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for RespondToAuthChallengeInput {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("RespondToAuthChallengeInput");
         formatter.field("client_id", &"*** Sensitive Data Redacted ***");
         formatter.field("challenge_name", &self.challenge_name);
@@ -138,51 +144,53 @@ impl RespondToAuthChallengeInput {
 
 /// A builder for [`RespondToAuthChallengeInput`](crate::operation::respond_to_auth_challenge::RespondToAuthChallengeInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct RespondToAuthChallengeInputBuilder {
-    pub(crate) client_id: std::option::Option<std::string::String>,
-    pub(crate) challenge_name: std::option::Option<crate::types::ChallengeNameType>,
-    pub(crate) session: std::option::Option<std::string::String>,
-    pub(crate) challenge_responses:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) analytics_metadata: std::option::Option<crate::types::AnalyticsMetadataType>,
-    pub(crate) user_context_data: std::option::Option<crate::types::UserContextDataType>,
-    pub(crate) client_metadata:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) client_id: ::std::option::Option<::std::string::String>,
+    pub(crate) challenge_name: ::std::option::Option<crate::types::ChallengeNameType>,
+    pub(crate) session: ::std::option::Option<::std::string::String>,
+    pub(crate) challenge_responses: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) analytics_metadata: ::std::option::Option<crate::types::AnalyticsMetadataType>,
+    pub(crate) user_context_data: ::std::option::Option<crate::types::UserContextDataType>,
+    pub(crate) client_metadata: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl RespondToAuthChallengeInputBuilder {
     /// <p>The app client ID.</p>
-    pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.client_id = Some(input.into());
+    pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.client_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The app client ID.</p>
-    pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_id = input;
         self
     }
     /// <p>The challenge name. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html">InitiateAuth</a>.</p>
     /// <p> <code>ADMIN_NO_SRP_AUTH</code> isn't a valid value.</p>
     pub fn challenge_name(mut self, input: crate::types::ChallengeNameType) -> Self {
-        self.challenge_name = Some(input);
+        self.challenge_name = ::std::option::Option::Some(input);
         self
     }
     /// <p>The challenge name. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html">InitiateAuth</a>.</p>
     /// <p> <code>ADMIN_NO_SRP_AUTH</code> isn't a valid value.</p>
     pub fn set_challenge_name(
         mut self,
-        input: std::option::Option<crate::types::ChallengeNameType>,
+        input: ::std::option::Option<crate::types::ChallengeNameType>,
     ) -> Self {
         self.challenge_name = input;
         self
     }
     /// <p>The session that should be passed both ways in challenge-response calls to the service. If <code>InitiateAuth</code> or <code>RespondToAuthChallenge</code> API call determines that the caller must pass another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
-    pub fn session(mut self, input: impl Into<std::string::String>) -> Self {
-        self.session = Some(input.into());
+    pub fn session(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.session = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The session that should be passed both ways in challenge-response calls to the service. If <code>InitiateAuth</code> or <code>RespondToAuthChallenge</code> API call determines that the caller must pass another challenge, they return a session with other challenge parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
-    pub fn set_session(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_session(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.session = input;
         self
     }
@@ -208,12 +216,12 @@ impl RespondToAuthChallengeInputBuilder {
     /// </ul>
     pub fn challenge_responses(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.challenge_responses.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.challenge_responses = Some(hash_map);
+        self.challenge_responses = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The challenge responses. These are inputs corresponding to the value of <code>ChallengeName</code>, for example:</p> <note>
@@ -234,8 +242,8 @@ impl RespondToAuthChallengeInputBuilder {
     /// </ul>
     pub fn set_challenge_responses(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.challenge_responses = input;
@@ -243,26 +251,26 @@ impl RespondToAuthChallengeInputBuilder {
     }
     /// <p>The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>RespondToAuthChallenge</code> calls.</p>
     pub fn analytics_metadata(mut self, input: crate::types::AnalyticsMetadataType) -> Self {
-        self.analytics_metadata = Some(input);
+        self.analytics_metadata = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>RespondToAuthChallenge</code> calls.</p>
     pub fn set_analytics_metadata(
         mut self,
-        input: std::option::Option<crate::types::AnalyticsMetadataType>,
+        input: ::std::option::Option<crate::types::AnalyticsMetadataType>,
     ) -> Self {
         self.analytics_metadata = input;
         self
     }
     /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
     pub fn user_context_data(mut self, input: crate::types::UserContextDataType) -> Self {
-        self.user_context_data = Some(input);
+        self.user_context_data = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
     pub fn set_user_context_data(
         mut self,
-        input: std::option::Option<crate::types::UserContextDataType>,
+        input: ::std::option::Option<crate::types::UserContextDataType>,
     ) -> Self {
         self.user_context_data = input;
         self
@@ -283,12 +291,12 @@ impl RespondToAuthChallengeInputBuilder {
     /// </note>
     pub fn client_metadata(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.client_metadata.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.client_metadata = Some(hash_map);
+        self.client_metadata = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers.</p>
@@ -303,8 +311,8 @@ impl RespondToAuthChallengeInputBuilder {
     /// </note>
     pub fn set_client_metadata(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.client_metadata = input;
@@ -313,11 +321,11 @@ impl RespondToAuthChallengeInputBuilder {
     /// Consumes the builder and constructs a [`RespondToAuthChallengeInput`](crate::operation::respond_to_auth_challenge::RespondToAuthChallengeInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::respond_to_auth_challenge::RespondToAuthChallengeInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::respond_to_auth_challenge::RespondToAuthChallengeInput {
                 client_id: self.client_id,
                 challenge_name: self.challenge_name,
@@ -330,8 +338,8 @@ impl RespondToAuthChallengeInputBuilder {
         )
     }
 }
-impl std::fmt::Debug for RespondToAuthChallengeInputBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for RespondToAuthChallengeInputBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("RespondToAuthChallengeInputBuilder");
         formatter.field("client_id", &"*** Sensitive Data Redacted ***");
         formatter.field("challenge_name", &self.challenge_name);

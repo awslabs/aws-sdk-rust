@@ -2,11 +2,11 @@
 
 /// <p>The parameters for an <code>AUTOMATION</code> task type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MaintenanceWindowAutomationParameters {
     /// <p>The version of an Automation runbook to use during task execution.</p>
     #[doc(hidden)]
-    pub document_version: std::option::Option<std::string::String>,
+    pub document_version: ::std::option::Option<::std::string::String>,
     /// <p>The parameters for the <code>AUTOMATION</code> task.</p>
     /// <p>For information about specifying and updating task parameters, see <code>RegisterTaskWithMaintenanceWindow</code> and <code>UpdateMaintenanceWindowTask</code>.</p> <note>
     /// <p> <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
@@ -14,13 +14,13 @@ pub struct MaintenanceWindowAutomationParameters {
     /// <p>For <code>AUTOMATION</code> task types, Amazon Web Services Systems Manager ignores any values specified for these parameters.</p>
     /// </note>
     #[doc(hidden)]
-    pub parameters: std::option::Option<
-        std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    pub parameters: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
     >,
 }
 impl MaintenanceWindowAutomationParameters {
     /// <p>The version of an Automation runbook to use during task execution.</p>
-    pub fn document_version(&self) -> std::option::Option<&str> {
+    pub fn document_version(&self) -> ::std::option::Option<&str> {
         self.document_version.as_deref()
     }
     /// <p>The parameters for the <code>AUTOMATION</code> task.</p>
@@ -31,8 +31,8 @@ impl MaintenanceWindowAutomationParameters {
     /// </note>
     pub fn parameters(
         &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
     > {
         self.parameters.as_ref()
     }
@@ -46,21 +46,29 @@ impl MaintenanceWindowAutomationParameters {
 
 /// A builder for [`MaintenanceWindowAutomationParameters`](crate::types::MaintenanceWindowAutomationParameters).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MaintenanceWindowAutomationParametersBuilder {
-    pub(crate) document_version: std::option::Option<std::string::String>,
-    pub(crate) parameters: std::option::Option<
-        std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    pub(crate) document_version: ::std::option::Option<::std::string::String>,
+    pub(crate) parameters: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
     >,
 }
 impl MaintenanceWindowAutomationParametersBuilder {
     /// <p>The version of an Automation runbook to use during task execution.</p>
-    pub fn document_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.document_version = Some(input.into());
+    pub fn document_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.document_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of an Automation runbook to use during task execution.</p>
-    pub fn set_document_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_document_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.document_version = input;
         self
     }
@@ -76,12 +84,12 @@ impl MaintenanceWindowAutomationParametersBuilder {
     /// </note>
     pub fn parameters(
         mut self,
-        k: impl Into<std::string::String>,
-        v: std::vec::Vec<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: ::std::vec::Vec<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
         hash_map.insert(k.into(), v);
-        self.parameters = Some(hash_map);
+        self.parameters = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The parameters for the <code>AUTOMATION</code> task.</p>
@@ -92,8 +100,11 @@ impl MaintenanceWindowAutomationParametersBuilder {
     /// </note>
     pub fn set_parameters(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<
+                ::std::string::String,
+                ::std::vec::Vec<::std::string::String>,
+            >,
         >,
     ) -> Self {
         self.parameters = input;

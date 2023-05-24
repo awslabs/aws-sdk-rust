@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateWorkflow`](crate::operation::update_workflow::builders::UpdateWorkflowFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::update_workflow::builders::UpdateWorkflowFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::update_workflow::builders::UpdateWorkflowFluentBuilder::set_id): <p>The workflow's ID.</p>
-    ///   - [`name(impl Into<String>)`](crate::operation::update_workflow::builders::UpdateWorkflowFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_workflow::builders::UpdateWorkflowFluentBuilder::set_name): <p>A name for the workflow.</p>
-    ///   - [`description(impl Into<String>)`](crate::operation::update_workflow::builders::UpdateWorkflowFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_workflow::builders::UpdateWorkflowFluentBuilder::set_description): <p>A description for the workflow.</p>
+    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::update_workflow::builders::UpdateWorkflowFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::update_workflow::builders::UpdateWorkflowFluentBuilder::set_id): <p>The workflow's ID.</p>
+    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::update_workflow::builders::UpdateWorkflowFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_workflow::builders::UpdateWorkflowFluentBuilder::set_name): <p>A name for the workflow.</p>
+    ///   - [`description(impl ::std::convert::Into<String>)`](crate::operation::update_workflow::builders::UpdateWorkflowFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_workflow::builders::UpdateWorkflowFluentBuilder::set_description): <p>A description for the workflow.</p>
     /// - On success, responds with [`UpdateWorkflowOutput`](crate::operation::update_workflow::UpdateWorkflowOutput)
     /// - On failure, responds with [`SdkError<UpdateWorkflowError>`](crate::operation::update_workflow::UpdateWorkflowError)
     pub fn update_workflow(

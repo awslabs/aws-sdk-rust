@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum FilterVisualScope {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum FilterVisualScope {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for FilterVisualScope {
+impl ::std::convert::From<&str> for FilterVisualScope {
     fn from(s: &str) -> Self {
         match s {
             "ALL_VISUALS" => FilterVisualScope::AllVisuals,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for FilterVisualScope {
         }
     }
 }
-impl std::str::FromStr for FilterVisualScope {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for FilterVisualScope {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FilterVisualScope::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(FilterVisualScope::from(s))
     }
 }
 impl FilterVisualScope {
@@ -86,7 +86,7 @@ impl FilterVisualScope {
         &["ALL_VISUALS", "SELECTED_VISUALS"]
     }
 }
-impl AsRef<str> for FilterVisualScope {
+impl ::std::convert::AsRef<str> for FilterVisualScope {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

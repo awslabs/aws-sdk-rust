@@ -2,22 +2,24 @@
 
 /// <p>Settings that control the interval after which a channel is deleted.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExpirationSettings {
     /// <p>The period in days after which the system automatically deletes a channel.</p>
     #[doc(hidden)]
-    pub expiration_days: std::option::Option<i32>,
+    pub expiration_days: ::std::option::Option<i32>,
     /// <p>The conditions that must be met for a channel to expire.</p>
     #[doc(hidden)]
-    pub expiration_criterion: std::option::Option<crate::types::ExpirationCriterion>,
+    pub expiration_criterion: ::std::option::Option<crate::types::ExpirationCriterion>,
 }
 impl ExpirationSettings {
     /// <p>The period in days after which the system automatically deletes a channel.</p>
-    pub fn expiration_days(&self) -> std::option::Option<i32> {
+    pub fn expiration_days(&self) -> ::std::option::Option<i32> {
         self.expiration_days
     }
     /// <p>The conditions that must be met for a channel to expire.</p>
-    pub fn expiration_criterion(&self) -> std::option::Option<&crate::types::ExpirationCriterion> {
+    pub fn expiration_criterion(
+        &self,
+    ) -> ::std::option::Option<&crate::types::ExpirationCriterion> {
         self.expiration_criterion.as_ref()
     }
 }
@@ -30,31 +32,33 @@ impl ExpirationSettings {
 
 /// A builder for [`ExpirationSettings`](crate::types::ExpirationSettings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ExpirationSettingsBuilder {
-    pub(crate) expiration_days: std::option::Option<i32>,
-    pub(crate) expiration_criterion: std::option::Option<crate::types::ExpirationCriterion>,
+    pub(crate) expiration_days: ::std::option::Option<i32>,
+    pub(crate) expiration_criterion: ::std::option::Option<crate::types::ExpirationCriterion>,
 }
 impl ExpirationSettingsBuilder {
     /// <p>The period in days after which the system automatically deletes a channel.</p>
     pub fn expiration_days(mut self, input: i32) -> Self {
-        self.expiration_days = Some(input);
+        self.expiration_days = ::std::option::Option::Some(input);
         self
     }
     /// <p>The period in days after which the system automatically deletes a channel.</p>
-    pub fn set_expiration_days(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_expiration_days(mut self, input: ::std::option::Option<i32>) -> Self {
         self.expiration_days = input;
         self
     }
     /// <p>The conditions that must be met for a channel to expire.</p>
     pub fn expiration_criterion(mut self, input: crate::types::ExpirationCriterion) -> Self {
-        self.expiration_criterion = Some(input);
+        self.expiration_criterion = ::std::option::Option::Some(input);
         self
     }
     /// <p>The conditions that must be met for a channel to expire.</p>
     pub fn set_expiration_criterion(
         mut self,
-        input: std::option::Option<crate::types::ExpirationCriterion>,
+        input: ::std::option::Option<crate::types::ExpirationCriterion>,
     ) -> Self {
         self.expiration_criterion = input;
         self

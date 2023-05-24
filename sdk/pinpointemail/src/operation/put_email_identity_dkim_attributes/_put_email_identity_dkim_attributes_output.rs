@@ -2,11 +2,11 @@
 
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutEmailIdentityDkimAttributesOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for PutEmailIdentityDkimAttributesOutput {
+impl ::aws_http::request_id::RequestId for PutEmailIdentityDkimAttributesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -20,7 +20,9 @@ impl PutEmailIdentityDkimAttributesOutput {
 
 /// A builder for [`PutEmailIdentityDkimAttributesOutput`](crate::operation::put_email_identity_dkim_attributes::PutEmailIdentityDkimAttributesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PutEmailIdentityDkimAttributesOutputBuilder {
     _request_id: Option<String>,
 }

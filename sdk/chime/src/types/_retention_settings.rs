@@ -2,27 +2,27 @@
 
 /// <p>The retention settings for an Amazon Chime Enterprise account that determine how long to retain items such as chat-room messages and chat-conversation messages.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RetentionSettings {
     /// <p>The chat room retention settings.</p>
     #[doc(hidden)]
-    pub room_retention_settings: std::option::Option<crate::types::RoomRetentionSettings>,
+    pub room_retention_settings: ::std::option::Option<crate::types::RoomRetentionSettings>,
     /// <p>The chat conversation retention settings.</p>
     #[doc(hidden)]
     pub conversation_retention_settings:
-        std::option::Option<crate::types::ConversationRetentionSettings>,
+        ::std::option::Option<crate::types::ConversationRetentionSettings>,
 }
 impl RetentionSettings {
     /// <p>The chat room retention settings.</p>
     pub fn room_retention_settings(
         &self,
-    ) -> std::option::Option<&crate::types::RoomRetentionSettings> {
+    ) -> ::std::option::Option<&crate::types::RoomRetentionSettings> {
         self.room_retention_settings.as_ref()
     }
     /// <p>The chat conversation retention settings.</p>
     pub fn conversation_retention_settings(
         &self,
-    ) -> std::option::Option<&crate::types::ConversationRetentionSettings> {
+    ) -> ::std::option::Option<&crate::types::ConversationRetentionSettings> {
         self.conversation_retention_settings.as_ref()
     }
 }
@@ -35,22 +35,24 @@ impl RetentionSettings {
 
 /// A builder for [`RetentionSettings`](crate::types::RetentionSettings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RetentionSettingsBuilder {
-    pub(crate) room_retention_settings: std::option::Option<crate::types::RoomRetentionSettings>,
+    pub(crate) room_retention_settings: ::std::option::Option<crate::types::RoomRetentionSettings>,
     pub(crate) conversation_retention_settings:
-        std::option::Option<crate::types::ConversationRetentionSettings>,
+        ::std::option::Option<crate::types::ConversationRetentionSettings>,
 }
 impl RetentionSettingsBuilder {
     /// <p>The chat room retention settings.</p>
     pub fn room_retention_settings(mut self, input: crate::types::RoomRetentionSettings) -> Self {
-        self.room_retention_settings = Some(input);
+        self.room_retention_settings = ::std::option::Option::Some(input);
         self
     }
     /// <p>The chat room retention settings.</p>
     pub fn set_room_retention_settings(
         mut self,
-        input: std::option::Option<crate::types::RoomRetentionSettings>,
+        input: ::std::option::Option<crate::types::RoomRetentionSettings>,
     ) -> Self {
         self.room_retention_settings = input;
         self
@@ -60,13 +62,13 @@ impl RetentionSettingsBuilder {
         mut self,
         input: crate::types::ConversationRetentionSettings,
     ) -> Self {
-        self.conversation_retention_settings = Some(input);
+        self.conversation_retention_settings = ::std::option::Option::Some(input);
         self
     }
     /// <p>The chat conversation retention settings.</p>
     pub fn set_conversation_retention_settings(
         mut self,
-        input: std::option::Option<crate::types::ConversationRetentionSettings>,
+        input: ::std::option::Option<crate::types::ConversationRetentionSettings>,
     ) -> Self {
         self.conversation_retention_settings = input;
         self

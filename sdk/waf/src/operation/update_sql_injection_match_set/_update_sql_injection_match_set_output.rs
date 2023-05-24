@@ -2,20 +2,20 @@
 
 /// <p>The response to an <code>UpdateSqlInjectionMatchSets</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateSqlInjectionMatchSetOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateSqlInjectionMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
-    pub change_token: std::option::Option<std::string::String>,
+    pub change_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl UpdateSqlInjectionMatchSetOutput {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateSqlInjectionMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
-    pub fn change_token(&self) -> std::option::Option<&str> {
+    pub fn change_token(&self) -> ::std::option::Option<&str> {
         self.change_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for UpdateSqlInjectionMatchSetOutput {
+impl ::aws_http::request_id::RequestId for UpdateSqlInjectionMatchSetOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,21 @@ impl UpdateSqlInjectionMatchSetOutput {
 
 /// A builder for [`UpdateSqlInjectionMatchSetOutput`](crate::operation::update_sql_injection_match_set::UpdateSqlInjectionMatchSetOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateSqlInjectionMatchSetOutputBuilder {
-    pub(crate) change_token: std::option::Option<std::string::String>,
+    pub(crate) change_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl UpdateSqlInjectionMatchSetOutputBuilder {
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateSqlInjectionMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
-    pub fn change_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.change_token = Some(input.into());
+    pub fn change_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.change_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>UpdateSqlInjectionMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
-    pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_change_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.change_token = input;
         self
     }

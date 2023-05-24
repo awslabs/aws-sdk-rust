@@ -2,27 +2,27 @@
 
 /// <p>A complex type that contains <code>HeaderName</code> and <code>HeaderValue</code> elements, if any, for this distribution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct OriginCustomHeader {
     /// <p>The name of a header that you want CloudFront to send to your origin. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/forward-custom-headers.html">Adding Custom Headers to Origin Requests</a> in the <i> Amazon CloudFront Developer Guide</i>.</p>
     #[doc(hidden)]
-    pub header_name: std::option::Option<std::string::String>,
+    pub header_name: ::std::option::Option<::std::string::String>,
     /// <p>The value for the header that you specified in the <code>HeaderName</code> field.</p>
     #[doc(hidden)]
-    pub header_value: std::option::Option<std::string::String>,
+    pub header_value: ::std::option::Option<::std::string::String>,
 }
 impl OriginCustomHeader {
     /// <p>The name of a header that you want CloudFront to send to your origin. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/forward-custom-headers.html">Adding Custom Headers to Origin Requests</a> in the <i> Amazon CloudFront Developer Guide</i>.</p>
-    pub fn header_name(&self) -> std::option::Option<&str> {
+    pub fn header_name(&self) -> ::std::option::Option<&str> {
         self.header_name.as_deref()
     }
     /// <p>The value for the header that you specified in the <code>HeaderName</code> field.</p>
-    pub fn header_value(&self) -> std::option::Option<&str> {
+    pub fn header_value(&self) -> ::std::option::Option<&str> {
         self.header_value.as_deref()
     }
 }
-impl std::fmt::Debug for OriginCustomHeader {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for OriginCustomHeader {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("OriginCustomHeader");
         formatter.field("header_name", &self.header_name);
         formatter.field("header_value", &"*** Sensitive Data Redacted ***");
@@ -38,29 +38,29 @@ impl OriginCustomHeader {
 
 /// A builder for [`OriginCustomHeader`](crate::types::OriginCustomHeader).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct OriginCustomHeaderBuilder {
-    pub(crate) header_name: std::option::Option<std::string::String>,
-    pub(crate) header_value: std::option::Option<std::string::String>,
+    pub(crate) header_name: ::std::option::Option<::std::string::String>,
+    pub(crate) header_value: ::std::option::Option<::std::string::String>,
 }
 impl OriginCustomHeaderBuilder {
     /// <p>The name of a header that you want CloudFront to send to your origin. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/forward-custom-headers.html">Adding Custom Headers to Origin Requests</a> in the <i> Amazon CloudFront Developer Guide</i>.</p>
-    pub fn header_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.header_name = Some(input.into());
+    pub fn header_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.header_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a header that you want CloudFront to send to your origin. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/forward-custom-headers.html">Adding Custom Headers to Origin Requests</a> in the <i> Amazon CloudFront Developer Guide</i>.</p>
-    pub fn set_header_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_header_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.header_name = input;
         self
     }
     /// <p>The value for the header that you specified in the <code>HeaderName</code> field.</p>
-    pub fn header_value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.header_value = Some(input.into());
+    pub fn header_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.header_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value for the header that you specified in the <code>HeaderName</code> field.</p>
-    pub fn set_header_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_header_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.header_value = input;
         self
     }
@@ -72,8 +72,8 @@ impl OriginCustomHeaderBuilder {
         }
     }
 }
-impl std::fmt::Debug for OriginCustomHeaderBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for OriginCustomHeaderBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("OriginCustomHeaderBuilder");
         formatter.field("header_name", &self.header_name);
         formatter.field("header_value", &"*** Sensitive Data Redacted ***");

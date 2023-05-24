@@ -2,22 +2,22 @@
 
 /// <p> Contains the revision and status of a package version. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SuccessfulPackageVersionInfo {
     /// <p> The revision of a package version. </p>
     #[doc(hidden)]
-    pub revision: std::option::Option<std::string::String>,
+    pub revision: ::std::option::Option<::std::string::String>,
     /// <p> The status of a package version. </p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::PackageVersionStatus>,
+    pub status: ::std::option::Option<crate::types::PackageVersionStatus>,
 }
 impl SuccessfulPackageVersionInfo {
     /// <p> The revision of a package version. </p>
-    pub fn revision(&self) -> std::option::Option<&str> {
+    pub fn revision(&self) -> ::std::option::Option<&str> {
         self.revision.as_deref()
     }
     /// <p> The status of a package version. </p>
-    pub fn status(&self) -> std::option::Option<&crate::types::PackageVersionStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::PackageVersionStatus> {
         self.status.as_ref()
     }
 }
@@ -30,31 +30,33 @@ impl SuccessfulPackageVersionInfo {
 
 /// A builder for [`SuccessfulPackageVersionInfo`](crate::types::SuccessfulPackageVersionInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SuccessfulPackageVersionInfoBuilder {
-    pub(crate) revision: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::PackageVersionStatus>,
+    pub(crate) revision: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::PackageVersionStatus>,
 }
 impl SuccessfulPackageVersionInfoBuilder {
     /// <p> The revision of a package version. </p>
-    pub fn revision(mut self, input: impl Into<std::string::String>) -> Self {
-        self.revision = Some(input.into());
+    pub fn revision(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.revision = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The revision of a package version. </p>
-    pub fn set_revision(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_revision(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.revision = input;
         self
     }
     /// <p> The status of a package version. </p>
     pub fn status(mut self, input: crate::types::PackageVersionStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p> The status of a package version. </p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::PackageVersionStatus>,
+        input: ::std::option::Option<crate::types::PackageVersionStatus>,
     ) -> Self {
         self.status = input;
         self

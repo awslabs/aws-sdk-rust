@@ -2,29 +2,29 @@
 
 /// <p>The column schema.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ColumnSchema {
     /// <p>The name of the column schema.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The data type of the column schema.</p>
     #[doc(hidden)]
-    pub data_type: std::option::Option<std::string::String>,
+    pub data_type: ::std::option::Option<::std::string::String>,
     /// <p>The geographic role of the column schema.</p>
     #[doc(hidden)]
-    pub geographic_role: std::option::Option<std::string::String>,
+    pub geographic_role: ::std::option::Option<::std::string::String>,
 }
 impl ColumnSchema {
     /// <p>The name of the column schema.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The data type of the column schema.</p>
-    pub fn data_type(&self) -> std::option::Option<&str> {
+    pub fn data_type(&self) -> ::std::option::Option<&str> {
         self.data_type.as_deref()
     }
     /// <p>The geographic role of the column schema.</p>
-    pub fn geographic_role(&self) -> std::option::Option<&str> {
+    pub fn geographic_role(&self) -> ::std::option::Option<&str> {
         self.geographic_role.as_deref()
     }
 }
@@ -37,40 +37,48 @@ impl ColumnSchema {
 
 /// A builder for [`ColumnSchema`](crate::types::ColumnSchema).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ColumnSchemaBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) data_type: std::option::Option<std::string::String>,
-    pub(crate) geographic_role: std::option::Option<std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) data_type: ::std::option::Option<::std::string::String>,
+    pub(crate) geographic_role: ::std::option::Option<::std::string::String>,
 }
 impl ColumnSchemaBuilder {
     /// <p>The name of the column schema.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the column schema.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The data type of the column schema.</p>
-    pub fn data_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.data_type = Some(input.into());
+    pub fn data_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.data_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The data type of the column schema.</p>
-    pub fn set_data_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_data_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_type = input;
         self
     }
     /// <p>The geographic role of the column schema.</p>
-    pub fn geographic_role(mut self, input: impl Into<std::string::String>) -> Self {
-        self.geographic_role = Some(input.into());
+    pub fn geographic_role(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.geographic_role = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The geographic role of the column schema.</p>
-    pub fn set_geographic_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_geographic_role(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.geographic_role = input;
         self
     }

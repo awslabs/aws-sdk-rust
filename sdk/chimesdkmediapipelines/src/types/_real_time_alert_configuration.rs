@@ -2,14 +2,14 @@
 
 /// <p>A structure that contains the configuration settings for real-time alerts.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RealTimeAlertConfiguration {
     /// <p>Turns off real-time alerts.</p>
     #[doc(hidden)]
     pub disabled: bool,
     /// <p>The rules in the alert. Rules specify the words or phrases that you want to be notified about.</p>
     #[doc(hidden)]
-    pub rules: std::option::Option<std::vec::Vec<crate::types::RealTimeAlertRule>>,
+    pub rules: ::std::option::Option<::std::vec::Vec<crate::types::RealTimeAlertRule>>,
 }
 impl RealTimeAlertConfiguration {
     /// <p>Turns off real-time alerts.</p>
@@ -17,7 +17,7 @@ impl RealTimeAlertConfiguration {
         self.disabled
     }
     /// <p>The rules in the alert. Rules specify the words or phrases that you want to be notified about.</p>
-    pub fn rules(&self) -> std::option::Option<&[crate::types::RealTimeAlertRule]> {
+    pub fn rules(&self) -> ::std::option::Option<&[crate::types::RealTimeAlertRule]> {
         self.rules.as_deref()
     }
 }
@@ -30,19 +30,21 @@ impl RealTimeAlertConfiguration {
 
 /// A builder for [`RealTimeAlertConfiguration`](crate::types::RealTimeAlertConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RealTimeAlertConfigurationBuilder {
-    pub(crate) disabled: std::option::Option<bool>,
-    pub(crate) rules: std::option::Option<std::vec::Vec<crate::types::RealTimeAlertRule>>,
+    pub(crate) disabled: ::std::option::Option<bool>,
+    pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::RealTimeAlertRule>>,
 }
 impl RealTimeAlertConfigurationBuilder {
     /// <p>Turns off real-time alerts.</p>
     pub fn disabled(mut self, input: bool) -> Self {
-        self.disabled = Some(input);
+        self.disabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Turns off real-time alerts.</p>
-    pub fn set_disabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_disabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.disabled = input;
         self
     }
@@ -54,13 +56,13 @@ impl RealTimeAlertConfigurationBuilder {
     pub fn rules(mut self, input: crate::types::RealTimeAlertRule) -> Self {
         let mut v = self.rules.unwrap_or_default();
         v.push(input);
-        self.rules = Some(v);
+        self.rules = ::std::option::Option::Some(v);
         self
     }
     /// <p>The rules in the alert. Rules specify the words or phrases that you want to be notified about.</p>
     pub fn set_rules(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RealTimeAlertRule>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::RealTimeAlertRule>>,
     ) -> Self {
         self.rules = input;
         self

@@ -2,40 +2,40 @@
 
 /// <p>Provides the configuration information for the knowledge article types that Amazon Kendra indexes. Amazon Kendra indexes standard knowledge articles and the standard fields of knowledge articles, or the custom fields of custom knowledge articles, but not both </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SalesforceKnowledgeArticleConfiguration {
     /// <p>Specifies the document states that should be included when Amazon Kendra indexes knowledge articles. You must specify at least one state.</p>
     #[doc(hidden)]
     pub included_states:
-        std::option::Option<std::vec::Vec<crate::types::SalesforceKnowledgeArticleState>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::SalesforceKnowledgeArticleState>>,
     /// <p>Configuration information for standard Salesforce knowledge articles.</p>
     #[doc(hidden)]
     pub standard_knowledge_article_type_configuration:
-        std::option::Option<crate::types::SalesforceStandardKnowledgeArticleTypeConfiguration>,
+        ::std::option::Option<crate::types::SalesforceStandardKnowledgeArticleTypeConfiguration>,
     /// <p>Configuration information for custom Salesforce knowledge articles.</p>
     #[doc(hidden)]
-    pub custom_knowledge_article_type_configurations: std::option::Option<
-        std::vec::Vec<crate::types::SalesforceCustomKnowledgeArticleTypeConfiguration>,
+    pub custom_knowledge_article_type_configurations: ::std::option::Option<
+        ::std::vec::Vec<crate::types::SalesforceCustomKnowledgeArticleTypeConfiguration>,
     >,
 }
 impl SalesforceKnowledgeArticleConfiguration {
     /// <p>Specifies the document states that should be included when Amazon Kendra indexes knowledge articles. You must specify at least one state.</p>
     pub fn included_states(
         &self,
-    ) -> std::option::Option<&[crate::types::SalesforceKnowledgeArticleState]> {
+    ) -> ::std::option::Option<&[crate::types::SalesforceKnowledgeArticleState]> {
         self.included_states.as_deref()
     }
     /// <p>Configuration information for standard Salesforce knowledge articles.</p>
     pub fn standard_knowledge_article_type_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::SalesforceStandardKnowledgeArticleTypeConfiguration>
+    ) -> ::std::option::Option<&crate::types::SalesforceStandardKnowledgeArticleTypeConfiguration>
     {
         self.standard_knowledge_article_type_configuration.as_ref()
     }
     /// <p>Configuration information for custom Salesforce knowledge articles.</p>
     pub fn custom_knowledge_article_type_configurations(
         &self,
-    ) -> std::option::Option<&[crate::types::SalesforceCustomKnowledgeArticleTypeConfiguration]>
+    ) -> ::std::option::Option<&[crate::types::SalesforceCustomKnowledgeArticleTypeConfiguration]>
     {
         self.custom_knowledge_article_type_configurations.as_deref()
     }
@@ -49,14 +49,16 @@ impl SalesforceKnowledgeArticleConfiguration {
 
 /// A builder for [`SalesforceKnowledgeArticleConfiguration`](crate::types::SalesforceKnowledgeArticleConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SalesforceKnowledgeArticleConfigurationBuilder {
     pub(crate) included_states:
-        std::option::Option<std::vec::Vec<crate::types::SalesforceKnowledgeArticleState>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::SalesforceKnowledgeArticleState>>,
     pub(crate) standard_knowledge_article_type_configuration:
-        std::option::Option<crate::types::SalesforceStandardKnowledgeArticleTypeConfiguration>,
-    pub(crate) custom_knowledge_article_type_configurations: std::option::Option<
-        std::vec::Vec<crate::types::SalesforceCustomKnowledgeArticleTypeConfiguration>,
+        ::std::option::Option<crate::types::SalesforceStandardKnowledgeArticleTypeConfiguration>,
+    pub(crate) custom_knowledge_article_type_configurations: ::std::option::Option<
+        ::std::vec::Vec<crate::types::SalesforceCustomKnowledgeArticleTypeConfiguration>,
     >,
 }
 impl SalesforceKnowledgeArticleConfigurationBuilder {
@@ -68,13 +70,15 @@ impl SalesforceKnowledgeArticleConfigurationBuilder {
     pub fn included_states(mut self, input: crate::types::SalesforceKnowledgeArticleState) -> Self {
         let mut v = self.included_states.unwrap_or_default();
         v.push(input);
-        self.included_states = Some(v);
+        self.included_states = ::std::option::Option::Some(v);
         self
     }
     /// <p>Specifies the document states that should be included when Amazon Kendra indexes knowledge articles. You must specify at least one state.</p>
     pub fn set_included_states(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SalesforceKnowledgeArticleState>>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::SalesforceKnowledgeArticleState>,
+        >,
     ) -> Self {
         self.included_states = input;
         self
@@ -84,13 +88,13 @@ impl SalesforceKnowledgeArticleConfigurationBuilder {
         mut self,
         input: crate::types::SalesforceStandardKnowledgeArticleTypeConfiguration,
     ) -> Self {
-        self.standard_knowledge_article_type_configuration = Some(input);
+        self.standard_knowledge_article_type_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configuration information for standard Salesforce knowledge articles.</p>
     pub fn set_standard_knowledge_article_type_configuration(
         mut self,
-        input: std::option::Option<
+        input: ::std::option::Option<
             crate::types::SalesforceStandardKnowledgeArticleTypeConfiguration,
         >,
     ) -> Self {
@@ -110,14 +114,14 @@ impl SalesforceKnowledgeArticleConfigurationBuilder {
             .custom_knowledge_article_type_configurations
             .unwrap_or_default();
         v.push(input);
-        self.custom_knowledge_article_type_configurations = Some(v);
+        self.custom_knowledge_article_type_configurations = ::std::option::Option::Some(v);
         self
     }
     /// <p>Configuration information for custom Salesforce knowledge articles.</p>
     pub fn set_custom_knowledge_article_type_configurations(
         mut self,
-        input: std::option::Option<
-            std::vec::Vec<crate::types::SalesforceCustomKnowledgeArticleTypeConfiguration>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::SalesforceCustomKnowledgeArticleTypeConfiguration>,
         >,
     ) -> Self {
         self.custom_knowledge_article_type_configurations = input;

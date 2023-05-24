@@ -6,47 +6,50 @@ pub use crate::operation::start_recommendation_report_generation::_start_recomme
 /// Fluent builder constructing a request to `StartRecommendationReportGeneration`.
 ///
 /// <p> Starts generating a recommendation report. </p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartRecommendationReportGenerationFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::start_recommendation_report_generation::builders::StartRecommendationReportGenerationInputBuilder,
 }
 impl StartRecommendationReportGenerationFluentBuilder {
     /// Creates a new `StartRecommendationReportGeneration`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::start_recommendation_report_generation::StartRecommendationReportGeneration, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::start_recommendation_report_generation::StartRecommendationReportGenerationError>
+                    pub async fn customize(self) -> ::std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::start_recommendation_report_generation::StartRecommendationReportGeneration, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                        ::aws_smithy_http::result::SdkError<crate::operation::start_recommendation_report_generation::StartRecommendationReportGenerationError>
     >{
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::start_recommendation_report_generation::StartRecommendationReportGenerationOutput, aws_smithy_http::result::SdkError<crate::operation::start_recommendation_report_generation::StartRecommendationReportGenerationError>>
+                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::start_recommendation_report_generation::StartRecommendationReportGenerationOutput, ::aws_smithy_http::result::SdkError<crate::operation::start_recommendation_report_generation::StartRecommendationReportGenerationError>>
                      {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -57,7 +60,7 @@ impl StartRecommendationReportGenerationFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> std::result::Result<crate::operation::start_recommendation_report_generation::StartRecommendationReportGenerationOutput, aws_smithy_http::result::SdkError<crate::operation::start_recommendation_report_generation::StartRecommendationReportGenerationError>>
+                        pub async fn send(self) -> ::std::result::Result<crate::operation::start_recommendation_report_generation::StartRecommendationReportGenerationOutput, ::aws_smithy_http::result::SdkError<crate::operation::start_recommendation_report_generation::StartRecommendationReportGenerationError>>
                          {
         self.send_middleware().await
     }
@@ -69,7 +72,7 @@ impl StartRecommendationReportGenerationFluentBuilder {
     /// <p> The output format for the recommendation report file. The default format is Microsoft Excel. </p>
     pub fn set_output_format(
         mut self,
-        input: std::option::Option<crate::types::OutputFormat>,
+        input: ::std::option::Option<crate::types::OutputFormat>,
     ) -> Self {
         self.inner = self.inner.set_output_format(input);
         self
@@ -86,7 +89,7 @@ impl StartRecommendationReportGenerationFluentBuilder {
     /// <p> Groups the resources in the recommendation report with a unique name. </p>
     pub fn set_group_id_filter(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Group>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Group>>,
     ) -> Self {
         self.inner = self.inner.set_group_id_filter(input);
         self

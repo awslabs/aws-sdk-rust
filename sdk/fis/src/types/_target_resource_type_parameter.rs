@@ -2,22 +2,22 @@
 
 /// <p>Describes the parameters for a resource type. Use parameters to determine which tasks are identified during target resolution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TargetResourceTypeParameter {
     /// <p>A description of the parameter.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the parameter is required.</p>
     #[doc(hidden)]
-    pub required: std::option::Option<bool>,
+    pub required: ::std::option::Option<bool>,
 }
 impl TargetResourceTypeParameter {
     /// <p>A description of the parameter.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>Indicates whether the parameter is required.</p>
-    pub fn required(&self) -> std::option::Option<bool> {
+    pub fn required(&self) -> ::std::option::Option<bool> {
         self.required
     }
 }
@@ -30,29 +30,31 @@ impl TargetResourceTypeParameter {
 
 /// A builder for [`TargetResourceTypeParameter`](crate::types::TargetResourceTypeParameter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TargetResourceTypeParameterBuilder {
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) required: std::option::Option<bool>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) required: ::std::option::Option<bool>,
 }
 impl TargetResourceTypeParameterBuilder {
     /// <p>A description of the parameter.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of the parameter.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>Indicates whether the parameter is required.</p>
     pub fn required(mut self, input: bool) -> Self {
-        self.required = Some(input);
+        self.required = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether the parameter is required.</p>
-    pub fn set_required(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_required(mut self, input: ::std::option::Option<bool>) -> Self {
         self.required = input;
         self
     }

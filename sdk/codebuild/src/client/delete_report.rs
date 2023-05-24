@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteReport`](crate::operation::delete_report::builders::DeleteReportFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl Into<String>)`](crate::operation::delete_report::builders::DeleteReportFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::delete_report::builders::DeleteReportFluentBuilder::set_arn): <p> The ARN of the report to delete. </p>
+    ///   - [`arn(impl ::std::convert::Into<String>)`](crate::operation::delete_report::builders::DeleteReportFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::delete_report::builders::DeleteReportFluentBuilder::set_arn): <p> The ARN of the report to delete. </p>
     /// - On success, responds with [`DeleteReportOutput`](crate::operation::delete_report::DeleteReportOutput)
     /// - On failure, responds with [`SdkError<DeleteReportError>`](crate::operation::delete_report::DeleteReportError)
     pub fn delete_report(

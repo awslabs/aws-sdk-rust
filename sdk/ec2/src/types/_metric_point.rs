@@ -2,36 +2,36 @@
 
 /// <p>Indicates whether the network was healthy or degraded at a particular point. The value is aggregated from the <code>startDate</code> to the <code>endDate</code>. Currently only <code>five_minutes</code> is supported.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetricPoint {
     /// <p>The start date for the metric point. The starting date for the metric point. The starting time must be formatted as <code>yyyy-mm-ddThh:mm:ss</code>. For example, <code>2022-06-10T12:00:00.000Z</code>.</p>
     #[doc(hidden)]
-    pub start_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The end date for the metric point. The ending time must be formatted as <code>yyyy-mm-ddThh:mm:ss</code>. For example, <code>2022-06-12T12:00:00.000Z</code>.</p>
     #[doc(hidden)]
-    pub end_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub end_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
-    pub value: std::option::Option<f32>,
+    pub value: ::std::option::Option<f32>,
     /// <p>The status of the metric point.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<std::string::String>,
+    pub status: ::std::option::Option<::std::string::String>,
 }
 impl MetricPoint {
     /// <p>The start date for the metric point. The starting date for the metric point. The starting time must be formatted as <code>yyyy-mm-ddThh:mm:ss</code>. For example, <code>2022-06-10T12:00:00.000Z</code>.</p>
-    pub fn start_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.start_date.as_ref()
     }
     /// <p>The end date for the metric point. The ending time must be formatted as <code>yyyy-mm-ddThh:mm:ss</code>. For example, <code>2022-06-12T12:00:00.000Z</code>.</p>
-    pub fn end_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.end_date.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn value(&self) -> std::option::Option<f32> {
+    pub fn value(&self) -> ::std::option::Option<f32> {
         self.value
     }
     /// <p>The status of the metric point.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
 }
@@ -44,54 +44,59 @@ impl MetricPoint {
 
 /// A builder for [`MetricPoint`](crate::types::MetricPoint).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MetricPointBuilder {
-    pub(crate) start_date: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) end_date: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) value: std::option::Option<f32>,
-    pub(crate) status: std::option::Option<std::string::String>,
+    pub(crate) start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) end_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) value: ::std::option::Option<f32>,
+    pub(crate) status: ::std::option::Option<::std::string::String>,
 }
 impl MetricPointBuilder {
     /// <p>The start date for the metric point. The starting date for the metric point. The starting time must be formatted as <code>yyyy-mm-ddThh:mm:ss</code>. For example, <code>2022-06-10T12:00:00.000Z</code>.</p>
-    pub fn start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.start_date = Some(input);
+    pub fn start_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.start_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The start date for the metric point. The starting date for the metric point. The starting time must be formatted as <code>yyyy-mm-ddThh:mm:ss</code>. For example, <code>2022-06-10T12:00:00.000Z</code>.</p>
     pub fn set_start_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.start_date = input;
         self
     }
     /// <p>The end date for the metric point. The ending time must be formatted as <code>yyyy-mm-ddThh:mm:ss</code>. For example, <code>2022-06-12T12:00:00.000Z</code>.</p>
-    pub fn end_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.end_date = Some(input);
+    pub fn end_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.end_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The end date for the metric point. The ending time must be formatted as <code>yyyy-mm-ddThh:mm:ss</code>. For example, <code>2022-06-12T12:00:00.000Z</code>.</p>
-    pub fn set_end_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_end_date(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
         self.end_date = input;
         self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn value(mut self, input: f32) -> Self {
-        self.value = Some(input);
+        self.value = ::std::option::Option::Some(input);
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_value(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<f32>) -> Self {
         self.value = input;
         self
     }
     /// <p>The status of the metric point.</p>
-    pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status = Some(input.into());
+    pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the metric point.</p>
-    pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }

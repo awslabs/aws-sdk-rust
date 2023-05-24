@@ -2,15 +2,15 @@
 
 /// Placeholder documentation for DeleteReservationRequest
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteReservationInput {
     /// Unique reservation ID, e.g. '1234567'
     #[doc(hidden)]
-    pub reservation_id: std::option::Option<std::string::String>,
+    pub reservation_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteReservationInput {
     /// Unique reservation ID, e.g. '1234567'
-    pub fn reservation_id(&self) -> std::option::Option<&str> {
+    pub fn reservation_id(&self) -> ::std::option::Option<&str> {
         self.reservation_id.as_deref()
     }
 }
@@ -24,29 +24,37 @@ impl DeleteReservationInput {
 
 /// A builder for [`DeleteReservationInput`](crate::operation::delete_reservation::DeleteReservationInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteReservationInputBuilder {
-    pub(crate) reservation_id: std::option::Option<std::string::String>,
+    pub(crate) reservation_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteReservationInputBuilder {
     /// Unique reservation ID, e.g. '1234567'
-    pub fn reservation_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.reservation_id = Some(input.into());
+    pub fn reservation_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.reservation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// Unique reservation ID, e.g. '1234567'
-    pub fn set_reservation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_reservation_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.reservation_id = input;
         self
     }
     /// Consumes the builder and constructs a [`DeleteReservationInput`](crate::operation::delete_reservation::DeleteReservationInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::delete_reservation::DeleteReservationInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::delete_reservation::DeleteReservationInput {
                 reservation_id: self.reservation_id,
             },

@@ -2,22 +2,22 @@
 
 /// <p>An object that contains the failure details about an import job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FailureInfo {
     /// <p>An Amazon S3 presigned URL that contains all the failed records and related information.</p>
     #[doc(hidden)]
-    pub failed_records_s3_url: std::option::Option<std::string::String>,
+    pub failed_records_s3_url: ::std::option::Option<::std::string::String>,
     /// <p>A message about why the import job failed.</p>
     #[doc(hidden)]
-    pub error_message: std::option::Option<std::string::String>,
+    pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl FailureInfo {
     /// <p>An Amazon S3 presigned URL that contains all the failed records and related information.</p>
-    pub fn failed_records_s3_url(&self) -> std::option::Option<&str> {
+    pub fn failed_records_s3_url(&self) -> ::std::option::Option<&str> {
         self.failed_records_s3_url.as_deref()
     }
     /// <p>A message about why the import job failed.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<&str> {
         self.error_message.as_deref()
     }
 }
@@ -30,32 +30,43 @@ impl FailureInfo {
 
 /// A builder for [`FailureInfo`](crate::types::FailureInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FailureInfoBuilder {
-    pub(crate) failed_records_s3_url: std::option::Option<std::string::String>,
-    pub(crate) error_message: std::option::Option<std::string::String>,
+    pub(crate) failed_records_s3_url: ::std::option::Option<::std::string::String>,
+    pub(crate) error_message: ::std::option::Option<::std::string::String>,
 }
 impl FailureInfoBuilder {
     /// <p>An Amazon S3 presigned URL that contains all the failed records and related information.</p>
-    pub fn failed_records_s3_url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.failed_records_s3_url = Some(input.into());
+    pub fn failed_records_s3_url(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.failed_records_s3_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An Amazon S3 presigned URL that contains all the failed records and related information.</p>
     pub fn set_failed_records_s3_url(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.failed_records_s3_url = input;
         self
     }
     /// <p>A message about why the import job failed.</p>
-    pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.error_message = Some(input.into());
+    pub fn error_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A message about why the import job failed.</p>
-    pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_error_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.error_message = input;
         self
     }

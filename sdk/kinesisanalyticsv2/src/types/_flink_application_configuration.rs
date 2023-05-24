@@ -2,35 +2,35 @@
 
 /// <p>Describes configuration parameters for a Flink-based Kinesis Data Analytics application or a Studio notebook.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FlinkApplicationConfiguration {
     /// <p>Describes an application's checkpointing configuration. Checkpointing is the process of persisting application state for fault tolerance. For more information, see <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/concepts/programming-model.html#checkpoints-for-fault-tolerance"> Checkpoints for Fault Tolerance</a> in the <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache Flink Documentation</a>. </p>
     #[doc(hidden)]
-    pub checkpoint_configuration: std::option::Option<crate::types::CheckpointConfiguration>,
+    pub checkpoint_configuration: ::std::option::Option<crate::types::CheckpointConfiguration>,
     /// <p>Describes configuration parameters for Amazon CloudWatch logging for an application.</p>
     #[doc(hidden)]
-    pub monitoring_configuration: std::option::Option<crate::types::MonitoringConfiguration>,
+    pub monitoring_configuration: ::std::option::Option<crate::types::MonitoringConfiguration>,
     /// <p>Describes parameters for how an application executes multiple tasks simultaneously.</p>
     #[doc(hidden)]
-    pub parallelism_configuration: std::option::Option<crate::types::ParallelismConfiguration>,
+    pub parallelism_configuration: ::std::option::Option<crate::types::ParallelismConfiguration>,
 }
 impl FlinkApplicationConfiguration {
     /// <p>Describes an application's checkpointing configuration. Checkpointing is the process of persisting application state for fault tolerance. For more information, see <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/concepts/programming-model.html#checkpoints-for-fault-tolerance"> Checkpoints for Fault Tolerance</a> in the <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache Flink Documentation</a>. </p>
     pub fn checkpoint_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::CheckpointConfiguration> {
+    ) -> ::std::option::Option<&crate::types::CheckpointConfiguration> {
         self.checkpoint_configuration.as_ref()
     }
     /// <p>Describes configuration parameters for Amazon CloudWatch logging for an application.</p>
     pub fn monitoring_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::MonitoringConfiguration> {
+    ) -> ::std::option::Option<&crate::types::MonitoringConfiguration> {
         self.monitoring_configuration.as_ref()
     }
     /// <p>Describes parameters for how an application executes multiple tasks simultaneously.</p>
     pub fn parallelism_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::ParallelismConfiguration> {
+    ) -> ::std::option::Option<&crate::types::ParallelismConfiguration> {
         self.parallelism_configuration.as_ref()
     }
 }
@@ -43,12 +43,16 @@ impl FlinkApplicationConfiguration {
 
 /// A builder for [`FlinkApplicationConfiguration`](crate::types::FlinkApplicationConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FlinkApplicationConfigurationBuilder {
-    pub(crate) checkpoint_configuration: std::option::Option<crate::types::CheckpointConfiguration>,
-    pub(crate) monitoring_configuration: std::option::Option<crate::types::MonitoringConfiguration>,
+    pub(crate) checkpoint_configuration:
+        ::std::option::Option<crate::types::CheckpointConfiguration>,
+    pub(crate) monitoring_configuration:
+        ::std::option::Option<crate::types::MonitoringConfiguration>,
     pub(crate) parallelism_configuration:
-        std::option::Option<crate::types::ParallelismConfiguration>,
+        ::std::option::Option<crate::types::ParallelismConfiguration>,
 }
 impl FlinkApplicationConfigurationBuilder {
     /// <p>Describes an application's checkpointing configuration. Checkpointing is the process of persisting application state for fault tolerance. For more information, see <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/concepts/programming-model.html#checkpoints-for-fault-tolerance"> Checkpoints for Fault Tolerance</a> in the <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache Flink Documentation</a>. </p>
@@ -56,13 +60,13 @@ impl FlinkApplicationConfigurationBuilder {
         mut self,
         input: crate::types::CheckpointConfiguration,
     ) -> Self {
-        self.checkpoint_configuration = Some(input);
+        self.checkpoint_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes an application's checkpointing configuration. Checkpointing is the process of persisting application state for fault tolerance. For more information, see <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/concepts/programming-model.html#checkpoints-for-fault-tolerance"> Checkpoints for Fault Tolerance</a> in the <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache Flink Documentation</a>. </p>
     pub fn set_checkpoint_configuration(
         mut self,
-        input: std::option::Option<crate::types::CheckpointConfiguration>,
+        input: ::std::option::Option<crate::types::CheckpointConfiguration>,
     ) -> Self {
         self.checkpoint_configuration = input;
         self
@@ -72,13 +76,13 @@ impl FlinkApplicationConfigurationBuilder {
         mut self,
         input: crate::types::MonitoringConfiguration,
     ) -> Self {
-        self.monitoring_configuration = Some(input);
+        self.monitoring_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes configuration parameters for Amazon CloudWatch logging for an application.</p>
     pub fn set_monitoring_configuration(
         mut self,
-        input: std::option::Option<crate::types::MonitoringConfiguration>,
+        input: ::std::option::Option<crate::types::MonitoringConfiguration>,
     ) -> Self {
         self.monitoring_configuration = input;
         self
@@ -88,13 +92,13 @@ impl FlinkApplicationConfigurationBuilder {
         mut self,
         input: crate::types::ParallelismConfiguration,
     ) -> Self {
-        self.parallelism_configuration = Some(input);
+        self.parallelism_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes parameters for how an application executes multiple tasks simultaneously.</p>
     pub fn set_parallelism_configuration(
         mut self,
-        input: std::option::Option<crate::types::ParallelismConfiguration>,
+        input: ::std::option::Option<crate::types::ParallelismConfiguration>,
     ) -> Self {
         self.parallelism_configuration = input;
         self

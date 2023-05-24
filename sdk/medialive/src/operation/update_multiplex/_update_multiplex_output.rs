@@ -2,20 +2,20 @@
 
 /// Placeholder documentation for UpdateMultiplexResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateMultiplexOutput {
     /// The updated multiplex.
     #[doc(hidden)]
-    pub multiplex: std::option::Option<crate::types::Multiplex>,
+    pub multiplex: ::std::option::Option<crate::types::Multiplex>,
     _request_id: Option<String>,
 }
 impl UpdateMultiplexOutput {
     /// The updated multiplex.
-    pub fn multiplex(&self) -> std::option::Option<&crate::types::Multiplex> {
+    pub fn multiplex(&self) -> ::std::option::Option<&crate::types::Multiplex> {
         self.multiplex.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for UpdateMultiplexOutput {
+impl ::aws_http::request_id::RequestId for UpdateMultiplexOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,21 @@ impl UpdateMultiplexOutput {
 
 /// A builder for [`UpdateMultiplexOutput`](crate::operation::update_multiplex::UpdateMultiplexOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateMultiplexOutputBuilder {
-    pub(crate) multiplex: std::option::Option<crate::types::Multiplex>,
+    pub(crate) multiplex: ::std::option::Option<crate::types::Multiplex>,
     _request_id: Option<String>,
 }
 impl UpdateMultiplexOutputBuilder {
     /// The updated multiplex.
     pub fn multiplex(mut self, input: crate::types::Multiplex) -> Self {
-        self.multiplex = Some(input);
+        self.multiplex = ::std::option::Option::Some(input);
         self
     }
     /// The updated multiplex.
-    pub fn set_multiplex(mut self, input: std::option::Option<crate::types::Multiplex>) -> Self {
+    pub fn set_multiplex(mut self, input: ::std::option::Option<crate::types::Multiplex>) -> Self {
         self.multiplex = input;
         self
     }

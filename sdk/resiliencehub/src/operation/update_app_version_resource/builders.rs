@@ -12,29 +12,29 @@ pub use crate::operation::update_app_version_resource::_update_app_version_resou
 /// <li> <p>To update application version with new <code>physicalResourceID</code>, you must call <code>ResolveAppVersionResources</code> API.</p> </li>
 /// </ul>
 /// </note>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateAppVersionResourceFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::update_app_version_resource::builders::UpdateAppVersionResourceInputBuilder,
 }
 impl UpdateAppVersionResourceFluentBuilder {
     /// Creates a new `UpdateAppVersionResource`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_app_version_resource::UpdateAppVersionResource,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_app_version_resource::UpdateAppVersionResourceError,
         >,
     > {
@@ -42,30 +42,33 @@ impl UpdateAppVersionResourceFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_app_version_resource::UpdateAppVersionResourceOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_app_version_resource::UpdateAppVersionResourceError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -78,31 +81,37 @@ impl UpdateAppVersionResourceFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_app_version_resource::UpdateAppVersionResourceOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_app_version_resource::UpdateAppVersionResourceError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
-    pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn app_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.app_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
-    pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_app_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_app_arn(input);
         self
     }
     /// <p>The name of the resource.</p>
-    pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn resource_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.resource_name(input.into());
         self
     }
     /// <p>The name of the resource.</p>
-    pub fn set_resource_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_resource_name(input);
         self
     }
@@ -114,51 +123,66 @@ impl UpdateAppVersionResourceFluentBuilder {
     /// <p>The logical identifier of the resource.</p>
     pub fn set_logical_resource_id(
         mut self,
-        input: std::option::Option<crate::types::LogicalResourceId>,
+        input: ::std::option::Option<crate::types::LogicalResourceId>,
     ) -> Self {
         self.inner = self.inner.set_logical_resource_id(input);
         self
     }
     /// <p>The physical identifier of the resource.</p>
-    pub fn physical_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn physical_resource_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.physical_resource_id(input.into());
         self
     }
     /// <p>The physical identifier of the resource.</p>
     pub fn set_physical_resource_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_physical_resource_id(input);
         self
     }
     /// <p>The Amazon Web Services region that owns the physical resource.</p>
-    pub fn aws_region(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn aws_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_region(input.into());
         self
     }
     /// <p>The Amazon Web Services region that owns the physical resource.</p>
-    pub fn set_aws_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_aws_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_region(input);
         self
     }
     /// <p>The Amazon Web Services account that owns the physical resource.</p>
-    pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn aws_account_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
     /// <p>The Amazon Web Services account that owns the physical resource.</p>
-    pub fn set_aws_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_aws_account_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
     /// <p>The type of resource.</p>
-    pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn resource_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.resource_type(input.into());
         self
     }
     /// <p>The type of resource.</p>
-    pub fn set_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
     }
@@ -167,14 +191,17 @@ impl UpdateAppVersionResourceFluentBuilder {
     /// To override the contents of this collection use [`set_app_components`](Self::set_app_components).
     ///
     /// <p>The list of Application Components that this resource belongs to. If an Application Component is not part of the Resilience Hub application, it will be added.</p>
-    pub fn app_components(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn app_components(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.app_components(input.into());
         self
     }
     /// <p>The list of Application Components that this resource belongs to. If an Application Component is not part of the Resilience Hub application, it will be added.</p>
     pub fn set_app_components(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_app_components(input);
         self
@@ -186,8 +213,8 @@ impl UpdateAppVersionResourceFluentBuilder {
     /// <p>Currently, there is no supported additional information for resources.</p>
     pub fn additional_info(
         mut self,
-        k: impl Into<std::string::String>,
-        v: std::vec::Vec<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: ::std::vec::Vec<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.additional_info(k.into(), v);
         self
@@ -195,8 +222,11 @@ impl UpdateAppVersionResourceFluentBuilder {
     /// <p>Currently, there is no supported additional information for resources.</p>
     pub fn set_additional_info(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<
+                ::std::string::String,
+                ::std::vec::Vec<::std::string::String>,
+            >,
         >,
     ) -> Self {
         self.inner = self.inner.set_additional_info(input);
@@ -212,7 +242,7 @@ impl UpdateAppVersionResourceFluentBuilder {
     /// <p>Indicates if a resource is excluded from an Resilience Hub application.</p> <note>
     /// <p>You can exclude only imported resources from an Resilience Hub application.</p>
     /// </note>
-    pub fn set_excluded(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_excluded(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_excluded(input);
         self
     }

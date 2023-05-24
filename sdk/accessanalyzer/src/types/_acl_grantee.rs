@@ -2,12 +2,12 @@
 
 /// <p>You specify each grantee as a type-value pair using one of these types. You can specify only one type of grantee. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketAcl.html">PutBucketAcl</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum AclGrantee {
     /// <p>The value specified is the canonical user ID of an Amazon Web Services account.</p>
-    Id(std::string::String),
+    Id(::std::string::String),
     /// <p>Used for granting permissions to a predefined group.</p>
-    Uri(std::string::String),
+    Uri(::std::string::String),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -19,26 +19,26 @@ pub enum AclGrantee {
     Unknown,
 }
 impl AclGrantee {
-    /// Tries to convert the enum instance into [`Id`](crate::types::AclGrantee::Id), extracting the inner [`String`](std::string::String).
+    /// Tries to convert the enum instance into [`Id`](crate::types::AclGrantee::Id), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_id(&self) -> std::result::Result<&std::string::String, &Self> {
+    pub fn as_id(&self) -> ::std::result::Result<&::std::string::String, &Self> {
         if let AclGrantee::Id(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Id`](crate::types::AclGrantee::Id).
     pub fn is_id(&self) -> bool {
         self.as_id().is_ok()
     }
-    /// Tries to convert the enum instance into [`Uri`](crate::types::AclGrantee::Uri), extracting the inner [`String`](std::string::String).
+    /// Tries to convert the enum instance into [`Uri`](crate::types::AclGrantee::Uri), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_uri(&self) -> std::result::Result<&std::string::String, &Self> {
+    pub fn as_uri(&self) -> ::std::result::Result<&::std::string::String, &Self> {
         if let AclGrantee::Uri(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Uri`](crate::types::AclGrantee::Uri).

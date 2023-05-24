@@ -2,22 +2,22 @@
 
 /// <p>This data type is used as a response element in the action <code>DescribeDBEngineVersions</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CharacterSet {
     /// <p>The name of the character set.</p>
     #[doc(hidden)]
-    pub character_set_name: std::option::Option<std::string::String>,
+    pub character_set_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the character set.</p>
     #[doc(hidden)]
-    pub character_set_description: std::option::Option<std::string::String>,
+    pub character_set_description: ::std::option::Option<::std::string::String>,
 }
 impl CharacterSet {
     /// <p>The name of the character set.</p>
-    pub fn character_set_name(&self) -> std::option::Option<&str> {
+    pub fn character_set_name(&self) -> ::std::option::Option<&str> {
         self.character_set_name.as_deref()
     }
     /// <p>The description of the character set.</p>
-    pub fn character_set_description(&self) -> std::option::Option<&str> {
+    pub fn character_set_description(&self) -> ::std::option::Option<&str> {
         self.character_set_description.as_deref()
     }
 }
@@ -30,34 +30,42 @@ impl CharacterSet {
 
 /// A builder for [`CharacterSet`](crate::types::CharacterSet).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CharacterSetBuilder {
-    pub(crate) character_set_name: std::option::Option<std::string::String>,
-    pub(crate) character_set_description: std::option::Option<std::string::String>,
+    pub(crate) character_set_name: ::std::option::Option<::std::string::String>,
+    pub(crate) character_set_description: ::std::option::Option<::std::string::String>,
 }
 impl CharacterSetBuilder {
     /// <p>The name of the character set.</p>
-    pub fn character_set_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.character_set_name = Some(input.into());
+    pub fn character_set_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.character_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the character set.</p>
     pub fn set_character_set_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.character_set_name = input;
         self
     }
     /// <p>The description of the character set.</p>
-    pub fn character_set_description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.character_set_description = Some(input.into());
+    pub fn character_set_description(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.character_set_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the character set.</p>
     pub fn set_character_set_description(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.character_set_description = input;
         self

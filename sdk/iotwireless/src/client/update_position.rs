@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdatePosition`](crate::operation::update_position::builders::UpdatePositionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_identifier(impl Into<String>)`](crate::operation::update_position::builders::UpdatePositionFluentBuilder::resource_identifier) / [`set_resource_identifier(Option<String>)`](crate::operation::update_position::builders::UpdatePositionFluentBuilder::set_resource_identifier): <p>Resource identifier of the resource for which position is updated.</p>
+    ///   - [`resource_identifier(impl ::std::convert::Into<String>)`](crate::operation::update_position::builders::UpdatePositionFluentBuilder::resource_identifier) / [`set_resource_identifier(Option<String>)`](crate::operation::update_position::builders::UpdatePositionFluentBuilder::set_resource_identifier): <p>Resource identifier of the resource for which position is updated.</p>
     ///   - [`resource_type(PositionResourceType)`](crate::operation::update_position::builders::UpdatePositionFluentBuilder::resource_type) / [`set_resource_type(Option<PositionResourceType>)`](crate::operation::update_position::builders::UpdatePositionFluentBuilder::set_resource_type): <p>Resource type of the resource for which position is updated.</p>
     ///   - [`position(Vec<f32>)`](crate::operation::update_position::builders::UpdatePositionFluentBuilder::position) / [`set_position(Option<Vec<f32>>)`](crate::operation::update_position::builders::UpdatePositionFluentBuilder::set_position): <p>The position information of the resource.</p>
     /// - On success, responds with [`UpdatePositionOutput`](crate::operation::update_position::UpdatePositionOutput)

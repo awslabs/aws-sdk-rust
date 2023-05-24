@@ -2,7 +2,7 @@
 
 /// <p>Contains information about the current state of the alarm.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AlarmState {
     /// <p>The name of the alarm state. The state name can be one of the following values:</p>
     /// <ul>
@@ -14,16 +14,16 @@ pub struct AlarmState {
     /// <li> <p> <code>LATCHED</code> - When the alarm is in the <code>LATCHED</code> state, the alarm was invoked. However, the data that the alarm is currently evaluating is within the specified range. To change the alarm to the <code>NORMAL</code> state, you must acknowledge the alarm.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub state_name: std::option::Option<crate::types::AlarmStateName>,
+    pub state_name: ::std::option::Option<crate::types::AlarmStateName>,
     /// <p>Information needed to evaluate data.</p>
     #[doc(hidden)]
-    pub rule_evaluation: std::option::Option<crate::types::RuleEvaluation>,
+    pub rule_evaluation: ::std::option::Option<crate::types::RuleEvaluation>,
     /// <p>Contains information about the action that you can take to respond to the alarm.</p>
     #[doc(hidden)]
-    pub customer_action: std::option::Option<crate::types::CustomerAction>,
+    pub customer_action: ::std::option::Option<crate::types::CustomerAction>,
     /// <p>Contains information about alarm state changes.</p>
     #[doc(hidden)]
-    pub system_event: std::option::Option<crate::types::SystemEvent>,
+    pub system_event: ::std::option::Option<crate::types::SystemEvent>,
 }
 impl AlarmState {
     /// <p>The name of the alarm state. The state name can be one of the following values:</p>
@@ -35,19 +35,19 @@ impl AlarmState {
     /// <li> <p> <code>SNOOZE_DISABLED</code> - When the alarm is in the <code>SNOOZE_DISABLED</code> state, the alarm is disabled for a specified period of time. After the snooze time, the alarm automatically changes to the <code>NORMAL</code> state. </p> </li>
     /// <li> <p> <code>LATCHED</code> - When the alarm is in the <code>LATCHED</code> state, the alarm was invoked. However, the data that the alarm is currently evaluating is within the specified range. To change the alarm to the <code>NORMAL</code> state, you must acknowledge the alarm.</p> </li>
     /// </ul>
-    pub fn state_name(&self) -> std::option::Option<&crate::types::AlarmStateName> {
+    pub fn state_name(&self) -> ::std::option::Option<&crate::types::AlarmStateName> {
         self.state_name.as_ref()
     }
     /// <p>Information needed to evaluate data.</p>
-    pub fn rule_evaluation(&self) -> std::option::Option<&crate::types::RuleEvaluation> {
+    pub fn rule_evaluation(&self) -> ::std::option::Option<&crate::types::RuleEvaluation> {
         self.rule_evaluation.as_ref()
     }
     /// <p>Contains information about the action that you can take to respond to the alarm.</p>
-    pub fn customer_action(&self) -> std::option::Option<&crate::types::CustomerAction> {
+    pub fn customer_action(&self) -> ::std::option::Option<&crate::types::CustomerAction> {
         self.customer_action.as_ref()
     }
     /// <p>Contains information about alarm state changes.</p>
-    pub fn system_event(&self) -> std::option::Option<&crate::types::SystemEvent> {
+    pub fn system_event(&self) -> ::std::option::Option<&crate::types::SystemEvent> {
         self.system_event.as_ref()
     }
 }
@@ -60,12 +60,14 @@ impl AlarmState {
 
 /// A builder for [`AlarmState`](crate::types::AlarmState).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AlarmStateBuilder {
-    pub(crate) state_name: std::option::Option<crate::types::AlarmStateName>,
-    pub(crate) rule_evaluation: std::option::Option<crate::types::RuleEvaluation>,
-    pub(crate) customer_action: std::option::Option<crate::types::CustomerAction>,
-    pub(crate) system_event: std::option::Option<crate::types::SystemEvent>,
+    pub(crate) state_name: ::std::option::Option<crate::types::AlarmStateName>,
+    pub(crate) rule_evaluation: ::std::option::Option<crate::types::RuleEvaluation>,
+    pub(crate) customer_action: ::std::option::Option<crate::types::CustomerAction>,
+    pub(crate) system_event: ::std::option::Option<crate::types::SystemEvent>,
 }
 impl AlarmStateBuilder {
     /// <p>The name of the alarm state. The state name can be one of the following values:</p>
@@ -78,7 +80,7 @@ impl AlarmStateBuilder {
     /// <li> <p> <code>LATCHED</code> - When the alarm is in the <code>LATCHED</code> state, the alarm was invoked. However, the data that the alarm is currently evaluating is within the specified range. To change the alarm to the <code>NORMAL</code> state, you must acknowledge the alarm.</p> </li>
     /// </ul>
     pub fn state_name(mut self, input: crate::types::AlarmStateName) -> Self {
-        self.state_name = Some(input);
+        self.state_name = ::std::option::Option::Some(input);
         self
     }
     /// <p>The name of the alarm state. The state name can be one of the following values:</p>
@@ -92,46 +94,46 @@ impl AlarmStateBuilder {
     /// </ul>
     pub fn set_state_name(
         mut self,
-        input: std::option::Option<crate::types::AlarmStateName>,
+        input: ::std::option::Option<crate::types::AlarmStateName>,
     ) -> Self {
         self.state_name = input;
         self
     }
     /// <p>Information needed to evaluate data.</p>
     pub fn rule_evaluation(mut self, input: crate::types::RuleEvaluation) -> Self {
-        self.rule_evaluation = Some(input);
+        self.rule_evaluation = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information needed to evaluate data.</p>
     pub fn set_rule_evaluation(
         mut self,
-        input: std::option::Option<crate::types::RuleEvaluation>,
+        input: ::std::option::Option<crate::types::RuleEvaluation>,
     ) -> Self {
         self.rule_evaluation = input;
         self
     }
     /// <p>Contains information about the action that you can take to respond to the alarm.</p>
     pub fn customer_action(mut self, input: crate::types::CustomerAction) -> Self {
-        self.customer_action = Some(input);
+        self.customer_action = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains information about the action that you can take to respond to the alarm.</p>
     pub fn set_customer_action(
         mut self,
-        input: std::option::Option<crate::types::CustomerAction>,
+        input: ::std::option::Option<crate::types::CustomerAction>,
     ) -> Self {
         self.customer_action = input;
         self
     }
     /// <p>Contains information about alarm state changes.</p>
     pub fn system_event(mut self, input: crate::types::SystemEvent) -> Self {
-        self.system_event = Some(input);
+        self.system_event = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains information about alarm state changes.</p>
     pub fn set_system_event(
         mut self,
-        input: std::option::Option<crate::types::SystemEvent>,
+        input: ::std::option::Option<crate::types::SystemEvent>,
     ) -> Self {
         self.system_event = input;
         self

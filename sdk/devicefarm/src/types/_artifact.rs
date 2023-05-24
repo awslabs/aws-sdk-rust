@@ -2,14 +2,14 @@
 
 /// <p>Represents the output of a test. Examples of artifacts include logs and screenshots.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Artifact {
     /// <p>The artifact's ARN.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The artifact's name.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The artifact's type.</p>
     /// <p>Allowed values include the following:</p>
     /// <ul>
@@ -43,21 +43,21 @@ pub struct Artifact {
     /// <li> <p>TESTSPEC_OUTPUT</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::ArtifactType>,
+    pub r#type: ::std::option::Option<crate::types::ArtifactType>,
     /// <p>The artifact's file extension.</p>
     #[doc(hidden)]
-    pub extension: std::option::Option<std::string::String>,
+    pub extension: ::std::option::Option<::std::string::String>,
     /// <p>The presigned Amazon S3 URL that can be used with a GET request to download the artifact's file.</p>
     #[doc(hidden)]
-    pub url: std::option::Option<std::string::String>,
+    pub url: ::std::option::Option<::std::string::String>,
 }
 impl Artifact {
     /// <p>The artifact's ARN.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The artifact's name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The artifact's type.</p>
@@ -92,15 +92,15 @@ impl Artifact {
     /// <li> <p>CUSTOMER_ARTIFACT_LOG</p> </li>
     /// <li> <p>TESTSPEC_OUTPUT</p> </li>
     /// </ul>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::ArtifactType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ArtifactType> {
         self.r#type.as_ref()
     }
     /// <p>The artifact's file extension.</p>
-    pub fn extension(&self) -> std::option::Option<&str> {
+    pub fn extension(&self) -> ::std::option::Option<&str> {
         self.extension.as_deref()
     }
     /// <p>The presigned Amazon S3 URL that can be used with a GET request to download the artifact's file.</p>
-    pub fn url(&self) -> std::option::Option<&str> {
+    pub fn url(&self) -> ::std::option::Option<&str> {
         self.url.as_deref()
     }
 }
@@ -113,32 +113,34 @@ impl Artifact {
 
 /// A builder for [`Artifact`](crate::types::Artifact).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ArtifactBuilder {
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) r#type: std::option::Option<crate::types::ArtifactType>,
-    pub(crate) extension: std::option::Option<std::string::String>,
-    pub(crate) url: std::option::Option<std::string::String>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::ArtifactType>,
+    pub(crate) extension: ::std::option::Option<::std::string::String>,
+    pub(crate) url: ::std::option::Option<::std::string::String>,
 }
 impl ArtifactBuilder {
     /// <p>The artifact's ARN.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The artifact's ARN.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// <p>The artifact's name.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The artifact's name.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
@@ -175,7 +177,7 @@ impl ArtifactBuilder {
     /// <li> <p>TESTSPEC_OUTPUT</p> </li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::ArtifactType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The artifact's type.</p>
@@ -210,27 +212,27 @@ impl ArtifactBuilder {
     /// <li> <p>CUSTOMER_ARTIFACT_LOG</p> </li>
     /// <li> <p>TESTSPEC_OUTPUT</p> </li>
     /// </ul>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::ArtifactType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ArtifactType>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The artifact's file extension.</p>
-    pub fn extension(mut self, input: impl Into<std::string::String>) -> Self {
-        self.extension = Some(input.into());
+    pub fn extension(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.extension = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The artifact's file extension.</p>
-    pub fn set_extension(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_extension(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.extension = input;
         self
     }
     /// <p>The presigned Amazon S3 URL that can be used with a GET request to download the artifact's file.</p>
-    pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.url = Some(input.into());
+    pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The presigned Amazon S3 URL that can be used with a GET request to download the artifact's file.</p>
-    pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.url = input;
         self
     }

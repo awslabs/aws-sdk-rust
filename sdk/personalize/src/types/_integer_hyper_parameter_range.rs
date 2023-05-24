@@ -2,11 +2,11 @@
 
 /// <p>Provides the name and range of an integer-valued hyperparameter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IntegerHyperParameterRange {
     /// <p>The name of the hyperparameter.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The minimum allowable value for the hyperparameter.</p>
     #[doc(hidden)]
     pub min_value: i32,
@@ -16,7 +16,7 @@ pub struct IntegerHyperParameterRange {
 }
 impl IntegerHyperParameterRange {
     /// <p>The name of the hyperparameter.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The minimum allowable value for the hyperparameter.</p>
@@ -37,40 +37,42 @@ impl IntegerHyperParameterRange {
 
 /// A builder for [`IntegerHyperParameterRange`](crate::types::IntegerHyperParameterRange).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct IntegerHyperParameterRangeBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) min_value: std::option::Option<i32>,
-    pub(crate) max_value: std::option::Option<i32>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) min_value: ::std::option::Option<i32>,
+    pub(crate) max_value: ::std::option::Option<i32>,
 }
 impl IntegerHyperParameterRangeBuilder {
     /// <p>The name of the hyperparameter.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the hyperparameter.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The minimum allowable value for the hyperparameter.</p>
     pub fn min_value(mut self, input: i32) -> Self {
-        self.min_value = Some(input);
+        self.min_value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The minimum allowable value for the hyperparameter.</p>
-    pub fn set_min_value(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_min_value(mut self, input: ::std::option::Option<i32>) -> Self {
         self.min_value = input;
         self
     }
     /// <p>The maximum allowable value for the hyperparameter.</p>
     pub fn max_value(mut self, input: i32) -> Self {
-        self.max_value = Some(input);
+        self.max_value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum allowable value for the hyperparameter.</p>
-    pub fn set_max_value(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_value(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_value = input;
         self
     }

@@ -2,20 +2,20 @@
 
 /// <p>The current refresh status of a Trusted Advisor check.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RefreshTrustedAdvisorCheckOutput {
     /// <p>The current refresh status for a check, including the amount of time until the check is eligible for refresh.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::TrustedAdvisorCheckRefreshStatus>,
+    pub status: ::std::option::Option<crate::types::TrustedAdvisorCheckRefreshStatus>,
     _request_id: Option<String>,
 }
 impl RefreshTrustedAdvisorCheckOutput {
     /// <p>The current refresh status for a check, including the amount of time until the check is eligible for refresh.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::TrustedAdvisorCheckRefreshStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::TrustedAdvisorCheckRefreshStatus> {
         self.status.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for RefreshTrustedAdvisorCheckOutput {
+impl ::aws_http::request_id::RequestId for RefreshTrustedAdvisorCheckOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,21 +29,23 @@ impl RefreshTrustedAdvisorCheckOutput {
 
 /// A builder for [`RefreshTrustedAdvisorCheckOutput`](crate::operation::refresh_trusted_advisor_check::RefreshTrustedAdvisorCheckOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RefreshTrustedAdvisorCheckOutputBuilder {
-    pub(crate) status: std::option::Option<crate::types::TrustedAdvisorCheckRefreshStatus>,
+    pub(crate) status: ::std::option::Option<crate::types::TrustedAdvisorCheckRefreshStatus>,
     _request_id: Option<String>,
 }
 impl RefreshTrustedAdvisorCheckOutputBuilder {
     /// <p>The current refresh status for a check, including the amount of time until the check is eligible for refresh.</p>
     pub fn status(mut self, input: crate::types::TrustedAdvisorCheckRefreshStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current refresh status for a check, including the amount of time until the check is eligible for refresh.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::TrustedAdvisorCheckRefreshStatus>,
+        input: ::std::option::Option<crate::types::TrustedAdvisorCheckRefreshStatus>,
     ) -> Self {
         self.status = input;
         self

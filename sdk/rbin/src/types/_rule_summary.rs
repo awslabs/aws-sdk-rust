@@ -2,17 +2,17 @@
 
 /// <p>Information about a Recycle Bin retention rule.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuleSummary {
     /// <p>The unique ID of the retention rule.</p>
     #[doc(hidden)]
-    pub identifier: std::option::Option<std::string::String>,
+    pub identifier: ::std::option::Option<::std::string::String>,
     /// <p>The retention rule description.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>Information about the retention period for which the retention rule is to retain resources.</p>
     #[doc(hidden)]
-    pub retention_period: std::option::Option<crate::types::RetentionPeriod>,
+    pub retention_period: ::std::option::Option<crate::types::RetentionPeriod>,
     /// <p>The lock state for the retention rule.</p>
     /// <ul>
     /// <li> <p> <code>locked</code> - The retention rule is locked and can't be modified or deleted.</p> </li>
@@ -21,19 +21,19 @@ pub struct RuleSummary {
     /// <li> <p> <code>null</code> - The retention rule has never been locked. Once a retention rule has been locked, it can transition between the <code>locked</code> and <code>unlocked</code> states only; it can never transition back to <code>null</code>.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub lock_state: std::option::Option<crate::types::LockState>,
+    pub lock_state: ::std::option::Option<crate::types::LockState>,
 }
 impl RuleSummary {
     /// <p>The unique ID of the retention rule.</p>
-    pub fn identifier(&self) -> std::option::Option<&str> {
+    pub fn identifier(&self) -> ::std::option::Option<&str> {
         self.identifier.as_deref()
     }
     /// <p>The retention rule description.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>Information about the retention period for which the retention rule is to retain resources.</p>
-    pub fn retention_period(&self) -> std::option::Option<&crate::types::RetentionPeriod> {
+    pub fn retention_period(&self) -> ::std::option::Option<&crate::types::RetentionPeriod> {
         self.retention_period.as_ref()
     }
     /// <p>The lock state for the retention rule.</p>
@@ -43,7 +43,7 @@ impl RuleSummary {
     /// <li> <p> <code>unlocked</code> - The retention rule is unlocked and it can be modified or deleted by any user with the required permissions.</p> </li>
     /// <li> <p> <code>null</code> - The retention rule has never been locked. Once a retention rule has been locked, it can transition between the <code>locked</code> and <code>unlocked</code> states only; it can never transition back to <code>null</code>.</p> </li>
     /// </ul>
-    pub fn lock_state(&self) -> std::option::Option<&crate::types::LockState> {
+    pub fn lock_state(&self) -> ::std::option::Option<&crate::types::LockState> {
         self.lock_state.as_ref()
     }
 }
@@ -56,43 +56,45 @@ impl RuleSummary {
 
 /// A builder for [`RuleSummary`](crate::types::RuleSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RuleSummaryBuilder {
-    pub(crate) identifier: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) retention_period: std::option::Option<crate::types::RetentionPeriod>,
-    pub(crate) lock_state: std::option::Option<crate::types::LockState>,
+    pub(crate) identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) retention_period: ::std::option::Option<crate::types::RetentionPeriod>,
+    pub(crate) lock_state: ::std::option::Option<crate::types::LockState>,
 }
 impl RuleSummaryBuilder {
     /// <p>The unique ID of the retention rule.</p>
-    pub fn identifier(mut self, input: impl Into<std::string::String>) -> Self {
-        self.identifier = Some(input.into());
+    pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ID of the retention rule.</p>
-    pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identifier = input;
         self
     }
     /// <p>The retention rule description.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The retention rule description.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>Information about the retention period for which the retention rule is to retain resources.</p>
     pub fn retention_period(mut self, input: crate::types::RetentionPeriod) -> Self {
-        self.retention_period = Some(input);
+        self.retention_period = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the retention period for which the retention rule is to retain resources.</p>
     pub fn set_retention_period(
         mut self,
-        input: std::option::Option<crate::types::RetentionPeriod>,
+        input: ::std::option::Option<crate::types::RetentionPeriod>,
     ) -> Self {
         self.retention_period = input;
         self
@@ -105,7 +107,7 @@ impl RuleSummaryBuilder {
     /// <li> <p> <code>null</code> - The retention rule has never been locked. Once a retention rule has been locked, it can transition between the <code>locked</code> and <code>unlocked</code> states only; it can never transition back to <code>null</code>.</p> </li>
     /// </ul>
     pub fn lock_state(mut self, input: crate::types::LockState) -> Self {
-        self.lock_state = Some(input);
+        self.lock_state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The lock state for the retention rule.</p>
@@ -115,7 +117,7 @@ impl RuleSummaryBuilder {
     /// <li> <p> <code>unlocked</code> - The retention rule is unlocked and it can be modified or deleted by any user with the required permissions.</p> </li>
     /// <li> <p> <code>null</code> - The retention rule has never been locked. Once a retention rule has been locked, it can transition between the <code>locked</code> and <code>unlocked</code> states only; it can never transition back to <code>null</code>.</p> </li>
     /// </ul>
-    pub fn set_lock_state(mut self, input: std::option::Option<crate::types::LockState>) -> Self {
+    pub fn set_lock_state(mut self, input: ::std::option::Option<crate::types::LockState>) -> Self {
         self.lock_state = input;
         self
     }

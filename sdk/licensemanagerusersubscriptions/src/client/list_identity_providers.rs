@@ -5,7 +5,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_identity_providers::builders::ListIdentityProvidersFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_identity_providers::builders::ListIdentityProvidersFluentBuilder::set_max_results): <p>Maximum number of results to return in a single call.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_identity_providers::builders::ListIdentityProvidersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_identity_providers::builders::ListIdentityProvidersFluentBuilder::set_next_token): <p>Token for the next set of results.</p>
+    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_identity_providers::builders::ListIdentityProvidersFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_identity_providers::builders::ListIdentityProvidersFluentBuilder::set_next_token): <p>Token for the next set of results.</p>
     /// - On success, responds with [`ListIdentityProvidersOutput`](crate::operation::list_identity_providers::ListIdentityProvidersOutput) with field(s):
     ///   - [`identity_provider_summaries(Option<Vec<IdentityProviderSummary>>)`](crate::operation::list_identity_providers::ListIdentityProvidersOutput::identity_provider_summaries): <p>Metadata that describes the list identity providers operation.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_identity_providers::ListIdentityProvidersOutput::next_token): <p>Token for the next set of results.</p>

@@ -2,20 +2,20 @@
 
 /// <p>Information about a policy attribute type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PolicyAttributeTypeDescription {
     /// <p>The name of the attribute.</p>
     #[doc(hidden)]
-    pub attribute_name: std::option::Option<std::string::String>,
+    pub attribute_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of the attribute. For example, <code>Boolean</code> or <code>Integer</code>.</p>
     #[doc(hidden)]
-    pub attribute_type: std::option::Option<std::string::String>,
+    pub attribute_type: ::std::option::Option<::std::string::String>,
     /// <p>A description of the attribute.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The default value of the attribute, if applicable.</p>
     #[doc(hidden)]
-    pub default_value: std::option::Option<std::string::String>,
+    pub default_value: ::std::option::Option<::std::string::String>,
     /// <p>The cardinality of the attribute.</p>
     /// <p>Valid values:</p>
     /// <ul>
@@ -25,23 +25,23 @@ pub struct PolicyAttributeTypeDescription {
     /// <li> <p>ONE_OR_MORE(1..*0) : Required. Multiple values are allowed</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub cardinality: std::option::Option<std::string::String>,
+    pub cardinality: ::std::option::Option<::std::string::String>,
 }
 impl PolicyAttributeTypeDescription {
     /// <p>The name of the attribute.</p>
-    pub fn attribute_name(&self) -> std::option::Option<&str> {
+    pub fn attribute_name(&self) -> ::std::option::Option<&str> {
         self.attribute_name.as_deref()
     }
     /// <p>The type of the attribute. For example, <code>Boolean</code> or <code>Integer</code>.</p>
-    pub fn attribute_type(&self) -> std::option::Option<&str> {
+    pub fn attribute_type(&self) -> ::std::option::Option<&str> {
         self.attribute_type.as_deref()
     }
     /// <p>A description of the attribute.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The default value of the attribute, if applicable.</p>
-    pub fn default_value(&self) -> std::option::Option<&str> {
+    pub fn default_value(&self) -> ::std::option::Option<&str> {
         self.default_value.as_deref()
     }
     /// <p>The cardinality of the attribute.</p>
@@ -52,7 +52,7 @@ impl PolicyAttributeTypeDescription {
     /// <li> <p>ZERO_OR_MORE(0..*) : Optional. Multiple values are allowed</p> </li>
     /// <li> <p>ONE_OR_MORE(1..*0) : Required. Multiple values are allowed</p> </li>
     /// </ul>
-    pub fn cardinality(&self) -> std::option::Option<&str> {
+    pub fn cardinality(&self) -> ::std::option::Option<&str> {
         self.cardinality.as_deref()
     }
 }
@@ -65,52 +65,72 @@ impl PolicyAttributeTypeDescription {
 
 /// A builder for [`PolicyAttributeTypeDescription`](crate::types::PolicyAttributeTypeDescription).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PolicyAttributeTypeDescriptionBuilder {
-    pub(crate) attribute_name: std::option::Option<std::string::String>,
-    pub(crate) attribute_type: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) default_value: std::option::Option<std::string::String>,
-    pub(crate) cardinality: std::option::Option<std::string::String>,
+    pub(crate) attribute_name: ::std::option::Option<::std::string::String>,
+    pub(crate) attribute_type: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) default_value: ::std::option::Option<::std::string::String>,
+    pub(crate) cardinality: ::std::option::Option<::std::string::String>,
 }
 impl PolicyAttributeTypeDescriptionBuilder {
     /// <p>The name of the attribute.</p>
-    pub fn attribute_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.attribute_name = Some(input.into());
+    pub fn attribute_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.attribute_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the attribute.</p>
-    pub fn set_attribute_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_attribute_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.attribute_name = input;
         self
     }
     /// <p>The type of the attribute. For example, <code>Boolean</code> or <code>Integer</code>.</p>
-    pub fn attribute_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.attribute_type = Some(input.into());
+    pub fn attribute_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.attribute_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of the attribute. For example, <code>Boolean</code> or <code>Integer</code>.</p>
-    pub fn set_attribute_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_attribute_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.attribute_type = input;
         self
     }
     /// <p>A description of the attribute.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of the attribute.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>The default value of the attribute, if applicable.</p>
-    pub fn default_value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.default_value = Some(input.into());
+    pub fn default_value(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.default_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The default value of the attribute, if applicable.</p>
-    pub fn set_default_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_default_value(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.default_value = input;
         self
     }
@@ -122,8 +142,8 @@ impl PolicyAttributeTypeDescriptionBuilder {
     /// <li> <p>ZERO_OR_MORE(0..*) : Optional. Multiple values are allowed</p> </li>
     /// <li> <p>ONE_OR_MORE(1..*0) : Required. Multiple values are allowed</p> </li>
     /// </ul>
-    pub fn cardinality(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cardinality = Some(input.into());
+    pub fn cardinality(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cardinality = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The cardinality of the attribute.</p>
@@ -134,7 +154,7 @@ impl PolicyAttributeTypeDescriptionBuilder {
     /// <li> <p>ZERO_OR_MORE(0..*) : Optional. Multiple values are allowed</p> </li>
     /// <li> <p>ONE_OR_MORE(1..*0) : Required. Multiple values are allowed</p> </li>
     /// </ul>
-    pub fn set_cardinality(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cardinality(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cardinality = input;
         self
     }

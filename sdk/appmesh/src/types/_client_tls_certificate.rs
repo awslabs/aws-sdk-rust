@@ -2,7 +2,7 @@
 
 /// <p>An object that represents the client's certificate.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum ClientTlsCertificate {
     /// <p>An object that represents a local file certificate. The certificate must meet specific requirements and you must have proxy authorization enabled. For more information, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html">Transport Layer Security (TLS)</a>.</p>
     File(crate::types::ListenerTlsFileCertificate),
@@ -21,11 +21,13 @@ pub enum ClientTlsCertificate {
 impl ClientTlsCertificate {
     /// Tries to convert the enum instance into [`File`](crate::types::ClientTlsCertificate::File), extracting the inner [`ListenerTlsFileCertificate`](crate::types::ListenerTlsFileCertificate).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_file(&self) -> std::result::Result<&crate::types::ListenerTlsFileCertificate, &Self> {
+    pub fn as_file(
+        &self,
+    ) -> ::std::result::Result<&crate::types::ListenerTlsFileCertificate, &Self> {
         if let ClientTlsCertificate::File(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`File`](crate::types::ClientTlsCertificate::File).
@@ -34,11 +36,11 @@ impl ClientTlsCertificate {
     }
     /// Tries to convert the enum instance into [`Sds`](crate::types::ClientTlsCertificate::Sds), extracting the inner [`ListenerTlsSdsCertificate`](crate::types::ListenerTlsSdsCertificate).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_sds(&self) -> std::result::Result<&crate::types::ListenerTlsSdsCertificate, &Self> {
+    pub fn as_sds(&self) -> ::std::result::Result<&crate::types::ListenerTlsSdsCertificate, &Self> {
         if let ClientTlsCertificate::Sds(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Sds`](crate::types::ClientTlsCertificate::Sds).

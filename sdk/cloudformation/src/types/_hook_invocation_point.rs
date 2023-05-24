@@ -37,13 +37,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum HookInvocationPoint {
     #[allow(missing_docs)] // documentation missing in model
@@ -51,7 +51,7 @@ pub enum HookInvocationPoint {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for HookInvocationPoint {
+impl ::std::convert::From<&str> for HookInvocationPoint {
     fn from(s: &str) -> Self {
         match s {
             "PRE_PROVISION" => HookInvocationPoint::PreProvision,
@@ -61,11 +61,11 @@ impl std::convert::From<&str> for HookInvocationPoint {
         }
     }
 }
-impl std::str::FromStr for HookInvocationPoint {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for HookInvocationPoint {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(HookInvocationPoint::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(HookInvocationPoint::from(s))
     }
 }
 impl HookInvocationPoint {
@@ -81,7 +81,7 @@ impl HookInvocationPoint {
         &["PRE_PROVISION"]
     }
 }
-impl AsRef<str> for HookInvocationPoint {
+impl ::std::convert::AsRef<str> for HookInvocationPoint {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

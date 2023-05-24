@@ -7,56 +7,59 @@ pub use crate::operation::update_ops_item::_update_ops_item_input::UpdateOpsItem
 ///
 /// <p>Edit or change an OpsItem. You must have permission in Identity and Access Management (IAM) to update an OpsItem. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting started with OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
 /// <p>Operations engineers and IT professionals use Amazon Web Services Systems Manager OpsCenter to view, investigate, and remediate operational issues impacting the performance and health of their Amazon Web Services resources. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateOpsItemFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::update_ops_item::builders::UpdateOpsItemInputBuilder,
 }
 impl UpdateOpsItemFluentBuilder {
     /// Creates a new `UpdateOpsItem`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_ops_item::UpdateOpsItem,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::update_ops_item::UpdateOpsItemError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_ops_item::UpdateOpsItemError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_ops_item::UpdateOpsItemOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_ops_item::UpdateOpsItemError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_ops_item::UpdateOpsItemError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -69,19 +72,19 @@ impl UpdateOpsItemFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_ops_item::UpdateOpsItemOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_ops_item::UpdateOpsItemError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_ops_item::UpdateOpsItemError>,
     > {
         self.send_middleware().await
     }
     /// <p>Update the information about the OpsItem. Provide enough information so that users reading this OpsItem for the first time understand the issue. </p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>Update the information about the OpsItem. Provide enough information so that users reading this OpsItem for the first time understand the issue. </p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
@@ -97,7 +100,7 @@ impl UpdateOpsItemFluentBuilder {
     /// <p>Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request. Use the <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the OpsItem. To view Amazon Web Services CLI example commands that use these keys, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn operational_data(
         mut self,
-        k: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
         v: crate::types::OpsItemDataValue,
     ) -> Self {
         self.inner = self.inner.operational_data(k.into(), v);
@@ -111,8 +114,8 @@ impl UpdateOpsItemFluentBuilder {
     /// <p>Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request. Use the <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the OpsItem. To view Amazon Web Services CLI example commands that use these keys, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn set_operational_data(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::types::OpsItemDataValue>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, crate::types::OpsItemDataValue>,
         >,
     ) -> Self {
         self.inner = self.inner.set_operational_data(input);
@@ -123,14 +126,17 @@ impl UpdateOpsItemFluentBuilder {
     /// To override the contents of this collection use [`set_operational_data_to_delete`](Self::set_operational_data_to_delete).
     ///
     /// <p>Keys that you want to remove from the OperationalData map.</p>
-    pub fn operational_data_to_delete(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn operational_data_to_delete(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.operational_data_to_delete(input.into());
         self
     }
     /// <p>Keys that you want to remove from the OperationalData map.</p>
     pub fn set_operational_data_to_delete(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_operational_data_to_delete(input);
         self
@@ -147,7 +153,7 @@ impl UpdateOpsItemFluentBuilder {
     /// <p>The Amazon Resource Name (ARN) of an SNS topic where notifications are sent when this OpsItem is edited or changed.</p>
     pub fn set_notifications(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::OpsItemNotification>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::OpsItemNotification>>,
     ) -> Self {
         self.inner = self.inner.set_notifications(input);
         self
@@ -158,7 +164,7 @@ impl UpdateOpsItemFluentBuilder {
         self
     }
     /// <p>The importance of this OpsItem in relation to other OpsItems in the system.</p>
-    pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_priority(input);
         self
     }
@@ -174,7 +180,7 @@ impl UpdateOpsItemFluentBuilder {
     /// <p>One or more OpsItems that share something in common with the current OpsItems. For example, related OpsItems can include OpsItems with similar error messages, impacted resources, or statuses for the impacted resource.</p>
     pub fn set_related_ops_items(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RelatedOpsItem>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::RelatedOpsItem>>,
     ) -> Self {
         self.inner = self.inner.set_related_ops_items(input);
         self
@@ -185,109 +191,109 @@ impl UpdateOpsItemFluentBuilder {
         self
     }
     /// <p>The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or <code>Resolved</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems.html#OpsCenter-working-with-OpsItems-editing-details">Editing OpsItem details</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::OpsItemStatus>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::OpsItemStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }
     /// <p>The ID of the OpsItem.</p>
-    pub fn ops_item_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn ops_item_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ops_item_id(input.into());
         self
     }
     /// <p>The ID of the OpsItem.</p>
-    pub fn set_ops_item_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ops_item_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ops_item_id(input);
         self
     }
     /// <p>A short heading that describes the nature of the OpsItem and the impacted resource.</p>
-    pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.title(input.into());
         self
     }
     /// <p>A short heading that describes the nature of the OpsItem and the impacted resource.</p>
-    pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_title(input);
         self
     }
     /// <p>Specify a new category for an OpsItem.</p>
-    pub fn category(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn category(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.category(input.into());
         self
     }
     /// <p>Specify a new category for an OpsItem.</p>
-    pub fn set_category(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_category(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_category(input);
         self
     }
     /// <p>Specify a new severity for an OpsItem.</p>
-    pub fn severity(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn severity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.severity(input.into());
         self
     }
     /// <p>Specify a new severity for an OpsItem.</p>
-    pub fn set_severity(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_severity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_severity(input);
         self
     }
     /// <p>The time a runbook workflow started. Currently reported only for the OpsItem type <code>/aws/changerequest</code>.</p>
-    pub fn actual_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+    pub fn actual_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.actual_start_time(input);
         self
     }
     /// <p>The time a runbook workflow started. Currently reported only for the OpsItem type <code>/aws/changerequest</code>.</p>
     pub fn set_actual_start_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.inner = self.inner.set_actual_start_time(input);
         self
     }
     /// <p>The time a runbook workflow ended. Currently reported only for the OpsItem type <code>/aws/changerequest</code>.</p>
-    pub fn actual_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+    pub fn actual_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.actual_end_time(input);
         self
     }
     /// <p>The time a runbook workflow ended. Currently reported only for the OpsItem type <code>/aws/changerequest</code>.</p>
     pub fn set_actual_end_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.inner = self.inner.set_actual_end_time(input);
         self
     }
     /// <p>The time specified in a change request for a runbook workflow to start. Currently supported only for the OpsItem type <code>/aws/changerequest</code>.</p>
-    pub fn planned_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+    pub fn planned_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.planned_start_time(input);
         self
     }
     /// <p>The time specified in a change request for a runbook workflow to start. Currently supported only for the OpsItem type <code>/aws/changerequest</code>.</p>
     pub fn set_planned_start_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.inner = self.inner.set_planned_start_time(input);
         self
     }
     /// <p>The time specified in a change request for a runbook workflow to end. Currently supported only for the OpsItem type <code>/aws/changerequest</code>.</p>
-    pub fn planned_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+    pub fn planned_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.planned_end_time(input);
         self
     }
     /// <p>The time specified in a change request for a runbook workflow to end. Currently supported only for the OpsItem type <code>/aws/changerequest</code>.</p>
     pub fn set_planned_end_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.inner = self.inner.set_planned_end_time(input);
         self
     }
     /// <p>The OpsItem Amazon Resource Name (ARN).</p>
-    pub fn ops_item_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn ops_item_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ops_item_arn(input.into());
         self
     }
     /// <p>The OpsItem Amazon Resource Name (ARN).</p>
-    pub fn set_ops_item_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ops_item_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ops_item_arn(input);
         self
     }

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteExport`](crate::operation::delete_export::builders::DeleteExportFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`export_id(impl Into<String>)`](crate::operation::delete_export::builders::DeleteExportFluentBuilder::export_id) / [`set_export_id(Option<String>)`](crate::operation::delete_export::builders::DeleteExportFluentBuilder::set_export_id): <p>The unique identifier of the export to delete.</p>
+    ///   - [`export_id(impl ::std::convert::Into<String>)`](crate::operation::delete_export::builders::DeleteExportFluentBuilder::export_id) / [`set_export_id(Option<String>)`](crate::operation::delete_export::builders::DeleteExportFluentBuilder::set_export_id): <p>The unique identifier of the export to delete.</p>
     /// - On success, responds with [`DeleteExportOutput`](crate::operation::delete_export::DeleteExportOutput) with field(s):
     ///   - [`export_id(Option<String>)`](crate::operation::delete_export::DeleteExportOutput::export_id): <p>The unique identifier of the deleted export.</p>
     ///   - [`export_status(Option<ExportStatus>)`](crate::operation::delete_export::DeleteExportOutput::export_status): <p>The current status of the deletion. When the deletion is complete, the export will no longer be returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListExports.html">ListExports</a> operation and calls to the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeExport.html"> DescribeExport</a> operation with the export identifier will fail.</p>

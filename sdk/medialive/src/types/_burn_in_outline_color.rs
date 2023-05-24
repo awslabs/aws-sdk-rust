@@ -42,13 +42,13 @@
 /// Burn In Outline Color
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum BurnInOutlineColor {
     #[allow(missing_docs)] // documentation missing in model
@@ -66,7 +66,7 @@ pub enum BurnInOutlineColor {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for BurnInOutlineColor {
+impl ::std::convert::From<&str> for BurnInOutlineColor {
     fn from(s: &str) -> Self {
         match s {
             "BLACK" => BurnInOutlineColor::Black,
@@ -81,11 +81,11 @@ impl std::convert::From<&str> for BurnInOutlineColor {
         }
     }
 }
-impl std::str::FromStr for BurnInOutlineColor {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for BurnInOutlineColor {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(BurnInOutlineColor::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(BurnInOutlineColor::from(s))
     }
 }
 impl BurnInOutlineColor {
@@ -106,7 +106,7 @@ impl BurnInOutlineColor {
         &["BLACK", "BLUE", "GREEN", "RED", "WHITE", "YELLOW"]
     }
 }
-impl AsRef<str> for BurnInOutlineColor {
+impl ::std::convert::AsRef<str> for BurnInOutlineColor {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

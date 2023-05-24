@@ -2,15 +2,15 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDataflowEndpointGroupInput {
     /// <p>UUID of a dataflow endpoint group.</p>
     #[doc(hidden)]
-    pub dataflow_endpoint_group_id: std::option::Option<std::string::String>,
+    pub dataflow_endpoint_group_id: ::std::option::Option<::std::string::String>,
 }
 impl GetDataflowEndpointGroupInput {
     /// <p>UUID of a dataflow endpoint group.</p>
-    pub fn dataflow_endpoint_group_id(&self) -> std::option::Option<&str> {
+    pub fn dataflow_endpoint_group_id(&self) -> ::std::option::Option<&str> {
         self.dataflow_endpoint_group_id.as_deref()
     }
 }
@@ -25,20 +25,25 @@ impl GetDataflowEndpointGroupInput {
 
 /// A builder for [`GetDataflowEndpointGroupInput`](crate::operation::get_dataflow_endpoint_group::GetDataflowEndpointGroupInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetDataflowEndpointGroupInputBuilder {
-    pub(crate) dataflow_endpoint_group_id: std::option::Option<std::string::String>,
+    pub(crate) dataflow_endpoint_group_id: ::std::option::Option<::std::string::String>,
 }
 impl GetDataflowEndpointGroupInputBuilder {
     /// <p>UUID of a dataflow endpoint group.</p>
-    pub fn dataflow_endpoint_group_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.dataflow_endpoint_group_id = Some(input.into());
+    pub fn dataflow_endpoint_group_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.dataflow_endpoint_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>UUID of a dataflow endpoint group.</p>
     pub fn set_dataflow_endpoint_group_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.dataflow_endpoint_group_id = input;
         self
@@ -46,11 +51,11 @@ impl GetDataflowEndpointGroupInputBuilder {
     /// Consumes the builder and constructs a [`GetDataflowEndpointGroupInput`](crate::operation::get_dataflow_endpoint_group::GetDataflowEndpointGroupInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::get_dataflow_endpoint_group::GetDataflowEndpointGroupInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::get_dataflow_endpoint_group::GetDataflowEndpointGroupInput {
                 dataflow_endpoint_group_id: self.dataflow_endpoint_group_id,
             },

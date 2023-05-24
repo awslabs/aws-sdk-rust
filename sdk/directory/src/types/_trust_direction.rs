@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum TrustDirection {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum TrustDirection {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for TrustDirection {
+impl ::std::convert::From<&str> for TrustDirection {
     fn from(s: &str) -> Self {
         match s {
             "One-Way: Incoming" => TrustDirection::OneWayIncoming,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for TrustDirection {
         }
     }
 }
-impl std::str::FromStr for TrustDirection {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for TrustDirection {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TrustDirection::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(TrustDirection::from(s))
     }
 }
 impl TrustDirection {
@@ -91,7 +91,7 @@ impl TrustDirection {
         &["One-Way: Incoming", "One-Way: Outgoing", "Two-Way"]
     }
 }
-impl AsRef<str> for TrustDirection {
+impl ::std::convert::AsRef<str> for TrustDirection {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

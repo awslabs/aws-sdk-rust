@@ -2,32 +2,32 @@
 
 /// <p>Details of the operation to be performed by the job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportRevisionsToS3RequestDetails {
     /// <p>The unique identifier for the data set associated with this export job.</p>
     #[doc(hidden)]
-    pub data_set_id: std::option::Option<std::string::String>,
+    pub data_set_id: ::std::option::Option<::std::string::String>,
     /// <p>Encryption configuration for the export job.</p>
     #[doc(hidden)]
-    pub encryption: std::option::Option<crate::types::ExportServerSideEncryption>,
+    pub encryption: ::std::option::Option<crate::types::ExportServerSideEncryption>,
     /// <p>The destination for the revision.</p>
     #[doc(hidden)]
     pub revision_destinations:
-        std::option::Option<std::vec::Vec<crate::types::RevisionDestinationEntry>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::RevisionDestinationEntry>>,
 }
 impl ExportRevisionsToS3RequestDetails {
     /// <p>The unique identifier for the data set associated with this export job.</p>
-    pub fn data_set_id(&self) -> std::option::Option<&str> {
+    pub fn data_set_id(&self) -> ::std::option::Option<&str> {
         self.data_set_id.as_deref()
     }
     /// <p>Encryption configuration for the export job.</p>
-    pub fn encryption(&self) -> std::option::Option<&crate::types::ExportServerSideEncryption> {
+    pub fn encryption(&self) -> ::std::option::Option<&crate::types::ExportServerSideEncryption> {
         self.encryption.as_ref()
     }
     /// <p>The destination for the revision.</p>
     pub fn revision_destinations(
         &self,
-    ) -> std::option::Option<&[crate::types::RevisionDestinationEntry]> {
+    ) -> ::std::option::Option<&[crate::types::RevisionDestinationEntry]> {
         self.revision_destinations.as_deref()
     }
 }
@@ -40,33 +40,35 @@ impl ExportRevisionsToS3RequestDetails {
 
 /// A builder for [`ExportRevisionsToS3RequestDetails`](crate::types::ExportRevisionsToS3RequestDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ExportRevisionsToS3RequestDetailsBuilder {
-    pub(crate) data_set_id: std::option::Option<std::string::String>,
-    pub(crate) encryption: std::option::Option<crate::types::ExportServerSideEncryption>,
+    pub(crate) data_set_id: ::std::option::Option<::std::string::String>,
+    pub(crate) encryption: ::std::option::Option<crate::types::ExportServerSideEncryption>,
     pub(crate) revision_destinations:
-        std::option::Option<std::vec::Vec<crate::types::RevisionDestinationEntry>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::RevisionDestinationEntry>>,
 }
 impl ExportRevisionsToS3RequestDetailsBuilder {
     /// <p>The unique identifier for the data set associated with this export job.</p>
-    pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.data_set_id = Some(input.into());
+    pub fn data_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.data_set_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the data set associated with this export job.</p>
-    pub fn set_data_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_data_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_set_id = input;
         self
     }
     /// <p>Encryption configuration for the export job.</p>
     pub fn encryption(mut self, input: crate::types::ExportServerSideEncryption) -> Self {
-        self.encryption = Some(input);
+        self.encryption = ::std::option::Option::Some(input);
         self
     }
     /// <p>Encryption configuration for the export job.</p>
     pub fn set_encryption(
         mut self,
-        input: std::option::Option<crate::types::ExportServerSideEncryption>,
+        input: ::std::option::Option<crate::types::ExportServerSideEncryption>,
     ) -> Self {
         self.encryption = input;
         self
@@ -79,13 +81,13 @@ impl ExportRevisionsToS3RequestDetailsBuilder {
     pub fn revision_destinations(mut self, input: crate::types::RevisionDestinationEntry) -> Self {
         let mut v = self.revision_destinations.unwrap_or_default();
         v.push(input);
-        self.revision_destinations = Some(v);
+        self.revision_destinations = ::std::option::Option::Some(v);
         self
     }
     /// <p>The destination for the revision.</p>
     pub fn set_revision_destinations(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RevisionDestinationEntry>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::RevisionDestinationEntry>>,
     ) -> Self {
         self.revision_destinations = input;
         self

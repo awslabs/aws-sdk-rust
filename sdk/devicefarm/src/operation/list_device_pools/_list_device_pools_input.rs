@@ -2,11 +2,11 @@
 
 /// <p>Represents the result of a list device pools request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDevicePoolsInput {
     /// <p>The project ARN.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The device pools' type.</p>
     /// <p>Allowed values include:</p>
     /// <ul>
@@ -14,14 +14,14 @@ pub struct ListDevicePoolsInput {
     /// <li> <p>PRIVATE: A device pool that is created and managed by the device pool developer.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::DevicePoolType>,
+    pub r#type: ::std::option::Option<crate::types::DevicePoolType>,
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListDevicePoolsInput {
     /// <p>The project ARN.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The device pools' type.</p>
@@ -30,11 +30,11 @@ impl ListDevicePoolsInput {
     /// <li> <p>CURATED: A device pool that is created and managed by AWS Device Farm.</p> </li>
     /// <li> <p>PRIVATE: A device pool that is created and managed by the device pool developer.</p> </li>
     /// </ul>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::DevicePoolType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::DevicePoolType> {
         self.r#type.as_ref()
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
@@ -47,20 +47,22 @@ impl ListDevicePoolsInput {
 
 /// A builder for [`ListDevicePoolsInput`](crate::operation::list_device_pools::ListDevicePoolsInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListDevicePoolsInputBuilder {
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) r#type: std::option::Option<crate::types::DevicePoolType>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::DevicePoolType>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListDevicePoolsInputBuilder {
     /// <p>The project ARN.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The project ARN.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
@@ -71,7 +73,7 @@ impl ListDevicePoolsInputBuilder {
     /// <li> <p>PRIVATE: A device pool that is created and managed by the device pool developer.</p> </li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::DevicePoolType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The device pools' type.</p>
@@ -80,28 +82,28 @@ impl ListDevicePoolsInputBuilder {
     /// <li> <p>CURATED: A device pool that is created and managed by AWS Device Farm.</p> </li>
     /// <li> <p>PRIVATE: A device pool that is created and managed by the device pool developer.</p> </li>
     /// </ul>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::DevicePoolType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::DevicePoolType>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
     /// Consumes the builder and constructs a [`ListDevicePoolsInput`](crate::operation::list_device_pools::ListDevicePoolsInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::list_device_pools::ListDevicePoolsInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::list_device_pools::ListDevicePoolsInput {
+        ::std::result::Result::Ok(crate::operation::list_device_pools::ListDevicePoolsInput {
             arn: self.arn,
             r#type: self.r#type,
             next_token: self.next_token,

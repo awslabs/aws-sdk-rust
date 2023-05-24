@@ -2,15 +2,15 @@
 
 /// Information about a device definition version.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeviceDefinitionVersion {
     /// A list of devices in the definition version.
     #[doc(hidden)]
-    pub devices: std::option::Option<std::vec::Vec<crate::types::Device>>,
+    pub devices: ::std::option::Option<::std::vec::Vec<crate::types::Device>>,
 }
 impl DeviceDefinitionVersion {
     /// A list of devices in the definition version.
-    pub fn devices(&self) -> std::option::Option<&[crate::types::Device]> {
+    pub fn devices(&self) -> ::std::option::Option<&[crate::types::Device]> {
         self.devices.as_deref()
     }
 }
@@ -23,9 +23,11 @@ impl DeviceDefinitionVersion {
 
 /// A builder for [`DeviceDefinitionVersion`](crate::types::DeviceDefinitionVersion).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeviceDefinitionVersionBuilder {
-    pub(crate) devices: std::option::Option<std::vec::Vec<crate::types::Device>>,
+    pub(crate) devices: ::std::option::Option<::std::vec::Vec<crate::types::Device>>,
 }
 impl DeviceDefinitionVersionBuilder {
     /// Appends an item to `devices`.
@@ -36,13 +38,13 @@ impl DeviceDefinitionVersionBuilder {
     pub fn devices(mut self, input: crate::types::Device) -> Self {
         let mut v = self.devices.unwrap_or_default();
         v.push(input);
-        self.devices = Some(v);
+        self.devices = ::std::option::Option::Some(v);
         self
     }
     /// A list of devices in the definition version.
     pub fn set_devices(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Device>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Device>>,
     ) -> Self {
         self.devices = input;
         self

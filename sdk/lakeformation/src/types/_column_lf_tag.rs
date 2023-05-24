@@ -2,22 +2,22 @@
 
 /// <p>A structure containing the name of a column resource and the LF-tags attached to it.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ColumnLfTag {
     /// <p>The name of a column resource.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The LF-tags attached to a column resource.</p>
     #[doc(hidden)]
-    pub lf_tags: std::option::Option<std::vec::Vec<crate::types::LfTagPair>>,
+    pub lf_tags: ::std::option::Option<::std::vec::Vec<crate::types::LfTagPair>>,
 }
 impl ColumnLfTag {
     /// <p>The name of a column resource.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The LF-tags attached to a column resource.</p>
-    pub fn lf_tags(&self) -> std::option::Option<&[crate::types::LfTagPair]> {
+    pub fn lf_tags(&self) -> ::std::option::Option<&[crate::types::LfTagPair]> {
         self.lf_tags.as_deref()
     }
 }
@@ -30,19 +30,21 @@ impl ColumnLfTag {
 
 /// A builder for [`ColumnLfTag`](crate::types::ColumnLfTag).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ColumnLfTagBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) lf_tags: std::option::Option<std::vec::Vec<crate::types::LfTagPair>>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) lf_tags: ::std::option::Option<::std::vec::Vec<crate::types::LfTagPair>>,
 }
 impl ColumnLfTagBuilder {
     /// <p>The name of a column resource.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a column resource.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
@@ -54,13 +56,13 @@ impl ColumnLfTagBuilder {
     pub fn lf_tags(mut self, input: crate::types::LfTagPair) -> Self {
         let mut v = self.lf_tags.unwrap_or_default();
         v.push(input);
-        self.lf_tags = Some(v);
+        self.lf_tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>The LF-tags attached to a column resource.</p>
     pub fn set_lf_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::LfTagPair>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::LfTagPair>>,
     ) -> Self {
         self.lf_tags = input;
         self

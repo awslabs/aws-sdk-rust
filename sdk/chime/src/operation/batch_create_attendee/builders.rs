@@ -6,29 +6,29 @@ pub use crate::operation::batch_create_attendee::_batch_create_attendee_input::B
 /// Fluent builder constructing a request to `BatchCreateAttendee`.
 ///
 /// <p> Creates up to 100 new attendees for an active Amazon Chime SDK meeting. For more information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the <i>Amazon Chime SDK Developer Guide</i>. </p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchCreateAttendeeFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::batch_create_attendee::builders::BatchCreateAttendeeInputBuilder,
 }
 impl BatchCreateAttendeeFluentBuilder {
     /// Creates a new `BatchCreateAttendee`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::batch_create_attendee::BatchCreateAttendee,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::batch_create_attendee::BatchCreateAttendeeError,
         >,
     > {
@@ -36,30 +36,33 @@ impl BatchCreateAttendeeFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::batch_create_attendee::BatchCreateAttendeeOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::batch_create_attendee::BatchCreateAttendeeError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,21 +75,21 @@ impl BatchCreateAttendeeFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::batch_create_attendee::BatchCreateAttendeeOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::batch_create_attendee::BatchCreateAttendeeError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The Amazon Chime SDK meeting ID.</p>
-    pub fn meeting_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn meeting_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.meeting_id(input.into());
         self
     }
     /// <p>The Amazon Chime SDK meeting ID.</p>
-    pub fn set_meeting_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_meeting_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_meeting_id(input);
         self
     }
@@ -102,7 +105,7 @@ impl BatchCreateAttendeeFluentBuilder {
     /// <p>The request containing the attendees to create.</p>
     pub fn set_attendees(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CreateAttendeeRequestItem>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::CreateAttendeeRequestItem>>,
     ) -> Self {
         self.inner = self.inner.set_attendees(input);
         self

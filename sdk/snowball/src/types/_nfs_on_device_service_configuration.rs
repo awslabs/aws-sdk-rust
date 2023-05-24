@@ -2,7 +2,7 @@
 
 /// <p>An object that represents the metadata and configuration settings for the NFS (Network File System) service on an Amazon Web Services Snow Family device.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NfsOnDeviceServiceConfiguration {
     /// <p>The maximum NFS storage for one Snow Family device.</p>
     #[doc(hidden)]
@@ -10,7 +10,7 @@ pub struct NfsOnDeviceServiceConfiguration {
     /// <p>The scale unit of the NFS storage on the device.</p>
     /// <p>Valid values: TB.</p>
     #[doc(hidden)]
-    pub storage_unit: std::option::Option<crate::types::StorageUnit>,
+    pub storage_unit: ::std::option::Option<crate::types::StorageUnit>,
 }
 impl NfsOnDeviceServiceConfiguration {
     /// <p>The maximum NFS storage for one Snow Family device.</p>
@@ -19,7 +19,7 @@ impl NfsOnDeviceServiceConfiguration {
     }
     /// <p>The scale unit of the NFS storage on the device.</p>
     /// <p>Valid values: TB.</p>
-    pub fn storage_unit(&self) -> std::option::Option<&crate::types::StorageUnit> {
+    pub fn storage_unit(&self) -> ::std::option::Option<&crate::types::StorageUnit> {
         self.storage_unit.as_ref()
     }
 }
@@ -32,33 +32,35 @@ impl NfsOnDeviceServiceConfiguration {
 
 /// A builder for [`NfsOnDeviceServiceConfiguration`](crate::types::NfsOnDeviceServiceConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NfsOnDeviceServiceConfigurationBuilder {
-    pub(crate) storage_limit: std::option::Option<i32>,
-    pub(crate) storage_unit: std::option::Option<crate::types::StorageUnit>,
+    pub(crate) storage_limit: ::std::option::Option<i32>,
+    pub(crate) storage_unit: ::std::option::Option<crate::types::StorageUnit>,
 }
 impl NfsOnDeviceServiceConfigurationBuilder {
     /// <p>The maximum NFS storage for one Snow Family device.</p>
     pub fn storage_limit(mut self, input: i32) -> Self {
-        self.storage_limit = Some(input);
+        self.storage_limit = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum NFS storage for one Snow Family device.</p>
-    pub fn set_storage_limit(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_storage_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.storage_limit = input;
         self
     }
     /// <p>The scale unit of the NFS storage on the device.</p>
     /// <p>Valid values: TB.</p>
     pub fn storage_unit(mut self, input: crate::types::StorageUnit) -> Self {
-        self.storage_unit = Some(input);
+        self.storage_unit = ::std::option::Option::Some(input);
         self
     }
     /// <p>The scale unit of the NFS storage on the device.</p>
     /// <p>Valid values: TB.</p>
     pub fn set_storage_unit(
         mut self,
-        input: std::option::Option<crate::types::StorageUnit>,
+        input: ::std::option::Option<crate::types::StorageUnit>,
     ) -> Self {
         self.storage_unit = input;
         self

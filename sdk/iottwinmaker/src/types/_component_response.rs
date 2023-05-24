@@ -2,82 +2,82 @@
 
 /// <p>An object that returns information about a component type create or update request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComponentResponse {
     /// <p>The name of the component.</p>
     #[doc(hidden)]
-    pub component_name: std::option::Option<std::string::String>,
+    pub component_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the component type.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the component type.</p>
     #[doc(hidden)]
-    pub component_type_id: std::option::Option<std::string::String>,
+    pub component_type_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the component type.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::Status>,
+    pub status: ::std::option::Option<crate::types::Status>,
     /// <p>The name of the property definition set in the request.</p>
     #[doc(hidden)]
-    pub defined_in: std::option::Option<std::string::String>,
+    pub defined_in: ::std::option::Option<::std::string::String>,
     /// <p>An object that maps strings to the properties to set in the component type. Each string in the mapping must be unique to this object.</p>
     #[doc(hidden)]
-    pub properties: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::PropertyResponse>,
+    pub properties: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::PropertyResponse>,
     >,
     /// <p>The property groups.</p>
     #[doc(hidden)]
-    pub property_groups: std::option::Option<
-        std::collections::HashMap<
-            std::string::String,
+    pub property_groups: ::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
             crate::types::ComponentPropertyGroupResponse,
         >,
     >,
     /// <p>The syncSource of the sync job, if this entity was created by a sync job.</p>
     #[doc(hidden)]
-    pub sync_source: std::option::Option<std::string::String>,
+    pub sync_source: ::std::option::Option<::std::string::String>,
 }
 impl ComponentResponse {
     /// <p>The name of the component.</p>
-    pub fn component_name(&self) -> std::option::Option<&str> {
+    pub fn component_name(&self) -> ::std::option::Option<&str> {
         self.component_name.as_deref()
     }
     /// <p>The description of the component type.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The ID of the component type.</p>
-    pub fn component_type_id(&self) -> std::option::Option<&str> {
+    pub fn component_type_id(&self) -> ::std::option::Option<&str> {
         self.component_type_id.as_deref()
     }
     /// <p>The status of the component type.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::Status> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::Status> {
         self.status.as_ref()
     }
     /// <p>The name of the property definition set in the request.</p>
-    pub fn defined_in(&self) -> std::option::Option<&str> {
+    pub fn defined_in(&self) -> ::std::option::Option<&str> {
         self.defined_in.as_deref()
     }
     /// <p>An object that maps strings to the properties to set in the component type. Each string in the mapping must be unique to this object.</p>
     pub fn properties(
         &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::types::PropertyResponse>,
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, crate::types::PropertyResponse>,
     > {
         self.properties.as_ref()
     }
     /// <p>The property groups.</p>
     pub fn property_groups(
         &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<
-            std::string::String,
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<
+            ::std::string::String,
             crate::types::ComponentPropertyGroupResponse,
         >,
     > {
         self.property_groups.as_ref()
     }
     /// <p>The syncSource of the sync job, if this entity was created by a sync job.</p>
-    pub fn sync_source(&self) -> std::option::Option<&str> {
+    pub fn sync_source(&self) -> ::std::option::Option<&str> {
         self.sync_source.as_deref()
     }
 }
@@ -90,75 +90,86 @@ impl ComponentResponse {
 
 /// A builder for [`ComponentResponse`](crate::types::ComponentResponse).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ComponentResponseBuilder {
-    pub(crate) component_name: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) component_type_id: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::Status>,
-    pub(crate) defined_in: std::option::Option<std::string::String>,
-    pub(crate) properties: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::PropertyResponse>,
+    pub(crate) component_name: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) component_type_id: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::Status>,
+    pub(crate) defined_in: ::std::option::Option<::std::string::String>,
+    pub(crate) properties: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::PropertyResponse>,
     >,
-    pub(crate) property_groups: std::option::Option<
-        std::collections::HashMap<
-            std::string::String,
+    pub(crate) property_groups: ::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
             crate::types::ComponentPropertyGroupResponse,
         >,
     >,
-    pub(crate) sync_source: std::option::Option<std::string::String>,
+    pub(crate) sync_source: ::std::option::Option<::std::string::String>,
 }
 impl ComponentResponseBuilder {
     /// <p>The name of the component.</p>
-    pub fn component_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.component_name = Some(input.into());
+    pub fn component_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.component_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the component.</p>
-    pub fn set_component_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_component_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.component_name = input;
         self
     }
     /// <p>The description of the component type.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the component type.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>The ID of the component type.</p>
-    pub fn component_type_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.component_type_id = Some(input.into());
+    pub fn component_type_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.component_type_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the component type.</p>
     pub fn set_component_type_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.component_type_id = input;
         self
     }
     /// <p>The status of the component type.</p>
     pub fn status(mut self, input: crate::types::Status) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the component type.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::Status>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
         self.status = input;
         self
     }
     /// <p>The name of the property definition set in the request.</p>
-    pub fn defined_in(mut self, input: impl Into<std::string::String>) -> Self {
-        self.defined_in = Some(input.into());
+    pub fn defined_in(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.defined_in = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the property definition set in the request.</p>
-    pub fn set_defined_in(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_defined_in(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.defined_in = input;
         self
     }
@@ -169,19 +180,19 @@ impl ComponentResponseBuilder {
     /// <p>An object that maps strings to the properties to set in the component type. Each string in the mapping must be unique to this object.</p>
     pub fn properties(
         mut self,
-        k: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
         v: crate::types::PropertyResponse,
     ) -> Self {
         let mut hash_map = self.properties.unwrap_or_default();
         hash_map.insert(k.into(), v);
-        self.properties = Some(hash_map);
+        self.properties = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>An object that maps strings to the properties to set in the component type. Each string in the mapping must be unique to this object.</p>
     pub fn set_properties(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::types::PropertyResponse>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, crate::types::PropertyResponse>,
         >,
     ) -> Self {
         self.properties = input;
@@ -194,20 +205,20 @@ impl ComponentResponseBuilder {
     /// <p>The property groups.</p>
     pub fn property_groups(
         mut self,
-        k: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
         v: crate::types::ComponentPropertyGroupResponse,
     ) -> Self {
         let mut hash_map = self.property_groups.unwrap_or_default();
         hash_map.insert(k.into(), v);
-        self.property_groups = Some(hash_map);
+        self.property_groups = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The property groups.</p>
     pub fn set_property_groups(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<
-                std::string::String,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<
+                ::std::string::String,
                 crate::types::ComponentPropertyGroupResponse,
             >,
         >,
@@ -216,12 +227,12 @@ impl ComponentResponseBuilder {
         self
     }
     /// <p>The syncSource of the sync job, if this entity was created by a sync job.</p>
-    pub fn sync_source(mut self, input: impl Into<std::string::String>) -> Self {
-        self.sync_source = Some(input.into());
+    pub fn sync_source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.sync_source = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The syncSource of the sync job, if this entity was created by a sync job.</p>
-    pub fn set_sync_source(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_sync_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sync_source = input;
         self
     }

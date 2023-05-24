@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetReplicationConfiguration`](crate::operation::get_replication_configuration::builders::GetReplicationConfigurationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`source_server_id(impl Into<String>)`](crate::operation::get_replication_configuration::builders::GetReplicationConfigurationFluentBuilder::source_server_id) / [`set_source_server_id(Option<String>)`](crate::operation::get_replication_configuration::builders::GetReplicationConfigurationFluentBuilder::set_source_server_id): <p>The ID of the Source Serve for this Replication Configuration.r</p>
+    ///   - [`source_server_id(impl ::std::convert::Into<String>)`](crate::operation::get_replication_configuration::builders::GetReplicationConfigurationFluentBuilder::source_server_id) / [`set_source_server_id(Option<String>)`](crate::operation::get_replication_configuration::builders::GetReplicationConfigurationFluentBuilder::set_source_server_id): <p>The ID of the Source Serve for this Replication Configuration.r</p>
     /// - On success, responds with [`GetReplicationConfigurationOutput`](crate::operation::get_replication_configuration::GetReplicationConfigurationOutput) with field(s):
     ///   - [`source_server_id(Option<String>)`](crate::operation::get_replication_configuration::GetReplicationConfigurationOutput::source_server_id): <p>The ID of the Source Server for this Replication Configuration.</p>
     ///   - [`name(Option<String>)`](crate::operation::get_replication_configuration::GetReplicationConfigurationOutput::name): <p>The name of the Replication Configuration.</p>

@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ChangeSetType {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum ChangeSetType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ChangeSetType {
+impl ::std::convert::From<&str> for ChangeSetType {
     fn from(s: &str) -> Self {
         match s {
             "CREATE" => ChangeSetType::Create,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for ChangeSetType {
         }
     }
 }
-impl std::str::FromStr for ChangeSetType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ChangeSetType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ChangeSetType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ChangeSetType::from(s))
     }
 }
 impl ChangeSetType {
@@ -91,7 +91,7 @@ impl ChangeSetType {
         &["CREATE", "IMPORT", "UPDATE"]
     }
 }
-impl AsRef<str> for ChangeSetType {
+impl ::std::convert::AsRef<str> for ChangeSetType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

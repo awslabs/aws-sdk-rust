@@ -2,36 +2,36 @@
 
 /// <p>See the example below to learn how to create a request body.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEnvironmentHealthInput {
     /// <p>Specify the environment by name.</p>
     /// <p>You must specify either this or an EnvironmentName, or both.</p>
     #[doc(hidden)]
-    pub environment_name: std::option::Option<std::string::String>,
+    pub environment_name: ::std::option::Option<::std::string::String>,
     /// <p>Specify the environment by ID.</p>
     /// <p>You must specify either this or an EnvironmentName, or both.</p>
     #[doc(hidden)]
-    pub environment_id: std::option::Option<std::string::String>,
+    pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>Specify the response elements to return. To retrieve all attributes, set to <code>All</code>. If no attribute names are specified, returns the name of the environment.</p>
     #[doc(hidden)]
     pub attribute_names:
-        std::option::Option<std::vec::Vec<crate::types::EnvironmentHealthAttribute>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentHealthAttribute>>,
 }
 impl DescribeEnvironmentHealthInput {
     /// <p>Specify the environment by name.</p>
     /// <p>You must specify either this or an EnvironmentName, or both.</p>
-    pub fn environment_name(&self) -> std::option::Option<&str> {
+    pub fn environment_name(&self) -> ::std::option::Option<&str> {
         self.environment_name.as_deref()
     }
     /// <p>Specify the environment by ID.</p>
     /// <p>You must specify either this or an EnvironmentName, or both.</p>
-    pub fn environment_id(&self) -> std::option::Option<&str> {
+    pub fn environment_id(&self) -> ::std::option::Option<&str> {
         self.environment_id.as_deref()
     }
     /// <p>Specify the response elements to return. To retrieve all attributes, set to <code>All</code>. If no attribute names are specified, returns the name of the environment.</p>
     pub fn attribute_names(
         &self,
-    ) -> std::option::Option<&[crate::types::EnvironmentHealthAttribute]> {
+    ) -> ::std::option::Option<&[crate::types::EnvironmentHealthAttribute]> {
         self.attribute_names.as_deref()
     }
 }
@@ -44,35 +44,49 @@ impl DescribeEnvironmentHealthInput {
 
 /// A builder for [`DescribeEnvironmentHealthInput`](crate::operation::describe_environment_health::DescribeEnvironmentHealthInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeEnvironmentHealthInputBuilder {
-    pub(crate) environment_name: std::option::Option<std::string::String>,
-    pub(crate) environment_id: std::option::Option<std::string::String>,
+    pub(crate) environment_name: ::std::option::Option<::std::string::String>,
+    pub(crate) environment_id: ::std::option::Option<::std::string::String>,
     pub(crate) attribute_names:
-        std::option::Option<std::vec::Vec<crate::types::EnvironmentHealthAttribute>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentHealthAttribute>>,
 }
 impl DescribeEnvironmentHealthInputBuilder {
     /// <p>Specify the environment by name.</p>
     /// <p>You must specify either this or an EnvironmentName, or both.</p>
-    pub fn environment_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.environment_name = Some(input.into());
+    pub fn environment_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.environment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specify the environment by name.</p>
     /// <p>You must specify either this or an EnvironmentName, or both.</p>
-    pub fn set_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_environment_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.environment_name = input;
         self
     }
     /// <p>Specify the environment by ID.</p>
     /// <p>You must specify either this or an EnvironmentName, or both.</p>
-    pub fn environment_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.environment_id = Some(input.into());
+    pub fn environment_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.environment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specify the environment by ID.</p>
     /// <p>You must specify either this or an EnvironmentName, or both.</p>
-    pub fn set_environment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_environment_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.environment_id = input;
         self
     }
@@ -84,13 +98,13 @@ impl DescribeEnvironmentHealthInputBuilder {
     pub fn attribute_names(mut self, input: crate::types::EnvironmentHealthAttribute) -> Self {
         let mut v = self.attribute_names.unwrap_or_default();
         v.push(input);
-        self.attribute_names = Some(v);
+        self.attribute_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>Specify the response elements to return. To retrieve all attributes, set to <code>All</code>. If no attribute names are specified, returns the name of the environment.</p>
     pub fn set_attribute_names(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::EnvironmentHealthAttribute>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentHealthAttribute>>,
     ) -> Self {
         self.attribute_names = input;
         self
@@ -98,11 +112,11 @@ impl DescribeEnvironmentHealthInputBuilder {
     /// Consumes the builder and constructs a [`DescribeEnvironmentHealthInput`](crate::operation::describe_environment_health::DescribeEnvironmentHealthInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::describe_environment_health::DescribeEnvironmentHealthInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::describe_environment_health::DescribeEnvironmentHealthInput {
                 environment_name: self.environment_name,
                 environment_id: self.environment_id,

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeFlowDefinition`](crate::operation::describe_flow_definition::builders::DescribeFlowDefinitionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`flow_definition_name(impl Into<String>)`](crate::operation::describe_flow_definition::builders::DescribeFlowDefinitionFluentBuilder::flow_definition_name) / [`set_flow_definition_name(Option<String>)`](crate::operation::describe_flow_definition::builders::DescribeFlowDefinitionFluentBuilder::set_flow_definition_name): <p>The name of the flow definition.</p>
+    ///   - [`flow_definition_name(impl ::std::convert::Into<String>)`](crate::operation::describe_flow_definition::builders::DescribeFlowDefinitionFluentBuilder::flow_definition_name) / [`set_flow_definition_name(Option<String>)`](crate::operation::describe_flow_definition::builders::DescribeFlowDefinitionFluentBuilder::set_flow_definition_name): <p>The name of the flow definition.</p>
     /// - On success, responds with [`DescribeFlowDefinitionOutput`](crate::operation::describe_flow_definition::DescribeFlowDefinitionOutput) with field(s):
     ///   - [`flow_definition_arn(Option<String>)`](crate::operation::describe_flow_definition::DescribeFlowDefinitionOutput::flow_definition_arn): <p>The Amazon Resource Name (ARN) of the flow defintion.</p>
     ///   - [`flow_definition_name(Option<String>)`](crate::operation::describe_flow_definition::DescribeFlowDefinitionOutput::flow_definition_name): <p>The Amazon Resource Name (ARN) of the flow definition.</p>

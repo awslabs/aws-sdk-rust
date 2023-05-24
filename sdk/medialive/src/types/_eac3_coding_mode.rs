@@ -39,13 +39,13 @@
 /// Eac3 Coding Mode
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum Eac3CodingMode {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum Eac3CodingMode {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for Eac3CodingMode {
+impl ::std::convert::From<&str> for Eac3CodingMode {
     fn from(s: &str) -> Self {
         match s {
             "CODING_MODE_1_0" => Eac3CodingMode::CodingMode10,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for Eac3CodingMode {
         }
     }
 }
-impl std::str::FromStr for Eac3CodingMode {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for Eac3CodingMode {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Eac3CodingMode::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(Eac3CodingMode::from(s))
     }
 }
 impl Eac3CodingMode {
@@ -91,7 +91,7 @@ impl Eac3CodingMode {
         &["CODING_MODE_1_0", "CODING_MODE_2_0", "CODING_MODE_3_2"]
     }
 }
-impl AsRef<str> for Eac3CodingMode {
+impl ::std::convert::AsRef<str> for Eac3CodingMode {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

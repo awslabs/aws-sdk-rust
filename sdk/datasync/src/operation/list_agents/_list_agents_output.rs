@@ -2,27 +2,27 @@
 
 /// <p>ListAgentsResponse</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAgentsOutput {
     /// <p>A list of DataSync agents in your Amazon Web Services account in the Amazon Web Services Region specified in the request. The list is ordered by the agents' Amazon Resource Names (ARNs).</p>
     #[doc(hidden)]
-    pub agents: std::option::Option<std::vec::Vec<crate::types::AgentListEntry>>,
+    pub agents: ::std::option::Option<::std::vec::Vec<crate::types::AgentListEntry>>,
     /// <p>The opaque string that indicates the position to begin the next list of results in the response.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListAgentsOutput {
     /// <p>A list of DataSync agents in your Amazon Web Services account in the Amazon Web Services Region specified in the request. The list is ordered by the agents' Amazon Resource Names (ARNs).</p>
-    pub fn agents(&self) -> std::option::Option<&[crate::types::AgentListEntry]> {
+    pub fn agents(&self) -> ::std::option::Option<&[crate::types::AgentListEntry]> {
         self.agents.as_deref()
     }
     /// <p>The opaque string that indicates the position to begin the next list of results in the response.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListAgentsOutput {
+impl ::aws_http::request_id::RequestId for ListAgentsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -36,10 +36,12 @@ impl ListAgentsOutput {
 
 /// A builder for [`ListAgentsOutput`](crate::operation::list_agents::ListAgentsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListAgentsOutputBuilder {
-    pub(crate) agents: std::option::Option<std::vec::Vec<crate::types::AgentListEntry>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) agents: ::std::option::Option<::std::vec::Vec<crate::types::AgentListEntry>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListAgentsOutputBuilder {
@@ -51,24 +53,24 @@ impl ListAgentsOutputBuilder {
     pub fn agents(mut self, input: crate::types::AgentListEntry) -> Self {
         let mut v = self.agents.unwrap_or_default();
         v.push(input);
-        self.agents = Some(v);
+        self.agents = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of DataSync agents in your Amazon Web Services account in the Amazon Web Services Region specified in the request. The list is ordered by the agents' Amazon Resource Names (ARNs).</p>
     pub fn set_agents(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AgentListEntry>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AgentListEntry>>,
     ) -> Self {
         self.agents = input;
         self
     }
     /// <p>The opaque string that indicates the position to begin the next list of results in the response.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The opaque string that indicates the position to begin the next list of results in the response.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

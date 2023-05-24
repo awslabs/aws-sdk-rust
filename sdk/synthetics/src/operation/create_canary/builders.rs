@@ -9,56 +9,59 @@ pub use crate::operation::create_canary::_create_canary_input::CreateCanaryInput
 /// <p>Do not use <code>CreateCanary</code> to modify an existing canary. Use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_UpdateCanary.html">UpdateCanary</a> instead.</p>
 /// <p>To create canaries, you must have the <code>CloudWatchSyntheticsFullAccess</code> policy. If you are creating a new IAM role for the canary, you also need the <code>iam:CreateRole</code>, <code>iam:CreatePolicy</code> and <code>iam:AttachRolePolicy</code> permissions. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Roles">Necessary Roles and Permissions</a>.</p>
 /// <p>Do not include secrets or proprietary information in your canary names. The canary name makes up part of the Amazon Resource Name (ARN) for the canary, and the ARN is included in outbound calls over the internet. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/servicelens_canaries_security.html">Security Considerations for Synthetics Canaries</a>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateCanaryFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_canary::builders::CreateCanaryInputBuilder,
 }
 impl CreateCanaryFluentBuilder {
     /// Creates a new `CreateCanary`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_canary::CreateCanary,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_canary::CreateCanaryError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_canary::CreateCanaryError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_canary::CreateCanaryOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_canary::CreateCanaryError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_canary::CreateCanaryError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -71,21 +74,21 @@ impl CreateCanaryFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_canary::CreateCanaryOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_canary::CreateCanaryError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_canary::CreateCanaryError>,
     > {
         self.send_middleware().await
     }
     /// <p>The name for this canary. Be sure to give it a descriptive name that distinguishes it from other canaries in your account.</p>
     /// <p>Do not include secrets or proprietary information in your canary names. The canary name makes up part of the canary ARN, and the ARN is included in outbound calls over the internet. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/servicelens_canaries_security.html">Security Considerations for Synthetics Canaries</a>.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// <p>The name for this canary. Be sure to give it a descriptive name that distinguishes it from other canaries in your account.</p>
     /// <p>Do not include secrets or proprietary information in your canary names. The canary name makes up part of the canary ARN, and the ARN is included in outbound calls over the internet. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/servicelens_canaries_security.html">Security Considerations for Synthetics Canaries</a>.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
@@ -95,19 +98,22 @@ impl CreateCanaryFluentBuilder {
         self
     }
     /// <p>A structure that includes the entry point from which the canary should start running your script. If the script is stored in an S3 bucket, the bucket name, key, and version are also included. </p>
-    pub fn set_code(mut self, input: std::option::Option<crate::types::CanaryCodeInput>) -> Self {
+    pub fn set_code(mut self, input: ::std::option::Option<crate::types::CanaryCodeInput>) -> Self {
         self.inner = self.inner.set_code(input);
         self
     }
     /// <p>The location in Amazon S3 where Synthetics stores artifacts from the test runs of this canary. Artifacts include the log file, screenshots, and HAR files. The name of the S3 bucket can't include a period (.).</p>
-    pub fn artifact_s3_location(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn artifact_s3_location(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.artifact_s3_location(input.into());
         self
     }
     /// <p>The location in Amazon S3 where Synthetics stores artifacts from the test runs of this canary. Artifacts include the log file, screenshots, and HAR files. The name of the S3 bucket can't include a period (.).</p>
     pub fn set_artifact_s3_location(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_artifact_s3_location(input);
         self
@@ -122,7 +128,10 @@ impl CreateCanaryFluentBuilder {
     /// <li> <p> <code>logs:CreateLogStream</code> </p> </li>
     /// <li> <p> <code>logs:PutLogEvents</code> </p> </li>
     /// </ul>
-    pub fn execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn execution_role_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.execution_role_arn(input.into());
         self
     }
@@ -138,7 +147,7 @@ impl CreateCanaryFluentBuilder {
     /// </ul>
     pub fn set_execution_role_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_execution_role_arn(input);
         self
@@ -151,7 +160,7 @@ impl CreateCanaryFluentBuilder {
     /// <p>A structure that contains information about how often the canary is to run and when these test runs are to stop.</p>
     pub fn set_schedule(
         mut self,
-        input: std::option::Option<crate::types::CanaryScheduleInput>,
+        input: ::std::option::Option<crate::types::CanaryScheduleInput>,
     ) -> Self {
         self.inner = self.inner.set_schedule(input);
         self
@@ -168,7 +177,7 @@ impl CreateCanaryFluentBuilder {
     /// </important>
     pub fn set_run_config(
         mut self,
-        input: std::option::Option<crate::types::CanaryRunConfigInput>,
+        input: ::std::option::Option<crate::types::CanaryRunConfigInput>,
     ) -> Self {
         self.inner = self.inner.set_run_config(input);
         self
@@ -179,7 +188,10 @@ impl CreateCanaryFluentBuilder {
         self
     }
     /// <p>The number of days to retain data about successful runs of this canary. If you omit this field, the default of 31 days is used. The valid range is 1 to 455 days.</p>
-    pub fn set_success_retention_period_in_days(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_success_retention_period_in_days(
+        mut self,
+        input: ::std::option::Option<i32>,
+    ) -> Self {
         self.inner = self.inner.set_success_retention_period_in_days(input);
         self
     }
@@ -189,17 +201,26 @@ impl CreateCanaryFluentBuilder {
         self
     }
     /// <p>The number of days to retain data about failed runs of this canary. If you omit this field, the default of 31 days is used. The valid range is 1 to 455 days.</p>
-    pub fn set_failure_retention_period_in_days(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_failure_retention_period_in_days(
+        mut self,
+        input: ::std::option::Option<i32>,
+    ) -> Self {
         self.inner = self.inner.set_failure_retention_period_in_days(input);
         self
     }
     /// <p>Specifies the runtime version to use for the canary. For a list of valid runtime versions and more information about runtime versions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html"> Canary Runtime Versions</a>.</p>
-    pub fn runtime_version(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn runtime_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.runtime_version(input.into());
         self
     }
     /// <p>Specifies the runtime version to use for the canary. For a list of valid runtime versions and more information about runtime versions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html"> Canary Runtime Versions</a>.</p>
-    pub fn set_runtime_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_runtime_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_runtime_version(input);
         self
     }
@@ -211,7 +232,7 @@ impl CreateCanaryFluentBuilder {
     /// <p>If this canary is to test an endpoint in a VPC, this structure contains information about the subnet and security groups of the VPC endpoint. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_VPC.html"> Running a Canary in a VPC</a>.</p>
     pub fn set_vpc_config(
         mut self,
-        input: std::option::Option<crate::types::VpcConfigInput>,
+        input: ::std::option::Option<crate::types::VpcConfigInput>,
     ) -> Self {
         self.inner = self.inner.set_vpc_config(input);
         self
@@ -224,8 +245,8 @@ impl CreateCanaryFluentBuilder {
     /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only the resources that have certain tag values.</p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
@@ -234,8 +255,8 @@ impl CreateCanaryFluentBuilder {
     /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only the resources that have certain tag values.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
@@ -249,7 +270,7 @@ impl CreateCanaryFluentBuilder {
     /// <p>A structure that contains the configuration for canary artifacts, including the encryption-at-rest settings for artifacts that the canary uploads to Amazon S3.</p>
     pub fn set_artifact_config(
         mut self,
-        input: std::option::Option<crate::types::ArtifactConfigInput>,
+        input: ::std::option::Option<crate::types::ArtifactConfigInput>,
     ) -> Self {
         self.inner = self.inner.set_artifact_config(input);
         self

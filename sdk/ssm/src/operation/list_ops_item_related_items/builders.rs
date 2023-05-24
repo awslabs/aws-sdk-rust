@@ -6,29 +6,29 @@ pub use crate::operation::list_ops_item_related_items::_list_ops_item_related_it
 /// Fluent builder constructing a request to `ListOpsItemRelatedItems`.
 ///
 /// <p>Lists all related-item resources associated with a Systems Manager OpsCenter OpsItem. OpsCenter is a capability of Amazon Web Services Systems Manager.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListOpsItemRelatedItemsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::list_ops_item_related_items::builders::ListOpsItemRelatedItemsInputBuilder,
 }
 impl ListOpsItemRelatedItemsFluentBuilder {
     /// Creates a new `ListOpsItemRelatedItems`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::list_ops_item_related_items::ListOpsItemRelatedItems,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::list_ops_item_related_items::ListOpsItemRelatedItemsError,
         >,
     > {
@@ -36,30 +36,33 @@ impl ListOpsItemRelatedItemsFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::list_ops_item_related_items::ListOpsItemRelatedItemsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::list_ops_item_related_items::ListOpsItemRelatedItemsError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,9 +75,9 @@ impl ListOpsItemRelatedItemsFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::list_ops_item_related_items::ListOpsItemRelatedItemsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::list_ops_item_related_items::ListOpsItemRelatedItemsError,
         >,
     > {
@@ -90,12 +93,12 @@ impl ListOpsItemRelatedItemsFluentBuilder {
         crate::operation::list_ops_item_related_items::paginator::ListOpsItemRelatedItemsPaginator::new(self.handle, self.inner)
     }
     /// <p>The ID of the OpsItem for which you want to list all related-item resources.</p>
-    pub fn ops_item_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn ops_item_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ops_item_id(input.into());
         self
     }
     /// <p>The ID of the OpsItem for which you want to list all related-item resources.</p>
-    pub fn set_ops_item_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ops_item_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ops_item_id(input);
         self
     }
@@ -111,7 +114,7 @@ impl ListOpsItemRelatedItemsFluentBuilder {
     /// <p>One or more OpsItem filters. Use a filter to return a more specific list of results. </p>
     pub fn set_filters(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::OpsItemRelatedItemsFilter>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::OpsItemRelatedItemsFilter>>,
     ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
@@ -122,17 +125,17 @@ impl ListOpsItemRelatedItemsFluentBuilder {
         self
     }
     /// <p>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</p>
-    pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
     /// <p>The token for the next set of items to return. (You received this token from a previous call.)</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }

@@ -2,22 +2,22 @@
 
 /// Returned for a successful ListDatasets request.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDatasetsOutput {
     /// A set of datasets.
     #[doc(hidden)]
-    pub datasets: std::option::Option<std::vec::Vec<crate::types::Dataset>>,
+    pub datasets: ::std::option::Option<::std::vec::Vec<crate::types::Dataset>>,
     /// Number of datasets returned.
     #[doc(hidden)]
     pub count: i32,
     /// A pagination token for obtaining the next page of results.
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListDatasetsOutput {
     /// A set of datasets.
-    pub fn datasets(&self) -> std::option::Option<&[crate::types::Dataset]> {
+    pub fn datasets(&self) -> ::std::option::Option<&[crate::types::Dataset]> {
         self.datasets.as_deref()
     }
     /// Number of datasets returned.
@@ -25,11 +25,11 @@ impl ListDatasetsOutput {
         self.count
     }
     /// A pagination token for obtaining the next page of results.
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListDatasetsOutput {
+impl ::aws_http::request_id::RequestId for ListDatasetsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -43,11 +43,13 @@ impl ListDatasetsOutput {
 
 /// A builder for [`ListDatasetsOutput`](crate::operation::list_datasets::ListDatasetsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListDatasetsOutputBuilder {
-    pub(crate) datasets: std::option::Option<std::vec::Vec<crate::types::Dataset>>,
-    pub(crate) count: std::option::Option<i32>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) datasets: ::std::option::Option<::std::vec::Vec<crate::types::Dataset>>,
+    pub(crate) count: ::std::option::Option<i32>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListDatasetsOutputBuilder {
@@ -59,34 +61,34 @@ impl ListDatasetsOutputBuilder {
     pub fn datasets(mut self, input: crate::types::Dataset) -> Self {
         let mut v = self.datasets.unwrap_or_default();
         v.push(input);
-        self.datasets = Some(v);
+        self.datasets = ::std::option::Option::Some(v);
         self
     }
     /// A set of datasets.
     pub fn set_datasets(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Dataset>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Dataset>>,
     ) -> Self {
         self.datasets = input;
         self
     }
     /// Number of datasets returned.
     pub fn count(mut self, input: i32) -> Self {
-        self.count = Some(input);
+        self.count = ::std::option::Option::Some(input);
         self
     }
     /// Number of datasets returned.
-    pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.count = input;
         self
     }
     /// A pagination token for obtaining the next page of results.
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// A pagination token for obtaining the next page of results.
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

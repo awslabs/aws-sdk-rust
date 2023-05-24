@@ -2,22 +2,22 @@
 
 /// <p> Container for request parameters to <code> <code>AssociatePackage</code> </code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociatePackageInput {
     /// <p>Internal ID of the package that you want to associate with a domain. Use <code>DescribePackages</code> to find this value.</p>
     #[doc(hidden)]
-    pub package_id: std::option::Option<std::string::String>,
+    pub package_id: ::std::option::Option<::std::string::String>,
     /// <p>Name of the domain that you want to associate the package with.</p>
     #[doc(hidden)]
-    pub domain_name: std::option::Option<std::string::String>,
+    pub domain_name: ::std::option::Option<::std::string::String>,
 }
 impl AssociatePackageInput {
     /// <p>Internal ID of the package that you want to associate with a domain. Use <code>DescribePackages</code> to find this value.</p>
-    pub fn package_id(&self) -> std::option::Option<&str> {
+    pub fn package_id(&self) -> ::std::option::Option<&str> {
         self.package_id.as_deref()
     }
     /// <p>Name of the domain that you want to associate the package with.</p>
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<&str> {
         self.domain_name.as_deref()
     }
 }
@@ -31,40 +31,42 @@ impl AssociatePackageInput {
 
 /// A builder for [`AssociatePackageInput`](crate::operation::associate_package::AssociatePackageInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AssociatePackageInputBuilder {
-    pub(crate) package_id: std::option::Option<std::string::String>,
-    pub(crate) domain_name: std::option::Option<std::string::String>,
+    pub(crate) package_id: ::std::option::Option<::std::string::String>,
+    pub(crate) domain_name: ::std::option::Option<::std::string::String>,
 }
 impl AssociatePackageInputBuilder {
     /// <p>Internal ID of the package that you want to associate with a domain. Use <code>DescribePackages</code> to find this value.</p>
-    pub fn package_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.package_id = Some(input.into());
+    pub fn package_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.package_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Internal ID of the package that you want to associate with a domain. Use <code>DescribePackages</code> to find this value.</p>
-    pub fn set_package_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_package_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.package_id = input;
         self
     }
     /// <p>Name of the domain that you want to associate the package with.</p>
-    pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.domain_name = Some(input.into());
+    pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.domain_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of the domain that you want to associate the package with.</p>
-    pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_name = input;
         self
     }
     /// Consumes the builder and constructs a [`AssociatePackageInput`](crate::operation::associate_package::AssociatePackageInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::associate_package::AssociatePackageInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::associate_package::AssociatePackageInput {
+        ::std::result::Result::Ok(crate::operation::associate_package::AssociatePackageInput {
             package_id: self.package_id,
             domain_name: self.domain_name,
         })

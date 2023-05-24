@@ -2,23 +2,23 @@
 
 /// <p>Contains the response to a successful <code>ListOpenIDConnectProviders</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListOpenIdConnectProvidersOutput {
     /// <p>The list of IAM OIDC provider resource objects defined in the Amazon Web Services account.</p>
     #[doc(hidden)]
     pub open_id_connect_provider_list:
-        std::option::Option<std::vec::Vec<crate::types::OpenIdConnectProviderListEntry>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::OpenIdConnectProviderListEntry>>,
     _request_id: Option<String>,
 }
 impl ListOpenIdConnectProvidersOutput {
     /// <p>The list of IAM OIDC provider resource objects defined in the Amazon Web Services account.</p>
     pub fn open_id_connect_provider_list(
         &self,
-    ) -> std::option::Option<&[crate::types::OpenIdConnectProviderListEntry]> {
+    ) -> ::std::option::Option<&[crate::types::OpenIdConnectProviderListEntry]> {
         self.open_id_connect_provider_list.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListOpenIdConnectProvidersOutput {
+impl ::aws_http::request_id::RequestId for ListOpenIdConnectProvidersOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -32,10 +32,12 @@ impl ListOpenIdConnectProvidersOutput {
 
 /// A builder for [`ListOpenIdConnectProvidersOutput`](crate::operation::list_open_id_connect_providers::ListOpenIdConnectProvidersOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListOpenIdConnectProvidersOutputBuilder {
     pub(crate) open_id_connect_provider_list:
-        std::option::Option<std::vec::Vec<crate::types::OpenIdConnectProviderListEntry>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::OpenIdConnectProviderListEntry>>,
     _request_id: Option<String>,
 }
 impl ListOpenIdConnectProvidersOutputBuilder {
@@ -50,13 +52,13 @@ impl ListOpenIdConnectProvidersOutputBuilder {
     ) -> Self {
         let mut v = self.open_id_connect_provider_list.unwrap_or_default();
         v.push(input);
-        self.open_id_connect_provider_list = Some(v);
+        self.open_id_connect_provider_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of IAM OIDC provider resource objects defined in the Amazon Web Services account.</p>
     pub fn set_open_id_connect_provider_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::OpenIdConnectProviderListEntry>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::OpenIdConnectProviderListEntry>>,
     ) -> Self {
         self.open_id_connect_provider_list = input;
         self

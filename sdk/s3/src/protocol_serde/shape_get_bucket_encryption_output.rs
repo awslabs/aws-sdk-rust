@@ -2,7 +2,7 @@
 pub(crate) fn de_server_side_encryption_configuration_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::types::ServerSideEncryptionConfiguration>,
+    ::std::option::Option<crate::types::ServerSideEncryptionConfiguration>,
     crate::operation::get_bucket_encryption::GetBucketEncryptionError,
 > {
     (!body.is_empty()).then(||{
@@ -12,14 +12,14 @@ pub(crate) fn de_server_side_encryption_configuration_payload(
 
 pub fn de_server_side_encryption_configuration(
     inp: &[u8],
-) -> Result<crate::types::ServerSideEncryptionConfiguration, aws_smithy_xml::decode::XmlDecodeError>
+) -> Result<crate::types::ServerSideEncryptionConfiguration, ::aws_smithy_xml::decode::XmlDecodeError>
 {
-    let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
+    let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
     let start_el = decoder.start_el();
     if !(start_el.matches("ServerSideEncryptionConfiguration")) {
-        return Err(aws_smithy_xml::decode::XmlDecodeError::custom(format!(
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ServerSideEncryptionConfiguration got {:?}",
             start_el
         )));

@@ -2,25 +2,25 @@
 
 /// <p>Describes the container, as part of model definition.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContainerDefinition {
     /// <p>This parameter is ignored for models that contain only a <code>PrimaryContainer</code>.</p>
     /// <p>When a <code>ContainerDefinition</code> is part of an inference pipeline, the value of the parameter uniquely identifies the container for the purposes of logging and metrics. For information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/inference-pipeline-logs-metrics.html">Use Logs and Metrics to Monitor an Inference Pipeline</a>. If you don't specify a value for this parameter for a <code>ContainerDefinition</code> that is part of an inference pipeline, a unique name is automatically assigned based on the position of the <code>ContainerDefinition</code> in the pipeline. If you specify a value for the <code>ContainerHostName</code> for any <code>ContainerDefinition</code> that is part of an inference pipeline, you must specify a value for the <code>ContainerHostName</code> parameter of every <code>ContainerDefinition</code> in that pipeline.</p>
     #[doc(hidden)]
-    pub container_hostname: std::option::Option<std::string::String>,
+    pub container_hostname: ::std::option::Option<::std::string::String>,
     /// <p>The path where inference code is stored. This can be either in Amazon EC2 Container Registry or in a Docker registry that is accessible from the same VPC that you configure for your endpoint. If you are using your own custom algorithm instead of an algorithm provided by SageMaker, the inference code must meet SageMaker requirements. SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>. </p> <note>
     /// <p>The model artifacts in an Amazon S3 bucket and the Docker image for inference container in Amazon EC2 Container Registry must be in the same region as the model or endpoint you are creating.</p>
     /// </note>
     #[doc(hidden)]
-    pub image: std::option::Option<std::string::String>,
+    pub image: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the model container is in Amazon ECR or a private Docker registry accessible from your Amazon Virtual Private Cloud (VPC). For information about storing containers in a private Docker registry, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-containers-inference-private.html">Use a Private Docker Registry for Real-Time Inference Containers</a>. </p> <note>
     /// <p>The model artifacts in an Amazon S3 bucket and the Docker image for inference container in Amazon EC2 Container Registry must be in the same region as the model or endpoint you are creating.</p>
     /// </note>
     #[doc(hidden)]
-    pub image_config: std::option::Option<crate::types::ImageConfig>,
+    pub image_config: ::std::option::Option<crate::types::ImageConfig>,
     /// <p>Whether the container hosts a single model or multiple models.</p>
     #[doc(hidden)]
-    pub mode: std::option::Option<crate::types::ContainerMode>,
+    pub mode: ::std::option::Option<crate::types::ContainerMode>,
     /// <p>The S3 path where the model artifacts, which result from model training, are stored. This path must point to a single gzip compressed tar archive (.tar.gz suffix). The S3 path is required for SageMaker built-in algorithms, but not if you use your own algorithms. For more information on built-in algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Common Parameters</a>. </p> <note>
     /// <p>The model artifacts must be in an S3 bucket that is in the same region as the model or endpoint you are creating.</p>
     /// </note>
@@ -28,41 +28,42 @@ pub struct ContainerDefinition {
     /// <p>If you use a built-in algorithm to create a model, SageMaker requires that you provide a S3 path to the model artifacts in <code>ModelDataUrl</code>.</p>
     /// </important>
     #[doc(hidden)]
-    pub model_data_url: std::option::Option<std::string::String>,
+    pub model_data_url: ::std::option::Option<::std::string::String>,
     /// <p>The environment variables to set in the Docker container. Each key and value in the <code>Environment</code> string to string map can have length of up to 1024. We support up to 16 entries in the map. </p>
     #[doc(hidden)]
-    pub environment:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub environment: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>The name or Amazon Resource Name (ARN) of the model package to use to create the model.</p>
     #[doc(hidden)]
-    pub model_package_name: std::option::Option<std::string::String>,
+    pub model_package_name: ::std::option::Option<::std::string::String>,
     /// <p>The inference specification name in the model package version.</p>
     #[doc(hidden)]
-    pub inference_specification_name: std::option::Option<std::string::String>,
+    pub inference_specification_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies additional configuration for multi-model endpoints.</p>
     #[doc(hidden)]
-    pub multi_model_config: std::option::Option<crate::types::MultiModelConfig>,
+    pub multi_model_config: ::std::option::Option<crate::types::MultiModelConfig>,
 }
 impl ContainerDefinition {
     /// <p>This parameter is ignored for models that contain only a <code>PrimaryContainer</code>.</p>
     /// <p>When a <code>ContainerDefinition</code> is part of an inference pipeline, the value of the parameter uniquely identifies the container for the purposes of logging and metrics. For information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/inference-pipeline-logs-metrics.html">Use Logs and Metrics to Monitor an Inference Pipeline</a>. If you don't specify a value for this parameter for a <code>ContainerDefinition</code> that is part of an inference pipeline, a unique name is automatically assigned based on the position of the <code>ContainerDefinition</code> in the pipeline. If you specify a value for the <code>ContainerHostName</code> for any <code>ContainerDefinition</code> that is part of an inference pipeline, you must specify a value for the <code>ContainerHostName</code> parameter of every <code>ContainerDefinition</code> in that pipeline.</p>
-    pub fn container_hostname(&self) -> std::option::Option<&str> {
+    pub fn container_hostname(&self) -> ::std::option::Option<&str> {
         self.container_hostname.as_deref()
     }
     /// <p>The path where inference code is stored. This can be either in Amazon EC2 Container Registry or in a Docker registry that is accessible from the same VPC that you configure for your endpoint. If you are using your own custom algorithm instead of an algorithm provided by SageMaker, the inference code must meet SageMaker requirements. SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>. </p> <note>
     /// <p>The model artifacts in an Amazon S3 bucket and the Docker image for inference container in Amazon EC2 Container Registry must be in the same region as the model or endpoint you are creating.</p>
     /// </note>
-    pub fn image(&self) -> std::option::Option<&str> {
+    pub fn image(&self) -> ::std::option::Option<&str> {
         self.image.as_deref()
     }
     /// <p>Specifies whether the model container is in Amazon ECR or a private Docker registry accessible from your Amazon Virtual Private Cloud (VPC). For information about storing containers in a private Docker registry, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-containers-inference-private.html">Use a Private Docker Registry for Real-Time Inference Containers</a>. </p> <note>
     /// <p>The model artifacts in an Amazon S3 bucket and the Docker image for inference container in Amazon EC2 Container Registry must be in the same region as the model or endpoint you are creating.</p>
     /// </note>
-    pub fn image_config(&self) -> std::option::Option<&crate::types::ImageConfig> {
+    pub fn image_config(&self) -> ::std::option::Option<&crate::types::ImageConfig> {
         self.image_config.as_ref()
     }
     /// <p>Whether the container hosts a single model or multiple models.</p>
-    pub fn mode(&self) -> std::option::Option<&crate::types::ContainerMode> {
+    pub fn mode(&self) -> ::std::option::Option<&crate::types::ContainerMode> {
         self.mode.as_ref()
     }
     /// <p>The S3 path where the model artifacts, which result from model training, are stored. This path must point to a single gzip compressed tar archive (.tar.gz suffix). The S3 path is required for SageMaker built-in algorithms, but not if you use your own algorithms. For more information on built-in algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Common Parameters</a>. </p> <note>
@@ -71,26 +72,27 @@ impl ContainerDefinition {
     /// <p>If you provide a value for this parameter, SageMaker uses Amazon Web Services Security Token Service to download model artifacts from the S3 path you provide. Amazon Web Services STS is activated in your Amazon Web Services account by default. If you previously deactivated Amazon Web Services STS for a region, you need to reactivate Amazon Web Services STS for that region. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and Deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p> <important>
     /// <p>If you use a built-in algorithm to create a model, SageMaker requires that you provide a S3 path to the model artifacts in <code>ModelDataUrl</code>.</p>
     /// </important>
-    pub fn model_data_url(&self) -> std::option::Option<&str> {
+    pub fn model_data_url(&self) -> ::std::option::Option<&str> {
         self.model_data_url.as_deref()
     }
     /// <p>The environment variables to set in the Docker container. Each key and value in the <code>Environment</code> string to string map can have length of up to 1024. We support up to 16 entries in the map. </p>
     pub fn environment(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.environment.as_ref()
     }
     /// <p>The name or Amazon Resource Name (ARN) of the model package to use to create the model.</p>
-    pub fn model_package_name(&self) -> std::option::Option<&str> {
+    pub fn model_package_name(&self) -> ::std::option::Option<&str> {
         self.model_package_name.as_deref()
     }
     /// <p>The inference specification name in the model package version.</p>
-    pub fn inference_specification_name(&self) -> std::option::Option<&str> {
+    pub fn inference_specification_name(&self) -> ::std::option::Option<&str> {
         self.inference_specification_name.as_deref()
     }
     /// <p>Specifies additional configuration for multi-model endpoints.</p>
-    pub fn multi_model_config(&self) -> std::option::Option<&crate::types::MultiModelConfig> {
+    pub fn multi_model_config(&self) -> ::std::option::Option<&crate::types::MultiModelConfig> {
         self.multi_model_config.as_ref()
     }
 }
@@ -103,31 +105,37 @@ impl ContainerDefinition {
 
 /// A builder for [`ContainerDefinition`](crate::types::ContainerDefinition).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ContainerDefinitionBuilder {
-    pub(crate) container_hostname: std::option::Option<std::string::String>,
-    pub(crate) image: std::option::Option<std::string::String>,
-    pub(crate) image_config: std::option::Option<crate::types::ImageConfig>,
-    pub(crate) mode: std::option::Option<crate::types::ContainerMode>,
-    pub(crate) model_data_url: std::option::Option<std::string::String>,
-    pub(crate) environment:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) model_package_name: std::option::Option<std::string::String>,
-    pub(crate) inference_specification_name: std::option::Option<std::string::String>,
-    pub(crate) multi_model_config: std::option::Option<crate::types::MultiModelConfig>,
+    pub(crate) container_hostname: ::std::option::Option<::std::string::String>,
+    pub(crate) image: ::std::option::Option<::std::string::String>,
+    pub(crate) image_config: ::std::option::Option<crate::types::ImageConfig>,
+    pub(crate) mode: ::std::option::Option<crate::types::ContainerMode>,
+    pub(crate) model_data_url: ::std::option::Option<::std::string::String>,
+    pub(crate) environment: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) model_package_name: ::std::option::Option<::std::string::String>,
+    pub(crate) inference_specification_name: ::std::option::Option<::std::string::String>,
+    pub(crate) multi_model_config: ::std::option::Option<crate::types::MultiModelConfig>,
 }
 impl ContainerDefinitionBuilder {
     /// <p>This parameter is ignored for models that contain only a <code>PrimaryContainer</code>.</p>
     /// <p>When a <code>ContainerDefinition</code> is part of an inference pipeline, the value of the parameter uniquely identifies the container for the purposes of logging and metrics. For information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/inference-pipeline-logs-metrics.html">Use Logs and Metrics to Monitor an Inference Pipeline</a>. If you don't specify a value for this parameter for a <code>ContainerDefinition</code> that is part of an inference pipeline, a unique name is automatically assigned based on the position of the <code>ContainerDefinition</code> in the pipeline. If you specify a value for the <code>ContainerHostName</code> for any <code>ContainerDefinition</code> that is part of an inference pipeline, you must specify a value for the <code>ContainerHostName</code> parameter of every <code>ContainerDefinition</code> in that pipeline.</p>
-    pub fn container_hostname(mut self, input: impl Into<std::string::String>) -> Self {
-        self.container_hostname = Some(input.into());
+    pub fn container_hostname(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.container_hostname = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>This parameter is ignored for models that contain only a <code>PrimaryContainer</code>.</p>
     /// <p>When a <code>ContainerDefinition</code> is part of an inference pipeline, the value of the parameter uniquely identifies the container for the purposes of logging and metrics. For information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/inference-pipeline-logs-metrics.html">Use Logs and Metrics to Monitor an Inference Pipeline</a>. If you don't specify a value for this parameter for a <code>ContainerDefinition</code> that is part of an inference pipeline, a unique name is automatically assigned based on the position of the <code>ContainerDefinition</code> in the pipeline. If you specify a value for the <code>ContainerHostName</code> for any <code>ContainerDefinition</code> that is part of an inference pipeline, you must specify a value for the <code>ContainerHostName</code> parameter of every <code>ContainerDefinition</code> in that pipeline.</p>
     pub fn set_container_hostname(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.container_hostname = input;
         self
@@ -135,14 +143,14 @@ impl ContainerDefinitionBuilder {
     /// <p>The path where inference code is stored. This can be either in Amazon EC2 Container Registry or in a Docker registry that is accessible from the same VPC that you configure for your endpoint. If you are using your own custom algorithm instead of an algorithm provided by SageMaker, the inference code must meet SageMaker requirements. SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>. </p> <note>
     /// <p>The model artifacts in an Amazon S3 bucket and the Docker image for inference container in Amazon EC2 Container Registry must be in the same region as the model or endpoint you are creating.</p>
     /// </note>
-    pub fn image(mut self, input: impl Into<std::string::String>) -> Self {
-        self.image = Some(input.into());
+    pub fn image(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.image = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The path where inference code is stored. This can be either in Amazon EC2 Container Registry or in a Docker registry that is accessible from the same VPC that you configure for your endpoint. If you are using your own custom algorithm instead of an algorithm provided by SageMaker, the inference code must meet SageMaker requirements. SageMaker supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with Amazon SageMaker</a>. </p> <note>
     /// <p>The model artifacts in an Amazon S3 bucket and the Docker image for inference container in Amazon EC2 Container Registry must be in the same region as the model or endpoint you are creating.</p>
     /// </note>
-    pub fn set_image(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_image(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image = input;
         self
     }
@@ -150,7 +158,7 @@ impl ContainerDefinitionBuilder {
     /// <p>The model artifacts in an Amazon S3 bucket and the Docker image for inference container in Amazon EC2 Container Registry must be in the same region as the model or endpoint you are creating.</p>
     /// </note>
     pub fn image_config(mut self, input: crate::types::ImageConfig) -> Self {
-        self.image_config = Some(input);
+        self.image_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether the model container is in Amazon ECR or a private Docker registry accessible from your Amazon Virtual Private Cloud (VPC). For information about storing containers in a private Docker registry, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-containers-inference-private.html">Use a Private Docker Registry for Real-Time Inference Containers</a>. </p> <note>
@@ -158,18 +166,18 @@ impl ContainerDefinitionBuilder {
     /// </note>
     pub fn set_image_config(
         mut self,
-        input: std::option::Option<crate::types::ImageConfig>,
+        input: ::std::option::Option<crate::types::ImageConfig>,
     ) -> Self {
         self.image_config = input;
         self
     }
     /// <p>Whether the container hosts a single model or multiple models.</p>
     pub fn mode(mut self, input: crate::types::ContainerMode) -> Self {
-        self.mode = Some(input);
+        self.mode = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether the container hosts a single model or multiple models.</p>
-    pub fn set_mode(mut self, input: std::option::Option<crate::types::ContainerMode>) -> Self {
+    pub fn set_mode(mut self, input: ::std::option::Option<crate::types::ContainerMode>) -> Self {
         self.mode = input;
         self
     }
@@ -179,8 +187,11 @@ impl ContainerDefinitionBuilder {
     /// <p>If you provide a value for this parameter, SageMaker uses Amazon Web Services Security Token Service to download model artifacts from the S3 path you provide. Amazon Web Services STS is activated in your Amazon Web Services account by default. If you previously deactivated Amazon Web Services STS for a region, you need to reactivate Amazon Web Services STS for that region. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and Deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p> <important>
     /// <p>If you use a built-in algorithm to create a model, SageMaker requires that you provide a S3 path to the model artifacts in <code>ModelDataUrl</code>.</p>
     /// </important>
-    pub fn model_data_url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.model_data_url = Some(input.into());
+    pub fn model_data_url(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.model_data_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The S3 path where the model artifacts, which result from model training, are stored. This path must point to a single gzip compressed tar archive (.tar.gz suffix). The S3 path is required for SageMaker built-in algorithms, but not if you use your own algorithms. For more information on built-in algorithms, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Common Parameters</a>. </p> <note>
@@ -189,7 +200,10 @@ impl ContainerDefinitionBuilder {
     /// <p>If you provide a value for this parameter, SageMaker uses Amazon Web Services Security Token Service to download model artifacts from the S3 path you provide. Amazon Web Services STS is activated in your Amazon Web Services account by default. If you previously deactivated Amazon Web Services STS for a region, you need to reactivate Amazon Web Services STS for that region. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and Deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p> <important>
     /// <p>If you use a built-in algorithm to create a model, SageMaker requires that you provide a S3 path to the model artifacts in <code>ModelDataUrl</code>.</p>
     /// </important>
-    pub fn set_model_data_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_model_data_url(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.model_data_url = input;
         self
     }
@@ -200,59 +214,65 @@ impl ContainerDefinitionBuilder {
     /// <p>The environment variables to set in the Docker container. Each key and value in the <code>Environment</code> string to string map can have length of up to 1024. We support up to 16 entries in the map. </p>
     pub fn environment(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.environment.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.environment = Some(hash_map);
+        self.environment = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The environment variables to set in the Docker container. Each key and value in the <code>Environment</code> string to string map can have length of up to 1024. We support up to 16 entries in the map. </p>
     pub fn set_environment(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.environment = input;
         self
     }
     /// <p>The name or Amazon Resource Name (ARN) of the model package to use to create the model.</p>
-    pub fn model_package_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.model_package_name = Some(input.into());
+    pub fn model_package_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.model_package_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name or Amazon Resource Name (ARN) of the model package to use to create the model.</p>
     pub fn set_model_package_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.model_package_name = input;
         self
     }
     /// <p>The inference specification name in the model package version.</p>
-    pub fn inference_specification_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.inference_specification_name = Some(input.into());
+    pub fn inference_specification_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.inference_specification_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The inference specification name in the model package version.</p>
     pub fn set_inference_specification_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inference_specification_name = input;
         self
     }
     /// <p>Specifies additional configuration for multi-model endpoints.</p>
     pub fn multi_model_config(mut self, input: crate::types::MultiModelConfig) -> Self {
-        self.multi_model_config = Some(input);
+        self.multi_model_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies additional configuration for multi-model endpoints.</p>
     pub fn set_multi_model_config(
         mut self,
-        input: std::option::Option<crate::types::MultiModelConfig>,
+        input: ::std::option::Option<crate::types::MultiModelConfig>,
     ) -> Self {
         self.multi_model_config = input;
         self

@@ -2,15 +2,15 @@
 
 /// <p>An object that represents the action to take if a match is determined.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HttpRouteAction {
     /// <p>An object that represents the targets that traffic is routed to when a request matches the route.</p>
     #[doc(hidden)]
-    pub weighted_targets: std::option::Option<std::vec::Vec<crate::types::WeightedTarget>>,
+    pub weighted_targets: ::std::option::Option<::std::vec::Vec<crate::types::WeightedTarget>>,
 }
 impl HttpRouteAction {
     /// <p>An object that represents the targets that traffic is routed to when a request matches the route.</p>
-    pub fn weighted_targets(&self) -> std::option::Option<&[crate::types::WeightedTarget]> {
+    pub fn weighted_targets(&self) -> ::std::option::Option<&[crate::types::WeightedTarget]> {
         self.weighted_targets.as_deref()
     }
 }
@@ -23,9 +23,12 @@ impl HttpRouteAction {
 
 /// A builder for [`HttpRouteAction`](crate::types::HttpRouteAction).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct HttpRouteActionBuilder {
-    pub(crate) weighted_targets: std::option::Option<std::vec::Vec<crate::types::WeightedTarget>>,
+    pub(crate) weighted_targets:
+        ::std::option::Option<::std::vec::Vec<crate::types::WeightedTarget>>,
 }
 impl HttpRouteActionBuilder {
     /// Appends an item to `weighted_targets`.
@@ -36,13 +39,13 @@ impl HttpRouteActionBuilder {
     pub fn weighted_targets(mut self, input: crate::types::WeightedTarget) -> Self {
         let mut v = self.weighted_targets.unwrap_or_default();
         v.push(input);
-        self.weighted_targets = Some(v);
+        self.weighted_targets = ::std::option::Option::Some(v);
         self
     }
     /// <p>An object that represents the targets that traffic is routed to when a request matches the route.</p>
     pub fn set_weighted_targets(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::WeightedTarget>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::WeightedTarget>>,
     ) -> Self {
         self.weighted_targets = input;
         self

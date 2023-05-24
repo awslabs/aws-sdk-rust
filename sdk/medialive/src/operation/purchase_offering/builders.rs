@@ -6,29 +6,29 @@ pub use crate::operation::purchase_offering::_purchase_offering_input::PurchaseO
 /// Fluent builder constructing a request to `PurchaseOffering`.
 ///
 /// Purchase an offering and create a reservation.
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PurchaseOfferingFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::purchase_offering::builders::PurchaseOfferingInputBuilder,
 }
 impl PurchaseOfferingFluentBuilder {
     /// Creates a new `PurchaseOffering`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::purchase_offering::PurchaseOffering,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::purchase_offering::PurchaseOfferingError,
         >,
     > {
@@ -36,30 +36,33 @@ impl PurchaseOfferingFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::purchase_offering::PurchaseOfferingOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::purchase_offering::PurchaseOfferingError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,9 +75,9 @@ impl PurchaseOfferingFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::purchase_offering::PurchaseOfferingOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::purchase_offering::PurchaseOfferingError,
         >,
     > {
@@ -86,27 +89,27 @@ impl PurchaseOfferingFluentBuilder {
         self
     }
     /// Number of resources
-    pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_count(input);
         self
     }
     /// Name for the new reservation
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// Name for the new reservation
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
     /// Offering to purchase, e.g. '87654321'
-    pub fn offering_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn offering_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.offering_id(input.into());
         self
     }
     /// Offering to purchase, e.g. '87654321'
-    pub fn set_offering_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_offering_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_offering_id(input);
         self
     }
@@ -118,28 +121,28 @@ impl PurchaseOfferingFluentBuilder {
     /// Renewal settings for the reservation
     pub fn set_renewal_settings(
         mut self,
-        input: std::option::Option<crate::types::RenewalSettings>,
+        input: ::std::option::Option<crate::types::RenewalSettings>,
     ) -> Self {
         self.inner = self.inner.set_renewal_settings(input);
         self
     }
     /// Unique request ID to be specified. This is needed to prevent retries from creating multiple resources.
-    pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.request_id(input.into());
         self
     }
     /// Unique request ID to be specified. This is needed to prevent retries from creating multiple resources.
-    pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_request_id(input);
         self
     }
     /// Requested reservation start time (UTC) in ISO-8601 format. The specified time must be between the first day of the current month and one year from now. If no value is given, the default is now.
-    pub fn start(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn start(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.start(input.into());
         self
     }
     /// Requested reservation start time (UTC) in ISO-8601 format. The specified time must be between the first day of the current month and one year from now. If no value is given, the default is now.
-    pub fn set_start(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_start(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_start(input);
         self
     }
@@ -150,8 +153,8 @@ impl PurchaseOfferingFluentBuilder {
     /// A collection of key-value pairs
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
@@ -159,8 +162,8 @@ impl PurchaseOfferingFluentBuilder {
     /// A collection of key-value pairs
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_tags(input);

@@ -7,7 +7,7 @@
 /// <li> <p>To learn more about Performance Insights and Amazon RDS DB instances, go to the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html"> Amazon RDS User Guide</a>. </p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PerformanceInsightsMetricQuery {
     /// <p>The name of the meteric used used when querying an Performance Insights <code>GetResourceMetrics</code> API for anomaly metrics.</p>
     /// <p>Valid values for <code>Metric</code> are:</p>
@@ -17,18 +17,19 @@ pub struct PerformanceInsightsMetricQuery {
     /// </ul>
     /// <p>If the number of active sessions is less than an internal Performance Insights threshold, <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value. If the number of active sessions is greater than the internal threshold, Performance Insights samples the active sessions, with <code>db.load.avg</code> showing the scaled values, <code>db.sampledload.avg</code> showing the raw values, and <code>db.sampledload.avg</code> less than <code>db.load.avg</code>. For most use cases, you can query <code>db.load.avg</code> only. </p>
     #[doc(hidden)]
-    pub metric: std::option::Option<std::string::String>,
+    pub metric: ::std::option::Option<::std::string::String>,
     /// <p>The specification for how to aggregate the data points from a Performance Insights <code>GetResourceMetrics</code> API query. The Performance Insights query returns all of the dimensions within that group, unless you provide the names of specific dimensions within that group. You can also request that Performance Insights return a limited number of values for a dimension.</p>
     #[doc(hidden)]
-    pub group_by: std::option::Option<crate::types::PerformanceInsightsMetricDimensionGroup>,
+    pub group_by: ::std::option::Option<crate::types::PerformanceInsightsMetricDimensionGroup>,
     /// <p>One or more filters to apply to a Performance Insights <code>GetResourceMetrics</code> API query. Restrictions:</p>
     /// <ul>
     /// <li> <p>Any number of filters by the same dimension, as specified in the <code>GroupBy</code> parameter.</p> </li>
     /// <li> <p>A single filter for any other dimension in this dimension group.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub filter:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub filter: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl PerformanceInsightsMetricQuery {
     /// <p>The name of the meteric used used when querying an Performance Insights <code>GetResourceMetrics</code> API for anomaly metrics.</p>
@@ -38,13 +39,13 @@ impl PerformanceInsightsMetricQuery {
     /// <li> <p> <code>db.sampledload.avg</code> - the raw number of active sessions for the database engine.</p> </li>
     /// </ul>
     /// <p>If the number of active sessions is less than an internal Performance Insights threshold, <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value. If the number of active sessions is greater than the internal threshold, Performance Insights samples the active sessions, with <code>db.load.avg</code> showing the scaled values, <code>db.sampledload.avg</code> showing the raw values, and <code>db.sampledload.avg</code> less than <code>db.load.avg</code>. For most use cases, you can query <code>db.load.avg</code> only. </p>
-    pub fn metric(&self) -> std::option::Option<&str> {
+    pub fn metric(&self) -> ::std::option::Option<&str> {
         self.metric.as_deref()
     }
     /// <p>The specification for how to aggregate the data points from a Performance Insights <code>GetResourceMetrics</code> API query. The Performance Insights query returns all of the dimensions within that group, unless you provide the names of specific dimensions within that group. You can also request that Performance Insights return a limited number of values for a dimension.</p>
     pub fn group_by(
         &self,
-    ) -> std::option::Option<&crate::types::PerformanceInsightsMetricDimensionGroup> {
+    ) -> ::std::option::Option<&crate::types::PerformanceInsightsMetricDimensionGroup> {
         self.group_by.as_ref()
     }
     /// <p>One or more filters to apply to a Performance Insights <code>GetResourceMetrics</code> API query. Restrictions:</p>
@@ -54,8 +55,9 @@ impl PerformanceInsightsMetricQuery {
     /// </ul>
     pub fn filter(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.filter.as_ref()
     }
 }
@@ -68,12 +70,16 @@ impl PerformanceInsightsMetricQuery {
 
 /// A builder for [`PerformanceInsightsMetricQuery`](crate::types::PerformanceInsightsMetricQuery).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PerformanceInsightsMetricQueryBuilder {
-    pub(crate) metric: std::option::Option<std::string::String>,
-    pub(crate) group_by: std::option::Option<crate::types::PerformanceInsightsMetricDimensionGroup>,
-    pub(crate) filter:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) metric: ::std::option::Option<::std::string::String>,
+    pub(crate) group_by:
+        ::std::option::Option<crate::types::PerformanceInsightsMetricDimensionGroup>,
+    pub(crate) filter: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl PerformanceInsightsMetricQueryBuilder {
     /// <p>The name of the meteric used used when querying an Performance Insights <code>GetResourceMetrics</code> API for anomaly metrics.</p>
@@ -83,8 +89,8 @@ impl PerformanceInsightsMetricQueryBuilder {
     /// <li> <p> <code>db.sampledload.avg</code> - the raw number of active sessions for the database engine.</p> </li>
     /// </ul>
     /// <p>If the number of active sessions is less than an internal Performance Insights threshold, <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value. If the number of active sessions is greater than the internal threshold, Performance Insights samples the active sessions, with <code>db.load.avg</code> showing the scaled values, <code>db.sampledload.avg</code> showing the raw values, and <code>db.sampledload.avg</code> less than <code>db.load.avg</code>. For most use cases, you can query <code>db.load.avg</code> only. </p>
-    pub fn metric(mut self, input: impl Into<std::string::String>) -> Self {
-        self.metric = Some(input.into());
+    pub fn metric(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.metric = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the meteric used used when querying an Performance Insights <code>GetResourceMetrics</code> API for anomaly metrics.</p>
@@ -94,7 +100,7 @@ impl PerformanceInsightsMetricQueryBuilder {
     /// <li> <p> <code>db.sampledload.avg</code> - the raw number of active sessions for the database engine.</p> </li>
     /// </ul>
     /// <p>If the number of active sessions is less than an internal Performance Insights threshold, <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value. If the number of active sessions is greater than the internal threshold, Performance Insights samples the active sessions, with <code>db.load.avg</code> showing the scaled values, <code>db.sampledload.avg</code> showing the raw values, and <code>db.sampledload.avg</code> less than <code>db.load.avg</code>. For most use cases, you can query <code>db.load.avg</code> only. </p>
-    pub fn set_metric(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_metric(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metric = input;
         self
     }
@@ -103,13 +109,13 @@ impl PerformanceInsightsMetricQueryBuilder {
         mut self,
         input: crate::types::PerformanceInsightsMetricDimensionGroup,
     ) -> Self {
-        self.group_by = Some(input);
+        self.group_by = ::std::option::Option::Some(input);
         self
     }
     /// <p>The specification for how to aggregate the data points from a Performance Insights <code>GetResourceMetrics</code> API query. The Performance Insights query returns all of the dimensions within that group, unless you provide the names of specific dimensions within that group. You can also request that Performance Insights return a limited number of values for a dimension.</p>
     pub fn set_group_by(
         mut self,
-        input: std::option::Option<crate::types::PerformanceInsightsMetricDimensionGroup>,
+        input: ::std::option::Option<crate::types::PerformanceInsightsMetricDimensionGroup>,
     ) -> Self {
         self.group_by = input;
         self
@@ -125,12 +131,12 @@ impl PerformanceInsightsMetricQueryBuilder {
     /// </ul>
     pub fn filter(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.filter.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.filter = Some(hash_map);
+        self.filter = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>One or more filters to apply to a Performance Insights <code>GetResourceMetrics</code> API query. Restrictions:</p>
@@ -140,8 +146,8 @@ impl PerformanceInsightsMetricQueryBuilder {
     /// </ul>
     pub fn set_filter(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.filter = input;

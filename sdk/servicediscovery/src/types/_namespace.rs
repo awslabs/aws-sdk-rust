@@ -2,17 +2,17 @@
 
 /// <p>A complex type that contains information about a specified namespace.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Namespace {
     /// <p>The ID of a namespace.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) that Cloud Map assigns to the namespace when you create it.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the namespace, such as <code>example.com</code>.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of the namespace. The methods for discovering instances depends on the value that you specify:</p>
     /// <dl>
     /// <dt>
@@ -35,34 +35,34 @@ pub struct Namespace {
     /// </dd>
     /// </dl>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::NamespaceType>,
+    pub r#type: ::std::option::Option<crate::types::NamespaceType>,
     /// <p>The description that you specify for the namespace when you create it.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The number of services that are associated with the namespace.</p>
     #[doc(hidden)]
-    pub service_count: std::option::Option<i32>,
+    pub service_count: ::std::option::Option<i32>,
     /// <p>A complex type that contains information that's specific to the type of the namespace.</p>
     #[doc(hidden)]
-    pub properties: std::option::Option<crate::types::NamespaceProperties>,
+    pub properties: ::std::option::Option<crate::types::NamespaceProperties>,
     /// <p>The date that the namespace was created, in Unix date/time format and Coordinated Universal Time (UTC). The value of <code>CreateDate</code> is accurate to milliseconds. For example, the value <code>1516925490.087</code> represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     #[doc(hidden)]
-    pub create_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running an operation twice. </p>
     #[doc(hidden)]
-    pub creator_request_id: std::option::Option<std::string::String>,
+    pub creator_request_id: ::std::option::Option<::std::string::String>,
 }
 impl Namespace {
     /// <p>The ID of a namespace.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) that Cloud Map assigns to the namespace when you create it.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The name of the namespace, such as <code>example.com</code>.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The type of the namespace. The methods for discovering instances depends on the value that you specify:</p>
@@ -86,27 +86,27 @@ impl Namespace {
     /// <p>Instances can be discovered using DNS queries in VPCs and using the <code>DiscoverInstances</code> API.</p>
     /// </dd>
     /// </dl>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::NamespaceType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::NamespaceType> {
         self.r#type.as_ref()
     }
     /// <p>The description that you specify for the namespace when you create it.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The number of services that are associated with the namespace.</p>
-    pub fn service_count(&self) -> std::option::Option<i32> {
+    pub fn service_count(&self) -> ::std::option::Option<i32> {
         self.service_count
     }
     /// <p>A complex type that contains information that's specific to the type of the namespace.</p>
-    pub fn properties(&self) -> std::option::Option<&crate::types::NamespaceProperties> {
+    pub fn properties(&self) -> ::std::option::Option<&crate::types::NamespaceProperties> {
         self.properties.as_ref()
     }
     /// <p>The date that the namespace was created, in Unix date/time format and Coordinated Universal Time (UTC). The value of <code>CreateDate</code> is accurate to milliseconds. For example, the value <code>1516925490.087</code> represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.create_date.as_ref()
     }
     /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running an operation twice. </p>
-    pub fn creator_request_id(&self) -> std::option::Option<&str> {
+    pub fn creator_request_id(&self) -> ::std::option::Option<&str> {
         self.creator_request_id.as_deref()
     }
 }
@@ -119,46 +119,48 @@ impl Namespace {
 
 /// A builder for [`Namespace`](crate::types::Namespace).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NamespaceBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) r#type: std::option::Option<crate::types::NamespaceType>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) service_count: std::option::Option<i32>,
-    pub(crate) properties: std::option::Option<crate::types::NamespaceProperties>,
-    pub(crate) create_date: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) creator_request_id: std::option::Option<std::string::String>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::NamespaceType>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) service_count: ::std::option::Option<i32>,
+    pub(crate) properties: ::std::option::Option<crate::types::NamespaceProperties>,
+    pub(crate) create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) creator_request_id: ::std::option::Option<::std::string::String>,
 }
 impl NamespaceBuilder {
     /// <p>The ID of a namespace.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of a namespace.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) that Cloud Map assigns to the namespace when you create it.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) that Cloud Map assigns to the namespace when you create it.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// <p>The name of the namespace, such as <code>example.com</code>.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the namespace, such as <code>example.com</code>.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
@@ -184,7 +186,7 @@ impl NamespaceBuilder {
     /// </dd>
     /// </dl>
     pub fn r#type(mut self, input: crate::types::NamespaceType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of the namespace. The methods for discovering instances depends on the value that you specify:</p>
@@ -208,65 +210,68 @@ impl NamespaceBuilder {
     /// <p>Instances can be discovered using DNS queries in VPCs and using the <code>DiscoverInstances</code> API.</p>
     /// </dd>
     /// </dl>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::NamespaceType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::NamespaceType>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The description that you specify for the namespace when you create it.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description that you specify for the namespace when you create it.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>The number of services that are associated with the namespace.</p>
     pub fn service_count(mut self, input: i32) -> Self {
-        self.service_count = Some(input);
+        self.service_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of services that are associated with the namespace.</p>
-    pub fn set_service_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_service_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.service_count = input;
         self
     }
     /// <p>A complex type that contains information that's specific to the type of the namespace.</p>
     pub fn properties(mut self, input: crate::types::NamespaceProperties) -> Self {
-        self.properties = Some(input);
+        self.properties = ::std::option::Option::Some(input);
         self
     }
     /// <p>A complex type that contains information that's specific to the type of the namespace.</p>
     pub fn set_properties(
         mut self,
-        input: std::option::Option<crate::types::NamespaceProperties>,
+        input: ::std::option::Option<crate::types::NamespaceProperties>,
     ) -> Self {
         self.properties = input;
         self
     }
     /// <p>The date that the namespace was created, in Unix date/time format and Coordinated Universal Time (UTC). The value of <code>CreateDate</code> is accurate to milliseconds. For example, the value <code>1516925490.087</code> represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub fn create_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.create_date = Some(input);
+    pub fn create_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.create_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date that the namespace was created, in Unix date/time format and Coordinated Universal Time (UTC). The value of <code>CreateDate</code> is accurate to milliseconds. For example, the value <code>1516925490.087</code> represents Friday, January 26, 2018 12:11:30.087 AM.</p>
     pub fn set_create_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.create_date = input;
         self
     }
     /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running an operation twice. </p>
-    pub fn creator_request_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.creator_request_id = Some(input.into());
+    pub fn creator_request_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.creator_request_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique string that identifies the request and that allows failed requests to be retried without the risk of running an operation twice. </p>
     pub fn set_creator_request_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.creator_request_id = input;
         self

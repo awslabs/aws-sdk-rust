@@ -2,19 +2,20 @@
 
 /// <p>Provides information about the state of an intent. You can use this information to get the current state of an intent so that you can process the intent, or so that you can return the intent to its previous state.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct IntentSummary {
     /// <p>The name of the intent.</p>
     #[doc(hidden)]
-    pub intent_name: std::option::Option<std::string::String>,
+    pub intent_name: ::std::option::Option<::std::string::String>,
     /// <p>A user-defined label that identifies a particular intent. You can use this label to return to a previous intent. </p>
     /// <p>Use the <code>checkpointLabelFilter</code> parameter of the <code>GetSessionRequest</code> operation to filter the intents returned by the operation to those with only the specified label.</p>
     #[doc(hidden)]
-    pub checkpoint_label: std::option::Option<std::string::String>,
+    pub checkpoint_label: ::std::option::Option<::std::string::String>,
     /// <p>Map of the slots that have been gathered and their values. </p>
     #[doc(hidden)]
-    pub slots:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub slots: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>The status of the intent after the user responds to the confirmation prompt. If the user confirms the intent, Amazon Lex sets this field to <code>Confirmed</code>. If the user denies the intent, Amazon Lex sets this value to <code>Denied</code>. The possible values are:</p>
     /// <ul>
     /// <li> <p> <code>Confirmed</code> - The user has responded "Yes" to the confirmation prompt, confirming that the intent is complete and that it is ready to be fulfilled.</p> </li>
@@ -22,7 +23,7 @@ pub struct IntentSummary {
     /// <li> <p> <code>None</code> - The user has never been prompted for confirmation; or, the user was prompted but did not confirm or deny the prompt.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub confirmation_status: std::option::Option<crate::types::ConfirmationStatus>,
+    pub confirmation_status: ::std::option::Option<crate::types::ConfirmationStatus>,
     /// <p>The next action that the bot should take in its interaction with the user. The possible values are:</p>
     /// <ul>
     /// <li> <p> <code>ConfirmIntent</code> - The next action is asking the user if the intent is complete and ready to be fulfilled. This is a yes/no question such as "Place the order?"</p> </li>
@@ -31,7 +32,7 @@ pub struct IntentSummary {
     /// <li> <p> <code>ElicitSlot</code> - The next action is to elicit a slot value from the user.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub dialog_action_type: std::option::Option<crate::types::DialogActionType>,
+    pub dialog_action_type: ::std::option::Option<crate::types::DialogActionType>,
     /// <p>The fulfillment state of the intent. The possible values are:</p>
     /// <ul>
     /// <li> <p> <code>Failed</code> - The Lambda function associated with the intent failed to fulfill the intent.</p> </li>
@@ -39,26 +40,27 @@ pub struct IntentSummary {
     /// <li> <p> <code>ReadyForFulfillment</code> - All of the information necessary for the intent is present and the intent ready to be fulfilled by the client application.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub fulfillment_state: std::option::Option<crate::types::FulfillmentState>,
+    pub fulfillment_state: ::std::option::Option<crate::types::FulfillmentState>,
     /// <p>The next slot to elicit from the user. If there is not slot to elicit, the field is blank.</p>
     #[doc(hidden)]
-    pub slot_to_elicit: std::option::Option<std::string::String>,
+    pub slot_to_elicit: ::std::option::Option<::std::string::String>,
 }
 impl IntentSummary {
     /// <p>The name of the intent.</p>
-    pub fn intent_name(&self) -> std::option::Option<&str> {
+    pub fn intent_name(&self) -> ::std::option::Option<&str> {
         self.intent_name.as_deref()
     }
     /// <p>A user-defined label that identifies a particular intent. You can use this label to return to a previous intent. </p>
     /// <p>Use the <code>checkpointLabelFilter</code> parameter of the <code>GetSessionRequest</code> operation to filter the intents returned by the operation to those with only the specified label.</p>
-    pub fn checkpoint_label(&self) -> std::option::Option<&str> {
+    pub fn checkpoint_label(&self) -> ::std::option::Option<&str> {
         self.checkpoint_label.as_deref()
     }
     /// <p>Map of the slots that have been gathered and their values. </p>
     pub fn slots(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.slots.as_ref()
     }
     /// <p>The status of the intent after the user responds to the confirmation prompt. If the user confirms the intent, Amazon Lex sets this field to <code>Confirmed</code>. If the user denies the intent, Amazon Lex sets this value to <code>Denied</code>. The possible values are:</p>
@@ -67,7 +69,7 @@ impl IntentSummary {
     /// <li> <p> <code>Denied</code> - The user has responded "No" to the confirmation prompt.</p> </li>
     /// <li> <p> <code>None</code> - The user has never been prompted for confirmation; or, the user was prompted but did not confirm or deny the prompt.</p> </li>
     /// </ul>
-    pub fn confirmation_status(&self) -> std::option::Option<&crate::types::ConfirmationStatus> {
+    pub fn confirmation_status(&self) -> ::std::option::Option<&crate::types::ConfirmationStatus> {
         self.confirmation_status.as_ref()
     }
     /// <p>The next action that the bot should take in its interaction with the user. The possible values are:</p>
@@ -77,7 +79,7 @@ impl IntentSummary {
     /// <li> <p> <code>ElicitIntent</code> - The next action is to determine the intent that the user wants to fulfill.</p> </li>
     /// <li> <p> <code>ElicitSlot</code> - The next action is to elicit a slot value from the user.</p> </li>
     /// </ul>
-    pub fn dialog_action_type(&self) -> std::option::Option<&crate::types::DialogActionType> {
+    pub fn dialog_action_type(&self) -> ::std::option::Option<&crate::types::DialogActionType> {
         self.dialog_action_type.as_ref()
     }
     /// <p>The fulfillment state of the intent. The possible values are:</p>
@@ -86,16 +88,16 @@ impl IntentSummary {
     /// <li> <p> <code>Fulfilled</code> - The intent has fulfilled by the Lambda function associated with the intent. </p> </li>
     /// <li> <p> <code>ReadyForFulfillment</code> - All of the information necessary for the intent is present and the intent ready to be fulfilled by the client application.</p> </li>
     /// </ul>
-    pub fn fulfillment_state(&self) -> std::option::Option<&crate::types::FulfillmentState> {
+    pub fn fulfillment_state(&self) -> ::std::option::Option<&crate::types::FulfillmentState> {
         self.fulfillment_state.as_ref()
     }
     /// <p>The next slot to elicit from the user. If there is not slot to elicit, the field is blank.</p>
-    pub fn slot_to_elicit(&self) -> std::option::Option<&str> {
+    pub fn slot_to_elicit(&self) -> ::std::option::Option<&str> {
         self.slot_to_elicit.as_deref()
     }
 }
-impl std::fmt::Debug for IntentSummary {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for IntentSummary {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("IntentSummary");
         formatter.field("intent_name", &self.intent_name);
         formatter.field("checkpoint_label", &self.checkpoint_label);
@@ -116,37 +118,44 @@ impl IntentSummary {
 
 /// A builder for [`IntentSummary`](crate::types::IntentSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct IntentSummaryBuilder {
-    pub(crate) intent_name: std::option::Option<std::string::String>,
-    pub(crate) checkpoint_label: std::option::Option<std::string::String>,
-    pub(crate) slots:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) confirmation_status: std::option::Option<crate::types::ConfirmationStatus>,
-    pub(crate) dialog_action_type: std::option::Option<crate::types::DialogActionType>,
-    pub(crate) fulfillment_state: std::option::Option<crate::types::FulfillmentState>,
-    pub(crate) slot_to_elicit: std::option::Option<std::string::String>,
+    pub(crate) intent_name: ::std::option::Option<::std::string::String>,
+    pub(crate) checkpoint_label: ::std::option::Option<::std::string::String>,
+    pub(crate) slots: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) confirmation_status: ::std::option::Option<crate::types::ConfirmationStatus>,
+    pub(crate) dialog_action_type: ::std::option::Option<crate::types::DialogActionType>,
+    pub(crate) fulfillment_state: ::std::option::Option<crate::types::FulfillmentState>,
+    pub(crate) slot_to_elicit: ::std::option::Option<::std::string::String>,
 }
 impl IntentSummaryBuilder {
     /// <p>The name of the intent.</p>
-    pub fn intent_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.intent_name = Some(input.into());
+    pub fn intent_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.intent_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the intent.</p>
-    pub fn set_intent_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_intent_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.intent_name = input;
         self
     }
     /// <p>A user-defined label that identifies a particular intent. You can use this label to return to a previous intent. </p>
     /// <p>Use the <code>checkpointLabelFilter</code> parameter of the <code>GetSessionRequest</code> operation to filter the intents returned by the operation to those with only the specified label.</p>
-    pub fn checkpoint_label(mut self, input: impl Into<std::string::String>) -> Self {
-        self.checkpoint_label = Some(input.into());
+    pub fn checkpoint_label(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.checkpoint_label = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A user-defined label that identifies a particular intent. You can use this label to return to a previous intent. </p>
     /// <p>Use the <code>checkpointLabelFilter</code> parameter of the <code>GetSessionRequest</code> operation to filter the intents returned by the operation to those with only the specified label.</p>
-    pub fn set_checkpoint_label(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_checkpoint_label(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.checkpoint_label = input;
         self
     }
@@ -157,19 +166,19 @@ impl IntentSummaryBuilder {
     /// <p>Map of the slots that have been gathered and their values. </p>
     pub fn slots(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.slots.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.slots = Some(hash_map);
+        self.slots = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Map of the slots that have been gathered and their values. </p>
     pub fn set_slots(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.slots = input;
@@ -182,7 +191,7 @@ impl IntentSummaryBuilder {
     /// <li> <p> <code>None</code> - The user has never been prompted for confirmation; or, the user was prompted but did not confirm or deny the prompt.</p> </li>
     /// </ul>
     pub fn confirmation_status(mut self, input: crate::types::ConfirmationStatus) -> Self {
-        self.confirmation_status = Some(input);
+        self.confirmation_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the intent after the user responds to the confirmation prompt. If the user confirms the intent, Amazon Lex sets this field to <code>Confirmed</code>. If the user denies the intent, Amazon Lex sets this value to <code>Denied</code>. The possible values are:</p>
@@ -193,7 +202,7 @@ impl IntentSummaryBuilder {
     /// </ul>
     pub fn set_confirmation_status(
         mut self,
-        input: std::option::Option<crate::types::ConfirmationStatus>,
+        input: ::std::option::Option<crate::types::ConfirmationStatus>,
     ) -> Self {
         self.confirmation_status = input;
         self
@@ -206,7 +215,7 @@ impl IntentSummaryBuilder {
     /// <li> <p> <code>ElicitSlot</code> - The next action is to elicit a slot value from the user.</p> </li>
     /// </ul>
     pub fn dialog_action_type(mut self, input: crate::types::DialogActionType) -> Self {
-        self.dialog_action_type = Some(input);
+        self.dialog_action_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The next action that the bot should take in its interaction with the user. The possible values are:</p>
@@ -218,7 +227,7 @@ impl IntentSummaryBuilder {
     /// </ul>
     pub fn set_dialog_action_type(
         mut self,
-        input: std::option::Option<crate::types::DialogActionType>,
+        input: ::std::option::Option<crate::types::DialogActionType>,
     ) -> Self {
         self.dialog_action_type = input;
         self
@@ -230,7 +239,7 @@ impl IntentSummaryBuilder {
     /// <li> <p> <code>ReadyForFulfillment</code> - All of the information necessary for the intent is present and the intent ready to be fulfilled by the client application.</p> </li>
     /// </ul>
     pub fn fulfillment_state(mut self, input: crate::types::FulfillmentState) -> Self {
-        self.fulfillment_state = Some(input);
+        self.fulfillment_state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The fulfillment state of the intent. The possible values are:</p>
@@ -241,18 +250,24 @@ impl IntentSummaryBuilder {
     /// </ul>
     pub fn set_fulfillment_state(
         mut self,
-        input: std::option::Option<crate::types::FulfillmentState>,
+        input: ::std::option::Option<crate::types::FulfillmentState>,
     ) -> Self {
         self.fulfillment_state = input;
         self
     }
     /// <p>The next slot to elicit from the user. If there is not slot to elicit, the field is blank.</p>
-    pub fn slot_to_elicit(mut self, input: impl Into<std::string::String>) -> Self {
-        self.slot_to_elicit = Some(input.into());
+    pub fn slot_to_elicit(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.slot_to_elicit = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The next slot to elicit from the user. If there is not slot to elicit, the field is blank.</p>
-    pub fn set_slot_to_elicit(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_slot_to_elicit(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.slot_to_elicit = input;
         self
     }
@@ -269,8 +284,8 @@ impl IntentSummaryBuilder {
         }
     }
 }
-impl std::fmt::Debug for IntentSummaryBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for IntentSummaryBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("IntentSummaryBuilder");
         formatter.field("intent_name", &self.intent_name);
         formatter.field("checkpoint_label", &self.checkpoint_label);

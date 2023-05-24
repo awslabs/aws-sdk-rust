@@ -2,29 +2,29 @@
 
 /// <p>Revocation information for a signing job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SigningJobRevocationRecord {
     /// <p>A caller-supplied reason for revocation.</p>
     #[doc(hidden)]
-    pub reason: std::option::Option<std::string::String>,
+    pub reason: ::std::option::Option<::std::string::String>,
     /// <p>The time of revocation.</p>
     #[doc(hidden)]
-    pub revoked_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub revoked_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The identity of the revoker.</p>
     #[doc(hidden)]
-    pub revoked_by: std::option::Option<std::string::String>,
+    pub revoked_by: ::std::option::Option<::std::string::String>,
 }
 impl SigningJobRevocationRecord {
     /// <p>A caller-supplied reason for revocation.</p>
-    pub fn reason(&self) -> std::option::Option<&str> {
+    pub fn reason(&self) -> ::std::option::Option<&str> {
         self.reason.as_deref()
     }
     /// <p>The time of revocation.</p>
-    pub fn revoked_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn revoked_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.revoked_at.as_ref()
     }
     /// <p>The identity of the revoker.</p>
-    pub fn revoked_by(&self) -> std::option::Option<&str> {
+    pub fn revoked_by(&self) -> ::std::option::Option<&str> {
         self.revoked_by.as_deref()
     }
 }
@@ -37,43 +37,45 @@ impl SigningJobRevocationRecord {
 
 /// A builder for [`SigningJobRevocationRecord`](crate::types::SigningJobRevocationRecord).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SigningJobRevocationRecordBuilder {
-    pub(crate) reason: std::option::Option<std::string::String>,
-    pub(crate) revoked_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) revoked_by: std::option::Option<std::string::String>,
+    pub(crate) reason: ::std::option::Option<::std::string::String>,
+    pub(crate) revoked_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) revoked_by: ::std::option::Option<::std::string::String>,
 }
 impl SigningJobRevocationRecordBuilder {
     /// <p>A caller-supplied reason for revocation.</p>
-    pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
-        self.reason = Some(input.into());
+    pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A caller-supplied reason for revocation.</p>
-    pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reason = input;
         self
     }
     /// <p>The time of revocation.</p>
-    pub fn revoked_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.revoked_at = Some(input);
+    pub fn revoked_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.revoked_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time of revocation.</p>
     pub fn set_revoked_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.revoked_at = input;
         self
     }
     /// <p>The identity of the revoker.</p>
-    pub fn revoked_by(mut self, input: impl Into<std::string::String>) -> Self {
-        self.revoked_by = Some(input.into());
+    pub fn revoked_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.revoked_by = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identity of the revoker.</p>
-    pub fn set_revoked_by(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_revoked_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.revoked_by = input;
         self
     }

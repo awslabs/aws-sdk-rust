@@ -2,7 +2,7 @@
 
 /// <p>Import task summary applications.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportTaskSummaryApplications {
     /// <p>Import task summary applications created count.</p>
     #[doc(hidden)]
@@ -30,29 +30,31 @@ impl ImportTaskSummaryApplications {
 
 /// A builder for [`ImportTaskSummaryApplications`](crate::types::ImportTaskSummaryApplications).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ImportTaskSummaryApplicationsBuilder {
-    pub(crate) created_count: std::option::Option<i64>,
-    pub(crate) modified_count: std::option::Option<i64>,
+    pub(crate) created_count: ::std::option::Option<i64>,
+    pub(crate) modified_count: ::std::option::Option<i64>,
 }
 impl ImportTaskSummaryApplicationsBuilder {
     /// <p>Import task summary applications created count.</p>
     pub fn created_count(mut self, input: i64) -> Self {
-        self.created_count = Some(input);
+        self.created_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>Import task summary applications created count.</p>
-    pub fn set_created_count(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_created_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.created_count = input;
         self
     }
     /// <p>Import task summary applications modified count.</p>
     pub fn modified_count(mut self, input: i64) -> Self {
-        self.modified_count = Some(input);
+        self.modified_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>Import task summary applications modified count.</p>
-    pub fn set_modified_count(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_modified_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.modified_count = input;
         self
     }

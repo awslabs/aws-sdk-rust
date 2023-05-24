@@ -2,36 +2,37 @@
 
 /// The settings for Automatic Input Failover.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutomaticInputFailoverSettings {
     /// This clear time defines the requirement a recovered input must meet to be considered healthy. The input must have no failover conditions for this length of time. Enter a time in milliseconds. This value is particularly important if the input_preference for the failover pair is set to PRIMARY_INPUT_PREFERRED, because after this time, MediaLive will switch back to the primary input.
     #[doc(hidden)]
-    pub error_clear_time_msec: std::option::Option<i32>,
+    pub error_clear_time_msec: ::std::option::Option<i32>,
     /// A list of failover conditions. If any of these conditions occur, MediaLive will perform a failover to the other input.
     #[doc(hidden)]
-    pub failover_conditions: std::option::Option<std::vec::Vec<crate::types::FailoverCondition>>,
+    pub failover_conditions:
+        ::std::option::Option<::std::vec::Vec<crate::types::FailoverCondition>>,
     /// Input preference when deciding which input to make active when a previously failed input has recovered.
     #[doc(hidden)]
-    pub input_preference: std::option::Option<crate::types::InputPreference>,
+    pub input_preference: ::std::option::Option<crate::types::InputPreference>,
     /// The input ID of the secondary input in the automatic input failover pair.
     #[doc(hidden)]
-    pub secondary_input_id: std::option::Option<std::string::String>,
+    pub secondary_input_id: ::std::option::Option<::std::string::String>,
 }
 impl AutomaticInputFailoverSettings {
     /// This clear time defines the requirement a recovered input must meet to be considered healthy. The input must have no failover conditions for this length of time. Enter a time in milliseconds. This value is particularly important if the input_preference for the failover pair is set to PRIMARY_INPUT_PREFERRED, because after this time, MediaLive will switch back to the primary input.
-    pub fn error_clear_time_msec(&self) -> std::option::Option<i32> {
+    pub fn error_clear_time_msec(&self) -> ::std::option::Option<i32> {
         self.error_clear_time_msec
     }
     /// A list of failover conditions. If any of these conditions occur, MediaLive will perform a failover to the other input.
-    pub fn failover_conditions(&self) -> std::option::Option<&[crate::types::FailoverCondition]> {
+    pub fn failover_conditions(&self) -> ::std::option::Option<&[crate::types::FailoverCondition]> {
         self.failover_conditions.as_deref()
     }
     /// Input preference when deciding which input to make active when a previously failed input has recovered.
-    pub fn input_preference(&self) -> std::option::Option<&crate::types::InputPreference> {
+    pub fn input_preference(&self) -> ::std::option::Option<&crate::types::InputPreference> {
         self.input_preference.as_ref()
     }
     /// The input ID of the secondary input in the automatic input failover pair.
-    pub fn secondary_input_id(&self) -> std::option::Option<&str> {
+    pub fn secondary_input_id(&self) -> ::std::option::Option<&str> {
         self.secondary_input_id.as_deref()
     }
 }
@@ -44,22 +45,24 @@ impl AutomaticInputFailoverSettings {
 
 /// A builder for [`AutomaticInputFailoverSettings`](crate::types::AutomaticInputFailoverSettings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AutomaticInputFailoverSettingsBuilder {
-    pub(crate) error_clear_time_msec: std::option::Option<i32>,
+    pub(crate) error_clear_time_msec: ::std::option::Option<i32>,
     pub(crate) failover_conditions:
-        std::option::Option<std::vec::Vec<crate::types::FailoverCondition>>,
-    pub(crate) input_preference: std::option::Option<crate::types::InputPreference>,
-    pub(crate) secondary_input_id: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::FailoverCondition>>,
+    pub(crate) input_preference: ::std::option::Option<crate::types::InputPreference>,
+    pub(crate) secondary_input_id: ::std::option::Option<::std::string::String>,
 }
 impl AutomaticInputFailoverSettingsBuilder {
     /// This clear time defines the requirement a recovered input must meet to be considered healthy. The input must have no failover conditions for this length of time. Enter a time in milliseconds. This value is particularly important if the input_preference for the failover pair is set to PRIMARY_INPUT_PREFERRED, because after this time, MediaLive will switch back to the primary input.
     pub fn error_clear_time_msec(mut self, input: i32) -> Self {
-        self.error_clear_time_msec = Some(input);
+        self.error_clear_time_msec = ::std::option::Option::Some(input);
         self
     }
     /// This clear time defines the requirement a recovered input must meet to be considered healthy. The input must have no failover conditions for this length of time. Enter a time in milliseconds. This value is particularly important if the input_preference for the failover pair is set to PRIMARY_INPUT_PREFERRED, because after this time, MediaLive will switch back to the primary input.
-    pub fn set_error_clear_time_msec(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_error_clear_time_msec(mut self, input: ::std::option::Option<i32>) -> Self {
         self.error_clear_time_msec = input;
         self
     }
@@ -71,39 +74,42 @@ impl AutomaticInputFailoverSettingsBuilder {
     pub fn failover_conditions(mut self, input: crate::types::FailoverCondition) -> Self {
         let mut v = self.failover_conditions.unwrap_or_default();
         v.push(input);
-        self.failover_conditions = Some(v);
+        self.failover_conditions = ::std::option::Option::Some(v);
         self
     }
     /// A list of failover conditions. If any of these conditions occur, MediaLive will perform a failover to the other input.
     pub fn set_failover_conditions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::FailoverCondition>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::FailoverCondition>>,
     ) -> Self {
         self.failover_conditions = input;
         self
     }
     /// Input preference when deciding which input to make active when a previously failed input has recovered.
     pub fn input_preference(mut self, input: crate::types::InputPreference) -> Self {
-        self.input_preference = Some(input);
+        self.input_preference = ::std::option::Option::Some(input);
         self
     }
     /// Input preference when deciding which input to make active when a previously failed input has recovered.
     pub fn set_input_preference(
         mut self,
-        input: std::option::Option<crate::types::InputPreference>,
+        input: ::std::option::Option<crate::types::InputPreference>,
     ) -> Self {
         self.input_preference = input;
         self
     }
     /// The input ID of the secondary input in the automatic input failover pair.
-    pub fn secondary_input_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.secondary_input_id = Some(input.into());
+    pub fn secondary_input_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.secondary_input_id = ::std::option::Option::Some(input.into());
         self
     }
     /// The input ID of the secondary input in the automatic input failover pair.
     pub fn set_secondary_input_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.secondary_input_id = input;
         self

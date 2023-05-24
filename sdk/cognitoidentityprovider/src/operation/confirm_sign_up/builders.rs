@@ -6,56 +6,59 @@ pub use crate::operation::confirm_sign_up::_confirm_sign_up_input::ConfirmSignUp
 /// Fluent builder constructing a request to `ConfirmSignUp`.
 ///
 /// <p>Confirms registration of a new user.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ConfirmSignUpFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::confirm_sign_up::builders::ConfirmSignUpInputBuilder,
 }
 impl ConfirmSignUpFluentBuilder {
     /// Creates a new `ConfirmSignUp`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::confirm_sign_up::ConfirmSignUp,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::confirm_sign_up::ConfirmSignUpError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::confirm_sign_up::ConfirmSignUpError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::confirm_sign_up::ConfirmSignUpOutput,
-        aws_smithy_http::result::SdkError<crate::operation::confirm_sign_up::ConfirmSignUpError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::confirm_sign_up::ConfirmSignUpError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,51 +71,54 @@ impl ConfirmSignUpFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::confirm_sign_up::ConfirmSignUpOutput,
-        aws_smithy_http::result::SdkError<crate::operation::confirm_sign_up::ConfirmSignUpError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::confirm_sign_up::ConfirmSignUpError>,
     > {
         self.send_middleware().await
     }
     /// <p>The ID of the app client associated with the user pool.</p>
-    pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_id(input.into());
         self
     }
     /// <p>The ID of the app client associated with the user pool.</p>
-    pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_id(input);
         self
     }
     /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a user pool client and username plus the client ID in the message.</p>
-    pub fn secret_hash(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn secret_hash(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.secret_hash(input.into());
         self
     }
     /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a user pool client and username plus the client ID in the message.</p>
-    pub fn set_secret_hash(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_secret_hash(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_secret_hash(input);
         self
     }
     /// <p>The user name of the user whose registration you want to confirm.</p>
-    pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.username(input.into());
         self
     }
     /// <p>The user name of the user whose registration you want to confirm.</p>
-    pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_username(input);
         self
     }
     /// <p>The confirmation code sent by a user's request to confirm registration.</p>
-    pub fn confirmation_code(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn confirmation_code(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.confirmation_code(input.into());
         self
     }
     /// <p>The confirmation code sent by a user's request to confirm registration.</p>
     pub fn set_confirmation_code(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_confirmation_code(input);
         self
@@ -123,7 +129,7 @@ impl ConfirmSignUpFluentBuilder {
         self
     }
     /// <p>Boolean to be specified to force user confirmation irrespective of existing alias. By default set to <code>False</code>. If this parameter is set to <code>True</code> and the phone number/email used for sign up confirmation already exists as an alias with a different user, the API call will migrate the alias from the previous user to the newly created user being confirmed. If set to <code>False</code>, the API will throw an <b>AliasExistsException</b> error.</p>
-    pub fn set_force_alias_creation(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_force_alias_creation(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_force_alias_creation(input);
         self
     }
@@ -135,7 +141,7 @@ impl ConfirmSignUpFluentBuilder {
     /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for <code>ConfirmSignUp</code> calls.</p>
     pub fn set_analytics_metadata(
         mut self,
-        input: std::option::Option<crate::types::AnalyticsMetadataType>,
+        input: ::std::option::Option<crate::types::AnalyticsMetadataType>,
     ) -> Self {
         self.inner = self.inner.set_analytics_metadata(input);
         self
@@ -148,7 +154,7 @@ impl ConfirmSignUpFluentBuilder {
     /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
     pub fn set_user_context_data(
         mut self,
-        input: std::option::Option<crate::types::UserContextDataType>,
+        input: ::std::option::Option<crate::types::UserContextDataType>,
     ) -> Self {
         self.inner = self.inner.set_user_context_data(input);
         self
@@ -169,8 +175,8 @@ impl ConfirmSignUpFluentBuilder {
     /// </note>
     pub fn client_metadata(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.client_metadata(k.into(), v.into());
         self
@@ -187,8 +193,8 @@ impl ConfirmSignUpFluentBuilder {
     /// </note>
     pub fn set_client_metadata(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_client_metadata(input);

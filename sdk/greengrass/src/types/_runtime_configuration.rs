@@ -2,17 +2,17 @@
 
 /// Runtime configuration for a thing.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuntimeConfiguration {
     /// Configuration for telemetry service.
     #[doc(hidden)]
-    pub telemetry_configuration: std::option::Option<crate::types::TelemetryConfiguration>,
+    pub telemetry_configuration: ::std::option::Option<crate::types::TelemetryConfiguration>,
 }
 impl RuntimeConfiguration {
     /// Configuration for telemetry service.
     pub fn telemetry_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::TelemetryConfiguration> {
+    ) -> ::std::option::Option<&crate::types::TelemetryConfiguration> {
         self.telemetry_configuration.as_ref()
     }
 }
@@ -25,20 +25,22 @@ impl RuntimeConfiguration {
 
 /// A builder for [`RuntimeConfiguration`](crate::types::RuntimeConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RuntimeConfigurationBuilder {
-    pub(crate) telemetry_configuration: std::option::Option<crate::types::TelemetryConfiguration>,
+    pub(crate) telemetry_configuration: ::std::option::Option<crate::types::TelemetryConfiguration>,
 }
 impl RuntimeConfigurationBuilder {
     /// Configuration for telemetry service.
     pub fn telemetry_configuration(mut self, input: crate::types::TelemetryConfiguration) -> Self {
-        self.telemetry_configuration = Some(input);
+        self.telemetry_configuration = ::std::option::Option::Some(input);
         self
     }
     /// Configuration for telemetry service.
     pub fn set_telemetry_configuration(
         mut self,
-        input: std::option::Option<crate::types::TelemetryConfiguration>,
+        input: ::std::option::Option<crate::types::TelemetryConfiguration>,
     ) -> Self {
         self.telemetry_configuration = input;
         self

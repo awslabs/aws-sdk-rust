@@ -40,13 +40,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ShippingOption {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,7 +60,7 @@ pub enum ShippingOption {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ShippingOption {
+impl ::std::convert::From<&str> for ShippingOption {
     fn from(s: &str) -> Self {
         match s {
             "EXPRESS" => ShippingOption::Express,
@@ -73,11 +73,11 @@ impl std::convert::From<&str> for ShippingOption {
         }
     }
 }
-impl std::str::FromStr for ShippingOption {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ShippingOption {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ShippingOption::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ShippingOption::from(s))
     }
 }
 impl ShippingOption {
@@ -96,7 +96,7 @@ impl ShippingOption {
         &["EXPRESS", "NEXT_DAY", "SECOND_DAY", "STANDARD"]
     }
 }
-impl AsRef<str> for ShippingOption {
+impl ::std::convert::AsRef<str> for ShippingOption {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

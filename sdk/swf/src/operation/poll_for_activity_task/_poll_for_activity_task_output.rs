@@ -2,35 +2,35 @@
 
 /// <p>Unit of work sent to an activity worker.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PollForActivityTaskOutput {
     /// <p>The opaque string used as a handle on the task. This token is used by workers to communicate progress and response information back to the system about the task.</p>
     #[doc(hidden)]
-    pub task_token: std::option::Option<std::string::String>,
+    pub task_token: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID of the task.</p>
     #[doc(hidden)]
-    pub activity_id: std::option::Option<std::string::String>,
+    pub activity_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the <code>ActivityTaskStarted</code> event recorded in the history.</p>
     #[doc(hidden)]
     pub started_event_id: i64,
     /// <p>The workflow execution that started this activity task.</p>
     #[doc(hidden)]
-    pub workflow_execution: std::option::Option<crate::types::WorkflowExecution>,
+    pub workflow_execution: ::std::option::Option<crate::types::WorkflowExecution>,
     /// <p>The type of this activity task.</p>
     #[doc(hidden)]
-    pub activity_type: std::option::Option<crate::types::ActivityType>,
+    pub activity_type: ::std::option::Option<crate::types::ActivityType>,
     /// <p>The inputs provided when the activity task was scheduled. The form of the input is user defined and should be meaningful to the activity implementation.</p>
     #[doc(hidden)]
-    pub input: std::option::Option<std::string::String>,
+    pub input: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl PollForActivityTaskOutput {
     /// <p>The opaque string used as a handle on the task. This token is used by workers to communicate progress and response information back to the system about the task.</p>
-    pub fn task_token(&self) -> std::option::Option<&str> {
+    pub fn task_token(&self) -> ::std::option::Option<&str> {
         self.task_token.as_deref()
     }
     /// <p>The unique ID of the task.</p>
-    pub fn activity_id(&self) -> std::option::Option<&str> {
+    pub fn activity_id(&self) -> ::std::option::Option<&str> {
         self.activity_id.as_deref()
     }
     /// <p>The ID of the <code>ActivityTaskStarted</code> event recorded in the history.</p>
@@ -38,19 +38,19 @@ impl PollForActivityTaskOutput {
         self.started_event_id
     }
     /// <p>The workflow execution that started this activity task.</p>
-    pub fn workflow_execution(&self) -> std::option::Option<&crate::types::WorkflowExecution> {
+    pub fn workflow_execution(&self) -> ::std::option::Option<&crate::types::WorkflowExecution> {
         self.workflow_execution.as_ref()
     }
     /// <p>The type of this activity task.</p>
-    pub fn activity_type(&self) -> std::option::Option<&crate::types::ActivityType> {
+    pub fn activity_type(&self) -> ::std::option::Option<&crate::types::ActivityType> {
         self.activity_type.as_ref()
     }
     /// <p>The inputs provided when the activity task was scheduled. The form of the input is user defined and should be meaningful to the activity implementation.</p>
-    pub fn input(&self) -> std::option::Option<&str> {
+    pub fn input(&self) -> ::std::option::Option<&str> {
         self.input.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for PollForActivityTaskOutput {
+impl ::aws_http::request_id::RequestId for PollForActivityTaskOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -65,80 +65,82 @@ impl PollForActivityTaskOutput {
 
 /// A builder for [`PollForActivityTaskOutput`](crate::operation::poll_for_activity_task::PollForActivityTaskOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PollForActivityTaskOutputBuilder {
-    pub(crate) task_token: std::option::Option<std::string::String>,
-    pub(crate) activity_id: std::option::Option<std::string::String>,
-    pub(crate) started_event_id: std::option::Option<i64>,
-    pub(crate) workflow_execution: std::option::Option<crate::types::WorkflowExecution>,
-    pub(crate) activity_type: std::option::Option<crate::types::ActivityType>,
-    pub(crate) input: std::option::Option<std::string::String>,
+    pub(crate) task_token: ::std::option::Option<::std::string::String>,
+    pub(crate) activity_id: ::std::option::Option<::std::string::String>,
+    pub(crate) started_event_id: ::std::option::Option<i64>,
+    pub(crate) workflow_execution: ::std::option::Option<crate::types::WorkflowExecution>,
+    pub(crate) activity_type: ::std::option::Option<crate::types::ActivityType>,
+    pub(crate) input: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl PollForActivityTaskOutputBuilder {
     /// <p>The opaque string used as a handle on the task. This token is used by workers to communicate progress and response information back to the system about the task.</p>
-    pub fn task_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.task_token = Some(input.into());
+    pub fn task_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.task_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The opaque string used as a handle on the task. This token is used by workers to communicate progress and response information back to the system about the task.</p>
-    pub fn set_task_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_task_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.task_token = input;
         self
     }
     /// <p>The unique ID of the task.</p>
-    pub fn activity_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.activity_id = Some(input.into());
+    pub fn activity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.activity_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ID of the task.</p>
-    pub fn set_activity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_activity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.activity_id = input;
         self
     }
     /// <p>The ID of the <code>ActivityTaskStarted</code> event recorded in the history.</p>
     pub fn started_event_id(mut self, input: i64) -> Self {
-        self.started_event_id = Some(input);
+        self.started_event_id = ::std::option::Option::Some(input);
         self
     }
     /// <p>The ID of the <code>ActivityTaskStarted</code> event recorded in the history.</p>
-    pub fn set_started_event_id(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_started_event_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.started_event_id = input;
         self
     }
     /// <p>The workflow execution that started this activity task.</p>
     pub fn workflow_execution(mut self, input: crate::types::WorkflowExecution) -> Self {
-        self.workflow_execution = Some(input);
+        self.workflow_execution = ::std::option::Option::Some(input);
         self
     }
     /// <p>The workflow execution that started this activity task.</p>
     pub fn set_workflow_execution(
         mut self,
-        input: std::option::Option<crate::types::WorkflowExecution>,
+        input: ::std::option::Option<crate::types::WorkflowExecution>,
     ) -> Self {
         self.workflow_execution = input;
         self
     }
     /// <p>The type of this activity task.</p>
     pub fn activity_type(mut self, input: crate::types::ActivityType) -> Self {
-        self.activity_type = Some(input);
+        self.activity_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of this activity task.</p>
     pub fn set_activity_type(
         mut self,
-        input: std::option::Option<crate::types::ActivityType>,
+        input: ::std::option::Option<crate::types::ActivityType>,
     ) -> Self {
         self.activity_type = input;
         self
     }
     /// <p>The inputs provided when the activity task was scheduled. The form of the input is user defined and should be meaningful to the activity implementation.</p>
-    pub fn input(mut self, input: impl Into<std::string::String>) -> Self {
-        self.input = Some(input.into());
+    pub fn input(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.input = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The inputs provided when the activity task was scheduled. The form of the input is user defined and should be meaningful to the activity implementation.</p>
-    pub fn set_input(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_input(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.input = input;
         self
     }

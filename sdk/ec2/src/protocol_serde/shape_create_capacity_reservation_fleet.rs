@@ -2,7 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_create_capacity_reservation_fleet_http_error(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::create_capacity_reservation_fleet::CreateCapacityReservationFleetOutput,
@@ -10,7 +10,7 @@ pub fn de_create_capacity_reservation_fleet_http_error(
 > {
     #[allow(unused_mut)]
     let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body).map_err(crate::operation::create_capacity_reservation_fleet::CreateCapacityReservationFleetError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
+    generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     Err(crate::operation::create_capacity_reservation_fleet::CreateCapacityReservationFleetError::generic(generic))
 }
@@ -18,7 +18,7 @@ pub fn de_create_capacity_reservation_fleet_http_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_create_capacity_reservation_fleet_http_response_with_props(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::create_capacity_reservation_fleet::CreateCapacityReservationFleetOutput,
@@ -29,22 +29,22 @@ pub fn de_create_capacity_reservation_fleet_http_response_with_props(
         let mut output = crate::operation::create_capacity_reservation_fleet::builders::CreateCapacityReservationFleetOutputBuilder::default();
         output = crate::protocol_serde::shape_create_capacity_reservation_fleet::de_create_capacity_reservation_fleet(_response_body, output).map_err(crate::operation::create_capacity_reservation_fleet::CreateCapacityReservationFleetError::unhandled)?;
         output._set_request_id(
-            aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
+            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
         );
         output.build()
     })
 }
 
 #[allow(unused_mut)]
-pub fn de_create_capacity_reservation_fleet(inp: &[u8], mut builder: crate::operation::create_capacity_reservation_fleet::builders::CreateCapacityReservationFleetOutputBuilder) -> Result<crate::operation::create_capacity_reservation_fleet::builders::CreateCapacityReservationFleetOutputBuilder, aws_smithy_xml::decode::XmlDecodeError>{
-    let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
+pub fn de_create_capacity_reservation_fleet(inp: &[u8], mut builder: crate::operation::create_capacity_reservation_fleet::builders::CreateCapacityReservationFleetOutputBuilder) -> Result<crate::operation::create_capacity_reservation_fleet::builders::CreateCapacityReservationFleetOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>{
+    let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateCapacityReservationFleetResponse")) {
-        return Err(aws_smithy_xml::decode::XmlDecodeError::custom(format!(
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected CreateCapacityReservationFleetResponse got {:?}",
             start_el
         )));
@@ -54,8 +54,8 @@ pub fn de_create_capacity_reservation_fleet(inp: &[u8], mut builder: crate::oper
             s if s.matches("capacityReservationFleetId") /* CapacityReservationFleetId com.amazonaws.ec2.synthetic#CreateCapacityReservationFleetOutput$CapacityReservationFleetId */ =>  {
                 let var_1 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -67,9 +67,9 @@ pub fn de_create_capacity_reservation_fleet(inp: &[u8], mut builder: crate::oper
             s if s.matches("state") /* State com.amazonaws.ec2.synthetic#CreateCapacityReservationFleetOutput$State */ =>  {
                 let var_2 =
                     Some(
-                        Result::<crate::types::CapacityReservationFleetState, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                        Result::<crate::types::CapacityReservationFleetState, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::CapacityReservationFleetState::from(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )
                         ?
@@ -82,10 +82,10 @@ pub fn de_create_capacity_reservation_fleet(inp: &[u8], mut builder: crate::oper
                 let var_3 =
                     Some(
                          {
-                            <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
-                            .map_err(|_|aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.ec2#Integer`)"))
                         }
                         ?
                     )
@@ -97,10 +97,10 @@ pub fn de_create_capacity_reservation_fleet(inp: &[u8], mut builder: crate::oper
                 let var_4 =
                     Some(
                          {
-                            <f64 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            <f64 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
-                            .map_err(|_|aws_smithy_xml::decode::XmlDecodeError::custom("expected (double: `com.amazonaws.ec2#Double`)"))
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (double: `com.amazonaws.ec2#Double`)"))
                         }
                         ?
                     )
@@ -111,9 +111,9 @@ pub fn de_create_capacity_reservation_fleet(inp: &[u8], mut builder: crate::oper
             s if s.matches("instanceMatchCriteria") /* InstanceMatchCriteria com.amazonaws.ec2.synthetic#CreateCapacityReservationFleetOutput$InstanceMatchCriteria */ =>  {
                 let var_5 =
                     Some(
-                        Result::<crate::types::FleetInstanceMatchCriteria, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                        Result::<crate::types::FleetInstanceMatchCriteria, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::FleetInstanceMatchCriteria::from(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )
                         ?
@@ -125,8 +125,8 @@ pub fn de_create_capacity_reservation_fleet(inp: &[u8], mut builder: crate::oper
             s if s.matches("allocationStrategy") /* AllocationStrategy com.amazonaws.ec2.synthetic#CreateCapacityReservationFleetOutput$AllocationStrategy */ =>  {
                 let var_6 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -138,11 +138,11 @@ pub fn de_create_capacity_reservation_fleet(inp: &[u8], mut builder: crate::oper
             s if s.matches("createTime") /* CreateTime com.amazonaws.ec2.synthetic#CreateCapacityReservationFleetOutput$CreateTime */ =>  {
                 let var_7 =
                     Some(
-                        aws_smithy_types::DateTime::from_str(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::date_time::Format::DateTimeWithOffset
+                        ::aws_smithy_types::DateTime::from_str(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            , ::aws_smithy_types::date_time::Format::DateTimeWithOffset
                         )
-                        .map_err(|_|aws_smithy_xml::decode::XmlDecodeError::custom("expected (timestamp: `com.amazonaws.ec2#MillisecondDateTime`)"))
+                        .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (timestamp: `com.amazonaws.ec2#MillisecondDateTime`)"))
                         ?
                     )
                 ;
@@ -152,11 +152,11 @@ pub fn de_create_capacity_reservation_fleet(inp: &[u8], mut builder: crate::oper
             s if s.matches("endDate") /* EndDate com.amazonaws.ec2.synthetic#CreateCapacityReservationFleetOutput$EndDate */ =>  {
                 let var_8 =
                     Some(
-                        aws_smithy_types::DateTime::from_str(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::date_time::Format::DateTimeWithOffset
+                        ::aws_smithy_types::DateTime::from_str(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            , ::aws_smithy_types::date_time::Format::DateTimeWithOffset
                         )
-                        .map_err(|_|aws_smithy_xml::decode::XmlDecodeError::custom("expected (timestamp: `com.amazonaws.ec2#MillisecondDateTime`)"))
+                        .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (timestamp: `com.amazonaws.ec2#MillisecondDateTime`)"))
                         ?
                     )
                 ;
@@ -166,9 +166,9 @@ pub fn de_create_capacity_reservation_fleet(inp: &[u8], mut builder: crate::oper
             s if s.matches("tenancy") /* Tenancy com.amazonaws.ec2.synthetic#CreateCapacityReservationFleetOutput$Tenancy */ =>  {
                 let var_9 =
                     Some(
-                        Result::<crate::types::FleetCapacityReservationTenancy, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                        Result::<crate::types::FleetCapacityReservationTenancy, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::FleetCapacityReservationTenancy::from(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )
                         ?

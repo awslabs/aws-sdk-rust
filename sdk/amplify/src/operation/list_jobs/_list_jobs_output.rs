@@ -2,27 +2,27 @@
 
 /// <p> The maximum number of records to list in a single response. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListJobsOutput {
     /// <p> The result structure for the list job result request. </p>
     #[doc(hidden)]
-    pub job_summaries: std::option::Option<std::vec::Vec<crate::types::JobSummary>>,
+    pub job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::JobSummary>>,
     /// <p> A pagination token. If non-null the pagination token is returned in a result. Pass its value in another request to retrieve more entries. </p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListJobsOutput {
     /// <p> The result structure for the list job result request. </p>
-    pub fn job_summaries(&self) -> std::option::Option<&[crate::types::JobSummary]> {
+    pub fn job_summaries(&self) -> ::std::option::Option<&[crate::types::JobSummary]> {
         self.job_summaries.as_deref()
     }
     /// <p> A pagination token. If non-null the pagination token is returned in a result. Pass its value in another request to retrieve more entries. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListJobsOutput {
+impl ::aws_http::request_id::RequestId for ListJobsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -36,10 +36,12 @@ impl ListJobsOutput {
 
 /// A builder for [`ListJobsOutput`](crate::operation::list_jobs::ListJobsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListJobsOutputBuilder {
-    pub(crate) job_summaries: std::option::Option<std::vec::Vec<crate::types::JobSummary>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) job_summaries: ::std::option::Option<::std::vec::Vec<crate::types::JobSummary>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListJobsOutputBuilder {
@@ -51,24 +53,24 @@ impl ListJobsOutputBuilder {
     pub fn job_summaries(mut self, input: crate::types::JobSummary) -> Self {
         let mut v = self.job_summaries.unwrap_or_default();
         v.push(input);
-        self.job_summaries = Some(v);
+        self.job_summaries = ::std::option::Option::Some(v);
         self
     }
     /// <p> The result structure for the list job result request. </p>
     pub fn set_job_summaries(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::JobSummary>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::JobSummary>>,
     ) -> Self {
         self.job_summaries = input;
         self
     }
     /// <p> A pagination token. If non-null the pagination token is returned in a result. Pass its value in another request to retrieve more entries. </p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> A pagination token. If non-null the pagination token is returned in a result. Pass its value in another request to retrieve more entries. </p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

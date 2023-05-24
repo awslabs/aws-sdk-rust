@@ -8,29 +8,29 @@ pub use crate::operation::update_notification_rule::_update_notification_rule_in
 /// <p>Updates a notification rule for a resource. You can change the events that trigger the notification rule, the status of the rule, and the targets that receive the notifications.</p> <note>
 /// <p>To add or remove tags for a notification rule, you must use <code>TagResource</code> and <code>UntagResource</code>.</p>
 /// </note>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateNotificationRuleFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::update_notification_rule::builders::UpdateNotificationRuleInputBuilder,
 }
 impl UpdateNotificationRuleFluentBuilder {
     /// Creates a new `UpdateNotificationRule`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_notification_rule::UpdateNotificationRule,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_notification_rule::UpdateNotificationRuleError,
         >,
     > {
@@ -38,30 +38,33 @@ impl UpdateNotificationRuleFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_notification_rule::UpdateNotificationRuleOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_notification_rule::UpdateNotificationRuleError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -74,31 +77,31 @@ impl UpdateNotificationRuleFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_notification_rule::UpdateNotificationRuleOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_notification_rule::UpdateNotificationRuleError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the notification rule.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the notification rule.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_arn(input);
         self
     }
     /// <p>The name of the notification rule.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// <p>The name of the notification rule.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
@@ -110,7 +113,7 @@ impl UpdateNotificationRuleFluentBuilder {
     /// <p>The status of the notification rule. Valid statuses include enabled (sending notifications) or disabled (not sending notifications).</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::NotificationRuleStatus>,
+        input: ::std::option::Option<crate::types::NotificationRuleStatus>,
     ) -> Self {
         self.inner = self.inner.set_status(input);
         self
@@ -120,14 +123,17 @@ impl UpdateNotificationRuleFluentBuilder {
     /// To override the contents of this collection use [`set_event_type_ids`](Self::set_event_type_ids).
     ///
     /// <p>A list of event types associated with this notification rule. For a complete list of event types and IDs, see <a href="https://docs.aws.amazon.com/codestar-notifications/latest/userguide/concepts.html#concepts-api">Notification concepts</a> in the <i>Developer Tools Console User Guide</i>.</p>
-    pub fn event_type_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn event_type_ids(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.event_type_ids(input.into());
         self
     }
     /// <p>A list of event types associated with this notification rule. For a complete list of event types and IDs, see <a href="https://docs.aws.amazon.com/codestar-notifications/latest/userguide/concepts.html#concepts-api">Notification concepts</a> in the <i>Developer Tools Console User Guide</i>.</p>
     pub fn set_event_type_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_event_type_ids(input);
         self
@@ -144,7 +150,7 @@ impl UpdateNotificationRuleFluentBuilder {
     /// <p>The address and type of the targets to receive notifications from this notification rule.</p>
     pub fn set_targets(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Target>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
     ) -> Self {
         self.inner = self.inner.set_targets(input);
         self
@@ -155,7 +161,10 @@ impl UpdateNotificationRuleFluentBuilder {
         self
     }
     /// <p>The level of detail to include in the notifications for this resource. BASIC will include only the contents of the event as it would appear in Amazon CloudWatch. FULL will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
-    pub fn set_detail_type(mut self, input: std::option::Option<crate::types::DetailType>) -> Self {
+    pub fn set_detail_type(
+        mut self,
+        input: ::std::option::Option<crate::types::DetailType>,
+    ) -> Self {
         self.inner = self.inner.set_detail_type(input);
         self
     }

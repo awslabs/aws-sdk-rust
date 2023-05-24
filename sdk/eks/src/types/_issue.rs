@@ -2,7 +2,7 @@
 
 /// <p>An object representing an issue with an Amazon EKS resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Issue {
     /// <p>A brief description of the error.</p>
     /// <ul>
@@ -23,13 +23,13 @@ pub struct Issue {
     /// <li> <p> <b>NodeCreationFailure</b>: Your launched instances are unable to register with your Amazon EKS cluster. Common causes of this failure are insufficient <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html">node IAM role</a> permissions or lack of outbound internet access for the nodes. </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub code: std::option::Option<crate::types::NodegroupIssueCode>,
+    pub code: ::std::option::Option<crate::types::NodegroupIssueCode>,
     /// <p>The error message associated with the issue.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services resources that are afflicted by this issue.</p>
     #[doc(hidden)]
-    pub resource_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub resource_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Issue {
     /// <p>A brief description of the error.</p>
@@ -50,15 +50,15 @@ impl Issue {
     /// <li> <p> <b>InternalFailure</b>: These errors are usually caused by an Amazon EKS server-side issue.</p> </li>
     /// <li> <p> <b>NodeCreationFailure</b>: Your launched instances are unable to register with your Amazon EKS cluster. Common causes of this failure are insufficient <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html">node IAM role</a> permissions or lack of outbound internet access for the nodes. </p> </li>
     /// </ul>
-    pub fn code(&self) -> std::option::Option<&crate::types::NodegroupIssueCode> {
+    pub fn code(&self) -> ::std::option::Option<&crate::types::NodegroupIssueCode> {
         self.code.as_ref()
     }
     /// <p>The error message associated with the issue.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
     /// <p>The Amazon Web Services resources that are afflicted by this issue.</p>
-    pub fn resource_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn resource_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.resource_ids.as_deref()
     }
 }
@@ -71,11 +71,13 @@ impl Issue {
 
 /// A builder for [`Issue`](crate::types::Issue).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct IssueBuilder {
-    pub(crate) code: std::option::Option<crate::types::NodegroupIssueCode>,
-    pub(crate) message: std::option::Option<std::string::String>,
-    pub(crate) resource_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) code: ::std::option::Option<crate::types::NodegroupIssueCode>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl IssueBuilder {
     /// <p>A brief description of the error.</p>
@@ -97,7 +99,7 @@ impl IssueBuilder {
     /// <li> <p> <b>NodeCreationFailure</b>: Your launched instances are unable to register with your Amazon EKS cluster. Common causes of this failure are insufficient <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html">node IAM role</a> permissions or lack of outbound internet access for the nodes. </p> </li>
     /// </ul>
     pub fn code(mut self, input: crate::types::NodegroupIssueCode) -> Self {
-        self.code = Some(input);
+        self.code = ::std::option::Option::Some(input);
         self
     }
     /// <p>A brief description of the error.</p>
@@ -120,18 +122,18 @@ impl IssueBuilder {
     /// </ul>
     pub fn set_code(
         mut self,
-        input: std::option::Option<crate::types::NodegroupIssueCode>,
+        input: ::std::option::Option<crate::types::NodegroupIssueCode>,
     ) -> Self {
         self.code = input;
         self
     }
     /// <p>The error message associated with the issue.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The error message associated with the issue.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
@@ -140,16 +142,16 @@ impl IssueBuilder {
     /// To override the contents of this collection use [`set_resource_ids`](Self::set_resource_ids).
     ///
     /// <p>The Amazon Web Services resources that are afflicted by this issue.</p>
-    pub fn resource_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn resource_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resource_ids.unwrap_or_default();
         v.push(input.into());
-        self.resource_ids = Some(v);
+        self.resource_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Amazon Web Services resources that are afflicted by this issue.</p>
     pub fn set_resource_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.resource_ids = input;
         self

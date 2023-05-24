@@ -2,7 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_detach_volume_http_error(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::detach_volume::DetachVolumeOutput,
@@ -15,7 +15,7 @@ pub fn de_detach_volume_http_error(
         _response_body,
     )
     .map_err(crate::operation::detach_volume::DetachVolumeError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
+    generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     Err(crate::operation::detach_volume::DetachVolumeError::generic(
         generic,
@@ -25,7 +25,7 @@ pub fn de_detach_volume_http_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_detach_volume_http_response_with_props(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::detach_volume::DetachVolumeOutput,
@@ -39,7 +39,7 @@ pub fn de_detach_volume_http_response_with_props(
             crate::protocol_serde::shape_detach_volume::de_detach_volume(_response_body, output)
                 .map_err(crate::operation::detach_volume::DetachVolumeError::unhandled)?;
         output._set_request_id(
-            aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
+            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
         );
         output.build()
     })
@@ -51,16 +51,16 @@ pub fn de_detach_volume(
     mut builder: crate::operation::detach_volume::builders::DetachVolumeOutputBuilder,
 ) -> Result<
     crate::operation::detach_volume::builders::DetachVolumeOutputBuilder,
-    aws_smithy_xml::decode::XmlDecodeError,
+    ::aws_smithy_xml::decode::XmlDecodeError,
 > {
-    let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
+    let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DetachVolumeResponse")) {
-        return Err(aws_smithy_xml::decode::XmlDecodeError::custom(format!(
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DetachVolumeResponse got {:?}",
             start_el
         )));
@@ -70,11 +70,11 @@ pub fn de_detach_volume(
             s if s.matches("attachTime") /* AttachTime com.amazonaws.ec2.synthetic#DetachVolumeOutput$AttachTime */ =>  {
                 let var_1 =
                     Some(
-                        aws_smithy_types::DateTime::from_str(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::date_time::Format::DateTimeWithOffset
+                        ::aws_smithy_types::DateTime::from_str(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            , ::aws_smithy_types::date_time::Format::DateTimeWithOffset
                         )
-                        .map_err(|_|aws_smithy_xml::decode::XmlDecodeError::custom("expected (timestamp: `com.amazonaws.ec2#DateTime`)"))
+                        .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (timestamp: `com.amazonaws.ec2#DateTime`)"))
                         ?
                     )
                 ;
@@ -84,8 +84,8 @@ pub fn de_detach_volume(
             s if s.matches("device") /* Device com.amazonaws.ec2.synthetic#DetachVolumeOutput$Device */ =>  {
                 let var_2 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -97,8 +97,8 @@ pub fn de_detach_volume(
             s if s.matches("instanceId") /* InstanceId com.amazonaws.ec2.synthetic#DetachVolumeOutput$InstanceId */ =>  {
                 let var_3 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -110,9 +110,9 @@ pub fn de_detach_volume(
             s if s.matches("status") /* State com.amazonaws.ec2.synthetic#DetachVolumeOutput$State */ =>  {
                 let var_4 =
                     Some(
-                        Result::<crate::types::VolumeAttachmentState, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                        Result::<crate::types::VolumeAttachmentState, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::VolumeAttachmentState::from(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )
                         ?
@@ -124,8 +124,8 @@ pub fn de_detach_volume(
             s if s.matches("volumeId") /* VolumeId com.amazonaws.ec2.synthetic#DetachVolumeOutput$VolumeId */ =>  {
                 let var_5 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -138,10 +138,10 @@ pub fn de_detach_volume(
                 let var_6 =
                     Some(
                          {
-                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
-                            .map_err(|_|aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
                         }
                         ?
                     )

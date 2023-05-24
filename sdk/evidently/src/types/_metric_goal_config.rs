@@ -2,24 +2,26 @@
 
 /// <p>Use this structure to tell Evidently whether higher or lower values are desired for a metric that is used in an experiment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetricGoalConfig {
     /// <p>A structure that contains details about the metric.</p>
     #[doc(hidden)]
-    pub metric_definition: std::option::Option<crate::types::MetricDefinitionConfig>,
+    pub metric_definition: ::std::option::Option<crate::types::MetricDefinitionConfig>,
     /// <p> <code>INCREASE</code> means that a variation with a higher number for this metric is performing better.</p>
     /// <p> <code>DECREASE</code> means that a variation with a lower number for this metric is performing better.</p>
     #[doc(hidden)]
-    pub desired_change: std::option::Option<crate::types::ChangeDirectionEnum>,
+    pub desired_change: ::std::option::Option<crate::types::ChangeDirectionEnum>,
 }
 impl MetricGoalConfig {
     /// <p>A structure that contains details about the metric.</p>
-    pub fn metric_definition(&self) -> std::option::Option<&crate::types::MetricDefinitionConfig> {
+    pub fn metric_definition(
+        &self,
+    ) -> ::std::option::Option<&crate::types::MetricDefinitionConfig> {
         self.metric_definition.as_ref()
     }
     /// <p> <code>INCREASE</code> means that a variation with a higher number for this metric is performing better.</p>
     /// <p> <code>DECREASE</code> means that a variation with a lower number for this metric is performing better.</p>
-    pub fn desired_change(&self) -> std::option::Option<&crate::types::ChangeDirectionEnum> {
+    pub fn desired_change(&self) -> ::std::option::Option<&crate::types::ChangeDirectionEnum> {
         self.desired_change.as_ref()
     }
 }
@@ -32,21 +34,23 @@ impl MetricGoalConfig {
 
 /// A builder for [`MetricGoalConfig`](crate::types::MetricGoalConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MetricGoalConfigBuilder {
-    pub(crate) metric_definition: std::option::Option<crate::types::MetricDefinitionConfig>,
-    pub(crate) desired_change: std::option::Option<crate::types::ChangeDirectionEnum>,
+    pub(crate) metric_definition: ::std::option::Option<crate::types::MetricDefinitionConfig>,
+    pub(crate) desired_change: ::std::option::Option<crate::types::ChangeDirectionEnum>,
 }
 impl MetricGoalConfigBuilder {
     /// <p>A structure that contains details about the metric.</p>
     pub fn metric_definition(mut self, input: crate::types::MetricDefinitionConfig) -> Self {
-        self.metric_definition = Some(input);
+        self.metric_definition = ::std::option::Option::Some(input);
         self
     }
     /// <p>A structure that contains details about the metric.</p>
     pub fn set_metric_definition(
         mut self,
-        input: std::option::Option<crate::types::MetricDefinitionConfig>,
+        input: ::std::option::Option<crate::types::MetricDefinitionConfig>,
     ) -> Self {
         self.metric_definition = input;
         self
@@ -54,14 +58,14 @@ impl MetricGoalConfigBuilder {
     /// <p> <code>INCREASE</code> means that a variation with a higher number for this metric is performing better.</p>
     /// <p> <code>DECREASE</code> means that a variation with a lower number for this metric is performing better.</p>
     pub fn desired_change(mut self, input: crate::types::ChangeDirectionEnum) -> Self {
-        self.desired_change = Some(input);
+        self.desired_change = ::std::option::Option::Some(input);
         self
     }
     /// <p> <code>INCREASE</code> means that a variation with a higher number for this metric is performing better.</p>
     /// <p> <code>DECREASE</code> means that a variation with a lower number for this metric is performing better.</p>
     pub fn set_desired_change(
         mut self,
-        input: std::option::Option<crate::types::ChangeDirectionEnum>,
+        input: ::std::option::Option<crate::types::ChangeDirectionEnum>,
     ) -> Self {
         self.desired_change = input;
         self

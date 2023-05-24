@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum CandidateSortBy {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum CandidateSortBy {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for CandidateSortBy {
+impl ::std::convert::From<&str> for CandidateSortBy {
     fn from(s: &str) -> Self {
         match s {
             "CreationTime" => CandidateSortBy::CreationTime,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for CandidateSortBy {
         }
     }
 }
-impl std::str::FromStr for CandidateSortBy {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for CandidateSortBy {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CandidateSortBy::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(CandidateSortBy::from(s))
     }
 }
 impl CandidateSortBy {
@@ -91,7 +91,7 @@ impl CandidateSortBy {
         &["CreationTime", "FinalObjectiveMetricValue", "Status"]
     }
 }
-impl AsRef<str> for CandidateSortBy {
+impl ::std::convert::AsRef<str> for CandidateSortBy {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

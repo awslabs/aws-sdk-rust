@@ -39,13 +39,13 @@
 /// Hls Output Selection
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum HlsOutputSelection {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum HlsOutputSelection {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for HlsOutputSelection {
+impl ::std::convert::From<&str> for HlsOutputSelection {
     fn from(s: &str) -> Self {
         match s {
             "MANIFESTS_AND_SEGMENTS" => HlsOutputSelection::ManifestsAndSegments,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for HlsOutputSelection {
         }
     }
 }
-impl std::str::FromStr for HlsOutputSelection {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for HlsOutputSelection {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(HlsOutputSelection::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(HlsOutputSelection::from(s))
     }
 }
 impl HlsOutputSelection {
@@ -95,7 +95,7 @@ impl HlsOutputSelection {
         ]
     }
 }
-impl AsRef<str> for HlsOutputSelection {
+impl ::std::convert::AsRef<str> for HlsOutputSelection {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

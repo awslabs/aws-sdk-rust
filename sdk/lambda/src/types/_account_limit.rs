@@ -2,7 +2,7 @@
 
 /// <p>Limits that are related to concurrency and storage. All file and storage sizes are in bytes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccountLimit {
     /// <p>The amount of storage space that you can use for all deployment packages and layer archives.</p>
     #[doc(hidden)]
@@ -18,7 +18,7 @@ pub struct AccountLimit {
     pub concurrent_executions: i32,
     /// <p>The maximum number of simultaneous function executions, minus the capacity that's reserved for individual functions with <code>PutFunctionConcurrency</code>.</p>
     #[doc(hidden)]
-    pub unreserved_concurrent_executions: std::option::Option<i32>,
+    pub unreserved_concurrent_executions: ::std::option::Option<i32>,
 }
 impl AccountLimit {
     /// <p>The amount of storage space that you can use for all deployment packages and layer archives.</p>
@@ -38,7 +38,7 @@ impl AccountLimit {
         self.concurrent_executions
     }
     /// <p>The maximum number of simultaneous function executions, minus the capacity that's reserved for individual functions with <code>PutFunctionConcurrency</code>.</p>
-    pub fn unreserved_concurrent_executions(&self) -> std::option::Option<i32> {
+    pub fn unreserved_concurrent_executions(&self) -> ::std::option::Option<i32> {
         self.unreserved_concurrent_executions
     }
 }
@@ -51,62 +51,67 @@ impl AccountLimit {
 
 /// A builder for [`AccountLimit`](crate::types::AccountLimit).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AccountLimitBuilder {
-    pub(crate) total_code_size: std::option::Option<i64>,
-    pub(crate) code_size_unzipped: std::option::Option<i64>,
-    pub(crate) code_size_zipped: std::option::Option<i64>,
-    pub(crate) concurrent_executions: std::option::Option<i32>,
-    pub(crate) unreserved_concurrent_executions: std::option::Option<i32>,
+    pub(crate) total_code_size: ::std::option::Option<i64>,
+    pub(crate) code_size_unzipped: ::std::option::Option<i64>,
+    pub(crate) code_size_zipped: ::std::option::Option<i64>,
+    pub(crate) concurrent_executions: ::std::option::Option<i32>,
+    pub(crate) unreserved_concurrent_executions: ::std::option::Option<i32>,
 }
 impl AccountLimitBuilder {
     /// <p>The amount of storage space that you can use for all deployment packages and layer archives.</p>
     pub fn total_code_size(mut self, input: i64) -> Self {
-        self.total_code_size = Some(input);
+        self.total_code_size = ::std::option::Option::Some(input);
         self
     }
     /// <p>The amount of storage space that you can use for all deployment packages and layer archives.</p>
-    pub fn set_total_code_size(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_total_code_size(mut self, input: ::std::option::Option<i64>) -> Self {
         self.total_code_size = input;
         self
     }
     /// <p>The maximum size of a function's deployment package and layers when they're extracted.</p>
     pub fn code_size_unzipped(mut self, input: i64) -> Self {
-        self.code_size_unzipped = Some(input);
+        self.code_size_unzipped = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum size of a function's deployment package and layers when they're extracted.</p>
-    pub fn set_code_size_unzipped(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_code_size_unzipped(mut self, input: ::std::option::Option<i64>) -> Self {
         self.code_size_unzipped = input;
         self
     }
     /// <p>The maximum size of a deployment package when it's uploaded directly to Lambda. Use Amazon S3 for larger files.</p>
     pub fn code_size_zipped(mut self, input: i64) -> Self {
-        self.code_size_zipped = Some(input);
+        self.code_size_zipped = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum size of a deployment package when it's uploaded directly to Lambda. Use Amazon S3 for larger files.</p>
-    pub fn set_code_size_zipped(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_code_size_zipped(mut self, input: ::std::option::Option<i64>) -> Self {
         self.code_size_zipped = input;
         self
     }
     /// <p>The maximum number of simultaneous function executions.</p>
     pub fn concurrent_executions(mut self, input: i32) -> Self {
-        self.concurrent_executions = Some(input);
+        self.concurrent_executions = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum number of simultaneous function executions.</p>
-    pub fn set_concurrent_executions(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_concurrent_executions(mut self, input: ::std::option::Option<i32>) -> Self {
         self.concurrent_executions = input;
         self
     }
     /// <p>The maximum number of simultaneous function executions, minus the capacity that's reserved for individual functions with <code>PutFunctionConcurrency</code>.</p>
     pub fn unreserved_concurrent_executions(mut self, input: i32) -> Self {
-        self.unreserved_concurrent_executions = Some(input);
+        self.unreserved_concurrent_executions = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum number of simultaneous function executions, minus the capacity that's reserved for individual functions with <code>PutFunctionConcurrency</code>.</p>
-    pub fn set_unreserved_concurrent_executions(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_unreserved_concurrent_executions(
+        mut self,
+        input: ::std::option::Option<i32>,
+    ) -> Self {
         self.unreserved_concurrent_executions = input;
         self
     }

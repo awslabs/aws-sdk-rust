@@ -2,20 +2,20 @@
 
 /// <p>Details for the requested item.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ItemResponse {
     /// <p>Map of attribute data consisting of the data type and attribute value.</p>
     #[doc(hidden)]
-    pub item: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::AttributeValue>,
+    pub item: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>,
     >,
 }
 impl ItemResponse {
     /// <p>Map of attribute data consisting of the data type and attribute value.</p>
     pub fn item(
         &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::types::AttributeValue>,
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>,
     > {
         self.item.as_ref()
     }
@@ -29,10 +29,12 @@ impl ItemResponse {
 
 /// A builder for [`ItemResponse`](crate::types::ItemResponse).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ItemResponseBuilder {
-    pub(crate) item: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::AttributeValue>,
+    pub(crate) item: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>,
     >,
 }
 impl ItemResponseBuilder {
@@ -43,19 +45,19 @@ impl ItemResponseBuilder {
     /// <p>Map of attribute data consisting of the data type and attribute value.</p>
     pub fn item(
         mut self,
-        k: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
         v: crate::types::AttributeValue,
     ) -> Self {
         let mut hash_map = self.item.unwrap_or_default();
         hash_map.insert(k.into(), v);
-        self.item = Some(hash_map);
+        self.item = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Map of attribute data consisting of the data type and attribute value.</p>
     pub fn set_item(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::types::AttributeValue>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, crate::types::AttributeValue>,
         >,
     ) -> Self {
         self.item = input;

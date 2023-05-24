@@ -2,24 +2,24 @@
 
 /// <p>Represents a request to return the requested sending authorization policies for an identity. Sending authorization is an Amazon SES feature that enables you to authorize other senders to use your identities. For information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetIdentityPoliciesInput {
     /// <p>The identity for which the policies will be retrieved. You can specify an identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
     /// <p>To successfully call this API, you must own the identity.</p>
     #[doc(hidden)]
-    pub identity: std::option::Option<std::string::String>,
+    pub identity: ::std::option::Option<::std::string::String>,
     /// <p>A list of the names of policies to be retrieved. You can retrieve a maximum of 20 policies at a time. If you do not know the names of the policies that are attached to the identity, you can use <code>ListIdentityPolicies</code>.</p>
     #[doc(hidden)]
-    pub policy_names: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub policy_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl GetIdentityPoliciesInput {
     /// <p>The identity for which the policies will be retrieved. You can specify an identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
     /// <p>To successfully call this API, you must own the identity.</p>
-    pub fn identity(&self) -> std::option::Option<&str> {
+    pub fn identity(&self) -> ::std::option::Option<&str> {
         self.identity.as_deref()
     }
     /// <p>A list of the names of policies to be retrieved. You can retrieve a maximum of 20 policies at a time. If you do not know the names of the policies that are attached to the identity, you can use <code>ListIdentityPolicies</code>.</p>
-    pub fn policy_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn policy_names(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.policy_names.as_deref()
     }
 }
@@ -34,21 +34,23 @@ impl GetIdentityPoliciesInput {
 
 /// A builder for [`GetIdentityPoliciesInput`](crate::operation::get_identity_policies::GetIdentityPoliciesInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetIdentityPoliciesInputBuilder {
-    pub(crate) identity: std::option::Option<std::string::String>,
-    pub(crate) policy_names: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) identity: ::std::option::Option<::std::string::String>,
+    pub(crate) policy_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl GetIdentityPoliciesInputBuilder {
     /// <p>The identity for which the policies will be retrieved. You can specify an identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
     /// <p>To successfully call this API, you must own the identity.</p>
-    pub fn identity(mut self, input: impl Into<std::string::String>) -> Self {
-        self.identity = Some(input.into());
+    pub fn identity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.identity = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identity for which the policies will be retrieved. You can specify an identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
     /// <p>To successfully call this API, you must own the identity.</p>
-    pub fn set_identity(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_identity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identity = input;
         self
     }
@@ -57,16 +59,16 @@ impl GetIdentityPoliciesInputBuilder {
     /// To override the contents of this collection use [`set_policy_names`](Self::set_policy_names).
     ///
     /// <p>A list of the names of policies to be retrieved. You can retrieve a maximum of 20 policies at a time. If you do not know the names of the policies that are attached to the identity, you can use <code>ListIdentityPolicies</code>.</p>
-    pub fn policy_names(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn policy_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.policy_names.unwrap_or_default();
         v.push(input.into());
-        self.policy_names = Some(v);
+        self.policy_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of the names of policies to be retrieved. You can retrieve a maximum of 20 policies at a time. If you do not know the names of the policies that are attached to the identity, you can use <code>ListIdentityPolicies</code>.</p>
     pub fn set_policy_names(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.policy_names = input;
         self
@@ -74,11 +76,11 @@ impl GetIdentityPoliciesInputBuilder {
     /// Consumes the builder and constructs a [`GetIdentityPoliciesInput`](crate::operation::get_identity_policies::GetIdentityPoliciesInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::get_identity_policies::GetIdentityPoliciesInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::get_identity_policies::GetIdentityPoliciesInput {
                 identity: self.identity,
                 policy_names: self.policy_names,

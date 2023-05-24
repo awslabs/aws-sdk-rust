@@ -2,7 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_modify_db_cluster_endpoint_http_error(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::modify_db_cluster_endpoint::ModifyDbClusterEndpointOutput,
@@ -17,7 +17,7 @@ pub fn de_modify_db_cluster_endpoint_http_error(
     .map_err(
         crate::operation::modify_db_cluster_endpoint::ModifyDBClusterEndpointError::unhandled,
     )?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
+    generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
@@ -117,7 +117,7 @@ pub fn de_modify_db_cluster_endpoint_http_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_modify_db_cluster_endpoint_http_response_with_props(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::modify_db_cluster_endpoint::ModifyDbClusterEndpointOutput,
@@ -128,7 +128,7 @@ pub fn de_modify_db_cluster_endpoint_http_response_with_props(
         let mut output = crate::operation::modify_db_cluster_endpoint::builders::ModifyDbClusterEndpointOutputBuilder::default();
         output = crate::protocol_serde::shape_modify_db_cluster_endpoint::de_modify_db_cluster_endpoint(_response_body, output).map_err(crate::operation::modify_db_cluster_endpoint::ModifyDBClusterEndpointError::unhandled)?;
         output._set_request_id(
-            aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
+            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
         );
         output.build()
     })
@@ -140,16 +140,16 @@ pub fn de_modify_db_cluster_endpoint(
     mut builder: crate::operation::modify_db_cluster_endpoint::builders::ModifyDbClusterEndpointOutputBuilder,
 ) -> Result<
     crate::operation::modify_db_cluster_endpoint::builders::ModifyDbClusterEndpointOutputBuilder,
-    aws_smithy_xml::decode::XmlDecodeError,
+    ::aws_smithy_xml::decode::XmlDecodeError,
 > {
-    let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
+    let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifyDBClusterEndpointResponse")) {
-        return Err(aws_smithy_xml::decode::XmlDecodeError::custom(format!(
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ModifyDBClusterEndpointResponse got {:?}",
             start_el
         )));
@@ -157,7 +157,7 @@ pub fn de_modify_db_cluster_endpoint(
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("ModifyDBClusterEndpointResult")) {
-            return Err(aws_smithy_xml::decode::XmlDecodeError::custom(format!(
+            return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
                 "invalid result, expected ModifyDBClusterEndpointResult got {:?}",
                 start_el
             )));
@@ -167,8 +167,8 @@ pub fn de_modify_db_cluster_endpoint(
             s if s.matches("DBClusterEndpointIdentifier") /* DBClusterEndpointIdentifier com.amazonaws.neptune.synthetic#ModifyDBClusterEndpointOutput$DBClusterEndpointIdentifier */ =>  {
                 let var_1 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -180,8 +180,8 @@ pub fn de_modify_db_cluster_endpoint(
             s if s.matches("DBClusterIdentifier") /* DBClusterIdentifier com.amazonaws.neptune.synthetic#ModifyDBClusterEndpointOutput$DBClusterIdentifier */ =>  {
                 let var_2 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -193,8 +193,8 @@ pub fn de_modify_db_cluster_endpoint(
             s if s.matches("DBClusterEndpointResourceIdentifier") /* DBClusterEndpointResourceIdentifier com.amazonaws.neptune.synthetic#ModifyDBClusterEndpointOutput$DBClusterEndpointResourceIdentifier */ =>  {
                 let var_3 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -206,8 +206,8 @@ pub fn de_modify_db_cluster_endpoint(
             s if s.matches("Endpoint") /* Endpoint com.amazonaws.neptune.synthetic#ModifyDBClusterEndpointOutput$Endpoint */ =>  {
                 let var_4 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -219,8 +219,8 @@ pub fn de_modify_db_cluster_endpoint(
             s if s.matches("Status") /* Status com.amazonaws.neptune.synthetic#ModifyDBClusterEndpointOutput$Status */ =>  {
                 let var_5 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -232,8 +232,8 @@ pub fn de_modify_db_cluster_endpoint(
             s if s.matches("EndpointType") /* EndpointType com.amazonaws.neptune.synthetic#ModifyDBClusterEndpointOutput$EndpointType */ =>  {
                 let var_6 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -245,8 +245,8 @@ pub fn de_modify_db_cluster_endpoint(
             s if s.matches("CustomEndpointType") /* CustomEndpointType com.amazonaws.neptune.synthetic#ModifyDBClusterEndpointOutput$CustomEndpointType */ =>  {
                 let var_7 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -278,8 +278,8 @@ pub fn de_modify_db_cluster_endpoint(
             s if s.matches("DBClusterEndpointArn") /* DBClusterEndpointArn com.amazonaws.neptune.synthetic#ModifyDBClusterEndpointOutput$DBClusterEndpointArn */ =>  {
                 let var_10 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -292,7 +292,7 @@ pub fn de_modify_db_cluster_endpoint(
         }
         }
     } else {
-        return Err(aws_smithy_xml::decode::XmlDecodeError::custom(
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(
             "expected ModifyDBClusterEndpointResult tag",
         ));
     };

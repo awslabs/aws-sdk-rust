@@ -2,31 +2,31 @@
 
 /// <p>Metadata options that allow you to configure and secure the Amazon EC2 instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2InstanceMetadataOptions {
     /// <p>Enables or disables the HTTP metadata endpoint on the instance. </p>
     #[doc(hidden)]
-    pub http_endpoint: std::option::Option<std::string::String>,
+    pub http_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>Enables or disables the IPv6 endpoint for the instance metadata service. </p>
     #[doc(hidden)]
-    pub http_protocol_ipv6: std::option::Option<std::string::String>,
+    pub http_protocol_ipv6: ::std::option::Option<::std::string::String>,
     /// <p>The desired HTTP PUT response hop limit for instance metadata requests. The larger the number, the further instance metadata requests can travel. </p>
     #[doc(hidden)]
     pub http_put_response_hop_limit: i32,
     /// <p>The state of token usage for your instance metadata requests. </p>
     #[doc(hidden)]
-    pub http_tokens: std::option::Option<std::string::String>,
+    pub http_tokens: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether to allow access to instance tags from the instance metadata. </p>
     #[doc(hidden)]
-    pub instance_metadata_tags: std::option::Option<std::string::String>,
+    pub instance_metadata_tags: ::std::option::Option<::std::string::String>,
 }
 impl AwsEc2InstanceMetadataOptions {
     /// <p>Enables or disables the HTTP metadata endpoint on the instance. </p>
-    pub fn http_endpoint(&self) -> std::option::Option<&str> {
+    pub fn http_endpoint(&self) -> ::std::option::Option<&str> {
         self.http_endpoint.as_deref()
     }
     /// <p>Enables or disables the IPv6 endpoint for the instance metadata service. </p>
-    pub fn http_protocol_ipv6(&self) -> std::option::Option<&str> {
+    pub fn http_protocol_ipv6(&self) -> ::std::option::Option<&str> {
         self.http_protocol_ipv6.as_deref()
     }
     /// <p>The desired HTTP PUT response hop limit for instance metadata requests. The larger the number, the further instance metadata requests can travel. </p>
@@ -34,11 +34,11 @@ impl AwsEc2InstanceMetadataOptions {
         self.http_put_response_hop_limit
     }
     /// <p>The state of token usage for your instance metadata requests. </p>
-    pub fn http_tokens(&self) -> std::option::Option<&str> {
+    pub fn http_tokens(&self) -> ::std::option::Option<&str> {
         self.http_tokens.as_deref()
     }
     /// <p>Specifies whether to allow access to instance tags from the instance metadata. </p>
-    pub fn instance_metadata_tags(&self) -> std::option::Option<&str> {
+    pub fn instance_metadata_tags(&self) -> ::std::option::Option<&str> {
         self.instance_metadata_tags.as_deref()
     }
 }
@@ -51,67 +51,81 @@ impl AwsEc2InstanceMetadataOptions {
 
 /// A builder for [`AwsEc2InstanceMetadataOptions`](crate::types::AwsEc2InstanceMetadataOptions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsEc2InstanceMetadataOptionsBuilder {
-    pub(crate) http_endpoint: std::option::Option<std::string::String>,
-    pub(crate) http_protocol_ipv6: std::option::Option<std::string::String>,
-    pub(crate) http_put_response_hop_limit: std::option::Option<i32>,
-    pub(crate) http_tokens: std::option::Option<std::string::String>,
-    pub(crate) instance_metadata_tags: std::option::Option<std::string::String>,
+    pub(crate) http_endpoint: ::std::option::Option<::std::string::String>,
+    pub(crate) http_protocol_ipv6: ::std::option::Option<::std::string::String>,
+    pub(crate) http_put_response_hop_limit: ::std::option::Option<i32>,
+    pub(crate) http_tokens: ::std::option::Option<::std::string::String>,
+    pub(crate) instance_metadata_tags: ::std::option::Option<::std::string::String>,
 }
 impl AwsEc2InstanceMetadataOptionsBuilder {
     /// <p>Enables or disables the HTTP metadata endpoint on the instance. </p>
-    pub fn http_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
-        self.http_endpoint = Some(input.into());
+    pub fn http_endpoint(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.http_endpoint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Enables or disables the HTTP metadata endpoint on the instance. </p>
-    pub fn set_http_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_http_endpoint(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.http_endpoint = input;
         self
     }
     /// <p>Enables or disables the IPv6 endpoint for the instance metadata service. </p>
-    pub fn http_protocol_ipv6(mut self, input: impl Into<std::string::String>) -> Self {
-        self.http_protocol_ipv6 = Some(input.into());
+    pub fn http_protocol_ipv6(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.http_protocol_ipv6 = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Enables or disables the IPv6 endpoint for the instance metadata service. </p>
     pub fn set_http_protocol_ipv6(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.http_protocol_ipv6 = input;
         self
     }
     /// <p>The desired HTTP PUT response hop limit for instance metadata requests. The larger the number, the further instance metadata requests can travel. </p>
     pub fn http_put_response_hop_limit(mut self, input: i32) -> Self {
-        self.http_put_response_hop_limit = Some(input);
+        self.http_put_response_hop_limit = ::std::option::Option::Some(input);
         self
     }
     /// <p>The desired HTTP PUT response hop limit for instance metadata requests. The larger the number, the further instance metadata requests can travel. </p>
-    pub fn set_http_put_response_hop_limit(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_http_put_response_hop_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.http_put_response_hop_limit = input;
         self
     }
     /// <p>The state of token usage for your instance metadata requests. </p>
-    pub fn http_tokens(mut self, input: impl Into<std::string::String>) -> Self {
-        self.http_tokens = Some(input.into());
+    pub fn http_tokens(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.http_tokens = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The state of token usage for your instance metadata requests. </p>
-    pub fn set_http_tokens(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_http_tokens(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.http_tokens = input;
         self
     }
     /// <p>Specifies whether to allow access to instance tags from the instance metadata. </p>
-    pub fn instance_metadata_tags(mut self, input: impl Into<std::string::String>) -> Self {
-        self.instance_metadata_tags = Some(input.into());
+    pub fn instance_metadata_tags(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.instance_metadata_tags = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies whether to allow access to instance tags from the instance metadata. </p>
     pub fn set_instance_metadata_tags(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.instance_metadata_tags = input;
         self

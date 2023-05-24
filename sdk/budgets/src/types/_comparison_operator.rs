@@ -43,13 +43,13 @@
 /// </p>
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ComparisonOperator {
     #[allow(missing_docs)] // documentation missing in model
@@ -61,7 +61,7 @@ pub enum ComparisonOperator {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ComparisonOperator {
+impl ::std::convert::From<&str> for ComparisonOperator {
     fn from(s: &str) -> Self {
         match s {
             "EQUAL_TO" => ComparisonOperator::EqualTo,
@@ -73,11 +73,11 @@ impl std::convert::From<&str> for ComparisonOperator {
         }
     }
 }
-impl std::str::FromStr for ComparisonOperator {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ComparisonOperator {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ComparisonOperator::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ComparisonOperator::from(s))
     }
 }
 impl ComparisonOperator {
@@ -95,7 +95,7 @@ impl ComparisonOperator {
         &["EQUAL_TO", "GREATER_THAN", "LESS_THAN"]
     }
 }
-impl AsRef<str> for ComparisonOperator {
+impl ::std::convert::AsRef<str> for ComparisonOperator {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

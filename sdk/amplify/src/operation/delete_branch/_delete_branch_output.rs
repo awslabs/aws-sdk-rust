@@ -2,20 +2,20 @@
 
 /// <p> The result structure for the delete branch request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteBranchOutput {
     /// <p> The branch for an Amplify app, which maps to a third-party repository branch. </p>
     #[doc(hidden)]
-    pub branch: std::option::Option<crate::types::Branch>,
+    pub branch: ::std::option::Option<crate::types::Branch>,
     _request_id: Option<String>,
 }
 impl DeleteBranchOutput {
     /// <p> The branch for an Amplify app, which maps to a third-party repository branch. </p>
-    pub fn branch(&self) -> std::option::Option<&crate::types::Branch> {
+    pub fn branch(&self) -> ::std::option::Option<&crate::types::Branch> {
         self.branch.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for DeleteBranchOutput {
+impl ::aws_http::request_id::RequestId for DeleteBranchOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,21 @@ impl DeleteBranchOutput {
 
 /// A builder for [`DeleteBranchOutput`](crate::operation::delete_branch::DeleteBranchOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteBranchOutputBuilder {
-    pub(crate) branch: std::option::Option<crate::types::Branch>,
+    pub(crate) branch: ::std::option::Option<crate::types::Branch>,
     _request_id: Option<String>,
 }
 impl DeleteBranchOutputBuilder {
     /// <p> The branch for an Amplify app, which maps to a third-party repository branch. </p>
     pub fn branch(mut self, input: crate::types::Branch) -> Self {
-        self.branch = Some(input);
+        self.branch = ::std::option::Option::Some(input);
         self
     }
     /// <p> The branch for an Amplify app, which maps to a third-party repository branch. </p>
-    pub fn set_branch(mut self, input: std::option::Option<crate::types::Branch>) -> Self {
+    pub fn set_branch(mut self, input: ::std::option::Option<crate::types::Branch>) -> Self {
         self.branch = input;
         self
     }

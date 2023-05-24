@@ -2,50 +2,50 @@
 
 /// <p>Describes a global network. This is a single private network acting as a high-level container for your network objects, including an Amazon Web Services-managed Core Network.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GlobalNetwork {
     /// <p>The ID of the global network.</p>
     #[doc(hidden)]
-    pub global_network_id: std::option::Option<std::string::String>,
+    pub global_network_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the global network.</p>
     #[doc(hidden)]
-    pub global_network_arn: std::option::Option<std::string::String>,
+    pub global_network_arn: ::std::option::Option<::std::string::String>,
     /// <p>The description of the global network.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the global network was created.</p>
     #[doc(hidden)]
-    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The state of the global network.</p>
     #[doc(hidden)]
-    pub state: std::option::Option<crate::types::GlobalNetworkState>,
+    pub state: ::std::option::Option<crate::types::GlobalNetworkState>,
     /// <p>The tags for the global network.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl GlobalNetwork {
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(&self) -> std::option::Option<&str> {
+    pub fn global_network_id(&self) -> ::std::option::Option<&str> {
         self.global_network_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the global network.</p>
-    pub fn global_network_arn(&self) -> std::option::Option<&str> {
+    pub fn global_network_arn(&self) -> ::std::option::Option<&str> {
         self.global_network_arn.as_deref()
     }
     /// <p>The description of the global network.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The date and time that the global network was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The state of the global network.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::GlobalNetworkState> {
+    pub fn state(&self) -> ::std::option::Option<&crate::types::GlobalNetworkState> {
         self.state.as_ref()
     }
     /// <p>The tags for the global network.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -58,74 +58,82 @@ impl GlobalNetwork {
 
 /// A builder for [`GlobalNetwork`](crate::types::GlobalNetwork).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GlobalNetworkBuilder {
-    pub(crate) global_network_id: std::option::Option<std::string::String>,
-    pub(crate) global_network_arn: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) state: std::option::Option<crate::types::GlobalNetworkState>,
-    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub(crate) global_network_id: ::std::option::Option<::std::string::String>,
+    pub(crate) global_network_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) state: ::std::option::Option<crate::types::GlobalNetworkState>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl GlobalNetworkBuilder {
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.global_network_id = Some(input.into());
+    pub fn global_network_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.global_network_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the global network.</p>
     pub fn set_global_network_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.global_network_id = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the global network.</p>
-    pub fn global_network_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.global_network_arn = Some(input.into());
+    pub fn global_network_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.global_network_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the global network.</p>
     pub fn set_global_network_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.global_network_arn = input;
         self
     }
     /// <p>The description of the global network.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the global network.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>The date and time that the global network was created.</p>
-    pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_at = Some(input);
+    pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time that the global network was created.</p>
     pub fn set_created_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_at = input;
         self
     }
     /// <p>The state of the global network.</p>
     pub fn state(mut self, input: crate::types::GlobalNetworkState) -> Self {
-        self.state = Some(input);
+        self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The state of the global network.</p>
     pub fn set_state(
         mut self,
-        input: std::option::Option<crate::types::GlobalNetworkState>,
+        input: ::std::option::Option<crate::types::GlobalNetworkState>,
     ) -> Self {
         self.state = input;
         self
@@ -138,13 +146,13 @@ impl GlobalNetworkBuilder {
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
-        self.tags = Some(v);
+        self.tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>The tags for the global network.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tags = input;
         self

@@ -6,29 +6,29 @@ pub use crate::operation::delete_datalake_delegated_admin::_delete_datalake_dele
 /// Fluent builder constructing a request to `DeleteDatalakeDelegatedAdmin`.
 ///
 /// <p>Deletes the Amazon Security Lake delegated administrator account for the organization. This API can only be called by the organization management account. The organization management account cannot be the delegated administrator account.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteDatalakeDelegatedAdminFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::delete_datalake_delegated_admin::builders::DeleteDatalakeDelegatedAdminInputBuilder,
 }
 impl DeleteDatalakeDelegatedAdminFluentBuilder {
     /// Creates a new `DeleteDatalakeDelegatedAdmin`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::delete_datalake_delegated_admin::DeleteDatalakeDelegatedAdmin,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::delete_datalake_delegated_admin::DeleteDatalakeDelegatedAdminError,
         >,
     > {
@@ -36,30 +36,33 @@ impl DeleteDatalakeDelegatedAdminFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::delete_datalake_delegated_admin::DeleteDatalakeDelegatedAdminOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::delete_datalake_delegated_admin::DeleteDatalakeDelegatedAdminError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,21 +75,21 @@ impl DeleteDatalakeDelegatedAdminFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::delete_datalake_delegated_admin::DeleteDatalakeDelegatedAdminOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::delete_datalake_delegated_admin::DeleteDatalakeDelegatedAdminError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The account ID the Security Lake delegated administrator.</p>
-    pub fn account(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.account(input.into());
         self
     }
     /// <p>The account ID the Security Lake delegated administrator.</p>
-    pub fn set_account(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_account(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_account(input);
         self
     }

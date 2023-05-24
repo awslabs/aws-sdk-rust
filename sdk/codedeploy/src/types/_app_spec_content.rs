@@ -2,28 +2,28 @@
 
 /// <p> A revision for an Lambda or Amazon ECS deployment that is a YAML-formatted or JSON-formatted string. For Lambda and Amazon ECS deployments, the revision is the same as the AppSpec file. This method replaces the deprecated <code>RawString</code> data type. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AppSpecContent {
     /// <p> The YAML-formatted or JSON-formatted revision string. </p>
     /// <p> For an Lambda deployment, the content includes a Lambda function name, the alias for its original version, and the alias for its replacement version. The deployment shifts traffic from the original version of the Lambda function to the replacement version. </p>
     /// <p> For an Amazon ECS deployment, the content includes the task name, information about the load balancer that serves traffic to the container, and more. </p>
     /// <p> For both types of deployments, the content can specify Lambda functions that run at specified hooks, such as <code>BeforeInstall</code>, during a deployment. </p>
     #[doc(hidden)]
-    pub content: std::option::Option<std::string::String>,
+    pub content: ::std::option::Option<::std::string::String>,
     /// <p> The SHA256 hash value of the revision content. </p>
     #[doc(hidden)]
-    pub sha256: std::option::Option<std::string::String>,
+    pub sha256: ::std::option::Option<::std::string::String>,
 }
 impl AppSpecContent {
     /// <p> The YAML-formatted or JSON-formatted revision string. </p>
     /// <p> For an Lambda deployment, the content includes a Lambda function name, the alias for its original version, and the alias for its replacement version. The deployment shifts traffic from the original version of the Lambda function to the replacement version. </p>
     /// <p> For an Amazon ECS deployment, the content includes the task name, information about the load balancer that serves traffic to the container, and more. </p>
     /// <p> For both types of deployments, the content can specify Lambda functions that run at specified hooks, such as <code>BeforeInstall</code>, during a deployment. </p>
-    pub fn content(&self) -> std::option::Option<&str> {
+    pub fn content(&self) -> ::std::option::Option<&str> {
         self.content.as_deref()
     }
     /// <p> The SHA256 hash value of the revision content. </p>
-    pub fn sha256(&self) -> std::option::Option<&str> {
+    pub fn sha256(&self) -> ::std::option::Option<&str> {
         self.sha256.as_deref()
     }
 }
@@ -36,35 +36,37 @@ impl AppSpecContent {
 
 /// A builder for [`AppSpecContent`](crate::types::AppSpecContent).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AppSpecContentBuilder {
-    pub(crate) content: std::option::Option<std::string::String>,
-    pub(crate) sha256: std::option::Option<std::string::String>,
+    pub(crate) content: ::std::option::Option<::std::string::String>,
+    pub(crate) sha256: ::std::option::Option<::std::string::String>,
 }
 impl AppSpecContentBuilder {
     /// <p> The YAML-formatted or JSON-formatted revision string. </p>
     /// <p> For an Lambda deployment, the content includes a Lambda function name, the alias for its original version, and the alias for its replacement version. The deployment shifts traffic from the original version of the Lambda function to the replacement version. </p>
     /// <p> For an Amazon ECS deployment, the content includes the task name, information about the load balancer that serves traffic to the container, and more. </p>
     /// <p> For both types of deployments, the content can specify Lambda functions that run at specified hooks, such as <code>BeforeInstall</code>, during a deployment. </p>
-    pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
-        self.content = Some(input.into());
+    pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.content = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The YAML-formatted or JSON-formatted revision string. </p>
     /// <p> For an Lambda deployment, the content includes a Lambda function name, the alias for its original version, and the alias for its replacement version. The deployment shifts traffic from the original version of the Lambda function to the replacement version. </p>
     /// <p> For an Amazon ECS deployment, the content includes the task name, information about the load balancer that serves traffic to the container, and more. </p>
     /// <p> For both types of deployments, the content can specify Lambda functions that run at specified hooks, such as <code>BeforeInstall</code>, during a deployment. </p>
-    pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content = input;
         self
     }
     /// <p> The SHA256 hash value of the revision content. </p>
-    pub fn sha256(mut self, input: impl Into<std::string::String>) -> Self {
-        self.sha256 = Some(input.into());
+    pub fn sha256(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.sha256 = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The SHA256 hash value of the revision content. </p>
-    pub fn set_sha256(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_sha256(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sha256 = input;
         self
     }

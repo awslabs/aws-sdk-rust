@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetDatabase`](crate::operation::get_database::builders::GetDatabaseFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`catalog_name(impl Into<String>)`](crate::operation::get_database::builders::GetDatabaseFluentBuilder::catalog_name) / [`set_catalog_name(Option<String>)`](crate::operation::get_database::builders::GetDatabaseFluentBuilder::set_catalog_name): <p>The name of the data catalog that contains the database to return.</p>
-    ///   - [`database_name(impl Into<String>)`](crate::operation::get_database::builders::GetDatabaseFluentBuilder::database_name) / [`set_database_name(Option<String>)`](crate::operation::get_database::builders::GetDatabaseFluentBuilder::set_database_name): <p>The name of the database to return.</p>
+    ///   - [`catalog_name(impl ::std::convert::Into<String>)`](crate::operation::get_database::builders::GetDatabaseFluentBuilder::catalog_name) / [`set_catalog_name(Option<String>)`](crate::operation::get_database::builders::GetDatabaseFluentBuilder::set_catalog_name): <p>The name of the data catalog that contains the database to return.</p>
+    ///   - [`database_name(impl ::std::convert::Into<String>)`](crate::operation::get_database::builders::GetDatabaseFluentBuilder::database_name) / [`set_database_name(Option<String>)`](crate::operation::get_database::builders::GetDatabaseFluentBuilder::set_database_name): <p>The name of the database to return.</p>
     /// - On success, responds with [`GetDatabaseOutput`](crate::operation::get_database::GetDatabaseOutput) with field(s):
     ///   - [`database(Option<Database>)`](crate::operation::get_database::GetDatabaseOutput::database): <p>The database returned.</p>
     /// - On failure, responds with [`SdkError<GetDatabaseError>`](crate::operation::get_database::GetDatabaseError)

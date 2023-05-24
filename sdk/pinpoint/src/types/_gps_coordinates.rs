@@ -2,22 +2,22 @@
 
 /// <p>Specifies the GPS coordinates of a location.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GpsCoordinates {
     /// <p>The latitude coordinate of the location.</p>
     #[doc(hidden)]
-    pub latitude: std::option::Option<f64>,
+    pub latitude: ::std::option::Option<f64>,
     /// <p>The longitude coordinate of the location.</p>
     #[doc(hidden)]
-    pub longitude: std::option::Option<f64>,
+    pub longitude: ::std::option::Option<f64>,
 }
 impl GpsCoordinates {
     /// <p>The latitude coordinate of the location.</p>
-    pub fn latitude(&self) -> std::option::Option<f64> {
+    pub fn latitude(&self) -> ::std::option::Option<f64> {
         self.latitude
     }
     /// <p>The longitude coordinate of the location.</p>
-    pub fn longitude(&self) -> std::option::Option<f64> {
+    pub fn longitude(&self) -> ::std::option::Option<f64> {
         self.longitude
     }
 }
@@ -30,29 +30,31 @@ impl GpsCoordinates {
 
 /// A builder for [`GpsCoordinates`](crate::types::GpsCoordinates).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GpsCoordinatesBuilder {
-    pub(crate) latitude: std::option::Option<f64>,
-    pub(crate) longitude: std::option::Option<f64>,
+    pub(crate) latitude: ::std::option::Option<f64>,
+    pub(crate) longitude: ::std::option::Option<f64>,
 }
 impl GpsCoordinatesBuilder {
     /// <p>The latitude coordinate of the location.</p>
     pub fn latitude(mut self, input: f64) -> Self {
-        self.latitude = Some(input);
+        self.latitude = ::std::option::Option::Some(input);
         self
     }
     /// <p>The latitude coordinate of the location.</p>
-    pub fn set_latitude(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_latitude(mut self, input: ::std::option::Option<f64>) -> Self {
         self.latitude = input;
         self
     }
     /// <p>The longitude coordinate of the location.</p>
     pub fn longitude(mut self, input: f64) -> Self {
-        self.longitude = Some(input);
+        self.longitude = ::std::option::Option::Some(input);
         self
     }
     /// <p>The longitude coordinate of the location.</p>
-    pub fn set_longitude(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_longitude(mut self, input: ::std::option::Option<f64>) -> Self {
         self.longitude = input;
         self
     }

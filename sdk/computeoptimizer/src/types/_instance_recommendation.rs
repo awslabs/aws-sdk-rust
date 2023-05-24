@@ -2,20 +2,20 @@
 
 /// <p>Describes an Amazon EC2 instance recommendation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceRecommendation {
     /// <p>The Amazon Resource Name (ARN) of the current instance.</p>
     #[doc(hidden)]
-    pub instance_arn: std::option::Option<std::string::String>,
+    pub instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID of the instance.</p>
     #[doc(hidden)]
-    pub account_id: std::option::Option<std::string::String>,
+    pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the current instance.</p>
     #[doc(hidden)]
-    pub instance_name: std::option::Option<std::string::String>,
+    pub instance_name: ::std::option::Option<::std::string::String>,
     /// <p>The instance type of the current instance.</p>
     #[doc(hidden)]
-    pub current_instance_type: std::option::Option<std::string::String>,
+    pub current_instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The finding classification of the instance.</p>
     /// <p>Findings for instances include:</p>
     /// <ul>
@@ -24,7 +24,7 @@ pub struct InstanceRecommendation {
     /// <li> <p> <b> <code>Optimized</code> </b>—An instance is considered optimized when all specifications of your instance, such as CPU, memory, and network, meet the performance requirements of your workload and is not over provisioned. For optimized resources, Compute Optimizer might recommend a new generation instance type.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub finding: std::option::Option<crate::types::Finding>,
+    pub finding: ::std::option::Option<crate::types::Finding>,
     /// <p>The reason for the finding classification of the instance.</p>
     /// <p>Finding reason codes for instances include:</p>
     /// <ul>
@@ -50,32 +50,34 @@ pub struct InstanceRecommendation {
     /// <p>For more information about instance metrics, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/viewing_metrics_with_cloudwatch.html">List the available CloudWatch metrics for your instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. For more information about EBS volume metrics, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cloudwatch_ebs.html">Amazon CloudWatch metrics for Amazon EBS</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     /// </note>
     #[doc(hidden)]
-    pub finding_reason_codes:
-        std::option::Option<std::vec::Vec<crate::types::InstanceRecommendationFindingReasonCode>>,
+    pub finding_reason_codes: ::std::option::Option<
+        ::std::vec::Vec<crate::types::InstanceRecommendationFindingReasonCode>,
+    >,
     /// <p>An array of objects that describe the utilization metrics of the instance.</p>
     #[doc(hidden)]
-    pub utilization_metrics: std::option::Option<std::vec::Vec<crate::types::UtilizationMetric>>,
+    pub utilization_metrics:
+        ::std::option::Option<::std::vec::Vec<crate::types::UtilizationMetric>>,
     /// <p>The number of days for which utilization metrics were analyzed for the instance.</p>
     #[doc(hidden)]
     pub look_back_period_in_days: f64,
     /// <p>An array of objects that describe the recommendation options for the instance.</p>
     #[doc(hidden)]
     pub recommendation_options:
-        std::option::Option<std::vec::Vec<crate::types::InstanceRecommendationOption>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::InstanceRecommendationOption>>,
     /// <p>An array of objects that describe the source resource of the recommendation.</p>
     #[doc(hidden)]
     pub recommendation_sources:
-        std::option::Option<std::vec::Vec<crate::types::RecommendationSource>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::RecommendationSource>>,
     /// <p>The timestamp of when the instance recommendation was last generated.</p>
     #[doc(hidden)]
-    pub last_refresh_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_refresh_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The risk of the current instance not meeting the performance needs of its workloads. The higher the risk, the more likely the current instance cannot meet the performance requirements of its workload.</p>
     #[doc(hidden)]
-    pub current_performance_risk: std::option::Option<crate::types::CurrentPerformanceRisk>,
+    pub current_performance_risk: ::std::option::Option<crate::types::CurrentPerformanceRisk>,
     /// <p>An object that describes the effective recommendation preferences for the instance.</p>
     #[doc(hidden)]
     pub effective_recommendation_preferences:
-        std::option::Option<crate::types::EffectiveRecommendationPreferences>,
+        ::std::option::Option<crate::types::EffectiveRecommendationPreferences>,
     /// <p>The applications that might be running on the instance as inferred by Compute Optimizer.</p>
     /// <p>Compute Optimizer can infer if one of the following applications might be running on the instance:</p>
     /// <ul>
@@ -91,32 +93,32 @@ pub struct InstanceRecommendation {
     /// </ul>
     #[doc(hidden)]
     pub inferred_workload_types:
-        std::option::Option<std::vec::Vec<crate::types::InferredWorkloadType>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::InferredWorkloadType>>,
     /// <p> The state of the instance when the recommendation was generated. </p>
     #[doc(hidden)]
-    pub instance_state: std::option::Option<crate::types::InstanceState>,
+    pub instance_state: ::std::option::Option<crate::types::InstanceState>,
     /// <p> A list of tags assigned to your Amazon EC2 instance recommendations. </p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p> An object that describes Compute Optimizer's integration status with your external metrics provider. </p>
     #[doc(hidden)]
-    pub external_metric_status: std::option::Option<crate::types::ExternalMetricStatus>,
+    pub external_metric_status: ::std::option::Option<crate::types::ExternalMetricStatus>,
 }
 impl InstanceRecommendation {
     /// <p>The Amazon Resource Name (ARN) of the current instance.</p>
-    pub fn instance_arn(&self) -> std::option::Option<&str> {
+    pub fn instance_arn(&self) -> ::std::option::Option<&str> {
         self.instance_arn.as_deref()
     }
     /// <p>The Amazon Web Services account ID of the instance.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The name of the current instance.</p>
-    pub fn instance_name(&self) -> std::option::Option<&str> {
+    pub fn instance_name(&self) -> ::std::option::Option<&str> {
         self.instance_name.as_deref()
     }
     /// <p>The instance type of the current instance.</p>
-    pub fn current_instance_type(&self) -> std::option::Option<&str> {
+    pub fn current_instance_type(&self) -> ::std::option::Option<&str> {
         self.current_instance_type.as_deref()
     }
     /// <p>The finding classification of the instance.</p>
@@ -126,7 +128,7 @@ impl InstanceRecommendation {
     /// <li> <p> <b> <code>Overprovisioned</code> </b>—An instance is considered over-provisioned when at least one specification of your instance, such as CPU, memory, or network, can be sized down while still meeting the performance requirements of your workload, and no specification is under-provisioned. Over-provisioned instances may lead to unnecessary infrastructure cost.</p> </li>
     /// <li> <p> <b> <code>Optimized</code> </b>—An instance is considered optimized when all specifications of your instance, such as CPU, memory, and network, meet the performance requirements of your workload and is not over provisioned. For optimized resources, Compute Optimizer might recommend a new generation instance type.</p> </li>
     /// </ul>
-    pub fn finding(&self) -> std::option::Option<&crate::types::Finding> {
+    pub fn finding(&self) -> ::std::option::Option<&crate::types::Finding> {
         self.finding.as_ref()
     }
     /// <p>The reason for the finding classification of the instance.</p>
@@ -155,11 +157,11 @@ impl InstanceRecommendation {
     /// </note>
     pub fn finding_reason_codes(
         &self,
-    ) -> std::option::Option<&[crate::types::InstanceRecommendationFindingReasonCode]> {
+    ) -> ::std::option::Option<&[crate::types::InstanceRecommendationFindingReasonCode]> {
         self.finding_reason_codes.as_deref()
     }
     /// <p>An array of objects that describe the utilization metrics of the instance.</p>
-    pub fn utilization_metrics(&self) -> std::option::Option<&[crate::types::UtilizationMetric]> {
+    pub fn utilization_metrics(&self) -> ::std::option::Option<&[crate::types::UtilizationMetric]> {
         self.utilization_metrics.as_deref()
     }
     /// <p>The number of days for which utilization metrics were analyzed for the instance.</p>
@@ -169,29 +171,29 @@ impl InstanceRecommendation {
     /// <p>An array of objects that describe the recommendation options for the instance.</p>
     pub fn recommendation_options(
         &self,
-    ) -> std::option::Option<&[crate::types::InstanceRecommendationOption]> {
+    ) -> ::std::option::Option<&[crate::types::InstanceRecommendationOption]> {
         self.recommendation_options.as_deref()
     }
     /// <p>An array of objects that describe the source resource of the recommendation.</p>
     pub fn recommendation_sources(
         &self,
-    ) -> std::option::Option<&[crate::types::RecommendationSource]> {
+    ) -> ::std::option::Option<&[crate::types::RecommendationSource]> {
         self.recommendation_sources.as_deref()
     }
     /// <p>The timestamp of when the instance recommendation was last generated.</p>
-    pub fn last_refresh_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_refresh_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_refresh_timestamp.as_ref()
     }
     /// <p>The risk of the current instance not meeting the performance needs of its workloads. The higher the risk, the more likely the current instance cannot meet the performance requirements of its workload.</p>
     pub fn current_performance_risk(
         &self,
-    ) -> std::option::Option<&crate::types::CurrentPerformanceRisk> {
+    ) -> ::std::option::Option<&crate::types::CurrentPerformanceRisk> {
         self.current_performance_risk.as_ref()
     }
     /// <p>An object that describes the effective recommendation preferences for the instance.</p>
     pub fn effective_recommendation_preferences(
         &self,
-    ) -> std::option::Option<&crate::types::EffectiveRecommendationPreferences> {
+    ) -> ::std::option::Option<&crate::types::EffectiveRecommendationPreferences> {
         self.effective_recommendation_preferences.as_ref()
     }
     /// <p>The applications that might be running on the instance as inferred by Compute Optimizer.</p>
@@ -209,21 +211,21 @@ impl InstanceRecommendation {
     /// </ul>
     pub fn inferred_workload_types(
         &self,
-    ) -> std::option::Option<&[crate::types::InferredWorkloadType]> {
+    ) -> ::std::option::Option<&[crate::types::InferredWorkloadType]> {
         self.inferred_workload_types.as_deref()
     }
     /// <p> The state of the instance when the recommendation was generated. </p>
-    pub fn instance_state(&self) -> std::option::Option<&crate::types::InstanceState> {
+    pub fn instance_state(&self) -> ::std::option::Option<&crate::types::InstanceState> {
         self.instance_state.as_ref()
     }
     /// <p> A list of tags assigned to your Amazon EC2 instance recommendations. </p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p> An object that describes Compute Optimizer's integration status with your external metrics provider. </p>
     pub fn external_metric_status(
         &self,
-    ) -> std::option::Option<&crate::types::ExternalMetricStatus> {
+    ) -> ::std::option::Option<&crate::types::ExternalMetricStatus> {
         self.external_metric_status.as_ref()
     }
 }
@@ -236,72 +238,85 @@ impl InstanceRecommendation {
 
 /// A builder for [`InstanceRecommendation`](crate::types::InstanceRecommendation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InstanceRecommendationBuilder {
-    pub(crate) instance_arn: std::option::Option<std::string::String>,
-    pub(crate) account_id: std::option::Option<std::string::String>,
-    pub(crate) instance_name: std::option::Option<std::string::String>,
-    pub(crate) current_instance_type: std::option::Option<std::string::String>,
-    pub(crate) finding: std::option::Option<crate::types::Finding>,
-    pub(crate) finding_reason_codes:
-        std::option::Option<std::vec::Vec<crate::types::InstanceRecommendationFindingReasonCode>>,
+    pub(crate) instance_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) instance_name: ::std::option::Option<::std::string::String>,
+    pub(crate) current_instance_type: ::std::option::Option<::std::string::String>,
+    pub(crate) finding: ::std::option::Option<crate::types::Finding>,
+    pub(crate) finding_reason_codes: ::std::option::Option<
+        ::std::vec::Vec<crate::types::InstanceRecommendationFindingReasonCode>,
+    >,
     pub(crate) utilization_metrics:
-        std::option::Option<std::vec::Vec<crate::types::UtilizationMetric>>,
-    pub(crate) look_back_period_in_days: std::option::Option<f64>,
+        ::std::option::Option<::std::vec::Vec<crate::types::UtilizationMetric>>,
+    pub(crate) look_back_period_in_days: ::std::option::Option<f64>,
     pub(crate) recommendation_options:
-        std::option::Option<std::vec::Vec<crate::types::InstanceRecommendationOption>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::InstanceRecommendationOption>>,
     pub(crate) recommendation_sources:
-        std::option::Option<std::vec::Vec<crate::types::RecommendationSource>>,
-    pub(crate) last_refresh_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) current_performance_risk: std::option::Option<crate::types::CurrentPerformanceRisk>,
+        ::std::option::Option<::std::vec::Vec<crate::types::RecommendationSource>>,
+    pub(crate) last_refresh_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) current_performance_risk:
+        ::std::option::Option<crate::types::CurrentPerformanceRisk>,
     pub(crate) effective_recommendation_preferences:
-        std::option::Option<crate::types::EffectiveRecommendationPreferences>,
+        ::std::option::Option<crate::types::EffectiveRecommendationPreferences>,
     pub(crate) inferred_workload_types:
-        std::option::Option<std::vec::Vec<crate::types::InferredWorkloadType>>,
-    pub(crate) instance_state: std::option::Option<crate::types::InstanceState>,
-    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    pub(crate) external_metric_status: std::option::Option<crate::types::ExternalMetricStatus>,
+        ::std::option::Option<::std::vec::Vec<crate::types::InferredWorkloadType>>,
+    pub(crate) instance_state: ::std::option::Option<crate::types::InstanceState>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) external_metric_status: ::std::option::Option<crate::types::ExternalMetricStatus>,
 }
 impl InstanceRecommendationBuilder {
     /// <p>The Amazon Resource Name (ARN) of the current instance.</p>
-    pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.instance_arn = Some(input.into());
+    pub fn instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.instance_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the current instance.</p>
-    pub fn set_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_arn = input;
         self
     }
     /// <p>The Amazon Web Services account ID of the instance.</p>
-    pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.account_id = Some(input.into());
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID of the instance.</p>
-    pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
     }
     /// <p>The name of the current instance.</p>
-    pub fn instance_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.instance_name = Some(input.into());
+    pub fn instance_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.instance_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the current instance.</p>
-    pub fn set_instance_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_instance_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.instance_name = input;
         self
     }
     /// <p>The instance type of the current instance.</p>
-    pub fn current_instance_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.current_instance_type = Some(input.into());
+    pub fn current_instance_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.current_instance_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The instance type of the current instance.</p>
     pub fn set_current_instance_type(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.current_instance_type = input;
         self
@@ -314,7 +329,7 @@ impl InstanceRecommendationBuilder {
     /// <li> <p> <b> <code>Optimized</code> </b>—An instance is considered optimized when all specifications of your instance, such as CPU, memory, and network, meet the performance requirements of your workload and is not over provisioned. For optimized resources, Compute Optimizer might recommend a new generation instance type.</p> </li>
     /// </ul>
     pub fn finding(mut self, input: crate::types::Finding) -> Self {
-        self.finding = Some(input);
+        self.finding = ::std::option::Option::Some(input);
         self
     }
     /// <p>The finding classification of the instance.</p>
@@ -324,7 +339,7 @@ impl InstanceRecommendationBuilder {
     /// <li> <p> <b> <code>Overprovisioned</code> </b>—An instance is considered over-provisioned when at least one specification of your instance, such as CPU, memory, or network, can be sized down while still meeting the performance requirements of your workload, and no specification is under-provisioned. Over-provisioned instances may lead to unnecessary infrastructure cost.</p> </li>
     /// <li> <p> <b> <code>Optimized</code> </b>—An instance is considered optimized when all specifications of your instance, such as CPU, memory, and network, meet the performance requirements of your workload and is not over provisioned. For optimized resources, Compute Optimizer might recommend a new generation instance type.</p> </li>
     /// </ul>
-    pub fn set_finding(mut self, input: std::option::Option<crate::types::Finding>) -> Self {
+    pub fn set_finding(mut self, input: ::std::option::Option<crate::types::Finding>) -> Self {
         self.finding = input;
         self
     }
@@ -362,7 +377,7 @@ impl InstanceRecommendationBuilder {
     ) -> Self {
         let mut v = self.finding_reason_codes.unwrap_or_default();
         v.push(input);
-        self.finding_reason_codes = Some(v);
+        self.finding_reason_codes = ::std::option::Option::Some(v);
         self
     }
     /// <p>The reason for the finding classification of the instance.</p>
@@ -391,8 +406,8 @@ impl InstanceRecommendationBuilder {
     /// </note>
     pub fn set_finding_reason_codes(
         mut self,
-        input: std::option::Option<
-            std::vec::Vec<crate::types::InstanceRecommendationFindingReasonCode>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::InstanceRecommendationFindingReasonCode>,
         >,
     ) -> Self {
         self.finding_reason_codes = input;
@@ -406,24 +421,24 @@ impl InstanceRecommendationBuilder {
     pub fn utilization_metrics(mut self, input: crate::types::UtilizationMetric) -> Self {
         let mut v = self.utilization_metrics.unwrap_or_default();
         v.push(input);
-        self.utilization_metrics = Some(v);
+        self.utilization_metrics = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of objects that describe the utilization metrics of the instance.</p>
     pub fn set_utilization_metrics(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::UtilizationMetric>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::UtilizationMetric>>,
     ) -> Self {
         self.utilization_metrics = input;
         self
     }
     /// <p>The number of days for which utilization metrics were analyzed for the instance.</p>
     pub fn look_back_period_in_days(mut self, input: f64) -> Self {
-        self.look_back_period_in_days = Some(input);
+        self.look_back_period_in_days = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of days for which utilization metrics were analyzed for the instance.</p>
-    pub fn set_look_back_period_in_days(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_look_back_period_in_days(mut self, input: ::std::option::Option<f64>) -> Self {
         self.look_back_period_in_days = input;
         self
     }
@@ -438,13 +453,13 @@ impl InstanceRecommendationBuilder {
     ) -> Self {
         let mut v = self.recommendation_options.unwrap_or_default();
         v.push(input);
-        self.recommendation_options = Some(v);
+        self.recommendation_options = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of objects that describe the recommendation options for the instance.</p>
     pub fn set_recommendation_options(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::InstanceRecommendationOption>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceRecommendationOption>>,
     ) -> Self {
         self.recommendation_options = input;
         self
@@ -457,39 +472,39 @@ impl InstanceRecommendationBuilder {
     pub fn recommendation_sources(mut self, input: crate::types::RecommendationSource) -> Self {
         let mut v = self.recommendation_sources.unwrap_or_default();
         v.push(input);
-        self.recommendation_sources = Some(v);
+        self.recommendation_sources = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of objects that describe the source resource of the recommendation.</p>
     pub fn set_recommendation_sources(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RecommendationSource>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationSource>>,
     ) -> Self {
         self.recommendation_sources = input;
         self
     }
     /// <p>The timestamp of when the instance recommendation was last generated.</p>
-    pub fn last_refresh_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_refresh_timestamp = Some(input);
+    pub fn last_refresh_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_refresh_timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>The timestamp of when the instance recommendation was last generated.</p>
     pub fn set_last_refresh_timestamp(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_refresh_timestamp = input;
         self
     }
     /// <p>The risk of the current instance not meeting the performance needs of its workloads. The higher the risk, the more likely the current instance cannot meet the performance requirements of its workload.</p>
     pub fn current_performance_risk(mut self, input: crate::types::CurrentPerformanceRisk) -> Self {
-        self.current_performance_risk = Some(input);
+        self.current_performance_risk = ::std::option::Option::Some(input);
         self
     }
     /// <p>The risk of the current instance not meeting the performance needs of its workloads. The higher the risk, the more likely the current instance cannot meet the performance requirements of its workload.</p>
     pub fn set_current_performance_risk(
         mut self,
-        input: std::option::Option<crate::types::CurrentPerformanceRisk>,
+        input: ::std::option::Option<crate::types::CurrentPerformanceRisk>,
     ) -> Self {
         self.current_performance_risk = input;
         self
@@ -499,13 +514,13 @@ impl InstanceRecommendationBuilder {
         mut self,
         input: crate::types::EffectiveRecommendationPreferences,
     ) -> Self {
-        self.effective_recommendation_preferences = Some(input);
+        self.effective_recommendation_preferences = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that describes the effective recommendation preferences for the instance.</p>
     pub fn set_effective_recommendation_preferences(
         mut self,
-        input: std::option::Option<crate::types::EffectiveRecommendationPreferences>,
+        input: ::std::option::Option<crate::types::EffectiveRecommendationPreferences>,
     ) -> Self {
         self.effective_recommendation_preferences = input;
         self
@@ -530,7 +545,7 @@ impl InstanceRecommendationBuilder {
     pub fn inferred_workload_types(mut self, input: crate::types::InferredWorkloadType) -> Self {
         let mut v = self.inferred_workload_types.unwrap_or_default();
         v.push(input);
-        self.inferred_workload_types = Some(v);
+        self.inferred_workload_types = ::std::option::Option::Some(v);
         self
     }
     /// <p>The applications that might be running on the instance as inferred by Compute Optimizer.</p>
@@ -548,20 +563,20 @@ impl InstanceRecommendationBuilder {
     /// </ul>
     pub fn set_inferred_workload_types(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::InferredWorkloadType>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::InferredWorkloadType>>,
     ) -> Self {
         self.inferred_workload_types = input;
         self
     }
     /// <p> The state of the instance when the recommendation was generated. </p>
     pub fn instance_state(mut self, input: crate::types::InstanceState) -> Self {
-        self.instance_state = Some(input);
+        self.instance_state = ::std::option::Option::Some(input);
         self
     }
     /// <p> The state of the instance when the recommendation was generated. </p>
     pub fn set_instance_state(
         mut self,
-        input: std::option::Option<crate::types::InstanceState>,
+        input: ::std::option::Option<crate::types::InstanceState>,
     ) -> Self {
         self.instance_state = input;
         self
@@ -574,26 +589,26 @@ impl InstanceRecommendationBuilder {
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
-        self.tags = Some(v);
+        self.tags = ::std::option::Option::Some(v);
         self
     }
     /// <p> A list of tags assigned to your Amazon EC2 instance recommendations. </p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tags = input;
         self
     }
     /// <p> An object that describes Compute Optimizer's integration status with your external metrics provider. </p>
     pub fn external_metric_status(mut self, input: crate::types::ExternalMetricStatus) -> Self {
-        self.external_metric_status = Some(input);
+        self.external_metric_status = ::std::option::Option::Some(input);
         self
     }
     /// <p> An object that describes Compute Optimizer's integration status with your external metrics provider. </p>
     pub fn set_external_metric_status(
         mut self,
-        input: std::option::Option<crate::types::ExternalMetricStatus>,
+        input: ::std::option::Option<crate::types::ExternalMetricStatus>,
     ) -> Self {
         self.external_metric_status = input;
         self

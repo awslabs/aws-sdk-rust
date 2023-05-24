@@ -3,36 +3,36 @@
 /// <p>The time boundary Forecast uses to align and aggregate your data to match your forecast frequency. Provide the unit of time and the time boundary as a key value pair. If you don't provide a time boundary, Forecast uses a set of <a href="https://docs.aws.amazon.com/forecast/latest/dg/data-aggregation.html#default-time-boundaries">Default Time Boundaries</a>. </p>
 /// <p>For more information about aggregation, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/data-aggregation.html">Data Aggregation for Different Forecast Frequencies</a>. For more information setting a custom time boundary, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/data-aggregation.html#specifying-time-boundary">Specifying a Time Boundary</a>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimeAlignmentBoundary {
     /// <p>The month to use for time alignment during aggregation. The month must be in uppercase.</p>
     #[doc(hidden)]
-    pub month: std::option::Option<crate::types::Month>,
+    pub month: ::std::option::Option<crate::types::Month>,
     /// <p>The day of the month to use for time alignment during aggregation.</p>
     #[doc(hidden)]
-    pub day_of_month: std::option::Option<i32>,
+    pub day_of_month: ::std::option::Option<i32>,
     /// <p>The day of week to use for time alignment during aggregation. The day must be in uppercase.</p>
     #[doc(hidden)]
-    pub day_of_week: std::option::Option<crate::types::DayOfWeek>,
+    pub day_of_week: ::std::option::Option<crate::types::DayOfWeek>,
     /// <p>The hour of day to use for time alignment during aggregation.</p>
     #[doc(hidden)]
-    pub hour: std::option::Option<i32>,
+    pub hour: ::std::option::Option<i32>,
 }
 impl TimeAlignmentBoundary {
     /// <p>The month to use for time alignment during aggregation. The month must be in uppercase.</p>
-    pub fn month(&self) -> std::option::Option<&crate::types::Month> {
+    pub fn month(&self) -> ::std::option::Option<&crate::types::Month> {
         self.month.as_ref()
     }
     /// <p>The day of the month to use for time alignment during aggregation.</p>
-    pub fn day_of_month(&self) -> std::option::Option<i32> {
+    pub fn day_of_month(&self) -> ::std::option::Option<i32> {
         self.day_of_month
     }
     /// <p>The day of week to use for time alignment during aggregation. The day must be in uppercase.</p>
-    pub fn day_of_week(&self) -> std::option::Option<&crate::types::DayOfWeek> {
+    pub fn day_of_week(&self) -> ::std::option::Option<&crate::types::DayOfWeek> {
         self.day_of_week.as_ref()
     }
     /// <p>The hour of day to use for time alignment during aggregation.</p>
-    pub fn hour(&self) -> std::option::Option<i32> {
+    pub fn hour(&self) -> ::std::option::Option<i32> {
         self.hour
     }
 }
@@ -45,51 +45,56 @@ impl TimeAlignmentBoundary {
 
 /// A builder for [`TimeAlignmentBoundary`](crate::types::TimeAlignmentBoundary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TimeAlignmentBoundaryBuilder {
-    pub(crate) month: std::option::Option<crate::types::Month>,
-    pub(crate) day_of_month: std::option::Option<i32>,
-    pub(crate) day_of_week: std::option::Option<crate::types::DayOfWeek>,
-    pub(crate) hour: std::option::Option<i32>,
+    pub(crate) month: ::std::option::Option<crate::types::Month>,
+    pub(crate) day_of_month: ::std::option::Option<i32>,
+    pub(crate) day_of_week: ::std::option::Option<crate::types::DayOfWeek>,
+    pub(crate) hour: ::std::option::Option<i32>,
 }
 impl TimeAlignmentBoundaryBuilder {
     /// <p>The month to use for time alignment during aggregation. The month must be in uppercase.</p>
     pub fn month(mut self, input: crate::types::Month) -> Self {
-        self.month = Some(input);
+        self.month = ::std::option::Option::Some(input);
         self
     }
     /// <p>The month to use for time alignment during aggregation. The month must be in uppercase.</p>
-    pub fn set_month(mut self, input: std::option::Option<crate::types::Month>) -> Self {
+    pub fn set_month(mut self, input: ::std::option::Option<crate::types::Month>) -> Self {
         self.month = input;
         self
     }
     /// <p>The day of the month to use for time alignment during aggregation.</p>
     pub fn day_of_month(mut self, input: i32) -> Self {
-        self.day_of_month = Some(input);
+        self.day_of_month = ::std::option::Option::Some(input);
         self
     }
     /// <p>The day of the month to use for time alignment during aggregation.</p>
-    pub fn set_day_of_month(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_day_of_month(mut self, input: ::std::option::Option<i32>) -> Self {
         self.day_of_month = input;
         self
     }
     /// <p>The day of week to use for time alignment during aggregation. The day must be in uppercase.</p>
     pub fn day_of_week(mut self, input: crate::types::DayOfWeek) -> Self {
-        self.day_of_week = Some(input);
+        self.day_of_week = ::std::option::Option::Some(input);
         self
     }
     /// <p>The day of week to use for time alignment during aggregation. The day must be in uppercase.</p>
-    pub fn set_day_of_week(mut self, input: std::option::Option<crate::types::DayOfWeek>) -> Self {
+    pub fn set_day_of_week(
+        mut self,
+        input: ::std::option::Option<crate::types::DayOfWeek>,
+    ) -> Self {
         self.day_of_week = input;
         self
     }
     /// <p>The hour of day to use for time alignment during aggregation.</p>
     pub fn hour(mut self, input: i32) -> Self {
-        self.hour = Some(input);
+        self.hour = ::std::option::Option::Some(input);
         self
     }
     /// <p>The hour of day to use for time alignment during aggregation.</p>
-    pub fn set_hour(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_hour(mut self, input: ::std::option::Option<i32>) -> Self {
         self.hour = input;
         self
     }

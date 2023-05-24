@@ -2,22 +2,22 @@
 
 /// <p>The status and configuration of a search domain's scaling parameters. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScalingParametersStatus {
     /// <p>The desired instance type and desired number of replicas of each index partition.</p>
     #[doc(hidden)]
-    pub options: std::option::Option<crate::types::ScalingParameters>,
+    pub options: ::std::option::Option<crate::types::ScalingParameters>,
     /// <p>The status of domain configuration option.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::OptionStatus>,
+    pub status: ::std::option::Option<crate::types::OptionStatus>,
 }
 impl ScalingParametersStatus {
     /// <p>The desired instance type and desired number of replicas of each index partition.</p>
-    pub fn options(&self) -> std::option::Option<&crate::types::ScalingParameters> {
+    pub fn options(&self) -> ::std::option::Option<&crate::types::ScalingParameters> {
         self.options.as_ref()
     }
     /// <p>The status of domain configuration option.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::OptionStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::OptionStatus> {
         self.status.as_ref()
     }
 }
@@ -30,32 +30,34 @@ impl ScalingParametersStatus {
 
 /// A builder for [`ScalingParametersStatus`](crate::types::ScalingParametersStatus).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ScalingParametersStatusBuilder {
-    pub(crate) options: std::option::Option<crate::types::ScalingParameters>,
-    pub(crate) status: std::option::Option<crate::types::OptionStatus>,
+    pub(crate) options: ::std::option::Option<crate::types::ScalingParameters>,
+    pub(crate) status: ::std::option::Option<crate::types::OptionStatus>,
 }
 impl ScalingParametersStatusBuilder {
     /// <p>The desired instance type and desired number of replicas of each index partition.</p>
     pub fn options(mut self, input: crate::types::ScalingParameters) -> Self {
-        self.options = Some(input);
+        self.options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The desired instance type and desired number of replicas of each index partition.</p>
     pub fn set_options(
         mut self,
-        input: std::option::Option<crate::types::ScalingParameters>,
+        input: ::std::option::Option<crate::types::ScalingParameters>,
     ) -> Self {
         self.options = input;
         self
     }
     /// <p>The status of domain configuration option.</p>
     pub fn status(mut self, input: crate::types::OptionStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of domain configuration option.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::OptionStatus>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::OptionStatus>) -> Self {
         self.status = input;
         self
     }

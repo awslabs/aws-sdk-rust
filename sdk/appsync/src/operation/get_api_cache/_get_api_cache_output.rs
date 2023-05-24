@@ -2,20 +2,20 @@
 
 /// <p>Represents the output of a <code>GetApiCache</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetApiCacheOutput {
     /// <p>The <code>ApiCache</code> object.</p>
     #[doc(hidden)]
-    pub api_cache: std::option::Option<crate::types::ApiCache>,
+    pub api_cache: ::std::option::Option<crate::types::ApiCache>,
     _request_id: Option<String>,
 }
 impl GetApiCacheOutput {
     /// <p>The <code>ApiCache</code> object.</p>
-    pub fn api_cache(&self) -> std::option::Option<&crate::types::ApiCache> {
+    pub fn api_cache(&self) -> ::std::option::Option<&crate::types::ApiCache> {
         self.api_cache.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for GetApiCacheOutput {
+impl ::aws_http::request_id::RequestId for GetApiCacheOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,21 @@ impl GetApiCacheOutput {
 
 /// A builder for [`GetApiCacheOutput`](crate::operation::get_api_cache::GetApiCacheOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetApiCacheOutputBuilder {
-    pub(crate) api_cache: std::option::Option<crate::types::ApiCache>,
+    pub(crate) api_cache: ::std::option::Option<crate::types::ApiCache>,
     _request_id: Option<String>,
 }
 impl GetApiCacheOutputBuilder {
     /// <p>The <code>ApiCache</code> object.</p>
     pub fn api_cache(mut self, input: crate::types::ApiCache) -> Self {
-        self.api_cache = Some(input);
+        self.api_cache = ::std::option::Option::Some(input);
         self
     }
     /// <p>The <code>ApiCache</code> object.</p>
-    pub fn set_api_cache(mut self, input: std::option::Option<crate::types::ApiCache>) -> Self {
+    pub fn set_api_cache(mut self, input: ::std::option::Option<crate::types::ApiCache>) -> Self {
         self.api_cache = input;
         self
     }

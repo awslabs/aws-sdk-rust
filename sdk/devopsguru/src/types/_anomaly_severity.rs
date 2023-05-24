@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum AnomalySeverity {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum AnomalySeverity {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for AnomalySeverity {
+impl ::std::convert::From<&str> for AnomalySeverity {
     fn from(s: &str) -> Self {
         match s {
             "HIGH" => AnomalySeverity::High,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for AnomalySeverity {
         }
     }
 }
-impl std::str::FromStr for AnomalySeverity {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for AnomalySeverity {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AnomalySeverity::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(AnomalySeverity::from(s))
     }
 }
 impl AnomalySeverity {
@@ -91,7 +91,7 @@ impl AnomalySeverity {
         &["HIGH", "LOW", "MEDIUM"]
     }
 }
-impl AsRef<str> for AnomalySeverity {
+impl ::std::convert::AsRef<str> for AnomalySeverity {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum PolicyOwnerEntityType {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum PolicyOwnerEntityType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for PolicyOwnerEntityType {
+impl ::std::convert::From<&str> for PolicyOwnerEntityType {
     fn from(s: &str) -> Self {
         match s {
             "GROUP" => PolicyOwnerEntityType::Group,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for PolicyOwnerEntityType {
         }
     }
 }
-impl std::str::FromStr for PolicyOwnerEntityType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for PolicyOwnerEntityType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PolicyOwnerEntityType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(PolicyOwnerEntityType::from(s))
     }
 }
 impl PolicyOwnerEntityType {
@@ -91,7 +91,7 @@ impl PolicyOwnerEntityType {
         &["GROUP", "ROLE", "USER"]
     }
 }
-impl AsRef<str> for PolicyOwnerEntityType {
+impl ::std::convert::AsRef<str> for PolicyOwnerEntityType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

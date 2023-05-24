@@ -2,17 +2,17 @@
 
 /// <p>Provides information that describes an individual assessment from a premigration assessment run.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplicationTaskIndividualAssessment {
     /// <p>Amazon Resource Name (ARN) of this individual assessment.</p>
     #[doc(hidden)]
-    pub replication_task_individual_assessment_arn: std::option::Option<std::string::String>,
+    pub replication_task_individual_assessment_arn: ::std::option::Option<::std::string::String>,
     /// <p>ARN of the premigration assessment run that is created to run this individual assessment.</p>
     #[doc(hidden)]
-    pub replication_task_assessment_run_arn: std::option::Option<std::string::String>,
+    pub replication_task_assessment_run_arn: ::std::option::Option<::std::string::String>,
     /// <p>Name of this individual assessment.</p>
     #[doc(hidden)]
-    pub individual_assessment_name: std::option::Option<std::string::String>,
+    pub individual_assessment_name: ::std::option::Option<::std::string::String>,
     /// <p>Individual assessment status.</p>
     /// <p>This status can have one of the following values:</p>
     /// <ul>
@@ -24,23 +24,23 @@ pub struct ReplicationTaskIndividualAssessment {
     /// <li> <p> <code>"running"</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub status: std::option::Option<std::string::String>,
+    pub status: ::std::option::Option<::std::string::String>,
     /// <p>Date when this individual assessment was started as part of running the <code>StartReplicationTaskAssessmentRun</code> operation.</p>
     #[doc(hidden)]
     pub replication_task_individual_assessment_start_date:
-        std::option::Option<aws_smithy_types::DateTime>,
+        ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ReplicationTaskIndividualAssessment {
     /// <p>Amazon Resource Name (ARN) of this individual assessment.</p>
-    pub fn replication_task_individual_assessment_arn(&self) -> std::option::Option<&str> {
+    pub fn replication_task_individual_assessment_arn(&self) -> ::std::option::Option<&str> {
         self.replication_task_individual_assessment_arn.as_deref()
     }
     /// <p>ARN of the premigration assessment run that is created to run this individual assessment.</p>
-    pub fn replication_task_assessment_run_arn(&self) -> std::option::Option<&str> {
+    pub fn replication_task_assessment_run_arn(&self) -> ::std::option::Option<&str> {
         self.replication_task_assessment_run_arn.as_deref()
     }
     /// <p>Name of this individual assessment.</p>
-    pub fn individual_assessment_name(&self) -> std::option::Option<&str> {
+    pub fn individual_assessment_name(&self) -> ::std::option::Option<&str> {
         self.individual_assessment_name.as_deref()
     }
     /// <p>Individual assessment status.</p>
@@ -53,13 +53,13 @@ impl ReplicationTaskIndividualAssessment {
     /// <li> <p> <code>"pending"</code> </p> </li>
     /// <li> <p> <code>"running"</code> </p> </li>
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
     /// <p>Date when this individual assessment was started as part of running the <code>StartReplicationTaskAssessmentRun</code> operation.</p>
     pub fn replication_task_individual_assessment_start_date(
         &self,
-    ) -> std::option::Option<&aws_smithy_types::DateTime> {
+    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.replication_task_individual_assessment_start_date
             .as_ref()
     }
@@ -73,28 +73,31 @@ impl ReplicationTaskIndividualAssessment {
 
 /// A builder for [`ReplicationTaskIndividualAssessment`](crate::types::ReplicationTaskIndividualAssessment).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ReplicationTaskIndividualAssessmentBuilder {
-    pub(crate) replication_task_individual_assessment_arn: std::option::Option<std::string::String>,
-    pub(crate) replication_task_assessment_run_arn: std::option::Option<std::string::String>,
-    pub(crate) individual_assessment_name: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<std::string::String>,
+    pub(crate) replication_task_individual_assessment_arn:
+        ::std::option::Option<::std::string::String>,
+    pub(crate) replication_task_assessment_run_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) individual_assessment_name: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) replication_task_individual_assessment_start_date:
-        std::option::Option<aws_smithy_types::DateTime>,
+        ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ReplicationTaskIndividualAssessmentBuilder {
     /// <p>Amazon Resource Name (ARN) of this individual assessment.</p>
     pub fn replication_task_individual_assessment_arn(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.replication_task_individual_assessment_arn = Some(input.into());
+        self.replication_task_individual_assessment_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Amazon Resource Name (ARN) of this individual assessment.</p>
     pub fn set_replication_task_individual_assessment_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.replication_task_individual_assessment_arn = input;
         self
@@ -102,28 +105,31 @@ impl ReplicationTaskIndividualAssessmentBuilder {
     /// <p>ARN of the premigration assessment run that is created to run this individual assessment.</p>
     pub fn replication_task_assessment_run_arn(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.replication_task_assessment_run_arn = Some(input.into());
+        self.replication_task_assessment_run_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>ARN of the premigration assessment run that is created to run this individual assessment.</p>
     pub fn set_replication_task_assessment_run_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.replication_task_assessment_run_arn = input;
         self
     }
     /// <p>Name of this individual assessment.</p>
-    pub fn individual_assessment_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.individual_assessment_name = Some(input.into());
+    pub fn individual_assessment_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.individual_assessment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of this individual assessment.</p>
     pub fn set_individual_assessment_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.individual_assessment_name = input;
         self
@@ -138,8 +144,8 @@ impl ReplicationTaskIndividualAssessmentBuilder {
     /// <li> <p> <code>"pending"</code> </p> </li>
     /// <li> <p> <code>"running"</code> </p> </li>
     /// </ul>
-    pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status = Some(input.into());
+    pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Individual assessment status.</p>
@@ -152,22 +158,22 @@ impl ReplicationTaskIndividualAssessmentBuilder {
     /// <li> <p> <code>"pending"</code> </p> </li>
     /// <li> <p> <code>"running"</code> </p> </li>
     /// </ul>
-    pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }
     /// <p>Date when this individual assessment was started as part of running the <code>StartReplicationTaskAssessmentRun</code> operation.</p>
     pub fn replication_task_individual_assessment_start_date(
         mut self,
-        input: aws_smithy_types::DateTime,
+        input: ::aws_smithy_types::DateTime,
     ) -> Self {
-        self.replication_task_individual_assessment_start_date = Some(input);
+        self.replication_task_individual_assessment_start_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>Date when this individual assessment was started as part of running the <code>StartReplicationTaskAssessmentRun</code> operation.</p>
     pub fn set_replication_task_individual_assessment_start_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.replication_task_individual_assessment_start_date = input;
         self

@@ -2,24 +2,24 @@
 
 /// <p>Describes the subnet association with the transit gateway multicast domain.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SubnetAssociation {
     /// <p>The ID of the subnet.</p>
     #[doc(hidden)]
-    pub subnet_id: std::option::Option<std::string::String>,
+    pub subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>The state of the subnet association.</p>
     #[doc(hidden)]
-    pub state: std::option::Option<crate::types::TransitGatewayMulitcastDomainAssociationState>,
+    pub state: ::std::option::Option<crate::types::TransitGatewayMulitcastDomainAssociationState>,
 }
 impl SubnetAssociation {
     /// <p>The ID of the subnet.</p>
-    pub fn subnet_id(&self) -> std::option::Option<&str> {
+    pub fn subnet_id(&self) -> ::std::option::Option<&str> {
         self.subnet_id.as_deref()
     }
     /// <p>The state of the subnet association.</p>
     pub fn state(
         &self,
-    ) -> std::option::Option<&crate::types::TransitGatewayMulitcastDomainAssociationState> {
+    ) -> ::std::option::Option<&crate::types::TransitGatewayMulitcastDomainAssociationState> {
         self.state.as_ref()
     }
 }
@@ -32,20 +32,22 @@ impl SubnetAssociation {
 
 /// A builder for [`SubnetAssociation`](crate::types::SubnetAssociation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SubnetAssociationBuilder {
-    pub(crate) subnet_id: std::option::Option<std::string::String>,
+    pub(crate) subnet_id: ::std::option::Option<::std::string::String>,
     pub(crate) state:
-        std::option::Option<crate::types::TransitGatewayMulitcastDomainAssociationState>,
+        ::std::option::Option<crate::types::TransitGatewayMulitcastDomainAssociationState>,
 }
 impl SubnetAssociationBuilder {
     /// <p>The ID of the subnet.</p>
-    pub fn subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.subnet_id = Some(input.into());
+    pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.subnet_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the subnet.</p>
-    pub fn set_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subnet_id = input;
         self
     }
@@ -54,13 +56,13 @@ impl SubnetAssociationBuilder {
         mut self,
         input: crate::types::TransitGatewayMulitcastDomainAssociationState,
     ) -> Self {
-        self.state = Some(input);
+        self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The state of the subnet association.</p>
     pub fn set_state(
         mut self,
-        input: std::option::Option<crate::types::TransitGatewayMulitcastDomainAssociationState>,
+        input: ::std::option::Option<crate::types::TransitGatewayMulitcastDomainAssociationState>,
     ) -> Self {
         self.state = input;
         self

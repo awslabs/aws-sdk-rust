@@ -2,22 +2,22 @@
 
 /// <p>Represents the input of a <code>RemoveTagsFromOnPremisesInstances</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemoveTagsFromOnPremisesInstancesInput {
     /// <p>The tag key-value pairs to remove from the on-premises instances.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The names of the on-premises instances from which to remove tags.</p>
     #[doc(hidden)]
-    pub instance_names: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub instance_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RemoveTagsFromOnPremisesInstancesInput {
     /// <p>The tag key-value pairs to remove from the on-premises instances.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The names of the on-premises instances from which to remove tags.</p>
-    pub fn instance_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn instance_names(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.instance_names.as_deref()
     }
 }
@@ -30,10 +30,12 @@ impl RemoveTagsFromOnPremisesInstancesInput {
 
 /// A builder for [`RemoveTagsFromOnPremisesInstancesInput`](crate::operation::remove_tags_from_on_premises_instances::RemoveTagsFromOnPremisesInstancesInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RemoveTagsFromOnPremisesInstancesInputBuilder {
-    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    pub(crate) instance_names: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) instance_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RemoveTagsFromOnPremisesInstancesInputBuilder {
     /// Appends an item to `tags`.
@@ -44,13 +46,13 @@ impl RemoveTagsFromOnPremisesInstancesInputBuilder {
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
-        self.tags = Some(v);
+        self.tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>The tag key-value pairs to remove from the on-premises instances.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tags = input;
         self
@@ -60,23 +62,26 @@ impl RemoveTagsFromOnPremisesInstancesInputBuilder {
     /// To override the contents of this collection use [`set_instance_names`](Self::set_instance_names).
     ///
     /// <p>The names of the on-premises instances from which to remove tags.</p>
-    pub fn instance_names(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn instance_names(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.instance_names.unwrap_or_default();
         v.push(input.into());
-        self.instance_names = Some(v);
+        self.instance_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>The names of the on-premises instances from which to remove tags.</p>
     pub fn set_instance_names(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.instance_names = input;
         self
     }
     /// Consumes the builder and constructs a [`RemoveTagsFromOnPremisesInstancesInput`](crate::operation::remove_tags_from_on_premises_instances::RemoveTagsFromOnPremisesInstancesInput).
-    pub fn build(self) -> Result<crate::operation::remove_tags_from_on_premises_instances::RemoveTagsFromOnPremisesInstancesInput, aws_smithy_http::operation::error::BuildError>{
-        Ok(
+    pub fn build(self) -> ::std::result::Result<crate::operation::remove_tags_from_on_premises_instances::RemoveTagsFromOnPremisesInstancesInput, ::aws_smithy_http::operation::error::BuildError>{
+        ::std::result::Result::Ok(
             crate::operation::remove_tags_from_on_premises_instances::RemoveTagsFromOnPremisesInstancesInput {
                 tags: self.tags
                 ,

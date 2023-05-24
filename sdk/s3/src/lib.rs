@@ -36,9 +36,9 @@
 //! ```rust,no_run
 //! use aws_sdk_s3 as s3;
 //!
-//! #[tokio::main]
+//! #[::tokio::main]
 //! async fn main() -> Result<(), s3::Error> {
-//!     let config = aws_config::load_from_env().await;
+//!     let config = ::aws_config::load_from_env().await;
 //!     let client = s3::Client::new(&config);
 //!
 //!     // ... make some calls with the client
@@ -110,7 +110,7 @@ pub use config::Config;
 /// In the simplest case, creating a client looks as follows:
 /// ```rust,no_run
 /// # async fn wrapper() {
-/// let config = aws_config::load_from_env().await;
+/// let config = ::aws_config::load_from_env().await;
 /// let client = aws_sdk_s3::Client::new(&config);
 /// # }
 /// ```
@@ -122,7 +122,7 @@ pub use config::Config;
 ///
 /// ```rust,no_run
 /// # async fn wrapper() {
-/// let sdk_config = aws_config::load_from_env().await;
+/// let sdk_config = ::aws_config::load_from_env().await;
 /// let config = aws_sdk_s3::config::Builder::from(&sdk_config)
 /// # /*
 ///     .some_service_specific_setting("value")

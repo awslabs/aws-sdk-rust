@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetFacet`](crate::operation::get_facet::builders::GetFacetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`schema_arn(impl Into<String>)`](crate::operation::get_facet::builders::GetFacetFluentBuilder::schema_arn) / [`set_schema_arn(Option<String>)`](crate::operation::get_facet::builders::GetFacetFluentBuilder::set_schema_arn): <p>The Amazon Resource Name (ARN) that is associated with the <code>Facet</code>. For more information, see <code>arns</code>.</p>
-    ///   - [`name(impl Into<String>)`](crate::operation::get_facet::builders::GetFacetFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_facet::builders::GetFacetFluentBuilder::set_name): <p>The name of the facet to retrieve.</p>
+    ///   - [`schema_arn(impl ::std::convert::Into<String>)`](crate::operation::get_facet::builders::GetFacetFluentBuilder::schema_arn) / [`set_schema_arn(Option<String>)`](crate::operation::get_facet::builders::GetFacetFluentBuilder::set_schema_arn): <p>The Amazon Resource Name (ARN) that is associated with the <code>Facet</code>. For more information, see <code>arns</code>.</p>
+    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::get_facet::builders::GetFacetFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_facet::builders::GetFacetFluentBuilder::set_name): <p>The name of the facet to retrieve.</p>
     /// - On success, responds with [`GetFacetOutput`](crate::operation::get_facet::GetFacetOutput) with field(s):
     ///   - [`facet(Option<Facet>)`](crate::operation::get_facet::GetFacetOutput::facet): <p>The <code>Facet</code> structure that is associated with the facet.</p>
     /// - On failure, responds with [`SdkError<GetFacetError>`](crate::operation::get_facet::GetFacetError)

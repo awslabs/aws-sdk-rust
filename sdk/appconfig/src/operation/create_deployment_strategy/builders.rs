@@ -6,29 +6,29 @@ pub use crate::operation::create_deployment_strategy::_create_deployment_strateg
 /// Fluent builder constructing a request to `CreateDeploymentStrategy`.
 ///
 /// <p>Creates a deployment strategy that defines important criteria for rolling out your configuration to the designated targets. A deployment strategy includes the overall duration required, a percentage of targets to receive the deployment during each interval, an algorithm that defines how percentage grows, and bake time.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateDeploymentStrategyFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::create_deployment_strategy::builders::CreateDeploymentStrategyInputBuilder,
 }
 impl CreateDeploymentStrategyFluentBuilder {
     /// Creates a new `CreateDeploymentStrategy`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_deployment_strategy::CreateDeploymentStrategy,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_deployment_strategy::CreateDeploymentStrategyError,
         >,
     > {
@@ -36,30 +36,33 @@ impl CreateDeploymentStrategyFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_deployment_strategy::CreateDeploymentStrategyOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_deployment_strategy::CreateDeploymentStrategyError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,31 +75,31 @@ impl CreateDeploymentStrategyFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_deployment_strategy::CreateDeploymentStrategyOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_deployment_strategy::CreateDeploymentStrategyError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>A name for the deployment strategy.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// <p>A name for the deployment strategy.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
     /// <p>A description of the deployment strategy.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>A description of the deployment strategy.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
@@ -106,7 +109,7 @@ impl CreateDeploymentStrategyFluentBuilder {
         self
     }
     /// <p>Total amount of time for a deployment to last.</p>
-    pub fn set_deployment_duration_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_deployment_duration_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_deployment_duration_in_minutes(input);
         self
     }
@@ -116,7 +119,7 @@ impl CreateDeploymentStrategyFluentBuilder {
         self
     }
     /// <p>Specifies the amount of time AppConfig monitors for Amazon CloudWatch alarms after the configuration has been deployed to 100% of its targets, before considering the deployment to be complete. If an alarm is triggered during this time, AppConfig rolls back the deployment. You must configure permissions for AppConfig to roll back based on CloudWatch alarms. For more information, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/getting-started-with-appconfig-cloudwatch-alarms-permissions.html">Configuring permissions for rollback based on Amazon CloudWatch alarms</a> in the <i>AppConfig User Guide</i>.</p>
-    pub fn set_final_bake_time_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_final_bake_time_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_final_bake_time_in_minutes(input);
         self
     }
@@ -126,7 +129,7 @@ impl CreateDeploymentStrategyFluentBuilder {
         self
     }
     /// <p>The percentage of targets to receive a deployed configuration during each interval.</p>
-    pub fn set_growth_factor(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_growth_factor(mut self, input: ::std::option::Option<f32>) -> Self {
         self.inner = self.inner.set_growth_factor(input);
         self
     }
@@ -148,7 +151,10 @@ impl CreateDeploymentStrategyFluentBuilder {
     /// <p> <code>2*(2^1)</code> </p>
     /// <p> <code>2*(2^2)</code> </p>
     /// <p>Expressed numerically, the deployment rolls out as follows: 2% of the targets, 4% of the targets, 8% of the targets, and continues until the configuration has been deployed to all targets.</p>
-    pub fn set_growth_type(mut self, input: std::option::Option<crate::types::GrowthType>) -> Self {
+    pub fn set_growth_type(
+        mut self,
+        input: ::std::option::Option<crate::types::GrowthType>,
+    ) -> Self {
         self.inner = self.inner.set_growth_type(input);
         self
     }
@@ -160,7 +166,7 @@ impl CreateDeploymentStrategyFluentBuilder {
     /// <p>Save the deployment strategy to a Systems Manager (SSM) document.</p>
     pub fn set_replicate_to(
         mut self,
-        input: std::option::Option<crate::types::ReplicateTo>,
+        input: ::std::option::Option<crate::types::ReplicateTo>,
     ) -> Self {
         self.inner = self.inner.set_replicate_to(input);
         self
@@ -172,8 +178,8 @@ impl CreateDeploymentStrategyFluentBuilder {
     /// <p>Metadata to assign to the deployment strategy. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
@@ -181,8 +187,8 @@ impl CreateDeploymentStrategyFluentBuilder {
     /// <p>Metadata to assign to the deployment strategy. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_tags(input);

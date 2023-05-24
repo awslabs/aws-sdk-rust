@@ -5,29 +5,33 @@
 /// </note>
 /// <p>Describes the VPC peering connection options.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PeeringConnectionOptions {
     /// <p>If true, the public DNS hostnames of instances in the specified VPC resolve to private IP addresses when queried from instances in the peer VPC.</p>
     #[doc(hidden)]
-    pub allow_dns_resolution_from_remote_vpc: std::option::Option<bool>,
+    pub allow_dns_resolution_from_remote_vpc: ::std::option::Option<bool>,
     /// <p>If true, enables outbound communication from an EC2-Classic instance that's linked to a local VPC using ClassicLink to instances in a peer VPC.</p>
     #[doc(hidden)]
-    pub allow_egress_from_local_classic_link_to_remote_vpc: std::option::Option<bool>,
+    pub allow_egress_from_local_classic_link_to_remote_vpc: ::std::option::Option<bool>,
     /// <p>If true, enables outbound communication from instances in a local VPC to an EC2-Classic instance that's linked to a peer VPC using ClassicLink.</p>
     #[doc(hidden)]
-    pub allow_egress_from_local_vpc_to_remote_classic_link: std::option::Option<bool>,
+    pub allow_egress_from_local_vpc_to_remote_classic_link: ::std::option::Option<bool>,
 }
 impl PeeringConnectionOptions {
     /// <p>If true, the public DNS hostnames of instances in the specified VPC resolve to private IP addresses when queried from instances in the peer VPC.</p>
-    pub fn allow_dns_resolution_from_remote_vpc(&self) -> std::option::Option<bool> {
+    pub fn allow_dns_resolution_from_remote_vpc(&self) -> ::std::option::Option<bool> {
         self.allow_dns_resolution_from_remote_vpc
     }
     /// <p>If true, enables outbound communication from an EC2-Classic instance that's linked to a local VPC using ClassicLink to instances in a peer VPC.</p>
-    pub fn allow_egress_from_local_classic_link_to_remote_vpc(&self) -> std::option::Option<bool> {
+    pub fn allow_egress_from_local_classic_link_to_remote_vpc(
+        &self,
+    ) -> ::std::option::Option<bool> {
         self.allow_egress_from_local_classic_link_to_remote_vpc
     }
     /// <p>If true, enables outbound communication from instances in a local VPC to an EC2-Classic instance that's linked to a peer VPC using ClassicLink.</p>
-    pub fn allow_egress_from_local_vpc_to_remote_classic_link(&self) -> std::option::Option<bool> {
+    pub fn allow_egress_from_local_vpc_to_remote_classic_link(
+        &self,
+    ) -> ::std::option::Option<bool> {
         self.allow_egress_from_local_vpc_to_remote_classic_link
     }
 }
@@ -40,48 +44,52 @@ impl PeeringConnectionOptions {
 
 /// A builder for [`PeeringConnectionOptions`](crate::types::PeeringConnectionOptions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PeeringConnectionOptionsBuilder {
-    pub(crate) allow_dns_resolution_from_remote_vpc: std::option::Option<bool>,
-    pub(crate) allow_egress_from_local_classic_link_to_remote_vpc: std::option::Option<bool>,
-    pub(crate) allow_egress_from_local_vpc_to_remote_classic_link: std::option::Option<bool>,
+    pub(crate) allow_dns_resolution_from_remote_vpc: ::std::option::Option<bool>,
+    pub(crate) allow_egress_from_local_classic_link_to_remote_vpc: ::std::option::Option<bool>,
+    pub(crate) allow_egress_from_local_vpc_to_remote_classic_link: ::std::option::Option<bool>,
 }
 impl PeeringConnectionOptionsBuilder {
     /// <p>If true, the public DNS hostnames of instances in the specified VPC resolve to private IP addresses when queried from instances in the peer VPC.</p>
     pub fn allow_dns_resolution_from_remote_vpc(mut self, input: bool) -> Self {
-        self.allow_dns_resolution_from_remote_vpc = Some(input);
+        self.allow_dns_resolution_from_remote_vpc = ::std::option::Option::Some(input);
         self
     }
     /// <p>If true, the public DNS hostnames of instances in the specified VPC resolve to private IP addresses when queried from instances in the peer VPC.</p>
     pub fn set_allow_dns_resolution_from_remote_vpc(
         mut self,
-        input: std::option::Option<bool>,
+        input: ::std::option::Option<bool>,
     ) -> Self {
         self.allow_dns_resolution_from_remote_vpc = input;
         self
     }
     /// <p>If true, enables outbound communication from an EC2-Classic instance that's linked to a local VPC using ClassicLink to instances in a peer VPC.</p>
     pub fn allow_egress_from_local_classic_link_to_remote_vpc(mut self, input: bool) -> Self {
-        self.allow_egress_from_local_classic_link_to_remote_vpc = Some(input);
+        self.allow_egress_from_local_classic_link_to_remote_vpc =
+            ::std::option::Option::Some(input);
         self
     }
     /// <p>If true, enables outbound communication from an EC2-Classic instance that's linked to a local VPC using ClassicLink to instances in a peer VPC.</p>
     pub fn set_allow_egress_from_local_classic_link_to_remote_vpc(
         mut self,
-        input: std::option::Option<bool>,
+        input: ::std::option::Option<bool>,
     ) -> Self {
         self.allow_egress_from_local_classic_link_to_remote_vpc = input;
         self
     }
     /// <p>If true, enables outbound communication from instances in a local VPC to an EC2-Classic instance that's linked to a peer VPC using ClassicLink.</p>
     pub fn allow_egress_from_local_vpc_to_remote_classic_link(mut self, input: bool) -> Self {
-        self.allow_egress_from_local_vpc_to_remote_classic_link = Some(input);
+        self.allow_egress_from_local_vpc_to_remote_classic_link =
+            ::std::option::Option::Some(input);
         self
     }
     /// <p>If true, enables outbound communication from instances in a local VPC to an EC2-Classic instance that's linked to a peer VPC using ClassicLink.</p>
     pub fn set_allow_egress_from_local_vpc_to_remote_classic_link(
         mut self,
-        input: std::option::Option<bool>,
+        input: ::std::option::Option<bool>,
     ) -> Self {
         self.allow_egress_from_local_vpc_to_remote_classic_link = input;
         self

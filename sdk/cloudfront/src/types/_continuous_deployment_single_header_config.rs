@@ -2,22 +2,22 @@
 
 /// <p>This configuration determines which HTTP requests are sent to the staging distribution. If the HTTP request contains a header and value that matches what you specify here, the request is sent to the staging distribution. Otherwise the request is sent to the primary distribution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContinuousDeploymentSingleHeaderConfig {
     /// <p>The request header name that you want CloudFront to send to your staging distribution. The header must contain the prefix <code>aws-cf-cd-</code>.</p>
     #[doc(hidden)]
-    pub header: std::option::Option<std::string::String>,
+    pub header: ::std::option::Option<::std::string::String>,
     /// <p>The request header value.</p>
     #[doc(hidden)]
-    pub value: std::option::Option<std::string::String>,
+    pub value: ::std::option::Option<::std::string::String>,
 }
 impl ContinuousDeploymentSingleHeaderConfig {
     /// <p>The request header name that you want CloudFront to send to your staging distribution. The header must contain the prefix <code>aws-cf-cd-</code>.</p>
-    pub fn header(&self) -> std::option::Option<&str> {
+    pub fn header(&self) -> ::std::option::Option<&str> {
         self.header.as_deref()
     }
     /// <p>The request header value.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl ContinuousDeploymentSingleHeaderConfig {
 
 /// A builder for [`ContinuousDeploymentSingleHeaderConfig`](crate::types::ContinuousDeploymentSingleHeaderConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ContinuousDeploymentSingleHeaderConfigBuilder {
-    pub(crate) header: std::option::Option<std::string::String>,
-    pub(crate) value: std::option::Option<std::string::String>,
+    pub(crate) header: ::std::option::Option<::std::string::String>,
+    pub(crate) value: ::std::option::Option<::std::string::String>,
 }
 impl ContinuousDeploymentSingleHeaderConfigBuilder {
     /// <p>The request header name that you want CloudFront to send to your staging distribution. The header must contain the prefix <code>aws-cf-cd-</code>.</p>
-    pub fn header(mut self, input: impl Into<std::string::String>) -> Self {
-        self.header = Some(input.into());
+    pub fn header(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.header = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The request header name that you want CloudFront to send to your staging distribution. The header must contain the prefix <code>aws-cf-cd-</code>.</p>
-    pub fn set_header(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_header(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.header = input;
         self
     }
     /// <p>The request header value.</p>
-    pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.value = Some(input.into());
+    pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The request header value.</p>
-    pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
     }

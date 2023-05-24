@@ -2,29 +2,29 @@
 
 /// <p>Describes configuration parameters for Amazon CloudWatch logging for an application. For more information about CloudWatch logging, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/monitoring-overview.html">Monitoring</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MonitoringConfiguration {
     /// <p>Describes whether to use the default CloudWatch logging configuration for an application. You must set this property to <code>CUSTOM</code> in order to set the <code>LogLevel</code> or <code>MetricsLevel</code> parameters.</p>
     #[doc(hidden)]
-    pub configuration_type: std::option::Option<crate::types::ConfigurationType>,
+    pub configuration_type: ::std::option::Option<crate::types::ConfigurationType>,
     /// <p>Describes the granularity of the CloudWatch Logs for an application. The <code>Parallelism</code> level is not recommended for applications with a Parallelism over 64 due to excessive costs.</p>
     #[doc(hidden)]
-    pub metrics_level: std::option::Option<crate::types::MetricsLevel>,
+    pub metrics_level: ::std::option::Option<crate::types::MetricsLevel>,
     /// <p>Describes the verbosity of the CloudWatch Logs for an application.</p>
     #[doc(hidden)]
-    pub log_level: std::option::Option<crate::types::LogLevel>,
+    pub log_level: ::std::option::Option<crate::types::LogLevel>,
 }
 impl MonitoringConfiguration {
     /// <p>Describes whether to use the default CloudWatch logging configuration for an application. You must set this property to <code>CUSTOM</code> in order to set the <code>LogLevel</code> or <code>MetricsLevel</code> parameters.</p>
-    pub fn configuration_type(&self) -> std::option::Option<&crate::types::ConfigurationType> {
+    pub fn configuration_type(&self) -> ::std::option::Option<&crate::types::ConfigurationType> {
         self.configuration_type.as_ref()
     }
     /// <p>Describes the granularity of the CloudWatch Logs for an application. The <code>Parallelism</code> level is not recommended for applications with a Parallelism over 64 due to excessive costs.</p>
-    pub fn metrics_level(&self) -> std::option::Option<&crate::types::MetricsLevel> {
+    pub fn metrics_level(&self) -> ::std::option::Option<&crate::types::MetricsLevel> {
         self.metrics_level.as_ref()
     }
     /// <p>Describes the verbosity of the CloudWatch Logs for an application.</p>
-    pub fn log_level(&self) -> std::option::Option<&crate::types::LogLevel> {
+    pub fn log_level(&self) -> ::std::option::Option<&crate::types::LogLevel> {
         self.log_level.as_ref()
     }
 }
@@ -37,46 +37,48 @@ impl MonitoringConfiguration {
 
 /// A builder for [`MonitoringConfiguration`](crate::types::MonitoringConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MonitoringConfigurationBuilder {
-    pub(crate) configuration_type: std::option::Option<crate::types::ConfigurationType>,
-    pub(crate) metrics_level: std::option::Option<crate::types::MetricsLevel>,
-    pub(crate) log_level: std::option::Option<crate::types::LogLevel>,
+    pub(crate) configuration_type: ::std::option::Option<crate::types::ConfigurationType>,
+    pub(crate) metrics_level: ::std::option::Option<crate::types::MetricsLevel>,
+    pub(crate) log_level: ::std::option::Option<crate::types::LogLevel>,
 }
 impl MonitoringConfigurationBuilder {
     /// <p>Describes whether to use the default CloudWatch logging configuration for an application. You must set this property to <code>CUSTOM</code> in order to set the <code>LogLevel</code> or <code>MetricsLevel</code> parameters.</p>
     pub fn configuration_type(mut self, input: crate::types::ConfigurationType) -> Self {
-        self.configuration_type = Some(input);
+        self.configuration_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes whether to use the default CloudWatch logging configuration for an application. You must set this property to <code>CUSTOM</code> in order to set the <code>LogLevel</code> or <code>MetricsLevel</code> parameters.</p>
     pub fn set_configuration_type(
         mut self,
-        input: std::option::Option<crate::types::ConfigurationType>,
+        input: ::std::option::Option<crate::types::ConfigurationType>,
     ) -> Self {
         self.configuration_type = input;
         self
     }
     /// <p>Describes the granularity of the CloudWatch Logs for an application. The <code>Parallelism</code> level is not recommended for applications with a Parallelism over 64 due to excessive costs.</p>
     pub fn metrics_level(mut self, input: crate::types::MetricsLevel) -> Self {
-        self.metrics_level = Some(input);
+        self.metrics_level = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes the granularity of the CloudWatch Logs for an application. The <code>Parallelism</code> level is not recommended for applications with a Parallelism over 64 due to excessive costs.</p>
     pub fn set_metrics_level(
         mut self,
-        input: std::option::Option<crate::types::MetricsLevel>,
+        input: ::std::option::Option<crate::types::MetricsLevel>,
     ) -> Self {
         self.metrics_level = input;
         self
     }
     /// <p>Describes the verbosity of the CloudWatch Logs for an application.</p>
     pub fn log_level(mut self, input: crate::types::LogLevel) -> Self {
-        self.log_level = Some(input);
+        self.log_level = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes the verbosity of the CloudWatch Logs for an application.</p>
-    pub fn set_log_level(mut self, input: std::option::Option<crate::types::LogLevel>) -> Self {
+    pub fn set_log_level(mut self, input: ::std::option::Option<crate::types::LogLevel>) -> Self {
         self.log_level = input;
         self
     }

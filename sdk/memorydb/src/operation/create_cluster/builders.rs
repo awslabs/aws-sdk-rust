@@ -6,56 +6,59 @@ pub use crate::operation::create_cluster::_create_cluster_input::CreateClusterIn
 /// Fluent builder constructing a request to `CreateCluster`.
 ///
 /// <p>Creates a cluster. All nodes in the cluster run the same protocol-compliant engine software.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateClusterFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_cluster::builders::CreateClusterInputBuilder,
 }
 impl CreateClusterFluentBuilder {
     /// Creates a new `CreateCluster`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_cluster::CreateCluster,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_cluster::CreateClusterError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_cluster::CreateClusterError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_cluster::CreateClusterOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_cluster::CreateClusterError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_cluster::CreateClusterError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,52 +71,55 @@ impl CreateClusterFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_cluster::CreateClusterOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_cluster::CreateClusterError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_cluster::CreateClusterError>,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the cluster. This value must be unique as it also serves as the cluster identifier.</p>
-    pub fn cluster_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_name(input.into());
         self
     }
     /// <p>The name of the cluster. This value must be unique as it also serves as the cluster identifier.</p>
-    pub fn set_cluster_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_name(input);
         self
     }
     /// <p>The compute and memory capacity of the nodes in the cluster.</p>
-    pub fn node_type(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn node_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.node_type(input.into());
         self
     }
     /// <p>The compute and memory capacity of the nodes in the cluster.</p>
-    pub fn set_node_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_node_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_node_type(input);
         self
     }
     /// <p>The name of the parameter group associated with the cluster.</p>
-    pub fn parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn parameter_group_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.parameter_group_name(input.into());
         self
     }
     /// <p>The name of the parameter group associated with the cluster.</p>
     pub fn set_parameter_group_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_parameter_group_name(input);
         self
     }
     /// <p>An optional description of the cluster.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>An optional description of the cluster.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
@@ -123,7 +129,7 @@ impl CreateClusterFluentBuilder {
         self
     }
     /// <p>The number of shards the cluster will contain. The default value is 1. </p>
-    pub fn set_num_shards(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_num_shards(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_num_shards(input);
         self
     }
@@ -133,19 +139,22 @@ impl CreateClusterFluentBuilder {
         self
     }
     /// <p>The number of replicas to apply to each shard. The default value is 1. The maximum is 5. </p>
-    pub fn set_num_replicas_per_shard(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_num_replicas_per_shard(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_num_replicas_per_shard(input);
         self
     }
     /// <p>The name of the subnet group to be used for the cluster.</p>
-    pub fn subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn subnet_group_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.subnet_group_name(input.into());
         self
     }
     /// <p>The name of the subnet group to be used for the cluster.</p>
     pub fn set_subnet_group_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_subnet_group_name(input);
         self
@@ -155,14 +164,17 @@ impl CreateClusterFluentBuilder {
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
     ///
     /// <p>A list of security group names to associate with this cluster.</p>
-    pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn security_group_ids(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.security_group_ids(input.into());
         self
     }
     /// <p>A list of security group names to associate with this cluster.</p>
     pub fn set_security_group_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_security_group_ids(input);
         self
@@ -179,7 +191,10 @@ impl CreateClusterFluentBuilder {
     /// <li> <p> <code>sat</code> </p> </li>
     /// </ul>
     /// <p>Example: <code>sun:23:00-mon:01:30</code> </p>
-    pub fn maintenance_window(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn maintenance_window(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.maintenance_window(input.into());
         self
     }
@@ -197,7 +212,7 @@ impl CreateClusterFluentBuilder {
     /// <p>Example: <code>sun:23:00-mon:01:30</code> </p>
     pub fn set_maintenance_window(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_maintenance_window(input);
         self
@@ -208,17 +223,23 @@ impl CreateClusterFluentBuilder {
         self
     }
     /// <p>The port number on which each of the nodes accepts connections.</p>
-    pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_port(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic to which notifications are sent.</p>
-    pub fn sns_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn sns_topic_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.sns_topic_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic to which notifications are sent.</p>
-    pub fn set_sns_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_sns_topic_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_sns_topic_arn(input);
         self
     }
@@ -228,17 +249,17 @@ impl CreateClusterFluentBuilder {
         self
     }
     /// <p>A flag to enable in-transit encryption on the cluster.</p>
-    pub fn set_tls_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_tls_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_tls_enabled(input);
         self
     }
     /// <p>The ID of the KMS key used to encrypt the cluster.</p>
-    pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kms_key_id(input.into());
         self
     }
     /// <p>The ID of the KMS key used to encrypt the cluster.</p>
-    pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kms_key_id(input);
         self
     }
@@ -247,25 +268,34 @@ impl CreateClusterFluentBuilder {
     /// To override the contents of this collection use [`set_snapshot_arns`](Self::set_snapshot_arns).
     ///
     /// <p>A list of Amazon Resource Names (ARN) that uniquely identify the RDB snapshot files stored in Amazon S3. The snapshot files are used to populate the new cluster. The Amazon S3 object name in the ARN cannot contain any commas.</p>
-    pub fn snapshot_arns(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn snapshot_arns(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.snapshot_arns(input.into());
         self
     }
     /// <p>A list of Amazon Resource Names (ARN) that uniquely identify the RDB snapshot files stored in Amazon S3. The snapshot files are used to populate the new cluster. The Amazon S3 object name in the ARN cannot contain any commas.</p>
     pub fn set_snapshot_arns(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_snapshot_arns(input);
         self
     }
     /// <p>The name of a snapshot from which to restore data into the new cluster. The snapshot status changes to restoring while the new cluster is being created.</p>
-    pub fn snapshot_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn snapshot_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.snapshot_name(input.into());
         self
     }
     /// <p>The name of a snapshot from which to restore data into the new cluster. The snapshot status changes to restoring while the new cluster is being created.</p>
-    pub fn set_snapshot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_snapshot_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_snapshot_name(input);
         self
     }
@@ -275,7 +305,7 @@ impl CreateClusterFluentBuilder {
         self
     }
     /// <p>The number of days for which MemoryDB retains automatic snapshots before deleting them. For example, if you set SnapshotRetentionLimit to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p>
-    pub fn set_snapshot_retention_limit(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_snapshot_retention_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_snapshot_retention_limit(input);
         self
     }
@@ -291,7 +321,7 @@ impl CreateClusterFluentBuilder {
     /// <p>A list of tags to be added to this resource. Tags are comma-separated key,value pairs (e.g. Key=myKey, Value=myKeyValue. You can include multiple tags as shown following: Key=myKey, Value=myKeyValue Key=mySecondKey, Value=mySecondKeyValue.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
@@ -299,34 +329,46 @@ impl CreateClusterFluentBuilder {
     /// <p>The daily time range (in UTC) during which MemoryDB begins taking a daily snapshot of your shard.</p>
     /// <p> Example: 05:00-09:00</p>
     /// <p> If you do not specify this parameter, MemoryDB automatically chooses an appropriate time range.</p>
-    pub fn snapshot_window(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn snapshot_window(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.snapshot_window(input.into());
         self
     }
     /// <p>The daily time range (in UTC) during which MemoryDB begins taking a daily snapshot of your shard.</p>
     /// <p> Example: 05:00-09:00</p>
     /// <p> If you do not specify this parameter, MemoryDB automatically chooses an appropriate time range.</p>
-    pub fn set_snapshot_window(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_snapshot_window(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_snapshot_window(input);
         self
     }
     /// <p>The name of the Access Control List to associate with the cluster.</p>
-    pub fn acl_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn acl_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.acl_name(input.into());
         self
     }
     /// <p>The name of the Access Control List to associate with the cluster.</p>
-    pub fn set_acl_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_acl_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_acl_name(input);
         self
     }
     /// <p>The version number of the Redis engine to be used for the cluster.</p>
-    pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn engine_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.engine_version(input.into());
         self
     }
     /// <p>The version number of the Redis engine to be used for the cluster.</p>
-    pub fn set_engine_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_engine_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_engine_version(input);
         self
     }
@@ -336,7 +378,7 @@ impl CreateClusterFluentBuilder {
         self
     }
     /// <p>When set to true, the cluster will automatically receive minor engine version upgrades after launch.</p>
-    pub fn set_auto_minor_version_upgrade(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_auto_minor_version_upgrade(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_auto_minor_version_upgrade(input);
         self
     }
@@ -346,7 +388,7 @@ impl CreateClusterFluentBuilder {
         self
     }
     /// <p>Enables data tiering. Data tiering is only supported for clusters using the r6gd node type. This parameter must be set when using r6gd nodes. For more information, see <a href="https://docs.aws.amazon.com/memorydb/latest/devguide/data-tiering.html">Data tiering</a>.</p>
-    pub fn set_data_tiering(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_data_tiering(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_data_tiering(input);
         self
     }

@@ -2,24 +2,24 @@
 
 /// <p>Specifies criteria for sorting the results of a query for information about Amazon Web Services resources that Amazon Macie monitors and analyzes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchResourcesSortCriteria {
     /// <p>The property to sort the results by.</p>
     #[doc(hidden)]
-    pub attribute_name: std::option::Option<crate::types::SearchResourcesSortAttributeName>,
+    pub attribute_name: ::std::option::Option<crate::types::SearchResourcesSortAttributeName>,
     /// <p>The sort order to apply to the results, based on the value for the property specified by the attributeName property. Valid values are: ASC, sort the results in ascending order; and, DESC, sort the results in descending order.</p>
     #[doc(hidden)]
-    pub order_by: std::option::Option<crate::types::OrderBy>,
+    pub order_by: ::std::option::Option<crate::types::OrderBy>,
 }
 impl SearchResourcesSortCriteria {
     /// <p>The property to sort the results by.</p>
     pub fn attribute_name(
         &self,
-    ) -> std::option::Option<&crate::types::SearchResourcesSortAttributeName> {
+    ) -> ::std::option::Option<&crate::types::SearchResourcesSortAttributeName> {
         self.attribute_name.as_ref()
     }
     /// <p>The sort order to apply to the results, based on the value for the property specified by the attributeName property. Valid values are: ASC, sort the results in ascending order; and, DESC, sort the results in descending order.</p>
-    pub fn order_by(&self) -> std::option::Option<&crate::types::OrderBy> {
+    pub fn order_by(&self) -> ::std::option::Option<&crate::types::OrderBy> {
         self.order_by.as_ref()
     }
 }
@@ -32,32 +32,35 @@ impl SearchResourcesSortCriteria {
 
 /// A builder for [`SearchResourcesSortCriteria`](crate::types::SearchResourcesSortCriteria).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SearchResourcesSortCriteriaBuilder {
-    pub(crate) attribute_name: std::option::Option<crate::types::SearchResourcesSortAttributeName>,
-    pub(crate) order_by: std::option::Option<crate::types::OrderBy>,
+    pub(crate) attribute_name:
+        ::std::option::Option<crate::types::SearchResourcesSortAttributeName>,
+    pub(crate) order_by: ::std::option::Option<crate::types::OrderBy>,
 }
 impl SearchResourcesSortCriteriaBuilder {
     /// <p>The property to sort the results by.</p>
     pub fn attribute_name(mut self, input: crate::types::SearchResourcesSortAttributeName) -> Self {
-        self.attribute_name = Some(input);
+        self.attribute_name = ::std::option::Option::Some(input);
         self
     }
     /// <p>The property to sort the results by.</p>
     pub fn set_attribute_name(
         mut self,
-        input: std::option::Option<crate::types::SearchResourcesSortAttributeName>,
+        input: ::std::option::Option<crate::types::SearchResourcesSortAttributeName>,
     ) -> Self {
         self.attribute_name = input;
         self
     }
     /// <p>The sort order to apply to the results, based on the value for the property specified by the attributeName property. Valid values are: ASC, sort the results in ascending order; and, DESC, sort the results in descending order.</p>
     pub fn order_by(mut self, input: crate::types::OrderBy) -> Self {
-        self.order_by = Some(input);
+        self.order_by = ::std::option::Option::Some(input);
         self
     }
     /// <p>The sort order to apply to the results, based on the value for the property specified by the attributeName property. Valid values are: ASC, sort the results in ascending order; and, DESC, sort the results in descending order.</p>
-    pub fn set_order_by(mut self, input: std::option::Option<crate::types::OrderBy>) -> Self {
+    pub fn set_order_by(mut self, input: ::std::option::Option<crate::types::OrderBy>) -> Self {
         self.order_by = input;
         self
     }

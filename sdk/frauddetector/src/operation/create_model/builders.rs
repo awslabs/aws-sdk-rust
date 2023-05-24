@@ -6,56 +6,59 @@ pub use crate::operation::create_model::_create_model_input::CreateModelInputBui
 /// Fluent builder constructing a request to `CreateModel`.
 ///
 /// <p>Creates a model using the specified model type.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateModelFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_model::builders::CreateModelInputBuilder,
 }
 impl CreateModelFluentBuilder {
     /// Creates a new `CreateModel`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_model::CreateModel,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_model::CreateModelError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_model::CreateModelError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_model::CreateModelOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_model::CreateModelError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_model::CreateModelError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,19 +71,19 @@ impl CreateModelFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_model::CreateModelOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_model::CreateModelError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_model::CreateModelError>,
     > {
         self.send_middleware().await
     }
     /// <p>The model ID.</p>
-    pub fn model_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.model_id(input.into());
         self
     }
     /// <p>The model ID.</p>
-    pub fn set_model_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_model_id(input);
         self
     }
@@ -92,28 +95,34 @@ impl CreateModelFluentBuilder {
     /// <p>The model type. </p>
     pub fn set_model_type(
         mut self,
-        input: std::option::Option<crate::types::ModelTypeEnum>,
+        input: ::std::option::Option<crate::types::ModelTypeEnum>,
     ) -> Self {
         self.inner = self.inner.set_model_type(input);
         self
     }
     /// <p>The model description. </p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>The model description. </p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
     /// <p>The name of the event type.</p>
-    pub fn event_type_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn event_type_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.event_type_name(input.into());
         self
     }
     /// <p>The name of the event type.</p>
-    pub fn set_event_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_event_type_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_event_type_name(input);
         self
     }
@@ -129,7 +138,7 @@ impl CreateModelFluentBuilder {
     /// <p>A collection of key and value pairs.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self

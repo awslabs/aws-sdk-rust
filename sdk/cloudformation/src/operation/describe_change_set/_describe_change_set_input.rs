@@ -2,29 +2,29 @@
 
 /// <p>The input for the <code>DescribeChangeSet</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeChangeSetInput {
     /// <p>The name or Amazon Resource Name (ARN) of the change set that you want to describe.</p>
     #[doc(hidden)]
-    pub change_set_name: std::option::Option<std::string::String>,
+    pub change_set_name: ::std::option::Option<::std::string::String>,
     /// <p>If you specified the name of a change set, specify the stack name or ID (ARN) of the change set you want to describe.</p>
     #[doc(hidden)]
-    pub stack_name: std::option::Option<std::string::String>,
+    pub stack_name: ::std::option::Option<::std::string::String>,
     /// <p>A string (provided by the <code>DescribeChangeSet</code> response output) that identifies the next page of information that you want to retrieve.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeChangeSetInput {
     /// <p>The name or Amazon Resource Name (ARN) of the change set that you want to describe.</p>
-    pub fn change_set_name(&self) -> std::option::Option<&str> {
+    pub fn change_set_name(&self) -> ::std::option::Option<&str> {
         self.change_set_name.as_deref()
     }
     /// <p>If you specified the name of a change set, specify the stack name or ID (ARN) of the change set you want to describe.</p>
-    pub fn stack_name(&self) -> std::option::Option<&str> {
+    pub fn stack_name(&self) -> ::std::option::Option<&str> {
         self.stack_name.as_deref()
     }
     /// <p>A string (provided by the <code>DescribeChangeSet</code> response output) that identifies the next page of information that you want to retrieve.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
@@ -38,51 +38,59 @@ impl DescribeChangeSetInput {
 
 /// A builder for [`DescribeChangeSetInput`](crate::operation::describe_change_set::DescribeChangeSetInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeChangeSetInputBuilder {
-    pub(crate) change_set_name: std::option::Option<std::string::String>,
-    pub(crate) stack_name: std::option::Option<std::string::String>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) change_set_name: ::std::option::Option<::std::string::String>,
+    pub(crate) stack_name: ::std::option::Option<::std::string::String>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeChangeSetInputBuilder {
     /// <p>The name or Amazon Resource Name (ARN) of the change set that you want to describe.</p>
-    pub fn change_set_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.change_set_name = Some(input.into());
+    pub fn change_set_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.change_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name or Amazon Resource Name (ARN) of the change set that you want to describe.</p>
-    pub fn set_change_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_change_set_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.change_set_name = input;
         self
     }
     /// <p>If you specified the name of a change set, specify the stack name or ID (ARN) of the change set you want to describe.</p>
-    pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.stack_name = Some(input.into());
+    pub fn stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.stack_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If you specified the name of a change set, specify the stack name or ID (ARN) of the change set you want to describe.</p>
-    pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_stack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stack_name = input;
         self
     }
     /// <p>A string (provided by the <code>DescribeChangeSet</code> response output) that identifies the next page of information that you want to retrieve.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A string (provided by the <code>DescribeChangeSet</code> response output) that identifies the next page of information that you want to retrieve.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
     /// Consumes the builder and constructs a [`DescribeChangeSetInput`](crate::operation::describe_change_set::DescribeChangeSetInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::describe_change_set::DescribeChangeSetInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::describe_change_set::DescribeChangeSetInput {
                 change_set_name: self.change_set_name,
                 stack_name: self.stack_name,

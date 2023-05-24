@@ -49,13 +49,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum InventoryOptionalField {
     #[allow(missing_docs)] // documentation missing in model
@@ -87,7 +87,7 @@ pub enum InventoryOptionalField {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for InventoryOptionalField {
+impl ::std::convert::From<&str> for InventoryOptionalField {
     fn from(s: &str) -> Self {
         match s {
             "BucketKeyStatus" => InventoryOptionalField::BucketKeyStatus,
@@ -109,11 +109,11 @@ impl std::convert::From<&str> for InventoryOptionalField {
         }
     }
 }
-impl std::str::FromStr for InventoryOptionalField {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for InventoryOptionalField {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(InventoryOptionalField::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(InventoryOptionalField::from(s))
     }
 }
 impl InventoryOptionalField {
@@ -155,7 +155,7 @@ impl InventoryOptionalField {
         ]
     }
 }
-impl AsRef<str> for InventoryOptionalField {
+impl ::std::convert::AsRef<str> for InventoryOptionalField {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

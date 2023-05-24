@@ -6,29 +6,29 @@ pub use crate::operation::describe_db_cluster_snapshots::_describe_db_cluster_sn
 /// Fluent builder constructing a request to `DescribeDBClusterSnapshots`.
 ///
 /// <p>Returns information about cluster snapshots. This API operation supports pagination.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeDBClusterSnapshotsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::describe_db_cluster_snapshots::builders::DescribeDbClusterSnapshotsInputBuilder,
 }
 impl DescribeDBClusterSnapshotsFluentBuilder {
     /// Creates a new `DescribeDBClusterSnapshots`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::describe_db_cluster_snapshots::DescribeDBClusterSnapshots,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::describe_db_cluster_snapshots::DescribeDBClusterSnapshotsError,
         >,
     > {
@@ -36,30 +36,33 @@ impl DescribeDBClusterSnapshotsFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::describe_db_cluster_snapshots::DescribeDbClusterSnapshotsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::describe_db_cluster_snapshots::DescribeDBClusterSnapshotsError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,9 +75,9 @@ impl DescribeDBClusterSnapshotsFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::describe_db_cluster_snapshots::DescribeDbClusterSnapshotsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::describe_db_cluster_snapshots::DescribeDBClusterSnapshotsError,
         >,
     > {
@@ -91,7 +94,10 @@ impl DescribeDBClusterSnapshotsFluentBuilder {
     /// <ul>
     /// <li> <p>If provided, must match the identifier of an existing <code>DBCluster</code>.</p> </li>
     /// </ul>
-    pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn db_cluster_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.db_cluster_identifier(input.into());
         self
     }
@@ -102,7 +108,7 @@ impl DescribeDBClusterSnapshotsFluentBuilder {
     /// </ul>
     pub fn set_db_cluster_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_db_cluster_identifier(input);
         self
@@ -113,7 +119,10 @@ impl DescribeDBClusterSnapshotsFluentBuilder {
     /// <li> <p>If provided, must match the identifier of an existing <code>DBClusterSnapshot</code>.</p> </li>
     /// <li> <p>If this identifier is for an automated snapshot, the <code>SnapshotType</code> parameter must also be specified.</p> </li>
     /// </ul>
-    pub fn db_cluster_snapshot_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn db_cluster_snapshot_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.db_cluster_snapshot_identifier(input.into());
         self
     }
@@ -125,7 +134,7 @@ impl DescribeDBClusterSnapshotsFluentBuilder {
     /// </ul>
     pub fn set_db_cluster_snapshot_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_db_cluster_snapshot_identifier(input);
         self
@@ -139,7 +148,10 @@ impl DescribeDBClusterSnapshotsFluentBuilder {
     /// </ul>
     /// <p>If you don't specify a <code>SnapshotType</code> value, then both automated and manual cluster snapshots are returned. You can include shared cluster snapshots with these results by setting the <code>IncludeShared</code> parameter to <code>true</code>. You can include public cluster snapshots with these results by setting the<code>IncludePublic</code> parameter to <code>true</code>.</p>
     /// <p>The <code>IncludeShared</code> and <code>IncludePublic</code> parameters don't apply for <code>SnapshotType</code> values of <code>manual</code> or <code>automated</code>. The <code>IncludePublic</code> parameter doesn't apply when <code>SnapshotType</code> is set to <code>shared</code>. The <code>IncludeShared</code> parameter doesn't apply when <code>SnapshotType</code> is set to <code>public</code>.</p>
-    pub fn snapshot_type(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn snapshot_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.snapshot_type(input.into());
         self
     }
@@ -152,7 +164,10 @@ impl DescribeDBClusterSnapshotsFluentBuilder {
     /// </ul>
     /// <p>If you don't specify a <code>SnapshotType</code> value, then both automated and manual cluster snapshots are returned. You can include shared cluster snapshots with these results by setting the <code>IncludeShared</code> parameter to <code>true</code>. You can include public cluster snapshots with these results by setting the<code>IncludePublic</code> parameter to <code>true</code>.</p>
     /// <p>The <code>IncludeShared</code> and <code>IncludePublic</code> parameters don't apply for <code>SnapshotType</code> values of <code>manual</code> or <code>automated</code>. The <code>IncludePublic</code> parameter doesn't apply when <code>SnapshotType</code> is set to <code>shared</code>. The <code>IncludeShared</code> parameter doesn't apply when <code>SnapshotType</code> is set to <code>public</code>.</p>
-    pub fn set_snapshot_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_snapshot_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_snapshot_type(input);
         self
     }
@@ -168,7 +183,7 @@ impl DescribeDBClusterSnapshotsFluentBuilder {
     /// <p>This parameter is not currently supported.</p>
     pub fn set_filters(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
@@ -183,17 +198,17 @@ impl DescribeDBClusterSnapshotsFluentBuilder {
     /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.</p>
     /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
-    pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_records(input);
         self
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.marker(input.into());
         self
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_marker(input);
         self
     }
@@ -203,7 +218,7 @@ impl DescribeDBClusterSnapshotsFluentBuilder {
         self
     }
     /// <p>Set to <code>true</code> to include shared manual cluster snapshots from other Amazon Web Services accounts that this Amazon Web Services account has been given permission to copy or restore, and otherwise <code>false</code>. The default is <code>false</code>.</p>
-    pub fn set_include_shared(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_include_shared(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_include_shared(input);
         self
     }
@@ -213,7 +228,7 @@ impl DescribeDBClusterSnapshotsFluentBuilder {
         self
     }
     /// <p>Set to <code>true</code> to include manual cluster snapshots that are public and can be copied or restored by any Amazon Web Services account, and otherwise <code>false</code>. The default is <code>false</code>.</p>
-    pub fn set_include_public(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_include_public(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_include_public(input);
         self
     }

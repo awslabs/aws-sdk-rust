@@ -2,7 +2,7 @@
 
 /// <p>Replica-specific configuration for the provisioned throughput.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsDynamoDbTableProvisionedThroughputOverride {
     /// <p>The read capacity units for the replica.</p>
     #[doc(hidden)]
@@ -24,18 +24,20 @@ impl AwsDynamoDbTableProvisionedThroughputOverride {
 
 /// A builder for [`AwsDynamoDbTableProvisionedThroughputOverride`](crate::types::AwsDynamoDbTableProvisionedThroughputOverride).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsDynamoDbTableProvisionedThroughputOverrideBuilder {
-    pub(crate) read_capacity_units: std::option::Option<i32>,
+    pub(crate) read_capacity_units: ::std::option::Option<i32>,
 }
 impl AwsDynamoDbTableProvisionedThroughputOverrideBuilder {
     /// <p>The read capacity units for the replica.</p>
     pub fn read_capacity_units(mut self, input: i32) -> Self {
-        self.read_capacity_units = Some(input);
+        self.read_capacity_units = ::std::option::Option::Some(input);
         self
     }
     /// <p>The read capacity units for the replica.</p>
-    pub fn set_read_capacity_units(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_read_capacity_units(mut self, input: ::std::option::Option<i32>) -> Self {
         self.read_capacity_units = input;
         self
     }

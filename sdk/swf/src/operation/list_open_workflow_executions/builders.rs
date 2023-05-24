@@ -21,29 +21,29 @@ pub use crate::operation::list_open_workflow_executions::_list_open_workflow_exe
 /// </ul> </li>
 /// </ul>
 /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListOpenWorkflowExecutionsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::list_open_workflow_executions::builders::ListOpenWorkflowExecutionsInputBuilder,
 }
 impl ListOpenWorkflowExecutionsFluentBuilder {
     /// Creates a new `ListOpenWorkflowExecutions`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::list_open_workflow_executions::ListOpenWorkflowExecutions,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::list_open_workflow_executions::ListOpenWorkflowExecutionsError,
         >,
     > {
@@ -51,30 +51,33 @@ impl ListOpenWorkflowExecutionsFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::list_open_workflow_executions::ListOpenWorkflowExecutionsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::list_open_workflow_executions::ListOpenWorkflowExecutionsError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -87,9 +90,9 @@ impl ListOpenWorkflowExecutionsFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::list_open_workflow_executions::ListOpenWorkflowExecutionsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::list_open_workflow_executions::ListOpenWorkflowExecutionsError,
         >,
     > {
@@ -102,12 +105,12 @@ impl ListOpenWorkflowExecutionsFluentBuilder {
         crate::operation::list_open_workflow_executions::paginator::ListOpenWorkflowExecutionsPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of the domain that contains the workflow executions to list.</p>
-    pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain(input.into());
         self
     }
     /// <p>The name of the domain that contains the workflow executions to list.</p>
-    pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain(input);
         self
     }
@@ -119,7 +122,7 @@ impl ListOpenWorkflowExecutionsFluentBuilder {
     /// <p>Workflow executions are included in the returned results based on whether their start times are within the range specified by this filter.</p>
     pub fn set_start_time_filter(
         mut self,
-        input: std::option::Option<crate::types::ExecutionTimeFilter>,
+        input: ::std::option::Option<crate::types::ExecutionTimeFilter>,
     ) -> Self {
         self.inner = self.inner.set_start_time_filter(input);
         self
@@ -136,7 +139,7 @@ impl ListOpenWorkflowExecutionsFluentBuilder {
     /// </note>
     pub fn set_type_filter(
         mut self,
-        input: std::option::Option<crate::types::WorkflowTypeFilter>,
+        input: ::std::option::Option<crate::types::WorkflowTypeFilter>,
     ) -> Self {
         self.inner = self.inner.set_type_filter(input);
         self
@@ -151,19 +154,25 @@ impl ListOpenWorkflowExecutionsFluentBuilder {
     /// <p>If specified, only executions that have the matching tag are listed.</p> <note>
     /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
-    pub fn set_tag_filter(mut self, input: std::option::Option<crate::types::TagFilter>) -> Self {
+    pub fn set_tag_filter(mut self, input: ::std::option::Option<crate::types::TagFilter>) -> Self {
         self.inner = self.inner.set_tag_filter(input);
         self
     }
     /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
-    pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn next_page_token(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.next_page_token(input.into());
         self
     }
     /// <p>If <code>NextPageToken</code> is returned there are more results available. The value of <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return a <code>400</code> error: "<code>Specified token has exceeded its maximum lifetime</code>". </p>
     /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned in a single call. </p>
-    pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_page_token(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_next_page_token(input);
         self
     }
@@ -173,7 +182,7 @@ impl ListOpenWorkflowExecutionsFluentBuilder {
         self
     }
     /// <p>The maximum number of results that are returned per call. Use <code>nextPageToken</code> to obtain further pages of results. </p>
-    pub fn set_maximum_page_size(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_maximum_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_maximum_page_size(input);
         self
     }
@@ -183,7 +192,7 @@ impl ListOpenWorkflowExecutionsFluentBuilder {
         self
     }
     /// <p>When set to <code>true</code>, returns the results in reverse order. By default the results are returned in descending order of the start time of the executions.</p>
-    pub fn set_reverse_order(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_reverse_order(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_reverse_order(input);
         self
     }
@@ -199,7 +208,7 @@ impl ListOpenWorkflowExecutionsFluentBuilder {
     /// </note>
     pub fn set_execution_filter(
         mut self,
-        input: std::option::Option<crate::types::WorkflowExecutionFilter>,
+        input: ::std::option::Option<crate::types::WorkflowExecutionFilter>,
     ) -> Self {
         self.inner = self.inner.set_execution_filter(input);
         self

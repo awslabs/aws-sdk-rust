@@ -2,36 +2,36 @@
 
 /// <p>An activity that computes an arithmetic expression using the message's attributes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MathActivity {
     /// <p>The name of the math activity.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the attribute that contains the result of the math operation.</p>
     #[doc(hidden)]
-    pub attribute: std::option::Option<std::string::String>,
+    pub attribute: ::std::option::Option<::std::string::String>,
     /// <p>An expression that uses one or more existing attributes and must return an integer value.</p>
     #[doc(hidden)]
-    pub math: std::option::Option<std::string::String>,
+    pub math: ::std::option::Option<::std::string::String>,
     /// <p>The next activity in the pipeline.</p>
     #[doc(hidden)]
-    pub next: std::option::Option<std::string::String>,
+    pub next: ::std::option::Option<::std::string::String>,
 }
 impl MathActivity {
     /// <p>The name of the math activity.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The name of the attribute that contains the result of the math operation.</p>
-    pub fn attribute(&self) -> std::option::Option<&str> {
+    pub fn attribute(&self) -> ::std::option::Option<&str> {
         self.attribute.as_deref()
     }
     /// <p>An expression that uses one or more existing attributes and must return an integer value.</p>
-    pub fn math(&self) -> std::option::Option<&str> {
+    pub fn math(&self) -> ::std::option::Option<&str> {
         self.math.as_deref()
     }
     /// <p>The next activity in the pipeline.</p>
-    pub fn next(&self) -> std::option::Option<&str> {
+    pub fn next(&self) -> ::std::option::Option<&str> {
         self.next.as_deref()
     }
 }
@@ -44,51 +44,53 @@ impl MathActivity {
 
 /// A builder for [`MathActivity`](crate::types::MathActivity).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MathActivityBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) attribute: std::option::Option<std::string::String>,
-    pub(crate) math: std::option::Option<std::string::String>,
-    pub(crate) next: std::option::Option<std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) attribute: ::std::option::Option<::std::string::String>,
+    pub(crate) math: ::std::option::Option<::std::string::String>,
+    pub(crate) next: ::std::option::Option<::std::string::String>,
 }
 impl MathActivityBuilder {
     /// <p>The name of the math activity.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the math activity.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The name of the attribute that contains the result of the math operation.</p>
-    pub fn attribute(mut self, input: impl Into<std::string::String>) -> Self {
-        self.attribute = Some(input.into());
+    pub fn attribute(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.attribute = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the attribute that contains the result of the math operation.</p>
-    pub fn set_attribute(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_attribute(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attribute = input;
         self
     }
     /// <p>An expression that uses one or more existing attributes and must return an integer value.</p>
-    pub fn math(mut self, input: impl Into<std::string::String>) -> Self {
-        self.math = Some(input.into());
+    pub fn math(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.math = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An expression that uses one or more existing attributes and must return an integer value.</p>
-    pub fn set_math(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_math(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.math = input;
         self
     }
     /// <p>The next activity in the pipeline.</p>
-    pub fn next(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next = Some(input.into());
+    pub fn next(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The next activity in the pipeline.</p>
-    pub fn set_next(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next = input;
         self
     }

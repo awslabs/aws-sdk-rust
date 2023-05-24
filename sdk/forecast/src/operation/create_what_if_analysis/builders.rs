@@ -10,29 +10,29 @@ pub use crate::operation::create_what_if_analysis::_create_what_if_analysis_inpu
 /// <p>You could create a scenario where everything is given a 25% markdown, and another where everything is given a fixed dollar markdown. You could create a scenario where the sale lasts for one week and another where the sale lasts for one month. With a what-if analysis, you can compare many different scenarios against each other.</p>
 /// <p>Note that a what-if analysis is meant to display what the forecasting model has learned and how it will behave in the scenarios that you are evaluating. Do not blindly use the results of the what-if analysis to make business decisions. For instance, forecasts might not be accurate for novel scenarios where there is no reference available to determine whether a forecast is good.</p>
 /// <p>The <code>TimeSeriesSelector</code> object defines the items that you want in the what-if analysis.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateWhatIfAnalysisFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_what_if_analysis::builders::CreateWhatIfAnalysisInputBuilder,
 }
 impl CreateWhatIfAnalysisFluentBuilder {
     /// Creates a new `CreateWhatIfAnalysis`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_what_if_analysis::CreateWhatIfAnalysis,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_what_if_analysis::CreateWhatIfAnalysisError,
         >,
     > {
@@ -40,30 +40,33 @@ impl CreateWhatIfAnalysisFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_what_if_analysis::CreateWhatIfAnalysisOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_what_if_analysis::CreateWhatIfAnalysisError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -76,34 +79,37 @@ impl CreateWhatIfAnalysisFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_what_if_analysis::CreateWhatIfAnalysisOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_what_if_analysis::CreateWhatIfAnalysisError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the what-if analysis. Each name must be unique.</p>
-    pub fn what_if_analysis_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn what_if_analysis_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.what_if_analysis_name(input.into());
         self
     }
     /// <p>The name of the what-if analysis. Each name must be unique.</p>
     pub fn set_what_if_analysis_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_what_if_analysis_name(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the baseline forecast.</p>
-    pub fn forecast_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn forecast_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.forecast_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the baseline forecast.</p>
-    pub fn set_forecast_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_forecast_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_forecast_arn(input);
         self
     }
@@ -127,7 +133,7 @@ impl CreateWhatIfAnalysisFluentBuilder {
     /// </ul>
     pub fn set_time_series_selector(
         mut self,
-        input: std::option::Option<crate::types::TimeSeriesSelector>,
+        input: ::std::option::Option<crate::types::TimeSeriesSelector>,
     ) -> Self {
         self.inner = self.inner.set_time_series_selector(input);
         self
@@ -144,7 +150,7 @@ impl CreateWhatIfAnalysisFluentBuilder {
     /// <p>A list of <a href="https://docs.aws.amazon.com/forecast/latest/dg/tagging-forecast-resources.html">tags</a> to apply to the what if forecast.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self

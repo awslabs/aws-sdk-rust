@@ -2,17 +2,17 @@
 
 /// <p>Specifies a monthly recurrence pattern for running a classification job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MonthlySchedule {
     /// <p>The numeric day of the month when Amazon Macie runs the job. This value can be an integer from 1 through 31.</p>
     /// <p>If this value exceeds the number of days in a certain month, Macie doesn't run the job that month. Macie runs the job only during months that have the specified day. For example, if this value is 31 and a month has only 30 days, Macie doesn't run the job that month. To run the job every month, specify a value that's less than 29.</p>
     #[doc(hidden)]
-    pub day_of_month: std::option::Option<i32>,
+    pub day_of_month: ::std::option::Option<i32>,
 }
 impl MonthlySchedule {
     /// <p>The numeric day of the month when Amazon Macie runs the job. This value can be an integer from 1 through 31.</p>
     /// <p>If this value exceeds the number of days in a certain month, Macie doesn't run the job that month. Macie runs the job only during months that have the specified day. For example, if this value is 31 and a month has only 30 days, Macie doesn't run the job that month. To run the job every month, specify a value that's less than 29.</p>
-    pub fn day_of_month(&self) -> std::option::Option<i32> {
+    pub fn day_of_month(&self) -> ::std::option::Option<i32> {
         self.day_of_month
     }
 }
@@ -25,20 +25,22 @@ impl MonthlySchedule {
 
 /// A builder for [`MonthlySchedule`](crate::types::MonthlySchedule).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MonthlyScheduleBuilder {
-    pub(crate) day_of_month: std::option::Option<i32>,
+    pub(crate) day_of_month: ::std::option::Option<i32>,
 }
 impl MonthlyScheduleBuilder {
     /// <p>The numeric day of the month when Amazon Macie runs the job. This value can be an integer from 1 through 31.</p>
     /// <p>If this value exceeds the number of days in a certain month, Macie doesn't run the job that month. Macie runs the job only during months that have the specified day. For example, if this value is 31 and a month has only 30 days, Macie doesn't run the job that month. To run the job every month, specify a value that's less than 29.</p>
     pub fn day_of_month(mut self, input: i32) -> Self {
-        self.day_of_month = Some(input);
+        self.day_of_month = ::std::option::Option::Some(input);
         self
     }
     /// <p>The numeric day of the month when Amazon Macie runs the job. This value can be an integer from 1 through 31.</p>
     /// <p>If this value exceeds the number of days in a certain month, Macie doesn't run the job that month. Macie runs the job only during months that have the specified day. For example, if this value is 31 and a month has only 30 days, Macie doesn't run the job that month. To run the job every month, specify a value that's less than 29.</p>
-    pub fn set_day_of_month(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_day_of_month(mut self, input: ::std::option::Option<i32>) -> Self {
         self.day_of_month = input;
         self
     }

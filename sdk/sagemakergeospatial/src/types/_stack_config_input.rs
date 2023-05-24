@@ -2,24 +2,24 @@
 
 /// <p>The input structure for Stacking Operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StackConfigInput {
     /// <p>The structure representing output resolution (in target georeferenced units) of the result of stacking operation.</p>
     #[doc(hidden)]
-    pub output_resolution: std::option::Option<crate::types::OutputResolutionStackInput>,
+    pub output_resolution: ::std::option::Option<crate::types::OutputResolutionStackInput>,
     /// <p>A list of bands to be stacked in the specified order. When the parameter is not provided, all the available bands in the data collection are stacked in the alphabetical order of their asset names.</p>
     #[doc(hidden)]
-    pub target_bands: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub target_bands: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl StackConfigInput {
     /// <p>The structure representing output resolution (in target georeferenced units) of the result of stacking operation.</p>
     pub fn output_resolution(
         &self,
-    ) -> std::option::Option<&crate::types::OutputResolutionStackInput> {
+    ) -> ::std::option::Option<&crate::types::OutputResolutionStackInput> {
         self.output_resolution.as_ref()
     }
     /// <p>A list of bands to be stacked in the specified order. When the parameter is not provided, all the available bands in the data collection are stacked in the alphabetical order of their asset names.</p>
-    pub fn target_bands(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn target_bands(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.target_bands.as_deref()
     }
 }
@@ -32,21 +32,23 @@ impl StackConfigInput {
 
 /// A builder for [`StackConfigInput`](crate::types::StackConfigInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StackConfigInputBuilder {
-    pub(crate) output_resolution: std::option::Option<crate::types::OutputResolutionStackInput>,
-    pub(crate) target_bands: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) output_resolution: ::std::option::Option<crate::types::OutputResolutionStackInput>,
+    pub(crate) target_bands: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl StackConfigInputBuilder {
     /// <p>The structure representing output resolution (in target georeferenced units) of the result of stacking operation.</p>
     pub fn output_resolution(mut self, input: crate::types::OutputResolutionStackInput) -> Self {
-        self.output_resolution = Some(input);
+        self.output_resolution = ::std::option::Option::Some(input);
         self
     }
     /// <p>The structure representing output resolution (in target georeferenced units) of the result of stacking operation.</p>
     pub fn set_output_resolution(
         mut self,
-        input: std::option::Option<crate::types::OutputResolutionStackInput>,
+        input: ::std::option::Option<crate::types::OutputResolutionStackInput>,
     ) -> Self {
         self.output_resolution = input;
         self
@@ -56,16 +58,16 @@ impl StackConfigInputBuilder {
     /// To override the contents of this collection use [`set_target_bands`](Self::set_target_bands).
     ///
     /// <p>A list of bands to be stacked in the specified order. When the parameter is not provided, all the available bands in the data collection are stacked in the alphabetical order of their asset names.</p>
-    pub fn target_bands(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn target_bands(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.target_bands.unwrap_or_default();
         v.push(input.into());
-        self.target_bands = Some(v);
+        self.target_bands = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of bands to be stacked in the specified order. When the parameter is not provided, all the available bands in the data collection are stacked in the alphabetical order of their asset names.</p>
     pub fn set_target_bands(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.target_bands = input;
         self

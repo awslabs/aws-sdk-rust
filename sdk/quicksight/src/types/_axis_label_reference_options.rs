@@ -2,22 +2,22 @@
 
 /// <p>The reference that specifies where the axis label is applied to.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AxisLabelReferenceOptions {
     /// <p>The field that the axis label is targeted to.</p>
     #[doc(hidden)]
-    pub field_id: std::option::Option<std::string::String>,
+    pub field_id: ::std::option::Option<::std::string::String>,
     /// <p>The column that the axis label is targeted to.</p>
     #[doc(hidden)]
-    pub column: std::option::Option<crate::types::ColumnIdentifier>,
+    pub column: ::std::option::Option<crate::types::ColumnIdentifier>,
 }
 impl AxisLabelReferenceOptions {
     /// <p>The field that the axis label is targeted to.</p>
-    pub fn field_id(&self) -> std::option::Option<&str> {
+    pub fn field_id(&self) -> ::std::option::Option<&str> {
         self.field_id.as_deref()
     }
     /// <p>The column that the axis label is targeted to.</p>
-    pub fn column(&self) -> std::option::Option<&crate::types::ColumnIdentifier> {
+    pub fn column(&self) -> ::std::option::Option<&crate::types::ColumnIdentifier> {
         self.column.as_ref()
     }
 }
@@ -30,31 +30,33 @@ impl AxisLabelReferenceOptions {
 
 /// A builder for [`AxisLabelReferenceOptions`](crate::types::AxisLabelReferenceOptions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AxisLabelReferenceOptionsBuilder {
-    pub(crate) field_id: std::option::Option<std::string::String>,
-    pub(crate) column: std::option::Option<crate::types::ColumnIdentifier>,
+    pub(crate) field_id: ::std::option::Option<::std::string::String>,
+    pub(crate) column: ::std::option::Option<crate::types::ColumnIdentifier>,
 }
 impl AxisLabelReferenceOptionsBuilder {
     /// <p>The field that the axis label is targeted to.</p>
-    pub fn field_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.field_id = Some(input.into());
+    pub fn field_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.field_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The field that the axis label is targeted to.</p>
-    pub fn set_field_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_field_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.field_id = input;
         self
     }
     /// <p>The column that the axis label is targeted to.</p>
     pub fn column(mut self, input: crate::types::ColumnIdentifier) -> Self {
-        self.column = Some(input);
+        self.column = ::std::option::Option::Some(input);
         self
     }
     /// <p>The column that the axis label is targeted to.</p>
     pub fn set_column(
         mut self,
-        input: std::option::Option<crate::types::ColumnIdentifier>,
+        input: ::std::option::Option<crate::types::ColumnIdentifier>,
     ) -> Self {
         self.column = input;
         self

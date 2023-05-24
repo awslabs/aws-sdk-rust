@@ -2,29 +2,29 @@
 
 /// <p>The new state, variable values, and timer settings of the detector (instance).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetectorStateDefinition {
     /// <p>The name of the new state of the detector (instance).</p>
     #[doc(hidden)]
-    pub state_name: std::option::Option<std::string::String>,
+    pub state_name: ::std::option::Option<::std::string::String>,
     /// <p>The new values of the detector's variables. Any variable whose value isn't specified is cleared.</p>
     #[doc(hidden)]
-    pub variables: std::option::Option<std::vec::Vec<crate::types::VariableDefinition>>,
+    pub variables: ::std::option::Option<::std::vec::Vec<crate::types::VariableDefinition>>,
     /// <p>The new values of the detector's timers. Any timer whose value isn't specified is cleared, and its timeout event won't occur.</p>
     #[doc(hidden)]
-    pub timers: std::option::Option<std::vec::Vec<crate::types::TimerDefinition>>,
+    pub timers: ::std::option::Option<::std::vec::Vec<crate::types::TimerDefinition>>,
 }
 impl DetectorStateDefinition {
     /// <p>The name of the new state of the detector (instance).</p>
-    pub fn state_name(&self) -> std::option::Option<&str> {
+    pub fn state_name(&self) -> ::std::option::Option<&str> {
         self.state_name.as_deref()
     }
     /// <p>The new values of the detector's variables. Any variable whose value isn't specified is cleared.</p>
-    pub fn variables(&self) -> std::option::Option<&[crate::types::VariableDefinition]> {
+    pub fn variables(&self) -> ::std::option::Option<&[crate::types::VariableDefinition]> {
         self.variables.as_deref()
     }
     /// <p>The new values of the detector's timers. Any timer whose value isn't specified is cleared, and its timeout event won't occur.</p>
-    pub fn timers(&self) -> std::option::Option<&[crate::types::TimerDefinition]> {
+    pub fn timers(&self) -> ::std::option::Option<&[crate::types::TimerDefinition]> {
         self.timers.as_deref()
     }
 }
@@ -37,20 +37,22 @@ impl DetectorStateDefinition {
 
 /// A builder for [`DetectorStateDefinition`](crate::types::DetectorStateDefinition).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DetectorStateDefinitionBuilder {
-    pub(crate) state_name: std::option::Option<std::string::String>,
-    pub(crate) variables: std::option::Option<std::vec::Vec<crate::types::VariableDefinition>>,
-    pub(crate) timers: std::option::Option<std::vec::Vec<crate::types::TimerDefinition>>,
+    pub(crate) state_name: ::std::option::Option<::std::string::String>,
+    pub(crate) variables: ::std::option::Option<::std::vec::Vec<crate::types::VariableDefinition>>,
+    pub(crate) timers: ::std::option::Option<::std::vec::Vec<crate::types::TimerDefinition>>,
 }
 impl DetectorStateDefinitionBuilder {
     /// <p>The name of the new state of the detector (instance).</p>
-    pub fn state_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.state_name = Some(input.into());
+    pub fn state_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.state_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the new state of the detector (instance).</p>
-    pub fn set_state_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_state_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state_name = input;
         self
     }
@@ -62,13 +64,13 @@ impl DetectorStateDefinitionBuilder {
     pub fn variables(mut self, input: crate::types::VariableDefinition) -> Self {
         let mut v = self.variables.unwrap_or_default();
         v.push(input);
-        self.variables = Some(v);
+        self.variables = ::std::option::Option::Some(v);
         self
     }
     /// <p>The new values of the detector's variables. Any variable whose value isn't specified is cleared.</p>
     pub fn set_variables(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::VariableDefinition>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::VariableDefinition>>,
     ) -> Self {
         self.variables = input;
         self
@@ -81,13 +83,13 @@ impl DetectorStateDefinitionBuilder {
     pub fn timers(mut self, input: crate::types::TimerDefinition) -> Self {
         let mut v = self.timers.unwrap_or_default();
         v.push(input);
-        self.timers = Some(v);
+        self.timers = ::std::option::Option::Some(v);
         self
     }
     /// <p>The new values of the detector's timers. Any timer whose value isn't specified is cleared, and its timeout event won't occur.</p>
     pub fn set_timers(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TimerDefinition>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::TimerDefinition>>,
     ) -> Self {
         self.timers = input;
         self

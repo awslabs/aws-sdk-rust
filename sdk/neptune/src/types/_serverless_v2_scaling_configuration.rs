@@ -3,22 +3,22 @@
 /// <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServerlessV2ScalingConfiguration {
     /// <p>The minimum number of Neptune capacity units (NCUs) for a DB instance in a Neptune Serverless cluster. You can specify NCU values in half-step increments, such as 8, 8.5, 9, and so on.</p>
     #[doc(hidden)]
-    pub min_capacity: std::option::Option<f64>,
+    pub min_capacity: ::std::option::Option<f64>,
     /// <p>The maximum number of Neptune capacity units (NCUs) for a DB instance in a Neptune Serverless cluster. You can specify NCU values in half-step increments, such as 40, 40.5, 41, and so on.</p>
     #[doc(hidden)]
-    pub max_capacity: std::option::Option<f64>,
+    pub max_capacity: ::std::option::Option<f64>,
 }
 impl ServerlessV2ScalingConfiguration {
     /// <p>The minimum number of Neptune capacity units (NCUs) for a DB instance in a Neptune Serverless cluster. You can specify NCU values in half-step increments, such as 8, 8.5, 9, and so on.</p>
-    pub fn min_capacity(&self) -> std::option::Option<f64> {
+    pub fn min_capacity(&self) -> ::std::option::Option<f64> {
         self.min_capacity
     }
     /// <p>The maximum number of Neptune capacity units (NCUs) for a DB instance in a Neptune Serverless cluster. You can specify NCU values in half-step increments, such as 40, 40.5, 41, and so on.</p>
-    pub fn max_capacity(&self) -> std::option::Option<f64> {
+    pub fn max_capacity(&self) -> ::std::option::Option<f64> {
         self.max_capacity
     }
 }
@@ -31,29 +31,31 @@ impl ServerlessV2ScalingConfiguration {
 
 /// A builder for [`ServerlessV2ScalingConfiguration`](crate::types::ServerlessV2ScalingConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ServerlessV2ScalingConfigurationBuilder {
-    pub(crate) min_capacity: std::option::Option<f64>,
-    pub(crate) max_capacity: std::option::Option<f64>,
+    pub(crate) min_capacity: ::std::option::Option<f64>,
+    pub(crate) max_capacity: ::std::option::Option<f64>,
 }
 impl ServerlessV2ScalingConfigurationBuilder {
     /// <p>The minimum number of Neptune capacity units (NCUs) for a DB instance in a Neptune Serverless cluster. You can specify NCU values in half-step increments, such as 8, 8.5, 9, and so on.</p>
     pub fn min_capacity(mut self, input: f64) -> Self {
-        self.min_capacity = Some(input);
+        self.min_capacity = ::std::option::Option::Some(input);
         self
     }
     /// <p>The minimum number of Neptune capacity units (NCUs) for a DB instance in a Neptune Serverless cluster. You can specify NCU values in half-step increments, such as 8, 8.5, 9, and so on.</p>
-    pub fn set_min_capacity(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_min_capacity(mut self, input: ::std::option::Option<f64>) -> Self {
         self.min_capacity = input;
         self
     }
     /// <p>The maximum number of Neptune capacity units (NCUs) for a DB instance in a Neptune Serverless cluster. You can specify NCU values in half-step increments, such as 40, 40.5, 41, and so on.</p>
     pub fn max_capacity(mut self, input: f64) -> Self {
-        self.max_capacity = Some(input);
+        self.max_capacity = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum number of Neptune capacity units (NCUs) for a DB instance in a Neptune Serverless cluster. You can specify NCU values in half-step increments, such as 40, 40.5, 41, and so on.</p>
-    pub fn set_max_capacity(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_max_capacity(mut self, input: ::std::option::Option<f64>) -> Self {
         self.max_capacity = input;
         self
     }

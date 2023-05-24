@@ -2,22 +2,22 @@
 
 /// <p>Information about a build that could not be successfully deleted.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BuildNotDeleted {
     /// <p>The ID of the build that could not be successfully deleted.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>Additional information about the build that could not be successfully deleted.</p>
     #[doc(hidden)]
-    pub status_code: std::option::Option<std::string::String>,
+    pub status_code: ::std::option::Option<::std::string::String>,
 }
 impl BuildNotDeleted {
     /// <p>The ID of the build that could not be successfully deleted.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>Additional information about the build that could not be successfully deleted.</p>
-    pub fn status_code(&self) -> std::option::Option<&str> {
+    pub fn status_code(&self) -> ::std::option::Option<&str> {
         self.status_code.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl BuildNotDeleted {
 
 /// A builder for [`BuildNotDeleted`](crate::types::BuildNotDeleted).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BuildNotDeletedBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) status_code: std::option::Option<std::string::String>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) status_code: ::std::option::Option<::std::string::String>,
 }
 impl BuildNotDeletedBuilder {
     /// <p>The ID of the build that could not be successfully deleted.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the build that could not be successfully deleted.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>Additional information about the build that could not be successfully deleted.</p>
-    pub fn status_code(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status_code = Some(input.into());
+    pub fn status_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Additional information about the build that could not be successfully deleted.</p>
-    pub fn set_status_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_code = input;
         self
     }

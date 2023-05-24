@@ -2,7 +2,7 @@
 
 /// <p>Provides a regular expression used to validate the value of a slot.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SlotTypeRegexConfiguration {
     /// <p>A regular expression used to validate the value of a slot. </p>
     /// <p>Use a standard regular expression. Amazon Lex supports the following characters in the regular expression:</p>
@@ -20,7 +20,7 @@ pub struct SlotTypeRegexConfiguration {
     /// <li> <p>Wild card (.)</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub pattern: std::option::Option<std::string::String>,
+    pub pattern: ::std::option::Option<::std::string::String>,
 }
 impl SlotTypeRegexConfiguration {
     /// <p>A regular expression used to validate the value of a slot. </p>
@@ -38,7 +38,7 @@ impl SlotTypeRegexConfiguration {
     /// <li> <p>Infinite repeaters: *, +, or {x,} with no upper bound.</p> </li>
     /// <li> <p>Wild card (.)</p> </li>
     /// </ul>
-    pub fn pattern(&self) -> std::option::Option<&str> {
+    pub fn pattern(&self) -> ::std::option::Option<&str> {
         self.pattern.as_deref()
     }
 }
@@ -51,9 +51,11 @@ impl SlotTypeRegexConfiguration {
 
 /// A builder for [`SlotTypeRegexConfiguration`](crate::types::SlotTypeRegexConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SlotTypeRegexConfigurationBuilder {
-    pub(crate) pattern: std::option::Option<std::string::String>,
+    pub(crate) pattern: ::std::option::Option<::std::string::String>,
 }
 impl SlotTypeRegexConfigurationBuilder {
     /// <p>A regular expression used to validate the value of a slot. </p>
@@ -71,8 +73,8 @@ impl SlotTypeRegexConfigurationBuilder {
     /// <li> <p>Infinite repeaters: *, +, or {x,} with no upper bound.</p> </li>
     /// <li> <p>Wild card (.)</p> </li>
     /// </ul>
-    pub fn pattern(mut self, input: impl Into<std::string::String>) -> Self {
-        self.pattern = Some(input.into());
+    pub fn pattern(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.pattern = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A regular expression used to validate the value of a slot. </p>
@@ -90,7 +92,7 @@ impl SlotTypeRegexConfigurationBuilder {
     /// <li> <p>Infinite repeaters: *, +, or {x,} with no upper bound.</p> </li>
     /// <li> <p>Wild card (.)</p> </li>
     /// </ul>
-    pub fn set_pattern(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_pattern(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pattern = input;
         self
     }

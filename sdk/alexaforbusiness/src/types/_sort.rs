@@ -2,22 +2,22 @@
 
 /// <p>An object representing a sort criteria. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Sort {
     /// <p>The sort key of a sort object.</p>
     #[doc(hidden)]
-    pub key: std::option::Option<std::string::String>,
+    pub key: ::std::option::Option<::std::string::String>,
     /// <p>The sort value of a sort object.</p>
     #[doc(hidden)]
-    pub value: std::option::Option<crate::types::SortValue>,
+    pub value: ::std::option::Option<crate::types::SortValue>,
 }
 impl Sort {
     /// <p>The sort key of a sort object.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<&str> {
         self.key.as_deref()
     }
     /// <p>The sort value of a sort object.</p>
-    pub fn value(&self) -> std::option::Option<&crate::types::SortValue> {
+    pub fn value(&self) -> ::std::option::Option<&crate::types::SortValue> {
         self.value.as_ref()
     }
 }
@@ -30,29 +30,31 @@ impl Sort {
 
 /// A builder for [`Sort`](crate::types::Sort).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SortBuilder {
-    pub(crate) key: std::option::Option<std::string::String>,
-    pub(crate) value: std::option::Option<crate::types::SortValue>,
+    pub(crate) key: ::std::option::Option<::std::string::String>,
+    pub(crate) value: ::std::option::Option<crate::types::SortValue>,
 }
 impl SortBuilder {
     /// <p>The sort key of a sort object.</p>
-    pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.key = Some(input.into());
+    pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The sort key of a sort object.</p>
-    pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key = input;
         self
     }
     /// <p>The sort value of a sort object.</p>
     pub fn value(mut self, input: crate::types::SortValue) -> Self {
-        self.value = Some(input);
+        self.value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The sort value of a sort object.</p>
-    pub fn set_value(mut self, input: std::option::Option<crate::types::SortValue>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<crate::types::SortValue>) -> Self {
         self.value = input;
         self
     }

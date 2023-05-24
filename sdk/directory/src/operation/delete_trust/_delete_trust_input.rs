@@ -2,22 +2,22 @@
 
 /// <p>Deletes the local side of an existing trust relationship between the Managed Microsoft AD directory and the external domain.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteTrustInput {
     /// <p>The Trust ID of the trust relationship to be deleted.</p>
     #[doc(hidden)]
-    pub trust_id: std::option::Option<std::string::String>,
+    pub trust_id: ::std::option::Option<::std::string::String>,
     /// <p>Delete a conditional forwarder as part of a DeleteTrustRequest.</p>
     #[doc(hidden)]
-    pub delete_associated_conditional_forwarder: std::option::Option<bool>,
+    pub delete_associated_conditional_forwarder: ::std::option::Option<bool>,
 }
 impl DeleteTrustInput {
     /// <p>The Trust ID of the trust relationship to be deleted.</p>
-    pub fn trust_id(&self) -> std::option::Option<&str> {
+    pub fn trust_id(&self) -> ::std::option::Option<&str> {
         self.trust_id.as_deref()
     }
     /// <p>Delete a conditional forwarder as part of a DeleteTrustRequest.</p>
-    pub fn delete_associated_conditional_forwarder(&self) -> std::option::Option<bool> {
+    pub fn delete_associated_conditional_forwarder(&self) -> ::std::option::Option<bool> {
         self.delete_associated_conditional_forwarder
     }
 }
@@ -30,31 +30,33 @@ impl DeleteTrustInput {
 
 /// A builder for [`DeleteTrustInput`](crate::operation::delete_trust::DeleteTrustInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteTrustInputBuilder {
-    pub(crate) trust_id: std::option::Option<std::string::String>,
-    pub(crate) delete_associated_conditional_forwarder: std::option::Option<bool>,
+    pub(crate) trust_id: ::std::option::Option<::std::string::String>,
+    pub(crate) delete_associated_conditional_forwarder: ::std::option::Option<bool>,
 }
 impl DeleteTrustInputBuilder {
     /// <p>The Trust ID of the trust relationship to be deleted.</p>
-    pub fn trust_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.trust_id = Some(input.into());
+    pub fn trust_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.trust_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Trust ID of the trust relationship to be deleted.</p>
-    pub fn set_trust_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_trust_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.trust_id = input;
         self
     }
     /// <p>Delete a conditional forwarder as part of a DeleteTrustRequest.</p>
     pub fn delete_associated_conditional_forwarder(mut self, input: bool) -> Self {
-        self.delete_associated_conditional_forwarder = Some(input);
+        self.delete_associated_conditional_forwarder = ::std::option::Option::Some(input);
         self
     }
     /// <p>Delete a conditional forwarder as part of a DeleteTrustRequest.</p>
     pub fn set_delete_associated_conditional_forwarder(
         mut self,
-        input: std::option::Option<bool>,
+        input: ::std::option::Option<bool>,
     ) -> Self {
         self.delete_associated_conditional_forwarder = input;
         self
@@ -62,11 +64,11 @@ impl DeleteTrustInputBuilder {
     /// Consumes the builder and constructs a [`DeleteTrustInput`](crate::operation::delete_trust::DeleteTrustInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::delete_trust::DeleteTrustInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::delete_trust::DeleteTrustInput {
+        ::std::result::Result::Ok(crate::operation::delete_trust::DeleteTrustInput {
             trust_id: self.trust_id,
             delete_associated_conditional_forwarder: self.delete_associated_conditional_forwarder,
         })

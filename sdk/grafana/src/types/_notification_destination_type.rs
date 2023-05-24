@@ -37,13 +37,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum NotificationDestinationType {
     /// AWS Simple Notification Service
@@ -51,7 +51,7 @@ pub enum NotificationDestinationType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for NotificationDestinationType {
+impl ::std::convert::From<&str> for NotificationDestinationType {
     fn from(s: &str) -> Self {
         match s {
             "SNS" => NotificationDestinationType::Sns,
@@ -61,11 +61,11 @@ impl std::convert::From<&str> for NotificationDestinationType {
         }
     }
 }
-impl std::str::FromStr for NotificationDestinationType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for NotificationDestinationType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(NotificationDestinationType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(NotificationDestinationType::from(s))
     }
 }
 impl NotificationDestinationType {
@@ -81,7 +81,7 @@ impl NotificationDestinationType {
         &["SNS"]
     }
 }
-impl AsRef<str> for NotificationDestinationType {
+impl ::std::convert::AsRef<str> for NotificationDestinationType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

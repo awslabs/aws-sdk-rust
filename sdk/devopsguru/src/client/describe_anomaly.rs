@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeAnomaly`](crate::operation::describe_anomaly::builders::DescribeAnomalyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::describe_anomaly::builders::DescribeAnomalyFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::describe_anomaly::builders::DescribeAnomalyFluentBuilder::set_id): <p> The ID of the anomaly. </p>
-    ///   - [`account_id(impl Into<String>)`](crate::operation::describe_anomaly::builders::DescribeAnomalyFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::describe_anomaly::builders::DescribeAnomalyFluentBuilder::set_account_id): <p>The ID of the member account.</p>
+    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::describe_anomaly::builders::DescribeAnomalyFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::describe_anomaly::builders::DescribeAnomalyFluentBuilder::set_id): <p> The ID of the anomaly. </p>
+    ///   - [`account_id(impl ::std::convert::Into<String>)`](crate::operation::describe_anomaly::builders::DescribeAnomalyFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::describe_anomaly::builders::DescribeAnomalyFluentBuilder::set_account_id): <p>The ID of the member account.</p>
     /// - On success, responds with [`DescribeAnomalyOutput`](crate::operation::describe_anomaly::DescribeAnomalyOutput) with field(s):
     ///   - [`proactive_anomaly(Option<ProactiveAnomaly>)`](crate::operation::describe_anomaly::DescribeAnomalyOutput::proactive_anomaly): <p> A <code>ProactiveAnomaly</code> object that represents the requested anomaly. </p>
     ///   - [`reactive_anomaly(Option<ReactiveAnomaly>)`](crate::operation::describe_anomaly::DescribeAnomalyOutput::reactive_anomaly): <p> A <code>ReactiveAnomaly</code> object that represents the requested anomaly. </p>

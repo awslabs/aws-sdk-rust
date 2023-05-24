@@ -2,15 +2,15 @@
 
 /// <p>The status of the ACL update</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AcLsUpdateStatus {
     /// <p>A list of ACLs pending to be applied.</p>
     #[doc(hidden)]
-    pub acl_to_apply: std::option::Option<std::string::String>,
+    pub acl_to_apply: ::std::option::Option<::std::string::String>,
 }
 impl AcLsUpdateStatus {
     /// <p>A list of ACLs pending to be applied.</p>
-    pub fn acl_to_apply(&self) -> std::option::Option<&str> {
+    pub fn acl_to_apply(&self) -> ::std::option::Option<&str> {
         self.acl_to_apply.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl AcLsUpdateStatus {
 
 /// A builder for [`AcLsUpdateStatus`](crate::types::AcLsUpdateStatus).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AcLsUpdateStatusBuilder {
-    pub(crate) acl_to_apply: std::option::Option<std::string::String>,
+    pub(crate) acl_to_apply: ::std::option::Option<::std::string::String>,
 }
 impl AcLsUpdateStatusBuilder {
     /// <p>A list of ACLs pending to be applied.</p>
-    pub fn acl_to_apply(mut self, input: impl Into<std::string::String>) -> Self {
-        self.acl_to_apply = Some(input.into());
+    pub fn acl_to_apply(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.acl_to_apply = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A list of ACLs pending to be applied.</p>
-    pub fn set_acl_to_apply(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_acl_to_apply(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.acl_to_apply = input;
         self
     }

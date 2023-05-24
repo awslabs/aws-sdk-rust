@@ -2,7 +2,7 @@
 
 /// <p>Container security context.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SecurityContext {
     /// <p>Whether the container is privileged.</p>
     #[doc(hidden)]
@@ -23,18 +23,20 @@ impl SecurityContext {
 
 /// A builder for [`SecurityContext`](crate::types::SecurityContext).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SecurityContextBuilder {
-    pub(crate) privileged: std::option::Option<bool>,
+    pub(crate) privileged: ::std::option::Option<bool>,
 }
 impl SecurityContextBuilder {
     /// <p>Whether the container is privileged.</p>
     pub fn privileged(mut self, input: bool) -> Self {
-        self.privileged = Some(input);
+        self.privileged = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether the container is privileged.</p>
-    pub fn set_privileged(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_privileged(mut self, input: ::std::option::Option<bool>) -> Self {
         self.privileged = input;
         self
     }

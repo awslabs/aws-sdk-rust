@@ -39,13 +39,13 @@
 /// Specify whether the text spacing (TeletextSpacing) in your captions is set by the captions grid, or varies depending on letter width. Choose fixed grid (FIXED_GRID) to conform to the spacing specified in the captions file more accurately. Choose proportional (PROPORTIONAL) to make the text easier to read for closed captions.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum BurninSubtitleTeletextSpacing {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum BurninSubtitleTeletextSpacing {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for BurninSubtitleTeletextSpacing {
+impl ::std::convert::From<&str> for BurninSubtitleTeletextSpacing {
     fn from(s: &str) -> Self {
         match s {
             "AUTO" => BurninSubtitleTeletextSpacing::Auto,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for BurninSubtitleTeletextSpacing {
         }
     }
 }
-impl std::str::FromStr for BurninSubtitleTeletextSpacing {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for BurninSubtitleTeletextSpacing {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(BurninSubtitleTeletextSpacing::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(BurninSubtitleTeletextSpacing::from(s))
     }
 }
 impl BurninSubtitleTeletextSpacing {
@@ -91,7 +91,7 @@ impl BurninSubtitleTeletextSpacing {
         &["AUTO", "FIXED_GRID", "PROPORTIONAL"]
     }
 }
-impl AsRef<str> for BurninSubtitleTeletextSpacing {
+impl ::std::convert::AsRef<str> for BurninSubtitleTeletextSpacing {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

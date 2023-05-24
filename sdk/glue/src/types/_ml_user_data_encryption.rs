@@ -2,7 +2,7 @@
 
 /// <p>The encryption-at-rest settings of the transform that apply to accessing user data.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MlUserDataEncryption {
     /// <p>The encryption mode applied to user data. Valid values are:</p>
     /// <ul>
@@ -11,10 +11,10 @@ pub struct MlUserDataEncryption {
     /// </ul>
     #[doc(hidden)]
     pub ml_user_data_encryption_mode:
-        std::option::Option<crate::types::MlUserDataEncryptionModeString>,
+        ::std::option::Option<crate::types::MlUserDataEncryptionModeString>,
     /// <p>The ID for the customer-provided KMS key.</p>
     #[doc(hidden)]
-    pub kms_key_id: std::option::Option<std::string::String>,
+    pub kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl MlUserDataEncryption {
     /// <p>The encryption mode applied to user data. Valid values are:</p>
@@ -24,11 +24,11 @@ impl MlUserDataEncryption {
     /// </ul>
     pub fn ml_user_data_encryption_mode(
         &self,
-    ) -> std::option::Option<&crate::types::MlUserDataEncryptionModeString> {
+    ) -> ::std::option::Option<&crate::types::MlUserDataEncryptionModeString> {
         self.ml_user_data_encryption_mode.as_ref()
     }
     /// <p>The ID for the customer-provided KMS key.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
 }
@@ -41,11 +41,13 @@ impl MlUserDataEncryption {
 
 /// A builder for [`MlUserDataEncryption`](crate::types::MlUserDataEncryption).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MlUserDataEncryptionBuilder {
     pub(crate) ml_user_data_encryption_mode:
-        std::option::Option<crate::types::MlUserDataEncryptionModeString>,
-    pub(crate) kms_key_id: std::option::Option<std::string::String>,
+        ::std::option::Option<crate::types::MlUserDataEncryptionModeString>,
+    pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl MlUserDataEncryptionBuilder {
     /// <p>The encryption mode applied to user data. Valid values are:</p>
@@ -57,7 +59,7 @@ impl MlUserDataEncryptionBuilder {
         mut self,
         input: crate::types::MlUserDataEncryptionModeString,
     ) -> Self {
-        self.ml_user_data_encryption_mode = Some(input);
+        self.ml_user_data_encryption_mode = ::std::option::Option::Some(input);
         self
     }
     /// <p>The encryption mode applied to user data. Valid values are:</p>
@@ -67,18 +69,18 @@ impl MlUserDataEncryptionBuilder {
     /// </ul>
     pub fn set_ml_user_data_encryption_mode(
         mut self,
-        input: std::option::Option<crate::types::MlUserDataEncryptionModeString>,
+        input: ::std::option::Option<crate::types::MlUserDataEncryptionModeString>,
     ) -> Self {
         self.ml_user_data_encryption_mode = input;
         self
     }
     /// <p>The ID for the customer-provided KMS key.</p>
-    pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.kms_key_id = Some(input.into());
+    pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID for the customer-provided KMS key.</p>
-    pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
     }

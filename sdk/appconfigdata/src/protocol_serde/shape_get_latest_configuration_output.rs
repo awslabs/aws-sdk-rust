@@ -2,41 +2,41 @@
 pub(crate) fn de_configuration_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<aws_smithy_types::Blob>,
+    ::std::option::Option<::aws_smithy_types::Blob>,
     crate::operation::get_latest_configuration::GetLatestConfigurationError,
 > {
     (!body.is_empty())
-        .then(|| Ok(aws_smithy_types::Blob::new(body)))
+        .then(|| Ok(::aws_smithy_types::Blob::new(body)))
         .transpose()
 }
 
 pub(crate) fn de_content_type_header(
-    header_map: &http::HeaderMap,
+    header_map: &::http::HeaderMap,
 ) -> std::result::Result<
-    std::option::Option<std::string::String>,
-    aws_smithy_http::header::ParseError,
+    ::std::option::Option<::std::string::String>,
+    ::aws_smithy_http::header::ParseError,
 > {
     let headers = header_map.get_all("Content-Type").iter();
-    aws_smithy_http::header::one_or_none(headers)
+    ::aws_smithy_http::header::one_or_none(headers)
 }
 
 pub(crate) fn de_next_poll_configuration_token_header(
-    header_map: &http::HeaderMap,
+    header_map: &::http::HeaderMap,
 ) -> std::result::Result<
-    std::option::Option<std::string::String>,
-    aws_smithy_http::header::ParseError,
+    ::std::option::Option<::std::string::String>,
+    ::aws_smithy_http::header::ParseError,
 > {
     let headers = header_map.get_all("Next-Poll-Configuration-Token").iter();
-    aws_smithy_http::header::one_or_none(headers)
+    ::aws_smithy_http::header::one_or_none(headers)
 }
 
 pub(crate) fn de_next_poll_interval_in_seconds_header(
-    header_map: &http::HeaderMap,
-) -> std::result::Result<std::option::Option<i32>, aws_smithy_http::header::ParseError> {
+    header_map: &::http::HeaderMap,
+) -> std::result::Result<::std::option::Option<i32>, ::aws_smithy_http::header::ParseError> {
     let headers = header_map.get_all("Next-Poll-Interval-In-Seconds").iter();
-    let var_1 = aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
+    let var_1 = ::aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
     if var_1.len() > 1 {
-        Err(aws_smithy_http::header::ParseError::new(format!(
+        Err(::aws_smithy_http::header::ParseError::new(format!(
             "expected one item but found {}",
             var_1.len()
         )))
@@ -47,11 +47,11 @@ pub(crate) fn de_next_poll_interval_in_seconds_header(
 }
 
 pub(crate) fn de_version_label_header(
-    header_map: &http::HeaderMap,
+    header_map: &::http::HeaderMap,
 ) -> std::result::Result<
-    std::option::Option<std::string::String>,
-    aws_smithy_http::header::ParseError,
+    ::std::option::Option<::std::string::String>,
+    ::aws_smithy_http::header::ParseError,
 > {
     let headers = header_map.get_all("Version-Label").iter();
-    aws_smithy_http::header::one_or_none(headers)
+    ::aws_smithy_http::header::one_or_none(headers)
 }

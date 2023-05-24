@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteDiscoverer`](crate::operation::delete_discoverer::builders::DeleteDiscovererFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`discoverer_id(impl Into<String>)`](crate::operation::delete_discoverer::builders::DeleteDiscovererFluentBuilder::discoverer_id) / [`set_discoverer_id(Option<String>)`](crate::operation::delete_discoverer::builders::DeleteDiscovererFluentBuilder::set_discoverer_id): <p>The ID of the discoverer.</p>
+    ///   - [`discoverer_id(impl ::std::convert::Into<String>)`](crate::operation::delete_discoverer::builders::DeleteDiscovererFluentBuilder::discoverer_id) / [`set_discoverer_id(Option<String>)`](crate::operation::delete_discoverer::builders::DeleteDiscovererFluentBuilder::set_discoverer_id): <p>The ID of the discoverer.</p>
     /// - On success, responds with [`DeleteDiscovererOutput`](crate::operation::delete_discoverer::DeleteDiscovererOutput)
     /// - On failure, responds with [`SdkError<DeleteDiscovererError>`](crate::operation::delete_discoverer::DeleteDiscovererError)
     pub fn delete_discoverer(

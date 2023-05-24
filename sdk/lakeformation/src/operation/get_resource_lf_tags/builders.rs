@@ -6,29 +6,29 @@ pub use crate::operation::get_resource_lf_tags::_get_resource_lf_tags_input::Get
 /// Fluent builder constructing a request to `GetResourceLFTags`.
 ///
 /// <p>Returns the LF-tags applied to a resource.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetResourceLFTagsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::get_resource_lf_tags::builders::GetResourceLfTagsInputBuilder,
 }
 impl GetResourceLFTagsFluentBuilder {
     /// Creates a new `GetResourceLFTags`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::get_resource_lf_tags::GetResourceLFTags,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::get_resource_lf_tags::GetResourceLFTagsError,
         >,
     > {
@@ -36,30 +36,33 @@ impl GetResourceLFTagsFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_resource_lf_tags::GetResourceLfTagsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::get_resource_lf_tags::GetResourceLFTagsError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,21 +75,21 @@ impl GetResourceLFTagsFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_resource_lf_tags::GetResourceLfTagsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::get_resource_lf_tags::GetResourceLFTagsError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
-    pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn catalog_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.catalog_id(input.into());
         self
     }
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
-    pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_catalog_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_catalog_id(input);
         self
     }
@@ -96,7 +99,7 @@ impl GetResourceLFTagsFluentBuilder {
         self
     }
     /// <p>The database, table, or column resource for which you want to return LF-tags.</p>
-    pub fn set_resource(mut self, input: std::option::Option<crate::types::Resource>) -> Self {
+    pub fn set_resource(mut self, input: ::std::option::Option<crate::types::Resource>) -> Self {
         self.inner = self.inner.set_resource(input);
         self
     }
@@ -106,7 +109,7 @@ impl GetResourceLFTagsFluentBuilder {
         self
     }
     /// <p>Indicates whether to show the assigned LF-tags.</p>
-    pub fn set_show_assigned_lf_tags(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_show_assigned_lf_tags(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_show_assigned_lf_tags(input);
         self
     }

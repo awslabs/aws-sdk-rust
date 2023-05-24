@@ -2,40 +2,42 @@
 
 /// Hls Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HlsSettings {
     /// Audio Only Hls Settings
     #[doc(hidden)]
-    pub audio_only_hls_settings: std::option::Option<crate::types::AudioOnlyHlsSettings>,
+    pub audio_only_hls_settings: ::std::option::Option<crate::types::AudioOnlyHlsSettings>,
     /// Fmp4 Hls Settings
     #[doc(hidden)]
-    pub fmp4_hls_settings: std::option::Option<crate::types::Fmp4HlsSettings>,
+    pub fmp4_hls_settings: ::std::option::Option<crate::types::Fmp4HlsSettings>,
     /// Frame Capture Hls Settings
     #[doc(hidden)]
-    pub frame_capture_hls_settings: std::option::Option<crate::types::FrameCaptureHlsSettings>,
+    pub frame_capture_hls_settings: ::std::option::Option<crate::types::FrameCaptureHlsSettings>,
     /// Standard Hls Settings
     #[doc(hidden)]
-    pub standard_hls_settings: std::option::Option<crate::types::StandardHlsSettings>,
+    pub standard_hls_settings: ::std::option::Option<crate::types::StandardHlsSettings>,
 }
 impl HlsSettings {
     /// Audio Only Hls Settings
     pub fn audio_only_hls_settings(
         &self,
-    ) -> std::option::Option<&crate::types::AudioOnlyHlsSettings> {
+    ) -> ::std::option::Option<&crate::types::AudioOnlyHlsSettings> {
         self.audio_only_hls_settings.as_ref()
     }
     /// Fmp4 Hls Settings
-    pub fn fmp4_hls_settings(&self) -> std::option::Option<&crate::types::Fmp4HlsSettings> {
+    pub fn fmp4_hls_settings(&self) -> ::std::option::Option<&crate::types::Fmp4HlsSettings> {
         self.fmp4_hls_settings.as_ref()
     }
     /// Frame Capture Hls Settings
     pub fn frame_capture_hls_settings(
         &self,
-    ) -> std::option::Option<&crate::types::FrameCaptureHlsSettings> {
+    ) -> ::std::option::Option<&crate::types::FrameCaptureHlsSettings> {
         self.frame_capture_hls_settings.as_ref()
     }
     /// Standard Hls Settings
-    pub fn standard_hls_settings(&self) -> std::option::Option<&crate::types::StandardHlsSettings> {
+    pub fn standard_hls_settings(
+        &self,
+    ) -> ::std::option::Option<&crate::types::StandardHlsSettings> {
         self.standard_hls_settings.as_ref()
     }
 }
@@ -48,37 +50,39 @@ impl HlsSettings {
 
 /// A builder for [`HlsSettings`](crate::types::HlsSettings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct HlsSettingsBuilder {
-    pub(crate) audio_only_hls_settings: std::option::Option<crate::types::AudioOnlyHlsSettings>,
-    pub(crate) fmp4_hls_settings: std::option::Option<crate::types::Fmp4HlsSettings>,
+    pub(crate) audio_only_hls_settings: ::std::option::Option<crate::types::AudioOnlyHlsSettings>,
+    pub(crate) fmp4_hls_settings: ::std::option::Option<crate::types::Fmp4HlsSettings>,
     pub(crate) frame_capture_hls_settings:
-        std::option::Option<crate::types::FrameCaptureHlsSettings>,
-    pub(crate) standard_hls_settings: std::option::Option<crate::types::StandardHlsSettings>,
+        ::std::option::Option<crate::types::FrameCaptureHlsSettings>,
+    pub(crate) standard_hls_settings: ::std::option::Option<crate::types::StandardHlsSettings>,
 }
 impl HlsSettingsBuilder {
     /// Audio Only Hls Settings
     pub fn audio_only_hls_settings(mut self, input: crate::types::AudioOnlyHlsSettings) -> Self {
-        self.audio_only_hls_settings = Some(input);
+        self.audio_only_hls_settings = ::std::option::Option::Some(input);
         self
     }
     /// Audio Only Hls Settings
     pub fn set_audio_only_hls_settings(
         mut self,
-        input: std::option::Option<crate::types::AudioOnlyHlsSettings>,
+        input: ::std::option::Option<crate::types::AudioOnlyHlsSettings>,
     ) -> Self {
         self.audio_only_hls_settings = input;
         self
     }
     /// Fmp4 Hls Settings
     pub fn fmp4_hls_settings(mut self, input: crate::types::Fmp4HlsSettings) -> Self {
-        self.fmp4_hls_settings = Some(input);
+        self.fmp4_hls_settings = ::std::option::Option::Some(input);
         self
     }
     /// Fmp4 Hls Settings
     pub fn set_fmp4_hls_settings(
         mut self,
-        input: std::option::Option<crate::types::Fmp4HlsSettings>,
+        input: ::std::option::Option<crate::types::Fmp4HlsSettings>,
     ) -> Self {
         self.fmp4_hls_settings = input;
         self
@@ -88,26 +92,26 @@ impl HlsSettingsBuilder {
         mut self,
         input: crate::types::FrameCaptureHlsSettings,
     ) -> Self {
-        self.frame_capture_hls_settings = Some(input);
+        self.frame_capture_hls_settings = ::std::option::Option::Some(input);
         self
     }
     /// Frame Capture Hls Settings
     pub fn set_frame_capture_hls_settings(
         mut self,
-        input: std::option::Option<crate::types::FrameCaptureHlsSettings>,
+        input: ::std::option::Option<crate::types::FrameCaptureHlsSettings>,
     ) -> Self {
         self.frame_capture_hls_settings = input;
         self
     }
     /// Standard Hls Settings
     pub fn standard_hls_settings(mut self, input: crate::types::StandardHlsSettings) -> Self {
-        self.standard_hls_settings = Some(input);
+        self.standard_hls_settings = ::std::option::Option::Some(input);
         self
     }
     /// Standard Hls Settings
     pub fn set_standard_hls_settings(
         mut self,
-        input: std::option::Option<crate::types::StandardHlsSettings>,
+        input: ::std::option::Option<crate::types::StandardHlsSettings>,
     ) -> Self {
         self.standard_hls_settings = input;
         self

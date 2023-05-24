@@ -2,29 +2,29 @@
 
 /// <p>Specifies an S3 bucket to store data classification results in, and the encryption settings to use when storing results in that bucket.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3Destination {
     /// <p>The name of the bucket.</p>
     #[doc(hidden)]
-    pub bucket_name: std::option::Option<std::string::String>,
+    pub bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>The path prefix to use in the path to the location in the bucket. This prefix specifies where to store classification results in the bucket.</p>
     #[doc(hidden)]
-    pub key_prefix: std::option::Option<std::string::String>,
+    pub key_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the customer managed KMS key to use for encryption of the results. This must be the ARN of an existing, symmetric encryption KMS key that's in the same Amazon Web Services Region as the bucket.</p>
     #[doc(hidden)]
-    pub kms_key_arn: std::option::Option<std::string::String>,
+    pub kms_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl S3Destination {
     /// <p>The name of the bucket.</p>
-    pub fn bucket_name(&self) -> std::option::Option<&str> {
+    pub fn bucket_name(&self) -> ::std::option::Option<&str> {
         self.bucket_name.as_deref()
     }
     /// <p>The path prefix to use in the path to the location in the bucket. This prefix specifies where to store classification results in the bucket.</p>
-    pub fn key_prefix(&self) -> std::option::Option<&str> {
+    pub fn key_prefix(&self) -> ::std::option::Option<&str> {
         self.key_prefix.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the customer managed KMS key to use for encryption of the results. This must be the ARN of an existing, symmetric encryption KMS key that's in the same Amazon Web Services Region as the bucket.</p>
-    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+    pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
 }
@@ -37,40 +37,42 @@ impl S3Destination {
 
 /// A builder for [`S3Destination`](crate::types::S3Destination).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct S3DestinationBuilder {
-    pub(crate) bucket_name: std::option::Option<std::string::String>,
-    pub(crate) key_prefix: std::option::Option<std::string::String>,
-    pub(crate) kms_key_arn: std::option::Option<std::string::String>,
+    pub(crate) bucket_name: ::std::option::Option<::std::string::String>,
+    pub(crate) key_prefix: ::std::option::Option<::std::string::String>,
+    pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl S3DestinationBuilder {
     /// <p>The name of the bucket.</p>
-    pub fn bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.bucket_name = Some(input.into());
+    pub fn bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.bucket_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the bucket.</p>
-    pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket_name = input;
         self
     }
     /// <p>The path prefix to use in the path to the location in the bucket. This prefix specifies where to store classification results in the bucket.</p>
-    pub fn key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
-        self.key_prefix = Some(input.into());
+    pub fn key_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.key_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The path prefix to use in the path to the location in the bucket. This prefix specifies where to store classification results in the bucket.</p>
-    pub fn set_key_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_key_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_prefix = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the customer managed KMS key to use for encryption of the results. This must be the ARN of an existing, symmetric encryption KMS key that's in the same Amazon Web Services Region as the bucket.</p>
-    pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.kms_key_arn = Some(input.into());
+    pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the customer managed KMS key to use for encryption of the results. This must be the ARN of an existing, symmetric encryption KMS key that's in the same Amazon Web Services Region as the bucket.</p>
-    pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_arn = input;
         self
     }

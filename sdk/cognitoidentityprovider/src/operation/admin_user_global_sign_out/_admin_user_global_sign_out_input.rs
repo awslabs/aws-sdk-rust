@@ -2,27 +2,27 @@
 
 /// <p>The request to sign out of all devices, as an administrator.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AdminUserGlobalSignOutInput {
     /// <p>The user pool ID.</p>
     #[doc(hidden)]
-    pub user_pool_id: std::option::Option<std::string::String>,
+    pub user_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The user name.</p>
     #[doc(hidden)]
-    pub username: std::option::Option<std::string::String>,
+    pub username: ::std::option::Option<::std::string::String>,
 }
 impl AdminUserGlobalSignOutInput {
     /// <p>The user pool ID.</p>
-    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+    pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
         self.user_pool_id.as_deref()
     }
     /// <p>The user name.</p>
-    pub fn username(&self) -> std::option::Option<&str> {
+    pub fn username(&self) -> ::std::option::Option<&str> {
         self.username.as_deref()
     }
 }
-impl std::fmt::Debug for AdminUserGlobalSignOutInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for AdminUserGlobalSignOutInput {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AdminUserGlobalSignOutInput");
         formatter.field("user_pool_id", &self.user_pool_id);
         formatter.field("username", &"*** Sensitive Data Redacted ***");
@@ -40,40 +40,40 @@ impl AdminUserGlobalSignOutInput {
 
 /// A builder for [`AdminUserGlobalSignOutInput`](crate::operation::admin_user_global_sign_out::AdminUserGlobalSignOutInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct AdminUserGlobalSignOutInputBuilder {
-    pub(crate) user_pool_id: std::option::Option<std::string::String>,
-    pub(crate) username: std::option::Option<std::string::String>,
+    pub(crate) user_pool_id: ::std::option::Option<::std::string::String>,
+    pub(crate) username: ::std::option::Option<::std::string::String>,
 }
 impl AdminUserGlobalSignOutInputBuilder {
     /// <p>The user pool ID.</p>
-    pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.user_pool_id = Some(input.into());
+    pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.user_pool_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user pool ID.</p>
-    pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_pool_id = input;
         self
     }
     /// <p>The user name.</p>
-    pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
-        self.username = Some(input.into());
+    pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.username = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user name.</p>
-    pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.username = input;
         self
     }
     /// Consumes the builder and constructs a [`AdminUserGlobalSignOutInput`](crate::operation::admin_user_global_sign_out::AdminUserGlobalSignOutInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::admin_user_global_sign_out::AdminUserGlobalSignOutInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::admin_user_global_sign_out::AdminUserGlobalSignOutInput {
                 user_pool_id: self.user_pool_id,
                 username: self.username,
@@ -81,8 +81,8 @@ impl AdminUserGlobalSignOutInputBuilder {
         )
     }
 }
-impl std::fmt::Debug for AdminUserGlobalSignOutInputBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for AdminUserGlobalSignOutInputBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AdminUserGlobalSignOutInputBuilder");
         formatter.field("user_pool_id", &self.user_pool_id);
         formatter.field("username", &"*** Sensitive Data Redacted ***");

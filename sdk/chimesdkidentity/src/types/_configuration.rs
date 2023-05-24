@@ -2,15 +2,15 @@
 
 /// <p>A structure that contains configuration data.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Configuration {
     /// <p>The configuration for an Amazon Lex V2 bot.</p>
     #[doc(hidden)]
-    pub lex: std::option::Option<crate::types::LexConfiguration>,
+    pub lex: ::std::option::Option<crate::types::LexConfiguration>,
 }
 impl Configuration {
     /// <p>The configuration for an Amazon Lex V2 bot.</p>
-    pub fn lex(&self) -> std::option::Option<&crate::types::LexConfiguration> {
+    pub fn lex(&self) -> ::std::option::Option<&crate::types::LexConfiguration> {
         self.lex.as_ref()
     }
 }
@@ -23,18 +23,20 @@ impl Configuration {
 
 /// A builder for [`Configuration`](crate::types::Configuration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ConfigurationBuilder {
-    pub(crate) lex: std::option::Option<crate::types::LexConfiguration>,
+    pub(crate) lex: ::std::option::Option<crate::types::LexConfiguration>,
 }
 impl ConfigurationBuilder {
     /// <p>The configuration for an Amazon Lex V2 bot.</p>
     pub fn lex(mut self, input: crate::types::LexConfiguration) -> Self {
-        self.lex = Some(input);
+        self.lex = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration for an Amazon Lex V2 bot.</p>
-    pub fn set_lex(mut self, input: std::option::Option<crate::types::LexConfiguration>) -> Self {
+    pub fn set_lex(mut self, input: ::std::option::Option<crate::types::LexConfiguration>) -> Self {
         self.lex = input;
         self
     }

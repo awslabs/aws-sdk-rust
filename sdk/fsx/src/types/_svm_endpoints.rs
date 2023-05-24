@@ -2,36 +2,36 @@
 
 /// <p>An Amazon FSx for NetApp ONTAP storage virtual machine (SVM) has the following endpoints that are used to access data or to manage the SVM using the NetApp ONTAP CLI, REST API, or NetApp CloudManager.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SvmEndpoints {
     /// <p>An endpoint for connecting using the Internet Small Computer Systems Interface (iSCSI) protocol.</p>
     #[doc(hidden)]
-    pub iscsi: std::option::Option<crate::types::SvmEndpoint>,
+    pub iscsi: ::std::option::Option<crate::types::SvmEndpoint>,
     /// <p>An endpoint for managing SVMs using the NetApp ONTAP CLI, NetApp ONTAP API, or NetApp CloudManager.</p>
     #[doc(hidden)]
-    pub management: std::option::Option<crate::types::SvmEndpoint>,
+    pub management: ::std::option::Option<crate::types::SvmEndpoint>,
     /// <p>An endpoint for connecting using the Network File System (NFS) protocol.</p>
     #[doc(hidden)]
-    pub nfs: std::option::Option<crate::types::SvmEndpoint>,
+    pub nfs: ::std::option::Option<crate::types::SvmEndpoint>,
     /// <p>An endpoint for connecting using the Server Message Block (SMB) protocol.</p>
     #[doc(hidden)]
-    pub smb: std::option::Option<crate::types::SvmEndpoint>,
+    pub smb: ::std::option::Option<crate::types::SvmEndpoint>,
 }
 impl SvmEndpoints {
     /// <p>An endpoint for connecting using the Internet Small Computer Systems Interface (iSCSI) protocol.</p>
-    pub fn iscsi(&self) -> std::option::Option<&crate::types::SvmEndpoint> {
+    pub fn iscsi(&self) -> ::std::option::Option<&crate::types::SvmEndpoint> {
         self.iscsi.as_ref()
     }
     /// <p>An endpoint for managing SVMs using the NetApp ONTAP CLI, NetApp ONTAP API, or NetApp CloudManager.</p>
-    pub fn management(&self) -> std::option::Option<&crate::types::SvmEndpoint> {
+    pub fn management(&self) -> ::std::option::Option<&crate::types::SvmEndpoint> {
         self.management.as_ref()
     }
     /// <p>An endpoint for connecting using the Network File System (NFS) protocol.</p>
-    pub fn nfs(&self) -> std::option::Option<&crate::types::SvmEndpoint> {
+    pub fn nfs(&self) -> ::std::option::Option<&crate::types::SvmEndpoint> {
         self.nfs.as_ref()
     }
     /// <p>An endpoint for connecting using the Server Message Block (SMB) protocol.</p>
-    pub fn smb(&self) -> std::option::Option<&crate::types::SvmEndpoint> {
+    pub fn smb(&self) -> ::std::option::Option<&crate::types::SvmEndpoint> {
         self.smb.as_ref()
     }
 }
@@ -44,51 +44,56 @@ impl SvmEndpoints {
 
 /// A builder for [`SvmEndpoints`](crate::types::SvmEndpoints).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SvmEndpointsBuilder {
-    pub(crate) iscsi: std::option::Option<crate::types::SvmEndpoint>,
-    pub(crate) management: std::option::Option<crate::types::SvmEndpoint>,
-    pub(crate) nfs: std::option::Option<crate::types::SvmEndpoint>,
-    pub(crate) smb: std::option::Option<crate::types::SvmEndpoint>,
+    pub(crate) iscsi: ::std::option::Option<crate::types::SvmEndpoint>,
+    pub(crate) management: ::std::option::Option<crate::types::SvmEndpoint>,
+    pub(crate) nfs: ::std::option::Option<crate::types::SvmEndpoint>,
+    pub(crate) smb: ::std::option::Option<crate::types::SvmEndpoint>,
 }
 impl SvmEndpointsBuilder {
     /// <p>An endpoint for connecting using the Internet Small Computer Systems Interface (iSCSI) protocol.</p>
     pub fn iscsi(mut self, input: crate::types::SvmEndpoint) -> Self {
-        self.iscsi = Some(input);
+        self.iscsi = ::std::option::Option::Some(input);
         self
     }
     /// <p>An endpoint for connecting using the Internet Small Computer Systems Interface (iSCSI) protocol.</p>
-    pub fn set_iscsi(mut self, input: std::option::Option<crate::types::SvmEndpoint>) -> Self {
+    pub fn set_iscsi(mut self, input: ::std::option::Option<crate::types::SvmEndpoint>) -> Self {
         self.iscsi = input;
         self
     }
     /// <p>An endpoint for managing SVMs using the NetApp ONTAP CLI, NetApp ONTAP API, or NetApp CloudManager.</p>
     pub fn management(mut self, input: crate::types::SvmEndpoint) -> Self {
-        self.management = Some(input);
+        self.management = ::std::option::Option::Some(input);
         self
     }
     /// <p>An endpoint for managing SVMs using the NetApp ONTAP CLI, NetApp ONTAP API, or NetApp CloudManager.</p>
-    pub fn set_management(mut self, input: std::option::Option<crate::types::SvmEndpoint>) -> Self {
+    pub fn set_management(
+        mut self,
+        input: ::std::option::Option<crate::types::SvmEndpoint>,
+    ) -> Self {
         self.management = input;
         self
     }
     /// <p>An endpoint for connecting using the Network File System (NFS) protocol.</p>
     pub fn nfs(mut self, input: crate::types::SvmEndpoint) -> Self {
-        self.nfs = Some(input);
+        self.nfs = ::std::option::Option::Some(input);
         self
     }
     /// <p>An endpoint for connecting using the Network File System (NFS) protocol.</p>
-    pub fn set_nfs(mut self, input: std::option::Option<crate::types::SvmEndpoint>) -> Self {
+    pub fn set_nfs(mut self, input: ::std::option::Option<crate::types::SvmEndpoint>) -> Self {
         self.nfs = input;
         self
     }
     /// <p>An endpoint for connecting using the Server Message Block (SMB) protocol.</p>
     pub fn smb(mut self, input: crate::types::SvmEndpoint) -> Self {
-        self.smb = Some(input);
+        self.smb = ::std::option::Option::Some(input);
         self
     }
     /// <p>An endpoint for connecting using the Server Message Block (SMB) protocol.</p>
-    pub fn set_smb(mut self, input: std::option::Option<crate::types::SvmEndpoint>) -> Self {
+    pub fn set_smb(mut self, input: ::std::option::Option<crate::types::SvmEndpoint>) -> Self {
         self.smb = input;
         self
     }

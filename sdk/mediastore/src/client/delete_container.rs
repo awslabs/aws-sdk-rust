@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteContainer`](crate::operation::delete_container::builders::DeleteContainerFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`container_name(impl Into<String>)`](crate::operation::delete_container::builders::DeleteContainerFluentBuilder::container_name) / [`set_container_name(Option<String>)`](crate::operation::delete_container::builders::DeleteContainerFluentBuilder::set_container_name): <p>The name of the container to delete. </p>
+    ///   - [`container_name(impl ::std::convert::Into<String>)`](crate::operation::delete_container::builders::DeleteContainerFluentBuilder::container_name) / [`set_container_name(Option<String>)`](crate::operation::delete_container::builders::DeleteContainerFluentBuilder::set_container_name): <p>The name of the container to delete. </p>
     /// - On success, responds with [`DeleteContainerOutput`](crate::operation::delete_container::DeleteContainerOutput)
     /// - On failure, responds with [`SdkError<DeleteContainerError>`](crate::operation::delete_container::DeleteContainerError)
     pub fn delete_container(

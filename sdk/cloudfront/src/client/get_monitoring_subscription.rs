@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetMonitoringSubscription`](crate::operation::get_monitoring_subscription::builders::GetMonitoringSubscriptionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`distribution_id(impl Into<String>)`](crate::operation::get_monitoring_subscription::builders::GetMonitoringSubscriptionFluentBuilder::distribution_id) / [`set_distribution_id(Option<String>)`](crate::operation::get_monitoring_subscription::builders::GetMonitoringSubscriptionFluentBuilder::set_distribution_id): <p>The ID of the distribution that you are getting metrics information for.</p>
+    ///   - [`distribution_id(impl ::std::convert::Into<String>)`](crate::operation::get_monitoring_subscription::builders::GetMonitoringSubscriptionFluentBuilder::distribution_id) / [`set_distribution_id(Option<String>)`](crate::operation::get_monitoring_subscription::builders::GetMonitoringSubscriptionFluentBuilder::set_distribution_id): <p>The ID of the distribution that you are getting metrics information for.</p>
     /// - On success, responds with [`GetMonitoringSubscriptionOutput`](crate::operation::get_monitoring_subscription::GetMonitoringSubscriptionOutput) with field(s):
     ///   - [`monitoring_subscription(Option<MonitoringSubscription>)`](crate::operation::get_monitoring_subscription::GetMonitoringSubscriptionOutput::monitoring_subscription): <p>A monitoring subscription. This structure contains information about whether additional CloudWatch metrics are enabled for a given CloudFront distribution.</p>
     /// - On failure, responds with [`SdkError<GetMonitoringSubscriptionError>`](crate::operation::get_monitoring_subscription::GetMonitoringSubscriptionError)

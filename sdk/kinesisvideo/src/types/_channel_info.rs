@@ -2,59 +2,59 @@
 
 /// <p>A structure that encapsulates a signaling channel's metadata and properties.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChannelInfo {
     /// <p>The name of the signaling channel.</p>
     #[doc(hidden)]
-    pub channel_name: std::option::Option<std::string::String>,
+    pub channel_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the signaling channel.</p>
     #[doc(hidden)]
-    pub channel_arn: std::option::Option<std::string::String>,
+    pub channel_arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of the signaling channel.</p>
     #[doc(hidden)]
-    pub channel_type: std::option::Option<crate::types::ChannelType>,
+    pub channel_type: ::std::option::Option<crate::types::ChannelType>,
     /// <p>Current status of the signaling channel.</p>
     #[doc(hidden)]
-    pub channel_status: std::option::Option<crate::types::Status>,
+    pub channel_status: ::std::option::Option<crate::types::Status>,
     /// <p>The time at which the signaling channel was created.</p>
     #[doc(hidden)]
-    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A structure that contains the configuration for the <code>SINGLE_MASTER</code> channel type.</p>
     #[doc(hidden)]
-    pub single_master_configuration: std::option::Option<crate::types::SingleMasterConfiguration>,
+    pub single_master_configuration: ::std::option::Option<crate::types::SingleMasterConfiguration>,
     /// <p>The current version of the signaling channel.</p>
     #[doc(hidden)]
-    pub version: std::option::Option<std::string::String>,
+    pub version: ::std::option::Option<::std::string::String>,
 }
 impl ChannelInfo {
     /// <p>The name of the signaling channel.</p>
-    pub fn channel_name(&self) -> std::option::Option<&str> {
+    pub fn channel_name(&self) -> ::std::option::Option<&str> {
         self.channel_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the signaling channel.</p>
-    pub fn channel_arn(&self) -> std::option::Option<&str> {
+    pub fn channel_arn(&self) -> ::std::option::Option<&str> {
         self.channel_arn.as_deref()
     }
     /// <p>The type of the signaling channel.</p>
-    pub fn channel_type(&self) -> std::option::Option<&crate::types::ChannelType> {
+    pub fn channel_type(&self) -> ::std::option::Option<&crate::types::ChannelType> {
         self.channel_type.as_ref()
     }
     /// <p>Current status of the signaling channel.</p>
-    pub fn channel_status(&self) -> std::option::Option<&crate::types::Status> {
+    pub fn channel_status(&self) -> ::std::option::Option<&crate::types::Status> {
         self.channel_status.as_ref()
     }
     /// <p>The time at which the signaling channel was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>A structure that contains the configuration for the <code>SINGLE_MASTER</code> channel type.</p>
     pub fn single_master_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::SingleMasterConfiguration> {
+    ) -> ::std::option::Option<&crate::types::SingleMasterConfiguration> {
         self.single_master_configuration.as_ref()
     }
     /// <p>The current version of the signaling channel.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<&str> {
         self.version.as_deref()
     }
 }
@@ -67,70 +67,75 @@ impl ChannelInfo {
 
 /// A builder for [`ChannelInfo`](crate::types::ChannelInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ChannelInfoBuilder {
-    pub(crate) channel_name: std::option::Option<std::string::String>,
-    pub(crate) channel_arn: std::option::Option<std::string::String>,
-    pub(crate) channel_type: std::option::Option<crate::types::ChannelType>,
-    pub(crate) channel_status: std::option::Option<crate::types::Status>,
-    pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) channel_name: ::std::option::Option<::std::string::String>,
+    pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) channel_type: ::std::option::Option<crate::types::ChannelType>,
+    pub(crate) channel_status: ::std::option::Option<crate::types::Status>,
+    pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) single_master_configuration:
-        std::option::Option<crate::types::SingleMasterConfiguration>,
-    pub(crate) version: std::option::Option<std::string::String>,
+        ::std::option::Option<crate::types::SingleMasterConfiguration>,
+    pub(crate) version: ::std::option::Option<::std::string::String>,
 }
 impl ChannelInfoBuilder {
     /// <p>The name of the signaling channel.</p>
-    pub fn channel_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.channel_name = Some(input.into());
+    pub fn channel_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.channel_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the signaling channel.</p>
-    pub fn set_channel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_channel_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.channel_name = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the signaling channel.</p>
-    pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.channel_arn = Some(input.into());
+    pub fn channel_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.channel_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the signaling channel.</p>
-    pub fn set_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_channel_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.channel_arn = input;
         self
     }
     /// <p>The type of the signaling channel.</p>
     pub fn channel_type(mut self, input: crate::types::ChannelType) -> Self {
-        self.channel_type = Some(input);
+        self.channel_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of the signaling channel.</p>
     pub fn set_channel_type(
         mut self,
-        input: std::option::Option<crate::types::ChannelType>,
+        input: ::std::option::Option<crate::types::ChannelType>,
     ) -> Self {
         self.channel_type = input;
         self
     }
     /// <p>Current status of the signaling channel.</p>
     pub fn channel_status(mut self, input: crate::types::Status) -> Self {
-        self.channel_status = Some(input);
+        self.channel_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Current status of the signaling channel.</p>
-    pub fn set_channel_status(mut self, input: std::option::Option<crate::types::Status>) -> Self {
+    pub fn set_channel_status(
+        mut self,
+        input: ::std::option::Option<crate::types::Status>,
+    ) -> Self {
         self.channel_status = input;
         self
     }
     /// <p>The time at which the signaling channel was created.</p>
-    pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_time = Some(input);
+    pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time at which the signaling channel was created.</p>
     pub fn set_creation_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_time = input;
         self
@@ -140,24 +145,24 @@ impl ChannelInfoBuilder {
         mut self,
         input: crate::types::SingleMasterConfiguration,
     ) -> Self {
-        self.single_master_configuration = Some(input);
+        self.single_master_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>A structure that contains the configuration for the <code>SINGLE_MASTER</code> channel type.</p>
     pub fn set_single_master_configuration(
         mut self,
-        input: std::option::Option<crate::types::SingleMasterConfiguration>,
+        input: ::std::option::Option<crate::types::SingleMasterConfiguration>,
     ) -> Self {
         self.single_master_configuration = input;
         self
     }
     /// <p>The current version of the signaling channel.</p>
-    pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.version = Some(input.into());
+    pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The current version of the signaling channel.</p>
-    pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
     }

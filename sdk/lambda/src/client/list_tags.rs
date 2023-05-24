@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ListTags`](crate::operation::list_tags::builders::ListTagsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource(impl Into<String>)`](crate::operation::list_tags::builders::ListTagsFluentBuilder::resource) / [`set_resource(Option<String>)`](crate::operation::list_tags::builders::ListTagsFluentBuilder::set_resource): <p>The function's Amazon Resource Name (ARN). Note: Lambda does not support adding tags to aliases or versions.</p>
+    ///   - [`resource(impl ::std::convert::Into<String>)`](crate::operation::list_tags::builders::ListTagsFluentBuilder::resource) / [`set_resource(Option<String>)`](crate::operation::list_tags::builders::ListTagsFluentBuilder::set_resource): <p>The function's Amazon Resource Name (ARN). Note: Lambda does not support adding tags to aliases or versions.</p>
     /// - On success, responds with [`ListTagsOutput`](crate::operation::list_tags::ListTagsOutput) with field(s):
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::list_tags::ListTagsOutput::tags): <p>The function's tags.</p>
     /// - On failure, responds with [`SdkError<ListTagsError>`](crate::operation::list_tags::ListTagsError)

@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteDatabase`](crate::operation::delete_database::builders::DeleteDatabaseFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`catalog_id(impl Into<String>)`](crate::operation::delete_database::builders::DeleteDatabaseFluentBuilder::catalog_id) / [`set_catalog_id(Option<String>)`](crate::operation::delete_database::builders::DeleteDatabaseFluentBuilder::set_catalog_id): <p>The ID of the Data Catalog in which the database resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
-    ///   - [`name(impl Into<String>)`](crate::operation::delete_database::builders::DeleteDatabaseFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_database::builders::DeleteDatabaseFluentBuilder::set_name): <p>The name of the database to delete. For Hive compatibility, this must be all lowercase.</p>
+    ///   - [`catalog_id(impl ::std::convert::Into<String>)`](crate::operation::delete_database::builders::DeleteDatabaseFluentBuilder::catalog_id) / [`set_catalog_id(Option<String>)`](crate::operation::delete_database::builders::DeleteDatabaseFluentBuilder::set_catalog_id): <p>The ID of the Data Catalog in which the database resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
+    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::delete_database::builders::DeleteDatabaseFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_database::builders::DeleteDatabaseFluentBuilder::set_name): <p>The name of the database to delete. For Hive compatibility, this must be all lowercase.</p>
     /// - On success, responds with [`DeleteDatabaseOutput`](crate::operation::delete_database::DeleteDatabaseOutput)
     /// - On failure, responds with [`SdkError<DeleteDatabaseError>`](crate::operation::delete_database::DeleteDatabaseError)
     pub fn delete_database(

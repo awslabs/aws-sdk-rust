@@ -2,15 +2,15 @@
 
 /// <p>An object containing authentication information for a private Docker registry.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrainingRepositoryAuthConfig {
     /// <p>The Amazon Resource Name (ARN) of an Amazon Web Services Lambda function used to give SageMaker access credentials to your private Docker registry.</p>
     #[doc(hidden)]
-    pub training_repository_credentials_provider_arn: std::option::Option<std::string::String>,
+    pub training_repository_credentials_provider_arn: ::std::option::Option<::std::string::String>,
 }
 impl TrainingRepositoryAuthConfig {
     /// <p>The Amazon Resource Name (ARN) of an Amazon Web Services Lambda function used to give SageMaker access credentials to your private Docker registry.</p>
-    pub fn training_repository_credentials_provider_arn(&self) -> std::option::Option<&str> {
+    pub fn training_repository_credentials_provider_arn(&self) -> ::std::option::Option<&str> {
         self.training_repository_credentials_provider_arn.as_deref()
     }
 }
@@ -23,24 +23,27 @@ impl TrainingRepositoryAuthConfig {
 
 /// A builder for [`TrainingRepositoryAuthConfig`](crate::types::TrainingRepositoryAuthConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TrainingRepositoryAuthConfigBuilder {
     pub(crate) training_repository_credentials_provider_arn:
-        std::option::Option<std::string::String>,
+        ::std::option::Option<::std::string::String>,
 }
 impl TrainingRepositoryAuthConfigBuilder {
     /// <p>The Amazon Resource Name (ARN) of an Amazon Web Services Lambda function used to give SageMaker access credentials to your private Docker registry.</p>
     pub fn training_repository_credentials_provider_arn(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.training_repository_credentials_provider_arn = Some(input.into());
+        self.training_repository_credentials_provider_arn =
+            ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of an Amazon Web Services Lambda function used to give SageMaker access credentials to your private Docker registry.</p>
     pub fn set_training_repository_credentials_provider_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.training_repository_credentials_provider_arn = input;
         self

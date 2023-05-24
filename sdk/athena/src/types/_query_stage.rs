@@ -2,71 +2,71 @@
 
 /// <p>Stage statistics such as input and output rows and bytes, execution time and stage state. This information also includes substages and the query stage plan.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QueryStage {
     /// <p>The identifier for a stage.</p>
     #[doc(hidden)]
-    pub stage_id: std::option::Option<i64>,
+    pub stage_id: ::std::option::Option<i64>,
     /// <p>State of the stage after query execution.</p>
     #[doc(hidden)]
-    pub state: std::option::Option<std::string::String>,
+    pub state: ::std::option::Option<::std::string::String>,
     /// <p>The number of bytes output from the stage after execution.</p>
     #[doc(hidden)]
-    pub output_bytes: std::option::Option<i64>,
+    pub output_bytes: ::std::option::Option<i64>,
     /// <p>The number of rows output from the stage after execution.</p>
     #[doc(hidden)]
-    pub output_rows: std::option::Option<i64>,
+    pub output_rows: ::std::option::Option<i64>,
     /// <p>The number of bytes input into the stage for execution.</p>
     #[doc(hidden)]
-    pub input_bytes: std::option::Option<i64>,
+    pub input_bytes: ::std::option::Option<i64>,
     /// <p>The number of rows input into the stage for execution.</p>
     #[doc(hidden)]
-    pub input_rows: std::option::Option<i64>,
+    pub input_rows: ::std::option::Option<i64>,
     /// <p>Time taken to execute this stage.</p>
     #[doc(hidden)]
-    pub execution_time: std::option::Option<i64>,
+    pub execution_time: ::std::option::Option<i64>,
     /// <p>Stage plan information such as name, identifier, sub plans, and source stages.</p>
     #[doc(hidden)]
-    pub query_stage_plan: std::option::Option<crate::types::QueryStagePlanNode>,
+    pub query_stage_plan: ::std::option::Option<crate::types::QueryStagePlanNode>,
     /// <p>List of sub query stages that form this stage execution plan.</p>
     #[doc(hidden)]
-    pub sub_stages: std::option::Option<std::vec::Vec<crate::types::QueryStage>>,
+    pub sub_stages: ::std::option::Option<::std::vec::Vec<crate::types::QueryStage>>,
 }
 impl QueryStage {
     /// <p>The identifier for a stage.</p>
-    pub fn stage_id(&self) -> std::option::Option<i64> {
+    pub fn stage_id(&self) -> ::std::option::Option<i64> {
         self.stage_id
     }
     /// <p>State of the stage after query execution.</p>
-    pub fn state(&self) -> std::option::Option<&str> {
+    pub fn state(&self) -> ::std::option::Option<&str> {
         self.state.as_deref()
     }
     /// <p>The number of bytes output from the stage after execution.</p>
-    pub fn output_bytes(&self) -> std::option::Option<i64> {
+    pub fn output_bytes(&self) -> ::std::option::Option<i64> {
         self.output_bytes
     }
     /// <p>The number of rows output from the stage after execution.</p>
-    pub fn output_rows(&self) -> std::option::Option<i64> {
+    pub fn output_rows(&self) -> ::std::option::Option<i64> {
         self.output_rows
     }
     /// <p>The number of bytes input into the stage for execution.</p>
-    pub fn input_bytes(&self) -> std::option::Option<i64> {
+    pub fn input_bytes(&self) -> ::std::option::Option<i64> {
         self.input_bytes
     }
     /// <p>The number of rows input into the stage for execution.</p>
-    pub fn input_rows(&self) -> std::option::Option<i64> {
+    pub fn input_rows(&self) -> ::std::option::Option<i64> {
         self.input_rows
     }
     /// <p>Time taken to execute this stage.</p>
-    pub fn execution_time(&self) -> std::option::Option<i64> {
+    pub fn execution_time(&self) -> ::std::option::Option<i64> {
         self.execution_time
     }
     /// <p>Stage plan information such as name, identifier, sub plans, and source stages.</p>
-    pub fn query_stage_plan(&self) -> std::option::Option<&crate::types::QueryStagePlanNode> {
+    pub fn query_stage_plan(&self) -> ::std::option::Option<&crate::types::QueryStagePlanNode> {
         self.query_stage_plan.as_ref()
     }
     /// <p>List of sub query stages that form this stage execution plan.</p>
-    pub fn sub_stages(&self) -> std::option::Option<&[crate::types::QueryStage]> {
+    pub fn sub_stages(&self) -> ::std::option::Option<&[crate::types::QueryStage]> {
         self.sub_stages.as_deref()
     }
 }
@@ -79,98 +79,100 @@ impl QueryStage {
 
 /// A builder for [`QueryStage`](crate::types::QueryStage).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct QueryStageBuilder {
-    pub(crate) stage_id: std::option::Option<i64>,
-    pub(crate) state: std::option::Option<std::string::String>,
-    pub(crate) output_bytes: std::option::Option<i64>,
-    pub(crate) output_rows: std::option::Option<i64>,
-    pub(crate) input_bytes: std::option::Option<i64>,
-    pub(crate) input_rows: std::option::Option<i64>,
-    pub(crate) execution_time: std::option::Option<i64>,
-    pub(crate) query_stage_plan: std::option::Option<crate::types::QueryStagePlanNode>,
-    pub(crate) sub_stages: std::option::Option<std::vec::Vec<crate::types::QueryStage>>,
+    pub(crate) stage_id: ::std::option::Option<i64>,
+    pub(crate) state: ::std::option::Option<::std::string::String>,
+    pub(crate) output_bytes: ::std::option::Option<i64>,
+    pub(crate) output_rows: ::std::option::Option<i64>,
+    pub(crate) input_bytes: ::std::option::Option<i64>,
+    pub(crate) input_rows: ::std::option::Option<i64>,
+    pub(crate) execution_time: ::std::option::Option<i64>,
+    pub(crate) query_stage_plan: ::std::option::Option<crate::types::QueryStagePlanNode>,
+    pub(crate) sub_stages: ::std::option::Option<::std::vec::Vec<crate::types::QueryStage>>,
 }
 impl QueryStageBuilder {
     /// <p>The identifier for a stage.</p>
     pub fn stage_id(mut self, input: i64) -> Self {
-        self.stage_id = Some(input);
+        self.stage_id = ::std::option::Option::Some(input);
         self
     }
     /// <p>The identifier for a stage.</p>
-    pub fn set_stage_id(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_stage_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.stage_id = input;
         self
     }
     /// <p>State of the stage after query execution.</p>
-    pub fn state(mut self, input: impl Into<std::string::String>) -> Self {
-        self.state = Some(input.into());
+    pub fn state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.state = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>State of the stage after query execution.</p>
-    pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state = input;
         self
     }
     /// <p>The number of bytes output from the stage after execution.</p>
     pub fn output_bytes(mut self, input: i64) -> Self {
-        self.output_bytes = Some(input);
+        self.output_bytes = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of bytes output from the stage after execution.</p>
-    pub fn set_output_bytes(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_output_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.output_bytes = input;
         self
     }
     /// <p>The number of rows output from the stage after execution.</p>
     pub fn output_rows(mut self, input: i64) -> Self {
-        self.output_rows = Some(input);
+        self.output_rows = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of rows output from the stage after execution.</p>
-    pub fn set_output_rows(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_output_rows(mut self, input: ::std::option::Option<i64>) -> Self {
         self.output_rows = input;
         self
     }
     /// <p>The number of bytes input into the stage for execution.</p>
     pub fn input_bytes(mut self, input: i64) -> Self {
-        self.input_bytes = Some(input);
+        self.input_bytes = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of bytes input into the stage for execution.</p>
-    pub fn set_input_bytes(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_input_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.input_bytes = input;
         self
     }
     /// <p>The number of rows input into the stage for execution.</p>
     pub fn input_rows(mut self, input: i64) -> Self {
-        self.input_rows = Some(input);
+        self.input_rows = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of rows input into the stage for execution.</p>
-    pub fn set_input_rows(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_input_rows(mut self, input: ::std::option::Option<i64>) -> Self {
         self.input_rows = input;
         self
     }
     /// <p>Time taken to execute this stage.</p>
     pub fn execution_time(mut self, input: i64) -> Self {
-        self.execution_time = Some(input);
+        self.execution_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>Time taken to execute this stage.</p>
-    pub fn set_execution_time(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_execution_time(mut self, input: ::std::option::Option<i64>) -> Self {
         self.execution_time = input;
         self
     }
     /// <p>Stage plan information such as name, identifier, sub plans, and source stages.</p>
     pub fn query_stage_plan(mut self, input: crate::types::QueryStagePlanNode) -> Self {
-        self.query_stage_plan = Some(input);
+        self.query_stage_plan = ::std::option::Option::Some(input);
         self
     }
     /// <p>Stage plan information such as name, identifier, sub plans, and source stages.</p>
     pub fn set_query_stage_plan(
         mut self,
-        input: std::option::Option<crate::types::QueryStagePlanNode>,
+        input: ::std::option::Option<crate::types::QueryStagePlanNode>,
     ) -> Self {
         self.query_stage_plan = input;
         self
@@ -183,13 +185,13 @@ impl QueryStageBuilder {
     pub fn sub_stages(mut self, input: crate::types::QueryStage) -> Self {
         let mut v = self.sub_stages.unwrap_or_default();
         v.push(input);
-        self.sub_stages = Some(v);
+        self.sub_stages = ::std::option::Option::Some(v);
         self
     }
     /// <p>List of sub query stages that form this stage execution plan.</p>
     pub fn set_sub_stages(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::QueryStage>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::QueryStage>>,
     ) -> Self {
         self.sub_stages = input;
         self

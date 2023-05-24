@@ -6,29 +6,29 @@ pub use crate::operation::post_agent_profile::_post_agent_profile_input::PostAge
 /// Fluent builder constructing a request to `PostAgentProfile`.
 ///
 /// <p> Submits profiling data to an aggregated profile of a profiling group. To get an aggregated profile that is created with this profiling data, use <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_GetProfile.html"> <code>GetProfile</code> </a>. </p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PostAgentProfileFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::post_agent_profile::builders::PostAgentProfileInputBuilder,
 }
 impl PostAgentProfileFluentBuilder {
     /// Creates a new `PostAgentProfile`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::post_agent_profile::PostAgentProfile,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::post_agent_profile::PostAgentProfileError,
         >,
     > {
@@ -36,30 +36,33 @@ impl PostAgentProfileFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::post_agent_profile::PostAgentProfileOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::post_agent_profile::PostAgentProfileError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,44 +75,56 @@ impl PostAgentProfileFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::post_agent_profile::PostAgentProfileOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::post_agent_profile::PostAgentProfileError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p> The name of the profiling group with the aggregated profile that receives the submitted profiling data. </p>
-    pub fn profiling_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn profiling_group_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.profiling_group_name(input.into());
         self
     }
     /// <p> The name of the profiling group with the aggregated profile that receives the submitted profiling data. </p>
     pub fn set_profiling_group_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_profiling_group_name(input);
         self
     }
     /// <p> The submitted profiling data. </p>
-    pub fn agent_profile(mut self, input: aws_smithy_types::Blob) -> Self {
+    pub fn agent_profile(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.inner = self.inner.agent_profile(input);
         self
     }
     /// <p> The submitted profiling data. </p>
-    pub fn set_agent_profile(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
+    pub fn set_agent_profile(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::Blob>,
+    ) -> Self {
         self.inner = self.inner.set_agent_profile(input);
         self
     }
     /// <p> Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the accidental submission of duplicate profiling data if there are failures and retries. </p>
-    pub fn profile_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn profile_token(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.profile_token(input.into());
         self
     }
     /// <p> Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the accidental submission of duplicate profiling data if there are failures and retries. </p>
-    pub fn set_profile_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_profile_token(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_profile_token(input);
         self
     }
@@ -118,7 +133,7 @@ impl PostAgentProfileFluentBuilder {
     /// <li> <p> <code>application/json</code> — standard JSON format </p> </li>
     /// <li> <p> <code>application/x-amzn-ion</code> — the Amazon Ion data format. For more information, see <a href="http://amzn.github.io/ion-docs/">Amazon Ion</a>. </p> </li>
     /// </ul>
-    pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.content_type(input.into());
         self
     }
@@ -127,7 +142,7 @@ impl PostAgentProfileFluentBuilder {
     /// <li> <p> <code>application/json</code> — standard JSON format </p> </li>
     /// <li> <p> <code>application/x-amzn-ion</code> — the Amazon Ion data format. For more information, see <a href="http://amzn.github.io/ion-docs/">Amazon Ion</a>. </p> </li>
     /// </ul>
-    pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_content_type(input);
         self
     }

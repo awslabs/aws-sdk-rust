@@ -2,20 +2,20 @@
 
 /// <p>Information about the GitHub repository to be created in AWS CodeStar. This is where the source code files provided with the project request will be uploaded after project creation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GitHubCodeDestination {
     /// <p>Name of the GitHub repository to be created in AWS CodeStar.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>Description for the GitHub repository to be created in AWS CodeStar. This description displays in GitHub after the repository is created.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The type of GitHub repository to be created in AWS CodeStar. Valid values are User or Organization.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<std::string::String>,
+    pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The GitHub username for the owner of the GitHub repository to be created in AWS CodeStar. If this repository should be owned by a GitHub organization, provide its name.</p>
     #[doc(hidden)]
-    pub owner: std::option::Option<std::string::String>,
+    pub owner: ::std::option::Option<::std::string::String>,
     /// <p>Whether the GitHub repository is to be a private repository.</p>
     #[doc(hidden)]
     pub private_repository: bool,
@@ -24,23 +24,23 @@ pub struct GitHubCodeDestination {
     pub issues_enabled: bool,
     /// <p>The GitHub user's personal access token for the GitHub repository.</p>
     #[doc(hidden)]
-    pub token: std::option::Option<std::string::String>,
+    pub token: ::std::option::Option<::std::string::String>,
 }
 impl GitHubCodeDestination {
     /// <p>Name of the GitHub repository to be created in AWS CodeStar.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>Description for the GitHub repository to be created in AWS CodeStar. This description displays in GitHub after the repository is created.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The type of GitHub repository to be created in AWS CodeStar. Valid values are User or Organization.</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
     }
     /// <p>The GitHub username for the owner of the GitHub repository to be created in AWS CodeStar. If this repository should be owned by a GitHub organization, provide its name.</p>
-    pub fn owner(&self) -> std::option::Option<&str> {
+    pub fn owner(&self) -> ::std::option::Option<&str> {
         self.owner.as_deref()
     }
     /// <p>Whether the GitHub repository is to be a private repository.</p>
@@ -52,12 +52,12 @@ impl GitHubCodeDestination {
         self.issues_enabled
     }
     /// <p>The GitHub user's personal access token for the GitHub repository.</p>
-    pub fn token(&self) -> std::option::Option<&str> {
+    pub fn token(&self) -> ::std::option::Option<&str> {
         self.token.as_deref()
     }
 }
-impl std::fmt::Debug for GitHubCodeDestination {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for GitHubCodeDestination {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GitHubCodeDestination");
         formatter.field("name", &self.name);
         formatter.field("description", &self.description);
@@ -78,84 +78,84 @@ impl GitHubCodeDestination {
 
 /// A builder for [`GitHubCodeDestination`](crate::types::GitHubCodeDestination).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct GitHubCodeDestinationBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) r#type: std::option::Option<std::string::String>,
-    pub(crate) owner: std::option::Option<std::string::String>,
-    pub(crate) private_repository: std::option::Option<bool>,
-    pub(crate) issues_enabled: std::option::Option<bool>,
-    pub(crate) token: std::option::Option<std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<::std::string::String>,
+    pub(crate) owner: ::std::option::Option<::std::string::String>,
+    pub(crate) private_repository: ::std::option::Option<bool>,
+    pub(crate) issues_enabled: ::std::option::Option<bool>,
+    pub(crate) token: ::std::option::Option<::std::string::String>,
 }
 impl GitHubCodeDestinationBuilder {
     /// <p>Name of the GitHub repository to be created in AWS CodeStar.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of the GitHub repository to be created in AWS CodeStar.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>Description for the GitHub repository to be created in AWS CodeStar. This description displays in GitHub after the repository is created.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Description for the GitHub repository to be created in AWS CodeStar. This description displays in GitHub after the repository is created.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>The type of GitHub repository to be created in AWS CodeStar. Valid values are User or Organization.</p>
-    pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.r#type = Some(input.into());
+    pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.r#type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of GitHub repository to be created in AWS CodeStar. Valid values are User or Organization.</p>
-    pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The GitHub username for the owner of the GitHub repository to be created in AWS CodeStar. If this repository should be owned by a GitHub organization, provide its name.</p>
-    pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
-        self.owner = Some(input.into());
+    pub fn owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.owner = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The GitHub username for the owner of the GitHub repository to be created in AWS CodeStar. If this repository should be owned by a GitHub organization, provide its name.</p>
-    pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner = input;
         self
     }
     /// <p>Whether the GitHub repository is to be a private repository.</p>
     pub fn private_repository(mut self, input: bool) -> Self {
-        self.private_repository = Some(input);
+        self.private_repository = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether the GitHub repository is to be a private repository.</p>
-    pub fn set_private_repository(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_private_repository(mut self, input: ::std::option::Option<bool>) -> Self {
         self.private_repository = input;
         self
     }
     /// <p>Whether to enable issues for the GitHub repository.</p>
     pub fn issues_enabled(mut self, input: bool) -> Self {
-        self.issues_enabled = Some(input);
+        self.issues_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether to enable issues for the GitHub repository.</p>
-    pub fn set_issues_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_issues_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.issues_enabled = input;
         self
     }
     /// <p>The GitHub user's personal access token for the GitHub repository.</p>
-    pub fn token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.token = Some(input.into());
+    pub fn token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The GitHub user's personal access token for the GitHub repository.</p>
-    pub fn set_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.token = input;
         self
     }
@@ -172,8 +172,8 @@ impl GitHubCodeDestinationBuilder {
         }
     }
 }
-impl std::fmt::Debug for GitHubCodeDestinationBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for GitHubCodeDestinationBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GitHubCodeDestinationBuilder");
         formatter.field("name", &self.name);
         formatter.field("description", &self.description);

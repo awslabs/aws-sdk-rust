@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum LongTermPricingType {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum LongTermPricingType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for LongTermPricingType {
+impl ::std::convert::From<&str> for LongTermPricingType {
     fn from(s: &str) -> Self {
         match s {
             "OneMonth" => LongTermPricingType::OneMonth,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for LongTermPricingType {
         }
     }
 }
-impl std::str::FromStr for LongTermPricingType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for LongTermPricingType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LongTermPricingType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(LongTermPricingType::from(s))
     }
 }
 impl LongTermPricingType {
@@ -91,7 +91,7 @@ impl LongTermPricingType {
         &["OneMonth", "OneYear", "ThreeYear"]
     }
 }
-impl AsRef<str> for LongTermPricingType {
+impl ::std::convert::AsRef<str> for LongTermPricingType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

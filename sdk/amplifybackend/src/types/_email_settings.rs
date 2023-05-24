@@ -2,22 +2,22 @@
 
 /// <p>The configuration for the email sent when an app user forgets their password.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EmailSettings {
     /// <p>The contents of the email message.</p>
     #[doc(hidden)]
-    pub email_message: std::option::Option<std::string::String>,
+    pub email_message: ::std::option::Option<::std::string::String>,
     /// <p>The contents of the subject line of the email message.</p>
     #[doc(hidden)]
-    pub email_subject: std::option::Option<std::string::String>,
+    pub email_subject: ::std::option::Option<::std::string::String>,
 }
 impl EmailSettings {
     /// <p>The contents of the email message.</p>
-    pub fn email_message(&self) -> std::option::Option<&str> {
+    pub fn email_message(&self) -> ::std::option::Option<&str> {
         self.email_message.as_deref()
     }
     /// <p>The contents of the subject line of the email message.</p>
-    pub fn email_subject(&self) -> std::option::Option<&str> {
+    pub fn email_subject(&self) -> ::std::option::Option<&str> {
         self.email_subject.as_deref()
     }
 }
@@ -30,29 +30,43 @@ impl EmailSettings {
 
 /// A builder for [`EmailSettings`](crate::types::EmailSettings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EmailSettingsBuilder {
-    pub(crate) email_message: std::option::Option<std::string::String>,
-    pub(crate) email_subject: std::option::Option<std::string::String>,
+    pub(crate) email_message: ::std::option::Option<::std::string::String>,
+    pub(crate) email_subject: ::std::option::Option<::std::string::String>,
 }
 impl EmailSettingsBuilder {
     /// <p>The contents of the email message.</p>
-    pub fn email_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.email_message = Some(input.into());
+    pub fn email_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.email_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The contents of the email message.</p>
-    pub fn set_email_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_email_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.email_message = input;
         self
     }
     /// <p>The contents of the subject line of the email message.</p>
-    pub fn email_subject(mut self, input: impl Into<std::string::String>) -> Self {
-        self.email_subject = Some(input.into());
+    pub fn email_subject(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.email_subject = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The contents of the subject line of the email message.</p>
-    pub fn set_email_subject(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_email_subject(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.email_subject = input;
         self
     }

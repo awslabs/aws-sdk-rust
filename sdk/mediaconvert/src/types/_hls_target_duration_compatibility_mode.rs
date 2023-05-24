@@ -38,13 +38,13 @@
 /// When set to LEGACY, the segment target duration is always rounded up to the nearest integer value above its current value in seconds. When set to SPEC\\_COMPLIANT, the segment target duration is rounded up to the nearest integer value if fraction seconds are greater than or equal to 0.5 (>= 0.5) and rounded down if less than 0.5 (< 0.5). You may need to use LEGACY if your client needs to ensure that the target duration is always longer than the actual duration of the segment. Some older players may experience interrupted playback when the actual duration of a track in a segment is longer than the target duration.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum HlsTargetDurationCompatibilityMode {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum HlsTargetDurationCompatibilityMode {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for HlsTargetDurationCompatibilityMode {
+impl ::std::convert::From<&str> for HlsTargetDurationCompatibilityMode {
     fn from(s: &str) -> Self {
         match s {
             "LEGACY" => HlsTargetDurationCompatibilityMode::Legacy,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for HlsTargetDurationCompatibilityMode {
         }
     }
 }
-impl std::str::FromStr for HlsTargetDurationCompatibilityMode {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for HlsTargetDurationCompatibilityMode {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(HlsTargetDurationCompatibilityMode::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(HlsTargetDurationCompatibilityMode::from(s))
     }
 }
 impl HlsTargetDurationCompatibilityMode {
@@ -86,7 +86,7 @@ impl HlsTargetDurationCompatibilityMode {
         &["LEGACY", "SPEC_COMPLIANT"]
     }
 }
-impl AsRef<str> for HlsTargetDurationCompatibilityMode {
+impl ::std::convert::AsRef<str> for HlsTargetDurationCompatibilityMode {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

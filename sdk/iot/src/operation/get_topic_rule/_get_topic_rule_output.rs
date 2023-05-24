@@ -2,27 +2,27 @@
 
 /// <p>The output from the GetTopicRule operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTopicRuleOutput {
     /// <p>The rule ARN.</p>
     #[doc(hidden)]
-    pub rule_arn: std::option::Option<std::string::String>,
+    pub rule_arn: ::std::option::Option<::std::string::String>,
     /// <p>The rule.</p>
     #[doc(hidden)]
-    pub rule: std::option::Option<crate::types::TopicRule>,
+    pub rule: ::std::option::Option<crate::types::TopicRule>,
     _request_id: Option<String>,
 }
 impl GetTopicRuleOutput {
     /// <p>The rule ARN.</p>
-    pub fn rule_arn(&self) -> std::option::Option<&str> {
+    pub fn rule_arn(&self) -> ::std::option::Option<&str> {
         self.rule_arn.as_deref()
     }
     /// <p>The rule.</p>
-    pub fn rule(&self) -> std::option::Option<&crate::types::TopicRule> {
+    pub fn rule(&self) -> ::std::option::Option<&crate::types::TopicRule> {
         self.rule.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for GetTopicRuleOutput {
+impl ::aws_http::request_id::RequestId for GetTopicRuleOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -36,30 +36,32 @@ impl GetTopicRuleOutput {
 
 /// A builder for [`GetTopicRuleOutput`](crate::operation::get_topic_rule::GetTopicRuleOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetTopicRuleOutputBuilder {
-    pub(crate) rule_arn: std::option::Option<std::string::String>,
-    pub(crate) rule: std::option::Option<crate::types::TopicRule>,
+    pub(crate) rule_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) rule: ::std::option::Option<crate::types::TopicRule>,
     _request_id: Option<String>,
 }
 impl GetTopicRuleOutputBuilder {
     /// <p>The rule ARN.</p>
-    pub fn rule_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.rule_arn = Some(input.into());
+    pub fn rule_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.rule_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The rule ARN.</p>
-    pub fn set_rule_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_rule_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_arn = input;
         self
     }
     /// <p>The rule.</p>
     pub fn rule(mut self, input: crate::types::TopicRule) -> Self {
-        self.rule = Some(input);
+        self.rule = ::std::option::Option::Some(input);
         self
     }
     /// <p>The rule.</p>
-    pub fn set_rule(mut self, input: std::option::Option<crate::types::TopicRule>) -> Self {
+    pub fn set_rule(mut self, input: ::std::option::Option<crate::types::TopicRule>) -> Self {
         self.rule = input;
         self
     }

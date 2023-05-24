@@ -5,7 +5,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_connectors::builders::ListConnectorsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_connectors::builders::ListConnectorsFluentBuilder::set_max_results): <p>Specifies the maximum number of items that should be returned in the result set. The default for <code>maxResults</code> is 20 (for all paginated API operations).</p>
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_connectors::builders::ListConnectorsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_connectors::builders::ListConnectorsFluentBuilder::set_next_token): <p>The pagination token for the next page of data.</p>
+    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_connectors::builders::ListConnectorsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_connectors::builders::ListConnectorsFluentBuilder::set_next_token): <p>The pagination token for the next page of data.</p>
     /// - On success, responds with [`ListConnectorsOutput`](crate::operation::list_connectors::ListConnectorsOutput) with field(s):
     ///   - [`connectors(Option<Vec<ConnectorDetail>>)`](crate::operation::list_connectors::ListConnectorsOutput::connectors): <p>Contains information about the connectors supported by Amazon AppFlow.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_connectors::ListConnectorsOutput::next_token): <p>The pagination token for the next page of data. If nextToken=null, this means that all records have been fetched.</p>

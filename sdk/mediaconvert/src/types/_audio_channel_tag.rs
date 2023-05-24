@@ -51,13 +51,13 @@
 /// You can add a tag for this mono-channel audio track to mimic its placement in a multi-channel layout. For example, if this track is the left surround channel, choose Left surround (LS).
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum AudioChannelTag {
     #[allow(missing_docs)] // documentation missing in model
@@ -93,7 +93,7 @@ pub enum AudioChannelTag {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for AudioChannelTag {
+impl ::std::convert::From<&str> for AudioChannelTag {
     fn from(s: &str) -> Self {
         match s {
             "C" => AudioChannelTag::C,
@@ -117,11 +117,11 @@ impl std::convert::From<&str> for AudioChannelTag {
         }
     }
 }
-impl std::str::FromStr for AudioChannelTag {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for AudioChannelTag {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AudioChannelTag::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(AudioChannelTag::from(s))
     }
 }
 impl AudioChannelTag {
@@ -154,7 +154,7 @@ impl AudioChannelTag {
         ]
     }
 }
-impl AsRef<str> for AudioChannelTag {
+impl ::std::convert::AsRef<str> for AudioChannelTag {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -8,56 +8,59 @@ pub use crate::operation::create_ip_group::_create_ip_group_input::CreateIpGroup
 /// <p>Creates an IP access control group.</p>
 /// <p>An IP access control group provides you with the ability to control the IP addresses from which users are allowed to access their WorkSpaces. To specify the CIDR address ranges, add rules to your IP access control group and then associate the group with your directory. You can add rules when you create the group or at any time using <code>AuthorizeIpRules</code>.</p>
 /// <p>There is a default IP access control group associated with your directory. If you don't associate an IP access control group with your directory, the default group is used. The default group includes a default rule that allows users to access their WorkSpaces from anywhere. You cannot modify the default IP access control group for your directory.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateIpGroupFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_ip_group::builders::CreateIpGroupInputBuilder,
 }
 impl CreateIpGroupFluentBuilder {
     /// Creates a new `CreateIpGroup`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_ip_group::CreateIpGroup,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_ip_group::CreateIpGroupError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_ip_group::CreateIpGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_ip_group::CreateIpGroupOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_ip_group::CreateIpGroupError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_ip_group::CreateIpGroupError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -70,29 +73,29 @@ impl CreateIpGroupFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_ip_group::CreateIpGroupOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_ip_group::CreateIpGroupError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_ip_group::CreateIpGroupError>,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the group.</p>
-    pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.group_name(input.into());
         self
     }
     /// <p>The name of the group.</p>
-    pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_group_name(input);
         self
     }
     /// <p>The description of the group.</p>
-    pub fn group_desc(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn group_desc(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.group_desc(input.into());
         self
     }
     /// <p>The description of the group.</p>
-    pub fn set_group_desc(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_group_desc(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_group_desc(input);
         self
     }
@@ -108,7 +111,7 @@ impl CreateIpGroupFluentBuilder {
     /// <p>The rules to add to the group.</p>
     pub fn set_user_rules(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::IpRuleItem>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::IpRuleItem>>,
     ) -> Self {
         self.inner = self.inner.set_user_rules(input);
         self
@@ -125,7 +128,7 @@ impl CreateIpGroupFluentBuilder {
     /// <p>The tags. Each WorkSpaces resource can have a maximum of 50 tags.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self

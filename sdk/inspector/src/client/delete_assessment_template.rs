@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteAssessmentTemplate`](crate::operation::delete_assessment_template::builders::DeleteAssessmentTemplateFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`assessment_template_arn(impl Into<String>)`](crate::operation::delete_assessment_template::builders::DeleteAssessmentTemplateFluentBuilder::assessment_template_arn) / [`set_assessment_template_arn(Option<String>)`](crate::operation::delete_assessment_template::builders::DeleteAssessmentTemplateFluentBuilder::set_assessment_template_arn): <p>The ARN that specifies the assessment template that you want to delete.</p>
+    ///   - [`assessment_template_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_assessment_template::builders::DeleteAssessmentTemplateFluentBuilder::assessment_template_arn) / [`set_assessment_template_arn(Option<String>)`](crate::operation::delete_assessment_template::builders::DeleteAssessmentTemplateFluentBuilder::set_assessment_template_arn): <p>The ARN that specifies the assessment template that you want to delete.</p>
     /// - On success, responds with [`DeleteAssessmentTemplateOutput`](crate::operation::delete_assessment_template::DeleteAssessmentTemplateOutput)
     /// - On failure, responds with [`SdkError<DeleteAssessmentTemplateError>`](crate::operation::delete_assessment_template::DeleteAssessmentTemplateError)
     pub fn delete_assessment_template(

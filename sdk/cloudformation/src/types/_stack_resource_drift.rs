@@ -4,35 +4,36 @@
 /// <p>Resources that don't currently support drift detection can't be checked. For a list of resources that support drift detection, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources that Support Drift Detection</a>.</p>
 /// <p>Use <code>DetectStackResourceDrift</code> to detect drift on individual resources, or <code>DetectStackDrift</code> to detect drift on all resources in a given stack that support drift detection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StackResourceDrift {
     /// <p>The ID of the stack.</p>
     #[doc(hidden)]
-    pub stack_id: std::option::Option<std::string::String>,
+    pub stack_id: ::std::option::Option<::std::string::String>,
     /// <p>The logical name of the resource specified in the template.</p>
     #[doc(hidden)]
-    pub logical_resource_id: std::option::Option<std::string::String>,
+    pub logical_resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The name or unique identifier that corresponds to a physical instance ID of a resource supported by CloudFormation.</p>
     #[doc(hidden)]
-    pub physical_resource_id: std::option::Option<std::string::String>,
+    pub physical_resource_id: ::std::option::Option<::std::string::String>,
     /// <p>Context information that enables CloudFormation to uniquely identify a resource. CloudFormation uses context key-value pairs in cases where a resource's logical and physical IDs aren't enough to uniquely identify that resource. Each context key-value pair specifies a unique resource that contains the targeted resource.</p>
     #[doc(hidden)]
     pub physical_resource_id_context:
-        std::option::Option<std::vec::Vec<crate::types::PhysicalResourceIdContextKeyValuePair>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::PhysicalResourceIdContextKeyValuePair>>,
     /// <p>The type of the resource.</p>
     #[doc(hidden)]
-    pub resource_type: std::option::Option<std::string::String>,
+    pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>A JSON structure containing the expected property values of the stack resource, as defined in the stack template and any values specified as template parameters.</p>
     /// <p>For resources whose <code>StackResourceDriftStatus</code> is <code>DELETED</code>, this structure will not be present.</p>
     #[doc(hidden)]
-    pub expected_properties: std::option::Option<std::string::String>,
+    pub expected_properties: ::std::option::Option<::std::string::String>,
     /// <p>A JSON structure containing the actual property values of the stack resource.</p>
     /// <p>For resources whose <code>StackResourceDriftStatus</code> is <code>DELETED</code>, this structure will not be present.</p>
     #[doc(hidden)]
-    pub actual_properties: std::option::Option<std::string::String>,
+    pub actual_properties: ::std::option::Option<::std::string::String>,
     /// <p>A collection of the resource properties whose actual values differ from their expected values. These will be present only for resources whose <code>StackResourceDriftStatus</code> is <code>MODIFIED</code>.</p>
     #[doc(hidden)]
-    pub property_differences: std::option::Option<std::vec::Vec<crate::types::PropertyDifference>>,
+    pub property_differences:
+        ::std::option::Option<::std::vec::Vec<crate::types::PropertyDifference>>,
     /// <p>Status of the resource's actual configuration compared to its expected configuration.</p>
     /// <ul>
     /// <li> <p> <code>DELETED</code>: The resource differs from its expected template configuration because the resource has been deleted.</p> </li>
@@ -41,49 +42,51 @@ pub struct StackResourceDrift {
     /// <li> <p> <code>NOT_CHECKED</code>: CloudFormation does not currently return this value.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub stack_resource_drift_status: std::option::Option<crate::types::StackResourceDriftStatus>,
+    pub stack_resource_drift_status: ::std::option::Option<crate::types::StackResourceDriftStatus>,
     /// <p>Time at which CloudFormation performed drift detection on the stack resource.</p>
     #[doc(hidden)]
-    pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Contains information about the module from which the resource was created, if the resource was created from a module included in the stack template.</p>
     #[doc(hidden)]
-    pub module_info: std::option::Option<crate::types::ModuleInfo>,
+    pub module_info: ::std::option::Option<crate::types::ModuleInfo>,
 }
 impl StackResourceDrift {
     /// <p>The ID of the stack.</p>
-    pub fn stack_id(&self) -> std::option::Option<&str> {
+    pub fn stack_id(&self) -> ::std::option::Option<&str> {
         self.stack_id.as_deref()
     }
     /// <p>The logical name of the resource specified in the template.</p>
-    pub fn logical_resource_id(&self) -> std::option::Option<&str> {
+    pub fn logical_resource_id(&self) -> ::std::option::Option<&str> {
         self.logical_resource_id.as_deref()
     }
     /// <p>The name or unique identifier that corresponds to a physical instance ID of a resource supported by CloudFormation.</p>
-    pub fn physical_resource_id(&self) -> std::option::Option<&str> {
+    pub fn physical_resource_id(&self) -> ::std::option::Option<&str> {
         self.physical_resource_id.as_deref()
     }
     /// <p>Context information that enables CloudFormation to uniquely identify a resource. CloudFormation uses context key-value pairs in cases where a resource's logical and physical IDs aren't enough to uniquely identify that resource. Each context key-value pair specifies a unique resource that contains the targeted resource.</p>
     pub fn physical_resource_id_context(
         &self,
-    ) -> std::option::Option<&[crate::types::PhysicalResourceIdContextKeyValuePair]> {
+    ) -> ::std::option::Option<&[crate::types::PhysicalResourceIdContextKeyValuePair]> {
         self.physical_resource_id_context.as_deref()
     }
     /// <p>The type of the resource.</p>
-    pub fn resource_type(&self) -> std::option::Option<&str> {
+    pub fn resource_type(&self) -> ::std::option::Option<&str> {
         self.resource_type.as_deref()
     }
     /// <p>A JSON structure containing the expected property values of the stack resource, as defined in the stack template and any values specified as template parameters.</p>
     /// <p>For resources whose <code>StackResourceDriftStatus</code> is <code>DELETED</code>, this structure will not be present.</p>
-    pub fn expected_properties(&self) -> std::option::Option<&str> {
+    pub fn expected_properties(&self) -> ::std::option::Option<&str> {
         self.expected_properties.as_deref()
     }
     /// <p>A JSON structure containing the actual property values of the stack resource.</p>
     /// <p>For resources whose <code>StackResourceDriftStatus</code> is <code>DELETED</code>, this structure will not be present.</p>
-    pub fn actual_properties(&self) -> std::option::Option<&str> {
+    pub fn actual_properties(&self) -> ::std::option::Option<&str> {
         self.actual_properties.as_deref()
     }
     /// <p>A collection of the resource properties whose actual values differ from their expected values. These will be present only for resources whose <code>StackResourceDriftStatus</code> is <code>MODIFIED</code>.</p>
-    pub fn property_differences(&self) -> std::option::Option<&[crate::types::PropertyDifference]> {
+    pub fn property_differences(
+        &self,
+    ) -> ::std::option::Option<&[crate::types::PropertyDifference]> {
         self.property_differences.as_deref()
     }
     /// <p>Status of the resource's actual configuration compared to its expected configuration.</p>
@@ -95,15 +98,15 @@ impl StackResourceDrift {
     /// </ul>
     pub fn stack_resource_drift_status(
         &self,
-    ) -> std::option::Option<&crate::types::StackResourceDriftStatus> {
+    ) -> ::std::option::Option<&crate::types::StackResourceDriftStatus> {
         self.stack_resource_drift_status.as_ref()
     }
     /// <p>Time at which CloudFormation performed drift detection on the stack resource.</p>
-    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
     /// <p>Contains information about the module from which the resource was created, if the resource was created from a module included in the stack template.</p>
-    pub fn module_info(&self) -> std::option::Option<&crate::types::ModuleInfo> {
+    pub fn module_info(&self) -> ::std::option::Option<&crate::types::ModuleInfo> {
         self.module_info.as_ref()
     }
 }
@@ -116,56 +119,64 @@ impl StackResourceDrift {
 
 /// A builder for [`StackResourceDrift`](crate::types::StackResourceDrift).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StackResourceDriftBuilder {
-    pub(crate) stack_id: std::option::Option<std::string::String>,
-    pub(crate) logical_resource_id: std::option::Option<std::string::String>,
-    pub(crate) physical_resource_id: std::option::Option<std::string::String>,
+    pub(crate) stack_id: ::std::option::Option<::std::string::String>,
+    pub(crate) logical_resource_id: ::std::option::Option<::std::string::String>,
+    pub(crate) physical_resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) physical_resource_id_context:
-        std::option::Option<std::vec::Vec<crate::types::PhysicalResourceIdContextKeyValuePair>>,
-    pub(crate) resource_type: std::option::Option<std::string::String>,
-    pub(crate) expected_properties: std::option::Option<std::string::String>,
-    pub(crate) actual_properties: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::PhysicalResourceIdContextKeyValuePair>>,
+    pub(crate) resource_type: ::std::option::Option<::std::string::String>,
+    pub(crate) expected_properties: ::std::option::Option<::std::string::String>,
+    pub(crate) actual_properties: ::std::option::Option<::std::string::String>,
     pub(crate) property_differences:
-        std::option::Option<std::vec::Vec<crate::types::PropertyDifference>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::PropertyDifference>>,
     pub(crate) stack_resource_drift_status:
-        std::option::Option<crate::types::StackResourceDriftStatus>,
-    pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) module_info: std::option::Option<crate::types::ModuleInfo>,
+        ::std::option::Option<crate::types::StackResourceDriftStatus>,
+    pub(crate) timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) module_info: ::std::option::Option<crate::types::ModuleInfo>,
 }
 impl StackResourceDriftBuilder {
     /// <p>The ID of the stack.</p>
-    pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.stack_id = Some(input.into());
+    pub fn stack_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.stack_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the stack.</p>
-    pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_stack_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stack_id = input;
         self
     }
     /// <p>The logical name of the resource specified in the template.</p>
-    pub fn logical_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.logical_resource_id = Some(input.into());
+    pub fn logical_resource_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.logical_resource_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The logical name of the resource specified in the template.</p>
     pub fn set_logical_resource_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.logical_resource_id = input;
         self
     }
     /// <p>The name or unique identifier that corresponds to a physical instance ID of a resource supported by CloudFormation.</p>
-    pub fn physical_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.physical_resource_id = Some(input.into());
+    pub fn physical_resource_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.physical_resource_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name or unique identifier that corresponds to a physical instance ID of a resource supported by CloudFormation.</p>
     pub fn set_physical_resource_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.physical_resource_id = input;
         self
@@ -181,55 +192,67 @@ impl StackResourceDriftBuilder {
     ) -> Self {
         let mut v = self.physical_resource_id_context.unwrap_or_default();
         v.push(input);
-        self.physical_resource_id_context = Some(v);
+        self.physical_resource_id_context = ::std::option::Option::Some(v);
         self
     }
     /// <p>Context information that enables CloudFormation to uniquely identify a resource. CloudFormation uses context key-value pairs in cases where a resource's logical and physical IDs aren't enough to uniquely identify that resource. Each context key-value pair specifies a unique resource that contains the targeted resource.</p>
     pub fn set_physical_resource_id_context(
         mut self,
-        input: std::option::Option<
-            std::vec::Vec<crate::types::PhysicalResourceIdContextKeyValuePair>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::PhysicalResourceIdContextKeyValuePair>,
         >,
     ) -> Self {
         self.physical_resource_id_context = input;
         self
     }
     /// <p>The type of the resource.</p>
-    pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_type = Some(input.into());
+    pub fn resource_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of the resource.</p>
-    pub fn set_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.resource_type = input;
         self
     }
     /// <p>A JSON structure containing the expected property values of the stack resource, as defined in the stack template and any values specified as template parameters.</p>
     /// <p>For resources whose <code>StackResourceDriftStatus</code> is <code>DELETED</code>, this structure will not be present.</p>
-    pub fn expected_properties(mut self, input: impl Into<std::string::String>) -> Self {
-        self.expected_properties = Some(input.into());
+    pub fn expected_properties(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.expected_properties = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A JSON structure containing the expected property values of the stack resource, as defined in the stack template and any values specified as template parameters.</p>
     /// <p>For resources whose <code>StackResourceDriftStatus</code> is <code>DELETED</code>, this structure will not be present.</p>
     pub fn set_expected_properties(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.expected_properties = input;
         self
     }
     /// <p>A JSON structure containing the actual property values of the stack resource.</p>
     /// <p>For resources whose <code>StackResourceDriftStatus</code> is <code>DELETED</code>, this structure will not be present.</p>
-    pub fn actual_properties(mut self, input: impl Into<std::string::String>) -> Self {
-        self.actual_properties = Some(input.into());
+    pub fn actual_properties(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.actual_properties = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A JSON structure containing the actual property values of the stack resource.</p>
     /// <p>For resources whose <code>StackResourceDriftStatus</code> is <code>DELETED</code>, this structure will not be present.</p>
     pub fn set_actual_properties(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.actual_properties = input;
         self
@@ -242,13 +265,13 @@ impl StackResourceDriftBuilder {
     pub fn property_differences(mut self, input: crate::types::PropertyDifference) -> Self {
         let mut v = self.property_differences.unwrap_or_default();
         v.push(input);
-        self.property_differences = Some(v);
+        self.property_differences = ::std::option::Option::Some(v);
         self
     }
     /// <p>A collection of the resource properties whose actual values differ from their expected values. These will be present only for resources whose <code>StackResourceDriftStatus</code> is <code>MODIFIED</code>.</p>
     pub fn set_property_differences(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PropertyDifference>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PropertyDifference>>,
     ) -> Self {
         self.property_differences = input;
         self
@@ -264,7 +287,7 @@ impl StackResourceDriftBuilder {
         mut self,
         input: crate::types::StackResourceDriftStatus,
     ) -> Self {
-        self.stack_resource_drift_status = Some(input);
+        self.stack_resource_drift_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Status of the resource's actual configuration compared to its expected configuration.</p>
@@ -276,28 +299,34 @@ impl StackResourceDriftBuilder {
     /// </ul>
     pub fn set_stack_resource_drift_status(
         mut self,
-        input: std::option::Option<crate::types::StackResourceDriftStatus>,
+        input: ::std::option::Option<crate::types::StackResourceDriftStatus>,
     ) -> Self {
         self.stack_resource_drift_status = input;
         self
     }
     /// <p>Time at which CloudFormation performed drift detection on the stack resource.</p>
-    pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.timestamp = Some(input);
+    pub fn timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>Time at which CloudFormation performed drift detection on the stack resource.</p>
-    pub fn set_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_timestamp(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
         self.timestamp = input;
         self
     }
     /// <p>Contains information about the module from which the resource was created, if the resource was created from a module included in the stack template.</p>
     pub fn module_info(mut self, input: crate::types::ModuleInfo) -> Self {
-        self.module_info = Some(input);
+        self.module_info = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains information about the module from which the resource was created, if the resource was created from a module included in the stack template.</p>
-    pub fn set_module_info(mut self, input: std::option::Option<crate::types::ModuleInfo>) -> Self {
+    pub fn set_module_info(
+        mut self,
+        input: ::std::option::Option<crate::types::ModuleInfo>,
+    ) -> Self {
         self.module_info = input;
         self
     }

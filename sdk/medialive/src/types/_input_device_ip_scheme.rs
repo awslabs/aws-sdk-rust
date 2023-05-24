@@ -38,13 +38,13 @@
 /// Specifies whether the input device has been configured (outside of MediaLive) to use a dynamic IP address assignment (DHCP) or a static IP address.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum InputDeviceIpScheme {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum InputDeviceIpScheme {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for InputDeviceIpScheme {
+impl ::std::convert::From<&str> for InputDeviceIpScheme {
     fn from(s: &str) -> Self {
         match s {
             "DHCP" => InputDeviceIpScheme::Dhcp,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for InputDeviceIpScheme {
         }
     }
 }
-impl std::str::FromStr for InputDeviceIpScheme {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for InputDeviceIpScheme {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(InputDeviceIpScheme::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(InputDeviceIpScheme::from(s))
     }
 }
 impl InputDeviceIpScheme {
@@ -86,7 +86,7 @@ impl InputDeviceIpScheme {
         &["DHCP", "STATIC"]
     }
 }
-impl AsRef<str> for InputDeviceIpScheme {
+impl ::std::convert::AsRef<str> for InputDeviceIpScheme {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

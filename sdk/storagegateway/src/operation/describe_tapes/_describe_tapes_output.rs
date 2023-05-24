@@ -2,29 +2,29 @@
 
 /// <p>DescribeTapesOutput</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTapesOutput {
     /// <p>An array of virtual tape descriptions.</p>
     #[doc(hidden)]
-    pub tapes: std::option::Option<std::vec::Vec<crate::types::Tape>>,
+    pub tapes: ::std::option::Option<::std::vec::Vec<crate::types::Tape>>,
     /// <p>An opaque string that can be used as part of a subsequent <code>DescribeTapes</code> call to retrieve the next page of results.</p>
     /// <p>If a response does not contain a marker, then there are no more results to be retrieved.</p>
     #[doc(hidden)]
-    pub marker: std::option::Option<std::string::String>,
+    pub marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeTapesOutput {
     /// <p>An array of virtual tape descriptions.</p>
-    pub fn tapes(&self) -> std::option::Option<&[crate::types::Tape]> {
+    pub fn tapes(&self) -> ::std::option::Option<&[crate::types::Tape]> {
         self.tapes.as_deref()
     }
     /// <p>An opaque string that can be used as part of a subsequent <code>DescribeTapes</code> call to retrieve the next page of results.</p>
     /// <p>If a response does not contain a marker, then there are no more results to be retrieved.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeTapesOutput {
+impl ::aws_http::request_id::RequestId for DescribeTapesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -38,10 +38,12 @@ impl DescribeTapesOutput {
 
 /// A builder for [`DescribeTapesOutput`](crate::operation::describe_tapes::DescribeTapesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeTapesOutputBuilder {
-    pub(crate) tapes: std::option::Option<std::vec::Vec<crate::types::Tape>>,
-    pub(crate) marker: std::option::Option<std::string::String>,
+    pub(crate) tapes: ::std::option::Option<::std::vec::Vec<crate::types::Tape>>,
+    pub(crate) marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeTapesOutputBuilder {
@@ -53,26 +55,26 @@ impl DescribeTapesOutputBuilder {
     pub fn tapes(mut self, input: crate::types::Tape) -> Self {
         let mut v = self.tapes.unwrap_or_default();
         v.push(input);
-        self.tapes = Some(v);
+        self.tapes = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of virtual tape descriptions.</p>
     pub fn set_tapes(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tape>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tape>>,
     ) -> Self {
         self.tapes = input;
         self
     }
     /// <p>An opaque string that can be used as part of a subsequent <code>DescribeTapes</code> call to retrieve the next page of results.</p>
     /// <p>If a response does not contain a marker, then there are no more results to be retrieved.</p>
-    pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-        self.marker = Some(input.into());
+    pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An opaque string that can be used as part of a subsequent <code>DescribeTapes</code> call to retrieve the next page of results.</p>
     /// <p>If a response does not contain a marker, then there are no more results to be retrieved.</p>
-    pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
     }

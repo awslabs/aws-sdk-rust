@@ -2,15 +2,15 @@
 
 /// <p> Information about whether DevOps Guru is configured to create an OpsItem in Amazon Web Services Systems Manager OpsCenter for each created insight. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OpsCenterIntegration {
     /// <p> Specifies if DevOps Guru is enabled to create an Amazon Web Services Systems Manager OpsItem for each created insight. </p>
     #[doc(hidden)]
-    pub opt_in_status: std::option::Option<crate::types::OptInStatus>,
+    pub opt_in_status: ::std::option::Option<crate::types::OptInStatus>,
 }
 impl OpsCenterIntegration {
     /// <p> Specifies if DevOps Guru is enabled to create an Amazon Web Services Systems Manager OpsItem for each created insight. </p>
-    pub fn opt_in_status(&self) -> std::option::Option<&crate::types::OptInStatus> {
+    pub fn opt_in_status(&self) -> ::std::option::Option<&crate::types::OptInStatus> {
         self.opt_in_status.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl OpsCenterIntegration {
 
 /// A builder for [`OpsCenterIntegration`](crate::types::OpsCenterIntegration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OpsCenterIntegrationBuilder {
-    pub(crate) opt_in_status: std::option::Option<crate::types::OptInStatus>,
+    pub(crate) opt_in_status: ::std::option::Option<crate::types::OptInStatus>,
 }
 impl OpsCenterIntegrationBuilder {
     /// <p> Specifies if DevOps Guru is enabled to create an Amazon Web Services Systems Manager OpsItem for each created insight. </p>
     pub fn opt_in_status(mut self, input: crate::types::OptInStatus) -> Self {
-        self.opt_in_status = Some(input);
+        self.opt_in_status = ::std::option::Option::Some(input);
         self
     }
     /// <p> Specifies if DevOps Guru is enabled to create an Amazon Web Services Systems Manager OpsItem for each created insight. </p>
     pub fn set_opt_in_status(
         mut self,
-        input: std::option::Option<crate::types::OptInStatus>,
+        input: ::std::option::Option<crate::types::OptInStatus>,
     ) -> Self {
         self.opt_in_status = input;
         self

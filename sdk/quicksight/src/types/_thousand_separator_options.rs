@@ -2,22 +2,22 @@
 
 /// <p>The options that determine the thousands separator configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ThousandSeparatorOptions {
     /// <p>Determines the thousands separator symbol.</p>
     #[doc(hidden)]
-    pub symbol: std::option::Option<crate::types::NumericSeparatorSymbol>,
+    pub symbol: ::std::option::Option<crate::types::NumericSeparatorSymbol>,
     /// <p>Determines the visibility of the thousands separator.</p>
     #[doc(hidden)]
-    pub visibility: std::option::Option<crate::types::Visibility>,
+    pub visibility: ::std::option::Option<crate::types::Visibility>,
 }
 impl ThousandSeparatorOptions {
     /// <p>Determines the thousands separator symbol.</p>
-    pub fn symbol(&self) -> std::option::Option<&crate::types::NumericSeparatorSymbol> {
+    pub fn symbol(&self) -> ::std::option::Option<&crate::types::NumericSeparatorSymbol> {
         self.symbol.as_ref()
     }
     /// <p>Determines the visibility of the thousands separator.</p>
-    pub fn visibility(&self) -> std::option::Option<&crate::types::Visibility> {
+    pub fn visibility(&self) -> ::std::option::Option<&crate::types::Visibility> {
         self.visibility.as_ref()
     }
 }
@@ -30,32 +30,37 @@ impl ThousandSeparatorOptions {
 
 /// A builder for [`ThousandSeparatorOptions`](crate::types::ThousandSeparatorOptions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ThousandSeparatorOptionsBuilder {
-    pub(crate) symbol: std::option::Option<crate::types::NumericSeparatorSymbol>,
-    pub(crate) visibility: std::option::Option<crate::types::Visibility>,
+    pub(crate) symbol: ::std::option::Option<crate::types::NumericSeparatorSymbol>,
+    pub(crate) visibility: ::std::option::Option<crate::types::Visibility>,
 }
 impl ThousandSeparatorOptionsBuilder {
     /// <p>Determines the thousands separator symbol.</p>
     pub fn symbol(mut self, input: crate::types::NumericSeparatorSymbol) -> Self {
-        self.symbol = Some(input);
+        self.symbol = ::std::option::Option::Some(input);
         self
     }
     /// <p>Determines the thousands separator symbol.</p>
     pub fn set_symbol(
         mut self,
-        input: std::option::Option<crate::types::NumericSeparatorSymbol>,
+        input: ::std::option::Option<crate::types::NumericSeparatorSymbol>,
     ) -> Self {
         self.symbol = input;
         self
     }
     /// <p>Determines the visibility of the thousands separator.</p>
     pub fn visibility(mut self, input: crate::types::Visibility) -> Self {
-        self.visibility = Some(input);
+        self.visibility = ::std::option::Option::Some(input);
         self
     }
     /// <p>Determines the visibility of the thousands separator.</p>
-    pub fn set_visibility(mut self, input: std::option::Option<crate::types::Visibility>) -> Self {
+    pub fn set_visibility(
+        mut self,
+        input: ::std::option::Option<crate::types::Visibility>,
+    ) -> Self {
         self.visibility = input;
         self
     }

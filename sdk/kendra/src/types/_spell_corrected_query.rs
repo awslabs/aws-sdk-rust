@@ -2,22 +2,22 @@
 
 /// <p>A query with suggested spell corrections. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SpellCorrectedQuery {
     /// <p>The query with the suggested spell corrections.</p>
     #[doc(hidden)]
-    pub suggested_query_text: std::option::Option<std::string::String>,
+    pub suggested_query_text: ::std::option::Option<::std::string::String>,
     /// <p>The corrected misspelled word or words in a query.</p>
     #[doc(hidden)]
-    pub corrections: std::option::Option<std::vec::Vec<crate::types::Correction>>,
+    pub corrections: ::std::option::Option<::std::vec::Vec<crate::types::Correction>>,
 }
 impl SpellCorrectedQuery {
     /// <p>The query with the suggested spell corrections.</p>
-    pub fn suggested_query_text(&self) -> std::option::Option<&str> {
+    pub fn suggested_query_text(&self) -> ::std::option::Option<&str> {
         self.suggested_query_text.as_deref()
     }
     /// <p>The corrected misspelled word or words in a query.</p>
-    pub fn corrections(&self) -> std::option::Option<&[crate::types::Correction]> {
+    pub fn corrections(&self) -> ::std::option::Option<&[crate::types::Correction]> {
         self.corrections.as_deref()
     }
 }
@@ -30,21 +30,26 @@ impl SpellCorrectedQuery {
 
 /// A builder for [`SpellCorrectedQuery`](crate::types::SpellCorrectedQuery).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SpellCorrectedQueryBuilder {
-    pub(crate) suggested_query_text: std::option::Option<std::string::String>,
-    pub(crate) corrections: std::option::Option<std::vec::Vec<crate::types::Correction>>,
+    pub(crate) suggested_query_text: ::std::option::Option<::std::string::String>,
+    pub(crate) corrections: ::std::option::Option<::std::vec::Vec<crate::types::Correction>>,
 }
 impl SpellCorrectedQueryBuilder {
     /// <p>The query with the suggested spell corrections.</p>
-    pub fn suggested_query_text(mut self, input: impl Into<std::string::String>) -> Self {
-        self.suggested_query_text = Some(input.into());
+    pub fn suggested_query_text(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.suggested_query_text = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The query with the suggested spell corrections.</p>
     pub fn set_suggested_query_text(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.suggested_query_text = input;
         self
@@ -57,13 +62,13 @@ impl SpellCorrectedQueryBuilder {
     pub fn corrections(mut self, input: crate::types::Correction) -> Self {
         let mut v = self.corrections.unwrap_or_default();
         v.push(input);
-        self.corrections = Some(v);
+        self.corrections = ::std::option::Option::Some(v);
         self
     }
     /// <p>The corrected misspelled word or words in a query.</p>
     pub fn set_corrections(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Correction>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Correction>>,
     ) -> Self {
         self.corrections = input;
         self

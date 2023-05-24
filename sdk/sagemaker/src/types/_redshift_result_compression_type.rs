@@ -41,13 +41,13 @@
 /// <p>The compression used for Redshift query results.</p>
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum RedshiftResultCompressionType {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,7 +63,7 @@ pub enum RedshiftResultCompressionType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for RedshiftResultCompressionType {
+impl ::std::convert::From<&str> for RedshiftResultCompressionType {
     fn from(s: &str) -> Self {
         match s {
             "BZIP2" => RedshiftResultCompressionType::Bzip2,
@@ -77,11 +77,11 @@ impl std::convert::From<&str> for RedshiftResultCompressionType {
         }
     }
 }
-impl std::str::FromStr for RedshiftResultCompressionType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for RedshiftResultCompressionType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RedshiftResultCompressionType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(RedshiftResultCompressionType::from(s))
     }
 }
 impl RedshiftResultCompressionType {
@@ -101,7 +101,7 @@ impl RedshiftResultCompressionType {
         &["BZIP2", "GZIP", "None", "SNAPPY", "ZSTD"]
     }
 }
-impl AsRef<str> for RedshiftResultCompressionType {
+impl ::std::convert::AsRef<str> for RedshiftResultCompressionType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

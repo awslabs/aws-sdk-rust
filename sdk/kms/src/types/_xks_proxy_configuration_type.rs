@@ -2,52 +2,52 @@
 
 /// <p>Detailed information about the external key store proxy (XKS proxy). Your external key store proxy translates KMS requests into a format that your external key manager can understand. These fields appear in a <code>DescribeCustomKeyStores</code> response only when the <code>CustomKeyStoreType</code> is <code>EXTERNAL_KEY_STORE</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct XksProxyConfigurationType {
     /// <p>Indicates whether the external key store proxy uses a public endpoint or an Amazon VPC endpoint service to communicate with KMS.</p>
     #[doc(hidden)]
-    pub connectivity: std::option::Option<crate::types::XksProxyConnectivityType>,
+    pub connectivity: ::std::option::Option<crate::types::XksProxyConnectivityType>,
     /// <p>The part of the external key store <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateCustomKeyStore.html#KMS-CreateCustomKeyStore-request-XksProxyAuthenticationCredential">proxy authentication credential</a> that uniquely identifies the secret access key.</p>
     #[doc(hidden)]
-    pub access_key_id: std::option::Option<std::string::String>,
+    pub access_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The URI endpoint for the external key store proxy.</p>
     /// <p>If the external key store proxy has a public endpoint, it is displayed here.</p>
     /// <p>If the external key store proxy uses an Amazon VPC endpoint service name, this field displays the private DNS name associated with the VPC endpoint service.</p>
     #[doc(hidden)]
-    pub uri_endpoint: std::option::Option<std::string::String>,
+    pub uri_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The path to the external key store proxy APIs.</p>
     #[doc(hidden)]
-    pub uri_path: std::option::Option<std::string::String>,
+    pub uri_path: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon VPC endpoint service used to communicate with the external key store proxy. This field appears only when the external key store proxy uses an Amazon VPC endpoint service to communicate with KMS.</p>
     #[doc(hidden)]
-    pub vpc_endpoint_service_name: std::option::Option<std::string::String>,
+    pub vpc_endpoint_service_name: ::std::option::Option<::std::string::String>,
 }
 impl XksProxyConfigurationType {
     /// <p>Indicates whether the external key store proxy uses a public endpoint or an Amazon VPC endpoint service to communicate with KMS.</p>
-    pub fn connectivity(&self) -> std::option::Option<&crate::types::XksProxyConnectivityType> {
+    pub fn connectivity(&self) -> ::std::option::Option<&crate::types::XksProxyConnectivityType> {
         self.connectivity.as_ref()
     }
     /// <p>The part of the external key store <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateCustomKeyStore.html#KMS-CreateCustomKeyStore-request-XksProxyAuthenticationCredential">proxy authentication credential</a> that uniquely identifies the secret access key.</p>
-    pub fn access_key_id(&self) -> std::option::Option<&str> {
+    pub fn access_key_id(&self) -> ::std::option::Option<&str> {
         self.access_key_id.as_deref()
     }
     /// <p>The URI endpoint for the external key store proxy.</p>
     /// <p>If the external key store proxy has a public endpoint, it is displayed here.</p>
     /// <p>If the external key store proxy uses an Amazon VPC endpoint service name, this field displays the private DNS name associated with the VPC endpoint service.</p>
-    pub fn uri_endpoint(&self) -> std::option::Option<&str> {
+    pub fn uri_endpoint(&self) -> ::std::option::Option<&str> {
         self.uri_endpoint.as_deref()
     }
     /// <p>The path to the external key store proxy APIs.</p>
-    pub fn uri_path(&self) -> std::option::Option<&str> {
+    pub fn uri_path(&self) -> ::std::option::Option<&str> {
         self.uri_path.as_deref()
     }
     /// <p>The Amazon VPC endpoint service used to communicate with the external key store proxy. This field appears only when the external key store proxy uses an Amazon VPC endpoint service to communicate with KMS.</p>
-    pub fn vpc_endpoint_service_name(&self) -> std::option::Option<&str> {
+    pub fn vpc_endpoint_service_name(&self) -> ::std::option::Option<&str> {
         self.vpc_endpoint_service_name.as_deref()
     }
 }
-impl std::fmt::Debug for XksProxyConfigurationType {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for XksProxyConfigurationType {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("XksProxyConfigurationType");
         formatter.field("connectivity", &self.connectivity);
         formatter.field("access_key_id", &"*** Sensitive Data Redacted ***");
@@ -66,71 +66,80 @@ impl XksProxyConfigurationType {
 
 /// A builder for [`XksProxyConfigurationType`](crate::types::XksProxyConfigurationType).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct XksProxyConfigurationTypeBuilder {
-    pub(crate) connectivity: std::option::Option<crate::types::XksProxyConnectivityType>,
-    pub(crate) access_key_id: std::option::Option<std::string::String>,
-    pub(crate) uri_endpoint: std::option::Option<std::string::String>,
-    pub(crate) uri_path: std::option::Option<std::string::String>,
-    pub(crate) vpc_endpoint_service_name: std::option::Option<std::string::String>,
+    pub(crate) connectivity: ::std::option::Option<crate::types::XksProxyConnectivityType>,
+    pub(crate) access_key_id: ::std::option::Option<::std::string::String>,
+    pub(crate) uri_endpoint: ::std::option::Option<::std::string::String>,
+    pub(crate) uri_path: ::std::option::Option<::std::string::String>,
+    pub(crate) vpc_endpoint_service_name: ::std::option::Option<::std::string::String>,
 }
 impl XksProxyConfigurationTypeBuilder {
     /// <p>Indicates whether the external key store proxy uses a public endpoint or an Amazon VPC endpoint service to communicate with KMS.</p>
     pub fn connectivity(mut self, input: crate::types::XksProxyConnectivityType) -> Self {
-        self.connectivity = Some(input);
+        self.connectivity = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether the external key store proxy uses a public endpoint or an Amazon VPC endpoint service to communicate with KMS.</p>
     pub fn set_connectivity(
         mut self,
-        input: std::option::Option<crate::types::XksProxyConnectivityType>,
+        input: ::std::option::Option<crate::types::XksProxyConnectivityType>,
     ) -> Self {
         self.connectivity = input;
         self
     }
     /// <p>The part of the external key store <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateCustomKeyStore.html#KMS-CreateCustomKeyStore-request-XksProxyAuthenticationCredential">proxy authentication credential</a> that uniquely identifies the secret access key.</p>
-    pub fn access_key_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.access_key_id = Some(input.into());
+    pub fn access_key_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.access_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The part of the external key store <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateCustomKeyStore.html#KMS-CreateCustomKeyStore-request-XksProxyAuthenticationCredential">proxy authentication credential</a> that uniquely identifies the secret access key.</p>
-    pub fn set_access_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_access_key_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.access_key_id = input;
         self
     }
     /// <p>The URI endpoint for the external key store proxy.</p>
     /// <p>If the external key store proxy has a public endpoint, it is displayed here.</p>
     /// <p>If the external key store proxy uses an Amazon VPC endpoint service name, this field displays the private DNS name associated with the VPC endpoint service.</p>
-    pub fn uri_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
-        self.uri_endpoint = Some(input.into());
+    pub fn uri_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.uri_endpoint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URI endpoint for the external key store proxy.</p>
     /// <p>If the external key store proxy has a public endpoint, it is displayed here.</p>
     /// <p>If the external key store proxy uses an Amazon VPC endpoint service name, this field displays the private DNS name associated with the VPC endpoint service.</p>
-    pub fn set_uri_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_uri_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.uri_endpoint = input;
         self
     }
     /// <p>The path to the external key store proxy APIs.</p>
-    pub fn uri_path(mut self, input: impl Into<std::string::String>) -> Self {
-        self.uri_path = Some(input.into());
+    pub fn uri_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.uri_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The path to the external key store proxy APIs.</p>
-    pub fn set_uri_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_uri_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.uri_path = input;
         self
     }
     /// <p>The Amazon VPC endpoint service used to communicate with the external key store proxy. This field appears only when the external key store proxy uses an Amazon VPC endpoint service to communicate with KMS.</p>
-    pub fn vpc_endpoint_service_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.vpc_endpoint_service_name = Some(input.into());
+    pub fn vpc_endpoint_service_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.vpc_endpoint_service_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon VPC endpoint service used to communicate with the external key store proxy. This field appears only when the external key store proxy uses an Amazon VPC endpoint service to communicate with KMS.</p>
     pub fn set_vpc_endpoint_service_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.vpc_endpoint_service_name = input;
         self
@@ -146,8 +155,8 @@ impl XksProxyConfigurationTypeBuilder {
         }
     }
 }
-impl std::fmt::Debug for XksProxyConfigurationTypeBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for XksProxyConfigurationTypeBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("XksProxyConfigurationTypeBuilder");
         formatter.field("connectivity", &self.connectivity);
         formatter.field("access_key_id", &"*** Sensitive Data Redacted ***");

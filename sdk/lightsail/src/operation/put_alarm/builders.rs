@@ -9,56 +9,59 @@ pub use crate::operation::put_alarm::_put_alarm_input::PutAlarmInputBuilder;
 /// <p>An alarm is used to monitor a single metric for one of your resources. When a metric condition is met, the alarm can notify you by email, SMS text message, and a banner displayed on the Amazon Lightsail console. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-alarms">Alarms in Amazon Lightsail</a>.</p>
 /// <p>When this action creates an alarm, the alarm state is immediately set to <code>INSUFFICIENT_DATA</code>. The alarm is then evaluated and its state is set appropriately. Any actions associated with the new state are then executed.</p>
 /// <p>When you update an existing alarm, its state is left unchanged, but the update completely overwrites the previous configuration of the alarm. The alarm is then evaluated with the updated configuration.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutAlarmFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::put_alarm::builders::PutAlarmInputBuilder,
 }
 impl PutAlarmFluentBuilder {
     /// Creates a new `PutAlarm`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::put_alarm::PutAlarm,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::put_alarm::PutAlarmError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_alarm::PutAlarmError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::put_alarm::PutAlarmOutput,
-        aws_smithy_http::result::SdkError<crate::operation::put_alarm::PutAlarmError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_alarm::PutAlarmError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -71,19 +74,19 @@ impl PutAlarmFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::put_alarm::PutAlarmOutput,
-        aws_smithy_http::result::SdkError<crate::operation::put_alarm::PutAlarmError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_alarm::PutAlarmError>,
     > {
         self.send_middleware().await
     }
     /// <p>The name for the alarm. Specify the name of an existing alarm to update, and overwrite the previous configuration of the alarm.</p>
-    pub fn alarm_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn alarm_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.alarm_name(input.into());
         self
     }
     /// <p>The name for the alarm. Specify the name of an existing alarm to update, and overwrite the previous configuration of the alarm.</p>
-    pub fn set_alarm_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_alarm_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_alarm_name(input);
         self
     }
@@ -109,13 +112,19 @@ impl PutAlarmFluentBuilder {
     /// <li> <p> <b>Relational databases</b>: <code>CPUUtilization</code>, <code>DatabaseConnections</code>, <code>DiskQueueDepth</code>, <code>FreeStorageSpace</code>, <code>NetworkReceiveThroughput</code>, and <code>NetworkTransmitThroughput</code>.</p> </li>
     /// </ul>
     /// <p>For more information about these metrics, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-resource-health-metrics#available-metrics">Metrics available in Lightsail</a>.</p>
-    pub fn set_metric_name(mut self, input: std::option::Option<crate::types::MetricName>) -> Self {
+    pub fn set_metric_name(
+        mut self,
+        input: ::std::option::Option<crate::types::MetricName>,
+    ) -> Self {
         self.inner = self.inner.set_metric_name(input);
         self
     }
     /// <p>The name of the Lightsail resource that will be monitored.</p>
     /// <p>Instances, load balancers, and relational databases are the only Lightsail resources that can currently be monitored by alarms.</p>
-    pub fn monitored_resource_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn monitored_resource_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.monitored_resource_name(input.into());
         self
     }
@@ -123,7 +132,7 @@ impl PutAlarmFluentBuilder {
     /// <p>Instances, load balancers, and relational databases are the only Lightsail resources that can currently be monitored by alarms.</p>
     pub fn set_monitored_resource_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_monitored_resource_name(input);
         self
@@ -136,7 +145,7 @@ impl PutAlarmFluentBuilder {
     /// <p>The arithmetic operation to use when comparing the specified statistic to the threshold. The specified statistic value is used as the first operand.</p>
     pub fn set_comparison_operator(
         mut self,
-        input: std::option::Option<crate::types::ComparisonOperator>,
+        input: ::std::option::Option<crate::types::ComparisonOperator>,
     ) -> Self {
         self.inner = self.inner.set_comparison_operator(input);
         self
@@ -147,7 +156,7 @@ impl PutAlarmFluentBuilder {
         self
     }
     /// <p>The value against which the specified statistic is compared.</p>
-    pub fn set_threshold(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_threshold(mut self, input: ::std::option::Option<f64>) -> Self {
         self.inner = self.inner.set_threshold(input);
         self
     }
@@ -163,7 +172,7 @@ impl PutAlarmFluentBuilder {
     /// <p>If you are setting an alarm that requires that a number of consecutive data points be breaching to trigger the alarm, this value specifies the rolling period of time in which data points are evaluated.</p>
     /// <p>Each evaluation period is five minutes long. For example, specify an evaluation period of 24 to evaluate a metric over a rolling period of two hours.</p>
     /// <p>You can specify a minimum valuation period of 1 (5 minutes), and a maximum evaluation period of 288 (24 hours).</p>
-    pub fn set_evaluation_periods(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_evaluation_periods(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_evaluation_periods(input);
         self
     }
@@ -173,7 +182,7 @@ impl PutAlarmFluentBuilder {
         self
     }
     /// <p>The number of data points that must be not within the specified threshold to trigger the alarm. If you are setting an "M out of N" alarm, this value (<code>datapointsToAlarm</code>) is the M.</p>
-    pub fn set_datapoints_to_alarm(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_datapoints_to_alarm(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_datapoints_to_alarm(input);
         self
     }
@@ -201,7 +210,7 @@ impl PutAlarmFluentBuilder {
     /// <p>If <code>treatMissingData</code> is not specified, the default behavior of <code>missing</code> is used.</p>
     pub fn set_treat_missing_data(
         mut self,
-        input: std::option::Option<crate::types::TreatMissingData>,
+        input: ::std::option::Option<crate::types::TreatMissingData>,
     ) -> Self {
         self.inner = self.inner.set_treat_missing_data(input);
         self
@@ -224,7 +233,7 @@ impl PutAlarmFluentBuilder {
     /// <p>Use the <code>CreateContactMethod</code> action to configure a contact protocol in an Amazon Web Services Region.</p>
     pub fn set_contact_protocols(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ContactProtocol>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ContactProtocol>>,
     ) -> Self {
         self.inner = self.inner.set_contact_protocols(input);
         self
@@ -265,7 +274,7 @@ impl PutAlarmFluentBuilder {
     /// <p>The notification trigger defaults to <code>ALARM</code> if you don't specify this parameter.</p>
     pub fn set_notification_triggers(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AlarmState>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AlarmState>>,
     ) -> Self {
         self.inner = self.inner.set_notification_triggers(input);
         self
@@ -278,7 +287,7 @@ impl PutAlarmFluentBuilder {
     }
     /// <p>Indicates whether the alarm is enabled.</p>
     /// <p>Notifications are enabled by default if you don't specify this parameter.</p>
-    pub fn set_notification_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_notification_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_notification_enabled(input);
         self
     }

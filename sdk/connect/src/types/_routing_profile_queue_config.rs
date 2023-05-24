@@ -2,31 +2,31 @@
 
 /// <p>Contains information about the queue and channel for which priority and delay can be set.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RoutingProfileQueueConfig {
     /// <p>Contains information about a queue resource.</p>
     #[doc(hidden)]
-    pub queue_reference: std::option::Option<crate::types::RoutingProfileQueueReference>,
+    pub queue_reference: ::std::option::Option<crate::types::RoutingProfileQueueReference>,
     /// <p>The order in which contacts are to be handled for the queue. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and delay</a>.</p>
     #[doc(hidden)]
-    pub priority: std::option::Option<i32>,
+    pub priority: ::std::option::Option<i32>,
     /// <p>The delay, in seconds, a contact should be in the queue before they are routed to an available agent. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and delay</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     #[doc(hidden)]
-    pub delay: std::option::Option<i32>,
+    pub delay: ::std::option::Option<i32>,
 }
 impl RoutingProfileQueueConfig {
     /// <p>Contains information about a queue resource.</p>
     pub fn queue_reference(
         &self,
-    ) -> std::option::Option<&crate::types::RoutingProfileQueueReference> {
+    ) -> ::std::option::Option<&crate::types::RoutingProfileQueueReference> {
         self.queue_reference.as_ref()
     }
     /// <p>The order in which contacts are to be handled for the queue. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and delay</a>.</p>
-    pub fn priority(&self) -> std::option::Option<i32> {
+    pub fn priority(&self) -> ::std::option::Option<i32> {
         self.priority
     }
     /// <p>The delay, in seconds, a contact should be in the queue before they are routed to an available agent. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and delay</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
-    pub fn delay(&self) -> std::option::Option<i32> {
+    pub fn delay(&self) -> ::std::option::Option<i32> {
         self.delay
     }
 }
@@ -39,43 +39,45 @@ impl RoutingProfileQueueConfig {
 
 /// A builder for [`RoutingProfileQueueConfig`](crate::types::RoutingProfileQueueConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RoutingProfileQueueConfigBuilder {
-    pub(crate) queue_reference: std::option::Option<crate::types::RoutingProfileQueueReference>,
-    pub(crate) priority: std::option::Option<i32>,
-    pub(crate) delay: std::option::Option<i32>,
+    pub(crate) queue_reference: ::std::option::Option<crate::types::RoutingProfileQueueReference>,
+    pub(crate) priority: ::std::option::Option<i32>,
+    pub(crate) delay: ::std::option::Option<i32>,
 }
 impl RoutingProfileQueueConfigBuilder {
     /// <p>Contains information about a queue resource.</p>
     pub fn queue_reference(mut self, input: crate::types::RoutingProfileQueueReference) -> Self {
-        self.queue_reference = Some(input);
+        self.queue_reference = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains information about a queue resource.</p>
     pub fn set_queue_reference(
         mut self,
-        input: std::option::Option<crate::types::RoutingProfileQueueReference>,
+        input: ::std::option::Option<crate::types::RoutingProfileQueueReference>,
     ) -> Self {
         self.queue_reference = input;
         self
     }
     /// <p>The order in which contacts are to be handled for the queue. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and delay</a>.</p>
     pub fn priority(mut self, input: i32) -> Self {
-        self.priority = Some(input);
+        self.priority = ::std::option::Option::Some(input);
         self
     }
     /// <p>The order in which contacts are to be handled for the queue. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and delay</a>.</p>
-    pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
         self.priority = input;
         self
     }
     /// <p>The delay, in seconds, a contact should be in the queue before they are routed to an available agent. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and delay</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
     pub fn delay(mut self, input: i32) -> Self {
-        self.delay = Some(input);
+        self.delay = ::std::option::Option::Some(input);
         self
     }
     /// <p>The delay, in seconds, a contact should be in the queue before they are routed to an available agent. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues: priority and delay</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
-    pub fn set_delay(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_delay(mut self, input: ::std::option::Option<i32>) -> Self {
         self.delay = input;
         self
     }

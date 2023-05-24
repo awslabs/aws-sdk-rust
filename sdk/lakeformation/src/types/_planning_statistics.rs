@@ -2,7 +2,7 @@
 
 /// <p>Statistics related to the processing of a query statement.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PlanningStatistics {
     /// <p>An estimate of the data that was scanned in bytes.</p>
     #[doc(hidden)]
@@ -44,51 +44,53 @@ impl PlanningStatistics {
 
 /// A builder for [`PlanningStatistics`](crate::types::PlanningStatistics).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PlanningStatisticsBuilder {
-    pub(crate) estimated_data_to_scan_bytes: std::option::Option<i64>,
-    pub(crate) planning_time_millis: std::option::Option<i64>,
-    pub(crate) queue_time_millis: std::option::Option<i64>,
-    pub(crate) work_units_generated_count: std::option::Option<i64>,
+    pub(crate) estimated_data_to_scan_bytes: ::std::option::Option<i64>,
+    pub(crate) planning_time_millis: ::std::option::Option<i64>,
+    pub(crate) queue_time_millis: ::std::option::Option<i64>,
+    pub(crate) work_units_generated_count: ::std::option::Option<i64>,
 }
 impl PlanningStatisticsBuilder {
     /// <p>An estimate of the data that was scanned in bytes.</p>
     pub fn estimated_data_to_scan_bytes(mut self, input: i64) -> Self {
-        self.estimated_data_to_scan_bytes = Some(input);
+        self.estimated_data_to_scan_bytes = ::std::option::Option::Some(input);
         self
     }
     /// <p>An estimate of the data that was scanned in bytes.</p>
-    pub fn set_estimated_data_to_scan_bytes(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_estimated_data_to_scan_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.estimated_data_to_scan_bytes = input;
         self
     }
     /// <p>The time that it took to process the request.</p>
     pub fn planning_time_millis(mut self, input: i64) -> Self {
-        self.planning_time_millis = Some(input);
+        self.planning_time_millis = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time that it took to process the request.</p>
-    pub fn set_planning_time_millis(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_planning_time_millis(mut self, input: ::std::option::Option<i64>) -> Self {
         self.planning_time_millis = input;
         self
     }
     /// <p>The time the request was in queue to be processed.</p>
     pub fn queue_time_millis(mut self, input: i64) -> Self {
-        self.queue_time_millis = Some(input);
+        self.queue_time_millis = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time the request was in queue to be processed.</p>
-    pub fn set_queue_time_millis(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_queue_time_millis(mut self, input: ::std::option::Option<i64>) -> Self {
         self.queue_time_millis = input;
         self
     }
     /// <p>The number of work units generated.</p>
     pub fn work_units_generated_count(mut self, input: i64) -> Self {
-        self.work_units_generated_count = Some(input);
+        self.work_units_generated_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of work units generated.</p>
-    pub fn set_work_units_generated_count(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_work_units_generated_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.work_units_generated_count = input;
         self
     }

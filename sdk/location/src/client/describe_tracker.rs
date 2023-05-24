@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeTracker`](crate::operation::describe_tracker::builders::DescribeTrackerFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`tracker_name(impl Into<String>)`](crate::operation::describe_tracker::builders::DescribeTrackerFluentBuilder::tracker_name) / [`set_tracker_name(Option<String>)`](crate::operation::describe_tracker::builders::DescribeTrackerFluentBuilder::set_tracker_name): <p>The name of the tracker resource.</p>
+    ///   - [`tracker_name(impl ::std::convert::Into<String>)`](crate::operation::describe_tracker::builders::DescribeTrackerFluentBuilder::tracker_name) / [`set_tracker_name(Option<String>)`](crate::operation::describe_tracker::builders::DescribeTrackerFluentBuilder::set_tracker_name): <p>The name of the tracker resource.</p>
     /// - On success, responds with [`DescribeTrackerOutput`](crate::operation::describe_tracker::DescribeTrackerOutput) with field(s):
     ///   - [`tracker_name(Option<String>)`](crate::operation::describe_tracker::DescribeTrackerOutput::tracker_name): <p>The name of the tracker resource.</p>
     ///   - [`tracker_arn(Option<String>)`](crate::operation::describe_tracker::DescribeTrackerOutput::tracker_arn): <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across all Amazon Web Services.</p>  <ul>   <li> <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li>  </ul>

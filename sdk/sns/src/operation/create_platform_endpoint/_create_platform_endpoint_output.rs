@@ -2,20 +2,20 @@
 
 /// <p>Response from CreateEndpoint action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreatePlatformEndpointOutput {
     /// <p>EndpointArn returned from CreateEndpoint action.</p>
     #[doc(hidden)]
-    pub endpoint_arn: std::option::Option<std::string::String>,
+    pub endpoint_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreatePlatformEndpointOutput {
     /// <p>EndpointArn returned from CreateEndpoint action.</p>
-    pub fn endpoint_arn(&self) -> std::option::Option<&str> {
+    pub fn endpoint_arn(&self) -> ::std::option::Option<&str> {
         self.endpoint_arn.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for CreatePlatformEndpointOutput {
+impl ::aws_http::request_id::RequestId for CreatePlatformEndpointOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -31,19 +31,21 @@ impl CreatePlatformEndpointOutput {
 
 /// A builder for [`CreatePlatformEndpointOutput`](crate::operation::create_platform_endpoint::CreatePlatformEndpointOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreatePlatformEndpointOutputBuilder {
-    pub(crate) endpoint_arn: std::option::Option<std::string::String>,
+    pub(crate) endpoint_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreatePlatformEndpointOutputBuilder {
     /// <p>EndpointArn returned from CreateEndpoint action.</p>
-    pub fn endpoint_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.endpoint_arn = Some(input.into());
+    pub fn endpoint_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.endpoint_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>EndpointArn returned from CreateEndpoint action.</p>
-    pub fn set_endpoint_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_endpoint_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint_arn = input;
         self
     }

@@ -2,7 +2,7 @@
 
 /// <p>The array properties for the submitted job, such as the size of the array. The array size can be between 2 and 10,000. If you specify array properties for a job, it becomes an array job. This parameter is used only if the target is an Batch job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchArrayProperties {
     /// <p>The size of the array, if this is an array batch job.</p>
     #[doc(hidden)]
@@ -23,18 +23,20 @@ impl BatchArrayProperties {
 
 /// A builder for [`BatchArrayProperties`](crate::types::BatchArrayProperties).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BatchArrayPropertiesBuilder {
-    pub(crate) size: std::option::Option<i32>,
+    pub(crate) size: ::std::option::Option<i32>,
 }
 impl BatchArrayPropertiesBuilder {
     /// <p>The size of the array, if this is an array batch job.</p>
     pub fn size(mut self, input: i32) -> Self {
-        self.size = Some(input);
+        self.size = ::std::option::Option::Some(input);
         self
     }
     /// <p>The size of the array, if this is an array batch job.</p>
-    pub fn set_size(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.size = input;
         self
     }

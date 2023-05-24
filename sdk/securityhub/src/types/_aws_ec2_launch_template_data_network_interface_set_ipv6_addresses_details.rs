@@ -2,15 +2,15 @@
 
 /// <p> Specifies an IPv6 address in an Amazon EC2 launch template. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6AddressesDetails {
     /// <p> One or more specific IPv6 addresses from the IPv6 CIDR block range of your subnet. </p>
     #[doc(hidden)]
-    pub ipv6_address: std::option::Option<std::string::String>,
+    pub ipv6_address: ::std::option::Option<::std::string::String>,
 }
 impl AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6AddressesDetails {
     /// <p> One or more specific IPv6 addresses from the IPv6 CIDR block range of your subnet. </p>
-    pub fn ipv6_address(&self) -> std::option::Option<&str> {
+    pub fn ipv6_address(&self) -> ::std::option::Option<&str> {
         self.ipv6_address.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6AddressesDetails {
 
 /// A builder for [`AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6AddressesDetails`](crate::types::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6AddressesDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6AddressesDetailsBuilder {
-    pub(crate) ipv6_address: std::option::Option<std::string::String>,
+    pub(crate) ipv6_address: ::std::option::Option<::std::string::String>,
 }
 impl AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6AddressesDetailsBuilder {
     /// <p> One or more specific IPv6 addresses from the IPv6 CIDR block range of your subnet. </p>
-    pub fn ipv6_address(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ipv6_address = Some(input.into());
+    pub fn ipv6_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ipv6_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> One or more specific IPv6 addresses from the IPv6 CIDR block range of your subnet. </p>
-    pub fn set_ipv6_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ipv6_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ipv6_address = input;
         self
     }

@@ -2,27 +2,28 @@
 
 /// Placeholder documentation for BatchDeleteResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDeleteOutput {
     /// List of failed operations
     #[doc(hidden)]
-    pub failed: std::option::Option<std::vec::Vec<crate::types::BatchFailedResultModel>>,
+    pub failed: ::std::option::Option<::std::vec::Vec<crate::types::BatchFailedResultModel>>,
     /// List of successful operations
     #[doc(hidden)]
-    pub successful: std::option::Option<std::vec::Vec<crate::types::BatchSuccessfulResultModel>>,
+    pub successful:
+        ::std::option::Option<::std::vec::Vec<crate::types::BatchSuccessfulResultModel>>,
     _request_id: Option<String>,
 }
 impl BatchDeleteOutput {
     /// List of failed operations
-    pub fn failed(&self) -> std::option::Option<&[crate::types::BatchFailedResultModel]> {
+    pub fn failed(&self) -> ::std::option::Option<&[crate::types::BatchFailedResultModel]> {
         self.failed.as_deref()
     }
     /// List of successful operations
-    pub fn successful(&self) -> std::option::Option<&[crate::types::BatchSuccessfulResultModel]> {
+    pub fn successful(&self) -> ::std::option::Option<&[crate::types::BatchSuccessfulResultModel]> {
         self.successful.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for BatchDeleteOutput {
+impl ::aws_http::request_id::RequestId for BatchDeleteOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -36,11 +37,13 @@ impl BatchDeleteOutput {
 
 /// A builder for [`BatchDeleteOutput`](crate::operation::batch_delete::BatchDeleteOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BatchDeleteOutputBuilder {
-    pub(crate) failed: std::option::Option<std::vec::Vec<crate::types::BatchFailedResultModel>>,
+    pub(crate) failed: ::std::option::Option<::std::vec::Vec<crate::types::BatchFailedResultModel>>,
     pub(crate) successful:
-        std::option::Option<std::vec::Vec<crate::types::BatchSuccessfulResultModel>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::BatchSuccessfulResultModel>>,
     _request_id: Option<String>,
 }
 impl BatchDeleteOutputBuilder {
@@ -52,13 +55,13 @@ impl BatchDeleteOutputBuilder {
     pub fn failed(mut self, input: crate::types::BatchFailedResultModel) -> Self {
         let mut v = self.failed.unwrap_or_default();
         v.push(input);
-        self.failed = Some(v);
+        self.failed = ::std::option::Option::Some(v);
         self
     }
     /// List of failed operations
     pub fn set_failed(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::BatchFailedResultModel>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::BatchFailedResultModel>>,
     ) -> Self {
         self.failed = input;
         self
@@ -71,13 +74,13 @@ impl BatchDeleteOutputBuilder {
     pub fn successful(mut self, input: crate::types::BatchSuccessfulResultModel) -> Self {
         let mut v = self.successful.unwrap_or_default();
         v.push(input);
-        self.successful = Some(v);
+        self.successful = ::std::option::Option::Some(v);
         self
     }
     /// List of successful operations
     pub fn set_successful(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::BatchSuccessfulResultModel>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::BatchSuccessfulResultModel>>,
     ) -> Self {
         self.successful = input;
         self

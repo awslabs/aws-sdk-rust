@@ -7,29 +7,29 @@ pub use crate::operation::put_profile_object_type::_put_profile_object_type_inpu
 ///
 /// <p>Defines a ProfileObjectType.</p>
 /// <p>To add or remove tags on an existing ObjectType, see <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_TagResource.html"> TagResource</a>/<a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutProfileObjectTypeFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::put_profile_object_type::builders::PutProfileObjectTypeInputBuilder,
 }
 impl PutProfileObjectTypeFluentBuilder {
     /// Creates a new `PutProfileObjectType`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::put_profile_object_type::PutProfileObjectType,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::put_profile_object_type::PutProfileObjectTypeError,
         >,
     > {
@@ -37,30 +37,33 @@ impl PutProfileObjectTypeFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::put_profile_object_type::PutProfileObjectTypeOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::put_profile_object_type::PutProfileObjectTypeError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -73,51 +76,57 @@ impl PutProfileObjectTypeFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::put_profile_object_type::PutProfileObjectTypeOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::put_profile_object_type::PutProfileObjectTypeError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The unique name of the domain.</p>
-    pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_name(input.into());
         self
     }
     /// <p>The unique name of the domain.</p>
-    pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_name(input);
         self
     }
     /// <p>The name of the profile object type.</p>
-    pub fn object_type_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn object_type_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.object_type_name(input.into());
         self
     }
     /// <p>The name of the profile object type.</p>
-    pub fn set_object_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_object_type_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_object_type_name(input);
         self
     }
     /// <p>Description of the profile object type.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>Description of the profile object type.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
     /// <p>A unique identifier for the object template. For some attributes in the request, the service will use the default value from the object template when TemplateId is present. If these attributes are present in the request, the service may return a <code>BadRequestException</code>. These attributes include: AllowProfileCreation, SourceLastUpdatedTimestampFormat, Fields, and Keys. For example, if AllowProfileCreation is set to true when TemplateId is set, the service may return a <code>BadRequestException</code>.</p>
-    pub fn template_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.template_id(input.into());
         self
     }
     /// <p>A unique identifier for the object template. For some attributes in the request, the service will use the default value from the object template when TemplateId is present. If these attributes are present in the request, the service may return a <code>BadRequestException</code>. These attributes include: AllowProfileCreation, SourceLastUpdatedTimestampFormat, Fields, and Keys. For example, if AllowProfileCreation is set to true when TemplateId is set, the service may return a <code>BadRequestException</code>.</p>
-    pub fn set_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_template_id(input);
         self
     }
@@ -127,17 +136,23 @@ impl PutProfileObjectTypeFluentBuilder {
         self
     }
     /// <p>The number of days until the data in the object expires.</p>
-    pub fn set_expiration_days(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_expiration_days(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_expiration_days(input);
         self
     }
     /// <p>The customer-provided key to encrypt the profile object that will be created in this profile object type.</p>
-    pub fn encryption_key(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn encryption_key(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.encryption_key(input.into());
         self
     }
     /// <p>The customer-provided key to encrypt the profile object that will be created in this profile object type.</p>
-    pub fn set_encryption_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_encryption_key(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_encryption_key(input);
         self
     }
@@ -147,14 +162,14 @@ impl PutProfileObjectTypeFluentBuilder {
         self
     }
     /// <p>Indicates whether a profile should be created when data is received if one doesn’t exist for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile and associate this object with the profile. If it is set to <code>TRUE</code>, and if no match is found, then the service creates a new standard profile.</p>
-    pub fn set_allow_profile_creation(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_allow_profile_creation(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_allow_profile_creation(input);
         self
     }
     /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up. </p>
     pub fn source_last_updated_timestamp_format(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self
             .inner
@@ -164,7 +179,7 @@ impl PutProfileObjectTypeFluentBuilder {
     /// <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up. </p>
     pub fn set_source_last_updated_timestamp_format(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_source_last_updated_timestamp_format(input);
         self
@@ -176,7 +191,7 @@ impl PutProfileObjectTypeFluentBuilder {
     /// <p>A map of the name and ObjectType field.</p>
     pub fn fields(
         mut self,
-        k: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
         v: crate::types::ObjectTypeField,
     ) -> Self {
         self.inner = self.inner.fields(k.into(), v);
@@ -185,8 +200,8 @@ impl PutProfileObjectTypeFluentBuilder {
     /// <p>A map of the name and ObjectType field.</p>
     pub fn set_fields(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::types::ObjectTypeField>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, crate::types::ObjectTypeField>,
         >,
     ) -> Self {
         self.inner = self.inner.set_fields(input);
@@ -199,8 +214,8 @@ impl PutProfileObjectTypeFluentBuilder {
     /// <p>A list of unique keys that can be used to map data to the profile.</p>
     pub fn keys(
         mut self,
-        k: impl Into<std::string::String>,
-        v: std::vec::Vec<crate::types::ObjectTypeKey>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: ::std::vec::Vec<crate::types::ObjectTypeKey>,
     ) -> Self {
         self.inner = self.inner.keys(k.into(), v);
         self
@@ -208,10 +223,10 @@ impl PutProfileObjectTypeFluentBuilder {
     /// <p>A list of unique keys that can be used to map data to the profile.</p>
     pub fn set_keys(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<
-                std::string::String,
-                std::vec::Vec<crate::types::ObjectTypeKey>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<
+                ::std::string::String,
+                ::std::vec::Vec<crate::types::ObjectTypeKey>,
             >,
         >,
     ) -> Self {
@@ -225,8 +240,8 @@ impl PutProfileObjectTypeFluentBuilder {
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
@@ -234,8 +249,8 @@ impl PutProfileObjectTypeFluentBuilder {
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_tags(input);

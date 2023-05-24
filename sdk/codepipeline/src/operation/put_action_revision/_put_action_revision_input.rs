@@ -2,36 +2,36 @@
 
 /// <p>Represents the input of a <code>PutActionRevision</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutActionRevisionInput {
     /// <p>The name of the pipeline that starts processing the revision to the source.</p>
     #[doc(hidden)]
-    pub pipeline_name: std::option::Option<std::string::String>,
+    pub pipeline_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the stage that contains the action that acts on the revision.</p>
     #[doc(hidden)]
-    pub stage_name: std::option::Option<std::string::String>,
+    pub stage_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the action that processes the revision.</p>
     #[doc(hidden)]
-    pub action_name: std::option::Option<std::string::String>,
+    pub action_name: ::std::option::Option<::std::string::String>,
     /// <p>Represents information about the version (or revision) of an action.</p>
     #[doc(hidden)]
-    pub action_revision: std::option::Option<crate::types::ActionRevision>,
+    pub action_revision: ::std::option::Option<crate::types::ActionRevision>,
 }
 impl PutActionRevisionInput {
     /// <p>The name of the pipeline that starts processing the revision to the source.</p>
-    pub fn pipeline_name(&self) -> std::option::Option<&str> {
+    pub fn pipeline_name(&self) -> ::std::option::Option<&str> {
         self.pipeline_name.as_deref()
     }
     /// <p>The name of the stage that contains the action that acts on the revision.</p>
-    pub fn stage_name(&self) -> std::option::Option<&str> {
+    pub fn stage_name(&self) -> ::std::option::Option<&str> {
         self.stage_name.as_deref()
     }
     /// <p>The name of the action that processes the revision.</p>
-    pub fn action_name(&self) -> std::option::Option<&str> {
+    pub fn action_name(&self) -> ::std::option::Option<&str> {
         self.action_name.as_deref()
     }
     /// <p>Represents information about the version (or revision) of an action.</p>
-    pub fn action_revision(&self) -> std::option::Option<&crate::types::ActionRevision> {
+    pub fn action_revision(&self) -> ::std::option::Option<&crate::types::ActionRevision> {
         self.action_revision.as_ref()
     }
 }
@@ -45,53 +45,61 @@ impl PutActionRevisionInput {
 
 /// A builder for [`PutActionRevisionInput`](crate::operation::put_action_revision::PutActionRevisionInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PutActionRevisionInputBuilder {
-    pub(crate) pipeline_name: std::option::Option<std::string::String>,
-    pub(crate) stage_name: std::option::Option<std::string::String>,
-    pub(crate) action_name: std::option::Option<std::string::String>,
-    pub(crate) action_revision: std::option::Option<crate::types::ActionRevision>,
+    pub(crate) pipeline_name: ::std::option::Option<::std::string::String>,
+    pub(crate) stage_name: ::std::option::Option<::std::string::String>,
+    pub(crate) action_name: ::std::option::Option<::std::string::String>,
+    pub(crate) action_revision: ::std::option::Option<crate::types::ActionRevision>,
 }
 impl PutActionRevisionInputBuilder {
     /// <p>The name of the pipeline that starts processing the revision to the source.</p>
-    pub fn pipeline_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.pipeline_name = Some(input.into());
+    pub fn pipeline_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.pipeline_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the pipeline that starts processing the revision to the source.</p>
-    pub fn set_pipeline_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_pipeline_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.pipeline_name = input;
         self
     }
     /// <p>The name of the stage that contains the action that acts on the revision.</p>
-    pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.stage_name = Some(input.into());
+    pub fn stage_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.stage_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the stage that contains the action that acts on the revision.</p>
-    pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_stage_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stage_name = input;
         self
     }
     /// <p>The name of the action that processes the revision.</p>
-    pub fn action_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.action_name = Some(input.into());
+    pub fn action_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.action_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the action that processes the revision.</p>
-    pub fn set_action_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_action_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.action_name = input;
         self
     }
     /// <p>Represents information about the version (or revision) of an action.</p>
     pub fn action_revision(mut self, input: crate::types::ActionRevision) -> Self {
-        self.action_revision = Some(input);
+        self.action_revision = ::std::option::Option::Some(input);
         self
     }
     /// <p>Represents information about the version (or revision) of an action.</p>
     pub fn set_action_revision(
         mut self,
-        input: std::option::Option<crate::types::ActionRevision>,
+        input: ::std::option::Option<crate::types::ActionRevision>,
     ) -> Self {
         self.action_revision = input;
         self
@@ -99,11 +107,11 @@ impl PutActionRevisionInputBuilder {
     /// Consumes the builder and constructs a [`PutActionRevisionInput`](crate::operation::put_action_revision::PutActionRevisionInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::put_action_revision::PutActionRevisionInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::put_action_revision::PutActionRevisionInput {
                 pipeline_name: self.pipeline_name,
                 stage_name: self.stage_name,

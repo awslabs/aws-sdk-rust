@@ -41,13 +41,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum AggregateFunctionName {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,7 +63,7 @@ pub enum AggregateFunctionName {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for AggregateFunctionName {
+impl ::std::convert::From<&str> for AggregateFunctionName {
     fn from(s: &str) -> Self {
         match s {
             "AVG" => AggregateFunctionName::Avg,
@@ -77,11 +77,11 @@ impl std::convert::From<&str> for AggregateFunctionName {
         }
     }
 }
-impl std::str::FromStr for AggregateFunctionName {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for AggregateFunctionName {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AggregateFunctionName::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(AggregateFunctionName::from(s))
     }
 }
 impl AggregateFunctionName {
@@ -101,7 +101,7 @@ impl AggregateFunctionName {
         &["AVG", "COUNT", "COUNT_DISTINCT", "SUM", "SUM_DISTINCT"]
     }
 }
-impl AsRef<str> for AggregateFunctionName {
+impl ::std::convert::AsRef<str> for AggregateFunctionName {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

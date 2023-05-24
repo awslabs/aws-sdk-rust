@@ -2,22 +2,22 @@
 
 /// <p>A job run that was used in the predicate of a conditional trigger that triggered this job run.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Predecessor {
     /// <p>The name of the job definition used by the predecessor job run.</p>
     #[doc(hidden)]
-    pub job_name: std::option::Option<std::string::String>,
+    pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>The job-run ID of the predecessor job run.</p>
     #[doc(hidden)]
-    pub run_id: std::option::Option<std::string::String>,
+    pub run_id: ::std::option::Option<::std::string::String>,
 }
 impl Predecessor {
     /// <p>The name of the job definition used by the predecessor job run.</p>
-    pub fn job_name(&self) -> std::option::Option<&str> {
+    pub fn job_name(&self) -> ::std::option::Option<&str> {
         self.job_name.as_deref()
     }
     /// <p>The job-run ID of the predecessor job run.</p>
-    pub fn run_id(&self) -> std::option::Option<&str> {
+    pub fn run_id(&self) -> ::std::option::Option<&str> {
         self.run_id.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl Predecessor {
 
 /// A builder for [`Predecessor`](crate::types::Predecessor).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PredecessorBuilder {
-    pub(crate) job_name: std::option::Option<std::string::String>,
-    pub(crate) run_id: std::option::Option<std::string::String>,
+    pub(crate) job_name: ::std::option::Option<::std::string::String>,
+    pub(crate) run_id: ::std::option::Option<::std::string::String>,
 }
 impl PredecessorBuilder {
     /// <p>The name of the job definition used by the predecessor job run.</p>
-    pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.job_name = Some(input.into());
+    pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.job_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the job definition used by the predecessor job run.</p>
-    pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_name = input;
         self
     }
     /// <p>The job-run ID of the predecessor job run.</p>
-    pub fn run_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.run_id = Some(input.into());
+    pub fn run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.run_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The job-run ID of the predecessor job run.</p>
-    pub fn set_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.run_id = input;
         self
     }

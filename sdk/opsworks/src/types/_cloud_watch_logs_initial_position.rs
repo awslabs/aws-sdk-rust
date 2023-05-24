@@ -38,13 +38,13 @@
 /// <p>Specifies where to start to read data (start_of_file or end_of_file). The default is start_of_file. It's only used if there is no state persisted for that log stream.</p>
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum CloudWatchLogsInitialPosition {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum CloudWatchLogsInitialPosition {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for CloudWatchLogsInitialPosition {
+impl ::std::convert::From<&str> for CloudWatchLogsInitialPosition {
     fn from(s: &str) -> Self {
         match s {
             "end_of_file" => CloudWatchLogsInitialPosition::EndOfFile,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for CloudWatchLogsInitialPosition {
         }
     }
 }
-impl std::str::FromStr for CloudWatchLogsInitialPosition {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for CloudWatchLogsInitialPosition {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CloudWatchLogsInitialPosition::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(CloudWatchLogsInitialPosition::from(s))
     }
 }
 impl CloudWatchLogsInitialPosition {
@@ -86,7 +86,7 @@ impl CloudWatchLogsInitialPosition {
         &["end_of_file", "start_of_file"]
     }
 }
-impl AsRef<str> for CloudWatchLogsInitialPosition {
+impl ::std::convert::AsRef<str> for CloudWatchLogsInitialPosition {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

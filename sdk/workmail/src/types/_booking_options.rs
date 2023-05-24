@@ -2,7 +2,7 @@
 
 /// <p>At least one delegate must be associated to the resource to disable automatic replies from the resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BookingOptions {
     /// <p>The resource's ability to automatically reply to requests. If disabled, delegates must be associated to the resource.</p>
     #[doc(hidden)]
@@ -37,42 +37,47 @@ impl BookingOptions {
 
 /// A builder for [`BookingOptions`](crate::types::BookingOptions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BookingOptionsBuilder {
-    pub(crate) auto_accept_requests: std::option::Option<bool>,
-    pub(crate) auto_decline_recurring_requests: std::option::Option<bool>,
-    pub(crate) auto_decline_conflicting_requests: std::option::Option<bool>,
+    pub(crate) auto_accept_requests: ::std::option::Option<bool>,
+    pub(crate) auto_decline_recurring_requests: ::std::option::Option<bool>,
+    pub(crate) auto_decline_conflicting_requests: ::std::option::Option<bool>,
 }
 impl BookingOptionsBuilder {
     /// <p>The resource's ability to automatically reply to requests. If disabled, delegates must be associated to the resource.</p>
     pub fn auto_accept_requests(mut self, input: bool) -> Self {
-        self.auto_accept_requests = Some(input);
+        self.auto_accept_requests = ::std::option::Option::Some(input);
         self
     }
     /// <p>The resource's ability to automatically reply to requests. If disabled, delegates must be associated to the resource.</p>
-    pub fn set_auto_accept_requests(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_auto_accept_requests(mut self, input: ::std::option::Option<bool>) -> Self {
         self.auto_accept_requests = input;
         self
     }
     /// <p>The resource's ability to automatically decline any recurring requests.</p>
     pub fn auto_decline_recurring_requests(mut self, input: bool) -> Self {
-        self.auto_decline_recurring_requests = Some(input);
+        self.auto_decline_recurring_requests = ::std::option::Option::Some(input);
         self
     }
     /// <p>The resource's ability to automatically decline any recurring requests.</p>
-    pub fn set_auto_decline_recurring_requests(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_auto_decline_recurring_requests(
+        mut self,
+        input: ::std::option::Option<bool>,
+    ) -> Self {
         self.auto_decline_recurring_requests = input;
         self
     }
     /// <p>The resource's ability to automatically decline any conflicting requests.</p>
     pub fn auto_decline_conflicting_requests(mut self, input: bool) -> Self {
-        self.auto_decline_conflicting_requests = Some(input);
+        self.auto_decline_conflicting_requests = ::std::option::Option::Some(input);
         self
     }
     /// <p>The resource's ability to automatically decline any conflicting requests.</p>
     pub fn set_auto_decline_conflicting_requests(
         mut self,
-        input: std::option::Option<bool>,
+        input: ::std::option::Option<bool>,
     ) -> Self {
         self.auto_decline_conflicting_requests = input;
         self

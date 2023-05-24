@@ -8,56 +8,59 @@ pub use crate::operation::create_key::_create_key_input::CreateKeyInputBuilder;
 /// <p>Creates an API key resource in your Amazon Web Services account, which lets you grant <code>geo:GetMap*</code> actions for Amazon Location Map resources to the API key bearer.</p> <important>
 /// <p>The API keys feature is in preview. We may add, change, or remove features before announcing general availability. For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">Using API keys</a>.</p>
 /// </important>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateKeyFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_key::builders::CreateKeyInputBuilder,
 }
 impl CreateKeyFluentBuilder {
     /// Creates a new `CreateKey`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_key::CreateKey,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_key::CreateKeyError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_key::CreateKeyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_key::CreateKeyOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_key::CreateKeyError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_key::CreateKeyError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -70,9 +73,9 @@ impl CreateKeyFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_key::CreateKeyOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_key::CreateKeyError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_key::CreateKeyError>,
     > {
         self.send_middleware().await
     }
@@ -83,7 +86,7 @@ impl CreateKeyFluentBuilder {
     /// <li> <p>Must be a unique API key name.</p> </li>
     /// <li> <p>No spaces allowed. For example, <code>ExampleAPIKey</code>.</p> </li>
     /// </ul>
-    pub fn key_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn key_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.key_name(input.into());
         self
     }
@@ -94,7 +97,7 @@ impl CreateKeyFluentBuilder {
     /// <li> <p>Must be a unique API key name.</p> </li>
     /// <li> <p>No spaces allowed. For example, <code>ExampleAPIKey</code>.</p> </li>
     /// </ul>
-    pub fn set_key_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_key_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_key_name(input);
         self
     }
@@ -106,30 +109,30 @@ impl CreateKeyFluentBuilder {
     /// <p>The API key restrictions for the API key resource.</p>
     pub fn set_restrictions(
         mut self,
-        input: std::option::Option<crate::types::ApiKeyRestrictions>,
+        input: ::std::option::Option<crate::types::ApiKeyRestrictions>,
     ) -> Self {
         self.inner = self.inner.set_restrictions(input);
         self
     }
     /// <p>An optional description for the API key resource.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>An optional description for the API key resource.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
     /// <p>The optional timestamp for when the API key resource will expire in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. One of <code>NoExpiry</code> or <code>ExpireTime</code> must be set.</p>
-    pub fn expire_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+    pub fn expire_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.expire_time(input);
         self
     }
     /// <p>The optional timestamp for when the API key resource will expire in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. One of <code>NoExpiry</code> or <code>ExpireTime</code> must be set.</p>
     pub fn set_expire_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.inner = self.inner.set_expire_time(input);
         self
@@ -140,7 +143,7 @@ impl CreateKeyFluentBuilder {
         self
     }
     /// <p>Optionally set to <code>true</code> to set no expiration time for the API key. One of <code>NoExpiry</code> or <code>ExpireTime</code> must be set.</p>
-    pub fn set_no_expiry(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_no_expiry(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_no_expiry(input);
         self
     }
@@ -161,8 +164,8 @@ impl CreateKeyFluentBuilder {
     /// </ul>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
@@ -180,8 +183,8 @@ impl CreateKeyFluentBuilder {
     /// </ul>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_tags(input);

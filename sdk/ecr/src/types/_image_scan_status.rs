@@ -2,22 +2,22 @@
 
 /// <p>The current status of an image scan.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImageScanStatus {
     /// <p>The current state of an image scan.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::ScanStatus>,
+    pub status: ::std::option::Option<crate::types::ScanStatus>,
     /// <p>The description of the image scan status.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
 }
 impl ImageScanStatus {
     /// <p>The current state of an image scan.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::ScanStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::ScanStatus> {
         self.status.as_ref()
     }
     /// <p>The description of the image scan status.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl ImageScanStatus {
 
 /// A builder for [`ImageScanStatus`](crate::types::ImageScanStatus).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ImageScanStatusBuilder {
-    pub(crate) status: std::option::Option<crate::types::ScanStatus>,
-    pub(crate) description: std::option::Option<std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::ScanStatus>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
 }
 impl ImageScanStatusBuilder {
     /// <p>The current state of an image scan.</p>
     pub fn status(mut self, input: crate::types::ScanStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current state of an image scan.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::ScanStatus>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ScanStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>The description of the image scan status.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the image scan status.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }

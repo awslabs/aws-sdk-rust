@@ -2,52 +2,55 @@
 
 /// <p>Contains information about which data sources are enabled for the GuardDuty member account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataSourcesFreeTrial {
     /// <p>Describes whether any Amazon Web Services CloudTrail management event logs are enabled as data sources.</p>
     #[doc(hidden)]
-    pub cloud_trail: std::option::Option<crate::types::DataSourceFreeTrial>,
+    pub cloud_trail: ::std::option::Option<crate::types::DataSourceFreeTrial>,
     /// <p>Describes whether any DNS logs are enabled as data sources.</p>
     #[doc(hidden)]
-    pub dns_logs: std::option::Option<crate::types::DataSourceFreeTrial>,
+    pub dns_logs: ::std::option::Option<crate::types::DataSourceFreeTrial>,
     /// <p>Describes whether any VPC Flow logs are enabled as data sources.</p>
     #[doc(hidden)]
-    pub flow_logs: std::option::Option<crate::types::DataSourceFreeTrial>,
+    pub flow_logs: ::std::option::Option<crate::types::DataSourceFreeTrial>,
     /// <p>Describes whether any S3 data event logs are enabled as data sources.</p>
     #[doc(hidden)]
-    pub s3_logs: std::option::Option<crate::types::DataSourceFreeTrial>,
+    pub s3_logs: ::std::option::Option<crate::types::DataSourceFreeTrial>,
     /// <p>Describes whether any Kubernetes logs are enabled as data sources.</p>
     #[doc(hidden)]
-    pub kubernetes: std::option::Option<crate::types::KubernetesDataSourceFreeTrial>,
+    pub kubernetes: ::std::option::Option<crate::types::KubernetesDataSourceFreeTrial>,
     /// <p>Describes whether Malware Protection is enabled as a data source.</p>
     #[doc(hidden)]
-    pub malware_protection: std::option::Option<crate::types::MalwareProtectionDataSourceFreeTrial>,
+    pub malware_protection:
+        ::std::option::Option<crate::types::MalwareProtectionDataSourceFreeTrial>,
 }
 impl DataSourcesFreeTrial {
     /// <p>Describes whether any Amazon Web Services CloudTrail management event logs are enabled as data sources.</p>
-    pub fn cloud_trail(&self) -> std::option::Option<&crate::types::DataSourceFreeTrial> {
+    pub fn cloud_trail(&self) -> ::std::option::Option<&crate::types::DataSourceFreeTrial> {
         self.cloud_trail.as_ref()
     }
     /// <p>Describes whether any DNS logs are enabled as data sources.</p>
-    pub fn dns_logs(&self) -> std::option::Option<&crate::types::DataSourceFreeTrial> {
+    pub fn dns_logs(&self) -> ::std::option::Option<&crate::types::DataSourceFreeTrial> {
         self.dns_logs.as_ref()
     }
     /// <p>Describes whether any VPC Flow logs are enabled as data sources.</p>
-    pub fn flow_logs(&self) -> std::option::Option<&crate::types::DataSourceFreeTrial> {
+    pub fn flow_logs(&self) -> ::std::option::Option<&crate::types::DataSourceFreeTrial> {
         self.flow_logs.as_ref()
     }
     /// <p>Describes whether any S3 data event logs are enabled as data sources.</p>
-    pub fn s3_logs(&self) -> std::option::Option<&crate::types::DataSourceFreeTrial> {
+    pub fn s3_logs(&self) -> ::std::option::Option<&crate::types::DataSourceFreeTrial> {
         self.s3_logs.as_ref()
     }
     /// <p>Describes whether any Kubernetes logs are enabled as data sources.</p>
-    pub fn kubernetes(&self) -> std::option::Option<&crate::types::KubernetesDataSourceFreeTrial> {
+    pub fn kubernetes(
+        &self,
+    ) -> ::std::option::Option<&crate::types::KubernetesDataSourceFreeTrial> {
         self.kubernetes.as_ref()
     }
     /// <p>Describes whether Malware Protection is enabled as a data source.</p>
     pub fn malware_protection(
         &self,
-    ) -> std::option::Option<&crate::types::MalwareProtectionDataSourceFreeTrial> {
+    ) -> ::std::option::Option<&crate::types::MalwareProtectionDataSourceFreeTrial> {
         self.malware_protection.as_ref()
     }
 }
@@ -60,78 +63,80 @@ impl DataSourcesFreeTrial {
 
 /// A builder for [`DataSourcesFreeTrial`](crate::types::DataSourcesFreeTrial).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DataSourcesFreeTrialBuilder {
-    pub(crate) cloud_trail: std::option::Option<crate::types::DataSourceFreeTrial>,
-    pub(crate) dns_logs: std::option::Option<crate::types::DataSourceFreeTrial>,
-    pub(crate) flow_logs: std::option::Option<crate::types::DataSourceFreeTrial>,
-    pub(crate) s3_logs: std::option::Option<crate::types::DataSourceFreeTrial>,
-    pub(crate) kubernetes: std::option::Option<crate::types::KubernetesDataSourceFreeTrial>,
+    pub(crate) cloud_trail: ::std::option::Option<crate::types::DataSourceFreeTrial>,
+    pub(crate) dns_logs: ::std::option::Option<crate::types::DataSourceFreeTrial>,
+    pub(crate) flow_logs: ::std::option::Option<crate::types::DataSourceFreeTrial>,
+    pub(crate) s3_logs: ::std::option::Option<crate::types::DataSourceFreeTrial>,
+    pub(crate) kubernetes: ::std::option::Option<crate::types::KubernetesDataSourceFreeTrial>,
     pub(crate) malware_protection:
-        std::option::Option<crate::types::MalwareProtectionDataSourceFreeTrial>,
+        ::std::option::Option<crate::types::MalwareProtectionDataSourceFreeTrial>,
 }
 impl DataSourcesFreeTrialBuilder {
     /// <p>Describes whether any Amazon Web Services CloudTrail management event logs are enabled as data sources.</p>
     pub fn cloud_trail(mut self, input: crate::types::DataSourceFreeTrial) -> Self {
-        self.cloud_trail = Some(input);
+        self.cloud_trail = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes whether any Amazon Web Services CloudTrail management event logs are enabled as data sources.</p>
     pub fn set_cloud_trail(
         mut self,
-        input: std::option::Option<crate::types::DataSourceFreeTrial>,
+        input: ::std::option::Option<crate::types::DataSourceFreeTrial>,
     ) -> Self {
         self.cloud_trail = input;
         self
     }
     /// <p>Describes whether any DNS logs are enabled as data sources.</p>
     pub fn dns_logs(mut self, input: crate::types::DataSourceFreeTrial) -> Self {
-        self.dns_logs = Some(input);
+        self.dns_logs = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes whether any DNS logs are enabled as data sources.</p>
     pub fn set_dns_logs(
         mut self,
-        input: std::option::Option<crate::types::DataSourceFreeTrial>,
+        input: ::std::option::Option<crate::types::DataSourceFreeTrial>,
     ) -> Self {
         self.dns_logs = input;
         self
     }
     /// <p>Describes whether any VPC Flow logs are enabled as data sources.</p>
     pub fn flow_logs(mut self, input: crate::types::DataSourceFreeTrial) -> Self {
-        self.flow_logs = Some(input);
+        self.flow_logs = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes whether any VPC Flow logs are enabled as data sources.</p>
     pub fn set_flow_logs(
         mut self,
-        input: std::option::Option<crate::types::DataSourceFreeTrial>,
+        input: ::std::option::Option<crate::types::DataSourceFreeTrial>,
     ) -> Self {
         self.flow_logs = input;
         self
     }
     /// <p>Describes whether any S3 data event logs are enabled as data sources.</p>
     pub fn s3_logs(mut self, input: crate::types::DataSourceFreeTrial) -> Self {
-        self.s3_logs = Some(input);
+        self.s3_logs = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes whether any S3 data event logs are enabled as data sources.</p>
     pub fn set_s3_logs(
         mut self,
-        input: std::option::Option<crate::types::DataSourceFreeTrial>,
+        input: ::std::option::Option<crate::types::DataSourceFreeTrial>,
     ) -> Self {
         self.s3_logs = input;
         self
     }
     /// <p>Describes whether any Kubernetes logs are enabled as data sources.</p>
     pub fn kubernetes(mut self, input: crate::types::KubernetesDataSourceFreeTrial) -> Self {
-        self.kubernetes = Some(input);
+        self.kubernetes = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes whether any Kubernetes logs are enabled as data sources.</p>
     pub fn set_kubernetes(
         mut self,
-        input: std::option::Option<crate::types::KubernetesDataSourceFreeTrial>,
+        input: ::std::option::Option<crate::types::KubernetesDataSourceFreeTrial>,
     ) -> Self {
         self.kubernetes = input;
         self
@@ -141,13 +146,13 @@ impl DataSourcesFreeTrialBuilder {
         mut self,
         input: crate::types::MalwareProtectionDataSourceFreeTrial,
     ) -> Self {
-        self.malware_protection = Some(input);
+        self.malware_protection = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes whether Malware Protection is enabled as a data source.</p>
     pub fn set_malware_protection(
         mut self,
-        input: std::option::Option<crate::types::MalwareProtectionDataSourceFreeTrial>,
+        input: ::std::option::Option<crate::types::MalwareProtectionDataSourceFreeTrial>,
     ) -> Self {
         self.malware_protection = input;
         self

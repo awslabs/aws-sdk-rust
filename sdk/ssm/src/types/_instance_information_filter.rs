@@ -3,22 +3,22 @@
 /// <p>Describes a filter for a specific list of managed nodes. You can filter node information by using tags. You specify tags by using a key-value mapping.</p>
 /// <p>Use this operation instead of the <code>DescribeInstanceInformationRequest$InstanceInformationFilterList</code> method. The <code>InstanceInformationFilterList</code> method is a legacy method and doesn't support tags. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceInformationFilter {
     /// <p>The name of the filter. </p>
     #[doc(hidden)]
-    pub key: std::option::Option<crate::types::InstanceInformationFilterKey>,
+    pub key: ::std::option::Option<crate::types::InstanceInformationFilterKey>,
     /// <p>The filter values.</p>
     #[doc(hidden)]
-    pub value_set: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub value_set: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl InstanceInformationFilter {
     /// <p>The name of the filter. </p>
-    pub fn key(&self) -> std::option::Option<&crate::types::InstanceInformationFilterKey> {
+    pub fn key(&self) -> ::std::option::Option<&crate::types::InstanceInformationFilterKey> {
         self.key.as_ref()
     }
     /// <p>The filter values.</p>
-    pub fn value_set(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn value_set(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.value_set.as_deref()
     }
 }
@@ -31,21 +31,23 @@ impl InstanceInformationFilter {
 
 /// A builder for [`InstanceInformationFilter`](crate::types::InstanceInformationFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InstanceInformationFilterBuilder {
-    pub(crate) key: std::option::Option<crate::types::InstanceInformationFilterKey>,
-    pub(crate) value_set: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) key: ::std::option::Option<crate::types::InstanceInformationFilterKey>,
+    pub(crate) value_set: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl InstanceInformationFilterBuilder {
     /// <p>The name of the filter. </p>
     pub fn key(mut self, input: crate::types::InstanceInformationFilterKey) -> Self {
-        self.key = Some(input);
+        self.key = ::std::option::Option::Some(input);
         self
     }
     /// <p>The name of the filter. </p>
     pub fn set_key(
         mut self,
-        input: std::option::Option<crate::types::InstanceInformationFilterKey>,
+        input: ::std::option::Option<crate::types::InstanceInformationFilterKey>,
     ) -> Self {
         self.key = input;
         self
@@ -55,16 +57,16 @@ impl InstanceInformationFilterBuilder {
     /// To override the contents of this collection use [`set_value_set`](Self::set_value_set).
     ///
     /// <p>The filter values.</p>
-    pub fn value_set(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn value_set(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.value_set.unwrap_or_default();
         v.push(input.into());
-        self.value_set = Some(v);
+        self.value_set = ::std::option::Option::Some(v);
         self
     }
     /// <p>The filter values.</p>
     pub fn set_value_set(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.value_set = input;
         self

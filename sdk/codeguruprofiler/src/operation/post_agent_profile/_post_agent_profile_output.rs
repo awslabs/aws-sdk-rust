@@ -2,11 +2,11 @@
 
 /// <p>The structure representing the postAgentProfileResponse.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PostAgentProfileOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for PostAgentProfileOutput {
+impl ::aws_http::request_id::RequestId for PostAgentProfileOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -21,7 +21,9 @@ impl PostAgentProfileOutput {
 
 /// A builder for [`PostAgentProfileOutput`](crate::operation::post_agent_profile::PostAgentProfileOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PostAgentProfileOutputBuilder {
     _request_id: Option<String>,
 }

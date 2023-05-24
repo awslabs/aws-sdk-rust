@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CloseTunnel`](crate::operation::close_tunnel::builders::CloseTunnelFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`tunnel_id(impl Into<String>)`](crate::operation::close_tunnel::builders::CloseTunnelFluentBuilder::tunnel_id) / [`set_tunnel_id(Option<String>)`](crate::operation::close_tunnel::builders::CloseTunnelFluentBuilder::set_tunnel_id): <p>The ID of the tunnel to close.</p>
+    ///   - [`tunnel_id(impl ::std::convert::Into<String>)`](crate::operation::close_tunnel::builders::CloseTunnelFluentBuilder::tunnel_id) / [`set_tunnel_id(Option<String>)`](crate::operation::close_tunnel::builders::CloseTunnelFluentBuilder::set_tunnel_id): <p>The ID of the tunnel to close.</p>
     ///   - [`delete(bool)`](crate::operation::close_tunnel::builders::CloseTunnelFluentBuilder::delete) / [`set_delete(Option<bool>)`](crate::operation::close_tunnel::builders::CloseTunnelFluentBuilder::set_delete): <p>When set to true, IoT Secure Tunneling deletes the tunnel data immediately.</p>
     /// - On success, responds with [`CloseTunnelOutput`](crate::operation::close_tunnel::CloseTunnelOutput)
     /// - On failure, responds with [`SdkError<CloseTunnelError>`](crate::operation::close_tunnel::CloseTunnelError)

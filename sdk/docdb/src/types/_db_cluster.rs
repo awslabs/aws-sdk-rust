@@ -2,147 +2,148 @@
 
 /// <p>Detailed information about a cluster. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DbCluster {
     /// <p>Provides the list of Amazon EC2 Availability Zones that instances in the cluster can be created in.</p>
     #[doc(hidden)]
-    pub availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies the number of days for which automatic snapshots are retained.</p>
     #[doc(hidden)]
-    pub backup_retention_period: std::option::Option<i32>,
+    pub backup_retention_period: ::std::option::Option<i32>,
     /// <p>Contains a user-supplied cluster identifier. This identifier is the unique key that identifies a cluster.</p>
     #[doc(hidden)]
-    pub db_cluster_identifier: std::option::Option<std::string::String>,
+    pub db_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the name of the cluster parameter group for the cluster.</p>
     #[doc(hidden)]
-    pub db_cluster_parameter_group: std::option::Option<std::string::String>,
+    pub db_cluster_parameter_group: ::std::option::Option<::std::string::String>,
     /// <p>Specifies information on the subnet group that is associated with the cluster, including the name, description, and subnets in the subnet group.</p>
     #[doc(hidden)]
-    pub db_subnet_group: std::option::Option<std::string::String>,
+    pub db_subnet_group: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the current state of this cluster.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<std::string::String>,
+    pub status: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the progress of the operation as a percentage.</p>
     #[doc(hidden)]
-    pub percent_progress: std::option::Option<std::string::String>,
+    pub percent_progress: ::std::option::Option<::std::string::String>,
     /// <p>The earliest time to which a database can be restored with point-in-time restore.</p>
     #[doc(hidden)]
-    pub earliest_restorable_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub earliest_restorable_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Specifies the connection endpoint for the primary instance of the cluster.</p>
     #[doc(hidden)]
-    pub endpoint: std::option::Option<std::string::String>,
+    pub endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The reader endpoint for the cluster. The reader endpoint for a cluster load balances connections across the Amazon DocumentDB replicas that are available in a cluster. As clients request new connections to the reader endpoint, Amazon DocumentDB distributes the connection requests among the Amazon DocumentDB replicas in the cluster. This functionality can help balance your read workload across multiple Amazon DocumentDB replicas in your cluster. </p>
     /// <p>If a failover occurs, and the Amazon DocumentDB replica that you are connected to is promoted to be the primary instance, your connection is dropped. To continue sending your read workload to other Amazon DocumentDB replicas in the cluster, you can then reconnect to the reader endpoint.</p>
     #[doc(hidden)]
-    pub reader_endpoint: std::option::Option<std::string::String>,
+    pub reader_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the cluster has instances in multiple Availability Zones.</p>
     #[doc(hidden)]
     pub multi_az: bool,
     /// <p>Provides the name of the database engine to be used for this cluster.</p>
     #[doc(hidden)]
-    pub engine: std::option::Option<std::string::String>,
+    pub engine: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the database engine version.</p>
     #[doc(hidden)]
-    pub engine_version: std::option::Option<std::string::String>,
+    pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the latest time to which a database can be restored with point-in-time restore.</p>
     #[doc(hidden)]
-    pub latest_restorable_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub latest_restorable_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Specifies the port that the database engine is listening on.</p>
     #[doc(hidden)]
-    pub port: std::option::Option<i32>,
+    pub port: ::std::option::Option<i32>,
     /// <p>Contains the master user name for the cluster.</p>
     #[doc(hidden)]
-    pub master_username: std::option::Option<std::string::String>,
+    pub master_username: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>. </p>
     #[doc(hidden)]
-    pub preferred_backup_window: std::option::Option<std::string::String>,
+    pub preferred_backup_window: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
     #[doc(hidden)]
-    pub preferred_maintenance_window: std::option::Option<std::string::String>,
+    pub preferred_maintenance_window: ::std::option::Option<::std::string::String>,
     /// <p>Contains the identifier of the source cluster if this cluster is a secondary cluster.</p>
     #[doc(hidden)]
-    pub replication_source_identifier: std::option::Option<std::string::String>,
+    pub replication_source_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Contains one or more identifiers of the secondary clusters that are associated with this cluster.</p>
     #[doc(hidden)]
-    pub read_replica_identifiers: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub read_replica_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Provides the list of instances that make up the cluster.</p>
     #[doc(hidden)]
-    pub db_cluster_members: std::option::Option<std::vec::Vec<crate::types::DbClusterMember>>,
+    pub db_cluster_members: ::std::option::Option<::std::vec::Vec<crate::types::DbClusterMember>>,
     /// <p>Provides a list of virtual private cloud (VPC) security groups that the cluster belongs to.</p>
     #[doc(hidden)]
     pub vpc_security_groups:
-        std::option::Option<std::vec::Vec<crate::types::VpcSecurityGroupMembership>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::VpcSecurityGroupMembership>>,
     /// <p>Specifies the ID that Amazon Route 53 assigns when you create a hosted zone.</p>
     #[doc(hidden)]
-    pub hosted_zone_id: std::option::Option<std::string::String>,
+    pub hosted_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the cluster is encrypted.</p>
     #[doc(hidden)]
     pub storage_encrypted: bool,
     /// <p>If <code>StorageEncrypted</code> is <code>true</code>, the KMS key identifier for the encrypted cluster.</p>
     #[doc(hidden)]
-    pub kms_key_id: std::option::Option<std::string::String>,
+    pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region-unique, immutable identifier for the cluster. This identifier is found in CloudTrail log entries whenever the KMS key for the cluster is accessed.</p>
     #[doc(hidden)]
-    pub db_cluster_resource_id: std::option::Option<std::string::String>,
+    pub db_cluster_resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the cluster.</p>
     #[doc(hidden)]
-    pub db_cluster_arn: std::option::Option<std::string::String>,
+    pub db_cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p>Provides a list of the Identity and Access Management (IAM) roles that are associated with the cluster. (IAM) roles that are associated with a cluster grant permission for the cluster to access other Amazon Web Services services on your behalf.</p>
     #[doc(hidden)]
-    pub associated_roles: std::option::Option<std::vec::Vec<crate::types::DbClusterRole>>,
+    pub associated_roles: ::std::option::Option<::std::vec::Vec<crate::types::DbClusterRole>>,
     /// <p>Identifies the clone group to which the DB cluster is associated.</p>
     #[doc(hidden)]
-    pub clone_group_id: std::option::Option<std::string::String>,
+    pub clone_group_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the time when the cluster was created, in Universal Coordinated Time (UTC).</p>
     #[doc(hidden)]
-    pub cluster_create_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub cluster_create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A list of log types that this cluster is configured to export to Amazon CloudWatch Logs.</p>
     #[doc(hidden)]
-    pub enabled_cloudwatch_logs_exports: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub enabled_cloudwatch_logs_exports:
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies whether this cluster can be deleted. If <code>DeletionProtection</code> is enabled, the cluster cannot be deleted unless it is modified and <code>DeletionProtection</code> is disabled. <code>DeletionProtection</code> protects clusters from being accidentally deleted.</p>
     #[doc(hidden)]
     pub deletion_protection: bool,
 }
 impl DbCluster {
     /// <p>Provides the list of Amazon EC2 Availability Zones that instances in the cluster can be created in.</p>
-    pub fn availability_zones(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn availability_zones(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.availability_zones.as_deref()
     }
     /// <p>Specifies the number of days for which automatic snapshots are retained.</p>
-    pub fn backup_retention_period(&self) -> std::option::Option<i32> {
+    pub fn backup_retention_period(&self) -> ::std::option::Option<i32> {
         self.backup_retention_period
     }
     /// <p>Contains a user-supplied cluster identifier. This identifier is the unique key that identifies a cluster.</p>
-    pub fn db_cluster_identifier(&self) -> std::option::Option<&str> {
+    pub fn db_cluster_identifier(&self) -> ::std::option::Option<&str> {
         self.db_cluster_identifier.as_deref()
     }
     /// <p>Specifies the name of the cluster parameter group for the cluster.</p>
-    pub fn db_cluster_parameter_group(&self) -> std::option::Option<&str> {
+    pub fn db_cluster_parameter_group(&self) -> ::std::option::Option<&str> {
         self.db_cluster_parameter_group.as_deref()
     }
     /// <p>Specifies information on the subnet group that is associated with the cluster, including the name, description, and subnets in the subnet group.</p>
-    pub fn db_subnet_group(&self) -> std::option::Option<&str> {
+    pub fn db_subnet_group(&self) -> ::std::option::Option<&str> {
         self.db_subnet_group.as_deref()
     }
     /// <p>Specifies the current state of this cluster.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
     /// <p>Specifies the progress of the operation as a percentage.</p>
-    pub fn percent_progress(&self) -> std::option::Option<&str> {
+    pub fn percent_progress(&self) -> ::std::option::Option<&str> {
         self.percent_progress.as_deref()
     }
     /// <p>The earliest time to which a database can be restored with point-in-time restore.</p>
-    pub fn earliest_restorable_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn earliest_restorable_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.earliest_restorable_time.as_ref()
     }
     /// <p>Specifies the connection endpoint for the primary instance of the cluster.</p>
-    pub fn endpoint(&self) -> std::option::Option<&str> {
+    pub fn endpoint(&self) -> ::std::option::Option<&str> {
         self.endpoint.as_deref()
     }
     /// <p>The reader endpoint for the cluster. The reader endpoint for a cluster load balances connections across the Amazon DocumentDB replicas that are available in a cluster. As clients request new connections to the reader endpoint, Amazon DocumentDB distributes the connection requests among the Amazon DocumentDB replicas in the cluster. This functionality can help balance your read workload across multiple Amazon DocumentDB replicas in your cluster. </p>
     /// <p>If a failover occurs, and the Amazon DocumentDB replica that you are connected to is promoted to be the primary instance, your connection is dropped. To continue sending your read workload to other Amazon DocumentDB replicas in the cluster, you can then reconnect to the reader endpoint.</p>
-    pub fn reader_endpoint(&self) -> std::option::Option<&str> {
+    pub fn reader_endpoint(&self) -> ::std::option::Option<&str> {
         self.reader_endpoint.as_deref()
     }
     /// <p>Specifies whether the cluster has instances in multiple Availability Zones.</p>
@@ -150,53 +151,53 @@ impl DbCluster {
         self.multi_az
     }
     /// <p>Provides the name of the database engine to be used for this cluster.</p>
-    pub fn engine(&self) -> std::option::Option<&str> {
+    pub fn engine(&self) -> ::std::option::Option<&str> {
         self.engine.as_deref()
     }
     /// <p>Indicates the database engine version.</p>
-    pub fn engine_version(&self) -> std::option::Option<&str> {
+    pub fn engine_version(&self) -> ::std::option::Option<&str> {
         self.engine_version.as_deref()
     }
     /// <p>Specifies the latest time to which a database can be restored with point-in-time restore.</p>
-    pub fn latest_restorable_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn latest_restorable_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.latest_restorable_time.as_ref()
     }
     /// <p>Specifies the port that the database engine is listening on.</p>
-    pub fn port(&self) -> std::option::Option<i32> {
+    pub fn port(&self) -> ::std::option::Option<i32> {
         self.port
     }
     /// <p>Contains the master user name for the cluster.</p>
-    pub fn master_username(&self) -> std::option::Option<&str> {
+    pub fn master_username(&self) -> ::std::option::Option<&str> {
         self.master_username.as_deref()
     }
     /// <p>Specifies the daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>. </p>
-    pub fn preferred_backup_window(&self) -> std::option::Option<&str> {
+    pub fn preferred_backup_window(&self) -> ::std::option::Option<&str> {
         self.preferred_backup_window.as_deref()
     }
     /// <p>Specifies the weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
-    pub fn preferred_maintenance_window(&self) -> std::option::Option<&str> {
+    pub fn preferred_maintenance_window(&self) -> ::std::option::Option<&str> {
         self.preferred_maintenance_window.as_deref()
     }
     /// <p>Contains the identifier of the source cluster if this cluster is a secondary cluster.</p>
-    pub fn replication_source_identifier(&self) -> std::option::Option<&str> {
+    pub fn replication_source_identifier(&self) -> ::std::option::Option<&str> {
         self.replication_source_identifier.as_deref()
     }
     /// <p>Contains one or more identifiers of the secondary clusters that are associated with this cluster.</p>
-    pub fn read_replica_identifiers(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn read_replica_identifiers(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.read_replica_identifiers.as_deref()
     }
     /// <p>Provides the list of instances that make up the cluster.</p>
-    pub fn db_cluster_members(&self) -> std::option::Option<&[crate::types::DbClusterMember]> {
+    pub fn db_cluster_members(&self) -> ::std::option::Option<&[crate::types::DbClusterMember]> {
         self.db_cluster_members.as_deref()
     }
     /// <p>Provides a list of virtual private cloud (VPC) security groups that the cluster belongs to.</p>
     pub fn vpc_security_groups(
         &self,
-    ) -> std::option::Option<&[crate::types::VpcSecurityGroupMembership]> {
+    ) -> ::std::option::Option<&[crate::types::VpcSecurityGroupMembership]> {
         self.vpc_security_groups.as_deref()
     }
     /// <p>Specifies the ID that Amazon Route 53 assigns when you create a hosted zone.</p>
-    pub fn hosted_zone_id(&self) -> std::option::Option<&str> {
+    pub fn hosted_zone_id(&self) -> ::std::option::Option<&str> {
         self.hosted_zone_id.as_deref()
     }
     /// <p>Specifies whether the cluster is encrypted.</p>
@@ -204,31 +205,33 @@ impl DbCluster {
         self.storage_encrypted
     }
     /// <p>If <code>StorageEncrypted</code> is <code>true</code>, the KMS key identifier for the encrypted cluster.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The Amazon Web Services Region-unique, immutable identifier for the cluster. This identifier is found in CloudTrail log entries whenever the KMS key for the cluster is accessed.</p>
-    pub fn db_cluster_resource_id(&self) -> std::option::Option<&str> {
+    pub fn db_cluster_resource_id(&self) -> ::std::option::Option<&str> {
         self.db_cluster_resource_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the cluster.</p>
-    pub fn db_cluster_arn(&self) -> std::option::Option<&str> {
+    pub fn db_cluster_arn(&self) -> ::std::option::Option<&str> {
         self.db_cluster_arn.as_deref()
     }
     /// <p>Provides a list of the Identity and Access Management (IAM) roles that are associated with the cluster. (IAM) roles that are associated with a cluster grant permission for the cluster to access other Amazon Web Services services on your behalf.</p>
-    pub fn associated_roles(&self) -> std::option::Option<&[crate::types::DbClusterRole]> {
+    pub fn associated_roles(&self) -> ::std::option::Option<&[crate::types::DbClusterRole]> {
         self.associated_roles.as_deref()
     }
     /// <p>Identifies the clone group to which the DB cluster is associated.</p>
-    pub fn clone_group_id(&self) -> std::option::Option<&str> {
+    pub fn clone_group_id(&self) -> ::std::option::Option<&str> {
         self.clone_group_id.as_deref()
     }
     /// <p>Specifies the time when the cluster was created, in Universal Coordinated Time (UTC).</p>
-    pub fn cluster_create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn cluster_create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.cluster_create_time.as_ref()
     }
     /// <p>A list of log types that this cluster is configured to export to Amazon CloudWatch Logs.</p>
-    pub fn enabled_cloudwatch_logs_exports(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn enabled_cloudwatch_logs_exports(
+        &self,
+    ) -> ::std::option::Option<&[::std::string::String]> {
         self.enabled_cloudwatch_logs_exports.as_deref()
     }
     /// <p>Specifies whether this cluster can be deleted. If <code>DeletionProtection</code> is enabled, the cluster cannot be deleted unless it is modified and <code>DeletionProtection</code> is disabled. <code>DeletionProtection</code> protects clusters from being accidentally deleted.</p>
@@ -245,43 +248,47 @@ impl DbCluster {
 
 /// A builder for [`DbCluster`](crate::types::DbCluster).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DbClusterBuilder {
-    pub(crate) availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) backup_retention_period: std::option::Option<i32>,
-    pub(crate) db_cluster_identifier: std::option::Option<std::string::String>,
-    pub(crate) db_cluster_parameter_group: std::option::Option<std::string::String>,
-    pub(crate) db_subnet_group: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<std::string::String>,
-    pub(crate) percent_progress: std::option::Option<std::string::String>,
-    pub(crate) earliest_restorable_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) endpoint: std::option::Option<std::string::String>,
-    pub(crate) reader_endpoint: std::option::Option<std::string::String>,
-    pub(crate) multi_az: std::option::Option<bool>,
-    pub(crate) engine: std::option::Option<std::string::String>,
-    pub(crate) engine_version: std::option::Option<std::string::String>,
-    pub(crate) latest_restorable_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) port: std::option::Option<i32>,
-    pub(crate) master_username: std::option::Option<std::string::String>,
-    pub(crate) preferred_backup_window: std::option::Option<std::string::String>,
-    pub(crate) preferred_maintenance_window: std::option::Option<std::string::String>,
-    pub(crate) replication_source_identifier: std::option::Option<std::string::String>,
-    pub(crate) read_replica_identifiers: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) backup_retention_period: ::std::option::Option<i32>,
+    pub(crate) db_cluster_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) db_cluster_parameter_group: ::std::option::Option<::std::string::String>,
+    pub(crate) db_subnet_group: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<::std::string::String>,
+    pub(crate) percent_progress: ::std::option::Option<::std::string::String>,
+    pub(crate) earliest_restorable_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) endpoint: ::std::option::Option<::std::string::String>,
+    pub(crate) reader_endpoint: ::std::option::Option<::std::string::String>,
+    pub(crate) multi_az: ::std::option::Option<bool>,
+    pub(crate) engine: ::std::option::Option<::std::string::String>,
+    pub(crate) engine_version: ::std::option::Option<::std::string::String>,
+    pub(crate) latest_restorable_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) port: ::std::option::Option<i32>,
+    pub(crate) master_username: ::std::option::Option<::std::string::String>,
+    pub(crate) preferred_backup_window: ::std::option::Option<::std::string::String>,
+    pub(crate) preferred_maintenance_window: ::std::option::Option<::std::string::String>,
+    pub(crate) replication_source_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) read_replica_identifiers:
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) db_cluster_members:
-        std::option::Option<std::vec::Vec<crate::types::DbClusterMember>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::DbClusterMember>>,
     pub(crate) vpc_security_groups:
-        std::option::Option<std::vec::Vec<crate::types::VpcSecurityGroupMembership>>,
-    pub(crate) hosted_zone_id: std::option::Option<std::string::String>,
-    pub(crate) storage_encrypted: std::option::Option<bool>,
-    pub(crate) kms_key_id: std::option::Option<std::string::String>,
-    pub(crate) db_cluster_resource_id: std::option::Option<std::string::String>,
-    pub(crate) db_cluster_arn: std::option::Option<std::string::String>,
-    pub(crate) associated_roles: std::option::Option<std::vec::Vec<crate::types::DbClusterRole>>,
-    pub(crate) clone_group_id: std::option::Option<std::string::String>,
-    pub(crate) cluster_create_time: std::option::Option<aws_smithy_types::DateTime>,
+        ::std::option::Option<::std::vec::Vec<crate::types::VpcSecurityGroupMembership>>,
+    pub(crate) hosted_zone_id: ::std::option::Option<::std::string::String>,
+    pub(crate) storage_encrypted: ::std::option::Option<bool>,
+    pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
+    pub(crate) db_cluster_resource_id: ::std::option::Option<::std::string::String>,
+    pub(crate) db_cluster_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) associated_roles:
+        ::std::option::Option<::std::vec::Vec<crate::types::DbClusterRole>>,
+    pub(crate) clone_group_id: ::std::option::Option<::std::string::String>,
+    pub(crate) cluster_create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) enabled_cloudwatch_logs_exports:
-        std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) deletion_protection: std::option::Option<bool>,
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) deletion_protection: ::std::option::Option<bool>,
 }
 impl DbClusterBuilder {
     /// Appends an item to `availability_zones`.
@@ -289,219 +296,267 @@ impl DbClusterBuilder {
     /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
     ///
     /// <p>Provides the list of Amazon EC2 Availability Zones that instances in the cluster can be created in.</p>
-    pub fn availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn availability_zones(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.availability_zones.unwrap_or_default();
         v.push(input.into());
-        self.availability_zones = Some(v);
+        self.availability_zones = ::std::option::Option::Some(v);
         self
     }
     /// <p>Provides the list of Amazon EC2 Availability Zones that instances in the cluster can be created in.</p>
     pub fn set_availability_zones(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.availability_zones = input;
         self
     }
     /// <p>Specifies the number of days for which automatic snapshots are retained.</p>
     pub fn backup_retention_period(mut self, input: i32) -> Self {
-        self.backup_retention_period = Some(input);
+        self.backup_retention_period = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the number of days for which automatic snapshots are retained.</p>
-    pub fn set_backup_retention_period(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_backup_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.backup_retention_period = input;
         self
     }
     /// <p>Contains a user-supplied cluster identifier. This identifier is the unique key that identifies a cluster.</p>
-    pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
-        self.db_cluster_identifier = Some(input.into());
+    pub fn db_cluster_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.db_cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Contains a user-supplied cluster identifier. This identifier is the unique key that identifies a cluster.</p>
     pub fn set_db_cluster_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.db_cluster_identifier = input;
         self
     }
     /// <p>Specifies the name of the cluster parameter group for the cluster.</p>
-    pub fn db_cluster_parameter_group(mut self, input: impl Into<std::string::String>) -> Self {
-        self.db_cluster_parameter_group = Some(input.into());
+    pub fn db_cluster_parameter_group(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.db_cluster_parameter_group = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the name of the cluster parameter group for the cluster.</p>
     pub fn set_db_cluster_parameter_group(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.db_cluster_parameter_group = input;
         self
     }
     /// <p>Specifies information on the subnet group that is associated with the cluster, including the name, description, and subnets in the subnet group.</p>
-    pub fn db_subnet_group(mut self, input: impl Into<std::string::String>) -> Self {
-        self.db_subnet_group = Some(input.into());
+    pub fn db_subnet_group(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.db_subnet_group = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies information on the subnet group that is associated with the cluster, including the name, description, and subnets in the subnet group.</p>
-    pub fn set_db_subnet_group(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_db_subnet_group(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.db_subnet_group = input;
         self
     }
     /// <p>Specifies the current state of this cluster.</p>
-    pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status = Some(input.into());
+    pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the current state of this cluster.</p>
-    pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }
     /// <p>Specifies the progress of the operation as a percentage.</p>
-    pub fn percent_progress(mut self, input: impl Into<std::string::String>) -> Self {
-        self.percent_progress = Some(input.into());
+    pub fn percent_progress(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.percent_progress = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the progress of the operation as a percentage.</p>
-    pub fn set_percent_progress(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_percent_progress(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.percent_progress = input;
         self
     }
     /// <p>The earliest time to which a database can be restored with point-in-time restore.</p>
-    pub fn earliest_restorable_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.earliest_restorable_time = Some(input);
+    pub fn earliest_restorable_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.earliest_restorable_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The earliest time to which a database can be restored with point-in-time restore.</p>
     pub fn set_earliest_restorable_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.earliest_restorable_time = input;
         self
     }
     /// <p>Specifies the connection endpoint for the primary instance of the cluster.</p>
-    pub fn endpoint(mut self, input: impl Into<std::string::String>) -> Self {
-        self.endpoint = Some(input.into());
+    pub fn endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.endpoint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the connection endpoint for the primary instance of the cluster.</p>
-    pub fn set_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint = input;
         self
     }
     /// <p>The reader endpoint for the cluster. The reader endpoint for a cluster load balances connections across the Amazon DocumentDB replicas that are available in a cluster. As clients request new connections to the reader endpoint, Amazon DocumentDB distributes the connection requests among the Amazon DocumentDB replicas in the cluster. This functionality can help balance your read workload across multiple Amazon DocumentDB replicas in your cluster. </p>
     /// <p>If a failover occurs, and the Amazon DocumentDB replica that you are connected to is promoted to be the primary instance, your connection is dropped. To continue sending your read workload to other Amazon DocumentDB replicas in the cluster, you can then reconnect to the reader endpoint.</p>
-    pub fn reader_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
-        self.reader_endpoint = Some(input.into());
+    pub fn reader_endpoint(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.reader_endpoint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reader endpoint for the cluster. The reader endpoint for a cluster load balances connections across the Amazon DocumentDB replicas that are available in a cluster. As clients request new connections to the reader endpoint, Amazon DocumentDB distributes the connection requests among the Amazon DocumentDB replicas in the cluster. This functionality can help balance your read workload across multiple Amazon DocumentDB replicas in your cluster. </p>
     /// <p>If a failover occurs, and the Amazon DocumentDB replica that you are connected to is promoted to be the primary instance, your connection is dropped. To continue sending your read workload to other Amazon DocumentDB replicas in the cluster, you can then reconnect to the reader endpoint.</p>
-    pub fn set_reader_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_reader_endpoint(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.reader_endpoint = input;
         self
     }
     /// <p>Specifies whether the cluster has instances in multiple Availability Zones.</p>
     pub fn multi_az(mut self, input: bool) -> Self {
-        self.multi_az = Some(input);
+        self.multi_az = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether the cluster has instances in multiple Availability Zones.</p>
-    pub fn set_multi_az(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_multi_az(mut self, input: ::std::option::Option<bool>) -> Self {
         self.multi_az = input;
         self
     }
     /// <p>Provides the name of the database engine to be used for this cluster.</p>
-    pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
-        self.engine = Some(input.into());
+    pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.engine = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Provides the name of the database engine to be used for this cluster.</p>
-    pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine = input;
         self
     }
     /// <p>Indicates the database engine version.</p>
-    pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.engine_version = Some(input.into());
+    pub fn engine_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.engine_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates the database engine version.</p>
-    pub fn set_engine_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_engine_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.engine_version = input;
         self
     }
     /// <p>Specifies the latest time to which a database can be restored with point-in-time restore.</p>
-    pub fn latest_restorable_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.latest_restorable_time = Some(input);
+    pub fn latest_restorable_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.latest_restorable_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the latest time to which a database can be restored with point-in-time restore.</p>
     pub fn set_latest_restorable_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.latest_restorable_time = input;
         self
     }
     /// <p>Specifies the port that the database engine is listening on.</p>
     pub fn port(mut self, input: i32) -> Self {
-        self.port = Some(input);
+        self.port = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the port that the database engine is listening on.</p>
-    pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.port = input;
         self
     }
     /// <p>Contains the master user name for the cluster.</p>
-    pub fn master_username(mut self, input: impl Into<std::string::String>) -> Self {
-        self.master_username = Some(input.into());
+    pub fn master_username(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.master_username = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Contains the master user name for the cluster.</p>
-    pub fn set_master_username(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_master_username(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.master_username = input;
         self
     }
     /// <p>Specifies the daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>. </p>
-    pub fn preferred_backup_window(mut self, input: impl Into<std::string::String>) -> Self {
-        self.preferred_backup_window = Some(input.into());
+    pub fn preferred_backup_window(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.preferred_backup_window = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>. </p>
     pub fn set_preferred_backup_window(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.preferred_backup_window = input;
         self
     }
     /// <p>Specifies the weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
-    pub fn preferred_maintenance_window(mut self, input: impl Into<std::string::String>) -> Self {
-        self.preferred_maintenance_window = Some(input.into());
+    pub fn preferred_maintenance_window(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.preferred_maintenance_window = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
     pub fn set_preferred_maintenance_window(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.preferred_maintenance_window = input;
         self
     }
     /// <p>Contains the identifier of the source cluster if this cluster is a secondary cluster.</p>
-    pub fn replication_source_identifier(mut self, input: impl Into<std::string::String>) -> Self {
-        self.replication_source_identifier = Some(input.into());
+    pub fn replication_source_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.replication_source_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Contains the identifier of the source cluster if this cluster is a secondary cluster.</p>
     pub fn set_replication_source_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.replication_source_identifier = input;
         self
@@ -511,16 +566,19 @@ impl DbClusterBuilder {
     /// To override the contents of this collection use [`set_read_replica_identifiers`](Self::set_read_replica_identifiers).
     ///
     /// <p>Contains one or more identifiers of the secondary clusters that are associated with this cluster.</p>
-    pub fn read_replica_identifiers(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn read_replica_identifiers(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.read_replica_identifiers.unwrap_or_default();
         v.push(input.into());
-        self.read_replica_identifiers = Some(v);
+        self.read_replica_identifiers = ::std::option::Option::Some(v);
         self
     }
     /// <p>Contains one or more identifiers of the secondary clusters that are associated with this cluster.</p>
     pub fn set_read_replica_identifiers(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.read_replica_identifiers = input;
         self
@@ -533,13 +591,13 @@ impl DbClusterBuilder {
     pub fn db_cluster_members(mut self, input: crate::types::DbClusterMember) -> Self {
         let mut v = self.db_cluster_members.unwrap_or_default();
         v.push(input);
-        self.db_cluster_members = Some(v);
+        self.db_cluster_members = ::std::option::Option::Some(v);
         self
     }
     /// <p>Provides the list of instances that make up the cluster.</p>
     pub fn set_db_cluster_members(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DbClusterMember>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DbClusterMember>>,
     ) -> Self {
         self.db_cluster_members = input;
         self
@@ -552,67 +610,82 @@ impl DbClusterBuilder {
     pub fn vpc_security_groups(mut self, input: crate::types::VpcSecurityGroupMembership) -> Self {
         let mut v = self.vpc_security_groups.unwrap_or_default();
         v.push(input);
-        self.vpc_security_groups = Some(v);
+        self.vpc_security_groups = ::std::option::Option::Some(v);
         self
     }
     /// <p>Provides a list of virtual private cloud (VPC) security groups that the cluster belongs to.</p>
     pub fn set_vpc_security_groups(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::VpcSecurityGroupMembership>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::VpcSecurityGroupMembership>>,
     ) -> Self {
         self.vpc_security_groups = input;
         self
     }
     /// <p>Specifies the ID that Amazon Route 53 assigns when you create a hosted zone.</p>
-    pub fn hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.hosted_zone_id = Some(input.into());
+    pub fn hosted_zone_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.hosted_zone_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the ID that Amazon Route 53 assigns when you create a hosted zone.</p>
-    pub fn set_hosted_zone_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_hosted_zone_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.hosted_zone_id = input;
         self
     }
     /// <p>Specifies whether the cluster is encrypted.</p>
     pub fn storage_encrypted(mut self, input: bool) -> Self {
-        self.storage_encrypted = Some(input);
+        self.storage_encrypted = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether the cluster is encrypted.</p>
-    pub fn set_storage_encrypted(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_storage_encrypted(mut self, input: ::std::option::Option<bool>) -> Self {
         self.storage_encrypted = input;
         self
     }
     /// <p>If <code>StorageEncrypted</code> is <code>true</code>, the KMS key identifier for the encrypted cluster.</p>
-    pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.kms_key_id = Some(input.into());
+    pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If <code>StorageEncrypted</code> is <code>true</code>, the KMS key identifier for the encrypted cluster.</p>
-    pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
     }
     /// <p>The Amazon Web Services Region-unique, immutable identifier for the cluster. This identifier is found in CloudTrail log entries whenever the KMS key for the cluster is accessed.</p>
-    pub fn db_cluster_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.db_cluster_resource_id = Some(input.into());
+    pub fn db_cluster_resource_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.db_cluster_resource_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services Region-unique, immutable identifier for the cluster. This identifier is found in CloudTrail log entries whenever the KMS key for the cluster is accessed.</p>
     pub fn set_db_cluster_resource_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.db_cluster_resource_id = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the cluster.</p>
-    pub fn db_cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.db_cluster_arn = Some(input.into());
+    pub fn db_cluster_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.db_cluster_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the cluster.</p>
-    pub fn set_db_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_db_cluster_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.db_cluster_arn = input;
         self
     }
@@ -624,36 +697,42 @@ impl DbClusterBuilder {
     pub fn associated_roles(mut self, input: crate::types::DbClusterRole) -> Self {
         let mut v = self.associated_roles.unwrap_or_default();
         v.push(input);
-        self.associated_roles = Some(v);
+        self.associated_roles = ::std::option::Option::Some(v);
         self
     }
     /// <p>Provides a list of the Identity and Access Management (IAM) roles that are associated with the cluster. (IAM) roles that are associated with a cluster grant permission for the cluster to access other Amazon Web Services services on your behalf.</p>
     pub fn set_associated_roles(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DbClusterRole>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DbClusterRole>>,
     ) -> Self {
         self.associated_roles = input;
         self
     }
     /// <p>Identifies the clone group to which the DB cluster is associated.</p>
-    pub fn clone_group_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.clone_group_id = Some(input.into());
+    pub fn clone_group_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.clone_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Identifies the clone group to which the DB cluster is associated.</p>
-    pub fn set_clone_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_clone_group_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.clone_group_id = input;
         self
     }
     /// <p>Specifies the time when the cluster was created, in Universal Coordinated Time (UTC).</p>
-    pub fn cluster_create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.cluster_create_time = Some(input);
+    pub fn cluster_create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.cluster_create_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the time when the cluster was created, in Universal Coordinated Time (UTC).</p>
     pub fn set_cluster_create_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.cluster_create_time = input;
         self
@@ -665,28 +744,28 @@ impl DbClusterBuilder {
     /// <p>A list of log types that this cluster is configured to export to Amazon CloudWatch Logs.</p>
     pub fn enabled_cloudwatch_logs_exports(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut v = self.enabled_cloudwatch_logs_exports.unwrap_or_default();
         v.push(input.into());
-        self.enabled_cloudwatch_logs_exports = Some(v);
+        self.enabled_cloudwatch_logs_exports = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of log types that this cluster is configured to export to Amazon CloudWatch Logs.</p>
     pub fn set_enabled_cloudwatch_logs_exports(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.enabled_cloudwatch_logs_exports = input;
         self
     }
     /// <p>Specifies whether this cluster can be deleted. If <code>DeletionProtection</code> is enabled, the cluster cannot be deleted unless it is modified and <code>DeletionProtection</code> is disabled. <code>DeletionProtection</code> protects clusters from being accidentally deleted.</p>
     pub fn deletion_protection(mut self, input: bool) -> Self {
-        self.deletion_protection = Some(input);
+        self.deletion_protection = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether this cluster can be deleted. If <code>DeletionProtection</code> is enabled, the cluster cannot be deleted unless it is modified and <code>DeletionProtection</code> is disabled. <code>DeletionProtection</code> protects clusters from being accidentally deleted.</p>
-    pub fn set_deletion_protection(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_deletion_protection(mut self, input: ::std::option::Option<bool>) -> Self {
         self.deletion_protection = input;
         self
     }

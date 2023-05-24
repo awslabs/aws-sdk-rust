@@ -2,36 +2,36 @@
 
 /// <p>Describes the last Fleet Advisor collector health check.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CollectorHealthCheck {
     /// <p>The status of the Fleet Advisor collector.</p>
     #[doc(hidden)]
-    pub collector_status: std::option::Option<crate::types::CollectorStatus>,
+    pub collector_status: ::std::option::Option<crate::types::CollectorStatus>,
     /// <p>Whether the local collector can access its Amazon S3 bucket.</p>
     #[doc(hidden)]
-    pub local_collector_s3_access: std::option::Option<bool>,
+    pub local_collector_s3_access: ::std::option::Option<bool>,
     /// <p>Whether the web collector can access its Amazon S3 bucket.</p>
     #[doc(hidden)]
-    pub web_collector_s3_access: std::option::Option<bool>,
+    pub web_collector_s3_access: ::std::option::Option<bool>,
     /// <p>Whether the role that you provided when creating the Fleet Advisor collector has sufficient permissions to access the Fleet Advisor web collector.</p>
     #[doc(hidden)]
-    pub web_collector_granted_role_based_access: std::option::Option<bool>,
+    pub web_collector_granted_role_based_access: ::std::option::Option<bool>,
 }
 impl CollectorHealthCheck {
     /// <p>The status of the Fleet Advisor collector.</p>
-    pub fn collector_status(&self) -> std::option::Option<&crate::types::CollectorStatus> {
+    pub fn collector_status(&self) -> ::std::option::Option<&crate::types::CollectorStatus> {
         self.collector_status.as_ref()
     }
     /// <p>Whether the local collector can access its Amazon S3 bucket.</p>
-    pub fn local_collector_s3_access(&self) -> std::option::Option<bool> {
+    pub fn local_collector_s3_access(&self) -> ::std::option::Option<bool> {
         self.local_collector_s3_access
     }
     /// <p>Whether the web collector can access its Amazon S3 bucket.</p>
-    pub fn web_collector_s3_access(&self) -> std::option::Option<bool> {
+    pub fn web_collector_s3_access(&self) -> ::std::option::Option<bool> {
         self.web_collector_s3_access
     }
     /// <p>Whether the role that you provided when creating the Fleet Advisor collector has sufficient permissions to access the Fleet Advisor web collector.</p>
-    pub fn web_collector_granted_role_based_access(&self) -> std::option::Option<bool> {
+    pub fn web_collector_granted_role_based_access(&self) -> ::std::option::Option<bool> {
         self.web_collector_granted_role_based_access
     }
 }
@@ -44,56 +44,58 @@ impl CollectorHealthCheck {
 
 /// A builder for [`CollectorHealthCheck`](crate::types::CollectorHealthCheck).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CollectorHealthCheckBuilder {
-    pub(crate) collector_status: std::option::Option<crate::types::CollectorStatus>,
-    pub(crate) local_collector_s3_access: std::option::Option<bool>,
-    pub(crate) web_collector_s3_access: std::option::Option<bool>,
-    pub(crate) web_collector_granted_role_based_access: std::option::Option<bool>,
+    pub(crate) collector_status: ::std::option::Option<crate::types::CollectorStatus>,
+    pub(crate) local_collector_s3_access: ::std::option::Option<bool>,
+    pub(crate) web_collector_s3_access: ::std::option::Option<bool>,
+    pub(crate) web_collector_granted_role_based_access: ::std::option::Option<bool>,
 }
 impl CollectorHealthCheckBuilder {
     /// <p>The status of the Fleet Advisor collector.</p>
     pub fn collector_status(mut self, input: crate::types::CollectorStatus) -> Self {
-        self.collector_status = Some(input);
+        self.collector_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the Fleet Advisor collector.</p>
     pub fn set_collector_status(
         mut self,
-        input: std::option::Option<crate::types::CollectorStatus>,
+        input: ::std::option::Option<crate::types::CollectorStatus>,
     ) -> Self {
         self.collector_status = input;
         self
     }
     /// <p>Whether the local collector can access its Amazon S3 bucket.</p>
     pub fn local_collector_s3_access(mut self, input: bool) -> Self {
-        self.local_collector_s3_access = Some(input);
+        self.local_collector_s3_access = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether the local collector can access its Amazon S3 bucket.</p>
-    pub fn set_local_collector_s3_access(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_local_collector_s3_access(mut self, input: ::std::option::Option<bool>) -> Self {
         self.local_collector_s3_access = input;
         self
     }
     /// <p>Whether the web collector can access its Amazon S3 bucket.</p>
     pub fn web_collector_s3_access(mut self, input: bool) -> Self {
-        self.web_collector_s3_access = Some(input);
+        self.web_collector_s3_access = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether the web collector can access its Amazon S3 bucket.</p>
-    pub fn set_web_collector_s3_access(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_web_collector_s3_access(mut self, input: ::std::option::Option<bool>) -> Self {
         self.web_collector_s3_access = input;
         self
     }
     /// <p>Whether the role that you provided when creating the Fleet Advisor collector has sufficient permissions to access the Fleet Advisor web collector.</p>
     pub fn web_collector_granted_role_based_access(mut self, input: bool) -> Self {
-        self.web_collector_granted_role_based_access = Some(input);
+        self.web_collector_granted_role_based_access = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether the role that you provided when creating the Fleet Advisor collector has sufficient permissions to access the Fleet Advisor web collector.</p>
     pub fn set_web_collector_granted_role_based_access(
         mut self,
-        input: std::option::Option<bool>,
+        input: ::std::option::Option<bool>,
     ) -> Self {
         self.web_collector_granted_role_based_access = input;
         self

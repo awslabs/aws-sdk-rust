@@ -2,15 +2,15 @@
 
 /// <p>The option that determines the text display weight, or boldness.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FontWeight {
     /// <p>The lexical name for the level of boldness of the text display.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<crate::types::FontWeightName>,
+    pub name: ::std::option::Option<crate::types::FontWeightName>,
 }
 impl FontWeight {
     /// <p>The lexical name for the level of boldness of the text display.</p>
-    pub fn name(&self) -> std::option::Option<&crate::types::FontWeightName> {
+    pub fn name(&self) -> ::std::option::Option<&crate::types::FontWeightName> {
         self.name.as_ref()
     }
 }
@@ -23,18 +23,20 @@ impl FontWeight {
 
 /// A builder for [`FontWeight`](crate::types::FontWeight).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FontWeightBuilder {
-    pub(crate) name: std::option::Option<crate::types::FontWeightName>,
+    pub(crate) name: ::std::option::Option<crate::types::FontWeightName>,
 }
 impl FontWeightBuilder {
     /// <p>The lexical name for the level of boldness of the text display.</p>
     pub fn name(mut self, input: crate::types::FontWeightName) -> Self {
-        self.name = Some(input);
+        self.name = ::std::option::Option::Some(input);
         self
     }
     /// <p>The lexical name for the level of boldness of the text display.</p>
-    pub fn set_name(mut self, input: std::option::Option<crate::types::FontWeightName>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::FontWeightName>) -> Self {
         self.name = input;
         self
     }

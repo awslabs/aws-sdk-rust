@@ -40,13 +40,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum RuleType {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,7 +60,7 @@ pub enum RuleType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for RuleType {
+impl ::std::convert::From<&str> for RuleType {
     fn from(s: &str) -> Self {
         match s {
             "BINARY_LENGTH" => RuleType::BinaryLength,
@@ -71,11 +71,11 @@ impl std::convert::From<&str> for RuleType {
         }
     }
 }
-impl std::str::FromStr for RuleType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for RuleType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RuleType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(RuleType::from(s))
     }
 }
 impl RuleType {
@@ -99,7 +99,7 @@ impl RuleType {
         ]
     }
 }
-impl AsRef<str> for RuleType {
+impl ::std::convert::AsRef<str> for RuleType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

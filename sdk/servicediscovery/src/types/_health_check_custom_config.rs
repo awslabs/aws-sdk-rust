@@ -21,7 +21,7 @@
 /// <li> <p>If another <code>UpdateInstanceCustomHealthStatus</code> request doesn't arrive during that time to change the status back to healthy, Cloud Map stops routing traffic to the resource.</p> </li>
 /// </ol>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HealthCheckCustomConfig {
     /// <important>
     /// <p>This parameter is no longer supported and is always set to 1. Cloud Map waits for approximately 30 seconds after receiving an <code>UpdateInstanceCustomHealthStatus</code> request before changing the status of the service instance.</p>
@@ -32,7 +32,7 @@ pub struct HealthCheckCustomConfig {
         note = "Configurable FailureThreshold of HealthCheckCustomConfig is deprecated.  It will always have value 1."
     )]
     #[doc(hidden)]
-    pub failure_threshold: std::option::Option<i32>,
+    pub failure_threshold: ::std::option::Option<i32>,
 }
 impl HealthCheckCustomConfig {
     /// <important>
@@ -43,7 +43,7 @@ impl HealthCheckCustomConfig {
     #[deprecated(
         note = "Configurable FailureThreshold of HealthCheckCustomConfig is deprecated.  It will always have value 1."
     )]
-    pub fn failure_threshold(&self) -> std::option::Option<i32> {
+    pub fn failure_threshold(&self) -> ::std::option::Option<i32> {
         self.failure_threshold
     }
 }
@@ -56,9 +56,11 @@ impl HealthCheckCustomConfig {
 
 /// A builder for [`HealthCheckCustomConfig`](crate::types::HealthCheckCustomConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct HealthCheckCustomConfigBuilder {
-    pub(crate) failure_threshold: std::option::Option<i32>,
+    pub(crate) failure_threshold: ::std::option::Option<i32>,
 }
 impl HealthCheckCustomConfigBuilder {
     /// <important>
@@ -70,7 +72,7 @@ impl HealthCheckCustomConfigBuilder {
         note = "Configurable FailureThreshold of HealthCheckCustomConfig is deprecated.  It will always have value 1."
     )]
     pub fn failure_threshold(mut self, input: i32) -> Self {
-        self.failure_threshold = Some(input);
+        self.failure_threshold = ::std::option::Option::Some(input);
         self
     }
     /// <important>
@@ -81,7 +83,7 @@ impl HealthCheckCustomConfigBuilder {
     #[deprecated(
         note = "Configurable FailureThreshold of HealthCheckCustomConfig is deprecated.  It will always have value 1."
     )]
-    pub fn set_failure_threshold(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_failure_threshold(mut self, input: ::std::option::Option<i32>) -> Self {
         self.failure_threshold = input;
         self
     }

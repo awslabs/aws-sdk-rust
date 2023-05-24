@@ -6,29 +6,29 @@ pub use crate::operation::create_robot_application_version::_create_robot_applic
 /// Fluent builder constructing a request to `CreateRobotApplicationVersion`.
 ///
 /// <p>Creates a version of a robot application.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateRobotApplicationVersionFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::create_robot_application_version::builders::CreateRobotApplicationVersionInputBuilder,
 }
 impl CreateRobotApplicationVersionFluentBuilder {
     /// Creates a new `CreateRobotApplicationVersion`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_robot_application_version::CreateRobotApplicationVersion,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_robot_application_version::CreateRobotApplicationVersionError,
         >,
     > {
@@ -36,30 +36,33 @@ impl CreateRobotApplicationVersionFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_robot_application_version::CreateRobotApplicationVersionOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_robot_application_version::CreateRobotApplicationVersionError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,33 +75,36 @@ impl CreateRobotApplicationVersionFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_robot_application_version::CreateRobotApplicationVersionOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_robot_application_version::CreateRobotApplicationVersionError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The application information for the robot application.</p>
-    pub fn application(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn application(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application(input.into());
         self
     }
     /// <p>The application information for the robot application.</p>
-    pub fn set_application(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_application(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application(input);
         self
     }
     /// <p>The current revision id for the robot application. If you provide a value and it matches the latest revision ID, a new version will be created.</p>
-    pub fn current_revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn current_revision_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.current_revision_id(input.into());
         self
     }
     /// <p>The current revision id for the robot application. If you provide a value and it matches the latest revision ID, a new version will be created.</p>
     pub fn set_current_revision_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_current_revision_id(input);
         self
@@ -108,25 +114,25 @@ impl CreateRobotApplicationVersionFluentBuilder {
     /// To override the contents of this collection use [`set_s3_etags`](Self::set_s3_etags).
     ///
     /// <p>The Amazon S3 identifier for the zip file bundle that you use for your robot application.</p>
-    pub fn s3_etags(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn s3_etags(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.s3_etags(input.into());
         self
     }
     /// <p>The Amazon S3 identifier for the zip file bundle that you use for your robot application.</p>
     pub fn set_s3_etags(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_s3_etags(input);
         self
     }
     /// <p>A SHA256 identifier for the Docker image that you use for your robot application.</p>
-    pub fn image_digest(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn image_digest(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.image_digest(input.into());
         self
     }
     /// <p>A SHA256 identifier for the Docker image that you use for your robot application.</p>
-    pub fn set_image_digest(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_image_digest(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_image_digest(input);
         self
     }

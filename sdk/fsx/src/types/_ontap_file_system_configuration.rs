@@ -2,14 +2,14 @@
 
 /// <p>Configuration for the FSx for NetApp ONTAP file system.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OntapFileSystemConfiguration {
     /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups. You can retain automatic backups for a maximum of 90 days. The default is <code>0</code>.</p>
     #[doc(hidden)]
-    pub automatic_backup_retention_days: std::option::Option<i32>,
+    pub automatic_backup_retention_days: ::std::option::Option<i32>,
     /// <p>A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. For example, <code>05:00</code> specifies 5 AM daily. </p>
     #[doc(hidden)]
-    pub daily_automatic_backup_start_time: std::option::Option<std::string::String>,
+    pub daily_automatic_backup_start_time: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the FSx for ONTAP file system deployment type in use in the file system. </p>
     /// <ul>
     /// <li> <p> <code>MULTI_AZ_1</code> - (Default) A high availability file system configured for Multi-AZ redundancy to tolerate temporary Availability Zone (AZ) unavailability. </p> </li>
@@ -17,39 +17,39 @@ pub struct OntapFileSystemConfiguration {
     /// </ul>
     /// <p>For information about the use cases for Multi-AZ and Single-AZ deployments, refer to <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-multiAZ.html">Choosing Multi-AZ or Single-AZ file system deployment</a>. </p>
     #[doc(hidden)]
-    pub deployment_type: std::option::Option<crate::types::OntapDeploymentType>,
+    pub deployment_type: ::std::option::Option<crate::types::OntapDeploymentType>,
     /// <p>(Multi-AZ only) Specifies the IP address range in which the endpoints to access your file system will be created. By default in the Amazon FSx API, Amazon FSx selects an unused IP address range for you from the 198.19.* range. By default in the Amazon FSx console, Amazon FSx chooses the last 64 IP addresses from the VPC’s primary CIDR range to use as the endpoint IP address range for the file system. You can have overlapping endpoint IP addresses for file systems deployed in the same VPC/route tables.</p>
     #[doc(hidden)]
-    pub endpoint_ip_address_range: std::option::Option<std::string::String>,
+    pub endpoint_ip_address_range: ::std::option::Option<::std::string::String>,
     /// <p>The <code>Management</code> and <code>Intercluster</code> endpoints that are used to access data or to manage the file system using the NetApp ONTAP CLI, REST API, or NetApp SnapMirror.</p>
     #[doc(hidden)]
-    pub endpoints: std::option::Option<crate::types::FileSystemEndpoints>,
+    pub endpoints: ::std::option::Option<crate::types::FileSystemEndpoints>,
     /// <p>The SSD IOPS configuration for the ONTAP file system, specifying the number of provisioned IOPS and the provision mode.</p>
     #[doc(hidden)]
-    pub disk_iops_configuration: std::option::Option<crate::types::DiskIopsConfiguration>,
+    pub disk_iops_configuration: ::std::option::Option<crate::types::DiskIopsConfiguration>,
     /// <p>The ID for a subnet. A <i>subnet</i> is a range of IP addresses in your virtual private cloud (VPC). For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">VPC and subnets</a> in the <i>Amazon VPC User Guide.</i> </p>
     #[doc(hidden)]
-    pub preferred_subnet_id: std::option::Option<std::string::String>,
+    pub preferred_subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>(Multi-AZ only) The VPC route tables in which your file system's endpoints are created.</p>
     #[doc(hidden)]
-    pub route_table_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub route_table_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The sustained throughput of an Amazon FSx file system in Megabytes per second (MBps).</p>
     #[doc(hidden)]
-    pub throughput_capacity: std::option::Option<i32>,
+    pub throughput_capacity: ::std::option::Option<i32>,
     /// <p>A recurring weekly time, in the format <code>D:HH:MM</code>. </p>
     /// <p> <code>D</code> is the day of the week, for which 1 represents Monday and 7 represents Sunday. For further details, see <a href="https://en.wikipedia.org/wiki/ISO_week_date">the ISO-8601 spec as described on Wikipedia</a>.</p>
     /// <p> <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. </p>
     /// <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
     #[doc(hidden)]
-    pub weekly_maintenance_start_time: std::option::Option<std::string::String>,
+    pub weekly_maintenance_start_time: ::std::option::Option<::std::string::String>,
 }
 impl OntapFileSystemConfiguration {
     /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups. You can retain automatic backups for a maximum of 90 days. The default is <code>0</code>.</p>
-    pub fn automatic_backup_retention_days(&self) -> std::option::Option<i32> {
+    pub fn automatic_backup_retention_days(&self) -> ::std::option::Option<i32> {
         self.automatic_backup_retention_days
     }
     /// <p>A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. For example, <code>05:00</code> specifies 5 AM daily. </p>
-    pub fn daily_automatic_backup_start_time(&self) -> std::option::Option<&str> {
+    pub fn daily_automatic_backup_start_time(&self) -> ::std::option::Option<&str> {
         self.daily_automatic_backup_start_time.as_deref()
     }
     /// <p>Specifies the FSx for ONTAP file system deployment type in use in the file system. </p>
@@ -58,40 +58,40 @@ impl OntapFileSystemConfiguration {
     /// <li> <p> <code>SINGLE_AZ_1</code> - A file system configured for Single-AZ redundancy.</p> </li>
     /// </ul>
     /// <p>For information about the use cases for Multi-AZ and Single-AZ deployments, refer to <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-multiAZ.html">Choosing Multi-AZ or Single-AZ file system deployment</a>. </p>
-    pub fn deployment_type(&self) -> std::option::Option<&crate::types::OntapDeploymentType> {
+    pub fn deployment_type(&self) -> ::std::option::Option<&crate::types::OntapDeploymentType> {
         self.deployment_type.as_ref()
     }
     /// <p>(Multi-AZ only) Specifies the IP address range in which the endpoints to access your file system will be created. By default in the Amazon FSx API, Amazon FSx selects an unused IP address range for you from the 198.19.* range. By default in the Amazon FSx console, Amazon FSx chooses the last 64 IP addresses from the VPC’s primary CIDR range to use as the endpoint IP address range for the file system. You can have overlapping endpoint IP addresses for file systems deployed in the same VPC/route tables.</p>
-    pub fn endpoint_ip_address_range(&self) -> std::option::Option<&str> {
+    pub fn endpoint_ip_address_range(&self) -> ::std::option::Option<&str> {
         self.endpoint_ip_address_range.as_deref()
     }
     /// <p>The <code>Management</code> and <code>Intercluster</code> endpoints that are used to access data or to manage the file system using the NetApp ONTAP CLI, REST API, or NetApp SnapMirror.</p>
-    pub fn endpoints(&self) -> std::option::Option<&crate::types::FileSystemEndpoints> {
+    pub fn endpoints(&self) -> ::std::option::Option<&crate::types::FileSystemEndpoints> {
         self.endpoints.as_ref()
     }
     /// <p>The SSD IOPS configuration for the ONTAP file system, specifying the number of provisioned IOPS and the provision mode.</p>
     pub fn disk_iops_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::DiskIopsConfiguration> {
+    ) -> ::std::option::Option<&crate::types::DiskIopsConfiguration> {
         self.disk_iops_configuration.as_ref()
     }
     /// <p>The ID for a subnet. A <i>subnet</i> is a range of IP addresses in your virtual private cloud (VPC). For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">VPC and subnets</a> in the <i>Amazon VPC User Guide.</i> </p>
-    pub fn preferred_subnet_id(&self) -> std::option::Option<&str> {
+    pub fn preferred_subnet_id(&self) -> ::std::option::Option<&str> {
         self.preferred_subnet_id.as_deref()
     }
     /// <p>(Multi-AZ only) The VPC route tables in which your file system's endpoints are created.</p>
-    pub fn route_table_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn route_table_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.route_table_ids.as_deref()
     }
     /// <p>The sustained throughput of an Amazon FSx file system in Megabytes per second (MBps).</p>
-    pub fn throughput_capacity(&self) -> std::option::Option<i32> {
+    pub fn throughput_capacity(&self) -> ::std::option::Option<i32> {
         self.throughput_capacity
     }
     /// <p>A recurring weekly time, in the format <code>D:HH:MM</code>. </p>
     /// <p> <code>D</code> is the day of the week, for which 1 represents Monday and 7 represents Sunday. For further details, see <a href="https://en.wikipedia.org/wiki/ISO_week_date">the ISO-8601 spec as described on Wikipedia</a>.</p>
     /// <p> <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. </p>
     /// <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
-    pub fn weekly_maintenance_start_time(&self) -> std::option::Option<&str> {
+    pub fn weekly_maintenance_start_time(&self) -> ::std::option::Option<&str> {
         self.weekly_maintenance_start_time.as_deref()
     }
 }
@@ -104,42 +104,47 @@ impl OntapFileSystemConfiguration {
 
 /// A builder for [`OntapFileSystemConfiguration`](crate::types::OntapFileSystemConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OntapFileSystemConfigurationBuilder {
-    pub(crate) automatic_backup_retention_days: std::option::Option<i32>,
-    pub(crate) daily_automatic_backup_start_time: std::option::Option<std::string::String>,
-    pub(crate) deployment_type: std::option::Option<crate::types::OntapDeploymentType>,
-    pub(crate) endpoint_ip_address_range: std::option::Option<std::string::String>,
-    pub(crate) endpoints: std::option::Option<crate::types::FileSystemEndpoints>,
-    pub(crate) disk_iops_configuration: std::option::Option<crate::types::DiskIopsConfiguration>,
-    pub(crate) preferred_subnet_id: std::option::Option<std::string::String>,
-    pub(crate) route_table_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) throughput_capacity: std::option::Option<i32>,
-    pub(crate) weekly_maintenance_start_time: std::option::Option<std::string::String>,
+    pub(crate) automatic_backup_retention_days: ::std::option::Option<i32>,
+    pub(crate) daily_automatic_backup_start_time: ::std::option::Option<::std::string::String>,
+    pub(crate) deployment_type: ::std::option::Option<crate::types::OntapDeploymentType>,
+    pub(crate) endpoint_ip_address_range: ::std::option::Option<::std::string::String>,
+    pub(crate) endpoints: ::std::option::Option<crate::types::FileSystemEndpoints>,
+    pub(crate) disk_iops_configuration: ::std::option::Option<crate::types::DiskIopsConfiguration>,
+    pub(crate) preferred_subnet_id: ::std::option::Option<::std::string::String>,
+    pub(crate) route_table_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) throughput_capacity: ::std::option::Option<i32>,
+    pub(crate) weekly_maintenance_start_time: ::std::option::Option<::std::string::String>,
 }
 impl OntapFileSystemConfigurationBuilder {
     /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups. You can retain automatic backups for a maximum of 90 days. The default is <code>0</code>.</p>
     pub fn automatic_backup_retention_days(mut self, input: i32) -> Self {
-        self.automatic_backup_retention_days = Some(input);
+        self.automatic_backup_retention_days = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups. You can retain automatic backups for a maximum of 90 days. The default is <code>0</code>.</p>
-    pub fn set_automatic_backup_retention_days(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_automatic_backup_retention_days(
+        mut self,
+        input: ::std::option::Option<i32>,
+    ) -> Self {
         self.automatic_backup_retention_days = input;
         self
     }
     /// <p>A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. For example, <code>05:00</code> specifies 5 AM daily. </p>
     pub fn daily_automatic_backup_start_time(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.daily_automatic_backup_start_time = Some(input.into());
+        self.daily_automatic_backup_start_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. For example, <code>05:00</code> specifies 5 AM daily. </p>
     pub fn set_daily_automatic_backup_start_time(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.daily_automatic_backup_start_time = input;
         self
@@ -151,7 +156,7 @@ impl OntapFileSystemConfigurationBuilder {
     /// </ul>
     /// <p>For information about the use cases for Multi-AZ and Single-AZ deployments, refer to <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-multiAZ.html">Choosing Multi-AZ or Single-AZ file system deployment</a>. </p>
     pub fn deployment_type(mut self, input: crate::types::OntapDeploymentType) -> Self {
-        self.deployment_type = Some(input);
+        self.deployment_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the FSx for ONTAP file system deployment type in use in the file system. </p>
@@ -162,59 +167,65 @@ impl OntapFileSystemConfigurationBuilder {
     /// <p>For information about the use cases for Multi-AZ and Single-AZ deployments, refer to <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-multiAZ.html">Choosing Multi-AZ or Single-AZ file system deployment</a>. </p>
     pub fn set_deployment_type(
         mut self,
-        input: std::option::Option<crate::types::OntapDeploymentType>,
+        input: ::std::option::Option<crate::types::OntapDeploymentType>,
     ) -> Self {
         self.deployment_type = input;
         self
     }
     /// <p>(Multi-AZ only) Specifies the IP address range in which the endpoints to access your file system will be created. By default in the Amazon FSx API, Amazon FSx selects an unused IP address range for you from the 198.19.* range. By default in the Amazon FSx console, Amazon FSx chooses the last 64 IP addresses from the VPC’s primary CIDR range to use as the endpoint IP address range for the file system. You can have overlapping endpoint IP addresses for file systems deployed in the same VPC/route tables.</p>
-    pub fn endpoint_ip_address_range(mut self, input: impl Into<std::string::String>) -> Self {
-        self.endpoint_ip_address_range = Some(input.into());
+    pub fn endpoint_ip_address_range(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.endpoint_ip_address_range = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>(Multi-AZ only) Specifies the IP address range in which the endpoints to access your file system will be created. By default in the Amazon FSx API, Amazon FSx selects an unused IP address range for you from the 198.19.* range. By default in the Amazon FSx console, Amazon FSx chooses the last 64 IP addresses from the VPC’s primary CIDR range to use as the endpoint IP address range for the file system. You can have overlapping endpoint IP addresses for file systems deployed in the same VPC/route tables.</p>
     pub fn set_endpoint_ip_address_range(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.endpoint_ip_address_range = input;
         self
     }
     /// <p>The <code>Management</code> and <code>Intercluster</code> endpoints that are used to access data or to manage the file system using the NetApp ONTAP CLI, REST API, or NetApp SnapMirror.</p>
     pub fn endpoints(mut self, input: crate::types::FileSystemEndpoints) -> Self {
-        self.endpoints = Some(input);
+        self.endpoints = ::std::option::Option::Some(input);
         self
     }
     /// <p>The <code>Management</code> and <code>Intercluster</code> endpoints that are used to access data or to manage the file system using the NetApp ONTAP CLI, REST API, or NetApp SnapMirror.</p>
     pub fn set_endpoints(
         mut self,
-        input: std::option::Option<crate::types::FileSystemEndpoints>,
+        input: ::std::option::Option<crate::types::FileSystemEndpoints>,
     ) -> Self {
         self.endpoints = input;
         self
     }
     /// <p>The SSD IOPS configuration for the ONTAP file system, specifying the number of provisioned IOPS and the provision mode.</p>
     pub fn disk_iops_configuration(mut self, input: crate::types::DiskIopsConfiguration) -> Self {
-        self.disk_iops_configuration = Some(input);
+        self.disk_iops_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The SSD IOPS configuration for the ONTAP file system, specifying the number of provisioned IOPS and the provision mode.</p>
     pub fn set_disk_iops_configuration(
         mut self,
-        input: std::option::Option<crate::types::DiskIopsConfiguration>,
+        input: ::std::option::Option<crate::types::DiskIopsConfiguration>,
     ) -> Self {
         self.disk_iops_configuration = input;
         self
     }
     /// <p>The ID for a subnet. A <i>subnet</i> is a range of IP addresses in your virtual private cloud (VPC). For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">VPC and subnets</a> in the <i>Amazon VPC User Guide.</i> </p>
-    pub fn preferred_subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.preferred_subnet_id = Some(input.into());
+    pub fn preferred_subnet_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.preferred_subnet_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID for a subnet. A <i>subnet</i> is a range of IP addresses in your virtual private cloud (VPC). For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">VPC and subnets</a> in the <i>Amazon VPC User Guide.</i> </p>
     pub fn set_preferred_subnet_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.preferred_subnet_id = input;
         self
@@ -224,27 +235,30 @@ impl OntapFileSystemConfigurationBuilder {
     /// To override the contents of this collection use [`set_route_table_ids`](Self::set_route_table_ids).
     ///
     /// <p>(Multi-AZ only) The VPC route tables in which your file system's endpoints are created.</p>
-    pub fn route_table_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn route_table_ids(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.route_table_ids.unwrap_or_default();
         v.push(input.into());
-        self.route_table_ids = Some(v);
+        self.route_table_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>(Multi-AZ only) The VPC route tables in which your file system's endpoints are created.</p>
     pub fn set_route_table_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.route_table_ids = input;
         self
     }
     /// <p>The sustained throughput of an Amazon FSx file system in Megabytes per second (MBps).</p>
     pub fn throughput_capacity(mut self, input: i32) -> Self {
-        self.throughput_capacity = Some(input);
+        self.throughput_capacity = ::std::option::Option::Some(input);
         self
     }
     /// <p>The sustained throughput of an Amazon FSx file system in Megabytes per second (MBps).</p>
-    pub fn set_throughput_capacity(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_throughput_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.throughput_capacity = input;
         self
     }
@@ -252,8 +266,11 @@ impl OntapFileSystemConfigurationBuilder {
     /// <p> <code>D</code> is the day of the week, for which 1 represents Monday and 7 represents Sunday. For further details, see <a href="https://en.wikipedia.org/wiki/ISO_week_date">the ISO-8601 spec as described on Wikipedia</a>.</p>
     /// <p> <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. </p>
     /// <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
-    pub fn weekly_maintenance_start_time(mut self, input: impl Into<std::string::String>) -> Self {
-        self.weekly_maintenance_start_time = Some(input.into());
+    pub fn weekly_maintenance_start_time(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.weekly_maintenance_start_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A recurring weekly time, in the format <code>D:HH:MM</code>. </p>
@@ -262,7 +279,7 @@ impl OntapFileSystemConfigurationBuilder {
     /// <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
     pub fn set_weekly_maintenance_start_time(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.weekly_maintenance_start_time = input;
         self

@@ -2,22 +2,22 @@
 
 /// <p>Describes information used to set up an EBS volume specified in a block device mapping.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EbsInstanceBlockDeviceSpecification {
     /// <p>Indicates whether the volume is deleted on instance termination.</p>
     #[doc(hidden)]
-    pub delete_on_termination: std::option::Option<bool>,
+    pub delete_on_termination: ::std::option::Option<bool>,
     /// <p>The ID of the EBS volume.</p>
     #[doc(hidden)]
-    pub volume_id: std::option::Option<std::string::String>,
+    pub volume_id: ::std::option::Option<::std::string::String>,
 }
 impl EbsInstanceBlockDeviceSpecification {
     /// <p>Indicates whether the volume is deleted on instance termination.</p>
-    pub fn delete_on_termination(&self) -> std::option::Option<bool> {
+    pub fn delete_on_termination(&self) -> ::std::option::Option<bool> {
         self.delete_on_termination
     }
     /// <p>The ID of the EBS volume.</p>
-    pub fn volume_id(&self) -> std::option::Option<&str> {
+    pub fn volume_id(&self) -> ::std::option::Option<&str> {
         self.volume_id.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl EbsInstanceBlockDeviceSpecification {
 
 /// A builder for [`EbsInstanceBlockDeviceSpecification`](crate::types::EbsInstanceBlockDeviceSpecification).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EbsInstanceBlockDeviceSpecificationBuilder {
-    pub(crate) delete_on_termination: std::option::Option<bool>,
-    pub(crate) volume_id: std::option::Option<std::string::String>,
+    pub(crate) delete_on_termination: ::std::option::Option<bool>,
+    pub(crate) volume_id: ::std::option::Option<::std::string::String>,
 }
 impl EbsInstanceBlockDeviceSpecificationBuilder {
     /// <p>Indicates whether the volume is deleted on instance termination.</p>
     pub fn delete_on_termination(mut self, input: bool) -> Self {
-        self.delete_on_termination = Some(input);
+        self.delete_on_termination = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether the volume is deleted on instance termination.</p>
-    pub fn set_delete_on_termination(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_delete_on_termination(mut self, input: ::std::option::Option<bool>) -> Self {
         self.delete_on_termination = input;
         self
     }
     /// <p>The ID of the EBS volume.</p>
-    pub fn volume_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.volume_id = Some(input.into());
+    pub fn volume_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.volume_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the EBS volume.</p>
-    pub fn set_volume_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_volume_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.volume_id = input;
         self
     }

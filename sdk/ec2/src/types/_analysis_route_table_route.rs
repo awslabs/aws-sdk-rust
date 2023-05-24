@@ -2,29 +2,29 @@
 
 /// <p>Describes a route table route.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnalysisRouteTableRoute {
     /// <p>The destination IPv4 address, in CIDR notation.</p>
     #[doc(hidden)]
-    pub destination_cidr: std::option::Option<std::string::String>,
+    pub destination_cidr: ::std::option::Option<::std::string::String>,
     /// <p>The prefix of the Amazon Web Service.</p>
     #[doc(hidden)]
-    pub destination_prefix_list_id: std::option::Option<std::string::String>,
+    pub destination_prefix_list_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of an egress-only internet gateway.</p>
     #[doc(hidden)]
-    pub egress_only_internet_gateway_id: std::option::Option<std::string::String>,
+    pub egress_only_internet_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the gateway, such as an internet gateway or virtual private gateway.</p>
     #[doc(hidden)]
-    pub gateway_id: std::option::Option<std::string::String>,
+    pub gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the instance, such as a NAT instance.</p>
     #[doc(hidden)]
-    pub instance_id: std::option::Option<std::string::String>,
+    pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of a NAT gateway.</p>
     #[doc(hidden)]
-    pub nat_gateway_id: std::option::Option<std::string::String>,
+    pub nat_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of a network interface.</p>
     #[doc(hidden)]
-    pub network_interface_id: std::option::Option<std::string::String>,
+    pub network_interface_id: ::std::option::Option<::std::string::String>,
     /// <p>Describes how the route was created. The following are the possible values:</p>
     /// <ul>
     /// <li> <p>CreateRouteTable - The route was automatically created when the route table was created.</p> </li>
@@ -32,57 +32,57 @@ pub struct AnalysisRouteTableRoute {
     /// <li> <p>EnableVgwRoutePropagation - The route was propagated by route propagation.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub origin: std::option::Option<std::string::String>,
+    pub origin: ::std::option::Option<::std::string::String>,
     /// <p>The ID of a transit gateway.</p>
     #[doc(hidden)]
-    pub transit_gateway_id: std::option::Option<std::string::String>,
+    pub transit_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of a VPC peering connection.</p>
     #[doc(hidden)]
-    pub vpc_peering_connection_id: std::option::Option<std::string::String>,
+    pub vpc_peering_connection_id: ::std::option::Option<::std::string::String>,
     /// <p>The state. The following are the possible values:</p>
     /// <ul>
     /// <li> <p>active</p> </li>
     /// <li> <p>blackhole</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub state: std::option::Option<std::string::String>,
+    pub state: ::std::option::Option<::std::string::String>,
     /// <p>The ID of a carrier gateway.</p>
     #[doc(hidden)]
-    pub carrier_gateway_id: std::option::Option<std::string::String>,
+    pub carrier_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of a core network.</p>
     #[doc(hidden)]
-    pub core_network_arn: std::option::Option<std::string::String>,
+    pub core_network_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of a local gateway.</p>
     #[doc(hidden)]
-    pub local_gateway_id: std::option::Option<std::string::String>,
+    pub local_gateway_id: ::std::option::Option<::std::string::String>,
 }
 impl AnalysisRouteTableRoute {
     /// <p>The destination IPv4 address, in CIDR notation.</p>
-    pub fn destination_cidr(&self) -> std::option::Option<&str> {
+    pub fn destination_cidr(&self) -> ::std::option::Option<&str> {
         self.destination_cidr.as_deref()
     }
     /// <p>The prefix of the Amazon Web Service.</p>
-    pub fn destination_prefix_list_id(&self) -> std::option::Option<&str> {
+    pub fn destination_prefix_list_id(&self) -> ::std::option::Option<&str> {
         self.destination_prefix_list_id.as_deref()
     }
     /// <p>The ID of an egress-only internet gateway.</p>
-    pub fn egress_only_internet_gateway_id(&self) -> std::option::Option<&str> {
+    pub fn egress_only_internet_gateway_id(&self) -> ::std::option::Option<&str> {
         self.egress_only_internet_gateway_id.as_deref()
     }
     /// <p>The ID of the gateway, such as an internet gateway or virtual private gateway.</p>
-    pub fn gateway_id(&self) -> std::option::Option<&str> {
+    pub fn gateway_id(&self) -> ::std::option::Option<&str> {
         self.gateway_id.as_deref()
     }
     /// <p>The ID of the instance, such as a NAT instance.</p>
-    pub fn instance_id(&self) -> std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<&str> {
         self.instance_id.as_deref()
     }
     /// <p>The ID of a NAT gateway.</p>
-    pub fn nat_gateway_id(&self) -> std::option::Option<&str> {
+    pub fn nat_gateway_id(&self) -> ::std::option::Option<&str> {
         self.nat_gateway_id.as_deref()
     }
     /// <p>The ID of a network interface.</p>
-    pub fn network_interface_id(&self) -> std::option::Option<&str> {
+    pub fn network_interface_id(&self) -> ::std::option::Option<&str> {
         self.network_interface_id.as_deref()
     }
     /// <p>Describes how the route was created. The following are the possible values:</p>
@@ -91,15 +91,15 @@ impl AnalysisRouteTableRoute {
     /// <li> <p>CreateRoute - The route was manually added to the route table.</p> </li>
     /// <li> <p>EnableVgwRoutePropagation - The route was propagated by route propagation.</p> </li>
     /// </ul>
-    pub fn origin(&self) -> std::option::Option<&str> {
+    pub fn origin(&self) -> ::std::option::Option<&str> {
         self.origin.as_deref()
     }
     /// <p>The ID of a transit gateway.</p>
-    pub fn transit_gateway_id(&self) -> std::option::Option<&str> {
+    pub fn transit_gateway_id(&self) -> ::std::option::Option<&str> {
         self.transit_gateway_id.as_deref()
     }
     /// <p>The ID of a VPC peering connection.</p>
-    pub fn vpc_peering_connection_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_peering_connection_id(&self) -> ::std::option::Option<&str> {
         self.vpc_peering_connection_id.as_deref()
     }
     /// <p>The state. The following are the possible values:</p>
@@ -107,19 +107,19 @@ impl AnalysisRouteTableRoute {
     /// <li> <p>active</p> </li>
     /// <li> <p>blackhole</p> </li>
     /// </ul>
-    pub fn state(&self) -> std::option::Option<&str> {
+    pub fn state(&self) -> ::std::option::Option<&str> {
         self.state.as_deref()
     }
     /// <p>The ID of a carrier gateway.</p>
-    pub fn carrier_gateway_id(&self) -> std::option::Option<&str> {
+    pub fn carrier_gateway_id(&self) -> ::std::option::Option<&str> {
         self.carrier_gateway_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of a core network.</p>
-    pub fn core_network_arn(&self) -> std::option::Option<&str> {
+    pub fn core_network_arn(&self) -> ::std::option::Option<&str> {
         self.core_network_arn.as_deref()
     }
     /// <p>The ID of a local gateway.</p>
-    pub fn local_gateway_id(&self) -> std::option::Option<&str> {
+    pub fn local_gateway_id(&self) -> ::std::option::Option<&str> {
         self.local_gateway_id.as_deref()
     }
 }
@@ -132,43 +132,54 @@ impl AnalysisRouteTableRoute {
 
 /// A builder for [`AnalysisRouteTableRoute`](crate::types::AnalysisRouteTableRoute).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AnalysisRouteTableRouteBuilder {
-    pub(crate) destination_cidr: std::option::Option<std::string::String>,
-    pub(crate) destination_prefix_list_id: std::option::Option<std::string::String>,
-    pub(crate) egress_only_internet_gateway_id: std::option::Option<std::string::String>,
-    pub(crate) gateway_id: std::option::Option<std::string::String>,
-    pub(crate) instance_id: std::option::Option<std::string::String>,
-    pub(crate) nat_gateway_id: std::option::Option<std::string::String>,
-    pub(crate) network_interface_id: std::option::Option<std::string::String>,
-    pub(crate) origin: std::option::Option<std::string::String>,
-    pub(crate) transit_gateway_id: std::option::Option<std::string::String>,
-    pub(crate) vpc_peering_connection_id: std::option::Option<std::string::String>,
-    pub(crate) state: std::option::Option<std::string::String>,
-    pub(crate) carrier_gateway_id: std::option::Option<std::string::String>,
-    pub(crate) core_network_arn: std::option::Option<std::string::String>,
-    pub(crate) local_gateway_id: std::option::Option<std::string::String>,
+    pub(crate) destination_cidr: ::std::option::Option<::std::string::String>,
+    pub(crate) destination_prefix_list_id: ::std::option::Option<::std::string::String>,
+    pub(crate) egress_only_internet_gateway_id: ::std::option::Option<::std::string::String>,
+    pub(crate) gateway_id: ::std::option::Option<::std::string::String>,
+    pub(crate) instance_id: ::std::option::Option<::std::string::String>,
+    pub(crate) nat_gateway_id: ::std::option::Option<::std::string::String>,
+    pub(crate) network_interface_id: ::std::option::Option<::std::string::String>,
+    pub(crate) origin: ::std::option::Option<::std::string::String>,
+    pub(crate) transit_gateway_id: ::std::option::Option<::std::string::String>,
+    pub(crate) vpc_peering_connection_id: ::std::option::Option<::std::string::String>,
+    pub(crate) state: ::std::option::Option<::std::string::String>,
+    pub(crate) carrier_gateway_id: ::std::option::Option<::std::string::String>,
+    pub(crate) core_network_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) local_gateway_id: ::std::option::Option<::std::string::String>,
 }
 impl AnalysisRouteTableRouteBuilder {
     /// <p>The destination IPv4 address, in CIDR notation.</p>
-    pub fn destination_cidr(mut self, input: impl Into<std::string::String>) -> Self {
-        self.destination_cidr = Some(input.into());
+    pub fn destination_cidr(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.destination_cidr = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The destination IPv4 address, in CIDR notation.</p>
-    pub fn set_destination_cidr(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_destination_cidr(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.destination_cidr = input;
         self
     }
     /// <p>The prefix of the Amazon Web Service.</p>
-    pub fn destination_prefix_list_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.destination_prefix_list_id = Some(input.into());
+    pub fn destination_prefix_list_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.destination_prefix_list_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The prefix of the Amazon Web Service.</p>
     pub fn set_destination_prefix_list_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.destination_prefix_list_id = input;
         self
@@ -176,58 +187,67 @@ impl AnalysisRouteTableRouteBuilder {
     /// <p>The ID of an egress-only internet gateway.</p>
     pub fn egress_only_internet_gateway_id(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.egress_only_internet_gateway_id = Some(input.into());
+        self.egress_only_internet_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of an egress-only internet gateway.</p>
     pub fn set_egress_only_internet_gateway_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.egress_only_internet_gateway_id = input;
         self
     }
     /// <p>The ID of the gateway, such as an internet gateway or virtual private gateway.</p>
-    pub fn gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.gateway_id = Some(input.into());
+    pub fn gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the gateway, such as an internet gateway or virtual private gateway.</p>
-    pub fn set_gateway_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.gateway_id = input;
         self
     }
     /// <p>The ID of the instance, such as a NAT instance.</p>
-    pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.instance_id = Some(input.into());
+    pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the instance, such as a NAT instance.</p>
-    pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
     }
     /// <p>The ID of a NAT gateway.</p>
-    pub fn nat_gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.nat_gateway_id = Some(input.into());
+    pub fn nat_gateway_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.nat_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of a NAT gateway.</p>
-    pub fn set_nat_gateway_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_nat_gateway_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.nat_gateway_id = input;
         self
     }
     /// <p>The ID of a network interface.</p>
-    pub fn network_interface_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.network_interface_id = Some(input.into());
+    pub fn network_interface_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.network_interface_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of a network interface.</p>
     pub fn set_network_interface_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.network_interface_id = input;
         self
@@ -238,8 +258,8 @@ impl AnalysisRouteTableRouteBuilder {
     /// <li> <p>CreateRoute - The route was manually added to the route table.</p> </li>
     /// <li> <p>EnableVgwRoutePropagation - The route was propagated by route propagation.</p> </li>
     /// </ul>
-    pub fn origin(mut self, input: impl Into<std::string::String>) -> Self {
-        self.origin = Some(input.into());
+    pub fn origin(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.origin = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Describes how the route was created. The following are the possible values:</p>
@@ -248,32 +268,38 @@ impl AnalysisRouteTableRouteBuilder {
     /// <li> <p>CreateRoute - The route was manually added to the route table.</p> </li>
     /// <li> <p>EnableVgwRoutePropagation - The route was propagated by route propagation.</p> </li>
     /// </ul>
-    pub fn set_origin(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_origin(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.origin = input;
         self
     }
     /// <p>The ID of a transit gateway.</p>
-    pub fn transit_gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.transit_gateway_id = Some(input.into());
+    pub fn transit_gateway_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.transit_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of a transit gateway.</p>
     pub fn set_transit_gateway_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.transit_gateway_id = input;
         self
     }
     /// <p>The ID of a VPC peering connection.</p>
-    pub fn vpc_peering_connection_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.vpc_peering_connection_id = Some(input.into());
+    pub fn vpc_peering_connection_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.vpc_peering_connection_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of a VPC peering connection.</p>
     pub fn set_vpc_peering_connection_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.vpc_peering_connection_id = input;
         self
@@ -283,8 +309,8 @@ impl AnalysisRouteTableRouteBuilder {
     /// <li> <p>active</p> </li>
     /// <li> <p>blackhole</p> </li>
     /// </ul>
-    pub fn state(mut self, input: impl Into<std::string::String>) -> Self {
-        self.state = Some(input.into());
+    pub fn state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.state = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The state. The following are the possible values:</p>
@@ -292,40 +318,55 @@ impl AnalysisRouteTableRouteBuilder {
     /// <li> <p>active</p> </li>
     /// <li> <p>blackhole</p> </li>
     /// </ul>
-    pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state = input;
         self
     }
     /// <p>The ID of a carrier gateway.</p>
-    pub fn carrier_gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.carrier_gateway_id = Some(input.into());
+    pub fn carrier_gateway_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.carrier_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of a carrier gateway.</p>
     pub fn set_carrier_gateway_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.carrier_gateway_id = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of a core network.</p>
-    pub fn core_network_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.core_network_arn = Some(input.into());
+    pub fn core_network_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.core_network_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of a core network.</p>
-    pub fn set_core_network_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_core_network_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.core_network_arn = input;
         self
     }
     /// <p>The ID of a local gateway.</p>
-    pub fn local_gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.local_gateway_id = Some(input.into());
+    pub fn local_gateway_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.local_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of a local gateway.</p>
-    pub fn set_local_gateway_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_local_gateway_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.local_gateway_id = input;
         self
     }

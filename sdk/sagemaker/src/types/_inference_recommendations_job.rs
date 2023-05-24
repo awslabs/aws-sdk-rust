@@ -2,78 +2,78 @@
 
 /// <p>A structure that contains a list of recommendation jobs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InferenceRecommendationsJob {
     /// <p>The name of the job.</p>
     #[doc(hidden)]
-    pub job_name: std::option::Option<std::string::String>,
+    pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>The job description.</p>
     #[doc(hidden)]
-    pub job_description: std::option::Option<std::string::String>,
+    pub job_description: ::std::option::Option<::std::string::String>,
     /// <p>The recommendation job type.</p>
     #[doc(hidden)]
-    pub job_type: std::option::Option<crate::types::RecommendationJobType>,
+    pub job_type: ::std::option::Option<crate::types::RecommendationJobType>,
     /// <p>The Amazon Resource Name (ARN) of the recommendation job.</p>
     #[doc(hidden)]
-    pub job_arn: std::option::Option<std::string::String>,
+    pub job_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the job.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::RecommendationJobStatus>,
+    pub status: ::std::option::Option<crate::types::RecommendationJobStatus>,
     /// <p>A timestamp that shows when the job was created.</p>
     #[doc(hidden)]
-    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A timestamp that shows when the job completed.</p>
     #[doc(hidden)]
-    pub completion_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub completion_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
     #[doc(hidden)]
-    pub role_arn: std::option::Option<std::string::String>,
+    pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A timestamp that shows when the job was last modified.</p>
     #[doc(hidden)]
-    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>If the job fails, provides information why the job failed.</p>
     #[doc(hidden)]
-    pub failure_reason: std::option::Option<std::string::String>,
+    pub failure_reason: ::std::option::Option<::std::string::String>,
 }
 impl InferenceRecommendationsJob {
     /// <p>The name of the job.</p>
-    pub fn job_name(&self) -> std::option::Option<&str> {
+    pub fn job_name(&self) -> ::std::option::Option<&str> {
         self.job_name.as_deref()
     }
     /// <p>The job description.</p>
-    pub fn job_description(&self) -> std::option::Option<&str> {
+    pub fn job_description(&self) -> ::std::option::Option<&str> {
         self.job_description.as_deref()
     }
     /// <p>The recommendation job type.</p>
-    pub fn job_type(&self) -> std::option::Option<&crate::types::RecommendationJobType> {
+    pub fn job_type(&self) -> ::std::option::Option<&crate::types::RecommendationJobType> {
         self.job_type.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the recommendation job.</p>
-    pub fn job_arn(&self) -> std::option::Option<&str> {
+    pub fn job_arn(&self) -> ::std::option::Option<&str> {
         self.job_arn.as_deref()
     }
     /// <p>The status of the job.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::RecommendationJobStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::RecommendationJobStatus> {
         self.status.as_ref()
     }
     /// <p>A timestamp that shows when the job was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>A timestamp that shows when the job completed.</p>
-    pub fn completion_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn completion_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.completion_time.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
     /// <p>A timestamp that shows when the job was last modified.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>If the job fails, provides information why the job failed.</p>
-    pub fn failure_reason(&self) -> std::option::Option<&str> {
+    pub fn failure_reason(&self) -> ::std::option::Option<&str> {
         self.failure_reason.as_deref()
     }
 }
@@ -86,132 +86,146 @@ impl InferenceRecommendationsJob {
 
 /// A builder for [`InferenceRecommendationsJob`](crate::types::InferenceRecommendationsJob).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InferenceRecommendationsJobBuilder {
-    pub(crate) job_name: std::option::Option<std::string::String>,
-    pub(crate) job_description: std::option::Option<std::string::String>,
-    pub(crate) job_type: std::option::Option<crate::types::RecommendationJobType>,
-    pub(crate) job_arn: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::RecommendationJobStatus>,
-    pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) completion_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) role_arn: std::option::Option<std::string::String>,
-    pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) failure_reason: std::option::Option<std::string::String>,
+    pub(crate) job_name: ::std::option::Option<::std::string::String>,
+    pub(crate) job_description: ::std::option::Option<::std::string::String>,
+    pub(crate) job_type: ::std::option::Option<crate::types::RecommendationJobType>,
+    pub(crate) job_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::RecommendationJobStatus>,
+    pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) completion_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
 }
 impl InferenceRecommendationsJobBuilder {
     /// <p>The name of the job.</p>
-    pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.job_name = Some(input.into());
+    pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.job_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the job.</p>
-    pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_name = input;
         self
     }
     /// <p>The job description.</p>
-    pub fn job_description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.job_description = Some(input.into());
+    pub fn job_description(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.job_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The job description.</p>
-    pub fn set_job_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_job_description(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.job_description = input;
         self
     }
     /// <p>The recommendation job type.</p>
     pub fn job_type(mut self, input: crate::types::RecommendationJobType) -> Self {
-        self.job_type = Some(input);
+        self.job_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The recommendation job type.</p>
     pub fn set_job_type(
         mut self,
-        input: std::option::Option<crate::types::RecommendationJobType>,
+        input: ::std::option::Option<crate::types::RecommendationJobType>,
     ) -> Self {
         self.job_type = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the recommendation job.</p>
-    pub fn job_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.job_arn = Some(input.into());
+    pub fn job_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.job_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the recommendation job.</p>
-    pub fn set_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_job_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_arn = input;
         self
     }
     /// <p>The status of the job.</p>
     pub fn status(mut self, input: crate::types::RecommendationJobStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the job.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::RecommendationJobStatus>,
+        input: ::std::option::Option<crate::types::RecommendationJobStatus>,
     ) -> Self {
         self.status = input;
         self
     }
     /// <p>A timestamp that shows when the job was created.</p>
-    pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_time = Some(input);
+    pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>A timestamp that shows when the job was created.</p>
     pub fn set_creation_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_time = input;
         self
     }
     /// <p>A timestamp that shows when the job completed.</p>
-    pub fn completion_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.completion_time = Some(input);
+    pub fn completion_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.completion_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>A timestamp that shows when the job completed.</p>
     pub fn set_completion_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.completion_time = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
-    pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.role_arn = Some(input.into());
+    pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
-    pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
     /// <p>A timestamp that shows when the job was last modified.</p>
-    pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_modified_time = Some(input);
+    pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_modified_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>A timestamp that shows when the job was last modified.</p>
     pub fn set_last_modified_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_modified_time = input;
         self
     }
     /// <p>If the job fails, provides information why the job failed.</p>
-    pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
-        self.failure_reason = Some(input.into());
+    pub fn failure_reason(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the job fails, provides information why the job failed.</p>
-    pub fn set_failure_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_failure_reason(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.failure_reason = input;
         self
     }

@@ -2,11 +2,11 @@
 
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateEmailIdentityPolicyOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for UpdateEmailIdentityPolicyOutput {
+impl ::aws_http::request_id::RequestId for UpdateEmailIdentityPolicyOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -20,7 +20,9 @@ impl UpdateEmailIdentityPolicyOutput {
 
 /// A builder for [`UpdateEmailIdentityPolicyOutput`](crate::operation::update_email_identity_policy::UpdateEmailIdentityPolicyOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateEmailIdentityPolicyOutputBuilder {
     _request_id: Option<String>,
 }

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`BackTestAnomalyDetector`](crate::operation::back_test_anomaly_detector::builders::BackTestAnomalyDetectorFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`anomaly_detector_arn(impl Into<String>)`](crate::operation::back_test_anomaly_detector::builders::BackTestAnomalyDetectorFluentBuilder::anomaly_detector_arn) / [`set_anomaly_detector_arn(Option<String>)`](crate::operation::back_test_anomaly_detector::builders::BackTestAnomalyDetectorFluentBuilder::set_anomaly_detector_arn): <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
+    ///   - [`anomaly_detector_arn(impl ::std::convert::Into<String>)`](crate::operation::back_test_anomaly_detector::builders::BackTestAnomalyDetectorFluentBuilder::anomaly_detector_arn) / [`set_anomaly_detector_arn(Option<String>)`](crate::operation::back_test_anomaly_detector::builders::BackTestAnomalyDetectorFluentBuilder::set_anomaly_detector_arn): <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
     /// - On success, responds with [`BackTestAnomalyDetectorOutput`](crate::operation::back_test_anomaly_detector::BackTestAnomalyDetectorOutput)
     /// - On failure, responds with [`SdkError<BackTestAnomalyDetectorError>`](crate::operation::back_test_anomaly_detector::BackTestAnomalyDetectorError)
     pub fn back_test_anomaly_detector(

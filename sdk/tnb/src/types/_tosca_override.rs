@@ -2,22 +2,22 @@
 
 /// <p>Overrides of the TOSCA node.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ToscaOverride {
     /// <p>Name of the TOSCA override.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>Default value for the override.</p>
     #[doc(hidden)]
-    pub default_value: std::option::Option<std::string::String>,
+    pub default_value: ::std::option::Option<::std::string::String>,
 }
 impl ToscaOverride {
     /// <p>Name of the TOSCA override.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>Default value for the override.</p>
-    pub fn default_value(&self) -> std::option::Option<&str> {
+    pub fn default_value(&self) -> ::std::option::Option<&str> {
         self.default_value.as_deref()
     }
 }
@@ -30,29 +30,37 @@ impl ToscaOverride {
 
 /// A builder for [`ToscaOverride`](crate::types::ToscaOverride).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ToscaOverrideBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) default_value: std::option::Option<std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) default_value: ::std::option::Option<::std::string::String>,
 }
 impl ToscaOverrideBuilder {
     /// <p>Name of the TOSCA override.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of the TOSCA override.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>Default value for the override.</p>
-    pub fn default_value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.default_value = Some(input.into());
+    pub fn default_value(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.default_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Default value for the override.</p>
-    pub fn set_default_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_default_value(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.default_value = input;
         self
     }

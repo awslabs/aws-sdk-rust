@@ -2,64 +2,64 @@
 
 /// <p>The state of the certificate revocation list (CRL) after a read or write operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CrlDetail {
     /// <p>The unique identifier of the certificate revocation list (CRL).</p>
     #[doc(hidden)]
-    pub crl_id: std::option::Option<std::string::String>,
+    pub crl_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the certificate revocation list (CRL).</p>
     #[doc(hidden)]
-    pub crl_arn: std::option::Option<std::string::String>,
+    pub crl_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the certificate revocation list (CRL).</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the certificate revocation list (CRL) is enabled.</p>
     #[doc(hidden)]
-    pub enabled: std::option::Option<bool>,
+    pub enabled: ::std::option::Option<bool>,
     /// <p>The state of the certificate revocation list (CRL) after a read or write operation.</p>
     #[doc(hidden)]
-    pub crl_data: std::option::Option<aws_smithy_types::Blob>,
+    pub crl_data: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The ARN of the TrustAnchor the certificate revocation list (CRL) will provide revocation for. </p>
     #[doc(hidden)]
-    pub trust_anchor_arn: std::option::Option<std::string::String>,
+    pub trust_anchor_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ISO-8601 timestamp when the certificate revocation list (CRL) was created. </p>
     #[doc(hidden)]
-    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ISO-8601 timestamp when the certificate revocation list (CRL) was last updated. </p>
     #[doc(hidden)]
-    pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl CrlDetail {
     /// <p>The unique identifier of the certificate revocation list (CRL).</p>
-    pub fn crl_id(&self) -> std::option::Option<&str> {
+    pub fn crl_id(&self) -> ::std::option::Option<&str> {
         self.crl_id.as_deref()
     }
     /// <p>The ARN of the certificate revocation list (CRL).</p>
-    pub fn crl_arn(&self) -> std::option::Option<&str> {
+    pub fn crl_arn(&self) -> ::std::option::Option<&str> {
         self.crl_arn.as_deref()
     }
     /// <p>The name of the certificate revocation list (CRL).</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>Indicates whether the certificate revocation list (CRL) is enabled.</p>
-    pub fn enabled(&self) -> std::option::Option<bool> {
+    pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
     /// <p>The state of the certificate revocation list (CRL) after a read or write operation.</p>
-    pub fn crl_data(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn crl_data(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
         self.crl_data.as_ref()
     }
     /// <p>The ARN of the TrustAnchor the certificate revocation list (CRL) will provide revocation for. </p>
-    pub fn trust_anchor_arn(&self) -> std::option::Option<&str> {
+    pub fn trust_anchor_arn(&self) -> ::std::option::Option<&str> {
         self.trust_anchor_arn.as_deref()
     }
     /// <p>The ISO-8601 timestamp when the certificate revocation list (CRL) was created. </p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The ISO-8601 timestamp when the certificate revocation list (CRL) was last updated. </p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
@@ -72,100 +72,108 @@ impl CrlDetail {
 
 /// A builder for [`CrlDetail`](crate::types::CrlDetail).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CrlDetailBuilder {
-    pub(crate) crl_id: std::option::Option<std::string::String>,
-    pub(crate) crl_arn: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) enabled: std::option::Option<bool>,
-    pub(crate) crl_data: std::option::Option<aws_smithy_types::Blob>,
-    pub(crate) trust_anchor_arn: std::option::Option<std::string::String>,
-    pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) crl_id: ::std::option::Option<::std::string::String>,
+    pub(crate) crl_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) enabled: ::std::option::Option<bool>,
+    pub(crate) crl_data: ::std::option::Option<::aws_smithy_types::Blob>,
+    pub(crate) trust_anchor_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl CrlDetailBuilder {
     /// <p>The unique identifier of the certificate revocation list (CRL).</p>
-    pub fn crl_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.crl_id = Some(input.into());
+    pub fn crl_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.crl_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the certificate revocation list (CRL).</p>
-    pub fn set_crl_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_crl_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.crl_id = input;
         self
     }
     /// <p>The ARN of the certificate revocation list (CRL).</p>
-    pub fn crl_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.crl_arn = Some(input.into());
+    pub fn crl_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.crl_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the certificate revocation list (CRL).</p>
-    pub fn set_crl_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_crl_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.crl_arn = input;
         self
     }
     /// <p>The name of the certificate revocation list (CRL).</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the certificate revocation list (CRL).</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>Indicates whether the certificate revocation list (CRL) is enabled.</p>
     pub fn enabled(mut self, input: bool) -> Self {
-        self.enabled = Some(input);
+        self.enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether the certificate revocation list (CRL) is enabled.</p>
-    pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
     }
     /// <p>The state of the certificate revocation list (CRL) after a read or write operation.</p>
-    pub fn crl_data(mut self, input: aws_smithy_types::Blob) -> Self {
-        self.crl_data = Some(input);
+    pub fn crl_data(mut self, input: ::aws_smithy_types::Blob) -> Self {
+        self.crl_data = ::std::option::Option::Some(input);
         self
     }
     /// <p>The state of the certificate revocation list (CRL) after a read or write operation.</p>
-    pub fn set_crl_data(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
+    pub fn set_crl_data(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.crl_data = input;
         self
     }
     /// <p>The ARN of the TrustAnchor the certificate revocation list (CRL) will provide revocation for. </p>
-    pub fn trust_anchor_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.trust_anchor_arn = Some(input.into());
+    pub fn trust_anchor_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.trust_anchor_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the TrustAnchor the certificate revocation list (CRL) will provide revocation for. </p>
-    pub fn set_trust_anchor_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_trust_anchor_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.trust_anchor_arn = input;
         self
     }
     /// <p>The ISO-8601 timestamp when the certificate revocation list (CRL) was created. </p>
-    pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_at = Some(input);
+    pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The ISO-8601 timestamp when the certificate revocation list (CRL) was created. </p>
     pub fn set_created_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_at = input;
         self
     }
     /// <p>The ISO-8601 timestamp when the certificate revocation list (CRL) was last updated. </p>
-    pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.updated_at = Some(input);
+    pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.updated_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The ISO-8601 timestamp when the certificate revocation list (CRL) was last updated. </p>
     pub fn set_updated_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.updated_at = input;
         self

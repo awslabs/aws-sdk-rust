@@ -2,57 +2,59 @@
 
 /// Audio Codec Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AudioCodecSettings {
     /// Aac Settings
     #[doc(hidden)]
-    pub aac_settings: std::option::Option<crate::types::AacSettings>,
+    pub aac_settings: ::std::option::Option<crate::types::AacSettings>,
     /// Ac3 Settings
     #[doc(hidden)]
-    pub ac3_settings: std::option::Option<crate::types::Ac3Settings>,
+    pub ac3_settings: ::std::option::Option<crate::types::Ac3Settings>,
     /// Eac3 Atmos Settings
     #[doc(hidden)]
-    pub eac3_atmos_settings: std::option::Option<crate::types::Eac3AtmosSettings>,
+    pub eac3_atmos_settings: ::std::option::Option<crate::types::Eac3AtmosSettings>,
     /// Eac3 Settings
     #[doc(hidden)]
-    pub eac3_settings: std::option::Option<crate::types::Eac3Settings>,
+    pub eac3_settings: ::std::option::Option<crate::types::Eac3Settings>,
     /// Mp2 Settings
     #[doc(hidden)]
-    pub mp2_settings: std::option::Option<crate::types::Mp2Settings>,
+    pub mp2_settings: ::std::option::Option<crate::types::Mp2Settings>,
     /// Pass Through Settings
     #[doc(hidden)]
-    pub pass_through_settings: std::option::Option<crate::types::PassThroughSettings>,
+    pub pass_through_settings: ::std::option::Option<crate::types::PassThroughSettings>,
     /// Wav Settings
     #[doc(hidden)]
-    pub wav_settings: std::option::Option<crate::types::WavSettings>,
+    pub wav_settings: ::std::option::Option<crate::types::WavSettings>,
 }
 impl AudioCodecSettings {
     /// Aac Settings
-    pub fn aac_settings(&self) -> std::option::Option<&crate::types::AacSettings> {
+    pub fn aac_settings(&self) -> ::std::option::Option<&crate::types::AacSettings> {
         self.aac_settings.as_ref()
     }
     /// Ac3 Settings
-    pub fn ac3_settings(&self) -> std::option::Option<&crate::types::Ac3Settings> {
+    pub fn ac3_settings(&self) -> ::std::option::Option<&crate::types::Ac3Settings> {
         self.ac3_settings.as_ref()
     }
     /// Eac3 Atmos Settings
-    pub fn eac3_atmos_settings(&self) -> std::option::Option<&crate::types::Eac3AtmosSettings> {
+    pub fn eac3_atmos_settings(&self) -> ::std::option::Option<&crate::types::Eac3AtmosSettings> {
         self.eac3_atmos_settings.as_ref()
     }
     /// Eac3 Settings
-    pub fn eac3_settings(&self) -> std::option::Option<&crate::types::Eac3Settings> {
+    pub fn eac3_settings(&self) -> ::std::option::Option<&crate::types::Eac3Settings> {
         self.eac3_settings.as_ref()
     }
     /// Mp2 Settings
-    pub fn mp2_settings(&self) -> std::option::Option<&crate::types::Mp2Settings> {
+    pub fn mp2_settings(&self) -> ::std::option::Option<&crate::types::Mp2Settings> {
         self.mp2_settings.as_ref()
     }
     /// Pass Through Settings
-    pub fn pass_through_settings(&self) -> std::option::Option<&crate::types::PassThroughSettings> {
+    pub fn pass_through_settings(
+        &self,
+    ) -> ::std::option::Option<&crate::types::PassThroughSettings> {
         self.pass_through_settings.as_ref()
     }
     /// Wav Settings
-    pub fn wav_settings(&self) -> std::option::Option<&crate::types::WavSettings> {
+    pub fn wav_settings(&self) -> ::std::option::Option<&crate::types::WavSettings> {
         self.wav_settings.as_ref()
     }
 }
@@ -65,104 +67,106 @@ impl AudioCodecSettings {
 
 /// A builder for [`AudioCodecSettings`](crate::types::AudioCodecSettings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AudioCodecSettingsBuilder {
-    pub(crate) aac_settings: std::option::Option<crate::types::AacSettings>,
-    pub(crate) ac3_settings: std::option::Option<crate::types::Ac3Settings>,
-    pub(crate) eac3_atmos_settings: std::option::Option<crate::types::Eac3AtmosSettings>,
-    pub(crate) eac3_settings: std::option::Option<crate::types::Eac3Settings>,
-    pub(crate) mp2_settings: std::option::Option<crate::types::Mp2Settings>,
-    pub(crate) pass_through_settings: std::option::Option<crate::types::PassThroughSettings>,
-    pub(crate) wav_settings: std::option::Option<crate::types::WavSettings>,
+    pub(crate) aac_settings: ::std::option::Option<crate::types::AacSettings>,
+    pub(crate) ac3_settings: ::std::option::Option<crate::types::Ac3Settings>,
+    pub(crate) eac3_atmos_settings: ::std::option::Option<crate::types::Eac3AtmosSettings>,
+    pub(crate) eac3_settings: ::std::option::Option<crate::types::Eac3Settings>,
+    pub(crate) mp2_settings: ::std::option::Option<crate::types::Mp2Settings>,
+    pub(crate) pass_through_settings: ::std::option::Option<crate::types::PassThroughSettings>,
+    pub(crate) wav_settings: ::std::option::Option<crate::types::WavSettings>,
 }
 impl AudioCodecSettingsBuilder {
     /// Aac Settings
     pub fn aac_settings(mut self, input: crate::types::AacSettings) -> Self {
-        self.aac_settings = Some(input);
+        self.aac_settings = ::std::option::Option::Some(input);
         self
     }
     /// Aac Settings
     pub fn set_aac_settings(
         mut self,
-        input: std::option::Option<crate::types::AacSettings>,
+        input: ::std::option::Option<crate::types::AacSettings>,
     ) -> Self {
         self.aac_settings = input;
         self
     }
     /// Ac3 Settings
     pub fn ac3_settings(mut self, input: crate::types::Ac3Settings) -> Self {
-        self.ac3_settings = Some(input);
+        self.ac3_settings = ::std::option::Option::Some(input);
         self
     }
     /// Ac3 Settings
     pub fn set_ac3_settings(
         mut self,
-        input: std::option::Option<crate::types::Ac3Settings>,
+        input: ::std::option::Option<crate::types::Ac3Settings>,
     ) -> Self {
         self.ac3_settings = input;
         self
     }
     /// Eac3 Atmos Settings
     pub fn eac3_atmos_settings(mut self, input: crate::types::Eac3AtmosSettings) -> Self {
-        self.eac3_atmos_settings = Some(input);
+        self.eac3_atmos_settings = ::std::option::Option::Some(input);
         self
     }
     /// Eac3 Atmos Settings
     pub fn set_eac3_atmos_settings(
         mut self,
-        input: std::option::Option<crate::types::Eac3AtmosSettings>,
+        input: ::std::option::Option<crate::types::Eac3AtmosSettings>,
     ) -> Self {
         self.eac3_atmos_settings = input;
         self
     }
     /// Eac3 Settings
     pub fn eac3_settings(mut self, input: crate::types::Eac3Settings) -> Self {
-        self.eac3_settings = Some(input);
+        self.eac3_settings = ::std::option::Option::Some(input);
         self
     }
     /// Eac3 Settings
     pub fn set_eac3_settings(
         mut self,
-        input: std::option::Option<crate::types::Eac3Settings>,
+        input: ::std::option::Option<crate::types::Eac3Settings>,
     ) -> Self {
         self.eac3_settings = input;
         self
     }
     /// Mp2 Settings
     pub fn mp2_settings(mut self, input: crate::types::Mp2Settings) -> Self {
-        self.mp2_settings = Some(input);
+        self.mp2_settings = ::std::option::Option::Some(input);
         self
     }
     /// Mp2 Settings
     pub fn set_mp2_settings(
         mut self,
-        input: std::option::Option<crate::types::Mp2Settings>,
+        input: ::std::option::Option<crate::types::Mp2Settings>,
     ) -> Self {
         self.mp2_settings = input;
         self
     }
     /// Pass Through Settings
     pub fn pass_through_settings(mut self, input: crate::types::PassThroughSettings) -> Self {
-        self.pass_through_settings = Some(input);
+        self.pass_through_settings = ::std::option::Option::Some(input);
         self
     }
     /// Pass Through Settings
     pub fn set_pass_through_settings(
         mut self,
-        input: std::option::Option<crate::types::PassThroughSettings>,
+        input: ::std::option::Option<crate::types::PassThroughSettings>,
     ) -> Self {
         self.pass_through_settings = input;
         self
     }
     /// Wav Settings
     pub fn wav_settings(mut self, input: crate::types::WavSettings) -> Self {
-        self.wav_settings = Some(input);
+        self.wav_settings = ::std::option::Option::Some(input);
         self
     }
     /// Wav Settings
     pub fn set_wav_settings(
         mut self,
-        input: std::option::Option<crate::types::WavSettings>,
+        input: ::std::option::Option<crate::types::WavSettings>,
     ) -> Self {
         self.wav_settings = input;
         self

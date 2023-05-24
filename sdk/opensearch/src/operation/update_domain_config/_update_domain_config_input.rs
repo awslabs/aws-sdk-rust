@@ -2,26 +2,26 @@
 
 /// <p>Container for the request parameters to the <code>UpdateDomain</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDomainConfigInput {
     /// <p>The name of the domain that you're updating.</p>
     #[doc(hidden)]
-    pub domain_name: std::option::Option<std::string::String>,
+    pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>Changes that you want to make to the cluster configuration, such as the instance type and number of EC2 instances.</p>
     #[doc(hidden)]
-    pub cluster_config: std::option::Option<crate::types::ClusterConfig>,
+    pub cluster_config: ::std::option::Option<crate::types::ClusterConfig>,
     /// <p>The type and size of the EBS volume to attach to instances in the domain.</p>
     #[doc(hidden)]
-    pub ebs_options: std::option::Option<crate::types::EbsOptions>,
+    pub ebs_options: ::std::option::Option<crate::types::EbsOptions>,
     /// <p>Option to set the time, in UTC format, for the daily automated snapshot. Default value is <code>0</code> hours. </p>
     #[doc(hidden)]
-    pub snapshot_options: std::option::Option<crate::types::SnapshotOptions>,
+    pub snapshot_options: ::std::option::Option<crate::types::SnapshotOptions>,
     /// <p>Options to specify the subnets and security groups for a VPC endpoint. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html">Launching your Amazon OpenSearch Service domains using a VPC</a>.</p>
     #[doc(hidden)]
-    pub vpc_options: std::option::Option<crate::types::VpcOptions>,
+    pub vpc_options: ::std::option::Option<crate::types::VpcOptions>,
     /// <p>Key-value pairs to configure Amazon Cognito authentication for OpenSearch Dashboards.</p>
     #[doc(hidden)]
-    pub cognito_options: std::option::Option<crate::types::CognitoOptions>,
+    pub cognito_options: ::std::option::Option<crate::types::CognitoOptions>,
     /// <p>Key-value pairs to specify advanced configuration options. The following key-value pairs are supported:</p>
     /// <ul>
     /// <li> <p> <code>"rest.action.multi.allow_explicit_index": "true" | "false"</code> - Note the use of a string rather than a boolean. Specifies whether explicit references to indexes are allowed inside the body of HTTP requests. If you want to configure access policies for domain sub-resources, such as specific indexes and domain APIs, you must disable this property. Default is true.</p> </li>
@@ -30,72 +30,74 @@ pub struct UpdateDomainConfigInput {
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options">Advanced cluster parameters</a>.</p>
     #[doc(hidden)]
-    pub advanced_options:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub advanced_options: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>Identity and Access Management (IAM) access policy as a JSON-formatted string.</p>
     #[doc(hidden)]
-    pub access_policies: std::option::Option<std::string::String>,
+    pub access_policies: ::std::option::Option<::std::string::String>,
     /// <p>Options to publish OpenSearch logs to Amazon CloudWatch Logs.</p>
     #[doc(hidden)]
-    pub log_publishing_options: std::option::Option<
-        std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>,
+    pub log_publishing_options: ::std::option::Option<
+        ::std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>,
     >,
     /// <p>Encryption at rest options for the domain.</p>
     #[doc(hidden)]
-    pub encryption_at_rest_options: std::option::Option<crate::types::EncryptionAtRestOptions>,
+    pub encryption_at_rest_options: ::std::option::Option<crate::types::EncryptionAtRestOptions>,
     /// <p>Additional options for the domain endpoint, such as whether to require HTTPS for all traffic.</p>
     #[doc(hidden)]
-    pub domain_endpoint_options: std::option::Option<crate::types::DomainEndpointOptions>,
+    pub domain_endpoint_options: ::std::option::Option<crate::types::DomainEndpointOptions>,
     /// <p>Node-to-node encryption options for the domain.</p>
     #[doc(hidden)]
     pub node_to_node_encryption_options:
-        std::option::Option<crate::types::NodeToNodeEncryptionOptions>,
+        ::std::option::Option<crate::types::NodeToNodeEncryptionOptions>,
     /// <p>Options for fine-grained access control.</p>
     #[doc(hidden)]
-    pub advanced_security_options: std::option::Option<crate::types::AdvancedSecurityOptionsInput>,
+    pub advanced_security_options:
+        ::std::option::Option<crate::types::AdvancedSecurityOptionsInput>,
     /// <p>Options for Auto-Tune.</p>
     #[doc(hidden)]
-    pub auto_tune_options: std::option::Option<crate::types::AutoTuneOptions>,
+    pub auto_tune_options: ::std::option::Option<crate::types::AutoTuneOptions>,
     /// <p>This flag, when set to True, specifies whether the <code>UpdateDomain</code> request should return the results of a dry run analysis without actually applying the change. A dry run determines what type of deployment the update will cause.</p>
     #[doc(hidden)]
-    pub dry_run: std::option::Option<bool>,
+    pub dry_run: ::std::option::Option<bool>,
     /// <p>The type of dry run to perform.</p>
     /// <ul>
     /// <li> <p> <code>Basic</code> only returns the type of deployment (blue/green or dynamic) that the update will cause.</p> </li>
     /// <li> <p> <code>Verbose</code> runs an additional check to validate the changes you're making. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-configuration-changes#validation-check">Validating a domain update</a>.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub dry_run_mode: std::option::Option<crate::types::DryRunMode>,
+    pub dry_run_mode: ::std::option::Option<crate::types::DryRunMode>,
     /// <p>Off-peak window options for the domain.</p>
     #[doc(hidden)]
-    pub off_peak_window_options: std::option::Option<crate::types::OffPeakWindowOptions>,
+    pub off_peak_window_options: ::std::option::Option<crate::types::OffPeakWindowOptions>,
     /// <p>Service software update options for the domain.</p>
     #[doc(hidden)]
-    pub software_update_options: std::option::Option<crate::types::SoftwareUpdateOptions>,
+    pub software_update_options: ::std::option::Option<crate::types::SoftwareUpdateOptions>,
 }
 impl UpdateDomainConfigInput {
     /// <p>The name of the domain that you're updating.</p>
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<&str> {
         self.domain_name.as_deref()
     }
     /// <p>Changes that you want to make to the cluster configuration, such as the instance type and number of EC2 instances.</p>
-    pub fn cluster_config(&self) -> std::option::Option<&crate::types::ClusterConfig> {
+    pub fn cluster_config(&self) -> ::std::option::Option<&crate::types::ClusterConfig> {
         self.cluster_config.as_ref()
     }
     /// <p>The type and size of the EBS volume to attach to instances in the domain.</p>
-    pub fn ebs_options(&self) -> std::option::Option<&crate::types::EbsOptions> {
+    pub fn ebs_options(&self) -> ::std::option::Option<&crate::types::EbsOptions> {
         self.ebs_options.as_ref()
     }
     /// <p>Option to set the time, in UTC format, for the daily automated snapshot. Default value is <code>0</code> hours. </p>
-    pub fn snapshot_options(&self) -> std::option::Option<&crate::types::SnapshotOptions> {
+    pub fn snapshot_options(&self) -> ::std::option::Option<&crate::types::SnapshotOptions> {
         self.snapshot_options.as_ref()
     }
     /// <p>Options to specify the subnets and security groups for a VPC endpoint. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html">Launching your Amazon OpenSearch Service domains using a VPC</a>.</p>
-    pub fn vpc_options(&self) -> std::option::Option<&crate::types::VpcOptions> {
+    pub fn vpc_options(&self) -> ::std::option::Option<&crate::types::VpcOptions> {
         self.vpc_options.as_ref()
     }
     /// <p>Key-value pairs to configure Amazon Cognito authentication for OpenSearch Dashboards.</p>
-    pub fn cognito_options(&self) -> std::option::Option<&crate::types::CognitoOptions> {
+    pub fn cognito_options(&self) -> ::std::option::Option<&crate::types::CognitoOptions> {
         self.cognito_options.as_ref()
     }
     /// <p>Key-value pairs to specify advanced configuration options. The following key-value pairs are supported:</p>
@@ -107,52 +109,53 @@ impl UpdateDomainConfigInput {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options">Advanced cluster parameters</a>.</p>
     pub fn advanced_options(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.advanced_options.as_ref()
     }
     /// <p>Identity and Access Management (IAM) access policy as a JSON-formatted string.</p>
-    pub fn access_policies(&self) -> std::option::Option<&str> {
+    pub fn access_policies(&self) -> ::std::option::Option<&str> {
         self.access_policies.as_deref()
     }
     /// <p>Options to publish OpenSearch logs to Amazon CloudWatch Logs.</p>
     pub fn log_publishing_options(
         &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>,
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>,
     > {
         self.log_publishing_options.as_ref()
     }
     /// <p>Encryption at rest options for the domain.</p>
     pub fn encryption_at_rest_options(
         &self,
-    ) -> std::option::Option<&crate::types::EncryptionAtRestOptions> {
+    ) -> ::std::option::Option<&crate::types::EncryptionAtRestOptions> {
         self.encryption_at_rest_options.as_ref()
     }
     /// <p>Additional options for the domain endpoint, such as whether to require HTTPS for all traffic.</p>
     pub fn domain_endpoint_options(
         &self,
-    ) -> std::option::Option<&crate::types::DomainEndpointOptions> {
+    ) -> ::std::option::Option<&crate::types::DomainEndpointOptions> {
         self.domain_endpoint_options.as_ref()
     }
     /// <p>Node-to-node encryption options for the domain.</p>
     pub fn node_to_node_encryption_options(
         &self,
-    ) -> std::option::Option<&crate::types::NodeToNodeEncryptionOptions> {
+    ) -> ::std::option::Option<&crate::types::NodeToNodeEncryptionOptions> {
         self.node_to_node_encryption_options.as_ref()
     }
     /// <p>Options for fine-grained access control.</p>
     pub fn advanced_security_options(
         &self,
-    ) -> std::option::Option<&crate::types::AdvancedSecurityOptionsInput> {
+    ) -> ::std::option::Option<&crate::types::AdvancedSecurityOptionsInput> {
         self.advanced_security_options.as_ref()
     }
     /// <p>Options for Auto-Tune.</p>
-    pub fn auto_tune_options(&self) -> std::option::Option<&crate::types::AutoTuneOptions> {
+    pub fn auto_tune_options(&self) -> ::std::option::Option<&crate::types::AutoTuneOptions> {
         self.auto_tune_options.as_ref()
     }
     /// <p>This flag, when set to True, specifies whether the <code>UpdateDomain</code> request should return the results of a dry run analysis without actually applying the change. A dry run determines what type of deployment the update will cause.</p>
-    pub fn dry_run(&self) -> std::option::Option<bool> {
+    pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
     /// <p>The type of dry run to perform.</p>
@@ -160,19 +163,19 @@ impl UpdateDomainConfigInput {
     /// <li> <p> <code>Basic</code> only returns the type of deployment (blue/green or dynamic) that the update will cause.</p> </li>
     /// <li> <p> <code>Verbose</code> runs an additional check to validate the changes you're making. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-configuration-changes#validation-check">Validating a domain update</a>.</p> </li>
     /// </ul>
-    pub fn dry_run_mode(&self) -> std::option::Option<&crate::types::DryRunMode> {
+    pub fn dry_run_mode(&self) -> ::std::option::Option<&crate::types::DryRunMode> {
         self.dry_run_mode.as_ref()
     }
     /// <p>Off-peak window options for the domain.</p>
     pub fn off_peak_window_options(
         &self,
-    ) -> std::option::Option<&crate::types::OffPeakWindowOptions> {
+    ) -> ::std::option::Option<&crate::types::OffPeakWindowOptions> {
         self.off_peak_window_options.as_ref()
     }
     /// <p>Service software update options for the domain.</p>
     pub fn software_update_options(
         &self,
-    ) -> std::option::Option<&crate::types::SoftwareUpdateOptions> {
+    ) -> ::std::option::Option<&crate::types::SoftwareUpdateOptions> {
         self.software_update_options.as_ref()
     }
 }
@@ -186,99 +189,108 @@ impl UpdateDomainConfigInput {
 
 /// A builder for [`UpdateDomainConfigInput`](crate::operation::update_domain_config::UpdateDomainConfigInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateDomainConfigInputBuilder {
-    pub(crate) domain_name: std::option::Option<std::string::String>,
-    pub(crate) cluster_config: std::option::Option<crate::types::ClusterConfig>,
-    pub(crate) ebs_options: std::option::Option<crate::types::EbsOptions>,
-    pub(crate) snapshot_options: std::option::Option<crate::types::SnapshotOptions>,
-    pub(crate) vpc_options: std::option::Option<crate::types::VpcOptions>,
-    pub(crate) cognito_options: std::option::Option<crate::types::CognitoOptions>,
-    pub(crate) advanced_options:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) access_policies: std::option::Option<std::string::String>,
-    pub(crate) log_publishing_options: std::option::Option<
-        std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>,
+    pub(crate) domain_name: ::std::option::Option<::std::string::String>,
+    pub(crate) cluster_config: ::std::option::Option<crate::types::ClusterConfig>,
+    pub(crate) ebs_options: ::std::option::Option<crate::types::EbsOptions>,
+    pub(crate) snapshot_options: ::std::option::Option<crate::types::SnapshotOptions>,
+    pub(crate) vpc_options: ::std::option::Option<crate::types::VpcOptions>,
+    pub(crate) cognito_options: ::std::option::Option<crate::types::CognitoOptions>,
+    pub(crate) advanced_options: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) access_policies: ::std::option::Option<::std::string::String>,
+    pub(crate) log_publishing_options: ::std::option::Option<
+        ::std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>,
     >,
     pub(crate) encryption_at_rest_options:
-        std::option::Option<crate::types::EncryptionAtRestOptions>,
-    pub(crate) domain_endpoint_options: std::option::Option<crate::types::DomainEndpointOptions>,
+        ::std::option::Option<crate::types::EncryptionAtRestOptions>,
+    pub(crate) domain_endpoint_options: ::std::option::Option<crate::types::DomainEndpointOptions>,
     pub(crate) node_to_node_encryption_options:
-        std::option::Option<crate::types::NodeToNodeEncryptionOptions>,
+        ::std::option::Option<crate::types::NodeToNodeEncryptionOptions>,
     pub(crate) advanced_security_options:
-        std::option::Option<crate::types::AdvancedSecurityOptionsInput>,
-    pub(crate) auto_tune_options: std::option::Option<crate::types::AutoTuneOptions>,
-    pub(crate) dry_run: std::option::Option<bool>,
-    pub(crate) dry_run_mode: std::option::Option<crate::types::DryRunMode>,
-    pub(crate) off_peak_window_options: std::option::Option<crate::types::OffPeakWindowOptions>,
-    pub(crate) software_update_options: std::option::Option<crate::types::SoftwareUpdateOptions>,
+        ::std::option::Option<crate::types::AdvancedSecurityOptionsInput>,
+    pub(crate) auto_tune_options: ::std::option::Option<crate::types::AutoTuneOptions>,
+    pub(crate) dry_run: ::std::option::Option<bool>,
+    pub(crate) dry_run_mode: ::std::option::Option<crate::types::DryRunMode>,
+    pub(crate) off_peak_window_options: ::std::option::Option<crate::types::OffPeakWindowOptions>,
+    pub(crate) software_update_options: ::std::option::Option<crate::types::SoftwareUpdateOptions>,
 }
 impl UpdateDomainConfigInputBuilder {
     /// <p>The name of the domain that you're updating.</p>
-    pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.domain_name = Some(input.into());
+    pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.domain_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the domain that you're updating.</p>
-    pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_name = input;
         self
     }
     /// <p>Changes that you want to make to the cluster configuration, such as the instance type and number of EC2 instances.</p>
     pub fn cluster_config(mut self, input: crate::types::ClusterConfig) -> Self {
-        self.cluster_config = Some(input);
+        self.cluster_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>Changes that you want to make to the cluster configuration, such as the instance type and number of EC2 instances.</p>
     pub fn set_cluster_config(
         mut self,
-        input: std::option::Option<crate::types::ClusterConfig>,
+        input: ::std::option::Option<crate::types::ClusterConfig>,
     ) -> Self {
         self.cluster_config = input;
         self
     }
     /// <p>The type and size of the EBS volume to attach to instances in the domain.</p>
     pub fn ebs_options(mut self, input: crate::types::EbsOptions) -> Self {
-        self.ebs_options = Some(input);
+        self.ebs_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type and size of the EBS volume to attach to instances in the domain.</p>
-    pub fn set_ebs_options(mut self, input: std::option::Option<crate::types::EbsOptions>) -> Self {
+    pub fn set_ebs_options(
+        mut self,
+        input: ::std::option::Option<crate::types::EbsOptions>,
+    ) -> Self {
         self.ebs_options = input;
         self
     }
     /// <p>Option to set the time, in UTC format, for the daily automated snapshot. Default value is <code>0</code> hours. </p>
     pub fn snapshot_options(mut self, input: crate::types::SnapshotOptions) -> Self {
-        self.snapshot_options = Some(input);
+        self.snapshot_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>Option to set the time, in UTC format, for the daily automated snapshot. Default value is <code>0</code> hours. </p>
     pub fn set_snapshot_options(
         mut self,
-        input: std::option::Option<crate::types::SnapshotOptions>,
+        input: ::std::option::Option<crate::types::SnapshotOptions>,
     ) -> Self {
         self.snapshot_options = input;
         self
     }
     /// <p>Options to specify the subnets and security groups for a VPC endpoint. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html">Launching your Amazon OpenSearch Service domains using a VPC</a>.</p>
     pub fn vpc_options(mut self, input: crate::types::VpcOptions) -> Self {
-        self.vpc_options = Some(input);
+        self.vpc_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>Options to specify the subnets and security groups for a VPC endpoint. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html">Launching your Amazon OpenSearch Service domains using a VPC</a>.</p>
-    pub fn set_vpc_options(mut self, input: std::option::Option<crate::types::VpcOptions>) -> Self {
+    pub fn set_vpc_options(
+        mut self,
+        input: ::std::option::Option<crate::types::VpcOptions>,
+    ) -> Self {
         self.vpc_options = input;
         self
     }
     /// <p>Key-value pairs to configure Amazon Cognito authentication for OpenSearch Dashboards.</p>
     pub fn cognito_options(mut self, input: crate::types::CognitoOptions) -> Self {
-        self.cognito_options = Some(input);
+        self.cognito_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>Key-value pairs to configure Amazon Cognito authentication for OpenSearch Dashboards.</p>
     pub fn set_cognito_options(
         mut self,
-        input: std::option::Option<crate::types::CognitoOptions>,
+        input: ::std::option::Option<crate::types::CognitoOptions>,
     ) -> Self {
         self.cognito_options = input;
         self
@@ -296,12 +308,12 @@ impl UpdateDomainConfigInputBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options">Advanced cluster parameters</a>.</p>
     pub fn advanced_options(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.advanced_options.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.advanced_options = Some(hash_map);
+        self.advanced_options = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Key-value pairs to specify advanced configuration options. The following key-value pairs are supported:</p>
@@ -313,20 +325,26 @@ impl UpdateDomainConfigInputBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options">Advanced cluster parameters</a>.</p>
     pub fn set_advanced_options(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.advanced_options = input;
         self
     }
     /// <p>Identity and Access Management (IAM) access policy as a JSON-formatted string.</p>
-    pub fn access_policies(mut self, input: impl Into<std::string::String>) -> Self {
-        self.access_policies = Some(input.into());
+    pub fn access_policies(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.access_policies = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Identity and Access Management (IAM) access policy as a JSON-formatted string.</p>
-    pub fn set_access_policies(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_access_policies(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.access_policies = input;
         self
     }
@@ -342,14 +360,14 @@ impl UpdateDomainConfigInputBuilder {
     ) -> Self {
         let mut hash_map = self.log_publishing_options.unwrap_or_default();
         hash_map.insert(k, v);
-        self.log_publishing_options = Some(hash_map);
+        self.log_publishing_options = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Options to publish OpenSearch logs to Amazon CloudWatch Logs.</p>
     pub fn set_log_publishing_options(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>,
         >,
     ) -> Self {
         self.log_publishing_options = input;
@@ -360,26 +378,26 @@ impl UpdateDomainConfigInputBuilder {
         mut self,
         input: crate::types::EncryptionAtRestOptions,
     ) -> Self {
-        self.encryption_at_rest_options = Some(input);
+        self.encryption_at_rest_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>Encryption at rest options for the domain.</p>
     pub fn set_encryption_at_rest_options(
         mut self,
-        input: std::option::Option<crate::types::EncryptionAtRestOptions>,
+        input: ::std::option::Option<crate::types::EncryptionAtRestOptions>,
     ) -> Self {
         self.encryption_at_rest_options = input;
         self
     }
     /// <p>Additional options for the domain endpoint, such as whether to require HTTPS for all traffic.</p>
     pub fn domain_endpoint_options(mut self, input: crate::types::DomainEndpointOptions) -> Self {
-        self.domain_endpoint_options = Some(input);
+        self.domain_endpoint_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>Additional options for the domain endpoint, such as whether to require HTTPS for all traffic.</p>
     pub fn set_domain_endpoint_options(
         mut self,
-        input: std::option::Option<crate::types::DomainEndpointOptions>,
+        input: ::std::option::Option<crate::types::DomainEndpointOptions>,
     ) -> Self {
         self.domain_endpoint_options = input;
         self
@@ -389,13 +407,13 @@ impl UpdateDomainConfigInputBuilder {
         mut self,
         input: crate::types::NodeToNodeEncryptionOptions,
     ) -> Self {
-        self.node_to_node_encryption_options = Some(input);
+        self.node_to_node_encryption_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>Node-to-node encryption options for the domain.</p>
     pub fn set_node_to_node_encryption_options(
         mut self,
-        input: std::option::Option<crate::types::NodeToNodeEncryptionOptions>,
+        input: ::std::option::Option<crate::types::NodeToNodeEncryptionOptions>,
     ) -> Self {
         self.node_to_node_encryption_options = input;
         self
@@ -405,37 +423,37 @@ impl UpdateDomainConfigInputBuilder {
         mut self,
         input: crate::types::AdvancedSecurityOptionsInput,
     ) -> Self {
-        self.advanced_security_options = Some(input);
+        self.advanced_security_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>Options for fine-grained access control.</p>
     pub fn set_advanced_security_options(
         mut self,
-        input: std::option::Option<crate::types::AdvancedSecurityOptionsInput>,
+        input: ::std::option::Option<crate::types::AdvancedSecurityOptionsInput>,
     ) -> Self {
         self.advanced_security_options = input;
         self
     }
     /// <p>Options for Auto-Tune.</p>
     pub fn auto_tune_options(mut self, input: crate::types::AutoTuneOptions) -> Self {
-        self.auto_tune_options = Some(input);
+        self.auto_tune_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>Options for Auto-Tune.</p>
     pub fn set_auto_tune_options(
         mut self,
-        input: std::option::Option<crate::types::AutoTuneOptions>,
+        input: ::std::option::Option<crate::types::AutoTuneOptions>,
     ) -> Self {
         self.auto_tune_options = input;
         self
     }
     /// <p>This flag, when set to True, specifies whether the <code>UpdateDomain</code> request should return the results of a dry run analysis without actually applying the change. A dry run determines what type of deployment the update will cause.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
-        self.dry_run = Some(input);
+        self.dry_run = ::std::option::Option::Some(input);
         self
     }
     /// <p>This flag, when set to True, specifies whether the <code>UpdateDomain</code> request should return the results of a dry run analysis without actually applying the change. A dry run determines what type of deployment the update will cause.</p>
-    pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
     }
@@ -445,7 +463,7 @@ impl UpdateDomainConfigInputBuilder {
     /// <li> <p> <code>Verbose</code> runs an additional check to validate the changes you're making. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-configuration-changes#validation-check">Validating a domain update</a>.</p> </li>
     /// </ul>
     pub fn dry_run_mode(mut self, input: crate::types::DryRunMode) -> Self {
-        self.dry_run_mode = Some(input);
+        self.dry_run_mode = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of dry run to perform.</p>
@@ -455,33 +473,33 @@ impl UpdateDomainConfigInputBuilder {
     /// </ul>
     pub fn set_dry_run_mode(
         mut self,
-        input: std::option::Option<crate::types::DryRunMode>,
+        input: ::std::option::Option<crate::types::DryRunMode>,
     ) -> Self {
         self.dry_run_mode = input;
         self
     }
     /// <p>Off-peak window options for the domain.</p>
     pub fn off_peak_window_options(mut self, input: crate::types::OffPeakWindowOptions) -> Self {
-        self.off_peak_window_options = Some(input);
+        self.off_peak_window_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>Off-peak window options for the domain.</p>
     pub fn set_off_peak_window_options(
         mut self,
-        input: std::option::Option<crate::types::OffPeakWindowOptions>,
+        input: ::std::option::Option<crate::types::OffPeakWindowOptions>,
     ) -> Self {
         self.off_peak_window_options = input;
         self
     }
     /// <p>Service software update options for the domain.</p>
     pub fn software_update_options(mut self, input: crate::types::SoftwareUpdateOptions) -> Self {
-        self.software_update_options = Some(input);
+        self.software_update_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>Service software update options for the domain.</p>
     pub fn set_software_update_options(
         mut self,
-        input: std::option::Option<crate::types::SoftwareUpdateOptions>,
+        input: ::std::option::Option<crate::types::SoftwareUpdateOptions>,
     ) -> Self {
         self.software_update_options = input;
         self
@@ -489,11 +507,11 @@ impl UpdateDomainConfigInputBuilder {
     /// Consumes the builder and constructs a [`UpdateDomainConfigInput`](crate::operation::update_domain_config::UpdateDomainConfigInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::update_domain_config::UpdateDomainConfigInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::update_domain_config::UpdateDomainConfigInput {
                 domain_name: self.domain_name,
                 cluster_config: self.cluster_config,

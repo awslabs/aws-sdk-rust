@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetMaintenanceWindowExecution`](crate::operation::get_maintenance_window_execution::builders::GetMaintenanceWindowExecutionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`window_execution_id(impl Into<String>)`](crate::operation::get_maintenance_window_execution::builders::GetMaintenanceWindowExecutionFluentBuilder::window_execution_id) / [`set_window_execution_id(Option<String>)`](crate::operation::get_maintenance_window_execution::builders::GetMaintenanceWindowExecutionFluentBuilder::set_window_execution_id): <p>The ID of the maintenance window execution that includes the task.</p>
+    ///   - [`window_execution_id(impl ::std::convert::Into<String>)`](crate::operation::get_maintenance_window_execution::builders::GetMaintenanceWindowExecutionFluentBuilder::window_execution_id) / [`set_window_execution_id(Option<String>)`](crate::operation::get_maintenance_window_execution::builders::GetMaintenanceWindowExecutionFluentBuilder::set_window_execution_id): <p>The ID of the maintenance window execution that includes the task.</p>
     /// - On success, responds with [`GetMaintenanceWindowExecutionOutput`](crate::operation::get_maintenance_window_execution::GetMaintenanceWindowExecutionOutput) with field(s):
     ///   - [`window_execution_id(Option<String>)`](crate::operation::get_maintenance_window_execution::GetMaintenanceWindowExecutionOutput::window_execution_id): <p>The ID of the maintenance window execution.</p>
     ///   - [`task_ids(Option<Vec<String>>)`](crate::operation::get_maintenance_window_execution::GetMaintenanceWindowExecutionOutput::task_ids): <p>The ID of the task executions from the maintenance window execution.</p>

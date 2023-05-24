@@ -5,11 +5,11 @@
 /// <p>You can only use the <code>DeploymentAlarms</code> method to detect failures when the <code>DeploymentController</code> is set to <code>ECS</code> (rolling update).</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-ecs.html">Rolling update</a> in the <i> <i>Amazon Elastic Container Service Developer Guide</i> </i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeploymentAlarms {
     /// <p>One or more CloudWatch alarm names. Use a "," to separate the alarms.</p>
     #[doc(hidden)]
-    pub alarm_names: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub alarm_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Determines whether to use the CloudWatch alarm option in the service deployment process.</p>
     #[doc(hidden)]
     pub enable: bool,
@@ -19,7 +19,7 @@ pub struct DeploymentAlarms {
 }
 impl DeploymentAlarms {
     /// <p>One or more CloudWatch alarm names. Use a "," to separate the alarms.</p>
-    pub fn alarm_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn alarm_names(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.alarm_names.as_deref()
     }
     /// <p>Determines whether to use the CloudWatch alarm option in the service deployment process.</p>
@@ -40,11 +40,13 @@ impl DeploymentAlarms {
 
 /// A builder for [`DeploymentAlarms`](crate::types::DeploymentAlarms).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeploymentAlarmsBuilder {
-    pub(crate) alarm_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) enable: std::option::Option<bool>,
-    pub(crate) rollback: std::option::Option<bool>,
+    pub(crate) alarm_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) enable: ::std::option::Option<bool>,
+    pub(crate) rollback: ::std::option::Option<bool>,
 }
 impl DeploymentAlarmsBuilder {
     /// Appends an item to `alarm_names`.
@@ -52,37 +54,37 @@ impl DeploymentAlarmsBuilder {
     /// To override the contents of this collection use [`set_alarm_names`](Self::set_alarm_names).
     ///
     /// <p>One or more CloudWatch alarm names. Use a "," to separate the alarms.</p>
-    pub fn alarm_names(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn alarm_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.alarm_names.unwrap_or_default();
         v.push(input.into());
-        self.alarm_names = Some(v);
+        self.alarm_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>One or more CloudWatch alarm names. Use a "," to separate the alarms.</p>
     pub fn set_alarm_names(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.alarm_names = input;
         self
     }
     /// <p>Determines whether to use the CloudWatch alarm option in the service deployment process.</p>
     pub fn enable(mut self, input: bool) -> Self {
-        self.enable = Some(input);
+        self.enable = ::std::option::Option::Some(input);
         self
     }
     /// <p>Determines whether to use the CloudWatch alarm option in the service deployment process.</p>
-    pub fn set_enable(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enable(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable = input;
         self
     }
     /// <p>Determines whether to configure Amazon ECS to roll back the service if a service deployment fails. If rollback is used, when a service deployment fails, the service is rolled back to the last deployment that completed successfully.</p>
     pub fn rollback(mut self, input: bool) -> Self {
-        self.rollback = Some(input);
+        self.rollback = ::std::option::Option::Some(input);
         self
     }
     /// <p>Determines whether to configure Amazon ECS to roll back the service if a service deployment fails. If rollback is used, when a service deployment fails, the service is rolled back to the last deployment that completed successfully.</p>
-    pub fn set_rollback(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_rollback(mut self, input: ::std::option::Option<bool>) -> Self {
         self.rollback = input;
         self
     }

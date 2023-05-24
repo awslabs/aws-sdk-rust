@@ -2,100 +2,100 @@
 
 /// <p> Identifies a model that you want to host and the resources chosen to deploy for hosting it. If you are deploying multiple models, tell SageMaker how to distribute traffic among the models by specifying variant weights. For more information on production variants, check <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-ab-testing.html"> Production variants</a>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProductionVariant {
     /// <p>The name of the production variant.</p>
     #[doc(hidden)]
-    pub variant_name: std::option::Option<std::string::String>,
+    pub variant_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the model that you want to host. This is the name that you specified when creating the model.</p>
     #[doc(hidden)]
-    pub model_name: std::option::Option<std::string::String>,
+    pub model_name: ::std::option::Option<::std::string::String>,
     /// <p>Number of instances to launch initially.</p>
     #[doc(hidden)]
-    pub initial_instance_count: std::option::Option<i32>,
+    pub initial_instance_count: ::std::option::Option<i32>,
     /// <p>The ML compute instance type.</p>
     #[doc(hidden)]
-    pub instance_type: std::option::Option<crate::types::ProductionVariantInstanceType>,
+    pub instance_type: ::std::option::Option<crate::types::ProductionVariantInstanceType>,
     /// <p>Determines initial traffic distribution among all of the models that you specify in the endpoint configuration. The traffic to a production variant is determined by the ratio of the <code>VariantWeight</code> to the sum of all <code>VariantWeight</code> values across all ProductionVariants. If unspecified, it defaults to 1.0. </p>
     #[doc(hidden)]
-    pub initial_variant_weight: std::option::Option<f32>,
+    pub initial_variant_weight: ::std::option::Option<f32>,
     /// <p>The size of the Elastic Inference (EI) instance to use for the production variant. EI instances provide on-demand GPU computing for inference. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.</p>
     #[doc(hidden)]
-    pub accelerator_type: std::option::Option<crate::types::ProductionVariantAcceleratorType>,
+    pub accelerator_type: ::std::option::Option<crate::types::ProductionVariantAcceleratorType>,
     /// <p>Specifies configuration for a core dump from the model container when the process crashes.</p>
     #[doc(hidden)]
-    pub core_dump_config: std::option::Option<crate::types::ProductionVariantCoreDumpConfig>,
+    pub core_dump_config: ::std::option::Option<crate::types::ProductionVariantCoreDumpConfig>,
     /// <p>The serverless configuration for an endpoint. Specifies a serverless endpoint configuration instead of an instance-based endpoint configuration.</p>
     #[doc(hidden)]
-    pub serverless_config: std::option::Option<crate::types::ProductionVariantServerlessConfig>,
+    pub serverless_config: ::std::option::Option<crate::types::ProductionVariantServerlessConfig>,
     /// <p>The size, in GB, of the ML storage volume attached to individual inference instance associated with the production variant. Currently only Amazon EBS gp2 storage volumes are supported.</p>
     #[doc(hidden)]
-    pub volume_size_in_gb: std::option::Option<i32>,
+    pub volume_size_in_gb: ::std::option::Option<i32>,
     /// <p>The timeout value, in seconds, to download and extract the model that you want to host from Amazon S3 to the individual inference instance associated with this production variant.</p>
     #[doc(hidden)]
-    pub model_data_download_timeout_in_seconds: std::option::Option<i32>,
+    pub model_data_download_timeout_in_seconds: ::std::option::Option<i32>,
     /// <p>The timeout value, in seconds, for your inference container to pass health check by SageMaker Hosting. For more information about health check, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-inference-code.html#your-algorithms-inference-algo-ping-requests">How Your Container Should Respond to Health Check (Ping) Requests</a>.</p>
     #[doc(hidden)]
-    pub container_startup_health_check_timeout_in_seconds: std::option::Option<i32>,
+    pub container_startup_health_check_timeout_in_seconds: ::std::option::Option<i32>,
     /// <p> You can use this parameter to turn on native Amazon Web Services Systems Manager (SSM) access for a production variant behind an endpoint. By default, SSM access is disabled for all production variants behind an endpoint. You can turn on or turn off SSM access for a production variant behind an existing endpoint by creating a new endpoint configuration and calling <code>UpdateEndpoint</code>. </p>
     #[doc(hidden)]
-    pub enable_ssm_access: std::option::Option<bool>,
+    pub enable_ssm_access: ::std::option::Option<bool>,
 }
 impl ProductionVariant {
     /// <p>The name of the production variant.</p>
-    pub fn variant_name(&self) -> std::option::Option<&str> {
+    pub fn variant_name(&self) -> ::std::option::Option<&str> {
         self.variant_name.as_deref()
     }
     /// <p>The name of the model that you want to host. This is the name that you specified when creating the model.</p>
-    pub fn model_name(&self) -> std::option::Option<&str> {
+    pub fn model_name(&self) -> ::std::option::Option<&str> {
         self.model_name.as_deref()
     }
     /// <p>Number of instances to launch initially.</p>
-    pub fn initial_instance_count(&self) -> std::option::Option<i32> {
+    pub fn initial_instance_count(&self) -> ::std::option::Option<i32> {
         self.initial_instance_count
     }
     /// <p>The ML compute instance type.</p>
     pub fn instance_type(
         &self,
-    ) -> std::option::Option<&crate::types::ProductionVariantInstanceType> {
+    ) -> ::std::option::Option<&crate::types::ProductionVariantInstanceType> {
         self.instance_type.as_ref()
     }
     /// <p>Determines initial traffic distribution among all of the models that you specify in the endpoint configuration. The traffic to a production variant is determined by the ratio of the <code>VariantWeight</code> to the sum of all <code>VariantWeight</code> values across all ProductionVariants. If unspecified, it defaults to 1.0. </p>
-    pub fn initial_variant_weight(&self) -> std::option::Option<f32> {
+    pub fn initial_variant_weight(&self) -> ::std::option::Option<f32> {
         self.initial_variant_weight
     }
     /// <p>The size of the Elastic Inference (EI) instance to use for the production variant. EI instances provide on-demand GPU computing for inference. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.</p>
     pub fn accelerator_type(
         &self,
-    ) -> std::option::Option<&crate::types::ProductionVariantAcceleratorType> {
+    ) -> ::std::option::Option<&crate::types::ProductionVariantAcceleratorType> {
         self.accelerator_type.as_ref()
     }
     /// <p>Specifies configuration for a core dump from the model container when the process crashes.</p>
     pub fn core_dump_config(
         &self,
-    ) -> std::option::Option<&crate::types::ProductionVariantCoreDumpConfig> {
+    ) -> ::std::option::Option<&crate::types::ProductionVariantCoreDumpConfig> {
         self.core_dump_config.as_ref()
     }
     /// <p>The serverless configuration for an endpoint. Specifies a serverless endpoint configuration instead of an instance-based endpoint configuration.</p>
     pub fn serverless_config(
         &self,
-    ) -> std::option::Option<&crate::types::ProductionVariantServerlessConfig> {
+    ) -> ::std::option::Option<&crate::types::ProductionVariantServerlessConfig> {
         self.serverless_config.as_ref()
     }
     /// <p>The size, in GB, of the ML storage volume attached to individual inference instance associated with the production variant. Currently only Amazon EBS gp2 storage volumes are supported.</p>
-    pub fn volume_size_in_gb(&self) -> std::option::Option<i32> {
+    pub fn volume_size_in_gb(&self) -> ::std::option::Option<i32> {
         self.volume_size_in_gb
     }
     /// <p>The timeout value, in seconds, to download and extract the model that you want to host from Amazon S3 to the individual inference instance associated with this production variant.</p>
-    pub fn model_data_download_timeout_in_seconds(&self) -> std::option::Option<i32> {
+    pub fn model_data_download_timeout_in_seconds(&self) -> ::std::option::Option<i32> {
         self.model_data_download_timeout_in_seconds
     }
     /// <p>The timeout value, in seconds, for your inference container to pass health check by SageMaker Hosting. For more information about health check, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-inference-code.html#your-algorithms-inference-algo-ping-requests">How Your Container Should Respond to Health Check (Ping) Requests</a>.</p>
-    pub fn container_startup_health_check_timeout_in_seconds(&self) -> std::option::Option<i32> {
+    pub fn container_startup_health_check_timeout_in_seconds(&self) -> ::std::option::Option<i32> {
         self.container_startup_health_check_timeout_in_seconds
     }
     /// <p> You can use this parameter to turn on native Amazon Web Services Systems Manager (SSM) access for a production variant behind an endpoint. By default, SSM access is disabled for all production variants behind an endpoint. You can turn on or turn off SSM access for a production variant behind an existing endpoint by creating a new endpoint configuration and calling <code>UpdateEndpoint</code>. </p>
-    pub fn enable_ssm_access(&self) -> std::option::Option<bool> {
+    pub fn enable_ssm_access(&self) -> ::std::option::Option<bool> {
         self.enable_ssm_access
     }
 }
@@ -108,74 +108,77 @@ impl ProductionVariant {
 
 /// A builder for [`ProductionVariant`](crate::types::ProductionVariant).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ProductionVariantBuilder {
-    pub(crate) variant_name: std::option::Option<std::string::String>,
-    pub(crate) model_name: std::option::Option<std::string::String>,
-    pub(crate) initial_instance_count: std::option::Option<i32>,
-    pub(crate) instance_type: std::option::Option<crate::types::ProductionVariantInstanceType>,
-    pub(crate) initial_variant_weight: std::option::Option<f32>,
+    pub(crate) variant_name: ::std::option::Option<::std::string::String>,
+    pub(crate) model_name: ::std::option::Option<::std::string::String>,
+    pub(crate) initial_instance_count: ::std::option::Option<i32>,
+    pub(crate) instance_type: ::std::option::Option<crate::types::ProductionVariantInstanceType>,
+    pub(crate) initial_variant_weight: ::std::option::Option<f32>,
     pub(crate) accelerator_type:
-        std::option::Option<crate::types::ProductionVariantAcceleratorType>,
-    pub(crate) core_dump_config: std::option::Option<crate::types::ProductionVariantCoreDumpConfig>,
+        ::std::option::Option<crate::types::ProductionVariantAcceleratorType>,
+    pub(crate) core_dump_config:
+        ::std::option::Option<crate::types::ProductionVariantCoreDumpConfig>,
     pub(crate) serverless_config:
-        std::option::Option<crate::types::ProductionVariantServerlessConfig>,
-    pub(crate) volume_size_in_gb: std::option::Option<i32>,
-    pub(crate) model_data_download_timeout_in_seconds: std::option::Option<i32>,
-    pub(crate) container_startup_health_check_timeout_in_seconds: std::option::Option<i32>,
-    pub(crate) enable_ssm_access: std::option::Option<bool>,
+        ::std::option::Option<crate::types::ProductionVariantServerlessConfig>,
+    pub(crate) volume_size_in_gb: ::std::option::Option<i32>,
+    pub(crate) model_data_download_timeout_in_seconds: ::std::option::Option<i32>,
+    pub(crate) container_startup_health_check_timeout_in_seconds: ::std::option::Option<i32>,
+    pub(crate) enable_ssm_access: ::std::option::Option<bool>,
 }
 impl ProductionVariantBuilder {
     /// <p>The name of the production variant.</p>
-    pub fn variant_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.variant_name = Some(input.into());
+    pub fn variant_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.variant_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the production variant.</p>
-    pub fn set_variant_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_variant_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.variant_name = input;
         self
     }
     /// <p>The name of the model that you want to host. This is the name that you specified when creating the model.</p>
-    pub fn model_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.model_name = Some(input.into());
+    pub fn model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.model_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the model that you want to host. This is the name that you specified when creating the model.</p>
-    pub fn set_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_name = input;
         self
     }
     /// <p>Number of instances to launch initially.</p>
     pub fn initial_instance_count(mut self, input: i32) -> Self {
-        self.initial_instance_count = Some(input);
+        self.initial_instance_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>Number of instances to launch initially.</p>
-    pub fn set_initial_instance_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_initial_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.initial_instance_count = input;
         self
     }
     /// <p>The ML compute instance type.</p>
     pub fn instance_type(mut self, input: crate::types::ProductionVariantInstanceType) -> Self {
-        self.instance_type = Some(input);
+        self.instance_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The ML compute instance type.</p>
     pub fn set_instance_type(
         mut self,
-        input: std::option::Option<crate::types::ProductionVariantInstanceType>,
+        input: ::std::option::Option<crate::types::ProductionVariantInstanceType>,
     ) -> Self {
         self.instance_type = input;
         self
     }
     /// <p>Determines initial traffic distribution among all of the models that you specify in the endpoint configuration. The traffic to a production variant is determined by the ratio of the <code>VariantWeight</code> to the sum of all <code>VariantWeight</code> values across all ProductionVariants. If unspecified, it defaults to 1.0. </p>
     pub fn initial_variant_weight(mut self, input: f32) -> Self {
-        self.initial_variant_weight = Some(input);
+        self.initial_variant_weight = ::std::option::Option::Some(input);
         self
     }
     /// <p>Determines initial traffic distribution among all of the models that you specify in the endpoint configuration. The traffic to a production variant is determined by the ratio of the <code>VariantWeight</code> to the sum of all <code>VariantWeight</code> values across all ProductionVariants. If unspecified, it defaults to 1.0. </p>
-    pub fn set_initial_variant_weight(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_initial_variant_weight(mut self, input: ::std::option::Option<f32>) -> Self {
         self.initial_variant_weight = input;
         self
     }
@@ -184,13 +187,13 @@ impl ProductionVariantBuilder {
         mut self,
         input: crate::types::ProductionVariantAcceleratorType,
     ) -> Self {
-        self.accelerator_type = Some(input);
+        self.accelerator_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The size of the Elastic Inference (EI) instance to use for the production variant. EI instances provide on-demand GPU computing for inference. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon SageMaker</a>.</p>
     pub fn set_accelerator_type(
         mut self,
-        input: std::option::Option<crate::types::ProductionVariantAcceleratorType>,
+        input: ::std::option::Option<crate::types::ProductionVariantAcceleratorType>,
     ) -> Self {
         self.accelerator_type = input;
         self
@@ -200,13 +203,13 @@ impl ProductionVariantBuilder {
         mut self,
         input: crate::types::ProductionVariantCoreDumpConfig,
     ) -> Self {
-        self.core_dump_config = Some(input);
+        self.core_dump_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies configuration for a core dump from the model container when the process crashes.</p>
     pub fn set_core_dump_config(
         mut self,
-        input: std::option::Option<crate::types::ProductionVariantCoreDumpConfig>,
+        input: ::std::option::Option<crate::types::ProductionVariantCoreDumpConfig>,
     ) -> Self {
         self.core_dump_config = input;
         self
@@ -216,60 +219,60 @@ impl ProductionVariantBuilder {
         mut self,
         input: crate::types::ProductionVariantServerlessConfig,
     ) -> Self {
-        self.serverless_config = Some(input);
+        self.serverless_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The serverless configuration for an endpoint. Specifies a serverless endpoint configuration instead of an instance-based endpoint configuration.</p>
     pub fn set_serverless_config(
         mut self,
-        input: std::option::Option<crate::types::ProductionVariantServerlessConfig>,
+        input: ::std::option::Option<crate::types::ProductionVariantServerlessConfig>,
     ) -> Self {
         self.serverless_config = input;
         self
     }
     /// <p>The size, in GB, of the ML storage volume attached to individual inference instance associated with the production variant. Currently only Amazon EBS gp2 storage volumes are supported.</p>
     pub fn volume_size_in_gb(mut self, input: i32) -> Self {
-        self.volume_size_in_gb = Some(input);
+        self.volume_size_in_gb = ::std::option::Option::Some(input);
         self
     }
     /// <p>The size, in GB, of the ML storage volume attached to individual inference instance associated with the production variant. Currently only Amazon EBS gp2 storage volumes are supported.</p>
-    pub fn set_volume_size_in_gb(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_volume_size_in_gb(mut self, input: ::std::option::Option<i32>) -> Self {
         self.volume_size_in_gb = input;
         self
     }
     /// <p>The timeout value, in seconds, to download and extract the model that you want to host from Amazon S3 to the individual inference instance associated with this production variant.</p>
     pub fn model_data_download_timeout_in_seconds(mut self, input: i32) -> Self {
-        self.model_data_download_timeout_in_seconds = Some(input);
+        self.model_data_download_timeout_in_seconds = ::std::option::Option::Some(input);
         self
     }
     /// <p>The timeout value, in seconds, to download and extract the model that you want to host from Amazon S3 to the individual inference instance associated with this production variant.</p>
     pub fn set_model_data_download_timeout_in_seconds(
         mut self,
-        input: std::option::Option<i32>,
+        input: ::std::option::Option<i32>,
     ) -> Self {
         self.model_data_download_timeout_in_seconds = input;
         self
     }
     /// <p>The timeout value, in seconds, for your inference container to pass health check by SageMaker Hosting. For more information about health check, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-inference-code.html#your-algorithms-inference-algo-ping-requests">How Your Container Should Respond to Health Check (Ping) Requests</a>.</p>
     pub fn container_startup_health_check_timeout_in_seconds(mut self, input: i32) -> Self {
-        self.container_startup_health_check_timeout_in_seconds = Some(input);
+        self.container_startup_health_check_timeout_in_seconds = ::std::option::Option::Some(input);
         self
     }
     /// <p>The timeout value, in seconds, for your inference container to pass health check by SageMaker Hosting. For more information about health check, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-inference-code.html#your-algorithms-inference-algo-ping-requests">How Your Container Should Respond to Health Check (Ping) Requests</a>.</p>
     pub fn set_container_startup_health_check_timeout_in_seconds(
         mut self,
-        input: std::option::Option<i32>,
+        input: ::std::option::Option<i32>,
     ) -> Self {
         self.container_startup_health_check_timeout_in_seconds = input;
         self
     }
     /// <p> You can use this parameter to turn on native Amazon Web Services Systems Manager (SSM) access for a production variant behind an endpoint. By default, SSM access is disabled for all production variants behind an endpoint. You can turn on or turn off SSM access for a production variant behind an existing endpoint by creating a new endpoint configuration and calling <code>UpdateEndpoint</code>. </p>
     pub fn enable_ssm_access(mut self, input: bool) -> Self {
-        self.enable_ssm_access = Some(input);
+        self.enable_ssm_access = ::std::option::Option::Some(input);
         self
     }
     /// <p> You can use this parameter to turn on native Amazon Web Services Systems Manager (SSM) access for a production variant behind an endpoint. By default, SSM access is disabled for all production variants behind an endpoint. You can turn on or turn off SSM access for a production variant behind an existing endpoint by creating a new endpoint configuration and calling <code>UpdateEndpoint</code>. </p>
-    pub fn set_enable_ssm_access(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enable_ssm_access(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_ssm_access = input;
         self
     }

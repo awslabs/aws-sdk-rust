@@ -2,22 +2,22 @@
 
 /// <p>The templated target type for the EventBridge <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutEvents.html"> <code>PutEvents</code> </a> API operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventBridgeParameters {
     /// <p>A free-form string, with a maximum of 128 characters, used to decide what fields to expect in the event detail.</p>
     #[doc(hidden)]
-    pub detail_type: std::option::Option<std::string::String>,
+    pub detail_type: ::std::option::Option<::std::string::String>,
     /// <p>The source of the event.</p>
     #[doc(hidden)]
-    pub source: std::option::Option<std::string::String>,
+    pub source: ::std::option::Option<::std::string::String>,
 }
 impl EventBridgeParameters {
     /// <p>A free-form string, with a maximum of 128 characters, used to decide what fields to expect in the event detail.</p>
-    pub fn detail_type(&self) -> std::option::Option<&str> {
+    pub fn detail_type(&self) -> ::std::option::Option<&str> {
         self.detail_type.as_deref()
     }
     /// <p>The source of the event.</p>
-    pub fn source(&self) -> std::option::Option<&str> {
+    pub fn source(&self) -> ::std::option::Option<&str> {
         self.source.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl EventBridgeParameters {
 
 /// A builder for [`EventBridgeParameters`](crate::types::EventBridgeParameters).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EventBridgeParametersBuilder {
-    pub(crate) detail_type: std::option::Option<std::string::String>,
-    pub(crate) source: std::option::Option<std::string::String>,
+    pub(crate) detail_type: ::std::option::Option<::std::string::String>,
+    pub(crate) source: ::std::option::Option<::std::string::String>,
 }
 impl EventBridgeParametersBuilder {
     /// <p>A free-form string, with a maximum of 128 characters, used to decide what fields to expect in the event detail.</p>
-    pub fn detail_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.detail_type = Some(input.into());
+    pub fn detail_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.detail_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A free-form string, with a maximum of 128 characters, used to decide what fields to expect in the event detail.</p>
-    pub fn set_detail_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_detail_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.detail_type = input;
         self
     }
     /// <p>The source of the event.</p>
-    pub fn source(mut self, input: impl Into<std::string::String>) -> Self {
-        self.source = Some(input.into());
+    pub fn source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The source of the event.</p>
-    pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source = input;
         self
     }

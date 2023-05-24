@@ -2,33 +2,35 @@
 
 /// <p> The request structure for the create a new deployment request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDeploymentInput {
     /// <p> The unique ID for an Amplify app. </p>
     #[doc(hidden)]
-    pub app_id: std::option::Option<std::string::String>,
+    pub app_id: ::std::option::Option<::std::string::String>,
     /// <p> The name for the branch, for the job. </p>
     #[doc(hidden)]
-    pub branch_name: std::option::Option<std::string::String>,
+    pub branch_name: ::std::option::Option<::std::string::String>,
     /// <p> An optional file map that contains the file name as the key and the file content md5 hash as the value. If this argument is provided, the service will generate a unique upload URL per file. Otherwise, the service will only generate a single upload URL for the zipped files. </p>
     #[doc(hidden)]
-    pub file_map:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub file_map: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl CreateDeploymentInput {
     /// <p> The unique ID for an Amplify app. </p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> ::std::option::Option<&str> {
         self.app_id.as_deref()
     }
     /// <p> The name for the branch, for the job. </p>
-    pub fn branch_name(&self) -> std::option::Option<&str> {
+    pub fn branch_name(&self) -> ::std::option::Option<&str> {
         self.branch_name.as_deref()
     }
     /// <p> An optional file map that contains the file name as the key and the file content md5 hash as the value. If this argument is provided, the service will generate a unique upload URL per file. Otherwise, the service will only generate a single upload URL for the zipped files. </p>
     pub fn file_map(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.file_map.as_ref()
     }
 }
@@ -42,31 +44,34 @@ impl CreateDeploymentInput {
 
 /// A builder for [`CreateDeploymentInput`](crate::operation::create_deployment::CreateDeploymentInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateDeploymentInputBuilder {
-    pub(crate) app_id: std::option::Option<std::string::String>,
-    pub(crate) branch_name: std::option::Option<std::string::String>,
-    pub(crate) file_map:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) app_id: ::std::option::Option<::std::string::String>,
+    pub(crate) branch_name: ::std::option::Option<::std::string::String>,
+    pub(crate) file_map: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl CreateDeploymentInputBuilder {
     /// <p> The unique ID for an Amplify app. </p>
-    pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.app_id = Some(input.into());
+    pub fn app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.app_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The unique ID for an Amplify app. </p>
-    pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_app_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_id = input;
         self
     }
     /// <p> The name for the branch, for the job. </p>
-    pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.branch_name = Some(input.into());
+    pub fn branch_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.branch_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name for the branch, for the job. </p>
-    pub fn set_branch_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_branch_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.branch_name = input;
         self
     }
@@ -77,19 +82,19 @@ impl CreateDeploymentInputBuilder {
     /// <p> An optional file map that contains the file name as the key and the file content md5 hash as the value. If this argument is provided, the service will generate a unique upload URL per file. Otherwise, the service will only generate a single upload URL for the zipped files. </p>
     pub fn file_map(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.file_map.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.file_map = Some(hash_map);
+        self.file_map = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p> An optional file map that contains the file name as the key and the file content md5 hash as the value. If this argument is provided, the service will generate a unique upload URL per file. Otherwise, the service will only generate a single upload URL for the zipped files. </p>
     pub fn set_file_map(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.file_map = input;
@@ -98,11 +103,11 @@ impl CreateDeploymentInputBuilder {
     /// Consumes the builder and constructs a [`CreateDeploymentInput`](crate::operation::create_deployment::CreateDeploymentInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::create_deployment::CreateDeploymentInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::create_deployment::CreateDeploymentInput {
+        ::std::result::Result::Ok(crate::operation::create_deployment::CreateDeploymentInput {
             app_id: self.app_id,
             branch_name: self.branch_name,
             file_map: self.file_map,

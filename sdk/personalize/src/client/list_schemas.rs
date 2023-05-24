@@ -4,7 +4,7 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_schemas::builders::ListSchemasFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_schemas::builders::ListSchemasFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_schemas::builders::ListSchemasFluentBuilder::set_next_token): <p>A token returned from the previous call to <code>ListSchemas</code> for getting the next set of schemas (if they exist).</p>
+    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_schemas::builders::ListSchemasFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_schemas::builders::ListSchemasFluentBuilder::set_next_token): <p>A token returned from the previous call to <code>ListSchemas</code> for getting the next set of schemas (if they exist).</p>
     ///   - [`max_results(i32)`](crate::operation::list_schemas::builders::ListSchemasFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_schemas::builders::ListSchemasFluentBuilder::set_max_results): <p>The maximum number of schemas to return.</p>
     /// - On success, responds with [`ListSchemasOutput`](crate::operation::list_schemas::ListSchemasOutput) with field(s):
     ///   - [`schemas(Option<Vec<DatasetSchemaSummary>>)`](crate::operation::list_schemas::ListSchemasOutput::schemas): <p>A list of schemas.</p>

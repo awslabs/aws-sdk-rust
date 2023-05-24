@@ -2,31 +2,31 @@
 
 /// <p>Specifies a security configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SecurityConfiguration {
     /// <p>The name of the security configuration.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The time at which this security configuration was created.</p>
     #[doc(hidden)]
-    pub created_time_stamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_time_stamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The encryption configuration associated with this security configuration.</p>
     #[doc(hidden)]
-    pub encryption_configuration: std::option::Option<crate::types::EncryptionConfiguration>,
+    pub encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
 }
 impl SecurityConfiguration {
     /// <p>The name of the security configuration.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The time at which this security configuration was created.</p>
-    pub fn created_time_stamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_time_stamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_time_stamp.as_ref()
     }
     /// <p>The encryption configuration associated with this security configuration.</p>
     pub fn encryption_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::EncryptionConfiguration> {
+    ) -> ::std::option::Option<&crate::types::EncryptionConfiguration> {
         self.encryption_configuration.as_ref()
     }
 }
@@ -39,32 +39,35 @@ impl SecurityConfiguration {
 
 /// A builder for [`SecurityConfiguration`](crate::types::SecurityConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SecurityConfigurationBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) created_time_stamp: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) encryption_configuration: std::option::Option<crate::types::EncryptionConfiguration>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) created_time_stamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) encryption_configuration:
+        ::std::option::Option<crate::types::EncryptionConfiguration>,
 }
 impl SecurityConfigurationBuilder {
     /// <p>The name of the security configuration.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the security configuration.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The time at which this security configuration was created.</p>
-    pub fn created_time_stamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_time_stamp = Some(input);
+    pub fn created_time_stamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_time_stamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time at which this security configuration was created.</p>
     pub fn set_created_time_stamp(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_time_stamp = input;
         self
@@ -74,13 +77,13 @@ impl SecurityConfigurationBuilder {
         mut self,
         input: crate::types::EncryptionConfiguration,
     ) -> Self {
-        self.encryption_configuration = Some(input);
+        self.encryption_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The encryption configuration associated with this security configuration.</p>
     pub fn set_encryption_configuration(
         mut self,
-        input: std::option::Option<crate::types::EncryptionConfiguration>,
+        input: ::std::option::Option<crate::types::EncryptionConfiguration>,
     ) -> Self {
         self.encryption_configuration = input;
         self

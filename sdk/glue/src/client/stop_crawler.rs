@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopCrawler`](crate::operation::stop_crawler::builders::StopCrawlerFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::stop_crawler::builders::StopCrawlerFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::stop_crawler::builders::StopCrawlerFluentBuilder::set_name): <p>Name of the crawler to stop.</p>
+    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::stop_crawler::builders::StopCrawlerFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::stop_crawler::builders::StopCrawlerFluentBuilder::set_name): <p>Name of the crawler to stop.</p>
     /// - On success, responds with [`StopCrawlerOutput`](crate::operation::stop_crawler::StopCrawlerOutput)
     /// - On failure, responds with [`SdkError<StopCrawlerError>`](crate::operation::stop_crawler::StopCrawlerError)
     pub fn stop_crawler(

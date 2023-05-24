@@ -2,14 +2,14 @@
 
 /// <p>Information about a Capacity Reservation Fleet.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CapacityReservationFleet {
     /// <p>The ID of the Capacity Reservation Fleet.</p>
     #[doc(hidden)]
-    pub capacity_reservation_fleet_id: std::option::Option<std::string::String>,
+    pub capacity_reservation_fleet_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the Capacity Reservation Fleet.</p>
     #[doc(hidden)]
-    pub capacity_reservation_fleet_arn: std::option::Option<std::string::String>,
+    pub capacity_reservation_fleet_arn: ::std::option::Option<::std::string::String>,
     /// <p>The state of the Capacity Reservation Fleet. Possible states include:</p>
     /// <ul>
     /// <li> <p> <code>submitted</code> - The Capacity Reservation Fleet request has been submitted and Amazon Elastic Compute Cloud is preparing to create the Capacity Reservations.</p> </li>
@@ -23,48 +23,48 @@ pub struct CapacityReservationFleet {
     /// <li> <p> <code>failed</code> - The Capacity Reservation Fleet failed to reserve capacity for the specified instance types.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub state: std::option::Option<crate::types::CapacityReservationFleetState>,
+    pub state: ::std::option::Option<crate::types::CapacityReservationFleetState>,
     /// <p>The total number of capacity units for which the Capacity Reservation Fleet reserves capacity. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#target-capacity">Total target capacity</a> in the Amazon EC2 User Guide.</p>
     #[doc(hidden)]
-    pub total_target_capacity: std::option::Option<i32>,
+    pub total_target_capacity: ::std::option::Option<i32>,
     /// <p>The capacity units that have been fulfilled.</p>
     #[doc(hidden)]
-    pub total_fulfilled_capacity: std::option::Option<f64>,
+    pub total_fulfilled_capacity: ::std::option::Option<f64>,
     /// <p>The tenancy of the Capacity Reservation Fleet. Tenancies include:</p>
     /// <ul>
     /// <li> <p> <code>default</code> - The Capacity Reservation Fleet is created on hardware that is shared with other Amazon Web Services accounts.</p> </li>
     /// <li> <p> <code>dedicated</code> - The Capacity Reservation Fleet is created on single-tenant hardware that is dedicated to a single Amazon Web Services account.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub tenancy: std::option::Option<crate::types::FleetCapacityReservationTenancy>,
+    pub tenancy: ::std::option::Option<crate::types::FleetCapacityReservationTenancy>,
     /// <p>The date and time at which the Capacity Reservation Fleet expires.</p>
     #[doc(hidden)]
-    pub end_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub end_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time at which the Capacity Reservation Fleet was created.</p>
     #[doc(hidden)]
-    pub create_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates the type of instance launches that the Capacity Reservation Fleet accepts. All Capacity Reservations in the Fleet inherit this instance matching criteria.</p>
     /// <p>Currently, Capacity Reservation Fleets support <code>open</code> instance matching criteria only. This means that instances that have matching attributes (instance type, platform, and Availability Zone) run in the Capacity Reservations automatically. Instances do not need to explicitly target a Capacity Reservation Fleet to use its reserved capacity.</p>
     #[doc(hidden)]
-    pub instance_match_criteria: std::option::Option<crate::types::FleetInstanceMatchCriteria>,
+    pub instance_match_criteria: ::std::option::Option<crate::types::FleetInstanceMatchCriteria>,
     /// <p>The strategy used by the Capacity Reservation Fleet to determine which of the specified instance types to use. For more information, see For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#allocation-strategy"> Allocation strategy</a> in the Amazon EC2 User Guide.</p>
     #[doc(hidden)]
-    pub allocation_strategy: std::option::Option<std::string::String>,
+    pub allocation_strategy: ::std::option::Option<::std::string::String>,
     /// <p>Information about the instance types for which to reserve the capacity.</p>
     #[doc(hidden)]
     pub instance_type_specifications:
-        std::option::Option<std::vec::Vec<crate::types::FleetCapacityReservation>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::FleetCapacityReservation>>,
     /// <p>The tags assigned to the Capacity Reservation Fleet.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CapacityReservationFleet {
     /// <p>The ID of the Capacity Reservation Fleet.</p>
-    pub fn capacity_reservation_fleet_id(&self) -> std::option::Option<&str> {
+    pub fn capacity_reservation_fleet_id(&self) -> ::std::option::Option<&str> {
         self.capacity_reservation_fleet_id.as_deref()
     }
     /// <p>The ARN of the Capacity Reservation Fleet.</p>
-    pub fn capacity_reservation_fleet_arn(&self) -> std::option::Option<&str> {
+    pub fn capacity_reservation_fleet_arn(&self) -> ::std::option::Option<&str> {
         self.capacity_reservation_fleet_arn.as_deref()
     }
     /// <p>The state of the Capacity Reservation Fleet. Possible states include:</p>
@@ -79,15 +79,15 @@ impl CapacityReservationFleet {
     /// <li> <p> <code>cancelled</code> - The Capacity Reservation Fleet has been manually cancelled. The Fleet and its Capacity Reservations are cancelled and the Fleet can't create new Capacity Reservations.</p> </li>
     /// <li> <p> <code>failed</code> - The Capacity Reservation Fleet failed to reserve capacity for the specified instance types.</p> </li>
     /// </ul>
-    pub fn state(&self) -> std::option::Option<&crate::types::CapacityReservationFleetState> {
+    pub fn state(&self) -> ::std::option::Option<&crate::types::CapacityReservationFleetState> {
         self.state.as_ref()
     }
     /// <p>The total number of capacity units for which the Capacity Reservation Fleet reserves capacity. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#target-capacity">Total target capacity</a> in the Amazon EC2 User Guide.</p>
-    pub fn total_target_capacity(&self) -> std::option::Option<i32> {
+    pub fn total_target_capacity(&self) -> ::std::option::Option<i32> {
         self.total_target_capacity
     }
     /// <p>The capacity units that have been fulfilled.</p>
-    pub fn total_fulfilled_capacity(&self) -> std::option::Option<f64> {
+    pub fn total_fulfilled_capacity(&self) -> ::std::option::Option<f64> {
         self.total_fulfilled_capacity
     }
     /// <p>The tenancy of the Capacity Reservation Fleet. Tenancies include:</p>
@@ -95,36 +95,36 @@ impl CapacityReservationFleet {
     /// <li> <p> <code>default</code> - The Capacity Reservation Fleet is created on hardware that is shared with other Amazon Web Services accounts.</p> </li>
     /// <li> <p> <code>dedicated</code> - The Capacity Reservation Fleet is created on single-tenant hardware that is dedicated to a single Amazon Web Services account.</p> </li>
     /// </ul>
-    pub fn tenancy(&self) -> std::option::Option<&crate::types::FleetCapacityReservationTenancy> {
+    pub fn tenancy(&self) -> ::std::option::Option<&crate::types::FleetCapacityReservationTenancy> {
         self.tenancy.as_ref()
     }
     /// <p>The date and time at which the Capacity Reservation Fleet expires.</p>
-    pub fn end_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.end_date.as_ref()
     }
     /// <p>The date and time at which the Capacity Reservation Fleet was created.</p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>Indicates the type of instance launches that the Capacity Reservation Fleet accepts. All Capacity Reservations in the Fleet inherit this instance matching criteria.</p>
     /// <p>Currently, Capacity Reservation Fleets support <code>open</code> instance matching criteria only. This means that instances that have matching attributes (instance type, platform, and Availability Zone) run in the Capacity Reservations automatically. Instances do not need to explicitly target a Capacity Reservation Fleet to use its reserved capacity.</p>
     pub fn instance_match_criteria(
         &self,
-    ) -> std::option::Option<&crate::types::FleetInstanceMatchCriteria> {
+    ) -> ::std::option::Option<&crate::types::FleetInstanceMatchCriteria> {
         self.instance_match_criteria.as_ref()
     }
     /// <p>The strategy used by the Capacity Reservation Fleet to determine which of the specified instance types to use. For more information, see For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#allocation-strategy"> Allocation strategy</a> in the Amazon EC2 User Guide.</p>
-    pub fn allocation_strategy(&self) -> std::option::Option<&str> {
+    pub fn allocation_strategy(&self) -> ::std::option::Option<&str> {
         self.allocation_strategy.as_deref()
     }
     /// <p>Information about the instance types for which to reserve the capacity.</p>
     pub fn instance_type_specifications(
         &self,
-    ) -> std::option::Option<&[crate::types::FleetCapacityReservation]> {
+    ) -> ::std::option::Option<&[crate::types::FleetCapacityReservation]> {
         self.instance_type_specifications.as_deref()
     }
     /// <p>The tags assigned to the Capacity Reservation Fleet.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -137,46 +137,54 @@ impl CapacityReservationFleet {
 
 /// A builder for [`CapacityReservationFleet`](crate::types::CapacityReservationFleet).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CapacityReservationFleetBuilder {
-    pub(crate) capacity_reservation_fleet_id: std::option::Option<std::string::String>,
-    pub(crate) capacity_reservation_fleet_arn: std::option::Option<std::string::String>,
-    pub(crate) state: std::option::Option<crate::types::CapacityReservationFleetState>,
-    pub(crate) total_target_capacity: std::option::Option<i32>,
-    pub(crate) total_fulfilled_capacity: std::option::Option<f64>,
-    pub(crate) tenancy: std::option::Option<crate::types::FleetCapacityReservationTenancy>,
-    pub(crate) end_date: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) capacity_reservation_fleet_id: ::std::option::Option<::std::string::String>,
+    pub(crate) capacity_reservation_fleet_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) state: ::std::option::Option<crate::types::CapacityReservationFleetState>,
+    pub(crate) total_target_capacity: ::std::option::Option<i32>,
+    pub(crate) total_fulfilled_capacity: ::std::option::Option<f64>,
+    pub(crate) tenancy: ::std::option::Option<crate::types::FleetCapacityReservationTenancy>,
+    pub(crate) end_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) instance_match_criteria:
-        std::option::Option<crate::types::FleetInstanceMatchCriteria>,
-    pub(crate) allocation_strategy: std::option::Option<std::string::String>,
+        ::std::option::Option<crate::types::FleetInstanceMatchCriteria>,
+    pub(crate) allocation_strategy: ::std::option::Option<::std::string::String>,
     pub(crate) instance_type_specifications:
-        std::option::Option<std::vec::Vec<crate::types::FleetCapacityReservation>>,
-    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::FleetCapacityReservation>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CapacityReservationFleetBuilder {
     /// <p>The ID of the Capacity Reservation Fleet.</p>
-    pub fn capacity_reservation_fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.capacity_reservation_fleet_id = Some(input.into());
+    pub fn capacity_reservation_fleet_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.capacity_reservation_fleet_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Capacity Reservation Fleet.</p>
     pub fn set_capacity_reservation_fleet_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.capacity_reservation_fleet_id = input;
         self
     }
     /// <p>The ARN of the Capacity Reservation Fleet.</p>
-    pub fn capacity_reservation_fleet_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.capacity_reservation_fleet_arn = Some(input.into());
+    pub fn capacity_reservation_fleet_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.capacity_reservation_fleet_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the Capacity Reservation Fleet.</p>
     pub fn set_capacity_reservation_fleet_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.capacity_reservation_fleet_arn = input;
         self
@@ -194,7 +202,7 @@ impl CapacityReservationFleetBuilder {
     /// <li> <p> <code>failed</code> - The Capacity Reservation Fleet failed to reserve capacity for the specified instance types.</p> </li>
     /// </ul>
     pub fn state(mut self, input: crate::types::CapacityReservationFleetState) -> Self {
-        self.state = Some(input);
+        self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The state of the Capacity Reservation Fleet. Possible states include:</p>
@@ -211,28 +219,28 @@ impl CapacityReservationFleetBuilder {
     /// </ul>
     pub fn set_state(
         mut self,
-        input: std::option::Option<crate::types::CapacityReservationFleetState>,
+        input: ::std::option::Option<crate::types::CapacityReservationFleetState>,
     ) -> Self {
         self.state = input;
         self
     }
     /// <p>The total number of capacity units for which the Capacity Reservation Fleet reserves capacity. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#target-capacity">Total target capacity</a> in the Amazon EC2 User Guide.</p>
     pub fn total_target_capacity(mut self, input: i32) -> Self {
-        self.total_target_capacity = Some(input);
+        self.total_target_capacity = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total number of capacity units for which the Capacity Reservation Fleet reserves capacity. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#target-capacity">Total target capacity</a> in the Amazon EC2 User Guide.</p>
-    pub fn set_total_target_capacity(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_total_target_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.total_target_capacity = input;
         self
     }
     /// <p>The capacity units that have been fulfilled.</p>
     pub fn total_fulfilled_capacity(mut self, input: f64) -> Self {
-        self.total_fulfilled_capacity = Some(input);
+        self.total_fulfilled_capacity = ::std::option::Option::Some(input);
         self
     }
     /// <p>The capacity units that have been fulfilled.</p>
-    pub fn set_total_fulfilled_capacity(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_total_fulfilled_capacity(mut self, input: ::std::option::Option<f64>) -> Self {
         self.total_fulfilled_capacity = input;
         self
     }
@@ -242,7 +250,7 @@ impl CapacityReservationFleetBuilder {
     /// <li> <p> <code>dedicated</code> - The Capacity Reservation Fleet is created on single-tenant hardware that is dedicated to a single Amazon Web Services account.</p> </li>
     /// </ul>
     pub fn tenancy(mut self, input: crate::types::FleetCapacityReservationTenancy) -> Self {
-        self.tenancy = Some(input);
+        self.tenancy = ::std::option::Option::Some(input);
         self
     }
     /// <p>The tenancy of the Capacity Reservation Fleet. Tenancies include:</p>
@@ -252,30 +260,33 @@ impl CapacityReservationFleetBuilder {
     /// </ul>
     pub fn set_tenancy(
         mut self,
-        input: std::option::Option<crate::types::FleetCapacityReservationTenancy>,
+        input: ::std::option::Option<crate::types::FleetCapacityReservationTenancy>,
     ) -> Self {
         self.tenancy = input;
         self
     }
     /// <p>The date and time at which the Capacity Reservation Fleet expires.</p>
-    pub fn end_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.end_date = Some(input);
+    pub fn end_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.end_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time at which the Capacity Reservation Fleet expires.</p>
-    pub fn set_end_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_end_date(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
         self.end_date = input;
         self
     }
     /// <p>The date and time at which the Capacity Reservation Fleet was created.</p>
-    pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.create_time = Some(input);
+    pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.create_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time at which the Capacity Reservation Fleet was created.</p>
     pub fn set_create_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.create_time = input;
         self
@@ -286,27 +297,30 @@ impl CapacityReservationFleetBuilder {
         mut self,
         input: crate::types::FleetInstanceMatchCriteria,
     ) -> Self {
-        self.instance_match_criteria = Some(input);
+        self.instance_match_criteria = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates the type of instance launches that the Capacity Reservation Fleet accepts. All Capacity Reservations in the Fleet inherit this instance matching criteria.</p>
     /// <p>Currently, Capacity Reservation Fleets support <code>open</code> instance matching criteria only. This means that instances that have matching attributes (instance type, platform, and Availability Zone) run in the Capacity Reservations automatically. Instances do not need to explicitly target a Capacity Reservation Fleet to use its reserved capacity.</p>
     pub fn set_instance_match_criteria(
         mut self,
-        input: std::option::Option<crate::types::FleetInstanceMatchCriteria>,
+        input: ::std::option::Option<crate::types::FleetInstanceMatchCriteria>,
     ) -> Self {
         self.instance_match_criteria = input;
         self
     }
     /// <p>The strategy used by the Capacity Reservation Fleet to determine which of the specified instance types to use. For more information, see For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#allocation-strategy"> Allocation strategy</a> in the Amazon EC2 User Guide.</p>
-    pub fn allocation_strategy(mut self, input: impl Into<std::string::String>) -> Self {
-        self.allocation_strategy = Some(input.into());
+    pub fn allocation_strategy(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.allocation_strategy = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The strategy used by the Capacity Reservation Fleet to determine which of the specified instance types to use. For more information, see For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#allocation-strategy"> Allocation strategy</a> in the Amazon EC2 User Guide.</p>
     pub fn set_allocation_strategy(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.allocation_strategy = input;
         self
@@ -322,13 +336,13 @@ impl CapacityReservationFleetBuilder {
     ) -> Self {
         let mut v = self.instance_type_specifications.unwrap_or_default();
         v.push(input);
-        self.instance_type_specifications = Some(v);
+        self.instance_type_specifications = ::std::option::Option::Some(v);
         self
     }
     /// <p>Information about the instance types for which to reserve the capacity.</p>
     pub fn set_instance_type_specifications(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::FleetCapacityReservation>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::FleetCapacityReservation>>,
     ) -> Self {
         self.instance_type_specifications = input;
         self
@@ -341,13 +355,13 @@ impl CapacityReservationFleetBuilder {
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
-        self.tags = Some(v);
+        self.tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>The tags assigned to the Capacity Reservation Fleet.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tags = input;
         self

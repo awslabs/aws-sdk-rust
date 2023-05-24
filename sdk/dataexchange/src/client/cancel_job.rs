@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CancelJob`](crate::operation::cancel_job::builders::CancelJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`job_id(impl Into<String>)`](crate::operation::cancel_job::builders::CancelJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::cancel_job::builders::CancelJobFluentBuilder::set_job_id): <p>The unique identifier for a job.</p>
+    ///   - [`job_id(impl ::std::convert::Into<String>)`](crate::operation::cancel_job::builders::CancelJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::cancel_job::builders::CancelJobFluentBuilder::set_job_id): <p>The unique identifier for a job.</p>
     /// - On success, responds with [`CancelJobOutput`](crate::operation::cancel_job::CancelJobOutput)
     /// - On failure, responds with [`SdkError<CancelJobError>`](crate::operation::cancel_job::CancelJobError)
     pub fn cancel_job(&self) -> crate::operation::cancel_job::builders::CancelJobFluentBuilder {

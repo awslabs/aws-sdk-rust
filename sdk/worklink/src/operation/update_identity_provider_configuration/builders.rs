@@ -9,47 +9,50 @@ pub use crate::operation::update_identity_provider_configuration::_update_identi
 #[deprecated(
     note = "Amazon WorkLink is no longer supported. This will be removed in a future version of the SDK."
 )]
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateIdentityProviderConfigurationFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::update_identity_provider_configuration::builders::UpdateIdentityProviderConfigurationInputBuilder,
 }
 impl UpdateIdentityProviderConfigurationFluentBuilder {
     /// Creates a new `UpdateIdentityProviderConfiguration`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_identity_provider_configuration::UpdateIdentityProviderConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::update_identity_provider_configuration::UpdateIdentityProviderConfigurationError>
+                    pub async fn customize(self) -> ::std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::update_identity_provider_configuration::UpdateIdentityProviderConfiguration, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                        ::aws_smithy_http::result::SdkError<crate::operation::update_identity_provider_configuration::UpdateIdentityProviderConfigurationError>
     >{
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::update_identity_provider_configuration::UpdateIdentityProviderConfigurationOutput, aws_smithy_http::result::SdkError<crate::operation::update_identity_provider_configuration::UpdateIdentityProviderConfigurationError>>
+                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_identity_provider_configuration::UpdateIdentityProviderConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_identity_provider_configuration::UpdateIdentityProviderConfigurationError>>
                      {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -60,17 +63,17 @@ impl UpdateIdentityProviderConfigurationFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> std::result::Result<crate::operation::update_identity_provider_configuration::UpdateIdentityProviderConfigurationOutput, aws_smithy_http::result::SdkError<crate::operation::update_identity_provider_configuration::UpdateIdentityProviderConfigurationError>>
+                        pub async fn send(self) -> ::std::result::Result<crate::operation::update_identity_provider_configuration::UpdateIdentityProviderConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_identity_provider_configuration::UpdateIdentityProviderConfigurationError>>
                          {
         self.send_middleware().await
     }
     /// <p>The ARN of the fleet.</p>
-    pub fn fleet_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn fleet_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.fleet_arn(input.into());
         self
     }
     /// <p>The ARN of the fleet.</p>
-    pub fn set_fleet_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_fleet_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_fleet_arn(input);
         self
     }
@@ -82,7 +85,7 @@ impl UpdateIdentityProviderConfigurationFluentBuilder {
     /// <p>The type of identity provider.</p>
     pub fn set_identity_provider_type(
         mut self,
-        input: std::option::Option<crate::types::IdentityProviderType>,
+        input: ::std::option::Option<crate::types::IdentityProviderType>,
     ) -> Self {
         self.inner = self.inner.set_identity_provider_type(input);
         self
@@ -90,7 +93,7 @@ impl UpdateIdentityProviderConfigurationFluentBuilder {
     /// <p>The SAML metadata document provided by the customer’s identity provider. The existing IdentityProviderSamlMetadata is unset if null is passed.</p>
     pub fn identity_provider_saml_metadata(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.identity_provider_saml_metadata(input.into());
         self
@@ -98,7 +101,7 @@ impl UpdateIdentityProviderConfigurationFluentBuilder {
     /// <p>The SAML metadata document provided by the customer’s identity provider. The existing IdentityProviderSamlMetadata is unset if null is passed.</p>
     pub fn set_identity_provider_saml_metadata(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_identity_provider_saml_metadata(input);
         self

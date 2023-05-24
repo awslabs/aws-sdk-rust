@@ -2,11 +2,11 @@
 
 /// <p>A string filter for querying findings.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StringFilter {
     /// <p>The string filter value. Filter values are case sensitive. For example, the product name for control-based findings is <code>Security Hub</code>. If you provide <code>security hub</code> as the filter text, then there is no match.</p>
     #[doc(hidden)]
-    pub value: std::option::Option<std::string::String>,
+    pub value: ::std::option::Option<::std::string::String>,
     /// <p>The condition to apply to a string value when querying for findings. To search for values that contain the filter criteria value, use one of the following comparison operators:</p>
     /// <ul>
     /// <li> <p>To search for values that exactly match the filter value, use <code>EQUALS</code>.</p> <p>For example, the filter <code>ResourceType EQUALS AwsEc2SecurityGroup</code> only matches findings that have a resource type of <code>AwsEc2SecurityGroup</code>.</p> </li>
@@ -29,11 +29,11 @@ pub struct StringFilter {
     /// <li> <p> <code>ResourceType NOT_EQUALS AwsEc2NetworkInterface</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub comparison: std::option::Option<crate::types::StringFilterComparison>,
+    pub comparison: ::std::option::Option<crate::types::StringFilterComparison>,
 }
 impl StringFilter {
     /// <p>The string filter value. Filter values are case sensitive. For example, the product name for control-based findings is <code>Security Hub</code>. If you provide <code>security hub</code> as the filter text, then there is no match.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
     /// <p>The condition to apply to a string value when querying for findings. To search for values that contain the filter criteria value, use one of the following comparison operators:</p>
@@ -57,7 +57,7 @@ impl StringFilter {
     /// <li> <p> <code>ResourceType NOT_EQUALS AwsIamPolicy</code> </p> </li>
     /// <li> <p> <code>ResourceType NOT_EQUALS AwsEc2NetworkInterface</code> </p> </li>
     /// </ul>
-    pub fn comparison(&self) -> std::option::Option<&crate::types::StringFilterComparison> {
+    pub fn comparison(&self) -> ::std::option::Option<&crate::types::StringFilterComparison> {
         self.comparison.as_ref()
     }
 }
@@ -70,19 +70,21 @@ impl StringFilter {
 
 /// A builder for [`StringFilter`](crate::types::StringFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StringFilterBuilder {
-    pub(crate) value: std::option::Option<std::string::String>,
-    pub(crate) comparison: std::option::Option<crate::types::StringFilterComparison>,
+    pub(crate) value: ::std::option::Option<::std::string::String>,
+    pub(crate) comparison: ::std::option::Option<crate::types::StringFilterComparison>,
 }
 impl StringFilterBuilder {
     /// <p>The string filter value. Filter values are case sensitive. For example, the product name for control-based findings is <code>Security Hub</code>. If you provide <code>security hub</code> as the filter text, then there is no match.</p>
-    pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.value = Some(input.into());
+    pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The string filter value. Filter values are case sensitive. For example, the product name for control-based findings is <code>Security Hub</code>. If you provide <code>security hub</code> as the filter text, then there is no match.</p>
-    pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
     }
@@ -108,7 +110,7 @@ impl StringFilterBuilder {
     /// <li> <p> <code>ResourceType NOT_EQUALS AwsEc2NetworkInterface</code> </p> </li>
     /// </ul>
     pub fn comparison(mut self, input: crate::types::StringFilterComparison) -> Self {
-        self.comparison = Some(input);
+        self.comparison = ::std::option::Option::Some(input);
         self
     }
     /// <p>The condition to apply to a string value when querying for findings. To search for values that contain the filter criteria value, use one of the following comparison operators:</p>
@@ -134,7 +136,7 @@ impl StringFilterBuilder {
     /// </ul>
     pub fn set_comparison(
         mut self,
-        input: std::option::Option<crate::types::StringFilterComparison>,
+        input: ::std::option::Option<crate::types::StringFilterComparison>,
     ) -> Self {
         self.comparison = input;
         self

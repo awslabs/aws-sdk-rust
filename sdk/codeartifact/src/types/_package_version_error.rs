@@ -2,7 +2,7 @@
 
 /// <p>l An error associated with package. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PackageVersionError {
     /// <p> The error code associated with the error. Valid error codes are: </p>
     /// <ul>
@@ -14,10 +14,10 @@ pub struct PackageVersionError {
     /// <li> <p> <code>SKIPPED</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub error_code: std::option::Option<crate::types::PackageVersionErrorCode>,
+    pub error_code: ::std::option::Option<crate::types::PackageVersionErrorCode>,
     /// <p> The error message associated with the error. </p>
     #[doc(hidden)]
-    pub error_message: std::option::Option<std::string::String>,
+    pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl PackageVersionError {
     /// <p> The error code associated with the error. Valid error codes are: </p>
@@ -29,11 +29,11 @@ impl PackageVersionError {
     /// <li> <p> <code>NOT_FOUND</code> </p> </li>
     /// <li> <p> <code>SKIPPED</code> </p> </li>
     /// </ul>
-    pub fn error_code(&self) -> std::option::Option<&crate::types::PackageVersionErrorCode> {
+    pub fn error_code(&self) -> ::std::option::Option<&crate::types::PackageVersionErrorCode> {
         self.error_code.as_ref()
     }
     /// <p> The error message associated with the error. </p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<&str> {
         self.error_message.as_deref()
     }
 }
@@ -46,10 +46,12 @@ impl PackageVersionError {
 
 /// A builder for [`PackageVersionError`](crate::types::PackageVersionError).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PackageVersionErrorBuilder {
-    pub(crate) error_code: std::option::Option<crate::types::PackageVersionErrorCode>,
-    pub(crate) error_message: std::option::Option<std::string::String>,
+    pub(crate) error_code: ::std::option::Option<crate::types::PackageVersionErrorCode>,
+    pub(crate) error_message: ::std::option::Option<::std::string::String>,
 }
 impl PackageVersionErrorBuilder {
     /// <p> The error code associated with the error. Valid error codes are: </p>
@@ -62,7 +64,7 @@ impl PackageVersionErrorBuilder {
     /// <li> <p> <code>SKIPPED</code> </p> </li>
     /// </ul>
     pub fn error_code(mut self, input: crate::types::PackageVersionErrorCode) -> Self {
-        self.error_code = Some(input);
+        self.error_code = ::std::option::Option::Some(input);
         self
     }
     /// <p> The error code associated with the error. Valid error codes are: </p>
@@ -76,18 +78,24 @@ impl PackageVersionErrorBuilder {
     /// </ul>
     pub fn set_error_code(
         mut self,
-        input: std::option::Option<crate::types::PackageVersionErrorCode>,
+        input: ::std::option::Option<crate::types::PackageVersionErrorCode>,
     ) -> Self {
         self.error_code = input;
         self
     }
     /// <p> The error message associated with the error. </p>
-    pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.error_message = Some(input.into());
+    pub fn error_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The error message associated with the error. </p>
-    pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_error_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.error_message = input;
         self
     }

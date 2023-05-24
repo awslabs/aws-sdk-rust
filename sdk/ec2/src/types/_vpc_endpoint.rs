@@ -2,141 +2,141 @@
 
 /// <p>Describes a VPC endpoint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VpcEndpoint {
     /// <p>The ID of the endpoint.</p>
     #[doc(hidden)]
-    pub vpc_endpoint_id: std::option::Option<std::string::String>,
+    pub vpc_endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of endpoint.</p>
     #[doc(hidden)]
-    pub vpc_endpoint_type: std::option::Option<crate::types::VpcEndpointType>,
+    pub vpc_endpoint_type: ::std::option::Option<crate::types::VpcEndpointType>,
     /// <p>The ID of the VPC to which the endpoint is associated.</p>
     #[doc(hidden)]
-    pub vpc_id: std::option::Option<std::string::String>,
+    pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the service to which the endpoint is associated.</p>
     #[doc(hidden)]
-    pub service_name: std::option::Option<std::string::String>,
+    pub service_name: ::std::option::Option<::std::string::String>,
     /// <p>The state of the endpoint.</p>
     #[doc(hidden)]
-    pub state: std::option::Option<crate::types::State>,
+    pub state: ::std::option::Option<crate::types::State>,
     /// <p>The policy document associated with the endpoint, if applicable.</p>
     #[doc(hidden)]
-    pub policy_document: std::option::Option<std::string::String>,
+    pub policy_document: ::std::option::Option<::std::string::String>,
     /// <p>(Gateway endpoint) The IDs of the route tables associated with the endpoint.</p>
     #[doc(hidden)]
-    pub route_table_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub route_table_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>(Interface endpoint) The subnets for the endpoint.</p>
     #[doc(hidden)]
-    pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>(Interface endpoint) Information about the security groups that are associated with the network interface.</p>
     #[doc(hidden)]
-    pub groups: std::option::Option<std::vec::Vec<crate::types::SecurityGroupIdentifier>>,
+    pub groups: ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupIdentifier>>,
     /// <p>The IP address type for the endpoint.</p>
     #[doc(hidden)]
-    pub ip_address_type: std::option::Option<crate::types::IpAddressType>,
+    pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     /// <p>The DNS options for the endpoint.</p>
     #[doc(hidden)]
-    pub dns_options: std::option::Option<crate::types::DnsOptions>,
+    pub dns_options: ::std::option::Option<crate::types::DnsOptions>,
     /// <p>(Interface endpoint) Indicates whether the VPC is associated with a private hosted zone.</p>
     #[doc(hidden)]
-    pub private_dns_enabled: std::option::Option<bool>,
+    pub private_dns_enabled: ::std::option::Option<bool>,
     /// <p>Indicates whether the endpoint is being managed by its service.</p>
     #[doc(hidden)]
-    pub requester_managed: std::option::Option<bool>,
+    pub requester_managed: ::std::option::Option<bool>,
     /// <p>(Interface endpoint) The network interfaces for the endpoint.</p>
     #[doc(hidden)]
-    pub network_interface_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub network_interface_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>(Interface endpoint) The DNS entries for the endpoint.</p>
     #[doc(hidden)]
-    pub dns_entries: std::option::Option<std::vec::Vec<crate::types::DnsEntry>>,
+    pub dns_entries: ::std::option::Option<::std::vec::Vec<crate::types::DnsEntry>>,
     /// <p>The date and time that the endpoint was created.</p>
     #[doc(hidden)]
-    pub creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The tags assigned to the endpoint.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The ID of the Amazon Web Services account that owns the endpoint.</p>
     #[doc(hidden)]
-    pub owner_id: std::option::Option<std::string::String>,
+    pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The last error that occurred for endpoint.</p>
     #[doc(hidden)]
-    pub last_error: std::option::Option<crate::types::LastError>,
+    pub last_error: ::std::option::Option<crate::types::LastError>,
 }
 impl VpcEndpoint {
     /// <p>The ID of the endpoint.</p>
-    pub fn vpc_endpoint_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_endpoint_id(&self) -> ::std::option::Option<&str> {
         self.vpc_endpoint_id.as_deref()
     }
     /// <p>The type of endpoint.</p>
-    pub fn vpc_endpoint_type(&self) -> std::option::Option<&crate::types::VpcEndpointType> {
+    pub fn vpc_endpoint_type(&self) -> ::std::option::Option<&crate::types::VpcEndpointType> {
         self.vpc_endpoint_type.as_ref()
     }
     /// <p>The ID of the VPC to which the endpoint is associated.</p>
-    pub fn vpc_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
     /// <p>The name of the service to which the endpoint is associated.</p>
-    pub fn service_name(&self) -> std::option::Option<&str> {
+    pub fn service_name(&self) -> ::std::option::Option<&str> {
         self.service_name.as_deref()
     }
     /// <p>The state of the endpoint.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::State> {
+    pub fn state(&self) -> ::std::option::Option<&crate::types::State> {
         self.state.as_ref()
     }
     /// <p>The policy document associated with the endpoint, if applicable.</p>
-    pub fn policy_document(&self) -> std::option::Option<&str> {
+    pub fn policy_document(&self) -> ::std::option::Option<&str> {
         self.policy_document.as_deref()
     }
     /// <p>(Gateway endpoint) The IDs of the route tables associated with the endpoint.</p>
-    pub fn route_table_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn route_table_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.route_table_ids.as_deref()
     }
     /// <p>(Interface endpoint) The subnets for the endpoint.</p>
-    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.subnet_ids.as_deref()
     }
     /// <p>(Interface endpoint) Information about the security groups that are associated with the network interface.</p>
-    pub fn groups(&self) -> std::option::Option<&[crate::types::SecurityGroupIdentifier]> {
+    pub fn groups(&self) -> ::std::option::Option<&[crate::types::SecurityGroupIdentifier]> {
         self.groups.as_deref()
     }
     /// <p>The IP address type for the endpoint.</p>
-    pub fn ip_address_type(&self) -> std::option::Option<&crate::types::IpAddressType> {
+    pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::IpAddressType> {
         self.ip_address_type.as_ref()
     }
     /// <p>The DNS options for the endpoint.</p>
-    pub fn dns_options(&self) -> std::option::Option<&crate::types::DnsOptions> {
+    pub fn dns_options(&self) -> ::std::option::Option<&crate::types::DnsOptions> {
         self.dns_options.as_ref()
     }
     /// <p>(Interface endpoint) Indicates whether the VPC is associated with a private hosted zone.</p>
-    pub fn private_dns_enabled(&self) -> std::option::Option<bool> {
+    pub fn private_dns_enabled(&self) -> ::std::option::Option<bool> {
         self.private_dns_enabled
     }
     /// <p>Indicates whether the endpoint is being managed by its service.</p>
-    pub fn requester_managed(&self) -> std::option::Option<bool> {
+    pub fn requester_managed(&self) -> ::std::option::Option<bool> {
         self.requester_managed
     }
     /// <p>(Interface endpoint) The network interfaces for the endpoint.</p>
-    pub fn network_interface_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn network_interface_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.network_interface_ids.as_deref()
     }
     /// <p>(Interface endpoint) The DNS entries for the endpoint.</p>
-    pub fn dns_entries(&self) -> std::option::Option<&[crate::types::DnsEntry]> {
+    pub fn dns_entries(&self) -> ::std::option::Option<&[crate::types::DnsEntry]> {
         self.dns_entries.as_deref()
     }
     /// <p>The date and time that the endpoint was created.</p>
-    pub fn creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_timestamp.as_ref()
     }
     /// <p>The tags assigned to the endpoint.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The ID of the Amazon Web Services account that owns the endpoint.</p>
-    pub fn owner_id(&self) -> std::option::Option<&str> {
+    pub fn owner_id(&self) -> ::std::option::Option<&str> {
         self.owner_id.as_deref()
     }
     /// <p>The last error that occurred for endpoint.</p>
-    pub fn last_error(&self) -> std::option::Option<&crate::types::LastError> {
+    pub fn last_error(&self) -> ::std::option::Option<&crate::types::LastError> {
         self.last_error.as_ref()
     }
 }
@@ -149,89 +149,104 @@ impl VpcEndpoint {
 
 /// A builder for [`VpcEndpoint`](crate::types::VpcEndpoint).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VpcEndpointBuilder {
-    pub(crate) vpc_endpoint_id: std::option::Option<std::string::String>,
-    pub(crate) vpc_endpoint_type: std::option::Option<crate::types::VpcEndpointType>,
-    pub(crate) vpc_id: std::option::Option<std::string::String>,
-    pub(crate) service_name: std::option::Option<std::string::String>,
-    pub(crate) state: std::option::Option<crate::types::State>,
-    pub(crate) policy_document: std::option::Option<std::string::String>,
-    pub(crate) route_table_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) groups: std::option::Option<std::vec::Vec<crate::types::SecurityGroupIdentifier>>,
-    pub(crate) ip_address_type: std::option::Option<crate::types::IpAddressType>,
-    pub(crate) dns_options: std::option::Option<crate::types::DnsOptions>,
-    pub(crate) private_dns_enabled: std::option::Option<bool>,
-    pub(crate) requester_managed: std::option::Option<bool>,
-    pub(crate) network_interface_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) dns_entries: std::option::Option<std::vec::Vec<crate::types::DnsEntry>>,
-    pub(crate) creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    pub(crate) owner_id: std::option::Option<std::string::String>,
-    pub(crate) last_error: std::option::Option<crate::types::LastError>,
+    pub(crate) vpc_endpoint_id: ::std::option::Option<::std::string::String>,
+    pub(crate) vpc_endpoint_type: ::std::option::Option<crate::types::VpcEndpointType>,
+    pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
+    pub(crate) service_name: ::std::option::Option<::std::string::String>,
+    pub(crate) state: ::std::option::Option<crate::types::State>,
+    pub(crate) policy_document: ::std::option::Option<::std::string::String>,
+    pub(crate) route_table_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) groups:
+        ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupIdentifier>>,
+    pub(crate) ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
+    pub(crate) dns_options: ::std::option::Option<crate::types::DnsOptions>,
+    pub(crate) private_dns_enabled: ::std::option::Option<bool>,
+    pub(crate) requester_managed: ::std::option::Option<bool>,
+    pub(crate) network_interface_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) dns_entries: ::std::option::Option<::std::vec::Vec<crate::types::DnsEntry>>,
+    pub(crate) creation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) owner_id: ::std::option::Option<::std::string::String>,
+    pub(crate) last_error: ::std::option::Option<crate::types::LastError>,
 }
 impl VpcEndpointBuilder {
     /// <p>The ID of the endpoint.</p>
-    pub fn vpc_endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.vpc_endpoint_id = Some(input.into());
+    pub fn vpc_endpoint_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.vpc_endpoint_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the endpoint.</p>
-    pub fn set_vpc_endpoint_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_vpc_endpoint_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.vpc_endpoint_id = input;
         self
     }
     /// <p>The type of endpoint.</p>
     pub fn vpc_endpoint_type(mut self, input: crate::types::VpcEndpointType) -> Self {
-        self.vpc_endpoint_type = Some(input);
+        self.vpc_endpoint_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of endpoint.</p>
     pub fn set_vpc_endpoint_type(
         mut self,
-        input: std::option::Option<crate::types::VpcEndpointType>,
+        input: ::std::option::Option<crate::types::VpcEndpointType>,
     ) -> Self {
         self.vpc_endpoint_type = input;
         self
     }
     /// <p>The ID of the VPC to which the endpoint is associated.</p>
-    pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.vpc_id = Some(input.into());
+    pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.vpc_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the VPC to which the endpoint is associated.</p>
-    pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
     }
     /// <p>The name of the service to which the endpoint is associated.</p>
-    pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.service_name = Some(input.into());
+    pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.service_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the service to which the endpoint is associated.</p>
-    pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_name = input;
         self
     }
     /// <p>The state of the endpoint.</p>
     pub fn state(mut self, input: crate::types::State) -> Self {
-        self.state = Some(input);
+        self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The state of the endpoint.</p>
-    pub fn set_state(mut self, input: std::option::Option<crate::types::State>) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::State>) -> Self {
         self.state = input;
         self
     }
     /// <p>The policy document associated with the endpoint, if applicable.</p>
-    pub fn policy_document(mut self, input: impl Into<std::string::String>) -> Self {
-        self.policy_document = Some(input.into());
+    pub fn policy_document(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.policy_document = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The policy document associated with the endpoint, if applicable.</p>
-    pub fn set_policy_document(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_policy_document(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.policy_document = input;
         self
     }
@@ -240,16 +255,19 @@ impl VpcEndpointBuilder {
     /// To override the contents of this collection use [`set_route_table_ids`](Self::set_route_table_ids).
     ///
     /// <p>(Gateway endpoint) The IDs of the route tables associated with the endpoint.</p>
-    pub fn route_table_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn route_table_ids(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.route_table_ids.unwrap_or_default();
         v.push(input.into());
-        self.route_table_ids = Some(v);
+        self.route_table_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>(Gateway endpoint) The IDs of the route tables associated with the endpoint.</p>
     pub fn set_route_table_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.route_table_ids = input;
         self
@@ -259,16 +277,16 @@ impl VpcEndpointBuilder {
     /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
     ///
     /// <p>(Interface endpoint) The subnets for the endpoint.</p>
-    pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn subnet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subnet_ids.unwrap_or_default();
         v.push(input.into());
-        self.subnet_ids = Some(v);
+        self.subnet_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>(Interface endpoint) The subnets for the endpoint.</p>
     pub fn set_subnet_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.subnet_ids = input;
         self
@@ -281,57 +299,60 @@ impl VpcEndpointBuilder {
     pub fn groups(mut self, input: crate::types::SecurityGroupIdentifier) -> Self {
         let mut v = self.groups.unwrap_or_default();
         v.push(input);
-        self.groups = Some(v);
+        self.groups = ::std::option::Option::Some(v);
         self
     }
     /// <p>(Interface endpoint) Information about the security groups that are associated with the network interface.</p>
     pub fn set_groups(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SecurityGroupIdentifier>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupIdentifier>>,
     ) -> Self {
         self.groups = input;
         self
     }
     /// <p>The IP address type for the endpoint.</p>
     pub fn ip_address_type(mut self, input: crate::types::IpAddressType) -> Self {
-        self.ip_address_type = Some(input);
+        self.ip_address_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The IP address type for the endpoint.</p>
     pub fn set_ip_address_type(
         mut self,
-        input: std::option::Option<crate::types::IpAddressType>,
+        input: ::std::option::Option<crate::types::IpAddressType>,
     ) -> Self {
         self.ip_address_type = input;
         self
     }
     /// <p>The DNS options for the endpoint.</p>
     pub fn dns_options(mut self, input: crate::types::DnsOptions) -> Self {
-        self.dns_options = Some(input);
+        self.dns_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The DNS options for the endpoint.</p>
-    pub fn set_dns_options(mut self, input: std::option::Option<crate::types::DnsOptions>) -> Self {
+    pub fn set_dns_options(
+        mut self,
+        input: ::std::option::Option<crate::types::DnsOptions>,
+    ) -> Self {
         self.dns_options = input;
         self
     }
     /// <p>(Interface endpoint) Indicates whether the VPC is associated with a private hosted zone.</p>
     pub fn private_dns_enabled(mut self, input: bool) -> Self {
-        self.private_dns_enabled = Some(input);
+        self.private_dns_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>(Interface endpoint) Indicates whether the VPC is associated with a private hosted zone.</p>
-    pub fn set_private_dns_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_private_dns_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.private_dns_enabled = input;
         self
     }
     /// <p>Indicates whether the endpoint is being managed by its service.</p>
     pub fn requester_managed(mut self, input: bool) -> Self {
-        self.requester_managed = Some(input);
+        self.requester_managed = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether the endpoint is being managed by its service.</p>
-    pub fn set_requester_managed(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_requester_managed(mut self, input: ::std::option::Option<bool>) -> Self {
         self.requester_managed = input;
         self
     }
@@ -340,16 +361,19 @@ impl VpcEndpointBuilder {
     /// To override the contents of this collection use [`set_network_interface_ids`](Self::set_network_interface_ids).
     ///
     /// <p>(Interface endpoint) The network interfaces for the endpoint.</p>
-    pub fn network_interface_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn network_interface_ids(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.network_interface_ids.unwrap_or_default();
         v.push(input.into());
-        self.network_interface_ids = Some(v);
+        self.network_interface_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>(Interface endpoint) The network interfaces for the endpoint.</p>
     pub fn set_network_interface_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.network_interface_ids = input;
         self
@@ -362,26 +386,26 @@ impl VpcEndpointBuilder {
     pub fn dns_entries(mut self, input: crate::types::DnsEntry) -> Self {
         let mut v = self.dns_entries.unwrap_or_default();
         v.push(input);
-        self.dns_entries = Some(v);
+        self.dns_entries = ::std::option::Option::Some(v);
         self
     }
     /// <p>(Interface endpoint) The DNS entries for the endpoint.</p>
     pub fn set_dns_entries(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DnsEntry>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DnsEntry>>,
     ) -> Self {
         self.dns_entries = input;
         self
     }
     /// <p>The date and time that the endpoint was created.</p>
-    pub fn creation_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_timestamp = Some(input);
+    pub fn creation_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time that the endpoint was created.</p>
     pub fn set_creation_timestamp(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_timestamp = input;
         self
@@ -394,34 +418,34 @@ impl VpcEndpointBuilder {
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
-        self.tags = Some(v);
+        self.tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>The tags assigned to the endpoint.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tags = input;
         self
     }
     /// <p>The ID of the Amazon Web Services account that owns the endpoint.</p>
-    pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.owner_id = Some(input.into());
+    pub fn owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.owner_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that owns the endpoint.</p>
-    pub fn set_owner_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner_id = input;
         self
     }
     /// <p>The last error that occurred for endpoint.</p>
     pub fn last_error(mut self, input: crate::types::LastError) -> Self {
-        self.last_error = Some(input);
+        self.last_error = ::std::option::Option::Some(input);
         self
     }
     /// <p>The last error that occurred for endpoint.</p>
-    pub fn set_last_error(mut self, input: std::option::Option<crate::types::LastError>) -> Self {
+    pub fn set_last_error(mut self, input: ::std::option::Option<crate::types::LastError>) -> Self {
         self.last_error = input;
         self
     }

@@ -2,22 +2,22 @@
 
 /// <p>Retention settings for the destination Amazon S3 buckets in Amazon Security Lake. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RetentionSetting {
     /// <p>The range of storage classes that you can choose from based on the data access, resiliency, and cost requirements of your workloads.</p>
     #[doc(hidden)]
-    pub storage_class: std::option::Option<crate::types::StorageClass>,
+    pub storage_class: ::std::option::Option<crate::types::StorageClass>,
     /// <p>The retention period specifies a fixed period of time during which the Security Lake object remains locked. You can specify the retention period in days for one or more sources. </p>
     #[doc(hidden)]
-    pub retention_period: std::option::Option<i32>,
+    pub retention_period: ::std::option::Option<i32>,
 }
 impl RetentionSetting {
     /// <p>The range of storage classes that you can choose from based on the data access, resiliency, and cost requirements of your workloads.</p>
-    pub fn storage_class(&self) -> std::option::Option<&crate::types::StorageClass> {
+    pub fn storage_class(&self) -> ::std::option::Option<&crate::types::StorageClass> {
         self.storage_class.as_ref()
     }
     /// <p>The retention period specifies a fixed period of time during which the Security Lake object remains locked. You can specify the retention period in days for one or more sources. </p>
-    pub fn retention_period(&self) -> std::option::Option<i32> {
+    pub fn retention_period(&self) -> ::std::option::Option<i32> {
         self.retention_period
     }
 }
@@ -30,32 +30,34 @@ impl RetentionSetting {
 
 /// A builder for [`RetentionSetting`](crate::types::RetentionSetting).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RetentionSettingBuilder {
-    pub(crate) storage_class: std::option::Option<crate::types::StorageClass>,
-    pub(crate) retention_period: std::option::Option<i32>,
+    pub(crate) storage_class: ::std::option::Option<crate::types::StorageClass>,
+    pub(crate) retention_period: ::std::option::Option<i32>,
 }
 impl RetentionSettingBuilder {
     /// <p>The range of storage classes that you can choose from based on the data access, resiliency, and cost requirements of your workloads.</p>
     pub fn storage_class(mut self, input: crate::types::StorageClass) -> Self {
-        self.storage_class = Some(input);
+        self.storage_class = ::std::option::Option::Some(input);
         self
     }
     /// <p>The range of storage classes that you can choose from based on the data access, resiliency, and cost requirements of your workloads.</p>
     pub fn set_storage_class(
         mut self,
-        input: std::option::Option<crate::types::StorageClass>,
+        input: ::std::option::Option<crate::types::StorageClass>,
     ) -> Self {
         self.storage_class = input;
         self
     }
     /// <p>The retention period specifies a fixed period of time during which the Security Lake object remains locked. You can specify the retention period in days for one or more sources. </p>
     pub fn retention_period(mut self, input: i32) -> Self {
-        self.retention_period = Some(input);
+        self.retention_period = ::std::option::Option::Some(input);
         self
     }
     /// <p>The retention period specifies a fixed period of time during which the Security Lake object remains locked. You can specify the retention period in days for one or more sources. </p>
-    pub fn set_retention_period(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.retention_period = input;
         self
     }

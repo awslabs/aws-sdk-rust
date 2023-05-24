@@ -2,85 +2,87 @@
 
 /// <p>Describes a trust relationship between an Managed Microsoft AD directory and an external domain.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Trust {
     /// <p>The Directory ID of the Amazon Web Services directory involved in the trust relationship.</p>
     #[doc(hidden)]
-    pub directory_id: std::option::Option<std::string::String>,
+    pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID of the trust relationship.</p>
     #[doc(hidden)]
-    pub trust_id: std::option::Option<std::string::String>,
+    pub trust_id: ::std::option::Option<::std::string::String>,
     /// <p>The Fully Qualified Domain Name (FQDN) of the external domain involved in the trust relationship.</p>
     #[doc(hidden)]
-    pub remote_domain_name: std::option::Option<std::string::String>,
+    pub remote_domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The trust relationship type. <code>Forest</code> is the default.</p>
     #[doc(hidden)]
-    pub trust_type: std::option::Option<crate::types::TrustType>,
+    pub trust_type: ::std::option::Option<crate::types::TrustType>,
     /// <p>The trust relationship direction.</p>
     #[doc(hidden)]
-    pub trust_direction: std::option::Option<crate::types::TrustDirection>,
+    pub trust_direction: ::std::option::Option<crate::types::TrustDirection>,
     /// <p>The trust relationship state.</p>
     #[doc(hidden)]
-    pub trust_state: std::option::Option<crate::types::TrustState>,
+    pub trust_state: ::std::option::Option<crate::types::TrustState>,
     /// <p>The date and time that the trust relationship was created.</p>
     #[doc(hidden)]
-    pub created_date_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the trust relationship was last updated.</p>
     #[doc(hidden)]
-    pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the TrustState was last updated.</p>
     #[doc(hidden)]
-    pub state_last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub state_last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The reason for the TrustState.</p>
     #[doc(hidden)]
-    pub trust_state_reason: std::option::Option<std::string::String>,
+    pub trust_state_reason: ::std::option::Option<::std::string::String>,
     /// <p>Current state of selective authentication for the trust.</p>
     #[doc(hidden)]
-    pub selective_auth: std::option::Option<crate::types::SelectiveAuth>,
+    pub selective_auth: ::std::option::Option<crate::types::SelectiveAuth>,
 }
 impl Trust {
     /// <p>The Directory ID of the Amazon Web Services directory involved in the trust relationship.</p>
-    pub fn directory_id(&self) -> std::option::Option<&str> {
+    pub fn directory_id(&self) -> ::std::option::Option<&str> {
         self.directory_id.as_deref()
     }
     /// <p>The unique ID of the trust relationship.</p>
-    pub fn trust_id(&self) -> std::option::Option<&str> {
+    pub fn trust_id(&self) -> ::std::option::Option<&str> {
         self.trust_id.as_deref()
     }
     /// <p>The Fully Qualified Domain Name (FQDN) of the external domain involved in the trust relationship.</p>
-    pub fn remote_domain_name(&self) -> std::option::Option<&str> {
+    pub fn remote_domain_name(&self) -> ::std::option::Option<&str> {
         self.remote_domain_name.as_deref()
     }
     /// <p>The trust relationship type. <code>Forest</code> is the default.</p>
-    pub fn trust_type(&self) -> std::option::Option<&crate::types::TrustType> {
+    pub fn trust_type(&self) -> ::std::option::Option<&crate::types::TrustType> {
         self.trust_type.as_ref()
     }
     /// <p>The trust relationship direction.</p>
-    pub fn trust_direction(&self) -> std::option::Option<&crate::types::TrustDirection> {
+    pub fn trust_direction(&self) -> ::std::option::Option<&crate::types::TrustDirection> {
         self.trust_direction.as_ref()
     }
     /// <p>The trust relationship state.</p>
-    pub fn trust_state(&self) -> std::option::Option<&crate::types::TrustState> {
+    pub fn trust_state(&self) -> ::std::option::Option<&crate::types::TrustState> {
         self.trust_state.as_ref()
     }
     /// <p>The date and time that the trust relationship was created.</p>
-    pub fn created_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_date_time.as_ref()
     }
     /// <p>The date and time that the trust relationship was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
     /// <p>The date and time that the TrustState was last updated.</p>
-    pub fn state_last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn state_last_updated_date_time(
+        &self,
+    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.state_last_updated_date_time.as_ref()
     }
     /// <p>The reason for the TrustState.</p>
-    pub fn trust_state_reason(&self) -> std::option::Option<&str> {
+    pub fn trust_state_reason(&self) -> ::std::option::Option<&str> {
         self.trust_state_reason.as_deref()
     }
     /// <p>Current state of selective authentication for the trust.</p>
-    pub fn selective_auth(&self) -> std::option::Option<&crate::types::SelectiveAuth> {
+    pub fn selective_auth(&self) -> ::std::option::Option<&crate::types::SelectiveAuth> {
         self.selective_auth.as_ref()
     }
 }
@@ -93,148 +95,159 @@ impl Trust {
 
 /// A builder for [`Trust`](crate::types::Trust).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TrustBuilder {
-    pub(crate) directory_id: std::option::Option<std::string::String>,
-    pub(crate) trust_id: std::option::Option<std::string::String>,
-    pub(crate) remote_domain_name: std::option::Option<std::string::String>,
-    pub(crate) trust_type: std::option::Option<crate::types::TrustType>,
-    pub(crate) trust_direction: std::option::Option<crate::types::TrustDirection>,
-    pub(crate) trust_state: std::option::Option<crate::types::TrustState>,
-    pub(crate) created_date_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) state_last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) trust_state_reason: std::option::Option<std::string::String>,
-    pub(crate) selective_auth: std::option::Option<crate::types::SelectiveAuth>,
+    pub(crate) directory_id: ::std::option::Option<::std::string::String>,
+    pub(crate) trust_id: ::std::option::Option<::std::string::String>,
+    pub(crate) remote_domain_name: ::std::option::Option<::std::string::String>,
+    pub(crate) trust_type: ::std::option::Option<crate::types::TrustType>,
+    pub(crate) trust_direction: ::std::option::Option<crate::types::TrustDirection>,
+    pub(crate) trust_state: ::std::option::Option<crate::types::TrustState>,
+    pub(crate) created_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) state_last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) trust_state_reason: ::std::option::Option<::std::string::String>,
+    pub(crate) selective_auth: ::std::option::Option<crate::types::SelectiveAuth>,
 }
 impl TrustBuilder {
     /// <p>The Directory ID of the Amazon Web Services directory involved in the trust relationship.</p>
-    pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.directory_id = Some(input.into());
+    pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.directory_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Directory ID of the Amazon Web Services directory involved in the trust relationship.</p>
-    pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.directory_id = input;
         self
     }
     /// <p>The unique ID of the trust relationship.</p>
-    pub fn trust_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.trust_id = Some(input.into());
+    pub fn trust_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.trust_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ID of the trust relationship.</p>
-    pub fn set_trust_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_trust_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.trust_id = input;
         self
     }
     /// <p>The Fully Qualified Domain Name (FQDN) of the external domain involved in the trust relationship.</p>
-    pub fn remote_domain_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.remote_domain_name = Some(input.into());
+    pub fn remote_domain_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.remote_domain_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Fully Qualified Domain Name (FQDN) of the external domain involved in the trust relationship.</p>
     pub fn set_remote_domain_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.remote_domain_name = input;
         self
     }
     /// <p>The trust relationship type. <code>Forest</code> is the default.</p>
     pub fn trust_type(mut self, input: crate::types::TrustType) -> Self {
-        self.trust_type = Some(input);
+        self.trust_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The trust relationship type. <code>Forest</code> is the default.</p>
-    pub fn set_trust_type(mut self, input: std::option::Option<crate::types::TrustType>) -> Self {
+    pub fn set_trust_type(mut self, input: ::std::option::Option<crate::types::TrustType>) -> Self {
         self.trust_type = input;
         self
     }
     /// <p>The trust relationship direction.</p>
     pub fn trust_direction(mut self, input: crate::types::TrustDirection) -> Self {
-        self.trust_direction = Some(input);
+        self.trust_direction = ::std::option::Option::Some(input);
         self
     }
     /// <p>The trust relationship direction.</p>
     pub fn set_trust_direction(
         mut self,
-        input: std::option::Option<crate::types::TrustDirection>,
+        input: ::std::option::Option<crate::types::TrustDirection>,
     ) -> Self {
         self.trust_direction = input;
         self
     }
     /// <p>The trust relationship state.</p>
     pub fn trust_state(mut self, input: crate::types::TrustState) -> Self {
-        self.trust_state = Some(input);
+        self.trust_state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The trust relationship state.</p>
-    pub fn set_trust_state(mut self, input: std::option::Option<crate::types::TrustState>) -> Self {
+    pub fn set_trust_state(
+        mut self,
+        input: ::std::option::Option<crate::types::TrustState>,
+    ) -> Self {
         self.trust_state = input;
         self
     }
     /// <p>The date and time that the trust relationship was created.</p>
-    pub fn created_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_date_time = Some(input);
+    pub fn created_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_date_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time that the trust relationship was created.</p>
     pub fn set_created_date_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_date_time = input;
         self
     }
     /// <p>The date and time that the trust relationship was last updated.</p>
-    pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_updated_date_time = Some(input);
+    pub fn last_updated_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_updated_date_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time that the trust relationship was last updated.</p>
     pub fn set_last_updated_date_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_updated_date_time = input;
         self
     }
     /// <p>The date and time that the TrustState was last updated.</p>
-    pub fn state_last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.state_last_updated_date_time = Some(input);
+    pub fn state_last_updated_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.state_last_updated_date_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time that the TrustState was last updated.</p>
     pub fn set_state_last_updated_date_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.state_last_updated_date_time = input;
         self
     }
     /// <p>The reason for the TrustState.</p>
-    pub fn trust_state_reason(mut self, input: impl Into<std::string::String>) -> Self {
-        self.trust_state_reason = Some(input.into());
+    pub fn trust_state_reason(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.trust_state_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason for the TrustState.</p>
     pub fn set_trust_state_reason(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.trust_state_reason = input;
         self
     }
     /// <p>Current state of selective authentication for the trust.</p>
     pub fn selective_auth(mut self, input: crate::types::SelectiveAuth) -> Self {
-        self.selective_auth = Some(input);
+        self.selective_auth = ::std::option::Option::Some(input);
         self
     }
     /// <p>Current state of selective authentication for the trust.</p>
     pub fn set_selective_auth(
         mut self,
-        input: std::option::Option<crate::types::SelectiveAuth>,
+        input: ::std::option::Option<crate::types::SelectiveAuth>,
     ) -> Self {
         self.selective_auth = input;
         self

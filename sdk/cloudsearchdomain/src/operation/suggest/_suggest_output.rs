@@ -2,27 +2,27 @@
 
 /// <p>Contains the response to a <code>Suggest</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SuggestOutput {
     /// <p>The status of a <code>SuggestRequest</code>. Contains the resource ID (<code>rid</code>) and how long it took to process the request (<code>timems</code>).</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::SuggestStatus>,
+    pub status: ::std::option::Option<crate::types::SuggestStatus>,
     /// <p>Container for the matching search suggestion information.</p>
     #[doc(hidden)]
-    pub suggest: std::option::Option<crate::types::SuggestModel>,
+    pub suggest: ::std::option::Option<crate::types::SuggestModel>,
     _request_id: Option<String>,
 }
 impl SuggestOutput {
     /// <p>The status of a <code>SuggestRequest</code>. Contains the resource ID (<code>rid</code>) and how long it took to process the request (<code>timems</code>).</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::SuggestStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::SuggestStatus> {
         self.status.as_ref()
     }
     /// <p>Container for the matching search suggestion information.</p>
-    pub fn suggest(&self) -> std::option::Option<&crate::types::SuggestModel> {
+    pub fn suggest(&self) -> ::std::option::Option<&crate::types::SuggestModel> {
         self.suggest.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for SuggestOutput {
+impl ::aws_http::request_id::RequestId for SuggestOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -36,30 +36,32 @@ impl SuggestOutput {
 
 /// A builder for [`SuggestOutput`](crate::operation::suggest::SuggestOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SuggestOutputBuilder {
-    pub(crate) status: std::option::Option<crate::types::SuggestStatus>,
-    pub(crate) suggest: std::option::Option<crate::types::SuggestModel>,
+    pub(crate) status: ::std::option::Option<crate::types::SuggestStatus>,
+    pub(crate) suggest: ::std::option::Option<crate::types::SuggestModel>,
     _request_id: Option<String>,
 }
 impl SuggestOutputBuilder {
     /// <p>The status of a <code>SuggestRequest</code>. Contains the resource ID (<code>rid</code>) and how long it took to process the request (<code>timems</code>).</p>
     pub fn status(mut self, input: crate::types::SuggestStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of a <code>SuggestRequest</code>. Contains the resource ID (<code>rid</code>) and how long it took to process the request (<code>timems</code>).</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::SuggestStatus>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::SuggestStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>Container for the matching search suggestion information.</p>
     pub fn suggest(mut self, input: crate::types::SuggestModel) -> Self {
-        self.suggest = Some(input);
+        self.suggest = ::std::option::Option::Some(input);
         self
     }
     /// <p>Container for the matching search suggestion information.</p>
-    pub fn set_suggest(mut self, input: std::option::Option<crate::types::SuggestModel>) -> Self {
+    pub fn set_suggest(mut self, input: ::std::option::Option<crate::types::SuggestModel>) -> Self {
         self.suggest = input;
         self
     }

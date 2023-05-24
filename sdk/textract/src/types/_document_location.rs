@@ -3,15 +3,15 @@
 /// <p>The Amazon S3 bucket that contains the document to be processed. It's used by asynchronous operations.</p>
 /// <p>The input document can be an image file in JPEG or PNG format. It can also be a file in PDF format.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DocumentLocation {
     /// <p>The Amazon S3 bucket that contains the input document.</p>
     #[doc(hidden)]
-    pub s3_object: std::option::Option<crate::types::S3Object>,
+    pub s3_object: ::std::option::Option<crate::types::S3Object>,
 }
 impl DocumentLocation {
     /// <p>The Amazon S3 bucket that contains the input document.</p>
-    pub fn s3_object(&self) -> std::option::Option<&crate::types::S3Object> {
+    pub fn s3_object(&self) -> ::std::option::Option<&crate::types::S3Object> {
         self.s3_object.as_ref()
     }
 }
@@ -24,18 +24,20 @@ impl DocumentLocation {
 
 /// A builder for [`DocumentLocation`](crate::types::DocumentLocation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DocumentLocationBuilder {
-    pub(crate) s3_object: std::option::Option<crate::types::S3Object>,
+    pub(crate) s3_object: ::std::option::Option<crate::types::S3Object>,
 }
 impl DocumentLocationBuilder {
     /// <p>The Amazon S3 bucket that contains the input document.</p>
     pub fn s3_object(mut self, input: crate::types::S3Object) -> Self {
-        self.s3_object = Some(input);
+        self.s3_object = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Amazon S3 bucket that contains the input document.</p>
-    pub fn set_s3_object(mut self, input: std::option::Option<crate::types::S3Object>) -> Self {
+    pub fn set_s3_object(mut self, input: ::std::option::Option<crate::types::S3Object>) -> Self {
         self.s3_object = input;
         self
     }

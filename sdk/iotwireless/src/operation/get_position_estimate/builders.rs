@@ -6,29 +6,29 @@ pub use crate::operation::get_position_estimate::_get_position_estimate_input::G
 /// Fluent builder constructing a request to `GetPositionEstimate`.
 ///
 /// <p>Get estimated position information as a payload in GeoJSON format. The payload measurement data is resolved using solvers that are provided by third-party vendors.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetPositionEstimateFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::get_position_estimate::builders::GetPositionEstimateInputBuilder,
 }
 impl GetPositionEstimateFluentBuilder {
     /// Creates a new `GetPositionEstimate`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::get_position_estimate::GetPositionEstimate,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::get_position_estimate::GetPositionEstimateError,
         >,
     > {
@@ -36,30 +36,33 @@ impl GetPositionEstimateFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_position_estimate::GetPositionEstimateOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::get_position_estimate::GetPositionEstimateError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,9 +75,9 @@ impl GetPositionEstimateFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_position_estimate::GetPositionEstimateOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::get_position_estimate::GetPositionEstimateError,
         >,
     > {
@@ -92,7 +95,7 @@ impl GetPositionEstimateFluentBuilder {
     /// <p>Retrieves an estimated device position by resolving WLAN measurement data. The position is resolved using HERE's Wi-Fi based solver.</p>
     pub fn set_wi_fi_access_points(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::WiFiAccessPoint>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::WiFiAccessPoint>>,
     ) -> Self {
         self.inner = self.inner.set_wi_fi_access_points(input);
         self
@@ -103,7 +106,10 @@ impl GetPositionEstimateFluentBuilder {
         self
     }
     /// <p>Retrieves an estimated device position by resolving measurement data from cellular radio towers. The position is resolved using HERE's cellular-based solver.</p>
-    pub fn set_cell_towers(mut self, input: std::option::Option<crate::types::CellTowers>) -> Self {
+    pub fn set_cell_towers(
+        mut self,
+        input: ::std::option::Option<crate::types::CellTowers>,
+    ) -> Self {
         self.inner = self.inner.set_cell_towers(input);
         self
     }
@@ -113,7 +119,7 @@ impl GetPositionEstimateFluentBuilder {
         self
     }
     /// <p>Retrieves an estimated device position by resolving the IP address information from the device. The position is resolved using MaxMind's IP-based solver.</p>
-    pub fn set_ip(mut self, input: std::option::Option<crate::types::Ip>) -> Self {
+    pub fn set_ip(mut self, input: ::std::option::Option<crate::types::Ip>) -> Self {
         self.inner = self.inner.set_ip(input);
         self
     }
@@ -123,17 +129,20 @@ impl GetPositionEstimateFluentBuilder {
         self
     }
     /// <p>Retrieves an estimated device position by resolving the global navigation satellite system (GNSS) scan data. The position is resolved using the GNSS solver powered by LoRa Cloud.</p>
-    pub fn set_gnss(mut self, input: std::option::Option<crate::types::Gnss>) -> Self {
+    pub fn set_gnss(mut self, input: ::std::option::Option<crate::types::Gnss>) -> Self {
         self.inner = self.inner.set_gnss(input);
         self
     }
     /// <p>Optional information that specifies the time when the position information will be resolved. It uses the Unix timestamp format. If not specified, the time at which the request was received will be used.</p>
-    pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
+    pub fn timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.timestamp(input);
         self
     }
     /// <p>Optional information that specifies the time when the position information will be resolved. It uses the Unix timestamp format. If not specified, the time at which the request was received will be used.</p>
-    pub fn set_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_timestamp(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
         self.inner = self.inner.set_timestamp(input);
         self
     }

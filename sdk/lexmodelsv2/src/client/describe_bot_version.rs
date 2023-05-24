@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeBotVersion`](crate::operation::describe_bot_version::builders::DescribeBotVersionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`bot_id(impl Into<String>)`](crate::operation::describe_bot_version::builders::DescribeBotVersionFluentBuilder::bot_id) / [`set_bot_id(Option<String>)`](crate::operation::describe_bot_version::builders::DescribeBotVersionFluentBuilder::set_bot_id): <p>The identifier of the bot containing the version to return metadata for.</p>
-    ///   - [`bot_version(impl Into<String>)`](crate::operation::describe_bot_version::builders::DescribeBotVersionFluentBuilder::bot_version) / [`set_bot_version(Option<String>)`](crate::operation::describe_bot_version::builders::DescribeBotVersionFluentBuilder::set_bot_version): <p>The version of the bot to return metadata for.</p>
+    ///   - [`bot_id(impl ::std::convert::Into<String>)`](crate::operation::describe_bot_version::builders::DescribeBotVersionFluentBuilder::bot_id) / [`set_bot_id(Option<String>)`](crate::operation::describe_bot_version::builders::DescribeBotVersionFluentBuilder::set_bot_id): <p>The identifier of the bot containing the version to return metadata for.</p>
+    ///   - [`bot_version(impl ::std::convert::Into<String>)`](crate::operation::describe_bot_version::builders::DescribeBotVersionFluentBuilder::bot_version) / [`set_bot_version(Option<String>)`](crate::operation::describe_bot_version::builders::DescribeBotVersionFluentBuilder::set_bot_version): <p>The version of the bot to return metadata for.</p>
     /// - On success, responds with [`DescribeBotVersionOutput`](crate::operation::describe_bot_version::DescribeBotVersionOutput) with field(s):
     ///   - [`bot_id(Option<String>)`](crate::operation::describe_bot_version::DescribeBotVersionOutput::bot_id): <p>The identifier of the bot that contains the version.</p>
     ///   - [`bot_name(Option<String>)`](crate::operation::describe_bot_version::DescribeBotVersionOutput::bot_name): <p>The name of the bot that contains the version.</p>

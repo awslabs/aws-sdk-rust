@@ -2,22 +2,22 @@
 
 /// <p>Describes the weight of a target group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WeightedTargetGroup {
     /// <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
     #[doc(hidden)]
-    pub target_group_identifier: std::option::Option<std::string::String>,
+    pub target_group_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Only required if you specify multiple target groups for a forward action. The "weight" determines how requests are distributed to the target group. For example, if you specify two target groups, each with a weight of 10, each target group receives half the requests. If you specify two target groups, one with a weight of 10 and the other with a weight of 20, the target group with a weight of 20 receives twice as many requests as the other target group. If there's only one target group specified, then the default value is 100.</p>
     #[doc(hidden)]
-    pub weight: std::option::Option<i32>,
+    pub weight: ::std::option::Option<i32>,
 }
 impl WeightedTargetGroup {
     /// <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
-    pub fn target_group_identifier(&self) -> std::option::Option<&str> {
+    pub fn target_group_identifier(&self) -> ::std::option::Option<&str> {
         self.target_group_identifier.as_deref()
     }
     /// <p>Only required if you specify multiple target groups for a forward action. The "weight" determines how requests are distributed to the target group. For example, if you specify two target groups, each with a weight of 10, each target group receives half the requests. If you specify two target groups, one with a weight of 10 and the other with a weight of 20, the target group with a weight of 20 receives twice as many requests as the other target group. If there's only one target group specified, then the default value is 100.</p>
-    pub fn weight(&self) -> std::option::Option<i32> {
+    pub fn weight(&self) -> ::std::option::Option<i32> {
         self.weight
     }
 }
@@ -30,32 +30,37 @@ impl WeightedTargetGroup {
 
 /// A builder for [`WeightedTargetGroup`](crate::types::WeightedTargetGroup).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct WeightedTargetGroupBuilder {
-    pub(crate) target_group_identifier: std::option::Option<std::string::String>,
-    pub(crate) weight: std::option::Option<i32>,
+    pub(crate) target_group_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) weight: ::std::option::Option<i32>,
 }
 impl WeightedTargetGroupBuilder {
     /// <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
-    pub fn target_group_identifier(mut self, input: impl Into<std::string::String>) -> Self {
-        self.target_group_identifier = Some(input.into());
+    pub fn target_group_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.target_group_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
     pub fn set_target_group_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.target_group_identifier = input;
         self
     }
     /// <p>Only required if you specify multiple target groups for a forward action. The "weight" determines how requests are distributed to the target group. For example, if you specify two target groups, each with a weight of 10, each target group receives half the requests. If you specify two target groups, one with a weight of 10 and the other with a weight of 20, the target group with a weight of 20 receives twice as many requests as the other target group. If there's only one target group specified, then the default value is 100.</p>
     pub fn weight(mut self, input: i32) -> Self {
-        self.weight = Some(input);
+        self.weight = ::std::option::Option::Some(input);
         self
     }
     /// <p>Only required if you specify multiple target groups for a forward action. The "weight" determines how requests are distributed to the target group. For example, if you specify two target groups, each with a weight of 10, each target group receives half the requests. If you specify two target groups, one with a weight of 10 and the other with a weight of 20, the target group with a weight of 20 receives twice as many requests as the other target group. If there's only one target group specified, then the default value is 100.</p>
-    pub fn set_weight(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_weight(mut self, input: ::std::option::Option<i32>) -> Self {
         self.weight = input;
         self
     }

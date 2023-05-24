@@ -40,13 +40,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum CancelBatchErrorCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,7 +60,7 @@ pub enum CancelBatchErrorCode {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for CancelBatchErrorCode {
+impl ::std::convert::From<&str> for CancelBatchErrorCode {
     fn from(s: &str) -> Self {
         match s {
             "fleetRequestIdDoesNotExist" => CancelBatchErrorCode::FleetRequestIdDoesNotExist,
@@ -75,11 +75,11 @@ impl std::convert::From<&str> for CancelBatchErrorCode {
         }
     }
 }
-impl std::str::FromStr for CancelBatchErrorCode {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for CancelBatchErrorCode {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CancelBatchErrorCode::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(CancelBatchErrorCode::from(s))
     }
 }
 impl CancelBatchErrorCode {
@@ -105,7 +105,7 @@ impl CancelBatchErrorCode {
         ]
     }
 }
-impl AsRef<str> for CancelBatchErrorCode {
+impl ::std::convert::AsRef<str> for CancelBatchErrorCode {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -38,13 +38,13 @@
 /// Smpte2038 Data Preference
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum Smpte2038DataPreference {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum Smpte2038DataPreference {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for Smpte2038DataPreference {
+impl ::std::convert::From<&str> for Smpte2038DataPreference {
     fn from(s: &str) -> Self {
         match s {
             "IGNORE" => Smpte2038DataPreference::Ignore,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for Smpte2038DataPreference {
         }
     }
 }
-impl std::str::FromStr for Smpte2038DataPreference {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for Smpte2038DataPreference {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Smpte2038DataPreference::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(Smpte2038DataPreference::from(s))
     }
 }
 impl Smpte2038DataPreference {
@@ -86,7 +86,7 @@ impl Smpte2038DataPreference {
         &["IGNORE", "PREFER"]
     }
 }
-impl AsRef<str> for Smpte2038DataPreference {
+impl ::std::convert::AsRef<str> for Smpte2038DataPreference {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

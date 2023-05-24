@@ -38,13 +38,13 @@
 /// Specify whether to allow B-frames to be referenced by other frame types. To use reference B-frames when your GOP structure has 1 or more B-frames: Leave blank or keep the default value Enabled. We recommend that you choose Enabled to help improve the video quality of your output relative to its bitrate. To not use reference B-frames: Choose Disabled.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum H265GopBReference {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum H265GopBReference {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for H265GopBReference {
+impl ::std::convert::From<&str> for H265GopBReference {
     fn from(s: &str) -> Self {
         match s {
             "DISABLED" => H265GopBReference::Disabled,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for H265GopBReference {
         }
     }
 }
-impl std::str::FromStr for H265GopBReference {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for H265GopBReference {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(H265GopBReference::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(H265GopBReference::from(s))
     }
 }
 impl H265GopBReference {
@@ -86,7 +86,7 @@ impl H265GopBReference {
         &["DISABLED", "ENABLED"]
     }
 }
-impl AsRef<str> for H265GopBReference {
+impl ::std::convert::AsRef<str> for H265GopBReference {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

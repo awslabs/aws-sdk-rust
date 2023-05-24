@@ -6,29 +6,29 @@ pub use crate::operation::create_packaging_configuration::_create_packaging_conf
 /// Fluent builder constructing a request to `CreatePackagingConfiguration`.
 ///
 /// Creates a new MediaPackage VOD PackagingConfiguration resource.
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreatePackagingConfigurationFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::create_packaging_configuration::builders::CreatePackagingConfigurationInputBuilder,
 }
 impl CreatePackagingConfigurationFluentBuilder {
     /// Creates a new `CreatePackagingConfiguration`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_packaging_configuration::CreatePackagingConfiguration,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_packaging_configuration::CreatePackagingConfigurationError,
         >,
     > {
@@ -36,30 +36,33 @@ impl CreatePackagingConfigurationFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_packaging_configuration::CreatePackagingConfigurationOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_packaging_configuration::CreatePackagingConfigurationError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,9 +75,9 @@ impl CreatePackagingConfigurationFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_packaging_configuration::CreatePackagingConfigurationOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_packaging_configuration::CreatePackagingConfigurationError,
         >,
     > {
@@ -88,7 +91,7 @@ impl CreatePackagingConfigurationFluentBuilder {
     /// A CMAF packaging configuration.
     pub fn set_cmaf_package(
         mut self,
-        input: std::option::Option<crate::types::CmafPackage>,
+        input: ::std::option::Option<crate::types::CmafPackage>,
     ) -> Self {
         self.inner = self.inner.set_cmaf_package(input);
         self
@@ -101,7 +104,7 @@ impl CreatePackagingConfigurationFluentBuilder {
     /// A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
     pub fn set_dash_package(
         mut self,
-        input: std::option::Option<crate::types::DashPackage>,
+        input: ::std::option::Option<crate::types::DashPackage>,
     ) -> Self {
         self.inner = self.inner.set_dash_package(input);
         self
@@ -112,17 +115,20 @@ impl CreatePackagingConfigurationFluentBuilder {
         self
     }
     /// An HTTP Live Streaming (HLS) packaging configuration.
-    pub fn set_hls_package(mut self, input: std::option::Option<crate::types::HlsPackage>) -> Self {
+    pub fn set_hls_package(
+        mut self,
+        input: ::std::option::Option<crate::types::HlsPackage>,
+    ) -> Self {
         self.inner = self.inner.set_hls_package(input);
         self
     }
     /// The ID of the PackagingConfiguration.
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.id(input.into());
         self
     }
     /// The ID of the PackagingConfiguration.
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_id(input);
         self
     }
@@ -132,19 +138,25 @@ impl CreatePackagingConfigurationFluentBuilder {
         self
     }
     /// A Microsoft Smooth Streaming (MSS) PackagingConfiguration.
-    pub fn set_mss_package(mut self, input: std::option::Option<crate::types::MssPackage>) -> Self {
+    pub fn set_mss_package(
+        mut self,
+        input: ::std::option::Option<crate::types::MssPackage>,
+    ) -> Self {
         self.inner = self.inner.set_mss_package(input);
         self
     }
     /// The ID of a PackagingGroup.
-    pub fn packaging_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn packaging_group_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.packaging_group_id(input.into());
         self
     }
     /// The ID of a PackagingGroup.
     pub fn set_packaging_group_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_packaging_group_id(input);
         self
@@ -156,8 +168,8 @@ impl CreatePackagingConfigurationFluentBuilder {
     /// A collection of tags associated with a resource
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
@@ -165,8 +177,8 @@ impl CreatePackagingConfigurationFluentBuilder {
     /// A collection of tags associated with a resource
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_tags(input);

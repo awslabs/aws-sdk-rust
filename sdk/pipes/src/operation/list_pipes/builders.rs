@@ -6,56 +6,59 @@ pub use crate::operation::list_pipes::_list_pipes_input::ListPipesInputBuilder;
 /// Fluent builder constructing a request to `ListPipes`.
 ///
 /// <p>Get the pipes associated with this account. For more information about pipes, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes.html">Amazon EventBridge Pipes</a> in the Amazon EventBridge User Guide.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListPipesFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::list_pipes::builders::ListPipesInputBuilder,
 }
 impl ListPipesFluentBuilder {
     /// Creates a new `ListPipes`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::list_pipes::ListPipes,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::list_pipes::ListPipesError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_pipes::ListPipesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::list_pipes::ListPipesOutput,
-        aws_smithy_http::result::SdkError<crate::operation::list_pipes::ListPipesError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_pipes::ListPipesError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,9 +71,9 @@ impl ListPipesFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::list_pipes::ListPipesOutput,
-        aws_smithy_http::result::SdkError<crate::operation::list_pipes::ListPipesError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_pipes::ListPipesError>,
     > {
         self.send_middleware().await
     }
@@ -81,12 +84,12 @@ impl ListPipesFluentBuilder {
         crate::operation::list_pipes::paginator::ListPipesPaginator::new(self.handle, self.inner)
     }
     /// <p>A value that will return a subset of the pipes associated with this account. For example, <code>"NamePrefix": "ABC"</code> will return all endpoints with "ABC" in the name.</p>
-    pub fn name_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn name_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name_prefix(input.into());
         self
     }
     /// <p>A value that will return a subset of the pipes associated with this account. For example, <code>"NamePrefix": "ABC"</code> will return all endpoints with "ABC" in the name.</p>
-    pub fn set_name_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name_prefix(input);
         self
     }
@@ -98,7 +101,7 @@ impl ListPipesFluentBuilder {
     /// <p>The state the pipe should be in.</p>
     pub fn set_desired_state(
         mut self,
-        input: std::option::Option<crate::types::RequestedPipeState>,
+        input: ::std::option::Option<crate::types::RequestedPipeState>,
     ) -> Self {
         self.inner = self.inner.set_desired_state(input);
         self
@@ -111,38 +114,50 @@ impl ListPipesFluentBuilder {
     /// <p>The state the pipe is in.</p>
     pub fn set_current_state(
         mut self,
-        input: std::option::Option<crate::types::PipeState>,
+        input: ::std::option::Option<crate::types::PipeState>,
     ) -> Self {
         self.inner = self.inner.set_current_state(input);
         self
     }
     /// <p>The prefix matching the pipe source.</p>
-    pub fn source_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn source_prefix(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.source_prefix(input.into());
         self
     }
     /// <p>The prefix matching the pipe source.</p>
-    pub fn set_source_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_source_prefix(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_source_prefix(input);
         self
     }
     /// <p>The prefix matching the pipe target.</p>
-    pub fn target_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn target_prefix(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.target_prefix(input.into());
         self
     }
     /// <p>The prefix matching the pipe target.</p>
-    pub fn set_target_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_target_prefix(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_target_prefix(input);
         self
     }
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
     /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
@@ -152,7 +167,7 @@ impl ListPipesFluentBuilder {
         self
     }
     /// <p>The maximum number of pipes to include in the response.</p>
-    pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_limit(input);
         self
     }

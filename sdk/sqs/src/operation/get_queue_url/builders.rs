@@ -7,56 +7,59 @@ pub use crate::operation::get_queue_url::_get_queue_url_input::GetQueueUrlInputB
 ///
 /// <p>Returns the URL of an existing Amazon SQS queue.</p>
 /// <p>To access a queue that belongs to another AWS account, use the <code>QueueOwnerAWSAccountId</code> parameter to specify the account ID of the queue's owner. The queue's owner must grant you permission to access the queue. For more information about shared queue access, see <code> <code>AddPermission</code> </code> or see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-writing-an-sqs-policy.html#write-messages-to-shared-queue">Allow Developers to Write Messages to a Shared Queue</a> in the <i>Amazon SQS Developer Guide</i>. </p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetQueueUrlFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::get_queue_url::builders::GetQueueUrlInputBuilder,
 }
 impl GetQueueUrlFluentBuilder {
     /// Creates a new `GetQueueUrl`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::get_queue_url::GetQueueUrl,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::get_queue_url::GetQueueUrlError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_queue_url::GetQueueUrlError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_queue_url::GetQueueUrlOutput,
-        aws_smithy_http::result::SdkError<crate::operation::get_queue_url::GetQueueUrlError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_queue_url::GetQueueUrlError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -69,33 +72,36 @@ impl GetQueueUrlFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_queue_url::GetQueueUrlOutput,
-        aws_smithy_http::result::SdkError<crate::operation::get_queue_url::GetQueueUrlError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_queue_url::GetQueueUrlError>,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the queue whose URL must be fetched. Maximum 80 characters. Valid values: alphanumeric characters, hyphens (<code>-</code>), and underscores (<code>_</code>).</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
-    pub fn queue_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn queue_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.queue_name(input.into());
         self
     }
     /// <p>The name of the queue whose URL must be fetched. Maximum 80 characters. Valid values: alphanumeric characters, hyphens (<code>-</code>), and underscores (<code>_</code>).</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
-    pub fn set_queue_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_queue_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_queue_name(input);
         self
     }
     /// <p>The Amazon Web Services account ID of the account that created the queue.</p>
-    pub fn queue_owner_aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn queue_owner_aws_account_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.queue_owner_aws_account_id(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID of the account that created the queue.</p>
     pub fn set_queue_owner_aws_account_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_queue_owner_aws_account_id(input);
         self

@@ -2,22 +2,22 @@
 
 /// <p> Describes a dataset label. For more information, see <code>ListDatasetLabels</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatasetLabelDescription {
     /// <p> The name of the label. </p>
     #[doc(hidden)]
-    pub label_name: std::option::Option<std::string::String>,
+    pub label_name: ::std::option::Option<::std::string::String>,
     /// <p> Statistics about the label. </p>
     #[doc(hidden)]
-    pub label_stats: std::option::Option<crate::types::DatasetLabelStats>,
+    pub label_stats: ::std::option::Option<crate::types::DatasetLabelStats>,
 }
 impl DatasetLabelDescription {
     /// <p> The name of the label. </p>
-    pub fn label_name(&self) -> std::option::Option<&str> {
+    pub fn label_name(&self) -> ::std::option::Option<&str> {
         self.label_name.as_deref()
     }
     /// <p> Statistics about the label. </p>
-    pub fn label_stats(&self) -> std::option::Option<&crate::types::DatasetLabelStats> {
+    pub fn label_stats(&self) -> ::std::option::Option<&crate::types::DatasetLabelStats> {
         self.label_stats.as_ref()
     }
 }
@@ -30,31 +30,33 @@ impl DatasetLabelDescription {
 
 /// A builder for [`DatasetLabelDescription`](crate::types::DatasetLabelDescription).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DatasetLabelDescriptionBuilder {
-    pub(crate) label_name: std::option::Option<std::string::String>,
-    pub(crate) label_stats: std::option::Option<crate::types::DatasetLabelStats>,
+    pub(crate) label_name: ::std::option::Option<::std::string::String>,
+    pub(crate) label_stats: ::std::option::Option<crate::types::DatasetLabelStats>,
 }
 impl DatasetLabelDescriptionBuilder {
     /// <p> The name of the label. </p>
-    pub fn label_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.label_name = Some(input.into());
+    pub fn label_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.label_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the label. </p>
-    pub fn set_label_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_label_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.label_name = input;
         self
     }
     /// <p> Statistics about the label. </p>
     pub fn label_stats(mut self, input: crate::types::DatasetLabelStats) -> Self {
-        self.label_stats = Some(input);
+        self.label_stats = ::std::option::Option::Some(input);
         self
     }
     /// <p> Statistics about the label. </p>
     pub fn set_label_stats(
         mut self,
-        input: std::option::Option<crate::types::DatasetLabelStats>,
+        input: ::std::option::Option<crate::types::DatasetLabelStats>,
     ) -> Self {
         self.label_stats = input;
         self

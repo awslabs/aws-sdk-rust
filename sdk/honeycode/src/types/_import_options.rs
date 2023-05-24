@@ -2,24 +2,24 @@
 
 /// <p>An object that contains the options specified by the sumitter of the import request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportOptions {
     /// <p>Options relating to the destination of the import request.</p>
     #[doc(hidden)]
-    pub destination_options: std::option::Option<crate::types::DestinationOptions>,
+    pub destination_options: ::std::option::Option<crate::types::DestinationOptions>,
     /// <p>Options relating to parsing delimited text. Required if dataFormat is DELIMITED_TEXT.</p>
     #[doc(hidden)]
-    pub delimited_text_options: std::option::Option<crate::types::DelimitedTextImportOptions>,
+    pub delimited_text_options: ::std::option::Option<crate::types::DelimitedTextImportOptions>,
 }
 impl ImportOptions {
     /// <p>Options relating to the destination of the import request.</p>
-    pub fn destination_options(&self) -> std::option::Option<&crate::types::DestinationOptions> {
+    pub fn destination_options(&self) -> ::std::option::Option<&crate::types::DestinationOptions> {
         self.destination_options.as_ref()
     }
     /// <p>Options relating to parsing delimited text. Required if dataFormat is DELIMITED_TEXT.</p>
     pub fn delimited_text_options(
         &self,
-    ) -> std::option::Option<&crate::types::DelimitedTextImportOptions> {
+    ) -> ::std::option::Option<&crate::types::DelimitedTextImportOptions> {
         self.delimited_text_options.as_ref()
     }
 }
@@ -32,22 +32,24 @@ impl ImportOptions {
 
 /// A builder for [`ImportOptions`](crate::types::ImportOptions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ImportOptionsBuilder {
-    pub(crate) destination_options: std::option::Option<crate::types::DestinationOptions>,
+    pub(crate) destination_options: ::std::option::Option<crate::types::DestinationOptions>,
     pub(crate) delimited_text_options:
-        std::option::Option<crate::types::DelimitedTextImportOptions>,
+        ::std::option::Option<crate::types::DelimitedTextImportOptions>,
 }
 impl ImportOptionsBuilder {
     /// <p>Options relating to the destination of the import request.</p>
     pub fn destination_options(mut self, input: crate::types::DestinationOptions) -> Self {
-        self.destination_options = Some(input);
+        self.destination_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>Options relating to the destination of the import request.</p>
     pub fn set_destination_options(
         mut self,
-        input: std::option::Option<crate::types::DestinationOptions>,
+        input: ::std::option::Option<crate::types::DestinationOptions>,
     ) -> Self {
         self.destination_options = input;
         self
@@ -57,13 +59,13 @@ impl ImportOptionsBuilder {
         mut self,
         input: crate::types::DelimitedTextImportOptions,
     ) -> Self {
-        self.delimited_text_options = Some(input);
+        self.delimited_text_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>Options relating to parsing delimited text. Required if dataFormat is DELIMITED_TEXT.</p>
     pub fn set_delimited_text_options(
         mut self,
-        input: std::option::Option<crate::types::DelimitedTextImportOptions>,
+        input: ::std::option::Option<crate::types::DelimitedTextImportOptions>,
     ) -> Self {
         self.delimited_text_options = input;
         self

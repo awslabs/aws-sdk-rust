@@ -20,56 +20,59 @@ pub use crate::operation::put_records::_put_records_input::PutRecordsInputBuilde
 /// <p>After you write a record to a stream, you cannot modify that record or its order within the stream.</p>
 /// </important>
 /// <p>By default, data records are accessible for 24 hours from the time that they are added to a stream. You can use <code>IncreaseStreamRetentionPeriod</code> or <code>DecreaseStreamRetentionPeriod</code> to modify this retention period.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutRecordsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::put_records::builders::PutRecordsInputBuilder,
 }
 impl PutRecordsFluentBuilder {
     /// Creates a new `PutRecords`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::put_records::PutRecords,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::put_records::PutRecordsError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_records::PutRecordsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::put_records::PutRecordsOutput,
-        aws_smithy_http::result::SdkError<crate::operation::put_records::PutRecordsError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_records::PutRecordsError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -82,9 +85,9 @@ impl PutRecordsFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::put_records::PutRecordsOutput,
-        aws_smithy_http::result::SdkError<crate::operation::put_records::PutRecordsError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::put_records::PutRecordsError>,
     > {
         self.send_middleware().await
     }
@@ -100,28 +103,28 @@ impl PutRecordsFluentBuilder {
     /// <p>The records associated with the request.</p>
     pub fn set_records(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PutRecordsRequestEntry>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PutRecordsRequestEntry>>,
     ) -> Self {
         self.inner = self.inner.set_records(input);
         self
     }
     /// <p>The stream name associated with the request.</p>
-    pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stream_name(input.into());
         self
     }
     /// <p>The stream name associated with the request.</p>
-    pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stream_name(input);
         self
     }
     /// <p>The ARN of the stream.</p>
-    pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stream_arn(input.into());
         self
     }
     /// <p>The ARN of the stream.</p>
-    pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stream_arn(input);
         self
     }

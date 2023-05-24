@@ -2,92 +2,92 @@
 
 /// <p>An annotation store.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnnotationStoreItem {
     /// <p>The store's ID.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The store's genome reference.</p>
     #[doc(hidden)]
-    pub reference: std::option::Option<crate::types::ReferenceItem>,
+    pub reference: ::std::option::Option<crate::types::ReferenceItem>,
     /// <p>The store's status.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::StoreStatus>,
+    pub status: ::std::option::Option<crate::types::StoreStatus>,
     /// <p>The store's ARN.</p>
     #[doc(hidden)]
-    pub store_arn: std::option::Option<std::string::String>,
+    pub store_arn: ::std::option::Option<::std::string::String>,
     /// <p>The store's name.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The store's file format.</p>
     #[doc(hidden)]
-    pub store_format: std::option::Option<crate::types::StoreFormat>,
+    pub store_format: ::std::option::Option<crate::types::StoreFormat>,
     /// <p>The store's description.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The store's server-side encryption (SSE) settings.</p>
     #[doc(hidden)]
-    pub sse_config: std::option::Option<crate::types::SseConfig>,
+    pub sse_config: ::std::option::Option<crate::types::SseConfig>,
     /// <p>The store's creation time.</p>
     #[doc(hidden)]
-    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>When the store was updated.</p>
     #[doc(hidden)]
-    pub update_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The store's status message.</p>
     #[doc(hidden)]
-    pub status_message: std::option::Option<std::string::String>,
+    pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The store's size in bytes.</p>
     #[doc(hidden)]
-    pub store_size_bytes: std::option::Option<i64>,
+    pub store_size_bytes: ::std::option::Option<i64>,
 }
 impl AnnotationStoreItem {
     /// <p>The store's ID.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The store's genome reference.</p>
-    pub fn reference(&self) -> std::option::Option<&crate::types::ReferenceItem> {
+    pub fn reference(&self) -> ::std::option::Option<&crate::types::ReferenceItem> {
         self.reference.as_ref()
     }
     /// <p>The store's status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::StoreStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::StoreStatus> {
         self.status.as_ref()
     }
     /// <p>The store's ARN.</p>
-    pub fn store_arn(&self) -> std::option::Option<&str> {
+    pub fn store_arn(&self) -> ::std::option::Option<&str> {
         self.store_arn.as_deref()
     }
     /// <p>The store's name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The store's file format.</p>
-    pub fn store_format(&self) -> std::option::Option<&crate::types::StoreFormat> {
+    pub fn store_format(&self) -> ::std::option::Option<&crate::types::StoreFormat> {
         self.store_format.as_ref()
     }
     /// <p>The store's description.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The store's server-side encryption (SSE) settings.</p>
-    pub fn sse_config(&self) -> std::option::Option<&crate::types::SseConfig> {
+    pub fn sse_config(&self) -> ::std::option::Option<&crate::types::SseConfig> {
         self.sse_config.as_ref()
     }
     /// <p>The store's creation time.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>When the store was updated.</p>
-    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
     /// <p>The store's status message.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<&str> {
         self.status_message.as_deref()
     }
     /// <p>The store's size in bytes.</p>
-    pub fn store_size_bytes(&self) -> std::option::Option<i64> {
+    pub fn store_size_bytes(&self) -> ::std::option::Option<i64> {
         self.store_size_bytes
     }
 }
@@ -100,151 +100,159 @@ impl AnnotationStoreItem {
 
 /// A builder for [`AnnotationStoreItem`](crate::types::AnnotationStoreItem).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AnnotationStoreItemBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) reference: std::option::Option<crate::types::ReferenceItem>,
-    pub(crate) status: std::option::Option<crate::types::StoreStatus>,
-    pub(crate) store_arn: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) store_format: std::option::Option<crate::types::StoreFormat>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) sse_config: std::option::Option<crate::types::SseConfig>,
-    pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) update_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) status_message: std::option::Option<std::string::String>,
-    pub(crate) store_size_bytes: std::option::Option<i64>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) reference: ::std::option::Option<crate::types::ReferenceItem>,
+    pub(crate) status: ::std::option::Option<crate::types::StoreStatus>,
+    pub(crate) store_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) store_format: ::std::option::Option<crate::types::StoreFormat>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) sse_config: ::std::option::Option<crate::types::SseConfig>,
+    pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) status_message: ::std::option::Option<::std::string::String>,
+    pub(crate) store_size_bytes: ::std::option::Option<i64>,
 }
 impl AnnotationStoreItemBuilder {
     /// <p>The store's ID.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The store's ID.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>The store's genome reference.</p>
     pub fn reference(mut self, input: crate::types::ReferenceItem) -> Self {
-        self.reference = Some(input);
+        self.reference = ::std::option::Option::Some(input);
         self
     }
     /// <p>The store's genome reference.</p>
     pub fn set_reference(
         mut self,
-        input: std::option::Option<crate::types::ReferenceItem>,
+        input: ::std::option::Option<crate::types::ReferenceItem>,
     ) -> Self {
         self.reference = input;
         self
     }
     /// <p>The store's status.</p>
     pub fn status(mut self, input: crate::types::StoreStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The store's status.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::StoreStatus>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::StoreStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>The store's ARN.</p>
-    pub fn store_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.store_arn = Some(input.into());
+    pub fn store_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.store_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The store's ARN.</p>
-    pub fn set_store_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_store_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.store_arn = input;
         self
     }
     /// <p>The store's name.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The store's name.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The store's file format.</p>
     pub fn store_format(mut self, input: crate::types::StoreFormat) -> Self {
-        self.store_format = Some(input);
+        self.store_format = ::std::option::Option::Some(input);
         self
     }
     /// <p>The store's file format.</p>
     pub fn set_store_format(
         mut self,
-        input: std::option::Option<crate::types::StoreFormat>,
+        input: ::std::option::Option<crate::types::StoreFormat>,
     ) -> Self {
         self.store_format = input;
         self
     }
     /// <p>The store's description.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The store's description.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>The store's server-side encryption (SSE) settings.</p>
     pub fn sse_config(mut self, input: crate::types::SseConfig) -> Self {
-        self.sse_config = Some(input);
+        self.sse_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The store's server-side encryption (SSE) settings.</p>
-    pub fn set_sse_config(mut self, input: std::option::Option<crate::types::SseConfig>) -> Self {
+    pub fn set_sse_config(mut self, input: ::std::option::Option<crate::types::SseConfig>) -> Self {
         self.sse_config = input;
         self
     }
     /// <p>The store's creation time.</p>
-    pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_time = Some(input);
+    pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The store's creation time.</p>
     pub fn set_creation_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_time = input;
         self
     }
     /// <p>When the store was updated.</p>
-    pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.update_time = Some(input);
+    pub fn update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.update_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>When the store was updated.</p>
     pub fn set_update_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.update_time = input;
         self
     }
     /// <p>The store's status message.</p>
-    pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status_message = Some(input.into());
+    pub fn status_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The store's status message.</p>
-    pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.status_message = input;
         self
     }
     /// <p>The store's size in bytes.</p>
     pub fn store_size_bytes(mut self, input: i64) -> Self {
-        self.store_size_bytes = Some(input);
+        self.store_size_bytes = ::std::option::Option::Some(input);
         self
     }
     /// <p>The store's size in bytes.</p>
-    pub fn set_store_size_bytes(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_store_size_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.store_size_bytes = input;
         self
     }

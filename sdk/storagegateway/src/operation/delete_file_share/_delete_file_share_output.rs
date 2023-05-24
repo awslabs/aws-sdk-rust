@@ -2,20 +2,20 @@
 
 /// <p>DeleteFileShareOutput</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteFileShareOutput {
     /// <p>The Amazon Resource Name (ARN) of the deleted file share.</p>
     #[doc(hidden)]
-    pub file_share_arn: std::option::Option<std::string::String>,
+    pub file_share_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DeleteFileShareOutput {
     /// <p>The Amazon Resource Name (ARN) of the deleted file share.</p>
-    pub fn file_share_arn(&self) -> std::option::Option<&str> {
+    pub fn file_share_arn(&self) -> ::std::option::Option<&str> {
         self.file_share_arn.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DeleteFileShareOutput {
+impl ::aws_http::request_id::RequestId for DeleteFileShareOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,19 +30,27 @@ impl DeleteFileShareOutput {
 
 /// A builder for [`DeleteFileShareOutput`](crate::operation::delete_file_share::DeleteFileShareOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteFileShareOutputBuilder {
-    pub(crate) file_share_arn: std::option::Option<std::string::String>,
+    pub(crate) file_share_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DeleteFileShareOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the deleted file share.</p>
-    pub fn file_share_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.file_share_arn = Some(input.into());
+    pub fn file_share_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.file_share_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the deleted file share.</p>
-    pub fn set_file_share_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_file_share_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.file_share_arn = input;
         self
     }

@@ -2,98 +2,101 @@
 
 /// <p>When fault rates go outside of the expected range, X-Ray creates an insight. Insights tracks emergent issues within your applications.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Insight {
     /// <p>The insights unique identifier. </p>
     #[doc(hidden)]
-    pub insight_id: std::option::Option<std::string::String>,
+    pub insight_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the group that the insight belongs to.</p>
     #[doc(hidden)]
-    pub group_arn: std::option::Option<std::string::String>,
+    pub group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the group that the insight belongs to.</p>
     #[doc(hidden)]
-    pub group_name: std::option::Option<std::string::String>,
+    pub group_name: ::std::option::Option<::std::string::String>,
     /// <p></p>
     #[doc(hidden)]
-    pub root_cause_service_id: std::option::Option<crate::types::ServiceId>,
+    pub root_cause_service_id: ::std::option::Option<crate::types::ServiceId>,
     /// <p>The categories that label and describe the type of insight.</p>
     #[doc(hidden)]
-    pub categories: std::option::Option<std::vec::Vec<crate::types::InsightCategory>>,
+    pub categories: ::std::option::Option<::std::vec::Vec<crate::types::InsightCategory>>,
     /// <p>The current state of the insight.</p>
     #[doc(hidden)]
-    pub state: std::option::Option<crate::types::InsightState>,
+    pub state: ::std::option::Option<crate::types::InsightState>,
     /// <p>The time, in Unix seconds, at which the insight began.</p>
     #[doc(hidden)]
-    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time, in Unix seconds, at which the insight ended.</p>
     #[doc(hidden)]
-    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A brief description of the insight.</p>
     #[doc(hidden)]
-    pub summary: std::option::Option<std::string::String>,
+    pub summary: ::std::option::Option<::std::string::String>,
     /// <p>The impact statistics of the client side service. This includes the number of requests to the client service and whether the requests were faults or okay.</p>
     #[doc(hidden)]
     pub client_request_impact_statistics:
-        std::option::Option<crate::types::RequestImpactStatistics>,
+        ::std::option::Option<crate::types::RequestImpactStatistics>,
     /// <p>The impact statistics of the root cause service. This includes the number of requests to the client service and whether the requests were faults or okay.</p>
     #[doc(hidden)]
     pub root_cause_service_request_impact_statistics:
-        std::option::Option<crate::types::RequestImpactStatistics>,
+        ::std::option::Option<crate::types::RequestImpactStatistics>,
     /// <p>The service within the insight that is most impacted by the incident.</p>
     #[doc(hidden)]
-    pub top_anomalous_services: std::option::Option<std::vec::Vec<crate::types::AnomalousService>>,
+    pub top_anomalous_services:
+        ::std::option::Option<::std::vec::Vec<crate::types::AnomalousService>>,
 }
 impl Insight {
     /// <p>The insights unique identifier. </p>
-    pub fn insight_id(&self) -> std::option::Option<&str> {
+    pub fn insight_id(&self) -> ::std::option::Option<&str> {
         self.insight_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the group that the insight belongs to.</p>
-    pub fn group_arn(&self) -> std::option::Option<&str> {
+    pub fn group_arn(&self) -> ::std::option::Option<&str> {
         self.group_arn.as_deref()
     }
     /// <p>The name of the group that the insight belongs to.</p>
-    pub fn group_name(&self) -> std::option::Option<&str> {
+    pub fn group_name(&self) -> ::std::option::Option<&str> {
         self.group_name.as_deref()
     }
     /// <p></p>
-    pub fn root_cause_service_id(&self) -> std::option::Option<&crate::types::ServiceId> {
+    pub fn root_cause_service_id(&self) -> ::std::option::Option<&crate::types::ServiceId> {
         self.root_cause_service_id.as_ref()
     }
     /// <p>The categories that label and describe the type of insight.</p>
-    pub fn categories(&self) -> std::option::Option<&[crate::types::InsightCategory]> {
+    pub fn categories(&self) -> ::std::option::Option<&[crate::types::InsightCategory]> {
         self.categories.as_deref()
     }
     /// <p>The current state of the insight.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::InsightState> {
+    pub fn state(&self) -> ::std::option::Option<&crate::types::InsightState> {
         self.state.as_ref()
     }
     /// <p>The time, in Unix seconds, at which the insight began.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The time, in Unix seconds, at which the insight ended.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>A brief description of the insight.</p>
-    pub fn summary(&self) -> std::option::Option<&str> {
+    pub fn summary(&self) -> ::std::option::Option<&str> {
         self.summary.as_deref()
     }
     /// <p>The impact statistics of the client side service. This includes the number of requests to the client service and whether the requests were faults or okay.</p>
     pub fn client_request_impact_statistics(
         &self,
-    ) -> std::option::Option<&crate::types::RequestImpactStatistics> {
+    ) -> ::std::option::Option<&crate::types::RequestImpactStatistics> {
         self.client_request_impact_statistics.as_ref()
     }
     /// <p>The impact statistics of the root cause service. This includes the number of requests to the client service and whether the requests were faults or okay.</p>
     pub fn root_cause_service_request_impact_statistics(
         &self,
-    ) -> std::option::Option<&crate::types::RequestImpactStatistics> {
+    ) -> ::std::option::Option<&crate::types::RequestImpactStatistics> {
         self.root_cause_service_request_impact_statistics.as_ref()
     }
     /// <p>The service within the insight that is most impacted by the incident.</p>
-    pub fn top_anomalous_services(&self) -> std::option::Option<&[crate::types::AnomalousService]> {
+    pub fn top_anomalous_services(
+        &self,
+    ) -> ::std::option::Option<&[crate::types::AnomalousService]> {
         self.top_anomalous_services.as_deref()
     }
 }
@@ -106,64 +109,66 @@ impl Insight {
 
 /// A builder for [`Insight`](crate::types::Insight).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InsightBuilder {
-    pub(crate) insight_id: std::option::Option<std::string::String>,
-    pub(crate) group_arn: std::option::Option<std::string::String>,
-    pub(crate) group_name: std::option::Option<std::string::String>,
-    pub(crate) root_cause_service_id: std::option::Option<crate::types::ServiceId>,
-    pub(crate) categories: std::option::Option<std::vec::Vec<crate::types::InsightCategory>>,
-    pub(crate) state: std::option::Option<crate::types::InsightState>,
-    pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) summary: std::option::Option<std::string::String>,
+    pub(crate) insight_id: ::std::option::Option<::std::string::String>,
+    pub(crate) group_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) group_name: ::std::option::Option<::std::string::String>,
+    pub(crate) root_cause_service_id: ::std::option::Option<crate::types::ServiceId>,
+    pub(crate) categories: ::std::option::Option<::std::vec::Vec<crate::types::InsightCategory>>,
+    pub(crate) state: ::std::option::Option<crate::types::InsightState>,
+    pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) summary: ::std::option::Option<::std::string::String>,
     pub(crate) client_request_impact_statistics:
-        std::option::Option<crate::types::RequestImpactStatistics>,
+        ::std::option::Option<crate::types::RequestImpactStatistics>,
     pub(crate) root_cause_service_request_impact_statistics:
-        std::option::Option<crate::types::RequestImpactStatistics>,
+        ::std::option::Option<crate::types::RequestImpactStatistics>,
     pub(crate) top_anomalous_services:
-        std::option::Option<std::vec::Vec<crate::types::AnomalousService>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::AnomalousService>>,
 }
 impl InsightBuilder {
     /// <p>The insights unique identifier. </p>
-    pub fn insight_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.insight_id = Some(input.into());
+    pub fn insight_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.insight_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The insights unique identifier. </p>
-    pub fn set_insight_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_insight_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.insight_id = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the group that the insight belongs to.</p>
-    pub fn group_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.group_arn = Some(input.into());
+    pub fn group_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the group that the insight belongs to.</p>
-    pub fn set_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_group_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_arn = input;
         self
     }
     /// <p>The name of the group that the insight belongs to.</p>
-    pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.group_name = Some(input.into());
+    pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the group that the insight belongs to.</p>
-    pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_name = input;
         self
     }
     /// <p></p>
     pub fn root_cause_service_id(mut self, input: crate::types::ServiceId) -> Self {
-        self.root_cause_service_id = Some(input);
+        self.root_cause_service_id = ::std::option::Option::Some(input);
         self
     }
     /// <p></p>
     pub fn set_root_cause_service_id(
         mut self,
-        input: std::option::Option<crate::types::ServiceId>,
+        input: ::std::option::Option<crate::types::ServiceId>,
     ) -> Self {
         self.root_cause_service_id = input;
         self
@@ -176,57 +181,60 @@ impl InsightBuilder {
     pub fn categories(mut self, input: crate::types::InsightCategory) -> Self {
         let mut v = self.categories.unwrap_or_default();
         v.push(input);
-        self.categories = Some(v);
+        self.categories = ::std::option::Option::Some(v);
         self
     }
     /// <p>The categories that label and describe the type of insight.</p>
     pub fn set_categories(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::InsightCategory>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::InsightCategory>>,
     ) -> Self {
         self.categories = input;
         self
     }
     /// <p>The current state of the insight.</p>
     pub fn state(mut self, input: crate::types::InsightState) -> Self {
-        self.state = Some(input);
+        self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current state of the insight.</p>
-    pub fn set_state(mut self, input: std::option::Option<crate::types::InsightState>) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::InsightState>) -> Self {
         self.state = input;
         self
     }
     /// <p>The time, in Unix seconds, at which the insight began.</p>
-    pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.start_time = Some(input);
+    pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.start_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time, in Unix seconds, at which the insight began.</p>
     pub fn set_start_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.start_time = input;
         self
     }
     /// <p>The time, in Unix seconds, at which the insight ended.</p>
-    pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.end_time = Some(input);
+    pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.end_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time, in Unix seconds, at which the insight ended.</p>
-    pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_end_time(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
         self.end_time = input;
         self
     }
     /// <p>A brief description of the insight.</p>
-    pub fn summary(mut self, input: impl Into<std::string::String>) -> Self {
-        self.summary = Some(input.into());
+    pub fn summary(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.summary = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A brief description of the insight.</p>
-    pub fn set_summary(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_summary(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.summary = input;
         self
     }
@@ -235,13 +243,13 @@ impl InsightBuilder {
         mut self,
         input: crate::types::RequestImpactStatistics,
     ) -> Self {
-        self.client_request_impact_statistics = Some(input);
+        self.client_request_impact_statistics = ::std::option::Option::Some(input);
         self
     }
     /// <p>The impact statistics of the client side service. This includes the number of requests to the client service and whether the requests were faults or okay.</p>
     pub fn set_client_request_impact_statistics(
         mut self,
-        input: std::option::Option<crate::types::RequestImpactStatistics>,
+        input: ::std::option::Option<crate::types::RequestImpactStatistics>,
     ) -> Self {
         self.client_request_impact_statistics = input;
         self
@@ -251,13 +259,13 @@ impl InsightBuilder {
         mut self,
         input: crate::types::RequestImpactStatistics,
     ) -> Self {
-        self.root_cause_service_request_impact_statistics = Some(input);
+        self.root_cause_service_request_impact_statistics = ::std::option::Option::Some(input);
         self
     }
     /// <p>The impact statistics of the root cause service. This includes the number of requests to the client service and whether the requests were faults or okay.</p>
     pub fn set_root_cause_service_request_impact_statistics(
         mut self,
-        input: std::option::Option<crate::types::RequestImpactStatistics>,
+        input: ::std::option::Option<crate::types::RequestImpactStatistics>,
     ) -> Self {
         self.root_cause_service_request_impact_statistics = input;
         self
@@ -270,13 +278,13 @@ impl InsightBuilder {
     pub fn top_anomalous_services(mut self, input: crate::types::AnomalousService) -> Self {
         let mut v = self.top_anomalous_services.unwrap_or_default();
         v.push(input);
-        self.top_anomalous_services = Some(v);
+        self.top_anomalous_services = ::std::option::Option::Some(v);
         self
     }
     /// <p>The service within the insight that is most impacted by the incident.</p>
     pub fn set_top_anomalous_services(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AnomalousService>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AnomalousService>>,
     ) -> Self {
         self.top_anomalous_services = input;
         self

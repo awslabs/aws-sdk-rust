@@ -2,20 +2,20 @@
 
 /// <p>Represents the result of a get job request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetJobOutput {
     /// <p>An object that contains information about the requested job.</p>
     #[doc(hidden)]
-    pub job: std::option::Option<crate::types::Job>,
+    pub job: ::std::option::Option<crate::types::Job>,
     _request_id: Option<String>,
 }
 impl GetJobOutput {
     /// <p>An object that contains information about the requested job.</p>
-    pub fn job(&self) -> std::option::Option<&crate::types::Job> {
+    pub fn job(&self) -> ::std::option::Option<&crate::types::Job> {
         self.job.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for GetJobOutput {
+impl ::aws_http::request_id::RequestId for GetJobOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,21 @@ impl GetJobOutput {
 
 /// A builder for [`GetJobOutput`](crate::operation::get_job::GetJobOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetJobOutputBuilder {
-    pub(crate) job: std::option::Option<crate::types::Job>,
+    pub(crate) job: ::std::option::Option<crate::types::Job>,
     _request_id: Option<String>,
 }
 impl GetJobOutputBuilder {
     /// <p>An object that contains information about the requested job.</p>
     pub fn job(mut self, input: crate::types::Job) -> Self {
-        self.job = Some(input);
+        self.job = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that contains information about the requested job.</p>
-    pub fn set_job(mut self, input: std::option::Option<crate::types::Job>) -> Self {
+    pub fn set_job(mut self, input: ::std::option::Option<crate::types::Job>) -> Self {
         self.job = input;
         self
     }

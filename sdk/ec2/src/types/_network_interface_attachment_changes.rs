@@ -2,22 +2,22 @@
 
 /// <p>Describes an attachment change.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkInterfaceAttachmentChanges {
     /// <p>The ID of the network interface attachment.</p>
     #[doc(hidden)]
-    pub attachment_id: std::option::Option<std::string::String>,
+    pub attachment_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the network interface is deleted when the instance is terminated.</p>
     #[doc(hidden)]
-    pub delete_on_termination: std::option::Option<bool>,
+    pub delete_on_termination: ::std::option::Option<bool>,
 }
 impl NetworkInterfaceAttachmentChanges {
     /// <p>The ID of the network interface attachment.</p>
-    pub fn attachment_id(&self) -> std::option::Option<&str> {
+    pub fn attachment_id(&self) -> ::std::option::Option<&str> {
         self.attachment_id.as_deref()
     }
     /// <p>Indicates whether the network interface is deleted when the instance is terminated.</p>
-    pub fn delete_on_termination(&self) -> std::option::Option<bool> {
+    pub fn delete_on_termination(&self) -> ::std::option::Option<bool> {
         self.delete_on_termination
     }
 }
@@ -30,29 +30,37 @@ impl NetworkInterfaceAttachmentChanges {
 
 /// A builder for [`NetworkInterfaceAttachmentChanges`](crate::types::NetworkInterfaceAttachmentChanges).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NetworkInterfaceAttachmentChangesBuilder {
-    pub(crate) attachment_id: std::option::Option<std::string::String>,
-    pub(crate) delete_on_termination: std::option::Option<bool>,
+    pub(crate) attachment_id: ::std::option::Option<::std::string::String>,
+    pub(crate) delete_on_termination: ::std::option::Option<bool>,
 }
 impl NetworkInterfaceAttachmentChangesBuilder {
     /// <p>The ID of the network interface attachment.</p>
-    pub fn attachment_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.attachment_id = Some(input.into());
+    pub fn attachment_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.attachment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the network interface attachment.</p>
-    pub fn set_attachment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_attachment_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.attachment_id = input;
         self
     }
     /// <p>Indicates whether the network interface is deleted when the instance is terminated.</p>
     pub fn delete_on_termination(mut self, input: bool) -> Self {
-        self.delete_on_termination = Some(input);
+        self.delete_on_termination = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether the network interface is deleted when the instance is terminated.</p>
-    pub fn set_delete_on_termination(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_delete_on_termination(mut self, input: ::std::option::Option<bool>) -> Self {
         self.delete_on_termination = input;
         self
     }

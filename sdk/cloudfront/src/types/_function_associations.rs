@@ -2,22 +2,22 @@
 
 /// <p>A list of CloudFront functions that are associated with a cache behavior in a CloudFront distribution. CloudFront functions must be published to the <code>LIVE</code> stage to associate them with a cache behavior.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FunctionAssociations {
     /// <p>The number of CloudFront functions in the list.</p>
     #[doc(hidden)]
-    pub quantity: std::option::Option<i32>,
+    pub quantity: ::std::option::Option<i32>,
     /// <p>The CloudFront functions that are associated with a cache behavior in a CloudFront distribution. CloudFront functions must be published to the <code>LIVE</code> stage to associate them with a cache behavior.</p>
     #[doc(hidden)]
-    pub items: std::option::Option<std::vec::Vec<crate::types::FunctionAssociation>>,
+    pub items: ::std::option::Option<::std::vec::Vec<crate::types::FunctionAssociation>>,
 }
 impl FunctionAssociations {
     /// <p>The number of CloudFront functions in the list.</p>
-    pub fn quantity(&self) -> std::option::Option<i32> {
+    pub fn quantity(&self) -> ::std::option::Option<i32> {
         self.quantity
     }
     /// <p>The CloudFront functions that are associated with a cache behavior in a CloudFront distribution. CloudFront functions must be published to the <code>LIVE</code> stage to associate them with a cache behavior.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::types::FunctionAssociation]> {
+    pub fn items(&self) -> ::std::option::Option<&[crate::types::FunctionAssociation]> {
         self.items.as_deref()
     }
 }
@@ -30,19 +30,21 @@ impl FunctionAssociations {
 
 /// A builder for [`FunctionAssociations`](crate::types::FunctionAssociations).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FunctionAssociationsBuilder {
-    pub(crate) quantity: std::option::Option<i32>,
-    pub(crate) items: std::option::Option<std::vec::Vec<crate::types::FunctionAssociation>>,
+    pub(crate) quantity: ::std::option::Option<i32>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::FunctionAssociation>>,
 }
 impl FunctionAssociationsBuilder {
     /// <p>The number of CloudFront functions in the list.</p>
     pub fn quantity(mut self, input: i32) -> Self {
-        self.quantity = Some(input);
+        self.quantity = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of CloudFront functions in the list.</p>
-    pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_quantity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.quantity = input;
         self
     }
@@ -54,13 +56,13 @@ impl FunctionAssociationsBuilder {
     pub fn items(mut self, input: crate::types::FunctionAssociation) -> Self {
         let mut v = self.items.unwrap_or_default();
         v.push(input);
-        self.items = Some(v);
+        self.items = ::std::option::Option::Some(v);
         self
     }
     /// <p>The CloudFront functions that are associated with a cache behavior in a CloudFront distribution. CloudFront functions must be published to the <code>LIVE</code> stage to associate them with a cache behavior.</p>
     pub fn set_items(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::FunctionAssociation>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::FunctionAssociation>>,
     ) -> Self {
         self.items = input;
         self

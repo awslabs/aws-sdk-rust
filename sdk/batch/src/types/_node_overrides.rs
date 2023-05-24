@@ -4,7 +4,7 @@
 /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't provide it for these jobs. Rather, use <code>containerOverrides</code> instead.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NodeOverrides {
     /// <p>The number of nodes to use with a multi-node parallel job. This value overrides the number of nodes that are specified in the job definition. To use this override, you must meet the following conditions:</p>
     /// <ul>
@@ -13,11 +13,11 @@ pub struct NodeOverrides {
     /// <li> <p>The main node index that's specified in the job definition must be fewer than the number of nodes specified in the override.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub num_nodes: std::option::Option<i32>,
+    pub num_nodes: ::std::option::Option<i32>,
     /// <p>The node property overrides for the job.</p>
     #[doc(hidden)]
     pub node_property_overrides:
-        std::option::Option<std::vec::Vec<crate::types::NodePropertyOverride>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::NodePropertyOverride>>,
 }
 impl NodeOverrides {
     /// <p>The number of nodes to use with a multi-node parallel job. This value overrides the number of nodes that are specified in the job definition. To use this override, you must meet the following conditions:</p>
@@ -26,13 +26,13 @@ impl NodeOverrides {
     /// <li> <p>The lower boundary of the node range that's specified in the job definition must be fewer than the number of nodes specified in the override.</p> </li>
     /// <li> <p>The main node index that's specified in the job definition must be fewer than the number of nodes specified in the override.</p> </li>
     /// </ul>
-    pub fn num_nodes(&self) -> std::option::Option<i32> {
+    pub fn num_nodes(&self) -> ::std::option::Option<i32> {
         self.num_nodes
     }
     /// <p>The node property overrides for the job.</p>
     pub fn node_property_overrides(
         &self,
-    ) -> std::option::Option<&[crate::types::NodePropertyOverride]> {
+    ) -> ::std::option::Option<&[crate::types::NodePropertyOverride]> {
         self.node_property_overrides.as_deref()
     }
 }
@@ -45,11 +45,13 @@ impl NodeOverrides {
 
 /// A builder for [`NodeOverrides`](crate::types::NodeOverrides).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NodeOverridesBuilder {
-    pub(crate) num_nodes: std::option::Option<i32>,
+    pub(crate) num_nodes: ::std::option::Option<i32>,
     pub(crate) node_property_overrides:
-        std::option::Option<std::vec::Vec<crate::types::NodePropertyOverride>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::NodePropertyOverride>>,
 }
 impl NodeOverridesBuilder {
     /// <p>The number of nodes to use with a multi-node parallel job. This value overrides the number of nodes that are specified in the job definition. To use this override, you must meet the following conditions:</p>
@@ -59,7 +61,7 @@ impl NodeOverridesBuilder {
     /// <li> <p>The main node index that's specified in the job definition must be fewer than the number of nodes specified in the override.</p> </li>
     /// </ul>
     pub fn num_nodes(mut self, input: i32) -> Self {
-        self.num_nodes = Some(input);
+        self.num_nodes = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of nodes to use with a multi-node parallel job. This value overrides the number of nodes that are specified in the job definition. To use this override, you must meet the following conditions:</p>
@@ -68,7 +70,7 @@ impl NodeOverridesBuilder {
     /// <li> <p>The lower boundary of the node range that's specified in the job definition must be fewer than the number of nodes specified in the override.</p> </li>
     /// <li> <p>The main node index that's specified in the job definition must be fewer than the number of nodes specified in the override.</p> </li>
     /// </ul>
-    pub fn set_num_nodes(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_num_nodes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.num_nodes = input;
         self
     }
@@ -80,13 +82,13 @@ impl NodeOverridesBuilder {
     pub fn node_property_overrides(mut self, input: crate::types::NodePropertyOverride) -> Self {
         let mut v = self.node_property_overrides.unwrap_or_default();
         v.push(input);
-        self.node_property_overrides = Some(v);
+        self.node_property_overrides = ::std::option::Option::Some(v);
         self
     }
     /// <p>The node property overrides for the job.</p>
     pub fn set_node_property_overrides(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::NodePropertyOverride>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::NodePropertyOverride>>,
     ) -> Self {
         self.node_property_overrides = input;
         self

@@ -2,21 +2,21 @@
 
 /// <p>Thumbnails for videos.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Thumbnails {
     /// <p>The format of thumbnails, if any. Valid values are <code>jpg</code> and <code>png</code>. </p>
     /// <p>You specify whether you want Elastic Transcoder to create thumbnails when you create a job.</p>
     #[doc(hidden)]
-    pub format: std::option::Option<std::string::String>,
+    pub format: ::std::option::Option<::std::string::String>,
     /// <p>The approximate number of seconds between thumbnails. Specify an integer value.</p>
     #[doc(hidden)]
-    pub interval: std::option::Option<std::string::String>,
+    pub interval: ::std::option::Option<::std::string::String>,
     /// <important>
     /// <p>To better control resolution and aspect ratio of thumbnails, we recommend that you use the values <code>MaxWidth</code>, <code>MaxHeight</code>, <code>SizingPolicy</code>, and <code>PaddingPolicy</code> instead of <code>Resolution</code> and <code>AspectRatio</code>. The two groups of settings are mutually exclusive. Do not use them together.</p>
     /// </important>
     /// <p>The width and height of thumbnail files in pixels. Specify a value in the format <code> <i>width</i> </code> x <code> <i>height</i> </code> where both values are even integers. The values cannot exceed the width and height that you specified in the <code>Video:Resolution</code> object.</p>
     #[doc(hidden)]
-    pub resolution: std::option::Option<std::string::String>,
+    pub resolution: ::std::option::Option<::std::string::String>,
     /// <important>
     /// <p>To better control resolution and aspect ratio of thumbnails, we recommend that you use the values <code>MaxWidth</code>, <code>MaxHeight</code>, <code>SizingPolicy</code>, and <code>PaddingPolicy</code> instead of <code>Resolution</code> and <code>AspectRatio</code>. The two groups of settings are mutually exclusive. Do not use them together.</p>
     /// </important>
@@ -24,13 +24,13 @@ pub struct Thumbnails {
     /// <p> <code>auto</code>, <code>1:1</code>, <code>4:3</code>, <code>3:2</code>, <code>16:9</code> </p>
     /// <p>If you specify <code>auto</code>, Elastic Transcoder tries to preserve the aspect ratio of the video in the output file.</p>
     #[doc(hidden)]
-    pub aspect_ratio: std::option::Option<std::string::String>,
+    pub aspect_ratio: ::std::option::Option<::std::string::String>,
     /// <p>The maximum width of thumbnails in pixels. If you specify auto, Elastic Transcoder uses 1920 (Full HD) as the default value. If you specify a numeric value, enter an even integer between 32 and 4096.</p>
     #[doc(hidden)]
-    pub max_width: std::option::Option<std::string::String>,
+    pub max_width: ::std::option::Option<::std::string::String>,
     /// <p>The maximum height of thumbnails in pixels. If you specify auto, Elastic Transcoder uses 1080 (Full HD) as the default value. If you specify a numeric value, enter an even integer between 32 and 3072.</p>
     #[doc(hidden)]
-    pub max_height: std::option::Option<std::string::String>,
+    pub max_height: ::std::option::Option<::std::string::String>,
     /// <p>Specify one of the following values to control scaling of thumbnails:</p>
     /// <ul>
     /// <li> <p> <code>Fit</code>: Elastic Transcoder scales thumbnails so they match the value that you specified in thumbnail MaxWidth or MaxHeight settings without exceeding the other value. </p> </li>
@@ -41,26 +41,26 @@ pub struct Thumbnails {
     /// <li> <p> <code>ShrinkToFill</code>: Elastic Transcoder scales thumbnails down so that their dimensions match the values that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without dropping below either value. If you specify this option, Elastic Transcoder does not scale thumbnails up.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub sizing_policy: std::option::Option<std::string::String>,
+    pub sizing_policy: ::std::option::Option<::std::string::String>,
     /// <p>When you set <code>PaddingPolicy</code> to <code>Pad</code>, Elastic Transcoder may add black bars to the top and bottom and/or left and right sides of thumbnails to make the total size of the thumbnails match the values that you specified for thumbnail <code>MaxWidth</code> and <code>MaxHeight</code> settings.</p>
     #[doc(hidden)]
-    pub padding_policy: std::option::Option<std::string::String>,
+    pub padding_policy: ::std::option::Option<::std::string::String>,
 }
 impl Thumbnails {
     /// <p>The format of thumbnails, if any. Valid values are <code>jpg</code> and <code>png</code>. </p>
     /// <p>You specify whether you want Elastic Transcoder to create thumbnails when you create a job.</p>
-    pub fn format(&self) -> std::option::Option<&str> {
+    pub fn format(&self) -> ::std::option::Option<&str> {
         self.format.as_deref()
     }
     /// <p>The approximate number of seconds between thumbnails. Specify an integer value.</p>
-    pub fn interval(&self) -> std::option::Option<&str> {
+    pub fn interval(&self) -> ::std::option::Option<&str> {
         self.interval.as_deref()
     }
     /// <important>
     /// <p>To better control resolution and aspect ratio of thumbnails, we recommend that you use the values <code>MaxWidth</code>, <code>MaxHeight</code>, <code>SizingPolicy</code>, and <code>PaddingPolicy</code> instead of <code>Resolution</code> and <code>AspectRatio</code>. The two groups of settings are mutually exclusive. Do not use them together.</p>
     /// </important>
     /// <p>The width and height of thumbnail files in pixels. Specify a value in the format <code> <i>width</i> </code> x <code> <i>height</i> </code> where both values are even integers. The values cannot exceed the width and height that you specified in the <code>Video:Resolution</code> object.</p>
-    pub fn resolution(&self) -> std::option::Option<&str> {
+    pub fn resolution(&self) -> ::std::option::Option<&str> {
         self.resolution.as_deref()
     }
     /// <important>
@@ -69,15 +69,15 @@ impl Thumbnails {
     /// <p>The aspect ratio of thumbnails. Valid values include:</p>
     /// <p> <code>auto</code>, <code>1:1</code>, <code>4:3</code>, <code>3:2</code>, <code>16:9</code> </p>
     /// <p>If you specify <code>auto</code>, Elastic Transcoder tries to preserve the aspect ratio of the video in the output file.</p>
-    pub fn aspect_ratio(&self) -> std::option::Option<&str> {
+    pub fn aspect_ratio(&self) -> ::std::option::Option<&str> {
         self.aspect_ratio.as_deref()
     }
     /// <p>The maximum width of thumbnails in pixels. If you specify auto, Elastic Transcoder uses 1920 (Full HD) as the default value. If you specify a numeric value, enter an even integer between 32 and 4096.</p>
-    pub fn max_width(&self) -> std::option::Option<&str> {
+    pub fn max_width(&self) -> ::std::option::Option<&str> {
         self.max_width.as_deref()
     }
     /// <p>The maximum height of thumbnails in pixels. If you specify auto, Elastic Transcoder uses 1080 (Full HD) as the default value. If you specify a numeric value, enter an even integer between 32 and 3072.</p>
-    pub fn max_height(&self) -> std::option::Option<&str> {
+    pub fn max_height(&self) -> ::std::option::Option<&str> {
         self.max_height.as_deref()
     }
     /// <p>Specify one of the following values to control scaling of thumbnails:</p>
@@ -89,11 +89,11 @@ impl Thumbnails {
     /// <li> <p> <code>ShrinkToFit</code>: Elastic Transcoder scales thumbnails down so that their dimensions match the values that you specified for at least one of thumbnail <code>MaxWidth</code> and <code>MaxHeight</code> without exceeding either value. If you specify this option, Elastic Transcoder does not scale thumbnails up.</p> </li>
     /// <li> <p> <code>ShrinkToFill</code>: Elastic Transcoder scales thumbnails down so that their dimensions match the values that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without dropping below either value. If you specify this option, Elastic Transcoder does not scale thumbnails up.</p> </li>
     /// </ul>
-    pub fn sizing_policy(&self) -> std::option::Option<&str> {
+    pub fn sizing_policy(&self) -> ::std::option::Option<&str> {
         self.sizing_policy.as_deref()
     }
     /// <p>When you set <code>PaddingPolicy</code> to <code>Pad</code>, Elastic Transcoder may add black bars to the top and bottom and/or left and right sides of thumbnails to make the total size of the thumbnails match the values that you specified for thumbnail <code>MaxWidth</code> and <code>MaxHeight</code> settings.</p>
-    pub fn padding_policy(&self) -> std::option::Option<&str> {
+    pub fn padding_policy(&self) -> ::std::option::Option<&str> {
         self.padding_policy.as_deref()
     }
 }
@@ -106,37 +106,39 @@ impl Thumbnails {
 
 /// A builder for [`Thumbnails`](crate::types::Thumbnails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ThumbnailsBuilder {
-    pub(crate) format: std::option::Option<std::string::String>,
-    pub(crate) interval: std::option::Option<std::string::String>,
-    pub(crate) resolution: std::option::Option<std::string::String>,
-    pub(crate) aspect_ratio: std::option::Option<std::string::String>,
-    pub(crate) max_width: std::option::Option<std::string::String>,
-    pub(crate) max_height: std::option::Option<std::string::String>,
-    pub(crate) sizing_policy: std::option::Option<std::string::String>,
-    pub(crate) padding_policy: std::option::Option<std::string::String>,
+    pub(crate) format: ::std::option::Option<::std::string::String>,
+    pub(crate) interval: ::std::option::Option<::std::string::String>,
+    pub(crate) resolution: ::std::option::Option<::std::string::String>,
+    pub(crate) aspect_ratio: ::std::option::Option<::std::string::String>,
+    pub(crate) max_width: ::std::option::Option<::std::string::String>,
+    pub(crate) max_height: ::std::option::Option<::std::string::String>,
+    pub(crate) sizing_policy: ::std::option::Option<::std::string::String>,
+    pub(crate) padding_policy: ::std::option::Option<::std::string::String>,
 }
 impl ThumbnailsBuilder {
     /// <p>The format of thumbnails, if any. Valid values are <code>jpg</code> and <code>png</code>. </p>
     /// <p>You specify whether you want Elastic Transcoder to create thumbnails when you create a job.</p>
-    pub fn format(mut self, input: impl Into<std::string::String>) -> Self {
-        self.format = Some(input.into());
+    pub fn format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.format = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The format of thumbnails, if any. Valid values are <code>jpg</code> and <code>png</code>. </p>
     /// <p>You specify whether you want Elastic Transcoder to create thumbnails when you create a job.</p>
-    pub fn set_format(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.format = input;
         self
     }
     /// <p>The approximate number of seconds between thumbnails. Specify an integer value.</p>
-    pub fn interval(mut self, input: impl Into<std::string::String>) -> Self {
-        self.interval = Some(input.into());
+    pub fn interval(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.interval = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The approximate number of seconds between thumbnails. Specify an integer value.</p>
-    pub fn set_interval(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_interval(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.interval = input;
         self
     }
@@ -144,15 +146,15 @@ impl ThumbnailsBuilder {
     /// <p>To better control resolution and aspect ratio of thumbnails, we recommend that you use the values <code>MaxWidth</code>, <code>MaxHeight</code>, <code>SizingPolicy</code>, and <code>PaddingPolicy</code> instead of <code>Resolution</code> and <code>AspectRatio</code>. The two groups of settings are mutually exclusive. Do not use them together.</p>
     /// </important>
     /// <p>The width and height of thumbnail files in pixels. Specify a value in the format <code> <i>width</i> </code> x <code> <i>height</i> </code> where both values are even integers. The values cannot exceed the width and height that you specified in the <code>Video:Resolution</code> object.</p>
-    pub fn resolution(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resolution = Some(input.into());
+    pub fn resolution(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resolution = ::std::option::Option::Some(input.into());
         self
     }
     /// <important>
     /// <p>To better control resolution and aspect ratio of thumbnails, we recommend that you use the values <code>MaxWidth</code>, <code>MaxHeight</code>, <code>SizingPolicy</code>, and <code>PaddingPolicy</code> instead of <code>Resolution</code> and <code>AspectRatio</code>. The two groups of settings are mutually exclusive. Do not use them together.</p>
     /// </important>
     /// <p>The width and height of thumbnail files in pixels. Specify a value in the format <code> <i>width</i> </code> x <code> <i>height</i> </code> where both values are even integers. The values cannot exceed the width and height that you specified in the <code>Video:Resolution</code> object.</p>
-    pub fn set_resolution(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resolution(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resolution = input;
         self
     }
@@ -162,8 +164,8 @@ impl ThumbnailsBuilder {
     /// <p>The aspect ratio of thumbnails. Valid values include:</p>
     /// <p> <code>auto</code>, <code>1:1</code>, <code>4:3</code>, <code>3:2</code>, <code>16:9</code> </p>
     /// <p>If you specify <code>auto</code>, Elastic Transcoder tries to preserve the aspect ratio of the video in the output file.</p>
-    pub fn aspect_ratio(mut self, input: impl Into<std::string::String>) -> Self {
-        self.aspect_ratio = Some(input.into());
+    pub fn aspect_ratio(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.aspect_ratio = ::std::option::Option::Some(input.into());
         self
     }
     /// <important>
@@ -172,27 +174,27 @@ impl ThumbnailsBuilder {
     /// <p>The aspect ratio of thumbnails. Valid values include:</p>
     /// <p> <code>auto</code>, <code>1:1</code>, <code>4:3</code>, <code>3:2</code>, <code>16:9</code> </p>
     /// <p>If you specify <code>auto</code>, Elastic Transcoder tries to preserve the aspect ratio of the video in the output file.</p>
-    pub fn set_aspect_ratio(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_aspect_ratio(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aspect_ratio = input;
         self
     }
     /// <p>The maximum width of thumbnails in pixels. If you specify auto, Elastic Transcoder uses 1920 (Full HD) as the default value. If you specify a numeric value, enter an even integer between 32 and 4096.</p>
-    pub fn max_width(mut self, input: impl Into<std::string::String>) -> Self {
-        self.max_width = Some(input.into());
+    pub fn max_width(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.max_width = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The maximum width of thumbnails in pixels. If you specify auto, Elastic Transcoder uses 1920 (Full HD) as the default value. If you specify a numeric value, enter an even integer between 32 and 4096.</p>
-    pub fn set_max_width(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_max_width(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.max_width = input;
         self
     }
     /// <p>The maximum height of thumbnails in pixels. If you specify auto, Elastic Transcoder uses 1080 (Full HD) as the default value. If you specify a numeric value, enter an even integer between 32 and 3072.</p>
-    pub fn max_height(mut self, input: impl Into<std::string::String>) -> Self {
-        self.max_height = Some(input.into());
+    pub fn max_height(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.max_height = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The maximum height of thumbnails in pixels. If you specify auto, Elastic Transcoder uses 1080 (Full HD) as the default value. If you specify a numeric value, enter an even integer between 32 and 3072.</p>
-    pub fn set_max_height(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_max_height(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.max_height = input;
         self
     }
@@ -205,8 +207,11 @@ impl ThumbnailsBuilder {
     /// <li> <p> <code>ShrinkToFit</code>: Elastic Transcoder scales thumbnails down so that their dimensions match the values that you specified for at least one of thumbnail <code>MaxWidth</code> and <code>MaxHeight</code> without exceeding either value. If you specify this option, Elastic Transcoder does not scale thumbnails up.</p> </li>
     /// <li> <p> <code>ShrinkToFill</code>: Elastic Transcoder scales thumbnails down so that their dimensions match the values that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without dropping below either value. If you specify this option, Elastic Transcoder does not scale thumbnails up.</p> </li>
     /// </ul>
-    pub fn sizing_policy(mut self, input: impl Into<std::string::String>) -> Self {
-        self.sizing_policy = Some(input.into());
+    pub fn sizing_policy(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.sizing_policy = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specify one of the following values to control scaling of thumbnails:</p>
@@ -218,17 +223,26 @@ impl ThumbnailsBuilder {
     /// <li> <p> <code>ShrinkToFit</code>: Elastic Transcoder scales thumbnails down so that their dimensions match the values that you specified for at least one of thumbnail <code>MaxWidth</code> and <code>MaxHeight</code> without exceeding either value. If you specify this option, Elastic Transcoder does not scale thumbnails up.</p> </li>
     /// <li> <p> <code>ShrinkToFill</code>: Elastic Transcoder scales thumbnails down so that their dimensions match the values that you specified for at least one of <code>MaxWidth</code> and <code>MaxHeight</code> without dropping below either value. If you specify this option, Elastic Transcoder does not scale thumbnails up.</p> </li>
     /// </ul>
-    pub fn set_sizing_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_sizing_policy(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.sizing_policy = input;
         self
     }
     /// <p>When you set <code>PaddingPolicy</code> to <code>Pad</code>, Elastic Transcoder may add black bars to the top and bottom and/or left and right sides of thumbnails to make the total size of the thumbnails match the values that you specified for thumbnail <code>MaxWidth</code> and <code>MaxHeight</code> settings.</p>
-    pub fn padding_policy(mut self, input: impl Into<std::string::String>) -> Self {
-        self.padding_policy = Some(input.into());
+    pub fn padding_policy(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.padding_policy = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>When you set <code>PaddingPolicy</code> to <code>Pad</code>, Elastic Transcoder may add black bars to the top and bottom and/or left and right sides of thumbnails to make the total size of the thumbnails match the values that you specified for thumbnail <code>MaxWidth</code> and <code>MaxHeight</code> settings.</p>
-    pub fn set_padding_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_padding_policy(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.padding_policy = input;
         self
     }

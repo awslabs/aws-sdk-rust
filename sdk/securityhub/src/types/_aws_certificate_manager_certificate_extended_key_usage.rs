@@ -2,24 +2,24 @@
 
 /// <p>Contains information about an extended key usage X.509 v3 extension object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsCertificateManagerCertificateExtendedKeyUsage {
     /// <p>The name of an extension value. Indicates the purpose for which the certificate public key can be used.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>An object identifier (OID) for the extension value.</p>
     /// <p>The format is numbers separated by periods.</p>
     #[doc(hidden)]
-    pub o_id: std::option::Option<std::string::String>,
+    pub o_id: ::std::option::Option<::std::string::String>,
 }
 impl AwsCertificateManagerCertificateExtendedKeyUsage {
     /// <p>The name of an extension value. Indicates the purpose for which the certificate public key can be used.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>An object identifier (OID) for the extension value.</p>
     /// <p>The format is numbers separated by periods.</p>
-    pub fn o_id(&self) -> std::option::Option<&str> {
+    pub fn o_id(&self) -> ::std::option::Option<&str> {
         self.o_id.as_deref()
     }
 }
@@ -33,31 +33,33 @@ impl AwsCertificateManagerCertificateExtendedKeyUsage {
 
 /// A builder for [`AwsCertificateManagerCertificateExtendedKeyUsage`](crate::types::AwsCertificateManagerCertificateExtendedKeyUsage).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsCertificateManagerCertificateExtendedKeyUsageBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) o_id: std::option::Option<std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) o_id: ::std::option::Option<::std::string::String>,
 }
 impl AwsCertificateManagerCertificateExtendedKeyUsageBuilder {
     /// <p>The name of an extension value. Indicates the purpose for which the certificate public key can be used.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of an extension value. Indicates the purpose for which the certificate public key can be used.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>An object identifier (OID) for the extension value.</p>
     /// <p>The format is numbers separated by periods.</p>
-    pub fn o_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.o_id = Some(input.into());
+    pub fn o_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.o_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An object identifier (OID) for the extension value.</p>
     /// <p>The format is numbers separated by periods.</p>
-    pub fn set_o_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_o_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.o_id = input;
         self
     }

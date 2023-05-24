@@ -2,41 +2,41 @@
 
 /// <p> A representation of a linked account. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AccountAssociationsListElement {
     /// <p> The associating array of account IDs. </p>
     #[doc(hidden)]
-    pub account_id: std::option::Option<std::string::String>,
+    pub account_id: ::std::option::Option<::std::string::String>,
     /// <p> The Billing Group Arn that the linked account is associated to. </p>
     #[doc(hidden)]
-    pub billing_group_arn: std::option::Option<std::string::String>,
+    pub billing_group_arn: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon Web Services account name. </p>
     #[doc(hidden)]
-    pub account_name: std::option::Option<std::string::String>,
+    pub account_name: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon Web Services account email. </p>
     #[doc(hidden)]
-    pub account_email: std::option::Option<std::string::String>,
+    pub account_email: ::std::option::Option<::std::string::String>,
 }
 impl AccountAssociationsListElement {
     /// <p> The associating array of account IDs. </p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p> The Billing Group Arn that the linked account is associated to. </p>
-    pub fn billing_group_arn(&self) -> std::option::Option<&str> {
+    pub fn billing_group_arn(&self) -> ::std::option::Option<&str> {
         self.billing_group_arn.as_deref()
     }
     /// <p> The Amazon Web Services account name. </p>
-    pub fn account_name(&self) -> std::option::Option<&str> {
+    pub fn account_name(&self) -> ::std::option::Option<&str> {
         self.account_name.as_deref()
     }
     /// <p> The Amazon Web Services account email. </p>
-    pub fn account_email(&self) -> std::option::Option<&str> {
+    pub fn account_email(&self) -> ::std::option::Option<&str> {
         self.account_email.as_deref()
     }
 }
-impl std::fmt::Debug for AccountAssociationsListElement {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for AccountAssociationsListElement {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AccountAssociationsListElement");
         formatter.field("account_id", &self.account_id);
         formatter.field("billing_group_arn", &self.billing_group_arn);
@@ -54,54 +54,63 @@ impl AccountAssociationsListElement {
 
 /// A builder for [`AccountAssociationsListElement`](crate::types::AccountAssociationsListElement).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct AccountAssociationsListElementBuilder {
-    pub(crate) account_id: std::option::Option<std::string::String>,
-    pub(crate) billing_group_arn: std::option::Option<std::string::String>,
-    pub(crate) account_name: std::option::Option<std::string::String>,
-    pub(crate) account_email: std::option::Option<std::string::String>,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) billing_group_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) account_name: ::std::option::Option<::std::string::String>,
+    pub(crate) account_email: ::std::option::Option<::std::string::String>,
 }
 impl AccountAssociationsListElementBuilder {
     /// <p> The associating array of account IDs. </p>
-    pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.account_id = Some(input.into());
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The associating array of account IDs. </p>
-    pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
     }
     /// <p> The Billing Group Arn that the linked account is associated to. </p>
-    pub fn billing_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.billing_group_arn = Some(input.into());
+    pub fn billing_group_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.billing_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Billing Group Arn that the linked account is associated to. </p>
     pub fn set_billing_group_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.billing_group_arn = input;
         self
     }
     /// <p> The Amazon Web Services account name. </p>
-    pub fn account_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.account_name = Some(input.into());
+    pub fn account_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Amazon Web Services account name. </p>
-    pub fn set_account_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_account_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_name = input;
         self
     }
     /// <p> The Amazon Web Services account email. </p>
-    pub fn account_email(mut self, input: impl Into<std::string::String>) -> Self {
-        self.account_email = Some(input.into());
+    pub fn account_email(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.account_email = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Amazon Web Services account email. </p>
-    pub fn set_account_email(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_account_email(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.account_email = input;
         self
     }
@@ -115,8 +124,8 @@ impl AccountAssociationsListElementBuilder {
         }
     }
 }
-impl std::fmt::Debug for AccountAssociationsListElementBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for AccountAssociationsListElementBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AccountAssociationsListElementBuilder");
         formatter.field("account_id", &self.account_id);
         formatter.field("billing_group_arn", &self.billing_group_arn);

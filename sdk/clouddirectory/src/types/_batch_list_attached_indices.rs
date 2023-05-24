@@ -2,29 +2,29 @@
 
 /// <p>Lists indices attached to an object inside a <code>BatchRead</code> operation. For more information, see <code>ListAttachedIndices</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchListAttachedIndices {
     /// <p>A reference to the object that has indices attached.</p>
     #[doc(hidden)]
-    pub target_reference: std::option::Option<crate::types::ObjectReference>,
+    pub target_reference: ::std::option::Option<crate::types::ObjectReference>,
     /// <p>The pagination token.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to retrieve.</p>
     #[doc(hidden)]
-    pub max_results: std::option::Option<i32>,
+    pub max_results: ::std::option::Option<i32>,
 }
 impl BatchListAttachedIndices {
     /// <p>A reference to the object that has indices attached.</p>
-    pub fn target_reference(&self) -> std::option::Option<&crate::types::ObjectReference> {
+    pub fn target_reference(&self) -> ::std::option::Option<&crate::types::ObjectReference> {
         self.target_reference.as_ref()
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to retrieve.</p>
-    pub fn max_results(&self) -> std::option::Option<i32> {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
 }
@@ -37,43 +37,45 @@ impl BatchListAttachedIndices {
 
 /// A builder for [`BatchListAttachedIndices`](crate::types::BatchListAttachedIndices).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BatchListAttachedIndicesBuilder {
-    pub(crate) target_reference: std::option::Option<crate::types::ObjectReference>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
-    pub(crate) max_results: std::option::Option<i32>,
+    pub(crate) target_reference: ::std::option::Option<crate::types::ObjectReference>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
+    pub(crate) max_results: ::std::option::Option<i32>,
 }
 impl BatchListAttachedIndicesBuilder {
     /// <p>A reference to the object that has indices attached.</p>
     pub fn target_reference(mut self, input: crate::types::ObjectReference) -> Self {
-        self.target_reference = Some(input);
+        self.target_reference = ::std::option::Option::Some(input);
         self
     }
     /// <p>A reference to the object that has indices attached.</p>
     pub fn set_target_reference(
         mut self,
-        input: std::option::Option<crate::types::ObjectReference>,
+        input: ::std::option::Option<crate::types::ObjectReference>,
     ) -> Self {
         self.target_reference = input;
         self
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The pagination token.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
     /// <p>The maximum number of results to retrieve.</p>
     pub fn max_results(mut self, input: i32) -> Self {
-        self.max_results = Some(input);
+        self.max_results = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum number of results to retrieve.</p>
-    pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }

@@ -2,22 +2,22 @@
 
 /// <p>Contains a key/value pair that sets the named component parameter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComponentParameter {
     /// <p>The name of the component parameter to set.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>Sets the value for the named component parameter.</p>
     #[doc(hidden)]
-    pub value: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub value: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ComponentParameter {
     /// <p>The name of the component parameter to set.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>Sets the value for the named component parameter.</p>
-    pub fn value(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn value(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.value.as_deref()
     }
 }
@@ -30,19 +30,21 @@ impl ComponentParameter {
 
 /// A builder for [`ComponentParameter`](crate::types::ComponentParameter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ComponentParameterBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) value: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) value: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ComponentParameterBuilder {
     /// <p>The name of the component parameter to set.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the component parameter to set.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
@@ -51,16 +53,16 @@ impl ComponentParameterBuilder {
     /// To override the contents of this collection use [`set_value`](Self::set_value).
     ///
     /// <p>Sets the value for the named component parameter.</p>
-    pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.value.unwrap_or_default();
         v.push(input.into());
-        self.value = Some(v);
+        self.value = ::std::option::Option::Some(v);
         self
     }
     /// <p>Sets the value for the named component parameter.</p>
     pub fn set_value(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.value = input;
         self

@@ -2,15 +2,15 @@
 
 /// <p>This action deletes a health check.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteHealthCheckInput {
     /// <p>The ID of the health check that you want to delete.</p>
     #[doc(hidden)]
-    pub health_check_id: std::option::Option<std::string::String>,
+    pub health_check_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteHealthCheckInput {
     /// <p>The ID of the health check that you want to delete.</p>
-    pub fn health_check_id(&self) -> std::option::Option<&str> {
+    pub fn health_check_id(&self) -> ::std::option::Option<&str> {
         self.health_check_id.as_deref()
     }
 }
@@ -24,29 +24,37 @@ impl DeleteHealthCheckInput {
 
 /// A builder for [`DeleteHealthCheckInput`](crate::operation::delete_health_check::DeleteHealthCheckInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteHealthCheckInputBuilder {
-    pub(crate) health_check_id: std::option::Option<std::string::String>,
+    pub(crate) health_check_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteHealthCheckInputBuilder {
     /// <p>The ID of the health check that you want to delete.</p>
-    pub fn health_check_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.health_check_id = Some(input.into());
+    pub fn health_check_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.health_check_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the health check that you want to delete.</p>
-    pub fn set_health_check_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_health_check_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.health_check_id = input;
         self
     }
     /// Consumes the builder and constructs a [`DeleteHealthCheckInput`](crate::operation::delete_health_check::DeleteHealthCheckInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::delete_health_check::DeleteHealthCheckInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::delete_health_check::DeleteHealthCheckInput {
                 health_check_id: self.health_check_id,
             },

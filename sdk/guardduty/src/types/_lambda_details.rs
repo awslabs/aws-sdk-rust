@@ -2,71 +2,71 @@
 
 /// <p>Information about the Lambda function involved in the finding.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LambdaDetails {
     /// <p>Amazon Resource Name (ARN) of the Lambda function.</p>
     #[doc(hidden)]
-    pub function_arn: std::option::Option<std::string::String>,
+    pub function_arn: ::std::option::Option<::std::string::String>,
     /// <p>Name of the Lambda function.</p>
     #[doc(hidden)]
-    pub function_name: std::option::Option<std::string::String>,
+    pub function_name: ::std::option::Option<::std::string::String>,
     /// <p>Description of the Lambda function.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the Lambda function was last modified. This field is in the UTC date string format <code>(2023-03-22T19:37:20.168Z)</code>.</p>
     #[doc(hidden)]
-    pub last_modified_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The revision ID of the Lambda function version.</p>
     #[doc(hidden)]
-    pub revision_id: std::option::Option<std::string::String>,
+    pub revision_id: ::std::option::Option<::std::string::String>,
     /// <p>The version of the Lambda function.</p>
     #[doc(hidden)]
-    pub function_version: std::option::Option<std::string::String>,
+    pub function_version: ::std::option::Option<::std::string::String>,
     /// <p>The execution role of the Lambda function.</p>
     #[doc(hidden)]
-    pub role: std::option::Option<std::string::String>,
+    pub role: ::std::option::Option<::std::string::String>,
     /// <p>Amazon Virtual Private Cloud configuration details associated with your Lambda function.</p>
     #[doc(hidden)]
-    pub vpc_config: std::option::Option<crate::types::VpcConfig>,
+    pub vpc_config: ::std::option::Option<crate::types::VpcConfig>,
     /// <p>A list of tags attached to this resource, listed in the format of <code>key</code>:<code>value</code> pair.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl LambdaDetails {
     /// <p>Amazon Resource Name (ARN) of the Lambda function.</p>
-    pub fn function_arn(&self) -> std::option::Option<&str> {
+    pub fn function_arn(&self) -> ::std::option::Option<&str> {
         self.function_arn.as_deref()
     }
     /// <p>Name of the Lambda function.</p>
-    pub fn function_name(&self) -> std::option::Option<&str> {
+    pub fn function_name(&self) -> ::std::option::Option<&str> {
         self.function_name.as_deref()
     }
     /// <p>Description of the Lambda function.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The timestamp when the Lambda function was last modified. This field is in the UTC date string format <code>(2023-03-22T19:37:20.168Z)</code>.</p>
-    pub fn last_modified_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_at.as_ref()
     }
     /// <p>The revision ID of the Lambda function version.</p>
-    pub fn revision_id(&self) -> std::option::Option<&str> {
+    pub fn revision_id(&self) -> ::std::option::Option<&str> {
         self.revision_id.as_deref()
     }
     /// <p>The version of the Lambda function.</p>
-    pub fn function_version(&self) -> std::option::Option<&str> {
+    pub fn function_version(&self) -> ::std::option::Option<&str> {
         self.function_version.as_deref()
     }
     /// <p>The execution role of the Lambda function.</p>
-    pub fn role(&self) -> std::option::Option<&str> {
+    pub fn role(&self) -> ::std::option::Option<&str> {
         self.role.as_deref()
     }
     /// <p>Amazon Virtual Private Cloud configuration details associated with your Lambda function.</p>
-    pub fn vpc_config(&self) -> std::option::Option<&crate::types::VpcConfig> {
+    pub fn vpc_config(&self) -> ::std::option::Option<&crate::types::VpcConfig> {
         self.vpc_config.as_ref()
     }
     /// <p>A list of tags attached to this resource, listed in the format of <code>key</code>:<code>value</code> pair.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -79,99 +79,113 @@ impl LambdaDetails {
 
 /// A builder for [`LambdaDetails`](crate::types::LambdaDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LambdaDetailsBuilder {
-    pub(crate) function_arn: std::option::Option<std::string::String>,
-    pub(crate) function_name: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) last_modified_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) revision_id: std::option::Option<std::string::String>,
-    pub(crate) function_version: std::option::Option<std::string::String>,
-    pub(crate) role: std::option::Option<std::string::String>,
-    pub(crate) vpc_config: std::option::Option<crate::types::VpcConfig>,
-    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub(crate) function_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) function_name: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) last_modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) revision_id: ::std::option::Option<::std::string::String>,
+    pub(crate) function_version: ::std::option::Option<::std::string::String>,
+    pub(crate) role: ::std::option::Option<::std::string::String>,
+    pub(crate) vpc_config: ::std::option::Option<crate::types::VpcConfig>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl LambdaDetailsBuilder {
     /// <p>Amazon Resource Name (ARN) of the Lambda function.</p>
-    pub fn function_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.function_arn = Some(input.into());
+    pub fn function_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.function_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Amazon Resource Name (ARN) of the Lambda function.</p>
-    pub fn set_function_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_function_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.function_arn = input;
         self
     }
     /// <p>Name of the Lambda function.</p>
-    pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.function_name = Some(input.into());
+    pub fn function_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.function_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of the Lambda function.</p>
-    pub fn set_function_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_function_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.function_name = input;
         self
     }
     /// <p>Description of the Lambda function.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Description of the Lambda function.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>The timestamp when the Lambda function was last modified. This field is in the UTC date string format <code>(2023-03-22T19:37:20.168Z)</code>.</p>
-    pub fn last_modified_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_modified_at = Some(input);
+    pub fn last_modified_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_modified_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The timestamp when the Lambda function was last modified. This field is in the UTC date string format <code>(2023-03-22T19:37:20.168Z)</code>.</p>
     pub fn set_last_modified_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_modified_at = input;
         self
     }
     /// <p>The revision ID of the Lambda function version.</p>
-    pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.revision_id = Some(input.into());
+    pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.revision_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The revision ID of the Lambda function version.</p>
-    pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.revision_id = input;
         self
     }
     /// <p>The version of the Lambda function.</p>
-    pub fn function_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.function_version = Some(input.into());
+    pub fn function_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.function_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the Lambda function.</p>
-    pub fn set_function_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_function_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.function_version = input;
         self
     }
     /// <p>The execution role of the Lambda function.</p>
-    pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
-        self.role = Some(input.into());
+    pub fn role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.role = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The execution role of the Lambda function.</p>
-    pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role = input;
         self
     }
     /// <p>Amazon Virtual Private Cloud configuration details associated with your Lambda function.</p>
     pub fn vpc_config(mut self, input: crate::types::VpcConfig) -> Self {
-        self.vpc_config = Some(input);
+        self.vpc_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>Amazon Virtual Private Cloud configuration details associated with your Lambda function.</p>
-    pub fn set_vpc_config(mut self, input: std::option::Option<crate::types::VpcConfig>) -> Self {
+    pub fn set_vpc_config(mut self, input: ::std::option::Option<crate::types::VpcConfig>) -> Self {
         self.vpc_config = input;
         self
     }
@@ -183,13 +197,13 @@ impl LambdaDetailsBuilder {
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
-        self.tags = Some(v);
+        self.tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of tags attached to this resource, listed in the format of <code>key</code>:<code>value</code> pair.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tags = input;
         self

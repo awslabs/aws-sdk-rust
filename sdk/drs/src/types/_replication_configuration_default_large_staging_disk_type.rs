@@ -40,13 +40,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ReplicationConfigurationDefaultLargeStagingDiskType {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,7 +60,7 @@ pub enum ReplicationConfigurationDefaultLargeStagingDiskType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ReplicationConfigurationDefaultLargeStagingDiskType {
+impl ::std::convert::From<&str> for ReplicationConfigurationDefaultLargeStagingDiskType {
     fn from(s: &str) -> Self {
         match s {
             "AUTO" => ReplicationConfigurationDefaultLargeStagingDiskType::Auto,
@@ -73,11 +73,11 @@ impl std::convert::From<&str> for ReplicationConfigurationDefaultLargeStagingDis
         }
     }
 }
-impl std::str::FromStr for ReplicationConfigurationDefaultLargeStagingDiskType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ReplicationConfigurationDefaultLargeStagingDiskType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ReplicationConfigurationDefaultLargeStagingDiskType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ReplicationConfigurationDefaultLargeStagingDiskType::from(s))
     }
 }
 impl ReplicationConfigurationDefaultLargeStagingDiskType {
@@ -96,7 +96,7 @@ impl ReplicationConfigurationDefaultLargeStagingDiskType {
         &["AUTO", "GP2", "GP3", "ST1"]
     }
 }
-impl AsRef<str> for ReplicationConfigurationDefaultLargeStagingDiskType {
+impl ::std::convert::AsRef<str> for ReplicationConfigurationDefaultLargeStagingDiskType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

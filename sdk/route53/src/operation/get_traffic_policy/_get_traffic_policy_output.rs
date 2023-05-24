@@ -2,20 +2,20 @@
 
 /// <p>A complex type that contains the response information for the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTrafficPolicyOutput {
     /// <p>A complex type that contains settings for the specified traffic policy.</p>
     #[doc(hidden)]
-    pub traffic_policy: std::option::Option<crate::types::TrafficPolicy>,
+    pub traffic_policy: ::std::option::Option<crate::types::TrafficPolicy>,
     _request_id: Option<String>,
 }
 impl GetTrafficPolicyOutput {
     /// <p>A complex type that contains settings for the specified traffic policy.</p>
-    pub fn traffic_policy(&self) -> std::option::Option<&crate::types::TrafficPolicy> {
+    pub fn traffic_policy(&self) -> ::std::option::Option<&crate::types::TrafficPolicy> {
         self.traffic_policy.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for GetTrafficPolicyOutput {
+impl ::aws_http::request_id::RequestId for GetTrafficPolicyOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,21 +30,23 @@ impl GetTrafficPolicyOutput {
 
 /// A builder for [`GetTrafficPolicyOutput`](crate::operation::get_traffic_policy::GetTrafficPolicyOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetTrafficPolicyOutputBuilder {
-    pub(crate) traffic_policy: std::option::Option<crate::types::TrafficPolicy>,
+    pub(crate) traffic_policy: ::std::option::Option<crate::types::TrafficPolicy>,
     _request_id: Option<String>,
 }
 impl GetTrafficPolicyOutputBuilder {
     /// <p>A complex type that contains settings for the specified traffic policy.</p>
     pub fn traffic_policy(mut self, input: crate::types::TrafficPolicy) -> Self {
-        self.traffic_policy = Some(input);
+        self.traffic_policy = ::std::option::Option::Some(input);
         self
     }
     /// <p>A complex type that contains settings for the specified traffic policy.</p>
     pub fn set_traffic_policy(
         mut self,
-        input: std::option::Option<crate::types::TrafficPolicy>,
+        input: ::std::option::Option<crate::types::TrafficPolicy>,
     ) -> Self {
         self.traffic_policy = input;
         self

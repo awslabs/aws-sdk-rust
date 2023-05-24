@@ -2,20 +2,20 @@
 
 /// <p>Contains the response to a <code>CreateInstance</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateInstanceOutput {
     /// <p>The instance ID.</p>
     #[doc(hidden)]
-    pub instance_id: std::option::Option<std::string::String>,
+    pub instance_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateInstanceOutput {
     /// <p>The instance ID.</p>
-    pub fn instance_id(&self) -> std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<&str> {
         self.instance_id.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for CreateInstanceOutput {
+impl ::aws_http::request_id::RequestId for CreateInstanceOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,21 @@ impl CreateInstanceOutput {
 
 /// A builder for [`CreateInstanceOutput`](crate::operation::create_instance::CreateInstanceOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateInstanceOutputBuilder {
-    pub(crate) instance_id: std::option::Option<std::string::String>,
+    pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateInstanceOutputBuilder {
     /// <p>The instance ID.</p>
-    pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.instance_id = Some(input.into());
+    pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The instance ID.</p>
-    pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
     }

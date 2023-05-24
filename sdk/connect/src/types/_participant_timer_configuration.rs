@@ -3,31 +3,31 @@
 /// <p>Configuration information for the timer. After the timer configuration is set, it persists for the duration of the chat. It persists across new contacts in the chain, for example, transfer contacts.</p>
 /// <p>For more information about how chat timeouts work, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-chat-timeouts.html">Set up chat timeouts for human participants</a>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ParticipantTimerConfiguration {
     /// <p>The role of the participant in the chat conversation.</p>
     #[doc(hidden)]
-    pub participant_role: std::option::Option<crate::types::TimerEligibleParticipantRoles>,
+    pub participant_role: ::std::option::Option<crate::types::TimerEligibleParticipantRoles>,
     /// <p>The type of timer. <code>IDLE</code> indicates the timer applies for considering a human chat participant as idle. <code>DISCONNECT_NONCUSTOMER</code> indicates the timer applies to automatically disconnecting a chat participant due to idleness.</p>
     #[doc(hidden)]
-    pub timer_type: std::option::Option<crate::types::ParticipantTimerType>,
+    pub timer_type: ::std::option::Option<crate::types::ParticipantTimerType>,
     /// <p>The value of the timer. Either the timer action (Unset to delete the timer), or the duration of the timer in minutes. Only one value can be set.</p>
     #[doc(hidden)]
-    pub timer_value: std::option::Option<crate::types::ParticipantTimerValue>,
+    pub timer_value: ::std::option::Option<crate::types::ParticipantTimerValue>,
 }
 impl ParticipantTimerConfiguration {
     /// <p>The role of the participant in the chat conversation.</p>
     pub fn participant_role(
         &self,
-    ) -> std::option::Option<&crate::types::TimerEligibleParticipantRoles> {
+    ) -> ::std::option::Option<&crate::types::TimerEligibleParticipantRoles> {
         self.participant_role.as_ref()
     }
     /// <p>The type of timer. <code>IDLE</code> indicates the timer applies for considering a human chat participant as idle. <code>DISCONNECT_NONCUSTOMER</code> indicates the timer applies to automatically disconnecting a chat participant due to idleness.</p>
-    pub fn timer_type(&self) -> std::option::Option<&crate::types::ParticipantTimerType> {
+    pub fn timer_type(&self) -> ::std::option::Option<&crate::types::ParticipantTimerType> {
         self.timer_type.as_ref()
     }
     /// <p>The value of the timer. Either the timer action (Unset to delete the timer), or the duration of the timer in minutes. Only one value can be set.</p>
-    pub fn timer_value(&self) -> std::option::Option<&crate::types::ParticipantTimerValue> {
+    pub fn timer_value(&self) -> ::std::option::Option<&crate::types::ParticipantTimerValue> {
         self.timer_value.as_ref()
     }
 }
@@ -40,48 +40,50 @@ impl ParticipantTimerConfiguration {
 
 /// A builder for [`ParticipantTimerConfiguration`](crate::types::ParticipantTimerConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ParticipantTimerConfigurationBuilder {
-    pub(crate) participant_role: std::option::Option<crate::types::TimerEligibleParticipantRoles>,
-    pub(crate) timer_type: std::option::Option<crate::types::ParticipantTimerType>,
-    pub(crate) timer_value: std::option::Option<crate::types::ParticipantTimerValue>,
+    pub(crate) participant_role: ::std::option::Option<crate::types::TimerEligibleParticipantRoles>,
+    pub(crate) timer_type: ::std::option::Option<crate::types::ParticipantTimerType>,
+    pub(crate) timer_value: ::std::option::Option<crate::types::ParticipantTimerValue>,
 }
 impl ParticipantTimerConfigurationBuilder {
     /// <p>The role of the participant in the chat conversation.</p>
     pub fn participant_role(mut self, input: crate::types::TimerEligibleParticipantRoles) -> Self {
-        self.participant_role = Some(input);
+        self.participant_role = ::std::option::Option::Some(input);
         self
     }
     /// <p>The role of the participant in the chat conversation.</p>
     pub fn set_participant_role(
         mut self,
-        input: std::option::Option<crate::types::TimerEligibleParticipantRoles>,
+        input: ::std::option::Option<crate::types::TimerEligibleParticipantRoles>,
     ) -> Self {
         self.participant_role = input;
         self
     }
     /// <p>The type of timer. <code>IDLE</code> indicates the timer applies for considering a human chat participant as idle. <code>DISCONNECT_NONCUSTOMER</code> indicates the timer applies to automatically disconnecting a chat participant due to idleness.</p>
     pub fn timer_type(mut self, input: crate::types::ParticipantTimerType) -> Self {
-        self.timer_type = Some(input);
+        self.timer_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of timer. <code>IDLE</code> indicates the timer applies for considering a human chat participant as idle. <code>DISCONNECT_NONCUSTOMER</code> indicates the timer applies to automatically disconnecting a chat participant due to idleness.</p>
     pub fn set_timer_type(
         mut self,
-        input: std::option::Option<crate::types::ParticipantTimerType>,
+        input: ::std::option::Option<crate::types::ParticipantTimerType>,
     ) -> Self {
         self.timer_type = input;
         self
     }
     /// <p>The value of the timer. Either the timer action (Unset to delete the timer), or the duration of the timer in minutes. Only one value can be set.</p>
     pub fn timer_value(mut self, input: crate::types::ParticipantTimerValue) -> Self {
-        self.timer_value = Some(input);
+        self.timer_value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The value of the timer. Either the timer action (Unset to delete the timer), or the duration of the timer in minutes. Only one value can be set.</p>
     pub fn set_timer_value(
         mut self,
-        input: std::option::Option<crate::types::ParticipantTimerValue>,
+        input: ::std::option::Option<crate::types::ParticipantTimerValue>,
     ) -> Self {
         self.timer_value = input;
         self

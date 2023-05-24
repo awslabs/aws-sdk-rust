@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetSchemaAsJson`](crate::operation::get_schema_as_json::builders::GetSchemaAsJsonFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`schema_arn(impl Into<String>)`](crate::operation::get_schema_as_json::builders::GetSchemaAsJsonFluentBuilder::schema_arn) / [`set_schema_arn(Option<String>)`](crate::operation::get_schema_as_json::builders::GetSchemaAsJsonFluentBuilder::set_schema_arn): <p>The ARN of the schema to retrieve.</p>
+    ///   - [`schema_arn(impl ::std::convert::Into<String>)`](crate::operation::get_schema_as_json::builders::GetSchemaAsJsonFluentBuilder::schema_arn) / [`set_schema_arn(Option<String>)`](crate::operation::get_schema_as_json::builders::GetSchemaAsJsonFluentBuilder::set_schema_arn): <p>The ARN of the schema to retrieve.</p>
     /// - On success, responds with [`GetSchemaAsJsonOutput`](crate::operation::get_schema_as_json::GetSchemaAsJsonOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::get_schema_as_json::GetSchemaAsJsonOutput::name): <p>The name of the retrieved schema.</p>
     ///   - [`document(Option<String>)`](crate::operation::get_schema_as_json::GetSchemaAsJsonOutput::document): <p>The JSON representation of the schema document.</p>

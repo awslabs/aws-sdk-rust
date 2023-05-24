@@ -2,22 +2,22 @@
 
 /// <p>RemoveTagsFromResourceInput</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemoveTagsFromResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource you want to remove the tags from.</p>
     #[doc(hidden)]
-    pub resource_arn: std::option::Option<std::string::String>,
+    pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The keys of the tags you want to remove from the specified resource. A tag is composed of a key-value pair.</p>
     #[doc(hidden)]
-    pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub tag_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RemoveTagsFromResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource you want to remove the tags from.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
     /// <p>The keys of the tags you want to remove from the specified resource. A tag is composed of a key-value pair.</p>
-    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn tag_keys(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.tag_keys.as_deref()
     }
 }
@@ -32,19 +32,21 @@ impl RemoveTagsFromResourceInput {
 
 /// A builder for [`RemoveTagsFromResourceInput`](crate::operation::remove_tags_from_resource::RemoveTagsFromResourceInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RemoveTagsFromResourceInputBuilder {
-    pub(crate) resource_arn: std::option::Option<std::string::String>,
-    pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) tag_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RemoveTagsFromResourceInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the resource you want to remove the tags from.</p>
-    pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_arn = Some(input.into());
+    pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the resource you want to remove the tags from.</p>
-    pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
     }
@@ -53,16 +55,16 @@ impl RemoveTagsFromResourceInputBuilder {
     /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
     ///
     /// <p>The keys of the tags you want to remove from the specified resource. A tag is composed of a key-value pair.</p>
-    pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn tag_keys(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.tag_keys.unwrap_or_default();
         v.push(input.into());
-        self.tag_keys = Some(v);
+        self.tag_keys = ::std::option::Option::Some(v);
         self
     }
     /// <p>The keys of the tags you want to remove from the specified resource. A tag is composed of a key-value pair.</p>
     pub fn set_tag_keys(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.tag_keys = input;
         self
@@ -70,11 +72,11 @@ impl RemoveTagsFromResourceInputBuilder {
     /// Consumes the builder and constructs a [`RemoveTagsFromResourceInput`](crate::operation::remove_tags_from_resource::RemoveTagsFromResourceInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::remove_tags_from_resource::RemoveTagsFromResourceInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::remove_tags_from_resource::RemoveTagsFromResourceInput {
                 resource_arn: self.resource_arn,
                 tag_keys: self.tag_keys,

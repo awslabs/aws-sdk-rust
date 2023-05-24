@@ -2,20 +2,20 @@
 
 /// <p>A complex type that contains the response to the <code>UpdateHostedZoneComment</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateHostedZoneCommentOutput {
     /// <p>A complex type that contains the response to the <code>UpdateHostedZoneComment</code> request.</p>
     #[doc(hidden)]
-    pub hosted_zone: std::option::Option<crate::types::HostedZone>,
+    pub hosted_zone: ::std::option::Option<crate::types::HostedZone>,
     _request_id: Option<String>,
 }
 impl UpdateHostedZoneCommentOutput {
     /// <p>A complex type that contains the response to the <code>UpdateHostedZoneComment</code> request.</p>
-    pub fn hosted_zone(&self) -> std::option::Option<&crate::types::HostedZone> {
+    pub fn hosted_zone(&self) -> ::std::option::Option<&crate::types::HostedZone> {
         self.hosted_zone.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for UpdateHostedZoneCommentOutput {
+impl ::aws_http::request_id::RequestId for UpdateHostedZoneCommentOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -31,19 +31,24 @@ impl UpdateHostedZoneCommentOutput {
 
 /// A builder for [`UpdateHostedZoneCommentOutput`](crate::operation::update_hosted_zone_comment::UpdateHostedZoneCommentOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateHostedZoneCommentOutputBuilder {
-    pub(crate) hosted_zone: std::option::Option<crate::types::HostedZone>,
+    pub(crate) hosted_zone: ::std::option::Option<crate::types::HostedZone>,
     _request_id: Option<String>,
 }
 impl UpdateHostedZoneCommentOutputBuilder {
     /// <p>A complex type that contains the response to the <code>UpdateHostedZoneComment</code> request.</p>
     pub fn hosted_zone(mut self, input: crate::types::HostedZone) -> Self {
-        self.hosted_zone = Some(input);
+        self.hosted_zone = ::std::option::Option::Some(input);
         self
     }
     /// <p>A complex type that contains the response to the <code>UpdateHostedZoneComment</code> request.</p>
-    pub fn set_hosted_zone(mut self, input: std::option::Option<crate::types::HostedZone>) -> Self {
+    pub fn set_hosted_zone(
+        mut self,
+        input: ::std::option::Option<crate::types::HostedZone>,
+    ) -> Self {
         self.hosted_zone = input;
         self
     }

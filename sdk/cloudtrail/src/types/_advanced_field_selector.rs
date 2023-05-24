@@ -2,7 +2,7 @@
 
 /// <p>A single selector statement in an advanced event selector.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AdvancedFieldSelector {
     /// <p> A field in a CloudTrail event record on which to filter events to be logged. For event data stores for Config configuration items, Audit Manager evidence, or non-Amazon Web Services events, the field is used only for selecting events as filtering is not supported. </p>
     /// <p> For CloudTrail event records, supported fields include <code>readOnly</code>, <code>eventCategory</code>, <code>eventSource</code> (for management events), <code>eventName</code>, <code>resources.type</code>, and <code>resources.ARN</code>. </p>
@@ -285,25 +285,25 @@ pub struct AdvancedFieldSelector {
     /// </ul> </li>
     /// </ul>
     #[doc(hidden)]
-    pub field: std::option::Option<std::string::String>,
+    pub field: ::std::option::Option<::std::string::String>,
     /// <p> An operator that includes events that match the exact value of the event record field specified as the value of <code>Field</code>. This is the only valid operator that you can use with the <code>readOnly</code>, <code>eventCategory</code>, and <code>resources.type</code> fields.</p>
     #[doc(hidden)]
-    pub equals: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub equals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An operator that includes events that match the first few characters of the event record field specified as the value of <code>Field</code>.</p>
     #[doc(hidden)]
-    pub starts_with: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub starts_with: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An operator that includes events that match the last few characters of the event record field specified as the value of <code>Field</code>.</p>
     #[doc(hidden)]
-    pub ends_with: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub ends_with: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> An operator that excludes events that match the exact value of the event record field specified as the value of <code>Field</code>. </p>
     #[doc(hidden)]
-    pub not_equals: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub not_equals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> An operator that excludes events that match the first few characters of the event record field specified as the value of <code>Field</code>. </p>
     #[doc(hidden)]
-    pub not_starts_with: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub not_starts_with: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> An operator that excludes events that match the last few characters of the event record field specified as the value of <code>Field</code>. </p>
     #[doc(hidden)]
-    pub not_ends_with: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub not_ends_with: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AdvancedFieldSelector {
     /// <p> A field in a CloudTrail event record on which to filter events to be logged. For event data stores for Config configuration items, Audit Manager evidence, or non-Amazon Web Services events, the field is used only for selecting events as filtering is not supported. </p>
@@ -586,31 +586,31 @@ impl AdvancedFieldSelector {
     /// </partition></code> </p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn field(&self) -> std::option::Option<&str> {
+    pub fn field(&self) -> ::std::option::Option<&str> {
         self.field.as_deref()
     }
     /// <p> An operator that includes events that match the exact value of the event record field specified as the value of <code>Field</code>. This is the only valid operator that you can use with the <code>readOnly</code>, <code>eventCategory</code>, and <code>resources.type</code> fields.</p>
-    pub fn equals(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn equals(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.equals.as_deref()
     }
     /// <p>An operator that includes events that match the first few characters of the event record field specified as the value of <code>Field</code>.</p>
-    pub fn starts_with(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn starts_with(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.starts_with.as_deref()
     }
     /// <p>An operator that includes events that match the last few characters of the event record field specified as the value of <code>Field</code>.</p>
-    pub fn ends_with(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn ends_with(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.ends_with.as_deref()
     }
     /// <p> An operator that excludes events that match the exact value of the event record field specified as the value of <code>Field</code>. </p>
-    pub fn not_equals(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn not_equals(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.not_equals.as_deref()
     }
     /// <p> An operator that excludes events that match the first few characters of the event record field specified as the value of <code>Field</code>. </p>
-    pub fn not_starts_with(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn not_starts_with(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.not_starts_with.as_deref()
     }
     /// <p> An operator that excludes events that match the last few characters of the event record field specified as the value of <code>Field</code>. </p>
-    pub fn not_ends_with(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn not_ends_with(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.not_ends_with.as_deref()
     }
 }
@@ -623,15 +623,17 @@ impl AdvancedFieldSelector {
 
 /// A builder for [`AdvancedFieldSelector`](crate::types::AdvancedFieldSelector).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AdvancedFieldSelectorBuilder {
-    pub(crate) field: std::option::Option<std::string::String>,
-    pub(crate) equals: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) starts_with: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) ends_with: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) not_equals: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) not_starts_with: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) not_ends_with: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) field: ::std::option::Option<::std::string::String>,
+    pub(crate) equals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) starts_with: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) ends_with: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) not_equals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) not_starts_with: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) not_ends_with: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AdvancedFieldSelectorBuilder {
     /// <p> A field in a CloudTrail event record on which to filter events to be logged. For event data stores for Config configuration items, Audit Manager evidence, or non-Amazon Web Services events, the field is used only for selecting events as filtering is not supported. </p>
@@ -914,8 +916,8 @@ impl AdvancedFieldSelectorBuilder {
     /// </partition></code> </p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn field(mut self, input: impl Into<std::string::String>) -> Self {
-        self.field = Some(input.into());
+    pub fn field(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.field = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> A field in a CloudTrail event record on which to filter events to be logged. For event data stores for Config configuration items, Audit Manager evidence, or non-Amazon Web Services events, the field is used only for selecting events as filtering is not supported. </p>
@@ -1198,7 +1200,7 @@ impl AdvancedFieldSelectorBuilder {
     /// </partition></code> </p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn set_field(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_field(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.field = input;
         self
     }
@@ -1207,16 +1209,16 @@ impl AdvancedFieldSelectorBuilder {
     /// To override the contents of this collection use [`set_equals`](Self::set_equals).
     ///
     /// <p> An operator that includes events that match the exact value of the event record field specified as the value of <code>Field</code>. This is the only valid operator that you can use with the <code>readOnly</code>, <code>eventCategory</code>, and <code>resources.type</code> fields.</p>
-    pub fn equals(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn equals(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.equals.unwrap_or_default();
         v.push(input.into());
-        self.equals = Some(v);
+        self.equals = ::std::option::Option::Some(v);
         self
     }
     /// <p> An operator that includes events that match the exact value of the event record field specified as the value of <code>Field</code>. This is the only valid operator that you can use with the <code>readOnly</code>, <code>eventCategory</code>, and <code>resources.type</code> fields.</p>
     pub fn set_equals(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.equals = input;
         self
@@ -1226,16 +1228,16 @@ impl AdvancedFieldSelectorBuilder {
     /// To override the contents of this collection use [`set_starts_with`](Self::set_starts_with).
     ///
     /// <p>An operator that includes events that match the first few characters of the event record field specified as the value of <code>Field</code>.</p>
-    pub fn starts_with(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn starts_with(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.starts_with.unwrap_or_default();
         v.push(input.into());
-        self.starts_with = Some(v);
+        self.starts_with = ::std::option::Option::Some(v);
         self
     }
     /// <p>An operator that includes events that match the first few characters of the event record field specified as the value of <code>Field</code>.</p>
     pub fn set_starts_with(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.starts_with = input;
         self
@@ -1245,16 +1247,16 @@ impl AdvancedFieldSelectorBuilder {
     /// To override the contents of this collection use [`set_ends_with`](Self::set_ends_with).
     ///
     /// <p>An operator that includes events that match the last few characters of the event record field specified as the value of <code>Field</code>.</p>
-    pub fn ends_with(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn ends_with(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.ends_with.unwrap_or_default();
         v.push(input.into());
-        self.ends_with = Some(v);
+        self.ends_with = ::std::option::Option::Some(v);
         self
     }
     /// <p>An operator that includes events that match the last few characters of the event record field specified as the value of <code>Field</code>.</p>
     pub fn set_ends_with(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.ends_with = input;
         self
@@ -1264,16 +1266,16 @@ impl AdvancedFieldSelectorBuilder {
     /// To override the contents of this collection use [`set_not_equals`](Self::set_not_equals).
     ///
     /// <p> An operator that excludes events that match the exact value of the event record field specified as the value of <code>Field</code>. </p>
-    pub fn not_equals(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn not_equals(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.not_equals.unwrap_or_default();
         v.push(input.into());
-        self.not_equals = Some(v);
+        self.not_equals = ::std::option::Option::Some(v);
         self
     }
     /// <p> An operator that excludes events that match the exact value of the event record field specified as the value of <code>Field</code>. </p>
     pub fn set_not_equals(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.not_equals = input;
         self
@@ -1283,16 +1285,19 @@ impl AdvancedFieldSelectorBuilder {
     /// To override the contents of this collection use [`set_not_starts_with`](Self::set_not_starts_with).
     ///
     /// <p> An operator that excludes events that match the first few characters of the event record field specified as the value of <code>Field</code>. </p>
-    pub fn not_starts_with(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn not_starts_with(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.not_starts_with.unwrap_or_default();
         v.push(input.into());
-        self.not_starts_with = Some(v);
+        self.not_starts_with = ::std::option::Option::Some(v);
         self
     }
     /// <p> An operator that excludes events that match the first few characters of the event record field specified as the value of <code>Field</code>. </p>
     pub fn set_not_starts_with(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.not_starts_with = input;
         self
@@ -1302,16 +1307,19 @@ impl AdvancedFieldSelectorBuilder {
     /// To override the contents of this collection use [`set_not_ends_with`](Self::set_not_ends_with).
     ///
     /// <p> An operator that excludes events that match the last few characters of the event record field specified as the value of <code>Field</code>. </p>
-    pub fn not_ends_with(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn not_ends_with(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.not_ends_with.unwrap_or_default();
         v.push(input.into());
-        self.not_ends_with = Some(v);
+        self.not_ends_with = ::std::option::Option::Some(v);
         self
     }
     /// <p> An operator that excludes events that match the last few characters of the event record field specified as the value of <code>Field</code>. </p>
     pub fn set_not_ends_with(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.not_ends_with = input;
         self

@@ -10,24 +10,24 @@
 /// </ul>
 /// <p>A fragment selector range with a start time of 00:00:01 and end time of 00:00:04 would return the fragments with start times of 00:00:02 and 00:00:04.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FragmentSelector {
     /// <p>The origin of the timestamps to use, <code>Server</code> or <code>Producer</code>. For more information, see <a href="kinesisvideostreams/latest/dg/API_dataplane_StartSelector.html#KinesisVideo-Type-dataplane_StartSelector-StartSelectorType">StartSelectorType</a> in the <i>Amazon Kinesis Video Streams Developer Guide</i>.</p>
     #[doc(hidden)]
-    pub fragment_selector_type: std::option::Option<crate::types::FragmentSelectorType>,
+    pub fragment_selector_type: ::std::option::Option<crate::types::FragmentSelectorType>,
     /// <p>The range of timestamps to return.</p>
     #[doc(hidden)]
-    pub timestamp_range: std::option::Option<crate::types::TimestampRange>,
+    pub timestamp_range: ::std::option::Option<crate::types::TimestampRange>,
 }
 impl FragmentSelector {
     /// <p>The origin of the timestamps to use, <code>Server</code> or <code>Producer</code>. For more information, see <a href="kinesisvideostreams/latest/dg/API_dataplane_StartSelector.html#KinesisVideo-Type-dataplane_StartSelector-StartSelectorType">StartSelectorType</a> in the <i>Amazon Kinesis Video Streams Developer Guide</i>.</p>
     pub fn fragment_selector_type(
         &self,
-    ) -> std::option::Option<&crate::types::FragmentSelectorType> {
+    ) -> ::std::option::Option<&crate::types::FragmentSelectorType> {
         self.fragment_selector_type.as_ref()
     }
     /// <p>The range of timestamps to return.</p>
-    pub fn timestamp_range(&self) -> std::option::Option<&crate::types::TimestampRange> {
+    pub fn timestamp_range(&self) -> ::std::option::Option<&crate::types::TimestampRange> {
         self.timestamp_range.as_ref()
     }
 }
@@ -40,34 +40,36 @@ impl FragmentSelector {
 
 /// A builder for [`FragmentSelector`](crate::types::FragmentSelector).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FragmentSelectorBuilder {
-    pub(crate) fragment_selector_type: std::option::Option<crate::types::FragmentSelectorType>,
-    pub(crate) timestamp_range: std::option::Option<crate::types::TimestampRange>,
+    pub(crate) fragment_selector_type: ::std::option::Option<crate::types::FragmentSelectorType>,
+    pub(crate) timestamp_range: ::std::option::Option<crate::types::TimestampRange>,
 }
 impl FragmentSelectorBuilder {
     /// <p>The origin of the timestamps to use, <code>Server</code> or <code>Producer</code>. For more information, see <a href="kinesisvideostreams/latest/dg/API_dataplane_StartSelector.html#KinesisVideo-Type-dataplane_StartSelector-StartSelectorType">StartSelectorType</a> in the <i>Amazon Kinesis Video Streams Developer Guide</i>.</p>
     pub fn fragment_selector_type(mut self, input: crate::types::FragmentSelectorType) -> Self {
-        self.fragment_selector_type = Some(input);
+        self.fragment_selector_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The origin of the timestamps to use, <code>Server</code> or <code>Producer</code>. For more information, see <a href="kinesisvideostreams/latest/dg/API_dataplane_StartSelector.html#KinesisVideo-Type-dataplane_StartSelector-StartSelectorType">StartSelectorType</a> in the <i>Amazon Kinesis Video Streams Developer Guide</i>.</p>
     pub fn set_fragment_selector_type(
         mut self,
-        input: std::option::Option<crate::types::FragmentSelectorType>,
+        input: ::std::option::Option<crate::types::FragmentSelectorType>,
     ) -> Self {
         self.fragment_selector_type = input;
         self
     }
     /// <p>The range of timestamps to return.</p>
     pub fn timestamp_range(mut self, input: crate::types::TimestampRange) -> Self {
-        self.timestamp_range = Some(input);
+        self.timestamp_range = ::std::option::Option::Some(input);
         self
     }
     /// <p>The range of timestamps to return.</p>
     pub fn set_timestamp_range(
         mut self,
-        input: std::option::Option<crate::types::TimestampRange>,
+        input: ::std::option::Option<crate::types::TimestampRange>,
     ) -> Self {
         self.timestamp_range = input;
         self

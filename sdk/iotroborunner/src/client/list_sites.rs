@@ -5,7 +5,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_sites::builders::ListSitesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_sites::builders::ListSitesFluentBuilder::set_max_results): Maximum number of results to retrieve in a single ListSites call.
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_sites::builders::ListSitesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_sites::builders::ListSitesFluentBuilder::set_next_token): Pagination token returned when another page of data exists. Provide it in your next call to the API to receive the next page.
+    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_sites::builders::ListSitesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_sites::builders::ListSitesFluentBuilder::set_next_token): Pagination token returned when another page of data exists. Provide it in your next call to the API to receive the next page.
     /// - On success, responds with [`ListSitesOutput`](crate::operation::list_sites::ListSitesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_sites::ListSitesOutput::next_token): Pagination token returned when another page of data exists. Provide it in your next call to the API to receive the next page.
     ///   - [`sites(Option<Vec<Site>>)`](crate::operation::list_sites::ListSitesOutput::sites): List of facilities.

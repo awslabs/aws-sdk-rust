@@ -2,22 +2,22 @@
 
 /// <p>The configuration of an insight visual.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InsightConfiguration {
     /// <p>The computations configurations of the insight visual</p>
     #[doc(hidden)]
-    pub computations: std::option::Option<std::vec::Vec<crate::types::Computation>>,
+    pub computations: ::std::option::Option<::std::vec::Vec<crate::types::Computation>>,
     /// <p>The custom narrative of the insight visual.</p>
     #[doc(hidden)]
-    pub custom_narrative: std::option::Option<crate::types::CustomNarrativeOptions>,
+    pub custom_narrative: ::std::option::Option<crate::types::CustomNarrativeOptions>,
 }
 impl InsightConfiguration {
     /// <p>The computations configurations of the insight visual</p>
-    pub fn computations(&self) -> std::option::Option<&[crate::types::Computation]> {
+    pub fn computations(&self) -> ::std::option::Option<&[crate::types::Computation]> {
         self.computations.as_deref()
     }
     /// <p>The custom narrative of the insight visual.</p>
-    pub fn custom_narrative(&self) -> std::option::Option<&crate::types::CustomNarrativeOptions> {
+    pub fn custom_narrative(&self) -> ::std::option::Option<&crate::types::CustomNarrativeOptions> {
         self.custom_narrative.as_ref()
     }
 }
@@ -30,10 +30,12 @@ impl InsightConfiguration {
 
 /// A builder for [`InsightConfiguration`](crate::types::InsightConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InsightConfigurationBuilder {
-    pub(crate) computations: std::option::Option<std::vec::Vec<crate::types::Computation>>,
-    pub(crate) custom_narrative: std::option::Option<crate::types::CustomNarrativeOptions>,
+    pub(crate) computations: ::std::option::Option<::std::vec::Vec<crate::types::Computation>>,
+    pub(crate) custom_narrative: ::std::option::Option<crate::types::CustomNarrativeOptions>,
 }
 impl InsightConfigurationBuilder {
     /// Appends an item to `computations`.
@@ -44,26 +46,26 @@ impl InsightConfigurationBuilder {
     pub fn computations(mut self, input: crate::types::Computation) -> Self {
         let mut v = self.computations.unwrap_or_default();
         v.push(input);
-        self.computations = Some(v);
+        self.computations = ::std::option::Option::Some(v);
         self
     }
     /// <p>The computations configurations of the insight visual</p>
     pub fn set_computations(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Computation>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Computation>>,
     ) -> Self {
         self.computations = input;
         self
     }
     /// <p>The custom narrative of the insight visual.</p>
     pub fn custom_narrative(mut self, input: crate::types::CustomNarrativeOptions) -> Self {
-        self.custom_narrative = Some(input);
+        self.custom_narrative = ::std::option::Option::Some(input);
         self
     }
     /// <p>The custom narrative of the insight visual.</p>
     pub fn set_custom_narrative(
         mut self,
-        input: std::option::Option<crate::types::CustomNarrativeOptions>,
+        input: ::std::option::Option<crate::types::CustomNarrativeOptions>,
     ) -> Self {
         self.custom_narrative = input;
         self

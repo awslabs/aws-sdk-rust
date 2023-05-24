@@ -2,7 +2,7 @@
 
 /// <p>Describes the state of a Client VPN endpoint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClientVpnEndpointStatus {
     /// <p>The state of the Client VPN endpoint. Possible states include:</p>
     /// <ul>
@@ -12,10 +12,10 @@ pub struct ClientVpnEndpointStatus {
     /// <li> <p> <code>deleted</code> - The Client VPN endpoint has been deleted. The Client VPN endpoint cannot accept connections.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub code: std::option::Option<crate::types::ClientVpnEndpointStatusCode>,
+    pub code: ::std::option::Option<crate::types::ClientVpnEndpointStatusCode>,
     /// <p>A message about the status of the Client VPN endpoint.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
 }
 impl ClientVpnEndpointStatus {
     /// <p>The state of the Client VPN endpoint. Possible states include:</p>
@@ -25,11 +25,11 @@ impl ClientVpnEndpointStatus {
     /// <li> <p> <code>deleting</code> - The Client VPN endpoint is being deleted. The Client VPN endpoint cannot accept connections.</p> </li>
     /// <li> <p> <code>deleted</code> - The Client VPN endpoint has been deleted. The Client VPN endpoint cannot accept connections.</p> </li>
     /// </ul>
-    pub fn code(&self) -> std::option::Option<&crate::types::ClientVpnEndpointStatusCode> {
+    pub fn code(&self) -> ::std::option::Option<&crate::types::ClientVpnEndpointStatusCode> {
         self.code.as_ref()
     }
     /// <p>A message about the status of the Client VPN endpoint.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -42,10 +42,12 @@ impl ClientVpnEndpointStatus {
 
 /// A builder for [`ClientVpnEndpointStatus`](crate::types::ClientVpnEndpointStatus).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ClientVpnEndpointStatusBuilder {
-    pub(crate) code: std::option::Option<crate::types::ClientVpnEndpointStatusCode>,
-    pub(crate) message: std::option::Option<std::string::String>,
+    pub(crate) code: ::std::option::Option<crate::types::ClientVpnEndpointStatusCode>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
 }
 impl ClientVpnEndpointStatusBuilder {
     /// <p>The state of the Client VPN endpoint. Possible states include:</p>
@@ -56,7 +58,7 @@ impl ClientVpnEndpointStatusBuilder {
     /// <li> <p> <code>deleted</code> - The Client VPN endpoint has been deleted. The Client VPN endpoint cannot accept connections.</p> </li>
     /// </ul>
     pub fn code(mut self, input: crate::types::ClientVpnEndpointStatusCode) -> Self {
-        self.code = Some(input);
+        self.code = ::std::option::Option::Some(input);
         self
     }
     /// <p>The state of the Client VPN endpoint. Possible states include:</p>
@@ -68,18 +70,18 @@ impl ClientVpnEndpointStatusBuilder {
     /// </ul>
     pub fn set_code(
         mut self,
-        input: std::option::Option<crate::types::ClientVpnEndpointStatusCode>,
+        input: ::std::option::Option<crate::types::ClientVpnEndpointStatusCode>,
     ) -> Self {
         self.code = input;
         self
     }
     /// <p>A message about the status of the Client VPN endpoint.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A message about the status of the Client VPN endpoint.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }

@@ -2,22 +2,22 @@
 
 /// <p> The time range during which an Amazon Web Services event occurred. Amazon Web Services resource events and metrics are analyzed by DevOps Guru to find anomalous behavior and provide recommendations to improve your operational solutions. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventTimeRange {
     /// <p> The time when the event started. </p>
     #[doc(hidden)]
-    pub from_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub from_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The time when the event ended. </p>
     #[doc(hidden)]
-    pub to_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub to_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl EventTimeRange {
     /// <p> The time when the event started. </p>
-    pub fn from_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn from_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.from_time.as_ref()
     }
     /// <p> The time when the event ended. </p>
-    pub fn to_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn to_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.to_time.as_ref()
     }
 }
@@ -30,29 +30,37 @@ impl EventTimeRange {
 
 /// A builder for [`EventTimeRange`](crate::types::EventTimeRange).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EventTimeRangeBuilder {
-    pub(crate) from_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) to_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) from_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) to_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl EventTimeRangeBuilder {
     /// <p> The time when the event started. </p>
-    pub fn from_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.from_time = Some(input);
+    pub fn from_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.from_time = ::std::option::Option::Some(input);
         self
     }
     /// <p> The time when the event started. </p>
-    pub fn set_from_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_from_time(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
         self.from_time = input;
         self
     }
     /// <p> The time when the event ended. </p>
-    pub fn to_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.to_time = Some(input);
+    pub fn to_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.to_time = ::std::option::Option::Some(input);
         self
     }
     /// <p> The time when the event ended. </p>
-    pub fn set_to_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_to_time(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
         self.to_time = input;
         self
     }

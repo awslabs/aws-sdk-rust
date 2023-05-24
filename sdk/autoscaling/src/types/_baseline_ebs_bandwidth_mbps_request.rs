@@ -2,22 +2,22 @@
 
 /// <p>Specifies the minimum and maximum for the <code>BaselineEbsBandwidthMbps</code> object when you specify <code>InstanceRequirements</code> for an Auto Scaling group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BaselineEbsBandwidthMbpsRequest {
     /// <p>The minimum value in Mbps.</p>
     #[doc(hidden)]
-    pub min: std::option::Option<i32>,
+    pub min: ::std::option::Option<i32>,
     /// <p>The maximum value in Mbps.</p>
     #[doc(hidden)]
-    pub max: std::option::Option<i32>,
+    pub max: ::std::option::Option<i32>,
 }
 impl BaselineEbsBandwidthMbpsRequest {
     /// <p>The minimum value in Mbps.</p>
-    pub fn min(&self) -> std::option::Option<i32> {
+    pub fn min(&self) -> ::std::option::Option<i32> {
         self.min
     }
     /// <p>The maximum value in Mbps.</p>
-    pub fn max(&self) -> std::option::Option<i32> {
+    pub fn max(&self) -> ::std::option::Option<i32> {
         self.max
     }
 }
@@ -30,29 +30,31 @@ impl BaselineEbsBandwidthMbpsRequest {
 
 /// A builder for [`BaselineEbsBandwidthMbpsRequest`](crate::types::BaselineEbsBandwidthMbpsRequest).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BaselineEbsBandwidthMbpsRequestBuilder {
-    pub(crate) min: std::option::Option<i32>,
-    pub(crate) max: std::option::Option<i32>,
+    pub(crate) min: ::std::option::Option<i32>,
+    pub(crate) max: ::std::option::Option<i32>,
 }
 impl BaselineEbsBandwidthMbpsRequestBuilder {
     /// <p>The minimum value in Mbps.</p>
     pub fn min(mut self, input: i32) -> Self {
-        self.min = Some(input);
+        self.min = ::std::option::Option::Some(input);
         self
     }
     /// <p>The minimum value in Mbps.</p>
-    pub fn set_min(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_min(mut self, input: ::std::option::Option<i32>) -> Self {
         self.min = input;
         self
     }
     /// <p>The maximum value in Mbps.</p>
     pub fn max(mut self, input: i32) -> Self {
-        self.max = Some(input);
+        self.max = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum value in Mbps.</p>
-    pub fn set_max(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max = input;
         self
     }

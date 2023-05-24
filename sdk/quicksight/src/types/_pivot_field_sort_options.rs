@@ -2,22 +2,22 @@
 
 /// <p>The field sort options for a pivot table sort configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PivotFieldSortOptions {
     /// <p>The field ID for the field sort options.</p>
     #[doc(hidden)]
-    pub field_id: std::option::Option<std::string::String>,
+    pub field_id: ::std::option::Option<::std::string::String>,
     /// <p>The sort by field for the field sort options.</p>
     #[doc(hidden)]
-    pub sort_by: std::option::Option<crate::types::PivotTableSortBy>,
+    pub sort_by: ::std::option::Option<crate::types::PivotTableSortBy>,
 }
 impl PivotFieldSortOptions {
     /// <p>The field ID for the field sort options.</p>
-    pub fn field_id(&self) -> std::option::Option<&str> {
+    pub fn field_id(&self) -> ::std::option::Option<&str> {
         self.field_id.as_deref()
     }
     /// <p>The sort by field for the field sort options.</p>
-    pub fn sort_by(&self) -> std::option::Option<&crate::types::PivotTableSortBy> {
+    pub fn sort_by(&self) -> ::std::option::Option<&crate::types::PivotTableSortBy> {
         self.sort_by.as_ref()
     }
 }
@@ -30,31 +30,33 @@ impl PivotFieldSortOptions {
 
 /// A builder for [`PivotFieldSortOptions`](crate::types::PivotFieldSortOptions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PivotFieldSortOptionsBuilder {
-    pub(crate) field_id: std::option::Option<std::string::String>,
-    pub(crate) sort_by: std::option::Option<crate::types::PivotTableSortBy>,
+    pub(crate) field_id: ::std::option::Option<::std::string::String>,
+    pub(crate) sort_by: ::std::option::Option<crate::types::PivotTableSortBy>,
 }
 impl PivotFieldSortOptionsBuilder {
     /// <p>The field ID for the field sort options.</p>
-    pub fn field_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.field_id = Some(input.into());
+    pub fn field_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.field_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The field ID for the field sort options.</p>
-    pub fn set_field_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_field_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.field_id = input;
         self
     }
     /// <p>The sort by field for the field sort options.</p>
     pub fn sort_by(mut self, input: crate::types::PivotTableSortBy) -> Self {
-        self.sort_by = Some(input);
+        self.sort_by = ::std::option::Option::Some(input);
         self
     }
     /// <p>The sort by field for the field sort options.</p>
     pub fn set_sort_by(
         mut self,
-        input: std::option::Option<crate::types::PivotTableSortBy>,
+        input: ::std::option::Option<crate::types::PivotTableSortBy>,
     ) -> Self {
         self.sort_by = input;
         self

@@ -2,14 +2,14 @@
 
 /// <p>Defines column statistics supported for fixed-point number data columns.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DecimalColumnStatisticsData {
     /// <p>The lowest value in the column.</p>
     #[doc(hidden)]
-    pub minimum_value: std::option::Option<crate::types::DecimalNumber>,
+    pub minimum_value: ::std::option::Option<crate::types::DecimalNumber>,
     /// <p>The highest value in the column.</p>
     #[doc(hidden)]
-    pub maximum_value: std::option::Option<crate::types::DecimalNumber>,
+    pub maximum_value: ::std::option::Option<crate::types::DecimalNumber>,
     /// <p>The number of null values in the column.</p>
     #[doc(hidden)]
     pub number_of_nulls: i64,
@@ -19,11 +19,11 @@ pub struct DecimalColumnStatisticsData {
 }
 impl DecimalColumnStatisticsData {
     /// <p>The lowest value in the column.</p>
-    pub fn minimum_value(&self) -> std::option::Option<&crate::types::DecimalNumber> {
+    pub fn minimum_value(&self) -> ::std::option::Option<&crate::types::DecimalNumber> {
         self.minimum_value.as_ref()
     }
     /// <p>The highest value in the column.</p>
-    pub fn maximum_value(&self) -> std::option::Option<&crate::types::DecimalNumber> {
+    pub fn maximum_value(&self) -> ::std::option::Option<&crate::types::DecimalNumber> {
         self.maximum_value.as_ref()
     }
     /// <p>The number of null values in the column.</p>
@@ -44,57 +44,59 @@ impl DecimalColumnStatisticsData {
 
 /// A builder for [`DecimalColumnStatisticsData`](crate::types::DecimalColumnStatisticsData).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DecimalColumnStatisticsDataBuilder {
-    pub(crate) minimum_value: std::option::Option<crate::types::DecimalNumber>,
-    pub(crate) maximum_value: std::option::Option<crate::types::DecimalNumber>,
-    pub(crate) number_of_nulls: std::option::Option<i64>,
-    pub(crate) number_of_distinct_values: std::option::Option<i64>,
+    pub(crate) minimum_value: ::std::option::Option<crate::types::DecimalNumber>,
+    pub(crate) maximum_value: ::std::option::Option<crate::types::DecimalNumber>,
+    pub(crate) number_of_nulls: ::std::option::Option<i64>,
+    pub(crate) number_of_distinct_values: ::std::option::Option<i64>,
 }
 impl DecimalColumnStatisticsDataBuilder {
     /// <p>The lowest value in the column.</p>
     pub fn minimum_value(mut self, input: crate::types::DecimalNumber) -> Self {
-        self.minimum_value = Some(input);
+        self.minimum_value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The lowest value in the column.</p>
     pub fn set_minimum_value(
         mut self,
-        input: std::option::Option<crate::types::DecimalNumber>,
+        input: ::std::option::Option<crate::types::DecimalNumber>,
     ) -> Self {
         self.minimum_value = input;
         self
     }
     /// <p>The highest value in the column.</p>
     pub fn maximum_value(mut self, input: crate::types::DecimalNumber) -> Self {
-        self.maximum_value = Some(input);
+        self.maximum_value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The highest value in the column.</p>
     pub fn set_maximum_value(
         mut self,
-        input: std::option::Option<crate::types::DecimalNumber>,
+        input: ::std::option::Option<crate::types::DecimalNumber>,
     ) -> Self {
         self.maximum_value = input;
         self
     }
     /// <p>The number of null values in the column.</p>
     pub fn number_of_nulls(mut self, input: i64) -> Self {
-        self.number_of_nulls = Some(input);
+        self.number_of_nulls = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of null values in the column.</p>
-    pub fn set_number_of_nulls(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_number_of_nulls(mut self, input: ::std::option::Option<i64>) -> Self {
         self.number_of_nulls = input;
         self
     }
     /// <p>The number of distinct values in a column.</p>
     pub fn number_of_distinct_values(mut self, input: i64) -> Self {
-        self.number_of_distinct_values = Some(input);
+        self.number_of_distinct_values = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of distinct values in a column.</p>
-    pub fn set_number_of_distinct_values(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_number_of_distinct_values(mut self, input: ::std::option::Option<i64>) -> Self {
         self.number_of_distinct_values = input;
         self
     }

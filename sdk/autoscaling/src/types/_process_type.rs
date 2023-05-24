@@ -3,7 +3,7 @@
 /// <p>Describes a process type.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html#process-types">Scaling processes</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProcessType {
     /// <p>One of the following processes:</p>
     /// <ul>
@@ -18,7 +18,7 @@ pub struct ProcessType {
     /// <li> <p> <code>ScheduledActions</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub process_name: std::option::Option<std::string::String>,
+    pub process_name: ::std::option::Option<::std::string::String>,
 }
 impl ProcessType {
     /// <p>One of the following processes:</p>
@@ -33,7 +33,7 @@ impl ProcessType {
     /// <li> <p> <code>ReplaceUnhealthy</code> </p> </li>
     /// <li> <p> <code>ScheduledActions</code> </p> </li>
     /// </ul>
-    pub fn process_name(&self) -> std::option::Option<&str> {
+    pub fn process_name(&self) -> ::std::option::Option<&str> {
         self.process_name.as_deref()
     }
 }
@@ -46,9 +46,11 @@ impl ProcessType {
 
 /// A builder for [`ProcessType`](crate::types::ProcessType).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ProcessTypeBuilder {
-    pub(crate) process_name: std::option::Option<std::string::String>,
+    pub(crate) process_name: ::std::option::Option<::std::string::String>,
 }
 impl ProcessTypeBuilder {
     /// <p>One of the following processes:</p>
@@ -63,8 +65,8 @@ impl ProcessTypeBuilder {
     /// <li> <p> <code>ReplaceUnhealthy</code> </p> </li>
     /// <li> <p> <code>ScheduledActions</code> </p> </li>
     /// </ul>
-    pub fn process_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.process_name = Some(input.into());
+    pub fn process_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.process_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>One of the following processes:</p>
@@ -79,7 +81,7 @@ impl ProcessTypeBuilder {
     /// <li> <p> <code>ReplaceUnhealthy</code> </p> </li>
     /// <li> <p> <code>ScheduledActions</code> </p> </li>
     /// </ul>
-    pub fn set_process_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_process_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.process_name = input;
         self
     }

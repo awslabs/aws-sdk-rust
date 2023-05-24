@@ -2,7 +2,7 @@
 
 /// <p>Describes the deletion state of an Amazon Route&nbsp;53 hosted zone for a domain that is being automatically delegated to an Amazon Lightsail DNS zone.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct R53HostedZoneDeletionState {
     /// <p>The status code for the deletion state.</p>
     /// <p>Following are the possible values:</p>
@@ -13,10 +13,10 @@ pub struct R53HostedZoneDeletionState {
     /// <li> <p> <code>STARTED</code> - The hosted zone deletion started.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub code: std::option::Option<crate::types::R53HostedZoneDeletionStateCode>,
+    pub code: ::std::option::Option<crate::types::R53HostedZoneDeletionStateCode>,
     /// <p>The message that describes the reason for the status code.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
 }
 impl R53HostedZoneDeletionState {
     /// <p>The status code for the deletion state.</p>
@@ -27,11 +27,11 @@ impl R53HostedZoneDeletionState {
     /// <li> <p> <code>FAILED</code> - The hosted zone deletion failed.</p> </li>
     /// <li> <p> <code>STARTED</code> - The hosted zone deletion started.</p> </li>
     /// </ul>
-    pub fn code(&self) -> std::option::Option<&crate::types::R53HostedZoneDeletionStateCode> {
+    pub fn code(&self) -> ::std::option::Option<&crate::types::R53HostedZoneDeletionStateCode> {
         self.code.as_ref()
     }
     /// <p>The message that describes the reason for the status code.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -44,10 +44,12 @@ impl R53HostedZoneDeletionState {
 
 /// A builder for [`R53HostedZoneDeletionState`](crate::types::R53HostedZoneDeletionState).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct R53HostedZoneDeletionStateBuilder {
-    pub(crate) code: std::option::Option<crate::types::R53HostedZoneDeletionStateCode>,
-    pub(crate) message: std::option::Option<std::string::String>,
+    pub(crate) code: ::std::option::Option<crate::types::R53HostedZoneDeletionStateCode>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
 }
 impl R53HostedZoneDeletionStateBuilder {
     /// <p>The status code for the deletion state.</p>
@@ -59,7 +61,7 @@ impl R53HostedZoneDeletionStateBuilder {
     /// <li> <p> <code>STARTED</code> - The hosted zone deletion started.</p> </li>
     /// </ul>
     pub fn code(mut self, input: crate::types::R53HostedZoneDeletionStateCode) -> Self {
-        self.code = Some(input);
+        self.code = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status code for the deletion state.</p>
@@ -72,18 +74,18 @@ impl R53HostedZoneDeletionStateBuilder {
     /// </ul>
     pub fn set_code(
         mut self,
-        input: std::option::Option<crate::types::R53HostedZoneDeletionStateCode>,
+        input: ::std::option::Option<crate::types::R53HostedZoneDeletionStateCode>,
     ) -> Self {
         self.code = input;
         self
     }
     /// <p>The message that describes the reason for the status code.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The message that describes the reason for the status code.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }

@@ -2,22 +2,22 @@
 
 /// <p>Query argument-profile mapping for field-level encryption.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QueryArgProfile {
     /// <p>Query argument for field-level encryption query argument-profile mapping.</p>
     #[doc(hidden)]
-    pub query_arg: std::option::Option<std::string::String>,
+    pub query_arg: ::std::option::Option<::std::string::String>,
     /// <p>ID of profile to use for field-level encryption query argument-profile mapping</p>
     #[doc(hidden)]
-    pub profile_id: std::option::Option<std::string::String>,
+    pub profile_id: ::std::option::Option<::std::string::String>,
 }
 impl QueryArgProfile {
     /// <p>Query argument for field-level encryption query argument-profile mapping.</p>
-    pub fn query_arg(&self) -> std::option::Option<&str> {
+    pub fn query_arg(&self) -> ::std::option::Option<&str> {
         self.query_arg.as_deref()
     }
     /// <p>ID of profile to use for field-level encryption query argument-profile mapping</p>
-    pub fn profile_id(&self) -> std::option::Option<&str> {
+    pub fn profile_id(&self) -> ::std::option::Option<&str> {
         self.profile_id.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl QueryArgProfile {
 
 /// A builder for [`QueryArgProfile`](crate::types::QueryArgProfile).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct QueryArgProfileBuilder {
-    pub(crate) query_arg: std::option::Option<std::string::String>,
-    pub(crate) profile_id: std::option::Option<std::string::String>,
+    pub(crate) query_arg: ::std::option::Option<::std::string::String>,
+    pub(crate) profile_id: ::std::option::Option<::std::string::String>,
 }
 impl QueryArgProfileBuilder {
     /// <p>Query argument for field-level encryption query argument-profile mapping.</p>
-    pub fn query_arg(mut self, input: impl Into<std::string::String>) -> Self {
-        self.query_arg = Some(input.into());
+    pub fn query_arg(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.query_arg = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Query argument for field-level encryption query argument-profile mapping.</p>
-    pub fn set_query_arg(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_query_arg(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.query_arg = input;
         self
     }
     /// <p>ID of profile to use for field-level encryption query argument-profile mapping</p>
-    pub fn profile_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.profile_id = Some(input.into());
+    pub fn profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.profile_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>ID of profile to use for field-level encryption query argument-profile mapping</p>
-    pub fn set_profile_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.profile_id = input;
         self
     }

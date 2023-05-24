@@ -2,20 +2,20 @@
 
 /// <p>Information about a dedicated IP address.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDedicatedIpOutput {
     /// <p>An object that contains information about a dedicated IP address.</p>
     #[doc(hidden)]
-    pub dedicated_ip: std::option::Option<crate::types::DedicatedIp>,
+    pub dedicated_ip: ::std::option::Option<crate::types::DedicatedIp>,
     _request_id: Option<String>,
 }
 impl GetDedicatedIpOutput {
     /// <p>An object that contains information about a dedicated IP address.</p>
-    pub fn dedicated_ip(&self) -> std::option::Option<&crate::types::DedicatedIp> {
+    pub fn dedicated_ip(&self) -> ::std::option::Option<&crate::types::DedicatedIp> {
         self.dedicated_ip.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for GetDedicatedIpOutput {
+impl ::aws_http::request_id::RequestId for GetDedicatedIpOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,21 +29,23 @@ impl GetDedicatedIpOutput {
 
 /// A builder for [`GetDedicatedIpOutput`](crate::operation::get_dedicated_ip::GetDedicatedIpOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetDedicatedIpOutputBuilder {
-    pub(crate) dedicated_ip: std::option::Option<crate::types::DedicatedIp>,
+    pub(crate) dedicated_ip: ::std::option::Option<crate::types::DedicatedIp>,
     _request_id: Option<String>,
 }
 impl GetDedicatedIpOutputBuilder {
     /// <p>An object that contains information about a dedicated IP address.</p>
     pub fn dedicated_ip(mut self, input: crate::types::DedicatedIp) -> Self {
-        self.dedicated_ip = Some(input);
+        self.dedicated_ip = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that contains information about a dedicated IP address.</p>
     pub fn set_dedicated_ip(
         mut self,
-        input: std::option::Option<crate::types::DedicatedIp>,
+        input: ::std::option::Option<crate::types::DedicatedIp>,
     ) -> Self {
         self.dedicated_ip = input;
         self

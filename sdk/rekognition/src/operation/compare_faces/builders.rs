@@ -21,56 +21,59 @@ pub use crate::operation::compare_faces::_compare_faces_input::CompareFacesInput
 /// </note>
 /// <p>For an example, see Comparing Faces in Images in the Amazon Rekognition Developer Guide.</p>
 /// <p>This operation requires permissions to perform the <code>rekognition:CompareFaces</code> action.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CompareFacesFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::compare_faces::builders::CompareFacesInputBuilder,
 }
 impl CompareFacesFluentBuilder {
     /// Creates a new `CompareFaces`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::compare_faces::CompareFaces,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::compare_faces::CompareFacesError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::compare_faces::CompareFacesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::compare_faces::CompareFacesOutput,
-        aws_smithy_http::result::SdkError<crate::operation::compare_faces::CompareFacesError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::compare_faces::CompareFacesError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -83,9 +86,9 @@ impl CompareFacesFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::compare_faces::CompareFacesOutput,
-        aws_smithy_http::result::SdkError<crate::operation::compare_faces::CompareFacesError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::compare_faces::CompareFacesError>,
     > {
         self.send_middleware().await
     }
@@ -97,7 +100,7 @@ impl CompareFacesFluentBuilder {
     }
     /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is not supported. </p>
     /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
-    pub fn set_source_image(mut self, input: std::option::Option<crate::types::Image>) -> Self {
+    pub fn set_source_image(mut self, input: ::std::option::Option<crate::types::Image>) -> Self {
         self.inner = self.inner.set_source_image(input);
         self
     }
@@ -109,7 +112,7 @@ impl CompareFacesFluentBuilder {
     }
     /// <p>The target image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is not supported. </p>
     /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
-    pub fn set_target_image(mut self, input: std::option::Option<crate::types::Image>) -> Self {
+    pub fn set_target_image(mut self, input: ::std::option::Option<crate::types::Image>) -> Self {
         self.inner = self.inner.set_target_image(input);
         self
     }
@@ -119,7 +122,7 @@ impl CompareFacesFluentBuilder {
         self
     }
     /// <p>The minimum level of confidence in the face matches that a match must meet to be included in the <code>FaceMatches</code> array.</p>
-    pub fn set_similarity_threshold(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_similarity_threshold(mut self, input: ::std::option::Option<f32>) -> Self {
         self.inner = self.inner.set_similarity_threshold(input);
         self
     }
@@ -133,7 +136,7 @@ impl CompareFacesFluentBuilder {
     /// <p>To use quality filtering, the collection you are using must be associated with version 3 of the face model or higher.</p>
     pub fn set_quality_filter(
         mut self,
-        input: std::option::Option<crate::types::QualityFilter>,
+        input: ::std::option::Option<crate::types::QualityFilter>,
     ) -> Self {
         self.inner = self.inner.set_quality_filter(input);
         self

@@ -2,29 +2,29 @@
 
 /// <p>Requests API Gateway to create a Resource resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateResourceInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
-    pub rest_api_id: std::option::Option<std::string::String>,
+    pub rest_api_id: ::std::option::Option<::std::string::String>,
     /// <p>The parent resource's identifier.</p>
     #[doc(hidden)]
-    pub parent_id: std::option::Option<std::string::String>,
+    pub parent_id: ::std::option::Option<::std::string::String>,
     /// <p>The last path segment for this resource.</p>
     #[doc(hidden)]
-    pub path_part: std::option::Option<std::string::String>,
+    pub path_part: ::std::option::Option<::std::string::String>,
 }
 impl CreateResourceInput {
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+    pub fn rest_api_id(&self) -> ::std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
     /// <p>The parent resource's identifier.</p>
-    pub fn parent_id(&self) -> std::option::Option<&str> {
+    pub fn parent_id(&self) -> ::std::option::Option<&str> {
         self.parent_id.as_deref()
     }
     /// <p>The last path segment for this resource.</p>
-    pub fn path_part(&self) -> std::option::Option<&str> {
+    pub fn path_part(&self) -> ::std::option::Option<&str> {
         self.path_part.as_deref()
     }
 }
@@ -37,51 +37,53 @@ impl CreateResourceInput {
 
 /// A builder for [`CreateResourceInput`](crate::operation::create_resource::CreateResourceInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateResourceInputBuilder {
-    pub(crate) rest_api_id: std::option::Option<std::string::String>,
-    pub(crate) parent_id: std::option::Option<std::string::String>,
-    pub(crate) path_part: std::option::Option<std::string::String>,
+    pub(crate) rest_api_id: ::std::option::Option<::std::string::String>,
+    pub(crate) parent_id: ::std::option::Option<::std::string::String>,
+    pub(crate) path_part: ::std::option::Option<::std::string::String>,
 }
 impl CreateResourceInputBuilder {
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.rest_api_id = Some(input.into());
+    pub fn rest_api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.rest_api_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_rest_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rest_api_id = input;
         self
     }
     /// <p>The parent resource's identifier.</p>
-    pub fn parent_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.parent_id = Some(input.into());
+    pub fn parent_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.parent_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The parent resource's identifier.</p>
-    pub fn set_parent_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_parent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parent_id = input;
         self
     }
     /// <p>The last path segment for this resource.</p>
-    pub fn path_part(mut self, input: impl Into<std::string::String>) -> Self {
-        self.path_part = Some(input.into());
+    pub fn path_part(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.path_part = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The last path segment for this resource.</p>
-    pub fn set_path_part(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_path_part(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.path_part = input;
         self
     }
     /// Consumes the builder and constructs a [`CreateResourceInput`](crate::operation::create_resource::CreateResourceInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::create_resource::CreateResourceInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::create_resource::CreateResourceInput {
+        ::std::result::Result::Ok(crate::operation::create_resource::CreateResourceInput {
             rest_api_id: self.rest_api_id,
             parent_id: self.parent_id,
             path_part: self.path_part,

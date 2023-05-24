@@ -37,13 +37,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum BuiltInSlotTypeSortAttribute {
     #[allow(missing_docs)] // documentation missing in model
@@ -51,7 +51,7 @@ pub enum BuiltInSlotTypeSortAttribute {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for BuiltInSlotTypeSortAttribute {
+impl ::std::convert::From<&str> for BuiltInSlotTypeSortAttribute {
     fn from(s: &str) -> Self {
         match s {
             "SlotTypeSignature" => BuiltInSlotTypeSortAttribute::SlotTypeSignature,
@@ -61,11 +61,11 @@ impl std::convert::From<&str> for BuiltInSlotTypeSortAttribute {
         }
     }
 }
-impl std::str::FromStr for BuiltInSlotTypeSortAttribute {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for BuiltInSlotTypeSortAttribute {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(BuiltInSlotTypeSortAttribute::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(BuiltInSlotTypeSortAttribute::from(s))
     }
 }
 impl BuiltInSlotTypeSortAttribute {
@@ -81,7 +81,7 @@ impl BuiltInSlotTypeSortAttribute {
         &["SlotTypeSignature"]
     }
 }
-impl AsRef<str> for BuiltInSlotTypeSortAttribute {
+impl ::std::convert::AsRef<str> for BuiltInSlotTypeSortAttribute {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

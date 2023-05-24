@@ -2,22 +2,22 @@
 
 /// <p>A reference to a table within an AWS Glue data catalog.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GlueTableReference {
     /// <p>The name of the AWS Glue table.</p>
     #[doc(hidden)]
-    pub table_name: std::option::Option<std::string::String>,
+    pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database the AWS Glue table belongs to.</p>
     #[doc(hidden)]
-    pub database_name: std::option::Option<std::string::String>,
+    pub database_name: ::std::option::Option<::std::string::String>,
 }
 impl GlueTableReference {
     /// <p>The name of the AWS Glue table.</p>
-    pub fn table_name(&self) -> std::option::Option<&str> {
+    pub fn table_name(&self) -> ::std::option::Option<&str> {
         self.table_name.as_deref()
     }
     /// <p>The name of the database the AWS Glue table belongs to.</p>
-    pub fn database_name(&self) -> std::option::Option<&str> {
+    pub fn database_name(&self) -> ::std::option::Option<&str> {
         self.database_name.as_deref()
     }
 }
@@ -30,29 +30,37 @@ impl GlueTableReference {
 
 /// A builder for [`GlueTableReference`](crate::types::GlueTableReference).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GlueTableReferenceBuilder {
-    pub(crate) table_name: std::option::Option<std::string::String>,
-    pub(crate) database_name: std::option::Option<std::string::String>,
+    pub(crate) table_name: ::std::option::Option<::std::string::String>,
+    pub(crate) database_name: ::std::option::Option<::std::string::String>,
 }
 impl GlueTableReferenceBuilder {
     /// <p>The name of the AWS Glue table.</p>
-    pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.table_name = Some(input.into());
+    pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.table_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the AWS Glue table.</p>
-    pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_name = input;
         self
     }
     /// <p>The name of the database the AWS Glue table belongs to.</p>
-    pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.database_name = Some(input.into());
+    pub fn database_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the database the AWS Glue table belongs to.</p>
-    pub fn set_database_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_database_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.database_name = input;
         self
     }

@@ -5,7 +5,7 @@
 /// </note>
 /// <p>The <b>deployment circuit breaker</b> determines whether a service deployment will fail if the service can't reach a steady state. If it is turned on, a service deployment will transition to a failed state and stop launching new tasks. You can also configure Amazon ECS to roll back your service to the last completed deployment after a failure. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-ecs.html">Rolling update</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeploymentCircuitBreaker {
     /// <p>Determines whether to use the deployment circuit breaker logic for the service.</p>
     #[doc(hidden)]
@@ -33,29 +33,31 @@ impl DeploymentCircuitBreaker {
 
 /// A builder for [`DeploymentCircuitBreaker`](crate::types::DeploymentCircuitBreaker).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeploymentCircuitBreakerBuilder {
-    pub(crate) enable: std::option::Option<bool>,
-    pub(crate) rollback: std::option::Option<bool>,
+    pub(crate) enable: ::std::option::Option<bool>,
+    pub(crate) rollback: ::std::option::Option<bool>,
 }
 impl DeploymentCircuitBreakerBuilder {
     /// <p>Determines whether to use the deployment circuit breaker logic for the service.</p>
     pub fn enable(mut self, input: bool) -> Self {
-        self.enable = Some(input);
+        self.enable = ::std::option::Option::Some(input);
         self
     }
     /// <p>Determines whether to use the deployment circuit breaker logic for the service.</p>
-    pub fn set_enable(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enable(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable = input;
         self
     }
     /// <p>Determines whether to configure Amazon ECS to roll back the service if a service deployment fails. If rollback is on, when a service deployment fails, the service is rolled back to the last deployment that completed successfully.</p>
     pub fn rollback(mut self, input: bool) -> Self {
-        self.rollback = Some(input);
+        self.rollback = ::std::option::Option::Some(input);
         self
     }
     /// <p>Determines whether to configure Amazon ECS to roll back the service if a service deployment fails. If rollback is on, when a service deployment fails, the service is rolled back to the last deployment that completed successfully.</p>
-    pub fn set_rollback(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_rollback(mut self, input: ::std::option::Option<bool>) -> Self {
         self.rollback = input;
         self
     }

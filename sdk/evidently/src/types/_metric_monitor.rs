@@ -2,15 +2,15 @@
 
 /// <p>A structure that defines a metric to be used to monitor performance of the variations during a launch.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetricMonitor {
     /// <p>A structure that defines the metric.</p>
     #[doc(hidden)]
-    pub metric_definition: std::option::Option<crate::types::MetricDefinition>,
+    pub metric_definition: ::std::option::Option<crate::types::MetricDefinition>,
 }
 impl MetricMonitor {
     /// <p>A structure that defines the metric.</p>
-    pub fn metric_definition(&self) -> std::option::Option<&crate::types::MetricDefinition> {
+    pub fn metric_definition(&self) -> ::std::option::Option<&crate::types::MetricDefinition> {
         self.metric_definition.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl MetricMonitor {
 
 /// A builder for [`MetricMonitor`](crate::types::MetricMonitor).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MetricMonitorBuilder {
-    pub(crate) metric_definition: std::option::Option<crate::types::MetricDefinition>,
+    pub(crate) metric_definition: ::std::option::Option<crate::types::MetricDefinition>,
 }
 impl MetricMonitorBuilder {
     /// <p>A structure that defines the metric.</p>
     pub fn metric_definition(mut self, input: crate::types::MetricDefinition) -> Self {
-        self.metric_definition = Some(input);
+        self.metric_definition = ::std::option::Option::Some(input);
         self
     }
     /// <p>A structure that defines the metric.</p>
     pub fn set_metric_definition(
         mut self,
-        input: std::option::Option<crate::types::MetricDefinition>,
+        input: ::std::option::Option<crate::types::MetricDefinition>,
     ) -> Self {
         self.metric_definition = input;
         self

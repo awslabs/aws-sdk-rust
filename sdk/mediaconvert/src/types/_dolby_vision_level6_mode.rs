@@ -39,13 +39,13 @@
 /// Use Dolby Vision Mode to choose how the service will handle Dolby Vision MaxCLL and MaxFALL properies.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum DolbyVisionLevel6Mode {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum DolbyVisionLevel6Mode {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for DolbyVisionLevel6Mode {
+impl ::std::convert::From<&str> for DolbyVisionLevel6Mode {
     fn from(s: &str) -> Self {
         match s {
             "PASSTHROUGH" => DolbyVisionLevel6Mode::Passthrough,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for DolbyVisionLevel6Mode {
         }
     }
 }
-impl std::str::FromStr for DolbyVisionLevel6Mode {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for DolbyVisionLevel6Mode {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DolbyVisionLevel6Mode::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(DolbyVisionLevel6Mode::from(s))
     }
 }
 impl DolbyVisionLevel6Mode {
@@ -91,7 +91,7 @@ impl DolbyVisionLevel6Mode {
         &["PASSTHROUGH", "RECALCULATE", "SPECIFY"]
     }
 }
-impl AsRef<str> for DolbyVisionLevel6Mode {
+impl ::std::convert::AsRef<str> for DolbyVisionLevel6Mode {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

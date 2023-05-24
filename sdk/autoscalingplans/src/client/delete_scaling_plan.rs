@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteScalingPlan`](crate::operation::delete_scaling_plan::builders::DeleteScalingPlanFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`scaling_plan_name(impl Into<String>)`](crate::operation::delete_scaling_plan::builders::DeleteScalingPlanFluentBuilder::scaling_plan_name) / [`set_scaling_plan_name(Option<String>)`](crate::operation::delete_scaling_plan::builders::DeleteScalingPlanFluentBuilder::set_scaling_plan_name): <p>The name of the scaling plan.</p>
+    ///   - [`scaling_plan_name(impl ::std::convert::Into<String>)`](crate::operation::delete_scaling_plan::builders::DeleteScalingPlanFluentBuilder::scaling_plan_name) / [`set_scaling_plan_name(Option<String>)`](crate::operation::delete_scaling_plan::builders::DeleteScalingPlanFluentBuilder::set_scaling_plan_name): <p>The name of the scaling plan.</p>
     ///   - [`scaling_plan_version(i64)`](crate::operation::delete_scaling_plan::builders::DeleteScalingPlanFluentBuilder::scaling_plan_version) / [`set_scaling_plan_version(Option<i64>)`](crate::operation::delete_scaling_plan::builders::DeleteScalingPlanFluentBuilder::set_scaling_plan_version): <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p>
     /// - On success, responds with [`DeleteScalingPlanOutput`](crate::operation::delete_scaling_plan::DeleteScalingPlanOutput)
     /// - On failure, responds with [`SdkError<DeleteScalingPlanError>`](crate::operation::delete_scaling_plan::DeleteScalingPlanError)

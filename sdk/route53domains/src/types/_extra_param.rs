@@ -2,7 +2,7 @@
 
 /// <p>ExtraParam includes the following elements.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ExtraParam {
     /// <p>The name of an additional parameter that is required by a top-level domain. Here are the top-level domains that require additional parameters and the names of the parameters that they require:</p>
     /// <dl>
@@ -276,10 +276,10 @@ pub struct ExtraParam {
     /// </dl>
     /// <p>In addition, many TLDs require a <code>VAT_NUMBER</code>.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<crate::types::ExtraParamName>,
+    pub name: ::std::option::Option<crate::types::ExtraParamName>,
     /// <p>The value that corresponds with the name of an extra parameter.</p>
     #[doc(hidden)]
-    pub value: std::option::Option<std::string::String>,
+    pub value: ::std::option::Option<::std::string::String>,
 }
 impl ExtraParam {
     /// <p>The name of an additional parameter that is required by a top-level domain. Here are the top-level domains that require additional parameters and the names of the parameters that they require:</p>
@@ -553,16 +553,16 @@ impl ExtraParam {
     /// </dd>
     /// </dl>
     /// <p>In addition, many TLDs require a <code>VAT_NUMBER</code>.</p>
-    pub fn name(&self) -> std::option::Option<&crate::types::ExtraParamName> {
+    pub fn name(&self) -> ::std::option::Option<&crate::types::ExtraParamName> {
         self.name.as_ref()
     }
     /// <p>The value that corresponds with the name of an extra parameter.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
 }
-impl std::fmt::Debug for ExtraParam {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for ExtraParam {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ExtraParam");
         formatter.field("name", &self.name);
         formatter.field("value", &"*** Sensitive Data Redacted ***");
@@ -578,10 +578,10 @@ impl ExtraParam {
 
 /// A builder for [`ExtraParam`](crate::types::ExtraParam).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct ExtraParamBuilder {
-    pub(crate) name: std::option::Option<crate::types::ExtraParamName>,
-    pub(crate) value: std::option::Option<std::string::String>,
+    pub(crate) name: ::std::option::Option<crate::types::ExtraParamName>,
+    pub(crate) value: ::std::option::Option<::std::string::String>,
 }
 impl ExtraParamBuilder {
     /// <p>The name of an additional parameter that is required by a top-level domain. Here are the top-level domains that require additional parameters and the names of the parameters that they require:</p>
@@ -856,7 +856,7 @@ impl ExtraParamBuilder {
     /// </dl>
     /// <p>In addition, many TLDs require a <code>VAT_NUMBER</code>.</p>
     pub fn name(mut self, input: crate::types::ExtraParamName) -> Self {
-        self.name = Some(input);
+        self.name = ::std::option::Option::Some(input);
         self
     }
     /// <p>The name of an additional parameter that is required by a top-level domain. Here are the top-level domains that require additional parameters and the names of the parameters that they require:</p>
@@ -1130,17 +1130,17 @@ impl ExtraParamBuilder {
     /// </dd>
     /// </dl>
     /// <p>In addition, many TLDs require a <code>VAT_NUMBER</code>.</p>
-    pub fn set_name(mut self, input: std::option::Option<crate::types::ExtraParamName>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::ExtraParamName>) -> Self {
         self.name = input;
         self
     }
     /// <p>The value that corresponds with the name of an extra parameter.</p>
-    pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.value = Some(input.into());
+    pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value that corresponds with the name of an extra parameter.</p>
-    pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
     }
@@ -1152,8 +1152,8 @@ impl ExtraParamBuilder {
         }
     }
 }
-impl std::fmt::Debug for ExtraParamBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for ExtraParamBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ExtraParamBuilder");
         formatter.field("name", &self.name);
         formatter.field("value", &"*** Sensitive Data Redacted ***");

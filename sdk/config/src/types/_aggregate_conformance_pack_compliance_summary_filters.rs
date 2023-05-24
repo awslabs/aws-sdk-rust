@@ -2,22 +2,22 @@
 
 /// <p>Filters the results based on account ID and region. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AggregateConformancePackComplianceSummaryFilters {
     /// <p>The 12-digit Amazon Web Services account ID of the source account.</p>
     #[doc(hidden)]
-    pub account_id: std::option::Option<std::string::String>,
+    pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The source Amazon Web Services Region from where the data is aggregated.</p>
     #[doc(hidden)]
-    pub aws_region: std::option::Option<std::string::String>,
+    pub aws_region: ::std::option::Option<::std::string::String>,
 }
 impl AggregateConformancePackComplianceSummaryFilters {
     /// <p>The 12-digit Amazon Web Services account ID of the source account.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The source Amazon Web Services Region from where the data is aggregated.</p>
-    pub fn aws_region(&self) -> std::option::Option<&str> {
+    pub fn aws_region(&self) -> ::std::option::Option<&str> {
         self.aws_region.as_deref()
     }
 }
@@ -31,29 +31,31 @@ impl AggregateConformancePackComplianceSummaryFilters {
 
 /// A builder for [`AggregateConformancePackComplianceSummaryFilters`](crate::types::AggregateConformancePackComplianceSummaryFilters).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AggregateConformancePackComplianceSummaryFiltersBuilder {
-    pub(crate) account_id: std::option::Option<std::string::String>,
-    pub(crate) aws_region: std::option::Option<std::string::String>,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) aws_region: ::std::option::Option<::std::string::String>,
 }
 impl AggregateConformancePackComplianceSummaryFiltersBuilder {
     /// <p>The 12-digit Amazon Web Services account ID of the source account.</p>
-    pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.account_id = Some(input.into());
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The 12-digit Amazon Web Services account ID of the source account.</p>
-    pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
     }
     /// <p>The source Amazon Web Services Region from where the data is aggregated.</p>
-    pub fn aws_region(mut self, input: impl Into<std::string::String>) -> Self {
-        self.aws_region = Some(input.into());
+    pub fn aws_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.aws_region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The source Amazon Web Services Region from where the data is aggregated.</p>
-    pub fn set_aws_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_aws_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_region = input;
         self
     }

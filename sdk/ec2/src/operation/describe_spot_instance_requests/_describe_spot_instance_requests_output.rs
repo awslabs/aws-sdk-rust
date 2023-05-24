@@ -2,30 +2,30 @@
 
 /// <p>Contains the output of DescribeSpotInstanceRequests.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSpotInstanceRequestsOutput {
     /// <p>The Spot Instance requests.</p>
     #[doc(hidden)]
     pub spot_instance_requests:
-        std::option::Option<std::vec::Vec<crate::types::SpotInstanceRequest>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::SpotInstanceRequest>>,
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeSpotInstanceRequestsOutput {
     /// <p>The Spot Instance requests.</p>
     pub fn spot_instance_requests(
         &self,
-    ) -> std::option::Option<&[crate::types::SpotInstanceRequest]> {
+    ) -> ::std::option::Option<&[crate::types::SpotInstanceRequest]> {
         self.spot_instance_requests.as_deref()
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeSpotInstanceRequestsOutput {
+impl ::aws_http::request_id::RequestId for DescribeSpotInstanceRequestsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -39,11 +39,13 @@ impl DescribeSpotInstanceRequestsOutput {
 
 /// A builder for [`DescribeSpotInstanceRequestsOutput`](crate::operation::describe_spot_instance_requests::DescribeSpotInstanceRequestsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeSpotInstanceRequestsOutputBuilder {
     pub(crate) spot_instance_requests:
-        std::option::Option<std::vec::Vec<crate::types::SpotInstanceRequest>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::SpotInstanceRequest>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeSpotInstanceRequestsOutputBuilder {
@@ -55,24 +57,24 @@ impl DescribeSpotInstanceRequestsOutputBuilder {
     pub fn spot_instance_requests(mut self, input: crate::types::SpotInstanceRequest) -> Self {
         let mut v = self.spot_instance_requests.unwrap_or_default();
         v.push(input);
-        self.spot_instance_requests = Some(v);
+        self.spot_instance_requests = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Spot Instance requests.</p>
     pub fn set_spot_instance_requests(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SpotInstanceRequest>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SpotInstanceRequest>>,
     ) -> Self {
         self.spot_instance_requests = input;
         self
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

@@ -39,13 +39,13 @@
 /// codec in increasing order of complexity
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum InputCodec {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum InputCodec {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for InputCodec {
+impl ::std::convert::From<&str> for InputCodec {
     fn from(s: &str) -> Self {
         match s {
             "AVC" => InputCodec::Avc,
@@ -67,11 +67,11 @@ impl std::convert::From<&str> for InputCodec {
         }
     }
 }
-impl std::str::FromStr for InputCodec {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for InputCodec {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(InputCodec::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(InputCodec::from(s))
     }
 }
 impl InputCodec {
@@ -89,7 +89,7 @@ impl InputCodec {
         &["AVC", "HEVC", "MPEG2"]
     }
 }
-impl AsRef<str> for InputCodec {
+impl ::std::convert::AsRef<str> for InputCodec {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

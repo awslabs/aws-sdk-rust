@@ -2,20 +2,20 @@
 
 /// <p>Represents a predictive scaling policy configuration to use with Amazon EC2 Auto Scaling.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PredictiveScalingConfiguration {
     /// <p>This structure includes the metrics and target utilization to use for predictive scaling. </p>
     /// <p>This is an array, but we currently only support a single metric specification. That is, you can specify a target value and a single metric pair, or a target value and one scaling metric and one load metric.</p>
     #[doc(hidden)]
     pub metric_specifications:
-        std::option::Option<std::vec::Vec<crate::types::PredictiveScalingMetricSpecification>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::PredictiveScalingMetricSpecification>>,
     /// <p>The predictive scaling mode. Defaults to <code>ForecastOnly</code> if not specified.</p>
     #[doc(hidden)]
-    pub mode: std::option::Option<crate::types::PredictiveScalingMode>,
+    pub mode: ::std::option::Option<crate::types::PredictiveScalingMode>,
     /// <p>The amount of time, in seconds, by which the instance launch time can be advanced. For example, the forecast says to add capacity at 10:00 AM, and you choose to pre-launch instances by 5 minutes. In that case, the instances will be launched at 9:55 AM. The intention is to give resources time to be provisioned. It can take a few minutes to launch an EC2 instance. The actual amount of time required depends on several factors, such as the size of the instance and whether there are startup scripts to complete. </p>
     /// <p>The value must be less than the forecast interval duration of 3600 seconds (60 minutes). Defaults to 300 seconds if not specified. </p>
     #[doc(hidden)]
-    pub scheduling_buffer_time: std::option::Option<i32>,
+    pub scheduling_buffer_time: ::std::option::Option<i32>,
     /// <p>Defines the behavior that should be applied if the forecast capacity approaches or exceeds the maximum capacity of the Auto Scaling group. Defaults to <code>HonorMaxCapacity</code> if not specified.</p>
     /// <p>The following are possible values:</p>
     /// <ul>
@@ -24,28 +24,28 @@ pub struct PredictiveScalingConfiguration {
     /// </ul>
     #[doc(hidden)]
     pub max_capacity_breach_behavior:
-        std::option::Option<crate::types::PredictiveScalingMaxCapacityBreachBehavior>,
+        ::std::option::Option<crate::types::PredictiveScalingMaxCapacityBreachBehavior>,
     /// <p>The size of the capacity buffer to use when the forecast capacity is close to or exceeds the maximum capacity. The value is specified as a percentage relative to the forecast capacity. For example, if the buffer is 10, this means a 10 percent buffer, such that if the forecast capacity is 50, and the maximum capacity is 40, then the effective maximum capacity is 55.</p>
     /// <p>If set to 0, Amazon EC2 Auto Scaling may scale capacity higher than the maximum capacity to equal but not exceed forecast capacity. </p>
     /// <p>Required if the <code>MaxCapacityBreachBehavior</code> property is set to <code>IncreaseMaxCapacity</code>, and cannot be used otherwise.</p>
     #[doc(hidden)]
-    pub max_capacity_buffer: std::option::Option<i32>,
+    pub max_capacity_buffer: ::std::option::Option<i32>,
 }
 impl PredictiveScalingConfiguration {
     /// <p>This structure includes the metrics and target utilization to use for predictive scaling. </p>
     /// <p>This is an array, but we currently only support a single metric specification. That is, you can specify a target value and a single metric pair, or a target value and one scaling metric and one load metric.</p>
     pub fn metric_specifications(
         &self,
-    ) -> std::option::Option<&[crate::types::PredictiveScalingMetricSpecification]> {
+    ) -> ::std::option::Option<&[crate::types::PredictiveScalingMetricSpecification]> {
         self.metric_specifications.as_deref()
     }
     /// <p>The predictive scaling mode. Defaults to <code>ForecastOnly</code> if not specified.</p>
-    pub fn mode(&self) -> std::option::Option<&crate::types::PredictiveScalingMode> {
+    pub fn mode(&self) -> ::std::option::Option<&crate::types::PredictiveScalingMode> {
         self.mode.as_ref()
     }
     /// <p>The amount of time, in seconds, by which the instance launch time can be advanced. For example, the forecast says to add capacity at 10:00 AM, and you choose to pre-launch instances by 5 minutes. In that case, the instances will be launched at 9:55 AM. The intention is to give resources time to be provisioned. It can take a few minutes to launch an EC2 instance. The actual amount of time required depends on several factors, such as the size of the instance and whether there are startup scripts to complete. </p>
     /// <p>The value must be less than the forecast interval duration of 3600 seconds (60 minutes). Defaults to 300 seconds if not specified. </p>
-    pub fn scheduling_buffer_time(&self) -> std::option::Option<i32> {
+    pub fn scheduling_buffer_time(&self) -> ::std::option::Option<i32> {
         self.scheduling_buffer_time
     }
     /// <p>Defines the behavior that should be applied if the forecast capacity approaches or exceeds the maximum capacity of the Auto Scaling group. Defaults to <code>HonorMaxCapacity</code> if not specified.</p>
@@ -56,13 +56,13 @@ impl PredictiveScalingConfiguration {
     /// </ul>
     pub fn max_capacity_breach_behavior(
         &self,
-    ) -> std::option::Option<&crate::types::PredictiveScalingMaxCapacityBreachBehavior> {
+    ) -> ::std::option::Option<&crate::types::PredictiveScalingMaxCapacityBreachBehavior> {
         self.max_capacity_breach_behavior.as_ref()
     }
     /// <p>The size of the capacity buffer to use when the forecast capacity is close to or exceeds the maximum capacity. The value is specified as a percentage relative to the forecast capacity. For example, if the buffer is 10, this means a 10 percent buffer, such that if the forecast capacity is 50, and the maximum capacity is 40, then the effective maximum capacity is 55.</p>
     /// <p>If set to 0, Amazon EC2 Auto Scaling may scale capacity higher than the maximum capacity to equal but not exceed forecast capacity. </p>
     /// <p>Required if the <code>MaxCapacityBreachBehavior</code> property is set to <code>IncreaseMaxCapacity</code>, and cannot be used otherwise.</p>
-    pub fn max_capacity_buffer(&self) -> std::option::Option<i32> {
+    pub fn max_capacity_buffer(&self) -> ::std::option::Option<i32> {
         self.max_capacity_buffer
     }
 }
@@ -75,15 +75,17 @@ impl PredictiveScalingConfiguration {
 
 /// A builder for [`PredictiveScalingConfiguration`](crate::types::PredictiveScalingConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PredictiveScalingConfigurationBuilder {
     pub(crate) metric_specifications:
-        std::option::Option<std::vec::Vec<crate::types::PredictiveScalingMetricSpecification>>,
-    pub(crate) mode: std::option::Option<crate::types::PredictiveScalingMode>,
-    pub(crate) scheduling_buffer_time: std::option::Option<i32>,
+        ::std::option::Option<::std::vec::Vec<crate::types::PredictiveScalingMetricSpecification>>,
+    pub(crate) mode: ::std::option::Option<crate::types::PredictiveScalingMode>,
+    pub(crate) scheduling_buffer_time: ::std::option::Option<i32>,
     pub(crate) max_capacity_breach_behavior:
-        std::option::Option<crate::types::PredictiveScalingMaxCapacityBreachBehavior>,
-    pub(crate) max_capacity_buffer: std::option::Option<i32>,
+        ::std::option::Option<crate::types::PredictiveScalingMaxCapacityBreachBehavior>,
+    pub(crate) max_capacity_buffer: ::std::option::Option<i32>,
 }
 impl PredictiveScalingConfigurationBuilder {
     /// Appends an item to `metric_specifications`.
@@ -98,15 +100,15 @@ impl PredictiveScalingConfigurationBuilder {
     ) -> Self {
         let mut v = self.metric_specifications.unwrap_or_default();
         v.push(input);
-        self.metric_specifications = Some(v);
+        self.metric_specifications = ::std::option::Option::Some(v);
         self
     }
     /// <p>This structure includes the metrics and target utilization to use for predictive scaling. </p>
     /// <p>This is an array, but we currently only support a single metric specification. That is, you can specify a target value and a single metric pair, or a target value and one scaling metric and one load metric.</p>
     pub fn set_metric_specifications(
         mut self,
-        input: std::option::Option<
-            std::vec::Vec<crate::types::PredictiveScalingMetricSpecification>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::PredictiveScalingMetricSpecification>,
         >,
     ) -> Self {
         self.metric_specifications = input;
@@ -114,13 +116,13 @@ impl PredictiveScalingConfigurationBuilder {
     }
     /// <p>The predictive scaling mode. Defaults to <code>ForecastOnly</code> if not specified.</p>
     pub fn mode(mut self, input: crate::types::PredictiveScalingMode) -> Self {
-        self.mode = Some(input);
+        self.mode = ::std::option::Option::Some(input);
         self
     }
     /// <p>The predictive scaling mode. Defaults to <code>ForecastOnly</code> if not specified.</p>
     pub fn set_mode(
         mut self,
-        input: std::option::Option<crate::types::PredictiveScalingMode>,
+        input: ::std::option::Option<crate::types::PredictiveScalingMode>,
     ) -> Self {
         self.mode = input;
         self
@@ -128,12 +130,12 @@ impl PredictiveScalingConfigurationBuilder {
     /// <p>The amount of time, in seconds, by which the instance launch time can be advanced. For example, the forecast says to add capacity at 10:00 AM, and you choose to pre-launch instances by 5 minutes. In that case, the instances will be launched at 9:55 AM. The intention is to give resources time to be provisioned. It can take a few minutes to launch an EC2 instance. The actual amount of time required depends on several factors, such as the size of the instance and whether there are startup scripts to complete. </p>
     /// <p>The value must be less than the forecast interval duration of 3600 seconds (60 minutes). Defaults to 300 seconds if not specified. </p>
     pub fn scheduling_buffer_time(mut self, input: i32) -> Self {
-        self.scheduling_buffer_time = Some(input);
+        self.scheduling_buffer_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The amount of time, in seconds, by which the instance launch time can be advanced. For example, the forecast says to add capacity at 10:00 AM, and you choose to pre-launch instances by 5 minutes. In that case, the instances will be launched at 9:55 AM. The intention is to give resources time to be provisioned. It can take a few minutes to launch an EC2 instance. The actual amount of time required depends on several factors, such as the size of the instance and whether there are startup scripts to complete. </p>
     /// <p>The value must be less than the forecast interval duration of 3600 seconds (60 minutes). Defaults to 300 seconds if not specified. </p>
-    pub fn set_scheduling_buffer_time(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_scheduling_buffer_time(mut self, input: ::std::option::Option<i32>) -> Self {
         self.scheduling_buffer_time = input;
         self
     }
@@ -147,7 +149,7 @@ impl PredictiveScalingConfigurationBuilder {
         mut self,
         input: crate::types::PredictiveScalingMaxCapacityBreachBehavior,
     ) -> Self {
-        self.max_capacity_breach_behavior = Some(input);
+        self.max_capacity_breach_behavior = ::std::option::Option::Some(input);
         self
     }
     /// <p>Defines the behavior that should be applied if the forecast capacity approaches or exceeds the maximum capacity of the Auto Scaling group. Defaults to <code>HonorMaxCapacity</code> if not specified.</p>
@@ -158,7 +160,7 @@ impl PredictiveScalingConfigurationBuilder {
     /// </ul>
     pub fn set_max_capacity_breach_behavior(
         mut self,
-        input: std::option::Option<crate::types::PredictiveScalingMaxCapacityBreachBehavior>,
+        input: ::std::option::Option<crate::types::PredictiveScalingMaxCapacityBreachBehavior>,
     ) -> Self {
         self.max_capacity_breach_behavior = input;
         self
@@ -167,13 +169,13 @@ impl PredictiveScalingConfigurationBuilder {
     /// <p>If set to 0, Amazon EC2 Auto Scaling may scale capacity higher than the maximum capacity to equal but not exceed forecast capacity. </p>
     /// <p>Required if the <code>MaxCapacityBreachBehavior</code> property is set to <code>IncreaseMaxCapacity</code>, and cannot be used otherwise.</p>
     pub fn max_capacity_buffer(mut self, input: i32) -> Self {
-        self.max_capacity_buffer = Some(input);
+        self.max_capacity_buffer = ::std::option::Option::Some(input);
         self
     }
     /// <p>The size of the capacity buffer to use when the forecast capacity is close to or exceeds the maximum capacity. The value is specified as a percentage relative to the forecast capacity. For example, if the buffer is 10, this means a 10 percent buffer, such that if the forecast capacity is 50, and the maximum capacity is 40, then the effective maximum capacity is 55.</p>
     /// <p>If set to 0, Amazon EC2 Auto Scaling may scale capacity higher than the maximum capacity to equal but not exceed forecast capacity. </p>
     /// <p>Required if the <code>MaxCapacityBreachBehavior</code> property is set to <code>IncreaseMaxCapacity</code>, and cannot be used otherwise.</p>
-    pub fn set_max_capacity_buffer(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_capacity_buffer(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_capacity_buffer = input;
         self
     }

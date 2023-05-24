@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`IsMemberInGroups`](crate::operation::is_member_in_groups::builders::IsMemberInGroupsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`identity_store_id(impl Into<String>)`](crate::operation::is_member_in_groups::builders::IsMemberInGroupsFluentBuilder::identity_store_id) / [`set_identity_store_id(Option<String>)`](crate::operation::is_member_in_groups::builders::IsMemberInGroupsFluentBuilder::set_identity_store_id): <p>The globally unique identifier for the identity store.</p>
+    ///   - [`identity_store_id(impl ::std::convert::Into<String>)`](crate::operation::is_member_in_groups::builders::IsMemberInGroupsFluentBuilder::identity_store_id) / [`set_identity_store_id(Option<String>)`](crate::operation::is_member_in_groups::builders::IsMemberInGroupsFluentBuilder::set_identity_store_id): <p>The globally unique identifier for the identity store.</p>
     ///   - [`member_id(MemberId)`](crate::operation::is_member_in_groups::builders::IsMemberInGroupsFluentBuilder::member_id) / [`set_member_id(Option<MemberId>)`](crate::operation::is_member_in_groups::builders::IsMemberInGroupsFluentBuilder::set_member_id): <p>An object containing the identifier of a group member.</p>
     ///   - [`group_ids(Vec<String>)`](crate::operation::is_member_in_groups::builders::IsMemberInGroupsFluentBuilder::group_ids) / [`set_group_ids(Option<Vec<String>>)`](crate::operation::is_member_in_groups::builders::IsMemberInGroupsFluentBuilder::set_group_ids): <p>A list of identifiers for groups in the identity store.</p>
     /// - On success, responds with [`IsMemberInGroupsOutput`](crate::operation::is_member_in_groups::IsMemberInGroupsOutput) with field(s):

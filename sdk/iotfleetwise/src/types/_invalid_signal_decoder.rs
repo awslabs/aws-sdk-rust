@@ -2,22 +2,22 @@
 
 /// <p>A reason that a signal decoder isn't valid.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InvalidSignalDecoder {
     /// <p>The name of a signal decoder that isn't valid.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>A message about why the signal decoder isn't valid.</p>
     #[doc(hidden)]
-    pub reason: std::option::Option<crate::types::SignalDecoderFailureReason>,
+    pub reason: ::std::option::Option<crate::types::SignalDecoderFailureReason>,
 }
 impl InvalidSignalDecoder {
     /// <p>The name of a signal decoder that isn't valid.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>A message about why the signal decoder isn't valid.</p>
-    pub fn reason(&self) -> std::option::Option<&crate::types::SignalDecoderFailureReason> {
+    pub fn reason(&self) -> ::std::option::Option<&crate::types::SignalDecoderFailureReason> {
         self.reason.as_ref()
     }
 }
@@ -30,31 +30,33 @@ impl InvalidSignalDecoder {
 
 /// A builder for [`InvalidSignalDecoder`](crate::types::InvalidSignalDecoder).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InvalidSignalDecoderBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) reason: std::option::Option<crate::types::SignalDecoderFailureReason>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) reason: ::std::option::Option<crate::types::SignalDecoderFailureReason>,
 }
 impl InvalidSignalDecoderBuilder {
     /// <p>The name of a signal decoder that isn't valid.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a signal decoder that isn't valid.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>A message about why the signal decoder isn't valid.</p>
     pub fn reason(mut self, input: crate::types::SignalDecoderFailureReason) -> Self {
-        self.reason = Some(input);
+        self.reason = ::std::option::Option::Some(input);
         self
     }
     /// <p>A message about why the signal decoder isn't valid.</p>
     pub fn set_reason(
         mut self,
-        input: std::option::Option<crate::types::SignalDecoderFailureReason>,
+        input: ::std::option::Option<crate::types::SignalDecoderFailureReason>,
     ) -> Self {
         self.reason = input;
         self

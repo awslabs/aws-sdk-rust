@@ -2,20 +2,20 @@
 
 /// <p>Contains the response to a successful <code>GetRole</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRoleOutput {
     /// <p>A structure containing details about the IAM role.</p>
     #[doc(hidden)]
-    pub role: std::option::Option<crate::types::Role>,
+    pub role: ::std::option::Option<crate::types::Role>,
     _request_id: Option<String>,
 }
 impl GetRoleOutput {
     /// <p>A structure containing details about the IAM role.</p>
-    pub fn role(&self) -> std::option::Option<&crate::types::Role> {
+    pub fn role(&self) -> ::std::option::Option<&crate::types::Role> {
         self.role.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for GetRoleOutput {
+impl ::aws_http::request_id::RequestId for GetRoleOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,21 @@ impl GetRoleOutput {
 
 /// A builder for [`GetRoleOutput`](crate::operation::get_role::GetRoleOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetRoleOutputBuilder {
-    pub(crate) role: std::option::Option<crate::types::Role>,
+    pub(crate) role: ::std::option::Option<crate::types::Role>,
     _request_id: Option<String>,
 }
 impl GetRoleOutputBuilder {
     /// <p>A structure containing details about the IAM role.</p>
     pub fn role(mut self, input: crate::types::Role) -> Self {
-        self.role = Some(input);
+        self.role = ::std::option::Option::Some(input);
         self
     }
     /// <p>A structure containing details about the IAM role.</p>
-    pub fn set_role(mut self, input: std::option::Option<crate::types::Role>) -> Self {
+    pub fn set_role(mut self, input: ::std::option::Option<crate::types::Role>) -> Self {
         self.role = input;
         self
     }

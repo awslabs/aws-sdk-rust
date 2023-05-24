@@ -4,28 +4,29 @@
 /// <p>If you configure WAF to inspect the request body, WAF inspects only the number of bytes of the body up to the limit for the web ACL. By default, for regional web ACLs, this limit is 8 KB (8,192 kilobytes) and for CloudFront web ACLs, this limit is 16 KB (16,384 kilobytes). For CloudFront web ACLs, you can increase the limit in the web ACL <code>AssociationConfig</code>, for additional fees. If you know that the request body for your web requests should never exceed the inspection limit, you could use a size constraint statement to block requests that have a larger request body size.</p>
 /// <p>If you choose URI for the value of Part of the request to filter on, the slash (/) in the URI counts as one character. For example, the URI <code>/logo.jpg</code> is nine characters long.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SizeConstraintStatement {
     /// <p>The part of the web request that you want WAF to inspect. </p>
     #[doc(hidden)]
-    pub field_to_match: std::option::Option<crate::types::FieldToMatch>,
+    pub field_to_match: ::std::option::Option<crate::types::FieldToMatch>,
     /// <p>The operator to use to compare the request part to the size setting. </p>
     #[doc(hidden)]
-    pub comparison_operator: std::option::Option<crate::types::ComparisonOperator>,
+    pub comparison_operator: ::std::option::Option<crate::types::ComparisonOperator>,
     /// <p>The size, in byte, to compare to the request part, after any transformations.</p>
     #[doc(hidden)]
     pub size: i64,
     /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. Text transformations are used in rule match statements, to transform the <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule statements, to transform request components before using them as custom aggregation keys. If you specify one or more transformations to apply, WAF performs all transformations on the specified content, starting from the lowest priority setting, and then uses the component contents. </p>
     #[doc(hidden)]
-    pub text_transformations: std::option::Option<std::vec::Vec<crate::types::TextTransformation>>,
+    pub text_transformations:
+        ::std::option::Option<::std::vec::Vec<crate::types::TextTransformation>>,
 }
 impl SizeConstraintStatement {
     /// <p>The part of the web request that you want WAF to inspect. </p>
-    pub fn field_to_match(&self) -> std::option::Option<&crate::types::FieldToMatch> {
+    pub fn field_to_match(&self) -> ::std::option::Option<&crate::types::FieldToMatch> {
         self.field_to_match.as_ref()
     }
     /// <p>The operator to use to compare the request part to the size setting. </p>
-    pub fn comparison_operator(&self) -> std::option::Option<&crate::types::ComparisonOperator> {
+    pub fn comparison_operator(&self) -> ::std::option::Option<&crate::types::ComparisonOperator> {
         self.comparison_operator.as_ref()
     }
     /// <p>The size, in byte, to compare to the request part, after any transformations.</p>
@@ -33,7 +34,9 @@ impl SizeConstraintStatement {
         self.size
     }
     /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. Text transformations are used in rule match statements, to transform the <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule statements, to transform request components before using them as custom aggregation keys. If you specify one or more transformations to apply, WAF performs all transformations on the specified content, starting from the lowest priority setting, and then uses the component contents. </p>
-    pub fn text_transformations(&self) -> std::option::Option<&[crate::types::TextTransformation]> {
+    pub fn text_transformations(
+        &self,
+    ) -> ::std::option::Option<&[crate::types::TextTransformation]> {
         self.text_transformations.as_deref()
     }
 }
@@ -46,48 +49,50 @@ impl SizeConstraintStatement {
 
 /// A builder for [`SizeConstraintStatement`](crate::types::SizeConstraintStatement).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SizeConstraintStatementBuilder {
-    pub(crate) field_to_match: std::option::Option<crate::types::FieldToMatch>,
-    pub(crate) comparison_operator: std::option::Option<crate::types::ComparisonOperator>,
-    pub(crate) size: std::option::Option<i64>,
+    pub(crate) field_to_match: ::std::option::Option<crate::types::FieldToMatch>,
+    pub(crate) comparison_operator: ::std::option::Option<crate::types::ComparisonOperator>,
+    pub(crate) size: ::std::option::Option<i64>,
     pub(crate) text_transformations:
-        std::option::Option<std::vec::Vec<crate::types::TextTransformation>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::TextTransformation>>,
 }
 impl SizeConstraintStatementBuilder {
     /// <p>The part of the web request that you want WAF to inspect. </p>
     pub fn field_to_match(mut self, input: crate::types::FieldToMatch) -> Self {
-        self.field_to_match = Some(input);
+        self.field_to_match = ::std::option::Option::Some(input);
         self
     }
     /// <p>The part of the web request that you want WAF to inspect. </p>
     pub fn set_field_to_match(
         mut self,
-        input: std::option::Option<crate::types::FieldToMatch>,
+        input: ::std::option::Option<crate::types::FieldToMatch>,
     ) -> Self {
         self.field_to_match = input;
         self
     }
     /// <p>The operator to use to compare the request part to the size setting. </p>
     pub fn comparison_operator(mut self, input: crate::types::ComparisonOperator) -> Self {
-        self.comparison_operator = Some(input);
+        self.comparison_operator = ::std::option::Option::Some(input);
         self
     }
     /// <p>The operator to use to compare the request part to the size setting. </p>
     pub fn set_comparison_operator(
         mut self,
-        input: std::option::Option<crate::types::ComparisonOperator>,
+        input: ::std::option::Option<crate::types::ComparisonOperator>,
     ) -> Self {
         self.comparison_operator = input;
         self
     }
     /// <p>The size, in byte, to compare to the request part, after any transformations.</p>
     pub fn size(mut self, input: i64) -> Self {
-        self.size = Some(input);
+        self.size = ::std::option::Option::Some(input);
         self
     }
     /// <p>The size, in byte, to compare to the request part, after any transformations.</p>
-    pub fn set_size(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_size(mut self, input: ::std::option::Option<i64>) -> Self {
         self.size = input;
         self
     }
@@ -99,13 +104,13 @@ impl SizeConstraintStatementBuilder {
     pub fn text_transformations(mut self, input: crate::types::TextTransformation) -> Self {
         let mut v = self.text_transformations.unwrap_or_default();
         v.push(input);
-        self.text_transformations = Some(v);
+        self.text_transformations = ::std::option::Option::Some(v);
         self
     }
     /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. Text transformations are used in rule match statements, to transform the <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule statements, to transform request components before using them as custom aggregation keys. If you specify one or more transformations to apply, WAF performs all transformations on the specified content, starting from the lowest priority setting, and then uses the component contents. </p>
     pub fn set_text_transformations(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TextTransformation>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::TextTransformation>>,
     ) -> Self {
         self.text_transformations = input;
         self

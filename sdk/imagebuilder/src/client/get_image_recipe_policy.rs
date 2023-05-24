@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetImageRecipePolicy`](crate::operation::get_image_recipe_policy::builders::GetImageRecipePolicyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`image_recipe_arn(impl Into<String>)`](crate::operation::get_image_recipe_policy::builders::GetImageRecipePolicyFluentBuilder::image_recipe_arn) / [`set_image_recipe_arn(Option<String>)`](crate::operation::get_image_recipe_policy::builders::GetImageRecipePolicyFluentBuilder::set_image_recipe_arn): <p>The Amazon Resource Name (ARN) of the image recipe whose policy you want to retrieve.</p>
+    ///   - [`image_recipe_arn(impl ::std::convert::Into<String>)`](crate::operation::get_image_recipe_policy::builders::GetImageRecipePolicyFluentBuilder::image_recipe_arn) / [`set_image_recipe_arn(Option<String>)`](crate::operation::get_image_recipe_policy::builders::GetImageRecipePolicyFluentBuilder::set_image_recipe_arn): <p>The Amazon Resource Name (ARN) of the image recipe whose policy you want to retrieve.</p>
     /// - On success, responds with [`GetImageRecipePolicyOutput`](crate::operation::get_image_recipe_policy::GetImageRecipePolicyOutput) with field(s):
     ///   - [`request_id(Option<String>)`](crate::operation::get_image_recipe_policy::GetImageRecipePolicyOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
     ///   - [`policy(Option<String>)`](crate::operation::get_image_recipe_policy::GetImageRecipePolicyOutput::policy): <p>The image recipe policy object.</p>

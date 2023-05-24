@@ -2,17 +2,17 @@
 
 /// The response from a describe changeset operation
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetChangesetOutput {
     /// <p>The unique identifier for a Changeset.</p>
     #[doc(hidden)]
-    pub changeset_id: std::option::Option<std::string::String>,
+    pub changeset_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN identifier of the Changeset.</p>
     #[doc(hidden)]
-    pub changeset_arn: std::option::Option<std::string::String>,
+    pub changeset_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the FinSpace Dataset where the Changeset is created.</p>
     #[doc(hidden)]
-    pub dataset_id: std::option::Option<std::string::String>,
+    pub dataset_id: ::std::option::Option<::std::string::String>,
     /// <p>Type that indicates how a Changeset is applied to a Dataset.</p>
     /// <ul>
     /// <li> <p> <code>REPLACE</code> – Changeset is considered as a replacement to all prior loaded Changesets.</p> </li>
@@ -20,49 +20,51 @@ pub struct GetChangesetOutput {
     /// <li> <p> <code>MODIFY</code> – Changeset is considered as a replacement to a specific prior ingested Changeset.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub change_type: std::option::Option<crate::types::ChangeType>,
+    pub change_type: ::std::option::Option<crate::types::ChangeType>,
     /// <p>Options that define the location of the data being ingested.</p>
     #[doc(hidden)]
-    pub source_params:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub source_params: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>Structure of the source file(s).</p>
     #[doc(hidden)]
-    pub format_params:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub format_params: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>The timestamp at which the Changeset was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     #[doc(hidden)]
     pub create_time: i64,
     /// <p>The status of Changeset creation operation.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::IngestionStatus>,
+    pub status: ::std::option::Option<crate::types::IngestionStatus>,
     /// <p>The structure with error messages.</p>
     #[doc(hidden)]
-    pub error_info: std::option::Option<crate::types::ChangesetErrorInfo>,
+    pub error_info: ::std::option::Option<crate::types::ChangesetErrorInfo>,
     /// <p>Time until which the Changeset is active. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     #[doc(hidden)]
-    pub active_until_timestamp: std::option::Option<i64>,
+    pub active_until_timestamp: ::std::option::Option<i64>,
     /// <p>Beginning time from which the Changeset is active. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     #[doc(hidden)]
-    pub active_from_timestamp: std::option::Option<i64>,
+    pub active_from_timestamp: ::std::option::Option<i64>,
     /// <p>The unique identifier of the Changeset that is being updated.</p>
     #[doc(hidden)]
-    pub updates_changeset_id: std::option::Option<std::string::String>,
+    pub updates_changeset_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the updated Changeset.</p>
     #[doc(hidden)]
-    pub updated_by_changeset_id: std::option::Option<std::string::String>,
+    pub updated_by_changeset_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetChangesetOutput {
     /// <p>The unique identifier for a Changeset.</p>
-    pub fn changeset_id(&self) -> std::option::Option<&str> {
+    pub fn changeset_id(&self) -> ::std::option::Option<&str> {
         self.changeset_id.as_deref()
     }
     /// <p>The ARN identifier of the Changeset.</p>
-    pub fn changeset_arn(&self) -> std::option::Option<&str> {
+    pub fn changeset_arn(&self) -> ::std::option::Option<&str> {
         self.changeset_arn.as_deref()
     }
     /// <p>The unique identifier for the FinSpace Dataset where the Changeset is created.</p>
-    pub fn dataset_id(&self) -> std::option::Option<&str> {
+    pub fn dataset_id(&self) -> ::std::option::Option<&str> {
         self.dataset_id.as_deref()
     }
     /// <p>Type that indicates how a Changeset is applied to a Dataset.</p>
@@ -71,21 +73,23 @@ impl GetChangesetOutput {
     /// <li> <p> <code>APPEND</code> – Changeset is considered as an addition to the end of all prior loaded Changesets.</p> </li>
     /// <li> <p> <code>MODIFY</code> – Changeset is considered as a replacement to a specific prior ingested Changeset.</p> </li>
     /// </ul>
-    pub fn change_type(&self) -> std::option::Option<&crate::types::ChangeType> {
+    pub fn change_type(&self) -> ::std::option::Option<&crate::types::ChangeType> {
         self.change_type.as_ref()
     }
     /// <p>Options that define the location of the data being ingested.</p>
     pub fn source_params(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.source_params.as_ref()
     }
     /// <p>Structure of the source file(s).</p>
     pub fn format_params(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.format_params.as_ref()
     }
     /// <p>The timestamp at which the Changeset was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
@@ -93,31 +97,31 @@ impl GetChangesetOutput {
         self.create_time
     }
     /// <p>The status of Changeset creation operation.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::IngestionStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::IngestionStatus> {
         self.status.as_ref()
     }
     /// <p>The structure with error messages.</p>
-    pub fn error_info(&self) -> std::option::Option<&crate::types::ChangesetErrorInfo> {
+    pub fn error_info(&self) -> ::std::option::Option<&crate::types::ChangesetErrorInfo> {
         self.error_info.as_ref()
     }
     /// <p>Time until which the Changeset is active. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
-    pub fn active_until_timestamp(&self) -> std::option::Option<i64> {
+    pub fn active_until_timestamp(&self) -> ::std::option::Option<i64> {
         self.active_until_timestamp
     }
     /// <p>Beginning time from which the Changeset is active. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
-    pub fn active_from_timestamp(&self) -> std::option::Option<i64> {
+    pub fn active_from_timestamp(&self) -> ::std::option::Option<i64> {
         self.active_from_timestamp
     }
     /// <p>The unique identifier of the Changeset that is being updated.</p>
-    pub fn updates_changeset_id(&self) -> std::option::Option<&str> {
+    pub fn updates_changeset_id(&self) -> ::std::option::Option<&str> {
         self.updates_changeset_id.as_deref()
     }
     /// <p>The unique identifier of the updated Changeset.</p>
-    pub fn updated_by_changeset_id(&self) -> std::option::Option<&str> {
+    pub fn updated_by_changeset_id(&self) -> ::std::option::Option<&str> {
         self.updated_by_changeset_id.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for GetChangesetOutput {
+impl ::aws_http::request_id::RequestId for GetChangesetOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -131,53 +135,63 @@ impl GetChangesetOutput {
 
 /// A builder for [`GetChangesetOutput`](crate::operation::get_changeset::GetChangesetOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetChangesetOutputBuilder {
-    pub(crate) changeset_id: std::option::Option<std::string::String>,
-    pub(crate) changeset_arn: std::option::Option<std::string::String>,
-    pub(crate) dataset_id: std::option::Option<std::string::String>,
-    pub(crate) change_type: std::option::Option<crate::types::ChangeType>,
-    pub(crate) source_params:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) format_params:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) create_time: std::option::Option<i64>,
-    pub(crate) status: std::option::Option<crate::types::IngestionStatus>,
-    pub(crate) error_info: std::option::Option<crate::types::ChangesetErrorInfo>,
-    pub(crate) active_until_timestamp: std::option::Option<i64>,
-    pub(crate) active_from_timestamp: std::option::Option<i64>,
-    pub(crate) updates_changeset_id: std::option::Option<std::string::String>,
-    pub(crate) updated_by_changeset_id: std::option::Option<std::string::String>,
+    pub(crate) changeset_id: ::std::option::Option<::std::string::String>,
+    pub(crate) changeset_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) dataset_id: ::std::option::Option<::std::string::String>,
+    pub(crate) change_type: ::std::option::Option<crate::types::ChangeType>,
+    pub(crate) source_params: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) format_params: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) create_time: ::std::option::Option<i64>,
+    pub(crate) status: ::std::option::Option<crate::types::IngestionStatus>,
+    pub(crate) error_info: ::std::option::Option<crate::types::ChangesetErrorInfo>,
+    pub(crate) active_until_timestamp: ::std::option::Option<i64>,
+    pub(crate) active_from_timestamp: ::std::option::Option<i64>,
+    pub(crate) updates_changeset_id: ::std::option::Option<::std::string::String>,
+    pub(crate) updated_by_changeset_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetChangesetOutputBuilder {
     /// <p>The unique identifier for a Changeset.</p>
-    pub fn changeset_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.changeset_id = Some(input.into());
+    pub fn changeset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.changeset_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for a Changeset.</p>
-    pub fn set_changeset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_changeset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.changeset_id = input;
         self
     }
     /// <p>The ARN identifier of the Changeset.</p>
-    pub fn changeset_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.changeset_arn = Some(input.into());
+    pub fn changeset_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.changeset_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN identifier of the Changeset.</p>
-    pub fn set_changeset_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_changeset_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.changeset_arn = input;
         self
     }
     /// <p>The unique identifier for the FinSpace Dataset where the Changeset is created.</p>
-    pub fn dataset_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.dataset_id = Some(input.into());
+    pub fn dataset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.dataset_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the FinSpace Dataset where the Changeset is created.</p>
-    pub fn set_dataset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_dataset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataset_id = input;
         self
     }
@@ -188,7 +202,7 @@ impl GetChangesetOutputBuilder {
     /// <li> <p> <code>MODIFY</code> – Changeset is considered as a replacement to a specific prior ingested Changeset.</p> </li>
     /// </ul>
     pub fn change_type(mut self, input: crate::types::ChangeType) -> Self {
-        self.change_type = Some(input);
+        self.change_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Type that indicates how a Changeset is applied to a Dataset.</p>
@@ -197,7 +211,10 @@ impl GetChangesetOutputBuilder {
     /// <li> <p> <code>APPEND</code> – Changeset is considered as an addition to the end of all prior loaded Changesets.</p> </li>
     /// <li> <p> <code>MODIFY</code> – Changeset is considered as a replacement to a specific prior ingested Changeset.</p> </li>
     /// </ul>
-    pub fn set_change_type(mut self, input: std::option::Option<crate::types::ChangeType>) -> Self {
+    pub fn set_change_type(
+        mut self,
+        input: ::std::option::Option<crate::types::ChangeType>,
+    ) -> Self {
         self.change_type = input;
         self
     }
@@ -208,19 +225,19 @@ impl GetChangesetOutputBuilder {
     /// <p>Options that define the location of the data being ingested.</p>
     pub fn source_params(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.source_params.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.source_params = Some(hash_map);
+        self.source_params = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Options that define the location of the data being ingested.</p>
     pub fn set_source_params(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.source_params = input;
@@ -233,19 +250,19 @@ impl GetChangesetOutputBuilder {
     /// <p>Structure of the source file(s).</p>
     pub fn format_params(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.format_params.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.format_params = Some(hash_map);
+        self.format_params = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Structure of the source file(s).</p>
     pub fn set_format_params(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.format_params = input;
@@ -253,79 +270,88 @@ impl GetChangesetOutputBuilder {
     }
     /// <p>The timestamp at which the Changeset was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn create_time(mut self, input: i64) -> Self {
-        self.create_time = Some(input);
+        self.create_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The timestamp at which the Changeset was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
-    pub fn set_create_time(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_create_time(mut self, input: ::std::option::Option<i64>) -> Self {
         self.create_time = input;
         self
     }
     /// <p>The status of Changeset creation operation.</p>
     pub fn status(mut self, input: crate::types::IngestionStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of Changeset creation operation.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::IngestionStatus>) -> Self {
+    pub fn set_status(
+        mut self,
+        input: ::std::option::Option<crate::types::IngestionStatus>,
+    ) -> Self {
         self.status = input;
         self
     }
     /// <p>The structure with error messages.</p>
     pub fn error_info(mut self, input: crate::types::ChangesetErrorInfo) -> Self {
-        self.error_info = Some(input);
+        self.error_info = ::std::option::Option::Some(input);
         self
     }
     /// <p>The structure with error messages.</p>
     pub fn set_error_info(
         mut self,
-        input: std::option::Option<crate::types::ChangesetErrorInfo>,
+        input: ::std::option::Option<crate::types::ChangesetErrorInfo>,
     ) -> Self {
         self.error_info = input;
         self
     }
     /// <p>Time until which the Changeset is active. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn active_until_timestamp(mut self, input: i64) -> Self {
-        self.active_until_timestamp = Some(input);
+        self.active_until_timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>Time until which the Changeset is active. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
-    pub fn set_active_until_timestamp(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_active_until_timestamp(mut self, input: ::std::option::Option<i64>) -> Self {
         self.active_until_timestamp = input;
         self
     }
     /// <p>Beginning time from which the Changeset is active. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn active_from_timestamp(mut self, input: i64) -> Self {
-        self.active_from_timestamp = Some(input);
+        self.active_from_timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>Beginning time from which the Changeset is active. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
-    pub fn set_active_from_timestamp(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_active_from_timestamp(mut self, input: ::std::option::Option<i64>) -> Self {
         self.active_from_timestamp = input;
         self
     }
     /// <p>The unique identifier of the Changeset that is being updated.</p>
-    pub fn updates_changeset_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.updates_changeset_id = Some(input.into());
+    pub fn updates_changeset_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.updates_changeset_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the Changeset that is being updated.</p>
     pub fn set_updates_changeset_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.updates_changeset_id = input;
         self
     }
     /// <p>The unique identifier of the updated Changeset.</p>
-    pub fn updated_by_changeset_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.updated_by_changeset_id = Some(input.into());
+    pub fn updated_by_changeset_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.updated_by_changeset_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the updated Changeset.</p>
     pub fn set_updated_by_changeset_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.updated_by_changeset_id = input;
         self

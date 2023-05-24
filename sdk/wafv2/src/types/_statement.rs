@@ -3,22 +3,22 @@
 /// <p>The processing guidance for a <code>Rule</code>, used by WAF to determine whether a web request matches the rule. </p>
 /// <p>For example specifications, see the examples section of <code>CreateWebACL</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Statement {
     /// <p>A rule statement that defines a string match search for WAF to apply to web requests. The byte match statement provides the bytes to search for, the location in requests that you want WAF to search, and other settings. The bytes to search for are typically a string that corresponds with ASCII characters. In the WAF console and the developer guide, this is called a string match statement.</p>
     #[doc(hidden)]
-    pub byte_match_statement: std::option::Option<crate::types::ByteMatchStatement>,
+    pub byte_match_statement: ::std::option::Option<crate::types::ByteMatchStatement>,
     /// <p>A rule statement that inspects for malicious SQL code. Attackers insert malicious SQL code into web requests to do things like modify your database or extract data from it. </p>
     #[doc(hidden)]
-    pub sqli_match_statement: std::option::Option<crate::types::SqliMatchStatement>,
+    pub sqli_match_statement: ::std::option::Option<crate::types::SqliMatchStatement>,
     /// <p>A rule statement that inspects for cross-site scripting (XSS) attacks. In XSS attacks, the attacker uses vulnerabilities in a benign website as a vehicle to inject malicious client-site scripts into other legitimate web browsers. </p>
     #[doc(hidden)]
-    pub xss_match_statement: std::option::Option<crate::types::XssMatchStatement>,
+    pub xss_match_statement: ::std::option::Option<crate::types::XssMatchStatement>,
     /// <p>A rule statement that compares a number of bytes against the size of a request component, using a comparison operator, such as greater than (&gt;) or less than (&lt;). For example, you can use a size constraint statement to look for query strings that are longer than 100 bytes. </p>
     /// <p>If you configure WAF to inspect the request body, WAF inspects only the number of bytes of the body up to the limit for the web ACL. By default, for regional web ACLs, this limit is 8 KB (8,192 kilobytes) and for CloudFront web ACLs, this limit is 16 KB (16,384 kilobytes). For CloudFront web ACLs, you can increase the limit in the web ACL <code>AssociationConfig</code>, for additional fees. If you know that the request body for your web requests should never exceed the inspection limit, you could use a size constraint statement to block requests that have a larger request body size.</p>
     /// <p>If you choose URI for the value of Part of the request to filter on, the slash (/) in the URI counts as one character. For example, the URI <code>/logo.jpg</code> is nine characters long.</p>
     #[doc(hidden)]
-    pub size_constraint_statement: std::option::Option<crate::types::SizeConstraintStatement>,
+    pub size_constraint_statement: ::std::option::Option<crate::types::SizeConstraintStatement>,
     /// <p>A rule statement that labels web requests by country and region and that matches against web requests based on country code. A geo match rule labels every request that it inspects regardless of whether it finds a match.</p>
     /// <ul>
     /// <li> <p>To manage requests only by country, you can use this statement by itself and specify the countries that you want to match against in the <code>CountryCodes</code> array. </p> </li>
@@ -39,21 +39,21 @@ pub struct Statement {
     /// <iso country code></iso></code>.</p>
     /// <p>For additional details, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-rule-statement-type-geo-match.html">Geographic match rule statement</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
     #[doc(hidden)]
-    pub geo_match_statement: std::option::Option<crate::types::GeoMatchStatement>,
+    pub geo_match_statement: ::std::option::Option<crate::types::GeoMatchStatement>,
     /// <p>A rule statement used to run the rules that are defined in a <code>RuleGroup</code>. To use this, create a rule group with your rules, then provide the ARN of the rule group in this statement.</p>
     /// <p>You cannot nest a <code>RuleGroupReferenceStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. You can only use a rule group reference statement at the top level inside a web ACL. </p>
     #[doc(hidden)]
     pub rule_group_reference_statement:
-        std::option::Option<crate::types::RuleGroupReferenceStatement>,
+        ::std::option::Option<crate::types::RuleGroupReferenceStatement>,
     /// <p>A rule statement used to detect web requests coming from particular IP addresses or address ranges. To use this, create an <code>IPSet</code> that specifies the addresses you want to detect, then use the ARN of that set in this statement. To create an IP set, see <code>CreateIPSet</code>.</p>
     /// <p>Each IP set rule statement references an IP set. You create and maintain the set independent of your rules. This allows you to use the single set in multiple rules. When you update the referenced set, WAF automatically updates all rules that reference it.</p>
     #[doc(hidden)]
-    pub ip_set_reference_statement: std::option::Option<crate::types::IpSetReferenceStatement>,
+    pub ip_set_reference_statement: ::std::option::Option<crate::types::IpSetReferenceStatement>,
     /// <p>A rule statement used to search web request components for matches with regular expressions. To use this, create a <code>RegexPatternSet</code> that specifies the expressions that you want to detect, then use the ARN of that set in this statement. A web request matches the pattern set rule statement if the request component matches any of the patterns in the set. To create a regex pattern set, see <code>CreateRegexPatternSet</code>.</p>
     /// <p>Each regex pattern set rule statement references a regex pattern set. You create and maintain the set independent of your rules. This allows you to use the single set in multiple rules. When you update the referenced set, WAF automatically updates all rules that reference it.</p>
     #[doc(hidden)]
     pub regex_pattern_set_reference_statement:
-        std::option::Option<crate::types::RegexPatternSetReferenceStatement>,
+        ::std::option::Option<crate::types::RegexPatternSetReferenceStatement>,
     /// <p>A rate-based rule counts incoming requests and rate limits requests when they are coming at too fast a rate. The rule categorizes requests according to your aggregation criteria, collects them into aggregation instances, and counts and rate limits the requests for each instance. </p>
     /// <p>You can specify individual aggregation keys, like IP address or HTTP method. You can also specify aggregation key combinations, like IP address and HTTP method, or HTTP method, query argument, and cookie. </p>
     /// <p>Each unique set of values for the aggregation keys that you specify is a separate aggregation instance, with the value from each key contributing to the aggregation instance definition. </p>
@@ -90,41 +90,42 @@ pub struct Statement {
     /// <p>If you only aggregate on the individual IP address or forwarded IP address, you can retrieve the list of IP addresses that WAF is currently rate limiting for a rule through the API call <code>GetRateBasedStatementManagedKeys</code>. This option is not available for other aggregation configurations.</p>
     /// <p>WAF tracks and manages web requests separately for each instance of a rate-based rule that you use. For example, if you provide the same rate-based rule settings in two web ACLs, each of the two rule statements represents a separate instance of the rate-based rule and gets its own tracking and management by WAF. If you define a rate-based rule inside a rule group, and then use that rule group in multiple places, each use creates a separate instance of the rate-based rule that gets its own tracking and management by WAF. </p>
     #[doc(hidden)]
-    pub rate_based_statement: std::option::Option<crate::types::RateBasedStatement>,
+    pub rate_based_statement: ::std::option::Option<crate::types::RateBasedStatement>,
     /// <p>A logical rule statement used to combine other rule statements with AND logic. You provide more than one <code>Statement</code> within the <code>AndStatement</code>. </p>
     #[doc(hidden)]
-    pub and_statement: std::option::Option<crate::types::AndStatement>,
+    pub and_statement: ::std::option::Option<crate::types::AndStatement>,
     /// <p>A logical rule statement used to combine other rule statements with OR logic. You provide more than one <code>Statement</code> within the <code>OrStatement</code>. </p>
     #[doc(hidden)]
-    pub or_statement: std::option::Option<crate::types::OrStatement>,
+    pub or_statement: ::std::option::Option<crate::types::OrStatement>,
     /// <p>A logical rule statement used to negate the results of another rule statement. You provide one <code>Statement</code> within the <code>NotStatement</code>.</p>
     #[doc(hidden)]
-    pub not_statement: std::option::Option<crate::types::NotStatement>,
+    pub not_statement: ::std::option::Option<crate::types::NotStatement>,
     /// <p>A rule statement used to run the rules that are defined in a managed rule group. To use this, provide the vendor name and the name of the rule group in this statement. You can retrieve the required names by calling <code>ListAvailableManagedRuleGroups</code>.</p>
     /// <p>You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced as a top-level statement within a rule.</p> <note>
     /// <p>You are charged additional fees when you use the WAF Bot Control managed rule group <code>AWSManagedRulesBotControlRuleSet</code> or the WAF Fraud Control account takeover prevention (ATP) managed rule group <code>AWSManagedRulesATPRuleSet</code>. For more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p>
     /// </note>
     #[doc(hidden)]
-    pub managed_rule_group_statement: std::option::Option<crate::types::ManagedRuleGroupStatement>,
+    pub managed_rule_group_statement:
+        ::std::option::Option<crate::types::ManagedRuleGroupStatement>,
     /// <p>A rule statement to match against labels that have been added to the web request by rules that have already run in the web ACL. </p>
     /// <p>The label match statement provides the label or namespace string to search for. The label string can represent a part or all of the fully qualified label name that had been added to the web request. Fully qualified labels have a prefix, optional namespaces, and label name. The prefix identifies the rule group or web ACL context of the rule that added the label. If you do not provide the fully qualified name in your label match string, WAF performs the search for labels that were added in the same context as the label match statement. </p>
     #[doc(hidden)]
-    pub label_match_statement: std::option::Option<crate::types::LabelMatchStatement>,
+    pub label_match_statement: ::std::option::Option<crate::types::LabelMatchStatement>,
     /// <p>A rule statement used to search web request components for a match against a single regular expression. </p>
     #[doc(hidden)]
-    pub regex_match_statement: std::option::Option<crate::types::RegexMatchStatement>,
+    pub regex_match_statement: ::std::option::Option<crate::types::RegexMatchStatement>,
 }
 impl Statement {
     /// <p>A rule statement that defines a string match search for WAF to apply to web requests. The byte match statement provides the bytes to search for, the location in requests that you want WAF to search, and other settings. The bytes to search for are typically a string that corresponds with ASCII characters. In the WAF console and the developer guide, this is called a string match statement.</p>
-    pub fn byte_match_statement(&self) -> std::option::Option<&crate::types::ByteMatchStatement> {
+    pub fn byte_match_statement(&self) -> ::std::option::Option<&crate::types::ByteMatchStatement> {
         self.byte_match_statement.as_ref()
     }
     /// <p>A rule statement that inspects for malicious SQL code. Attackers insert malicious SQL code into web requests to do things like modify your database or extract data from it. </p>
-    pub fn sqli_match_statement(&self) -> std::option::Option<&crate::types::SqliMatchStatement> {
+    pub fn sqli_match_statement(&self) -> ::std::option::Option<&crate::types::SqliMatchStatement> {
         self.sqli_match_statement.as_ref()
     }
     /// <p>A rule statement that inspects for cross-site scripting (XSS) attacks. In XSS attacks, the attacker uses vulnerabilities in a benign website as a vehicle to inject malicious client-site scripts into other legitimate web browsers. </p>
-    pub fn xss_match_statement(&self) -> std::option::Option<&crate::types::XssMatchStatement> {
+    pub fn xss_match_statement(&self) -> ::std::option::Option<&crate::types::XssMatchStatement> {
         self.xss_match_statement.as_ref()
     }
     /// <p>A rule statement that compares a number of bytes against the size of a request component, using a comparison operator, such as greater than (&gt;) or less than (&lt;). For example, you can use a size constraint statement to look for query strings that are longer than 100 bytes. </p>
@@ -132,7 +133,7 @@ impl Statement {
     /// <p>If you choose URI for the value of Part of the request to filter on, the slash (/) in the URI counts as one character. For example, the URI <code>/logo.jpg</code> is nine characters long.</p>
     pub fn size_constraint_statement(
         &self,
-    ) -> std::option::Option<&crate::types::SizeConstraintStatement> {
+    ) -> ::std::option::Option<&crate::types::SizeConstraintStatement> {
         self.size_constraint_statement.as_ref()
     }
     /// <p>A rule statement that labels web requests by country and region and that matches against web requests based on country code. A geo match rule labels every request that it inspects regardless of whether it finds a match.</p>
@@ -154,28 +155,28 @@ impl Statement {
     /// </iso></code> and <code>awswaf:forwardedip:geo:country:
     /// <iso country code></iso></code>.</p>
     /// <p>For additional details, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-rule-statement-type-geo-match.html">Geographic match rule statement</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
-    pub fn geo_match_statement(&self) -> std::option::Option<&crate::types::GeoMatchStatement> {
+    pub fn geo_match_statement(&self) -> ::std::option::Option<&crate::types::GeoMatchStatement> {
         self.geo_match_statement.as_ref()
     }
     /// <p>A rule statement used to run the rules that are defined in a <code>RuleGroup</code>. To use this, create a rule group with your rules, then provide the ARN of the rule group in this statement.</p>
     /// <p>You cannot nest a <code>RuleGroupReferenceStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. You can only use a rule group reference statement at the top level inside a web ACL. </p>
     pub fn rule_group_reference_statement(
         &self,
-    ) -> std::option::Option<&crate::types::RuleGroupReferenceStatement> {
+    ) -> ::std::option::Option<&crate::types::RuleGroupReferenceStatement> {
         self.rule_group_reference_statement.as_ref()
     }
     /// <p>A rule statement used to detect web requests coming from particular IP addresses or address ranges. To use this, create an <code>IPSet</code> that specifies the addresses you want to detect, then use the ARN of that set in this statement. To create an IP set, see <code>CreateIPSet</code>.</p>
     /// <p>Each IP set rule statement references an IP set. You create and maintain the set independent of your rules. This allows you to use the single set in multiple rules. When you update the referenced set, WAF automatically updates all rules that reference it.</p>
     pub fn ip_set_reference_statement(
         &self,
-    ) -> std::option::Option<&crate::types::IpSetReferenceStatement> {
+    ) -> ::std::option::Option<&crate::types::IpSetReferenceStatement> {
         self.ip_set_reference_statement.as_ref()
     }
     /// <p>A rule statement used to search web request components for matches with regular expressions. To use this, create a <code>RegexPatternSet</code> that specifies the expressions that you want to detect, then use the ARN of that set in this statement. A web request matches the pattern set rule statement if the request component matches any of the patterns in the set. To create a regex pattern set, see <code>CreateRegexPatternSet</code>.</p>
     /// <p>Each regex pattern set rule statement references a regex pattern set. You create and maintain the set independent of your rules. This allows you to use the single set in multiple rules. When you update the referenced set, WAF automatically updates all rules that reference it.</p>
     pub fn regex_pattern_set_reference_statement(
         &self,
-    ) -> std::option::Option<&crate::types::RegexPatternSetReferenceStatement> {
+    ) -> ::std::option::Option<&crate::types::RegexPatternSetReferenceStatement> {
         self.regex_pattern_set_reference_statement.as_ref()
     }
     /// <p>A rate-based rule counts incoming requests and rate limits requests when they are coming at too fast a rate. The rule categorizes requests according to your aggregation criteria, collects them into aggregation instances, and counts and rate limits the requests for each instance. </p>
@@ -213,19 +214,19 @@ impl Statement {
     /// <p>For additional information about the options, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-rate-based-rules.html">Rate limiting web requests using rate-based rules</a> in the <i>WAF Developer Guide</i>. </p>
     /// <p>If you only aggregate on the individual IP address or forwarded IP address, you can retrieve the list of IP addresses that WAF is currently rate limiting for a rule through the API call <code>GetRateBasedStatementManagedKeys</code>. This option is not available for other aggregation configurations.</p>
     /// <p>WAF tracks and manages web requests separately for each instance of a rate-based rule that you use. For example, if you provide the same rate-based rule settings in two web ACLs, each of the two rule statements represents a separate instance of the rate-based rule and gets its own tracking and management by WAF. If you define a rate-based rule inside a rule group, and then use that rule group in multiple places, each use creates a separate instance of the rate-based rule that gets its own tracking and management by WAF. </p>
-    pub fn rate_based_statement(&self) -> std::option::Option<&crate::types::RateBasedStatement> {
+    pub fn rate_based_statement(&self) -> ::std::option::Option<&crate::types::RateBasedStatement> {
         self.rate_based_statement.as_ref()
     }
     /// <p>A logical rule statement used to combine other rule statements with AND logic. You provide more than one <code>Statement</code> within the <code>AndStatement</code>. </p>
-    pub fn and_statement(&self) -> std::option::Option<&crate::types::AndStatement> {
+    pub fn and_statement(&self) -> ::std::option::Option<&crate::types::AndStatement> {
         self.and_statement.as_ref()
     }
     /// <p>A logical rule statement used to combine other rule statements with OR logic. You provide more than one <code>Statement</code> within the <code>OrStatement</code>. </p>
-    pub fn or_statement(&self) -> std::option::Option<&crate::types::OrStatement> {
+    pub fn or_statement(&self) -> ::std::option::Option<&crate::types::OrStatement> {
         self.or_statement.as_ref()
     }
     /// <p>A logical rule statement used to negate the results of another rule statement. You provide one <code>Statement</code> within the <code>NotStatement</code>.</p>
-    pub fn not_statement(&self) -> std::option::Option<&crate::types::NotStatement> {
+    pub fn not_statement(&self) -> ::std::option::Option<&crate::types::NotStatement> {
         self.not_statement.as_ref()
     }
     /// <p>A rule statement used to run the rules that are defined in a managed rule group. To use this, provide the vendor name and the name of the rule group in this statement. You can retrieve the required names by calling <code>ListAvailableManagedRuleGroups</code>.</p>
@@ -234,16 +235,20 @@ impl Statement {
     /// </note>
     pub fn managed_rule_group_statement(
         &self,
-    ) -> std::option::Option<&crate::types::ManagedRuleGroupStatement> {
+    ) -> ::std::option::Option<&crate::types::ManagedRuleGroupStatement> {
         self.managed_rule_group_statement.as_ref()
     }
     /// <p>A rule statement to match against labels that have been added to the web request by rules that have already run in the web ACL. </p>
     /// <p>The label match statement provides the label or namespace string to search for. The label string can represent a part or all of the fully qualified label name that had been added to the web request. Fully qualified labels have a prefix, optional namespaces, and label name. The prefix identifies the rule group or web ACL context of the rule that added the label. If you do not provide the fully qualified name in your label match string, WAF performs the search for labels that were added in the same context as the label match statement. </p>
-    pub fn label_match_statement(&self) -> std::option::Option<&crate::types::LabelMatchStatement> {
+    pub fn label_match_statement(
+        &self,
+    ) -> ::std::option::Option<&crate::types::LabelMatchStatement> {
         self.label_match_statement.as_ref()
     }
     /// <p>A rule statement used to search web request components for a match against a single regular expression. </p>
-    pub fn regex_match_statement(&self) -> std::option::Option<&crate::types::RegexMatchStatement> {
+    pub fn regex_match_statement(
+        &self,
+    ) -> ::std::option::Option<&crate::types::RegexMatchStatement> {
         self.regex_match_statement.as_ref()
     }
 }
@@ -256,65 +261,67 @@ impl Statement {
 
 /// A builder for [`Statement`](crate::types::Statement).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StatementBuilder {
-    pub(crate) byte_match_statement: std::option::Option<crate::types::ByteMatchStatement>,
-    pub(crate) sqli_match_statement: std::option::Option<crate::types::SqliMatchStatement>,
-    pub(crate) xss_match_statement: std::option::Option<crate::types::XssMatchStatement>,
+    pub(crate) byte_match_statement: ::std::option::Option<crate::types::ByteMatchStatement>,
+    pub(crate) sqli_match_statement: ::std::option::Option<crate::types::SqliMatchStatement>,
+    pub(crate) xss_match_statement: ::std::option::Option<crate::types::XssMatchStatement>,
     pub(crate) size_constraint_statement:
-        std::option::Option<crate::types::SizeConstraintStatement>,
-    pub(crate) geo_match_statement: std::option::Option<crate::types::GeoMatchStatement>,
+        ::std::option::Option<crate::types::SizeConstraintStatement>,
+    pub(crate) geo_match_statement: ::std::option::Option<crate::types::GeoMatchStatement>,
     pub(crate) rule_group_reference_statement:
-        std::option::Option<crate::types::RuleGroupReferenceStatement>,
+        ::std::option::Option<crate::types::RuleGroupReferenceStatement>,
     pub(crate) ip_set_reference_statement:
-        std::option::Option<crate::types::IpSetReferenceStatement>,
+        ::std::option::Option<crate::types::IpSetReferenceStatement>,
     pub(crate) regex_pattern_set_reference_statement:
-        std::option::Option<crate::types::RegexPatternSetReferenceStatement>,
-    pub(crate) rate_based_statement: std::option::Option<crate::types::RateBasedStatement>,
-    pub(crate) and_statement: std::option::Option<crate::types::AndStatement>,
-    pub(crate) or_statement: std::option::Option<crate::types::OrStatement>,
-    pub(crate) not_statement: std::option::Option<crate::types::NotStatement>,
+        ::std::option::Option<crate::types::RegexPatternSetReferenceStatement>,
+    pub(crate) rate_based_statement: ::std::option::Option<crate::types::RateBasedStatement>,
+    pub(crate) and_statement: ::std::option::Option<crate::types::AndStatement>,
+    pub(crate) or_statement: ::std::option::Option<crate::types::OrStatement>,
+    pub(crate) not_statement: ::std::option::Option<crate::types::NotStatement>,
     pub(crate) managed_rule_group_statement:
-        std::option::Option<crate::types::ManagedRuleGroupStatement>,
-    pub(crate) label_match_statement: std::option::Option<crate::types::LabelMatchStatement>,
-    pub(crate) regex_match_statement: std::option::Option<crate::types::RegexMatchStatement>,
+        ::std::option::Option<crate::types::ManagedRuleGroupStatement>,
+    pub(crate) label_match_statement: ::std::option::Option<crate::types::LabelMatchStatement>,
+    pub(crate) regex_match_statement: ::std::option::Option<crate::types::RegexMatchStatement>,
 }
 impl StatementBuilder {
     /// <p>A rule statement that defines a string match search for WAF to apply to web requests. The byte match statement provides the bytes to search for, the location in requests that you want WAF to search, and other settings. The bytes to search for are typically a string that corresponds with ASCII characters. In the WAF console and the developer guide, this is called a string match statement.</p>
     pub fn byte_match_statement(mut self, input: crate::types::ByteMatchStatement) -> Self {
-        self.byte_match_statement = Some(input);
+        self.byte_match_statement = ::std::option::Option::Some(input);
         self
     }
     /// <p>A rule statement that defines a string match search for WAF to apply to web requests. The byte match statement provides the bytes to search for, the location in requests that you want WAF to search, and other settings. The bytes to search for are typically a string that corresponds with ASCII characters. In the WAF console and the developer guide, this is called a string match statement.</p>
     pub fn set_byte_match_statement(
         mut self,
-        input: std::option::Option<crate::types::ByteMatchStatement>,
+        input: ::std::option::Option<crate::types::ByteMatchStatement>,
     ) -> Self {
         self.byte_match_statement = input;
         self
     }
     /// <p>A rule statement that inspects for malicious SQL code. Attackers insert malicious SQL code into web requests to do things like modify your database or extract data from it. </p>
     pub fn sqli_match_statement(mut self, input: crate::types::SqliMatchStatement) -> Self {
-        self.sqli_match_statement = Some(input);
+        self.sqli_match_statement = ::std::option::Option::Some(input);
         self
     }
     /// <p>A rule statement that inspects for malicious SQL code. Attackers insert malicious SQL code into web requests to do things like modify your database or extract data from it. </p>
     pub fn set_sqli_match_statement(
         mut self,
-        input: std::option::Option<crate::types::SqliMatchStatement>,
+        input: ::std::option::Option<crate::types::SqliMatchStatement>,
     ) -> Self {
         self.sqli_match_statement = input;
         self
     }
     /// <p>A rule statement that inspects for cross-site scripting (XSS) attacks. In XSS attacks, the attacker uses vulnerabilities in a benign website as a vehicle to inject malicious client-site scripts into other legitimate web browsers. </p>
     pub fn xss_match_statement(mut self, input: crate::types::XssMatchStatement) -> Self {
-        self.xss_match_statement = Some(input);
+        self.xss_match_statement = ::std::option::Option::Some(input);
         self
     }
     /// <p>A rule statement that inspects for cross-site scripting (XSS) attacks. In XSS attacks, the attacker uses vulnerabilities in a benign website as a vehicle to inject malicious client-site scripts into other legitimate web browsers. </p>
     pub fn set_xss_match_statement(
         mut self,
-        input: std::option::Option<crate::types::XssMatchStatement>,
+        input: ::std::option::Option<crate::types::XssMatchStatement>,
     ) -> Self {
         self.xss_match_statement = input;
         self
@@ -326,7 +333,7 @@ impl StatementBuilder {
         mut self,
         input: crate::types::SizeConstraintStatement,
     ) -> Self {
-        self.size_constraint_statement = Some(input);
+        self.size_constraint_statement = ::std::option::Option::Some(input);
         self
     }
     /// <p>A rule statement that compares a number of bytes against the size of a request component, using a comparison operator, such as greater than (&gt;) or less than (&lt;). For example, you can use a size constraint statement to look for query strings that are longer than 100 bytes. </p>
@@ -334,7 +341,7 @@ impl StatementBuilder {
     /// <p>If you choose URI for the value of Part of the request to filter on, the slash (/) in the URI counts as one character. For example, the URI <code>/logo.jpg</code> is nine characters long.</p>
     pub fn set_size_constraint_statement(
         mut self,
-        input: std::option::Option<crate::types::SizeConstraintStatement>,
+        input: ::std::option::Option<crate::types::SizeConstraintStatement>,
     ) -> Self {
         self.size_constraint_statement = input;
         self
@@ -359,7 +366,7 @@ impl StatementBuilder {
     /// <iso country code></iso></code>.</p>
     /// <p>For additional details, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-rule-statement-type-geo-match.html">Geographic match rule statement</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
     pub fn geo_match_statement(mut self, input: crate::types::GeoMatchStatement) -> Self {
-        self.geo_match_statement = Some(input);
+        self.geo_match_statement = ::std::option::Option::Some(input);
         self
     }
     /// <p>A rule statement that labels web requests by country and region and that matches against web requests based on country code. A geo match rule labels every request that it inspects regardless of whether it finds a match.</p>
@@ -383,7 +390,7 @@ impl StatementBuilder {
     /// <p>For additional details, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-rule-statement-type-geo-match.html">Geographic match rule statement</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>. </p>
     pub fn set_geo_match_statement(
         mut self,
-        input: std::option::Option<crate::types::GeoMatchStatement>,
+        input: ::std::option::Option<crate::types::GeoMatchStatement>,
     ) -> Self {
         self.geo_match_statement = input;
         self
@@ -394,14 +401,14 @@ impl StatementBuilder {
         mut self,
         input: crate::types::RuleGroupReferenceStatement,
     ) -> Self {
-        self.rule_group_reference_statement = Some(input);
+        self.rule_group_reference_statement = ::std::option::Option::Some(input);
         self
     }
     /// <p>A rule statement used to run the rules that are defined in a <code>RuleGroup</code>. To use this, create a rule group with your rules, then provide the ARN of the rule group in this statement.</p>
     /// <p>You cannot nest a <code>RuleGroupReferenceStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. You can only use a rule group reference statement at the top level inside a web ACL. </p>
     pub fn set_rule_group_reference_statement(
         mut self,
-        input: std::option::Option<crate::types::RuleGroupReferenceStatement>,
+        input: ::std::option::Option<crate::types::RuleGroupReferenceStatement>,
     ) -> Self {
         self.rule_group_reference_statement = input;
         self
@@ -412,14 +419,14 @@ impl StatementBuilder {
         mut self,
         input: crate::types::IpSetReferenceStatement,
     ) -> Self {
-        self.ip_set_reference_statement = Some(input);
+        self.ip_set_reference_statement = ::std::option::Option::Some(input);
         self
     }
     /// <p>A rule statement used to detect web requests coming from particular IP addresses or address ranges. To use this, create an <code>IPSet</code> that specifies the addresses you want to detect, then use the ARN of that set in this statement. To create an IP set, see <code>CreateIPSet</code>.</p>
     /// <p>Each IP set rule statement references an IP set. You create and maintain the set independent of your rules. This allows you to use the single set in multiple rules. When you update the referenced set, WAF automatically updates all rules that reference it.</p>
     pub fn set_ip_set_reference_statement(
         mut self,
-        input: std::option::Option<crate::types::IpSetReferenceStatement>,
+        input: ::std::option::Option<crate::types::IpSetReferenceStatement>,
     ) -> Self {
         self.ip_set_reference_statement = input;
         self
@@ -430,14 +437,14 @@ impl StatementBuilder {
         mut self,
         input: crate::types::RegexPatternSetReferenceStatement,
     ) -> Self {
-        self.regex_pattern_set_reference_statement = Some(input);
+        self.regex_pattern_set_reference_statement = ::std::option::Option::Some(input);
         self
     }
     /// <p>A rule statement used to search web request components for matches with regular expressions. To use this, create a <code>RegexPatternSet</code> that specifies the expressions that you want to detect, then use the ARN of that set in this statement. A web request matches the pattern set rule statement if the request component matches any of the patterns in the set. To create a regex pattern set, see <code>CreateRegexPatternSet</code>.</p>
     /// <p>Each regex pattern set rule statement references a regex pattern set. You create and maintain the set independent of your rules. This allows you to use the single set in multiple rules. When you update the referenced set, WAF automatically updates all rules that reference it.</p>
     pub fn set_regex_pattern_set_reference_statement(
         mut self,
-        input: std::option::Option<crate::types::RegexPatternSetReferenceStatement>,
+        input: ::std::option::Option<crate::types::RegexPatternSetReferenceStatement>,
     ) -> Self {
         self.regex_pattern_set_reference_statement = input;
         self
@@ -478,7 +485,7 @@ impl StatementBuilder {
     /// <p>If you only aggregate on the individual IP address or forwarded IP address, you can retrieve the list of IP addresses that WAF is currently rate limiting for a rule through the API call <code>GetRateBasedStatementManagedKeys</code>. This option is not available for other aggregation configurations.</p>
     /// <p>WAF tracks and manages web requests separately for each instance of a rate-based rule that you use. For example, if you provide the same rate-based rule settings in two web ACLs, each of the two rule statements represents a separate instance of the rate-based rule and gets its own tracking and management by WAF. If you define a rate-based rule inside a rule group, and then use that rule group in multiple places, each use creates a separate instance of the rate-based rule that gets its own tracking and management by WAF. </p>
     pub fn rate_based_statement(mut self, input: crate::types::RateBasedStatement) -> Self {
-        self.rate_based_statement = Some(input);
+        self.rate_based_statement = ::std::option::Option::Some(input);
         self
     }
     /// <p>A rate-based rule counts incoming requests and rate limits requests when they are coming at too fast a rate. The rule categorizes requests according to your aggregation criteria, collects them into aggregation instances, and counts and rate limits the requests for each instance. </p>
@@ -518,46 +525,46 @@ impl StatementBuilder {
     /// <p>WAF tracks and manages web requests separately for each instance of a rate-based rule that you use. For example, if you provide the same rate-based rule settings in two web ACLs, each of the two rule statements represents a separate instance of the rate-based rule and gets its own tracking and management by WAF. If you define a rate-based rule inside a rule group, and then use that rule group in multiple places, each use creates a separate instance of the rate-based rule that gets its own tracking and management by WAF. </p>
     pub fn set_rate_based_statement(
         mut self,
-        input: std::option::Option<crate::types::RateBasedStatement>,
+        input: ::std::option::Option<crate::types::RateBasedStatement>,
     ) -> Self {
         self.rate_based_statement = input;
         self
     }
     /// <p>A logical rule statement used to combine other rule statements with AND logic. You provide more than one <code>Statement</code> within the <code>AndStatement</code>. </p>
     pub fn and_statement(mut self, input: crate::types::AndStatement) -> Self {
-        self.and_statement = Some(input);
+        self.and_statement = ::std::option::Option::Some(input);
         self
     }
     /// <p>A logical rule statement used to combine other rule statements with AND logic. You provide more than one <code>Statement</code> within the <code>AndStatement</code>. </p>
     pub fn set_and_statement(
         mut self,
-        input: std::option::Option<crate::types::AndStatement>,
+        input: ::std::option::Option<crate::types::AndStatement>,
     ) -> Self {
         self.and_statement = input;
         self
     }
     /// <p>A logical rule statement used to combine other rule statements with OR logic. You provide more than one <code>Statement</code> within the <code>OrStatement</code>. </p>
     pub fn or_statement(mut self, input: crate::types::OrStatement) -> Self {
-        self.or_statement = Some(input);
+        self.or_statement = ::std::option::Option::Some(input);
         self
     }
     /// <p>A logical rule statement used to combine other rule statements with OR logic. You provide more than one <code>Statement</code> within the <code>OrStatement</code>. </p>
     pub fn set_or_statement(
         mut self,
-        input: std::option::Option<crate::types::OrStatement>,
+        input: ::std::option::Option<crate::types::OrStatement>,
     ) -> Self {
         self.or_statement = input;
         self
     }
     /// <p>A logical rule statement used to negate the results of another rule statement. You provide one <code>Statement</code> within the <code>NotStatement</code>.</p>
     pub fn not_statement(mut self, input: crate::types::NotStatement) -> Self {
-        self.not_statement = Some(input);
+        self.not_statement = ::std::option::Option::Some(input);
         self
     }
     /// <p>A logical rule statement used to negate the results of another rule statement. You provide one <code>Statement</code> within the <code>NotStatement</code>.</p>
     pub fn set_not_statement(
         mut self,
-        input: std::option::Option<crate::types::NotStatement>,
+        input: ::std::option::Option<crate::types::NotStatement>,
     ) -> Self {
         self.not_statement = input;
         self
@@ -570,7 +577,7 @@ impl StatementBuilder {
         mut self,
         input: crate::types::ManagedRuleGroupStatement,
     ) -> Self {
-        self.managed_rule_group_statement = Some(input);
+        self.managed_rule_group_statement = ::std::option::Option::Some(input);
         self
     }
     /// <p>A rule statement used to run the rules that are defined in a managed rule group. To use this, provide the vendor name and the name of the rule group in this statement. You can retrieve the required names by calling <code>ListAvailableManagedRuleGroups</code>.</p>
@@ -579,7 +586,7 @@ impl StatementBuilder {
     /// </note>
     pub fn set_managed_rule_group_statement(
         mut self,
-        input: std::option::Option<crate::types::ManagedRuleGroupStatement>,
+        input: ::std::option::Option<crate::types::ManagedRuleGroupStatement>,
     ) -> Self {
         self.managed_rule_group_statement = input;
         self
@@ -587,27 +594,27 @@ impl StatementBuilder {
     /// <p>A rule statement to match against labels that have been added to the web request by rules that have already run in the web ACL. </p>
     /// <p>The label match statement provides the label or namespace string to search for. The label string can represent a part or all of the fully qualified label name that had been added to the web request. Fully qualified labels have a prefix, optional namespaces, and label name. The prefix identifies the rule group or web ACL context of the rule that added the label. If you do not provide the fully qualified name in your label match string, WAF performs the search for labels that were added in the same context as the label match statement. </p>
     pub fn label_match_statement(mut self, input: crate::types::LabelMatchStatement) -> Self {
-        self.label_match_statement = Some(input);
+        self.label_match_statement = ::std::option::Option::Some(input);
         self
     }
     /// <p>A rule statement to match against labels that have been added to the web request by rules that have already run in the web ACL. </p>
     /// <p>The label match statement provides the label or namespace string to search for. The label string can represent a part or all of the fully qualified label name that had been added to the web request. Fully qualified labels have a prefix, optional namespaces, and label name. The prefix identifies the rule group or web ACL context of the rule that added the label. If you do not provide the fully qualified name in your label match string, WAF performs the search for labels that were added in the same context as the label match statement. </p>
     pub fn set_label_match_statement(
         mut self,
-        input: std::option::Option<crate::types::LabelMatchStatement>,
+        input: ::std::option::Option<crate::types::LabelMatchStatement>,
     ) -> Self {
         self.label_match_statement = input;
         self
     }
     /// <p>A rule statement used to search web request components for a match against a single regular expression. </p>
     pub fn regex_match_statement(mut self, input: crate::types::RegexMatchStatement) -> Self {
-        self.regex_match_statement = Some(input);
+        self.regex_match_statement = ::std::option::Option::Some(input);
         self
     }
     /// <p>A rule statement used to search web request components for a match against a single regular expression. </p>
     pub fn set_regex_match_statement(
         mut self,
-        input: std::option::Option<crate::types::RegexMatchStatement>,
+        input: ::std::option::Option<crate::types::RegexMatchStatement>,
     ) -> Self {
         self.regex_match_statement = input;
         self

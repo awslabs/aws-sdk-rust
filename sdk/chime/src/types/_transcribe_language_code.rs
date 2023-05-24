@@ -50,13 +50,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum TranscribeLanguageCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -90,7 +90,7 @@ pub enum TranscribeLanguageCode {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for TranscribeLanguageCode {
+impl ::std::convert::From<&str> for TranscribeLanguageCode {
     fn from(s: &str) -> Self {
         match s {
             "de-DE" => TranscribeLanguageCode::DeDe,
@@ -113,11 +113,11 @@ impl std::convert::From<&str> for TranscribeLanguageCode {
         }
     }
 }
-impl std::str::FromStr for TranscribeLanguageCode {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for TranscribeLanguageCode {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TranscribeLanguageCode::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(TranscribeLanguageCode::from(s))
     }
 }
 impl TranscribeLanguageCode {
@@ -149,7 +149,7 @@ impl TranscribeLanguageCode {
         ]
     }
 }
-impl AsRef<str> for TranscribeLanguageCode {
+impl ::std::convert::AsRef<str> for TranscribeLanguageCode {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

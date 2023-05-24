@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum PivotTableConditionalFormattingScopeRole {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum PivotTableConditionalFormattingScopeRole {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for PivotTableConditionalFormattingScopeRole {
+impl ::std::convert::From<&str> for PivotTableConditionalFormattingScopeRole {
     fn from(s: &str) -> Self {
         match s {
             "FIELD" => PivotTableConditionalFormattingScopeRole::Field,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for PivotTableConditionalFormattingScopeRole {
         }
     }
 }
-impl std::str::FromStr for PivotTableConditionalFormattingScopeRole {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for PivotTableConditionalFormattingScopeRole {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PivotTableConditionalFormattingScopeRole::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(PivotTableConditionalFormattingScopeRole::from(s))
     }
 }
 impl PivotTableConditionalFormattingScopeRole {
@@ -91,7 +91,7 @@ impl PivotTableConditionalFormattingScopeRole {
         &["FIELD", "FIELD_TOTAL", "GRAND_TOTAL"]
     }
 }
-impl AsRef<str> for PivotTableConditionalFormattingScopeRole {
+impl ::std::convert::AsRef<str> for PivotTableConditionalFormattingScopeRole {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

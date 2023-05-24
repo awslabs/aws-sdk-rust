@@ -6,56 +6,59 @@ pub use crate::operation::upgrade_domain::_upgrade_domain_input::UpgradeDomainIn
 /// Fluent builder constructing a request to `UpgradeDomain`.
 ///
 /// <p>Allows you to either upgrade your Amazon OpenSearch Service domain or perform an upgrade eligibility check to a compatible version of OpenSearch or Elasticsearch.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpgradeDomainFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::upgrade_domain::builders::UpgradeDomainInputBuilder,
 }
 impl UpgradeDomainFluentBuilder {
     /// Creates a new `UpgradeDomain`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::upgrade_domain::UpgradeDomain,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::upgrade_domain::UpgradeDomainError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::upgrade_domain::UpgradeDomainError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::upgrade_domain::UpgradeDomainOutput,
-        aws_smithy_http::result::SdkError<crate::operation::upgrade_domain::UpgradeDomainError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::upgrade_domain::UpgradeDomainError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,29 +71,35 @@ impl UpgradeDomainFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::upgrade_domain::UpgradeDomainOutput,
-        aws_smithy_http::result::SdkError<crate::operation::upgrade_domain::UpgradeDomainError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::upgrade_domain::UpgradeDomainError>,
     > {
         self.send_middleware().await
     }
     /// <p>Name of the OpenSearch Service domain that you want to upgrade.</p>
-    pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_name(input.into());
         self
     }
     /// <p>Name of the OpenSearch Service domain that you want to upgrade.</p>
-    pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_name(input);
         self
     }
     /// <p>OpenSearch or Elasticsearch version to which you want to upgrade, in the format Opensearch_X.Y or Elasticsearch_X.Y.</p>
-    pub fn target_version(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn target_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.target_version(input.into());
         self
     }
     /// <p>OpenSearch or Elasticsearch version to which you want to upgrade, in the format Opensearch_X.Y or Elasticsearch_X.Y.</p>
-    pub fn set_target_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_target_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_target_version(input);
         self
     }
@@ -100,7 +109,7 @@ impl UpgradeDomainFluentBuilder {
         self
     }
     /// <p>When true, indicates that an upgrade eligibility check needs to be performed. Does not actually perform the upgrade.</p>
-    pub fn set_perform_check_only(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_perform_check_only(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_perform_check_only(input);
         self
     }
@@ -111,8 +120,8 @@ impl UpgradeDomainFluentBuilder {
     /// <p>Only supports the <code>override_main_response_version</code> parameter and not other advanced options. You can only include this option when upgrading to an OpenSearch version. Specifies whether the domain reports its version as 7.10 so that it continues to work with Elasticsearch OSS clients and plugins.</p>
     pub fn advanced_options(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.advanced_options(k.into(), v.into());
         self
@@ -120,8 +129,8 @@ impl UpgradeDomainFluentBuilder {
     /// <p>Only supports the <code>override_main_response_version</code> parameter and not other advanced options. You can only include this option when upgrading to an OpenSearch version. Specifies whether the domain reports its version as 7.10 so that it continues to work with Elasticsearch OSS clients and plugins.</p>
     pub fn set_advanced_options(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_advanced_options(input);

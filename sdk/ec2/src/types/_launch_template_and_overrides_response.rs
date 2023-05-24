@@ -2,25 +2,25 @@
 
 /// <p>Describes a launch template and overrides.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LaunchTemplateAndOverridesResponse {
     /// <p>The launch template.</p>
     #[doc(hidden)]
     pub launch_template_specification:
-        std::option::Option<crate::types::FleetLaunchTemplateSpecification>,
+        ::std::option::Option<crate::types::FleetLaunchTemplateSpecification>,
     /// <p>Any parameters that you specify override the same parameters in the launch template.</p>
     #[doc(hidden)]
-    pub overrides: std::option::Option<crate::types::FleetLaunchTemplateOverrides>,
+    pub overrides: ::std::option::Option<crate::types::FleetLaunchTemplateOverrides>,
 }
 impl LaunchTemplateAndOverridesResponse {
     /// <p>The launch template.</p>
     pub fn launch_template_specification(
         &self,
-    ) -> std::option::Option<&crate::types::FleetLaunchTemplateSpecification> {
+    ) -> ::std::option::Option<&crate::types::FleetLaunchTemplateSpecification> {
         self.launch_template_specification.as_ref()
     }
     /// <p>Any parameters that you specify override the same parameters in the launch template.</p>
-    pub fn overrides(&self) -> std::option::Option<&crate::types::FleetLaunchTemplateOverrides> {
+    pub fn overrides(&self) -> ::std::option::Option<&crate::types::FleetLaunchTemplateOverrides> {
         self.overrides.as_ref()
     }
 }
@@ -33,11 +33,13 @@ impl LaunchTemplateAndOverridesResponse {
 
 /// A builder for [`LaunchTemplateAndOverridesResponse`](crate::types::LaunchTemplateAndOverridesResponse).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LaunchTemplateAndOverridesResponseBuilder {
     pub(crate) launch_template_specification:
-        std::option::Option<crate::types::FleetLaunchTemplateSpecification>,
-    pub(crate) overrides: std::option::Option<crate::types::FleetLaunchTemplateOverrides>,
+        ::std::option::Option<crate::types::FleetLaunchTemplateSpecification>,
+    pub(crate) overrides: ::std::option::Option<crate::types::FleetLaunchTemplateOverrides>,
 }
 impl LaunchTemplateAndOverridesResponseBuilder {
     /// <p>The launch template.</p>
@@ -45,26 +47,26 @@ impl LaunchTemplateAndOverridesResponseBuilder {
         mut self,
         input: crate::types::FleetLaunchTemplateSpecification,
     ) -> Self {
-        self.launch_template_specification = Some(input);
+        self.launch_template_specification = ::std::option::Option::Some(input);
         self
     }
     /// <p>The launch template.</p>
     pub fn set_launch_template_specification(
         mut self,
-        input: std::option::Option<crate::types::FleetLaunchTemplateSpecification>,
+        input: ::std::option::Option<crate::types::FleetLaunchTemplateSpecification>,
     ) -> Self {
         self.launch_template_specification = input;
         self
     }
     /// <p>Any parameters that you specify override the same parameters in the launch template.</p>
     pub fn overrides(mut self, input: crate::types::FleetLaunchTemplateOverrides) -> Self {
-        self.overrides = Some(input);
+        self.overrides = ::std::option::Option::Some(input);
         self
     }
     /// <p>Any parameters that you specify override the same parameters in the launch template.</p>
     pub fn set_overrides(
         mut self,
-        input: std::option::Option<crate::types::FleetLaunchTemplateOverrides>,
+        input: ::std::option::Option<crate::types::FleetLaunchTemplateOverrides>,
     ) -> Self {
         self.overrides = input;
         self

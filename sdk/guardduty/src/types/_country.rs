@@ -2,22 +2,22 @@
 
 /// <p>Contains information about the country where the remote IP address is located.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Country {
     /// <p>The country code of the remote IP address.</p>
     #[doc(hidden)]
-    pub country_code: std::option::Option<std::string::String>,
+    pub country_code: ::std::option::Option<::std::string::String>,
     /// <p>The country name of the remote IP address.</p>
     #[doc(hidden)]
-    pub country_name: std::option::Option<std::string::String>,
+    pub country_name: ::std::option::Option<::std::string::String>,
 }
 impl Country {
     /// <p>The country code of the remote IP address.</p>
-    pub fn country_code(&self) -> std::option::Option<&str> {
+    pub fn country_code(&self) -> ::std::option::Option<&str> {
         self.country_code.as_deref()
     }
     /// <p>The country name of the remote IP address.</p>
-    pub fn country_name(&self) -> std::option::Option<&str> {
+    pub fn country_name(&self) -> ::std::option::Option<&str> {
         self.country_name.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl Country {
 
 /// A builder for [`Country`](crate::types::Country).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CountryBuilder {
-    pub(crate) country_code: std::option::Option<std::string::String>,
-    pub(crate) country_name: std::option::Option<std::string::String>,
+    pub(crate) country_code: ::std::option::Option<::std::string::String>,
+    pub(crate) country_name: ::std::option::Option<::std::string::String>,
 }
 impl CountryBuilder {
     /// <p>The country code of the remote IP address.</p>
-    pub fn country_code(mut self, input: impl Into<std::string::String>) -> Self {
-        self.country_code = Some(input.into());
+    pub fn country_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.country_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The country code of the remote IP address.</p>
-    pub fn set_country_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_country_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.country_code = input;
         self
     }
     /// <p>The country name of the remote IP address.</p>
-    pub fn country_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.country_name = Some(input.into());
+    pub fn country_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.country_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The country name of the remote IP address.</p>
-    pub fn set_country_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_country_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.country_name = input;
         self
     }

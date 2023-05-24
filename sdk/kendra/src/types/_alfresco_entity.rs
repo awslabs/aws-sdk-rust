@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum AlfrescoEntity {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum AlfrescoEntity {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for AlfrescoEntity {
+impl ::std::convert::From<&str> for AlfrescoEntity {
     fn from(s: &str) -> Self {
         match s {
             "blog" => AlfrescoEntity::Blog,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for AlfrescoEntity {
         }
     }
 }
-impl std::str::FromStr for AlfrescoEntity {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for AlfrescoEntity {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AlfrescoEntity::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(AlfrescoEntity::from(s))
     }
 }
 impl AlfrescoEntity {
@@ -91,7 +91,7 @@ impl AlfrescoEntity {
         &["blog", "documentLibrary", "wiki"]
     }
 }
-impl AsRef<str> for AlfrescoEntity {
+impl ::std::convert::AsRef<str> for AlfrescoEntity {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

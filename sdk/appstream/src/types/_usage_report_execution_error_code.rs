@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum UsageReportExecutionErrorCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum UsageReportExecutionErrorCode {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for UsageReportExecutionErrorCode {
+impl ::std::convert::From<&str> for UsageReportExecutionErrorCode {
     fn from(s: &str) -> Self {
         match s {
             "ACCESS_DENIED" => UsageReportExecutionErrorCode::AccessDenied,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for UsageReportExecutionErrorCode {
         }
     }
 }
-impl std::str::FromStr for UsageReportExecutionErrorCode {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for UsageReportExecutionErrorCode {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(UsageReportExecutionErrorCode::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(UsageReportExecutionErrorCode::from(s))
     }
 }
 impl UsageReportExecutionErrorCode {
@@ -95,7 +95,7 @@ impl UsageReportExecutionErrorCode {
         ]
     }
 }
-impl AsRef<str> for UsageReportExecutionErrorCode {
+impl ::std::convert::AsRef<str> for UsageReportExecutionErrorCode {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

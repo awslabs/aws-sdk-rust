@@ -2,11 +2,11 @@
 
 /// <p>Describes a filter for Session Manager information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SessionFilter {
     /// <p>The name of the filter.</p>
     #[doc(hidden)]
-    pub key: std::option::Option<crate::types::SessionFilterKey>,
+    pub key: ::std::option::Option<crate::types::SessionFilterKey>,
     /// <p>The filter value. Valid values for each filter key are as follows:</p>
     /// <ul>
     /// <li> <p>InvokedAfter: Specify a timestamp to limit your results. For example, specify 2018-08-29T00:00:00Z to see sessions that started August 29, 2018, and later.</p> </li>
@@ -25,11 +25,11 @@ pub struct SessionFilter {
     /// <li> <p>SessionId: Specify a session ID to return details about the session.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub value: std::option::Option<std::string::String>,
+    pub value: ::std::option::Option<::std::string::String>,
 }
 impl SessionFilter {
     /// <p>The name of the filter.</p>
-    pub fn key(&self) -> std::option::Option<&crate::types::SessionFilterKey> {
+    pub fn key(&self) -> ::std::option::Option<&crate::types::SessionFilterKey> {
         self.key.as_ref()
     }
     /// <p>The filter value. Valid values for each filter key are as follows:</p>
@@ -49,7 +49,7 @@ impl SessionFilter {
     /// </ul> </li>
     /// <li> <p>SessionId: Specify a session ID to return details about the session.</p> </li>
     /// </ul>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
 }
@@ -62,19 +62,21 @@ impl SessionFilter {
 
 /// A builder for [`SessionFilter`](crate::types::SessionFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SessionFilterBuilder {
-    pub(crate) key: std::option::Option<crate::types::SessionFilterKey>,
-    pub(crate) value: std::option::Option<std::string::String>,
+    pub(crate) key: ::std::option::Option<crate::types::SessionFilterKey>,
+    pub(crate) value: ::std::option::Option<::std::string::String>,
 }
 impl SessionFilterBuilder {
     /// <p>The name of the filter.</p>
     pub fn key(mut self, input: crate::types::SessionFilterKey) -> Self {
-        self.key = Some(input);
+        self.key = ::std::option::Option::Some(input);
         self
     }
     /// <p>The name of the filter.</p>
-    pub fn set_key(mut self, input: std::option::Option<crate::types::SessionFilterKey>) -> Self {
+    pub fn set_key(mut self, input: ::std::option::Option<crate::types::SessionFilterKey>) -> Self {
         self.key = input;
         self
     }
@@ -95,8 +97,8 @@ impl SessionFilterBuilder {
     /// </ul> </li>
     /// <li> <p>SessionId: Specify a session ID to return details about the session.</p> </li>
     /// </ul>
-    pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.value = Some(input.into());
+    pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The filter value. Valid values for each filter key are as follows:</p>
@@ -116,7 +118,7 @@ impl SessionFilterBuilder {
     /// </ul> </li>
     /// <li> <p>SessionId: Specify a session ID to return details about the session.</p> </li>
     /// </ul>
-    pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
     }

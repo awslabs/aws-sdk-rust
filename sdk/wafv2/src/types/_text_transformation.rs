@@ -2,7 +2,7 @@
 
 /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TextTransformation {
     /// <p>Sets the relative processing order for multiple transformations. WAF processes all transformations, from lowest priority to highest, before inspecting the transformed content. The priorities don't need to be consecutive, but they must all be different. </p>
     #[doc(hidden)]
@@ -54,7 +54,7 @@ pub struct TextTransformation {
     /// <p> <b>URL_DECODE_UNI</b> - Like <code>URL_DECODE</code>, but with support for Microsoft-specific <code>%u</code> encoding. If the code is in the full-width ASCII code range of <code>FF01-FF5E</code>, the higher byte is used to detect and adjust the lower byte. Otherwise, only the lower byte is used and the higher byte is zeroed. </p>
     /// <p> <b>UTF8_TO_UNICODE</b> - Convert all UTF-8 character sequences to Unicode. This helps input normalization, and minimizing false-positives and false-negatives for non-English languages.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::TextTransformationType>,
+    pub r#type: ::std::option::Option<crate::types::TextTransformationType>,
 }
 impl TextTransformation {
     /// <p>Sets the relative processing order for multiple transformations. WAF processes all transformations, from lowest priority to highest, before inspecting the transformed content. The priorities don't need to be consecutive, but they must all be different. </p>
@@ -107,7 +107,7 @@ impl TextTransformation {
     /// <p> <b>URL_DECODE</b> - Decode a URL-encoded value. </p>
     /// <p> <b>URL_DECODE_UNI</b> - Like <code>URL_DECODE</code>, but with support for Microsoft-specific <code>%u</code> encoding. If the code is in the full-width ASCII code range of <code>FF01-FF5E</code>, the higher byte is used to detect and adjust the lower byte. Otherwise, only the lower byte is used and the higher byte is zeroed. </p>
     /// <p> <b>UTF8_TO_UNICODE</b> - Convert all UTF-8 character sequences to Unicode. This helps input normalization, and minimizing false-positives and false-negatives for non-English languages.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::TextTransformationType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::TextTransformationType> {
         self.r#type.as_ref()
     }
 }
@@ -120,19 +120,21 @@ impl TextTransformation {
 
 /// A builder for [`TextTransformation`](crate::types::TextTransformation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TextTransformationBuilder {
-    pub(crate) priority: std::option::Option<i32>,
-    pub(crate) r#type: std::option::Option<crate::types::TextTransformationType>,
+    pub(crate) priority: ::std::option::Option<i32>,
+    pub(crate) r#type: ::std::option::Option<crate::types::TextTransformationType>,
 }
 impl TextTransformationBuilder {
     /// <p>Sets the relative processing order for multiple transformations. WAF processes all transformations, from lowest priority to highest, before inspecting the transformed content. The priorities don't need to be consecutive, but they must all be different. </p>
     pub fn priority(mut self, input: i32) -> Self {
-        self.priority = Some(input);
+        self.priority = ::std::option::Option::Some(input);
         self
     }
     /// <p>Sets the relative processing order for multiple transformations. WAF processes all transformations, from lowest priority to highest, before inspecting the transformed content. The priorities don't need to be consecutive, but they must all be different. </p>
-    pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
         self.priority = input;
         self
     }
@@ -183,7 +185,7 @@ impl TextTransformationBuilder {
     /// <p> <b>URL_DECODE_UNI</b> - Like <code>URL_DECODE</code>, but with support for Microsoft-specific <code>%u</code> encoding. If the code is in the full-width ASCII code range of <code>FF01-FF5E</code>, the higher byte is used to detect and adjust the lower byte. Otherwise, only the lower byte is used and the higher byte is zeroed. </p>
     /// <p> <b>UTF8_TO_UNICODE</b> - Convert all UTF-8 character sequences to Unicode. This helps input normalization, and minimizing false-positives and false-negatives for non-English languages.</p>
     pub fn r#type(mut self, input: crate::types::TextTransformationType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>You can specify the following transformation types:</p>
@@ -234,7 +236,7 @@ impl TextTransformationBuilder {
     /// <p> <b>UTF8_TO_UNICODE</b> - Convert all UTF-8 character sequences to Unicode. This helps input normalization, and minimizing false-positives and false-negatives for non-English languages.</p>
     pub fn set_type(
         mut self,
-        input: std::option::Option<crate::types::TextTransformationType>,
+        input: ::std::option::Option<crate::types::TextTransformationType>,
     ) -> Self {
         self.r#type = input;
         self

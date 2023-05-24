@@ -11,56 +11,59 @@ pub use crate::operation::modify_fleet::_modify_fleet_input::ModifyFleetInputBui
 /// <p>To scale up your EC2 Fleet, increase its target capacity. The EC2 Fleet launches the additional Spot Instances according to the allocation strategy for the EC2 Fleet request. If the allocation strategy is <code>lowest-price</code>, the EC2 Fleet launches instances using the Spot Instance pool with the lowest price. If the allocation strategy is <code>diversified</code>, the EC2 Fleet distributes the instances across the Spot Instance pools. If the allocation strategy is <code>capacity-optimized</code>, EC2 Fleet launches instances from Spot Instance pools with optimal capacity for the number of instances that are launching.</p>
 /// <p>To scale down your EC2 Fleet, decrease its target capacity. First, the EC2 Fleet cancels any open requests that exceed the new target capacity. You can request that the EC2 Fleet terminate Spot Instances until the size of the fleet no longer exceeds the new target capacity. If the allocation strategy is <code>lowest-price</code>, the EC2 Fleet terminates the instances with the highest price per unit. If the allocation strategy is <code>capacity-optimized</code>, the EC2 Fleet terminates the instances in the Spot Instance pools that have the least available Spot Instance capacity. If the allocation strategy is <code>diversified</code>, the EC2 Fleet terminates instances across the Spot Instance pools. Alternatively, you can request that the EC2 Fleet keep the fleet at its current size, but not replace any Spot Instances that are interrupted or that you terminate manually.</p>
 /// <p>If you are finished with your EC2 Fleet for now, but will use it again later, you can set the target capacity to 0.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyFleetFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::modify_fleet::builders::ModifyFleetInputBuilder,
 }
 impl ModifyFleetFluentBuilder {
     /// Creates a new `ModifyFleet`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::modify_fleet::ModifyFleet,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::modify_fleet::ModifyFleetError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_fleet::ModifyFleetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::modify_fleet::ModifyFleetOutput,
-        aws_smithy_http::result::SdkError<crate::operation::modify_fleet::ModifyFleetError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_fleet::ModifyFleetError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -73,9 +76,9 @@ impl ModifyFleetFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::modify_fleet::ModifyFleetOutput,
-        aws_smithy_http::result::SdkError<crate::operation::modify_fleet::ModifyFleetError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::modify_fleet::ModifyFleetError>,
     > {
         self.send_middleware().await
     }
@@ -85,7 +88,7 @@ impl ModifyFleetFluentBuilder {
         self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
     }
@@ -102,7 +105,7 @@ impl ModifyFleetFluentBuilder {
     /// <p>Supported only for fleets of type <code>maintain</code>.</p>
     pub fn set_excess_capacity_termination_policy(
         mut self,
-        input: std::option::Option<crate::types::FleetExcessCapacityTerminationPolicy>,
+        input: ::std::option::Option<crate::types::FleetExcessCapacityTerminationPolicy>,
     ) -> Self {
         self.inner = self.inner.set_excess_capacity_termination_policy(input);
         self
@@ -122,18 +125,20 @@ impl ModifyFleetFluentBuilder {
     /// <p>The launch template and overrides.</p>
     pub fn set_launch_template_configs(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::FleetLaunchTemplateConfigRequest>>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::FleetLaunchTemplateConfigRequest>,
+        >,
     ) -> Self {
         self.inner = self.inner.set_launch_template_configs(input);
         self
     }
     /// <p>The ID of the EC2 Fleet.</p>
-    pub fn fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.fleet_id(input.into());
         self
     }
     /// <p>The ID of the EC2 Fleet.</p>
-    pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_fleet_id(input);
         self
     }
@@ -148,18 +153,18 @@ impl ModifyFleetFluentBuilder {
     /// <p>The size of the EC2 Fleet.</p>
     pub fn set_target_capacity_specification(
         mut self,
-        input: std::option::Option<crate::types::TargetCapacitySpecificationRequest>,
+        input: ::std::option::Option<crate::types::TargetCapacitySpecificationRequest>,
     ) -> Self {
         self.inner = self.inner.set_target_capacity_specification(input);
         self
     }
     /// <p>Reserved.</p>
-    pub fn context(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn context(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.context(input.into());
         self
     }
     /// <p>Reserved.</p>
-    pub fn set_context(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_context(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_context(input);
         self
     }

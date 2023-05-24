@@ -2,7 +2,7 @@
 
 /// <p>The settings for encrypting data in transit.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EncryptionInTransit {
     /// <p>Indicates the encryption setting for data in transit between clients and brokers. The following are the possible values.</p>
     /// <p> TLS means that client-broker communication is enabled with TLS only.</p>
@@ -10,11 +10,11 @@ pub struct EncryptionInTransit {
     /// <p> PLAINTEXT means that client-broker communication is enabled in plaintext only.</p>
     /// <p>The default value is TLS_PLAINTEXT.</p>
     #[doc(hidden)]
-    pub client_broker: std::option::Option<crate::types::ClientBroker>,
+    pub client_broker: ::std::option::Option<crate::types::ClientBroker>,
     /// <p>When set to true, it indicates that data communication among the broker nodes of the cluster is encrypted. When set to false, the communication happens in plaintext.</p>
     /// <p>The default value is true.</p>
     #[doc(hidden)]
-    pub in_cluster: std::option::Option<bool>,
+    pub in_cluster: ::std::option::Option<bool>,
 }
 impl EncryptionInTransit {
     /// <p>Indicates the encryption setting for data in transit between clients and brokers. The following are the possible values.</p>
@@ -22,12 +22,12 @@ impl EncryptionInTransit {
     /// <p> TLS_PLAINTEXT means that client-broker communication is enabled for both TLS-encrypted, as well as plaintext data.</p>
     /// <p> PLAINTEXT means that client-broker communication is enabled in plaintext only.</p>
     /// <p>The default value is TLS_PLAINTEXT.</p>
-    pub fn client_broker(&self) -> std::option::Option<&crate::types::ClientBroker> {
+    pub fn client_broker(&self) -> ::std::option::Option<&crate::types::ClientBroker> {
         self.client_broker.as_ref()
     }
     /// <p>When set to true, it indicates that data communication among the broker nodes of the cluster is encrypted. When set to false, the communication happens in plaintext.</p>
     /// <p>The default value is true.</p>
-    pub fn in_cluster(&self) -> std::option::Option<bool> {
+    pub fn in_cluster(&self) -> ::std::option::Option<bool> {
         self.in_cluster
     }
 }
@@ -40,10 +40,12 @@ impl EncryptionInTransit {
 
 /// A builder for [`EncryptionInTransit`](crate::types::EncryptionInTransit).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EncryptionInTransitBuilder {
-    pub(crate) client_broker: std::option::Option<crate::types::ClientBroker>,
-    pub(crate) in_cluster: std::option::Option<bool>,
+    pub(crate) client_broker: ::std::option::Option<crate::types::ClientBroker>,
+    pub(crate) in_cluster: ::std::option::Option<bool>,
 }
 impl EncryptionInTransitBuilder {
     /// <p>Indicates the encryption setting for data in transit between clients and brokers. The following are the possible values.</p>
@@ -52,7 +54,7 @@ impl EncryptionInTransitBuilder {
     /// <p> PLAINTEXT means that client-broker communication is enabled in plaintext only.</p>
     /// <p>The default value is TLS_PLAINTEXT.</p>
     pub fn client_broker(mut self, input: crate::types::ClientBroker) -> Self {
-        self.client_broker = Some(input);
+        self.client_broker = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates the encryption setting for data in transit between clients and brokers. The following are the possible values.</p>
@@ -62,7 +64,7 @@ impl EncryptionInTransitBuilder {
     /// <p>The default value is TLS_PLAINTEXT.</p>
     pub fn set_client_broker(
         mut self,
-        input: std::option::Option<crate::types::ClientBroker>,
+        input: ::std::option::Option<crate::types::ClientBroker>,
     ) -> Self {
         self.client_broker = input;
         self
@@ -70,12 +72,12 @@ impl EncryptionInTransitBuilder {
     /// <p>When set to true, it indicates that data communication among the broker nodes of the cluster is encrypted. When set to false, the communication happens in plaintext.</p>
     /// <p>The default value is true.</p>
     pub fn in_cluster(mut self, input: bool) -> Self {
-        self.in_cluster = Some(input);
+        self.in_cluster = ::std::option::Option::Some(input);
         self
     }
     /// <p>When set to true, it indicates that data communication among the broker nodes of the cluster is encrypted. When set to false, the communication happens in plaintext.</p>
     /// <p>The default value is true.</p>
-    pub fn set_in_cluster(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_in_cluster(mut self, input: ::std::option::Option<bool>) -> Self {
         self.in_cluster = input;
         self
     }

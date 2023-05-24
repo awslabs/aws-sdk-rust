@@ -2,31 +2,32 @@
 
 /// <p>An object that contains information about email that was sent from the selected domain.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OverallVolume {
     /// <p>An object that contains information about the numbers of messages that arrived in recipients' inboxes and junk mail folders.</p>
     #[doc(hidden)]
-    pub volume_statistics: std::option::Option<crate::types::VolumeStatistics>,
+    pub volume_statistics: ::std::option::Option<crate::types::VolumeStatistics>,
     /// <p>The percentage of emails that were sent from the domain that were read by their recipients.</p>
     #[doc(hidden)]
-    pub read_rate_percent: std::option::Option<f64>,
+    pub read_rate_percent: ::std::option::Option<f64>,
     /// <p>An object that contains inbox and junk mail placement metrics for individual email providers.</p>
     #[doc(hidden)]
-    pub domain_isp_placements: std::option::Option<std::vec::Vec<crate::types::DomainIspPlacement>>,
+    pub domain_isp_placements:
+        ::std::option::Option<::std::vec::Vec<crate::types::DomainIspPlacement>>,
 }
 impl OverallVolume {
     /// <p>An object that contains information about the numbers of messages that arrived in recipients' inboxes and junk mail folders.</p>
-    pub fn volume_statistics(&self) -> std::option::Option<&crate::types::VolumeStatistics> {
+    pub fn volume_statistics(&self) -> ::std::option::Option<&crate::types::VolumeStatistics> {
         self.volume_statistics.as_ref()
     }
     /// <p>The percentage of emails that were sent from the domain that were read by their recipients.</p>
-    pub fn read_rate_percent(&self) -> std::option::Option<f64> {
+    pub fn read_rate_percent(&self) -> ::std::option::Option<f64> {
         self.read_rate_percent
     }
     /// <p>An object that contains inbox and junk mail placement metrics for individual email providers.</p>
     pub fn domain_isp_placements(
         &self,
-    ) -> std::option::Option<&[crate::types::DomainIspPlacement]> {
+    ) -> ::std::option::Option<&[crate::types::DomainIspPlacement]> {
         self.domain_isp_placements.as_deref()
     }
 }
@@ -39,34 +40,36 @@ impl OverallVolume {
 
 /// A builder for [`OverallVolume`](crate::types::OverallVolume).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OverallVolumeBuilder {
-    pub(crate) volume_statistics: std::option::Option<crate::types::VolumeStatistics>,
-    pub(crate) read_rate_percent: std::option::Option<f64>,
+    pub(crate) volume_statistics: ::std::option::Option<crate::types::VolumeStatistics>,
+    pub(crate) read_rate_percent: ::std::option::Option<f64>,
     pub(crate) domain_isp_placements:
-        std::option::Option<std::vec::Vec<crate::types::DomainIspPlacement>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::DomainIspPlacement>>,
 }
 impl OverallVolumeBuilder {
     /// <p>An object that contains information about the numbers of messages that arrived in recipients' inboxes and junk mail folders.</p>
     pub fn volume_statistics(mut self, input: crate::types::VolumeStatistics) -> Self {
-        self.volume_statistics = Some(input);
+        self.volume_statistics = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that contains information about the numbers of messages that arrived in recipients' inboxes and junk mail folders.</p>
     pub fn set_volume_statistics(
         mut self,
-        input: std::option::Option<crate::types::VolumeStatistics>,
+        input: ::std::option::Option<crate::types::VolumeStatistics>,
     ) -> Self {
         self.volume_statistics = input;
         self
     }
     /// <p>The percentage of emails that were sent from the domain that were read by their recipients.</p>
     pub fn read_rate_percent(mut self, input: f64) -> Self {
-        self.read_rate_percent = Some(input);
+        self.read_rate_percent = ::std::option::Option::Some(input);
         self
     }
     /// <p>The percentage of emails that were sent from the domain that were read by their recipients.</p>
-    pub fn set_read_rate_percent(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_read_rate_percent(mut self, input: ::std::option::Option<f64>) -> Self {
         self.read_rate_percent = input;
         self
     }
@@ -78,13 +81,13 @@ impl OverallVolumeBuilder {
     pub fn domain_isp_placements(mut self, input: crate::types::DomainIspPlacement) -> Self {
         let mut v = self.domain_isp_placements.unwrap_or_default();
         v.push(input);
-        self.domain_isp_placements = Some(v);
+        self.domain_isp_placements = ::std::option::Option::Some(v);
         self
     }
     /// <p>An object that contains inbox and junk mail placement metrics for individual email providers.</p>
     pub fn set_domain_isp_placements(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DomainIspPlacement>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DomainIspPlacement>>,
     ) -> Self {
         self.domain_isp_placements = input;
         self

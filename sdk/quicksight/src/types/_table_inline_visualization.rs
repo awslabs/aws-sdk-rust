@@ -2,15 +2,15 @@
 
 /// <p>The inline visualization of a specific type to display within a chart.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TableInlineVisualization {
     /// <p>The configuration of the inline visualization of the data bars within a chart.</p>
     #[doc(hidden)]
-    pub data_bars: std::option::Option<crate::types::DataBarsOptions>,
+    pub data_bars: ::std::option::Option<crate::types::DataBarsOptions>,
 }
 impl TableInlineVisualization {
     /// <p>The configuration of the inline visualization of the data bars within a chart.</p>
-    pub fn data_bars(&self) -> std::option::Option<&crate::types::DataBarsOptions> {
+    pub fn data_bars(&self) -> ::std::option::Option<&crate::types::DataBarsOptions> {
         self.data_bars.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl TableInlineVisualization {
 
 /// A builder for [`TableInlineVisualization`](crate::types::TableInlineVisualization).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TableInlineVisualizationBuilder {
-    pub(crate) data_bars: std::option::Option<crate::types::DataBarsOptions>,
+    pub(crate) data_bars: ::std::option::Option<crate::types::DataBarsOptions>,
 }
 impl TableInlineVisualizationBuilder {
     /// <p>The configuration of the inline visualization of the data bars within a chart.</p>
     pub fn data_bars(mut self, input: crate::types::DataBarsOptions) -> Self {
-        self.data_bars = Some(input);
+        self.data_bars = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration of the inline visualization of the data bars within a chart.</p>
     pub fn set_data_bars(
         mut self,
-        input: std::option::Option<crate::types::DataBarsOptions>,
+        input: ::std::option::Option<crate::types::DataBarsOptions>,
     ) -> Self {
         self.data_bars = input;
         self

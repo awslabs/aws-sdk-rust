@@ -6,56 +6,59 @@ pub use crate::operation::create_volume::_create_volume_input::CreateVolumeInput
 /// Fluent builder constructing a request to `CreateVolume`.
 ///
 /// <p>Creates an FSx for ONTAP or Amazon FSx for OpenZFS storage volume.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateVolumeFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_volume::builders::CreateVolumeInputBuilder,
 }
 impl CreateVolumeFluentBuilder {
     /// Creates a new `CreateVolume`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_volume::CreateVolume,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_volume::CreateVolumeError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_volume::CreateVolumeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_volume::CreateVolumeOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_volume::CreateVolumeError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_volume::CreateVolumeError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,21 +71,24 @@ impl CreateVolumeFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_volume::CreateVolumeOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_volume::CreateVolumeError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_volume::CreateVolumeError>,
     > {
         self.send_middleware().await
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn client_request_token(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     pub fn set_client_request_token(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
@@ -93,17 +99,20 @@ impl CreateVolumeFluentBuilder {
         self
     }
     /// <p>Specifies the type of volume to create; <code>ONTAP</code> and <code>OPENZFS</code> are the only valid volume types.</p>
-    pub fn set_volume_type(mut self, input: std::option::Option<crate::types::VolumeType>) -> Self {
+    pub fn set_volume_type(
+        mut self,
+        input: ::std::option::Option<crate::types::VolumeType>,
+    ) -> Self {
         self.inner = self.inner.set_volume_type(input);
         self
     }
     /// <p>Specifies the name of the volume that you're creating.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// <p>Specifies the name of the volume that you're creating.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
@@ -118,7 +127,7 @@ impl CreateVolumeFluentBuilder {
     /// <p>Specifies the configuration to use when creating the ONTAP volume.</p>
     pub fn set_ontap_configuration(
         mut self,
-        input: std::option::Option<crate::types::CreateOntapVolumeConfiguration>,
+        input: ::std::option::Option<crate::types::CreateOntapVolumeConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_ontap_configuration(input);
         self
@@ -135,7 +144,7 @@ impl CreateVolumeFluentBuilder {
     /// <p>A list of <code>Tag</code> values, with a maximum of 50 elements.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
@@ -151,7 +160,7 @@ impl CreateVolumeFluentBuilder {
     /// <p>Specifies the configuration to use when creating the OpenZFS volume.</p>
     pub fn set_open_zfs_configuration(
         mut self,
-        input: std::option::Option<crate::types::CreateOpenZfsVolumeConfiguration>,
+        input: ::std::option::Option<crate::types::CreateOpenZfsVolumeConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_open_zfs_configuration(input);
         self

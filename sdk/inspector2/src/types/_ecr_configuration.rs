@@ -2,15 +2,15 @@
 
 /// <p>Details about the ECR automated re-scan duration setting for your environment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EcrConfiguration {
     /// <p>The ECR automated re-scan duration defines how long an ECR image will be actively scanned by Amazon Inspector. When the number of days since an image was last pushed exceeds the automated re-scan duration the monitoring state of that image becomes <code>inactive</code> and all associated findings are scheduled for closure.</p>
     #[doc(hidden)]
-    pub rescan_duration: std::option::Option<crate::types::EcrRescanDuration>,
+    pub rescan_duration: ::std::option::Option<crate::types::EcrRescanDuration>,
 }
 impl EcrConfiguration {
     /// <p>The ECR automated re-scan duration defines how long an ECR image will be actively scanned by Amazon Inspector. When the number of days since an image was last pushed exceeds the automated re-scan duration the monitoring state of that image becomes <code>inactive</code> and all associated findings are scheduled for closure.</p>
-    pub fn rescan_duration(&self) -> std::option::Option<&crate::types::EcrRescanDuration> {
+    pub fn rescan_duration(&self) -> ::std::option::Option<&crate::types::EcrRescanDuration> {
         self.rescan_duration.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl EcrConfiguration {
 
 /// A builder for [`EcrConfiguration`](crate::types::EcrConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EcrConfigurationBuilder {
-    pub(crate) rescan_duration: std::option::Option<crate::types::EcrRescanDuration>,
+    pub(crate) rescan_duration: ::std::option::Option<crate::types::EcrRescanDuration>,
 }
 impl EcrConfigurationBuilder {
     /// <p>The ECR automated re-scan duration defines how long an ECR image will be actively scanned by Amazon Inspector. When the number of days since an image was last pushed exceeds the automated re-scan duration the monitoring state of that image becomes <code>inactive</code> and all associated findings are scheduled for closure.</p>
     pub fn rescan_duration(mut self, input: crate::types::EcrRescanDuration) -> Self {
-        self.rescan_duration = Some(input);
+        self.rescan_duration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The ECR automated re-scan duration defines how long an ECR image will be actively scanned by Amazon Inspector. When the number of days since an image was last pushed exceeds the automated re-scan duration the monitoring state of that image becomes <code>inactive</code> and all associated findings are scheduled for closure.</p>
     pub fn set_rescan_duration(
         mut self,
-        input: std::option::Option<crate::types::EcrRescanDuration>,
+        input: ::std::option::Option<crate::types::EcrRescanDuration>,
     ) -> Self {
         self.rescan_duration = input;
         self

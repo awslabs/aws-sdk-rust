@@ -2,22 +2,22 @@
 
 /// A request to add sources to the specified bridge.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddBridgeSourcesInput {
     /// The ARN of the bridge that you want to update.
     #[doc(hidden)]
-    pub bridge_arn: std::option::Option<std::string::String>,
+    pub bridge_arn: ::std::option::Option<::std::string::String>,
     /// The sources that you want to add to this bridge.
     #[doc(hidden)]
-    pub sources: std::option::Option<std::vec::Vec<crate::types::AddBridgeSourceRequest>>,
+    pub sources: ::std::option::Option<::std::vec::Vec<crate::types::AddBridgeSourceRequest>>,
 }
 impl AddBridgeSourcesInput {
     /// The ARN of the bridge that you want to update.
-    pub fn bridge_arn(&self) -> std::option::Option<&str> {
+    pub fn bridge_arn(&self) -> ::std::option::Option<&str> {
         self.bridge_arn.as_deref()
     }
     /// The sources that you want to add to this bridge.
-    pub fn sources(&self) -> std::option::Option<&[crate::types::AddBridgeSourceRequest]> {
+    pub fn sources(&self) -> ::std::option::Option<&[crate::types::AddBridgeSourceRequest]> {
         self.sources.as_deref()
     }
 }
@@ -31,19 +31,22 @@ impl AddBridgeSourcesInput {
 
 /// A builder for [`AddBridgeSourcesInput`](crate::operation::add_bridge_sources::AddBridgeSourcesInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AddBridgeSourcesInputBuilder {
-    pub(crate) bridge_arn: std::option::Option<std::string::String>,
-    pub(crate) sources: std::option::Option<std::vec::Vec<crate::types::AddBridgeSourceRequest>>,
+    pub(crate) bridge_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) sources:
+        ::std::option::Option<::std::vec::Vec<crate::types::AddBridgeSourceRequest>>,
 }
 impl AddBridgeSourcesInputBuilder {
     /// The ARN of the bridge that you want to update.
-    pub fn bridge_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.bridge_arn = Some(input.into());
+    pub fn bridge_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.bridge_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// The ARN of the bridge that you want to update.
-    pub fn set_bridge_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_bridge_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bridge_arn = input;
         self
     }
@@ -55,13 +58,13 @@ impl AddBridgeSourcesInputBuilder {
     pub fn sources(mut self, input: crate::types::AddBridgeSourceRequest) -> Self {
         let mut v = self.sources.unwrap_or_default();
         v.push(input);
-        self.sources = Some(v);
+        self.sources = ::std::option::Option::Some(v);
         self
     }
     /// The sources that you want to add to this bridge.
     pub fn set_sources(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AddBridgeSourceRequest>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AddBridgeSourceRequest>>,
     ) -> Self {
         self.sources = input;
         self
@@ -69,11 +72,11 @@ impl AddBridgeSourcesInputBuilder {
     /// Consumes the builder and constructs a [`AddBridgeSourcesInput`](crate::operation::add_bridge_sources::AddBridgeSourcesInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::add_bridge_sources::AddBridgeSourcesInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::add_bridge_sources::AddBridgeSourcesInput {
                 bridge_arn: self.bridge_arn,
                 sources: self.sources,

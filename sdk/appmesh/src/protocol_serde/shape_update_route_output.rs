@@ -2,7 +2,7 @@
 pub(crate) fn de_route_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::types::RouteData>,
+    ::std::option::Option<crate::types::RouteData>,
     crate::operation::update_route::UpdateRouteError,
 > {
     (!body.is_empty())

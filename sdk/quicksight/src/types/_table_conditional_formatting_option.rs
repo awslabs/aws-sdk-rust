@@ -2,22 +2,22 @@
 
 /// <p>Conditional formatting options for a <code>PivotTableVisual</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TableConditionalFormattingOption {
     /// <p>The cell conditional formatting option for a table.</p>
     #[doc(hidden)]
-    pub cell: std::option::Option<crate::types::TableCellConditionalFormatting>,
+    pub cell: ::std::option::Option<crate::types::TableCellConditionalFormatting>,
     /// <p>The row conditional formatting option for a table.</p>
     #[doc(hidden)]
-    pub row: std::option::Option<crate::types::TableRowConditionalFormatting>,
+    pub row: ::std::option::Option<crate::types::TableRowConditionalFormatting>,
 }
 impl TableConditionalFormattingOption {
     /// <p>The cell conditional formatting option for a table.</p>
-    pub fn cell(&self) -> std::option::Option<&crate::types::TableCellConditionalFormatting> {
+    pub fn cell(&self) -> ::std::option::Option<&crate::types::TableCellConditionalFormatting> {
         self.cell.as_ref()
     }
     /// <p>The row conditional formatting option for a table.</p>
-    pub fn row(&self) -> std::option::Option<&crate::types::TableRowConditionalFormatting> {
+    pub fn row(&self) -> ::std::option::Option<&crate::types::TableRowConditionalFormatting> {
         self.row.as_ref()
     }
 }
@@ -30,34 +30,36 @@ impl TableConditionalFormattingOption {
 
 /// A builder for [`TableConditionalFormattingOption`](crate::types::TableConditionalFormattingOption).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TableConditionalFormattingOptionBuilder {
-    pub(crate) cell: std::option::Option<crate::types::TableCellConditionalFormatting>,
-    pub(crate) row: std::option::Option<crate::types::TableRowConditionalFormatting>,
+    pub(crate) cell: ::std::option::Option<crate::types::TableCellConditionalFormatting>,
+    pub(crate) row: ::std::option::Option<crate::types::TableRowConditionalFormatting>,
 }
 impl TableConditionalFormattingOptionBuilder {
     /// <p>The cell conditional formatting option for a table.</p>
     pub fn cell(mut self, input: crate::types::TableCellConditionalFormatting) -> Self {
-        self.cell = Some(input);
+        self.cell = ::std::option::Option::Some(input);
         self
     }
     /// <p>The cell conditional formatting option for a table.</p>
     pub fn set_cell(
         mut self,
-        input: std::option::Option<crate::types::TableCellConditionalFormatting>,
+        input: ::std::option::Option<crate::types::TableCellConditionalFormatting>,
     ) -> Self {
         self.cell = input;
         self
     }
     /// <p>The row conditional formatting option for a table.</p>
     pub fn row(mut self, input: crate::types::TableRowConditionalFormatting) -> Self {
-        self.row = Some(input);
+        self.row = ::std::option::Option::Some(input);
         self
     }
     /// <p>The row conditional formatting option for a table.</p>
     pub fn set_row(
         mut self,
-        input: std::option::Option<crate::types::TableRowConditionalFormatting>,
+        input: ::std::option::Option<crate::types::TableRowConditionalFormatting>,
     ) -> Self {
         self.row = input;
         self

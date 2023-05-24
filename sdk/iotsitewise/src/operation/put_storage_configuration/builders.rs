@@ -6,30 +6,30 @@ pub use crate::operation::put_storage_configuration::_put_storage_configuration_
 /// Fluent builder constructing a request to `PutStorageConfiguration`.
 ///
 /// <p>Configures storage settings for IoT SiteWise.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutStorageConfigurationFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner:
         crate::operation::put_storage_configuration::builders::PutStorageConfigurationInputBuilder,
 }
 impl PutStorageConfigurationFluentBuilder {
     /// Creates a new `PutStorageConfiguration`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::put_storage_configuration::PutStorageConfiguration,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::put_storage_configuration::PutStorageConfigurationError,
         >,
     > {
@@ -37,30 +37,33 @@ impl PutStorageConfigurationFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::put_storage_configuration::PutStorageConfigurationOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::put_storage_configuration::PutStorageConfigurationError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -73,9 +76,9 @@ impl PutStorageConfigurationFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::put_storage_configuration::PutStorageConfigurationOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::put_storage_configuration::PutStorageConfigurationError,
         >,
     > {
@@ -97,7 +100,7 @@ impl PutStorageConfigurationFluentBuilder {
     /// </ul>
     pub fn set_storage_type(
         mut self,
-        input: std::option::Option<crate::types::StorageType>,
+        input: ::std::option::Option<crate::types::StorageType>,
     ) -> Self {
         self.inner = self.inner.set_storage_type(input);
         self
@@ -110,7 +113,7 @@ impl PutStorageConfigurationFluentBuilder {
     /// <p>Identifies a storage destination. If you specified <code>MULTI_LAYER_STORAGE</code> for the storage type, you must specify a <code>MultiLayerStorage</code> object.</p>
     pub fn set_multi_layer_storage(
         mut self,
-        input: std::option::Option<crate::types::MultiLayerStorage>,
+        input: ::std::option::Option<crate::types::MultiLayerStorage>,
     ) -> Self {
         self.inner = self.inner.set_multi_layer_storage(input);
         self
@@ -140,7 +143,7 @@ impl PutStorageConfigurationFluentBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data streams</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn set_disassociated_data_storage(
         mut self,
-        input: std::option::Option<crate::types::DisassociatedDataStorageState>,
+        input: ::std::option::Option<crate::types::DisassociatedDataStorageState>,
     ) -> Self {
         self.inner = self.inner.set_disassociated_data_storage(input);
         self
@@ -153,7 +156,7 @@ impl PutStorageConfigurationFluentBuilder {
     /// <p>How many days your data is kept in the hot tier. By default, your data is kept indefinitely in the hot tier.</p>
     pub fn set_retention_period(
         mut self,
-        input: std::option::Option<crate::types::RetentionPeriod>,
+        input: ::std::option::Option<crate::types::RetentionPeriod>,
     ) -> Self {
         self.inner = self.inner.set_retention_period(input);
         self

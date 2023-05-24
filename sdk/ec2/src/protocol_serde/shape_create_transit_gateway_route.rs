@@ -2,7 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_create_transit_gateway_route_http_error(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::create_transit_gateway_route::CreateTransitGatewayRouteOutput,
@@ -17,7 +17,7 @@ pub fn de_create_transit_gateway_route_http_error(
     .map_err(
         crate::operation::create_transit_gateway_route::CreateTransitGatewayRouteError::unhandled,
     )?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
+    generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     Err(
         crate::operation::create_transit_gateway_route::CreateTransitGatewayRouteError::generic(
@@ -29,7 +29,7 @@ pub fn de_create_transit_gateway_route_http_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_create_transit_gateway_route_http_response_with_props(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::create_transit_gateway_route::CreateTransitGatewayRouteOutput,
@@ -40,22 +40,22 @@ pub fn de_create_transit_gateway_route_http_response_with_props(
         let mut output = crate::operation::create_transit_gateway_route::builders::CreateTransitGatewayRouteOutputBuilder::default();
         output = crate::protocol_serde::shape_create_transit_gateway_route::de_create_transit_gateway_route(_response_body, output).map_err(crate::operation::create_transit_gateway_route::CreateTransitGatewayRouteError::unhandled)?;
         output._set_request_id(
-            aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
+            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
         );
         output.build()
     })
 }
 
 #[allow(unused_mut)]
-pub fn de_create_transit_gateway_route(inp: &[u8], mut builder: crate::operation::create_transit_gateway_route::builders::CreateTransitGatewayRouteOutputBuilder) -> Result<crate::operation::create_transit_gateway_route::builders::CreateTransitGatewayRouteOutputBuilder, aws_smithy_xml::decode::XmlDecodeError>{
-    let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
+pub fn de_create_transit_gateway_route(inp: &[u8], mut builder: crate::operation::create_transit_gateway_route::builders::CreateTransitGatewayRouteOutputBuilder) -> Result<crate::operation::create_transit_gateway_route::builders::CreateTransitGatewayRouteOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>{
+    let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreateTransitGatewayRouteResponse")) {
-        return Err(aws_smithy_xml::decode::XmlDecodeError::custom(format!(
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected CreateTransitGatewayRouteResponse got {:?}",
             start_el
         )));

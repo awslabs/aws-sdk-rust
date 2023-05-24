@@ -2,36 +2,36 @@
 
 /// <p>The LoRaWAN information that is to be returned from getting multicast group information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoRaWanMulticastGet {
     /// <p>Supported RfRegions</p>
     #[doc(hidden)]
-    pub rf_region: std::option::Option<crate::types::SupportedRfRegion>,
+    pub rf_region: ::std::option::Option<crate::types::SupportedRfRegion>,
     /// <p>DlClass for LoRaWAM, valid values are ClassB and ClassC.</p>
     #[doc(hidden)]
-    pub dl_class: std::option::Option<crate::types::DlClass>,
+    pub dl_class: ::std::option::Option<crate::types::DlClass>,
     /// <p>Number of devices that are requested to be associated with the multicast group.</p>
     #[doc(hidden)]
-    pub number_of_devices_requested: std::option::Option<i32>,
+    pub number_of_devices_requested: ::std::option::Option<i32>,
     /// <p>Number of devices that are associated to the multicast group.</p>
     #[doc(hidden)]
-    pub number_of_devices_in_group: std::option::Option<i32>,
+    pub number_of_devices_in_group: ::std::option::Option<i32>,
 }
 impl LoRaWanMulticastGet {
     /// <p>Supported RfRegions</p>
-    pub fn rf_region(&self) -> std::option::Option<&crate::types::SupportedRfRegion> {
+    pub fn rf_region(&self) -> ::std::option::Option<&crate::types::SupportedRfRegion> {
         self.rf_region.as_ref()
     }
     /// <p>DlClass for LoRaWAM, valid values are ClassB and ClassC.</p>
-    pub fn dl_class(&self) -> std::option::Option<&crate::types::DlClass> {
+    pub fn dl_class(&self) -> ::std::option::Option<&crate::types::DlClass> {
         self.dl_class.as_ref()
     }
     /// <p>Number of devices that are requested to be associated with the multicast group.</p>
-    pub fn number_of_devices_requested(&self) -> std::option::Option<i32> {
+    pub fn number_of_devices_requested(&self) -> ::std::option::Option<i32> {
         self.number_of_devices_requested
     }
     /// <p>Number of devices that are associated to the multicast group.</p>
-    pub fn number_of_devices_in_group(&self) -> std::option::Option<i32> {
+    pub fn number_of_devices_in_group(&self) -> ::std::option::Option<i32> {
         self.number_of_devices_in_group
     }
 }
@@ -44,54 +44,56 @@ impl LoRaWanMulticastGet {
 
 /// A builder for [`LoRaWanMulticastGet`](crate::types::LoRaWanMulticastGet).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LoRaWanMulticastGetBuilder {
-    pub(crate) rf_region: std::option::Option<crate::types::SupportedRfRegion>,
-    pub(crate) dl_class: std::option::Option<crate::types::DlClass>,
-    pub(crate) number_of_devices_requested: std::option::Option<i32>,
-    pub(crate) number_of_devices_in_group: std::option::Option<i32>,
+    pub(crate) rf_region: ::std::option::Option<crate::types::SupportedRfRegion>,
+    pub(crate) dl_class: ::std::option::Option<crate::types::DlClass>,
+    pub(crate) number_of_devices_requested: ::std::option::Option<i32>,
+    pub(crate) number_of_devices_in_group: ::std::option::Option<i32>,
 }
 impl LoRaWanMulticastGetBuilder {
     /// <p>Supported RfRegions</p>
     pub fn rf_region(mut self, input: crate::types::SupportedRfRegion) -> Self {
-        self.rf_region = Some(input);
+        self.rf_region = ::std::option::Option::Some(input);
         self
     }
     /// <p>Supported RfRegions</p>
     pub fn set_rf_region(
         mut self,
-        input: std::option::Option<crate::types::SupportedRfRegion>,
+        input: ::std::option::Option<crate::types::SupportedRfRegion>,
     ) -> Self {
         self.rf_region = input;
         self
     }
     /// <p>DlClass for LoRaWAM, valid values are ClassB and ClassC.</p>
     pub fn dl_class(mut self, input: crate::types::DlClass) -> Self {
-        self.dl_class = Some(input);
+        self.dl_class = ::std::option::Option::Some(input);
         self
     }
     /// <p>DlClass for LoRaWAM, valid values are ClassB and ClassC.</p>
-    pub fn set_dl_class(mut self, input: std::option::Option<crate::types::DlClass>) -> Self {
+    pub fn set_dl_class(mut self, input: ::std::option::Option<crate::types::DlClass>) -> Self {
         self.dl_class = input;
         self
     }
     /// <p>Number of devices that are requested to be associated with the multicast group.</p>
     pub fn number_of_devices_requested(mut self, input: i32) -> Self {
-        self.number_of_devices_requested = Some(input);
+        self.number_of_devices_requested = ::std::option::Option::Some(input);
         self
     }
     /// <p>Number of devices that are requested to be associated with the multicast group.</p>
-    pub fn set_number_of_devices_requested(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_number_of_devices_requested(mut self, input: ::std::option::Option<i32>) -> Self {
         self.number_of_devices_requested = input;
         self
     }
     /// <p>Number of devices that are associated to the multicast group.</p>
     pub fn number_of_devices_in_group(mut self, input: i32) -> Self {
-        self.number_of_devices_in_group = Some(input);
+        self.number_of_devices_in_group = ::std::option::Option::Some(input);
         self
     }
     /// <p>Number of devices that are associated to the multicast group.</p>
-    pub fn set_number_of_devices_in_group(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_number_of_devices_in_group(mut self, input: ::std::option::Option<i32>) -> Self {
         self.number_of_devices_in_group = input;
         self
     }

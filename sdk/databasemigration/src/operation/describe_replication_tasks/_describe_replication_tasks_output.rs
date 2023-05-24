@@ -2,27 +2,27 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeReplicationTasksOutput {
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     #[doc(hidden)]
-    pub marker: std::option::Option<std::string::String>,
+    pub marker: ::std::option::Option<::std::string::String>,
     /// <p>A description of the replication tasks.</p>
     #[doc(hidden)]
-    pub replication_tasks: std::option::Option<std::vec::Vec<crate::types::ReplicationTask>>,
+    pub replication_tasks: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationTask>>,
     _request_id: Option<String>,
 }
 impl DescribeReplicationTasksOutput {
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
     /// <p>A description of the replication tasks.</p>
-    pub fn replication_tasks(&self) -> std::option::Option<&[crate::types::ReplicationTask]> {
+    pub fn replication_tasks(&self) -> ::std::option::Option<&[crate::types::ReplicationTask]> {
         self.replication_tasks.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeReplicationTasksOutput {
+impl ::aws_http::request_id::RequestId for DescribeReplicationTasksOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -38,20 +38,23 @@ impl DescribeReplicationTasksOutput {
 
 /// A builder for [`DescribeReplicationTasksOutput`](crate::operation::describe_replication_tasks::DescribeReplicationTasksOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeReplicationTasksOutputBuilder {
-    pub(crate) marker: std::option::Option<std::string::String>,
-    pub(crate) replication_tasks: std::option::Option<std::vec::Vec<crate::types::ReplicationTask>>,
+    pub(crate) marker: ::std::option::Option<::std::string::String>,
+    pub(crate) replication_tasks:
+        ::std::option::Option<::std::vec::Vec<crate::types::ReplicationTask>>,
     _request_id: Option<String>,
 }
 impl DescribeReplicationTasksOutputBuilder {
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
-    pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-        self.marker = Some(input.into());
+    pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
-    pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
     }
@@ -63,13 +66,13 @@ impl DescribeReplicationTasksOutputBuilder {
     pub fn replication_tasks(mut self, input: crate::types::ReplicationTask) -> Self {
         let mut v = self.replication_tasks.unwrap_or_default();
         v.push(input);
-        self.replication_tasks = Some(v);
+        self.replication_tasks = ::std::option::Option::Some(v);
         self
     }
     /// <p>A description of the replication tasks.</p>
     pub fn set_replication_tasks(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ReplicationTask>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationTask>>,
     ) -> Self {
         self.replication_tasks = input;
         self

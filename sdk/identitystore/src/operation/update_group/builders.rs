@@ -6,56 +6,59 @@ pub use crate::operation::update_group::_update_group_input::UpdateGroupInputBui
 /// Fluent builder constructing a request to `UpdateGroup`.
 ///
 /// <p>For the specified group in the specified identity store, updates the group metadata and attributes.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateGroupFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::update_group::builders::UpdateGroupInputBuilder,
 }
 impl UpdateGroupFluentBuilder {
     /// Creates a new `UpdateGroup`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_group::UpdateGroup,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::update_group::UpdateGroupError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_group::UpdateGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_group::UpdateGroupOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_group::UpdateGroupError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_group::UpdateGroupError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,32 +71,35 @@ impl UpdateGroupFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_group::UpdateGroupOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_group::UpdateGroupError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_group::UpdateGroupError>,
     > {
         self.send_middleware().await
     }
     /// <p>The globally unique identifier for the identity store.</p>
-    pub fn identity_store_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn identity_store_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.identity_store_id(input.into());
         self
     }
     /// <p>The globally unique identifier for the identity store.</p>
     pub fn set_identity_store_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_identity_store_id(input);
         self
     }
     /// <p>The identifier for a group in the identity store.</p>
-    pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.group_id(input.into());
         self
     }
     /// <p>The identifier for a group in the identity store.</p>
-    pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_group_id(input);
         self
     }
@@ -109,7 +115,7 @@ impl UpdateGroupFluentBuilder {
     /// <p>A list of <code>AttributeOperation</code> objects to apply to the requested group. These operations might add, replace, or remove an attribute.</p>
     pub fn set_operations(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AttributeOperation>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeOperation>>,
     ) -> Self {
         self.inner = self.inner.set_operations(input);
         self

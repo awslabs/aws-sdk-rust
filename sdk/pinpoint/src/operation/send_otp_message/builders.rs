@@ -6,56 +6,63 @@ pub use crate::operation::send_otp_message::_send_otp_message_input::SendOtpMess
 /// Fluent builder constructing a request to `SendOTPMessage`.
 ///
 /// <p>Send an OTP message</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SendOTPMessageFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::send_otp_message::builders::SendOtpMessageInputBuilder,
 }
 impl SendOTPMessageFluentBuilder {
     /// Creates a new `SendOTPMessage`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::send_otp_message::SendOTPMessage,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::send_otp_message::SendOTPMessageError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::send_otp_message::SendOTPMessageError,
+        >,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::send_otp_message::SendOtpMessageOutput,
-        aws_smithy_http::result::SdkError<crate::operation::send_otp_message::SendOTPMessageError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::send_otp_message::SendOTPMessageError,
+        >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,19 +75,27 @@ impl SendOTPMessageFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::send_otp_message::SendOtpMessageOutput,
-        aws_smithy_http::result::SdkError<crate::operation::send_otp_message::SendOTPMessageError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::send_otp_message::SendOTPMessageError,
+        >,
     > {
         self.send_middleware().await
     }
     /// <p>The unique ID of your Amazon Pinpoint application.</p>
-    pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn application_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
     /// <p>The unique ID of your Amazon Pinpoint application.</p>
-    pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_application_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }
@@ -95,7 +110,7 @@ impl SendOTPMessageFluentBuilder {
     /// <p>Send OTP message request parameters.</p>
     pub fn set_send_otp_message_request_parameters(
         mut self,
-        input: std::option::Option<crate::types::SendOtpMessageRequestParameters>,
+        input: ::std::option::Option<crate::types::SendOtpMessageRequestParameters>,
     ) -> Self {
         self.inner = self.inner.set_send_otp_message_request_parameters(input);
         self

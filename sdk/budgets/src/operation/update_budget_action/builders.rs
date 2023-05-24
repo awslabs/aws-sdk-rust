@@ -6,29 +6,29 @@ pub use crate::operation::update_budget_action::_update_budget_action_input::Upd
 /// Fluent builder constructing a request to `UpdateBudgetAction`.
 ///
 /// <p> Updates a budget action. </p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateBudgetActionFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::update_budget_action::builders::UpdateBudgetActionInputBuilder,
 }
 impl UpdateBudgetActionFluentBuilder {
     /// Creates a new `UpdateBudgetAction`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_budget_action::UpdateBudgetAction,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_budget_action::UpdateBudgetActionError,
         >,
     > {
@@ -36,30 +36,33 @@ impl UpdateBudgetActionFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_budget_action::UpdateBudgetActionOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_budget_action::UpdateBudgetActionError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,41 +75,41 @@ impl UpdateBudgetActionFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_budget_action::UpdateBudgetActionOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_budget_action::UpdateBudgetActionError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The account ID of the user. It's a 12-digit number.</p>
-    pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.account_id(input.into());
         self
     }
     /// <p>The account ID of the user. It's a 12-digit number.</p>
-    pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_account_id(input);
         self
     }
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
-    pub fn budget_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn budget_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.budget_name(input.into());
         self
     }
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
-    pub fn set_budget_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_budget_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_budget_name(input);
         self
     }
     /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
-    pub fn action_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn action_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.action_id(input.into());
         self
     }
     /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
-    pub fn set_action_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_action_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_action_id(input);
         self
     }
@@ -118,7 +121,7 @@ impl UpdateBudgetActionFluentBuilder {
     /// <p> The type of a notification. It must be ACTUAL or FORECASTED.</p>
     pub fn set_notification_type(
         mut self,
-        input: std::option::Option<crate::types::NotificationType>,
+        input: ::std::option::Option<crate::types::NotificationType>,
     ) -> Self {
         self.inner = self.inner.set_notification_type(input);
         self
@@ -131,7 +134,7 @@ impl UpdateBudgetActionFluentBuilder {
     /// <p>The trigger threshold of the action. </p>
     pub fn set_action_threshold(
         mut self,
-        input: std::option::Option<crate::types::ActionThreshold>,
+        input: ::std::option::Option<crate::types::ActionThreshold>,
     ) -> Self {
         self.inner = self.inner.set_action_threshold(input);
         self
@@ -142,19 +145,25 @@ impl UpdateBudgetActionFluentBuilder {
         self
     }
     /// <p>Specifies all of the type-specific parameters. </p>
-    pub fn set_definition(mut self, input: std::option::Option<crate::types::Definition>) -> Self {
+    pub fn set_definition(
+        mut self,
+        input: ::std::option::Option<crate::types::Definition>,
+    ) -> Self {
         self.inner = self.inner.set_definition(input);
         self
     }
     /// <p> The role passed for action execution and reversion. Roles and actions must be in the same account. </p>
-    pub fn execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn execution_role_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.execution_role_arn(input.into());
         self
     }
     /// <p> The role passed for action execution and reversion. Roles and actions must be in the same account. </p>
     pub fn set_execution_role_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_execution_role_arn(input);
         self
@@ -167,7 +176,7 @@ impl UpdateBudgetActionFluentBuilder {
     /// <p> This specifies if the action needs manual or automatic approval. </p>
     pub fn set_approval_model(
         mut self,
-        input: std::option::Option<crate::types::ApprovalModel>,
+        input: ::std::option::Option<crate::types::ApprovalModel>,
     ) -> Self {
         self.inner = self.inner.set_approval_model(input);
         self
@@ -184,7 +193,7 @@ impl UpdateBudgetActionFluentBuilder {
     /// <p> A list of subscribers.</p>
     pub fn set_subscribers(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Subscriber>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Subscriber>>,
     ) -> Self {
         self.inner = self.inner.set_subscribers(input);
         self

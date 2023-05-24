@@ -5,7 +5,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_readiness_checks::builders::ListReadinessChecksFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_readiness_checks::builders::ListReadinessChecksFluentBuilder::set_max_results): <p>The number of objects that you want to return with this call.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_readiness_checks::builders::ListReadinessChecksFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_readiness_checks::builders::ListReadinessChecksFluentBuilder::set_next_token): <p>The token that identifies which batch of results you want to see.</p>
+    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_readiness_checks::builders::ListReadinessChecksFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_readiness_checks::builders::ListReadinessChecksFluentBuilder::set_next_token): <p>The token that identifies which batch of results you want to see.</p>
     /// - On success, responds with [`ListReadinessChecksOutput`](crate::operation::list_readiness_checks::ListReadinessChecksOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_readiness_checks::ListReadinessChecksOutput::next_token): <p>The token that identifies which batch of results you want to see.</p>
     ///   - [`readiness_checks(Option<Vec<ReadinessCheckOutput>>)`](crate::operation::list_readiness_checks::ListReadinessChecksOutput::readiness_checks): <p>A list of readiness checks associated with the account.</p>

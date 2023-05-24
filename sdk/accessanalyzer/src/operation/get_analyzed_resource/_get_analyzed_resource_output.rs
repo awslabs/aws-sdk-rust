@@ -2,20 +2,20 @@
 
 /// <p>The response to the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAnalyzedResourceOutput {
     /// <p>An <code>AnalyzedResource</code> object that contains information that IAM Access Analyzer found when it analyzed the resource.</p>
     #[doc(hidden)]
-    pub resource: std::option::Option<crate::types::AnalyzedResource>,
+    pub resource: ::std::option::Option<crate::types::AnalyzedResource>,
     _request_id: Option<String>,
 }
 impl GetAnalyzedResourceOutput {
     /// <p>An <code>AnalyzedResource</code> object that contains information that IAM Access Analyzer found when it analyzed the resource.</p>
-    pub fn resource(&self) -> std::option::Option<&crate::types::AnalyzedResource> {
+    pub fn resource(&self) -> ::std::option::Option<&crate::types::AnalyzedResource> {
         self.resource.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for GetAnalyzedResourceOutput {
+impl ::aws_http::request_id::RequestId for GetAnalyzedResourceOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -31,21 +31,23 @@ impl GetAnalyzedResourceOutput {
 
 /// A builder for [`GetAnalyzedResourceOutput`](crate::operation::get_analyzed_resource::GetAnalyzedResourceOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetAnalyzedResourceOutputBuilder {
-    pub(crate) resource: std::option::Option<crate::types::AnalyzedResource>,
+    pub(crate) resource: ::std::option::Option<crate::types::AnalyzedResource>,
     _request_id: Option<String>,
 }
 impl GetAnalyzedResourceOutputBuilder {
     /// <p>An <code>AnalyzedResource</code> object that contains information that IAM Access Analyzer found when it analyzed the resource.</p>
     pub fn resource(mut self, input: crate::types::AnalyzedResource) -> Self {
-        self.resource = Some(input);
+        self.resource = ::std::option::Option::Some(input);
         self
     }
     /// <p>An <code>AnalyzedResource</code> object that contains information that IAM Access Analyzer found when it analyzed the resource.</p>
     pub fn set_resource(
         mut self,
-        input: std::option::Option<crate::types::AnalyzedResource>,
+        input: ::std::option::Option<crate::types::AnalyzedResource>,
     ) -> Self {
         self.resource = input;
         self

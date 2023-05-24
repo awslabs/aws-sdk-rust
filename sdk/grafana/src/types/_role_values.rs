@@ -2,22 +2,22 @@
 
 /// <p>This structure defines which groups defined in the SAML assertion attribute are to be mapped to the Grafana <code>Admin</code> and <code>Editor</code> roles in the workspace. SAML authenticated users not part of <code>Admin</code> or <code>Editor</code> role groups have <code>Viewer</code> permission over the workspace.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RoleValues {
     /// <p>A list of groups from the SAML assertion attribute to grant the Grafana <code>Editor</code> role to.</p>
     #[doc(hidden)]
-    pub editor: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub editor: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of groups from the SAML assertion attribute to grant the Grafana <code>Admin</code> role to.</p>
     #[doc(hidden)]
-    pub admin: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub admin: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RoleValues {
     /// <p>A list of groups from the SAML assertion attribute to grant the Grafana <code>Editor</code> role to.</p>
-    pub fn editor(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn editor(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.editor.as_deref()
     }
     /// <p>A list of groups from the SAML assertion attribute to grant the Grafana <code>Admin</code> role to.</p>
-    pub fn admin(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn admin(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.admin.as_deref()
     }
 }
@@ -30,10 +30,12 @@ impl RoleValues {
 
 /// A builder for [`RoleValues`](crate::types::RoleValues).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RoleValuesBuilder {
-    pub(crate) editor: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) admin: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) editor: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) admin: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RoleValuesBuilder {
     /// Appends an item to `editor`.
@@ -41,16 +43,16 @@ impl RoleValuesBuilder {
     /// To override the contents of this collection use [`set_editor`](Self::set_editor).
     ///
     /// <p>A list of groups from the SAML assertion attribute to grant the Grafana <code>Editor</code> role to.</p>
-    pub fn editor(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn editor(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.editor.unwrap_or_default();
         v.push(input.into());
-        self.editor = Some(v);
+        self.editor = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of groups from the SAML assertion attribute to grant the Grafana <code>Editor</code> role to.</p>
     pub fn set_editor(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.editor = input;
         self
@@ -60,16 +62,16 @@ impl RoleValuesBuilder {
     /// To override the contents of this collection use [`set_admin`](Self::set_admin).
     ///
     /// <p>A list of groups from the SAML assertion attribute to grant the Grafana <code>Admin</code> role to.</p>
-    pub fn admin(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn admin(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.admin.unwrap_or_default();
         v.push(input.into());
-        self.admin = Some(v);
+        self.admin = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of groups from the SAML assertion attribute to grant the Grafana <code>Admin</code> role to.</p>
     pub fn set_admin(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.admin = input;
         self

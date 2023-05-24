@@ -2,40 +2,40 @@
 
 /// <p>Describes the domain name system (DNS) records that you must add to the DNS of your registered domain to validate ownership for an Amazon Lightsail SSL/TLS certificate.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DomainValidationRecord {
     /// <p>The domain name of the certificate validation record. For example, <code>example.com</code> or <code>www.example.com</code>.</p>
     #[doc(hidden)]
-    pub domain_name: std::option::Option<std::string::String>,
+    pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>An object that describes the DNS records to add to your domain's DNS to validate it for the certificate.</p>
     #[doc(hidden)]
-    pub resource_record: std::option::Option<crate::types::ResourceRecord>,
+    pub resource_record: ::std::option::Option<crate::types::ResourceRecord>,
     /// <p>An object that describes the state of the canonical name (CNAME) records that are automatically added by Lightsail to the DNS of the domain to validate domain ownership.</p>
     #[doc(hidden)]
-    pub dns_record_creation_state: std::option::Option<crate::types::DnsRecordCreationState>,
+    pub dns_record_creation_state: ::std::option::Option<crate::types::DnsRecordCreationState>,
     /// <p>The validation status of the record.</p>
     #[doc(hidden)]
-    pub validation_status: std::option::Option<crate::types::CertificateDomainValidationStatus>,
+    pub validation_status: ::std::option::Option<crate::types::CertificateDomainValidationStatus>,
 }
 impl DomainValidationRecord {
     /// <p>The domain name of the certificate validation record. For example, <code>example.com</code> or <code>www.example.com</code>.</p>
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<&str> {
         self.domain_name.as_deref()
     }
     /// <p>An object that describes the DNS records to add to your domain's DNS to validate it for the certificate.</p>
-    pub fn resource_record(&self) -> std::option::Option<&crate::types::ResourceRecord> {
+    pub fn resource_record(&self) -> ::std::option::Option<&crate::types::ResourceRecord> {
         self.resource_record.as_ref()
     }
     /// <p>An object that describes the state of the canonical name (CNAME) records that are automatically added by Lightsail to the DNS of the domain to validate domain ownership.</p>
     pub fn dns_record_creation_state(
         &self,
-    ) -> std::option::Option<&crate::types::DnsRecordCreationState> {
+    ) -> ::std::option::Option<&crate::types::DnsRecordCreationState> {
         self.dns_record_creation_state.as_ref()
     }
     /// <p>The validation status of the record.</p>
     pub fn validation_status(
         &self,
-    ) -> std::option::Option<&crate::types::CertificateDomainValidationStatus> {
+    ) -> ::std::option::Option<&crate::types::CertificateDomainValidationStatus> {
         self.validation_status.as_ref()
     }
 }
@@ -48,34 +48,37 @@ impl DomainValidationRecord {
 
 /// A builder for [`DomainValidationRecord`](crate::types::DomainValidationRecord).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DomainValidationRecordBuilder {
-    pub(crate) domain_name: std::option::Option<std::string::String>,
-    pub(crate) resource_record: std::option::Option<crate::types::ResourceRecord>,
-    pub(crate) dns_record_creation_state: std::option::Option<crate::types::DnsRecordCreationState>,
+    pub(crate) domain_name: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_record: ::std::option::Option<crate::types::ResourceRecord>,
+    pub(crate) dns_record_creation_state:
+        ::std::option::Option<crate::types::DnsRecordCreationState>,
     pub(crate) validation_status:
-        std::option::Option<crate::types::CertificateDomainValidationStatus>,
+        ::std::option::Option<crate::types::CertificateDomainValidationStatus>,
 }
 impl DomainValidationRecordBuilder {
     /// <p>The domain name of the certificate validation record. For example, <code>example.com</code> or <code>www.example.com</code>.</p>
-    pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.domain_name = Some(input.into());
+    pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.domain_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The domain name of the certificate validation record. For example, <code>example.com</code> or <code>www.example.com</code>.</p>
-    pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_name = input;
         self
     }
     /// <p>An object that describes the DNS records to add to your domain's DNS to validate it for the certificate.</p>
     pub fn resource_record(mut self, input: crate::types::ResourceRecord) -> Self {
-        self.resource_record = Some(input);
+        self.resource_record = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that describes the DNS records to add to your domain's DNS to validate it for the certificate.</p>
     pub fn set_resource_record(
         mut self,
-        input: std::option::Option<crate::types::ResourceRecord>,
+        input: ::std::option::Option<crate::types::ResourceRecord>,
     ) -> Self {
         self.resource_record = input;
         self
@@ -85,13 +88,13 @@ impl DomainValidationRecordBuilder {
         mut self,
         input: crate::types::DnsRecordCreationState,
     ) -> Self {
-        self.dns_record_creation_state = Some(input);
+        self.dns_record_creation_state = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that describes the state of the canonical name (CNAME) records that are automatically added by Lightsail to the DNS of the domain to validate domain ownership.</p>
     pub fn set_dns_record_creation_state(
         mut self,
-        input: std::option::Option<crate::types::DnsRecordCreationState>,
+        input: ::std::option::Option<crate::types::DnsRecordCreationState>,
     ) -> Self {
         self.dns_record_creation_state = input;
         self
@@ -101,13 +104,13 @@ impl DomainValidationRecordBuilder {
         mut self,
         input: crate::types::CertificateDomainValidationStatus,
     ) -> Self {
-        self.validation_status = Some(input);
+        self.validation_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The validation status of the record.</p>
     pub fn set_validation_status(
         mut self,
-        input: std::option::Option<crate::types::CertificateDomainValidationStatus>,
+        input: ::std::option::Option<crate::types::CertificateDomainValidationStatus>,
     ) -> Self {
         self.validation_status = input;
         self

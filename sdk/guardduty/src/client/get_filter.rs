@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetFilter`](crate::operation::get_filter::builders::GetFilterFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`detector_id(impl Into<String>)`](crate::operation::get_filter::builders::GetFilterFluentBuilder::detector_id) / [`set_detector_id(Option<String>)`](crate::operation::get_filter::builders::GetFilterFluentBuilder::set_detector_id): <p>The unique ID of the detector that the filter is associated with.</p>
-    ///   - [`filter_name(impl Into<String>)`](crate::operation::get_filter::builders::GetFilterFluentBuilder::filter_name) / [`set_filter_name(Option<String>)`](crate::operation::get_filter::builders::GetFilterFluentBuilder::set_filter_name): <p>The name of the filter you want to get.</p>
+    ///   - [`detector_id(impl ::std::convert::Into<String>)`](crate::operation::get_filter::builders::GetFilterFluentBuilder::detector_id) / [`set_detector_id(Option<String>)`](crate::operation::get_filter::builders::GetFilterFluentBuilder::set_detector_id): <p>The unique ID of the detector that the filter is associated with.</p>
+    ///   - [`filter_name(impl ::std::convert::Into<String>)`](crate::operation::get_filter::builders::GetFilterFluentBuilder::filter_name) / [`set_filter_name(Option<String>)`](crate::operation::get_filter::builders::GetFilterFluentBuilder::set_filter_name): <p>The name of the filter you want to get.</p>
     /// - On success, responds with [`GetFilterOutput`](crate::operation::get_filter::GetFilterOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::get_filter::GetFilterOutput::name): <p>The name of the filter.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_filter::GetFilterOutput::description): <p>The description of the filter.</p>

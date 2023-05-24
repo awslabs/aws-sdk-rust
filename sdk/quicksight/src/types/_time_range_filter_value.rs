@@ -3,29 +3,29 @@
 /// <p>The value of a time range filter.</p>
 /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimeRangeFilterValue {
     /// <p>The static input value.</p>
     #[doc(hidden)]
-    pub static_value: std::option::Option<aws_smithy_types::DateTime>,
+    pub static_value: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The rolling date input value.</p>
     #[doc(hidden)]
-    pub rolling_date: std::option::Option<crate::types::RollingDateConfiguration>,
+    pub rolling_date: ::std::option::Option<crate::types::RollingDateConfiguration>,
     /// <p>The parameter type input value.</p>
     #[doc(hidden)]
-    pub parameter: std::option::Option<std::string::String>,
+    pub parameter: ::std::option::Option<::std::string::String>,
 }
 impl TimeRangeFilterValue {
     /// <p>The static input value.</p>
-    pub fn static_value(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn static_value(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.static_value.as_ref()
     }
     /// <p>The rolling date input value.</p>
-    pub fn rolling_date(&self) -> std::option::Option<&crate::types::RollingDateConfiguration> {
+    pub fn rolling_date(&self) -> ::std::option::Option<&crate::types::RollingDateConfiguration> {
         self.rolling_date.as_ref()
     }
     /// <p>The parameter type input value.</p>
-    pub fn parameter(&self) -> std::option::Option<&str> {
+    pub fn parameter(&self) -> ::std::option::Option<&str> {
         self.parameter.as_deref()
     }
 }
@@ -38,46 +38,48 @@ impl TimeRangeFilterValue {
 
 /// A builder for [`TimeRangeFilterValue`](crate::types::TimeRangeFilterValue).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TimeRangeFilterValueBuilder {
-    pub(crate) static_value: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) rolling_date: std::option::Option<crate::types::RollingDateConfiguration>,
-    pub(crate) parameter: std::option::Option<std::string::String>,
+    pub(crate) static_value: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) rolling_date: ::std::option::Option<crate::types::RollingDateConfiguration>,
+    pub(crate) parameter: ::std::option::Option<::std::string::String>,
 }
 impl TimeRangeFilterValueBuilder {
     /// <p>The static input value.</p>
-    pub fn static_value(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.static_value = Some(input);
+    pub fn static_value(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.static_value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The static input value.</p>
     pub fn set_static_value(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.static_value = input;
         self
     }
     /// <p>The rolling date input value.</p>
     pub fn rolling_date(mut self, input: crate::types::RollingDateConfiguration) -> Self {
-        self.rolling_date = Some(input);
+        self.rolling_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The rolling date input value.</p>
     pub fn set_rolling_date(
         mut self,
-        input: std::option::Option<crate::types::RollingDateConfiguration>,
+        input: ::std::option::Option<crate::types::RollingDateConfiguration>,
     ) -> Self {
         self.rolling_date = input;
         self
     }
     /// <p>The parameter type input value.</p>
-    pub fn parameter(mut self, input: impl Into<std::string::String>) -> Self {
-        self.parameter = Some(input.into());
+    pub fn parameter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.parameter = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The parameter type input value.</p>
-    pub fn set_parameter(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_parameter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parameter = input;
         self
     }

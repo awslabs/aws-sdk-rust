@@ -2,36 +2,36 @@
 
 /// <p>Represents a get integration response request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetIntegrationResponseInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
-    pub rest_api_id: std::option::Option<std::string::String>,
+    pub rest_api_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies a get integration response request's resource identifier.</p>
     #[doc(hidden)]
-    pub resource_id: std::option::Option<std::string::String>,
+    pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies a get integration response request's HTTP method.</p>
     #[doc(hidden)]
-    pub http_method: std::option::Option<std::string::String>,
+    pub http_method: ::std::option::Option<::std::string::String>,
     /// <p>Specifies a get integration response request's status code.</p>
     #[doc(hidden)]
-    pub status_code: std::option::Option<std::string::String>,
+    pub status_code: ::std::option::Option<::std::string::String>,
 }
 impl GetIntegrationResponseInput {
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+    pub fn rest_api_id(&self) -> ::std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
     /// <p>Specifies a get integration response request's resource identifier.</p>
-    pub fn resource_id(&self) -> std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<&str> {
         self.resource_id.as_deref()
     }
     /// <p>Specifies a get integration response request's HTTP method.</p>
-    pub fn http_method(&self) -> std::option::Option<&str> {
+    pub fn http_method(&self) -> ::std::option::Option<&str> {
         self.http_method.as_deref()
     }
     /// <p>Specifies a get integration response request's status code.</p>
-    pub fn status_code(&self) -> std::option::Option<&str> {
+    pub fn status_code(&self) -> ::std::option::Option<&str> {
         self.status_code.as_deref()
     }
 }
@@ -46,62 +46,64 @@ impl GetIntegrationResponseInput {
 
 /// A builder for [`GetIntegrationResponseInput`](crate::operation::get_integration_response::GetIntegrationResponseInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetIntegrationResponseInputBuilder {
-    pub(crate) rest_api_id: std::option::Option<std::string::String>,
-    pub(crate) resource_id: std::option::Option<std::string::String>,
-    pub(crate) http_method: std::option::Option<std::string::String>,
-    pub(crate) status_code: std::option::Option<std::string::String>,
+    pub(crate) rest_api_id: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_id: ::std::option::Option<::std::string::String>,
+    pub(crate) http_method: ::std::option::Option<::std::string::String>,
+    pub(crate) status_code: ::std::option::Option<::std::string::String>,
 }
 impl GetIntegrationResponseInputBuilder {
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.rest_api_id = Some(input.into());
+    pub fn rest_api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.rest_api_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_rest_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rest_api_id = input;
         self
     }
     /// <p>Specifies a get integration response request's resource identifier.</p>
-    pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_id = Some(input.into());
+    pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies a get integration response request's resource identifier.</p>
-    pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
     }
     /// <p>Specifies a get integration response request's HTTP method.</p>
-    pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
-        self.http_method = Some(input.into());
+    pub fn http_method(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.http_method = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies a get integration response request's HTTP method.</p>
-    pub fn set_http_method(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_http_method(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.http_method = input;
         self
     }
     /// <p>Specifies a get integration response request's status code.</p>
-    pub fn status_code(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status_code = Some(input.into());
+    pub fn status_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies a get integration response request's status code.</p>
-    pub fn set_status_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_code = input;
         self
     }
     /// Consumes the builder and constructs a [`GetIntegrationResponseInput`](crate::operation::get_integration_response::GetIntegrationResponseInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::get_integration_response::GetIntegrationResponseInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::get_integration_response::GetIntegrationResponseInput {
                 rest_api_id: self.rest_api_id,
                 resource_id: self.resource_id,

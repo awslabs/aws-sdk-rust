@@ -2,36 +2,36 @@
 
 /// <p>A structure containing information about an Lake Formation resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceInfo {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
-    pub resource_arn: std::option::Option<std::string::String>,
+    pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The IAM role that registered a resource.</p>
     #[doc(hidden)]
-    pub role_arn: std::option::Option<std::string::String>,
+    pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The date and time the resource was last modified.</p>
     #[doc(hidden)]
-    pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_modified: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Whether or not the resource is a federated resource.</p>
     #[doc(hidden)]
-    pub with_federation: std::option::Option<bool>,
+    pub with_federation: ::std::option::Option<bool>,
 }
 impl ResourceInfo {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
     /// <p>The IAM role that registered a resource.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
     /// <p>The date and time the resource was last modified.</p>
-    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
     /// <p>Whether or not the resource is a federated resource.</p>
-    pub fn with_federation(&self) -> std::option::Option<bool> {
+    pub fn with_federation(&self) -> ::std::option::Option<bool> {
         self.with_federation
     }
 }
@@ -44,54 +44,56 @@ impl ResourceInfo {
 
 /// A builder for [`ResourceInfo`](crate::types::ResourceInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResourceInfoBuilder {
-    pub(crate) resource_arn: std::option::Option<std::string::String>,
-    pub(crate) role_arn: std::option::Option<std::string::String>,
-    pub(crate) last_modified: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) with_federation: std::option::Option<bool>,
+    pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) last_modified: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) with_federation: ::std::option::Option<bool>,
 }
 impl ResourceInfoBuilder {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-    pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_arn = Some(input.into());
+    pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-    pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
     }
     /// <p>The IAM role that registered a resource.</p>
-    pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.role_arn = Some(input.into());
+    pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IAM role that registered a resource.</p>
-    pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
     /// <p>The date and time the resource was last modified.</p>
-    pub fn last_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_modified = Some(input);
+    pub fn last_modified(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_modified = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time the resource was last modified.</p>
     pub fn set_last_modified(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_modified = input;
         self
     }
     /// <p>Whether or not the resource is a federated resource.</p>
     pub fn with_federation(mut self, input: bool) -> Self {
-        self.with_federation = Some(input);
+        self.with_federation = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether or not the resource is a federated resource.</p>
-    pub fn set_with_federation(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_with_federation(mut self, input: ::std::option::Option<bool>) -> Self {
         self.with_federation = input;
         self
     }

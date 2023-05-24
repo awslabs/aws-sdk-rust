@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum VectorEnrichmentJobType {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum VectorEnrichmentJobType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for VectorEnrichmentJobType {
+impl ::std::convert::From<&str> for VectorEnrichmentJobType {
     fn from(s: &str) -> Self {
         match s {
             "MAP_MATCHING" => VectorEnrichmentJobType::MapMatching,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for VectorEnrichmentJobType {
         }
     }
 }
-impl std::str::FromStr for VectorEnrichmentJobType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for VectorEnrichmentJobType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(VectorEnrichmentJobType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(VectorEnrichmentJobType::from(s))
     }
 }
 impl VectorEnrichmentJobType {
@@ -86,7 +86,7 @@ impl VectorEnrichmentJobType {
         &["MAP_MATCHING", "REVERSE_GEOCODING"]
     }
 }
-impl AsRef<str> for VectorEnrichmentJobType {
+impl ::std::convert::AsRef<str> for VectorEnrichmentJobType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

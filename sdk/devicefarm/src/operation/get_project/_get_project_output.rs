@@ -2,20 +2,20 @@
 
 /// <p>Represents the result of a get project request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetProjectOutput {
     /// <p>The project to get information about.</p>
     #[doc(hidden)]
-    pub project: std::option::Option<crate::types::Project>,
+    pub project: ::std::option::Option<crate::types::Project>,
     _request_id: Option<String>,
 }
 impl GetProjectOutput {
     /// <p>The project to get information about.</p>
-    pub fn project(&self) -> std::option::Option<&crate::types::Project> {
+    pub fn project(&self) -> ::std::option::Option<&crate::types::Project> {
         self.project.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for GetProjectOutput {
+impl ::aws_http::request_id::RequestId for GetProjectOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,21 @@ impl GetProjectOutput {
 
 /// A builder for [`GetProjectOutput`](crate::operation::get_project::GetProjectOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetProjectOutputBuilder {
-    pub(crate) project: std::option::Option<crate::types::Project>,
+    pub(crate) project: ::std::option::Option<crate::types::Project>,
     _request_id: Option<String>,
 }
 impl GetProjectOutputBuilder {
     /// <p>The project to get information about.</p>
     pub fn project(mut self, input: crate::types::Project) -> Self {
-        self.project = Some(input);
+        self.project = ::std::option::Option::Some(input);
         self
     }
     /// <p>The project to get information about.</p>
-    pub fn set_project(mut self, input: std::option::Option<crate::types::Project>) -> Self {
+    pub fn set_project(mut self, input: ::std::option::Option<crate::types::Project>) -> Self {
         self.project = input;
         self
     }

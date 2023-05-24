@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeletePackage`](crate::operation::delete_package::builders::DeletePackageFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`package_id(impl Into<String>)`](crate::operation::delete_package::builders::DeletePackageFluentBuilder::package_id) / [`set_package_id(Option<String>)`](crate::operation::delete_package::builders::DeletePackageFluentBuilder::set_package_id): <p>The package's ID.</p>
+    ///   - [`package_id(impl ::std::convert::Into<String>)`](crate::operation::delete_package::builders::DeletePackageFluentBuilder::package_id) / [`set_package_id(Option<String>)`](crate::operation::delete_package::builders::DeletePackageFluentBuilder::set_package_id): <p>The package's ID.</p>
     ///   - [`force_delete(bool)`](crate::operation::delete_package::builders::DeletePackageFluentBuilder::force_delete) / [`set_force_delete(bool)`](crate::operation::delete_package::builders::DeletePackageFluentBuilder::set_force_delete): <p>Delete the package even if it has artifacts stored in its access point. Deletes the package's artifacts from Amazon S3.</p>
     /// - On success, responds with [`DeletePackageOutput`](crate::operation::delete_package::DeletePackageOutput)
     /// - On failure, responds with [`SdkError<DeletePackageError>`](crate::operation::delete_package::DeletePackageError)

@@ -2,29 +2,29 @@
 
 /// <p>Request to delete an application version.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteApplicationVersionInput {
     /// <p>The name of the application to which the version belongs.</p>
     #[doc(hidden)]
-    pub application_name: std::option::Option<std::string::String>,
+    pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>The label of the version to delete.</p>
     #[doc(hidden)]
-    pub version_label: std::option::Option<std::string::String>,
+    pub version_label: ::std::option::Option<::std::string::String>,
     /// <p>Set to <code>true</code> to delete the source bundle from your storage bucket. Otherwise, the application version is deleted only from Elastic Beanstalk and the source bundle remains in Amazon S3.</p>
     #[doc(hidden)]
-    pub delete_source_bundle: std::option::Option<bool>,
+    pub delete_source_bundle: ::std::option::Option<bool>,
 }
 impl DeleteApplicationVersionInput {
     /// <p>The name of the application to which the version belongs.</p>
-    pub fn application_name(&self) -> std::option::Option<&str> {
+    pub fn application_name(&self) -> ::std::option::Option<&str> {
         self.application_name.as_deref()
     }
     /// <p>The label of the version to delete.</p>
-    pub fn version_label(&self) -> std::option::Option<&str> {
+    pub fn version_label(&self) -> ::std::option::Option<&str> {
         self.version_label.as_deref()
     }
     /// <p>Set to <code>true</code> to delete the source bundle from your storage bucket. Otherwise, the application version is deleted only from Elastic Beanstalk and the source bundle remains in Amazon S3.</p>
-    pub fn delete_source_bundle(&self) -> std::option::Option<bool> {
+    pub fn delete_source_bundle(&self) -> ::std::option::Option<bool> {
         self.delete_source_bundle
     }
 }
@@ -39,51 +39,65 @@ impl DeleteApplicationVersionInput {
 
 /// A builder for [`DeleteApplicationVersionInput`](crate::operation::delete_application_version::DeleteApplicationVersionInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteApplicationVersionInputBuilder {
-    pub(crate) application_name: std::option::Option<std::string::String>,
-    pub(crate) version_label: std::option::Option<std::string::String>,
-    pub(crate) delete_source_bundle: std::option::Option<bool>,
+    pub(crate) application_name: ::std::option::Option<::std::string::String>,
+    pub(crate) version_label: ::std::option::Option<::std::string::String>,
+    pub(crate) delete_source_bundle: ::std::option::Option<bool>,
 }
 impl DeleteApplicationVersionInputBuilder {
     /// <p>The name of the application to which the version belongs.</p>
-    pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.application_name = Some(input.into());
+    pub fn application_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.application_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the application to which the version belongs.</p>
-    pub fn set_application_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_application_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.application_name = input;
         self
     }
     /// <p>The label of the version to delete.</p>
-    pub fn version_label(mut self, input: impl Into<std::string::String>) -> Self {
-        self.version_label = Some(input.into());
+    pub fn version_label(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.version_label = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The label of the version to delete.</p>
-    pub fn set_version_label(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_version_label(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.version_label = input;
         self
     }
     /// <p>Set to <code>true</code> to delete the source bundle from your storage bucket. Otherwise, the application version is deleted only from Elastic Beanstalk and the source bundle remains in Amazon S3.</p>
     pub fn delete_source_bundle(mut self, input: bool) -> Self {
-        self.delete_source_bundle = Some(input);
+        self.delete_source_bundle = ::std::option::Option::Some(input);
         self
     }
     /// <p>Set to <code>true</code> to delete the source bundle from your storage bucket. Otherwise, the application version is deleted only from Elastic Beanstalk and the source bundle remains in Amazon S3.</p>
-    pub fn set_delete_source_bundle(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_delete_source_bundle(mut self, input: ::std::option::Option<bool>) -> Self {
         self.delete_source_bundle = input;
         self
     }
     /// Consumes the builder and constructs a [`DeleteApplicationVersionInput`](crate::operation::delete_application_version::DeleteApplicationVersionInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::delete_application_version::DeleteApplicationVersionInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::delete_application_version::DeleteApplicationVersionInput {
                 application_name: self.application_name,
                 version_label: self.version_label,

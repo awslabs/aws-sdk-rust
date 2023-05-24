@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteReservation`](crate::operation::delete_reservation::builders::DeleteReservationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`reservation_id(impl Into<String>)`](crate::operation::delete_reservation::builders::DeleteReservationFluentBuilder::reservation_id) / [`set_reservation_id(Option<String>)`](crate::operation::delete_reservation::builders::DeleteReservationFluentBuilder::set_reservation_id): Unique reservation ID, e.g. '1234567'
+    ///   - [`reservation_id(impl ::std::convert::Into<String>)`](crate::operation::delete_reservation::builders::DeleteReservationFluentBuilder::reservation_id) / [`set_reservation_id(Option<String>)`](crate::operation::delete_reservation::builders::DeleteReservationFluentBuilder::set_reservation_id): Unique reservation ID, e.g. '1234567'
     /// - On success, responds with [`DeleteReservationOutput`](crate::operation::delete_reservation::DeleteReservationOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::delete_reservation::DeleteReservationOutput::arn): Unique reservation ARN, e.g. 'arn:aws:medialive:us-west-2:123456789012:reservation:1234567'
     ///   - [`count(Option<i32>)`](crate::operation::delete_reservation::DeleteReservationOutput::count): Number of reserved resources

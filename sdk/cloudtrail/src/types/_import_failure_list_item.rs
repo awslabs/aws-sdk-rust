@@ -2,43 +2,43 @@
 
 /// <p> Provides information about an import failure. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportFailureListItem {
     /// <p> The location of the failure in the S3 bucket. </p>
     #[doc(hidden)]
-    pub location: std::option::Option<std::string::String>,
+    pub location: ::std::option::Option<::std::string::String>,
     /// <p> The status of the import. </p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::ImportFailureStatus>,
+    pub status: ::std::option::Option<crate::types::ImportFailureStatus>,
     /// <p> The type of import error. </p>
     #[doc(hidden)]
-    pub error_type: std::option::Option<std::string::String>,
+    pub error_type: ::std::option::Option<::std::string::String>,
     /// <p> Provides the reason the import failed. </p>
     #[doc(hidden)]
-    pub error_message: std::option::Option<std::string::String>,
+    pub error_message: ::std::option::Option<::std::string::String>,
     /// <p> When the import was last updated. </p>
     #[doc(hidden)]
-    pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ImportFailureListItem {
     /// <p> The location of the failure in the S3 bucket. </p>
-    pub fn location(&self) -> std::option::Option<&str> {
+    pub fn location(&self) -> ::std::option::Option<&str> {
         self.location.as_deref()
     }
     /// <p> The status of the import. </p>
-    pub fn status(&self) -> std::option::Option<&crate::types::ImportFailureStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::ImportFailureStatus> {
         self.status.as_ref()
     }
     /// <p> The type of import error. </p>
-    pub fn error_type(&self) -> std::option::Option<&str> {
+    pub fn error_type(&self) -> ::std::option::Option<&str> {
         self.error_type.as_deref()
     }
     /// <p> Provides the reason the import failed. </p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<&str> {
         self.error_message.as_deref()
     }
     /// <p> When the import was last updated. </p>
-    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
 }
@@ -51,67 +51,75 @@ impl ImportFailureListItem {
 
 /// A builder for [`ImportFailureListItem`](crate::types::ImportFailureListItem).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ImportFailureListItemBuilder {
-    pub(crate) location: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::ImportFailureStatus>,
-    pub(crate) error_type: std::option::Option<std::string::String>,
-    pub(crate) error_message: std::option::Option<std::string::String>,
-    pub(crate) last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) location: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::ImportFailureStatus>,
+    pub(crate) error_type: ::std::option::Option<::std::string::String>,
+    pub(crate) error_message: ::std::option::Option<::std::string::String>,
+    pub(crate) last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ImportFailureListItemBuilder {
     /// <p> The location of the failure in the S3 bucket. </p>
-    pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
-        self.location = Some(input.into());
+    pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.location = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The location of the failure in the S3 bucket. </p>
-    pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location = input;
         self
     }
     /// <p> The status of the import. </p>
     pub fn status(mut self, input: crate::types::ImportFailureStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p> The status of the import. </p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::ImportFailureStatus>,
+        input: ::std::option::Option<crate::types::ImportFailureStatus>,
     ) -> Self {
         self.status = input;
         self
     }
     /// <p> The type of import error. </p>
-    pub fn error_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.error_type = Some(input.into());
+    pub fn error_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.error_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The type of import error. </p>
-    pub fn set_error_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_error_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_type = input;
         self
     }
     /// <p> Provides the reason the import failed. </p>
-    pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.error_message = Some(input.into());
+    pub fn error_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Provides the reason the import failed. </p>
-    pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_error_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.error_message = input;
         self
     }
     /// <p> When the import was last updated. </p>
-    pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_updated_time = Some(input);
+    pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_updated_time = ::std::option::Option::Some(input);
         self
     }
     /// <p> When the import was last updated. </p>
     pub fn set_last_updated_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_updated_time = input;
         self

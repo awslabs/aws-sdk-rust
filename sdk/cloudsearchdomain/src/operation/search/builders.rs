@@ -14,56 +14,59 @@ pub use crate::operation::search::_search_input::SearchInputBuilder;
 /// </ul>
 /// <p>For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/searching.html">Searching Your Data</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
 /// <p>The endpoint for submitting <code>Search</code> requests is domain-specific. You submit search requests to a domain's search endpoint. To get the search endpoint for your domain, use the Amazon CloudSearch configuration service <code>DescribeDomains</code> action. A domain's endpoints are also displayed on the domain dashboard in the Amazon CloudSearch console. </p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SearchFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::search::builders::SearchInputBuilder,
 }
 impl SearchFluentBuilder {
     /// Creates a new `Search`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::search::Search,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::search::SearchError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::search::SearchError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::search::SearchOutput,
-        aws_smithy_http::result::SdkError<crate::operation::search::SearchError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::search::SearchError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -76,21 +79,21 @@ impl SearchFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::search::SearchOutput,
-        aws_smithy_http::result::SdkError<crate::operation::search::SearchError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::search::SearchError>,
     > {
         self.send_middleware().await
     }
     /// <p>Retrieves a cursor value you can use to page through large result sets. Use the <code>size</code> parameter to control the number of hits to include in each response. You can specify either the <code>cursor</code> or <code>start</code> parameter in a request; they are mutually exclusive. To get the first cursor, set the cursor value to <code>initial</code>. In subsequent requests, specify the cursor value returned in the hits section of the response. </p>
     /// <p>For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/paginating-results.html">Paginating Results</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
-    pub fn cursor(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn cursor(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cursor(input.into());
         self
     }
     /// <p>Retrieves a cursor value you can use to page through large result sets. Use the <code>size</code> parameter to control the number of hits to include in each response. You can specify either the <code>cursor</code> or <code>start</code> parameter in a request; they are mutually exclusive. To get the first cursor, set the cursor value to <code>initial</code>. In subsequent requests, specify the cursor value returned in the hits section of the response. </p>
     /// <p>For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/paginating-results.html">Paginating Results</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
-    pub fn set_cursor(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cursor(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cursor(input);
         self
     }
@@ -98,7 +101,7 @@ impl SearchFluentBuilder {
     /// <p>You specify the expressions in JSON using the form <code>{"EXPRESSIONNAME":"EXPRESSION"}</code>. You can define and use multiple expressions in a search request. For example:</p>
     /// <p><code> {"expression1":"_score*rating", "expression2":"(1/rank)*year"} </code> </p>
     /// <p>For information about the variables, operators, and functions you can use in expressions, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html#writing-expressions">Writing Expressions</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
-    pub fn expr(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn expr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.expr(input.into());
         self
     }
@@ -106,7 +109,7 @@ impl SearchFluentBuilder {
     /// <p>You specify the expressions in JSON using the form <code>{"EXPRESSIONNAME":"EXPRESSION"}</code>. You can define and use multiple expressions in a search request. For example:</p>
     /// <p><code> {"expression1":"_score*rating", "expression2":"(1/rank)*year"} </code> </p>
     /// <p>For information about the variables, operators, and functions you can use in expressions, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html#writing-expressions">Writing Expressions</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
-    pub fn set_expr(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_expr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_expr(input);
         self
     }
@@ -125,7 +128,7 @@ impl SearchFluentBuilder {
     /// <p>To sort the facets by value, use the <code>bucket</code> option. For example, the following request sets the <code>sort</code> option to <code>bucket</code> to sort the facet values numerically by year, with earliest year listed first. </p>
     /// <p><code> {"year":{"sort":"bucket"}} </code></p>
     /// <p>For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/faceting.html">Getting and Using Facet Information</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
-    pub fn facet(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn facet(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.facet(input.into());
         self
     }
@@ -144,19 +147,19 @@ impl SearchFluentBuilder {
     /// <p>To sort the facets by value, use the <code>bucket</code> option. For example, the following request sets the <code>sort</code> option to <code>bucket</code> to sort the facet values numerically by year, with earliest year listed first. </p>
     /// <p><code> {"year":{"sort":"bucket"}} </code></p>
     /// <p>For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/faceting.html">Getting and Using Facet Information</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
-    pub fn set_facet(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_facet(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_facet(input);
         self
     }
     /// <p>Specifies a structured query that filters the results of a search without affecting how the results are scored and sorted. You use <code>filterQuery</code> in conjunction with the <code>query</code> parameter to filter the documents that match the constraints specified in the <code>query</code> parameter. Specifying a filter controls only which matching documents are included in the results, it has no effect on how they are scored and sorted. The <code>filterQuery</code> parameter supports the full structured query syntax. </p>
     /// <p>For more information about using filters, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/filtering-results.html">Filtering Matching Documents</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
-    pub fn filter_query(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn filter_query(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.filter_query(input.into());
         self
     }
     /// <p>Specifies a structured query that filters the results of a search without affecting how the results are scored and sorted. You use <code>filterQuery</code> in conjunction with the <code>query</code> parameter to filter the documents that match the constraints specified in the <code>query</code> parameter. Specifying a filter controls only which matching documents are included in the results, it has no effect on how they are scored and sorted. The <code>filterQuery</code> parameter supports the full structured query syntax. </p>
     /// <p>For more information about using filters, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/filtering-results.html">Filtering Matching Documents</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
-    pub fn set_filter_query(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_filter_query(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_filter_query(input);
         self
     }
@@ -171,7 +174,7 @@ impl SearchFluentBuilder {
     /// <p>If no highlight options are specified for a field, the returned field text is treated as HTML and the first match is highlighted with emphasis tags: <code>&lt;em&gt;search-term&lt;/em&gt;</code>.</p>
     /// <p>For example, the following request retrieves highlights for the <code>actors</code> and <code>title</code> fields.</p>
     /// <p> <code>{ "actors": {}, "title": {"format": "text","max_phrases": 2,"pre_tag": "<b>","post_tag": "</b>"} }</code></p>
-    pub fn highlight(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn highlight(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.highlight(input.into());
         self
     }
@@ -186,7 +189,7 @@ impl SearchFluentBuilder {
     /// <p>If no highlight options are specified for a field, the returned field text is treated as HTML and the first match is highlighted with emphasis tags: <code>&lt;em&gt;search-term&lt;/em&gt;</code>.</p>
     /// <p>For example, the following request retrieves highlights for the <code>actors</code> and <code>title</code> fields.</p>
     /// <p> <code>{ "actors": {}, "title": {"format": "text","max_phrases": 2,"pre_tag": "<b>","post_tag": "</b>"} }</code></p>
-    pub fn set_highlight(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_highlight(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_highlight(input);
         self
     }
@@ -196,19 +199,19 @@ impl SearchFluentBuilder {
         self
     }
     /// <p>Enables partial results to be returned if one or more index partitions are unavailable. When your search index is partitioned across multiple search instances, by default Amazon CloudSearch only returns results if every partition can be queried. This means that the failure of a single search instance can result in 5xx (internal server) errors. When you enable partial results, Amazon CloudSearch returns whatever results are available and includes the percentage of documents searched in the search results (percent-searched). This enables you to more gracefully degrade your users' search experience. For example, rather than displaying no results, you could display the partial results and a message indicating that the results might be incomplete due to a temporary system outage.</p>
-    pub fn set_partial(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_partial(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_partial(input);
         self
     }
     /// <p>Specifies the search criteria for the request. How you specify the search criteria depends on the query parser used for the request and the parser options specified in the <code>queryOptions</code> parameter. By default, the <code>simple</code> query parser is used to process requests. To use the <code>structured</code>, <code>lucene</code>, or <code>dismax</code> query parser, you must also specify the <code>queryParser</code> parameter. </p>
     /// <p>For more information about specifying search criteria, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/searching.html">Searching Your Data</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
-    pub fn query(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn query(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.query(input.into());
         self
     }
     /// <p>Specifies the search criteria for the request. How you specify the search criteria depends on the query parser used for the request and the parser options specified in the <code>queryOptions</code> parameter. By default, the <code>simple</code> query parser is used to process requests. To use the <code>structured</code>, <code>lucene</code>, or <code>dismax</code> query parser, you must also specify the <code>queryParser</code> parameter. </p>
     /// <p>For more information about specifying search criteria, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/searching.html">Searching Your Data</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
-    pub fn set_query(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_query(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_query(input);
         self
     }
@@ -223,7 +226,10 @@ impl SearchFluentBuilder {
     /// <li><code>explicitPhraseSlop</code>: An integer value that specifies how much a match can deviate from the search phrase when the phrase is enclosed in double quotes in the search string. (Phrases that exceed this proximity distance are not considered a match.) For example, to specify a slop of three for dismax phrase queries, you would specify <code>"explicitPhraseSlop":3</code>. Valid values: positive integers. Default: 0. Valid for: <code>dismax</code>.</li>
     /// <li><code>tieBreaker</code>: When a term in the search string is found in a document's field, a score is calculated for that field based on how common the word is in that field compared to other documents. If the term occurs in multiple fields within a document, by default only the highest scoring field contributes to the document's overall score. You can specify a <code>tieBreaker</code> value to enable the matches in lower-scoring fields to contribute to the document's score. That way, if two documents have the same max field score for a particular term, the score for the document that has matches in more fields will be higher. The formula for calculating the score with a tieBreaker is <code>(max field score) + (tieBreaker) * (sum of the scores for the rest of the matching fields)</code>. Set <code>tieBreaker</code> to 0 to disregard all but the highest scoring field (pure max): <code>"tieBreaker":0</code>. Set to 1 to sum the scores from all fields (pure sum): <code>"tieBreaker":1</code>. Valid values: 0.0 to 1.0. Default: 0.0. Valid for: <code>dismax</code>. </li>
     /// </ul>
-    pub fn query_options(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn query_options(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.query_options(input.into());
         self
     }
@@ -238,7 +244,10 @@ impl SearchFluentBuilder {
     /// <li><code>explicitPhraseSlop</code>: An integer value that specifies how much a match can deviate from the search phrase when the phrase is enclosed in double quotes in the search string. (Phrases that exceed this proximity distance are not considered a match.) For example, to specify a slop of three for dismax phrase queries, you would specify <code>"explicitPhraseSlop":3</code>. Valid values: positive integers. Default: 0. Valid for: <code>dismax</code>.</li>
     /// <li><code>tieBreaker</code>: When a term in the search string is found in a document's field, a score is calculated for that field based on how common the word is in that field compared to other documents. If the term occurs in multiple fields within a document, by default only the highest scoring field contributes to the document's overall score. You can specify a <code>tieBreaker</code> value to enable the matches in lower-scoring fields to contribute to the document's score. That way, if two documents have the same max field score for a particular term, the score for the document that has matches in more fields will be higher. The formula for calculating the score with a tieBreaker is <code>(max field score) + (tieBreaker) * (sum of the scores for the rest of the matching fields)</code>. Set <code>tieBreaker</code> to 0 to disregard all but the highest scoring field (pure max): <code>"tieBreaker":0</code>. Set to 1 to sum the scores from all fields (pure sum): <code>"tieBreaker":1</code>. Valid values: 0.0 to 1.0. Default: 0.0. Valid for: <code>dismax</code>. </li>
     /// </ul>
-    pub fn set_query_options(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_query_options(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_query_options(input);
         self
     }
@@ -264,18 +273,18 @@ impl SearchFluentBuilder {
     /// </ul>
     pub fn set_query_parser(
         mut self,
-        input: std::option::Option<crate::types::QueryParser>,
+        input: ::std::option::Option<crate::types::QueryParser>,
     ) -> Self {
         self.inner = self.inner.set_query_parser(input);
         self
     }
     /// <p>Specifies the field and expression values to include in the response. Multiple fields or expressions are specified as a comma-separated list. By default, a search response includes all return enabled fields (<code>_all_fields</code>). To return only the document IDs for the matching documents, specify <code>_no_fields</code>. To retrieve the relevance score calculated for each document, specify <code>_score</code>. </p>
-    pub fn r#return(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn r#return(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.r#return(input.into());
         self
     }
     /// <p>Specifies the field and expression values to include in the response. Multiple fields or expressions are specified as a comma-separated list. By default, a search response includes all return enabled fields (<code>_all_fields</code>). To return only the document IDs for the matching documents, specify <code>_no_fields</code>. To retrieve the relevance score calculated for each document, specify <code>_score</code>. </p>
-    pub fn set_return(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_return(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_return(input);
         self
     }
@@ -285,19 +294,19 @@ impl SearchFluentBuilder {
         self
     }
     /// <p>Specifies the maximum number of search hits to include in the response. </p>
-    pub fn set_size(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_size(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_size(input);
         self
     }
     /// <p>Specifies the fields or custom expressions to use to sort the search results. Multiple fields or expressions are specified as a comma-separated list. You must specify the sort direction (<code>asc</code> or <code>desc</code>) for each field; for example, <code>year desc,title asc</code>. To use a field to sort results, the field must be sort-enabled in the domain configuration. Array type fields cannot be used for sorting. If no <code>sort</code> parameter is specified, results are sorted by their default relevance scores in descending order: <code>_score desc</code>. You can also sort by document ID (<code>_id asc</code>) and version (<code>_version desc</code>).</p>
     /// <p>For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/sorting-results.html">Sorting Results</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
-    pub fn sort(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn sort(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sort(input.into());
         self
     }
     /// <p>Specifies the fields or custom expressions to use to sort the search results. Multiple fields or expressions are specified as a comma-separated list. You must specify the sort direction (<code>asc</code> or <code>desc</code>) for each field; for example, <code>year desc,title asc</code>. To use a field to sort results, the field must be sort-enabled in the domain configuration. Array type fields cannot be used for sorting. If no <code>sort</code> parameter is specified, results are sorted by their default relevance scores in descending order: <code>_score desc</code>. You can also sort by document ID (<code>_id asc</code>) and version (<code>_version desc</code>).</p>
     /// <p>For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/sorting-results.html">Sorting Results</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
-    pub fn set_sort(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_sort(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sort(input);
         self
     }
@@ -309,19 +318,19 @@ impl SearchFluentBuilder {
     }
     /// <p>Specifies the offset of the first search hit you want to return. Note that the result set is zero-based; the first result is at index 0. You can specify either the <code>start</code> or <code>cursor</code> parameter in a request, they are mutually exclusive. </p>
     /// <p>For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/paginating-results.html">Paginating Results</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
-    pub fn set_start(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_start(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_start(input);
         self
     }
     /// <p>Specifies one or more fields for which to get statistics information. Each specified field must be facet-enabled in the domain configuration. The fields are specified in JSON using the form:</p> <code>{"FIELD-A":{},"FIELD-B":{}}</code>
     /// <p>There are currently no options supported for statistics.</p>
-    pub fn stats(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn stats(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stats(input.into());
         self
     }
     /// <p>Specifies one or more fields for which to get statistics information. Each specified field must be facet-enabled in the domain configuration. The fields are specified in JSON using the form:</p> <code>{"FIELD-A":{},"FIELD-B":{}}</code>
     /// <p>There are currently no options supported for statistics.</p>
-    pub fn set_stats(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_stats(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stats(input);
         self
     }

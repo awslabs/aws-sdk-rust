@@ -6,29 +6,29 @@ pub use crate::operation::update_license_configuration::_update_license_configur
 /// Fluent builder constructing a request to `UpdateLicenseConfiguration`.
 ///
 /// <p>Modifies the attributes of an existing license configuration.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateLicenseConfigurationFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::update_license_configuration::builders::UpdateLicenseConfigurationInputBuilder,
 }
 impl UpdateLicenseConfigurationFluentBuilder {
     /// Creates a new `UpdateLicenseConfiguration`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_license_configuration::UpdateLicenseConfiguration,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_license_configuration::UpdateLicenseConfigurationError,
         >,
     > {
@@ -36,30 +36,33 @@ impl UpdateLicenseConfigurationFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_license_configuration::UpdateLicenseConfigurationOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_license_configuration::UpdateLicenseConfigurationError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,23 +75,26 @@ impl UpdateLicenseConfigurationFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_license_configuration::UpdateLicenseConfigurationOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_license_configuration::UpdateLicenseConfigurationError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
-    pub fn license_configuration_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn license_configuration_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.license_configuration_arn(input.into());
         self
     }
     /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
     pub fn set_license_configuration_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_license_configuration_arn(input);
         self
@@ -104,7 +110,7 @@ impl UpdateLicenseConfigurationFluentBuilder {
     /// <p>New status of the license configuration.</p>
     pub fn set_license_configuration_status(
         mut self,
-        input: std::option::Option<crate::types::LicenseConfigurationStatus>,
+        input: ::std::option::Option<crate::types::LicenseConfigurationStatus>,
     ) -> Self {
         self.inner = self.inner.set_license_configuration_status(input);
         self
@@ -114,14 +120,17 @@ impl UpdateLicenseConfigurationFluentBuilder {
     /// To override the contents of this collection use [`set_license_rules`](Self::set_license_rules).
     ///
     /// <p>New license rule. The only rule that you can add after you create a license configuration is licenseAffinityToHost.</p>
-    pub fn license_rules(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn license_rules(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.license_rules(input.into());
         self
     }
     /// <p>New license rule. The only rule that you can add after you create a license configuration is licenseAffinityToHost.</p>
     pub fn set_license_rules(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_license_rules(input);
         self
@@ -132,7 +141,7 @@ impl UpdateLicenseConfigurationFluentBuilder {
         self
     }
     /// <p>New number of licenses managed by the license configuration.</p>
-    pub fn set_license_count(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_license_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_license_count(input);
         self
     }
@@ -142,27 +151,27 @@ impl UpdateLicenseConfigurationFluentBuilder {
         self
     }
     /// <p>New hard limit of the number of available licenses.</p>
-    pub fn set_license_count_hard_limit(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_license_count_hard_limit(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_license_count_hard_limit(input);
         self
     }
     /// <p>New name of the license configuration.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// <p>New name of the license configuration.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
     /// <p>New description of the license configuration.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>New description of the license configuration.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
@@ -178,7 +187,7 @@ impl UpdateLicenseConfigurationFluentBuilder {
     /// <p>New product information.</p>
     pub fn set_product_information_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ProductInformation>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ProductInformation>>,
     ) -> Self {
         self.inner = self.inner.set_product_information_list(input);
         self
@@ -189,7 +198,7 @@ impl UpdateLicenseConfigurationFluentBuilder {
         self
     }
     /// <p>When true, disassociates a resource when software is uninstalled.</p>
-    pub fn set_disassociate_when_not_found(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_disassociate_when_not_found(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_disassociate_when_not_found(input);
         self
     }

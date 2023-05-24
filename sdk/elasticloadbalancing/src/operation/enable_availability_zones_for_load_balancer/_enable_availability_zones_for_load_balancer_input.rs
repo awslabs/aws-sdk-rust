@@ -2,22 +2,22 @@
 
 /// <p>Contains the parameters for EnableAvailabilityZonesForLoadBalancer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnableAvailabilityZonesForLoadBalancerInput {
     /// <p>The name of the load balancer.</p>
     #[doc(hidden)]
-    pub load_balancer_name: std::option::Option<std::string::String>,
+    pub load_balancer_name: ::std::option::Option<::std::string::String>,
     /// <p>The Availability Zones. These must be in the same region as the load balancer.</p>
     #[doc(hidden)]
-    pub availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl EnableAvailabilityZonesForLoadBalancerInput {
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
+    pub fn load_balancer_name(&self) -> ::std::option::Option<&str> {
         self.load_balancer_name.as_deref()
     }
     /// <p>The Availability Zones. These must be in the same region as the load balancer.</p>
-    pub fn availability_zones(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn availability_zones(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.availability_zones.as_deref()
     }
 }
@@ -30,21 +30,26 @@ impl EnableAvailabilityZonesForLoadBalancerInput {
 
 /// A builder for [`EnableAvailabilityZonesForLoadBalancerInput`](crate::operation::enable_availability_zones_for_load_balancer::EnableAvailabilityZonesForLoadBalancerInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EnableAvailabilityZonesForLoadBalancerInputBuilder {
-    pub(crate) load_balancer_name: std::option::Option<std::string::String>,
-    pub(crate) availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) load_balancer_name: ::std::option::Option<::std::string::String>,
+    pub(crate) availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl EnableAvailabilityZonesForLoadBalancerInputBuilder {
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.load_balancer_name = Some(input.into());
+    pub fn load_balancer_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.load_balancer_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the load balancer.</p>
     pub fn set_load_balancer_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.load_balancer_name = input;
         self
@@ -54,23 +59,26 @@ impl EnableAvailabilityZonesForLoadBalancerInputBuilder {
     /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
     ///
     /// <p>The Availability Zones. These must be in the same region as the load balancer.</p>
-    pub fn availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn availability_zones(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.availability_zones.unwrap_or_default();
         v.push(input.into());
-        self.availability_zones = Some(v);
+        self.availability_zones = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Availability Zones. These must be in the same region as the load balancer.</p>
     pub fn set_availability_zones(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.availability_zones = input;
         self
     }
     /// Consumes the builder and constructs a [`EnableAvailabilityZonesForLoadBalancerInput`](crate::operation::enable_availability_zones_for_load_balancer::EnableAvailabilityZonesForLoadBalancerInput).
-    pub fn build(self) -> Result<crate::operation::enable_availability_zones_for_load_balancer::EnableAvailabilityZonesForLoadBalancerInput, aws_smithy_http::operation::error::BuildError>{
-        Ok(
+    pub fn build(self) -> ::std::result::Result<crate::operation::enable_availability_zones_for_load_balancer::EnableAvailabilityZonesForLoadBalancerInput, ::aws_smithy_http::operation::error::BuildError>{
+        ::std::result::Result::Ok(
             crate::operation::enable_availability_zones_for_load_balancer::EnableAvailabilityZonesForLoadBalancerInput {
                 load_balancer_name: self.load_balancer_name
                 ,

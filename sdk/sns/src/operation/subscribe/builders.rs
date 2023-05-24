@@ -8,56 +8,59 @@ pub use crate::operation::subscribe::_subscribe_input::SubscribeInputBuilder;
 /// <p>Subscribes an endpoint to an Amazon SNS topic. If the endpoint type is HTTP/S or email, or if the endpoint and the topic are not in the same Amazon Web Services account, the endpoint owner must run the <code>ConfirmSubscription</code> action to confirm the subscription.</p>
 /// <p>You call the <code>ConfirmSubscription</code> action with the token from the subscription response. Confirmation tokens are valid for three days.</p>
 /// <p>This action is throttled at 100 transactions per second (TPS).</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SubscribeFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::subscribe::builders::SubscribeInputBuilder,
 }
 impl SubscribeFluentBuilder {
     /// Creates a new `Subscribe`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::subscribe::Subscribe,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::subscribe::SubscribeError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::subscribe::SubscribeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::subscribe::SubscribeOutput,
-        aws_smithy_http::result::SdkError<crate::operation::subscribe::SubscribeError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::subscribe::SubscribeError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -70,19 +73,19 @@ impl SubscribeFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::subscribe::SubscribeOutput,
-        aws_smithy_http::result::SdkError<crate::operation::subscribe::SubscribeError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::subscribe::SubscribeError>,
     > {
         self.send_middleware().await
     }
     /// <p>The ARN of the topic you want to subscribe to.</p>
-    pub fn topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.topic_arn(input.into());
         self
     }
     /// <p>The ARN of the topic you want to subscribe to.</p>
-    pub fn set_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_topic_arn(input);
         self
     }
@@ -98,7 +101,7 @@ impl SubscribeFluentBuilder {
     /// <li> <p> <code>lambda</code> – delivery of JSON-encoded message to an Lambda function</p> </li>
     /// <li> <p> <code>firehose</code> – delivery of JSON-encoded message to an Amazon Kinesis Data Firehose delivery stream.</p> </li>
     /// </ul>
-    pub fn protocol(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn protocol(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.protocol(input.into());
         self
     }
@@ -114,7 +117,7 @@ impl SubscribeFluentBuilder {
     /// <li> <p> <code>lambda</code> – delivery of JSON-encoded message to an Lambda function</p> </li>
     /// <li> <p> <code>firehose</code> – delivery of JSON-encoded message to an Amazon Kinesis Data Firehose delivery stream.</p> </li>
     /// </ul>
-    pub fn set_protocol(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_protocol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_protocol(input);
         self
     }
@@ -130,7 +133,7 @@ impl SubscribeFluentBuilder {
     /// <li> <p>For the <code>lambda</code> protocol, the endpoint is the ARN of an Lambda function.</p> </li>
     /// <li> <p>For the <code>firehose</code> protocol, the endpoint is the ARN of an Amazon Kinesis Data Firehose delivery stream.</p> </li>
     /// </ul>
-    pub fn endpoint(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.endpoint(input.into());
         self
     }
@@ -146,7 +149,7 @@ impl SubscribeFluentBuilder {
     /// <li> <p>For the <code>lambda</code> protocol, the endpoint is the ARN of an Lambda function.</p> </li>
     /// <li> <p>For the <code>firehose</code> protocol, the endpoint is the ARN of an Amazon Kinesis Data Firehose delivery stream.</p> </li>
     /// </ul>
-    pub fn set_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_endpoint(input);
         self
     }
@@ -177,8 +180,8 @@ impl SubscribeFluentBuilder {
     /// </ul>
     pub fn attributes(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.attributes(k.into(), v.into());
         self
@@ -206,8 +209,8 @@ impl SubscribeFluentBuilder {
     /// </ul>
     pub fn set_attributes(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_attributes(input);
@@ -225,7 +228,7 @@ impl SubscribeFluentBuilder {
     /// <p>If you set this parameter to <code>true</code>, the response includes the ARN in all cases, even if the subscription is not yet confirmed. In addition to the ARN for confirmed subscriptions, the response also includes the <code>pending subscription</code> ARN value for subscriptions that aren't yet confirmed. A subscription becomes confirmed when the subscriber calls the <code>ConfirmSubscription</code> action with a confirmation token.</p>
     /// <p></p>
     /// <p>The default value is <code>false</code>.</p>
-    pub fn set_return_subscription_arn(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_return_subscription_arn(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_return_subscription_arn(input);
         self
     }

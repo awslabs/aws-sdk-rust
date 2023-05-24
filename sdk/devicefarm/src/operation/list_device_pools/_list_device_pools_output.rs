@@ -2,27 +2,27 @@
 
 /// <p>Represents the result of a list device pools request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDevicePoolsOutput {
     /// <p>Information about the device pools.</p>
     #[doc(hidden)]
-    pub device_pools: std::option::Option<std::vec::Vec<crate::types::DevicePool>>,
+    pub device_pools: ::std::option::Option<::std::vec::Vec<crate::types::DevicePool>>,
     /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListDevicePoolsOutput {
     /// <p>Information about the device pools.</p>
-    pub fn device_pools(&self) -> std::option::Option<&[crate::types::DevicePool]> {
+    pub fn device_pools(&self) -> ::std::option::Option<&[crate::types::DevicePool]> {
         self.device_pools.as_deref()
     }
     /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListDevicePoolsOutput {
+impl ::aws_http::request_id::RequestId for ListDevicePoolsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -37,10 +37,12 @@ impl ListDevicePoolsOutput {
 
 /// A builder for [`ListDevicePoolsOutput`](crate::operation::list_device_pools::ListDevicePoolsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListDevicePoolsOutputBuilder {
-    pub(crate) device_pools: std::option::Option<std::vec::Vec<crate::types::DevicePool>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) device_pools: ::std::option::Option<::std::vec::Vec<crate::types::DevicePool>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListDevicePoolsOutputBuilder {
@@ -52,24 +54,24 @@ impl ListDevicePoolsOutputBuilder {
     pub fn device_pools(mut self, input: crate::types::DevicePool) -> Self {
         let mut v = self.device_pools.unwrap_or_default();
         v.push(input);
-        self.device_pools = Some(v);
+        self.device_pools = ::std::option::Option::Some(v);
         self
     }
     /// <p>Information about the device pools.</p>
     pub fn set_device_pools(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DevicePool>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DevicePool>>,
     ) -> Self {
         self.device_pools = input;
         self
     }
     /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

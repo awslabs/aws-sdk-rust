@@ -2,22 +2,22 @@
 
 /// <p>Information about the target group stickiness for a rule.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TargetGroupStickinessConfig {
     /// <p>Indicates whether target group stickiness is enabled.</p>
     #[doc(hidden)]
-    pub enabled: std::option::Option<bool>,
+    pub enabled: ::std::option::Option<bool>,
     /// <p>The time period, in seconds, during which requests from a client should be routed to the same target group. The range is 1-604800 seconds (7 days).</p>
     #[doc(hidden)]
-    pub duration_seconds: std::option::Option<i32>,
+    pub duration_seconds: ::std::option::Option<i32>,
 }
 impl TargetGroupStickinessConfig {
     /// <p>Indicates whether target group stickiness is enabled.</p>
-    pub fn enabled(&self) -> std::option::Option<bool> {
+    pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
     /// <p>The time period, in seconds, during which requests from a client should be routed to the same target group. The range is 1-604800 seconds (7 days).</p>
-    pub fn duration_seconds(&self) -> std::option::Option<i32> {
+    pub fn duration_seconds(&self) -> ::std::option::Option<i32> {
         self.duration_seconds
     }
 }
@@ -30,29 +30,31 @@ impl TargetGroupStickinessConfig {
 
 /// A builder for [`TargetGroupStickinessConfig`](crate::types::TargetGroupStickinessConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TargetGroupStickinessConfigBuilder {
-    pub(crate) enabled: std::option::Option<bool>,
-    pub(crate) duration_seconds: std::option::Option<i32>,
+    pub(crate) enabled: ::std::option::Option<bool>,
+    pub(crate) duration_seconds: ::std::option::Option<i32>,
 }
 impl TargetGroupStickinessConfigBuilder {
     /// <p>Indicates whether target group stickiness is enabled.</p>
     pub fn enabled(mut self, input: bool) -> Self {
-        self.enabled = Some(input);
+        self.enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether target group stickiness is enabled.</p>
-    pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
     }
     /// <p>The time period, in seconds, during which requests from a client should be routed to the same target group. The range is 1-604800 seconds (7 days).</p>
     pub fn duration_seconds(mut self, input: i32) -> Self {
-        self.duration_seconds = Some(input);
+        self.duration_seconds = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time period, in seconds, during which requests from a client should be routed to the same target group. The range is 1-604800 seconds (7 days).</p>
-    pub fn set_duration_seconds(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_duration_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.duration_seconds = input;
         self
     }

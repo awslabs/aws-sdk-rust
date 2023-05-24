@@ -4,22 +4,22 @@
 /// <p>Setting the minimum bandwidth does not guarantee that your instance will achieve the minimum bandwidth. Amazon EC2 will identify instance types that support the specified minimum bandwidth, but the actual bandwidth of your instance might go below the specified minimum at times. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-network-bandwidth.html#available-instance-bandwidth">Available instance bandwidth</a> in the <i>Amazon EC2 User Guide</i>.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkBandwidthGbpsRequest {
     /// <p>The minimum amount of network bandwidth, in Gbps. To specify no minimum limit, omit this parameter.</p>
     #[doc(hidden)]
-    pub min: std::option::Option<f64>,
+    pub min: ::std::option::Option<f64>,
     /// <p>The maximum amount of network bandwidth, in Gbps. To specify no maximum limit, omit this parameter.</p>
     #[doc(hidden)]
-    pub max: std::option::Option<f64>,
+    pub max: ::std::option::Option<f64>,
 }
 impl NetworkBandwidthGbpsRequest {
     /// <p>The minimum amount of network bandwidth, in Gbps. To specify no minimum limit, omit this parameter.</p>
-    pub fn min(&self) -> std::option::Option<f64> {
+    pub fn min(&self) -> ::std::option::Option<f64> {
         self.min
     }
     /// <p>The maximum amount of network bandwidth, in Gbps. To specify no maximum limit, omit this parameter.</p>
-    pub fn max(&self) -> std::option::Option<f64> {
+    pub fn max(&self) -> ::std::option::Option<f64> {
         self.max
     }
 }
@@ -32,29 +32,31 @@ impl NetworkBandwidthGbpsRequest {
 
 /// A builder for [`NetworkBandwidthGbpsRequest`](crate::types::NetworkBandwidthGbpsRequest).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NetworkBandwidthGbpsRequestBuilder {
-    pub(crate) min: std::option::Option<f64>,
-    pub(crate) max: std::option::Option<f64>,
+    pub(crate) min: ::std::option::Option<f64>,
+    pub(crate) max: ::std::option::Option<f64>,
 }
 impl NetworkBandwidthGbpsRequestBuilder {
     /// <p>The minimum amount of network bandwidth, in Gbps. To specify no minimum limit, omit this parameter.</p>
     pub fn min(mut self, input: f64) -> Self {
-        self.min = Some(input);
+        self.min = ::std::option::Option::Some(input);
         self
     }
     /// <p>The minimum amount of network bandwidth, in Gbps. To specify no minimum limit, omit this parameter.</p>
-    pub fn set_min(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_min(mut self, input: ::std::option::Option<f64>) -> Self {
         self.min = input;
         self
     }
     /// <p>The maximum amount of network bandwidth, in Gbps. To specify no maximum limit, omit this parameter.</p>
     pub fn max(mut self, input: f64) -> Self {
-        self.max = Some(input);
+        self.max = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum amount of network bandwidth, in Gbps. To specify no maximum limit, omit this parameter.</p>
-    pub fn set_max(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_max(mut self, input: ::std::option::Option<f64>) -> Self {
         self.max = input;
         self
     }

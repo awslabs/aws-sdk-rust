@@ -2,78 +2,78 @@
 
 /// <p>Dashboard version.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DashboardVersion {
     /// <p>The time that this dashboard version was created.</p>
     #[doc(hidden)]
-    pub created_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Errors associated with this dashboard version.</p>
     #[doc(hidden)]
-    pub errors: std::option::Option<std::vec::Vec<crate::types::DashboardError>>,
+    pub errors: ::std::option::Option<::std::vec::Vec<crate::types::DashboardError>>,
     /// <p>Version number for this version of the dashboard.</p>
     #[doc(hidden)]
-    pub version_number: std::option::Option<i64>,
+    pub version_number: ::std::option::Option<i64>,
     /// <p>The HTTP status of the request.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::ResourceStatus>,
+    pub status: ::std::option::Option<crate::types::ResourceStatus>,
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Source entity ARN.</p>
     #[doc(hidden)]
-    pub source_entity_arn: std::option::Option<std::string::String>,
+    pub source_entity_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Numbers (ARNs) for the datasets that are associated with this version of the dashboard.</p>
     #[doc(hidden)]
-    pub data_set_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub data_set_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Description.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the theme associated with a version of the dashboard.</p>
     #[doc(hidden)]
-    pub theme_arn: std::option::Option<std::string::String>,
+    pub theme_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of the associated sheets with the unique identifier and name of each sheet.</p>
     #[doc(hidden)]
-    pub sheets: std::option::Option<std::vec::Vec<crate::types::Sheet>>,
+    pub sheets: ::std::option::Option<::std::vec::Vec<crate::types::Sheet>>,
 }
 impl DashboardVersion {
     /// <p>The time that this dashboard version was created.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>Errors associated with this dashboard version.</p>
-    pub fn errors(&self) -> std::option::Option<&[crate::types::DashboardError]> {
+    pub fn errors(&self) -> ::std::option::Option<&[crate::types::DashboardError]> {
         self.errors.as_deref()
     }
     /// <p>Version number for this version of the dashboard.</p>
-    pub fn version_number(&self) -> std::option::Option<i64> {
+    pub fn version_number(&self) -> ::std::option::Option<i64> {
         self.version_number
     }
     /// <p>The HTTP status of the request.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::ResourceStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::ResourceStatus> {
         self.status.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>Source entity ARN.</p>
-    pub fn source_entity_arn(&self) -> std::option::Option<&str> {
+    pub fn source_entity_arn(&self) -> ::std::option::Option<&str> {
         self.source_entity_arn.as_deref()
     }
     /// <p>The Amazon Resource Numbers (ARNs) for the datasets that are associated with this version of the dashboard.</p>
-    pub fn data_set_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn data_set_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.data_set_arns.as_deref()
     }
     /// <p>Description.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The ARN of the theme associated with a version of the dashboard.</p>
-    pub fn theme_arn(&self) -> std::option::Option<&str> {
+    pub fn theme_arn(&self) -> ::std::option::Option<&str> {
         self.theme_arn.as_deref()
     }
     /// <p>A list of the associated sheets with the unique identifier and name of each sheet.</p>
-    pub fn sheets(&self) -> std::option::Option<&[crate::types::Sheet]> {
+    pub fn sheets(&self) -> ::std::option::Option<&[crate::types::Sheet]> {
         self.sheets.as_deref()
     }
 }
@@ -86,29 +86,31 @@ impl DashboardVersion {
 
 /// A builder for [`DashboardVersion`](crate::types::DashboardVersion).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DashboardVersionBuilder {
-    pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) errors: std::option::Option<std::vec::Vec<crate::types::DashboardError>>,
-    pub(crate) version_number: std::option::Option<i64>,
-    pub(crate) status: std::option::Option<crate::types::ResourceStatus>,
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) source_entity_arn: std::option::Option<std::string::String>,
-    pub(crate) data_set_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) theme_arn: std::option::Option<std::string::String>,
-    pub(crate) sheets: std::option::Option<std::vec::Vec<crate::types::Sheet>>,
+    pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::DashboardError>>,
+    pub(crate) version_number: ::std::option::Option<i64>,
+    pub(crate) status: ::std::option::Option<crate::types::ResourceStatus>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) source_entity_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) data_set_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) theme_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) sheets: ::std::option::Option<::std::vec::Vec<crate::types::Sheet>>,
 }
 impl DashboardVersionBuilder {
     /// <p>The time that this dashboard version was created.</p>
-    pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_time = Some(input);
+    pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time that this dashboard version was created.</p>
     pub fn set_created_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_time = input;
         self
@@ -121,56 +123,62 @@ impl DashboardVersionBuilder {
     pub fn errors(mut self, input: crate::types::DashboardError) -> Self {
         let mut v = self.errors.unwrap_or_default();
         v.push(input);
-        self.errors = Some(v);
+        self.errors = ::std::option::Option::Some(v);
         self
     }
     /// <p>Errors associated with this dashboard version.</p>
     pub fn set_errors(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DashboardError>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DashboardError>>,
     ) -> Self {
         self.errors = input;
         self
     }
     /// <p>Version number for this version of the dashboard.</p>
     pub fn version_number(mut self, input: i64) -> Self {
-        self.version_number = Some(input);
+        self.version_number = ::std::option::Option::Some(input);
         self
     }
     /// <p>Version number for this version of the dashboard.</p>
-    pub fn set_version_number(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_version_number(mut self, input: ::std::option::Option<i64>) -> Self {
         self.version_number = input;
         self
     }
     /// <p>The HTTP status of the request.</p>
     pub fn status(mut self, input: crate::types::ResourceStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The HTTP status of the request.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::ResourceStatus>) -> Self {
+    pub fn set_status(
+        mut self,
+        input: ::std::option::Option<crate::types::ResourceStatus>,
+    ) -> Self {
         self.status = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// <p>Source entity ARN.</p>
-    pub fn source_entity_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.source_entity_arn = Some(input.into());
+    pub fn source_entity_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.source_entity_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Source entity ARN.</p>
     pub fn set_source_entity_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.source_entity_arn = input;
         self
@@ -180,37 +188,40 @@ impl DashboardVersionBuilder {
     /// To override the contents of this collection use [`set_data_set_arns`](Self::set_data_set_arns).
     ///
     /// <p>The Amazon Resource Numbers (ARNs) for the datasets that are associated with this version of the dashboard.</p>
-    pub fn data_set_arns(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn data_set_arns(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.data_set_arns.unwrap_or_default();
         v.push(input.into());
-        self.data_set_arns = Some(v);
+        self.data_set_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Amazon Resource Numbers (ARNs) for the datasets that are associated with this version of the dashboard.</p>
     pub fn set_data_set_arns(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.data_set_arns = input;
         self
     }
     /// <p>Description.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Description.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>The ARN of the theme associated with a version of the dashboard.</p>
-    pub fn theme_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.theme_arn = Some(input.into());
+    pub fn theme_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.theme_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the theme associated with a version of the dashboard.</p>
-    pub fn set_theme_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_theme_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.theme_arn = input;
         self
     }
@@ -222,13 +233,13 @@ impl DashboardVersionBuilder {
     pub fn sheets(mut self, input: crate::types::Sheet) -> Self {
         let mut v = self.sheets.unwrap_or_default();
         v.push(input);
-        self.sheets = Some(v);
+        self.sheets = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of the associated sheets with the unique identifier and name of each sheet.</p>
     pub fn set_sheets(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Sheet>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Sheet>>,
     ) -> Self {
         self.sheets = input;
         self

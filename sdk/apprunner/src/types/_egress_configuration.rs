@@ -2,26 +2,26 @@
 
 /// <p>Describes configuration settings related to outbound network traffic of an App Runner service.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EgressConfiguration {
     /// <p>The type of egress configuration.</p>
     /// <p>Set to <code>DEFAULT</code> for access to resources hosted on public networks.</p>
     /// <p>Set to <code>VPC</code> to associate your service to a custom VPC specified by <code>VpcConnectorArn</code>.</p>
     #[doc(hidden)]
-    pub egress_type: std::option::Option<crate::types::EgressType>,
+    pub egress_type: ::std::option::Option<crate::types::EgressType>,
     /// <p>The Amazon Resource Name (ARN) of the App Runner VPC connector that you want to associate with your App Runner service. Only valid when <code>EgressType = VPC</code>.</p>
     #[doc(hidden)]
-    pub vpc_connector_arn: std::option::Option<std::string::String>,
+    pub vpc_connector_arn: ::std::option::Option<::std::string::String>,
 }
 impl EgressConfiguration {
     /// <p>The type of egress configuration.</p>
     /// <p>Set to <code>DEFAULT</code> for access to resources hosted on public networks.</p>
     /// <p>Set to <code>VPC</code> to associate your service to a custom VPC specified by <code>VpcConnectorArn</code>.</p>
-    pub fn egress_type(&self) -> std::option::Option<&crate::types::EgressType> {
+    pub fn egress_type(&self) -> ::std::option::Option<&crate::types::EgressType> {
         self.egress_type.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the App Runner VPC connector that you want to associate with your App Runner service. Only valid when <code>EgressType = VPC</code>.</p>
-    pub fn vpc_connector_arn(&self) -> std::option::Option<&str> {
+    pub fn vpc_connector_arn(&self) -> ::std::option::Option<&str> {
         self.vpc_connector_arn.as_deref()
     }
 }
@@ -34,35 +34,43 @@ impl EgressConfiguration {
 
 /// A builder for [`EgressConfiguration`](crate::types::EgressConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EgressConfigurationBuilder {
-    pub(crate) egress_type: std::option::Option<crate::types::EgressType>,
-    pub(crate) vpc_connector_arn: std::option::Option<std::string::String>,
+    pub(crate) egress_type: ::std::option::Option<crate::types::EgressType>,
+    pub(crate) vpc_connector_arn: ::std::option::Option<::std::string::String>,
 }
 impl EgressConfigurationBuilder {
     /// <p>The type of egress configuration.</p>
     /// <p>Set to <code>DEFAULT</code> for access to resources hosted on public networks.</p>
     /// <p>Set to <code>VPC</code> to associate your service to a custom VPC specified by <code>VpcConnectorArn</code>.</p>
     pub fn egress_type(mut self, input: crate::types::EgressType) -> Self {
-        self.egress_type = Some(input);
+        self.egress_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of egress configuration.</p>
     /// <p>Set to <code>DEFAULT</code> for access to resources hosted on public networks.</p>
     /// <p>Set to <code>VPC</code> to associate your service to a custom VPC specified by <code>VpcConnectorArn</code>.</p>
-    pub fn set_egress_type(mut self, input: std::option::Option<crate::types::EgressType>) -> Self {
+    pub fn set_egress_type(
+        mut self,
+        input: ::std::option::Option<crate::types::EgressType>,
+    ) -> Self {
         self.egress_type = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the App Runner VPC connector that you want to associate with your App Runner service. Only valid when <code>EgressType = VPC</code>.</p>
-    pub fn vpc_connector_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.vpc_connector_arn = Some(input.into());
+    pub fn vpc_connector_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.vpc_connector_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the App Runner VPC connector that you want to associate with your App Runner service. Only valid when <code>EgressType = VPC</code>.</p>
     pub fn set_vpc_connector_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.vpc_connector_arn = input;
         self

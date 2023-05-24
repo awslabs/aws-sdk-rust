@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum FailoverStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum FailoverStatus {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for FailoverStatus {
+impl ::std::convert::From<&str> for FailoverStatus {
     fn from(s: &str) -> Self {
         match s {
             "cancelling" => FailoverStatus::Cancelling,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for FailoverStatus {
         }
     }
 }
-impl std::str::FromStr for FailoverStatus {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for FailoverStatus {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FailoverStatus::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(FailoverStatus::from(s))
     }
 }
 impl FailoverStatus {
@@ -91,7 +91,7 @@ impl FailoverStatus {
         &["cancelling", "failing-over", "pending"]
     }
 }
-impl AsRef<str> for FailoverStatus {
+impl ::std::convert::AsRef<str> for FailoverStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

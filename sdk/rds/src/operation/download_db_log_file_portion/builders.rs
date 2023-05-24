@@ -7,29 +7,29 @@ pub use crate::operation::download_db_log_file_portion::_download_db_log_file_po
 ///
 /// <p>Downloads all or a portion of the specified log file, up to 1 MB in size.</p>
 /// <p>This command doesn't apply to RDS Custom.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DownloadDBLogFilePortionFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::download_db_log_file_portion::builders::DownloadDbLogFilePortionInputBuilder,
 }
 impl DownloadDBLogFilePortionFluentBuilder {
     /// Creates a new `DownloadDBLogFilePortion`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::download_db_log_file_portion::DownloadDBLogFilePortion,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::download_db_log_file_portion::DownloadDBLogFilePortionError,
         >,
     > {
@@ -37,30 +37,33 @@ impl DownloadDBLogFilePortionFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::download_db_log_file_portion::DownloadDbLogFilePortionOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::download_db_log_file_portion::DownloadDBLogFilePortionError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -73,9 +76,9 @@ impl DownloadDBLogFilePortionFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::download_db_log_file_portion::DownloadDbLogFilePortionOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::download_db_log_file_portion::DownloadDBLogFilePortionError,
         >,
     > {
@@ -95,7 +98,10 @@ impl DownloadDBLogFilePortionFluentBuilder {
     /// <ul>
     /// <li> <p>Must match the identifier of an existing DBInstance.</p> </li>
     /// </ul>
-    pub fn db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn db_instance_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.db_instance_identifier(input.into());
         self
     }
@@ -106,28 +112,34 @@ impl DownloadDBLogFilePortionFluentBuilder {
     /// </ul>
     pub fn set_db_instance_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_db_instance_identifier(input);
         self
     }
     /// <p>The name of the log file to be downloaded.</p>
-    pub fn log_file_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn log_file_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.log_file_name(input.into());
         self
     }
     /// <p>The name of the log file to be downloaded.</p>
-    pub fn set_log_file_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_log_file_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_log_file_name(input);
         self
     }
     /// <p>The pagination token provided in the previous request or "0". If the Marker parameter is specified the response includes only records beyond the marker until the end of the file or up to NumberOfLines.</p>
-    pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.marker(input.into());
         self
     }
     /// <p>The pagination token provided in the previous request or "0". If the Marker parameter is specified the response includes only records beyond the marker until the end of the file or up to NumberOfLines.</p>
-    pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_marker(input);
         self
     }
@@ -151,7 +163,7 @@ impl DownloadDBLogFilePortionFluentBuilder {
     /// <li> <p>If Marker is specified as "0", then the specified number of lines from the beginning of the log file are returned.</p> </li>
     /// <li> <p>You can download the log file in blocks of lines by specifying the size of the block using the NumberOfLines parameter, and by specifying a value of "0" for the Marker parameter in your first request. Include the Marker value returned in the response as the Marker value for the next request, continuing until the AdditionalDataPending response element returns false.</p> </li>
     /// </ul>
-    pub fn set_number_of_lines(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_number_of_lines(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_number_of_lines(input);
         self
     }

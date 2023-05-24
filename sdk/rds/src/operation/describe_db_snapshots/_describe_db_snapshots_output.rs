@@ -2,27 +2,27 @@
 
 /// <p>Contains the result of a successful invocation of the <code>DescribeDBSnapshots</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDbSnapshotsOutput {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     #[doc(hidden)]
-    pub marker: std::option::Option<std::string::String>,
+    pub marker: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>DBSnapshot</code> instances.</p>
     #[doc(hidden)]
-    pub db_snapshots: std::option::Option<std::vec::Vec<crate::types::DbSnapshot>>,
+    pub db_snapshots: ::std::option::Option<::std::vec::Vec<crate::types::DbSnapshot>>,
     _request_id: Option<String>,
 }
 impl DescribeDbSnapshotsOutput {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
     /// <p>A list of <code>DBSnapshot</code> instances.</p>
-    pub fn db_snapshots(&self) -> std::option::Option<&[crate::types::DbSnapshot]> {
+    pub fn db_snapshots(&self) -> ::std::option::Option<&[crate::types::DbSnapshot]> {
         self.db_snapshots.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeDbSnapshotsOutput {
+impl ::aws_http::request_id::RequestId for DescribeDbSnapshotsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -38,20 +38,22 @@ impl DescribeDbSnapshotsOutput {
 
 /// A builder for [`DescribeDbSnapshotsOutput`](crate::operation::describe_db_snapshots::DescribeDbSnapshotsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeDbSnapshotsOutputBuilder {
-    pub(crate) marker: std::option::Option<std::string::String>,
-    pub(crate) db_snapshots: std::option::Option<std::vec::Vec<crate::types::DbSnapshot>>,
+    pub(crate) marker: ::std::option::Option<::std::string::String>,
+    pub(crate) db_snapshots: ::std::option::Option<::std::vec::Vec<crate::types::DbSnapshot>>,
     _request_id: Option<String>,
 }
 impl DescribeDbSnapshotsOutputBuilder {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-        self.marker = Some(input.into());
+    pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
     }
@@ -63,13 +65,13 @@ impl DescribeDbSnapshotsOutputBuilder {
     pub fn db_snapshots(mut self, input: crate::types::DbSnapshot) -> Self {
         let mut v = self.db_snapshots.unwrap_or_default();
         v.push(input);
-        self.db_snapshots = Some(v);
+        self.db_snapshots = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of <code>DBSnapshot</code> instances.</p>
     pub fn set_db_snapshots(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DbSnapshot>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DbSnapshot>>,
     ) -> Self {
         self.db_snapshots = input;
         self

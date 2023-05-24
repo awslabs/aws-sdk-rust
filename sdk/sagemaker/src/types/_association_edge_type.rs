@@ -40,13 +40,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum AssociationEdgeType {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,7 +60,7 @@ pub enum AssociationEdgeType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for AssociationEdgeType {
+impl ::std::convert::From<&str> for AssociationEdgeType {
     fn from(s: &str) -> Self {
         match s {
             "AssociatedWith" => AssociationEdgeType::AssociatedWith,
@@ -73,11 +73,11 @@ impl std::convert::From<&str> for AssociationEdgeType {
         }
     }
 }
-impl std::str::FromStr for AssociationEdgeType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for AssociationEdgeType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AssociationEdgeType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(AssociationEdgeType::from(s))
     }
 }
 impl AssociationEdgeType {
@@ -96,7 +96,7 @@ impl AssociationEdgeType {
         &["AssociatedWith", "ContributedTo", "DerivedFrom", "Produced"]
     }
 }
-impl AsRef<str> for AssociationEdgeType {
+impl ::std::convert::AsRef<str> for AssociationEdgeType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

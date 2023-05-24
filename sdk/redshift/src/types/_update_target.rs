@@ -2,29 +2,32 @@
 
 /// <p>A maintenance track that you can switch the current track to.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateTarget {
     /// <p>The name of the new maintenance track.</p>
     #[doc(hidden)]
-    pub maintenance_track_name: std::option::Option<std::string::String>,
+    pub maintenance_track_name: ::std::option::Option<::std::string::String>,
     /// <p>The cluster version for the new maintenance track.</p>
     #[doc(hidden)]
-    pub database_version: std::option::Option<std::string::String>,
+    pub database_version: ::std::option::Option<::std::string::String>,
     /// <p>A list of operations supported by the maintenance track.</p>
     #[doc(hidden)]
-    pub supported_operations: std::option::Option<std::vec::Vec<crate::types::SupportedOperation>>,
+    pub supported_operations:
+        ::std::option::Option<::std::vec::Vec<crate::types::SupportedOperation>>,
 }
 impl UpdateTarget {
     /// <p>The name of the new maintenance track.</p>
-    pub fn maintenance_track_name(&self) -> std::option::Option<&str> {
+    pub fn maintenance_track_name(&self) -> ::std::option::Option<&str> {
         self.maintenance_track_name.as_deref()
     }
     /// <p>The cluster version for the new maintenance track.</p>
-    pub fn database_version(&self) -> std::option::Option<&str> {
+    pub fn database_version(&self) -> ::std::option::Option<&str> {
         self.database_version.as_deref()
     }
     /// <p>A list of operations supported by the maintenance track.</p>
-    pub fn supported_operations(&self) -> std::option::Option<&[crate::types::SupportedOperation]> {
+    pub fn supported_operations(
+        &self,
+    ) -> ::std::option::Option<&[crate::types::SupportedOperation]> {
         self.supported_operations.as_deref()
     }
 }
@@ -37,34 +40,45 @@ impl UpdateTarget {
 
 /// A builder for [`UpdateTarget`](crate::types::UpdateTarget).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateTargetBuilder {
-    pub(crate) maintenance_track_name: std::option::Option<std::string::String>,
-    pub(crate) database_version: std::option::Option<std::string::String>,
+    pub(crate) maintenance_track_name: ::std::option::Option<::std::string::String>,
+    pub(crate) database_version: ::std::option::Option<::std::string::String>,
     pub(crate) supported_operations:
-        std::option::Option<std::vec::Vec<crate::types::SupportedOperation>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::SupportedOperation>>,
 }
 impl UpdateTargetBuilder {
     /// <p>The name of the new maintenance track.</p>
-    pub fn maintenance_track_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.maintenance_track_name = Some(input.into());
+    pub fn maintenance_track_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.maintenance_track_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the new maintenance track.</p>
     pub fn set_maintenance_track_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.maintenance_track_name = input;
         self
     }
     /// <p>The cluster version for the new maintenance track.</p>
-    pub fn database_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.database_version = Some(input.into());
+    pub fn database_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.database_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The cluster version for the new maintenance track.</p>
-    pub fn set_database_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_database_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.database_version = input;
         self
     }
@@ -76,13 +90,13 @@ impl UpdateTargetBuilder {
     pub fn supported_operations(mut self, input: crate::types::SupportedOperation) -> Self {
         let mut v = self.supported_operations.unwrap_or_default();
         v.push(input);
-        self.supported_operations = Some(v);
+        self.supported_operations = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of operations supported by the maintenance track.</p>
     pub fn set_supported_operations(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SupportedOperation>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SupportedOperation>>,
     ) -> Self {
         self.supported_operations = input;
         self

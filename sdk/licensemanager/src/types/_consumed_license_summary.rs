@@ -2,22 +2,22 @@
 
 /// <p>Details about license consumption.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConsumedLicenseSummary {
     /// <p>Resource type of the resource consuming a license.</p>
     #[doc(hidden)]
-    pub resource_type: std::option::Option<crate::types::ResourceType>,
+    pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>Number of licenses consumed by the resource.</p>
     #[doc(hidden)]
-    pub consumed_licenses: std::option::Option<i64>,
+    pub consumed_licenses: ::std::option::Option<i64>,
 }
 impl ConsumedLicenseSummary {
     /// <p>Resource type of the resource consuming a license.</p>
-    pub fn resource_type(&self) -> std::option::Option<&crate::types::ResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>Number of licenses consumed by the resource.</p>
-    pub fn consumed_licenses(&self) -> std::option::Option<i64> {
+    pub fn consumed_licenses(&self) -> ::std::option::Option<i64> {
         self.consumed_licenses
     }
 }
@@ -30,32 +30,34 @@ impl ConsumedLicenseSummary {
 
 /// A builder for [`ConsumedLicenseSummary`](crate::types::ConsumedLicenseSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ConsumedLicenseSummaryBuilder {
-    pub(crate) resource_type: std::option::Option<crate::types::ResourceType>,
-    pub(crate) consumed_licenses: std::option::Option<i64>,
+    pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
+    pub(crate) consumed_licenses: ::std::option::Option<i64>,
 }
 impl ConsumedLicenseSummaryBuilder {
     /// <p>Resource type of the resource consuming a license.</p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
-        self.resource_type = Some(input);
+        self.resource_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Resource type of the resource consuming a license.</p>
     pub fn set_resource_type(
         mut self,
-        input: std::option::Option<crate::types::ResourceType>,
+        input: ::std::option::Option<crate::types::ResourceType>,
     ) -> Self {
         self.resource_type = input;
         self
     }
     /// <p>Number of licenses consumed by the resource.</p>
     pub fn consumed_licenses(mut self, input: i64) -> Self {
-        self.consumed_licenses = Some(input);
+        self.consumed_licenses = ::std::option::Option::Some(input);
         self
     }
     /// <p>Number of licenses consumed by the resource.</p>
-    pub fn set_consumed_licenses(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_consumed_licenses(mut self, input: ::std::option::Option<i64>) -> Self {
         self.consumed_licenses = input;
         self
     }

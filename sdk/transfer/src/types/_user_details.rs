@@ -2,29 +2,29 @@
 
 /// <p>Specifies the user name, server ID, and session ID for a workflow.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserDetails {
     /// <p>A unique string that identifies a Transfer Family user associated with a server.</p>
     #[doc(hidden)]
-    pub user_name: std::option::Option<std::string::String>,
+    pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>The system-assigned unique identifier for a Transfer server instance. </p>
     #[doc(hidden)]
-    pub server_id: std::option::Option<std::string::String>,
+    pub server_id: ::std::option::Option<::std::string::String>,
     /// <p>The system-assigned unique identifier for a session that corresponds to the workflow.</p>
     #[doc(hidden)]
-    pub session_id: std::option::Option<std::string::String>,
+    pub session_id: ::std::option::Option<::std::string::String>,
 }
 impl UserDetails {
     /// <p>A unique string that identifies a Transfer Family user associated with a server.</p>
-    pub fn user_name(&self) -> std::option::Option<&str> {
+    pub fn user_name(&self) -> ::std::option::Option<&str> {
         self.user_name.as_deref()
     }
     /// <p>The system-assigned unique identifier for a Transfer server instance. </p>
-    pub fn server_id(&self) -> std::option::Option<&str> {
+    pub fn server_id(&self) -> ::std::option::Option<&str> {
         self.server_id.as_deref()
     }
     /// <p>The system-assigned unique identifier for a session that corresponds to the workflow.</p>
-    pub fn session_id(&self) -> std::option::Option<&str> {
+    pub fn session_id(&self) -> ::std::option::Option<&str> {
         self.session_id.as_deref()
     }
 }
@@ -37,40 +37,42 @@ impl UserDetails {
 
 /// A builder for [`UserDetails`](crate::types::UserDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UserDetailsBuilder {
-    pub(crate) user_name: std::option::Option<std::string::String>,
-    pub(crate) server_id: std::option::Option<std::string::String>,
-    pub(crate) session_id: std::option::Option<std::string::String>,
+    pub(crate) user_name: ::std::option::Option<::std::string::String>,
+    pub(crate) server_id: ::std::option::Option<::std::string::String>,
+    pub(crate) session_id: ::std::option::Option<::std::string::String>,
 }
 impl UserDetailsBuilder {
     /// <p>A unique string that identifies a Transfer Family user associated with a server.</p>
-    pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.user_name = Some(input.into());
+    pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.user_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique string that identifies a Transfer Family user associated with a server.</p>
-    pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_name = input;
         self
     }
     /// <p>The system-assigned unique identifier for a Transfer server instance. </p>
-    pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.server_id = Some(input.into());
+    pub fn server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.server_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The system-assigned unique identifier for a Transfer server instance. </p>
-    pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.server_id = input;
         self
     }
     /// <p>The system-assigned unique identifier for a session that corresponds to the workflow.</p>
-    pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.session_id = Some(input.into());
+    pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.session_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The system-assigned unique identifier for a session that corresponds to the workflow.</p>
-    pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.session_id = input;
         self
     }

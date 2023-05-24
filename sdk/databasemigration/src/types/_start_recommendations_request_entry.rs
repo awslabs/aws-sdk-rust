@@ -2,22 +2,22 @@
 
 /// <p>Provides information about the source database to analyze and provide target recommendations according to the specified requirements.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartRecommendationsRequestEntry {
     /// <p>The identifier of the source database.</p>
     #[doc(hidden)]
-    pub database_id: std::option::Option<std::string::String>,
+    pub database_id: ::std::option::Option<::std::string::String>,
     /// <p>The required target engine settings.</p>
     #[doc(hidden)]
-    pub settings: std::option::Option<crate::types::RecommendationSettings>,
+    pub settings: ::std::option::Option<crate::types::RecommendationSettings>,
 }
 impl StartRecommendationsRequestEntry {
     /// <p>The identifier of the source database.</p>
-    pub fn database_id(&self) -> std::option::Option<&str> {
+    pub fn database_id(&self) -> ::std::option::Option<&str> {
         self.database_id.as_deref()
     }
     /// <p>The required target engine settings.</p>
-    pub fn settings(&self) -> std::option::Option<&crate::types::RecommendationSettings> {
+    pub fn settings(&self) -> ::std::option::Option<&crate::types::RecommendationSettings> {
         self.settings.as_ref()
     }
 }
@@ -30,31 +30,33 @@ impl StartRecommendationsRequestEntry {
 
 /// A builder for [`StartRecommendationsRequestEntry`](crate::types::StartRecommendationsRequestEntry).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StartRecommendationsRequestEntryBuilder {
-    pub(crate) database_id: std::option::Option<std::string::String>,
-    pub(crate) settings: std::option::Option<crate::types::RecommendationSettings>,
+    pub(crate) database_id: ::std::option::Option<::std::string::String>,
+    pub(crate) settings: ::std::option::Option<crate::types::RecommendationSettings>,
 }
 impl StartRecommendationsRequestEntryBuilder {
     /// <p>The identifier of the source database.</p>
-    pub fn database_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.database_id = Some(input.into());
+    pub fn database_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.database_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the source database.</p>
-    pub fn set_database_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_database_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_id = input;
         self
     }
     /// <p>The required target engine settings.</p>
     pub fn settings(mut self, input: crate::types::RecommendationSettings) -> Self {
-        self.settings = Some(input);
+        self.settings = ::std::option::Option::Some(input);
         self
     }
     /// <p>The required target engine settings.</p>
     pub fn set_settings(
         mut self,
-        input: std::option::Option<crate::types::RecommendationSettings>,
+        input: ::std::option::Option<crate::types::RecommendationSettings>,
     ) -> Self {
         self.settings = input;
         self

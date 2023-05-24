@@ -2,62 +2,62 @@
 
 /// <p>Describes the metadata of a resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ResourceMetadata {
     /// <p>The type of resource.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::ResourceType>,
+    pub r#type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>The name of the resource.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The original name of the resource before a rename operation.</p>
     #[doc(hidden)]
-    pub original_name: std::option::Option<std::string::String>,
+    pub original_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the resource.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The version ID of the resource. This is an optional field and is filled for action on document version.</p>
     #[doc(hidden)]
-    pub version_id: std::option::Option<std::string::String>,
+    pub version_id: ::std::option::Option<::std::string::String>,
     /// <p>The owner of the resource.</p>
     #[doc(hidden)]
-    pub owner: std::option::Option<crate::types::UserMetadata>,
+    pub owner: ::std::option::Option<crate::types::UserMetadata>,
     /// <p>The parent ID of the resource before a rename operation.</p>
     #[doc(hidden)]
-    pub parent_id: std::option::Option<std::string::String>,
+    pub parent_id: ::std::option::Option<::std::string::String>,
 }
 impl ResourceMetadata {
     /// <p>The type of resource.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::ResourceType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
         self.r#type.as_ref()
     }
     /// <p>The name of the resource.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The original name of the resource before a rename operation.</p>
-    pub fn original_name(&self) -> std::option::Option<&str> {
+    pub fn original_name(&self) -> ::std::option::Option<&str> {
         self.original_name.as_deref()
     }
     /// <p>The ID of the resource.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The version ID of the resource. This is an optional field and is filled for action on document version.</p>
-    pub fn version_id(&self) -> std::option::Option<&str> {
+    pub fn version_id(&self) -> ::std::option::Option<&str> {
         self.version_id.as_deref()
     }
     /// <p>The owner of the resource.</p>
-    pub fn owner(&self) -> std::option::Option<&crate::types::UserMetadata> {
+    pub fn owner(&self) -> ::std::option::Option<&crate::types::UserMetadata> {
         self.owner.as_ref()
     }
     /// <p>The parent ID of the resource before a rename operation.</p>
-    pub fn parent_id(&self) -> std::option::Option<&str> {
+    pub fn parent_id(&self) -> ::std::option::Option<&str> {
         self.parent_id.as_deref()
     }
 }
-impl std::fmt::Debug for ResourceMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for ResourceMetadata {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ResourceMetadata");
         formatter.field("r#type", &self.r#type);
         formatter.field("name", &"*** Sensitive Data Redacted ***");
@@ -78,84 +78,90 @@ impl ResourceMetadata {
 
 /// A builder for [`ResourceMetadata`](crate::types::ResourceMetadata).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct ResourceMetadataBuilder {
-    pub(crate) r#type: std::option::Option<crate::types::ResourceType>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) original_name: std::option::Option<std::string::String>,
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) version_id: std::option::Option<std::string::String>,
-    pub(crate) owner: std::option::Option<crate::types::UserMetadata>,
-    pub(crate) parent_id: std::option::Option<std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::ResourceType>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) original_name: ::std::option::Option<::std::string::String>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) version_id: ::std::option::Option<::std::string::String>,
+    pub(crate) owner: ::std::option::Option<crate::types::UserMetadata>,
+    pub(crate) parent_id: ::std::option::Option<::std::string::String>,
 }
 impl ResourceMetadataBuilder {
     /// <p>The type of resource.</p>
     pub fn r#type(mut self, input: crate::types::ResourceType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of resource.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::ResourceType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The name of the resource.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the resource.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The original name of the resource before a rename operation.</p>
-    pub fn original_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.original_name = Some(input.into());
+    pub fn original_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.original_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The original name of the resource before a rename operation.</p>
-    pub fn set_original_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_original_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.original_name = input;
         self
     }
     /// <p>The ID of the resource.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the resource.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>The version ID of the resource. This is an optional field and is filled for action on document version.</p>
-    pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.version_id = Some(input.into());
+    pub fn version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.version_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version ID of the resource. This is an optional field and is filled for action on document version.</p>
-    pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version_id = input;
         self
     }
     /// <p>The owner of the resource.</p>
     pub fn owner(mut self, input: crate::types::UserMetadata) -> Self {
-        self.owner = Some(input);
+        self.owner = ::std::option::Option::Some(input);
         self
     }
     /// <p>The owner of the resource.</p>
-    pub fn set_owner(mut self, input: std::option::Option<crate::types::UserMetadata>) -> Self {
+    pub fn set_owner(mut self, input: ::std::option::Option<crate::types::UserMetadata>) -> Self {
         self.owner = input;
         self
     }
     /// <p>The parent ID of the resource before a rename operation.</p>
-    pub fn parent_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.parent_id = Some(input.into());
+    pub fn parent_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.parent_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The parent ID of the resource before a rename operation.</p>
-    pub fn set_parent_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_parent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parent_id = input;
         self
     }
@@ -172,8 +178,8 @@ impl ResourceMetadataBuilder {
         }
     }
 }
-impl std::fmt::Debug for ResourceMetadataBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for ResourceMetadataBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ResourceMetadataBuilder");
         formatter.field("r#type", &self.r#type);
         formatter.field("name", &"*** Sensitive Data Redacted ***");

@@ -2,29 +2,29 @@
 
 /// <p>The information required to specify a Maven reference. You can use Maven references to specify dependency JAR files.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MavenReference {
     /// <p>The group ID of the Maven reference.</p>
     #[doc(hidden)]
-    pub group_id: std::option::Option<std::string::String>,
+    pub group_id: ::std::option::Option<::std::string::String>,
     /// <p>The artifact ID of the Maven reference.</p>
     #[doc(hidden)]
-    pub artifact_id: std::option::Option<std::string::String>,
+    pub artifact_id: ::std::option::Option<::std::string::String>,
     /// <p>The version of the Maven reference.</p>
     #[doc(hidden)]
-    pub version: std::option::Option<std::string::String>,
+    pub version: ::std::option::Option<::std::string::String>,
 }
 impl MavenReference {
     /// <p>The group ID of the Maven reference.</p>
-    pub fn group_id(&self) -> std::option::Option<&str> {
+    pub fn group_id(&self) -> ::std::option::Option<&str> {
         self.group_id.as_deref()
     }
     /// <p>The artifact ID of the Maven reference.</p>
-    pub fn artifact_id(&self) -> std::option::Option<&str> {
+    pub fn artifact_id(&self) -> ::std::option::Option<&str> {
         self.artifact_id.as_deref()
     }
     /// <p>The version of the Maven reference.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<&str> {
         self.version.as_deref()
     }
 }
@@ -37,40 +37,42 @@ impl MavenReference {
 
 /// A builder for [`MavenReference`](crate::types::MavenReference).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MavenReferenceBuilder {
-    pub(crate) group_id: std::option::Option<std::string::String>,
-    pub(crate) artifact_id: std::option::Option<std::string::String>,
-    pub(crate) version: std::option::Option<std::string::String>,
+    pub(crate) group_id: ::std::option::Option<::std::string::String>,
+    pub(crate) artifact_id: ::std::option::Option<::std::string::String>,
+    pub(crate) version: ::std::option::Option<::std::string::String>,
 }
 impl MavenReferenceBuilder {
     /// <p>The group ID of the Maven reference.</p>
-    pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.group_id = Some(input.into());
+    pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The group ID of the Maven reference.</p>
-    pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_id = input;
         self
     }
     /// <p>The artifact ID of the Maven reference.</p>
-    pub fn artifact_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.artifact_id = Some(input.into());
+    pub fn artifact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.artifact_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The artifact ID of the Maven reference.</p>
-    pub fn set_artifact_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_artifact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.artifact_id = input;
         self
     }
     /// <p>The version of the Maven reference.</p>
-    pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.version = Some(input.into());
+    pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the Maven reference.</p>
-    pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
     }

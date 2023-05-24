@@ -2,29 +2,29 @@
 
 /// <p>The current account setting for a resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Setting {
     /// <p>The Amazon ECS resource name.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<crate::types::SettingName>,
+    pub name: ::std::option::Option<crate::types::SettingName>,
     /// <p>Determines whether the account setting is on or off for the specified resource.</p>
     #[doc(hidden)]
-    pub value: std::option::Option<std::string::String>,
+    pub value: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the principal. It can be a user, role, or the root user. If this field is omitted, the authenticated user is assumed.</p>
     #[doc(hidden)]
-    pub principal_arn: std::option::Option<std::string::String>,
+    pub principal_arn: ::std::option::Option<::std::string::String>,
 }
 impl Setting {
     /// <p>The Amazon ECS resource name.</p>
-    pub fn name(&self) -> std::option::Option<&crate::types::SettingName> {
+    pub fn name(&self) -> ::std::option::Option<&crate::types::SettingName> {
         self.name.as_ref()
     }
     /// <p>Determines whether the account setting is on or off for the specified resource.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
     /// <p>The ARN of the principal. It can be a user, role, or the root user. If this field is omitted, the authenticated user is assumed.</p>
-    pub fn principal_arn(&self) -> std::option::Option<&str> {
+    pub fn principal_arn(&self) -> ::std::option::Option<&str> {
         self.principal_arn.as_deref()
     }
 }
@@ -37,40 +37,48 @@ impl Setting {
 
 /// A builder for [`Setting`](crate::types::Setting).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SettingBuilder {
-    pub(crate) name: std::option::Option<crate::types::SettingName>,
-    pub(crate) value: std::option::Option<std::string::String>,
-    pub(crate) principal_arn: std::option::Option<std::string::String>,
+    pub(crate) name: ::std::option::Option<crate::types::SettingName>,
+    pub(crate) value: ::std::option::Option<::std::string::String>,
+    pub(crate) principal_arn: ::std::option::Option<::std::string::String>,
 }
 impl SettingBuilder {
     /// <p>The Amazon ECS resource name.</p>
     pub fn name(mut self, input: crate::types::SettingName) -> Self {
-        self.name = Some(input);
+        self.name = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Amazon ECS resource name.</p>
-    pub fn set_name(mut self, input: std::option::Option<crate::types::SettingName>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::SettingName>) -> Self {
         self.name = input;
         self
     }
     /// <p>Determines whether the account setting is on or off for the specified resource.</p>
-    pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.value = Some(input.into());
+    pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Determines whether the account setting is on or off for the specified resource.</p>
-    pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
     }
     /// <p>The ARN of the principal. It can be a user, role, or the root user. If this field is omitted, the authenticated user is assumed.</p>
-    pub fn principal_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.principal_arn = Some(input.into());
+    pub fn principal_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.principal_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the principal. It can be a user, role, or the root user. If this field is omitted, the authenticated user is assumed.</p>
-    pub fn set_principal_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_principal_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.principal_arn = input;
         self
     }

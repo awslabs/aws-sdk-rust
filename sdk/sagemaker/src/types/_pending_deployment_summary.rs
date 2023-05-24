@@ -2,42 +2,42 @@
 
 /// <p>The summary of an in-progress deployment when an endpoint is creating or updating with a new endpoint configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PendingDeploymentSummary {
     /// <p>The name of the endpoint configuration used in the deployment. </p>
     #[doc(hidden)]
-    pub endpoint_config_name: std::option::Option<std::string::String>,
+    pub endpoint_config_name: ::std::option::Option<::std::string::String>,
     /// <p>An array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_PendingProductionVariantSummary.html">PendingProductionVariantSummary</a> objects, one for each model hosted behind this endpoint for the in-progress deployment.</p>
     #[doc(hidden)]
     pub production_variants:
-        std::option::Option<std::vec::Vec<crate::types::PendingProductionVariantSummary>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::PendingProductionVariantSummary>>,
     /// <p>The start time of the deployment.</p>
     #[doc(hidden)]
-    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>An array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_PendingProductionVariantSummary.html">PendingProductionVariantSummary</a> objects, one for each model hosted behind this endpoint in shadow mode with production traffic replicated from the model specified on <code>ProductionVariants</code> for the in-progress deployment.</p>
     #[doc(hidden)]
     pub shadow_production_variants:
-        std::option::Option<std::vec::Vec<crate::types::PendingProductionVariantSummary>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::PendingProductionVariantSummary>>,
 }
 impl PendingDeploymentSummary {
     /// <p>The name of the endpoint configuration used in the deployment. </p>
-    pub fn endpoint_config_name(&self) -> std::option::Option<&str> {
+    pub fn endpoint_config_name(&self) -> ::std::option::Option<&str> {
         self.endpoint_config_name.as_deref()
     }
     /// <p>An array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_PendingProductionVariantSummary.html">PendingProductionVariantSummary</a> objects, one for each model hosted behind this endpoint for the in-progress deployment.</p>
     pub fn production_variants(
         &self,
-    ) -> std::option::Option<&[crate::types::PendingProductionVariantSummary]> {
+    ) -> ::std::option::Option<&[crate::types::PendingProductionVariantSummary]> {
         self.production_variants.as_deref()
     }
     /// <p>The start time of the deployment.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>An array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_PendingProductionVariantSummary.html">PendingProductionVariantSummary</a> objects, one for each model hosted behind this endpoint in shadow mode with production traffic replicated from the model specified on <code>ProductionVariants</code> for the in-progress deployment.</p>
     pub fn shadow_production_variants(
         &self,
-    ) -> std::option::Option<&[crate::types::PendingProductionVariantSummary]> {
+    ) -> ::std::option::Option<&[crate::types::PendingProductionVariantSummary]> {
         self.shadow_production_variants.as_deref()
     }
 }
@@ -50,25 +50,30 @@ impl PendingDeploymentSummary {
 
 /// A builder for [`PendingDeploymentSummary`](crate::types::PendingDeploymentSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PendingDeploymentSummaryBuilder {
-    pub(crate) endpoint_config_name: std::option::Option<std::string::String>,
+    pub(crate) endpoint_config_name: ::std::option::Option<::std::string::String>,
     pub(crate) production_variants:
-        std::option::Option<std::vec::Vec<crate::types::PendingProductionVariantSummary>>,
-    pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
+        ::std::option::Option<::std::vec::Vec<crate::types::PendingProductionVariantSummary>>,
+    pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) shadow_production_variants:
-        std::option::Option<std::vec::Vec<crate::types::PendingProductionVariantSummary>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::PendingProductionVariantSummary>>,
 }
 impl PendingDeploymentSummaryBuilder {
     /// <p>The name of the endpoint configuration used in the deployment. </p>
-    pub fn endpoint_config_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.endpoint_config_name = Some(input.into());
+    pub fn endpoint_config_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.endpoint_config_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the endpoint configuration used in the deployment. </p>
     pub fn set_endpoint_config_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.endpoint_config_name = input;
         self
@@ -84,26 +89,28 @@ impl PendingDeploymentSummaryBuilder {
     ) -> Self {
         let mut v = self.production_variants.unwrap_or_default();
         v.push(input);
-        self.production_variants = Some(v);
+        self.production_variants = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_PendingProductionVariantSummary.html">PendingProductionVariantSummary</a> objects, one for each model hosted behind this endpoint for the in-progress deployment.</p>
     pub fn set_production_variants(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PendingProductionVariantSummary>>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::PendingProductionVariantSummary>,
+        >,
     ) -> Self {
         self.production_variants = input;
         self
     }
     /// <p>The start time of the deployment.</p>
-    pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.start_time = Some(input);
+    pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.start_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The start time of the deployment.</p>
     pub fn set_start_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.start_time = input;
         self
@@ -119,13 +126,15 @@ impl PendingDeploymentSummaryBuilder {
     ) -> Self {
         let mut v = self.shadow_production_variants.unwrap_or_default();
         v.push(input);
-        self.shadow_production_variants = Some(v);
+        self.shadow_production_variants = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_PendingProductionVariantSummary.html">PendingProductionVariantSummary</a> objects, one for each model hosted behind this endpoint in shadow mode with production traffic replicated from the model specified on <code>ProductionVariants</code> for the in-progress deployment.</p>
     pub fn set_shadow_production_variants(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PendingProductionVariantSummary>>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::PendingProductionVariantSummary>,
+        >,
     ) -> Self {
         self.shadow_production_variants = input;
         self

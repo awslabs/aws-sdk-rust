@@ -2,25 +2,25 @@
 
 /// <p>Regional latency information for a player, used when requesting a new game session. This value indicates the amount of time lag that exists when the player is connected to a fleet in the specified Region. The relative difference between a player's latency values for multiple Regions are used to determine which fleets are best suited to place a new game session for the player. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PlayerLatency {
     /// <p>A unique identifier for a player associated with the latency data.</p>
     #[doc(hidden)]
-    pub player_id: std::option::Option<std::string::String>,
+    pub player_id: ::std::option::Option<::std::string::String>,
     /// <p>Name of the Region that is associated with the latency value.</p>
     #[doc(hidden)]
-    pub region_identifier: std::option::Option<std::string::String>,
+    pub region_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Amount of time that represents the time lag experienced by the player when connected to the specified Region.</p>
     #[doc(hidden)]
     pub latency_in_milliseconds: f32,
 }
 impl PlayerLatency {
     /// <p>A unique identifier for a player associated with the latency data.</p>
-    pub fn player_id(&self) -> std::option::Option<&str> {
+    pub fn player_id(&self) -> ::std::option::Option<&str> {
         self.player_id.as_deref()
     }
     /// <p>Name of the Region that is associated with the latency value.</p>
-    pub fn region_identifier(&self) -> std::option::Option<&str> {
+    pub fn region_identifier(&self) -> ::std::option::Option<&str> {
         self.region_identifier.as_deref()
     }
     /// <p>Amount of time that represents the time lag experienced by the player when connected to the specified Region.</p>
@@ -37,43 +37,48 @@ impl PlayerLatency {
 
 /// A builder for [`PlayerLatency`](crate::types::PlayerLatency).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PlayerLatencyBuilder {
-    pub(crate) player_id: std::option::Option<std::string::String>,
-    pub(crate) region_identifier: std::option::Option<std::string::String>,
-    pub(crate) latency_in_milliseconds: std::option::Option<f32>,
+    pub(crate) player_id: ::std::option::Option<::std::string::String>,
+    pub(crate) region_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) latency_in_milliseconds: ::std::option::Option<f32>,
 }
 impl PlayerLatencyBuilder {
     /// <p>A unique identifier for a player associated with the latency data.</p>
-    pub fn player_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.player_id = Some(input.into());
+    pub fn player_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.player_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for a player associated with the latency data.</p>
-    pub fn set_player_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_player_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.player_id = input;
         self
     }
     /// <p>Name of the Region that is associated with the latency value.</p>
-    pub fn region_identifier(mut self, input: impl Into<std::string::String>) -> Self {
-        self.region_identifier = Some(input.into());
+    pub fn region_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.region_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of the Region that is associated with the latency value.</p>
     pub fn set_region_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.region_identifier = input;
         self
     }
     /// <p>Amount of time that represents the time lag experienced by the player when connected to the specified Region.</p>
     pub fn latency_in_milliseconds(mut self, input: f32) -> Self {
-        self.latency_in_milliseconds = Some(input);
+        self.latency_in_milliseconds = ::std::option::Option::Some(input);
         self
     }
     /// <p>Amount of time that represents the time lag experienced by the player when connected to the specified Region.</p>
-    pub fn set_latency_in_milliseconds(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_latency_in_milliseconds(mut self, input: ::std::option::Option<f32>) -> Self {
         self.latency_in_milliseconds = input;
         self
     }

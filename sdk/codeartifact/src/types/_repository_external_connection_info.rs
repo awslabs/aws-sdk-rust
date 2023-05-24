@@ -2,11 +2,11 @@
 
 /// <p> Contains information about the external connection of a repository. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RepositoryExternalConnectionInfo {
     /// <p> The name of the external connection associated with a repository. </p>
     #[doc(hidden)]
-    pub external_connection_name: std::option::Option<std::string::String>,
+    pub external_connection_name: ::std::option::Option<::std::string::String>,
     /// <p> The package format associated with a repository's external connection. The valid package formats are: </p>
     /// <ul>
     /// <li> <p> <code>npm</code>: A Node Package Manager (npm) package. </p> </li>
@@ -15,14 +15,14 @@ pub struct RepositoryExternalConnectionInfo {
     /// <li> <p> <code>nuget</code>: A NuGet package. </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub package_format: std::option::Option<crate::types::PackageFormat>,
+    pub package_format: ::std::option::Option<crate::types::PackageFormat>,
     /// <p> The status of the external connection of a repository. There is one valid value, <code>Available</code>. </p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::ExternalConnectionStatus>,
+    pub status: ::std::option::Option<crate::types::ExternalConnectionStatus>,
 }
 impl RepositoryExternalConnectionInfo {
     /// <p> The name of the external connection associated with a repository. </p>
-    pub fn external_connection_name(&self) -> std::option::Option<&str> {
+    pub fn external_connection_name(&self) -> ::std::option::Option<&str> {
         self.external_connection_name.as_deref()
     }
     /// <p> The package format associated with a repository's external connection. The valid package formats are: </p>
@@ -32,11 +32,11 @@ impl RepositoryExternalConnectionInfo {
     /// <li> <p> <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file. </p> </li>
     /// <li> <p> <code>nuget</code>: A NuGet package. </p> </li>
     /// </ul>
-    pub fn package_format(&self) -> std::option::Option<&crate::types::PackageFormat> {
+    pub fn package_format(&self) -> ::std::option::Option<&crate::types::PackageFormat> {
         self.package_format.as_ref()
     }
     /// <p> The status of the external connection of a repository. There is one valid value, <code>Available</code>. </p>
-    pub fn status(&self) -> std::option::Option<&crate::types::ExternalConnectionStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::ExternalConnectionStatus> {
         self.status.as_ref()
     }
 }
@@ -49,22 +49,27 @@ impl RepositoryExternalConnectionInfo {
 
 /// A builder for [`RepositoryExternalConnectionInfo`](crate::types::RepositoryExternalConnectionInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RepositoryExternalConnectionInfoBuilder {
-    pub(crate) external_connection_name: std::option::Option<std::string::String>,
-    pub(crate) package_format: std::option::Option<crate::types::PackageFormat>,
-    pub(crate) status: std::option::Option<crate::types::ExternalConnectionStatus>,
+    pub(crate) external_connection_name: ::std::option::Option<::std::string::String>,
+    pub(crate) package_format: ::std::option::Option<crate::types::PackageFormat>,
+    pub(crate) status: ::std::option::Option<crate::types::ExternalConnectionStatus>,
 }
 impl RepositoryExternalConnectionInfoBuilder {
     /// <p> The name of the external connection associated with a repository. </p>
-    pub fn external_connection_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.external_connection_name = Some(input.into());
+    pub fn external_connection_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.external_connection_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the external connection associated with a repository. </p>
     pub fn set_external_connection_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.external_connection_name = input;
         self
@@ -77,7 +82,7 @@ impl RepositoryExternalConnectionInfoBuilder {
     /// <li> <p> <code>nuget</code>: A NuGet package. </p> </li>
     /// </ul>
     pub fn package_format(mut self, input: crate::types::PackageFormat) -> Self {
-        self.package_format = Some(input);
+        self.package_format = ::std::option::Option::Some(input);
         self
     }
     /// <p> The package format associated with a repository's external connection. The valid package formats are: </p>
@@ -89,20 +94,20 @@ impl RepositoryExternalConnectionInfoBuilder {
     /// </ul>
     pub fn set_package_format(
         mut self,
-        input: std::option::Option<crate::types::PackageFormat>,
+        input: ::std::option::Option<crate::types::PackageFormat>,
     ) -> Self {
         self.package_format = input;
         self
     }
     /// <p> The status of the external connection of a repository. There is one valid value, <code>Available</code>. </p>
     pub fn status(mut self, input: crate::types::ExternalConnectionStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p> The status of the external connection of a repository. There is one valid value, <code>Available</code>. </p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::ExternalConnectionStatus>,
+        input: ::std::option::Option<crate::types::ExternalConnectionStatus>,
     ) -> Self {
         self.status = input;
         self

@@ -2,7 +2,7 @@
 pub(crate) fn de_templates_response_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::types::TemplatesResponse>,
+    ::std::option::Option<crate::types::TemplatesResponse>,
     crate::operation::list_templates::ListTemplatesError,
 > {
     (!body.is_empty())

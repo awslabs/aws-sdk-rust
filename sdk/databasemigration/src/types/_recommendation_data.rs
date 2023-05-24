@@ -2,15 +2,15 @@
 
 /// <p>Provides information about the target engine for the specified source database.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecommendationData {
     /// <p>The recommendation of a target Amazon RDS database engine.</p>
     #[doc(hidden)]
-    pub rds_engine: std::option::Option<crate::types::RdsRecommendation>,
+    pub rds_engine: ::std::option::Option<crate::types::RdsRecommendation>,
 }
 impl RecommendationData {
     /// <p>The recommendation of a target Amazon RDS database engine.</p>
-    pub fn rds_engine(&self) -> std::option::Option<&crate::types::RdsRecommendation> {
+    pub fn rds_engine(&self) -> ::std::option::Option<&crate::types::RdsRecommendation> {
         self.rds_engine.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl RecommendationData {
 
 /// A builder for [`RecommendationData`](crate::types::RecommendationData).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RecommendationDataBuilder {
-    pub(crate) rds_engine: std::option::Option<crate::types::RdsRecommendation>,
+    pub(crate) rds_engine: ::std::option::Option<crate::types::RdsRecommendation>,
 }
 impl RecommendationDataBuilder {
     /// <p>The recommendation of a target Amazon RDS database engine.</p>
     pub fn rds_engine(mut self, input: crate::types::RdsRecommendation) -> Self {
-        self.rds_engine = Some(input);
+        self.rds_engine = ::std::option::Option::Some(input);
         self
     }
     /// <p>The recommendation of a target Amazon RDS database engine.</p>
     pub fn set_rds_engine(
         mut self,
-        input: std::option::Option<crate::types::RdsRecommendation>,
+        input: ::std::option::Option<crate::types::RdsRecommendation>,
     ) -> Self {
         self.rds_engine = input;
         self

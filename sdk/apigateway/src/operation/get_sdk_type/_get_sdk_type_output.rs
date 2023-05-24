@@ -2,44 +2,44 @@
 
 /// <p>A type of SDK that API Gateway can generate.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSdkTypeOutput {
     /// <p>The identifier of an SdkType instance.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The user-friendly name of an SdkType instance.</p>
     #[doc(hidden)]
-    pub friendly_name: std::option::Option<std::string::String>,
+    pub friendly_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of an SdkType.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>A list of configuration properties of an SdkType.</p>
     #[doc(hidden)]
     pub configuration_properties:
-        std::option::Option<std::vec::Vec<crate::types::SdkConfigurationProperty>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::SdkConfigurationProperty>>,
     _request_id: Option<String>,
 }
 impl GetSdkTypeOutput {
     /// <p>The identifier of an SdkType instance.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The user-friendly name of an SdkType instance.</p>
-    pub fn friendly_name(&self) -> std::option::Option<&str> {
+    pub fn friendly_name(&self) -> ::std::option::Option<&str> {
         self.friendly_name.as_deref()
     }
     /// <p>The description of an SdkType.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>A list of configuration properties of an SdkType.</p>
     pub fn configuration_properties(
         &self,
-    ) -> std::option::Option<&[crate::types::SdkConfigurationProperty]> {
+    ) -> ::std::option::Option<&[crate::types::SdkConfigurationProperty]> {
         self.configuration_properties.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for GetSdkTypeOutput {
+impl ::aws_http::request_id::RequestId for GetSdkTypeOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -53,43 +53,51 @@ impl GetSdkTypeOutput {
 
 /// A builder for [`GetSdkTypeOutput`](crate::operation::get_sdk_type::GetSdkTypeOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetSdkTypeOutputBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) friendly_name: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) friendly_name: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) configuration_properties:
-        std::option::Option<std::vec::Vec<crate::types::SdkConfigurationProperty>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::SdkConfigurationProperty>>,
     _request_id: Option<String>,
 }
 impl GetSdkTypeOutputBuilder {
     /// <p>The identifier of an SdkType instance.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of an SdkType instance.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>The user-friendly name of an SdkType instance.</p>
-    pub fn friendly_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.friendly_name = Some(input.into());
+    pub fn friendly_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.friendly_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user-friendly name of an SdkType instance.</p>
-    pub fn set_friendly_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_friendly_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.friendly_name = input;
         self
     }
     /// <p>The description of an SdkType.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of an SdkType.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
@@ -104,13 +112,13 @@ impl GetSdkTypeOutputBuilder {
     ) -> Self {
         let mut v = self.configuration_properties.unwrap_or_default();
         v.push(input);
-        self.configuration_properties = Some(v);
+        self.configuration_properties = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of configuration properties of an SdkType.</p>
     pub fn set_configuration_properties(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SdkConfigurationProperty>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SdkConfigurationProperty>>,
     ) -> Self {
         self.configuration_properties = input;
         self

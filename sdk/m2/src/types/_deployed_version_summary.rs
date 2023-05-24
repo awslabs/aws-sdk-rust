@@ -2,29 +2,29 @@
 
 /// <p>Contains a summary of a deployed application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeployedVersionSummary {
     /// <p>The version of the deployed application.</p>
     #[doc(hidden)]
-    pub application_version: std::option::Option<i32>,
+    pub application_version: ::std::option::Option<i32>,
     /// <p>The status of the deployment.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::DeploymentLifecycle>,
+    pub status: ::std::option::Option<crate::types::DeploymentLifecycle>,
     /// <p>The reason for the reported status.</p>
     #[doc(hidden)]
-    pub status_reason: std::option::Option<std::string::String>,
+    pub status_reason: ::std::option::Option<::std::string::String>,
 }
 impl DeployedVersionSummary {
     /// <p>The version of the deployed application.</p>
-    pub fn application_version(&self) -> std::option::Option<i32> {
+    pub fn application_version(&self) -> ::std::option::Option<i32> {
         self.application_version
     }
     /// <p>The status of the deployment.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::DeploymentLifecycle> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::DeploymentLifecycle> {
         self.status.as_ref()
     }
     /// <p>The reason for the reported status.</p>
-    pub fn status_reason(&self) -> std::option::Option<&str> {
+    pub fn status_reason(&self) -> ::std::option::Option<&str> {
         self.status_reason.as_deref()
     }
 }
@@ -37,43 +37,51 @@ impl DeployedVersionSummary {
 
 /// A builder for [`DeployedVersionSummary`](crate::types::DeployedVersionSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeployedVersionSummaryBuilder {
-    pub(crate) application_version: std::option::Option<i32>,
-    pub(crate) status: std::option::Option<crate::types::DeploymentLifecycle>,
-    pub(crate) status_reason: std::option::Option<std::string::String>,
+    pub(crate) application_version: ::std::option::Option<i32>,
+    pub(crate) status: ::std::option::Option<crate::types::DeploymentLifecycle>,
+    pub(crate) status_reason: ::std::option::Option<::std::string::String>,
 }
 impl DeployedVersionSummaryBuilder {
     /// <p>The version of the deployed application.</p>
     pub fn application_version(mut self, input: i32) -> Self {
-        self.application_version = Some(input);
+        self.application_version = ::std::option::Option::Some(input);
         self
     }
     /// <p>The version of the deployed application.</p>
-    pub fn set_application_version(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_application_version(mut self, input: ::std::option::Option<i32>) -> Self {
         self.application_version = input;
         self
     }
     /// <p>The status of the deployment.</p>
     pub fn status(mut self, input: crate::types::DeploymentLifecycle) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the deployment.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::DeploymentLifecycle>,
+        input: ::std::option::Option<crate::types::DeploymentLifecycle>,
     ) -> Self {
         self.status = input;
         self
     }
     /// <p>The reason for the reported status.</p>
-    pub fn status_reason(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status_reason = Some(input.into());
+    pub fn status_reason(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.status_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason for the reported status.</p>
-    pub fn set_status_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status_reason(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.status_reason = input;
         self
     }

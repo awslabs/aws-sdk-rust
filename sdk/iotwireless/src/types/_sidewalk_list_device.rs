@@ -2,50 +2,50 @@
 
 /// <p>Sidewalk object used by list functions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SidewalkListDevice {
     /// <p>The Sidewalk Amazon ID.</p>
     #[doc(hidden)]
-    pub amazon_id: std::option::Option<std::string::String>,
+    pub amazon_id: ::std::option::Option<::std::string::String>,
     /// <p>The sidewalk device identification.</p>
     #[doc(hidden)]
-    pub sidewalk_id: std::option::Option<std::string::String>,
+    pub sidewalk_id: ::std::option::Option<::std::string::String>,
     /// <p>The Sidewalk manufacturing series number.</p>
     #[doc(hidden)]
-    pub sidewalk_manufacturing_sn: std::option::Option<std::string::String>,
+    pub sidewalk_manufacturing_sn: ::std::option::Option<::std::string::String>,
     /// <p>The sidewalk device certificates for Ed25519 and P256r1.</p>
     #[doc(hidden)]
-    pub device_certificates: std::option::Option<std::vec::Vec<crate::types::CertificateList>>,
+    pub device_certificates: ::std::option::Option<::std::vec::Vec<crate::types::CertificateList>>,
     /// <p>Sidewalk object used by list functions.</p>
     #[doc(hidden)]
-    pub device_profile_id: std::option::Option<std::string::String>,
+    pub device_profile_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the Sidewalk devices, such as provisioned or registered.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::WirelessDeviceSidewalkStatus>,
+    pub status: ::std::option::Option<crate::types::WirelessDeviceSidewalkStatus>,
 }
 impl SidewalkListDevice {
     /// <p>The Sidewalk Amazon ID.</p>
-    pub fn amazon_id(&self) -> std::option::Option<&str> {
+    pub fn amazon_id(&self) -> ::std::option::Option<&str> {
         self.amazon_id.as_deref()
     }
     /// <p>The sidewalk device identification.</p>
-    pub fn sidewalk_id(&self) -> std::option::Option<&str> {
+    pub fn sidewalk_id(&self) -> ::std::option::Option<&str> {
         self.sidewalk_id.as_deref()
     }
     /// <p>The Sidewalk manufacturing series number.</p>
-    pub fn sidewalk_manufacturing_sn(&self) -> std::option::Option<&str> {
+    pub fn sidewalk_manufacturing_sn(&self) -> ::std::option::Option<&str> {
         self.sidewalk_manufacturing_sn.as_deref()
     }
     /// <p>The sidewalk device certificates for Ed25519 and P256r1.</p>
-    pub fn device_certificates(&self) -> std::option::Option<&[crate::types::CertificateList]> {
+    pub fn device_certificates(&self) -> ::std::option::Option<&[crate::types::CertificateList]> {
         self.device_certificates.as_deref()
     }
     /// <p>Sidewalk object used by list functions.</p>
-    pub fn device_profile_id(&self) -> std::option::Option<&str> {
+    pub fn device_profile_id(&self) -> ::std::option::Option<&str> {
         self.device_profile_id.as_deref()
     }
     /// <p>The status of the Sidewalk devices, such as provisioned or registered.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::WirelessDeviceSidewalkStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::WirelessDeviceSidewalkStatus> {
         self.status.as_ref()
     }
 }
@@ -58,46 +58,51 @@ impl SidewalkListDevice {
 
 /// A builder for [`SidewalkListDevice`](crate::types::SidewalkListDevice).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SidewalkListDeviceBuilder {
-    pub(crate) amazon_id: std::option::Option<std::string::String>,
-    pub(crate) sidewalk_id: std::option::Option<std::string::String>,
-    pub(crate) sidewalk_manufacturing_sn: std::option::Option<std::string::String>,
+    pub(crate) amazon_id: ::std::option::Option<::std::string::String>,
+    pub(crate) sidewalk_id: ::std::option::Option<::std::string::String>,
+    pub(crate) sidewalk_manufacturing_sn: ::std::option::Option<::std::string::String>,
     pub(crate) device_certificates:
-        std::option::Option<std::vec::Vec<crate::types::CertificateList>>,
-    pub(crate) device_profile_id: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::WirelessDeviceSidewalkStatus>,
+        ::std::option::Option<::std::vec::Vec<crate::types::CertificateList>>,
+    pub(crate) device_profile_id: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::WirelessDeviceSidewalkStatus>,
 }
 impl SidewalkListDeviceBuilder {
     /// <p>The Sidewalk Amazon ID.</p>
-    pub fn amazon_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.amazon_id = Some(input.into());
+    pub fn amazon_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.amazon_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Sidewalk Amazon ID.</p>
-    pub fn set_amazon_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_amazon_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.amazon_id = input;
         self
     }
     /// <p>The sidewalk device identification.</p>
-    pub fn sidewalk_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.sidewalk_id = Some(input.into());
+    pub fn sidewalk_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.sidewalk_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The sidewalk device identification.</p>
-    pub fn set_sidewalk_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_sidewalk_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sidewalk_id = input;
         self
     }
     /// <p>The Sidewalk manufacturing series number.</p>
-    pub fn sidewalk_manufacturing_sn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.sidewalk_manufacturing_sn = Some(input.into());
+    pub fn sidewalk_manufacturing_sn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.sidewalk_manufacturing_sn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Sidewalk manufacturing series number.</p>
     pub fn set_sidewalk_manufacturing_sn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.sidewalk_manufacturing_sn = input;
         self
@@ -110,39 +115,42 @@ impl SidewalkListDeviceBuilder {
     pub fn device_certificates(mut self, input: crate::types::CertificateList) -> Self {
         let mut v = self.device_certificates.unwrap_or_default();
         v.push(input);
-        self.device_certificates = Some(v);
+        self.device_certificates = ::std::option::Option::Some(v);
         self
     }
     /// <p>The sidewalk device certificates for Ed25519 and P256r1.</p>
     pub fn set_device_certificates(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CertificateList>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::CertificateList>>,
     ) -> Self {
         self.device_certificates = input;
         self
     }
     /// <p>Sidewalk object used by list functions.</p>
-    pub fn device_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.device_profile_id = Some(input.into());
+    pub fn device_profile_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.device_profile_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Sidewalk object used by list functions.</p>
     pub fn set_device_profile_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.device_profile_id = input;
         self
     }
     /// <p>The status of the Sidewalk devices, such as provisioned or registered.</p>
     pub fn status(mut self, input: crate::types::WirelessDeviceSidewalkStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the Sidewalk devices, such as provisioned or registered.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::WirelessDeviceSidewalkStatus>,
+        input: ::std::option::Option<crate::types::WirelessDeviceSidewalkStatus>,
     ) -> Self {
         self.status = input;
         self

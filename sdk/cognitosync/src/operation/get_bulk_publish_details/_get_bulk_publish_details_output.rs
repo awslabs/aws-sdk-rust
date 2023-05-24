@@ -2,40 +2,42 @@
 
 /// The output for the GetBulkPublishDetails operation.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBulkPublishDetailsOutput {
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     #[doc(hidden)]
-    pub identity_pool_id: std::option::Option<std::string::String>,
+    pub identity_pool_id: ::std::option::Option<::std::string::String>,
     /// The date/time at which the last bulk publish was initiated.
     #[doc(hidden)]
-    pub bulk_publish_start_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub bulk_publish_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// If BulkPublishStatus is SUCCEEDED, the time the last bulk publish operation completed.
     #[doc(hidden)]
-    pub bulk_publish_complete_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub bulk_publish_complete_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// Status of the last bulk publish operation, valid values are:
     /// <p>NOT_STARTED - No bulk publish has been requested for this identity pool</p>
     /// <p>IN_PROGRESS - Data is being published to the configured stream</p>
     /// <p>SUCCEEDED - All data for the identity pool has been published to the configured stream</p>
     /// <p>FAILED - Some portion of the data has failed to publish, check FailureMessage for the cause.</p>
     #[doc(hidden)]
-    pub bulk_publish_status: std::option::Option<crate::types::BulkPublishStatus>,
+    pub bulk_publish_status: ::std::option::Option<crate::types::BulkPublishStatus>,
     /// If BulkPublishStatus is FAILED this field will contain the error message that caused the bulk publish to fail.
     #[doc(hidden)]
-    pub failure_message: std::option::Option<std::string::String>,
+    pub failure_message: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetBulkPublishDetailsOutput {
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
+    pub fn identity_pool_id(&self) -> ::std::option::Option<&str> {
         self.identity_pool_id.as_deref()
     }
     /// The date/time at which the last bulk publish was initiated.
-    pub fn bulk_publish_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn bulk_publish_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.bulk_publish_start_time.as_ref()
     }
     /// If BulkPublishStatus is SUCCEEDED, the time the last bulk publish operation completed.
-    pub fn bulk_publish_complete_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn bulk_publish_complete_time(
+        &self,
+    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.bulk_publish_complete_time.as_ref()
     }
     /// Status of the last bulk publish operation, valid values are:
@@ -43,15 +45,15 @@ impl GetBulkPublishDetailsOutput {
     /// <p>IN_PROGRESS - Data is being published to the configured stream</p>
     /// <p>SUCCEEDED - All data for the identity pool has been published to the configured stream</p>
     /// <p>FAILED - Some portion of the data has failed to publish, check FailureMessage for the cause.</p>
-    pub fn bulk_publish_status(&self) -> std::option::Option<&crate::types::BulkPublishStatus> {
+    pub fn bulk_publish_status(&self) -> ::std::option::Option<&crate::types::BulkPublishStatus> {
         self.bulk_publish_status.as_ref()
     }
     /// If BulkPublishStatus is FAILED this field will contain the error message that caused the bulk publish to fail.
-    pub fn failure_message(&self) -> std::option::Option<&str> {
+    pub fn failure_message(&self) -> ::std::option::Option<&str> {
         self.failure_message.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for GetBulkPublishDetailsOutput {
+impl ::aws_http::request_id::RequestId for GetBulkPublishDetailsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -67,48 +69,56 @@ impl GetBulkPublishDetailsOutput {
 
 /// A builder for [`GetBulkPublishDetailsOutput`](crate::operation::get_bulk_publish_details::GetBulkPublishDetailsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetBulkPublishDetailsOutputBuilder {
-    pub(crate) identity_pool_id: std::option::Option<std::string::String>,
-    pub(crate) bulk_publish_start_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) bulk_publish_complete_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) bulk_publish_status: std::option::Option<crate::types::BulkPublishStatus>,
-    pub(crate) failure_message: std::option::Option<std::string::String>,
+    pub(crate) identity_pool_id: ::std::option::Option<::std::string::String>,
+    pub(crate) bulk_publish_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) bulk_publish_complete_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) bulk_publish_status: ::std::option::Option<crate::types::BulkPublishStatus>,
+    pub(crate) failure_message: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetBulkPublishDetailsOutputBuilder {
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    pub fn identity_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.identity_pool_id = Some(input.into());
+    pub fn identity_pool_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.identity_pool_id = ::std::option::Option::Some(input.into());
         self
     }
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
-    pub fn set_identity_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_identity_pool_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.identity_pool_id = input;
         self
     }
     /// The date/time at which the last bulk publish was initiated.
-    pub fn bulk_publish_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.bulk_publish_start_time = Some(input);
+    pub fn bulk_publish_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.bulk_publish_start_time = ::std::option::Option::Some(input);
         self
     }
     /// The date/time at which the last bulk publish was initiated.
     pub fn set_bulk_publish_start_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.bulk_publish_start_time = input;
         self
     }
     /// If BulkPublishStatus is SUCCEEDED, the time the last bulk publish operation completed.
-    pub fn bulk_publish_complete_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.bulk_publish_complete_time = Some(input);
+    pub fn bulk_publish_complete_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.bulk_publish_complete_time = ::std::option::Option::Some(input);
         self
     }
     /// If BulkPublishStatus is SUCCEEDED, the time the last bulk publish operation completed.
     pub fn set_bulk_publish_complete_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.bulk_publish_complete_time = input;
         self
@@ -119,7 +129,7 @@ impl GetBulkPublishDetailsOutputBuilder {
     /// <p>SUCCEEDED - All data for the identity pool has been published to the configured stream</p>
     /// <p>FAILED - Some portion of the data has failed to publish, check FailureMessage for the cause.</p>
     pub fn bulk_publish_status(mut self, input: crate::types::BulkPublishStatus) -> Self {
-        self.bulk_publish_status = Some(input);
+        self.bulk_publish_status = ::std::option::Option::Some(input);
         self
     }
     /// Status of the last bulk publish operation, valid values are:
@@ -129,18 +139,24 @@ impl GetBulkPublishDetailsOutputBuilder {
     /// <p>FAILED - Some portion of the data has failed to publish, check FailureMessage for the cause.</p>
     pub fn set_bulk_publish_status(
         mut self,
-        input: std::option::Option<crate::types::BulkPublishStatus>,
+        input: ::std::option::Option<crate::types::BulkPublishStatus>,
     ) -> Self {
         self.bulk_publish_status = input;
         self
     }
     /// If BulkPublishStatus is FAILED this field will contain the error message that caused the bulk publish to fail.
-    pub fn failure_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.failure_message = Some(input.into());
+    pub fn failure_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.failure_message = ::std::option::Option::Some(input.into());
         self
     }
     /// If BulkPublishStatus is FAILED this field will contain the error message that caused the bulk publish to fail.
-    pub fn set_failure_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_failure_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.failure_message = input;
         self
     }

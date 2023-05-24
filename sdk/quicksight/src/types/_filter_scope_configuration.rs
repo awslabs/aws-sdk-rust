@@ -3,17 +3,18 @@
 /// <p>The scope configuration for a <code>FilterGroup</code>.</p>
 /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FilterScopeConfiguration {
     /// <p>The configuration for applying a filter to specific sheets.</p>
     #[doc(hidden)]
-    pub selected_sheets: std::option::Option<crate::types::SelectedSheetsFilterScopeConfiguration>,
+    pub selected_sheets:
+        ::std::option::Option<crate::types::SelectedSheetsFilterScopeConfiguration>,
 }
 impl FilterScopeConfiguration {
     /// <p>The configuration for applying a filter to specific sheets.</p>
     pub fn selected_sheets(
         &self,
-    ) -> std::option::Option<&crate::types::SelectedSheetsFilterScopeConfiguration> {
+    ) -> ::std::option::Option<&crate::types::SelectedSheetsFilterScopeConfiguration> {
         self.selected_sheets.as_ref()
     }
 }
@@ -26,10 +27,12 @@ impl FilterScopeConfiguration {
 
 /// A builder for [`FilterScopeConfiguration`](crate::types::FilterScopeConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FilterScopeConfigurationBuilder {
     pub(crate) selected_sheets:
-        std::option::Option<crate::types::SelectedSheetsFilterScopeConfiguration>,
+        ::std::option::Option<crate::types::SelectedSheetsFilterScopeConfiguration>,
 }
 impl FilterScopeConfigurationBuilder {
     /// <p>The configuration for applying a filter to specific sheets.</p>
@@ -37,13 +40,13 @@ impl FilterScopeConfigurationBuilder {
         mut self,
         input: crate::types::SelectedSheetsFilterScopeConfiguration,
     ) -> Self {
-        self.selected_sheets = Some(input);
+        self.selected_sheets = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration for applying a filter to specific sheets.</p>
     pub fn set_selected_sheets(
         mut self,
-        input: std::option::Option<crate::types::SelectedSheetsFilterScopeConfiguration>,
+        input: ::std::option::Option<crate::types::SelectedSheetsFilterScopeConfiguration>,
     ) -> Self {
         self.selected_sheets = input;
         self

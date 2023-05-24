@@ -2,29 +2,29 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeComplianceByConfigRuleInput {
     /// <p>Specify one or more Config rule names to filter the results by rule.</p>
     #[doc(hidden)]
-    pub config_rule_names: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub config_rule_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Filters the results by compliance.</p>
     #[doc(hidden)]
-    pub compliance_types: std::option::Option<std::vec::Vec<crate::types::ComplianceType>>,
+    pub compliance_types: ::std::option::Option<::std::vec::Vec<crate::types::ComplianceType>>,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeComplianceByConfigRuleInput {
     /// <p>Specify one or more Config rule names to filter the results by rule.</p>
-    pub fn config_rule_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn config_rule_names(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.config_rule_names.as_deref()
     }
     /// <p>Filters the results by compliance.</p>
-    pub fn compliance_types(&self) -> std::option::Option<&[crate::types::ComplianceType]> {
+    pub fn compliance_types(&self) -> ::std::option::Option<&[crate::types::ComplianceType]> {
         self.compliance_types.as_deref()
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
@@ -37,11 +37,14 @@ impl DescribeComplianceByConfigRuleInput {
 
 /// A builder for [`DescribeComplianceByConfigRuleInput`](crate::operation::describe_compliance_by_config_rule::DescribeComplianceByConfigRuleInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeComplianceByConfigRuleInputBuilder {
-    pub(crate) config_rule_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) compliance_types: std::option::Option<std::vec::Vec<crate::types::ComplianceType>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) config_rule_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) compliance_types:
+        ::std::option::Option<::std::vec::Vec<crate::types::ComplianceType>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeComplianceByConfigRuleInputBuilder {
     /// Appends an item to `config_rule_names`.
@@ -49,16 +52,19 @@ impl DescribeComplianceByConfigRuleInputBuilder {
     /// To override the contents of this collection use [`set_config_rule_names`](Self::set_config_rule_names).
     ///
     /// <p>Specify one or more Config rule names to filter the results by rule.</p>
-    pub fn config_rule_names(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn config_rule_names(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.config_rule_names.unwrap_or_default();
         v.push(input.into());
-        self.config_rule_names = Some(v);
+        self.config_rule_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>Specify one or more Config rule names to filter the results by rule.</p>
     pub fn set_config_rule_names(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.config_rule_names = input;
         self
@@ -71,35 +77,35 @@ impl DescribeComplianceByConfigRuleInputBuilder {
     pub fn compliance_types(mut self, input: crate::types::ComplianceType) -> Self {
         let mut v = self.compliance_types.unwrap_or_default();
         v.push(input);
-        self.compliance_types = Some(v);
+        self.compliance_types = ::std::option::Option::Some(v);
         self
     }
     /// <p>Filters the results by compliance.</p>
     pub fn set_compliance_types(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ComplianceType>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ComplianceType>>,
     ) -> Self {
         self.compliance_types = input;
         self
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
     /// Consumes the builder and constructs a [`DescribeComplianceByConfigRuleInput`](crate::operation::describe_compliance_by_config_rule::DescribeComplianceByConfigRuleInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::describe_compliance_by_config_rule::DescribeComplianceByConfigRuleInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::describe_compliance_by_config_rule::DescribeComplianceByConfigRuleInput {
                 config_rule_names: self.config_rule_names
                 ,

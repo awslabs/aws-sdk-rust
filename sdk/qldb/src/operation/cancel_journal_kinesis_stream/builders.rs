@@ -7,29 +7,29 @@ pub use crate::operation::cancel_journal_kinesis_stream::_cancel_journal_kinesis
 ///
 /// <p>Ends a given Amazon QLDB journal stream. Before a stream can be canceled, its current status must be <code>ACTIVE</code>.</p>
 /// <p>You can't restart a stream after you cancel it. Canceled QLDB stream resources are subject to a 7-day retention period, so they are automatically deleted after this limit expires.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CancelJournalKinesisStreamFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::cancel_journal_kinesis_stream::builders::CancelJournalKinesisStreamInputBuilder,
 }
 impl CancelJournalKinesisStreamFluentBuilder {
     /// Creates a new `CancelJournalKinesisStream`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::cancel_journal_kinesis_stream::CancelJournalKinesisStream,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::cancel_journal_kinesis_stream::CancelJournalKinesisStreamError,
         >,
     > {
@@ -37,30 +37,33 @@ impl CancelJournalKinesisStreamFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::cancel_journal_kinesis_stream::CancelJournalKinesisStreamOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::cancel_journal_kinesis_stream::CancelJournalKinesisStreamError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -73,31 +76,31 @@ impl CancelJournalKinesisStreamFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::cancel_journal_kinesis_stream::CancelJournalKinesisStreamOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::cancel_journal_kinesis_stream::CancelJournalKinesisStreamError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the ledger.</p>
-    pub fn ledger_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn ledger_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ledger_name(input.into());
         self
     }
     /// <p>The name of the ledger.</p>
-    pub fn set_ledger_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ledger_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ledger_name(input);
         self
     }
     /// <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream to be canceled.</p>
-    pub fn stream_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn stream_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stream_id(input.into());
         self
     }
     /// <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream to be canceled.</p>
-    pub fn set_stream_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_stream_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stream_id(input);
         self
     }

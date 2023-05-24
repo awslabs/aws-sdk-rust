@@ -2,17 +2,17 @@
 
 /// <p>The output configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EdgeOutputConfig {
     /// <p>The Amazon Simple Storage (S3) bucker URI.</p>
     #[doc(hidden)]
-    pub s3_output_location: std::option::Option<std::string::String>,
+    pub s3_output_location: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data on the storage volume after compilation job. If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your role's account.</p>
     #[doc(hidden)]
-    pub kms_key_id: std::option::Option<std::string::String>,
+    pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The deployment type SageMaker Edge Manager will create. Currently only supports Amazon Web Services IoT Greengrass Version 2 components.</p>
     #[doc(hidden)]
-    pub preset_deployment_type: std::option::Option<crate::types::EdgePresetDeploymentType>,
+    pub preset_deployment_type: ::std::option::Option<crate::types::EdgePresetDeploymentType>,
     /// <p>The configuration used to create deployment artifacts. Specify configuration options with a JSON string. The available configuration options for each type are:</p>
     /// <ul>
     /// <li> <p> <code>ComponentName</code> (optional) - Name of the GreenGrass V2 component. If not specified, the default name generated consists of "SagemakerEdgeManager" and the name of your SageMaker Edge Manager packaging job.</p> </li>
@@ -24,21 +24,21 @@ pub struct EdgeOutputConfig {
     /// <li> <p> <code>PlatformArchitecture</code> (optional) - The processor architecture for the platform. </p> <p>Supported architectures Windows include: Windows32_x86, Windows64_x64.</p> <p>Supported architectures for Linux include: Linux x86_64, Linux ARMV8.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub preset_deployment_config: std::option::Option<std::string::String>,
+    pub preset_deployment_config: ::std::option::Option<::std::string::String>,
 }
 impl EdgeOutputConfig {
     /// <p>The Amazon Simple Storage (S3) bucker URI.</p>
-    pub fn s3_output_location(&self) -> std::option::Option<&str> {
+    pub fn s3_output_location(&self) -> ::std::option::Option<&str> {
         self.s3_output_location.as_deref()
     }
     /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data on the storage volume after compilation job. If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your role's account.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The deployment type SageMaker Edge Manager will create. Currently only supports Amazon Web Services IoT Greengrass Version 2 components.</p>
     pub fn preset_deployment_type(
         &self,
-    ) -> std::option::Option<&crate::types::EdgePresetDeploymentType> {
+    ) -> ::std::option::Option<&crate::types::EdgePresetDeploymentType> {
         self.preset_deployment_type.as_ref()
     }
     /// <p>The configuration used to create deployment artifacts. Specify configuration options with a JSON string. The available configuration options for each type are:</p>
@@ -51,7 +51,7 @@ impl EdgeOutputConfig {
     /// <li> <p> <code>PlatformOS</code> (optional) - The name of the operating system for the platform. Supported platforms include Windows and Linux.</p> </li>
     /// <li> <p> <code>PlatformArchitecture</code> (optional) - The processor architecture for the platform. </p> <p>Supported architectures Windows include: Windows32_x86, Windows64_x64.</p> <p>Supported architectures for Linux include: Linux x86_64, Linux ARMV8.</p> </li>
     /// </ul>
-    pub fn preset_deployment_config(&self) -> std::option::Option<&str> {
+    pub fn preset_deployment_config(&self) -> ::std::option::Option<&str> {
         self.preset_deployment_config.as_deref()
     }
 }
@@ -64,46 +64,52 @@ impl EdgeOutputConfig {
 
 /// A builder for [`EdgeOutputConfig`](crate::types::EdgeOutputConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EdgeOutputConfigBuilder {
-    pub(crate) s3_output_location: std::option::Option<std::string::String>,
-    pub(crate) kms_key_id: std::option::Option<std::string::String>,
-    pub(crate) preset_deployment_type: std::option::Option<crate::types::EdgePresetDeploymentType>,
-    pub(crate) preset_deployment_config: std::option::Option<std::string::String>,
+    pub(crate) s3_output_location: ::std::option::Option<::std::string::String>,
+    pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
+    pub(crate) preset_deployment_type:
+        ::std::option::Option<crate::types::EdgePresetDeploymentType>,
+    pub(crate) preset_deployment_config: ::std::option::Option<::std::string::String>,
 }
 impl EdgeOutputConfigBuilder {
     /// <p>The Amazon Simple Storage (S3) bucker URI.</p>
-    pub fn s3_output_location(mut self, input: impl Into<std::string::String>) -> Self {
-        self.s3_output_location = Some(input.into());
+    pub fn s3_output_location(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.s3_output_location = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Simple Storage (S3) bucker URI.</p>
     pub fn set_s3_output_location(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.s3_output_location = input;
         self
     }
     /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data on the storage volume after compilation job. If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your role's account.</p>
-    pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.kms_key_id = Some(input.into());
+    pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that Amazon SageMaker uses to encrypt data on the storage volume after compilation job. If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your role's account.</p>
-    pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
     }
     /// <p>The deployment type SageMaker Edge Manager will create. Currently only supports Amazon Web Services IoT Greengrass Version 2 components.</p>
     pub fn preset_deployment_type(mut self, input: crate::types::EdgePresetDeploymentType) -> Self {
-        self.preset_deployment_type = Some(input);
+        self.preset_deployment_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The deployment type SageMaker Edge Manager will create. Currently only supports Amazon Web Services IoT Greengrass Version 2 components.</p>
     pub fn set_preset_deployment_type(
         mut self,
-        input: std::option::Option<crate::types::EdgePresetDeploymentType>,
+        input: ::std::option::Option<crate::types::EdgePresetDeploymentType>,
     ) -> Self {
         self.preset_deployment_type = input;
         self
@@ -118,8 +124,11 @@ impl EdgeOutputConfigBuilder {
     /// <li> <p> <code>PlatformOS</code> (optional) - The name of the operating system for the platform. Supported platforms include Windows and Linux.</p> </li>
     /// <li> <p> <code>PlatformArchitecture</code> (optional) - The processor architecture for the platform. </p> <p>Supported architectures Windows include: Windows32_x86, Windows64_x64.</p> <p>Supported architectures for Linux include: Linux x86_64, Linux ARMV8.</p> </li>
     /// </ul>
-    pub fn preset_deployment_config(mut self, input: impl Into<std::string::String>) -> Self {
-        self.preset_deployment_config = Some(input.into());
+    pub fn preset_deployment_config(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.preset_deployment_config = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The configuration used to create deployment artifacts. Specify configuration options with a JSON string. The available configuration options for each type are:</p>
@@ -134,7 +143,7 @@ impl EdgeOutputConfigBuilder {
     /// </ul>
     pub fn set_preset_deployment_config(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.preset_deployment_config = input;
         self

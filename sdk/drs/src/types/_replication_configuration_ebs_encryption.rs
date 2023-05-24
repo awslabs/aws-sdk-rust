@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ReplicationConfigurationEbsEncryption {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum ReplicationConfigurationEbsEncryption {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ReplicationConfigurationEbsEncryption {
+impl ::std::convert::From<&str> for ReplicationConfigurationEbsEncryption {
     fn from(s: &str) -> Self {
         match s {
             "CUSTOM" => ReplicationConfigurationEbsEncryption::Custom,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for ReplicationConfigurationEbsEncryption {
         }
     }
 }
-impl std::str::FromStr for ReplicationConfigurationEbsEncryption {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ReplicationConfigurationEbsEncryption {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ReplicationConfigurationEbsEncryption::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ReplicationConfigurationEbsEncryption::from(s))
     }
 }
 impl ReplicationConfigurationEbsEncryption {
@@ -86,7 +86,7 @@ impl ReplicationConfigurationEbsEncryption {
         &["CUSTOM", "DEFAULT"]
     }
 }
-impl AsRef<str> for ReplicationConfigurationEbsEncryption {
+impl ::std::convert::AsRef<str> for ReplicationConfigurationEbsEncryption {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

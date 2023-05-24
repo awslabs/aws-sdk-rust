@@ -2,20 +2,20 @@
 
 /// <p>Contains the response to a <code>DescribeMyUserProfile</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeMyUserProfileOutput {
     /// <p>A <code>UserProfile</code> object that describes the user's SSH information.</p>
     #[doc(hidden)]
-    pub user_profile: std::option::Option<crate::types::SelfUserProfile>,
+    pub user_profile: ::std::option::Option<crate::types::SelfUserProfile>,
     _request_id: Option<String>,
 }
 impl DescribeMyUserProfileOutput {
     /// <p>A <code>UserProfile</code> object that describes the user's SSH information.</p>
-    pub fn user_profile(&self) -> std::option::Option<&crate::types::SelfUserProfile> {
+    pub fn user_profile(&self) -> ::std::option::Option<&crate::types::SelfUserProfile> {
         self.user_profile.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeMyUserProfileOutput {
+impl ::aws_http::request_id::RequestId for DescribeMyUserProfileOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -31,21 +31,23 @@ impl DescribeMyUserProfileOutput {
 
 /// A builder for [`DescribeMyUserProfileOutput`](crate::operation::describe_my_user_profile::DescribeMyUserProfileOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeMyUserProfileOutputBuilder {
-    pub(crate) user_profile: std::option::Option<crate::types::SelfUserProfile>,
+    pub(crate) user_profile: ::std::option::Option<crate::types::SelfUserProfile>,
     _request_id: Option<String>,
 }
 impl DescribeMyUserProfileOutputBuilder {
     /// <p>A <code>UserProfile</code> object that describes the user's SSH information.</p>
     pub fn user_profile(mut self, input: crate::types::SelfUserProfile) -> Self {
-        self.user_profile = Some(input);
+        self.user_profile = ::std::option::Option::Some(input);
         self
     }
     /// <p>A <code>UserProfile</code> object that describes the user's SSH information.</p>
     pub fn set_user_profile(
         mut self,
-        input: std::option::Option<crate::types::SelfUserProfile>,
+        input: ::std::option::Option<crate::types::SelfUserProfile>,
     ) -> Self {
         self.user_profile = input;
         self

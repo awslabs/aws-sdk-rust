@@ -3,25 +3,25 @@
 /// <p>The configuration of selected fields in the<code>CustomActionFilterOperation</code>.</p>
 /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FilterOperationSelectedFieldsConfiguration {
     /// <p>Chooses the fields that are filtered in <code>CustomActionFilterOperation</code>.</p>
     #[doc(hidden)]
-    pub selected_fields: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub selected_fields: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A structure that contains the options that choose which fields are filtered in the <code>CustomActionFilterOperation</code>.</p>
     /// <p>Valid values are defined as follows:</p>
     /// <ul>
     /// <li> <p> <code>ALL_FIELDS</code>: Applies the filter operation to all fields.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub selected_field_options: std::option::Option<crate::types::SelectedFieldOptions>,
+    pub selected_field_options: ::std::option::Option<crate::types::SelectedFieldOptions>,
     /// <p>The selected columns of a dataset.</p>
     #[doc(hidden)]
-    pub selected_columns: std::option::Option<std::vec::Vec<crate::types::ColumnIdentifier>>,
+    pub selected_columns: ::std::option::Option<::std::vec::Vec<crate::types::ColumnIdentifier>>,
 }
 impl FilterOperationSelectedFieldsConfiguration {
     /// <p>Chooses the fields that are filtered in <code>CustomActionFilterOperation</code>.</p>
-    pub fn selected_fields(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn selected_fields(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.selected_fields.as_deref()
     }
     /// <p>A structure that contains the options that choose which fields are filtered in the <code>CustomActionFilterOperation</code>.</p>
@@ -31,11 +31,11 @@ impl FilterOperationSelectedFieldsConfiguration {
     /// </ul>
     pub fn selected_field_options(
         &self,
-    ) -> std::option::Option<&crate::types::SelectedFieldOptions> {
+    ) -> ::std::option::Option<&crate::types::SelectedFieldOptions> {
         self.selected_field_options.as_ref()
     }
     /// <p>The selected columns of a dataset.</p>
-    pub fn selected_columns(&self) -> std::option::Option<&[crate::types::ColumnIdentifier]> {
+    pub fn selected_columns(&self) -> ::std::option::Option<&[crate::types::ColumnIdentifier]> {
         self.selected_columns.as_deref()
     }
 }
@@ -48,11 +48,14 @@ impl FilterOperationSelectedFieldsConfiguration {
 
 /// A builder for [`FilterOperationSelectedFieldsConfiguration`](crate::types::FilterOperationSelectedFieldsConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FilterOperationSelectedFieldsConfigurationBuilder {
-    pub(crate) selected_fields: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) selected_field_options: std::option::Option<crate::types::SelectedFieldOptions>,
-    pub(crate) selected_columns: std::option::Option<std::vec::Vec<crate::types::ColumnIdentifier>>,
+    pub(crate) selected_fields: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) selected_field_options: ::std::option::Option<crate::types::SelectedFieldOptions>,
+    pub(crate) selected_columns:
+        ::std::option::Option<::std::vec::Vec<crate::types::ColumnIdentifier>>,
 }
 impl FilterOperationSelectedFieldsConfigurationBuilder {
     /// Appends an item to `selected_fields`.
@@ -60,16 +63,19 @@ impl FilterOperationSelectedFieldsConfigurationBuilder {
     /// To override the contents of this collection use [`set_selected_fields`](Self::set_selected_fields).
     ///
     /// <p>Chooses the fields that are filtered in <code>CustomActionFilterOperation</code>.</p>
-    pub fn selected_fields(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn selected_fields(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.selected_fields.unwrap_or_default();
         v.push(input.into());
-        self.selected_fields = Some(v);
+        self.selected_fields = ::std::option::Option::Some(v);
         self
     }
     /// <p>Chooses the fields that are filtered in <code>CustomActionFilterOperation</code>.</p>
     pub fn set_selected_fields(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.selected_fields = input;
         self
@@ -80,7 +86,7 @@ impl FilterOperationSelectedFieldsConfigurationBuilder {
     /// <li> <p> <code>ALL_FIELDS</code>: Applies the filter operation to all fields.</p> </li>
     /// </ul>
     pub fn selected_field_options(mut self, input: crate::types::SelectedFieldOptions) -> Self {
-        self.selected_field_options = Some(input);
+        self.selected_field_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>A structure that contains the options that choose which fields are filtered in the <code>CustomActionFilterOperation</code>.</p>
@@ -90,7 +96,7 @@ impl FilterOperationSelectedFieldsConfigurationBuilder {
     /// </ul>
     pub fn set_selected_field_options(
         mut self,
-        input: std::option::Option<crate::types::SelectedFieldOptions>,
+        input: ::std::option::Option<crate::types::SelectedFieldOptions>,
     ) -> Self {
         self.selected_field_options = input;
         self
@@ -103,13 +109,13 @@ impl FilterOperationSelectedFieldsConfigurationBuilder {
     pub fn selected_columns(mut self, input: crate::types::ColumnIdentifier) -> Self {
         let mut v = self.selected_columns.unwrap_or_default();
         v.push(input);
-        self.selected_columns = Some(v);
+        self.selected_columns = ::std::option::Option::Some(v);
         self
     }
     /// <p>The selected columns of a dataset.</p>
     pub fn set_selected_columns(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ColumnIdentifier>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnIdentifier>>,
     ) -> Self {
         self.selected_columns = input;
         self

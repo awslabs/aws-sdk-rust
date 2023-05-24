@@ -37,13 +37,13 @@
 /// Offering type, e.g. 'NO_UPFRONT'
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum OfferingType {
     #[allow(missing_docs)] // documentation missing in model
@@ -51,7 +51,7 @@ pub enum OfferingType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for OfferingType {
+impl ::std::convert::From<&str> for OfferingType {
     fn from(s: &str) -> Self {
         match s {
             "NO_UPFRONT" => OfferingType::NoUpfront,
@@ -61,11 +61,11 @@ impl std::convert::From<&str> for OfferingType {
         }
     }
 }
-impl std::str::FromStr for OfferingType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for OfferingType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(OfferingType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(OfferingType::from(s))
     }
 }
 impl OfferingType {
@@ -81,7 +81,7 @@ impl OfferingType {
         &["NO_UPFRONT"]
     }
 }
-impl AsRef<str> for OfferingType {
+impl ::std::convert::AsRef<str> for OfferingType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

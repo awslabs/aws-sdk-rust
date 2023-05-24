@@ -2,36 +2,37 @@
 
 /// <p>Specifies the date and time that a job will begin the rollout of the job document to all devices in the target group. Additionally, you can specify the end behavior for each job execution when it reaches the scheduled end time.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SchedulingConfig {
     /// <p>The time a job will begin rollout of the job document to all devices in the target group for a job. The <code>startTime</code> can be scheduled up to a year in advance and must be scheduled a minimum of thirty minutes from the current time. The date and time format for the <code>startTime</code> is YYYY-MM-DD for the date and HH:MM for the time.</p>
     #[doc(hidden)]
-    pub start_time: std::option::Option<std::string::String>,
+    pub start_time: ::std::option::Option<::std::string::String>,
     /// <p>The time a job will stop rollout of the job document to all devices in the target group for a job. The <code>endTime</code> must take place no later than two years from the current time and be scheduled a minimum of thirty minutes from the current time. The minimum duration between <code>startTime</code> and <code>endTime</code> is thirty minutes. The maximum duration between <code>startTime</code> and <code>endTime</code> is two years. The date and time format for the <code>endTime</code> is YYYY-MM-DD for the date and HH:MM for the time.</p>
     #[doc(hidden)]
-    pub end_time: std::option::Option<std::string::String>,
+    pub end_time: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the end behavior for all job executions after a job reaches the selected <code>endTime</code>. If <code>endTime</code> is not selected when creating the job, then <code>endBehavior</code> does not apply.</p>
     #[doc(hidden)]
-    pub end_behavior: std::option::Option<crate::types::JobEndBehavior>,
+    pub end_behavior: ::std::option::Option<crate::types::JobEndBehavior>,
     /// <p>An optional configuration within the <code>SchedulingConfig</code> to setup a recurring maintenance window with a predetermined start time and duration for the rollout of a job document to all devices in a target group for a job.</p>
     #[doc(hidden)]
-    pub maintenance_windows: std::option::Option<std::vec::Vec<crate::types::MaintenanceWindow>>,
+    pub maintenance_windows:
+        ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindow>>,
 }
 impl SchedulingConfig {
     /// <p>The time a job will begin rollout of the job document to all devices in the target group for a job. The <code>startTime</code> can be scheduled up to a year in advance and must be scheduled a minimum of thirty minutes from the current time. The date and time format for the <code>startTime</code> is YYYY-MM-DD for the date and HH:MM for the time.</p>
-    pub fn start_time(&self) -> std::option::Option<&str> {
+    pub fn start_time(&self) -> ::std::option::Option<&str> {
         self.start_time.as_deref()
     }
     /// <p>The time a job will stop rollout of the job document to all devices in the target group for a job. The <code>endTime</code> must take place no later than two years from the current time and be scheduled a minimum of thirty minutes from the current time. The minimum duration between <code>startTime</code> and <code>endTime</code> is thirty minutes. The maximum duration between <code>startTime</code> and <code>endTime</code> is two years. The date and time format for the <code>endTime</code> is YYYY-MM-DD for the date and HH:MM for the time.</p>
-    pub fn end_time(&self) -> std::option::Option<&str> {
+    pub fn end_time(&self) -> ::std::option::Option<&str> {
         self.end_time.as_deref()
     }
     /// <p>Specifies the end behavior for all job executions after a job reaches the selected <code>endTime</code>. If <code>endTime</code> is not selected when creating the job, then <code>endBehavior</code> does not apply.</p>
-    pub fn end_behavior(&self) -> std::option::Option<&crate::types::JobEndBehavior> {
+    pub fn end_behavior(&self) -> ::std::option::Option<&crate::types::JobEndBehavior> {
         self.end_behavior.as_ref()
     }
     /// <p>An optional configuration within the <code>SchedulingConfig</code> to setup a recurring maintenance window with a predetermined start time and duration for the rollout of a job document to all devices in a target group for a job.</p>
-    pub fn maintenance_windows(&self) -> std::option::Option<&[crate::types::MaintenanceWindow]> {
+    pub fn maintenance_windows(&self) -> ::std::option::Option<&[crate::types::MaintenanceWindow]> {
         self.maintenance_windows.as_deref()
     }
 }
@@ -44,44 +45,46 @@ impl SchedulingConfig {
 
 /// A builder for [`SchedulingConfig`](crate::types::SchedulingConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SchedulingConfigBuilder {
-    pub(crate) start_time: std::option::Option<std::string::String>,
-    pub(crate) end_time: std::option::Option<std::string::String>,
-    pub(crate) end_behavior: std::option::Option<crate::types::JobEndBehavior>,
+    pub(crate) start_time: ::std::option::Option<::std::string::String>,
+    pub(crate) end_time: ::std::option::Option<::std::string::String>,
+    pub(crate) end_behavior: ::std::option::Option<crate::types::JobEndBehavior>,
     pub(crate) maintenance_windows:
-        std::option::Option<std::vec::Vec<crate::types::MaintenanceWindow>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindow>>,
 }
 impl SchedulingConfigBuilder {
     /// <p>The time a job will begin rollout of the job document to all devices in the target group for a job. The <code>startTime</code> can be scheduled up to a year in advance and must be scheduled a minimum of thirty minutes from the current time. The date and time format for the <code>startTime</code> is YYYY-MM-DD for the date and HH:MM for the time.</p>
-    pub fn start_time(mut self, input: impl Into<std::string::String>) -> Self {
-        self.start_time = Some(input.into());
+    pub fn start_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.start_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The time a job will begin rollout of the job document to all devices in the target group for a job. The <code>startTime</code> can be scheduled up to a year in advance and must be scheduled a minimum of thirty minutes from the current time. The date and time format for the <code>startTime</code> is YYYY-MM-DD for the date and HH:MM for the time.</p>
-    pub fn set_start_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.start_time = input;
         self
     }
     /// <p>The time a job will stop rollout of the job document to all devices in the target group for a job. The <code>endTime</code> must take place no later than two years from the current time and be scheduled a minimum of thirty minutes from the current time. The minimum duration between <code>startTime</code> and <code>endTime</code> is thirty minutes. The maximum duration between <code>startTime</code> and <code>endTime</code> is two years. The date and time format for the <code>endTime</code> is YYYY-MM-DD for the date and HH:MM for the time.</p>
-    pub fn end_time(mut self, input: impl Into<std::string::String>) -> Self {
-        self.end_time = Some(input.into());
+    pub fn end_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.end_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The time a job will stop rollout of the job document to all devices in the target group for a job. The <code>endTime</code> must take place no later than two years from the current time and be scheduled a minimum of thirty minutes from the current time. The minimum duration between <code>startTime</code> and <code>endTime</code> is thirty minutes. The maximum duration between <code>startTime</code> and <code>endTime</code> is two years. The date and time format for the <code>endTime</code> is YYYY-MM-DD for the date and HH:MM for the time.</p>
-    pub fn set_end_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.end_time = input;
         self
     }
     /// <p>Specifies the end behavior for all job executions after a job reaches the selected <code>endTime</code>. If <code>endTime</code> is not selected when creating the job, then <code>endBehavior</code> does not apply.</p>
     pub fn end_behavior(mut self, input: crate::types::JobEndBehavior) -> Self {
-        self.end_behavior = Some(input);
+        self.end_behavior = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the end behavior for all job executions after a job reaches the selected <code>endTime</code>. If <code>endTime</code> is not selected when creating the job, then <code>endBehavior</code> does not apply.</p>
     pub fn set_end_behavior(
         mut self,
-        input: std::option::Option<crate::types::JobEndBehavior>,
+        input: ::std::option::Option<crate::types::JobEndBehavior>,
     ) -> Self {
         self.end_behavior = input;
         self
@@ -94,13 +97,13 @@ impl SchedulingConfigBuilder {
     pub fn maintenance_windows(mut self, input: crate::types::MaintenanceWindow) -> Self {
         let mut v = self.maintenance_windows.unwrap_or_default();
         v.push(input);
-        self.maintenance_windows = Some(v);
+        self.maintenance_windows = ::std::option::Option::Some(v);
         self
     }
     /// <p>An optional configuration within the <code>SchedulingConfig</code> to setup a recurring maintenance window with a predetermined start time and duration for the rollout of a job document to all devices in a target group for a job.</p>
     pub fn set_maintenance_windows(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::MaintenanceWindow>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::MaintenanceWindow>>,
     ) -> Self {
         self.maintenance_windows = input;
         self

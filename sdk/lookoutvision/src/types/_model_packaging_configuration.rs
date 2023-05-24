@@ -2,15 +2,15 @@
 
 /// <p> Configuration information for a Amazon Lookout for Vision model packaging job. For more information, see <code>StartModelPackagingJob</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModelPackagingConfiguration {
     /// <p> Configuration information for the AWS IoT Greengrass component in a model packaging job. </p>
     #[doc(hidden)]
-    pub greengrass: std::option::Option<crate::types::GreengrassConfiguration>,
+    pub greengrass: ::std::option::Option<crate::types::GreengrassConfiguration>,
 }
 impl ModelPackagingConfiguration {
     /// <p> Configuration information for the AWS IoT Greengrass component in a model packaging job. </p>
-    pub fn greengrass(&self) -> std::option::Option<&crate::types::GreengrassConfiguration> {
+    pub fn greengrass(&self) -> ::std::option::Option<&crate::types::GreengrassConfiguration> {
         self.greengrass.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl ModelPackagingConfiguration {
 
 /// A builder for [`ModelPackagingConfiguration`](crate::types::ModelPackagingConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ModelPackagingConfigurationBuilder {
-    pub(crate) greengrass: std::option::Option<crate::types::GreengrassConfiguration>,
+    pub(crate) greengrass: ::std::option::Option<crate::types::GreengrassConfiguration>,
 }
 impl ModelPackagingConfigurationBuilder {
     /// <p> Configuration information for the AWS IoT Greengrass component in a model packaging job. </p>
     pub fn greengrass(mut self, input: crate::types::GreengrassConfiguration) -> Self {
-        self.greengrass = Some(input);
+        self.greengrass = ::std::option::Option::Some(input);
         self
     }
     /// <p> Configuration information for the AWS IoT Greengrass component in a model packaging job. </p>
     pub fn set_greengrass(
         mut self,
-        input: std::option::Option<crate::types::GreengrassConfiguration>,
+        input: ::std::option::Option<crate::types::GreengrassConfiguration>,
     ) -> Self {
         self.greengrass = input;
         self

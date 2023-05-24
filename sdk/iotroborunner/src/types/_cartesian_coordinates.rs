@@ -2,29 +2,29 @@
 
 /// Cartesian coordinates in 3D space relative to the RoboRunner origin.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CartesianCoordinates {
     /// X coordinate.
     #[doc(hidden)]
-    pub x: std::option::Option<f64>,
+    pub x: ::std::option::Option<f64>,
     /// Y coordinate.
     #[doc(hidden)]
-    pub y: std::option::Option<f64>,
+    pub y: ::std::option::Option<f64>,
     /// Z coordinate.
     #[doc(hidden)]
-    pub z: std::option::Option<f64>,
+    pub z: ::std::option::Option<f64>,
 }
 impl CartesianCoordinates {
     /// X coordinate.
-    pub fn x(&self) -> std::option::Option<f64> {
+    pub fn x(&self) -> ::std::option::Option<f64> {
         self.x
     }
     /// Y coordinate.
-    pub fn y(&self) -> std::option::Option<f64> {
+    pub fn y(&self) -> ::std::option::Option<f64> {
         self.y
     }
     /// Z coordinate.
-    pub fn z(&self) -> std::option::Option<f64> {
+    pub fn z(&self) -> ::std::option::Option<f64> {
         self.z
     }
 }
@@ -37,40 +37,42 @@ impl CartesianCoordinates {
 
 /// A builder for [`CartesianCoordinates`](crate::types::CartesianCoordinates).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CartesianCoordinatesBuilder {
-    pub(crate) x: std::option::Option<f64>,
-    pub(crate) y: std::option::Option<f64>,
-    pub(crate) z: std::option::Option<f64>,
+    pub(crate) x: ::std::option::Option<f64>,
+    pub(crate) y: ::std::option::Option<f64>,
+    pub(crate) z: ::std::option::Option<f64>,
 }
 impl CartesianCoordinatesBuilder {
     /// X coordinate.
     pub fn x(mut self, input: f64) -> Self {
-        self.x = Some(input);
+        self.x = ::std::option::Option::Some(input);
         self
     }
     /// X coordinate.
-    pub fn set_x(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_x(mut self, input: ::std::option::Option<f64>) -> Self {
         self.x = input;
         self
     }
     /// Y coordinate.
     pub fn y(mut self, input: f64) -> Self {
-        self.y = Some(input);
+        self.y = ::std::option::Option::Some(input);
         self
     }
     /// Y coordinate.
-    pub fn set_y(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_y(mut self, input: ::std::option::Option<f64>) -> Self {
         self.y = input;
         self
     }
     /// Z coordinate.
     pub fn z(mut self, input: f64) -> Self {
-        self.z = Some(input);
+        self.z = ::std::option::Option::Some(input);
         self
     }
     /// Z coordinate.
-    pub fn set_z(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_z(mut self, input: ::std::option::Option<f64>) -> Self {
         self.z = input;
         self
     }

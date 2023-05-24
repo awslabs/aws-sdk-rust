@@ -2,22 +2,22 @@
 
 /// <p>Contains the specific price and frequency of a recurring charges for an OpenSearch Reserved Instance, or for a Reserved Instance offering.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecurringCharge {
     /// <p>The monetary amount of the recurring charge.</p>
     #[doc(hidden)]
-    pub recurring_charge_amount: std::option::Option<f64>,
+    pub recurring_charge_amount: ::std::option::Option<f64>,
     /// <p>The frequency of the recurring charge.</p>
     #[doc(hidden)]
-    pub recurring_charge_frequency: std::option::Option<std::string::String>,
+    pub recurring_charge_frequency: ::std::option::Option<::std::string::String>,
 }
 impl RecurringCharge {
     /// <p>The monetary amount of the recurring charge.</p>
-    pub fn recurring_charge_amount(&self) -> std::option::Option<f64> {
+    pub fn recurring_charge_amount(&self) -> ::std::option::Option<f64> {
         self.recurring_charge_amount
     }
     /// <p>The frequency of the recurring charge.</p>
-    pub fn recurring_charge_frequency(&self) -> std::option::Option<&str> {
+    pub fn recurring_charge_frequency(&self) -> ::std::option::Option<&str> {
         self.recurring_charge_frequency.as_deref()
     }
 }
@@ -30,31 +30,36 @@ impl RecurringCharge {
 
 /// A builder for [`RecurringCharge`](crate::types::RecurringCharge).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RecurringChargeBuilder {
-    pub(crate) recurring_charge_amount: std::option::Option<f64>,
-    pub(crate) recurring_charge_frequency: std::option::Option<std::string::String>,
+    pub(crate) recurring_charge_amount: ::std::option::Option<f64>,
+    pub(crate) recurring_charge_frequency: ::std::option::Option<::std::string::String>,
 }
 impl RecurringChargeBuilder {
     /// <p>The monetary amount of the recurring charge.</p>
     pub fn recurring_charge_amount(mut self, input: f64) -> Self {
-        self.recurring_charge_amount = Some(input);
+        self.recurring_charge_amount = ::std::option::Option::Some(input);
         self
     }
     /// <p>The monetary amount of the recurring charge.</p>
-    pub fn set_recurring_charge_amount(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_recurring_charge_amount(mut self, input: ::std::option::Option<f64>) -> Self {
         self.recurring_charge_amount = input;
         self
     }
     /// <p>The frequency of the recurring charge.</p>
-    pub fn recurring_charge_frequency(mut self, input: impl Into<std::string::String>) -> Self {
-        self.recurring_charge_frequency = Some(input.into());
+    pub fn recurring_charge_frequency(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.recurring_charge_frequency = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The frequency of the recurring charge.</p>
     pub fn set_recurring_charge_frequency(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.recurring_charge_frequency = input;
         self

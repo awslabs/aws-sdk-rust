@@ -3,18 +3,18 @@
 /// <p>The field wells of a <code>GeospatialMapVisual</code>.</p>
 /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GeospatialMapFieldWells {
     /// <p>The aggregated field well for a geospatial map.</p>
     #[doc(hidden)]
     pub geospatial_map_aggregated_field_wells:
-        std::option::Option<crate::types::GeospatialMapAggregatedFieldWells>,
+        ::std::option::Option<crate::types::GeospatialMapAggregatedFieldWells>,
 }
 impl GeospatialMapFieldWells {
     /// <p>The aggregated field well for a geospatial map.</p>
     pub fn geospatial_map_aggregated_field_wells(
         &self,
-    ) -> std::option::Option<&crate::types::GeospatialMapAggregatedFieldWells> {
+    ) -> ::std::option::Option<&crate::types::GeospatialMapAggregatedFieldWells> {
         self.geospatial_map_aggregated_field_wells.as_ref()
     }
 }
@@ -27,10 +27,12 @@ impl GeospatialMapFieldWells {
 
 /// A builder for [`GeospatialMapFieldWells`](crate::types::GeospatialMapFieldWells).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GeospatialMapFieldWellsBuilder {
     pub(crate) geospatial_map_aggregated_field_wells:
-        std::option::Option<crate::types::GeospatialMapAggregatedFieldWells>,
+        ::std::option::Option<crate::types::GeospatialMapAggregatedFieldWells>,
 }
 impl GeospatialMapFieldWellsBuilder {
     /// <p>The aggregated field well for a geospatial map.</p>
@@ -38,13 +40,13 @@ impl GeospatialMapFieldWellsBuilder {
         mut self,
         input: crate::types::GeospatialMapAggregatedFieldWells,
     ) -> Self {
-        self.geospatial_map_aggregated_field_wells = Some(input);
+        self.geospatial_map_aggregated_field_wells = ::std::option::Option::Some(input);
         self
     }
     /// <p>The aggregated field well for a geospatial map.</p>
     pub fn set_geospatial_map_aggregated_field_wells(
         mut self,
-        input: std::option::Option<crate::types::GeospatialMapAggregatedFieldWells>,
+        input: ::std::option::Option<crate::types::GeospatialMapAggregatedFieldWells>,
     ) -> Self {
         self.geospatial_map_aggregated_field_wells = input;
         self

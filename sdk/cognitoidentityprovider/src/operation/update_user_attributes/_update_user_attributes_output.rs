@@ -2,23 +2,23 @@
 
 /// <p>Represents the response from the server for the request to update user attributes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateUserAttributesOutput {
     /// <p>The code delivery details list from the server for the request to update user attributes.</p>
     #[doc(hidden)]
     pub code_delivery_details_list:
-        std::option::Option<std::vec::Vec<crate::types::CodeDeliveryDetailsType>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::CodeDeliveryDetailsType>>,
     _request_id: Option<String>,
 }
 impl UpdateUserAttributesOutput {
     /// <p>The code delivery details list from the server for the request to update user attributes.</p>
     pub fn code_delivery_details_list(
         &self,
-    ) -> std::option::Option<&[crate::types::CodeDeliveryDetailsType]> {
+    ) -> ::std::option::Option<&[crate::types::CodeDeliveryDetailsType]> {
         self.code_delivery_details_list.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for UpdateUserAttributesOutput {
+impl ::aws_http::request_id::RequestId for UpdateUserAttributesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -33,10 +33,12 @@ impl UpdateUserAttributesOutput {
 
 /// A builder for [`UpdateUserAttributesOutput`](crate::operation::update_user_attributes::UpdateUserAttributesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateUserAttributesOutputBuilder {
     pub(crate) code_delivery_details_list:
-        std::option::Option<std::vec::Vec<crate::types::CodeDeliveryDetailsType>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::CodeDeliveryDetailsType>>,
     _request_id: Option<String>,
 }
 impl UpdateUserAttributesOutputBuilder {
@@ -51,13 +53,13 @@ impl UpdateUserAttributesOutputBuilder {
     ) -> Self {
         let mut v = self.code_delivery_details_list.unwrap_or_default();
         v.push(input);
-        self.code_delivery_details_list = Some(v);
+        self.code_delivery_details_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>The code delivery details list from the server for the request to update user attributes.</p>
     pub fn set_code_delivery_details_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CodeDeliveryDetailsType>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::CodeDeliveryDetailsType>>,
     ) -> Self {
         self.code_delivery_details_list = input;
         self

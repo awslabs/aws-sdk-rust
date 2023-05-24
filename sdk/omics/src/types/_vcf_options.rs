@@ -2,22 +2,22 @@
 
 /// <p>Formatting options for a VCF file.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VcfOptions {
     /// <p>The file's ignore qual field setting.</p>
     #[doc(hidden)]
-    pub ignore_qual_field: std::option::Option<bool>,
+    pub ignore_qual_field: ::std::option::Option<bool>,
     /// <p>The file's ignore filter field setting.</p>
     #[doc(hidden)]
-    pub ignore_filter_field: std::option::Option<bool>,
+    pub ignore_filter_field: ::std::option::Option<bool>,
 }
 impl VcfOptions {
     /// <p>The file's ignore qual field setting.</p>
-    pub fn ignore_qual_field(&self) -> std::option::Option<bool> {
+    pub fn ignore_qual_field(&self) -> ::std::option::Option<bool> {
         self.ignore_qual_field
     }
     /// <p>The file's ignore filter field setting.</p>
-    pub fn ignore_filter_field(&self) -> std::option::Option<bool> {
+    pub fn ignore_filter_field(&self) -> ::std::option::Option<bool> {
         self.ignore_filter_field
     }
 }
@@ -30,29 +30,31 @@ impl VcfOptions {
 
 /// A builder for [`VcfOptions`](crate::types::VcfOptions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VcfOptionsBuilder {
-    pub(crate) ignore_qual_field: std::option::Option<bool>,
-    pub(crate) ignore_filter_field: std::option::Option<bool>,
+    pub(crate) ignore_qual_field: ::std::option::Option<bool>,
+    pub(crate) ignore_filter_field: ::std::option::Option<bool>,
 }
 impl VcfOptionsBuilder {
     /// <p>The file's ignore qual field setting.</p>
     pub fn ignore_qual_field(mut self, input: bool) -> Self {
-        self.ignore_qual_field = Some(input);
+        self.ignore_qual_field = ::std::option::Option::Some(input);
         self
     }
     /// <p>The file's ignore qual field setting.</p>
-    pub fn set_ignore_qual_field(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_ignore_qual_field(mut self, input: ::std::option::Option<bool>) -> Self {
         self.ignore_qual_field = input;
         self
     }
     /// <p>The file's ignore filter field setting.</p>
     pub fn ignore_filter_field(mut self, input: bool) -> Self {
-        self.ignore_filter_field = Some(input);
+        self.ignore_filter_field = ::std::option::Option::Some(input);
         self
     }
     /// <p>The file's ignore filter field setting.</p>
-    pub fn set_ignore_filter_field(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_ignore_filter_field(mut self, input: ::std::option::Option<bool>) -> Self {
         self.ignore_filter_field = input;
         self
     }

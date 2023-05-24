@@ -2,15 +2,15 @@
 
 /// <p>Summary of the details of a moderated channel.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChannelModeratedByAppInstanceUserSummary {
     /// <p>Summary of the details of a <code>Channel</code>.</p>
     #[doc(hidden)]
-    pub channel_summary: std::option::Option<crate::types::ChannelSummary>,
+    pub channel_summary: ::std::option::Option<crate::types::ChannelSummary>,
 }
 impl ChannelModeratedByAppInstanceUserSummary {
     /// <p>Summary of the details of a <code>Channel</code>.</p>
-    pub fn channel_summary(&self) -> std::option::Option<&crate::types::ChannelSummary> {
+    pub fn channel_summary(&self) -> ::std::option::Option<&crate::types::ChannelSummary> {
         self.channel_summary.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl ChannelModeratedByAppInstanceUserSummary {
 
 /// A builder for [`ChannelModeratedByAppInstanceUserSummary`](crate::types::ChannelModeratedByAppInstanceUserSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ChannelModeratedByAppInstanceUserSummaryBuilder {
-    pub(crate) channel_summary: std::option::Option<crate::types::ChannelSummary>,
+    pub(crate) channel_summary: ::std::option::Option<crate::types::ChannelSummary>,
 }
 impl ChannelModeratedByAppInstanceUserSummaryBuilder {
     /// <p>Summary of the details of a <code>Channel</code>.</p>
     pub fn channel_summary(mut self, input: crate::types::ChannelSummary) -> Self {
-        self.channel_summary = Some(input);
+        self.channel_summary = ::std::option::Option::Some(input);
         self
     }
     /// <p>Summary of the details of a <code>Channel</code>.</p>
     pub fn set_channel_summary(
         mut self,
-        input: std::option::Option<crate::types::ChannelSummary>,
+        input: ::std::option::Option<crate::types::ChannelSummary>,
     ) -> Self {
         self.channel_summary = input;
         self

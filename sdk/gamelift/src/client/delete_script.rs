@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteScript`](crate::operation::delete_script::builders::DeleteScriptFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`script_id(impl Into<String>)`](crate::operation::delete_script::builders::DeleteScriptFluentBuilder::script_id) / [`set_script_id(Option<String>)`](crate::operation::delete_script::builders::DeleteScriptFluentBuilder::set_script_id): <p>A unique identifier for the Realtime script to delete. You can use either the script ID or ARN value.</p>
+    ///   - [`script_id(impl ::std::convert::Into<String>)`](crate::operation::delete_script::builders::DeleteScriptFluentBuilder::script_id) / [`set_script_id(Option<String>)`](crate::operation::delete_script::builders::DeleteScriptFluentBuilder::set_script_id): <p>A unique identifier for the Realtime script to delete. You can use either the script ID or ARN value.</p>
     /// - On success, responds with [`DeleteScriptOutput`](crate::operation::delete_script::DeleteScriptOutput)
     /// - On failure, responds with [`SdkError<DeleteScriptError>`](crate::operation::delete_script::DeleteScriptError)
     pub fn delete_script(

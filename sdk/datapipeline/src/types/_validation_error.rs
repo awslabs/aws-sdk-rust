@@ -2,22 +2,22 @@
 
 /// <p>Defines a validation error. Validation errors prevent pipeline activation. The set of validation errors that can be returned are defined by AWS Data Pipeline.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ValidationError {
     /// <p>The identifier of the object that contains the validation error.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>A description of the validation error.</p>
     #[doc(hidden)]
-    pub errors: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub errors: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ValidationError {
     /// <p>The identifier of the object that contains the validation error.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>A description of the validation error.</p>
-    pub fn errors(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn errors(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.errors.as_deref()
     }
 }
@@ -30,19 +30,21 @@ impl ValidationError {
 
 /// A builder for [`ValidationError`](crate::types::ValidationError).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ValidationErrorBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) errors: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) errors: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ValidationErrorBuilder {
     /// <p>The identifier of the object that contains the validation error.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the object that contains the validation error.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
@@ -51,16 +53,16 @@ impl ValidationErrorBuilder {
     /// To override the contents of this collection use [`set_errors`](Self::set_errors).
     ///
     /// <p>A description of the validation error.</p>
-    pub fn errors(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn errors(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.errors.unwrap_or_default();
         v.push(input.into());
-        self.errors = Some(v);
+        self.errors = ::std::option::Option::Some(v);
         self
     }
     /// <p>A description of the validation error.</p>
     pub fn set_errors(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.errors = input;
         self

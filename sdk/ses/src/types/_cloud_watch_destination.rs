@@ -3,18 +3,18 @@
 /// <p>Contains information associated with an Amazon CloudWatch event destination to which email sending events are published.</p>
 /// <p>Event destinations, such as Amazon CloudWatch, are associated with configuration sets, which enable you to publish email sending events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CloudWatchDestination {
     /// <p>A list of dimensions upon which to categorize your emails when you publish email sending events to Amazon CloudWatch.</p>
     #[doc(hidden)]
     pub dimension_configurations:
-        std::option::Option<std::vec::Vec<crate::types::CloudWatchDimensionConfiguration>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchDimensionConfiguration>>,
 }
 impl CloudWatchDestination {
     /// <p>A list of dimensions upon which to categorize your emails when you publish email sending events to Amazon CloudWatch.</p>
     pub fn dimension_configurations(
         &self,
-    ) -> std::option::Option<&[crate::types::CloudWatchDimensionConfiguration]> {
+    ) -> ::std::option::Option<&[crate::types::CloudWatchDimensionConfiguration]> {
         self.dimension_configurations.as_deref()
     }
 }
@@ -27,10 +27,12 @@ impl CloudWatchDestination {
 
 /// A builder for [`CloudWatchDestination`](crate::types::CloudWatchDestination).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CloudWatchDestinationBuilder {
     pub(crate) dimension_configurations:
-        std::option::Option<std::vec::Vec<crate::types::CloudWatchDimensionConfiguration>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::CloudWatchDimensionConfiguration>>,
 }
 impl CloudWatchDestinationBuilder {
     /// Appends an item to `dimension_configurations`.
@@ -44,13 +46,15 @@ impl CloudWatchDestinationBuilder {
     ) -> Self {
         let mut v = self.dimension_configurations.unwrap_or_default();
         v.push(input);
-        self.dimension_configurations = Some(v);
+        self.dimension_configurations = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of dimensions upon which to categorize your emails when you publish email sending events to Amazon CloudWatch.</p>
     pub fn set_dimension_configurations(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CloudWatchDimensionConfiguration>>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::CloudWatchDimensionConfiguration>,
+        >,
     ) -> Self {
         self.dimension_configurations = input;
         self

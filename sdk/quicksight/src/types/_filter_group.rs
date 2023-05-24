@@ -3,47 +3,47 @@
 /// <p>A grouping of individual filters. Filter groups are applied to the same group of visuals.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/add-a-compound-filter.html">Adding filter conditions (group filters) with AND and OR operators</a> in the <i>Amazon QuickSight User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FilterGroup {
     /// <p>The value that uniquely identifies a <code>FilterGroup</code> within a dashboard, template, or analysis.</p>
     #[doc(hidden)]
-    pub filter_group_id: std::option::Option<std::string::String>,
+    pub filter_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The list of filters that are present in a <code>FilterGroup</code>.</p>
     #[doc(hidden)]
-    pub filters: std::option::Option<std::vec::Vec<crate::types::Filter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>The configuration that specifies what scope to apply to a <code>FilterGroup</code>.</p>
     /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
     #[doc(hidden)]
-    pub scope_configuration: std::option::Option<crate::types::FilterScopeConfiguration>,
+    pub scope_configuration: ::std::option::Option<crate::types::FilterScopeConfiguration>,
     /// <p>The status of the <code>FilterGroup</code>.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::WidgetStatus>,
+    pub status: ::std::option::Option<crate::types::WidgetStatus>,
     /// <p>The filter new feature which can apply filter group to all data sets. Choose one of the following options:</p>
     /// <ul>
     /// <li> <p> <code>ALL_DATASETS</code> </p> </li>
     /// <li> <p> <code>SINGLE_DATASET</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub cross_dataset: std::option::Option<crate::types::CrossDatasetTypes>,
+    pub cross_dataset: ::std::option::Option<crate::types::CrossDatasetTypes>,
 }
 impl FilterGroup {
     /// <p>The value that uniquely identifies a <code>FilterGroup</code> within a dashboard, template, or analysis.</p>
-    pub fn filter_group_id(&self) -> std::option::Option<&str> {
+    pub fn filter_group_id(&self) -> ::std::option::Option<&str> {
         self.filter_group_id.as_deref()
     }
     /// <p>The list of filters that are present in a <code>FilterGroup</code>.</p>
-    pub fn filters(&self) -> std::option::Option<&[crate::types::Filter]> {
+    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
         self.filters.as_deref()
     }
     /// <p>The configuration that specifies what scope to apply to a <code>FilterGroup</code>.</p>
     /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
     pub fn scope_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::FilterScopeConfiguration> {
+    ) -> ::std::option::Option<&crate::types::FilterScopeConfiguration> {
         self.scope_configuration.as_ref()
     }
     /// <p>The status of the <code>FilterGroup</code>.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::WidgetStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::WidgetStatus> {
         self.status.as_ref()
     }
     /// <p>The filter new feature which can apply filter group to all data sets. Choose one of the following options:</p>
@@ -51,7 +51,7 @@ impl FilterGroup {
     /// <li> <p> <code>ALL_DATASETS</code> </p> </li>
     /// <li> <p> <code>SINGLE_DATASET</code> </p> </li>
     /// </ul>
-    pub fn cross_dataset(&self) -> std::option::Option<&crate::types::CrossDatasetTypes> {
+    pub fn cross_dataset(&self) -> ::std::option::Option<&crate::types::CrossDatasetTypes> {
         self.cross_dataset.as_ref()
     }
 }
@@ -64,22 +64,30 @@ impl FilterGroup {
 
 /// A builder for [`FilterGroup`](crate::types::FilterGroup).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FilterGroupBuilder {
-    pub(crate) filter_group_id: std::option::Option<std::string::String>,
-    pub(crate) filters: std::option::Option<std::vec::Vec<crate::types::Filter>>,
-    pub(crate) scope_configuration: std::option::Option<crate::types::FilterScopeConfiguration>,
-    pub(crate) status: std::option::Option<crate::types::WidgetStatus>,
-    pub(crate) cross_dataset: std::option::Option<crate::types::CrossDatasetTypes>,
+    pub(crate) filter_group_id: ::std::option::Option<::std::string::String>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub(crate) scope_configuration: ::std::option::Option<crate::types::FilterScopeConfiguration>,
+    pub(crate) status: ::std::option::Option<crate::types::WidgetStatus>,
+    pub(crate) cross_dataset: ::std::option::Option<crate::types::CrossDatasetTypes>,
 }
 impl FilterGroupBuilder {
     /// <p>The value that uniquely identifies a <code>FilterGroup</code> within a dashboard, template, or analysis.</p>
-    pub fn filter_group_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.filter_group_id = Some(input.into());
+    pub fn filter_group_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.filter_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value that uniquely identifies a <code>FilterGroup</code> within a dashboard, template, or analysis.</p>
-    pub fn set_filter_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_filter_group_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.filter_group_id = input;
         self
     }
@@ -91,13 +99,13 @@ impl FilterGroupBuilder {
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
         v.push(input);
-        self.filters = Some(v);
+        self.filters = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of filters that are present in a <code>FilterGroup</code>.</p>
     pub fn set_filters(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     ) -> Self {
         self.filters = input;
         self
@@ -105,25 +113,25 @@ impl FilterGroupBuilder {
     /// <p>The configuration that specifies what scope to apply to a <code>FilterGroup</code>.</p>
     /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
     pub fn scope_configuration(mut self, input: crate::types::FilterScopeConfiguration) -> Self {
-        self.scope_configuration = Some(input);
+        self.scope_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration that specifies what scope to apply to a <code>FilterGroup</code>.</p>
     /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
     pub fn set_scope_configuration(
         mut self,
-        input: std::option::Option<crate::types::FilterScopeConfiguration>,
+        input: ::std::option::Option<crate::types::FilterScopeConfiguration>,
     ) -> Self {
         self.scope_configuration = input;
         self
     }
     /// <p>The status of the <code>FilterGroup</code>.</p>
     pub fn status(mut self, input: crate::types::WidgetStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the <code>FilterGroup</code>.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::WidgetStatus>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::WidgetStatus>) -> Self {
         self.status = input;
         self
     }
@@ -133,7 +141,7 @@ impl FilterGroupBuilder {
     /// <li> <p> <code>SINGLE_DATASET</code> </p> </li>
     /// </ul>
     pub fn cross_dataset(mut self, input: crate::types::CrossDatasetTypes) -> Self {
-        self.cross_dataset = Some(input);
+        self.cross_dataset = ::std::option::Option::Some(input);
         self
     }
     /// <p>The filter new feature which can apply filter group to all data sets. Choose one of the following options:</p>
@@ -143,7 +151,7 @@ impl FilterGroupBuilder {
     /// </ul>
     pub fn set_cross_dataset(
         mut self,
-        input: std::option::Option<crate::types::CrossDatasetTypes>,
+        input: ::std::option::Option<crate::types::CrossDatasetTypes>,
     ) -> Self {
         self.cross_dataset = input;
         self

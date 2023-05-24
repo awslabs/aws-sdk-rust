@@ -2,15 +2,15 @@
 
 /// <p> The connector metadata specific to Slack. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SlackMetadata {
     /// <p> The desired authorization scope for the Slack account. </p>
     #[doc(hidden)]
-    pub o_auth_scopes: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub o_auth_scopes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SlackMetadata {
     /// <p> The desired authorization scope for the Slack account. </p>
-    pub fn o_auth_scopes(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn o_auth_scopes(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.o_auth_scopes.as_deref()
     }
 }
@@ -23,9 +23,11 @@ impl SlackMetadata {
 
 /// A builder for [`SlackMetadata`](crate::types::SlackMetadata).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SlackMetadataBuilder {
-    pub(crate) o_auth_scopes: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) o_auth_scopes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SlackMetadataBuilder {
     /// Appends an item to `o_auth_scopes`.
@@ -33,16 +35,19 @@ impl SlackMetadataBuilder {
     /// To override the contents of this collection use [`set_o_auth_scopes`](Self::set_o_auth_scopes).
     ///
     /// <p> The desired authorization scope for the Slack account. </p>
-    pub fn o_auth_scopes(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn o_auth_scopes(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.o_auth_scopes.unwrap_or_default();
         v.push(input.into());
-        self.o_auth_scopes = Some(v);
+        self.o_auth_scopes = ::std::option::Option::Some(v);
         self
     }
     /// <p> The desired authorization scope for the Slack account. </p>
     pub fn set_o_auth_scopes(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.o_auth_scopes = input;
         self

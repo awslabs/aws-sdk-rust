@@ -38,13 +38,13 @@
 /// H265 Color Metadata
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum H265ColorMetadata {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum H265ColorMetadata {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for H265ColorMetadata {
+impl ::std::convert::From<&str> for H265ColorMetadata {
     fn from(s: &str) -> Self {
         match s {
             "IGNORE" => H265ColorMetadata::Ignore,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for H265ColorMetadata {
         }
     }
 }
-impl std::str::FromStr for H265ColorMetadata {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for H265ColorMetadata {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(H265ColorMetadata::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(H265ColorMetadata::from(s))
     }
 }
 impl H265ColorMetadata {
@@ -86,7 +86,7 @@ impl H265ColorMetadata {
         &["IGNORE", "INSERT"]
     }
 }
-impl AsRef<str> for H265ColorMetadata {
+impl ::std::convert::AsRef<str> for H265ColorMetadata {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

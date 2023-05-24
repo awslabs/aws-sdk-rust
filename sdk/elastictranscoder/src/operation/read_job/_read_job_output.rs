@@ -2,20 +2,20 @@
 
 /// <p>The <code>ReadJobResponse</code> structure.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReadJobOutput {
     /// <p>A section of the response body that provides information about the job.</p>
     #[doc(hidden)]
-    pub job: std::option::Option<crate::types::Job>,
+    pub job: ::std::option::Option<crate::types::Job>,
     _request_id: Option<String>,
 }
 impl ReadJobOutput {
     /// <p>A section of the response body that provides information about the job.</p>
-    pub fn job(&self) -> std::option::Option<&crate::types::Job> {
+    pub fn job(&self) -> ::std::option::Option<&crate::types::Job> {
         self.job.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for ReadJobOutput {
+impl ::aws_http::request_id::RequestId for ReadJobOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,21 @@ impl ReadJobOutput {
 
 /// A builder for [`ReadJobOutput`](crate::operation::read_job::ReadJobOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ReadJobOutputBuilder {
-    pub(crate) job: std::option::Option<crate::types::Job>,
+    pub(crate) job: ::std::option::Option<crate::types::Job>,
     _request_id: Option<String>,
 }
 impl ReadJobOutputBuilder {
     /// <p>A section of the response body that provides information about the job.</p>
     pub fn job(mut self, input: crate::types::Job) -> Self {
-        self.job = Some(input);
+        self.job = ::std::option::Option::Some(input);
         self
     }
     /// <p>A section of the response body that provides information about the job.</p>
-    pub fn set_job(mut self, input: std::option::Option<crate::types::Job>) -> Self {
+    pub fn set_job(mut self, input: ::std::option::Option<crate::types::Job>) -> Self {
         self.job = input;
         self
     }

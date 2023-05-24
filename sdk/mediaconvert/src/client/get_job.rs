@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetJob`](crate::operation::get_job::builders::GetJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::get_job::builders::GetJobFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_job::builders::GetJobFluentBuilder::set_id): the job ID of the job.
+    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::get_job::builders::GetJobFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_job::builders::GetJobFluentBuilder::set_id): the job ID of the job.
     /// - On success, responds with [`GetJobOutput`](crate::operation::get_job::GetJobOutput) with field(s):
     ///   - [`job(Option<Job>)`](crate::operation::get_job::GetJobOutput::job): Each job converts an input file into an output file or files. For more information, see the User Guide at https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
     /// - On failure, responds with [`SdkError<GetJobError>`](crate::operation::get_job::GetJobError)

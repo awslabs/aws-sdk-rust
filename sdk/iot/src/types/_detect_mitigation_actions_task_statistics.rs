@@ -2,29 +2,29 @@
 
 /// <p> The statistics of a mitigation action task. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetectMitigationActionsTaskStatistics {
     /// <p> The actions that were performed. </p>
     #[doc(hidden)]
-    pub actions_executed: std::option::Option<i64>,
+    pub actions_executed: ::std::option::Option<i64>,
     /// <p> The actions that were skipped. </p>
     #[doc(hidden)]
-    pub actions_skipped: std::option::Option<i64>,
+    pub actions_skipped: ::std::option::Option<i64>,
     /// <p> The actions that failed. </p>
     #[doc(hidden)]
-    pub actions_failed: std::option::Option<i64>,
+    pub actions_failed: ::std::option::Option<i64>,
 }
 impl DetectMitigationActionsTaskStatistics {
     /// <p> The actions that were performed. </p>
-    pub fn actions_executed(&self) -> std::option::Option<i64> {
+    pub fn actions_executed(&self) -> ::std::option::Option<i64> {
         self.actions_executed
     }
     /// <p> The actions that were skipped. </p>
-    pub fn actions_skipped(&self) -> std::option::Option<i64> {
+    pub fn actions_skipped(&self) -> ::std::option::Option<i64> {
         self.actions_skipped
     }
     /// <p> The actions that failed. </p>
-    pub fn actions_failed(&self) -> std::option::Option<i64> {
+    pub fn actions_failed(&self) -> ::std::option::Option<i64> {
         self.actions_failed
     }
 }
@@ -37,40 +37,42 @@ impl DetectMitigationActionsTaskStatistics {
 
 /// A builder for [`DetectMitigationActionsTaskStatistics`](crate::types::DetectMitigationActionsTaskStatistics).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DetectMitigationActionsTaskStatisticsBuilder {
-    pub(crate) actions_executed: std::option::Option<i64>,
-    pub(crate) actions_skipped: std::option::Option<i64>,
-    pub(crate) actions_failed: std::option::Option<i64>,
+    pub(crate) actions_executed: ::std::option::Option<i64>,
+    pub(crate) actions_skipped: ::std::option::Option<i64>,
+    pub(crate) actions_failed: ::std::option::Option<i64>,
 }
 impl DetectMitigationActionsTaskStatisticsBuilder {
     /// <p> The actions that were performed. </p>
     pub fn actions_executed(mut self, input: i64) -> Self {
-        self.actions_executed = Some(input);
+        self.actions_executed = ::std::option::Option::Some(input);
         self
     }
     /// <p> The actions that were performed. </p>
-    pub fn set_actions_executed(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_actions_executed(mut self, input: ::std::option::Option<i64>) -> Self {
         self.actions_executed = input;
         self
     }
     /// <p> The actions that were skipped. </p>
     pub fn actions_skipped(mut self, input: i64) -> Self {
-        self.actions_skipped = Some(input);
+        self.actions_skipped = ::std::option::Option::Some(input);
         self
     }
     /// <p> The actions that were skipped. </p>
-    pub fn set_actions_skipped(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_actions_skipped(mut self, input: ::std::option::Option<i64>) -> Self {
         self.actions_skipped = input;
         self
     }
     /// <p> The actions that failed. </p>
     pub fn actions_failed(mut self, input: i64) -> Self {
-        self.actions_failed = Some(input);
+        self.actions_failed = ::std::option::Option::Some(input);
         self
     }
     /// <p> The actions that failed. </p>
-    pub fn set_actions_failed(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_actions_failed(mut self, input: ::std::option::Option<i64>) -> Self {
         self.actions_failed = input;
         self
     }

@@ -10,29 +10,29 @@ pub use crate::operation::update_fleet_attributes::_update_fleet_attributes_inpu
 /// <p>If successful, an updated <code>FleetAttributes</code> object is returned.</p>
 /// <p> <b>Learn more</b> </p>
 /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up Amazon GameLift fleets</a> </p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateFleetAttributesFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::update_fleet_attributes::builders::UpdateFleetAttributesInputBuilder,
 }
 impl UpdateFleetAttributesFluentBuilder {
     /// Creates a new `UpdateFleetAttributes`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_fleet_attributes::UpdateFleetAttributes,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_fleet_attributes::UpdateFleetAttributesError,
         >,
     > {
@@ -40,30 +40,33 @@ impl UpdateFleetAttributesFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_fleet_attributes::UpdateFleetAttributesOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_fleet_attributes::UpdateFleetAttributesError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -76,41 +79,41 @@ impl UpdateFleetAttributesFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_fleet_attributes::UpdateFleetAttributesOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_fleet_attributes::UpdateFleetAttributesError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>A unique identifier for the fleet to update attribute metadata for. You can use either the fleet ID or ARN value.</p>
-    pub fn fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.fleet_id(input.into());
         self
     }
     /// <p>A unique identifier for the fleet to update attribute metadata for. You can use either the fleet ID or ARN value.</p>
-    pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_fleet_id(input);
         self
     }
     /// <p>A descriptive label that is associated with a fleet. Fleet names do not need to be unique.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// <p>A descriptive label that is associated with a fleet. Fleet names do not need to be unique.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
     /// <p>A human-readable description of a fleet.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>A human-readable description of a fleet.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
@@ -133,7 +136,7 @@ impl UpdateFleetAttributesFluentBuilder {
     /// </ul>
     pub fn set_new_game_session_protection_policy(
         mut self,
-        input: std::option::Option<crate::types::ProtectionPolicy>,
+        input: ::std::option::Option<crate::types::ProtectionPolicy>,
     ) -> Self {
         self.inner = self.inner.set_new_game_session_protection_policy(input);
         self
@@ -149,7 +152,7 @@ impl UpdateFleetAttributesFluentBuilder {
     /// <p>Policy settings that limit the number of game sessions an individual player can create over a span of time. </p>
     pub fn set_resource_creation_limit_policy(
         mut self,
-        input: std::option::Option<crate::types::ResourceCreationLimitPolicy>,
+        input: ::std::option::Option<crate::types::ResourceCreationLimitPolicy>,
     ) -> Self {
         self.inner = self.inner.set_resource_creation_limit_policy(input);
         self
@@ -159,14 +162,17 @@ impl UpdateFleetAttributesFluentBuilder {
     /// To override the contents of this collection use [`set_metric_groups`](Self::set_metric_groups).
     ///
     /// <p>The name of a metric group to add this fleet to. Use a metric group in Amazon CloudWatch to aggregate the metrics from multiple fleets. Provide an existing metric group name, or create a new metric group by providing a new name. A fleet can only be in one metric group at a time.</p>
-    pub fn metric_groups(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn metric_groups(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.metric_groups(input.into());
         self
     }
     /// <p>The name of a metric group to add this fleet to. Use a metric group in Amazon CloudWatch to aggregate the metrics from multiple fleets. Provide an existing metric group name, or create a new metric group by providing a new name. A fleet can only be in one metric group at a time.</p>
     pub fn set_metric_groups(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_metric_groups(input);
         self
@@ -179,7 +185,7 @@ impl UpdateFleetAttributesFluentBuilder {
     /// <p>Amazon GameLift Anywhere configuration options.</p>
     pub fn set_anywhere_configuration(
         mut self,
-        input: std::option::Option<crate::types::AnywhereConfiguration>,
+        input: ::std::option::Option<crate::types::AnywhereConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_anywhere_configuration(input);
         self

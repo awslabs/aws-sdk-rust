@@ -2,22 +2,22 @@
 
 /// <p>Describes the permissions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PermissionInfo {
     /// <p>The role of the user.</p>
     #[doc(hidden)]
-    pub role: std::option::Option<crate::types::RoleType>,
+    pub role: ::std::option::Option<crate::types::RoleType>,
     /// <p>The type of permissions.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::RolePermissionType>,
+    pub r#type: ::std::option::Option<crate::types::RolePermissionType>,
 }
 impl PermissionInfo {
     /// <p>The role of the user.</p>
-    pub fn role(&self) -> std::option::Option<&crate::types::RoleType> {
+    pub fn role(&self) -> ::std::option::Option<&crate::types::RoleType> {
         self.role.as_ref()
     }
     /// <p>The type of permissions.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::RolePermissionType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::RolePermissionType> {
         self.r#type.as_ref()
     }
 }
@@ -30,31 +30,33 @@ impl PermissionInfo {
 
 /// A builder for [`PermissionInfo`](crate::types::PermissionInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PermissionInfoBuilder {
-    pub(crate) role: std::option::Option<crate::types::RoleType>,
-    pub(crate) r#type: std::option::Option<crate::types::RolePermissionType>,
+    pub(crate) role: ::std::option::Option<crate::types::RoleType>,
+    pub(crate) r#type: ::std::option::Option<crate::types::RolePermissionType>,
 }
 impl PermissionInfoBuilder {
     /// <p>The role of the user.</p>
     pub fn role(mut self, input: crate::types::RoleType) -> Self {
-        self.role = Some(input);
+        self.role = ::std::option::Option::Some(input);
         self
     }
     /// <p>The role of the user.</p>
-    pub fn set_role(mut self, input: std::option::Option<crate::types::RoleType>) -> Self {
+    pub fn set_role(mut self, input: ::std::option::Option<crate::types::RoleType>) -> Self {
         self.role = input;
         self
     }
     /// <p>The type of permissions.</p>
     pub fn r#type(mut self, input: crate::types::RolePermissionType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of permissions.</p>
     pub fn set_type(
         mut self,
-        input: std::option::Option<crate::types::RolePermissionType>,
+        input: ::std::option::Option<crate::types::RolePermissionType>,
     ) -> Self {
         self.r#type = input;
         self

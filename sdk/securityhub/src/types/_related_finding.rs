@@ -2,22 +2,22 @@
 
 /// <p>Details about a related finding.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RelatedFinding {
     /// <p>The ARN of the product that generated a related finding.</p>
     #[doc(hidden)]
-    pub product_arn: std::option::Option<std::string::String>,
+    pub product_arn: ::std::option::Option<::std::string::String>,
     /// <p>The product-generated identifier for a related finding.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
 }
 impl RelatedFinding {
     /// <p>The ARN of the product that generated a related finding.</p>
-    pub fn product_arn(&self) -> std::option::Option<&str> {
+    pub fn product_arn(&self) -> ::std::option::Option<&str> {
         self.product_arn.as_deref()
     }
     /// <p>The product-generated identifier for a related finding.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl RelatedFinding {
 
 /// A builder for [`RelatedFinding`](crate::types::RelatedFinding).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RelatedFindingBuilder {
-    pub(crate) product_arn: std::option::Option<std::string::String>,
-    pub(crate) id: std::option::Option<std::string::String>,
+    pub(crate) product_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
 }
 impl RelatedFindingBuilder {
     /// <p>The ARN of the product that generated a related finding.</p>
-    pub fn product_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.product_arn = Some(input.into());
+    pub fn product_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.product_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the product that generated a related finding.</p>
-    pub fn set_product_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_product_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.product_arn = input;
         self
     }
     /// <p>The product-generated identifier for a related finding.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The product-generated identifier for a related finding.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }

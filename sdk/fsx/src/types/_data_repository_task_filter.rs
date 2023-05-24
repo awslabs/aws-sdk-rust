@@ -2,7 +2,7 @@
 
 /// <p>(Optional) An array of filter objects you can use to filter the response of data repository tasks you will see in the the response. You can filter the tasks returned in the response by one or more file system IDs, task lifecycles, and by task type. A filter object consists of a filter <code>Name</code>, and one or more <code>Values</code> for the filter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataRepositoryTaskFilter {
     /// <p>Name of the task property to use in filtering the tasks returned in the response.</p>
     /// <ul>
@@ -10,10 +10,10 @@ pub struct DataRepositoryTaskFilter {
     /// <li> <p>Use <code>task-lifecycle</code> to retrieve data repository tasks with one or more specific lifecycle states, as follows: CANCELED, EXECUTING, FAILED, PENDING, and SUCCEEDED.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub name: std::option::Option<crate::types::DataRepositoryTaskFilterName>,
+    pub name: ::std::option::Option<crate::types::DataRepositoryTaskFilterName>,
     /// <p>Use Values to include the specific file system IDs and task lifecycle states for the filters you are using.</p>
     #[doc(hidden)]
-    pub values: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DataRepositoryTaskFilter {
     /// <p>Name of the task property to use in filtering the tasks returned in the response.</p>
@@ -21,11 +21,11 @@ impl DataRepositoryTaskFilter {
     /// <li> <p>Use <code>file-system-id</code> to retrieve data repository tasks for specific file systems.</p> </li>
     /// <li> <p>Use <code>task-lifecycle</code> to retrieve data repository tasks with one or more specific lifecycle states, as follows: CANCELED, EXECUTING, FAILED, PENDING, and SUCCEEDED.</p> </li>
     /// </ul>
-    pub fn name(&self) -> std::option::Option<&crate::types::DataRepositoryTaskFilterName> {
+    pub fn name(&self) -> ::std::option::Option<&crate::types::DataRepositoryTaskFilterName> {
         self.name.as_ref()
     }
     /// <p>Use Values to include the specific file system IDs and task lifecycle states for the filters you are using.</p>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.values.as_deref()
     }
 }
@@ -38,10 +38,12 @@ impl DataRepositoryTaskFilter {
 
 /// A builder for [`DataRepositoryTaskFilter`](crate::types::DataRepositoryTaskFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DataRepositoryTaskFilterBuilder {
-    pub(crate) name: std::option::Option<crate::types::DataRepositoryTaskFilterName>,
-    pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) name: ::std::option::Option<crate::types::DataRepositoryTaskFilterName>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DataRepositoryTaskFilterBuilder {
     /// <p>Name of the task property to use in filtering the tasks returned in the response.</p>
@@ -50,7 +52,7 @@ impl DataRepositoryTaskFilterBuilder {
     /// <li> <p>Use <code>task-lifecycle</code> to retrieve data repository tasks with one or more specific lifecycle states, as follows: CANCELED, EXECUTING, FAILED, PENDING, and SUCCEEDED.</p> </li>
     /// </ul>
     pub fn name(mut self, input: crate::types::DataRepositoryTaskFilterName) -> Self {
-        self.name = Some(input);
+        self.name = ::std::option::Option::Some(input);
         self
     }
     /// <p>Name of the task property to use in filtering the tasks returned in the response.</p>
@@ -60,7 +62,7 @@ impl DataRepositoryTaskFilterBuilder {
     /// </ul>
     pub fn set_name(
         mut self,
-        input: std::option::Option<crate::types::DataRepositoryTaskFilterName>,
+        input: ::std::option::Option<crate::types::DataRepositoryTaskFilterName>,
     ) -> Self {
         self.name = input;
         self
@@ -70,16 +72,16 @@ impl DataRepositoryTaskFilterBuilder {
     /// To override the contents of this collection use [`set_values`](Self::set_values).
     ///
     /// <p>Use Values to include the specific file system IDs and task lifecycle states for the filters you are using.</p>
-    pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
         v.push(input.into());
-        self.values = Some(v);
+        self.values = ::std::option::Option::Some(v);
         self
     }
     /// <p>Use Values to include the specific file system IDs and task lifecycle states for the filters you are using.</p>
     pub fn set_values(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.values = input;
         self

@@ -2,22 +2,22 @@
 
 /// <p>Describes Amazon Kinesis Data Firehose logging options.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VerifiedAccessLogKinesisDataFirehoseDestinationOptions {
     /// <p>Indicates whether logging is enabled.</p>
     #[doc(hidden)]
-    pub enabled: std::option::Option<bool>,
+    pub enabled: ::std::option::Option<bool>,
     /// <p>The ID of the delivery stream.</p>
     #[doc(hidden)]
-    pub delivery_stream: std::option::Option<std::string::String>,
+    pub delivery_stream: ::std::option::Option<::std::string::String>,
 }
 impl VerifiedAccessLogKinesisDataFirehoseDestinationOptions {
     /// <p>Indicates whether logging is enabled.</p>
-    pub fn enabled(&self) -> std::option::Option<bool> {
+    pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
     /// <p>The ID of the delivery stream.</p>
-    pub fn delivery_stream(&self) -> std::option::Option<&str> {
+    pub fn delivery_stream(&self) -> ::std::option::Option<&str> {
         self.delivery_stream.as_deref()
     }
 }
@@ -31,29 +31,37 @@ impl VerifiedAccessLogKinesisDataFirehoseDestinationOptions {
 
 /// A builder for [`VerifiedAccessLogKinesisDataFirehoseDestinationOptions`](crate::types::VerifiedAccessLogKinesisDataFirehoseDestinationOptions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VerifiedAccessLogKinesisDataFirehoseDestinationOptionsBuilder {
-    pub(crate) enabled: std::option::Option<bool>,
-    pub(crate) delivery_stream: std::option::Option<std::string::String>,
+    pub(crate) enabled: ::std::option::Option<bool>,
+    pub(crate) delivery_stream: ::std::option::Option<::std::string::String>,
 }
 impl VerifiedAccessLogKinesisDataFirehoseDestinationOptionsBuilder {
     /// <p>Indicates whether logging is enabled.</p>
     pub fn enabled(mut self, input: bool) -> Self {
-        self.enabled = Some(input);
+        self.enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether logging is enabled.</p>
-    pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
     }
     /// <p>The ID of the delivery stream.</p>
-    pub fn delivery_stream(mut self, input: impl Into<std::string::String>) -> Self {
-        self.delivery_stream = Some(input.into());
+    pub fn delivery_stream(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.delivery_stream = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the delivery stream.</p>
-    pub fn set_delivery_stream(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_delivery_stream(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.delivery_stream = input;
         self
     }

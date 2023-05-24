@@ -44,13 +44,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ActionEnum {
     #[allow(missing_docs)] // documentation missing in model
@@ -72,7 +72,7 @@ pub enum ActionEnum {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ActionEnum {
+impl ::std::convert::From<&str> for ActionEnum {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVE" => ActionEnum::Active,
@@ -87,11 +87,11 @@ impl std::convert::From<&str> for ActionEnum {
         }
     }
 }
-impl std::str::FromStr for ActionEnum {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ActionEnum {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ActionEnum::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ActionEnum::from(s))
     }
 }
 impl ActionEnum {
@@ -123,7 +123,7 @@ impl ActionEnum {
         ]
     }
 }
-impl AsRef<str> for ActionEnum {
+impl ::std::convert::AsRef<str> for ActionEnum {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

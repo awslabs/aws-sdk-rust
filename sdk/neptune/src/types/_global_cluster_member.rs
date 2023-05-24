@@ -2,25 +2,25 @@
 
 /// <p> A data structure with information about any primary and secondary clusters associated with an Neptune global database. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GlobalClusterMember {
     /// <p> The Amazon Resource Name (ARN) for each Neptune cluster. </p>
     #[doc(hidden)]
-    pub db_cluster_arn: std::option::Option<std::string::String>,
+    pub db_cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon Resource Name (ARN) for each read-only secondary cluster associated with the Neptune global database. </p>
     #[doc(hidden)]
-    pub readers: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub readers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> Specifies whether the Neptune cluster is the primary cluster (that is, has read-write capability) for the Neptune global database with which it is associated. </p>
     #[doc(hidden)]
     pub is_writer: bool,
 }
 impl GlobalClusterMember {
     /// <p> The Amazon Resource Name (ARN) for each Neptune cluster. </p>
-    pub fn db_cluster_arn(&self) -> std::option::Option<&str> {
+    pub fn db_cluster_arn(&self) -> ::std::option::Option<&str> {
         self.db_cluster_arn.as_deref()
     }
     /// <p> The Amazon Resource Name (ARN) for each read-only secondary cluster associated with the Neptune global database. </p>
-    pub fn readers(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn readers(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.readers.as_deref()
     }
     /// <p> Specifies whether the Neptune cluster is the primary cluster (that is, has read-write capability) for the Neptune global database with which it is associated. </p>
@@ -37,20 +37,28 @@ impl GlobalClusterMember {
 
 /// A builder for [`GlobalClusterMember`](crate::types::GlobalClusterMember).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GlobalClusterMemberBuilder {
-    pub(crate) db_cluster_arn: std::option::Option<std::string::String>,
-    pub(crate) readers: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) is_writer: std::option::Option<bool>,
+    pub(crate) db_cluster_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) readers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) is_writer: ::std::option::Option<bool>,
 }
 impl GlobalClusterMemberBuilder {
     /// <p> The Amazon Resource Name (ARN) for each Neptune cluster. </p>
-    pub fn db_cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.db_cluster_arn = Some(input.into());
+    pub fn db_cluster_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.db_cluster_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Amazon Resource Name (ARN) for each Neptune cluster. </p>
-    pub fn set_db_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_db_cluster_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.db_cluster_arn = input;
         self
     }
@@ -59,27 +67,27 @@ impl GlobalClusterMemberBuilder {
     /// To override the contents of this collection use [`set_readers`](Self::set_readers).
     ///
     /// <p> The Amazon Resource Name (ARN) for each read-only secondary cluster associated with the Neptune global database. </p>
-    pub fn readers(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn readers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.readers.unwrap_or_default();
         v.push(input.into());
-        self.readers = Some(v);
+        self.readers = ::std::option::Option::Some(v);
         self
     }
     /// <p> The Amazon Resource Name (ARN) for each read-only secondary cluster associated with the Neptune global database. </p>
     pub fn set_readers(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.readers = input;
         self
     }
     /// <p> Specifies whether the Neptune cluster is the primary cluster (that is, has read-write capability) for the Neptune global database with which it is associated. </p>
     pub fn is_writer(mut self, input: bool) -> Self {
-        self.is_writer = Some(input);
+        self.is_writer = ::std::option::Option::Some(input);
         self
     }
     /// <p> Specifies whether the Neptune cluster is the primary cluster (that is, has read-write capability) for the Neptune global database with which it is associated. </p>
-    pub fn set_is_writer(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_writer(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_writer = input;
         self
     }

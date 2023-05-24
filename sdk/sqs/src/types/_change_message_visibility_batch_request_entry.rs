@@ -7,17 +7,17 @@
 /// <p> <code>&amp;ChangeMessageVisibilityBatchRequestEntry.1.ReceiptHandle=your_receipt_handle</code> </p>
 /// <p> <code>&amp;ChangeMessageVisibilityBatchRequestEntry.1.VisibilityTimeout=45</code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChangeMessageVisibilityBatchRequestEntry {
     /// <p>An identifier for this particular receipt handle used to communicate the result.</p> <note>
     /// <p>The <code>Id</code>s of a batch request need to be unique within a request.</p>
     /// <p>This identifier can have up to 80 characters. The following characters are accepted: alphanumeric characters, hyphens(-), and underscores (_).</p>
     /// </note>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>A receipt handle.</p>
     #[doc(hidden)]
-    pub receipt_handle: std::option::Option<std::string::String>,
+    pub receipt_handle: ::std::option::Option<::std::string::String>,
     /// <p>The new value (in seconds) for the message's visibility timeout.</p>
     #[doc(hidden)]
     pub visibility_timeout: i32,
@@ -27,11 +27,11 @@ impl ChangeMessageVisibilityBatchRequestEntry {
     /// <p>The <code>Id</code>s of a batch request need to be unique within a request.</p>
     /// <p>This identifier can have up to 80 characters. The following characters are accepted: alphanumeric characters, hyphens(-), and underscores (_).</p>
     /// </note>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>A receipt handle.</p>
-    pub fn receipt_handle(&self) -> std::option::Option<&str> {
+    pub fn receipt_handle(&self) -> ::std::option::Option<&str> {
         self.receipt_handle.as_deref()
     }
     /// <p>The new value (in seconds) for the message's visibility timeout.</p>
@@ -48,46 +48,54 @@ impl ChangeMessageVisibilityBatchRequestEntry {
 
 /// A builder for [`ChangeMessageVisibilityBatchRequestEntry`](crate::types::ChangeMessageVisibilityBatchRequestEntry).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ChangeMessageVisibilityBatchRequestEntryBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) receipt_handle: std::option::Option<std::string::String>,
-    pub(crate) visibility_timeout: std::option::Option<i32>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) receipt_handle: ::std::option::Option<::std::string::String>,
+    pub(crate) visibility_timeout: ::std::option::Option<i32>,
 }
 impl ChangeMessageVisibilityBatchRequestEntryBuilder {
     /// <p>An identifier for this particular receipt handle used to communicate the result.</p> <note>
     /// <p>The <code>Id</code>s of a batch request need to be unique within a request.</p>
     /// <p>This identifier can have up to 80 characters. The following characters are accepted: alphanumeric characters, hyphens(-), and underscores (_).</p>
     /// </note>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An identifier for this particular receipt handle used to communicate the result.</p> <note>
     /// <p>The <code>Id</code>s of a batch request need to be unique within a request.</p>
     /// <p>This identifier can have up to 80 characters. The following characters are accepted: alphanumeric characters, hyphens(-), and underscores (_).</p>
     /// </note>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>A receipt handle.</p>
-    pub fn receipt_handle(mut self, input: impl Into<std::string::String>) -> Self {
-        self.receipt_handle = Some(input.into());
+    pub fn receipt_handle(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.receipt_handle = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A receipt handle.</p>
-    pub fn set_receipt_handle(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_receipt_handle(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.receipt_handle = input;
         self
     }
     /// <p>The new value (in seconds) for the message's visibility timeout.</p>
     pub fn visibility_timeout(mut self, input: i32) -> Self {
-        self.visibility_timeout = Some(input);
+        self.visibility_timeout = ::std::option::Option::Some(input);
         self
     }
     /// <p>The new value (in seconds) for the message's visibility timeout.</p>
-    pub fn set_visibility_timeout(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_visibility_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
         self.visibility_timeout = input;
         self
     }

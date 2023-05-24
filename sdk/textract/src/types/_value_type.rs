@@ -37,13 +37,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ValueType {
     #[allow(missing_docs)] // documentation missing in model
@@ -51,7 +51,7 @@ pub enum ValueType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ValueType {
+impl ::std::convert::From<&str> for ValueType {
     fn from(s: &str) -> Self {
         match s {
             "DATE" => ValueType::Date,
@@ -59,11 +59,11 @@ impl std::convert::From<&str> for ValueType {
         }
     }
 }
-impl std::str::FromStr for ValueType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ValueType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ValueType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ValueType::from(s))
     }
 }
 impl ValueType {
@@ -79,7 +79,7 @@ impl ValueType {
         &["DATE"]
     }
 }
-impl AsRef<str> for ValueType {
+impl ::std::convert::AsRef<str> for ValueType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

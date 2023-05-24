@@ -2,22 +2,22 @@
 
 /// <p>Gets a documentation snapshot of an API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDocumentationVersionInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
-    pub rest_api_id: std::option::Option<std::string::String>,
+    pub rest_api_id: ::std::option::Option<::std::string::String>,
     /// <p>The version identifier of the to-be-retrieved documentation snapshot.</p>
     #[doc(hidden)]
-    pub documentation_version: std::option::Option<std::string::String>,
+    pub documentation_version: ::std::option::Option<::std::string::String>,
 }
 impl GetDocumentationVersionInput {
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+    pub fn rest_api_id(&self) -> ::std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
     /// <p>The version identifier of the to-be-retrieved documentation snapshot.</p>
-    pub fn documentation_version(&self) -> std::option::Option<&str> {
+    pub fn documentation_version(&self) -> ::std::option::Option<&str> {
         self.documentation_version.as_deref()
     }
 }
@@ -32,31 +32,36 @@ impl GetDocumentationVersionInput {
 
 /// A builder for [`GetDocumentationVersionInput`](crate::operation::get_documentation_version::GetDocumentationVersionInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetDocumentationVersionInputBuilder {
-    pub(crate) rest_api_id: std::option::Option<std::string::String>,
-    pub(crate) documentation_version: std::option::Option<std::string::String>,
+    pub(crate) rest_api_id: ::std::option::Option<::std::string::String>,
+    pub(crate) documentation_version: ::std::option::Option<::std::string::String>,
 }
 impl GetDocumentationVersionInputBuilder {
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.rest_api_id = Some(input.into());
+    pub fn rest_api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.rest_api_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_rest_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rest_api_id = input;
         self
     }
     /// <p>The version identifier of the to-be-retrieved documentation snapshot.</p>
-    pub fn documentation_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.documentation_version = Some(input.into());
+    pub fn documentation_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.documentation_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version identifier of the to-be-retrieved documentation snapshot.</p>
     pub fn set_documentation_version(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.documentation_version = input;
         self
@@ -64,11 +69,11 @@ impl GetDocumentationVersionInputBuilder {
     /// Consumes the builder and constructs a [`GetDocumentationVersionInput`](crate::operation::get_documentation_version::GetDocumentationVersionInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::get_documentation_version::GetDocumentationVersionInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::get_documentation_version::GetDocumentationVersionInput {
                 rest_api_id: self.rest_api_id,
                 documentation_version: self.documentation_version,

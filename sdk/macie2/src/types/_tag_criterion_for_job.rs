@@ -2,22 +2,22 @@
 
 /// <p>Specifies a tag-based condition that determines whether an S3 bucket is included or excluded from a classification job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TagCriterionForJob {
     /// <p>The operator to use in the condition. Valid values are EQ (equals) and NE (not equals).</p>
     #[doc(hidden)]
-    pub comparator: std::option::Option<crate::types::JobComparator>,
+    pub comparator: ::std::option::Option<crate::types::JobComparator>,
     /// <p>The tag keys, tag values, or tag key and value pairs to use in the condition.</p>
     #[doc(hidden)]
-    pub tag_values: std::option::Option<std::vec::Vec<crate::types::TagCriterionPairForJob>>,
+    pub tag_values: ::std::option::Option<::std::vec::Vec<crate::types::TagCriterionPairForJob>>,
 }
 impl TagCriterionForJob {
     /// <p>The operator to use in the condition. Valid values are EQ (equals) and NE (not equals).</p>
-    pub fn comparator(&self) -> std::option::Option<&crate::types::JobComparator> {
+    pub fn comparator(&self) -> ::std::option::Option<&crate::types::JobComparator> {
         self.comparator.as_ref()
     }
     /// <p>The tag keys, tag values, or tag key and value pairs to use in the condition.</p>
-    pub fn tag_values(&self) -> std::option::Option<&[crate::types::TagCriterionPairForJob]> {
+    pub fn tag_values(&self) -> ::std::option::Option<&[crate::types::TagCriterionPairForJob]> {
         self.tag_values.as_deref()
     }
 }
@@ -30,21 +30,24 @@ impl TagCriterionForJob {
 
 /// A builder for [`TagCriterionForJob`](crate::types::TagCriterionForJob).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TagCriterionForJobBuilder {
-    pub(crate) comparator: std::option::Option<crate::types::JobComparator>,
-    pub(crate) tag_values: std::option::Option<std::vec::Vec<crate::types::TagCriterionPairForJob>>,
+    pub(crate) comparator: ::std::option::Option<crate::types::JobComparator>,
+    pub(crate) tag_values:
+        ::std::option::Option<::std::vec::Vec<crate::types::TagCriterionPairForJob>>,
 }
 impl TagCriterionForJobBuilder {
     /// <p>The operator to use in the condition. Valid values are EQ (equals) and NE (not equals).</p>
     pub fn comparator(mut self, input: crate::types::JobComparator) -> Self {
-        self.comparator = Some(input);
+        self.comparator = ::std::option::Option::Some(input);
         self
     }
     /// <p>The operator to use in the condition. Valid values are EQ (equals) and NE (not equals).</p>
     pub fn set_comparator(
         mut self,
-        input: std::option::Option<crate::types::JobComparator>,
+        input: ::std::option::Option<crate::types::JobComparator>,
     ) -> Self {
         self.comparator = input;
         self
@@ -57,13 +60,13 @@ impl TagCriterionForJobBuilder {
     pub fn tag_values(mut self, input: crate::types::TagCriterionPairForJob) -> Self {
         let mut v = self.tag_values.unwrap_or_default();
         v.push(input);
-        self.tag_values = Some(v);
+        self.tag_values = ::std::option::Option::Some(v);
         self
     }
     /// <p>The tag keys, tag values, or tag key and value pairs to use in the condition.</p>
     pub fn set_tag_values(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TagCriterionPairForJob>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::TagCriterionPairForJob>>,
     ) -> Self {
         self.tag_values = input;
         self

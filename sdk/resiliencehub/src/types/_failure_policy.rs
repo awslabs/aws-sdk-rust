@@ -2,7 +2,7 @@
 
 /// <p>Defines a failure policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FailurePolicy {
     /// <p>The Recovery Time Objective (RTO), in seconds.</p>
     #[doc(hidden)]
@@ -30,29 +30,31 @@ impl FailurePolicy {
 
 /// A builder for [`FailurePolicy`](crate::types::FailurePolicy).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FailurePolicyBuilder {
-    pub(crate) rto_in_secs: std::option::Option<i32>,
-    pub(crate) rpo_in_secs: std::option::Option<i32>,
+    pub(crate) rto_in_secs: ::std::option::Option<i32>,
+    pub(crate) rpo_in_secs: ::std::option::Option<i32>,
 }
 impl FailurePolicyBuilder {
     /// <p>The Recovery Time Objective (RTO), in seconds.</p>
     pub fn rto_in_secs(mut self, input: i32) -> Self {
-        self.rto_in_secs = Some(input);
+        self.rto_in_secs = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Recovery Time Objective (RTO), in seconds.</p>
-    pub fn set_rto_in_secs(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_rto_in_secs(mut self, input: ::std::option::Option<i32>) -> Self {
         self.rto_in_secs = input;
         self
     }
     /// <p>The Recovery Point Objective (RPO), in seconds.</p>
     pub fn rpo_in_secs(mut self, input: i32) -> Self {
-        self.rpo_in_secs = Some(input);
+        self.rpo_in_secs = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Recovery Point Objective (RPO), in seconds.</p>
-    pub fn set_rpo_in_secs(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_rpo_in_secs(mut self, input: ::std::option::Option<i32>) -> Self {
         self.rpo_in_secs = input;
         self
     }

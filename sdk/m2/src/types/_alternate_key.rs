@@ -2,11 +2,11 @@
 
 /// <p>Defines an alternate key. This value is optional. A legacy data set might not have any alternate key defined but if those alternate keys definitions exist, provide them, as some applications will make use of them.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AlternateKey {
     /// <p>The name of the alternate key.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>A positive integer value representing the offset to mark the start of the alternate key part in the record byte array.</p>
     #[doc(hidden)]
     pub offset: i32,
@@ -19,7 +19,7 @@ pub struct AlternateKey {
 }
 impl AlternateKey {
     /// <p>The name of the alternate key.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>A positive integer value representing the offset to mark the start of the alternate key part in the record byte array.</p>
@@ -44,51 +44,53 @@ impl AlternateKey {
 
 /// A builder for [`AlternateKey`](crate::types::AlternateKey).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AlternateKeyBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) offset: std::option::Option<i32>,
-    pub(crate) length: std::option::Option<i32>,
-    pub(crate) allow_duplicates: std::option::Option<bool>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) offset: ::std::option::Option<i32>,
+    pub(crate) length: ::std::option::Option<i32>,
+    pub(crate) allow_duplicates: ::std::option::Option<bool>,
 }
 impl AlternateKeyBuilder {
     /// <p>The name of the alternate key.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the alternate key.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>A positive integer value representing the offset to mark the start of the alternate key part in the record byte array.</p>
     pub fn offset(mut self, input: i32) -> Self {
-        self.offset = Some(input);
+        self.offset = ::std::option::Option::Some(input);
         self
     }
     /// <p>A positive integer value representing the offset to mark the start of the alternate key part in the record byte array.</p>
-    pub fn set_offset(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_offset(mut self, input: ::std::option::Option<i32>) -> Self {
         self.offset = input;
         self
     }
     /// <p>A strictly positive integer value representing the length of the alternate key.</p>
     pub fn length(mut self, input: i32) -> Self {
-        self.length = Some(input);
+        self.length = ::std::option::Option::Some(input);
         self
     }
     /// <p>A strictly positive integer value representing the length of the alternate key.</p>
-    pub fn set_length(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_length(mut self, input: ::std::option::Option<i32>) -> Self {
         self.length = input;
         self
     }
     /// <p>Indicates whether the alternate key values are supposed to be unique for the given data set.</p>
     pub fn allow_duplicates(mut self, input: bool) -> Self {
-        self.allow_duplicates = Some(input);
+        self.allow_duplicates = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether the alternate key values are supposed to be unique for the given data set.</p>
-    pub fn set_allow_duplicates(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_allow_duplicates(mut self, input: ::std::option::Option<bool>) -> Self {
         self.allow_duplicates = input;
         self
     }

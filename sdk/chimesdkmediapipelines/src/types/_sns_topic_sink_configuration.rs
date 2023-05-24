@@ -2,20 +2,20 @@
 
 /// <p>The configuration settings for the SNS topic sink.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SnsTopicSinkConfiguration {
     /// <p>The ARN of the SNS sink.</p>
     #[doc(hidden)]
-    pub insights_target: std::option::Option<std::string::String>,
+    pub insights_target: ::std::option::Option<::std::string::String>,
 }
 impl SnsTopicSinkConfiguration {
     /// <p>The ARN of the SNS sink.</p>
-    pub fn insights_target(&self) -> std::option::Option<&str> {
+    pub fn insights_target(&self) -> ::std::option::Option<&str> {
         self.insights_target.as_deref()
     }
 }
-impl std::fmt::Debug for SnsTopicSinkConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for SnsTopicSinkConfiguration {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SnsTopicSinkConfiguration");
         formatter.field("insights_target", &"*** Sensitive Data Redacted ***");
         formatter.finish()
@@ -30,18 +30,24 @@ impl SnsTopicSinkConfiguration {
 
 /// A builder for [`SnsTopicSinkConfiguration`](crate::types::SnsTopicSinkConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct SnsTopicSinkConfigurationBuilder {
-    pub(crate) insights_target: std::option::Option<std::string::String>,
+    pub(crate) insights_target: ::std::option::Option<::std::string::String>,
 }
 impl SnsTopicSinkConfigurationBuilder {
     /// <p>The ARN of the SNS sink.</p>
-    pub fn insights_target(mut self, input: impl Into<std::string::String>) -> Self {
-        self.insights_target = Some(input.into());
+    pub fn insights_target(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.insights_target = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the SNS sink.</p>
-    pub fn set_insights_target(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_insights_target(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.insights_target = input;
         self
     }
@@ -52,8 +58,8 @@ impl SnsTopicSinkConfigurationBuilder {
         }
     }
 }
-impl std::fmt::Debug for SnsTopicSinkConfigurationBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for SnsTopicSinkConfigurationBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SnsTopicSinkConfigurationBuilder");
         formatter.field("insights_target", &"*** Sensitive Data Redacted ***");
         formatter.finish()

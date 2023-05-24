@@ -2,7 +2,7 @@
 pub(crate) fn de_mesh_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::types::MeshData>,
+    ::std::option::Option<crate::types::MeshData>,
     crate::operation::update_mesh::UpdateMeshError,
 > {
     (!body.is_empty())

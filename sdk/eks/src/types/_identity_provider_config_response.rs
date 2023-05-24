@@ -2,15 +2,15 @@
 
 /// <p>The full description of your identity configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IdentityProviderConfigResponse {
     /// <p>An object representing an OpenID Connect (OIDC) identity provider configuration.</p>
     #[doc(hidden)]
-    pub oidc: std::option::Option<crate::types::OidcIdentityProviderConfig>,
+    pub oidc: ::std::option::Option<crate::types::OidcIdentityProviderConfig>,
 }
 impl IdentityProviderConfigResponse {
     /// <p>An object representing an OpenID Connect (OIDC) identity provider configuration.</p>
-    pub fn oidc(&self) -> std::option::Option<&crate::types::OidcIdentityProviderConfig> {
+    pub fn oidc(&self) -> ::std::option::Option<&crate::types::OidcIdentityProviderConfig> {
         self.oidc.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl IdentityProviderConfigResponse {
 
 /// A builder for [`IdentityProviderConfigResponse`](crate::types::IdentityProviderConfigResponse).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct IdentityProviderConfigResponseBuilder {
-    pub(crate) oidc: std::option::Option<crate::types::OidcIdentityProviderConfig>,
+    pub(crate) oidc: ::std::option::Option<crate::types::OidcIdentityProviderConfig>,
 }
 impl IdentityProviderConfigResponseBuilder {
     /// <p>An object representing an OpenID Connect (OIDC) identity provider configuration.</p>
     pub fn oidc(mut self, input: crate::types::OidcIdentityProviderConfig) -> Self {
-        self.oidc = Some(input);
+        self.oidc = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object representing an OpenID Connect (OIDC) identity provider configuration.</p>
     pub fn set_oidc(
         mut self,
-        input: std::option::Option<crate::types::OidcIdentityProviderConfig>,
+        input: ::std::option::Option<crate::types::OidcIdentityProviderConfig>,
     ) -> Self {
         self.oidc = input;
         self

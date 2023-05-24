@@ -3,15 +3,15 @@
 /// <p>The <code>MedicalTranscript</code> associated with a <code></code>.</p>
 /// <p> <code>MedicalTranscript</code> contains <code>Results</code>, which contains a set of transcription results from one or more audio segments, along with additional information per your request parameters.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MedicalTranscript {
     /// <p>Contains a set of transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to alternative transcriptions, channel identification, partial result stabilization, language identification, and other transcription-related data.</p>
     #[doc(hidden)]
-    pub results: std::option::Option<std::vec::Vec<crate::types::MedicalResult>>,
+    pub results: ::std::option::Option<::std::vec::Vec<crate::types::MedicalResult>>,
 }
 impl MedicalTranscript {
     /// <p>Contains a set of transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to alternative transcriptions, channel identification, partial result stabilization, language identification, and other transcription-related data.</p>
-    pub fn results(&self) -> std::option::Option<&[crate::types::MedicalResult]> {
+    pub fn results(&self) -> ::std::option::Option<&[crate::types::MedicalResult]> {
         self.results.as_deref()
     }
 }
@@ -24,9 +24,11 @@ impl MedicalTranscript {
 
 /// A builder for [`MedicalTranscript`](crate::types::MedicalTranscript).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MedicalTranscriptBuilder {
-    pub(crate) results: std::option::Option<std::vec::Vec<crate::types::MedicalResult>>,
+    pub(crate) results: ::std::option::Option<::std::vec::Vec<crate::types::MedicalResult>>,
 }
 impl MedicalTranscriptBuilder {
     /// Appends an item to `results`.
@@ -37,13 +39,13 @@ impl MedicalTranscriptBuilder {
     pub fn results(mut self, input: crate::types::MedicalResult) -> Self {
         let mut v = self.results.unwrap_or_default();
         v.push(input);
-        self.results = Some(v);
+        self.results = ::std::option::Option::Some(v);
         self
     }
     /// <p>Contains a set of transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to alternative transcriptions, channel identification, partial result stabilization, language identification, and other transcription-related data.</p>
     pub fn set_results(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::MedicalResult>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::MedicalResult>>,
     ) -> Self {
         self.results = input;
         self

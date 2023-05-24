@@ -2,22 +2,22 @@
 
 /// <p>Describes a disk image volume.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DiskImageVolumeDescription {
     /// <p>The volume identifier.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The size of the volume, in GiB.</p>
     #[doc(hidden)]
-    pub size: std::option::Option<i64>,
+    pub size: ::std::option::Option<i64>,
 }
 impl DiskImageVolumeDescription {
     /// <p>The volume identifier.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The size of the volume, in GiB.</p>
-    pub fn size(&self) -> std::option::Option<i64> {
+    pub fn size(&self) -> ::std::option::Option<i64> {
         self.size
     }
 }
@@ -30,29 +30,31 @@ impl DiskImageVolumeDescription {
 
 /// A builder for [`DiskImageVolumeDescription`](crate::types::DiskImageVolumeDescription).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DiskImageVolumeDescriptionBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) size: std::option::Option<i64>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) size: ::std::option::Option<i64>,
 }
 impl DiskImageVolumeDescriptionBuilder {
     /// <p>The volume identifier.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The volume identifier.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>The size of the volume, in GiB.</p>
     pub fn size(mut self, input: i64) -> Self {
-        self.size = Some(input);
+        self.size = ::std::option::Option::Some(input);
         self
     }
     /// <p>The size of the volume, in GiB.</p>
-    pub fn set_size(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_size(mut self, input: ::std::option::Option<i64>) -> Self {
         self.size = input;
         self
     }

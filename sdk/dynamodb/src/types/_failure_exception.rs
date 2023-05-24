@@ -2,22 +2,22 @@
 
 /// <p>Represents a failure a contributor insights operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FailureException {
     /// <p>Exception name.</p>
     #[doc(hidden)]
-    pub exception_name: std::option::Option<std::string::String>,
+    pub exception_name: ::std::option::Option<::std::string::String>,
     /// <p>Description of the failure.</p>
     #[doc(hidden)]
-    pub exception_description: std::option::Option<std::string::String>,
+    pub exception_description: ::std::option::Option<::std::string::String>,
 }
 impl FailureException {
     /// <p>Exception name.</p>
-    pub fn exception_name(&self) -> std::option::Option<&str> {
+    pub fn exception_name(&self) -> ::std::option::Option<&str> {
         self.exception_name.as_deref()
     }
     /// <p>Description of the failure.</p>
-    pub fn exception_description(&self) -> std::option::Option<&str> {
+    pub fn exception_description(&self) -> ::std::option::Option<&str> {
         self.exception_description.as_deref()
     }
 }
@@ -30,31 +30,42 @@ impl FailureException {
 
 /// A builder for [`FailureException`](crate::types::FailureException).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FailureExceptionBuilder {
-    pub(crate) exception_name: std::option::Option<std::string::String>,
-    pub(crate) exception_description: std::option::Option<std::string::String>,
+    pub(crate) exception_name: ::std::option::Option<::std::string::String>,
+    pub(crate) exception_description: ::std::option::Option<::std::string::String>,
 }
 impl FailureExceptionBuilder {
     /// <p>Exception name.</p>
-    pub fn exception_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.exception_name = Some(input.into());
+    pub fn exception_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.exception_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Exception name.</p>
-    pub fn set_exception_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_exception_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.exception_name = input;
         self
     }
     /// <p>Description of the failure.</p>
-    pub fn exception_description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.exception_description = Some(input.into());
+    pub fn exception_description(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.exception_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Description of the failure.</p>
     pub fn set_exception_description(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.exception_description = input;
         self

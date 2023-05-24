@@ -3,11 +3,11 @@
 /// <p>Contains the secret managed by RDS in Amazon Web Services Secrets Manager for the master user password.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MasterUserSecret {
     /// <p>The Amazon Resource Name (ARN) of the secret.</p>
     #[doc(hidden)]
-    pub secret_arn: std::option::Option<std::string::String>,
+    pub secret_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the secret.</p>
     /// <p>The possible status values include the following:</p>
     /// <ul>
@@ -17,14 +17,14 @@ pub struct MasterUserSecret {
     /// <li> <p> <code>impaired</code> - The secret can be used to access database credentials, but it can't be rotated. A secret might have this status if, for example, permissions are changed so that RDS can no longer access either the secret or the KMS key for the secret.</p> <p>When a secret has this status, you can correct the condition that caused the status. Alternatively, modify the DB instance to turn off automatic management of database credentials, and then modify the DB instance again to turn on automatic management of database credentials.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub secret_status: std::option::Option<std::string::String>,
+    pub secret_status: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services KMS key identifier that is used to encrypt the secret.</p>
     #[doc(hidden)]
-    pub kms_key_id: std::option::Option<std::string::String>,
+    pub kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl MasterUserSecret {
     /// <p>The Amazon Resource Name (ARN) of the secret.</p>
-    pub fn secret_arn(&self) -> std::option::Option<&str> {
+    pub fn secret_arn(&self) -> ::std::option::Option<&str> {
         self.secret_arn.as_deref()
     }
     /// <p>The status of the secret.</p>
@@ -35,11 +35,11 @@ impl MasterUserSecret {
     /// <li> <p> <code>rotating</code> - The secret is being rotated.</p> </li>
     /// <li> <p> <code>impaired</code> - The secret can be used to access database credentials, but it can't be rotated. A secret might have this status if, for example, permissions are changed so that RDS can no longer access either the secret or the KMS key for the secret.</p> <p>When a secret has this status, you can correct the condition that caused the status. Alternatively, modify the DB instance to turn off automatic management of database credentials, and then modify the DB instance again to turn on automatic management of database credentials.</p> </li>
     /// </ul>
-    pub fn secret_status(&self) -> std::option::Option<&str> {
+    pub fn secret_status(&self) -> ::std::option::Option<&str> {
         self.secret_status.as_deref()
     }
     /// <p>The Amazon Web Services KMS key identifier that is used to encrypt the secret.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
 }
@@ -52,20 +52,22 @@ impl MasterUserSecret {
 
 /// A builder for [`MasterUserSecret`](crate::types::MasterUserSecret).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MasterUserSecretBuilder {
-    pub(crate) secret_arn: std::option::Option<std::string::String>,
-    pub(crate) secret_status: std::option::Option<std::string::String>,
-    pub(crate) kms_key_id: std::option::Option<std::string::String>,
+    pub(crate) secret_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) secret_status: ::std::option::Option<::std::string::String>,
+    pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl MasterUserSecretBuilder {
     /// <p>The Amazon Resource Name (ARN) of the secret.</p>
-    pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.secret_arn = Some(input.into());
+    pub fn secret_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.secret_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the secret.</p>
-    pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_secret_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secret_arn = input;
         self
     }
@@ -77,8 +79,11 @@ impl MasterUserSecretBuilder {
     /// <li> <p> <code>rotating</code> - The secret is being rotated.</p> </li>
     /// <li> <p> <code>impaired</code> - The secret can be used to access database credentials, but it can't be rotated. A secret might have this status if, for example, permissions are changed so that RDS can no longer access either the secret or the KMS key for the secret.</p> <p>When a secret has this status, you can correct the condition that caused the status. Alternatively, modify the DB instance to turn off automatic management of database credentials, and then modify the DB instance again to turn on automatic management of database credentials.</p> </li>
     /// </ul>
-    pub fn secret_status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.secret_status = Some(input.into());
+    pub fn secret_status(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.secret_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the secret.</p>
@@ -89,17 +94,20 @@ impl MasterUserSecretBuilder {
     /// <li> <p> <code>rotating</code> - The secret is being rotated.</p> </li>
     /// <li> <p> <code>impaired</code> - The secret can be used to access database credentials, but it can't be rotated. A secret might have this status if, for example, permissions are changed so that RDS can no longer access either the secret or the KMS key for the secret.</p> <p>When a secret has this status, you can correct the condition that caused the status. Alternatively, modify the DB instance to turn off automatic management of database credentials, and then modify the DB instance again to turn on automatic management of database credentials.</p> </li>
     /// </ul>
-    pub fn set_secret_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_secret_status(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.secret_status = input;
         self
     }
     /// <p>The Amazon Web Services KMS key identifier that is used to encrypt the secret.</p>
-    pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.kms_key_id = Some(input.into());
+    pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services KMS key identifier that is used to encrypt the secret.</p>
-    pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
     }

@@ -2,27 +2,27 @@
 
 /// <p>A JSON object containing the following fields:</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSnapshotOutput {
     /// <p>The Amazon Resource Name (ARN) of the volume of which the snapshot was taken.</p>
     #[doc(hidden)]
-    pub volume_arn: std::option::Option<std::string::String>,
+    pub volume_arn: ::std::option::Option<::std::string::String>,
     /// <p>The snapshot ID that is used to refer to the snapshot in future operations such as describing snapshots (Amazon Elastic Compute Cloud API <code>DescribeSnapshots</code>) or creating a volume from a snapshot (<code>CreateStorediSCSIVolume</code>).</p>
     #[doc(hidden)]
-    pub snapshot_id: std::option::Option<std::string::String>,
+    pub snapshot_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateSnapshotOutput {
     /// <p>The Amazon Resource Name (ARN) of the volume of which the snapshot was taken.</p>
-    pub fn volume_arn(&self) -> std::option::Option<&str> {
+    pub fn volume_arn(&self) -> ::std::option::Option<&str> {
         self.volume_arn.as_deref()
     }
     /// <p>The snapshot ID that is used to refer to the snapshot in future operations such as describing snapshots (Amazon Elastic Compute Cloud API <code>DescribeSnapshots</code>) or creating a volume from a snapshot (<code>CreateStorediSCSIVolume</code>).</p>
-    pub fn snapshot_id(&self) -> std::option::Option<&str> {
+    pub fn snapshot_id(&self) -> ::std::option::Option<&str> {
         self.snapshot_id.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for CreateSnapshotOutput {
+impl ::aws_http::request_id::RequestId for CreateSnapshotOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -36,30 +36,32 @@ impl CreateSnapshotOutput {
 
 /// A builder for [`CreateSnapshotOutput`](crate::operation::create_snapshot::CreateSnapshotOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateSnapshotOutputBuilder {
-    pub(crate) volume_arn: std::option::Option<std::string::String>,
-    pub(crate) snapshot_id: std::option::Option<std::string::String>,
+    pub(crate) volume_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) snapshot_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateSnapshotOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the volume of which the snapshot was taken.</p>
-    pub fn volume_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.volume_arn = Some(input.into());
+    pub fn volume_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.volume_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the volume of which the snapshot was taken.</p>
-    pub fn set_volume_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_volume_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.volume_arn = input;
         self
     }
     /// <p>The snapshot ID that is used to refer to the snapshot in future operations such as describing snapshots (Amazon Elastic Compute Cloud API <code>DescribeSnapshots</code>) or creating a volume from a snapshot (<code>CreateStorediSCSIVolume</code>).</p>
-    pub fn snapshot_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.snapshot_id = Some(input.into());
+    pub fn snapshot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.snapshot_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The snapshot ID that is used to refer to the snapshot in future operations such as describing snapshots (Amazon Elastic Compute Cloud API <code>DescribeSnapshots</code>) or creating a volume from a snapshot (<code>CreateStorediSCSIVolume</code>).</p>
-    pub fn set_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_snapshot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_id = input;
         self
     }

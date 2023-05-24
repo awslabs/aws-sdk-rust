@@ -2,15 +2,15 @@
 
 /// <p>Display options related to tiles on a sheet.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TileStyle {
     /// <p>The border around a tile.</p>
     #[doc(hidden)]
-    pub border: std::option::Option<crate::types::BorderStyle>,
+    pub border: ::std::option::Option<crate::types::BorderStyle>,
 }
 impl TileStyle {
     /// <p>The border around a tile.</p>
-    pub fn border(&self) -> std::option::Option<&crate::types::BorderStyle> {
+    pub fn border(&self) -> ::std::option::Option<&crate::types::BorderStyle> {
         self.border.as_ref()
     }
 }
@@ -23,18 +23,20 @@ impl TileStyle {
 
 /// A builder for [`TileStyle`](crate::types::TileStyle).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TileStyleBuilder {
-    pub(crate) border: std::option::Option<crate::types::BorderStyle>,
+    pub(crate) border: ::std::option::Option<crate::types::BorderStyle>,
 }
 impl TileStyleBuilder {
     /// <p>The border around a tile.</p>
     pub fn border(mut self, input: crate::types::BorderStyle) -> Self {
-        self.border = Some(input);
+        self.border = ::std::option::Option::Some(input);
         self
     }
     /// <p>The border around a tile.</p>
-    pub fn set_border(mut self, input: std::option::Option<crate::types::BorderStyle>) -> Self {
+    pub fn set_border(mut self, input: ::std::option::Option<crate::types::BorderStyle>) -> Self {
         self.border = input;
         self
     }

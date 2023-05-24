@@ -6,56 +6,59 @@ pub use crate::operation::delete_trust::_delete_trust_input::DeleteTrustInputBui
 /// Fluent builder constructing a request to `DeleteTrust`.
 ///
 /// <p>Deletes an existing trust relationship between your Managed Microsoft AD directory and an external domain.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteTrustFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::delete_trust::builders::DeleteTrustInputBuilder,
 }
 impl DeleteTrustFluentBuilder {
     /// Creates a new `DeleteTrust`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::delete_trust::DeleteTrust,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::delete_trust::DeleteTrustError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_trust::DeleteTrustError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::delete_trust::DeleteTrustOutput,
-        aws_smithy_http::result::SdkError<crate::operation::delete_trust::DeleteTrustError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_trust::DeleteTrustError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,19 +71,19 @@ impl DeleteTrustFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::delete_trust::DeleteTrustOutput,
-        aws_smithy_http::result::SdkError<crate::operation::delete_trust::DeleteTrustError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_trust::DeleteTrustError>,
     > {
         self.send_middleware().await
     }
     /// <p>The Trust ID of the trust relationship to be deleted.</p>
-    pub fn trust_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn trust_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.trust_id(input.into());
         self
     }
     /// <p>The Trust ID of the trust relationship to be deleted.</p>
-    pub fn set_trust_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_trust_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_trust_id(input);
         self
     }
@@ -92,7 +95,7 @@ impl DeleteTrustFluentBuilder {
     /// <p>Delete a conditional forwarder as part of a DeleteTrustRequest.</p>
     pub fn set_delete_associated_conditional_forwarder(
         mut self,
-        input: std::option::Option<bool>,
+        input: ::std::option::Option<bool>,
     ) -> Self {
         self.inner = self
             .inner

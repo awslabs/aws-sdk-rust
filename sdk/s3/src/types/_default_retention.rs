@@ -7,11 +7,11 @@
 /// </ul>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DefaultRetention {
     /// <p>The default Object Lock retention mode you want to apply to new objects placed in the specified bucket. Must be used with either <code>Days</code> or <code>Years</code>.</p>
     #[doc(hidden)]
-    pub mode: std::option::Option<crate::types::ObjectLockRetentionMode>,
+    pub mode: ::std::option::Option<crate::types::ObjectLockRetentionMode>,
     /// <p>The number of days that you want to specify for the default retention period. Must be used with <code>Mode</code>.</p>
     #[doc(hidden)]
     pub days: i32,
@@ -21,7 +21,7 @@ pub struct DefaultRetention {
 }
 impl DefaultRetention {
     /// <p>The default Object Lock retention mode you want to apply to new objects placed in the specified bucket. Must be used with either <code>Days</code> or <code>Years</code>.</p>
-    pub fn mode(&self) -> std::option::Option<&crate::types::ObjectLockRetentionMode> {
+    pub fn mode(&self) -> ::std::option::Option<&crate::types::ObjectLockRetentionMode> {
         self.mode.as_ref()
     }
     /// <p>The number of days that you want to specify for the default retention period. Must be used with <code>Mode</code>.</p>
@@ -42,43 +42,45 @@ impl DefaultRetention {
 
 /// A builder for [`DefaultRetention`](crate::types::DefaultRetention).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DefaultRetentionBuilder {
-    pub(crate) mode: std::option::Option<crate::types::ObjectLockRetentionMode>,
-    pub(crate) days: std::option::Option<i32>,
-    pub(crate) years: std::option::Option<i32>,
+    pub(crate) mode: ::std::option::Option<crate::types::ObjectLockRetentionMode>,
+    pub(crate) days: ::std::option::Option<i32>,
+    pub(crate) years: ::std::option::Option<i32>,
 }
 impl DefaultRetentionBuilder {
     /// <p>The default Object Lock retention mode you want to apply to new objects placed in the specified bucket. Must be used with either <code>Days</code> or <code>Years</code>.</p>
     pub fn mode(mut self, input: crate::types::ObjectLockRetentionMode) -> Self {
-        self.mode = Some(input);
+        self.mode = ::std::option::Option::Some(input);
         self
     }
     /// <p>The default Object Lock retention mode you want to apply to new objects placed in the specified bucket. Must be used with either <code>Days</code> or <code>Years</code>.</p>
     pub fn set_mode(
         mut self,
-        input: std::option::Option<crate::types::ObjectLockRetentionMode>,
+        input: ::std::option::Option<crate::types::ObjectLockRetentionMode>,
     ) -> Self {
         self.mode = input;
         self
     }
     /// <p>The number of days that you want to specify for the default retention period. Must be used with <code>Mode</code>.</p>
     pub fn days(mut self, input: i32) -> Self {
-        self.days = Some(input);
+        self.days = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of days that you want to specify for the default retention period. Must be used with <code>Mode</code>.</p>
-    pub fn set_days(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_days(mut self, input: ::std::option::Option<i32>) -> Self {
         self.days = input;
         self
     }
     /// <p>The number of years that you want to specify for the default retention period. Must be used with <code>Mode</code>.</p>
     pub fn years(mut self, input: i32) -> Self {
-        self.years = Some(input);
+        self.years = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of years that you want to specify for the default retention period. Must be used with <code>Mode</code>.</p>
-    pub fn set_years(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_years(mut self, input: ::std::option::Option<i32>) -> Self {
         self.years = input;
         self
     }

@@ -2,22 +2,22 @@
 
 /// <p>Specifies metric-based criteria for including or excluding endpoints from a segment. These criteria derive from custom metrics that you define for endpoints.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetricDimension {
     /// <p>The operator to use when comparing metric values. Valid values are: GREATER_THAN, LESS_THAN, GREATER_THAN_OR_EQUAL, LESS_THAN_OR_EQUAL, and EQUAL.</p>
     #[doc(hidden)]
-    pub comparison_operator: std::option::Option<std::string::String>,
+    pub comparison_operator: ::std::option::Option<::std::string::String>,
     /// <p>The value to compare.</p>
     #[doc(hidden)]
-    pub value: std::option::Option<f64>,
+    pub value: ::std::option::Option<f64>,
 }
 impl MetricDimension {
     /// <p>The operator to use when comparing metric values. Valid values are: GREATER_THAN, LESS_THAN, GREATER_THAN_OR_EQUAL, LESS_THAN_OR_EQUAL, and EQUAL.</p>
-    pub fn comparison_operator(&self) -> std::option::Option<&str> {
+    pub fn comparison_operator(&self) -> ::std::option::Option<&str> {
         self.comparison_operator.as_deref()
     }
     /// <p>The value to compare.</p>
-    pub fn value(&self) -> std::option::Option<f64> {
+    pub fn value(&self) -> ::std::option::Option<f64> {
         self.value
     }
 }
@@ -30,32 +30,37 @@ impl MetricDimension {
 
 /// A builder for [`MetricDimension`](crate::types::MetricDimension).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MetricDimensionBuilder {
-    pub(crate) comparison_operator: std::option::Option<std::string::String>,
-    pub(crate) value: std::option::Option<f64>,
+    pub(crate) comparison_operator: ::std::option::Option<::std::string::String>,
+    pub(crate) value: ::std::option::Option<f64>,
 }
 impl MetricDimensionBuilder {
     /// <p>The operator to use when comparing metric values. Valid values are: GREATER_THAN, LESS_THAN, GREATER_THAN_OR_EQUAL, LESS_THAN_OR_EQUAL, and EQUAL.</p>
-    pub fn comparison_operator(mut self, input: impl Into<std::string::String>) -> Self {
-        self.comparison_operator = Some(input.into());
+    pub fn comparison_operator(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.comparison_operator = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The operator to use when comparing metric values. Valid values are: GREATER_THAN, LESS_THAN, GREATER_THAN_OR_EQUAL, LESS_THAN_OR_EQUAL, and EQUAL.</p>
     pub fn set_comparison_operator(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.comparison_operator = input;
         self
     }
     /// <p>The value to compare.</p>
     pub fn value(mut self, input: f64) -> Self {
-        self.value = Some(input);
+        self.value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The value to compare.</p>
-    pub fn set_value(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.value = input;
         self
     }

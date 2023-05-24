@@ -48,13 +48,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum AmiTypes {
     #[allow(missing_docs)] // documentation missing in model
@@ -84,7 +84,7 @@ pub enum AmiTypes {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for AmiTypes {
+impl ::std::convert::From<&str> for AmiTypes {
     fn from(s: &str) -> Self {
         match s {
             "AL2_ARM_64" => AmiTypes::Al2Arm64,
@@ -103,11 +103,11 @@ impl std::convert::From<&str> for AmiTypes {
         }
     }
 }
-impl std::str::FromStr for AmiTypes {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for AmiTypes {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AmiTypes::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(AmiTypes::from(s))
     }
 }
 impl AmiTypes {
@@ -147,7 +147,7 @@ impl AmiTypes {
         ]
     }
 }
-impl AsRef<str> for AmiTypes {
+impl ::std::convert::AsRef<str> for AmiTypes {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

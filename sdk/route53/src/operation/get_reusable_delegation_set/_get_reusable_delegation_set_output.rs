@@ -2,20 +2,20 @@
 
 /// <p>A complex type that contains the response to the <code>GetReusableDelegationSet</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetReusableDelegationSetOutput {
     /// <p>A complex type that contains information about the reusable delegation set.</p>
     #[doc(hidden)]
-    pub delegation_set: std::option::Option<crate::types::DelegationSet>,
+    pub delegation_set: ::std::option::Option<crate::types::DelegationSet>,
     _request_id: Option<String>,
 }
 impl GetReusableDelegationSetOutput {
     /// <p>A complex type that contains information about the reusable delegation set.</p>
-    pub fn delegation_set(&self) -> std::option::Option<&crate::types::DelegationSet> {
+    pub fn delegation_set(&self) -> ::std::option::Option<&crate::types::DelegationSet> {
         self.delegation_set.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for GetReusableDelegationSetOutput {
+impl ::aws_http::request_id::RequestId for GetReusableDelegationSetOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,21 +29,23 @@ impl GetReusableDelegationSetOutput {
 
 /// A builder for [`GetReusableDelegationSetOutput`](crate::operation::get_reusable_delegation_set::GetReusableDelegationSetOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetReusableDelegationSetOutputBuilder {
-    pub(crate) delegation_set: std::option::Option<crate::types::DelegationSet>,
+    pub(crate) delegation_set: ::std::option::Option<crate::types::DelegationSet>,
     _request_id: Option<String>,
 }
 impl GetReusableDelegationSetOutputBuilder {
     /// <p>A complex type that contains information about the reusable delegation set.</p>
     pub fn delegation_set(mut self, input: crate::types::DelegationSet) -> Self {
-        self.delegation_set = Some(input);
+        self.delegation_set = ::std::option::Option::Some(input);
         self
     }
     /// <p>A complex type that contains information about the reusable delegation set.</p>
     pub fn set_delegation_set(
         mut self,
-        input: std::option::Option<crate::types::DelegationSet>,
+        input: ::std::option::Option<crate::types::DelegationSet>,
     ) -> Self {
         self.delegation_set = input;
         self

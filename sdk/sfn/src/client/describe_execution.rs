@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeExecution`](crate::operation::describe_execution::builders::DescribeExecutionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`execution_arn(impl Into<String>)`](crate::operation::describe_execution::builders::DescribeExecutionFluentBuilder::execution_arn) / [`set_execution_arn(Option<String>)`](crate::operation::describe_execution::builders::DescribeExecutionFluentBuilder::set_execution_arn): <p>The Amazon Resource Name (ARN) of the execution to describe.</p>
+    ///   - [`execution_arn(impl ::std::convert::Into<String>)`](crate::operation::describe_execution::builders::DescribeExecutionFluentBuilder::execution_arn) / [`set_execution_arn(Option<String>)`](crate::operation::describe_execution::builders::DescribeExecutionFluentBuilder::set_execution_arn): <p>The Amazon Resource Name (ARN) of the execution to describe.</p>
     /// - On success, responds with [`DescribeExecutionOutput`](crate::operation::describe_execution::DescribeExecutionOutput) with field(s):
     ///   - [`execution_arn(Option<String>)`](crate::operation::describe_execution::DescribeExecutionOutput::execution_arn): <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
     ///   - [`state_machine_arn(Option<String>)`](crate::operation::describe_execution::DescribeExecutionOutput::state_machine_arn): <p>The Amazon Resource Name (ARN) of the executed stated machine.</p>

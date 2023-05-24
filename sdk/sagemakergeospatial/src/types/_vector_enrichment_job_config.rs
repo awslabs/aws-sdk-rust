@@ -2,7 +2,7 @@
 
 /// <p>It contains configs such as ReverseGeocodingConfig and MapMatchingConfig.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum VectorEnrichmentJobConfig {
     /// <p>The input structure for Map Matching operation type.</p>
     MapMatchingConfig(crate::types::MapMatchingConfig),
@@ -23,11 +23,11 @@ impl VectorEnrichmentJobConfig {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_map_matching_config(
         &self,
-    ) -> std::result::Result<&crate::types::MapMatchingConfig, &Self> {
+    ) -> ::std::result::Result<&crate::types::MapMatchingConfig, &Self> {
         if let VectorEnrichmentJobConfig::MapMatchingConfig(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`MapMatchingConfig`](crate::types::VectorEnrichmentJobConfig::MapMatchingConfig).
@@ -38,11 +38,11 @@ impl VectorEnrichmentJobConfig {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_reverse_geocoding_config(
         &self,
-    ) -> std::result::Result<&crate::types::ReverseGeocodingConfig, &Self> {
+    ) -> ::std::result::Result<&crate::types::ReverseGeocodingConfig, &Self> {
         if let VectorEnrichmentJobConfig::ReverseGeocodingConfig(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`ReverseGeocodingConfig`](crate::types::VectorEnrichmentJobConfig::ReverseGeocodingConfig).

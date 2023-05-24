@@ -2,11 +2,11 @@
 
 /// <p>Contains the results of the <code>RestoreFromSnapshot</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RestoreFromSnapshotOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for RestoreFromSnapshotOutput {
+impl ::aws_http::request_id::RequestId for RestoreFromSnapshotOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -22,7 +22,9 @@ impl RestoreFromSnapshotOutput {
 
 /// A builder for [`RestoreFromSnapshotOutput`](crate::operation::restore_from_snapshot::RestoreFromSnapshotOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RestoreFromSnapshotOutputBuilder {
     _request_id: Option<String>,
 }

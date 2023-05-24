@@ -2,17 +2,17 @@
 
 /// <p>The input for the SetLoggingOptions operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SetLoggingOptionsInput {
     /// <p>The logging options payload.</p>
     #[doc(hidden)]
-    pub logging_options_payload: std::option::Option<crate::types::LoggingOptionsPayload>,
+    pub logging_options_payload: ::std::option::Option<crate::types::LoggingOptionsPayload>,
 }
 impl SetLoggingOptionsInput {
     /// <p>The logging options payload.</p>
     pub fn logging_options_payload(
         &self,
-    ) -> std::option::Option<&crate::types::LoggingOptionsPayload> {
+    ) -> ::std::option::Option<&crate::types::LoggingOptionsPayload> {
         self.logging_options_payload.as_ref()
     }
 }
@@ -26,20 +26,22 @@ impl SetLoggingOptionsInput {
 
 /// A builder for [`SetLoggingOptionsInput`](crate::operation::set_logging_options::SetLoggingOptionsInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SetLoggingOptionsInputBuilder {
-    pub(crate) logging_options_payload: std::option::Option<crate::types::LoggingOptionsPayload>,
+    pub(crate) logging_options_payload: ::std::option::Option<crate::types::LoggingOptionsPayload>,
 }
 impl SetLoggingOptionsInputBuilder {
     /// <p>The logging options payload.</p>
     pub fn logging_options_payload(mut self, input: crate::types::LoggingOptionsPayload) -> Self {
-        self.logging_options_payload = Some(input);
+        self.logging_options_payload = ::std::option::Option::Some(input);
         self
     }
     /// <p>The logging options payload.</p>
     pub fn set_logging_options_payload(
         mut self,
-        input: std::option::Option<crate::types::LoggingOptionsPayload>,
+        input: ::std::option::Option<crate::types::LoggingOptionsPayload>,
     ) -> Self {
         self.logging_options_payload = input;
         self
@@ -47,11 +49,11 @@ impl SetLoggingOptionsInputBuilder {
     /// Consumes the builder and constructs a [`SetLoggingOptionsInput`](crate::operation::set_logging_options::SetLoggingOptionsInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::set_logging_options::SetLoggingOptionsInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::set_logging_options::SetLoggingOptionsInput {
                 logging_options_payload: self.logging_options_payload,
             },

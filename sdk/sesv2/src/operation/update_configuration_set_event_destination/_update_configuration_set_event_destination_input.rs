@@ -2,31 +2,31 @@
 
 /// <p>A request to change the settings for an event destination for a configuration set.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateConfigurationSetEventDestinationInput {
     /// <p>The name of the configuration set that contains the event destination to modify.</p>
     #[doc(hidden)]
-    pub configuration_set_name: std::option::Option<std::string::String>,
+    pub configuration_set_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the event destination.</p>
     #[doc(hidden)]
-    pub event_destination_name: std::option::Option<std::string::String>,
+    pub event_destination_name: ::std::option::Option<::std::string::String>,
     /// <p>An object that defines the event destination.</p>
     #[doc(hidden)]
-    pub event_destination: std::option::Option<crate::types::EventDestinationDefinition>,
+    pub event_destination: ::std::option::Option<crate::types::EventDestinationDefinition>,
 }
 impl UpdateConfigurationSetEventDestinationInput {
     /// <p>The name of the configuration set that contains the event destination to modify.</p>
-    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+    pub fn configuration_set_name(&self) -> ::std::option::Option<&str> {
         self.configuration_set_name.as_deref()
     }
     /// <p>The name of the event destination.</p>
-    pub fn event_destination_name(&self) -> std::option::Option<&str> {
+    pub fn event_destination_name(&self) -> ::std::option::Option<&str> {
         self.event_destination_name.as_deref()
     }
     /// <p>An object that defines the event destination.</p>
     pub fn event_destination(
         &self,
-    ) -> std::option::Option<&crate::types::EventDestinationDefinition> {
+    ) -> ::std::option::Option<&crate::types::EventDestinationDefinition> {
         self.event_destination.as_ref()
     }
 }
@@ -39,55 +39,63 @@ impl UpdateConfigurationSetEventDestinationInput {
 
 /// A builder for [`UpdateConfigurationSetEventDestinationInput`](crate::operation::update_configuration_set_event_destination::UpdateConfigurationSetEventDestinationInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateConfigurationSetEventDestinationInputBuilder {
-    pub(crate) configuration_set_name: std::option::Option<std::string::String>,
-    pub(crate) event_destination_name: std::option::Option<std::string::String>,
-    pub(crate) event_destination: std::option::Option<crate::types::EventDestinationDefinition>,
+    pub(crate) configuration_set_name: ::std::option::Option<::std::string::String>,
+    pub(crate) event_destination_name: ::std::option::Option<::std::string::String>,
+    pub(crate) event_destination: ::std::option::Option<crate::types::EventDestinationDefinition>,
 }
 impl UpdateConfigurationSetEventDestinationInputBuilder {
     /// <p>The name of the configuration set that contains the event destination to modify.</p>
-    pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.configuration_set_name = Some(input.into());
+    pub fn configuration_set_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.configuration_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the configuration set that contains the event destination to modify.</p>
     pub fn set_configuration_set_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.configuration_set_name = input;
         self
     }
     /// <p>The name of the event destination.</p>
-    pub fn event_destination_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.event_destination_name = Some(input.into());
+    pub fn event_destination_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.event_destination_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the event destination.</p>
     pub fn set_event_destination_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.event_destination_name = input;
         self
     }
     /// <p>An object that defines the event destination.</p>
     pub fn event_destination(mut self, input: crate::types::EventDestinationDefinition) -> Self {
-        self.event_destination = Some(input);
+        self.event_destination = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that defines the event destination.</p>
     pub fn set_event_destination(
         mut self,
-        input: std::option::Option<crate::types::EventDestinationDefinition>,
+        input: ::std::option::Option<crate::types::EventDestinationDefinition>,
     ) -> Self {
         self.event_destination = input;
         self
     }
     /// Consumes the builder and constructs a [`UpdateConfigurationSetEventDestinationInput`](crate::operation::update_configuration_set_event_destination::UpdateConfigurationSetEventDestinationInput).
-    pub fn build(self) -> Result<crate::operation::update_configuration_set_event_destination::UpdateConfigurationSetEventDestinationInput, aws_smithy_http::operation::error::BuildError>{
-        Ok(
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_configuration_set_event_destination::UpdateConfigurationSetEventDestinationInput, ::aws_smithy_http::operation::error::BuildError>{
+        ::std::result::Result::Ok(
             crate::operation::update_configuration_set_event_destination::UpdateConfigurationSetEventDestinationInput {
                 configuration_set_name: self.configuration_set_name
                 ,

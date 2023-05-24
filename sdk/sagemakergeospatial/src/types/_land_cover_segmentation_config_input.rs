@@ -2,7 +2,7 @@
 
 /// <p>The input structure for Land Cover Operation type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LandCoverSegmentationConfigInput {}
 impl LandCoverSegmentationConfigInput {
     /// Creates a new builder-style object to manufacture [`LandCoverSegmentationConfigInput`](crate::types::LandCoverSegmentationConfigInput).
@@ -13,7 +13,9 @@ impl LandCoverSegmentationConfigInput {
 
 /// A builder for [`LandCoverSegmentationConfigInput`](crate::types::LandCoverSegmentationConfigInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LandCoverSegmentationConfigInputBuilder {}
 impl LandCoverSegmentationConfigInputBuilder {
     /// Consumes the builder and constructs a [`LandCoverSegmentationConfigInput`](crate::types::LandCoverSegmentationConfigInput).

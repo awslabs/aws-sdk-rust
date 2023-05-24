@@ -2,29 +2,29 @@
 
 /// <p> Defines the action that the bot executes at runtime when the conversation reaches this step.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DialogAction {
     /// <p>The action that the bot should execute. </p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::DialogActionType>,
+    pub r#type: ::std::option::Option<crate::types::DialogActionType>,
     /// <p>If the dialog action is <code>ElicitSlot</code>, defines the slot to elicit from the user.</p>
     #[doc(hidden)]
-    pub slot_to_elicit: std::option::Option<std::string::String>,
+    pub slot_to_elicit: ::std::option::Option<::std::string::String>,
     /// <p>When true the next message for the intent is not used.</p>
     #[doc(hidden)]
-    pub suppress_next_message: std::option::Option<bool>,
+    pub suppress_next_message: ::std::option::Option<bool>,
 }
 impl DialogAction {
     /// <p>The action that the bot should execute. </p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::DialogActionType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::DialogActionType> {
         self.r#type.as_ref()
     }
     /// <p>If the dialog action is <code>ElicitSlot</code>, defines the slot to elicit from the user.</p>
-    pub fn slot_to_elicit(&self) -> std::option::Option<&str> {
+    pub fn slot_to_elicit(&self) -> ::std::option::Option<&str> {
         self.slot_to_elicit.as_deref()
     }
     /// <p>When true the next message for the intent is not used.</p>
-    pub fn suppress_next_message(&self) -> std::option::Option<bool> {
+    pub fn suppress_next_message(&self) -> ::std::option::Option<bool> {
         self.suppress_next_message
     }
 }
@@ -37,40 +37,51 @@ impl DialogAction {
 
 /// A builder for [`DialogAction`](crate::types::DialogAction).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DialogActionBuilder {
-    pub(crate) r#type: std::option::Option<crate::types::DialogActionType>,
-    pub(crate) slot_to_elicit: std::option::Option<std::string::String>,
-    pub(crate) suppress_next_message: std::option::Option<bool>,
+    pub(crate) r#type: ::std::option::Option<crate::types::DialogActionType>,
+    pub(crate) slot_to_elicit: ::std::option::Option<::std::string::String>,
+    pub(crate) suppress_next_message: ::std::option::Option<bool>,
 }
 impl DialogActionBuilder {
     /// <p>The action that the bot should execute. </p>
     pub fn r#type(mut self, input: crate::types::DialogActionType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The action that the bot should execute. </p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::DialogActionType>) -> Self {
+    pub fn set_type(
+        mut self,
+        input: ::std::option::Option<crate::types::DialogActionType>,
+    ) -> Self {
         self.r#type = input;
         self
     }
     /// <p>If the dialog action is <code>ElicitSlot</code>, defines the slot to elicit from the user.</p>
-    pub fn slot_to_elicit(mut self, input: impl Into<std::string::String>) -> Self {
-        self.slot_to_elicit = Some(input.into());
+    pub fn slot_to_elicit(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.slot_to_elicit = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the dialog action is <code>ElicitSlot</code>, defines the slot to elicit from the user.</p>
-    pub fn set_slot_to_elicit(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_slot_to_elicit(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.slot_to_elicit = input;
         self
     }
     /// <p>When true the next message for the intent is not used.</p>
     pub fn suppress_next_message(mut self, input: bool) -> Self {
-        self.suppress_next_message = Some(input);
+        self.suppress_next_message = ::std::option::Option::Some(input);
         self
     }
     /// <p>When true the next message for the intent is not used.</p>
-    pub fn set_suppress_next_message(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_suppress_next_message(mut self, input: ::std::option::Option<bool>) -> Self {
         self.suppress_next_message = input;
         self
     }

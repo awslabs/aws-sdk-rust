@@ -2,22 +2,22 @@
 
 /// A Microsoft Smooth Streaming (MSS) manifest configuration.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MssManifest {
     /// An optional string to include in the name of the manifest.
     #[doc(hidden)]
-    pub manifest_name: std::option::Option<std::string::String>,
+    pub manifest_name: ::std::option::Option<::std::string::String>,
     /// A StreamSelection configuration.
     #[doc(hidden)]
-    pub stream_selection: std::option::Option<crate::types::StreamSelection>,
+    pub stream_selection: ::std::option::Option<crate::types::StreamSelection>,
 }
 impl MssManifest {
     /// An optional string to include in the name of the manifest.
-    pub fn manifest_name(&self) -> std::option::Option<&str> {
+    pub fn manifest_name(&self) -> ::std::option::Option<&str> {
         self.manifest_name.as_deref()
     }
     /// A StreamSelection configuration.
-    pub fn stream_selection(&self) -> std::option::Option<&crate::types::StreamSelection> {
+    pub fn stream_selection(&self) -> ::std::option::Option<&crate::types::StreamSelection> {
         self.stream_selection.as_ref()
     }
 }
@@ -30,31 +30,39 @@ impl MssManifest {
 
 /// A builder for [`MssManifest`](crate::types::MssManifest).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MssManifestBuilder {
-    pub(crate) manifest_name: std::option::Option<std::string::String>,
-    pub(crate) stream_selection: std::option::Option<crate::types::StreamSelection>,
+    pub(crate) manifest_name: ::std::option::Option<::std::string::String>,
+    pub(crate) stream_selection: ::std::option::Option<crate::types::StreamSelection>,
 }
 impl MssManifestBuilder {
     /// An optional string to include in the name of the manifest.
-    pub fn manifest_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.manifest_name = Some(input.into());
+    pub fn manifest_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.manifest_name = ::std::option::Option::Some(input.into());
         self
     }
     /// An optional string to include in the name of the manifest.
-    pub fn set_manifest_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_manifest_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.manifest_name = input;
         self
     }
     /// A StreamSelection configuration.
     pub fn stream_selection(mut self, input: crate::types::StreamSelection) -> Self {
-        self.stream_selection = Some(input);
+        self.stream_selection = ::std::option::Option::Some(input);
         self
     }
     /// A StreamSelection configuration.
     pub fn set_stream_selection(
         mut self,
-        input: std::option::Option<crate::types::StreamSelection>,
+        input: ::std::option::Option<crate::types::StreamSelection>,
     ) -> Self {
         self.stream_selection = input;
         self

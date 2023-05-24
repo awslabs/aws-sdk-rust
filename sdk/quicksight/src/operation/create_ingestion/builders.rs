@@ -7,56 +7,63 @@ pub use crate::operation::create_ingestion::_create_ingestion_input::CreateInges
 ///
 /// <p>Creates and starts a new SPICE ingestion for a dataset. You can manually refresh datasets in an Enterprise edition account 32 times in a 24-hour period. You can manually refresh datasets in a Standard edition account 8 times in a 24-hour period. Each 24-hour period is measured starting 24 hours before the current date and time.</p>
 /// <p>Any ingestions operating on tagged datasets inherit the same tags automatically for use in access control. For an example, see <a href="http://aws.amazon.com/premiumsupport/knowledge-center/iam-ec2-resource-tags/">How do I create an IAM policy to control access to Amazon EC2 resources using tags?</a> in the Amazon Web Services Knowledge Center. Tags are visible on the tagged dataset, but not on the ingestion resource.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateIngestionFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_ingestion::builders::CreateIngestionInputBuilder,
 }
 impl CreateIngestionFluentBuilder {
     /// Creates a new `CreateIngestion`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_ingestion::CreateIngestion,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_ingestion::CreateIngestionError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_ingestion::CreateIngestionError,
+        >,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_ingestion::CreateIngestionOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_ingestion::CreateIngestionError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_ingestion::CreateIngestionError,
+        >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -69,39 +76,47 @@ impl CreateIngestionFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_ingestion::CreateIngestionOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_ingestion::CreateIngestionError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_ingestion::CreateIngestionError,
+        >,
     > {
         self.send_middleware().await
     }
     /// <p>The ID of the dataset used in the ingestion.</p>
-    pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn data_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.data_set_id(input.into());
         self
     }
     /// <p>The ID of the dataset used in the ingestion.</p>
-    pub fn set_data_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_data_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_data_set_id(input);
         self
     }
     /// <p>An ID for the ingestion.</p>
-    pub fn ingestion_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn ingestion_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ingestion_id(input.into());
         self
     }
     /// <p>An ID for the ingestion.</p>
-    pub fn set_ingestion_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ingestion_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ingestion_id(input);
         self
     }
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn aws_account_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn set_aws_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_aws_account_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
@@ -113,7 +128,7 @@ impl CreateIngestionFluentBuilder {
     /// <p>The type of ingestion that you want to create.</p>
     pub fn set_ingestion_type(
         mut self,
-        input: std::option::Option<crate::types::IngestionType>,
+        input: ::std::option::Option<crate::types::IngestionType>,
     ) -> Self {
         self.inner = self.inner.set_ingestion_type(input);
         self

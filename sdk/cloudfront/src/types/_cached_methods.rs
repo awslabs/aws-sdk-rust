@@ -7,22 +7,22 @@
 /// </ul>
 /// <p>If you pick the second choice for your Amazon S3 Origin, you may need to forward Access-Control-Request-Method, Access-Control-Request-Headers, and Origin headers for the responses to be cached correctly.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CachedMethods {
     /// <p>The number of HTTP methods for which you want CloudFront to cache responses. Valid values are <code>2</code> (for caching responses to <code>GET</code> and <code>HEAD</code> requests) and <code>3</code> (for caching responses to <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> requests).</p>
     #[doc(hidden)]
-    pub quantity: std::option::Option<i32>,
+    pub quantity: ::std::option::Option<i32>,
     /// <p>A complex type that contains the HTTP methods that you want CloudFront to cache responses to.</p>
     #[doc(hidden)]
-    pub items: std::option::Option<std::vec::Vec<crate::types::Method>>,
+    pub items: ::std::option::Option<::std::vec::Vec<crate::types::Method>>,
 }
 impl CachedMethods {
     /// <p>The number of HTTP methods for which you want CloudFront to cache responses. Valid values are <code>2</code> (for caching responses to <code>GET</code> and <code>HEAD</code> requests) and <code>3</code> (for caching responses to <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> requests).</p>
-    pub fn quantity(&self) -> std::option::Option<i32> {
+    pub fn quantity(&self) -> ::std::option::Option<i32> {
         self.quantity
     }
     /// <p>A complex type that contains the HTTP methods that you want CloudFront to cache responses to.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::types::Method]> {
+    pub fn items(&self) -> ::std::option::Option<&[crate::types::Method]> {
         self.items.as_deref()
     }
 }
@@ -35,19 +35,21 @@ impl CachedMethods {
 
 /// A builder for [`CachedMethods`](crate::types::CachedMethods).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CachedMethodsBuilder {
-    pub(crate) quantity: std::option::Option<i32>,
-    pub(crate) items: std::option::Option<std::vec::Vec<crate::types::Method>>,
+    pub(crate) quantity: ::std::option::Option<i32>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::Method>>,
 }
 impl CachedMethodsBuilder {
     /// <p>The number of HTTP methods for which you want CloudFront to cache responses. Valid values are <code>2</code> (for caching responses to <code>GET</code> and <code>HEAD</code> requests) and <code>3</code> (for caching responses to <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> requests).</p>
     pub fn quantity(mut self, input: i32) -> Self {
-        self.quantity = Some(input);
+        self.quantity = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of HTTP methods for which you want CloudFront to cache responses. Valid values are <code>2</code> (for caching responses to <code>GET</code> and <code>HEAD</code> requests) and <code>3</code> (for caching responses to <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> requests).</p>
-    pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_quantity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.quantity = input;
         self
     }
@@ -59,13 +61,13 @@ impl CachedMethodsBuilder {
     pub fn items(mut self, input: crate::types::Method) -> Self {
         let mut v = self.items.unwrap_or_default();
         v.push(input);
-        self.items = Some(v);
+        self.items = ::std::option::Option::Some(v);
         self
     }
     /// <p>A complex type that contains the HTTP methods that you want CloudFront to cache responses to.</p>
     pub fn set_items(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Method>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Method>>,
     ) -> Self {
         self.items = input;
         self

@@ -2,20 +2,20 @@
 
 /// <p>Contains the output of DescribeVpnConnections.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeVpnConnectionsOutput {
     /// <p>Information about one or more VPN connections.</p>
     #[doc(hidden)]
-    pub vpn_connections: std::option::Option<std::vec::Vec<crate::types::VpnConnection>>,
+    pub vpn_connections: ::std::option::Option<::std::vec::Vec<crate::types::VpnConnection>>,
     _request_id: Option<String>,
 }
 impl DescribeVpnConnectionsOutput {
     /// <p>Information about one or more VPN connections.</p>
-    pub fn vpn_connections(&self) -> std::option::Option<&[crate::types::VpnConnection]> {
+    pub fn vpn_connections(&self) -> ::std::option::Option<&[crate::types::VpnConnection]> {
         self.vpn_connections.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeVpnConnectionsOutput {
+impl ::aws_http::request_id::RequestId for DescribeVpnConnectionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -31,9 +31,11 @@ impl DescribeVpnConnectionsOutput {
 
 /// A builder for [`DescribeVpnConnectionsOutput`](crate::operation::describe_vpn_connections::DescribeVpnConnectionsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeVpnConnectionsOutputBuilder {
-    pub(crate) vpn_connections: std::option::Option<std::vec::Vec<crate::types::VpnConnection>>,
+    pub(crate) vpn_connections: ::std::option::Option<::std::vec::Vec<crate::types::VpnConnection>>,
     _request_id: Option<String>,
 }
 impl DescribeVpnConnectionsOutputBuilder {
@@ -45,13 +47,13 @@ impl DescribeVpnConnectionsOutputBuilder {
     pub fn vpn_connections(mut self, input: crate::types::VpnConnection) -> Self {
         let mut v = self.vpn_connections.unwrap_or_default();
         v.push(input);
-        self.vpn_connections = Some(v);
+        self.vpn_connections = ::std::option::Option::Some(v);
         self
     }
     /// <p>Information about one or more VPN connections.</p>
     pub fn set_vpn_connections(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::VpnConnection>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::VpnConnection>>,
     ) -> Self {
         self.vpn_connections = input;
         self

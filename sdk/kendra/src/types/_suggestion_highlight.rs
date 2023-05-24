@@ -2,22 +2,22 @@
 
 /// <p>The text highlights for a single query suggestion.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SuggestionHighlight {
     /// <p>The zero-based location in the response string where the highlight starts.</p>
     #[doc(hidden)]
-    pub begin_offset: std::option::Option<i32>,
+    pub begin_offset: ::std::option::Option<i32>,
     /// <p>The zero-based location in the response string where the highlight ends.</p>
     #[doc(hidden)]
-    pub end_offset: std::option::Option<i32>,
+    pub end_offset: ::std::option::Option<i32>,
 }
 impl SuggestionHighlight {
     /// <p>The zero-based location in the response string where the highlight starts.</p>
-    pub fn begin_offset(&self) -> std::option::Option<i32> {
+    pub fn begin_offset(&self) -> ::std::option::Option<i32> {
         self.begin_offset
     }
     /// <p>The zero-based location in the response string where the highlight ends.</p>
-    pub fn end_offset(&self) -> std::option::Option<i32> {
+    pub fn end_offset(&self) -> ::std::option::Option<i32> {
         self.end_offset
     }
 }
@@ -30,29 +30,31 @@ impl SuggestionHighlight {
 
 /// A builder for [`SuggestionHighlight`](crate::types::SuggestionHighlight).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SuggestionHighlightBuilder {
-    pub(crate) begin_offset: std::option::Option<i32>,
-    pub(crate) end_offset: std::option::Option<i32>,
+    pub(crate) begin_offset: ::std::option::Option<i32>,
+    pub(crate) end_offset: ::std::option::Option<i32>,
 }
 impl SuggestionHighlightBuilder {
     /// <p>The zero-based location in the response string where the highlight starts.</p>
     pub fn begin_offset(mut self, input: i32) -> Self {
-        self.begin_offset = Some(input);
+        self.begin_offset = ::std::option::Option::Some(input);
         self
     }
     /// <p>The zero-based location in the response string where the highlight starts.</p>
-    pub fn set_begin_offset(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_begin_offset(mut self, input: ::std::option::Option<i32>) -> Self {
         self.begin_offset = input;
         self
     }
     /// <p>The zero-based location in the response string where the highlight ends.</p>
     pub fn end_offset(mut self, input: i32) -> Self {
-        self.end_offset = Some(input);
+        self.end_offset = ::std::option::Option::Some(input);
         self
     }
     /// <p>The zero-based location in the response string where the highlight ends.</p>
-    pub fn set_end_offset(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_end_offset(mut self, input: ::std::option::Option<i32>) -> Self {
         self.end_offset = input;
         self
     }

@@ -38,13 +38,13 @@
 /// Audio Language Selection Policy
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum AudioLanguageSelectionPolicy {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum AudioLanguageSelectionPolicy {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for AudioLanguageSelectionPolicy {
+impl ::std::convert::From<&str> for AudioLanguageSelectionPolicy {
     fn from(s: &str) -> Self {
         match s {
             "LOOSE" => AudioLanguageSelectionPolicy::Loose,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for AudioLanguageSelectionPolicy {
         }
     }
 }
-impl std::str::FromStr for AudioLanguageSelectionPolicy {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for AudioLanguageSelectionPolicy {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AudioLanguageSelectionPolicy::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(AudioLanguageSelectionPolicy::from(s))
     }
 }
 impl AudioLanguageSelectionPolicy {
@@ -86,7 +86,7 @@ impl AudioLanguageSelectionPolicy {
         &["LOOSE", "STRICT"]
     }
 }
-impl AsRef<str> for AudioLanguageSelectionPolicy {
+impl ::std::convert::AsRef<str> for AudioLanguageSelectionPolicy {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

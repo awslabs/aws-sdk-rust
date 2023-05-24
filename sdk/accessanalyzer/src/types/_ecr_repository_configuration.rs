@@ -7,15 +7,15 @@
 /// <li> <p>To propose deletion of an existing Amazon ECR repository policy, you can specify an empty string for the Amazon ECR policy.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EcrRepositoryConfiguration {
     /// <p>The JSON repository policy text to apply to the Amazon ECR repository. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Private repository policy examples</a> in the <i>Amazon ECR User Guide</i>.</p>
     #[doc(hidden)]
-    pub repository_policy: std::option::Option<std::string::String>,
+    pub repository_policy: ::std::option::Option<::std::string::String>,
 }
 impl EcrRepositoryConfiguration {
     /// <p>The JSON repository policy text to apply to the Amazon ECR repository. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Private repository policy examples</a> in the <i>Amazon ECR User Guide</i>.</p>
-    pub fn repository_policy(&self) -> std::option::Option<&str> {
+    pub fn repository_policy(&self) -> ::std::option::Option<&str> {
         self.repository_policy.as_deref()
     }
 }
@@ -28,20 +28,25 @@ impl EcrRepositoryConfiguration {
 
 /// A builder for [`EcrRepositoryConfiguration`](crate::types::EcrRepositoryConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EcrRepositoryConfigurationBuilder {
-    pub(crate) repository_policy: std::option::Option<std::string::String>,
+    pub(crate) repository_policy: ::std::option::Option<::std::string::String>,
 }
 impl EcrRepositoryConfigurationBuilder {
     /// <p>The JSON repository policy text to apply to the Amazon ECR repository. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Private repository policy examples</a> in the <i>Amazon ECR User Guide</i>.</p>
-    pub fn repository_policy(mut self, input: impl Into<std::string::String>) -> Self {
-        self.repository_policy = Some(input.into());
+    pub fn repository_policy(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.repository_policy = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The JSON repository policy text to apply to the Amazon ECR repository. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Private repository policy examples</a> in the <i>Amazon ECR User Guide</i>.</p>
     pub fn set_repository_policy(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.repository_policy = input;
         self

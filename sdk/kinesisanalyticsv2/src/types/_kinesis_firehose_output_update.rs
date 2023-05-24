@@ -2,15 +2,15 @@
 
 /// <p>For a SQL-based Kinesis Data Analytics application, when updating an output configuration using the <code>UpdateApplication</code> operation, provides information about a Kinesis Data Firehose delivery stream that is configured as the destination.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KinesisFirehoseOutputUpdate {
     /// <p>The Amazon Resource Name (ARN) of the delivery stream to write to. </p>
     #[doc(hidden)]
-    pub resource_arn_update: std::option::Option<std::string::String>,
+    pub resource_arn_update: ::std::option::Option<::std::string::String>,
 }
 impl KinesisFirehoseOutputUpdate {
     /// <p>The Amazon Resource Name (ARN) of the delivery stream to write to. </p>
-    pub fn resource_arn_update(&self) -> std::option::Option<&str> {
+    pub fn resource_arn_update(&self) -> ::std::option::Option<&str> {
         self.resource_arn_update.as_deref()
     }
 }
@@ -23,20 +23,25 @@ impl KinesisFirehoseOutputUpdate {
 
 /// A builder for [`KinesisFirehoseOutputUpdate`](crate::types::KinesisFirehoseOutputUpdate).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct KinesisFirehoseOutputUpdateBuilder {
-    pub(crate) resource_arn_update: std::option::Option<std::string::String>,
+    pub(crate) resource_arn_update: ::std::option::Option<::std::string::String>,
 }
 impl KinesisFirehoseOutputUpdateBuilder {
     /// <p>The Amazon Resource Name (ARN) of the delivery stream to write to. </p>
-    pub fn resource_arn_update(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_arn_update = Some(input.into());
+    pub fn resource_arn_update(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.resource_arn_update = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the delivery stream to write to. </p>
     pub fn set_resource_arn_update(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.resource_arn_update = input;
         self

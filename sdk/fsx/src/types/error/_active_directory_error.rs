@@ -2,55 +2,55 @@
 
 /// <p>An Active Directory error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActiveDirectoryError {
     /// <p>The directory ID of the directory that an error pertains to.</p>
     #[doc(hidden)]
-    pub active_directory_id: std::option::Option<std::string::String>,
+    pub active_directory_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of Active Directory error.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::ActiveDirectoryErrorType>,
+    pub r#type: ::std::option::Option<crate::types::ActiveDirectoryErrorType>,
     /// <p>A detailed error message.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
+    pub message: ::std::option::Option<::std::string::String>,
+    pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl ActiveDirectoryError {
     /// <p>The directory ID of the directory that an error pertains to.</p>
-    pub fn active_directory_id(&self) -> std::option::Option<&str> {
+    pub fn active_directory_id(&self) -> ::std::option::Option<&str> {
         self.active_directory_id.as_deref()
     }
     /// <p>The type of Active Directory error.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::ActiveDirectoryErrorType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ActiveDirectoryErrorType> {
         self.r#type.as_ref()
     }
 }
 impl ActiveDirectoryError {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for ActiveDirectoryError {
+impl ::std::fmt::Display for ActiveDirectoryError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "ActiveDirectoryError")?;
-        if let Some(inner_1) = &self.message {
+        ::std::write!(f, "ActiveDirectoryError")?;
+        if let ::std::option::Option::Some(inner_1) = &self.message {
             {
-                write!(f, ": {}", inner_1)?;
+                ::std::write!(f, ": {}", inner_1)?;
             }
         }
         Ok(())
     }
 }
-impl std::error::Error for ActiveDirectoryError {}
-impl aws_http::request_id::RequestId for crate::types::error::ActiveDirectoryError {
+impl ::std::error::Error for ActiveDirectoryError {}
+impl ::aws_http::request_id::RequestId for crate::types::error::ActiveDirectoryError {
     fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ActiveDirectoryError {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ActiveDirectoryError {
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
@@ -63,52 +63,57 @@ impl ActiveDirectoryError {
 
 /// A builder for [`ActiveDirectoryError`](crate::types::error::ActiveDirectoryError).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ActiveDirectoryErrorBuilder {
-    pub(crate) active_directory_id: std::option::Option<std::string::String>,
-    pub(crate) r#type: std::option::Option<crate::types::ActiveDirectoryErrorType>,
-    pub(crate) message: std::option::Option<std::string::String>,
-    meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+    pub(crate) active_directory_id: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::ActiveDirectoryErrorType>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
+    meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl ActiveDirectoryErrorBuilder {
     /// <p>The directory ID of the directory that an error pertains to.</p>
-    pub fn active_directory_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.active_directory_id = Some(input.into());
+    pub fn active_directory_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.active_directory_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The directory ID of the directory that an error pertains to.</p>
     pub fn set_active_directory_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.active_directory_id = input;
         self
     }
     /// <p>The type of Active Directory error.</p>
     pub fn r#type(mut self, input: crate::types::ActiveDirectoryErrorType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of Active Directory error.</p>
     pub fn set_type(
         mut self,
-        input: std::option::Option<crate::types::ActiveDirectoryErrorType>,
+        input: ::std::option::Option<crate::types::ActiveDirectoryErrorType>,
     ) -> Self {
         self.r#type = input;
         self
     }
     /// <p>A detailed error message.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A detailed error message.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
         self.meta = Some(meta);
         self
     }
@@ -116,7 +121,7 @@ impl ActiveDirectoryErrorBuilder {
     /// Sets error metadata
     pub fn set_meta(
         &mut self,
-        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
     ) -> &mut Self {
         self.meta = meta;
         self

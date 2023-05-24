@@ -2,22 +2,22 @@
 
 /// <p>The <code>UpdatePipelineStatusRequest</code> structure.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdatePipelineStatusInput {
     /// <p>The identifier of the pipeline to update.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The desired status of the pipeline:</p>
     /// <ul>
     /// <li> <p> <code>Active</code>: The pipeline is processing jobs.</p> </li>
     /// <li> <p> <code>Paused</code>: The pipeline is not currently processing jobs.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub status: std::option::Option<std::string::String>,
+    pub status: ::std::option::Option<::std::string::String>,
 }
 impl UpdatePipelineStatusInput {
     /// <p>The identifier of the pipeline to update.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The desired status of the pipeline:</p>
@@ -25,7 +25,7 @@ impl UpdatePipelineStatusInput {
     /// <li> <p> <code>Active</code>: The pipeline is processing jobs.</p> </li>
     /// <li> <p> <code>Paused</code>: The pipeline is not currently processing jobs.</p> </li>
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
 }
@@ -39,19 +39,21 @@ impl UpdatePipelineStatusInput {
 
 /// A builder for [`UpdatePipelineStatusInput`](crate::operation::update_pipeline_status::UpdatePipelineStatusInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdatePipelineStatusInputBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<std::string::String>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<::std::string::String>,
 }
 impl UpdatePipelineStatusInputBuilder {
     /// <p>The identifier of the pipeline to update.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the pipeline to update.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
@@ -60,8 +62,8 @@ impl UpdatePipelineStatusInputBuilder {
     /// <li> <p> <code>Active</code>: The pipeline is processing jobs.</p> </li>
     /// <li> <p> <code>Paused</code>: The pipeline is not currently processing jobs.</p> </li>
     /// </ul>
-    pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status = Some(input.into());
+    pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The desired status of the pipeline:</p>
@@ -69,18 +71,18 @@ impl UpdatePipelineStatusInputBuilder {
     /// <li> <p> <code>Active</code>: The pipeline is processing jobs.</p> </li>
     /// <li> <p> <code>Paused</code>: The pipeline is not currently processing jobs.</p> </li>
     /// </ul>
-    pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }
     /// Consumes the builder and constructs a [`UpdatePipelineStatusInput`](crate::operation::update_pipeline_status::UpdatePipelineStatusInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::update_pipeline_status::UpdatePipelineStatusInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::update_pipeline_status::UpdatePipelineStatusInput {
                 id: self.id,
                 status: self.status,

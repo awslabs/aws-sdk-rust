@@ -2,15 +2,15 @@
 
 /// <p>Information about the location of a custom plugin.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomPluginLocation {
     /// <p>The S3 bucket Amazon Resource Name (ARN), file key, and object version of the plugin file stored in Amazon S3.</p>
     #[doc(hidden)]
-    pub s3_location: std::option::Option<crate::types::S3Location>,
+    pub s3_location: ::std::option::Option<crate::types::S3Location>,
 }
 impl CustomPluginLocation {
     /// <p>The S3 bucket Amazon Resource Name (ARN), file key, and object version of the plugin file stored in Amazon S3.</p>
-    pub fn s3_location(&self) -> std::option::Option<&crate::types::S3Location> {
+    pub fn s3_location(&self) -> ::std::option::Option<&crate::types::S3Location> {
         self.s3_location.as_ref()
     }
 }
@@ -23,18 +23,23 @@ impl CustomPluginLocation {
 
 /// A builder for [`CustomPluginLocation`](crate::types::CustomPluginLocation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CustomPluginLocationBuilder {
-    pub(crate) s3_location: std::option::Option<crate::types::S3Location>,
+    pub(crate) s3_location: ::std::option::Option<crate::types::S3Location>,
 }
 impl CustomPluginLocationBuilder {
     /// <p>The S3 bucket Amazon Resource Name (ARN), file key, and object version of the plugin file stored in Amazon S3.</p>
     pub fn s3_location(mut self, input: crate::types::S3Location) -> Self {
-        self.s3_location = Some(input);
+        self.s3_location = ::std::option::Option::Some(input);
         self
     }
     /// <p>The S3 bucket Amazon Resource Name (ARN), file key, and object version of the plugin file stored in Amazon S3.</p>
-    pub fn set_s3_location(mut self, input: std::option::Option<crate::types::S3Location>) -> Self {
+    pub fn set_s3_location(
+        mut self,
+        input: ::std::option::Option<crate::types::S3Location>,
+    ) -> Self {
         self.s3_location = input;
         self
     }

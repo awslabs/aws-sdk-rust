@@ -6,30 +6,30 @@ pub use crate::operation::stop_inference_experiment::_stop_inference_experiment_
 /// Fluent builder constructing a request to `StopInferenceExperiment`.
 ///
 /// <p>Stops an inference experiment.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopInferenceExperimentFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner:
         crate::operation::stop_inference_experiment::builders::StopInferenceExperimentInputBuilder,
 }
 impl StopInferenceExperimentFluentBuilder {
     /// Creates a new `StopInferenceExperiment`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::stop_inference_experiment::StopInferenceExperiment,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::stop_inference_experiment::StopInferenceExperimentError,
         >,
     > {
@@ -37,30 +37,33 @@ impl StopInferenceExperimentFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::stop_inference_experiment::StopInferenceExperimentOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::stop_inference_experiment::StopInferenceExperimentError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -73,21 +76,21 @@ impl StopInferenceExperimentFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::stop_inference_experiment::StopInferenceExperimentOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::stop_inference_experiment::StopInferenceExperimentError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the inference experiment to stop.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// <p>The name of the inference experiment to stop.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
@@ -103,7 +106,7 @@ impl StopInferenceExperimentFluentBuilder {
     /// </ul>
     pub fn model_variant_actions(
         mut self,
-        k: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
         v: crate::types::ModelVariantAction,
     ) -> Self {
         self.inner = self.inner.model_variant_actions(k.into(), v);
@@ -117,8 +120,8 @@ impl StopInferenceExperimentFluentBuilder {
     /// </ul>
     pub fn set_model_variant_actions(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::types::ModelVariantAction>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, crate::types::ModelVariantAction>,
         >,
     ) -> Self {
         self.inner = self.inner.set_model_variant_actions(input);
@@ -136,7 +139,7 @@ impl StopInferenceExperimentFluentBuilder {
     /// <p> An array of <code>ModelVariantConfig</code> objects. There is one for each variant that you want to deploy after the inference experiment stops. Each <code>ModelVariantConfig</code> describes the infrastructure configuration for deploying the corresponding variant. </p>
     pub fn set_desired_model_variants(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ModelVariantConfig>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ModelVariantConfig>>,
     ) -> Self {
         self.inner = self.inner.set_desired_model_variants(input);
         self
@@ -160,18 +163,18 @@ impl StopInferenceExperimentFluentBuilder {
     /// </ul>
     pub fn set_desired_state(
         mut self,
-        input: std::option::Option<crate::types::InferenceExperimentStopDesiredState>,
+        input: ::std::option::Option<crate::types::InferenceExperimentStopDesiredState>,
     ) -> Self {
         self.inner = self.inner.set_desired_state(input);
         self
     }
     /// <p>The reason for stopping the experiment.</p>
-    pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.reason(input.into());
         self
     }
     /// <p>The reason for stopping the experiment.</p>
-    pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_reason(input);
         self
     }

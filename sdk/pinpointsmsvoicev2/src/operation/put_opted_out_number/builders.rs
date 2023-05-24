@@ -7,29 +7,29 @@ pub use crate::operation::put_opted_out_number::_put_opted_out_number_input::Put
 ///
 /// <p>Creates an opted out destination phone number in the opt-out list.</p>
 /// <p>If the destination phone number isn't valid or if the specified opt-out list doesn't exist, an Error is returned.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutOptedOutNumberFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::put_opted_out_number::builders::PutOptedOutNumberInputBuilder,
 }
 impl PutOptedOutNumberFluentBuilder {
     /// Creates a new `PutOptedOutNumber`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::put_opted_out_number::PutOptedOutNumber,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::put_opted_out_number::PutOptedOutNumberError,
         >,
     > {
@@ -37,30 +37,33 @@ impl PutOptedOutNumberFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::put_opted_out_number::PutOptedOutNumberOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::put_opted_out_number::PutOptedOutNumberError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -73,34 +76,43 @@ impl PutOptedOutNumberFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::put_opted_out_number::PutOptedOutNumberOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::put_opted_out_number::PutOptedOutNumberError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The OptOutListName or OptOutListArn to add the phone number to.</p>
-    pub fn opt_out_list_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn opt_out_list_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.opt_out_list_name(input.into());
         self
     }
     /// <p>The OptOutListName or OptOutListArn to add the phone number to.</p>
     pub fn set_opt_out_list_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_opt_out_list_name(input);
         self
     }
     /// <p>The phone number to add to the OptOutList in E.164 format.</p>
-    pub fn opted_out_number(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn opted_out_number(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.opted_out_number(input.into());
         self
     }
     /// <p>The phone number to add to the OptOutList in E.164 format.</p>
-    pub fn set_opted_out_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_opted_out_number(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_opted_out_number(input);
         self
     }

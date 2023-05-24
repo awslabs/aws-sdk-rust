@@ -38,13 +38,13 @@
 /// M2ts Klv
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum M2tsKlv {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum M2tsKlv {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for M2tsKlv {
+impl ::std::convert::From<&str> for M2tsKlv {
     fn from(s: &str) -> Self {
         match s {
             "NONE" => M2tsKlv::None,
@@ -63,11 +63,11 @@ impl std::convert::From<&str> for M2tsKlv {
         }
     }
 }
-impl std::str::FromStr for M2tsKlv {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for M2tsKlv {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(M2tsKlv::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(M2tsKlv::from(s))
     }
 }
 impl M2tsKlv {
@@ -84,7 +84,7 @@ impl M2tsKlv {
         &["NONE", "PASSTHROUGH"]
     }
 }
-impl AsRef<str> for M2tsKlv {
+impl ::std::convert::AsRef<str> for M2tsKlv {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

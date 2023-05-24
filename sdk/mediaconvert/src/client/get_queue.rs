@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetQueue`](crate::operation::get_queue::builders::GetQueueFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::get_queue::builders::GetQueueFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_queue::builders::GetQueueFluentBuilder::set_name): The name of the queue that you want information about.
+    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::get_queue::builders::GetQueueFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_queue::builders::GetQueueFluentBuilder::set_name): The name of the queue that you want information about.
     /// - On success, responds with [`GetQueueOutput`](crate::operation::get_queue::GetQueueOutput) with field(s):
     ///   - [`queue(Option<Queue>)`](crate::operation::get_queue::GetQueueOutput::queue): You can use queues to manage the resources that are available to your AWS account for running multiple transcoding jobs at the same time. If you don't specify a queue, the service sends all jobs through the default queue. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-queues.html.
     /// - On failure, responds with [`SdkError<GetQueueError>`](crate::operation::get_queue::GetQueueError)

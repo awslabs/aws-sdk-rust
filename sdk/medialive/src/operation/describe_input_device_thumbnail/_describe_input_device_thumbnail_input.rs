@@ -2,22 +2,22 @@
 
 /// Placeholder documentation for DescribeInputDeviceThumbnailRequest
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeInputDeviceThumbnailInput {
     /// The unique ID of this input device. For example, hd-123456789abcdef.
     #[doc(hidden)]
-    pub input_device_id: std::option::Option<std::string::String>,
+    pub input_device_id: ::std::option::Option<::std::string::String>,
     /// The HTTP Accept header. Indicates the requested type for the thumbnail.
     #[doc(hidden)]
-    pub accept: std::option::Option<crate::types::AcceptHeader>,
+    pub accept: ::std::option::Option<crate::types::AcceptHeader>,
 }
 impl DescribeInputDeviceThumbnailInput {
     /// The unique ID of this input device. For example, hd-123456789abcdef.
-    pub fn input_device_id(&self) -> std::option::Option<&str> {
+    pub fn input_device_id(&self) -> ::std::option::Option<&str> {
         self.input_device_id.as_deref()
     }
     /// The HTTP Accept header. Indicates the requested type for the thumbnail.
-    pub fn accept(&self) -> std::option::Option<&crate::types::AcceptHeader> {
+    pub fn accept(&self) -> ::std::option::Option<&crate::types::AcceptHeader> {
         self.accept.as_ref()
     }
 }
@@ -30,40 +30,48 @@ impl DescribeInputDeviceThumbnailInput {
 
 /// A builder for [`DescribeInputDeviceThumbnailInput`](crate::operation::describe_input_device_thumbnail::DescribeInputDeviceThumbnailInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeInputDeviceThumbnailInputBuilder {
-    pub(crate) input_device_id: std::option::Option<std::string::String>,
-    pub(crate) accept: std::option::Option<crate::types::AcceptHeader>,
+    pub(crate) input_device_id: ::std::option::Option<::std::string::String>,
+    pub(crate) accept: ::std::option::Option<crate::types::AcceptHeader>,
 }
 impl DescribeInputDeviceThumbnailInputBuilder {
     /// The unique ID of this input device. For example, hd-123456789abcdef.
-    pub fn input_device_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.input_device_id = Some(input.into());
+    pub fn input_device_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.input_device_id = ::std::option::Option::Some(input.into());
         self
     }
     /// The unique ID of this input device. For example, hd-123456789abcdef.
-    pub fn set_input_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_input_device_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.input_device_id = input;
         self
     }
     /// The HTTP Accept header. Indicates the requested type for the thumbnail.
     pub fn accept(mut self, input: crate::types::AcceptHeader) -> Self {
-        self.accept = Some(input);
+        self.accept = ::std::option::Option::Some(input);
         self
     }
     /// The HTTP Accept header. Indicates the requested type for the thumbnail.
-    pub fn set_accept(mut self, input: std::option::Option<crate::types::AcceptHeader>) -> Self {
+    pub fn set_accept(mut self, input: ::std::option::Option<crate::types::AcceptHeader>) -> Self {
         self.accept = input;
         self
     }
     /// Consumes the builder and constructs a [`DescribeInputDeviceThumbnailInput`](crate::operation::describe_input_device_thumbnail::DescribeInputDeviceThumbnailInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::describe_input_device_thumbnail::DescribeInputDeviceThumbnailInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::describe_input_device_thumbnail::DescribeInputDeviceThumbnailInput {
                 input_device_id: self.input_device_id,
                 accept: self.accept,

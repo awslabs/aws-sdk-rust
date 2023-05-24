@@ -23,56 +23,59 @@ pub use crate::operation::restore_table::_restore_table_input::RestoreTableInput
 /// <li> <p>Identity and Access Management (IAM) policies</p> </li>
 /// <li> <p>Amazon CloudWatch metrics and alarms</p> </li>
 /// </ul>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RestoreTableFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::restore_table::builders::RestoreTableInputBuilder,
 }
 impl RestoreTableFluentBuilder {
     /// Creates a new `RestoreTable`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::restore_table::RestoreTable,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::restore_table::RestoreTableError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::restore_table::RestoreTableError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::restore_table::RestoreTableOutput,
-        aws_smithy_http::result::SdkError<crate::operation::restore_table::RestoreTableError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::restore_table::RestoreTableError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -85,73 +88,85 @@ impl RestoreTableFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::restore_table::RestoreTableOutput,
-        aws_smithy_http::result::SdkError<crate::operation::restore_table::RestoreTableError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::restore_table::RestoreTableError>,
     > {
         self.send_middleware().await
     }
     /// <p>The keyspace name of the source table.</p>
-    pub fn source_keyspace_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn source_keyspace_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.source_keyspace_name(input.into());
         self
     }
     /// <p>The keyspace name of the source table.</p>
     pub fn set_source_keyspace_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_source_keyspace_name(input);
         self
     }
     /// <p>The name of the source table.</p>
-    pub fn source_table_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn source_table_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.source_table_name(input.into());
         self
     }
     /// <p>The name of the source table.</p>
     pub fn set_source_table_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_source_table_name(input);
         self
     }
     /// <p>The name of the target keyspace.</p>
-    pub fn target_keyspace_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn target_keyspace_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.target_keyspace_name(input.into());
         self
     }
     /// <p>The name of the target keyspace.</p>
     pub fn set_target_keyspace_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_target_keyspace_name(input);
         self
     }
     /// <p>The name of the target table.</p>
-    pub fn target_table_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn target_table_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.target_table_name(input.into());
         self
     }
     /// <p>The name of the target table.</p>
     pub fn set_target_table_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_target_table_name(input);
         self
     }
     /// <p>The restore timestamp in ISO 8601 format.</p>
-    pub fn restore_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
+    pub fn restore_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.restore_timestamp(input);
         self
     }
     /// <p>The restore timestamp in ISO 8601 format.</p>
     pub fn set_restore_timestamp(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.inner = self.inner.set_restore_timestamp(input);
         self
@@ -179,7 +194,7 @@ impl RestoreTableFluentBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     pub fn set_capacity_specification_override(
         mut self,
-        input: std::option::Option<crate::types::CapacitySpecification>,
+        input: ::std::option::Option<crate::types::CapacitySpecification>,
     ) -> Self {
         self.inner = self.inner.set_capacity_specification_override(input);
         self
@@ -207,7 +222,7 @@ impl RestoreTableFluentBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     pub fn set_encryption_specification_override(
         mut self,
-        input: std::option::Option<crate::types::EncryptionSpecification>,
+        input: ::std::option::Option<crate::types::EncryptionSpecification>,
     ) -> Self {
         self.inner = self.inner.set_encryption_specification_override(input);
         self
@@ -235,7 +250,7 @@ impl RestoreTableFluentBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery.html">Point-in-time recovery</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     pub fn set_point_in_time_recovery_override(
         mut self,
-        input: std::option::Option<crate::types::PointInTimeRecovery>,
+        input: ::std::option::Option<crate::types::PointInTimeRecovery>,
     ) -> Self {
         self.inner = self.inner.set_point_in_time_recovery_override(input);
         self
@@ -254,7 +269,7 @@ impl RestoreTableFluentBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/tagging-keyspaces.html">Adding tags and labels to Amazon Keyspaces resources</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     pub fn set_tags_override(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags_override(input);
         self

@@ -7,29 +7,29 @@ pub use crate::operation::create_model_card::_create_model_card_input::CreateMod
 ///
 /// <p>Creates an Amazon SageMaker Model Card.</p>
 /// <p>For information about how to use model cards, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards.html">Amazon SageMaker Model Card</a>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateModelCardFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_model_card::builders::CreateModelCardInputBuilder,
 }
 impl CreateModelCardFluentBuilder {
     /// Creates a new `CreateModelCard`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_model_card::CreateModelCard,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_model_card::CreateModelCardError,
         >,
     > {
@@ -37,30 +37,33 @@ impl CreateModelCardFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_model_card::CreateModelCardOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_model_card::CreateModelCardError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -73,21 +76,27 @@ impl CreateModelCardFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_model_card::CreateModelCardOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_model_card::CreateModelCardError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The unique name of the model card.</p>
-    pub fn model_card_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn model_card_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.model_card_name(input.into());
         self
     }
     /// <p>The unique name of the model card.</p>
-    pub fn set_model_card_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_model_card_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_model_card_name(input);
         self
     }
@@ -99,18 +108,18 @@ impl CreateModelCardFluentBuilder {
     /// <p>An optional Key Management Service key to encrypt, decrypt, and re-encrypt model card content for regulated workloads with highly sensitive data.</p>
     pub fn set_security_config(
         mut self,
-        input: std::option::Option<crate::types::ModelCardSecurityConfig>,
+        input: ::std::option::Option<crate::types::ModelCardSecurityConfig>,
     ) -> Self {
         self.inner = self.inner.set_security_config(input);
         self
     }
     /// <p>The content of the model card. Content must be in <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards.html#model-cards-json-schema">model card JSON schema</a> and provided as a string.</p>
-    pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.content(input.into());
         self
     }
     /// <p>The content of the model card. Content must be in <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards.html#model-cards-json-schema">model card JSON schema</a> and provided as a string.</p>
-    pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_content(input);
         self
     }
@@ -134,7 +143,7 @@ impl CreateModelCardFluentBuilder {
     /// </ul>
     pub fn set_model_card_status(
         mut self,
-        input: std::option::Option<crate::types::ModelCardStatus>,
+        input: ::std::option::Option<crate::types::ModelCardStatus>,
     ) -> Self {
         self.inner = self.inner.set_model_card_status(input);
         self
@@ -151,7 +160,7 @@ impl CreateModelCardFluentBuilder {
     /// <p>Key-value pairs used to manage metadata for model cards.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self

@@ -2,29 +2,29 @@
 
 /// <p>A structure that describes the details of a topic, such as its name, description, and associated data sets.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TopicDetails {
     /// <p>The name of the topic.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the topic.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The data sets that the topic is associated with.</p>
     #[doc(hidden)]
-    pub data_sets: std::option::Option<std::vec::Vec<crate::types::DatasetMetadata>>,
+    pub data_sets: ::std::option::Option<::std::vec::Vec<crate::types::DatasetMetadata>>,
 }
 impl TopicDetails {
     /// <p>The name of the topic.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The description of the topic.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The data sets that the topic is associated with.</p>
-    pub fn data_sets(&self) -> std::option::Option<&[crate::types::DatasetMetadata]> {
+    pub fn data_sets(&self) -> ::std::option::Option<&[crate::types::DatasetMetadata]> {
         self.data_sets.as_deref()
     }
 }
@@ -37,30 +37,32 @@ impl TopicDetails {
 
 /// A builder for [`TopicDetails`](crate::types::TopicDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TopicDetailsBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) data_sets: std::option::Option<std::vec::Vec<crate::types::DatasetMetadata>>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) data_sets: ::std::option::Option<::std::vec::Vec<crate::types::DatasetMetadata>>,
 }
 impl TopicDetailsBuilder {
     /// <p>The name of the topic.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the topic.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The description of the topic.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the topic.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
@@ -72,13 +74,13 @@ impl TopicDetailsBuilder {
     pub fn data_sets(mut self, input: crate::types::DatasetMetadata) -> Self {
         let mut v = self.data_sets.unwrap_or_default();
         v.push(input);
-        self.data_sets = Some(v);
+        self.data_sets = ::std::option::Option::Some(v);
         self
     }
     /// <p>The data sets that the topic is associated with.</p>
     pub fn set_data_sets(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DatasetMetadata>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DatasetMetadata>>,
     ) -> Self {
         self.data_sets = input;
         self

@@ -2,22 +2,22 @@
 
 /// <p>A filter collection that you can use to restrict the results from a <code>List</code> operation to only those you want to include.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GroupFilter {
     /// <p>The name of the filter. Filter names are case-sensitive.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<crate::types::GroupFilterName>,
+    pub name: ::std::option::Option<crate::types::GroupFilterName>,
     /// <p>One or more filter values. Allowed filter values vary by group filter name, and are case-sensitive.</p>
     #[doc(hidden)]
-    pub values: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl GroupFilter {
     /// <p>The name of the filter. Filter names are case-sensitive.</p>
-    pub fn name(&self) -> std::option::Option<&crate::types::GroupFilterName> {
+    pub fn name(&self) -> ::std::option::Option<&crate::types::GroupFilterName> {
         self.name.as_ref()
     }
     /// <p>One or more filter values. Allowed filter values vary by group filter name, and are case-sensitive.</p>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.values.as_deref()
     }
 }
@@ -30,19 +30,21 @@ impl GroupFilter {
 
 /// A builder for [`GroupFilter`](crate::types::GroupFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GroupFilterBuilder {
-    pub(crate) name: std::option::Option<crate::types::GroupFilterName>,
-    pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) name: ::std::option::Option<crate::types::GroupFilterName>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl GroupFilterBuilder {
     /// <p>The name of the filter. Filter names are case-sensitive.</p>
     pub fn name(mut self, input: crate::types::GroupFilterName) -> Self {
-        self.name = Some(input);
+        self.name = ::std::option::Option::Some(input);
         self
     }
     /// <p>The name of the filter. Filter names are case-sensitive.</p>
-    pub fn set_name(mut self, input: std::option::Option<crate::types::GroupFilterName>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::GroupFilterName>) -> Self {
         self.name = input;
         self
     }
@@ -51,16 +53,16 @@ impl GroupFilterBuilder {
     /// To override the contents of this collection use [`set_values`](Self::set_values).
     ///
     /// <p>One or more filter values. Allowed filter values vary by group filter name, and are case-sensitive.</p>
-    pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
         v.push(input.into());
-        self.values = Some(v);
+        self.values = ::std::option::Option::Some(v);
         self
     }
     /// <p>One or more filter values. Allowed filter values vary by group filter name, and are case-sensitive.</p>
     pub fn set_values(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.values = input;
         self

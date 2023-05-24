@@ -4,11 +4,11 @@
 /// <p>For named entity recognition, 3D point cloud and video frame labeling jobs, use <code>HumanTaskUiArn</code>.</p>
 /// <p>For all other Ground Truth built-in task types and custom task types, use <code>UiTemplateS3Uri</code> to specify the location of a worker task template in Amazon S3.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UiConfig {
     /// <p>The Amazon S3 bucket location of the UI template, or worker task template. This is the template used to render the worker UI and tools for labeling job tasks. For more information about the contents of a UI template, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates-step2.html"> Creating Your Custom Labeling Task Template</a>.</p>
     #[doc(hidden)]
-    pub ui_template_s3_uri: std::option::Option<std::string::String>,
+    pub ui_template_s3_uri: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the worker task template used to render the worker UI and tools for labeling job tasks.</p>
     /// <p>Use this parameter when you are creating a labeling job for named entity recognition, 3D point cloud and video frame labeling jobs. Use your labeling job task type to select one of the following ARNs and use it with this parameter when you create a labeling job. Replace <code>aws-region</code> with the Amazon Web Services Region you are creating your labeling job in. For example, replace <code>aws-region</code> with <code>us-west-1</code> if you create a labeling job in US West (N. California).</p>
     /// <p> <b>Named Entity Recognition</b> </p>
@@ -37,11 +37,11 @@ pub struct UiConfig {
     /// <li> <p> <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/VideoObjectTracking</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub human_task_ui_arn: std::option::Option<std::string::String>,
+    pub human_task_ui_arn: ::std::option::Option<::std::string::String>,
 }
 impl UiConfig {
     /// <p>The Amazon S3 bucket location of the UI template, or worker task template. This is the template used to render the worker UI and tools for labeling job tasks. For more information about the contents of a UI template, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates-step2.html"> Creating Your Custom Labeling Task Template</a>.</p>
-    pub fn ui_template_s3_uri(&self) -> std::option::Option<&str> {
+    pub fn ui_template_s3_uri(&self) -> ::std::option::Option<&str> {
         self.ui_template_s3_uri.as_deref()
     }
     /// <p>The ARN of the worker task template used to render the worker UI and tools for labeling job tasks.</p>
@@ -71,7 +71,7 @@ impl UiConfig {
     /// <ul>
     /// <li> <p> <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/VideoObjectTracking</code> </p> </li>
     /// </ul>
-    pub fn human_task_ui_arn(&self) -> std::option::Option<&str> {
+    pub fn human_task_ui_arn(&self) -> ::std::option::Option<&str> {
         self.human_task_ui_arn.as_deref()
     }
 }
@@ -84,21 +84,26 @@ impl UiConfig {
 
 /// A builder for [`UiConfig`](crate::types::UiConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UiConfigBuilder {
-    pub(crate) ui_template_s3_uri: std::option::Option<std::string::String>,
-    pub(crate) human_task_ui_arn: std::option::Option<std::string::String>,
+    pub(crate) ui_template_s3_uri: ::std::option::Option<::std::string::String>,
+    pub(crate) human_task_ui_arn: ::std::option::Option<::std::string::String>,
 }
 impl UiConfigBuilder {
     /// <p>The Amazon S3 bucket location of the UI template, or worker task template. This is the template used to render the worker UI and tools for labeling job tasks. For more information about the contents of a UI template, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates-step2.html"> Creating Your Custom Labeling Task Template</a>.</p>
-    pub fn ui_template_s3_uri(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ui_template_s3_uri = Some(input.into());
+    pub fn ui_template_s3_uri(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.ui_template_s3_uri = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon S3 bucket location of the UI template, or worker task template. This is the template used to render the worker UI and tools for labeling job tasks. For more information about the contents of a UI template, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates-step2.html"> Creating Your Custom Labeling Task Template</a>.</p>
     pub fn set_ui_template_s3_uri(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.ui_template_s3_uri = input;
         self
@@ -130,8 +135,11 @@ impl UiConfigBuilder {
     /// <ul>
     /// <li> <p> <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/VideoObjectTracking</code> </p> </li>
     /// </ul>
-    pub fn human_task_ui_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.human_task_ui_arn = Some(input.into());
+    pub fn human_task_ui_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.human_task_ui_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the worker task template used to render the worker UI and tools for labeling job tasks.</p>
@@ -163,7 +171,7 @@ impl UiConfigBuilder {
     /// </ul>
     pub fn set_human_task_ui_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.human_task_ui_arn = input;
         self

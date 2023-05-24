@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum NegativeValueDisplayMode {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum NegativeValueDisplayMode {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for NegativeValueDisplayMode {
+impl ::std::convert::From<&str> for NegativeValueDisplayMode {
     fn from(s: &str) -> Self {
         match s {
             "NEGATIVE" => NegativeValueDisplayMode::Negative,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for NegativeValueDisplayMode {
         }
     }
 }
-impl std::str::FromStr for NegativeValueDisplayMode {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for NegativeValueDisplayMode {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(NegativeValueDisplayMode::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(NegativeValueDisplayMode::from(s))
     }
 }
 impl NegativeValueDisplayMode {
@@ -86,7 +86,7 @@ impl NegativeValueDisplayMode {
         &["NEGATIVE", "POSITIVE"]
     }
 }
-impl AsRef<str> for NegativeValueDisplayMode {
+impl ::std::convert::AsRef<str> for NegativeValueDisplayMode {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

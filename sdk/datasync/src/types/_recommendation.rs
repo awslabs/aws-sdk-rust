@@ -3,33 +3,35 @@
 /// <p>The details about an Amazon Web Services storage service that DataSync Discovery recommends for a resource in your on-premises storage system.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-understand-recommendations.html">Recommendations provided by DataSync Discovery</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Recommendation {
     /// <p>A recommended Amazon Web Services storage service that you can migrate data to based on information that DataSync Discovery collects about your on-premises storage system.</p>
     #[doc(hidden)]
-    pub storage_type: std::option::Option<std::string::String>,
+    pub storage_type: ::std::option::Option<::std::string::String>,
     /// <p>Information about how you can set up a recommended Amazon Web Services storage service.</p>
     #[doc(hidden)]
-    pub storage_configuration:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub storage_configuration: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>The estimated monthly cost of the recommended Amazon Web Services storage service.</p>
     #[doc(hidden)]
-    pub estimated_monthly_storage_cost: std::option::Option<std::string::String>,
+    pub estimated_monthly_storage_cost: ::std::option::Option<::std::string::String>,
 }
 impl Recommendation {
     /// <p>A recommended Amazon Web Services storage service that you can migrate data to based on information that DataSync Discovery collects about your on-premises storage system.</p>
-    pub fn storage_type(&self) -> std::option::Option<&str> {
+    pub fn storage_type(&self) -> ::std::option::Option<&str> {
         self.storage_type.as_deref()
     }
     /// <p>Information about how you can set up a recommended Amazon Web Services storage service.</p>
     pub fn storage_configuration(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.storage_configuration.as_ref()
     }
     /// <p>The estimated monthly cost of the recommended Amazon Web Services storage service.</p>
-    pub fn estimated_monthly_storage_cost(&self) -> std::option::Option<&str> {
+    pub fn estimated_monthly_storage_cost(&self) -> ::std::option::Option<&str> {
         self.estimated_monthly_storage_cost.as_deref()
     }
 }
@@ -42,21 +44,24 @@ impl Recommendation {
 
 /// A builder for [`Recommendation`](crate::types::Recommendation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RecommendationBuilder {
-    pub(crate) storage_type: std::option::Option<std::string::String>,
-    pub(crate) storage_configuration:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) estimated_monthly_storage_cost: std::option::Option<std::string::String>,
+    pub(crate) storage_type: ::std::option::Option<::std::string::String>,
+    pub(crate) storage_configuration: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) estimated_monthly_storage_cost: ::std::option::Option<::std::string::String>,
 }
 impl RecommendationBuilder {
     /// <p>A recommended Amazon Web Services storage service that you can migrate data to based on information that DataSync Discovery collects about your on-premises storage system.</p>
-    pub fn storage_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.storage_type = Some(input.into());
+    pub fn storage_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.storage_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A recommended Amazon Web Services storage service that you can migrate data to based on information that DataSync Discovery collects about your on-premises storage system.</p>
-    pub fn set_storage_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.storage_type = input;
         self
     }
@@ -67,33 +72,36 @@ impl RecommendationBuilder {
     /// <p>Information about how you can set up a recommended Amazon Web Services storage service.</p>
     pub fn storage_configuration(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.storage_configuration.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.storage_configuration = Some(hash_map);
+        self.storage_configuration = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Information about how you can set up a recommended Amazon Web Services storage service.</p>
     pub fn set_storage_configuration(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.storage_configuration = input;
         self
     }
     /// <p>The estimated monthly cost of the recommended Amazon Web Services storage service.</p>
-    pub fn estimated_monthly_storage_cost(mut self, input: impl Into<std::string::String>) -> Self {
-        self.estimated_monthly_storage_cost = Some(input.into());
+    pub fn estimated_monthly_storage_cost(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.estimated_monthly_storage_cost = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The estimated monthly cost of the recommended Amazon Web Services storage service.</p>
     pub fn set_estimated_monthly_storage_cost(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.estimated_monthly_storage_cost = input;
         self

@@ -4,7 +4,7 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_memberships::builders::ListMembershipsFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_memberships::builders::ListMembershipsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_memberships::builders::ListMembershipsFluentBuilder::set_next_token): <p>The token value retrieved from a previous call to access the next page of results.</p>
+    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_memberships::builders::ListMembershipsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_memberships::builders::ListMembershipsFluentBuilder::set_next_token): <p>The token value retrieved from a previous call to access the next page of results.</p>
     ///   - [`max_results(i32)`](crate::operation::list_memberships::builders::ListMembershipsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_memberships::builders::ListMembershipsFluentBuilder::set_max_results): <p>The maximum size of the results that is returned per call.</p>
     ///   - [`status(MembershipStatus)`](crate::operation::list_memberships::builders::ListMembershipsFluentBuilder::status) / [`set_status(Option<MembershipStatus>)`](crate::operation::list_memberships::builders::ListMembershipsFluentBuilder::set_status): <p>A filter which will return only memberships in the specified status.</p>
     /// - On success, responds with [`ListMembershipsOutput`](crate::operation::list_memberships::ListMembershipsOutput) with field(s):

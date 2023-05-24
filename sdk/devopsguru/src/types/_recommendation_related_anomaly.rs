@@ -2,35 +2,36 @@
 
 /// <p> Information about an anomaly that is related to a recommendation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecommendationRelatedAnomaly {
     /// <p> An array of objects that represent resources in which DevOps Guru detected anomalous behavior. Each object contains the name and type of the resource. </p>
     #[doc(hidden)]
     pub resources:
-        std::option::Option<std::vec::Vec<crate::types::RecommendationRelatedAnomalyResource>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::RecommendationRelatedAnomalyResource>>,
     /// <p> Information about where the anomalous behavior related the recommendation was found. For example, details in Amazon CloudWatch metrics. </p>
     #[doc(hidden)]
-    pub source_details:
-        std::option::Option<std::vec::Vec<crate::types::RecommendationRelatedAnomalySourceDetail>>,
+    pub source_details: ::std::option::Option<
+        ::std::vec::Vec<crate::types::RecommendationRelatedAnomalySourceDetail>,
+    >,
     /// <p>The ID of an anomaly that generated the insight with this recommendation.</p>
     #[doc(hidden)]
-    pub anomaly_id: std::option::Option<std::string::String>,
+    pub anomaly_id: ::std::option::Option<::std::string::String>,
 }
 impl RecommendationRelatedAnomaly {
     /// <p> An array of objects that represent resources in which DevOps Guru detected anomalous behavior. Each object contains the name and type of the resource. </p>
     pub fn resources(
         &self,
-    ) -> std::option::Option<&[crate::types::RecommendationRelatedAnomalyResource]> {
+    ) -> ::std::option::Option<&[crate::types::RecommendationRelatedAnomalyResource]> {
         self.resources.as_deref()
     }
     /// <p> Information about where the anomalous behavior related the recommendation was found. For example, details in Amazon CloudWatch metrics. </p>
     pub fn source_details(
         &self,
-    ) -> std::option::Option<&[crate::types::RecommendationRelatedAnomalySourceDetail]> {
+    ) -> ::std::option::Option<&[crate::types::RecommendationRelatedAnomalySourceDetail]> {
         self.source_details.as_deref()
     }
     /// <p>The ID of an anomaly that generated the insight with this recommendation.</p>
-    pub fn anomaly_id(&self) -> std::option::Option<&str> {
+    pub fn anomaly_id(&self) -> ::std::option::Option<&str> {
         self.anomaly_id.as_deref()
     }
 }
@@ -43,13 +44,16 @@ impl RecommendationRelatedAnomaly {
 
 /// A builder for [`RecommendationRelatedAnomaly`](crate::types::RecommendationRelatedAnomaly).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RecommendationRelatedAnomalyBuilder {
     pub(crate) resources:
-        std::option::Option<std::vec::Vec<crate::types::RecommendationRelatedAnomalyResource>>,
-    pub(crate) source_details:
-        std::option::Option<std::vec::Vec<crate::types::RecommendationRelatedAnomalySourceDetail>>,
-    pub(crate) anomaly_id: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::RecommendationRelatedAnomalyResource>>,
+    pub(crate) source_details: ::std::option::Option<
+        ::std::vec::Vec<crate::types::RecommendationRelatedAnomalySourceDetail>,
+    >,
+    pub(crate) anomaly_id: ::std::option::Option<::std::string::String>,
 }
 impl RecommendationRelatedAnomalyBuilder {
     /// Appends an item to `resources`.
@@ -60,14 +64,14 @@ impl RecommendationRelatedAnomalyBuilder {
     pub fn resources(mut self, input: crate::types::RecommendationRelatedAnomalyResource) -> Self {
         let mut v = self.resources.unwrap_or_default();
         v.push(input);
-        self.resources = Some(v);
+        self.resources = ::std::option::Option::Some(v);
         self
     }
     /// <p> An array of objects that represent resources in which DevOps Guru detected anomalous behavior. Each object contains the name and type of the resource. </p>
     pub fn set_resources(
         mut self,
-        input: std::option::Option<
-            std::vec::Vec<crate::types::RecommendationRelatedAnomalyResource>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::RecommendationRelatedAnomalyResource>,
         >,
     ) -> Self {
         self.resources = input;
@@ -84,26 +88,26 @@ impl RecommendationRelatedAnomalyBuilder {
     ) -> Self {
         let mut v = self.source_details.unwrap_or_default();
         v.push(input);
-        self.source_details = Some(v);
+        self.source_details = ::std::option::Option::Some(v);
         self
     }
     /// <p> Information about where the anomalous behavior related the recommendation was found. For example, details in Amazon CloudWatch metrics. </p>
     pub fn set_source_details(
         mut self,
-        input: std::option::Option<
-            std::vec::Vec<crate::types::RecommendationRelatedAnomalySourceDetail>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::RecommendationRelatedAnomalySourceDetail>,
         >,
     ) -> Self {
         self.source_details = input;
         self
     }
     /// <p>The ID of an anomaly that generated the insight with this recommendation.</p>
-    pub fn anomaly_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.anomaly_id = Some(input.into());
+    pub fn anomaly_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.anomaly_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of an anomaly that generated the insight with this recommendation.</p>
-    pub fn set_anomaly_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_anomaly_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.anomaly_id = input;
         self
     }

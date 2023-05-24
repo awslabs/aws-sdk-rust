@@ -2,135 +2,135 @@
 
 /// <p>Provides information that defines a MySQL endpoint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct MySqlSettings {
     /// <p>Specifies a script to run immediately after DMS connects to the endpoint. The migration task continues running regardless if the SQL statement succeeds or fails.</p>
     /// <p>For this parameter, provide the code of the script itself, not the name of a file containing the script.</p>
     #[doc(hidden)]
-    pub after_connect_script: std::option::Option<std::string::String>,
+    pub after_connect_script: ::std::option::Option<::std::string::String>,
     /// <p>Cleans and recreates table metadata information on the replication instance when a mismatch occurs. For example, in a situation where running an alter DDL on the table could result in different information about the table cached in the replication instance. </p>
     #[doc(hidden)]
-    pub clean_source_metadata_on_mismatch: std::option::Option<bool>,
+    pub clean_source_metadata_on_mismatch: ::std::option::Option<bool>,
     /// <p>Database name for the endpoint. For a MySQL source or target endpoint, don't explicitly specify the database using the <code>DatabaseName</code> request parameter on either the <code>CreateEndpoint</code> or <code>ModifyEndpoint</code> API call. Specifying <code>DatabaseName</code> when you create or modify a MySQL endpoint replicates all the task tables to this single database. For MySQL endpoints, you specify the database only when you specify the schema in the table-mapping rules of the DMS task.</p>
     #[doc(hidden)]
-    pub database_name: std::option::Option<std::string::String>,
+    pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies how often to check the binary log for new changes/events when the database is idle. The default is five seconds.</p>
     /// <p>Example: <code>eventsPollInterval=5;</code> </p>
     /// <p>In the example, DMS checks for changes in the binary logs every five seconds.</p>
     #[doc(hidden)]
-    pub events_poll_interval: std::option::Option<i32>,
+    pub events_poll_interval: ::std::option::Option<i32>,
     /// <p>Specifies where to migrate source tables on the target, either to a single database or multiple databases. If you specify <code>SPECIFIC_DATABASE</code>, specify the database name using the <code>DatabaseName</code> parameter of the <code>Endpoint</code> object.</p>
     /// <p>Example: <code>targetDbType=MULTIPLE_DATABASES</code> </p>
     #[doc(hidden)]
-    pub target_db_type: std::option::Option<crate::types::TargetDbType>,
+    pub target_db_type: ::std::option::Option<crate::types::TargetDbType>,
     /// <p>Specifies the maximum size (in KB) of any .csv file used to transfer data to a MySQL-compatible database.</p>
     /// <p>Example: <code>maxFileSize=512</code> </p>
     #[doc(hidden)]
-    pub max_file_size: std::option::Option<i32>,
+    pub max_file_size: ::std::option::Option<i32>,
     /// <p>Improves performance when loading data into the MySQL-compatible target database. Specifies how many threads to use to load the data into the MySQL-compatible target database. Setting a large number of threads can have an adverse effect on database performance, because a separate connection is required for each thread. The default is one.</p>
     /// <p>Example: <code>parallelLoadThreads=1</code> </p>
     #[doc(hidden)]
-    pub parallel_load_threads: std::option::Option<i32>,
+    pub parallel_load_threads: ::std::option::Option<i32>,
     /// <p>Endpoint connection password.</p>
     #[doc(hidden)]
-    pub password: std::option::Option<std::string::String>,
+    pub password: ::std::option::Option<::std::string::String>,
     /// <p>Endpoint TCP port.</p>
     #[doc(hidden)]
-    pub port: std::option::Option<i32>,
+    pub port: ::std::option::Option<i32>,
     /// <p>The host name of the endpoint database. </p>
     /// <p>For an Amazon RDS MySQL instance, this is the output of <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html">DescribeDBInstances</a>, in the <code> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code> field.</p>
     /// <p>For an Aurora MySQL instance, this is the output of <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusters.html">DescribeDBClusters</a>, in the <code>Endpoint</code> field.</p>
     #[doc(hidden)]
-    pub server_name: std::option::Option<std::string::String>,
+    pub server_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the time zone for the source MySQL database.</p>
     /// <p>Example: <code>serverTimezone=US/Pacific;</code> </p>
     /// <p>Note: Do not enclose time zones in single quotes.</p>
     #[doc(hidden)]
-    pub server_timezone: std::option::Option<std::string::String>,
+    pub server_timezone: ::std::option::Option<::std::string::String>,
     /// <p>Endpoint connection user name.</p>
     #[doc(hidden)]
-    pub username: std::option::Option<std::string::String>,
+    pub username: ::std::option::Option<::std::string::String>,
     /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret that allows access to the MySQL endpoint.</p> <note>
     /// <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p>
     /// </note>
     #[doc(hidden)]
-    pub secrets_manager_access_role_arn: std::option::Option<std::string::String>,
+    pub secrets_manager_access_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code> that contains the MySQL endpoint connection details.</p>
     #[doc(hidden)]
-    pub secrets_manager_secret_id: std::option::Option<std::string::String>,
+    pub secrets_manager_secret_id: ::std::option::Option<::std::string::String>,
 }
 impl MySqlSettings {
     /// <p>Specifies a script to run immediately after DMS connects to the endpoint. The migration task continues running regardless if the SQL statement succeeds or fails.</p>
     /// <p>For this parameter, provide the code of the script itself, not the name of a file containing the script.</p>
-    pub fn after_connect_script(&self) -> std::option::Option<&str> {
+    pub fn after_connect_script(&self) -> ::std::option::Option<&str> {
         self.after_connect_script.as_deref()
     }
     /// <p>Cleans and recreates table metadata information on the replication instance when a mismatch occurs. For example, in a situation where running an alter DDL on the table could result in different information about the table cached in the replication instance. </p>
-    pub fn clean_source_metadata_on_mismatch(&self) -> std::option::Option<bool> {
+    pub fn clean_source_metadata_on_mismatch(&self) -> ::std::option::Option<bool> {
         self.clean_source_metadata_on_mismatch
     }
     /// <p>Database name for the endpoint. For a MySQL source or target endpoint, don't explicitly specify the database using the <code>DatabaseName</code> request parameter on either the <code>CreateEndpoint</code> or <code>ModifyEndpoint</code> API call. Specifying <code>DatabaseName</code> when you create or modify a MySQL endpoint replicates all the task tables to this single database. For MySQL endpoints, you specify the database only when you specify the schema in the table-mapping rules of the DMS task.</p>
-    pub fn database_name(&self) -> std::option::Option<&str> {
+    pub fn database_name(&self) -> ::std::option::Option<&str> {
         self.database_name.as_deref()
     }
     /// <p>Specifies how often to check the binary log for new changes/events when the database is idle. The default is five seconds.</p>
     /// <p>Example: <code>eventsPollInterval=5;</code> </p>
     /// <p>In the example, DMS checks for changes in the binary logs every five seconds.</p>
-    pub fn events_poll_interval(&self) -> std::option::Option<i32> {
+    pub fn events_poll_interval(&self) -> ::std::option::Option<i32> {
         self.events_poll_interval
     }
     /// <p>Specifies where to migrate source tables on the target, either to a single database or multiple databases. If you specify <code>SPECIFIC_DATABASE</code>, specify the database name using the <code>DatabaseName</code> parameter of the <code>Endpoint</code> object.</p>
     /// <p>Example: <code>targetDbType=MULTIPLE_DATABASES</code> </p>
-    pub fn target_db_type(&self) -> std::option::Option<&crate::types::TargetDbType> {
+    pub fn target_db_type(&self) -> ::std::option::Option<&crate::types::TargetDbType> {
         self.target_db_type.as_ref()
     }
     /// <p>Specifies the maximum size (in KB) of any .csv file used to transfer data to a MySQL-compatible database.</p>
     /// <p>Example: <code>maxFileSize=512</code> </p>
-    pub fn max_file_size(&self) -> std::option::Option<i32> {
+    pub fn max_file_size(&self) -> ::std::option::Option<i32> {
         self.max_file_size
     }
     /// <p>Improves performance when loading data into the MySQL-compatible target database. Specifies how many threads to use to load the data into the MySQL-compatible target database. Setting a large number of threads can have an adverse effect on database performance, because a separate connection is required for each thread. The default is one.</p>
     /// <p>Example: <code>parallelLoadThreads=1</code> </p>
-    pub fn parallel_load_threads(&self) -> std::option::Option<i32> {
+    pub fn parallel_load_threads(&self) -> ::std::option::Option<i32> {
         self.parallel_load_threads
     }
     /// <p>Endpoint connection password.</p>
-    pub fn password(&self) -> std::option::Option<&str> {
+    pub fn password(&self) -> ::std::option::Option<&str> {
         self.password.as_deref()
     }
     /// <p>Endpoint TCP port.</p>
-    pub fn port(&self) -> std::option::Option<i32> {
+    pub fn port(&self) -> ::std::option::Option<i32> {
         self.port
     }
     /// <p>The host name of the endpoint database. </p>
     /// <p>For an Amazon RDS MySQL instance, this is the output of <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html">DescribeDBInstances</a>, in the <code> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code> field.</p>
     /// <p>For an Aurora MySQL instance, this is the output of <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusters.html">DescribeDBClusters</a>, in the <code>Endpoint</code> field.</p>
-    pub fn server_name(&self) -> std::option::Option<&str> {
+    pub fn server_name(&self) -> ::std::option::Option<&str> {
         self.server_name.as_deref()
     }
     /// <p>Specifies the time zone for the source MySQL database.</p>
     /// <p>Example: <code>serverTimezone=US/Pacific;</code> </p>
     /// <p>Note: Do not enclose time zones in single quotes.</p>
-    pub fn server_timezone(&self) -> std::option::Option<&str> {
+    pub fn server_timezone(&self) -> ::std::option::Option<&str> {
         self.server_timezone.as_deref()
     }
     /// <p>Endpoint connection user name.</p>
-    pub fn username(&self) -> std::option::Option<&str> {
+    pub fn username(&self) -> ::std::option::Option<&str> {
         self.username.as_deref()
     }
     /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret that allows access to the MySQL endpoint.</p> <note>
     /// <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p>
     /// </note>
-    pub fn secrets_manager_access_role_arn(&self) -> std::option::Option<&str> {
+    pub fn secrets_manager_access_role_arn(&self) -> ::std::option::Option<&str> {
         self.secrets_manager_access_role_arn.as_deref()
     }
     /// <p>The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code> that contains the MySQL endpoint connection details.</p>
-    pub fn secrets_manager_secret_id(&self) -> std::option::Option<&str> {
+    pub fn secrets_manager_secret_id(&self) -> ::std::option::Option<&str> {
         self.secrets_manager_secret_id.as_deref()
     }
 }
-impl std::fmt::Debug for MySqlSettings {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for MySqlSettings {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("MySqlSettings");
         formatter.field("after_connect_script", &self.after_connect_script);
         formatter.field(
@@ -164,59 +164,68 @@ impl MySqlSettings {
 
 /// A builder for [`MySqlSettings`](crate::types::MySqlSettings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct MySqlSettingsBuilder {
-    pub(crate) after_connect_script: std::option::Option<std::string::String>,
-    pub(crate) clean_source_metadata_on_mismatch: std::option::Option<bool>,
-    pub(crate) database_name: std::option::Option<std::string::String>,
-    pub(crate) events_poll_interval: std::option::Option<i32>,
-    pub(crate) target_db_type: std::option::Option<crate::types::TargetDbType>,
-    pub(crate) max_file_size: std::option::Option<i32>,
-    pub(crate) parallel_load_threads: std::option::Option<i32>,
-    pub(crate) password: std::option::Option<std::string::String>,
-    pub(crate) port: std::option::Option<i32>,
-    pub(crate) server_name: std::option::Option<std::string::String>,
-    pub(crate) server_timezone: std::option::Option<std::string::String>,
-    pub(crate) username: std::option::Option<std::string::String>,
-    pub(crate) secrets_manager_access_role_arn: std::option::Option<std::string::String>,
-    pub(crate) secrets_manager_secret_id: std::option::Option<std::string::String>,
+    pub(crate) after_connect_script: ::std::option::Option<::std::string::String>,
+    pub(crate) clean_source_metadata_on_mismatch: ::std::option::Option<bool>,
+    pub(crate) database_name: ::std::option::Option<::std::string::String>,
+    pub(crate) events_poll_interval: ::std::option::Option<i32>,
+    pub(crate) target_db_type: ::std::option::Option<crate::types::TargetDbType>,
+    pub(crate) max_file_size: ::std::option::Option<i32>,
+    pub(crate) parallel_load_threads: ::std::option::Option<i32>,
+    pub(crate) password: ::std::option::Option<::std::string::String>,
+    pub(crate) port: ::std::option::Option<i32>,
+    pub(crate) server_name: ::std::option::Option<::std::string::String>,
+    pub(crate) server_timezone: ::std::option::Option<::std::string::String>,
+    pub(crate) username: ::std::option::Option<::std::string::String>,
+    pub(crate) secrets_manager_access_role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) secrets_manager_secret_id: ::std::option::Option<::std::string::String>,
 }
 impl MySqlSettingsBuilder {
     /// <p>Specifies a script to run immediately after DMS connects to the endpoint. The migration task continues running regardless if the SQL statement succeeds or fails.</p>
     /// <p>For this parameter, provide the code of the script itself, not the name of a file containing the script.</p>
-    pub fn after_connect_script(mut self, input: impl Into<std::string::String>) -> Self {
-        self.after_connect_script = Some(input.into());
+    pub fn after_connect_script(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.after_connect_script = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies a script to run immediately after DMS connects to the endpoint. The migration task continues running regardless if the SQL statement succeeds or fails.</p>
     /// <p>For this parameter, provide the code of the script itself, not the name of a file containing the script.</p>
     pub fn set_after_connect_script(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.after_connect_script = input;
         self
     }
     /// <p>Cleans and recreates table metadata information on the replication instance when a mismatch occurs. For example, in a situation where running an alter DDL on the table could result in different information about the table cached in the replication instance. </p>
     pub fn clean_source_metadata_on_mismatch(mut self, input: bool) -> Self {
-        self.clean_source_metadata_on_mismatch = Some(input);
+        self.clean_source_metadata_on_mismatch = ::std::option::Option::Some(input);
         self
     }
     /// <p>Cleans and recreates table metadata information on the replication instance when a mismatch occurs. For example, in a situation where running an alter DDL on the table could result in different information about the table cached in the replication instance. </p>
     pub fn set_clean_source_metadata_on_mismatch(
         mut self,
-        input: std::option::Option<bool>,
+        input: ::std::option::Option<bool>,
     ) -> Self {
         self.clean_source_metadata_on_mismatch = input;
         self
     }
     /// <p>Database name for the endpoint. For a MySQL source or target endpoint, don't explicitly specify the database using the <code>DatabaseName</code> request parameter on either the <code>CreateEndpoint</code> or <code>ModifyEndpoint</code> API call. Specifying <code>DatabaseName</code> when you create or modify a MySQL endpoint replicates all the task tables to this single database. For MySQL endpoints, you specify the database only when you specify the schema in the table-mapping rules of the DMS task.</p>
-    pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.database_name = Some(input.into());
+    pub fn database_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Database name for the endpoint. For a MySQL source or target endpoint, don't explicitly specify the database using the <code>DatabaseName</code> request parameter on either the <code>CreateEndpoint</code> or <code>ModifyEndpoint</code> API call. Specifying <code>DatabaseName</code> when you create or modify a MySQL endpoint replicates all the task tables to this single database. For MySQL endpoints, you specify the database only when you specify the schema in the table-mapping rules of the DMS task.</p>
-    pub fn set_database_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_database_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.database_name = input;
         self
     }
@@ -224,27 +233,27 @@ impl MySqlSettingsBuilder {
     /// <p>Example: <code>eventsPollInterval=5;</code> </p>
     /// <p>In the example, DMS checks for changes in the binary logs every five seconds.</p>
     pub fn events_poll_interval(mut self, input: i32) -> Self {
-        self.events_poll_interval = Some(input);
+        self.events_poll_interval = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies how often to check the binary log for new changes/events when the database is idle. The default is five seconds.</p>
     /// <p>Example: <code>eventsPollInterval=5;</code> </p>
     /// <p>In the example, DMS checks for changes in the binary logs every five seconds.</p>
-    pub fn set_events_poll_interval(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_events_poll_interval(mut self, input: ::std::option::Option<i32>) -> Self {
         self.events_poll_interval = input;
         self
     }
     /// <p>Specifies where to migrate source tables on the target, either to a single database or multiple databases. If you specify <code>SPECIFIC_DATABASE</code>, specify the database name using the <code>DatabaseName</code> parameter of the <code>Endpoint</code> object.</p>
     /// <p>Example: <code>targetDbType=MULTIPLE_DATABASES</code> </p>
     pub fn target_db_type(mut self, input: crate::types::TargetDbType) -> Self {
-        self.target_db_type = Some(input);
+        self.target_db_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies where to migrate source tables on the target, either to a single database or multiple databases. If you specify <code>SPECIFIC_DATABASE</code>, specify the database name using the <code>DatabaseName</code> parameter of the <code>Endpoint</code> object.</p>
     /// <p>Example: <code>targetDbType=MULTIPLE_DATABASES</code> </p>
     pub fn set_target_db_type(
         mut self,
-        input: std::option::Option<crate::types::TargetDbType>,
+        input: ::std::option::Option<crate::types::TargetDbType>,
     ) -> Self {
         self.target_db_type = input;
         self
@@ -252,82 +261,88 @@ impl MySqlSettingsBuilder {
     /// <p>Specifies the maximum size (in KB) of any .csv file used to transfer data to a MySQL-compatible database.</p>
     /// <p>Example: <code>maxFileSize=512</code> </p>
     pub fn max_file_size(mut self, input: i32) -> Self {
-        self.max_file_size = Some(input);
+        self.max_file_size = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the maximum size (in KB) of any .csv file used to transfer data to a MySQL-compatible database.</p>
     /// <p>Example: <code>maxFileSize=512</code> </p>
-    pub fn set_max_file_size(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_file_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_file_size = input;
         self
     }
     /// <p>Improves performance when loading data into the MySQL-compatible target database. Specifies how many threads to use to load the data into the MySQL-compatible target database. Setting a large number of threads can have an adverse effect on database performance, because a separate connection is required for each thread. The default is one.</p>
     /// <p>Example: <code>parallelLoadThreads=1</code> </p>
     pub fn parallel_load_threads(mut self, input: i32) -> Self {
-        self.parallel_load_threads = Some(input);
+        self.parallel_load_threads = ::std::option::Option::Some(input);
         self
     }
     /// <p>Improves performance when loading data into the MySQL-compatible target database. Specifies how many threads to use to load the data into the MySQL-compatible target database. Setting a large number of threads can have an adverse effect on database performance, because a separate connection is required for each thread. The default is one.</p>
     /// <p>Example: <code>parallelLoadThreads=1</code> </p>
-    pub fn set_parallel_load_threads(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_parallel_load_threads(mut self, input: ::std::option::Option<i32>) -> Self {
         self.parallel_load_threads = input;
         self
     }
     /// <p>Endpoint connection password.</p>
-    pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
-        self.password = Some(input.into());
+    pub fn password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.password = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Endpoint connection password.</p>
-    pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.password = input;
         self
     }
     /// <p>Endpoint TCP port.</p>
     pub fn port(mut self, input: i32) -> Self {
-        self.port = Some(input);
+        self.port = ::std::option::Option::Some(input);
         self
     }
     /// <p>Endpoint TCP port.</p>
-    pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.port = input;
         self
     }
     /// <p>The host name of the endpoint database. </p>
     /// <p>For an Amazon RDS MySQL instance, this is the output of <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html">DescribeDBInstances</a>, in the <code> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code> field.</p>
     /// <p>For an Aurora MySQL instance, this is the output of <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusters.html">DescribeDBClusters</a>, in the <code>Endpoint</code> field.</p>
-    pub fn server_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.server_name = Some(input.into());
+    pub fn server_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.server_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The host name of the endpoint database. </p>
     /// <p>For an Amazon RDS MySQL instance, this is the output of <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html">DescribeDBInstances</a>, in the <code> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code> field.</p>
     /// <p>For an Aurora MySQL instance, this is the output of <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusters.html">DescribeDBClusters</a>, in the <code>Endpoint</code> field.</p>
-    pub fn set_server_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_server_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.server_name = input;
         self
     }
     /// <p>Specifies the time zone for the source MySQL database.</p>
     /// <p>Example: <code>serverTimezone=US/Pacific;</code> </p>
     /// <p>Note: Do not enclose time zones in single quotes.</p>
-    pub fn server_timezone(mut self, input: impl Into<std::string::String>) -> Self {
-        self.server_timezone = Some(input.into());
+    pub fn server_timezone(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.server_timezone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the time zone for the source MySQL database.</p>
     /// <p>Example: <code>serverTimezone=US/Pacific;</code> </p>
     /// <p>Note: Do not enclose time zones in single quotes.</p>
-    pub fn set_server_timezone(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_server_timezone(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.server_timezone = input;
         self
     }
     /// <p>Endpoint connection user name.</p>
-    pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
-        self.username = Some(input.into());
+    pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.username = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Endpoint connection user name.</p>
-    pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.username = input;
         self
     }
@@ -336,9 +351,9 @@ impl MySqlSettingsBuilder {
     /// </note>
     pub fn secrets_manager_access_role_arn(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.secrets_manager_access_role_arn = Some(input.into());
+        self.secrets_manager_access_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret that allows access to the MySQL endpoint.</p> <note>
@@ -346,20 +361,23 @@ impl MySqlSettingsBuilder {
     /// </note>
     pub fn set_secrets_manager_access_role_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.secrets_manager_access_role_arn = input;
         self
     }
     /// <p>The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code> that contains the MySQL endpoint connection details.</p>
-    pub fn secrets_manager_secret_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.secrets_manager_secret_id = Some(input.into());
+    pub fn secrets_manager_secret_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.secrets_manager_secret_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code> that contains the MySQL endpoint connection details.</p>
     pub fn set_secrets_manager_secret_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.secrets_manager_secret_id = input;
         self
@@ -384,8 +402,8 @@ impl MySqlSettingsBuilder {
         }
     }
 }
-impl std::fmt::Debug for MySqlSettingsBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for MySqlSettingsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("MySqlSettingsBuilder");
         formatter.field("after_connect_script", &self.after_connect_script);
         formatter.field(

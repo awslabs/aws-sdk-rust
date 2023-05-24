@@ -2,20 +2,20 @@
 
 /// <p>The results of a <code>ListDomainNames</code> operation. Contains the names of all domains owned by this account and their respective engine types.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDomainNamesOutput {
     /// <p>The names of all OpenSearch Service domains owned by the current user and their respective engine types.</p>
     #[doc(hidden)]
-    pub domain_names: std::option::Option<std::vec::Vec<crate::types::DomainInfo>>,
+    pub domain_names: ::std::option::Option<::std::vec::Vec<crate::types::DomainInfo>>,
     _request_id: Option<String>,
 }
 impl ListDomainNamesOutput {
     /// <p>The names of all OpenSearch Service domains owned by the current user and their respective engine types.</p>
-    pub fn domain_names(&self) -> std::option::Option<&[crate::types::DomainInfo]> {
+    pub fn domain_names(&self) -> ::std::option::Option<&[crate::types::DomainInfo]> {
         self.domain_names.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListDomainNamesOutput {
+impl ::aws_http::request_id::RequestId for ListDomainNamesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,9 +30,11 @@ impl ListDomainNamesOutput {
 
 /// A builder for [`ListDomainNamesOutput`](crate::operation::list_domain_names::ListDomainNamesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListDomainNamesOutputBuilder {
-    pub(crate) domain_names: std::option::Option<std::vec::Vec<crate::types::DomainInfo>>,
+    pub(crate) domain_names: ::std::option::Option<::std::vec::Vec<crate::types::DomainInfo>>,
     _request_id: Option<String>,
 }
 impl ListDomainNamesOutputBuilder {
@@ -44,13 +46,13 @@ impl ListDomainNamesOutputBuilder {
     pub fn domain_names(mut self, input: crate::types::DomainInfo) -> Self {
         let mut v = self.domain_names.unwrap_or_default();
         v.push(input);
-        self.domain_names = Some(v);
+        self.domain_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>The names of all OpenSearch Service domains owned by the current user and their respective engine types.</p>
     pub fn set_domain_names(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DomainInfo>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DomainInfo>>,
     ) -> Self {
         self.domain_names = input;
         self

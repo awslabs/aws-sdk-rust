@@ -2,39 +2,39 @@
 
 /// <p>Describes a resource share in RAM.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceShare {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource share</p>
     #[doc(hidden)]
-    pub resource_share_arn: std::option::Option<std::string::String>,
+    pub resource_share_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the resource share.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services account that owns the resource share.</p>
     #[doc(hidden)]
-    pub owning_account_id: std::option::Option<std::string::String>,
+    pub owning_account_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether principals outside your organization in Organizations can be associated with a resource share.</p>
     /// <ul>
     /// <li> <p> <code>True</code> – the resource share can be shared with any Amazon Web Services account.</p> </li>
     /// <li> <p> <code>False</code> – the resource share can be shared with only accounts in the same organization as the account that owns the resource share.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub allow_external_principals: std::option::Option<bool>,
+    pub allow_external_principals: ::std::option::Option<bool>,
     /// <p>The current status of the resource share.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::ResourceShareStatus>,
+    pub status: ::std::option::Option<crate::types::ResourceShareStatus>,
     /// <p>A message about the status of the resource share.</p>
     #[doc(hidden)]
-    pub status_message: std::option::Option<std::string::String>,
+    pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The tag key and value pairs attached to the resource share.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The date and time when the resource share was created.</p>
     #[doc(hidden)]
-    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time when the resource share was last updated.</p>
     #[doc(hidden)]
-    pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates what features are available for this resource share. This parameter can have one of the following values:</p>
     /// <ul>
     /// <li> <p> <b>STANDARD</b> – A resource share that supports all functionality. These resource shares are visible to all principals you share the resource share with. You can modify these resource shares in RAM using the console or APIs. This resource share might have been created by RAM, or it might have been <b>CREATED_FROM_POLICY</b> and then promoted.</p> </li>
@@ -42,19 +42,19 @@ pub struct ResourceShare {
     /// <li> <p> <b>PROMOTING_TO_STANDARD</b> – This resource share was originally <code>CREATED_FROM_POLICY</code>, but the customer ran the <code>PromoteResourceShareCreatedFromPolicy</code> and that operation is still in progress. This value changes to <code>STANDARD</code> when complete.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub feature_set: std::option::Option<crate::types::ResourceShareFeatureSet>,
+    pub feature_set: ::std::option::Option<crate::types::ResourceShareFeatureSet>,
 }
 impl ResourceShare {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource share</p>
-    pub fn resource_share_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_share_arn(&self) -> ::std::option::Option<&str> {
         self.resource_share_arn.as_deref()
     }
     /// <p>The name of the resource share.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The ID of the Amazon Web Services account that owns the resource share.</p>
-    pub fn owning_account_id(&self) -> std::option::Option<&str> {
+    pub fn owning_account_id(&self) -> ::std::option::Option<&str> {
         self.owning_account_id.as_deref()
     }
     /// <p>Indicates whether principals outside your organization in Organizations can be associated with a resource share.</p>
@@ -62,27 +62,27 @@ impl ResourceShare {
     /// <li> <p> <code>True</code> – the resource share can be shared with any Amazon Web Services account.</p> </li>
     /// <li> <p> <code>False</code> – the resource share can be shared with only accounts in the same organization as the account that owns the resource share.</p> </li>
     /// </ul>
-    pub fn allow_external_principals(&self) -> std::option::Option<bool> {
+    pub fn allow_external_principals(&self) -> ::std::option::Option<bool> {
         self.allow_external_principals
     }
     /// <p>The current status of the resource share.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::ResourceShareStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::ResourceShareStatus> {
         self.status.as_ref()
     }
     /// <p>A message about the status of the resource share.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<&str> {
         self.status_message.as_deref()
     }
     /// <p>The tag key and value pairs attached to the resource share.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The date and time when the resource share was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The date and time when the resource share was last updated.</p>
-    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>Indicates what features are available for this resource share. This parameter can have one of the following values:</p>
@@ -91,7 +91,7 @@ impl ResourceShare {
     /// <li> <p> <b>CREATED_FROM_POLICY</b> – The customer manually shared a resource by attaching a resource-based policy. That policy did not match any existing managed permissions, so RAM created this customer managed permission automatically on the customer's behalf based on the attached policy document. This type of resource share is visible only to the Amazon Web Services account that created it. You can't modify it in RAM unless you promote it. For more information, see <code>PromoteResourceShareCreatedFromPolicy</code>.</p> </li>
     /// <li> <p> <b>PROMOTING_TO_STANDARD</b> – This resource share was originally <code>CREATED_FROM_POLICY</code>, but the customer ran the <code>PromoteResourceShareCreatedFromPolicy</code> and that operation is still in progress. This value changes to <code>STANDARD</code> when complete.</p> </li>
     /// </ul>
-    pub fn feature_set(&self) -> std::option::Option<&crate::types::ResourceShareFeatureSet> {
+    pub fn feature_set(&self) -> ::std::option::Option<&crate::types::ResourceShareFeatureSet> {
         self.feature_set.as_ref()
     }
 }
@@ -104,52 +104,60 @@ impl ResourceShare {
 
 /// A builder for [`ResourceShare`](crate::types::ResourceShare).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResourceShareBuilder {
-    pub(crate) resource_share_arn: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) owning_account_id: std::option::Option<std::string::String>,
-    pub(crate) allow_external_principals: std::option::Option<bool>,
-    pub(crate) status: std::option::Option<crate::types::ResourceShareStatus>,
-    pub(crate) status_message: std::option::Option<std::string::String>,
-    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) feature_set: std::option::Option<crate::types::ResourceShareFeatureSet>,
+    pub(crate) resource_share_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) owning_account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) allow_external_principals: ::std::option::Option<bool>,
+    pub(crate) status: ::std::option::Option<crate::types::ResourceShareStatus>,
+    pub(crate) status_message: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) feature_set: ::std::option::Option<crate::types::ResourceShareFeatureSet>,
 }
 impl ResourceShareBuilder {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource share</p>
-    pub fn resource_share_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_share_arn = Some(input.into());
+    pub fn resource_share_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.resource_share_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource share</p>
     pub fn set_resource_share_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.resource_share_arn = input;
         self
     }
     /// <p>The name of the resource share.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the resource share.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The ID of the Amazon Web Services account that owns the resource share.</p>
-    pub fn owning_account_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.owning_account_id = Some(input.into());
+    pub fn owning_account_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.owning_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that owns the resource share.</p>
     pub fn set_owning_account_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.owning_account_id = input;
         self
@@ -160,7 +168,7 @@ impl ResourceShareBuilder {
     /// <li> <p> <code>False</code> – the resource share can be shared with only accounts in the same organization as the account that owns the resource share.</p> </li>
     /// </ul>
     pub fn allow_external_principals(mut self, input: bool) -> Self {
-        self.allow_external_principals = Some(input);
+        self.allow_external_principals = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether principals outside your organization in Organizations can be associated with a resource share.</p>
@@ -168,30 +176,36 @@ impl ResourceShareBuilder {
     /// <li> <p> <code>True</code> – the resource share can be shared with any Amazon Web Services account.</p> </li>
     /// <li> <p> <code>False</code> – the resource share can be shared with only accounts in the same organization as the account that owns the resource share.</p> </li>
     /// </ul>
-    pub fn set_allow_external_principals(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_allow_external_principals(mut self, input: ::std::option::Option<bool>) -> Self {
         self.allow_external_principals = input;
         self
     }
     /// <p>The current status of the resource share.</p>
     pub fn status(mut self, input: crate::types::ResourceShareStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current status of the resource share.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::ResourceShareStatus>,
+        input: ::std::option::Option<crate::types::ResourceShareStatus>,
     ) -> Self {
         self.status = input;
         self
     }
     /// <p>A message about the status of the resource share.</p>
-    pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status_message = Some(input.into());
+    pub fn status_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A message about the status of the resource share.</p>
-    pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.status_message = input;
         self
     }
@@ -203,39 +217,39 @@ impl ResourceShareBuilder {
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
-        self.tags = Some(v);
+        self.tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>The tag key and value pairs attached to the resource share.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tags = input;
         self
     }
     /// <p>The date and time when the resource share was created.</p>
-    pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_time = Some(input);
+    pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time when the resource share was created.</p>
     pub fn set_creation_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_time = input;
         self
     }
     /// <p>The date and time when the resource share was last updated.</p>
-    pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_updated_time = Some(input);
+    pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_updated_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time when the resource share was last updated.</p>
     pub fn set_last_updated_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_updated_time = input;
         self
@@ -247,7 +261,7 @@ impl ResourceShareBuilder {
     /// <li> <p> <b>PROMOTING_TO_STANDARD</b> – This resource share was originally <code>CREATED_FROM_POLICY</code>, but the customer ran the <code>PromoteResourceShareCreatedFromPolicy</code> and that operation is still in progress. This value changes to <code>STANDARD</code> when complete.</p> </li>
     /// </ul>
     pub fn feature_set(mut self, input: crate::types::ResourceShareFeatureSet) -> Self {
-        self.feature_set = Some(input);
+        self.feature_set = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates what features are available for this resource share. This parameter can have one of the following values:</p>
@@ -258,7 +272,7 @@ impl ResourceShareBuilder {
     /// </ul>
     pub fn set_feature_set(
         mut self,
-        input: std::option::Option<crate::types::ResourceShareFeatureSet>,
+        input: ::std::option::Option<crate::types::ResourceShareFeatureSet>,
     ) -> Self {
         self.feature_set = input;
         self

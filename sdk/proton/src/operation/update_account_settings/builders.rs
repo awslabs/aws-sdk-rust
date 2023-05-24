@@ -6,29 +6,29 @@ pub use crate::operation::update_account_settings::_update_account_settings_inpu
 /// Fluent builder constructing a request to `UpdateAccountSettings`.
 ///
 /// <p>Update Proton settings that are used for multiple services in the Amazon Web Services account.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateAccountSettingsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::update_account_settings::builders::UpdateAccountSettingsInputBuilder,
 }
 impl UpdateAccountSettingsFluentBuilder {
     /// Creates a new `UpdateAccountSettings`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_account_settings::UpdateAccountSettings,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_account_settings::UpdateAccountSettingsError,
         >,
     > {
@@ -36,30 +36,33 @@ impl UpdateAccountSettingsFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_account_settings::UpdateAccountSettingsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_account_settings::UpdateAccountSettingsError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,9 +75,9 @@ impl UpdateAccountSettingsFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_account_settings::UpdateAccountSettingsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_account_settings::UpdateAccountSettingsError,
         >,
     > {
@@ -82,7 +85,10 @@ impl UpdateAccountSettingsFluentBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the service role you want to use for provisioning pipelines. Assumed by Proton for Amazon Web Services-managed provisioning, and by customer-owned automation for self-managed provisioning.</p>
     /// <p>To remove a previously configured ARN, specify an empty string.</p>
-    pub fn pipeline_service_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn pipeline_service_role_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.pipeline_service_role_arn(input.into());
         self
     }
@@ -90,7 +96,7 @@ impl UpdateAccountSettingsFluentBuilder {
     /// <p>To remove a previously configured ARN, specify an empty string.</p>
     pub fn set_pipeline_service_role_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_pipeline_service_role_arn(input);
         self
@@ -108,7 +114,7 @@ impl UpdateAccountSettingsFluentBuilder {
     /// <p>To remove a previously configured repository, set <code>deletePipelineProvisioningRepository</code> to <code>true</code>, and don't set <code>pipelineProvisioningRepository</code>.</p>
     pub fn set_pipeline_provisioning_repository(
         mut self,
-        input: std::option::Option<crate::types::RepositoryBranchInput>,
+        input: ::std::option::Option<crate::types::RepositoryBranchInput>,
     ) -> Self {
         self.inner = self.inner.set_pipeline_provisioning_repository(input);
         self
@@ -121,7 +127,7 @@ impl UpdateAccountSettingsFluentBuilder {
     /// <p>Set to <code>true</code> to remove a configured pipeline repository from the account settings. Don't set this field if you are updating the configured pipeline repository.</p>
     pub fn set_delete_pipeline_provisioning_repository(
         mut self,
-        input: std::option::Option<bool>,
+        input: ::std::option::Option<bool>,
     ) -> Self {
         self.inner = self
             .inner
@@ -129,14 +135,17 @@ impl UpdateAccountSettingsFluentBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the service role you want to use for provisioning pipelines. Proton assumes this role for CodeBuild-based provisioning.</p>
-    pub fn pipeline_codebuild_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn pipeline_codebuild_role_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.pipeline_codebuild_role_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the service role you want to use for provisioning pipelines. Proton assumes this role for CodeBuild-based provisioning.</p>
     pub fn set_pipeline_codebuild_role_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_pipeline_codebuild_role_arn(input);
         self

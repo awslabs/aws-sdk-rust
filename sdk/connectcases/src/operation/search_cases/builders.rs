@@ -8,56 +8,59 @@ pub use crate::operation::search_cases::_search_cases_input::SearchCasesInputBui
 /// <p>Searches for cases within their associated Cases domain. Search results are returned as a paginated list of abridged case documents.</p> <note>
 /// <p>For <code>customer_id</code> you must provide the full customer profile ARN in this format: <code> arn:aws:profile:your AWS Region:your AWS account ID:domains/profiles domain name/profiles/profile ID</code>. </p>
 /// </note>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SearchCasesFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::search_cases::builders::SearchCasesInputBuilder,
 }
 impl SearchCasesFluentBuilder {
     /// Creates a new `SearchCases`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::search_cases::SearchCases,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::search_cases::SearchCasesError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_cases::SearchCasesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::search_cases::SearchCasesOutput,
-        aws_smithy_http::result::SdkError<crate::operation::search_cases::SearchCasesError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_cases::SearchCasesError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -70,9 +73,9 @@ impl SearchCasesFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::search_cases::SearchCasesOutput,
-        aws_smithy_http::result::SdkError<crate::operation::search_cases::SearchCasesError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::search_cases::SearchCasesError>,
     > {
         self.send_middleware().await
     }
@@ -86,12 +89,12 @@ impl SearchCasesFluentBuilder {
         )
     }
     /// <p>The unique identifier of the Cases domain. </p>
-    pub fn domain_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_id(input.into());
         self
     }
     /// <p>The unique identifier of the Cases domain. </p>
-    pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_id(input);
         self
     }
@@ -101,27 +104,27 @@ impl SearchCasesFluentBuilder {
         self
     }
     /// <p>The maximum number of cases to return. The current maximum supported value is 25. This is also the default value when no other value is provided.</p>
-    pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
     /// <p>A word or phrase used to perform a quick search.</p>
-    pub fn search_term(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn search_term(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.search_term(input.into());
         self
     }
     /// <p>A word or phrase used to perform a quick search.</p>
-    pub fn set_search_term(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_search_term(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_search_term(input);
         self
     }
@@ -131,7 +134,7 @@ impl SearchCasesFluentBuilder {
         self
     }
     /// <p>A list of filter objects.</p>
-    pub fn set_filter(mut self, input: std::option::Option<crate::types::CaseFilter>) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::CaseFilter>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }
@@ -147,7 +150,7 @@ impl SearchCasesFluentBuilder {
     /// <p>A list of sorts where each sort specifies a field and their sort order to be applied to the results. </p>
     pub fn set_sorts(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Sort>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Sort>>,
     ) -> Self {
         self.inner = self.inner.set_sorts(input);
         self
@@ -164,7 +167,7 @@ impl SearchCasesFluentBuilder {
     /// <p>The list of field identifiers to be returned as part of the response.</p>
     pub fn set_fields(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::FieldIdentifier>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::FieldIdentifier>>,
     ) -> Self {
         self.inner = self.inner.set_fields(input);
         self

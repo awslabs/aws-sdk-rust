@@ -2,22 +2,22 @@
 
 /// <p>The DELETE request to delete a usage plan key and remove the underlying API key from the associated usage plan.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteUsagePlanKeyInput {
     /// <p>The Id of the UsagePlan resource representing the usage plan containing the to-be-deleted UsagePlanKey resource representing a plan customer.</p>
     #[doc(hidden)]
-    pub usage_plan_id: std::option::Option<std::string::String>,
+    pub usage_plan_id: ::std::option::Option<::std::string::String>,
     /// <p>The Id of the UsagePlanKey resource to be deleted.</p>
     #[doc(hidden)]
-    pub key_id: std::option::Option<std::string::String>,
+    pub key_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteUsagePlanKeyInput {
     /// <p>The Id of the UsagePlan resource representing the usage plan containing the to-be-deleted UsagePlanKey resource representing a plan customer.</p>
-    pub fn usage_plan_id(&self) -> std::option::Option<&str> {
+    pub fn usage_plan_id(&self) -> ::std::option::Option<&str> {
         self.usage_plan_id.as_deref()
     }
     /// <p>The Id of the UsagePlanKey resource to be deleted.</p>
-    pub fn key_id(&self) -> std::option::Option<&str> {
+    pub fn key_id(&self) -> ::std::option::Option<&str> {
         self.key_id.as_deref()
     }
 }
@@ -31,40 +31,48 @@ impl DeleteUsagePlanKeyInput {
 
 /// A builder for [`DeleteUsagePlanKeyInput`](crate::operation::delete_usage_plan_key::DeleteUsagePlanKeyInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteUsagePlanKeyInputBuilder {
-    pub(crate) usage_plan_id: std::option::Option<std::string::String>,
-    pub(crate) key_id: std::option::Option<std::string::String>,
+    pub(crate) usage_plan_id: ::std::option::Option<::std::string::String>,
+    pub(crate) key_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteUsagePlanKeyInputBuilder {
     /// <p>The Id of the UsagePlan resource representing the usage plan containing the to-be-deleted UsagePlanKey resource representing a plan customer.</p>
-    pub fn usage_plan_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.usage_plan_id = Some(input.into());
+    pub fn usage_plan_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.usage_plan_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Id of the UsagePlan resource representing the usage plan containing the to-be-deleted UsagePlanKey resource representing a plan customer.</p>
-    pub fn set_usage_plan_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_usage_plan_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.usage_plan_id = input;
         self
     }
     /// <p>The Id of the UsagePlanKey resource to be deleted.</p>
-    pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.key_id = Some(input.into());
+    pub fn key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Id of the UsagePlanKey resource to be deleted.</p>
-    pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_id = input;
         self
     }
     /// Consumes the builder and constructs a [`DeleteUsagePlanKeyInput`](crate::operation::delete_usage_plan_key::DeleteUsagePlanKeyInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::delete_usage_plan_key::DeleteUsagePlanKeyInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::delete_usage_plan_key::DeleteUsagePlanKeyInput {
                 usage_plan_id: self.usage_plan_id,
                 key_id: self.key_id,

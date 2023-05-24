@@ -2,27 +2,27 @@
 
 /// <p>Gets information on the configuration of document fields/attributes that you want to base query suggestions on. To change your configuration, use <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_AttributeSuggestionsUpdateConfig.html">AttributeSuggestionsUpdateConfig</a> and then call <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UpdateQuerySuggestionsConfig.html">UpdateQuerySuggestionsConfig</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AttributeSuggestionsDescribeConfig {
     /// <p>The list of fields/attributes that you want to set as suggestible for query suggestions.</p>
     #[doc(hidden)]
     pub suggestable_config_list:
-        std::option::Option<std::vec::Vec<crate::types::SuggestableConfig>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::SuggestableConfig>>,
     /// <p>The mode is set to either <code>ACTIVE</code> or <code>INACTIVE</code>. If the <code>Mode</code> for query history is set to <code>ENABLED</code> when calling <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UpdateQuerySuggestionsConfig.html">UpdateQuerySuggestionsConfig</a> and <code>AttributeSuggestionsMode</code> to use fields/attributes is set to <code>ACTIVE</code>, and you haven't set your <code>SuggestionTypes</code> preference to <code>DOCUMENT_ATTRIBUTES</code>, then Amazon Kendra uses the query history.</p>
     #[doc(hidden)]
-    pub attribute_suggestions_mode: std::option::Option<crate::types::AttributeSuggestionsMode>,
+    pub attribute_suggestions_mode: ::std::option::Option<crate::types::AttributeSuggestionsMode>,
 }
 impl AttributeSuggestionsDescribeConfig {
     /// <p>The list of fields/attributes that you want to set as suggestible for query suggestions.</p>
     pub fn suggestable_config_list(
         &self,
-    ) -> std::option::Option<&[crate::types::SuggestableConfig]> {
+    ) -> ::std::option::Option<&[crate::types::SuggestableConfig]> {
         self.suggestable_config_list.as_deref()
     }
     /// <p>The mode is set to either <code>ACTIVE</code> or <code>INACTIVE</code>. If the <code>Mode</code> for query history is set to <code>ENABLED</code> when calling <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UpdateQuerySuggestionsConfig.html">UpdateQuerySuggestionsConfig</a> and <code>AttributeSuggestionsMode</code> to use fields/attributes is set to <code>ACTIVE</code>, and you haven't set your <code>SuggestionTypes</code> preference to <code>DOCUMENT_ATTRIBUTES</code>, then Amazon Kendra uses the query history.</p>
     pub fn attribute_suggestions_mode(
         &self,
-    ) -> std::option::Option<&crate::types::AttributeSuggestionsMode> {
+    ) -> ::std::option::Option<&crate::types::AttributeSuggestionsMode> {
         self.attribute_suggestions_mode.as_ref()
     }
 }
@@ -35,12 +35,14 @@ impl AttributeSuggestionsDescribeConfig {
 
 /// A builder for [`AttributeSuggestionsDescribeConfig`](crate::types::AttributeSuggestionsDescribeConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AttributeSuggestionsDescribeConfigBuilder {
     pub(crate) suggestable_config_list:
-        std::option::Option<std::vec::Vec<crate::types::SuggestableConfig>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::SuggestableConfig>>,
     pub(crate) attribute_suggestions_mode:
-        std::option::Option<crate::types::AttributeSuggestionsMode>,
+        ::std::option::Option<crate::types::AttributeSuggestionsMode>,
 }
 impl AttributeSuggestionsDescribeConfigBuilder {
     /// Appends an item to `suggestable_config_list`.
@@ -51,13 +53,13 @@ impl AttributeSuggestionsDescribeConfigBuilder {
     pub fn suggestable_config_list(mut self, input: crate::types::SuggestableConfig) -> Self {
         let mut v = self.suggestable_config_list.unwrap_or_default();
         v.push(input);
-        self.suggestable_config_list = Some(v);
+        self.suggestable_config_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of fields/attributes that you want to set as suggestible for query suggestions.</p>
     pub fn set_suggestable_config_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SuggestableConfig>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SuggestableConfig>>,
     ) -> Self {
         self.suggestable_config_list = input;
         self
@@ -67,13 +69,13 @@ impl AttributeSuggestionsDescribeConfigBuilder {
         mut self,
         input: crate::types::AttributeSuggestionsMode,
     ) -> Self {
-        self.attribute_suggestions_mode = Some(input);
+        self.attribute_suggestions_mode = ::std::option::Option::Some(input);
         self
     }
     /// <p>The mode is set to either <code>ACTIVE</code> or <code>INACTIVE</code>. If the <code>Mode</code> for query history is set to <code>ENABLED</code> when calling <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UpdateQuerySuggestionsConfig.html">UpdateQuerySuggestionsConfig</a> and <code>AttributeSuggestionsMode</code> to use fields/attributes is set to <code>ACTIVE</code>, and you haven't set your <code>SuggestionTypes</code> preference to <code>DOCUMENT_ATTRIBUTES</code>, then Amazon Kendra uses the query history.</p>
     pub fn set_attribute_suggestions_mode(
         mut self,
-        input: std::option::Option<crate::types::AttributeSuggestionsMode>,
+        input: ::std::option::Option<crate::types::AttributeSuggestionsMode>,
     ) -> Self {
         self.attribute_suggestions_mode = input;
         self

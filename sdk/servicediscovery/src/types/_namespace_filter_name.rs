@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum NamespaceFilterName {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum NamespaceFilterName {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for NamespaceFilterName {
+impl ::std::convert::From<&str> for NamespaceFilterName {
     fn from(s: &str) -> Self {
         match s {
             "HTTP_NAME" => NamespaceFilterName::HttpName,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for NamespaceFilterName {
         }
     }
 }
-impl std::str::FromStr for NamespaceFilterName {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for NamespaceFilterName {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(NamespaceFilterName::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(NamespaceFilterName::from(s))
     }
 }
 impl NamespaceFilterName {
@@ -91,7 +91,7 @@ impl NamespaceFilterName {
         &["HTTP_NAME", "NAME", "TYPE"]
     }
 }
-impl AsRef<str> for NamespaceFilterName {
+impl ::std::convert::AsRef<str> for NamespaceFilterName {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

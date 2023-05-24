@@ -2,43 +2,43 @@
 
 /// <p>The object representing the Amazon S3 bucket containing the transcript, as well as the associated metadata.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3BucketTranscriptSource {
     /// <p>The name of the bucket containing the transcript and the associated metadata.</p>
     #[doc(hidden)]
-    pub s3_bucket_name: std::option::Option<std::string::String>,
+    pub s3_bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>The object that contains a path format that will be applied when Amazon Lex reads the transcript file in the bucket you provide. Specify this object if you only want Lex to read a subset of files in your Amazon S3 bucket.</p>
     #[doc(hidden)]
-    pub path_format: std::option::Option<crate::types::PathFormat>,
+    pub path_format: ::std::option::Option<crate::types::PathFormat>,
     /// <p>The format of the transcript content. Currently, Genie only supports the Amazon Lex transcript format.</p>
     #[doc(hidden)]
-    pub transcript_format: std::option::Option<crate::types::TranscriptFormat>,
+    pub transcript_format: ::std::option::Option<crate::types::TranscriptFormat>,
     /// <p>The object that contains the filter which will be applied when Amazon Lex reads through the Amazon S3 bucket. Specify this object if you want Amazon Lex to read only a subset of the Amazon S3 bucket based on the filter you provide.</p>
     #[doc(hidden)]
-    pub transcript_filter: std::option::Option<crate::types::TranscriptFilter>,
+    pub transcript_filter: ::std::option::Option<crate::types::TranscriptFilter>,
     /// <p>The ARN of the KMS key that customer use to encrypt their Amazon S3 bucket. Only use this field if your bucket is encrypted using a customer managed KMS key.</p>
     #[doc(hidden)]
-    pub kms_key_arn: std::option::Option<std::string::String>,
+    pub kms_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl S3BucketTranscriptSource {
     /// <p>The name of the bucket containing the transcript and the associated metadata.</p>
-    pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
+    pub fn s3_bucket_name(&self) -> ::std::option::Option<&str> {
         self.s3_bucket_name.as_deref()
     }
     /// <p>The object that contains a path format that will be applied when Amazon Lex reads the transcript file in the bucket you provide. Specify this object if you only want Lex to read a subset of files in your Amazon S3 bucket.</p>
-    pub fn path_format(&self) -> std::option::Option<&crate::types::PathFormat> {
+    pub fn path_format(&self) -> ::std::option::Option<&crate::types::PathFormat> {
         self.path_format.as_ref()
     }
     /// <p>The format of the transcript content. Currently, Genie only supports the Amazon Lex transcript format.</p>
-    pub fn transcript_format(&self) -> std::option::Option<&crate::types::TranscriptFormat> {
+    pub fn transcript_format(&self) -> ::std::option::Option<&crate::types::TranscriptFormat> {
         self.transcript_format.as_ref()
     }
     /// <p>The object that contains the filter which will be applied when Amazon Lex reads through the Amazon S3 bucket. Specify this object if you want Amazon Lex to read only a subset of the Amazon S3 bucket based on the filter you provide.</p>
-    pub fn transcript_filter(&self) -> std::option::Option<&crate::types::TranscriptFilter> {
+    pub fn transcript_filter(&self) -> ::std::option::Option<&crate::types::TranscriptFilter> {
         self.transcript_filter.as_ref()
     }
     /// <p>The ARN of the KMS key that customer use to encrypt their Amazon S3 bucket. Only use this field if your bucket is encrypted using a customer managed KMS key.</p>
-    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+    pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
 }
@@ -51,68 +51,79 @@ impl S3BucketTranscriptSource {
 
 /// A builder for [`S3BucketTranscriptSource`](crate::types::S3BucketTranscriptSource).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct S3BucketTranscriptSourceBuilder {
-    pub(crate) s3_bucket_name: std::option::Option<std::string::String>,
-    pub(crate) path_format: std::option::Option<crate::types::PathFormat>,
-    pub(crate) transcript_format: std::option::Option<crate::types::TranscriptFormat>,
-    pub(crate) transcript_filter: std::option::Option<crate::types::TranscriptFilter>,
-    pub(crate) kms_key_arn: std::option::Option<std::string::String>,
+    pub(crate) s3_bucket_name: ::std::option::Option<::std::string::String>,
+    pub(crate) path_format: ::std::option::Option<crate::types::PathFormat>,
+    pub(crate) transcript_format: ::std::option::Option<crate::types::TranscriptFormat>,
+    pub(crate) transcript_filter: ::std::option::Option<crate::types::TranscriptFilter>,
+    pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl S3BucketTranscriptSourceBuilder {
     /// <p>The name of the bucket containing the transcript and the associated metadata.</p>
-    pub fn s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.s3_bucket_name = Some(input.into());
+    pub fn s3_bucket_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.s3_bucket_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the bucket containing the transcript and the associated metadata.</p>
-    pub fn set_s3_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_s3_bucket_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.s3_bucket_name = input;
         self
     }
     /// <p>The object that contains a path format that will be applied when Amazon Lex reads the transcript file in the bucket you provide. Specify this object if you only want Lex to read a subset of files in your Amazon S3 bucket.</p>
     pub fn path_format(mut self, input: crate::types::PathFormat) -> Self {
-        self.path_format = Some(input);
+        self.path_format = ::std::option::Option::Some(input);
         self
     }
     /// <p>The object that contains a path format that will be applied when Amazon Lex reads the transcript file in the bucket you provide. Specify this object if you only want Lex to read a subset of files in your Amazon S3 bucket.</p>
-    pub fn set_path_format(mut self, input: std::option::Option<crate::types::PathFormat>) -> Self {
+    pub fn set_path_format(
+        mut self,
+        input: ::std::option::Option<crate::types::PathFormat>,
+    ) -> Self {
         self.path_format = input;
         self
     }
     /// <p>The format of the transcript content. Currently, Genie only supports the Amazon Lex transcript format.</p>
     pub fn transcript_format(mut self, input: crate::types::TranscriptFormat) -> Self {
-        self.transcript_format = Some(input);
+        self.transcript_format = ::std::option::Option::Some(input);
         self
     }
     /// <p>The format of the transcript content. Currently, Genie only supports the Amazon Lex transcript format.</p>
     pub fn set_transcript_format(
         mut self,
-        input: std::option::Option<crate::types::TranscriptFormat>,
+        input: ::std::option::Option<crate::types::TranscriptFormat>,
     ) -> Self {
         self.transcript_format = input;
         self
     }
     /// <p>The object that contains the filter which will be applied when Amazon Lex reads through the Amazon S3 bucket. Specify this object if you want Amazon Lex to read only a subset of the Amazon S3 bucket based on the filter you provide.</p>
     pub fn transcript_filter(mut self, input: crate::types::TranscriptFilter) -> Self {
-        self.transcript_filter = Some(input);
+        self.transcript_filter = ::std::option::Option::Some(input);
         self
     }
     /// <p>The object that contains the filter which will be applied when Amazon Lex reads through the Amazon S3 bucket. Specify this object if you want Amazon Lex to read only a subset of the Amazon S3 bucket based on the filter you provide.</p>
     pub fn set_transcript_filter(
         mut self,
-        input: std::option::Option<crate::types::TranscriptFilter>,
+        input: ::std::option::Option<crate::types::TranscriptFilter>,
     ) -> Self {
         self.transcript_filter = input;
         self
     }
     /// <p>The ARN of the KMS key that customer use to encrypt their Amazon S3 bucket. Only use this field if your bucket is encrypted using a customer managed KMS key.</p>
-    pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.kms_key_arn = Some(input.into());
+    pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the KMS key that customer use to encrypt their Amazon S3 bucket. Only use this field if your bucket is encrypted using a customer managed KMS key.</p>
-    pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_arn = input;
         self
     }

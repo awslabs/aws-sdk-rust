@@ -2,14 +2,14 @@
 
 /// <p> The properties that are applied when using Veeva as a flow source. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VeevaSourceProperties {
     /// <p> The object specified in the Veeva flow source. </p>
     #[doc(hidden)]
-    pub object: std::option::Option<std::string::String>,
+    pub object: ::std::option::Option<::std::string::String>,
     /// <p>The document type specified in the Veeva document extract flow.</p>
     #[doc(hidden)]
-    pub document_type: std::option::Option<std::string::String>,
+    pub document_type: ::std::option::Option<::std::string::String>,
     /// <p>Boolean value to include source files in Veeva document extract flow.</p>
     #[doc(hidden)]
     pub include_source_files: bool,
@@ -22,11 +22,11 @@ pub struct VeevaSourceProperties {
 }
 impl VeevaSourceProperties {
     /// <p> The object specified in the Veeva flow source. </p>
-    pub fn object(&self) -> std::option::Option<&str> {
+    pub fn object(&self) -> ::std::option::Option<&str> {
         self.object.as_deref()
     }
     /// <p>The document type specified in the Veeva document extract flow.</p>
-    pub fn document_type(&self) -> std::option::Option<&str> {
+    pub fn document_type(&self) -> ::std::option::Option<&str> {
         self.document_type.as_deref()
     }
     /// <p>Boolean value to include source files in Veeva document extract flow.</p>
@@ -51,62 +51,70 @@ impl VeevaSourceProperties {
 
 /// A builder for [`VeevaSourceProperties`](crate::types::VeevaSourceProperties).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VeevaSourcePropertiesBuilder {
-    pub(crate) object: std::option::Option<std::string::String>,
-    pub(crate) document_type: std::option::Option<std::string::String>,
-    pub(crate) include_source_files: std::option::Option<bool>,
-    pub(crate) include_renditions: std::option::Option<bool>,
-    pub(crate) include_all_versions: std::option::Option<bool>,
+    pub(crate) object: ::std::option::Option<::std::string::String>,
+    pub(crate) document_type: ::std::option::Option<::std::string::String>,
+    pub(crate) include_source_files: ::std::option::Option<bool>,
+    pub(crate) include_renditions: ::std::option::Option<bool>,
+    pub(crate) include_all_versions: ::std::option::Option<bool>,
 }
 impl VeevaSourcePropertiesBuilder {
     /// <p> The object specified in the Veeva flow source. </p>
-    pub fn object(mut self, input: impl Into<std::string::String>) -> Self {
-        self.object = Some(input.into());
+    pub fn object(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.object = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The object specified in the Veeva flow source. </p>
-    pub fn set_object(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_object(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.object = input;
         self
     }
     /// <p>The document type specified in the Veeva document extract flow.</p>
-    pub fn document_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.document_type = Some(input.into());
+    pub fn document_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.document_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The document type specified in the Veeva document extract flow.</p>
-    pub fn set_document_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_document_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.document_type = input;
         self
     }
     /// <p>Boolean value to include source files in Veeva document extract flow.</p>
     pub fn include_source_files(mut self, input: bool) -> Self {
-        self.include_source_files = Some(input);
+        self.include_source_files = ::std::option::Option::Some(input);
         self
     }
     /// <p>Boolean value to include source files in Veeva document extract flow.</p>
-    pub fn set_include_source_files(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_include_source_files(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_source_files = input;
         self
     }
     /// <p>Boolean value to include file renditions in Veeva document extract flow.</p>
     pub fn include_renditions(mut self, input: bool) -> Self {
-        self.include_renditions = Some(input);
+        self.include_renditions = ::std::option::Option::Some(input);
         self
     }
     /// <p>Boolean value to include file renditions in Veeva document extract flow.</p>
-    pub fn set_include_renditions(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_include_renditions(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_renditions = input;
         self
     }
     /// <p>Boolean value to include All Versions of files in Veeva document extract flow.</p>
     pub fn include_all_versions(mut self, input: bool) -> Self {
-        self.include_all_versions = Some(input);
+        self.include_all_versions = ::std::option::Option::Some(input);
         self
     }
     /// <p>Boolean value to include All Versions of files in Veeva document extract flow.</p>
-    pub fn set_include_all_versions(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_include_all_versions(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_all_versions = input;
         self
     }

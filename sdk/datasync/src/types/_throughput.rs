@@ -2,36 +2,36 @@
 
 /// <p>The throughput peaks for an on-premises storage system volume. Each data point represents the 95th percentile peak value during a 1-hour interval.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Throughput {
     /// <p>Peak throughput related to read operations.</p>
     #[doc(hidden)]
-    pub read: std::option::Option<f64>,
+    pub read: ::std::option::Option<f64>,
     /// <p>Peak throughput related to write operations.</p>
     #[doc(hidden)]
-    pub write: std::option::Option<f64>,
+    pub write: ::std::option::Option<f64>,
     /// <p>Peak throughput unrelated to read and write operations.</p>
     #[doc(hidden)]
-    pub other: std::option::Option<f64>,
+    pub other: ::std::option::Option<f64>,
     /// <p>Peak total throughput on your on-premises storage system resource.</p>
     #[doc(hidden)]
-    pub total: std::option::Option<f64>,
+    pub total: ::std::option::Option<f64>,
 }
 impl Throughput {
     /// <p>Peak throughput related to read operations.</p>
-    pub fn read(&self) -> std::option::Option<f64> {
+    pub fn read(&self) -> ::std::option::Option<f64> {
         self.read
     }
     /// <p>Peak throughput related to write operations.</p>
-    pub fn write(&self) -> std::option::Option<f64> {
+    pub fn write(&self) -> ::std::option::Option<f64> {
         self.write
     }
     /// <p>Peak throughput unrelated to read and write operations.</p>
-    pub fn other(&self) -> std::option::Option<f64> {
+    pub fn other(&self) -> ::std::option::Option<f64> {
         self.other
     }
     /// <p>Peak total throughput on your on-premises storage system resource.</p>
-    pub fn total(&self) -> std::option::Option<f64> {
+    pub fn total(&self) -> ::std::option::Option<f64> {
         self.total
     }
 }
@@ -44,51 +44,53 @@ impl Throughput {
 
 /// A builder for [`Throughput`](crate::types::Throughput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ThroughputBuilder {
-    pub(crate) read: std::option::Option<f64>,
-    pub(crate) write: std::option::Option<f64>,
-    pub(crate) other: std::option::Option<f64>,
-    pub(crate) total: std::option::Option<f64>,
+    pub(crate) read: ::std::option::Option<f64>,
+    pub(crate) write: ::std::option::Option<f64>,
+    pub(crate) other: ::std::option::Option<f64>,
+    pub(crate) total: ::std::option::Option<f64>,
 }
 impl ThroughputBuilder {
     /// <p>Peak throughput related to read operations.</p>
     pub fn read(mut self, input: f64) -> Self {
-        self.read = Some(input);
+        self.read = ::std::option::Option::Some(input);
         self
     }
     /// <p>Peak throughput related to read operations.</p>
-    pub fn set_read(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_read(mut self, input: ::std::option::Option<f64>) -> Self {
         self.read = input;
         self
     }
     /// <p>Peak throughput related to write operations.</p>
     pub fn write(mut self, input: f64) -> Self {
-        self.write = Some(input);
+        self.write = ::std::option::Option::Some(input);
         self
     }
     /// <p>Peak throughput related to write operations.</p>
-    pub fn set_write(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_write(mut self, input: ::std::option::Option<f64>) -> Self {
         self.write = input;
         self
     }
     /// <p>Peak throughput unrelated to read and write operations.</p>
     pub fn other(mut self, input: f64) -> Self {
-        self.other = Some(input);
+        self.other = ::std::option::Option::Some(input);
         self
     }
     /// <p>Peak throughput unrelated to read and write operations.</p>
-    pub fn set_other(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_other(mut self, input: ::std::option::Option<f64>) -> Self {
         self.other = input;
         self
     }
     /// <p>Peak total throughput on your on-premises storage system resource.</p>
     pub fn total(mut self, input: f64) -> Self {
-        self.total = Some(input);
+        self.total = ::std::option::Option::Some(input);
         self
     }
     /// <p>Peak total throughput on your on-premises storage system resource.</p>
-    pub fn set_total(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_total(mut self, input: ::std::option::Option<f64>) -> Self {
         self.total = input;
         self
     }

@@ -2,22 +2,22 @@
 
 /// The transport parameters that you want to associate with an incoming media stream.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InputConfigurationRequest {
     /// The port that you want the flow to listen on for an incoming media stream.
     #[doc(hidden)]
-    pub input_port: std::option::Option<i32>,
+    pub input_port: ::std::option::Option<i32>,
     /// The VPC interface that you want to use for the incoming media stream.
     #[doc(hidden)]
-    pub interface: std::option::Option<crate::types::InterfaceRequest>,
+    pub interface: ::std::option::Option<crate::types::InterfaceRequest>,
 }
 impl InputConfigurationRequest {
     /// The port that you want the flow to listen on for an incoming media stream.
-    pub fn input_port(&self) -> std::option::Option<i32> {
+    pub fn input_port(&self) -> ::std::option::Option<i32> {
         self.input_port
     }
     /// The VPC interface that you want to use for the incoming media stream.
-    pub fn interface(&self) -> std::option::Option<&crate::types::InterfaceRequest> {
+    pub fn interface(&self) -> ::std::option::Option<&crate::types::InterfaceRequest> {
         self.interface.as_ref()
     }
 }
@@ -30,31 +30,33 @@ impl InputConfigurationRequest {
 
 /// A builder for [`InputConfigurationRequest`](crate::types::InputConfigurationRequest).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InputConfigurationRequestBuilder {
-    pub(crate) input_port: std::option::Option<i32>,
-    pub(crate) interface: std::option::Option<crate::types::InterfaceRequest>,
+    pub(crate) input_port: ::std::option::Option<i32>,
+    pub(crate) interface: ::std::option::Option<crate::types::InterfaceRequest>,
 }
 impl InputConfigurationRequestBuilder {
     /// The port that you want the flow to listen on for an incoming media stream.
     pub fn input_port(mut self, input: i32) -> Self {
-        self.input_port = Some(input);
+        self.input_port = ::std::option::Option::Some(input);
         self
     }
     /// The port that you want the flow to listen on for an incoming media stream.
-    pub fn set_input_port(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_input_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.input_port = input;
         self
     }
     /// The VPC interface that you want to use for the incoming media stream.
     pub fn interface(mut self, input: crate::types::InterfaceRequest) -> Self {
-        self.interface = Some(input);
+        self.interface = ::std::option::Option::Some(input);
         self
     }
     /// The VPC interface that you want to use for the incoming media stream.
     pub fn set_interface(
         mut self,
-        input: std::option::Option<crate::types::InterfaceRequest>,
+        input: ::std::option::Option<crate::types::InterfaceRequest>,
     ) -> Self {
         self.interface = input;
         self

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetRasterDataCollection`](crate::operation::get_raster_data_collection::builders::GetRasterDataCollectionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl Into<String>)`](crate::operation::get_raster_data_collection::builders::GetRasterDataCollectionFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::get_raster_data_collection::builders::GetRasterDataCollectionFluentBuilder::set_arn): <p>The Amazon Resource Name (ARN) of the raster data collection.</p>
+    ///   - [`arn(impl ::std::convert::Into<String>)`](crate::operation::get_raster_data_collection::builders::GetRasterDataCollectionFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::get_raster_data_collection::builders::GetRasterDataCollectionFluentBuilder::set_arn): <p>The Amazon Resource Name (ARN) of the raster data collection.</p>
     /// - On success, responds with [`GetRasterDataCollectionOutput`](crate::operation::get_raster_data_collection::GetRasterDataCollectionOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::get_raster_data_collection::GetRasterDataCollectionOutput::name): <p>The name of the raster data collection.</p>
     ///   - [`arn(Option<String>)`](crate::operation::get_raster_data_collection::GetRasterDataCollectionOutput::arn): <p>The Amazon Resource Name (ARN) of the raster data collection.</p>

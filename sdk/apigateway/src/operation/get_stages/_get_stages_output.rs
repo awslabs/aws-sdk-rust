@@ -2,20 +2,20 @@
 
 /// <p>A list of Stage resources that are associated with the ApiKey resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetStagesOutput {
     /// <p>The current page of elements from this collection.</p>
     #[doc(hidden)]
-    pub item: std::option::Option<std::vec::Vec<crate::types::Stage>>,
+    pub item: ::std::option::Option<::std::vec::Vec<crate::types::Stage>>,
     _request_id: Option<String>,
 }
 impl GetStagesOutput {
     /// <p>The current page of elements from this collection.</p>
-    pub fn item(&self) -> std::option::Option<&[crate::types::Stage]> {
+    pub fn item(&self) -> ::std::option::Option<&[crate::types::Stage]> {
         self.item.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for GetStagesOutput {
+impl ::aws_http::request_id::RequestId for GetStagesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,9 +29,11 @@ impl GetStagesOutput {
 
 /// A builder for [`GetStagesOutput`](crate::operation::get_stages::GetStagesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetStagesOutputBuilder {
-    pub(crate) item: std::option::Option<std::vec::Vec<crate::types::Stage>>,
+    pub(crate) item: ::std::option::Option<::std::vec::Vec<crate::types::Stage>>,
     _request_id: Option<String>,
 }
 impl GetStagesOutputBuilder {
@@ -43,13 +45,13 @@ impl GetStagesOutputBuilder {
     pub fn item(mut self, input: crate::types::Stage) -> Self {
         let mut v = self.item.unwrap_or_default();
         v.push(input);
-        self.item = Some(v);
+        self.item = ::std::option::Option::Some(v);
         self
     }
     /// <p>The current page of elements from this collection.</p>
     pub fn set_item(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Stage>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Stage>>,
     ) -> Self {
         self.item = input;
         self

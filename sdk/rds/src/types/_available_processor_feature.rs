@@ -3,29 +3,29 @@
 /// <p>Contains the available processor feature information for the DB instance class of a DB instance.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html#USER_ConfigureProcessor">Configuring the Processor of the DB Instance Class</a> in the <i>Amazon RDS User Guide. </i> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AvailableProcessorFeature {
     /// <p>The name of the processor feature. Valid names are <code>coreCount</code> and <code>threadsPerCore</code>.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The default value for the processor feature of the DB instance class.</p>
     #[doc(hidden)]
-    pub default_value: std::option::Option<std::string::String>,
+    pub default_value: ::std::option::Option<::std::string::String>,
     /// <p>The allowed values for the processor feature of the DB instance class.</p>
     #[doc(hidden)]
-    pub allowed_values: std::option::Option<std::string::String>,
+    pub allowed_values: ::std::option::Option<::std::string::String>,
 }
 impl AvailableProcessorFeature {
     /// <p>The name of the processor feature. Valid names are <code>coreCount</code> and <code>threadsPerCore</code>.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The default value for the processor feature of the DB instance class.</p>
-    pub fn default_value(&self) -> std::option::Option<&str> {
+    pub fn default_value(&self) -> ::std::option::Option<&str> {
         self.default_value.as_deref()
     }
     /// <p>The allowed values for the processor feature of the DB instance class.</p>
-    pub fn allowed_values(&self) -> std::option::Option<&str> {
+    pub fn allowed_values(&self) -> ::std::option::Option<&str> {
         self.allowed_values.as_deref()
     }
 }
@@ -38,40 +38,54 @@ impl AvailableProcessorFeature {
 
 /// A builder for [`AvailableProcessorFeature`](crate::types::AvailableProcessorFeature).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AvailableProcessorFeatureBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) default_value: std::option::Option<std::string::String>,
-    pub(crate) allowed_values: std::option::Option<std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) default_value: ::std::option::Option<::std::string::String>,
+    pub(crate) allowed_values: ::std::option::Option<::std::string::String>,
 }
 impl AvailableProcessorFeatureBuilder {
     /// <p>The name of the processor feature. Valid names are <code>coreCount</code> and <code>threadsPerCore</code>.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the processor feature. Valid names are <code>coreCount</code> and <code>threadsPerCore</code>.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The default value for the processor feature of the DB instance class.</p>
-    pub fn default_value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.default_value = Some(input.into());
+    pub fn default_value(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.default_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The default value for the processor feature of the DB instance class.</p>
-    pub fn set_default_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_default_value(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.default_value = input;
         self
     }
     /// <p>The allowed values for the processor feature of the DB instance class.</p>
-    pub fn allowed_values(mut self, input: impl Into<std::string::String>) -> Self {
-        self.allowed_values = Some(input.into());
+    pub fn allowed_values(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.allowed_values = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The allowed values for the processor feature of the DB instance class.</p>
-    pub fn set_allowed_values(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_allowed_values(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.allowed_values = input;
         self
     }

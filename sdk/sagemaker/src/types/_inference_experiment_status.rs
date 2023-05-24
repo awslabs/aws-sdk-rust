@@ -44,13 +44,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum InferenceExperimentStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -72,7 +72,7 @@ pub enum InferenceExperimentStatus {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for InferenceExperimentStatus {
+impl ::std::convert::From<&str> for InferenceExperimentStatus {
     fn from(s: &str) -> Self {
         match s {
             "Cancelled" => InferenceExperimentStatus::Cancelled,
@@ -89,11 +89,11 @@ impl std::convert::From<&str> for InferenceExperimentStatus {
         }
     }
 }
-impl std::str::FromStr for InferenceExperimentStatus {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for InferenceExperimentStatus {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(InferenceExperimentStatus::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(InferenceExperimentStatus::from(s))
     }
 }
 impl InferenceExperimentStatus {
@@ -125,7 +125,7 @@ impl InferenceExperimentStatus {
         ]
     }
 }
-impl AsRef<str> for InferenceExperimentStatus {
+impl ::std::convert::AsRef<str> for InferenceExperimentStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

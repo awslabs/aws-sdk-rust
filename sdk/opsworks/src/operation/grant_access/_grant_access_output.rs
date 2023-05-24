@@ -2,20 +2,22 @@
 
 /// <p>Contains the response to a <code>GrantAccess</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GrantAccessOutput {
     /// <p>A <code>TemporaryCredential</code> object that contains the data needed to log in to the instance by RDP clients, such as the Microsoft Remote Desktop Connection.</p>
     #[doc(hidden)]
-    pub temporary_credential: std::option::Option<crate::types::TemporaryCredential>,
+    pub temporary_credential: ::std::option::Option<crate::types::TemporaryCredential>,
     _request_id: Option<String>,
 }
 impl GrantAccessOutput {
     /// <p>A <code>TemporaryCredential</code> object that contains the data needed to log in to the instance by RDP clients, such as the Microsoft Remote Desktop Connection.</p>
-    pub fn temporary_credential(&self) -> std::option::Option<&crate::types::TemporaryCredential> {
+    pub fn temporary_credential(
+        &self,
+    ) -> ::std::option::Option<&crate::types::TemporaryCredential> {
         self.temporary_credential.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for GrantAccessOutput {
+impl ::aws_http::request_id::RequestId for GrantAccessOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,21 +31,23 @@ impl GrantAccessOutput {
 
 /// A builder for [`GrantAccessOutput`](crate::operation::grant_access::GrantAccessOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GrantAccessOutputBuilder {
-    pub(crate) temporary_credential: std::option::Option<crate::types::TemporaryCredential>,
+    pub(crate) temporary_credential: ::std::option::Option<crate::types::TemporaryCredential>,
     _request_id: Option<String>,
 }
 impl GrantAccessOutputBuilder {
     /// <p>A <code>TemporaryCredential</code> object that contains the data needed to log in to the instance by RDP clients, such as the Microsoft Remote Desktop Connection.</p>
     pub fn temporary_credential(mut self, input: crate::types::TemporaryCredential) -> Self {
-        self.temporary_credential = Some(input);
+        self.temporary_credential = ::std::option::Option::Some(input);
         self
     }
     /// <p>A <code>TemporaryCredential</code> object that contains the data needed to log in to the instance by RDP clients, such as the Microsoft Remote Desktop Connection.</p>
     pub fn set_temporary_credential(
         mut self,
-        input: std::option::Option<crate::types::TemporaryCredential>,
+        input: ::std::option::Option<crate::types::TemporaryCredential>,
     ) -> Self {
         self.temporary_credential = input;
         self

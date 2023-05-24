@@ -2,43 +2,43 @@
 
 /// <p>Provides information about a document classifier.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ClassifierMetadata {
     /// <p>The number of labels in the input data. </p>
     #[doc(hidden)]
-    pub number_of_labels: std::option::Option<i32>,
+    pub number_of_labels: ::std::option::Option<i32>,
     /// <p>The number of documents in the input data that were used to train the classifier. Typically this is 80 to 90 percent of the input documents.</p>
     #[doc(hidden)]
-    pub number_of_trained_documents: std::option::Option<i32>,
+    pub number_of_trained_documents: ::std::option::Option<i32>,
     /// <p>The number of documents in the input data that were used to test the classifier. Typically this is 10 to 20 percent of the input documents, up to 10,000 documents.</p>
     #[doc(hidden)]
-    pub number_of_test_documents: std::option::Option<i32>,
+    pub number_of_test_documents: ::std::option::Option<i32>,
     /// <p> Describes the result metrics for the test data associated with an documentation classifier.</p>
     #[doc(hidden)]
-    pub evaluation_metrics: std::option::Option<crate::types::ClassifierEvaluationMetrics>,
+    pub evaluation_metrics: ::std::option::Option<crate::types::ClassifierEvaluationMetrics>,
 }
 impl ClassifierMetadata {
     /// <p>The number of labels in the input data. </p>
-    pub fn number_of_labels(&self) -> std::option::Option<i32> {
+    pub fn number_of_labels(&self) -> ::std::option::Option<i32> {
         self.number_of_labels
     }
     /// <p>The number of documents in the input data that were used to train the classifier. Typically this is 80 to 90 percent of the input documents.</p>
-    pub fn number_of_trained_documents(&self) -> std::option::Option<i32> {
+    pub fn number_of_trained_documents(&self) -> ::std::option::Option<i32> {
         self.number_of_trained_documents
     }
     /// <p>The number of documents in the input data that were used to test the classifier. Typically this is 10 to 20 percent of the input documents, up to 10,000 documents.</p>
-    pub fn number_of_test_documents(&self) -> std::option::Option<i32> {
+    pub fn number_of_test_documents(&self) -> ::std::option::Option<i32> {
         self.number_of_test_documents
     }
     /// <p> Describes the result metrics for the test data associated with an documentation classifier.</p>
     pub fn evaluation_metrics(
         &self,
-    ) -> std::option::Option<&crate::types::ClassifierEvaluationMetrics> {
+    ) -> ::std::option::Option<&crate::types::ClassifierEvaluationMetrics> {
         self.evaluation_metrics.as_ref()
     }
 }
-impl std::fmt::Debug for ClassifierMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for ClassifierMetadata {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ClassifierMetadata");
         formatter.field("number_of_labels", &"*** Sensitive Data Redacted ***");
         formatter.field(
@@ -62,53 +62,53 @@ impl ClassifierMetadata {
 
 /// A builder for [`ClassifierMetadata`](crate::types::ClassifierMetadata).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct ClassifierMetadataBuilder {
-    pub(crate) number_of_labels: std::option::Option<i32>,
-    pub(crate) number_of_trained_documents: std::option::Option<i32>,
-    pub(crate) number_of_test_documents: std::option::Option<i32>,
-    pub(crate) evaluation_metrics: std::option::Option<crate::types::ClassifierEvaluationMetrics>,
+    pub(crate) number_of_labels: ::std::option::Option<i32>,
+    pub(crate) number_of_trained_documents: ::std::option::Option<i32>,
+    pub(crate) number_of_test_documents: ::std::option::Option<i32>,
+    pub(crate) evaluation_metrics: ::std::option::Option<crate::types::ClassifierEvaluationMetrics>,
 }
 impl ClassifierMetadataBuilder {
     /// <p>The number of labels in the input data. </p>
     pub fn number_of_labels(mut self, input: i32) -> Self {
-        self.number_of_labels = Some(input);
+        self.number_of_labels = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of labels in the input data. </p>
-    pub fn set_number_of_labels(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_number_of_labels(mut self, input: ::std::option::Option<i32>) -> Self {
         self.number_of_labels = input;
         self
     }
     /// <p>The number of documents in the input data that were used to train the classifier. Typically this is 80 to 90 percent of the input documents.</p>
     pub fn number_of_trained_documents(mut self, input: i32) -> Self {
-        self.number_of_trained_documents = Some(input);
+        self.number_of_trained_documents = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of documents in the input data that were used to train the classifier. Typically this is 80 to 90 percent of the input documents.</p>
-    pub fn set_number_of_trained_documents(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_number_of_trained_documents(mut self, input: ::std::option::Option<i32>) -> Self {
         self.number_of_trained_documents = input;
         self
     }
     /// <p>The number of documents in the input data that were used to test the classifier. Typically this is 10 to 20 percent of the input documents, up to 10,000 documents.</p>
     pub fn number_of_test_documents(mut self, input: i32) -> Self {
-        self.number_of_test_documents = Some(input);
+        self.number_of_test_documents = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of documents in the input data that were used to test the classifier. Typically this is 10 to 20 percent of the input documents, up to 10,000 documents.</p>
-    pub fn set_number_of_test_documents(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_number_of_test_documents(mut self, input: ::std::option::Option<i32>) -> Self {
         self.number_of_test_documents = input;
         self
     }
     /// <p> Describes the result metrics for the test data associated with an documentation classifier.</p>
     pub fn evaluation_metrics(mut self, input: crate::types::ClassifierEvaluationMetrics) -> Self {
-        self.evaluation_metrics = Some(input);
+        self.evaluation_metrics = ::std::option::Option::Some(input);
         self
     }
     /// <p> Describes the result metrics for the test data associated with an documentation classifier.</p>
     pub fn set_evaluation_metrics(
         mut self,
-        input: std::option::Option<crate::types::ClassifierEvaluationMetrics>,
+        input: ::std::option::Option<crate::types::ClassifierEvaluationMetrics>,
     ) -> Self {
         self.evaluation_metrics = input;
         self
@@ -123,8 +123,8 @@ impl ClassifierMetadataBuilder {
         }
     }
 }
-impl std::fmt::Debug for ClassifierMetadataBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for ClassifierMetadataBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ClassifierMetadataBuilder");
         formatter.field("number_of_labels", &"*** Sensitive Data Redacted ***");
         formatter.field(

@@ -2,43 +2,43 @@
 
 /// <p>Update action that has failed to be processed for the corresponding apply/stop request</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UnprocessedUpdateAction {
     /// <p>The replication group ID</p>
     #[doc(hidden)]
-    pub replication_group_id: std::option::Option<std::string::String>,
+    pub replication_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the cache cluster</p>
     #[doc(hidden)]
-    pub cache_cluster_id: std::option::Option<std::string::String>,
+    pub cache_cluster_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID of the service update</p>
     #[doc(hidden)]
-    pub service_update_name: std::option::Option<std::string::String>,
+    pub service_update_name: ::std::option::Option<::std::string::String>,
     /// <p>The error type for requests that are not processed</p>
     #[doc(hidden)]
-    pub error_type: std::option::Option<std::string::String>,
+    pub error_type: ::std::option::Option<::std::string::String>,
     /// <p>The error message that describes the reason the request was not processed</p>
     #[doc(hidden)]
-    pub error_message: std::option::Option<std::string::String>,
+    pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl UnprocessedUpdateAction {
     /// <p>The replication group ID</p>
-    pub fn replication_group_id(&self) -> std::option::Option<&str> {
+    pub fn replication_group_id(&self) -> ::std::option::Option<&str> {
         self.replication_group_id.as_deref()
     }
     /// <p>The ID of the cache cluster</p>
-    pub fn cache_cluster_id(&self) -> std::option::Option<&str> {
+    pub fn cache_cluster_id(&self) -> ::std::option::Option<&str> {
         self.cache_cluster_id.as_deref()
     }
     /// <p>The unique ID of the service update</p>
-    pub fn service_update_name(&self) -> std::option::Option<&str> {
+    pub fn service_update_name(&self) -> ::std::option::Option<&str> {
         self.service_update_name.as_deref()
     }
     /// <p>The error type for requests that are not processed</p>
-    pub fn error_type(&self) -> std::option::Option<&str> {
+    pub fn error_type(&self) -> ::std::option::Option<&str> {
         self.error_type.as_deref()
     }
     /// <p>The error message that describes the reason the request was not processed</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<&str> {
         self.error_message.as_deref()
     }
 }
@@ -51,68 +51,88 @@ impl UnprocessedUpdateAction {
 
 /// A builder for [`UnprocessedUpdateAction`](crate::types::UnprocessedUpdateAction).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UnprocessedUpdateActionBuilder {
-    pub(crate) replication_group_id: std::option::Option<std::string::String>,
-    pub(crate) cache_cluster_id: std::option::Option<std::string::String>,
-    pub(crate) service_update_name: std::option::Option<std::string::String>,
-    pub(crate) error_type: std::option::Option<std::string::String>,
-    pub(crate) error_message: std::option::Option<std::string::String>,
+    pub(crate) replication_group_id: ::std::option::Option<::std::string::String>,
+    pub(crate) cache_cluster_id: ::std::option::Option<::std::string::String>,
+    pub(crate) service_update_name: ::std::option::Option<::std::string::String>,
+    pub(crate) error_type: ::std::option::Option<::std::string::String>,
+    pub(crate) error_message: ::std::option::Option<::std::string::String>,
 }
 impl UnprocessedUpdateActionBuilder {
     /// <p>The replication group ID</p>
-    pub fn replication_group_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.replication_group_id = Some(input.into());
+    pub fn replication_group_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.replication_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The replication group ID</p>
     pub fn set_replication_group_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.replication_group_id = input;
         self
     }
     /// <p>The ID of the cache cluster</p>
-    pub fn cache_cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cache_cluster_id = Some(input.into());
+    pub fn cache_cluster_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.cache_cluster_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the cache cluster</p>
-    pub fn set_cache_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cache_cluster_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.cache_cluster_id = input;
         self
     }
     /// <p>The unique ID of the service update</p>
-    pub fn service_update_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.service_update_name = Some(input.into());
+    pub fn service_update_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.service_update_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ID of the service update</p>
     pub fn set_service_update_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.service_update_name = input;
         self
     }
     /// <p>The error type for requests that are not processed</p>
-    pub fn error_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.error_type = Some(input.into());
+    pub fn error_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.error_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The error type for requests that are not processed</p>
-    pub fn set_error_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_error_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_type = input;
         self
     }
     /// <p>The error message that describes the reason the request was not processed</p>
-    pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.error_message = Some(input.into());
+    pub fn error_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The error message that describes the reason the request was not processed</p>
-    pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_error_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.error_message = input;
         self
     }

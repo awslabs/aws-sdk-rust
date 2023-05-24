@@ -2,20 +2,20 @@
 
 /// <p>Container for response parameters to the <code><code>CreateVpcEndpoint</code></code> operation. Contains the configuration and status of the VPC Endpoint being created.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateVpcEndpointOutput {
     /// <p>Information about the newly created VPC endpoint.</p>
     #[doc(hidden)]
-    pub vpc_endpoint: std::option::Option<crate::types::VpcEndpoint>,
+    pub vpc_endpoint: ::std::option::Option<crate::types::VpcEndpoint>,
     _request_id: Option<String>,
 }
 impl CreateVpcEndpointOutput {
     /// <p>Information about the newly created VPC endpoint.</p>
-    pub fn vpc_endpoint(&self) -> std::option::Option<&crate::types::VpcEndpoint> {
+    pub fn vpc_endpoint(&self) -> ::std::option::Option<&crate::types::VpcEndpoint> {
         self.vpc_endpoint.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for CreateVpcEndpointOutput {
+impl ::aws_http::request_id::RequestId for CreateVpcEndpointOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,21 +30,23 @@ impl CreateVpcEndpointOutput {
 
 /// A builder for [`CreateVpcEndpointOutput`](crate::operation::create_vpc_endpoint::CreateVpcEndpointOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateVpcEndpointOutputBuilder {
-    pub(crate) vpc_endpoint: std::option::Option<crate::types::VpcEndpoint>,
+    pub(crate) vpc_endpoint: ::std::option::Option<crate::types::VpcEndpoint>,
     _request_id: Option<String>,
 }
 impl CreateVpcEndpointOutputBuilder {
     /// <p>Information about the newly created VPC endpoint.</p>
     pub fn vpc_endpoint(mut self, input: crate::types::VpcEndpoint) -> Self {
-        self.vpc_endpoint = Some(input);
+        self.vpc_endpoint = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the newly created VPC endpoint.</p>
     pub fn set_vpc_endpoint(
         mut self,
-        input: std::option::Option<crate::types::VpcEndpoint>,
+        input: ::std::option::Option<crate::types::VpcEndpoint>,
     ) -> Self {
         self.vpc_endpoint = input;
         self

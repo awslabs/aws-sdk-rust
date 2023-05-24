@@ -2,29 +2,29 @@
 
 /// <p>Represents the output of a <code>DetachObject</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDetachObject {
     /// <p>Parent reference from which the object with the specified link name is detached.</p>
     #[doc(hidden)]
-    pub parent_reference: std::option::Option<crate::types::ObjectReference>,
+    pub parent_reference: ::std::option::Option<crate::types::ObjectReference>,
     /// <p>The name of the link.</p>
     #[doc(hidden)]
-    pub link_name: std::option::Option<std::string::String>,
+    pub link_name: ::std::option::Option<::std::string::String>,
     /// <p>The batch reference name. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/transaction_support.html">Transaction Support</a> for more information.</p>
     #[doc(hidden)]
-    pub batch_reference_name: std::option::Option<std::string::String>,
+    pub batch_reference_name: ::std::option::Option<::std::string::String>,
 }
 impl BatchDetachObject {
     /// <p>Parent reference from which the object with the specified link name is detached.</p>
-    pub fn parent_reference(&self) -> std::option::Option<&crate::types::ObjectReference> {
+    pub fn parent_reference(&self) -> ::std::option::Option<&crate::types::ObjectReference> {
         self.parent_reference.as_ref()
     }
     /// <p>The name of the link.</p>
-    pub fn link_name(&self) -> std::option::Option<&str> {
+    pub fn link_name(&self) -> ::std::option::Option<&str> {
         self.link_name.as_deref()
     }
     /// <p>The batch reference name. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/transaction_support.html">Transaction Support</a> for more information.</p>
-    pub fn batch_reference_name(&self) -> std::option::Option<&str> {
+    pub fn batch_reference_name(&self) -> ::std::option::Option<&str> {
         self.batch_reference_name.as_deref()
     }
 }
@@ -37,45 +37,50 @@ impl BatchDetachObject {
 
 /// A builder for [`BatchDetachObject`](crate::types::BatchDetachObject).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BatchDetachObjectBuilder {
-    pub(crate) parent_reference: std::option::Option<crate::types::ObjectReference>,
-    pub(crate) link_name: std::option::Option<std::string::String>,
-    pub(crate) batch_reference_name: std::option::Option<std::string::String>,
+    pub(crate) parent_reference: ::std::option::Option<crate::types::ObjectReference>,
+    pub(crate) link_name: ::std::option::Option<::std::string::String>,
+    pub(crate) batch_reference_name: ::std::option::Option<::std::string::String>,
 }
 impl BatchDetachObjectBuilder {
     /// <p>Parent reference from which the object with the specified link name is detached.</p>
     pub fn parent_reference(mut self, input: crate::types::ObjectReference) -> Self {
-        self.parent_reference = Some(input);
+        self.parent_reference = ::std::option::Option::Some(input);
         self
     }
     /// <p>Parent reference from which the object with the specified link name is detached.</p>
     pub fn set_parent_reference(
         mut self,
-        input: std::option::Option<crate::types::ObjectReference>,
+        input: ::std::option::Option<crate::types::ObjectReference>,
     ) -> Self {
         self.parent_reference = input;
         self
     }
     /// <p>The name of the link.</p>
-    pub fn link_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.link_name = Some(input.into());
+    pub fn link_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.link_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the link.</p>
-    pub fn set_link_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_link_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.link_name = input;
         self
     }
     /// <p>The batch reference name. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/transaction_support.html">Transaction Support</a> for more information.</p>
-    pub fn batch_reference_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.batch_reference_name = Some(input.into());
+    pub fn batch_reference_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.batch_reference_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The batch reference name. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/transaction_support.html">Transaction Support</a> for more information.</p>
     pub fn set_batch_reference_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.batch_reference_name = input;
         self

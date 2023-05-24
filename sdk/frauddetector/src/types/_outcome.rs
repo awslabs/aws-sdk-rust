@@ -2,43 +2,43 @@
 
 /// <p>The outcome.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Outcome {
     /// <p>The outcome name.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The outcome description.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the outcome was last updated.</p>
     #[doc(hidden)]
-    pub last_updated_time: std::option::Option<std::string::String>,
+    pub last_updated_time: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the outcome was created.</p>
     #[doc(hidden)]
-    pub created_time: std::option::Option<std::string::String>,
+    pub created_time: ::std::option::Option<::std::string::String>,
     /// <p>The outcome ARN.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
 }
 impl Outcome {
     /// <p>The outcome name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The outcome description.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The timestamp when the outcome was last updated.</p>
-    pub fn last_updated_time(&self) -> std::option::Option<&str> {
+    pub fn last_updated_time(&self) -> ::std::option::Option<&str> {
         self.last_updated_time.as_deref()
     }
     /// <p>The timestamp when the outcome was created.</p>
-    pub fn created_time(&self) -> std::option::Option<&str> {
+    pub fn created_time(&self) -> ::std::option::Option<&str> {
         self.created_time.as_deref()
     }
     /// <p>The outcome ARN.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
 }
@@ -51,65 +51,70 @@ impl Outcome {
 
 /// A builder for [`Outcome`](crate::types::Outcome).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OutcomeBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) last_updated_time: std::option::Option<std::string::String>,
-    pub(crate) created_time: std::option::Option<std::string::String>,
-    pub(crate) arn: std::option::Option<std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) last_updated_time: ::std::option::Option<::std::string::String>,
+    pub(crate) created_time: ::std::option::Option<::std::string::String>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
 impl OutcomeBuilder {
     /// <p>The outcome name.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The outcome name.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The outcome description.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The outcome description.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>The timestamp when the outcome was last updated.</p>
-    pub fn last_updated_time(mut self, input: impl Into<std::string::String>) -> Self {
-        self.last_updated_time = Some(input.into());
+    pub fn last_updated_time(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.last_updated_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The timestamp when the outcome was last updated.</p>
     pub fn set_last_updated_time(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.last_updated_time = input;
         self
     }
     /// <p>The timestamp when the outcome was created.</p>
-    pub fn created_time(mut self, input: impl Into<std::string::String>) -> Self {
-        self.created_time = Some(input.into());
+    pub fn created_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.created_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The timestamp when the outcome was created.</p>
-    pub fn set_created_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_created_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_time = input;
         self
     }
     /// <p>The outcome ARN.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The outcome ARN.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }

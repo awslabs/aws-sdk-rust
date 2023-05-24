@@ -2,22 +2,22 @@
 
 /// <p>The data path options for the pivot table field options.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PivotTableDataPathOption {
     /// <p>The list of data path values for the data path options.</p>
     #[doc(hidden)]
-    pub data_path_list: std::option::Option<std::vec::Vec<crate::types::DataPathValue>>,
+    pub data_path_list: ::std::option::Option<::std::vec::Vec<crate::types::DataPathValue>>,
     /// <p>The width of the data path option.</p>
     #[doc(hidden)]
-    pub width: std::option::Option<std::string::String>,
+    pub width: ::std::option::Option<::std::string::String>,
 }
 impl PivotTableDataPathOption {
     /// <p>The list of data path values for the data path options.</p>
-    pub fn data_path_list(&self) -> std::option::Option<&[crate::types::DataPathValue]> {
+    pub fn data_path_list(&self) -> ::std::option::Option<&[crate::types::DataPathValue]> {
         self.data_path_list.as_deref()
     }
     /// <p>The width of the data path option.</p>
-    pub fn width(&self) -> std::option::Option<&str> {
+    pub fn width(&self) -> ::std::option::Option<&str> {
         self.width.as_deref()
     }
 }
@@ -30,10 +30,12 @@ impl PivotTableDataPathOption {
 
 /// A builder for [`PivotTableDataPathOption`](crate::types::PivotTableDataPathOption).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PivotTableDataPathOptionBuilder {
-    pub(crate) data_path_list: std::option::Option<std::vec::Vec<crate::types::DataPathValue>>,
-    pub(crate) width: std::option::Option<std::string::String>,
+    pub(crate) data_path_list: ::std::option::Option<::std::vec::Vec<crate::types::DataPathValue>>,
+    pub(crate) width: ::std::option::Option<::std::string::String>,
 }
 impl PivotTableDataPathOptionBuilder {
     /// Appends an item to `data_path_list`.
@@ -44,24 +46,24 @@ impl PivotTableDataPathOptionBuilder {
     pub fn data_path_list(mut self, input: crate::types::DataPathValue) -> Self {
         let mut v = self.data_path_list.unwrap_or_default();
         v.push(input);
-        self.data_path_list = Some(v);
+        self.data_path_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of data path values for the data path options.</p>
     pub fn set_data_path_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DataPathValue>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DataPathValue>>,
     ) -> Self {
         self.data_path_list = input;
         self
     }
     /// <p>The width of the data path option.</p>
-    pub fn width(mut self, input: impl Into<std::string::String>) -> Self {
-        self.width = Some(input.into());
+    pub fn width(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.width = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The width of the data path option.</p>
-    pub fn set_width(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_width(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.width = input;
         self
     }

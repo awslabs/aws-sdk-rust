@@ -8,29 +8,29 @@ pub use crate::operation::create_dev_environment::_create_dev_environment_input:
 /// <p>Creates a Dev Environment in Amazon CodeCatalyst, a cloud-based development environment that you can use to quickly work on the code stored in the source repositories of your project. </p> <note>
 /// <p>When created in the Amazon CodeCatalyst console, by default a Dev Environment is configured to have a 2 core processor, 4GB of RAM, and 16GB of persistent storage. None of these defaults apply to a Dev Environment created programmatically.</p>
 /// </note>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateDevEnvironmentFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_dev_environment::builders::CreateDevEnvironmentInputBuilder,
 }
 impl CreateDevEnvironmentFluentBuilder {
     /// Creates a new `CreateDevEnvironment`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_dev_environment::CreateDevEnvironment,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_dev_environment::CreateDevEnvironmentError,
         >,
     > {
@@ -38,30 +38,33 @@ impl CreateDevEnvironmentFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_dev_environment::CreateDevEnvironmentOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_dev_environment::CreateDevEnvironmentError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -74,31 +77,31 @@ impl CreateDevEnvironmentFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_dev_environment::CreateDevEnvironmentOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_dev_environment::CreateDevEnvironmentError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the space.</p>
-    pub fn space_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn space_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.space_name(input.into());
         self
     }
     /// <p>The name of the space.</p>
-    pub fn set_space_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_space_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_space_name(input);
         self
     }
     /// <p>The name of the project in the space.</p>
-    pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.project_name(input.into());
         self
     }
     /// <p>The name of the project in the space.</p>
-    pub fn set_project_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_project_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_project_name(input);
         self
     }
@@ -114,28 +117,28 @@ impl CreateDevEnvironmentFluentBuilder {
     /// <p>The source repository that contains the branch to clone into the Dev Environment. </p>
     pub fn set_repositories(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RepositoryInput>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryInput>>,
     ) -> Self {
         self.inner = self.inner.set_repositories(input);
         self
     }
     /// <p>A user-specified idempotency token. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, the subsequent retries return the result from the original successful request and have no additional effect.</p>
-    pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
     /// <p>A user-specified idempotency token. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, the subsequent retries return the result from the original successful request and have no additional effect.</p>
-    pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
     /// <p>The user-defined alias for a Dev Environment.</p>
-    pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.alias(input.into());
         self
     }
     /// <p>The user-defined alias for a Dev Environment.</p>
-    pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_alias(input);
         self
     }
@@ -155,7 +158,7 @@ impl CreateDevEnvironmentFluentBuilder {
     /// </note>
     pub fn set_ides(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::IdeConfiguration>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::IdeConfiguration>>,
     ) -> Self {
         self.inner = self.inner.set_ides(input);
         self
@@ -168,7 +171,7 @@ impl CreateDevEnvironmentFluentBuilder {
     /// <p>The Amazon EC2 instace type to use for the Dev Environment. </p>
     pub fn set_instance_type(
         mut self,
-        input: std::option::Option<crate::types::InstanceType>,
+        input: ::std::option::Option<crate::types::InstanceType>,
     ) -> Self {
         self.inner = self.inner.set_instance_type(input);
         self
@@ -179,7 +182,7 @@ impl CreateDevEnvironmentFluentBuilder {
         self
     }
     /// <p>The amount of time the Dev Environment will run without any activity detected before stopping, in minutes. Only whole integers are allowed. Dev Environments consume compute minutes when running.</p>
-    pub fn set_inactivity_timeout_minutes(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_inactivity_timeout_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_inactivity_timeout_minutes(input);
         self
     }
@@ -198,7 +201,7 @@ impl CreateDevEnvironmentFluentBuilder {
     /// </note>
     pub fn set_persistent_storage(
         mut self,
-        input: std::option::Option<crate::types::PersistentStorageConfiguration>,
+        input: ::std::option::Option<crate::types::PersistentStorageConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_persistent_storage(input);
         self

@@ -2,22 +2,22 @@
 
 /// <p>Summary information for groups.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GroupSummary {
     /// <p>The identifier of the group you want group summary information on.</p>
     #[doc(hidden)]
-    pub group_id: std::option::Option<std::string::String>,
+    pub group_id: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp identifier used for the latest <code>PUT</code> or <code>DELETE</code> action.</p>
     #[doc(hidden)]
-    pub ordering_id: std::option::Option<i64>,
+    pub ordering_id: ::std::option::Option<i64>,
 }
 impl GroupSummary {
     /// <p>The identifier of the group you want group summary information on.</p>
-    pub fn group_id(&self) -> std::option::Option<&str> {
+    pub fn group_id(&self) -> ::std::option::Option<&str> {
         self.group_id.as_deref()
     }
     /// <p>The timestamp identifier used for the latest <code>PUT</code> or <code>DELETE</code> action.</p>
-    pub fn ordering_id(&self) -> std::option::Option<i64> {
+    pub fn ordering_id(&self) -> ::std::option::Option<i64> {
         self.ordering_id
     }
 }
@@ -30,29 +30,31 @@ impl GroupSummary {
 
 /// A builder for [`GroupSummary`](crate::types::GroupSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GroupSummaryBuilder {
-    pub(crate) group_id: std::option::Option<std::string::String>,
-    pub(crate) ordering_id: std::option::Option<i64>,
+    pub(crate) group_id: ::std::option::Option<::std::string::String>,
+    pub(crate) ordering_id: ::std::option::Option<i64>,
 }
 impl GroupSummaryBuilder {
     /// <p>The identifier of the group you want group summary information on.</p>
-    pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.group_id = Some(input.into());
+    pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the group you want group summary information on.</p>
-    pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_id = input;
         self
     }
     /// <p>The timestamp identifier used for the latest <code>PUT</code> or <code>DELETE</code> action.</p>
     pub fn ordering_id(mut self, input: i64) -> Self {
-        self.ordering_id = Some(input);
+        self.ordering_id = ::std::option::Option::Some(input);
         self
     }
     /// <p>The timestamp identifier used for the latest <code>PUT</code> or <code>DELETE</code> action.</p>
-    pub fn set_ordering_id(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_ordering_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.ordering_id = input;
         self
     }

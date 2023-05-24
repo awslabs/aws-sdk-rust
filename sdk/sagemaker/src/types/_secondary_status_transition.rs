@@ -3,7 +3,7 @@
 /// <p>An array element of <code>SecondaryStatusTransitions</code> for <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeTrainingJob.html">DescribeTrainingJob</a>. It provides additional details about a status that the training job has transitioned through. A training job can be in one of several states, for example, starting, downloading, training, or uploading. Within each state, there are a number of intermediate states. For example, within the starting state, SageMaker could be starting the training job or launching the ML instances. These transitional states are referred to as the job's secondary status. </p>
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SecondaryStatusTransition {
     /// <p>Contains a secondary status information from a training job.</p>
     /// <p>Status might be one of the following secondary statuses:</p>
@@ -60,13 +60,13 @@ pub struct SecondaryStatusTransition {
     /// <li> <p> <code>DownloadingTrainingImage</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::SecondaryStatus>,
+    pub status: ::std::option::Option<crate::types::SecondaryStatus>,
     /// <p>A timestamp that shows when the training job transitioned to the current secondary status state.</p>
     #[doc(hidden)]
-    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A timestamp that shows when the training job transitioned out of this secondary status state into another secondary status state or when the training job has ended.</p>
     #[doc(hidden)]
-    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A detailed description of the progress within a secondary status. </p>
     /// <p>SageMaker provides secondary statuses and status messages that apply to each of them:</p>
     /// <dl>
@@ -101,7 +101,7 @@ pub struct SecondaryStatusTransition {
     /// <li> <p> <code>StatusMessage</code> - Downloading the training image</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub status_message: std::option::Option<std::string::String>,
+    pub status_message: ::std::option::Option<::std::string::String>,
 }
 impl SecondaryStatusTransition {
     /// <p>Contains a secondary status information from a training job.</p>
@@ -158,15 +158,15 @@ impl SecondaryStatusTransition {
     /// <li> <p> <code>PreparingTrainingStack</code> </p> </li>
     /// <li> <p> <code>DownloadingTrainingImage</code> </p> </li>
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::types::SecondaryStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::SecondaryStatus> {
         self.status.as_ref()
     }
     /// <p>A timestamp that shows when the training job transitioned to the current secondary status state.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>A timestamp that shows when the training job transitioned out of this secondary status state into another secondary status state or when the training job has ended.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>A detailed description of the progress within a secondary status. </p>
@@ -202,7 +202,7 @@ impl SecondaryStatusTransition {
     /// <li> <p> <code>SecondaryStatus</code> - Training</p> </li>
     /// <li> <p> <code>StatusMessage</code> - Downloading the training image</p> </li>
     /// </ul>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<&str> {
         self.status_message.as_deref()
     }
 }
@@ -215,12 +215,14 @@ impl SecondaryStatusTransition {
 
 /// A builder for [`SecondaryStatusTransition`](crate::types::SecondaryStatusTransition).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SecondaryStatusTransitionBuilder {
-    pub(crate) status: std::option::Option<crate::types::SecondaryStatus>,
-    pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) status_message: std::option::Option<std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::SecondaryStatus>,
+    pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) status_message: ::std::option::Option<::std::string::String>,
 }
 impl SecondaryStatusTransitionBuilder {
     /// <p>Contains a secondary status information from a training job.</p>
@@ -278,7 +280,7 @@ impl SecondaryStatusTransitionBuilder {
     /// <li> <p> <code>DownloadingTrainingImage</code> </p> </li>
     /// </ul>
     pub fn status(mut self, input: crate::types::SecondaryStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains a secondary status information from a training job.</p>
@@ -335,30 +337,36 @@ impl SecondaryStatusTransitionBuilder {
     /// <li> <p> <code>PreparingTrainingStack</code> </p> </li>
     /// <li> <p> <code>DownloadingTrainingImage</code> </p> </li>
     /// </ul>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::SecondaryStatus>) -> Self {
+    pub fn set_status(
+        mut self,
+        input: ::std::option::Option<crate::types::SecondaryStatus>,
+    ) -> Self {
         self.status = input;
         self
     }
     /// <p>A timestamp that shows when the training job transitioned to the current secondary status state.</p>
-    pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.start_time = Some(input);
+    pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.start_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>A timestamp that shows when the training job transitioned to the current secondary status state.</p>
     pub fn set_start_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.start_time = input;
         self
     }
     /// <p>A timestamp that shows when the training job transitioned out of this secondary status state into another secondary status state or when the training job has ended.</p>
-    pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.end_time = Some(input);
+    pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.end_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>A timestamp that shows when the training job transitioned out of this secondary status state into another secondary status state or when the training job has ended.</p>
-    pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_end_time(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
         self.end_time = input;
         self
     }
@@ -395,8 +403,11 @@ impl SecondaryStatusTransitionBuilder {
     /// <li> <p> <code>SecondaryStatus</code> - Training</p> </li>
     /// <li> <p> <code>StatusMessage</code> - Downloading the training image</p> </li>
     /// </ul>
-    pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status_message = Some(input.into());
+    pub fn status_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A detailed description of the progress within a secondary status. </p>
@@ -432,7 +443,10 @@ impl SecondaryStatusTransitionBuilder {
     /// <li> <p> <code>SecondaryStatus</code> - Training</p> </li>
     /// <li> <p> <code>StatusMessage</code> - Downloading the training image</p> </li>
     /// </ul>
-    pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.status_message = input;
         self
     }

@@ -4,15 +4,15 @@
 /// <p>This data structure is only used with the deprecated <code>ExecuteSql</code> operation. Use the <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code> operation instead.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StructValue {
     /// <p>The attributes returned in the record.</p>
     #[doc(hidden)]
-    pub attributes: std::option::Option<std::vec::Vec<crate::types::Value>>,
+    pub attributes: ::std::option::Option<::std::vec::Vec<crate::types::Value>>,
 }
 impl StructValue {
     /// <p>The attributes returned in the record.</p>
-    pub fn attributes(&self) -> std::option::Option<&[crate::types::Value]> {
+    pub fn attributes(&self) -> ::std::option::Option<&[crate::types::Value]> {
         self.attributes.as_deref()
     }
 }
@@ -25,9 +25,11 @@ impl StructValue {
 
 /// A builder for [`StructValue`](crate::types::StructValue).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StructValueBuilder {
-    pub(crate) attributes: std::option::Option<std::vec::Vec<crate::types::Value>>,
+    pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::Value>>,
 }
 impl StructValueBuilder {
     /// Appends an item to `attributes`.
@@ -38,13 +40,13 @@ impl StructValueBuilder {
     pub fn attributes(mut self, input: crate::types::Value) -> Self {
         let mut v = self.attributes.unwrap_or_default();
         v.push(input);
-        self.attributes = Some(v);
+        self.attributes = ::std::option::Option::Some(v);
         self
     }
     /// <p>The attributes returned in the record.</p>
     pub fn set_attributes(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Value>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Value>>,
     ) -> Self {
         self.attributes = input;
         self

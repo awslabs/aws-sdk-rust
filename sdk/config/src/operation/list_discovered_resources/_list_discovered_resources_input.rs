@@ -2,50 +2,50 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDiscoveredResourcesInput {
     /// <p>The type of resources that you want Config to list in the response.</p>
     #[doc(hidden)]
-    pub resource_type: std::option::Option<crate::types::ResourceType>,
+    pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>The IDs of only those resources that you want Config to list in the response. If you do not specify this parameter, Config lists all resources of the specified type that it has discovered. You can list a minimum of 1 resourceID and a maximum of 20 resourceIds.</p>
     #[doc(hidden)]
-    pub resource_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub resource_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The custom name of only those resources that you want Config to list in the response. If you do not specify this parameter, Config lists all resources of the specified type that it has discovered.</p>
     #[doc(hidden)]
-    pub resource_name: std::option::Option<std::string::String>,
+    pub resource_name: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of resource identifiers returned on each page. The default is 100. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
     #[doc(hidden)]
-    pub limit: std::option::Option<i32>,
+    pub limit: ::std::option::Option<i32>,
     /// <p>Specifies whether Config includes deleted resources in the results. By default, deleted resources are not included.</p>
     #[doc(hidden)]
-    pub include_deleted_resources: std::option::Option<bool>,
+    pub include_deleted_resources: ::std::option::Option<bool>,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListDiscoveredResourcesInput {
     /// <p>The type of resources that you want Config to list in the response.</p>
-    pub fn resource_type(&self) -> std::option::Option<&crate::types::ResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The IDs of only those resources that you want Config to list in the response. If you do not specify this parameter, Config lists all resources of the specified type that it has discovered. You can list a minimum of 1 resourceID and a maximum of 20 resourceIds.</p>
-    pub fn resource_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn resource_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.resource_ids.as_deref()
     }
     /// <p>The custom name of only those resources that you want Config to list in the response. If you do not specify this parameter, Config lists all resources of the specified type that it has discovered.</p>
-    pub fn resource_name(&self) -> std::option::Option<&str> {
+    pub fn resource_name(&self) -> ::std::option::Option<&str> {
         self.resource_name.as_deref()
     }
     /// <p>The maximum number of resource identifiers returned on each page. The default is 100. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
-    pub fn limit(&self) -> std::option::Option<i32> {
+    pub fn limit(&self) -> ::std::option::Option<i32> {
         self.limit
     }
     /// <p>Specifies whether Config includes deleted resources in the results. By default, deleted resources are not included.</p>
-    pub fn include_deleted_resources(&self) -> std::option::Option<bool> {
+    pub fn include_deleted_resources(&self) -> ::std::option::Option<bool> {
         self.include_deleted_resources
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
@@ -60,25 +60,27 @@ impl ListDiscoveredResourcesInput {
 
 /// A builder for [`ListDiscoveredResourcesInput`](crate::operation::list_discovered_resources::ListDiscoveredResourcesInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListDiscoveredResourcesInputBuilder {
-    pub(crate) resource_type: std::option::Option<crate::types::ResourceType>,
-    pub(crate) resource_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) resource_name: std::option::Option<std::string::String>,
-    pub(crate) limit: std::option::Option<i32>,
-    pub(crate) include_deleted_resources: std::option::Option<bool>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
+    pub(crate) resource_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) resource_name: ::std::option::Option<::std::string::String>,
+    pub(crate) limit: ::std::option::Option<i32>,
+    pub(crate) include_deleted_resources: ::std::option::Option<bool>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListDiscoveredResourcesInputBuilder {
     /// <p>The type of resources that you want Config to list in the response.</p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
-        self.resource_type = Some(input);
+        self.resource_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of resources that you want Config to list in the response.</p>
     pub fn set_resource_type(
         mut self,
-        input: std::option::Option<crate::types::ResourceType>,
+        input: ::std::option::Option<crate::types::ResourceType>,
     ) -> Self {
         self.resource_type = input;
         self
@@ -88,68 +90,74 @@ impl ListDiscoveredResourcesInputBuilder {
     /// To override the contents of this collection use [`set_resource_ids`](Self::set_resource_ids).
     ///
     /// <p>The IDs of only those resources that you want Config to list in the response. If you do not specify this parameter, Config lists all resources of the specified type that it has discovered. You can list a minimum of 1 resourceID and a maximum of 20 resourceIds.</p>
-    pub fn resource_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn resource_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resource_ids.unwrap_or_default();
         v.push(input.into());
-        self.resource_ids = Some(v);
+        self.resource_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IDs of only those resources that you want Config to list in the response. If you do not specify this parameter, Config lists all resources of the specified type that it has discovered. You can list a minimum of 1 resourceID and a maximum of 20 resourceIds.</p>
     pub fn set_resource_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.resource_ids = input;
         self
     }
     /// <p>The custom name of only those resources that you want Config to list in the response. If you do not specify this parameter, Config lists all resources of the specified type that it has discovered.</p>
-    pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_name = Some(input.into());
+    pub fn resource_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.resource_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The custom name of only those resources that you want Config to list in the response. If you do not specify this parameter, Config lists all resources of the specified type that it has discovered.</p>
-    pub fn set_resource_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.resource_name = input;
         self
     }
     /// <p>The maximum number of resource identifiers returned on each page. The default is 100. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
     pub fn limit(mut self, input: i32) -> Self {
-        self.limit = Some(input);
+        self.limit = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum number of resource identifiers returned on each page. The default is 100. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
-    pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.limit = input;
         self
     }
     /// <p>Specifies whether Config includes deleted resources in the results. By default, deleted resources are not included.</p>
     pub fn include_deleted_resources(mut self, input: bool) -> Self {
-        self.include_deleted_resources = Some(input);
+        self.include_deleted_resources = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether Config includes deleted resources in the results. By default, deleted resources are not included.</p>
-    pub fn set_include_deleted_resources(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_include_deleted_resources(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_deleted_resources = input;
         self
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
     /// Consumes the builder and constructs a [`ListDiscoveredResourcesInput`](crate::operation::list_discovered_resources::ListDiscoveredResourcesInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::list_discovered_resources::ListDiscoveredResourcesInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::list_discovered_resources::ListDiscoveredResourcesInput {
                 resource_type: self.resource_type,
                 resource_ids: self.resource_ids,

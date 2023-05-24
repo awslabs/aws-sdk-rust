@@ -2,22 +2,22 @@
 
 /// <p>The artifacts that are generated during an AutoML job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoMlJobArtifacts {
     /// <p>The URL of the notebook location.</p>
     #[doc(hidden)]
-    pub candidate_definition_notebook_location: std::option::Option<std::string::String>,
+    pub candidate_definition_notebook_location: ::std::option::Option<::std::string::String>,
     /// <p>The URL of the notebook location.</p>
     #[doc(hidden)]
-    pub data_exploration_notebook_location: std::option::Option<std::string::String>,
+    pub data_exploration_notebook_location: ::std::option::Option<::std::string::String>,
 }
 impl AutoMlJobArtifacts {
     /// <p>The URL of the notebook location.</p>
-    pub fn candidate_definition_notebook_location(&self) -> std::option::Option<&str> {
+    pub fn candidate_definition_notebook_location(&self) -> ::std::option::Option<&str> {
         self.candidate_definition_notebook_location.as_deref()
     }
     /// <p>The URL of the notebook location.</p>
-    pub fn data_exploration_notebook_location(&self) -> std::option::Option<&str> {
+    pub fn data_exploration_notebook_location(&self) -> ::std::option::Option<&str> {
         self.data_exploration_notebook_location.as_deref()
     }
 }
@@ -30,24 +30,26 @@ impl AutoMlJobArtifacts {
 
 /// A builder for [`AutoMlJobArtifacts`](crate::types::AutoMlJobArtifacts).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AutoMlJobArtifactsBuilder {
-    pub(crate) candidate_definition_notebook_location: std::option::Option<std::string::String>,
-    pub(crate) data_exploration_notebook_location: std::option::Option<std::string::String>,
+    pub(crate) candidate_definition_notebook_location: ::std::option::Option<::std::string::String>,
+    pub(crate) data_exploration_notebook_location: ::std::option::Option<::std::string::String>,
 }
 impl AutoMlJobArtifactsBuilder {
     /// <p>The URL of the notebook location.</p>
     pub fn candidate_definition_notebook_location(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.candidate_definition_notebook_location = Some(input.into());
+        self.candidate_definition_notebook_location = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL of the notebook location.</p>
     pub fn set_candidate_definition_notebook_location(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.candidate_definition_notebook_location = input;
         self
@@ -55,15 +57,15 @@ impl AutoMlJobArtifactsBuilder {
     /// <p>The URL of the notebook location.</p>
     pub fn data_exploration_notebook_location(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.data_exploration_notebook_location = Some(input.into());
+        self.data_exploration_notebook_location = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL of the notebook location.</p>
     pub fn set_data_exploration_notebook_location(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.data_exploration_notebook_location = input;
         self

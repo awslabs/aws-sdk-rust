@@ -2,29 +2,29 @@
 
 /// <p>A response that contains the results of a finding aggregation by image layer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PackageAggregationResponse {
     /// <p>The name of the operating system package.</p>
     #[doc(hidden)]
-    pub package_name: std::option::Option<std::string::String>,
+    pub package_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services account associated with the findings.</p>
     #[doc(hidden)]
-    pub account_id: std::option::Option<std::string::String>,
+    pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>An object that contains the count of matched findings per severity.</p>
     #[doc(hidden)]
-    pub severity_counts: std::option::Option<crate::types::SeverityCounts>,
+    pub severity_counts: ::std::option::Option<crate::types::SeverityCounts>,
 }
 impl PackageAggregationResponse {
     /// <p>The name of the operating system package.</p>
-    pub fn package_name(&self) -> std::option::Option<&str> {
+    pub fn package_name(&self) -> ::std::option::Option<&str> {
         self.package_name.as_deref()
     }
     /// <p>The ID of the Amazon Web Services account associated with the findings.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>An object that contains the count of matched findings per severity.</p>
-    pub fn severity_counts(&self) -> std::option::Option<&crate::types::SeverityCounts> {
+    pub fn severity_counts(&self) -> ::std::option::Option<&crate::types::SeverityCounts> {
         self.severity_counts.as_ref()
     }
 }
@@ -37,42 +37,44 @@ impl PackageAggregationResponse {
 
 /// A builder for [`PackageAggregationResponse`](crate::types::PackageAggregationResponse).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PackageAggregationResponseBuilder {
-    pub(crate) package_name: std::option::Option<std::string::String>,
-    pub(crate) account_id: std::option::Option<std::string::String>,
-    pub(crate) severity_counts: std::option::Option<crate::types::SeverityCounts>,
+    pub(crate) package_name: ::std::option::Option<::std::string::String>,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) severity_counts: ::std::option::Option<crate::types::SeverityCounts>,
 }
 impl PackageAggregationResponseBuilder {
     /// <p>The name of the operating system package.</p>
-    pub fn package_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.package_name = Some(input.into());
+    pub fn package_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.package_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the operating system package.</p>
-    pub fn set_package_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_package_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.package_name = input;
         self
     }
     /// <p>The ID of the Amazon Web Services account associated with the findings.</p>
-    pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.account_id = Some(input.into());
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account associated with the findings.</p>
-    pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
     }
     /// <p>An object that contains the count of matched findings per severity.</p>
     pub fn severity_counts(mut self, input: crate::types::SeverityCounts) -> Self {
-        self.severity_counts = Some(input);
+        self.severity_counts = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that contains the count of matched findings per severity.</p>
     pub fn set_severity_counts(
         mut self,
-        input: std::option::Option<crate::types::SeverityCounts>,
+        input: ::std::option::Option<crate::types::SeverityCounts>,
     ) -> Self {
         self.severity_counts = input;
         self

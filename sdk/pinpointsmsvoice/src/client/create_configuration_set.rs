@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateConfigurationSet`](crate::operation::create_configuration_set::builders::CreateConfigurationSetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`configuration_set_name(impl Into<String>)`](crate::operation::create_configuration_set::builders::CreateConfigurationSetFluentBuilder::configuration_set_name) / [`set_configuration_set_name(Option<String>)`](crate::operation::create_configuration_set::builders::CreateConfigurationSetFluentBuilder::set_configuration_set_name): The name that you want to give the configuration set.
+    ///   - [`configuration_set_name(impl ::std::convert::Into<String>)`](crate::operation::create_configuration_set::builders::CreateConfigurationSetFluentBuilder::configuration_set_name) / [`set_configuration_set_name(Option<String>)`](crate::operation::create_configuration_set::builders::CreateConfigurationSetFluentBuilder::set_configuration_set_name): The name that you want to give the configuration set.
     /// - On success, responds with [`CreateConfigurationSetOutput`](crate::operation::create_configuration_set::CreateConfigurationSetOutput)
     /// - On failure, responds with [`SdkError<CreateConfigurationSetError>`](crate::operation::create_configuration_set::CreateConfigurationSetError)
     pub fn create_configuration_set(

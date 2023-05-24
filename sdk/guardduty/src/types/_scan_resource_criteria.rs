@@ -2,33 +2,33 @@
 
 /// <p>Contains information about criteria used to filter resources before triggering malware scan.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScanResourceCriteria {
     /// <p>Represents condition that when matched will allow a malware scan for a certain resource.</p>
     #[doc(hidden)]
-    pub include: std::option::Option<
-        std::collections::HashMap<crate::types::ScanCriterionKey, crate::types::ScanCondition>,
+    pub include: ::std::option::Option<
+        ::std::collections::HashMap<crate::types::ScanCriterionKey, crate::types::ScanCondition>,
     >,
     /// <p>Represents condition that when matched will prevent a malware scan for a certain resource.</p>
     #[doc(hidden)]
-    pub exclude: std::option::Option<
-        std::collections::HashMap<crate::types::ScanCriterionKey, crate::types::ScanCondition>,
+    pub exclude: ::std::option::Option<
+        ::std::collections::HashMap<crate::types::ScanCriterionKey, crate::types::ScanCondition>,
     >,
 }
 impl ScanResourceCriteria {
     /// <p>Represents condition that when matched will allow a malware scan for a certain resource.</p>
     pub fn include(
         &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<crate::types::ScanCriterionKey, crate::types::ScanCondition>,
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<crate::types::ScanCriterionKey, crate::types::ScanCondition>,
     > {
         self.include.as_ref()
     }
     /// <p>Represents condition that when matched will prevent a malware scan for a certain resource.</p>
     pub fn exclude(
         &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<crate::types::ScanCriterionKey, crate::types::ScanCondition>,
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<crate::types::ScanCriterionKey, crate::types::ScanCondition>,
     > {
         self.exclude.as_ref()
     }
@@ -42,13 +42,15 @@ impl ScanResourceCriteria {
 
 /// A builder for [`ScanResourceCriteria`](crate::types::ScanResourceCriteria).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ScanResourceCriteriaBuilder {
-    pub(crate) include: std::option::Option<
-        std::collections::HashMap<crate::types::ScanCriterionKey, crate::types::ScanCondition>,
+    pub(crate) include: ::std::option::Option<
+        ::std::collections::HashMap<crate::types::ScanCriterionKey, crate::types::ScanCondition>,
     >,
-    pub(crate) exclude: std::option::Option<
-        std::collections::HashMap<crate::types::ScanCriterionKey, crate::types::ScanCondition>,
+    pub(crate) exclude: ::std::option::Option<
+        ::std::collections::HashMap<crate::types::ScanCriterionKey, crate::types::ScanCondition>,
     >,
 }
 impl ScanResourceCriteriaBuilder {
@@ -64,14 +66,17 @@ impl ScanResourceCriteriaBuilder {
     ) -> Self {
         let mut hash_map = self.include.unwrap_or_default();
         hash_map.insert(k, v);
-        self.include = Some(hash_map);
+        self.include = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Represents condition that when matched will allow a malware scan for a certain resource.</p>
     pub fn set_include(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<crate::types::ScanCriterionKey, crate::types::ScanCondition>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<
+                crate::types::ScanCriterionKey,
+                crate::types::ScanCondition,
+            >,
         >,
     ) -> Self {
         self.include = input;
@@ -89,14 +94,17 @@ impl ScanResourceCriteriaBuilder {
     ) -> Self {
         let mut hash_map = self.exclude.unwrap_or_default();
         hash_map.insert(k, v);
-        self.exclude = Some(hash_map);
+        self.exclude = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Represents condition that when matched will prevent a malware scan for a certain resource.</p>
     pub fn set_exclude(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<crate::types::ScanCriterionKey, crate::types::ScanCondition>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<
+                crate::types::ScanCriterionKey,
+                crate::types::ScanCondition,
+            >,
         >,
     ) -> Self {
         self.exclude = input;

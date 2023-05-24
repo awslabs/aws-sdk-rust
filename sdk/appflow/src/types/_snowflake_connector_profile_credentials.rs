@@ -2,27 +2,27 @@
 
 /// <p> The connector-specific profile credentials required when using Snowflake. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SnowflakeConnectorProfileCredentials {
     /// <p> The name of the user. </p>
     #[doc(hidden)]
-    pub username: std::option::Option<std::string::String>,
+    pub username: ::std::option::Option<::std::string::String>,
     /// <p> The password that corresponds to the user name. </p>
     #[doc(hidden)]
-    pub password: std::option::Option<std::string::String>,
+    pub password: ::std::option::Option<::std::string::String>,
 }
 impl SnowflakeConnectorProfileCredentials {
     /// <p> The name of the user. </p>
-    pub fn username(&self) -> std::option::Option<&str> {
+    pub fn username(&self) -> ::std::option::Option<&str> {
         self.username.as_deref()
     }
     /// <p> The password that corresponds to the user name. </p>
-    pub fn password(&self) -> std::option::Option<&str> {
+    pub fn password(&self) -> ::std::option::Option<&str> {
         self.password.as_deref()
     }
 }
-impl std::fmt::Debug for SnowflakeConnectorProfileCredentials {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for SnowflakeConnectorProfileCredentials {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SnowflakeConnectorProfileCredentials");
         formatter.field("username", &self.username);
         formatter.field("password", &"*** Sensitive Data Redacted ***");
@@ -38,29 +38,29 @@ impl SnowflakeConnectorProfileCredentials {
 
 /// A builder for [`SnowflakeConnectorProfileCredentials`](crate::types::SnowflakeConnectorProfileCredentials).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct SnowflakeConnectorProfileCredentialsBuilder {
-    pub(crate) username: std::option::Option<std::string::String>,
-    pub(crate) password: std::option::Option<std::string::String>,
+    pub(crate) username: ::std::option::Option<::std::string::String>,
+    pub(crate) password: ::std::option::Option<::std::string::String>,
 }
 impl SnowflakeConnectorProfileCredentialsBuilder {
     /// <p> The name of the user. </p>
-    pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
-        self.username = Some(input.into());
+    pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.username = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the user. </p>
-    pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.username = input;
         self
     }
     /// <p> The password that corresponds to the user name. </p>
-    pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
-        self.password = Some(input.into());
+    pub fn password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.password = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The password that corresponds to the user name. </p>
-    pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.password = input;
         self
     }
@@ -72,8 +72,8 @@ impl SnowflakeConnectorProfileCredentialsBuilder {
         }
     }
 }
-impl std::fmt::Debug for SnowflakeConnectorProfileCredentialsBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for SnowflakeConnectorProfileCredentialsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SnowflakeConnectorProfileCredentialsBuilder");
         formatter.field("username", &self.username);
         formatter.field("password", &"*** Sensitive Data Redacted ***");

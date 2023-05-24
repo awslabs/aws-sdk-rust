@@ -2,15 +2,15 @@
 
 /// <p>An Active Directory (AD) group whose members are granted permission to act as delegates.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SigninDelegateGroup {
     /// <p>The group name.</p>
     #[doc(hidden)]
-    pub group_name: std::option::Option<std::string::String>,
+    pub group_name: ::std::option::Option<::std::string::String>,
 }
 impl SigninDelegateGroup {
     /// <p>The group name.</p>
-    pub fn group_name(&self) -> std::option::Option<&str> {
+    pub fn group_name(&self) -> ::std::option::Option<&str> {
         self.group_name.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl SigninDelegateGroup {
 
 /// A builder for [`SigninDelegateGroup`](crate::types::SigninDelegateGroup).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SigninDelegateGroupBuilder {
-    pub(crate) group_name: std::option::Option<std::string::String>,
+    pub(crate) group_name: ::std::option::Option<::std::string::String>,
 }
 impl SigninDelegateGroupBuilder {
     /// <p>The group name.</p>
-    pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.group_name = Some(input.into());
+    pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The group name.</p>
-    pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_name = input;
         self
     }

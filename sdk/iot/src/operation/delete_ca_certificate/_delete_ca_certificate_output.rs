@@ -2,11 +2,11 @@
 
 /// <p>The output for the DeleteCACertificate operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteCaCertificateOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for DeleteCaCertificateOutput {
+impl ::aws_http::request_id::RequestId for DeleteCaCertificateOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -22,7 +22,9 @@ impl DeleteCaCertificateOutput {
 
 /// A builder for [`DeleteCaCertificateOutput`](crate::operation::delete_ca_certificate::DeleteCaCertificateOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteCaCertificateOutputBuilder {
     _request_id: Option<String>,
 }

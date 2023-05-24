@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeEndpointConfig`](crate::operation::describe_endpoint_config::builders::DescribeEndpointConfigFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`endpoint_config_name(impl Into<String>)`](crate::operation::describe_endpoint_config::builders::DescribeEndpointConfigFluentBuilder::endpoint_config_name) / [`set_endpoint_config_name(Option<String>)`](crate::operation::describe_endpoint_config::builders::DescribeEndpointConfigFluentBuilder::set_endpoint_config_name): <p>The name of the endpoint configuration.</p>
+    ///   - [`endpoint_config_name(impl ::std::convert::Into<String>)`](crate::operation::describe_endpoint_config::builders::DescribeEndpointConfigFluentBuilder::endpoint_config_name) / [`set_endpoint_config_name(Option<String>)`](crate::operation::describe_endpoint_config::builders::DescribeEndpointConfigFluentBuilder::set_endpoint_config_name): <p>The name of the endpoint configuration.</p>
     /// - On success, responds with [`DescribeEndpointConfigOutput`](crate::operation::describe_endpoint_config::DescribeEndpointConfigOutput) with field(s):
     ///   - [`endpoint_config_name(Option<String>)`](crate::operation::describe_endpoint_config::DescribeEndpointConfigOutput::endpoint_config_name): <p>Name of the SageMaker endpoint configuration.</p>
     ///   - [`endpoint_config_arn(Option<String>)`](crate::operation::describe_endpoint_config::DescribeEndpointConfigOutput::endpoint_config_arn): <p>The Amazon Resource Name (ARN) of the endpoint configuration.</p>

@@ -2,11 +2,11 @@
 
 /// <p>If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateEmailTemplateOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for CreateEmailTemplateOutput {
+impl ::aws_http::request_id::RequestId for CreateEmailTemplateOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -22,7 +22,9 @@ impl CreateEmailTemplateOutput {
 
 /// A builder for [`CreateEmailTemplateOutput`](crate::operation::create_email_template::CreateEmailTemplateOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateEmailTemplateOutputBuilder {
     _request_id: Option<String>,
 }

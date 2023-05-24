@@ -2,22 +2,22 @@
 
 /// <p>Specifies change details of the domain configuration change.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChangeProgressDetails {
     /// <p>The unique change identifier associated with a specific domain configuration change.</p>
     #[doc(hidden)]
-    pub change_id: std::option::Option<std::string::String>,
+    pub change_id: ::std::option::Option<::std::string::String>,
     /// <p>Contains an optional message associated with the domain configuration change.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
 }
 impl ChangeProgressDetails {
     /// <p>The unique change identifier associated with a specific domain configuration change.</p>
-    pub fn change_id(&self) -> std::option::Option<&str> {
+    pub fn change_id(&self) -> ::std::option::Option<&str> {
         self.change_id.as_deref()
     }
     /// <p>Contains an optional message associated with the domain configuration change.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl ChangeProgressDetails {
 
 /// A builder for [`ChangeProgressDetails`](crate::types::ChangeProgressDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ChangeProgressDetailsBuilder {
-    pub(crate) change_id: std::option::Option<std::string::String>,
-    pub(crate) message: std::option::Option<std::string::String>,
+    pub(crate) change_id: ::std::option::Option<::std::string::String>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
 }
 impl ChangeProgressDetailsBuilder {
     /// <p>The unique change identifier associated with a specific domain configuration change.</p>
-    pub fn change_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.change_id = Some(input.into());
+    pub fn change_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.change_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique change identifier associated with a specific domain configuration change.</p>
-    pub fn set_change_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_change_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.change_id = input;
         self
     }
     /// <p>Contains an optional message associated with the domain configuration change.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Contains an optional message associated with the domain configuration change.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }

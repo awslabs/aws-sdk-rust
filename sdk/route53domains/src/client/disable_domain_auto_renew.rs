@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DisableDomainAutoRenew`](crate::operation::disable_domain_auto_renew::builders::DisableDomainAutoRenewFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_name(impl Into<String>)`](crate::operation::disable_domain_auto_renew::builders::DisableDomainAutoRenewFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::disable_domain_auto_renew::builders::DisableDomainAutoRenewFluentBuilder::set_domain_name): <p>The name of the domain that you want to disable automatic renewal for.</p>
+    ///   - [`domain_name(impl ::std::convert::Into<String>)`](crate::operation::disable_domain_auto_renew::builders::DisableDomainAutoRenewFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::disable_domain_auto_renew::builders::DisableDomainAutoRenewFluentBuilder::set_domain_name): <p>The name of the domain that you want to disable automatic renewal for.</p>
     /// - On success, responds with [`DisableDomainAutoRenewOutput`](crate::operation::disable_domain_auto_renew::DisableDomainAutoRenewOutput)
     /// - On failure, responds with [`SdkError<DisableDomainAutoRenewError>`](crate::operation::disable_domain_auto_renew::DisableDomainAutoRenewError)
     pub fn disable_domain_auto_renew(

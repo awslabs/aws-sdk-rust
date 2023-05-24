@@ -2,27 +2,27 @@
 
 /// <p> The basic auth credentials required for basic authentication. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct BasicAuthCredentials {
     /// <p> The username to use to connect to a resource. </p>
     #[doc(hidden)]
-    pub username: std::option::Option<std::string::String>,
+    pub username: ::std::option::Option<::std::string::String>,
     /// <p> The password to use to connect to a resource.</p>
     #[doc(hidden)]
-    pub password: std::option::Option<std::string::String>,
+    pub password: ::std::option::Option<::std::string::String>,
 }
 impl BasicAuthCredentials {
     /// <p> The username to use to connect to a resource. </p>
-    pub fn username(&self) -> std::option::Option<&str> {
+    pub fn username(&self) -> ::std::option::Option<&str> {
         self.username.as_deref()
     }
     /// <p> The password to use to connect to a resource.</p>
-    pub fn password(&self) -> std::option::Option<&str> {
+    pub fn password(&self) -> ::std::option::Option<&str> {
         self.password.as_deref()
     }
 }
-impl std::fmt::Debug for BasicAuthCredentials {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for BasicAuthCredentials {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("BasicAuthCredentials");
         formatter.field("username", &self.username);
         formatter.field("password", &"*** Sensitive Data Redacted ***");
@@ -38,29 +38,29 @@ impl BasicAuthCredentials {
 
 /// A builder for [`BasicAuthCredentials`](crate::types::BasicAuthCredentials).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct BasicAuthCredentialsBuilder {
-    pub(crate) username: std::option::Option<std::string::String>,
-    pub(crate) password: std::option::Option<std::string::String>,
+    pub(crate) username: ::std::option::Option<::std::string::String>,
+    pub(crate) password: ::std::option::Option<::std::string::String>,
 }
 impl BasicAuthCredentialsBuilder {
     /// <p> The username to use to connect to a resource. </p>
-    pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
-        self.username = Some(input.into());
+    pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.username = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The username to use to connect to a resource. </p>
-    pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.username = input;
         self
     }
     /// <p> The password to use to connect to a resource.</p>
-    pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
-        self.password = Some(input.into());
+    pub fn password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.password = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The password to use to connect to a resource.</p>
-    pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.password = input;
         self
     }
@@ -72,8 +72,8 @@ impl BasicAuthCredentialsBuilder {
         }
     }
 }
-impl std::fmt::Debug for BasicAuthCredentialsBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for BasicAuthCredentialsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("BasicAuthCredentialsBuilder");
         formatter.field("username", &self.username);
         formatter.field("password", &"*** Sensitive Data Redacted ***");

@@ -2,50 +2,50 @@
 
 /// <p>Describes a resource entitled for use with a license.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Entitlement {
     /// <p>Entitlement name.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>Entitlement resource. Use only if the unit is None.</p>
     #[doc(hidden)]
-    pub value: std::option::Option<std::string::String>,
+    pub value: ::std::option::Option<::std::string::String>,
     /// <p>Maximum entitlement count. Use if the unit is not None.</p>
     #[doc(hidden)]
-    pub max_count: std::option::Option<i64>,
+    pub max_count: ::std::option::Option<i64>,
     /// <p>Indicates whether overages are allowed.</p>
     #[doc(hidden)]
-    pub overage: std::option::Option<bool>,
+    pub overage: ::std::option::Option<bool>,
     /// <p>Entitlement unit.</p>
     #[doc(hidden)]
-    pub unit: std::option::Option<crate::types::EntitlementUnit>,
+    pub unit: ::std::option::Option<crate::types::EntitlementUnit>,
     /// <p>Indicates whether check-ins are allowed.</p>
     #[doc(hidden)]
-    pub allow_check_in: std::option::Option<bool>,
+    pub allow_check_in: ::std::option::Option<bool>,
 }
 impl Entitlement {
     /// <p>Entitlement name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>Entitlement resource. Use only if the unit is None.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
     /// <p>Maximum entitlement count. Use if the unit is not None.</p>
-    pub fn max_count(&self) -> std::option::Option<i64> {
+    pub fn max_count(&self) -> ::std::option::Option<i64> {
         self.max_count
     }
     /// <p>Indicates whether overages are allowed.</p>
-    pub fn overage(&self) -> std::option::Option<bool> {
+    pub fn overage(&self) -> ::std::option::Option<bool> {
         self.overage
     }
     /// <p>Entitlement unit.</p>
-    pub fn unit(&self) -> std::option::Option<&crate::types::EntitlementUnit> {
+    pub fn unit(&self) -> ::std::option::Option<&crate::types::EntitlementUnit> {
         self.unit.as_ref()
     }
     /// <p>Indicates whether check-ins are allowed.</p>
-    pub fn allow_check_in(&self) -> std::option::Option<bool> {
+    pub fn allow_check_in(&self) -> ::std::option::Option<bool> {
         self.allow_check_in
     }
 }
@@ -58,73 +58,75 @@ impl Entitlement {
 
 /// A builder for [`Entitlement`](crate::types::Entitlement).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EntitlementBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) value: std::option::Option<std::string::String>,
-    pub(crate) max_count: std::option::Option<i64>,
-    pub(crate) overage: std::option::Option<bool>,
-    pub(crate) unit: std::option::Option<crate::types::EntitlementUnit>,
-    pub(crate) allow_check_in: std::option::Option<bool>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) value: ::std::option::Option<::std::string::String>,
+    pub(crate) max_count: ::std::option::Option<i64>,
+    pub(crate) overage: ::std::option::Option<bool>,
+    pub(crate) unit: ::std::option::Option<crate::types::EntitlementUnit>,
+    pub(crate) allow_check_in: ::std::option::Option<bool>,
 }
 impl EntitlementBuilder {
     /// <p>Entitlement name.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Entitlement name.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>Entitlement resource. Use only if the unit is None.</p>
-    pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.value = Some(input.into());
+    pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Entitlement resource. Use only if the unit is None.</p>
-    pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
     }
     /// <p>Maximum entitlement count. Use if the unit is not None.</p>
     pub fn max_count(mut self, input: i64) -> Self {
-        self.max_count = Some(input);
+        self.max_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>Maximum entitlement count. Use if the unit is not None.</p>
-    pub fn set_max_count(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_max_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.max_count = input;
         self
     }
     /// <p>Indicates whether overages are allowed.</p>
     pub fn overage(mut self, input: bool) -> Self {
-        self.overage = Some(input);
+        self.overage = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether overages are allowed.</p>
-    pub fn set_overage(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_overage(mut self, input: ::std::option::Option<bool>) -> Self {
         self.overage = input;
         self
     }
     /// <p>Entitlement unit.</p>
     pub fn unit(mut self, input: crate::types::EntitlementUnit) -> Self {
-        self.unit = Some(input);
+        self.unit = ::std::option::Option::Some(input);
         self
     }
     /// <p>Entitlement unit.</p>
-    pub fn set_unit(mut self, input: std::option::Option<crate::types::EntitlementUnit>) -> Self {
+    pub fn set_unit(mut self, input: ::std::option::Option<crate::types::EntitlementUnit>) -> Self {
         self.unit = input;
         self
     }
     /// <p>Indicates whether check-ins are allowed.</p>
     pub fn allow_check_in(mut self, input: bool) -> Self {
-        self.allow_check_in = Some(input);
+        self.allow_check_in = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether check-ins are allowed.</p>
-    pub fn set_allow_check_in(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_allow_check_in(mut self, input: ::std::option::Option<bool>) -> Self {
         self.allow_check_in = input;
         self
     }

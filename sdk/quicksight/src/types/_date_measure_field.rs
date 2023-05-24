@@ -2,40 +2,40 @@
 
 /// <p>The measure type field with date type columns.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DateMeasureField {
     /// <p>The custom field ID.</p>
     #[doc(hidden)]
-    pub field_id: std::option::Option<std::string::String>,
+    pub field_id: ::std::option::Option<::std::string::String>,
     /// <p>The column that is used in the <code>DateMeasureField</code>.</p>
     #[doc(hidden)]
-    pub column: std::option::Option<crate::types::ColumnIdentifier>,
+    pub column: ::std::option::Option<crate::types::ColumnIdentifier>,
     /// <p>The aggregation function of the measure field.</p>
     #[doc(hidden)]
-    pub aggregation_function: std::option::Option<crate::types::DateAggregationFunction>,
+    pub aggregation_function: ::std::option::Option<crate::types::DateAggregationFunction>,
     /// <p>The format configuration of the field.</p>
     #[doc(hidden)]
-    pub format_configuration: std::option::Option<crate::types::DateTimeFormatConfiguration>,
+    pub format_configuration: ::std::option::Option<crate::types::DateTimeFormatConfiguration>,
 }
 impl DateMeasureField {
     /// <p>The custom field ID.</p>
-    pub fn field_id(&self) -> std::option::Option<&str> {
+    pub fn field_id(&self) -> ::std::option::Option<&str> {
         self.field_id.as_deref()
     }
     /// <p>The column that is used in the <code>DateMeasureField</code>.</p>
-    pub fn column(&self) -> std::option::Option<&crate::types::ColumnIdentifier> {
+    pub fn column(&self) -> ::std::option::Option<&crate::types::ColumnIdentifier> {
         self.column.as_ref()
     }
     /// <p>The aggregation function of the measure field.</p>
     pub fn aggregation_function(
         &self,
-    ) -> std::option::Option<&crate::types::DateAggregationFunction> {
+    ) -> ::std::option::Option<&crate::types::DateAggregationFunction> {
         self.aggregation_function.as_ref()
     }
     /// <p>The format configuration of the field.</p>
     pub fn format_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::DateTimeFormatConfiguration> {
+    ) -> ::std::option::Option<&crate::types::DateTimeFormatConfiguration> {
         self.format_configuration.as_ref()
     }
 }
@@ -48,46 +48,49 @@ impl DateMeasureField {
 
 /// A builder for [`DateMeasureField`](crate::types::DateMeasureField).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DateMeasureFieldBuilder {
-    pub(crate) field_id: std::option::Option<std::string::String>,
-    pub(crate) column: std::option::Option<crate::types::ColumnIdentifier>,
-    pub(crate) aggregation_function: std::option::Option<crate::types::DateAggregationFunction>,
-    pub(crate) format_configuration: std::option::Option<crate::types::DateTimeFormatConfiguration>,
+    pub(crate) field_id: ::std::option::Option<::std::string::String>,
+    pub(crate) column: ::std::option::Option<crate::types::ColumnIdentifier>,
+    pub(crate) aggregation_function: ::std::option::Option<crate::types::DateAggregationFunction>,
+    pub(crate) format_configuration:
+        ::std::option::Option<crate::types::DateTimeFormatConfiguration>,
 }
 impl DateMeasureFieldBuilder {
     /// <p>The custom field ID.</p>
-    pub fn field_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.field_id = Some(input.into());
+    pub fn field_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.field_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The custom field ID.</p>
-    pub fn set_field_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_field_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.field_id = input;
         self
     }
     /// <p>The column that is used in the <code>DateMeasureField</code>.</p>
     pub fn column(mut self, input: crate::types::ColumnIdentifier) -> Self {
-        self.column = Some(input);
+        self.column = ::std::option::Option::Some(input);
         self
     }
     /// <p>The column that is used in the <code>DateMeasureField</code>.</p>
     pub fn set_column(
         mut self,
-        input: std::option::Option<crate::types::ColumnIdentifier>,
+        input: ::std::option::Option<crate::types::ColumnIdentifier>,
     ) -> Self {
         self.column = input;
         self
     }
     /// <p>The aggregation function of the measure field.</p>
     pub fn aggregation_function(mut self, input: crate::types::DateAggregationFunction) -> Self {
-        self.aggregation_function = Some(input);
+        self.aggregation_function = ::std::option::Option::Some(input);
         self
     }
     /// <p>The aggregation function of the measure field.</p>
     pub fn set_aggregation_function(
         mut self,
-        input: std::option::Option<crate::types::DateAggregationFunction>,
+        input: ::std::option::Option<crate::types::DateAggregationFunction>,
     ) -> Self {
         self.aggregation_function = input;
         self
@@ -97,13 +100,13 @@ impl DateMeasureFieldBuilder {
         mut self,
         input: crate::types::DateTimeFormatConfiguration,
     ) -> Self {
-        self.format_configuration = Some(input);
+        self.format_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The format configuration of the field.</p>
     pub fn set_format_configuration(
         mut self,
-        input: std::option::Option<crate::types::DateTimeFormatConfiguration>,
+        input: ::std::option::Option<crate::types::DateTimeFormatConfiguration>,
     ) -> Self {
         self.format_configuration = input;
         self

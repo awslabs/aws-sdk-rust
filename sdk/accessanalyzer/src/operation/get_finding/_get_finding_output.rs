@@ -2,20 +2,20 @@
 
 /// <p>The response to the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetFindingOutput {
     /// <p>A <code>finding</code> object that contains finding details.</p>
     #[doc(hidden)]
-    pub finding: std::option::Option<crate::types::Finding>,
+    pub finding: ::std::option::Option<crate::types::Finding>,
     _request_id: Option<String>,
 }
 impl GetFindingOutput {
     /// <p>A <code>finding</code> object that contains finding details.</p>
-    pub fn finding(&self) -> std::option::Option<&crate::types::Finding> {
+    pub fn finding(&self) -> ::std::option::Option<&crate::types::Finding> {
         self.finding.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for GetFindingOutput {
+impl ::aws_http::request_id::RequestId for GetFindingOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,21 @@ impl GetFindingOutput {
 
 /// A builder for [`GetFindingOutput`](crate::operation::get_finding::GetFindingOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetFindingOutputBuilder {
-    pub(crate) finding: std::option::Option<crate::types::Finding>,
+    pub(crate) finding: ::std::option::Option<crate::types::Finding>,
     _request_id: Option<String>,
 }
 impl GetFindingOutputBuilder {
     /// <p>A <code>finding</code> object that contains finding details.</p>
     pub fn finding(mut self, input: crate::types::Finding) -> Self {
-        self.finding = Some(input);
+        self.finding = ::std::option::Option::Some(input);
         self
     }
     /// <p>A <code>finding</code> object that contains finding details.</p>
-    pub fn set_finding(mut self, input: std::option::Option<crate::types::Finding>) -> Self {
+    pub fn set_finding(mut self, input: ::std::option::Option<crate::types::Finding>) -> Self {
         self.finding = input;
         self
     }

@@ -2,36 +2,38 @@
 
 /// <p>Button Config for an in-app message.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InAppMessageButton {
     /// <p>Default button content.</p>
     #[doc(hidden)]
-    pub android: std::option::Option<crate::types::OverrideButtonConfiguration>,
+    pub android: ::std::option::Option<crate::types::OverrideButtonConfiguration>,
     /// <p>Default button content.</p>
     #[doc(hidden)]
-    pub default_config: std::option::Option<crate::types::DefaultButtonConfiguration>,
+    pub default_config: ::std::option::Option<crate::types::DefaultButtonConfiguration>,
     /// <p>Default button content.</p>
     #[doc(hidden)]
-    pub ios: std::option::Option<crate::types::OverrideButtonConfiguration>,
+    pub ios: ::std::option::Option<crate::types::OverrideButtonConfiguration>,
     /// <p>Default button content.</p>
     #[doc(hidden)]
-    pub web: std::option::Option<crate::types::OverrideButtonConfiguration>,
+    pub web: ::std::option::Option<crate::types::OverrideButtonConfiguration>,
 }
 impl InAppMessageButton {
     /// <p>Default button content.</p>
-    pub fn android(&self) -> std::option::Option<&crate::types::OverrideButtonConfiguration> {
+    pub fn android(&self) -> ::std::option::Option<&crate::types::OverrideButtonConfiguration> {
         self.android.as_ref()
     }
     /// <p>Default button content.</p>
-    pub fn default_config(&self) -> std::option::Option<&crate::types::DefaultButtonConfiguration> {
+    pub fn default_config(
+        &self,
+    ) -> ::std::option::Option<&crate::types::DefaultButtonConfiguration> {
         self.default_config.as_ref()
     }
     /// <p>Default button content.</p>
-    pub fn ios(&self) -> std::option::Option<&crate::types::OverrideButtonConfiguration> {
+    pub fn ios(&self) -> ::std::option::Option<&crate::types::OverrideButtonConfiguration> {
         self.ios.as_ref()
     }
     /// <p>Default button content.</p>
-    pub fn web(&self) -> std::option::Option<&crate::types::OverrideButtonConfiguration> {
+    pub fn web(&self) -> ::std::option::Option<&crate::types::OverrideButtonConfiguration> {
         self.web.as_ref()
     }
 }
@@ -44,62 +46,64 @@ impl InAppMessageButton {
 
 /// A builder for [`InAppMessageButton`](crate::types::InAppMessageButton).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InAppMessageButtonBuilder {
-    pub(crate) android: std::option::Option<crate::types::OverrideButtonConfiguration>,
-    pub(crate) default_config: std::option::Option<crate::types::DefaultButtonConfiguration>,
-    pub(crate) ios: std::option::Option<crate::types::OverrideButtonConfiguration>,
-    pub(crate) web: std::option::Option<crate::types::OverrideButtonConfiguration>,
+    pub(crate) android: ::std::option::Option<crate::types::OverrideButtonConfiguration>,
+    pub(crate) default_config: ::std::option::Option<crate::types::DefaultButtonConfiguration>,
+    pub(crate) ios: ::std::option::Option<crate::types::OverrideButtonConfiguration>,
+    pub(crate) web: ::std::option::Option<crate::types::OverrideButtonConfiguration>,
 }
 impl InAppMessageButtonBuilder {
     /// <p>Default button content.</p>
     pub fn android(mut self, input: crate::types::OverrideButtonConfiguration) -> Self {
-        self.android = Some(input);
+        self.android = ::std::option::Option::Some(input);
         self
     }
     /// <p>Default button content.</p>
     pub fn set_android(
         mut self,
-        input: std::option::Option<crate::types::OverrideButtonConfiguration>,
+        input: ::std::option::Option<crate::types::OverrideButtonConfiguration>,
     ) -> Self {
         self.android = input;
         self
     }
     /// <p>Default button content.</p>
     pub fn default_config(mut self, input: crate::types::DefaultButtonConfiguration) -> Self {
-        self.default_config = Some(input);
+        self.default_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>Default button content.</p>
     pub fn set_default_config(
         mut self,
-        input: std::option::Option<crate::types::DefaultButtonConfiguration>,
+        input: ::std::option::Option<crate::types::DefaultButtonConfiguration>,
     ) -> Self {
         self.default_config = input;
         self
     }
     /// <p>Default button content.</p>
     pub fn ios(mut self, input: crate::types::OverrideButtonConfiguration) -> Self {
-        self.ios = Some(input);
+        self.ios = ::std::option::Option::Some(input);
         self
     }
     /// <p>Default button content.</p>
     pub fn set_ios(
         mut self,
-        input: std::option::Option<crate::types::OverrideButtonConfiguration>,
+        input: ::std::option::Option<crate::types::OverrideButtonConfiguration>,
     ) -> Self {
         self.ios = input;
         self
     }
     /// <p>Default button content.</p>
     pub fn web(mut self, input: crate::types::OverrideButtonConfiguration) -> Self {
-        self.web = Some(input);
+        self.web = ::std::option::Option::Some(input);
         self
     }
     /// <p>Default button content.</p>
     pub fn set_web(
         mut self,
-        input: std::option::Option<crate::types::OverrideButtonConfiguration>,
+        input: ::std::option::Option<crate::types::OverrideButtonConfiguration>,
     ) -> Self {
         self.web = input;
         self

@@ -2,20 +2,20 @@
 
 /// <p>The result of a <code><code>DefineAnalysisScheme</code></code> request. Contains the status of the newly-configured analysis scheme.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DefineAnalysisSchemeOutput {
     /// <p>The status and configuration of an <code>AnalysisScheme</code>.</p>
     #[doc(hidden)]
-    pub analysis_scheme: std::option::Option<crate::types::AnalysisSchemeStatus>,
+    pub analysis_scheme: ::std::option::Option<crate::types::AnalysisSchemeStatus>,
     _request_id: Option<String>,
 }
 impl DefineAnalysisSchemeOutput {
     /// <p>The status and configuration of an <code>AnalysisScheme</code>.</p>
-    pub fn analysis_scheme(&self) -> std::option::Option<&crate::types::AnalysisSchemeStatus> {
+    pub fn analysis_scheme(&self) -> ::std::option::Option<&crate::types::AnalysisSchemeStatus> {
         self.analysis_scheme.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for DefineAnalysisSchemeOutput {
+impl ::aws_http::request_id::RequestId for DefineAnalysisSchemeOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,21 +30,23 @@ impl DefineAnalysisSchemeOutput {
 
 /// A builder for [`DefineAnalysisSchemeOutput`](crate::operation::define_analysis_scheme::DefineAnalysisSchemeOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DefineAnalysisSchemeOutputBuilder {
-    pub(crate) analysis_scheme: std::option::Option<crate::types::AnalysisSchemeStatus>,
+    pub(crate) analysis_scheme: ::std::option::Option<crate::types::AnalysisSchemeStatus>,
     _request_id: Option<String>,
 }
 impl DefineAnalysisSchemeOutputBuilder {
     /// <p>The status and configuration of an <code>AnalysisScheme</code>.</p>
     pub fn analysis_scheme(mut self, input: crate::types::AnalysisSchemeStatus) -> Self {
-        self.analysis_scheme = Some(input);
+        self.analysis_scheme = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status and configuration of an <code>AnalysisScheme</code>.</p>
     pub fn set_analysis_scheme(
         mut self,
-        input: std::option::Option<crate::types::AnalysisSchemeStatus>,
+        input: ::std::option::Option<crate::types::AnalysisSchemeStatus>,
     ) -> Self {
         self.analysis_scheme = input;
         self

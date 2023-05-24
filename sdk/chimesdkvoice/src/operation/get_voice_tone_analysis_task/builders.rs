@@ -6,29 +6,29 @@ pub use crate::operation::get_voice_tone_analysis_task::_get_voice_tone_analysis
 /// Fluent builder constructing a request to `GetVoiceToneAnalysisTask`.
 ///
 /// <p>Retrieves the details of a voice tone analysis task.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetVoiceToneAnalysisTaskFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::get_voice_tone_analysis_task::builders::GetVoiceToneAnalysisTaskInputBuilder,
 }
 impl GetVoiceToneAnalysisTaskFluentBuilder {
     /// Creates a new `GetVoiceToneAnalysisTask`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::get_voice_tone_analysis_task::GetVoiceToneAnalysisTask,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::get_voice_tone_analysis_task::GetVoiceToneAnalysisTaskError,
         >,
     > {
@@ -36,30 +36,33 @@ impl GetVoiceToneAnalysisTaskFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_voice_tone_analysis_task::GetVoiceToneAnalysisTaskOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::get_voice_tone_analysis_task::GetVoiceToneAnalysisTaskError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,36 +75,42 @@ impl GetVoiceToneAnalysisTaskFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_voice_tone_analysis_task::GetVoiceToneAnalysisTaskOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::get_voice_tone_analysis_task::GetVoiceToneAnalysisTaskError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The Voice Connector ID.</p>
-    pub fn voice_connector_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn voice_connector_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.voice_connector_id(input.into());
         self
     }
     /// <p>The Voice Connector ID.</p>
     pub fn set_voice_connector_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_voice_connector_id(input);
         self
     }
     /// <p>The ID of the voice tone anlysis task.</p>
-    pub fn voice_tone_analysis_task_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn voice_tone_analysis_task_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.voice_tone_analysis_task_id(input.into());
         self
     }
     /// <p>The ID of the voice tone anlysis task.</p>
     pub fn set_voice_tone_analysis_task_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_voice_tone_analysis_task_id(input);
         self
@@ -112,7 +121,7 @@ impl GetVoiceToneAnalysisTaskFluentBuilder {
         self
     }
     /// <p>Specifies whether the voice being analyzed is the caller (originator) or the callee (responder).</p>
-    pub fn set_is_caller(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_caller(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_is_caller(input);
         self
     }

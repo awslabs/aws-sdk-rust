@@ -2,22 +2,24 @@
 
 /// <p>Describes a Reserved Instance whose queued purchase was not deleted.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FailedQueuedPurchaseDeletion {
     /// <p>The error.</p>
     #[doc(hidden)]
-    pub error: std::option::Option<crate::types::DeleteQueuedReservedInstancesError>,
+    pub error: ::std::option::Option<crate::types::DeleteQueuedReservedInstancesError>,
     /// <p>The ID of the Reserved Instance.</p>
     #[doc(hidden)]
-    pub reserved_instances_id: std::option::Option<std::string::String>,
+    pub reserved_instances_id: ::std::option::Option<::std::string::String>,
 }
 impl FailedQueuedPurchaseDeletion {
     /// <p>The error.</p>
-    pub fn error(&self) -> std::option::Option<&crate::types::DeleteQueuedReservedInstancesError> {
+    pub fn error(
+        &self,
+    ) -> ::std::option::Option<&crate::types::DeleteQueuedReservedInstancesError> {
         self.error.as_ref()
     }
     /// <p>The ID of the Reserved Instance.</p>
-    pub fn reserved_instances_id(&self) -> std::option::Option<&str> {
+    pub fn reserved_instances_id(&self) -> ::std::option::Option<&str> {
         self.reserved_instances_id.as_deref()
     }
 }
@@ -30,34 +32,39 @@ impl FailedQueuedPurchaseDeletion {
 
 /// A builder for [`FailedQueuedPurchaseDeletion`](crate::types::FailedQueuedPurchaseDeletion).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FailedQueuedPurchaseDeletionBuilder {
-    pub(crate) error: std::option::Option<crate::types::DeleteQueuedReservedInstancesError>,
-    pub(crate) reserved_instances_id: std::option::Option<std::string::String>,
+    pub(crate) error: ::std::option::Option<crate::types::DeleteQueuedReservedInstancesError>,
+    pub(crate) reserved_instances_id: ::std::option::Option<::std::string::String>,
 }
 impl FailedQueuedPurchaseDeletionBuilder {
     /// <p>The error.</p>
     pub fn error(mut self, input: crate::types::DeleteQueuedReservedInstancesError) -> Self {
-        self.error = Some(input);
+        self.error = ::std::option::Option::Some(input);
         self
     }
     /// <p>The error.</p>
     pub fn set_error(
         mut self,
-        input: std::option::Option<crate::types::DeleteQueuedReservedInstancesError>,
+        input: ::std::option::Option<crate::types::DeleteQueuedReservedInstancesError>,
     ) -> Self {
         self.error = input;
         self
     }
     /// <p>The ID of the Reserved Instance.</p>
-    pub fn reserved_instances_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.reserved_instances_id = Some(input.into());
+    pub fn reserved_instances_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.reserved_instances_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Reserved Instance.</p>
     pub fn set_reserved_instances_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.reserved_instances_id = input;
         self

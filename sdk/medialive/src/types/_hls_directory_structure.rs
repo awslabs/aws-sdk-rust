@@ -38,13 +38,13 @@
 /// Hls Directory Structure
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum HlsDirectoryStructure {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum HlsDirectoryStructure {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for HlsDirectoryStructure {
+impl ::std::convert::From<&str> for HlsDirectoryStructure {
     fn from(s: &str) -> Self {
         match s {
             "SINGLE_DIRECTORY" => HlsDirectoryStructure::SingleDirectory,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for HlsDirectoryStructure {
         }
     }
 }
-impl std::str::FromStr for HlsDirectoryStructure {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for HlsDirectoryStructure {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(HlsDirectoryStructure::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(HlsDirectoryStructure::from(s))
     }
 }
 impl HlsDirectoryStructure {
@@ -86,7 +86,7 @@ impl HlsDirectoryStructure {
         &["SINGLE_DIRECTORY", "SUBDIRECTORY_PER_STREAM"]
     }
 }
-impl AsRef<str> for HlsDirectoryStructure {
+impl ::std::convert::AsRef<str> for HlsDirectoryStructure {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

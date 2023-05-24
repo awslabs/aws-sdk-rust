@@ -2,20 +2,20 @@
 
 /// <p>Represents the request to get information about the user.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetUserInput {
     /// <p>A non-expired access token for the user whose information you want to query.</p>
     #[doc(hidden)]
-    pub access_token: std::option::Option<std::string::String>,
+    pub access_token: ::std::option::Option<::std::string::String>,
 }
 impl GetUserInput {
     /// <p>A non-expired access token for the user whose information you want to query.</p>
-    pub fn access_token(&self) -> std::option::Option<&str> {
+    pub fn access_token(&self) -> ::std::option::Option<&str> {
         self.access_token.as_deref()
     }
 }
-impl std::fmt::Debug for GetUserInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for GetUserInput {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetUserInput");
         formatter.field("access_token", &"*** Sensitive Data Redacted ***");
         formatter.finish()
@@ -30,35 +30,35 @@ impl GetUserInput {
 
 /// A builder for [`GetUserInput`](crate::operation::get_user::GetUserInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct GetUserInputBuilder {
-    pub(crate) access_token: std::option::Option<std::string::String>,
+    pub(crate) access_token: ::std::option::Option<::std::string::String>,
 }
 impl GetUserInputBuilder {
     /// <p>A non-expired access token for the user whose information you want to query.</p>
-    pub fn access_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.access_token = Some(input.into());
+    pub fn access_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.access_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A non-expired access token for the user whose information you want to query.</p>
-    pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_access_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.access_token = input;
         self
     }
     /// Consumes the builder and constructs a [`GetUserInput`](crate::operation::get_user::GetUserInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::get_user::GetUserInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::get_user::GetUserInput {
+        ::std::result::Result::Ok(crate::operation::get_user::GetUserInput {
             access_token: self.access_token,
         })
     }
 }
-impl std::fmt::Debug for GetUserInputBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for GetUserInputBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetUserInputBuilder");
         formatter.field("access_token", &"*** Sensitive Data Redacted ***");
         formatter.finish()

@@ -3,22 +3,22 @@
 /// <p>Contains information about an IAM policy, including the policy document.</p>
 /// <p>This data type is used as a response element in the <code>GetAccountAuthorizationDetails</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PolicyDetail {
     /// <p>The name of the policy.</p>
     #[doc(hidden)]
-    pub policy_name: std::option::Option<std::string::String>,
+    pub policy_name: ::std::option::Option<::std::string::String>,
     /// <p>The policy document.</p>
     #[doc(hidden)]
-    pub policy_document: std::option::Option<std::string::String>,
+    pub policy_document: ::std::option::Option<::std::string::String>,
 }
 impl PolicyDetail {
     /// <p>The name of the policy.</p>
-    pub fn policy_name(&self) -> std::option::Option<&str> {
+    pub fn policy_name(&self) -> ::std::option::Option<&str> {
         self.policy_name.as_deref()
     }
     /// <p>The policy document.</p>
-    pub fn policy_document(&self) -> std::option::Option<&str> {
+    pub fn policy_document(&self) -> ::std::option::Option<&str> {
         self.policy_document.as_deref()
     }
 }
@@ -31,29 +31,37 @@ impl PolicyDetail {
 
 /// A builder for [`PolicyDetail`](crate::types::PolicyDetail).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PolicyDetailBuilder {
-    pub(crate) policy_name: std::option::Option<std::string::String>,
-    pub(crate) policy_document: std::option::Option<std::string::String>,
+    pub(crate) policy_name: ::std::option::Option<::std::string::String>,
+    pub(crate) policy_document: ::std::option::Option<::std::string::String>,
 }
 impl PolicyDetailBuilder {
     /// <p>The name of the policy.</p>
-    pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.policy_name = Some(input.into());
+    pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.policy_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the policy.</p>
-    pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_name = input;
         self
     }
     /// <p>The policy document.</p>
-    pub fn policy_document(mut self, input: impl Into<std::string::String>) -> Self {
-        self.policy_document = Some(input.into());
+    pub fn policy_document(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.policy_document = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The policy document.</p>
-    pub fn set_policy_document(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_policy_document(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.policy_document = input;
         self
     }

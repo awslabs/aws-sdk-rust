@@ -2,20 +2,20 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteConnectionOutput {
     /// <p>The connection that is being deleted.</p>
     #[doc(hidden)]
-    pub connection: std::option::Option<crate::types::Connection>,
+    pub connection: ::std::option::Option<crate::types::Connection>,
     _request_id: Option<String>,
 }
 impl DeleteConnectionOutput {
     /// <p>The connection that is being deleted.</p>
-    pub fn connection(&self) -> std::option::Option<&crate::types::Connection> {
+    pub fn connection(&self) -> ::std::option::Option<&crate::types::Connection> {
         self.connection.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for DeleteConnectionOutput {
+impl ::aws_http::request_id::RequestId for DeleteConnectionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,19 +30,24 @@ impl DeleteConnectionOutput {
 
 /// A builder for [`DeleteConnectionOutput`](crate::operation::delete_connection::DeleteConnectionOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteConnectionOutputBuilder {
-    pub(crate) connection: std::option::Option<crate::types::Connection>,
+    pub(crate) connection: ::std::option::Option<crate::types::Connection>,
     _request_id: Option<String>,
 }
 impl DeleteConnectionOutputBuilder {
     /// <p>The connection that is being deleted.</p>
     pub fn connection(mut self, input: crate::types::Connection) -> Self {
-        self.connection = Some(input);
+        self.connection = ::std::option::Option::Some(input);
         self
     }
     /// <p>The connection that is being deleted.</p>
-    pub fn set_connection(mut self, input: std::option::Option<crate::types::Connection>) -> Self {
+    pub fn set_connection(
+        mut self,
+        input: ::std::option::Option<crate::types::Connection>,
+    ) -> Self {
         self.connection = input;
         self
     }

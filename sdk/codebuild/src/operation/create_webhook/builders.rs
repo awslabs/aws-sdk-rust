@@ -8,56 +8,59 @@ pub use crate::operation::create_webhook::_create_webhook_input::CreateWebhookIn
 /// <p>For an existing CodeBuild build project that has its source code stored in a GitHub or Bitbucket repository, enables CodeBuild to start rebuilding the source code every time a code change is pushed to the repository.</p> <important>
 /// <p>If you enable webhooks for an CodeBuild project, and the project is used as a build step in CodePipeline, then two identical builds are created for each commit. One build is triggered through webhooks, and one through CodePipeline. Because billing is on a per-build basis, you are billed for both builds. Therefore, if you are using CodePipeline, we recommend that you disable webhooks in CodeBuild. In the CodeBuild console, clear the Webhook box. For more information, see step 5 in <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/change-project.html#change-project-console">Change a Build Project's Settings</a>.</p>
 /// </important>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateWebhookFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_webhook::builders::CreateWebhookInputBuilder,
 }
 impl CreateWebhookFluentBuilder {
     /// Creates a new `CreateWebhook`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_webhook::CreateWebhook,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_webhook::CreateWebhookError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_webhook::CreateWebhookError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_webhook::CreateWebhookOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_webhook::CreateWebhookError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_webhook::CreateWebhookError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -70,33 +73,39 @@ impl CreateWebhookFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_webhook::CreateWebhookOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_webhook::CreateWebhookError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_webhook::CreateWebhookError>,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the CodeBuild project.</p>
-    pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.project_name(input.into());
         self
     }
     /// <p>The name of the CodeBuild project.</p>
-    pub fn set_project_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_project_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_project_name(input);
         self
     }
     /// <p>A regular expression used to determine which repository branches are built when a webhook is triggered. If the name of a branch matches the regular expression, then it is built. If <code>branchFilter</code> is empty, then all branches are built.</p> <note>
     /// <p>It is recommended that you use <code>filterGroups</code> instead of <code>branchFilter</code>. </p>
     /// </note>
-    pub fn branch_filter(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn branch_filter(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.branch_filter(input.into());
         self
     }
     /// <p>A regular expression used to determine which repository branches are built when a webhook is triggered. If the name of a branch matches the regular expression, then it is built. If <code>branchFilter</code> is empty, then all branches are built.</p> <note>
     /// <p>It is recommended that you use <code>filterGroups</code> instead of <code>branchFilter</code>. </p>
     /// </note>
-    pub fn set_branch_filter(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_branch_filter(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_branch_filter(input);
         self
     }
@@ -106,7 +115,7 @@ impl CreateWebhookFluentBuilder {
     ///
     /// <p>An array of arrays of <code>WebhookFilter</code> objects used to determine which webhooks are triggered. At least one <code>WebhookFilter</code> in the array must specify <code>EVENT</code> as its <code>type</code>. </p>
     /// <p>For a build to be triggered, at least one filter group in the <code>filterGroups</code> array must pass. For a filter group to pass, each of its filters must pass. </p>
-    pub fn filter_groups(mut self, input: std::vec::Vec<crate::types::WebhookFilter>) -> Self {
+    pub fn filter_groups(mut self, input: ::std::vec::Vec<crate::types::WebhookFilter>) -> Self {
         self.inner = self.inner.filter_groups(input);
         self
     }
@@ -114,7 +123,7 @@ impl CreateWebhookFluentBuilder {
     /// <p>For a build to be triggered, at least one filter group in the <code>filterGroups</code> array must pass. For a filter group to pass, each of its filters must pass. </p>
     pub fn set_filter_groups(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::vec::Vec<crate::types::WebhookFilter>>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::WebhookFilter>>>,
     ) -> Self {
         self.inner = self.inner.set_filter_groups(input);
         self
@@ -127,7 +136,7 @@ impl CreateWebhookFluentBuilder {
     /// <p>Specifies the type of build this webhook will trigger.</p>
     pub fn set_build_type(
         mut self,
-        input: std::option::Option<crate::types::WebhookBuildType>,
+        input: ::std::option::Option<crate::types::WebhookBuildType>,
     ) -> Self {
         self.inner = self.inner.set_build_type(input);
         self

@@ -2,14 +2,14 @@
 
 /// <p>The current DynamoDB Streams configuration for the table.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsDynamoDbTableStreamSpecification {
     /// <p>Indicates whether DynamoDB Streams is enabled on the table.</p>
     #[doc(hidden)]
     pub stream_enabled: bool,
     /// <p>Determines the information that is written to the table.</p>
     #[doc(hidden)]
-    pub stream_view_type: std::option::Option<std::string::String>,
+    pub stream_view_type: ::std::option::Option<::std::string::String>,
 }
 impl AwsDynamoDbTableStreamSpecification {
     /// <p>Indicates whether DynamoDB Streams is enabled on the table.</p>
@@ -17,7 +17,7 @@ impl AwsDynamoDbTableStreamSpecification {
         self.stream_enabled
     }
     /// <p>Determines the information that is written to the table.</p>
-    pub fn stream_view_type(&self) -> std::option::Option<&str> {
+    pub fn stream_view_type(&self) -> ::std::option::Option<&str> {
         self.stream_view_type.as_deref()
     }
 }
@@ -30,29 +30,37 @@ impl AwsDynamoDbTableStreamSpecification {
 
 /// A builder for [`AwsDynamoDbTableStreamSpecification`](crate::types::AwsDynamoDbTableStreamSpecification).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsDynamoDbTableStreamSpecificationBuilder {
-    pub(crate) stream_enabled: std::option::Option<bool>,
-    pub(crate) stream_view_type: std::option::Option<std::string::String>,
+    pub(crate) stream_enabled: ::std::option::Option<bool>,
+    pub(crate) stream_view_type: ::std::option::Option<::std::string::String>,
 }
 impl AwsDynamoDbTableStreamSpecificationBuilder {
     /// <p>Indicates whether DynamoDB Streams is enabled on the table.</p>
     pub fn stream_enabled(mut self, input: bool) -> Self {
-        self.stream_enabled = Some(input);
+        self.stream_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether DynamoDB Streams is enabled on the table.</p>
-    pub fn set_stream_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_stream_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.stream_enabled = input;
         self
     }
     /// <p>Determines the information that is written to the table.</p>
-    pub fn stream_view_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.stream_view_type = Some(input.into());
+    pub fn stream_view_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.stream_view_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Determines the information that is written to the table.</p>
-    pub fn set_stream_view_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_stream_view_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.stream_view_type = input;
         self
     }

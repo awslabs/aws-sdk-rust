@@ -11,30 +11,30 @@ pub use crate::operation::set_identity_dkim_enabled::_set_identity_dkim_enabled_
 /// <p>You can enable DKIM signing for an identity at any time after you start the verification process for the identity, even if the verification process isn't complete. </p>
 /// <p>You can execute this operation no more than once per second.</p>
 /// <p>For more information about Easy DKIM signing, go to the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Amazon SES Developer Guide</a>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SetIdentityDkimEnabledFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner:
         crate::operation::set_identity_dkim_enabled::builders::SetIdentityDkimEnabledInputBuilder,
 }
 impl SetIdentityDkimEnabledFluentBuilder {
     /// Creates a new `SetIdentityDkimEnabled`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::set_identity_dkim_enabled::SetIdentityDkimEnabled,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::set_identity_dkim_enabled::SetIdentityDkimEnabledError,
         >,
     > {
@@ -42,30 +42,33 @@ impl SetIdentityDkimEnabledFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::set_identity_dkim_enabled::SetIdentityDkimEnabledOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::set_identity_dkim_enabled::SetIdentityDkimEnabledError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -78,21 +81,21 @@ impl SetIdentityDkimEnabledFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::set_identity_dkim_enabled::SetIdentityDkimEnabledOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::set_identity_dkim_enabled::SetIdentityDkimEnabledError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The identity for which DKIM signing should be enabled or disabled.</p>
-    pub fn identity(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn identity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.identity(input.into());
         self
     }
     /// <p>The identity for which DKIM signing should be enabled or disabled.</p>
-    pub fn set_identity(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_identity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_identity(input);
         self
     }
@@ -102,7 +105,7 @@ impl SetIdentityDkimEnabledFluentBuilder {
         self
     }
     /// <p>Sets whether DKIM signing is enabled for an identity. Set to <code>true</code> to enable DKIM signing for this identity; <code>false</code> to disable it. </p>
-    pub fn set_dkim_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_dkim_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dkim_enabled(input);
         self
     }

@@ -2,22 +2,22 @@
 
 /// <p>Describes an potential intermediate component of a feasible path.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AlternatePathHint {
     /// <p>The ID of the component.</p>
     #[doc(hidden)]
-    pub component_id: std::option::Option<std::string::String>,
+    pub component_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the component.</p>
     #[doc(hidden)]
-    pub component_arn: std::option::Option<std::string::String>,
+    pub component_arn: ::std::option::Option<::std::string::String>,
 }
 impl AlternatePathHint {
     /// <p>The ID of the component.</p>
-    pub fn component_id(&self) -> std::option::Option<&str> {
+    pub fn component_id(&self) -> ::std::option::Option<&str> {
         self.component_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the component.</p>
-    pub fn component_arn(&self) -> std::option::Option<&str> {
+    pub fn component_arn(&self) -> ::std::option::Option<&str> {
         self.component_arn.as_deref()
     }
 }
@@ -30,29 +30,37 @@ impl AlternatePathHint {
 
 /// A builder for [`AlternatePathHint`](crate::types::AlternatePathHint).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AlternatePathHintBuilder {
-    pub(crate) component_id: std::option::Option<std::string::String>,
-    pub(crate) component_arn: std::option::Option<std::string::String>,
+    pub(crate) component_id: ::std::option::Option<::std::string::String>,
+    pub(crate) component_arn: ::std::option::Option<::std::string::String>,
 }
 impl AlternatePathHintBuilder {
     /// <p>The ID of the component.</p>
-    pub fn component_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.component_id = Some(input.into());
+    pub fn component_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.component_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the component.</p>
-    pub fn set_component_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_component_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.component_id = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the component.</p>
-    pub fn component_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.component_arn = Some(input.into());
+    pub fn component_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.component_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the component.</p>
-    pub fn set_component_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_component_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.component_arn = input;
         self
     }

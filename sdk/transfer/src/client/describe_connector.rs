@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeConnector`](crate::operation::describe_connector::builders::DescribeConnectorFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`connector_id(impl Into<String>)`](crate::operation::describe_connector::builders::DescribeConnectorFluentBuilder::connector_id) / [`set_connector_id(Option<String>)`](crate::operation::describe_connector::builders::DescribeConnectorFluentBuilder::set_connector_id): <p>The unique identifier for the connector.</p>
+    ///   - [`connector_id(impl ::std::convert::Into<String>)`](crate::operation::describe_connector::builders::DescribeConnectorFluentBuilder::connector_id) / [`set_connector_id(Option<String>)`](crate::operation::describe_connector::builders::DescribeConnectorFluentBuilder::set_connector_id): <p>The unique identifier for the connector.</p>
     /// - On success, responds with [`DescribeConnectorOutput`](crate::operation::describe_connector::DescribeConnectorOutput) with field(s):
     ///   - [`connector(Option<DescribedConnector>)`](crate::operation::describe_connector::DescribeConnectorOutput::connector): <p>The structure that contains the details of the connector.</p>
     /// - On failure, responds with [`SdkError<DescribeConnectorError>`](crate::operation::describe_connector::DescribeConnectorError)

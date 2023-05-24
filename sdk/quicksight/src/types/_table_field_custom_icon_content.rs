@@ -2,15 +2,15 @@
 
 /// <p>The custom icon content for the table link content configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TableFieldCustomIconContent {
     /// <p>The icon set type (link) of the custom icon content for table URL link content.</p>
     #[doc(hidden)]
-    pub icon: std::option::Option<crate::types::TableFieldIconSetType>,
+    pub icon: ::std::option::Option<crate::types::TableFieldIconSetType>,
 }
 impl TableFieldCustomIconContent {
     /// <p>The icon set type (link) of the custom icon content for table URL link content.</p>
-    pub fn icon(&self) -> std::option::Option<&crate::types::TableFieldIconSetType> {
+    pub fn icon(&self) -> ::std::option::Option<&crate::types::TableFieldIconSetType> {
         self.icon.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl TableFieldCustomIconContent {
 
 /// A builder for [`TableFieldCustomIconContent`](crate::types::TableFieldCustomIconContent).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TableFieldCustomIconContentBuilder {
-    pub(crate) icon: std::option::Option<crate::types::TableFieldIconSetType>,
+    pub(crate) icon: ::std::option::Option<crate::types::TableFieldIconSetType>,
 }
 impl TableFieldCustomIconContentBuilder {
     /// <p>The icon set type (link) of the custom icon content for table URL link content.</p>
     pub fn icon(mut self, input: crate::types::TableFieldIconSetType) -> Self {
-        self.icon = Some(input);
+        self.icon = ::std::option::Option::Some(input);
         self
     }
     /// <p>The icon set type (link) of the custom icon content for table URL link content.</p>
     pub fn set_icon(
         mut self,
-        input: std::option::Option<crate::types::TableFieldIconSetType>,
+        input: ::std::option::Option<crate::types::TableFieldIconSetType>,
     ) -> Self {
         self.icon = input;
         self

@@ -2,11 +2,11 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteApplicationOutputOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for DeleteApplicationOutputOutput {
+impl ::aws_http::request_id::RequestId for DeleteApplicationOutputOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -22,7 +22,9 @@ impl DeleteApplicationOutputOutput {
 
 /// A builder for [`DeleteApplicationOutputOutput`](crate::operation::delete_application_output::DeleteApplicationOutputOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteApplicationOutputOutputBuilder {
     _request_id: Option<String>,
 }

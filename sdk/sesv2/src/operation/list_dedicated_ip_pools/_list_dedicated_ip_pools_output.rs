@@ -2,27 +2,27 @@
 
 /// <p>A list of dedicated IP pools.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDedicatedIpPoolsOutput {
     /// <p>A list of all of the dedicated IP pools that are associated with your Amazon Web Services account in the current Region.</p>
     #[doc(hidden)]
-    pub dedicated_ip_pools: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub dedicated_ip_pools: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A token that indicates that there are additional IP pools to list. To view additional IP pools, issue another request to <code>ListDedicatedIpPools</code>, passing this token in the <code>NextToken</code> parameter.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListDedicatedIpPoolsOutput {
     /// <p>A list of all of the dedicated IP pools that are associated with your Amazon Web Services account in the current Region.</p>
-    pub fn dedicated_ip_pools(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn dedicated_ip_pools(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.dedicated_ip_pools.as_deref()
     }
     /// <p>A token that indicates that there are additional IP pools to list. To view additional IP pools, issue another request to <code>ListDedicatedIpPools</code>, passing this token in the <code>NextToken</code> parameter.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListDedicatedIpPoolsOutput {
+impl ::aws_http::request_id::RequestId for ListDedicatedIpPoolsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -38,10 +38,12 @@ impl ListDedicatedIpPoolsOutput {
 
 /// A builder for [`ListDedicatedIpPoolsOutput`](crate::operation::list_dedicated_ip_pools::ListDedicatedIpPoolsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListDedicatedIpPoolsOutputBuilder {
-    pub(crate) dedicated_ip_pools: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) dedicated_ip_pools: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListDedicatedIpPoolsOutputBuilder {
@@ -50,27 +52,30 @@ impl ListDedicatedIpPoolsOutputBuilder {
     /// To override the contents of this collection use [`set_dedicated_ip_pools`](Self::set_dedicated_ip_pools).
     ///
     /// <p>A list of all of the dedicated IP pools that are associated with your Amazon Web Services account in the current Region.</p>
-    pub fn dedicated_ip_pools(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn dedicated_ip_pools(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.dedicated_ip_pools.unwrap_or_default();
         v.push(input.into());
-        self.dedicated_ip_pools = Some(v);
+        self.dedicated_ip_pools = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of all of the dedicated IP pools that are associated with your Amazon Web Services account in the current Region.</p>
     pub fn set_dedicated_ip_pools(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.dedicated_ip_pools = input;
         self
     }
     /// <p>A token that indicates that there are additional IP pools to list. To view additional IP pools, issue another request to <code>ListDedicatedIpPools</code>, passing this token in the <code>NextToken</code> parameter.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A token that indicates that there are additional IP pools to list. To view additional IP pools, issue another request to <code>ListDedicatedIpPools</code>, passing this token in the <code>NextToken</code> parameter.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

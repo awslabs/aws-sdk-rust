@@ -2,28 +2,28 @@
 
 /// <p>Specifies the tags to remove from a trail, event data store, or channel.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemoveTagsInput {
     /// <p>Specifies the ARN of the trail, event data store, or channel from which tags should be removed.</p>
     /// <p> Example trail ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     /// <p>Example event data store ARN format: <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code> </p>
     /// <p>Example channel ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code> </p>
     #[doc(hidden)]
-    pub resource_id: std::option::Option<std::string::String>,
+    pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies a list of tags to be removed.</p>
     #[doc(hidden)]
-    pub tags_list: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tags_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl RemoveTagsInput {
     /// <p>Specifies the ARN of the trail, event data store, or channel from which tags should be removed.</p>
     /// <p> Example trail ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     /// <p>Example event data store ARN format: <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code> </p>
     /// <p>Example channel ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code> </p>
-    pub fn resource_id(&self) -> std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<&str> {
         self.resource_id.as_deref()
     }
     /// <p>Specifies a list of tags to be removed.</p>
-    pub fn tags_list(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags_list(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags_list.as_deref()
     }
 }
@@ -36,25 +36,27 @@ impl RemoveTagsInput {
 
 /// A builder for [`RemoveTagsInput`](crate::operation::remove_tags::RemoveTagsInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RemoveTagsInputBuilder {
-    pub(crate) resource_id: std::option::Option<std::string::String>,
-    pub(crate) tags_list: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub(crate) resource_id: ::std::option::Option<::std::string::String>,
+    pub(crate) tags_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl RemoveTagsInputBuilder {
     /// <p>Specifies the ARN of the trail, event data store, or channel from which tags should be removed.</p>
     /// <p> Example trail ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     /// <p>Example event data store ARN format: <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code> </p>
     /// <p>Example channel ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code> </p>
-    pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_id = Some(input.into());
+    pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the ARN of the trail, event data store, or channel from which tags should be removed.</p>
     /// <p> Example trail ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     /// <p>Example event data store ARN format: <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code> </p>
     /// <p>Example channel ARN format: <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code> </p>
-    pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
     }
@@ -66,13 +68,13 @@ impl RemoveTagsInputBuilder {
     pub fn tags_list(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags_list.unwrap_or_default();
         v.push(input);
-        self.tags_list = Some(v);
+        self.tags_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>Specifies a list of tags to be removed.</p>
     pub fn set_tags_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tags_list = input;
         self
@@ -80,11 +82,11 @@ impl RemoveTagsInputBuilder {
     /// Consumes the builder and constructs a [`RemoveTagsInput`](crate::operation::remove_tags::RemoveTagsInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::remove_tags::RemoveTagsInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::remove_tags::RemoveTagsInput {
+        ::std::result::Result::Ok(crate::operation::remove_tags::RemoveTagsInput {
             resource_id: self.resource_id,
             tags_list: self.tags_list,
         })

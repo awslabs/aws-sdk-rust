@@ -11,7 +11,7 @@
 /// <p>For a list of supported resource types, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported Resource Types</a>.</p>
 /// <p>For more information and a table of the Home Regions for Global Resource Types Onboarded after February 2022, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html">Selecting Which Resources Config Records</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecordingGroup {
     /// <p>Specifies whether Config records configuration changes for every supported type of regional resource.</p>
     /// <p>If you set this option to <code>true</code>, when Config adds support for a new type of regional resource, it starts recording resources of that type automatically.</p>
@@ -29,7 +29,7 @@ pub struct RecordingGroup {
     /// <p>If you set the <code>AllSupported</code> option to false and populate the <code>ResourceTypes</code> option with values, when Config adds support for a new type of resource, it will not record resources of that type unless you manually add that type to your recording group.</p>
     /// <p>For a list of valid <code>resourceTypes</code> values, see the <b>resourceType Value</b> column in <a href="https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported Amazon Web Services resource Types</a>.</p>
     #[doc(hidden)]
-    pub resource_types: std::option::Option<std::vec::Vec<crate::types::ResourceType>>,
+    pub resource_types: ::std::option::Option<::std::vec::Vec<crate::types::ResourceType>>,
 }
 impl RecordingGroup {
     /// <p>Specifies whether Config records configuration changes for every supported type of regional resource.</p>
@@ -49,7 +49,7 @@ impl RecordingGroup {
     /// <p>To record all configuration changes, you must set the <code>allSupported</code> option to <code>true</code>.</p>
     /// <p>If you set the <code>AllSupported</code> option to false and populate the <code>ResourceTypes</code> option with values, when Config adds support for a new type of resource, it will not record resources of that type unless you manually add that type to your recording group.</p>
     /// <p>For a list of valid <code>resourceTypes</code> values, see the <b>resourceType Value</b> column in <a href="https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported Amazon Web Services resource Types</a>.</p>
-    pub fn resource_types(&self) -> std::option::Option<&[crate::types::ResourceType]> {
+    pub fn resource_types(&self) -> ::std::option::Option<&[crate::types::ResourceType]> {
         self.resource_types.as_deref()
     }
 }
@@ -62,24 +62,26 @@ impl RecordingGroup {
 
 /// A builder for [`RecordingGroup`](crate::types::RecordingGroup).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RecordingGroupBuilder {
-    pub(crate) all_supported: std::option::Option<bool>,
-    pub(crate) include_global_resource_types: std::option::Option<bool>,
-    pub(crate) resource_types: std::option::Option<std::vec::Vec<crate::types::ResourceType>>,
+    pub(crate) all_supported: ::std::option::Option<bool>,
+    pub(crate) include_global_resource_types: ::std::option::Option<bool>,
+    pub(crate) resource_types: ::std::option::Option<::std::vec::Vec<crate::types::ResourceType>>,
 }
 impl RecordingGroupBuilder {
     /// <p>Specifies whether Config records configuration changes for every supported type of regional resource.</p>
     /// <p>If you set this option to <code>true</code>, when Config adds support for a new type of regional resource, it starts recording resources of that type automatically.</p>
     /// <p>If you set this option to <code>true</code>, you cannot enumerate a list of <code>resourceTypes</code>.</p>
     pub fn all_supported(mut self, input: bool) -> Self {
-        self.all_supported = Some(input);
+        self.all_supported = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether Config records configuration changes for every supported type of regional resource.</p>
     /// <p>If you set this option to <code>true</code>, when Config adds support for a new type of regional resource, it starts recording resources of that type automatically.</p>
     /// <p>If you set this option to <code>true</code>, you cannot enumerate a list of <code>resourceTypes</code>.</p>
-    pub fn set_all_supported(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_all_supported(mut self, input: ::std::option::Option<bool>) -> Self {
         self.all_supported = input;
         self
     }
@@ -88,14 +90,14 @@ impl RecordingGroupBuilder {
     /// <p>If you set this option to <code>true</code>, when Config adds support for a new type of global resource, it starts recording resources of that type automatically.</p>
     /// <p>The configuration details for any global resource are the same in all regions. To prevent duplicate configuration items, you should consider customizing Config in only one region to record global resources.</p>
     pub fn include_global_resource_types(mut self, input: bool) -> Self {
-        self.include_global_resource_types = Some(input);
+        self.include_global_resource_types = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether Config includes all supported types of global resources (for example, IAM resources) with the resources that it records.</p>
     /// <p>Before you can set this option to <code>true</code>, you must set the <code>allSupported</code> option to <code>true</code>.</p>
     /// <p>If you set this option to <code>true</code>, when Config adds support for a new type of global resource, it starts recording resources of that type automatically.</p>
     /// <p>The configuration details for any global resource are the same in all regions. To prevent duplicate configuration items, you should consider customizing Config in only one region to record global resources.</p>
-    pub fn set_include_global_resource_types(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_include_global_resource_types(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_global_resource_types = input;
         self
     }
@@ -110,7 +112,7 @@ impl RecordingGroupBuilder {
     pub fn resource_types(mut self, input: crate::types::ResourceType) -> Self {
         let mut v = self.resource_types.unwrap_or_default();
         v.push(input);
-        self.resource_types = Some(v);
+        self.resource_types = ::std::option::Option::Some(v);
         self
     }
     /// <p>A comma-separated list that specifies the types of Amazon Web Services resources for which Config records configuration changes (for example, <code>AWS::EC2::Instance</code> or <code>AWS::CloudTrail::Trail</code>).</p>
@@ -119,7 +121,7 @@ impl RecordingGroupBuilder {
     /// <p>For a list of valid <code>resourceTypes</code> values, see the <b>resourceType Value</b> column in <a href="https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported Amazon Web Services resource Types</a>.</p>
     pub fn set_resource_types(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ResourceType>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceType>>,
     ) -> Self {
         self.resource_types = input;
         self

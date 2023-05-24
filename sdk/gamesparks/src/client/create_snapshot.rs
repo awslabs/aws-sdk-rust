@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateSnapshot`](crate::operation::create_snapshot::builders::CreateSnapshotFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`game_name(impl Into<String>)`](crate::operation::create_snapshot::builders::CreateSnapshotFluentBuilder::game_name) / [`set_game_name(Option<String>)`](crate::operation::create_snapshot::builders::CreateSnapshotFluentBuilder::set_game_name): <p>The name of the game.</p>
-    ///   - [`description(impl Into<String>)`](crate::operation::create_snapshot::builders::CreateSnapshotFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::create_snapshot::builders::CreateSnapshotFluentBuilder::set_description): <p>The description of the snapshot.</p>
+    ///   - [`game_name(impl ::std::convert::Into<String>)`](crate::operation::create_snapshot::builders::CreateSnapshotFluentBuilder::game_name) / [`set_game_name(Option<String>)`](crate::operation::create_snapshot::builders::CreateSnapshotFluentBuilder::set_game_name): <p>The name of the game.</p>
+    ///   - [`description(impl ::std::convert::Into<String>)`](crate::operation::create_snapshot::builders::CreateSnapshotFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::create_snapshot::builders::CreateSnapshotFluentBuilder::set_description): <p>The description of the snapshot.</p>
     /// - On success, responds with [`CreateSnapshotOutput`](crate::operation::create_snapshot::CreateSnapshotOutput) with field(s):
     ///   - [`snapshot(Option<SnapshotDetails>)`](crate::operation::create_snapshot::CreateSnapshotOutput::snapshot): <p>Properties that provide details of the created snapshot.</p>
     /// - On failure, responds with [`SdkError<CreateSnapshotError>`](crate::operation::create_snapshot::CreateSnapshotError)

@@ -2,62 +2,62 @@
 
 /// <p>An object that contains a system instance definition and summary information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SystemInstanceDescription {
     /// <p>An object that contains summary information about a system instance.</p>
     #[doc(hidden)]
-    pub summary: std::option::Option<crate::types::SystemInstanceSummary>,
+    pub summary: ::std::option::Option<crate::types::SystemInstanceSummary>,
     /// <p>A document that defines an entity. </p>
     #[doc(hidden)]
-    pub definition: std::option::Option<crate::types::DefinitionDocument>,
+    pub definition: ::std::option::Option<crate::types::DefinitionDocument>,
     /// <p>The Amazon Simple Storage Service bucket where information about a system instance is stored.</p>
     #[doc(hidden)]
-    pub s3_bucket_name: std::option::Option<std::string::String>,
+    pub s3_bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>An object that specifies whether cloud metrics are collected in a deployment and, if so, what role is used to collect metrics.</p>
     #[doc(hidden)]
-    pub metrics_configuration: std::option::Option<crate::types::MetricsConfiguration>,
+    pub metrics_configuration: ::std::option::Option<crate::types::MetricsConfiguration>,
     /// <p>The version of the user's namespace against which the system instance was validated.</p>
     #[doc(hidden)]
-    pub validated_namespace_version: std::option::Option<i64>,
+    pub validated_namespace_version: ::std::option::Option<i64>,
     /// <p>A list of objects that contain all of the IDs and revision numbers of workflows and systems that are used in a system instance.</p>
     #[doc(hidden)]
     pub validated_dependency_revisions:
-        std::option::Option<std::vec::Vec<crate::types::DependencyRevision>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::DependencyRevision>>,
     /// <p>The AWS Identity and Access Management (IAM) role that AWS IoT Things Graph assumes during flow execution in a cloud deployment. This role must have read and write permissionss to AWS Lambda and AWS IoT and to any other AWS services that the flow uses.</p>
     #[doc(hidden)]
-    pub flow_actions_role_arn: std::option::Option<std::string::String>,
+    pub flow_actions_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl SystemInstanceDescription {
     /// <p>An object that contains summary information about a system instance.</p>
-    pub fn summary(&self) -> std::option::Option<&crate::types::SystemInstanceSummary> {
+    pub fn summary(&self) -> ::std::option::Option<&crate::types::SystemInstanceSummary> {
         self.summary.as_ref()
     }
     /// <p>A document that defines an entity. </p>
-    pub fn definition(&self) -> std::option::Option<&crate::types::DefinitionDocument> {
+    pub fn definition(&self) -> ::std::option::Option<&crate::types::DefinitionDocument> {
         self.definition.as_ref()
     }
     /// <p>The Amazon Simple Storage Service bucket where information about a system instance is stored.</p>
-    pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
+    pub fn s3_bucket_name(&self) -> ::std::option::Option<&str> {
         self.s3_bucket_name.as_deref()
     }
     /// <p>An object that specifies whether cloud metrics are collected in a deployment and, if so, what role is used to collect metrics.</p>
     pub fn metrics_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::MetricsConfiguration> {
+    ) -> ::std::option::Option<&crate::types::MetricsConfiguration> {
         self.metrics_configuration.as_ref()
     }
     /// <p>The version of the user's namespace against which the system instance was validated.</p>
-    pub fn validated_namespace_version(&self) -> std::option::Option<i64> {
+    pub fn validated_namespace_version(&self) -> ::std::option::Option<i64> {
         self.validated_namespace_version
     }
     /// <p>A list of objects that contain all of the IDs and revision numbers of workflows and systems that are used in a system instance.</p>
     pub fn validated_dependency_revisions(
         &self,
-    ) -> std::option::Option<&[crate::types::DependencyRevision]> {
+    ) -> ::std::option::Option<&[crate::types::DependencyRevision]> {
         self.validated_dependency_revisions.as_deref()
     }
     /// <p>The AWS Identity and Access Management (IAM) role that AWS IoT Things Graph assumes during flow execution in a cloud deployment. This role must have read and write permissionss to AWS Lambda and AWS IoT and to any other AWS services that the flow uses.</p>
-    pub fn flow_actions_role_arn(&self) -> std::option::Option<&str> {
+    pub fn flow_actions_role_arn(&self) -> ::std::option::Option<&str> {
         self.flow_actions_role_arn.as_deref()
     }
 }
@@ -70,74 +70,82 @@ impl SystemInstanceDescription {
 
 /// A builder for [`SystemInstanceDescription`](crate::types::SystemInstanceDescription).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SystemInstanceDescriptionBuilder {
-    pub(crate) summary: std::option::Option<crate::types::SystemInstanceSummary>,
-    pub(crate) definition: std::option::Option<crate::types::DefinitionDocument>,
-    pub(crate) s3_bucket_name: std::option::Option<std::string::String>,
-    pub(crate) metrics_configuration: std::option::Option<crate::types::MetricsConfiguration>,
-    pub(crate) validated_namespace_version: std::option::Option<i64>,
+    pub(crate) summary: ::std::option::Option<crate::types::SystemInstanceSummary>,
+    pub(crate) definition: ::std::option::Option<crate::types::DefinitionDocument>,
+    pub(crate) s3_bucket_name: ::std::option::Option<::std::string::String>,
+    pub(crate) metrics_configuration: ::std::option::Option<crate::types::MetricsConfiguration>,
+    pub(crate) validated_namespace_version: ::std::option::Option<i64>,
     pub(crate) validated_dependency_revisions:
-        std::option::Option<std::vec::Vec<crate::types::DependencyRevision>>,
-    pub(crate) flow_actions_role_arn: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::DependencyRevision>>,
+    pub(crate) flow_actions_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl SystemInstanceDescriptionBuilder {
     /// <p>An object that contains summary information about a system instance.</p>
     pub fn summary(mut self, input: crate::types::SystemInstanceSummary) -> Self {
-        self.summary = Some(input);
+        self.summary = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that contains summary information about a system instance.</p>
     pub fn set_summary(
         mut self,
-        input: std::option::Option<crate::types::SystemInstanceSummary>,
+        input: ::std::option::Option<crate::types::SystemInstanceSummary>,
     ) -> Self {
         self.summary = input;
         self
     }
     /// <p>A document that defines an entity. </p>
     pub fn definition(mut self, input: crate::types::DefinitionDocument) -> Self {
-        self.definition = Some(input);
+        self.definition = ::std::option::Option::Some(input);
         self
     }
     /// <p>A document that defines an entity. </p>
     pub fn set_definition(
         mut self,
-        input: std::option::Option<crate::types::DefinitionDocument>,
+        input: ::std::option::Option<crate::types::DefinitionDocument>,
     ) -> Self {
         self.definition = input;
         self
     }
     /// <p>The Amazon Simple Storage Service bucket where information about a system instance is stored.</p>
-    pub fn s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.s3_bucket_name = Some(input.into());
+    pub fn s3_bucket_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.s3_bucket_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Simple Storage Service bucket where information about a system instance is stored.</p>
-    pub fn set_s3_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_s3_bucket_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.s3_bucket_name = input;
         self
     }
     /// <p>An object that specifies whether cloud metrics are collected in a deployment and, if so, what role is used to collect metrics.</p>
     pub fn metrics_configuration(mut self, input: crate::types::MetricsConfiguration) -> Self {
-        self.metrics_configuration = Some(input);
+        self.metrics_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that specifies whether cloud metrics are collected in a deployment and, if so, what role is used to collect metrics.</p>
     pub fn set_metrics_configuration(
         mut self,
-        input: std::option::Option<crate::types::MetricsConfiguration>,
+        input: ::std::option::Option<crate::types::MetricsConfiguration>,
     ) -> Self {
         self.metrics_configuration = input;
         self
     }
     /// <p>The version of the user's namespace against which the system instance was validated.</p>
     pub fn validated_namespace_version(mut self, input: i64) -> Self {
-        self.validated_namespace_version = Some(input);
+        self.validated_namespace_version = ::std::option::Option::Some(input);
         self
     }
     /// <p>The version of the user's namespace against which the system instance was validated.</p>
-    pub fn set_validated_namespace_version(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_validated_namespace_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.validated_namespace_version = input;
         self
     }
@@ -152,26 +160,29 @@ impl SystemInstanceDescriptionBuilder {
     ) -> Self {
         let mut v = self.validated_dependency_revisions.unwrap_or_default();
         v.push(input);
-        self.validated_dependency_revisions = Some(v);
+        self.validated_dependency_revisions = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of objects that contain all of the IDs and revision numbers of workflows and systems that are used in a system instance.</p>
     pub fn set_validated_dependency_revisions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DependencyRevision>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DependencyRevision>>,
     ) -> Self {
         self.validated_dependency_revisions = input;
         self
     }
     /// <p>The AWS Identity and Access Management (IAM) role that AWS IoT Things Graph assumes during flow execution in a cloud deployment. This role must have read and write permissionss to AWS Lambda and AWS IoT and to any other AWS services that the flow uses.</p>
-    pub fn flow_actions_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.flow_actions_role_arn = Some(input.into());
+    pub fn flow_actions_role_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.flow_actions_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The AWS Identity and Access Management (IAM) role that AWS IoT Things Graph assumes during flow execution in a cloud deployment. This role must have read and write permissionss to AWS Lambda and AWS IoT and to any other AWS services that the flow uses.</p>
     pub fn set_flow_actions_role_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.flow_actions_role_arn = input;
         self

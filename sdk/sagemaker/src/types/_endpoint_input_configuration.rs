@@ -2,33 +2,34 @@
 
 /// <p>The endpoint configuration for the load test.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EndpointInputConfiguration {
     /// <p>The instance types to use for the load test.</p>
     #[doc(hidden)]
-    pub instance_type: std::option::Option<crate::types::ProductionVariantInstanceType>,
+    pub instance_type: ::std::option::Option<crate::types::ProductionVariantInstanceType>,
     /// <p>The inference specification name in the model package version.</p>
     #[doc(hidden)]
-    pub inference_specification_name: std::option::Option<std::string::String>,
+    pub inference_specification_name: ::std::option::Option<::std::string::String>,
     /// <p> The parameter you want to benchmark against.</p>
     #[doc(hidden)]
-    pub environment_parameter_ranges: std::option::Option<crate::types::EnvironmentParameterRanges>,
+    pub environment_parameter_ranges:
+        ::std::option::Option<crate::types::EnvironmentParameterRanges>,
 }
 impl EndpointInputConfiguration {
     /// <p>The instance types to use for the load test.</p>
     pub fn instance_type(
         &self,
-    ) -> std::option::Option<&crate::types::ProductionVariantInstanceType> {
+    ) -> ::std::option::Option<&crate::types::ProductionVariantInstanceType> {
         self.instance_type.as_ref()
     }
     /// <p>The inference specification name in the model package version.</p>
-    pub fn inference_specification_name(&self) -> std::option::Option<&str> {
+    pub fn inference_specification_name(&self) -> ::std::option::Option<&str> {
         self.inference_specification_name.as_deref()
     }
     /// <p> The parameter you want to benchmark against.</p>
     pub fn environment_parameter_ranges(
         &self,
-    ) -> std::option::Option<&crate::types::EnvironmentParameterRanges> {
+    ) -> ::std::option::Option<&crate::types::EnvironmentParameterRanges> {
         self.environment_parameter_ranges.as_ref()
     }
 }
@@ -41,36 +42,41 @@ impl EndpointInputConfiguration {
 
 /// A builder for [`EndpointInputConfiguration`](crate::types::EndpointInputConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EndpointInputConfigurationBuilder {
-    pub(crate) instance_type: std::option::Option<crate::types::ProductionVariantInstanceType>,
-    pub(crate) inference_specification_name: std::option::Option<std::string::String>,
+    pub(crate) instance_type: ::std::option::Option<crate::types::ProductionVariantInstanceType>,
+    pub(crate) inference_specification_name: ::std::option::Option<::std::string::String>,
     pub(crate) environment_parameter_ranges:
-        std::option::Option<crate::types::EnvironmentParameterRanges>,
+        ::std::option::Option<crate::types::EnvironmentParameterRanges>,
 }
 impl EndpointInputConfigurationBuilder {
     /// <p>The instance types to use for the load test.</p>
     pub fn instance_type(mut self, input: crate::types::ProductionVariantInstanceType) -> Self {
-        self.instance_type = Some(input);
+        self.instance_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The instance types to use for the load test.</p>
     pub fn set_instance_type(
         mut self,
-        input: std::option::Option<crate::types::ProductionVariantInstanceType>,
+        input: ::std::option::Option<crate::types::ProductionVariantInstanceType>,
     ) -> Self {
         self.instance_type = input;
         self
     }
     /// <p>The inference specification name in the model package version.</p>
-    pub fn inference_specification_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.inference_specification_name = Some(input.into());
+    pub fn inference_specification_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.inference_specification_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The inference specification name in the model package version.</p>
     pub fn set_inference_specification_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inference_specification_name = input;
         self
@@ -80,13 +86,13 @@ impl EndpointInputConfigurationBuilder {
         mut self,
         input: crate::types::EnvironmentParameterRanges,
     ) -> Self {
-        self.environment_parameter_ranges = Some(input);
+        self.environment_parameter_ranges = ::std::option::Option::Some(input);
         self
     }
     /// <p> The parameter you want to benchmark against.</p>
     pub fn set_environment_parameter_ranges(
         mut self,
-        input: std::option::Option<crate::types::EnvironmentParameterRanges>,
+        input: ::std::option::Option<crate::types::EnvironmentParameterRanges>,
     ) -> Self {
         self.environment_parameter_ranges = input;
         self

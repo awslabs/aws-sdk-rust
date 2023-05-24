@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteDevice`](crate::operation::delete_device::builders::DeleteDeviceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`device_id(impl Into<String>)`](crate::operation::delete_device::builders::DeleteDeviceFluentBuilder::device_id) / [`set_device_id(Option<String>)`](crate::operation::delete_device::builders::DeleteDeviceFluentBuilder::set_device_id): <p>The device's ID.</p>
+    ///   - [`device_id(impl ::std::convert::Into<String>)`](crate::operation::delete_device::builders::DeleteDeviceFluentBuilder::device_id) / [`set_device_id(Option<String>)`](crate::operation::delete_device::builders::DeleteDeviceFluentBuilder::set_device_id): <p>The device's ID.</p>
     /// - On success, responds with [`DeleteDeviceOutput`](crate::operation::delete_device::DeleteDeviceOutput) with field(s):
     ///   - [`device_id(Option<String>)`](crate::operation::delete_device::DeleteDeviceOutput::device_id): <p>The device's ID.</p>
     /// - On failure, responds with [`SdkError<DeleteDeviceError>`](crate::operation::delete_device::DeleteDeviceError)

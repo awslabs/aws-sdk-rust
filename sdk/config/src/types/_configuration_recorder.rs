@@ -2,33 +2,33 @@
 
 /// <p>An object that represents the recording of configuration changes of an Amazon Web Services resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConfigurationRecorder {
     /// <p>The name of the recorder. By default, Config automatically assigns the name "default" when creating the configuration recorder. You cannot change the assigned name.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>Amazon Resource Name (ARN) of the IAM role used to describe the Amazon Web Services resources associated with the account.</p> <note>
     /// <p>While the API model does not require this field, the server will reject a request without a defined roleARN for the configuration recorder.</p>
     /// </note>
     #[doc(hidden)]
-    pub role_arn: std::option::Option<std::string::String>,
+    pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the types of Amazon Web Services resources for which Config records configuration changes.</p>
     #[doc(hidden)]
-    pub recording_group: std::option::Option<crate::types::RecordingGroup>,
+    pub recording_group: ::std::option::Option<crate::types::RecordingGroup>,
 }
 impl ConfigurationRecorder {
     /// <p>The name of the recorder. By default, Config automatically assigns the name "default" when creating the configuration recorder. You cannot change the assigned name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>Amazon Resource Name (ARN) of the IAM role used to describe the Amazon Web Services resources associated with the account.</p> <note>
     /// <p>While the API model does not require this field, the server will reject a request without a defined roleARN for the configuration recorder.</p>
     /// </note>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
     /// <p>Specifies the types of Amazon Web Services resources for which Config records configuration changes.</p>
-    pub fn recording_group(&self) -> std::option::Option<&crate::types::RecordingGroup> {
+    pub fn recording_group(&self) -> ::std::option::Option<&crate::types::RecordingGroup> {
         self.recording_group.as_ref()
     }
 }
@@ -41,46 +41,48 @@ impl ConfigurationRecorder {
 
 /// A builder for [`ConfigurationRecorder`](crate::types::ConfigurationRecorder).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ConfigurationRecorderBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) role_arn: std::option::Option<std::string::String>,
-    pub(crate) recording_group: std::option::Option<crate::types::RecordingGroup>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) recording_group: ::std::option::Option<crate::types::RecordingGroup>,
 }
 impl ConfigurationRecorderBuilder {
     /// <p>The name of the recorder. By default, Config automatically assigns the name "default" when creating the configuration recorder. You cannot change the assigned name.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the recorder. By default, Config automatically assigns the name "default" when creating the configuration recorder. You cannot change the assigned name.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>Amazon Resource Name (ARN) of the IAM role used to describe the Amazon Web Services resources associated with the account.</p> <note>
     /// <p>While the API model does not require this field, the server will reject a request without a defined roleARN for the configuration recorder.</p>
     /// </note>
-    pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.role_arn = Some(input.into());
+    pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Amazon Resource Name (ARN) of the IAM role used to describe the Amazon Web Services resources associated with the account.</p> <note>
     /// <p>While the API model does not require this field, the server will reject a request without a defined roleARN for the configuration recorder.</p>
     /// </note>
-    pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
     /// <p>Specifies the types of Amazon Web Services resources for which Config records configuration changes.</p>
     pub fn recording_group(mut self, input: crate::types::RecordingGroup) -> Self {
-        self.recording_group = Some(input);
+        self.recording_group = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the types of Amazon Web Services resources for which Config records configuration changes.</p>
     pub fn set_recording_group(
         mut self,
-        input: std::option::Option<crate::types::RecordingGroup>,
+        input: ::std::option::Option<crate::types::RecordingGroup>,
     ) -> Self {
         self.recording_group = input;
         self

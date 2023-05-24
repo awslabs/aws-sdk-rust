@@ -2,49 +2,49 @@
 
 /// <p>The structure representing the items in the response for SearchRasterDataCollection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ItemSource {
     /// <p>A unique Id for the source item.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The item Geometry in GeoJson format.</p>
     #[doc(hidden)]
-    pub geometry: std::option::Option<crate::types::Geometry>,
+    pub geometry: ::std::option::Option<crate::types::Geometry>,
     /// <p>This is a dictionary of Asset Objects data associated with the Item that can be downloaded or streamed, each with a unique key.</p>
     #[doc(hidden)]
-    pub assets: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::AssetValue>,
+    pub assets: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::AssetValue>,
     >,
     /// <p>The searchable date and time of the item, in UTC.</p>
     #[doc(hidden)]
-    pub date_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>This field contains additional properties of the item.</p>
     #[doc(hidden)]
-    pub properties: std::option::Option<crate::types::Properties>,
+    pub properties: ::std::option::Option<crate::types::Properties>,
 }
 impl ItemSource {
     /// <p>A unique Id for the source item.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The item Geometry in GeoJson format.</p>
-    pub fn geometry(&self) -> std::option::Option<&crate::types::Geometry> {
+    pub fn geometry(&self) -> ::std::option::Option<&crate::types::Geometry> {
         self.geometry.as_ref()
     }
     /// <p>This is a dictionary of Asset Objects data associated with the Item that can be downloaded or streamed, each with a unique key.</p>
     pub fn assets(
         &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::types::AssetValue>,
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, crate::types::AssetValue>,
     > {
         self.assets.as_ref()
     }
     /// <p>The searchable date and time of the item, in UTC.</p>
-    pub fn date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.date_time.as_ref()
     }
     /// <p>This field contains additional properties of the item.</p>
-    pub fn properties(&self) -> std::option::Option<&crate::types::Properties> {
+    pub fn properties(&self) -> ::std::option::Option<&crate::types::Properties> {
         self.properties.as_ref()
     }
 }
@@ -57,34 +57,36 @@ impl ItemSource {
 
 /// A builder for [`ItemSource`](crate::types::ItemSource).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ItemSourceBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) geometry: std::option::Option<crate::types::Geometry>,
-    pub(crate) assets: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::AssetValue>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) geometry: ::std::option::Option<crate::types::Geometry>,
+    pub(crate) assets: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::AssetValue>,
     >,
-    pub(crate) date_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) properties: std::option::Option<crate::types::Properties>,
+    pub(crate) date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) properties: ::std::option::Option<crate::types::Properties>,
 }
 impl ItemSourceBuilder {
     /// <p>A unique Id for the source item.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique Id for the source item.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>The item Geometry in GeoJson format.</p>
     pub fn geometry(mut self, input: crate::types::Geometry) -> Self {
-        self.geometry = Some(input);
+        self.geometry = ::std::option::Option::Some(input);
         self
     }
     /// <p>The item Geometry in GeoJson format.</p>
-    pub fn set_geometry(mut self, input: std::option::Option<crate::types::Geometry>) -> Self {
+    pub fn set_geometry(mut self, input: ::std::option::Option<crate::types::Geometry>) -> Self {
         self.geometry = input;
         self
     }
@@ -95,41 +97,47 @@ impl ItemSourceBuilder {
     /// <p>This is a dictionary of Asset Objects data associated with the Item that can be downloaded or streamed, each with a unique key.</p>
     pub fn assets(
         mut self,
-        k: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
         v: crate::types::AssetValue,
     ) -> Self {
         let mut hash_map = self.assets.unwrap_or_default();
         hash_map.insert(k.into(), v);
-        self.assets = Some(hash_map);
+        self.assets = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>This is a dictionary of Asset Objects data associated with the Item that can be downloaded or streamed, each with a unique key.</p>
     pub fn set_assets(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::types::AssetValue>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, crate::types::AssetValue>,
         >,
     ) -> Self {
         self.assets = input;
         self
     }
     /// <p>The searchable date and time of the item, in UTC.</p>
-    pub fn date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.date_time = Some(input);
+    pub fn date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.date_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The searchable date and time of the item, in UTC.</p>
-    pub fn set_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_date_time(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
         self.date_time = input;
         self
     }
     /// <p>This field contains additional properties of the item.</p>
     pub fn properties(mut self, input: crate::types::Properties) -> Self {
-        self.properties = Some(input);
+        self.properties = ::std::option::Option::Some(input);
         self
     }
     /// <p>This field contains additional properties of the item.</p>
-    pub fn set_properties(mut self, input: std::option::Option<crate::types::Properties>) -> Self {
+    pub fn set_properties(
+        mut self,
+        input: ::std::option::Option<crate::types::Properties>,
+    ) -> Self {
         self.properties = input;
         self
     }

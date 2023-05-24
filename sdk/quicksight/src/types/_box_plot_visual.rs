@@ -3,52 +3,52 @@
 /// <p>A box plot.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/box-plots.html">Using box plots</a> in the <i>Amazon QuickSight User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BoxPlotVisual {
     /// <p>The unique identifier of a visual. This identifier must be unique within the context of a dashboard, template, or analysis. Two dashboards, analyses, or templates can have visuals with the same identifiers..</p>
     #[doc(hidden)]
-    pub visual_id: std::option::Option<std::string::String>,
+    pub visual_id: ::std::option::Option<::std::string::String>,
     /// <p>The title that is displayed on the visual.</p>
     #[doc(hidden)]
-    pub title: std::option::Option<crate::types::VisualTitleLabelOptions>,
+    pub title: ::std::option::Option<crate::types::VisualTitleLabelOptions>,
     /// <p>The subtitle that is displayed on the visual.</p>
     #[doc(hidden)]
-    pub subtitle: std::option::Option<crate::types::VisualSubtitleLabelOptions>,
+    pub subtitle: ::std::option::Option<crate::types::VisualSubtitleLabelOptions>,
     /// <p>The configuration settings of the visual.</p>
     #[doc(hidden)]
-    pub chart_configuration: std::option::Option<crate::types::BoxPlotChartConfiguration>,
+    pub chart_configuration: ::std::option::Option<crate::types::BoxPlotChartConfiguration>,
     /// <p>The list of custom actions that are configured for a visual.</p>
     #[doc(hidden)]
-    pub actions: std::option::Option<std::vec::Vec<crate::types::VisualCustomAction>>,
+    pub actions: ::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>>,
     /// <p>The column hierarchy that is used during drill-downs and drill-ups.</p>
     #[doc(hidden)]
-    pub column_hierarchies: std::option::Option<std::vec::Vec<crate::types::ColumnHierarchy>>,
+    pub column_hierarchies: ::std::option::Option<::std::vec::Vec<crate::types::ColumnHierarchy>>,
 }
 impl BoxPlotVisual {
     /// <p>The unique identifier of a visual. This identifier must be unique within the context of a dashboard, template, or analysis. Two dashboards, analyses, or templates can have visuals with the same identifiers..</p>
-    pub fn visual_id(&self) -> std::option::Option<&str> {
+    pub fn visual_id(&self) -> ::std::option::Option<&str> {
         self.visual_id.as_deref()
     }
     /// <p>The title that is displayed on the visual.</p>
-    pub fn title(&self) -> std::option::Option<&crate::types::VisualTitleLabelOptions> {
+    pub fn title(&self) -> ::std::option::Option<&crate::types::VisualTitleLabelOptions> {
         self.title.as_ref()
     }
     /// <p>The subtitle that is displayed on the visual.</p>
-    pub fn subtitle(&self) -> std::option::Option<&crate::types::VisualSubtitleLabelOptions> {
+    pub fn subtitle(&self) -> ::std::option::Option<&crate::types::VisualSubtitleLabelOptions> {
         self.subtitle.as_ref()
     }
     /// <p>The configuration settings of the visual.</p>
     pub fn chart_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::BoxPlotChartConfiguration> {
+    ) -> ::std::option::Option<&crate::types::BoxPlotChartConfiguration> {
         self.chart_configuration.as_ref()
     }
     /// <p>The list of custom actions that are configured for a visual.</p>
-    pub fn actions(&self) -> std::option::Option<&[crate::types::VisualCustomAction]> {
+    pub fn actions(&self) -> ::std::option::Option<&[crate::types::VisualCustomAction]> {
         self.actions.as_deref()
     }
     /// <p>The column hierarchy that is used during drill-downs and drill-ups.</p>
-    pub fn column_hierarchies(&self) -> std::option::Option<&[crate::types::ColumnHierarchy]> {
+    pub fn column_hierarchies(&self) -> ::std::option::Option<&[crate::types::ColumnHierarchy]> {
         self.column_hierarchies.as_deref()
     }
 }
@@ -61,62 +61,64 @@ impl BoxPlotVisual {
 
 /// A builder for [`BoxPlotVisual`](crate::types::BoxPlotVisual).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BoxPlotVisualBuilder {
-    pub(crate) visual_id: std::option::Option<std::string::String>,
-    pub(crate) title: std::option::Option<crate::types::VisualTitleLabelOptions>,
-    pub(crate) subtitle: std::option::Option<crate::types::VisualSubtitleLabelOptions>,
-    pub(crate) chart_configuration: std::option::Option<crate::types::BoxPlotChartConfiguration>,
-    pub(crate) actions: std::option::Option<std::vec::Vec<crate::types::VisualCustomAction>>,
+    pub(crate) visual_id: ::std::option::Option<::std::string::String>,
+    pub(crate) title: ::std::option::Option<crate::types::VisualTitleLabelOptions>,
+    pub(crate) subtitle: ::std::option::Option<crate::types::VisualSubtitleLabelOptions>,
+    pub(crate) chart_configuration: ::std::option::Option<crate::types::BoxPlotChartConfiguration>,
+    pub(crate) actions: ::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>>,
     pub(crate) column_hierarchies:
-        std::option::Option<std::vec::Vec<crate::types::ColumnHierarchy>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ColumnHierarchy>>,
 }
 impl BoxPlotVisualBuilder {
     /// <p>The unique identifier of a visual. This identifier must be unique within the context of a dashboard, template, or analysis. Two dashboards, analyses, or templates can have visuals with the same identifiers..</p>
-    pub fn visual_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.visual_id = Some(input.into());
+    pub fn visual_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.visual_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of a visual. This identifier must be unique within the context of a dashboard, template, or analysis. Two dashboards, analyses, or templates can have visuals with the same identifiers..</p>
-    pub fn set_visual_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_visual_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.visual_id = input;
         self
     }
     /// <p>The title that is displayed on the visual.</p>
     pub fn title(mut self, input: crate::types::VisualTitleLabelOptions) -> Self {
-        self.title = Some(input);
+        self.title = ::std::option::Option::Some(input);
         self
     }
     /// <p>The title that is displayed on the visual.</p>
     pub fn set_title(
         mut self,
-        input: std::option::Option<crate::types::VisualTitleLabelOptions>,
+        input: ::std::option::Option<crate::types::VisualTitleLabelOptions>,
     ) -> Self {
         self.title = input;
         self
     }
     /// <p>The subtitle that is displayed on the visual.</p>
     pub fn subtitle(mut self, input: crate::types::VisualSubtitleLabelOptions) -> Self {
-        self.subtitle = Some(input);
+        self.subtitle = ::std::option::Option::Some(input);
         self
     }
     /// <p>The subtitle that is displayed on the visual.</p>
     pub fn set_subtitle(
         mut self,
-        input: std::option::Option<crate::types::VisualSubtitleLabelOptions>,
+        input: ::std::option::Option<crate::types::VisualSubtitleLabelOptions>,
     ) -> Self {
         self.subtitle = input;
         self
     }
     /// <p>The configuration settings of the visual.</p>
     pub fn chart_configuration(mut self, input: crate::types::BoxPlotChartConfiguration) -> Self {
-        self.chart_configuration = Some(input);
+        self.chart_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration settings of the visual.</p>
     pub fn set_chart_configuration(
         mut self,
-        input: std::option::Option<crate::types::BoxPlotChartConfiguration>,
+        input: ::std::option::Option<crate::types::BoxPlotChartConfiguration>,
     ) -> Self {
         self.chart_configuration = input;
         self
@@ -129,13 +131,13 @@ impl BoxPlotVisualBuilder {
     pub fn actions(mut self, input: crate::types::VisualCustomAction) -> Self {
         let mut v = self.actions.unwrap_or_default();
         v.push(input);
-        self.actions = Some(v);
+        self.actions = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of custom actions that are configured for a visual.</p>
     pub fn set_actions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::VisualCustomAction>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>>,
     ) -> Self {
         self.actions = input;
         self
@@ -148,13 +150,13 @@ impl BoxPlotVisualBuilder {
     pub fn column_hierarchies(mut self, input: crate::types::ColumnHierarchy) -> Self {
         let mut v = self.column_hierarchies.unwrap_or_default();
         v.push(input);
-        self.column_hierarchies = Some(v);
+        self.column_hierarchies = ::std::option::Option::Some(v);
         self
     }
     /// <p>The column hierarchy that is used during drill-downs and drill-ups.</p>
     pub fn set_column_hierarchies(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ColumnHierarchy>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnHierarchy>>,
     ) -> Self {
         self.column_hierarchies = input;
         self

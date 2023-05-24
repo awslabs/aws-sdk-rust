@@ -2,7 +2,7 @@
 
 /// <p> The connector metadata specific to Marketo. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MarketoMetadata {}
 impl MarketoMetadata {
     /// Creates a new builder-style object to manufacture [`MarketoMetadata`](crate::types::MarketoMetadata).
@@ -13,7 +13,9 @@ impl MarketoMetadata {
 
 /// A builder for [`MarketoMetadata`](crate::types::MarketoMetadata).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MarketoMetadataBuilder {}
 impl MarketoMetadataBuilder {
     /// Consumes the builder and constructs a [`MarketoMetadata`](crate::types::MarketoMetadata).

@@ -2,20 +2,20 @@
 
 /// <p>Contains the response to a <code>RegisterEcsCluster</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterEcsClusterOutput {
     /// <p>The cluster's ARN.</p>
     #[doc(hidden)]
-    pub ecs_cluster_arn: std::option::Option<std::string::String>,
+    pub ecs_cluster_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl RegisterEcsClusterOutput {
     /// <p>The cluster's ARN.</p>
-    pub fn ecs_cluster_arn(&self) -> std::option::Option<&str> {
+    pub fn ecs_cluster_arn(&self) -> ::std::option::Option<&str> {
         self.ecs_cluster_arn.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for RegisterEcsClusterOutput {
+impl ::aws_http::request_id::RequestId for RegisterEcsClusterOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,19 +30,27 @@ impl RegisterEcsClusterOutput {
 
 /// A builder for [`RegisterEcsClusterOutput`](crate::operation::register_ecs_cluster::RegisterEcsClusterOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RegisterEcsClusterOutputBuilder {
-    pub(crate) ecs_cluster_arn: std::option::Option<std::string::String>,
+    pub(crate) ecs_cluster_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl RegisterEcsClusterOutputBuilder {
     /// <p>The cluster's ARN.</p>
-    pub fn ecs_cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ecs_cluster_arn = Some(input.into());
+    pub fn ecs_cluster_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.ecs_cluster_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The cluster's ARN.</p>
-    pub fn set_ecs_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ecs_cluster_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.ecs_cluster_arn = input;
         self
     }

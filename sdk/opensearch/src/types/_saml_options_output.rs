@@ -2,43 +2,43 @@
 
 /// <p>Describes the SAML application configured for the domain.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SamlOptionsOutput {
     /// <p>True if SAML is enabled.</p>
     #[doc(hidden)]
-    pub enabled: std::option::Option<bool>,
+    pub enabled: ::std::option::Option<bool>,
     /// <p>Describes the SAML identity provider's information.</p>
     #[doc(hidden)]
-    pub idp: std::option::Option<crate::types::SamlIdp>,
+    pub idp: ::std::option::Option<crate::types::SamlIdp>,
     /// <p>The key used for matching the SAML subject attribute.</p>
     #[doc(hidden)]
-    pub subject_key: std::option::Option<std::string::String>,
+    pub subject_key: ::std::option::Option<::std::string::String>,
     /// <p>The key used for matching the SAML roles attribute.</p>
     #[doc(hidden)]
-    pub roles_key: std::option::Option<std::string::String>,
+    pub roles_key: ::std::option::Option<::std::string::String>,
     /// <p>The duration, in minutes, after which a user session becomes inactive.</p>
     #[doc(hidden)]
-    pub session_timeout_minutes: std::option::Option<i32>,
+    pub session_timeout_minutes: ::std::option::Option<i32>,
 }
 impl SamlOptionsOutput {
     /// <p>True if SAML is enabled.</p>
-    pub fn enabled(&self) -> std::option::Option<bool> {
+    pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
     /// <p>Describes the SAML identity provider's information.</p>
-    pub fn idp(&self) -> std::option::Option<&crate::types::SamlIdp> {
+    pub fn idp(&self) -> ::std::option::Option<&crate::types::SamlIdp> {
         self.idp.as_ref()
     }
     /// <p>The key used for matching the SAML subject attribute.</p>
-    pub fn subject_key(&self) -> std::option::Option<&str> {
+    pub fn subject_key(&self) -> ::std::option::Option<&str> {
         self.subject_key.as_deref()
     }
     /// <p>The key used for matching the SAML roles attribute.</p>
-    pub fn roles_key(&self) -> std::option::Option<&str> {
+    pub fn roles_key(&self) -> ::std::option::Option<&str> {
         self.roles_key.as_deref()
     }
     /// <p>The duration, in minutes, after which a user session becomes inactive.</p>
-    pub fn session_timeout_minutes(&self) -> std::option::Option<i32> {
+    pub fn session_timeout_minutes(&self) -> ::std::option::Option<i32> {
         self.session_timeout_minutes
     }
 }
@@ -51,62 +51,64 @@ impl SamlOptionsOutput {
 
 /// A builder for [`SamlOptionsOutput`](crate::types::SamlOptionsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SamlOptionsOutputBuilder {
-    pub(crate) enabled: std::option::Option<bool>,
-    pub(crate) idp: std::option::Option<crate::types::SamlIdp>,
-    pub(crate) subject_key: std::option::Option<std::string::String>,
-    pub(crate) roles_key: std::option::Option<std::string::String>,
-    pub(crate) session_timeout_minutes: std::option::Option<i32>,
+    pub(crate) enabled: ::std::option::Option<bool>,
+    pub(crate) idp: ::std::option::Option<crate::types::SamlIdp>,
+    pub(crate) subject_key: ::std::option::Option<::std::string::String>,
+    pub(crate) roles_key: ::std::option::Option<::std::string::String>,
+    pub(crate) session_timeout_minutes: ::std::option::Option<i32>,
 }
 impl SamlOptionsOutputBuilder {
     /// <p>True if SAML is enabled.</p>
     pub fn enabled(mut self, input: bool) -> Self {
-        self.enabled = Some(input);
+        self.enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>True if SAML is enabled.</p>
-    pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
     }
     /// <p>Describes the SAML identity provider's information.</p>
     pub fn idp(mut self, input: crate::types::SamlIdp) -> Self {
-        self.idp = Some(input);
+        self.idp = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes the SAML identity provider's information.</p>
-    pub fn set_idp(mut self, input: std::option::Option<crate::types::SamlIdp>) -> Self {
+    pub fn set_idp(mut self, input: ::std::option::Option<crate::types::SamlIdp>) -> Self {
         self.idp = input;
         self
     }
     /// <p>The key used for matching the SAML subject attribute.</p>
-    pub fn subject_key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.subject_key = Some(input.into());
+    pub fn subject_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.subject_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The key used for matching the SAML subject attribute.</p>
-    pub fn set_subject_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_subject_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subject_key = input;
         self
     }
     /// <p>The key used for matching the SAML roles attribute.</p>
-    pub fn roles_key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.roles_key = Some(input.into());
+    pub fn roles_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.roles_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The key used for matching the SAML roles attribute.</p>
-    pub fn set_roles_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_roles_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.roles_key = input;
         self
     }
     /// <p>The duration, in minutes, after which a user session becomes inactive.</p>
     pub fn session_timeout_minutes(mut self, input: i32) -> Self {
-        self.session_timeout_minutes = Some(input);
+        self.session_timeout_minutes = ::std::option::Option::Some(input);
         self
     }
     /// <p>The duration, in minutes, after which a user session becomes inactive.</p>
-    pub fn set_session_timeout_minutes(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_session_timeout_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.session_timeout_minutes = input;
         self
     }

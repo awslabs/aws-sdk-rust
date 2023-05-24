@@ -2,22 +2,22 @@
 
 /// <p>Container for user interface template information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UiTemplateInfo {
     /// <p>The URL for the user interface template.</p>
     #[doc(hidden)]
-    pub url: std::option::Option<std::string::String>,
+    pub url: ::std::option::Option<::std::string::String>,
     /// <p>The SHA-256 digest of the contents of the template.</p>
     #[doc(hidden)]
-    pub content_sha256: std::option::Option<std::string::String>,
+    pub content_sha256: ::std::option::Option<::std::string::String>,
 }
 impl UiTemplateInfo {
     /// <p>The URL for the user interface template.</p>
-    pub fn url(&self) -> std::option::Option<&str> {
+    pub fn url(&self) -> ::std::option::Option<&str> {
         self.url.as_deref()
     }
     /// <p>The SHA-256 digest of the contents of the template.</p>
-    pub fn content_sha256(&self) -> std::option::Option<&str> {
+    pub fn content_sha256(&self) -> ::std::option::Option<&str> {
         self.content_sha256.as_deref()
     }
 }
@@ -30,29 +30,37 @@ impl UiTemplateInfo {
 
 /// A builder for [`UiTemplateInfo`](crate::types::UiTemplateInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UiTemplateInfoBuilder {
-    pub(crate) url: std::option::Option<std::string::String>,
-    pub(crate) content_sha256: std::option::Option<std::string::String>,
+    pub(crate) url: ::std::option::Option<::std::string::String>,
+    pub(crate) content_sha256: ::std::option::Option<::std::string::String>,
 }
 impl UiTemplateInfoBuilder {
     /// <p>The URL for the user interface template.</p>
-    pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.url = Some(input.into());
+    pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL for the user interface template.</p>
-    pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.url = input;
         self
     }
     /// <p>The SHA-256 digest of the contents of the template.</p>
-    pub fn content_sha256(mut self, input: impl Into<std::string::String>) -> Self {
-        self.content_sha256 = Some(input.into());
+    pub fn content_sha256(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.content_sha256 = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The SHA-256 digest of the contents of the template.</p>
-    pub fn set_content_sha256(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_content_sha256(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.content_sha256 = input;
         self
     }

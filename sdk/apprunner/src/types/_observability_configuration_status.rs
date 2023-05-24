@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ObservabilityConfigurationStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum ObservabilityConfigurationStatus {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ObservabilityConfigurationStatus {
+impl ::std::convert::From<&str> for ObservabilityConfigurationStatus {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVE" => ObservabilityConfigurationStatus::Active,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for ObservabilityConfigurationStatus {
         }
     }
 }
-impl std::str::FromStr for ObservabilityConfigurationStatus {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ObservabilityConfigurationStatus {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ObservabilityConfigurationStatus::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ObservabilityConfigurationStatus::from(s))
     }
 }
 impl ObservabilityConfigurationStatus {
@@ -86,7 +86,7 @@ impl ObservabilityConfigurationStatus {
         &["ACTIVE", "INACTIVE"]
     }
 }
-impl AsRef<str> for ObservabilityConfigurationStatus {
+impl ::std::convert::AsRef<str> for ObservabilityConfigurationStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

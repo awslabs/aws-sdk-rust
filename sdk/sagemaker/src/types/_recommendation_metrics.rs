@@ -2,7 +2,7 @@
 
 /// <p>The metrics of recommendations.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecommendationMetrics {
     /// <p>Defines the cost per hour for the instance. </p>
     #[doc(hidden)]
@@ -19,11 +19,11 @@ pub struct RecommendationMetrics {
     /// <p>The expected CPU utilization at maximum invocations per minute for the instance.</p>
     /// <p> <code>NaN</code> indicates that the value is not available.</p>
     #[doc(hidden)]
-    pub cpu_utilization: std::option::Option<f32>,
+    pub cpu_utilization: ::std::option::Option<f32>,
     /// <p>The expected memory utilization at maximum invocations per minute for the instance.</p>
     /// <p> <code>NaN</code> indicates that the value is not available.</p>
     #[doc(hidden)]
-    pub memory_utilization: std::option::Option<f32>,
+    pub memory_utilization: ::std::option::Option<f32>,
 }
 impl RecommendationMetrics {
     /// <p>Defines the cost per hour for the instance. </p>
@@ -44,12 +44,12 @@ impl RecommendationMetrics {
     }
     /// <p>The expected CPU utilization at maximum invocations per minute for the instance.</p>
     /// <p> <code>NaN</code> indicates that the value is not available.</p>
-    pub fn cpu_utilization(&self) -> std::option::Option<f32> {
+    pub fn cpu_utilization(&self) -> ::std::option::Option<f32> {
         self.cpu_utilization
     }
     /// <p>The expected memory utilization at maximum invocations per minute for the instance.</p>
     /// <p> <code>NaN</code> indicates that the value is not available.</p>
-    pub fn memory_utilization(&self) -> std::option::Option<f32> {
+    pub fn memory_utilization(&self) -> ::std::option::Option<f32> {
         self.memory_utilization
     }
 }
@@ -62,77 +62,79 @@ impl RecommendationMetrics {
 
 /// A builder for [`RecommendationMetrics`](crate::types::RecommendationMetrics).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RecommendationMetricsBuilder {
-    pub(crate) cost_per_hour: std::option::Option<f32>,
-    pub(crate) cost_per_inference: std::option::Option<f32>,
-    pub(crate) max_invocations: std::option::Option<i32>,
-    pub(crate) model_latency: std::option::Option<i32>,
-    pub(crate) cpu_utilization: std::option::Option<f32>,
-    pub(crate) memory_utilization: std::option::Option<f32>,
+    pub(crate) cost_per_hour: ::std::option::Option<f32>,
+    pub(crate) cost_per_inference: ::std::option::Option<f32>,
+    pub(crate) max_invocations: ::std::option::Option<i32>,
+    pub(crate) model_latency: ::std::option::Option<i32>,
+    pub(crate) cpu_utilization: ::std::option::Option<f32>,
+    pub(crate) memory_utilization: ::std::option::Option<f32>,
 }
 impl RecommendationMetricsBuilder {
     /// <p>Defines the cost per hour for the instance. </p>
     pub fn cost_per_hour(mut self, input: f32) -> Self {
-        self.cost_per_hour = Some(input);
+        self.cost_per_hour = ::std::option::Option::Some(input);
         self
     }
     /// <p>Defines the cost per hour for the instance. </p>
-    pub fn set_cost_per_hour(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_cost_per_hour(mut self, input: ::std::option::Option<f32>) -> Self {
         self.cost_per_hour = input;
         self
     }
     /// <p>Defines the cost per inference for the instance .</p>
     pub fn cost_per_inference(mut self, input: f32) -> Self {
-        self.cost_per_inference = Some(input);
+        self.cost_per_inference = ::std::option::Option::Some(input);
         self
     }
     /// <p>Defines the cost per inference for the instance .</p>
-    pub fn set_cost_per_inference(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_cost_per_inference(mut self, input: ::std::option::Option<f32>) -> Self {
         self.cost_per_inference = input;
         self
     }
     /// <p>The expected maximum number of requests per minute for the instance.</p>
     pub fn max_invocations(mut self, input: i32) -> Self {
-        self.max_invocations = Some(input);
+        self.max_invocations = ::std::option::Option::Some(input);
         self
     }
     /// <p>The expected maximum number of requests per minute for the instance.</p>
-    pub fn set_max_invocations(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_invocations(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_invocations = input;
         self
     }
     /// <p>The expected model latency at maximum invocation per minute for the instance.</p>
     pub fn model_latency(mut self, input: i32) -> Self {
-        self.model_latency = Some(input);
+        self.model_latency = ::std::option::Option::Some(input);
         self
     }
     /// <p>The expected model latency at maximum invocation per minute for the instance.</p>
-    pub fn set_model_latency(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_model_latency(mut self, input: ::std::option::Option<i32>) -> Self {
         self.model_latency = input;
         self
     }
     /// <p>The expected CPU utilization at maximum invocations per minute for the instance.</p>
     /// <p> <code>NaN</code> indicates that the value is not available.</p>
     pub fn cpu_utilization(mut self, input: f32) -> Self {
-        self.cpu_utilization = Some(input);
+        self.cpu_utilization = ::std::option::Option::Some(input);
         self
     }
     /// <p>The expected CPU utilization at maximum invocations per minute for the instance.</p>
     /// <p> <code>NaN</code> indicates that the value is not available.</p>
-    pub fn set_cpu_utilization(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_cpu_utilization(mut self, input: ::std::option::Option<f32>) -> Self {
         self.cpu_utilization = input;
         self
     }
     /// <p>The expected memory utilization at maximum invocations per minute for the instance.</p>
     /// <p> <code>NaN</code> indicates that the value is not available.</p>
     pub fn memory_utilization(mut self, input: f32) -> Self {
-        self.memory_utilization = Some(input);
+        self.memory_utilization = ::std::option::Option::Some(input);
         self
     }
     /// <p>The expected memory utilization at maximum invocations per minute for the instance.</p>
     /// <p> <code>NaN</code> indicates that the value is not available.</p>
-    pub fn set_memory_utilization(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_memory_utilization(mut self, input: ::std::option::Option<f32>) -> Self {
         self.memory_utilization = input;
         self
     }

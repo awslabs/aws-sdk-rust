@@ -7,56 +7,59 @@ pub use crate::operation::import_snapshot::_import_snapshot_input::ImportSnapsho
 ///
 /// <p>Imports a disk into an EBS snapshot.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-import-snapshot.html">Importing a disk as a snapshot using VM Import/Export</a> in the <i>VM Import/Export User Guide</i>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ImportSnapshotFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::import_snapshot::builders::ImportSnapshotInputBuilder,
 }
 impl ImportSnapshotFluentBuilder {
     /// Creates a new `ImportSnapshot`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::import_snapshot::ImportSnapshot,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::import_snapshot::ImportSnapshotError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_snapshot::ImportSnapshotError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::import_snapshot::ImportSnapshotOutput,
-        aws_smithy_http::result::SdkError<crate::operation::import_snapshot::ImportSnapshotError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_snapshot::ImportSnapshotError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -69,9 +72,9 @@ impl ImportSnapshotFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::import_snapshot::ImportSnapshotOutput,
-        aws_smithy_http::result::SdkError<crate::operation::import_snapshot::ImportSnapshotError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_snapshot::ImportSnapshotError>,
     > {
         self.send_middleware().await
     }
@@ -81,27 +84,30 @@ impl ImportSnapshotFluentBuilder {
         self
     }
     /// <p>The client-specific data.</p>
-    pub fn set_client_data(mut self, input: std::option::Option<crate::types::ClientData>) -> Self {
+    pub fn set_client_data(
+        mut self,
+        input: ::std::option::Option<crate::types::ClientData>,
+    ) -> Self {
         self.inner = self.inner.set_client_data(input);
         self
     }
     /// <p>Token to enable idempotency for VM import requests.</p>
-    pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
     /// <p>Token to enable idempotency for VM import requests.</p>
-    pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
     /// <p>The description string for the import snapshot task.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>The description string for the import snapshot task.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
@@ -113,7 +119,7 @@ impl ImportSnapshotFluentBuilder {
     /// <p>Information about the disk container.</p>
     pub fn set_disk_container(
         mut self,
-        input: std::option::Option<crate::types::SnapshotDiskContainer>,
+        input: ::std::option::Option<crate::types::SnapshotDiskContainer>,
     ) -> Self {
         self.inner = self.inner.set_disk_container(input);
         self
@@ -124,7 +130,7 @@ impl ImportSnapshotFluentBuilder {
         self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
     }
@@ -134,7 +140,7 @@ impl ImportSnapshotFluentBuilder {
         self
     }
     /// <p>Specifies whether the destination snapshot of the imported image should be encrypted. The default KMS key for EBS is used unless you specify a non-default KMS key using <code>KmsKeyId</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-    pub fn set_encrypted(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_encrypted(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_encrypted(input);
         self
     }
@@ -149,7 +155,7 @@ impl ImportSnapshotFluentBuilder {
     /// <p>Amazon Web Services parses <code>KmsKeyId</code> asynchronously, meaning that the action you call may appear to complete even though you provided an invalid identifier. This action will eventually report failure. </p>
     /// <p>The specified KMS key must exist in the Region that the snapshot is being copied to.</p>
     /// <p>Amazon EBS does not support asymmetric KMS keys.</p>
-    pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kms_key_id(input.into());
         self
     }
@@ -164,17 +170,17 @@ impl ImportSnapshotFluentBuilder {
     /// <p>Amazon Web Services parses <code>KmsKeyId</code> asynchronously, meaning that the action you call may appear to complete even though you provided an invalid identifier. This action will eventually report failure. </p>
     /// <p>The specified KMS key must exist in the Region that the snapshot is being copied to.</p>
     /// <p>Amazon EBS does not support asymmetric KMS keys.</p>
-    pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kms_key_id(input);
         self
     }
     /// <p>The name of the role to use when not using the default role, 'vmimport'.</p>
-    pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn role_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_name(input.into());
         self
     }
     /// <p>The name of the role to use when not using the default role, 'vmimport'.</p>
-    pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_role_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_name(input);
         self
     }
@@ -190,7 +196,7 @@ impl ImportSnapshotFluentBuilder {
     /// <p>The tags to apply to the import snapshot task during creation.</p>
     pub fn set_tag_specifications(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TagSpecification>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     ) -> Self {
         self.inner = self.inner.set_tag_specifications(input);
         self

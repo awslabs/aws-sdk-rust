@@ -2,104 +2,107 @@
 
 /// Required when you set (Codec) under (VideoDescription)&gt;(CodecSettings) to the value PRORES.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProresSettings {
     /// This setting applies only to ProRes 4444 and ProRes 4444 XQ outputs that you create from inputs that use 4:4:4 chroma sampling. Set Preserve 4:4:4 sampling (PRESERVE_444_SAMPLING) to allow outputs to also use 4:4:4 chroma sampling. You must specify a value for this setting when your output codec profile supports 4:4:4 chroma sampling. Related Settings: When you set Chroma sampling to Preserve 4:4:4 sampling (PRESERVE_444_SAMPLING), you must choose an output codec profile that supports 4:4:4 chroma sampling. These values for Profile (CodecProfile) support 4:4:4 chroma sampling: Apple ProRes 4444 (APPLE_PRORES_4444) or Apple ProRes 4444 XQ (APPLE_PRORES_4444_XQ). When you set Chroma sampling to Preserve 4:4:4 sampling, you must disable all video preprocessors except for Nexguard file marker (PartnerWatermarking). When you set Chroma sampling to Preserve 4:4:4 sampling and use framerate conversion, you must set Frame rate conversion algorithm (FramerateConversionAlgorithm) to Drop duplicate (DUPLICATE_DROP).
     #[doc(hidden)]
-    pub chroma_sampling: std::option::Option<crate::types::ProresChromaSampling>,
+    pub chroma_sampling: ::std::option::Option<crate::types::ProresChromaSampling>,
     /// Use Profile (ProResCodecProfile) to specify the type of Apple ProRes codec to use for this output.
     #[doc(hidden)]
-    pub codec_profile: std::option::Option<crate::types::ProresCodecProfile>,
+    pub codec_profile: ::std::option::Option<crate::types::ProresCodecProfile>,
     /// If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the settings FramerateNumerator and FramerateDenominator.
     #[doc(hidden)]
-    pub framerate_control: std::option::Option<crate::types::ProresFramerateControl>,
+    pub framerate_control: ::std::option::Option<crate::types::ProresFramerateControl>,
     /// Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. For numerically simple conversions, such as 60 fps to 30 fps: We recommend that you keep the default value, Drop duplicate. For numerically complex conversions, to avoid stutter: Choose Interpolate. This results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has already been converted from its original cadence: Choose FrameFormer to do motion-compensated interpolation. FrameFormer uses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant add-on cost. When you choose FrameFormer, your input video resolution must be at least 128x96.
     #[doc(hidden)]
     pub framerate_conversion_algorithm:
-        std::option::Option<crate::types::ProresFramerateConversionAlgorithm>,
+        ::std::option::Option<crate::types::ProresFramerateConversionAlgorithm>,
     /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
     #[doc(hidden)]
-    pub framerate_denominator: std::option::Option<i32>,
+    pub framerate_denominator: ::std::option::Option<i32>,
     /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
     #[doc(hidden)]
-    pub framerate_numerator: std::option::Option<i32>,
+    pub framerate_numerator: ::std::option::Option<i32>,
     /// Choose the scan line type for the output. Keep the default value, Progressive (PROGRESSIVE) to create a progressive output, regardless of the scan type of your input. Use Top field first (TOP_FIELD) or Bottom field first (BOTTOM_FIELD) to create an output that's interlaced with the same field polarity throughout. Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom (FOLLOW_BOTTOM_FIELD) to produce outputs with the same field polarity as the source. For jobs that have multiple inputs, the output field polarity might change over the course of the output. Follow behavior depends on the input scan type. If the source is interlaced, the output will be interlaced with the same polarity as the source. If the source is progressive, the output will be interlaced with top field bottom field first, depending on which of the Follow options you choose.
     #[doc(hidden)]
-    pub interlace_mode: std::option::Option<crate::types::ProresInterlaceMode>,
+    pub interlace_mode: ::std::option::Option<crate::types::ProresInterlaceMode>,
     /// Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To specify a different PAR in the console, choose any value other than Follow source. To specify a different PAR by editing the JSON job specification, choose SPECIFIED. When you choose SPECIFIED for this setting, you must also specify values for the parNumerator and parDenominator settings.
     #[doc(hidden)]
-    pub par_control: std::option::Option<crate::types::ProresParControl>,
+    pub par_control: ::std::option::Option<crate::types::ProresParControl>,
     /// Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to any value other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio 40:33. In this example, the value for parDenominator is 33.
     #[doc(hidden)]
-    pub par_denominator: std::option::Option<i32>,
+    pub par_denominator: ::std::option::Option<i32>,
     /// Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to any value other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio 40:33. In this example, the value for parNumerator is 40.
     #[doc(hidden)]
-    pub par_numerator: std::option::Option<i32>,
+    pub par_numerator: ::std::option::Option<i32>,
     /// Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In this situation, choose Optimized interlacing (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In this case, each progressive frame from the input corresponds to an interlaced field in the output. Keep the default value, Basic interlacing (INTERLACED), for all other output frame rates. With basic interlacing, MediaConvert performs any frame rate conversion first and then interlaces the frames. When you choose Optimized interlacing and you set your output frame rate to a value that isn't suitable for optimized interlacing, MediaConvert automatically falls back to basic interlacing. Required settings: To use optimized interlacing, you must set Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized interlacing for hard telecine outputs. You must also set Interlace mode (interlaceMode) to a value other than Progressive (PROGRESSIVE).
     #[doc(hidden)]
-    pub scan_type_conversion_mode: std::option::Option<crate::types::ProresScanTypeConversionMode>,
+    pub scan_type_conversion_mode:
+        ::std::option::Option<crate::types::ProresScanTypeConversionMode>,
     /// Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL to create a 25 fps output. When you enable slow PAL, MediaConvert relabels the video frames to 25 fps and resamples your audio to keep it synchronized with the video. Note that enabling this setting will slightly reduce the duration of your video. Required settings: You must also set Framerate to 25. In your JSON job specification, set (framerateControl) to (SPECIFIED), (framerateNumerator) to 25 and (framerateDenominator) to 1.
     #[doc(hidden)]
-    pub slow_pal: std::option::Option<crate::types::ProresSlowPal>,
+    pub slow_pal: ::std::option::Option<crate::types::ProresSlowPal>,
     /// When you do frame rate conversion from 23.976 frames per second (fps) to 29.97 fps, and your output scan type is interlaced, you can optionally enable hard telecine (HARD) to create a smoother picture. When you keep the default value, None (NONE), MediaConvert does a standard frame rate conversion to 29.97 without doing anything with the field polarity to create a smoother picture.
     #[doc(hidden)]
-    pub telecine: std::option::Option<crate::types::ProresTelecine>,
+    pub telecine: ::std::option::Option<crate::types::ProresTelecine>,
 }
 impl ProresSettings {
     /// This setting applies only to ProRes 4444 and ProRes 4444 XQ outputs that you create from inputs that use 4:4:4 chroma sampling. Set Preserve 4:4:4 sampling (PRESERVE_444_SAMPLING) to allow outputs to also use 4:4:4 chroma sampling. You must specify a value for this setting when your output codec profile supports 4:4:4 chroma sampling. Related Settings: When you set Chroma sampling to Preserve 4:4:4 sampling (PRESERVE_444_SAMPLING), you must choose an output codec profile that supports 4:4:4 chroma sampling. These values for Profile (CodecProfile) support 4:4:4 chroma sampling: Apple ProRes 4444 (APPLE_PRORES_4444) or Apple ProRes 4444 XQ (APPLE_PRORES_4444_XQ). When you set Chroma sampling to Preserve 4:4:4 sampling, you must disable all video preprocessors except for Nexguard file marker (PartnerWatermarking). When you set Chroma sampling to Preserve 4:4:4 sampling and use framerate conversion, you must set Frame rate conversion algorithm (FramerateConversionAlgorithm) to Drop duplicate (DUPLICATE_DROP).
-    pub fn chroma_sampling(&self) -> std::option::Option<&crate::types::ProresChromaSampling> {
+    pub fn chroma_sampling(&self) -> ::std::option::Option<&crate::types::ProresChromaSampling> {
         self.chroma_sampling.as_ref()
     }
     /// Use Profile (ProResCodecProfile) to specify the type of Apple ProRes codec to use for this output.
-    pub fn codec_profile(&self) -> std::option::Option<&crate::types::ProresCodecProfile> {
+    pub fn codec_profile(&self) -> ::std::option::Option<&crate::types::ProresCodecProfile> {
         self.codec_profile.as_ref()
     }
     /// If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the settings FramerateNumerator and FramerateDenominator.
-    pub fn framerate_control(&self) -> std::option::Option<&crate::types::ProresFramerateControl> {
+    pub fn framerate_control(
+        &self,
+    ) -> ::std::option::Option<&crate::types::ProresFramerateControl> {
         self.framerate_control.as_ref()
     }
     /// Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. For numerically simple conversions, such as 60 fps to 30 fps: We recommend that you keep the default value, Drop duplicate. For numerically complex conversions, to avoid stutter: Choose Interpolate. This results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has already been converted from its original cadence: Choose FrameFormer to do motion-compensated interpolation. FrameFormer uses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant add-on cost. When you choose FrameFormer, your input video resolution must be at least 128x96.
     pub fn framerate_conversion_algorithm(
         &self,
-    ) -> std::option::Option<&crate::types::ProresFramerateConversionAlgorithm> {
+    ) -> ::std::option::Option<&crate::types::ProresFramerateConversionAlgorithm> {
         self.framerate_conversion_algorithm.as_ref()
     }
     /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
-    pub fn framerate_denominator(&self) -> std::option::Option<i32> {
+    pub fn framerate_denominator(&self) -> ::std::option::Option<i32> {
         self.framerate_denominator
     }
     /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
-    pub fn framerate_numerator(&self) -> std::option::Option<i32> {
+    pub fn framerate_numerator(&self) -> ::std::option::Option<i32> {
         self.framerate_numerator
     }
     /// Choose the scan line type for the output. Keep the default value, Progressive (PROGRESSIVE) to create a progressive output, regardless of the scan type of your input. Use Top field first (TOP_FIELD) or Bottom field first (BOTTOM_FIELD) to create an output that's interlaced with the same field polarity throughout. Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom (FOLLOW_BOTTOM_FIELD) to produce outputs with the same field polarity as the source. For jobs that have multiple inputs, the output field polarity might change over the course of the output. Follow behavior depends on the input scan type. If the source is interlaced, the output will be interlaced with the same polarity as the source. If the source is progressive, the output will be interlaced with top field bottom field first, depending on which of the Follow options you choose.
-    pub fn interlace_mode(&self) -> std::option::Option<&crate::types::ProresInterlaceMode> {
+    pub fn interlace_mode(&self) -> ::std::option::Option<&crate::types::ProresInterlaceMode> {
         self.interlace_mode.as_ref()
     }
     /// Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To specify a different PAR in the console, choose any value other than Follow source. To specify a different PAR by editing the JSON job specification, choose SPECIFIED. When you choose SPECIFIED for this setting, you must also specify values for the parNumerator and parDenominator settings.
-    pub fn par_control(&self) -> std::option::Option<&crate::types::ProresParControl> {
+    pub fn par_control(&self) -> ::std::option::Option<&crate::types::ProresParControl> {
         self.par_control.as_ref()
     }
     /// Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to any value other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio 40:33. In this example, the value for parDenominator is 33.
-    pub fn par_denominator(&self) -> std::option::Option<i32> {
+    pub fn par_denominator(&self) -> ::std::option::Option<i32> {
         self.par_denominator
     }
     /// Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to any value other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio 40:33. In this example, the value for parNumerator is 40.
-    pub fn par_numerator(&self) -> std::option::Option<i32> {
+    pub fn par_numerator(&self) -> ::std::option::Option<i32> {
         self.par_numerator
     }
     /// Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In this situation, choose Optimized interlacing (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In this case, each progressive frame from the input corresponds to an interlaced field in the output. Keep the default value, Basic interlacing (INTERLACED), for all other output frame rates. With basic interlacing, MediaConvert performs any frame rate conversion first and then interlaces the frames. When you choose Optimized interlacing and you set your output frame rate to a value that isn't suitable for optimized interlacing, MediaConvert automatically falls back to basic interlacing. Required settings: To use optimized interlacing, you must set Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized interlacing for hard telecine outputs. You must also set Interlace mode (interlaceMode) to a value other than Progressive (PROGRESSIVE).
     pub fn scan_type_conversion_mode(
         &self,
-    ) -> std::option::Option<&crate::types::ProresScanTypeConversionMode> {
+    ) -> ::std::option::Option<&crate::types::ProresScanTypeConversionMode> {
         self.scan_type_conversion_mode.as_ref()
     }
     /// Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL to create a 25 fps output. When you enable slow PAL, MediaConvert relabels the video frames to 25 fps and resamples your audio to keep it synchronized with the video. Note that enabling this setting will slightly reduce the duration of your video. Required settings: You must also set Framerate to 25. In your JSON job specification, set (framerateControl) to (SPECIFIED), (framerateNumerator) to 25 and (framerateDenominator) to 1.
-    pub fn slow_pal(&self) -> std::option::Option<&crate::types::ProresSlowPal> {
+    pub fn slow_pal(&self) -> ::std::option::Option<&crate::types::ProresSlowPal> {
         self.slow_pal.as_ref()
     }
     /// When you do frame rate conversion from 23.976 frames per second (fps) to 29.97 fps, and your output scan type is interlaced, you can optionally enable hard telecine (HARD) to create a smoother picture. When you keep the default value, None (NONE), MediaConvert does a standard frame rate conversion to 29.97 without doing anything with the field polarity to create a smoother picture.
-    pub fn telecine(&self) -> std::option::Option<&crate::types::ProresTelecine> {
+    pub fn telecine(&self) -> ::std::option::Option<&crate::types::ProresTelecine> {
         self.telecine.as_ref()
     }
 }
@@ -112,60 +115,62 @@ impl ProresSettings {
 
 /// A builder for [`ProresSettings`](crate::types::ProresSettings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ProresSettingsBuilder {
-    pub(crate) chroma_sampling: std::option::Option<crate::types::ProresChromaSampling>,
-    pub(crate) codec_profile: std::option::Option<crate::types::ProresCodecProfile>,
-    pub(crate) framerate_control: std::option::Option<crate::types::ProresFramerateControl>,
+    pub(crate) chroma_sampling: ::std::option::Option<crate::types::ProresChromaSampling>,
+    pub(crate) codec_profile: ::std::option::Option<crate::types::ProresCodecProfile>,
+    pub(crate) framerate_control: ::std::option::Option<crate::types::ProresFramerateControl>,
     pub(crate) framerate_conversion_algorithm:
-        std::option::Option<crate::types::ProresFramerateConversionAlgorithm>,
-    pub(crate) framerate_denominator: std::option::Option<i32>,
-    pub(crate) framerate_numerator: std::option::Option<i32>,
-    pub(crate) interlace_mode: std::option::Option<crate::types::ProresInterlaceMode>,
-    pub(crate) par_control: std::option::Option<crate::types::ProresParControl>,
-    pub(crate) par_denominator: std::option::Option<i32>,
-    pub(crate) par_numerator: std::option::Option<i32>,
+        ::std::option::Option<crate::types::ProresFramerateConversionAlgorithm>,
+    pub(crate) framerate_denominator: ::std::option::Option<i32>,
+    pub(crate) framerate_numerator: ::std::option::Option<i32>,
+    pub(crate) interlace_mode: ::std::option::Option<crate::types::ProresInterlaceMode>,
+    pub(crate) par_control: ::std::option::Option<crate::types::ProresParControl>,
+    pub(crate) par_denominator: ::std::option::Option<i32>,
+    pub(crate) par_numerator: ::std::option::Option<i32>,
     pub(crate) scan_type_conversion_mode:
-        std::option::Option<crate::types::ProresScanTypeConversionMode>,
-    pub(crate) slow_pal: std::option::Option<crate::types::ProresSlowPal>,
-    pub(crate) telecine: std::option::Option<crate::types::ProresTelecine>,
+        ::std::option::Option<crate::types::ProresScanTypeConversionMode>,
+    pub(crate) slow_pal: ::std::option::Option<crate::types::ProresSlowPal>,
+    pub(crate) telecine: ::std::option::Option<crate::types::ProresTelecine>,
 }
 impl ProresSettingsBuilder {
     /// This setting applies only to ProRes 4444 and ProRes 4444 XQ outputs that you create from inputs that use 4:4:4 chroma sampling. Set Preserve 4:4:4 sampling (PRESERVE_444_SAMPLING) to allow outputs to also use 4:4:4 chroma sampling. You must specify a value for this setting when your output codec profile supports 4:4:4 chroma sampling. Related Settings: When you set Chroma sampling to Preserve 4:4:4 sampling (PRESERVE_444_SAMPLING), you must choose an output codec profile that supports 4:4:4 chroma sampling. These values for Profile (CodecProfile) support 4:4:4 chroma sampling: Apple ProRes 4444 (APPLE_PRORES_4444) or Apple ProRes 4444 XQ (APPLE_PRORES_4444_XQ). When you set Chroma sampling to Preserve 4:4:4 sampling, you must disable all video preprocessors except for Nexguard file marker (PartnerWatermarking). When you set Chroma sampling to Preserve 4:4:4 sampling and use framerate conversion, you must set Frame rate conversion algorithm (FramerateConversionAlgorithm) to Drop duplicate (DUPLICATE_DROP).
     pub fn chroma_sampling(mut self, input: crate::types::ProresChromaSampling) -> Self {
-        self.chroma_sampling = Some(input);
+        self.chroma_sampling = ::std::option::Option::Some(input);
         self
     }
     /// This setting applies only to ProRes 4444 and ProRes 4444 XQ outputs that you create from inputs that use 4:4:4 chroma sampling. Set Preserve 4:4:4 sampling (PRESERVE_444_SAMPLING) to allow outputs to also use 4:4:4 chroma sampling. You must specify a value for this setting when your output codec profile supports 4:4:4 chroma sampling. Related Settings: When you set Chroma sampling to Preserve 4:4:4 sampling (PRESERVE_444_SAMPLING), you must choose an output codec profile that supports 4:4:4 chroma sampling. These values for Profile (CodecProfile) support 4:4:4 chroma sampling: Apple ProRes 4444 (APPLE_PRORES_4444) or Apple ProRes 4444 XQ (APPLE_PRORES_4444_XQ). When you set Chroma sampling to Preserve 4:4:4 sampling, you must disable all video preprocessors except for Nexguard file marker (PartnerWatermarking). When you set Chroma sampling to Preserve 4:4:4 sampling and use framerate conversion, you must set Frame rate conversion algorithm (FramerateConversionAlgorithm) to Drop duplicate (DUPLICATE_DROP).
     pub fn set_chroma_sampling(
         mut self,
-        input: std::option::Option<crate::types::ProresChromaSampling>,
+        input: ::std::option::Option<crate::types::ProresChromaSampling>,
     ) -> Self {
         self.chroma_sampling = input;
         self
     }
     /// Use Profile (ProResCodecProfile) to specify the type of Apple ProRes codec to use for this output.
     pub fn codec_profile(mut self, input: crate::types::ProresCodecProfile) -> Self {
-        self.codec_profile = Some(input);
+        self.codec_profile = ::std::option::Option::Some(input);
         self
     }
     /// Use Profile (ProResCodecProfile) to specify the type of Apple ProRes codec to use for this output.
     pub fn set_codec_profile(
         mut self,
-        input: std::option::Option<crate::types::ProresCodecProfile>,
+        input: ::std::option::Option<crate::types::ProresCodecProfile>,
     ) -> Self {
         self.codec_profile = input;
         self
     }
     /// If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the settings FramerateNumerator and FramerateDenominator.
     pub fn framerate_control(mut self, input: crate::types::ProresFramerateControl) -> Self {
-        self.framerate_control = Some(input);
+        self.framerate_control = ::std::option::Option::Some(input);
         self
     }
     /// If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the settings FramerateNumerator and FramerateDenominator.
     pub fn set_framerate_control(
         mut self,
-        input: std::option::Option<crate::types::ProresFramerateControl>,
+        input: ::std::option::Option<crate::types::ProresFramerateControl>,
     ) -> Self {
         self.framerate_control = input;
         self
@@ -175,80 +180,80 @@ impl ProresSettingsBuilder {
         mut self,
         input: crate::types::ProresFramerateConversionAlgorithm,
     ) -> Self {
-        self.framerate_conversion_algorithm = Some(input);
+        self.framerate_conversion_algorithm = ::std::option::Option::Some(input);
         self
     }
     /// Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. For numerically simple conversions, such as 60 fps to 30 fps: We recommend that you keep the default value, Drop duplicate. For numerically complex conversions, to avoid stutter: Choose Interpolate. This results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has already been converted from its original cadence: Choose FrameFormer to do motion-compensated interpolation. FrameFormer uses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant add-on cost. When you choose FrameFormer, your input video resolution must be at least 128x96.
     pub fn set_framerate_conversion_algorithm(
         mut self,
-        input: std::option::Option<crate::types::ProresFramerateConversionAlgorithm>,
+        input: ::std::option::Option<crate::types::ProresFramerateConversionAlgorithm>,
     ) -> Self {
         self.framerate_conversion_algorithm = input;
         self
     }
     /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
     pub fn framerate_denominator(mut self, input: i32) -> Self {
-        self.framerate_denominator = Some(input);
+        self.framerate_denominator = ::std::option::Option::Some(input);
         self
     }
     /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateDenominator to specify the denominator of this fraction. In this example, use 1001 for the value of FramerateDenominator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
-    pub fn set_framerate_denominator(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_framerate_denominator(mut self, input: ::std::option::Option<i32>) -> Self {
         self.framerate_denominator = input;
         self
     }
     /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
     pub fn framerate_numerator(mut self, input: i32) -> Self {
-        self.framerate_numerator = Some(input);
+        self.framerate_numerator = ::std::option::Option::Some(input);
         self
     }
     /// When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
-    pub fn set_framerate_numerator(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_framerate_numerator(mut self, input: ::std::option::Option<i32>) -> Self {
         self.framerate_numerator = input;
         self
     }
     /// Choose the scan line type for the output. Keep the default value, Progressive (PROGRESSIVE) to create a progressive output, regardless of the scan type of your input. Use Top field first (TOP_FIELD) or Bottom field first (BOTTOM_FIELD) to create an output that's interlaced with the same field polarity throughout. Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom (FOLLOW_BOTTOM_FIELD) to produce outputs with the same field polarity as the source. For jobs that have multiple inputs, the output field polarity might change over the course of the output. Follow behavior depends on the input scan type. If the source is interlaced, the output will be interlaced with the same polarity as the source. If the source is progressive, the output will be interlaced with top field bottom field first, depending on which of the Follow options you choose.
     pub fn interlace_mode(mut self, input: crate::types::ProresInterlaceMode) -> Self {
-        self.interlace_mode = Some(input);
+        self.interlace_mode = ::std::option::Option::Some(input);
         self
     }
     /// Choose the scan line type for the output. Keep the default value, Progressive (PROGRESSIVE) to create a progressive output, regardless of the scan type of your input. Use Top field first (TOP_FIELD) or Bottom field first (BOTTOM_FIELD) to create an output that's interlaced with the same field polarity throughout. Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom (FOLLOW_BOTTOM_FIELD) to produce outputs with the same field polarity as the source. For jobs that have multiple inputs, the output field polarity might change over the course of the output. Follow behavior depends on the input scan type. If the source is interlaced, the output will be interlaced with the same polarity as the source. If the source is progressive, the output will be interlaced with top field bottom field first, depending on which of the Follow options you choose.
     pub fn set_interlace_mode(
         mut self,
-        input: std::option::Option<crate::types::ProresInterlaceMode>,
+        input: ::std::option::Option<crate::types::ProresInterlaceMode>,
     ) -> Self {
         self.interlace_mode = input;
         self
     }
     /// Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To specify a different PAR in the console, choose any value other than Follow source. To specify a different PAR by editing the JSON job specification, choose SPECIFIED. When you choose SPECIFIED for this setting, you must also specify values for the parNumerator and parDenominator settings.
     pub fn par_control(mut self, input: crate::types::ProresParControl) -> Self {
-        self.par_control = Some(input);
+        self.par_control = ::std::option::Option::Some(input);
         self
     }
     /// Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To specify a different PAR in the console, choose any value other than Follow source. To specify a different PAR by editing the JSON job specification, choose SPECIFIED. When you choose SPECIFIED for this setting, you must also specify values for the parNumerator and parDenominator settings.
     pub fn set_par_control(
         mut self,
-        input: std::option::Option<crate::types::ProresParControl>,
+        input: ::std::option::Option<crate::types::ProresParControl>,
     ) -> Self {
         self.par_control = input;
         self
     }
     /// Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to any value other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio 40:33. In this example, the value for parDenominator is 33.
     pub fn par_denominator(mut self, input: i32) -> Self {
-        self.par_denominator = Some(input);
+        self.par_denominator = ::std::option::Option::Some(input);
         self
     }
     /// Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to any value other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio 40:33. In this example, the value for parDenominator is 33.
-    pub fn set_par_denominator(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_par_denominator(mut self, input: ::std::option::Option<i32>) -> Self {
         self.par_denominator = input;
         self
     }
     /// Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to any value other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio 40:33. In this example, the value for parNumerator is 40.
     pub fn par_numerator(mut self, input: i32) -> Self {
-        self.par_numerator = Some(input);
+        self.par_numerator = ::std::option::Option::Some(input);
         self
     }
     /// Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to any value other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio 40:33. In this example, the value for parNumerator is 40.
-    pub fn set_par_numerator(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_par_numerator(mut self, input: ::std::option::Option<i32>) -> Self {
         self.par_numerator = input;
         self
     }
@@ -257,36 +262,39 @@ impl ProresSettingsBuilder {
         mut self,
         input: crate::types::ProresScanTypeConversionMode,
     ) -> Self {
-        self.scan_type_conversion_mode = Some(input);
+        self.scan_type_conversion_mode = ::std::option::Option::Some(input);
         self
     }
     /// Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In this situation, choose Optimized interlacing (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In this case, each progressive frame from the input corresponds to an interlaced field in the output. Keep the default value, Basic interlacing (INTERLACED), for all other output frame rates. With basic interlacing, MediaConvert performs any frame rate conversion first and then interlaces the frames. When you choose Optimized interlacing and you set your output frame rate to a value that isn't suitable for optimized interlacing, MediaConvert automatically falls back to basic interlacing. Required settings: To use optimized interlacing, you must set Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized interlacing for hard telecine outputs. You must also set Interlace mode (interlaceMode) to a value other than Progressive (PROGRESSIVE).
     pub fn set_scan_type_conversion_mode(
         mut self,
-        input: std::option::Option<crate::types::ProresScanTypeConversionMode>,
+        input: ::std::option::Option<crate::types::ProresScanTypeConversionMode>,
     ) -> Self {
         self.scan_type_conversion_mode = input;
         self
     }
     /// Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL to create a 25 fps output. When you enable slow PAL, MediaConvert relabels the video frames to 25 fps and resamples your audio to keep it synchronized with the video. Note that enabling this setting will slightly reduce the duration of your video. Required settings: You must also set Framerate to 25. In your JSON job specification, set (framerateControl) to (SPECIFIED), (framerateNumerator) to 25 and (framerateDenominator) to 1.
     pub fn slow_pal(mut self, input: crate::types::ProresSlowPal) -> Self {
-        self.slow_pal = Some(input);
+        self.slow_pal = ::std::option::Option::Some(input);
         self
     }
     /// Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL to create a 25 fps output. When you enable slow PAL, MediaConvert relabels the video frames to 25 fps and resamples your audio to keep it synchronized with the video. Note that enabling this setting will slightly reduce the duration of your video. Required settings: You must also set Framerate to 25. In your JSON job specification, set (framerateControl) to (SPECIFIED), (framerateNumerator) to 25 and (framerateDenominator) to 1.
-    pub fn set_slow_pal(mut self, input: std::option::Option<crate::types::ProresSlowPal>) -> Self {
+    pub fn set_slow_pal(
+        mut self,
+        input: ::std::option::Option<crate::types::ProresSlowPal>,
+    ) -> Self {
         self.slow_pal = input;
         self
     }
     /// When you do frame rate conversion from 23.976 frames per second (fps) to 29.97 fps, and your output scan type is interlaced, you can optionally enable hard telecine (HARD) to create a smoother picture. When you keep the default value, None (NONE), MediaConvert does a standard frame rate conversion to 29.97 without doing anything with the field polarity to create a smoother picture.
     pub fn telecine(mut self, input: crate::types::ProresTelecine) -> Self {
-        self.telecine = Some(input);
+        self.telecine = ::std::option::Option::Some(input);
         self
     }
     /// When you do frame rate conversion from 23.976 frames per second (fps) to 29.97 fps, and your output scan type is interlaced, you can optionally enable hard telecine (HARD) to create a smoother picture. When you keep the default value, None (NONE), MediaConvert does a standard frame rate conversion to 29.97 without doing anything with the field polarity to create a smoother picture.
     pub fn set_telecine(
         mut self,
-        input: std::option::Option<crate::types::ProresTelecine>,
+        input: ::std::option::Option<crate::types::ProresTelecine>,
     ) -> Self {
         self.telecine = input;
         self

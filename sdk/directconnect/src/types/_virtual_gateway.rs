@@ -2,11 +2,11 @@
 
 /// <p>Information about a virtual private gateway for a private virtual interface.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VirtualGateway {
     /// <p>The ID of the virtual private gateway.</p>
     #[doc(hidden)]
-    pub virtual_gateway_id: std::option::Option<std::string::String>,
+    pub virtual_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The state of the virtual private gateway. The following are the possible values:</p>
     /// <ul>
     /// <li> <p> <code>pending</code>: Initial state after creating the virtual private gateway.</p> </li>
@@ -15,11 +15,11 @@ pub struct VirtualGateway {
     /// <li> <p> <code>deleted</code>: The virtual private gateway is deleted. The private virtual interface is unable to send traffic over this gateway.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub virtual_gateway_state: std::option::Option<std::string::String>,
+    pub virtual_gateway_state: ::std::option::Option<::std::string::String>,
 }
 impl VirtualGateway {
     /// <p>The ID of the virtual private gateway.</p>
-    pub fn virtual_gateway_id(&self) -> std::option::Option<&str> {
+    pub fn virtual_gateway_id(&self) -> ::std::option::Option<&str> {
         self.virtual_gateway_id.as_deref()
     }
     /// <p>The state of the virtual private gateway. The following are the possible values:</p>
@@ -29,7 +29,7 @@ impl VirtualGateway {
     /// <li> <p> <code>deleting</code>: Initial state after deleting the virtual private gateway.</p> </li>
     /// <li> <p> <code>deleted</code>: The virtual private gateway is deleted. The private virtual interface is unable to send traffic over this gateway.</p> </li>
     /// </ul>
-    pub fn virtual_gateway_state(&self) -> std::option::Option<&str> {
+    pub fn virtual_gateway_state(&self) -> ::std::option::Option<&str> {
         self.virtual_gateway_state.as_deref()
     }
 }
@@ -42,21 +42,26 @@ impl VirtualGateway {
 
 /// A builder for [`VirtualGateway`](crate::types::VirtualGateway).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VirtualGatewayBuilder {
-    pub(crate) virtual_gateway_id: std::option::Option<std::string::String>,
-    pub(crate) virtual_gateway_state: std::option::Option<std::string::String>,
+    pub(crate) virtual_gateway_id: ::std::option::Option<::std::string::String>,
+    pub(crate) virtual_gateway_state: ::std::option::Option<::std::string::String>,
 }
 impl VirtualGatewayBuilder {
     /// <p>The ID of the virtual private gateway.</p>
-    pub fn virtual_gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.virtual_gateway_id = Some(input.into());
+    pub fn virtual_gateway_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.virtual_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the virtual private gateway.</p>
     pub fn set_virtual_gateway_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.virtual_gateway_id = input;
         self
@@ -68,8 +73,11 @@ impl VirtualGatewayBuilder {
     /// <li> <p> <code>deleting</code>: Initial state after deleting the virtual private gateway.</p> </li>
     /// <li> <p> <code>deleted</code>: The virtual private gateway is deleted. The private virtual interface is unable to send traffic over this gateway.</p> </li>
     /// </ul>
-    pub fn virtual_gateway_state(mut self, input: impl Into<std::string::String>) -> Self {
-        self.virtual_gateway_state = Some(input.into());
+    pub fn virtual_gateway_state(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.virtual_gateway_state = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The state of the virtual private gateway. The following are the possible values:</p>
@@ -81,7 +89,7 @@ impl VirtualGatewayBuilder {
     /// </ul>
     pub fn set_virtual_gateway_state(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.virtual_gateway_state = input;
         self

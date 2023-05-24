@@ -2,43 +2,43 @@
 
 /// <p>Summary information about a bot version returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListBotVersions.html">ListBotVersions</a> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BotVersionSummary {
     /// <p>The name of the bot associated with the version.</p>
     #[doc(hidden)]
-    pub bot_name: std::option::Option<std::string::String>,
+    pub bot_name: ::std::option::Option<::std::string::String>,
     /// <p>The numeric version of the bot, or <code>DRAFT</code> to indicate that this is the version of the bot that can be updated..</p>
     #[doc(hidden)]
-    pub bot_version: std::option::Option<std::string::String>,
+    pub bot_version: ::std::option::Option<::std::string::String>,
     /// <p>The description of the version.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The status of the bot. When the status is available, the version of the bot is ready for use.</p>
     #[doc(hidden)]
-    pub bot_status: std::option::Option<crate::types::BotStatus>,
+    pub bot_status: ::std::option::Option<crate::types::BotStatus>,
     /// <p>A timestamp of the date and time that the version was created.</p>
     #[doc(hidden)]
-    pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl BotVersionSummary {
     /// <p>The name of the bot associated with the version.</p>
-    pub fn bot_name(&self) -> std::option::Option<&str> {
+    pub fn bot_name(&self) -> ::std::option::Option<&str> {
         self.bot_name.as_deref()
     }
     /// <p>The numeric version of the bot, or <code>DRAFT</code> to indicate that this is the version of the bot that can be updated..</p>
-    pub fn bot_version(&self) -> std::option::Option<&str> {
+    pub fn bot_version(&self) -> ::std::option::Option<&str> {
         self.bot_version.as_deref()
     }
     /// <p>The description of the version.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The status of the bot. When the status is available, the version of the bot is ready for use.</p>
-    pub fn bot_status(&self) -> std::option::Option<&crate::types::BotStatus> {
+    pub fn bot_status(&self) -> ::std::option::Option<&crate::types::BotStatus> {
         self.bot_status.as_ref()
     }
     /// <p>A timestamp of the date and time that the version was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
 }
@@ -51,64 +51,66 @@ impl BotVersionSummary {
 
 /// A builder for [`BotVersionSummary`](crate::types::BotVersionSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BotVersionSummaryBuilder {
-    pub(crate) bot_name: std::option::Option<std::string::String>,
-    pub(crate) bot_version: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) bot_status: std::option::Option<crate::types::BotStatus>,
-    pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) bot_name: ::std::option::Option<::std::string::String>,
+    pub(crate) bot_version: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) bot_status: ::std::option::Option<crate::types::BotStatus>,
+    pub(crate) creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl BotVersionSummaryBuilder {
     /// <p>The name of the bot associated with the version.</p>
-    pub fn bot_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.bot_name = Some(input.into());
+    pub fn bot_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.bot_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the bot associated with the version.</p>
-    pub fn set_bot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_bot_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bot_name = input;
         self
     }
     /// <p>The numeric version of the bot, or <code>DRAFT</code> to indicate that this is the version of the bot that can be updated..</p>
-    pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.bot_version = Some(input.into());
+    pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.bot_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The numeric version of the bot, or <code>DRAFT</code> to indicate that this is the version of the bot that can be updated..</p>
-    pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_bot_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bot_version = input;
         self
     }
     /// <p>The description of the version.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the version.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>The status of the bot. When the status is available, the version of the bot is ready for use.</p>
     pub fn bot_status(mut self, input: crate::types::BotStatus) -> Self {
-        self.bot_status = Some(input);
+        self.bot_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the bot. When the status is available, the version of the bot is ready for use.</p>
-    pub fn set_bot_status(mut self, input: std::option::Option<crate::types::BotStatus>) -> Self {
+    pub fn set_bot_status(mut self, input: ::std::option::Option<crate::types::BotStatus>) -> Self {
         self.bot_status = input;
         self
     }
     /// <p>A timestamp of the date and time that the version was created.</p>
-    pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_date_time = Some(input);
+    pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_date_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>A timestamp of the date and time that the version was created.</p>
     pub fn set_creation_date_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_date_time = input;
         self

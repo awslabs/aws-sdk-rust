@@ -10,56 +10,59 @@ pub use crate::operation::create_ml_model::_create_ml_model_input::CreateMlModel
 /// <p> <code>CreateMLModel</code> is an asynchronous operation. In response to <code>CreateMLModel</code>, Amazon Machine Learning (Amazon ML) immediately returns and sets the <code>MLModel</code> status to <code>PENDING</code>. After the <code>MLModel</code> has been created and ready is for use, Amazon ML sets the status to <code>COMPLETED</code>. </p>
 /// <p>You can use the <code>GetMLModel</code> operation to check the progress of the <code>MLModel</code> during the creation operation.</p>
 /// <p> <code>CreateMLModel</code> requires a <code>DataSource</code> with computed statistics, which can be created by setting <code>ComputeStatistics</code> to <code>true</code> in <code>CreateDataSourceFromRDS</code>, <code>CreateDataSourceFromS3</code>, or <code>CreateDataSourceFromRedshift</code> operations. </p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateMLModelFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_ml_model::builders::CreateMlModelInputBuilder,
 }
 impl CreateMLModelFluentBuilder {
     /// Creates a new `CreateMLModel`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_ml_model::CreateMLModel,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_ml_model::CreateMLModelError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_ml_model::CreateMLModelError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_ml_model::CreateMlModelOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_ml_model::CreateMLModelError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_ml_model::CreateMLModelError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,29 +75,35 @@ impl CreateMLModelFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_ml_model::CreateMlModelOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_ml_model::CreateMLModelError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_ml_model::CreateMLModelError>,
     > {
         self.send_middleware().await
     }
     /// <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>.</p>
-    pub fn ml_model_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn ml_model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ml_model_id(input.into());
         self
     }
     /// <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>.</p>
-    pub fn set_ml_model_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ml_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ml_model_id(input);
         self
     }
     /// <p>A user-supplied name or description of the <code>MLModel</code>.</p>
-    pub fn ml_model_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn ml_model_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.ml_model_name(input.into());
         self
     }
     /// <p>A user-supplied name or description of the <code>MLModel</code>.</p>
-    pub fn set_ml_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ml_model_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_ml_model_name(input);
         self
     }
@@ -118,7 +127,7 @@ impl CreateMLModelFluentBuilder {
     /// <p> For more information, see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine Learning Developer Guide</a>.</p>
     pub fn set_ml_model_type(
         mut self,
-        input: std::option::Option<crate::types::MlModelType>,
+        input: ::std::option::Option<crate::types::MlModelType>,
     ) -> Self {
         self.inner = self.inner.set_ml_model_type(input);
         self
@@ -138,8 +147,8 @@ impl CreateMLModelFluentBuilder {
     /// </ul>
     pub fn parameters(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.parameters(k.into(), v.into());
         self
@@ -155,43 +164,46 @@ impl CreateMLModelFluentBuilder {
     /// </ul>
     pub fn set_parameters(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_parameters(input);
         self
     }
     /// <p>The <code>DataSource</code> that points to the training data.</p>
-    pub fn training_data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn training_data_source_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.training_data_source_id(input.into());
         self
     }
     /// <p>The <code>DataSource</code> that points to the training data.</p>
     pub fn set_training_data_source_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_training_data_source_id(input);
         self
     }
     /// <p>The data recipe for creating the <code>MLModel</code>. You must specify either the recipe or its URI. If you don't specify a recipe or its URI, Amazon ML creates a default.</p>
-    pub fn recipe(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn recipe(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.recipe(input.into());
         self
     }
     /// <p>The data recipe for creating the <code>MLModel</code>. You must specify either the recipe or its URI. If you don't specify a recipe or its URI, Amazon ML creates a default.</p>
-    pub fn set_recipe(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_recipe(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_recipe(input);
         self
     }
     /// <p>The Amazon Simple Storage Service (Amazon S3) location and file name that contains the <code>MLModel</code> recipe. You must specify either the recipe or its URI. If you don't specify a recipe or its URI, Amazon ML creates a default.</p>
-    pub fn recipe_uri(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn recipe_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.recipe_uri(input.into());
         self
     }
     /// <p>The Amazon Simple Storage Service (Amazon S3) location and file name that contains the <code>MLModel</code> recipe. You must specify either the recipe or its URI. If you don't specify a recipe or its URI, Amazon ML creates a default.</p>
-    pub fn set_recipe_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_recipe_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_recipe_uri(input);
         self
     }

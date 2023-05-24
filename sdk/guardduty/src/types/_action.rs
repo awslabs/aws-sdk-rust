@@ -2,63 +2,63 @@
 
 /// <p>Contains information about actions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Action {
     /// <p>The GuardDuty finding activity type.</p>
     #[doc(hidden)]
-    pub action_type: std::option::Option<std::string::String>,
+    pub action_type: ::std::option::Option<::std::string::String>,
     /// <p>Information about the AWS_API_CALL action described in this finding.</p>
     #[doc(hidden)]
-    pub aws_api_call_action: std::option::Option<crate::types::AwsApiCallAction>,
+    pub aws_api_call_action: ::std::option::Option<crate::types::AwsApiCallAction>,
     /// <p>Information about the DNS_REQUEST action described in this finding.</p>
     #[doc(hidden)]
-    pub dns_request_action: std::option::Option<crate::types::DnsRequestAction>,
+    pub dns_request_action: ::std::option::Option<crate::types::DnsRequestAction>,
     /// <p>Information about the NETWORK_CONNECTION action described in this finding.</p>
     #[doc(hidden)]
-    pub network_connection_action: std::option::Option<crate::types::NetworkConnectionAction>,
+    pub network_connection_action: ::std::option::Option<crate::types::NetworkConnectionAction>,
     /// <p>Information about the PORT_PROBE action described in this finding.</p>
     #[doc(hidden)]
-    pub port_probe_action: std::option::Option<crate::types::PortProbeAction>,
+    pub port_probe_action: ::std::option::Option<crate::types::PortProbeAction>,
     /// <p>Information about the Kubernetes API call action described in this finding.</p>
     #[doc(hidden)]
-    pub kubernetes_api_call_action: std::option::Option<crate::types::KubernetesApiCallAction>,
+    pub kubernetes_api_call_action: ::std::option::Option<crate::types::KubernetesApiCallAction>,
     /// <p>Information about <code>RDS_LOGIN_ATTEMPT</code> action described in this finding.</p>
     #[doc(hidden)]
-    pub rds_login_attempt_action: std::option::Option<crate::types::RdsLoginAttemptAction>,
+    pub rds_login_attempt_action: ::std::option::Option<crate::types::RdsLoginAttemptAction>,
 }
 impl Action {
     /// <p>The GuardDuty finding activity type.</p>
-    pub fn action_type(&self) -> std::option::Option<&str> {
+    pub fn action_type(&self) -> ::std::option::Option<&str> {
         self.action_type.as_deref()
     }
     /// <p>Information about the AWS_API_CALL action described in this finding.</p>
-    pub fn aws_api_call_action(&self) -> std::option::Option<&crate::types::AwsApiCallAction> {
+    pub fn aws_api_call_action(&self) -> ::std::option::Option<&crate::types::AwsApiCallAction> {
         self.aws_api_call_action.as_ref()
     }
     /// <p>Information about the DNS_REQUEST action described in this finding.</p>
-    pub fn dns_request_action(&self) -> std::option::Option<&crate::types::DnsRequestAction> {
+    pub fn dns_request_action(&self) -> ::std::option::Option<&crate::types::DnsRequestAction> {
         self.dns_request_action.as_ref()
     }
     /// <p>Information about the NETWORK_CONNECTION action described in this finding.</p>
     pub fn network_connection_action(
         &self,
-    ) -> std::option::Option<&crate::types::NetworkConnectionAction> {
+    ) -> ::std::option::Option<&crate::types::NetworkConnectionAction> {
         self.network_connection_action.as_ref()
     }
     /// <p>Information about the PORT_PROBE action described in this finding.</p>
-    pub fn port_probe_action(&self) -> std::option::Option<&crate::types::PortProbeAction> {
+    pub fn port_probe_action(&self) -> ::std::option::Option<&crate::types::PortProbeAction> {
         self.port_probe_action.as_ref()
     }
     /// <p>Information about the Kubernetes API call action described in this finding.</p>
     pub fn kubernetes_api_call_action(
         &self,
-    ) -> std::option::Option<&crate::types::KubernetesApiCallAction> {
+    ) -> ::std::option::Option<&crate::types::KubernetesApiCallAction> {
         self.kubernetes_api_call_action.as_ref()
     }
     /// <p>Information about <code>RDS_LOGIN_ATTEMPT</code> action described in this finding.</p>
     pub fn rds_login_attempt_action(
         &self,
-    ) -> std::option::Option<&crate::types::RdsLoginAttemptAction> {
+    ) -> ::std::option::Option<&crate::types::RdsLoginAttemptAction> {
         self.rds_login_attempt_action.as_ref()
     }
 }
@@ -71,51 +71,53 @@ impl Action {
 
 /// A builder for [`Action`](crate::types::Action).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ActionBuilder {
-    pub(crate) action_type: std::option::Option<std::string::String>,
-    pub(crate) aws_api_call_action: std::option::Option<crate::types::AwsApiCallAction>,
-    pub(crate) dns_request_action: std::option::Option<crate::types::DnsRequestAction>,
+    pub(crate) action_type: ::std::option::Option<::std::string::String>,
+    pub(crate) aws_api_call_action: ::std::option::Option<crate::types::AwsApiCallAction>,
+    pub(crate) dns_request_action: ::std::option::Option<crate::types::DnsRequestAction>,
     pub(crate) network_connection_action:
-        std::option::Option<crate::types::NetworkConnectionAction>,
-    pub(crate) port_probe_action: std::option::Option<crate::types::PortProbeAction>,
+        ::std::option::Option<crate::types::NetworkConnectionAction>,
+    pub(crate) port_probe_action: ::std::option::Option<crate::types::PortProbeAction>,
     pub(crate) kubernetes_api_call_action:
-        std::option::Option<crate::types::KubernetesApiCallAction>,
-    pub(crate) rds_login_attempt_action: std::option::Option<crate::types::RdsLoginAttemptAction>,
+        ::std::option::Option<crate::types::KubernetesApiCallAction>,
+    pub(crate) rds_login_attempt_action: ::std::option::Option<crate::types::RdsLoginAttemptAction>,
 }
 impl ActionBuilder {
     /// <p>The GuardDuty finding activity type.</p>
-    pub fn action_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.action_type = Some(input.into());
+    pub fn action_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.action_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The GuardDuty finding activity type.</p>
-    pub fn set_action_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_action_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.action_type = input;
         self
     }
     /// <p>Information about the AWS_API_CALL action described in this finding.</p>
     pub fn aws_api_call_action(mut self, input: crate::types::AwsApiCallAction) -> Self {
-        self.aws_api_call_action = Some(input);
+        self.aws_api_call_action = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the AWS_API_CALL action described in this finding.</p>
     pub fn set_aws_api_call_action(
         mut self,
-        input: std::option::Option<crate::types::AwsApiCallAction>,
+        input: ::std::option::Option<crate::types::AwsApiCallAction>,
     ) -> Self {
         self.aws_api_call_action = input;
         self
     }
     /// <p>Information about the DNS_REQUEST action described in this finding.</p>
     pub fn dns_request_action(mut self, input: crate::types::DnsRequestAction) -> Self {
-        self.dns_request_action = Some(input);
+        self.dns_request_action = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the DNS_REQUEST action described in this finding.</p>
     pub fn set_dns_request_action(
         mut self,
-        input: std::option::Option<crate::types::DnsRequestAction>,
+        input: ::std::option::Option<crate::types::DnsRequestAction>,
     ) -> Self {
         self.dns_request_action = input;
         self
@@ -125,26 +127,26 @@ impl ActionBuilder {
         mut self,
         input: crate::types::NetworkConnectionAction,
     ) -> Self {
-        self.network_connection_action = Some(input);
+        self.network_connection_action = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the NETWORK_CONNECTION action described in this finding.</p>
     pub fn set_network_connection_action(
         mut self,
-        input: std::option::Option<crate::types::NetworkConnectionAction>,
+        input: ::std::option::Option<crate::types::NetworkConnectionAction>,
     ) -> Self {
         self.network_connection_action = input;
         self
     }
     /// <p>Information about the PORT_PROBE action described in this finding.</p>
     pub fn port_probe_action(mut self, input: crate::types::PortProbeAction) -> Self {
-        self.port_probe_action = Some(input);
+        self.port_probe_action = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the PORT_PROBE action described in this finding.</p>
     pub fn set_port_probe_action(
         mut self,
-        input: std::option::Option<crate::types::PortProbeAction>,
+        input: ::std::option::Option<crate::types::PortProbeAction>,
     ) -> Self {
         self.port_probe_action = input;
         self
@@ -154,26 +156,26 @@ impl ActionBuilder {
         mut self,
         input: crate::types::KubernetesApiCallAction,
     ) -> Self {
-        self.kubernetes_api_call_action = Some(input);
+        self.kubernetes_api_call_action = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the Kubernetes API call action described in this finding.</p>
     pub fn set_kubernetes_api_call_action(
         mut self,
-        input: std::option::Option<crate::types::KubernetesApiCallAction>,
+        input: ::std::option::Option<crate::types::KubernetesApiCallAction>,
     ) -> Self {
         self.kubernetes_api_call_action = input;
         self
     }
     /// <p>Information about <code>RDS_LOGIN_ATTEMPT</code> action described in this finding.</p>
     pub fn rds_login_attempt_action(mut self, input: crate::types::RdsLoginAttemptAction) -> Self {
-        self.rds_login_attempt_action = Some(input);
+        self.rds_login_attempt_action = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about <code>RDS_LOGIN_ATTEMPT</code> action described in this finding.</p>
     pub fn set_rds_login_attempt_action(
         mut self,
-        input: std::option::Option<crate::types::RdsLoginAttemptAction>,
+        input: ::std::option::Option<crate::types::RdsLoginAttemptAction>,
     ) -> Self {
         self.rds_login_attempt_action = input;
         self

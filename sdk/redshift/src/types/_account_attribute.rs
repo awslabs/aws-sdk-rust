@@ -2,22 +2,23 @@
 
 /// <p>A name value pair that describes an aspect of an account. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccountAttribute {
     /// <p>The name of the attribute.</p>
     #[doc(hidden)]
-    pub attribute_name: std::option::Option<std::string::String>,
+    pub attribute_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of attribute values.</p>
     #[doc(hidden)]
-    pub attribute_values: std::option::Option<std::vec::Vec<crate::types::AttributeValueTarget>>,
+    pub attribute_values:
+        ::std::option::Option<::std::vec::Vec<crate::types::AttributeValueTarget>>,
 }
 impl AccountAttribute {
     /// <p>The name of the attribute.</p>
-    pub fn attribute_name(&self) -> std::option::Option<&str> {
+    pub fn attribute_name(&self) -> ::std::option::Option<&str> {
         self.attribute_name.as_deref()
     }
     /// <p>A list of attribute values.</p>
-    pub fn attribute_values(&self) -> std::option::Option<&[crate::types::AttributeValueTarget]> {
+    pub fn attribute_values(&self) -> ::std::option::Option<&[crate::types::AttributeValueTarget]> {
         self.attribute_values.as_deref()
     }
 }
@@ -30,20 +31,28 @@ impl AccountAttribute {
 
 /// A builder for [`AccountAttribute`](crate::types::AccountAttribute).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AccountAttributeBuilder {
-    pub(crate) attribute_name: std::option::Option<std::string::String>,
+    pub(crate) attribute_name: ::std::option::Option<::std::string::String>,
     pub(crate) attribute_values:
-        std::option::Option<std::vec::Vec<crate::types::AttributeValueTarget>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::AttributeValueTarget>>,
 }
 impl AccountAttributeBuilder {
     /// <p>The name of the attribute.</p>
-    pub fn attribute_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.attribute_name = Some(input.into());
+    pub fn attribute_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.attribute_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the attribute.</p>
-    pub fn set_attribute_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_attribute_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.attribute_name = input;
         self
     }
@@ -55,13 +64,13 @@ impl AccountAttributeBuilder {
     pub fn attribute_values(mut self, input: crate::types::AttributeValueTarget) -> Self {
         let mut v = self.attribute_values.unwrap_or_default();
         v.push(input);
-        self.attribute_values = Some(v);
+        self.attribute_values = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of attribute values.</p>
     pub fn set_attribute_values(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AttributeValueTarget>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeValueTarget>>,
     ) -> Self {
         self.attribute_values = input;
         self

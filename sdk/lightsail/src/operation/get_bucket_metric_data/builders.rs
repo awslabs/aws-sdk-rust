@@ -7,29 +7,29 @@ pub use crate::operation::get_bucket_metric_data::_get_bucket_metric_data_input:
 ///
 /// <p>Returns the data points of a specific metric for an Amazon Lightsail bucket.</p>
 /// <p>Metrics report the utilization of a bucket. View and collect metric data regularly to monitor the number of objects stored in a bucket (including object versions) and the storage space used by those objects.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetBucketMetricDataFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::get_bucket_metric_data::builders::GetBucketMetricDataInputBuilder,
 }
 impl GetBucketMetricDataFluentBuilder {
     /// Creates a new `GetBucketMetricData`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::get_bucket_metric_data::GetBucketMetricData,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::get_bucket_metric_data::GetBucketMetricDataError,
         >,
     > {
@@ -37,30 +37,33 @@ impl GetBucketMetricDataFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_bucket_metric_data::GetBucketMetricDataOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::get_bucket_metric_data::GetBucketMetricDataError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -73,21 +76,21 @@ impl GetBucketMetricDataFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_bucket_metric_data::GetBucketMetricDataOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::get_bucket_metric_data::GetBucketMetricDataError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the bucket for which to get metric data.</p>
-    pub fn bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bucket_name(input.into());
         self
     }
     /// <p>The name of the bucket for which to get metric data.</p>
-    pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bucket_name(input);
         self
     }
@@ -113,31 +116,34 @@ impl GetBucketMetricDataFluentBuilder {
     /// </ul>
     pub fn set_metric_name(
         mut self,
-        input: std::option::Option<crate::types::BucketMetricName>,
+        input: ::std::option::Option<crate::types::BucketMetricName>,
     ) -> Self {
         self.inner = self.inner.set_metric_name(input);
         self
     }
     /// <p>The timestamp indicating the earliest data to be returned.</p>
-    pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+    pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.start_time(input);
         self
     }
     /// <p>The timestamp indicating the earliest data to be returned.</p>
     pub fn set_start_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
     /// <p>The timestamp indicating the latest data to be returned.</p>
-    pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+    pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.end_time(input);
         self
     }
     /// <p>The timestamp indicating the latest data to be returned.</p>
-    pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_end_time(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }
@@ -151,7 +157,7 @@ impl GetBucketMetricDataFluentBuilder {
     /// <p>The granularity, in seconds, of the returned data points.</p> <note>
     /// <p>Bucket storage metrics are reported once per day. Therefore, you should specify a period of 86400 seconds, which is the number of seconds in a day.</p>
     /// </note>
-    pub fn set_period(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_period(input);
         self
     }
@@ -183,7 +189,7 @@ impl GetBucketMetricDataFluentBuilder {
     /// </ul>
     pub fn set_statistics(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::MetricStatistic>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricStatistic>>,
     ) -> Self {
         self.inner = self.inner.set_statistics(input);
         self
@@ -196,7 +202,7 @@ impl GetBucketMetricDataFluentBuilder {
     }
     /// <p>The unit for the metric data request.</p>
     /// <p>Valid units depend on the metric data being requested. For the valid units with each available metric, see the <code>metricName</code> parameter.</p>
-    pub fn set_unit(mut self, input: std::option::Option<crate::types::MetricUnit>) -> Self {
+    pub fn set_unit(mut self, input: ::std::option::Option<crate::types::MetricUnit>) -> Self {
         self.inner = self.inner.set_unit(input);
         self
     }

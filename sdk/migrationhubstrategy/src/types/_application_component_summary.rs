@@ -2,22 +2,22 @@
 
 /// <p> Contains the summary of application components. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApplicationComponentSummary {
     /// <p> Contains the name of application types. </p>
     #[doc(hidden)]
-    pub app_type: std::option::Option<crate::types::AppType>,
+    pub app_type: ::std::option::Option<crate::types::AppType>,
     /// <p> Contains the count of application type. </p>
     #[doc(hidden)]
-    pub count: std::option::Option<i32>,
+    pub count: ::std::option::Option<i32>,
 }
 impl ApplicationComponentSummary {
     /// <p> Contains the name of application types. </p>
-    pub fn app_type(&self) -> std::option::Option<&crate::types::AppType> {
+    pub fn app_type(&self) -> ::std::option::Option<&crate::types::AppType> {
         self.app_type.as_ref()
     }
     /// <p> Contains the count of application type. </p>
-    pub fn count(&self) -> std::option::Option<i32> {
+    pub fn count(&self) -> ::std::option::Option<i32> {
         self.count
     }
 }
@@ -30,29 +30,31 @@ impl ApplicationComponentSummary {
 
 /// A builder for [`ApplicationComponentSummary`](crate::types::ApplicationComponentSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ApplicationComponentSummaryBuilder {
-    pub(crate) app_type: std::option::Option<crate::types::AppType>,
-    pub(crate) count: std::option::Option<i32>,
+    pub(crate) app_type: ::std::option::Option<crate::types::AppType>,
+    pub(crate) count: ::std::option::Option<i32>,
 }
 impl ApplicationComponentSummaryBuilder {
     /// <p> Contains the name of application types. </p>
     pub fn app_type(mut self, input: crate::types::AppType) -> Self {
-        self.app_type = Some(input);
+        self.app_type = ::std::option::Option::Some(input);
         self
     }
     /// <p> Contains the name of application types. </p>
-    pub fn set_app_type(mut self, input: std::option::Option<crate::types::AppType>) -> Self {
+    pub fn set_app_type(mut self, input: ::std::option::Option<crate::types::AppType>) -> Self {
         self.app_type = input;
         self
     }
     /// <p> Contains the count of application type. </p>
     pub fn count(mut self, input: i32) -> Self {
-        self.count = Some(input);
+        self.count = ::std::option::Option::Some(input);
         self
     }
     /// <p> Contains the count of application type. </p>
-    pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.count = input;
         self
     }

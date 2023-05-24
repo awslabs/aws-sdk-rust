@@ -2,15 +2,15 @@
 
 /// <p>Specifies the status and settings of the voice channel for an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VoiceChannelRequest {
     /// <p>Specifies whether to enable the voice channel for the application.</p>
     #[doc(hidden)]
-    pub enabled: std::option::Option<bool>,
+    pub enabled: ::std::option::Option<bool>,
 }
 impl VoiceChannelRequest {
     /// <p>Specifies whether to enable the voice channel for the application.</p>
-    pub fn enabled(&self) -> std::option::Option<bool> {
+    pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
 }
@@ -23,18 +23,20 @@ impl VoiceChannelRequest {
 
 /// A builder for [`VoiceChannelRequest`](crate::types::VoiceChannelRequest).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VoiceChannelRequestBuilder {
-    pub(crate) enabled: std::option::Option<bool>,
+    pub(crate) enabled: ::std::option::Option<bool>,
 }
 impl VoiceChannelRequestBuilder {
     /// <p>Specifies whether to enable the voice channel for the application.</p>
     pub fn enabled(mut self, input: bool) -> Self {
-        self.enabled = Some(input);
+        self.enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether to enable the voice channel for the application.</p>
-    pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
     }

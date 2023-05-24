@@ -40,13 +40,13 @@
 /// Timecode Burnin Font Size
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum TimecodeBurninFontSize {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,7 +60,7 @@ pub enum TimecodeBurninFontSize {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for TimecodeBurninFontSize {
+impl ::std::convert::From<&str> for TimecodeBurninFontSize {
     fn from(s: &str) -> Self {
         match s {
             "EXTRA_SMALL_10" => TimecodeBurninFontSize::ExtraSmall10,
@@ -73,11 +73,11 @@ impl std::convert::From<&str> for TimecodeBurninFontSize {
         }
     }
 }
-impl std::str::FromStr for TimecodeBurninFontSize {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for TimecodeBurninFontSize {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TimecodeBurninFontSize::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(TimecodeBurninFontSize::from(s))
     }
 }
 impl TimecodeBurninFontSize {
@@ -96,7 +96,7 @@ impl TimecodeBurninFontSize {
         &["EXTRA_SMALL_10", "LARGE_48", "MEDIUM_32", "SMALL_16"]
     }
 }
-impl AsRef<str> for TimecodeBurninFontSize {
+impl ::std::convert::AsRef<str> for TimecodeBurninFontSize {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

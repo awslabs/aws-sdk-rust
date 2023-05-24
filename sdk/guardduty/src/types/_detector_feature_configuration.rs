@@ -2,32 +2,32 @@
 
 /// <p>Contains information about a GuardDuty feature.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetectorFeatureConfiguration {
     /// <p>The name of the feature.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<crate::types::DetectorFeature>,
+    pub name: ::std::option::Option<crate::types::DetectorFeature>,
     /// <p>The status of the feature.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::FeatureStatus>,
+    pub status: ::std::option::Option<crate::types::FeatureStatus>,
     /// <p>Additional configuration for a resource.</p>
     #[doc(hidden)]
     pub additional_configuration:
-        std::option::Option<std::vec::Vec<crate::types::DetectorAdditionalConfiguration>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::DetectorAdditionalConfiguration>>,
 }
 impl DetectorFeatureConfiguration {
     /// <p>The name of the feature.</p>
-    pub fn name(&self) -> std::option::Option<&crate::types::DetectorFeature> {
+    pub fn name(&self) -> ::std::option::Option<&crate::types::DetectorFeature> {
         self.name.as_ref()
     }
     /// <p>The status of the feature.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::FeatureStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::FeatureStatus> {
         self.status.as_ref()
     }
     /// <p>Additional configuration for a resource.</p>
     pub fn additional_configuration(
         &self,
-    ) -> std::option::Option<&[crate::types::DetectorAdditionalConfiguration]> {
+    ) -> ::std::option::Option<&[crate::types::DetectorAdditionalConfiguration]> {
         self.additional_configuration.as_deref()
     }
 }
@@ -40,31 +40,33 @@ impl DetectorFeatureConfiguration {
 
 /// A builder for [`DetectorFeatureConfiguration`](crate::types::DetectorFeatureConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DetectorFeatureConfigurationBuilder {
-    pub(crate) name: std::option::Option<crate::types::DetectorFeature>,
-    pub(crate) status: std::option::Option<crate::types::FeatureStatus>,
+    pub(crate) name: ::std::option::Option<crate::types::DetectorFeature>,
+    pub(crate) status: ::std::option::Option<crate::types::FeatureStatus>,
     pub(crate) additional_configuration:
-        std::option::Option<std::vec::Vec<crate::types::DetectorAdditionalConfiguration>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::DetectorAdditionalConfiguration>>,
 }
 impl DetectorFeatureConfigurationBuilder {
     /// <p>The name of the feature.</p>
     pub fn name(mut self, input: crate::types::DetectorFeature) -> Self {
-        self.name = Some(input);
+        self.name = ::std::option::Option::Some(input);
         self
     }
     /// <p>The name of the feature.</p>
-    pub fn set_name(mut self, input: std::option::Option<crate::types::DetectorFeature>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::DetectorFeature>) -> Self {
         self.name = input;
         self
     }
     /// <p>The status of the feature.</p>
     pub fn status(mut self, input: crate::types::FeatureStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the feature.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::FeatureStatus>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::FeatureStatus>) -> Self {
         self.status = input;
         self
     }
@@ -79,13 +81,15 @@ impl DetectorFeatureConfigurationBuilder {
     ) -> Self {
         let mut v = self.additional_configuration.unwrap_or_default();
         v.push(input);
-        self.additional_configuration = Some(v);
+        self.additional_configuration = ::std::option::Option::Some(v);
         self
     }
     /// <p>Additional configuration for a resource.</p>
     pub fn set_additional_configuration(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DetectorAdditionalConfiguration>>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::DetectorAdditionalConfiguration>,
+        >,
     ) -> Self {
         self.additional_configuration = input;
         self

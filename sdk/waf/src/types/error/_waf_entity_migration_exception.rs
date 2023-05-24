@@ -11,58 +11,58 @@
 /// <li> <p> <code>S3_INTERNAL_ERROR</code> - AWS WAF failed to create the template in the S3 bucket for another reason.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WafEntityMigrationException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
-    pub migration_error_type: std::option::Option<crate::types::MigrationErrorType>,
+    pub migration_error_type: ::std::option::Option<crate::types::MigrationErrorType>,
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
-    pub migration_error_reason: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
+    pub migration_error_reason: ::std::option::Option<::std::string::String>,
+    pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl WafEntityMigrationException {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn migration_error_type(&self) -> std::option::Option<&crate::types::MigrationErrorType> {
+    pub fn migration_error_type(&self) -> ::std::option::Option<&crate::types::MigrationErrorType> {
         self.migration_error_type.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn migration_error_reason(&self) -> std::option::Option<&str> {
+    pub fn migration_error_reason(&self) -> ::std::option::Option<&str> {
         self.migration_error_reason.as_deref()
     }
 }
 impl WafEntityMigrationException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for WafEntityMigrationException {
+impl ::std::fmt::Display for WafEntityMigrationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(
+        ::std::write!(
             f,
             "WafEntityMigrationException [WAFEntityMigrationException]"
         )?;
-        if let Some(inner_1) = &self.message {
+        if let ::std::option::Option::Some(inner_1) = &self.message {
             {
-                write!(f, ": {}", inner_1)?;
+                ::std::write!(f, ": {}", inner_1)?;
             }
         }
         Ok(())
     }
 }
-impl std::error::Error for WafEntityMigrationException {}
-impl aws_http::request_id::RequestId for crate::types::error::WafEntityMigrationException {
+impl ::std::error::Error for WafEntityMigrationException {}
+impl ::aws_http::request_id::RequestId for crate::types::error::WafEntityMigrationException {
     fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for WafEntityMigrationException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for WafEntityMigrationException {
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
@@ -75,52 +75,57 @@ impl WafEntityMigrationException {
 
 /// A builder for [`WafEntityMigrationException`](crate::types::error::WafEntityMigrationException).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct WafEntityMigrationExceptionBuilder {
-    pub(crate) message: std::option::Option<std::string::String>,
-    pub(crate) migration_error_type: std::option::Option<crate::types::MigrationErrorType>,
-    pub(crate) migration_error_reason: std::option::Option<std::string::String>,
-    meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
+    pub(crate) migration_error_type: ::std::option::Option<crate::types::MigrationErrorType>,
+    pub(crate) migration_error_reason: ::std::option::Option<::std::string::String>,
+    meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl WafEntityMigrationExceptionBuilder {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn migration_error_type(mut self, input: crate::types::MigrationErrorType) -> Self {
-        self.migration_error_type = Some(input);
+        self.migration_error_type = ::std::option::Option::Some(input);
         self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_migration_error_type(
         mut self,
-        input: std::option::Option<crate::types::MigrationErrorType>,
+        input: ::std::option::Option<crate::types::MigrationErrorType>,
     ) -> Self {
         self.migration_error_type = input;
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn migration_error_reason(mut self, input: impl Into<std::string::String>) -> Self {
-        self.migration_error_reason = Some(input.into());
+    pub fn migration_error_reason(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.migration_error_reason = ::std::option::Option::Some(input.into());
         self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_migration_error_reason(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.migration_error_reason = input;
         self
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
         self.meta = Some(meta);
         self
     }
@@ -128,7 +133,7 @@ impl WafEntityMigrationExceptionBuilder {
     /// Sets error metadata
     pub fn set_meta(
         &mut self,
-        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
     ) -> &mut Self {
         self.meta = meta;
         self

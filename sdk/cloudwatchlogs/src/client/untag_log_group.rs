@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UntagLogGroup`](crate::operation::untag_log_group::builders::UntagLogGroupFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`log_group_name(impl Into<String>)`](crate::operation::untag_log_group::builders::UntagLogGroupFluentBuilder::log_group_name) / [`set_log_group_name(Option<String>)`](crate::operation::untag_log_group::builders::UntagLogGroupFluentBuilder::set_log_group_name): <p>The name of the log group.</p>
+    ///   - [`log_group_name(impl ::std::convert::Into<String>)`](crate::operation::untag_log_group::builders::UntagLogGroupFluentBuilder::log_group_name) / [`set_log_group_name(Option<String>)`](crate::operation::untag_log_group::builders::UntagLogGroupFluentBuilder::set_log_group_name): <p>The name of the log group.</p>
     ///   - [`tags(Vec<String>)`](crate::operation::untag_log_group::builders::UntagLogGroupFluentBuilder::tags) / [`set_tags(Option<Vec<String>>)`](crate::operation::untag_log_group::builders::UntagLogGroupFluentBuilder::set_tags): <p>The tag keys. The corresponding tags are removed from the log group.</p>
     /// - On success, responds with [`UntagLogGroupOutput`](crate::operation::untag_log_group::UntagLogGroupOutput)
     /// - On failure, responds with [`SdkError<UntagLogGroupError>`](crate::operation::untag_log_group::UntagLogGroupError)

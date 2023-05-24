@@ -2,15 +2,15 @@
 
 /// <p>Organization-wide EC2 instances with findings scan configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OrganizationScanEc2InstanceWithFindings {
     /// <p>Whether scanning EBS volumes should be auto-enabled for new members joining the organization.</p>
     #[doc(hidden)]
-    pub ebs_volumes: std::option::Option<crate::types::OrganizationEbsVolumes>,
+    pub ebs_volumes: ::std::option::Option<crate::types::OrganizationEbsVolumes>,
 }
 impl OrganizationScanEc2InstanceWithFindings {
     /// <p>Whether scanning EBS volumes should be auto-enabled for new members joining the organization.</p>
-    pub fn ebs_volumes(&self) -> std::option::Option<&crate::types::OrganizationEbsVolumes> {
+    pub fn ebs_volumes(&self) -> ::std::option::Option<&crate::types::OrganizationEbsVolumes> {
         self.ebs_volumes.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl OrganizationScanEc2InstanceWithFindings {
 
 /// A builder for [`OrganizationScanEc2InstanceWithFindings`](crate::types::OrganizationScanEc2InstanceWithFindings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OrganizationScanEc2InstanceWithFindingsBuilder {
-    pub(crate) ebs_volumes: std::option::Option<crate::types::OrganizationEbsVolumes>,
+    pub(crate) ebs_volumes: ::std::option::Option<crate::types::OrganizationEbsVolumes>,
 }
 impl OrganizationScanEc2InstanceWithFindingsBuilder {
     /// <p>Whether scanning EBS volumes should be auto-enabled for new members joining the organization.</p>
     pub fn ebs_volumes(mut self, input: crate::types::OrganizationEbsVolumes) -> Self {
-        self.ebs_volumes = Some(input);
+        self.ebs_volumes = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether scanning EBS volumes should be auto-enabled for new members joining the organization.</p>
     pub fn set_ebs_volumes(
         mut self,
-        input: std::option::Option<crate::types::OrganizationEbsVolumes>,
+        input: ::std::option::Option<crate::types::OrganizationEbsVolumes>,
     ) -> Self {
         self.ebs_volumes = input;
         self

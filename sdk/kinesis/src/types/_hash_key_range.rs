@@ -2,22 +2,22 @@
 
 /// <p>The range of possible hash key values for the shard, which is a set of ordered contiguous positive integers.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HashKeyRange {
     /// <p>The starting hash key of the hash key range.</p>
     #[doc(hidden)]
-    pub starting_hash_key: std::option::Option<std::string::String>,
+    pub starting_hash_key: ::std::option::Option<::std::string::String>,
     /// <p>The ending hash key of the hash key range.</p>
     #[doc(hidden)]
-    pub ending_hash_key: std::option::Option<std::string::String>,
+    pub ending_hash_key: ::std::option::Option<::std::string::String>,
 }
 impl HashKeyRange {
     /// <p>The starting hash key of the hash key range.</p>
-    pub fn starting_hash_key(&self) -> std::option::Option<&str> {
+    pub fn starting_hash_key(&self) -> ::std::option::Option<&str> {
         self.starting_hash_key.as_deref()
     }
     /// <p>The ending hash key of the hash key range.</p>
-    pub fn ending_hash_key(&self) -> std::option::Option<&str> {
+    pub fn ending_hash_key(&self) -> ::std::option::Option<&str> {
         self.ending_hash_key.as_deref()
     }
 }
@@ -30,32 +30,43 @@ impl HashKeyRange {
 
 /// A builder for [`HashKeyRange`](crate::types::HashKeyRange).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct HashKeyRangeBuilder {
-    pub(crate) starting_hash_key: std::option::Option<std::string::String>,
-    pub(crate) ending_hash_key: std::option::Option<std::string::String>,
+    pub(crate) starting_hash_key: ::std::option::Option<::std::string::String>,
+    pub(crate) ending_hash_key: ::std::option::Option<::std::string::String>,
 }
 impl HashKeyRangeBuilder {
     /// <p>The starting hash key of the hash key range.</p>
-    pub fn starting_hash_key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.starting_hash_key = Some(input.into());
+    pub fn starting_hash_key(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.starting_hash_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The starting hash key of the hash key range.</p>
     pub fn set_starting_hash_key(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.starting_hash_key = input;
         self
     }
     /// <p>The ending hash key of the hash key range.</p>
-    pub fn ending_hash_key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ending_hash_key = Some(input.into());
+    pub fn ending_hash_key(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.ending_hash_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ending hash key of the hash key range.</p>
-    pub fn set_ending_hash_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ending_hash_key(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.ending_hash_key = input;
         self
     }

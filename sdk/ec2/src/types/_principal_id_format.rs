@@ -2,22 +2,22 @@
 
 /// <p>PrincipalIdFormat description</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PrincipalIdFormat {
     /// <p>PrincipalIdFormatARN description</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>PrincipalIdFormatStatuses description</p>
     #[doc(hidden)]
-    pub statuses: std::option::Option<std::vec::Vec<crate::types::IdFormat>>,
+    pub statuses: ::std::option::Option<::std::vec::Vec<crate::types::IdFormat>>,
 }
 impl PrincipalIdFormat {
     /// <p>PrincipalIdFormatARN description</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>PrincipalIdFormatStatuses description</p>
-    pub fn statuses(&self) -> std::option::Option<&[crate::types::IdFormat]> {
+    pub fn statuses(&self) -> ::std::option::Option<&[crate::types::IdFormat]> {
         self.statuses.as_deref()
     }
 }
@@ -30,19 +30,21 @@ impl PrincipalIdFormat {
 
 /// A builder for [`PrincipalIdFormat`](crate::types::PrincipalIdFormat).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PrincipalIdFormatBuilder {
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) statuses: std::option::Option<std::vec::Vec<crate::types::IdFormat>>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) statuses: ::std::option::Option<::std::vec::Vec<crate::types::IdFormat>>,
 }
 impl PrincipalIdFormatBuilder {
     /// <p>PrincipalIdFormatARN description</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>PrincipalIdFormatARN description</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
@@ -54,13 +56,13 @@ impl PrincipalIdFormatBuilder {
     pub fn statuses(mut self, input: crate::types::IdFormat) -> Self {
         let mut v = self.statuses.unwrap_or_default();
         v.push(input);
-        self.statuses = Some(v);
+        self.statuses = ::std::option::Option::Some(v);
         self
     }
     /// <p>PrincipalIdFormatStatuses description</p>
     pub fn set_statuses(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::IdFormat>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::IdFormat>>,
     ) -> Self {
         self.statuses = input;
         self

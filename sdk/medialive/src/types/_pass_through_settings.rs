@@ -2,7 +2,7 @@
 
 /// Pass Through Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PassThroughSettings {}
 impl PassThroughSettings {
     /// Creates a new builder-style object to manufacture [`PassThroughSettings`](crate::types::PassThroughSettings).
@@ -13,7 +13,9 @@ impl PassThroughSettings {
 
 /// A builder for [`PassThroughSettings`](crate::types::PassThroughSettings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PassThroughSettingsBuilder {}
 impl PassThroughSettingsBuilder {
     /// Consumes the builder and constructs a [`PassThroughSettings`](crate::types::PassThroughSettings).

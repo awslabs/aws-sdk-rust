@@ -6,30 +6,30 @@ pub use crate::operation::list_outgoing_typed_links::_list_outgoing_typed_links_
 /// Fluent builder constructing a request to `ListOutgoingTypedLinks`.
 ///
 /// <p>Returns a paginated list of all the outgoing <code>TypedLinkSpecifier</code> information for an object. It also supports filtering by typed link facet and identity attributes. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListOutgoingTypedLinksFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner:
         crate::operation::list_outgoing_typed_links::builders::ListOutgoingTypedLinksInputBuilder,
 }
 impl ListOutgoingTypedLinksFluentBuilder {
     /// Creates a new `ListOutgoingTypedLinks`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::list_outgoing_typed_links::ListOutgoingTypedLinks,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::list_outgoing_typed_links::ListOutgoingTypedLinksError,
         >,
     > {
@@ -37,30 +37,33 @@ impl ListOutgoingTypedLinksFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::list_outgoing_typed_links::ListOutgoingTypedLinksOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::list_outgoing_typed_links::ListOutgoingTypedLinksError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -73,21 +76,27 @@ impl ListOutgoingTypedLinksFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::list_outgoing_typed_links::ListOutgoingTypedLinksOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::list_outgoing_typed_links::ListOutgoingTypedLinksError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the directory where you want to list the typed links.</p>
-    pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn directory_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.directory_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the directory where you want to list the typed links.</p>
-    pub fn set_directory_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_directory_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_directory_arn(input);
         self
     }
@@ -99,7 +108,7 @@ impl ListOutgoingTypedLinksFluentBuilder {
     /// <p>A reference that identifies the object whose attributes will be listed.</p>
     pub fn set_object_reference(
         mut self,
-        input: std::option::Option<crate::types::ObjectReference>,
+        input: ::std::option::Option<crate::types::ObjectReference>,
     ) -> Self {
         self.inner = self.inner.set_object_reference(input);
         self
@@ -116,7 +125,7 @@ impl ListOutgoingTypedLinksFluentBuilder {
     /// <p>Provides range filters for multiple attributes. When providing ranges to typed link selection, any inexact ranges must be specified at the end. Any attributes that do not have a range specified are presumed to match the entire range.</p>
     pub fn set_filter_attribute_ranges(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TypedLinkAttributeRange>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::TypedLinkAttributeRange>>,
     ) -> Self {
         self.inner = self.inner.set_filter_attribute_ranges(input);
         self
@@ -129,18 +138,18 @@ impl ListOutgoingTypedLinksFluentBuilder {
     /// <p>Filters are interpreted in the order of the attributes defined on the typed link facet, not the order they are supplied to any API calls.</p>
     pub fn set_filter_typed_link(
         mut self,
-        input: std::option::Option<crate::types::TypedLinkSchemaAndFacetName>,
+        input: ::std::option::Option<crate::types::TypedLinkSchemaAndFacetName>,
     ) -> Self {
         self.inner = self.inner.set_filter_typed_link(input);
         self
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
     /// <p>The pagination token.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
@@ -150,7 +159,7 @@ impl ListOutgoingTypedLinksFluentBuilder {
         self
     }
     /// <p>The maximum number of results to retrieve.</p>
-    pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
@@ -162,7 +171,7 @@ impl ListOutgoingTypedLinksFluentBuilder {
     /// <p>The consistency level to execute the request at.</p>
     pub fn set_consistency_level(
         mut self,
-        input: std::option::Option<crate::types::ConsistencyLevel>,
+        input: ::std::option::Option<crate::types::ConsistencyLevel>,
     ) -> Self {
         self.inner = self.inner.set_consistency_level(input);
         self

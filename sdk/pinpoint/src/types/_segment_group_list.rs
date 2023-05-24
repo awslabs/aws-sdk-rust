@@ -2,22 +2,22 @@
 
 /// <p>Specifies the settings that define the relationships between segment groups for a segment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SegmentGroupList {
     /// <p>An array that defines the set of segment criteria to evaluate when handling segment groups for the segment.</p>
     #[doc(hidden)]
-    pub groups: std::option::Option<std::vec::Vec<crate::types::SegmentGroup>>,
+    pub groups: ::std::option::Option<::std::vec::Vec<crate::types::SegmentGroup>>,
     /// <p>Specifies how to handle multiple segment groups for the segment. For example, if the segment includes three segment groups, whether the resulting segment includes endpoints that match all, any, or none of the segment groups.</p>
     #[doc(hidden)]
-    pub include: std::option::Option<crate::types::Include>,
+    pub include: ::std::option::Option<crate::types::Include>,
 }
 impl SegmentGroupList {
     /// <p>An array that defines the set of segment criteria to evaluate when handling segment groups for the segment.</p>
-    pub fn groups(&self) -> std::option::Option<&[crate::types::SegmentGroup]> {
+    pub fn groups(&self) -> ::std::option::Option<&[crate::types::SegmentGroup]> {
         self.groups.as_deref()
     }
     /// <p>Specifies how to handle multiple segment groups for the segment. For example, if the segment includes three segment groups, whether the resulting segment includes endpoints that match all, any, or none of the segment groups.</p>
-    pub fn include(&self) -> std::option::Option<&crate::types::Include> {
+    pub fn include(&self) -> ::std::option::Option<&crate::types::Include> {
         self.include.as_ref()
     }
 }
@@ -30,10 +30,12 @@ impl SegmentGroupList {
 
 /// A builder for [`SegmentGroupList`](crate::types::SegmentGroupList).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SegmentGroupListBuilder {
-    pub(crate) groups: std::option::Option<std::vec::Vec<crate::types::SegmentGroup>>,
-    pub(crate) include: std::option::Option<crate::types::Include>,
+    pub(crate) groups: ::std::option::Option<::std::vec::Vec<crate::types::SegmentGroup>>,
+    pub(crate) include: ::std::option::Option<crate::types::Include>,
 }
 impl SegmentGroupListBuilder {
     /// Appends an item to `groups`.
@@ -44,24 +46,24 @@ impl SegmentGroupListBuilder {
     pub fn groups(mut self, input: crate::types::SegmentGroup) -> Self {
         let mut v = self.groups.unwrap_or_default();
         v.push(input);
-        self.groups = Some(v);
+        self.groups = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array that defines the set of segment criteria to evaluate when handling segment groups for the segment.</p>
     pub fn set_groups(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SegmentGroup>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SegmentGroup>>,
     ) -> Self {
         self.groups = input;
         self
     }
     /// <p>Specifies how to handle multiple segment groups for the segment. For example, if the segment includes three segment groups, whether the resulting segment includes endpoints that match all, any, or none of the segment groups.</p>
     pub fn include(mut self, input: crate::types::Include) -> Self {
-        self.include = Some(input);
+        self.include = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies how to handle multiple segment groups for the segment. For example, if the segment includes three segment groups, whether the resulting segment includes endpoints that match all, any, or none of the segment groups.</p>
-    pub fn set_include(mut self, input: std::option::Option<crate::types::Include>) -> Self {
+    pub fn set_include(mut self, input: ::std::option::Option<crate::types::Include>) -> Self {
         self.include = input;
         self
     }

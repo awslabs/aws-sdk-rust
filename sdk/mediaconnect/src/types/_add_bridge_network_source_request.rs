@@ -2,43 +2,43 @@
 
 /// Add a network source to an existing bridge.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddBridgeNetworkSourceRequest {
     /// The network source multicast IP.
     #[doc(hidden)]
-    pub multicast_ip: std::option::Option<std::string::String>,
+    pub multicast_ip: ::std::option::Option<::std::string::String>,
     /// The name of the network source. This name is used to reference the source and must be unique among sources in this bridge.
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// The network source's gateway network name.
     #[doc(hidden)]
-    pub network_name: std::option::Option<std::string::String>,
+    pub network_name: ::std::option::Option<::std::string::String>,
     /// The network source port.
     #[doc(hidden)]
-    pub port: std::option::Option<i32>,
+    pub port: ::std::option::Option<i32>,
     /// The network source protocol.
     #[doc(hidden)]
-    pub protocol: std::option::Option<crate::types::Protocol>,
+    pub protocol: ::std::option::Option<crate::types::Protocol>,
 }
 impl AddBridgeNetworkSourceRequest {
     /// The network source multicast IP.
-    pub fn multicast_ip(&self) -> std::option::Option<&str> {
+    pub fn multicast_ip(&self) -> ::std::option::Option<&str> {
         self.multicast_ip.as_deref()
     }
     /// The name of the network source. This name is used to reference the source and must be unique among sources in this bridge.
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// The network source's gateway network name.
-    pub fn network_name(&self) -> std::option::Option<&str> {
+    pub fn network_name(&self) -> ::std::option::Option<&str> {
         self.network_name.as_deref()
     }
     /// The network source port.
-    pub fn port(&self) -> std::option::Option<i32> {
+    pub fn port(&self) -> ::std::option::Option<i32> {
         self.port
     }
     /// The network source protocol.
-    pub fn protocol(&self) -> std::option::Option<&crate::types::Protocol> {
+    pub fn protocol(&self) -> ::std::option::Option<&crate::types::Protocol> {
         self.protocol.as_ref()
     }
 }
@@ -51,62 +51,64 @@ impl AddBridgeNetworkSourceRequest {
 
 /// A builder for [`AddBridgeNetworkSourceRequest`](crate::types::AddBridgeNetworkSourceRequest).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AddBridgeNetworkSourceRequestBuilder {
-    pub(crate) multicast_ip: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) network_name: std::option::Option<std::string::String>,
-    pub(crate) port: std::option::Option<i32>,
-    pub(crate) protocol: std::option::Option<crate::types::Protocol>,
+    pub(crate) multicast_ip: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) network_name: ::std::option::Option<::std::string::String>,
+    pub(crate) port: ::std::option::Option<i32>,
+    pub(crate) protocol: ::std::option::Option<crate::types::Protocol>,
 }
 impl AddBridgeNetworkSourceRequestBuilder {
     /// The network source multicast IP.
-    pub fn multicast_ip(mut self, input: impl Into<std::string::String>) -> Self {
-        self.multicast_ip = Some(input.into());
+    pub fn multicast_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.multicast_ip = ::std::option::Option::Some(input.into());
         self
     }
     /// The network source multicast IP.
-    pub fn set_multicast_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_multicast_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.multicast_ip = input;
         self
     }
     /// The name of the network source. This name is used to reference the source and must be unique among sources in this bridge.
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// The name of the network source. This name is used to reference the source and must be unique among sources in this bridge.
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// The network source's gateway network name.
-    pub fn network_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.network_name = Some(input.into());
+    pub fn network_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.network_name = ::std::option::Option::Some(input.into());
         self
     }
     /// The network source's gateway network name.
-    pub fn set_network_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_network_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.network_name = input;
         self
     }
     /// The network source port.
     pub fn port(mut self, input: i32) -> Self {
-        self.port = Some(input);
+        self.port = ::std::option::Option::Some(input);
         self
     }
     /// The network source port.
-    pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.port = input;
         self
     }
     /// The network source protocol.
     pub fn protocol(mut self, input: crate::types::Protocol) -> Self {
-        self.protocol = Some(input);
+        self.protocol = ::std::option::Option::Some(input);
         self
     }
     /// The network source protocol.
-    pub fn set_protocol(mut self, input: std::option::Option<crate::types::Protocol>) -> Self {
+    pub fn set_protocol(mut self, input: ::std::option::Option<crate::types::Protocol>) -> Self {
         self.protocol = input;
         self
     }

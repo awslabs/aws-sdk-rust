@@ -2,7 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_update_environment_http_error(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::update_environment::UpdateEnvironmentOutput,
@@ -15,7 +15,7 @@ pub fn de_update_environment_http_error(
         _response_body,
     )
     .map_err(crate::operation::update_environment::UpdateEnvironmentError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
+    generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
@@ -67,7 +67,7 @@ pub fn de_update_environment_http_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_update_environment_http_response_with_props(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::update_environment::UpdateEnvironmentOutput,
@@ -84,7 +84,7 @@ pub fn de_update_environment_http_response_with_props(
         )
         .map_err(crate::operation::update_environment::UpdateEnvironmentError::unhandled)?;
         output._set_request_id(
-            aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
+            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
         );
         output.build()
     })
@@ -96,16 +96,16 @@ pub fn de_update_environment(
     mut builder: crate::operation::update_environment::builders::UpdateEnvironmentOutputBuilder,
 ) -> Result<
     crate::operation::update_environment::builders::UpdateEnvironmentOutputBuilder,
-    aws_smithy_xml::decode::XmlDecodeError,
+    ::aws_smithy_xml::decode::XmlDecodeError,
 > {
-    let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
+    let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("UpdateEnvironmentResponse")) {
-        return Err(aws_smithy_xml::decode::XmlDecodeError::custom(format!(
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected UpdateEnvironmentResponse got {:?}",
             start_el
         )));
@@ -113,7 +113,7 @@ pub fn de_update_environment(
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("UpdateEnvironmentResult")) {
-            return Err(aws_smithy_xml::decode::XmlDecodeError::custom(format!(
+            return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
                 "invalid result, expected UpdateEnvironmentResult got {:?}",
                 start_el
             )));
@@ -123,8 +123,8 @@ pub fn de_update_environment(
             s if s.matches("EnvironmentName") /* EnvironmentName com.amazonaws.elasticbeanstalk.synthetic#UpdateEnvironmentOutput$EnvironmentName */ =>  {
                 let var_1 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -136,8 +136,8 @@ pub fn de_update_environment(
             s if s.matches("EnvironmentId") /* EnvironmentId com.amazonaws.elasticbeanstalk.synthetic#UpdateEnvironmentOutput$EnvironmentId */ =>  {
                 let var_2 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -149,8 +149,8 @@ pub fn de_update_environment(
             s if s.matches("ApplicationName") /* ApplicationName com.amazonaws.elasticbeanstalk.synthetic#UpdateEnvironmentOutput$ApplicationName */ =>  {
                 let var_3 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -162,8 +162,8 @@ pub fn de_update_environment(
             s if s.matches("VersionLabel") /* VersionLabel com.amazonaws.elasticbeanstalk.synthetic#UpdateEnvironmentOutput$VersionLabel */ =>  {
                 let var_4 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -175,8 +175,8 @@ pub fn de_update_environment(
             s if s.matches("SolutionStackName") /* SolutionStackName com.amazonaws.elasticbeanstalk.synthetic#UpdateEnvironmentOutput$SolutionStackName */ =>  {
                 let var_5 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -188,8 +188,8 @@ pub fn de_update_environment(
             s if s.matches("PlatformArn") /* PlatformArn com.amazonaws.elasticbeanstalk.synthetic#UpdateEnvironmentOutput$PlatformArn */ =>  {
                 let var_6 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -201,8 +201,8 @@ pub fn de_update_environment(
             s if s.matches("TemplateName") /* TemplateName com.amazonaws.elasticbeanstalk.synthetic#UpdateEnvironmentOutput$TemplateName */ =>  {
                 let var_7 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -214,8 +214,8 @@ pub fn de_update_environment(
             s if s.matches("Description") /* Description com.amazonaws.elasticbeanstalk.synthetic#UpdateEnvironmentOutput$Description */ =>  {
                 let var_8 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -227,8 +227,8 @@ pub fn de_update_environment(
             s if s.matches("EndpointURL") /* EndpointURL com.amazonaws.elasticbeanstalk.synthetic#UpdateEnvironmentOutput$EndpointURL */ =>  {
                 let var_9 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -240,8 +240,8 @@ pub fn de_update_environment(
             s if s.matches("CNAME") /* CNAME com.amazonaws.elasticbeanstalk.synthetic#UpdateEnvironmentOutput$CNAME */ =>  {
                 let var_10 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -253,11 +253,11 @@ pub fn de_update_environment(
             s if s.matches("DateCreated") /* DateCreated com.amazonaws.elasticbeanstalk.synthetic#UpdateEnvironmentOutput$DateCreated */ =>  {
                 let var_11 =
                     Some(
-                        aws_smithy_types::DateTime::from_str(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::date_time::Format::DateTimeWithOffset
+                        ::aws_smithy_types::DateTime::from_str(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            , ::aws_smithy_types::date_time::Format::DateTimeWithOffset
                         )
-                        .map_err(|_|aws_smithy_xml::decode::XmlDecodeError::custom("expected (timestamp: `com.amazonaws.elasticbeanstalk#CreationDate`)"))
+                        .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (timestamp: `com.amazonaws.elasticbeanstalk#CreationDate`)"))
                         ?
                     )
                 ;
@@ -267,11 +267,11 @@ pub fn de_update_environment(
             s if s.matches("DateUpdated") /* DateUpdated com.amazonaws.elasticbeanstalk.synthetic#UpdateEnvironmentOutput$DateUpdated */ =>  {
                 let var_12 =
                     Some(
-                        aws_smithy_types::DateTime::from_str(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::date_time::Format::DateTimeWithOffset
+                        ::aws_smithy_types::DateTime::from_str(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            , ::aws_smithy_types::date_time::Format::DateTimeWithOffset
                         )
-                        .map_err(|_|aws_smithy_xml::decode::XmlDecodeError::custom("expected (timestamp: `com.amazonaws.elasticbeanstalk#UpdateDate`)"))
+                        .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (timestamp: `com.amazonaws.elasticbeanstalk#UpdateDate`)"))
                         ?
                     )
                 ;
@@ -281,9 +281,9 @@ pub fn de_update_environment(
             s if s.matches("Status") /* Status com.amazonaws.elasticbeanstalk.synthetic#UpdateEnvironmentOutput$Status */ =>  {
                 let var_13 =
                     Some(
-                        Result::<crate::types::EnvironmentStatus, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                        Result::<crate::types::EnvironmentStatus, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::EnvironmentStatus::from(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )
                         ?
@@ -296,10 +296,10 @@ pub fn de_update_environment(
                 let var_14 =
                     Some(
                          {
-                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
-                            .map_err(|_|aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.elasticbeanstalk#AbortableOperationInProgress`)"))
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.elasticbeanstalk#AbortableOperationInProgress`)"))
                         }
                         ?
                     )
@@ -310,9 +310,9 @@ pub fn de_update_environment(
             s if s.matches("Health") /* Health com.amazonaws.elasticbeanstalk.synthetic#UpdateEnvironmentOutput$Health */ =>  {
                 let var_15 =
                     Some(
-                        Result::<crate::types::EnvironmentHealth, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                        Result::<crate::types::EnvironmentHealth, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::EnvironmentHealth::from(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )
                         ?
@@ -324,9 +324,9 @@ pub fn de_update_environment(
             s if s.matches("HealthStatus") /* HealthStatus com.amazonaws.elasticbeanstalk.synthetic#UpdateEnvironmentOutput$HealthStatus */ =>  {
                 let var_16 =
                     Some(
-                        Result::<crate::types::EnvironmentHealthStatus, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                        Result::<crate::types::EnvironmentHealthStatus, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::EnvironmentHealthStatus::from(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )
                         ?
@@ -368,8 +368,8 @@ pub fn de_update_environment(
             s if s.matches("EnvironmentArn") /* EnvironmentArn com.amazonaws.elasticbeanstalk.synthetic#UpdateEnvironmentOutput$EnvironmentArn */ =>  {
                 let var_20 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -381,8 +381,8 @@ pub fn de_update_environment(
             s if s.matches("OperationsRole") /* OperationsRole com.amazonaws.elasticbeanstalk.synthetic#UpdateEnvironmentOutput$OperationsRole */ =>  {
                 let var_21 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -395,7 +395,7 @@ pub fn de_update_environment(
         }
         }
     } else {
-        return Err(aws_smithy_xml::decode::XmlDecodeError::custom(
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(
             "expected UpdateEnvironmentResult tag",
         ));
     };

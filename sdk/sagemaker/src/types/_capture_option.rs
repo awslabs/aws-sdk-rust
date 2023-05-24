@@ -2,15 +2,15 @@
 
 /// <p>Specifies data Model Monitor will capture.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CaptureOption {
     /// <p>Specify the boundary of data to capture.</p>
     #[doc(hidden)]
-    pub capture_mode: std::option::Option<crate::types::CaptureMode>,
+    pub capture_mode: ::std::option::Option<crate::types::CaptureMode>,
 }
 impl CaptureOption {
     /// <p>Specify the boundary of data to capture.</p>
-    pub fn capture_mode(&self) -> std::option::Option<&crate::types::CaptureMode> {
+    pub fn capture_mode(&self) -> ::std::option::Option<&crate::types::CaptureMode> {
         self.capture_mode.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl CaptureOption {
 
 /// A builder for [`CaptureOption`](crate::types::CaptureOption).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CaptureOptionBuilder {
-    pub(crate) capture_mode: std::option::Option<crate::types::CaptureMode>,
+    pub(crate) capture_mode: ::std::option::Option<crate::types::CaptureMode>,
 }
 impl CaptureOptionBuilder {
     /// <p>Specify the boundary of data to capture.</p>
     pub fn capture_mode(mut self, input: crate::types::CaptureMode) -> Self {
-        self.capture_mode = Some(input);
+        self.capture_mode = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specify the boundary of data to capture.</p>
     pub fn set_capture_mode(
         mut self,
-        input: std::option::Option<crate::types::CaptureMode>,
+        input: ::std::option::Option<crate::types::CaptureMode>,
     ) -> Self {
         self.capture_mode = input;
         self

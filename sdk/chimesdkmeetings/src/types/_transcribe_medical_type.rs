@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum TranscribeMedicalType {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum TranscribeMedicalType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for TranscribeMedicalType {
+impl ::std::convert::From<&str> for TranscribeMedicalType {
     fn from(s: &str) -> Self {
         match s {
             "CONVERSATION" => TranscribeMedicalType::Conversation,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for TranscribeMedicalType {
         }
     }
 }
-impl std::str::FromStr for TranscribeMedicalType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for TranscribeMedicalType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TranscribeMedicalType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(TranscribeMedicalType::from(s))
     }
 }
 impl TranscribeMedicalType {
@@ -86,7 +86,7 @@ impl TranscribeMedicalType {
         &["CONVERSATION", "DICTATION"]
     }
 }
-impl AsRef<str> for TranscribeMedicalType {
+impl ::std::convert::AsRef<str> for TranscribeMedicalType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

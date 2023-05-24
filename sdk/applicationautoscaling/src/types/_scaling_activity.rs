@@ -2,14 +2,14 @@
 
 /// <p>Represents a scaling activity.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScalingActivity {
     /// <p>The unique identifier of the scaling activity.</p>
     #[doc(hidden)]
-    pub activity_id: std::option::Option<std::string::String>,
+    pub activity_id: ::std::option::Option<::std::string::String>,
     /// <p>The namespace of the Amazon Web Services service that provides the resource, or a <code>custom-resource</code>.</p>
     #[doc(hidden)]
-    pub service_namespace: std::option::Option<crate::types::ServiceNamespace>,
+    pub service_namespace: ::std::option::Option<crate::types::ServiceNamespace>,
     /// <p>The identifier of the resource associated with the scaling activity. This string consists of the resource type and unique identifier.</p>
     /// <ul>
     /// <li> <p>ECS service - The resource type is <code>service</code> and the unique identifier is the cluster name and service name. Example: <code>service/default/sample-webapp</code>.</p> </li>
@@ -31,7 +31,7 @@ pub struct ScalingActivity {
     /// <li> <p>SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub resource_id: std::option::Option<std::string::String>,
+    pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The scalable dimension. This string consists of the service namespace, resource type, and scaling property.</p>
     /// <ul>
     /// <li> <p> <code>ecs:service:DesiredCount</code> - The desired task count of an ECS service.</p> </li>
@@ -57,39 +57,39 @@ pub struct ScalingActivity {
     /// <li> <p> <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker Serverless endpoint.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub scalable_dimension: std::option::Option<crate::types::ScalableDimension>,
+    pub scalable_dimension: ::std::option::Option<crate::types::ScalableDimension>,
     /// <p>A simple description of what action the scaling activity intends to accomplish.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>A simple description of what caused the scaling activity to happen.</p>
     #[doc(hidden)]
-    pub cause: std::option::Option<std::string::String>,
+    pub cause: ::std::option::Option<::std::string::String>,
     /// <p>The Unix timestamp for when the scaling activity began.</p>
     #[doc(hidden)]
-    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Unix timestamp for when the scaling activity ended.</p>
     #[doc(hidden)]
-    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates the status of the scaling activity.</p>
     #[doc(hidden)]
-    pub status_code: std::option::Option<crate::types::ScalingActivityStatusCode>,
+    pub status_code: ::std::option::Option<crate::types::ScalingActivityStatusCode>,
     /// <p>A simple message about the current status of the scaling activity.</p>
     #[doc(hidden)]
-    pub status_message: std::option::Option<std::string::String>,
+    pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The details about the scaling activity.</p>
     #[doc(hidden)]
-    pub details: std::option::Option<std::string::String>,
+    pub details: ::std::option::Option<::std::string::String>,
     /// <p>Machine-readable data that describes the reason for a not scaled activity. Only available when <a href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_DescribeScalingActivities.html">DescribeScalingActivities</a> includes not scaled activities.</p>
     #[doc(hidden)]
-    pub not_scaled_reasons: std::option::Option<std::vec::Vec<crate::types::NotScaledReason>>,
+    pub not_scaled_reasons: ::std::option::Option<::std::vec::Vec<crate::types::NotScaledReason>>,
 }
 impl ScalingActivity {
     /// <p>The unique identifier of the scaling activity.</p>
-    pub fn activity_id(&self) -> std::option::Option<&str> {
+    pub fn activity_id(&self) -> ::std::option::Option<&str> {
         self.activity_id.as_deref()
     }
     /// <p>The namespace of the Amazon Web Services service that provides the resource, or a <code>custom-resource</code>.</p>
-    pub fn service_namespace(&self) -> std::option::Option<&crate::types::ServiceNamespace> {
+    pub fn service_namespace(&self) -> ::std::option::Option<&crate::types::ServiceNamespace> {
         self.service_namespace.as_ref()
     }
     /// <p>The identifier of the resource associated with the scaling activity. This string consists of the resource type and unique identifier.</p>
@@ -112,7 +112,7 @@ impl ScalingActivity {
     /// <li> <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p> </li>
     /// <li> <p>SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li>
     /// </ul>
-    pub fn resource_id(&self) -> std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<&str> {
         self.resource_id.as_deref()
     }
     /// <p>The scalable dimension. This string consists of the service namespace, resource type, and scaling property.</p>
@@ -139,39 +139,39 @@ impl ScalingActivity {
     /// <li> <p> <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p> </li>
     /// <li> <p> <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker Serverless endpoint.</p> </li>
     /// </ul>
-    pub fn scalable_dimension(&self) -> std::option::Option<&crate::types::ScalableDimension> {
+    pub fn scalable_dimension(&self) -> ::std::option::Option<&crate::types::ScalableDimension> {
         self.scalable_dimension.as_ref()
     }
     /// <p>A simple description of what action the scaling activity intends to accomplish.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>A simple description of what caused the scaling activity to happen.</p>
-    pub fn cause(&self) -> std::option::Option<&str> {
+    pub fn cause(&self) -> ::std::option::Option<&str> {
         self.cause.as_deref()
     }
     /// <p>The Unix timestamp for when the scaling activity began.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The Unix timestamp for when the scaling activity ended.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>Indicates the status of the scaling activity.</p>
-    pub fn status_code(&self) -> std::option::Option<&crate::types::ScalingActivityStatusCode> {
+    pub fn status_code(&self) -> ::std::option::Option<&crate::types::ScalingActivityStatusCode> {
         self.status_code.as_ref()
     }
     /// <p>A simple message about the current status of the scaling activity.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<&str> {
         self.status_message.as_deref()
     }
     /// <p>The details about the scaling activity.</p>
-    pub fn details(&self) -> std::option::Option<&str> {
+    pub fn details(&self) -> ::std::option::Option<&str> {
         self.details.as_deref()
     }
     /// <p>Machine-readable data that describes the reason for a not scaled activity. Only available when <a href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_DescribeScalingActivities.html">DescribeScalingActivities</a> includes not scaled activities.</p>
-    pub fn not_scaled_reasons(&self) -> std::option::Option<&[crate::types::NotScaledReason]> {
+    pub fn not_scaled_reasons(&self) -> ::std::option::Option<&[crate::types::NotScaledReason]> {
         self.not_scaled_reasons.as_deref()
     }
 }
@@ -184,42 +184,44 @@ impl ScalingActivity {
 
 /// A builder for [`ScalingActivity`](crate::types::ScalingActivity).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ScalingActivityBuilder {
-    pub(crate) activity_id: std::option::Option<std::string::String>,
-    pub(crate) service_namespace: std::option::Option<crate::types::ServiceNamespace>,
-    pub(crate) resource_id: std::option::Option<std::string::String>,
-    pub(crate) scalable_dimension: std::option::Option<crate::types::ScalableDimension>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) cause: std::option::Option<std::string::String>,
-    pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) status_code: std::option::Option<crate::types::ScalingActivityStatusCode>,
-    pub(crate) status_message: std::option::Option<std::string::String>,
-    pub(crate) details: std::option::Option<std::string::String>,
+    pub(crate) activity_id: ::std::option::Option<::std::string::String>,
+    pub(crate) service_namespace: ::std::option::Option<crate::types::ServiceNamespace>,
+    pub(crate) resource_id: ::std::option::Option<::std::string::String>,
+    pub(crate) scalable_dimension: ::std::option::Option<crate::types::ScalableDimension>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) cause: ::std::option::Option<::std::string::String>,
+    pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) status_code: ::std::option::Option<crate::types::ScalingActivityStatusCode>,
+    pub(crate) status_message: ::std::option::Option<::std::string::String>,
+    pub(crate) details: ::std::option::Option<::std::string::String>,
     pub(crate) not_scaled_reasons:
-        std::option::Option<std::vec::Vec<crate::types::NotScaledReason>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::NotScaledReason>>,
 }
 impl ScalingActivityBuilder {
     /// <p>The unique identifier of the scaling activity.</p>
-    pub fn activity_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.activity_id = Some(input.into());
+    pub fn activity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.activity_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the scaling activity.</p>
-    pub fn set_activity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_activity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.activity_id = input;
         self
     }
     /// <p>The namespace of the Amazon Web Services service that provides the resource, or a <code>custom-resource</code>.</p>
     pub fn service_namespace(mut self, input: crate::types::ServiceNamespace) -> Self {
-        self.service_namespace = Some(input);
+        self.service_namespace = ::std::option::Option::Some(input);
         self
     }
     /// <p>The namespace of the Amazon Web Services service that provides the resource, or a <code>custom-resource</code>.</p>
     pub fn set_service_namespace(
         mut self,
-        input: std::option::Option<crate::types::ServiceNamespace>,
+        input: ::std::option::Option<crate::types::ServiceNamespace>,
     ) -> Self {
         self.service_namespace = input;
         self
@@ -244,8 +246,8 @@ impl ScalingActivityBuilder {
     /// <li> <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p> </li>
     /// <li> <p>SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li>
     /// </ul>
-    pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_id = Some(input.into());
+    pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the resource associated with the scaling activity. This string consists of the resource type and unique identifier.</p>
@@ -268,7 +270,7 @@ impl ScalingActivityBuilder {
     /// <li> <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p> </li>
     /// <li> <p>SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li>
     /// </ul>
-    pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
     }
@@ -297,7 +299,7 @@ impl ScalingActivityBuilder {
     /// <li> <p> <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker Serverless endpoint.</p> </li>
     /// </ul>
     pub fn scalable_dimension(mut self, input: crate::types::ScalableDimension) -> Self {
-        self.scalable_dimension = Some(input);
+        self.scalable_dimension = ::std::option::Option::Some(input);
         self
     }
     /// <p>The scalable dimension. This string consists of the service namespace, resource type, and scaling property.</p>
@@ -326,84 +328,93 @@ impl ScalingActivityBuilder {
     /// </ul>
     pub fn set_scalable_dimension(
         mut self,
-        input: std::option::Option<crate::types::ScalableDimension>,
+        input: ::std::option::Option<crate::types::ScalableDimension>,
     ) -> Self {
         self.scalable_dimension = input;
         self
     }
     /// <p>A simple description of what action the scaling activity intends to accomplish.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A simple description of what action the scaling activity intends to accomplish.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>A simple description of what caused the scaling activity to happen.</p>
-    pub fn cause(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cause = Some(input.into());
+    pub fn cause(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cause = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A simple description of what caused the scaling activity to happen.</p>
-    pub fn set_cause(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cause(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cause = input;
         self
     }
     /// <p>The Unix timestamp for when the scaling activity began.</p>
-    pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.start_time = Some(input);
+    pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.start_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Unix timestamp for when the scaling activity began.</p>
     pub fn set_start_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.start_time = input;
         self
     }
     /// <p>The Unix timestamp for when the scaling activity ended.</p>
-    pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.end_time = Some(input);
+    pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.end_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Unix timestamp for when the scaling activity ended.</p>
-    pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_end_time(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
         self.end_time = input;
         self
     }
     /// <p>Indicates the status of the scaling activity.</p>
     pub fn status_code(mut self, input: crate::types::ScalingActivityStatusCode) -> Self {
-        self.status_code = Some(input);
+        self.status_code = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates the status of the scaling activity.</p>
     pub fn set_status_code(
         mut self,
-        input: std::option::Option<crate::types::ScalingActivityStatusCode>,
+        input: ::std::option::Option<crate::types::ScalingActivityStatusCode>,
     ) -> Self {
         self.status_code = input;
         self
     }
     /// <p>A simple message about the current status of the scaling activity.</p>
-    pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status_message = Some(input.into());
+    pub fn status_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A simple message about the current status of the scaling activity.</p>
-    pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.status_message = input;
         self
     }
     /// <p>The details about the scaling activity.</p>
-    pub fn details(mut self, input: impl Into<std::string::String>) -> Self {
-        self.details = Some(input.into());
+    pub fn details(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.details = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The details about the scaling activity.</p>
-    pub fn set_details(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.details = input;
         self
     }
@@ -415,13 +426,13 @@ impl ScalingActivityBuilder {
     pub fn not_scaled_reasons(mut self, input: crate::types::NotScaledReason) -> Self {
         let mut v = self.not_scaled_reasons.unwrap_or_default();
         v.push(input);
-        self.not_scaled_reasons = Some(v);
+        self.not_scaled_reasons = ::std::option::Option::Some(v);
         self
     }
     /// <p>Machine-readable data that describes the reason for a not scaled activity. Only available when <a href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_DescribeScalingActivities.html">DescribeScalingActivities</a> includes not scaled activities.</p>
     pub fn set_not_scaled_reasons(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::NotScaledReason>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::NotScaledReason>>,
     ) -> Self {
         self.not_scaled_reasons = input;
         self

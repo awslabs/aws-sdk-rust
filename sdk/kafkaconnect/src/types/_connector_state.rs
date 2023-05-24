@@ -41,13 +41,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ConnectorState {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,7 +63,7 @@ pub enum ConnectorState {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ConnectorState {
+impl ::std::convert::From<&str> for ConnectorState {
     fn from(s: &str) -> Self {
         match s {
             "CREATING" => ConnectorState::Creating,
@@ -77,11 +77,11 @@ impl std::convert::From<&str> for ConnectorState {
         }
     }
 }
-impl std::str::FromStr for ConnectorState {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ConnectorState {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ConnectorState::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ConnectorState::from(s))
     }
 }
 impl ConnectorState {
@@ -101,7 +101,7 @@ impl ConnectorState {
         &["CREATING", "DELETING", "FAILED", "RUNNING", "UPDATING"]
     }
 }
-impl AsRef<str> for ConnectorState {
+impl ::std::convert::AsRef<str> for ConnectorState {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

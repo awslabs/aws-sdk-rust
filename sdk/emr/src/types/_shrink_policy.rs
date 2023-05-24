@@ -2,24 +2,24 @@
 
 /// <p>Policy for customizing shrink operations. Allows configuration of decommissioning timeout and targeted instance shrinking.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ShrinkPolicy {
     /// <p>The desired timeout for decommissioning an instance. Overrides the default YARN decommissioning timeout.</p>
     #[doc(hidden)]
-    pub decommission_timeout: std::option::Option<i32>,
+    pub decommission_timeout: ::std::option::Option<i32>,
     /// <p>Custom policy for requesting termination protection or termination of specific instances when shrinking an instance group.</p>
     #[doc(hidden)]
-    pub instance_resize_policy: std::option::Option<crate::types::InstanceResizePolicy>,
+    pub instance_resize_policy: ::std::option::Option<crate::types::InstanceResizePolicy>,
 }
 impl ShrinkPolicy {
     /// <p>The desired timeout for decommissioning an instance. Overrides the default YARN decommissioning timeout.</p>
-    pub fn decommission_timeout(&self) -> std::option::Option<i32> {
+    pub fn decommission_timeout(&self) -> ::std::option::Option<i32> {
         self.decommission_timeout
     }
     /// <p>Custom policy for requesting termination protection or termination of specific instances when shrinking an instance group.</p>
     pub fn instance_resize_policy(
         &self,
-    ) -> std::option::Option<&crate::types::InstanceResizePolicy> {
+    ) -> ::std::option::Option<&crate::types::InstanceResizePolicy> {
         self.instance_resize_policy.as_ref()
     }
 }
@@ -32,31 +32,33 @@ impl ShrinkPolicy {
 
 /// A builder for [`ShrinkPolicy`](crate::types::ShrinkPolicy).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ShrinkPolicyBuilder {
-    pub(crate) decommission_timeout: std::option::Option<i32>,
-    pub(crate) instance_resize_policy: std::option::Option<crate::types::InstanceResizePolicy>,
+    pub(crate) decommission_timeout: ::std::option::Option<i32>,
+    pub(crate) instance_resize_policy: ::std::option::Option<crate::types::InstanceResizePolicy>,
 }
 impl ShrinkPolicyBuilder {
     /// <p>The desired timeout for decommissioning an instance. Overrides the default YARN decommissioning timeout.</p>
     pub fn decommission_timeout(mut self, input: i32) -> Self {
-        self.decommission_timeout = Some(input);
+        self.decommission_timeout = ::std::option::Option::Some(input);
         self
     }
     /// <p>The desired timeout for decommissioning an instance. Overrides the default YARN decommissioning timeout.</p>
-    pub fn set_decommission_timeout(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_decommission_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
         self.decommission_timeout = input;
         self
     }
     /// <p>Custom policy for requesting termination protection or termination of specific instances when shrinking an instance group.</p>
     pub fn instance_resize_policy(mut self, input: crate::types::InstanceResizePolicy) -> Self {
-        self.instance_resize_policy = Some(input);
+        self.instance_resize_policy = ::std::option::Option::Some(input);
         self
     }
     /// <p>Custom policy for requesting termination protection or termination of specific instances when shrinking an instance group.</p>
     pub fn set_instance_resize_policy(
         mut self,
-        input: std::option::Option<crate::types::InstanceResizePolicy>,
+        input: ::std::option::Option<crate::types::InstanceResizePolicy>,
     ) -> Self {
         self.instance_resize_policy = input;
         self

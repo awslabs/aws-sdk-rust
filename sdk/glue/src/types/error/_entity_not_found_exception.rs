@@ -2,48 +2,48 @@
 
 /// <p>A specified entity does not exist</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EntityNotFoundException {
     /// <p>A message describing the problem.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether or not the exception relates to a federated source.</p>
     #[doc(hidden)]
-    pub from_federation_source: std::option::Option<bool>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
+    pub from_federation_source: ::std::option::Option<bool>,
+    pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl EntityNotFoundException {
     /// <p>Indicates whether or not the exception relates to a federated source.</p>
-    pub fn from_federation_source(&self) -> std::option::Option<bool> {
+    pub fn from_federation_source(&self) -> ::std::option::Option<bool> {
         self.from_federation_source
     }
 }
 impl EntityNotFoundException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for EntityNotFoundException {
+impl ::std::fmt::Display for EntityNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "EntityNotFoundException")?;
-        if let Some(inner_1) = &self.message {
+        ::std::write!(f, "EntityNotFoundException")?;
+        if let ::std::option::Option::Some(inner_1) = &self.message {
             {
-                write!(f, ": {}", inner_1)?;
+                ::std::write!(f, ": {}", inner_1)?;
             }
         }
         Ok(())
     }
 }
-impl std::error::Error for EntityNotFoundException {}
-impl aws_http::request_id::RequestId for crate::types::error::EntityNotFoundException {
+impl ::std::error::Error for EntityNotFoundException {}
+impl ::aws_http::request_id::RequestId for crate::types::error::EntityNotFoundException {
     fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for EntityNotFoundException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for EntityNotFoundException {
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
@@ -56,35 +56,37 @@ impl EntityNotFoundException {
 
 /// A builder for [`EntityNotFoundException`](crate::types::error::EntityNotFoundException).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EntityNotFoundExceptionBuilder {
-    pub(crate) message: std::option::Option<std::string::String>,
-    pub(crate) from_federation_source: std::option::Option<bool>,
-    meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
+    pub(crate) from_federation_source: ::std::option::Option<bool>,
+    meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl EntityNotFoundExceptionBuilder {
     /// <p>A message describing the problem.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A message describing the problem.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
     /// <p>Indicates whether or not the exception relates to a federated source.</p>
     pub fn from_federation_source(mut self, input: bool) -> Self {
-        self.from_federation_source = Some(input);
+        self.from_federation_source = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether or not the exception relates to a federated source.</p>
-    pub fn set_from_federation_source(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_from_federation_source(mut self, input: ::std::option::Option<bool>) -> Self {
         self.from_federation_source = input;
         self
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
         self.meta = Some(meta);
         self
     }
@@ -92,7 +94,7 @@ impl EntityNotFoundExceptionBuilder {
     /// Sets error metadata
     pub fn set_meta(
         &mut self,
-        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
     ) -> &mut Self {
         self.meta = meta;
         self

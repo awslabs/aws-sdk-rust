@@ -2,7 +2,7 @@
 
 /// <p>Configuration that controls the parallelism of the pipeline. By default, the parallelism configuration specified applies to all executions of the pipeline unless overridden.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ParallelismConfiguration {
     /// <p>The max number of steps that can be executed in parallel. </p>
     #[doc(hidden)]
@@ -23,18 +23,20 @@ impl ParallelismConfiguration {
 
 /// A builder for [`ParallelismConfiguration`](crate::types::ParallelismConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ParallelismConfigurationBuilder {
-    pub(crate) max_parallel_execution_steps: std::option::Option<i32>,
+    pub(crate) max_parallel_execution_steps: ::std::option::Option<i32>,
 }
 impl ParallelismConfigurationBuilder {
     /// <p>The max number of steps that can be executed in parallel. </p>
     pub fn max_parallel_execution_steps(mut self, input: i32) -> Self {
-        self.max_parallel_execution_steps = Some(input);
+        self.max_parallel_execution_steps = ::std::option::Option::Some(input);
         self
     }
     /// <p>The max number of steps that can be executed in parallel. </p>
-    pub fn set_max_parallel_execution_steps(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_parallel_execution_steps(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_parallel_execution_steps = input;
         self
     }

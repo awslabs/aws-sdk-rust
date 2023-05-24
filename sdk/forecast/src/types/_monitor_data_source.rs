@@ -2,29 +2,29 @@
 
 /// <p>The source of the data the monitor used during the evaluation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MonitorDataSource {
     /// <p>The Amazon Resource Name (ARN) of the dataset import job used to import the data that initiated the monitor evaluation.</p>
     #[doc(hidden)]
-    pub dataset_import_job_arn: std::option::Option<std::string::String>,
+    pub dataset_import_job_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the forecast the monitor used during the evaluation.</p>
     #[doc(hidden)]
-    pub forecast_arn: std::option::Option<std::string::String>,
+    pub forecast_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the predictor resource you are monitoring.</p>
     #[doc(hidden)]
-    pub predictor_arn: std::option::Option<std::string::String>,
+    pub predictor_arn: ::std::option::Option<::std::string::String>,
 }
 impl MonitorDataSource {
     /// <p>The Amazon Resource Name (ARN) of the dataset import job used to import the data that initiated the monitor evaluation.</p>
-    pub fn dataset_import_job_arn(&self) -> std::option::Option<&str> {
+    pub fn dataset_import_job_arn(&self) -> ::std::option::Option<&str> {
         self.dataset_import_job_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the forecast the monitor used during the evaluation.</p>
-    pub fn forecast_arn(&self) -> std::option::Option<&str> {
+    pub fn forecast_arn(&self) -> ::std::option::Option<&str> {
         self.forecast_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the predictor resource you are monitoring.</p>
-    pub fn predictor_arn(&self) -> std::option::Option<&str> {
+    pub fn predictor_arn(&self) -> ::std::option::Option<&str> {
         self.predictor_arn.as_deref()
     }
 }
@@ -37,43 +37,54 @@ impl MonitorDataSource {
 
 /// A builder for [`MonitorDataSource`](crate::types::MonitorDataSource).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MonitorDataSourceBuilder {
-    pub(crate) dataset_import_job_arn: std::option::Option<std::string::String>,
-    pub(crate) forecast_arn: std::option::Option<std::string::String>,
-    pub(crate) predictor_arn: std::option::Option<std::string::String>,
+    pub(crate) dataset_import_job_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) forecast_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) predictor_arn: ::std::option::Option<::std::string::String>,
 }
 impl MonitorDataSourceBuilder {
     /// <p>The Amazon Resource Name (ARN) of the dataset import job used to import the data that initiated the monitor evaluation.</p>
-    pub fn dataset_import_job_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.dataset_import_job_arn = Some(input.into());
+    pub fn dataset_import_job_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.dataset_import_job_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset import job used to import the data that initiated the monitor evaluation.</p>
     pub fn set_dataset_import_job_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.dataset_import_job_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the forecast the monitor used during the evaluation.</p>
-    pub fn forecast_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.forecast_arn = Some(input.into());
+    pub fn forecast_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.forecast_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the forecast the monitor used during the evaluation.</p>
-    pub fn set_forecast_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_forecast_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.forecast_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the predictor resource you are monitoring.</p>
-    pub fn predictor_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.predictor_arn = Some(input.into());
+    pub fn predictor_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.predictor_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the predictor resource you are monitoring.</p>
-    pub fn set_predictor_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_predictor_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.predictor_arn = input;
         self
     }

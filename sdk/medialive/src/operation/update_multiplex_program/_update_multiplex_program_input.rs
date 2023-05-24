@@ -2,31 +2,31 @@
 
 /// A request to update a program in a multiplex.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateMultiplexProgramInput {
     /// The ID of the multiplex of the program to update.
     #[doc(hidden)]
-    pub multiplex_id: std::option::Option<std::string::String>,
+    pub multiplex_id: ::std::option::Option<::std::string::String>,
     /// The new settings for a multiplex program.
     #[doc(hidden)]
-    pub multiplex_program_settings: std::option::Option<crate::types::MultiplexProgramSettings>,
+    pub multiplex_program_settings: ::std::option::Option<crate::types::MultiplexProgramSettings>,
     /// The name of the program to update.
     #[doc(hidden)]
-    pub program_name: std::option::Option<std::string::String>,
+    pub program_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateMultiplexProgramInput {
     /// The ID of the multiplex of the program to update.
-    pub fn multiplex_id(&self) -> std::option::Option<&str> {
+    pub fn multiplex_id(&self) -> ::std::option::Option<&str> {
         self.multiplex_id.as_deref()
     }
     /// The new settings for a multiplex program.
     pub fn multiplex_program_settings(
         &self,
-    ) -> std::option::Option<&crate::types::MultiplexProgramSettings> {
+    ) -> ::std::option::Option<&crate::types::MultiplexProgramSettings> {
         self.multiplex_program_settings.as_ref()
     }
     /// The name of the program to update.
-    pub fn program_name(&self) -> std::option::Option<&str> {
+    pub fn program_name(&self) -> ::std::option::Option<&str> {
         self.program_name.as_deref()
     }
 }
@@ -41,21 +41,23 @@ impl UpdateMultiplexProgramInput {
 
 /// A builder for [`UpdateMultiplexProgramInput`](crate::operation::update_multiplex_program::UpdateMultiplexProgramInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateMultiplexProgramInputBuilder {
-    pub(crate) multiplex_id: std::option::Option<std::string::String>,
+    pub(crate) multiplex_id: ::std::option::Option<::std::string::String>,
     pub(crate) multiplex_program_settings:
-        std::option::Option<crate::types::MultiplexProgramSettings>,
-    pub(crate) program_name: std::option::Option<std::string::String>,
+        ::std::option::Option<crate::types::MultiplexProgramSettings>,
+    pub(crate) program_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateMultiplexProgramInputBuilder {
     /// The ID of the multiplex of the program to update.
-    pub fn multiplex_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.multiplex_id = Some(input.into());
+    pub fn multiplex_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.multiplex_id = ::std::option::Option::Some(input.into());
         self
     }
     /// The ID of the multiplex of the program to update.
-    pub fn set_multiplex_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_multiplex_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.multiplex_id = input;
         self
     }
@@ -64,35 +66,35 @@ impl UpdateMultiplexProgramInputBuilder {
         mut self,
         input: crate::types::MultiplexProgramSettings,
     ) -> Self {
-        self.multiplex_program_settings = Some(input);
+        self.multiplex_program_settings = ::std::option::Option::Some(input);
         self
     }
     /// The new settings for a multiplex program.
     pub fn set_multiplex_program_settings(
         mut self,
-        input: std::option::Option<crate::types::MultiplexProgramSettings>,
+        input: ::std::option::Option<crate::types::MultiplexProgramSettings>,
     ) -> Self {
         self.multiplex_program_settings = input;
         self
     }
     /// The name of the program to update.
-    pub fn program_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.program_name = Some(input.into());
+    pub fn program_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.program_name = ::std::option::Option::Some(input.into());
         self
     }
     /// The name of the program to update.
-    pub fn set_program_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_program_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.program_name = input;
         self
     }
     /// Consumes the builder and constructs a [`UpdateMultiplexProgramInput`](crate::operation::update_multiplex_program::UpdateMultiplexProgramInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::update_multiplex_program::UpdateMultiplexProgramInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::update_multiplex_program::UpdateMultiplexProgramInput {
                 multiplex_id: self.multiplex_id,
                 multiplex_program_settings: self.multiplex_program_settings,

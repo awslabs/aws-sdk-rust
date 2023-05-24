@@ -2,36 +2,36 @@
 
 /// <p>Information about the transit gateway in the peering attachment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PeeringTgwInfo {
     /// <p>The ID of the transit gateway.</p>
     #[doc(hidden)]
-    pub transit_gateway_id: std::option::Option<std::string::String>,
+    pub transit_gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the core network where the transit gateway peer is located.</p>
     #[doc(hidden)]
-    pub core_network_id: std::option::Option<std::string::String>,
+    pub core_network_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services account that owns the transit gateway.</p>
     #[doc(hidden)]
-    pub owner_id: std::option::Option<std::string::String>,
+    pub owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The Region of the transit gateway.</p>
     #[doc(hidden)]
-    pub region: std::option::Option<std::string::String>,
+    pub region: ::std::option::Option<::std::string::String>,
 }
 impl PeeringTgwInfo {
     /// <p>The ID of the transit gateway.</p>
-    pub fn transit_gateway_id(&self) -> std::option::Option<&str> {
+    pub fn transit_gateway_id(&self) -> ::std::option::Option<&str> {
         self.transit_gateway_id.as_deref()
     }
     /// <p>The ID of the core network where the transit gateway peer is located.</p>
-    pub fn core_network_id(&self) -> std::option::Option<&str> {
+    pub fn core_network_id(&self) -> ::std::option::Option<&str> {
         self.core_network_id.as_deref()
     }
     /// <p>The ID of the Amazon Web Services account that owns the transit gateway.</p>
-    pub fn owner_id(&self) -> std::option::Option<&str> {
+    pub fn owner_id(&self) -> ::std::option::Option<&str> {
         self.owner_id.as_deref()
     }
     /// <p>The Region of the transit gateway.</p>
-    pub fn region(&self) -> std::option::Option<&str> {
+    pub fn region(&self) -> ::std::option::Option<&str> {
         self.region.as_deref()
     }
 }
@@ -44,54 +44,65 @@ impl PeeringTgwInfo {
 
 /// A builder for [`PeeringTgwInfo`](crate::types::PeeringTgwInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PeeringTgwInfoBuilder {
-    pub(crate) transit_gateway_id: std::option::Option<std::string::String>,
-    pub(crate) core_network_id: std::option::Option<std::string::String>,
-    pub(crate) owner_id: std::option::Option<std::string::String>,
-    pub(crate) region: std::option::Option<std::string::String>,
+    pub(crate) transit_gateway_id: ::std::option::Option<::std::string::String>,
+    pub(crate) core_network_id: ::std::option::Option<::std::string::String>,
+    pub(crate) owner_id: ::std::option::Option<::std::string::String>,
+    pub(crate) region: ::std::option::Option<::std::string::String>,
 }
 impl PeeringTgwInfoBuilder {
     /// <p>The ID of the transit gateway.</p>
-    pub fn transit_gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.transit_gateway_id = Some(input.into());
+    pub fn transit_gateway_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.transit_gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the transit gateway.</p>
     pub fn set_transit_gateway_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.transit_gateway_id = input;
         self
     }
     /// <p>The ID of the core network where the transit gateway peer is located.</p>
-    pub fn core_network_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.core_network_id = Some(input.into());
+    pub fn core_network_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.core_network_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the core network where the transit gateway peer is located.</p>
-    pub fn set_core_network_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_core_network_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.core_network_id = input;
         self
     }
     /// <p>The ID of the Amazon Web Services account that owns the transit gateway.</p>
-    pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.owner_id = Some(input.into());
+    pub fn owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.owner_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that owns the transit gateway.</p>
-    pub fn set_owner_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner_id = input;
         self
     }
     /// <p>The Region of the transit gateway.</p>
-    pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
-        self.region = Some(input.into());
+    pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Region of the transit gateway.</p>
-    pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region = input;
         self
     }

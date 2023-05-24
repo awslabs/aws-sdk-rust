@@ -8,29 +8,29 @@ pub use crate::operation::update_global_table_settings::_update_global_table_set
 /// <p>Updates settings for a global table.</p> <important>
 /// <p>This operation only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version 2017.11.29 (Legacy)</a> of global tables. We recommend using <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version 2019.11.21 (Current)</a> when creating new global tables, as it provides greater flexibility, higher efficiency and consumes less write capacity than 2017.11.29 (Legacy). To determine which version you are using, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.DetermineVersion.html">Determining the version</a>. To update existing global tables from version 2017.11.29 (Legacy) to version 2019.11.21 (Current), see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2globaltables_upgrade.html"> Updating global tables</a>. </p>
 /// </important>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateGlobalTableSettingsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::update_global_table_settings::builders::UpdateGlobalTableSettingsInputBuilder,
 }
 impl UpdateGlobalTableSettingsFluentBuilder {
     /// Creates a new `UpdateGlobalTableSettings`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_global_table_settings::UpdateGlobalTableSettings,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_global_table_settings::UpdateGlobalTableSettingsError,
         >,
     > {
@@ -38,30 +38,33 @@ impl UpdateGlobalTableSettingsFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_global_table_settings::UpdateGlobalTableSettingsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_global_table_settings::UpdateGlobalTableSettingsError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -74,23 +77,26 @@ impl UpdateGlobalTableSettingsFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_global_table_settings::UpdateGlobalTableSettingsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_global_table_settings::UpdateGlobalTableSettingsError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the global table</p>
-    pub fn global_table_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn global_table_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.global_table_name(input.into());
         self
     }
     /// <p>The name of the global table</p>
     pub fn set_global_table_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_global_table_name(input);
         self
@@ -111,7 +117,7 @@ impl UpdateGlobalTableSettingsFluentBuilder {
     /// </ul>
     pub fn set_global_table_billing_mode(
         mut self,
-        input: std::option::Option<crate::types::BillingMode>,
+        input: ::std::option::Option<crate::types::BillingMode>,
     ) -> Self {
         self.inner = self.inner.set_global_table_billing_mode(input);
         self
@@ -126,7 +132,7 @@ impl UpdateGlobalTableSettingsFluentBuilder {
     /// <p>The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException.</code> </p>
     pub fn set_global_table_provisioned_write_capacity_units(
         mut self,
-        input: std::option::Option<i64>,
+        input: ::std::option::Option<i64>,
     ) -> Self {
         self.inner = self
             .inner
@@ -146,7 +152,7 @@ impl UpdateGlobalTableSettingsFluentBuilder {
     /// <p>Auto scaling settings for managing provisioned write capacity for the global table.</p>
     pub fn set_global_table_provisioned_write_capacity_auto_scaling_settings_update(
         mut self,
-        input: std::option::Option<crate::types::AutoScalingSettingsUpdate>,
+        input: ::std::option::Option<crate::types::AutoScalingSettingsUpdate>,
     ) -> Self {
         self.inner = self
             .inner
@@ -170,8 +176,8 @@ impl UpdateGlobalTableSettingsFluentBuilder {
     /// <p>Represents the settings of a global secondary index for a global table that will be modified.</p>
     pub fn set_global_table_global_secondary_index_settings_update(
         mut self,
-        input: std::option::Option<
-            std::vec::Vec<crate::types::GlobalTableGlobalSecondaryIndexSettingsUpdate>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::GlobalTableGlobalSecondaryIndexSettingsUpdate>,
         >,
     ) -> Self {
         self.inner = self
@@ -191,7 +197,7 @@ impl UpdateGlobalTableSettingsFluentBuilder {
     /// <p>Represents the settings for a global table in a Region that will be modified.</p>
     pub fn set_replica_settings_update(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ReplicaSettingsUpdate>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaSettingsUpdate>>,
     ) -> Self {
         self.inner = self.inner.set_replica_settings_update(input);
         self

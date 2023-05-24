@@ -2,22 +2,22 @@
 
 /// <p>Represents a group when you specify a group by criteria or in the response to a query with a specific grouping.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GroupDefinition {
     /// <p>The string that represents the type of group.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::GroupDefinitionType>,
+    pub r#type: ::std::option::Option<crate::types::GroupDefinitionType>,
     /// <p>The string that represents a key for a specified group.</p>
     #[doc(hidden)]
-    pub key: std::option::Option<std::string::String>,
+    pub key: ::std::option::Option<::std::string::String>,
 }
 impl GroupDefinition {
     /// <p>The string that represents the type of group.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::GroupDefinitionType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::GroupDefinitionType> {
         self.r#type.as_ref()
     }
     /// <p>The string that represents a key for a specified group.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<&str> {
         self.key.as_deref()
     }
 }
@@ -30,32 +30,34 @@ impl GroupDefinition {
 
 /// A builder for [`GroupDefinition`](crate::types::GroupDefinition).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GroupDefinitionBuilder {
-    pub(crate) r#type: std::option::Option<crate::types::GroupDefinitionType>,
-    pub(crate) key: std::option::Option<std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::GroupDefinitionType>,
+    pub(crate) key: ::std::option::Option<::std::string::String>,
 }
 impl GroupDefinitionBuilder {
     /// <p>The string that represents the type of group.</p>
     pub fn r#type(mut self, input: crate::types::GroupDefinitionType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The string that represents the type of group.</p>
     pub fn set_type(
         mut self,
-        input: std::option::Option<crate::types::GroupDefinitionType>,
+        input: ::std::option::Option<crate::types::GroupDefinitionType>,
     ) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The string that represents a key for a specified group.</p>
-    pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.key = Some(input.into());
+    pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The string that represents a key for a specified group.</p>
-    pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key = input;
         self
     }

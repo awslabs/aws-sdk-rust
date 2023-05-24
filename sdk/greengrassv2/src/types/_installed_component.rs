@@ -2,59 +2,59 @@
 
 /// <p>Contains information about a component on a Greengrass core device.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstalledComponent {
     /// <p>The name of the component.</p>
     #[doc(hidden)]
-    pub component_name: std::option::Option<std::string::String>,
+    pub component_name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the component.</p>
     #[doc(hidden)]
-    pub component_version: std::option::Option<std::string::String>,
+    pub component_version: ::std::option::Option<::std::string::String>,
     /// <p>The lifecycle state of the component.</p>
     #[doc(hidden)]
-    pub lifecycle_state: std::option::Option<crate::types::InstalledComponentLifecycleState>,
+    pub lifecycle_state: ::std::option::Option<crate::types::InstalledComponentLifecycleState>,
     /// <p>A detailed response about the lifecycle state of the component that explains the reason why a component has an error or is broken.</p>
     #[doc(hidden)]
-    pub lifecycle_state_details: std::option::Option<std::string::String>,
+    pub lifecycle_state_details: ::std::option::Option<::std::string::String>,
     /// <p>Whether or not the component is a root component.</p>
     #[doc(hidden)]
     pub is_root: bool,
     /// <p>The status of how current the data is.</p>
     /// <p>This response is based off of component state changes. The status reflects component disruptions and deployments. If a component only sees a configuration update during a deployment, it might not undergo a state change and this status would not be updated.</p>
     #[doc(hidden)]
-    pub last_status_change_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_status_change_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time the Greengrass core device sent a message containing a component's state to the Amazon Web Services Cloud.</p>
     /// <p>A component does not need to see a state change for this field to update.</p>
     #[doc(hidden)]
-    pub last_reported_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_reported_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The most recent deployment source that brought the component to the Greengrass core device. For a thing group deployment or thing deployment, the source will be the The ID of the deployment. and for local deployments it will be <code>LOCAL</code>.</p> <note>
     /// <p>Any deployment will attempt to reinstall currently broken components on the device, which will update the last installation source.</p>
     /// </note>
     #[doc(hidden)]
-    pub last_installation_source: std::option::Option<std::string::String>,
+    pub last_installation_source: ::std::option::Option<::std::string::String>,
     /// <p>The status codes that indicate the reason for failure whenever the <code>lifecycleState</code> has an error or is in a broken state.</p> <note>
     /// <p>Greengrass nucleus v2.8.0 or later is required to get an accurate <code>lifecycleStatusCodes</code> response. This response can be inaccurate in earlier Greengrass nucleus versions.</p>
     /// </note>
     #[doc(hidden)]
-    pub lifecycle_status_codes: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub lifecycle_status_codes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl InstalledComponent {
     /// <p>The name of the component.</p>
-    pub fn component_name(&self) -> std::option::Option<&str> {
+    pub fn component_name(&self) -> ::std::option::Option<&str> {
         self.component_name.as_deref()
     }
     /// <p>The version of the component.</p>
-    pub fn component_version(&self) -> std::option::Option<&str> {
+    pub fn component_version(&self) -> ::std::option::Option<&str> {
         self.component_version.as_deref()
     }
     /// <p>The lifecycle state of the component.</p>
     pub fn lifecycle_state(
         &self,
-    ) -> std::option::Option<&crate::types::InstalledComponentLifecycleState> {
+    ) -> ::std::option::Option<&crate::types::InstalledComponentLifecycleState> {
         self.lifecycle_state.as_ref()
     }
     /// <p>A detailed response about the lifecycle state of the component that explains the reason why a component has an error or is broken.</p>
-    pub fn lifecycle_state_details(&self) -> std::option::Option<&str> {
+    pub fn lifecycle_state_details(&self) -> ::std::option::Option<&str> {
         self.lifecycle_state_details.as_deref()
     }
     /// <p>Whether or not the component is a root component.</p>
@@ -63,24 +63,26 @@ impl InstalledComponent {
     }
     /// <p>The status of how current the data is.</p>
     /// <p>This response is based off of component state changes. The status reflects component disruptions and deployments. If a component only sees a configuration update during a deployment, it might not undergo a state change and this status would not be updated.</p>
-    pub fn last_status_change_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_status_change_timestamp(
+        &self,
+    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_status_change_timestamp.as_ref()
     }
     /// <p>The last time the Greengrass core device sent a message containing a component's state to the Amazon Web Services Cloud.</p>
     /// <p>A component does not need to see a state change for this field to update.</p>
-    pub fn last_reported_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_reported_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_reported_timestamp.as_ref()
     }
     /// <p>The most recent deployment source that brought the component to the Greengrass core device. For a thing group deployment or thing deployment, the source will be the The ID of the deployment. and for local deployments it will be <code>LOCAL</code>.</p> <note>
     /// <p>Any deployment will attempt to reinstall currently broken components on the device, which will update the last installation source.</p>
     /// </note>
-    pub fn last_installation_source(&self) -> std::option::Option<&str> {
+    pub fn last_installation_source(&self) -> ::std::option::Option<&str> {
         self.last_installation_source.as_deref()
     }
     /// <p>The status codes that indicate the reason for failure whenever the <code>lifecycleState</code> has an error or is in a broken state.</p> <note>
     /// <p>Greengrass nucleus v2.8.0 or later is required to get an accurate <code>lifecycleStatusCodes</code> response. This response can be inaccurate in earlier Greengrass nucleus versions.</p>
     /// </note>
-    pub fn lifecycle_status_codes(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn lifecycle_status_codes(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.lifecycle_status_codes.as_deref()
     }
 }
@@ -93,38 +95,51 @@ impl InstalledComponent {
 
 /// A builder for [`InstalledComponent`](crate::types::InstalledComponent).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InstalledComponentBuilder {
-    pub(crate) component_name: std::option::Option<std::string::String>,
-    pub(crate) component_version: std::option::Option<std::string::String>,
-    pub(crate) lifecycle_state: std::option::Option<crate::types::InstalledComponentLifecycleState>,
-    pub(crate) lifecycle_state_details: std::option::Option<std::string::String>,
-    pub(crate) is_root: std::option::Option<bool>,
-    pub(crate) last_status_change_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_reported_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_installation_source: std::option::Option<std::string::String>,
-    pub(crate) lifecycle_status_codes: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) component_name: ::std::option::Option<::std::string::String>,
+    pub(crate) component_version: ::std::option::Option<::std::string::String>,
+    pub(crate) lifecycle_state:
+        ::std::option::Option<crate::types::InstalledComponentLifecycleState>,
+    pub(crate) lifecycle_state_details: ::std::option::Option<::std::string::String>,
+    pub(crate) is_root: ::std::option::Option<bool>,
+    pub(crate) last_status_change_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_reported_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_installation_source: ::std::option::Option<::std::string::String>,
+    pub(crate) lifecycle_status_codes:
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl InstalledComponentBuilder {
     /// <p>The name of the component.</p>
-    pub fn component_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.component_name = Some(input.into());
+    pub fn component_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.component_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the component.</p>
-    pub fn set_component_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_component_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.component_name = input;
         self
     }
     /// <p>The version of the component.</p>
-    pub fn component_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.component_version = Some(input.into());
+    pub fn component_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.component_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the component.</p>
     pub fn set_component_version(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.component_version = input;
         self
@@ -134,66 +149,69 @@ impl InstalledComponentBuilder {
         mut self,
         input: crate::types::InstalledComponentLifecycleState,
     ) -> Self {
-        self.lifecycle_state = Some(input);
+        self.lifecycle_state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The lifecycle state of the component.</p>
     pub fn set_lifecycle_state(
         mut self,
-        input: std::option::Option<crate::types::InstalledComponentLifecycleState>,
+        input: ::std::option::Option<crate::types::InstalledComponentLifecycleState>,
     ) -> Self {
         self.lifecycle_state = input;
         self
     }
     /// <p>A detailed response about the lifecycle state of the component that explains the reason why a component has an error or is broken.</p>
-    pub fn lifecycle_state_details(mut self, input: impl Into<std::string::String>) -> Self {
-        self.lifecycle_state_details = Some(input.into());
+    pub fn lifecycle_state_details(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.lifecycle_state_details = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A detailed response about the lifecycle state of the component that explains the reason why a component has an error or is broken.</p>
     pub fn set_lifecycle_state_details(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.lifecycle_state_details = input;
         self
     }
     /// <p>Whether or not the component is a root component.</p>
     pub fn is_root(mut self, input: bool) -> Self {
-        self.is_root = Some(input);
+        self.is_root = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether or not the component is a root component.</p>
-    pub fn set_is_root(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_root(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_root = input;
         self
     }
     /// <p>The status of how current the data is.</p>
     /// <p>This response is based off of component state changes. The status reflects component disruptions and deployments. If a component only sees a configuration update during a deployment, it might not undergo a state change and this status would not be updated.</p>
-    pub fn last_status_change_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_status_change_timestamp = Some(input);
+    pub fn last_status_change_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_status_change_timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of how current the data is.</p>
     /// <p>This response is based off of component state changes. The status reflects component disruptions and deployments. If a component only sees a configuration update during a deployment, it might not undergo a state change and this status would not be updated.</p>
     pub fn set_last_status_change_timestamp(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_status_change_timestamp = input;
         self
     }
     /// <p>The last time the Greengrass core device sent a message containing a component's state to the Amazon Web Services Cloud.</p>
     /// <p>A component does not need to see a state change for this field to update.</p>
-    pub fn last_reported_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_reported_timestamp = Some(input);
+    pub fn last_reported_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_reported_timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>The last time the Greengrass core device sent a message containing a component's state to the Amazon Web Services Cloud.</p>
     /// <p>A component does not need to see a state change for this field to update.</p>
     pub fn set_last_reported_timestamp(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_reported_timestamp = input;
         self
@@ -201,8 +219,11 @@ impl InstalledComponentBuilder {
     /// <p>The most recent deployment source that brought the component to the Greengrass core device. For a thing group deployment or thing deployment, the source will be the The ID of the deployment. and for local deployments it will be <code>LOCAL</code>.</p> <note>
     /// <p>Any deployment will attempt to reinstall currently broken components on the device, which will update the last installation source.</p>
     /// </note>
-    pub fn last_installation_source(mut self, input: impl Into<std::string::String>) -> Self {
-        self.last_installation_source = Some(input.into());
+    pub fn last_installation_source(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.last_installation_source = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The most recent deployment source that brought the component to the Greengrass core device. For a thing group deployment or thing deployment, the source will be the The ID of the deployment. and for local deployments it will be <code>LOCAL</code>.</p> <note>
@@ -210,7 +231,7 @@ impl InstalledComponentBuilder {
     /// </note>
     pub fn set_last_installation_source(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.last_installation_source = input;
         self
@@ -222,10 +243,13 @@ impl InstalledComponentBuilder {
     /// <p>The status codes that indicate the reason for failure whenever the <code>lifecycleState</code> has an error or is in a broken state.</p> <note>
     /// <p>Greengrass nucleus v2.8.0 or later is required to get an accurate <code>lifecycleStatusCodes</code> response. This response can be inaccurate in earlier Greengrass nucleus versions.</p>
     /// </note>
-    pub fn lifecycle_status_codes(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn lifecycle_status_codes(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.lifecycle_status_codes.unwrap_or_default();
         v.push(input.into());
-        self.lifecycle_status_codes = Some(v);
+        self.lifecycle_status_codes = ::std::option::Option::Some(v);
         self
     }
     /// <p>The status codes that indicate the reason for failure whenever the <code>lifecycleState</code> has an error or is in a broken state.</p> <note>
@@ -233,7 +257,7 @@ impl InstalledComponentBuilder {
     /// </note>
     pub fn set_lifecycle_status_codes(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.lifecycle_status_codes = input;
         self

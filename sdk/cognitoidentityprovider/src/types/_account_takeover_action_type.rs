@@ -2,7 +2,7 @@
 
 /// <p>Account takeover action type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccountTakeoverActionType {
     /// <p>Flag specifying whether to send a notification.</p>
     #[doc(hidden)]
@@ -15,7 +15,7 @@ pub struct AccountTakeoverActionType {
     /// <li> <p> <code>NO_ACTION</code> Allow the user to sign in.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub event_action: std::option::Option<crate::types::AccountTakeoverEventActionType>,
+    pub event_action: ::std::option::Option<crate::types::AccountTakeoverEventActionType>,
 }
 impl AccountTakeoverActionType {
     /// <p>Flag specifying whether to send a notification.</p>
@@ -31,7 +31,7 @@ impl AccountTakeoverActionType {
     /// </ul>
     pub fn event_action(
         &self,
-    ) -> std::option::Option<&crate::types::AccountTakeoverEventActionType> {
+    ) -> ::std::option::Option<&crate::types::AccountTakeoverEventActionType> {
         self.event_action.as_ref()
     }
 }
@@ -44,19 +44,21 @@ impl AccountTakeoverActionType {
 
 /// A builder for [`AccountTakeoverActionType`](crate::types::AccountTakeoverActionType).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AccountTakeoverActionTypeBuilder {
-    pub(crate) notify: std::option::Option<bool>,
-    pub(crate) event_action: std::option::Option<crate::types::AccountTakeoverEventActionType>,
+    pub(crate) notify: ::std::option::Option<bool>,
+    pub(crate) event_action: ::std::option::Option<crate::types::AccountTakeoverEventActionType>,
 }
 impl AccountTakeoverActionTypeBuilder {
     /// <p>Flag specifying whether to send a notification.</p>
     pub fn notify(mut self, input: bool) -> Self {
-        self.notify = Some(input);
+        self.notify = ::std::option::Option::Some(input);
         self
     }
     /// <p>Flag specifying whether to send a notification.</p>
-    pub fn set_notify(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_notify(mut self, input: ::std::option::Option<bool>) -> Self {
         self.notify = input;
         self
     }
@@ -68,7 +70,7 @@ impl AccountTakeoverActionTypeBuilder {
     /// <li> <p> <code>NO_ACTION</code> Allow the user to sign in.</p> </li>
     /// </ul>
     pub fn event_action(mut self, input: crate::types::AccountTakeoverEventActionType) -> Self {
-        self.event_action = Some(input);
+        self.event_action = ::std::option::Option::Some(input);
         self
     }
     /// <p>The action to take in response to the account takeover action. Valid values are as follows:</p>
@@ -80,7 +82,7 @@ impl AccountTakeoverActionTypeBuilder {
     /// </ul>
     pub fn set_event_action(
         mut self,
-        input: std::option::Option<crate::types::AccountTakeoverEventActionType>,
+        input: ::std::option::Option<crate::types::AccountTakeoverEventActionType>,
     ) -> Self {
         self.event_action = input;
         self

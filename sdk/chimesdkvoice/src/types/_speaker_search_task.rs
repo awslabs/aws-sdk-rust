@@ -2,66 +2,66 @@
 
 /// <p>A representation of an asynchronous request to perform speaker search analysis on a Voice Connector call.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SpeakerSearchTask {
     /// <p>The speaker search task ID.</p>
     #[doc(hidden)]
-    pub speaker_search_task_id: std::option::Option<std::string::String>,
+    pub speaker_search_task_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the speaker search task, <code>IN_QUEUE</code>, <code>IN_PROGRESS</code>, <code>PARTIAL_SUCCESS</code>, <code>SUCCEEDED</code>, <code>FAILED</code>, or <code>STOPPED</code>.</p>
     #[doc(hidden)]
-    pub speaker_search_task_status: std::option::Option<std::string::String>,
+    pub speaker_search_task_status: ::std::option::Option<::std::string::String>,
     /// <p>The call details of a speaker search task.</p>
     #[doc(hidden)]
-    pub call_details: std::option::Option<crate::types::CallDetails>,
+    pub call_details: ::std::option::Option<crate::types::CallDetails>,
     /// <p>The details of a speaker search task.</p>
     #[doc(hidden)]
-    pub speaker_search_details: std::option::Option<crate::types::SpeakerSearchDetails>,
+    pub speaker_search_details: ::std::option::Option<crate::types::SpeakerSearchDetails>,
     /// <p>The time at which a speaker search task was created.</p>
     #[doc(hidden)]
-    pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time at which a speaker search task was updated.</p>
     #[doc(hidden)]
-    pub updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time at which the speaker search task began.</p>
     #[doc(hidden)]
-    pub started_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub started_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A detailed message about the status of a speaker search.</p>
     #[doc(hidden)]
-    pub status_message: std::option::Option<std::string::String>,
+    pub status_message: ::std::option::Option<::std::string::String>,
 }
 impl SpeakerSearchTask {
     /// <p>The speaker search task ID.</p>
-    pub fn speaker_search_task_id(&self) -> std::option::Option<&str> {
+    pub fn speaker_search_task_id(&self) -> ::std::option::Option<&str> {
         self.speaker_search_task_id.as_deref()
     }
     /// <p>The status of the speaker search task, <code>IN_QUEUE</code>, <code>IN_PROGRESS</code>, <code>PARTIAL_SUCCESS</code>, <code>SUCCEEDED</code>, <code>FAILED</code>, or <code>STOPPED</code>.</p>
-    pub fn speaker_search_task_status(&self) -> std::option::Option<&str> {
+    pub fn speaker_search_task_status(&self) -> ::std::option::Option<&str> {
         self.speaker_search_task_status.as_deref()
     }
     /// <p>The call details of a speaker search task.</p>
-    pub fn call_details(&self) -> std::option::Option<&crate::types::CallDetails> {
+    pub fn call_details(&self) -> ::std::option::Option<&crate::types::CallDetails> {
         self.call_details.as_ref()
     }
     /// <p>The details of a speaker search task.</p>
     pub fn speaker_search_details(
         &self,
-    ) -> std::option::Option<&crate::types::SpeakerSearchDetails> {
+    ) -> ::std::option::Option<&crate::types::SpeakerSearchDetails> {
         self.speaker_search_details.as_ref()
     }
     /// <p>The time at which a speaker search task was created.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The time at which a speaker search task was updated.</p>
-    pub fn updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.updated_timestamp.as_ref()
     }
     /// <p>The time at which the speaker search task began.</p>
-    pub fn started_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn started_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.started_timestamp.as_ref()
     }
     /// <p>A detailed message about the status of a speaker search.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<&str> {
         self.status_message.as_deref()
     }
 }
@@ -74,116 +74,130 @@ impl SpeakerSearchTask {
 
 /// A builder for [`SpeakerSearchTask`](crate::types::SpeakerSearchTask).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SpeakerSearchTaskBuilder {
-    pub(crate) speaker_search_task_id: std::option::Option<std::string::String>,
-    pub(crate) speaker_search_task_status: std::option::Option<std::string::String>,
-    pub(crate) call_details: std::option::Option<crate::types::CallDetails>,
-    pub(crate) speaker_search_details: std::option::Option<crate::types::SpeakerSearchDetails>,
-    pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) updated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) started_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) status_message: std::option::Option<std::string::String>,
+    pub(crate) speaker_search_task_id: ::std::option::Option<::std::string::String>,
+    pub(crate) speaker_search_task_status: ::std::option::Option<::std::string::String>,
+    pub(crate) call_details: ::std::option::Option<crate::types::CallDetails>,
+    pub(crate) speaker_search_details: ::std::option::Option<crate::types::SpeakerSearchDetails>,
+    pub(crate) created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) started_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) status_message: ::std::option::Option<::std::string::String>,
 }
 impl SpeakerSearchTaskBuilder {
     /// <p>The speaker search task ID.</p>
-    pub fn speaker_search_task_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.speaker_search_task_id = Some(input.into());
+    pub fn speaker_search_task_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.speaker_search_task_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The speaker search task ID.</p>
     pub fn set_speaker_search_task_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.speaker_search_task_id = input;
         self
     }
     /// <p>The status of the speaker search task, <code>IN_QUEUE</code>, <code>IN_PROGRESS</code>, <code>PARTIAL_SUCCESS</code>, <code>SUCCEEDED</code>, <code>FAILED</code>, or <code>STOPPED</code>.</p>
-    pub fn speaker_search_task_status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.speaker_search_task_status = Some(input.into());
+    pub fn speaker_search_task_status(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.speaker_search_task_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the speaker search task, <code>IN_QUEUE</code>, <code>IN_PROGRESS</code>, <code>PARTIAL_SUCCESS</code>, <code>SUCCEEDED</code>, <code>FAILED</code>, or <code>STOPPED</code>.</p>
     pub fn set_speaker_search_task_status(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.speaker_search_task_status = input;
         self
     }
     /// <p>The call details of a speaker search task.</p>
     pub fn call_details(mut self, input: crate::types::CallDetails) -> Self {
-        self.call_details = Some(input);
+        self.call_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>The call details of a speaker search task.</p>
     pub fn set_call_details(
         mut self,
-        input: std::option::Option<crate::types::CallDetails>,
+        input: ::std::option::Option<crate::types::CallDetails>,
     ) -> Self {
         self.call_details = input;
         self
     }
     /// <p>The details of a speaker search task.</p>
     pub fn speaker_search_details(mut self, input: crate::types::SpeakerSearchDetails) -> Self {
-        self.speaker_search_details = Some(input);
+        self.speaker_search_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>The details of a speaker search task.</p>
     pub fn set_speaker_search_details(
         mut self,
-        input: std::option::Option<crate::types::SpeakerSearchDetails>,
+        input: ::std::option::Option<crate::types::SpeakerSearchDetails>,
     ) -> Self {
         self.speaker_search_details = input;
         self
     }
     /// <p>The time at which a speaker search task was created.</p>
-    pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_timestamp = Some(input);
+    pub fn created_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time at which a speaker search task was created.</p>
     pub fn set_created_timestamp(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_timestamp = input;
         self
     }
     /// <p>The time at which a speaker search task was updated.</p>
-    pub fn updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.updated_timestamp = Some(input);
+    pub fn updated_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.updated_timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time at which a speaker search task was updated.</p>
     pub fn set_updated_timestamp(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.updated_timestamp = input;
         self
     }
     /// <p>The time at which the speaker search task began.</p>
-    pub fn started_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.started_timestamp = Some(input);
+    pub fn started_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.started_timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time at which the speaker search task began.</p>
     pub fn set_started_timestamp(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.started_timestamp = input;
         self
     }
     /// <p>A detailed message about the status of a speaker search.</p>
-    pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status_message = Some(input.into());
+    pub fn status_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A detailed message about the status of a speaker search.</p>
-    pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.status_message = input;
         self
     }

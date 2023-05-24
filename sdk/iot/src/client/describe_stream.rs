@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeStream`](crate::operation::describe_stream::builders::DescribeStreamFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`stream_id(impl Into<String>)`](crate::operation::describe_stream::builders::DescribeStreamFluentBuilder::stream_id) / [`set_stream_id(Option<String>)`](crate::operation::describe_stream::builders::DescribeStreamFluentBuilder::set_stream_id): <p>The stream ID.</p>
+    ///   - [`stream_id(impl ::std::convert::Into<String>)`](crate::operation::describe_stream::builders::DescribeStreamFluentBuilder::stream_id) / [`set_stream_id(Option<String>)`](crate::operation::describe_stream::builders::DescribeStreamFluentBuilder::set_stream_id): <p>The stream ID.</p>
     /// - On success, responds with [`DescribeStreamOutput`](crate::operation::describe_stream::DescribeStreamOutput) with field(s):
     ///   - [`stream_info(Option<StreamInfo>)`](crate::operation::describe_stream::DescribeStreamOutput::stream_info): <p>Information about the stream.</p>
     /// - On failure, responds with [`SdkError<DescribeStreamError>`](crate::operation::describe_stream::DescribeStreamError)

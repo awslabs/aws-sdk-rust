@@ -2,15 +2,15 @@
 
 /// <p>One or more filters that searches for the specified resource or resources in a search. All resource objects that satisfy the expression's condition are included in the search results</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModelMetadataSearchExpression {
     /// <p>A list of filter objects.</p>
     #[doc(hidden)]
-    pub filters: std::option::Option<std::vec::Vec<crate::types::ModelMetadataFilter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::ModelMetadataFilter>>,
 }
 impl ModelMetadataSearchExpression {
     /// <p>A list of filter objects.</p>
-    pub fn filters(&self) -> std::option::Option<&[crate::types::ModelMetadataFilter]> {
+    pub fn filters(&self) -> ::std::option::Option<&[crate::types::ModelMetadataFilter]> {
         self.filters.as_deref()
     }
 }
@@ -23,9 +23,11 @@ impl ModelMetadataSearchExpression {
 
 /// A builder for [`ModelMetadataSearchExpression`](crate::types::ModelMetadataSearchExpression).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ModelMetadataSearchExpressionBuilder {
-    pub(crate) filters: std::option::Option<std::vec::Vec<crate::types::ModelMetadataFilter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::ModelMetadataFilter>>,
 }
 impl ModelMetadataSearchExpressionBuilder {
     /// Appends an item to `filters`.
@@ -36,13 +38,13 @@ impl ModelMetadataSearchExpressionBuilder {
     pub fn filters(mut self, input: crate::types::ModelMetadataFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
         v.push(input);
-        self.filters = Some(v);
+        self.filters = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of filter objects.</p>
     pub fn set_filters(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ModelMetadataFilter>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ModelMetadataFilter>>,
     ) -> Self {
         self.filters = input;
         self

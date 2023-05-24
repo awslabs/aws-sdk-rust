@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetPipelineBlueprint`](crate::operation::get_pipeline_blueprint::builders::GetPipelineBlueprintFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`blueprint_name(impl Into<String>)`](crate::operation::get_pipeline_blueprint::builders::GetPipelineBlueprintFluentBuilder::blueprint_name) / [`set_blueprint_name(Option<String>)`](crate::operation::get_pipeline_blueprint::builders::GetPipelineBlueprintFluentBuilder::set_blueprint_name): <p>The name of the blueprint to retrieve.</p>
+    ///   - [`blueprint_name(impl ::std::convert::Into<String>)`](crate::operation::get_pipeline_blueprint::builders::GetPipelineBlueprintFluentBuilder::blueprint_name) / [`set_blueprint_name(Option<String>)`](crate::operation::get_pipeline_blueprint::builders::GetPipelineBlueprintFluentBuilder::set_blueprint_name): <p>The name of the blueprint to retrieve.</p>
     /// - On success, responds with [`GetPipelineBlueprintOutput`](crate::operation::get_pipeline_blueprint::GetPipelineBlueprintOutput) with field(s):
     ///   - [`blueprint(Option<PipelineBlueprint>)`](crate::operation::get_pipeline_blueprint::GetPipelineBlueprintOutput::blueprint): <p>The requested blueprint in YAML format.</p>
     /// - On failure, responds with [`SdkError<GetPipelineBlueprintError>`](crate::operation::get_pipeline_blueprint::GetPipelineBlueprintError)

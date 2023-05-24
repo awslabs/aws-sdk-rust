@@ -2,43 +2,45 @@
 
 /// An update operation for a record.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecordPatch {
     /// An operation, either replace or remove.
     #[doc(hidden)]
-    pub op: std::option::Option<crate::types::Operation>,
+    pub op: ::std::option::Option<crate::types::Operation>,
     /// The key associated with the record patch.
     #[doc(hidden)]
-    pub key: std::option::Option<std::string::String>,
+    pub key: ::std::option::Option<::std::string::String>,
     /// The value associated with the record patch.
     #[doc(hidden)]
-    pub value: std::option::Option<std::string::String>,
+    pub value: ::std::option::Option<::std::string::String>,
     /// Last known server sync count for this record. Set to 0 if unknown.
     #[doc(hidden)]
-    pub sync_count: std::option::Option<i64>,
+    pub sync_count: ::std::option::Option<i64>,
     /// The last modified date of the client device.
     #[doc(hidden)]
-    pub device_last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub device_last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl RecordPatch {
     /// An operation, either replace or remove.
-    pub fn op(&self) -> std::option::Option<&crate::types::Operation> {
+    pub fn op(&self) -> ::std::option::Option<&crate::types::Operation> {
         self.op.as_ref()
     }
     /// The key associated with the record patch.
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<&str> {
         self.key.as_deref()
     }
     /// The value associated with the record patch.
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
     /// Last known server sync count for this record. Set to 0 if unknown.
-    pub fn sync_count(&self) -> std::option::Option<i64> {
+    pub fn sync_count(&self) -> ::std::option::Option<i64> {
         self.sync_count
     }
     /// The last modified date of the client device.
-    pub fn device_last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn device_last_modified_date(
+        &self,
+    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.device_last_modified_date.as_ref()
     }
 }
@@ -51,64 +53,66 @@ impl RecordPatch {
 
 /// A builder for [`RecordPatch`](crate::types::RecordPatch).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RecordPatchBuilder {
-    pub(crate) op: std::option::Option<crate::types::Operation>,
-    pub(crate) key: std::option::Option<std::string::String>,
-    pub(crate) value: std::option::Option<std::string::String>,
-    pub(crate) sync_count: std::option::Option<i64>,
-    pub(crate) device_last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) op: ::std::option::Option<crate::types::Operation>,
+    pub(crate) key: ::std::option::Option<::std::string::String>,
+    pub(crate) value: ::std::option::Option<::std::string::String>,
+    pub(crate) sync_count: ::std::option::Option<i64>,
+    pub(crate) device_last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl RecordPatchBuilder {
     /// An operation, either replace or remove.
     pub fn op(mut self, input: crate::types::Operation) -> Self {
-        self.op = Some(input);
+        self.op = ::std::option::Option::Some(input);
         self
     }
     /// An operation, either replace or remove.
-    pub fn set_op(mut self, input: std::option::Option<crate::types::Operation>) -> Self {
+    pub fn set_op(mut self, input: ::std::option::Option<crate::types::Operation>) -> Self {
         self.op = input;
         self
     }
     /// The key associated with the record patch.
-    pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.key = Some(input.into());
+    pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.key = ::std::option::Option::Some(input.into());
         self
     }
     /// The key associated with the record patch.
-    pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key = input;
         self
     }
     /// The value associated with the record patch.
-    pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.value = Some(input.into());
+    pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.value = ::std::option::Option::Some(input.into());
         self
     }
     /// The value associated with the record patch.
-    pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
     }
     /// Last known server sync count for this record. Set to 0 if unknown.
     pub fn sync_count(mut self, input: i64) -> Self {
-        self.sync_count = Some(input);
+        self.sync_count = ::std::option::Option::Some(input);
         self
     }
     /// Last known server sync count for this record. Set to 0 if unknown.
-    pub fn set_sync_count(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_sync_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.sync_count = input;
         self
     }
     /// The last modified date of the client device.
-    pub fn device_last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.device_last_modified_date = Some(input);
+    pub fn device_last_modified_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.device_last_modified_date = ::std::option::Option::Some(input);
         self
     }
     /// The last modified date of the client device.
     pub fn set_device_last_modified_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.device_last_modified_date = input;
         self

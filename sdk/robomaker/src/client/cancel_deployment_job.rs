@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CancelDeploymentJob`](crate::operation::cancel_deployment_job::builders::CancelDeploymentJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`job(impl Into<String>)`](crate::operation::cancel_deployment_job::builders::CancelDeploymentJobFluentBuilder::job) / [`set_job(Option<String>)`](crate::operation::cancel_deployment_job::builders::CancelDeploymentJobFluentBuilder::set_job): <p>The deployment job ARN to cancel.</p>
+    ///   - [`job(impl ::std::convert::Into<String>)`](crate::operation::cancel_deployment_job::builders::CancelDeploymentJobFluentBuilder::job) / [`set_job(Option<String>)`](crate::operation::cancel_deployment_job::builders::CancelDeploymentJobFluentBuilder::set_job): <p>The deployment job ARN to cancel.</p>
     /// - On success, responds with [`CancelDeploymentJobOutput`](crate::operation::cancel_deployment_job::CancelDeploymentJobOutput)
     /// - On failure, responds with [`SdkError<CancelDeploymentJobError>`](crate::operation::cancel_deployment_job::CancelDeploymentJobError)
     #[deprecated(

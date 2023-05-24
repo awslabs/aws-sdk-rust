@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[deprecated(note = "This operation is no longer supported.")]
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPositionConfigurationInput {
     /// <p>Resource identifier used in a position configuration.</p>
     #[doc(hidden)]
-    pub resource_identifier: std::option::Option<std::string::String>,
+    pub resource_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Resource type of the resource for which position configuration is retrieved.</p>
     #[doc(hidden)]
-    pub resource_type: std::option::Option<crate::types::PositionResourceType>,
+    pub resource_type: ::std::option::Option<crate::types::PositionResourceType>,
 }
 impl GetPositionConfigurationInput {
     /// <p>Resource identifier used in a position configuration.</p>
-    pub fn resource_identifier(&self) -> std::option::Option<&str> {
+    pub fn resource_identifier(&self) -> ::std::option::Option<&str> {
         self.resource_identifier.as_deref()
     }
     /// <p>Resource type of the resource for which position configuration is retrieved.</p>
-    pub fn resource_type(&self) -> std::option::Option<&crate::types::PositionResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::PositionResourceType> {
         self.resource_type.as_ref()
     }
 }
@@ -32,34 +32,39 @@ impl GetPositionConfigurationInput {
 
 /// A builder for [`GetPositionConfigurationInput`](crate::operation::get_position_configuration::GetPositionConfigurationInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetPositionConfigurationInputBuilder {
-    pub(crate) resource_identifier: std::option::Option<std::string::String>,
-    pub(crate) resource_type: std::option::Option<crate::types::PositionResourceType>,
+    pub(crate) resource_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_type: ::std::option::Option<crate::types::PositionResourceType>,
 }
 impl GetPositionConfigurationInputBuilder {
     /// <p>Resource identifier used in a position configuration.</p>
-    pub fn resource_identifier(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_identifier = Some(input.into());
+    pub fn resource_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.resource_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Resource identifier used in a position configuration.</p>
     pub fn set_resource_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.resource_identifier = input;
         self
     }
     /// <p>Resource type of the resource for which position configuration is retrieved.</p>
     pub fn resource_type(mut self, input: crate::types::PositionResourceType) -> Self {
-        self.resource_type = Some(input);
+        self.resource_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Resource type of the resource for which position configuration is retrieved.</p>
     pub fn set_resource_type(
         mut self,
-        input: std::option::Option<crate::types::PositionResourceType>,
+        input: ::std::option::Option<crate::types::PositionResourceType>,
     ) -> Self {
         self.resource_type = input;
         self
@@ -67,11 +72,11 @@ impl GetPositionConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`GetPositionConfigurationInput`](crate::operation::get_position_configuration::GetPositionConfigurationInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::get_position_configuration::GetPositionConfigurationInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::get_position_configuration::GetPositionConfigurationInput {
                 resource_identifier: self.resource_identifier,
                 resource_type: self.resource_type,

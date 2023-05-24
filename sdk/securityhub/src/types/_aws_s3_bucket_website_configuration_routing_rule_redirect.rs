@@ -2,47 +2,47 @@
 
 /// <p>The rules to redirect the request if the condition in <code>Condition</code> is met.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsS3BucketWebsiteConfigurationRoutingRuleRedirect {
     /// <p>The host name to use in the redirect request.</p>
     #[doc(hidden)]
-    pub hostname: std::option::Option<std::string::String>,
+    pub hostname: ::std::option::Option<::std::string::String>,
     /// <p>The HTTP redirect code to use in the response.</p>
     #[doc(hidden)]
-    pub http_redirect_code: std::option::Option<std::string::String>,
+    pub http_redirect_code: ::std::option::Option<::std::string::String>,
     /// <p>The protocol to use to redirect the request. By default, uses the protocol from the original request.</p>
     #[doc(hidden)]
-    pub protocol: std::option::Option<std::string::String>,
+    pub protocol: ::std::option::Option<::std::string::String>,
     /// <p>The object key prefix to use in the redirect request.</p>
     /// <p>Cannot be provided if <code>ReplaceKeyWith</code> is present.</p>
     #[doc(hidden)]
-    pub replace_key_prefix_with: std::option::Option<std::string::String>,
+    pub replace_key_prefix_with: ::std::option::Option<::std::string::String>,
     /// <p>The specific object key to use in the redirect request.</p>
     /// <p>Cannot be provided if <code>ReplaceKeyPrefixWith</code> is present.</p>
     #[doc(hidden)]
-    pub replace_key_with: std::option::Option<std::string::String>,
+    pub replace_key_with: ::std::option::Option<::std::string::String>,
 }
 impl AwsS3BucketWebsiteConfigurationRoutingRuleRedirect {
     /// <p>The host name to use in the redirect request.</p>
-    pub fn hostname(&self) -> std::option::Option<&str> {
+    pub fn hostname(&self) -> ::std::option::Option<&str> {
         self.hostname.as_deref()
     }
     /// <p>The HTTP redirect code to use in the response.</p>
-    pub fn http_redirect_code(&self) -> std::option::Option<&str> {
+    pub fn http_redirect_code(&self) -> ::std::option::Option<&str> {
         self.http_redirect_code.as_deref()
     }
     /// <p>The protocol to use to redirect the request. By default, uses the protocol from the original request.</p>
-    pub fn protocol(&self) -> std::option::Option<&str> {
+    pub fn protocol(&self) -> ::std::option::Option<&str> {
         self.protocol.as_deref()
     }
     /// <p>The object key prefix to use in the redirect request.</p>
     /// <p>Cannot be provided if <code>ReplaceKeyWith</code> is present.</p>
-    pub fn replace_key_prefix_with(&self) -> std::option::Option<&str> {
+    pub fn replace_key_prefix_with(&self) -> ::std::option::Option<&str> {
         self.replace_key_prefix_with.as_deref()
     }
     /// <p>The specific object key to use in the redirect request.</p>
     /// <p>Cannot be provided if <code>ReplaceKeyPrefixWith</code> is present.</p>
-    pub fn replace_key_with(&self) -> std::option::Option<&str> {
+    pub fn replace_key_with(&self) -> ::std::option::Option<&str> {
         self.replace_key_with.as_deref()
     }
 }
@@ -56,72 +56,86 @@ impl AwsS3BucketWebsiteConfigurationRoutingRuleRedirect {
 
 /// A builder for [`AwsS3BucketWebsiteConfigurationRoutingRuleRedirect`](crate::types::AwsS3BucketWebsiteConfigurationRoutingRuleRedirect).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsS3BucketWebsiteConfigurationRoutingRuleRedirectBuilder {
-    pub(crate) hostname: std::option::Option<std::string::String>,
-    pub(crate) http_redirect_code: std::option::Option<std::string::String>,
-    pub(crate) protocol: std::option::Option<std::string::String>,
-    pub(crate) replace_key_prefix_with: std::option::Option<std::string::String>,
-    pub(crate) replace_key_with: std::option::Option<std::string::String>,
+    pub(crate) hostname: ::std::option::Option<::std::string::String>,
+    pub(crate) http_redirect_code: ::std::option::Option<::std::string::String>,
+    pub(crate) protocol: ::std::option::Option<::std::string::String>,
+    pub(crate) replace_key_prefix_with: ::std::option::Option<::std::string::String>,
+    pub(crate) replace_key_with: ::std::option::Option<::std::string::String>,
 }
 impl AwsS3BucketWebsiteConfigurationRoutingRuleRedirectBuilder {
     /// <p>The host name to use in the redirect request.</p>
-    pub fn hostname(mut self, input: impl Into<std::string::String>) -> Self {
-        self.hostname = Some(input.into());
+    pub fn hostname(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.hostname = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The host name to use in the redirect request.</p>
-    pub fn set_hostname(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_hostname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.hostname = input;
         self
     }
     /// <p>The HTTP redirect code to use in the response.</p>
-    pub fn http_redirect_code(mut self, input: impl Into<std::string::String>) -> Self {
-        self.http_redirect_code = Some(input.into());
+    pub fn http_redirect_code(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.http_redirect_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The HTTP redirect code to use in the response.</p>
     pub fn set_http_redirect_code(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.http_redirect_code = input;
         self
     }
     /// <p>The protocol to use to redirect the request. By default, uses the protocol from the original request.</p>
-    pub fn protocol(mut self, input: impl Into<std::string::String>) -> Self {
-        self.protocol = Some(input.into());
+    pub fn protocol(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.protocol = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The protocol to use to redirect the request. By default, uses the protocol from the original request.</p>
-    pub fn set_protocol(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_protocol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.protocol = input;
         self
     }
     /// <p>The object key prefix to use in the redirect request.</p>
     /// <p>Cannot be provided if <code>ReplaceKeyWith</code> is present.</p>
-    pub fn replace_key_prefix_with(mut self, input: impl Into<std::string::String>) -> Self {
-        self.replace_key_prefix_with = Some(input.into());
+    pub fn replace_key_prefix_with(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.replace_key_prefix_with = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The object key prefix to use in the redirect request.</p>
     /// <p>Cannot be provided if <code>ReplaceKeyWith</code> is present.</p>
     pub fn set_replace_key_prefix_with(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.replace_key_prefix_with = input;
         self
     }
     /// <p>The specific object key to use in the redirect request.</p>
     /// <p>Cannot be provided if <code>ReplaceKeyPrefixWith</code> is present.</p>
-    pub fn replace_key_with(mut self, input: impl Into<std::string::String>) -> Self {
-        self.replace_key_with = Some(input.into());
+    pub fn replace_key_with(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.replace_key_with = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The specific object key to use in the redirect request.</p>
     /// <p>Cannot be provided if <code>ReplaceKeyPrefixWith</code> is present.</p>
-    pub fn set_replace_key_with(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_replace_key_with(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.replace_key_with = input;
         self
     }

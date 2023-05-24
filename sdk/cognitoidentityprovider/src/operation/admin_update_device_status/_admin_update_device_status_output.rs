@@ -2,11 +2,11 @@
 
 /// <p>The status response to the request to update the device, as an administrator.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AdminUpdateDeviceStatusOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for AdminUpdateDeviceStatusOutput {
+impl ::aws_http::request_id::RequestId for AdminUpdateDeviceStatusOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -22,7 +22,9 @@ impl AdminUpdateDeviceStatusOutput {
 
 /// A builder for [`AdminUpdateDeviceStatusOutput`](crate::operation::admin_update_device_status::AdminUpdateDeviceStatusOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AdminUpdateDeviceStatusOutputBuilder {
     _request_id: Option<String>,
 }

@@ -2,61 +2,63 @@
 
 /// Represents a description of the rule groups namespace.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuleGroupsNamespaceDescription {
     /// The Amazon Resource Name (ARN) of this rule groups namespace.
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// The rule groups namespace name.
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// The status of rule groups namespace.
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::RuleGroupsNamespaceStatus>,
+    pub status: ::std::option::Option<crate::types::RuleGroupsNamespaceStatus>,
     /// The rule groups namespace data.
     #[doc(hidden)]
-    pub data: std::option::Option<aws_smithy_types::Blob>,
+    pub data: ::std::option::Option<::aws_smithy_types::Blob>,
     /// The time when the rule groups namespace was created.
     #[doc(hidden)]
-    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// The time when the rule groups namespace was modified.
     #[doc(hidden)]
-    pub modified_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// The tags of this rule groups namespace.
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl RuleGroupsNamespaceDescription {
     /// The Amazon Resource Name (ARN) of this rule groups namespace.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// The rule groups namespace name.
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// The status of rule groups namespace.
-    pub fn status(&self) -> std::option::Option<&crate::types::RuleGroupsNamespaceStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::RuleGroupsNamespaceStatus> {
         self.status.as_ref()
     }
     /// The rule groups namespace data.
-    pub fn data(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn data(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
         self.data.as_ref()
     }
     /// The time when the rule groups namespace was created.
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// The time when the rule groups namespace was modified.
-    pub fn modified_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn modified_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.modified_at.as_ref()
     }
     /// The tags of this rule groups namespace.
     pub fn tags(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.tags.as_ref()
     }
 }
@@ -69,83 +71,86 @@ impl RuleGroupsNamespaceDescription {
 
 /// A builder for [`RuleGroupsNamespaceDescription`](crate::types::RuleGroupsNamespaceDescription).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RuleGroupsNamespaceDescriptionBuilder {
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::RuleGroupsNamespaceStatus>,
-    pub(crate) data: std::option::Option<aws_smithy_types::Blob>,
-    pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) modified_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::RuleGroupsNamespaceStatus>,
+    pub(crate) data: ::std::option::Option<::aws_smithy_types::Blob>,
+    pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl RuleGroupsNamespaceDescriptionBuilder {
     /// The Amazon Resource Name (ARN) of this rule groups namespace.
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// The Amazon Resource Name (ARN) of this rule groups namespace.
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// The rule groups namespace name.
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// The rule groups namespace name.
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// The status of rule groups namespace.
     pub fn status(mut self, input: crate::types::RuleGroupsNamespaceStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// The status of rule groups namespace.
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::RuleGroupsNamespaceStatus>,
+        input: ::std::option::Option<crate::types::RuleGroupsNamespaceStatus>,
     ) -> Self {
         self.status = input;
         self
     }
     /// The rule groups namespace data.
-    pub fn data(mut self, input: aws_smithy_types::Blob) -> Self {
-        self.data = Some(input);
+    pub fn data(mut self, input: ::aws_smithy_types::Blob) -> Self {
+        self.data = ::std::option::Option::Some(input);
         self
     }
     /// The rule groups namespace data.
-    pub fn set_data(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
+    pub fn set_data(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.data = input;
         self
     }
     /// The time when the rule groups namespace was created.
-    pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_at = Some(input);
+    pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_at = ::std::option::Option::Some(input);
         self
     }
     /// The time when the rule groups namespace was created.
     pub fn set_created_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_at = input;
         self
     }
     /// The time when the rule groups namespace was modified.
-    pub fn modified_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.modified_at = Some(input);
+    pub fn modified_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.modified_at = ::std::option::Option::Some(input);
         self
     }
     /// The time when the rule groups namespace was modified.
     pub fn set_modified_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.modified_at = input;
         self
@@ -157,19 +162,19 @@ impl RuleGroupsNamespaceDescriptionBuilder {
     /// The tags of this rule groups namespace.
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
+        self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// The tags of this rule groups namespace.
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.tags = input;

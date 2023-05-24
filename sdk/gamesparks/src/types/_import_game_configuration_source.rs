@@ -2,15 +2,15 @@
 
 /// <p>The source used to import configuration sections.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportGameConfigurationSource {
     /// <p>The JSON string containing the configuration sections.</p>
     #[doc(hidden)]
-    pub file: std::option::Option<aws_smithy_types::Blob>,
+    pub file: ::std::option::Option<::aws_smithy_types::Blob>,
 }
 impl ImportGameConfigurationSource {
     /// <p>The JSON string containing the configuration sections.</p>
-    pub fn file(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn file(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
         self.file.as_ref()
     }
 }
@@ -23,18 +23,20 @@ impl ImportGameConfigurationSource {
 
 /// A builder for [`ImportGameConfigurationSource`](crate::types::ImportGameConfigurationSource).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ImportGameConfigurationSourceBuilder {
-    pub(crate) file: std::option::Option<aws_smithy_types::Blob>,
+    pub(crate) file: ::std::option::Option<::aws_smithy_types::Blob>,
 }
 impl ImportGameConfigurationSourceBuilder {
     /// <p>The JSON string containing the configuration sections.</p>
-    pub fn file(mut self, input: aws_smithy_types::Blob) -> Self {
-        self.file = Some(input);
+    pub fn file(mut self, input: ::aws_smithy_types::Blob) -> Self {
+        self.file = ::std::option::Option::Some(input);
         self
     }
     /// <p>The JSON string containing the configuration sections.</p>
-    pub fn set_file(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
+    pub fn set_file(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.file = input;
         self
     }

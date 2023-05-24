@@ -2,17 +2,17 @@
 
 /// <p>An auto detection metric source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoDetectionMetricSource {
     /// <p>The source's source config.</p>
     #[doc(hidden)]
-    pub s3_source_config: std::option::Option<crate::types::AutoDetectionS3SourceConfig>,
+    pub s3_source_config: ::std::option::Option<crate::types::AutoDetectionS3SourceConfig>,
 }
 impl AutoDetectionMetricSource {
     /// <p>The source's source config.</p>
     pub fn s3_source_config(
         &self,
-    ) -> std::option::Option<&crate::types::AutoDetectionS3SourceConfig> {
+    ) -> ::std::option::Option<&crate::types::AutoDetectionS3SourceConfig> {
         self.s3_source_config.as_ref()
     }
 }
@@ -25,20 +25,22 @@ impl AutoDetectionMetricSource {
 
 /// A builder for [`AutoDetectionMetricSource`](crate::types::AutoDetectionMetricSource).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AutoDetectionMetricSourceBuilder {
-    pub(crate) s3_source_config: std::option::Option<crate::types::AutoDetectionS3SourceConfig>,
+    pub(crate) s3_source_config: ::std::option::Option<crate::types::AutoDetectionS3SourceConfig>,
 }
 impl AutoDetectionMetricSourceBuilder {
     /// <p>The source's source config.</p>
     pub fn s3_source_config(mut self, input: crate::types::AutoDetectionS3SourceConfig) -> Self {
-        self.s3_source_config = Some(input);
+        self.s3_source_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The source's source config.</p>
     pub fn set_s3_source_config(
         mut self,
-        input: std::option::Option<crate::types::AutoDetectionS3SourceConfig>,
+        input: ::std::option::Option<crate::types::AutoDetectionS3SourceConfig>,
     ) -> Self {
         self.s3_source_config = input;
         self

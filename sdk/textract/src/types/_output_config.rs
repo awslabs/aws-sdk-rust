@@ -5,22 +5,22 @@
 /// <p>Decryption of Customer Content is necessary for processing of the documents by Amazon Textract. If your account is opted out under an AI services opt out policy then all unencrypted Customer Content is immediately and permanently deleted after the Customer Content has been processed by the service. No copy of of the output is retained by Amazon Textract. For information about how to opt out, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html"> Managing AI services opt-out policy. </a> </p>
 /// <p>For more information on data privacy, see the <a href="https://aws.amazon.com/compliance/data-privacy-faq/">Data Privacy FAQ</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OutputConfig {
     /// <p>The name of the bucket your output will go to.</p>
     #[doc(hidden)]
-    pub s3_bucket: std::option::Option<std::string::String>,
+    pub s3_bucket: ::std::option::Option<::std::string::String>,
     /// <p>The prefix of the object key that the output will be saved to. When not enabled, the prefix will be “textract_output".</p>
     #[doc(hidden)]
-    pub s3_prefix: std::option::Option<std::string::String>,
+    pub s3_prefix: ::std::option::Option<::std::string::String>,
 }
 impl OutputConfig {
     /// <p>The name of the bucket your output will go to.</p>
-    pub fn s3_bucket(&self) -> std::option::Option<&str> {
+    pub fn s3_bucket(&self) -> ::std::option::Option<&str> {
         self.s3_bucket.as_deref()
     }
     /// <p>The prefix of the object key that the output will be saved to. When not enabled, the prefix will be “textract_output".</p>
-    pub fn s3_prefix(&self) -> std::option::Option<&str> {
+    pub fn s3_prefix(&self) -> ::std::option::Option<&str> {
         self.s3_prefix.as_deref()
     }
 }
@@ -33,29 +33,31 @@ impl OutputConfig {
 
 /// A builder for [`OutputConfig`](crate::types::OutputConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OutputConfigBuilder {
-    pub(crate) s3_bucket: std::option::Option<std::string::String>,
-    pub(crate) s3_prefix: std::option::Option<std::string::String>,
+    pub(crate) s3_bucket: ::std::option::Option<::std::string::String>,
+    pub(crate) s3_prefix: ::std::option::Option<::std::string::String>,
 }
 impl OutputConfigBuilder {
     /// <p>The name of the bucket your output will go to.</p>
-    pub fn s3_bucket(mut self, input: impl Into<std::string::String>) -> Self {
-        self.s3_bucket = Some(input.into());
+    pub fn s3_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.s3_bucket = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the bucket your output will go to.</p>
-    pub fn set_s3_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_s3_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_bucket = input;
         self
     }
     /// <p>The prefix of the object key that the output will be saved to. When not enabled, the prefix will be “textract_output".</p>
-    pub fn s3_prefix(mut self, input: impl Into<std::string::String>) -> Self {
-        self.s3_prefix = Some(input.into());
+    pub fn s3_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.s3_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The prefix of the object key that the output will be saved to. When not enabled, the prefix will be “textract_output".</p>
-    pub fn set_s3_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_s3_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_prefix = input;
         self
     }

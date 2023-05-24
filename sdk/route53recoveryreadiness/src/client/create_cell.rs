@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateCell`](crate::operation::create_cell::builders::CreateCellFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`cell_name(impl Into<String>)`](crate::operation::create_cell::builders::CreateCellFluentBuilder::cell_name) / [`set_cell_name(Option<String>)`](crate::operation::create_cell::builders::CreateCellFluentBuilder::set_cell_name): <p>The name of the cell to create.</p>
+    ///   - [`cell_name(impl ::std::convert::Into<String>)`](crate::operation::create_cell::builders::CreateCellFluentBuilder::cell_name) / [`set_cell_name(Option<String>)`](crate::operation::create_cell::builders::CreateCellFluentBuilder::set_cell_name): <p>The name of the cell to create.</p>
     ///   - [`cells(Vec<String>)`](crate::operation::create_cell::builders::CreateCellFluentBuilder::cells) / [`set_cells(Option<Vec<String>>)`](crate::operation::create_cell::builders::CreateCellFluentBuilder::set_cells): <p>A list of cell Amazon Resource Names (ARNs) contained within this cell, for use in nested cells. For example, Availability Zones within specific Amazon Web Services Regions.</p>
     ///   - [`tags(HashMap<String, String>)`](crate::operation::create_cell::builders::CreateCellFluentBuilder::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::operation::create_cell::builders::CreateCellFluentBuilder::set_tags): <p>A collection of tags associated with a resource.</p>
     /// - On success, responds with [`CreateCellOutput`](crate::operation::create_cell::CreateCellOutput) with field(s):

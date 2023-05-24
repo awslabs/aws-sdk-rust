@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ImportDecoderManifest`](crate::operation::import_decoder_manifest::builders::ImportDecoderManifestFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::import_decoder_manifest::builders::ImportDecoderManifestFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::import_decoder_manifest::builders::ImportDecoderManifestFluentBuilder::set_name): <p> The name of the decoder manifest to import. </p>
+    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::import_decoder_manifest::builders::ImportDecoderManifestFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::import_decoder_manifest::builders::ImportDecoderManifestFluentBuilder::set_name): <p> The name of the decoder manifest to import. </p>
     ///   - [`network_file_definitions(Vec<NetworkFileDefinition>)`](crate::operation::import_decoder_manifest::builders::ImportDecoderManifestFluentBuilder::network_file_definitions) / [`set_network_file_definitions(Option<Vec<NetworkFileDefinition>>)`](crate::operation::import_decoder_manifest::builders::ImportDecoderManifestFluentBuilder::set_network_file_definitions): <p> The file to load into an Amazon Web Services account. </p>
     /// - On success, responds with [`ImportDecoderManifestOutput`](crate::operation::import_decoder_manifest::ImportDecoderManifestOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::import_decoder_manifest::ImportDecoderManifestOutput::name): <p> The name of the imported decoder manifest. </p>

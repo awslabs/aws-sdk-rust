@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`PutDialRequestBatch`](crate::operation::put_dial_request_batch::builders::PutDialRequestBatchFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::put_dial_request_batch::builders::PutDialRequestBatchFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::put_dial_request_batch::builders::PutDialRequestBatchFluentBuilder::set_id): Identifier representing a Campaign
+    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::put_dial_request_batch::builders::PutDialRequestBatchFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::put_dial_request_batch::builders::PutDialRequestBatchFluentBuilder::set_id): Identifier representing a Campaign
     ///   - [`dial_requests(Vec<DialRequest>)`](crate::operation::put_dial_request_batch::builders::PutDialRequestBatchFluentBuilder::dial_requests) / [`set_dial_requests(Option<Vec<DialRequest>>)`](crate::operation::put_dial_request_batch::builders::PutDialRequestBatchFluentBuilder::set_dial_requests): A list of dial requests.
     /// - On success, responds with [`PutDialRequestBatchOutput`](crate::operation::put_dial_request_batch::PutDialRequestBatchOutput) with field(s):
     ///   - [`successful_requests(Option<Vec<SuccessfulRequest>>)`](crate::operation::put_dial_request_batch::PutDialRequestBatchOutput::successful_requests): A list of successful requests identified by the unique client token.

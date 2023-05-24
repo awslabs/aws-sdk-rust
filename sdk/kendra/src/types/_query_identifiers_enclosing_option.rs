@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum QueryIdentifiersEnclosingOption {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum QueryIdentifiersEnclosingOption {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for QueryIdentifiersEnclosingOption {
+impl ::std::convert::From<&str> for QueryIdentifiersEnclosingOption {
     fn from(s: &str) -> Self {
         match s {
             "DOUBLE_QUOTES" => QueryIdentifiersEnclosingOption::DoubleQuotes,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for QueryIdentifiersEnclosingOption {
         }
     }
 }
-impl std::str::FromStr for QueryIdentifiersEnclosingOption {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for QueryIdentifiersEnclosingOption {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(QueryIdentifiersEnclosingOption::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(QueryIdentifiersEnclosingOption::from(s))
     }
 }
 impl QueryIdentifiersEnclosingOption {
@@ -86,7 +86,7 @@ impl QueryIdentifiersEnclosingOption {
         &["DOUBLE_QUOTES", "NONE"]
     }
 }
-impl AsRef<str> for QueryIdentifiersEnclosingOption {
+impl ::std::convert::AsRef<str> for QueryIdentifiersEnclosingOption {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

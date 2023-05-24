@@ -2,29 +2,29 @@
 
 /// <p>Describes the configuration of an event. You can bind an event and a corresponding action to a <code>Component</code> or a <code>ComponentChild</code>. A button click is an example of an event. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComponentEvent {
     /// <p>The action to perform when a specific event is raised.</p>
     #[doc(hidden)]
-    pub action: std::option::Option<std::string::String>,
+    pub action: ::std::option::Option<::std::string::String>,
     /// <p>Describes information about the action.</p>
     #[doc(hidden)]
-    pub parameters: std::option::Option<crate::types::ActionParameters>,
+    pub parameters: ::std::option::Option<crate::types::ActionParameters>,
     /// <p>Binds an event to an action on a component. When you specify a <code>bindingEvent</code>, the event is called when the action is performed.</p>
     #[doc(hidden)]
-    pub binding_event: std::option::Option<std::string::String>,
+    pub binding_event: ::std::option::Option<::std::string::String>,
 }
 impl ComponentEvent {
     /// <p>The action to perform when a specific event is raised.</p>
-    pub fn action(&self) -> std::option::Option<&str> {
+    pub fn action(&self) -> ::std::option::Option<&str> {
         self.action.as_deref()
     }
     /// <p>Describes information about the action.</p>
-    pub fn parameters(&self) -> std::option::Option<&crate::types::ActionParameters> {
+    pub fn parameters(&self) -> ::std::option::Option<&crate::types::ActionParameters> {
         self.parameters.as_ref()
     }
     /// <p>Binds an event to an action on a component. When you specify a <code>bindingEvent</code>, the event is called when the action is performed.</p>
-    pub fn binding_event(&self) -> std::option::Option<&str> {
+    pub fn binding_event(&self) -> ::std::option::Option<&str> {
         self.binding_event.as_deref()
     }
 }
@@ -37,43 +37,51 @@ impl ComponentEvent {
 
 /// A builder for [`ComponentEvent`](crate::types::ComponentEvent).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ComponentEventBuilder {
-    pub(crate) action: std::option::Option<std::string::String>,
-    pub(crate) parameters: std::option::Option<crate::types::ActionParameters>,
-    pub(crate) binding_event: std::option::Option<std::string::String>,
+    pub(crate) action: ::std::option::Option<::std::string::String>,
+    pub(crate) parameters: ::std::option::Option<crate::types::ActionParameters>,
+    pub(crate) binding_event: ::std::option::Option<::std::string::String>,
 }
 impl ComponentEventBuilder {
     /// <p>The action to perform when a specific event is raised.</p>
-    pub fn action(mut self, input: impl Into<std::string::String>) -> Self {
-        self.action = Some(input.into());
+    pub fn action(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.action = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The action to perform when a specific event is raised.</p>
-    pub fn set_action(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_action(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.action = input;
         self
     }
     /// <p>Describes information about the action.</p>
     pub fn parameters(mut self, input: crate::types::ActionParameters) -> Self {
-        self.parameters = Some(input);
+        self.parameters = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes information about the action.</p>
     pub fn set_parameters(
         mut self,
-        input: std::option::Option<crate::types::ActionParameters>,
+        input: ::std::option::Option<crate::types::ActionParameters>,
     ) -> Self {
         self.parameters = input;
         self
     }
     /// <p>Binds an event to an action on a component. When you specify a <code>bindingEvent</code>, the event is called when the action is performed.</p>
-    pub fn binding_event(mut self, input: impl Into<std::string::String>) -> Self {
-        self.binding_event = Some(input.into());
+    pub fn binding_event(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.binding_event = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Binds an event to an action on a component. When you specify a <code>bindingEvent</code>, the event is called when the action is performed.</p>
-    pub fn set_binding_event(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_binding_event(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.binding_event = input;
         self
     }

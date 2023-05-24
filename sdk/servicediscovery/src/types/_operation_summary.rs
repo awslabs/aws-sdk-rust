@@ -2,11 +2,11 @@
 
 /// <p>A complex type that contains information about an operation that matches the criteria that you specified in a <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_ListOperations.html">ListOperations</a> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OperationSummary {
     /// <p>The ID for an operation.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the operation. Values include the following:</p>
     /// <ul>
     /// <li> <p> <b>SUBMITTED</b>: This is the initial state immediately after you submit a request.</p> </li>
@@ -15,11 +15,11 @@ pub struct OperationSummary {
     /// <li> <p> <b>FAIL</b>: The operation failed. For the failure reason, see <code>ErrorMessage</code>.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::OperationStatus>,
+    pub status: ::std::option::Option<crate::types::OperationStatus>,
 }
 impl OperationSummary {
     /// <p>The ID for an operation.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The status of the operation. Values include the following:</p>
@@ -29,7 +29,7 @@ impl OperationSummary {
     /// <li> <p> <b>SUCCESS</b>: The operation succeeded.</p> </li>
     /// <li> <p> <b>FAIL</b>: The operation failed. For the failure reason, see <code>ErrorMessage</code>.</p> </li>
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::types::OperationStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::OperationStatus> {
         self.status.as_ref()
     }
 }
@@ -42,19 +42,21 @@ impl OperationSummary {
 
 /// A builder for [`OperationSummary`](crate::types::OperationSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OperationSummaryBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::OperationStatus>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::OperationStatus>,
 }
 impl OperationSummaryBuilder {
     /// <p>The ID for an operation.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID for an operation.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
@@ -66,7 +68,7 @@ impl OperationSummaryBuilder {
     /// <li> <p> <b>FAIL</b>: The operation failed. For the failure reason, see <code>ErrorMessage</code>.</p> </li>
     /// </ul>
     pub fn status(mut self, input: crate::types::OperationStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the operation. Values include the following:</p>
@@ -76,7 +78,10 @@ impl OperationSummaryBuilder {
     /// <li> <p> <b>SUCCESS</b>: The operation succeeded.</p> </li>
     /// <li> <p> <b>FAIL</b>: The operation failed. For the failure reason, see <code>ErrorMessage</code>.</p> </li>
     /// </ul>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::OperationStatus>) -> Self {
+    pub fn set_status(
+        mut self,
+        input: ::std::option::Option<crate::types::OperationStatus>,
+    ) -> Self {
         self.status = input;
         self
     }

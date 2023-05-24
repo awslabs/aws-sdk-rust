@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateFleet`](crate::operation::update_fleet::builders::UpdateFleetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`fleet_id(impl Into<String>)`](crate::operation::update_fleet::builders::UpdateFleetFluentBuilder::fleet_id) / [`set_fleet_id(Option<String>)`](crate::operation::update_fleet::builders::UpdateFleetFluentBuilder::set_fleet_id): <p> The ID of the fleet to update. </p>
-    ///   - [`description(impl Into<String>)`](crate::operation::update_fleet::builders::UpdateFleetFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_fleet::builders::UpdateFleetFluentBuilder::set_description): <p> An updated description of the fleet. </p>
+    ///   - [`fleet_id(impl ::std::convert::Into<String>)`](crate::operation::update_fleet::builders::UpdateFleetFluentBuilder::fleet_id) / [`set_fleet_id(Option<String>)`](crate::operation::update_fleet::builders::UpdateFleetFluentBuilder::set_fleet_id): <p> The ID of the fleet to update. </p>
+    ///   - [`description(impl ::std::convert::Into<String>)`](crate::operation::update_fleet::builders::UpdateFleetFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_fleet::builders::UpdateFleetFluentBuilder::set_description): <p> An updated description of the fleet. </p>
     /// - On success, responds with [`UpdateFleetOutput`](crate::operation::update_fleet::UpdateFleetOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::update_fleet::UpdateFleetOutput::id): <p>The ID of the updated fleet.</p>
     ///   - [`arn(Option<String>)`](crate::operation::update_fleet::UpdateFleetOutput::arn): <p>The Amazon Resource Name (ARN) of the updated fleet.</p>

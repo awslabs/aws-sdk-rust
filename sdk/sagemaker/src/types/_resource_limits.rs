@@ -2,21 +2,21 @@
 
 /// <p>Specifies the maximum number of training jobs and parallel training jobs that a hyperparameter tuning job can launch.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceLimits {
     /// <p>The maximum number of training jobs that a hyperparameter tuning job can launch.</p>
     #[doc(hidden)]
-    pub max_number_of_training_jobs: std::option::Option<i32>,
+    pub max_number_of_training_jobs: ::std::option::Option<i32>,
     /// <p>The maximum number of concurrent training jobs that a hyperparameter tuning job can launch.</p>
     #[doc(hidden)]
     pub max_parallel_training_jobs: i32,
     /// <p>The maximum time in seconds that a hyperparameter tuning job can run.</p>
     #[doc(hidden)]
-    pub max_runtime_in_seconds: std::option::Option<i32>,
+    pub max_runtime_in_seconds: ::std::option::Option<i32>,
 }
 impl ResourceLimits {
     /// <p>The maximum number of training jobs that a hyperparameter tuning job can launch.</p>
-    pub fn max_number_of_training_jobs(&self) -> std::option::Option<i32> {
+    pub fn max_number_of_training_jobs(&self) -> ::std::option::Option<i32> {
         self.max_number_of_training_jobs
     }
     /// <p>The maximum number of concurrent training jobs that a hyperparameter tuning job can launch.</p>
@@ -24,7 +24,7 @@ impl ResourceLimits {
         self.max_parallel_training_jobs
     }
     /// <p>The maximum time in seconds that a hyperparameter tuning job can run.</p>
-    pub fn max_runtime_in_seconds(&self) -> std::option::Option<i32> {
+    pub fn max_runtime_in_seconds(&self) -> ::std::option::Option<i32> {
         self.max_runtime_in_seconds
     }
 }
@@ -37,40 +37,42 @@ impl ResourceLimits {
 
 /// A builder for [`ResourceLimits`](crate::types::ResourceLimits).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResourceLimitsBuilder {
-    pub(crate) max_number_of_training_jobs: std::option::Option<i32>,
-    pub(crate) max_parallel_training_jobs: std::option::Option<i32>,
-    pub(crate) max_runtime_in_seconds: std::option::Option<i32>,
+    pub(crate) max_number_of_training_jobs: ::std::option::Option<i32>,
+    pub(crate) max_parallel_training_jobs: ::std::option::Option<i32>,
+    pub(crate) max_runtime_in_seconds: ::std::option::Option<i32>,
 }
 impl ResourceLimitsBuilder {
     /// <p>The maximum number of training jobs that a hyperparameter tuning job can launch.</p>
     pub fn max_number_of_training_jobs(mut self, input: i32) -> Self {
-        self.max_number_of_training_jobs = Some(input);
+        self.max_number_of_training_jobs = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum number of training jobs that a hyperparameter tuning job can launch.</p>
-    pub fn set_max_number_of_training_jobs(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_number_of_training_jobs(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_number_of_training_jobs = input;
         self
     }
     /// <p>The maximum number of concurrent training jobs that a hyperparameter tuning job can launch.</p>
     pub fn max_parallel_training_jobs(mut self, input: i32) -> Self {
-        self.max_parallel_training_jobs = Some(input);
+        self.max_parallel_training_jobs = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum number of concurrent training jobs that a hyperparameter tuning job can launch.</p>
-    pub fn set_max_parallel_training_jobs(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_parallel_training_jobs(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_parallel_training_jobs = input;
         self
     }
     /// <p>The maximum time in seconds that a hyperparameter tuning job can run.</p>
     pub fn max_runtime_in_seconds(mut self, input: i32) -> Self {
-        self.max_runtime_in_seconds = Some(input);
+        self.max_runtime_in_seconds = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum time in seconds that a hyperparameter tuning job can run.</p>
-    pub fn set_max_runtime_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_runtime_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_runtime_in_seconds = input;
         self
     }

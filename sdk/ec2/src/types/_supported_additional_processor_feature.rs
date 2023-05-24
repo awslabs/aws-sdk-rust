@@ -37,13 +37,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum SupportedAdditionalProcessorFeature {
     #[allow(missing_docs)] // documentation missing in model
@@ -51,7 +51,7 @@ pub enum SupportedAdditionalProcessorFeature {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for SupportedAdditionalProcessorFeature {
+impl ::std::convert::From<&str> for SupportedAdditionalProcessorFeature {
     fn from(s: &str) -> Self {
         match s {
             "amd-sev-snp" => SupportedAdditionalProcessorFeature::AmdSevSnp,
@@ -61,11 +61,11 @@ impl std::convert::From<&str> for SupportedAdditionalProcessorFeature {
         }
     }
 }
-impl std::str::FromStr for SupportedAdditionalProcessorFeature {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for SupportedAdditionalProcessorFeature {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SupportedAdditionalProcessorFeature::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(SupportedAdditionalProcessorFeature::from(s))
     }
 }
 impl SupportedAdditionalProcessorFeature {
@@ -81,7 +81,7 @@ impl SupportedAdditionalProcessorFeature {
         &["amd-sev-snp"]
     }
 }
-impl AsRef<str> for SupportedAdditionalProcessorFeature {
+impl ::std::convert::AsRef<str> for SupportedAdditionalProcessorFeature {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

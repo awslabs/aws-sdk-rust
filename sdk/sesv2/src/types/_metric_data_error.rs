@@ -2,25 +2,25 @@
 
 /// <p>An error corresponding to the unsuccessful processing of a single metric data query.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetricDataError {
     /// <p>The query identifier.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The query error code. Can be one of:</p>
     /// <ul>
     /// <li> <p> <code>INTERNAL_FAILURE</code> – Amazon SES has failed to process one of the queries.</p> </li>
     /// <li> <p> <code>ACCESS_DENIED</code> – You have insufficient access to retrieve metrics based on the given query.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub code: std::option::Option<crate::types::QueryErrorCode>,
+    pub code: ::std::option::Option<crate::types::QueryErrorCode>,
     /// <p>The error message associated with the current query error.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
 }
 impl MetricDataError {
     /// <p>The query identifier.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The query error code. Can be one of:</p>
@@ -28,11 +28,11 @@ impl MetricDataError {
     /// <li> <p> <code>INTERNAL_FAILURE</code> – Amazon SES has failed to process one of the queries.</p> </li>
     /// <li> <p> <code>ACCESS_DENIED</code> – You have insufficient access to retrieve metrics based on the given query.</p> </li>
     /// </ul>
-    pub fn code(&self) -> std::option::Option<&crate::types::QueryErrorCode> {
+    pub fn code(&self) -> ::std::option::Option<&crate::types::QueryErrorCode> {
         self.code.as_ref()
     }
     /// <p>The error message associated with the current query error.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -45,20 +45,22 @@ impl MetricDataError {
 
 /// A builder for [`MetricDataError`](crate::types::MetricDataError).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MetricDataErrorBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) code: std::option::Option<crate::types::QueryErrorCode>,
-    pub(crate) message: std::option::Option<std::string::String>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) code: ::std::option::Option<crate::types::QueryErrorCode>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
 }
 impl MetricDataErrorBuilder {
     /// <p>The query identifier.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The query identifier.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
@@ -68,7 +70,7 @@ impl MetricDataErrorBuilder {
     /// <li> <p> <code>ACCESS_DENIED</code> – You have insufficient access to retrieve metrics based on the given query.</p> </li>
     /// </ul>
     pub fn code(mut self, input: crate::types::QueryErrorCode) -> Self {
-        self.code = Some(input);
+        self.code = ::std::option::Option::Some(input);
         self
     }
     /// <p>The query error code. Can be one of:</p>
@@ -76,17 +78,17 @@ impl MetricDataErrorBuilder {
     /// <li> <p> <code>INTERNAL_FAILURE</code> – Amazon SES has failed to process one of the queries.</p> </li>
     /// <li> <p> <code>ACCESS_DENIED</code> – You have insufficient access to retrieve metrics based on the given query.</p> </li>
     /// </ul>
-    pub fn set_code(mut self, input: std::option::Option<crate::types::QueryErrorCode>) -> Self {
+    pub fn set_code(mut self, input: ::std::option::Option<crate::types::QueryErrorCode>) -> Self {
         self.code = input;
         self
     }
     /// <p>The error message associated with the current query error.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The error message associated with the current query error.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }

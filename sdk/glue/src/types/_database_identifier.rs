@@ -2,22 +2,22 @@
 
 /// <p>A structure that describes a target database for resource linking.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatabaseIdentifier {
     /// <p>The ID of the Data Catalog in which the database resides.</p>
     #[doc(hidden)]
-    pub catalog_id: std::option::Option<std::string::String>,
+    pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the catalog database.</p>
     #[doc(hidden)]
-    pub database_name: std::option::Option<std::string::String>,
+    pub database_name: ::std::option::Option<::std::string::String>,
 }
 impl DatabaseIdentifier {
     /// <p>The ID of the Data Catalog in which the database resides.</p>
-    pub fn catalog_id(&self) -> std::option::Option<&str> {
+    pub fn catalog_id(&self) -> ::std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
     /// <p>The name of the catalog database.</p>
-    pub fn database_name(&self) -> std::option::Option<&str> {
+    pub fn database_name(&self) -> ::std::option::Option<&str> {
         self.database_name.as_deref()
     }
 }
@@ -30,29 +30,37 @@ impl DatabaseIdentifier {
 
 /// A builder for [`DatabaseIdentifier`](crate::types::DatabaseIdentifier).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DatabaseIdentifierBuilder {
-    pub(crate) catalog_id: std::option::Option<std::string::String>,
-    pub(crate) database_name: std::option::Option<std::string::String>,
+    pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
+    pub(crate) database_name: ::std::option::Option<::std::string::String>,
 }
 impl DatabaseIdentifierBuilder {
     /// <p>The ID of the Data Catalog in which the database resides.</p>
-    pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.catalog_id = Some(input.into());
+    pub fn catalog_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.catalog_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Data Catalog in which the database resides.</p>
-    pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_catalog_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.catalog_id = input;
         self
     }
     /// <p>The name of the catalog database.</p>
-    pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.database_name = Some(input.into());
+    pub fn database_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the catalog database.</p>
-    pub fn set_database_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_database_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.database_name = input;
         self
     }

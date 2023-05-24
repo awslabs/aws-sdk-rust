@@ -2,7 +2,7 @@
 
 /// <p>Represents the request sent to retrieve the account settings.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAccountSettingsInput {}
 impl GetAccountSettingsInput {
     /// Creates a new builder-style object to manufacture [`GetAccountSettingsInput`](crate::operation::get_account_settings::GetAccountSettingsInput).
@@ -14,16 +14,20 @@ impl GetAccountSettingsInput {
 
 /// A builder for [`GetAccountSettingsInput`](crate::operation::get_account_settings::GetAccountSettingsInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetAccountSettingsInputBuilder {}
 impl GetAccountSettingsInputBuilder {
     /// Consumes the builder and constructs a [`GetAccountSettingsInput`](crate::operation::get_account_settings::GetAccountSettingsInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::get_account_settings::GetAccountSettingsInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::get_account_settings::GetAccountSettingsInput {})
+        ::std::result::Result::Ok(
+            crate::operation::get_account_settings::GetAccountSettingsInput {},
+        )
     }
 }

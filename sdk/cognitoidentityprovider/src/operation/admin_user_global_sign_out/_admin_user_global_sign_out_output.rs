@@ -2,11 +2,11 @@
 
 /// <p>The global sign-out response, as an administrator.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AdminUserGlobalSignOutOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for AdminUserGlobalSignOutOutput {
+impl ::aws_http::request_id::RequestId for AdminUserGlobalSignOutOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -22,7 +22,9 @@ impl AdminUserGlobalSignOutOutput {
 
 /// A builder for [`AdminUserGlobalSignOutOutput`](crate::operation::admin_user_global_sign_out::AdminUserGlobalSignOutOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AdminUserGlobalSignOutOutputBuilder {
     _request_id: Option<String>,
 }

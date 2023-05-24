@@ -2,24 +2,24 @@
 
 /// <p>A filtering criterion to scope down the result list of the <code>ListServiceInstances</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListServiceInstancesFilter {
     /// <p>The name of a filtering criterion.</p>
     #[doc(hidden)]
-    pub key: std::option::Option<crate::types::ListServiceInstancesFilterBy>,
+    pub key: ::std::option::Option<crate::types::ListServiceInstancesFilterBy>,
     /// <p>A value to filter by.</p>
     /// <p>With the date/time keys (<code>*At{Before,After}</code>), the value is a valid <a href="https://datatracker.ietf.org/doc/html/rfc3339.html">RFC 3339</a> string with no UTC offset and with an optional fractional precision (for example, <code>1985-04-12T23:20:50.52Z</code>).</p>
     #[doc(hidden)]
-    pub value: std::option::Option<std::string::String>,
+    pub value: ::std::option::Option<::std::string::String>,
 }
 impl ListServiceInstancesFilter {
     /// <p>The name of a filtering criterion.</p>
-    pub fn key(&self) -> std::option::Option<&crate::types::ListServiceInstancesFilterBy> {
+    pub fn key(&self) -> ::std::option::Option<&crate::types::ListServiceInstancesFilterBy> {
         self.key.as_ref()
     }
     /// <p>A value to filter by.</p>
     /// <p>With the date/time keys (<code>*At{Before,After}</code>), the value is a valid <a href="https://datatracker.ietf.org/doc/html/rfc3339.html">RFC 3339</a> string with no UTC offset and with an optional fractional precision (for example, <code>1985-04-12T23:20:50.52Z</code>).</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
 }
@@ -32,34 +32,36 @@ impl ListServiceInstancesFilter {
 
 /// A builder for [`ListServiceInstancesFilter`](crate::types::ListServiceInstancesFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListServiceInstancesFilterBuilder {
-    pub(crate) key: std::option::Option<crate::types::ListServiceInstancesFilterBy>,
-    pub(crate) value: std::option::Option<std::string::String>,
+    pub(crate) key: ::std::option::Option<crate::types::ListServiceInstancesFilterBy>,
+    pub(crate) value: ::std::option::Option<::std::string::String>,
 }
 impl ListServiceInstancesFilterBuilder {
     /// <p>The name of a filtering criterion.</p>
     pub fn key(mut self, input: crate::types::ListServiceInstancesFilterBy) -> Self {
-        self.key = Some(input);
+        self.key = ::std::option::Option::Some(input);
         self
     }
     /// <p>The name of a filtering criterion.</p>
     pub fn set_key(
         mut self,
-        input: std::option::Option<crate::types::ListServiceInstancesFilterBy>,
+        input: ::std::option::Option<crate::types::ListServiceInstancesFilterBy>,
     ) -> Self {
         self.key = input;
         self
     }
     /// <p>A value to filter by.</p>
     /// <p>With the date/time keys (<code>*At{Before,After}</code>), the value is a valid <a href="https://datatracker.ietf.org/doc/html/rfc3339.html">RFC 3339</a> string with no UTC offset and with an optional fractional precision (for example, <code>1985-04-12T23:20:50.52Z</code>).</p>
-    pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.value = Some(input.into());
+    pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A value to filter by.</p>
     /// <p>With the date/time keys (<code>*At{Before,After}</code>), the value is a valid <a href="https://datatracker.ietf.org/doc/html/rfc3339.html">RFC 3339</a> string with no UTC offset and with an optional fractional precision (for example, <code>1985-04-12T23:20:50.52Z</code>).</p>
-    pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
     }

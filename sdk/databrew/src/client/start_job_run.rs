@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StartJobRun`](crate::operation::start_job_run::builders::StartJobRunFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::start_job_run::builders::StartJobRunFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::start_job_run::builders::StartJobRunFluentBuilder::set_name): <p>The name of the job to be run.</p>
+    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::start_job_run::builders::StartJobRunFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::start_job_run::builders::StartJobRunFluentBuilder::set_name): <p>The name of the job to be run.</p>
     /// - On success, responds with [`StartJobRunOutput`](crate::operation::start_job_run::StartJobRunOutput) with field(s):
     ///   - [`run_id(Option<String>)`](crate::operation::start_job_run::StartJobRunOutput::run_id): <p>A system-generated identifier for this particular job run.</p>
     /// - On failure, responds with [`SdkError<StartJobRunError>`](crate::operation::start_job_run::StartJobRunError)

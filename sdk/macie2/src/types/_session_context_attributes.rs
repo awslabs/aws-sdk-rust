@@ -2,22 +2,22 @@
 
 /// <p>Provides information about the context in which temporary security credentials were issued to an entity.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SessionContextAttributes {
     /// <p>The date and time, in UTC and ISO 8601 format, when the credentials were issued.</p>
     #[doc(hidden)]
-    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Specifies whether the credentials were authenticated with a multi-factor authentication (MFA) device.</p>
     #[doc(hidden)]
-    pub mfa_authenticated: std::option::Option<bool>,
+    pub mfa_authenticated: ::std::option::Option<bool>,
 }
 impl SessionContextAttributes {
     /// <p>The date and time, in UTC and ISO 8601 format, when the credentials were issued.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>Specifies whether the credentials were authenticated with a multi-factor authentication (MFA) device.</p>
-    pub fn mfa_authenticated(&self) -> std::option::Option<bool> {
+    pub fn mfa_authenticated(&self) -> ::std::option::Option<bool> {
         self.mfa_authenticated
     }
 }
@@ -30,32 +30,34 @@ impl SessionContextAttributes {
 
 /// A builder for [`SessionContextAttributes`](crate::types::SessionContextAttributes).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SessionContextAttributesBuilder {
-    pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) mfa_authenticated: std::option::Option<bool>,
+    pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) mfa_authenticated: ::std::option::Option<bool>,
 }
 impl SessionContextAttributesBuilder {
     /// <p>The date and time, in UTC and ISO 8601 format, when the credentials were issued.</p>
-    pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_date = Some(input);
+    pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time, in UTC and ISO 8601 format, when the credentials were issued.</p>
     pub fn set_creation_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_date = input;
         self
     }
     /// <p>Specifies whether the credentials were authenticated with a multi-factor authentication (MFA) device.</p>
     pub fn mfa_authenticated(mut self, input: bool) -> Self {
-        self.mfa_authenticated = Some(input);
+        self.mfa_authenticated = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether the credentials were authenticated with a multi-factor authentication (MFA) device.</p>
-    pub fn set_mfa_authenticated(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_mfa_authenticated(mut self, input: ::std::option::Option<bool>) -> Self {
         self.mfa_authenticated = input;
         self
     }

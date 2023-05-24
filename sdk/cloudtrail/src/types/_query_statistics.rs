@@ -2,29 +2,29 @@
 
 /// <p>Metadata about a query, such as the number of results.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QueryStatistics {
     /// <p>The number of results returned.</p>
     #[doc(hidden)]
-    pub results_count: std::option::Option<i32>,
+    pub results_count: ::std::option::Option<i32>,
     /// <p>The total number of results returned by a query.</p>
     #[doc(hidden)]
-    pub total_results_count: std::option::Option<i32>,
+    pub total_results_count: ::std::option::Option<i32>,
     /// <p>The total bytes that the query scanned in the event data store. This value matches the number of bytes for which your account is billed for the query, unless the query is still running.</p>
     #[doc(hidden)]
-    pub bytes_scanned: std::option::Option<i64>,
+    pub bytes_scanned: ::std::option::Option<i64>,
 }
 impl QueryStatistics {
     /// <p>The number of results returned.</p>
-    pub fn results_count(&self) -> std::option::Option<i32> {
+    pub fn results_count(&self) -> ::std::option::Option<i32> {
         self.results_count
     }
     /// <p>The total number of results returned by a query.</p>
-    pub fn total_results_count(&self) -> std::option::Option<i32> {
+    pub fn total_results_count(&self) -> ::std::option::Option<i32> {
         self.total_results_count
     }
     /// <p>The total bytes that the query scanned in the event data store. This value matches the number of bytes for which your account is billed for the query, unless the query is still running.</p>
-    pub fn bytes_scanned(&self) -> std::option::Option<i64> {
+    pub fn bytes_scanned(&self) -> ::std::option::Option<i64> {
         self.bytes_scanned
     }
 }
@@ -37,40 +37,42 @@ impl QueryStatistics {
 
 /// A builder for [`QueryStatistics`](crate::types::QueryStatistics).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct QueryStatisticsBuilder {
-    pub(crate) results_count: std::option::Option<i32>,
-    pub(crate) total_results_count: std::option::Option<i32>,
-    pub(crate) bytes_scanned: std::option::Option<i64>,
+    pub(crate) results_count: ::std::option::Option<i32>,
+    pub(crate) total_results_count: ::std::option::Option<i32>,
+    pub(crate) bytes_scanned: ::std::option::Option<i64>,
 }
 impl QueryStatisticsBuilder {
     /// <p>The number of results returned.</p>
     pub fn results_count(mut self, input: i32) -> Self {
-        self.results_count = Some(input);
+        self.results_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of results returned.</p>
-    pub fn set_results_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_results_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.results_count = input;
         self
     }
     /// <p>The total number of results returned by a query.</p>
     pub fn total_results_count(mut self, input: i32) -> Self {
-        self.total_results_count = Some(input);
+        self.total_results_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total number of results returned by a query.</p>
-    pub fn set_total_results_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_total_results_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.total_results_count = input;
         self
     }
     /// <p>The total bytes that the query scanned in the event data store. This value matches the number of bytes for which your account is billed for the query, unless the query is still running.</p>
     pub fn bytes_scanned(mut self, input: i64) -> Self {
-        self.bytes_scanned = Some(input);
+        self.bytes_scanned = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total bytes that the query scanned in the event data store. This value matches the number of bytes for which your account is billed for the query, unless the query is still running.</p>
-    pub fn set_bytes_scanned(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_bytes_scanned(mut self, input: ::std::option::Option<i64>) -> Self {
         self.bytes_scanned = input;
         self
     }

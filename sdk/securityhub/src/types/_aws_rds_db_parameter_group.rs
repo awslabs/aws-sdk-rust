@@ -2,22 +2,22 @@
 
 /// <p>Provides information about a parameter group for a DB instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsRdsDbParameterGroup {
     /// <p>The name of the parameter group.</p>
     #[doc(hidden)]
-    pub db_parameter_group_name: std::option::Option<std::string::String>,
+    pub db_parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of parameter updates.</p>
     #[doc(hidden)]
-    pub parameter_apply_status: std::option::Option<std::string::String>,
+    pub parameter_apply_status: ::std::option::Option<::std::string::String>,
 }
 impl AwsRdsDbParameterGroup {
     /// <p>The name of the parameter group.</p>
-    pub fn db_parameter_group_name(&self) -> std::option::Option<&str> {
+    pub fn db_parameter_group_name(&self) -> ::std::option::Option<&str> {
         self.db_parameter_group_name.as_deref()
     }
     /// <p>The status of parameter updates.</p>
-    pub fn parameter_apply_status(&self) -> std::option::Option<&str> {
+    pub fn parameter_apply_status(&self) -> ::std::option::Option<&str> {
         self.parameter_apply_status.as_deref()
     }
 }
@@ -30,34 +30,42 @@ impl AwsRdsDbParameterGroup {
 
 /// A builder for [`AwsRdsDbParameterGroup`](crate::types::AwsRdsDbParameterGroup).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsRdsDbParameterGroupBuilder {
-    pub(crate) db_parameter_group_name: std::option::Option<std::string::String>,
-    pub(crate) parameter_apply_status: std::option::Option<std::string::String>,
+    pub(crate) db_parameter_group_name: ::std::option::Option<::std::string::String>,
+    pub(crate) parameter_apply_status: ::std::option::Option<::std::string::String>,
 }
 impl AwsRdsDbParameterGroupBuilder {
     /// <p>The name of the parameter group.</p>
-    pub fn db_parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.db_parameter_group_name = Some(input.into());
+    pub fn db_parameter_group_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.db_parameter_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the parameter group.</p>
     pub fn set_db_parameter_group_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.db_parameter_group_name = input;
         self
     }
     /// <p>The status of parameter updates.</p>
-    pub fn parameter_apply_status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.parameter_apply_status = Some(input.into());
+    pub fn parameter_apply_status(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.parameter_apply_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of parameter updates.</p>
     pub fn set_parameter_apply_status(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.parameter_apply_status = input;
         self

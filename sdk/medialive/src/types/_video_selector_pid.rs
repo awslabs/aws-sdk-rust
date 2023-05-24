@@ -2,15 +2,15 @@
 
 /// Video Selector Pid
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VideoSelectorPid {
     /// Selects a specific PID from within a video source.
     #[doc(hidden)]
-    pub pid: std::option::Option<i32>,
+    pub pid: ::std::option::Option<i32>,
 }
 impl VideoSelectorPid {
     /// Selects a specific PID from within a video source.
-    pub fn pid(&self) -> std::option::Option<i32> {
+    pub fn pid(&self) -> ::std::option::Option<i32> {
         self.pid
     }
 }
@@ -23,18 +23,20 @@ impl VideoSelectorPid {
 
 /// A builder for [`VideoSelectorPid`](crate::types::VideoSelectorPid).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VideoSelectorPidBuilder {
-    pub(crate) pid: std::option::Option<i32>,
+    pub(crate) pid: ::std::option::Option<i32>,
 }
 impl VideoSelectorPidBuilder {
     /// Selects a specific PID from within a video source.
     pub fn pid(mut self, input: i32) -> Self {
-        self.pid = Some(input);
+        self.pid = ::std::option::Option::Some(input);
         self
     }
     /// Selects a specific PID from within a video source.
-    pub fn set_pid(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_pid(mut self, input: ::std::option::Option<i32>) -> Self {
         self.pid = input;
         self
     }

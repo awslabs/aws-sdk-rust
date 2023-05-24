@@ -2,22 +2,22 @@
 
 /// <p>A list of features. You must include <code>FeatureName</code> and <code>FeatureType</code>. Valid feature <code>FeatureType</code>s are <code>Integral</code>, <code>Fractional</code> and <code>String</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FeatureDefinition {
     /// <p>The name of a feature. The type must be a string. <code>FeatureName</code> cannot be any of the following: <code>is_deleted</code>, <code>write_time</code>, <code>api_invocation_time</code>.</p>
     #[doc(hidden)]
-    pub feature_name: std::option::Option<std::string::String>,
+    pub feature_name: ::std::option::Option<::std::string::String>,
     /// <p>The value type of a feature. Valid values are Integral, Fractional, or String.</p>
     #[doc(hidden)]
-    pub feature_type: std::option::Option<crate::types::FeatureType>,
+    pub feature_type: ::std::option::Option<crate::types::FeatureType>,
 }
 impl FeatureDefinition {
     /// <p>The name of a feature. The type must be a string. <code>FeatureName</code> cannot be any of the following: <code>is_deleted</code>, <code>write_time</code>, <code>api_invocation_time</code>.</p>
-    pub fn feature_name(&self) -> std::option::Option<&str> {
+    pub fn feature_name(&self) -> ::std::option::Option<&str> {
         self.feature_name.as_deref()
     }
     /// <p>The value type of a feature. Valid values are Integral, Fractional, or String.</p>
-    pub fn feature_type(&self) -> std::option::Option<&crate::types::FeatureType> {
+    pub fn feature_type(&self) -> ::std::option::Option<&crate::types::FeatureType> {
         self.feature_type.as_ref()
     }
 }
@@ -30,31 +30,33 @@ impl FeatureDefinition {
 
 /// A builder for [`FeatureDefinition`](crate::types::FeatureDefinition).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FeatureDefinitionBuilder {
-    pub(crate) feature_name: std::option::Option<std::string::String>,
-    pub(crate) feature_type: std::option::Option<crate::types::FeatureType>,
+    pub(crate) feature_name: ::std::option::Option<::std::string::String>,
+    pub(crate) feature_type: ::std::option::Option<crate::types::FeatureType>,
 }
 impl FeatureDefinitionBuilder {
     /// <p>The name of a feature. The type must be a string. <code>FeatureName</code> cannot be any of the following: <code>is_deleted</code>, <code>write_time</code>, <code>api_invocation_time</code>.</p>
-    pub fn feature_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.feature_name = Some(input.into());
+    pub fn feature_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.feature_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a feature. The type must be a string. <code>FeatureName</code> cannot be any of the following: <code>is_deleted</code>, <code>write_time</code>, <code>api_invocation_time</code>.</p>
-    pub fn set_feature_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_feature_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.feature_name = input;
         self
     }
     /// <p>The value type of a feature. Valid values are Integral, Fractional, or String.</p>
     pub fn feature_type(mut self, input: crate::types::FeatureType) -> Self {
-        self.feature_type = Some(input);
+        self.feature_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The value type of a feature. Valid values are Integral, Fractional, or String.</p>
     pub fn set_feature_type(
         mut self,
-        input: std::option::Option<crate::types::FeatureType>,
+        input: ::std::option::Option<crate::types::FeatureType>,
     ) -> Self {
         self.feature_type = input;
         self

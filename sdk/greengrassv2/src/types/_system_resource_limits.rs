@@ -2,7 +2,7 @@
 
 /// <p>Contains information about system resource limits that the IoT Greengrass Core software applies to a component's processes. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-system-resource-limits">Configure system resource limits for components</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SystemResourceLimits {
     /// <p>The maximum amount of RAM, expressed in kilobytes, that a component's processes can use on the core device.</p>
     #[doc(hidden)]
@@ -30,29 +30,31 @@ impl SystemResourceLimits {
 
 /// A builder for [`SystemResourceLimits`](crate::types::SystemResourceLimits).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SystemResourceLimitsBuilder {
-    pub(crate) memory: std::option::Option<i64>,
-    pub(crate) cpus: std::option::Option<f64>,
+    pub(crate) memory: ::std::option::Option<i64>,
+    pub(crate) cpus: ::std::option::Option<f64>,
 }
 impl SystemResourceLimitsBuilder {
     /// <p>The maximum amount of RAM, expressed in kilobytes, that a component's processes can use on the core device.</p>
     pub fn memory(mut self, input: i64) -> Self {
-        self.memory = Some(input);
+        self.memory = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum amount of RAM, expressed in kilobytes, that a component's processes can use on the core device.</p>
-    pub fn set_memory(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_memory(mut self, input: ::std::option::Option<i64>) -> Self {
         self.memory = input;
         self
     }
     /// <p>The maximum amount of CPU time that a component's processes can use on the core device. A core device's total CPU time is equivalent to the device's number of CPU cores. For example, on a core device with 4 CPU cores, you can set this value to <code>2</code> to limit the component's processes to 50 percent usage of each CPU core. On a device with 1 CPU core, you can set this value to <code>0.25</code> to limit the component's processes to 25 percent usage of the CPU. If you set this value to a number greater than the number of CPU cores, the IoT Greengrass Core software doesn't limit the component's CPU usage.</p>
     pub fn cpus(mut self, input: f64) -> Self {
-        self.cpus = Some(input);
+        self.cpus = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum amount of CPU time that a component's processes can use on the core device. A core device's total CPU time is equivalent to the device's number of CPU cores. For example, on a core device with 4 CPU cores, you can set this value to <code>2</code> to limit the component's processes to 50 percent usage of each CPU core. On a device with 1 CPU core, you can set this value to <code>0.25</code> to limit the component's processes to 25 percent usage of the CPU. If you set this value to a number greater than the number of CPU cores, the IoT Greengrass Core software doesn't limit the component's CPU usage.</p>
-    pub fn set_cpus(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_cpus(mut self, input: ::std::option::Option<f64>) -> Self {
         self.cpus = input;
         self
     }

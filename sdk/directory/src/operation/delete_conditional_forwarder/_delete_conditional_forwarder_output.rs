@@ -2,11 +2,11 @@
 
 /// <p>The result of a DeleteConditionalForwarder request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteConditionalForwarderOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for DeleteConditionalForwarderOutput {
+impl ::aws_http::request_id::RequestId for DeleteConditionalForwarderOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -20,7 +20,9 @@ impl DeleteConditionalForwarderOutput {
 
 /// A builder for [`DeleteConditionalForwarderOutput`](crate::operation::delete_conditional_forwarder::DeleteConditionalForwarderOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteConditionalForwarderOutputBuilder {
     _request_id: Option<String>,
 }

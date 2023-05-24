@@ -2,27 +2,27 @@
 
 /// <p>Describes a projected utilization metric of an Lambda function recommendation option.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LambdaFunctionMemoryProjectedMetric {
     /// <p>The name of the projected utilization metric.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<crate::types::LambdaFunctionMemoryMetricName>,
+    pub name: ::std::option::Option<crate::types::LambdaFunctionMemoryMetricName>,
     /// <p>The statistic of the projected utilization metric.</p>
     #[doc(hidden)]
-    pub statistic: std::option::Option<crate::types::LambdaFunctionMemoryMetricStatistic>,
+    pub statistic: ::std::option::Option<crate::types::LambdaFunctionMemoryMetricStatistic>,
     /// <p>The values of the projected utilization metrics.</p>
     #[doc(hidden)]
     pub value: f64,
 }
 impl LambdaFunctionMemoryProjectedMetric {
     /// <p>The name of the projected utilization metric.</p>
-    pub fn name(&self) -> std::option::Option<&crate::types::LambdaFunctionMemoryMetricName> {
+    pub fn name(&self) -> ::std::option::Option<&crate::types::LambdaFunctionMemoryMetricName> {
         self.name.as_ref()
     }
     /// <p>The statistic of the projected utilization metric.</p>
     pub fn statistic(
         &self,
-    ) -> std::option::Option<&crate::types::LambdaFunctionMemoryMetricStatistic> {
+    ) -> ::std::option::Option<&crate::types::LambdaFunctionMemoryMetricStatistic> {
         self.statistic.as_ref()
     }
     /// <p>The values of the projected utilization metrics.</p>
@@ -39,46 +39,48 @@ impl LambdaFunctionMemoryProjectedMetric {
 
 /// A builder for [`LambdaFunctionMemoryProjectedMetric`](crate::types::LambdaFunctionMemoryProjectedMetric).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LambdaFunctionMemoryProjectedMetricBuilder {
-    pub(crate) name: std::option::Option<crate::types::LambdaFunctionMemoryMetricName>,
-    pub(crate) statistic: std::option::Option<crate::types::LambdaFunctionMemoryMetricStatistic>,
-    pub(crate) value: std::option::Option<f64>,
+    pub(crate) name: ::std::option::Option<crate::types::LambdaFunctionMemoryMetricName>,
+    pub(crate) statistic: ::std::option::Option<crate::types::LambdaFunctionMemoryMetricStatistic>,
+    pub(crate) value: ::std::option::Option<f64>,
 }
 impl LambdaFunctionMemoryProjectedMetricBuilder {
     /// <p>The name of the projected utilization metric.</p>
     pub fn name(mut self, input: crate::types::LambdaFunctionMemoryMetricName) -> Self {
-        self.name = Some(input);
+        self.name = ::std::option::Option::Some(input);
         self
     }
     /// <p>The name of the projected utilization metric.</p>
     pub fn set_name(
         mut self,
-        input: std::option::Option<crate::types::LambdaFunctionMemoryMetricName>,
+        input: ::std::option::Option<crate::types::LambdaFunctionMemoryMetricName>,
     ) -> Self {
         self.name = input;
         self
     }
     /// <p>The statistic of the projected utilization metric.</p>
     pub fn statistic(mut self, input: crate::types::LambdaFunctionMemoryMetricStatistic) -> Self {
-        self.statistic = Some(input);
+        self.statistic = ::std::option::Option::Some(input);
         self
     }
     /// <p>The statistic of the projected utilization metric.</p>
     pub fn set_statistic(
         mut self,
-        input: std::option::Option<crate::types::LambdaFunctionMemoryMetricStatistic>,
+        input: ::std::option::Option<crate::types::LambdaFunctionMemoryMetricStatistic>,
     ) -> Self {
         self.statistic = input;
         self
     }
     /// <p>The values of the projected utilization metrics.</p>
     pub fn value(mut self, input: f64) -> Self {
-        self.value = Some(input);
+        self.value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The values of the projected utilization metrics.</p>
-    pub fn set_value(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.value = input;
         self
     }

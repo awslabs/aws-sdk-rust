@@ -2,17 +2,17 @@
 
 /// <p>The user pool add-ons type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserPoolAddOnsType {
     /// <p>The advanced security mode.</p>
     #[doc(hidden)]
-    pub advanced_security_mode: std::option::Option<crate::types::AdvancedSecurityModeType>,
+    pub advanced_security_mode: ::std::option::Option<crate::types::AdvancedSecurityModeType>,
 }
 impl UserPoolAddOnsType {
     /// <p>The advanced security mode.</p>
     pub fn advanced_security_mode(
         &self,
-    ) -> std::option::Option<&crate::types::AdvancedSecurityModeType> {
+    ) -> ::std::option::Option<&crate::types::AdvancedSecurityModeType> {
         self.advanced_security_mode.as_ref()
     }
 }
@@ -25,20 +25,23 @@ impl UserPoolAddOnsType {
 
 /// A builder for [`UserPoolAddOnsType`](crate::types::UserPoolAddOnsType).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UserPoolAddOnsTypeBuilder {
-    pub(crate) advanced_security_mode: std::option::Option<crate::types::AdvancedSecurityModeType>,
+    pub(crate) advanced_security_mode:
+        ::std::option::Option<crate::types::AdvancedSecurityModeType>,
 }
 impl UserPoolAddOnsTypeBuilder {
     /// <p>The advanced security mode.</p>
     pub fn advanced_security_mode(mut self, input: crate::types::AdvancedSecurityModeType) -> Self {
-        self.advanced_security_mode = Some(input);
+        self.advanced_security_mode = ::std::option::Option::Some(input);
         self
     }
     /// <p>The advanced security mode.</p>
     pub fn set_advanced_security_mode(
         mut self,
-        input: std::option::Option<crate::types::AdvancedSecurityModeType>,
+        input: ::std::option::Option<crate::types::AdvancedSecurityModeType>,
     ) -> Self {
         self.advanced_security_mode = input;
         self

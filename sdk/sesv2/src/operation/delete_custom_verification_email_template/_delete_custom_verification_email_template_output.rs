@@ -2,11 +2,11 @@
 
 /// <p>If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteCustomVerificationEmailTemplateOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for DeleteCustomVerificationEmailTemplateOutput {
+impl ::aws_http::request_id::RequestId for DeleteCustomVerificationEmailTemplateOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -20,7 +20,9 @@ impl DeleteCustomVerificationEmailTemplateOutput {
 
 /// A builder for [`DeleteCustomVerificationEmailTemplateOutput`](crate::operation::delete_custom_verification_email_template::DeleteCustomVerificationEmailTemplateOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteCustomVerificationEmailTemplateOutputBuilder {
     _request_id: Option<String>,
 }

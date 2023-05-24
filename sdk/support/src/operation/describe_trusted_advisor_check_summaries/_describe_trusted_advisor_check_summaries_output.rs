@@ -2,20 +2,20 @@
 
 /// <p>The summaries of the Trusted Advisor checks returned by the <code>DescribeTrustedAdvisorCheckSummaries</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTrustedAdvisorCheckSummariesOutput {
     /// <p>The summary information for the requested Trusted Advisor checks.</p>
     #[doc(hidden)]
-    pub summaries: std::option::Option<std::vec::Vec<crate::types::TrustedAdvisorCheckSummary>>,
+    pub summaries: ::std::option::Option<::std::vec::Vec<crate::types::TrustedAdvisorCheckSummary>>,
     _request_id: Option<String>,
 }
 impl DescribeTrustedAdvisorCheckSummariesOutput {
     /// <p>The summary information for the requested Trusted Advisor checks.</p>
-    pub fn summaries(&self) -> std::option::Option<&[crate::types::TrustedAdvisorCheckSummary]> {
+    pub fn summaries(&self) -> ::std::option::Option<&[crate::types::TrustedAdvisorCheckSummary]> {
         self.summaries.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeTrustedAdvisorCheckSummariesOutput {
+impl ::aws_http::request_id::RequestId for DescribeTrustedAdvisorCheckSummariesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,10 +29,12 @@ impl DescribeTrustedAdvisorCheckSummariesOutput {
 
 /// A builder for [`DescribeTrustedAdvisorCheckSummariesOutput`](crate::operation::describe_trusted_advisor_check_summaries::DescribeTrustedAdvisorCheckSummariesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeTrustedAdvisorCheckSummariesOutputBuilder {
     pub(crate) summaries:
-        std::option::Option<std::vec::Vec<crate::types::TrustedAdvisorCheckSummary>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::TrustedAdvisorCheckSummary>>,
     _request_id: Option<String>,
 }
 impl DescribeTrustedAdvisorCheckSummariesOutputBuilder {
@@ -44,13 +46,13 @@ impl DescribeTrustedAdvisorCheckSummariesOutputBuilder {
     pub fn summaries(mut self, input: crate::types::TrustedAdvisorCheckSummary) -> Self {
         let mut v = self.summaries.unwrap_or_default();
         v.push(input);
-        self.summaries = Some(v);
+        self.summaries = ::std::option::Option::Some(v);
         self
     }
     /// <p>The summary information for the requested Trusted Advisor checks.</p>
     pub fn set_summaries(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TrustedAdvisorCheckSummary>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::TrustedAdvisorCheckSummary>>,
     ) -> Self {
         self.summaries = input;
         self

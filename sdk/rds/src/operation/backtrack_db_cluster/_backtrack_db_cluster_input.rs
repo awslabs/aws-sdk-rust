@@ -2,7 +2,7 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BacktrackDbClusterInput {
     /// <p>The DB cluster identifier of the DB cluster to be backtracked. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
@@ -13,7 +13,7 @@ pub struct BacktrackDbClusterInput {
     /// </ul>
     /// <p>Example: <code>my-cluster1</code> </p>
     #[doc(hidden)]
-    pub db_cluster_identifier: std::option::Option<std::string::String>,
+    pub db_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp of the time to backtrack the DB cluster to, specified in ISO 8601 format. For more information about ISO 8601, see the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p> <note>
     /// <p>If the specified time isn't a consistent time for the DB cluster, Aurora automatically chooses the nearest possible consistent time for the DB cluster.</p>
     /// </note>
@@ -24,13 +24,13 @@ pub struct BacktrackDbClusterInput {
     /// </ul>
     /// <p>Example: <code>2017-07-08T18:00Z</code> </p>
     #[doc(hidden)]
-    pub backtrack_to: std::option::Option<aws_smithy_types::DateTime>,
+    pub backtrack_to: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A value that indicates whether to force the DB cluster to backtrack when binary logging is enabled. Otherwise, an error occurs when binary logging is enabled.</p>
     #[doc(hidden)]
-    pub force: std::option::Option<bool>,
+    pub force: ::std::option::Option<bool>,
     /// <p>A value that indicates whether to backtrack the DB cluster to the earliest possible backtrack time when <i>BacktrackTo</i> is set to a timestamp earlier than the earliest backtrack time. When this parameter is disabled and <i>BacktrackTo</i> is set to a timestamp earlier than the earliest backtrack time, an error occurs.</p>
     #[doc(hidden)]
-    pub use_earliest_time_on_point_in_time_unavailable: std::option::Option<bool>,
+    pub use_earliest_time_on_point_in_time_unavailable: ::std::option::Option<bool>,
 }
 impl BacktrackDbClusterInput {
     /// <p>The DB cluster identifier of the DB cluster to be backtracked. This parameter is stored as a lowercase string.</p>
@@ -41,7 +41,7 @@ impl BacktrackDbClusterInput {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster1</code> </p>
-    pub fn db_cluster_identifier(&self) -> std::option::Option<&str> {
+    pub fn db_cluster_identifier(&self) -> ::std::option::Option<&str> {
         self.db_cluster_identifier.as_deref()
     }
     /// <p>The timestamp of the time to backtrack the DB cluster to, specified in ISO 8601 format. For more information about ISO 8601, see the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p> <note>
@@ -53,15 +53,15 @@ impl BacktrackDbClusterInput {
     /// <li> <p>Can't contain a timestamp set in the future.</p> </li>
     /// </ul>
     /// <p>Example: <code>2017-07-08T18:00Z</code> </p>
-    pub fn backtrack_to(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn backtrack_to(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.backtrack_to.as_ref()
     }
     /// <p>A value that indicates whether to force the DB cluster to backtrack when binary logging is enabled. Otherwise, an error occurs when binary logging is enabled.</p>
-    pub fn force(&self) -> std::option::Option<bool> {
+    pub fn force(&self) -> ::std::option::Option<bool> {
         self.force
     }
     /// <p>A value that indicates whether to backtrack the DB cluster to the earliest possible backtrack time when <i>BacktrackTo</i> is set to a timestamp earlier than the earliest backtrack time. When this parameter is disabled and <i>BacktrackTo</i> is set to a timestamp earlier than the earliest backtrack time, an error occurs.</p>
-    pub fn use_earliest_time_on_point_in_time_unavailable(&self) -> std::option::Option<bool> {
+    pub fn use_earliest_time_on_point_in_time_unavailable(&self) -> ::std::option::Option<bool> {
         self.use_earliest_time_on_point_in_time_unavailable
     }
 }
@@ -75,12 +75,14 @@ impl BacktrackDbClusterInput {
 
 /// A builder for [`BacktrackDbClusterInput`](crate::operation::backtrack_db_cluster::BacktrackDbClusterInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BacktrackDbClusterInputBuilder {
-    pub(crate) db_cluster_identifier: std::option::Option<std::string::String>,
-    pub(crate) backtrack_to: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) force: std::option::Option<bool>,
-    pub(crate) use_earliest_time_on_point_in_time_unavailable: std::option::Option<bool>,
+    pub(crate) db_cluster_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) backtrack_to: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) force: ::std::option::Option<bool>,
+    pub(crate) use_earliest_time_on_point_in_time_unavailable: ::std::option::Option<bool>,
 }
 impl BacktrackDbClusterInputBuilder {
     /// <p>The DB cluster identifier of the DB cluster to be backtracked. This parameter is stored as a lowercase string.</p>
@@ -91,8 +93,11 @@ impl BacktrackDbClusterInputBuilder {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster1</code> </p>
-    pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
-        self.db_cluster_identifier = Some(input.into());
+    pub fn db_cluster_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.db_cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The DB cluster identifier of the DB cluster to be backtracked. This parameter is stored as a lowercase string.</p>
@@ -105,7 +110,7 @@ impl BacktrackDbClusterInputBuilder {
     /// <p>Example: <code>my-cluster1</code> </p>
     pub fn set_db_cluster_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.db_cluster_identifier = input;
         self
@@ -119,8 +124,8 @@ impl BacktrackDbClusterInputBuilder {
     /// <li> <p>Can't contain a timestamp set in the future.</p> </li>
     /// </ul>
     /// <p>Example: <code>2017-07-08T18:00Z</code> </p>
-    pub fn backtrack_to(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.backtrack_to = Some(input);
+    pub fn backtrack_to(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.backtrack_to = ::std::option::Option::Some(input);
         self
     }
     /// <p>The timestamp of the time to backtrack the DB cluster to, specified in ISO 8601 format. For more information about ISO 8601, see the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> </p> <note>
@@ -134,30 +139,30 @@ impl BacktrackDbClusterInputBuilder {
     /// <p>Example: <code>2017-07-08T18:00Z</code> </p>
     pub fn set_backtrack_to(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.backtrack_to = input;
         self
     }
     /// <p>A value that indicates whether to force the DB cluster to backtrack when binary logging is enabled. Otherwise, an error occurs when binary logging is enabled.</p>
     pub fn force(mut self, input: bool) -> Self {
-        self.force = Some(input);
+        self.force = ::std::option::Option::Some(input);
         self
     }
     /// <p>A value that indicates whether to force the DB cluster to backtrack when binary logging is enabled. Otherwise, an error occurs when binary logging is enabled.</p>
-    pub fn set_force(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_force(mut self, input: ::std::option::Option<bool>) -> Self {
         self.force = input;
         self
     }
     /// <p>A value that indicates whether to backtrack the DB cluster to the earliest possible backtrack time when <i>BacktrackTo</i> is set to a timestamp earlier than the earliest backtrack time. When this parameter is disabled and <i>BacktrackTo</i> is set to a timestamp earlier than the earliest backtrack time, an error occurs.</p>
     pub fn use_earliest_time_on_point_in_time_unavailable(mut self, input: bool) -> Self {
-        self.use_earliest_time_on_point_in_time_unavailable = Some(input);
+        self.use_earliest_time_on_point_in_time_unavailable = ::std::option::Option::Some(input);
         self
     }
     /// <p>A value that indicates whether to backtrack the DB cluster to the earliest possible backtrack time when <i>BacktrackTo</i> is set to a timestamp earlier than the earliest backtrack time. When this parameter is disabled and <i>BacktrackTo</i> is set to a timestamp earlier than the earliest backtrack time, an error occurs.</p>
     pub fn set_use_earliest_time_on_point_in_time_unavailable(
         mut self,
-        input: std::option::Option<bool>,
+        input: ::std::option::Option<bool>,
     ) -> Self {
         self.use_earliest_time_on_point_in_time_unavailable = input;
         self
@@ -165,11 +170,11 @@ impl BacktrackDbClusterInputBuilder {
     /// Consumes the builder and constructs a [`BacktrackDbClusterInput`](crate::operation::backtrack_db_cluster::BacktrackDbClusterInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::backtrack_db_cluster::BacktrackDbClusterInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::backtrack_db_cluster::BacktrackDbClusterInput {
                 db_cluster_identifier: self.db_cluster_identifier,
                 backtrack_to: self.backtrack_to,

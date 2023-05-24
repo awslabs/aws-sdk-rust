@@ -2,32 +2,32 @@
 
 /// <p>A list of the replication groups </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegionalConfiguration {
     /// <p>The name of the secondary cluster</p>
     #[doc(hidden)]
-    pub replication_group_id: std::option::Option<std::string::String>,
+    pub replication_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon region where the cluster is stored</p>
     #[doc(hidden)]
-    pub replication_group_region: std::option::Option<std::string::String>,
+    pub replication_group_region: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code>PreferredAvailabilityZones</code> objects that specifies the configuration of a node group in the resharded cluster. </p>
     #[doc(hidden)]
     pub resharding_configuration:
-        std::option::Option<std::vec::Vec<crate::types::ReshardingConfiguration>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ReshardingConfiguration>>,
 }
 impl RegionalConfiguration {
     /// <p>The name of the secondary cluster</p>
-    pub fn replication_group_id(&self) -> std::option::Option<&str> {
+    pub fn replication_group_id(&self) -> ::std::option::Option<&str> {
         self.replication_group_id.as_deref()
     }
     /// <p>The Amazon region where the cluster is stored</p>
-    pub fn replication_group_region(&self) -> std::option::Option<&str> {
+    pub fn replication_group_region(&self) -> ::std::option::Option<&str> {
         self.replication_group_region.as_deref()
     }
     /// <p>A list of <code>PreferredAvailabilityZones</code> objects that specifies the configuration of a node group in the resharded cluster. </p>
     pub fn resharding_configuration(
         &self,
-    ) -> std::option::Option<&[crate::types::ReshardingConfiguration]> {
+    ) -> ::std::option::Option<&[crate::types::ReshardingConfiguration]> {
         self.resharding_configuration.as_deref()
     }
 }
@@ -40,36 +40,44 @@ impl RegionalConfiguration {
 
 /// A builder for [`RegionalConfiguration`](crate::types::RegionalConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RegionalConfigurationBuilder {
-    pub(crate) replication_group_id: std::option::Option<std::string::String>,
-    pub(crate) replication_group_region: std::option::Option<std::string::String>,
+    pub(crate) replication_group_id: ::std::option::Option<::std::string::String>,
+    pub(crate) replication_group_region: ::std::option::Option<::std::string::String>,
     pub(crate) resharding_configuration:
-        std::option::Option<std::vec::Vec<crate::types::ReshardingConfiguration>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ReshardingConfiguration>>,
 }
 impl RegionalConfigurationBuilder {
     /// <p>The name of the secondary cluster</p>
-    pub fn replication_group_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.replication_group_id = Some(input.into());
+    pub fn replication_group_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.replication_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the secondary cluster</p>
     pub fn set_replication_group_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.replication_group_id = input;
         self
     }
     /// <p>The Amazon region where the cluster is stored</p>
-    pub fn replication_group_region(mut self, input: impl Into<std::string::String>) -> Self {
-        self.replication_group_region = Some(input.into());
+    pub fn replication_group_region(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.replication_group_region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon region where the cluster is stored</p>
     pub fn set_replication_group_region(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.replication_group_region = input;
         self
@@ -85,13 +93,13 @@ impl RegionalConfigurationBuilder {
     ) -> Self {
         let mut v = self.resharding_configuration.unwrap_or_default();
         v.push(input);
-        self.resharding_configuration = Some(v);
+        self.resharding_configuration = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of <code>PreferredAvailabilityZones</code> objects that specifies the configuration of a node group in the resharded cluster. </p>
     pub fn set_resharding_configuration(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ReshardingConfiguration>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ReshardingConfiguration>>,
     ) -> Self {
         self.resharding_configuration = input;
         self

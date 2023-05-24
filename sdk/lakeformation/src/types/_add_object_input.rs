@@ -2,29 +2,29 @@
 
 /// <p>A new object to add to the governed table.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddObjectInput {
     /// <p>The Amazon S3 location of the object.</p>
     #[doc(hidden)]
-    pub uri: std::option::Option<std::string::String>,
+    pub uri: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 ETag of the object. Returned by <code>GetTableObjects</code> for validation and used to identify changes to the underlying data.</p>
     #[doc(hidden)]
-    pub e_tag: std::option::Option<std::string::String>,
+    pub e_tag: ::std::option::Option<::std::string::String>,
     /// <p>The size of the Amazon S3 object in bytes.</p>
     #[doc(hidden)]
     pub size: i64,
     /// <p>A list of partition values for the object. A value must be specified for each partition key associated with the table.</p>
     /// <p>The supported data types are integer, long, date(yyyy-MM-dd), timestamp(yyyy-MM-dd HH:mm:ssXXX or yyyy-MM-dd HH:mm:ss"), string and decimal.</p>
     #[doc(hidden)]
-    pub partition_values: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub partition_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AddObjectInput {
     /// <p>The Amazon S3 location of the object.</p>
-    pub fn uri(&self) -> std::option::Option<&str> {
+    pub fn uri(&self) -> ::std::option::Option<&str> {
         self.uri.as_deref()
     }
     /// <p>The Amazon S3 ETag of the object. Returned by <code>GetTableObjects</code> for validation and used to identify changes to the underlying data.</p>
-    pub fn e_tag(&self) -> std::option::Option<&str> {
+    pub fn e_tag(&self) -> ::std::option::Option<&str> {
         self.e_tag.as_deref()
     }
     /// <p>The size of the Amazon S3 object in bytes.</p>
@@ -33,7 +33,7 @@ impl AddObjectInput {
     }
     /// <p>A list of partition values for the object. A value must be specified for each partition key associated with the table.</p>
     /// <p>The supported data types are integer, long, date(yyyy-MM-dd), timestamp(yyyy-MM-dd HH:mm:ssXXX or yyyy-MM-dd HH:mm:ss"), string and decimal.</p>
-    pub fn partition_values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn partition_values(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.partition_values.as_deref()
     }
 }
@@ -46,41 +46,43 @@ impl AddObjectInput {
 
 /// A builder for [`AddObjectInput`](crate::types::AddObjectInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AddObjectInputBuilder {
-    pub(crate) uri: std::option::Option<std::string::String>,
-    pub(crate) e_tag: std::option::Option<std::string::String>,
-    pub(crate) size: std::option::Option<i64>,
-    pub(crate) partition_values: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) uri: ::std::option::Option<::std::string::String>,
+    pub(crate) e_tag: ::std::option::Option<::std::string::String>,
+    pub(crate) size: ::std::option::Option<i64>,
+    pub(crate) partition_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AddObjectInputBuilder {
     /// <p>The Amazon S3 location of the object.</p>
-    pub fn uri(mut self, input: impl Into<std::string::String>) -> Self {
-        self.uri = Some(input.into());
+    pub fn uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.uri = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon S3 location of the object.</p>
-    pub fn set_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.uri = input;
         self
     }
     /// <p>The Amazon S3 ETag of the object. Returned by <code>GetTableObjects</code> for validation and used to identify changes to the underlying data.</p>
-    pub fn e_tag(mut self, input: impl Into<std::string::String>) -> Self {
-        self.e_tag = Some(input.into());
+    pub fn e_tag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.e_tag = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon S3 ETag of the object. Returned by <code>GetTableObjects</code> for validation and used to identify changes to the underlying data.</p>
-    pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_e_tag(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.e_tag = input;
         self
     }
     /// <p>The size of the Amazon S3 object in bytes.</p>
     pub fn size(mut self, input: i64) -> Self {
-        self.size = Some(input);
+        self.size = ::std::option::Option::Some(input);
         self
     }
     /// <p>The size of the Amazon S3 object in bytes.</p>
-    pub fn set_size(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_size(mut self, input: ::std::option::Option<i64>) -> Self {
         self.size = input;
         self
     }
@@ -90,17 +92,20 @@ impl AddObjectInputBuilder {
     ///
     /// <p>A list of partition values for the object. A value must be specified for each partition key associated with the table.</p>
     /// <p>The supported data types are integer, long, date(yyyy-MM-dd), timestamp(yyyy-MM-dd HH:mm:ssXXX or yyyy-MM-dd HH:mm:ss"), string and decimal.</p>
-    pub fn partition_values(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn partition_values(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.partition_values.unwrap_or_default();
         v.push(input.into());
-        self.partition_values = Some(v);
+        self.partition_values = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of partition values for the object. A value must be specified for each partition key associated with the table.</p>
     /// <p>The supported data types are integer, long, date(yyyy-MM-dd), timestamp(yyyy-MM-dd HH:mm:ssXXX or yyyy-MM-dd HH:mm:ss"), string and decimal.</p>
     pub fn set_partition_values(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.partition_values = input;
         self

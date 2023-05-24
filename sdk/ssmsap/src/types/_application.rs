@@ -2,64 +2,64 @@
 
 /// <p>An SAP application registered with AWS Systems Manager for SAP.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Application {
     /// <p>The ID of the application.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The type of the application.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::ApplicationType>,
+    pub r#type: ::std::option::Option<crate::types::ApplicationType>,
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Application Registry.</p>
     #[doc(hidden)]
-    pub app_registry_arn: std::option::Option<std::string::String>,
+    pub app_registry_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the application.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::ApplicationStatus>,
+    pub status: ::std::option::Option<crate::types::ApplicationStatus>,
     /// <p>The components of the application.</p>
     #[doc(hidden)]
-    pub components: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub components: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The time at which the application was last updated.</p>
     #[doc(hidden)]
-    pub last_updated: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status message.</p>
     #[doc(hidden)]
-    pub status_message: std::option::Option<std::string::String>,
+    pub status_message: ::std::option::Option<::std::string::String>,
 }
 impl Application {
     /// <p>The ID of the application.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The type of the application.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::ApplicationType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ApplicationType> {
         self.r#type.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Application Registry.</p>
-    pub fn app_registry_arn(&self) -> std::option::Option<&str> {
+    pub fn app_registry_arn(&self) -> ::std::option::Option<&str> {
         self.app_registry_arn.as_deref()
     }
     /// <p>The status of the application.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::ApplicationStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::ApplicationStatus> {
         self.status.as_ref()
     }
     /// <p>The components of the application.</p>
-    pub fn components(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn components(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.components.as_deref()
     }
     /// <p>The time at which the application was last updated.</p>
-    pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated.as_ref()
     }
     /// <p>The status message.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<&str> {
         self.status_message.as_deref()
     }
 }
@@ -72,67 +72,75 @@ impl Application {
 
 /// A builder for [`Application`](crate::types::Application).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ApplicationBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) r#type: std::option::Option<crate::types::ApplicationType>,
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) app_registry_arn: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::ApplicationStatus>,
-    pub(crate) components: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) last_updated: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) status_message: std::option::Option<std::string::String>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::ApplicationType>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) app_registry_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::ApplicationStatus>,
+    pub(crate) components: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) last_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) status_message: ::std::option::Option<::std::string::String>,
 }
 impl ApplicationBuilder {
     /// <p>The ID of the application.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the application.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>The type of the application.</p>
     pub fn r#type(mut self, input: crate::types::ApplicationType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of the application.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::ApplicationType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ApplicationType>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Application Registry.</p>
-    pub fn app_registry_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.app_registry_arn = Some(input.into());
+    pub fn app_registry_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.app_registry_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Application Registry.</p>
-    pub fn set_app_registry_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_app_registry_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.app_registry_arn = input;
         self
     }
     /// <p>The status of the application.</p>
     pub fn status(mut self, input: crate::types::ApplicationStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the application.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::ApplicationStatus>,
+        input: ::std::option::Option<crate::types::ApplicationStatus>,
     ) -> Self {
         self.status = input;
         self
@@ -142,40 +150,46 @@ impl ApplicationBuilder {
     /// To override the contents of this collection use [`set_components`](Self::set_components).
     ///
     /// <p>The components of the application.</p>
-    pub fn components(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn components(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.components.unwrap_or_default();
         v.push(input.into());
-        self.components = Some(v);
+        self.components = ::std::option::Option::Some(v);
         self
     }
     /// <p>The components of the application.</p>
     pub fn set_components(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.components = input;
         self
     }
     /// <p>The time at which the application was last updated.</p>
-    pub fn last_updated(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_updated = Some(input);
+    pub fn last_updated(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_updated = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time at which the application was last updated.</p>
     pub fn set_last_updated(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_updated = input;
         self
     }
     /// <p>The status message.</p>
-    pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status_message = Some(input.into());
+    pub fn status_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status message.</p>
-    pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.status_message = input;
         self
     }

@@ -2,78 +2,78 @@
 
 /// Settings for the action to activate a static image.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StaticImageActivateScheduleActionSettings {
     /// The duration in milliseconds for the image to remain on the video. If omitted or set to 0 the duration is unlimited and the image will remain until it is explicitly deactivated.
     #[doc(hidden)]
-    pub duration: std::option::Option<i32>,
+    pub duration: ::std::option::Option<i32>,
     /// The time in milliseconds for the image to fade in. The fade-in starts at the start time of the overlay. Default is 0 (no fade-in).
     #[doc(hidden)]
-    pub fade_in: std::option::Option<i32>,
+    pub fade_in: ::std::option::Option<i32>,
     /// Applies only if a duration is specified. The time in milliseconds for the image to fade out. The fade-out starts when the duration time is hit, so it effectively extends the duration. Default is 0 (no fade-out).
     #[doc(hidden)]
-    pub fade_out: std::option::Option<i32>,
+    pub fade_out: ::std::option::Option<i32>,
     /// The height of the image when inserted into the video, in pixels. The overlay will be scaled up or down to the specified height. Leave blank to use the native height of the overlay.
     #[doc(hidden)]
-    pub height: std::option::Option<i32>,
+    pub height: ::std::option::Option<i32>,
     /// The location and filename of the image file to overlay on the video. The file must be a 32-bit BMP, PNG, or TGA file, and must not be larger (in pixels) than the input video.
     #[doc(hidden)]
-    pub image: std::option::Option<crate::types::InputLocation>,
+    pub image: ::std::option::Option<crate::types::InputLocation>,
     /// Placement of the left edge of the overlay relative to the left edge of the video frame, in pixels. 0 (the default) is the left edge of the frame. If the placement causes the overlay to extend beyond the right edge of the underlying video, then the overlay is cropped on the right.
     #[doc(hidden)]
-    pub image_x: std::option::Option<i32>,
+    pub image_x: ::std::option::Option<i32>,
     /// Placement of the top edge of the overlay relative to the top edge of the video frame, in pixels. 0 (the default) is the top edge of the frame. If the placement causes the overlay to extend beyond the bottom edge of the underlying video, then the overlay is cropped on the bottom.
     #[doc(hidden)]
-    pub image_y: std::option::Option<i32>,
+    pub image_y: ::std::option::Option<i32>,
     /// The number of the layer, 0 to 7. There are 8 layers that can be overlaid on the video, each layer with a different image. The layers are in Z order, which means that overlays with higher values of layer are inserted on top of overlays with lower values of layer. Default is 0.
     #[doc(hidden)]
-    pub layer: std::option::Option<i32>,
+    pub layer: ::std::option::Option<i32>,
     /// Opacity of image where 0 is transparent and 100 is fully opaque. Default is 100.
     #[doc(hidden)]
-    pub opacity: std::option::Option<i32>,
+    pub opacity: ::std::option::Option<i32>,
     /// The width of the image when inserted into the video, in pixels. The overlay will be scaled up or down to the specified width. Leave blank to use the native width of the overlay.
     #[doc(hidden)]
-    pub width: std::option::Option<i32>,
+    pub width: ::std::option::Option<i32>,
 }
 impl StaticImageActivateScheduleActionSettings {
     /// The duration in milliseconds for the image to remain on the video. If omitted or set to 0 the duration is unlimited and the image will remain until it is explicitly deactivated.
-    pub fn duration(&self) -> std::option::Option<i32> {
+    pub fn duration(&self) -> ::std::option::Option<i32> {
         self.duration
     }
     /// The time in milliseconds for the image to fade in. The fade-in starts at the start time of the overlay. Default is 0 (no fade-in).
-    pub fn fade_in(&self) -> std::option::Option<i32> {
+    pub fn fade_in(&self) -> ::std::option::Option<i32> {
         self.fade_in
     }
     /// Applies only if a duration is specified. The time in milliseconds for the image to fade out. The fade-out starts when the duration time is hit, so it effectively extends the duration. Default is 0 (no fade-out).
-    pub fn fade_out(&self) -> std::option::Option<i32> {
+    pub fn fade_out(&self) -> ::std::option::Option<i32> {
         self.fade_out
     }
     /// The height of the image when inserted into the video, in pixels. The overlay will be scaled up or down to the specified height. Leave blank to use the native height of the overlay.
-    pub fn height(&self) -> std::option::Option<i32> {
+    pub fn height(&self) -> ::std::option::Option<i32> {
         self.height
     }
     /// The location and filename of the image file to overlay on the video. The file must be a 32-bit BMP, PNG, or TGA file, and must not be larger (in pixels) than the input video.
-    pub fn image(&self) -> std::option::Option<&crate::types::InputLocation> {
+    pub fn image(&self) -> ::std::option::Option<&crate::types::InputLocation> {
         self.image.as_ref()
     }
     /// Placement of the left edge of the overlay relative to the left edge of the video frame, in pixels. 0 (the default) is the left edge of the frame. If the placement causes the overlay to extend beyond the right edge of the underlying video, then the overlay is cropped on the right.
-    pub fn image_x(&self) -> std::option::Option<i32> {
+    pub fn image_x(&self) -> ::std::option::Option<i32> {
         self.image_x
     }
     /// Placement of the top edge of the overlay relative to the top edge of the video frame, in pixels. 0 (the default) is the top edge of the frame. If the placement causes the overlay to extend beyond the bottom edge of the underlying video, then the overlay is cropped on the bottom.
-    pub fn image_y(&self) -> std::option::Option<i32> {
+    pub fn image_y(&self) -> ::std::option::Option<i32> {
         self.image_y
     }
     /// The number of the layer, 0 to 7. There are 8 layers that can be overlaid on the video, each layer with a different image. The layers are in Z order, which means that overlays with higher values of layer are inserted on top of overlays with lower values of layer. Default is 0.
-    pub fn layer(&self) -> std::option::Option<i32> {
+    pub fn layer(&self) -> ::std::option::Option<i32> {
         self.layer
     }
     /// Opacity of image where 0 is transparent and 100 is fully opaque. Default is 100.
-    pub fn opacity(&self) -> std::option::Option<i32> {
+    pub fn opacity(&self) -> ::std::option::Option<i32> {
         self.opacity
     }
     /// The width of the image when inserted into the video, in pixels. The overlay will be scaled up or down to the specified width. Leave blank to use the native width of the overlay.
-    pub fn width(&self) -> std::option::Option<i32> {
+    pub fn width(&self) -> ::std::option::Option<i32> {
         self.width
     }
 }
@@ -86,117 +86,119 @@ impl StaticImageActivateScheduleActionSettings {
 
 /// A builder for [`StaticImageActivateScheduleActionSettings`](crate::types::StaticImageActivateScheduleActionSettings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StaticImageActivateScheduleActionSettingsBuilder {
-    pub(crate) duration: std::option::Option<i32>,
-    pub(crate) fade_in: std::option::Option<i32>,
-    pub(crate) fade_out: std::option::Option<i32>,
-    pub(crate) height: std::option::Option<i32>,
-    pub(crate) image: std::option::Option<crate::types::InputLocation>,
-    pub(crate) image_x: std::option::Option<i32>,
-    pub(crate) image_y: std::option::Option<i32>,
-    pub(crate) layer: std::option::Option<i32>,
-    pub(crate) opacity: std::option::Option<i32>,
-    pub(crate) width: std::option::Option<i32>,
+    pub(crate) duration: ::std::option::Option<i32>,
+    pub(crate) fade_in: ::std::option::Option<i32>,
+    pub(crate) fade_out: ::std::option::Option<i32>,
+    pub(crate) height: ::std::option::Option<i32>,
+    pub(crate) image: ::std::option::Option<crate::types::InputLocation>,
+    pub(crate) image_x: ::std::option::Option<i32>,
+    pub(crate) image_y: ::std::option::Option<i32>,
+    pub(crate) layer: ::std::option::Option<i32>,
+    pub(crate) opacity: ::std::option::Option<i32>,
+    pub(crate) width: ::std::option::Option<i32>,
 }
 impl StaticImageActivateScheduleActionSettingsBuilder {
     /// The duration in milliseconds for the image to remain on the video. If omitted or set to 0 the duration is unlimited and the image will remain until it is explicitly deactivated.
     pub fn duration(mut self, input: i32) -> Self {
-        self.duration = Some(input);
+        self.duration = ::std::option::Option::Some(input);
         self
     }
     /// The duration in milliseconds for the image to remain on the video. If omitted or set to 0 the duration is unlimited and the image will remain until it is explicitly deactivated.
-    pub fn set_duration(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_duration(mut self, input: ::std::option::Option<i32>) -> Self {
         self.duration = input;
         self
     }
     /// The time in milliseconds for the image to fade in. The fade-in starts at the start time of the overlay. Default is 0 (no fade-in).
     pub fn fade_in(mut self, input: i32) -> Self {
-        self.fade_in = Some(input);
+        self.fade_in = ::std::option::Option::Some(input);
         self
     }
     /// The time in milliseconds for the image to fade in. The fade-in starts at the start time of the overlay. Default is 0 (no fade-in).
-    pub fn set_fade_in(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_fade_in(mut self, input: ::std::option::Option<i32>) -> Self {
         self.fade_in = input;
         self
     }
     /// Applies only if a duration is specified. The time in milliseconds for the image to fade out. The fade-out starts when the duration time is hit, so it effectively extends the duration. Default is 0 (no fade-out).
     pub fn fade_out(mut self, input: i32) -> Self {
-        self.fade_out = Some(input);
+        self.fade_out = ::std::option::Option::Some(input);
         self
     }
     /// Applies only if a duration is specified. The time in milliseconds for the image to fade out. The fade-out starts when the duration time is hit, so it effectively extends the duration. Default is 0 (no fade-out).
-    pub fn set_fade_out(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_fade_out(mut self, input: ::std::option::Option<i32>) -> Self {
         self.fade_out = input;
         self
     }
     /// The height of the image when inserted into the video, in pixels. The overlay will be scaled up or down to the specified height. Leave blank to use the native height of the overlay.
     pub fn height(mut self, input: i32) -> Self {
-        self.height = Some(input);
+        self.height = ::std::option::Option::Some(input);
         self
     }
     /// The height of the image when inserted into the video, in pixels. The overlay will be scaled up or down to the specified height. Leave blank to use the native height of the overlay.
-    pub fn set_height(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_height(mut self, input: ::std::option::Option<i32>) -> Self {
         self.height = input;
         self
     }
     /// The location and filename of the image file to overlay on the video. The file must be a 32-bit BMP, PNG, or TGA file, and must not be larger (in pixels) than the input video.
     pub fn image(mut self, input: crate::types::InputLocation) -> Self {
-        self.image = Some(input);
+        self.image = ::std::option::Option::Some(input);
         self
     }
     /// The location and filename of the image file to overlay on the video. The file must be a 32-bit BMP, PNG, or TGA file, and must not be larger (in pixels) than the input video.
-    pub fn set_image(mut self, input: std::option::Option<crate::types::InputLocation>) -> Self {
+    pub fn set_image(mut self, input: ::std::option::Option<crate::types::InputLocation>) -> Self {
         self.image = input;
         self
     }
     /// Placement of the left edge of the overlay relative to the left edge of the video frame, in pixels. 0 (the default) is the left edge of the frame. If the placement causes the overlay to extend beyond the right edge of the underlying video, then the overlay is cropped on the right.
     pub fn image_x(mut self, input: i32) -> Self {
-        self.image_x = Some(input);
+        self.image_x = ::std::option::Option::Some(input);
         self
     }
     /// Placement of the left edge of the overlay relative to the left edge of the video frame, in pixels. 0 (the default) is the left edge of the frame. If the placement causes the overlay to extend beyond the right edge of the underlying video, then the overlay is cropped on the right.
-    pub fn set_image_x(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_image_x(mut self, input: ::std::option::Option<i32>) -> Self {
         self.image_x = input;
         self
     }
     /// Placement of the top edge of the overlay relative to the top edge of the video frame, in pixels. 0 (the default) is the top edge of the frame. If the placement causes the overlay to extend beyond the bottom edge of the underlying video, then the overlay is cropped on the bottom.
     pub fn image_y(mut self, input: i32) -> Self {
-        self.image_y = Some(input);
+        self.image_y = ::std::option::Option::Some(input);
         self
     }
     /// Placement of the top edge of the overlay relative to the top edge of the video frame, in pixels. 0 (the default) is the top edge of the frame. If the placement causes the overlay to extend beyond the bottom edge of the underlying video, then the overlay is cropped on the bottom.
-    pub fn set_image_y(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_image_y(mut self, input: ::std::option::Option<i32>) -> Self {
         self.image_y = input;
         self
     }
     /// The number of the layer, 0 to 7. There are 8 layers that can be overlaid on the video, each layer with a different image. The layers are in Z order, which means that overlays with higher values of layer are inserted on top of overlays with lower values of layer. Default is 0.
     pub fn layer(mut self, input: i32) -> Self {
-        self.layer = Some(input);
+        self.layer = ::std::option::Option::Some(input);
         self
     }
     /// The number of the layer, 0 to 7. There are 8 layers that can be overlaid on the video, each layer with a different image. The layers are in Z order, which means that overlays with higher values of layer are inserted on top of overlays with lower values of layer. Default is 0.
-    pub fn set_layer(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_layer(mut self, input: ::std::option::Option<i32>) -> Self {
         self.layer = input;
         self
     }
     /// Opacity of image where 0 is transparent and 100 is fully opaque. Default is 100.
     pub fn opacity(mut self, input: i32) -> Self {
-        self.opacity = Some(input);
+        self.opacity = ::std::option::Option::Some(input);
         self
     }
     /// Opacity of image where 0 is transparent and 100 is fully opaque. Default is 100.
-    pub fn set_opacity(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_opacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.opacity = input;
         self
     }
     /// The width of the image when inserted into the video, in pixels. The overlay will be scaled up or down to the specified width. Leave blank to use the native width of the overlay.
     pub fn width(mut self, input: i32) -> Self {
-        self.width = Some(input);
+        self.width = ::std::option::Option::Some(input);
         self
     }
     /// The width of the image when inserted into the video, in pixels. The overlay will be scaled up or down to the specified width. Leave blank to use the native width of the overlay.
-    pub fn set_width(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_width(mut self, input: ::std::option::Option<i32>) -> Self {
         self.width = input;
         self
     }

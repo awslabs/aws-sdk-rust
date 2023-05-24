@@ -2,7 +2,7 @@
 
 /// <p>Represents an amount of money in United States dollars.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Usd {
     /// <p>The whole number of dollars in the amount.</p>
     #[doc(hidden)]
@@ -37,40 +37,42 @@ impl Usd {
 
 /// A builder for [`Usd`](crate::types::Usd).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UsdBuilder {
-    pub(crate) dollars: std::option::Option<i32>,
-    pub(crate) cents: std::option::Option<i32>,
-    pub(crate) tenth_fractions_of_a_cent: std::option::Option<i32>,
+    pub(crate) dollars: ::std::option::Option<i32>,
+    pub(crate) cents: ::std::option::Option<i32>,
+    pub(crate) tenth_fractions_of_a_cent: ::std::option::Option<i32>,
 }
 impl UsdBuilder {
     /// <p>The whole number of dollars in the amount.</p>
     pub fn dollars(mut self, input: i32) -> Self {
-        self.dollars = Some(input);
+        self.dollars = ::std::option::Option::Some(input);
         self
     }
     /// <p>The whole number of dollars in the amount.</p>
-    pub fn set_dollars(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_dollars(mut self, input: ::std::option::Option<i32>) -> Self {
         self.dollars = input;
         self
     }
     /// <p>The fractional portion, in cents, of the amount. </p>
     pub fn cents(mut self, input: i32) -> Self {
-        self.cents = Some(input);
+        self.cents = ::std::option::Option::Some(input);
         self
     }
     /// <p>The fractional portion, in cents, of the amount. </p>
-    pub fn set_cents(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_cents(mut self, input: ::std::option::Option<i32>) -> Self {
         self.cents = input;
         self
     }
     /// <p>Fractions of a cent, in tenths.</p>
     pub fn tenth_fractions_of_a_cent(mut self, input: i32) -> Self {
-        self.tenth_fractions_of_a_cent = Some(input);
+        self.tenth_fractions_of_a_cent = ::std::option::Option::Some(input);
         self
     }
     /// <p>Fractions of a cent, in tenths.</p>
-    pub fn set_tenth_fractions_of_a_cent(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_tenth_fractions_of_a_cent(mut self, input: ::std::option::Option<i32>) -> Self {
         self.tenth_fractions_of_a_cent = input;
         self
     }

@@ -2,22 +2,22 @@
 
 /// <p>The aggregated field well of the filled map.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FilledMapAggregatedFieldWells {
     /// <p>The aggregated location field well of the filled map. Values are grouped by location fields.</p>
     #[doc(hidden)]
-    pub geospatial: std::option::Option<std::vec::Vec<crate::types::DimensionField>>,
+    pub geospatial: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
     /// <p>The aggregated color field well of a filled map. Values are aggregated based on location fields.</p>
     #[doc(hidden)]
-    pub values: std::option::Option<std::vec::Vec<crate::types::MeasureField>>,
+    pub values: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>,
 }
 impl FilledMapAggregatedFieldWells {
     /// <p>The aggregated location field well of the filled map. Values are grouped by location fields.</p>
-    pub fn geospatial(&self) -> std::option::Option<&[crate::types::DimensionField]> {
+    pub fn geospatial(&self) -> ::std::option::Option<&[crate::types::DimensionField]> {
         self.geospatial.as_deref()
     }
     /// <p>The aggregated color field well of a filled map. Values are aggregated based on location fields.</p>
-    pub fn values(&self) -> std::option::Option<&[crate::types::MeasureField]> {
+    pub fn values(&self) -> ::std::option::Option<&[crate::types::MeasureField]> {
         self.values.as_deref()
     }
 }
@@ -30,10 +30,12 @@ impl FilledMapAggregatedFieldWells {
 
 /// A builder for [`FilledMapAggregatedFieldWells`](crate::types::FilledMapAggregatedFieldWells).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FilledMapAggregatedFieldWellsBuilder {
-    pub(crate) geospatial: std::option::Option<std::vec::Vec<crate::types::DimensionField>>,
-    pub(crate) values: std::option::Option<std::vec::Vec<crate::types::MeasureField>>,
+    pub(crate) geospatial: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>,
 }
 impl FilledMapAggregatedFieldWellsBuilder {
     /// Appends an item to `geospatial`.
@@ -44,13 +46,13 @@ impl FilledMapAggregatedFieldWellsBuilder {
     pub fn geospatial(mut self, input: crate::types::DimensionField) -> Self {
         let mut v = self.geospatial.unwrap_or_default();
         v.push(input);
-        self.geospatial = Some(v);
+        self.geospatial = ::std::option::Option::Some(v);
         self
     }
     /// <p>The aggregated location field well of the filled map. Values are grouped by location fields.</p>
     pub fn set_geospatial(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DimensionField>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
     ) -> Self {
         self.geospatial = input;
         self
@@ -63,13 +65,13 @@ impl FilledMapAggregatedFieldWellsBuilder {
     pub fn values(mut self, input: crate::types::MeasureField) -> Self {
         let mut v = self.values.unwrap_or_default();
         v.push(input);
-        self.values = Some(v);
+        self.values = ::std::option::Option::Some(v);
         self
     }
     /// <p>The aggregated color field well of a filled map. Values are aggregated based on location fields.</p>
     pub fn set_values(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::MeasureField>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>,
     ) -> Self {
         self.values = input;
         self

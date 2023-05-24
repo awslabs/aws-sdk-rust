@@ -2,15 +2,15 @@
 
 /// <p>Summary of the AWS resource used for access control that is implicitly linked to your AWS account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProgressUpdateStreamSummary {
     /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i> </p>
     #[doc(hidden)]
-    pub progress_update_stream_name: std::option::Option<std::string::String>,
+    pub progress_update_stream_name: ::std::option::Option<::std::string::String>,
 }
 impl ProgressUpdateStreamSummary {
     /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i> </p>
-    pub fn progress_update_stream_name(&self) -> std::option::Option<&str> {
+    pub fn progress_update_stream_name(&self) -> ::std::option::Option<&str> {
         self.progress_update_stream_name.as_deref()
     }
 }
@@ -23,20 +23,25 @@ impl ProgressUpdateStreamSummary {
 
 /// A builder for [`ProgressUpdateStreamSummary`](crate::types::ProgressUpdateStreamSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ProgressUpdateStreamSummaryBuilder {
-    pub(crate) progress_update_stream_name: std::option::Option<std::string::String>,
+    pub(crate) progress_update_stream_name: ::std::option::Option<::std::string::String>,
 }
 impl ProgressUpdateStreamSummaryBuilder {
     /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i> </p>
-    pub fn progress_update_stream_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.progress_update_stream_name = Some(input.into());
+    pub fn progress_update_stream_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.progress_update_stream_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this field.</i> </p>
     pub fn set_progress_update_stream_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.progress_update_stream_name = input;
         self

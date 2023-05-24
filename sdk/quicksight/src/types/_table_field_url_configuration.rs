@@ -2,26 +2,26 @@
 
 /// <p>The URL configuration for a table field.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TableFieldUrlConfiguration {
     /// <p>The link configuration of a table field URL.</p>
     #[doc(hidden)]
-    pub link_configuration: std::option::Option<crate::types::TableFieldLinkConfiguration>,
+    pub link_configuration: ::std::option::Option<crate::types::TableFieldLinkConfiguration>,
     /// <p>The image configuration of a table field URL.</p>
     #[doc(hidden)]
-    pub image_configuration: std::option::Option<crate::types::TableFieldImageConfiguration>,
+    pub image_configuration: ::std::option::Option<crate::types::TableFieldImageConfiguration>,
 }
 impl TableFieldUrlConfiguration {
     /// <p>The link configuration of a table field URL.</p>
     pub fn link_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::TableFieldLinkConfiguration> {
+    ) -> ::std::option::Option<&crate::types::TableFieldLinkConfiguration> {
         self.link_configuration.as_ref()
     }
     /// <p>The image configuration of a table field URL.</p>
     pub fn image_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::TableFieldImageConfiguration> {
+    ) -> ::std::option::Option<&crate::types::TableFieldImageConfiguration> {
         self.image_configuration.as_ref()
     }
 }
@@ -34,21 +34,24 @@ impl TableFieldUrlConfiguration {
 
 /// A builder for [`TableFieldUrlConfiguration`](crate::types::TableFieldUrlConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TableFieldUrlConfigurationBuilder {
-    pub(crate) link_configuration: std::option::Option<crate::types::TableFieldLinkConfiguration>,
-    pub(crate) image_configuration: std::option::Option<crate::types::TableFieldImageConfiguration>,
+    pub(crate) link_configuration: ::std::option::Option<crate::types::TableFieldLinkConfiguration>,
+    pub(crate) image_configuration:
+        ::std::option::Option<crate::types::TableFieldImageConfiguration>,
 }
 impl TableFieldUrlConfigurationBuilder {
     /// <p>The link configuration of a table field URL.</p>
     pub fn link_configuration(mut self, input: crate::types::TableFieldLinkConfiguration) -> Self {
-        self.link_configuration = Some(input);
+        self.link_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The link configuration of a table field URL.</p>
     pub fn set_link_configuration(
         mut self,
-        input: std::option::Option<crate::types::TableFieldLinkConfiguration>,
+        input: ::std::option::Option<crate::types::TableFieldLinkConfiguration>,
     ) -> Self {
         self.link_configuration = input;
         self
@@ -58,13 +61,13 @@ impl TableFieldUrlConfigurationBuilder {
         mut self,
         input: crate::types::TableFieldImageConfiguration,
     ) -> Self {
-        self.image_configuration = Some(input);
+        self.image_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The image configuration of a table field URL.</p>
     pub fn set_image_configuration(
         mut self,
-        input: std::option::Option<crate::types::TableFieldImageConfiguration>,
+        input: ::std::option::Option<crate::types::TableFieldImageConfiguration>,
     ) -> Self {
         self.image_configuration = input;
         self

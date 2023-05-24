@@ -2,15 +2,15 @@
 
 /// <p>Describes a disk snapshot.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DiskSnapshotInfo {
     /// <p>The size of the disk in GB (e.g., <code>32</code>).</p>
     #[doc(hidden)]
-    pub size_in_gb: std::option::Option<i32>,
+    pub size_in_gb: ::std::option::Option<i32>,
 }
 impl DiskSnapshotInfo {
     /// <p>The size of the disk in GB (e.g., <code>32</code>).</p>
-    pub fn size_in_gb(&self) -> std::option::Option<i32> {
+    pub fn size_in_gb(&self) -> ::std::option::Option<i32> {
         self.size_in_gb
     }
 }
@@ -23,18 +23,20 @@ impl DiskSnapshotInfo {
 
 /// A builder for [`DiskSnapshotInfo`](crate::types::DiskSnapshotInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DiskSnapshotInfoBuilder {
-    pub(crate) size_in_gb: std::option::Option<i32>,
+    pub(crate) size_in_gb: ::std::option::Option<i32>,
 }
 impl DiskSnapshotInfoBuilder {
     /// <p>The size of the disk in GB (e.g., <code>32</code>).</p>
     pub fn size_in_gb(mut self, input: i32) -> Self {
-        self.size_in_gb = Some(input);
+        self.size_in_gb = ::std::option::Option::Some(input);
         self
     }
     /// <p>The size of the disk in GB (e.g., <code>32</code>).</p>
-    pub fn set_size_in_gb(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_size_in_gb(mut self, input: ::std::option::Option<i32>) -> Self {
         self.size_in_gb = input;
         self
     }

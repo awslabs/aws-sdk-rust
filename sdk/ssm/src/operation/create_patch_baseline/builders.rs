@@ -8,29 +8,29 @@ pub use crate::operation::create_patch_baseline::_create_patch_baseline_input::C
 /// <p>Creates a patch baseline.</p> <note>
 /// <p>For information about valid key-value pairs in <code>PatchFilters</code> for each supported operating system type, see <code>PatchFilter</code>.</p>
 /// </note>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreatePatchBaselineFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_patch_baseline::builders::CreatePatchBaselineInputBuilder,
 }
 impl CreatePatchBaselineFluentBuilder {
     /// Creates a new `CreatePatchBaseline`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_patch_baseline::CreatePatchBaseline,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_patch_baseline::CreatePatchBaselineError,
         >,
     > {
@@ -38,30 +38,33 @@ impl CreatePatchBaselineFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_patch_baseline::CreatePatchBaselineOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_patch_baseline::CreatePatchBaselineError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -74,9 +77,9 @@ impl CreatePatchBaselineFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_patch_baseline::CreatePatchBaselineOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_patch_baseline::CreatePatchBaselineError,
         >,
     > {
@@ -90,18 +93,18 @@ impl CreatePatchBaselineFluentBuilder {
     /// <p>Defines the operating system the patch baseline applies to. The default value is <code>WINDOWS</code>.</p>
     pub fn set_operating_system(
         mut self,
-        input: std::option::Option<crate::types::OperatingSystem>,
+        input: ::std::option::Option<crate::types::OperatingSystem>,
     ) -> Self {
         self.inner = self.inner.set_operating_system(input);
         self
     }
     /// <p>The name of the patch baseline.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// <p>The name of the patch baseline.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
@@ -113,7 +116,7 @@ impl CreatePatchBaselineFluentBuilder {
     /// <p>A set of global filters used to include patches in the baseline.</p>
     pub fn set_global_filters(
         mut self,
-        input: std::option::Option<crate::types::PatchFilterGroup>,
+        input: ::std::option::Option<crate::types::PatchFilterGroup>,
     ) -> Self {
         self.inner = self.inner.set_global_filters(input);
         self
@@ -126,7 +129,7 @@ impl CreatePatchBaselineFluentBuilder {
     /// <p>A set of rules used to include patches in the baseline.</p>
     pub fn set_approval_rules(
         mut self,
-        input: std::option::Option<crate::types::PatchRuleGroup>,
+        input: ::std::option::Option<crate::types::PatchRuleGroup>,
     ) -> Self {
         self.inner = self.inner.set_approval_rules(input);
         self
@@ -137,7 +140,10 @@ impl CreatePatchBaselineFluentBuilder {
     ///
     /// <p>A list of explicitly approved patches for the baseline.</p>
     /// <p>For information about accepted formats for lists of approved patches and rejected patches, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    pub fn approved_patches(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn approved_patches(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.approved_patches(input.into());
         self
     }
@@ -145,7 +151,7 @@ impl CreatePatchBaselineFluentBuilder {
     /// <p>For information about accepted formats for lists of approved patches and rejected patches, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn set_approved_patches(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_approved_patches(input);
         self
@@ -161,7 +167,7 @@ impl CreatePatchBaselineFluentBuilder {
     /// <p>Defines the compliance level for approved patches. When an approved patch is reported as missing, this value describes the severity of the compliance violation. The default value is <code>UNSPECIFIED</code>.</p>
     pub fn set_approved_patches_compliance_level(
         mut self,
-        input: std::option::Option<crate::types::PatchComplianceLevel>,
+        input: ::std::option::Option<crate::types::PatchComplianceLevel>,
     ) -> Self {
         self.inner = self.inner.set_approved_patches_compliance_level(input);
         self
@@ -174,7 +180,7 @@ impl CreatePatchBaselineFluentBuilder {
     /// <p>Indicates whether the list of approved patches includes non-security updates that should be applied to the managed nodes. The default value is <code>false</code>. Applies to Linux managed nodes only.</p>
     pub fn set_approved_patches_enable_non_security(
         mut self,
-        input: std::option::Option<bool>,
+        input: ::std::option::Option<bool>,
     ) -> Self {
         self.inner = self.inner.set_approved_patches_enable_non_security(input);
         self
@@ -185,7 +191,10 @@ impl CreatePatchBaselineFluentBuilder {
     ///
     /// <p>A list of explicitly rejected patches for the baseline.</p>
     /// <p>For information about accepted formats for lists of approved patches and rejected patches, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    pub fn rejected_patches(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn rejected_patches(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.rejected_patches(input.into());
         self
     }
@@ -193,7 +202,7 @@ impl CreatePatchBaselineFluentBuilder {
     /// <p>For information about accepted formats for lists of approved patches and rejected patches, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub fn set_rejected_patches(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_rejected_patches(input);
         self
@@ -214,18 +223,18 @@ impl CreatePatchBaselineFluentBuilder {
     /// </ul>
     pub fn set_rejected_patches_action(
         mut self,
-        input: std::option::Option<crate::types::PatchAction>,
+        input: ::std::option::Option<crate::types::PatchAction>,
     ) -> Self {
         self.inner = self.inner.set_rejected_patches_action(input);
         self
     }
     /// <p>A description of the patch baseline.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>A description of the patch baseline.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
@@ -241,18 +250,18 @@ impl CreatePatchBaselineFluentBuilder {
     /// <p>Information about the patches to use to update the managed nodes, including target operating systems and source repositories. Applies to Linux managed nodes only.</p>
     pub fn set_sources(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PatchSource>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PatchSource>>,
     ) -> Self {
         self.inner = self.inner.set_sources(input);
         self
     }
     /// <p>User-provided idempotency token.</p>
-    pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
     /// <p>User-provided idempotency token.</p>
-    pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
@@ -280,7 +289,7 @@ impl CreatePatchBaselineFluentBuilder {
     /// </note>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self

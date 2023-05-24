@@ -2,29 +2,29 @@
 
 /// <p>The output for <code>GetTemplate</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTemplateOutput {
     /// <p>Structure containing the template body. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a> in the CloudFormation User Guide.)</p>
     /// <p>CloudFormation returns the same template that was used when the stack was created.</p>
     #[doc(hidden)]
-    pub template_body: std::option::Option<std::string::String>,
+    pub template_body: ::std::option::Option<::std::string::String>,
     /// <p>The stage of the template that you can retrieve. For stacks, the <code>Original</code> and <code>Processed</code> templates are always available. For change sets, the <code>Original</code> template is always available. After CloudFormation finishes creating the change set, the <code>Processed</code> template becomes available.</p>
     #[doc(hidden)]
-    pub stages_available: std::option::Option<std::vec::Vec<crate::types::TemplateStage>>,
+    pub stages_available: ::std::option::Option<::std::vec::Vec<crate::types::TemplateStage>>,
     _request_id: Option<String>,
 }
 impl GetTemplateOutput {
     /// <p>Structure containing the template body. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a> in the CloudFormation User Guide.)</p>
     /// <p>CloudFormation returns the same template that was used when the stack was created.</p>
-    pub fn template_body(&self) -> std::option::Option<&str> {
+    pub fn template_body(&self) -> ::std::option::Option<&str> {
         self.template_body.as_deref()
     }
     /// <p>The stage of the template that you can retrieve. For stacks, the <code>Original</code> and <code>Processed</code> templates are always available. For change sets, the <code>Original</code> template is always available. After CloudFormation finishes creating the change set, the <code>Processed</code> template becomes available.</p>
-    pub fn stages_available(&self) -> std::option::Option<&[crate::types::TemplateStage]> {
+    pub fn stages_available(&self) -> ::std::option::Option<&[crate::types::TemplateStage]> {
         self.stages_available.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for GetTemplateOutput {
+impl ::aws_http::request_id::RequestId for GetTemplateOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -38,22 +38,31 @@ impl GetTemplateOutput {
 
 /// A builder for [`GetTemplateOutput`](crate::operation::get_template::GetTemplateOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetTemplateOutputBuilder {
-    pub(crate) template_body: std::option::Option<std::string::String>,
-    pub(crate) stages_available: std::option::Option<std::vec::Vec<crate::types::TemplateStage>>,
+    pub(crate) template_body: ::std::option::Option<::std::string::String>,
+    pub(crate) stages_available:
+        ::std::option::Option<::std::vec::Vec<crate::types::TemplateStage>>,
     _request_id: Option<String>,
 }
 impl GetTemplateOutputBuilder {
     /// <p>Structure containing the template body. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a> in the CloudFormation User Guide.)</p>
     /// <p>CloudFormation returns the same template that was used when the stack was created.</p>
-    pub fn template_body(mut self, input: impl Into<std::string::String>) -> Self {
-        self.template_body = Some(input.into());
+    pub fn template_body(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.template_body = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Structure containing the template body. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a> in the CloudFormation User Guide.)</p>
     /// <p>CloudFormation returns the same template that was used when the stack was created.</p>
-    pub fn set_template_body(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_template_body(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.template_body = input;
         self
     }
@@ -65,13 +74,13 @@ impl GetTemplateOutputBuilder {
     pub fn stages_available(mut self, input: crate::types::TemplateStage) -> Self {
         let mut v = self.stages_available.unwrap_or_default();
         v.push(input);
-        self.stages_available = Some(v);
+        self.stages_available = ::std::option::Option::Some(v);
         self
     }
     /// <p>The stage of the template that you can retrieve. For stacks, the <code>Original</code> and <code>Processed</code> templates are always available. For change sets, the <code>Original</code> template is always available. After CloudFormation finishes creating the change set, the <code>Processed</code> template becomes available.</p>
     pub fn set_stages_available(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TemplateStage>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::TemplateStage>>,
     ) -> Self {
         self.stages_available = input;
         self

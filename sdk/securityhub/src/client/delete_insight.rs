@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteInsight`](crate::operation::delete_insight::builders::DeleteInsightFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`insight_arn(impl Into<String>)`](crate::operation::delete_insight::builders::DeleteInsightFluentBuilder::insight_arn) / [`set_insight_arn(Option<String>)`](crate::operation::delete_insight::builders::DeleteInsightFluentBuilder::set_insight_arn): <p>The ARN of the insight to delete.</p>
+    ///   - [`insight_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_insight::builders::DeleteInsightFluentBuilder::insight_arn) / [`set_insight_arn(Option<String>)`](crate::operation::delete_insight::builders::DeleteInsightFluentBuilder::set_insight_arn): <p>The ARN of the insight to delete.</p>
     /// - On success, responds with [`DeleteInsightOutput`](crate::operation::delete_insight::DeleteInsightOutput) with field(s):
     ///   - [`insight_arn(Option<String>)`](crate::operation::delete_insight::DeleteInsightOutput::insight_arn): <p>The ARN of the insight that was deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteInsightError>`](crate::operation::delete_insight::DeleteInsightError)

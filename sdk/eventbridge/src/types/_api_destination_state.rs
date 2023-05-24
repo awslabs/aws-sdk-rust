@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ApiDestinationState {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum ApiDestinationState {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ApiDestinationState {
+impl ::std::convert::From<&str> for ApiDestinationState {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVE" => ApiDestinationState::Active,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for ApiDestinationState {
         }
     }
 }
-impl std::str::FromStr for ApiDestinationState {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ApiDestinationState {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ApiDestinationState::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ApiDestinationState::from(s))
     }
 }
 impl ApiDestinationState {
@@ -86,7 +86,7 @@ impl ApiDestinationState {
         &["ACTIVE", "INACTIVE"]
     }
 }
-impl AsRef<str> for ApiDestinationState {
+impl ::std::convert::AsRef<str> for ApiDestinationState {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

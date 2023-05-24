@@ -6,29 +6,29 @@ pub use crate::operation::list_asset_model_properties::_list_asset_model_propert
 /// Fluent builder constructing a request to `ListAssetModelProperties`.
 ///
 /// <p>Retrieves a paginated list of properties associated with an asset model. If you update properties associated with the model before you finish listing all the properties, you need to start all over again.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAssetModelPropertiesFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::list_asset_model_properties::builders::ListAssetModelPropertiesInputBuilder,
 }
 impl ListAssetModelPropertiesFluentBuilder {
     /// Creates a new `ListAssetModelProperties`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::list_asset_model_properties::ListAssetModelProperties,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::list_asset_model_properties::ListAssetModelPropertiesError,
         >,
     > {
@@ -36,30 +36,33 @@ impl ListAssetModelPropertiesFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::list_asset_model_properties::ListAssetModelPropertiesOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::list_asset_model_properties::ListAssetModelPropertiesError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,9 +75,9 @@ impl ListAssetModelPropertiesFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::list_asset_model_properties::ListAssetModelPropertiesOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::list_asset_model_properties::ListAssetModelPropertiesError,
         >,
     > {
@@ -90,22 +93,28 @@ impl ListAssetModelPropertiesFluentBuilder {
         crate::operation::list_asset_model_properties::paginator::ListAssetModelPropertiesPaginator::new(self.handle, self.inner)
     }
     /// <p>The ID of the asset model.</p>
-    pub fn asset_model_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn asset_model_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.asset_model_id(input.into());
         self
     }
     /// <p>The ID of the asset model.</p>
-    pub fn set_asset_model_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_asset_model_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_asset_model_id(input);
         self
     }
     /// <p>The token to be used for the next set of paginated results.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
     /// <p>The token to be used for the next set of paginated results.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
@@ -115,7 +124,7 @@ impl ListAssetModelPropertiesFluentBuilder {
         self
     }
     /// <p>The maximum number of results to return for each paginated request. If not specified, the default value is 50.</p>
-    pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
@@ -137,7 +146,7 @@ impl ListAssetModelPropertiesFluentBuilder {
     /// <p>Default: <code>BASE</code> </p>
     pub fn set_filter(
         mut self,
-        input: std::option::Option<crate::types::ListAssetModelPropertiesFilter>,
+        input: ::std::option::Option<crate::types::ListAssetModelPropertiesFilter>,
     ) -> Self {
         self.inner = self.inner.set_filter(input);
         self

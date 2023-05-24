@@ -2,15 +2,17 @@
 
 /// <p>The strategies for managing your Spot Instances that are at an elevated risk of being interrupted.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SpotMaintenanceStrategies {
     /// <p>The Spot Instance replacement strategy to use when Amazon EC2 emits a signal that your Spot Instance is at an elevated risk of being interrupted. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-capacity-rebalance.html">Capacity rebalancing</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
     #[doc(hidden)]
-    pub capacity_rebalance: std::option::Option<crate::types::SpotCapacityRebalance>,
+    pub capacity_rebalance: ::std::option::Option<crate::types::SpotCapacityRebalance>,
 }
 impl SpotMaintenanceStrategies {
     /// <p>The Spot Instance replacement strategy to use when Amazon EC2 emits a signal that your Spot Instance is at an elevated risk of being interrupted. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-capacity-rebalance.html">Capacity rebalancing</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
-    pub fn capacity_rebalance(&self) -> std::option::Option<&crate::types::SpotCapacityRebalance> {
+    pub fn capacity_rebalance(
+        &self,
+    ) -> ::std::option::Option<&crate::types::SpotCapacityRebalance> {
         self.capacity_rebalance.as_ref()
     }
 }
@@ -23,20 +25,22 @@ impl SpotMaintenanceStrategies {
 
 /// A builder for [`SpotMaintenanceStrategies`](crate::types::SpotMaintenanceStrategies).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SpotMaintenanceStrategiesBuilder {
-    pub(crate) capacity_rebalance: std::option::Option<crate::types::SpotCapacityRebalance>,
+    pub(crate) capacity_rebalance: ::std::option::Option<crate::types::SpotCapacityRebalance>,
 }
 impl SpotMaintenanceStrategiesBuilder {
     /// <p>The Spot Instance replacement strategy to use when Amazon EC2 emits a signal that your Spot Instance is at an elevated risk of being interrupted. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-capacity-rebalance.html">Capacity rebalancing</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
     pub fn capacity_rebalance(mut self, input: crate::types::SpotCapacityRebalance) -> Self {
-        self.capacity_rebalance = Some(input);
+        self.capacity_rebalance = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Spot Instance replacement strategy to use when Amazon EC2 emits a signal that your Spot Instance is at an elevated risk of being interrupted. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-capacity-rebalance.html">Capacity rebalancing</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
     pub fn set_capacity_rebalance(
         mut self,
-        input: std::option::Option<crate::types::SpotCapacityRebalance>,
+        input: ::std::option::Option<crate::types::SpotCapacityRebalance>,
     ) -> Self {
         self.capacity_rebalance = input;
         self

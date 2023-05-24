@@ -2,27 +2,27 @@
 
 /// <p>Formatting configuration for gradient color.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ConditionalFormattingGradientColor {
     /// <p>The expression that determines the formatting configuration for gradient color.</p>
     #[doc(hidden)]
-    pub expression: std::option::Option<std::string::String>,
+    pub expression: ::std::option::Option<::std::string::String>,
     /// <p>Determines the color.</p>
     #[doc(hidden)]
-    pub color: std::option::Option<crate::types::GradientColor>,
+    pub color: ::std::option::Option<crate::types::GradientColor>,
 }
 impl ConditionalFormattingGradientColor {
     /// <p>The expression that determines the formatting configuration for gradient color.</p>
-    pub fn expression(&self) -> std::option::Option<&str> {
+    pub fn expression(&self) -> ::std::option::Option<&str> {
         self.expression.as_deref()
     }
     /// <p>Determines the color.</p>
-    pub fn color(&self) -> std::option::Option<&crate::types::GradientColor> {
+    pub fn color(&self) -> ::std::option::Option<&crate::types::GradientColor> {
         self.color.as_ref()
     }
 }
-impl std::fmt::Debug for ConditionalFormattingGradientColor {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for ConditionalFormattingGradientColor {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ConditionalFormattingGradientColor");
         formatter.field("expression", &"*** Sensitive Data Redacted ***");
         formatter.field("color", &self.color);
@@ -38,29 +38,29 @@ impl ConditionalFormattingGradientColor {
 
 /// A builder for [`ConditionalFormattingGradientColor`](crate::types::ConditionalFormattingGradientColor).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct ConditionalFormattingGradientColorBuilder {
-    pub(crate) expression: std::option::Option<std::string::String>,
-    pub(crate) color: std::option::Option<crate::types::GradientColor>,
+    pub(crate) expression: ::std::option::Option<::std::string::String>,
+    pub(crate) color: ::std::option::Option<crate::types::GradientColor>,
 }
 impl ConditionalFormattingGradientColorBuilder {
     /// <p>The expression that determines the formatting configuration for gradient color.</p>
-    pub fn expression(mut self, input: impl Into<std::string::String>) -> Self {
-        self.expression = Some(input.into());
+    pub fn expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.expression = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The expression that determines the formatting configuration for gradient color.</p>
-    pub fn set_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.expression = input;
         self
     }
     /// <p>Determines the color.</p>
     pub fn color(mut self, input: crate::types::GradientColor) -> Self {
-        self.color = Some(input);
+        self.color = ::std::option::Option::Some(input);
         self
     }
     /// <p>Determines the color.</p>
-    pub fn set_color(mut self, input: std::option::Option<crate::types::GradientColor>) -> Self {
+    pub fn set_color(mut self, input: ::std::option::Option<crate::types::GradientColor>) -> Self {
         self.color = input;
         self
     }
@@ -72,8 +72,8 @@ impl ConditionalFormattingGradientColorBuilder {
         }
     }
 }
-impl std::fmt::Debug for ConditionalFormattingGradientColorBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for ConditionalFormattingGradientColorBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ConditionalFormattingGradientColorBuilder");
         formatter.field("expression", &"*** Sensitive Data Redacted ***");
         formatter.field("color", &self.color);

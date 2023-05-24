@@ -2,25 +2,25 @@
 
 /// <p>The details of a scanning rule for a private registry.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegistryScanningRule {
     /// <p>The frequency that scans are performed at for a private registry. When the <code>ENHANCED</code> scan type is specified, the supported scan frequencies are <code>CONTINUOUS_SCAN</code> and <code>SCAN_ON_PUSH</code>. When the <code>BASIC</code> scan type is specified, the <code>SCAN_ON_PUSH</code> and <code>MANUAL</code> scan frequencies are supported.</p>
     #[doc(hidden)]
-    pub scan_frequency: std::option::Option<crate::types::ScanFrequency>,
+    pub scan_frequency: ::std::option::Option<crate::types::ScanFrequency>,
     /// <p>The repository filters associated with the scanning configuration for a private registry.</p>
     #[doc(hidden)]
     pub repository_filters:
-        std::option::Option<std::vec::Vec<crate::types::ScanningRepositoryFilter>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ScanningRepositoryFilter>>,
 }
 impl RegistryScanningRule {
     /// <p>The frequency that scans are performed at for a private registry. When the <code>ENHANCED</code> scan type is specified, the supported scan frequencies are <code>CONTINUOUS_SCAN</code> and <code>SCAN_ON_PUSH</code>. When the <code>BASIC</code> scan type is specified, the <code>SCAN_ON_PUSH</code> and <code>MANUAL</code> scan frequencies are supported.</p>
-    pub fn scan_frequency(&self) -> std::option::Option<&crate::types::ScanFrequency> {
+    pub fn scan_frequency(&self) -> ::std::option::Option<&crate::types::ScanFrequency> {
         self.scan_frequency.as_ref()
     }
     /// <p>The repository filters associated with the scanning configuration for a private registry.</p>
     pub fn repository_filters(
         &self,
-    ) -> std::option::Option<&[crate::types::ScanningRepositoryFilter]> {
+    ) -> ::std::option::Option<&[crate::types::ScanningRepositoryFilter]> {
         self.repository_filters.as_deref()
     }
 }
@@ -33,22 +33,24 @@ impl RegistryScanningRule {
 
 /// A builder for [`RegistryScanningRule`](crate::types::RegistryScanningRule).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RegistryScanningRuleBuilder {
-    pub(crate) scan_frequency: std::option::Option<crate::types::ScanFrequency>,
+    pub(crate) scan_frequency: ::std::option::Option<crate::types::ScanFrequency>,
     pub(crate) repository_filters:
-        std::option::Option<std::vec::Vec<crate::types::ScanningRepositoryFilter>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ScanningRepositoryFilter>>,
 }
 impl RegistryScanningRuleBuilder {
     /// <p>The frequency that scans are performed at for a private registry. When the <code>ENHANCED</code> scan type is specified, the supported scan frequencies are <code>CONTINUOUS_SCAN</code> and <code>SCAN_ON_PUSH</code>. When the <code>BASIC</code> scan type is specified, the <code>SCAN_ON_PUSH</code> and <code>MANUAL</code> scan frequencies are supported.</p>
     pub fn scan_frequency(mut self, input: crate::types::ScanFrequency) -> Self {
-        self.scan_frequency = Some(input);
+        self.scan_frequency = ::std::option::Option::Some(input);
         self
     }
     /// <p>The frequency that scans are performed at for a private registry. When the <code>ENHANCED</code> scan type is specified, the supported scan frequencies are <code>CONTINUOUS_SCAN</code> and <code>SCAN_ON_PUSH</code>. When the <code>BASIC</code> scan type is specified, the <code>SCAN_ON_PUSH</code> and <code>MANUAL</code> scan frequencies are supported.</p>
     pub fn set_scan_frequency(
         mut self,
-        input: std::option::Option<crate::types::ScanFrequency>,
+        input: ::std::option::Option<crate::types::ScanFrequency>,
     ) -> Self {
         self.scan_frequency = input;
         self
@@ -61,13 +63,13 @@ impl RegistryScanningRuleBuilder {
     pub fn repository_filters(mut self, input: crate::types::ScanningRepositoryFilter) -> Self {
         let mut v = self.repository_filters.unwrap_or_default();
         v.push(input);
-        self.repository_filters = Some(v);
+        self.repository_filters = ::std::option::Option::Some(v);
         self
     }
     /// <p>The repository filters associated with the scanning configuration for a private registry.</p>
     pub fn set_repository_filters(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ScanningRepositoryFilter>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ScanningRepositoryFilter>>,
     ) -> Self {
         self.repository_filters = input;
         self

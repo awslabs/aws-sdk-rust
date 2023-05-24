@@ -37,13 +37,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum As2Transport {
     #[allow(missing_docs)] // documentation missing in model
@@ -51,7 +51,7 @@ pub enum As2Transport {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for As2Transport {
+impl ::std::convert::From<&str> for As2Transport {
     fn from(s: &str) -> Self {
         match s {
             "HTTP" => As2Transport::Http,
@@ -61,11 +61,11 @@ impl std::convert::From<&str> for As2Transport {
         }
     }
 }
-impl std::str::FromStr for As2Transport {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for As2Transport {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(As2Transport::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(As2Transport::from(s))
     }
 }
 impl As2Transport {
@@ -81,7 +81,7 @@ impl As2Transport {
         &["HTTP"]
     }
 }
-impl AsRef<str> for As2Transport {
+impl ::std::convert::AsRef<str> for As2Transport {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -2,29 +2,29 @@
 
 /// <p>The Amazon Elastic File System (EFS) storage configuration for a SageMaker image.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FileSystemConfig {
     /// <p>The path within the image to mount the user's EFS home directory. The directory should be empty. If not specified, defaults to <i>/home/sagemaker-user</i>.</p>
     #[doc(hidden)]
-    pub mount_path: std::option::Option<std::string::String>,
+    pub mount_path: ::std::option::Option<::std::string::String>,
     /// <p>The default POSIX user ID (UID). If not specified, defaults to <code>1000</code>.</p>
     #[doc(hidden)]
-    pub default_uid: std::option::Option<i32>,
+    pub default_uid: ::std::option::Option<i32>,
     /// <p>The default POSIX group ID (GID). If not specified, defaults to <code>100</code>.</p>
     #[doc(hidden)]
-    pub default_gid: std::option::Option<i32>,
+    pub default_gid: ::std::option::Option<i32>,
 }
 impl FileSystemConfig {
     /// <p>The path within the image to mount the user's EFS home directory. The directory should be empty. If not specified, defaults to <i>/home/sagemaker-user</i>.</p>
-    pub fn mount_path(&self) -> std::option::Option<&str> {
+    pub fn mount_path(&self) -> ::std::option::Option<&str> {
         self.mount_path.as_deref()
     }
     /// <p>The default POSIX user ID (UID). If not specified, defaults to <code>1000</code>.</p>
-    pub fn default_uid(&self) -> std::option::Option<i32> {
+    pub fn default_uid(&self) -> ::std::option::Option<i32> {
         self.default_uid
     }
     /// <p>The default POSIX group ID (GID). If not specified, defaults to <code>100</code>.</p>
-    pub fn default_gid(&self) -> std::option::Option<i32> {
+    pub fn default_gid(&self) -> ::std::option::Option<i32> {
         self.default_gid
     }
 }
@@ -37,40 +37,42 @@ impl FileSystemConfig {
 
 /// A builder for [`FileSystemConfig`](crate::types::FileSystemConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FileSystemConfigBuilder {
-    pub(crate) mount_path: std::option::Option<std::string::String>,
-    pub(crate) default_uid: std::option::Option<i32>,
-    pub(crate) default_gid: std::option::Option<i32>,
+    pub(crate) mount_path: ::std::option::Option<::std::string::String>,
+    pub(crate) default_uid: ::std::option::Option<i32>,
+    pub(crate) default_gid: ::std::option::Option<i32>,
 }
 impl FileSystemConfigBuilder {
     /// <p>The path within the image to mount the user's EFS home directory. The directory should be empty. If not specified, defaults to <i>/home/sagemaker-user</i>.</p>
-    pub fn mount_path(mut self, input: impl Into<std::string::String>) -> Self {
-        self.mount_path = Some(input.into());
+    pub fn mount_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.mount_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The path within the image to mount the user's EFS home directory. The directory should be empty. If not specified, defaults to <i>/home/sagemaker-user</i>.</p>
-    pub fn set_mount_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_mount_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.mount_path = input;
         self
     }
     /// <p>The default POSIX user ID (UID). If not specified, defaults to <code>1000</code>.</p>
     pub fn default_uid(mut self, input: i32) -> Self {
-        self.default_uid = Some(input);
+        self.default_uid = ::std::option::Option::Some(input);
         self
     }
     /// <p>The default POSIX user ID (UID). If not specified, defaults to <code>1000</code>.</p>
-    pub fn set_default_uid(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_default_uid(mut self, input: ::std::option::Option<i32>) -> Self {
         self.default_uid = input;
         self
     }
     /// <p>The default POSIX group ID (GID). If not specified, defaults to <code>100</code>.</p>
     pub fn default_gid(mut self, input: i32) -> Self {
-        self.default_gid = Some(input);
+        self.default_gid = ::std::option::Option::Some(input);
         self
     }
     /// <p>The default POSIX group ID (GID). If not specified, defaults to <code>100</code>.</p>
-    pub fn set_default_gid(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_default_gid(mut self, input: ::std::option::Option<i32>) -> Self {
         self.default_gid = input;
         self
     }

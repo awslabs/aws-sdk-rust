@@ -2,7 +2,7 @@
 
 /// <p>Information about properties for a numeric question in an evaluation form.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluationFormNumericQuestionProperties {
     /// <p>The minimum answer value.</p>
     #[doc(hidden)]
@@ -13,10 +13,10 @@ pub struct EvaluationFormNumericQuestionProperties {
     /// <p>The scoring options of the numeric question.</p>
     #[doc(hidden)]
     pub options:
-        std::option::Option<std::vec::Vec<crate::types::EvaluationFormNumericQuestionOption>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormNumericQuestionOption>>,
     /// <p>The automation properties of the numeric question.</p>
     #[doc(hidden)]
-    pub automation: std::option::Option<crate::types::EvaluationFormNumericQuestionAutomation>,
+    pub automation: ::std::option::Option<crate::types::EvaluationFormNumericQuestionAutomation>,
 }
 impl EvaluationFormNumericQuestionProperties {
     /// <p>The minimum answer value.</p>
@@ -30,13 +30,13 @@ impl EvaluationFormNumericQuestionProperties {
     /// <p>The scoring options of the numeric question.</p>
     pub fn options(
         &self,
-    ) -> std::option::Option<&[crate::types::EvaluationFormNumericQuestionOption]> {
+    ) -> ::std::option::Option<&[crate::types::EvaluationFormNumericQuestionOption]> {
         self.options.as_deref()
     }
     /// <p>The automation properties of the numeric question.</p>
     pub fn automation(
         &self,
-    ) -> std::option::Option<&crate::types::EvaluationFormNumericQuestionAutomation> {
+    ) -> ::std::option::Option<&crate::types::EvaluationFormNumericQuestionAutomation> {
         self.automation.as_ref()
     }
 }
@@ -49,33 +49,35 @@ impl EvaluationFormNumericQuestionProperties {
 
 /// A builder for [`EvaluationFormNumericQuestionProperties`](crate::types::EvaluationFormNumericQuestionProperties).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EvaluationFormNumericQuestionPropertiesBuilder {
-    pub(crate) min_value: std::option::Option<i32>,
-    pub(crate) max_value: std::option::Option<i32>,
+    pub(crate) min_value: ::std::option::Option<i32>,
+    pub(crate) max_value: ::std::option::Option<i32>,
     pub(crate) options:
-        std::option::Option<std::vec::Vec<crate::types::EvaluationFormNumericQuestionOption>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormNumericQuestionOption>>,
     pub(crate) automation:
-        std::option::Option<crate::types::EvaluationFormNumericQuestionAutomation>,
+        ::std::option::Option<crate::types::EvaluationFormNumericQuestionAutomation>,
 }
 impl EvaluationFormNumericQuestionPropertiesBuilder {
     /// <p>The minimum answer value.</p>
     pub fn min_value(mut self, input: i32) -> Self {
-        self.min_value = Some(input);
+        self.min_value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The minimum answer value.</p>
-    pub fn set_min_value(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_min_value(mut self, input: ::std::option::Option<i32>) -> Self {
         self.min_value = input;
         self
     }
     /// <p>The maximum answer value.</p>
     pub fn max_value(mut self, input: i32) -> Self {
-        self.max_value = Some(input);
+        self.max_value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum answer value.</p>
-    pub fn set_max_value(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_value(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_value = input;
         self
     }
@@ -87,14 +89,14 @@ impl EvaluationFormNumericQuestionPropertiesBuilder {
     pub fn options(mut self, input: crate::types::EvaluationFormNumericQuestionOption) -> Self {
         let mut v = self.options.unwrap_or_default();
         v.push(input);
-        self.options = Some(v);
+        self.options = ::std::option::Option::Some(v);
         self
     }
     /// <p>The scoring options of the numeric question.</p>
     pub fn set_options(
         mut self,
-        input: std::option::Option<
-            std::vec::Vec<crate::types::EvaluationFormNumericQuestionOption>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::EvaluationFormNumericQuestionOption>,
         >,
     ) -> Self {
         self.options = input;
@@ -105,13 +107,13 @@ impl EvaluationFormNumericQuestionPropertiesBuilder {
         mut self,
         input: crate::types::EvaluationFormNumericQuestionAutomation,
     ) -> Self {
-        self.automation = Some(input);
+        self.automation = ::std::option::Option::Some(input);
         self
     }
     /// <p>The automation properties of the numeric question.</p>
     pub fn set_automation(
         mut self,
-        input: std::option::Option<crate::types::EvaluationFormNumericQuestionAutomation>,
+        input: ::std::option::Option<crate::types::EvaluationFormNumericQuestionAutomation>,
     ) -> Self {
         self.automation = input;
         self

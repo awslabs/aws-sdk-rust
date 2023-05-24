@@ -37,13 +37,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum TargetDevice {
     #[allow(missing_docs)] // documentation missing in model
@@ -51,7 +51,7 @@ pub enum TargetDevice {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for TargetDevice {
+impl ::std::convert::From<&str> for TargetDevice {
     fn from(s: &str) -> Self {
         match s {
             "jetson_xavier" => TargetDevice::JetsonXavier,
@@ -61,11 +61,11 @@ impl std::convert::From<&str> for TargetDevice {
         }
     }
 }
-impl std::str::FromStr for TargetDevice {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for TargetDevice {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TargetDevice::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(TargetDevice::from(s))
     }
 }
 impl TargetDevice {
@@ -81,7 +81,7 @@ impl TargetDevice {
         &["jetson_xavier"]
     }
 }
-impl AsRef<str> for TargetDevice {
+impl ::std::convert::AsRef<str> for TargetDevice {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

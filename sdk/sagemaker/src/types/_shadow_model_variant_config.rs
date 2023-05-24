@@ -2,18 +2,18 @@
 
 /// <p>The name and sampling percentage of a shadow variant.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ShadowModelVariantConfig {
     /// <p>The name of the shadow variant.</p>
     #[doc(hidden)]
-    pub shadow_model_variant_name: std::option::Option<std::string::String>,
+    pub shadow_model_variant_name: ::std::option::Option<::std::string::String>,
     /// <p> The percentage of inference requests that Amazon SageMaker replicates from the production variant to the shadow variant. </p>
     #[doc(hidden)]
     pub sampling_percentage: i32,
 }
 impl ShadowModelVariantConfig {
     /// <p>The name of the shadow variant.</p>
-    pub fn shadow_model_variant_name(&self) -> std::option::Option<&str> {
+    pub fn shadow_model_variant_name(&self) -> ::std::option::Option<&str> {
         self.shadow_model_variant_name.as_deref()
     }
     /// <p> The percentage of inference requests that Amazon SageMaker replicates from the production variant to the shadow variant. </p>
@@ -30,32 +30,37 @@ impl ShadowModelVariantConfig {
 
 /// A builder for [`ShadowModelVariantConfig`](crate::types::ShadowModelVariantConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ShadowModelVariantConfigBuilder {
-    pub(crate) shadow_model_variant_name: std::option::Option<std::string::String>,
-    pub(crate) sampling_percentage: std::option::Option<i32>,
+    pub(crate) shadow_model_variant_name: ::std::option::Option<::std::string::String>,
+    pub(crate) sampling_percentage: ::std::option::Option<i32>,
 }
 impl ShadowModelVariantConfigBuilder {
     /// <p>The name of the shadow variant.</p>
-    pub fn shadow_model_variant_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.shadow_model_variant_name = Some(input.into());
+    pub fn shadow_model_variant_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.shadow_model_variant_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the shadow variant.</p>
     pub fn set_shadow_model_variant_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.shadow_model_variant_name = input;
         self
     }
     /// <p> The percentage of inference requests that Amazon SageMaker replicates from the production variant to the shadow variant. </p>
     pub fn sampling_percentage(mut self, input: i32) -> Self {
-        self.sampling_percentage = Some(input);
+        self.sampling_percentage = ::std::option::Option::Some(input);
         self
     }
     /// <p> The percentage of inference requests that Amazon SageMaker replicates from the production variant to the shadow variant. </p>
-    pub fn set_sampling_percentage(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_sampling_percentage(mut self, input: ::std::option::Option<i32>) -> Self {
         self.sampling_percentage = input;
         self
     }

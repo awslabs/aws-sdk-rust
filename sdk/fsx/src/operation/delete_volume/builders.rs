@@ -6,56 +6,59 @@ pub use crate::operation::delete_volume::_delete_volume_input::DeleteVolumeInput
 /// Fluent builder constructing a request to `DeleteVolume`.
 ///
 /// <p>Deletes an Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS volume.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteVolumeFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::delete_volume::builders::DeleteVolumeInputBuilder,
 }
 impl DeleteVolumeFluentBuilder {
     /// Creates a new `DeleteVolume`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::delete_volume::DeleteVolume,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::delete_volume::DeleteVolumeError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_volume::DeleteVolumeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::delete_volume::DeleteVolumeOutput,
-        aws_smithy_http::result::SdkError<crate::operation::delete_volume::DeleteVolumeError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_volume::DeleteVolumeError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,32 +71,35 @@ impl DeleteVolumeFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::delete_volume::DeleteVolumeOutput,
-        aws_smithy_http::result::SdkError<crate::operation::delete_volume::DeleteVolumeError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_volume::DeleteVolumeError>,
     > {
         self.send_middleware().await
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn client_request_token(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     pub fn set_client_request_token(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
     /// <p>The ID of the volume that you are deleting.</p>
-    pub fn volume_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn volume_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.volume_id(input.into());
         self
     }
     /// <p>The ID of the volume that you are deleting.</p>
-    pub fn set_volume_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_volume_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_volume_id(input);
         self
     }
@@ -108,7 +114,7 @@ impl DeleteVolumeFluentBuilder {
     /// <p>For Amazon FSx for ONTAP volumes, specify whether to take a final backup of the volume and apply tags to the backup. To apply tags to the backup, you must have the <code>fsx:TagResource</code> permission.</p>
     pub fn set_ontap_configuration(
         mut self,
-        input: std::option::Option<crate::types::DeleteVolumeOntapConfiguration>,
+        input: ::std::option::Option<crate::types::DeleteVolumeOntapConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_ontap_configuration(input);
         self
@@ -124,7 +130,7 @@ impl DeleteVolumeFluentBuilder {
     /// <p>For Amazon FSx for OpenZFS volumes, specify whether to delete all child volumes and snapshots.</p>
     pub fn set_open_zfs_configuration(
         mut self,
-        input: std::option::Option<crate::types::DeleteVolumeOpenZfsConfiguration>,
+        input: ::std::option::Option<crate::types::DeleteVolumeOpenZfsConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_open_zfs_configuration(input);
         self

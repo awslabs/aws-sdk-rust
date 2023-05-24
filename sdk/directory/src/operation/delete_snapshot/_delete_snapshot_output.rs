@@ -2,20 +2,20 @@
 
 /// <p>Contains the results of the <code>DeleteSnapshot</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteSnapshotOutput {
     /// <p>The identifier of the directory snapshot that was deleted.</p>
     #[doc(hidden)]
-    pub snapshot_id: std::option::Option<std::string::String>,
+    pub snapshot_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DeleteSnapshotOutput {
     /// <p>The identifier of the directory snapshot that was deleted.</p>
-    pub fn snapshot_id(&self) -> std::option::Option<&str> {
+    pub fn snapshot_id(&self) -> ::std::option::Option<&str> {
         self.snapshot_id.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DeleteSnapshotOutput {
+impl ::aws_http::request_id::RequestId for DeleteSnapshotOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,21 @@ impl DeleteSnapshotOutput {
 
 /// A builder for [`DeleteSnapshotOutput`](crate::operation::delete_snapshot::DeleteSnapshotOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteSnapshotOutputBuilder {
-    pub(crate) snapshot_id: std::option::Option<std::string::String>,
+    pub(crate) snapshot_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DeleteSnapshotOutputBuilder {
     /// <p>The identifier of the directory snapshot that was deleted.</p>
-    pub fn snapshot_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.snapshot_id = Some(input.into());
+    pub fn snapshot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.snapshot_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the directory snapshot that was deleted.</p>
-    pub fn set_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_snapshot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_id = input;
         self
     }

@@ -2,22 +2,22 @@
 
 /// Use encryptionContractConfiguration to configure one or more content encryption keys for your endpoints that use SPEKE 2.0. The encryption contract defines which content keys are used to encrypt the audio and video tracks in your stream. To configure the encryption contract, specify which audio and video encryption presets to use. Note the following considerations when using encryptionContractConfiguration: encryptionContractConfiguration can be used for DASH endpoints that use SPEKE 2.0. SPEKE 2.0 relies on the CPIX 2.3 specification. You must disable key rotation for this endpoint by setting keyRotationIntervalSeconds to 0.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EncryptionContractConfiguration {
     /// A collection of audio encryption presets.
     #[doc(hidden)]
-    pub preset_speke20_audio: std::option::Option<crate::types::PresetSpeke20Audio>,
+    pub preset_speke20_audio: ::std::option::Option<crate::types::PresetSpeke20Audio>,
     /// A collection of video encryption presets.
     #[doc(hidden)]
-    pub preset_speke20_video: std::option::Option<crate::types::PresetSpeke20Video>,
+    pub preset_speke20_video: ::std::option::Option<crate::types::PresetSpeke20Video>,
 }
 impl EncryptionContractConfiguration {
     /// A collection of audio encryption presets.
-    pub fn preset_speke20_audio(&self) -> std::option::Option<&crate::types::PresetSpeke20Audio> {
+    pub fn preset_speke20_audio(&self) -> ::std::option::Option<&crate::types::PresetSpeke20Audio> {
         self.preset_speke20_audio.as_ref()
     }
     /// A collection of video encryption presets.
-    pub fn preset_speke20_video(&self) -> std::option::Option<&crate::types::PresetSpeke20Video> {
+    pub fn preset_speke20_video(&self) -> ::std::option::Option<&crate::types::PresetSpeke20Video> {
         self.preset_speke20_video.as_ref()
     }
 }
@@ -30,34 +30,36 @@ impl EncryptionContractConfiguration {
 
 /// A builder for [`EncryptionContractConfiguration`](crate::types::EncryptionContractConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EncryptionContractConfigurationBuilder {
-    pub(crate) preset_speke20_audio: std::option::Option<crate::types::PresetSpeke20Audio>,
-    pub(crate) preset_speke20_video: std::option::Option<crate::types::PresetSpeke20Video>,
+    pub(crate) preset_speke20_audio: ::std::option::Option<crate::types::PresetSpeke20Audio>,
+    pub(crate) preset_speke20_video: ::std::option::Option<crate::types::PresetSpeke20Video>,
 }
 impl EncryptionContractConfigurationBuilder {
     /// A collection of audio encryption presets.
     pub fn preset_speke20_audio(mut self, input: crate::types::PresetSpeke20Audio) -> Self {
-        self.preset_speke20_audio = Some(input);
+        self.preset_speke20_audio = ::std::option::Option::Some(input);
         self
     }
     /// A collection of audio encryption presets.
     pub fn set_preset_speke20_audio(
         mut self,
-        input: std::option::Option<crate::types::PresetSpeke20Audio>,
+        input: ::std::option::Option<crate::types::PresetSpeke20Audio>,
     ) -> Self {
         self.preset_speke20_audio = input;
         self
     }
     /// A collection of video encryption presets.
     pub fn preset_speke20_video(mut self, input: crate::types::PresetSpeke20Video) -> Self {
-        self.preset_speke20_video = Some(input);
+        self.preset_speke20_video = ::std::option::Option::Some(input);
         self
     }
     /// A collection of video encryption presets.
     pub fn set_preset_speke20_video(
         mut self,
-        input: std::option::Option<crate::types::PresetSpeke20Video>,
+        input: ::std::option::Option<crate::types::PresetSpeke20Video>,
     ) -> Self {
         self.preset_speke20_video = input;
         self

@@ -6,29 +6,29 @@ pub use crate::operation::create_environment::_create_environment_input::CreateE
 /// Fluent builder constructing a request to `CreateEnvironment`.
 ///
 /// <p>Create a new FinSpace environment.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateEnvironmentFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_environment::builders::CreateEnvironmentInputBuilder,
 }
 impl CreateEnvironmentFluentBuilder {
     /// Creates a new `CreateEnvironment`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_environment::CreateEnvironment,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_environment::CreateEnvironmentError,
         >,
     > {
@@ -36,30 +36,33 @@ impl CreateEnvironmentFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_environment::CreateEnvironmentOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_environment::CreateEnvironmentError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,41 +75,41 @@ impl CreateEnvironmentFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_environment::CreateEnvironmentOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_environment::CreateEnvironmentError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the FinSpace environment to be created.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// <p>The name of the FinSpace environment to be created.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
     /// <p>The description of the FinSpace environment to be created.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>The description of the FinSpace environment to be created.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
     /// <p>The KMS key id to encrypt your data in the FinSpace environment.</p>
-    pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kms_key_id(input.into());
         self
     }
     /// <p>The KMS key id to encrypt your data in the FinSpace environment.</p>
-    pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kms_key_id(input);
         self
     }
@@ -117,8 +120,8 @@ impl CreateEnvironmentFluentBuilder {
     /// <p>Add tags to your FinSpace environment.</p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
@@ -126,8 +129,8 @@ impl CreateEnvironmentFluentBuilder {
     /// <p>Add tags to your FinSpace environment.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
@@ -149,7 +152,7 @@ impl CreateEnvironmentFluentBuilder {
     /// </ul>
     pub fn set_federation_mode(
         mut self,
-        input: std::option::Option<crate::types::FederationMode>,
+        input: ::std::option::Option<crate::types::FederationMode>,
     ) -> Self {
         self.inner = self.inner.set_federation_mode(input);
         self
@@ -162,7 +165,7 @@ impl CreateEnvironmentFluentBuilder {
     /// <p>Configuration information when authentication mode is FEDERATED.</p>
     pub fn set_federation_parameters(
         mut self,
-        input: std::option::Option<crate::types::FederationParameters>,
+        input: ::std::option::Option<crate::types::FederationParameters>,
     ) -> Self {
         self.inner = self.inner.set_federation_parameters(input);
         self
@@ -175,7 +178,7 @@ impl CreateEnvironmentFluentBuilder {
     /// <p>Configuration information for the superuser.</p>
     pub fn set_superuser_parameters(
         mut self,
-        input: std::option::Option<crate::types::SuperuserParameters>,
+        input: ::std::option::Option<crate::types::SuperuserParameters>,
     ) -> Self {
         self.inner = self.inner.set_superuser_parameters(input);
         self
@@ -189,7 +192,7 @@ impl CreateEnvironmentFluentBuilder {
     /// <li> <p> <code>arn:aws:finspace:${Region}::data-bundle/capital-markets-sample</code> - Contains sample Capital Markets datasets, categories and controlled vocabularies.</p> </li>
     /// <li> <p> <code>arn:aws:finspace:${Region}::data-bundle/taq</code> (default) - Contains trades and quotes data in addition to sample Capital Markets data.</p> </li>
     /// </ul>
-    pub fn data_bundles(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn data_bundles(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.data_bundles(input.into());
         self
     }
@@ -200,7 +203,7 @@ impl CreateEnvironmentFluentBuilder {
     /// </ul>
     pub fn set_data_bundles(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_data_bundles(input);
         self

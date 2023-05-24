@@ -2,15 +2,15 @@
 
 /// <p>The BGP options for the Connect attachment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TransitGatewayConnectRequestBgpOptions {
     /// <p>The peer Autonomous System Number (ASN).</p>
     #[doc(hidden)]
-    pub peer_asn: std::option::Option<i64>,
+    pub peer_asn: ::std::option::Option<i64>,
 }
 impl TransitGatewayConnectRequestBgpOptions {
     /// <p>The peer Autonomous System Number (ASN).</p>
-    pub fn peer_asn(&self) -> std::option::Option<i64> {
+    pub fn peer_asn(&self) -> ::std::option::Option<i64> {
         self.peer_asn
     }
 }
@@ -23,18 +23,20 @@ impl TransitGatewayConnectRequestBgpOptions {
 
 /// A builder for [`TransitGatewayConnectRequestBgpOptions`](crate::types::TransitGatewayConnectRequestBgpOptions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TransitGatewayConnectRequestBgpOptionsBuilder {
-    pub(crate) peer_asn: std::option::Option<i64>,
+    pub(crate) peer_asn: ::std::option::Option<i64>,
 }
 impl TransitGatewayConnectRequestBgpOptionsBuilder {
     /// <p>The peer Autonomous System Number (ASN).</p>
     pub fn peer_asn(mut self, input: i64) -> Self {
-        self.peer_asn = Some(input);
+        self.peer_asn = ::std::option::Option::Some(input);
         self
     }
     /// <p>The peer Autonomous System Number (ASN).</p>
-    pub fn set_peer_asn(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_peer_asn(mut self, input: ::std::option::Option<i64>) -> Self {
         self.peer_asn = input;
         self
     }

@@ -37,13 +37,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum NetworkFilterKeys {
     #[allow(missing_docs)] // documentation missing in model
@@ -51,7 +51,7 @@ pub enum NetworkFilterKeys {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for NetworkFilterKeys {
+impl ::std::convert::From<&str> for NetworkFilterKeys {
     fn from(s: &str) -> Self {
         match s {
             "STATUS" => NetworkFilterKeys::Status,
@@ -61,11 +61,11 @@ impl std::convert::From<&str> for NetworkFilterKeys {
         }
     }
 }
-impl std::str::FromStr for NetworkFilterKeys {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for NetworkFilterKeys {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(NetworkFilterKeys::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(NetworkFilterKeys::from(s))
     }
 }
 impl NetworkFilterKeys {
@@ -81,7 +81,7 @@ impl NetworkFilterKeys {
         &["STATUS"]
     }
 }
-impl AsRef<str> for NetworkFilterKeys {
+impl ::std::convert::AsRef<str> for NetworkFilterKeys {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

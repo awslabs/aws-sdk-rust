@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DetectTargetedSentiment`](crate::operation::detect_targeted_sentiment::builders::DetectTargetedSentimentFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`text(impl Into<String>)`](crate::operation::detect_targeted_sentiment::builders::DetectTargetedSentimentFluentBuilder::text) / [`set_text(Option<String>)`](crate::operation::detect_targeted_sentiment::builders::DetectTargetedSentimentFluentBuilder::set_text): <p>A UTF-8 text string. The maximum string length is 5 KB.</p>
+    ///   - [`text(impl ::std::convert::Into<String>)`](crate::operation::detect_targeted_sentiment::builders::DetectTargetedSentimentFluentBuilder::text) / [`set_text(Option<String>)`](crate::operation::detect_targeted_sentiment::builders::DetectTargetedSentimentFluentBuilder::set_text): <p>A UTF-8 text string. The maximum string length is 5 KB.</p>
     ///   - [`language_code(LanguageCode)`](crate::operation::detect_targeted_sentiment::builders::DetectTargetedSentimentFluentBuilder::language_code) / [`set_language_code(Option<LanguageCode>)`](crate::operation::detect_targeted_sentiment::builders::DetectTargetedSentimentFluentBuilder::set_language_code): <p>The language of the input documents. Currently, English is the only supported language.</p>
     /// - On success, responds with [`DetectTargetedSentimentOutput`](crate::operation::detect_targeted_sentiment::DetectTargetedSentimentOutput) with field(s):
     ///   - [`entities(Option<Vec<TargetedSentimentEntity>>)`](crate::operation::detect_targeted_sentiment::DetectTargetedSentimentOutput::entities): <p>Targeted sentiment analysis for each of the entities identified in the input text.</p>

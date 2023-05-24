@@ -2,22 +2,22 @@
 
 /// <p>Describes the type of a stateful rule group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuleGroupTypePair {
     /// <p>The ARN of the rule group.</p>
     #[doc(hidden)]
-    pub rule_group_arn: std::option::Option<std::string::String>,
+    pub rule_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The rule group type. The possible values are <code>Domain List</code> and <code>Suricata</code>.</p>
     #[doc(hidden)]
-    pub rule_group_type: std::option::Option<std::string::String>,
+    pub rule_group_type: ::std::option::Option<::std::string::String>,
 }
 impl RuleGroupTypePair {
     /// <p>The ARN of the rule group.</p>
-    pub fn rule_group_arn(&self) -> std::option::Option<&str> {
+    pub fn rule_group_arn(&self) -> ::std::option::Option<&str> {
         self.rule_group_arn.as_deref()
     }
     /// <p>The rule group type. The possible values are <code>Domain List</code> and <code>Suricata</code>.</p>
-    pub fn rule_group_type(&self) -> std::option::Option<&str> {
+    pub fn rule_group_type(&self) -> ::std::option::Option<&str> {
         self.rule_group_type.as_deref()
     }
 }
@@ -30,29 +30,43 @@ impl RuleGroupTypePair {
 
 /// A builder for [`RuleGroupTypePair`](crate::types::RuleGroupTypePair).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RuleGroupTypePairBuilder {
-    pub(crate) rule_group_arn: std::option::Option<std::string::String>,
-    pub(crate) rule_group_type: std::option::Option<std::string::String>,
+    pub(crate) rule_group_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) rule_group_type: ::std::option::Option<::std::string::String>,
 }
 impl RuleGroupTypePairBuilder {
     /// <p>The ARN of the rule group.</p>
-    pub fn rule_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.rule_group_arn = Some(input.into());
+    pub fn rule_group_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.rule_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the rule group.</p>
-    pub fn set_rule_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_rule_group_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.rule_group_arn = input;
         self
     }
     /// <p>The rule group type. The possible values are <code>Domain List</code> and <code>Suricata</code>.</p>
-    pub fn rule_group_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.rule_group_type = Some(input.into());
+    pub fn rule_group_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.rule_group_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The rule group type. The possible values are <code>Domain List</code> and <code>Suricata</code>.</p>
-    pub fn set_rule_group_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_rule_group_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.rule_group_type = input;
         self
     }

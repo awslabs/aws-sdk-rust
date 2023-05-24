@@ -4,29 +4,29 @@
 /// <p>The result contains the <code>MLModelId</code> and the endpoint information for the <code>MLModel</code>.</p>
 /// <p> <b>Note:</b> The endpoint information includes the URI of the <code>MLModel</code>; that is, the location to send online prediction requests for the specified <code>MLModel</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateRealtimeEndpointOutput {
     /// <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>. This value should be identical to the value of the <code>MLModelId</code> in the request.</p>
     #[doc(hidden)]
-    pub ml_model_id: std::option::Option<std::string::String>,
+    pub ml_model_id: ::std::option::Option<::std::string::String>,
     /// <p>The endpoint information of the <code>MLModel</code> </p>
     #[doc(hidden)]
-    pub realtime_endpoint_info: std::option::Option<crate::types::RealtimeEndpointInfo>,
+    pub realtime_endpoint_info: ::std::option::Option<crate::types::RealtimeEndpointInfo>,
     _request_id: Option<String>,
 }
 impl CreateRealtimeEndpointOutput {
     /// <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>. This value should be identical to the value of the <code>MLModelId</code> in the request.</p>
-    pub fn ml_model_id(&self) -> std::option::Option<&str> {
+    pub fn ml_model_id(&self) -> ::std::option::Option<&str> {
         self.ml_model_id.as_deref()
     }
     /// <p>The endpoint information of the <code>MLModel</code> </p>
     pub fn realtime_endpoint_info(
         &self,
-    ) -> std::option::Option<&crate::types::RealtimeEndpointInfo> {
+    ) -> ::std::option::Option<&crate::types::RealtimeEndpointInfo> {
         self.realtime_endpoint_info.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for CreateRealtimeEndpointOutput {
+impl ::aws_http::request_id::RequestId for CreateRealtimeEndpointOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -42,32 +42,34 @@ impl CreateRealtimeEndpointOutput {
 
 /// A builder for [`CreateRealtimeEndpointOutput`](crate::operation::create_realtime_endpoint::CreateRealtimeEndpointOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateRealtimeEndpointOutputBuilder {
-    pub(crate) ml_model_id: std::option::Option<std::string::String>,
-    pub(crate) realtime_endpoint_info: std::option::Option<crate::types::RealtimeEndpointInfo>,
+    pub(crate) ml_model_id: ::std::option::Option<::std::string::String>,
+    pub(crate) realtime_endpoint_info: ::std::option::Option<crate::types::RealtimeEndpointInfo>,
     _request_id: Option<String>,
 }
 impl CreateRealtimeEndpointOutputBuilder {
     /// <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>. This value should be identical to the value of the <code>MLModelId</code> in the request.</p>
-    pub fn ml_model_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ml_model_id = Some(input.into());
+    pub fn ml_model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ml_model_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>. This value should be identical to the value of the <code>MLModelId</code> in the request.</p>
-    pub fn set_ml_model_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ml_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ml_model_id = input;
         self
     }
     /// <p>The endpoint information of the <code>MLModel</code> </p>
     pub fn realtime_endpoint_info(mut self, input: crate::types::RealtimeEndpointInfo) -> Self {
-        self.realtime_endpoint_info = Some(input);
+        self.realtime_endpoint_info = ::std::option::Option::Some(input);
         self
     }
     /// <p>The endpoint information of the <code>MLModel</code> </p>
     pub fn set_realtime_endpoint_info(
         mut self,
-        input: std::option::Option<crate::types::RealtimeEndpointInfo>,
+        input: ::std::option::Option<crate::types::RealtimeEndpointInfo>,
     ) -> Self {
         self.realtime_endpoint_info = input;
         self

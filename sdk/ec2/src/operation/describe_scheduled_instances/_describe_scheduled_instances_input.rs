@@ -2,11 +2,11 @@
 
 /// <p>Contains the parameters for DescribeScheduledInstances.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeScheduledInstancesInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
-    pub dry_run: std::option::Option<bool>,
+    pub dry_run: ::std::option::Option<bool>,
     /// <p>The filters.</p>
     /// <ul>
     /// <li> <p> <code>availability-zone</code> - The Availability Zone (for example, <code>us-west-2a</code>).</p> </li>
@@ -14,23 +14,23 @@ pub struct DescribeScheduledInstancesInput {
     /// <li> <p> <code>platform</code> - The platform (<code>Linux/UNIX</code> or <code>Windows</code>).</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub filters: std::option::Option<std::vec::Vec<crate::types::Filter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>The maximum number of results to return in a single call. This value can be between 5 and 300. The default value is 100. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
     #[doc(hidden)]
-    pub max_results: std::option::Option<i32>,
+    pub max_results: ::std::option::Option<i32>,
     /// <p>The token for the next set of results.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The Scheduled Instance IDs.</p>
     #[doc(hidden)]
-    pub scheduled_instance_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub scheduled_instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The time period for the first schedule to start.</p>
     #[doc(hidden)]
-    pub slot_start_time_range: std::option::Option<crate::types::SlotStartTimeRangeRequest>,
+    pub slot_start_time_range: ::std::option::Option<crate::types::SlotStartTimeRangeRequest>,
 }
 impl DescribeScheduledInstancesInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn dry_run(&self) -> std::option::Option<bool> {
+    pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
     /// <p>The filters.</p>
@@ -39,25 +39,25 @@ impl DescribeScheduledInstancesInput {
     /// <li> <p> <code>instance-type</code> - The instance type (for example, <code>c4.large</code>).</p> </li>
     /// <li> <p> <code>platform</code> - The platform (<code>Linux/UNIX</code> or <code>Windows</code>).</p> </li>
     /// </ul>
-    pub fn filters(&self) -> std::option::Option<&[crate::types::Filter]> {
+    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
         self.filters.as_deref()
     }
     /// <p>The maximum number of results to return in a single call. This value can be between 5 and 300. The default value is 100. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
-    pub fn max_results(&self) -> std::option::Option<i32> {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>The token for the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The Scheduled Instance IDs.</p>
-    pub fn scheduled_instance_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn scheduled_instance_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.scheduled_instance_ids.as_deref()
     }
     /// <p>The time period for the first schedule to start.</p>
     pub fn slot_start_time_range(
         &self,
-    ) -> std::option::Option<&crate::types::SlotStartTimeRangeRequest> {
+    ) -> ::std::option::Option<&crate::types::SlotStartTimeRangeRequest> {
         self.slot_start_time_range.as_ref()
     }
 }
@@ -70,23 +70,27 @@ impl DescribeScheduledInstancesInput {
 
 /// A builder for [`DescribeScheduledInstancesInput`](crate::operation::describe_scheduled_instances::DescribeScheduledInstancesInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeScheduledInstancesInputBuilder {
-    pub(crate) dry_run: std::option::Option<bool>,
-    pub(crate) filters: std::option::Option<std::vec::Vec<crate::types::Filter>>,
-    pub(crate) max_results: std::option::Option<i32>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
-    pub(crate) scheduled_instance_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) slot_start_time_range: std::option::Option<crate::types::SlotStartTimeRangeRequest>,
+    pub(crate) dry_run: ::std::option::Option<bool>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub(crate) max_results: ::std::option::Option<i32>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
+    pub(crate) scheduled_instance_ids:
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) slot_start_time_range:
+        ::std::option::Option<crate::types::SlotStartTimeRangeRequest>,
 }
 impl DescribeScheduledInstancesInputBuilder {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
-        self.dry_run = Some(input);
+        self.dry_run = ::std::option::Option::Some(input);
         self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
     }
@@ -103,7 +107,7 @@ impl DescribeScheduledInstancesInputBuilder {
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
         v.push(input);
-        self.filters = Some(v);
+        self.filters = ::std::option::Option::Some(v);
         self
     }
     /// <p>The filters.</p>
@@ -114,28 +118,28 @@ impl DescribeScheduledInstancesInputBuilder {
     /// </ul>
     pub fn set_filters(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     ) -> Self {
         self.filters = input;
         self
     }
     /// <p>The maximum number of results to return in a single call. This value can be between 5 and 300. The default value is 100. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
     pub fn max_results(mut self, input: i32) -> Self {
-        self.max_results = Some(input);
+        self.max_results = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum number of results to return in a single call. This value can be between 5 and 300. The default value is 100. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
-    pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
     /// <p>The token for the next set of results.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The token for the next set of results.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
@@ -144,29 +148,32 @@ impl DescribeScheduledInstancesInputBuilder {
     /// To override the contents of this collection use [`set_scheduled_instance_ids`](Self::set_scheduled_instance_ids).
     ///
     /// <p>The Scheduled Instance IDs.</p>
-    pub fn scheduled_instance_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn scheduled_instance_ids(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.scheduled_instance_ids.unwrap_or_default();
         v.push(input.into());
-        self.scheduled_instance_ids = Some(v);
+        self.scheduled_instance_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Scheduled Instance IDs.</p>
     pub fn set_scheduled_instance_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.scheduled_instance_ids = input;
         self
     }
     /// <p>The time period for the first schedule to start.</p>
     pub fn slot_start_time_range(mut self, input: crate::types::SlotStartTimeRangeRequest) -> Self {
-        self.slot_start_time_range = Some(input);
+        self.slot_start_time_range = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time period for the first schedule to start.</p>
     pub fn set_slot_start_time_range(
         mut self,
-        input: std::option::Option<crate::types::SlotStartTimeRangeRequest>,
+        input: ::std::option::Option<crate::types::SlotStartTimeRangeRequest>,
     ) -> Self {
         self.slot_start_time_range = input;
         self
@@ -174,11 +181,11 @@ impl DescribeScheduledInstancesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeScheduledInstancesInput`](crate::operation::describe_scheduled_instances::DescribeScheduledInstancesInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::describe_scheduled_instances::DescribeScheduledInstancesInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::describe_scheduled_instances::DescribeScheduledInstancesInput {
                 dry_run: self.dry_run,
                 filters: self.filters,

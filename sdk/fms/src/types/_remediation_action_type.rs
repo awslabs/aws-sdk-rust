@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum RemediationActionType {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum RemediationActionType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for RemediationActionType {
+impl ::std::convert::From<&str> for RemediationActionType {
     fn from(s: &str) -> Self {
         match s {
             "MODIFY" => RemediationActionType::Modify,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for RemediationActionType {
         }
     }
 }
-impl std::str::FromStr for RemediationActionType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for RemediationActionType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RemediationActionType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(RemediationActionType::from(s))
     }
 }
 impl RemediationActionType {
@@ -86,7 +86,7 @@ impl RemediationActionType {
         &["MODIFY", "REMOVE"]
     }
 }
-impl AsRef<str> for RemediationActionType {
+impl ::std::convert::AsRef<str> for RemediationActionType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

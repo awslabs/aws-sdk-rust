@@ -2,15 +2,15 @@
 
 /// <p>An object that represents the service discovery information for a service mesh.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MeshServiceDiscovery {
     /// <p>The IP version to use to control traffic within the mesh.</p>
     #[doc(hidden)]
-    pub ip_preference: std::option::Option<crate::types::IpPreference>,
+    pub ip_preference: ::std::option::Option<crate::types::IpPreference>,
 }
 impl MeshServiceDiscovery {
     /// <p>The IP version to use to control traffic within the mesh.</p>
-    pub fn ip_preference(&self) -> std::option::Option<&crate::types::IpPreference> {
+    pub fn ip_preference(&self) -> ::std::option::Option<&crate::types::IpPreference> {
         self.ip_preference.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl MeshServiceDiscovery {
 
 /// A builder for [`MeshServiceDiscovery`](crate::types::MeshServiceDiscovery).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MeshServiceDiscoveryBuilder {
-    pub(crate) ip_preference: std::option::Option<crate::types::IpPreference>,
+    pub(crate) ip_preference: ::std::option::Option<crate::types::IpPreference>,
 }
 impl MeshServiceDiscoveryBuilder {
     /// <p>The IP version to use to control traffic within the mesh.</p>
     pub fn ip_preference(mut self, input: crate::types::IpPreference) -> Self {
-        self.ip_preference = Some(input);
+        self.ip_preference = ::std::option::Option::Some(input);
         self
     }
     /// <p>The IP version to use to control traffic within the mesh.</p>
     pub fn set_ip_preference(
         mut self,
-        input: std::option::Option<crate::types::IpPreference>,
+        input: ::std::option::Option<crate::types::IpPreference>,
     ) -> Self {
         self.ip_preference = input;
         self

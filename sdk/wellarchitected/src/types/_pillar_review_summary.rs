@@ -2,40 +2,40 @@
 
 /// <p>A pillar review summary of a lens review.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PillarReviewSummary {
     /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
     /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
     #[doc(hidden)]
-    pub pillar_id: std::option::Option<std::string::String>,
+    pub pillar_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the pillar.</p>
     #[doc(hidden)]
-    pub pillar_name: std::option::Option<std::string::String>,
+    pub pillar_name: ::std::option::Option<::std::string::String>,
     /// <p>The notes associated with the workload.</p>
     #[doc(hidden)]
-    pub notes: std::option::Option<std::string::String>,
+    pub notes: ::std::option::Option<::std::string::String>,
     /// <p>A map from risk names to the count of how many questions have that rating.</p>
     #[doc(hidden)]
-    pub risk_counts: std::option::Option<std::collections::HashMap<crate::types::Risk, i32>>,
+    pub risk_counts: ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>,
 }
 impl PillarReviewSummary {
     /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
     /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
-    pub fn pillar_id(&self) -> std::option::Option<&str> {
+    pub fn pillar_id(&self) -> ::std::option::Option<&str> {
         self.pillar_id.as_deref()
     }
     /// <p>The name of the pillar.</p>
-    pub fn pillar_name(&self) -> std::option::Option<&str> {
+    pub fn pillar_name(&self) -> ::std::option::Option<&str> {
         self.pillar_name.as_deref()
     }
     /// <p>The notes associated with the workload.</p>
-    pub fn notes(&self) -> std::option::Option<&str> {
+    pub fn notes(&self) -> ::std::option::Option<&str> {
         self.notes.as_deref()
     }
     /// <p>A map from risk names to the count of how many questions have that rating.</p>
     pub fn risk_counts(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<crate::types::Risk, i32>> {
+    ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::Risk, i32>> {
         self.risk_counts.as_ref()
     }
 }
@@ -48,43 +48,46 @@ impl PillarReviewSummary {
 
 /// A builder for [`PillarReviewSummary`](crate::types::PillarReviewSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PillarReviewSummaryBuilder {
-    pub(crate) pillar_id: std::option::Option<std::string::String>,
-    pub(crate) pillar_name: std::option::Option<std::string::String>,
-    pub(crate) notes: std::option::Option<std::string::String>,
-    pub(crate) risk_counts: std::option::Option<std::collections::HashMap<crate::types::Risk, i32>>,
+    pub(crate) pillar_id: ::std::option::Option<::std::string::String>,
+    pub(crate) pillar_name: ::std::option::Option<::std::string::String>,
+    pub(crate) notes: ::std::option::Option<::std::string::String>,
+    pub(crate) risk_counts:
+        ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>,
 }
 impl PillarReviewSummaryBuilder {
     /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
     /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
-    pub fn pillar_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.pillar_id = Some(input.into());
+    pub fn pillar_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.pillar_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
     /// <p>A pillar is identified by its <code>PillarReviewSummary$PillarId</code>.</p>
-    pub fn set_pillar_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_pillar_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pillar_id = input;
         self
     }
     /// <p>The name of the pillar.</p>
-    pub fn pillar_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.pillar_name = Some(input.into());
+    pub fn pillar_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.pillar_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the pillar.</p>
-    pub fn set_pillar_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_pillar_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pillar_name = input;
         self
     }
     /// <p>The notes associated with the workload.</p>
-    pub fn notes(mut self, input: impl Into<std::string::String>) -> Self {
-        self.notes = Some(input.into());
+    pub fn notes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.notes = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The notes associated with the workload.</p>
-    pub fn set_notes(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_notes(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.notes = input;
         self
     }
@@ -96,13 +99,13 @@ impl PillarReviewSummaryBuilder {
     pub fn risk_counts(mut self, k: crate::types::Risk, v: i32) -> Self {
         let mut hash_map = self.risk_counts.unwrap_or_default();
         hash_map.insert(k, v);
-        self.risk_counts = Some(hash_map);
+        self.risk_counts = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A map from risk names to the count of how many questions have that rating.</p>
     pub fn set_risk_counts(
         mut self,
-        input: std::option::Option<std::collections::HashMap<crate::types::Risk, i32>>,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>,
     ) -> Self {
         self.risk_counts = input;
         self

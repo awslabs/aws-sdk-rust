@@ -2,7 +2,7 @@
 pub(crate) fn de_vault_notification_config_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::types::VaultNotificationConfig>,
+    ::std::option::Option<crate::types::VaultNotificationConfig>,
     crate::operation::get_vault_notifications::GetVaultNotificationsError,
 > {
     (!body.is_empty()).then(||{

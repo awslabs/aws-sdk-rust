@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ExportProject`](crate::operation::export_project::builders::ExportProjectFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`project_id(impl Into<String>)`](crate::operation::export_project::builders::ExportProjectFluentBuilder::project_id) / [`set_project_id(Option<String>)`](crate::operation::export_project::builders::ExportProjectFluentBuilder::set_project_id): <p> Unique project identifier. </p>
+    ///   - [`project_id(impl ::std::convert::Into<String>)`](crate::operation::export_project::builders::ExportProjectFluentBuilder::project_id) / [`set_project_id(Option<String>)`](crate::operation::export_project::builders::ExportProjectFluentBuilder::set_project_id): <p> Unique project identifier. </p>
     /// - On success, responds with [`ExportProjectOutput`](crate::operation::export_project::ExportProjectOutput) with field(s):
     ///   - [`download_url(Option<String>)`](crate::operation::export_project::ExportProjectOutput::download_url): <p> URL which can be used to download the exported project configuation file(s). </p>
     ///   - [`share_url(Option<String>)`](crate::operation::export_project::ExportProjectOutput::share_url): <p> URL which can be shared to allow other AWS users to create their own project in AWS Mobile Hub with the same configuration as the specified project. This URL pertains to a snapshot in time of the project configuration that is created when this API is called. If you want to share additional changes to your project configuration, then you will need to create and share a new snapshot by calling this method again. </p>

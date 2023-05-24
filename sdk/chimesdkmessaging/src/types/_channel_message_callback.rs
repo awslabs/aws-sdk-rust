@@ -2,70 +2,70 @@
 
 /// <p>Stores information about a callback.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ChannelMessageCallback {
     /// <p>The message ID.</p>
     #[doc(hidden)]
-    pub message_id: std::option::Option<std::string::String>,
+    pub message_id: ::std::option::Option<::std::string::String>,
     /// <p>The message content.</p>
     #[doc(hidden)]
-    pub content: std::option::Option<std::string::String>,
+    pub content: ::std::option::Option<::std::string::String>,
     /// <p>The message metadata.</p>
     #[doc(hidden)]
-    pub metadata: std::option::Option<std::string::String>,
+    pub metadata: ::std::option::Option<::std::string::String>,
     /// <p>The push notification configuration of the message.</p>
     #[doc(hidden)]
-    pub push_notification: std::option::Option<crate::types::PushNotificationConfiguration>,
+    pub push_notification: ::std::option::Option<crate::types::PushNotificationConfiguration>,
     /// <p>The attributes for the message, used for message filtering along with a <code>FilterRule</code> defined in the <code>PushNotificationPreferences</code>. </p>
     #[doc(hidden)]
-    pub message_attributes: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::MessageAttributeValue>,
+    pub message_attributes: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::MessageAttributeValue>,
     >,
     /// <p>The ID of the SubChannel.</p>
     #[doc(hidden)]
-    pub sub_channel_id: std::option::Option<std::string::String>,
+    pub sub_channel_id: ::std::option::Option<::std::string::String>,
     /// <p>The content type of the call-back message.</p>
     #[doc(hidden)]
-    pub content_type: std::option::Option<std::string::String>,
+    pub content_type: ::std::option::Option<::std::string::String>,
 }
 impl ChannelMessageCallback {
     /// <p>The message ID.</p>
-    pub fn message_id(&self) -> std::option::Option<&str> {
+    pub fn message_id(&self) -> ::std::option::Option<&str> {
         self.message_id.as_deref()
     }
     /// <p>The message content.</p>
-    pub fn content(&self) -> std::option::Option<&str> {
+    pub fn content(&self) -> ::std::option::Option<&str> {
         self.content.as_deref()
     }
     /// <p>The message metadata.</p>
-    pub fn metadata(&self) -> std::option::Option<&str> {
+    pub fn metadata(&self) -> ::std::option::Option<&str> {
         self.metadata.as_deref()
     }
     /// <p>The push notification configuration of the message.</p>
     pub fn push_notification(
         &self,
-    ) -> std::option::Option<&crate::types::PushNotificationConfiguration> {
+    ) -> ::std::option::Option<&crate::types::PushNotificationConfiguration> {
         self.push_notification.as_ref()
     }
     /// <p>The attributes for the message, used for message filtering along with a <code>FilterRule</code> defined in the <code>PushNotificationPreferences</code>. </p>
     pub fn message_attributes(
         &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::types::MessageAttributeValue>,
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, crate::types::MessageAttributeValue>,
     > {
         self.message_attributes.as_ref()
     }
     /// <p>The ID of the SubChannel.</p>
-    pub fn sub_channel_id(&self) -> std::option::Option<&str> {
+    pub fn sub_channel_id(&self) -> ::std::option::Option<&str> {
         self.sub_channel_id.as_deref()
     }
     /// <p>The content type of the call-back message.</p>
-    pub fn content_type(&self) -> std::option::Option<&str> {
+    pub fn content_type(&self) -> ::std::option::Option<&str> {
         self.content_type.as_deref()
     }
 }
-impl std::fmt::Debug for ChannelMessageCallback {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for ChannelMessageCallback {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ChannelMessageCallback");
         formatter.field("message_id", &self.message_id);
         formatter.field("content", &"*** Sensitive Data Redacted ***");
@@ -86,58 +86,59 @@ impl ChannelMessageCallback {
 
 /// A builder for [`ChannelMessageCallback`](crate::types::ChannelMessageCallback).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct ChannelMessageCallbackBuilder {
-    pub(crate) message_id: std::option::Option<std::string::String>,
-    pub(crate) content: std::option::Option<std::string::String>,
-    pub(crate) metadata: std::option::Option<std::string::String>,
-    pub(crate) push_notification: std::option::Option<crate::types::PushNotificationConfiguration>,
-    pub(crate) message_attributes: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::MessageAttributeValue>,
+    pub(crate) message_id: ::std::option::Option<::std::string::String>,
+    pub(crate) content: ::std::option::Option<::std::string::String>,
+    pub(crate) metadata: ::std::option::Option<::std::string::String>,
+    pub(crate) push_notification:
+        ::std::option::Option<crate::types::PushNotificationConfiguration>,
+    pub(crate) message_attributes: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::MessageAttributeValue>,
     >,
-    pub(crate) sub_channel_id: std::option::Option<std::string::String>,
-    pub(crate) content_type: std::option::Option<std::string::String>,
+    pub(crate) sub_channel_id: ::std::option::Option<::std::string::String>,
+    pub(crate) content_type: ::std::option::Option<::std::string::String>,
 }
 impl ChannelMessageCallbackBuilder {
     /// <p>The message ID.</p>
-    pub fn message_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message_id = Some(input.into());
+    pub fn message_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The message ID.</p>
-    pub fn set_message_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message_id = input;
         self
     }
     /// <p>The message content.</p>
-    pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
-        self.content = Some(input.into());
+    pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.content = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The message content.</p>
-    pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content = input;
         self
     }
     /// <p>The message metadata.</p>
-    pub fn metadata(mut self, input: impl Into<std::string::String>) -> Self {
-        self.metadata = Some(input.into());
+    pub fn metadata(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.metadata = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The message metadata.</p>
-    pub fn set_metadata(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_metadata(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metadata = input;
         self
     }
     /// <p>The push notification configuration of the message.</p>
     pub fn push_notification(mut self, input: crate::types::PushNotificationConfiguration) -> Self {
-        self.push_notification = Some(input);
+        self.push_notification = ::std::option::Option::Some(input);
         self
     }
     /// <p>The push notification configuration of the message.</p>
     pub fn set_push_notification(
         mut self,
-        input: std::option::Option<crate::types::PushNotificationConfiguration>,
+        input: ::std::option::Option<crate::types::PushNotificationConfiguration>,
     ) -> Self {
         self.push_notification = input;
         self
@@ -149,41 +150,47 @@ impl ChannelMessageCallbackBuilder {
     /// <p>The attributes for the message, used for message filtering along with a <code>FilterRule</code> defined in the <code>PushNotificationPreferences</code>. </p>
     pub fn message_attributes(
         mut self,
-        k: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
         v: crate::types::MessageAttributeValue,
     ) -> Self {
         let mut hash_map = self.message_attributes.unwrap_or_default();
         hash_map.insert(k.into(), v);
-        self.message_attributes = Some(hash_map);
+        self.message_attributes = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The attributes for the message, used for message filtering along with a <code>FilterRule</code> defined in the <code>PushNotificationPreferences</code>. </p>
     pub fn set_message_attributes(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::types::MessageAttributeValue>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, crate::types::MessageAttributeValue>,
         >,
     ) -> Self {
         self.message_attributes = input;
         self
     }
     /// <p>The ID of the SubChannel.</p>
-    pub fn sub_channel_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.sub_channel_id = Some(input.into());
+    pub fn sub_channel_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.sub_channel_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the SubChannel.</p>
-    pub fn set_sub_channel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_sub_channel_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.sub_channel_id = input;
         self
     }
     /// <p>The content type of the call-back message.</p>
-    pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.content_type = Some(input.into());
+    pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.content_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The content type of the call-back message.</p>
-    pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_type = input;
         self
     }
@@ -200,8 +207,8 @@ impl ChannelMessageCallbackBuilder {
         }
     }
 }
-impl std::fmt::Debug for ChannelMessageCallbackBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for ChannelMessageCallbackBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ChannelMessageCallbackBuilder");
         formatter.field("message_id", &self.message_id);
         formatter.field("content", &"*** Sensitive Data Redacted ***");

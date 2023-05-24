@@ -6,29 +6,29 @@ pub use crate::operation::delete_datalake_auto_enable::_delete_datalake_auto_ena
 /// Fluent builder constructing a request to `DeleteDatalakeAutoEnable`.
 ///
 /// <p> <code>DeleteDatalakeAutoEnable</code> removes automatic enablement of configuration settings for new member accounts (but keeps settings for the delegated administrator) from Amazon Security Lake. You must run this API using credentials of the delegated administrator. When you run this API, new member accounts that are added after the organization enables Security Lake won't contribute to the data lake.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteDatalakeAutoEnableFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::delete_datalake_auto_enable::builders::DeleteDatalakeAutoEnableInputBuilder,
 }
 impl DeleteDatalakeAutoEnableFluentBuilder {
     /// Creates a new `DeleteDatalakeAutoEnable`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::delete_datalake_auto_enable::DeleteDatalakeAutoEnable,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::delete_datalake_auto_enable::DeleteDatalakeAutoEnableError,
         >,
     > {
@@ -36,30 +36,33 @@ impl DeleteDatalakeAutoEnableFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::delete_datalake_auto_enable::DeleteDatalakeAutoEnableOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::delete_datalake_auto_enable::DeleteDatalakeAutoEnableError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,9 +75,9 @@ impl DeleteDatalakeAutoEnableFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::delete_datalake_auto_enable::DeleteDatalakeAutoEnableOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::delete_datalake_auto_enable::DeleteDatalakeAutoEnableError,
         >,
     > {
@@ -95,7 +98,9 @@ impl DeleteDatalakeAutoEnableFluentBuilder {
     /// <p>Remove automatic enablement of configuration settings for new member accounts in Security Lake. </p>
     pub fn set_remove_from_configuration_for_new_accounts(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AutoEnableNewRegionConfiguration>>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::AutoEnableNewRegionConfiguration>,
+        >,
     ) -> Self {
         self.inner = self
             .inner

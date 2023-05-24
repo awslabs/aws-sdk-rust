@@ -2,32 +2,32 @@
 
 /// <p>Describes the configuration for an input field on a form. Use <code>FormInputValueProperty</code> to specify the values to render or bind by default.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FormInputValueProperty {
     /// <p>The value to assign to the input field.</p>
     #[doc(hidden)]
-    pub value: std::option::Option<std::string::String>,
+    pub value: ::std::option::Option<::std::string::String>,
     /// <p>The information to bind fields to data at runtime.</p>
     #[doc(hidden)]
     pub binding_properties:
-        std::option::Option<crate::types::FormInputValuePropertyBindingProperties>,
+        ::std::option::Option<crate::types::FormInputValuePropertyBindingProperties>,
     /// <p>A list of form properties to concatenate to create the value to assign to this field property.</p>
     #[doc(hidden)]
-    pub concat: std::option::Option<std::vec::Vec<crate::types::FormInputValueProperty>>,
+    pub concat: ::std::option::Option<::std::vec::Vec<crate::types::FormInputValueProperty>>,
 }
 impl FormInputValueProperty {
     /// <p>The value to assign to the input field.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
     /// <p>The information to bind fields to data at runtime.</p>
     pub fn binding_properties(
         &self,
-    ) -> std::option::Option<&crate::types::FormInputValuePropertyBindingProperties> {
+    ) -> ::std::option::Option<&crate::types::FormInputValuePropertyBindingProperties> {
         self.binding_properties.as_ref()
     }
     /// <p>A list of form properties to concatenate to create the value to assign to this field property.</p>
-    pub fn concat(&self) -> std::option::Option<&[crate::types::FormInputValueProperty]> {
+    pub fn concat(&self) -> ::std::option::Option<&[crate::types::FormInputValueProperty]> {
         self.concat.as_deref()
     }
 }
@@ -40,21 +40,23 @@ impl FormInputValueProperty {
 
 /// A builder for [`FormInputValueProperty`](crate::types::FormInputValueProperty).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FormInputValuePropertyBuilder {
-    pub(crate) value: std::option::Option<std::string::String>,
+    pub(crate) value: ::std::option::Option<::std::string::String>,
     pub(crate) binding_properties:
-        std::option::Option<crate::types::FormInputValuePropertyBindingProperties>,
-    pub(crate) concat: std::option::Option<std::vec::Vec<crate::types::FormInputValueProperty>>,
+        ::std::option::Option<crate::types::FormInputValuePropertyBindingProperties>,
+    pub(crate) concat: ::std::option::Option<::std::vec::Vec<crate::types::FormInputValueProperty>>,
 }
 impl FormInputValuePropertyBuilder {
     /// <p>The value to assign to the input field.</p>
-    pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.value = Some(input.into());
+    pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value to assign to the input field.</p>
-    pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
     }
@@ -63,13 +65,13 @@ impl FormInputValuePropertyBuilder {
         mut self,
         input: crate::types::FormInputValuePropertyBindingProperties,
     ) -> Self {
-        self.binding_properties = Some(input);
+        self.binding_properties = ::std::option::Option::Some(input);
         self
     }
     /// <p>The information to bind fields to data at runtime.</p>
     pub fn set_binding_properties(
         mut self,
-        input: std::option::Option<crate::types::FormInputValuePropertyBindingProperties>,
+        input: ::std::option::Option<crate::types::FormInputValuePropertyBindingProperties>,
     ) -> Self {
         self.binding_properties = input;
         self
@@ -82,13 +84,13 @@ impl FormInputValuePropertyBuilder {
     pub fn concat(mut self, input: crate::types::FormInputValueProperty) -> Self {
         let mut v = self.concat.unwrap_or_default();
         v.push(input);
-        self.concat = Some(v);
+        self.concat = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of form properties to concatenate to create the value to assign to this field property.</p>
     pub fn set_concat(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::FormInputValueProperty>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::FormInputValueProperty>>,
     ) -> Self {
         self.concat = input;
         self

@@ -2,29 +2,29 @@
 
 /// <p>Creates a new documentation part of a given API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDocumentationPartInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
-    pub rest_api_id: std::option::Option<std::string::String>,
+    pub rest_api_id: ::std::option::Option<::std::string::String>,
     /// <p>The location of the targeted API entity of the to-be-created documentation part.</p>
     #[doc(hidden)]
-    pub location: std::option::Option<crate::types::DocumentationPartLocation>,
+    pub location: ::std::option::Option<crate::types::DocumentationPartLocation>,
     /// <p>The new documentation content map of the targeted API entity. Enclosed key-value pairs are API-specific, but only OpenAPI-compliant key-value pairs can be exported and, hence, published.</p>
     #[doc(hidden)]
-    pub properties: std::option::Option<std::string::String>,
+    pub properties: ::std::option::Option<::std::string::String>,
 }
 impl CreateDocumentationPartInput {
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+    pub fn rest_api_id(&self) -> ::std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
     /// <p>The location of the targeted API entity of the to-be-created documentation part.</p>
-    pub fn location(&self) -> std::option::Option<&crate::types::DocumentationPartLocation> {
+    pub fn location(&self) -> ::std::option::Option<&crate::types::DocumentationPartLocation> {
         self.location.as_ref()
     }
     /// <p>The new documentation content map of the targeted API entity. Enclosed key-value pairs are API-specific, but only OpenAPI-compliant key-value pairs can be exported and, hence, published.</p>
-    pub fn properties(&self) -> std::option::Option<&str> {
+    pub fn properties(&self) -> ::std::option::Option<&str> {
         self.properties.as_deref()
     }
 }
@@ -39,54 +39,56 @@ impl CreateDocumentationPartInput {
 
 /// A builder for [`CreateDocumentationPartInput`](crate::operation::create_documentation_part::CreateDocumentationPartInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateDocumentationPartInputBuilder {
-    pub(crate) rest_api_id: std::option::Option<std::string::String>,
-    pub(crate) location: std::option::Option<crate::types::DocumentationPartLocation>,
-    pub(crate) properties: std::option::Option<std::string::String>,
+    pub(crate) rest_api_id: ::std::option::Option<::std::string::String>,
+    pub(crate) location: ::std::option::Option<crate::types::DocumentationPartLocation>,
+    pub(crate) properties: ::std::option::Option<::std::string::String>,
 }
 impl CreateDocumentationPartInputBuilder {
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.rest_api_id = Some(input.into());
+    pub fn rest_api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.rest_api_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_rest_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rest_api_id = input;
         self
     }
     /// <p>The location of the targeted API entity of the to-be-created documentation part.</p>
     pub fn location(mut self, input: crate::types::DocumentationPartLocation) -> Self {
-        self.location = Some(input);
+        self.location = ::std::option::Option::Some(input);
         self
     }
     /// <p>The location of the targeted API entity of the to-be-created documentation part.</p>
     pub fn set_location(
         mut self,
-        input: std::option::Option<crate::types::DocumentationPartLocation>,
+        input: ::std::option::Option<crate::types::DocumentationPartLocation>,
     ) -> Self {
         self.location = input;
         self
     }
     /// <p>The new documentation content map of the targeted API entity. Enclosed key-value pairs are API-specific, but only OpenAPI-compliant key-value pairs can be exported and, hence, published.</p>
-    pub fn properties(mut self, input: impl Into<std::string::String>) -> Self {
-        self.properties = Some(input.into());
+    pub fn properties(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.properties = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The new documentation content map of the targeted API entity. Enclosed key-value pairs are API-specific, but only OpenAPI-compliant key-value pairs can be exported and, hence, published.</p>
-    pub fn set_properties(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_properties(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.properties = input;
         self
     }
     /// Consumes the builder and constructs a [`CreateDocumentationPartInput`](crate::operation::create_documentation_part::CreateDocumentationPartInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::create_documentation_part::CreateDocumentationPartInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::create_documentation_part::CreateDocumentationPartInput {
                 rest_api_id: self.rest_api_id,
                 location: self.location,

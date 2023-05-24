@@ -2,121 +2,121 @@
 
 /// <p>Summary of a connector.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConnectorSummary {
     /// <p>The connector's compute capacity settings.</p>
     #[doc(hidden)]
-    pub capacity: std::option::Option<crate::types::CapacityDescription>,
+    pub capacity: ::std::option::Option<crate::types::CapacityDescription>,
     /// <p>The Amazon Resource Name (ARN) of the connector.</p>
     #[doc(hidden)]
-    pub connector_arn: std::option::Option<std::string::String>,
+    pub connector_arn: ::std::option::Option<::std::string::String>,
     /// <p>The description of the connector.</p>
     #[doc(hidden)]
-    pub connector_description: std::option::Option<std::string::String>,
+    pub connector_description: ::std::option::Option<::std::string::String>,
     /// <p>The name of the connector.</p>
     #[doc(hidden)]
-    pub connector_name: std::option::Option<std::string::String>,
+    pub connector_name: ::std::option::Option<::std::string::String>,
     /// <p>The state of the connector.</p>
     #[doc(hidden)]
-    pub connector_state: std::option::Option<crate::types::ConnectorState>,
+    pub connector_state: ::std::option::Option<crate::types::ConnectorState>,
     /// <p>The time that the connector was created.</p>
     #[doc(hidden)]
-    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The current version of the connector.</p>
     #[doc(hidden)]
-    pub current_version: std::option::Option<std::string::String>,
+    pub current_version: ::std::option::Option<::std::string::String>,
     /// <p>The details of the Apache Kafka cluster to which the connector is connected.</p>
     #[doc(hidden)]
-    pub kafka_cluster: std::option::Option<crate::types::KafkaClusterDescription>,
+    pub kafka_cluster: ::std::option::Option<crate::types::KafkaClusterDescription>,
     /// <p>The type of client authentication used to connect to the Apache Kafka cluster. The value is NONE when no client authentication is used.</p>
     #[doc(hidden)]
     pub kafka_cluster_client_authentication:
-        std::option::Option<crate::types::KafkaClusterClientAuthenticationDescription>,
+        ::std::option::Option<crate::types::KafkaClusterClientAuthenticationDescription>,
     /// <p>Details of encryption in transit to the Apache Kafka cluster.</p>
     #[doc(hidden)]
     pub kafka_cluster_encryption_in_transit:
-        std::option::Option<crate::types::KafkaClusterEncryptionInTransitDescription>,
+        ::std::option::Option<crate::types::KafkaClusterEncryptionInTransitDescription>,
     /// <p>The version of Kafka Connect. It has to be compatible with both the Apache Kafka cluster's version and the plugins.</p>
     #[doc(hidden)]
-    pub kafka_connect_version: std::option::Option<std::string::String>,
+    pub kafka_connect_version: ::std::option::Option<::std::string::String>,
     /// <p>The settings for delivering connector logs to Amazon CloudWatch Logs.</p>
     #[doc(hidden)]
-    pub log_delivery: std::option::Option<crate::types::LogDeliveryDescription>,
+    pub log_delivery: ::std::option::Option<crate::types::LogDeliveryDescription>,
     /// <p>Specifies which plugins were used for this connector.</p>
     #[doc(hidden)]
-    pub plugins: std::option::Option<std::vec::Vec<crate::types::PluginDescription>>,
+    pub plugins: ::std::option::Option<::std::vec::Vec<crate::types::PluginDescription>>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role used by the connector to access Amazon Web Services resources.</p>
     #[doc(hidden)]
-    pub service_execution_role_arn: std::option::Option<std::string::String>,
+    pub service_execution_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The worker configurations that are in use with the connector.</p>
     #[doc(hidden)]
-    pub worker_configuration: std::option::Option<crate::types::WorkerConfigurationDescription>,
+    pub worker_configuration: ::std::option::Option<crate::types::WorkerConfigurationDescription>,
 }
 impl ConnectorSummary {
     /// <p>The connector's compute capacity settings.</p>
-    pub fn capacity(&self) -> std::option::Option<&crate::types::CapacityDescription> {
+    pub fn capacity(&self) -> ::std::option::Option<&crate::types::CapacityDescription> {
         self.capacity.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the connector.</p>
-    pub fn connector_arn(&self) -> std::option::Option<&str> {
+    pub fn connector_arn(&self) -> ::std::option::Option<&str> {
         self.connector_arn.as_deref()
     }
     /// <p>The description of the connector.</p>
-    pub fn connector_description(&self) -> std::option::Option<&str> {
+    pub fn connector_description(&self) -> ::std::option::Option<&str> {
         self.connector_description.as_deref()
     }
     /// <p>The name of the connector.</p>
-    pub fn connector_name(&self) -> std::option::Option<&str> {
+    pub fn connector_name(&self) -> ::std::option::Option<&str> {
         self.connector_name.as_deref()
     }
     /// <p>The state of the connector.</p>
-    pub fn connector_state(&self) -> std::option::Option<&crate::types::ConnectorState> {
+    pub fn connector_state(&self) -> ::std::option::Option<&crate::types::ConnectorState> {
         self.connector_state.as_ref()
     }
     /// <p>The time that the connector was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The current version of the connector.</p>
-    pub fn current_version(&self) -> std::option::Option<&str> {
+    pub fn current_version(&self) -> ::std::option::Option<&str> {
         self.current_version.as_deref()
     }
     /// <p>The details of the Apache Kafka cluster to which the connector is connected.</p>
-    pub fn kafka_cluster(&self) -> std::option::Option<&crate::types::KafkaClusterDescription> {
+    pub fn kafka_cluster(&self) -> ::std::option::Option<&crate::types::KafkaClusterDescription> {
         self.kafka_cluster.as_ref()
     }
     /// <p>The type of client authentication used to connect to the Apache Kafka cluster. The value is NONE when no client authentication is used.</p>
     pub fn kafka_cluster_client_authentication(
         &self,
-    ) -> std::option::Option<&crate::types::KafkaClusterClientAuthenticationDescription> {
+    ) -> ::std::option::Option<&crate::types::KafkaClusterClientAuthenticationDescription> {
         self.kafka_cluster_client_authentication.as_ref()
     }
     /// <p>Details of encryption in transit to the Apache Kafka cluster.</p>
     pub fn kafka_cluster_encryption_in_transit(
         &self,
-    ) -> std::option::Option<&crate::types::KafkaClusterEncryptionInTransitDescription> {
+    ) -> ::std::option::Option<&crate::types::KafkaClusterEncryptionInTransitDescription> {
         self.kafka_cluster_encryption_in_transit.as_ref()
     }
     /// <p>The version of Kafka Connect. It has to be compatible with both the Apache Kafka cluster's version and the plugins.</p>
-    pub fn kafka_connect_version(&self) -> std::option::Option<&str> {
+    pub fn kafka_connect_version(&self) -> ::std::option::Option<&str> {
         self.kafka_connect_version.as_deref()
     }
     /// <p>The settings for delivering connector logs to Amazon CloudWatch Logs.</p>
-    pub fn log_delivery(&self) -> std::option::Option<&crate::types::LogDeliveryDescription> {
+    pub fn log_delivery(&self) -> ::std::option::Option<&crate::types::LogDeliveryDescription> {
         self.log_delivery.as_ref()
     }
     /// <p>Specifies which plugins were used for this connector.</p>
-    pub fn plugins(&self) -> std::option::Option<&[crate::types::PluginDescription]> {
+    pub fn plugins(&self) -> ::std::option::Option<&[crate::types::PluginDescription]> {
         self.plugins.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role used by the connector to access Amazon Web Services resources.</p>
-    pub fn service_execution_role_arn(&self) -> std::option::Option<&str> {
+    pub fn service_execution_role_arn(&self) -> ::std::option::Option<&str> {
         self.service_execution_role_arn.as_deref()
     }
     /// <p>The worker configurations that are in use with the connector.</p>
     pub fn worker_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::WorkerConfigurationDescription> {
+    ) -> ::std::option::Option<&crate::types::WorkerConfigurationDescription> {
         self.worker_configuration.as_ref()
     }
 }
@@ -129,119 +129,142 @@ impl ConnectorSummary {
 
 /// A builder for [`ConnectorSummary`](crate::types::ConnectorSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ConnectorSummaryBuilder {
-    pub(crate) capacity: std::option::Option<crate::types::CapacityDescription>,
-    pub(crate) connector_arn: std::option::Option<std::string::String>,
-    pub(crate) connector_description: std::option::Option<std::string::String>,
-    pub(crate) connector_name: std::option::Option<std::string::String>,
-    pub(crate) connector_state: std::option::Option<crate::types::ConnectorState>,
-    pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) current_version: std::option::Option<std::string::String>,
-    pub(crate) kafka_cluster: std::option::Option<crate::types::KafkaClusterDescription>,
+    pub(crate) capacity: ::std::option::Option<crate::types::CapacityDescription>,
+    pub(crate) connector_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) connector_description: ::std::option::Option<::std::string::String>,
+    pub(crate) connector_name: ::std::option::Option<::std::string::String>,
+    pub(crate) connector_state: ::std::option::Option<crate::types::ConnectorState>,
+    pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) current_version: ::std::option::Option<::std::string::String>,
+    pub(crate) kafka_cluster: ::std::option::Option<crate::types::KafkaClusterDescription>,
     pub(crate) kafka_cluster_client_authentication:
-        std::option::Option<crate::types::KafkaClusterClientAuthenticationDescription>,
+        ::std::option::Option<crate::types::KafkaClusterClientAuthenticationDescription>,
     pub(crate) kafka_cluster_encryption_in_transit:
-        std::option::Option<crate::types::KafkaClusterEncryptionInTransitDescription>,
-    pub(crate) kafka_connect_version: std::option::Option<std::string::String>,
-    pub(crate) log_delivery: std::option::Option<crate::types::LogDeliveryDescription>,
-    pub(crate) plugins: std::option::Option<std::vec::Vec<crate::types::PluginDescription>>,
-    pub(crate) service_execution_role_arn: std::option::Option<std::string::String>,
+        ::std::option::Option<crate::types::KafkaClusterEncryptionInTransitDescription>,
+    pub(crate) kafka_connect_version: ::std::option::Option<::std::string::String>,
+    pub(crate) log_delivery: ::std::option::Option<crate::types::LogDeliveryDescription>,
+    pub(crate) plugins: ::std::option::Option<::std::vec::Vec<crate::types::PluginDescription>>,
+    pub(crate) service_execution_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) worker_configuration:
-        std::option::Option<crate::types::WorkerConfigurationDescription>,
+        ::std::option::Option<crate::types::WorkerConfigurationDescription>,
 }
 impl ConnectorSummaryBuilder {
     /// <p>The connector's compute capacity settings.</p>
     pub fn capacity(mut self, input: crate::types::CapacityDescription) -> Self {
-        self.capacity = Some(input);
+        self.capacity = ::std::option::Option::Some(input);
         self
     }
     /// <p>The connector's compute capacity settings.</p>
     pub fn set_capacity(
         mut self,
-        input: std::option::Option<crate::types::CapacityDescription>,
+        input: ::std::option::Option<crate::types::CapacityDescription>,
     ) -> Self {
         self.capacity = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the connector.</p>
-    pub fn connector_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.connector_arn = Some(input.into());
+    pub fn connector_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.connector_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the connector.</p>
-    pub fn set_connector_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_connector_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.connector_arn = input;
         self
     }
     /// <p>The description of the connector.</p>
-    pub fn connector_description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.connector_description = Some(input.into());
+    pub fn connector_description(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.connector_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the connector.</p>
     pub fn set_connector_description(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.connector_description = input;
         self
     }
     /// <p>The name of the connector.</p>
-    pub fn connector_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.connector_name = Some(input.into());
+    pub fn connector_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.connector_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the connector.</p>
-    pub fn set_connector_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_connector_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.connector_name = input;
         self
     }
     /// <p>The state of the connector.</p>
     pub fn connector_state(mut self, input: crate::types::ConnectorState) -> Self {
-        self.connector_state = Some(input);
+        self.connector_state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The state of the connector.</p>
     pub fn set_connector_state(
         mut self,
-        input: std::option::Option<crate::types::ConnectorState>,
+        input: ::std::option::Option<crate::types::ConnectorState>,
     ) -> Self {
         self.connector_state = input;
         self
     }
     /// <p>The time that the connector was created.</p>
-    pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_time = Some(input);
+    pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time that the connector was created.</p>
     pub fn set_creation_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_time = input;
         self
     }
     /// <p>The current version of the connector.</p>
-    pub fn current_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.current_version = Some(input.into());
+    pub fn current_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.current_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The current version of the connector.</p>
-    pub fn set_current_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_current_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.current_version = input;
         self
     }
     /// <p>The details of the Apache Kafka cluster to which the connector is connected.</p>
     pub fn kafka_cluster(mut self, input: crate::types::KafkaClusterDescription) -> Self {
-        self.kafka_cluster = Some(input);
+        self.kafka_cluster = ::std::option::Option::Some(input);
         self
     }
     /// <p>The details of the Apache Kafka cluster to which the connector is connected.</p>
     pub fn set_kafka_cluster(
         mut self,
-        input: std::option::Option<crate::types::KafkaClusterDescription>,
+        input: ::std::option::Option<crate::types::KafkaClusterDescription>,
     ) -> Self {
         self.kafka_cluster = input;
         self
@@ -251,13 +274,13 @@ impl ConnectorSummaryBuilder {
         mut self,
         input: crate::types::KafkaClusterClientAuthenticationDescription,
     ) -> Self {
-        self.kafka_cluster_client_authentication = Some(input);
+        self.kafka_cluster_client_authentication = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of client authentication used to connect to the Apache Kafka cluster. The value is NONE when no client authentication is used.</p>
     pub fn set_kafka_cluster_client_authentication(
         mut self,
-        input: std::option::Option<crate::types::KafkaClusterClientAuthenticationDescription>,
+        input: ::std::option::Option<crate::types::KafkaClusterClientAuthenticationDescription>,
     ) -> Self {
         self.kafka_cluster_client_authentication = input;
         self
@@ -267,39 +290,42 @@ impl ConnectorSummaryBuilder {
         mut self,
         input: crate::types::KafkaClusterEncryptionInTransitDescription,
     ) -> Self {
-        self.kafka_cluster_encryption_in_transit = Some(input);
+        self.kafka_cluster_encryption_in_transit = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details of encryption in transit to the Apache Kafka cluster.</p>
     pub fn set_kafka_cluster_encryption_in_transit(
         mut self,
-        input: std::option::Option<crate::types::KafkaClusterEncryptionInTransitDescription>,
+        input: ::std::option::Option<crate::types::KafkaClusterEncryptionInTransitDescription>,
     ) -> Self {
         self.kafka_cluster_encryption_in_transit = input;
         self
     }
     /// <p>The version of Kafka Connect. It has to be compatible with both the Apache Kafka cluster's version and the plugins.</p>
-    pub fn kafka_connect_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.kafka_connect_version = Some(input.into());
+    pub fn kafka_connect_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.kafka_connect_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of Kafka Connect. It has to be compatible with both the Apache Kafka cluster's version and the plugins.</p>
     pub fn set_kafka_connect_version(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.kafka_connect_version = input;
         self
     }
     /// <p>The settings for delivering connector logs to Amazon CloudWatch Logs.</p>
     pub fn log_delivery(mut self, input: crate::types::LogDeliveryDescription) -> Self {
-        self.log_delivery = Some(input);
+        self.log_delivery = ::std::option::Option::Some(input);
         self
     }
     /// <p>The settings for delivering connector logs to Amazon CloudWatch Logs.</p>
     pub fn set_log_delivery(
         mut self,
-        input: std::option::Option<crate::types::LogDeliveryDescription>,
+        input: ::std::option::Option<crate::types::LogDeliveryDescription>,
     ) -> Self {
         self.log_delivery = input;
         self
@@ -312,26 +338,29 @@ impl ConnectorSummaryBuilder {
     pub fn plugins(mut self, input: crate::types::PluginDescription) -> Self {
         let mut v = self.plugins.unwrap_or_default();
         v.push(input);
-        self.plugins = Some(v);
+        self.plugins = ::std::option::Option::Some(v);
         self
     }
     /// <p>Specifies which plugins were used for this connector.</p>
     pub fn set_plugins(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PluginDescription>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PluginDescription>>,
     ) -> Self {
         self.plugins = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role used by the connector to access Amazon Web Services resources.</p>
-    pub fn service_execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.service_execution_role_arn = Some(input.into());
+    pub fn service_execution_role_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.service_execution_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role used by the connector to access Amazon Web Services resources.</p>
     pub fn set_service_execution_role_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.service_execution_role_arn = input;
         self
@@ -341,13 +370,13 @@ impl ConnectorSummaryBuilder {
         mut self,
         input: crate::types::WorkerConfigurationDescription,
     ) -> Self {
-        self.worker_configuration = Some(input);
+        self.worker_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The worker configurations that are in use with the connector.</p>
     pub fn set_worker_configuration(
         mut self,
-        input: std::option::Option<crate::types::WorkerConfigurationDescription>,
+        input: ::std::option::Option<crate::types::WorkerConfigurationDescription>,
     ) -> Self {
         self.worker_configuration = input;
         self

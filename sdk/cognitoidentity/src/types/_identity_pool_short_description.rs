@@ -2,22 +2,22 @@
 
 /// <p>A description of the identity pool.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IdentityPoolShortDescription {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
     #[doc(hidden)]
-    pub identity_pool_id: std::option::Option<std::string::String>,
+    pub identity_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>A string that you provide.</p>
     #[doc(hidden)]
-    pub identity_pool_name: std::option::Option<std::string::String>,
+    pub identity_pool_name: ::std::option::Option<::std::string::String>,
 }
 impl IdentityPoolShortDescription {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
+    pub fn identity_pool_id(&self) -> ::std::option::Option<&str> {
         self.identity_pool_id.as_deref()
     }
     /// <p>A string that you provide.</p>
-    pub fn identity_pool_name(&self) -> std::option::Option<&str> {
+    pub fn identity_pool_name(&self) -> ::std::option::Option<&str> {
         self.identity_pool_name.as_deref()
     }
 }
@@ -30,31 +30,42 @@ impl IdentityPoolShortDescription {
 
 /// A builder for [`IdentityPoolShortDescription`](crate::types::IdentityPoolShortDescription).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct IdentityPoolShortDescriptionBuilder {
-    pub(crate) identity_pool_id: std::option::Option<std::string::String>,
-    pub(crate) identity_pool_name: std::option::Option<std::string::String>,
+    pub(crate) identity_pool_id: ::std::option::Option<::std::string::String>,
+    pub(crate) identity_pool_name: ::std::option::Option<::std::string::String>,
 }
 impl IdentityPoolShortDescriptionBuilder {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    pub fn identity_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.identity_pool_id = Some(input.into());
+    pub fn identity_pool_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.identity_pool_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    pub fn set_identity_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_identity_pool_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.identity_pool_id = input;
         self
     }
     /// <p>A string that you provide.</p>
-    pub fn identity_pool_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.identity_pool_name = Some(input.into());
+    pub fn identity_pool_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.identity_pool_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A string that you provide.</p>
     pub fn set_identity_pool_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.identity_pool_name = input;
         self

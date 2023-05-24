@@ -2,29 +2,29 @@
 
 /// <p>Describes the <code>DataSource</code> details specific to Amazon Redshift.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RedshiftMetadata {
     /// <p>Describes the database details required to connect to an Amazon Redshift database.</p>
     #[doc(hidden)]
-    pub redshift_database: std::option::Option<crate::types::RedshiftDatabase>,
+    pub redshift_database: ::std::option::Option<crate::types::RedshiftDatabase>,
     /// <p>A username to be used by Amazon Machine Learning (Amazon ML)to connect to a database on an Amazon Redshift cluster. The username should have sufficient permissions to execute the <code>RedshiftSelectSqlQuery</code> query. The username should be valid for an Amazon Redshift <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">USER</a>.</p>
     #[doc(hidden)]
-    pub database_user_name: std::option::Option<std::string::String>,
+    pub database_user_name: ::std::option::Option<::std::string::String>,
     /// <p> The SQL query that is specified during <code>CreateDataSourceFromRedshift</code>. Returns only if <code>Verbose</code> is true in GetDataSourceInput. </p>
     #[doc(hidden)]
-    pub select_sql_query: std::option::Option<std::string::String>,
+    pub select_sql_query: ::std::option::Option<::std::string::String>,
 }
 impl RedshiftMetadata {
     /// <p>Describes the database details required to connect to an Amazon Redshift database.</p>
-    pub fn redshift_database(&self) -> std::option::Option<&crate::types::RedshiftDatabase> {
+    pub fn redshift_database(&self) -> ::std::option::Option<&crate::types::RedshiftDatabase> {
         self.redshift_database.as_ref()
     }
     /// <p>A username to be used by Amazon Machine Learning (Amazon ML)to connect to a database on an Amazon Redshift cluster. The username should have sufficient permissions to execute the <code>RedshiftSelectSqlQuery</code> query. The username should be valid for an Amazon Redshift <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">USER</a>.</p>
-    pub fn database_user_name(&self) -> std::option::Option<&str> {
+    pub fn database_user_name(&self) -> ::std::option::Option<&str> {
         self.database_user_name.as_deref()
     }
     /// <p> The SQL query that is specified during <code>CreateDataSourceFromRedshift</code>. Returns only if <code>Verbose</code> is true in GetDataSourceInput. </p>
-    pub fn select_sql_query(&self) -> std::option::Option<&str> {
+    pub fn select_sql_query(&self) -> ::std::option::Option<&str> {
         self.select_sql_query.as_deref()
     }
 }
@@ -37,46 +37,57 @@ impl RedshiftMetadata {
 
 /// A builder for [`RedshiftMetadata`](crate::types::RedshiftMetadata).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RedshiftMetadataBuilder {
-    pub(crate) redshift_database: std::option::Option<crate::types::RedshiftDatabase>,
-    pub(crate) database_user_name: std::option::Option<std::string::String>,
-    pub(crate) select_sql_query: std::option::Option<std::string::String>,
+    pub(crate) redshift_database: ::std::option::Option<crate::types::RedshiftDatabase>,
+    pub(crate) database_user_name: ::std::option::Option<::std::string::String>,
+    pub(crate) select_sql_query: ::std::option::Option<::std::string::String>,
 }
 impl RedshiftMetadataBuilder {
     /// <p>Describes the database details required to connect to an Amazon Redshift database.</p>
     pub fn redshift_database(mut self, input: crate::types::RedshiftDatabase) -> Self {
-        self.redshift_database = Some(input);
+        self.redshift_database = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes the database details required to connect to an Amazon Redshift database.</p>
     pub fn set_redshift_database(
         mut self,
-        input: std::option::Option<crate::types::RedshiftDatabase>,
+        input: ::std::option::Option<crate::types::RedshiftDatabase>,
     ) -> Self {
         self.redshift_database = input;
         self
     }
     /// <p>A username to be used by Amazon Machine Learning (Amazon ML)to connect to a database on an Amazon Redshift cluster. The username should have sufficient permissions to execute the <code>RedshiftSelectSqlQuery</code> query. The username should be valid for an Amazon Redshift <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">USER</a>.</p>
-    pub fn database_user_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.database_user_name = Some(input.into());
+    pub fn database_user_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.database_user_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A username to be used by Amazon Machine Learning (Amazon ML)to connect to a database on an Amazon Redshift cluster. The username should have sufficient permissions to execute the <code>RedshiftSelectSqlQuery</code> query. The username should be valid for an Amazon Redshift <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">USER</a>.</p>
     pub fn set_database_user_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.database_user_name = input;
         self
     }
     /// <p> The SQL query that is specified during <code>CreateDataSourceFromRedshift</code>. Returns only if <code>Verbose</code> is true in GetDataSourceInput. </p>
-    pub fn select_sql_query(mut self, input: impl Into<std::string::String>) -> Self {
-        self.select_sql_query = Some(input.into());
+    pub fn select_sql_query(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.select_sql_query = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The SQL query that is specified during <code>CreateDataSourceFromRedshift</code>. Returns only if <code>Verbose</code> is true in GetDataSourceInput. </p>
-    pub fn set_select_sql_query(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_select_sql_query(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.select_sql_query = input;
         self
     }

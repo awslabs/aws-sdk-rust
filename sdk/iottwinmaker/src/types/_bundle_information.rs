@@ -2,22 +2,22 @@
 
 /// <p>Information about the pricing bundle.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BundleInformation {
     /// <p>The bundle names.</p>
     #[doc(hidden)]
-    pub bundle_names: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub bundle_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The pricing tier.</p>
     #[doc(hidden)]
-    pub pricing_tier: std::option::Option<crate::types::PricingTier>,
+    pub pricing_tier: ::std::option::Option<crate::types::PricingTier>,
 }
 impl BundleInformation {
     /// <p>The bundle names.</p>
-    pub fn bundle_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn bundle_names(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.bundle_names.as_deref()
     }
     /// <p>The pricing tier.</p>
-    pub fn pricing_tier(&self) -> std::option::Option<&crate::types::PricingTier> {
+    pub fn pricing_tier(&self) -> ::std::option::Option<&crate::types::PricingTier> {
         self.pricing_tier.as_ref()
     }
 }
@@ -30,10 +30,12 @@ impl BundleInformation {
 
 /// A builder for [`BundleInformation`](crate::types::BundleInformation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BundleInformationBuilder {
-    pub(crate) bundle_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) pricing_tier: std::option::Option<crate::types::PricingTier>,
+    pub(crate) bundle_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) pricing_tier: ::std::option::Option<crate::types::PricingTier>,
 }
 impl BundleInformationBuilder {
     /// Appends an item to `bundle_names`.
@@ -41,29 +43,29 @@ impl BundleInformationBuilder {
     /// To override the contents of this collection use [`set_bundle_names`](Self::set_bundle_names).
     ///
     /// <p>The bundle names.</p>
-    pub fn bundle_names(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn bundle_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.bundle_names.unwrap_or_default();
         v.push(input.into());
-        self.bundle_names = Some(v);
+        self.bundle_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>The bundle names.</p>
     pub fn set_bundle_names(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.bundle_names = input;
         self
     }
     /// <p>The pricing tier.</p>
     pub fn pricing_tier(mut self, input: crate::types::PricingTier) -> Self {
-        self.pricing_tier = Some(input);
+        self.pricing_tier = ::std::option::Option::Some(input);
         self
     }
     /// <p>The pricing tier.</p>
     pub fn set_pricing_tier(
         mut self,
-        input: std::option::Option<crate::types::PricingTier>,
+        input: ::std::option::Option<crate::types::PricingTier>,
     ) -> Self {
         self.pricing_tier = input;
         self

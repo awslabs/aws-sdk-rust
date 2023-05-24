@@ -2,27 +2,27 @@
 
 /// <p>Contains the Amazon S3 Glacier response to your request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListVaultsOutput {
     /// <p>List of vaults.</p>
     #[doc(hidden)]
-    pub vault_list: std::option::Option<std::vec::Vec<crate::types::DescribeVaultOutput>>,
+    pub vault_list: ::std::option::Option<::std::vec::Vec<crate::types::DescribeVaultOutput>>,
     /// <p>The vault ARN at which to continue pagination of the results. You use the marker in another List Vaults request to obtain more vaults in the list.</p>
     #[doc(hidden)]
-    pub marker: std::option::Option<std::string::String>,
+    pub marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListVaultsOutput {
     /// <p>List of vaults.</p>
-    pub fn vault_list(&self) -> std::option::Option<&[crate::types::DescribeVaultOutput]> {
+    pub fn vault_list(&self) -> ::std::option::Option<&[crate::types::DescribeVaultOutput]> {
         self.vault_list.as_deref()
     }
     /// <p>The vault ARN at which to continue pagination of the results. You use the marker in another List Vaults request to obtain more vaults in the list.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListVaultsOutput {
+impl ::aws_http::request_id::RequestId for ListVaultsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -36,10 +36,13 @@ impl ListVaultsOutput {
 
 /// A builder for [`ListVaultsOutput`](crate::operation::list_vaults::ListVaultsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListVaultsOutputBuilder {
-    pub(crate) vault_list: std::option::Option<std::vec::Vec<crate::types::DescribeVaultOutput>>,
-    pub(crate) marker: std::option::Option<std::string::String>,
+    pub(crate) vault_list:
+        ::std::option::Option<::std::vec::Vec<crate::types::DescribeVaultOutput>>,
+    pub(crate) marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListVaultsOutputBuilder {
@@ -51,24 +54,24 @@ impl ListVaultsOutputBuilder {
     pub fn vault_list(mut self, input: crate::types::DescribeVaultOutput) -> Self {
         let mut v = self.vault_list.unwrap_or_default();
         v.push(input);
-        self.vault_list = Some(v);
+        self.vault_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>List of vaults.</p>
     pub fn set_vault_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DescribeVaultOutput>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DescribeVaultOutput>>,
     ) -> Self {
         self.vault_list = input;
         self
     }
     /// <p>The vault ARN at which to continue pagination of the results. You use the marker in another List Vaults request to obtain more vaults in the list.</p>
-    pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-        self.marker = Some(input.into());
+    pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The vault ARN at which to continue pagination of the results. You use the marker in another List Vaults request to obtain more vaults in the list.</p>
-    pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
     }

@@ -2,20 +2,20 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MoveReplicationTaskOutput {
     /// <p>The replication task that was moved.</p>
     #[doc(hidden)]
-    pub replication_task: std::option::Option<crate::types::ReplicationTask>,
+    pub replication_task: ::std::option::Option<crate::types::ReplicationTask>,
     _request_id: Option<String>,
 }
 impl MoveReplicationTaskOutput {
     /// <p>The replication task that was moved.</p>
-    pub fn replication_task(&self) -> std::option::Option<&crate::types::ReplicationTask> {
+    pub fn replication_task(&self) -> ::std::option::Option<&crate::types::ReplicationTask> {
         self.replication_task.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for MoveReplicationTaskOutput {
+impl ::aws_http::request_id::RequestId for MoveReplicationTaskOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -31,21 +31,23 @@ impl MoveReplicationTaskOutput {
 
 /// A builder for [`MoveReplicationTaskOutput`](crate::operation::move_replication_task::MoveReplicationTaskOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MoveReplicationTaskOutputBuilder {
-    pub(crate) replication_task: std::option::Option<crate::types::ReplicationTask>,
+    pub(crate) replication_task: ::std::option::Option<crate::types::ReplicationTask>,
     _request_id: Option<String>,
 }
 impl MoveReplicationTaskOutputBuilder {
     /// <p>The replication task that was moved.</p>
     pub fn replication_task(mut self, input: crate::types::ReplicationTask) -> Self {
-        self.replication_task = Some(input);
+        self.replication_task = ::std::option::Option::Some(input);
         self
     }
     /// <p>The replication task that was moved.</p>
     pub fn set_replication_task(
         mut self,
-        input: std::option::Option<crate::types::ReplicationTask>,
+        input: ::std::option::Option<crate::types::ReplicationTask>,
     ) -> Self {
         self.replication_task = input;
         self

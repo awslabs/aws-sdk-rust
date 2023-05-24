@@ -2,41 +2,47 @@
 
 /// <p>Represents the output for <code>EnableEnhancedMonitoring</code> and <code>DisableEnhancedMonitoring</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnableEnhancedMonitoringOutput {
     /// <p>The name of the Kinesis data stream.</p>
     #[doc(hidden)]
-    pub stream_name: std::option::Option<std::string::String>,
+    pub stream_name: ::std::option::Option<::std::string::String>,
     /// <p>Represents the current state of the metrics that are in the enhanced state before the operation.</p>
     #[doc(hidden)]
-    pub current_shard_level_metrics: std::option::Option<std::vec::Vec<crate::types::MetricsName>>,
+    pub current_shard_level_metrics:
+        ::std::option::Option<::std::vec::Vec<crate::types::MetricsName>>,
     /// <p>Represents the list of all the metrics that would be in the enhanced state after the operation.</p>
     #[doc(hidden)]
-    pub desired_shard_level_metrics: std::option::Option<std::vec::Vec<crate::types::MetricsName>>,
+    pub desired_shard_level_metrics:
+        ::std::option::Option<::std::vec::Vec<crate::types::MetricsName>>,
     /// <p>The ARN of the stream.</p>
     #[doc(hidden)]
-    pub stream_arn: std::option::Option<std::string::String>,
+    pub stream_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl EnableEnhancedMonitoringOutput {
     /// <p>The name of the Kinesis data stream.</p>
-    pub fn stream_name(&self) -> std::option::Option<&str> {
+    pub fn stream_name(&self) -> ::std::option::Option<&str> {
         self.stream_name.as_deref()
     }
     /// <p>Represents the current state of the metrics that are in the enhanced state before the operation.</p>
-    pub fn current_shard_level_metrics(&self) -> std::option::Option<&[crate::types::MetricsName]> {
+    pub fn current_shard_level_metrics(
+        &self,
+    ) -> ::std::option::Option<&[crate::types::MetricsName]> {
         self.current_shard_level_metrics.as_deref()
     }
     /// <p>Represents the list of all the metrics that would be in the enhanced state after the operation.</p>
-    pub fn desired_shard_level_metrics(&self) -> std::option::Option<&[crate::types::MetricsName]> {
+    pub fn desired_shard_level_metrics(
+        &self,
+    ) -> ::std::option::Option<&[crate::types::MetricsName]> {
         self.desired_shard_level_metrics.as_deref()
     }
     /// <p>The ARN of the stream.</p>
-    pub fn stream_arn(&self) -> std::option::Option<&str> {
+    pub fn stream_arn(&self) -> ::std::option::Option<&str> {
         self.stream_arn.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for EnableEnhancedMonitoringOutput {
+impl ::aws_http::request_id::RequestId for EnableEnhancedMonitoringOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -52,24 +58,26 @@ impl EnableEnhancedMonitoringOutput {
 
 /// A builder for [`EnableEnhancedMonitoringOutput`](crate::operation::enable_enhanced_monitoring::EnableEnhancedMonitoringOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EnableEnhancedMonitoringOutputBuilder {
-    pub(crate) stream_name: std::option::Option<std::string::String>,
+    pub(crate) stream_name: ::std::option::Option<::std::string::String>,
     pub(crate) current_shard_level_metrics:
-        std::option::Option<std::vec::Vec<crate::types::MetricsName>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::MetricsName>>,
     pub(crate) desired_shard_level_metrics:
-        std::option::Option<std::vec::Vec<crate::types::MetricsName>>,
-    pub(crate) stream_arn: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::MetricsName>>,
+    pub(crate) stream_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl EnableEnhancedMonitoringOutputBuilder {
     /// <p>The name of the Kinesis data stream.</p>
-    pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.stream_name = Some(input.into());
+    pub fn stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.stream_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Kinesis data stream.</p>
-    pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stream_name = input;
         self
     }
@@ -81,13 +89,13 @@ impl EnableEnhancedMonitoringOutputBuilder {
     pub fn current_shard_level_metrics(mut self, input: crate::types::MetricsName) -> Self {
         let mut v = self.current_shard_level_metrics.unwrap_or_default();
         v.push(input);
-        self.current_shard_level_metrics = Some(v);
+        self.current_shard_level_metrics = ::std::option::Option::Some(v);
         self
     }
     /// <p>Represents the current state of the metrics that are in the enhanced state before the operation.</p>
     pub fn set_current_shard_level_metrics(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::MetricsName>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricsName>>,
     ) -> Self {
         self.current_shard_level_metrics = input;
         self
@@ -100,24 +108,24 @@ impl EnableEnhancedMonitoringOutputBuilder {
     pub fn desired_shard_level_metrics(mut self, input: crate::types::MetricsName) -> Self {
         let mut v = self.desired_shard_level_metrics.unwrap_or_default();
         v.push(input);
-        self.desired_shard_level_metrics = Some(v);
+        self.desired_shard_level_metrics = ::std::option::Option::Some(v);
         self
     }
     /// <p>Represents the list of all the metrics that would be in the enhanced state after the operation.</p>
     pub fn set_desired_shard_level_metrics(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::MetricsName>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricsName>>,
     ) -> Self {
         self.desired_shard_level_metrics = input;
         self
     }
     /// <p>The ARN of the stream.</p>
-    pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.stream_arn = Some(input.into());
+    pub fn stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.stream_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the stream.</p>
-    pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stream_arn = input;
         self
     }

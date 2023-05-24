@@ -2,7 +2,7 @@
 
 /// Raw Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RawSettings {}
 impl RawSettings {
     /// Creates a new builder-style object to manufacture [`RawSettings`](crate::types::RawSettings).
@@ -13,7 +13,9 @@ impl RawSettings {
 
 /// A builder for [`RawSettings`](crate::types::RawSettings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RawSettingsBuilder {}
 impl RawSettingsBuilder {
     /// Consumes the builder and constructs a [`RawSettings`](crate::types::RawSettings).

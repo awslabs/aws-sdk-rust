@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`target_type(LogTargetType)`](crate::operation::delete_v2_logging_level::builders::DeleteV2LoggingLevelFluentBuilder::target_type) / [`set_target_type(Option<LogTargetType>)`](crate::operation::delete_v2_logging_level::builders::DeleteV2LoggingLevelFluentBuilder::set_target_type): <p>The type of resource for which you are configuring logging. Must be <code>THING_Group</code>.</p>
-    ///   - [`target_name(impl Into<String>)`](crate::operation::delete_v2_logging_level::builders::DeleteV2LoggingLevelFluentBuilder::target_name) / [`set_target_name(Option<String>)`](crate::operation::delete_v2_logging_level::builders::DeleteV2LoggingLevelFluentBuilder::set_target_name): <p>The name of the resource for which you are configuring logging.</p>
+    ///   - [`target_name(impl ::std::convert::Into<String>)`](crate::operation::delete_v2_logging_level::builders::DeleteV2LoggingLevelFluentBuilder::target_name) / [`set_target_name(Option<String>)`](crate::operation::delete_v2_logging_level::builders::DeleteV2LoggingLevelFluentBuilder::set_target_name): <p>The name of the resource for which you are configuring logging.</p>
     /// - On success, responds with [`DeleteV2LoggingLevelOutput`](crate::operation::delete_v2_logging_level::DeleteV2LoggingLevelOutput)
     /// - On failure, responds with [`SdkError<DeleteV2LoggingLevelError>`](crate::operation::delete_v2_logging_level::DeleteV2LoggingLevelError)
     pub fn delete_v2_logging_level(

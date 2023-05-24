@@ -2,41 +2,41 @@
 
 /// <p>The output from the CreatePolicy operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreatePolicyOutput {
     /// <p>The policy name.</p>
     #[doc(hidden)]
-    pub policy_name: std::option::Option<std::string::String>,
+    pub policy_name: ::std::option::Option<::std::string::String>,
     /// <p>The policy ARN.</p>
     #[doc(hidden)]
-    pub policy_arn: std::option::Option<std::string::String>,
+    pub policy_arn: ::std::option::Option<::std::string::String>,
     /// <p>The JSON document that describes the policy.</p>
     #[doc(hidden)]
-    pub policy_document: std::option::Option<std::string::String>,
+    pub policy_document: ::std::option::Option<::std::string::String>,
     /// <p>The policy version ID.</p>
     #[doc(hidden)]
-    pub policy_version_id: std::option::Option<std::string::String>,
+    pub policy_version_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreatePolicyOutput {
     /// <p>The policy name.</p>
-    pub fn policy_name(&self) -> std::option::Option<&str> {
+    pub fn policy_name(&self) -> ::std::option::Option<&str> {
         self.policy_name.as_deref()
     }
     /// <p>The policy ARN.</p>
-    pub fn policy_arn(&self) -> std::option::Option<&str> {
+    pub fn policy_arn(&self) -> ::std::option::Option<&str> {
         self.policy_arn.as_deref()
     }
     /// <p>The JSON document that describes the policy.</p>
-    pub fn policy_document(&self) -> std::option::Option<&str> {
+    pub fn policy_document(&self) -> ::std::option::Option<&str> {
         self.policy_document.as_deref()
     }
     /// <p>The policy version ID.</p>
-    pub fn policy_version_id(&self) -> std::option::Option<&str> {
+    pub fn policy_version_id(&self) -> ::std::option::Option<&str> {
         self.policy_version_id.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for CreatePolicyOutput {
+impl ::aws_http::request_id::RequestId for CreatePolicyOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -50,54 +50,65 @@ impl CreatePolicyOutput {
 
 /// A builder for [`CreatePolicyOutput`](crate::operation::create_policy::CreatePolicyOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreatePolicyOutputBuilder {
-    pub(crate) policy_name: std::option::Option<std::string::String>,
-    pub(crate) policy_arn: std::option::Option<std::string::String>,
-    pub(crate) policy_document: std::option::Option<std::string::String>,
-    pub(crate) policy_version_id: std::option::Option<std::string::String>,
+    pub(crate) policy_name: ::std::option::Option<::std::string::String>,
+    pub(crate) policy_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) policy_document: ::std::option::Option<::std::string::String>,
+    pub(crate) policy_version_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreatePolicyOutputBuilder {
     /// <p>The policy name.</p>
-    pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.policy_name = Some(input.into());
+    pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.policy_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The policy name.</p>
-    pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_name = input;
         self
     }
     /// <p>The policy ARN.</p>
-    pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.policy_arn = Some(input.into());
+    pub fn policy_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.policy_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The policy ARN.</p>
-    pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_policy_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_arn = input;
         self
     }
     /// <p>The JSON document that describes the policy.</p>
-    pub fn policy_document(mut self, input: impl Into<std::string::String>) -> Self {
-        self.policy_document = Some(input.into());
+    pub fn policy_document(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.policy_document = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The JSON document that describes the policy.</p>
-    pub fn set_policy_document(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_policy_document(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.policy_document = input;
         self
     }
     /// <p>The policy version ID.</p>
-    pub fn policy_version_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.policy_version_id = Some(input.into());
+    pub fn policy_version_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.policy_version_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The policy version ID.</p>
     pub fn set_policy_version_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.policy_version_id = input;
         self

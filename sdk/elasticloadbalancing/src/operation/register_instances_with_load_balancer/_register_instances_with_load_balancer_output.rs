@@ -2,20 +2,20 @@
 
 /// <p>Contains the output of RegisterInstancesWithLoadBalancer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterInstancesWithLoadBalancerOutput {
     /// <p>The updated list of instances for the load balancer.</p>
     #[doc(hidden)]
-    pub instances: std::option::Option<std::vec::Vec<crate::types::Instance>>,
+    pub instances: ::std::option::Option<::std::vec::Vec<crate::types::Instance>>,
     _request_id: Option<String>,
 }
 impl RegisterInstancesWithLoadBalancerOutput {
     /// <p>The updated list of instances for the load balancer.</p>
-    pub fn instances(&self) -> std::option::Option<&[crate::types::Instance]> {
+    pub fn instances(&self) -> ::std::option::Option<&[crate::types::Instance]> {
         self.instances.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for RegisterInstancesWithLoadBalancerOutput {
+impl ::aws_http::request_id::RequestId for RegisterInstancesWithLoadBalancerOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,9 +29,11 @@ impl RegisterInstancesWithLoadBalancerOutput {
 
 /// A builder for [`RegisterInstancesWithLoadBalancerOutput`](crate::operation::register_instances_with_load_balancer::RegisterInstancesWithLoadBalancerOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RegisterInstancesWithLoadBalancerOutputBuilder {
-    pub(crate) instances: std::option::Option<std::vec::Vec<crate::types::Instance>>,
+    pub(crate) instances: ::std::option::Option<::std::vec::Vec<crate::types::Instance>>,
     _request_id: Option<String>,
 }
 impl RegisterInstancesWithLoadBalancerOutputBuilder {
@@ -43,13 +45,13 @@ impl RegisterInstancesWithLoadBalancerOutputBuilder {
     pub fn instances(mut self, input: crate::types::Instance) -> Self {
         let mut v = self.instances.unwrap_or_default();
         v.push(input);
-        self.instances = Some(v);
+        self.instances = ::std::option::Option::Some(v);
         self
     }
     /// <p>The updated list of instances for the load balancer.</p>
     pub fn set_instances(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Instance>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Instance>>,
     ) -> Self {
         self.instances = input;
         self

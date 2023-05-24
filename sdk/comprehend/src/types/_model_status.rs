@@ -44,13 +44,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ModelStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -72,7 +72,7 @@ pub enum ModelStatus {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ModelStatus {
+impl ::std::convert::From<&str> for ModelStatus {
     fn from(s: &str) -> Self {
         match s {
             "DELETING" => ModelStatus::Deleting,
@@ -87,11 +87,11 @@ impl std::convert::From<&str> for ModelStatus {
         }
     }
 }
-impl std::str::FromStr for ModelStatus {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ModelStatus {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ModelStatus::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ModelStatus::from(s))
     }
 }
 impl ModelStatus {
@@ -123,7 +123,7 @@ impl ModelStatus {
         ]
     }
 }
-impl AsRef<str> for ModelStatus {
+impl ::std::convert::AsRef<str> for ModelStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

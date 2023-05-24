@@ -2,17 +2,17 @@
 
 /// <p>A structure containing migration status information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CatalogImportStatus {
     /// <p> <code>True</code> if the migration has completed, or <code>False</code> otherwise.</p>
     #[doc(hidden)]
     pub import_completed: bool,
     /// <p>The time that the migration was started.</p>
     #[doc(hidden)]
-    pub import_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub import_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The name of the person who initiated the migration.</p>
     #[doc(hidden)]
-    pub imported_by: std::option::Option<std::string::String>,
+    pub imported_by: ::std::option::Option<::std::string::String>,
 }
 impl CatalogImportStatus {
     /// <p> <code>True</code> if the migration has completed, or <code>False</code> otherwise.</p>
@@ -20,11 +20,11 @@ impl CatalogImportStatus {
         self.import_completed
     }
     /// <p>The time that the migration was started.</p>
-    pub fn import_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn import_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.import_time.as_ref()
     }
     /// <p>The name of the person who initiated the migration.</p>
-    pub fn imported_by(&self) -> std::option::Option<&str> {
+    pub fn imported_by(&self) -> ::std::option::Option<&str> {
         self.imported_by.as_deref()
     }
 }
@@ -37,43 +37,45 @@ impl CatalogImportStatus {
 
 /// A builder for [`CatalogImportStatus`](crate::types::CatalogImportStatus).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CatalogImportStatusBuilder {
-    pub(crate) import_completed: std::option::Option<bool>,
-    pub(crate) import_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) imported_by: std::option::Option<std::string::String>,
+    pub(crate) import_completed: ::std::option::Option<bool>,
+    pub(crate) import_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) imported_by: ::std::option::Option<::std::string::String>,
 }
 impl CatalogImportStatusBuilder {
     /// <p> <code>True</code> if the migration has completed, or <code>False</code> otherwise.</p>
     pub fn import_completed(mut self, input: bool) -> Self {
-        self.import_completed = Some(input);
+        self.import_completed = ::std::option::Option::Some(input);
         self
     }
     /// <p> <code>True</code> if the migration has completed, or <code>False</code> otherwise.</p>
-    pub fn set_import_completed(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_import_completed(mut self, input: ::std::option::Option<bool>) -> Self {
         self.import_completed = input;
         self
     }
     /// <p>The time that the migration was started.</p>
-    pub fn import_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.import_time = Some(input);
+    pub fn import_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.import_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time that the migration was started.</p>
     pub fn set_import_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.import_time = input;
         self
     }
     /// <p>The name of the person who initiated the migration.</p>
-    pub fn imported_by(mut self, input: impl Into<std::string::String>) -> Self {
-        self.imported_by = Some(input.into());
+    pub fn imported_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.imported_by = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the person who initiated the migration.</p>
-    pub fn set_imported_by(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_imported_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.imported_by = input;
         self
     }

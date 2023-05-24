@@ -2,29 +2,29 @@
 
 /// <p>A single logging filter, used in <code>LoggingFilter</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Filter {
     /// <p>How to handle logs that satisfy the filter's conditions and requirement. </p>
     #[doc(hidden)]
-    pub behavior: std::option::Option<crate::types::FilterBehavior>,
+    pub behavior: ::std::option::Option<crate::types::FilterBehavior>,
     /// <p>Logic to apply to the filtering conditions. You can specify that, in order to satisfy the filter, a log must match all conditions or must match at least one condition.</p>
     #[doc(hidden)]
-    pub requirement: std::option::Option<crate::types::FilterRequirement>,
+    pub requirement: ::std::option::Option<crate::types::FilterRequirement>,
     /// <p>Match conditions for the filter.</p>
     #[doc(hidden)]
-    pub conditions: std::option::Option<std::vec::Vec<crate::types::Condition>>,
+    pub conditions: ::std::option::Option<::std::vec::Vec<crate::types::Condition>>,
 }
 impl Filter {
     /// <p>How to handle logs that satisfy the filter's conditions and requirement. </p>
-    pub fn behavior(&self) -> std::option::Option<&crate::types::FilterBehavior> {
+    pub fn behavior(&self) -> ::std::option::Option<&crate::types::FilterBehavior> {
         self.behavior.as_ref()
     }
     /// <p>Logic to apply to the filtering conditions. You can specify that, in order to satisfy the filter, a log must match all conditions or must match at least one condition.</p>
-    pub fn requirement(&self) -> std::option::Option<&crate::types::FilterRequirement> {
+    pub fn requirement(&self) -> ::std::option::Option<&crate::types::FilterRequirement> {
         self.requirement.as_ref()
     }
     /// <p>Match conditions for the filter.</p>
-    pub fn conditions(&self) -> std::option::Option<&[crate::types::Condition]> {
+    pub fn conditions(&self) -> ::std::option::Option<&[crate::types::Condition]> {
         self.conditions.as_deref()
     }
 }
@@ -37,35 +37,37 @@ impl Filter {
 
 /// A builder for [`Filter`](crate::types::Filter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FilterBuilder {
-    pub(crate) behavior: std::option::Option<crate::types::FilterBehavior>,
-    pub(crate) requirement: std::option::Option<crate::types::FilterRequirement>,
-    pub(crate) conditions: std::option::Option<std::vec::Vec<crate::types::Condition>>,
+    pub(crate) behavior: ::std::option::Option<crate::types::FilterBehavior>,
+    pub(crate) requirement: ::std::option::Option<crate::types::FilterRequirement>,
+    pub(crate) conditions: ::std::option::Option<::std::vec::Vec<crate::types::Condition>>,
 }
 impl FilterBuilder {
     /// <p>How to handle logs that satisfy the filter's conditions and requirement. </p>
     pub fn behavior(mut self, input: crate::types::FilterBehavior) -> Self {
-        self.behavior = Some(input);
+        self.behavior = ::std::option::Option::Some(input);
         self
     }
     /// <p>How to handle logs that satisfy the filter's conditions and requirement. </p>
     pub fn set_behavior(
         mut self,
-        input: std::option::Option<crate::types::FilterBehavior>,
+        input: ::std::option::Option<crate::types::FilterBehavior>,
     ) -> Self {
         self.behavior = input;
         self
     }
     /// <p>Logic to apply to the filtering conditions. You can specify that, in order to satisfy the filter, a log must match all conditions or must match at least one condition.</p>
     pub fn requirement(mut self, input: crate::types::FilterRequirement) -> Self {
-        self.requirement = Some(input);
+        self.requirement = ::std::option::Option::Some(input);
         self
     }
     /// <p>Logic to apply to the filtering conditions. You can specify that, in order to satisfy the filter, a log must match all conditions or must match at least one condition.</p>
     pub fn set_requirement(
         mut self,
-        input: std::option::Option<crate::types::FilterRequirement>,
+        input: ::std::option::Option<crate::types::FilterRequirement>,
     ) -> Self {
         self.requirement = input;
         self
@@ -78,13 +80,13 @@ impl FilterBuilder {
     pub fn conditions(mut self, input: crate::types::Condition) -> Self {
         let mut v = self.conditions.unwrap_or_default();
         v.push(input);
-        self.conditions = Some(v);
+        self.conditions = ::std::option::Option::Some(v);
         self
     }
     /// <p>Match conditions for the filter.</p>
     pub fn set_conditions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Condition>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Condition>>,
     ) -> Self {
         self.conditions = input;
         self

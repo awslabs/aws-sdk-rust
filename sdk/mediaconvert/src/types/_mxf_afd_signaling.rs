@@ -38,13 +38,13 @@
 /// Optional. When you have AFD signaling set up in your output video stream, use this setting to choose whether to also include it in the MXF wrapper. Choose Don't copy (NO_COPY) to exclude AFD signaling from the MXF wrapper. Choose Copy from video stream (COPY_FROM_VIDEO) to copy the AFD values from the video stream for this output to the MXF wrapper. Regardless of which option you choose, the AFD values remain in the video stream. Related settings: To set up your output to include or exclude AFD values, see AfdSignaling, under VideoDescription. On the console, find AFD signaling under the output's video encoding settings.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum MxfAfdSignaling {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum MxfAfdSignaling {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for MxfAfdSignaling {
+impl ::std::convert::From<&str> for MxfAfdSignaling {
     fn from(s: &str) -> Self {
         match s {
             "COPY_FROM_VIDEO" => MxfAfdSignaling::CopyFromVideo,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for MxfAfdSignaling {
         }
     }
 }
-impl std::str::FromStr for MxfAfdSignaling {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for MxfAfdSignaling {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(MxfAfdSignaling::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(MxfAfdSignaling::from(s))
     }
 }
 impl MxfAfdSignaling {
@@ -86,7 +86,7 @@ impl MxfAfdSignaling {
         &["COPY_FROM_VIDEO", "NO_COPY"]
     }
 }
-impl AsRef<str> for MxfAfdSignaling {
+impl ::std::convert::AsRef<str> for MxfAfdSignaling {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

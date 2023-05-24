@@ -2,15 +2,15 @@
 
 /// <p>Results message indicating whether a CNAME is available.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CheckDnsAvailabilityInput {
     /// <p>The prefix used when this CNAME is reserved.</p>
     #[doc(hidden)]
-    pub cname_prefix: std::option::Option<std::string::String>,
+    pub cname_prefix: ::std::option::Option<::std::string::String>,
 }
 impl CheckDnsAvailabilityInput {
     /// <p>The prefix used when this CNAME is reserved.</p>
-    pub fn cname_prefix(&self) -> std::option::Option<&str> {
+    pub fn cname_prefix(&self) -> ::std::option::Option<&str> {
         self.cname_prefix.as_deref()
     }
 }
@@ -24,29 +24,31 @@ impl CheckDnsAvailabilityInput {
 
 /// A builder for [`CheckDnsAvailabilityInput`](crate::operation::check_dns_availability::CheckDnsAvailabilityInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CheckDnsAvailabilityInputBuilder {
-    pub(crate) cname_prefix: std::option::Option<std::string::String>,
+    pub(crate) cname_prefix: ::std::option::Option<::std::string::String>,
 }
 impl CheckDnsAvailabilityInputBuilder {
     /// <p>The prefix used when this CNAME is reserved.</p>
-    pub fn cname_prefix(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cname_prefix = Some(input.into());
+    pub fn cname_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cname_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The prefix used when this CNAME is reserved.</p>
-    pub fn set_cname_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cname_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cname_prefix = input;
         self
     }
     /// Consumes the builder and constructs a [`CheckDnsAvailabilityInput`](crate::operation::check_dns_availability::CheckDnsAvailabilityInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::check_dns_availability::CheckDnsAvailabilityInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::check_dns_availability::CheckDnsAvailabilityInput {
                 cname_prefix: self.cname_prefix,
             },

@@ -2,7 +2,7 @@
 
 /// <p>Contains the name of a cluster parameter group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifyDbClusterParameterGroupOutput {
     /// <p>The name of a cluster parameter group.</p>
     /// <p>Constraints:</p>
@@ -14,7 +14,7 @@ pub struct ModifyDbClusterParameterGroupOutput {
     /// <p>This value is stored as a lowercase string.</p>
     /// </note>
     #[doc(hidden)]
-    pub db_cluster_parameter_group_name: std::option::Option<std::string::String>,
+    pub db_cluster_parameter_group_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ModifyDbClusterParameterGroupOutput {
@@ -27,11 +27,11 @@ impl ModifyDbClusterParameterGroupOutput {
     /// </ul> <note>
     /// <p>This value is stored as a lowercase string.</p>
     /// </note>
-    pub fn db_cluster_parameter_group_name(&self) -> std::option::Option<&str> {
+    pub fn db_cluster_parameter_group_name(&self) -> ::std::option::Option<&str> {
         self.db_cluster_parameter_group_name.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ModifyDbClusterParameterGroupOutput {
+impl ::aws_http::request_id::RequestId for ModifyDbClusterParameterGroupOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -45,9 +45,11 @@ impl ModifyDbClusterParameterGroupOutput {
 
 /// A builder for [`ModifyDbClusterParameterGroupOutput`](crate::operation::modify_db_cluster_parameter_group::ModifyDbClusterParameterGroupOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ModifyDbClusterParameterGroupOutputBuilder {
-    pub(crate) db_cluster_parameter_group_name: std::option::Option<std::string::String>,
+    pub(crate) db_cluster_parameter_group_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ModifyDbClusterParameterGroupOutputBuilder {
@@ -62,9 +64,9 @@ impl ModifyDbClusterParameterGroupOutputBuilder {
     /// </note>
     pub fn db_cluster_parameter_group_name(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.db_cluster_parameter_group_name = Some(input.into());
+        self.db_cluster_parameter_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a cluster parameter group.</p>
@@ -78,7 +80,7 @@ impl ModifyDbClusterParameterGroupOutputBuilder {
     /// </note>
     pub fn set_db_cluster_parameter_group_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.db_cluster_parameter_group_name = input;
         self

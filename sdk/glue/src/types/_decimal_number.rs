@@ -2,18 +2,18 @@
 
 /// <p>Contains a numeric value in decimal format.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DecimalNumber {
     /// <p>The unscaled numeric value.</p>
     #[doc(hidden)]
-    pub unscaled_value: std::option::Option<aws_smithy_types::Blob>,
+    pub unscaled_value: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The scale that determines where the decimal point falls in the unscaled value.</p>
     #[doc(hidden)]
     pub scale: i32,
 }
 impl DecimalNumber {
     /// <p>The unscaled numeric value.</p>
-    pub fn unscaled_value(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn unscaled_value(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
         self.unscaled_value.as_ref()
     }
     /// <p>The scale that determines where the decimal point falls in the unscaled value.</p>
@@ -30,32 +30,34 @@ impl DecimalNumber {
 
 /// A builder for [`DecimalNumber`](crate::types::DecimalNumber).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DecimalNumberBuilder {
-    pub(crate) unscaled_value: std::option::Option<aws_smithy_types::Blob>,
-    pub(crate) scale: std::option::Option<i32>,
+    pub(crate) unscaled_value: ::std::option::Option<::aws_smithy_types::Blob>,
+    pub(crate) scale: ::std::option::Option<i32>,
 }
 impl DecimalNumberBuilder {
     /// <p>The unscaled numeric value.</p>
-    pub fn unscaled_value(mut self, input: aws_smithy_types::Blob) -> Self {
-        self.unscaled_value = Some(input);
+    pub fn unscaled_value(mut self, input: ::aws_smithy_types::Blob) -> Self {
+        self.unscaled_value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The unscaled numeric value.</p>
     pub fn set_unscaled_value(
         mut self,
-        input: std::option::Option<aws_smithy_types::Blob>,
+        input: ::std::option::Option<::aws_smithy_types::Blob>,
     ) -> Self {
         self.unscaled_value = input;
         self
     }
     /// <p>The scale that determines where the decimal point falls in the unscaled value.</p>
     pub fn scale(mut self, input: i32) -> Self {
-        self.scale = Some(input);
+        self.scale = ::std::option::Option::Some(input);
         self
     }
     /// <p>The scale that determines where the decimal point falls in the unscaled value.</p>
-    pub fn set_scale(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_scale(mut self, input: ::std::option::Option<i32>) -> Self {
         self.scale = input;
         self
     }

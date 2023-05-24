@@ -6,56 +6,59 @@ pub use crate::operation::create_trail::_create_trail_input::CreateTrailInputBui
 /// Fluent builder constructing a request to `CreateTrail`.
 ///
 /// <p>Creates a trail that specifies the settings for delivery of log data to an Amazon S3 bucket. </p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateTrailFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_trail::builders::CreateTrailInputBuilder,
 }
 impl CreateTrailFluentBuilder {
     /// Creates a new `CreateTrail`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_trail::CreateTrail,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_trail::CreateTrailError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_trail::CreateTrailError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_trail::CreateTrailOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_trail::CreateTrailError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_trail::CreateTrailError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,9 +71,9 @@ impl CreateTrailFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_trail::CreateTrailOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_trail::CreateTrailError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_trail::CreateTrailError>,
     > {
         self.send_middleware().await
     }
@@ -82,7 +85,7 @@ impl CreateTrailFluentBuilder {
     /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
     /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
     /// </ul>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
@@ -94,37 +97,55 @@ impl CreateTrailFluentBuilder {
     /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
     /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
     /// </ul>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
     /// <p>Specifies the name of the Amazon S3 bucket designated for publishing log files. See <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon S3 Bucket Naming Requirements</a>.</p>
-    pub fn s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn s3_bucket_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.s3_bucket_name(input.into());
         self
     }
     /// <p>Specifies the name of the Amazon S3 bucket designated for publishing log files. See <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon S3 Bucket Naming Requirements</a>.</p>
-    pub fn set_s3_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_s3_bucket_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_s3_bucket_name(input);
         self
     }
     /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your CloudTrail Log Files</a>. The maximum length is 200 characters.</p>
-    pub fn s3_key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn s3_key_prefix(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.s3_key_prefix(input.into());
         self
     }
     /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your CloudTrail Log Files</a>. The maximum length is 200 characters.</p>
-    pub fn set_s3_key_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_s3_key_prefix(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_s3_key_prefix(input);
         self
     }
     /// <p>Specifies the name of the Amazon SNS topic defined for notification of log file delivery. The maximum length is 256 characters.</p>
-    pub fn sns_topic_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn sns_topic_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.sns_topic_name(input.into());
         self
     }
     /// <p>Specifies the name of the Amazon SNS topic defined for notification of log file delivery. The maximum length is 256 characters.</p>
-    pub fn set_sns_topic_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_sns_topic_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_sns_topic_name(input);
         self
     }
@@ -134,7 +155,7 @@ impl CreateTrailFluentBuilder {
         self
     }
     /// <p>Specifies whether the trail is publishing events from global services such as IAM to the log files.</p>
-    pub fn set_include_global_service_events(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_include_global_service_events(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_include_global_service_events(input);
         self
     }
@@ -144,7 +165,7 @@ impl CreateTrailFluentBuilder {
         self
     }
     /// <p>Specifies whether the trail is created in the current region or in all regions. The default is false, which creates a trail only in the region where you are signed in. As a best practice, consider creating trails that log events in all regions.</p>
-    pub fn set_is_multi_region_trail(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_multi_region_trail(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_is_multi_region_trail(input);
         self
     }
@@ -158,13 +179,16 @@ impl CreateTrailFluentBuilder {
     /// <p>Specifies whether log file integrity validation is enabled. The default is false.</p> <note>
     /// <p>When you disable log file integrity validation, the chain of digest files is broken after one hour. CloudTrail does not create digest files for log files that were delivered during a period in which log file integrity validation was disabled. For example, if you enable log file integrity validation at noon on January 1, disable it at noon on January 2, and re-enable it at noon on January 10, digest files will not be created for the log files delivered from noon on January 2 to noon on January 10. The same applies whenever you stop CloudTrail logging or delete a trail.</p>
     /// </note>
-    pub fn set_enable_log_file_validation(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enable_log_file_validation(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enable_log_file_validation(input);
         self
     }
     /// <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the log group to which CloudTrail logs will be delivered. You must use a log group that exists in your account.</p>
     /// <p>Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p>
-    pub fn cloud_watch_logs_log_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn cloud_watch_logs_log_group_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.cloud_watch_logs_log_group_arn(input.into());
         self
     }
@@ -172,20 +196,23 @@ impl CreateTrailFluentBuilder {
     /// <p>Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p>
     pub fn set_cloud_watch_logs_log_group_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_cloud_watch_logs_log_group_arn(input);
         self
     }
     /// <p>Specifies the role for the CloudWatch Logs endpoint to assume to write to a user's log group. You must use a role that exists in your account.</p>
-    pub fn cloud_watch_logs_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn cloud_watch_logs_role_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.cloud_watch_logs_role_arn(input.into());
         self
     }
     /// <p>Specifies the role for the CloudWatch Logs endpoint to assume to write to a user's log group. You must use a role that exists in your account.</p>
     pub fn set_cloud_watch_logs_role_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_cloud_watch_logs_role_arn(input);
         self
@@ -199,7 +226,7 @@ impl CreateTrailFluentBuilder {
     /// <li> <p> <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p> </li>
     /// <li> <p> <code>12345678-1234-1234-1234-123456789012</code> </p> </li>
     /// </ul>
-    pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kms_key_id(input.into());
         self
     }
@@ -212,7 +239,7 @@ impl CreateTrailFluentBuilder {
     /// <li> <p> <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p> </li>
     /// <li> <p> <code>12345678-1234-1234-1234-123456789012</code> </p> </li>
     /// </ul>
-    pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kms_key_id(input);
         self
     }
@@ -222,7 +249,7 @@ impl CreateTrailFluentBuilder {
         self
     }
     /// <p>Specifies whether the trail is created for all accounts in an organization in Organizations, or only for the current Amazon Web Services account. The default is false, and cannot be true unless the call is made on behalf of an Amazon Web Services account that is the management account or delegated administrator account for an organization in Organizations.</p>
-    pub fn set_is_organization_trail(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_organization_trail(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_is_organization_trail(input);
         self
     }
@@ -238,7 +265,7 @@ impl CreateTrailFluentBuilder {
     /// <p>A list of tags.</p>
     pub fn set_tags_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags_list(input);
         self

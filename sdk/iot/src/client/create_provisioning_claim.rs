@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateProvisioningClaim`](crate::operation::create_provisioning_claim::builders::CreateProvisioningClaimFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`template_name(impl Into<String>)`](crate::operation::create_provisioning_claim::builders::CreateProvisioningClaimFluentBuilder::template_name) / [`set_template_name(Option<String>)`](crate::operation::create_provisioning_claim::builders::CreateProvisioningClaimFluentBuilder::set_template_name): <p>The name of the provisioning template to use.</p>
+    ///   - [`template_name(impl ::std::convert::Into<String>)`](crate::operation::create_provisioning_claim::builders::CreateProvisioningClaimFluentBuilder::template_name) / [`set_template_name(Option<String>)`](crate::operation::create_provisioning_claim::builders::CreateProvisioningClaimFluentBuilder::set_template_name): <p>The name of the provisioning template to use.</p>
     /// - On success, responds with [`CreateProvisioningClaimOutput`](crate::operation::create_provisioning_claim::CreateProvisioningClaimOutput) with field(s):
     ///   - [`certificate_id(Option<String>)`](crate::operation::create_provisioning_claim::CreateProvisioningClaimOutput::certificate_id): <p>The ID of the certificate.</p>
     ///   - [`certificate_pem(Option<String>)`](crate::operation::create_provisioning_claim::CreateProvisioningClaimOutput::certificate_pem): <p>The provisioning claim certificate.</p>

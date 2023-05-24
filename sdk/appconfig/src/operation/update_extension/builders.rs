@@ -6,56 +6,63 @@ pub use crate::operation::update_extension::_update_extension_input::UpdateExten
 /// Fluent builder constructing a request to `UpdateExtension`.
 ///
 /// <p>Updates an AppConfig extension. For more information about extensions, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working with AppConfig extensions</a> in the <i>AppConfig User Guide</i>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateExtensionFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::update_extension::builders::UpdateExtensionInputBuilder,
 }
 impl UpdateExtensionFluentBuilder {
     /// Creates a new `UpdateExtension`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_extension::UpdateExtension,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::update_extension::UpdateExtensionError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_extension::UpdateExtensionError,
+        >,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_extension::UpdateExtensionOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_extension::UpdateExtensionError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_extension::UpdateExtensionError,
+        >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,32 +75,37 @@ impl UpdateExtensionFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_extension::UpdateExtensionOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_extension::UpdateExtensionError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_extension::UpdateExtensionError,
+        >,
     > {
         self.send_middleware().await
     }
     /// <p>The name, the ID, or the Amazon Resource Name (ARN) of the extension.</p>
-    pub fn extension_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn extension_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.extension_identifier(input.into());
         self
     }
     /// <p>The name, the ID, or the Amazon Resource Name (ARN) of the extension.</p>
     pub fn set_extension_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_extension_identifier(input);
         self
     }
     /// <p>Information about the extension.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>Information about the extension.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
@@ -105,7 +117,7 @@ impl UpdateExtensionFluentBuilder {
     pub fn actions(
         mut self,
         k: crate::types::ActionPoint,
-        v: std::vec::Vec<crate::types::Action>,
+        v: ::std::vec::Vec<crate::types::Action>,
     ) -> Self {
         self.inner = self.inner.actions(k, v);
         self
@@ -113,10 +125,10 @@ impl UpdateExtensionFluentBuilder {
     /// <p>The actions defined in the extension.</p>
     pub fn set_actions(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<
+        input: ::std::option::Option<
+            ::std::collections::HashMap<
                 crate::types::ActionPoint,
-                std::vec::Vec<crate::types::Action>,
+                ::std::vec::Vec<crate::types::Action>,
             >,
         >,
     ) -> Self {
@@ -130,7 +142,7 @@ impl UpdateExtensionFluentBuilder {
     /// <p>One or more parameters for the actions called by the extension.</p>
     pub fn parameters(
         mut self,
-        k: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
         v: crate::types::Parameter,
     ) -> Self {
         self.inner = self.inner.parameters(k.into(), v);
@@ -139,8 +151,8 @@ impl UpdateExtensionFluentBuilder {
     /// <p>One or more parameters for the actions called by the extension.</p>
     pub fn set_parameters(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::types::Parameter>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, crate::types::Parameter>,
         >,
     ) -> Self {
         self.inner = self.inner.set_parameters(input);
@@ -152,7 +164,7 @@ impl UpdateExtensionFluentBuilder {
         self
     }
     /// <p>The extension version number.</p>
-    pub fn set_version_number(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_version_number(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_version_number(input);
         self
     }

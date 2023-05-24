@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetDistributionConfig`](crate::operation::get_distribution_config::builders::GetDistributionConfigFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::get_distribution_config::builders::GetDistributionConfigFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_distribution_config::builders::GetDistributionConfigFluentBuilder::set_id): <p>The distribution's ID. If the ID is empty, an empty distribution configuration is returned.</p>
+    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::get_distribution_config::builders::GetDistributionConfigFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_distribution_config::builders::GetDistributionConfigFluentBuilder::set_id): <p>The distribution's ID. If the ID is empty, an empty distribution configuration is returned.</p>
     /// - On success, responds with [`GetDistributionConfigOutput`](crate::operation::get_distribution_config::GetDistributionConfigOutput) with field(s):
     ///   - [`distribution_config(Option<DistributionConfig>)`](crate::operation::get_distribution_config::GetDistributionConfigOutput::distribution_config): <p>The distribution's configuration information.</p>
     ///   - [`e_tag(Option<String>)`](crate::operation::get_distribution_config::GetDistributionConfigOutput::e_tag): <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>

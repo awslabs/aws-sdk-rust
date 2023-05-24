@@ -2,15 +2,15 @@
 
 /// <p>A complex type that describes a location where recorded videos will be stored. Each member represents a type of destination configuration. For recording, you define one and only one type of destination configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DestinationConfiguration {
     /// <p>An S3 destination configuration where recorded videos will be stored.</p>
     #[doc(hidden)]
-    pub s3: std::option::Option<crate::types::S3DestinationConfiguration>,
+    pub s3: ::std::option::Option<crate::types::S3DestinationConfiguration>,
 }
 impl DestinationConfiguration {
     /// <p>An S3 destination configuration where recorded videos will be stored.</p>
-    pub fn s3(&self) -> std::option::Option<&crate::types::S3DestinationConfiguration> {
+    pub fn s3(&self) -> ::std::option::Option<&crate::types::S3DestinationConfiguration> {
         self.s3.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl DestinationConfiguration {
 
 /// A builder for [`DestinationConfiguration`](crate::types::DestinationConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DestinationConfigurationBuilder {
-    pub(crate) s3: std::option::Option<crate::types::S3DestinationConfiguration>,
+    pub(crate) s3: ::std::option::Option<crate::types::S3DestinationConfiguration>,
 }
 impl DestinationConfigurationBuilder {
     /// <p>An S3 destination configuration where recorded videos will be stored.</p>
     pub fn s3(mut self, input: crate::types::S3DestinationConfiguration) -> Self {
-        self.s3 = Some(input);
+        self.s3 = ::std::option::Option::Some(input);
         self
     }
     /// <p>An S3 destination configuration where recorded videos will be stored.</p>
     pub fn set_s3(
         mut self,
-        input: std::option::Option<crate::types::S3DestinationConfiguration>,
+        input: ::std::option::Option<crate::types::S3DestinationConfiguration>,
     ) -> Self {
         self.s3 = input;
         self

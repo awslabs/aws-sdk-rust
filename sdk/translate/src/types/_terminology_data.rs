@@ -2,14 +2,14 @@
 
 /// <p>The data associated with the custom terminology. For information about the custom terminology file, see <a href="https://docs.aws.amazon.com/translate/latest/dg/creating-custom-terminology.html"> Creating a Custom Terminology</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct TerminologyData {
     /// <p>The file containing the custom terminology data. Your version of the AWS SDK performs a Base64-encoding on this field before sending a request to the AWS service. Users of the SDK should not perform Base64-encoding themselves.</p>
     #[doc(hidden)]
-    pub file: std::option::Option<aws_smithy_types::Blob>,
+    pub file: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The data format of the custom terminology.</p>
     #[doc(hidden)]
-    pub format: std::option::Option<crate::types::TerminologyDataFormat>,
+    pub format: ::std::option::Option<crate::types::TerminologyDataFormat>,
     /// <p>The directionality of your terminology resource indicates whether it has one source language (uni-directional) or multiple (multi-directional).</p>
     /// <dl>
     /// <dt>
@@ -27,15 +27,15 @@ pub struct TerminologyData {
     /// </dl>
     /// <p>When you create a custom terminology resource without specifying the directionality, it behaves as uni-directional terminology, although this parameter will have a null value.</p>
     #[doc(hidden)]
-    pub directionality: std::option::Option<crate::types::Directionality>,
+    pub directionality: ::std::option::Option<crate::types::Directionality>,
 }
 impl TerminologyData {
     /// <p>The file containing the custom terminology data. Your version of the AWS SDK performs a Base64-encoding on this field before sending a request to the AWS service. Users of the SDK should not perform Base64-encoding themselves.</p>
-    pub fn file(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn file(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
         self.file.as_ref()
     }
     /// <p>The data format of the custom terminology.</p>
-    pub fn format(&self) -> std::option::Option<&crate::types::TerminologyDataFormat> {
+    pub fn format(&self) -> ::std::option::Option<&crate::types::TerminologyDataFormat> {
         self.format.as_ref()
     }
     /// <p>The directionality of your terminology resource indicates whether it has one source language (uni-directional) or multiple (multi-directional).</p>
@@ -54,12 +54,12 @@ impl TerminologyData {
     /// </dd>
     /// </dl>
     /// <p>When you create a custom terminology resource without specifying the directionality, it behaves as uni-directional terminology, although this parameter will have a null value.</p>
-    pub fn directionality(&self) -> std::option::Option<&crate::types::Directionality> {
+    pub fn directionality(&self) -> ::std::option::Option<&crate::types::Directionality> {
         self.directionality.as_ref()
     }
 }
-impl std::fmt::Debug for TerminologyData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for TerminologyData {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("TerminologyData");
         formatter.field("file", &"*** Sensitive Data Redacted ***");
         formatter.field("format", &self.format);
@@ -76,32 +76,32 @@ impl TerminologyData {
 
 /// A builder for [`TerminologyData`](crate::types::TerminologyData).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct TerminologyDataBuilder {
-    pub(crate) file: std::option::Option<aws_smithy_types::Blob>,
-    pub(crate) format: std::option::Option<crate::types::TerminologyDataFormat>,
-    pub(crate) directionality: std::option::Option<crate::types::Directionality>,
+    pub(crate) file: ::std::option::Option<::aws_smithy_types::Blob>,
+    pub(crate) format: ::std::option::Option<crate::types::TerminologyDataFormat>,
+    pub(crate) directionality: ::std::option::Option<crate::types::Directionality>,
 }
 impl TerminologyDataBuilder {
     /// <p>The file containing the custom terminology data. Your version of the AWS SDK performs a Base64-encoding on this field before sending a request to the AWS service. Users of the SDK should not perform Base64-encoding themselves.</p>
-    pub fn file(mut self, input: aws_smithy_types::Blob) -> Self {
-        self.file = Some(input);
+    pub fn file(mut self, input: ::aws_smithy_types::Blob) -> Self {
+        self.file = ::std::option::Option::Some(input);
         self
     }
     /// <p>The file containing the custom terminology data. Your version of the AWS SDK performs a Base64-encoding on this field before sending a request to the AWS service. Users of the SDK should not perform Base64-encoding themselves.</p>
-    pub fn set_file(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
+    pub fn set_file(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.file = input;
         self
     }
     /// <p>The data format of the custom terminology.</p>
     pub fn format(mut self, input: crate::types::TerminologyDataFormat) -> Self {
-        self.format = Some(input);
+        self.format = ::std::option::Option::Some(input);
         self
     }
     /// <p>The data format of the custom terminology.</p>
     pub fn set_format(
         mut self,
-        input: std::option::Option<crate::types::TerminologyDataFormat>,
+        input: ::std::option::Option<crate::types::TerminologyDataFormat>,
     ) -> Self {
         self.format = input;
         self
@@ -123,7 +123,7 @@ impl TerminologyDataBuilder {
     /// </dl>
     /// <p>When you create a custom terminology resource without specifying the directionality, it behaves as uni-directional terminology, although this parameter will have a null value.</p>
     pub fn directionality(mut self, input: crate::types::Directionality) -> Self {
-        self.directionality = Some(input);
+        self.directionality = ::std::option::Option::Some(input);
         self
     }
     /// <p>The directionality of your terminology resource indicates whether it has one source language (uni-directional) or multiple (multi-directional).</p>
@@ -144,7 +144,7 @@ impl TerminologyDataBuilder {
     /// <p>When you create a custom terminology resource without specifying the directionality, it behaves as uni-directional terminology, although this parameter will have a null value.</p>
     pub fn set_directionality(
         mut self,
-        input: std::option::Option<crate::types::Directionality>,
+        input: ::std::option::Option<crate::types::Directionality>,
     ) -> Self {
         self.directionality = input;
         self
@@ -158,8 +158,8 @@ impl TerminologyDataBuilder {
         }
     }
 }
-impl std::fmt::Debug for TerminologyDataBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for TerminologyDataBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("TerminologyDataBuilder");
         formatter.field("file", &"*** Sensitive Data Redacted ***");
         formatter.field("format", &self.format);

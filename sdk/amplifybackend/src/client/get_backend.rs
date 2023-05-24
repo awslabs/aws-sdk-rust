@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetBackend`](crate::operation::get_backend::builders::GetBackendFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`app_id(impl Into<String>)`](crate::operation::get_backend::builders::GetBackendFluentBuilder::app_id) / [`set_app_id(Option<String>)`](crate::operation::get_backend::builders::GetBackendFluentBuilder::set_app_id): <p>The app ID.</p>
-    ///   - [`backend_environment_name(impl Into<String>)`](crate::operation::get_backend::builders::GetBackendFluentBuilder::backend_environment_name) / [`set_backend_environment_name(Option<String>)`](crate::operation::get_backend::builders::GetBackendFluentBuilder::set_backend_environment_name): <p>The name of the backend environment.</p>
+    ///   - [`app_id(impl ::std::convert::Into<String>)`](crate::operation::get_backend::builders::GetBackendFluentBuilder::app_id) / [`set_app_id(Option<String>)`](crate::operation::get_backend::builders::GetBackendFluentBuilder::set_app_id): <p>The app ID.</p>
+    ///   - [`backend_environment_name(impl ::std::convert::Into<String>)`](crate::operation::get_backend::builders::GetBackendFluentBuilder::backend_environment_name) / [`set_backend_environment_name(Option<String>)`](crate::operation::get_backend::builders::GetBackendFluentBuilder::set_backend_environment_name): <p>The name of the backend environment.</p>
     /// - On success, responds with [`GetBackendOutput`](crate::operation::get_backend::GetBackendOutput) with field(s):
     ///   - [`amplify_feature_flags(Option<String>)`](crate::operation::get_backend::GetBackendOutput::amplify_feature_flags): <p>A stringified version of the cli.json file for your Amplify project.</p>
     ///   - [`amplify_meta_config(Option<String>)`](crate::operation::get_backend::GetBackendOutput::amplify_meta_config): <p>A stringified version of the current configs for your Amplify project.</p>

@@ -2,50 +2,50 @@
 
 /// <p>Provides information about a pending maintenance action for a resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PendingMaintenanceAction {
     /// <p>The type of pending maintenance action that is available for the resource.</p>
     #[doc(hidden)]
-    pub action: std::option::Option<std::string::String>,
+    pub action: ::std::option::Option<::std::string::String>,
     /// <p>The date of the maintenance window when the action is applied. The maintenance action is applied to the resource during its first maintenance window after this date. If this date is specified, any <code>next-maintenance</code> opt-in requests are ignored.</p>
     #[doc(hidden)]
-    pub auto_applied_after_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub auto_applied_after_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date when the maintenance action is automatically applied. The maintenance action is applied to the resource on this date regardless of the maintenance window for the resource. If this date is specified, any <code>immediate</code> opt-in requests are ignored.</p>
     #[doc(hidden)]
-    pub forced_apply_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub forced_apply_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates the type of opt-in request that has been received for the resource.</p>
     #[doc(hidden)]
-    pub opt_in_status: std::option::Option<std::string::String>,
+    pub opt_in_status: ::std::option::Option<::std::string::String>,
     /// <p>The effective date when the pending maintenance action is applied to the resource.</p>
     #[doc(hidden)]
-    pub current_apply_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub current_apply_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A description providing more detail about the maintenance action.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
 }
 impl PendingMaintenanceAction {
     /// <p>The type of pending maintenance action that is available for the resource.</p>
-    pub fn action(&self) -> std::option::Option<&str> {
+    pub fn action(&self) -> ::std::option::Option<&str> {
         self.action.as_deref()
     }
     /// <p>The date of the maintenance window when the action is applied. The maintenance action is applied to the resource during its first maintenance window after this date. If this date is specified, any <code>next-maintenance</code> opt-in requests are ignored.</p>
-    pub fn auto_applied_after_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn auto_applied_after_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.auto_applied_after_date.as_ref()
     }
     /// <p>The date when the maintenance action is automatically applied. The maintenance action is applied to the resource on this date regardless of the maintenance window for the resource. If this date is specified, any <code>immediate</code> opt-in requests are ignored.</p>
-    pub fn forced_apply_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn forced_apply_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.forced_apply_date.as_ref()
     }
     /// <p>Indicates the type of opt-in request that has been received for the resource.</p>
-    pub fn opt_in_status(&self) -> std::option::Option<&str> {
+    pub fn opt_in_status(&self) -> ::std::option::Option<&str> {
         self.opt_in_status.as_deref()
     }
     /// <p>The effective date when the pending maintenance action is applied to the resource.</p>
-    pub fn current_apply_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn current_apply_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.current_apply_date.as_ref()
     }
     /// <p>A description providing more detail about the maintenance action.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
 }
@@ -58,82 +58,90 @@ impl PendingMaintenanceAction {
 
 /// A builder for [`PendingMaintenanceAction`](crate::types::PendingMaintenanceAction).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PendingMaintenanceActionBuilder {
-    pub(crate) action: std::option::Option<std::string::String>,
-    pub(crate) auto_applied_after_date: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) forced_apply_date: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) opt_in_status: std::option::Option<std::string::String>,
-    pub(crate) current_apply_date: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) description: std::option::Option<std::string::String>,
+    pub(crate) action: ::std::option::Option<::std::string::String>,
+    pub(crate) auto_applied_after_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) forced_apply_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) opt_in_status: ::std::option::Option<::std::string::String>,
+    pub(crate) current_apply_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
 }
 impl PendingMaintenanceActionBuilder {
     /// <p>The type of pending maintenance action that is available for the resource.</p>
-    pub fn action(mut self, input: impl Into<std::string::String>) -> Self {
-        self.action = Some(input.into());
+    pub fn action(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.action = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of pending maintenance action that is available for the resource.</p>
-    pub fn set_action(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_action(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.action = input;
         self
     }
     /// <p>The date of the maintenance window when the action is applied. The maintenance action is applied to the resource during its first maintenance window after this date. If this date is specified, any <code>next-maintenance</code> opt-in requests are ignored.</p>
-    pub fn auto_applied_after_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.auto_applied_after_date = Some(input);
+    pub fn auto_applied_after_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.auto_applied_after_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date of the maintenance window when the action is applied. The maintenance action is applied to the resource during its first maintenance window after this date. If this date is specified, any <code>next-maintenance</code> opt-in requests are ignored.</p>
     pub fn set_auto_applied_after_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.auto_applied_after_date = input;
         self
     }
     /// <p>The date when the maintenance action is automatically applied. The maintenance action is applied to the resource on this date regardless of the maintenance window for the resource. If this date is specified, any <code>immediate</code> opt-in requests are ignored.</p>
-    pub fn forced_apply_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.forced_apply_date = Some(input);
+    pub fn forced_apply_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.forced_apply_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date when the maintenance action is automatically applied. The maintenance action is applied to the resource on this date regardless of the maintenance window for the resource. If this date is specified, any <code>immediate</code> opt-in requests are ignored.</p>
     pub fn set_forced_apply_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.forced_apply_date = input;
         self
     }
     /// <p>Indicates the type of opt-in request that has been received for the resource.</p>
-    pub fn opt_in_status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.opt_in_status = Some(input.into());
+    pub fn opt_in_status(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.opt_in_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates the type of opt-in request that has been received for the resource.</p>
-    pub fn set_opt_in_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_opt_in_status(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.opt_in_status = input;
         self
     }
     /// <p>The effective date when the pending maintenance action is applied to the resource.</p>
-    pub fn current_apply_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.current_apply_date = Some(input);
+    pub fn current_apply_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.current_apply_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The effective date when the pending maintenance action is applied to the resource.</p>
     pub fn set_current_apply_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.current_apply_date = input;
         self
     }
     /// <p>A description providing more detail about the maintenance action.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description providing more detail about the maintenance action.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }

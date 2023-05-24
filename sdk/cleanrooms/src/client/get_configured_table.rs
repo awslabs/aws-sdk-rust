@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetConfiguredTable`](crate::operation::get_configured_table::builders::GetConfiguredTableFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`configured_table_identifier(impl Into<String>)`](crate::operation::get_configured_table::builders::GetConfiguredTableFluentBuilder::configured_table_identifier) / [`set_configured_table_identifier(Option<String>)`](crate::operation::get_configured_table::builders::GetConfiguredTableFluentBuilder::set_configured_table_identifier): <p>The unique ID for the configured table to retrieve.</p>
+    ///   - [`configured_table_identifier(impl ::std::convert::Into<String>)`](crate::operation::get_configured_table::builders::GetConfiguredTableFluentBuilder::configured_table_identifier) / [`set_configured_table_identifier(Option<String>)`](crate::operation::get_configured_table::builders::GetConfiguredTableFluentBuilder::set_configured_table_identifier): <p>The unique ID for the configured table to retrieve.</p>
     /// - On success, responds with [`GetConfiguredTableOutput`](crate::operation::get_configured_table::GetConfiguredTableOutput) with field(s):
     ///   - [`configured_table(Option<ConfiguredTable>)`](crate::operation::get_configured_table::GetConfiguredTableOutput::configured_table): <p>The retrieved configured table.</p>
     /// - On failure, responds with [`SdkError<GetConfiguredTableError>`](crate::operation::get_configured_table::GetConfiguredTableError)

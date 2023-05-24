@@ -7,15 +7,15 @@
 /// <li> <p> <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_GetServicesInScope.html#API_GetServicesInScope_Example_3">Defining an Amazon Web Service name in your assessment scope</a> </p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsService {
     /// <p> The name of the Amazon Web Service. </p>
     #[doc(hidden)]
-    pub service_name: std::option::Option<std::string::String>,
+    pub service_name: ::std::option::Option<::std::string::String>,
 }
 impl AwsService {
     /// <p> The name of the Amazon Web Service. </p>
-    pub fn service_name(&self) -> std::option::Option<&str> {
+    pub fn service_name(&self) -> ::std::option::Option<&str> {
         self.service_name.as_deref()
     }
 }
@@ -28,18 +28,20 @@ impl AwsService {
 
 /// A builder for [`AwsService`](crate::types::AwsService).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsServiceBuilder {
-    pub(crate) service_name: std::option::Option<std::string::String>,
+    pub(crate) service_name: ::std::option::Option<::std::string::String>,
 }
 impl AwsServiceBuilder {
     /// <p> The name of the Amazon Web Service. </p>
-    pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.service_name = Some(input.into());
+    pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.service_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the Amazon Web Service. </p>
-    pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_name = input;
         self
     }

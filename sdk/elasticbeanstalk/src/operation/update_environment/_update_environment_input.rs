@@ -2,103 +2,104 @@
 
 /// <p>Request to update an environment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateEnvironmentInput {
     /// <p>The name of the application with which the environment is associated.</p>
     #[doc(hidden)]
-    pub application_name: std::option::Option<std::string::String>,
+    pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the environment to update.</p>
     /// <p>If no environment with this ID exists, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error.</p>
     /// <p>Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
     #[doc(hidden)]
-    pub environment_id: std::option::Option<std::string::String>,
+    pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the environment to update. If no environment with this name exists, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. </p>
     /// <p>Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
     #[doc(hidden)]
-    pub environment_name: std::option::Option<std::string::String>,
+    pub environment_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the group to which the target environment belongs. Specify a group name only if the environment's name is specified in an environment manifest and not with the environment name or environment ID parameters. See <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment Manifest (env.yaml)</a> for details.</p>
     #[doc(hidden)]
-    pub group_name: std::option::Option<std::string::String>,
+    pub group_name: ::std::option::Option<::std::string::String>,
     /// <p>If this parameter is specified, AWS Elastic Beanstalk updates the description of this environment.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>This specifies the tier to use to update the environment.</p>
     /// <p>Condition: At this time, if you change the tier version, name, or type, AWS Elastic Beanstalk returns <code>InvalidParameterValue</code> error. </p>
     #[doc(hidden)]
-    pub tier: std::option::Option<crate::types::EnvironmentTier>,
+    pub tier: ::std::option::Option<crate::types::EnvironmentTier>,
     /// <p>If this parameter is specified, AWS Elastic Beanstalk deploys the named application version to the environment. If no such application version is found, returns an <code>InvalidParameterValue</code> error. </p>
     #[doc(hidden)]
-    pub version_label: std::option::Option<std::string::String>,
+    pub version_label: ::std::option::Option<::std::string::String>,
     /// <p>If this parameter is specified, AWS Elastic Beanstalk deploys this configuration template to the environment. If no such configuration template is found, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. </p>
     #[doc(hidden)]
-    pub template_name: std::option::Option<std::string::String>,
+    pub template_name: ::std::option::Option<::std::string::String>,
     /// <p>This specifies the platform version that the environment will run after the environment is updated.</p>
     #[doc(hidden)]
-    pub solution_stack_name: std::option::Option<std::string::String>,
+    pub solution_stack_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the platform, if used.</p>
     #[doc(hidden)]
-    pub platform_arn: std::option::Option<std::string::String>,
+    pub platform_arn: ::std::option::Option<::std::string::String>,
     /// <p>If specified, AWS Elastic Beanstalk updates the configuration set associated with the running environment and sets the specified configuration options to the requested value.</p>
     #[doc(hidden)]
     pub option_settings:
-        std::option::Option<std::vec::Vec<crate::types::ConfigurationOptionSetting>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationOptionSetting>>,
     /// <p>A list of custom user-defined configuration options to remove from the configuration set for this environment.</p>
     #[doc(hidden)]
-    pub options_to_remove: std::option::Option<std::vec::Vec<crate::types::OptionSpecification>>,
+    pub options_to_remove:
+        ::std::option::Option<::std::vec::Vec<crate::types::OptionSpecification>>,
 }
 impl UpdateEnvironmentInput {
     /// <p>The name of the application with which the environment is associated.</p>
-    pub fn application_name(&self) -> std::option::Option<&str> {
+    pub fn application_name(&self) -> ::std::option::Option<&str> {
         self.application_name.as_deref()
     }
     /// <p>The ID of the environment to update.</p>
     /// <p>If no environment with this ID exists, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error.</p>
     /// <p>Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
-    pub fn environment_id(&self) -> std::option::Option<&str> {
+    pub fn environment_id(&self) -> ::std::option::Option<&str> {
         self.environment_id.as_deref()
     }
     /// <p>The name of the environment to update. If no environment with this name exists, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. </p>
     /// <p>Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
-    pub fn environment_name(&self) -> std::option::Option<&str> {
+    pub fn environment_name(&self) -> ::std::option::Option<&str> {
         self.environment_name.as_deref()
     }
     /// <p>The name of the group to which the target environment belongs. Specify a group name only if the environment's name is specified in an environment manifest and not with the environment name or environment ID parameters. See <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment Manifest (env.yaml)</a> for details.</p>
-    pub fn group_name(&self) -> std::option::Option<&str> {
+    pub fn group_name(&self) -> ::std::option::Option<&str> {
         self.group_name.as_deref()
     }
     /// <p>If this parameter is specified, AWS Elastic Beanstalk updates the description of this environment.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>This specifies the tier to use to update the environment.</p>
     /// <p>Condition: At this time, if you change the tier version, name, or type, AWS Elastic Beanstalk returns <code>InvalidParameterValue</code> error. </p>
-    pub fn tier(&self) -> std::option::Option<&crate::types::EnvironmentTier> {
+    pub fn tier(&self) -> ::std::option::Option<&crate::types::EnvironmentTier> {
         self.tier.as_ref()
     }
     /// <p>If this parameter is specified, AWS Elastic Beanstalk deploys the named application version to the environment. If no such application version is found, returns an <code>InvalidParameterValue</code> error. </p>
-    pub fn version_label(&self) -> std::option::Option<&str> {
+    pub fn version_label(&self) -> ::std::option::Option<&str> {
         self.version_label.as_deref()
     }
     /// <p>If this parameter is specified, AWS Elastic Beanstalk deploys this configuration template to the environment. If no such configuration template is found, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. </p>
-    pub fn template_name(&self) -> std::option::Option<&str> {
+    pub fn template_name(&self) -> ::std::option::Option<&str> {
         self.template_name.as_deref()
     }
     /// <p>This specifies the platform version that the environment will run after the environment is updated.</p>
-    pub fn solution_stack_name(&self) -> std::option::Option<&str> {
+    pub fn solution_stack_name(&self) -> ::std::option::Option<&str> {
         self.solution_stack_name.as_deref()
     }
     /// <p>The ARN of the platform, if used.</p>
-    pub fn platform_arn(&self) -> std::option::Option<&str> {
+    pub fn platform_arn(&self) -> ::std::option::Option<&str> {
         self.platform_arn.as_deref()
     }
     /// <p>If specified, AWS Elastic Beanstalk updates the configuration set associated with the running environment and sets the specified configuration options to the requested value.</p>
     pub fn option_settings(
         &self,
-    ) -> std::option::Option<&[crate::types::ConfigurationOptionSetting]> {
+    ) -> ::std::option::Option<&[crate::types::ConfigurationOptionSetting]> {
         self.option_settings.as_deref()
     }
     /// <p>A list of custom user-defined configuration options to remove from the configuration set for this environment.</p>
-    pub fn options_to_remove(&self) -> std::option::Option<&[crate::types::OptionSpecification]> {
+    pub fn options_to_remove(&self) -> ::std::option::Option<&[crate::types::OptionSpecification]> {
         self.options_to_remove.as_deref()
     }
 }
@@ -112,132 +113,167 @@ impl UpdateEnvironmentInput {
 
 /// A builder for [`UpdateEnvironmentInput`](crate::operation::update_environment::UpdateEnvironmentInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateEnvironmentInputBuilder {
-    pub(crate) application_name: std::option::Option<std::string::String>,
-    pub(crate) environment_id: std::option::Option<std::string::String>,
-    pub(crate) environment_name: std::option::Option<std::string::String>,
-    pub(crate) group_name: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) tier: std::option::Option<crate::types::EnvironmentTier>,
-    pub(crate) version_label: std::option::Option<std::string::String>,
-    pub(crate) template_name: std::option::Option<std::string::String>,
-    pub(crate) solution_stack_name: std::option::Option<std::string::String>,
-    pub(crate) platform_arn: std::option::Option<std::string::String>,
+    pub(crate) application_name: ::std::option::Option<::std::string::String>,
+    pub(crate) environment_id: ::std::option::Option<::std::string::String>,
+    pub(crate) environment_name: ::std::option::Option<::std::string::String>,
+    pub(crate) group_name: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) tier: ::std::option::Option<crate::types::EnvironmentTier>,
+    pub(crate) version_label: ::std::option::Option<::std::string::String>,
+    pub(crate) template_name: ::std::option::Option<::std::string::String>,
+    pub(crate) solution_stack_name: ::std::option::Option<::std::string::String>,
+    pub(crate) platform_arn: ::std::option::Option<::std::string::String>,
     pub(crate) option_settings:
-        std::option::Option<std::vec::Vec<crate::types::ConfigurationOptionSetting>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationOptionSetting>>,
     pub(crate) options_to_remove:
-        std::option::Option<std::vec::Vec<crate::types::OptionSpecification>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::OptionSpecification>>,
 }
 impl UpdateEnvironmentInputBuilder {
     /// <p>The name of the application with which the environment is associated.</p>
-    pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.application_name = Some(input.into());
+    pub fn application_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.application_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the application with which the environment is associated.</p>
-    pub fn set_application_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_application_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.application_name = input;
         self
     }
     /// <p>The ID of the environment to update.</p>
     /// <p>If no environment with this ID exists, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error.</p>
     /// <p>Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
-    pub fn environment_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.environment_id = Some(input.into());
+    pub fn environment_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.environment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the environment to update.</p>
     /// <p>If no environment with this ID exists, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error.</p>
     /// <p>Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
-    pub fn set_environment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_environment_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.environment_id = input;
         self
     }
     /// <p>The name of the environment to update. If no environment with this name exists, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. </p>
     /// <p>Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
-    pub fn environment_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.environment_name = Some(input.into());
+    pub fn environment_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.environment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the environment to update. If no environment with this name exists, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. </p>
     /// <p>Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
-    pub fn set_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_environment_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.environment_name = input;
         self
     }
     /// <p>The name of the group to which the target environment belongs. Specify a group name only if the environment's name is specified in an environment manifest and not with the environment name or environment ID parameters. See <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment Manifest (env.yaml)</a> for details.</p>
-    pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.group_name = Some(input.into());
+    pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the group to which the target environment belongs. Specify a group name only if the environment's name is specified in an environment manifest and not with the environment name or environment ID parameters. See <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment Manifest (env.yaml)</a> for details.</p>
-    pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_name = input;
         self
     }
     /// <p>If this parameter is specified, AWS Elastic Beanstalk updates the description of this environment.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If this parameter is specified, AWS Elastic Beanstalk updates the description of this environment.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>This specifies the tier to use to update the environment.</p>
     /// <p>Condition: At this time, if you change the tier version, name, or type, AWS Elastic Beanstalk returns <code>InvalidParameterValue</code> error. </p>
     pub fn tier(mut self, input: crate::types::EnvironmentTier) -> Self {
-        self.tier = Some(input);
+        self.tier = ::std::option::Option::Some(input);
         self
     }
     /// <p>This specifies the tier to use to update the environment.</p>
     /// <p>Condition: At this time, if you change the tier version, name, or type, AWS Elastic Beanstalk returns <code>InvalidParameterValue</code> error. </p>
-    pub fn set_tier(mut self, input: std::option::Option<crate::types::EnvironmentTier>) -> Self {
+    pub fn set_tier(mut self, input: ::std::option::Option<crate::types::EnvironmentTier>) -> Self {
         self.tier = input;
         self
     }
     /// <p>If this parameter is specified, AWS Elastic Beanstalk deploys the named application version to the environment. If no such application version is found, returns an <code>InvalidParameterValue</code> error. </p>
-    pub fn version_label(mut self, input: impl Into<std::string::String>) -> Self {
-        self.version_label = Some(input.into());
+    pub fn version_label(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.version_label = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If this parameter is specified, AWS Elastic Beanstalk deploys the named application version to the environment. If no such application version is found, returns an <code>InvalidParameterValue</code> error. </p>
-    pub fn set_version_label(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_version_label(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.version_label = input;
         self
     }
     /// <p>If this parameter is specified, AWS Elastic Beanstalk deploys this configuration template to the environment. If no such configuration template is found, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. </p>
-    pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.template_name = Some(input.into());
+    pub fn template_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.template_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If this parameter is specified, AWS Elastic Beanstalk deploys this configuration template to the environment. If no such configuration template is found, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. </p>
-    pub fn set_template_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_template_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.template_name = input;
         self
     }
     /// <p>This specifies the platform version that the environment will run after the environment is updated.</p>
-    pub fn solution_stack_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.solution_stack_name = Some(input.into());
+    pub fn solution_stack_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.solution_stack_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>This specifies the platform version that the environment will run after the environment is updated.</p>
     pub fn set_solution_stack_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.solution_stack_name = input;
         self
     }
     /// <p>The ARN of the platform, if used.</p>
-    pub fn platform_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.platform_arn = Some(input.into());
+    pub fn platform_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.platform_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the platform, if used.</p>
-    pub fn set_platform_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_platform_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.platform_arn = input;
         self
     }
@@ -249,13 +285,13 @@ impl UpdateEnvironmentInputBuilder {
     pub fn option_settings(mut self, input: crate::types::ConfigurationOptionSetting) -> Self {
         let mut v = self.option_settings.unwrap_or_default();
         v.push(input);
-        self.option_settings = Some(v);
+        self.option_settings = ::std::option::Option::Some(v);
         self
     }
     /// <p>If specified, AWS Elastic Beanstalk updates the configuration set associated with the running environment and sets the specified configuration options to the requested value.</p>
     pub fn set_option_settings(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ConfigurationOptionSetting>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationOptionSetting>>,
     ) -> Self {
         self.option_settings = input;
         self
@@ -268,13 +304,13 @@ impl UpdateEnvironmentInputBuilder {
     pub fn options_to_remove(mut self, input: crate::types::OptionSpecification) -> Self {
         let mut v = self.options_to_remove.unwrap_or_default();
         v.push(input);
-        self.options_to_remove = Some(v);
+        self.options_to_remove = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of custom user-defined configuration options to remove from the configuration set for this environment.</p>
     pub fn set_options_to_remove(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::OptionSpecification>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::OptionSpecification>>,
     ) -> Self {
         self.options_to_remove = input;
         self
@@ -282,11 +318,11 @@ impl UpdateEnvironmentInputBuilder {
     /// Consumes the builder and constructs a [`UpdateEnvironmentInput`](crate::operation::update_environment::UpdateEnvironmentInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::update_environment::UpdateEnvironmentInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::update_environment::UpdateEnvironmentInput {
                 application_name: self.application_name,
                 environment_id: self.environment_id,

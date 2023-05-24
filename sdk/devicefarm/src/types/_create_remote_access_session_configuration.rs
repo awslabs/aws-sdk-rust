@@ -2,22 +2,22 @@
 
 /// <p>Configuration settings for a remote access session, including billing method.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateRemoteAccessSessionConfiguration {
     /// <p>The billing method for the remote access session.</p>
     #[doc(hidden)]
-    pub billing_method: std::option::Option<crate::types::BillingMethod>,
+    pub billing_method: ::std::option::Option<crate::types::BillingMethod>,
     /// <p>An array of ARNs included in the VPC endpoint configuration.</p>
     #[doc(hidden)]
-    pub vpce_configuration_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub vpce_configuration_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CreateRemoteAccessSessionConfiguration {
     /// <p>The billing method for the remote access session.</p>
-    pub fn billing_method(&self) -> std::option::Option<&crate::types::BillingMethod> {
+    pub fn billing_method(&self) -> ::std::option::Option<&crate::types::BillingMethod> {
         self.billing_method.as_ref()
     }
     /// <p>An array of ARNs included in the VPC endpoint configuration.</p>
-    pub fn vpce_configuration_arns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn vpce_configuration_arns(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.vpce_configuration_arns.as_deref()
     }
 }
@@ -30,21 +30,24 @@ impl CreateRemoteAccessSessionConfiguration {
 
 /// A builder for [`CreateRemoteAccessSessionConfiguration`](crate::types::CreateRemoteAccessSessionConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateRemoteAccessSessionConfigurationBuilder {
-    pub(crate) billing_method: std::option::Option<crate::types::BillingMethod>,
-    pub(crate) vpce_configuration_arns: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) billing_method: ::std::option::Option<crate::types::BillingMethod>,
+    pub(crate) vpce_configuration_arns:
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CreateRemoteAccessSessionConfigurationBuilder {
     /// <p>The billing method for the remote access session.</p>
     pub fn billing_method(mut self, input: crate::types::BillingMethod) -> Self {
-        self.billing_method = Some(input);
+        self.billing_method = ::std::option::Option::Some(input);
         self
     }
     /// <p>The billing method for the remote access session.</p>
     pub fn set_billing_method(
         mut self,
-        input: std::option::Option<crate::types::BillingMethod>,
+        input: ::std::option::Option<crate::types::BillingMethod>,
     ) -> Self {
         self.billing_method = input;
         self
@@ -54,16 +57,19 @@ impl CreateRemoteAccessSessionConfigurationBuilder {
     /// To override the contents of this collection use [`set_vpce_configuration_arns`](Self::set_vpce_configuration_arns).
     ///
     /// <p>An array of ARNs included in the VPC endpoint configuration.</p>
-    pub fn vpce_configuration_arns(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn vpce_configuration_arns(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.vpce_configuration_arns.unwrap_or_default();
         v.push(input.into());
-        self.vpce_configuration_arns = Some(v);
+        self.vpce_configuration_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of ARNs included in the VPC endpoint configuration.</p>
     pub fn set_vpce_configuration_arns(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.vpce_configuration_arns = input;
         self

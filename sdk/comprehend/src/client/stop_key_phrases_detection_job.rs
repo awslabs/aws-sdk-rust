@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopKeyPhrasesDetectionJob`](crate::operation::stop_key_phrases_detection_job::builders::StopKeyPhrasesDetectionJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`job_id(impl Into<String>)`](crate::operation::stop_key_phrases_detection_job::builders::StopKeyPhrasesDetectionJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::stop_key_phrases_detection_job::builders::StopKeyPhrasesDetectionJobFluentBuilder::set_job_id): <p>The identifier of the key phrases detection job to stop.</p>
+    ///   - [`job_id(impl ::std::convert::Into<String>)`](crate::operation::stop_key_phrases_detection_job::builders::StopKeyPhrasesDetectionJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::stop_key_phrases_detection_job::builders::StopKeyPhrasesDetectionJobFluentBuilder::set_job_id): <p>The identifier of the key phrases detection job to stop.</p>
     /// - On success, responds with [`StopKeyPhrasesDetectionJobOutput`](crate::operation::stop_key_phrases_detection_job::StopKeyPhrasesDetectionJobOutput) with field(s):
     ///   - [`job_id(Option<String>)`](crate::operation::stop_key_phrases_detection_job::StopKeyPhrasesDetectionJobOutput::job_id): <p>The identifier of the key phrases detection job to stop.</p>
     ///   - [`job_status(Option<JobStatus>)`](crate::operation::stop_key_phrases_detection_job::StopKeyPhrasesDetectionJobOutput::job_status): <p>Either <code>STOP_REQUESTED</code> if the job is currently running, or <code>STOPPED</code> if the job was previously stopped with the <code>StopKeyPhrasesDetectionJob</code> operation.</p>

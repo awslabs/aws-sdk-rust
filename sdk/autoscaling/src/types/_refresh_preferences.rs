@@ -2,28 +2,28 @@
 
 /// <p>Describes the preferences for an instance refresh.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RefreshPreferences {
     /// <p>The amount of capacity in the Auto Scaling group that must pass your group's health checks to allow the operation to continue. The value is expressed as a percentage of the desired capacity of the Auto Scaling group (rounded up to the nearest integer). The default is <code>90</code>.</p>
     /// <p>Setting the minimum healthy percentage to 100 percent limits the rate of replacement to one instance at a time. In contrast, setting it to 0 percent has the effect of replacing all instances at the same time. </p>
     #[doc(hidden)]
-    pub min_healthy_percentage: std::option::Option<i32>,
+    pub min_healthy_percentage: ::std::option::Option<i32>,
     /// <p>A time period, in seconds, during which an instance refresh waits before moving on to replacing the next instance after a new instance enters the <code>InService</code> state.</p>
     /// <p>This property is not required for normal usage. Instead, use the <code>DefaultInstanceWarmup</code> property of the Auto Scaling group. The <code>InstanceWarmup</code> and <code>DefaultInstanceWarmup</code> properties work the same way. Only specify this property if you must override the <code>DefaultInstanceWarmup</code> property. </p>
     /// <p> If you do not specify this property, the instance warmup by default is the value of the <code>DefaultInstanceWarmup</code> property, if defined (which is recommended in all cases), or the <code>HealthCheckGracePeriod</code> property otherwise.</p>
     #[doc(hidden)]
-    pub instance_warmup: std::option::Option<i32>,
+    pub instance_warmup: ::std::option::Option<i32>,
     /// <p>(Optional) Threshold values for each checkpoint in ascending order. Each number must be unique. To replace all instances in the Auto Scaling group, the last number in the array must be <code>100</code>.</p>
     /// <p>For usage examples, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-adding-checkpoints-instance-refresh.html">Adding checkpoints to an instance refresh</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     #[doc(hidden)]
-    pub checkpoint_percentages: std::option::Option<std::vec::Vec<i32>>,
+    pub checkpoint_percentages: ::std::option::Option<::std::vec::Vec<i32>>,
     /// <p>(Optional) The amount of time, in seconds, to wait after a checkpoint before continuing. This property is optional, but if you specify a value for it, you must also specify a value for <code>CheckpointPercentages</code>. If you specify a value for <code>CheckpointPercentages</code> and not for <code>CheckpointDelay</code>, the <code>CheckpointDelay</code> defaults to <code>3600</code> (1 hour). </p>
     #[doc(hidden)]
-    pub checkpoint_delay: std::option::Option<i32>,
+    pub checkpoint_delay: ::std::option::Option<i32>,
     /// <p>(Optional) Indicates whether skip matching is enabled. If enabled (<code>true</code>), then Amazon EC2 Auto Scaling skips replacing instances that match the desired configuration. If no desired configuration is specified, then it skips replacing instances that have the same launch template and instance types that the Auto Scaling group was using before the start of the instance refresh. The default is <code>false</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh-skip-matching.html">Use an instance refresh with skip matching</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     #[doc(hidden)]
-    pub skip_matching: std::option::Option<bool>,
+    pub skip_matching: ::std::option::Option<bool>,
     /// <p>(Optional) Indicates whether to roll back the Auto Scaling group to its previous configuration if the instance refresh fails. The default is <code>false</code>.</p>
     /// <p>A rollback is not supported in the following situations: </p>
     /// <ul>
@@ -32,7 +32,7 @@ pub struct RefreshPreferences {
     /// <li> <p>The Auto Scaling group uses the launch template's <code>$Latest</code> or <code>$Default</code> version.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub auto_rollback: std::option::Option<bool>,
+    pub auto_rollback: ::std::option::Option<bool>,
     /// <p>Choose the behavior that you want Amazon EC2 Auto Scaling to use if instances protected from scale in are found. </p>
     /// <p>The following lists the valid values:</p>
     /// <dl>
@@ -56,7 +56,8 @@ pub struct RefreshPreferences {
     /// </dd>
     /// </dl>
     #[doc(hidden)]
-    pub scale_in_protected_instances: std::option::Option<crate::types::ScaleInProtectedInstances>,
+    pub scale_in_protected_instances:
+        ::std::option::Option<crate::types::ScaleInProtectedInstances>,
     /// <p>Choose the behavior that you want Amazon EC2 Auto Scaling to use if instances in <code>Standby</code> state are found.</p>
     /// <p>The following lists the valid values:</p>
     /// <dl>
@@ -80,32 +81,32 @@ pub struct RefreshPreferences {
     /// </dd>
     /// </dl>
     #[doc(hidden)]
-    pub standby_instances: std::option::Option<crate::types::StandbyInstances>,
+    pub standby_instances: ::std::option::Option<crate::types::StandbyInstances>,
 }
 impl RefreshPreferences {
     /// <p>The amount of capacity in the Auto Scaling group that must pass your group's health checks to allow the operation to continue. The value is expressed as a percentage of the desired capacity of the Auto Scaling group (rounded up to the nearest integer). The default is <code>90</code>.</p>
     /// <p>Setting the minimum healthy percentage to 100 percent limits the rate of replacement to one instance at a time. In contrast, setting it to 0 percent has the effect of replacing all instances at the same time. </p>
-    pub fn min_healthy_percentage(&self) -> std::option::Option<i32> {
+    pub fn min_healthy_percentage(&self) -> ::std::option::Option<i32> {
         self.min_healthy_percentage
     }
     /// <p>A time period, in seconds, during which an instance refresh waits before moving on to replacing the next instance after a new instance enters the <code>InService</code> state.</p>
     /// <p>This property is not required for normal usage. Instead, use the <code>DefaultInstanceWarmup</code> property of the Auto Scaling group. The <code>InstanceWarmup</code> and <code>DefaultInstanceWarmup</code> properties work the same way. Only specify this property if you must override the <code>DefaultInstanceWarmup</code> property. </p>
     /// <p> If you do not specify this property, the instance warmup by default is the value of the <code>DefaultInstanceWarmup</code> property, if defined (which is recommended in all cases), or the <code>HealthCheckGracePeriod</code> property otherwise.</p>
-    pub fn instance_warmup(&self) -> std::option::Option<i32> {
+    pub fn instance_warmup(&self) -> ::std::option::Option<i32> {
         self.instance_warmup
     }
     /// <p>(Optional) Threshold values for each checkpoint in ascending order. Each number must be unique. To replace all instances in the Auto Scaling group, the last number in the array must be <code>100</code>.</p>
     /// <p>For usage examples, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-adding-checkpoints-instance-refresh.html">Adding checkpoints to an instance refresh</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    pub fn checkpoint_percentages(&self) -> std::option::Option<&[i32]> {
+    pub fn checkpoint_percentages(&self) -> ::std::option::Option<&[i32]> {
         self.checkpoint_percentages.as_deref()
     }
     /// <p>(Optional) The amount of time, in seconds, to wait after a checkpoint before continuing. This property is optional, but if you specify a value for it, you must also specify a value for <code>CheckpointPercentages</code>. If you specify a value for <code>CheckpointPercentages</code> and not for <code>CheckpointDelay</code>, the <code>CheckpointDelay</code> defaults to <code>3600</code> (1 hour). </p>
-    pub fn checkpoint_delay(&self) -> std::option::Option<i32> {
+    pub fn checkpoint_delay(&self) -> ::std::option::Option<i32> {
         self.checkpoint_delay
     }
     /// <p>(Optional) Indicates whether skip matching is enabled. If enabled (<code>true</code>), then Amazon EC2 Auto Scaling skips replacing instances that match the desired configuration. If no desired configuration is specified, then it skips replacing instances that have the same launch template and instance types that the Auto Scaling group was using before the start of the instance refresh. The default is <code>false</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh-skip-matching.html">Use an instance refresh with skip matching</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    pub fn skip_matching(&self) -> std::option::Option<bool> {
+    pub fn skip_matching(&self) -> ::std::option::Option<bool> {
         self.skip_matching
     }
     /// <p>(Optional) Indicates whether to roll back the Auto Scaling group to its previous configuration if the instance refresh fails. The default is <code>false</code>.</p>
@@ -115,7 +116,7 @@ impl RefreshPreferences {
     /// <li> <p>The Auto Scaling group has a launch template that uses an Amazon Web Services Systems Manager parameter instead of an AMI ID for the <code>ImageId</code> property.</p> </li>
     /// <li> <p>The Auto Scaling group uses the launch template's <code>$Latest</code> or <code>$Default</code> version.</p> </li>
     /// </ul>
-    pub fn auto_rollback(&self) -> std::option::Option<bool> {
+    pub fn auto_rollback(&self) -> ::std::option::Option<bool> {
         self.auto_rollback
     }
     /// <p>Choose the behavior that you want Amazon EC2 Auto Scaling to use if instances protected from scale in are found. </p>
@@ -142,7 +143,7 @@ impl RefreshPreferences {
     /// </dl>
     pub fn scale_in_protected_instances(
         &self,
-    ) -> std::option::Option<&crate::types::ScaleInProtectedInstances> {
+    ) -> ::std::option::Option<&crate::types::ScaleInProtectedInstances> {
         self.scale_in_protected_instances.as_ref()
     }
     /// <p>Choose the behavior that you want Amazon EC2 Auto Scaling to use if instances in <code>Standby</code> state are found.</p>
@@ -167,7 +168,7 @@ impl RefreshPreferences {
     /// <p>Amazon EC2 Auto Scaling waits one hour for you to return the instances to service. Otherwise, the instance refresh will fail.</p>
     /// </dd>
     /// </dl>
-    pub fn standby_instances(&self) -> std::option::Option<&crate::types::StandbyInstances> {
+    pub fn standby_instances(&self) -> ::std::option::Option<&crate::types::StandbyInstances> {
         self.standby_instances.as_ref()
     }
 }
@@ -180,28 +181,30 @@ impl RefreshPreferences {
 
 /// A builder for [`RefreshPreferences`](crate::types::RefreshPreferences).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RefreshPreferencesBuilder {
-    pub(crate) min_healthy_percentage: std::option::Option<i32>,
-    pub(crate) instance_warmup: std::option::Option<i32>,
-    pub(crate) checkpoint_percentages: std::option::Option<std::vec::Vec<i32>>,
-    pub(crate) checkpoint_delay: std::option::Option<i32>,
-    pub(crate) skip_matching: std::option::Option<bool>,
-    pub(crate) auto_rollback: std::option::Option<bool>,
+    pub(crate) min_healthy_percentage: ::std::option::Option<i32>,
+    pub(crate) instance_warmup: ::std::option::Option<i32>,
+    pub(crate) checkpoint_percentages: ::std::option::Option<::std::vec::Vec<i32>>,
+    pub(crate) checkpoint_delay: ::std::option::Option<i32>,
+    pub(crate) skip_matching: ::std::option::Option<bool>,
+    pub(crate) auto_rollback: ::std::option::Option<bool>,
     pub(crate) scale_in_protected_instances:
-        std::option::Option<crate::types::ScaleInProtectedInstances>,
-    pub(crate) standby_instances: std::option::Option<crate::types::StandbyInstances>,
+        ::std::option::Option<crate::types::ScaleInProtectedInstances>,
+    pub(crate) standby_instances: ::std::option::Option<crate::types::StandbyInstances>,
 }
 impl RefreshPreferencesBuilder {
     /// <p>The amount of capacity in the Auto Scaling group that must pass your group's health checks to allow the operation to continue. The value is expressed as a percentage of the desired capacity of the Auto Scaling group (rounded up to the nearest integer). The default is <code>90</code>.</p>
     /// <p>Setting the minimum healthy percentage to 100 percent limits the rate of replacement to one instance at a time. In contrast, setting it to 0 percent has the effect of replacing all instances at the same time. </p>
     pub fn min_healthy_percentage(mut self, input: i32) -> Self {
-        self.min_healthy_percentage = Some(input);
+        self.min_healthy_percentage = ::std::option::Option::Some(input);
         self
     }
     /// <p>The amount of capacity in the Auto Scaling group that must pass your group's health checks to allow the operation to continue. The value is expressed as a percentage of the desired capacity of the Auto Scaling group (rounded up to the nearest integer). The default is <code>90</code>.</p>
     /// <p>Setting the minimum healthy percentage to 100 percent limits the rate of replacement to one instance at a time. In contrast, setting it to 0 percent has the effect of replacing all instances at the same time. </p>
-    pub fn set_min_healthy_percentage(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_min_healthy_percentage(mut self, input: ::std::option::Option<i32>) -> Self {
         self.min_healthy_percentage = input;
         self
     }
@@ -209,13 +212,13 @@ impl RefreshPreferencesBuilder {
     /// <p>This property is not required for normal usage. Instead, use the <code>DefaultInstanceWarmup</code> property of the Auto Scaling group. The <code>InstanceWarmup</code> and <code>DefaultInstanceWarmup</code> properties work the same way. Only specify this property if you must override the <code>DefaultInstanceWarmup</code> property. </p>
     /// <p> If you do not specify this property, the instance warmup by default is the value of the <code>DefaultInstanceWarmup</code> property, if defined (which is recommended in all cases), or the <code>HealthCheckGracePeriod</code> property otherwise.</p>
     pub fn instance_warmup(mut self, input: i32) -> Self {
-        self.instance_warmup = Some(input);
+        self.instance_warmup = ::std::option::Option::Some(input);
         self
     }
     /// <p>A time period, in seconds, during which an instance refresh waits before moving on to replacing the next instance after a new instance enters the <code>InService</code> state.</p>
     /// <p>This property is not required for normal usage. Instead, use the <code>DefaultInstanceWarmup</code> property of the Auto Scaling group. The <code>InstanceWarmup</code> and <code>DefaultInstanceWarmup</code> properties work the same way. Only specify this property if you must override the <code>DefaultInstanceWarmup</code> property. </p>
     /// <p> If you do not specify this property, the instance warmup by default is the value of the <code>DefaultInstanceWarmup</code> property, if defined (which is recommended in all cases), or the <code>HealthCheckGracePeriod</code> property otherwise.</p>
-    pub fn set_instance_warmup(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_instance_warmup(mut self, input: ::std::option::Option<i32>) -> Self {
         self.instance_warmup = input;
         self
     }
@@ -228,37 +231,37 @@ impl RefreshPreferencesBuilder {
     pub fn checkpoint_percentages(mut self, input: i32) -> Self {
         let mut v = self.checkpoint_percentages.unwrap_or_default();
         v.push(input);
-        self.checkpoint_percentages = Some(v);
+        self.checkpoint_percentages = ::std::option::Option::Some(v);
         self
     }
     /// <p>(Optional) Threshold values for each checkpoint in ascending order. Each number must be unique. To replace all instances in the Auto Scaling group, the last number in the array must be <code>100</code>.</p>
     /// <p>For usage examples, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-adding-checkpoints-instance-refresh.html">Adding checkpoints to an instance refresh</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     pub fn set_checkpoint_percentages(
         mut self,
-        input: std::option::Option<std::vec::Vec<i32>>,
+        input: ::std::option::Option<::std::vec::Vec<i32>>,
     ) -> Self {
         self.checkpoint_percentages = input;
         self
     }
     /// <p>(Optional) The amount of time, in seconds, to wait after a checkpoint before continuing. This property is optional, but if you specify a value for it, you must also specify a value for <code>CheckpointPercentages</code>. If you specify a value for <code>CheckpointPercentages</code> and not for <code>CheckpointDelay</code>, the <code>CheckpointDelay</code> defaults to <code>3600</code> (1 hour). </p>
     pub fn checkpoint_delay(mut self, input: i32) -> Self {
-        self.checkpoint_delay = Some(input);
+        self.checkpoint_delay = ::std::option::Option::Some(input);
         self
     }
     /// <p>(Optional) The amount of time, in seconds, to wait after a checkpoint before continuing. This property is optional, but if you specify a value for it, you must also specify a value for <code>CheckpointPercentages</code>. If you specify a value for <code>CheckpointPercentages</code> and not for <code>CheckpointDelay</code>, the <code>CheckpointDelay</code> defaults to <code>3600</code> (1 hour). </p>
-    pub fn set_checkpoint_delay(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_checkpoint_delay(mut self, input: ::std::option::Option<i32>) -> Self {
         self.checkpoint_delay = input;
         self
     }
     /// <p>(Optional) Indicates whether skip matching is enabled. If enabled (<code>true</code>), then Amazon EC2 Auto Scaling skips replacing instances that match the desired configuration. If no desired configuration is specified, then it skips replacing instances that have the same launch template and instance types that the Auto Scaling group was using before the start of the instance refresh. The default is <code>false</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh-skip-matching.html">Use an instance refresh with skip matching</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     pub fn skip_matching(mut self, input: bool) -> Self {
-        self.skip_matching = Some(input);
+        self.skip_matching = ::std::option::Option::Some(input);
         self
     }
     /// <p>(Optional) Indicates whether skip matching is enabled. If enabled (<code>true</code>), then Amazon EC2 Auto Scaling skips replacing instances that match the desired configuration. If no desired configuration is specified, then it skips replacing instances that have the same launch template and instance types that the Auto Scaling group was using before the start of the instance refresh. The default is <code>false</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh-skip-matching.html">Use an instance refresh with skip matching</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    pub fn set_skip_matching(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_skip_matching(mut self, input: ::std::option::Option<bool>) -> Self {
         self.skip_matching = input;
         self
     }
@@ -270,7 +273,7 @@ impl RefreshPreferencesBuilder {
     /// <li> <p>The Auto Scaling group uses the launch template's <code>$Latest</code> or <code>$Default</code> version.</p> </li>
     /// </ul>
     pub fn auto_rollback(mut self, input: bool) -> Self {
-        self.auto_rollback = Some(input);
+        self.auto_rollback = ::std::option::Option::Some(input);
         self
     }
     /// <p>(Optional) Indicates whether to roll back the Auto Scaling group to its previous configuration if the instance refresh fails. The default is <code>false</code>.</p>
@@ -280,7 +283,7 @@ impl RefreshPreferencesBuilder {
     /// <li> <p>The Auto Scaling group has a launch template that uses an Amazon Web Services Systems Manager parameter instead of an AMI ID for the <code>ImageId</code> property.</p> </li>
     /// <li> <p>The Auto Scaling group uses the launch template's <code>$Latest</code> or <code>$Default</code> version.</p> </li>
     /// </ul>
-    pub fn set_auto_rollback(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_auto_rollback(mut self, input: ::std::option::Option<bool>) -> Self {
         self.auto_rollback = input;
         self
     }
@@ -310,7 +313,7 @@ impl RefreshPreferencesBuilder {
         mut self,
         input: crate::types::ScaleInProtectedInstances,
     ) -> Self {
-        self.scale_in_protected_instances = Some(input);
+        self.scale_in_protected_instances = ::std::option::Option::Some(input);
         self
     }
     /// <p>Choose the behavior that you want Amazon EC2 Auto Scaling to use if instances protected from scale in are found. </p>
@@ -337,7 +340,7 @@ impl RefreshPreferencesBuilder {
     /// </dl>
     pub fn set_scale_in_protected_instances(
         mut self,
-        input: std::option::Option<crate::types::ScaleInProtectedInstances>,
+        input: ::std::option::Option<crate::types::ScaleInProtectedInstances>,
     ) -> Self {
         self.scale_in_protected_instances = input;
         self
@@ -365,7 +368,7 @@ impl RefreshPreferencesBuilder {
     /// </dd>
     /// </dl>
     pub fn standby_instances(mut self, input: crate::types::StandbyInstances) -> Self {
-        self.standby_instances = Some(input);
+        self.standby_instances = ::std::option::Option::Some(input);
         self
     }
     /// <p>Choose the behavior that you want Amazon EC2 Auto Scaling to use if instances in <code>Standby</code> state are found.</p>
@@ -392,7 +395,7 @@ impl RefreshPreferencesBuilder {
     /// </dl>
     pub fn set_standby_instances(
         mut self,
-        input: std::option::Option<crate::types::StandbyInstances>,
+        input: ::std::option::Option<crate::types::StandbyInstances>,
     ) -> Self {
         self.standby_instances = input;
         self

@@ -2,17 +2,17 @@
 
 /// <p>Stores the configuration information for the image classification problem of an AutoML job using the V2 API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImageClassificationJobConfig {
     /// <p>How long a job is allowed to run, or how many candidates a job is allowed to generate.</p>
     #[doc(hidden)]
-    pub completion_criteria: std::option::Option<crate::types::AutoMlJobCompletionCriteria>,
+    pub completion_criteria: ::std::option::Option<crate::types::AutoMlJobCompletionCriteria>,
 }
 impl ImageClassificationJobConfig {
     /// <p>How long a job is allowed to run, or how many candidates a job is allowed to generate.</p>
     pub fn completion_criteria(
         &self,
-    ) -> std::option::Option<&crate::types::AutoMlJobCompletionCriteria> {
+    ) -> ::std::option::Option<&crate::types::AutoMlJobCompletionCriteria> {
         self.completion_criteria.as_ref()
     }
 }
@@ -25,20 +25,23 @@ impl ImageClassificationJobConfig {
 
 /// A builder for [`ImageClassificationJobConfig`](crate::types::ImageClassificationJobConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ImageClassificationJobConfigBuilder {
-    pub(crate) completion_criteria: std::option::Option<crate::types::AutoMlJobCompletionCriteria>,
+    pub(crate) completion_criteria:
+        ::std::option::Option<crate::types::AutoMlJobCompletionCriteria>,
 }
 impl ImageClassificationJobConfigBuilder {
     /// <p>How long a job is allowed to run, or how many candidates a job is allowed to generate.</p>
     pub fn completion_criteria(mut self, input: crate::types::AutoMlJobCompletionCriteria) -> Self {
-        self.completion_criteria = Some(input);
+        self.completion_criteria = ::std::option::Option::Some(input);
         self
     }
     /// <p>How long a job is allowed to run, or how many candidates a job is allowed to generate.</p>
     pub fn set_completion_criteria(
         mut self,
-        input: std::option::Option<crate::types::AutoMlJobCompletionCriteria>,
+        input: ::std::option::Option<crate::types::AutoMlJobCompletionCriteria>,
     ) -> Self {
         self.completion_criteria = input;
         self

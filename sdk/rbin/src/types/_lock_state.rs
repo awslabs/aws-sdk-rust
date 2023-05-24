@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum LockState {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum LockState {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for LockState {
+impl ::std::convert::From<&str> for LockState {
     fn from(s: &str) -> Self {
         match s {
             "locked" => LockState::Locked,
@@ -67,11 +67,11 @@ impl std::convert::From<&str> for LockState {
         }
     }
 }
-impl std::str::FromStr for LockState {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for LockState {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LockState::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(LockState::from(s))
     }
 }
 impl LockState {
@@ -89,7 +89,7 @@ impl LockState {
         &["locked", "pending_unlock", "unlocked"]
     }
 }
-impl AsRef<str> for LockState {
+impl ::std::convert::AsRef<str> for LockState {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

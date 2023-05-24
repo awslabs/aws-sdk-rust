@@ -2,17 +2,17 @@
 
 /// <p>Describes the possible values for a configuration option.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConfigurationOptionDescription {
     /// <p>A unique namespace identifying the option's associated AWS resource.</p>
     #[doc(hidden)]
-    pub namespace: std::option::Option<std::string::String>,
+    pub namespace: ::std::option::Option<::std::string::String>,
     /// <p>The name of the configuration option.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The default value for this configuration option.</p>
     #[doc(hidden)]
-    pub default_value: std::option::Option<std::string::String>,
+    pub default_value: ::std::option::Option<::std::string::String>,
     /// <p>An indication of which action is required if the value for this configuration option changes:</p>
     /// <ul>
     /// <li> <p> <code>NoInterruption</code> : There is no interruption to the environment or application availability.</p> </li>
@@ -20,7 +20,7 @@ pub struct ConfigurationOptionDescription {
     /// <li> <p> <code>RestartApplicationServer</code> : The environment is available the entire time. However, a short application outage occurs when the application servers on the running Amazon EC2 instances are restarted.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub change_severity: std::option::Option<std::string::String>,
+    pub change_severity: ::std::option::Option<::std::string::String>,
     /// <p>An indication of whether the user defined this configuration option:</p>
     /// <ul>
     /// <li> <p> <code>true</code> : This configuration option was defined by the user. It is a valid choice for specifying if this as an <code>Option to Remove</code> when updating configuration settings. </p> </li>
@@ -29,7 +29,7 @@ pub struct ConfigurationOptionDescription {
     /// <p> Constraint: You can remove only <code>UserDefined</code> options from a configuration. </p>
     /// <p> Valid Values: <code>true</code> | <code>false</code> </p>
     #[doc(hidden)]
-    pub user_defined: std::option::Option<bool>,
+    pub user_defined: ::std::option::Option<bool>,
     /// <p>An indication of which type of values this option has and whether it is allowable to select one or more than one of the possible values:</p>
     /// <ul>
     /// <li> <p> <code>Scalar</code> : Values for this option are a single selection from the possible values, or an unformatted string, or numeric value governed by the <code>MIN/MAX/Regex</code> constraints.</p> </li>
@@ -38,34 +38,34 @@ pub struct ConfigurationOptionDescription {
     /// <li> <p> <code>Json</code> : Values for this option are a JSON representation of a <code>ConfigDocument</code>.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub value_type: std::option::Option<crate::types::ConfigurationOptionValueType>,
+    pub value_type: ::std::option::Option<crate::types::ConfigurationOptionValueType>,
     /// <p>If specified, values for the configuration option are selected from this list.</p>
     #[doc(hidden)]
-    pub value_options: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub value_options: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>If specified, the configuration option must be a numeric value greater than this value.</p>
     #[doc(hidden)]
-    pub min_value: std::option::Option<i32>,
+    pub min_value: ::std::option::Option<i32>,
     /// <p>If specified, the configuration option must be a numeric value less than this value.</p>
     #[doc(hidden)]
-    pub max_value: std::option::Option<i32>,
+    pub max_value: ::std::option::Option<i32>,
     /// <p>If specified, the configuration option must be a string value no longer than this value.</p>
     #[doc(hidden)]
-    pub max_length: std::option::Option<i32>,
+    pub max_length: ::std::option::Option<i32>,
     /// <p>If specified, the configuration option must be a string value that satisfies this regular expression.</p>
     #[doc(hidden)]
-    pub regex: std::option::Option<crate::types::OptionRestrictionRegex>,
+    pub regex: ::std::option::Option<crate::types::OptionRestrictionRegex>,
 }
 impl ConfigurationOptionDescription {
     /// <p>A unique namespace identifying the option's associated AWS resource.</p>
-    pub fn namespace(&self) -> std::option::Option<&str> {
+    pub fn namespace(&self) -> ::std::option::Option<&str> {
         self.namespace.as_deref()
     }
     /// <p>The name of the configuration option.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The default value for this configuration option.</p>
-    pub fn default_value(&self) -> std::option::Option<&str> {
+    pub fn default_value(&self) -> ::std::option::Option<&str> {
         self.default_value.as_deref()
     }
     /// <p>An indication of which action is required if the value for this configuration option changes:</p>
@@ -74,7 +74,7 @@ impl ConfigurationOptionDescription {
     /// <li> <p> <code>RestartEnvironment</code> : The environment is entirely restarted, all AWS resources are deleted and recreated, and the environment is unavailable during the process.</p> </li>
     /// <li> <p> <code>RestartApplicationServer</code> : The environment is available the entire time. However, a short application outage occurs when the application servers on the running Amazon EC2 instances are restarted.</p> </li>
     /// </ul>
-    pub fn change_severity(&self) -> std::option::Option<&str> {
+    pub fn change_severity(&self) -> ::std::option::Option<&str> {
         self.change_severity.as_deref()
     }
     /// <p>An indication of whether the user defined this configuration option:</p>
@@ -84,7 +84,7 @@ impl ConfigurationOptionDescription {
     /// </ul>
     /// <p> Constraint: You can remove only <code>UserDefined</code> options from a configuration. </p>
     /// <p> Valid Values: <code>true</code> | <code>false</code> </p>
-    pub fn user_defined(&self) -> std::option::Option<bool> {
+    pub fn user_defined(&self) -> ::std::option::Option<bool> {
         self.user_defined
     }
     /// <p>An indication of which type of values this option has and whether it is allowable to select one or more than one of the possible values:</p>
@@ -94,27 +94,27 @@ impl ConfigurationOptionDescription {
     /// <li> <p> <code>Boolean</code> : Values for this option are either <code>true</code> or <code>false</code> .</p> </li>
     /// <li> <p> <code>Json</code> : Values for this option are a JSON representation of a <code>ConfigDocument</code>.</p> </li>
     /// </ul>
-    pub fn value_type(&self) -> std::option::Option<&crate::types::ConfigurationOptionValueType> {
+    pub fn value_type(&self) -> ::std::option::Option<&crate::types::ConfigurationOptionValueType> {
         self.value_type.as_ref()
     }
     /// <p>If specified, values for the configuration option are selected from this list.</p>
-    pub fn value_options(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn value_options(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.value_options.as_deref()
     }
     /// <p>If specified, the configuration option must be a numeric value greater than this value.</p>
-    pub fn min_value(&self) -> std::option::Option<i32> {
+    pub fn min_value(&self) -> ::std::option::Option<i32> {
         self.min_value
     }
     /// <p>If specified, the configuration option must be a numeric value less than this value.</p>
-    pub fn max_value(&self) -> std::option::Option<i32> {
+    pub fn max_value(&self) -> ::std::option::Option<i32> {
         self.max_value
     }
     /// <p>If specified, the configuration option must be a string value no longer than this value.</p>
-    pub fn max_length(&self) -> std::option::Option<i32> {
+    pub fn max_length(&self) -> ::std::option::Option<i32> {
         self.max_length
     }
     /// <p>If specified, the configuration option must be a string value that satisfies this regular expression.</p>
-    pub fn regex(&self) -> std::option::Option<&crate::types::OptionRestrictionRegex> {
+    pub fn regex(&self) -> ::std::option::Option<&crate::types::OptionRestrictionRegex> {
         self.regex.as_ref()
     }
 }
@@ -127,48 +127,56 @@ impl ConfigurationOptionDescription {
 
 /// A builder for [`ConfigurationOptionDescription`](crate::types::ConfigurationOptionDescription).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ConfigurationOptionDescriptionBuilder {
-    pub(crate) namespace: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) default_value: std::option::Option<std::string::String>,
-    pub(crate) change_severity: std::option::Option<std::string::String>,
-    pub(crate) user_defined: std::option::Option<bool>,
-    pub(crate) value_type: std::option::Option<crate::types::ConfigurationOptionValueType>,
-    pub(crate) value_options: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) min_value: std::option::Option<i32>,
-    pub(crate) max_value: std::option::Option<i32>,
-    pub(crate) max_length: std::option::Option<i32>,
-    pub(crate) regex: std::option::Option<crate::types::OptionRestrictionRegex>,
+    pub(crate) namespace: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) default_value: ::std::option::Option<::std::string::String>,
+    pub(crate) change_severity: ::std::option::Option<::std::string::String>,
+    pub(crate) user_defined: ::std::option::Option<bool>,
+    pub(crate) value_type: ::std::option::Option<crate::types::ConfigurationOptionValueType>,
+    pub(crate) value_options: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) min_value: ::std::option::Option<i32>,
+    pub(crate) max_value: ::std::option::Option<i32>,
+    pub(crate) max_length: ::std::option::Option<i32>,
+    pub(crate) regex: ::std::option::Option<crate::types::OptionRestrictionRegex>,
 }
 impl ConfigurationOptionDescriptionBuilder {
     /// <p>A unique namespace identifying the option's associated AWS resource.</p>
-    pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
-        self.namespace = Some(input.into());
+    pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.namespace = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique namespace identifying the option's associated AWS resource.</p>
-    pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.namespace = input;
         self
     }
     /// <p>The name of the configuration option.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the configuration option.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The default value for this configuration option.</p>
-    pub fn default_value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.default_value = Some(input.into());
+    pub fn default_value(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.default_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The default value for this configuration option.</p>
-    pub fn set_default_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_default_value(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.default_value = input;
         self
     }
@@ -178,8 +186,11 @@ impl ConfigurationOptionDescriptionBuilder {
     /// <li> <p> <code>RestartEnvironment</code> : The environment is entirely restarted, all AWS resources are deleted and recreated, and the environment is unavailable during the process.</p> </li>
     /// <li> <p> <code>RestartApplicationServer</code> : The environment is available the entire time. However, a short application outage occurs when the application servers on the running Amazon EC2 instances are restarted.</p> </li>
     /// </ul>
-    pub fn change_severity(mut self, input: impl Into<std::string::String>) -> Self {
-        self.change_severity = Some(input.into());
+    pub fn change_severity(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.change_severity = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An indication of which action is required if the value for this configuration option changes:</p>
@@ -188,7 +199,10 @@ impl ConfigurationOptionDescriptionBuilder {
     /// <li> <p> <code>RestartEnvironment</code> : The environment is entirely restarted, all AWS resources are deleted and recreated, and the environment is unavailable during the process.</p> </li>
     /// <li> <p> <code>RestartApplicationServer</code> : The environment is available the entire time. However, a short application outage occurs when the application servers on the running Amazon EC2 instances are restarted.</p> </li>
     /// </ul>
-    pub fn set_change_severity(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_change_severity(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.change_severity = input;
         self
     }
@@ -200,7 +214,7 @@ impl ConfigurationOptionDescriptionBuilder {
     /// <p> Constraint: You can remove only <code>UserDefined</code> options from a configuration. </p>
     /// <p> Valid Values: <code>true</code> | <code>false</code> </p>
     pub fn user_defined(mut self, input: bool) -> Self {
-        self.user_defined = Some(input);
+        self.user_defined = ::std::option::Option::Some(input);
         self
     }
     /// <p>An indication of whether the user defined this configuration option:</p>
@@ -210,7 +224,7 @@ impl ConfigurationOptionDescriptionBuilder {
     /// </ul>
     /// <p> Constraint: You can remove only <code>UserDefined</code> options from a configuration. </p>
     /// <p> Valid Values: <code>true</code> | <code>false</code> </p>
-    pub fn set_user_defined(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_user_defined(mut self, input: ::std::option::Option<bool>) -> Self {
         self.user_defined = input;
         self
     }
@@ -222,7 +236,7 @@ impl ConfigurationOptionDescriptionBuilder {
     /// <li> <p> <code>Json</code> : Values for this option are a JSON representation of a <code>ConfigDocument</code>.</p> </li>
     /// </ul>
     pub fn value_type(mut self, input: crate::types::ConfigurationOptionValueType) -> Self {
-        self.value_type = Some(input);
+        self.value_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>An indication of which type of values this option has and whether it is allowable to select one or more than one of the possible values:</p>
@@ -234,7 +248,7 @@ impl ConfigurationOptionDescriptionBuilder {
     /// </ul>
     pub fn set_value_type(
         mut self,
-        input: std::option::Option<crate::types::ConfigurationOptionValueType>,
+        input: ::std::option::Option<crate::types::ConfigurationOptionValueType>,
     ) -> Self {
         self.value_type = input;
         self
@@ -244,59 +258,62 @@ impl ConfigurationOptionDescriptionBuilder {
     /// To override the contents of this collection use [`set_value_options`](Self::set_value_options).
     ///
     /// <p>If specified, values for the configuration option are selected from this list.</p>
-    pub fn value_options(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn value_options(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.value_options.unwrap_or_default();
         v.push(input.into());
-        self.value_options = Some(v);
+        self.value_options = ::std::option::Option::Some(v);
         self
     }
     /// <p>If specified, values for the configuration option are selected from this list.</p>
     pub fn set_value_options(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.value_options = input;
         self
     }
     /// <p>If specified, the configuration option must be a numeric value greater than this value.</p>
     pub fn min_value(mut self, input: i32) -> Self {
-        self.min_value = Some(input);
+        self.min_value = ::std::option::Option::Some(input);
         self
     }
     /// <p>If specified, the configuration option must be a numeric value greater than this value.</p>
-    pub fn set_min_value(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_min_value(mut self, input: ::std::option::Option<i32>) -> Self {
         self.min_value = input;
         self
     }
     /// <p>If specified, the configuration option must be a numeric value less than this value.</p>
     pub fn max_value(mut self, input: i32) -> Self {
-        self.max_value = Some(input);
+        self.max_value = ::std::option::Option::Some(input);
         self
     }
     /// <p>If specified, the configuration option must be a numeric value less than this value.</p>
-    pub fn set_max_value(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_value(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_value = input;
         self
     }
     /// <p>If specified, the configuration option must be a string value no longer than this value.</p>
     pub fn max_length(mut self, input: i32) -> Self {
-        self.max_length = Some(input);
+        self.max_length = ::std::option::Option::Some(input);
         self
     }
     /// <p>If specified, the configuration option must be a string value no longer than this value.</p>
-    pub fn set_max_length(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_length(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_length = input;
         self
     }
     /// <p>If specified, the configuration option must be a string value that satisfies this regular expression.</p>
     pub fn regex(mut self, input: crate::types::OptionRestrictionRegex) -> Self {
-        self.regex = Some(input);
+        self.regex = ::std::option::Option::Some(input);
         self
     }
     /// <p>If specified, the configuration option must be a string value that satisfies this regular expression.</p>
     pub fn set_regex(
         mut self,
-        input: std::option::Option<crate::types::OptionRestrictionRegex>,
+        input: ::std::option::Option<crate::types::OptionRestrictionRegex>,
     ) -> Self {
         self.regex = input;
         self

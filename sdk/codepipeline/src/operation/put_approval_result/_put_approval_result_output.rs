@@ -2,20 +2,20 @@
 
 /// <p>Represents the output of a <code>PutApprovalResult</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutApprovalResultOutput {
     /// <p>The timestamp showing when the approval or rejection was submitted.</p>
     #[doc(hidden)]
-    pub approved_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub approved_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
 impl PutApprovalResultOutput {
     /// <p>The timestamp showing when the approval or rejection was submitted.</p>
-    pub fn approved_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn approved_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.approved_at.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for PutApprovalResultOutput {
+impl ::aws_http::request_id::RequestId for PutApprovalResultOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,21 +30,23 @@ impl PutApprovalResultOutput {
 
 /// A builder for [`PutApprovalResultOutput`](crate::operation::put_approval_result::PutApprovalResultOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PutApprovalResultOutputBuilder {
-    pub(crate) approved_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) approved_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
 impl PutApprovalResultOutputBuilder {
     /// <p>The timestamp showing when the approval or rejection was submitted.</p>
-    pub fn approved_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.approved_at = Some(input);
+    pub fn approved_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.approved_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The timestamp showing when the approval or rejection was submitted.</p>
     pub fn set_approved_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.approved_at = input;
         self

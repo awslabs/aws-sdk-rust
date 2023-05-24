@@ -2,28 +2,28 @@
 
 /// <p>The action engine, or executor, related to the supported integration model used to create and update the action type. The available executor types are <code>Lambda</code> and <code>JobWorker</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExecutorConfiguration {
     /// <p>Details about the <code>Lambda</code> executor of the action type.</p>
     #[doc(hidden)]
     pub lambda_executor_configuration:
-        std::option::Option<crate::types::LambdaExecutorConfiguration>,
+        ::std::option::Option<crate::types::LambdaExecutorConfiguration>,
     /// <p>Details about the <code>JobWorker</code> executor of the action type.</p>
     #[doc(hidden)]
     pub job_worker_executor_configuration:
-        std::option::Option<crate::types::JobWorkerExecutorConfiguration>,
+        ::std::option::Option<crate::types::JobWorkerExecutorConfiguration>,
 }
 impl ExecutorConfiguration {
     /// <p>Details about the <code>Lambda</code> executor of the action type.</p>
     pub fn lambda_executor_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::LambdaExecutorConfiguration> {
+    ) -> ::std::option::Option<&crate::types::LambdaExecutorConfiguration> {
         self.lambda_executor_configuration.as_ref()
     }
     /// <p>Details about the <code>JobWorker</code> executor of the action type.</p>
     pub fn job_worker_executor_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::JobWorkerExecutorConfiguration> {
+    ) -> ::std::option::Option<&crate::types::JobWorkerExecutorConfiguration> {
         self.job_worker_executor_configuration.as_ref()
     }
 }
@@ -36,12 +36,14 @@ impl ExecutorConfiguration {
 
 /// A builder for [`ExecutorConfiguration`](crate::types::ExecutorConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ExecutorConfigurationBuilder {
     pub(crate) lambda_executor_configuration:
-        std::option::Option<crate::types::LambdaExecutorConfiguration>,
+        ::std::option::Option<crate::types::LambdaExecutorConfiguration>,
     pub(crate) job_worker_executor_configuration:
-        std::option::Option<crate::types::JobWorkerExecutorConfiguration>,
+        ::std::option::Option<crate::types::JobWorkerExecutorConfiguration>,
 }
 impl ExecutorConfigurationBuilder {
     /// <p>Details about the <code>Lambda</code> executor of the action type.</p>
@@ -49,13 +51,13 @@ impl ExecutorConfigurationBuilder {
         mut self,
         input: crate::types::LambdaExecutorConfiguration,
     ) -> Self {
-        self.lambda_executor_configuration = Some(input);
+        self.lambda_executor_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details about the <code>Lambda</code> executor of the action type.</p>
     pub fn set_lambda_executor_configuration(
         mut self,
-        input: std::option::Option<crate::types::LambdaExecutorConfiguration>,
+        input: ::std::option::Option<crate::types::LambdaExecutorConfiguration>,
     ) -> Self {
         self.lambda_executor_configuration = input;
         self
@@ -65,13 +67,13 @@ impl ExecutorConfigurationBuilder {
         mut self,
         input: crate::types::JobWorkerExecutorConfiguration,
     ) -> Self {
-        self.job_worker_executor_configuration = Some(input);
+        self.job_worker_executor_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details about the <code>JobWorker</code> executor of the action type.</p>
     pub fn set_job_worker_executor_configuration(
         mut self,
-        input: std::option::Option<crate::types::JobWorkerExecutorConfiguration>,
+        input: ::std::option::Option<crate::types::JobWorkerExecutorConfiguration>,
     ) -> Self {
         self.job_worker_executor_configuration = input;
         self

@@ -2,17 +2,17 @@
 
 /// <p>Represents a scheduled action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScheduledAction {
     /// <p>The name of the scheduled action.</p>
     #[doc(hidden)]
-    pub scheduled_action_name: std::option::Option<std::string::String>,
+    pub scheduled_action_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the scheduled action.</p>
     #[doc(hidden)]
-    pub scheduled_action_arn: std::option::Option<std::string::String>,
+    pub scheduled_action_arn: ::std::option::Option<::std::string::String>,
     /// <p>The namespace of the Amazon Web Services service that provides the resource, or a <code>custom-resource</code>.</p>
     #[doc(hidden)]
-    pub service_namespace: std::option::Option<crate::types::ServiceNamespace>,
+    pub service_namespace: ::std::option::Option<crate::types::ServiceNamespace>,
     /// <p>The schedule for this action. The following formats are supported:</p>
     /// <ul>
     /// <li> <p>At expressions - "<code>at(<i>yyyy</i>-<i>mm</i>-<i>dd</i>T<i>hh</i>:<i>mm</i>:<i>ss</i>)</code>"</p> </li>
@@ -25,10 +25,10 @@ pub struct ScheduledAction {
     /// <p>For rate expressions, <i>value</i> is a positive integer and <i>unit</i> is <code>minute</code> | <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code> | <code>days</code>.</p>
     /// <p>For more information and examples, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/examples-scheduled-actions.html">Example scheduled actions for Application Auto Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
     #[doc(hidden)]
-    pub schedule: std::option::Option<std::string::String>,
+    pub schedule: ::std::option::Option<::std::string::String>,
     /// <p>The time zone used when referring to the date and time of a scheduled action, when the scheduled action uses an at or cron expression.</p>
     #[doc(hidden)]
-    pub timezone: std::option::Option<std::string::String>,
+    pub timezone: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the resource associated with the scaling policy. This string consists of the resource type and unique identifier.</p>
     /// <ul>
     /// <li> <p>ECS service - The resource type is <code>service</code> and the unique identifier is the cluster name and service name. Example: <code>service/default/sample-webapp</code>.</p> </li>
@@ -50,7 +50,7 @@ pub struct ScheduledAction {
     /// <li> <p>SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub resource_id: std::option::Option<std::string::String>,
+    pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The scalable dimension. This string consists of the service namespace, resource type, and scaling property.</p>
     /// <ul>
     /// <li> <p> <code>ecs:service:DesiredCount</code> - The desired task count of an ECS service.</p> </li>
@@ -76,31 +76,31 @@ pub struct ScheduledAction {
     /// <li> <p> <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker Serverless endpoint.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub scalable_dimension: std::option::Option<crate::types::ScalableDimension>,
+    pub scalable_dimension: ::std::option::Option<crate::types::ScalableDimension>,
     /// <p>The date and time that the action is scheduled to begin, in UTC.</p>
     #[doc(hidden)]
-    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the action is scheduled to end, in UTC.</p>
     #[doc(hidden)]
-    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The new minimum and maximum capacity. You can set both values or just one. At the scheduled time, if the current capacity is below the minimum capacity, Application Auto Scaling scales out to the minimum capacity. If the current capacity is above the maximum capacity, Application Auto Scaling scales in to the maximum capacity.</p>
     #[doc(hidden)]
-    pub scalable_target_action: std::option::Option<crate::types::ScalableTargetAction>,
+    pub scalable_target_action: ::std::option::Option<crate::types::ScalableTargetAction>,
     /// <p>The date and time that the scheduled action was created.</p>
     #[doc(hidden)]
-    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ScheduledAction {
     /// <p>The name of the scheduled action.</p>
-    pub fn scheduled_action_name(&self) -> std::option::Option<&str> {
+    pub fn scheduled_action_name(&self) -> ::std::option::Option<&str> {
         self.scheduled_action_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the scheduled action.</p>
-    pub fn scheduled_action_arn(&self) -> std::option::Option<&str> {
+    pub fn scheduled_action_arn(&self) -> ::std::option::Option<&str> {
         self.scheduled_action_arn.as_deref()
     }
     /// <p>The namespace of the Amazon Web Services service that provides the resource, or a <code>custom-resource</code>.</p>
-    pub fn service_namespace(&self) -> std::option::Option<&crate::types::ServiceNamespace> {
+    pub fn service_namespace(&self) -> ::std::option::Option<&crate::types::ServiceNamespace> {
         self.service_namespace.as_ref()
     }
     /// <p>The schedule for this action. The following formats are supported:</p>
@@ -114,11 +114,11 @@ impl ScheduledAction {
     /// <p>The cron format consists of six fields separated by white spaces: [Minutes] [Hours] [Day_of_Month] [Month] [Day_of_Week] [Year].</p>
     /// <p>For rate expressions, <i>value</i> is a positive integer and <i>unit</i> is <code>minute</code> | <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code> | <code>days</code>.</p>
     /// <p>For more information and examples, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/examples-scheduled-actions.html">Example scheduled actions for Application Auto Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
-    pub fn schedule(&self) -> std::option::Option<&str> {
+    pub fn schedule(&self) -> ::std::option::Option<&str> {
         self.schedule.as_deref()
     }
     /// <p>The time zone used when referring to the date and time of a scheduled action, when the scheduled action uses an at or cron expression.</p>
-    pub fn timezone(&self) -> std::option::Option<&str> {
+    pub fn timezone(&self) -> ::std::option::Option<&str> {
         self.timezone.as_deref()
     }
     /// <p>The identifier of the resource associated with the scaling policy. This string consists of the resource type and unique identifier.</p>
@@ -141,7 +141,7 @@ impl ScheduledAction {
     /// <li> <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p> </li>
     /// <li> <p>SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li>
     /// </ul>
-    pub fn resource_id(&self) -> std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<&str> {
         self.resource_id.as_deref()
     }
     /// <p>The scalable dimension. This string consists of the service namespace, resource type, and scaling property.</p>
@@ -168,25 +168,25 @@ impl ScheduledAction {
     /// <li> <p> <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p> </li>
     /// <li> <p> <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker Serverless endpoint.</p> </li>
     /// </ul>
-    pub fn scalable_dimension(&self) -> std::option::Option<&crate::types::ScalableDimension> {
+    pub fn scalable_dimension(&self) -> ::std::option::Option<&crate::types::ScalableDimension> {
         self.scalable_dimension.as_ref()
     }
     /// <p>The date and time that the action is scheduled to begin, in UTC.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The date and time that the action is scheduled to end, in UTC.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The new minimum and maximum capacity. You can set both values or just one. At the scheduled time, if the current capacity is below the minimum capacity, Application Auto Scaling scales out to the minimum capacity. If the current capacity is above the maximum capacity, Application Auto Scaling scales in to the maximum capacity.</p>
     pub fn scalable_target_action(
         &self,
-    ) -> std::option::Option<&crate::types::ScalableTargetAction> {
+    ) -> ::std::option::Option<&crate::types::ScalableTargetAction> {
         self.scalable_target_action.as_ref()
     }
     /// <p>The date and time that the scheduled action was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
@@ -199,56 +199,64 @@ impl ScheduledAction {
 
 /// A builder for [`ScheduledAction`](crate::types::ScheduledAction).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ScheduledActionBuilder {
-    pub(crate) scheduled_action_name: std::option::Option<std::string::String>,
-    pub(crate) scheduled_action_arn: std::option::Option<std::string::String>,
-    pub(crate) service_namespace: std::option::Option<crate::types::ServiceNamespace>,
-    pub(crate) schedule: std::option::Option<std::string::String>,
-    pub(crate) timezone: std::option::Option<std::string::String>,
-    pub(crate) resource_id: std::option::Option<std::string::String>,
-    pub(crate) scalable_dimension: std::option::Option<crate::types::ScalableDimension>,
-    pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) scalable_target_action: std::option::Option<crate::types::ScalableTargetAction>,
-    pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) scheduled_action_name: ::std::option::Option<::std::string::String>,
+    pub(crate) scheduled_action_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) service_namespace: ::std::option::Option<crate::types::ServiceNamespace>,
+    pub(crate) schedule: ::std::option::Option<::std::string::String>,
+    pub(crate) timezone: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_id: ::std::option::Option<::std::string::String>,
+    pub(crate) scalable_dimension: ::std::option::Option<crate::types::ScalableDimension>,
+    pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) scalable_target_action: ::std::option::Option<crate::types::ScalableTargetAction>,
+    pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ScheduledActionBuilder {
     /// <p>The name of the scheduled action.</p>
-    pub fn scheduled_action_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.scheduled_action_name = Some(input.into());
+    pub fn scheduled_action_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.scheduled_action_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the scheduled action.</p>
     pub fn set_scheduled_action_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.scheduled_action_name = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the scheduled action.</p>
-    pub fn scheduled_action_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.scheduled_action_arn = Some(input.into());
+    pub fn scheduled_action_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.scheduled_action_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the scheduled action.</p>
     pub fn set_scheduled_action_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.scheduled_action_arn = input;
         self
     }
     /// <p>The namespace of the Amazon Web Services service that provides the resource, or a <code>custom-resource</code>.</p>
     pub fn service_namespace(mut self, input: crate::types::ServiceNamespace) -> Self {
-        self.service_namespace = Some(input);
+        self.service_namespace = ::std::option::Option::Some(input);
         self
     }
     /// <p>The namespace of the Amazon Web Services service that provides the resource, or a <code>custom-resource</code>.</p>
     pub fn set_service_namespace(
         mut self,
-        input: std::option::Option<crate::types::ServiceNamespace>,
+        input: ::std::option::Option<crate::types::ServiceNamespace>,
     ) -> Self {
         self.service_namespace = input;
         self
@@ -264,8 +272,8 @@ impl ScheduledActionBuilder {
     /// <p>The cron format consists of six fields separated by white spaces: [Minutes] [Hours] [Day_of_Month] [Month] [Day_of_Week] [Year].</p>
     /// <p>For rate expressions, <i>value</i> is a positive integer and <i>unit</i> is <code>minute</code> | <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code> | <code>days</code>.</p>
     /// <p>For more information and examples, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/examples-scheduled-actions.html">Example scheduled actions for Application Auto Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
-    pub fn schedule(mut self, input: impl Into<std::string::String>) -> Self {
-        self.schedule = Some(input.into());
+    pub fn schedule(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.schedule = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The schedule for this action. The following formats are supported:</p>
@@ -279,17 +287,17 @@ impl ScheduledActionBuilder {
     /// <p>The cron format consists of six fields separated by white spaces: [Minutes] [Hours] [Day_of_Month] [Month] [Day_of_Week] [Year].</p>
     /// <p>For rate expressions, <i>value</i> is a positive integer and <i>unit</i> is <code>minute</code> | <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code> | <code>days</code>.</p>
     /// <p>For more information and examples, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/examples-scheduled-actions.html">Example scheduled actions for Application Auto Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
-    pub fn set_schedule(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_schedule(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schedule = input;
         self
     }
     /// <p>The time zone used when referring to the date and time of a scheduled action, when the scheduled action uses an at or cron expression.</p>
-    pub fn timezone(mut self, input: impl Into<std::string::String>) -> Self {
-        self.timezone = Some(input.into());
+    pub fn timezone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.timezone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The time zone used when referring to the date and time of a scheduled action, when the scheduled action uses an at or cron expression.</p>
-    pub fn set_timezone(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_timezone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.timezone = input;
         self
     }
@@ -313,8 +321,8 @@ impl ScheduledActionBuilder {
     /// <li> <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p> </li>
     /// <li> <p>SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li>
     /// </ul>
-    pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_id = Some(input.into());
+    pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the resource associated with the scaling policy. This string consists of the resource type and unique identifier.</p>
@@ -337,7 +345,7 @@ impl ScheduledActionBuilder {
     /// <li> <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p> </li>
     /// <li> <p>SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li>
     /// </ul>
-    pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
     }
@@ -366,7 +374,7 @@ impl ScheduledActionBuilder {
     /// <li> <p> <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker Serverless endpoint.</p> </li>
     /// </ul>
     pub fn scalable_dimension(mut self, input: crate::types::ScalableDimension) -> Self {
-        self.scalable_dimension = Some(input);
+        self.scalable_dimension = ::std::option::Option::Some(input);
         self
     }
     /// <p>The scalable dimension. This string consists of the service namespace, resource type, and scaling property.</p>
@@ -395,56 +403,59 @@ impl ScheduledActionBuilder {
     /// </ul>
     pub fn set_scalable_dimension(
         mut self,
-        input: std::option::Option<crate::types::ScalableDimension>,
+        input: ::std::option::Option<crate::types::ScalableDimension>,
     ) -> Self {
         self.scalable_dimension = input;
         self
     }
     /// <p>The date and time that the action is scheduled to begin, in UTC.</p>
-    pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.start_time = Some(input);
+    pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.start_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time that the action is scheduled to begin, in UTC.</p>
     pub fn set_start_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.start_time = input;
         self
     }
     /// <p>The date and time that the action is scheduled to end, in UTC.</p>
-    pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.end_time = Some(input);
+    pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.end_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time that the action is scheduled to end, in UTC.</p>
-    pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_end_time(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
         self.end_time = input;
         self
     }
     /// <p>The new minimum and maximum capacity. You can set both values or just one. At the scheduled time, if the current capacity is below the minimum capacity, Application Auto Scaling scales out to the minimum capacity. If the current capacity is above the maximum capacity, Application Auto Scaling scales in to the maximum capacity.</p>
     pub fn scalable_target_action(mut self, input: crate::types::ScalableTargetAction) -> Self {
-        self.scalable_target_action = Some(input);
+        self.scalable_target_action = ::std::option::Option::Some(input);
         self
     }
     /// <p>The new minimum and maximum capacity. You can set both values or just one. At the scheduled time, if the current capacity is below the minimum capacity, Application Auto Scaling scales out to the minimum capacity. If the current capacity is above the maximum capacity, Application Auto Scaling scales in to the maximum capacity.</p>
     pub fn set_scalable_target_action(
         mut self,
-        input: std::option::Option<crate::types::ScalableTargetAction>,
+        input: ::std::option::Option<crate::types::ScalableTargetAction>,
     ) -> Self {
         self.scalable_target_action = input;
         self
     }
     /// <p>The date and time that the scheduled action was created.</p>
-    pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_time = Some(input);
+    pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time that the scheduled action was created.</p>
     pub fn set_creation_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_time = input;
         self

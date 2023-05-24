@@ -37,13 +37,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum AssessmentReportDestinationType {
     #[allow(missing_docs)] // documentation missing in model
@@ -51,7 +51,7 @@ pub enum AssessmentReportDestinationType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for AssessmentReportDestinationType {
+impl ::std::convert::From<&str> for AssessmentReportDestinationType {
     fn from(s: &str) -> Self {
         match s {
             "S3" => AssessmentReportDestinationType::S3,
@@ -61,11 +61,11 @@ impl std::convert::From<&str> for AssessmentReportDestinationType {
         }
     }
 }
-impl std::str::FromStr for AssessmentReportDestinationType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for AssessmentReportDestinationType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AssessmentReportDestinationType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(AssessmentReportDestinationType::from(s))
     }
 }
 impl AssessmentReportDestinationType {
@@ -81,7 +81,7 @@ impl AssessmentReportDestinationType {
         &["S3"]
     }
 }
-impl AsRef<str> for AssessmentReportDestinationType {
+impl ::std::convert::AsRef<str> for AssessmentReportDestinationType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

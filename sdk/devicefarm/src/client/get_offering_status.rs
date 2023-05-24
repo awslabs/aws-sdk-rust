@@ -4,7 +4,7 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::get_offering_status::builders::GetOfferingStatusFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::operation::get_offering_status::builders::GetOfferingStatusFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_offering_status::builders::GetOfferingStatusFluentBuilder::set_next_token): <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
+    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::get_offering_status::builders::GetOfferingStatusFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::get_offering_status::builders::GetOfferingStatusFluentBuilder::set_next_token): <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     /// - On success, responds with [`GetOfferingStatusOutput`](crate::operation::get_offering_status::GetOfferingStatusOutput) with field(s):
     ///   - [`current(Option<HashMap<String, OfferingStatus>>)`](crate::operation::get_offering_status::GetOfferingStatusOutput::current): <p>When specified, gets the offering status for the current period.</p>
     ///   - [`next_period(Option<HashMap<String, OfferingStatus>>)`](crate::operation::get_offering_status::GetOfferingStatusOutput::next_period): <p>When specified, gets the offering status for the next period.</p>

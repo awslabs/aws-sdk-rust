@@ -2,36 +2,36 @@
 
 /// <p>Statistics such as input rows and bytes read by the query, rows and bytes output by the query, and the number of rows written by the query.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QueryRuntimeStatisticsRows {
     /// <p>The number of rows read to execute the query.</p>
     #[doc(hidden)]
-    pub input_rows: std::option::Option<i64>,
+    pub input_rows: ::std::option::Option<i64>,
     /// <p>The number of bytes read to execute the query.</p>
     #[doc(hidden)]
-    pub input_bytes: std::option::Option<i64>,
+    pub input_bytes: ::std::option::Option<i64>,
     /// <p>The number of bytes returned by the query.</p>
     #[doc(hidden)]
-    pub output_bytes: std::option::Option<i64>,
+    pub output_bytes: ::std::option::Option<i64>,
     /// <p>The number of rows returned by the query.</p>
     #[doc(hidden)]
-    pub output_rows: std::option::Option<i64>,
+    pub output_rows: ::std::option::Option<i64>,
 }
 impl QueryRuntimeStatisticsRows {
     /// <p>The number of rows read to execute the query.</p>
-    pub fn input_rows(&self) -> std::option::Option<i64> {
+    pub fn input_rows(&self) -> ::std::option::Option<i64> {
         self.input_rows
     }
     /// <p>The number of bytes read to execute the query.</p>
-    pub fn input_bytes(&self) -> std::option::Option<i64> {
+    pub fn input_bytes(&self) -> ::std::option::Option<i64> {
         self.input_bytes
     }
     /// <p>The number of bytes returned by the query.</p>
-    pub fn output_bytes(&self) -> std::option::Option<i64> {
+    pub fn output_bytes(&self) -> ::std::option::Option<i64> {
         self.output_bytes
     }
     /// <p>The number of rows returned by the query.</p>
-    pub fn output_rows(&self) -> std::option::Option<i64> {
+    pub fn output_rows(&self) -> ::std::option::Option<i64> {
         self.output_rows
     }
 }
@@ -44,51 +44,53 @@ impl QueryRuntimeStatisticsRows {
 
 /// A builder for [`QueryRuntimeStatisticsRows`](crate::types::QueryRuntimeStatisticsRows).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct QueryRuntimeStatisticsRowsBuilder {
-    pub(crate) input_rows: std::option::Option<i64>,
-    pub(crate) input_bytes: std::option::Option<i64>,
-    pub(crate) output_bytes: std::option::Option<i64>,
-    pub(crate) output_rows: std::option::Option<i64>,
+    pub(crate) input_rows: ::std::option::Option<i64>,
+    pub(crate) input_bytes: ::std::option::Option<i64>,
+    pub(crate) output_bytes: ::std::option::Option<i64>,
+    pub(crate) output_rows: ::std::option::Option<i64>,
 }
 impl QueryRuntimeStatisticsRowsBuilder {
     /// <p>The number of rows read to execute the query.</p>
     pub fn input_rows(mut self, input: i64) -> Self {
-        self.input_rows = Some(input);
+        self.input_rows = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of rows read to execute the query.</p>
-    pub fn set_input_rows(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_input_rows(mut self, input: ::std::option::Option<i64>) -> Self {
         self.input_rows = input;
         self
     }
     /// <p>The number of bytes read to execute the query.</p>
     pub fn input_bytes(mut self, input: i64) -> Self {
-        self.input_bytes = Some(input);
+        self.input_bytes = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of bytes read to execute the query.</p>
-    pub fn set_input_bytes(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_input_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.input_bytes = input;
         self
     }
     /// <p>The number of bytes returned by the query.</p>
     pub fn output_bytes(mut self, input: i64) -> Self {
-        self.output_bytes = Some(input);
+        self.output_bytes = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of bytes returned by the query.</p>
-    pub fn set_output_bytes(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_output_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.output_bytes = input;
         self
     }
     /// <p>The number of rows returned by the query.</p>
     pub fn output_rows(mut self, input: i64) -> Self {
-        self.output_rows = Some(input);
+        self.output_rows = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of rows returned by the query.</p>
-    pub fn set_output_rows(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_output_rows(mut self, input: ::std::option::Option<i64>) -> Self {
         self.output_rows = input;
         self
     }

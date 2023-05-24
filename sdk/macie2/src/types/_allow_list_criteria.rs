@@ -2,22 +2,22 @@
 
 /// <p>Specifies the criteria for an allow list. The criteria must specify a regular expression (regex) or an S3 object (s3WordsList). It can't specify both.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AllowListCriteria {
     /// <p>The regular expression (<i>regex</i>) that defines the text pattern to ignore. The expression can contain as many as 512 characters.</p>
     #[doc(hidden)]
-    pub regex: std::option::Option<std::string::String>,
+    pub regex: ::std::option::Option<::std::string::String>,
     /// <p>The location and name of the S3 object that lists specific text to ignore.</p>
     #[doc(hidden)]
-    pub s3_words_list: std::option::Option<crate::types::S3WordsList>,
+    pub s3_words_list: ::std::option::Option<crate::types::S3WordsList>,
 }
 impl AllowListCriteria {
     /// <p>The regular expression (<i>regex</i>) that defines the text pattern to ignore. The expression can contain as many as 512 characters.</p>
-    pub fn regex(&self) -> std::option::Option<&str> {
+    pub fn regex(&self) -> ::std::option::Option<&str> {
         self.regex.as_deref()
     }
     /// <p>The location and name of the S3 object that lists specific text to ignore.</p>
-    pub fn s3_words_list(&self) -> std::option::Option<&crate::types::S3WordsList> {
+    pub fn s3_words_list(&self) -> ::std::option::Option<&crate::types::S3WordsList> {
         self.s3_words_list.as_ref()
     }
 }
@@ -30,31 +30,33 @@ impl AllowListCriteria {
 
 /// A builder for [`AllowListCriteria`](crate::types::AllowListCriteria).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AllowListCriteriaBuilder {
-    pub(crate) regex: std::option::Option<std::string::String>,
-    pub(crate) s3_words_list: std::option::Option<crate::types::S3WordsList>,
+    pub(crate) regex: ::std::option::Option<::std::string::String>,
+    pub(crate) s3_words_list: ::std::option::Option<crate::types::S3WordsList>,
 }
 impl AllowListCriteriaBuilder {
     /// <p>The regular expression (<i>regex</i>) that defines the text pattern to ignore. The expression can contain as many as 512 characters.</p>
-    pub fn regex(mut self, input: impl Into<std::string::String>) -> Self {
-        self.regex = Some(input.into());
+    pub fn regex(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.regex = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The regular expression (<i>regex</i>) that defines the text pattern to ignore. The expression can contain as many as 512 characters.</p>
-    pub fn set_regex(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_regex(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.regex = input;
         self
     }
     /// <p>The location and name of the S3 object that lists specific text to ignore.</p>
     pub fn s3_words_list(mut self, input: crate::types::S3WordsList) -> Self {
-        self.s3_words_list = Some(input);
+        self.s3_words_list = ::std::option::Option::Some(input);
         self
     }
     /// <p>The location and name of the S3 object that lists specific text to ignore.</p>
     pub fn set_s3_words_list(
         mut self,
-        input: std::option::Option<crate::types::S3WordsList>,
+        input: ::std::option::Option<crate::types::S3WordsList>,
     ) -> Self {
         self.s3_words_list = input;
         self

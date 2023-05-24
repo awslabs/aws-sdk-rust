@@ -9,56 +9,59 @@ pub use crate::operation::create_layer::_create_layer_input::CreateLayerInputBui
 /// <p>You should use <b>CreateLayer</b> for noncustom layer types such as PHP App Server only if the stack does not have an existing layer of that type. A stack can have at most one instance of each noncustom layer; if you attempt to create a second instance, <b>CreateLayer</b> fails. A stack can have an arbitrary number of custom layers, so you can call <b>CreateLayer</b> as many times as you like for that layer type.</p>
 /// </note>
 /// <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateLayerFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_layer::builders::CreateLayerInputBuilder,
 }
 impl CreateLayerFluentBuilder {
     /// Creates a new `CreateLayer`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_layer::CreateLayer,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_layer::CreateLayerError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_layer::CreateLayerError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_layer::CreateLayerOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_layer::CreateLayerError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_layer::CreateLayerError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -71,19 +74,19 @@ impl CreateLayerFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_layer::CreateLayerOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_layer::CreateLayerError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_layer::CreateLayerError>,
     > {
         self.send_middleware().await
     }
     /// <p>The layer stack ID.</p>
-    pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn stack_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stack_id(input.into());
         self
     }
     /// <p>The layer stack ID.</p>
-    pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_stack_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stack_id(input);
         self
     }
@@ -93,29 +96,29 @@ impl CreateLayerFluentBuilder {
         self
     }
     /// <p>The layer type. A stack cannot have more than one built-in layer of the same type. It can have any number of custom layers. Built-in layers are not available in Chef 12 stacks.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::LayerType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::LayerType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }
     /// <p>The layer name, which is used by the console.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// <p>The layer name, which is used by the console.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
     /// <p>For custom layers only, use this parameter to specify the layer's short name, which is used internally by AWS OpsWorks Stacks and by Chef recipes. The short name is also used as the name for the directory where your app files are installed. It can have a maximum of 200 characters, which are limited to the alphanumeric characters, '-', '_', and '.'.</p>
     /// <p>The built-in layers' short names are defined by AWS OpsWorks Stacks. For more information, see the <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a>.</p>
-    pub fn shortname(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn shortname(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.shortname(input.into());
         self
     }
     /// <p>For custom layers only, use this parameter to specify the layer's short name, which is used internally by AWS OpsWorks Stacks and by Chef recipes. The short name is also used as the name for the directory where your app files are installed. It can have a maximum of 200 characters, which are limited to the alphanumeric characters, '-', '_', and '.'.</p>
     /// <p>The built-in layers' short names are defined by AWS OpsWorks Stacks. For more information, see the <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a>.</p>
-    pub fn set_shortname(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_shortname(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_shortname(input);
         self
     }
@@ -128,7 +131,7 @@ impl CreateLayerFluentBuilder {
     pub fn attributes(
         mut self,
         k: crate::types::LayerAttributesKeys,
-        v: impl Into<std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.attributes(k, v.into());
         self
@@ -137,8 +140,8 @@ impl CreateLayerFluentBuilder {
     /// <p>To create a cluster layer, set the <code>EcsClusterArn</code> attribute to the cluster's ARN.</p>
     pub fn set_attributes(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<crate::types::LayerAttributesKeys, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<crate::types::LayerAttributesKeys, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_attributes(input);
@@ -155,31 +158,34 @@ impl CreateLayerFluentBuilder {
     /// <p>Specifies CloudWatch Logs configuration options for the layer. For more information, see <code>CloudWatchLogsLogStream</code>.</p>
     pub fn set_cloud_watch_logs_configuration(
         mut self,
-        input: std::option::Option<crate::types::CloudWatchLogsConfiguration>,
+        input: ::std::option::Option<crate::types::CloudWatchLogsConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_cloud_watch_logs_configuration(input);
         self
     }
     /// <p>The ARN of an IAM profile to be used for the layer's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
-    pub fn custom_instance_profile_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn custom_instance_profile_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.custom_instance_profile_arn(input.into());
         self
     }
     /// <p>The ARN of an IAM profile to be used for the layer's EC2 instances. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
     pub fn set_custom_instance_profile_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_custom_instance_profile_arn(input);
         self
     }
     /// <p>A JSON-formatted string containing custom stack configuration and deployment attributes to be installed on the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html"> Using Custom JSON</a>. This feature is supported as of version 1.7.42 of the AWS CLI. </p>
-    pub fn custom_json(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn custom_json(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.custom_json(input.into());
         self
     }
     /// <p>A JSON-formatted string containing custom stack configuration and deployment attributes to be installed on the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html"> Using Custom JSON</a>. This feature is supported as of version 1.7.42 of the AWS CLI. </p>
-    pub fn set_custom_json(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_custom_json(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_custom_json(input);
         self
     }
@@ -188,14 +194,17 @@ impl CreateLayerFluentBuilder {
     /// To override the contents of this collection use [`set_custom_security_group_ids`](Self::set_custom_security_group_ids).
     ///
     /// <p>An array containing the layer custom security group IDs.</p>
-    pub fn custom_security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn custom_security_group_ids(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.custom_security_group_ids(input.into());
         self
     }
     /// <p>An array containing the layer custom security group IDs.</p>
     pub fn set_custom_security_group_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_custom_security_group_ids(input);
         self
@@ -205,14 +214,14 @@ impl CreateLayerFluentBuilder {
     /// To override the contents of this collection use [`set_packages`](Self::set_packages).
     ///
     /// <p>An array of <code>Package</code> objects that describes the layer packages.</p>
-    pub fn packages(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn packages(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.packages(input.into());
         self
     }
     /// <p>An array of <code>Package</code> objects that describes the layer packages.</p>
     pub fn set_packages(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_packages(input);
         self
@@ -229,7 +238,7 @@ impl CreateLayerFluentBuilder {
     /// <p>A <code>VolumeConfigurations</code> object that describes the layer's Amazon EBS volumes.</p>
     pub fn set_volume_configurations(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::VolumeConfiguration>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::VolumeConfiguration>>,
     ) -> Self {
         self.inner = self.inner.set_volume_configurations(input);
         self
@@ -240,7 +249,7 @@ impl CreateLayerFluentBuilder {
         self
     }
     /// <p>Whether to disable auto healing for the layer.</p>
-    pub fn set_enable_auto_healing(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enable_auto_healing(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enable_auto_healing(input);
         self
     }
@@ -250,7 +259,7 @@ impl CreateLayerFluentBuilder {
         self
     }
     /// <p>Whether to automatically assign an <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address</a> to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a>.</p>
-    pub fn set_auto_assign_elastic_ips(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_auto_assign_elastic_ips(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_auto_assign_elastic_ips(input);
         self
     }
@@ -260,7 +269,7 @@ impl CreateLayerFluentBuilder {
         self
     }
     /// <p>For stacks that are running in a VPC, whether to automatically assign a public IP address to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a>.</p>
-    pub fn set_auto_assign_public_ips(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_auto_assign_public_ips(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_auto_assign_public_ips(input);
         self
     }
@@ -270,7 +279,10 @@ impl CreateLayerFluentBuilder {
         self
     }
     /// <p>A <code>LayerCustomRecipes</code> object that specifies the layer custom recipes.</p>
-    pub fn set_custom_recipes(mut self, input: std::option::Option<crate::types::Recipes>) -> Self {
+    pub fn set_custom_recipes(
+        mut self,
+        input: ::std::option::Option<crate::types::Recipes>,
+    ) -> Self {
         self.inner = self.inner.set_custom_recipes(input);
         self
     }
@@ -284,7 +296,7 @@ impl CreateLayerFluentBuilder {
     /// <p>Whether to install operating system and package updates when the instance boots. The default value is <code>true</code>. To control when updates are installed, set this value to <code>false</code>. You must then update your instances manually by using <code>CreateDeployment</code> to run the <code>update_dependencies</code> stack command or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
     /// <p>To ensure that your instances have the latest security updates, we strongly recommend using the default value of <code>true</code>.</p>
     /// </note>
-    pub fn set_install_updates_on_boot(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_install_updates_on_boot(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_install_updates_on_boot(input);
         self
     }
@@ -294,7 +306,7 @@ impl CreateLayerFluentBuilder {
         self
     }
     /// <p>Whether to use Amazon EBS-optimized instances.</p>
-    pub fn set_use_ebs_optimized_instances(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_use_ebs_optimized_instances(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_use_ebs_optimized_instances(input);
         self
     }
@@ -309,7 +321,7 @@ impl CreateLayerFluentBuilder {
     /// <p>A <code>LifeCycleEventConfiguration</code> object that you can use to configure the Shutdown event to specify an execution timeout and enable or disable Elastic Load Balancer connection draining.</p>
     pub fn set_lifecycle_event_configuration(
         mut self,
-        input: std::option::Option<crate::types::LifecycleEventConfiguration>,
+        input: ::std::option::Option<crate::types::LifecycleEventConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_lifecycle_event_configuration(input);
         self

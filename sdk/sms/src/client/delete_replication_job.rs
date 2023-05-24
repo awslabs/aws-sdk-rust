@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteReplicationJob`](crate::operation::delete_replication_job::builders::DeleteReplicationJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`replication_job_id(impl Into<String>)`](crate::operation::delete_replication_job::builders::DeleteReplicationJobFluentBuilder::replication_job_id) / [`set_replication_job_id(Option<String>)`](crate::operation::delete_replication_job::builders::DeleteReplicationJobFluentBuilder::set_replication_job_id): <p>The ID of the replication job.</p>
+    ///   - [`replication_job_id(impl ::std::convert::Into<String>)`](crate::operation::delete_replication_job::builders::DeleteReplicationJobFluentBuilder::replication_job_id) / [`set_replication_job_id(Option<String>)`](crate::operation::delete_replication_job::builders::DeleteReplicationJobFluentBuilder::set_replication_job_id): <p>The ID of the replication job.</p>
     /// - On success, responds with [`DeleteReplicationJobOutput`](crate::operation::delete_replication_job::DeleteReplicationJobOutput)
     /// - On failure, responds with [`SdkError<DeleteReplicationJobError>`](crate::operation::delete_replication_job::DeleteReplicationJobError)
     pub fn delete_replication_job(

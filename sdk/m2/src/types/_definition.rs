@@ -2,12 +2,12 @@
 
 /// <p>The application definition for a particular application. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum Definition {
     /// <p>The content of the application definition. This is a JSON object that contains the resource configuration/definitions that identify an application.</p>
-    Content(std::string::String),
+    Content(::std::string::String),
     /// <p>The S3 bucket that contains the application definition.</p>
-    S3Location(std::string::String),
+    S3Location(::std::string::String),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -19,26 +19,26 @@ pub enum Definition {
     Unknown,
 }
 impl Definition {
-    /// Tries to convert the enum instance into [`Content`](crate::types::Definition::Content), extracting the inner [`String`](std::string::String).
+    /// Tries to convert the enum instance into [`Content`](crate::types::Definition::Content), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_content(&self) -> std::result::Result<&std::string::String, &Self> {
+    pub fn as_content(&self) -> ::std::result::Result<&::std::string::String, &Self> {
         if let Definition::Content(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Content`](crate::types::Definition::Content).
     pub fn is_content(&self) -> bool {
         self.as_content().is_ok()
     }
-    /// Tries to convert the enum instance into [`S3Location`](crate::types::Definition::S3Location), extracting the inner [`String`](std::string::String).
+    /// Tries to convert the enum instance into [`S3Location`](crate::types::Definition::S3Location), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_s3_location(&self) -> std::result::Result<&std::string::String, &Self> {
+    pub fn as_s3_location(&self) -> ::std::result::Result<&::std::string::String, &Self> {
         if let Definition::S3Location(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`S3Location`](crate::types::Definition::S3Location).

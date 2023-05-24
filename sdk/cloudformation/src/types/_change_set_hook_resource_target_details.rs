@@ -2,29 +2,29 @@
 
 /// <p>Specifies <code>RESOURCE</code> type target details for activated hooks.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChangeSetHookResourceTargetDetails {
     /// <p>The resource's logical ID, which is defined in the stack's template.</p>
     #[doc(hidden)]
-    pub logical_resource_id: std::option::Option<std::string::String>,
+    pub logical_resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of CloudFormation resource, such as <code>AWS::S3::Bucket</code>.</p>
     #[doc(hidden)]
-    pub resource_type: std::option::Option<std::string::String>,
+    pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the action of the resource.</p>
     #[doc(hidden)]
-    pub resource_action: std::option::Option<crate::types::ChangeAction>,
+    pub resource_action: ::std::option::Option<crate::types::ChangeAction>,
 }
 impl ChangeSetHookResourceTargetDetails {
     /// <p>The resource's logical ID, which is defined in the stack's template.</p>
-    pub fn logical_resource_id(&self) -> std::option::Option<&str> {
+    pub fn logical_resource_id(&self) -> ::std::option::Option<&str> {
         self.logical_resource_id.as_deref()
     }
     /// <p>The type of CloudFormation resource, such as <code>AWS::S3::Bucket</code>.</p>
-    pub fn resource_type(&self) -> std::option::Option<&str> {
+    pub fn resource_type(&self) -> ::std::option::Option<&str> {
         self.resource_type.as_deref()
     }
     /// <p>Specifies the action of the resource.</p>
-    pub fn resource_action(&self) -> std::option::Option<&crate::types::ChangeAction> {
+    pub fn resource_action(&self) -> ::std::option::Option<&crate::types::ChangeAction> {
         self.resource_action.as_ref()
     }
 }
@@ -37,45 +37,56 @@ impl ChangeSetHookResourceTargetDetails {
 
 /// A builder for [`ChangeSetHookResourceTargetDetails`](crate::types::ChangeSetHookResourceTargetDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ChangeSetHookResourceTargetDetailsBuilder {
-    pub(crate) logical_resource_id: std::option::Option<std::string::String>,
-    pub(crate) resource_type: std::option::Option<std::string::String>,
-    pub(crate) resource_action: std::option::Option<crate::types::ChangeAction>,
+    pub(crate) logical_resource_id: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_type: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_action: ::std::option::Option<crate::types::ChangeAction>,
 }
 impl ChangeSetHookResourceTargetDetailsBuilder {
     /// <p>The resource's logical ID, which is defined in the stack's template.</p>
-    pub fn logical_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.logical_resource_id = Some(input.into());
+    pub fn logical_resource_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.logical_resource_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The resource's logical ID, which is defined in the stack's template.</p>
     pub fn set_logical_resource_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.logical_resource_id = input;
         self
     }
     /// <p>The type of CloudFormation resource, such as <code>AWS::S3::Bucket</code>.</p>
-    pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_type = Some(input.into());
+    pub fn resource_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of CloudFormation resource, such as <code>AWS::S3::Bucket</code>.</p>
-    pub fn set_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.resource_type = input;
         self
     }
     /// <p>Specifies the action of the resource.</p>
     pub fn resource_action(mut self, input: crate::types::ChangeAction) -> Self {
-        self.resource_action = Some(input);
+        self.resource_action = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the action of the resource.</p>
     pub fn set_resource_action(
         mut self,
-        input: std::option::Option<crate::types::ChangeAction>,
+        input: ::std::option::Option<crate::types::ChangeAction>,
     ) -> Self {
         self.resource_action = input;
         self

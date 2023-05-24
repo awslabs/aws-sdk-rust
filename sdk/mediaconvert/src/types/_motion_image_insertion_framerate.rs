@@ -2,22 +2,22 @@
 
 /// For motion overlays that don't have a built-in frame rate, specify the frame rate of the overlay in frames per second, as a fraction. For example, specify 24 fps as 24/1. The overlay frame rate doesn't need to match the frame rate of the underlying video.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MotionImageInsertionFramerate {
     /// The bottom of the fraction that expresses your overlay frame rate. For example, if your frame rate is 24 fps, set this value to 1.
     #[doc(hidden)]
-    pub framerate_denominator: std::option::Option<i32>,
+    pub framerate_denominator: ::std::option::Option<i32>,
     /// The top of the fraction that expresses your overlay frame rate. For example, if your frame rate is 24 fps, set this value to 24.
     #[doc(hidden)]
-    pub framerate_numerator: std::option::Option<i32>,
+    pub framerate_numerator: ::std::option::Option<i32>,
 }
 impl MotionImageInsertionFramerate {
     /// The bottom of the fraction that expresses your overlay frame rate. For example, if your frame rate is 24 fps, set this value to 1.
-    pub fn framerate_denominator(&self) -> std::option::Option<i32> {
+    pub fn framerate_denominator(&self) -> ::std::option::Option<i32> {
         self.framerate_denominator
     }
     /// The top of the fraction that expresses your overlay frame rate. For example, if your frame rate is 24 fps, set this value to 24.
-    pub fn framerate_numerator(&self) -> std::option::Option<i32> {
+    pub fn framerate_numerator(&self) -> ::std::option::Option<i32> {
         self.framerate_numerator
     }
 }
@@ -30,29 +30,31 @@ impl MotionImageInsertionFramerate {
 
 /// A builder for [`MotionImageInsertionFramerate`](crate::types::MotionImageInsertionFramerate).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MotionImageInsertionFramerateBuilder {
-    pub(crate) framerate_denominator: std::option::Option<i32>,
-    pub(crate) framerate_numerator: std::option::Option<i32>,
+    pub(crate) framerate_denominator: ::std::option::Option<i32>,
+    pub(crate) framerate_numerator: ::std::option::Option<i32>,
 }
 impl MotionImageInsertionFramerateBuilder {
     /// The bottom of the fraction that expresses your overlay frame rate. For example, if your frame rate is 24 fps, set this value to 1.
     pub fn framerate_denominator(mut self, input: i32) -> Self {
-        self.framerate_denominator = Some(input);
+        self.framerate_denominator = ::std::option::Option::Some(input);
         self
     }
     /// The bottom of the fraction that expresses your overlay frame rate. For example, if your frame rate is 24 fps, set this value to 1.
-    pub fn set_framerate_denominator(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_framerate_denominator(mut self, input: ::std::option::Option<i32>) -> Self {
         self.framerate_denominator = input;
         self
     }
     /// The top of the fraction that expresses your overlay frame rate. For example, if your frame rate is 24 fps, set this value to 24.
     pub fn framerate_numerator(mut self, input: i32) -> Self {
-        self.framerate_numerator = Some(input);
+        self.framerate_numerator = ::std::option::Option::Some(input);
         self
     }
     /// The top of the fraction that expresses your overlay frame rate. For example, if your frame rate is 24 fps, set this value to 24.
-    pub fn set_framerate_numerator(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_framerate_numerator(mut self, input: ::std::option::Option<i32>) -> Self {
         self.framerate_numerator = input;
         self
     }

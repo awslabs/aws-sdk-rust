@@ -2,12 +2,12 @@
 
 /// <p>The filter used to describe a set of objects for analyses. A filter must have exactly one prefix, one tag, or one conjunction (AnalyticsAndOperator). If no filter is provided, all objects will be considered in any analysis.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum AnalyticsFilter {
     /// <p>A conjunction (logical AND) of predicates, which is used in evaluating an analytics filter. The operator must have at least two predicates.</p>
     And(crate::types::AnalyticsAndOperator),
     /// <p>The prefix to use when evaluating an analytics filter.</p>
-    Prefix(std::string::String),
+    Prefix(::std::string::String),
     /// <p>The tag to use when evaluating an analytics filter.</p>
     Tag(crate::types::Tag),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -23,24 +23,24 @@ pub enum AnalyticsFilter {
 impl AnalyticsFilter {
     /// Tries to convert the enum instance into [`And`](crate::types::AnalyticsFilter::And), extracting the inner [`AnalyticsAndOperator`](crate::types::AnalyticsAndOperator).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_and(&self) -> std::result::Result<&crate::types::AnalyticsAndOperator, &Self> {
+    pub fn as_and(&self) -> ::std::result::Result<&crate::types::AnalyticsAndOperator, &Self> {
         if let AnalyticsFilter::And(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`And`](crate::types::AnalyticsFilter::And).
     pub fn is_and(&self) -> bool {
         self.as_and().is_ok()
     }
-    /// Tries to convert the enum instance into [`Prefix`](crate::types::AnalyticsFilter::Prefix), extracting the inner [`String`](std::string::String).
+    /// Tries to convert the enum instance into [`Prefix`](crate::types::AnalyticsFilter::Prefix), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_prefix(&self) -> std::result::Result<&std::string::String, &Self> {
+    pub fn as_prefix(&self) -> ::std::result::Result<&::std::string::String, &Self> {
         if let AnalyticsFilter::Prefix(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Prefix`](crate::types::AnalyticsFilter::Prefix).
@@ -49,11 +49,11 @@ impl AnalyticsFilter {
     }
     /// Tries to convert the enum instance into [`Tag`](crate::types::AnalyticsFilter::Tag), extracting the inner [`Tag`](crate::types::Tag).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_tag(&self) -> std::result::Result<&crate::types::Tag, &Self> {
+    pub fn as_tag(&self) -> ::std::result::Result<&crate::types::Tag, &Self> {
         if let AnalyticsFilter::Tag(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Tag`](crate::types::AnalyticsFilter::Tag).

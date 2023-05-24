@@ -4,36 +4,36 @@
 /// <p>To receive notifications, you must also subscribe to the new topic in the Amazon SNS console.</p>
 /// </important>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Notifications {
     /// <p>The Amazon Simple Notification Service (Amazon SNS) topic that you want to notify when Elastic Transcoder has started to process the job.</p>
     #[doc(hidden)]
-    pub progressing: std::option::Option<std::string::String>,
+    pub progressing: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon SNS topic that you want to notify when Elastic Transcoder has finished processing the job.</p>
     #[doc(hidden)]
-    pub completed: std::option::Option<std::string::String>,
+    pub completed: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon SNS topic that you want to notify when Elastic Transcoder encounters a warning condition.</p>
     #[doc(hidden)]
-    pub warning: std::option::Option<std::string::String>,
+    pub warning: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon SNS topic that you want to notify when Elastic Transcoder encounters an error condition.</p>
     #[doc(hidden)]
-    pub error: std::option::Option<std::string::String>,
+    pub error: ::std::option::Option<::std::string::String>,
 }
 impl Notifications {
     /// <p>The Amazon Simple Notification Service (Amazon SNS) topic that you want to notify when Elastic Transcoder has started to process the job.</p>
-    pub fn progressing(&self) -> std::option::Option<&str> {
+    pub fn progressing(&self) -> ::std::option::Option<&str> {
         self.progressing.as_deref()
     }
     /// <p>The Amazon SNS topic that you want to notify when Elastic Transcoder has finished processing the job.</p>
-    pub fn completed(&self) -> std::option::Option<&str> {
+    pub fn completed(&self) -> ::std::option::Option<&str> {
         self.completed.as_deref()
     }
     /// <p>The Amazon SNS topic that you want to notify when Elastic Transcoder encounters a warning condition.</p>
-    pub fn warning(&self) -> std::option::Option<&str> {
+    pub fn warning(&self) -> ::std::option::Option<&str> {
         self.warning.as_deref()
     }
     /// <p>The Amazon SNS topic that you want to notify when Elastic Transcoder encounters an error condition.</p>
-    pub fn error(&self) -> std::option::Option<&str> {
+    pub fn error(&self) -> ::std::option::Option<&str> {
         self.error.as_deref()
     }
 }
@@ -46,51 +46,53 @@ impl Notifications {
 
 /// A builder for [`Notifications`](crate::types::Notifications).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NotificationsBuilder {
-    pub(crate) progressing: std::option::Option<std::string::String>,
-    pub(crate) completed: std::option::Option<std::string::String>,
-    pub(crate) warning: std::option::Option<std::string::String>,
-    pub(crate) error: std::option::Option<std::string::String>,
+    pub(crate) progressing: ::std::option::Option<::std::string::String>,
+    pub(crate) completed: ::std::option::Option<::std::string::String>,
+    pub(crate) warning: ::std::option::Option<::std::string::String>,
+    pub(crate) error: ::std::option::Option<::std::string::String>,
 }
 impl NotificationsBuilder {
     /// <p>The Amazon Simple Notification Service (Amazon SNS) topic that you want to notify when Elastic Transcoder has started to process the job.</p>
-    pub fn progressing(mut self, input: impl Into<std::string::String>) -> Self {
-        self.progressing = Some(input.into());
+    pub fn progressing(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.progressing = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Simple Notification Service (Amazon SNS) topic that you want to notify when Elastic Transcoder has started to process the job.</p>
-    pub fn set_progressing(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_progressing(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.progressing = input;
         self
     }
     /// <p>The Amazon SNS topic that you want to notify when Elastic Transcoder has finished processing the job.</p>
-    pub fn completed(mut self, input: impl Into<std::string::String>) -> Self {
-        self.completed = Some(input.into());
+    pub fn completed(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.completed = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon SNS topic that you want to notify when Elastic Transcoder has finished processing the job.</p>
-    pub fn set_completed(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_completed(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.completed = input;
         self
     }
     /// <p>The Amazon SNS topic that you want to notify when Elastic Transcoder encounters a warning condition.</p>
-    pub fn warning(mut self, input: impl Into<std::string::String>) -> Self {
-        self.warning = Some(input.into());
+    pub fn warning(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.warning = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon SNS topic that you want to notify when Elastic Transcoder encounters a warning condition.</p>
-    pub fn set_warning(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_warning(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.warning = input;
         self
     }
     /// <p>The Amazon SNS topic that you want to notify when Elastic Transcoder encounters an error condition.</p>
-    pub fn error(mut self, input: impl Into<std::string::String>) -> Self {
-        self.error = Some(input.into());
+    pub fn error(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.error = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon SNS topic that you want to notify when Elastic Transcoder encounters an error condition.</p>
-    pub fn set_error(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_error(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error = input;
         self
     }

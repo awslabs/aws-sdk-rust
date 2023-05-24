@@ -7,56 +7,63 @@ pub use crate::operation::create_dashboard::_create_dashboard_input::CreateDashb
 ///
 /// <p>Creates a dashboard from either a template or directly with a <code>DashboardDefinition</code>. To first create a template, see the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a> </code> API operation.</p>
 /// <p>A dashboard is an entity in Amazon QuickSight that identifies Amazon QuickSight reports, created from analyses. You can share Amazon QuickSight dashboards. With the right permissions, you can create scheduled email reports from them. If you have the correct permissions, you can create a dashboard from a template that exists in a different Amazon Web Services account.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateDashboardFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_dashboard::builders::CreateDashboardInputBuilder,
 }
 impl CreateDashboardFluentBuilder {
     /// Creates a new `CreateDashboard`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_dashboard::CreateDashboard,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_dashboard::CreateDashboardError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_dashboard::CreateDashboardError,
+        >,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_dashboard::CreateDashboardOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_dashboard::CreateDashboardError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_dashboard::CreateDashboardError,
+        >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -69,39 +76,47 @@ impl CreateDashboardFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_dashboard::CreateDashboardOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_dashboard::CreateDashboardError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_dashboard::CreateDashboardError,
+        >,
     > {
         self.send_middleware().await
     }
     /// <p>The ID of the Amazon Web Services account where you want to create the dashboard.</p>
-    pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn aws_account_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account where you want to create the dashboard.</p>
-    pub fn set_aws_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_aws_account_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
     /// <p>The ID for the dashboard, also added to the IAM policy.</p>
-    pub fn dashboard_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn dashboard_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.dashboard_id(input.into());
         self
     }
     /// <p>The ID for the dashboard, also added to the IAM policy.</p>
-    pub fn set_dashboard_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_dashboard_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_dashboard_id(input);
         self
     }
     /// <p>The display name of the dashboard.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// <p>The display name of the dashboard.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
@@ -111,7 +126,10 @@ impl CreateDashboardFluentBuilder {
         self
     }
     /// <p>The parameters for the creation of the dashboard, which you want to use to override the default settings. A dashboard can have any type of parameters, and some parameters might accept multiple values. </p>
-    pub fn set_parameters(mut self, input: std::option::Option<crate::types::Parameters>) -> Self {
+    pub fn set_parameters(
+        mut self,
+        input: ::std::option::Option<crate::types::Parameters>,
+    ) -> Self {
         self.inner = self.inner.set_parameters(input);
         self
     }
@@ -129,7 +147,7 @@ impl CreateDashboardFluentBuilder {
     /// <p>To specify no permissions, omit the permissions list.</p>
     pub fn set_permissions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ResourcePermission>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourcePermission>>,
     ) -> Self {
         self.inner = self.inner.set_permissions(input);
         self
@@ -146,7 +164,7 @@ impl CreateDashboardFluentBuilder {
     /// <p>Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in order for the request to be valid.</p>
     pub fn set_source_entity(
         mut self,
-        input: std::option::Option<crate::types::DashboardSourceEntity>,
+        input: ::std::option::Option<crate::types::DashboardSourceEntity>,
     ) -> Self {
         self.inner = self.inner.set_source_entity(input);
         self
@@ -163,20 +181,23 @@ impl CreateDashboardFluentBuilder {
     /// <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the dashboard.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>A description for the first version of the dashboard being created.</p>
-    pub fn version_description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn version_description(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.version_description(input.into());
         self
     }
     /// <p>A description for the first version of the dashboard being created.</p>
     pub fn set_version_description(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_version_description(input);
         self
@@ -202,18 +223,18 @@ impl CreateDashboardFluentBuilder {
     /// </ul>
     pub fn set_dashboard_publish_options(
         mut self,
-        input: std::option::Option<crate::types::DashboardPublishOptions>,
+        input: ::std::option::Option<crate::types::DashboardPublishOptions>,
     ) -> Self {
         self.inner = self.inner.set_dashboard_publish_options(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the theme that is being used for this dashboard. If you add a value for this field, it overrides the value that is used in the source entity. The theme ARN must exist in the same Amazon Web Services account where you create the dashboard.</p>
-    pub fn theme_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn theme_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.theme_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the theme that is being used for this dashboard. If you add a value for this field, it overrides the value that is used in the source entity. The theme ARN must exist in the same Amazon Web Services account where you create the dashboard.</p>
-    pub fn set_theme_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_theme_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_theme_arn(input);
         self
     }
@@ -229,7 +250,7 @@ impl CreateDashboardFluentBuilder {
     /// <p>Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in order for the request to be valid.</p>
     pub fn set_definition(
         mut self,
-        input: std::option::Option<crate::types::DashboardVersionDefinition>,
+        input: ::std::option::Option<crate::types::DashboardVersionDefinition>,
     ) -> Self {
         self.inner = self.inner.set_definition(input);
         self

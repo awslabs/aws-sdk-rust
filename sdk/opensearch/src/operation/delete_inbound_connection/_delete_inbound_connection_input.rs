@@ -2,15 +2,15 @@
 
 /// <p>Container for the parameters to the <code>DeleteInboundConnection</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteInboundConnectionInput {
     /// <p>The ID of the inbound connection to permanently delete.</p>
     #[doc(hidden)]
-    pub connection_id: std::option::Option<std::string::String>,
+    pub connection_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteInboundConnectionInput {
     /// <p>The ID of the inbound connection to permanently delete.</p>
-    pub fn connection_id(&self) -> std::option::Option<&str> {
+    pub fn connection_id(&self) -> ::std::option::Option<&str> {
         self.connection_id.as_deref()
     }
 }
@@ -25,29 +25,37 @@ impl DeleteInboundConnectionInput {
 
 /// A builder for [`DeleteInboundConnectionInput`](crate::operation::delete_inbound_connection::DeleteInboundConnectionInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteInboundConnectionInputBuilder {
-    pub(crate) connection_id: std::option::Option<std::string::String>,
+    pub(crate) connection_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteInboundConnectionInputBuilder {
     /// <p>The ID of the inbound connection to permanently delete.</p>
-    pub fn connection_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.connection_id = Some(input.into());
+    pub fn connection_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.connection_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the inbound connection to permanently delete.</p>
-    pub fn set_connection_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_connection_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.connection_id = input;
         self
     }
     /// Consumes the builder and constructs a [`DeleteInboundConnectionInput`](crate::operation::delete_inbound_connection::DeleteInboundConnectionInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::delete_inbound_connection::DeleteInboundConnectionInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::delete_inbound_connection::DeleteInboundConnectionInput {
                 connection_id: self.connection_id,
             },

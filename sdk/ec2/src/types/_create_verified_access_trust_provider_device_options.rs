@@ -2,15 +2,15 @@
 
 /// <p>Describes the options when creating an Amazon Web Services Verified Access trust provider using the <code>device</code> type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateVerifiedAccessTrustProviderDeviceOptions {
     /// <p>The ID of the tenant application with the device-identity provider.</p>
     #[doc(hidden)]
-    pub tenant_id: std::option::Option<std::string::String>,
+    pub tenant_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateVerifiedAccessTrustProviderDeviceOptions {
     /// <p>The ID of the tenant application with the device-identity provider.</p>
-    pub fn tenant_id(&self) -> std::option::Option<&str> {
+    pub fn tenant_id(&self) -> ::std::option::Option<&str> {
         self.tenant_id.as_deref()
     }
 }
@@ -24,18 +24,20 @@ impl CreateVerifiedAccessTrustProviderDeviceOptions {
 
 /// A builder for [`CreateVerifiedAccessTrustProviderDeviceOptions`](crate::types::CreateVerifiedAccessTrustProviderDeviceOptions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateVerifiedAccessTrustProviderDeviceOptionsBuilder {
-    pub(crate) tenant_id: std::option::Option<std::string::String>,
+    pub(crate) tenant_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateVerifiedAccessTrustProviderDeviceOptionsBuilder {
     /// <p>The ID of the tenant application with the device-identity provider.</p>
-    pub fn tenant_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.tenant_id = Some(input.into());
+    pub fn tenant_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.tenant_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the tenant application with the device-identity provider.</p>
-    pub fn set_tenant_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_tenant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tenant_id = input;
         self
     }

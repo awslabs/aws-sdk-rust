@@ -6,56 +6,59 @@ pub use crate::operation::create_project::_create_project_input::CreateProjectIn
 /// Fluent builder constructing a request to `CreateProject`.
 ///
 /// <p>Creates a build project.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateProjectFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_project::builders::CreateProjectInputBuilder,
 }
 impl CreateProjectFluentBuilder {
     /// Creates a new `CreateProject`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_project::CreateProject,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_project::CreateProjectError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_project::CreateProjectError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_project::CreateProjectOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_project::CreateProjectError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_project::CreateProjectError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,29 +71,29 @@ impl CreateProjectFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_project::CreateProjectOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_project::CreateProjectError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_project::CreateProjectError>,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the build project.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// <p>The name of the build project.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
     /// <p>A description that makes the build project easy to identify.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>A description that makes the build project easy to identify.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
@@ -100,7 +103,7 @@ impl CreateProjectFluentBuilder {
         self
     }
     /// <p>Information about the build input source code for the build project.</p>
-    pub fn set_source(mut self, input: std::option::Option<crate::types::ProjectSource>) -> Self {
+    pub fn set_source(mut self, input: ::std::option::Option<crate::types::ProjectSource>) -> Self {
         self.inner = self.inner.set_source(input);
         self
     }
@@ -116,7 +119,7 @@ impl CreateProjectFluentBuilder {
     /// <p>An array of <code>ProjectSource</code> objects. </p>
     pub fn set_secondary_sources(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ProjectSource>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ProjectSource>>,
     ) -> Self {
         self.inner = self.inner.set_secondary_sources(input);
         self
@@ -130,7 +133,10 @@ impl CreateProjectFluentBuilder {
     /// </ul>
     /// <p>If <code>sourceVersion</code> is specified at the build level, then that version takes precedence over this <code>sourceVersion</code> (at the project level). </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
-    pub fn source_version(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn source_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.source_version(input.into());
         self
     }
@@ -143,7 +149,10 @@ impl CreateProjectFluentBuilder {
     /// </ul>
     /// <p>If <code>sourceVersion</code> is specified at the build level, then that version takes precedence over this <code>sourceVersion</code> (at the project level). </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
-    pub fn set_source_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_source_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_source_version(input);
         self
     }
@@ -159,7 +168,7 @@ impl CreateProjectFluentBuilder {
     /// <p>An array of <code>ProjectSourceVersion</code> objects. If <code>secondarySourceVersions</code> is specified at the build level, then they take precedence over these <code>secondarySourceVersions</code> (at the project level). </p>
     pub fn set_secondary_source_versions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ProjectSourceVersion>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ProjectSourceVersion>>,
     ) -> Self {
         self.inner = self.inner.set_secondary_source_versions(input);
         self
@@ -172,7 +181,7 @@ impl CreateProjectFluentBuilder {
     /// <p>Information about the build output artifacts for the build project.</p>
     pub fn set_artifacts(
         mut self,
-        input: std::option::Option<crate::types::ProjectArtifacts>,
+        input: ::std::option::Option<crate::types::ProjectArtifacts>,
     ) -> Self {
         self.inner = self.inner.set_artifacts(input);
         self
@@ -189,7 +198,7 @@ impl CreateProjectFluentBuilder {
     /// <p>An array of <code>ProjectArtifacts</code> objects. </p>
     pub fn set_secondary_artifacts(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ProjectArtifacts>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ProjectArtifacts>>,
     ) -> Self {
         self.inner = self.inner.set_secondary_artifacts(input);
         self
@@ -200,7 +209,7 @@ impl CreateProjectFluentBuilder {
         self
     }
     /// <p>Stores recently used information so that it can be quickly accessed at a later time.</p>
-    pub fn set_cache(mut self, input: std::option::Option<crate::types::ProjectCache>) -> Self {
+    pub fn set_cache(mut self, input: ::std::option::Option<crate::types::ProjectCache>) -> Self {
         self.inner = self.inner.set_cache(input);
         self
     }
@@ -212,18 +221,18 @@ impl CreateProjectFluentBuilder {
     /// <p>Information about the build environment for the build project.</p>
     pub fn set_environment(
         mut self,
-        input: std::option::Option<crate::types::ProjectEnvironment>,
+        input: ::std::option::Option<crate::types::ProjectEnvironment>,
     ) -> Self {
         self.inner = self.inner.set_environment(input);
         self
     }
     /// <p>The ARN of the IAM role that enables CodeBuild to interact with dependent Amazon Web Services services on behalf of the Amazon Web Services account.</p>
-    pub fn service_role(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn service_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_role(input.into());
         self
     }
     /// <p>The ARN of the IAM role that enables CodeBuild to interact with dependent Amazon Web Services services on behalf of the Amazon Web Services account.</p>
-    pub fn set_service_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_service_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service_role(input);
         self
     }
@@ -233,7 +242,7 @@ impl CreateProjectFluentBuilder {
         self
     }
     /// <p>How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before it times out any build that has not been marked as completed. The default is 60 minutes.</p>
-    pub fn set_timeout_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_timeout_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_timeout_in_minutes(input);
         self
     }
@@ -243,7 +252,7 @@ impl CreateProjectFluentBuilder {
         self
     }
     /// <p>The number of minutes a build is allowed to be queued before it times out. </p>
-    pub fn set_queued_timeout_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_queued_timeout_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_queued_timeout_in_minutes(input);
         self
     }
@@ -252,7 +261,10 @@ impl CreateProjectFluentBuilder {
     /// </note>
     /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/
     /// <alias-name></alias-name></code>). </p>
-    pub fn encryption_key(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn encryption_key(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.encryption_key(input.into());
         self
     }
@@ -261,7 +273,10 @@ impl CreateProjectFluentBuilder {
     /// </note>
     /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the format <code>alias/
     /// <alias-name></alias-name></code>). </p>
-    pub fn set_encryption_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_encryption_key(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_encryption_key(input);
         self
     }
@@ -279,7 +294,7 @@ impl CreateProjectFluentBuilder {
     /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild build project tags.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
@@ -290,7 +305,7 @@ impl CreateProjectFluentBuilder {
         self
     }
     /// <p>VpcConfig enables CodeBuild to access resources in an Amazon VPC.</p>
-    pub fn set_vpc_config(mut self, input: std::option::Option<crate::types::VpcConfig>) -> Self {
+    pub fn set_vpc_config(mut self, input: ::std::option::Option<crate::types::VpcConfig>) -> Self {
         self.inner = self.inner.set_vpc_config(input);
         self
     }
@@ -300,7 +315,7 @@ impl CreateProjectFluentBuilder {
         self
     }
     /// <p>Set this to true to generate a publicly accessible URL for your project's build badge.</p>
-    pub fn set_badge_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_badge_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_badge_enabled(input);
         self
     }
@@ -310,7 +325,10 @@ impl CreateProjectFluentBuilder {
         self
     }
     /// <p>Information about logs for the build project. These can be logs in CloudWatch Logs, logs uploaded to a specified S3 bucket, or both. </p>
-    pub fn set_logs_config(mut self, input: std::option::Option<crate::types::LogsConfig>) -> Self {
+    pub fn set_logs_config(
+        mut self,
+        input: ::std::option::Option<crate::types::LogsConfig>,
+    ) -> Self {
         self.inner = self.inner.set_logs_config(input);
         self
     }
@@ -326,7 +344,7 @@ impl CreateProjectFluentBuilder {
     /// <p> An array of <code>ProjectFileSystemLocation</code> objects for a CodeBuild build project. A <code>ProjectFileSystemLocation</code> object specifies the <code>identifier</code>, <code>location</code>, <code>mountOptions</code>, <code>mountPoint</code>, and <code>type</code> of a file system created using Amazon Elastic File System. </p>
     pub fn set_file_system_locations(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ProjectFileSystemLocation>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ProjectFileSystemLocation>>,
     ) -> Self {
         self.inner = self.inner.set_file_system_locations(input);
         self
@@ -339,7 +357,7 @@ impl CreateProjectFluentBuilder {
     /// <p>A <code>ProjectBuildBatchConfig</code> object that defines the batch build options for the project.</p>
     pub fn set_build_batch_config(
         mut self,
-        input: std::option::Option<crate::types::ProjectBuildBatchConfig>,
+        input: ::std::option::Option<crate::types::ProjectBuildBatchConfig>,
     ) -> Self {
         self.inner = self.inner.set_build_batch_config(input);
         self
@@ -352,7 +370,7 @@ impl CreateProjectFluentBuilder {
     }
     /// <p>The maximum number of concurrent builds that are allowed for this project.</p>
     /// <p>New builds are only started if the current number of builds is less than or equal to this limit. If the current build count meets this limit, new builds are throttled and are not run.</p>
-    pub fn set_concurrent_build_limit(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_concurrent_build_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_concurrent_build_limit(input);
         self
     }

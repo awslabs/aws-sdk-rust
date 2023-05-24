@@ -2,7 +2,7 @@
 
 /// <p>A set of instructions for launching server processes on each instance in a fleet. Server processes run either an executable in a custom game build or a Realtime Servers script. Server process configurations are part of a fleet's runtime configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServerProcess {
     /// <p>The location of a game build executable or the Realtime script file that contains the <code>Init()</code> function. Game builds and Realtime scripts are installed on instances at the root: </p>
     /// <ul>
@@ -10,13 +10,13 @@ pub struct ServerProcess {
     /// <li> <p>Linux: <code>/local/game</code>. Examples: "<code>/local/game/MyGame/server.exe</code>" or "<code>/local/game/MyRealtimeScript.js</code>"</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub launch_path: std::option::Option<std::string::String>,
+    pub launch_path: ::std::option::Option<::std::string::String>,
     /// <p>An optional list of parameters to pass to the server executable or Realtime script on launch.</p>
     #[doc(hidden)]
-    pub parameters: std::option::Option<std::string::String>,
+    pub parameters: ::std::option::Option<::std::string::String>,
     /// <p>The number of server processes using this configuration that run concurrently on each instance.</p>
     #[doc(hidden)]
-    pub concurrent_executions: std::option::Option<i32>,
+    pub concurrent_executions: ::std::option::Option<i32>,
 }
 impl ServerProcess {
     /// <p>The location of a game build executable or the Realtime script file that contains the <code>Init()</code> function. Game builds and Realtime scripts are installed on instances at the root: </p>
@@ -24,15 +24,15 @@ impl ServerProcess {
     /// <li> <p>Windows (custom game builds only): <code>C:\game</code>. Example: "<code>C:\game\MyGame\server.exe</code>" </p> </li>
     /// <li> <p>Linux: <code>/local/game</code>. Examples: "<code>/local/game/MyGame/server.exe</code>" or "<code>/local/game/MyRealtimeScript.js</code>"</p> </li>
     /// </ul>
-    pub fn launch_path(&self) -> std::option::Option<&str> {
+    pub fn launch_path(&self) -> ::std::option::Option<&str> {
         self.launch_path.as_deref()
     }
     /// <p>An optional list of parameters to pass to the server executable or Realtime script on launch.</p>
-    pub fn parameters(&self) -> std::option::Option<&str> {
+    pub fn parameters(&self) -> ::std::option::Option<&str> {
         self.parameters.as_deref()
     }
     /// <p>The number of server processes using this configuration that run concurrently on each instance.</p>
-    pub fn concurrent_executions(&self) -> std::option::Option<i32> {
+    pub fn concurrent_executions(&self) -> ::std::option::Option<i32> {
         self.concurrent_executions
     }
 }
@@ -45,11 +45,13 @@ impl ServerProcess {
 
 /// A builder for [`ServerProcess`](crate::types::ServerProcess).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ServerProcessBuilder {
-    pub(crate) launch_path: std::option::Option<std::string::String>,
-    pub(crate) parameters: std::option::Option<std::string::String>,
-    pub(crate) concurrent_executions: std::option::Option<i32>,
+    pub(crate) launch_path: ::std::option::Option<::std::string::String>,
+    pub(crate) parameters: ::std::option::Option<::std::string::String>,
+    pub(crate) concurrent_executions: ::std::option::Option<i32>,
 }
 impl ServerProcessBuilder {
     /// <p>The location of a game build executable or the Realtime script file that contains the <code>Init()</code> function. Game builds and Realtime scripts are installed on instances at the root: </p>
@@ -57,8 +59,8 @@ impl ServerProcessBuilder {
     /// <li> <p>Windows (custom game builds only): <code>C:\game</code>. Example: "<code>C:\game\MyGame\server.exe</code>" </p> </li>
     /// <li> <p>Linux: <code>/local/game</code>. Examples: "<code>/local/game/MyGame/server.exe</code>" or "<code>/local/game/MyRealtimeScript.js</code>"</p> </li>
     /// </ul>
-    pub fn launch_path(mut self, input: impl Into<std::string::String>) -> Self {
-        self.launch_path = Some(input.into());
+    pub fn launch_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.launch_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The location of a game build executable or the Realtime script file that contains the <code>Init()</code> function. Game builds and Realtime scripts are installed on instances at the root: </p>
@@ -66,27 +68,27 @@ impl ServerProcessBuilder {
     /// <li> <p>Windows (custom game builds only): <code>C:\game</code>. Example: "<code>C:\game\MyGame\server.exe</code>" </p> </li>
     /// <li> <p>Linux: <code>/local/game</code>. Examples: "<code>/local/game/MyGame/server.exe</code>" or "<code>/local/game/MyRealtimeScript.js</code>"</p> </li>
     /// </ul>
-    pub fn set_launch_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_launch_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.launch_path = input;
         self
     }
     /// <p>An optional list of parameters to pass to the server executable or Realtime script on launch.</p>
-    pub fn parameters(mut self, input: impl Into<std::string::String>) -> Self {
-        self.parameters = Some(input.into());
+    pub fn parameters(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.parameters = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An optional list of parameters to pass to the server executable or Realtime script on launch.</p>
-    pub fn set_parameters(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parameters = input;
         self
     }
     /// <p>The number of server processes using this configuration that run concurrently on each instance.</p>
     pub fn concurrent_executions(mut self, input: i32) -> Self {
-        self.concurrent_executions = Some(input);
+        self.concurrent_executions = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of server processes using this configuration that run concurrently on each instance.</p>
-    pub fn set_concurrent_executions(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_concurrent_executions(mut self, input: ::std::option::Option<i32>) -> Self {
         self.concurrent_executions = input;
         self
     }

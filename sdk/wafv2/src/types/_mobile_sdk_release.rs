@@ -3,36 +3,36 @@
 /// <p>Information for a release of the mobile SDK, including release notes and tags.</p>
 /// <p>The mobile SDK is not generally available. Customers who have access to the mobile SDK can use it to establish and manage WAF tokens for use in HTTP(S) requests from a mobile device to WAF. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client application integration</a> in the <i>WAF Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MobileSdkRelease {
     /// <p>The release version. </p>
     #[doc(hidden)]
-    pub release_version: std::option::Option<std::string::String>,
+    pub release_version: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp of the release. </p>
     #[doc(hidden)]
-    pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Notes describing the release.</p>
     #[doc(hidden)]
-    pub release_notes: std::option::Option<std::string::String>,
+    pub release_notes: ::std::option::Option<::std::string::String>,
     /// <p>Tags that are associated with the release. </p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl MobileSdkRelease {
     /// <p>The release version. </p>
-    pub fn release_version(&self) -> std::option::Option<&str> {
+    pub fn release_version(&self) -> ::std::option::Option<&str> {
         self.release_version.as_deref()
     }
     /// <p>The timestamp of the release. </p>
-    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
     /// <p>Notes describing the release.</p>
-    pub fn release_notes(&self) -> std::option::Option<&str> {
+    pub fn release_notes(&self) -> ::std::option::Option<&str> {
         self.release_notes.as_deref()
     }
     /// <p>Tags that are associated with the release. </p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -45,41 +45,58 @@ impl MobileSdkRelease {
 
 /// A builder for [`MobileSdkRelease`](crate::types::MobileSdkRelease).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MobileSdkReleaseBuilder {
-    pub(crate) release_version: std::option::Option<std::string::String>,
-    pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) release_notes: std::option::Option<std::string::String>,
-    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub(crate) release_version: ::std::option::Option<::std::string::String>,
+    pub(crate) timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) release_notes: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl MobileSdkReleaseBuilder {
     /// <p>The release version. </p>
-    pub fn release_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.release_version = Some(input.into());
+    pub fn release_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.release_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The release version. </p>
-    pub fn set_release_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_release_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.release_version = input;
         self
     }
     /// <p>The timestamp of the release. </p>
-    pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.timestamp = Some(input);
+    pub fn timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>The timestamp of the release. </p>
-    pub fn set_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_timestamp(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
         self.timestamp = input;
         self
     }
     /// <p>Notes describing the release.</p>
-    pub fn release_notes(mut self, input: impl Into<std::string::String>) -> Self {
-        self.release_notes = Some(input.into());
+    pub fn release_notes(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.release_notes = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Notes describing the release.</p>
-    pub fn set_release_notes(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_release_notes(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.release_notes = input;
         self
     }
@@ -91,13 +108,13 @@ impl MobileSdkReleaseBuilder {
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
-        self.tags = Some(v);
+        self.tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>Tags that are associated with the release. </p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tags = input;
         self

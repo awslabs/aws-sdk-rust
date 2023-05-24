@@ -2,17 +2,17 @@
 
 /// <p>Container for information about an OpenSearch Service domain.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DomainInformationContainer {
     /// <p>Information about an Amazon OpenSearch Service domain.</p>
     #[doc(hidden)]
-    pub aws_domain_information: std::option::Option<crate::types::AwsDomainInformation>,
+    pub aws_domain_information: ::std::option::Option<crate::types::AwsDomainInformation>,
 }
 impl DomainInformationContainer {
     /// <p>Information about an Amazon OpenSearch Service domain.</p>
     pub fn aws_domain_information(
         &self,
-    ) -> std::option::Option<&crate::types::AwsDomainInformation> {
+    ) -> ::std::option::Option<&crate::types::AwsDomainInformation> {
         self.aws_domain_information.as_ref()
     }
 }
@@ -25,20 +25,22 @@ impl DomainInformationContainer {
 
 /// A builder for [`DomainInformationContainer`](crate::types::DomainInformationContainer).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DomainInformationContainerBuilder {
-    pub(crate) aws_domain_information: std::option::Option<crate::types::AwsDomainInformation>,
+    pub(crate) aws_domain_information: ::std::option::Option<crate::types::AwsDomainInformation>,
 }
 impl DomainInformationContainerBuilder {
     /// <p>Information about an Amazon OpenSearch Service domain.</p>
     pub fn aws_domain_information(mut self, input: crate::types::AwsDomainInformation) -> Self {
-        self.aws_domain_information = Some(input);
+        self.aws_domain_information = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about an Amazon OpenSearch Service domain.</p>
     pub fn set_aws_domain_information(
         mut self,
-        input: std::option::Option<crate::types::AwsDomainInformation>,
+        input: ::std::option::Option<crate::types::AwsDomainInformation>,
     ) -> Self {
         self.aws_domain_information = input;
         self

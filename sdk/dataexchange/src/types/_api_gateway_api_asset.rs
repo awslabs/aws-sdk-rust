@@ -2,73 +2,74 @@
 
 /// <p>The API Gateway API that is the asset.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApiGatewayApiAsset {
     /// <p>The API description of the API asset.</p>
     #[doc(hidden)]
-    pub api_description: std::option::Option<std::string::String>,
+    pub api_description: ::std::option::Option<::std::string::String>,
     /// <p>The API endpoint of the API asset.</p>
     #[doc(hidden)]
-    pub api_endpoint: std::option::Option<std::string::String>,
+    pub api_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the API asset.</p>
     #[doc(hidden)]
-    pub api_id: std::option::Option<std::string::String>,
+    pub api_id: ::std::option::Option<::std::string::String>,
     /// <p>The API key of the API asset.</p>
     #[doc(hidden)]
-    pub api_key: std::option::Option<std::string::String>,
+    pub api_key: ::std::option::Option<::std::string::String>,
     /// <p>The API name of the API asset.</p>
     #[doc(hidden)]
-    pub api_name: std::option::Option<std::string::String>,
+    pub api_name: ::std::option::Option<::std::string::String>,
     /// <p>The download URL of the API specification of the API asset.</p>
     #[doc(hidden)]
-    pub api_specification_download_url: std::option::Option<std::string::String>,
+    pub api_specification_download_url: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the upload URL expires, in ISO 8601 format.</p>
     #[doc(hidden)]
-    pub api_specification_download_url_expires_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub api_specification_download_url_expires_at:
+        ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The protocol type of the API asset.</p>
     #[doc(hidden)]
-    pub protocol_type: std::option::Option<crate::types::ProtocolType>,
+    pub protocol_type: ::std::option::Option<crate::types::ProtocolType>,
     /// <p>The stage of the API asset.</p>
     #[doc(hidden)]
-    pub stage: std::option::Option<std::string::String>,
+    pub stage: ::std::option::Option<::std::string::String>,
 }
 impl ApiGatewayApiAsset {
     /// <p>The API description of the API asset.</p>
-    pub fn api_description(&self) -> std::option::Option<&str> {
+    pub fn api_description(&self) -> ::std::option::Option<&str> {
         self.api_description.as_deref()
     }
     /// <p>The API endpoint of the API asset.</p>
-    pub fn api_endpoint(&self) -> std::option::Option<&str> {
+    pub fn api_endpoint(&self) -> ::std::option::Option<&str> {
         self.api_endpoint.as_deref()
     }
     /// <p>The unique identifier of the API asset.</p>
-    pub fn api_id(&self) -> std::option::Option<&str> {
+    pub fn api_id(&self) -> ::std::option::Option<&str> {
         self.api_id.as_deref()
     }
     /// <p>The API key of the API asset.</p>
-    pub fn api_key(&self) -> std::option::Option<&str> {
+    pub fn api_key(&self) -> ::std::option::Option<&str> {
         self.api_key.as_deref()
     }
     /// <p>The API name of the API asset.</p>
-    pub fn api_name(&self) -> std::option::Option<&str> {
+    pub fn api_name(&self) -> ::std::option::Option<&str> {
         self.api_name.as_deref()
     }
     /// <p>The download URL of the API specification of the API asset.</p>
-    pub fn api_specification_download_url(&self) -> std::option::Option<&str> {
+    pub fn api_specification_download_url(&self) -> ::std::option::Option<&str> {
         self.api_specification_download_url.as_deref()
     }
     /// <p>The date and time that the upload URL expires, in ISO 8601 format.</p>
     pub fn api_specification_download_url_expires_at(
         &self,
-    ) -> std::option::Option<&aws_smithy_types::DateTime> {
+    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.api_specification_download_url_expires_at.as_ref()
     }
     /// <p>The protocol type of the API asset.</p>
-    pub fn protocol_type(&self) -> std::option::Option<&crate::types::ProtocolType> {
+    pub fn protocol_type(&self) -> ::std::option::Option<&crate::types::ProtocolType> {
         self.protocol_type.as_ref()
     }
     /// <p>The stage of the API asset.</p>
-    pub fn stage(&self) -> std::option::Option<&str> {
+    pub fn stage(&self) -> ::std::option::Option<&str> {
         self.stage.as_deref()
     }
 }
@@ -81,79 +82,90 @@ impl ApiGatewayApiAsset {
 
 /// A builder for [`ApiGatewayApiAsset`](crate::types::ApiGatewayApiAsset).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ApiGatewayApiAssetBuilder {
-    pub(crate) api_description: std::option::Option<std::string::String>,
-    pub(crate) api_endpoint: std::option::Option<std::string::String>,
-    pub(crate) api_id: std::option::Option<std::string::String>,
-    pub(crate) api_key: std::option::Option<std::string::String>,
-    pub(crate) api_name: std::option::Option<std::string::String>,
-    pub(crate) api_specification_download_url: std::option::Option<std::string::String>,
+    pub(crate) api_description: ::std::option::Option<::std::string::String>,
+    pub(crate) api_endpoint: ::std::option::Option<::std::string::String>,
+    pub(crate) api_id: ::std::option::Option<::std::string::String>,
+    pub(crate) api_key: ::std::option::Option<::std::string::String>,
+    pub(crate) api_name: ::std::option::Option<::std::string::String>,
+    pub(crate) api_specification_download_url: ::std::option::Option<::std::string::String>,
     pub(crate) api_specification_download_url_expires_at:
-        std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) protocol_type: std::option::Option<crate::types::ProtocolType>,
-    pub(crate) stage: std::option::Option<std::string::String>,
+        ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) protocol_type: ::std::option::Option<crate::types::ProtocolType>,
+    pub(crate) stage: ::std::option::Option<::std::string::String>,
 }
 impl ApiGatewayApiAssetBuilder {
     /// <p>The API description of the API asset.</p>
-    pub fn api_description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.api_description = Some(input.into());
+    pub fn api_description(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.api_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The API description of the API asset.</p>
-    pub fn set_api_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_api_description(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.api_description = input;
         self
     }
     /// <p>The API endpoint of the API asset.</p>
-    pub fn api_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
-        self.api_endpoint = Some(input.into());
+    pub fn api_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.api_endpoint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The API endpoint of the API asset.</p>
-    pub fn set_api_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_api_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.api_endpoint = input;
         self
     }
     /// <p>The unique identifier of the API asset.</p>
-    pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.api_id = Some(input.into());
+    pub fn api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.api_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the API asset.</p>
-    pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.api_id = input;
         self
     }
     /// <p>The API key of the API asset.</p>
-    pub fn api_key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.api_key = Some(input.into());
+    pub fn api_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.api_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The API key of the API asset.</p>
-    pub fn set_api_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_api_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.api_key = input;
         self
     }
     /// <p>The API name of the API asset.</p>
-    pub fn api_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.api_name = Some(input.into());
+    pub fn api_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.api_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The API name of the API asset.</p>
-    pub fn set_api_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_api_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.api_name = input;
         self
     }
     /// <p>The download URL of the API specification of the API asset.</p>
-    pub fn api_specification_download_url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.api_specification_download_url = Some(input.into());
+    pub fn api_specification_download_url(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.api_specification_download_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The download URL of the API specification of the API asset.</p>
     pub fn set_api_specification_download_url(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.api_specification_download_url = input;
         self
@@ -161,39 +173,39 @@ impl ApiGatewayApiAssetBuilder {
     /// <p>The date and time that the upload URL expires, in ISO 8601 format.</p>
     pub fn api_specification_download_url_expires_at(
         mut self,
-        input: aws_smithy_types::DateTime,
+        input: ::aws_smithy_types::DateTime,
     ) -> Self {
-        self.api_specification_download_url_expires_at = Some(input);
+        self.api_specification_download_url_expires_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time that the upload URL expires, in ISO 8601 format.</p>
     pub fn set_api_specification_download_url_expires_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.api_specification_download_url_expires_at = input;
         self
     }
     /// <p>The protocol type of the API asset.</p>
     pub fn protocol_type(mut self, input: crate::types::ProtocolType) -> Self {
-        self.protocol_type = Some(input);
+        self.protocol_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The protocol type of the API asset.</p>
     pub fn set_protocol_type(
         mut self,
-        input: std::option::Option<crate::types::ProtocolType>,
+        input: ::std::option::Option<crate::types::ProtocolType>,
     ) -> Self {
         self.protocol_type = input;
         self
     }
     /// <p>The stage of the API asset.</p>
-    pub fn stage(mut self, input: impl Into<std::string::String>) -> Self {
-        self.stage = Some(input.into());
+    pub fn stage(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.stage = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The stage of the API asset.</p>
-    pub fn set_stage(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_stage(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stage = input;
         self
     }

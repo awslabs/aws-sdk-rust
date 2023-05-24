@@ -2,7 +2,7 @@
 pub(crate) fn de_journey_execution_metrics_response_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::types::JourneyExecutionMetricsResponse>,
+    ::std::option::Option<crate::types::JourneyExecutionMetricsResponse>,
     crate::operation::get_journey_execution_metrics::GetJourneyExecutionMetricsError,
 > {
     (!body.is_empty()).then(||{

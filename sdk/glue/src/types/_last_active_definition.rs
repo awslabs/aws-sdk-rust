@@ -2,43 +2,43 @@
 
 /// <p>When there are multiple versions of a blueprint and the latest version has some errors, this attribute indicates the last successful blueprint definition that is available with the service.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LastActiveDefinition {
     /// <p>The description of the blueprint.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The date and time the blueprint was last modified.</p>
     #[doc(hidden)]
-    pub last_modified_on: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_modified_on: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A JSON string specifying the parameters for the blueprint.</p>
     #[doc(hidden)]
-    pub parameter_spec: std::option::Option<std::string::String>,
+    pub parameter_spec: ::std::option::Option<::std::string::String>,
     /// <p>Specifies a path in Amazon S3 where the blueprint is published by the Glue developer.</p>
     #[doc(hidden)]
-    pub blueprint_location: std::option::Option<std::string::String>,
+    pub blueprint_location: ::std::option::Option<::std::string::String>,
     /// <p>Specifies a path in Amazon S3 where the blueprint is copied when you create or update the blueprint.</p>
     #[doc(hidden)]
-    pub blueprint_service_location: std::option::Option<std::string::String>,
+    pub blueprint_service_location: ::std::option::Option<::std::string::String>,
 }
 impl LastActiveDefinition {
     /// <p>The description of the blueprint.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The date and time the blueprint was last modified.</p>
-    pub fn last_modified_on(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_on(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_on.as_ref()
     }
     /// <p>A JSON string specifying the parameters for the blueprint.</p>
-    pub fn parameter_spec(&self) -> std::option::Option<&str> {
+    pub fn parameter_spec(&self) -> ::std::option::Option<&str> {
         self.parameter_spec.as_deref()
     }
     /// <p>Specifies a path in Amazon S3 where the blueprint is published by the Glue developer.</p>
-    pub fn blueprint_location(&self) -> std::option::Option<&str> {
+    pub fn blueprint_location(&self) -> ::std::option::Option<&str> {
         self.blueprint_location.as_deref()
     }
     /// <p>Specifies a path in Amazon S3 where the blueprint is copied when you create or update the blueprint.</p>
-    pub fn blueprint_service_location(&self) -> std::option::Option<&str> {
+    pub fn blueprint_service_location(&self) -> ::std::option::Option<&str> {
         self.blueprint_service_location.as_deref()
     }
 }
@@ -51,70 +51,84 @@ impl LastActiveDefinition {
 
 /// A builder for [`LastActiveDefinition`](crate::types::LastActiveDefinition).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LastActiveDefinitionBuilder {
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) last_modified_on: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) parameter_spec: std::option::Option<std::string::String>,
-    pub(crate) blueprint_location: std::option::Option<std::string::String>,
-    pub(crate) blueprint_service_location: std::option::Option<std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) last_modified_on: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) parameter_spec: ::std::option::Option<::std::string::String>,
+    pub(crate) blueprint_location: ::std::option::Option<::std::string::String>,
+    pub(crate) blueprint_service_location: ::std::option::Option<::std::string::String>,
 }
 impl LastActiveDefinitionBuilder {
     /// <p>The description of the blueprint.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the blueprint.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>The date and time the blueprint was last modified.</p>
-    pub fn last_modified_on(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_modified_on = Some(input);
+    pub fn last_modified_on(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_modified_on = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time the blueprint was last modified.</p>
     pub fn set_last_modified_on(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_modified_on = input;
         self
     }
     /// <p>A JSON string specifying the parameters for the blueprint.</p>
-    pub fn parameter_spec(mut self, input: impl Into<std::string::String>) -> Self {
-        self.parameter_spec = Some(input.into());
+    pub fn parameter_spec(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.parameter_spec = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A JSON string specifying the parameters for the blueprint.</p>
-    pub fn set_parameter_spec(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_parameter_spec(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.parameter_spec = input;
         self
     }
     /// <p>Specifies a path in Amazon S3 where the blueprint is published by the Glue developer.</p>
-    pub fn blueprint_location(mut self, input: impl Into<std::string::String>) -> Self {
-        self.blueprint_location = Some(input.into());
+    pub fn blueprint_location(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.blueprint_location = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies a path in Amazon S3 where the blueprint is published by the Glue developer.</p>
     pub fn set_blueprint_location(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.blueprint_location = input;
         self
     }
     /// <p>Specifies a path in Amazon S3 where the blueprint is copied when you create or update the blueprint.</p>
-    pub fn blueprint_service_location(mut self, input: impl Into<std::string::String>) -> Self {
-        self.blueprint_service_location = Some(input.into());
+    pub fn blueprint_service_location(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.blueprint_service_location = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies a path in Amazon S3 where the blueprint is copied when you create or update the blueprint.</p>
     pub fn set_blueprint_service_location(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.blueprint_service_location = input;
         self

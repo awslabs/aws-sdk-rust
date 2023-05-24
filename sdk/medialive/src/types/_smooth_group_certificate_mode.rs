@@ -38,13 +38,13 @@
 /// Smooth Group Certificate Mode
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum SmoothGroupCertificateMode {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum SmoothGroupCertificateMode {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for SmoothGroupCertificateMode {
+impl ::std::convert::From<&str> for SmoothGroupCertificateMode {
     fn from(s: &str) -> Self {
         match s {
             "SELF_SIGNED" => SmoothGroupCertificateMode::SelfSigned,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for SmoothGroupCertificateMode {
         }
     }
 }
-impl std::str::FromStr for SmoothGroupCertificateMode {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for SmoothGroupCertificateMode {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SmoothGroupCertificateMode::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(SmoothGroupCertificateMode::from(s))
     }
 }
 impl SmoothGroupCertificateMode {
@@ -86,7 +86,7 @@ impl SmoothGroupCertificateMode {
         &["SELF_SIGNED", "VERIFY_AUTHENTICITY"]
     }
 }
-impl AsRef<str> for SmoothGroupCertificateMode {
+impl ::std::convert::AsRef<str> for SmoothGroupCertificateMode {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -2,27 +2,27 @@
 
 /// <p>Output of a get milestone call.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMilestoneOutput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     #[doc(hidden)]
-    pub workload_id: std::option::Option<std::string::String>,
+    pub workload_id: ::std::option::Option<::std::string::String>,
     /// <p>A milestone return object.</p>
     #[doc(hidden)]
-    pub milestone: std::option::Option<crate::types::Milestone>,
+    pub milestone: ::std::option::Option<crate::types::Milestone>,
     _request_id: Option<String>,
 }
 impl GetMilestoneOutput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    pub fn workload_id(&self) -> std::option::Option<&str> {
+    pub fn workload_id(&self) -> ::std::option::Option<&str> {
         self.workload_id.as_deref()
     }
     /// <p>A milestone return object.</p>
-    pub fn milestone(&self) -> std::option::Option<&crate::types::Milestone> {
+    pub fn milestone(&self) -> ::std::option::Option<&crate::types::Milestone> {
         self.milestone.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for GetMilestoneOutput {
+impl ::aws_http::request_id::RequestId for GetMilestoneOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -36,30 +36,32 @@ impl GetMilestoneOutput {
 
 /// A builder for [`GetMilestoneOutput`](crate::operation::get_milestone::GetMilestoneOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetMilestoneOutputBuilder {
-    pub(crate) workload_id: std::option::Option<std::string::String>,
-    pub(crate) milestone: std::option::Option<crate::types::Milestone>,
+    pub(crate) workload_id: ::std::option::Option<::std::string::String>,
+    pub(crate) milestone: ::std::option::Option<crate::types::Milestone>,
     _request_id: Option<String>,
 }
 impl GetMilestoneOutputBuilder {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.workload_id = Some(input.into());
+    pub fn workload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.workload_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_workload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workload_id = input;
         self
     }
     /// <p>A milestone return object.</p>
     pub fn milestone(mut self, input: crate::types::Milestone) -> Self {
-        self.milestone = Some(input);
+        self.milestone = ::std::option::Option::Some(input);
         self
     }
     /// <p>A milestone return object.</p>
-    pub fn set_milestone(mut self, input: std::option::Option<crate::types::Milestone>) -> Self {
+    pub fn set_milestone(mut self, input: ::std::option::Option<crate::types::Milestone>) -> Self {
         self.milestone = input;
         self
     }

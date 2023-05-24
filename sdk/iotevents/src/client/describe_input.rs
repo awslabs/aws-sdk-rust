@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeInput`](crate::operation::describe_input::builders::DescribeInputFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`input_name(impl Into<String>)`](crate::operation::describe_input::builders::DescribeInputFluentBuilder::input_name) / [`set_input_name(Option<String>)`](crate::operation::describe_input::builders::DescribeInputFluentBuilder::set_input_name): <p>The name of the input.</p>
+    ///   - [`input_name(impl ::std::convert::Into<String>)`](crate::operation::describe_input::builders::DescribeInputFluentBuilder::input_name) / [`set_input_name(Option<String>)`](crate::operation::describe_input::builders::DescribeInputFluentBuilder::set_input_name): <p>The name of the input.</p>
     /// - On success, responds with [`DescribeInputOutput`](crate::operation::describe_input::DescribeInputOutput) with field(s):
     ///   - [`input(Option<Input>)`](crate::operation::describe_input::DescribeInputOutput::input): <p>Information about the input.</p>
     /// - On failure, responds with [`SdkError<DescribeInputError>`](crate::operation::describe_input::DescribeInputError)

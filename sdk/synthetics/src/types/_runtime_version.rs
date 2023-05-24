@@ -2,36 +2,36 @@
 
 /// <p>This structure contains information about one canary runtime version. For more information about runtime versions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html"> Canary Runtime Versions</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuntimeVersion {
     /// <p>The name of the runtime version. For a list of valid runtime versions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html"> Canary Runtime Versions</a>.</p>
     #[doc(hidden)]
-    pub version_name: std::option::Option<std::string::String>,
+    pub version_name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the runtime version, created by Amazon.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The date that the runtime version was released.</p>
     #[doc(hidden)]
-    pub release_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub release_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>If this runtime version is deprecated, this value is the date of deprecation.</p>
     #[doc(hidden)]
-    pub deprecation_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub deprecation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl RuntimeVersion {
     /// <p>The name of the runtime version. For a list of valid runtime versions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html"> Canary Runtime Versions</a>.</p>
-    pub fn version_name(&self) -> std::option::Option<&str> {
+    pub fn version_name(&self) -> ::std::option::Option<&str> {
         self.version_name.as_deref()
     }
     /// <p>A description of the runtime version, created by Amazon.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The date that the runtime version was released.</p>
-    pub fn release_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn release_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.release_date.as_ref()
     }
     /// <p>If this runtime version is deprecated, this value is the date of deprecation.</p>
-    pub fn deprecation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn deprecation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.deprecation_date.as_ref()
     }
 }
@@ -44,56 +44,58 @@ impl RuntimeVersion {
 
 /// A builder for [`RuntimeVersion`](crate::types::RuntimeVersion).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RuntimeVersionBuilder {
-    pub(crate) version_name: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) release_date: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) deprecation_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) version_name: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) release_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) deprecation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl RuntimeVersionBuilder {
     /// <p>The name of the runtime version. For a list of valid runtime versions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html"> Canary Runtime Versions</a>.</p>
-    pub fn version_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.version_name = Some(input.into());
+    pub fn version_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.version_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the runtime version. For a list of valid runtime versions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html"> Canary Runtime Versions</a>.</p>
-    pub fn set_version_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_version_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version_name = input;
         self
     }
     /// <p>A description of the runtime version, created by Amazon.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of the runtime version, created by Amazon.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>The date that the runtime version was released.</p>
-    pub fn release_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.release_date = Some(input);
+    pub fn release_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.release_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date that the runtime version was released.</p>
     pub fn set_release_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.release_date = input;
         self
     }
     /// <p>If this runtime version is deprecated, this value is the date of deprecation.</p>
-    pub fn deprecation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.deprecation_date = Some(input);
+    pub fn deprecation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.deprecation_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>If this runtime version is deprecated, this value is the date of deprecation.</p>
     pub fn set_deprecation_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.deprecation_date = input;
         self

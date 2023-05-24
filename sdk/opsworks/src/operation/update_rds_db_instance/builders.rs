@@ -7,29 +7,29 @@ pub use crate::operation::update_rds_db_instance::_update_rds_db_instance_input:
 ///
 /// <p>Updates an Amazon RDS instance.</p>
 /// <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateRdsDbInstanceFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::update_rds_db_instance::builders::UpdateRdsDbInstanceInputBuilder,
 }
 impl UpdateRdsDbInstanceFluentBuilder {
     /// Creates a new `UpdateRdsDbInstance`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_rds_db_instance::UpdateRdsDbInstance,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_rds_db_instance::UpdateRdsDbInstanceError,
         >,
     > {
@@ -37,30 +37,33 @@ impl UpdateRdsDbInstanceFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_rds_db_instance::UpdateRdsDbInstanceOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_rds_db_instance::UpdateRdsDbInstanceError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -73,44 +76,47 @@ impl UpdateRdsDbInstanceFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_rds_db_instance::UpdateRdsDbInstanceOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_rds_db_instance::UpdateRdsDbInstanceError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The Amazon RDS instance's ARN.</p>
-    pub fn rds_db_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn rds_db_instance_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.rds_db_instance_arn(input.into());
         self
     }
     /// <p>The Amazon RDS instance's ARN.</p>
     pub fn set_rds_db_instance_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_rds_db_instance_arn(input);
         self
     }
     /// <p>The master user name.</p>
-    pub fn db_user(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn db_user(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_user(input.into());
         self
     }
     /// <p>The master user name.</p>
-    pub fn set_db_user(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_db_user(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_user(input);
         self
     }
     /// <p>The database password.</p>
-    pub fn db_password(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn db_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.db_password(input.into());
         self
     }
     /// <p>The database password.</p>
-    pub fn set_db_password(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_db_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_db_password(input);
         self
     }

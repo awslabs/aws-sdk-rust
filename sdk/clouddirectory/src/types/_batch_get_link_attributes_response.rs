@@ -2,15 +2,15 @@
 
 /// <p>Represents the output of a <code>GetLinkAttributes</code> response operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetLinkAttributesResponse {
     /// <p>The attributes that are associated with the typed link.</p>
     #[doc(hidden)]
-    pub attributes: std::option::Option<std::vec::Vec<crate::types::AttributeKeyAndValue>>,
+    pub attributes: ::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>>,
 }
 impl BatchGetLinkAttributesResponse {
     /// <p>The attributes that are associated with the typed link.</p>
-    pub fn attributes(&self) -> std::option::Option<&[crate::types::AttributeKeyAndValue]> {
+    pub fn attributes(&self) -> ::std::option::Option<&[crate::types::AttributeKeyAndValue]> {
         self.attributes.as_deref()
     }
 }
@@ -23,9 +23,12 @@ impl BatchGetLinkAttributesResponse {
 
 /// A builder for [`BatchGetLinkAttributesResponse`](crate::types::BatchGetLinkAttributesResponse).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BatchGetLinkAttributesResponseBuilder {
-    pub(crate) attributes: std::option::Option<std::vec::Vec<crate::types::AttributeKeyAndValue>>,
+    pub(crate) attributes:
+        ::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>>,
 }
 impl BatchGetLinkAttributesResponseBuilder {
     /// Appends an item to `attributes`.
@@ -36,13 +39,13 @@ impl BatchGetLinkAttributesResponseBuilder {
     pub fn attributes(mut self, input: crate::types::AttributeKeyAndValue) -> Self {
         let mut v = self.attributes.unwrap_or_default();
         v.push(input);
-        self.attributes = Some(v);
+        self.attributes = ::std::option::Option::Some(v);
         self
     }
     /// <p>The attributes that are associated with the typed link.</p>
     pub fn set_attributes(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AttributeKeyAndValue>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeKeyAndValue>>,
     ) -> Self {
         self.attributes = input;
         self

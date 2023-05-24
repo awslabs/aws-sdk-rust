@@ -3,15 +3,15 @@
 /// <p>A structure containing the additional details to be returned in the <code>AdditionalDetails</code> attribute of <code>PrincipalResourcePermissions</code>.</p>
 /// <p>If a catalog resource is shared through Resource Access Manager (RAM), then there will exist a corresponding RAM resource share ARN.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetailsMap {
     /// <p>A resource share ARN for a catalog resource shared through RAM.</p>
     #[doc(hidden)]
-    pub resource_share: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub resource_share: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DetailsMap {
     /// <p>A resource share ARN for a catalog resource shared through RAM.</p>
-    pub fn resource_share(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn resource_share(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.resource_share.as_deref()
     }
 }
@@ -24,9 +24,11 @@ impl DetailsMap {
 
 /// A builder for [`DetailsMap`](crate::types::DetailsMap).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DetailsMapBuilder {
-    pub(crate) resource_share: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) resource_share: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DetailsMapBuilder {
     /// Appends an item to `resource_share`.
@@ -34,16 +36,19 @@ impl DetailsMapBuilder {
     /// To override the contents of this collection use [`set_resource_share`](Self::set_resource_share).
     ///
     /// <p>A resource share ARN for a catalog resource shared through RAM.</p>
-    pub fn resource_share(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn resource_share(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.resource_share.unwrap_or_default();
         v.push(input.into());
-        self.resource_share = Some(v);
+        self.resource_share = ::std::option::Option::Some(v);
         self
     }
     /// <p>A resource share ARN for a catalog resource shared through RAM.</p>
     pub fn set_resource_share(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.resource_share = input;
         self

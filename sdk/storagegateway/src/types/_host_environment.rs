@@ -42,13 +42,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum HostEnvironment {
     #[allow(missing_docs)] // documentation missing in model
@@ -66,7 +66,7 @@ pub enum HostEnvironment {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for HostEnvironment {
+impl ::std::convert::From<&str> for HostEnvironment {
     fn from(s: &str) -> Self {
         match s {
             "EC2" => HostEnvironment::Ec2,
@@ -81,11 +81,11 @@ impl std::convert::From<&str> for HostEnvironment {
         }
     }
 }
-impl std::str::FromStr for HostEnvironment {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for HostEnvironment {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(HostEnvironment::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(HostEnvironment::from(s))
     }
 }
 impl HostEnvironment {
@@ -106,7 +106,7 @@ impl HostEnvironment {
         &["EC2", "HYPER-V", "KVM", "OTHER", "SNOWBALL", "VMWARE"]
     }
 }
-impl AsRef<str> for HostEnvironment {
+impl ::std::convert::AsRef<str> for HostEnvironment {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

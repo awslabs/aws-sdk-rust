@@ -2,29 +2,29 @@
 
 /// <p>The configuration for a Slack workspace that you added to an Amazon Web Services account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SlackWorkspaceConfiguration {
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
     #[doc(hidden)]
-    pub team_id: std::option::Option<std::string::String>,
+    pub team_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Slack workspace.</p>
     #[doc(hidden)]
-    pub team_name: std::option::Option<std::string::String>,
+    pub team_name: ::std::option::Option<::std::string::String>,
     /// <p>Whether to allow member accounts to authorize Slack workspaces. Member accounts must be part of an organization in Organizations.</p>
     #[doc(hidden)]
-    pub allow_organization_member_account: std::option::Option<bool>,
+    pub allow_organization_member_account: ::std::option::Option<bool>,
 }
 impl SlackWorkspaceConfiguration {
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
-    pub fn team_id(&self) -> std::option::Option<&str> {
+    pub fn team_id(&self) -> ::std::option::Option<&str> {
         self.team_id.as_deref()
     }
     /// <p>The name of the Slack workspace.</p>
-    pub fn team_name(&self) -> std::option::Option<&str> {
+    pub fn team_name(&self) -> ::std::option::Option<&str> {
         self.team_name.as_deref()
     }
     /// <p>Whether to allow member accounts to authorize Slack workspaces. Member accounts must be part of an organization in Organizations.</p>
-    pub fn allow_organization_member_account(&self) -> std::option::Option<bool> {
+    pub fn allow_organization_member_account(&self) -> ::std::option::Option<bool> {
         self.allow_organization_member_account
     }
 }
@@ -37,42 +37,44 @@ impl SlackWorkspaceConfiguration {
 
 /// A builder for [`SlackWorkspaceConfiguration`](crate::types::SlackWorkspaceConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SlackWorkspaceConfigurationBuilder {
-    pub(crate) team_id: std::option::Option<std::string::String>,
-    pub(crate) team_name: std::option::Option<std::string::String>,
-    pub(crate) allow_organization_member_account: std::option::Option<bool>,
+    pub(crate) team_id: ::std::option::Option<::std::string::String>,
+    pub(crate) team_name: ::std::option::Option<::std::string::String>,
+    pub(crate) allow_organization_member_account: ::std::option::Option<bool>,
 }
 impl SlackWorkspaceConfigurationBuilder {
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
-    pub fn team_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.team_id = Some(input.into());
+    pub fn team_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.team_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
-    pub fn set_team_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_team_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.team_id = input;
         self
     }
     /// <p>The name of the Slack workspace.</p>
-    pub fn team_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.team_name = Some(input.into());
+    pub fn team_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.team_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Slack workspace.</p>
-    pub fn set_team_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_team_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.team_name = input;
         self
     }
     /// <p>Whether to allow member accounts to authorize Slack workspaces. Member accounts must be part of an organization in Organizations.</p>
     pub fn allow_organization_member_account(mut self, input: bool) -> Self {
-        self.allow_organization_member_account = Some(input);
+        self.allow_organization_member_account = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether to allow member accounts to authorize Slack workspaces. Member accounts must be part of an organization in Organizations.</p>
     pub fn set_allow_organization_member_account(
         mut self,
-        input: std::option::Option<bool>,
+        input: ::std::option::Option<bool>,
     ) -> Self {
         self.allow_organization_member_account = input;
         self

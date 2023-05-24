@@ -2,22 +2,24 @@
 
 /// <p>Information about an application revision.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RevisionInfo {
     /// <p>Information about the location and type of an application revision.</p>
     #[doc(hidden)]
-    pub revision_location: std::option::Option<crate::types::RevisionLocation>,
+    pub revision_location: ::std::option::Option<crate::types::RevisionLocation>,
     /// <p>Information about an application revision, including usage details and associated deployment groups.</p>
     #[doc(hidden)]
-    pub generic_revision_info: std::option::Option<crate::types::GenericRevisionInfo>,
+    pub generic_revision_info: ::std::option::Option<crate::types::GenericRevisionInfo>,
 }
 impl RevisionInfo {
     /// <p>Information about the location and type of an application revision.</p>
-    pub fn revision_location(&self) -> std::option::Option<&crate::types::RevisionLocation> {
+    pub fn revision_location(&self) -> ::std::option::Option<&crate::types::RevisionLocation> {
         self.revision_location.as_ref()
     }
     /// <p>Information about an application revision, including usage details and associated deployment groups.</p>
-    pub fn generic_revision_info(&self) -> std::option::Option<&crate::types::GenericRevisionInfo> {
+    pub fn generic_revision_info(
+        &self,
+    ) -> ::std::option::Option<&crate::types::GenericRevisionInfo> {
         self.generic_revision_info.as_ref()
     }
 }
@@ -30,34 +32,36 @@ impl RevisionInfo {
 
 /// A builder for [`RevisionInfo`](crate::types::RevisionInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RevisionInfoBuilder {
-    pub(crate) revision_location: std::option::Option<crate::types::RevisionLocation>,
-    pub(crate) generic_revision_info: std::option::Option<crate::types::GenericRevisionInfo>,
+    pub(crate) revision_location: ::std::option::Option<crate::types::RevisionLocation>,
+    pub(crate) generic_revision_info: ::std::option::Option<crate::types::GenericRevisionInfo>,
 }
 impl RevisionInfoBuilder {
     /// <p>Information about the location and type of an application revision.</p>
     pub fn revision_location(mut self, input: crate::types::RevisionLocation) -> Self {
-        self.revision_location = Some(input);
+        self.revision_location = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the location and type of an application revision.</p>
     pub fn set_revision_location(
         mut self,
-        input: std::option::Option<crate::types::RevisionLocation>,
+        input: ::std::option::Option<crate::types::RevisionLocation>,
     ) -> Self {
         self.revision_location = input;
         self
     }
     /// <p>Information about an application revision, including usage details and associated deployment groups.</p>
     pub fn generic_revision_info(mut self, input: crate::types::GenericRevisionInfo) -> Self {
-        self.generic_revision_info = Some(input);
+        self.generic_revision_info = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about an application revision, including usage details and associated deployment groups.</p>
     pub fn set_generic_revision_info(
         mut self,
-        input: std::option::Option<crate::types::GenericRevisionInfo>,
+        input: ::std::option::Option<crate::types::GenericRevisionInfo>,
     ) -> Self {
         self.generic_revision_info = input;
         self

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetRelationalDatabase`](crate::operation::get_relational_database::builders::GetRelationalDatabaseFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`relational_database_name(impl Into<String>)`](crate::operation::get_relational_database::builders::GetRelationalDatabaseFluentBuilder::relational_database_name) / [`set_relational_database_name(Option<String>)`](crate::operation::get_relational_database::builders::GetRelationalDatabaseFluentBuilder::set_relational_database_name): <p>The name of the database that you are looking up.</p>
+    ///   - [`relational_database_name(impl ::std::convert::Into<String>)`](crate::operation::get_relational_database::builders::GetRelationalDatabaseFluentBuilder::relational_database_name) / [`set_relational_database_name(Option<String>)`](crate::operation::get_relational_database::builders::GetRelationalDatabaseFluentBuilder::set_relational_database_name): <p>The name of the database that you are looking up.</p>
     /// - On success, responds with [`GetRelationalDatabaseOutput`](crate::operation::get_relational_database::GetRelationalDatabaseOutput) with field(s):
     ///   - [`relational_database(Option<RelationalDatabase>)`](crate::operation::get_relational_database::GetRelationalDatabaseOutput::relational_database): <p>An object describing the specified database.</p>
     /// - On failure, responds with [`SdkError<GetRelationalDatabaseError>`](crate::operation::get_relational_database::GetRelationalDatabaseError)

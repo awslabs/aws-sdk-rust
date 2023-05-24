@@ -2,22 +2,22 @@
 
 /// <p>A text box.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SheetTextBox {
     /// <p>The unique identifier for a text box. This identifier must be unique within the context of a dashboard, template, or analysis. Two dashboards, analyses, or templates can have text boxes that share identifiers.</p>
     #[doc(hidden)]
-    pub sheet_text_box_id: std::option::Option<std::string::String>,
+    pub sheet_text_box_id: ::std::option::Option<::std::string::String>,
     /// <p>The content that is displayed in the text box.</p>
     #[doc(hidden)]
-    pub content: std::option::Option<std::string::String>,
+    pub content: ::std::option::Option<::std::string::String>,
 }
 impl SheetTextBox {
     /// <p>The unique identifier for a text box. This identifier must be unique within the context of a dashboard, template, or analysis. Two dashboards, analyses, or templates can have text boxes that share identifiers.</p>
-    pub fn sheet_text_box_id(&self) -> std::option::Option<&str> {
+    pub fn sheet_text_box_id(&self) -> ::std::option::Option<&str> {
         self.sheet_text_box_id.as_deref()
     }
     /// <p>The content that is displayed in the text box.</p>
-    pub fn content(&self) -> std::option::Option<&str> {
+    pub fn content(&self) -> ::std::option::Option<&str> {
         self.content.as_deref()
     }
 }
@@ -30,32 +30,37 @@ impl SheetTextBox {
 
 /// A builder for [`SheetTextBox`](crate::types::SheetTextBox).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SheetTextBoxBuilder {
-    pub(crate) sheet_text_box_id: std::option::Option<std::string::String>,
-    pub(crate) content: std::option::Option<std::string::String>,
+    pub(crate) sheet_text_box_id: ::std::option::Option<::std::string::String>,
+    pub(crate) content: ::std::option::Option<::std::string::String>,
 }
 impl SheetTextBoxBuilder {
     /// <p>The unique identifier for a text box. This identifier must be unique within the context of a dashboard, template, or analysis. Two dashboards, analyses, or templates can have text boxes that share identifiers.</p>
-    pub fn sheet_text_box_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.sheet_text_box_id = Some(input.into());
+    pub fn sheet_text_box_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.sheet_text_box_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for a text box. This identifier must be unique within the context of a dashboard, template, or analysis. Two dashboards, analyses, or templates can have text boxes that share identifiers.</p>
     pub fn set_sheet_text_box_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.sheet_text_box_id = input;
         self
     }
     /// <p>The content that is displayed in the text box.</p>
-    pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
-        self.content = Some(input.into());
+    pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.content = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The content that is displayed in the text box.</p>
-    pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content = input;
         self
     }

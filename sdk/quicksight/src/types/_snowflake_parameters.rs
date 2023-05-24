@@ -2,29 +2,29 @@
 
 /// <p>The parameters for Snowflake.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SnowflakeParameters {
     /// <p>Host.</p>
     #[doc(hidden)]
-    pub host: std::option::Option<std::string::String>,
+    pub host: ::std::option::Option<::std::string::String>,
     /// <p>Database.</p>
     #[doc(hidden)]
-    pub database: std::option::Option<std::string::String>,
+    pub database: ::std::option::Option<::std::string::String>,
     /// <p>Warehouse.</p>
     #[doc(hidden)]
-    pub warehouse: std::option::Option<std::string::String>,
+    pub warehouse: ::std::option::Option<::std::string::String>,
 }
 impl SnowflakeParameters {
     /// <p>Host.</p>
-    pub fn host(&self) -> std::option::Option<&str> {
+    pub fn host(&self) -> ::std::option::Option<&str> {
         self.host.as_deref()
     }
     /// <p>Database.</p>
-    pub fn database(&self) -> std::option::Option<&str> {
+    pub fn database(&self) -> ::std::option::Option<&str> {
         self.database.as_deref()
     }
     /// <p>Warehouse.</p>
-    pub fn warehouse(&self) -> std::option::Option<&str> {
+    pub fn warehouse(&self) -> ::std::option::Option<&str> {
         self.warehouse.as_deref()
     }
 }
@@ -37,40 +37,42 @@ impl SnowflakeParameters {
 
 /// A builder for [`SnowflakeParameters`](crate::types::SnowflakeParameters).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SnowflakeParametersBuilder {
-    pub(crate) host: std::option::Option<std::string::String>,
-    pub(crate) database: std::option::Option<std::string::String>,
-    pub(crate) warehouse: std::option::Option<std::string::String>,
+    pub(crate) host: ::std::option::Option<::std::string::String>,
+    pub(crate) database: ::std::option::Option<::std::string::String>,
+    pub(crate) warehouse: ::std::option::Option<::std::string::String>,
 }
 impl SnowflakeParametersBuilder {
     /// <p>Host.</p>
-    pub fn host(mut self, input: impl Into<std::string::String>) -> Self {
-        self.host = Some(input.into());
+    pub fn host(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.host = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Host.</p>
-    pub fn set_host(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_host(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.host = input;
         self
     }
     /// <p>Database.</p>
-    pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
-        self.database = Some(input.into());
+    pub fn database(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.database = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Database.</p>
-    pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_database(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database = input;
         self
     }
     /// <p>Warehouse.</p>
-    pub fn warehouse(mut self, input: impl Into<std::string::String>) -> Self {
-        self.warehouse = Some(input.into());
+    pub fn warehouse(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.warehouse = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Warehouse.</p>
-    pub fn set_warehouse(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_warehouse(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.warehouse = input;
         self
     }

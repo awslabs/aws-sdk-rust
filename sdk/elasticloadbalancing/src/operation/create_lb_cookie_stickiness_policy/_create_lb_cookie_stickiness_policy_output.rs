@@ -2,11 +2,11 @@
 
 /// <p>Contains the output for CreateLBCookieStickinessPolicy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateLbCookieStickinessPolicyOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for CreateLbCookieStickinessPolicyOutput {
+impl ::aws_http::request_id::RequestId for CreateLbCookieStickinessPolicyOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -20,7 +20,9 @@ impl CreateLbCookieStickinessPolicyOutput {
 
 /// A builder for [`CreateLbCookieStickinessPolicyOutput`](crate::operation::create_lb_cookie_stickiness_policy::CreateLbCookieStickinessPolicyOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateLbCookieStickinessPolicyOutputBuilder {
     _request_id: Option<String>,
 }

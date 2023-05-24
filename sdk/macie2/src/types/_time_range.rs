@@ -38,13 +38,13 @@
 /// <p>An inclusive time period that Amazon Macie usage data applies to. Possible values are:</p>
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum TimeRange {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum TimeRange {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for TimeRange {
+impl ::std::convert::From<&str> for TimeRange {
     fn from(s: &str) -> Self {
         match s {
             "MONTH_TO_DATE" => TimeRange::MonthToDate,
@@ -63,11 +63,11 @@ impl std::convert::From<&str> for TimeRange {
         }
     }
 }
-impl std::str::FromStr for TimeRange {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for TimeRange {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TimeRange::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(TimeRange::from(s))
     }
 }
 impl TimeRange {
@@ -84,7 +84,7 @@ impl TimeRange {
         &["MONTH_TO_DATE", "PAST_30_DAYS"]
     }
 }
-impl AsRef<str> for TimeRange {
+impl ::std::convert::AsRef<str> for TimeRange {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

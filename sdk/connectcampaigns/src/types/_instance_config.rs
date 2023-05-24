@@ -2,29 +2,29 @@
 
 /// Instance config object
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceConfig {
     /// Amazon Connect Instance Id
     #[doc(hidden)]
-    pub connect_instance_id: std::option::Option<std::string::String>,
+    pub connect_instance_id: ::std::option::Option<::std::string::String>,
     /// Service linked role arn
     #[doc(hidden)]
-    pub service_linked_role_arn: std::option::Option<std::string::String>,
+    pub service_linked_role_arn: ::std::option::Option<::std::string::String>,
     /// Encryption config for Connect Instance. Note that sensitive data will always be encrypted. If disabled, service will perform encryption with its own key. If enabled, a KMS key id needs to be provided and KMS charges will apply. KMS is only type supported
     #[doc(hidden)]
-    pub encryption_config: std::option::Option<crate::types::EncryptionConfig>,
+    pub encryption_config: ::std::option::Option<crate::types::EncryptionConfig>,
 }
 impl InstanceConfig {
     /// Amazon Connect Instance Id
-    pub fn connect_instance_id(&self) -> std::option::Option<&str> {
+    pub fn connect_instance_id(&self) -> ::std::option::Option<&str> {
         self.connect_instance_id.as_deref()
     }
     /// Service linked role arn
-    pub fn service_linked_role_arn(&self) -> std::option::Option<&str> {
+    pub fn service_linked_role_arn(&self) -> ::std::option::Option<&str> {
         self.service_linked_role_arn.as_deref()
     }
     /// Encryption config for Connect Instance. Note that sensitive data will always be encrypted. If disabled, service will perform encryption with its own key. If enabled, a KMS key id needs to be provided and KMS charges will apply. KMS is only type supported
-    pub fn encryption_config(&self) -> std::option::Option<&crate::types::EncryptionConfig> {
+    pub fn encryption_config(&self) -> ::std::option::Option<&crate::types::EncryptionConfig> {
         self.encryption_config.as_ref()
     }
 }
@@ -37,48 +37,56 @@ impl InstanceConfig {
 
 /// A builder for [`InstanceConfig`](crate::types::InstanceConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InstanceConfigBuilder {
-    pub(crate) connect_instance_id: std::option::Option<std::string::String>,
-    pub(crate) service_linked_role_arn: std::option::Option<std::string::String>,
-    pub(crate) encryption_config: std::option::Option<crate::types::EncryptionConfig>,
+    pub(crate) connect_instance_id: ::std::option::Option<::std::string::String>,
+    pub(crate) service_linked_role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) encryption_config: ::std::option::Option<crate::types::EncryptionConfig>,
 }
 impl InstanceConfigBuilder {
     /// Amazon Connect Instance Id
-    pub fn connect_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.connect_instance_id = Some(input.into());
+    pub fn connect_instance_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.connect_instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// Amazon Connect Instance Id
     pub fn set_connect_instance_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.connect_instance_id = input;
         self
     }
     /// Service linked role arn
-    pub fn service_linked_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.service_linked_role_arn = Some(input.into());
+    pub fn service_linked_role_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.service_linked_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// Service linked role arn
     pub fn set_service_linked_role_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.service_linked_role_arn = input;
         self
     }
     /// Encryption config for Connect Instance. Note that sensitive data will always be encrypted. If disabled, service will perform encryption with its own key. If enabled, a KMS key id needs to be provided and KMS charges will apply. KMS is only type supported
     pub fn encryption_config(mut self, input: crate::types::EncryptionConfig) -> Self {
-        self.encryption_config = Some(input);
+        self.encryption_config = ::std::option::Option::Some(input);
         self
     }
     /// Encryption config for Connect Instance. Note that sensitive data will always be encrypted. If disabled, service will perform encryption with its own key. If enabled, a KMS key id needs to be provided and KMS charges will apply. KMS is only type supported
     pub fn set_encryption_config(
         mut self,
-        input: std::option::Option<crate::types::EncryptionConfig>,
+        input: ::std::option::Option<crate::types::EncryptionConfig>,
     ) -> Self {
         self.encryption_config = input;
         self

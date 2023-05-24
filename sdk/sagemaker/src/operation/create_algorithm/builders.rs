@@ -6,56 +6,63 @@ pub use crate::operation::create_algorithm::_create_algorithm_input::CreateAlgor
 /// Fluent builder constructing a request to `CreateAlgorithm`.
 ///
 /// <p>Create a machine learning algorithm that you can use in SageMaker and list in the Amazon Web Services Marketplace.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateAlgorithmFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_algorithm::builders::CreateAlgorithmInputBuilder,
 }
 impl CreateAlgorithmFluentBuilder {
     /// Creates a new `CreateAlgorithm`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_algorithm::CreateAlgorithm,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_algorithm::CreateAlgorithmError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_algorithm::CreateAlgorithmError,
+        >,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_algorithm::CreateAlgorithmOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_algorithm::CreateAlgorithmError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_algorithm::CreateAlgorithmError,
+        >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,31 +75,42 @@ impl CreateAlgorithmFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_algorithm::CreateAlgorithmOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_algorithm::CreateAlgorithmError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_algorithm::CreateAlgorithmError,
+        >,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the algorithm.</p>
-    pub fn algorithm_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn algorithm_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.algorithm_name(input.into());
         self
     }
     /// <p>The name of the algorithm.</p>
-    pub fn set_algorithm_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_algorithm_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_algorithm_name(input);
         self
     }
     /// <p>A description of the algorithm.</p>
-    pub fn algorithm_description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn algorithm_description(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.algorithm_description(input.into());
         self
     }
     /// <p>A description of the algorithm.</p>
     pub fn set_algorithm_description(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_algorithm_description(input);
         self
@@ -123,7 +141,7 @@ impl CreateAlgorithmFluentBuilder {
     /// </ul>
     pub fn set_training_specification(
         mut self,
-        input: std::option::Option<crate::types::TrainingSpecification>,
+        input: ::std::option::Option<crate::types::TrainingSpecification>,
     ) -> Self {
         self.inner = self.inner.set_training_specification(input);
         self
@@ -146,7 +164,7 @@ impl CreateAlgorithmFluentBuilder {
     /// </ul>
     pub fn set_inference_specification(
         mut self,
-        input: std::option::Option<crate::types::InferenceSpecification>,
+        input: ::std::option::Option<crate::types::InferenceSpecification>,
     ) -> Self {
         self.inner = self.inner.set_inference_specification(input);
         self
@@ -162,7 +180,7 @@ impl CreateAlgorithmFluentBuilder {
     /// <p>Specifies configurations for one or more training jobs and that SageMaker runs to test the algorithm's training code and, optionally, one or more batch transform jobs that SageMaker runs to test the algorithm's inference code.</p>
     pub fn set_validation_specification(
         mut self,
-        input: std::option::Option<crate::types::AlgorithmValidationSpecification>,
+        input: ::std::option::Option<crate::types::AlgorithmValidationSpecification>,
     ) -> Self {
         self.inner = self.inner.set_validation_specification(input);
         self
@@ -173,7 +191,7 @@ impl CreateAlgorithmFluentBuilder {
         self
     }
     /// <p>Whether to certify the algorithm so that it can be listed in Amazon Web Services Marketplace.</p>
-    pub fn set_certify_for_marketplace(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_certify_for_marketplace(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_certify_for_marketplace(input);
         self
     }
@@ -189,7 +207,7 @@ impl CreateAlgorithmFluentBuilder {
     /// <p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self

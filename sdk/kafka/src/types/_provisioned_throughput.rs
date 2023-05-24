@@ -2,22 +2,22 @@
 
 /// <p>Contains information about provisioned throughput for EBS storage volumes attached to kafka broker nodes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProvisionedThroughput {
     /// <p>Provisioned throughput is enabled or not.</p>
     #[doc(hidden)]
-    pub enabled: std::option::Option<bool>,
+    pub enabled: ::std::option::Option<bool>,
     /// <p>Throughput value of the EBS volumes for the data drive on each kafka broker node in MiB per second.</p>
     #[doc(hidden)]
-    pub volume_throughput: std::option::Option<i32>,
+    pub volume_throughput: ::std::option::Option<i32>,
 }
 impl ProvisionedThroughput {
     /// <p>Provisioned throughput is enabled or not.</p>
-    pub fn enabled(&self) -> std::option::Option<bool> {
+    pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
     /// <p>Throughput value of the EBS volumes for the data drive on each kafka broker node in MiB per second.</p>
-    pub fn volume_throughput(&self) -> std::option::Option<i32> {
+    pub fn volume_throughput(&self) -> ::std::option::Option<i32> {
         self.volume_throughput
     }
 }
@@ -30,29 +30,31 @@ impl ProvisionedThroughput {
 
 /// A builder for [`ProvisionedThroughput`](crate::types::ProvisionedThroughput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ProvisionedThroughputBuilder {
-    pub(crate) enabled: std::option::Option<bool>,
-    pub(crate) volume_throughput: std::option::Option<i32>,
+    pub(crate) enabled: ::std::option::Option<bool>,
+    pub(crate) volume_throughput: ::std::option::Option<i32>,
 }
 impl ProvisionedThroughputBuilder {
     /// <p>Provisioned throughput is enabled or not.</p>
     pub fn enabled(mut self, input: bool) -> Self {
-        self.enabled = Some(input);
+        self.enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provisioned throughput is enabled or not.</p>
-    pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
     }
     /// <p>Throughput value of the EBS volumes for the data drive on each kafka broker node in MiB per second.</p>
     pub fn volume_throughput(mut self, input: i32) -> Self {
-        self.volume_throughput = Some(input);
+        self.volume_throughput = ::std::option::Option::Some(input);
         self
     }
     /// <p>Throughput value of the EBS volumes for the data drive on each kafka broker node in MiB per second.</p>
-    pub fn set_volume_throughput(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_volume_throughput(mut self, input: ::std::option::Option<i32>) -> Self {
         self.volume_throughput = input;
         self
     }

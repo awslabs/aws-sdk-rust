@@ -2,20 +2,20 @@
 
 /// <p>A structure for the output.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartQueryPlanningOutput {
     /// <p>The ID of the plan query operation can be used to fetch the actual work unit descriptors that are produced as the result of the operation. The ID is also used to get the query state and as an input to the <code>Execute</code> operation.</p>
     #[doc(hidden)]
-    pub query_id: std::option::Option<std::string::String>,
+    pub query_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl StartQueryPlanningOutput {
     /// <p>The ID of the plan query operation can be used to fetch the actual work unit descriptors that are produced as the result of the operation. The ID is also used to get the query state and as an input to the <code>Execute</code> operation.</p>
-    pub fn query_id(&self) -> std::option::Option<&str> {
+    pub fn query_id(&self) -> ::std::option::Option<&str> {
         self.query_id.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for StartQueryPlanningOutput {
+impl ::aws_http::request_id::RequestId for StartQueryPlanningOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,19 +30,21 @@ impl StartQueryPlanningOutput {
 
 /// A builder for [`StartQueryPlanningOutput`](crate::operation::start_query_planning::StartQueryPlanningOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StartQueryPlanningOutputBuilder {
-    pub(crate) query_id: std::option::Option<std::string::String>,
+    pub(crate) query_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl StartQueryPlanningOutputBuilder {
     /// <p>The ID of the plan query operation can be used to fetch the actual work unit descriptors that are produced as the result of the operation. The ID is also used to get the query state and as an input to the <code>Execute</code> operation.</p>
-    pub fn query_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.query_id = Some(input.into());
+    pub fn query_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.query_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the plan query operation can be used to fetch the actual work unit descriptors that are produced as the result of the operation. The ID is also used to get the query state and as an input to the <code>Execute</code> operation.</p>
-    pub fn set_query_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_query_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.query_id = input;
         self
     }

@@ -2,24 +2,24 @@
 
 /// <p>The reason for an <code>AutoScalingPolicyStatus</code> change.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoScalingPolicyStateChangeReason {
     /// <p>The code indicating the reason for the change in status.<code>USER_REQUEST</code> indicates that the scaling policy status was changed by a user. <code>PROVISION_FAILURE</code> indicates that the status change was because the policy failed to provision. <code>CLEANUP_FAILURE</code> indicates an error.</p>
     #[doc(hidden)]
-    pub code: std::option::Option<crate::types::AutoScalingPolicyStateChangeReasonCode>,
+    pub code: ::std::option::Option<crate::types::AutoScalingPolicyStateChangeReasonCode>,
     /// <p>A friendly, more verbose message that accompanies an automatic scaling policy state change.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
 }
 impl AutoScalingPolicyStateChangeReason {
     /// <p>The code indicating the reason for the change in status.<code>USER_REQUEST</code> indicates that the scaling policy status was changed by a user. <code>PROVISION_FAILURE</code> indicates that the status change was because the policy failed to provision. <code>CLEANUP_FAILURE</code> indicates an error.</p>
     pub fn code(
         &self,
-    ) -> std::option::Option<&crate::types::AutoScalingPolicyStateChangeReasonCode> {
+    ) -> ::std::option::Option<&crate::types::AutoScalingPolicyStateChangeReasonCode> {
         self.code.as_ref()
     }
     /// <p>A friendly, more verbose message that accompanies an automatic scaling policy state change.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -32,32 +32,34 @@ impl AutoScalingPolicyStateChangeReason {
 
 /// A builder for [`AutoScalingPolicyStateChangeReason`](crate::types::AutoScalingPolicyStateChangeReason).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AutoScalingPolicyStateChangeReasonBuilder {
-    pub(crate) code: std::option::Option<crate::types::AutoScalingPolicyStateChangeReasonCode>,
-    pub(crate) message: std::option::Option<std::string::String>,
+    pub(crate) code: ::std::option::Option<crate::types::AutoScalingPolicyStateChangeReasonCode>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
 }
 impl AutoScalingPolicyStateChangeReasonBuilder {
     /// <p>The code indicating the reason for the change in status.<code>USER_REQUEST</code> indicates that the scaling policy status was changed by a user. <code>PROVISION_FAILURE</code> indicates that the status change was because the policy failed to provision. <code>CLEANUP_FAILURE</code> indicates an error.</p>
     pub fn code(mut self, input: crate::types::AutoScalingPolicyStateChangeReasonCode) -> Self {
-        self.code = Some(input);
+        self.code = ::std::option::Option::Some(input);
         self
     }
     /// <p>The code indicating the reason for the change in status.<code>USER_REQUEST</code> indicates that the scaling policy status was changed by a user. <code>PROVISION_FAILURE</code> indicates that the status change was because the policy failed to provision. <code>CLEANUP_FAILURE</code> indicates an error.</p>
     pub fn set_code(
         mut self,
-        input: std::option::Option<crate::types::AutoScalingPolicyStateChangeReasonCode>,
+        input: ::std::option::Option<crate::types::AutoScalingPolicyStateChangeReasonCode>,
     ) -> Self {
         self.code = input;
         self
     }
     /// <p>A friendly, more verbose message that accompanies an automatic scaling policy state change.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A friendly, more verbose message that accompanies an automatic scaling policy state change.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }

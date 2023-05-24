@@ -2,18 +2,18 @@
 
 /// If you work with a third party video watermarking partner, use the group of settings that correspond with your watermarking partner to include watermarks in your output.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PartnerWatermarking {
     /// For forensic video watermarking, MediaConvert supports Nagra NexGuard File Marker watermarking. MediaConvert supports both PreRelease Content (NGPR/G2) and OTT Streaming workflows.
     #[doc(hidden)]
     pub nexguard_file_marker_settings:
-        std::option::Option<crate::types::NexGuardFileMarkerSettings>,
+        ::std::option::Option<crate::types::NexGuardFileMarkerSettings>,
 }
 impl PartnerWatermarking {
     /// For forensic video watermarking, MediaConvert supports Nagra NexGuard File Marker watermarking. MediaConvert supports both PreRelease Content (NGPR/G2) and OTT Streaming workflows.
     pub fn nexguard_file_marker_settings(
         &self,
-    ) -> std::option::Option<&crate::types::NexGuardFileMarkerSettings> {
+    ) -> ::std::option::Option<&crate::types::NexGuardFileMarkerSettings> {
         self.nexguard_file_marker_settings.as_ref()
     }
 }
@@ -26,10 +26,12 @@ impl PartnerWatermarking {
 
 /// A builder for [`PartnerWatermarking`](crate::types::PartnerWatermarking).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PartnerWatermarkingBuilder {
     pub(crate) nexguard_file_marker_settings:
-        std::option::Option<crate::types::NexGuardFileMarkerSettings>,
+        ::std::option::Option<crate::types::NexGuardFileMarkerSettings>,
 }
 impl PartnerWatermarkingBuilder {
     /// For forensic video watermarking, MediaConvert supports Nagra NexGuard File Marker watermarking. MediaConvert supports both PreRelease Content (NGPR/G2) and OTT Streaming workflows.
@@ -37,13 +39,13 @@ impl PartnerWatermarkingBuilder {
         mut self,
         input: crate::types::NexGuardFileMarkerSettings,
     ) -> Self {
-        self.nexguard_file_marker_settings = Some(input);
+        self.nexguard_file_marker_settings = ::std::option::Option::Some(input);
         self
     }
     /// For forensic video watermarking, MediaConvert supports Nagra NexGuard File Marker watermarking. MediaConvert supports both PreRelease Content (NGPR/G2) and OTT Streaming workflows.
     pub fn set_nexguard_file_marker_settings(
         mut self,
-        input: std::option::Option<crate::types::NexGuardFileMarkerSettings>,
+        input: ::std::option::Option<crate::types::NexGuardFileMarkerSettings>,
     ) -> Self {
         self.nexguard_file_marker_settings = input;
         self

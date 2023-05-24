@@ -3,25 +3,25 @@
 /// <p>Provides summary information about an App Runner automatic scaling configuration resource.</p>
 /// <p>This type contains limited information about an auto scaling configuration. It includes only identification information, without configuration details. It's returned by the <code>ListAutoScalingConfigurations</code> action. Complete configuration information is returned by the <code>CreateAutoScalingConfiguration</code>, <code>DescribeAutoScalingConfiguration</code>, and <code>DeleteAutoScalingConfiguration</code> actions using the <code>AutoScalingConfiguration</code> type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoScalingConfigurationSummary {
     /// <p>The Amazon Resource Name (ARN) of this auto scaling configuration.</p>
     #[doc(hidden)]
-    pub auto_scaling_configuration_arn: std::option::Option<std::string::String>,
+    pub auto_scaling_configuration_arn: ::std::option::Option<::std::string::String>,
     /// <p>The customer-provided auto scaling configuration name. It can be used in multiple revisions of a configuration.</p>
     #[doc(hidden)]
-    pub auto_scaling_configuration_name: std::option::Option<std::string::String>,
+    pub auto_scaling_configuration_name: ::std::option::Option<::std::string::String>,
     /// <p>The revision of this auto scaling configuration. It's unique among all the active configurations (<code>"Status": "ACTIVE"</code>) with the same <code>AutoScalingConfigurationName</code>.</p>
     #[doc(hidden)]
     pub auto_scaling_configuration_revision: i32,
 }
 impl AutoScalingConfigurationSummary {
     /// <p>The Amazon Resource Name (ARN) of this auto scaling configuration.</p>
-    pub fn auto_scaling_configuration_arn(&self) -> std::option::Option<&str> {
+    pub fn auto_scaling_configuration_arn(&self) -> ::std::option::Option<&str> {
         self.auto_scaling_configuration_arn.as_deref()
     }
     /// <p>The customer-provided auto scaling configuration name. It can be used in multiple revisions of a configuration.</p>
-    pub fn auto_scaling_configuration_name(&self) -> std::option::Option<&str> {
+    pub fn auto_scaling_configuration_name(&self) -> ::std::option::Option<&str> {
         self.auto_scaling_configuration_name.as_deref()
     }
     /// <p>The revision of this auto scaling configuration. It's unique among all the active configurations (<code>"Status": "ACTIVE"</code>) with the same <code>AutoScalingConfigurationName</code>.</p>
@@ -38,22 +38,27 @@ impl AutoScalingConfigurationSummary {
 
 /// A builder for [`AutoScalingConfigurationSummary`](crate::types::AutoScalingConfigurationSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AutoScalingConfigurationSummaryBuilder {
-    pub(crate) auto_scaling_configuration_arn: std::option::Option<std::string::String>,
-    pub(crate) auto_scaling_configuration_name: std::option::Option<std::string::String>,
-    pub(crate) auto_scaling_configuration_revision: std::option::Option<i32>,
+    pub(crate) auto_scaling_configuration_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) auto_scaling_configuration_name: ::std::option::Option<::std::string::String>,
+    pub(crate) auto_scaling_configuration_revision: ::std::option::Option<i32>,
 }
 impl AutoScalingConfigurationSummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) of this auto scaling configuration.</p>
-    pub fn auto_scaling_configuration_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.auto_scaling_configuration_arn = Some(input.into());
+    pub fn auto_scaling_configuration_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.auto_scaling_configuration_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of this auto scaling configuration.</p>
     pub fn set_auto_scaling_configuration_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.auto_scaling_configuration_arn = input;
         self
@@ -61,28 +66,28 @@ impl AutoScalingConfigurationSummaryBuilder {
     /// <p>The customer-provided auto scaling configuration name. It can be used in multiple revisions of a configuration.</p>
     pub fn auto_scaling_configuration_name(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.auto_scaling_configuration_name = Some(input.into());
+        self.auto_scaling_configuration_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The customer-provided auto scaling configuration name. It can be used in multiple revisions of a configuration.</p>
     pub fn set_auto_scaling_configuration_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.auto_scaling_configuration_name = input;
         self
     }
     /// <p>The revision of this auto scaling configuration. It's unique among all the active configurations (<code>"Status": "ACTIVE"</code>) with the same <code>AutoScalingConfigurationName</code>.</p>
     pub fn auto_scaling_configuration_revision(mut self, input: i32) -> Self {
-        self.auto_scaling_configuration_revision = Some(input);
+        self.auto_scaling_configuration_revision = ::std::option::Option::Some(input);
         self
     }
     /// <p>The revision of this auto scaling configuration. It's unique among all the active configurations (<code>"Status": "ACTIVE"</code>) with the same <code>AutoScalingConfigurationName</code>.</p>
     pub fn set_auto_scaling_configuration_revision(
         mut self,
-        input: std::option::Option<i32>,
+        input: ::std::option::Option<i32>,
     ) -> Self {
         self.auto_scaling_configuration_revision = input;
         self

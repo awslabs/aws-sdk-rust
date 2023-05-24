@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetPublicKeyConfig`](crate::operation::get_public_key_config::builders::GetPublicKeyConfigFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::get_public_key_config::builders::GetPublicKeyConfigFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_public_key_config::builders::GetPublicKeyConfigFluentBuilder::set_id): <p>The identifier of the public key whose configuration you are getting.</p>
+    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::get_public_key_config::builders::GetPublicKeyConfigFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_public_key_config::builders::GetPublicKeyConfigFluentBuilder::set_id): <p>The identifier of the public key whose configuration you are getting.</p>
     /// - On success, responds with [`GetPublicKeyConfigOutput`](crate::operation::get_public_key_config::GetPublicKeyConfigOutput) with field(s):
     ///   - [`public_key_config(Option<PublicKeyConfig>)`](crate::operation::get_public_key_config::GetPublicKeyConfigOutput::public_key_config): <p>A public key configuration.</p>
     ///   - [`e_tag(Option<String>)`](crate::operation::get_public_key_config::GetPublicKeyConfigOutput::e_tag): <p>The identifier for this version of the public key configuration.</p>

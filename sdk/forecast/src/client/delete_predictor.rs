@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeletePredictor`](crate::operation::delete_predictor::builders::DeletePredictorFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`predictor_arn(impl Into<String>)`](crate::operation::delete_predictor::builders::DeletePredictorFluentBuilder::predictor_arn) / [`set_predictor_arn(Option<String>)`](crate::operation::delete_predictor::builders::DeletePredictorFluentBuilder::set_predictor_arn): <p>The Amazon Resource Name (ARN) of the predictor to delete.</p>
+    ///   - [`predictor_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_predictor::builders::DeletePredictorFluentBuilder::predictor_arn) / [`set_predictor_arn(Option<String>)`](crate::operation::delete_predictor::builders::DeletePredictorFluentBuilder::set_predictor_arn): <p>The Amazon Resource Name (ARN) of the predictor to delete.</p>
     /// - On success, responds with [`DeletePredictorOutput`](crate::operation::delete_predictor::DeletePredictorOutput)
     /// - On failure, responds with [`SdkError<DeletePredictorError>`](crate::operation::delete_predictor::DeletePredictorError)
     pub fn delete_predictor(

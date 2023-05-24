@@ -2,15 +2,15 @@
 
 /// MediaPackage Output Destination Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MediaPackageOutputDestinationSettings {
     /// ID of the channel in MediaPackage that is the destination for this output group. You do not need to specify the individual inputs in MediaPackage; MediaLive will handle the connection of the two MediaLive pipelines to the two MediaPackage inputs. The MediaPackage channel and MediaLive channel must be in the same region.
     #[doc(hidden)]
-    pub channel_id: std::option::Option<std::string::String>,
+    pub channel_id: ::std::option::Option<::std::string::String>,
 }
 impl MediaPackageOutputDestinationSettings {
     /// ID of the channel in MediaPackage that is the destination for this output group. You do not need to specify the individual inputs in MediaPackage; MediaLive will handle the connection of the two MediaLive pipelines to the two MediaPackage inputs. The MediaPackage channel and MediaLive channel must be in the same region.
-    pub fn channel_id(&self) -> std::option::Option<&str> {
+    pub fn channel_id(&self) -> ::std::option::Option<&str> {
         self.channel_id.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl MediaPackageOutputDestinationSettings {
 
 /// A builder for [`MediaPackageOutputDestinationSettings`](crate::types::MediaPackageOutputDestinationSettings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MediaPackageOutputDestinationSettingsBuilder {
-    pub(crate) channel_id: std::option::Option<std::string::String>,
+    pub(crate) channel_id: ::std::option::Option<::std::string::String>,
 }
 impl MediaPackageOutputDestinationSettingsBuilder {
     /// ID of the channel in MediaPackage that is the destination for this output group. You do not need to specify the individual inputs in MediaPackage; MediaLive will handle the connection of the two MediaLive pipelines to the two MediaPackage inputs. The MediaPackage channel and MediaLive channel must be in the same region.
-    pub fn channel_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.channel_id = Some(input.into());
+    pub fn channel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.channel_id = ::std::option::Option::Some(input.into());
         self
     }
     /// ID of the channel in MediaPackage that is the destination for this output group. You do not need to specify the individual inputs in MediaPackage; MediaLive will handle the connection of the two MediaLive pipelines to the two MediaPackage inputs. The MediaPackage channel and MediaLive channel must be in the same region.
-    pub fn set_channel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_channel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.channel_id = input;
         self
     }

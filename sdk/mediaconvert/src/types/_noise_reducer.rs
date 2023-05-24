@@ -2,44 +2,44 @@
 
 /// Enable the Noise reducer feature to remove noise from your video output if necessary. Enable or disable this feature for each output individually. This setting is disabled by default. When you enable Noise reducer, you must also select a value for Noise reducer filter. For AVC outputs, when you include Noise reducer, you cannot include the Bandwidth reduction filter.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NoiseReducer {
     /// Use Noise reducer filter (NoiseReducerFilter) to select one of the following spatial image filtering functions. To use this setting, you must also enable Noise reducer (NoiseReducer). * Bilateral preserves edges while reducing noise. * Mean (softest), Gaussian, Lanczos, and Sharpen (sharpest) do convolution filtering. * Conserve does min/max noise reduction. * Spatial does frequency-domain filtering based on JND principles. * Temporal optimizes video quality for complex motion.
     #[doc(hidden)]
-    pub filter: std::option::Option<crate::types::NoiseReducerFilter>,
+    pub filter: ::std::option::Option<crate::types::NoiseReducerFilter>,
     /// Settings for a noise reducer filter
     #[doc(hidden)]
-    pub filter_settings: std::option::Option<crate::types::NoiseReducerFilterSettings>,
+    pub filter_settings: ::std::option::Option<crate::types::NoiseReducerFilterSettings>,
     /// Noise reducer filter settings for spatial filter.
     #[doc(hidden)]
     pub spatial_filter_settings:
-        std::option::Option<crate::types::NoiseReducerSpatialFilterSettings>,
+        ::std::option::Option<crate::types::NoiseReducerSpatialFilterSettings>,
     /// Noise reducer filter settings for temporal filter.
     #[doc(hidden)]
     pub temporal_filter_settings:
-        std::option::Option<crate::types::NoiseReducerTemporalFilterSettings>,
+        ::std::option::Option<crate::types::NoiseReducerTemporalFilterSettings>,
 }
 impl NoiseReducer {
     /// Use Noise reducer filter (NoiseReducerFilter) to select one of the following spatial image filtering functions. To use this setting, you must also enable Noise reducer (NoiseReducer). * Bilateral preserves edges while reducing noise. * Mean (softest), Gaussian, Lanczos, and Sharpen (sharpest) do convolution filtering. * Conserve does min/max noise reduction. * Spatial does frequency-domain filtering based on JND principles. * Temporal optimizes video quality for complex motion.
-    pub fn filter(&self) -> std::option::Option<&crate::types::NoiseReducerFilter> {
+    pub fn filter(&self) -> ::std::option::Option<&crate::types::NoiseReducerFilter> {
         self.filter.as_ref()
     }
     /// Settings for a noise reducer filter
     pub fn filter_settings(
         &self,
-    ) -> std::option::Option<&crate::types::NoiseReducerFilterSettings> {
+    ) -> ::std::option::Option<&crate::types::NoiseReducerFilterSettings> {
         self.filter_settings.as_ref()
     }
     /// Noise reducer filter settings for spatial filter.
     pub fn spatial_filter_settings(
         &self,
-    ) -> std::option::Option<&crate::types::NoiseReducerSpatialFilterSettings> {
+    ) -> ::std::option::Option<&crate::types::NoiseReducerSpatialFilterSettings> {
         self.spatial_filter_settings.as_ref()
     }
     /// Noise reducer filter settings for temporal filter.
     pub fn temporal_filter_settings(
         &self,
-    ) -> std::option::Option<&crate::types::NoiseReducerTemporalFilterSettings> {
+    ) -> ::std::option::Option<&crate::types::NoiseReducerTemporalFilterSettings> {
         self.temporal_filter_settings.as_ref()
     }
 }
@@ -52,38 +52,40 @@ impl NoiseReducer {
 
 /// A builder for [`NoiseReducer`](crate::types::NoiseReducer).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NoiseReducerBuilder {
-    pub(crate) filter: std::option::Option<crate::types::NoiseReducerFilter>,
-    pub(crate) filter_settings: std::option::Option<crate::types::NoiseReducerFilterSettings>,
+    pub(crate) filter: ::std::option::Option<crate::types::NoiseReducerFilter>,
+    pub(crate) filter_settings: ::std::option::Option<crate::types::NoiseReducerFilterSettings>,
     pub(crate) spatial_filter_settings:
-        std::option::Option<crate::types::NoiseReducerSpatialFilterSettings>,
+        ::std::option::Option<crate::types::NoiseReducerSpatialFilterSettings>,
     pub(crate) temporal_filter_settings:
-        std::option::Option<crate::types::NoiseReducerTemporalFilterSettings>,
+        ::std::option::Option<crate::types::NoiseReducerTemporalFilterSettings>,
 }
 impl NoiseReducerBuilder {
     /// Use Noise reducer filter (NoiseReducerFilter) to select one of the following spatial image filtering functions. To use this setting, you must also enable Noise reducer (NoiseReducer). * Bilateral preserves edges while reducing noise. * Mean (softest), Gaussian, Lanczos, and Sharpen (sharpest) do convolution filtering. * Conserve does min/max noise reduction. * Spatial does frequency-domain filtering based on JND principles. * Temporal optimizes video quality for complex motion.
     pub fn filter(mut self, input: crate::types::NoiseReducerFilter) -> Self {
-        self.filter = Some(input);
+        self.filter = ::std::option::Option::Some(input);
         self
     }
     /// Use Noise reducer filter (NoiseReducerFilter) to select one of the following spatial image filtering functions. To use this setting, you must also enable Noise reducer (NoiseReducer). * Bilateral preserves edges while reducing noise. * Mean (softest), Gaussian, Lanczos, and Sharpen (sharpest) do convolution filtering. * Conserve does min/max noise reduction. * Spatial does frequency-domain filtering based on JND principles. * Temporal optimizes video quality for complex motion.
     pub fn set_filter(
         mut self,
-        input: std::option::Option<crate::types::NoiseReducerFilter>,
+        input: ::std::option::Option<crate::types::NoiseReducerFilter>,
     ) -> Self {
         self.filter = input;
         self
     }
     /// Settings for a noise reducer filter
     pub fn filter_settings(mut self, input: crate::types::NoiseReducerFilterSettings) -> Self {
-        self.filter_settings = Some(input);
+        self.filter_settings = ::std::option::Option::Some(input);
         self
     }
     /// Settings for a noise reducer filter
     pub fn set_filter_settings(
         mut self,
-        input: std::option::Option<crate::types::NoiseReducerFilterSettings>,
+        input: ::std::option::Option<crate::types::NoiseReducerFilterSettings>,
     ) -> Self {
         self.filter_settings = input;
         self
@@ -93,13 +95,13 @@ impl NoiseReducerBuilder {
         mut self,
         input: crate::types::NoiseReducerSpatialFilterSettings,
     ) -> Self {
-        self.spatial_filter_settings = Some(input);
+        self.spatial_filter_settings = ::std::option::Option::Some(input);
         self
     }
     /// Noise reducer filter settings for spatial filter.
     pub fn set_spatial_filter_settings(
         mut self,
-        input: std::option::Option<crate::types::NoiseReducerSpatialFilterSettings>,
+        input: ::std::option::Option<crate::types::NoiseReducerSpatialFilterSettings>,
     ) -> Self {
         self.spatial_filter_settings = input;
         self
@@ -109,13 +111,13 @@ impl NoiseReducerBuilder {
         mut self,
         input: crate::types::NoiseReducerTemporalFilterSettings,
     ) -> Self {
-        self.temporal_filter_settings = Some(input);
+        self.temporal_filter_settings = ::std::option::Option::Some(input);
         self
     }
     /// Noise reducer filter settings for temporal filter.
     pub fn set_temporal_filter_settings(
         mut self,
-        input: std::option::Option<crate::types::NoiseReducerTemporalFilterSettings>,
+        input: ::std::option::Option<crate::types::NoiseReducerTemporalFilterSettings>,
     ) -> Self {
         self.temporal_filter_settings = input;
         self

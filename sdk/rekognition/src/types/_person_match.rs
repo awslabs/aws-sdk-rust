@@ -2,17 +2,17 @@
 
 /// <p>Information about a person whose face matches a face(s) in an Amazon Rekognition collection. Includes information about the faces in the Amazon Rekognition collection (<code>FaceMatch</code>), information about the person (<code>PersonDetail</code>), and the time stamp for when the person was detected in a video. An array of <code>PersonMatch</code> objects is returned by <code>GetFaceSearch</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PersonMatch {
     /// <p>The time, in milliseconds from the beginning of the video, that the person was matched in the video.</p>
     #[doc(hidden)]
     pub timestamp: i64,
     /// <p>Information about the matched person.</p>
     #[doc(hidden)]
-    pub person: std::option::Option<crate::types::PersonDetail>,
+    pub person: ::std::option::Option<crate::types::PersonDetail>,
     /// <p>Information about the faces in the input collection that match the face of a person in the video.</p>
     #[doc(hidden)]
-    pub face_matches: std::option::Option<std::vec::Vec<crate::types::FaceMatch>>,
+    pub face_matches: ::std::option::Option<::std::vec::Vec<crate::types::FaceMatch>>,
 }
 impl PersonMatch {
     /// <p>The time, in milliseconds from the beginning of the video, that the person was matched in the video.</p>
@@ -20,11 +20,11 @@ impl PersonMatch {
         self.timestamp
     }
     /// <p>Information about the matched person.</p>
-    pub fn person(&self) -> std::option::Option<&crate::types::PersonDetail> {
+    pub fn person(&self) -> ::std::option::Option<&crate::types::PersonDetail> {
         self.person.as_ref()
     }
     /// <p>Information about the faces in the input collection that match the face of a person in the video.</p>
-    pub fn face_matches(&self) -> std::option::Option<&[crate::types::FaceMatch]> {
+    pub fn face_matches(&self) -> ::std::option::Option<&[crate::types::FaceMatch]> {
         self.face_matches.as_deref()
     }
 }
@@ -37,30 +37,32 @@ impl PersonMatch {
 
 /// A builder for [`PersonMatch`](crate::types::PersonMatch).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PersonMatchBuilder {
-    pub(crate) timestamp: std::option::Option<i64>,
-    pub(crate) person: std::option::Option<crate::types::PersonDetail>,
-    pub(crate) face_matches: std::option::Option<std::vec::Vec<crate::types::FaceMatch>>,
+    pub(crate) timestamp: ::std::option::Option<i64>,
+    pub(crate) person: ::std::option::Option<crate::types::PersonDetail>,
+    pub(crate) face_matches: ::std::option::Option<::std::vec::Vec<crate::types::FaceMatch>>,
 }
 impl PersonMatchBuilder {
     /// <p>The time, in milliseconds from the beginning of the video, that the person was matched in the video.</p>
     pub fn timestamp(mut self, input: i64) -> Self {
-        self.timestamp = Some(input);
+        self.timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time, in milliseconds from the beginning of the video, that the person was matched in the video.</p>
-    pub fn set_timestamp(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_timestamp(mut self, input: ::std::option::Option<i64>) -> Self {
         self.timestamp = input;
         self
     }
     /// <p>Information about the matched person.</p>
     pub fn person(mut self, input: crate::types::PersonDetail) -> Self {
-        self.person = Some(input);
+        self.person = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the matched person.</p>
-    pub fn set_person(mut self, input: std::option::Option<crate::types::PersonDetail>) -> Self {
+    pub fn set_person(mut self, input: ::std::option::Option<crate::types::PersonDetail>) -> Self {
         self.person = input;
         self
     }
@@ -72,13 +74,13 @@ impl PersonMatchBuilder {
     pub fn face_matches(mut self, input: crate::types::FaceMatch) -> Self {
         let mut v = self.face_matches.unwrap_or_default();
         v.push(input);
-        self.face_matches = Some(v);
+        self.face_matches = ::std::option::Option::Some(v);
         self
     }
     /// <p>Information about the faces in the input collection that match the face of a person in the video.</p>
     pub fn set_face_matches(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::FaceMatch>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::FaceMatch>>,
     ) -> Self {
         self.face_matches = input;
         self

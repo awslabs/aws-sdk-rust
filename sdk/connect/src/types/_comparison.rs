@@ -37,13 +37,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum Comparison {
     #[allow(missing_docs)] // documentation missing in model
@@ -51,7 +51,7 @@ pub enum Comparison {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for Comparison {
+impl ::std::convert::From<&str> for Comparison {
     fn from(s: &str) -> Self {
         match s {
             "LT" => Comparison::Lt,
@@ -59,11 +59,11 @@ impl std::convert::From<&str> for Comparison {
         }
     }
 }
-impl std::str::FromStr for Comparison {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for Comparison {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Comparison::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(Comparison::from(s))
     }
 }
 impl Comparison {
@@ -79,7 +79,7 @@ impl Comparison {
         &["LT"]
     }
 }
-impl AsRef<str> for Comparison {
+impl ::std::convert::AsRef<str> for Comparison {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

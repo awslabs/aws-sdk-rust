@@ -6,56 +6,59 @@ pub use crate::operation::update_answer::_update_answer_input::UpdateAnswerInput
 /// Fluent builder constructing a request to `UpdateAnswer`.
 ///
 /// <p>Update the answer to a specific question in a workload review.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateAnswerFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::update_answer::builders::UpdateAnswerInputBuilder,
 }
 impl UpdateAnswerFluentBuilder {
     /// Creates a new `UpdateAnswer`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_answer::UpdateAnswer,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::update_answer::UpdateAnswerError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_answer::UpdateAnswerError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_answer::UpdateAnswerOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_answer::UpdateAnswerError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_answer::UpdateAnswerError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,19 +71,19 @@ impl UpdateAnswerFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_answer::UpdateAnswerOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_answer::UpdateAnswerError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_answer::UpdateAnswerError>,
     > {
         self.send_middleware().await
     }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn workload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.workload_id(input.into());
         self
     }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_workload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_workload_id(input);
         self
     }
@@ -88,7 +91,7 @@ impl UpdateAnswerFluentBuilder {
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
-    pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn lens_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.lens_alias(input.into());
         self
     }
@@ -96,17 +99,17 @@ impl UpdateAnswerFluentBuilder {
     /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
     /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
-    pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_lens_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_lens_alias(input);
         self
     }
     /// <p>The ID of the question.</p>
-    pub fn question_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn question_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.question_id(input.into());
         self
     }
     /// <p>The ID of the question.</p>
-    pub fn set_question_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_question_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_question_id(input);
         self
     }
@@ -116,7 +119,10 @@ impl UpdateAnswerFluentBuilder {
     ///
     /// <p>List of selected choice IDs in a question answer.</p>
     /// <p>The values entered replace the previously selected choices.</p>
-    pub fn selected_choices(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn selected_choices(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.selected_choices(input.into());
         self
     }
@@ -124,7 +130,7 @@ impl UpdateAnswerFluentBuilder {
     /// <p>The values entered replace the previously selected choices.</p>
     pub fn set_selected_choices(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_selected_choices(input);
         self
@@ -136,7 +142,7 @@ impl UpdateAnswerFluentBuilder {
     /// <p>A list of choices to update on a question in your workload. The String key corresponds to the choice ID to be updated.</p>
     pub fn choice_updates(
         mut self,
-        k: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
         v: crate::types::ChoiceUpdate,
     ) -> Self {
         self.inner = self.inner.choice_updates(k.into(), v);
@@ -145,20 +151,20 @@ impl UpdateAnswerFluentBuilder {
     /// <p>A list of choices to update on a question in your workload. The String key corresponds to the choice ID to be updated.</p>
     pub fn set_choice_updates(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::types::ChoiceUpdate>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, crate::types::ChoiceUpdate>,
         >,
     ) -> Self {
         self.inner = self.inner.set_choice_updates(input);
         self
     }
     /// <p>The notes associated with the workload.</p>
-    pub fn notes(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn notes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.notes(input.into());
         self
     }
     /// <p>The notes associated with the workload.</p>
-    pub fn set_notes(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_notes(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_notes(input);
         self
     }
@@ -168,7 +174,7 @@ impl UpdateAnswerFluentBuilder {
         self
     }
     /// <p>Defines whether this question is applicable to a lens review.</p>
-    pub fn set_is_applicable(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_applicable(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_is_applicable(input);
         self
     }
@@ -178,7 +184,7 @@ impl UpdateAnswerFluentBuilder {
         self
     }
     /// <p>The reason why a question is not applicable to your workload.</p>
-    pub fn set_reason(mut self, input: std::option::Option<crate::types::AnswerReason>) -> Self {
+    pub fn set_reason(mut self, input: ::std::option::Option<crate::types::AnswerReason>) -> Self {
         self.inner = self.inner.set_reason(input);
         self
     }

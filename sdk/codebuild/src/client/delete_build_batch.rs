@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteBuildBatch`](crate::operation::delete_build_batch::builders::DeleteBuildBatchFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::delete_build_batch::builders::DeleteBuildBatchFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_build_batch::builders::DeleteBuildBatchFluentBuilder::set_id): <p>The identifier of the batch build to delete.</p>
+    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::delete_build_batch::builders::DeleteBuildBatchFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_build_batch::builders::DeleteBuildBatchFluentBuilder::set_id): <p>The identifier of the batch build to delete.</p>
     /// - On success, responds with [`DeleteBuildBatchOutput`](crate::operation::delete_build_batch::DeleteBuildBatchOutput) with field(s):
     ///   - [`status_code(Option<String>)`](crate::operation::delete_build_batch::DeleteBuildBatchOutput::status_code): <p>The status code.</p>
     ///   - [`builds_deleted(Option<Vec<String>>)`](crate::operation::delete_build_batch::DeleteBuildBatchOutput::builds_deleted): <p>An array of strings that contain the identifiers of the builds that were deleted.</p>

@@ -2,37 +2,39 @@
 
 /// <p>Information about the options in single select questions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluationFormSingleSelectQuestionProperties {
     /// <p>The answer options of the single select question.</p>
     #[doc(hidden)]
-    pub options:
-        std::option::Option<std::vec::Vec<crate::types::EvaluationFormSingleSelectQuestionOption>>,
+    pub options: ::std::option::Option<
+        ::std::vec::Vec<crate::types::EvaluationFormSingleSelectQuestionOption>,
+    >,
     /// <p>The display mode of the single select question.</p>
     #[doc(hidden)]
     pub display_as:
-        std::option::Option<crate::types::EvaluationFormSingleSelectQuestionDisplayMode>,
+        ::std::option::Option<crate::types::EvaluationFormSingleSelectQuestionDisplayMode>,
     /// <p>The display mode of the single select question.</p>
     #[doc(hidden)]
-    pub automation: std::option::Option<crate::types::EvaluationFormSingleSelectQuestionAutomation>,
+    pub automation:
+        ::std::option::Option<crate::types::EvaluationFormSingleSelectQuestionAutomation>,
 }
 impl EvaluationFormSingleSelectQuestionProperties {
     /// <p>The answer options of the single select question.</p>
     pub fn options(
         &self,
-    ) -> std::option::Option<&[crate::types::EvaluationFormSingleSelectQuestionOption]> {
+    ) -> ::std::option::Option<&[crate::types::EvaluationFormSingleSelectQuestionOption]> {
         self.options.as_deref()
     }
     /// <p>The display mode of the single select question.</p>
     pub fn display_as(
         &self,
-    ) -> std::option::Option<&crate::types::EvaluationFormSingleSelectQuestionDisplayMode> {
+    ) -> ::std::option::Option<&crate::types::EvaluationFormSingleSelectQuestionDisplayMode> {
         self.display_as.as_ref()
     }
     /// <p>The display mode of the single select question.</p>
     pub fn automation(
         &self,
-    ) -> std::option::Option<&crate::types::EvaluationFormSingleSelectQuestionAutomation> {
+    ) -> ::std::option::Option<&crate::types::EvaluationFormSingleSelectQuestionAutomation> {
         self.automation.as_ref()
     }
 }
@@ -46,14 +48,17 @@ impl EvaluationFormSingleSelectQuestionProperties {
 
 /// A builder for [`EvaluationFormSingleSelectQuestionProperties`](crate::types::EvaluationFormSingleSelectQuestionProperties).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EvaluationFormSingleSelectQuestionPropertiesBuilder {
-    pub(crate) options:
-        std::option::Option<std::vec::Vec<crate::types::EvaluationFormSingleSelectQuestionOption>>,
+    pub(crate) options: ::std::option::Option<
+        ::std::vec::Vec<crate::types::EvaluationFormSingleSelectQuestionOption>,
+    >,
     pub(crate) display_as:
-        std::option::Option<crate::types::EvaluationFormSingleSelectQuestionDisplayMode>,
+        ::std::option::Option<crate::types::EvaluationFormSingleSelectQuestionDisplayMode>,
     pub(crate) automation:
-        std::option::Option<crate::types::EvaluationFormSingleSelectQuestionAutomation>,
+        ::std::option::Option<crate::types::EvaluationFormSingleSelectQuestionAutomation>,
 }
 impl EvaluationFormSingleSelectQuestionPropertiesBuilder {
     /// Appends an item to `options`.
@@ -67,14 +72,14 @@ impl EvaluationFormSingleSelectQuestionPropertiesBuilder {
     ) -> Self {
         let mut v = self.options.unwrap_or_default();
         v.push(input);
-        self.options = Some(v);
+        self.options = ::std::option::Option::Some(v);
         self
     }
     /// <p>The answer options of the single select question.</p>
     pub fn set_options(
         mut self,
-        input: std::option::Option<
-            std::vec::Vec<crate::types::EvaluationFormSingleSelectQuestionOption>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::EvaluationFormSingleSelectQuestionOption>,
         >,
     ) -> Self {
         self.options = input;
@@ -85,13 +90,13 @@ impl EvaluationFormSingleSelectQuestionPropertiesBuilder {
         mut self,
         input: crate::types::EvaluationFormSingleSelectQuestionDisplayMode,
     ) -> Self {
-        self.display_as = Some(input);
+        self.display_as = ::std::option::Option::Some(input);
         self
     }
     /// <p>The display mode of the single select question.</p>
     pub fn set_display_as(
         mut self,
-        input: std::option::Option<crate::types::EvaluationFormSingleSelectQuestionDisplayMode>,
+        input: ::std::option::Option<crate::types::EvaluationFormSingleSelectQuestionDisplayMode>,
     ) -> Self {
         self.display_as = input;
         self
@@ -101,13 +106,13 @@ impl EvaluationFormSingleSelectQuestionPropertiesBuilder {
         mut self,
         input: crate::types::EvaluationFormSingleSelectQuestionAutomation,
     ) -> Self {
-        self.automation = Some(input);
+        self.automation = ::std::option::Option::Some(input);
         self
     }
     /// <p>The display mode of the single select question.</p>
     pub fn set_automation(
         mut self,
-        input: std::option::Option<crate::types::EvaluationFormSingleSelectQuestionAutomation>,
+        input: ::std::option::Option<crate::types::EvaluationFormSingleSelectQuestionAutomation>,
     ) -> Self {
         self.automation = input;
         self

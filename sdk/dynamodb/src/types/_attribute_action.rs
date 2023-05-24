@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum AttributeAction {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum AttributeAction {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for AttributeAction {
+impl ::std::convert::From<&str> for AttributeAction {
     fn from(s: &str) -> Self {
         match s {
             "ADD" => AttributeAction::Add,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for AttributeAction {
         }
     }
 }
-impl std::str::FromStr for AttributeAction {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for AttributeAction {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AttributeAction::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(AttributeAction::from(s))
     }
 }
 impl AttributeAction {
@@ -91,7 +91,7 @@ impl AttributeAction {
         &["ADD", "DELETE", "PUT"]
     }
 }
-impl AsRef<str> for AttributeAction {
+impl ::std::convert::AsRef<str> for AttributeAction {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

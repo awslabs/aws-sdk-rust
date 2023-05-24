@@ -2,20 +2,20 @@
 
 /// <p>Start export response.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartExportOutput {
     /// <p>Start export response export task.</p>
     #[doc(hidden)]
-    pub export_task: std::option::Option<crate::types::ExportTask>,
+    pub export_task: ::std::option::Option<crate::types::ExportTask>,
     _request_id: Option<String>,
 }
 impl StartExportOutput {
     /// <p>Start export response export task.</p>
-    pub fn export_task(&self) -> std::option::Option<&crate::types::ExportTask> {
+    pub fn export_task(&self) -> ::std::option::Option<&crate::types::ExportTask> {
         self.export_task.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for StartExportOutput {
+impl ::aws_http::request_id::RequestId for StartExportOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,24 @@ impl StartExportOutput {
 
 /// A builder for [`StartExportOutput`](crate::operation::start_export::StartExportOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StartExportOutputBuilder {
-    pub(crate) export_task: std::option::Option<crate::types::ExportTask>,
+    pub(crate) export_task: ::std::option::Option<crate::types::ExportTask>,
     _request_id: Option<String>,
 }
 impl StartExportOutputBuilder {
     /// <p>Start export response export task.</p>
     pub fn export_task(mut self, input: crate::types::ExportTask) -> Self {
-        self.export_task = Some(input);
+        self.export_task = ::std::option::Option::Some(input);
         self
     }
     /// <p>Start export response export task.</p>
-    pub fn set_export_task(mut self, input: std::option::Option<crate::types::ExportTask>) -> Self {
+    pub fn set_export_task(
+        mut self,
+        input: ::std::option::Option<crate::types::ExportTask>,
+    ) -> Self {
         self.export_task = input;
         self
     }

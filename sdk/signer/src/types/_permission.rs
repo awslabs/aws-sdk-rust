@@ -2,36 +2,36 @@
 
 /// <p>A cross-account permission for a signing profile.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Permission {
     /// <p>An AWS Signer action permitted as part of cross-account permissions.</p>
     #[doc(hidden)]
-    pub action: std::option::Option<std::string::String>,
+    pub action: ::std::option::Option<::std::string::String>,
     /// <p>The AWS principal that has been granted a cross-account permission.</p>
     #[doc(hidden)]
-    pub principal: std::option::Option<std::string::String>,
+    pub principal: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for a cross-account permission statement.</p>
     #[doc(hidden)]
-    pub statement_id: std::option::Option<std::string::String>,
+    pub statement_id: ::std::option::Option<::std::string::String>,
     /// <p>The signing profile version that a permission applies to.</p>
     #[doc(hidden)]
-    pub profile_version: std::option::Option<std::string::String>,
+    pub profile_version: ::std::option::Option<::std::string::String>,
 }
 impl Permission {
     /// <p>An AWS Signer action permitted as part of cross-account permissions.</p>
-    pub fn action(&self) -> std::option::Option<&str> {
+    pub fn action(&self) -> ::std::option::Option<&str> {
         self.action.as_deref()
     }
     /// <p>The AWS principal that has been granted a cross-account permission.</p>
-    pub fn principal(&self) -> std::option::Option<&str> {
+    pub fn principal(&self) -> ::std::option::Option<&str> {
         self.principal.as_deref()
     }
     /// <p>A unique identifier for a cross-account permission statement.</p>
-    pub fn statement_id(&self) -> std::option::Option<&str> {
+    pub fn statement_id(&self) -> ::std::option::Option<&str> {
         self.statement_id.as_deref()
     }
     /// <p>The signing profile version that a permission applies to.</p>
-    pub fn profile_version(&self) -> std::option::Option<&str> {
+    pub fn profile_version(&self) -> ::std::option::Option<&str> {
         self.profile_version.as_deref()
     }
 }
@@ -44,51 +44,59 @@ impl Permission {
 
 /// A builder for [`Permission`](crate::types::Permission).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PermissionBuilder {
-    pub(crate) action: std::option::Option<std::string::String>,
-    pub(crate) principal: std::option::Option<std::string::String>,
-    pub(crate) statement_id: std::option::Option<std::string::String>,
-    pub(crate) profile_version: std::option::Option<std::string::String>,
+    pub(crate) action: ::std::option::Option<::std::string::String>,
+    pub(crate) principal: ::std::option::Option<::std::string::String>,
+    pub(crate) statement_id: ::std::option::Option<::std::string::String>,
+    pub(crate) profile_version: ::std::option::Option<::std::string::String>,
 }
 impl PermissionBuilder {
     /// <p>An AWS Signer action permitted as part of cross-account permissions.</p>
-    pub fn action(mut self, input: impl Into<std::string::String>) -> Self {
-        self.action = Some(input.into());
+    pub fn action(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.action = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An AWS Signer action permitted as part of cross-account permissions.</p>
-    pub fn set_action(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_action(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.action = input;
         self
     }
     /// <p>The AWS principal that has been granted a cross-account permission.</p>
-    pub fn principal(mut self, input: impl Into<std::string::String>) -> Self {
-        self.principal = Some(input.into());
+    pub fn principal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.principal = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The AWS principal that has been granted a cross-account permission.</p>
-    pub fn set_principal(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_principal(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.principal = input;
         self
     }
     /// <p>A unique identifier for a cross-account permission statement.</p>
-    pub fn statement_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.statement_id = Some(input.into());
+    pub fn statement_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.statement_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for a cross-account permission statement.</p>
-    pub fn set_statement_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_statement_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.statement_id = input;
         self
     }
     /// <p>The signing profile version that a permission applies to.</p>
-    pub fn profile_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.profile_version = Some(input.into());
+    pub fn profile_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.profile_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The signing profile version that a permission applies to.</p>
-    pub fn set_profile_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_profile_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.profile_version = input;
         self
     }

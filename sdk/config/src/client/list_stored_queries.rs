@@ -4,7 +4,7 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_stored_queries::builders::ListStoredQueriesFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_stored_queries::builders::ListStoredQueriesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_stored_queries::builders::ListStoredQueriesFluentBuilder::set_next_token): <p>The nextToken string returned in a previous request that you use to request the next page of results in a paginated response.</p>
+    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_stored_queries::builders::ListStoredQueriesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_stored_queries::builders::ListStoredQueriesFluentBuilder::set_next_token): <p>The nextToken string returned in a previous request that you use to request the next page of results in a paginated response.</p>
     ///   - [`max_results(i32)`](crate::operation::list_stored_queries::builders::ListStoredQueriesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_stored_queries::builders::ListStoredQueriesFluentBuilder::set_max_results): <p>The maximum number of results to be returned with a single call.</p>
     /// - On success, responds with [`ListStoredQueriesOutput`](crate::operation::list_stored_queries::ListStoredQueriesOutput) with field(s):
     ///   - [`stored_query_metadata(Option<Vec<StoredQueryMetadata>>)`](crate::operation::list_stored_queries::ListStoredQueriesOutput::stored_query_metadata): <p>A list of <code>StoredQueryMetadata</code> objects.</p>

@@ -2,32 +2,32 @@
 
 /// <p>The raw metric data to associate with the resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RawMetricData {
     /// <p>The name of the metric.</p>
     #[doc(hidden)]
-    pub metric_name: std::option::Option<std::string::String>,
+    pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p>The time that the metric was recorded.</p>
     #[doc(hidden)]
-    pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The metric step (epoch). </p>
     #[doc(hidden)]
-    pub step: std::option::Option<i32>,
+    pub step: ::std::option::Option<i32>,
     /// <p>The metric value.</p>
     #[doc(hidden)]
     pub value: f64,
 }
 impl RawMetricData {
     /// <p>The name of the metric.</p>
-    pub fn metric_name(&self) -> std::option::Option<&str> {
+    pub fn metric_name(&self) -> ::std::option::Option<&str> {
         self.metric_name.as_deref()
     }
     /// <p>The time that the metric was recorded.</p>
-    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
     /// <p>The metric step (epoch). </p>
-    pub fn step(&self) -> std::option::Option<i32> {
+    pub fn step(&self) -> ::std::option::Option<i32> {
         self.step
     }
     /// <p>The metric value.</p>
@@ -44,51 +44,56 @@ impl RawMetricData {
 
 /// A builder for [`RawMetricData`](crate::types::RawMetricData).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RawMetricDataBuilder {
-    pub(crate) metric_name: std::option::Option<std::string::String>,
-    pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) step: std::option::Option<i32>,
-    pub(crate) value: std::option::Option<f64>,
+    pub(crate) metric_name: ::std::option::Option<::std::string::String>,
+    pub(crate) timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) step: ::std::option::Option<i32>,
+    pub(crate) value: ::std::option::Option<f64>,
 }
 impl RawMetricDataBuilder {
     /// <p>The name of the metric.</p>
-    pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.metric_name = Some(input.into());
+    pub fn metric_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.metric_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the metric.</p>
-    pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_metric_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metric_name = input;
         self
     }
     /// <p>The time that the metric was recorded.</p>
-    pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.timestamp = Some(input);
+    pub fn timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time that the metric was recorded.</p>
-    pub fn set_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_timestamp(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
         self.timestamp = input;
         self
     }
     /// <p>The metric step (epoch). </p>
     pub fn step(mut self, input: i32) -> Self {
-        self.step = Some(input);
+        self.step = ::std::option::Option::Some(input);
         self
     }
     /// <p>The metric step (epoch). </p>
-    pub fn set_step(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_step(mut self, input: ::std::option::Option<i32>) -> Self {
         self.step = input;
         self
     }
     /// <p>The metric value.</p>
     pub fn value(mut self, input: f64) -> Self {
-        self.value = Some(input);
+        self.value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The metric value.</p>
-    pub fn set_value(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.value = input;
         self
     }

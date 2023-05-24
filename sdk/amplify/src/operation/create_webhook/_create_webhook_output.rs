@@ -2,20 +2,20 @@
 
 /// <p> The result structure for the create webhook request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateWebhookOutput {
     /// <p> Describes a webhook that connects repository events to an Amplify app. </p>
     #[doc(hidden)]
-    pub webhook: std::option::Option<crate::types::Webhook>,
+    pub webhook: ::std::option::Option<crate::types::Webhook>,
     _request_id: Option<String>,
 }
 impl CreateWebhookOutput {
     /// <p> Describes a webhook that connects repository events to an Amplify app. </p>
-    pub fn webhook(&self) -> std::option::Option<&crate::types::Webhook> {
+    pub fn webhook(&self) -> ::std::option::Option<&crate::types::Webhook> {
         self.webhook.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for CreateWebhookOutput {
+impl ::aws_http::request_id::RequestId for CreateWebhookOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,21 @@ impl CreateWebhookOutput {
 
 /// A builder for [`CreateWebhookOutput`](crate::operation::create_webhook::CreateWebhookOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateWebhookOutputBuilder {
-    pub(crate) webhook: std::option::Option<crate::types::Webhook>,
+    pub(crate) webhook: ::std::option::Option<crate::types::Webhook>,
     _request_id: Option<String>,
 }
 impl CreateWebhookOutputBuilder {
     /// <p> Describes a webhook that connects repository events to an Amplify app. </p>
     pub fn webhook(mut self, input: crate::types::Webhook) -> Self {
-        self.webhook = Some(input);
+        self.webhook = ::std::option::Option::Some(input);
         self
     }
     /// <p> Describes a webhook that connects repository events to an Amplify app. </p>
-    pub fn set_webhook(mut self, input: std::option::Option<crate::types::Webhook>) -> Self {
+    pub fn set_webhook(mut self, input: ::std::option::Option<crate::types::Webhook>) -> Self {
         self.webhook = input;
         self
     }

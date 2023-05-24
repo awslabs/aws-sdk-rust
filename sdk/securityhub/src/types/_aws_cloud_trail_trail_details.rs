@@ -2,20 +2,20 @@
 
 /// <p>Provides details about a CloudTrail trail.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsCloudTrailTrailDetails {
     /// <p>The ARN of the log group that CloudTrail logs are delivered to.</p>
     #[doc(hidden)]
-    pub cloud_watch_logs_log_group_arn: std::option::Option<std::string::String>,
+    pub cloud_watch_logs_log_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the role that the CloudWatch Events endpoint assumes when it writes to the log group.</p>
     #[doc(hidden)]
-    pub cloud_watch_logs_role_arn: std::option::Option<std::string::String>,
+    pub cloud_watch_logs_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the trail has custom event selectors.</p>
     #[doc(hidden)]
     pub has_custom_event_selectors: bool,
     /// <p>The Region where the trail was created.</p>
     #[doc(hidden)]
-    pub home_region: std::option::Option<std::string::String>,
+    pub home_region: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the trail publishes events from global services such as IAM to the log files.</p>
     #[doc(hidden)]
     pub include_global_service_events: bool,
@@ -27,36 +27,36 @@ pub struct AwsCloudTrailTrailDetails {
     pub is_organization_trail: bool,
     /// <p>The KMS key ID to use to encrypt the logs.</p>
     #[doc(hidden)]
-    pub kms_key_id: std::option::Option<std::string::String>,
+    pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether CloudTrail log file validation is enabled.</p>
     #[doc(hidden)]
     pub log_file_validation_enabled: bool,
     /// <p>The name of the trail.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the S3 bucket where the log files are published.</p>
     #[doc(hidden)]
-    pub s3_bucket_name: std::option::Option<std::string::String>,
+    pub s3_bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>The S3 key prefix. The key prefix is added after the name of the S3 bucket where the log files are published.</p>
     #[doc(hidden)]
-    pub s3_key_prefix: std::option::Option<std::string::String>,
+    pub s3_key_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the SNS topic that is used for notifications of log file delivery.</p>
     #[doc(hidden)]
-    pub sns_topic_arn: std::option::Option<std::string::String>,
+    pub sns_topic_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the SNS topic that is used for notifications of log file delivery.</p>
     #[doc(hidden)]
-    pub sns_topic_name: std::option::Option<std::string::String>,
+    pub sns_topic_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the trail.</p>
     #[doc(hidden)]
-    pub trail_arn: std::option::Option<std::string::String>,
+    pub trail_arn: ::std::option::Option<::std::string::String>,
 }
 impl AwsCloudTrailTrailDetails {
     /// <p>The ARN of the log group that CloudTrail logs are delivered to.</p>
-    pub fn cloud_watch_logs_log_group_arn(&self) -> std::option::Option<&str> {
+    pub fn cloud_watch_logs_log_group_arn(&self) -> ::std::option::Option<&str> {
         self.cloud_watch_logs_log_group_arn.as_deref()
     }
     /// <p>The ARN of the role that the CloudWatch Events endpoint assumes when it writes to the log group.</p>
-    pub fn cloud_watch_logs_role_arn(&self) -> std::option::Option<&str> {
+    pub fn cloud_watch_logs_role_arn(&self) -> ::std::option::Option<&str> {
         self.cloud_watch_logs_role_arn.as_deref()
     }
     /// <p>Indicates whether the trail has custom event selectors.</p>
@@ -64,7 +64,7 @@ impl AwsCloudTrailTrailDetails {
         self.has_custom_event_selectors
     }
     /// <p>The Region where the trail was created.</p>
-    pub fn home_region(&self) -> std::option::Option<&str> {
+    pub fn home_region(&self) -> ::std::option::Option<&str> {
         self.home_region.as_deref()
     }
     /// <p>Indicates whether the trail publishes events from global services such as IAM to the log files.</p>
@@ -80,7 +80,7 @@ impl AwsCloudTrailTrailDetails {
         self.is_organization_trail
     }
     /// <p>The KMS key ID to use to encrypt the logs.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
     /// <p>Indicates whether CloudTrail log file validation is enabled.</p>
@@ -88,27 +88,27 @@ impl AwsCloudTrailTrailDetails {
         self.log_file_validation_enabled
     }
     /// <p>The name of the trail.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The name of the S3 bucket where the log files are published.</p>
-    pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
+    pub fn s3_bucket_name(&self) -> ::std::option::Option<&str> {
         self.s3_bucket_name.as_deref()
     }
     /// <p>The S3 key prefix. The key prefix is added after the name of the S3 bucket where the log files are published.</p>
-    pub fn s3_key_prefix(&self) -> std::option::Option<&str> {
+    pub fn s3_key_prefix(&self) -> ::std::option::Option<&str> {
         self.s3_key_prefix.as_deref()
     }
     /// <p>The ARN of the SNS topic that is used for notifications of log file delivery.</p>
-    pub fn sns_topic_arn(&self) -> std::option::Option<&str> {
+    pub fn sns_topic_arn(&self) -> ::std::option::Option<&str> {
         self.sns_topic_arn.as_deref()
     }
     /// <p>The name of the SNS topic that is used for notifications of log file delivery.</p>
-    pub fn sns_topic_name(&self) -> std::option::Option<&str> {
+    pub fn sns_topic_name(&self) -> ::std::option::Option<&str> {
         self.sns_topic_name.as_deref()
     }
     /// <p>The ARN of the trail.</p>
-    pub fn trail_arn(&self) -> std::option::Option<&str> {
+    pub fn trail_arn(&self) -> ::std::option::Option<&str> {
         self.trail_arn.as_deref()
     }
 }
@@ -121,178 +121,210 @@ impl AwsCloudTrailTrailDetails {
 
 /// A builder for [`AwsCloudTrailTrailDetails`](crate::types::AwsCloudTrailTrailDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsCloudTrailTrailDetailsBuilder {
-    pub(crate) cloud_watch_logs_log_group_arn: std::option::Option<std::string::String>,
-    pub(crate) cloud_watch_logs_role_arn: std::option::Option<std::string::String>,
-    pub(crate) has_custom_event_selectors: std::option::Option<bool>,
-    pub(crate) home_region: std::option::Option<std::string::String>,
-    pub(crate) include_global_service_events: std::option::Option<bool>,
-    pub(crate) is_multi_region_trail: std::option::Option<bool>,
-    pub(crate) is_organization_trail: std::option::Option<bool>,
-    pub(crate) kms_key_id: std::option::Option<std::string::String>,
-    pub(crate) log_file_validation_enabled: std::option::Option<bool>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) s3_bucket_name: std::option::Option<std::string::String>,
-    pub(crate) s3_key_prefix: std::option::Option<std::string::String>,
-    pub(crate) sns_topic_arn: std::option::Option<std::string::String>,
-    pub(crate) sns_topic_name: std::option::Option<std::string::String>,
-    pub(crate) trail_arn: std::option::Option<std::string::String>,
+    pub(crate) cloud_watch_logs_log_group_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) cloud_watch_logs_role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) has_custom_event_selectors: ::std::option::Option<bool>,
+    pub(crate) home_region: ::std::option::Option<::std::string::String>,
+    pub(crate) include_global_service_events: ::std::option::Option<bool>,
+    pub(crate) is_multi_region_trail: ::std::option::Option<bool>,
+    pub(crate) is_organization_trail: ::std::option::Option<bool>,
+    pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
+    pub(crate) log_file_validation_enabled: ::std::option::Option<bool>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) s3_bucket_name: ::std::option::Option<::std::string::String>,
+    pub(crate) s3_key_prefix: ::std::option::Option<::std::string::String>,
+    pub(crate) sns_topic_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) sns_topic_name: ::std::option::Option<::std::string::String>,
+    pub(crate) trail_arn: ::std::option::Option<::std::string::String>,
 }
 impl AwsCloudTrailTrailDetailsBuilder {
     /// <p>The ARN of the log group that CloudTrail logs are delivered to.</p>
-    pub fn cloud_watch_logs_log_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cloud_watch_logs_log_group_arn = Some(input.into());
+    pub fn cloud_watch_logs_log_group_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.cloud_watch_logs_log_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the log group that CloudTrail logs are delivered to.</p>
     pub fn set_cloud_watch_logs_log_group_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.cloud_watch_logs_log_group_arn = input;
         self
     }
     /// <p>The ARN of the role that the CloudWatch Events endpoint assumes when it writes to the log group.</p>
-    pub fn cloud_watch_logs_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cloud_watch_logs_role_arn = Some(input.into());
+    pub fn cloud_watch_logs_role_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.cloud_watch_logs_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the role that the CloudWatch Events endpoint assumes when it writes to the log group.</p>
     pub fn set_cloud_watch_logs_role_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.cloud_watch_logs_role_arn = input;
         self
     }
     /// <p>Indicates whether the trail has custom event selectors.</p>
     pub fn has_custom_event_selectors(mut self, input: bool) -> Self {
-        self.has_custom_event_selectors = Some(input);
+        self.has_custom_event_selectors = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether the trail has custom event selectors.</p>
-    pub fn set_has_custom_event_selectors(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_has_custom_event_selectors(mut self, input: ::std::option::Option<bool>) -> Self {
         self.has_custom_event_selectors = input;
         self
     }
     /// <p>The Region where the trail was created.</p>
-    pub fn home_region(mut self, input: impl Into<std::string::String>) -> Self {
-        self.home_region = Some(input.into());
+    pub fn home_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.home_region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Region where the trail was created.</p>
-    pub fn set_home_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_home_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.home_region = input;
         self
     }
     /// <p>Indicates whether the trail publishes events from global services such as IAM to the log files.</p>
     pub fn include_global_service_events(mut self, input: bool) -> Self {
-        self.include_global_service_events = Some(input);
+        self.include_global_service_events = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether the trail publishes events from global services such as IAM to the log files.</p>
-    pub fn set_include_global_service_events(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_include_global_service_events(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_global_service_events = input;
         self
     }
     /// <p>Indicates whether the trail applies only to the current Region or to all Regions.</p>
     pub fn is_multi_region_trail(mut self, input: bool) -> Self {
-        self.is_multi_region_trail = Some(input);
+        self.is_multi_region_trail = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether the trail applies only to the current Region or to all Regions.</p>
-    pub fn set_is_multi_region_trail(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_multi_region_trail(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_multi_region_trail = input;
         self
     }
     /// <p>Whether the trail is created for all accounts in an organization in Organizations, or only for the current Amazon Web Services account.</p>
     pub fn is_organization_trail(mut self, input: bool) -> Self {
-        self.is_organization_trail = Some(input);
+        self.is_organization_trail = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether the trail is created for all accounts in an organization in Organizations, or only for the current Amazon Web Services account.</p>
-    pub fn set_is_organization_trail(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_organization_trail(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_organization_trail = input;
         self
     }
     /// <p>The KMS key ID to use to encrypt the logs.</p>
-    pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.kms_key_id = Some(input.into());
+    pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The KMS key ID to use to encrypt the logs.</p>
-    pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
     }
     /// <p>Indicates whether CloudTrail log file validation is enabled.</p>
     pub fn log_file_validation_enabled(mut self, input: bool) -> Self {
-        self.log_file_validation_enabled = Some(input);
+        self.log_file_validation_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether CloudTrail log file validation is enabled.</p>
-    pub fn set_log_file_validation_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_log_file_validation_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.log_file_validation_enabled = input;
         self
     }
     /// <p>The name of the trail.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the trail.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The name of the S3 bucket where the log files are published.</p>
-    pub fn s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.s3_bucket_name = Some(input.into());
+    pub fn s3_bucket_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.s3_bucket_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the S3 bucket where the log files are published.</p>
-    pub fn set_s3_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_s3_bucket_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.s3_bucket_name = input;
         self
     }
     /// <p>The S3 key prefix. The key prefix is added after the name of the S3 bucket where the log files are published.</p>
-    pub fn s3_key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
-        self.s3_key_prefix = Some(input.into());
+    pub fn s3_key_prefix(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.s3_key_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The S3 key prefix. The key prefix is added after the name of the S3 bucket where the log files are published.</p>
-    pub fn set_s3_key_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_s3_key_prefix(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.s3_key_prefix = input;
         self
     }
     /// <p>The ARN of the SNS topic that is used for notifications of log file delivery.</p>
-    pub fn sns_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.sns_topic_arn = Some(input.into());
+    pub fn sns_topic_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.sns_topic_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the SNS topic that is used for notifications of log file delivery.</p>
-    pub fn set_sns_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_sns_topic_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.sns_topic_arn = input;
         self
     }
     /// <p>The name of the SNS topic that is used for notifications of log file delivery.</p>
-    pub fn sns_topic_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.sns_topic_name = Some(input.into());
+    pub fn sns_topic_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.sns_topic_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the SNS topic that is used for notifications of log file delivery.</p>
-    pub fn set_sns_topic_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_sns_topic_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.sns_topic_name = input;
         self
     }
     /// <p>The ARN of the trail.</p>
-    pub fn trail_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.trail_arn = Some(input.into());
+    pub fn trail_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.trail_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the trail.</p>
-    pub fn set_trail_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_trail_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.trail_arn = input;
         self
     }

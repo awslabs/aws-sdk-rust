@@ -2,20 +2,20 @@
 
 /// <p>The result of a <code>DescribeSuggesters</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSuggestersOutput {
     /// <p>The suggesters configured for the domain specified in the request.</p>
     #[doc(hidden)]
-    pub suggesters: std::option::Option<std::vec::Vec<crate::types::SuggesterStatus>>,
+    pub suggesters: ::std::option::Option<::std::vec::Vec<crate::types::SuggesterStatus>>,
     _request_id: Option<String>,
 }
 impl DescribeSuggestersOutput {
     /// <p>The suggesters configured for the domain specified in the request.</p>
-    pub fn suggesters(&self) -> std::option::Option<&[crate::types::SuggesterStatus]> {
+    pub fn suggesters(&self) -> ::std::option::Option<&[crate::types::SuggesterStatus]> {
         self.suggesters.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeSuggestersOutput {
+impl ::aws_http::request_id::RequestId for DescribeSuggestersOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,9 +30,11 @@ impl DescribeSuggestersOutput {
 
 /// A builder for [`DescribeSuggestersOutput`](crate::operation::describe_suggesters::DescribeSuggestersOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeSuggestersOutputBuilder {
-    pub(crate) suggesters: std::option::Option<std::vec::Vec<crate::types::SuggesterStatus>>,
+    pub(crate) suggesters: ::std::option::Option<::std::vec::Vec<crate::types::SuggesterStatus>>,
     _request_id: Option<String>,
 }
 impl DescribeSuggestersOutputBuilder {
@@ -44,13 +46,13 @@ impl DescribeSuggestersOutputBuilder {
     pub fn suggesters(mut self, input: crate::types::SuggesterStatus) -> Self {
         let mut v = self.suggesters.unwrap_or_default();
         v.push(input);
-        self.suggesters = Some(v);
+        self.suggesters = ::std::option::Option::Some(v);
         self
     }
     /// <p>The suggesters configured for the domain specified in the request.</p>
     pub fn set_suggesters(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SuggesterStatus>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SuggesterStatus>>,
     ) -> Self {
         self.suggesters = input;
         self

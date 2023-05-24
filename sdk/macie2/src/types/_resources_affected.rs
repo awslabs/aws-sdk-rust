@@ -2,22 +2,22 @@
 
 /// <p>Provides information about the resources that a finding applies to.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourcesAffected {
     /// <p>The details of the S3 bucket that the finding applies to.</p>
     #[doc(hidden)]
-    pub s3_bucket: std::option::Option<crate::types::S3Bucket>,
+    pub s3_bucket: ::std::option::Option<crate::types::S3Bucket>,
     /// <p>The details of the S3 object that the finding applies to.</p>
     #[doc(hidden)]
-    pub s3_object: std::option::Option<crate::types::S3Object>,
+    pub s3_object: ::std::option::Option<crate::types::S3Object>,
 }
 impl ResourcesAffected {
     /// <p>The details of the S3 bucket that the finding applies to.</p>
-    pub fn s3_bucket(&self) -> std::option::Option<&crate::types::S3Bucket> {
+    pub fn s3_bucket(&self) -> ::std::option::Option<&crate::types::S3Bucket> {
         self.s3_bucket.as_ref()
     }
     /// <p>The details of the S3 object that the finding applies to.</p>
-    pub fn s3_object(&self) -> std::option::Option<&crate::types::S3Object> {
+    pub fn s3_object(&self) -> ::std::option::Option<&crate::types::S3Object> {
         self.s3_object.as_ref()
     }
 }
@@ -30,29 +30,31 @@ impl ResourcesAffected {
 
 /// A builder for [`ResourcesAffected`](crate::types::ResourcesAffected).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResourcesAffectedBuilder {
-    pub(crate) s3_bucket: std::option::Option<crate::types::S3Bucket>,
-    pub(crate) s3_object: std::option::Option<crate::types::S3Object>,
+    pub(crate) s3_bucket: ::std::option::Option<crate::types::S3Bucket>,
+    pub(crate) s3_object: ::std::option::Option<crate::types::S3Object>,
 }
 impl ResourcesAffectedBuilder {
     /// <p>The details of the S3 bucket that the finding applies to.</p>
     pub fn s3_bucket(mut self, input: crate::types::S3Bucket) -> Self {
-        self.s3_bucket = Some(input);
+        self.s3_bucket = ::std::option::Option::Some(input);
         self
     }
     /// <p>The details of the S3 bucket that the finding applies to.</p>
-    pub fn set_s3_bucket(mut self, input: std::option::Option<crate::types::S3Bucket>) -> Self {
+    pub fn set_s3_bucket(mut self, input: ::std::option::Option<crate::types::S3Bucket>) -> Self {
         self.s3_bucket = input;
         self
     }
     /// <p>The details of the S3 object that the finding applies to.</p>
     pub fn s3_object(mut self, input: crate::types::S3Object) -> Self {
-        self.s3_object = Some(input);
+        self.s3_object = ::std::option::Option::Some(input);
         self
     }
     /// <p>The details of the S3 object that the finding applies to.</p>
-    pub fn set_s3_object(mut self, input: std::option::Option<crate::types::S3Object>) -> Self {
+    pub fn set_s3_object(mut self, input: ::std::option::Option<crate::types::S3Object>) -> Self {
         self.s3_object = input;
         self
     }

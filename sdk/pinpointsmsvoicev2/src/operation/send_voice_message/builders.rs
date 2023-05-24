@@ -6,29 +6,29 @@ pub use crate::operation::send_voice_message::_send_voice_message_input::SendVoi
 /// Fluent builder constructing a request to `SendVoiceMessage`.
 ///
 /// <p>Allows you to send a request that sends a text message through Amazon Pinpoint. This operation uses <a href="http://aws.amazon.com/polly/">Amazon Polly</a> to convert a text script into a voice message.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SendVoiceMessageFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::send_voice_message::builders::SendVoiceMessageInputBuilder,
 }
 impl SendVoiceMessageFluentBuilder {
     /// Creates a new `SendVoiceMessage`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::send_voice_message::SendVoiceMessage,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::send_voice_message::SendVoiceMessageError,
         >,
     > {
@@ -36,30 +36,33 @@ impl SendVoiceMessageFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::send_voice_message::SendVoiceMessageOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::send_voice_message::SendVoiceMessageError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,47 +75,53 @@ impl SendVoiceMessageFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::send_voice_message::SendVoiceMessageOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::send_voice_message::SendVoiceMessageError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The destination phone number in E.164 format.</p>
-    pub fn destination_phone_number(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn destination_phone_number(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.destination_phone_number(input.into());
         self
     }
     /// <p>The destination phone number in E.164 format.</p>
     pub fn set_destination_phone_number(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_destination_phone_number(input);
         self
     }
     /// <p>The origination identity to use for the voice call. This can be the PhoneNumber, PhoneNumberId, PhoneNumberArn, PoolId, or PoolArn.</p>
-    pub fn origination_identity(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn origination_identity(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.origination_identity(input.into());
         self
     }
     /// <p>The origination identity to use for the voice call. This can be the PhoneNumber, PhoneNumberId, PhoneNumberArn, PoolId, or PoolArn.</p>
     pub fn set_origination_identity(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_origination_identity(input);
         self
     }
     /// <p>The text to convert to a voice message.</p>
-    pub fn message_body(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn message_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.message_body(input.into());
         self
     }
     /// <p>The text to convert to a voice message.</p>
-    pub fn set_message_body(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_message_body(input);
         self
     }
@@ -132,7 +141,7 @@ impl SendVoiceMessageFluentBuilder {
     /// </ul>
     pub fn set_message_body_text_type(
         mut self,
-        input: std::option::Option<crate::types::VoiceMessageBodyTextType>,
+        input: ::std::option::Option<crate::types::VoiceMessageBodyTextType>,
     ) -> Self {
         self.inner = self.inner.set_message_body_text_type(input);
         self
@@ -143,32 +152,38 @@ impl SendVoiceMessageFluentBuilder {
         self
     }
     /// <p>The voice for the <a href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">Amazon Polly</a> service to use. By default this is set to "MATTHEW".</p>
-    pub fn set_voice_id(mut self, input: std::option::Option<crate::types::VoiceId>) -> Self {
+    pub fn set_voice_id(mut self, input: ::std::option::Option<crate::types::VoiceId>) -> Self {
         self.inner = self.inner.set_voice_id(input);
         self
     }
     /// <p>The name of the configuration set to use. This can be either the ConfigurationSetName or ConfigurationSetArn.</p>
-    pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn configuration_set_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.configuration_set_name(input.into());
         self
     }
     /// <p>The name of the configuration set to use. This can be either the ConfigurationSetName or ConfigurationSetArn.</p>
     pub fn set_configuration_set_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_configuration_set_name(input);
         self
     }
     /// <p>The maximum amount to spend per voice message, in US dollars.</p>
-    pub fn max_price_per_minute(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn max_price_per_minute(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.max_price_per_minute(input.into());
         self
     }
     /// <p>The maximum amount to spend per voice message, in US dollars.</p>
     pub fn set_max_price_per_minute(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_max_price_per_minute(input);
         self
@@ -179,7 +194,7 @@ impl SendVoiceMessageFluentBuilder {
         self
     }
     /// <p>How long the voice message is valid for. By default this is 72 hours.</p>
-    pub fn set_time_to_live(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_time_to_live(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_time_to_live(input);
         self
     }
@@ -190,8 +205,8 @@ impl SendVoiceMessageFluentBuilder {
     /// <p>You can specify custom data in this field. If you do, that data is logged to the event destination.</p>
     pub fn context(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.context(k.into(), v.into());
         self
@@ -199,8 +214,8 @@ impl SendVoiceMessageFluentBuilder {
     /// <p>You can specify custom data in this field. If you do, that data is logged to the event destination.</p>
     pub fn set_context(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_context(input);
@@ -212,7 +227,7 @@ impl SendVoiceMessageFluentBuilder {
         self
     }
     /// <p>When set to true, the message is checked and validated, but isn't sent to the end recipient.</p>
-    pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
     }

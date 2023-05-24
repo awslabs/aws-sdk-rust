@@ -2,16 +2,16 @@
 
 /// <p>Represents the request to update user attributes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateUserAttributesInput {
     /// <p>An array of name-value pairs representing user attributes.</p>
     /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>
     /// <p>If you have set an attribute to require verification before Amazon Cognito updates its value, this request doesn’t immediately update the value of that attribute. After your user receives and responds to a verification message to verify the new value, Amazon Cognito updates the attribute value. Your user can sign in and receive messages with the original attribute value until they verify the new value.</p>
     #[doc(hidden)]
-    pub user_attributes: std::option::Option<std::vec::Vec<crate::types::AttributeType>>,
+    pub user_attributes: ::std::option::Option<::std::vec::Vec<crate::types::AttributeType>>,
     /// <p>A valid access token that Amazon Cognito issued to the user whose user attributes you want to update.</p>
     #[doc(hidden)]
-    pub access_token: std::option::Option<std::string::String>,
+    pub access_token: ::std::option::Option<::std::string::String>,
     /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action initiates. </p>
     /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the UpdateUserAttributes API action, Amazon Cognito invokes the function that is assigned to the <i>custom message</i> trigger. When Amazon Cognito invokes this function, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your UpdateUserAttributes request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html"> Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>
@@ -23,18 +23,19 @@ pub struct UpdateUserAttributesInput {
     /// </ul>
     /// </note>
     #[doc(hidden)]
-    pub client_metadata:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub client_metadata: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl UpdateUserAttributesInput {
     /// <p>An array of name-value pairs representing user attributes.</p>
     /// <p>For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute name.</p>
     /// <p>If you have set an attribute to require verification before Amazon Cognito updates its value, this request doesn’t immediately update the value of that attribute. After your user receives and responds to a verification message to verify the new value, Amazon Cognito updates the attribute value. Your user can sign in and receive messages with the original attribute value until they verify the new value.</p>
-    pub fn user_attributes(&self) -> std::option::Option<&[crate::types::AttributeType]> {
+    pub fn user_attributes(&self) -> ::std::option::Option<&[crate::types::AttributeType]> {
         self.user_attributes.as_deref()
     }
     /// <p>A valid access token that Amazon Cognito issued to the user whose user attributes you want to update.</p>
-    pub fn access_token(&self) -> std::option::Option<&str> {
+    pub fn access_token(&self) -> ::std::option::Option<&str> {
         self.access_token.as_deref()
     }
     /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action initiates. </p>
@@ -49,13 +50,14 @@ impl UpdateUserAttributesInput {
     /// </note>
     pub fn client_metadata(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.client_metadata.as_ref()
     }
 }
-impl std::fmt::Debug for UpdateUserAttributesInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for UpdateUserAttributesInput {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateUserAttributesInput");
         formatter.field("user_attributes", &self.user_attributes);
         formatter.field("access_token", &"*** Sensitive Data Redacted ***");
@@ -73,12 +75,13 @@ impl UpdateUserAttributesInput {
 
 /// A builder for [`UpdateUserAttributesInput`](crate::operation::update_user_attributes::UpdateUserAttributesInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct UpdateUserAttributesInputBuilder {
-    pub(crate) user_attributes: std::option::Option<std::vec::Vec<crate::types::AttributeType>>,
-    pub(crate) access_token: std::option::Option<std::string::String>,
-    pub(crate) client_metadata:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) user_attributes: ::std::option::Option<::std::vec::Vec<crate::types::AttributeType>>,
+    pub(crate) access_token: ::std::option::Option<::std::string::String>,
+    pub(crate) client_metadata: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl UpdateUserAttributesInputBuilder {
     /// Appends an item to `user_attributes`.
@@ -91,7 +94,7 @@ impl UpdateUserAttributesInputBuilder {
     pub fn user_attributes(mut self, input: crate::types::AttributeType) -> Self {
         let mut v = self.user_attributes.unwrap_or_default();
         v.push(input);
-        self.user_attributes = Some(v);
+        self.user_attributes = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of name-value pairs representing user attributes.</p>
@@ -99,18 +102,18 @@ impl UpdateUserAttributesInputBuilder {
     /// <p>If you have set an attribute to require verification before Amazon Cognito updates its value, this request doesn’t immediately update the value of that attribute. After your user receives and responds to a verification message to verify the new value, Amazon Cognito updates the attribute value. Your user can sign in and receive messages with the original attribute value until they verify the new value.</p>
     pub fn set_user_attributes(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AttributeType>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeType>>,
     ) -> Self {
         self.user_attributes = input;
         self
     }
     /// <p>A valid access token that Amazon Cognito issued to the user whose user attributes you want to update.</p>
-    pub fn access_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.access_token = Some(input.into());
+    pub fn access_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.access_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A valid access token that Amazon Cognito issued to the user whose user attributes you want to update.</p>
-    pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_access_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.access_token = input;
         self
     }
@@ -130,12 +133,12 @@ impl UpdateUserAttributesInputBuilder {
     /// </note>
     pub fn client_metadata(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.client_metadata.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.client_metadata = Some(hash_map);
+        self.client_metadata = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action initiates. </p>
@@ -150,8 +153,8 @@ impl UpdateUserAttributesInputBuilder {
     /// </note>
     pub fn set_client_metadata(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.client_metadata = input;
@@ -160,11 +163,11 @@ impl UpdateUserAttributesInputBuilder {
     /// Consumes the builder and constructs a [`UpdateUserAttributesInput`](crate::operation::update_user_attributes::UpdateUserAttributesInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::update_user_attributes::UpdateUserAttributesInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::update_user_attributes::UpdateUserAttributesInput {
                 user_attributes: self.user_attributes,
                 access_token: self.access_token,
@@ -173,8 +176,8 @@ impl UpdateUserAttributesInputBuilder {
         )
     }
 }
-impl std::fmt::Debug for UpdateUserAttributesInputBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for UpdateUserAttributesInputBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateUserAttributesInputBuilder");
         formatter.field("user_attributes", &self.user_attributes);
         formatter.field("access_token", &"*** Sensitive Data Redacted ***");

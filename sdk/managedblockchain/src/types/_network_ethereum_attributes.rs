@@ -2,7 +2,7 @@
 
 /// <p>Attributes of Ethereum for a network. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkEthereumAttributes {
     /// <p>The Ethereum <code>CHAIN_ID</code> associated with the Ethereum network. Chain IDs are as follows:</p>
     /// <ul>
@@ -11,7 +11,7 @@ pub struct NetworkEthereumAttributes {
     /// <li> <p>rinkeby = <code>4</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub chain_id: std::option::Option<std::string::String>,
+    pub chain_id: ::std::option::Option<::std::string::String>,
 }
 impl NetworkEthereumAttributes {
     /// <p>The Ethereum <code>CHAIN_ID</code> associated with the Ethereum network. Chain IDs are as follows:</p>
@@ -20,7 +20,7 @@ impl NetworkEthereumAttributes {
     /// <li> <p>goerli = <code>5</code> </p> </li>
     /// <li> <p>rinkeby = <code>4</code> </p> </li>
     /// </ul>
-    pub fn chain_id(&self) -> std::option::Option<&str> {
+    pub fn chain_id(&self) -> ::std::option::Option<&str> {
         self.chain_id.as_deref()
     }
 }
@@ -33,9 +33,11 @@ impl NetworkEthereumAttributes {
 
 /// A builder for [`NetworkEthereumAttributes`](crate::types::NetworkEthereumAttributes).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NetworkEthereumAttributesBuilder {
-    pub(crate) chain_id: std::option::Option<std::string::String>,
+    pub(crate) chain_id: ::std::option::Option<::std::string::String>,
 }
 impl NetworkEthereumAttributesBuilder {
     /// <p>The Ethereum <code>CHAIN_ID</code> associated with the Ethereum network. Chain IDs are as follows:</p>
@@ -44,8 +46,8 @@ impl NetworkEthereumAttributesBuilder {
     /// <li> <p>goerli = <code>5</code> </p> </li>
     /// <li> <p>rinkeby = <code>4</code> </p> </li>
     /// </ul>
-    pub fn chain_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.chain_id = Some(input.into());
+    pub fn chain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.chain_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Ethereum <code>CHAIN_ID</code> associated with the Ethereum network. Chain IDs are as follows:</p>
@@ -54,7 +56,7 @@ impl NetworkEthereumAttributesBuilder {
     /// <li> <p>goerli = <code>5</code> </p> </li>
     /// <li> <p>rinkeby = <code>4</code> </p> </li>
     /// </ul>
-    pub fn set_chain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_chain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.chain_id = input;
         self
     }

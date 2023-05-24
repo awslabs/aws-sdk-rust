@@ -38,13 +38,13 @@
 /// When you use the setting Time delta (TimeDelta) to adjust the sync between your sidecar captions and your video, use this setting to specify the units for the delta that you specify. When you don't specify a value for Time delta units (TimeDeltaUnits), MediaConvert uses seconds by default.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum FileSourceTimeDeltaUnits {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum FileSourceTimeDeltaUnits {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for FileSourceTimeDeltaUnits {
+impl ::std::convert::From<&str> for FileSourceTimeDeltaUnits {
     fn from(s: &str) -> Self {
         match s {
             "MILLISECONDS" => FileSourceTimeDeltaUnits::Milliseconds,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for FileSourceTimeDeltaUnits {
         }
     }
 }
-impl std::str::FromStr for FileSourceTimeDeltaUnits {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for FileSourceTimeDeltaUnits {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FileSourceTimeDeltaUnits::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(FileSourceTimeDeltaUnits::from(s))
     }
 }
 impl FileSourceTimeDeltaUnits {
@@ -86,7 +86,7 @@ impl FileSourceTimeDeltaUnits {
         &["MILLISECONDS", "SECONDS"]
     }
 }
-impl AsRef<str> for FileSourceTimeDeltaUnits {
+impl ::std::convert::AsRef<str> for FileSourceTimeDeltaUnits {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

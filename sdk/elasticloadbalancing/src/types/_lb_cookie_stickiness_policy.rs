@@ -2,22 +2,22 @@
 
 /// <p>Information about a policy for duration-based session stickiness.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LbCookieStickinessPolicy {
     /// <p>The name of the policy. This name must be unique within the set of policies for this load balancer.</p>
     #[doc(hidden)]
-    pub policy_name: std::option::Option<std::string::String>,
+    pub policy_name: ::std::option::Option<::std::string::String>,
     /// <p>The time period, in seconds, after which the cookie should be considered stale. If this parameter is not specified, the stickiness session lasts for the duration of the browser session.</p>
     #[doc(hidden)]
-    pub cookie_expiration_period: std::option::Option<i64>,
+    pub cookie_expiration_period: ::std::option::Option<i64>,
 }
 impl LbCookieStickinessPolicy {
     /// <p>The name of the policy. This name must be unique within the set of policies for this load balancer.</p>
-    pub fn policy_name(&self) -> std::option::Option<&str> {
+    pub fn policy_name(&self) -> ::std::option::Option<&str> {
         self.policy_name.as_deref()
     }
     /// <p>The time period, in seconds, after which the cookie should be considered stale. If this parameter is not specified, the stickiness session lasts for the duration of the browser session.</p>
-    pub fn cookie_expiration_period(&self) -> std::option::Option<i64> {
+    pub fn cookie_expiration_period(&self) -> ::std::option::Option<i64> {
         self.cookie_expiration_period
     }
 }
@@ -30,29 +30,31 @@ impl LbCookieStickinessPolicy {
 
 /// A builder for [`LbCookieStickinessPolicy`](crate::types::LbCookieStickinessPolicy).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LbCookieStickinessPolicyBuilder {
-    pub(crate) policy_name: std::option::Option<std::string::String>,
-    pub(crate) cookie_expiration_period: std::option::Option<i64>,
+    pub(crate) policy_name: ::std::option::Option<::std::string::String>,
+    pub(crate) cookie_expiration_period: ::std::option::Option<i64>,
 }
 impl LbCookieStickinessPolicyBuilder {
     /// <p>The name of the policy. This name must be unique within the set of policies for this load balancer.</p>
-    pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.policy_name = Some(input.into());
+    pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.policy_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the policy. This name must be unique within the set of policies for this load balancer.</p>
-    pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_name = input;
         self
     }
     /// <p>The time period, in seconds, after which the cookie should be considered stale. If this parameter is not specified, the stickiness session lasts for the duration of the browser session.</p>
     pub fn cookie_expiration_period(mut self, input: i64) -> Self {
-        self.cookie_expiration_period = Some(input);
+        self.cookie_expiration_period = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time period, in seconds, after which the cookie should be considered stale. If this parameter is not specified, the stickiness session lasts for the duration of the browser session.</p>
-    pub fn set_cookie_expiration_period(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_cookie_expiration_period(mut self, input: ::std::option::Option<i64>) -> Self {
         self.cookie_expiration_period = input;
         self
     }

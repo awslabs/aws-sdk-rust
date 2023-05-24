@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribePlatformVersion`](crate::operation::describe_platform_version::builders::DescribePlatformVersionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`platform_arn(impl Into<String>)`](crate::operation::describe_platform_version::builders::DescribePlatformVersionFluentBuilder::platform_arn) / [`set_platform_arn(Option<String>)`](crate::operation::describe_platform_version::builders::DescribePlatformVersionFluentBuilder::set_platform_arn): <p>The ARN of the platform version.</p>
+    ///   - [`platform_arn(impl ::std::convert::Into<String>)`](crate::operation::describe_platform_version::builders::DescribePlatformVersionFluentBuilder::platform_arn) / [`set_platform_arn(Option<String>)`](crate::operation::describe_platform_version::builders::DescribePlatformVersionFluentBuilder::set_platform_arn): <p>The ARN of the platform version.</p>
     /// - On success, responds with [`DescribePlatformVersionOutput`](crate::operation::describe_platform_version::DescribePlatformVersionOutput) with field(s):
     ///   - [`platform_description(Option<PlatformDescription>)`](crate::operation::describe_platform_version::DescribePlatformVersionOutput::platform_description): <p>Detailed information about the platform version.</p>
     /// - On failure, responds with [`SdkError<DescribePlatformVersionError>`](crate::operation::describe_platform_version::DescribePlatformVersionError)

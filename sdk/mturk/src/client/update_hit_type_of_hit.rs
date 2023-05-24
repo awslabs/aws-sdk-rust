@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateHITTypeOfHIT`](crate::operation::update_hit_type_of_hit::builders::UpdateHITTypeOfHITFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`hit_id(impl Into<String>)`](crate::operation::update_hit_type_of_hit::builders::UpdateHITTypeOfHITFluentBuilder::hit_id) / [`set_hit_id(Option<String>)`](crate::operation::update_hit_type_of_hit::builders::UpdateHITTypeOfHITFluentBuilder::set_hit_id): <p>The HIT to update.</p>
-    ///   - [`hit_type_id(impl Into<String>)`](crate::operation::update_hit_type_of_hit::builders::UpdateHITTypeOfHITFluentBuilder::hit_type_id) / [`set_hit_type_id(Option<String>)`](crate::operation::update_hit_type_of_hit::builders::UpdateHITTypeOfHITFluentBuilder::set_hit_type_id): <p>The ID of the new HIT type.</p>
+    ///   - [`hit_id(impl ::std::convert::Into<String>)`](crate::operation::update_hit_type_of_hit::builders::UpdateHITTypeOfHITFluentBuilder::hit_id) / [`set_hit_id(Option<String>)`](crate::operation::update_hit_type_of_hit::builders::UpdateHITTypeOfHITFluentBuilder::set_hit_id): <p>The HIT to update.</p>
+    ///   - [`hit_type_id(impl ::std::convert::Into<String>)`](crate::operation::update_hit_type_of_hit::builders::UpdateHITTypeOfHITFluentBuilder::hit_type_id) / [`set_hit_type_id(Option<String>)`](crate::operation::update_hit_type_of_hit::builders::UpdateHITTypeOfHITFluentBuilder::set_hit_type_id): <p>The ID of the new HIT type.</p>
     /// - On success, responds with [`UpdateHitTypeOfHitOutput`](crate::operation::update_hit_type_of_hit::UpdateHitTypeOfHitOutput)
     /// - On failure, responds with [`SdkError<UpdateHITTypeOfHITError>`](crate::operation::update_hit_type_of_hit::UpdateHITTypeOfHITError)
     pub fn update_hit_type_of_hit(

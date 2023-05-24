@@ -2,131 +2,131 @@
 
 /// Settings information for the .m3u8 container
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct M3u8Settings {
     /// The number of audio frames to insert for each PES packet.
     #[doc(hidden)]
-    pub audio_frames_per_pes: std::option::Option<i32>,
+    pub audio_frames_per_pes: ::std::option::Option<i32>,
     /// Packet Identifier (PID) of the elementary audio stream(s) in the transport stream. Multiple values are accepted, and can be entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values.
     #[doc(hidden)]
-    pub audio_pids: std::option::Option<std::string::String>,
+    pub audio_pids: ::std::option::Option<::std::string::String>,
     /// This parameter is unused and deprecated.
     #[doc(hidden)]
-    pub ecm_pid: std::option::Option<std::string::String>,
+    pub ecm_pid: ::std::option::Option<::std::string::String>,
     /// If set to passthrough, Nielsen inaudible tones for media tracking will be detected in the input audio and an equivalent ID3 tag will be inserted in the output.
     #[doc(hidden)]
-    pub nielsen_id3_behavior: std::option::Option<crate::types::M3u8NielsenId3Behavior>,
+    pub nielsen_id3_behavior: ::std::option::Option<crate::types::M3u8NielsenId3Behavior>,
     /// The number of milliseconds between instances of this table in the output transport stream. A value of \"0\" writes out the PMT once per segment file.
     #[doc(hidden)]
-    pub pat_interval: std::option::Option<i32>,
+    pub pat_interval: ::std::option::Option<i32>,
     /// When set to pcrEveryPesPacket, a Program Clock Reference value is inserted for every Packetized Elementary Stream (PES) header. This parameter is effective only when the PCR PID is the same as the video or audio elementary stream.
     #[doc(hidden)]
-    pub pcr_control: std::option::Option<crate::types::M3u8PcrControl>,
+    pub pcr_control: ::std::option::Option<crate::types::M3u8PcrControl>,
     /// Maximum time in milliseconds between Program Clock References (PCRs) inserted into the transport stream.
     #[doc(hidden)]
-    pub pcr_period: std::option::Option<i32>,
+    pub pcr_period: ::std::option::Option<i32>,
     /// Packet Identifier (PID) of the Program Clock Reference (PCR) in the transport stream. When no value is given, the encoder will assign the same value as the Video PID. Can be entered as a decimal or hexadecimal value.
     #[doc(hidden)]
-    pub pcr_pid: std::option::Option<std::string::String>,
+    pub pcr_pid: ::std::option::Option<::std::string::String>,
     /// The number of milliseconds between instances of this table in the output transport stream. A value of \"0\" writes out the PMT once per segment file.
     #[doc(hidden)]
-    pub pmt_interval: std::option::Option<i32>,
+    pub pmt_interval: ::std::option::Option<i32>,
     /// Packet Identifier (PID) for the Program Map Table (PMT) in the transport stream. Can be entered as a decimal or hexadecimal value.
     #[doc(hidden)]
-    pub pmt_pid: std::option::Option<std::string::String>,
+    pub pmt_pid: ::std::option::Option<::std::string::String>,
     /// The value of the program number field in the Program Map Table.
     #[doc(hidden)]
-    pub program_num: std::option::Option<i32>,
+    pub program_num: ::std::option::Option<i32>,
     /// If set to passthrough, passes any SCTE-35 signals from the input source to this output.
     #[doc(hidden)]
-    pub scte35_behavior: std::option::Option<crate::types::M3u8Scte35Behavior>,
+    pub scte35_behavior: ::std::option::Option<crate::types::M3u8Scte35Behavior>,
     /// Packet Identifier (PID) of the SCTE-35 stream in the transport stream. Can be entered as a decimal or hexadecimal value.
     #[doc(hidden)]
-    pub scte35_pid: std::option::Option<std::string::String>,
+    pub scte35_pid: ::std::option::Option<::std::string::String>,
     /// When set to passthrough, timed metadata is passed through from input to output.
     #[doc(hidden)]
-    pub timed_metadata_behavior: std::option::Option<crate::types::M3u8TimedMetadataBehavior>,
+    pub timed_metadata_behavior: ::std::option::Option<crate::types::M3u8TimedMetadataBehavior>,
     /// Packet Identifier (PID) of the timed metadata stream in the transport stream. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
     #[doc(hidden)]
-    pub timed_metadata_pid: std::option::Option<std::string::String>,
+    pub timed_metadata_pid: ::std::option::Option<::std::string::String>,
     /// The value of the transport stream ID field in the Program Map Table.
     #[doc(hidden)]
-    pub transport_stream_id: std::option::Option<i32>,
+    pub transport_stream_id: ::std::option::Option<i32>,
     /// Packet Identifier (PID) of the elementary video stream in the transport stream. Can be entered as a decimal or hexadecimal value.
     #[doc(hidden)]
-    pub video_pid: std::option::Option<std::string::String>,
+    pub video_pid: ::std::option::Option<::std::string::String>,
 }
 impl M3u8Settings {
     /// The number of audio frames to insert for each PES packet.
-    pub fn audio_frames_per_pes(&self) -> std::option::Option<i32> {
+    pub fn audio_frames_per_pes(&self) -> ::std::option::Option<i32> {
         self.audio_frames_per_pes
     }
     /// Packet Identifier (PID) of the elementary audio stream(s) in the transport stream. Multiple values are accepted, and can be entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values.
-    pub fn audio_pids(&self) -> std::option::Option<&str> {
+    pub fn audio_pids(&self) -> ::std::option::Option<&str> {
         self.audio_pids.as_deref()
     }
     /// This parameter is unused and deprecated.
-    pub fn ecm_pid(&self) -> std::option::Option<&str> {
+    pub fn ecm_pid(&self) -> ::std::option::Option<&str> {
         self.ecm_pid.as_deref()
     }
     /// If set to passthrough, Nielsen inaudible tones for media tracking will be detected in the input audio and an equivalent ID3 tag will be inserted in the output.
     pub fn nielsen_id3_behavior(
         &self,
-    ) -> std::option::Option<&crate::types::M3u8NielsenId3Behavior> {
+    ) -> ::std::option::Option<&crate::types::M3u8NielsenId3Behavior> {
         self.nielsen_id3_behavior.as_ref()
     }
     /// The number of milliseconds between instances of this table in the output transport stream. A value of \"0\" writes out the PMT once per segment file.
-    pub fn pat_interval(&self) -> std::option::Option<i32> {
+    pub fn pat_interval(&self) -> ::std::option::Option<i32> {
         self.pat_interval
     }
     /// When set to pcrEveryPesPacket, a Program Clock Reference value is inserted for every Packetized Elementary Stream (PES) header. This parameter is effective only when the PCR PID is the same as the video or audio elementary stream.
-    pub fn pcr_control(&self) -> std::option::Option<&crate::types::M3u8PcrControl> {
+    pub fn pcr_control(&self) -> ::std::option::Option<&crate::types::M3u8PcrControl> {
         self.pcr_control.as_ref()
     }
     /// Maximum time in milliseconds between Program Clock References (PCRs) inserted into the transport stream.
-    pub fn pcr_period(&self) -> std::option::Option<i32> {
+    pub fn pcr_period(&self) -> ::std::option::Option<i32> {
         self.pcr_period
     }
     /// Packet Identifier (PID) of the Program Clock Reference (PCR) in the transport stream. When no value is given, the encoder will assign the same value as the Video PID. Can be entered as a decimal or hexadecimal value.
-    pub fn pcr_pid(&self) -> std::option::Option<&str> {
+    pub fn pcr_pid(&self) -> ::std::option::Option<&str> {
         self.pcr_pid.as_deref()
     }
     /// The number of milliseconds between instances of this table in the output transport stream. A value of \"0\" writes out the PMT once per segment file.
-    pub fn pmt_interval(&self) -> std::option::Option<i32> {
+    pub fn pmt_interval(&self) -> ::std::option::Option<i32> {
         self.pmt_interval
     }
     /// Packet Identifier (PID) for the Program Map Table (PMT) in the transport stream. Can be entered as a decimal or hexadecimal value.
-    pub fn pmt_pid(&self) -> std::option::Option<&str> {
+    pub fn pmt_pid(&self) -> ::std::option::Option<&str> {
         self.pmt_pid.as_deref()
     }
     /// The value of the program number field in the Program Map Table.
-    pub fn program_num(&self) -> std::option::Option<i32> {
+    pub fn program_num(&self) -> ::std::option::Option<i32> {
         self.program_num
     }
     /// If set to passthrough, passes any SCTE-35 signals from the input source to this output.
-    pub fn scte35_behavior(&self) -> std::option::Option<&crate::types::M3u8Scte35Behavior> {
+    pub fn scte35_behavior(&self) -> ::std::option::Option<&crate::types::M3u8Scte35Behavior> {
         self.scte35_behavior.as_ref()
     }
     /// Packet Identifier (PID) of the SCTE-35 stream in the transport stream. Can be entered as a decimal or hexadecimal value.
-    pub fn scte35_pid(&self) -> std::option::Option<&str> {
+    pub fn scte35_pid(&self) -> ::std::option::Option<&str> {
         self.scte35_pid.as_deref()
     }
     /// When set to passthrough, timed metadata is passed through from input to output.
     pub fn timed_metadata_behavior(
         &self,
-    ) -> std::option::Option<&crate::types::M3u8TimedMetadataBehavior> {
+    ) -> ::std::option::Option<&crate::types::M3u8TimedMetadataBehavior> {
         self.timed_metadata_behavior.as_ref()
     }
     /// Packet Identifier (PID) of the timed metadata stream in the transport stream. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
-    pub fn timed_metadata_pid(&self) -> std::option::Option<&str> {
+    pub fn timed_metadata_pid(&self) -> ::std::option::Option<&str> {
         self.timed_metadata_pid.as_deref()
     }
     /// The value of the transport stream ID field in the Program Map Table.
-    pub fn transport_stream_id(&self) -> std::option::Option<i32> {
+    pub fn transport_stream_id(&self) -> ::std::option::Option<i32> {
         self.transport_stream_id
     }
     /// Packet Identifier (PID) of the elementary video stream in the transport stream. Can be entered as a decimal or hexadecimal value.
-    pub fn video_pid(&self) -> std::option::Option<&str> {
+    pub fn video_pid(&self) -> ::std::option::Option<&str> {
         self.video_pid.as_deref()
     }
 }
@@ -139,164 +139,166 @@ impl M3u8Settings {
 
 /// A builder for [`M3u8Settings`](crate::types::M3u8Settings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct M3u8SettingsBuilder {
-    pub(crate) audio_frames_per_pes: std::option::Option<i32>,
-    pub(crate) audio_pids: std::option::Option<std::string::String>,
-    pub(crate) ecm_pid: std::option::Option<std::string::String>,
-    pub(crate) nielsen_id3_behavior: std::option::Option<crate::types::M3u8NielsenId3Behavior>,
-    pub(crate) pat_interval: std::option::Option<i32>,
-    pub(crate) pcr_control: std::option::Option<crate::types::M3u8PcrControl>,
-    pub(crate) pcr_period: std::option::Option<i32>,
-    pub(crate) pcr_pid: std::option::Option<std::string::String>,
-    pub(crate) pmt_interval: std::option::Option<i32>,
-    pub(crate) pmt_pid: std::option::Option<std::string::String>,
-    pub(crate) program_num: std::option::Option<i32>,
-    pub(crate) scte35_behavior: std::option::Option<crate::types::M3u8Scte35Behavior>,
-    pub(crate) scte35_pid: std::option::Option<std::string::String>,
+    pub(crate) audio_frames_per_pes: ::std::option::Option<i32>,
+    pub(crate) audio_pids: ::std::option::Option<::std::string::String>,
+    pub(crate) ecm_pid: ::std::option::Option<::std::string::String>,
+    pub(crate) nielsen_id3_behavior: ::std::option::Option<crate::types::M3u8NielsenId3Behavior>,
+    pub(crate) pat_interval: ::std::option::Option<i32>,
+    pub(crate) pcr_control: ::std::option::Option<crate::types::M3u8PcrControl>,
+    pub(crate) pcr_period: ::std::option::Option<i32>,
+    pub(crate) pcr_pid: ::std::option::Option<::std::string::String>,
+    pub(crate) pmt_interval: ::std::option::Option<i32>,
+    pub(crate) pmt_pid: ::std::option::Option<::std::string::String>,
+    pub(crate) program_num: ::std::option::Option<i32>,
+    pub(crate) scte35_behavior: ::std::option::Option<crate::types::M3u8Scte35Behavior>,
+    pub(crate) scte35_pid: ::std::option::Option<::std::string::String>,
     pub(crate) timed_metadata_behavior:
-        std::option::Option<crate::types::M3u8TimedMetadataBehavior>,
-    pub(crate) timed_metadata_pid: std::option::Option<std::string::String>,
-    pub(crate) transport_stream_id: std::option::Option<i32>,
-    pub(crate) video_pid: std::option::Option<std::string::String>,
+        ::std::option::Option<crate::types::M3u8TimedMetadataBehavior>,
+    pub(crate) timed_metadata_pid: ::std::option::Option<::std::string::String>,
+    pub(crate) transport_stream_id: ::std::option::Option<i32>,
+    pub(crate) video_pid: ::std::option::Option<::std::string::String>,
 }
 impl M3u8SettingsBuilder {
     /// The number of audio frames to insert for each PES packet.
     pub fn audio_frames_per_pes(mut self, input: i32) -> Self {
-        self.audio_frames_per_pes = Some(input);
+        self.audio_frames_per_pes = ::std::option::Option::Some(input);
         self
     }
     /// The number of audio frames to insert for each PES packet.
-    pub fn set_audio_frames_per_pes(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_audio_frames_per_pes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.audio_frames_per_pes = input;
         self
     }
     /// Packet Identifier (PID) of the elementary audio stream(s) in the transport stream. Multiple values are accepted, and can be entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values.
-    pub fn audio_pids(mut self, input: impl Into<std::string::String>) -> Self {
-        self.audio_pids = Some(input.into());
+    pub fn audio_pids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.audio_pids = ::std::option::Option::Some(input.into());
         self
     }
     /// Packet Identifier (PID) of the elementary audio stream(s) in the transport stream. Multiple values are accepted, and can be entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values.
-    pub fn set_audio_pids(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_audio_pids(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.audio_pids = input;
         self
     }
     /// This parameter is unused and deprecated.
-    pub fn ecm_pid(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ecm_pid = Some(input.into());
+    pub fn ecm_pid(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ecm_pid = ::std::option::Option::Some(input.into());
         self
     }
     /// This parameter is unused and deprecated.
-    pub fn set_ecm_pid(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ecm_pid(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ecm_pid = input;
         self
     }
     /// If set to passthrough, Nielsen inaudible tones for media tracking will be detected in the input audio and an equivalent ID3 tag will be inserted in the output.
     pub fn nielsen_id3_behavior(mut self, input: crate::types::M3u8NielsenId3Behavior) -> Self {
-        self.nielsen_id3_behavior = Some(input);
+        self.nielsen_id3_behavior = ::std::option::Option::Some(input);
         self
     }
     /// If set to passthrough, Nielsen inaudible tones for media tracking will be detected in the input audio and an equivalent ID3 tag will be inserted in the output.
     pub fn set_nielsen_id3_behavior(
         mut self,
-        input: std::option::Option<crate::types::M3u8NielsenId3Behavior>,
+        input: ::std::option::Option<crate::types::M3u8NielsenId3Behavior>,
     ) -> Self {
         self.nielsen_id3_behavior = input;
         self
     }
     /// The number of milliseconds between instances of this table in the output transport stream. A value of \"0\" writes out the PMT once per segment file.
     pub fn pat_interval(mut self, input: i32) -> Self {
-        self.pat_interval = Some(input);
+        self.pat_interval = ::std::option::Option::Some(input);
         self
     }
     /// The number of milliseconds between instances of this table in the output transport stream. A value of \"0\" writes out the PMT once per segment file.
-    pub fn set_pat_interval(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_pat_interval(mut self, input: ::std::option::Option<i32>) -> Self {
         self.pat_interval = input;
         self
     }
     /// When set to pcrEveryPesPacket, a Program Clock Reference value is inserted for every Packetized Elementary Stream (PES) header. This parameter is effective only when the PCR PID is the same as the video or audio elementary stream.
     pub fn pcr_control(mut self, input: crate::types::M3u8PcrControl) -> Self {
-        self.pcr_control = Some(input);
+        self.pcr_control = ::std::option::Option::Some(input);
         self
     }
     /// When set to pcrEveryPesPacket, a Program Clock Reference value is inserted for every Packetized Elementary Stream (PES) header. This parameter is effective only when the PCR PID is the same as the video or audio elementary stream.
     pub fn set_pcr_control(
         mut self,
-        input: std::option::Option<crate::types::M3u8PcrControl>,
+        input: ::std::option::Option<crate::types::M3u8PcrControl>,
     ) -> Self {
         self.pcr_control = input;
         self
     }
     /// Maximum time in milliseconds between Program Clock References (PCRs) inserted into the transport stream.
     pub fn pcr_period(mut self, input: i32) -> Self {
-        self.pcr_period = Some(input);
+        self.pcr_period = ::std::option::Option::Some(input);
         self
     }
     /// Maximum time in milliseconds between Program Clock References (PCRs) inserted into the transport stream.
-    pub fn set_pcr_period(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_pcr_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.pcr_period = input;
         self
     }
     /// Packet Identifier (PID) of the Program Clock Reference (PCR) in the transport stream. When no value is given, the encoder will assign the same value as the Video PID. Can be entered as a decimal or hexadecimal value.
-    pub fn pcr_pid(mut self, input: impl Into<std::string::String>) -> Self {
-        self.pcr_pid = Some(input.into());
+    pub fn pcr_pid(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.pcr_pid = ::std::option::Option::Some(input.into());
         self
     }
     /// Packet Identifier (PID) of the Program Clock Reference (PCR) in the transport stream. When no value is given, the encoder will assign the same value as the Video PID. Can be entered as a decimal or hexadecimal value.
-    pub fn set_pcr_pid(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_pcr_pid(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pcr_pid = input;
         self
     }
     /// The number of milliseconds between instances of this table in the output transport stream. A value of \"0\" writes out the PMT once per segment file.
     pub fn pmt_interval(mut self, input: i32) -> Self {
-        self.pmt_interval = Some(input);
+        self.pmt_interval = ::std::option::Option::Some(input);
         self
     }
     /// The number of milliseconds between instances of this table in the output transport stream. A value of \"0\" writes out the PMT once per segment file.
-    pub fn set_pmt_interval(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_pmt_interval(mut self, input: ::std::option::Option<i32>) -> Self {
         self.pmt_interval = input;
         self
     }
     /// Packet Identifier (PID) for the Program Map Table (PMT) in the transport stream. Can be entered as a decimal or hexadecimal value.
-    pub fn pmt_pid(mut self, input: impl Into<std::string::String>) -> Self {
-        self.pmt_pid = Some(input.into());
+    pub fn pmt_pid(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.pmt_pid = ::std::option::Option::Some(input.into());
         self
     }
     /// Packet Identifier (PID) for the Program Map Table (PMT) in the transport stream. Can be entered as a decimal or hexadecimal value.
-    pub fn set_pmt_pid(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_pmt_pid(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pmt_pid = input;
         self
     }
     /// The value of the program number field in the Program Map Table.
     pub fn program_num(mut self, input: i32) -> Self {
-        self.program_num = Some(input);
+        self.program_num = ::std::option::Option::Some(input);
         self
     }
     /// The value of the program number field in the Program Map Table.
-    pub fn set_program_num(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_program_num(mut self, input: ::std::option::Option<i32>) -> Self {
         self.program_num = input;
         self
     }
     /// If set to passthrough, passes any SCTE-35 signals from the input source to this output.
     pub fn scte35_behavior(mut self, input: crate::types::M3u8Scte35Behavior) -> Self {
-        self.scte35_behavior = Some(input);
+        self.scte35_behavior = ::std::option::Option::Some(input);
         self
     }
     /// If set to passthrough, passes any SCTE-35 signals from the input source to this output.
     pub fn set_scte35_behavior(
         mut self,
-        input: std::option::Option<crate::types::M3u8Scte35Behavior>,
+        input: ::std::option::Option<crate::types::M3u8Scte35Behavior>,
     ) -> Self {
         self.scte35_behavior = input;
         self
     }
     /// Packet Identifier (PID) of the SCTE-35 stream in the transport stream. Can be entered as a decimal or hexadecimal value.
-    pub fn scte35_pid(mut self, input: impl Into<std::string::String>) -> Self {
-        self.scte35_pid = Some(input.into());
+    pub fn scte35_pid(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.scte35_pid = ::std::option::Option::Some(input.into());
         self
     }
     /// Packet Identifier (PID) of the SCTE-35 stream in the transport stream. Can be entered as a decimal or hexadecimal value.
-    pub fn set_scte35_pid(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_scte35_pid(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.scte35_pid = input;
         self
     }
@@ -305,47 +307,50 @@ impl M3u8SettingsBuilder {
         mut self,
         input: crate::types::M3u8TimedMetadataBehavior,
     ) -> Self {
-        self.timed_metadata_behavior = Some(input);
+        self.timed_metadata_behavior = ::std::option::Option::Some(input);
         self
     }
     /// When set to passthrough, timed metadata is passed through from input to output.
     pub fn set_timed_metadata_behavior(
         mut self,
-        input: std::option::Option<crate::types::M3u8TimedMetadataBehavior>,
+        input: ::std::option::Option<crate::types::M3u8TimedMetadataBehavior>,
     ) -> Self {
         self.timed_metadata_behavior = input;
         self
     }
     /// Packet Identifier (PID) of the timed metadata stream in the transport stream. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
-    pub fn timed_metadata_pid(mut self, input: impl Into<std::string::String>) -> Self {
-        self.timed_metadata_pid = Some(input.into());
+    pub fn timed_metadata_pid(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.timed_metadata_pid = ::std::option::Option::Some(input.into());
         self
     }
     /// Packet Identifier (PID) of the timed metadata stream in the transport stream. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
     pub fn set_timed_metadata_pid(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.timed_metadata_pid = input;
         self
     }
     /// The value of the transport stream ID field in the Program Map Table.
     pub fn transport_stream_id(mut self, input: i32) -> Self {
-        self.transport_stream_id = Some(input);
+        self.transport_stream_id = ::std::option::Option::Some(input);
         self
     }
     /// The value of the transport stream ID field in the Program Map Table.
-    pub fn set_transport_stream_id(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_transport_stream_id(mut self, input: ::std::option::Option<i32>) -> Self {
         self.transport_stream_id = input;
         self
     }
     /// Packet Identifier (PID) of the elementary video stream in the transport stream. Can be entered as a decimal or hexadecimal value.
-    pub fn video_pid(mut self, input: impl Into<std::string::String>) -> Self {
-        self.video_pid = Some(input.into());
+    pub fn video_pid(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.video_pid = ::std::option::Option::Some(input.into());
         self
     }
     /// Packet Identifier (PID) of the elementary video stream in the transport stream. Can be entered as a decimal or hexadecimal value.
-    pub fn set_video_pid(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_video_pid(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.video_pid = input;
         self
     }

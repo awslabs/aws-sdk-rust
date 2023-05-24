@@ -2,17 +2,17 @@
 
 /// <p>Information about an Direct Connect connection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AllocateHostedConnectionOutput {
     /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
     #[doc(hidden)]
-    pub owner_account: std::option::Option<std::string::String>,
+    pub owner_account: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the connection.</p>
     #[doc(hidden)]
-    pub connection_id: std::option::Option<std::string::String>,
+    pub connection_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the connection.</p>
     #[doc(hidden)]
-    pub connection_name: std::option::Option<std::string::String>,
+    pub connection_name: ::std::option::Option<::std::string::String>,
     /// <p>The state of the connection. The following are the possible values:</p>
     /// <ul>
     /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
@@ -26,76 +26,76 @@ pub struct AllocateHostedConnectionOutput {
     /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub connection_state: std::option::Option<crate::types::ConnectionState>,
+    pub connection_state: ::std::option::Option<crate::types::ConnectionState>,
     /// <p>The Amazon Web Services Region where the connection is located.</p>
     #[doc(hidden)]
-    pub region: std::option::Option<std::string::String>,
+    pub region: ::std::option::Option<::std::string::String>,
     /// <p>The location of the connection.</p>
     #[doc(hidden)]
-    pub location: std::option::Option<std::string::String>,
+    pub location: ::std::option::Option<::std::string::String>,
     /// <p>The bandwidth of the connection.</p>
     #[doc(hidden)]
-    pub bandwidth: std::option::Option<std::string::String>,
+    pub bandwidth: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the VLAN.</p>
     #[doc(hidden)]
     pub vlan: i32,
     /// <p>The name of the Direct Connect service provider associated with the connection.</p>
     #[doc(hidden)]
-    pub partner_name: std::option::Option<std::string::String>,
+    pub partner_name: ::std::option::Option<::std::string::String>,
     /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
     #[doc(hidden)]
-    pub loa_issue_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub loa_issue_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ID of the LAG.</p>
     #[doc(hidden)]
-    pub lag_id: std::option::Option<std::string::String>,
+    pub lag_id: ::std::option::Option<::std::string::String>,
     /// <p>The Direct Connect endpoint on which the physical connection terminates.</p>
     #[doc(hidden)]
-    pub aws_device: std::option::Option<std::string::String>,
+    pub aws_device: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
     #[doc(hidden)]
-    pub jumbo_frame_capable: std::option::Option<bool>,
+    pub jumbo_frame_capable: ::std::option::Option<bool>,
     /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
     #[doc(hidden)]
-    pub aws_device_v2: std::option::Option<std::string::String>,
+    pub aws_device_v2: ::std::option::Option<::std::string::String>,
     /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
     #[doc(hidden)]
-    pub aws_logical_device_id: std::option::Option<std::string::String>,
+    pub aws_logical_device_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
     #[doc(hidden)]
-    pub has_logical_redundancy: std::option::Option<crate::types::HasLogicalRedundancy>,
+    pub has_logical_redundancy: ::std::option::Option<crate::types::HasLogicalRedundancy>,
     /// <p>The tags associated with the connection.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The name of the service provider associated with the connection.</p>
     #[doc(hidden)]
-    pub provider_name: std::option::Option<std::string::String>,
+    pub provider_name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the connection supports MAC Security (MACsec).</p>
     #[doc(hidden)]
-    pub mac_sec_capable: std::option::Option<bool>,
+    pub mac_sec_capable: ::std::option::Option<bool>,
     /// <p>The MAC Security (MACsec) port link status of the connection.</p>
     /// <p>The valid values are <code>Encryption Up</code>, which means that there is an active Connection Key Name, or <code>Encryption Down</code>.</p>
     #[doc(hidden)]
-    pub port_encryption_status: std::option::Option<std::string::String>,
+    pub port_encryption_status: ::std::option::Option<::std::string::String>,
     /// <p>The MAC Security (MACsec) connection encryption mode.</p>
     /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
     #[doc(hidden)]
-    pub encryption_mode: std::option::Option<std::string::String>,
+    pub encryption_mode: ::std::option::Option<::std::string::String>,
     /// <p>The MAC Security (MACsec) security keys associated with the connection.</p>
     #[doc(hidden)]
-    pub mac_sec_keys: std::option::Option<std::vec::Vec<crate::types::MacSecKey>>,
+    pub mac_sec_keys: ::std::option::Option<::std::vec::Vec<crate::types::MacSecKey>>,
     _request_id: Option<String>,
 }
 impl AllocateHostedConnectionOutput {
     /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
-    pub fn owner_account(&self) -> std::option::Option<&str> {
+    pub fn owner_account(&self) -> ::std::option::Option<&str> {
         self.owner_account.as_deref()
     }
     /// <p>The ID of the connection.</p>
-    pub fn connection_id(&self) -> std::option::Option<&str> {
+    pub fn connection_id(&self) -> ::std::option::Option<&str> {
         self.connection_id.as_deref()
     }
     /// <p>The name of the connection.</p>
-    pub fn connection_name(&self) -> std::option::Option<&str> {
+    pub fn connection_name(&self) -> ::std::option::Option<&str> {
         self.connection_name.as_deref()
     }
     /// <p>The state of the connection. The following are the possible values:</p>
@@ -110,19 +110,19 @@ impl AllocateHostedConnectionOutput {
     /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
     /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
     /// </ul>
-    pub fn connection_state(&self) -> std::option::Option<&crate::types::ConnectionState> {
+    pub fn connection_state(&self) -> ::std::option::Option<&crate::types::ConnectionState> {
         self.connection_state.as_ref()
     }
     /// <p>The Amazon Web Services Region where the connection is located.</p>
-    pub fn region(&self) -> std::option::Option<&str> {
+    pub fn region(&self) -> ::std::option::Option<&str> {
         self.region.as_deref()
     }
     /// <p>The location of the connection.</p>
-    pub fn location(&self) -> std::option::Option<&str> {
+    pub fn location(&self) -> ::std::option::Option<&str> {
         self.location.as_deref()
     }
     /// <p>The bandwidth of the connection.</p>
-    pub fn bandwidth(&self) -> std::option::Option<&str> {
+    pub fn bandwidth(&self) -> ::std::option::Option<&str> {
         self.bandwidth.as_deref()
     }
     /// <p>The ID of the VLAN.</p>
@@ -130,67 +130,67 @@ impl AllocateHostedConnectionOutput {
         self.vlan
     }
     /// <p>The name of the Direct Connect service provider associated with the connection.</p>
-    pub fn partner_name(&self) -> std::option::Option<&str> {
+    pub fn partner_name(&self) -> ::std::option::Option<&str> {
         self.partner_name.as_deref()
     }
     /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
-    pub fn loa_issue_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn loa_issue_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.loa_issue_time.as_ref()
     }
     /// <p>The ID of the LAG.</p>
-    pub fn lag_id(&self) -> std::option::Option<&str> {
+    pub fn lag_id(&self) -> ::std::option::Option<&str> {
         self.lag_id.as_deref()
     }
     /// <p>The Direct Connect endpoint on which the physical connection terminates.</p>
-    pub fn aws_device(&self) -> std::option::Option<&str> {
+    pub fn aws_device(&self) -> ::std::option::Option<&str> {
         self.aws_device.as_deref()
     }
     /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
-    pub fn jumbo_frame_capable(&self) -> std::option::Option<bool> {
+    pub fn jumbo_frame_capable(&self) -> ::std::option::Option<bool> {
         self.jumbo_frame_capable
     }
     /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
-    pub fn aws_device_v2(&self) -> std::option::Option<&str> {
+    pub fn aws_device_v2(&self) -> ::std::option::Option<&str> {
         self.aws_device_v2.as_deref()
     }
     /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
-    pub fn aws_logical_device_id(&self) -> std::option::Option<&str> {
+    pub fn aws_logical_device_id(&self) -> ::std::option::Option<&str> {
         self.aws_logical_device_id.as_deref()
     }
     /// <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
     pub fn has_logical_redundancy(
         &self,
-    ) -> std::option::Option<&crate::types::HasLogicalRedundancy> {
+    ) -> ::std::option::Option<&crate::types::HasLogicalRedundancy> {
         self.has_logical_redundancy.as_ref()
     }
     /// <p>The tags associated with the connection.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The name of the service provider associated with the connection.</p>
-    pub fn provider_name(&self) -> std::option::Option<&str> {
+    pub fn provider_name(&self) -> ::std::option::Option<&str> {
         self.provider_name.as_deref()
     }
     /// <p>Indicates whether the connection supports MAC Security (MACsec).</p>
-    pub fn mac_sec_capable(&self) -> std::option::Option<bool> {
+    pub fn mac_sec_capable(&self) -> ::std::option::Option<bool> {
         self.mac_sec_capable
     }
     /// <p>The MAC Security (MACsec) port link status of the connection.</p>
     /// <p>The valid values are <code>Encryption Up</code>, which means that there is an active Connection Key Name, or <code>Encryption Down</code>.</p>
-    pub fn port_encryption_status(&self) -> std::option::Option<&str> {
+    pub fn port_encryption_status(&self) -> ::std::option::Option<&str> {
         self.port_encryption_status.as_deref()
     }
     /// <p>The MAC Security (MACsec) connection encryption mode.</p>
     /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
-    pub fn encryption_mode(&self) -> std::option::Option<&str> {
+    pub fn encryption_mode(&self) -> ::std::option::Option<&str> {
         self.encryption_mode.as_deref()
     }
     /// <p>The MAC Security (MACsec) security keys associated with the connection.</p>
-    pub fn mac_sec_keys(&self) -> std::option::Option<&[crate::types::MacSecKey]> {
+    pub fn mac_sec_keys(&self) -> ::std::option::Option<&[crate::types::MacSecKey]> {
         self.mac_sec_keys.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for AllocateHostedConnectionOutput {
+impl ::aws_http::request_id::RequestId for AllocateHostedConnectionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -206,60 +206,80 @@ impl AllocateHostedConnectionOutput {
 
 /// A builder for [`AllocateHostedConnectionOutput`](crate::operation::allocate_hosted_connection::AllocateHostedConnectionOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AllocateHostedConnectionOutputBuilder {
-    pub(crate) owner_account: std::option::Option<std::string::String>,
-    pub(crate) connection_id: std::option::Option<std::string::String>,
-    pub(crate) connection_name: std::option::Option<std::string::String>,
-    pub(crate) connection_state: std::option::Option<crate::types::ConnectionState>,
-    pub(crate) region: std::option::Option<std::string::String>,
-    pub(crate) location: std::option::Option<std::string::String>,
-    pub(crate) bandwidth: std::option::Option<std::string::String>,
-    pub(crate) vlan: std::option::Option<i32>,
-    pub(crate) partner_name: std::option::Option<std::string::String>,
-    pub(crate) loa_issue_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) lag_id: std::option::Option<std::string::String>,
-    pub(crate) aws_device: std::option::Option<std::string::String>,
-    pub(crate) jumbo_frame_capable: std::option::Option<bool>,
-    pub(crate) aws_device_v2: std::option::Option<std::string::String>,
-    pub(crate) aws_logical_device_id: std::option::Option<std::string::String>,
-    pub(crate) has_logical_redundancy: std::option::Option<crate::types::HasLogicalRedundancy>,
-    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    pub(crate) provider_name: std::option::Option<std::string::String>,
-    pub(crate) mac_sec_capable: std::option::Option<bool>,
-    pub(crate) port_encryption_status: std::option::Option<std::string::String>,
-    pub(crate) encryption_mode: std::option::Option<std::string::String>,
-    pub(crate) mac_sec_keys: std::option::Option<std::vec::Vec<crate::types::MacSecKey>>,
+    pub(crate) owner_account: ::std::option::Option<::std::string::String>,
+    pub(crate) connection_id: ::std::option::Option<::std::string::String>,
+    pub(crate) connection_name: ::std::option::Option<::std::string::String>,
+    pub(crate) connection_state: ::std::option::Option<crate::types::ConnectionState>,
+    pub(crate) region: ::std::option::Option<::std::string::String>,
+    pub(crate) location: ::std::option::Option<::std::string::String>,
+    pub(crate) bandwidth: ::std::option::Option<::std::string::String>,
+    pub(crate) vlan: ::std::option::Option<i32>,
+    pub(crate) partner_name: ::std::option::Option<::std::string::String>,
+    pub(crate) loa_issue_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) lag_id: ::std::option::Option<::std::string::String>,
+    pub(crate) aws_device: ::std::option::Option<::std::string::String>,
+    pub(crate) jumbo_frame_capable: ::std::option::Option<bool>,
+    pub(crate) aws_device_v2: ::std::option::Option<::std::string::String>,
+    pub(crate) aws_logical_device_id: ::std::option::Option<::std::string::String>,
+    pub(crate) has_logical_redundancy: ::std::option::Option<crate::types::HasLogicalRedundancy>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) provider_name: ::std::option::Option<::std::string::String>,
+    pub(crate) mac_sec_capable: ::std::option::Option<bool>,
+    pub(crate) port_encryption_status: ::std::option::Option<::std::string::String>,
+    pub(crate) encryption_mode: ::std::option::Option<::std::string::String>,
+    pub(crate) mac_sec_keys: ::std::option::Option<::std::vec::Vec<crate::types::MacSecKey>>,
     _request_id: Option<String>,
 }
 impl AllocateHostedConnectionOutputBuilder {
     /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
-    pub fn owner_account(mut self, input: impl Into<std::string::String>) -> Self {
-        self.owner_account = Some(input.into());
+    pub fn owner_account(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.owner_account = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
-    pub fn set_owner_account(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_owner_account(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.owner_account = input;
         self
     }
     /// <p>The ID of the connection.</p>
-    pub fn connection_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.connection_id = Some(input.into());
+    pub fn connection_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.connection_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the connection.</p>
-    pub fn set_connection_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_connection_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.connection_id = input;
         self
     }
     /// <p>The name of the connection.</p>
-    pub fn connection_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.connection_name = Some(input.into());
+    pub fn connection_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.connection_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the connection.</p>
-    pub fn set_connection_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_connection_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.connection_name = input;
         self
     }
@@ -276,7 +296,7 @@ impl AllocateHostedConnectionOutputBuilder {
     /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
     /// </ul>
     pub fn connection_state(mut self, input: crate::types::ConnectionState) -> Self {
-        self.connection_state = Some(input);
+        self.connection_state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The state of the connection. The following are the possible values:</p>
@@ -293,136 +313,145 @@ impl AllocateHostedConnectionOutputBuilder {
     /// </ul>
     pub fn set_connection_state(
         mut self,
-        input: std::option::Option<crate::types::ConnectionState>,
+        input: ::std::option::Option<crate::types::ConnectionState>,
     ) -> Self {
         self.connection_state = input;
         self
     }
     /// <p>The Amazon Web Services Region where the connection is located.</p>
-    pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
-        self.region = Some(input.into());
+    pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services Region where the connection is located.</p>
-    pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region = input;
         self
     }
     /// <p>The location of the connection.</p>
-    pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
-        self.location = Some(input.into());
+    pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.location = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The location of the connection.</p>
-    pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location = input;
         self
     }
     /// <p>The bandwidth of the connection.</p>
-    pub fn bandwidth(mut self, input: impl Into<std::string::String>) -> Self {
-        self.bandwidth = Some(input.into());
+    pub fn bandwidth(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.bandwidth = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The bandwidth of the connection.</p>
-    pub fn set_bandwidth(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_bandwidth(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bandwidth = input;
         self
     }
     /// <p>The ID of the VLAN.</p>
     pub fn vlan(mut self, input: i32) -> Self {
-        self.vlan = Some(input);
+        self.vlan = ::std::option::Option::Some(input);
         self
     }
     /// <p>The ID of the VLAN.</p>
-    pub fn set_vlan(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_vlan(mut self, input: ::std::option::Option<i32>) -> Self {
         self.vlan = input;
         self
     }
     /// <p>The name of the Direct Connect service provider associated with the connection.</p>
-    pub fn partner_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.partner_name = Some(input.into());
+    pub fn partner_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.partner_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Direct Connect service provider associated with the connection.</p>
-    pub fn set_partner_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_partner_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.partner_name = input;
         self
     }
     /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
-    pub fn loa_issue_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.loa_issue_time = Some(input);
+    pub fn loa_issue_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.loa_issue_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
     pub fn set_loa_issue_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.loa_issue_time = input;
         self
     }
     /// <p>The ID of the LAG.</p>
-    pub fn lag_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.lag_id = Some(input.into());
+    pub fn lag_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.lag_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the LAG.</p>
-    pub fn set_lag_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_lag_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lag_id = input;
         self
     }
     /// <p>The Direct Connect endpoint on which the physical connection terminates.</p>
-    pub fn aws_device(mut self, input: impl Into<std::string::String>) -> Self {
-        self.aws_device = Some(input.into());
+    pub fn aws_device(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.aws_device = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Direct Connect endpoint on which the physical connection terminates.</p>
-    pub fn set_aws_device(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_aws_device(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_device = input;
         self
     }
     /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
     pub fn jumbo_frame_capable(mut self, input: bool) -> Self {
-        self.jumbo_frame_capable = Some(input);
+        self.jumbo_frame_capable = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
-    pub fn set_jumbo_frame_capable(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_jumbo_frame_capable(mut self, input: ::std::option::Option<bool>) -> Self {
         self.jumbo_frame_capable = input;
         self
     }
     /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
-    pub fn aws_device_v2(mut self, input: impl Into<std::string::String>) -> Self {
-        self.aws_device_v2 = Some(input.into());
+    pub fn aws_device_v2(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.aws_device_v2 = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
-    pub fn set_aws_device_v2(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_aws_device_v2(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.aws_device_v2 = input;
         self
     }
     /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
-    pub fn aws_logical_device_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.aws_logical_device_id = Some(input.into());
+    pub fn aws_logical_device_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.aws_logical_device_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
     pub fn set_aws_logical_device_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.aws_logical_device_id = input;
         self
     }
     /// <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
     pub fn has_logical_redundancy(mut self, input: crate::types::HasLogicalRedundancy) -> Self {
-        self.has_logical_redundancy = Some(input);
+        self.has_logical_redundancy = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
     pub fn set_has_logical_redundancy(
         mut self,
-        input: std::option::Option<crate::types::HasLogicalRedundancy>,
+        input: ::std::option::Option<crate::types::HasLogicalRedundancy>,
     ) -> Self {
         self.has_logical_redundancy = input;
         self
@@ -435,61 +464,76 @@ impl AllocateHostedConnectionOutputBuilder {
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
-        self.tags = Some(v);
+        self.tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>The tags associated with the connection.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tags = input;
         self
     }
     /// <p>The name of the service provider associated with the connection.</p>
-    pub fn provider_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.provider_name = Some(input.into());
+    pub fn provider_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.provider_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the service provider associated with the connection.</p>
-    pub fn set_provider_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_provider_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.provider_name = input;
         self
     }
     /// <p>Indicates whether the connection supports MAC Security (MACsec).</p>
     pub fn mac_sec_capable(mut self, input: bool) -> Self {
-        self.mac_sec_capable = Some(input);
+        self.mac_sec_capable = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether the connection supports MAC Security (MACsec).</p>
-    pub fn set_mac_sec_capable(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_mac_sec_capable(mut self, input: ::std::option::Option<bool>) -> Self {
         self.mac_sec_capable = input;
         self
     }
     /// <p>The MAC Security (MACsec) port link status of the connection.</p>
     /// <p>The valid values are <code>Encryption Up</code>, which means that there is an active Connection Key Name, or <code>Encryption Down</code>.</p>
-    pub fn port_encryption_status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.port_encryption_status = Some(input.into());
+    pub fn port_encryption_status(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.port_encryption_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The MAC Security (MACsec) port link status of the connection.</p>
     /// <p>The valid values are <code>Encryption Up</code>, which means that there is an active Connection Key Name, or <code>Encryption Down</code>.</p>
     pub fn set_port_encryption_status(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.port_encryption_status = input;
         self
     }
     /// <p>The MAC Security (MACsec) connection encryption mode.</p>
     /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
-    pub fn encryption_mode(mut self, input: impl Into<std::string::String>) -> Self {
-        self.encryption_mode = Some(input.into());
+    pub fn encryption_mode(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.encryption_mode = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The MAC Security (MACsec) connection encryption mode.</p>
     /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
-    pub fn set_encryption_mode(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_encryption_mode(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.encryption_mode = input;
         self
     }
@@ -501,13 +545,13 @@ impl AllocateHostedConnectionOutputBuilder {
     pub fn mac_sec_keys(mut self, input: crate::types::MacSecKey) -> Self {
         let mut v = self.mac_sec_keys.unwrap_or_default();
         v.push(input);
-        self.mac_sec_keys = Some(v);
+        self.mac_sec_keys = ::std::option::Option::Some(v);
         self
     }
     /// <p>The MAC Security (MACsec) security keys associated with the connection.</p>
     pub fn set_mac_sec_keys(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::MacSecKey>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::MacSecKey>>,
     ) -> Self {
         self.mac_sec_keys = input;
         self

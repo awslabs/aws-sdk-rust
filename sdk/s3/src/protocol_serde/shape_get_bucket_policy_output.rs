@@ -2,7 +2,7 @@
 pub(crate) fn de_policy_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<std::string::String>,
+    ::std::option::Option<::std::string::String>,
     crate::operation::get_bucket_policy::GetBucketPolicyError,
 > {
     (!body.is_empty())

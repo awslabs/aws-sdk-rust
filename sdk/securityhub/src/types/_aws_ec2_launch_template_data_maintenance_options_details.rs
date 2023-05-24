@@ -2,15 +2,15 @@
 
 /// <p> The maintenance options of an Amazon EC2 instance. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2LaunchTemplateDataMaintenanceOptionsDetails {
     /// <p> Disables the automatic recovery behavior of your instance or sets it to default. </p>
     #[doc(hidden)]
-    pub auto_recovery: std::option::Option<std::string::String>,
+    pub auto_recovery: ::std::option::Option<::std::string::String>,
 }
 impl AwsEc2LaunchTemplateDataMaintenanceOptionsDetails {
     /// <p> Disables the automatic recovery behavior of your instance or sets it to default. </p>
-    pub fn auto_recovery(&self) -> std::option::Option<&str> {
+    pub fn auto_recovery(&self) -> ::std::option::Option<&str> {
         self.auto_recovery.as_deref()
     }
 }
@@ -24,18 +24,26 @@ impl AwsEc2LaunchTemplateDataMaintenanceOptionsDetails {
 
 /// A builder for [`AwsEc2LaunchTemplateDataMaintenanceOptionsDetails`](crate::types::AwsEc2LaunchTemplateDataMaintenanceOptionsDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsEc2LaunchTemplateDataMaintenanceOptionsDetailsBuilder {
-    pub(crate) auto_recovery: std::option::Option<std::string::String>,
+    pub(crate) auto_recovery: ::std::option::Option<::std::string::String>,
 }
 impl AwsEc2LaunchTemplateDataMaintenanceOptionsDetailsBuilder {
     /// <p> Disables the automatic recovery behavior of your instance or sets it to default. </p>
-    pub fn auto_recovery(mut self, input: impl Into<std::string::String>) -> Self {
-        self.auto_recovery = Some(input.into());
+    pub fn auto_recovery(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.auto_recovery = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Disables the automatic recovery behavior of your instance or sets it to default. </p>
-    pub fn set_auto_recovery(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_auto_recovery(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.auto_recovery = input;
         self
     }

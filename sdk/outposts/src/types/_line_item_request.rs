@@ -2,18 +2,18 @@
 
 /// <p>Information about a line item request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LineItemRequest {
     /// <p>The ID of the catalog item.</p>
     #[doc(hidden)]
-    pub catalog_item_id: std::option::Option<std::string::String>,
+    pub catalog_item_id: ::std::option::Option<::std::string::String>,
     /// <p>The quantity of a line item request.</p>
     #[doc(hidden)]
     pub quantity: i32,
 }
 impl LineItemRequest {
     /// <p>The ID of the catalog item.</p>
-    pub fn catalog_item_id(&self) -> std::option::Option<&str> {
+    pub fn catalog_item_id(&self) -> ::std::option::Option<&str> {
         self.catalog_item_id.as_deref()
     }
     /// <p>The quantity of a line item request.</p>
@@ -30,29 +30,37 @@ impl LineItemRequest {
 
 /// A builder for [`LineItemRequest`](crate::types::LineItemRequest).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LineItemRequestBuilder {
-    pub(crate) catalog_item_id: std::option::Option<std::string::String>,
-    pub(crate) quantity: std::option::Option<i32>,
+    pub(crate) catalog_item_id: ::std::option::Option<::std::string::String>,
+    pub(crate) quantity: ::std::option::Option<i32>,
 }
 impl LineItemRequestBuilder {
     /// <p>The ID of the catalog item.</p>
-    pub fn catalog_item_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.catalog_item_id = Some(input.into());
+    pub fn catalog_item_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.catalog_item_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the catalog item.</p>
-    pub fn set_catalog_item_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_catalog_item_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.catalog_item_id = input;
         self
     }
     /// <p>The quantity of a line item request.</p>
     pub fn quantity(mut self, input: i32) -> Self {
-        self.quantity = Some(input);
+        self.quantity = ::std::option::Option::Some(input);
         self
     }
     /// <p>The quantity of a line item request.</p>
-    pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_quantity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.quantity = input;
         self
     }

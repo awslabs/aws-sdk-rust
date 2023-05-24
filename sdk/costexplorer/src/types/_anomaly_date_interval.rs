@@ -2,22 +2,22 @@
 
 /// <p>The time period for an anomaly. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnomalyDateInterval {
     /// <p>The first date an anomaly was observed. </p>
     #[doc(hidden)]
-    pub start_date: std::option::Option<std::string::String>,
+    pub start_date: ::std::option::Option<::std::string::String>,
     /// <p>The last date an anomaly was observed. </p>
     #[doc(hidden)]
-    pub end_date: std::option::Option<std::string::String>,
+    pub end_date: ::std::option::Option<::std::string::String>,
 }
 impl AnomalyDateInterval {
     /// <p>The first date an anomaly was observed. </p>
-    pub fn start_date(&self) -> std::option::Option<&str> {
+    pub fn start_date(&self) -> ::std::option::Option<&str> {
         self.start_date.as_deref()
     }
     /// <p>The last date an anomaly was observed. </p>
-    pub fn end_date(&self) -> std::option::Option<&str> {
+    pub fn end_date(&self) -> ::std::option::Option<&str> {
         self.end_date.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl AnomalyDateInterval {
 
 /// A builder for [`AnomalyDateInterval`](crate::types::AnomalyDateInterval).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AnomalyDateIntervalBuilder {
-    pub(crate) start_date: std::option::Option<std::string::String>,
-    pub(crate) end_date: std::option::Option<std::string::String>,
+    pub(crate) start_date: ::std::option::Option<::std::string::String>,
+    pub(crate) end_date: ::std::option::Option<::std::string::String>,
 }
 impl AnomalyDateIntervalBuilder {
     /// <p>The first date an anomaly was observed. </p>
-    pub fn start_date(mut self, input: impl Into<std::string::String>) -> Self {
-        self.start_date = Some(input.into());
+    pub fn start_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.start_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The first date an anomaly was observed. </p>
-    pub fn set_start_date(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_start_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.start_date = input;
         self
     }
     /// <p>The last date an anomaly was observed. </p>
-    pub fn end_date(mut self, input: impl Into<std::string::String>) -> Self {
-        self.end_date = Some(input.into());
+    pub fn end_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.end_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The last date an anomaly was observed. </p>
-    pub fn set_end_date(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_end_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.end_date = input;
         self
     }

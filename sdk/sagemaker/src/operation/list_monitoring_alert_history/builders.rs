@@ -6,29 +6,29 @@ pub use crate::operation::list_monitoring_alert_history::_list_monitoring_alert_
 /// Fluent builder constructing a request to `ListMonitoringAlertHistory`.
 ///
 /// <p>Gets a list of past alerts in a model monitoring schedule.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListMonitoringAlertHistoryFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::list_monitoring_alert_history::builders::ListMonitoringAlertHistoryInputBuilder,
 }
 impl ListMonitoringAlertHistoryFluentBuilder {
     /// Creates a new `ListMonitoringAlertHistory`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::list_monitoring_alert_history::ListMonitoringAlertHistory,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::list_monitoring_alert_history::ListMonitoringAlertHistoryError,
         >,
     > {
@@ -36,30 +36,33 @@ impl ListMonitoringAlertHistoryFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::list_monitoring_alert_history::ListMonitoringAlertHistoryOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::list_monitoring_alert_history::ListMonitoringAlertHistoryError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,9 +75,9 @@ impl ListMonitoringAlertHistoryFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::list_monitoring_alert_history::ListMonitoringAlertHistoryOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::list_monitoring_alert_history::ListMonitoringAlertHistoryError,
         >,
     > {
@@ -87,27 +90,33 @@ impl ListMonitoringAlertHistoryFluentBuilder {
         crate::operation::list_monitoring_alert_history::paginator::ListMonitoringAlertHistoryPaginator::new(self.handle, self.inner)
     }
     /// <p>The name of a monitoring schedule.</p>
-    pub fn monitoring_schedule_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn monitoring_schedule_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.monitoring_schedule_name(input.into());
         self
     }
     /// <p>The name of a monitoring schedule.</p>
     pub fn set_monitoring_schedule_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_monitoring_schedule_name(input);
         self
     }
     /// <p>The name of a monitoring alert.</p>
-    pub fn monitoring_alert_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn monitoring_alert_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.monitoring_alert_name(input.into());
         self
     }
     /// <p>The name of a monitoring alert.</p>
     pub fn set_monitoring_alert_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_monitoring_alert_name(input);
         self
@@ -120,7 +129,7 @@ impl ListMonitoringAlertHistoryFluentBuilder {
     /// <p>The field used to sort results. The default is <code>CreationTime</code>.</p>
     pub fn set_sort_by(
         mut self,
-        input: std::option::Option<crate::types::MonitoringAlertHistorySortKey>,
+        input: ::std::option::Option<crate::types::MonitoringAlertHistorySortKey>,
     ) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
@@ -131,17 +140,17 @@ impl ListMonitoringAlertHistoryFluentBuilder {
         self
     }
     /// <p>The sort order, whether <code>Ascending</code> or <code>Descending</code>, of the alert history. The default is <code>Descending</code>.</p>
-    pub fn set_sort_order(mut self, input: std::option::Option<crate::types::SortOrder>) -> Self {
+    pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.inner = self.inner.set_sort_order(input);
         self
     }
     /// <p>If the result of the previous <code>ListMonitoringAlertHistory</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of alerts in the history, use the token in the next request.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
     /// <p>If the result of the previous <code>ListMonitoringAlertHistory</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of alerts in the history, use the token in the next request.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
@@ -151,32 +160,32 @@ impl ListMonitoringAlertHistoryFluentBuilder {
         self
     }
     /// <p>The maximum number of results to display. The default is 100.</p>
-    pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
     /// <p>A filter that returns only alerts created on or before the specified time.</p>
-    pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+    pub fn creation_time_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.creation_time_before(input);
         self
     }
     /// <p>A filter that returns only alerts created on or before the specified time.</p>
     pub fn set_creation_time_before(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.inner = self.inner.set_creation_time_before(input);
         self
     }
     /// <p>A filter that returns only alerts created on or after the specified time.</p>
-    pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+    pub fn creation_time_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.creation_time_after(input);
         self
     }
     /// <p>A filter that returns only alerts created on or after the specified time.</p>
     pub fn set_creation_time_after(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.inner = self.inner.set_creation_time_after(input);
         self
@@ -189,7 +198,7 @@ impl ListMonitoringAlertHistoryFluentBuilder {
     /// <p>A filter that retrieves only alerts with a specific status.</p>
     pub fn set_status_equals(
         mut self,
-        input: std::option::Option<crate::types::MonitoringAlertStatus>,
+        input: ::std::option::Option<crate::types::MonitoringAlertStatus>,
     ) -> Self {
         self.inner = self.inner.set_status_equals(input);
         self

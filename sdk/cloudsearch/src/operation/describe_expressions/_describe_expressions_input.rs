@@ -2,29 +2,29 @@
 
 /// <p>Container for the parameters to the <code><code>DescribeDomains</code></code> operation. Specifies the name of the domain you want to describe. To restrict the response to particular expressions, specify the names of the expressions you want to describe. To show the active configuration and exclude any pending changes, set the <code>Deployed</code> option to <code>true</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeExpressionsInput {
     /// <p>The name of the domain you want to describe.</p>
     #[doc(hidden)]
-    pub domain_name: std::option::Option<std::string::String>,
+    pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>Limits the <code><code>DescribeExpressions</code></code> response to the specified expressions. If not specified, all expressions are shown.</p>
     #[doc(hidden)]
-    pub expression_names: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub expression_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
     #[doc(hidden)]
-    pub deployed: std::option::Option<bool>,
+    pub deployed: ::std::option::Option<bool>,
 }
 impl DescribeExpressionsInput {
     /// <p>The name of the domain you want to describe.</p>
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<&str> {
         self.domain_name.as_deref()
     }
     /// <p>Limits the <code><code>DescribeExpressions</code></code> response to the specified expressions. If not specified, all expressions are shown.</p>
-    pub fn expression_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn expression_names(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.expression_names.as_deref()
     }
     /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
-    pub fn deployed(&self) -> std::option::Option<bool> {
+    pub fn deployed(&self) -> ::std::option::Option<bool> {
         self.deployed
     }
 }
@@ -38,20 +38,22 @@ impl DescribeExpressionsInput {
 
 /// A builder for [`DescribeExpressionsInput`](crate::operation::describe_expressions::DescribeExpressionsInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeExpressionsInputBuilder {
-    pub(crate) domain_name: std::option::Option<std::string::String>,
-    pub(crate) expression_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) deployed: std::option::Option<bool>,
+    pub(crate) domain_name: ::std::option::Option<::std::string::String>,
+    pub(crate) expression_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) deployed: ::std::option::Option<bool>,
 }
 impl DescribeExpressionsInputBuilder {
     /// <p>The name of the domain you want to describe.</p>
-    pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.domain_name = Some(input.into());
+    pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.domain_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the domain you want to describe.</p>
-    pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_name = input;
         self
     }
@@ -60,38 +62,41 @@ impl DescribeExpressionsInputBuilder {
     /// To override the contents of this collection use [`set_expression_names`](Self::set_expression_names).
     ///
     /// <p>Limits the <code><code>DescribeExpressions</code></code> response to the specified expressions. If not specified, all expressions are shown.</p>
-    pub fn expression_names(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn expression_names(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.expression_names.unwrap_or_default();
         v.push(input.into());
-        self.expression_names = Some(v);
+        self.expression_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>Limits the <code><code>DescribeExpressions</code></code> response to the specified expressions. If not specified, all expressions are shown.</p>
     pub fn set_expression_names(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.expression_names = input;
         self
     }
     /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
     pub fn deployed(mut self, input: bool) -> Self {
-        self.deployed = Some(input);
+        self.deployed = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
-    pub fn set_deployed(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_deployed(mut self, input: ::std::option::Option<bool>) -> Self {
         self.deployed = input;
         self
     }
     /// Consumes the builder and constructs a [`DescribeExpressionsInput`](crate::operation::describe_expressions::DescribeExpressionsInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::describe_expressions::DescribeExpressionsInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::describe_expressions::DescribeExpressionsInput {
                 domain_name: self.domain_name,
                 expression_names: self.expression_names,

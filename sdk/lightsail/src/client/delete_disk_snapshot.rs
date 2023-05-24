@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteDiskSnapshot`](crate::operation::delete_disk_snapshot::builders::DeleteDiskSnapshotFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`disk_snapshot_name(impl Into<String>)`](crate::operation::delete_disk_snapshot::builders::DeleteDiskSnapshotFluentBuilder::disk_snapshot_name) / [`set_disk_snapshot_name(Option<String>)`](crate::operation::delete_disk_snapshot::builders::DeleteDiskSnapshotFluentBuilder::set_disk_snapshot_name): <p>The name of the disk snapshot you want to delete (e.g., <code>my-disk-snapshot</code>).</p>
+    ///   - [`disk_snapshot_name(impl ::std::convert::Into<String>)`](crate::operation::delete_disk_snapshot::builders::DeleteDiskSnapshotFluentBuilder::disk_snapshot_name) / [`set_disk_snapshot_name(Option<String>)`](crate::operation::delete_disk_snapshot::builders::DeleteDiskSnapshotFluentBuilder::set_disk_snapshot_name): <p>The name of the disk snapshot you want to delete (e.g., <code>my-disk-snapshot</code>).</p>
     /// - On success, responds with [`DeleteDiskSnapshotOutput`](crate::operation::delete_disk_snapshot::DeleteDiskSnapshotOutput) with field(s):
     ///   - [`operations(Option<Vec<Operation>>)`](crate::operation::delete_disk_snapshot::DeleteDiskSnapshotOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     /// - On failure, responds with [`SdkError<DeleteDiskSnapshotError>`](crate::operation::delete_disk_snapshot::DeleteDiskSnapshotError)

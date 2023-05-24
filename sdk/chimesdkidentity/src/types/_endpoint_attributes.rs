@@ -2,27 +2,27 @@
 
 /// <p>The attributes of an <code>Endpoint</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct EndpointAttributes {
     /// <p>The device token for the GCM, APNS, and APNS_SANDBOX endpoint types.</p>
     #[doc(hidden)]
-    pub device_token: std::option::Option<std::string::String>,
+    pub device_token: ::std::option::Option<::std::string::String>,
     /// <p>The VOIP device token for the APNS and APNS_SANDBOX endpoint types.</p>
     #[doc(hidden)]
-    pub voip_device_token: std::option::Option<std::string::String>,
+    pub voip_device_token: ::std::option::Option<::std::string::String>,
 }
 impl EndpointAttributes {
     /// <p>The device token for the GCM, APNS, and APNS_SANDBOX endpoint types.</p>
-    pub fn device_token(&self) -> std::option::Option<&str> {
+    pub fn device_token(&self) -> ::std::option::Option<&str> {
         self.device_token.as_deref()
     }
     /// <p>The VOIP device token for the APNS and APNS_SANDBOX endpoint types.</p>
-    pub fn voip_device_token(&self) -> std::option::Option<&str> {
+    pub fn voip_device_token(&self) -> ::std::option::Option<&str> {
         self.voip_device_token.as_deref()
     }
 }
-impl std::fmt::Debug for EndpointAttributes {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for EndpointAttributes {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("EndpointAttributes");
         formatter.field("device_token", &"*** Sensitive Data Redacted ***");
         formatter.field("voip_device_token", &"*** Sensitive Data Redacted ***");
@@ -38,31 +38,34 @@ impl EndpointAttributes {
 
 /// A builder for [`EndpointAttributes`](crate::types::EndpointAttributes).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct EndpointAttributesBuilder {
-    pub(crate) device_token: std::option::Option<std::string::String>,
-    pub(crate) voip_device_token: std::option::Option<std::string::String>,
+    pub(crate) device_token: ::std::option::Option<::std::string::String>,
+    pub(crate) voip_device_token: ::std::option::Option<::std::string::String>,
 }
 impl EndpointAttributesBuilder {
     /// <p>The device token for the GCM, APNS, and APNS_SANDBOX endpoint types.</p>
-    pub fn device_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.device_token = Some(input.into());
+    pub fn device_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.device_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The device token for the GCM, APNS, and APNS_SANDBOX endpoint types.</p>
-    pub fn set_device_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_device_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_token = input;
         self
     }
     /// <p>The VOIP device token for the APNS and APNS_SANDBOX endpoint types.</p>
-    pub fn voip_device_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.voip_device_token = Some(input.into());
+    pub fn voip_device_token(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.voip_device_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The VOIP device token for the APNS and APNS_SANDBOX endpoint types.</p>
     pub fn set_voip_device_token(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.voip_device_token = input;
         self
@@ -75,8 +78,8 @@ impl EndpointAttributesBuilder {
         }
     }
 }
-impl std::fmt::Debug for EndpointAttributesBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for EndpointAttributesBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("EndpointAttributesBuilder");
         formatter.field("device_token", &"*** Sensitive Data Redacted ***");
         formatter.field("voip_device_token", &"*** Sensitive Data Redacted ***");

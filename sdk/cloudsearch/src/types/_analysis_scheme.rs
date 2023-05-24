@@ -2,31 +2,31 @@
 
 /// <p>Configuration information for an analysis scheme. Each analysis scheme has a unique name and specifies the language of the text to be processed. The following options can be configured for an analysis scheme: <code>Synonyms</code>, <code>Stopwords</code>, <code>StemmingDictionary</code>, <code>JapaneseTokenizationDictionary</code> and <code>AlgorithmicStemming</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnalysisScheme {
     /// <p>Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).</p>
     #[doc(hidden)]
-    pub analysis_scheme_name: std::option::Option<std::string::String>,
+    pub analysis_scheme_name: ::std::option::Option<::std::string::String>,
     /// <p>An <a href="http://tools.ietf.org/html/rfc4646" target="_blank">IETF RFC 4646</a> language code or <code>mul</code> for multiple languages.</p>
     #[doc(hidden)]
-    pub analysis_scheme_language: std::option::Option<crate::types::AnalysisSchemeLanguage>,
+    pub analysis_scheme_language: ::std::option::Option<crate::types::AnalysisSchemeLanguage>,
     /// <p>Synonyms, stopwords, and stemming options for an analysis scheme. Includes tokenization dictionary for Japanese.</p>
     #[doc(hidden)]
-    pub analysis_options: std::option::Option<crate::types::AnalysisOptions>,
+    pub analysis_options: ::std::option::Option<crate::types::AnalysisOptions>,
 }
 impl AnalysisScheme {
     /// <p>Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).</p>
-    pub fn analysis_scheme_name(&self) -> std::option::Option<&str> {
+    pub fn analysis_scheme_name(&self) -> ::std::option::Option<&str> {
         self.analysis_scheme_name.as_deref()
     }
     /// <p>An <a href="http://tools.ietf.org/html/rfc4646" target="_blank">IETF RFC 4646</a> language code or <code>mul</code> for multiple languages.</p>
     pub fn analysis_scheme_language(
         &self,
-    ) -> std::option::Option<&crate::types::AnalysisSchemeLanguage> {
+    ) -> ::std::option::Option<&crate::types::AnalysisSchemeLanguage> {
         self.analysis_scheme_language.as_ref()
     }
     /// <p>Synonyms, stopwords, and stemming options for an analysis scheme. Includes tokenization dictionary for Japanese.</p>
-    pub fn analysis_options(&self) -> std::option::Option<&crate::types::AnalysisOptions> {
+    pub fn analysis_options(&self) -> ::std::option::Option<&crate::types::AnalysisOptions> {
         self.analysis_options.as_ref()
     }
 }
@@ -39,48 +39,54 @@ impl AnalysisScheme {
 
 /// A builder for [`AnalysisScheme`](crate::types::AnalysisScheme).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AnalysisSchemeBuilder {
-    pub(crate) analysis_scheme_name: std::option::Option<std::string::String>,
-    pub(crate) analysis_scheme_language: std::option::Option<crate::types::AnalysisSchemeLanguage>,
-    pub(crate) analysis_options: std::option::Option<crate::types::AnalysisOptions>,
+    pub(crate) analysis_scheme_name: ::std::option::Option<::std::string::String>,
+    pub(crate) analysis_scheme_language:
+        ::std::option::Option<crate::types::AnalysisSchemeLanguage>,
+    pub(crate) analysis_options: ::std::option::Option<crate::types::AnalysisOptions>,
 }
 impl AnalysisSchemeBuilder {
     /// <p>Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).</p>
-    pub fn analysis_scheme_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.analysis_scheme_name = Some(input.into());
+    pub fn analysis_scheme_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.analysis_scheme_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).</p>
     pub fn set_analysis_scheme_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.analysis_scheme_name = input;
         self
     }
     /// <p>An <a href="http://tools.ietf.org/html/rfc4646" target="_blank">IETF RFC 4646</a> language code or <code>mul</code> for multiple languages.</p>
     pub fn analysis_scheme_language(mut self, input: crate::types::AnalysisSchemeLanguage) -> Self {
-        self.analysis_scheme_language = Some(input);
+        self.analysis_scheme_language = ::std::option::Option::Some(input);
         self
     }
     /// <p>An <a href="http://tools.ietf.org/html/rfc4646" target="_blank">IETF RFC 4646</a> language code or <code>mul</code> for multiple languages.</p>
     pub fn set_analysis_scheme_language(
         mut self,
-        input: std::option::Option<crate::types::AnalysisSchemeLanguage>,
+        input: ::std::option::Option<crate::types::AnalysisSchemeLanguage>,
     ) -> Self {
         self.analysis_scheme_language = input;
         self
     }
     /// <p>Synonyms, stopwords, and stemming options for an analysis scheme. Includes tokenization dictionary for Japanese.</p>
     pub fn analysis_options(mut self, input: crate::types::AnalysisOptions) -> Self {
-        self.analysis_options = Some(input);
+        self.analysis_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>Synonyms, stopwords, and stemming options for an analysis scheme. Includes tokenization dictionary for Japanese.</p>
     pub fn set_analysis_options(
         mut self,
-        input: std::option::Option<crate::types::AnalysisOptions>,
+        input: ::std::option::Option<crate::types::AnalysisOptions>,
     ) -> Self {
         self.analysis_options = input;
         self

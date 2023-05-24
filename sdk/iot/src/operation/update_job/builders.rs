@@ -7,56 +7,59 @@ pub use crate::operation::update_job::_update_job_input::UpdateJobInputBuilder;
 ///
 /// <p>Updates supported fields of the specified job.</p>
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateJob</a> action.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateJobFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::update_job::builders::UpdateJobInputBuilder,
 }
 impl UpdateJobFluentBuilder {
     /// Creates a new `UpdateJob`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_job::UpdateJob,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::update_job::UpdateJobError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_job::UpdateJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_job::UpdateJobOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_job::UpdateJobError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_job::UpdateJobError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -69,29 +72,29 @@ impl UpdateJobFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_job::UpdateJobOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_job::UpdateJobError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_job::UpdateJobError>,
     > {
         self.send_middleware().await
     }
     /// <p>The ID of the job to be updated.</p>
-    pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.job_id(input.into());
         self
     }
     /// <p>The ID of the job to be updated.</p>
-    pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_job_id(input);
         self
     }
     /// <p>A short text description of the job.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>A short text description of the job.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
@@ -103,7 +106,7 @@ impl UpdateJobFluentBuilder {
     /// <p>Configuration information for pre-signed S3 URLs.</p>
     pub fn set_presigned_url_config(
         mut self,
-        input: std::option::Option<crate::types::PresignedUrlConfig>,
+        input: ::std::option::Option<crate::types::PresignedUrlConfig>,
     ) -> Self {
         self.inner = self.inner.set_presigned_url_config(input);
         self
@@ -119,7 +122,7 @@ impl UpdateJobFluentBuilder {
     /// <p>Allows you to create a staged rollout of the job.</p>
     pub fn set_job_executions_rollout_config(
         mut self,
-        input: std::option::Option<crate::types::JobExecutionsRolloutConfig>,
+        input: ::std::option::Option<crate::types::JobExecutionsRolloutConfig>,
     ) -> Self {
         self.inner = self.inner.set_job_executions_rollout_config(input);
         self
@@ -132,7 +135,7 @@ impl UpdateJobFluentBuilder {
     /// <p>Allows you to create criteria to abort a job.</p>
     pub fn set_abort_config(
         mut self,
-        input: std::option::Option<crate::types::AbortConfig>,
+        input: ::std::option::Option<crate::types::AbortConfig>,
     ) -> Self {
         self.inner = self.inner.set_abort_config(input);
         self
@@ -145,7 +148,7 @@ impl UpdateJobFluentBuilder {
     /// <p>Specifies the amount of time each device has to finish its execution of the job. The timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the time expires, it will be automatically set to <code>TIMED_OUT</code>. </p>
     pub fn set_timeout_config(
         mut self,
-        input: std::option::Option<crate::types::TimeoutConfig>,
+        input: ::std::option::Option<crate::types::TimeoutConfig>,
     ) -> Self {
         self.inner = self.inner.set_timeout_config(input);
         self
@@ -155,7 +158,7 @@ impl UpdateJobFluentBuilder {
     /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
     /// <p>The <code>namespaceId</code> feature is in public preview.</p>
     /// </note>
-    pub fn namespace_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn namespace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.namespace_id(input.into());
         self
     }
@@ -164,7 +167,7 @@ impl UpdateJobFluentBuilder {
     /// <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note>
     /// <p>The <code>namespaceId</code> feature is in public preview.</p>
     /// </note>
-    pub fn set_namespace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_namespace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_namespace_id(input);
         self
     }
@@ -179,7 +182,7 @@ impl UpdateJobFluentBuilder {
     /// <p>Allows you to create the criteria to retry a job.</p>
     pub fn set_job_executions_retry_config(
         mut self,
-        input: std::option::Option<crate::types::JobExecutionsRetryConfig>,
+        input: ::std::option::Option<crate::types::JobExecutionsRetryConfig>,
     ) -> Self {
         self.inner = self.inner.set_job_executions_retry_config(input);
         self

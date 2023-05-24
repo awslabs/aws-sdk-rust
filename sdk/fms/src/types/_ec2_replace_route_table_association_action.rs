@@ -2,29 +2,29 @@
 
 /// <p>Information about the ReplaceRouteTableAssociation action in Amazon EC2.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Ec2ReplaceRouteTableAssociationAction {
     /// <p>A description of the ReplaceRouteTableAssociation action in Amazon EC2.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>Information about the association ID.</p>
     #[doc(hidden)]
-    pub association_id: std::option::Option<crate::types::ActionTarget>,
+    pub association_id: ::std::option::Option<crate::types::ActionTarget>,
     /// <p>Information about the ID of the new route table to associate with the subnet.</p>
     #[doc(hidden)]
-    pub route_table_id: std::option::Option<crate::types::ActionTarget>,
+    pub route_table_id: ::std::option::Option<crate::types::ActionTarget>,
 }
 impl Ec2ReplaceRouteTableAssociationAction {
     /// <p>A description of the ReplaceRouteTableAssociation action in Amazon EC2.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>Information about the association ID.</p>
-    pub fn association_id(&self) -> std::option::Option<&crate::types::ActionTarget> {
+    pub fn association_id(&self) -> ::std::option::Option<&crate::types::ActionTarget> {
         self.association_id.as_ref()
     }
     /// <p>Information about the ID of the new route table to associate with the subnet.</p>
-    pub fn route_table_id(&self) -> std::option::Option<&crate::types::ActionTarget> {
+    pub fn route_table_id(&self) -> ::std::option::Option<&crate::types::ActionTarget> {
         self.route_table_id.as_ref()
     }
 }
@@ -37,45 +37,47 @@ impl Ec2ReplaceRouteTableAssociationAction {
 
 /// A builder for [`Ec2ReplaceRouteTableAssociationAction`](crate::types::Ec2ReplaceRouteTableAssociationAction).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct Ec2ReplaceRouteTableAssociationActionBuilder {
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) association_id: std::option::Option<crate::types::ActionTarget>,
-    pub(crate) route_table_id: std::option::Option<crate::types::ActionTarget>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) association_id: ::std::option::Option<crate::types::ActionTarget>,
+    pub(crate) route_table_id: ::std::option::Option<crate::types::ActionTarget>,
 }
 impl Ec2ReplaceRouteTableAssociationActionBuilder {
     /// <p>A description of the ReplaceRouteTableAssociation action in Amazon EC2.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of the ReplaceRouteTableAssociation action in Amazon EC2.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>Information about the association ID.</p>
     pub fn association_id(mut self, input: crate::types::ActionTarget) -> Self {
-        self.association_id = Some(input);
+        self.association_id = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the association ID.</p>
     pub fn set_association_id(
         mut self,
-        input: std::option::Option<crate::types::ActionTarget>,
+        input: ::std::option::Option<crate::types::ActionTarget>,
     ) -> Self {
         self.association_id = input;
         self
     }
     /// <p>Information about the ID of the new route table to associate with the subnet.</p>
     pub fn route_table_id(mut self, input: crate::types::ActionTarget) -> Self {
-        self.route_table_id = Some(input);
+        self.route_table_id = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the ID of the new route table to associate with the subnet.</p>
     pub fn set_route_table_id(
         mut self,
-        input: std::option::Option<crate::types::ActionTarget>,
+        input: ::std::option::Option<crate::types::ActionTarget>,
     ) -> Self {
         self.route_table_id = input;
         self

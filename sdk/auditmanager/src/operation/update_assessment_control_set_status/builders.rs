@@ -6,47 +6,50 @@ pub use crate::operation::update_assessment_control_set_status::_update_assessme
 /// Fluent builder constructing a request to `UpdateAssessmentControlSetStatus`.
 ///
 /// <p> Updates the status of a control set in an Audit Manager assessment. </p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateAssessmentControlSetStatusFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::update_assessment_control_set_status::builders::UpdateAssessmentControlSetStatusInputBuilder,
 }
 impl UpdateAssessmentControlSetStatusFluentBuilder {
     /// Creates a new `UpdateAssessmentControlSetStatus`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_assessment_control_set_status::UpdateAssessmentControlSetStatus, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::update_assessment_control_set_status::UpdateAssessmentControlSetStatusError>
+                    pub async fn customize(self) -> ::std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::update_assessment_control_set_status::UpdateAssessmentControlSetStatus, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                        ::aws_smithy_http::result::SdkError<crate::operation::update_assessment_control_set_status::UpdateAssessmentControlSetStatusError>
     >{
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::update_assessment_control_set_status::UpdateAssessmentControlSetStatusOutput, aws_smithy_http::result::SdkError<crate::operation::update_assessment_control_set_status::UpdateAssessmentControlSetStatusError>>
+                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_assessment_control_set_status::UpdateAssessmentControlSetStatusOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_assessment_control_set_status::UpdateAssessmentControlSetStatusError>>
                      {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -57,27 +60,39 @@ impl UpdateAssessmentControlSetStatusFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> std::result::Result<crate::operation::update_assessment_control_set_status::UpdateAssessmentControlSetStatusOutput, aws_smithy_http::result::SdkError<crate::operation::update_assessment_control_set_status::UpdateAssessmentControlSetStatusError>>
+                        pub async fn send(self) -> ::std::result::Result<crate::operation::update_assessment_control_set_status::UpdateAssessmentControlSetStatusOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_assessment_control_set_status::UpdateAssessmentControlSetStatusError>>
                          {
         self.send_middleware().await
     }
     /// <p> The unique identifier for the assessment. </p>
-    pub fn assessment_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn assessment_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.assessment_id(input.into());
         self
     }
     /// <p> The unique identifier for the assessment. </p>
-    pub fn set_assessment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_assessment_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_assessment_id(input);
         self
     }
     /// <p> The unique identifier for the control set. </p>
-    pub fn control_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn control_set_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.control_set_id(input.into());
         self
     }
     /// <p> The unique identifier for the control set. </p>
-    pub fn set_control_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_control_set_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_control_set_id(input);
         self
     }
@@ -89,18 +104,18 @@ impl UpdateAssessmentControlSetStatusFluentBuilder {
     /// <p> The status of the control set that's being updated. </p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::ControlSetStatus>,
+        input: ::std::option::Option<crate::types::ControlSetStatus>,
     ) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }
     /// <p> The comment that's related to the status update. </p>
-    pub fn comment(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn comment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.comment(input.into());
         self
     }
     /// <p> The comment that's related to the status update. </p>
-    pub fn set_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_comment(input);
         self
     }

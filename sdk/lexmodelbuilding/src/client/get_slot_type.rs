@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetSlotType`](crate::operation::get_slot_type::builders::GetSlotTypeFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::get_slot_type::builders::GetSlotTypeFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_slot_type::builders::GetSlotTypeFluentBuilder::set_name): <p>The name of the slot type. The name is case sensitive. </p>
-    ///   - [`version(impl Into<String>)`](crate::operation::get_slot_type::builders::GetSlotTypeFluentBuilder::version) / [`set_version(Option<String>)`](crate::operation::get_slot_type::builders::GetSlotTypeFluentBuilder::set_version): <p>The version of the slot type. </p>
+    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::get_slot_type::builders::GetSlotTypeFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_slot_type::builders::GetSlotTypeFluentBuilder::set_name): <p>The name of the slot type. The name is case sensitive. </p>
+    ///   - [`version(impl ::std::convert::Into<String>)`](crate::operation::get_slot_type::builders::GetSlotTypeFluentBuilder::version) / [`set_version(Option<String>)`](crate::operation::get_slot_type::builders::GetSlotTypeFluentBuilder::set_version): <p>The version of the slot type. </p>
     /// - On success, responds with [`GetSlotTypeOutput`](crate::operation::get_slot_type::GetSlotTypeOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::get_slot_type::GetSlotTypeOutput::name): <p>The name of the slot type.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_slot_type::GetSlotTypeOutput::description): <p>A description of the slot type.</p>

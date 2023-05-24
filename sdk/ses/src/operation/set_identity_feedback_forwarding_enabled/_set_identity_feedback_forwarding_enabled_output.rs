@@ -2,11 +2,11 @@
 
 /// <p>An empty element returned on a successful request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SetIdentityFeedbackForwardingEnabledOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for SetIdentityFeedbackForwardingEnabledOutput {
+impl ::aws_http::request_id::RequestId for SetIdentityFeedbackForwardingEnabledOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -20,7 +20,9 @@ impl SetIdentityFeedbackForwardingEnabledOutput {
 
 /// A builder for [`SetIdentityFeedbackForwardingEnabledOutput`](crate::operation::set_identity_feedback_forwarding_enabled::SetIdentityFeedbackForwardingEnabledOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SetIdentityFeedbackForwardingEnabledOutputBuilder {
     _request_id: Option<String>,
 }

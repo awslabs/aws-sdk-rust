@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeInput`](crate::operation::describe_input::builders::DescribeInputFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`input_id(impl Into<String>)`](crate::operation::describe_input::builders::DescribeInputFluentBuilder::input_id) / [`set_input_id(Option<String>)`](crate::operation::describe_input::builders::DescribeInputFluentBuilder::set_input_id): Unique ID of the input
+    ///   - [`input_id(impl ::std::convert::Into<String>)`](crate::operation::describe_input::builders::DescribeInputFluentBuilder::input_id) / [`set_input_id(Option<String>)`](crate::operation::describe_input::builders::DescribeInputFluentBuilder::set_input_id): Unique ID of the input
     /// - On success, responds with [`DescribeInputOutput`](crate::operation::describe_input::DescribeInputOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::describe_input::DescribeInputOutput::arn): The Unique ARN of the input (generated, immutable).
     ///   - [`attached_channels(Option<Vec<String>>)`](crate::operation::describe_input::DescribeInputOutput::attached_channels): A list of channel IDs that that input is attached to (currently an input can only be attached to one channel).

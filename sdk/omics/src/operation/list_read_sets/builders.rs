@@ -6,56 +6,59 @@ pub use crate::operation::list_read_sets::_list_read_sets_input::ListReadSetsInp
 /// Fluent builder constructing a request to `ListReadSets`.
 ///
 /// <p>Retrieves a list of read sets.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListReadSetsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::list_read_sets::builders::ListReadSetsInputBuilder,
 }
 impl ListReadSetsFluentBuilder {
     /// Creates a new `ListReadSets`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::list_read_sets::ListReadSets,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::list_read_sets::ListReadSetsError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_read_sets::ListReadSetsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::list_read_sets::ListReadSetsOutput,
-        aws_smithy_http::result::SdkError<crate::operation::list_read_sets::ListReadSetsError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_read_sets::ListReadSetsError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,9 +71,9 @@ impl ListReadSetsFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::list_read_sets::ListReadSetsOutput,
-        aws_smithy_http::result::SdkError<crate::operation::list_read_sets::ListReadSetsError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_read_sets::ListReadSetsError>,
     > {
         self.send_middleware().await
     }
@@ -86,14 +89,17 @@ impl ListReadSetsFluentBuilder {
         )
     }
     /// <p>The jobs' sequence store ID.</p>
-    pub fn sequence_store_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn sequence_store_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.sequence_store_id(input.into());
         self
     }
     /// <p>The jobs' sequence store ID.</p>
     pub fn set_sequence_store_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_sequence_store_id(input);
         self
@@ -104,17 +110,17 @@ impl ListReadSetsFluentBuilder {
         self
     }
     /// <p>The maximum number of read sets to return in one page of results.</p>
-    pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
@@ -124,7 +130,7 @@ impl ListReadSetsFluentBuilder {
         self
     }
     /// <p>A filter to apply to the list.</p>
-    pub fn set_filter(mut self, input: std::option::Option<crate::types::ReadSetFilter>) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::ReadSetFilter>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }

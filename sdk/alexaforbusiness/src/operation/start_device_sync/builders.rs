@@ -13,29 +13,29 @@ pub use crate::operation::start_device_sync::_start_device_sync_input::StartDevi
 /// <li> <p>Lists - This clears all to-do items from your echo device.</p> </li>
 /// <li> <p>Settings - This internally syncs the room's profile (if the device is assigned to a room), contacts, address books, delegation access for account linking, and communications (if enabled on the room profile).</p> </li>
 /// </ul>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartDeviceSyncFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::start_device_sync::builders::StartDeviceSyncInputBuilder,
 }
 impl StartDeviceSyncFluentBuilder {
     /// Creates a new `StartDeviceSync`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::start_device_sync::StartDeviceSync,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::start_device_sync::StartDeviceSyncError,
         >,
     > {
@@ -43,30 +43,33 @@ impl StartDeviceSyncFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::start_device_sync::StartDeviceSyncOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::start_device_sync::StartDeviceSyncError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -79,31 +82,31 @@ impl StartDeviceSyncFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::start_device_sync::StartDeviceSyncOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::start_device_sync::StartDeviceSyncError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The ARN of the room with which the device to sync is associated. Required.</p>
-    pub fn room_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn room_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.room_arn(input.into());
         self
     }
     /// <p>The ARN of the room with which the device to sync is associated. Required.</p>
-    pub fn set_room_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_room_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_room_arn(input);
         self
     }
     /// <p>The ARN of the device to sync. Required.</p>
-    pub fn device_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn device_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.device_arn(input.into());
         self
     }
     /// <p>The ARN of the device to sync. Required.</p>
-    pub fn set_device_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_device_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_device_arn(input);
         self
     }
@@ -119,7 +122,7 @@ impl StartDeviceSyncFluentBuilder {
     /// <p>Request structure to start the device sync. Required.</p>
     pub fn set_features(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Feature>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Feature>>,
     ) -> Self {
         self.inner = self.inner.set_features(input);
         self

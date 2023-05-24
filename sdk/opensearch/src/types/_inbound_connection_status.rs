@@ -2,7 +2,7 @@
 
 /// <p>The status of an inbound cross-cluster connection for OpenSearch Service.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InboundConnectionStatus {
     /// <p>The status code for the connection. Can be one of the following:</p>
     /// <ul>
@@ -16,10 +16,10 @@ pub struct InboundConnectionStatus {
     /// <li> <p> <b>DELETED</b>: Inbound connection is deleted and can no longer be used.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub status_code: std::option::Option<crate::types::InboundConnectionStatusCode>,
+    pub status_code: ::std::option::Option<crate::types::InboundConnectionStatusCode>,
     /// <p>Information about the connection.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
 }
 impl InboundConnectionStatus {
     /// <p>The status code for the connection. Can be one of the following:</p>
@@ -33,11 +33,11 @@ impl InboundConnectionStatus {
     /// <li> <p> <b>DELETING</b>: Inbound connection deletion is in progress.</p> </li>
     /// <li> <p> <b>DELETED</b>: Inbound connection is deleted and can no longer be used.</p> </li>
     /// </ul>
-    pub fn status_code(&self) -> std::option::Option<&crate::types::InboundConnectionStatusCode> {
+    pub fn status_code(&self) -> ::std::option::Option<&crate::types::InboundConnectionStatusCode> {
         self.status_code.as_ref()
     }
     /// <p>Information about the connection.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -50,10 +50,12 @@ impl InboundConnectionStatus {
 
 /// A builder for [`InboundConnectionStatus`](crate::types::InboundConnectionStatus).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InboundConnectionStatusBuilder {
-    pub(crate) status_code: std::option::Option<crate::types::InboundConnectionStatusCode>,
-    pub(crate) message: std::option::Option<std::string::String>,
+    pub(crate) status_code: ::std::option::Option<crate::types::InboundConnectionStatusCode>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
 }
 impl InboundConnectionStatusBuilder {
     /// <p>The status code for the connection. Can be one of the following:</p>
@@ -68,7 +70,7 @@ impl InboundConnectionStatusBuilder {
     /// <li> <p> <b>DELETED</b>: Inbound connection is deleted and can no longer be used.</p> </li>
     /// </ul>
     pub fn status_code(mut self, input: crate::types::InboundConnectionStatusCode) -> Self {
-        self.status_code = Some(input);
+        self.status_code = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status code for the connection. Can be one of the following:</p>
@@ -84,18 +86,18 @@ impl InboundConnectionStatusBuilder {
     /// </ul>
     pub fn set_status_code(
         mut self,
-        input: std::option::Option<crate::types::InboundConnectionStatusCode>,
+        input: ::std::option::Option<crate::types::InboundConnectionStatusCode>,
     ) -> Self {
         self.status_code = input;
         self
     }
     /// <p>Information about the connection.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Information about the connection.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }

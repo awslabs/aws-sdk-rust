@@ -2,61 +2,63 @@
 
 /// Placeholder documentation for PurchaseOfferingRequest
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PurchaseOfferingInput {
     /// Number of resources
     #[doc(hidden)]
-    pub count: std::option::Option<i32>,
+    pub count: ::std::option::Option<i32>,
     /// Name for the new reservation
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// Offering to purchase, e.g. '87654321'
     #[doc(hidden)]
-    pub offering_id: std::option::Option<std::string::String>,
+    pub offering_id: ::std::option::Option<::std::string::String>,
     /// Renewal settings for the reservation
     #[doc(hidden)]
-    pub renewal_settings: std::option::Option<crate::types::RenewalSettings>,
+    pub renewal_settings: ::std::option::Option<crate::types::RenewalSettings>,
     /// Unique request ID to be specified. This is needed to prevent retries from creating multiple resources.
     #[doc(hidden)]
-    pub request_id: std::option::Option<std::string::String>,
+    pub request_id: ::std::option::Option<::std::string::String>,
     /// Requested reservation start time (UTC) in ISO-8601 format. The specified time must be between the first day of the current month and one year from now. If no value is given, the default is now.
     #[doc(hidden)]
-    pub start: std::option::Option<std::string::String>,
+    pub start: ::std::option::Option<::std::string::String>,
     /// A collection of key-value pairs
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl PurchaseOfferingInput {
     /// Number of resources
-    pub fn count(&self) -> std::option::Option<i32> {
+    pub fn count(&self) -> ::std::option::Option<i32> {
         self.count
     }
     /// Name for the new reservation
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// Offering to purchase, e.g. '87654321'
-    pub fn offering_id(&self) -> std::option::Option<&str> {
+    pub fn offering_id(&self) -> ::std::option::Option<&str> {
         self.offering_id.as_deref()
     }
     /// Renewal settings for the reservation
-    pub fn renewal_settings(&self) -> std::option::Option<&crate::types::RenewalSettings> {
+    pub fn renewal_settings(&self) -> ::std::option::Option<&crate::types::RenewalSettings> {
         self.renewal_settings.as_ref()
     }
     /// Unique request ID to be specified. This is needed to prevent retries from creating multiple resources.
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> ::std::option::Option<&str> {
         self.request_id.as_deref()
     }
     /// Requested reservation start time (UTC) in ISO-8601 format. The specified time must be between the first day of the current month and one year from now. If no value is given, the default is now.
-    pub fn start(&self) -> std::option::Option<&str> {
+    pub fn start(&self) -> ::std::option::Option<&str> {
         self.start.as_deref()
     }
     /// A collection of key-value pairs
     pub fn tags(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.tags.as_ref()
     }
 }
@@ -70,78 +72,81 @@ impl PurchaseOfferingInput {
 
 /// A builder for [`PurchaseOfferingInput`](crate::operation::purchase_offering::PurchaseOfferingInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PurchaseOfferingInputBuilder {
-    pub(crate) count: std::option::Option<i32>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) offering_id: std::option::Option<std::string::String>,
-    pub(crate) renewal_settings: std::option::Option<crate::types::RenewalSettings>,
-    pub(crate) request_id: std::option::Option<std::string::String>,
-    pub(crate) start: std::option::Option<std::string::String>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) count: ::std::option::Option<i32>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) offering_id: ::std::option::Option<::std::string::String>,
+    pub(crate) renewal_settings: ::std::option::Option<crate::types::RenewalSettings>,
+    pub(crate) request_id: ::std::option::Option<::std::string::String>,
+    pub(crate) start: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl PurchaseOfferingInputBuilder {
     /// Number of resources
     pub fn count(mut self, input: i32) -> Self {
-        self.count = Some(input);
+        self.count = ::std::option::Option::Some(input);
         self
     }
     /// Number of resources
-    pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.count = input;
         self
     }
     /// Name for the new reservation
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// Name for the new reservation
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// Offering to purchase, e.g. '87654321'
-    pub fn offering_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.offering_id = Some(input.into());
+    pub fn offering_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.offering_id = ::std::option::Option::Some(input.into());
         self
     }
     /// Offering to purchase, e.g. '87654321'
-    pub fn set_offering_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_offering_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.offering_id = input;
         self
     }
     /// Renewal settings for the reservation
     pub fn renewal_settings(mut self, input: crate::types::RenewalSettings) -> Self {
-        self.renewal_settings = Some(input);
+        self.renewal_settings = ::std::option::Option::Some(input);
         self
     }
     /// Renewal settings for the reservation
     pub fn set_renewal_settings(
         mut self,
-        input: std::option::Option<crate::types::RenewalSettings>,
+        input: ::std::option::Option<crate::types::RenewalSettings>,
     ) -> Self {
         self.renewal_settings = input;
         self
     }
     /// Unique request ID to be specified. This is needed to prevent retries from creating multiple resources.
-    pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.request_id = Some(input.into());
+    pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.request_id = ::std::option::Option::Some(input.into());
         self
     }
     /// Unique request ID to be specified. This is needed to prevent retries from creating multiple resources.
-    pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.request_id = input;
         self
     }
     /// Requested reservation start time (UTC) in ISO-8601 format. The specified time must be between the first day of the current month and one year from now. If no value is given, the default is now.
-    pub fn start(mut self, input: impl Into<std::string::String>) -> Self {
-        self.start = Some(input.into());
+    pub fn start(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.start = ::std::option::Option::Some(input.into());
         self
     }
     /// Requested reservation start time (UTC) in ISO-8601 format. The specified time must be between the first day of the current month and one year from now. If no value is given, the default is now.
-    pub fn set_start(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_start(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.start = input;
         self
     }
@@ -152,19 +157,19 @@ impl PurchaseOfferingInputBuilder {
     /// A collection of key-value pairs
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
+        self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// A collection of key-value pairs
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.tags = input;
@@ -173,11 +178,11 @@ impl PurchaseOfferingInputBuilder {
     /// Consumes the builder and constructs a [`PurchaseOfferingInput`](crate::operation::purchase_offering::PurchaseOfferingInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::purchase_offering::PurchaseOfferingInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::purchase_offering::PurchaseOfferingInput {
+        ::std::result::Result::Ok(crate::operation::purchase_offering::PurchaseOfferingInput {
             count: self.count,
             name: self.name,
             offering_id: self.offering_id,

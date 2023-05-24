@@ -2,22 +2,22 @@
 
 /// <p>Gets a specified documentation part of a given API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDocumentationPartInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
-    pub rest_api_id: std::option::Option<std::string::String>,
+    pub rest_api_id: ::std::option::Option<::std::string::String>,
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
-    pub documentation_part_id: std::option::Option<std::string::String>,
+    pub documentation_part_id: ::std::option::Option<::std::string::String>,
 }
 impl GetDocumentationPartInput {
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn rest_api_id(&self) -> std::option::Option<&str> {
+    pub fn rest_api_id(&self) -> ::std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn documentation_part_id(&self) -> std::option::Option<&str> {
+    pub fn documentation_part_id(&self) -> ::std::option::Option<&str> {
         self.documentation_part_id.as_deref()
     }
 }
@@ -31,31 +31,36 @@ impl GetDocumentationPartInput {
 
 /// A builder for [`GetDocumentationPartInput`](crate::operation::get_documentation_part::GetDocumentationPartInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetDocumentationPartInputBuilder {
-    pub(crate) rest_api_id: std::option::Option<std::string::String>,
-    pub(crate) documentation_part_id: std::option::Option<std::string::String>,
+    pub(crate) rest_api_id: ::std::option::Option<::std::string::String>,
+    pub(crate) documentation_part_id: ::std::option::Option<::std::string::String>,
 }
 impl GetDocumentationPartInputBuilder {
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.rest_api_id = Some(input.into());
+    pub fn rest_api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.rest_api_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_rest_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rest_api_id = input;
         self
     }
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn documentation_part_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.documentation_part_id = Some(input.into());
+    pub fn documentation_part_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.documentation_part_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The string identifier of the associated RestApi.</p>
     pub fn set_documentation_part_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.documentation_part_id = input;
         self
@@ -63,11 +68,11 @@ impl GetDocumentationPartInputBuilder {
     /// Consumes the builder and constructs a [`GetDocumentationPartInput`](crate::operation::get_documentation_part::GetDocumentationPartInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::get_documentation_part::GetDocumentationPartInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::get_documentation_part::GetDocumentationPartInput {
                 rest_api_id: self.rest_api_id,
                 documentation_part_id: self.documentation_part_id,

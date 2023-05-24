@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum LensStatusType {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum LensStatusType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for LensStatusType {
+impl ::std::convert::From<&str> for LensStatusType {
     fn from(s: &str) -> Self {
         match s {
             "ALL" => LensStatusType::All,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for LensStatusType {
         }
     }
 }
-impl std::str::FromStr for LensStatusType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for LensStatusType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LensStatusType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(LensStatusType::from(s))
     }
 }
 impl LensStatusType {
@@ -91,7 +91,7 @@ impl LensStatusType {
         &["ALL", "DRAFT", "PUBLISHED"]
     }
 }
-impl AsRef<str> for LensStatusType {
+impl ::std::convert::AsRef<str> for LensStatusType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

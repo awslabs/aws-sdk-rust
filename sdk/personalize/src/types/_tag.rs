@@ -2,22 +2,22 @@
 
 /// <p>The optional metadata that you apply to resources to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">Tagging Personalize resources</a>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Tag {
     /// <p>One part of a key-value pair that makes up a tag. A key is a general label that acts like a category for more specific tag values.</p>
     #[doc(hidden)]
-    pub tag_key: std::option::Option<std::string::String>,
+    pub tag_key: ::std::option::Option<::std::string::String>,
     /// <p>The optional part of a key-value pair that makes up a tag. A value acts as a descriptor within a tag category (key).</p>
     #[doc(hidden)]
-    pub tag_value: std::option::Option<std::string::String>,
+    pub tag_value: ::std::option::Option<::std::string::String>,
 }
 impl Tag {
     /// <p>One part of a key-value pair that makes up a tag. A key is a general label that acts like a category for more specific tag values.</p>
-    pub fn tag_key(&self) -> std::option::Option<&str> {
+    pub fn tag_key(&self) -> ::std::option::Option<&str> {
         self.tag_key.as_deref()
     }
     /// <p>The optional part of a key-value pair that makes up a tag. A value acts as a descriptor within a tag category (key).</p>
-    pub fn tag_value(&self) -> std::option::Option<&str> {
+    pub fn tag_value(&self) -> ::std::option::Option<&str> {
         self.tag_value.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl Tag {
 
 /// A builder for [`Tag`](crate::types::Tag).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TagBuilder {
-    pub(crate) tag_key: std::option::Option<std::string::String>,
-    pub(crate) tag_value: std::option::Option<std::string::String>,
+    pub(crate) tag_key: ::std::option::Option<::std::string::String>,
+    pub(crate) tag_value: ::std::option::Option<::std::string::String>,
 }
 impl TagBuilder {
     /// <p>One part of a key-value pair that makes up a tag. A key is a general label that acts like a category for more specific tag values.</p>
-    pub fn tag_key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.tag_key = Some(input.into());
+    pub fn tag_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.tag_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>One part of a key-value pair that makes up a tag. A key is a general label that acts like a category for more specific tag values.</p>
-    pub fn set_tag_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_tag_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tag_key = input;
         self
     }
     /// <p>The optional part of a key-value pair that makes up a tag. A value acts as a descriptor within a tag category (key).</p>
-    pub fn tag_value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.tag_value = Some(input.into());
+    pub fn tag_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.tag_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The optional part of a key-value pair that makes up a tag. A value acts as a descriptor within a tag category (key).</p>
-    pub fn set_tag_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_tag_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tag_value = input;
         self
     }

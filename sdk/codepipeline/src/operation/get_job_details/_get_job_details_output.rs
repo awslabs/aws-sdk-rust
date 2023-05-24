@@ -2,24 +2,24 @@
 
 /// <p>Represents the output of a <code>GetJobDetails</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetJobDetailsOutput {
     /// <p>The details of the job.</p> <note>
     /// <p>If AWSSessionCredentials is used, a long-running job can call <code>GetJobDetails</code> again to obtain new credentials.</p>
     /// </note>
     #[doc(hidden)]
-    pub job_details: std::option::Option<crate::types::JobDetails>,
+    pub job_details: ::std::option::Option<crate::types::JobDetails>,
     _request_id: Option<String>,
 }
 impl GetJobDetailsOutput {
     /// <p>The details of the job.</p> <note>
     /// <p>If AWSSessionCredentials is used, a long-running job can call <code>GetJobDetails</code> again to obtain new credentials.</p>
     /// </note>
-    pub fn job_details(&self) -> std::option::Option<&crate::types::JobDetails> {
+    pub fn job_details(&self) -> ::std::option::Option<&crate::types::JobDetails> {
         self.job_details.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for GetJobDetailsOutput {
+impl ::aws_http::request_id::RequestId for GetJobDetailsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -33,9 +33,11 @@ impl GetJobDetailsOutput {
 
 /// A builder for [`GetJobDetailsOutput`](crate::operation::get_job_details::GetJobDetailsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetJobDetailsOutputBuilder {
-    pub(crate) job_details: std::option::Option<crate::types::JobDetails>,
+    pub(crate) job_details: ::std::option::Option<crate::types::JobDetails>,
     _request_id: Option<String>,
 }
 impl GetJobDetailsOutputBuilder {
@@ -43,13 +45,16 @@ impl GetJobDetailsOutputBuilder {
     /// <p>If AWSSessionCredentials is used, a long-running job can call <code>GetJobDetails</code> again to obtain new credentials.</p>
     /// </note>
     pub fn job_details(mut self, input: crate::types::JobDetails) -> Self {
-        self.job_details = Some(input);
+        self.job_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>The details of the job.</p> <note>
     /// <p>If AWSSessionCredentials is used, a long-running job can call <code>GetJobDetails</code> again to obtain new credentials.</p>
     /// </note>
-    pub fn set_job_details(mut self, input: std::option::Option<crate::types::JobDetails>) -> Self {
+    pub fn set_job_details(
+        mut self,
+        input: ::std::option::Option<crate::types::JobDetails>,
+    ) -> Self {
         self.job_details = input;
         self
     }

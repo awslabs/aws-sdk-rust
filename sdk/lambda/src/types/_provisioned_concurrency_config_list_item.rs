@@ -2,57 +2,57 @@
 
 /// <p>Details about the provisioned concurrency configuration for a function alias or version.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProvisionedConcurrencyConfigListItem {
     /// <p>The Amazon Resource Name (ARN) of the alias or version.</p>
     #[doc(hidden)]
-    pub function_arn: std::option::Option<std::string::String>,
+    pub function_arn: ::std::option::Option<::std::string::String>,
     /// <p>The amount of provisioned concurrency requested.</p>
     #[doc(hidden)]
-    pub requested_provisioned_concurrent_executions: std::option::Option<i32>,
+    pub requested_provisioned_concurrent_executions: ::std::option::Option<i32>,
     /// <p>The amount of provisioned concurrency available.</p>
     #[doc(hidden)]
-    pub available_provisioned_concurrent_executions: std::option::Option<i32>,
+    pub available_provisioned_concurrent_executions: ::std::option::Option<i32>,
     /// <p>The amount of provisioned concurrency allocated. When a weighted alias is used during linear and canary deployments, this value fluctuates depending on the amount of concurrency that is provisioned for the function versions.</p>
     #[doc(hidden)]
-    pub allocated_provisioned_concurrent_executions: std::option::Option<i32>,
+    pub allocated_provisioned_concurrent_executions: ::std::option::Option<i32>,
     /// <p>The status of the allocation process.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::ProvisionedConcurrencyStatusEnum>,
+    pub status: ::std::option::Option<crate::types::ProvisionedConcurrencyStatusEnum>,
     /// <p>For failed allocations, the reason that provisioned concurrency could not be allocated.</p>
     #[doc(hidden)]
-    pub status_reason: std::option::Option<std::string::String>,
+    pub status_reason: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that a user last updated the configuration, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 format</a>.</p>
     #[doc(hidden)]
-    pub last_modified: std::option::Option<std::string::String>,
+    pub last_modified: ::std::option::Option<::std::string::String>,
 }
 impl ProvisionedConcurrencyConfigListItem {
     /// <p>The Amazon Resource Name (ARN) of the alias or version.</p>
-    pub fn function_arn(&self) -> std::option::Option<&str> {
+    pub fn function_arn(&self) -> ::std::option::Option<&str> {
         self.function_arn.as_deref()
     }
     /// <p>The amount of provisioned concurrency requested.</p>
-    pub fn requested_provisioned_concurrent_executions(&self) -> std::option::Option<i32> {
+    pub fn requested_provisioned_concurrent_executions(&self) -> ::std::option::Option<i32> {
         self.requested_provisioned_concurrent_executions
     }
     /// <p>The amount of provisioned concurrency available.</p>
-    pub fn available_provisioned_concurrent_executions(&self) -> std::option::Option<i32> {
+    pub fn available_provisioned_concurrent_executions(&self) -> ::std::option::Option<i32> {
         self.available_provisioned_concurrent_executions
     }
     /// <p>The amount of provisioned concurrency allocated. When a weighted alias is used during linear and canary deployments, this value fluctuates depending on the amount of concurrency that is provisioned for the function versions.</p>
-    pub fn allocated_provisioned_concurrent_executions(&self) -> std::option::Option<i32> {
+    pub fn allocated_provisioned_concurrent_executions(&self) -> ::std::option::Option<i32> {
         self.allocated_provisioned_concurrent_executions
     }
     /// <p>The status of the allocation process.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::ProvisionedConcurrencyStatusEnum> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::ProvisionedConcurrencyStatusEnum> {
         self.status.as_ref()
     }
     /// <p>For failed allocations, the reason that provisioned concurrency could not be allocated.</p>
-    pub fn status_reason(&self) -> std::option::Option<&str> {
+    pub fn status_reason(&self) -> ::std::option::Option<&str> {
         self.status_reason.as_deref()
     }
     /// <p>The date and time that a user last updated the configuration, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 format</a>.</p>
-    pub fn last_modified(&self) -> std::option::Option<&str> {
+    pub fn last_modified(&self) -> ::std::option::Option<&str> {
         self.last_modified.as_deref()
     }
 }
@@ -65,96 +65,110 @@ impl ProvisionedConcurrencyConfigListItem {
 
 /// A builder for [`ProvisionedConcurrencyConfigListItem`](crate::types::ProvisionedConcurrencyConfigListItem).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ProvisionedConcurrencyConfigListItemBuilder {
-    pub(crate) function_arn: std::option::Option<std::string::String>,
-    pub(crate) requested_provisioned_concurrent_executions: std::option::Option<i32>,
-    pub(crate) available_provisioned_concurrent_executions: std::option::Option<i32>,
-    pub(crate) allocated_provisioned_concurrent_executions: std::option::Option<i32>,
-    pub(crate) status: std::option::Option<crate::types::ProvisionedConcurrencyStatusEnum>,
-    pub(crate) status_reason: std::option::Option<std::string::String>,
-    pub(crate) last_modified: std::option::Option<std::string::String>,
+    pub(crate) function_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) requested_provisioned_concurrent_executions: ::std::option::Option<i32>,
+    pub(crate) available_provisioned_concurrent_executions: ::std::option::Option<i32>,
+    pub(crate) allocated_provisioned_concurrent_executions: ::std::option::Option<i32>,
+    pub(crate) status: ::std::option::Option<crate::types::ProvisionedConcurrencyStatusEnum>,
+    pub(crate) status_reason: ::std::option::Option<::std::string::String>,
+    pub(crate) last_modified: ::std::option::Option<::std::string::String>,
 }
 impl ProvisionedConcurrencyConfigListItemBuilder {
     /// <p>The Amazon Resource Name (ARN) of the alias or version.</p>
-    pub fn function_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.function_arn = Some(input.into());
+    pub fn function_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.function_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the alias or version.</p>
-    pub fn set_function_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_function_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.function_arn = input;
         self
     }
     /// <p>The amount of provisioned concurrency requested.</p>
     pub fn requested_provisioned_concurrent_executions(mut self, input: i32) -> Self {
-        self.requested_provisioned_concurrent_executions = Some(input);
+        self.requested_provisioned_concurrent_executions = ::std::option::Option::Some(input);
         self
     }
     /// <p>The amount of provisioned concurrency requested.</p>
     pub fn set_requested_provisioned_concurrent_executions(
         mut self,
-        input: std::option::Option<i32>,
+        input: ::std::option::Option<i32>,
     ) -> Self {
         self.requested_provisioned_concurrent_executions = input;
         self
     }
     /// <p>The amount of provisioned concurrency available.</p>
     pub fn available_provisioned_concurrent_executions(mut self, input: i32) -> Self {
-        self.available_provisioned_concurrent_executions = Some(input);
+        self.available_provisioned_concurrent_executions = ::std::option::Option::Some(input);
         self
     }
     /// <p>The amount of provisioned concurrency available.</p>
     pub fn set_available_provisioned_concurrent_executions(
         mut self,
-        input: std::option::Option<i32>,
+        input: ::std::option::Option<i32>,
     ) -> Self {
         self.available_provisioned_concurrent_executions = input;
         self
     }
     /// <p>The amount of provisioned concurrency allocated. When a weighted alias is used during linear and canary deployments, this value fluctuates depending on the amount of concurrency that is provisioned for the function versions.</p>
     pub fn allocated_provisioned_concurrent_executions(mut self, input: i32) -> Self {
-        self.allocated_provisioned_concurrent_executions = Some(input);
+        self.allocated_provisioned_concurrent_executions = ::std::option::Option::Some(input);
         self
     }
     /// <p>The amount of provisioned concurrency allocated. When a weighted alias is used during linear and canary deployments, this value fluctuates depending on the amount of concurrency that is provisioned for the function versions.</p>
     pub fn set_allocated_provisioned_concurrent_executions(
         mut self,
-        input: std::option::Option<i32>,
+        input: ::std::option::Option<i32>,
     ) -> Self {
         self.allocated_provisioned_concurrent_executions = input;
         self
     }
     /// <p>The status of the allocation process.</p>
     pub fn status(mut self, input: crate::types::ProvisionedConcurrencyStatusEnum) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the allocation process.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::ProvisionedConcurrencyStatusEnum>,
+        input: ::std::option::Option<crate::types::ProvisionedConcurrencyStatusEnum>,
     ) -> Self {
         self.status = input;
         self
     }
     /// <p>For failed allocations, the reason that provisioned concurrency could not be allocated.</p>
-    pub fn status_reason(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status_reason = Some(input.into());
+    pub fn status_reason(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.status_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>For failed allocations, the reason that provisioned concurrency could not be allocated.</p>
-    pub fn set_status_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status_reason(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.status_reason = input;
         self
     }
     /// <p>The date and time that a user last updated the configuration, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 format</a>.</p>
-    pub fn last_modified(mut self, input: impl Into<std::string::String>) -> Self {
-        self.last_modified = Some(input.into());
+    pub fn last_modified(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.last_modified = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date and time that a user last updated the configuration, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 format</a>.</p>
-    pub fn set_last_modified(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_last_modified(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.last_modified = input;
         self
     }

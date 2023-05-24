@@ -2,27 +2,30 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDiscoveredResourcesOutput {
     /// <p>The details that identify a resource that is discovered by Config, including the resource type, ID, and (if available) the custom resource name.</p>
     #[doc(hidden)]
-    pub resource_identifiers: std::option::Option<std::vec::Vec<crate::types::ResourceIdentifier>>,
+    pub resource_identifiers:
+        ::std::option::Option<::std::vec::Vec<crate::types::ResourceIdentifier>>,
     /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListDiscoveredResourcesOutput {
     /// <p>The details that identify a resource that is discovered by Config, including the resource type, ID, and (if available) the custom resource name.</p>
-    pub fn resource_identifiers(&self) -> std::option::Option<&[crate::types::ResourceIdentifier]> {
+    pub fn resource_identifiers(
+        &self,
+    ) -> ::std::option::Option<&[crate::types::ResourceIdentifier]> {
         self.resource_identifiers.as_deref()
     }
     /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListDiscoveredResourcesOutput {
+impl ::aws_http::request_id::RequestId for ListDiscoveredResourcesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -38,11 +41,13 @@ impl ListDiscoveredResourcesOutput {
 
 /// A builder for [`ListDiscoveredResourcesOutput`](crate::operation::list_discovered_resources::ListDiscoveredResourcesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListDiscoveredResourcesOutputBuilder {
     pub(crate) resource_identifiers:
-        std::option::Option<std::vec::Vec<crate::types::ResourceIdentifier>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ResourceIdentifier>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListDiscoveredResourcesOutputBuilder {
@@ -54,24 +59,24 @@ impl ListDiscoveredResourcesOutputBuilder {
     pub fn resource_identifiers(mut self, input: crate::types::ResourceIdentifier) -> Self {
         let mut v = self.resource_identifiers.unwrap_or_default();
         v.push(input);
-        self.resource_identifiers = Some(v);
+        self.resource_identifiers = ::std::option::Option::Some(v);
         self
     }
     /// <p>The details that identify a resource that is discovered by Config, including the resource type, ID, and (if available) the custom resource name.</p>
     pub fn set_resource_identifiers(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ResourceIdentifier>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceIdentifier>>,
     ) -> Self {
         self.resource_identifiers = input;
         self
     }
     /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The string that you use in a subsequent request to get the next page of results in a paginated response.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

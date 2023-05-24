@@ -2,20 +2,20 @@
 
 /// <p>Contains metadata describing the lexicon such as the number of lexemes, language code, and so on. For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing Lexicons</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LexiconAttributes {
     /// <p>Phonetic alphabet used in the lexicon. Valid values are <code>ipa</code> and <code>x-sampa</code>.</p>
     #[doc(hidden)]
-    pub alphabet: std::option::Option<std::string::String>,
+    pub alphabet: ::std::option::Option<::std::string::String>,
     /// <p>Language code that the lexicon applies to. A lexicon with a language code such as "en" would be applied to all English languages (en-GB, en-US, en-AUS, en-WLS, and so on.</p>
     #[doc(hidden)]
-    pub language_code: std::option::Option<crate::types::LanguageCode>,
+    pub language_code: ::std::option::Option<crate::types::LanguageCode>,
     /// <p>Date lexicon was last modified (a timestamp value).</p>
     #[doc(hidden)]
-    pub last_modified: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_modified: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Amazon Resource Name (ARN) of the lexicon.</p>
     #[doc(hidden)]
-    pub lexicon_arn: std::option::Option<std::string::String>,
+    pub lexicon_arn: ::std::option::Option<::std::string::String>,
     /// <p>Number of lexemes in the lexicon.</p>
     #[doc(hidden)]
     pub lexemes_count: i32,
@@ -25,19 +25,19 @@ pub struct LexiconAttributes {
 }
 impl LexiconAttributes {
     /// <p>Phonetic alphabet used in the lexicon. Valid values are <code>ipa</code> and <code>x-sampa</code>.</p>
-    pub fn alphabet(&self) -> std::option::Option<&str> {
+    pub fn alphabet(&self) -> ::std::option::Option<&str> {
         self.alphabet.as_deref()
     }
     /// <p>Language code that the lexicon applies to. A lexicon with a language code such as "en" would be applied to all English languages (en-GB, en-US, en-AUS, en-WLS, and so on.</p>
-    pub fn language_code(&self) -> std::option::Option<&crate::types::LanguageCode> {
+    pub fn language_code(&self) -> ::std::option::Option<&crate::types::LanguageCode> {
         self.language_code.as_ref()
     }
     /// <p>Date lexicon was last modified (a timestamp value).</p>
-    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
     /// <p>Amazon Resource Name (ARN) of the lexicon.</p>
-    pub fn lexicon_arn(&self) -> std::option::Option<&str> {
+    pub fn lexicon_arn(&self) -> ::std::option::Option<&str> {
         self.lexicon_arn.as_deref()
     }
     /// <p>Number of lexemes in the lexicon.</p>
@@ -58,79 +58,81 @@ impl LexiconAttributes {
 
 /// A builder for [`LexiconAttributes`](crate::types::LexiconAttributes).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LexiconAttributesBuilder {
-    pub(crate) alphabet: std::option::Option<std::string::String>,
-    pub(crate) language_code: std::option::Option<crate::types::LanguageCode>,
-    pub(crate) last_modified: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) lexicon_arn: std::option::Option<std::string::String>,
-    pub(crate) lexemes_count: std::option::Option<i32>,
-    pub(crate) size: std::option::Option<i32>,
+    pub(crate) alphabet: ::std::option::Option<::std::string::String>,
+    pub(crate) language_code: ::std::option::Option<crate::types::LanguageCode>,
+    pub(crate) last_modified: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) lexicon_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) lexemes_count: ::std::option::Option<i32>,
+    pub(crate) size: ::std::option::Option<i32>,
 }
 impl LexiconAttributesBuilder {
     /// <p>Phonetic alphabet used in the lexicon. Valid values are <code>ipa</code> and <code>x-sampa</code>.</p>
-    pub fn alphabet(mut self, input: impl Into<std::string::String>) -> Self {
-        self.alphabet = Some(input.into());
+    pub fn alphabet(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.alphabet = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Phonetic alphabet used in the lexicon. Valid values are <code>ipa</code> and <code>x-sampa</code>.</p>
-    pub fn set_alphabet(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_alphabet(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.alphabet = input;
         self
     }
     /// <p>Language code that the lexicon applies to. A lexicon with a language code such as "en" would be applied to all English languages (en-GB, en-US, en-AUS, en-WLS, and so on.</p>
     pub fn language_code(mut self, input: crate::types::LanguageCode) -> Self {
-        self.language_code = Some(input);
+        self.language_code = ::std::option::Option::Some(input);
         self
     }
     /// <p>Language code that the lexicon applies to. A lexicon with a language code such as "en" would be applied to all English languages (en-GB, en-US, en-AUS, en-WLS, and so on.</p>
     pub fn set_language_code(
         mut self,
-        input: std::option::Option<crate::types::LanguageCode>,
+        input: ::std::option::Option<crate::types::LanguageCode>,
     ) -> Self {
         self.language_code = input;
         self
     }
     /// <p>Date lexicon was last modified (a timestamp value).</p>
-    pub fn last_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_modified = Some(input);
+    pub fn last_modified(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_modified = ::std::option::Option::Some(input);
         self
     }
     /// <p>Date lexicon was last modified (a timestamp value).</p>
     pub fn set_last_modified(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_modified = input;
         self
     }
     /// <p>Amazon Resource Name (ARN) of the lexicon.</p>
-    pub fn lexicon_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.lexicon_arn = Some(input.into());
+    pub fn lexicon_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.lexicon_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Amazon Resource Name (ARN) of the lexicon.</p>
-    pub fn set_lexicon_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_lexicon_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lexicon_arn = input;
         self
     }
     /// <p>Number of lexemes in the lexicon.</p>
     pub fn lexemes_count(mut self, input: i32) -> Self {
-        self.lexemes_count = Some(input);
+        self.lexemes_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>Number of lexemes in the lexicon.</p>
-    pub fn set_lexemes_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_lexemes_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.lexemes_count = input;
         self
     }
     /// <p>Total size of the lexicon, in characters.</p>
     pub fn size(mut self, input: i32) -> Self {
-        self.size = Some(input);
+        self.size = ::std::option::Option::Some(input);
         self
     }
     /// <p>Total size of the lexicon, in characters.</p>
-    pub fn set_size(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.size = input;
         self
     }

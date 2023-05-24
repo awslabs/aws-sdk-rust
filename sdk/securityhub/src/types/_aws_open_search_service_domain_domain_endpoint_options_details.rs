@@ -2,11 +2,11 @@
 
 /// <p>Information about additional options for the domain endpoint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsOpenSearchServiceDomainDomainEndpointOptionsDetails {
     /// <p>The ARN for the security certificate. The certificate is managed in ACM.</p>
     #[doc(hidden)]
-    pub custom_endpoint_certificate_arn: std::option::Option<std::string::String>,
+    pub custom_endpoint_certificate_arn: ::std::option::Option<::std::string::String>,
     /// <p>Whether to enable a custom endpoint for the domain.</p>
     #[doc(hidden)]
     pub custom_endpoint_enabled: bool,
@@ -15,14 +15,14 @@ pub struct AwsOpenSearchServiceDomainDomainEndpointOptionsDetails {
     pub enforce_https: bool,
     /// <p>The fully qualified URL for the custom endpoint.</p>
     #[doc(hidden)]
-    pub custom_endpoint: std::option::Option<std::string::String>,
+    pub custom_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The TLS security policy to apply to the HTTPS endpoint of the OpenSearch domain.</p>
     #[doc(hidden)]
-    pub tls_security_policy: std::option::Option<std::string::String>,
+    pub tls_security_policy: ::std::option::Option<::std::string::String>,
 }
 impl AwsOpenSearchServiceDomainDomainEndpointOptionsDetails {
     /// <p>The ARN for the security certificate. The certificate is managed in ACM.</p>
-    pub fn custom_endpoint_certificate_arn(&self) -> std::option::Option<&str> {
+    pub fn custom_endpoint_certificate_arn(&self) -> ::std::option::Option<&str> {
         self.custom_endpoint_certificate_arn.as_deref()
     }
     /// <p>Whether to enable a custom endpoint for the domain.</p>
@@ -34,11 +34,11 @@ impl AwsOpenSearchServiceDomainDomainEndpointOptionsDetails {
         self.enforce_https
     }
     /// <p>The fully qualified URL for the custom endpoint.</p>
-    pub fn custom_endpoint(&self) -> std::option::Option<&str> {
+    pub fn custom_endpoint(&self) -> ::std::option::Option<&str> {
         self.custom_endpoint.as_deref()
     }
     /// <p>The TLS security policy to apply to the HTTPS endpoint of the OpenSearch domain.</p>
-    pub fn tls_security_policy(&self) -> std::option::Option<&str> {
+    pub fn tls_security_policy(&self) -> ::std::option::Option<&str> {
         self.tls_security_policy.as_deref()
     }
 }
@@ -52,70 +52,81 @@ impl AwsOpenSearchServiceDomainDomainEndpointOptionsDetails {
 
 /// A builder for [`AwsOpenSearchServiceDomainDomainEndpointOptionsDetails`](crate::types::AwsOpenSearchServiceDomainDomainEndpointOptionsDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsOpenSearchServiceDomainDomainEndpointOptionsDetailsBuilder {
-    pub(crate) custom_endpoint_certificate_arn: std::option::Option<std::string::String>,
-    pub(crate) custom_endpoint_enabled: std::option::Option<bool>,
-    pub(crate) enforce_https: std::option::Option<bool>,
-    pub(crate) custom_endpoint: std::option::Option<std::string::String>,
-    pub(crate) tls_security_policy: std::option::Option<std::string::String>,
+    pub(crate) custom_endpoint_certificate_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) custom_endpoint_enabled: ::std::option::Option<bool>,
+    pub(crate) enforce_https: ::std::option::Option<bool>,
+    pub(crate) custom_endpoint: ::std::option::Option<::std::string::String>,
+    pub(crate) tls_security_policy: ::std::option::Option<::std::string::String>,
 }
 impl AwsOpenSearchServiceDomainDomainEndpointOptionsDetailsBuilder {
     /// <p>The ARN for the security certificate. The certificate is managed in ACM.</p>
     pub fn custom_endpoint_certificate_arn(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.custom_endpoint_certificate_arn = Some(input.into());
+        self.custom_endpoint_certificate_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN for the security certificate. The certificate is managed in ACM.</p>
     pub fn set_custom_endpoint_certificate_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.custom_endpoint_certificate_arn = input;
         self
     }
     /// <p>Whether to enable a custom endpoint for the domain.</p>
     pub fn custom_endpoint_enabled(mut self, input: bool) -> Self {
-        self.custom_endpoint_enabled = Some(input);
+        self.custom_endpoint_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether to enable a custom endpoint for the domain.</p>
-    pub fn set_custom_endpoint_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_custom_endpoint_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.custom_endpoint_enabled = input;
         self
     }
     /// <p>Whether to require that all traffic to the domain arrive over HTTPS.</p>
     pub fn enforce_https(mut self, input: bool) -> Self {
-        self.enforce_https = Some(input);
+        self.enforce_https = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether to require that all traffic to the domain arrive over HTTPS.</p>
-    pub fn set_enforce_https(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enforce_https(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enforce_https = input;
         self
     }
     /// <p>The fully qualified URL for the custom endpoint.</p>
-    pub fn custom_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
-        self.custom_endpoint = Some(input.into());
+    pub fn custom_endpoint(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.custom_endpoint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The fully qualified URL for the custom endpoint.</p>
-    pub fn set_custom_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_custom_endpoint(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.custom_endpoint = input;
         self
     }
     /// <p>The TLS security policy to apply to the HTTPS endpoint of the OpenSearch domain.</p>
-    pub fn tls_security_policy(mut self, input: impl Into<std::string::String>) -> Self {
-        self.tls_security_policy = Some(input.into());
+    pub fn tls_security_policy(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.tls_security_policy = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The TLS security policy to apply to the HTTPS endpoint of the OpenSearch domain.</p>
     pub fn set_tls_security_policy(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.tls_security_policy = input;
         self

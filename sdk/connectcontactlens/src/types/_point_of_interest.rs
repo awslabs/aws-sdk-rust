@@ -2,7 +2,7 @@
 
 /// <p>The section of the contact audio where that category rule was detected.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PointOfInterest {
     /// <p>The beginning offset in milliseconds where the category rule was detected.</p>
     #[doc(hidden)]
@@ -30,29 +30,31 @@ impl PointOfInterest {
 
 /// A builder for [`PointOfInterest`](crate::types::PointOfInterest).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PointOfInterestBuilder {
-    pub(crate) begin_offset_millis: std::option::Option<i32>,
-    pub(crate) end_offset_millis: std::option::Option<i32>,
+    pub(crate) begin_offset_millis: ::std::option::Option<i32>,
+    pub(crate) end_offset_millis: ::std::option::Option<i32>,
 }
 impl PointOfInterestBuilder {
     /// <p>The beginning offset in milliseconds where the category rule was detected.</p>
     pub fn begin_offset_millis(mut self, input: i32) -> Self {
-        self.begin_offset_millis = Some(input);
+        self.begin_offset_millis = ::std::option::Option::Some(input);
         self
     }
     /// <p>The beginning offset in milliseconds where the category rule was detected.</p>
-    pub fn set_begin_offset_millis(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_begin_offset_millis(mut self, input: ::std::option::Option<i32>) -> Self {
         self.begin_offset_millis = input;
         self
     }
     /// <p>The ending offset in milliseconds where the category rule was detected.</p>
     pub fn end_offset_millis(mut self, input: i32) -> Self {
-        self.end_offset_millis = Some(input);
+        self.end_offset_millis = ::std::option::Option::Some(input);
         self
     }
     /// <p>The ending offset in milliseconds where the category rule was detected.</p>
-    pub fn set_end_offset_millis(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_end_offset_millis(mut self, input: ::std::option::Option<i32>) -> Self {
         self.end_offset_millis = input;
         self
     }

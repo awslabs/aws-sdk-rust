@@ -40,13 +40,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum OrientationCorrection {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,7 +60,7 @@ pub enum OrientationCorrection {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for OrientationCorrection {
+impl ::std::convert::From<&str> for OrientationCorrection {
     fn from(s: &str) -> Self {
         match s {
             "ROTATE_0" => OrientationCorrection::Rotate0,
@@ -73,11 +73,11 @@ impl std::convert::From<&str> for OrientationCorrection {
         }
     }
 }
-impl std::str::FromStr for OrientationCorrection {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for OrientationCorrection {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(OrientationCorrection::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(OrientationCorrection::from(s))
     }
 }
 impl OrientationCorrection {
@@ -96,7 +96,7 @@ impl OrientationCorrection {
         &["ROTATE_0", "ROTATE_180", "ROTATE_270", "ROTATE_90"]
     }
 }
-impl AsRef<str> for OrientationCorrection {
+impl ::std::convert::AsRef<str> for OrientationCorrection {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

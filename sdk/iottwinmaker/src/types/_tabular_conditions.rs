@@ -2,24 +2,24 @@
 
 /// <p>The tabular conditions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TabularConditions {
     /// <p>Filter criteria that orders the output. It can be sorted in ascending or descending order.</p>
     #[doc(hidden)]
-    pub order_by: std::option::Option<std::vec::Vec<crate::types::OrderBy>>,
+    pub order_by: ::std::option::Option<::std::vec::Vec<crate::types::OrderBy>>,
     /// <p>You can filter the request using various logical operators and a key-value format. For example:</p>
     /// <p> <code>{"key": "serverType", "value": "webServer"}</code> </p>
     #[doc(hidden)]
-    pub property_filters: std::option::Option<std::vec::Vec<crate::types::PropertyFilter>>,
+    pub property_filters: ::std::option::Option<::std::vec::Vec<crate::types::PropertyFilter>>,
 }
 impl TabularConditions {
     /// <p>Filter criteria that orders the output. It can be sorted in ascending or descending order.</p>
-    pub fn order_by(&self) -> std::option::Option<&[crate::types::OrderBy]> {
+    pub fn order_by(&self) -> ::std::option::Option<&[crate::types::OrderBy]> {
         self.order_by.as_deref()
     }
     /// <p>You can filter the request using various logical operators and a key-value format. For example:</p>
     /// <p> <code>{"key": "serverType", "value": "webServer"}</code> </p>
-    pub fn property_filters(&self) -> std::option::Option<&[crate::types::PropertyFilter]> {
+    pub fn property_filters(&self) -> ::std::option::Option<&[crate::types::PropertyFilter]> {
         self.property_filters.as_deref()
     }
 }
@@ -32,10 +32,13 @@ impl TabularConditions {
 
 /// A builder for [`TabularConditions`](crate::types::TabularConditions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TabularConditionsBuilder {
-    pub(crate) order_by: std::option::Option<std::vec::Vec<crate::types::OrderBy>>,
-    pub(crate) property_filters: std::option::Option<std::vec::Vec<crate::types::PropertyFilter>>,
+    pub(crate) order_by: ::std::option::Option<::std::vec::Vec<crate::types::OrderBy>>,
+    pub(crate) property_filters:
+        ::std::option::Option<::std::vec::Vec<crate::types::PropertyFilter>>,
 }
 impl TabularConditionsBuilder {
     /// Appends an item to `order_by`.
@@ -46,13 +49,13 @@ impl TabularConditionsBuilder {
     pub fn order_by(mut self, input: crate::types::OrderBy) -> Self {
         let mut v = self.order_by.unwrap_or_default();
         v.push(input);
-        self.order_by = Some(v);
+        self.order_by = ::std::option::Option::Some(v);
         self
     }
     /// <p>Filter criteria that orders the output. It can be sorted in ascending or descending order.</p>
     pub fn set_order_by(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::OrderBy>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::OrderBy>>,
     ) -> Self {
         self.order_by = input;
         self
@@ -66,14 +69,14 @@ impl TabularConditionsBuilder {
     pub fn property_filters(mut self, input: crate::types::PropertyFilter) -> Self {
         let mut v = self.property_filters.unwrap_or_default();
         v.push(input);
-        self.property_filters = Some(v);
+        self.property_filters = ::std::option::Option::Some(v);
         self
     }
     /// <p>You can filter the request using various logical operators and a key-value format. For example:</p>
     /// <p> <code>{"key": "serverType", "value": "webServer"}</code> </p>
     pub fn set_property_filters(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PropertyFilter>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PropertyFilter>>,
     ) -> Self {
         self.property_filters = input;
         self

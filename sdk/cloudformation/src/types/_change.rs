@@ -2,29 +2,29 @@
 
 /// <p>The <code>Change</code> structure describes the changes CloudFormation will perform if you execute the change set.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Change {
     /// <p>The type of entity that CloudFormation changes. Currently, the only entity type is <code>Resource</code>.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::ChangeType>,
+    pub r#type: ::std::option::Option<crate::types::ChangeType>,
     /// <p>Is either <code>null</code>, if no hooks invoke for the resource, or contains the number of hooks that will invoke for the resource.</p>
     #[doc(hidden)]
-    pub hook_invocation_count: std::option::Option<i32>,
+    pub hook_invocation_count: ::std::option::Option<i32>,
     /// <p>A <code>ResourceChange</code> structure that describes the resource and action that CloudFormation will perform.</p>
     #[doc(hidden)]
-    pub resource_change: std::option::Option<crate::types::ResourceChange>,
+    pub resource_change: ::std::option::Option<crate::types::ResourceChange>,
 }
 impl Change {
     /// <p>The type of entity that CloudFormation changes. Currently, the only entity type is <code>Resource</code>.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::ChangeType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ChangeType> {
         self.r#type.as_ref()
     }
     /// <p>Is either <code>null</code>, if no hooks invoke for the resource, or contains the number of hooks that will invoke for the resource.</p>
-    pub fn hook_invocation_count(&self) -> std::option::Option<i32> {
+    pub fn hook_invocation_count(&self) -> ::std::option::Option<i32> {
         self.hook_invocation_count
     }
     /// <p>A <code>ResourceChange</code> structure that describes the resource and action that CloudFormation will perform.</p>
-    pub fn resource_change(&self) -> std::option::Option<&crate::types::ResourceChange> {
+    pub fn resource_change(&self) -> ::std::option::Option<&crate::types::ResourceChange> {
         self.resource_change.as_ref()
     }
 }
@@ -37,42 +37,44 @@ impl Change {
 
 /// A builder for [`Change`](crate::types::Change).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ChangeBuilder {
-    pub(crate) r#type: std::option::Option<crate::types::ChangeType>,
-    pub(crate) hook_invocation_count: std::option::Option<i32>,
-    pub(crate) resource_change: std::option::Option<crate::types::ResourceChange>,
+    pub(crate) r#type: ::std::option::Option<crate::types::ChangeType>,
+    pub(crate) hook_invocation_count: ::std::option::Option<i32>,
+    pub(crate) resource_change: ::std::option::Option<crate::types::ResourceChange>,
 }
 impl ChangeBuilder {
     /// <p>The type of entity that CloudFormation changes. Currently, the only entity type is <code>Resource</code>.</p>
     pub fn r#type(mut self, input: crate::types::ChangeType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of entity that CloudFormation changes. Currently, the only entity type is <code>Resource</code>.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::ChangeType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ChangeType>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>Is either <code>null</code>, if no hooks invoke for the resource, or contains the number of hooks that will invoke for the resource.</p>
     pub fn hook_invocation_count(mut self, input: i32) -> Self {
-        self.hook_invocation_count = Some(input);
+        self.hook_invocation_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>Is either <code>null</code>, if no hooks invoke for the resource, or contains the number of hooks that will invoke for the resource.</p>
-    pub fn set_hook_invocation_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_hook_invocation_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.hook_invocation_count = input;
         self
     }
     /// <p>A <code>ResourceChange</code> structure that describes the resource and action that CloudFormation will perform.</p>
     pub fn resource_change(mut self, input: crate::types::ResourceChange) -> Self {
-        self.resource_change = Some(input);
+        self.resource_change = ::std::option::Option::Some(input);
         self
     }
     /// <p>A <code>ResourceChange</code> structure that describes the resource and action that CloudFormation will perform.</p>
     pub fn set_resource_change(
         mut self,
-        input: std::option::Option<crate::types::ResourceChange>,
+        input: ::std::option::Option<crate::types::ResourceChange>,
     ) -> Self {
         self.resource_change = input;
         self

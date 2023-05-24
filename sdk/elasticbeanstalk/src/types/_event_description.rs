@@ -2,71 +2,71 @@
 
 /// <p>Describes an event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventDescription {
     /// <p>The date when the event occurred.</p>
     #[doc(hidden)]
-    pub event_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub event_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The event message.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
     /// <p>The application associated with the event.</p>
     #[doc(hidden)]
-    pub application_name: std::option::Option<std::string::String>,
+    pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>The release label for the application version associated with this event.</p>
     #[doc(hidden)]
-    pub version_label: std::option::Option<std::string::String>,
+    pub version_label: ::std::option::Option<::std::string::String>,
     /// <p>The name of the configuration associated with this event.</p>
     #[doc(hidden)]
-    pub template_name: std::option::Option<std::string::String>,
+    pub template_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the environment associated with this event.</p>
     #[doc(hidden)]
-    pub environment_name: std::option::Option<std::string::String>,
+    pub environment_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the platform version.</p>
     #[doc(hidden)]
-    pub platform_arn: std::option::Option<std::string::String>,
+    pub platform_arn: ::std::option::Option<::std::string::String>,
     /// <p>The web service request ID for the activity of this event.</p>
     #[doc(hidden)]
-    pub request_id: std::option::Option<std::string::String>,
+    pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>The severity level of this event.</p>
     #[doc(hidden)]
-    pub severity: std::option::Option<crate::types::EventSeverity>,
+    pub severity: ::std::option::Option<crate::types::EventSeverity>,
 }
 impl EventDescription {
     /// <p>The date when the event occurred.</p>
-    pub fn event_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn event_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.event_date.as_ref()
     }
     /// <p>The event message.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
     /// <p>The application associated with the event.</p>
-    pub fn application_name(&self) -> std::option::Option<&str> {
+    pub fn application_name(&self) -> ::std::option::Option<&str> {
         self.application_name.as_deref()
     }
     /// <p>The release label for the application version associated with this event.</p>
-    pub fn version_label(&self) -> std::option::Option<&str> {
+    pub fn version_label(&self) -> ::std::option::Option<&str> {
         self.version_label.as_deref()
     }
     /// <p>The name of the configuration associated with this event.</p>
-    pub fn template_name(&self) -> std::option::Option<&str> {
+    pub fn template_name(&self) -> ::std::option::Option<&str> {
         self.template_name.as_deref()
     }
     /// <p>The name of the environment associated with this event.</p>
-    pub fn environment_name(&self) -> std::option::Option<&str> {
+    pub fn environment_name(&self) -> ::std::option::Option<&str> {
         self.environment_name.as_deref()
     }
     /// <p>The ARN of the platform version.</p>
-    pub fn platform_arn(&self) -> std::option::Option<&str> {
+    pub fn platform_arn(&self) -> ::std::option::Option<&str> {
         self.platform_arn.as_deref()
     }
     /// <p>The web service request ID for the activity of this event.</p>
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> ::std::option::Option<&str> {
         self.request_id.as_deref()
     }
     /// <p>The severity level of this event.</p>
-    pub fn severity(&self) -> std::option::Option<&crate::types::EventSeverity> {
+    pub fn severity(&self) -> ::std::option::Option<&crate::types::EventSeverity> {
         self.severity.as_ref()
     }
 }
@@ -79,109 +79,138 @@ impl EventDescription {
 
 /// A builder for [`EventDescription`](crate::types::EventDescription).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EventDescriptionBuilder {
-    pub(crate) event_date: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) message: std::option::Option<std::string::String>,
-    pub(crate) application_name: std::option::Option<std::string::String>,
-    pub(crate) version_label: std::option::Option<std::string::String>,
-    pub(crate) template_name: std::option::Option<std::string::String>,
-    pub(crate) environment_name: std::option::Option<std::string::String>,
-    pub(crate) platform_arn: std::option::Option<std::string::String>,
-    pub(crate) request_id: std::option::Option<std::string::String>,
-    pub(crate) severity: std::option::Option<crate::types::EventSeverity>,
+    pub(crate) event_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
+    pub(crate) application_name: ::std::option::Option<::std::string::String>,
+    pub(crate) version_label: ::std::option::Option<::std::string::String>,
+    pub(crate) template_name: ::std::option::Option<::std::string::String>,
+    pub(crate) environment_name: ::std::option::Option<::std::string::String>,
+    pub(crate) platform_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) request_id: ::std::option::Option<::std::string::String>,
+    pub(crate) severity: ::std::option::Option<crate::types::EventSeverity>,
 }
 impl EventDescriptionBuilder {
     /// <p>The date when the event occurred.</p>
-    pub fn event_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.event_date = Some(input);
+    pub fn event_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.event_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date when the event occurred.</p>
     pub fn set_event_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.event_date = input;
         self
     }
     /// <p>The event message.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The event message.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
     /// <p>The application associated with the event.</p>
-    pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.application_name = Some(input.into());
+    pub fn application_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.application_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The application associated with the event.</p>
-    pub fn set_application_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_application_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.application_name = input;
         self
     }
     /// <p>The release label for the application version associated with this event.</p>
-    pub fn version_label(mut self, input: impl Into<std::string::String>) -> Self {
-        self.version_label = Some(input.into());
+    pub fn version_label(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.version_label = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The release label for the application version associated with this event.</p>
-    pub fn set_version_label(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_version_label(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.version_label = input;
         self
     }
     /// <p>The name of the configuration associated with this event.</p>
-    pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.template_name = Some(input.into());
+    pub fn template_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.template_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the configuration associated with this event.</p>
-    pub fn set_template_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_template_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.template_name = input;
         self
     }
     /// <p>The name of the environment associated with this event.</p>
-    pub fn environment_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.environment_name = Some(input.into());
+    pub fn environment_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.environment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the environment associated with this event.</p>
-    pub fn set_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_environment_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.environment_name = input;
         self
     }
     /// <p>The ARN of the platform version.</p>
-    pub fn platform_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.platform_arn = Some(input.into());
+    pub fn platform_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.platform_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the platform version.</p>
-    pub fn set_platform_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_platform_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.platform_arn = input;
         self
     }
     /// <p>The web service request ID for the activity of this event.</p>
-    pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.request_id = Some(input.into());
+    pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.request_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The web service request ID for the activity of this event.</p>
-    pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.request_id = input;
         self
     }
     /// <p>The severity level of this event.</p>
     pub fn severity(mut self, input: crate::types::EventSeverity) -> Self {
-        self.severity = Some(input);
+        self.severity = ::std::option::Option::Some(input);
         self
     }
     /// <p>The severity level of this event.</p>
-    pub fn set_severity(mut self, input: std::option::Option<crate::types::EventSeverity>) -> Self {
+    pub fn set_severity(
+        mut self,
+        input: ::std::option::Option<crate::types::EventSeverity>,
+    ) -> Self {
         self.severity = input;
         self
     }

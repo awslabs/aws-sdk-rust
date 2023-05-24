@@ -2,15 +2,15 @@
 
 /// <p>Contains the inputs for the <code>CreateHapgRequest</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateHapgInput {
     /// <p>The label of the new high-availability partition group.</p>
     #[doc(hidden)]
-    pub label: std::option::Option<std::string::String>,
+    pub label: ::std::option::Option<::std::string::String>,
 }
 impl CreateHapgInput {
     /// <p>The label of the new high-availability partition group.</p>
-    pub fn label(&self) -> std::option::Option<&str> {
+    pub fn label(&self) -> ::std::option::Option<&str> {
         self.label.as_deref()
     }
 }
@@ -23,28 +23,32 @@ impl CreateHapgInput {
 
 /// A builder for [`CreateHapgInput`](crate::operation::create_hapg::CreateHapgInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateHapgInputBuilder {
-    pub(crate) label: std::option::Option<std::string::String>,
+    pub(crate) label: ::std::option::Option<::std::string::String>,
 }
 impl CreateHapgInputBuilder {
     /// <p>The label of the new high-availability partition group.</p>
-    pub fn label(mut self, input: impl Into<std::string::String>) -> Self {
-        self.label = Some(input.into());
+    pub fn label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.label = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The label of the new high-availability partition group.</p>
-    pub fn set_label(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.label = input;
         self
     }
     /// Consumes the builder and constructs a [`CreateHapgInput`](crate::operation::create_hapg::CreateHapgInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::create_hapg::CreateHapgInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::create_hapg::CreateHapgInput { label: self.label })
+        ::std::result::Result::Ok(crate::operation::create_hapg::CreateHapgInput {
+            label: self.label,
+        })
     }
 }

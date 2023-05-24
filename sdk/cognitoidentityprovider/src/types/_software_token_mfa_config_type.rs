@@ -2,7 +2,7 @@
 
 /// <p>The type used for enabling software token MFA at the user pool level.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SoftwareTokenMfaConfigType {
     /// <p>Specifies whether software token MFA is activated.</p>
     #[doc(hidden)]
@@ -23,18 +23,20 @@ impl SoftwareTokenMfaConfigType {
 
 /// A builder for [`SoftwareTokenMfaConfigType`](crate::types::SoftwareTokenMfaConfigType).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SoftwareTokenMfaConfigTypeBuilder {
-    pub(crate) enabled: std::option::Option<bool>,
+    pub(crate) enabled: ::std::option::Option<bool>,
 }
 impl SoftwareTokenMfaConfigTypeBuilder {
     /// <p>Specifies whether software token MFA is activated.</p>
     pub fn enabled(mut self, input: bool) -> Self {
-        self.enabled = Some(input);
+        self.enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether software token MFA is activated.</p>
-    pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
     }

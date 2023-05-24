@@ -60,13 +60,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ScanStatusReason {
     #[allow(missing_docs)] // documentation missing in model
@@ -120,7 +120,7 @@ pub enum ScanStatusReason {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ScanStatusReason {
+impl ::std::convert::From<&str> for ScanStatusReason {
     fn from(s: &str) -> Self {
         match s {
             "ACCESS_DENIED" => ScanStatusReason::AccessDenied,
@@ -159,11 +159,11 @@ impl std::convert::From<&str> for ScanStatusReason {
         }
     }
 }
-impl std::str::FromStr for ScanStatusReason {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ScanStatusReason {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ScanStatusReason::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ScanStatusReason::from(s))
     }
 }
 impl ScanStatusReason {
@@ -233,7 +233,7 @@ impl ScanStatusReason {
         ]
     }
 }
-impl AsRef<str> for ScanStatusReason {
+impl ::std::convert::AsRef<str> for ScanStatusReason {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

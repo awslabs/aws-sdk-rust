@@ -7,29 +7,29 @@ pub use crate::operation::create_license_configuration::_create_license_configur
 ///
 /// <p>Creates a license configuration.</p>
 /// <p>A license configuration is an abstraction of a customer license agreement that can be consumed and enforced by License Manager. Components include specifications for the license type (licensing by instance, socket, CPU, or vCPU), allowed tenancy (shared tenancy, Dedicated Instance, Dedicated Host, or all of these), license affinity to host (how long a license must be associated with a host), and the number of licenses purchased and used.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateLicenseConfigurationFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::create_license_configuration::builders::CreateLicenseConfigurationInputBuilder,
 }
 impl CreateLicenseConfigurationFluentBuilder {
     /// Creates a new `CreateLicenseConfiguration`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_license_configuration::CreateLicenseConfiguration,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_license_configuration::CreateLicenseConfigurationError,
         >,
     > {
@@ -37,30 +37,33 @@ impl CreateLicenseConfigurationFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_license_configuration::CreateLicenseConfigurationOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_license_configuration::CreateLicenseConfigurationError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -73,31 +76,31 @@ impl CreateLicenseConfigurationFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_license_configuration::CreateLicenseConfigurationOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_license_configuration::CreateLicenseConfigurationError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>Name of the license configuration.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// <p>Name of the license configuration.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
     /// <p>Description of the license configuration.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>Description of the license configuration.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
@@ -109,7 +112,7 @@ impl CreateLicenseConfigurationFluentBuilder {
     /// <p>Dimension used to track the license inventory.</p>
     pub fn set_license_counting_type(
         mut self,
-        input: std::option::Option<crate::types::LicenseCountingType>,
+        input: ::std::option::Option<crate::types::LicenseCountingType>,
     ) -> Self {
         self.inner = self.inner.set_license_counting_type(input);
         self
@@ -120,7 +123,7 @@ impl CreateLicenseConfigurationFluentBuilder {
         self
     }
     /// <p>Number of licenses managed by the license configuration.</p>
-    pub fn set_license_count(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_license_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_license_count(input);
         self
     }
@@ -130,7 +133,7 @@ impl CreateLicenseConfigurationFluentBuilder {
         self
     }
     /// <p>Indicates whether hard or soft license enforcement is used. Exceeding a hard limit blocks the launch of new instances.</p>
-    pub fn set_license_count_hard_limit(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_license_count_hard_limit(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_license_count_hard_limit(input);
         self
     }
@@ -146,7 +149,10 @@ impl CreateLicenseConfigurationFluentBuilder {
     /// <li> <p> <code>vCPUs</code> dimension: <code>allowedTenancy</code> | <code>honorVcpuOptimization</code> | <code>maximumVcpus</code> | <code>minimumVcpus</code> </p> </li>
     /// </ul>
     /// <p>The unit for <code>licenseAffinityToHost</code> is days and the range is 1 to 180. The possible values for <code>allowedTenancy</code> are <code>EC2-Default</code>, <code>EC2-DedicatedHost</code>, and <code>EC2-DedicatedInstance</code>. The possible values for <code>honorVcpuOptimization</code> are <code>True</code> and <code>False</code>.</p>
-    pub fn license_rules(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn license_rules(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.license_rules(input.into());
         self
     }
@@ -160,7 +166,7 @@ impl CreateLicenseConfigurationFluentBuilder {
     /// <p>The unit for <code>licenseAffinityToHost</code> is days and the range is 1 to 180. The possible values for <code>allowedTenancy</code> are <code>EC2-Default</code>, <code>EC2-DedicatedHost</code>, and <code>EC2-DedicatedInstance</code>. The possible values for <code>honorVcpuOptimization</code> are <code>True</code> and <code>False</code>.</p>
     pub fn set_license_rules(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_license_rules(input);
         self
@@ -177,7 +183,7 @@ impl CreateLicenseConfigurationFluentBuilder {
     /// <p>Tags to add to the license configuration.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
@@ -188,7 +194,7 @@ impl CreateLicenseConfigurationFluentBuilder {
         self
     }
     /// <p>When true, disassociates a resource when software is uninstalled.</p>
-    pub fn set_disassociate_when_not_found(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_disassociate_when_not_found(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_disassociate_when_not_found(input);
         self
     }
@@ -204,7 +210,7 @@ impl CreateLicenseConfigurationFluentBuilder {
     /// <p>Product information.</p>
     pub fn set_product_information_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ProductInformation>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ProductInformation>>,
     ) -> Self {
         self.inner = self.inner.set_product_information_list(input);
         self

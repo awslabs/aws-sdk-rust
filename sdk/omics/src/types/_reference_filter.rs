@@ -2,36 +2,36 @@
 
 /// <p>A filter for references.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReferenceFilter {
     /// <p>A name to filter on.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>An MD5 checksum to filter on.</p>
     #[doc(hidden)]
-    pub md5: std::option::Option<std::string::String>,
+    pub md5: ::std::option::Option<::std::string::String>,
     /// <p>The filter's start date.</p>
     #[doc(hidden)]
-    pub created_after: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The filter's end date.</p>
     #[doc(hidden)]
-    pub created_before: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_before: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ReferenceFilter {
     /// <p>A name to filter on.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>An MD5 checksum to filter on.</p>
-    pub fn md5(&self) -> std::option::Option<&str> {
+    pub fn md5(&self) -> ::std::option::Option<&str> {
         self.md5.as_deref()
     }
     /// <p>The filter's start date.</p>
-    pub fn created_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_after(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_after.as_ref()
     }
     /// <p>The filter's end date.</p>
-    pub fn created_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_before.as_ref()
     }
 }
@@ -44,56 +44,58 @@ impl ReferenceFilter {
 
 /// A builder for [`ReferenceFilter`](crate::types::ReferenceFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ReferenceFilterBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) md5: std::option::Option<std::string::String>,
-    pub(crate) created_after: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) created_before: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) md5: ::std::option::Option<::std::string::String>,
+    pub(crate) created_after: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) created_before: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ReferenceFilterBuilder {
     /// <p>A name to filter on.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A name to filter on.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>An MD5 checksum to filter on.</p>
-    pub fn md5(mut self, input: impl Into<std::string::String>) -> Self {
-        self.md5 = Some(input.into());
+    pub fn md5(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.md5 = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An MD5 checksum to filter on.</p>
-    pub fn set_md5(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_md5(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.md5 = input;
         self
     }
     /// <p>The filter's start date.</p>
-    pub fn created_after(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_after = Some(input);
+    pub fn created_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_after = ::std::option::Option::Some(input);
         self
     }
     /// <p>The filter's start date.</p>
     pub fn set_created_after(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_after = input;
         self
     }
     /// <p>The filter's end date.</p>
-    pub fn created_before(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_before = Some(input);
+    pub fn created_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_before = ::std::option::Option::Some(input);
         self
     }
     /// <p>The filter's end date.</p>
     pub fn set_created_before(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_before = input;
         self

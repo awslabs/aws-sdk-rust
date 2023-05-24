@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`app_ids(Vec<String>)`](crate::operation::list_apps::builders::ListAppsFluentBuilder::app_ids) / [`set_app_ids(Option<Vec<String>>)`](crate::operation::list_apps::builders::ListAppsFluentBuilder::set_app_ids): <p>The unique application IDs.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_apps::builders::ListAppsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_apps::builders::ListAppsFluentBuilder::set_next_token): <p>The token for the next set of results.</p>
+    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_apps::builders::ListAppsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_apps::builders::ListAppsFluentBuilder::set_next_token): <p>The token for the next set of results.</p>
     ///   - [`max_results(i32)`](crate::operation::list_apps::builders::ListAppsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_apps::builders::ListAppsFluentBuilder::set_max_results): <p>The maximum number of results to return in a single call. The default value is 100. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value. </p>
     /// - On success, responds with [`ListAppsOutput`](crate::operation::list_apps::ListAppsOutput) with field(s):
     ///   - [`apps(Option<Vec<AppSummary>>)`](crate::operation::list_apps::ListAppsOutput::apps): <p>The application summaries.</p>

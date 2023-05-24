@@ -2,89 +2,93 @@
 
 /// <p>Describes a custom algorithm.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Algorithm {
     /// <p>The name of the algorithm.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the algorithm.</p>
     #[doc(hidden)]
-    pub algorithm_arn: std::option::Option<std::string::String>,
+    pub algorithm_arn: ::std::option::Option<::std::string::String>,
     /// <p>The URI of the Docker container for the algorithm image.</p>
     #[doc(hidden)]
-    pub algorithm_image: std::option::Option<crate::types::AlgorithmImage>,
+    pub algorithm_image: ::std::option::Option<crate::types::AlgorithmImage>,
     /// <p>Specifies the default hyperparameters.</p>
     #[doc(hidden)]
-    pub default_hyper_parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub default_hyper_parameters: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>Specifies the default hyperparameters, their ranges, and whether they are tunable. A tunable hyperparameter can have its value determined during hyperparameter optimization (HPO).</p>
     #[doc(hidden)]
     pub default_hyper_parameter_ranges:
-        std::option::Option<crate::types::DefaultHyperParameterRanges>,
+        ::std::option::Option<crate::types::DefaultHyperParameterRanges>,
     /// <p>Specifies the default maximum number of training jobs and parallel training jobs.</p>
     #[doc(hidden)]
-    pub default_resource_config:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub default_resource_config: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>The training input mode.</p>
     #[doc(hidden)]
-    pub training_input_mode: std::option::Option<std::string::String>,
+    pub training_input_mode: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the role.</p>
     #[doc(hidden)]
-    pub role_arn: std::option::Option<std::string::String>,
+    pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The date and time (in Unix time) that the algorithm was created.</p>
     #[doc(hidden)]
-    pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time (in Unix time) that the algorithm was last updated.</p>
     #[doc(hidden)]
-    pub last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Algorithm {
     /// <p>The name of the algorithm.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the algorithm.</p>
-    pub fn algorithm_arn(&self) -> std::option::Option<&str> {
+    pub fn algorithm_arn(&self) -> ::std::option::Option<&str> {
         self.algorithm_arn.as_deref()
     }
     /// <p>The URI of the Docker container for the algorithm image.</p>
-    pub fn algorithm_image(&self) -> std::option::Option<&crate::types::AlgorithmImage> {
+    pub fn algorithm_image(&self) -> ::std::option::Option<&crate::types::AlgorithmImage> {
         self.algorithm_image.as_ref()
     }
     /// <p>Specifies the default hyperparameters.</p>
     pub fn default_hyper_parameters(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.default_hyper_parameters.as_ref()
     }
     /// <p>Specifies the default hyperparameters, their ranges, and whether they are tunable. A tunable hyperparameter can have its value determined during hyperparameter optimization (HPO).</p>
     pub fn default_hyper_parameter_ranges(
         &self,
-    ) -> std::option::Option<&crate::types::DefaultHyperParameterRanges> {
+    ) -> ::std::option::Option<&crate::types::DefaultHyperParameterRanges> {
         self.default_hyper_parameter_ranges.as_ref()
     }
     /// <p>Specifies the default maximum number of training jobs and parallel training jobs.</p>
     pub fn default_resource_config(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.default_resource_config.as_ref()
     }
     /// <p>The training input mode.</p>
-    pub fn training_input_mode(&self) -> std::option::Option<&str> {
+    pub fn training_input_mode(&self) -> ::std::option::Option<&str> {
         self.training_input_mode.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the role.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
     /// <p>The date and time (in Unix time) that the algorithm was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time (in Unix time) that the algorithm was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
 }
@@ -97,52 +101,62 @@ impl Algorithm {
 
 /// A builder for [`Algorithm`](crate::types::Algorithm).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AlgorithmBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) algorithm_arn: std::option::Option<std::string::String>,
-    pub(crate) algorithm_image: std::option::Option<crate::types::AlgorithmImage>,
-    pub(crate) default_hyper_parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) algorithm_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) algorithm_image: ::std::option::Option<crate::types::AlgorithmImage>,
+    pub(crate) default_hyper_parameters: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     pub(crate) default_hyper_parameter_ranges:
-        std::option::Option<crate::types::DefaultHyperParameterRanges>,
-    pub(crate) default_resource_config:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) training_input_mode: std::option::Option<std::string::String>,
-    pub(crate) role_arn: std::option::Option<std::string::String>,
-    pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_updated_date_time: std::option::Option<aws_smithy_types::DateTime>,
+        ::std::option::Option<crate::types::DefaultHyperParameterRanges>,
+    pub(crate) default_resource_config: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) training_input_mode: ::std::option::Option<::std::string::String>,
+    pub(crate) role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_updated_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl AlgorithmBuilder {
     /// <p>The name of the algorithm.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the algorithm.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the algorithm.</p>
-    pub fn algorithm_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.algorithm_arn = Some(input.into());
+    pub fn algorithm_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.algorithm_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the algorithm.</p>
-    pub fn set_algorithm_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_algorithm_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.algorithm_arn = input;
         self
     }
     /// <p>The URI of the Docker container for the algorithm image.</p>
     pub fn algorithm_image(mut self, input: crate::types::AlgorithmImage) -> Self {
-        self.algorithm_image = Some(input);
+        self.algorithm_image = ::std::option::Option::Some(input);
         self
     }
     /// <p>The URI of the Docker container for the algorithm image.</p>
     pub fn set_algorithm_image(
         mut self,
-        input: std::option::Option<crate::types::AlgorithmImage>,
+        input: ::std::option::Option<crate::types::AlgorithmImage>,
     ) -> Self {
         self.algorithm_image = input;
         self
@@ -154,19 +168,19 @@ impl AlgorithmBuilder {
     /// <p>Specifies the default hyperparameters.</p>
     pub fn default_hyper_parameters(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.default_hyper_parameters.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.default_hyper_parameters = Some(hash_map);
+        self.default_hyper_parameters = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Specifies the default hyperparameters.</p>
     pub fn set_default_hyper_parameters(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.default_hyper_parameters = input;
@@ -177,13 +191,13 @@ impl AlgorithmBuilder {
         mut self,
         input: crate::types::DefaultHyperParameterRanges,
     ) -> Self {
-        self.default_hyper_parameter_ranges = Some(input);
+        self.default_hyper_parameter_ranges = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the default hyperparameters, their ranges, and whether they are tunable. A tunable hyperparameter can have its value determined during hyperparameter optimization (HPO).</p>
     pub fn set_default_hyper_parameter_ranges(
         mut self,
-        input: std::option::Option<crate::types::DefaultHyperParameterRanges>,
+        input: ::std::option::Option<crate::types::DefaultHyperParameterRanges>,
     ) -> Self {
         self.default_hyper_parameter_ranges = input;
         self
@@ -195,69 +209,72 @@ impl AlgorithmBuilder {
     /// <p>Specifies the default maximum number of training jobs and parallel training jobs.</p>
     pub fn default_resource_config(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.default_resource_config.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.default_resource_config = Some(hash_map);
+        self.default_resource_config = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Specifies the default maximum number of training jobs and parallel training jobs.</p>
     pub fn set_default_resource_config(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.default_resource_config = input;
         self
     }
     /// <p>The training input mode.</p>
-    pub fn training_input_mode(mut self, input: impl Into<std::string::String>) -> Self {
-        self.training_input_mode = Some(input.into());
+    pub fn training_input_mode(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.training_input_mode = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The training input mode.</p>
     pub fn set_training_input_mode(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.training_input_mode = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the role.</p>
-    pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.role_arn = Some(input.into());
+    pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the role.</p>
-    pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
     /// <p>The date and time (in Unix time) that the algorithm was created.</p>
-    pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_date_time = Some(input);
+    pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_date_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time (in Unix time) that the algorithm was created.</p>
     pub fn set_creation_date_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_date_time = input;
         self
     }
     /// <p>The date and time (in Unix time) that the algorithm was last updated.</p>
-    pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_updated_date_time = Some(input);
+    pub fn last_updated_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_updated_date_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time (in Unix time) that the algorithm was last updated.</p>
     pub fn set_last_updated_date_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_updated_date_time = input;
         self

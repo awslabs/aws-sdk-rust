@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteResolverEndpoint`](crate::operation::delete_resolver_endpoint::builders::DeleteResolverEndpointFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resolver_endpoint_id(impl Into<String>)`](crate::operation::delete_resolver_endpoint::builders::DeleteResolverEndpointFluentBuilder::resolver_endpoint_id) / [`set_resolver_endpoint_id(Option<String>)`](crate::operation::delete_resolver_endpoint::builders::DeleteResolverEndpointFluentBuilder::set_resolver_endpoint_id): <p>The ID of the Resolver endpoint that you want to delete.</p>
+    ///   - [`resolver_endpoint_id(impl ::std::convert::Into<String>)`](crate::operation::delete_resolver_endpoint::builders::DeleteResolverEndpointFluentBuilder::resolver_endpoint_id) / [`set_resolver_endpoint_id(Option<String>)`](crate::operation::delete_resolver_endpoint::builders::DeleteResolverEndpointFluentBuilder::set_resolver_endpoint_id): <p>The ID of the Resolver endpoint that you want to delete.</p>
     /// - On success, responds with [`DeleteResolverEndpointOutput`](crate::operation::delete_resolver_endpoint::DeleteResolverEndpointOutput) with field(s):
     ///   - [`resolver_endpoint(Option<ResolverEndpoint>)`](crate::operation::delete_resolver_endpoint::DeleteResolverEndpointOutput::resolver_endpoint): <p>Information about the <code>DeleteResolverEndpoint</code> request, including the status of the request.</p>
     /// - On failure, responds with [`SdkError<DeleteResolverEndpointError>`](crate::operation::delete_resolver_endpoint::DeleteResolverEndpointError)

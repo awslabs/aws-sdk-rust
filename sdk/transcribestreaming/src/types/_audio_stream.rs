@@ -3,7 +3,7 @@
 /// <p>An encoded stream of audio blobs. Audio streams are encoded as either HTTP/2 or WebSocket data frames.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html">Transcribing streaming audio</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum AudioStream {
     /// <p>A blob of audio from your application. Your audio stream consists of one or more audio events.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/event-stream.html">Event stream encoding</a>.</p>
@@ -23,11 +23,11 @@ pub enum AudioStream {
 impl AudioStream {
     /// Tries to convert the enum instance into [`AudioEvent`](crate::types::AudioStream::AudioEvent), extracting the inner [`AudioEvent`](crate::types::AudioEvent).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_audio_event(&self) -> std::result::Result<&crate::types::AudioEvent, &Self> {
+    pub fn as_audio_event(&self) -> ::std::result::Result<&crate::types::AudioEvent, &Self> {
         if let AudioStream::AudioEvent(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`AudioEvent`](crate::types::AudioStream::AudioEvent).
@@ -38,11 +38,11 @@ impl AudioStream {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_configuration_event(
         &self,
-    ) -> std::result::Result<&crate::types::ConfigurationEvent, &Self> {
+    ) -> ::std::result::Result<&crate::types::ConfigurationEvent, &Self> {
         if let AudioStream::ConfigurationEvent(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`ConfigurationEvent`](crate::types::AudioStream::ConfigurationEvent).

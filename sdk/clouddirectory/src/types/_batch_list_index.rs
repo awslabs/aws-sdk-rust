@@ -2,39 +2,39 @@
 
 /// <p>Lists objects attached to the specified index inside a <code>BatchRead</code> operation. For more information, see <code>ListIndex</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchListIndex {
     /// <p>Specifies the ranges of indexed values that you want to query.</p>
     #[doc(hidden)]
     pub ranges_on_indexed_values:
-        std::option::Option<std::vec::Vec<crate::types::ObjectAttributeRange>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ObjectAttributeRange>>,
     /// <p>The reference to the index to list.</p>
     #[doc(hidden)]
-    pub index_reference: std::option::Option<crate::types::ObjectReference>,
+    pub index_reference: ::std::option::Option<crate::types::ObjectReference>,
     /// <p>The maximum number of results to retrieve.</p>
     #[doc(hidden)]
-    pub max_results: std::option::Option<i32>,
+    pub max_results: ::std::option::Option<i32>,
     /// <p>The pagination token.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl BatchListIndex {
     /// <p>Specifies the ranges of indexed values that you want to query.</p>
     pub fn ranges_on_indexed_values(
         &self,
-    ) -> std::option::Option<&[crate::types::ObjectAttributeRange]> {
+    ) -> ::std::option::Option<&[crate::types::ObjectAttributeRange]> {
         self.ranges_on_indexed_values.as_deref()
     }
     /// <p>The reference to the index to list.</p>
-    pub fn index_reference(&self) -> std::option::Option<&crate::types::ObjectReference> {
+    pub fn index_reference(&self) -> ::std::option::Option<&crate::types::ObjectReference> {
         self.index_reference.as_ref()
     }
     /// <p>The maximum number of results to retrieve.</p>
-    pub fn max_results(&self) -> std::option::Option<i32> {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
@@ -47,13 +47,15 @@ impl BatchListIndex {
 
 /// A builder for [`BatchListIndex`](crate::types::BatchListIndex).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BatchListIndexBuilder {
     pub(crate) ranges_on_indexed_values:
-        std::option::Option<std::vec::Vec<crate::types::ObjectAttributeRange>>,
-    pub(crate) index_reference: std::option::Option<crate::types::ObjectReference>,
-    pub(crate) max_results: std::option::Option<i32>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ObjectAttributeRange>>,
+    pub(crate) index_reference: ::std::option::Option<crate::types::ObjectReference>,
+    pub(crate) max_results: ::std::option::Option<i32>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl BatchListIndexBuilder {
     /// Appends an item to `ranges_on_indexed_values`.
@@ -64,47 +66,47 @@ impl BatchListIndexBuilder {
     pub fn ranges_on_indexed_values(mut self, input: crate::types::ObjectAttributeRange) -> Self {
         let mut v = self.ranges_on_indexed_values.unwrap_or_default();
         v.push(input);
-        self.ranges_on_indexed_values = Some(v);
+        self.ranges_on_indexed_values = ::std::option::Option::Some(v);
         self
     }
     /// <p>Specifies the ranges of indexed values that you want to query.</p>
     pub fn set_ranges_on_indexed_values(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ObjectAttributeRange>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ObjectAttributeRange>>,
     ) -> Self {
         self.ranges_on_indexed_values = input;
         self
     }
     /// <p>The reference to the index to list.</p>
     pub fn index_reference(mut self, input: crate::types::ObjectReference) -> Self {
-        self.index_reference = Some(input);
+        self.index_reference = ::std::option::Option::Some(input);
         self
     }
     /// <p>The reference to the index to list.</p>
     pub fn set_index_reference(
         mut self,
-        input: std::option::Option<crate::types::ObjectReference>,
+        input: ::std::option::Option<crate::types::ObjectReference>,
     ) -> Self {
         self.index_reference = input;
         self
     }
     /// <p>The maximum number of results to retrieve.</p>
     pub fn max_results(mut self, input: i32) -> Self {
-        self.max_results = Some(input);
+        self.max_results = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum number of results to retrieve.</p>
-    pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The pagination token.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

@@ -2,22 +2,22 @@
 
 /// <p>Details about an Amazon AppFlow flow datasource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AppFlowConfig {
     /// <p>An IAM role that gives Amazon Lookout for Metrics permission to access the flow.</p>
     #[doc(hidden)]
-    pub role_arn: std::option::Option<std::string::String>,
+    pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p> name of the flow.</p>
     #[doc(hidden)]
-    pub flow_name: std::option::Option<std::string::String>,
+    pub flow_name: ::std::option::Option<::std::string::String>,
 }
 impl AppFlowConfig {
     /// <p>An IAM role that gives Amazon Lookout for Metrics permission to access the flow.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
     /// <p> name of the flow.</p>
-    pub fn flow_name(&self) -> std::option::Option<&str> {
+    pub fn flow_name(&self) -> ::std::option::Option<&str> {
         self.flow_name.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl AppFlowConfig {
 
 /// A builder for [`AppFlowConfig`](crate::types::AppFlowConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AppFlowConfigBuilder {
-    pub(crate) role_arn: std::option::Option<std::string::String>,
-    pub(crate) flow_name: std::option::Option<std::string::String>,
+    pub(crate) role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) flow_name: ::std::option::Option<::std::string::String>,
 }
 impl AppFlowConfigBuilder {
     /// <p>An IAM role that gives Amazon Lookout for Metrics permission to access the flow.</p>
-    pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.role_arn = Some(input.into());
+    pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An IAM role that gives Amazon Lookout for Metrics permission to access the flow.</p>
-    pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
     /// <p> name of the flow.</p>
-    pub fn flow_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.flow_name = Some(input.into());
+    pub fn flow_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.flow_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> name of the flow.</p>
-    pub fn set_flow_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_flow_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.flow_name = input;
         self
     }

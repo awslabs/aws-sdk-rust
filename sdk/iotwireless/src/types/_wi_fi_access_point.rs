@@ -2,22 +2,22 @@
 
 /// <p>Wi-Fi access point.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WiFiAccessPoint {
     /// <p>Wi-Fi MAC Address.</p>
     #[doc(hidden)]
-    pub mac_address: std::option::Option<std::string::String>,
+    pub mac_address: ::std::option::Option<::std::string::String>,
     /// <p>Received signal strength (dBm) of the WLAN measurement data.</p>
     #[doc(hidden)]
-    pub rss: std::option::Option<i32>,
+    pub rss: ::std::option::Option<i32>,
 }
 impl WiFiAccessPoint {
     /// <p>Wi-Fi MAC Address.</p>
-    pub fn mac_address(&self) -> std::option::Option<&str> {
+    pub fn mac_address(&self) -> ::std::option::Option<&str> {
         self.mac_address.as_deref()
     }
     /// <p>Received signal strength (dBm) of the WLAN measurement data.</p>
-    pub fn rss(&self) -> std::option::Option<i32> {
+    pub fn rss(&self) -> ::std::option::Option<i32> {
         self.rss
     }
 }
@@ -30,29 +30,31 @@ impl WiFiAccessPoint {
 
 /// A builder for [`WiFiAccessPoint`](crate::types::WiFiAccessPoint).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct WiFiAccessPointBuilder {
-    pub(crate) mac_address: std::option::Option<std::string::String>,
-    pub(crate) rss: std::option::Option<i32>,
+    pub(crate) mac_address: ::std::option::Option<::std::string::String>,
+    pub(crate) rss: ::std::option::Option<i32>,
 }
 impl WiFiAccessPointBuilder {
     /// <p>Wi-Fi MAC Address.</p>
-    pub fn mac_address(mut self, input: impl Into<std::string::String>) -> Self {
-        self.mac_address = Some(input.into());
+    pub fn mac_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.mac_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Wi-Fi MAC Address.</p>
-    pub fn set_mac_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_mac_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.mac_address = input;
         self
     }
     /// <p>Received signal strength (dBm) of the WLAN measurement data.</p>
     pub fn rss(mut self, input: i32) -> Self {
-        self.rss = Some(input);
+        self.rss = ::std::option::Option::Some(input);
         self
     }
     /// <p>Received signal strength (dBm) of the WLAN measurement data.</p>
-    pub fn set_rss(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_rss(mut self, input: ::std::option::Option<i32>) -> Self {
         self.rss = input;
         self
     }

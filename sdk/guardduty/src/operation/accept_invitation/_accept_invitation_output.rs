@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[deprecated(note = "This output is deprecated, use AcceptAdministratorInvitationResponse instead")]
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AcceptInvitationOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for AcceptInvitationOutput {
+impl ::aws_http::request_id::RequestId for AcceptInvitationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -21,7 +21,9 @@ impl AcceptInvitationOutput {
 
 /// A builder for [`AcceptInvitationOutput`](crate::operation::accept_invitation::AcceptInvitationOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AcceptInvitationOutputBuilder {
     _request_id: Option<String>,
 }

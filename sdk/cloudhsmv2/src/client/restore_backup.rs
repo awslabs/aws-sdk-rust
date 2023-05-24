@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`RestoreBackup`](crate::operation::restore_backup::builders::RestoreBackupFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`backup_id(impl Into<String>)`](crate::operation::restore_backup::builders::RestoreBackupFluentBuilder::backup_id) / [`set_backup_id(Option<String>)`](crate::operation::restore_backup::builders::RestoreBackupFluentBuilder::set_backup_id): <p>The ID of the backup to be restored. To find the ID of a backup, use the <code>DescribeBackups</code> operation.</p>
+    ///   - [`backup_id(impl ::std::convert::Into<String>)`](crate::operation::restore_backup::builders::RestoreBackupFluentBuilder::backup_id) / [`set_backup_id(Option<String>)`](crate::operation::restore_backup::builders::RestoreBackupFluentBuilder::set_backup_id): <p>The ID of the backup to be restored. To find the ID of a backup, use the <code>DescribeBackups</code> operation.</p>
     /// - On success, responds with [`RestoreBackupOutput`](crate::operation::restore_backup::RestoreBackupOutput) with field(s):
     ///   - [`backup(Option<Backup>)`](crate::operation::restore_backup::RestoreBackupOutput::backup): <p>Information on the <code>Backup</code> object created.</p>
     /// - On failure, responds with [`SdkError<RestoreBackupError>`](crate::operation::restore_backup::RestoreBackupError)

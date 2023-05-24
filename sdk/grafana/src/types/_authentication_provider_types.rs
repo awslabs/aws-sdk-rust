@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum AuthenticationProviderTypes {
     /// Indicates that AMG workspace has AWS SSO enabled as its authentication provider.
@@ -54,7 +54,7 @@ pub enum AuthenticationProviderTypes {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for AuthenticationProviderTypes {
+impl ::std::convert::From<&str> for AuthenticationProviderTypes {
     fn from(s: &str) -> Self {
         match s {
             "AWS_SSO" => AuthenticationProviderTypes::AwsSso,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for AuthenticationProviderTypes {
         }
     }
 }
-impl std::str::FromStr for AuthenticationProviderTypes {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for AuthenticationProviderTypes {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AuthenticationProviderTypes::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(AuthenticationProviderTypes::from(s))
     }
 }
 impl AuthenticationProviderTypes {
@@ -86,7 +86,7 @@ impl AuthenticationProviderTypes {
         &["AWS_SSO", "SAML"]
     }
 }
-impl AsRef<str> for AuthenticationProviderTypes {
+impl ::std::convert::AsRef<str> for AuthenticationProviderTypes {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

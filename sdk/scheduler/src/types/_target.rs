@@ -2,83 +2,83 @@
 
 /// <p>The schedule's target. EventBridge Scheduler supports templated target that invoke common API operations, as well as universal targets that you can customize to invoke over 6,000 API operations across more than 270 services. You can only specify one templated or universal target for a schedule.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Target {
     /// <p>The Amazon Resource Name (ARN) of the target.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that EventBridge Scheduler will use for this target when the schedule is invoked.</p>
     #[doc(hidden)]
-    pub role_arn: std::option::Option<std::string::String>,
+    pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>An object that contains information about an Amazon SQS queue that EventBridge Scheduler uses as a dead-letter queue for your schedule. If specified, EventBridge Scheduler delivers failed events that could not be successfully delivered to a target to the queue.</p>
     #[doc(hidden)]
-    pub dead_letter_config: std::option::Option<crate::types::DeadLetterConfig>,
+    pub dead_letter_config: ::std::option::Option<crate::types::DeadLetterConfig>,
     /// <p>A <code>RetryPolicy</code> object that includes information about the retry policy settings, including the maximum age of an event, and the maximum number of times EventBridge Scheduler will try to deliver the event to a target.</p>
     #[doc(hidden)]
-    pub retry_policy: std::option::Option<crate::types::RetryPolicy>,
+    pub retry_policy: ::std::option::Option<crate::types::RetryPolicy>,
     /// <p>The text, or well-formed JSON, passed to the target. If you are configuring a templated Lambda, AWS Step Functions, or Amazon EventBridge target, the input must be a well-formed JSON. For all other target types, a JSON is not required. If you do not specify anything for this field, EventBridge Scheduler delivers a default notification to the target.</p>
     #[doc(hidden)]
-    pub input: std::option::Option<std::string::String>,
+    pub input: ::std::option::Option<::std::string::String>,
     /// <p>The templated target type for the Amazon ECS <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html"> <code>RunTask</code> </a> API operation.</p>
     #[doc(hidden)]
-    pub ecs_parameters: std::option::Option<crate::types::EcsParameters>,
+    pub ecs_parameters: ::std::option::Option<crate::types::EcsParameters>,
     /// <p>The templated target type for the EventBridge <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutEvents.html"> <code>PutEvents</code> </a> API operation.</p>
     #[doc(hidden)]
-    pub event_bridge_parameters: std::option::Option<crate::types::EventBridgeParameters>,
+    pub event_bridge_parameters: ::std::option::Option<crate::types::EventBridgeParameters>,
     /// <p>The templated target type for the Amazon Kinesis <a href="kinesis/latest/APIReference/API_PutRecord.html"> <code>PutRecord</code> </a> API operation.</p>
     #[doc(hidden)]
-    pub kinesis_parameters: std::option::Option<crate::types::KinesisParameters>,
+    pub kinesis_parameters: ::std::option::Option<crate::types::KinesisParameters>,
     /// <p>The templated target type for the Amazon SageMaker <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StartPipelineExecution.html"> <code>StartPipelineExecution</code> </a> API operation.</p>
     #[doc(hidden)]
     pub sage_maker_pipeline_parameters:
-        std::option::Option<crate::types::SageMakerPipelineParameters>,
+        ::std::option::Option<crate::types::SageMakerPipelineParameters>,
     /// <p>The templated target type for the Amazon SQS <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SendMessage.html"> <code>SendMessage</code> </a> API operation. Contains the message group ID to use when the target is a FIFO queue. If you specify an Amazon SQS FIFO queue as a target, the queue must have content-based deduplication enabled. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html">Using the Amazon SQS message deduplication ID</a> in the <i>Amazon SQS Developer Guide</i>.</p>
     #[doc(hidden)]
-    pub sqs_parameters: std::option::Option<crate::types::SqsParameters>,
+    pub sqs_parameters: ::std::option::Option<crate::types::SqsParameters>,
 }
 impl Target {
     /// <p>The Amazon Resource Name (ARN) of the target.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that EventBridge Scheduler will use for this target when the schedule is invoked.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
     /// <p>An object that contains information about an Amazon SQS queue that EventBridge Scheduler uses as a dead-letter queue for your schedule. If specified, EventBridge Scheduler delivers failed events that could not be successfully delivered to a target to the queue.</p>
-    pub fn dead_letter_config(&self) -> std::option::Option<&crate::types::DeadLetterConfig> {
+    pub fn dead_letter_config(&self) -> ::std::option::Option<&crate::types::DeadLetterConfig> {
         self.dead_letter_config.as_ref()
     }
     /// <p>A <code>RetryPolicy</code> object that includes information about the retry policy settings, including the maximum age of an event, and the maximum number of times EventBridge Scheduler will try to deliver the event to a target.</p>
-    pub fn retry_policy(&self) -> std::option::Option<&crate::types::RetryPolicy> {
+    pub fn retry_policy(&self) -> ::std::option::Option<&crate::types::RetryPolicy> {
         self.retry_policy.as_ref()
     }
     /// <p>The text, or well-formed JSON, passed to the target. If you are configuring a templated Lambda, AWS Step Functions, or Amazon EventBridge target, the input must be a well-formed JSON. For all other target types, a JSON is not required. If you do not specify anything for this field, EventBridge Scheduler delivers a default notification to the target.</p>
-    pub fn input(&self) -> std::option::Option<&str> {
+    pub fn input(&self) -> ::std::option::Option<&str> {
         self.input.as_deref()
     }
     /// <p>The templated target type for the Amazon ECS <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html"> <code>RunTask</code> </a> API operation.</p>
-    pub fn ecs_parameters(&self) -> std::option::Option<&crate::types::EcsParameters> {
+    pub fn ecs_parameters(&self) -> ::std::option::Option<&crate::types::EcsParameters> {
         self.ecs_parameters.as_ref()
     }
     /// <p>The templated target type for the EventBridge <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutEvents.html"> <code>PutEvents</code> </a> API operation.</p>
     pub fn event_bridge_parameters(
         &self,
-    ) -> std::option::Option<&crate::types::EventBridgeParameters> {
+    ) -> ::std::option::Option<&crate::types::EventBridgeParameters> {
         self.event_bridge_parameters.as_ref()
     }
     /// <p>The templated target type for the Amazon Kinesis <a href="kinesis/latest/APIReference/API_PutRecord.html"> <code>PutRecord</code> </a> API operation.</p>
-    pub fn kinesis_parameters(&self) -> std::option::Option<&crate::types::KinesisParameters> {
+    pub fn kinesis_parameters(&self) -> ::std::option::Option<&crate::types::KinesisParameters> {
         self.kinesis_parameters.as_ref()
     }
     /// <p>The templated target type for the Amazon SageMaker <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StartPipelineExecution.html"> <code>StartPipelineExecution</code> </a> API operation.</p>
     pub fn sage_maker_pipeline_parameters(
         &self,
-    ) -> std::option::Option<&crate::types::SageMakerPipelineParameters> {
+    ) -> ::std::option::Option<&crate::types::SageMakerPipelineParameters> {
         self.sage_maker_pipeline_parameters.as_ref()
     }
     /// <p>The templated target type for the Amazon SQS <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SendMessage.html"> <code>SendMessage</code> </a> API operation. Contains the message group ID to use when the target is a FIFO queue. If you specify an Amazon SQS FIFO queue as a target, the queue must have content-based deduplication enabled. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html">Using the Amazon SQS message deduplication ID</a> in the <i>Amazon SQS Developer Guide</i>.</p>
-    pub fn sqs_parameters(&self) -> std::option::Option<&crate::types::SqsParameters> {
+    pub fn sqs_parameters(&self) -> ::std::option::Option<&crate::types::SqsParameters> {
         self.sqs_parameters.as_ref()
     }
 }
@@ -91,112 +91,114 @@ impl Target {
 
 /// A builder for [`Target`](crate::types::Target).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TargetBuilder {
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) role_arn: std::option::Option<std::string::String>,
-    pub(crate) dead_letter_config: std::option::Option<crate::types::DeadLetterConfig>,
-    pub(crate) retry_policy: std::option::Option<crate::types::RetryPolicy>,
-    pub(crate) input: std::option::Option<std::string::String>,
-    pub(crate) ecs_parameters: std::option::Option<crate::types::EcsParameters>,
-    pub(crate) event_bridge_parameters: std::option::Option<crate::types::EventBridgeParameters>,
-    pub(crate) kinesis_parameters: std::option::Option<crate::types::KinesisParameters>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) dead_letter_config: ::std::option::Option<crate::types::DeadLetterConfig>,
+    pub(crate) retry_policy: ::std::option::Option<crate::types::RetryPolicy>,
+    pub(crate) input: ::std::option::Option<::std::string::String>,
+    pub(crate) ecs_parameters: ::std::option::Option<crate::types::EcsParameters>,
+    pub(crate) event_bridge_parameters: ::std::option::Option<crate::types::EventBridgeParameters>,
+    pub(crate) kinesis_parameters: ::std::option::Option<crate::types::KinesisParameters>,
     pub(crate) sage_maker_pipeline_parameters:
-        std::option::Option<crate::types::SageMakerPipelineParameters>,
-    pub(crate) sqs_parameters: std::option::Option<crate::types::SqsParameters>,
+        ::std::option::Option<crate::types::SageMakerPipelineParameters>,
+    pub(crate) sqs_parameters: ::std::option::Option<crate::types::SqsParameters>,
 }
 impl TargetBuilder {
     /// <p>The Amazon Resource Name (ARN) of the target.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the target.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that EventBridge Scheduler will use for this target when the schedule is invoked.</p>
-    pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.role_arn = Some(input.into());
+    pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that EventBridge Scheduler will use for this target when the schedule is invoked.</p>
-    pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
     /// <p>An object that contains information about an Amazon SQS queue that EventBridge Scheduler uses as a dead-letter queue for your schedule. If specified, EventBridge Scheduler delivers failed events that could not be successfully delivered to a target to the queue.</p>
     pub fn dead_letter_config(mut self, input: crate::types::DeadLetterConfig) -> Self {
-        self.dead_letter_config = Some(input);
+        self.dead_letter_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that contains information about an Amazon SQS queue that EventBridge Scheduler uses as a dead-letter queue for your schedule. If specified, EventBridge Scheduler delivers failed events that could not be successfully delivered to a target to the queue.</p>
     pub fn set_dead_letter_config(
         mut self,
-        input: std::option::Option<crate::types::DeadLetterConfig>,
+        input: ::std::option::Option<crate::types::DeadLetterConfig>,
     ) -> Self {
         self.dead_letter_config = input;
         self
     }
     /// <p>A <code>RetryPolicy</code> object that includes information about the retry policy settings, including the maximum age of an event, and the maximum number of times EventBridge Scheduler will try to deliver the event to a target.</p>
     pub fn retry_policy(mut self, input: crate::types::RetryPolicy) -> Self {
-        self.retry_policy = Some(input);
+        self.retry_policy = ::std::option::Option::Some(input);
         self
     }
     /// <p>A <code>RetryPolicy</code> object that includes information about the retry policy settings, including the maximum age of an event, and the maximum number of times EventBridge Scheduler will try to deliver the event to a target.</p>
     pub fn set_retry_policy(
         mut self,
-        input: std::option::Option<crate::types::RetryPolicy>,
+        input: ::std::option::Option<crate::types::RetryPolicy>,
     ) -> Self {
         self.retry_policy = input;
         self
     }
     /// <p>The text, or well-formed JSON, passed to the target. If you are configuring a templated Lambda, AWS Step Functions, or Amazon EventBridge target, the input must be a well-formed JSON. For all other target types, a JSON is not required. If you do not specify anything for this field, EventBridge Scheduler delivers a default notification to the target.</p>
-    pub fn input(mut self, input: impl Into<std::string::String>) -> Self {
-        self.input = Some(input.into());
+    pub fn input(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.input = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The text, or well-formed JSON, passed to the target. If you are configuring a templated Lambda, AWS Step Functions, or Amazon EventBridge target, the input must be a well-formed JSON. For all other target types, a JSON is not required. If you do not specify anything for this field, EventBridge Scheduler delivers a default notification to the target.</p>
-    pub fn set_input(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_input(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.input = input;
         self
     }
     /// <p>The templated target type for the Amazon ECS <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html"> <code>RunTask</code> </a> API operation.</p>
     pub fn ecs_parameters(mut self, input: crate::types::EcsParameters) -> Self {
-        self.ecs_parameters = Some(input);
+        self.ecs_parameters = ::std::option::Option::Some(input);
         self
     }
     /// <p>The templated target type for the Amazon ECS <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html"> <code>RunTask</code> </a> API operation.</p>
     pub fn set_ecs_parameters(
         mut self,
-        input: std::option::Option<crate::types::EcsParameters>,
+        input: ::std::option::Option<crate::types::EcsParameters>,
     ) -> Self {
         self.ecs_parameters = input;
         self
     }
     /// <p>The templated target type for the EventBridge <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutEvents.html"> <code>PutEvents</code> </a> API operation.</p>
     pub fn event_bridge_parameters(mut self, input: crate::types::EventBridgeParameters) -> Self {
-        self.event_bridge_parameters = Some(input);
+        self.event_bridge_parameters = ::std::option::Option::Some(input);
         self
     }
     /// <p>The templated target type for the EventBridge <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutEvents.html"> <code>PutEvents</code> </a> API operation.</p>
     pub fn set_event_bridge_parameters(
         mut self,
-        input: std::option::Option<crate::types::EventBridgeParameters>,
+        input: ::std::option::Option<crate::types::EventBridgeParameters>,
     ) -> Self {
         self.event_bridge_parameters = input;
         self
     }
     /// <p>The templated target type for the Amazon Kinesis <a href="kinesis/latest/APIReference/API_PutRecord.html"> <code>PutRecord</code> </a> API operation.</p>
     pub fn kinesis_parameters(mut self, input: crate::types::KinesisParameters) -> Self {
-        self.kinesis_parameters = Some(input);
+        self.kinesis_parameters = ::std::option::Option::Some(input);
         self
     }
     /// <p>The templated target type for the Amazon Kinesis <a href="kinesis/latest/APIReference/API_PutRecord.html"> <code>PutRecord</code> </a> API operation.</p>
     pub fn set_kinesis_parameters(
         mut self,
-        input: std::option::Option<crate::types::KinesisParameters>,
+        input: ::std::option::Option<crate::types::KinesisParameters>,
     ) -> Self {
         self.kinesis_parameters = input;
         self
@@ -206,26 +208,26 @@ impl TargetBuilder {
         mut self,
         input: crate::types::SageMakerPipelineParameters,
     ) -> Self {
-        self.sage_maker_pipeline_parameters = Some(input);
+        self.sage_maker_pipeline_parameters = ::std::option::Option::Some(input);
         self
     }
     /// <p>The templated target type for the Amazon SageMaker <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StartPipelineExecution.html"> <code>StartPipelineExecution</code> </a> API operation.</p>
     pub fn set_sage_maker_pipeline_parameters(
         mut self,
-        input: std::option::Option<crate::types::SageMakerPipelineParameters>,
+        input: ::std::option::Option<crate::types::SageMakerPipelineParameters>,
     ) -> Self {
         self.sage_maker_pipeline_parameters = input;
         self
     }
     /// <p>The templated target type for the Amazon SQS <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SendMessage.html"> <code>SendMessage</code> </a> API operation. Contains the message group ID to use when the target is a FIFO queue. If you specify an Amazon SQS FIFO queue as a target, the queue must have content-based deduplication enabled. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html">Using the Amazon SQS message deduplication ID</a> in the <i>Amazon SQS Developer Guide</i>.</p>
     pub fn sqs_parameters(mut self, input: crate::types::SqsParameters) -> Self {
-        self.sqs_parameters = Some(input);
+        self.sqs_parameters = ::std::option::Option::Some(input);
         self
     }
     /// <p>The templated target type for the Amazon SQS <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SendMessage.html"> <code>SendMessage</code> </a> API operation. Contains the message group ID to use when the target is a FIFO queue. If you specify an Amazon SQS FIFO queue as a target, the queue must have content-based deduplication enabled. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html">Using the Amazon SQS message deduplication ID</a> in the <i>Amazon SQS Developer Guide</i>.</p>
     pub fn set_sqs_parameters(
         mut self,
-        input: std::option::Option<crate::types::SqsParameters>,
+        input: ::std::option::Option<crate::types::SqsParameters>,
     ) -> Self {
         self.sqs_parameters = input;
         self

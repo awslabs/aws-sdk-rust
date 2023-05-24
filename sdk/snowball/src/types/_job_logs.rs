@@ -5,29 +5,29 @@
 /// <p>The job report provides you insight into the state of your Amazon S3 data transfer. The report includes details about your job or job part for your records.</p>
 /// <p>For deeper visibility into the status of your transferred objects, you can look at the two associated logs: a success log and a failure log. The logs are saved in comma-separated value (CSV) format, and the name of each log includes the ID of the job or job part that the log describes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobLogs {
     /// <p>A link to an Amazon S3 presigned URL where the job completion report is located.</p>
     #[doc(hidden)]
-    pub job_completion_report_uri: std::option::Option<std::string::String>,
+    pub job_completion_report_uri: ::std::option::Option<::std::string::String>,
     /// <p>A link to an Amazon S3 presigned URL where the job success log is located.</p>
     #[doc(hidden)]
-    pub job_success_log_uri: std::option::Option<std::string::String>,
+    pub job_success_log_uri: ::std::option::Option<::std::string::String>,
     /// <p>A link to an Amazon S3 presigned URL where the job failure log is located.</p>
     #[doc(hidden)]
-    pub job_failure_log_uri: std::option::Option<std::string::String>,
+    pub job_failure_log_uri: ::std::option::Option<::std::string::String>,
 }
 impl JobLogs {
     /// <p>A link to an Amazon S3 presigned URL where the job completion report is located.</p>
-    pub fn job_completion_report_uri(&self) -> std::option::Option<&str> {
+    pub fn job_completion_report_uri(&self) -> ::std::option::Option<&str> {
         self.job_completion_report_uri.as_deref()
     }
     /// <p>A link to an Amazon S3 presigned URL where the job success log is located.</p>
-    pub fn job_success_log_uri(&self) -> std::option::Option<&str> {
+    pub fn job_success_log_uri(&self) -> ::std::option::Option<&str> {
         self.job_success_log_uri.as_deref()
     }
     /// <p>A link to an Amazon S3 presigned URL where the job failure log is located.</p>
-    pub fn job_failure_log_uri(&self) -> std::option::Option<&str> {
+    pub fn job_failure_log_uri(&self) -> ::std::option::Option<&str> {
         self.job_failure_log_uri.as_deref()
     }
 }
@@ -40,48 +40,59 @@ impl JobLogs {
 
 /// A builder for [`JobLogs`](crate::types::JobLogs).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct JobLogsBuilder {
-    pub(crate) job_completion_report_uri: std::option::Option<std::string::String>,
-    pub(crate) job_success_log_uri: std::option::Option<std::string::String>,
-    pub(crate) job_failure_log_uri: std::option::Option<std::string::String>,
+    pub(crate) job_completion_report_uri: ::std::option::Option<::std::string::String>,
+    pub(crate) job_success_log_uri: ::std::option::Option<::std::string::String>,
+    pub(crate) job_failure_log_uri: ::std::option::Option<::std::string::String>,
 }
 impl JobLogsBuilder {
     /// <p>A link to an Amazon S3 presigned URL where the job completion report is located.</p>
-    pub fn job_completion_report_uri(mut self, input: impl Into<std::string::String>) -> Self {
-        self.job_completion_report_uri = Some(input.into());
+    pub fn job_completion_report_uri(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.job_completion_report_uri = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A link to an Amazon S3 presigned URL where the job completion report is located.</p>
     pub fn set_job_completion_report_uri(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.job_completion_report_uri = input;
         self
     }
     /// <p>A link to an Amazon S3 presigned URL where the job success log is located.</p>
-    pub fn job_success_log_uri(mut self, input: impl Into<std::string::String>) -> Self {
-        self.job_success_log_uri = Some(input.into());
+    pub fn job_success_log_uri(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.job_success_log_uri = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A link to an Amazon S3 presigned URL where the job success log is located.</p>
     pub fn set_job_success_log_uri(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.job_success_log_uri = input;
         self
     }
     /// <p>A link to an Amazon S3 presigned URL where the job failure log is located.</p>
-    pub fn job_failure_log_uri(mut self, input: impl Into<std::string::String>) -> Self {
-        self.job_failure_log_uri = Some(input.into());
+    pub fn job_failure_log_uri(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.job_failure_log_uri = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A link to an Amazon S3 presigned URL where the job failure log is located.</p>
     pub fn set_job_failure_log_uri(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.job_failure_log_uri = input;
         self

@@ -6,29 +6,29 @@ pub use crate::operation::update_graphql_api::_update_graphql_api_input::UpdateG
 /// Fluent builder constructing a request to `UpdateGraphqlApi`.
 ///
 /// <p>Updates a <code>GraphqlApi</code> object.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateGraphqlApiFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::update_graphql_api::builders::UpdateGraphqlApiInputBuilder,
 }
 impl UpdateGraphqlApiFluentBuilder {
     /// Creates a new `UpdateGraphqlApi`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_graphql_api::UpdateGraphqlApi,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_graphql_api::UpdateGraphqlApiError,
         >,
     > {
@@ -36,30 +36,33 @@ impl UpdateGraphqlApiFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_graphql_api::UpdateGraphqlApiOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_graphql_api::UpdateGraphqlApiError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,31 +75,31 @@ impl UpdateGraphqlApiFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_graphql_api::UpdateGraphqlApiOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_graphql_api::UpdateGraphqlApiError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The API ID.</p>
-    pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.api_id(input.into());
         self
     }
     /// <p>The API ID.</p>
-    pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_api_id(input);
         self
     }
     /// <p>The new name for the <code>GraphqlApi</code> object.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// <p>The new name for the <code>GraphqlApi</code> object.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
@@ -106,7 +109,7 @@ impl UpdateGraphqlApiFluentBuilder {
         self
     }
     /// <p>The Amazon CloudWatch Logs configuration for the <code>GraphqlApi</code> object.</p>
-    pub fn set_log_config(mut self, input: std::option::Option<crate::types::LogConfig>) -> Self {
+    pub fn set_log_config(mut self, input: ::std::option::Option<crate::types::LogConfig>) -> Self {
         self.inner = self.inner.set_log_config(input);
         self
     }
@@ -118,7 +121,7 @@ impl UpdateGraphqlApiFluentBuilder {
     /// <p>The new authentication type for the <code>GraphqlApi</code> object.</p>
     pub fn set_authentication_type(
         mut self,
-        input: std::option::Option<crate::types::AuthenticationType>,
+        input: ::std::option::Option<crate::types::AuthenticationType>,
     ) -> Self {
         self.inner = self.inner.set_authentication_type(input);
         self
@@ -131,7 +134,7 @@ impl UpdateGraphqlApiFluentBuilder {
     /// <p>The new Amazon Cognito user pool configuration for the <code>~GraphqlApi</code> object.</p>
     pub fn set_user_pool_config(
         mut self,
-        input: std::option::Option<crate::types::UserPoolConfig>,
+        input: ::std::option::Option<crate::types::UserPoolConfig>,
     ) -> Self {
         self.inner = self.inner.set_user_pool_config(input);
         self
@@ -144,7 +147,7 @@ impl UpdateGraphqlApiFluentBuilder {
     /// <p>The OpenID Connect configuration for the <code>GraphqlApi</code> object.</p>
     pub fn set_open_id_connect_config(
         mut self,
-        input: std::option::Option<crate::types::OpenIdConnectConfig>,
+        input: ::std::option::Option<crate::types::OpenIdConnectConfig>,
     ) -> Self {
         self.inner = self.inner.set_open_id_connect_config(input);
         self
@@ -164,7 +167,9 @@ impl UpdateGraphqlApiFluentBuilder {
     /// <p>A list of additional authentication providers for the <code>GraphqlApi</code> API.</p>
     pub fn set_additional_authentication_providers(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AdditionalAuthenticationProvider>>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::AdditionalAuthenticationProvider>,
+        >,
     ) -> Self {
         self.inner = self.inner.set_additional_authentication_providers(input);
         self
@@ -175,7 +180,7 @@ impl UpdateGraphqlApiFluentBuilder {
         self
     }
     /// <p>A flag indicating whether to use X-Ray tracing for the <code>GraphqlApi</code>.</p>
-    pub fn set_xray_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_xray_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_xray_enabled(input);
         self
     }
@@ -187,7 +192,7 @@ impl UpdateGraphqlApiFluentBuilder {
     /// <p>Configuration for Lambda function authorization.</p>
     pub fn set_lambda_authorizer_config(
         mut self,
-        input: std::option::Option<crate::types::LambdaAuthorizerConfig>,
+        input: ::std::option::Option<crate::types::LambdaAuthorizerConfig>,
     ) -> Self {
         self.inner = self.inner.set_lambda_authorizer_config(input);
         self

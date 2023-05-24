@@ -2,20 +2,20 @@
 
 /// GetConnectInstanceConfigResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetConnectInstanceConfigOutput {
     /// Instance config object
     #[doc(hidden)]
-    pub connect_instance_config: std::option::Option<crate::types::InstanceConfig>,
+    pub connect_instance_config: ::std::option::Option<crate::types::InstanceConfig>,
     _request_id: Option<String>,
 }
 impl GetConnectInstanceConfigOutput {
     /// Instance config object
-    pub fn connect_instance_config(&self) -> std::option::Option<&crate::types::InstanceConfig> {
+    pub fn connect_instance_config(&self) -> ::std::option::Option<&crate::types::InstanceConfig> {
         self.connect_instance_config.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for GetConnectInstanceConfigOutput {
+impl ::aws_http::request_id::RequestId for GetConnectInstanceConfigOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,21 +29,23 @@ impl GetConnectInstanceConfigOutput {
 
 /// A builder for [`GetConnectInstanceConfigOutput`](crate::operation::get_connect_instance_config::GetConnectInstanceConfigOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetConnectInstanceConfigOutputBuilder {
-    pub(crate) connect_instance_config: std::option::Option<crate::types::InstanceConfig>,
+    pub(crate) connect_instance_config: ::std::option::Option<crate::types::InstanceConfig>,
     _request_id: Option<String>,
 }
 impl GetConnectInstanceConfigOutputBuilder {
     /// Instance config object
     pub fn connect_instance_config(mut self, input: crate::types::InstanceConfig) -> Self {
-        self.connect_instance_config = Some(input);
+        self.connect_instance_config = ::std::option::Option::Some(input);
         self
     }
     /// Instance config object
     pub fn set_connect_instance_config(
         mut self,
-        input: std::option::Option<crate::types::InstanceConfig>,
+        input: ::std::option::Option<crate::types::InstanceConfig>,
     ) -> Self {
         self.connect_instance_config = input;
         self

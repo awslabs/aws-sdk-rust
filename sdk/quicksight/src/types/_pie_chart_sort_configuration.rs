@@ -2,41 +2,42 @@
 
 /// <p>The sort configuration of a pie chart.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PieChartSortConfiguration {
     /// <p>The sort configuration of the category fields.</p>
     #[doc(hidden)]
-    pub category_sort: std::option::Option<std::vec::Vec<crate::types::FieldSortOptions>>,
+    pub category_sort: ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>,
     /// <p>The limit on the number of categories that are displayed in a pie chart.</p>
     #[doc(hidden)]
-    pub category_items_limit: std::option::Option<crate::types::ItemsLimitConfiguration>,
+    pub category_items_limit: ::std::option::Option<crate::types::ItemsLimitConfiguration>,
     /// <p>The sort configuration of the small multiples field.</p>
     #[doc(hidden)]
-    pub small_multiples_sort: std::option::Option<std::vec::Vec<crate::types::FieldSortOptions>>,
+    pub small_multiples_sort:
+        ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>,
     /// <p>The limit on the number of small multiples panels that are displayed.</p>
     #[doc(hidden)]
     pub small_multiples_limit_configuration:
-        std::option::Option<crate::types::ItemsLimitConfiguration>,
+        ::std::option::Option<crate::types::ItemsLimitConfiguration>,
 }
 impl PieChartSortConfiguration {
     /// <p>The sort configuration of the category fields.</p>
-    pub fn category_sort(&self) -> std::option::Option<&[crate::types::FieldSortOptions]> {
+    pub fn category_sort(&self) -> ::std::option::Option<&[crate::types::FieldSortOptions]> {
         self.category_sort.as_deref()
     }
     /// <p>The limit on the number of categories that are displayed in a pie chart.</p>
     pub fn category_items_limit(
         &self,
-    ) -> std::option::Option<&crate::types::ItemsLimitConfiguration> {
+    ) -> ::std::option::Option<&crate::types::ItemsLimitConfiguration> {
         self.category_items_limit.as_ref()
     }
     /// <p>The sort configuration of the small multiples field.</p>
-    pub fn small_multiples_sort(&self) -> std::option::Option<&[crate::types::FieldSortOptions]> {
+    pub fn small_multiples_sort(&self) -> ::std::option::Option<&[crate::types::FieldSortOptions]> {
         self.small_multiples_sort.as_deref()
     }
     /// <p>The limit on the number of small multiples panels that are displayed.</p>
     pub fn small_multiples_limit_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::ItemsLimitConfiguration> {
+    ) -> ::std::option::Option<&crate::types::ItemsLimitConfiguration> {
         self.small_multiples_limit_configuration.as_ref()
     }
 }
@@ -49,14 +50,17 @@ impl PieChartSortConfiguration {
 
 /// A builder for [`PieChartSortConfiguration`](crate::types::PieChartSortConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PieChartSortConfigurationBuilder {
-    pub(crate) category_sort: std::option::Option<std::vec::Vec<crate::types::FieldSortOptions>>,
-    pub(crate) category_items_limit: std::option::Option<crate::types::ItemsLimitConfiguration>,
+    pub(crate) category_sort:
+        ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>,
+    pub(crate) category_items_limit: ::std::option::Option<crate::types::ItemsLimitConfiguration>,
     pub(crate) small_multiples_sort:
-        std::option::Option<std::vec::Vec<crate::types::FieldSortOptions>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>,
     pub(crate) small_multiples_limit_configuration:
-        std::option::Option<crate::types::ItemsLimitConfiguration>,
+        ::std::option::Option<crate::types::ItemsLimitConfiguration>,
 }
 impl PieChartSortConfigurationBuilder {
     /// Appends an item to `category_sort`.
@@ -67,26 +71,26 @@ impl PieChartSortConfigurationBuilder {
     pub fn category_sort(mut self, input: crate::types::FieldSortOptions) -> Self {
         let mut v = self.category_sort.unwrap_or_default();
         v.push(input);
-        self.category_sort = Some(v);
+        self.category_sort = ::std::option::Option::Some(v);
         self
     }
     /// <p>The sort configuration of the category fields.</p>
     pub fn set_category_sort(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::FieldSortOptions>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>,
     ) -> Self {
         self.category_sort = input;
         self
     }
     /// <p>The limit on the number of categories that are displayed in a pie chart.</p>
     pub fn category_items_limit(mut self, input: crate::types::ItemsLimitConfiguration) -> Self {
-        self.category_items_limit = Some(input);
+        self.category_items_limit = ::std::option::Option::Some(input);
         self
     }
     /// <p>The limit on the number of categories that are displayed in a pie chart.</p>
     pub fn set_category_items_limit(
         mut self,
-        input: std::option::Option<crate::types::ItemsLimitConfiguration>,
+        input: ::std::option::Option<crate::types::ItemsLimitConfiguration>,
     ) -> Self {
         self.category_items_limit = input;
         self
@@ -99,13 +103,13 @@ impl PieChartSortConfigurationBuilder {
     pub fn small_multiples_sort(mut self, input: crate::types::FieldSortOptions) -> Self {
         let mut v = self.small_multiples_sort.unwrap_or_default();
         v.push(input);
-        self.small_multiples_sort = Some(v);
+        self.small_multiples_sort = ::std::option::Option::Some(v);
         self
     }
     /// <p>The sort configuration of the small multiples field.</p>
     pub fn set_small_multiples_sort(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::FieldSortOptions>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::FieldSortOptions>>,
     ) -> Self {
         self.small_multiples_sort = input;
         self
@@ -115,13 +119,13 @@ impl PieChartSortConfigurationBuilder {
         mut self,
         input: crate::types::ItemsLimitConfiguration,
     ) -> Self {
-        self.small_multiples_limit_configuration = Some(input);
+        self.small_multiples_limit_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The limit on the number of small multiples panels that are displayed.</p>
     pub fn set_small_multiples_limit_configuration(
         mut self,
-        input: std::option::Option<crate::types::ItemsLimitConfiguration>,
+        input: ::std::option::Option<crate::types::ItemsLimitConfiguration>,
     ) -> Self {
         self.small_multiples_limit_configuration = input;
         self

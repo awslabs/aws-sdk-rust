@@ -2,15 +2,15 @@
 
 /// <p>Describes the authorization configuration for the Amazon Cognito identity pool, provisioned as a part of your auth resource in the Amplify project.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateBackendAuthIdentityPoolConfig {
     /// <p>A boolean value that can be set to allow or disallow guest-level authorization into your Amplify app.</p>
     #[doc(hidden)]
-    pub unauthenticated_login: std::option::Option<bool>,
+    pub unauthenticated_login: ::std::option::Option<bool>,
 }
 impl UpdateBackendAuthIdentityPoolConfig {
     /// <p>A boolean value that can be set to allow or disallow guest-level authorization into your Amplify app.</p>
-    pub fn unauthenticated_login(&self) -> std::option::Option<bool> {
+    pub fn unauthenticated_login(&self) -> ::std::option::Option<bool> {
         self.unauthenticated_login
     }
 }
@@ -23,18 +23,20 @@ impl UpdateBackendAuthIdentityPoolConfig {
 
 /// A builder for [`UpdateBackendAuthIdentityPoolConfig`](crate::types::UpdateBackendAuthIdentityPoolConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateBackendAuthIdentityPoolConfigBuilder {
-    pub(crate) unauthenticated_login: std::option::Option<bool>,
+    pub(crate) unauthenticated_login: ::std::option::Option<bool>,
 }
 impl UpdateBackendAuthIdentityPoolConfigBuilder {
     /// <p>A boolean value that can be set to allow or disallow guest-level authorization into your Amplify app.</p>
     pub fn unauthenticated_login(mut self, input: bool) -> Self {
-        self.unauthenticated_login = Some(input);
+        self.unauthenticated_login = ::std::option::Option::Some(input);
         self
     }
     /// <p>A boolean value that can be set to allow or disallow guest-level authorization into your Amplify app.</p>
-    pub fn set_unauthenticated_login(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_unauthenticated_login(mut self, input: ::std::option::Option<bool>) -> Self {
         self.unauthenticated_login = input;
         self
     }

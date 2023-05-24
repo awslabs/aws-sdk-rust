@@ -3,50 +3,50 @@
 /// <p>Information about a vehicle.</p>
 /// <p>To return this information about vehicles in your account, you can use the API operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VehicleSummary {
     /// <p>The unique ID of the vehicle.</p>
     #[doc(hidden)]
-    pub vehicle_name: std::option::Option<std::string::String>,
+    pub vehicle_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the vehicle.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of a vehicle model (model manifest) associated with the vehicle.</p>
     #[doc(hidden)]
-    pub model_manifest_arn: std::option::Option<std::string::String>,
+    pub model_manifest_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of a decoder manifest associated with the vehicle.</p>
     #[doc(hidden)]
-    pub decoder_manifest_arn: std::option::Option<std::string::String>,
+    pub decoder_manifest_arn: ::std::option::Option<::std::string::String>,
     /// <p>The time the vehicle was created in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
     #[doc(hidden)]
-    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time the vehicle was last updated in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
     #[doc(hidden)]
-    pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_modification_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl VehicleSummary {
     /// <p>The unique ID of the vehicle.</p>
-    pub fn vehicle_name(&self) -> std::option::Option<&str> {
+    pub fn vehicle_name(&self) -> ::std::option::Option<&str> {
         self.vehicle_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the vehicle.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The ARN of a vehicle model (model manifest) associated with the vehicle.</p>
-    pub fn model_manifest_arn(&self) -> std::option::Option<&str> {
+    pub fn model_manifest_arn(&self) -> ::std::option::Option<&str> {
         self.model_manifest_arn.as_deref()
     }
     /// <p>The ARN of a decoder manifest associated with the vehicle.</p>
-    pub fn decoder_manifest_arn(&self) -> std::option::Option<&str> {
+    pub fn decoder_manifest_arn(&self) -> ::std::option::Option<&str> {
         self.decoder_manifest_arn.as_deref()
     }
     /// <p>The time the vehicle was created in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The time the vehicle was last updated in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
-    pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modification_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
     }
 }
@@ -59,84 +59,92 @@ impl VehicleSummary {
 
 /// A builder for [`VehicleSummary`](crate::types::VehicleSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VehicleSummaryBuilder {
-    pub(crate) vehicle_name: std::option::Option<std::string::String>,
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) model_manifest_arn: std::option::Option<std::string::String>,
-    pub(crate) decoder_manifest_arn: std::option::Option<std::string::String>,
-    pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) vehicle_name: ::std::option::Option<::std::string::String>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) model_manifest_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) decoder_manifest_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_modification_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl VehicleSummaryBuilder {
     /// <p>The unique ID of the vehicle.</p>
-    pub fn vehicle_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.vehicle_name = Some(input.into());
+    pub fn vehicle_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.vehicle_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ID of the vehicle.</p>
-    pub fn set_vehicle_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_vehicle_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vehicle_name = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the vehicle.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the vehicle.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// <p>The ARN of a vehicle model (model manifest) associated with the vehicle.</p>
-    pub fn model_manifest_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.model_manifest_arn = Some(input.into());
+    pub fn model_manifest_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.model_manifest_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of a vehicle model (model manifest) associated with the vehicle.</p>
     pub fn set_model_manifest_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.model_manifest_arn = input;
         self
     }
     /// <p>The ARN of a decoder manifest associated with the vehicle.</p>
-    pub fn decoder_manifest_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.decoder_manifest_arn = Some(input.into());
+    pub fn decoder_manifest_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.decoder_manifest_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of a decoder manifest associated with the vehicle.</p>
     pub fn set_decoder_manifest_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.decoder_manifest_arn = input;
         self
     }
     /// <p>The time the vehicle was created in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
-    pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_time = Some(input);
+    pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time the vehicle was created in seconds since epoch (January 1, 1970 at midnight UTC time).</p>
     pub fn set_creation_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_time = input;
         self
     }
     /// <p>The time the vehicle was last updated in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
-    pub fn last_modification_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_modification_time = Some(input);
+    pub fn last_modification_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_modification_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time the vehicle was last updated in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
     pub fn set_last_modification_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_modification_time = input;
         self

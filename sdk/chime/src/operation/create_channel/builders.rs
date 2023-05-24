@@ -9,56 +9,59 @@ pub use crate::operation::create_channel::_create_channel_input::CreateChannelIn
 /// <p> <b>Restriction</b>: You can't change a channel's privacy.</p> <note>
 /// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
 /// </note>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateChannelFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_channel::builders::CreateChannelInputBuilder,
 }
 impl CreateChannelFluentBuilder {
     /// Creates a new `CreateChannel`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_channel::CreateChannel,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_channel::CreateChannelError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_channel::CreateChannelError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_channel::CreateChannelOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_channel::CreateChannelError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_channel::CreateChannelError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -71,29 +74,35 @@ impl CreateChannelFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_channel::CreateChannelOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_channel::CreateChannelError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_channel::CreateChannelError>,
     > {
         self.send_middleware().await
     }
     /// <p>The ARN of the channel request.</p>
-    pub fn app_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn app_instance_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.app_instance_arn(input.into());
         self
     }
     /// <p>The ARN of the channel request.</p>
-    pub fn set_app_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_app_instance_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_app_instance_arn(input);
         self
     }
     /// <p>The name of the channel.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// <p>The name of the channel.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
@@ -103,7 +112,7 @@ impl CreateChannelFluentBuilder {
         self
     }
     /// <p>The channel mode: <code>UNRESTRICTED</code> or <code>RESTRICTED</code>. Administrators, moderators, and channel members can add themselves and other members to unrestricted channels. Only administrators and moderators can add members to restricted channels.</p>
-    pub fn set_mode(mut self, input: std::option::Option<crate::types::ChannelMode>) -> Self {
+    pub fn set_mode(mut self, input: ::std::option::Option<crate::types::ChannelMode>) -> Self {
         self.inner = self.inner.set_mode(input);
         self
     }
@@ -113,29 +122,35 @@ impl CreateChannelFluentBuilder {
         self
     }
     /// <p>The channel's privacy level: <code>PUBLIC</code> or <code>PRIVATE</code>. Private channels aren't discoverable by users outside the channel. Public channels are discoverable by anyone in the <code>AppInstance</code>.</p>
-    pub fn set_privacy(mut self, input: std::option::Option<crate::types::ChannelPrivacy>) -> Self {
+    pub fn set_privacy(
+        mut self,
+        input: ::std::option::Option<crate::types::ChannelPrivacy>,
+    ) -> Self {
         self.inner = self.inner.set_privacy(input);
         self
     }
     /// <p>The metadata of the creation request. Limited to 1KB and UTF-8.</p>
-    pub fn metadata(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn metadata(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.metadata(input.into());
         self
     }
     /// <p>The metadata of the creation request. Limited to 1KB and UTF-8.</p>
-    pub fn set_metadata(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_metadata(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_metadata(input);
         self
     }
     /// <p>The client token for the request. An <code>Idempotency</code> token.</p>
-    pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn client_request_token(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>The client token for the request. An <code>Idempotency</code> token.</p>
     pub fn set_client_request_token(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
@@ -152,18 +167,18 @@ impl CreateChannelFluentBuilder {
     /// <p>The tags for the creation request.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-    pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn chime_bearer(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.chime_bearer(input.into());
         self
     }
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-    pub fn set_chime_bearer(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_chime_bearer(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_chime_bearer(input);
         self
     }

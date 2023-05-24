@@ -2,36 +2,36 @@
 
 /// <p>The input for the ListPolicyPrincipals operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPolicyPrincipalsInput {
     /// <p>The policy name.</p>
     #[doc(hidden)]
-    pub policy_name: std::option::Option<std::string::String>,
+    pub policy_name: ::std::option::Option<::std::string::String>,
     /// <p>The marker for the next set of results.</p>
     #[doc(hidden)]
-    pub marker: std::option::Option<std::string::String>,
+    pub marker: ::std::option::Option<::std::string::String>,
     /// <p>The result page size.</p>
     #[doc(hidden)]
-    pub page_size: std::option::Option<i32>,
+    pub page_size: ::std::option::Option<i32>,
     /// <p>Specifies the order for results. If true, the results are returned in ascending creation order.</p>
     #[doc(hidden)]
-    pub ascending_order: std::option::Option<bool>,
+    pub ascending_order: ::std::option::Option<bool>,
 }
 impl ListPolicyPrincipalsInput {
     /// <p>The policy name.</p>
-    pub fn policy_name(&self) -> std::option::Option<&str> {
+    pub fn policy_name(&self) -> ::std::option::Option<&str> {
         self.policy_name.as_deref()
     }
     /// <p>The marker for the next set of results.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
     /// <p>The result page size.</p>
-    pub fn page_size(&self) -> std::option::Option<i32> {
+    pub fn page_size(&self) -> ::std::option::Option<i32> {
         self.page_size
     }
     /// <p>Specifies the order for results. If true, the results are returned in ascending creation order.</p>
-    pub fn ascending_order(&self) -> std::option::Option<bool> {
+    pub fn ascending_order(&self) -> ::std::option::Option<bool> {
         self.ascending_order
     }
 }
@@ -45,62 +45,64 @@ impl ListPolicyPrincipalsInput {
 
 /// A builder for [`ListPolicyPrincipalsInput`](crate::operation::list_policy_principals::ListPolicyPrincipalsInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListPolicyPrincipalsInputBuilder {
-    pub(crate) policy_name: std::option::Option<std::string::String>,
-    pub(crate) marker: std::option::Option<std::string::String>,
-    pub(crate) page_size: std::option::Option<i32>,
-    pub(crate) ascending_order: std::option::Option<bool>,
+    pub(crate) policy_name: ::std::option::Option<::std::string::String>,
+    pub(crate) marker: ::std::option::Option<::std::string::String>,
+    pub(crate) page_size: ::std::option::Option<i32>,
+    pub(crate) ascending_order: ::std::option::Option<bool>,
 }
 impl ListPolicyPrincipalsInputBuilder {
     /// <p>The policy name.</p>
-    pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.policy_name = Some(input.into());
+    pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.policy_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The policy name.</p>
-    pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_name = input;
         self
     }
     /// <p>The marker for the next set of results.</p>
-    pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-        self.marker = Some(input.into());
+    pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The marker for the next set of results.</p>
-    pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
     }
     /// <p>The result page size.</p>
     pub fn page_size(mut self, input: i32) -> Self {
-        self.page_size = Some(input);
+        self.page_size = ::std::option::Option::Some(input);
         self
     }
     /// <p>The result page size.</p>
-    pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.page_size = input;
         self
     }
     /// <p>Specifies the order for results. If true, the results are returned in ascending creation order.</p>
     pub fn ascending_order(mut self, input: bool) -> Self {
-        self.ascending_order = Some(input);
+        self.ascending_order = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the order for results. If true, the results are returned in ascending creation order.</p>
-    pub fn set_ascending_order(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_ascending_order(mut self, input: ::std::option::Option<bool>) -> Self {
         self.ascending_order = input;
         self
     }
     /// Consumes the builder and constructs a [`ListPolicyPrincipalsInput`](crate::operation::list_policy_principals::ListPolicyPrincipalsInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::list_policy_principals::ListPolicyPrincipalsInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::list_policy_principals::ListPolicyPrincipalsInput {
                 policy_name: self.policy_name,
                 marker: self.marker,

@@ -2,31 +2,33 @@
 
 /// <p>Contains the response to a <code>DescribeStackProvisioningParameters</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeStackProvisioningParametersOutput {
     /// <p>The AWS OpsWorks Stacks agent installer's URL.</p>
     #[doc(hidden)]
-    pub agent_installer_url: std::option::Option<std::string::String>,
+    pub agent_installer_url: ::std::option::Option<::std::string::String>,
     /// <p>An embedded object that contains the provisioning parameters.</p>
     #[doc(hidden)]
-    pub parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub parameters: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     _request_id: Option<String>,
 }
 impl DescribeStackProvisioningParametersOutput {
     /// <p>The AWS OpsWorks Stacks agent installer's URL.</p>
-    pub fn agent_installer_url(&self) -> std::option::Option<&str> {
+    pub fn agent_installer_url(&self) -> ::std::option::Option<&str> {
         self.agent_installer_url.as_deref()
     }
     /// <p>An embedded object that contains the provisioning parameters.</p>
     pub fn parameters(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.parameters.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeStackProvisioningParametersOutput {
+impl ::aws_http::request_id::RequestId for DescribeStackProvisioningParametersOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -40,23 +42,29 @@ impl DescribeStackProvisioningParametersOutput {
 
 /// A builder for [`DescribeStackProvisioningParametersOutput`](crate::operation::describe_stack_provisioning_parameters::DescribeStackProvisioningParametersOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeStackProvisioningParametersOutputBuilder {
-    pub(crate) agent_installer_url: std::option::Option<std::string::String>,
-    pub(crate) parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) agent_installer_url: ::std::option::Option<::std::string::String>,
+    pub(crate) parameters: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     _request_id: Option<String>,
 }
 impl DescribeStackProvisioningParametersOutputBuilder {
     /// <p>The AWS OpsWorks Stacks agent installer's URL.</p>
-    pub fn agent_installer_url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.agent_installer_url = Some(input.into());
+    pub fn agent_installer_url(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.agent_installer_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The AWS OpsWorks Stacks agent installer's URL.</p>
     pub fn set_agent_installer_url(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.agent_installer_url = input;
         self
@@ -68,19 +76,19 @@ impl DescribeStackProvisioningParametersOutputBuilder {
     /// <p>An embedded object that contains the provisioning parameters.</p>
     pub fn parameters(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.parameters = Some(hash_map);
+        self.parameters = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>An embedded object that contains the provisioning parameters.</p>
     pub fn set_parameters(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.parameters = input;

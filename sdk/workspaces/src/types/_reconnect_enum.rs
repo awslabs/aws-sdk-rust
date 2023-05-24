@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ReconnectEnum {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum ReconnectEnum {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ReconnectEnum {
+impl ::std::convert::From<&str> for ReconnectEnum {
     fn from(s: &str) -> Self {
         match s {
             "DISABLED" => ReconnectEnum::Disabled,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for ReconnectEnum {
         }
     }
 }
-impl std::str::FromStr for ReconnectEnum {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ReconnectEnum {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ReconnectEnum::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ReconnectEnum::from(s))
     }
 }
 impl ReconnectEnum {
@@ -86,7 +86,7 @@ impl ReconnectEnum {
         &["DISABLED", "ENABLED"]
     }
 }
-impl AsRef<str> for ReconnectEnum {
+impl ::std::convert::AsRef<str> for ReconnectEnum {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

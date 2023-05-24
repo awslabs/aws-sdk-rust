@@ -47,13 +47,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ConditionOperator {
     #[allow(missing_docs)] // documentation missing in model
@@ -81,7 +81,7 @@ pub enum ConditionOperator {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ConditionOperator {
+impl ::std::convert::From<&str> for ConditionOperator {
     fn from(s: &str) -> Self {
         match s {
             "BeginsWith" => ConditionOperator::BeginsWith,
@@ -101,11 +101,11 @@ impl std::convert::From<&str> for ConditionOperator {
         }
     }
 }
-impl std::str::FromStr for ConditionOperator {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ConditionOperator {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ConditionOperator::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ConditionOperator::from(s))
     }
 }
 impl ConditionOperator {
@@ -143,7 +143,7 @@ impl ConditionOperator {
         ]
     }
 }
-impl AsRef<str> for ConditionOperator {
+impl ::std::convert::AsRef<str> for ConditionOperator {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

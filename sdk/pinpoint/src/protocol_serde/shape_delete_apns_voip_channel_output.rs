@@ -2,7 +2,7 @@
 pub(crate) fn de_apns_voip_channel_response_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::types::ApnsVoipChannelResponse>,
+    ::std::option::Option<crate::types::ApnsVoipChannelResponse>,
     crate::operation::delete_apns_voip_channel::DeleteApnsVoipChannelError,
 > {
     (!body.is_empty()).then(||{

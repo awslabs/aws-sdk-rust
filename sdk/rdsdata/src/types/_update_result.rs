@@ -2,15 +2,15 @@
 
 /// <p>The response elements represent the results of an update.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateResult {
     /// <p>Values for fields generated during the request.</p>
     #[doc(hidden)]
-    pub generated_fields: std::option::Option<std::vec::Vec<crate::types::Field>>,
+    pub generated_fields: ::std::option::Option<::std::vec::Vec<crate::types::Field>>,
 }
 impl UpdateResult {
     /// <p>Values for fields generated during the request.</p>
-    pub fn generated_fields(&self) -> std::option::Option<&[crate::types::Field]> {
+    pub fn generated_fields(&self) -> ::std::option::Option<&[crate::types::Field]> {
         self.generated_fields.as_deref()
     }
 }
@@ -23,9 +23,11 @@ impl UpdateResult {
 
 /// A builder for [`UpdateResult`](crate::types::UpdateResult).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateResultBuilder {
-    pub(crate) generated_fields: std::option::Option<std::vec::Vec<crate::types::Field>>,
+    pub(crate) generated_fields: ::std::option::Option<::std::vec::Vec<crate::types::Field>>,
 }
 impl UpdateResultBuilder {
     /// Appends an item to `generated_fields`.
@@ -36,13 +38,13 @@ impl UpdateResultBuilder {
     pub fn generated_fields(mut self, input: crate::types::Field) -> Self {
         let mut v = self.generated_fields.unwrap_or_default();
         v.push(input);
-        self.generated_fields = Some(v);
+        self.generated_fields = ::std::option::Option::Some(v);
         self
     }
     /// <p>Values for fields generated during the request.</p>
     pub fn set_generated_fields(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Field>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Field>>,
     ) -> Self {
         self.generated_fields = input;
         self

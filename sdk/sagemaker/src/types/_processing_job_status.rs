@@ -41,13 +41,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ProcessingJobStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,7 +63,7 @@ pub enum ProcessingJobStatus {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ProcessingJobStatus {
+impl ::std::convert::From<&str> for ProcessingJobStatus {
     fn from(s: &str) -> Self {
         match s {
             "Completed" => ProcessingJobStatus::Completed,
@@ -77,11 +77,11 @@ impl std::convert::From<&str> for ProcessingJobStatus {
         }
     }
 }
-impl std::str::FromStr for ProcessingJobStatus {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ProcessingJobStatus {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ProcessingJobStatus::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ProcessingJobStatus::from(s))
     }
 }
 impl ProcessingJobStatus {
@@ -101,7 +101,7 @@ impl ProcessingJobStatus {
         &["Completed", "Failed", "InProgress", "Stopped", "Stopping"]
     }
 }
-impl AsRef<str> for ProcessingJobStatus {
+impl ::std::convert::AsRef<str> for ProcessingJobStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

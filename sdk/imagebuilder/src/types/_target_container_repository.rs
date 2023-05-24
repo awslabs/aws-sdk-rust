@@ -2,22 +2,22 @@
 
 /// <p>The container repository where the output container image is stored.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TargetContainerRepository {
     /// <p>Specifies the service in which this image was registered.</p>
     #[doc(hidden)]
-    pub service: std::option::Option<crate::types::ContainerRepositoryService>,
+    pub service: ::std::option::Option<crate::types::ContainerRepositoryService>,
     /// <p>The name of the container repository where the output container image is stored. This name is prefixed by the repository location.</p>
     #[doc(hidden)]
-    pub repository_name: std::option::Option<std::string::String>,
+    pub repository_name: ::std::option::Option<::std::string::String>,
 }
 impl TargetContainerRepository {
     /// <p>Specifies the service in which this image was registered.</p>
-    pub fn service(&self) -> std::option::Option<&crate::types::ContainerRepositoryService> {
+    pub fn service(&self) -> ::std::option::Option<&crate::types::ContainerRepositoryService> {
         self.service.as_ref()
     }
     /// <p>The name of the container repository where the output container image is stored. This name is prefixed by the repository location.</p>
-    pub fn repository_name(&self) -> std::option::Option<&str> {
+    pub fn repository_name(&self) -> ::std::option::Option<&str> {
         self.repository_name.as_deref()
     }
 }
@@ -30,32 +30,40 @@ impl TargetContainerRepository {
 
 /// A builder for [`TargetContainerRepository`](crate::types::TargetContainerRepository).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TargetContainerRepositoryBuilder {
-    pub(crate) service: std::option::Option<crate::types::ContainerRepositoryService>,
-    pub(crate) repository_name: std::option::Option<std::string::String>,
+    pub(crate) service: ::std::option::Option<crate::types::ContainerRepositoryService>,
+    pub(crate) repository_name: ::std::option::Option<::std::string::String>,
 }
 impl TargetContainerRepositoryBuilder {
     /// <p>Specifies the service in which this image was registered.</p>
     pub fn service(mut self, input: crate::types::ContainerRepositoryService) -> Self {
-        self.service = Some(input);
+        self.service = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the service in which this image was registered.</p>
     pub fn set_service(
         mut self,
-        input: std::option::Option<crate::types::ContainerRepositoryService>,
+        input: ::std::option::Option<crate::types::ContainerRepositoryService>,
     ) -> Self {
         self.service = input;
         self
     }
     /// <p>The name of the container repository where the output container image is stored. This name is prefixed by the repository location.</p>
-    pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.repository_name = Some(input.into());
+    pub fn repository_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the container repository where the output container image is stored. This name is prefixed by the repository location.</p>
-    pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_repository_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.repository_name = input;
         self
     }

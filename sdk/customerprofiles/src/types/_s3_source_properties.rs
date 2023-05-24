@@ -2,22 +2,22 @@
 
 /// <p>The properties that are applied when Amazon S3 is being used as the flow source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3SourceProperties {
     /// <p>The Amazon S3 bucket name where the source files are stored.</p>
     #[doc(hidden)]
-    pub bucket_name: std::option::Option<std::string::String>,
+    pub bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>The object key for the Amazon S3 bucket in which the source files are stored.</p>
     #[doc(hidden)]
-    pub bucket_prefix: std::option::Option<std::string::String>,
+    pub bucket_prefix: ::std::option::Option<::std::string::String>,
 }
 impl S3SourceProperties {
     /// <p>The Amazon S3 bucket name where the source files are stored.</p>
-    pub fn bucket_name(&self) -> std::option::Option<&str> {
+    pub fn bucket_name(&self) -> ::std::option::Option<&str> {
         self.bucket_name.as_deref()
     }
     /// <p>The object key for the Amazon S3 bucket in which the source files are stored.</p>
-    pub fn bucket_prefix(&self) -> std::option::Option<&str> {
+    pub fn bucket_prefix(&self) -> ::std::option::Option<&str> {
         self.bucket_prefix.as_deref()
     }
 }
@@ -30,29 +30,37 @@ impl S3SourceProperties {
 
 /// A builder for [`S3SourceProperties`](crate::types::S3SourceProperties).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct S3SourcePropertiesBuilder {
-    pub(crate) bucket_name: std::option::Option<std::string::String>,
-    pub(crate) bucket_prefix: std::option::Option<std::string::String>,
+    pub(crate) bucket_name: ::std::option::Option<::std::string::String>,
+    pub(crate) bucket_prefix: ::std::option::Option<::std::string::String>,
 }
 impl S3SourcePropertiesBuilder {
     /// <p>The Amazon S3 bucket name where the source files are stored.</p>
-    pub fn bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.bucket_name = Some(input.into());
+    pub fn bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.bucket_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon S3 bucket name where the source files are stored.</p>
-    pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket_name = input;
         self
     }
     /// <p>The object key for the Amazon S3 bucket in which the source files are stored.</p>
-    pub fn bucket_prefix(mut self, input: impl Into<std::string::String>) -> Self {
-        self.bucket_prefix = Some(input.into());
+    pub fn bucket_prefix(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.bucket_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The object key for the Amazon S3 bucket in which the source files are stored.</p>
-    pub fn set_bucket_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_bucket_prefix(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.bucket_prefix = input;
         self
     }

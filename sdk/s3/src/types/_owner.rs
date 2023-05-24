@@ -2,7 +2,7 @@
 
 /// <p>Container for the owner's display name and ID.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Owner {
     /// <p>Container for the display name of the owner. This value is only supported in the following Amazon Web Services Regions:</p>
     /// <ul>
@@ -16,10 +16,10 @@ pub struct Owner {
     /// <li> <p>South America (São Paulo)</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub display_name: std::option::Option<std::string::String>,
+    pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>Container for the ID of the owner.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
 }
 impl Owner {
     /// <p>Container for the display name of the owner. This value is only supported in the following Amazon Web Services Regions:</p>
@@ -33,11 +33,11 @@ impl Owner {
     /// <li> <p>Europe (Ireland)</p> </li>
     /// <li> <p>South America (São Paulo)</p> </li>
     /// </ul>
-    pub fn display_name(&self) -> std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<&str> {
         self.display_name.as_deref()
     }
     /// <p>Container for the ID of the owner.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
 }
@@ -50,10 +50,12 @@ impl Owner {
 
 /// A builder for [`Owner`](crate::types::Owner).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OwnerBuilder {
-    pub(crate) display_name: std::option::Option<std::string::String>,
-    pub(crate) id: std::option::Option<std::string::String>,
+    pub(crate) display_name: ::std::option::Option<::std::string::String>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
 }
 impl OwnerBuilder {
     /// <p>Container for the display name of the owner. This value is only supported in the following Amazon Web Services Regions:</p>
@@ -67,8 +69,8 @@ impl OwnerBuilder {
     /// <li> <p>Europe (Ireland)</p> </li>
     /// <li> <p>South America (São Paulo)</p> </li>
     /// </ul>
-    pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.display_name = Some(input.into());
+    pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.display_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Container for the display name of the owner. This value is only supported in the following Amazon Web Services Regions:</p>
@@ -82,17 +84,17 @@ impl OwnerBuilder {
     /// <li> <p>Europe (Ireland)</p> </li>
     /// <li> <p>South America (São Paulo)</p> </li>
     /// </ul>
-    pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
     }
     /// <p>Container for the ID of the owner.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Container for the ID of the owner.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }

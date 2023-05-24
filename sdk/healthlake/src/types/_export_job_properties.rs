@@ -2,71 +2,71 @@
 
 /// <p>The properties of a FHIR export job, including the ID, ARN, name, and the status of the job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportJobProperties {
     /// <p>The AWS generated ID for an export job.</p>
     #[doc(hidden)]
-    pub job_id: std::option::Option<std::string::String>,
+    pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The user generated name for an export job.</p>
     #[doc(hidden)]
-    pub job_name: std::option::Option<std::string::String>,
+    pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of a FHIR export job. Possible statuses are SUBMITTED, IN_PROGRESS, COMPLETED, or FAILED.</p>
     #[doc(hidden)]
-    pub job_status: std::option::Option<crate::types::JobStatus>,
+    pub job_status: ::std::option::Option<crate::types::JobStatus>,
     /// <p>The time an export job was initiated.</p>
     #[doc(hidden)]
-    pub submit_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub submit_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time an export job completed.</p>
     #[doc(hidden)]
-    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The AWS generated ID for the Data Store from which files are being exported for an export job.</p>
     #[doc(hidden)]
-    pub datastore_id: std::option::Option<std::string::String>,
+    pub datastore_id: ::std::option::Option<::std::string::String>,
     /// <p>The output data configuration that was supplied when the export job was created.</p>
     #[doc(hidden)]
-    pub output_data_config: std::option::Option<crate::types::OutputDataConfig>,
+    pub output_data_config: ::std::option::Option<crate::types::OutputDataConfig>,
     /// <p>The Amazon Resource Name used during the initiation of the job.</p>
     #[doc(hidden)]
-    pub data_access_role_arn: std::option::Option<std::string::String>,
+    pub data_access_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>An explanation of any errors that may have occurred during the export job.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
 }
 impl ExportJobProperties {
     /// <p>The AWS generated ID for an export job.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<&str> {
         self.job_id.as_deref()
     }
     /// <p>The user generated name for an export job.</p>
-    pub fn job_name(&self) -> std::option::Option<&str> {
+    pub fn job_name(&self) -> ::std::option::Option<&str> {
         self.job_name.as_deref()
     }
     /// <p>The status of a FHIR export job. Possible statuses are SUBMITTED, IN_PROGRESS, COMPLETED, or FAILED.</p>
-    pub fn job_status(&self) -> std::option::Option<&crate::types::JobStatus> {
+    pub fn job_status(&self) -> ::std::option::Option<&crate::types::JobStatus> {
         self.job_status.as_ref()
     }
     /// <p>The time an export job was initiated.</p>
-    pub fn submit_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn submit_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.submit_time.as_ref()
     }
     /// <p>The time an export job completed.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The AWS generated ID for the Data Store from which files are being exported for an export job.</p>
-    pub fn datastore_id(&self) -> std::option::Option<&str> {
+    pub fn datastore_id(&self) -> ::std::option::Option<&str> {
         self.datastore_id.as_deref()
     }
     /// <p>The output data configuration that was supplied when the export job was created.</p>
-    pub fn output_data_config(&self) -> std::option::Option<&crate::types::OutputDataConfig> {
+    pub fn output_data_config(&self) -> ::std::option::Option<&crate::types::OutputDataConfig> {
         self.output_data_config.as_ref()
     }
     /// <p>The Amazon Resource Name used during the initiation of the job.</p>
-    pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
+    pub fn data_access_role_arn(&self) -> ::std::option::Option<&str> {
         self.data_access_role_arn.as_deref()
     }
     /// <p>An explanation of any errors that may have occurred during the export job.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -79,115 +79,123 @@ impl ExportJobProperties {
 
 /// A builder for [`ExportJobProperties`](crate::types::ExportJobProperties).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ExportJobPropertiesBuilder {
-    pub(crate) job_id: std::option::Option<std::string::String>,
-    pub(crate) job_name: std::option::Option<std::string::String>,
-    pub(crate) job_status: std::option::Option<crate::types::JobStatus>,
-    pub(crate) submit_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) datastore_id: std::option::Option<std::string::String>,
-    pub(crate) output_data_config: std::option::Option<crate::types::OutputDataConfig>,
-    pub(crate) data_access_role_arn: std::option::Option<std::string::String>,
-    pub(crate) message: std::option::Option<std::string::String>,
+    pub(crate) job_id: ::std::option::Option<::std::string::String>,
+    pub(crate) job_name: ::std::option::Option<::std::string::String>,
+    pub(crate) job_status: ::std::option::Option<crate::types::JobStatus>,
+    pub(crate) submit_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) datastore_id: ::std::option::Option<::std::string::String>,
+    pub(crate) output_data_config: ::std::option::Option<crate::types::OutputDataConfig>,
+    pub(crate) data_access_role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
 }
 impl ExportJobPropertiesBuilder {
     /// <p>The AWS generated ID for an export job.</p>
-    pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.job_id = Some(input.into());
+    pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.job_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The AWS generated ID for an export job.</p>
-    pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_id = input;
         self
     }
     /// <p>The user generated name for an export job.</p>
-    pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.job_name = Some(input.into());
+    pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.job_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user generated name for an export job.</p>
-    pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_name = input;
         self
     }
     /// <p>The status of a FHIR export job. Possible statuses are SUBMITTED, IN_PROGRESS, COMPLETED, or FAILED.</p>
     pub fn job_status(mut self, input: crate::types::JobStatus) -> Self {
-        self.job_status = Some(input);
+        self.job_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of a FHIR export job. Possible statuses are SUBMITTED, IN_PROGRESS, COMPLETED, or FAILED.</p>
-    pub fn set_job_status(mut self, input: std::option::Option<crate::types::JobStatus>) -> Self {
+    pub fn set_job_status(mut self, input: ::std::option::Option<crate::types::JobStatus>) -> Self {
         self.job_status = input;
         self
     }
     /// <p>The time an export job was initiated.</p>
-    pub fn submit_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.submit_time = Some(input);
+    pub fn submit_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.submit_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time an export job was initiated.</p>
     pub fn set_submit_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.submit_time = input;
         self
     }
     /// <p>The time an export job completed.</p>
-    pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.end_time = Some(input);
+    pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.end_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time an export job completed.</p>
-    pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_end_time(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
         self.end_time = input;
         self
     }
     /// <p>The AWS generated ID for the Data Store from which files are being exported for an export job.</p>
-    pub fn datastore_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.datastore_id = Some(input.into());
+    pub fn datastore_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.datastore_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The AWS generated ID for the Data Store from which files are being exported for an export job.</p>
-    pub fn set_datastore_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_datastore_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.datastore_id = input;
         self
     }
     /// <p>The output data configuration that was supplied when the export job was created.</p>
     pub fn output_data_config(mut self, input: crate::types::OutputDataConfig) -> Self {
-        self.output_data_config = Some(input);
+        self.output_data_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The output data configuration that was supplied when the export job was created.</p>
     pub fn set_output_data_config(
         mut self,
-        input: std::option::Option<crate::types::OutputDataConfig>,
+        input: ::std::option::Option<crate::types::OutputDataConfig>,
     ) -> Self {
         self.output_data_config = input;
         self
     }
     /// <p>The Amazon Resource Name used during the initiation of the job.</p>
-    pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.data_access_role_arn = Some(input.into());
+    pub fn data_access_role_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.data_access_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name used during the initiation of the job.</p>
     pub fn set_data_access_role_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.data_access_role_arn = input;
         self
     }
     /// <p>An explanation of any errors that may have occurred during the export job.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An explanation of any errors that may have occurred during the export job.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }

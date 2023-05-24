@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum PiiEntitiesDetectionMaskMode {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum PiiEntitiesDetectionMaskMode {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for PiiEntitiesDetectionMaskMode {
+impl ::std::convert::From<&str> for PiiEntitiesDetectionMaskMode {
     fn from(s: &str) -> Self {
         match s {
             "MASK" => PiiEntitiesDetectionMaskMode::Mask,
@@ -67,11 +67,11 @@ impl std::convert::From<&str> for PiiEntitiesDetectionMaskMode {
         }
     }
 }
-impl std::str::FromStr for PiiEntitiesDetectionMaskMode {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for PiiEntitiesDetectionMaskMode {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PiiEntitiesDetectionMaskMode::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(PiiEntitiesDetectionMaskMode::from(s))
     }
 }
 impl PiiEntitiesDetectionMaskMode {
@@ -90,7 +90,7 @@ impl PiiEntitiesDetectionMaskMode {
         &["MASK", "REPLACE_WITH_PII_ENTITY_TYPE"]
     }
 }
-impl AsRef<str> for PiiEntitiesDetectionMaskMode {
+impl ::std::convert::AsRef<str> for PiiEntitiesDetectionMaskMode {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

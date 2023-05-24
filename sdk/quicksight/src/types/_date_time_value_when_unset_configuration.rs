@@ -2,7 +2,7 @@
 
 /// <p>The configuration that defines the default value of a <code>DateTime</code> parameter when a value has not been set.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DateTimeValueWhenUnsetConfiguration {
     /// <p>The built-in options for default values. The value can be one of the following:</p>
     /// <ul>
@@ -10,10 +10,10 @@ pub struct DateTimeValueWhenUnsetConfiguration {
     /// <li> <p> <code>NULL</code>: The <code>NULL</code> value.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub value_when_unset_option: std::option::Option<crate::types::ValueWhenUnsetOption>,
+    pub value_when_unset_option: ::std::option::Option<crate::types::ValueWhenUnsetOption>,
     /// <p>A custom value that's used when the value of a parameter isn't set.</p>
     #[doc(hidden)]
-    pub custom_value: std::option::Option<aws_smithy_types::DateTime>,
+    pub custom_value: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl DateTimeValueWhenUnsetConfiguration {
     /// <p>The built-in options for default values. The value can be one of the following:</p>
@@ -23,16 +23,16 @@ impl DateTimeValueWhenUnsetConfiguration {
     /// </ul>
     pub fn value_when_unset_option(
         &self,
-    ) -> std::option::Option<&crate::types::ValueWhenUnsetOption> {
+    ) -> ::std::option::Option<&crate::types::ValueWhenUnsetOption> {
         self.value_when_unset_option.as_ref()
     }
     /// <p>A custom value that's used when the value of a parameter isn't set.</p>
-    pub fn custom_value(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn custom_value(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.custom_value.as_ref()
     }
 }
-impl std::fmt::Debug for DateTimeValueWhenUnsetConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for DateTimeValueWhenUnsetConfiguration {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DateTimeValueWhenUnsetConfiguration");
         formatter.field("value_when_unset_option", &self.value_when_unset_option);
         formatter.field("custom_value", &"*** Sensitive Data Redacted ***");
@@ -48,10 +48,10 @@ impl DateTimeValueWhenUnsetConfiguration {
 
 /// A builder for [`DateTimeValueWhenUnsetConfiguration`](crate::types::DateTimeValueWhenUnsetConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct DateTimeValueWhenUnsetConfigurationBuilder {
-    pub(crate) value_when_unset_option: std::option::Option<crate::types::ValueWhenUnsetOption>,
-    pub(crate) custom_value: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) value_when_unset_option: ::std::option::Option<crate::types::ValueWhenUnsetOption>,
+    pub(crate) custom_value: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl DateTimeValueWhenUnsetConfigurationBuilder {
     /// <p>The built-in options for default values. The value can be one of the following:</p>
@@ -60,7 +60,7 @@ impl DateTimeValueWhenUnsetConfigurationBuilder {
     /// <li> <p> <code>NULL</code>: The <code>NULL</code> value.</p> </li>
     /// </ul>
     pub fn value_when_unset_option(mut self, input: crate::types::ValueWhenUnsetOption) -> Self {
-        self.value_when_unset_option = Some(input);
+        self.value_when_unset_option = ::std::option::Option::Some(input);
         self
     }
     /// <p>The built-in options for default values. The value can be one of the following:</p>
@@ -70,20 +70,20 @@ impl DateTimeValueWhenUnsetConfigurationBuilder {
     /// </ul>
     pub fn set_value_when_unset_option(
         mut self,
-        input: std::option::Option<crate::types::ValueWhenUnsetOption>,
+        input: ::std::option::Option<crate::types::ValueWhenUnsetOption>,
     ) -> Self {
         self.value_when_unset_option = input;
         self
     }
     /// <p>A custom value that's used when the value of a parameter isn't set.</p>
-    pub fn custom_value(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.custom_value = Some(input);
+    pub fn custom_value(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.custom_value = ::std::option::Option::Some(input);
         self
     }
     /// <p>A custom value that's used when the value of a parameter isn't set.</p>
     pub fn set_custom_value(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.custom_value = input;
         self
@@ -96,8 +96,8 @@ impl DateTimeValueWhenUnsetConfigurationBuilder {
         }
     }
 }
-impl std::fmt::Debug for DateTimeValueWhenUnsetConfigurationBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for DateTimeValueWhenUnsetConfigurationBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DateTimeValueWhenUnsetConfigurationBuilder");
         formatter.field("value_when_unset_option", &self.value_when_unset_option);
         formatter.field("custom_value", &"*** Sensitive Data Redacted ***");

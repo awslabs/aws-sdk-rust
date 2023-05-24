@@ -4,17 +4,17 @@
 /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplicationTimeValue {
     /// <p>Contains an integer that specifies the time period in minutes. </p>
     /// <p>Valid value: 15</p>
     #[doc(hidden)]
-    pub minutes: std::option::Option<i32>,
+    pub minutes: ::std::option::Option<i32>,
 }
 impl ReplicationTimeValue {
     /// <p>Contains an integer that specifies the time period in minutes. </p>
     /// <p>Valid value: 15</p>
-    pub fn minutes(&self) -> std::option::Option<i32> {
+    pub fn minutes(&self) -> ::std::option::Option<i32> {
         self.minutes
     }
 }
@@ -27,20 +27,22 @@ impl ReplicationTimeValue {
 
 /// A builder for [`ReplicationTimeValue`](crate::types::ReplicationTimeValue).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ReplicationTimeValueBuilder {
-    pub(crate) minutes: std::option::Option<i32>,
+    pub(crate) minutes: ::std::option::Option<i32>,
 }
 impl ReplicationTimeValueBuilder {
     /// <p>Contains an integer that specifies the time period in minutes. </p>
     /// <p>Valid value: 15</p>
     pub fn minutes(mut self, input: i32) -> Self {
-        self.minutes = Some(input);
+        self.minutes = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains an integer that specifies the time period in minutes. </p>
     /// <p>Valid value: 15</p>
-    pub fn set_minutes(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.minutes = input;
         self
     }

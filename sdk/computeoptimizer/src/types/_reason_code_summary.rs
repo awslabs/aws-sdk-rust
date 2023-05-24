@@ -2,18 +2,18 @@
 
 /// <p>A summary of a finding reason code.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReasonCodeSummary {
     /// <p>The name of the finding reason code.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<crate::types::FindingReasonCode>,
+    pub name: ::std::option::Option<crate::types::FindingReasonCode>,
     /// <p>The value of the finding reason code summary.</p>
     #[doc(hidden)]
     pub value: f64,
 }
 impl ReasonCodeSummary {
     /// <p>The name of the finding reason code.</p>
-    pub fn name(&self) -> std::option::Option<&crate::types::FindingReasonCode> {
+    pub fn name(&self) -> ::std::option::Option<&crate::types::FindingReasonCode> {
         self.name.as_ref()
     }
     /// <p>The value of the finding reason code summary.</p>
@@ -30,29 +30,34 @@ impl ReasonCodeSummary {
 
 /// A builder for [`ReasonCodeSummary`](crate::types::ReasonCodeSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ReasonCodeSummaryBuilder {
-    pub(crate) name: std::option::Option<crate::types::FindingReasonCode>,
-    pub(crate) value: std::option::Option<f64>,
+    pub(crate) name: ::std::option::Option<crate::types::FindingReasonCode>,
+    pub(crate) value: ::std::option::Option<f64>,
 }
 impl ReasonCodeSummaryBuilder {
     /// <p>The name of the finding reason code.</p>
     pub fn name(mut self, input: crate::types::FindingReasonCode) -> Self {
-        self.name = Some(input);
+        self.name = ::std::option::Option::Some(input);
         self
     }
     /// <p>The name of the finding reason code.</p>
-    pub fn set_name(mut self, input: std::option::Option<crate::types::FindingReasonCode>) -> Self {
+    pub fn set_name(
+        mut self,
+        input: ::std::option::Option<crate::types::FindingReasonCode>,
+    ) -> Self {
         self.name = input;
         self
     }
     /// <p>The value of the finding reason code summary.</p>
     pub fn value(mut self, input: f64) -> Self {
-        self.value = Some(input);
+        self.value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The value of the finding reason code summary.</p>
-    pub fn set_value(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.value = input;
         self
     }

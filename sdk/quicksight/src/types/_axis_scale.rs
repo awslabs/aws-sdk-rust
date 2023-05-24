@@ -3,22 +3,22 @@
 /// <p>The scale setup options for a numeric axis display.</p>
 /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AxisScale {
     /// <p>The linear axis scale setup.</p>
     #[doc(hidden)]
-    pub linear: std::option::Option<crate::types::AxisLinearScale>,
+    pub linear: ::std::option::Option<crate::types::AxisLinearScale>,
     /// <p>The logarithmic axis scale setup.</p>
     #[doc(hidden)]
-    pub logarithmic: std::option::Option<crate::types::AxisLogarithmicScale>,
+    pub logarithmic: ::std::option::Option<crate::types::AxisLogarithmicScale>,
 }
 impl AxisScale {
     /// <p>The linear axis scale setup.</p>
-    pub fn linear(&self) -> std::option::Option<&crate::types::AxisLinearScale> {
+    pub fn linear(&self) -> ::std::option::Option<&crate::types::AxisLinearScale> {
         self.linear.as_ref()
     }
     /// <p>The logarithmic axis scale setup.</p>
-    pub fn logarithmic(&self) -> std::option::Option<&crate::types::AxisLogarithmicScale> {
+    pub fn logarithmic(&self) -> ::std::option::Option<&crate::types::AxisLogarithmicScale> {
         self.logarithmic.as_ref()
     }
 }
@@ -31,31 +31,36 @@ impl AxisScale {
 
 /// A builder for [`AxisScale`](crate::types::AxisScale).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AxisScaleBuilder {
-    pub(crate) linear: std::option::Option<crate::types::AxisLinearScale>,
-    pub(crate) logarithmic: std::option::Option<crate::types::AxisLogarithmicScale>,
+    pub(crate) linear: ::std::option::Option<crate::types::AxisLinearScale>,
+    pub(crate) logarithmic: ::std::option::Option<crate::types::AxisLogarithmicScale>,
 }
 impl AxisScaleBuilder {
     /// <p>The linear axis scale setup.</p>
     pub fn linear(mut self, input: crate::types::AxisLinearScale) -> Self {
-        self.linear = Some(input);
+        self.linear = ::std::option::Option::Some(input);
         self
     }
     /// <p>The linear axis scale setup.</p>
-    pub fn set_linear(mut self, input: std::option::Option<crate::types::AxisLinearScale>) -> Self {
+    pub fn set_linear(
+        mut self,
+        input: ::std::option::Option<crate::types::AxisLinearScale>,
+    ) -> Self {
         self.linear = input;
         self
     }
     /// <p>The logarithmic axis scale setup.</p>
     pub fn logarithmic(mut self, input: crate::types::AxisLogarithmicScale) -> Self {
-        self.logarithmic = Some(input);
+        self.logarithmic = ::std::option::Option::Some(input);
         self
     }
     /// <p>The logarithmic axis scale setup.</p>
     pub fn set_logarithmic(
         mut self,
-        input: std::option::Option<crate::types::AxisLogarithmicScale>,
+        input: ::std::option::Option<crate::types::AxisLogarithmicScale>,
     ) -> Self {
         self.logarithmic = input;
         self

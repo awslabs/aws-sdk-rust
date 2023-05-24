@@ -2,22 +2,25 @@
 
 /// <p>The contribution analysis visual display for a line, pie, or bar chart.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContributionAnalysisDefault {
     /// <p>The measure field that is used in the contribution analysis.</p>
     #[doc(hidden)]
-    pub measure_field_id: std::option::Option<std::string::String>,
+    pub measure_field_id: ::std::option::Option<::std::string::String>,
     /// <p>The dimensions columns that are used in the contribution analysis, usually a list of <code>ColumnIdentifiers</code>.</p>
     #[doc(hidden)]
-    pub contributor_dimensions: std::option::Option<std::vec::Vec<crate::types::ColumnIdentifier>>,
+    pub contributor_dimensions:
+        ::std::option::Option<::std::vec::Vec<crate::types::ColumnIdentifier>>,
 }
 impl ContributionAnalysisDefault {
     /// <p>The measure field that is used in the contribution analysis.</p>
-    pub fn measure_field_id(&self) -> std::option::Option<&str> {
+    pub fn measure_field_id(&self) -> ::std::option::Option<&str> {
         self.measure_field_id.as_deref()
     }
     /// <p>The dimensions columns that are used in the contribution analysis, usually a list of <code>ColumnIdentifiers</code>.</p>
-    pub fn contributor_dimensions(&self) -> std::option::Option<&[crate::types::ColumnIdentifier]> {
+    pub fn contributor_dimensions(
+        &self,
+    ) -> ::std::option::Option<&[crate::types::ColumnIdentifier]> {
         self.contributor_dimensions.as_deref()
     }
 }
@@ -30,20 +33,28 @@ impl ContributionAnalysisDefault {
 
 /// A builder for [`ContributionAnalysisDefault`](crate::types::ContributionAnalysisDefault).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ContributionAnalysisDefaultBuilder {
-    pub(crate) measure_field_id: std::option::Option<std::string::String>,
+    pub(crate) measure_field_id: ::std::option::Option<::std::string::String>,
     pub(crate) contributor_dimensions:
-        std::option::Option<std::vec::Vec<crate::types::ColumnIdentifier>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ColumnIdentifier>>,
 }
 impl ContributionAnalysisDefaultBuilder {
     /// <p>The measure field that is used in the contribution analysis.</p>
-    pub fn measure_field_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.measure_field_id = Some(input.into());
+    pub fn measure_field_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.measure_field_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The measure field that is used in the contribution analysis.</p>
-    pub fn set_measure_field_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_measure_field_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.measure_field_id = input;
         self
     }
@@ -55,13 +66,13 @@ impl ContributionAnalysisDefaultBuilder {
     pub fn contributor_dimensions(mut self, input: crate::types::ColumnIdentifier) -> Self {
         let mut v = self.contributor_dimensions.unwrap_or_default();
         v.push(input);
-        self.contributor_dimensions = Some(v);
+        self.contributor_dimensions = ::std::option::Option::Some(v);
         self
     }
     /// <p>The dimensions columns that are used in the contribution analysis, usually a list of <code>ColumnIdentifiers</code>.</p>
     pub fn set_contributor_dimensions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ColumnIdentifier>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnIdentifier>>,
     ) -> Self {
         self.contributor_dimensions = input;
         self

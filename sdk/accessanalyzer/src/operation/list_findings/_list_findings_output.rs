@@ -2,27 +2,27 @@
 
 /// <p>The response to the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFindingsOutput {
     /// <p>A list of findings retrieved from the analyzer that match the filter criteria specified, if any.</p>
     #[doc(hidden)]
-    pub findings: std::option::Option<std::vec::Vec<crate::types::FindingSummary>>,
+    pub findings: ::std::option::Option<::std::vec::Vec<crate::types::FindingSummary>>,
     /// <p>A token used for pagination of results returned.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListFindingsOutput {
     /// <p>A list of findings retrieved from the analyzer that match the filter criteria specified, if any.</p>
-    pub fn findings(&self) -> std::option::Option<&[crate::types::FindingSummary]> {
+    pub fn findings(&self) -> ::std::option::Option<&[crate::types::FindingSummary]> {
         self.findings.as_deref()
     }
     /// <p>A token used for pagination of results returned.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListFindingsOutput {
+impl ::aws_http::request_id::RequestId for ListFindingsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -36,10 +36,12 @@ impl ListFindingsOutput {
 
 /// A builder for [`ListFindingsOutput`](crate::operation::list_findings::ListFindingsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListFindingsOutputBuilder {
-    pub(crate) findings: std::option::Option<std::vec::Vec<crate::types::FindingSummary>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) findings: ::std::option::Option<::std::vec::Vec<crate::types::FindingSummary>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListFindingsOutputBuilder {
@@ -51,24 +53,24 @@ impl ListFindingsOutputBuilder {
     pub fn findings(mut self, input: crate::types::FindingSummary) -> Self {
         let mut v = self.findings.unwrap_or_default();
         v.push(input);
-        self.findings = Some(v);
+        self.findings = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of findings retrieved from the analyzer that match the filter criteria specified, if any.</p>
     pub fn set_findings(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::FindingSummary>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::FindingSummary>>,
     ) -> Self {
         self.findings = input;
         self
     }
     /// <p>A token used for pagination of results returned.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A token used for pagination of results returned.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

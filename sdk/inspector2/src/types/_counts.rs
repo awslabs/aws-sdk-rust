@@ -2,14 +2,14 @@
 
 /// <p>a structure that contains information on the count of resources within a group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Counts {
     /// <p>The number of resources.</p>
     #[doc(hidden)]
     pub count: i64,
     /// <p>The key associated with this group</p>
     #[doc(hidden)]
-    pub group_key: std::option::Option<crate::types::GroupKey>,
+    pub group_key: ::std::option::Option<crate::types::GroupKey>,
 }
 impl Counts {
     /// <p>The number of resources.</p>
@@ -17,7 +17,7 @@ impl Counts {
         self.count
     }
     /// <p>The key associated with this group</p>
-    pub fn group_key(&self) -> std::option::Option<&crate::types::GroupKey> {
+    pub fn group_key(&self) -> ::std::option::Option<&crate::types::GroupKey> {
         self.group_key.as_ref()
     }
 }
@@ -30,29 +30,31 @@ impl Counts {
 
 /// A builder for [`Counts`](crate::types::Counts).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CountsBuilder {
-    pub(crate) count: std::option::Option<i64>,
-    pub(crate) group_key: std::option::Option<crate::types::GroupKey>,
+    pub(crate) count: ::std::option::Option<i64>,
+    pub(crate) group_key: ::std::option::Option<crate::types::GroupKey>,
 }
 impl CountsBuilder {
     /// <p>The number of resources.</p>
     pub fn count(mut self, input: i64) -> Self {
-        self.count = Some(input);
+        self.count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of resources.</p>
-    pub fn set_count(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.count = input;
         self
     }
     /// <p>The key associated with this group</p>
     pub fn group_key(mut self, input: crate::types::GroupKey) -> Self {
-        self.group_key = Some(input);
+        self.group_key = ::std::option::Option::Some(input);
         self
     }
     /// <p>The key associated with this group</p>
-    pub fn set_group_key(mut self, input: std::option::Option<crate::types::GroupKey>) -> Self {
+    pub fn set_group_key(mut self, input: ::std::option::Option<crate::types::GroupKey>) -> Self {
         self.group_key = input;
         self
     }

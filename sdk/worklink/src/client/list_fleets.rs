@@ -4,7 +4,7 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_fleets::builders::ListFleetsFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_fleets::builders::ListFleetsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_fleets::builders::ListFleetsFluentBuilder::set_next_token): <p>The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
+    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_fleets::builders::ListFleetsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_fleets::builders::ListFleetsFluentBuilder::set_next_token): <p>The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     ///   - [`max_results(i32)`](crate::operation::list_fleets::builders::ListFleetsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_fleets::builders::ListFleetsFluentBuilder::set_max_results): <p>The maximum number of results to be included in the next page.</p>
     /// - On success, responds with [`ListFleetsOutput`](crate::operation::list_fleets::ListFleetsOutput) with field(s):
     ///   - [`fleet_summary_list(Option<Vec<FleetSummary>>)`](crate::operation::list_fleets::ListFleetsOutput::fleet_summary_list): <p>The summary list of the fleets.</p>

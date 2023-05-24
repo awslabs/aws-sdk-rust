@@ -2,29 +2,29 @@
 
 /// <p>Contains the filter to apply when retrieving metrics.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Filters {
     /// <p>The queues to use to filter the metrics. You should specify at least one queue, and can specify up to 100 queues per request. The <code>GetCurrentMetricsData</code> API in particular requires a queue when you include a <code>Filter</code> in your request. </p>
     #[doc(hidden)]
-    pub queues: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub queues: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The channel to use to filter the metrics.</p>
     #[doc(hidden)]
-    pub channels: std::option::Option<std::vec::Vec<crate::types::Channel>>,
+    pub channels: ::std::option::Option<::std::vec::Vec<crate::types::Channel>>,
     /// <p>A list of up to 100 routing profile IDs or ARNs.</p>
     #[doc(hidden)]
-    pub routing_profiles: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub routing_profiles: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Filters {
     /// <p>The queues to use to filter the metrics. You should specify at least one queue, and can specify up to 100 queues per request. The <code>GetCurrentMetricsData</code> API in particular requires a queue when you include a <code>Filter</code> in your request. </p>
-    pub fn queues(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn queues(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.queues.as_deref()
     }
     /// <p>The channel to use to filter the metrics.</p>
-    pub fn channels(&self) -> std::option::Option<&[crate::types::Channel]> {
+    pub fn channels(&self) -> ::std::option::Option<&[crate::types::Channel]> {
         self.channels.as_deref()
     }
     /// <p>A list of up to 100 routing profile IDs or ARNs.</p>
-    pub fn routing_profiles(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn routing_profiles(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.routing_profiles.as_deref()
     }
 }
@@ -37,11 +37,13 @@ impl Filters {
 
 /// A builder for [`Filters`](crate::types::Filters).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FiltersBuilder {
-    pub(crate) queues: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) channels: std::option::Option<std::vec::Vec<crate::types::Channel>>,
-    pub(crate) routing_profiles: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) queues: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) channels: ::std::option::Option<::std::vec::Vec<crate::types::Channel>>,
+    pub(crate) routing_profiles: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl FiltersBuilder {
     /// Appends an item to `queues`.
@@ -49,16 +51,16 @@ impl FiltersBuilder {
     /// To override the contents of this collection use [`set_queues`](Self::set_queues).
     ///
     /// <p>The queues to use to filter the metrics. You should specify at least one queue, and can specify up to 100 queues per request. The <code>GetCurrentMetricsData</code> API in particular requires a queue when you include a <code>Filter</code> in your request. </p>
-    pub fn queues(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn queues(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.queues.unwrap_or_default();
         v.push(input.into());
-        self.queues = Some(v);
+        self.queues = ::std::option::Option::Some(v);
         self
     }
     /// <p>The queues to use to filter the metrics. You should specify at least one queue, and can specify up to 100 queues per request. The <code>GetCurrentMetricsData</code> API in particular requires a queue when you include a <code>Filter</code> in your request. </p>
     pub fn set_queues(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.queues = input;
         self
@@ -71,13 +73,13 @@ impl FiltersBuilder {
     pub fn channels(mut self, input: crate::types::Channel) -> Self {
         let mut v = self.channels.unwrap_or_default();
         v.push(input);
-        self.channels = Some(v);
+        self.channels = ::std::option::Option::Some(v);
         self
     }
     /// <p>The channel to use to filter the metrics.</p>
     pub fn set_channels(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Channel>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Channel>>,
     ) -> Self {
         self.channels = input;
         self
@@ -87,16 +89,19 @@ impl FiltersBuilder {
     /// To override the contents of this collection use [`set_routing_profiles`](Self::set_routing_profiles).
     ///
     /// <p>A list of up to 100 routing profile IDs or ARNs.</p>
-    pub fn routing_profiles(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn routing_profiles(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.routing_profiles.unwrap_or_default();
         v.push(input.into());
-        self.routing_profiles = Some(v);
+        self.routing_profiles = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of up to 100 routing profile IDs or ARNs.</p>
     pub fn set_routing_profiles(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.routing_profiles = input;
         self

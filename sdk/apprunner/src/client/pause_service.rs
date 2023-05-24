@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`PauseService`](crate::operation::pause_service::builders::PauseServiceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`service_arn(impl Into<String>)`](crate::operation::pause_service::builders::PauseServiceFluentBuilder::service_arn) / [`set_service_arn(Option<String>)`](crate::operation::pause_service::builders::PauseServiceFluentBuilder::set_service_arn): <p>The Amazon Resource Name (ARN) of the App Runner service that you want to pause.</p>
+    ///   - [`service_arn(impl ::std::convert::Into<String>)`](crate::operation::pause_service::builders::PauseServiceFluentBuilder::service_arn) / [`set_service_arn(Option<String>)`](crate::operation::pause_service::builders::PauseServiceFluentBuilder::set_service_arn): <p>The Amazon Resource Name (ARN) of the App Runner service that you want to pause.</p>
     /// - On success, responds with [`PauseServiceOutput`](crate::operation::pause_service::PauseServiceOutput) with field(s):
     ///   - [`service(Option<Service>)`](crate::operation::pause_service::PauseServiceOutput::service): <p>A description of the App Runner service that this request just paused.</p>
     ///   - [`operation_id(Option<String>)`](crate::operation::pause_service::PauseServiceOutput::operation_id): <p>The unique ID of the asynchronous operation that this request started. You can use it combined with the <code>ListOperations</code> call to track the operation's progress.</p>

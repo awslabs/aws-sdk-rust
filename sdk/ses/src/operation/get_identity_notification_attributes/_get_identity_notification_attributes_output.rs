@@ -2,13 +2,13 @@
 
 /// <p>Represents the notification attributes for a list of identities.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetIdentityNotificationAttributesOutput {
     /// <p>A map of Identity to IdentityNotificationAttributes.</p>
     #[doc(hidden)]
-    pub notification_attributes: std::option::Option<
-        std::collections::HashMap<
-            std::string::String,
+    pub notification_attributes: ::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
             crate::types::IdentityNotificationAttributes,
         >,
     >,
@@ -18,16 +18,16 @@ impl GetIdentityNotificationAttributesOutput {
     /// <p>A map of Identity to IdentityNotificationAttributes.</p>
     pub fn notification_attributes(
         &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<
-            std::string::String,
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<
+            ::std::string::String,
             crate::types::IdentityNotificationAttributes,
         >,
     > {
         self.notification_attributes.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for GetIdentityNotificationAttributesOutput {
+impl ::aws_http::request_id::RequestId for GetIdentityNotificationAttributesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -41,11 +41,13 @@ impl GetIdentityNotificationAttributesOutput {
 
 /// A builder for [`GetIdentityNotificationAttributesOutput`](crate::operation::get_identity_notification_attributes::GetIdentityNotificationAttributesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetIdentityNotificationAttributesOutputBuilder {
-    pub(crate) notification_attributes: std::option::Option<
-        std::collections::HashMap<
-            std::string::String,
+    pub(crate) notification_attributes: ::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
             crate::types::IdentityNotificationAttributes,
         >,
     >,
@@ -59,20 +61,20 @@ impl GetIdentityNotificationAttributesOutputBuilder {
     /// <p>A map of Identity to IdentityNotificationAttributes.</p>
     pub fn notification_attributes(
         mut self,
-        k: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
         v: crate::types::IdentityNotificationAttributes,
     ) -> Self {
         let mut hash_map = self.notification_attributes.unwrap_or_default();
         hash_map.insert(k.into(), v);
-        self.notification_attributes = Some(hash_map);
+        self.notification_attributes = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A map of Identity to IdentityNotificationAttributes.</p>
     pub fn set_notification_attributes(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<
-                std::string::String,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<
+                ::std::string::String,
                 crate::types::IdentityNotificationAttributes,
             >,
         >,

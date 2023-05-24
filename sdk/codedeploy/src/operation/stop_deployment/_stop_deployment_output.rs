@@ -2,7 +2,7 @@
 
 /// <p> Represents the output of a <code>StopDeployment</code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopDeploymentOutput {
     /// <p>The status of the stop deployment operation:</p>
     /// <ul>
@@ -10,10 +10,10 @@ pub struct StopDeploymentOutput {
     /// <li> <p>Succeeded: The stop operation was successful.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::StopStatus>,
+    pub status: ::std::option::Option<crate::types::StopStatus>,
     /// <p>An accompanying status message.</p>
     #[doc(hidden)]
-    pub status_message: std::option::Option<std::string::String>,
+    pub status_message: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl StopDeploymentOutput {
@@ -22,15 +22,15 @@ impl StopDeploymentOutput {
     /// <li> <p>Pending: The stop operation is pending.</p> </li>
     /// <li> <p>Succeeded: The stop operation was successful.</p> </li>
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::types::StopStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::StopStatus> {
         self.status.as_ref()
     }
     /// <p>An accompanying status message.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<&str> {
         self.status_message.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for StopDeploymentOutput {
+impl ::aws_http::request_id::RequestId for StopDeploymentOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -44,10 +44,12 @@ impl StopDeploymentOutput {
 
 /// A builder for [`StopDeploymentOutput`](crate::operation::stop_deployment::StopDeploymentOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StopDeploymentOutputBuilder {
-    pub(crate) status: std::option::Option<crate::types::StopStatus>,
-    pub(crate) status_message: std::option::Option<std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::StopStatus>,
+    pub(crate) status_message: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl StopDeploymentOutputBuilder {
@@ -57,7 +59,7 @@ impl StopDeploymentOutputBuilder {
     /// <li> <p>Succeeded: The stop operation was successful.</p> </li>
     /// </ul>
     pub fn status(mut self, input: crate::types::StopStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the stop deployment operation:</p>
@@ -65,17 +67,23 @@ impl StopDeploymentOutputBuilder {
     /// <li> <p>Pending: The stop operation is pending.</p> </li>
     /// <li> <p>Succeeded: The stop operation was successful.</p> </li>
     /// </ul>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::StopStatus>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::StopStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>An accompanying status message.</p>
-    pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status_message = Some(input.into());
+    pub fn status_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An accompanying status message.</p>
-    pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.status_message = input;
         self
     }

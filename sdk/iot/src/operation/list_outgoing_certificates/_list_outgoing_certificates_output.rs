@@ -2,30 +2,30 @@
 
 /// <p>The output from the ListOutgoingCertificates operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListOutgoingCertificatesOutput {
     /// <p>The certificates that are being transferred but not yet accepted.</p>
     #[doc(hidden)]
     pub outgoing_certificates:
-        std::option::Option<std::vec::Vec<crate::types::OutgoingCertificate>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::OutgoingCertificate>>,
     /// <p>The marker for the next set of results.</p>
     #[doc(hidden)]
-    pub next_marker: std::option::Option<std::string::String>,
+    pub next_marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListOutgoingCertificatesOutput {
     /// <p>The certificates that are being transferred but not yet accepted.</p>
     pub fn outgoing_certificates(
         &self,
-    ) -> std::option::Option<&[crate::types::OutgoingCertificate]> {
+    ) -> ::std::option::Option<&[crate::types::OutgoingCertificate]> {
         self.outgoing_certificates.as_deref()
     }
     /// <p>The marker for the next set of results.</p>
-    pub fn next_marker(&self) -> std::option::Option<&str> {
+    pub fn next_marker(&self) -> ::std::option::Option<&str> {
         self.next_marker.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListOutgoingCertificatesOutput {
+impl ::aws_http::request_id::RequestId for ListOutgoingCertificatesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -41,11 +41,13 @@ impl ListOutgoingCertificatesOutput {
 
 /// A builder for [`ListOutgoingCertificatesOutput`](crate::operation::list_outgoing_certificates::ListOutgoingCertificatesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListOutgoingCertificatesOutputBuilder {
     pub(crate) outgoing_certificates:
-        std::option::Option<std::vec::Vec<crate::types::OutgoingCertificate>>,
-    pub(crate) next_marker: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::OutgoingCertificate>>,
+    pub(crate) next_marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListOutgoingCertificatesOutputBuilder {
@@ -57,24 +59,24 @@ impl ListOutgoingCertificatesOutputBuilder {
     pub fn outgoing_certificates(mut self, input: crate::types::OutgoingCertificate) -> Self {
         let mut v = self.outgoing_certificates.unwrap_or_default();
         v.push(input);
-        self.outgoing_certificates = Some(v);
+        self.outgoing_certificates = ::std::option::Option::Some(v);
         self
     }
     /// <p>The certificates that are being transferred but not yet accepted.</p>
     pub fn set_outgoing_certificates(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::OutgoingCertificate>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::OutgoingCertificate>>,
     ) -> Self {
         self.outgoing_certificates = input;
         self
     }
     /// <p>The marker for the next set of results.</p>
-    pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_marker = Some(input.into());
+    pub fn next_marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The marker for the next set of results.</p>
-    pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_marker = input;
         self
     }

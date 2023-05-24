@@ -8,56 +8,59 @@ pub use crate::operation::release_hosts::_release_hosts_input::ReleaseHostsInput
 /// <p>When you no longer want to use an On-Demand Dedicated Host it can be released. On-Demand billing is stopped and the host goes into <code>released</code> state. The host ID of Dedicated Hosts that have been released can no longer be specified in another request, for example, to modify the host. You must stop or terminate all instances on a host before it can be released.</p>
 /// <p>When Dedicated Hosts are released, it may take some time for them to stop counting toward your limit and you may receive capacity errors when trying to allocate new Dedicated Hosts. Wait a few minutes and then try again.</p>
 /// <p>Released hosts still appear in a <code>DescribeHosts</code> response.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ReleaseHostsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::release_hosts::builders::ReleaseHostsInputBuilder,
 }
 impl ReleaseHostsFluentBuilder {
     /// Creates a new `ReleaseHosts`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::release_hosts::ReleaseHosts,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::release_hosts::ReleaseHostsError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::release_hosts::ReleaseHostsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::release_hosts::ReleaseHostsOutput,
-        aws_smithy_http::result::SdkError<crate::operation::release_hosts::ReleaseHostsError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::release_hosts::ReleaseHostsError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -70,9 +73,9 @@ impl ReleaseHostsFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::release_hosts::ReleaseHostsOutput,
-        aws_smithy_http::result::SdkError<crate::operation::release_hosts::ReleaseHostsError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::release_hosts::ReleaseHostsError>,
     > {
         self.send_middleware().await
     }
@@ -81,14 +84,14 @@ impl ReleaseHostsFluentBuilder {
     /// To override the contents of this collection use [`set_host_ids`](Self::set_host_ids).
     ///
     /// <p>The IDs of the Dedicated Hosts to release.</p>
-    pub fn host_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn host_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.host_ids(input.into());
         self
     }
     /// <p>The IDs of the Dedicated Hosts to release.</p>
     pub fn set_host_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_host_ids(input);
         self

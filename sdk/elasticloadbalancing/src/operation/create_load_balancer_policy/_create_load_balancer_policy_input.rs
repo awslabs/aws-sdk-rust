@@ -2,36 +2,36 @@
 
 /// <p>Contains the parameters for CreateLoadBalancerPolicy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateLoadBalancerPolicyInput {
     /// <p>The name of the load balancer.</p>
     #[doc(hidden)]
-    pub load_balancer_name: std::option::Option<std::string::String>,
+    pub load_balancer_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the load balancer policy to be created. This name must be unique within the set of policies for this load balancer.</p>
     #[doc(hidden)]
-    pub policy_name: std::option::Option<std::string::String>,
+    pub policy_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the base policy type. To get the list of policy types, use <code>DescribeLoadBalancerPolicyTypes</code>.</p>
     #[doc(hidden)]
-    pub policy_type_name: std::option::Option<std::string::String>,
+    pub policy_type_name: ::std::option::Option<::std::string::String>,
     /// <p>The policy attributes.</p>
     #[doc(hidden)]
-    pub policy_attributes: std::option::Option<std::vec::Vec<crate::types::PolicyAttribute>>,
+    pub policy_attributes: ::std::option::Option<::std::vec::Vec<crate::types::PolicyAttribute>>,
 }
 impl CreateLoadBalancerPolicyInput {
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
+    pub fn load_balancer_name(&self) -> ::std::option::Option<&str> {
         self.load_balancer_name.as_deref()
     }
     /// <p>The name of the load balancer policy to be created. This name must be unique within the set of policies for this load balancer.</p>
-    pub fn policy_name(&self) -> std::option::Option<&str> {
+    pub fn policy_name(&self) -> ::std::option::Option<&str> {
         self.policy_name.as_deref()
     }
     /// <p>The name of the base policy type. To get the list of policy types, use <code>DescribeLoadBalancerPolicyTypes</code>.</p>
-    pub fn policy_type_name(&self) -> std::option::Option<&str> {
+    pub fn policy_type_name(&self) -> ::std::option::Option<&str> {
         self.policy_type_name.as_deref()
     }
     /// <p>The policy attributes.</p>
-    pub fn policy_attributes(&self) -> std::option::Option<&[crate::types::PolicyAttribute]> {
+    pub fn policy_attributes(&self) -> ::std::option::Option<&[crate::types::PolicyAttribute]> {
         self.policy_attributes.as_deref()
     }
 }
@@ -46,44 +46,56 @@ impl CreateLoadBalancerPolicyInput {
 
 /// A builder for [`CreateLoadBalancerPolicyInput`](crate::operation::create_load_balancer_policy::CreateLoadBalancerPolicyInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateLoadBalancerPolicyInputBuilder {
-    pub(crate) load_balancer_name: std::option::Option<std::string::String>,
-    pub(crate) policy_name: std::option::Option<std::string::String>,
-    pub(crate) policy_type_name: std::option::Option<std::string::String>,
-    pub(crate) policy_attributes: std::option::Option<std::vec::Vec<crate::types::PolicyAttribute>>,
+    pub(crate) load_balancer_name: ::std::option::Option<::std::string::String>,
+    pub(crate) policy_name: ::std::option::Option<::std::string::String>,
+    pub(crate) policy_type_name: ::std::option::Option<::std::string::String>,
+    pub(crate) policy_attributes:
+        ::std::option::Option<::std::vec::Vec<crate::types::PolicyAttribute>>,
 }
 impl CreateLoadBalancerPolicyInputBuilder {
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.load_balancer_name = Some(input.into());
+    pub fn load_balancer_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.load_balancer_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the load balancer.</p>
     pub fn set_load_balancer_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.load_balancer_name = input;
         self
     }
     /// <p>The name of the load balancer policy to be created. This name must be unique within the set of policies for this load balancer.</p>
-    pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.policy_name = Some(input.into());
+    pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.policy_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the load balancer policy to be created. This name must be unique within the set of policies for this load balancer.</p>
-    pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_name = input;
         self
     }
     /// <p>The name of the base policy type. To get the list of policy types, use <code>DescribeLoadBalancerPolicyTypes</code>.</p>
-    pub fn policy_type_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.policy_type_name = Some(input.into());
+    pub fn policy_type_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.policy_type_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the base policy type. To get the list of policy types, use <code>DescribeLoadBalancerPolicyTypes</code>.</p>
-    pub fn set_policy_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_policy_type_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.policy_type_name = input;
         self
     }
@@ -95,13 +107,13 @@ impl CreateLoadBalancerPolicyInputBuilder {
     pub fn policy_attributes(mut self, input: crate::types::PolicyAttribute) -> Self {
         let mut v = self.policy_attributes.unwrap_or_default();
         v.push(input);
-        self.policy_attributes = Some(v);
+        self.policy_attributes = ::std::option::Option::Some(v);
         self
     }
     /// <p>The policy attributes.</p>
     pub fn set_policy_attributes(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PolicyAttribute>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PolicyAttribute>>,
     ) -> Self {
         self.policy_attributes = input;
         self
@@ -109,11 +121,11 @@ impl CreateLoadBalancerPolicyInputBuilder {
     /// Consumes the builder and constructs a [`CreateLoadBalancerPolicyInput`](crate::operation::create_load_balancer_policy::CreateLoadBalancerPolicyInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::create_load_balancer_policy::CreateLoadBalancerPolicyInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::create_load_balancer_policy::CreateLoadBalancerPolicyInput {
                 load_balancer_name: self.load_balancer_name,
                 policy_name: self.policy_name,

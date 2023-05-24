@@ -2,15 +2,15 @@
 
 /// <p>Configuration information of a Kinesis data stream.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KinesisStreamConfig {
     /// <p>The Amazon Resource Name (ARN) of the data stream.</p>
     #[doc(hidden)]
-    pub stream_arn: std::option::Option<std::string::String>,
+    pub stream_arn: ::std::option::Option<::std::string::String>,
 }
 impl KinesisStreamConfig {
     /// <p>The Amazon Resource Name (ARN) of the data stream.</p>
-    pub fn stream_arn(&self) -> std::option::Option<&str> {
+    pub fn stream_arn(&self) -> ::std::option::Option<&str> {
         self.stream_arn.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl KinesisStreamConfig {
 
 /// A builder for [`KinesisStreamConfig`](crate::types::KinesisStreamConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct KinesisStreamConfigBuilder {
-    pub(crate) stream_arn: std::option::Option<std::string::String>,
+    pub(crate) stream_arn: ::std::option::Option<::std::string::String>,
 }
 impl KinesisStreamConfigBuilder {
     /// <p>The Amazon Resource Name (ARN) of the data stream.</p>
-    pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.stream_arn = Some(input.into());
+    pub fn stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.stream_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the data stream.</p>
-    pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stream_arn = input;
         self
     }

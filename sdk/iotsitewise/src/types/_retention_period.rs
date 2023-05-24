@@ -2,30 +2,30 @@
 
 /// <p>How many days your data is kept in the hot tier. By default, your data is kept indefinitely in the hot tier.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RetentionPeriod {
     /// <p>The number of days that your data is kept.</p> <note>
     /// <p>If you specified a value for this parameter, the <code>unlimited</code> parameter must be <code>false</code>.</p>
     /// </note>
     #[doc(hidden)]
-    pub number_of_days: std::option::Option<i32>,
+    pub number_of_days: ::std::option::Option<i32>,
     /// <p>If true, your data is kept indefinitely.</p> <note>
     /// <p>If configured to <code>true</code>, you must not specify a value for the <code>numberOfDays</code> parameter.</p>
     /// </note>
     #[doc(hidden)]
-    pub unlimited: std::option::Option<bool>,
+    pub unlimited: ::std::option::Option<bool>,
 }
 impl RetentionPeriod {
     /// <p>The number of days that your data is kept.</p> <note>
     /// <p>If you specified a value for this parameter, the <code>unlimited</code> parameter must be <code>false</code>.</p>
     /// </note>
-    pub fn number_of_days(&self) -> std::option::Option<i32> {
+    pub fn number_of_days(&self) -> ::std::option::Option<i32> {
         self.number_of_days
     }
     /// <p>If true, your data is kept indefinitely.</p> <note>
     /// <p>If configured to <code>true</code>, you must not specify a value for the <code>numberOfDays</code> parameter.</p>
     /// </note>
-    pub fn unlimited(&self) -> std::option::Option<bool> {
+    pub fn unlimited(&self) -> ::std::option::Option<bool> {
         self.unlimited
     }
 }
@@ -38,23 +38,25 @@ impl RetentionPeriod {
 
 /// A builder for [`RetentionPeriod`](crate::types::RetentionPeriod).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RetentionPeriodBuilder {
-    pub(crate) number_of_days: std::option::Option<i32>,
-    pub(crate) unlimited: std::option::Option<bool>,
+    pub(crate) number_of_days: ::std::option::Option<i32>,
+    pub(crate) unlimited: ::std::option::Option<bool>,
 }
 impl RetentionPeriodBuilder {
     /// <p>The number of days that your data is kept.</p> <note>
     /// <p>If you specified a value for this parameter, the <code>unlimited</code> parameter must be <code>false</code>.</p>
     /// </note>
     pub fn number_of_days(mut self, input: i32) -> Self {
-        self.number_of_days = Some(input);
+        self.number_of_days = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of days that your data is kept.</p> <note>
     /// <p>If you specified a value for this parameter, the <code>unlimited</code> parameter must be <code>false</code>.</p>
     /// </note>
-    pub fn set_number_of_days(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_number_of_days(mut self, input: ::std::option::Option<i32>) -> Self {
         self.number_of_days = input;
         self
     }
@@ -62,13 +64,13 @@ impl RetentionPeriodBuilder {
     /// <p>If configured to <code>true</code>, you must not specify a value for the <code>numberOfDays</code> parameter.</p>
     /// </note>
     pub fn unlimited(mut self, input: bool) -> Self {
-        self.unlimited = Some(input);
+        self.unlimited = ::std::option::Option::Some(input);
         self
     }
     /// <p>If true, your data is kept indefinitely.</p> <note>
     /// <p>If configured to <code>true</code>, you must not specify a value for the <code>numberOfDays</code> parameter.</p>
     /// </note>
-    pub fn set_unlimited(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_unlimited(mut self, input: ::std::option::Option<bool>) -> Self {
         self.unlimited = input;
         self
     }

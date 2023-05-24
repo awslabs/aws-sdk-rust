@@ -2,7 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_receive_message_http_error(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::receive_message::ReceiveMessageOutput,
@@ -15,7 +15,7 @@ pub fn de_receive_message_http_error(
         _response_body,
     )
     .map_err(crate::operation::receive_message::ReceiveMessageError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
+    generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
@@ -51,7 +51,7 @@ pub fn de_receive_message_http_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_receive_message_http_response_with_props(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::receive_message::ReceiveMessageOutput,
@@ -67,7 +67,7 @@ pub fn de_receive_message_http_response_with_props(
         )
         .map_err(crate::operation::receive_message::ReceiveMessageError::unhandled)?;
         output._set_request_id(
-            aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
+            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
         );
         output.build()
     })
@@ -79,16 +79,16 @@ pub fn de_receive_message(
     mut builder: crate::operation::receive_message::builders::ReceiveMessageOutputBuilder,
 ) -> Result<
     crate::operation::receive_message::builders::ReceiveMessageOutputBuilder,
-    aws_smithy_xml::decode::XmlDecodeError,
+    ::aws_smithy_xml::decode::XmlDecodeError,
 > {
-    let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
+    let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ReceiveMessageResponse")) {
-        return Err(aws_smithy_xml::decode::XmlDecodeError::custom(format!(
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ReceiveMessageResponse got {:?}",
             start_el
         )));
@@ -96,7 +96,7 @@ pub fn de_receive_message(
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("ReceiveMessageResult")) {
-            return Err(aws_smithy_xml::decode::XmlDecodeError::custom(format!(
+            return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
                 "invalid result, expected ReceiveMessageResult got {:?}",
                 start_el
             )));
@@ -106,7 +106,7 @@ pub fn de_receive_message(
             s if s.matches("Message") /* Messages com.amazonaws.sqs.synthetic#ReceiveMessageOutput$Messages */ =>  {
                 let var_1 =
                     Some(
-                        Result::<std::vec::Vec<crate::types::Message>, aws_smithy_xml::decode::XmlDecodeError>::Ok({
+                        Result::<::std::vec::Vec<crate::types::Message>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
                             let mut list_2 = builder.messages.take().unwrap_or_default();
                             list_2.push(
                                 crate::protocol_serde::shape_message::de_message(&mut tag)
@@ -124,7 +124,7 @@ pub fn de_receive_message(
         }
         }
     } else {
-        return Err(aws_smithy_xml::decode::XmlDecodeError::custom(
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(
             "expected ReceiveMessageResult tag",
         ));
     };

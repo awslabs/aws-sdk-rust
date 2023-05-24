@@ -2,35 +2,35 @@
 
 /// <p>Describes the configuration of On-Demand Instances in an EC2 Fleet.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OnDemandOptionsRequest {
     /// <p>The strategy that determines the order of the launch template overrides to use in fulfilling On-Demand capacity.</p>
     /// <p> <code>lowest-price</code> - EC2 Fleet uses price to determine the order, launching the lowest price first.</p>
     /// <p> <code>prioritized</code> - EC2 Fleet uses the priority that you assigned to each launch template override, launching the highest priority first.</p>
     /// <p>Default: <code>lowest-price</code> </p>
     #[doc(hidden)]
-    pub allocation_strategy: std::option::Option<crate::types::FleetOnDemandAllocationStrategy>,
+    pub allocation_strategy: ::std::option::Option<crate::types::FleetOnDemandAllocationStrategy>,
     /// <p>The strategy for using unused Capacity Reservations for fulfilling On-Demand capacity.</p>
     /// <p>Supported only for fleets of type <code>instant</code>.</p>
     #[doc(hidden)]
     pub capacity_reservation_options:
-        std::option::Option<crate::types::CapacityReservationOptionsRequest>,
+        ::std::option::Option<crate::types::CapacityReservationOptionsRequest>,
     /// <p>Indicates that the fleet uses a single instance type to launch all On-Demand Instances in the fleet.</p>
     /// <p>Supported only for fleets of type <code>instant</code>.</p>
     #[doc(hidden)]
-    pub single_instance_type: std::option::Option<bool>,
+    pub single_instance_type: ::std::option::Option<bool>,
     /// <p>Indicates that the fleet launches all On-Demand Instances into a single Availability Zone.</p>
     /// <p>Supported only for fleets of type <code>instant</code>.</p>
     #[doc(hidden)]
-    pub single_availability_zone: std::option::Option<bool>,
+    pub single_availability_zone: ::std::option::Option<bool>,
     /// <p>The minimum target capacity for On-Demand Instances in the fleet. If the minimum target capacity is not reached, the fleet launches no instances.</p>
     /// <p>Supported only for fleets of type <code>instant</code>.</p>
     /// <p>At least one of the following must be specified: <code>SingleAvailabilityZone</code> | <code>SingleInstanceType</code> </p>
     #[doc(hidden)]
-    pub min_target_capacity: std::option::Option<i32>,
+    pub min_target_capacity: ::std::option::Option<i32>,
     /// <p>The maximum amount per hour for On-Demand Instances that you're willing to pay.</p>
     #[doc(hidden)]
-    pub max_total_price: std::option::Option<std::string::String>,
+    pub max_total_price: ::std::option::Option<::std::string::String>,
 }
 impl OnDemandOptionsRequest {
     /// <p>The strategy that determines the order of the launch template overrides to use in fulfilling On-Demand capacity.</p>
@@ -39,34 +39,34 @@ impl OnDemandOptionsRequest {
     /// <p>Default: <code>lowest-price</code> </p>
     pub fn allocation_strategy(
         &self,
-    ) -> std::option::Option<&crate::types::FleetOnDemandAllocationStrategy> {
+    ) -> ::std::option::Option<&crate::types::FleetOnDemandAllocationStrategy> {
         self.allocation_strategy.as_ref()
     }
     /// <p>The strategy for using unused Capacity Reservations for fulfilling On-Demand capacity.</p>
     /// <p>Supported only for fleets of type <code>instant</code>.</p>
     pub fn capacity_reservation_options(
         &self,
-    ) -> std::option::Option<&crate::types::CapacityReservationOptionsRequest> {
+    ) -> ::std::option::Option<&crate::types::CapacityReservationOptionsRequest> {
         self.capacity_reservation_options.as_ref()
     }
     /// <p>Indicates that the fleet uses a single instance type to launch all On-Demand Instances in the fleet.</p>
     /// <p>Supported only for fleets of type <code>instant</code>.</p>
-    pub fn single_instance_type(&self) -> std::option::Option<bool> {
+    pub fn single_instance_type(&self) -> ::std::option::Option<bool> {
         self.single_instance_type
     }
     /// <p>Indicates that the fleet launches all On-Demand Instances into a single Availability Zone.</p>
     /// <p>Supported only for fleets of type <code>instant</code>.</p>
-    pub fn single_availability_zone(&self) -> std::option::Option<bool> {
+    pub fn single_availability_zone(&self) -> ::std::option::Option<bool> {
         self.single_availability_zone
     }
     /// <p>The minimum target capacity for On-Demand Instances in the fleet. If the minimum target capacity is not reached, the fleet launches no instances.</p>
     /// <p>Supported only for fleets of type <code>instant</code>.</p>
     /// <p>At least one of the following must be specified: <code>SingleAvailabilityZone</code> | <code>SingleInstanceType</code> </p>
-    pub fn min_target_capacity(&self) -> std::option::Option<i32> {
+    pub fn min_target_capacity(&self) -> ::std::option::Option<i32> {
         self.min_target_capacity
     }
     /// <p>The maximum amount per hour for On-Demand Instances that you're willing to pay.</p>
-    pub fn max_total_price(&self) -> std::option::Option<&str> {
+    pub fn max_total_price(&self) -> ::std::option::Option<&str> {
         self.max_total_price.as_deref()
     }
 }
@@ -79,16 +79,18 @@ impl OnDemandOptionsRequest {
 
 /// A builder for [`OnDemandOptionsRequest`](crate::types::OnDemandOptionsRequest).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OnDemandOptionsRequestBuilder {
     pub(crate) allocation_strategy:
-        std::option::Option<crate::types::FleetOnDemandAllocationStrategy>,
+        ::std::option::Option<crate::types::FleetOnDemandAllocationStrategy>,
     pub(crate) capacity_reservation_options:
-        std::option::Option<crate::types::CapacityReservationOptionsRequest>,
-    pub(crate) single_instance_type: std::option::Option<bool>,
-    pub(crate) single_availability_zone: std::option::Option<bool>,
-    pub(crate) min_target_capacity: std::option::Option<i32>,
-    pub(crate) max_total_price: std::option::Option<std::string::String>,
+        ::std::option::Option<crate::types::CapacityReservationOptionsRequest>,
+    pub(crate) single_instance_type: ::std::option::Option<bool>,
+    pub(crate) single_availability_zone: ::std::option::Option<bool>,
+    pub(crate) min_target_capacity: ::std::option::Option<i32>,
+    pub(crate) max_total_price: ::std::option::Option<::std::string::String>,
 }
 impl OnDemandOptionsRequestBuilder {
     /// <p>The strategy that determines the order of the launch template overrides to use in fulfilling On-Demand capacity.</p>
@@ -99,7 +101,7 @@ impl OnDemandOptionsRequestBuilder {
         mut self,
         input: crate::types::FleetOnDemandAllocationStrategy,
     ) -> Self {
-        self.allocation_strategy = Some(input);
+        self.allocation_strategy = ::std::option::Option::Some(input);
         self
     }
     /// <p>The strategy that determines the order of the launch template overrides to use in fulfilling On-Demand capacity.</p>
@@ -108,7 +110,7 @@ impl OnDemandOptionsRequestBuilder {
     /// <p>Default: <code>lowest-price</code> </p>
     pub fn set_allocation_strategy(
         mut self,
-        input: std::option::Option<crate::types::FleetOnDemandAllocationStrategy>,
+        input: ::std::option::Option<crate::types::FleetOnDemandAllocationStrategy>,
     ) -> Self {
         self.allocation_strategy = input;
         self
@@ -119,14 +121,14 @@ impl OnDemandOptionsRequestBuilder {
         mut self,
         input: crate::types::CapacityReservationOptionsRequest,
     ) -> Self {
-        self.capacity_reservation_options = Some(input);
+        self.capacity_reservation_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The strategy for using unused Capacity Reservations for fulfilling On-Demand capacity.</p>
     /// <p>Supported only for fleets of type <code>instant</code>.</p>
     pub fn set_capacity_reservation_options(
         mut self,
-        input: std::option::Option<crate::types::CapacityReservationOptionsRequest>,
+        input: ::std::option::Option<crate::types::CapacityReservationOptionsRequest>,
     ) -> Self {
         self.capacity_reservation_options = input;
         self
@@ -134,24 +136,24 @@ impl OnDemandOptionsRequestBuilder {
     /// <p>Indicates that the fleet uses a single instance type to launch all On-Demand Instances in the fleet.</p>
     /// <p>Supported only for fleets of type <code>instant</code>.</p>
     pub fn single_instance_type(mut self, input: bool) -> Self {
-        self.single_instance_type = Some(input);
+        self.single_instance_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates that the fleet uses a single instance type to launch all On-Demand Instances in the fleet.</p>
     /// <p>Supported only for fleets of type <code>instant</code>.</p>
-    pub fn set_single_instance_type(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_single_instance_type(mut self, input: ::std::option::Option<bool>) -> Self {
         self.single_instance_type = input;
         self
     }
     /// <p>Indicates that the fleet launches all On-Demand Instances into a single Availability Zone.</p>
     /// <p>Supported only for fleets of type <code>instant</code>.</p>
     pub fn single_availability_zone(mut self, input: bool) -> Self {
-        self.single_availability_zone = Some(input);
+        self.single_availability_zone = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates that the fleet launches all On-Demand Instances into a single Availability Zone.</p>
     /// <p>Supported only for fleets of type <code>instant</code>.</p>
-    pub fn set_single_availability_zone(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_single_availability_zone(mut self, input: ::std::option::Option<bool>) -> Self {
         self.single_availability_zone = input;
         self
     }
@@ -159,23 +161,29 @@ impl OnDemandOptionsRequestBuilder {
     /// <p>Supported only for fleets of type <code>instant</code>.</p>
     /// <p>At least one of the following must be specified: <code>SingleAvailabilityZone</code> | <code>SingleInstanceType</code> </p>
     pub fn min_target_capacity(mut self, input: i32) -> Self {
-        self.min_target_capacity = Some(input);
+        self.min_target_capacity = ::std::option::Option::Some(input);
         self
     }
     /// <p>The minimum target capacity for On-Demand Instances in the fleet. If the minimum target capacity is not reached, the fleet launches no instances.</p>
     /// <p>Supported only for fleets of type <code>instant</code>.</p>
     /// <p>At least one of the following must be specified: <code>SingleAvailabilityZone</code> | <code>SingleInstanceType</code> </p>
-    pub fn set_min_target_capacity(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_min_target_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.min_target_capacity = input;
         self
     }
     /// <p>The maximum amount per hour for On-Demand Instances that you're willing to pay.</p>
-    pub fn max_total_price(mut self, input: impl Into<std::string::String>) -> Self {
-        self.max_total_price = Some(input.into());
+    pub fn max_total_price(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.max_total_price = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The maximum amount per hour for On-Demand Instances that you're willing to pay.</p>
-    pub fn set_max_total_price(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_max_total_price(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.max_total_price = input;
         self
     }

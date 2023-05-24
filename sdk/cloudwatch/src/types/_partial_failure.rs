@@ -2,36 +2,36 @@
 
 /// <p>This array is empty if the API operation was successful for all the rules specified in the request. If the operation could not process one of the rules, the following data is returned for each of those rules.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PartialFailure {
     /// <p>The specified rule that could not be deleted.</p>
     #[doc(hidden)]
-    pub failure_resource: std::option::Option<std::string::String>,
+    pub failure_resource: ::std::option::Option<::std::string::String>,
     /// <p>The type of error.</p>
     #[doc(hidden)]
-    pub exception_type: std::option::Option<std::string::String>,
+    pub exception_type: ::std::option::Option<::std::string::String>,
     /// <p>The code of the error.</p>
     #[doc(hidden)]
-    pub failure_code: std::option::Option<std::string::String>,
+    pub failure_code: ::std::option::Option<::std::string::String>,
     /// <p>A description of the error.</p>
     #[doc(hidden)]
-    pub failure_description: std::option::Option<std::string::String>,
+    pub failure_description: ::std::option::Option<::std::string::String>,
 }
 impl PartialFailure {
     /// <p>The specified rule that could not be deleted.</p>
-    pub fn failure_resource(&self) -> std::option::Option<&str> {
+    pub fn failure_resource(&self) -> ::std::option::Option<&str> {
         self.failure_resource.as_deref()
     }
     /// <p>The type of error.</p>
-    pub fn exception_type(&self) -> std::option::Option<&str> {
+    pub fn exception_type(&self) -> ::std::option::Option<&str> {
         self.exception_type.as_deref()
     }
     /// <p>The code of the error.</p>
-    pub fn failure_code(&self) -> std::option::Option<&str> {
+    pub fn failure_code(&self) -> ::std::option::Option<&str> {
         self.failure_code.as_deref()
     }
     /// <p>A description of the error.</p>
-    pub fn failure_description(&self) -> std::option::Option<&str> {
+    pub fn failure_description(&self) -> ::std::option::Option<&str> {
         self.failure_description.as_deref()
     }
 }
@@ -44,53 +44,70 @@ impl PartialFailure {
 
 /// A builder for [`PartialFailure`](crate::types::PartialFailure).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PartialFailureBuilder {
-    pub(crate) failure_resource: std::option::Option<std::string::String>,
-    pub(crate) exception_type: std::option::Option<std::string::String>,
-    pub(crate) failure_code: std::option::Option<std::string::String>,
-    pub(crate) failure_description: std::option::Option<std::string::String>,
+    pub(crate) failure_resource: ::std::option::Option<::std::string::String>,
+    pub(crate) exception_type: ::std::option::Option<::std::string::String>,
+    pub(crate) failure_code: ::std::option::Option<::std::string::String>,
+    pub(crate) failure_description: ::std::option::Option<::std::string::String>,
 }
 impl PartialFailureBuilder {
     /// <p>The specified rule that could not be deleted.</p>
-    pub fn failure_resource(mut self, input: impl Into<std::string::String>) -> Self {
-        self.failure_resource = Some(input.into());
+    pub fn failure_resource(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.failure_resource = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The specified rule that could not be deleted.</p>
-    pub fn set_failure_resource(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_failure_resource(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.failure_resource = input;
         self
     }
     /// <p>The type of error.</p>
-    pub fn exception_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.exception_type = Some(input.into());
+    pub fn exception_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.exception_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of error.</p>
-    pub fn set_exception_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_exception_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.exception_type = input;
         self
     }
     /// <p>The code of the error.</p>
-    pub fn failure_code(mut self, input: impl Into<std::string::String>) -> Self {
-        self.failure_code = Some(input.into());
+    pub fn failure_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.failure_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The code of the error.</p>
-    pub fn set_failure_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_failure_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.failure_code = input;
         self
     }
     /// <p>A description of the error.</p>
-    pub fn failure_description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.failure_description = Some(input.into());
+    pub fn failure_description(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.failure_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of the error.</p>
     pub fn set_failure_description(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.failure_description = input;
         self

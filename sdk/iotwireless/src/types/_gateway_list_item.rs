@@ -2,22 +2,22 @@
 
 /// <p>Gateway list item object that specifies the frequency and list of gateways for which the downlink message should be sent.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GatewayListItem {
     /// <p>The ID of the wireless gateways that you want to add to the list of gateways when sending downlink messages.</p>
     #[doc(hidden)]
-    pub gateway_id: std::option::Option<std::string::String>,
+    pub gateway_id: ::std::option::Option<::std::string::String>,
     /// <p>The frequency to use for the gateways when sending a downlink message to the wireless device.</p>
     #[doc(hidden)]
-    pub downlink_frequency: std::option::Option<i32>,
+    pub downlink_frequency: ::std::option::Option<i32>,
 }
 impl GatewayListItem {
     /// <p>The ID of the wireless gateways that you want to add to the list of gateways when sending downlink messages.</p>
-    pub fn gateway_id(&self) -> std::option::Option<&str> {
+    pub fn gateway_id(&self) -> ::std::option::Option<&str> {
         self.gateway_id.as_deref()
     }
     /// <p>The frequency to use for the gateways when sending a downlink message to the wireless device.</p>
-    pub fn downlink_frequency(&self) -> std::option::Option<i32> {
+    pub fn downlink_frequency(&self) -> ::std::option::Option<i32> {
         self.downlink_frequency
     }
 }
@@ -30,29 +30,31 @@ impl GatewayListItem {
 
 /// A builder for [`GatewayListItem`](crate::types::GatewayListItem).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GatewayListItemBuilder {
-    pub(crate) gateway_id: std::option::Option<std::string::String>,
-    pub(crate) downlink_frequency: std::option::Option<i32>,
+    pub(crate) gateway_id: ::std::option::Option<::std::string::String>,
+    pub(crate) downlink_frequency: ::std::option::Option<i32>,
 }
 impl GatewayListItemBuilder {
     /// <p>The ID of the wireless gateways that you want to add to the list of gateways when sending downlink messages.</p>
-    pub fn gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.gateway_id = Some(input.into());
+    pub fn gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the wireless gateways that you want to add to the list of gateways when sending downlink messages.</p>
-    pub fn set_gateway_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.gateway_id = input;
         self
     }
     /// <p>The frequency to use for the gateways when sending a downlink message to the wireless device.</p>
     pub fn downlink_frequency(mut self, input: i32) -> Self {
-        self.downlink_frequency = Some(input);
+        self.downlink_frequency = ::std::option::Option::Some(input);
         self
     }
     /// <p>The frequency to use for the gateways when sending a downlink message to the wireless device.</p>
-    pub fn set_downlink_frequency(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_downlink_frequency(mut self, input: ::std::option::Option<i32>) -> Self {
         self.downlink_frequency = input;
         self
     }

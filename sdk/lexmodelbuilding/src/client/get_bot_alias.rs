@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetBotAlias`](crate::operation::get_bot_alias::builders::GetBotAliasFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::get_bot_alias::builders::GetBotAliasFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_bot_alias::builders::GetBotAliasFluentBuilder::set_name): <p>The name of the bot alias. The name is case sensitive.</p>
-    ///   - [`bot_name(impl Into<String>)`](crate::operation::get_bot_alias::builders::GetBotAliasFluentBuilder::bot_name) / [`set_bot_name(Option<String>)`](crate::operation::get_bot_alias::builders::GetBotAliasFluentBuilder::set_bot_name): <p>The name of the bot.</p>
+    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::get_bot_alias::builders::GetBotAliasFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_bot_alias::builders::GetBotAliasFluentBuilder::set_name): <p>The name of the bot alias. The name is case sensitive.</p>
+    ///   - [`bot_name(impl ::std::convert::Into<String>)`](crate::operation::get_bot_alias::builders::GetBotAliasFluentBuilder::bot_name) / [`set_bot_name(Option<String>)`](crate::operation::get_bot_alias::builders::GetBotAliasFluentBuilder::set_bot_name): <p>The name of the bot.</p>
     /// - On success, responds with [`GetBotAliasOutput`](crate::operation::get_bot_alias::GetBotAliasOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::get_bot_alias::GetBotAliasOutput::name): <p>The name of the bot alias.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_bot_alias::GetBotAliasOutput::description): <p>A description of the bot alias.</p>

@@ -2,15 +2,15 @@
 
 /// Placeholder documentation for DescribeChannelRequest
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeChannelInput {
     /// channel ID
     #[doc(hidden)]
-    pub channel_id: std::option::Option<std::string::String>,
+    pub channel_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeChannelInput {
     /// channel ID
-    pub fn channel_id(&self) -> std::option::Option<&str> {
+    pub fn channel_id(&self) -> ::std::option::Option<&str> {
         self.channel_id.as_deref()
     }
 }
@@ -23,29 +23,31 @@ impl DescribeChannelInput {
 
 /// A builder for [`DescribeChannelInput`](crate::operation::describe_channel::DescribeChannelInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeChannelInputBuilder {
-    pub(crate) channel_id: std::option::Option<std::string::String>,
+    pub(crate) channel_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeChannelInputBuilder {
     /// channel ID
-    pub fn channel_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.channel_id = Some(input.into());
+    pub fn channel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.channel_id = ::std::option::Option::Some(input.into());
         self
     }
     /// channel ID
-    pub fn set_channel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_channel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.channel_id = input;
         self
     }
     /// Consumes the builder and constructs a [`DescribeChannelInput`](crate::operation::describe_channel::DescribeChannelInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::describe_channel::DescribeChannelInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::describe_channel::DescribeChannelInput {
+        ::std::result::Result::Ok(crate::operation::describe_channel::DescribeChannelInput {
             channel_id: self.channel_id,
         })
     }

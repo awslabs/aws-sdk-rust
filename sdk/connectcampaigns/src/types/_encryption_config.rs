@@ -2,17 +2,17 @@
 
 /// Encryption config for Connect Instance. Note that sensitive data will always be encrypted. If disabled, service will perform encryption with its own key. If enabled, a KMS key id needs to be provided and KMS charges will apply. KMS is only type supported
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EncryptionConfig {
     /// Boolean to indicate if custom encryption has been enabled.
     #[doc(hidden)]
     pub enabled: bool,
     /// Server-side encryption type.
     #[doc(hidden)]
-    pub encryption_type: std::option::Option<crate::types::EncryptionType>,
+    pub encryption_type: ::std::option::Option<crate::types::EncryptionType>,
     /// KMS key id/arn for encryption config.
     #[doc(hidden)]
-    pub key_arn: std::option::Option<std::string::String>,
+    pub key_arn: ::std::option::Option<::std::string::String>,
 }
 impl EncryptionConfig {
     /// Boolean to indicate if custom encryption has been enabled.
@@ -20,11 +20,11 @@ impl EncryptionConfig {
         self.enabled
     }
     /// Server-side encryption type.
-    pub fn encryption_type(&self) -> std::option::Option<&crate::types::EncryptionType> {
+    pub fn encryption_type(&self) -> ::std::option::Option<&crate::types::EncryptionType> {
         self.encryption_type.as_ref()
     }
     /// KMS key id/arn for encryption config.
-    pub fn key_arn(&self) -> std::option::Option<&str> {
+    pub fn key_arn(&self) -> ::std::option::Option<&str> {
         self.key_arn.as_deref()
     }
 }
@@ -37,43 +37,45 @@ impl EncryptionConfig {
 
 /// A builder for [`EncryptionConfig`](crate::types::EncryptionConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EncryptionConfigBuilder {
-    pub(crate) enabled: std::option::Option<bool>,
-    pub(crate) encryption_type: std::option::Option<crate::types::EncryptionType>,
-    pub(crate) key_arn: std::option::Option<std::string::String>,
+    pub(crate) enabled: ::std::option::Option<bool>,
+    pub(crate) encryption_type: ::std::option::Option<crate::types::EncryptionType>,
+    pub(crate) key_arn: ::std::option::Option<::std::string::String>,
 }
 impl EncryptionConfigBuilder {
     /// Boolean to indicate if custom encryption has been enabled.
     pub fn enabled(mut self, input: bool) -> Self {
-        self.enabled = Some(input);
+        self.enabled = ::std::option::Option::Some(input);
         self
     }
     /// Boolean to indicate if custom encryption has been enabled.
-    pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
     }
     /// Server-side encryption type.
     pub fn encryption_type(mut self, input: crate::types::EncryptionType) -> Self {
-        self.encryption_type = Some(input);
+        self.encryption_type = ::std::option::Option::Some(input);
         self
     }
     /// Server-side encryption type.
     pub fn set_encryption_type(
         mut self,
-        input: std::option::Option<crate::types::EncryptionType>,
+        input: ::std::option::Option<crate::types::EncryptionType>,
     ) -> Self {
         self.encryption_type = input;
         self
     }
     /// KMS key id/arn for encryption config.
-    pub fn key_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.key_arn = Some(input.into());
+    pub fn key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.key_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// KMS key id/arn for encryption config.
-    pub fn set_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_arn = input;
         self
     }

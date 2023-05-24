@@ -13,56 +13,59 @@ pub use crate::operation::get_place::_get_place_input::GetPlaceInputBuilder;
 /// <li> <p>Data provider specified in the place index resource</p> </li>
 /// </ul>
 /// </note>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetPlaceFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::get_place::builders::GetPlaceInputBuilder,
 }
 impl GetPlaceFluentBuilder {
     /// Creates a new `GetPlace`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::get_place::GetPlace,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::get_place::GetPlaceError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_place::GetPlaceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_place::GetPlaceOutput,
-        aws_smithy_http::result::SdkError<crate::operation::get_place::GetPlaceError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_place::GetPlaceError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -75,29 +78,29 @@ impl GetPlaceFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_place::GetPlaceOutput,
-        aws_smithy_http::result::SdkError<crate::operation::get_place::GetPlaceError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_place::GetPlaceError>,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the place index resource that you want to use for the search.</p>
-    pub fn index_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn index_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.index_name(input.into());
         self
     }
     /// <p>The name of the place index resource that you want to use for the search.</p>
-    pub fn set_index_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_index_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_index_name(input);
         self
     }
     /// <p>The identifier of the place to find.</p>
-    pub fn place_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn place_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.place_id(input.into());
         self
     }
     /// <p>The identifier of the place to find.</p>
-    pub fn set_place_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_place_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_place_id(input);
         self
     }
@@ -106,7 +109,7 @@ impl GetPlaceFluentBuilder {
     /// <p>For an example, we'll use the Greek language. You search for a location around Athens, Greece, with the <code>language</code> parameter set to <code>en</code>. The <code>city</code> in the results will most likely be returned as <code>Athens</code>.</p>
     /// <p>If you set the <code>language</code> parameter to <code>el</code>, for Greek, then the <code>city</code> in the results will more likely be returned as <code>Αθήνα</code>.</p>
     /// <p>If the data provider does not have a value for Greek, the result will be in a language that the provider does support.</p>
-    pub fn language(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.language(input.into());
         self
     }
@@ -115,7 +118,7 @@ impl GetPlaceFluentBuilder {
     /// <p>For an example, we'll use the Greek language. You search for a location around Athens, Greece, with the <code>language</code> parameter set to <code>en</code>. The <code>city</code> in the results will most likely be returned as <code>Athens</code>.</p>
     /// <p>If you set the <code>language</code> parameter to <code>el</code>, for Greek, then the <code>city</code> in the results will more likely be returned as <code>Αθήνα</code>.</p>
     /// <p>If the data provider does not have a value for Greek, the result will be in a language that the provider does support.</p>
-    pub fn set_language(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_language(input);
         self
     }

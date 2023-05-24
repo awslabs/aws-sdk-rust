@@ -2,36 +2,36 @@
 
 /// <p>In the response to a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverEndpoint.html">CreateResolverEndpoint</a>, <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DeleteResolverEndpoint.html">DeleteResolverEndpoint</a>, <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html">GetResolverEndpoint</a>, Updates the name, or ResolverEndpointType for an endpoint, or <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_UpdateResolverEndpoint.html">UpdateResolverEndpoint</a> request, a complex type that contains settings for an existing inbound or outbound Resolver endpoint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResolverEndpoint {
     /// <p>The ID of the Resolver endpoint.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>A unique string that identifies the request that created the Resolver endpoint. The <code>CreatorRequestId</code> allows failed requests to be retried without the risk of running the operation twice.</p>
     #[doc(hidden)]
-    pub creator_request_id: std::option::Option<std::string::String>,
+    pub creator_request_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN (Amazon Resource Name) for the Resolver endpoint.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name that you assigned to the Resolver endpoint when you submitted a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverEndpoint.html">CreateResolverEndpoint</a> request.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of one or more security groups that control access to this VPC. The security group must include one or more inbound rules (for inbound endpoints) or outbound rules (for outbound endpoints). Inbound and outbound rules must allow TCP and UDP access. For inbound access, open port 53. For outbound access, open the port that you're using for DNS queries on your network.</p>
     #[doc(hidden)]
-    pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Indicates whether the Resolver endpoint allows inbound or outbound DNS queries:</p>
     /// <ul>
     /// <li> <p> <code>INBOUND</code>: allows DNS queries to your VPC from your network</p> </li>
     /// <li> <p> <code>OUTBOUND</code>: allows DNS queries from your VPC to your network</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub direction: std::option::Option<crate::types::ResolverEndpointDirection>,
+    pub direction: ::std::option::Option<crate::types::ResolverEndpointDirection>,
     /// <p>The number of IP addresses that the Resolver endpoint can use for DNS queries.</p>
     #[doc(hidden)]
-    pub ip_address_count: std::option::Option<i32>,
+    pub ip_address_count: ::std::option::Option<i32>,
     /// <p>The ID of the VPC that you want to create the Resolver endpoint in.</p>
     #[doc(hidden)]
-    pub host_vpc_id: std::option::Option<std::string::String>,
+    pub host_vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>A code that specifies the current status of the Resolver endpoint. Valid values include the following:</p>
     /// <ul>
     /// <li> <p> <code>CREATING</code>: Resolver is creating and configuring one or more Amazon VPC network interfaces for this endpoint.</p> </li>
@@ -46,39 +46,39 @@ pub struct ResolverEndpoint {
     /// <li> <p> <code>DELETING</code>: Resolver is deleting this endpoint and the associated network interfaces.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::ResolverEndpointStatus>,
+    pub status: ::std::option::Option<crate::types::ResolverEndpointStatus>,
     /// <p>A detailed description of the status of the Resolver endpoint.</p>
     #[doc(hidden)]
-    pub status_message: std::option::Option<std::string::String>,
+    pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the endpoint was created, in Unix time format and Coordinated Universal Time (UTC).</p>
     #[doc(hidden)]
-    pub creation_time: std::option::Option<std::string::String>,
+    pub creation_time: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the endpoint was last modified, in Unix time format and Coordinated Universal Time (UTC).</p>
     #[doc(hidden)]
-    pub modification_time: std::option::Option<std::string::String>,
+    pub modification_time: ::std::option::Option<::std::string::String>,
     /// <p> The Resolver endpoint IP address type. </p>
     #[doc(hidden)]
-    pub resolver_endpoint_type: std::option::Option<crate::types::ResolverEndpointType>,
+    pub resolver_endpoint_type: ::std::option::Option<crate::types::ResolverEndpointType>,
 }
 impl ResolverEndpoint {
     /// <p>The ID of the Resolver endpoint.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>A unique string that identifies the request that created the Resolver endpoint. The <code>CreatorRequestId</code> allows failed requests to be retried without the risk of running the operation twice.</p>
-    pub fn creator_request_id(&self) -> std::option::Option<&str> {
+    pub fn creator_request_id(&self) -> ::std::option::Option<&str> {
         self.creator_request_id.as_deref()
     }
     /// <p>The ARN (Amazon Resource Name) for the Resolver endpoint.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The name that you assigned to the Resolver endpoint when you submitted a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverEndpoint.html">CreateResolverEndpoint</a> request.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The ID of one or more security groups that control access to this VPC. The security group must include one or more inbound rules (for inbound endpoints) or outbound rules (for outbound endpoints). Inbound and outbound rules must allow TCP and UDP access. For inbound access, open port 53. For outbound access, open the port that you're using for DNS queries on your network.</p>
-    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.security_group_ids.as_deref()
     }
     /// <p>Indicates whether the Resolver endpoint allows inbound or outbound DNS queries:</p>
@@ -86,15 +86,15 @@ impl ResolverEndpoint {
     /// <li> <p> <code>INBOUND</code>: allows DNS queries to your VPC from your network</p> </li>
     /// <li> <p> <code>OUTBOUND</code>: allows DNS queries from your VPC to your network</p> </li>
     /// </ul>
-    pub fn direction(&self) -> std::option::Option<&crate::types::ResolverEndpointDirection> {
+    pub fn direction(&self) -> ::std::option::Option<&crate::types::ResolverEndpointDirection> {
         self.direction.as_ref()
     }
     /// <p>The number of IP addresses that the Resolver endpoint can use for DNS queries.</p>
-    pub fn ip_address_count(&self) -> std::option::Option<i32> {
+    pub fn ip_address_count(&self) -> ::std::option::Option<i32> {
         self.ip_address_count
     }
     /// <p>The ID of the VPC that you want to create the Resolver endpoint in.</p>
-    pub fn host_vpc_id(&self) -> std::option::Option<&str> {
+    pub fn host_vpc_id(&self) -> ::std::option::Option<&str> {
         self.host_vpc_id.as_deref()
     }
     /// <p>A code that specifies the current status of the Resolver endpoint. Valid values include the following:</p>
@@ -110,25 +110,25 @@ impl ResolverEndpoint {
     /// </ul> </li>
     /// <li> <p> <code>DELETING</code>: Resolver is deleting this endpoint and the associated network interfaces.</p> </li>
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::types::ResolverEndpointStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::ResolverEndpointStatus> {
         self.status.as_ref()
     }
     /// <p>A detailed description of the status of the Resolver endpoint.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<&str> {
         self.status_message.as_deref()
     }
     /// <p>The date and time that the endpoint was created, in Unix time format and Coordinated Universal Time (UTC).</p>
-    pub fn creation_time(&self) -> std::option::Option<&str> {
+    pub fn creation_time(&self) -> ::std::option::Option<&str> {
         self.creation_time.as_deref()
     }
     /// <p>The date and time that the endpoint was last modified, in Unix time format and Coordinated Universal Time (UTC).</p>
-    pub fn modification_time(&self) -> std::option::Option<&str> {
+    pub fn modification_time(&self) -> ::std::option::Option<&str> {
         self.modification_time.as_deref()
     }
     /// <p> The Resolver endpoint IP address type. </p>
     pub fn resolver_endpoint_type(
         &self,
-    ) -> std::option::Option<&crate::types::ResolverEndpointType> {
+    ) -> ::std::option::Option<&crate::types::ResolverEndpointType> {
         self.resolver_endpoint_type.as_ref()
     }
 }
@@ -141,63 +141,68 @@ impl ResolverEndpoint {
 
 /// A builder for [`ResolverEndpoint`](crate::types::ResolverEndpoint).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResolverEndpointBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) creator_request_id: std::option::Option<std::string::String>,
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) direction: std::option::Option<crate::types::ResolverEndpointDirection>,
-    pub(crate) ip_address_count: std::option::Option<i32>,
-    pub(crate) host_vpc_id: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::ResolverEndpointStatus>,
-    pub(crate) status_message: std::option::Option<std::string::String>,
-    pub(crate) creation_time: std::option::Option<std::string::String>,
-    pub(crate) modification_time: std::option::Option<std::string::String>,
-    pub(crate) resolver_endpoint_type: std::option::Option<crate::types::ResolverEndpointType>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) creator_request_id: ::std::option::Option<::std::string::String>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) direction: ::std::option::Option<crate::types::ResolverEndpointDirection>,
+    pub(crate) ip_address_count: ::std::option::Option<i32>,
+    pub(crate) host_vpc_id: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::ResolverEndpointStatus>,
+    pub(crate) status_message: ::std::option::Option<::std::string::String>,
+    pub(crate) creation_time: ::std::option::Option<::std::string::String>,
+    pub(crate) modification_time: ::std::option::Option<::std::string::String>,
+    pub(crate) resolver_endpoint_type: ::std::option::Option<crate::types::ResolverEndpointType>,
 }
 impl ResolverEndpointBuilder {
     /// <p>The ID of the Resolver endpoint.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Resolver endpoint.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>A unique string that identifies the request that created the Resolver endpoint. The <code>CreatorRequestId</code> allows failed requests to be retried without the risk of running the operation twice.</p>
-    pub fn creator_request_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.creator_request_id = Some(input.into());
+    pub fn creator_request_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.creator_request_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique string that identifies the request that created the Resolver endpoint. The <code>CreatorRequestId</code> allows failed requests to be retried without the risk of running the operation twice.</p>
     pub fn set_creator_request_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.creator_request_id = input;
         self
     }
     /// <p>The ARN (Amazon Resource Name) for the Resolver endpoint.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN (Amazon Resource Name) for the Resolver endpoint.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// <p>The name that you assigned to the Resolver endpoint when you submitted a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverEndpoint.html">CreateResolverEndpoint</a> request.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name that you assigned to the Resolver endpoint when you submitted a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverEndpoint.html">CreateResolverEndpoint</a> request.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
@@ -206,16 +211,19 @@ impl ResolverEndpointBuilder {
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
     ///
     /// <p>The ID of one or more security groups that control access to this VPC. The security group must include one or more inbound rules (for inbound endpoints) or outbound rules (for outbound endpoints). Inbound and outbound rules must allow TCP and UDP access. For inbound access, open port 53. For outbound access, open the port that you're using for DNS queries on your network.</p>
-    pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn security_group_ids(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
         v.push(input.into());
-        self.security_group_ids = Some(v);
+        self.security_group_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The ID of one or more security groups that control access to this VPC. The security group must include one or more inbound rules (for inbound endpoints) or outbound rules (for outbound endpoints). Inbound and outbound rules must allow TCP and UDP access. For inbound access, open port 53. For outbound access, open the port that you're using for DNS queries on your network.</p>
     pub fn set_security_group_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.security_group_ids = input;
         self
@@ -226,7 +234,7 @@ impl ResolverEndpointBuilder {
     /// <li> <p> <code>OUTBOUND</code>: allows DNS queries from your VPC to your network</p> </li>
     /// </ul>
     pub fn direction(mut self, input: crate::types::ResolverEndpointDirection) -> Self {
-        self.direction = Some(input);
+        self.direction = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether the Resolver endpoint allows inbound or outbound DNS queries:</p>
@@ -236,28 +244,28 @@ impl ResolverEndpointBuilder {
     /// </ul>
     pub fn set_direction(
         mut self,
-        input: std::option::Option<crate::types::ResolverEndpointDirection>,
+        input: ::std::option::Option<crate::types::ResolverEndpointDirection>,
     ) -> Self {
         self.direction = input;
         self
     }
     /// <p>The number of IP addresses that the Resolver endpoint can use for DNS queries.</p>
     pub fn ip_address_count(mut self, input: i32) -> Self {
-        self.ip_address_count = Some(input);
+        self.ip_address_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of IP addresses that the Resolver endpoint can use for DNS queries.</p>
-    pub fn set_ip_address_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_ip_address_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.ip_address_count = input;
         self
     }
     /// <p>The ID of the VPC that you want to create the Resolver endpoint in.</p>
-    pub fn host_vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.host_vpc_id = Some(input.into());
+    pub fn host_vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.host_vpc_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the VPC that you want to create the Resolver endpoint in.</p>
-    pub fn set_host_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_host_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.host_vpc_id = input;
         self
     }
@@ -275,7 +283,7 @@ impl ResolverEndpointBuilder {
     /// <li> <p> <code>DELETING</code>: Resolver is deleting this endpoint and the associated network interfaces.</p> </li>
     /// </ul>
     pub fn status(mut self, input: crate::types::ResolverEndpointStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>A code that specifies the current status of the Resolver endpoint. Valid values include the following:</p>
@@ -293,53 +301,68 @@ impl ResolverEndpointBuilder {
     /// </ul>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::ResolverEndpointStatus>,
+        input: ::std::option::Option<crate::types::ResolverEndpointStatus>,
     ) -> Self {
         self.status = input;
         self
     }
     /// <p>A detailed description of the status of the Resolver endpoint.</p>
-    pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status_message = Some(input.into());
+    pub fn status_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A detailed description of the status of the Resolver endpoint.</p>
-    pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.status_message = input;
         self
     }
     /// <p>The date and time that the endpoint was created, in Unix time format and Coordinated Universal Time (UTC).</p>
-    pub fn creation_time(mut self, input: impl Into<std::string::String>) -> Self {
-        self.creation_time = Some(input.into());
+    pub fn creation_time(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.creation_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date and time that the endpoint was created, in Unix time format and Coordinated Universal Time (UTC).</p>
-    pub fn set_creation_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_creation_time(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.creation_time = input;
         self
     }
     /// <p>The date and time that the endpoint was last modified, in Unix time format and Coordinated Universal Time (UTC).</p>
-    pub fn modification_time(mut self, input: impl Into<std::string::String>) -> Self {
-        self.modification_time = Some(input.into());
+    pub fn modification_time(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.modification_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date and time that the endpoint was last modified, in Unix time format and Coordinated Universal Time (UTC).</p>
     pub fn set_modification_time(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.modification_time = input;
         self
     }
     /// <p> The Resolver endpoint IP address type. </p>
     pub fn resolver_endpoint_type(mut self, input: crate::types::ResolverEndpointType) -> Self {
-        self.resolver_endpoint_type = Some(input);
+        self.resolver_endpoint_type = ::std::option::Option::Some(input);
         self
     }
     /// <p> The Resolver endpoint IP address type. </p>
     pub fn set_resolver_endpoint_type(
         mut self,
-        input: std::option::Option<crate::types::ResolverEndpointType>,
+        input: ::std::option::Option<crate::types::ResolverEndpointType>,
     ) -> Self {
         self.resolver_endpoint_type = input;
         self

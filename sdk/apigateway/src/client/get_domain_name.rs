@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetDomainName`](crate::operation::get_domain_name::builders::GetDomainNameFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_name(impl Into<String>)`](crate::operation::get_domain_name::builders::GetDomainNameFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::get_domain_name::builders::GetDomainNameFluentBuilder::set_domain_name): <p>The name of the DomainName resource.</p>
+    ///   - [`domain_name(impl ::std::convert::Into<String>)`](crate::operation::get_domain_name::builders::GetDomainNameFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::get_domain_name::builders::GetDomainNameFluentBuilder::set_domain_name): <p>The name of the DomainName resource.</p>
     /// - On success, responds with [`GetDomainNameOutput`](crate::operation::get_domain_name::GetDomainNameOutput) with field(s):
     ///   - [`domain_name(Option<String>)`](crate::operation::get_domain_name::GetDomainNameOutput::domain_name): <p>The custom domain name as an API host name, for example, <code>my-api.example.com</code>.</p>
     ///   - [`certificate_name(Option<String>)`](crate::operation::get_domain_name::GetDomainNameOutput::certificate_name): <p>The name of the certificate that will be used by edge-optimized endpoint for this domain name.</p>

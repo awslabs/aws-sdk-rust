@@ -2,39 +2,39 @@
 
 /// <p>For a SQL-based Kinesis Data Analytics application, describes the reference data source configured for an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReferenceDataSourceDescription {
     /// <p>The ID of the reference data source. This is the ID that Kinesis Data Analytics assigns when you add the reference data source to your application using the <code>CreateApplication</code> or <code>UpdateApplication</code> operation.</p>
     #[doc(hidden)]
-    pub reference_id: std::option::Option<std::string::String>,
+    pub reference_id: ::std::option::Option<::std::string::String>,
     /// <p>The in-application table name created by the specific reference data source configuration.</p>
     #[doc(hidden)]
-    pub table_name: std::option::Option<std::string::String>,
+    pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>Provides the Amazon S3 bucket name, the object key name that contains the reference data. </p>
     #[doc(hidden)]
     pub s3_reference_data_source_description:
-        std::option::Option<crate::types::S3ReferenceDataSourceDescription>,
+        ::std::option::Option<crate::types::S3ReferenceDataSourceDescription>,
     /// <p>Describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream.</p>
     #[doc(hidden)]
-    pub reference_schema: std::option::Option<crate::types::SourceSchema>,
+    pub reference_schema: ::std::option::Option<crate::types::SourceSchema>,
 }
 impl ReferenceDataSourceDescription {
     /// <p>The ID of the reference data source. This is the ID that Kinesis Data Analytics assigns when you add the reference data source to your application using the <code>CreateApplication</code> or <code>UpdateApplication</code> operation.</p>
-    pub fn reference_id(&self) -> std::option::Option<&str> {
+    pub fn reference_id(&self) -> ::std::option::Option<&str> {
         self.reference_id.as_deref()
     }
     /// <p>The in-application table name created by the specific reference data source configuration.</p>
-    pub fn table_name(&self) -> std::option::Option<&str> {
+    pub fn table_name(&self) -> ::std::option::Option<&str> {
         self.table_name.as_deref()
     }
     /// <p>Provides the Amazon S3 bucket name, the object key name that contains the reference data. </p>
     pub fn s3_reference_data_source_description(
         &self,
-    ) -> std::option::Option<&crate::types::S3ReferenceDataSourceDescription> {
+    ) -> ::std::option::Option<&crate::types::S3ReferenceDataSourceDescription> {
         self.s3_reference_data_source_description.as_ref()
     }
     /// <p>Describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream.</p>
-    pub fn reference_schema(&self) -> std::option::Option<&crate::types::SourceSchema> {
+    pub fn reference_schema(&self) -> ::std::option::Option<&crate::types::SourceSchema> {
         self.reference_schema.as_ref()
     }
 }
@@ -47,32 +47,34 @@ impl ReferenceDataSourceDescription {
 
 /// A builder for [`ReferenceDataSourceDescription`](crate::types::ReferenceDataSourceDescription).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ReferenceDataSourceDescriptionBuilder {
-    pub(crate) reference_id: std::option::Option<std::string::String>,
-    pub(crate) table_name: std::option::Option<std::string::String>,
+    pub(crate) reference_id: ::std::option::Option<::std::string::String>,
+    pub(crate) table_name: ::std::option::Option<::std::string::String>,
     pub(crate) s3_reference_data_source_description:
-        std::option::Option<crate::types::S3ReferenceDataSourceDescription>,
-    pub(crate) reference_schema: std::option::Option<crate::types::SourceSchema>,
+        ::std::option::Option<crate::types::S3ReferenceDataSourceDescription>,
+    pub(crate) reference_schema: ::std::option::Option<crate::types::SourceSchema>,
 }
 impl ReferenceDataSourceDescriptionBuilder {
     /// <p>The ID of the reference data source. This is the ID that Kinesis Data Analytics assigns when you add the reference data source to your application using the <code>CreateApplication</code> or <code>UpdateApplication</code> operation.</p>
-    pub fn reference_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.reference_id = Some(input.into());
+    pub fn reference_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.reference_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the reference data source. This is the ID that Kinesis Data Analytics assigns when you add the reference data source to your application using the <code>CreateApplication</code> or <code>UpdateApplication</code> operation.</p>
-    pub fn set_reference_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_reference_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reference_id = input;
         self
     }
     /// <p>The in-application table name created by the specific reference data source configuration.</p>
-    pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.table_name = Some(input.into());
+    pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.table_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The in-application table name created by the specific reference data source configuration.</p>
-    pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_name = input;
         self
     }
@@ -81,26 +83,26 @@ impl ReferenceDataSourceDescriptionBuilder {
         mut self,
         input: crate::types::S3ReferenceDataSourceDescription,
     ) -> Self {
-        self.s3_reference_data_source_description = Some(input);
+        self.s3_reference_data_source_description = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides the Amazon S3 bucket name, the object key name that contains the reference data. </p>
     pub fn set_s3_reference_data_source_description(
         mut self,
-        input: std::option::Option<crate::types::S3ReferenceDataSourceDescription>,
+        input: ::std::option::Option<crate::types::S3ReferenceDataSourceDescription>,
     ) -> Self {
         self.s3_reference_data_source_description = input;
         self
     }
     /// <p>Describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream.</p>
     pub fn reference_schema(mut self, input: crate::types::SourceSchema) -> Self {
-        self.reference_schema = Some(input);
+        self.reference_schema = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream.</p>
     pub fn set_reference_schema(
         mut self,
-        input: std::option::Option<crate::types::SourceSchema>,
+        input: ::std::option::Option<crate::types::SourceSchema>,
     ) -> Self {
         self.reference_schema = input;
         self

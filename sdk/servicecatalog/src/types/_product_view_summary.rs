@@ -2,69 +2,69 @@
 
 /// <p>Summary information about a product view.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProductViewSummary {
     /// <p>The product view identifier.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The product identifier.</p>
     #[doc(hidden)]
-    pub product_id: std::option::Option<std::string::String>,
+    pub product_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the product.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The owner of the product. Contact the product administrator for the significance of this value.</p>
     #[doc(hidden)]
-    pub owner: std::option::Option<std::string::String>,
+    pub owner: ::std::option::Option<::std::string::String>,
     /// <p>Short description of the product.</p>
     #[doc(hidden)]
-    pub short_description: std::option::Option<std::string::String>,
+    pub short_description: ::std::option::Option<::std::string::String>,
     /// <p>The product type. Contact the product administrator for the significance of this value. If this value is <code>MARKETPLACE</code>, the product was created by Amazon Web Services Marketplace.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::ProductType>,
+    pub r#type: ::std::option::Option<crate::types::ProductType>,
     /// <p>The distributor of the product. Contact the product administrator for the significance of this value.</p>
     #[doc(hidden)]
-    pub distributor: std::option::Option<std::string::String>,
+    pub distributor: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the product has a default path. If the product does not have a default path, call <code>ListLaunchPaths</code> to disambiguate between paths. Otherwise, <code>ListLaunchPaths</code> is not required, and the output of <code>ProductViewSummary</code> can be used directly with <code>DescribeProvisioningParameters</code>.</p>
     #[doc(hidden)]
     pub has_default_path: bool,
     /// <p>The email contact information to obtain support for this Product.</p>
     #[doc(hidden)]
-    pub support_email: std::option::Option<std::string::String>,
+    pub support_email: ::std::option::Option<::std::string::String>,
     /// <p>The description of the support for this Product.</p>
     #[doc(hidden)]
-    pub support_description: std::option::Option<std::string::String>,
+    pub support_description: ::std::option::Option<::std::string::String>,
     /// <p>The URL information to obtain support for this Product.</p>
     #[doc(hidden)]
-    pub support_url: std::option::Option<std::string::String>,
+    pub support_url: ::std::option::Option<::std::string::String>,
 }
 impl ProductViewSummary {
     /// <p>The product view identifier.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The product identifier.</p>
-    pub fn product_id(&self) -> std::option::Option<&str> {
+    pub fn product_id(&self) -> ::std::option::Option<&str> {
         self.product_id.as_deref()
     }
     /// <p>The name of the product.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The owner of the product. Contact the product administrator for the significance of this value.</p>
-    pub fn owner(&self) -> std::option::Option<&str> {
+    pub fn owner(&self) -> ::std::option::Option<&str> {
         self.owner.as_deref()
     }
     /// <p>Short description of the product.</p>
-    pub fn short_description(&self) -> std::option::Option<&str> {
+    pub fn short_description(&self) -> ::std::option::Option<&str> {
         self.short_description.as_deref()
     }
     /// <p>The product type. Contact the product administrator for the significance of this value. If this value is <code>MARKETPLACE</code>, the product was created by Amazon Web Services Marketplace.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::ProductType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ProductType> {
         self.r#type.as_ref()
     }
     /// <p>The distributor of the product. Contact the product administrator for the significance of this value.</p>
-    pub fn distributor(&self) -> std::option::Option<&str> {
+    pub fn distributor(&self) -> ::std::option::Option<&str> {
         self.distributor.as_deref()
     }
     /// <p>Indicates whether the product has a default path. If the product does not have a default path, call <code>ListLaunchPaths</code> to disambiguate between paths. Otherwise, <code>ListLaunchPaths</code> is not required, and the output of <code>ProductViewSummary</code> can be used directly with <code>DescribeProvisioningParameters</code>.</p>
@@ -72,15 +72,15 @@ impl ProductViewSummary {
         self.has_default_path
     }
     /// <p>The email contact information to obtain support for this Product.</p>
-    pub fn support_email(&self) -> std::option::Option<&str> {
+    pub fn support_email(&self) -> ::std::option::Option<&str> {
         self.support_email.as_deref()
     }
     /// <p>The description of the support for this Product.</p>
-    pub fn support_description(&self) -> std::option::Option<&str> {
+    pub fn support_description(&self) -> ::std::option::Option<&str> {
         self.support_description.as_deref()
     }
     /// <p>The URL information to obtain support for this Product.</p>
-    pub fn support_url(&self) -> std::option::Option<&str> {
+    pub fn support_url(&self) -> ::std::option::Option<&str> {
         self.support_url.as_deref()
     }
 }
@@ -93,134 +93,148 @@ impl ProductViewSummary {
 
 /// A builder for [`ProductViewSummary`](crate::types::ProductViewSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ProductViewSummaryBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) product_id: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) owner: std::option::Option<std::string::String>,
-    pub(crate) short_description: std::option::Option<std::string::String>,
-    pub(crate) r#type: std::option::Option<crate::types::ProductType>,
-    pub(crate) distributor: std::option::Option<std::string::String>,
-    pub(crate) has_default_path: std::option::Option<bool>,
-    pub(crate) support_email: std::option::Option<std::string::String>,
-    pub(crate) support_description: std::option::Option<std::string::String>,
-    pub(crate) support_url: std::option::Option<std::string::String>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) product_id: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) owner: ::std::option::Option<::std::string::String>,
+    pub(crate) short_description: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::ProductType>,
+    pub(crate) distributor: ::std::option::Option<::std::string::String>,
+    pub(crate) has_default_path: ::std::option::Option<bool>,
+    pub(crate) support_email: ::std::option::Option<::std::string::String>,
+    pub(crate) support_description: ::std::option::Option<::std::string::String>,
+    pub(crate) support_url: ::std::option::Option<::std::string::String>,
 }
 impl ProductViewSummaryBuilder {
     /// <p>The product view identifier.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The product view identifier.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>The product identifier.</p>
-    pub fn product_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.product_id = Some(input.into());
+    pub fn product_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.product_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The product identifier.</p>
-    pub fn set_product_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_product_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.product_id = input;
         self
     }
     /// <p>The name of the product.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the product.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The owner of the product. Contact the product administrator for the significance of this value.</p>
-    pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
-        self.owner = Some(input.into());
+    pub fn owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.owner = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The owner of the product. Contact the product administrator for the significance of this value.</p>
-    pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner = input;
         self
     }
     /// <p>Short description of the product.</p>
-    pub fn short_description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.short_description = Some(input.into());
+    pub fn short_description(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.short_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Short description of the product.</p>
     pub fn set_short_description(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.short_description = input;
         self
     }
     /// <p>The product type. Contact the product administrator for the significance of this value. If this value is <code>MARKETPLACE</code>, the product was created by Amazon Web Services Marketplace.</p>
     pub fn r#type(mut self, input: crate::types::ProductType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The product type. Contact the product administrator for the significance of this value. If this value is <code>MARKETPLACE</code>, the product was created by Amazon Web Services Marketplace.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::ProductType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ProductType>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The distributor of the product. Contact the product administrator for the significance of this value.</p>
-    pub fn distributor(mut self, input: impl Into<std::string::String>) -> Self {
-        self.distributor = Some(input.into());
+    pub fn distributor(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.distributor = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The distributor of the product. Contact the product administrator for the significance of this value.</p>
-    pub fn set_distributor(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_distributor(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.distributor = input;
         self
     }
     /// <p>Indicates whether the product has a default path. If the product does not have a default path, call <code>ListLaunchPaths</code> to disambiguate between paths. Otherwise, <code>ListLaunchPaths</code> is not required, and the output of <code>ProductViewSummary</code> can be used directly with <code>DescribeProvisioningParameters</code>.</p>
     pub fn has_default_path(mut self, input: bool) -> Self {
-        self.has_default_path = Some(input);
+        self.has_default_path = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether the product has a default path. If the product does not have a default path, call <code>ListLaunchPaths</code> to disambiguate between paths. Otherwise, <code>ListLaunchPaths</code> is not required, and the output of <code>ProductViewSummary</code> can be used directly with <code>DescribeProvisioningParameters</code>.</p>
-    pub fn set_has_default_path(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_has_default_path(mut self, input: ::std::option::Option<bool>) -> Self {
         self.has_default_path = input;
         self
     }
     /// <p>The email contact information to obtain support for this Product.</p>
-    pub fn support_email(mut self, input: impl Into<std::string::String>) -> Self {
-        self.support_email = Some(input.into());
+    pub fn support_email(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.support_email = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The email contact information to obtain support for this Product.</p>
-    pub fn set_support_email(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_support_email(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.support_email = input;
         self
     }
     /// <p>The description of the support for this Product.</p>
-    pub fn support_description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.support_description = Some(input.into());
+    pub fn support_description(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.support_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the support for this Product.</p>
     pub fn set_support_description(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.support_description = input;
         self
     }
     /// <p>The URL information to obtain support for this Product.</p>
-    pub fn support_url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.support_url = Some(input.into());
+    pub fn support_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.support_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL information to obtain support for this Product.</p>
-    pub fn set_support_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_support_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.support_url = input;
         self
     }

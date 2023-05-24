@@ -2,15 +2,15 @@
 
 /// <p>The configuration used to authenticate a speaker during a session.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AuthenticationConfiguration {
     /// <p>The minimum threshold needed to successfully authenticate a speaker.</p>
     #[doc(hidden)]
-    pub acceptance_threshold: std::option::Option<i32>,
+    pub acceptance_threshold: ::std::option::Option<i32>,
 }
 impl AuthenticationConfiguration {
     /// <p>The minimum threshold needed to successfully authenticate a speaker.</p>
-    pub fn acceptance_threshold(&self) -> std::option::Option<i32> {
+    pub fn acceptance_threshold(&self) -> ::std::option::Option<i32> {
         self.acceptance_threshold
     }
 }
@@ -23,18 +23,20 @@ impl AuthenticationConfiguration {
 
 /// A builder for [`AuthenticationConfiguration`](crate::types::AuthenticationConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AuthenticationConfigurationBuilder {
-    pub(crate) acceptance_threshold: std::option::Option<i32>,
+    pub(crate) acceptance_threshold: ::std::option::Option<i32>,
 }
 impl AuthenticationConfigurationBuilder {
     /// <p>The minimum threshold needed to successfully authenticate a speaker.</p>
     pub fn acceptance_threshold(mut self, input: i32) -> Self {
-        self.acceptance_threshold = Some(input);
+        self.acceptance_threshold = ::std::option::Option::Some(input);
         self
     }
     /// <p>The minimum threshold needed to successfully authenticate a speaker.</p>
-    pub fn set_acceptance_threshold(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_acceptance_threshold(mut self, input: ::std::option::Option<i32>) -> Self {
         self.acceptance_threshold = input;
         self
     }

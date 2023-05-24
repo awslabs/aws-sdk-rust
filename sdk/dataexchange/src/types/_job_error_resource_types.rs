@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum JobErrorResourceTypes {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum JobErrorResourceTypes {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for JobErrorResourceTypes {
+impl ::std::convert::From<&str> for JobErrorResourceTypes {
     fn from(s: &str) -> Self {
         match s {
             "ASSET" => JobErrorResourceTypes::Asset,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for JobErrorResourceTypes {
         }
     }
 }
-impl std::str::FromStr for JobErrorResourceTypes {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for JobErrorResourceTypes {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(JobErrorResourceTypes::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(JobErrorResourceTypes::from(s))
     }
 }
 impl JobErrorResourceTypes {
@@ -91,7 +91,7 @@ impl JobErrorResourceTypes {
         &["ASSET", "DATA_SET", "REVISION"]
     }
 }
-impl AsRef<str> for JobErrorResourceTypes {
+impl ::std::convert::AsRef<str> for JobErrorResourceTypes {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -2,11 +2,11 @@
 
 /// <p>This output indicates the result of removing tags from the resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemoveTagsOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for RemoveTagsOutput {
+impl ::aws_http::request_id::RequestId for RemoveTagsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -20,7 +20,9 @@ impl RemoveTagsOutput {
 
 /// A builder for [`RemoveTagsOutput`](crate::operation::remove_tags::RemoveTagsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RemoveTagsOutputBuilder {
     _request_id: Option<String>,
 }

@@ -2,7 +2,7 @@
 
 /// <p>A dependency that is defined for container startup and shutdown.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails {
     /// <p>The dependency condition of the dependent container. Indicates the required status of the dependent container before the current container can start. Valid values are as follows:</p>
     /// <ul>
@@ -12,10 +12,10 @@ pub struct AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails {
     /// <li> <p> <code>START</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub condition: std::option::Option<std::string::String>,
+    pub condition: ::std::option::Option<::std::string::String>,
     /// <p>The name of the dependent container.</p>
     #[doc(hidden)]
-    pub container_name: std::option::Option<std::string::String>,
+    pub container_name: ::std::option::Option<::std::string::String>,
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails {
     /// <p>The dependency condition of the dependent container. Indicates the required status of the dependent container before the current container can start. Valid values are as follows:</p>
@@ -25,11 +25,11 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails {
     /// <li> <p> <code>SUCCESS</code> </p> </li>
     /// <li> <p> <code>START</code> </p> </li>
     /// </ul>
-    pub fn condition(&self) -> std::option::Option<&str> {
+    pub fn condition(&self) -> ::std::option::Option<&str> {
         self.condition.as_deref()
     }
     /// <p>The name of the dependent container.</p>
-    pub fn container_name(&self) -> std::option::Option<&str> {
+    pub fn container_name(&self) -> ::std::option::Option<&str> {
         self.container_name.as_deref()
     }
 }
@@ -44,10 +44,12 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails {
 
 /// A builder for [`AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetailsBuilder {
-    pub(crate) condition: std::option::Option<std::string::String>,
-    pub(crate) container_name: std::option::Option<std::string::String>,
+    pub(crate) condition: ::std::option::Option<::std::string::String>,
+    pub(crate) container_name: ::std::option::Option<::std::string::String>,
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetailsBuilder {
     /// <p>The dependency condition of the dependent container. Indicates the required status of the dependent container before the current container can start. Valid values are as follows:</p>
@@ -57,8 +59,8 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetailsBuilder {
     /// <li> <p> <code>SUCCESS</code> </p> </li>
     /// <li> <p> <code>START</code> </p> </li>
     /// </ul>
-    pub fn condition(mut self, input: impl Into<std::string::String>) -> Self {
-        self.condition = Some(input.into());
+    pub fn condition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.condition = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The dependency condition of the dependent container. Indicates the required status of the dependent container before the current container can start. Valid values are as follows:</p>
@@ -68,17 +70,23 @@ impl AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetailsBuilder {
     /// <li> <p> <code>SUCCESS</code> </p> </li>
     /// <li> <p> <code>START</code> </p> </li>
     /// </ul>
-    pub fn set_condition(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_condition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.condition = input;
         self
     }
     /// <p>The name of the dependent container.</p>
-    pub fn container_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.container_name = Some(input.into());
+    pub fn container_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.container_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the dependent container.</p>
-    pub fn set_container_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_container_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.container_name = input;
         self
     }

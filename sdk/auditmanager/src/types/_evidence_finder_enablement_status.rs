@@ -40,13 +40,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum EvidenceFinderEnablementStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,7 +60,7 @@ pub enum EvidenceFinderEnablementStatus {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for EvidenceFinderEnablementStatus {
+impl ::std::convert::From<&str> for EvidenceFinderEnablementStatus {
     fn from(s: &str) -> Self {
         match s {
             "DISABLED" => EvidenceFinderEnablementStatus::Disabled,
@@ -73,11 +73,11 @@ impl std::convert::From<&str> for EvidenceFinderEnablementStatus {
         }
     }
 }
-impl std::str::FromStr for EvidenceFinderEnablementStatus {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for EvidenceFinderEnablementStatus {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EvidenceFinderEnablementStatus::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(EvidenceFinderEnablementStatus::from(s))
     }
 }
 impl EvidenceFinderEnablementStatus {
@@ -101,7 +101,7 @@ impl EvidenceFinderEnablementStatus {
         ]
     }
 }
-impl AsRef<str> for EvidenceFinderEnablementStatus {
+impl ::std::convert::AsRef<str> for EvidenceFinderEnablementStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

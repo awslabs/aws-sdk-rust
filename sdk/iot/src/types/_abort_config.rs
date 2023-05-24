@@ -2,15 +2,15 @@
 
 /// <p>The criteria that determine when and how a job abort takes place.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AbortConfig {
     /// <p>The list of criteria that determine when and how to abort the job.</p>
     #[doc(hidden)]
-    pub criteria_list: std::option::Option<std::vec::Vec<crate::types::AbortCriteria>>,
+    pub criteria_list: ::std::option::Option<::std::vec::Vec<crate::types::AbortCriteria>>,
 }
 impl AbortConfig {
     /// <p>The list of criteria that determine when and how to abort the job.</p>
-    pub fn criteria_list(&self) -> std::option::Option<&[crate::types::AbortCriteria]> {
+    pub fn criteria_list(&self) -> ::std::option::Option<&[crate::types::AbortCriteria]> {
         self.criteria_list.as_deref()
     }
 }
@@ -23,9 +23,11 @@ impl AbortConfig {
 
 /// A builder for [`AbortConfig`](crate::types::AbortConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AbortConfigBuilder {
-    pub(crate) criteria_list: std::option::Option<std::vec::Vec<crate::types::AbortCriteria>>,
+    pub(crate) criteria_list: ::std::option::Option<::std::vec::Vec<crate::types::AbortCriteria>>,
 }
 impl AbortConfigBuilder {
     /// Appends an item to `criteria_list`.
@@ -36,13 +38,13 @@ impl AbortConfigBuilder {
     pub fn criteria_list(mut self, input: crate::types::AbortCriteria) -> Self {
         let mut v = self.criteria_list.unwrap_or_default();
         v.push(input);
-        self.criteria_list = Some(v);
+        self.criteria_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of criteria that determine when and how to abort the job.</p>
     pub fn set_criteria_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AbortCriteria>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AbortCriteria>>,
     ) -> Self {
         self.criteria_list = input;
         self

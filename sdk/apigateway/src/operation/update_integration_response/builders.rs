@@ -6,29 +6,29 @@ pub use crate::operation::update_integration_response::_update_integration_respo
 /// Fluent builder constructing a request to `UpdateIntegrationResponse`.
 ///
 /// <p>Represents an update integration response.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateIntegrationResponseFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::update_integration_response::builders::UpdateIntegrationResponseInputBuilder,
 }
 impl UpdateIntegrationResponseFluentBuilder {
     /// Creates a new `UpdateIntegrationResponse`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_integration_response::UpdateIntegrationResponse,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_integration_response::UpdateIntegrationResponseError,
         >,
     > {
@@ -36,30 +36,33 @@ impl UpdateIntegrationResponseFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_integration_response::UpdateIntegrationResponseOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_integration_response::UpdateIntegrationResponseError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,51 +75,51 @@ impl UpdateIntegrationResponseFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_integration_response::UpdateIntegrationResponseOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_integration_response::UpdateIntegrationResponseError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn rest_api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.rest_api_id(input.into());
         self
     }
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_rest_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_rest_api_id(input);
         self
     }
     /// <p>Specifies an update integration response request's resource identifier.</p>
-    pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_id(input.into());
         self
     }
     /// <p>Specifies an update integration response request's resource identifier.</p>
-    pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_id(input);
         self
     }
     /// <p>Specifies an update integration response request's HTTP method.</p>
-    pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn http_method(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.http_method(input.into());
         self
     }
     /// <p>Specifies an update integration response request's HTTP method.</p>
-    pub fn set_http_method(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_http_method(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_http_method(input);
         self
     }
     /// <p>Specifies an update integration response request's status code.</p>
-    pub fn status_code(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn status_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.status_code(input.into());
         self
     }
     /// <p>Specifies an update integration response request's status code.</p>
-    pub fn set_status_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_status_code(input);
         self
     }
@@ -132,7 +135,7 @@ impl UpdateIntegrationResponseFluentBuilder {
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
     pub fn set_patch_operations(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PatchOperation>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PatchOperation>>,
     ) -> Self {
         self.inner = self.inner.set_patch_operations(input);
         self

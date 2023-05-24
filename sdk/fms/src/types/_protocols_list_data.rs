@@ -2,62 +2,62 @@
 
 /// <p>An Firewall Manager protocols list.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProtocolsListData {
     /// <p>The ID of the Firewall Manager protocols list.</p>
     #[doc(hidden)]
-    pub list_id: std::option::Option<std::string::String>,
+    pub list_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Firewall Manager protocols list.</p>
     #[doc(hidden)]
-    pub list_name: std::option::Option<std::string::String>,
+    pub list_name: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for each update to the list. When you update the list, the update token must match the token of the current version of the application list. You can retrieve the update token by getting the list. </p>
     #[doc(hidden)]
-    pub list_update_token: std::option::Option<std::string::String>,
+    pub list_update_token: ::std::option::Option<::std::string::String>,
     /// <p>The time that the Firewall Manager protocols list was created.</p>
     #[doc(hidden)]
-    pub create_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time that the Firewall Manager protocols list was last updated.</p>
     #[doc(hidden)]
-    pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>An array of protocols in the Firewall Manager protocols list.</p>
     #[doc(hidden)]
-    pub protocols_list: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub protocols_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A map of previous version numbers to their corresponding protocol arrays.</p>
     #[doc(hidden)]
-    pub previous_protocols_list: std::option::Option<
-        std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    pub previous_protocols_list: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
     >,
 }
 impl ProtocolsListData {
     /// <p>The ID of the Firewall Manager protocols list.</p>
-    pub fn list_id(&self) -> std::option::Option<&str> {
+    pub fn list_id(&self) -> ::std::option::Option<&str> {
         self.list_id.as_deref()
     }
     /// <p>The name of the Firewall Manager protocols list.</p>
-    pub fn list_name(&self) -> std::option::Option<&str> {
+    pub fn list_name(&self) -> ::std::option::Option<&str> {
         self.list_name.as_deref()
     }
     /// <p>A unique identifier for each update to the list. When you update the list, the update token must match the token of the current version of the application list. You can retrieve the update token by getting the list. </p>
-    pub fn list_update_token(&self) -> std::option::Option<&str> {
+    pub fn list_update_token(&self) -> ::std::option::Option<&str> {
         self.list_update_token.as_deref()
     }
     /// <p>The time that the Firewall Manager protocols list was created.</p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The time that the Firewall Manager protocols list was last updated.</p>
-    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
     /// <p>An array of protocols in the Firewall Manager protocols list.</p>
-    pub fn protocols_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn protocols_list(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.protocols_list.as_deref()
     }
     /// <p>A map of previous version numbers to their corresponding protocol arrays.</p>
     pub fn previous_protocols_list(
         &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
     > {
         self.previous_protocols_list.as_ref()
     }
@@ -71,74 +71,79 @@ impl ProtocolsListData {
 
 /// A builder for [`ProtocolsListData`](crate::types::ProtocolsListData).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ProtocolsListDataBuilder {
-    pub(crate) list_id: std::option::Option<std::string::String>,
-    pub(crate) list_name: std::option::Option<std::string::String>,
-    pub(crate) list_update_token: std::option::Option<std::string::String>,
-    pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_update_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) protocols_list: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) previous_protocols_list: std::option::Option<
-        std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    pub(crate) list_id: ::std::option::Option<::std::string::String>,
+    pub(crate) list_name: ::std::option::Option<::std::string::String>,
+    pub(crate) list_update_token: ::std::option::Option<::std::string::String>,
+    pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) protocols_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) previous_protocols_list: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
     >,
 }
 impl ProtocolsListDataBuilder {
     /// <p>The ID of the Firewall Manager protocols list.</p>
-    pub fn list_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.list_id = Some(input.into());
+    pub fn list_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.list_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Firewall Manager protocols list.</p>
-    pub fn set_list_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_list_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.list_id = input;
         self
     }
     /// <p>The name of the Firewall Manager protocols list.</p>
-    pub fn list_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.list_name = Some(input.into());
+    pub fn list_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.list_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Firewall Manager protocols list.</p>
-    pub fn set_list_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_list_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.list_name = input;
         self
     }
     /// <p>A unique identifier for each update to the list. When you update the list, the update token must match the token of the current version of the application list. You can retrieve the update token by getting the list. </p>
-    pub fn list_update_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.list_update_token = Some(input.into());
+    pub fn list_update_token(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.list_update_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for each update to the list. When you update the list, the update token must match the token of the current version of the application list. You can retrieve the update token by getting the list. </p>
     pub fn set_list_update_token(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.list_update_token = input;
         self
     }
     /// <p>The time that the Firewall Manager protocols list was created.</p>
-    pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.create_time = Some(input);
+    pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.create_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time that the Firewall Manager protocols list was created.</p>
     pub fn set_create_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.create_time = input;
         self
     }
     /// <p>The time that the Firewall Manager protocols list was last updated.</p>
-    pub fn last_update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_update_time = Some(input);
+    pub fn last_update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_update_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time that the Firewall Manager protocols list was last updated.</p>
     pub fn set_last_update_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_update_time = input;
         self
@@ -148,16 +153,19 @@ impl ProtocolsListDataBuilder {
     /// To override the contents of this collection use [`set_protocols_list`](Self::set_protocols_list).
     ///
     /// <p>An array of protocols in the Firewall Manager protocols list.</p>
-    pub fn protocols_list(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn protocols_list(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.protocols_list.unwrap_or_default();
         v.push(input.into());
-        self.protocols_list = Some(v);
+        self.protocols_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of protocols in the Firewall Manager protocols list.</p>
     pub fn set_protocols_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.protocols_list = input;
         self
@@ -169,19 +177,22 @@ impl ProtocolsListDataBuilder {
     /// <p>A map of previous version numbers to their corresponding protocol arrays.</p>
     pub fn previous_protocols_list(
         mut self,
-        k: impl Into<std::string::String>,
-        v: std::vec::Vec<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: ::std::vec::Vec<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.previous_protocols_list.unwrap_or_default();
         hash_map.insert(k.into(), v);
-        self.previous_protocols_list = Some(hash_map);
+        self.previous_protocols_list = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A map of previous version numbers to their corresponding protocol arrays.</p>
     pub fn set_previous_protocols_list(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<
+                ::std::string::String,
+                ::std::vec::Vec<::std::string::String>,
+            >,
         >,
     ) -> Self {
         self.previous_protocols_list = input;

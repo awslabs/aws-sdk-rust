@@ -43,13 +43,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum TableStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -69,7 +69,7 @@ pub enum TableStatus {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for TableStatus {
+impl ::std::convert::From<&str> for TableStatus {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVE" => TableStatus::Active,
@@ -83,11 +83,11 @@ impl std::convert::From<&str> for TableStatus {
         }
     }
 }
-impl std::str::FromStr for TableStatus {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for TableStatus {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TableStatus::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(TableStatus::from(s))
     }
 }
 impl TableStatus {
@@ -117,7 +117,7 @@ impl TableStatus {
         ]
     }
 }
-impl AsRef<str> for TableStatus {
+impl ::std::convert::AsRef<str> for TableStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

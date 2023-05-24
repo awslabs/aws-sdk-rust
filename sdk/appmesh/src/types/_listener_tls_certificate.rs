@@ -2,7 +2,7 @@
 
 /// <p>An object that represents a listener's Transport Layer Security (TLS) certificate.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum ListenerTlsCertificate {
     /// <p>A reference to an object that represents an Certificate Manager certificate.</p>
     Acm(crate::types::ListenerTlsAcmCertificate),
@@ -23,11 +23,11 @@ pub enum ListenerTlsCertificate {
 impl ListenerTlsCertificate {
     /// Tries to convert the enum instance into [`Acm`](crate::types::ListenerTlsCertificate::Acm), extracting the inner [`ListenerTlsAcmCertificate`](crate::types::ListenerTlsAcmCertificate).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_acm(&self) -> std::result::Result<&crate::types::ListenerTlsAcmCertificate, &Self> {
+    pub fn as_acm(&self) -> ::std::result::Result<&crate::types::ListenerTlsAcmCertificate, &Self> {
         if let ListenerTlsCertificate::Acm(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Acm`](crate::types::ListenerTlsCertificate::Acm).
@@ -36,11 +36,13 @@ impl ListenerTlsCertificate {
     }
     /// Tries to convert the enum instance into [`File`](crate::types::ListenerTlsCertificate::File), extracting the inner [`ListenerTlsFileCertificate`](crate::types::ListenerTlsFileCertificate).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_file(&self) -> std::result::Result<&crate::types::ListenerTlsFileCertificate, &Self> {
+    pub fn as_file(
+        &self,
+    ) -> ::std::result::Result<&crate::types::ListenerTlsFileCertificate, &Self> {
         if let ListenerTlsCertificate::File(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`File`](crate::types::ListenerTlsCertificate::File).
@@ -49,11 +51,11 @@ impl ListenerTlsCertificate {
     }
     /// Tries to convert the enum instance into [`Sds`](crate::types::ListenerTlsCertificate::Sds), extracting the inner [`ListenerTlsSdsCertificate`](crate::types::ListenerTlsSdsCertificate).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_sds(&self) -> std::result::Result<&crate::types::ListenerTlsSdsCertificate, &Self> {
+    pub fn as_sds(&self) -> ::std::result::Result<&crate::types::ListenerTlsSdsCertificate, &Self> {
         if let ListenerTlsCertificate::Sds(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Sds`](crate::types::ListenerTlsCertificate::Sds).

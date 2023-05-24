@@ -42,13 +42,13 @@
 /// Specify the strength of any adaptive quantization filters that you enable. The value that you choose here applies to Spatial adaptive quantization (spatialAdaptiveQuantization).
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum Av1AdaptiveQuantization {
     #[allow(missing_docs)] // documentation missing in model
@@ -66,7 +66,7 @@ pub enum Av1AdaptiveQuantization {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for Av1AdaptiveQuantization {
+impl ::std::convert::From<&str> for Av1AdaptiveQuantization {
     fn from(s: &str) -> Self {
         match s {
             "HIGH" => Av1AdaptiveQuantization::High,
@@ -81,11 +81,11 @@ impl std::convert::From<&str> for Av1AdaptiveQuantization {
         }
     }
 }
-impl std::str::FromStr for Av1AdaptiveQuantization {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for Av1AdaptiveQuantization {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Av1AdaptiveQuantization::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(Av1AdaptiveQuantization::from(s))
     }
 }
 impl Av1AdaptiveQuantization {
@@ -106,7 +106,7 @@ impl Av1AdaptiveQuantization {
         &["HIGH", "HIGHER", "LOW", "MAX", "MEDIUM", "OFF"]
     }
 }
-impl AsRef<str> for Av1AdaptiveQuantization {
+impl ::std::convert::AsRef<str> for Av1AdaptiveQuantization {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

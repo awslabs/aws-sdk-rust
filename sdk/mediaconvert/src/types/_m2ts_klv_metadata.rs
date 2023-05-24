@@ -38,13 +38,13 @@
 /// To include key-length-value metadata in this output: Set KLV metadata insertion to Passthrough. MediaConvert reads KLV metadata present in your input and passes it through to the output transport stream. To exclude this KLV metadata: Set KLV metadata insertion to None or leave blank.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum M2tsKlvMetadata {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum M2tsKlvMetadata {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for M2tsKlvMetadata {
+impl ::std::convert::From<&str> for M2tsKlvMetadata {
     fn from(s: &str) -> Self {
         match s {
             "NONE" => M2tsKlvMetadata::None,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for M2tsKlvMetadata {
         }
     }
 }
-impl std::str::FromStr for M2tsKlvMetadata {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for M2tsKlvMetadata {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(M2tsKlvMetadata::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(M2tsKlvMetadata::from(s))
     }
 }
 impl M2tsKlvMetadata {
@@ -86,7 +86,7 @@ impl M2tsKlvMetadata {
         &["NONE", "PASSTHROUGH"]
     }
 }
-impl AsRef<str> for M2tsKlvMetadata {
+impl ::std::convert::AsRef<str> for M2tsKlvMetadata {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

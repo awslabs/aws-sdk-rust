@@ -2,24 +2,25 @@
 
 /// <p>Represents the output of a <code>ListOutgoingTypedLinks</code> response operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchListOutgoingTypedLinksResponse {
     /// <p>Returns a typed link specifier as output.</p>
     #[doc(hidden)]
-    pub typed_link_specifiers: std::option::Option<std::vec::Vec<crate::types::TypedLinkSpecifier>>,
+    pub typed_link_specifiers:
+        ::std::option::Option<::std::vec::Vec<crate::types::TypedLinkSpecifier>>,
     /// <p>The pagination token.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl BatchListOutgoingTypedLinksResponse {
     /// <p>Returns a typed link specifier as output.</p>
     pub fn typed_link_specifiers(
         &self,
-    ) -> std::option::Option<&[crate::types::TypedLinkSpecifier]> {
+    ) -> ::std::option::Option<&[crate::types::TypedLinkSpecifier]> {
         self.typed_link_specifiers.as_deref()
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
@@ -32,11 +33,13 @@ impl BatchListOutgoingTypedLinksResponse {
 
 /// A builder for [`BatchListOutgoingTypedLinksResponse`](crate::types::BatchListOutgoingTypedLinksResponse).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BatchListOutgoingTypedLinksResponseBuilder {
     pub(crate) typed_link_specifiers:
-        std::option::Option<std::vec::Vec<crate::types::TypedLinkSpecifier>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::TypedLinkSpecifier>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl BatchListOutgoingTypedLinksResponseBuilder {
     /// Appends an item to `typed_link_specifiers`.
@@ -47,24 +50,24 @@ impl BatchListOutgoingTypedLinksResponseBuilder {
     pub fn typed_link_specifiers(mut self, input: crate::types::TypedLinkSpecifier) -> Self {
         let mut v = self.typed_link_specifiers.unwrap_or_default();
         v.push(input);
-        self.typed_link_specifiers = Some(v);
+        self.typed_link_specifiers = ::std::option::Option::Some(v);
         self
     }
     /// <p>Returns a typed link specifier as output.</p>
     pub fn set_typed_link_specifiers(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TypedLinkSpecifier>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::TypedLinkSpecifier>>,
     ) -> Self {
         self.typed_link_specifiers = input;
         self
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The pagination token.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

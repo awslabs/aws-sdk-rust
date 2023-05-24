@@ -2,29 +2,29 @@
 
 /// <p>Files in a read set.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReadSetFiles {
     /// <p>The location of the first file in Amazon S3.</p>
     #[doc(hidden)]
-    pub source1: std::option::Option<crate::types::FileInformation>,
+    pub source1: ::std::option::Option<crate::types::FileInformation>,
     /// <p>The location of the second file in Amazon S3.</p>
     #[doc(hidden)]
-    pub source2: std::option::Option<crate::types::FileInformation>,
+    pub source2: ::std::option::Option<crate::types::FileInformation>,
     /// <p>The files' index.</p>
     #[doc(hidden)]
-    pub index: std::option::Option<crate::types::FileInformation>,
+    pub index: ::std::option::Option<crate::types::FileInformation>,
 }
 impl ReadSetFiles {
     /// <p>The location of the first file in Amazon S3.</p>
-    pub fn source1(&self) -> std::option::Option<&crate::types::FileInformation> {
+    pub fn source1(&self) -> ::std::option::Option<&crate::types::FileInformation> {
         self.source1.as_ref()
     }
     /// <p>The location of the second file in Amazon S3.</p>
-    pub fn source2(&self) -> std::option::Option<&crate::types::FileInformation> {
+    pub fn source2(&self) -> ::std::option::Option<&crate::types::FileInformation> {
         self.source2.as_ref()
     }
     /// <p>The files' index.</p>
-    pub fn index(&self) -> std::option::Option<&crate::types::FileInformation> {
+    pub fn index(&self) -> ::std::option::Option<&crate::types::FileInformation> {
         self.index.as_ref()
     }
 }
@@ -37,46 +37,51 @@ impl ReadSetFiles {
 
 /// A builder for [`ReadSetFiles`](crate::types::ReadSetFiles).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ReadSetFilesBuilder {
-    pub(crate) source1: std::option::Option<crate::types::FileInformation>,
-    pub(crate) source2: std::option::Option<crate::types::FileInformation>,
-    pub(crate) index: std::option::Option<crate::types::FileInformation>,
+    pub(crate) source1: ::std::option::Option<crate::types::FileInformation>,
+    pub(crate) source2: ::std::option::Option<crate::types::FileInformation>,
+    pub(crate) index: ::std::option::Option<crate::types::FileInformation>,
 }
 impl ReadSetFilesBuilder {
     /// <p>The location of the first file in Amazon S3.</p>
     pub fn source1(mut self, input: crate::types::FileInformation) -> Self {
-        self.source1 = Some(input);
+        self.source1 = ::std::option::Option::Some(input);
         self
     }
     /// <p>The location of the first file in Amazon S3.</p>
     pub fn set_source1(
         mut self,
-        input: std::option::Option<crate::types::FileInformation>,
+        input: ::std::option::Option<crate::types::FileInformation>,
     ) -> Self {
         self.source1 = input;
         self
     }
     /// <p>The location of the second file in Amazon S3.</p>
     pub fn source2(mut self, input: crate::types::FileInformation) -> Self {
-        self.source2 = Some(input);
+        self.source2 = ::std::option::Option::Some(input);
         self
     }
     /// <p>The location of the second file in Amazon S3.</p>
     pub fn set_source2(
         mut self,
-        input: std::option::Option<crate::types::FileInformation>,
+        input: ::std::option::Option<crate::types::FileInformation>,
     ) -> Self {
         self.source2 = input;
         self
     }
     /// <p>The files' index.</p>
     pub fn index(mut self, input: crate::types::FileInformation) -> Self {
-        self.index = Some(input);
+        self.index = ::std::option::Option::Some(input);
         self
     }
     /// <p>The files' index.</p>
-    pub fn set_index(mut self, input: std::option::Option<crate::types::FileInformation>) -> Self {
+    pub fn set_index(
+        mut self,
+        input: ::std::option::Option<crate::types::FileInformation>,
+    ) -> Self {
         self.index = input;
         self
     }

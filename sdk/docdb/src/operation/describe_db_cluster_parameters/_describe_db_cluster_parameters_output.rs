@@ -2,27 +2,27 @@
 
 /// <p>Represents the output of <code>DBClusterParameterGroup</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDbClusterParametersOutput {
     /// <p>Provides a list of parameters for the cluster parameter group.</p>
     #[doc(hidden)]
-    pub parameters: std::option::Option<std::vec::Vec<crate::types::Parameter>>,
+    pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     #[doc(hidden)]
-    pub marker: std::option::Option<std::string::String>,
+    pub marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeDbClusterParametersOutput {
     /// <p>Provides a list of parameters for the cluster parameter group.</p>
-    pub fn parameters(&self) -> std::option::Option<&[crate::types::Parameter]> {
+    pub fn parameters(&self) -> ::std::option::Option<&[crate::types::Parameter]> {
         self.parameters.as_deref()
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeDbClusterParametersOutput {
+impl ::aws_http::request_id::RequestId for DescribeDbClusterParametersOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -36,10 +36,12 @@ impl DescribeDbClusterParametersOutput {
 
 /// A builder for [`DescribeDbClusterParametersOutput`](crate::operation::describe_db_cluster_parameters::DescribeDbClusterParametersOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeDbClusterParametersOutputBuilder {
-    pub(crate) parameters: std::option::Option<std::vec::Vec<crate::types::Parameter>>,
-    pub(crate) marker: std::option::Option<std::string::String>,
+    pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
+    pub(crate) marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeDbClusterParametersOutputBuilder {
@@ -51,24 +53,24 @@ impl DescribeDbClusterParametersOutputBuilder {
     pub fn parameters(mut self, input: crate::types::Parameter) -> Self {
         let mut v = self.parameters.unwrap_or_default();
         v.push(input);
-        self.parameters = Some(v);
+        self.parameters = ::std::option::Option::Some(v);
         self
     }
     /// <p>Provides a list of parameters for the cluster parameter group.</p>
     pub fn set_parameters(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Parameter>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
     ) -> Self {
         self.parameters = input;
         self
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-        self.marker = Some(input.into());
+    pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
     }

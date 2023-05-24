@@ -4,22 +4,22 @@
 /// <p>Identity information for the EC2 instance that is hosting the task runner. You can get this value by calling a metadata URI from the EC2 instance. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html">Instance Metadata</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i> Passing in this value proves that your task runner is running on an EC2 instance, and ensures the proper AWS Data Pipeline service charges are applied to your pipeline.</p>
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceIdentity {
     /// <p>A description of an EC2 instance that is generated when the instance is launched and exposed to the instance via the instance metadata service in the form of a JSON representation of an object.</p>
     #[doc(hidden)]
-    pub document: std::option::Option<std::string::String>,
+    pub document: ::std::option::Option<::std::string::String>,
     /// <p>A signature which can be used to verify the accuracy and authenticity of the information provided in the instance identity document.</p>
     #[doc(hidden)]
-    pub signature: std::option::Option<std::string::String>,
+    pub signature: ::std::option::Option<::std::string::String>,
 }
 impl InstanceIdentity {
     /// <p>A description of an EC2 instance that is generated when the instance is launched and exposed to the instance via the instance metadata service in the form of a JSON representation of an object.</p>
-    pub fn document(&self) -> std::option::Option<&str> {
+    pub fn document(&self) -> ::std::option::Option<&str> {
         self.document.as_deref()
     }
     /// <p>A signature which can be used to verify the accuracy and authenticity of the information provided in the instance identity document.</p>
-    pub fn signature(&self) -> std::option::Option<&str> {
+    pub fn signature(&self) -> ::std::option::Option<&str> {
         self.signature.as_deref()
     }
 }
@@ -32,29 +32,31 @@ impl InstanceIdentity {
 
 /// A builder for [`InstanceIdentity`](crate::types::InstanceIdentity).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InstanceIdentityBuilder {
-    pub(crate) document: std::option::Option<std::string::String>,
-    pub(crate) signature: std::option::Option<std::string::String>,
+    pub(crate) document: ::std::option::Option<::std::string::String>,
+    pub(crate) signature: ::std::option::Option<::std::string::String>,
 }
 impl InstanceIdentityBuilder {
     /// <p>A description of an EC2 instance that is generated when the instance is launched and exposed to the instance via the instance metadata service in the form of a JSON representation of an object.</p>
-    pub fn document(mut self, input: impl Into<std::string::String>) -> Self {
-        self.document = Some(input.into());
+    pub fn document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.document = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of an EC2 instance that is generated when the instance is launched and exposed to the instance via the instance metadata service in the form of a JSON representation of an object.</p>
-    pub fn set_document(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.document = input;
         self
     }
     /// <p>A signature which can be used to verify the accuracy and authenticity of the information provided in the instance identity document.</p>
-    pub fn signature(mut self, input: impl Into<std::string::String>) -> Self {
-        self.signature = Some(input.into());
+    pub fn signature(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.signature = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A signature which can be used to verify the accuracy and authenticity of the information provided in the instance identity document.</p>
-    pub fn set_signature(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_signature(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.signature = input;
         self
     }

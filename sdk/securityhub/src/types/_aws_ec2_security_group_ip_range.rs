@@ -2,15 +2,15 @@
 
 /// <p>A range of IPv4 addresses.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2SecurityGroupIpRange {
     /// <p>The IPv4 CIDR range. You can specify either a CIDR range or a source security group, but not both. To specify a single IPv4 address, use the /32 prefix length.</p>
     #[doc(hidden)]
-    pub cidr_ip: std::option::Option<std::string::String>,
+    pub cidr_ip: ::std::option::Option<::std::string::String>,
 }
 impl AwsEc2SecurityGroupIpRange {
     /// <p>The IPv4 CIDR range. You can specify either a CIDR range or a source security group, but not both. To specify a single IPv4 address, use the /32 prefix length.</p>
-    pub fn cidr_ip(&self) -> std::option::Option<&str> {
+    pub fn cidr_ip(&self) -> ::std::option::Option<&str> {
         self.cidr_ip.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl AwsEc2SecurityGroupIpRange {
 
 /// A builder for [`AwsEc2SecurityGroupIpRange`](crate::types::AwsEc2SecurityGroupIpRange).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsEc2SecurityGroupIpRangeBuilder {
-    pub(crate) cidr_ip: std::option::Option<std::string::String>,
+    pub(crate) cidr_ip: ::std::option::Option<::std::string::String>,
 }
 impl AwsEc2SecurityGroupIpRangeBuilder {
     /// <p>The IPv4 CIDR range. You can specify either a CIDR range or a source security group, but not both. To specify a single IPv4 address, use the /32 prefix length.</p>
-    pub fn cidr_ip(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cidr_ip = Some(input.into());
+    pub fn cidr_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cidr_ip = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IPv4 CIDR range. You can specify either a CIDR range or a source security group, but not both. To specify a single IPv4 address, use the /32 prefix length.</p>
-    pub fn set_cidr_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cidr_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cidr_ip = input;
         self
     }

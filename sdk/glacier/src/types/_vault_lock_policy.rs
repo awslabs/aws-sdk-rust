@@ -2,15 +2,15 @@
 
 /// <p>Contains the vault lock policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VaultLockPolicy {
     /// <p>The vault lock policy.</p>
     #[doc(hidden)]
-    pub policy: std::option::Option<std::string::String>,
+    pub policy: ::std::option::Option<::std::string::String>,
 }
 impl VaultLockPolicy {
     /// <p>The vault lock policy.</p>
-    pub fn policy(&self) -> std::option::Option<&str> {
+    pub fn policy(&self) -> ::std::option::Option<&str> {
         self.policy.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl VaultLockPolicy {
 
 /// A builder for [`VaultLockPolicy`](crate::types::VaultLockPolicy).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VaultLockPolicyBuilder {
-    pub(crate) policy: std::option::Option<std::string::String>,
+    pub(crate) policy: ::std::option::Option<::std::string::String>,
 }
 impl VaultLockPolicyBuilder {
     /// <p>The vault lock policy.</p>
-    pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
-        self.policy = Some(input.into());
+    pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.policy = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The vault lock policy.</p>
-    pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy = input;
         self
     }

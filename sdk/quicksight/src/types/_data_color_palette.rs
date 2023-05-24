@@ -2,29 +2,29 @@
 
 /// <p>The theme colors that are used for data colors in charts. The colors description is a hexadecimal color code that consists of six alphanumerical characters, prefixed with <code>#</code>, for example #37BFF5. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataColorPalette {
     /// <p>The hexadecimal codes for the colors.</p>
     #[doc(hidden)]
-    pub colors: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub colors: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The minimum and maximum hexadecimal codes that describe a color gradient. </p>
     #[doc(hidden)]
-    pub min_max_gradient: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub min_max_gradient: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The hexadecimal code of a color that applies to charts where a lack of data is highlighted.</p>
     #[doc(hidden)]
-    pub empty_fill_color: std::option::Option<std::string::String>,
+    pub empty_fill_color: ::std::option::Option<::std::string::String>,
 }
 impl DataColorPalette {
     /// <p>The hexadecimal codes for the colors.</p>
-    pub fn colors(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn colors(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.colors.as_deref()
     }
     /// <p>The minimum and maximum hexadecimal codes that describe a color gradient. </p>
-    pub fn min_max_gradient(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn min_max_gradient(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.min_max_gradient.as_deref()
     }
     /// <p>The hexadecimal code of a color that applies to charts where a lack of data is highlighted.</p>
-    pub fn empty_fill_color(&self) -> std::option::Option<&str> {
+    pub fn empty_fill_color(&self) -> ::std::option::Option<&str> {
         self.empty_fill_color.as_deref()
     }
 }
@@ -37,11 +37,13 @@ impl DataColorPalette {
 
 /// A builder for [`DataColorPalette`](crate::types::DataColorPalette).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DataColorPaletteBuilder {
-    pub(crate) colors: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) min_max_gradient: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) empty_fill_color: std::option::Option<std::string::String>,
+    pub(crate) colors: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) min_max_gradient: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) empty_fill_color: ::std::option::Option<::std::string::String>,
 }
 impl DataColorPaletteBuilder {
     /// Appends an item to `colors`.
@@ -49,16 +51,16 @@ impl DataColorPaletteBuilder {
     /// To override the contents of this collection use [`set_colors`](Self::set_colors).
     ///
     /// <p>The hexadecimal codes for the colors.</p>
-    pub fn colors(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn colors(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.colors.unwrap_or_default();
         v.push(input.into());
-        self.colors = Some(v);
+        self.colors = ::std::option::Option::Some(v);
         self
     }
     /// <p>The hexadecimal codes for the colors.</p>
     pub fn set_colors(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.colors = input;
         self
@@ -68,27 +70,36 @@ impl DataColorPaletteBuilder {
     /// To override the contents of this collection use [`set_min_max_gradient`](Self::set_min_max_gradient).
     ///
     /// <p>The minimum and maximum hexadecimal codes that describe a color gradient. </p>
-    pub fn min_max_gradient(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn min_max_gradient(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.min_max_gradient.unwrap_or_default();
         v.push(input.into());
-        self.min_max_gradient = Some(v);
+        self.min_max_gradient = ::std::option::Option::Some(v);
         self
     }
     /// <p>The minimum and maximum hexadecimal codes that describe a color gradient. </p>
     pub fn set_min_max_gradient(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.min_max_gradient = input;
         self
     }
     /// <p>The hexadecimal code of a color that applies to charts where a lack of data is highlighted.</p>
-    pub fn empty_fill_color(mut self, input: impl Into<std::string::String>) -> Self {
-        self.empty_fill_color = Some(input.into());
+    pub fn empty_fill_color(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.empty_fill_color = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The hexadecimal code of a color that applies to charts where a lack of data is highlighted.</p>
-    pub fn set_empty_fill_color(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_empty_fill_color(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.empty_fill_color = input;
         self
     }

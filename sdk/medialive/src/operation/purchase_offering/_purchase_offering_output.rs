@@ -2,20 +2,20 @@
 
 /// Placeholder documentation for PurchaseOfferingResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PurchaseOfferingOutput {
     /// Reserved resources available to use
     #[doc(hidden)]
-    pub reservation: std::option::Option<crate::types::Reservation>,
+    pub reservation: ::std::option::Option<crate::types::Reservation>,
     _request_id: Option<String>,
 }
 impl PurchaseOfferingOutput {
     /// Reserved resources available to use
-    pub fn reservation(&self) -> std::option::Option<&crate::types::Reservation> {
+    pub fn reservation(&self) -> ::std::option::Option<&crate::types::Reservation> {
         self.reservation.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for PurchaseOfferingOutput {
+impl ::aws_http::request_id::RequestId for PurchaseOfferingOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,21 +30,23 @@ impl PurchaseOfferingOutput {
 
 /// A builder for [`PurchaseOfferingOutput`](crate::operation::purchase_offering::PurchaseOfferingOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PurchaseOfferingOutputBuilder {
-    pub(crate) reservation: std::option::Option<crate::types::Reservation>,
+    pub(crate) reservation: ::std::option::Option<crate::types::Reservation>,
     _request_id: Option<String>,
 }
 impl PurchaseOfferingOutputBuilder {
     /// Reserved resources available to use
     pub fn reservation(mut self, input: crate::types::Reservation) -> Self {
-        self.reservation = Some(input);
+        self.reservation = ::std::option::Option::Some(input);
         self
     }
     /// Reserved resources available to use
     pub fn set_reservation(
         mut self,
-        input: std::option::Option<crate::types::Reservation>,
+        input: ::std::option::Option<crate::types::Reservation>,
     ) -> Self {
         self.reservation = input;
         self

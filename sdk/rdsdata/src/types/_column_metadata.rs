@@ -2,26 +2,26 @@
 
 /// <p>Contains the metadata for a column.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ColumnMetadata {
     /// <p>The name of the column.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of the column.</p>
     #[doc(hidden)]
     pub r#type: i32,
     /// <p>The database-specific data type of the column.</p>
     #[doc(hidden)]
-    pub type_name: std::option::Option<std::string::String>,
+    pub type_name: ::std::option::Option<::std::string::String>,
     /// <p>The label for the column.</p>
     #[doc(hidden)]
-    pub label: std::option::Option<std::string::String>,
+    pub label: ::std::option::Option<::std::string::String>,
     /// <p>The name of the schema that owns the table that includes the column.</p>
     #[doc(hidden)]
-    pub schema_name: std::option::Option<std::string::String>,
+    pub schema_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the table that includes the column.</p>
     #[doc(hidden)]
-    pub table_name: std::option::Option<std::string::String>,
+    pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>A value that indicates whether the column increments automatically.</p>
     #[doc(hidden)]
     pub is_auto_increment: bool,
@@ -49,7 +49,7 @@ pub struct ColumnMetadata {
 }
 impl ColumnMetadata {
     /// <p>The name of the column.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The type of the column.</p>
@@ -57,19 +57,19 @@ impl ColumnMetadata {
         self.r#type
     }
     /// <p>The database-specific data type of the column.</p>
-    pub fn type_name(&self) -> std::option::Option<&str> {
+    pub fn type_name(&self) -> ::std::option::Option<&str> {
         self.type_name.as_deref()
     }
     /// <p>The label for the column.</p>
-    pub fn label(&self) -> std::option::Option<&str> {
+    pub fn label(&self) -> ::std::option::Option<&str> {
         self.label.as_deref()
     }
     /// <p>The name of the schema that owns the table that includes the column.</p>
-    pub fn schema_name(&self) -> std::option::Option<&str> {
+    pub fn schema_name(&self) -> ::std::option::Option<&str> {
         self.schema_name.as_deref()
     }
     /// <p>The name of the table that includes the column.</p>
-    pub fn table_name(&self) -> std::option::Option<&str> {
+    pub fn table_name(&self) -> ::std::option::Option<&str> {
         self.table_name.as_deref()
     }
     /// <p>A value that indicates whether the column increments automatically.</p>
@@ -114,161 +114,163 @@ impl ColumnMetadata {
 
 /// A builder for [`ColumnMetadata`](crate::types::ColumnMetadata).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ColumnMetadataBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) r#type: std::option::Option<i32>,
-    pub(crate) type_name: std::option::Option<std::string::String>,
-    pub(crate) label: std::option::Option<std::string::String>,
-    pub(crate) schema_name: std::option::Option<std::string::String>,
-    pub(crate) table_name: std::option::Option<std::string::String>,
-    pub(crate) is_auto_increment: std::option::Option<bool>,
-    pub(crate) is_signed: std::option::Option<bool>,
-    pub(crate) is_currency: std::option::Option<bool>,
-    pub(crate) is_case_sensitive: std::option::Option<bool>,
-    pub(crate) nullable: std::option::Option<i32>,
-    pub(crate) precision: std::option::Option<i32>,
-    pub(crate) scale: std::option::Option<i32>,
-    pub(crate) array_base_column_type: std::option::Option<i32>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<i32>,
+    pub(crate) type_name: ::std::option::Option<::std::string::String>,
+    pub(crate) label: ::std::option::Option<::std::string::String>,
+    pub(crate) schema_name: ::std::option::Option<::std::string::String>,
+    pub(crate) table_name: ::std::option::Option<::std::string::String>,
+    pub(crate) is_auto_increment: ::std::option::Option<bool>,
+    pub(crate) is_signed: ::std::option::Option<bool>,
+    pub(crate) is_currency: ::std::option::Option<bool>,
+    pub(crate) is_case_sensitive: ::std::option::Option<bool>,
+    pub(crate) nullable: ::std::option::Option<i32>,
+    pub(crate) precision: ::std::option::Option<i32>,
+    pub(crate) scale: ::std::option::Option<i32>,
+    pub(crate) array_base_column_type: ::std::option::Option<i32>,
 }
 impl ColumnMetadataBuilder {
     /// <p>The name of the column.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the column.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The type of the column.</p>
     pub fn r#type(mut self, input: i32) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of the column.</p>
-    pub fn set_type(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<i32>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The database-specific data type of the column.</p>
-    pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.type_name = Some(input.into());
+    pub fn type_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.type_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The database-specific data type of the column.</p>
-    pub fn set_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_type_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.type_name = input;
         self
     }
     /// <p>The label for the column.</p>
-    pub fn label(mut self, input: impl Into<std::string::String>) -> Self {
-        self.label = Some(input.into());
+    pub fn label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.label = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The label for the column.</p>
-    pub fn set_label(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.label = input;
         self
     }
     /// <p>The name of the schema that owns the table that includes the column.</p>
-    pub fn schema_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.schema_name = Some(input.into());
+    pub fn schema_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.schema_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the schema that owns the table that includes the column.</p>
-    pub fn set_schema_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_schema_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schema_name = input;
         self
     }
     /// <p>The name of the table that includes the column.</p>
-    pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.table_name = Some(input.into());
+    pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.table_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the table that includes the column.</p>
-    pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_name = input;
         self
     }
     /// <p>A value that indicates whether the column increments automatically.</p>
     pub fn is_auto_increment(mut self, input: bool) -> Self {
-        self.is_auto_increment = Some(input);
+        self.is_auto_increment = ::std::option::Option::Some(input);
         self
     }
     /// <p>A value that indicates whether the column increments automatically.</p>
-    pub fn set_is_auto_increment(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_auto_increment(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_auto_increment = input;
         self
     }
     /// <p>A value that indicates whether an integer column is signed.</p>
     pub fn is_signed(mut self, input: bool) -> Self {
-        self.is_signed = Some(input);
+        self.is_signed = ::std::option::Option::Some(input);
         self
     }
     /// <p>A value that indicates whether an integer column is signed.</p>
-    pub fn set_is_signed(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_signed(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_signed = input;
         self
     }
     /// <p>A value that indicates whether the column contains currency values.</p>
     pub fn is_currency(mut self, input: bool) -> Self {
-        self.is_currency = Some(input);
+        self.is_currency = ::std::option::Option::Some(input);
         self
     }
     /// <p>A value that indicates whether the column contains currency values.</p>
-    pub fn set_is_currency(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_currency(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_currency = input;
         self
     }
     /// <p>A value that indicates whether the column is case-sensitive.</p>
     pub fn is_case_sensitive(mut self, input: bool) -> Self {
-        self.is_case_sensitive = Some(input);
+        self.is_case_sensitive = ::std::option::Option::Some(input);
         self
     }
     /// <p>A value that indicates whether the column is case-sensitive.</p>
-    pub fn set_is_case_sensitive(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_case_sensitive(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_case_sensitive = input;
         self
     }
     /// <p>A value that indicates whether the column is nullable.</p>
     pub fn nullable(mut self, input: i32) -> Self {
-        self.nullable = Some(input);
+        self.nullable = ::std::option::Option::Some(input);
         self
     }
     /// <p>A value that indicates whether the column is nullable.</p>
-    pub fn set_nullable(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_nullable(mut self, input: ::std::option::Option<i32>) -> Self {
         self.nullable = input;
         self
     }
     /// <p>The precision value of a decimal number column.</p>
     pub fn precision(mut self, input: i32) -> Self {
-        self.precision = Some(input);
+        self.precision = ::std::option::Option::Some(input);
         self
     }
     /// <p>The precision value of a decimal number column.</p>
-    pub fn set_precision(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_precision(mut self, input: ::std::option::Option<i32>) -> Self {
         self.precision = input;
         self
     }
     /// <p>The scale value of a decimal number column.</p>
     pub fn scale(mut self, input: i32) -> Self {
-        self.scale = Some(input);
+        self.scale = ::std::option::Option::Some(input);
         self
     }
     /// <p>The scale value of a decimal number column.</p>
-    pub fn set_scale(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_scale(mut self, input: ::std::option::Option<i32>) -> Self {
         self.scale = input;
         self
     }
     /// <p>The type of the column.</p>
     pub fn array_base_column_type(mut self, input: i32) -> Self {
-        self.array_base_column_type = Some(input);
+        self.array_base_column_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of the column.</p>
-    pub fn set_array_base_column_type(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_array_base_column_type(mut self, input: ::std::option::Option<i32>) -> Self {
         self.array_base_column_type = input;
         self
     }

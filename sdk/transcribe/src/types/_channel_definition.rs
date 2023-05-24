@@ -2,14 +2,14 @@
 
 /// <p>Makes it possible to specify which speaker is on which channel. For example, if your agent is the first participant to speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the first channel) and <code>ParticipantRole</code> to <code>AGENT</code> (to indicate that it's the agent speaking).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChannelDefinition {
     /// <p>Specify the audio channel you want to define.</p>
     #[doc(hidden)]
     pub channel_id: i32,
     /// <p>Specify the speaker you want to define. Omitting this parameter is equivalent to specifying both participants.</p>
     #[doc(hidden)]
-    pub participant_role: std::option::Option<crate::types::ParticipantRole>,
+    pub participant_role: ::std::option::Option<crate::types::ParticipantRole>,
 }
 impl ChannelDefinition {
     /// <p>Specify the audio channel you want to define.</p>
@@ -17,7 +17,7 @@ impl ChannelDefinition {
         self.channel_id
     }
     /// <p>Specify the speaker you want to define. Omitting this parameter is equivalent to specifying both participants.</p>
-    pub fn participant_role(&self) -> std::option::Option<&crate::types::ParticipantRole> {
+    pub fn participant_role(&self) -> ::std::option::Option<&crate::types::ParticipantRole> {
         self.participant_role.as_ref()
     }
 }
@@ -30,31 +30,33 @@ impl ChannelDefinition {
 
 /// A builder for [`ChannelDefinition`](crate::types::ChannelDefinition).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ChannelDefinitionBuilder {
-    pub(crate) channel_id: std::option::Option<i32>,
-    pub(crate) participant_role: std::option::Option<crate::types::ParticipantRole>,
+    pub(crate) channel_id: ::std::option::Option<i32>,
+    pub(crate) participant_role: ::std::option::Option<crate::types::ParticipantRole>,
 }
 impl ChannelDefinitionBuilder {
     /// <p>Specify the audio channel you want to define.</p>
     pub fn channel_id(mut self, input: i32) -> Self {
-        self.channel_id = Some(input);
+        self.channel_id = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specify the audio channel you want to define.</p>
-    pub fn set_channel_id(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_channel_id(mut self, input: ::std::option::Option<i32>) -> Self {
         self.channel_id = input;
         self
     }
     /// <p>Specify the speaker you want to define. Omitting this parameter is equivalent to specifying both participants.</p>
     pub fn participant_role(mut self, input: crate::types::ParticipantRole) -> Self {
-        self.participant_role = Some(input);
+        self.participant_role = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specify the speaker you want to define. Omitting this parameter is equivalent to specifying both participants.</p>
     pub fn set_participant_role(
         mut self,
-        input: std::option::Option<crate::types::ParticipantRole>,
+        input: ::std::option::Option<crate::types::ParticipantRole>,
     ) -> Self {
         self.participant_role = input;
         self

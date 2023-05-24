@@ -2,7 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_assume_role_with_web_identity_http_error(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::assume_role_with_web_identity::AssumeRoleWithWebIdentityOutput,
@@ -17,7 +17,7 @@ pub fn de_assume_role_with_web_identity_http_error(
     .map_err(
         crate::operation::assume_role_with_web_identity::AssumeRoleWithWebIdentityError::unhandled,
     )?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
+    generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -145,7 +145,7 @@ pub fn de_assume_role_with_web_identity_http_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_assume_role_with_web_identity_http_response_with_props(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::assume_role_with_web_identity::AssumeRoleWithWebIdentityOutput,
@@ -156,22 +156,22 @@ pub fn de_assume_role_with_web_identity_http_response_with_props(
         let mut output = crate::operation::assume_role_with_web_identity::builders::AssumeRoleWithWebIdentityOutputBuilder::default();
         output = crate::protocol_serde::shape_assume_role_with_web_identity::de_assume_role_with_web_identity(_response_body, output).map_err(crate::operation::assume_role_with_web_identity::AssumeRoleWithWebIdentityError::unhandled)?;
         output._set_request_id(
-            aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
+            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
         );
         output.build()
     })
 }
 
 #[allow(unused_mut)]
-pub fn de_assume_role_with_web_identity(inp: &[u8], mut builder: crate::operation::assume_role_with_web_identity::builders::AssumeRoleWithWebIdentityOutputBuilder) -> Result<crate::operation::assume_role_with_web_identity::builders::AssumeRoleWithWebIdentityOutputBuilder, aws_smithy_xml::decode::XmlDecodeError>{
-    let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
+pub fn de_assume_role_with_web_identity(inp: &[u8], mut builder: crate::operation::assume_role_with_web_identity::builders::AssumeRoleWithWebIdentityOutputBuilder) -> Result<crate::operation::assume_role_with_web_identity::builders::AssumeRoleWithWebIdentityOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>{
+    let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("AssumeRoleWithWebIdentityResponse")) {
-        return Err(aws_smithy_xml::decode::XmlDecodeError::custom(format!(
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected AssumeRoleWithWebIdentityResponse got {:?}",
             start_el
         )));
@@ -179,7 +179,7 @@ pub fn de_assume_role_with_web_identity(inp: &[u8], mut builder: crate::operatio
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("AssumeRoleWithWebIdentityResult")) {
-            return Err(aws_smithy_xml::decode::XmlDecodeError::custom(format!(
+            return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
                 "invalid result, expected AssumeRoleWithWebIdentityResult got {:?}",
                 start_el
             )));
@@ -199,8 +199,8 @@ pub fn de_assume_role_with_web_identity(inp: &[u8], mut builder: crate::operatio
             s if s.matches("SubjectFromWebIdentityToken") /* SubjectFromWebIdentityToken com.amazonaws.sts.synthetic#AssumeRoleWithWebIdentityOutput$SubjectFromWebIdentityToken */ =>  {
                 let var_2 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -223,10 +223,10 @@ pub fn de_assume_role_with_web_identity(inp: &[u8], mut builder: crate::operatio
                 let var_4 =
                     Some(
                          {
-                            <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
-                            .map_err(|_|aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.sts#nonNegativeIntegerType`)"))
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.sts#nonNegativeIntegerType`)"))
                         }
                         ?
                     )
@@ -237,8 +237,8 @@ pub fn de_assume_role_with_web_identity(inp: &[u8], mut builder: crate::operatio
             s if s.matches("Provider") /* Provider com.amazonaws.sts.synthetic#AssumeRoleWithWebIdentityOutput$Provider */ =>  {
                 let var_5 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -250,8 +250,8 @@ pub fn de_assume_role_with_web_identity(inp: &[u8], mut builder: crate::operatio
             s if s.matches("Audience") /* Audience com.amazonaws.sts.synthetic#AssumeRoleWithWebIdentityOutput$Audience */ =>  {
                 let var_6 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -263,8 +263,8 @@ pub fn de_assume_role_with_web_identity(inp: &[u8], mut builder: crate::operatio
             s if s.matches("SourceIdentity") /* SourceIdentity com.amazonaws.sts.synthetic#AssumeRoleWithWebIdentityOutput$SourceIdentity */ =>  {
                 let var_7 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -277,7 +277,7 @@ pub fn de_assume_role_with_web_identity(inp: &[u8], mut builder: crate::operatio
         }
         }
     } else {
-        return Err(aws_smithy_xml::decode::XmlDecodeError::custom(
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(
             "expected AssumeRoleWithWebIdentityResult tag",
         ));
     };

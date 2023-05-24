@@ -2,71 +2,71 @@
 
 /// <p>Describes the placement of an instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LaunchTemplatePlacementRequest {
     /// <p>The Availability Zone for the instance.</p>
     #[doc(hidden)]
-    pub availability_zone: std::option::Option<std::string::String>,
+    pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The affinity setting for an instance on a Dedicated Host.</p>
     #[doc(hidden)]
-    pub affinity: std::option::Option<std::string::String>,
+    pub affinity: ::std::option::Option<::std::string::String>,
     /// <p>The name of the placement group for the instance.</p>
     #[doc(hidden)]
-    pub group_name: std::option::Option<std::string::String>,
+    pub group_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Dedicated Host for the instance.</p>
     #[doc(hidden)]
-    pub host_id: std::option::Option<std::string::String>,
+    pub host_id: ::std::option::Option<::std::string::String>,
     /// <p>The tenancy of the instance. An instance with a tenancy of dedicated runs on single-tenant hardware.</p>
     #[doc(hidden)]
-    pub tenancy: std::option::Option<crate::types::Tenancy>,
+    pub tenancy: ::std::option::Option<crate::types::Tenancy>,
     /// <p>Reserved for future use.</p>
     #[doc(hidden)]
-    pub spread_domain: std::option::Option<std::string::String>,
+    pub spread_domain: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the host resource group in which to launch the instances. If you specify a host resource group ARN, omit the <b>Tenancy</b> parameter or set it to <code>host</code>.</p>
     #[doc(hidden)]
-    pub host_resource_group_arn: std::option::Option<std::string::String>,
+    pub host_resource_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The number of the partition the instance should launch in. Valid only if the placement group strategy is set to <code>partition</code>.</p>
     #[doc(hidden)]
-    pub partition_number: std::option::Option<i32>,
+    pub partition_number: ::std::option::Option<i32>,
     /// <p>The Group Id of a placement group. You must specify the Placement Group <b>Group Id</b> to launch an instance in a shared placement group.</p>
     #[doc(hidden)]
-    pub group_id: std::option::Option<std::string::String>,
+    pub group_id: ::std::option::Option<::std::string::String>,
 }
 impl LaunchTemplatePlacementRequest {
     /// <p>The Availability Zone for the instance.</p>
-    pub fn availability_zone(&self) -> std::option::Option<&str> {
+    pub fn availability_zone(&self) -> ::std::option::Option<&str> {
         self.availability_zone.as_deref()
     }
     /// <p>The affinity setting for an instance on a Dedicated Host.</p>
-    pub fn affinity(&self) -> std::option::Option<&str> {
+    pub fn affinity(&self) -> ::std::option::Option<&str> {
         self.affinity.as_deref()
     }
     /// <p>The name of the placement group for the instance.</p>
-    pub fn group_name(&self) -> std::option::Option<&str> {
+    pub fn group_name(&self) -> ::std::option::Option<&str> {
         self.group_name.as_deref()
     }
     /// <p>The ID of the Dedicated Host for the instance.</p>
-    pub fn host_id(&self) -> std::option::Option<&str> {
+    pub fn host_id(&self) -> ::std::option::Option<&str> {
         self.host_id.as_deref()
     }
     /// <p>The tenancy of the instance. An instance with a tenancy of dedicated runs on single-tenant hardware.</p>
-    pub fn tenancy(&self) -> std::option::Option<&crate::types::Tenancy> {
+    pub fn tenancy(&self) -> ::std::option::Option<&crate::types::Tenancy> {
         self.tenancy.as_ref()
     }
     /// <p>Reserved for future use.</p>
-    pub fn spread_domain(&self) -> std::option::Option<&str> {
+    pub fn spread_domain(&self) -> ::std::option::Option<&str> {
         self.spread_domain.as_deref()
     }
     /// <p>The ARN of the host resource group in which to launch the instances. If you specify a host resource group ARN, omit the <b>Tenancy</b> parameter or set it to <code>host</code>.</p>
-    pub fn host_resource_group_arn(&self) -> std::option::Option<&str> {
+    pub fn host_resource_group_arn(&self) -> ::std::option::Option<&str> {
         self.host_resource_group_arn.as_deref()
     }
     /// <p>The number of the partition the instance should launch in. Valid only if the placement group strategy is set to <code>partition</code>.</p>
-    pub fn partition_number(&self) -> std::option::Option<i32> {
+    pub fn partition_number(&self) -> ::std::option::Option<i32> {
         self.partition_number
     }
     /// <p>The Group Id of a placement group. You must specify the Placement Group <b>Group Id</b> to launch an instance in a shared placement group.</p>
-    pub fn group_id(&self) -> std::option::Option<&str> {
+    pub fn group_id(&self) -> ::std::option::Option<&str> {
         self.group_id.as_deref()
     }
 }
@@ -79,112 +79,126 @@ impl LaunchTemplatePlacementRequest {
 
 /// A builder for [`LaunchTemplatePlacementRequest`](crate::types::LaunchTemplatePlacementRequest).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LaunchTemplatePlacementRequestBuilder {
-    pub(crate) availability_zone: std::option::Option<std::string::String>,
-    pub(crate) affinity: std::option::Option<std::string::String>,
-    pub(crate) group_name: std::option::Option<std::string::String>,
-    pub(crate) host_id: std::option::Option<std::string::String>,
-    pub(crate) tenancy: std::option::Option<crate::types::Tenancy>,
-    pub(crate) spread_domain: std::option::Option<std::string::String>,
-    pub(crate) host_resource_group_arn: std::option::Option<std::string::String>,
-    pub(crate) partition_number: std::option::Option<i32>,
-    pub(crate) group_id: std::option::Option<std::string::String>,
+    pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
+    pub(crate) affinity: ::std::option::Option<::std::string::String>,
+    pub(crate) group_name: ::std::option::Option<::std::string::String>,
+    pub(crate) host_id: ::std::option::Option<::std::string::String>,
+    pub(crate) tenancy: ::std::option::Option<crate::types::Tenancy>,
+    pub(crate) spread_domain: ::std::option::Option<::std::string::String>,
+    pub(crate) host_resource_group_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) partition_number: ::std::option::Option<i32>,
+    pub(crate) group_id: ::std::option::Option<::std::string::String>,
 }
 impl LaunchTemplatePlacementRequestBuilder {
     /// <p>The Availability Zone for the instance.</p>
-    pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
-        self.availability_zone = Some(input.into());
+    pub fn availability_zone(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Availability Zone for the instance.</p>
     pub fn set_availability_zone(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.availability_zone = input;
         self
     }
     /// <p>The affinity setting for an instance on a Dedicated Host.</p>
-    pub fn affinity(mut self, input: impl Into<std::string::String>) -> Self {
-        self.affinity = Some(input.into());
+    pub fn affinity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.affinity = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The affinity setting for an instance on a Dedicated Host.</p>
-    pub fn set_affinity(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_affinity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.affinity = input;
         self
     }
     /// <p>The name of the placement group for the instance.</p>
-    pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.group_name = Some(input.into());
+    pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the placement group for the instance.</p>
-    pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_name = input;
         self
     }
     /// <p>The ID of the Dedicated Host for the instance.</p>
-    pub fn host_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.host_id = Some(input.into());
+    pub fn host_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.host_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Dedicated Host for the instance.</p>
-    pub fn set_host_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_host_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.host_id = input;
         self
     }
     /// <p>The tenancy of the instance. An instance with a tenancy of dedicated runs on single-tenant hardware.</p>
     pub fn tenancy(mut self, input: crate::types::Tenancy) -> Self {
-        self.tenancy = Some(input);
+        self.tenancy = ::std::option::Option::Some(input);
         self
     }
     /// <p>The tenancy of the instance. An instance with a tenancy of dedicated runs on single-tenant hardware.</p>
-    pub fn set_tenancy(mut self, input: std::option::Option<crate::types::Tenancy>) -> Self {
+    pub fn set_tenancy(mut self, input: ::std::option::Option<crate::types::Tenancy>) -> Self {
         self.tenancy = input;
         self
     }
     /// <p>Reserved for future use.</p>
-    pub fn spread_domain(mut self, input: impl Into<std::string::String>) -> Self {
-        self.spread_domain = Some(input.into());
+    pub fn spread_domain(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.spread_domain = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Reserved for future use.</p>
-    pub fn set_spread_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_spread_domain(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.spread_domain = input;
         self
     }
     /// <p>The ARN of the host resource group in which to launch the instances. If you specify a host resource group ARN, omit the <b>Tenancy</b> parameter or set it to <code>host</code>.</p>
-    pub fn host_resource_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.host_resource_group_arn = Some(input.into());
+    pub fn host_resource_group_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.host_resource_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the host resource group in which to launch the instances. If you specify a host resource group ARN, omit the <b>Tenancy</b> parameter or set it to <code>host</code>.</p>
     pub fn set_host_resource_group_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.host_resource_group_arn = input;
         self
     }
     /// <p>The number of the partition the instance should launch in. Valid only if the placement group strategy is set to <code>partition</code>.</p>
     pub fn partition_number(mut self, input: i32) -> Self {
-        self.partition_number = Some(input);
+        self.partition_number = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of the partition the instance should launch in. Valid only if the placement group strategy is set to <code>partition</code>.</p>
-    pub fn set_partition_number(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_partition_number(mut self, input: ::std::option::Option<i32>) -> Self {
         self.partition_number = input;
         self
     }
     /// <p>The Group Id of a placement group. You must specify the Placement Group <b>Group Id</b> to launch an instance in a shared placement group.</p>
-    pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.group_id = Some(input.into());
+    pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Group Id of a placement group. You must specify the Placement Group <b>Group Id</b> to launch an instance in a shared placement group.</p>
-    pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_id = input;
         self
     }

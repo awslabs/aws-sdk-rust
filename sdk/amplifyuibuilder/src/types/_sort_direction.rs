@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub struct SortDirection(String);
 impl SortDirection {
@@ -21,9 +21,9 @@ impl SortDirection {
         &["ASC", "DESC"]
     }
 }
-impl<T> std::convert::From<T> for SortDirection
+impl<T> ::std::convert::From<T> for SortDirection
 where
-    T: std::convert::AsRef<str>,
+    T: ::std::convert::AsRef<str>,
 {
     fn from(s: T) -> Self {
         SortDirection(s.as_ref().to_owned())

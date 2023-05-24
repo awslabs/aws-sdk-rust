@@ -2,22 +2,22 @@
 
 /// <p>A PartiQL predicate.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RowFilter {
     /// <p>A filter expression.</p>
     #[doc(hidden)]
-    pub filter_expression: std::option::Option<std::string::String>,
+    pub filter_expression: ::std::option::Option<::std::string::String>,
     /// <p>A wildcard for all rows.</p>
     #[doc(hidden)]
-    pub all_rows_wildcard: std::option::Option<crate::types::AllRowsWildcard>,
+    pub all_rows_wildcard: ::std::option::Option<crate::types::AllRowsWildcard>,
 }
 impl RowFilter {
     /// <p>A filter expression.</p>
-    pub fn filter_expression(&self) -> std::option::Option<&str> {
+    pub fn filter_expression(&self) -> ::std::option::Option<&str> {
         self.filter_expression.as_deref()
     }
     /// <p>A wildcard for all rows.</p>
-    pub fn all_rows_wildcard(&self) -> std::option::Option<&crate::types::AllRowsWildcard> {
+    pub fn all_rows_wildcard(&self) -> ::std::option::Option<&crate::types::AllRowsWildcard> {
         self.all_rows_wildcard.as_ref()
     }
 }
@@ -30,34 +30,39 @@ impl RowFilter {
 
 /// A builder for [`RowFilter`](crate::types::RowFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RowFilterBuilder {
-    pub(crate) filter_expression: std::option::Option<std::string::String>,
-    pub(crate) all_rows_wildcard: std::option::Option<crate::types::AllRowsWildcard>,
+    pub(crate) filter_expression: ::std::option::Option<::std::string::String>,
+    pub(crate) all_rows_wildcard: ::std::option::Option<crate::types::AllRowsWildcard>,
 }
 impl RowFilterBuilder {
     /// <p>A filter expression.</p>
-    pub fn filter_expression(mut self, input: impl Into<std::string::String>) -> Self {
-        self.filter_expression = Some(input.into());
+    pub fn filter_expression(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.filter_expression = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A filter expression.</p>
     pub fn set_filter_expression(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.filter_expression = input;
         self
     }
     /// <p>A wildcard for all rows.</p>
     pub fn all_rows_wildcard(mut self, input: crate::types::AllRowsWildcard) -> Self {
-        self.all_rows_wildcard = Some(input);
+        self.all_rows_wildcard = ::std::option::Option::Some(input);
         self
     }
     /// <p>A wildcard for all rows.</p>
     pub fn set_all_rows_wildcard(
         mut self,
-        input: std::option::Option<crate::types::AllRowsWildcard>,
+        input: ::std::option::Option<crate::types::AllRowsWildcard>,
     ) -> Self {
         self.all_rows_wildcard = input;
         self

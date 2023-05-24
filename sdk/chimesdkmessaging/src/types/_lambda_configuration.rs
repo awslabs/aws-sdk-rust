@@ -2,22 +2,22 @@
 
 /// <p>Stores metadata about a Lambda processor.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LambdaConfiguration {
     /// <p>The ARN of the Lambda message processing function.</p>
     #[doc(hidden)]
-    pub resource_arn: std::option::Option<std::string::String>,
+    pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>Controls how the Lambda function is invoked.</p>
     #[doc(hidden)]
-    pub invocation_type: std::option::Option<crate::types::InvocationType>,
+    pub invocation_type: ::std::option::Option<crate::types::InvocationType>,
 }
 impl LambdaConfiguration {
     /// <p>The ARN of the Lambda message processing function.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
     /// <p>Controls how the Lambda function is invoked.</p>
-    pub fn invocation_type(&self) -> std::option::Option<&crate::types::InvocationType> {
+    pub fn invocation_type(&self) -> ::std::option::Option<&crate::types::InvocationType> {
         self.invocation_type.as_ref()
     }
 }
@@ -30,31 +30,33 @@ impl LambdaConfiguration {
 
 /// A builder for [`LambdaConfiguration`](crate::types::LambdaConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LambdaConfigurationBuilder {
-    pub(crate) resource_arn: std::option::Option<std::string::String>,
-    pub(crate) invocation_type: std::option::Option<crate::types::InvocationType>,
+    pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) invocation_type: ::std::option::Option<crate::types::InvocationType>,
 }
 impl LambdaConfigurationBuilder {
     /// <p>The ARN of the Lambda message processing function.</p>
-    pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_arn = Some(input.into());
+    pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the Lambda message processing function.</p>
-    pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
     }
     /// <p>Controls how the Lambda function is invoked.</p>
     pub fn invocation_type(mut self, input: crate::types::InvocationType) -> Self {
-        self.invocation_type = Some(input);
+        self.invocation_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Controls how the Lambda function is invoked.</p>
     pub fn set_invocation_type(
         mut self,
-        input: std::option::Option<crate::types::InvocationType>,
+        input: ::std::option::Option<crate::types::InvocationType>,
     ) -> Self {
         self.invocation_type = input;
         self

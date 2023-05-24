@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum NotificationTransport {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum NotificationTransport {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for NotificationTransport {
+impl ::std::convert::From<&str> for NotificationTransport {
     fn from(s: &str) -> Self {
         match s {
             "Email" => NotificationTransport::Email,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for NotificationTransport {
         }
     }
 }
-impl std::str::FromStr for NotificationTransport {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for NotificationTransport {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(NotificationTransport::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(NotificationTransport::from(s))
     }
 }
 impl NotificationTransport {
@@ -91,7 +91,7 @@ impl NotificationTransport {
         &["Email", "SNS", "SQS"]
     }
 }
-impl AsRef<str> for NotificationTransport {
+impl ::std::convert::AsRef<str> for NotificationTransport {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

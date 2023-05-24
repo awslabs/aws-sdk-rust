@@ -2,22 +2,22 @@
 
 /// <p>Contains the OAuth authorization parameters to use for the connection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateConnectionOAuthClientRequestParameters {
     /// <p>The client ID to use for OAuth authorization.</p>
     #[doc(hidden)]
-    pub client_id: std::option::Option<std::string::String>,
+    pub client_id: ::std::option::Option<::std::string::String>,
     /// <p>The client secret assciated with the client ID to use for OAuth authorization.</p>
     #[doc(hidden)]
-    pub client_secret: std::option::Option<std::string::String>,
+    pub client_secret: ::std::option::Option<::std::string::String>,
 }
 impl UpdateConnectionOAuthClientRequestParameters {
     /// <p>The client ID to use for OAuth authorization.</p>
-    pub fn client_id(&self) -> std::option::Option<&str> {
+    pub fn client_id(&self) -> ::std::option::Option<&str> {
         self.client_id.as_deref()
     }
     /// <p>The client secret assciated with the client ID to use for OAuth authorization.</p>
-    pub fn client_secret(&self) -> std::option::Option<&str> {
+    pub fn client_secret(&self) -> ::std::option::Option<&str> {
         self.client_secret.as_deref()
     }
 }
@@ -31,29 +31,37 @@ impl UpdateConnectionOAuthClientRequestParameters {
 
 /// A builder for [`UpdateConnectionOAuthClientRequestParameters`](crate::types::UpdateConnectionOAuthClientRequestParameters).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateConnectionOAuthClientRequestParametersBuilder {
-    pub(crate) client_id: std::option::Option<std::string::String>,
-    pub(crate) client_secret: std::option::Option<std::string::String>,
+    pub(crate) client_id: ::std::option::Option<::std::string::String>,
+    pub(crate) client_secret: ::std::option::Option<::std::string::String>,
 }
 impl UpdateConnectionOAuthClientRequestParametersBuilder {
     /// <p>The client ID to use for OAuth authorization.</p>
-    pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.client_id = Some(input.into());
+    pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.client_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The client ID to use for OAuth authorization.</p>
-    pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_id = input;
         self
     }
     /// <p>The client secret assciated with the client ID to use for OAuth authorization.</p>
-    pub fn client_secret(mut self, input: impl Into<std::string::String>) -> Self {
-        self.client_secret = Some(input.into());
+    pub fn client_secret(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.client_secret = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The client secret assciated with the client ID to use for OAuth authorization.</p>
-    pub fn set_client_secret(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_secret(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.client_secret = input;
         self
     }

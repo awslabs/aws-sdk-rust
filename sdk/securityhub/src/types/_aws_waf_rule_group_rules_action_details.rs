@@ -2,15 +2,15 @@
 
 /// <p>Provides information about what action WAF should take on a web request when it matches the criteria defined in the rule. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsWafRuleGroupRulesActionDetails {
     /// <p>The action that WAF should take on a web request when it matches the rule's statement.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<std::string::String>,
+    pub r#type: ::std::option::Option<::std::string::String>,
 }
 impl AwsWafRuleGroupRulesActionDetails {
     /// <p>The action that WAF should take on a web request when it matches the rule's statement.</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl AwsWafRuleGroupRulesActionDetails {
 
 /// A builder for [`AwsWafRuleGroupRulesActionDetails`](crate::types::AwsWafRuleGroupRulesActionDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsWafRuleGroupRulesActionDetailsBuilder {
-    pub(crate) r#type: std::option::Option<std::string::String>,
+    pub(crate) r#type: ::std::option::Option<::std::string::String>,
 }
 impl AwsWafRuleGroupRulesActionDetailsBuilder {
     /// <p>The action that WAF should take on a web request when it matches the rule's statement.</p>
-    pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.r#type = Some(input.into());
+    pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.r#type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The action that WAF should take on a web request when it matches the rule's statement.</p>
-    pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
     }

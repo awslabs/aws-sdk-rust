@@ -2,7 +2,7 @@
 
 /// <p>How the auto-merging process should resolve conflicts between different profiles.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConflictResolution {
     /// <p>How the auto-merging process should resolve conflicts between different profiles.</p>
     /// <ul>
@@ -10,10 +10,10 @@ pub struct ConflictResolution {
     /// <li> <p> <code>SOURCE</code>: Uses the data from a specific source. For example, if a company has been aquired or two departments have merged, data from the specified source is used. If two duplicate profiles are from the same source, then <code>RECENCY</code> is used again.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub conflict_resolving_model: std::option::Option<crate::types::ConflictResolvingModel>,
+    pub conflict_resolving_model: ::std::option::Option<crate::types::ConflictResolvingModel>,
     /// <p>The <code>ObjectType</code> name that is used to resolve profile merging conflicts when choosing <code>SOURCE</code> as the <code>ConflictResolvingModel</code>.</p>
     #[doc(hidden)]
-    pub source_name: std::option::Option<std::string::String>,
+    pub source_name: ::std::option::Option<::std::string::String>,
 }
 impl ConflictResolution {
     /// <p>How the auto-merging process should resolve conflicts between different profiles.</p>
@@ -23,11 +23,11 @@ impl ConflictResolution {
     /// </ul>
     pub fn conflict_resolving_model(
         &self,
-    ) -> std::option::Option<&crate::types::ConflictResolvingModel> {
+    ) -> ::std::option::Option<&crate::types::ConflictResolvingModel> {
         self.conflict_resolving_model.as_ref()
     }
     /// <p>The <code>ObjectType</code> name that is used to resolve profile merging conflicts when choosing <code>SOURCE</code> as the <code>ConflictResolvingModel</code>.</p>
-    pub fn source_name(&self) -> std::option::Option<&str> {
+    pub fn source_name(&self) -> ::std::option::Option<&str> {
         self.source_name.as_deref()
     }
 }
@@ -40,10 +40,13 @@ impl ConflictResolution {
 
 /// A builder for [`ConflictResolution`](crate::types::ConflictResolution).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ConflictResolutionBuilder {
-    pub(crate) conflict_resolving_model: std::option::Option<crate::types::ConflictResolvingModel>,
-    pub(crate) source_name: std::option::Option<std::string::String>,
+    pub(crate) conflict_resolving_model:
+        ::std::option::Option<crate::types::ConflictResolvingModel>,
+    pub(crate) source_name: ::std::option::Option<::std::string::String>,
 }
 impl ConflictResolutionBuilder {
     /// <p>How the auto-merging process should resolve conflicts between different profiles.</p>
@@ -52,7 +55,7 @@ impl ConflictResolutionBuilder {
     /// <li> <p> <code>SOURCE</code>: Uses the data from a specific source. For example, if a company has been aquired or two departments have merged, data from the specified source is used. If two duplicate profiles are from the same source, then <code>RECENCY</code> is used again.</p> </li>
     /// </ul>
     pub fn conflict_resolving_model(mut self, input: crate::types::ConflictResolvingModel) -> Self {
-        self.conflict_resolving_model = Some(input);
+        self.conflict_resolving_model = ::std::option::Option::Some(input);
         self
     }
     /// <p>How the auto-merging process should resolve conflicts between different profiles.</p>
@@ -62,18 +65,18 @@ impl ConflictResolutionBuilder {
     /// </ul>
     pub fn set_conflict_resolving_model(
         mut self,
-        input: std::option::Option<crate::types::ConflictResolvingModel>,
+        input: ::std::option::Option<crate::types::ConflictResolvingModel>,
     ) -> Self {
         self.conflict_resolving_model = input;
         self
     }
     /// <p>The <code>ObjectType</code> name that is used to resolve profile merging conflicts when choosing <code>SOURCE</code> as the <code>ConflictResolvingModel</code>.</p>
-    pub fn source_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.source_name = Some(input.into());
+    pub fn source_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>ObjectType</code> name that is used to resolve profile merging conflicts when choosing <code>SOURCE</code> as the <code>ConflictResolvingModel</code>.</p>
-    pub fn set_source_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_source_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_name = input;
         self
     }

@@ -2,20 +2,20 @@
 
 /// <p>The list of Amazon Web Services services returned by the <code>DescribeServices</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeServicesOutput {
     /// <p>A JSON-formatted list of Amazon Web Services services.</p>
     #[doc(hidden)]
-    pub services: std::option::Option<std::vec::Vec<crate::types::Service>>,
+    pub services: ::std::option::Option<::std::vec::Vec<crate::types::Service>>,
     _request_id: Option<String>,
 }
 impl DescribeServicesOutput {
     /// <p>A JSON-formatted list of Amazon Web Services services.</p>
-    pub fn services(&self) -> std::option::Option<&[crate::types::Service]> {
+    pub fn services(&self) -> ::std::option::Option<&[crate::types::Service]> {
         self.services.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeServicesOutput {
+impl ::aws_http::request_id::RequestId for DescribeServicesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,9 +30,11 @@ impl DescribeServicesOutput {
 
 /// A builder for [`DescribeServicesOutput`](crate::operation::describe_services::DescribeServicesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeServicesOutputBuilder {
-    pub(crate) services: std::option::Option<std::vec::Vec<crate::types::Service>>,
+    pub(crate) services: ::std::option::Option<::std::vec::Vec<crate::types::Service>>,
     _request_id: Option<String>,
 }
 impl DescribeServicesOutputBuilder {
@@ -44,13 +46,13 @@ impl DescribeServicesOutputBuilder {
     pub fn services(mut self, input: crate::types::Service) -> Self {
         let mut v = self.services.unwrap_or_default();
         v.push(input);
-        self.services = Some(v);
+        self.services = ::std::option::Option::Some(v);
         self
     }
     /// <p>A JSON-formatted list of Amazon Web Services services.</p>
     pub fn set_services(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Service>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Service>>,
     ) -> Self {
         self.services = input;
         self

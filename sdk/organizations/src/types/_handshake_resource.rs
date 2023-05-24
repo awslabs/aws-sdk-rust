@@ -2,11 +2,11 @@
 
 /// <p>Contains additional data that is needed to process a handshake.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct HandshakeResource {
     /// <p>The information that is passed to the other party in the handshake. The format of the value string must match the requirements of the specified type.</p>
     #[doc(hidden)]
-    pub value: std::option::Option<std::string::String>,
+    pub value: ::std::option::Option<::std::string::String>,
     /// <p>The type of information being passed, specifying how the value is to be interpreted by the other party:</p>
     /// <ul>
     /// <li> <p> <code>ACCOUNT</code> - Specifies an Amazon Web Services account ID number.</p> </li>
@@ -17,14 +17,14 @@ pub struct HandshakeResource {
     /// <li> <p> <code>NOTES</code> - Additional text provided by the handshake initiator and intended for the recipient to read.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::HandshakeResourceType>,
+    pub r#type: ::std::option::Option<crate::types::HandshakeResourceType>,
     /// <p>When needed, contains an additional array of <code>HandshakeResource</code> objects.</p>
     #[doc(hidden)]
-    pub resources: std::option::Option<std::vec::Vec<crate::types::HandshakeResource>>,
+    pub resources: ::std::option::Option<::std::vec::Vec<crate::types::HandshakeResource>>,
 }
 impl HandshakeResource {
     /// <p>The information that is passed to the other party in the handshake. The format of the value string must match the requirements of the specified type.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
     /// <p>The type of information being passed, specifying how the value is to be interpreted by the other party:</p>
@@ -36,16 +36,16 @@ impl HandshakeResource {
     /// <li> <p> <code>OWNER_NAME</code> - Specifies the name associated with the management account. Included as information about an organization. </p> </li>
     /// <li> <p> <code>NOTES</code> - Additional text provided by the handshake initiator and intended for the recipient to read.</p> </li>
     /// </ul>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::HandshakeResourceType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::HandshakeResourceType> {
         self.r#type.as_ref()
     }
     /// <p>When needed, contains an additional array of <code>HandshakeResource</code> objects.</p>
-    pub fn resources(&self) -> std::option::Option<&[crate::types::HandshakeResource]> {
+    pub fn resources(&self) -> ::std::option::Option<&[crate::types::HandshakeResource]> {
         self.resources.as_deref()
     }
 }
-impl std::fmt::Debug for HandshakeResource {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for HandshakeResource {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("HandshakeResource");
         formatter.field("value", &"*** Sensitive Data Redacted ***");
         formatter.field("r#type", &self.r#type);
@@ -62,20 +62,20 @@ impl HandshakeResource {
 
 /// A builder for [`HandshakeResource`](crate::types::HandshakeResource).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct HandshakeResourceBuilder {
-    pub(crate) value: std::option::Option<std::string::String>,
-    pub(crate) r#type: std::option::Option<crate::types::HandshakeResourceType>,
-    pub(crate) resources: std::option::Option<std::vec::Vec<crate::types::HandshakeResource>>,
+    pub(crate) value: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::HandshakeResourceType>,
+    pub(crate) resources: ::std::option::Option<::std::vec::Vec<crate::types::HandshakeResource>>,
 }
 impl HandshakeResourceBuilder {
     /// <p>The information that is passed to the other party in the handshake. The format of the value string must match the requirements of the specified type.</p>
-    pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.value = Some(input.into());
+    pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The information that is passed to the other party in the handshake. The format of the value string must match the requirements of the specified type.</p>
-    pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
     }
@@ -89,7 +89,7 @@ impl HandshakeResourceBuilder {
     /// <li> <p> <code>NOTES</code> - Additional text provided by the handshake initiator and intended for the recipient to read.</p> </li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::HandshakeResourceType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of information being passed, specifying how the value is to be interpreted by the other party:</p>
@@ -103,7 +103,7 @@ impl HandshakeResourceBuilder {
     /// </ul>
     pub fn set_type(
         mut self,
-        input: std::option::Option<crate::types::HandshakeResourceType>,
+        input: ::std::option::Option<crate::types::HandshakeResourceType>,
     ) -> Self {
         self.r#type = input;
         self
@@ -116,13 +116,13 @@ impl HandshakeResourceBuilder {
     pub fn resources(mut self, input: crate::types::HandshakeResource) -> Self {
         let mut v = self.resources.unwrap_or_default();
         v.push(input);
-        self.resources = Some(v);
+        self.resources = ::std::option::Option::Some(v);
         self
     }
     /// <p>When needed, contains an additional array of <code>HandshakeResource</code> objects.</p>
     pub fn set_resources(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::HandshakeResource>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::HandshakeResource>>,
     ) -> Self {
         self.resources = input;
         self
@@ -136,8 +136,8 @@ impl HandshakeResourceBuilder {
         }
     }
 }
-impl std::fmt::Debug for HandshakeResourceBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for HandshakeResourceBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("HandshakeResourceBuilder");
         formatter.field("value", &"*** Sensitive Data Redacted ***");
         formatter.field("r#type", &self.r#type);

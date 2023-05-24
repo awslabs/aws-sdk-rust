@@ -4,25 +4,25 @@
 pub struct RecognizeUtteranceInput {
     /// <p>The identifier of the bot that should receive the request.</p>
     #[doc(hidden)]
-    pub bot_id: std::option::Option<std::string::String>,
+    pub bot_id: ::std::option::Option<::std::string::String>,
     /// <p>The alias identifier in use for the bot that should receive the request.</p>
     #[doc(hidden)]
-    pub bot_alias_id: std::option::Option<std::string::String>,
+    pub bot_alias_id: ::std::option::Option<::std::string::String>,
     /// <p>The locale where the session is in use.</p>
     #[doc(hidden)]
-    pub locale_id: std::option::Option<std::string::String>,
+    pub locale_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the session in use.</p>
     #[doc(hidden)]
-    pub session_id: std::option::Option<std::string::String>,
+    pub session_id: ::std::option::Option<::std::string::String>,
     /// <p>Sets the state of the session with the user. You can use this to set the current intent, attributes, context, and dialog action. Use the dialog action to determine the next step that Amazon Lex V2 should use in the conversation with the user.</p>
     /// <p>The <code>sessionState</code> field must be compressed using gzip and then base64 encoded before sending to Amazon Lex V2.</p>
     #[doc(hidden)]
-    pub session_state: std::option::Option<std::string::String>,
+    pub session_state: ::std::option::Option<::std::string::String>,
     /// <p>Request-specific information passed between the client application and Amazon Lex V2 </p>
     /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes for prefix <code>x-amz-lex:</code>.</p>
     /// <p>The <code>requestAttributes</code> field must be compressed using gzip and then base64 encoded before sending to Amazon Lex V2.</p>
     #[doc(hidden)]
-    pub request_attributes: std::option::Option<std::string::String>,
+    pub request_attributes: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the format for audio input or that the content is text. The header must start with one of the following prefixes:</p>
     /// <ul>
     /// <li> <p>PCM format, audio data must be in little-endian byte order.</p>
@@ -41,7 +41,7 @@ pub struct RecognizeUtteranceInput {
     /// </ul> </li>
     /// </ul>
     #[doc(hidden)]
-    pub request_content_type: std::option::Option<std::string::String>,
+    pub request_content_type: ::std::option::Option<::std::string::String>,
     /// <p>The message that Amazon Lex V2 returns in the response can be either text or speech based on the <code>responseContentType</code> value.</p>
     /// <ul>
     /// <li> <p>If the value is <code>text/plain;charset=utf-8</code>, Amazon Lex V2 returns text in the response.</p> </li>
@@ -57,36 +57,36 @@ pub struct RecognizeUtteranceInput {
     /// </ul> </li>
     /// </ul>
     #[doc(hidden)]
-    pub response_content_type: std::option::Option<std::string::String>,
+    pub response_content_type: ::std::option::Option<::std::string::String>,
     /// <p>User input in PCM or Opus audio format or text format as described in the <code>requestContentType</code> parameter.</p>
-    pub input_stream: aws_smithy_http::byte_stream::ByteStream,
+    pub input_stream: ::aws_smithy_http::byte_stream::ByteStream,
 }
 impl RecognizeUtteranceInput {
     /// <p>The identifier of the bot that should receive the request.</p>
-    pub fn bot_id(&self) -> std::option::Option<&str> {
+    pub fn bot_id(&self) -> ::std::option::Option<&str> {
         self.bot_id.as_deref()
     }
     /// <p>The alias identifier in use for the bot that should receive the request.</p>
-    pub fn bot_alias_id(&self) -> std::option::Option<&str> {
+    pub fn bot_alias_id(&self) -> ::std::option::Option<&str> {
         self.bot_alias_id.as_deref()
     }
     /// <p>The locale where the session is in use.</p>
-    pub fn locale_id(&self) -> std::option::Option<&str> {
+    pub fn locale_id(&self) -> ::std::option::Option<&str> {
         self.locale_id.as_deref()
     }
     /// <p>The identifier of the session in use.</p>
-    pub fn session_id(&self) -> std::option::Option<&str> {
+    pub fn session_id(&self) -> ::std::option::Option<&str> {
         self.session_id.as_deref()
     }
     /// <p>Sets the state of the session with the user. You can use this to set the current intent, attributes, context, and dialog action. Use the dialog action to determine the next step that Amazon Lex V2 should use in the conversation with the user.</p>
     /// <p>The <code>sessionState</code> field must be compressed using gzip and then base64 encoded before sending to Amazon Lex V2.</p>
-    pub fn session_state(&self) -> std::option::Option<&str> {
+    pub fn session_state(&self) -> ::std::option::Option<&str> {
         self.session_state.as_deref()
     }
     /// <p>Request-specific information passed between the client application and Amazon Lex V2 </p>
     /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes for prefix <code>x-amz-lex:</code>.</p>
     /// <p>The <code>requestAttributes</code> field must be compressed using gzip and then base64 encoded before sending to Amazon Lex V2.</p>
-    pub fn request_attributes(&self) -> std::option::Option<&str> {
+    pub fn request_attributes(&self) -> ::std::option::Option<&str> {
         self.request_attributes.as_deref()
     }
     /// <p>Indicates the format for audio input or that the content is text. The header must start with one of the following prefixes:</p>
@@ -106,7 +106,7 @@ impl RecognizeUtteranceInput {
     /// <li> <p>text/plain; charset=utf-8</p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn request_content_type(&self) -> std::option::Option<&str> {
+    pub fn request_content_type(&self) -> ::std::option::Option<&str> {
         self.request_content_type.as_deref()
     }
     /// <p>The message that Amazon Lex V2 returns in the response can be either text or speech based on the <code>responseContentType</code> value.</p>
@@ -123,16 +123,16 @@ impl RecognizeUtteranceInput {
     /// <li> <p>text/plain; charset=utf-8</p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn response_content_type(&self) -> std::option::Option<&str> {
+    pub fn response_content_type(&self) -> ::std::option::Option<&str> {
         self.response_content_type.as_deref()
     }
     /// <p>User input in PCM or Opus audio format or text format as described in the <code>requestContentType</code> parameter.</p>
-    pub fn input_stream(&self) -> &aws_smithy_http::byte_stream::ByteStream {
+    pub fn input_stream(&self) -> &::aws_smithy_http::byte_stream::ByteStream {
         &self.input_stream
     }
 }
-impl std::fmt::Debug for RecognizeUtteranceInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for RecognizeUtteranceInput {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("RecognizeUtteranceInput");
         formatter.field("bot_id", &self.bot_id);
         formatter.field("bot_alias_id", &self.bot_alias_id);
@@ -156,76 +156,85 @@ impl RecognizeUtteranceInput {
 
 /// A builder for [`RecognizeUtteranceInput`](crate::operation::recognize_utterance::RecognizeUtteranceInput).
 #[non_exhaustive]
-#[derive(std::default::Default)]
+#[derive(::std::default::Default)]
 pub struct RecognizeUtteranceInputBuilder {
-    pub(crate) bot_id: std::option::Option<std::string::String>,
-    pub(crate) bot_alias_id: std::option::Option<std::string::String>,
-    pub(crate) locale_id: std::option::Option<std::string::String>,
-    pub(crate) session_id: std::option::Option<std::string::String>,
-    pub(crate) session_state: std::option::Option<std::string::String>,
-    pub(crate) request_attributes: std::option::Option<std::string::String>,
-    pub(crate) request_content_type: std::option::Option<std::string::String>,
-    pub(crate) response_content_type: std::option::Option<std::string::String>,
-    pub(crate) input_stream: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
+    pub(crate) bot_id: ::std::option::Option<::std::string::String>,
+    pub(crate) bot_alias_id: ::std::option::Option<::std::string::String>,
+    pub(crate) locale_id: ::std::option::Option<::std::string::String>,
+    pub(crate) session_id: ::std::option::Option<::std::string::String>,
+    pub(crate) session_state: ::std::option::Option<::std::string::String>,
+    pub(crate) request_attributes: ::std::option::Option<::std::string::String>,
+    pub(crate) request_content_type: ::std::option::Option<::std::string::String>,
+    pub(crate) response_content_type: ::std::option::Option<::std::string::String>,
+    pub(crate) input_stream: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>,
 }
 impl RecognizeUtteranceInputBuilder {
     /// <p>The identifier of the bot that should receive the request.</p>
-    pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.bot_id = Some(input.into());
+    pub fn bot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.bot_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the bot that should receive the request.</p>
-    pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_bot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bot_id = input;
         self
     }
     /// <p>The alias identifier in use for the bot that should receive the request.</p>
-    pub fn bot_alias_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.bot_alias_id = Some(input.into());
+    pub fn bot_alias_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.bot_alias_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The alias identifier in use for the bot that should receive the request.</p>
-    pub fn set_bot_alias_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_bot_alias_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bot_alias_id = input;
         self
     }
     /// <p>The locale where the session is in use.</p>
-    pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.locale_id = Some(input.into());
+    pub fn locale_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.locale_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The locale where the session is in use.</p>
-    pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_locale_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.locale_id = input;
         self
     }
     /// <p>The identifier of the session in use.</p>
-    pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.session_id = Some(input.into());
+    pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.session_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the session in use.</p>
-    pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.session_id = input;
         self
     }
     /// <p>Sets the state of the session with the user. You can use this to set the current intent, attributes, context, and dialog action. Use the dialog action to determine the next step that Amazon Lex V2 should use in the conversation with the user.</p>
     /// <p>The <code>sessionState</code> field must be compressed using gzip and then base64 encoded before sending to Amazon Lex V2.</p>
-    pub fn session_state(mut self, input: impl Into<std::string::String>) -> Self {
-        self.session_state = Some(input.into());
+    pub fn session_state(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.session_state = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Sets the state of the session with the user. You can use this to set the current intent, attributes, context, and dialog action. Use the dialog action to determine the next step that Amazon Lex V2 should use in the conversation with the user.</p>
     /// <p>The <code>sessionState</code> field must be compressed using gzip and then base64 encoded before sending to Amazon Lex V2.</p>
-    pub fn set_session_state(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_session_state(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.session_state = input;
         self
     }
     /// <p>Request-specific information passed between the client application and Amazon Lex V2 </p>
     /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes for prefix <code>x-amz-lex:</code>.</p>
     /// <p>The <code>requestAttributes</code> field must be compressed using gzip and then base64 encoded before sending to Amazon Lex V2.</p>
-    pub fn request_attributes(mut self, input: impl Into<std::string::String>) -> Self {
-        self.request_attributes = Some(input.into());
+    pub fn request_attributes(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.request_attributes = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Request-specific information passed between the client application and Amazon Lex V2 </p>
@@ -233,7 +242,7 @@ impl RecognizeUtteranceInputBuilder {
     /// <p>The <code>requestAttributes</code> field must be compressed using gzip and then base64 encoded before sending to Amazon Lex V2.</p>
     pub fn set_request_attributes(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.request_attributes = input;
         self
@@ -255,8 +264,11 @@ impl RecognizeUtteranceInputBuilder {
     /// <li> <p>text/plain; charset=utf-8</p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn request_content_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.request_content_type = Some(input.into());
+    pub fn request_content_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.request_content_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates the format for audio input or that the content is text. The header must start with one of the following prefixes:</p>
@@ -278,7 +290,7 @@ impl RecognizeUtteranceInputBuilder {
     /// </ul>
     pub fn set_request_content_type(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.request_content_type = input;
         self
@@ -297,8 +309,11 @@ impl RecognizeUtteranceInputBuilder {
     /// <li> <p>text/plain; charset=utf-8</p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn response_content_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.response_content_type = Some(input.into());
+    pub fn response_content_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.response_content_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The message that Amazon Lex V2 returns in the response can be either text or speech based on the <code>responseContentType</code> value.</p>
@@ -317,20 +332,20 @@ impl RecognizeUtteranceInputBuilder {
     /// </ul>
     pub fn set_response_content_type(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.response_content_type = input;
         self
     }
     /// <p>User input in PCM or Opus audio format or text format as described in the <code>requestContentType</code> parameter.</p>
-    pub fn input_stream(mut self, input: aws_smithy_http::byte_stream::ByteStream) -> Self {
-        self.input_stream = Some(input);
+    pub fn input_stream(mut self, input: ::aws_smithy_http::byte_stream::ByteStream) -> Self {
+        self.input_stream = ::std::option::Option::Some(input);
         self
     }
     /// <p>User input in PCM or Opus audio format or text format as described in the <code>requestContentType</code> parameter.</p>
     pub fn set_input_stream(
         mut self,
-        input: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
+        input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>,
     ) -> Self {
         self.input_stream = input;
         self
@@ -338,11 +353,11 @@ impl RecognizeUtteranceInputBuilder {
     /// Consumes the builder and constructs a [`RecognizeUtteranceInput`](crate::operation::recognize_utterance::RecognizeUtteranceInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::recognize_utterance::RecognizeUtteranceInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::recognize_utterance::RecognizeUtteranceInput {
                 bot_id: self.bot_id,
                 bot_alias_id: self.bot_alias_id,
@@ -357,8 +372,8 @@ impl RecognizeUtteranceInputBuilder {
         )
     }
 }
-impl std::fmt::Debug for RecognizeUtteranceInputBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for RecognizeUtteranceInputBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("RecognizeUtteranceInputBuilder");
         formatter.field("bot_id", &self.bot_id);
         formatter.field("bot_alias_id", &self.bot_alias_id);

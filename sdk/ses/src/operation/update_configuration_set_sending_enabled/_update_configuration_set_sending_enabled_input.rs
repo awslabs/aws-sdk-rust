@@ -2,18 +2,18 @@
 
 /// <p>Represents a request to enable or disable the email sending capabilities for a specific configuration set.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateConfigurationSetSendingEnabledInput {
     /// <p>The name of the configuration set that you want to update.</p>
     #[doc(hidden)]
-    pub configuration_set_name: std::option::Option<std::string::String>,
+    pub configuration_set_name: ::std::option::Option<::std::string::String>,
     /// <p>Describes whether email sending is enabled or disabled for the configuration set. </p>
     #[doc(hidden)]
     pub enabled: bool,
 }
 impl UpdateConfigurationSetSendingEnabledInput {
     /// <p>The name of the configuration set that you want to update.</p>
-    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+    pub fn configuration_set_name(&self) -> ::std::option::Option<&str> {
         self.configuration_set_name.as_deref()
     }
     /// <p>Describes whether email sending is enabled or disabled for the configuration set. </p>
@@ -30,38 +30,43 @@ impl UpdateConfigurationSetSendingEnabledInput {
 
 /// A builder for [`UpdateConfigurationSetSendingEnabledInput`](crate::operation::update_configuration_set_sending_enabled::UpdateConfigurationSetSendingEnabledInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateConfigurationSetSendingEnabledInputBuilder {
-    pub(crate) configuration_set_name: std::option::Option<std::string::String>,
-    pub(crate) enabled: std::option::Option<bool>,
+    pub(crate) configuration_set_name: ::std::option::Option<::std::string::String>,
+    pub(crate) enabled: ::std::option::Option<bool>,
 }
 impl UpdateConfigurationSetSendingEnabledInputBuilder {
     /// <p>The name of the configuration set that you want to update.</p>
-    pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.configuration_set_name = Some(input.into());
+    pub fn configuration_set_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.configuration_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the configuration set that you want to update.</p>
     pub fn set_configuration_set_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.configuration_set_name = input;
         self
     }
     /// <p>Describes whether email sending is enabled or disabled for the configuration set. </p>
     pub fn enabled(mut self, input: bool) -> Self {
-        self.enabled = Some(input);
+        self.enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes whether email sending is enabled or disabled for the configuration set. </p>
-    pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
     }
     /// Consumes the builder and constructs a [`UpdateConfigurationSetSendingEnabledInput`](crate::operation::update_configuration_set_sending_enabled::UpdateConfigurationSetSendingEnabledInput).
-    pub fn build(self) -> Result<crate::operation::update_configuration_set_sending_enabled::UpdateConfigurationSetSendingEnabledInput, aws_smithy_http::operation::error::BuildError>{
-        Ok(
+    pub fn build(self) -> ::std::result::Result<crate::operation::update_configuration_set_sending_enabled::UpdateConfigurationSetSendingEnabledInput, ::aws_smithy_http::operation::error::BuildError>{
+        ::std::result::Result::Ok(
             crate::operation::update_configuration_set_sending_enabled::UpdateConfigurationSetSendingEnabledInput {
                 configuration_set_name: self.configuration_set_name
                 ,

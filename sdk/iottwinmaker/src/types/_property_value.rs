@@ -2,17 +2,17 @@
 
 /// <p>An object that contains information about a value for a time series property.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PropertyValue {
     /// <p>The timestamp of a value for a time series property.</p>
     #[deprecated(
         note = "This field is deprecated and will throw an error in the future. Use time instead."
     )]
     #[doc(hidden)]
-    pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>An object that specifies a value for a time series property.</p>
     #[doc(hidden)]
-    pub value: std::option::Option<crate::types::DataValue>,
+    pub value: ::std::option::Option<crate::types::DataValue>,
     /// <p>ISO8601 DateTime of a value for a time series property.</p>
     /// <p>The time for when the property value was recorded in ISO 8601 format: <i>YYYY-MM-DDThh:mm:ss[.SSSSSSSSS][Z/±HH:mm]</i>.</p>
     /// <ul>
@@ -28,18 +28,18 @@ pub struct PropertyValue {
     /// </ul>
     /// <p> <i>Required sub-fields</i>: YYYY-MM-DDThh:mm:ss and [Z/±HH:mm]</p>
     #[doc(hidden)]
-    pub time: std::option::Option<std::string::String>,
+    pub time: ::std::option::Option<::std::string::String>,
 }
 impl PropertyValue {
     /// <p>The timestamp of a value for a time series property.</p>
     #[deprecated(
         note = "This field is deprecated and will throw an error in the future. Use time instead."
     )]
-    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
     /// <p>An object that specifies a value for a time series property.</p>
-    pub fn value(&self) -> std::option::Option<&crate::types::DataValue> {
+    pub fn value(&self) -> ::std::option::Option<&crate::types::DataValue> {
         self.value.as_ref()
     }
     /// <p>ISO8601 DateTime of a value for a time series property.</p>
@@ -56,7 +56,7 @@ impl PropertyValue {
     /// <li> <p> <i>± HH:mm</i>: time zone offset in Hours and Minutes.</p> </li>
     /// </ul>
     /// <p> <i>Required sub-fields</i>: YYYY-MM-DDThh:mm:ss and [Z/±HH:mm]</p>
-    pub fn time(&self) -> std::option::Option<&str> {
+    pub fn time(&self) -> ::std::option::Option<&str> {
         self.time.as_deref()
     }
 }
@@ -69,36 +69,41 @@ impl PropertyValue {
 
 /// A builder for [`PropertyValue`](crate::types::PropertyValue).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PropertyValueBuilder {
-    pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) value: std::option::Option<crate::types::DataValue>,
-    pub(crate) time: std::option::Option<std::string::String>,
+    pub(crate) timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) value: ::std::option::Option<crate::types::DataValue>,
+    pub(crate) time: ::std::option::Option<::std::string::String>,
 }
 impl PropertyValueBuilder {
     /// <p>The timestamp of a value for a time series property.</p>
     #[deprecated(
         note = "This field is deprecated and will throw an error in the future. Use time instead."
     )]
-    pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.timestamp = Some(input);
+    pub fn timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>The timestamp of a value for a time series property.</p>
     #[deprecated(
         note = "This field is deprecated and will throw an error in the future. Use time instead."
     )]
-    pub fn set_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_timestamp(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
         self.timestamp = input;
         self
     }
     /// <p>An object that specifies a value for a time series property.</p>
     pub fn value(mut self, input: crate::types::DataValue) -> Self {
-        self.value = Some(input);
+        self.value = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that specifies a value for a time series property.</p>
-    pub fn set_value(mut self, input: std::option::Option<crate::types::DataValue>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<crate::types::DataValue>) -> Self {
         self.value = input;
         self
     }
@@ -116,8 +121,8 @@ impl PropertyValueBuilder {
     /// <li> <p> <i>± HH:mm</i>: time zone offset in Hours and Minutes.</p> </li>
     /// </ul>
     /// <p> <i>Required sub-fields</i>: YYYY-MM-DDThh:mm:ss and [Z/±HH:mm]</p>
-    pub fn time(mut self, input: impl Into<std::string::String>) -> Self {
-        self.time = Some(input.into());
+    pub fn time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>ISO8601 DateTime of a value for a time series property.</p>
@@ -134,7 +139,7 @@ impl PropertyValueBuilder {
     /// <li> <p> <i>± HH:mm</i>: time zone offset in Hours and Minutes.</p> </li>
     /// </ul>
     /// <p> <i>Required sub-fields</i>: YYYY-MM-DDThh:mm:ss and [Z/±HH:mm]</p>
-    pub fn set_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.time = input;
         self
     }

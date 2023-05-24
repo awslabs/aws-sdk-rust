@@ -2,14 +2,14 @@
 
 /// <p>A parameter used in a SQL statement.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SqlParameter {
     /// <p>The name of the parameter.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The value of the parameter.</p>
     #[doc(hidden)]
-    pub value: std::option::Option<crate::types::Field>,
+    pub value: ::std::option::Option<crate::types::Field>,
     /// <p>A hint that specifies the correct object type for data type mapping. Possible values are as follows:</p>
     /// <ul>
     /// <li> <p> <code>DATE</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>DATE</code> type to the database. The accepted format is <code>YYYY-MM-DD</code>.</p> </li>
@@ -20,15 +20,15 @@ pub struct SqlParameter {
     /// <li> <p> <code>UUID</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>UUID</code> type to the database. </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub type_hint: std::option::Option<crate::types::TypeHint>,
+    pub type_hint: ::std::option::Option<crate::types::TypeHint>,
 }
 impl SqlParameter {
     /// <p>The name of the parameter.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The value of the parameter.</p>
-    pub fn value(&self) -> std::option::Option<&crate::types::Field> {
+    pub fn value(&self) -> ::std::option::Option<&crate::types::Field> {
         self.value.as_ref()
     }
     /// <p>A hint that specifies the correct object type for data type mapping. Possible values are as follows:</p>
@@ -40,7 +40,7 @@ impl SqlParameter {
     /// <li> <p> <code>TIMESTAMP</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>TIMESTAMP</code> type to the database. The accepted format is <code>YYYY-MM-DD HH:MM:SS[.FFF]</code>.</p> </li>
     /// <li> <p> <code>UUID</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>UUID</code> type to the database. </p> </li>
     /// </ul>
-    pub fn type_hint(&self) -> std::option::Option<&crate::types::TypeHint> {
+    pub fn type_hint(&self) -> ::std::option::Option<&crate::types::TypeHint> {
         self.type_hint.as_ref()
     }
 }
@@ -53,30 +53,32 @@ impl SqlParameter {
 
 /// A builder for [`SqlParameter`](crate::types::SqlParameter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SqlParameterBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) value: std::option::Option<crate::types::Field>,
-    pub(crate) type_hint: std::option::Option<crate::types::TypeHint>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) value: ::std::option::Option<crate::types::Field>,
+    pub(crate) type_hint: ::std::option::Option<crate::types::TypeHint>,
 }
 impl SqlParameterBuilder {
     /// <p>The name of the parameter.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the parameter.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The value of the parameter.</p>
     pub fn value(mut self, input: crate::types::Field) -> Self {
-        self.value = Some(input);
+        self.value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The value of the parameter.</p>
-    pub fn set_value(mut self, input: std::option::Option<crate::types::Field>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<crate::types::Field>) -> Self {
         self.value = input;
         self
     }
@@ -90,7 +92,7 @@ impl SqlParameterBuilder {
     /// <li> <p> <code>UUID</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>UUID</code> type to the database. </p> </li>
     /// </ul>
     pub fn type_hint(mut self, input: crate::types::TypeHint) -> Self {
-        self.type_hint = Some(input);
+        self.type_hint = ::std::option::Option::Some(input);
         self
     }
     /// <p>A hint that specifies the correct object type for data type mapping. Possible values are as follows:</p>
@@ -102,7 +104,7 @@ impl SqlParameterBuilder {
     /// <li> <p> <code>TIMESTAMP</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>TIMESTAMP</code> type to the database. The accepted format is <code>YYYY-MM-DD HH:MM:SS[.FFF]</code>.</p> </li>
     /// <li> <p> <code>UUID</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>UUID</code> type to the database. </p> </li>
     /// </ul>
-    pub fn set_type_hint(mut self, input: std::option::Option<crate::types::TypeHint>) -> Self {
+    pub fn set_type_hint(mut self, input: ::std::option::Option<crate::types::TypeHint>) -> Self {
         self.type_hint = input;
         self
     }

@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum PhoneNumberAssociationName {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum PhoneNumberAssociationName {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for PhoneNumberAssociationName {
+impl ::std::convert::From<&str> for PhoneNumberAssociationName {
     fn from(s: &str) -> Self {
         match s {
             "SipRuleId" => PhoneNumberAssociationName::SipRuleId,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for PhoneNumberAssociationName {
         }
     }
 }
-impl std::str::FromStr for PhoneNumberAssociationName {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for PhoneNumberAssociationName {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PhoneNumberAssociationName::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(PhoneNumberAssociationName::from(s))
     }
 }
 impl PhoneNumberAssociationName {
@@ -91,7 +91,7 @@ impl PhoneNumberAssociationName {
         &["SipRuleId", "VoiceConnectorGroupId", "VoiceConnectorId"]
     }
 }
-impl AsRef<str> for PhoneNumberAssociationName {
+impl ::std::convert::AsRef<str> for PhoneNumberAssociationName {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

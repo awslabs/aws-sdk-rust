@@ -2,18 +2,18 @@
 
 /// <p>The request to change the source server migration lifecycle state.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChangeServerLifeCycleStateSourceServerLifecycle {
     /// <p>The request to change the source server migration lifecycle state.</p>
     #[doc(hidden)]
     pub state:
-        std::option::Option<crate::types::ChangeServerLifeCycleStateSourceServerLifecycleState>,
+        ::std::option::Option<crate::types::ChangeServerLifeCycleStateSourceServerLifecycleState>,
 }
 impl ChangeServerLifeCycleStateSourceServerLifecycle {
     /// <p>The request to change the source server migration lifecycle state.</p>
     pub fn state(
         &self,
-    ) -> std::option::Option<&crate::types::ChangeServerLifeCycleStateSourceServerLifecycleState>
+    ) -> ::std::option::Option<&crate::types::ChangeServerLifeCycleStateSourceServerLifecycleState>
     {
         self.state.as_ref()
     }
@@ -28,10 +28,12 @@ impl ChangeServerLifeCycleStateSourceServerLifecycle {
 
 /// A builder for [`ChangeServerLifeCycleStateSourceServerLifecycle`](crate::types::ChangeServerLifeCycleStateSourceServerLifecycle).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ChangeServerLifeCycleStateSourceServerLifecycleBuilder {
     pub(crate) state:
-        std::option::Option<crate::types::ChangeServerLifeCycleStateSourceServerLifecycleState>,
+        ::std::option::Option<crate::types::ChangeServerLifeCycleStateSourceServerLifecycleState>,
 }
 impl ChangeServerLifeCycleStateSourceServerLifecycleBuilder {
     /// <p>The request to change the source server migration lifecycle state.</p>
@@ -39,13 +41,13 @@ impl ChangeServerLifeCycleStateSourceServerLifecycleBuilder {
         mut self,
         input: crate::types::ChangeServerLifeCycleStateSourceServerLifecycleState,
     ) -> Self {
-        self.state = Some(input);
+        self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The request to change the source server migration lifecycle state.</p>
     pub fn set_state(
         mut self,
-        input: std::option::Option<
+        input: ::std::option::Option<
             crate::types::ChangeServerLifeCycleStateSourceServerLifecycleState,
         >,
     ) -> Self {

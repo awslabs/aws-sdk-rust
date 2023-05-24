@@ -2,7 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_delete_verified_access_group_http_error(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::delete_verified_access_group::DeleteVerifiedAccessGroupOutput,
@@ -17,7 +17,7 @@ pub fn de_delete_verified_access_group_http_error(
     .map_err(
         crate::operation::delete_verified_access_group::DeleteVerifiedAccessGroupError::unhandled,
     )?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
+    generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     Err(
         crate::operation::delete_verified_access_group::DeleteVerifiedAccessGroupError::generic(
@@ -29,7 +29,7 @@ pub fn de_delete_verified_access_group_http_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_delete_verified_access_group_http_response_with_props(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::delete_verified_access_group::DeleteVerifiedAccessGroupOutput,
@@ -40,22 +40,22 @@ pub fn de_delete_verified_access_group_http_response_with_props(
         let mut output = crate::operation::delete_verified_access_group::builders::DeleteVerifiedAccessGroupOutputBuilder::default();
         output = crate::protocol_serde::shape_delete_verified_access_group::de_delete_verified_access_group(_response_body, output).map_err(crate::operation::delete_verified_access_group::DeleteVerifiedAccessGroupError::unhandled)?;
         output._set_request_id(
-            aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
+            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
         );
         output.build()
     })
 }
 
 #[allow(unused_mut)]
-pub fn de_delete_verified_access_group(inp: &[u8], mut builder: crate::operation::delete_verified_access_group::builders::DeleteVerifiedAccessGroupOutputBuilder) -> Result<crate::operation::delete_verified_access_group::builders::DeleteVerifiedAccessGroupOutputBuilder, aws_smithy_xml::decode::XmlDecodeError>{
-    let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
+pub fn de_delete_verified_access_group(inp: &[u8], mut builder: crate::operation::delete_verified_access_group::builders::DeleteVerifiedAccessGroupOutputBuilder) -> Result<crate::operation::delete_verified_access_group::builders::DeleteVerifiedAccessGroupOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>{
+    let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DeleteVerifiedAccessGroupResponse")) {
-        return Err(aws_smithy_xml::decode::XmlDecodeError::custom(format!(
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DeleteVerifiedAccessGroupResponse got {:?}",
             start_el
         )));

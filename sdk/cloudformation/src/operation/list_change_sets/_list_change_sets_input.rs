@@ -2,22 +2,22 @@
 
 /// <p>The input for the <code>ListChangeSets</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListChangeSetsInput {
     /// <p>The name or the Amazon Resource Name (ARN) of the stack for which you want to list change sets.</p>
     #[doc(hidden)]
-    pub stack_name: std::option::Option<std::string::String>,
+    pub stack_name: ::std::option::Option<::std::string::String>,
     /// <p>A string (provided by the <code>ListChangeSets</code> response output) that identifies the next page of change sets that you want to retrieve.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListChangeSetsInput {
     /// <p>The name or the Amazon Resource Name (ARN) of the stack for which you want to list change sets.</p>
-    pub fn stack_name(&self) -> std::option::Option<&str> {
+    pub fn stack_name(&self) -> ::std::option::Option<&str> {
         self.stack_name.as_deref()
     }
     /// <p>A string (provided by the <code>ListChangeSets</code> response output) that identifies the next page of change sets that you want to retrieve.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
@@ -30,40 +30,42 @@ impl ListChangeSetsInput {
 
 /// A builder for [`ListChangeSetsInput`](crate::operation::list_change_sets::ListChangeSetsInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListChangeSetsInputBuilder {
-    pub(crate) stack_name: std::option::Option<std::string::String>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) stack_name: ::std::option::Option<::std::string::String>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListChangeSetsInputBuilder {
     /// <p>The name or the Amazon Resource Name (ARN) of the stack for which you want to list change sets.</p>
-    pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.stack_name = Some(input.into());
+    pub fn stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.stack_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name or the Amazon Resource Name (ARN) of the stack for which you want to list change sets.</p>
-    pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_stack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stack_name = input;
         self
     }
     /// <p>A string (provided by the <code>ListChangeSets</code> response output) that identifies the next page of change sets that you want to retrieve.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A string (provided by the <code>ListChangeSets</code> response output) that identifies the next page of change sets that you want to retrieve.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
     /// Consumes the builder and constructs a [`ListChangeSetsInput`](crate::operation::list_change_sets::ListChangeSetsInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::list_change_sets::ListChangeSetsInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::list_change_sets::ListChangeSetsInput {
+        ::std::result::Result::Ok(crate::operation::list_change_sets::ListChangeSetsInput {
             stack_name: self.stack_name,
             next_token: self.next_token,
         })

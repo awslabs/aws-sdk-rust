@@ -3,15 +3,15 @@
 /// <p>The client-side timestamp setting of the table.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/client-side-timestamps-how-it-works.html">How it works: Amazon Keyspaces client-side timestamps</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClientSideTimestamps {
     /// <p>Shows how to enable client-side timestamps settings for the specified table.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::ClientSideTimestampsStatus>,
+    pub status: ::std::option::Option<crate::types::ClientSideTimestampsStatus>,
 }
 impl ClientSideTimestamps {
     /// <p>Shows how to enable client-side timestamps settings for the specified table.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::ClientSideTimestampsStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::ClientSideTimestampsStatus> {
         self.status.as_ref()
     }
 }
@@ -24,20 +24,22 @@ impl ClientSideTimestamps {
 
 /// A builder for [`ClientSideTimestamps`](crate::types::ClientSideTimestamps).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ClientSideTimestampsBuilder {
-    pub(crate) status: std::option::Option<crate::types::ClientSideTimestampsStatus>,
+    pub(crate) status: ::std::option::Option<crate::types::ClientSideTimestampsStatus>,
 }
 impl ClientSideTimestampsBuilder {
     /// <p>Shows how to enable client-side timestamps settings for the specified table.</p>
     pub fn status(mut self, input: crate::types::ClientSideTimestampsStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Shows how to enable client-side timestamps settings for the specified table.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::ClientSideTimestampsStatus>,
+        input: ::std::option::Option<crate::types::ClientSideTimestampsStatus>,
     ) -> Self {
         self.status = input;
         self

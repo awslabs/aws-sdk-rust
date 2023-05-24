@@ -2,29 +2,29 @@
 
 /// <p>Summary of the information about a CloudFront origin access identity.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CloudFrontOriginAccessIdentitySummary {
     /// <p>The ID for the origin access identity. For example: <code>E74FTE3AJFJ256A</code>.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 canonical user ID for the origin access identity, which you use when giving the origin access identity read permission to an object in Amazon S3.</p>
     #[doc(hidden)]
-    pub s3_canonical_user_id: std::option::Option<std::string::String>,
+    pub s3_canonical_user_id: ::std::option::Option<::std::string::String>,
     /// <p>The comment for this origin access identity, as originally specified when created.</p>
     #[doc(hidden)]
-    pub comment: std::option::Option<std::string::String>,
+    pub comment: ::std::option::Option<::std::string::String>,
 }
 impl CloudFrontOriginAccessIdentitySummary {
     /// <p>The ID for the origin access identity. For example: <code>E74FTE3AJFJ256A</code>.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The Amazon S3 canonical user ID for the origin access identity, which you use when giving the origin access identity read permission to an object in Amazon S3.</p>
-    pub fn s3_canonical_user_id(&self) -> std::option::Option<&str> {
+    pub fn s3_canonical_user_id(&self) -> ::std::option::Option<&str> {
         self.s3_canonical_user_id.as_deref()
     }
     /// <p>The comment for this origin access identity, as originally specified when created.</p>
-    pub fn comment(&self) -> std::option::Option<&str> {
+    pub fn comment(&self) -> ::std::option::Option<&str> {
         self.comment.as_deref()
     }
 }
@@ -37,43 +37,48 @@ impl CloudFrontOriginAccessIdentitySummary {
 
 /// A builder for [`CloudFrontOriginAccessIdentitySummary`](crate::types::CloudFrontOriginAccessIdentitySummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CloudFrontOriginAccessIdentitySummaryBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) s3_canonical_user_id: std::option::Option<std::string::String>,
-    pub(crate) comment: std::option::Option<std::string::String>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) s3_canonical_user_id: ::std::option::Option<::std::string::String>,
+    pub(crate) comment: ::std::option::Option<::std::string::String>,
 }
 impl CloudFrontOriginAccessIdentitySummaryBuilder {
     /// <p>The ID for the origin access identity. For example: <code>E74FTE3AJFJ256A</code>.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID for the origin access identity. For example: <code>E74FTE3AJFJ256A</code>.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>The Amazon S3 canonical user ID for the origin access identity, which you use when giving the origin access identity read permission to an object in Amazon S3.</p>
-    pub fn s3_canonical_user_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.s3_canonical_user_id = Some(input.into());
+    pub fn s3_canonical_user_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.s3_canonical_user_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon S3 canonical user ID for the origin access identity, which you use when giving the origin access identity read permission to an object in Amazon S3.</p>
     pub fn set_s3_canonical_user_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.s3_canonical_user_id = input;
         self
     }
     /// <p>The comment for this origin access identity, as originally specified when created.</p>
-    pub fn comment(mut self, input: impl Into<std::string::String>) -> Self {
-        self.comment = Some(input.into());
+    pub fn comment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.comment = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The comment for this origin access identity, as originally specified when created.</p>
-    pub fn set_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_comment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.comment = input;
         self
     }

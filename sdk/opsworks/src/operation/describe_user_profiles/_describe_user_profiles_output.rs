@@ -2,20 +2,20 @@
 
 /// <p>Contains the response to a <code>DescribeUserProfiles</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeUserProfilesOutput {
     /// <p>A <code>Users</code> object that describes the specified users.</p>
     #[doc(hidden)]
-    pub user_profiles: std::option::Option<std::vec::Vec<crate::types::UserProfile>>,
+    pub user_profiles: ::std::option::Option<::std::vec::Vec<crate::types::UserProfile>>,
     _request_id: Option<String>,
 }
 impl DescribeUserProfilesOutput {
     /// <p>A <code>Users</code> object that describes the specified users.</p>
-    pub fn user_profiles(&self) -> std::option::Option<&[crate::types::UserProfile]> {
+    pub fn user_profiles(&self) -> ::std::option::Option<&[crate::types::UserProfile]> {
         self.user_profiles.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeUserProfilesOutput {
+impl ::aws_http::request_id::RequestId for DescribeUserProfilesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,9 +30,11 @@ impl DescribeUserProfilesOutput {
 
 /// A builder for [`DescribeUserProfilesOutput`](crate::operation::describe_user_profiles::DescribeUserProfilesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeUserProfilesOutputBuilder {
-    pub(crate) user_profiles: std::option::Option<std::vec::Vec<crate::types::UserProfile>>,
+    pub(crate) user_profiles: ::std::option::Option<::std::vec::Vec<crate::types::UserProfile>>,
     _request_id: Option<String>,
 }
 impl DescribeUserProfilesOutputBuilder {
@@ -44,13 +46,13 @@ impl DescribeUserProfilesOutputBuilder {
     pub fn user_profiles(mut self, input: crate::types::UserProfile) -> Self {
         let mut v = self.user_profiles.unwrap_or_default();
         v.push(input);
-        self.user_profiles = Some(v);
+        self.user_profiles = ::std::option::Option::Some(v);
         self
     }
     /// <p>A <code>Users</code> object that describes the specified users.</p>
     pub fn set_user_profiles(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::UserProfile>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::UserProfile>>,
     ) -> Self {
         self.user_profiles = input;
         self

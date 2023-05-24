@@ -2,11 +2,11 @@
 
 /// <p>Describes an event in the history of the Spot Fleet request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HistoryRecord {
     /// <p>Information about the event.</p>
     #[doc(hidden)]
-    pub event_information: std::option::Option<crate::types::EventInformation>,
+    pub event_information: ::std::option::Option<crate::types::EventInformation>,
     /// <p>The event type.</p>
     /// <ul>
     /// <li> <p> <code>error</code> - An error with the Spot Fleet request.</p> </li>
@@ -15,14 +15,14 @@ pub struct HistoryRecord {
     /// <li> <p> <code>Information</code> - An informational event.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub event_type: std::option::Option<crate::types::EventType>,
+    pub event_type: ::std::option::Option<crate::types::EventType>,
     /// <p>The date and time of the event, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
     #[doc(hidden)]
-    pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl HistoryRecord {
     /// <p>Information about the event.</p>
-    pub fn event_information(&self) -> std::option::Option<&crate::types::EventInformation> {
+    pub fn event_information(&self) -> ::std::option::Option<&crate::types::EventInformation> {
         self.event_information.as_ref()
     }
     /// <p>The event type.</p>
@@ -32,11 +32,11 @@ impl HistoryRecord {
     /// <li> <p> <code>instanceChange</code> - An instance was launched or terminated.</p> </li>
     /// <li> <p> <code>Information</code> - An informational event.</p> </li>
     /// </ul>
-    pub fn event_type(&self) -> std::option::Option<&crate::types::EventType> {
+    pub fn event_type(&self) -> ::std::option::Option<&crate::types::EventType> {
         self.event_type.as_ref()
     }
     /// <p>The date and time of the event, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
 }
@@ -49,22 +49,24 @@ impl HistoryRecord {
 
 /// A builder for [`HistoryRecord`](crate::types::HistoryRecord).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct HistoryRecordBuilder {
-    pub(crate) event_information: std::option::Option<crate::types::EventInformation>,
-    pub(crate) event_type: std::option::Option<crate::types::EventType>,
-    pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) event_information: ::std::option::Option<crate::types::EventInformation>,
+    pub(crate) event_type: ::std::option::Option<crate::types::EventType>,
+    pub(crate) timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl HistoryRecordBuilder {
     /// <p>Information about the event.</p>
     pub fn event_information(mut self, input: crate::types::EventInformation) -> Self {
-        self.event_information = Some(input);
+        self.event_information = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the event.</p>
     pub fn set_event_information(
         mut self,
-        input: std::option::Option<crate::types::EventInformation>,
+        input: ::std::option::Option<crate::types::EventInformation>,
     ) -> Self {
         self.event_information = input;
         self
@@ -77,7 +79,7 @@ impl HistoryRecordBuilder {
     /// <li> <p> <code>Information</code> - An informational event.</p> </li>
     /// </ul>
     pub fn event_type(mut self, input: crate::types::EventType) -> Self {
-        self.event_type = Some(input);
+        self.event_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The event type.</p>
@@ -87,17 +89,20 @@ impl HistoryRecordBuilder {
     /// <li> <p> <code>instanceChange</code> - An instance was launched or terminated.</p> </li>
     /// <li> <p> <code>Information</code> - An informational event.</p> </li>
     /// </ul>
-    pub fn set_event_type(mut self, input: std::option::Option<crate::types::EventType>) -> Self {
+    pub fn set_event_type(mut self, input: ::std::option::Option<crate::types::EventType>) -> Self {
         self.event_type = input;
         self
     }
     /// <p>The date and time of the event, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-    pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.timestamp = Some(input);
+    pub fn timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time of the event, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-    pub fn set_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_timestamp(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
         self.timestamp = input;
         self
     }

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`WithdrawByoipCidr`](crate::operation::withdraw_byoip_cidr::builders::WithdrawByoipCidrFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`cidr(impl Into<String>)`](crate::operation::withdraw_byoip_cidr::builders::WithdrawByoipCidrFluentBuilder::cidr) / [`set_cidr(Option<String>)`](crate::operation::withdraw_byoip_cidr::builders::WithdrawByoipCidrFluentBuilder::set_cidr): <p>The address range, in CIDR notation.</p>
+    ///   - [`cidr(impl ::std::convert::Into<String>)`](crate::operation::withdraw_byoip_cidr::builders::WithdrawByoipCidrFluentBuilder::cidr) / [`set_cidr(Option<String>)`](crate::operation::withdraw_byoip_cidr::builders::WithdrawByoipCidrFluentBuilder::set_cidr): <p>The address range, in CIDR notation.</p>
     /// - On success, responds with [`WithdrawByoipCidrOutput`](crate::operation::withdraw_byoip_cidr::WithdrawByoipCidrOutput) with field(s):
     ///   - [`byoip_cidr(Option<ByoipCidr>)`](crate::operation::withdraw_byoip_cidr::WithdrawByoipCidrOutput::byoip_cidr): <p>Information about the address pool.</p>
     /// - On failure, responds with [`SdkError<WithdrawByoipCidrError>`](crate::operation::withdraw_byoip_cidr::WithdrawByoipCidrError)

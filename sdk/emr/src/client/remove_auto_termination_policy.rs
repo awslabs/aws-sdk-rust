@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`RemoveAutoTerminationPolicy`](crate::operation::remove_auto_termination_policy::builders::RemoveAutoTerminationPolicyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`cluster_id(impl Into<String>)`](crate::operation::remove_auto_termination_policy::builders::RemoveAutoTerminationPolicyFluentBuilder::cluster_id) / [`set_cluster_id(Option<String>)`](crate::operation::remove_auto_termination_policy::builders::RemoveAutoTerminationPolicyFluentBuilder::set_cluster_id): <p>Specifies the ID of the Amazon EMR cluster from which the auto-termination policy will be removed.</p>
+    ///   - [`cluster_id(impl ::std::convert::Into<String>)`](crate::operation::remove_auto_termination_policy::builders::RemoveAutoTerminationPolicyFluentBuilder::cluster_id) / [`set_cluster_id(Option<String>)`](crate::operation::remove_auto_termination_policy::builders::RemoveAutoTerminationPolicyFluentBuilder::set_cluster_id): <p>Specifies the ID of the Amazon EMR cluster from which the auto-termination policy will be removed.</p>
     /// - On success, responds with [`RemoveAutoTerminationPolicyOutput`](crate::operation::remove_auto_termination_policy::RemoveAutoTerminationPolicyOutput)
     /// - On failure, responds with [`SdkError<RemoveAutoTerminationPolicyError>`](crate::operation::remove_auto_termination_policy::RemoveAutoTerminationPolicyError)
     pub fn remove_auto_termination_policy(&self) -> crate::operation::remove_auto_termination_policy::builders::RemoveAutoTerminationPolicyFluentBuilder{

@@ -7,7 +7,7 @@
 /// </ul>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CapacitySpecificationSummary {
     /// <p>The read/write throughput capacity mode for a table. The options are:</p>
     /// <ul>
@@ -17,16 +17,17 @@ pub struct CapacitySpecificationSummary {
     /// <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     #[doc(hidden)]
-    pub throughput_mode: std::option::Option<crate::types::ThroughputMode>,
+    pub throughput_mode: ::std::option::Option<crate::types::ThroughputMode>,
     /// <p>The throughput capacity specified for <code>read</code> operations defined in <code>read capacity units</code> <code>(RCUs)</code>.</p>
     #[doc(hidden)]
-    pub read_capacity_units: std::option::Option<i64>,
+    pub read_capacity_units: ::std::option::Option<i64>,
     /// <p>The throughput capacity specified for <code>write</code> operations defined in <code>write capacity units</code> <code>(WCUs)</code>.</p>
     #[doc(hidden)]
-    pub write_capacity_units: std::option::Option<i64>,
+    pub write_capacity_units: ::std::option::Option<i64>,
     /// <p>The timestamp of the last operation that changed the provisioned throughput capacity of a table.</p>
     #[doc(hidden)]
-    pub last_update_to_pay_per_request_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_update_to_pay_per_request_timestamp:
+        ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl CapacitySpecificationSummary {
     /// <p>The read/write throughput capacity mode for a table. The options are:</p>
@@ -36,21 +37,21 @@ impl CapacitySpecificationSummary {
     /// </ul>
     /// <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
-    pub fn throughput_mode(&self) -> std::option::Option<&crate::types::ThroughputMode> {
+    pub fn throughput_mode(&self) -> ::std::option::Option<&crate::types::ThroughputMode> {
         self.throughput_mode.as_ref()
     }
     /// <p>The throughput capacity specified for <code>read</code> operations defined in <code>read capacity units</code> <code>(RCUs)</code>.</p>
-    pub fn read_capacity_units(&self) -> std::option::Option<i64> {
+    pub fn read_capacity_units(&self) -> ::std::option::Option<i64> {
         self.read_capacity_units
     }
     /// <p>The throughput capacity specified for <code>write</code> operations defined in <code>write capacity units</code> <code>(WCUs)</code>.</p>
-    pub fn write_capacity_units(&self) -> std::option::Option<i64> {
+    pub fn write_capacity_units(&self) -> ::std::option::Option<i64> {
         self.write_capacity_units
     }
     /// <p>The timestamp of the last operation that changed the provisioned throughput capacity of a table.</p>
     pub fn last_update_to_pay_per_request_timestamp(
         &self,
-    ) -> std::option::Option<&aws_smithy_types::DateTime> {
+    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_update_to_pay_per_request_timestamp.as_ref()
     }
 }
@@ -63,13 +64,15 @@ impl CapacitySpecificationSummary {
 
 /// A builder for [`CapacitySpecificationSummary`](crate::types::CapacitySpecificationSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CapacitySpecificationSummaryBuilder {
-    pub(crate) throughput_mode: std::option::Option<crate::types::ThroughputMode>,
-    pub(crate) read_capacity_units: std::option::Option<i64>,
-    pub(crate) write_capacity_units: std::option::Option<i64>,
+    pub(crate) throughput_mode: ::std::option::Option<crate::types::ThroughputMode>,
+    pub(crate) read_capacity_units: ::std::option::Option<i64>,
+    pub(crate) write_capacity_units: ::std::option::Option<i64>,
     pub(crate) last_update_to_pay_per_request_timestamp:
-        std::option::Option<aws_smithy_types::DateTime>,
+        ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl CapacitySpecificationSummaryBuilder {
     /// <p>The read/write throughput capacity mode for a table. The options are:</p>
@@ -80,7 +83,7 @@ impl CapacitySpecificationSummaryBuilder {
     /// <p>The default is <code>throughput_mode:PAY_PER_REQUEST</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     pub fn throughput_mode(mut self, input: crate::types::ThroughputMode) -> Self {
-        self.throughput_mode = Some(input);
+        self.throughput_mode = ::std::option::Option::Some(input);
         self
     }
     /// <p>The read/write throughput capacity mode for a table. The options are:</p>
@@ -92,43 +95,43 @@ impl CapacitySpecificationSummaryBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html">Read/write capacity modes</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
     pub fn set_throughput_mode(
         mut self,
-        input: std::option::Option<crate::types::ThroughputMode>,
+        input: ::std::option::Option<crate::types::ThroughputMode>,
     ) -> Self {
         self.throughput_mode = input;
         self
     }
     /// <p>The throughput capacity specified for <code>read</code> operations defined in <code>read capacity units</code> <code>(RCUs)</code>.</p>
     pub fn read_capacity_units(mut self, input: i64) -> Self {
-        self.read_capacity_units = Some(input);
+        self.read_capacity_units = ::std::option::Option::Some(input);
         self
     }
     /// <p>The throughput capacity specified for <code>read</code> operations defined in <code>read capacity units</code> <code>(RCUs)</code>.</p>
-    pub fn set_read_capacity_units(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_read_capacity_units(mut self, input: ::std::option::Option<i64>) -> Self {
         self.read_capacity_units = input;
         self
     }
     /// <p>The throughput capacity specified for <code>write</code> operations defined in <code>write capacity units</code> <code>(WCUs)</code>.</p>
     pub fn write_capacity_units(mut self, input: i64) -> Self {
-        self.write_capacity_units = Some(input);
+        self.write_capacity_units = ::std::option::Option::Some(input);
         self
     }
     /// <p>The throughput capacity specified for <code>write</code> operations defined in <code>write capacity units</code> <code>(WCUs)</code>.</p>
-    pub fn set_write_capacity_units(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_write_capacity_units(mut self, input: ::std::option::Option<i64>) -> Self {
         self.write_capacity_units = input;
         self
     }
     /// <p>The timestamp of the last operation that changed the provisioned throughput capacity of a table.</p>
     pub fn last_update_to_pay_per_request_timestamp(
         mut self,
-        input: aws_smithy_types::DateTime,
+        input: ::aws_smithy_types::DateTime,
     ) -> Self {
-        self.last_update_to_pay_per_request_timestamp = Some(input);
+        self.last_update_to_pay_per_request_timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>The timestamp of the last operation that changed the provisioned throughput capacity of a table.</p>
     pub fn set_last_update_to_pay_per_request_timestamp(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_update_to_pay_per_request_timestamp = input;
         self

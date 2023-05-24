@@ -2,22 +2,22 @@
 
 /// <p>Describes the database details required to connect to an Amazon Redshift database.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RedshiftDatabase {
     /// <p>The name of a database hosted on an Amazon Redshift cluster.</p>
     #[doc(hidden)]
-    pub database_name: std::option::Option<std::string::String>,
+    pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of an Amazon Redshift cluster.</p>
     #[doc(hidden)]
-    pub cluster_identifier: std::option::Option<std::string::String>,
+    pub cluster_identifier: ::std::option::Option<::std::string::String>,
 }
 impl RedshiftDatabase {
     /// <p>The name of a database hosted on an Amazon Redshift cluster.</p>
-    pub fn database_name(&self) -> std::option::Option<&str> {
+    pub fn database_name(&self) -> ::std::option::Option<&str> {
         self.database_name.as_deref()
     }
     /// <p>The ID of an Amazon Redshift cluster.</p>
-    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+    pub fn cluster_identifier(&self) -> ::std::option::Option<&str> {
         self.cluster_identifier.as_deref()
     }
 }
@@ -30,31 +30,42 @@ impl RedshiftDatabase {
 
 /// A builder for [`RedshiftDatabase`](crate::types::RedshiftDatabase).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RedshiftDatabaseBuilder {
-    pub(crate) database_name: std::option::Option<std::string::String>,
-    pub(crate) cluster_identifier: std::option::Option<std::string::String>,
+    pub(crate) database_name: ::std::option::Option<::std::string::String>,
+    pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,
 }
 impl RedshiftDatabaseBuilder {
     /// <p>The name of a database hosted on an Amazon Redshift cluster.</p>
-    pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.database_name = Some(input.into());
+    pub fn database_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a database hosted on an Amazon Redshift cluster.</p>
-    pub fn set_database_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_database_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.database_name = input;
         self
     }
     /// <p>The ID of an Amazon Redshift cluster.</p>
-    pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cluster_identifier = Some(input.into());
+    pub fn cluster_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of an Amazon Redshift cluster.</p>
     pub fn set_cluster_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.cluster_identifier = input;
         self

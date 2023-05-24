@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetJobRun`](crate::operation::get_job_run::builders::GetJobRunFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`job_name(impl Into<String>)`](crate::operation::get_job_run::builders::GetJobRunFluentBuilder::job_name) / [`set_job_name(Option<String>)`](crate::operation::get_job_run::builders::GetJobRunFluentBuilder::set_job_name): <p>Name of the job definition being run.</p>
-    ///   - [`run_id(impl Into<String>)`](crate::operation::get_job_run::builders::GetJobRunFluentBuilder::run_id) / [`set_run_id(Option<String>)`](crate::operation::get_job_run::builders::GetJobRunFluentBuilder::set_run_id): <p>The ID of the job run.</p>
+    ///   - [`job_name(impl ::std::convert::Into<String>)`](crate::operation::get_job_run::builders::GetJobRunFluentBuilder::job_name) / [`set_job_name(Option<String>)`](crate::operation::get_job_run::builders::GetJobRunFluentBuilder::set_job_name): <p>Name of the job definition being run.</p>
+    ///   - [`run_id(impl ::std::convert::Into<String>)`](crate::operation::get_job_run::builders::GetJobRunFluentBuilder::run_id) / [`set_run_id(Option<String>)`](crate::operation::get_job_run::builders::GetJobRunFluentBuilder::set_run_id): <p>The ID of the job run.</p>
     ///   - [`predecessors_included(bool)`](crate::operation::get_job_run::builders::GetJobRunFluentBuilder::predecessors_included) / [`set_predecessors_included(Option<bool>)`](crate::operation::get_job_run::builders::GetJobRunFluentBuilder::set_predecessors_included): <p>True if a list of predecessor runs should be returned.</p>
     /// - On success, responds with [`GetJobRunOutput`](crate::operation::get_job_run::GetJobRunOutput) with field(s):
     ///   - [`job_run(Option<JobRun>)`](crate::operation::get_job_run::GetJobRunOutput::job_run): <p>The requested job-run metadata.</p>

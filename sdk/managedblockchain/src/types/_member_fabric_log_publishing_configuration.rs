@@ -2,15 +2,15 @@
 
 /// <p>Configuration properties for logging events associated with a member of a Managed Blockchain network using the Hyperledger Fabric framework.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MemberFabricLogPublishingConfiguration {
     /// <p>Configuration properties for logging events associated with a member's Certificate Authority (CA). CA logs help you determine when a member in your account joins the network, or when new peers register with a member CA.</p>
     #[doc(hidden)]
-    pub ca_logs: std::option::Option<crate::types::LogConfigurations>,
+    pub ca_logs: ::std::option::Option<crate::types::LogConfigurations>,
 }
 impl MemberFabricLogPublishingConfiguration {
     /// <p>Configuration properties for logging events associated with a member's Certificate Authority (CA). CA logs help you determine when a member in your account joins the network, or when new peers register with a member CA.</p>
-    pub fn ca_logs(&self) -> std::option::Option<&crate::types::LogConfigurations> {
+    pub fn ca_logs(&self) -> ::std::option::Option<&crate::types::LogConfigurations> {
         self.ca_logs.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl MemberFabricLogPublishingConfiguration {
 
 /// A builder for [`MemberFabricLogPublishingConfiguration`](crate::types::MemberFabricLogPublishingConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MemberFabricLogPublishingConfigurationBuilder {
-    pub(crate) ca_logs: std::option::Option<crate::types::LogConfigurations>,
+    pub(crate) ca_logs: ::std::option::Option<crate::types::LogConfigurations>,
 }
 impl MemberFabricLogPublishingConfigurationBuilder {
     /// <p>Configuration properties for logging events associated with a member's Certificate Authority (CA). CA logs help you determine when a member in your account joins the network, or when new peers register with a member CA.</p>
     pub fn ca_logs(mut self, input: crate::types::LogConfigurations) -> Self {
-        self.ca_logs = Some(input);
+        self.ca_logs = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configuration properties for logging events associated with a member's Certificate Authority (CA). CA logs help you determine when a member in your account joins the network, or when new peers register with a member CA.</p>
     pub fn set_ca_logs(
         mut self,
-        input: std::option::Option<crate::types::LogConfigurations>,
+        input: ::std::option::Option<crate::types::LogConfigurations>,
     ) -> Self {
         self.ca_logs = input;
         self

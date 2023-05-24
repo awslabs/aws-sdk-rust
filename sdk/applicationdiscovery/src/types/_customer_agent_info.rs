@@ -2,7 +2,7 @@
 
 /// <p>Inventory data for installed discovery agents.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomerAgentInfo {
     /// <p>Number of active discovery agents.</p>
     #[doc(hidden)]
@@ -65,84 +65,86 @@ impl CustomerAgentInfo {
 
 /// A builder for [`CustomerAgentInfo`](crate::types::CustomerAgentInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CustomerAgentInfoBuilder {
-    pub(crate) active_agents: std::option::Option<i32>,
-    pub(crate) healthy_agents: std::option::Option<i32>,
-    pub(crate) black_listed_agents: std::option::Option<i32>,
-    pub(crate) shutdown_agents: std::option::Option<i32>,
-    pub(crate) unhealthy_agents: std::option::Option<i32>,
-    pub(crate) total_agents: std::option::Option<i32>,
-    pub(crate) unknown_agents: std::option::Option<i32>,
+    pub(crate) active_agents: ::std::option::Option<i32>,
+    pub(crate) healthy_agents: ::std::option::Option<i32>,
+    pub(crate) black_listed_agents: ::std::option::Option<i32>,
+    pub(crate) shutdown_agents: ::std::option::Option<i32>,
+    pub(crate) unhealthy_agents: ::std::option::Option<i32>,
+    pub(crate) total_agents: ::std::option::Option<i32>,
+    pub(crate) unknown_agents: ::std::option::Option<i32>,
 }
 impl CustomerAgentInfoBuilder {
     /// <p>Number of active discovery agents.</p>
     pub fn active_agents(mut self, input: i32) -> Self {
-        self.active_agents = Some(input);
+        self.active_agents = ::std::option::Option::Some(input);
         self
     }
     /// <p>Number of active discovery agents.</p>
-    pub fn set_active_agents(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_active_agents(mut self, input: ::std::option::Option<i32>) -> Self {
         self.active_agents = input;
         self
     }
     /// <p>Number of healthy discovery agents</p>
     pub fn healthy_agents(mut self, input: i32) -> Self {
-        self.healthy_agents = Some(input);
+        self.healthy_agents = ::std::option::Option::Some(input);
         self
     }
     /// <p>Number of healthy discovery agents</p>
-    pub fn set_healthy_agents(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_healthy_agents(mut self, input: ::std::option::Option<i32>) -> Self {
         self.healthy_agents = input;
         self
     }
     /// <p>Number of blacklisted discovery agents.</p>
     pub fn black_listed_agents(mut self, input: i32) -> Self {
-        self.black_listed_agents = Some(input);
+        self.black_listed_agents = ::std::option::Option::Some(input);
         self
     }
     /// <p>Number of blacklisted discovery agents.</p>
-    pub fn set_black_listed_agents(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_black_listed_agents(mut self, input: ::std::option::Option<i32>) -> Self {
         self.black_listed_agents = input;
         self
     }
     /// <p>Number of discovery agents with status SHUTDOWN.</p>
     pub fn shutdown_agents(mut self, input: i32) -> Self {
-        self.shutdown_agents = Some(input);
+        self.shutdown_agents = ::std::option::Option::Some(input);
         self
     }
     /// <p>Number of discovery agents with status SHUTDOWN.</p>
-    pub fn set_shutdown_agents(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_shutdown_agents(mut self, input: ::std::option::Option<i32>) -> Self {
         self.shutdown_agents = input;
         self
     }
     /// <p>Number of unhealthy discovery agents.</p>
     pub fn unhealthy_agents(mut self, input: i32) -> Self {
-        self.unhealthy_agents = Some(input);
+        self.unhealthy_agents = ::std::option::Option::Some(input);
         self
     }
     /// <p>Number of unhealthy discovery agents.</p>
-    pub fn set_unhealthy_agents(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_unhealthy_agents(mut self, input: ::std::option::Option<i32>) -> Self {
         self.unhealthy_agents = input;
         self
     }
     /// <p>Total number of discovery agents.</p>
     pub fn total_agents(mut self, input: i32) -> Self {
-        self.total_agents = Some(input);
+        self.total_agents = ::std::option::Option::Some(input);
         self
     }
     /// <p>Total number of discovery agents.</p>
-    pub fn set_total_agents(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_total_agents(mut self, input: ::std::option::Option<i32>) -> Self {
         self.total_agents = input;
         self
     }
     /// <p>Number of unknown discovery agents.</p>
     pub fn unknown_agents(mut self, input: i32) -> Self {
-        self.unknown_agents = Some(input);
+        self.unknown_agents = ::std::option::Option::Some(input);
         self
     }
     /// <p>Number of unknown discovery agents.</p>
-    pub fn set_unknown_agents(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_unknown_agents(mut self, input: ::std::option::Option<i32>) -> Self {
         self.unknown_agents = input;
         self
     }

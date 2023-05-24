@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum SafeguardPolicy {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum SafeguardPolicy {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for SafeguardPolicy {
+impl ::std::convert::From<&str> for SafeguardPolicy {
     fn from(s: &str) -> Self {
         match s {
             "exclusive-automatic-truncation" => SafeguardPolicy::ExclusiveAutomaticTruncation,
@@ -71,11 +71,11 @@ impl std::convert::From<&str> for SafeguardPolicy {
         }
     }
 }
-impl std::str::FromStr for SafeguardPolicy {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for SafeguardPolicy {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SafeguardPolicy::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(SafeguardPolicy::from(s))
     }
 }
 impl SafeguardPolicy {
@@ -99,7 +99,7 @@ impl SafeguardPolicy {
         ]
     }
 }
-impl AsRef<str> for SafeguardPolicy {
+impl ::std::convert::AsRef<str> for SafeguardPolicy {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

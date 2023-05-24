@@ -2,27 +2,29 @@
 
 /// <p>A structure that holds the settings for transmitting media files to the Amazon S3 bucket. If specified, the settings in this structure override any settings in <code>S3RecordingSinkConfiguration</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct S3RecordingSinkRuntimeConfiguration {
     /// <p>The URI of the S3 bucket used as the sink.</p>
     #[doc(hidden)]
-    pub destination: std::option::Option<std::string::String>,
+    pub destination: ::std::option::Option<::std::string::String>,
     /// <p>The file format for the media files sent to the Amazon S3 bucket.</p>
     #[doc(hidden)]
-    pub recording_file_format: std::option::Option<crate::types::RecordingFileFormat>,
+    pub recording_file_format: ::std::option::Option<crate::types::RecordingFileFormat>,
 }
 impl S3RecordingSinkRuntimeConfiguration {
     /// <p>The URI of the S3 bucket used as the sink.</p>
-    pub fn destination(&self) -> std::option::Option<&str> {
+    pub fn destination(&self) -> ::std::option::Option<&str> {
         self.destination.as_deref()
     }
     /// <p>The file format for the media files sent to the Amazon S3 bucket.</p>
-    pub fn recording_file_format(&self) -> std::option::Option<&crate::types::RecordingFileFormat> {
+    pub fn recording_file_format(
+        &self,
+    ) -> ::std::option::Option<&crate::types::RecordingFileFormat> {
         self.recording_file_format.as_ref()
     }
 }
-impl std::fmt::Debug for S3RecordingSinkRuntimeConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for S3RecordingSinkRuntimeConfiguration {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("S3RecordingSinkRuntimeConfiguration");
         formatter.field("destination", &"*** Sensitive Data Redacted ***");
         formatter.field("recording_file_format", &self.recording_file_format);
@@ -38,31 +40,31 @@ impl S3RecordingSinkRuntimeConfiguration {
 
 /// A builder for [`S3RecordingSinkRuntimeConfiguration`](crate::types::S3RecordingSinkRuntimeConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct S3RecordingSinkRuntimeConfigurationBuilder {
-    pub(crate) destination: std::option::Option<std::string::String>,
-    pub(crate) recording_file_format: std::option::Option<crate::types::RecordingFileFormat>,
+    pub(crate) destination: ::std::option::Option<::std::string::String>,
+    pub(crate) recording_file_format: ::std::option::Option<crate::types::RecordingFileFormat>,
 }
 impl S3RecordingSinkRuntimeConfigurationBuilder {
     /// <p>The URI of the S3 bucket used as the sink.</p>
-    pub fn destination(mut self, input: impl Into<std::string::String>) -> Self {
-        self.destination = Some(input.into());
+    pub fn destination(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.destination = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URI of the S3 bucket used as the sink.</p>
-    pub fn set_destination(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_destination(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination = input;
         self
     }
     /// <p>The file format for the media files sent to the Amazon S3 bucket.</p>
     pub fn recording_file_format(mut self, input: crate::types::RecordingFileFormat) -> Self {
-        self.recording_file_format = Some(input);
+        self.recording_file_format = ::std::option::Option::Some(input);
         self
     }
     /// <p>The file format for the media files sent to the Amazon S3 bucket.</p>
     pub fn set_recording_file_format(
         mut self,
-        input: std::option::Option<crate::types::RecordingFileFormat>,
+        input: ::std::option::Option<crate::types::RecordingFileFormat>,
     ) -> Self {
         self.recording_file_format = input;
         self
@@ -75,8 +77,8 @@ impl S3RecordingSinkRuntimeConfigurationBuilder {
         }
     }
 }
-impl std::fmt::Debug for S3RecordingSinkRuntimeConfigurationBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for S3RecordingSinkRuntimeConfigurationBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("S3RecordingSinkRuntimeConfigurationBuilder");
         formatter.field("destination", &"*** Sensitive Data Redacted ***");
         formatter.field("recording_file_format", &self.recording_file_format);

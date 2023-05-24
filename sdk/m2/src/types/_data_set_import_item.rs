@@ -2,22 +2,22 @@
 
 /// <p>Identifies a specific data set to import from an external location.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataSetImportItem {
     /// <p>The data set.</p>
     #[doc(hidden)]
-    pub data_set: std::option::Option<crate::types::DataSet>,
+    pub data_set: ::std::option::Option<crate::types::DataSet>,
     /// <p>The location of the data set.</p>
     #[doc(hidden)]
-    pub external_location: std::option::Option<crate::types::ExternalLocation>,
+    pub external_location: ::std::option::Option<crate::types::ExternalLocation>,
 }
 impl DataSetImportItem {
     /// <p>The data set.</p>
-    pub fn data_set(&self) -> std::option::Option<&crate::types::DataSet> {
+    pub fn data_set(&self) -> ::std::option::Option<&crate::types::DataSet> {
         self.data_set.as_ref()
     }
     /// <p>The location of the data set.</p>
-    pub fn external_location(&self) -> std::option::Option<&crate::types::ExternalLocation> {
+    pub fn external_location(&self) -> ::std::option::Option<&crate::types::ExternalLocation> {
         self.external_location.as_ref()
     }
 }
@@ -30,31 +30,33 @@ impl DataSetImportItem {
 
 /// A builder for [`DataSetImportItem`](crate::types::DataSetImportItem).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DataSetImportItemBuilder {
-    pub(crate) data_set: std::option::Option<crate::types::DataSet>,
-    pub(crate) external_location: std::option::Option<crate::types::ExternalLocation>,
+    pub(crate) data_set: ::std::option::Option<crate::types::DataSet>,
+    pub(crate) external_location: ::std::option::Option<crate::types::ExternalLocation>,
 }
 impl DataSetImportItemBuilder {
     /// <p>The data set.</p>
     pub fn data_set(mut self, input: crate::types::DataSet) -> Self {
-        self.data_set = Some(input);
+        self.data_set = ::std::option::Option::Some(input);
         self
     }
     /// <p>The data set.</p>
-    pub fn set_data_set(mut self, input: std::option::Option<crate::types::DataSet>) -> Self {
+    pub fn set_data_set(mut self, input: ::std::option::Option<crate::types::DataSet>) -> Self {
         self.data_set = input;
         self
     }
     /// <p>The location of the data set.</p>
     pub fn external_location(mut self, input: crate::types::ExternalLocation) -> Self {
-        self.external_location = Some(input);
+        self.external_location = ::std::option::Option::Some(input);
         self
     }
     /// <p>The location of the data set.</p>
     pub fn set_external_location(
         mut self,
-        input: std::option::Option<crate::types::ExternalLocation>,
+        input: ::std::option::Option<crate::types::ExternalLocation>,
     ) -> Self {
         self.external_location = input;
         self

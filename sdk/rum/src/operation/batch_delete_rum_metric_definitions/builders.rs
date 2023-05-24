@@ -8,47 +8,50 @@ pub use crate::operation::batch_delete_rum_metric_definitions::_batch_delete_rum
 /// <p>Removes the specified metrics from being sent to an extended metrics destination.</p>
 /// <p>If some metric definition IDs specified in a <code>BatchDeleteRumMetricDefinitions</code> operations are not valid, those metric definitions fail and return errors, but all valid metric definition IDs in the same operation are still deleted.</p>
 /// <p>The maximum number of metric definitions that you can specify in one <code>BatchDeleteRumMetricDefinitions</code> operation is 200.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchDeleteRumMetricDefinitionsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::batch_delete_rum_metric_definitions::builders::BatchDeleteRumMetricDefinitionsInputBuilder,
 }
 impl BatchDeleteRumMetricDefinitionsFluentBuilder {
     /// Creates a new `BatchDeleteRumMetricDefinitions`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::batch_delete_rum_metric_definitions::BatchDeleteRumMetricDefinitions, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::batch_delete_rum_metric_definitions::BatchDeleteRumMetricDefinitionsError>
+                    pub async fn customize(self) -> ::std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::batch_delete_rum_metric_definitions::BatchDeleteRumMetricDefinitions, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                        ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_rum_metric_definitions::BatchDeleteRumMetricDefinitionsError>
     >{
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::batch_delete_rum_metric_definitions::BatchDeleteRumMetricDefinitionsOutput, aws_smithy_http::result::SdkError<crate::operation::batch_delete_rum_metric_definitions::BatchDeleteRumMetricDefinitionsError>>
+                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::batch_delete_rum_metric_definitions::BatchDeleteRumMetricDefinitionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_rum_metric_definitions::BatchDeleteRumMetricDefinitionsError>>
                      {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -59,17 +62,23 @@ impl BatchDeleteRumMetricDefinitionsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> std::result::Result<crate::operation::batch_delete_rum_metric_definitions::BatchDeleteRumMetricDefinitionsOutput, aws_smithy_http::result::SdkError<crate::operation::batch_delete_rum_metric_definitions::BatchDeleteRumMetricDefinitionsError>>
+                        pub async fn send(self) -> ::std::result::Result<crate::operation::batch_delete_rum_metric_definitions::BatchDeleteRumMetricDefinitionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_rum_metric_definitions::BatchDeleteRumMetricDefinitionsError>>
                          {
         self.send_middleware().await
     }
     /// <p>The name of the CloudWatch RUM app monitor that is sending these metrics.</p>
-    pub fn app_monitor_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn app_monitor_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.app_monitor_name(input.into());
         self
     }
     /// <p>The name of the CloudWatch RUM app monitor that is sending these metrics.</p>
-    pub fn set_app_monitor_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_app_monitor_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_app_monitor_name(input);
         self
     }
@@ -81,20 +90,26 @@ impl BatchDeleteRumMetricDefinitionsFluentBuilder {
     /// <p>Defines the destination where you want to stop sending the specified metrics. Valid values are <code>CloudWatch</code> and <code>Evidently</code>. If you specify <code>Evidently</code>, you must also specify the ARN of the CloudWatchEvidently experiment that is to be the destination and an IAM role that has permission to write to the experiment.</p>
     pub fn set_destination(
         mut self,
-        input: std::option::Option<crate::types::MetricDestination>,
+        input: ::std::option::Option<crate::types::MetricDestination>,
     ) -> Self {
         self.inner = self.inner.set_destination(input);
         self
     }
     /// <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter. </p>
     /// <p>This parameter specifies the ARN of the Evidently experiment that was receiving the metrics that are being deleted.</p>
-    pub fn destination_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn destination_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.destination_arn(input.into());
         self
     }
     /// <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter. </p>
     /// <p>This parameter specifies the ARN of the Evidently experiment that was receiving the metrics that are being deleted.</p>
-    pub fn set_destination_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_destination_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_destination_arn(input);
         self
     }
@@ -103,14 +118,17 @@ impl BatchDeleteRumMetricDefinitionsFluentBuilder {
     /// To override the contents of this collection use [`set_metric_definition_ids`](Self::set_metric_definition_ids).
     ///
     /// <p>An array of structures which define the metrics that you want to stop sending.</p>
-    pub fn metric_definition_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn metric_definition_ids(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.metric_definition_ids(input.into());
         self
     }
     /// <p>An array of structures which define the metrics that you want to stop sending.</p>
     pub fn set_metric_definition_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_metric_definition_ids(input);
         self

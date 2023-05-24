@@ -38,13 +38,13 @@
 /// Optional. Choose the scan line type for this output. If you don't specify a value, MediaConvert will create a progressive output.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum Vc3InterlaceMode {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum Vc3InterlaceMode {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for Vc3InterlaceMode {
+impl ::std::convert::From<&str> for Vc3InterlaceMode {
     fn from(s: &str) -> Self {
         match s {
             "INTERLACED" => Vc3InterlaceMode::Interlaced,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for Vc3InterlaceMode {
         }
     }
 }
-impl std::str::FromStr for Vc3InterlaceMode {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for Vc3InterlaceMode {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Vc3InterlaceMode::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(Vc3InterlaceMode::from(s))
     }
 }
 impl Vc3InterlaceMode {
@@ -86,7 +86,7 @@ impl Vc3InterlaceMode {
         &["INTERLACED", "PROGRESSIVE"]
     }
 }
-impl AsRef<str> for Vc3InterlaceMode {
+impl ::std::convert::AsRef<str> for Vc3InterlaceMode {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

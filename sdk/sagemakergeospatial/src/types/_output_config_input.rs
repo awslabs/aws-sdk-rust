@@ -2,15 +2,15 @@
 
 /// <p>The response structure for an OutputConfig returned by an ExportEarthObservationJob.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OutputConfigInput {
     /// <p>Path to Amazon S3 storage location for the output configuration file.</p>
     #[doc(hidden)]
-    pub s3_data: std::option::Option<crate::types::ExportS3DataInput>,
+    pub s3_data: ::std::option::Option<crate::types::ExportS3DataInput>,
 }
 impl OutputConfigInput {
     /// <p>Path to Amazon S3 storage location for the output configuration file.</p>
-    pub fn s3_data(&self) -> std::option::Option<&crate::types::ExportS3DataInput> {
+    pub fn s3_data(&self) -> ::std::option::Option<&crate::types::ExportS3DataInput> {
         self.s3_data.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl OutputConfigInput {
 
 /// A builder for [`OutputConfigInput`](crate::types::OutputConfigInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OutputConfigInputBuilder {
-    pub(crate) s3_data: std::option::Option<crate::types::ExportS3DataInput>,
+    pub(crate) s3_data: ::std::option::Option<crate::types::ExportS3DataInput>,
 }
 impl OutputConfigInputBuilder {
     /// <p>Path to Amazon S3 storage location for the output configuration file.</p>
     pub fn s3_data(mut self, input: crate::types::ExportS3DataInput) -> Self {
-        self.s3_data = Some(input);
+        self.s3_data = ::std::option::Option::Some(input);
         self
     }
     /// <p>Path to Amazon S3 storage location for the output configuration file.</p>
     pub fn set_s3_data(
         mut self,
-        input: std::option::Option<crate::types::ExportS3DataInput>,
+        input: ::std::option::Option<crate::types::ExportS3DataInput>,
     ) -> Self {
         self.s3_data = input;
         self

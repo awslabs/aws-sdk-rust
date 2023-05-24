@@ -2,20 +2,20 @@
 
 /// <p>Returns the <code>QueueUrl</code> attribute of the created queue.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateQueueOutput {
     /// <p>The URL of the created Amazon SQS queue.</p>
     #[doc(hidden)]
-    pub queue_url: std::option::Option<std::string::String>,
+    pub queue_url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateQueueOutput {
     /// <p>The URL of the created Amazon SQS queue.</p>
-    pub fn queue_url(&self) -> std::option::Option<&str> {
+    pub fn queue_url(&self) -> ::std::option::Option<&str> {
         self.queue_url.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for CreateQueueOutput {
+impl ::aws_http::request_id::RequestId for CreateQueueOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,21 @@ impl CreateQueueOutput {
 
 /// A builder for [`CreateQueueOutput`](crate::operation::create_queue::CreateQueueOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateQueueOutputBuilder {
-    pub(crate) queue_url: std::option::Option<std::string::String>,
+    pub(crate) queue_url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateQueueOutputBuilder {
     /// <p>The URL of the created Amazon SQS queue.</p>
-    pub fn queue_url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.queue_url = Some(input.into());
+    pub fn queue_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.queue_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL of the created Amazon SQS queue.</p>
-    pub fn set_queue_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_queue_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.queue_url = input;
         self
     }

@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`data(Blob)`](crate::operation::post_to_connection::builders::PostToConnectionFluentBuilder::data) / [`set_data(Option<Blob>)`](crate::operation::post_to_connection::builders::PostToConnectionFluentBuilder::set_data): <p>The data to be sent to the client specified by its connection id.</p>
-    ///   - [`connection_id(impl Into<String>)`](crate::operation::post_to_connection::builders::PostToConnectionFluentBuilder::connection_id) / [`set_connection_id(Option<String>)`](crate::operation::post_to_connection::builders::PostToConnectionFluentBuilder::set_connection_id): <p>The identifier of the connection that a specific client is using.</p>
+    ///   - [`connection_id(impl ::std::convert::Into<String>)`](crate::operation::post_to_connection::builders::PostToConnectionFluentBuilder::connection_id) / [`set_connection_id(Option<String>)`](crate::operation::post_to_connection::builders::PostToConnectionFluentBuilder::set_connection_id): <p>The identifier of the connection that a specific client is using.</p>
     /// - On success, responds with [`PostToConnectionOutput`](crate::operation::post_to_connection::PostToConnectionOutput)
     /// - On failure, responds with [`SdkError<PostToConnectionError>`](crate::operation::post_to_connection::PostToConnectionError)
     pub fn post_to_connection(

@@ -4,22 +4,23 @@
 /// <p>If a server certificate that's associated with your <code>TLSInspectionConfiguration</code> is revoked, deleted, or expired it can result in client-side TLS errors.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServerCertificateConfiguration {
     /// <p>The list of a server certificate configuration's Certificate Manager SSL/TLS certificates.</p>
     #[doc(hidden)]
-    pub server_certificates: std::option::Option<std::vec::Vec<crate::types::ServerCertificate>>,
+    pub server_certificates:
+        ::std::option::Option<::std::vec::Vec<crate::types::ServerCertificate>>,
     /// <p>A list of a server certificate configuration's scopes.</p>
     #[doc(hidden)]
-    pub scopes: std::option::Option<std::vec::Vec<crate::types::ServerCertificateScope>>,
+    pub scopes: ::std::option::Option<::std::vec::Vec<crate::types::ServerCertificateScope>>,
 }
 impl ServerCertificateConfiguration {
     /// <p>The list of a server certificate configuration's Certificate Manager SSL/TLS certificates.</p>
-    pub fn server_certificates(&self) -> std::option::Option<&[crate::types::ServerCertificate]> {
+    pub fn server_certificates(&self) -> ::std::option::Option<&[crate::types::ServerCertificate]> {
         self.server_certificates.as_deref()
     }
     /// <p>A list of a server certificate configuration's scopes.</p>
-    pub fn scopes(&self) -> std::option::Option<&[crate::types::ServerCertificateScope]> {
+    pub fn scopes(&self) -> ::std::option::Option<&[crate::types::ServerCertificateScope]> {
         self.scopes.as_deref()
     }
 }
@@ -32,11 +33,13 @@ impl ServerCertificateConfiguration {
 
 /// A builder for [`ServerCertificateConfiguration`](crate::types::ServerCertificateConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ServerCertificateConfigurationBuilder {
     pub(crate) server_certificates:
-        std::option::Option<std::vec::Vec<crate::types::ServerCertificate>>,
-    pub(crate) scopes: std::option::Option<std::vec::Vec<crate::types::ServerCertificateScope>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ServerCertificate>>,
+    pub(crate) scopes: ::std::option::Option<::std::vec::Vec<crate::types::ServerCertificateScope>>,
 }
 impl ServerCertificateConfigurationBuilder {
     /// Appends an item to `server_certificates`.
@@ -47,13 +50,13 @@ impl ServerCertificateConfigurationBuilder {
     pub fn server_certificates(mut self, input: crate::types::ServerCertificate) -> Self {
         let mut v = self.server_certificates.unwrap_or_default();
         v.push(input);
-        self.server_certificates = Some(v);
+        self.server_certificates = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of a server certificate configuration's Certificate Manager SSL/TLS certificates.</p>
     pub fn set_server_certificates(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ServerCertificate>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ServerCertificate>>,
     ) -> Self {
         self.server_certificates = input;
         self
@@ -66,13 +69,13 @@ impl ServerCertificateConfigurationBuilder {
     pub fn scopes(mut self, input: crate::types::ServerCertificateScope) -> Self {
         let mut v = self.scopes.unwrap_or_default();
         v.push(input);
-        self.scopes = Some(v);
+        self.scopes = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of a server certificate configuration's scopes.</p>
     pub fn set_scopes(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ServerCertificateScope>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ServerCertificateScope>>,
     ) -> Self {
         self.scopes = input;
         self

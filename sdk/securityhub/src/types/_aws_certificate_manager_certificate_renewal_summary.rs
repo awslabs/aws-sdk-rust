@@ -2,47 +2,48 @@
 
 /// <p>Contains information about the Certificate Manager managed renewal for an <code>AMAZON_ISSUED</code> certificate.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsCertificateManagerCertificateRenewalSummary {
     /// <p>Information about the validation of each domain name in the certificate, as it pertains to Certificate Manager managed renewal. Provided only when the certificate type is <code>AMAZON_ISSUED</code>.</p>
     #[doc(hidden)]
-    pub domain_validation_options: std::option::Option<
-        std::vec::Vec<crate::types::AwsCertificateManagerCertificateDomainValidationOption>,
+    pub domain_validation_options: ::std::option::Option<
+        ::std::vec::Vec<crate::types::AwsCertificateManagerCertificateDomainValidationOption>,
     >,
     /// <p>The status of the Certificate Manager managed renewal of the certificate.</p>
     /// <p>Valid values: <code>PENDING_AUTO_RENEWAL</code> | <code>PENDING_VALIDATION</code> | <code>SUCCESS</code> | <code>FAILED</code> </p>
     #[doc(hidden)]
-    pub renewal_status: std::option::Option<std::string::String>,
+    pub renewal_status: ::std::option::Option<::std::string::String>,
     /// <p>The reason that a renewal request was unsuccessful. This attribute is used only when <code>RenewalStatus</code> is <code>FAILED</code>.</p>
     /// <p>Valid values: <code>NO_AVAILABLE_CONTACTS</code> | <code>ADDITIONAL_VERIFICATION_REQUIRED</code> | <code>DOMAIN_NOT_ALLOWED</code> | <code>INVALID_PUBLIC_DOMAIN</code> | <code>DOMAIN_VALIDATION_DENIED</code> | <code>CAA_ERROR</code> | <code>PCA_LIMIT_EXCEEDED</code> | <code>PCA_INVALID_ARN</code> | <code>PCA_INVALID_STATE</code> | <code>PCA_REQUEST_FAILED</code> | <code>PCA_NAME_CONSTRAINTS_VALIDATION</code> | <code>PCA_RESOURCE_NOT_FOUND</code> | <code>PCA_INVALID_ARGS</code> | <code>PCA_INVALID_DURATION</code> | <code>PCA_ACCESS_DENIED</code> | <code>SLR_NOT_FOUND</code> | <code>OTHER</code> </p>
     #[doc(hidden)]
-    pub renewal_status_reason: std::option::Option<std::string::String>,
+    pub renewal_status_reason: ::std::option::Option<::std::string::String>,
     /// <p>Indicates when the renewal summary was last updated.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     #[doc(hidden)]
-    pub updated_at: std::option::Option<std::string::String>,
+    pub updated_at: ::std::option::Option<::std::string::String>,
 }
 impl AwsCertificateManagerCertificateRenewalSummary {
     /// <p>Information about the validation of each domain name in the certificate, as it pertains to Certificate Manager managed renewal. Provided only when the certificate type is <code>AMAZON_ISSUED</code>.</p>
     pub fn domain_validation_options(
         &self,
-    ) -> std::option::Option<&[crate::types::AwsCertificateManagerCertificateDomainValidationOption]>
-    {
+    ) -> ::std::option::Option<
+        &[crate::types::AwsCertificateManagerCertificateDomainValidationOption],
+    > {
         self.domain_validation_options.as_deref()
     }
     /// <p>The status of the Certificate Manager managed renewal of the certificate.</p>
     /// <p>Valid values: <code>PENDING_AUTO_RENEWAL</code> | <code>PENDING_VALIDATION</code> | <code>SUCCESS</code> | <code>FAILED</code> </p>
-    pub fn renewal_status(&self) -> std::option::Option<&str> {
+    pub fn renewal_status(&self) -> ::std::option::Option<&str> {
         self.renewal_status.as_deref()
     }
     /// <p>The reason that a renewal request was unsuccessful. This attribute is used only when <code>RenewalStatus</code> is <code>FAILED</code>.</p>
     /// <p>Valid values: <code>NO_AVAILABLE_CONTACTS</code> | <code>ADDITIONAL_VERIFICATION_REQUIRED</code> | <code>DOMAIN_NOT_ALLOWED</code> | <code>INVALID_PUBLIC_DOMAIN</code> | <code>DOMAIN_VALIDATION_DENIED</code> | <code>CAA_ERROR</code> | <code>PCA_LIMIT_EXCEEDED</code> | <code>PCA_INVALID_ARN</code> | <code>PCA_INVALID_STATE</code> | <code>PCA_REQUEST_FAILED</code> | <code>PCA_NAME_CONSTRAINTS_VALIDATION</code> | <code>PCA_RESOURCE_NOT_FOUND</code> | <code>PCA_INVALID_ARGS</code> | <code>PCA_INVALID_DURATION</code> | <code>PCA_ACCESS_DENIED</code> | <code>SLR_NOT_FOUND</code> | <code>OTHER</code> </p>
-    pub fn renewal_status_reason(&self) -> std::option::Option<&str> {
+    pub fn renewal_status_reason(&self) -> ::std::option::Option<&str> {
         self.renewal_status_reason.as_deref()
     }
     /// <p>Indicates when the renewal summary was last updated.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn updated_at(&self) -> std::option::Option<&str> {
+    pub fn updated_at(&self) -> ::std::option::Option<&str> {
         self.updated_at.as_deref()
     }
 }
@@ -56,14 +57,16 @@ impl AwsCertificateManagerCertificateRenewalSummary {
 
 /// A builder for [`AwsCertificateManagerCertificateRenewalSummary`](crate::types::AwsCertificateManagerCertificateRenewalSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsCertificateManagerCertificateRenewalSummaryBuilder {
-    pub(crate) domain_validation_options: std::option::Option<
-        std::vec::Vec<crate::types::AwsCertificateManagerCertificateDomainValidationOption>,
+    pub(crate) domain_validation_options: ::std::option::Option<
+        ::std::vec::Vec<crate::types::AwsCertificateManagerCertificateDomainValidationOption>,
     >,
-    pub(crate) renewal_status: std::option::Option<std::string::String>,
-    pub(crate) renewal_status_reason: std::option::Option<std::string::String>,
-    pub(crate) updated_at: std::option::Option<std::string::String>,
+    pub(crate) renewal_status: ::std::option::Option<::std::string::String>,
+    pub(crate) renewal_status_reason: ::std::option::Option<::std::string::String>,
+    pub(crate) updated_at: ::std::option::Option<::std::string::String>,
 }
 impl AwsCertificateManagerCertificateRenewalSummaryBuilder {
     /// Appends an item to `domain_validation_options`.
@@ -77,14 +80,14 @@ impl AwsCertificateManagerCertificateRenewalSummaryBuilder {
     ) -> Self {
         let mut v = self.domain_validation_options.unwrap_or_default();
         v.push(input);
-        self.domain_validation_options = Some(v);
+        self.domain_validation_options = ::std::option::Option::Some(v);
         self
     }
     /// <p>Information about the validation of each domain name in the certificate, as it pertains to Certificate Manager managed renewal. Provided only when the certificate type is <code>AMAZON_ISSUED</code>.</p>
     pub fn set_domain_validation_options(
         mut self,
-        input: std::option::Option<
-            std::vec::Vec<crate::types::AwsCertificateManagerCertificateDomainValidationOption>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::AwsCertificateManagerCertificateDomainValidationOption>,
         >,
     ) -> Self {
         self.domain_validation_options = input;
@@ -92,40 +95,49 @@ impl AwsCertificateManagerCertificateRenewalSummaryBuilder {
     }
     /// <p>The status of the Certificate Manager managed renewal of the certificate.</p>
     /// <p>Valid values: <code>PENDING_AUTO_RENEWAL</code> | <code>PENDING_VALIDATION</code> | <code>SUCCESS</code> | <code>FAILED</code> </p>
-    pub fn renewal_status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.renewal_status = Some(input.into());
+    pub fn renewal_status(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.renewal_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the Certificate Manager managed renewal of the certificate.</p>
     /// <p>Valid values: <code>PENDING_AUTO_RENEWAL</code> | <code>PENDING_VALIDATION</code> | <code>SUCCESS</code> | <code>FAILED</code> </p>
-    pub fn set_renewal_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_renewal_status(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.renewal_status = input;
         self
     }
     /// <p>The reason that a renewal request was unsuccessful. This attribute is used only when <code>RenewalStatus</code> is <code>FAILED</code>.</p>
     /// <p>Valid values: <code>NO_AVAILABLE_CONTACTS</code> | <code>ADDITIONAL_VERIFICATION_REQUIRED</code> | <code>DOMAIN_NOT_ALLOWED</code> | <code>INVALID_PUBLIC_DOMAIN</code> | <code>DOMAIN_VALIDATION_DENIED</code> | <code>CAA_ERROR</code> | <code>PCA_LIMIT_EXCEEDED</code> | <code>PCA_INVALID_ARN</code> | <code>PCA_INVALID_STATE</code> | <code>PCA_REQUEST_FAILED</code> | <code>PCA_NAME_CONSTRAINTS_VALIDATION</code> | <code>PCA_RESOURCE_NOT_FOUND</code> | <code>PCA_INVALID_ARGS</code> | <code>PCA_INVALID_DURATION</code> | <code>PCA_ACCESS_DENIED</code> | <code>SLR_NOT_FOUND</code> | <code>OTHER</code> </p>
-    pub fn renewal_status_reason(mut self, input: impl Into<std::string::String>) -> Self {
-        self.renewal_status_reason = Some(input.into());
+    pub fn renewal_status_reason(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.renewal_status_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason that a renewal request was unsuccessful. This attribute is used only when <code>RenewalStatus</code> is <code>FAILED</code>.</p>
     /// <p>Valid values: <code>NO_AVAILABLE_CONTACTS</code> | <code>ADDITIONAL_VERIFICATION_REQUIRED</code> | <code>DOMAIN_NOT_ALLOWED</code> | <code>INVALID_PUBLIC_DOMAIN</code> | <code>DOMAIN_VALIDATION_DENIED</code> | <code>CAA_ERROR</code> | <code>PCA_LIMIT_EXCEEDED</code> | <code>PCA_INVALID_ARN</code> | <code>PCA_INVALID_STATE</code> | <code>PCA_REQUEST_FAILED</code> | <code>PCA_NAME_CONSTRAINTS_VALIDATION</code> | <code>PCA_RESOURCE_NOT_FOUND</code> | <code>PCA_INVALID_ARGS</code> | <code>PCA_INVALID_DURATION</code> | <code>PCA_ACCESS_DENIED</code> | <code>SLR_NOT_FOUND</code> | <code>OTHER</code> </p>
     pub fn set_renewal_status_reason(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.renewal_status_reason = input;
         self
     }
     /// <p>Indicates when the renewal summary was last updated.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn updated_at(mut self, input: impl Into<std::string::String>) -> Self {
-        self.updated_at = Some(input.into());
+    pub fn updated_at(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.updated_at = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates when the renewal summary was last updated.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn set_updated_at(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_updated_at(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.updated_at = input;
         self
     }

@@ -2,36 +2,36 @@
 
 /// <p>The code for the Lambda function. You can specify either an object in Amazon S3, or upload a deployment package directly.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsLambdaFunctionCode {
     /// <p>An Amazon S3 bucket in the same Amazon Web Services Region as your function. The bucket can be in a different Amazon Web Services account.</p>
     #[doc(hidden)]
-    pub s3_bucket: std::option::Option<std::string::String>,
+    pub s3_bucket: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 key of the deployment package.</p>
     #[doc(hidden)]
-    pub s3_key: std::option::Option<std::string::String>,
+    pub s3_key: ::std::option::Option<::std::string::String>,
     /// <p>For versioned objects, the version of the deployment package object to use.</p>
     #[doc(hidden)]
-    pub s3_object_version: std::option::Option<std::string::String>,
+    pub s3_object_version: ::std::option::Option<::std::string::String>,
     /// <p>The base64-encoded contents of the deployment package. Amazon Web Services SDK and Amazon Web Services CLI clients handle the encoding for you.</p>
     #[doc(hidden)]
-    pub zip_file: std::option::Option<std::string::String>,
+    pub zip_file: ::std::option::Option<::std::string::String>,
 }
 impl AwsLambdaFunctionCode {
     /// <p>An Amazon S3 bucket in the same Amazon Web Services Region as your function. The bucket can be in a different Amazon Web Services account.</p>
-    pub fn s3_bucket(&self) -> std::option::Option<&str> {
+    pub fn s3_bucket(&self) -> ::std::option::Option<&str> {
         self.s3_bucket.as_deref()
     }
     /// <p>The Amazon S3 key of the deployment package.</p>
-    pub fn s3_key(&self) -> std::option::Option<&str> {
+    pub fn s3_key(&self) -> ::std::option::Option<&str> {
         self.s3_key.as_deref()
     }
     /// <p>For versioned objects, the version of the deployment package object to use.</p>
-    pub fn s3_object_version(&self) -> std::option::Option<&str> {
+    pub fn s3_object_version(&self) -> ::std::option::Option<&str> {
         self.s3_object_version.as_deref()
     }
     /// <p>The base64-encoded contents of the deployment package. Amazon Web Services SDK and Amazon Web Services CLI clients handle the encoding for you.</p>
-    pub fn zip_file(&self) -> std::option::Option<&str> {
+    pub fn zip_file(&self) -> ::std::option::Option<&str> {
         self.zip_file.as_deref()
     }
 }
@@ -44,54 +44,59 @@ impl AwsLambdaFunctionCode {
 
 /// A builder for [`AwsLambdaFunctionCode`](crate::types::AwsLambdaFunctionCode).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsLambdaFunctionCodeBuilder {
-    pub(crate) s3_bucket: std::option::Option<std::string::String>,
-    pub(crate) s3_key: std::option::Option<std::string::String>,
-    pub(crate) s3_object_version: std::option::Option<std::string::String>,
-    pub(crate) zip_file: std::option::Option<std::string::String>,
+    pub(crate) s3_bucket: ::std::option::Option<::std::string::String>,
+    pub(crate) s3_key: ::std::option::Option<::std::string::String>,
+    pub(crate) s3_object_version: ::std::option::Option<::std::string::String>,
+    pub(crate) zip_file: ::std::option::Option<::std::string::String>,
 }
 impl AwsLambdaFunctionCodeBuilder {
     /// <p>An Amazon S3 bucket in the same Amazon Web Services Region as your function. The bucket can be in a different Amazon Web Services account.</p>
-    pub fn s3_bucket(mut self, input: impl Into<std::string::String>) -> Self {
-        self.s3_bucket = Some(input.into());
+    pub fn s3_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.s3_bucket = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An Amazon S3 bucket in the same Amazon Web Services Region as your function. The bucket can be in a different Amazon Web Services account.</p>
-    pub fn set_s3_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_s3_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_bucket = input;
         self
     }
     /// <p>The Amazon S3 key of the deployment package.</p>
-    pub fn s3_key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.s3_key = Some(input.into());
+    pub fn s3_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.s3_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon S3 key of the deployment package.</p>
-    pub fn set_s3_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_s3_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_key = input;
         self
     }
     /// <p>For versioned objects, the version of the deployment package object to use.</p>
-    pub fn s3_object_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.s3_object_version = Some(input.into());
+    pub fn s3_object_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.s3_object_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>For versioned objects, the version of the deployment package object to use.</p>
     pub fn set_s3_object_version(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.s3_object_version = input;
         self
     }
     /// <p>The base64-encoded contents of the deployment package. Amazon Web Services SDK and Amazon Web Services CLI clients handle the encoding for you.</p>
-    pub fn zip_file(mut self, input: impl Into<std::string::String>) -> Self {
-        self.zip_file = Some(input.into());
+    pub fn zip_file(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.zip_file = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The base64-encoded contents of the deployment package. Amazon Web Services SDK and Amazon Web Services CLI clients handle the encoding for you.</p>
-    pub fn set_zip_file(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_zip_file(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.zip_file = input;
         self
     }

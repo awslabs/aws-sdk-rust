@@ -38,13 +38,13 @@
 /// Enables LATM/LOAS AAC output. Note that if you use LATM/LOAS AAC in an output, you must choose "No container" for the output container.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum AacRawFormat {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum AacRawFormat {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for AacRawFormat {
+impl ::std::convert::From<&str> for AacRawFormat {
     fn from(s: &str) -> Self {
         match s {
             "LATM_LOAS" => AacRawFormat::LatmLoas,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for AacRawFormat {
         }
     }
 }
-impl std::str::FromStr for AacRawFormat {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for AacRawFormat {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AacRawFormat::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(AacRawFormat::from(s))
     }
 }
 impl AacRawFormat {
@@ -86,7 +86,7 @@ impl AacRawFormat {
         &["LATM_LOAS", "NONE"]
     }
 }
-impl AsRef<str> for AacRawFormat {
+impl ::std::convert::AsRef<str> for AacRawFormat {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

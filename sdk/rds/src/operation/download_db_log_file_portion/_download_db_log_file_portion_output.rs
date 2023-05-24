@@ -2,14 +2,14 @@
 
 /// <p>This data type is used as a response element to <code>DownloadDBLogFilePortion</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DownloadDbLogFilePortionOutput {
     /// <p>Entries from the specified log file.</p>
     #[doc(hidden)]
-    pub log_file_data: std::option::Option<std::string::String>,
+    pub log_file_data: ::std::option::Option<::std::string::String>,
     /// <p>A pagination token that can be used in a later <code>DownloadDBLogFilePortion</code> request.</p>
     #[doc(hidden)]
-    pub marker: std::option::Option<std::string::String>,
+    pub marker: ::std::option::Option<::std::string::String>,
     /// <p>Boolean value that if true, indicates there is more data to be downloaded.</p>
     #[doc(hidden)]
     pub additional_data_pending: bool,
@@ -17,11 +17,11 @@ pub struct DownloadDbLogFilePortionOutput {
 }
 impl DownloadDbLogFilePortionOutput {
     /// <p>Entries from the specified log file.</p>
-    pub fn log_file_data(&self) -> std::option::Option<&str> {
+    pub fn log_file_data(&self) -> ::std::option::Option<&str> {
         self.log_file_data.as_deref()
     }
     /// <p>A pagination token that can be used in a later <code>DownloadDBLogFilePortion</code> request.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
     /// <p>Boolean value that if true, indicates there is more data to be downloaded.</p>
@@ -29,7 +29,7 @@ impl DownloadDbLogFilePortionOutput {
         self.additional_data_pending
     }
 }
-impl aws_http::request_id::RequestId for DownloadDbLogFilePortionOutput {
+impl ::aws_http::request_id::RequestId for DownloadDbLogFilePortionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -43,41 +43,49 @@ impl DownloadDbLogFilePortionOutput {
 
 /// A builder for [`DownloadDbLogFilePortionOutput`](crate::operation::download_db_log_file_portion::DownloadDbLogFilePortionOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DownloadDbLogFilePortionOutputBuilder {
-    pub(crate) log_file_data: std::option::Option<std::string::String>,
-    pub(crate) marker: std::option::Option<std::string::String>,
-    pub(crate) additional_data_pending: std::option::Option<bool>,
+    pub(crate) log_file_data: ::std::option::Option<::std::string::String>,
+    pub(crate) marker: ::std::option::Option<::std::string::String>,
+    pub(crate) additional_data_pending: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl DownloadDbLogFilePortionOutputBuilder {
     /// <p>Entries from the specified log file.</p>
-    pub fn log_file_data(mut self, input: impl Into<std::string::String>) -> Self {
-        self.log_file_data = Some(input.into());
+    pub fn log_file_data(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.log_file_data = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Entries from the specified log file.</p>
-    pub fn set_log_file_data(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_log_file_data(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.log_file_data = input;
         self
     }
     /// <p>A pagination token that can be used in a later <code>DownloadDBLogFilePortion</code> request.</p>
-    pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-        self.marker = Some(input.into());
+    pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A pagination token that can be used in a later <code>DownloadDBLogFilePortion</code> request.</p>
-    pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
     }
     /// <p>Boolean value that if true, indicates there is more data to be downloaded.</p>
     pub fn additional_data_pending(mut self, input: bool) -> Self {
-        self.additional_data_pending = Some(input);
+        self.additional_data_pending = ::std::option::Option::Some(input);
         self
     }
     /// <p>Boolean value that if true, indicates there is more data to be downloaded.</p>
-    pub fn set_additional_data_pending(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_additional_data_pending(mut self, input: ::std::option::Option<bool>) -> Self {
         self.additional_data_pending = input;
         self
     }

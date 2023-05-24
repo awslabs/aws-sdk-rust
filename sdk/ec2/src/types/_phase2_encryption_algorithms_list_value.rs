@@ -2,15 +2,15 @@
 
 /// <p>The encryption algorithm for phase 2 IKE negotiations.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Phase2EncryptionAlgorithmsListValue {
     /// <p>The encryption algorithm.</p>
     #[doc(hidden)]
-    pub value: std::option::Option<std::string::String>,
+    pub value: ::std::option::Option<::std::string::String>,
 }
 impl Phase2EncryptionAlgorithmsListValue {
     /// <p>The encryption algorithm.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl Phase2EncryptionAlgorithmsListValue {
 
 /// A builder for [`Phase2EncryptionAlgorithmsListValue`](crate::types::Phase2EncryptionAlgorithmsListValue).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct Phase2EncryptionAlgorithmsListValueBuilder {
-    pub(crate) value: std::option::Option<std::string::String>,
+    pub(crate) value: ::std::option::Option<::std::string::String>,
 }
 impl Phase2EncryptionAlgorithmsListValueBuilder {
     /// <p>The encryption algorithm.</p>
-    pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.value = Some(input.into());
+    pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The encryption algorithm.</p>
-    pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
     }

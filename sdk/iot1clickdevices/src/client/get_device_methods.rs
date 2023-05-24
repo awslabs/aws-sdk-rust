@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetDeviceMethods`](crate::operation::get_device_methods::builders::GetDeviceMethodsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`device_id(impl Into<String>)`](crate::operation::get_device_methods::builders::GetDeviceMethodsFluentBuilder::device_id) / [`set_device_id(Option<String>)`](crate::operation::get_device_methods::builders::GetDeviceMethodsFluentBuilder::set_device_id): <p>The unique identifier of the device.</p>
+    ///   - [`device_id(impl ::std::convert::Into<String>)`](crate::operation::get_device_methods::builders::GetDeviceMethodsFluentBuilder::device_id) / [`set_device_id(Option<String>)`](crate::operation::get_device_methods::builders::GetDeviceMethodsFluentBuilder::set_device_id): <p>The unique identifier of the device.</p>
     /// - On success, responds with [`GetDeviceMethodsOutput`](crate::operation::get_device_methods::GetDeviceMethodsOutput) with field(s):
     ///   - [`device_methods(Option<Vec<DeviceMethod>>)`](crate::operation::get_device_methods::GetDeviceMethodsOutput::device_methods): <p>List of available device APIs.</p>
     /// - On failure, responds with [`SdkError<GetDeviceMethodsError>`](crate::operation::get_device_methods::GetDeviceMethodsError)

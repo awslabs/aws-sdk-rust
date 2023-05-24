@@ -11,29 +11,29 @@ pub use crate::operation::update_smb_file_share::_update_smb_file_share_input::U
 /// <p>File gateways require Security Token Service (Amazon Web Services STS) to be activated to enable you to create a file share. Make sure that Amazon Web Services STS is activated in the Amazon Web Services Region you are creating your file gateway in. If Amazon Web Services STS is not activated in this Amazon Web Services Region, activate it. For information about how to activate Amazon Web Services STS, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in the <i>Identity and Access Management User Guide</i>.</p>
 /// <p>File gateways don't support creating hard or symbolic links on a file share.</p>
 /// </important>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateSMBFileShareFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::update_smb_file_share::builders::UpdateSmbFileShareInputBuilder,
 }
 impl UpdateSMBFileShareFluentBuilder {
     /// Creates a new `UpdateSMBFileShare`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_smb_file_share::UpdateSMBFileShare,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_smb_file_share::UpdateSMBFileShareError,
         >,
     > {
@@ -41,30 +41,33 @@ impl UpdateSMBFileShareFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_smb_file_share::UpdateSmbFileShareOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_smb_file_share::UpdateSMBFileShareError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -77,21 +80,27 @@ impl UpdateSMBFileShareFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_smb_file_share::UpdateSmbFileShareOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_smb_file_share::UpdateSMBFileShareError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the SMB file share that you want to update.</p>
-    pub fn file_share_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn file_share_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.file_share_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the SMB file share that you want to update.</p>
-    pub fn set_file_share_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_file_share_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_file_share_arn(input);
         self
     }
@@ -103,23 +112,26 @@ impl UpdateSMBFileShareFluentBuilder {
     }
     /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
-    pub fn set_kms_encrypted(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_kms_encrypted(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_kms_encrypted(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
-    pub fn kms_key(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn kms_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kms_key(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
-    pub fn set_kms_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_kms_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kms_key(input);
         self
     }
     /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway. The default value is <code>S3_STANDARD</code>. Optional.</p>
     /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
-    pub fn default_storage_class(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn default_storage_class(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.default_storage_class(input.into());
         self
     }
@@ -127,7 +139,7 @@ impl UpdateSMBFileShareFluentBuilder {
     /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code> </p>
     pub fn set_default_storage_class(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_default_storage_class(input);
         self
@@ -138,7 +150,7 @@ impl UpdateSMBFileShareFluentBuilder {
         self
     }
     /// <p>A value that sets the access control list (ACL) permission for objects in the S3 bucket that a S3 File Gateway puts objects into. The default value is <code>private</code>.</p>
-    pub fn set_object_acl(mut self, input: std::option::Option<crate::types::ObjectAcl>) -> Self {
+    pub fn set_object_acl(mut self, input: ::std::option::Option<crate::types::ObjectAcl>) -> Self {
         self.inner = self.inner.set_object_acl(input);
         self
     }
@@ -150,7 +162,7 @@ impl UpdateSMBFileShareFluentBuilder {
     }
     /// <p>A value that sets the write status of a file share. Set this value to <code>true</code> to set write status to read-only, otherwise set to <code>false</code>.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
-    pub fn set_read_only(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_read_only(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_read_only(input);
         self
     }
@@ -162,7 +174,7 @@ impl UpdateSMBFileShareFluentBuilder {
     }
     /// <p>A value that enables guessing of the MIME type for uploaded objects based on file extensions. Set this value to <code>true</code> to enable MIME type guessing, otherwise set to <code>false</code>. The default value is <code>true</code>.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
-    pub fn set_guess_mime_type_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_guess_mime_type_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_guess_mime_type_enabled(input);
         self
     }
@@ -178,7 +190,7 @@ impl UpdateSMBFileShareFluentBuilder {
     /// <p> <code>RequesterPays</code> is a configuration for the S3 bucket that backs the file share, so make sure that the configuration on the file share is the same as the S3 bucket configuration.</p>
     /// </note>
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
-    pub fn set_requester_pays(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_requester_pays(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_requester_pays(input);
         self
     }
@@ -192,7 +204,7 @@ impl UpdateSMBFileShareFluentBuilder {
     /// <p>Set this value to <code>true</code> to enable access control list (ACL) on the SMB file share. Set it to <code>false</code> to map file and directory permissions to the POSIX permissions.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/smb-acl.html">Using Microsoft Windows ACLs to control access to an SMB file share</a> in the <i>Storage Gateway User Guide</i>.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
-    pub fn set_smbacl_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_smbacl_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_smbacl_enabled(input);
         self
     }
@@ -202,7 +214,7 @@ impl UpdateSMBFileShareFluentBuilder {
         self
     }
     /// <p>The files and folders on this share will only be visible to users with read access.</p>
-    pub fn set_access_based_enumeration(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_access_based_enumeration(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_access_based_enumeration(input);
         self
     }
@@ -211,14 +223,17 @@ impl UpdateSMBFileShareFluentBuilder {
     /// To override the contents of this collection use [`set_admin_user_list`](Self::set_admin_user_list).
     ///
     /// <p>A list of users or groups in the Active Directory that have administrator rights to the file share. A group must be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to <code>ActiveDirectory</code>.</p>
-    pub fn admin_user_list(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn admin_user_list(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.admin_user_list(input.into());
         self
     }
     /// <p>A list of users or groups in the Active Directory that have administrator rights to the file share. A group must be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to <code>ActiveDirectory</code>.</p>
     pub fn set_admin_user_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_admin_user_list(input);
         self
@@ -228,14 +243,17 @@ impl UpdateSMBFileShareFluentBuilder {
     /// To override the contents of this collection use [`set_valid_user_list`](Self::set_valid_user_list).
     ///
     /// <p>A list of users or groups in the Active Directory that are allowed to access the file share. A group must be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to <code>ActiveDirectory</code>.</p>
-    pub fn valid_user_list(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn valid_user_list(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.valid_user_list(input.into());
         self
     }
     /// <p>A list of users or groups in the Active Directory that are allowed to access the file share. A group must be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to <code>ActiveDirectory</code>.</p>
     pub fn set_valid_user_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_valid_user_list(input);
         self
@@ -245,27 +263,33 @@ impl UpdateSMBFileShareFluentBuilder {
     /// To override the contents of this collection use [`set_invalid_user_list`](Self::set_invalid_user_list).
     ///
     /// <p>A list of users or groups in the Active Directory that are not allowed to access the file share. A group must be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to <code>ActiveDirectory</code>.</p>
-    pub fn invalid_user_list(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn invalid_user_list(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.invalid_user_list(input.into());
         self
     }
     /// <p>A list of users or groups in the Active Directory that are not allowed to access the file share. A group must be prefixed with the @ character. Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>@group1</code>, and <code>@DOMAIN\group1</code>. Can only be set if Authentication is set to <code>ActiveDirectory</code>.</p>
     pub fn set_invalid_user_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_invalid_user_list(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the storage used for audit logs.</p>
-    pub fn audit_destination_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn audit_destination_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.audit_destination_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the storage used for audit logs.</p>
     pub fn set_audit_destination_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_audit_destination_arn(input);
         self
@@ -278,7 +302,7 @@ impl UpdateSMBFileShareFluentBuilder {
     /// <p>The case of an object name in an Amazon S3 bucket. For <code>ClientSpecified</code>, the client determines the case sensitivity. For <code>CaseSensitive</code>, the gateway determines the case sensitivity. The default value is <code>ClientSpecified</code>.</p>
     pub fn set_case_sensitivity(
         mut self,
-        input: std::option::Option<crate::types::CaseSensitivity>,
+        input: ::std::option::Option<crate::types::CaseSensitivity>,
     ) -> Self {
         self.inner = self.inner.set_case_sensitivity(input);
         self
@@ -286,14 +310,20 @@ impl UpdateSMBFileShareFluentBuilder {
     /// <p>The name of the file share. Optional.</p> <note>
     /// <p> <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p>
     /// </note>
-    pub fn file_share_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn file_share_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.file_share_name(input.into());
         self
     }
     /// <p>The name of the file share. Optional.</p> <note>
     /// <p> <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>, or if an access point or access point alias is used.</p>
     /// </note>
-    pub fn set_file_share_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_file_share_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_file_share_name(input);
         self
     }
@@ -305,7 +335,7 @@ impl UpdateSMBFileShareFluentBuilder {
     /// <p>Specifies refresh cache information for the file share.</p>
     pub fn set_cache_attributes(
         mut self,
-        input: std::option::Option<crate::types::CacheAttributes>,
+        input: ::std::option::Option<crate::types::CacheAttributes>,
     ) -> Self {
         self.inner = self.inner.set_cache_attributes(input);
         self
@@ -317,7 +347,10 @@ impl UpdateSMBFileShareFluentBuilder {
     /// <p> <code>{\"Upload\": {\"SettlingTimeInSeconds\": 60}}</code> </p>
     /// <p>The following example sets <code>NotificationPolicy</code> off.</p>
     /// <p> <code>{}</code> </p>
-    pub fn notification_policy(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn notification_policy(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.notification_policy(input.into());
         self
     }
@@ -330,7 +363,7 @@ impl UpdateSMBFileShareFluentBuilder {
     /// <p> <code>{}</code> </p>
     pub fn set_notification_policy(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_notification_policy(input);
         self
@@ -347,7 +380,7 @@ impl UpdateSMBFileShareFluentBuilder {
     /// <p>Enabling opportunistic locking on case-sensitive shares is not recommended for workloads that involve access to files with the same name in different case.</p>
     /// </note>
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
-    pub fn set_oplocks_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_oplocks_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_oplocks_enabled(input);
         self
     }

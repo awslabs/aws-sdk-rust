@@ -2,36 +2,36 @@
 
 /// <p>Provides user and group information for <a href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">user context filtering</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Principal {
     /// <p>The name of the user or group.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of principal.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::PrincipalType>,
+    pub r#type: ::std::option::Option<crate::types::PrincipalType>,
     /// <p>Whether to allow or deny document access to the principal.</p>
     #[doc(hidden)]
-    pub access: std::option::Option<crate::types::ReadAccessType>,
+    pub access: ::std::option::Option<crate::types::ReadAccessType>,
     /// <p>The identifier of the data source the principal should access documents from.</p>
     #[doc(hidden)]
-    pub data_source_id: std::option::Option<std::string::String>,
+    pub data_source_id: ::std::option::Option<::std::string::String>,
 }
 impl Principal {
     /// <p>The name of the user or group.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The type of principal.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::PrincipalType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::PrincipalType> {
         self.r#type.as_ref()
     }
     /// <p>Whether to allow or deny document access to the principal.</p>
-    pub fn access(&self) -> std::option::Option<&crate::types::ReadAccessType> {
+    pub fn access(&self) -> ::std::option::Option<&crate::types::ReadAccessType> {
         self.access.as_ref()
     }
     /// <p>The identifier of the data source the principal should access documents from.</p>
-    pub fn data_source_id(&self) -> std::option::Option<&str> {
+    pub fn data_source_id(&self) -> ::std::option::Option<&str> {
         self.data_source_id.as_deref()
     }
 }
@@ -44,51 +44,62 @@ impl Principal {
 
 /// A builder for [`Principal`](crate::types::Principal).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PrincipalBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) r#type: std::option::Option<crate::types::PrincipalType>,
-    pub(crate) access: std::option::Option<crate::types::ReadAccessType>,
-    pub(crate) data_source_id: std::option::Option<std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::PrincipalType>,
+    pub(crate) access: ::std::option::Option<crate::types::ReadAccessType>,
+    pub(crate) data_source_id: ::std::option::Option<::std::string::String>,
 }
 impl PrincipalBuilder {
     /// <p>The name of the user or group.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the user or group.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The type of principal.</p>
     pub fn r#type(mut self, input: crate::types::PrincipalType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of principal.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::PrincipalType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::PrincipalType>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>Whether to allow or deny document access to the principal.</p>
     pub fn access(mut self, input: crate::types::ReadAccessType) -> Self {
-        self.access = Some(input);
+        self.access = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether to allow or deny document access to the principal.</p>
-    pub fn set_access(mut self, input: std::option::Option<crate::types::ReadAccessType>) -> Self {
+    pub fn set_access(
+        mut self,
+        input: ::std::option::Option<crate::types::ReadAccessType>,
+    ) -> Self {
         self.access = input;
         self
     }
     /// <p>The identifier of the data source the principal should access documents from.</p>
-    pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.data_source_id = Some(input.into());
+    pub fn data_source_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.data_source_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the data source the principal should access documents from.</p>
-    pub fn set_data_source_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_data_source_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.data_source_id = input;
         self
     }

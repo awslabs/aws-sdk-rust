@@ -2,22 +2,22 @@
 
 /// <p>A facet.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SchemaFacet {
     /// <p>The ARN of the schema that contains the facet with no minor component. See <code>arns</code> and <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_inplaceschemaupgrade.html">In-Place Schema Upgrade</a> for a description of when to provide minor versions. If this value is set, FacetName must also be set.</p>
     #[doc(hidden)]
-    pub schema_arn: std::option::Option<std::string::String>,
+    pub schema_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the facet. If this value is set, SchemaArn must also be set.</p>
     #[doc(hidden)]
-    pub facet_name: std::option::Option<std::string::String>,
+    pub facet_name: ::std::option::Option<::std::string::String>,
 }
 impl SchemaFacet {
     /// <p>The ARN of the schema that contains the facet with no minor component. See <code>arns</code> and <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_inplaceschemaupgrade.html">In-Place Schema Upgrade</a> for a description of when to provide minor versions. If this value is set, FacetName must also be set.</p>
-    pub fn schema_arn(&self) -> std::option::Option<&str> {
+    pub fn schema_arn(&self) -> ::std::option::Option<&str> {
         self.schema_arn.as_deref()
     }
     /// <p>The name of the facet. If this value is set, SchemaArn must also be set.</p>
-    pub fn facet_name(&self) -> std::option::Option<&str> {
+    pub fn facet_name(&self) -> ::std::option::Option<&str> {
         self.facet_name.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl SchemaFacet {
 
 /// A builder for [`SchemaFacet`](crate::types::SchemaFacet).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SchemaFacetBuilder {
-    pub(crate) schema_arn: std::option::Option<std::string::String>,
-    pub(crate) facet_name: std::option::Option<std::string::String>,
+    pub(crate) schema_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) facet_name: ::std::option::Option<::std::string::String>,
 }
 impl SchemaFacetBuilder {
     /// <p>The ARN of the schema that contains the facet with no minor component. See <code>arns</code> and <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_inplaceschemaupgrade.html">In-Place Schema Upgrade</a> for a description of when to provide minor versions. If this value is set, FacetName must also be set.</p>
-    pub fn schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.schema_arn = Some(input.into());
+    pub fn schema_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.schema_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the schema that contains the facet with no minor component. See <code>arns</code> and <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_inplaceschemaupgrade.html">In-Place Schema Upgrade</a> for a description of when to provide minor versions. If this value is set, FacetName must also be set.</p>
-    pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_schema_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schema_arn = input;
         self
     }
     /// <p>The name of the facet. If this value is set, SchemaArn must also be set.</p>
-    pub fn facet_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.facet_name = Some(input.into());
+    pub fn facet_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.facet_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the facet. If this value is set, SchemaArn must also be set.</p>
-    pub fn set_facet_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_facet_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.facet_name = input;
         self
     }

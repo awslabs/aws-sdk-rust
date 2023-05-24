@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteFilter`](crate::operation::delete_filter::builders::DeleteFilterFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`detector_id(impl Into<String>)`](crate::operation::delete_filter::builders::DeleteFilterFluentBuilder::detector_id) / [`set_detector_id(Option<String>)`](crate::operation::delete_filter::builders::DeleteFilterFluentBuilder::set_detector_id): <p>The unique ID of the detector that the filter is associated with.</p>
-    ///   - [`filter_name(impl Into<String>)`](crate::operation::delete_filter::builders::DeleteFilterFluentBuilder::filter_name) / [`set_filter_name(Option<String>)`](crate::operation::delete_filter::builders::DeleteFilterFluentBuilder::set_filter_name): <p>The name of the filter that you want to delete.</p>
+    ///   - [`detector_id(impl ::std::convert::Into<String>)`](crate::operation::delete_filter::builders::DeleteFilterFluentBuilder::detector_id) / [`set_detector_id(Option<String>)`](crate::operation::delete_filter::builders::DeleteFilterFluentBuilder::set_detector_id): <p>The unique ID of the detector that the filter is associated with.</p>
+    ///   - [`filter_name(impl ::std::convert::Into<String>)`](crate::operation::delete_filter::builders::DeleteFilterFluentBuilder::filter_name) / [`set_filter_name(Option<String>)`](crate::operation::delete_filter::builders::DeleteFilterFluentBuilder::set_filter_name): <p>The name of the filter that you want to delete.</p>
     /// - On success, responds with [`DeleteFilterOutput`](crate::operation::delete_filter::DeleteFilterOutput)
     /// - On failure, responds with [`SdkError<DeleteFilterError>`](crate::operation::delete_filter::DeleteFilterError)
     pub fn delete_filter(

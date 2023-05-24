@@ -2,22 +2,22 @@
 
 /// <p>The optional clustering column portion of your primary key determines how the data is clustered and sorted within each partition.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClusteringKey {
     /// <p>The name(s) of the clustering column(s).</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>Sets the ascendant (<code>ASC</code>) or descendant (<code>DESC</code>) order modifier.</p>
     #[doc(hidden)]
-    pub order_by: std::option::Option<crate::types::SortOrder>,
+    pub order_by: ::std::option::Option<crate::types::SortOrder>,
 }
 impl ClusteringKey {
     /// <p>The name(s) of the clustering column(s).</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>Sets the ascendant (<code>ASC</code>) or descendant (<code>DESC</code>) order modifier.</p>
-    pub fn order_by(&self) -> std::option::Option<&crate::types::SortOrder> {
+    pub fn order_by(&self) -> ::std::option::Option<&crate::types::SortOrder> {
         self.order_by.as_ref()
     }
 }
@@ -30,29 +30,31 @@ impl ClusteringKey {
 
 /// A builder for [`ClusteringKey`](crate::types::ClusteringKey).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ClusteringKeyBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) order_by: std::option::Option<crate::types::SortOrder>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) order_by: ::std::option::Option<crate::types::SortOrder>,
 }
 impl ClusteringKeyBuilder {
     /// <p>The name(s) of the clustering column(s).</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name(s) of the clustering column(s).</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>Sets the ascendant (<code>ASC</code>) or descendant (<code>DESC</code>) order modifier.</p>
     pub fn order_by(mut self, input: crate::types::SortOrder) -> Self {
-        self.order_by = Some(input);
+        self.order_by = ::std::option::Option::Some(input);
         self
     }
     /// <p>Sets the ascendant (<code>ASC</code>) or descendant (<code>DESC</code>) order modifier.</p>
-    pub fn set_order_by(mut self, input: std::option::Option<crate::types::SortOrder>) -> Self {
+    pub fn set_order_by(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.order_by = input;
         self
     }

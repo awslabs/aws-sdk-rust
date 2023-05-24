@@ -2,24 +2,24 @@
 
 /// <p>The configuration for a baseline model bias job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModelBiasBaselineConfig {
     /// <p>The name of the baseline model bias job.</p>
     #[doc(hidden)]
-    pub baselining_job_name: std::option::Option<std::string::String>,
+    pub baselining_job_name: ::std::option::Option<::std::string::String>,
     /// <p>The constraints resource for a monitoring job.</p>
     #[doc(hidden)]
-    pub constraints_resource: std::option::Option<crate::types::MonitoringConstraintsResource>,
+    pub constraints_resource: ::std::option::Option<crate::types::MonitoringConstraintsResource>,
 }
 impl ModelBiasBaselineConfig {
     /// <p>The name of the baseline model bias job.</p>
-    pub fn baselining_job_name(&self) -> std::option::Option<&str> {
+    pub fn baselining_job_name(&self) -> ::std::option::Option<&str> {
         self.baselining_job_name.as_deref()
     }
     /// <p>The constraints resource for a monitoring job.</p>
     pub fn constraints_resource(
         &self,
-    ) -> std::option::Option<&crate::types::MonitoringConstraintsResource> {
+    ) -> ::std::option::Option<&crate::types::MonitoringConstraintsResource> {
         self.constraints_resource.as_ref()
     }
 }
@@ -32,22 +32,27 @@ impl ModelBiasBaselineConfig {
 
 /// A builder for [`ModelBiasBaselineConfig`](crate::types::ModelBiasBaselineConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ModelBiasBaselineConfigBuilder {
-    pub(crate) baselining_job_name: std::option::Option<std::string::String>,
+    pub(crate) baselining_job_name: ::std::option::Option<::std::string::String>,
     pub(crate) constraints_resource:
-        std::option::Option<crate::types::MonitoringConstraintsResource>,
+        ::std::option::Option<crate::types::MonitoringConstraintsResource>,
 }
 impl ModelBiasBaselineConfigBuilder {
     /// <p>The name of the baseline model bias job.</p>
-    pub fn baselining_job_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.baselining_job_name = Some(input.into());
+    pub fn baselining_job_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.baselining_job_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the baseline model bias job.</p>
     pub fn set_baselining_job_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.baselining_job_name = input;
         self
@@ -57,13 +62,13 @@ impl ModelBiasBaselineConfigBuilder {
         mut self,
         input: crate::types::MonitoringConstraintsResource,
     ) -> Self {
-        self.constraints_resource = Some(input);
+        self.constraints_resource = ::std::option::Option::Some(input);
         self
     }
     /// <p>The constraints resource for a monitoring job.</p>
     pub fn set_constraints_resource(
         mut self,
-        input: std::option::Option<crate::types::MonitoringConstraintsResource>,
+        input: ::std::option::Option<crate::types::MonitoringConstraintsResource>,
     ) -> Self {
         self.constraints_resource = input;
         self

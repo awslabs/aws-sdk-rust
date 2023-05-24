@@ -2,22 +2,22 @@
 
 /// <p>Provides additional context for the value of <code>Compliance.Status</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StatusReason {
     /// <p>A code that represents a reason for the control status. For the list of status reason codes and their meanings, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-results.html#securityhub-standards-results-asff">Standards-related information in the ASFF</a> in the <i>Security Hub User Guide</i>. </p>
     #[doc(hidden)]
-    pub reason_code: std::option::Option<std::string::String>,
+    pub reason_code: ::std::option::Option<::std::string::String>,
     /// <p>The corresponding description for the status reason code.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
 }
 impl StatusReason {
     /// <p>A code that represents a reason for the control status. For the list of status reason codes and their meanings, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-results.html#securityhub-standards-results-asff">Standards-related information in the ASFF</a> in the <i>Security Hub User Guide</i>. </p>
-    pub fn reason_code(&self) -> std::option::Option<&str> {
+    pub fn reason_code(&self) -> ::std::option::Option<&str> {
         self.reason_code.as_deref()
     }
     /// <p>The corresponding description for the status reason code.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl StatusReason {
 
 /// A builder for [`StatusReason`](crate::types::StatusReason).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StatusReasonBuilder {
-    pub(crate) reason_code: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
+    pub(crate) reason_code: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
 }
 impl StatusReasonBuilder {
     /// <p>A code that represents a reason for the control status. For the list of status reason codes and their meanings, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-results.html#securityhub-standards-results-asff">Standards-related information in the ASFF</a> in the <i>Security Hub User Guide</i>. </p>
-    pub fn reason_code(mut self, input: impl Into<std::string::String>) -> Self {
-        self.reason_code = Some(input.into());
+    pub fn reason_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.reason_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A code that represents a reason for the control status. For the list of status reason codes and their meanings, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-results.html#securityhub-standards-results-asff">Standards-related information in the ASFF</a> in the <i>Security Hub User Guide</i>. </p>
-    pub fn set_reason_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_reason_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reason_code = input;
         self
     }
     /// <p>The corresponding description for the status reason code.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The corresponding description for the status reason code.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }

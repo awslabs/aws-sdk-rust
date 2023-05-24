@@ -2,23 +2,23 @@
 
 /// <p>The following data is returned in JSON format by the service.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SendBulkEmailOutput {
     /// <p>One object per intended recipient. Check each response object and retry any messages with a failure status.</p>
     #[doc(hidden)]
     pub bulk_email_entry_results:
-        std::option::Option<std::vec::Vec<crate::types::BulkEmailEntryResult>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::BulkEmailEntryResult>>,
     _request_id: Option<String>,
 }
 impl SendBulkEmailOutput {
     /// <p>One object per intended recipient. Check each response object and retry any messages with a failure status.</p>
     pub fn bulk_email_entry_results(
         &self,
-    ) -> std::option::Option<&[crate::types::BulkEmailEntryResult]> {
+    ) -> ::std::option::Option<&[crate::types::BulkEmailEntryResult]> {
         self.bulk_email_entry_results.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for SendBulkEmailOutput {
+impl ::aws_http::request_id::RequestId for SendBulkEmailOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -32,10 +32,12 @@ impl SendBulkEmailOutput {
 
 /// A builder for [`SendBulkEmailOutput`](crate::operation::send_bulk_email::SendBulkEmailOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SendBulkEmailOutputBuilder {
     pub(crate) bulk_email_entry_results:
-        std::option::Option<std::vec::Vec<crate::types::BulkEmailEntryResult>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::BulkEmailEntryResult>>,
     _request_id: Option<String>,
 }
 impl SendBulkEmailOutputBuilder {
@@ -47,13 +49,13 @@ impl SendBulkEmailOutputBuilder {
     pub fn bulk_email_entry_results(mut self, input: crate::types::BulkEmailEntryResult) -> Self {
         let mut v = self.bulk_email_entry_results.unwrap_or_default();
         v.push(input);
-        self.bulk_email_entry_results = Some(v);
+        self.bulk_email_entry_results = ::std::option::Option::Some(v);
         self
     }
     /// <p>One object per intended recipient. Check each response object and retry any messages with a failure status.</p>
     pub fn set_bulk_email_entry_results(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::BulkEmailEntryResult>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::BulkEmailEntryResult>>,
     ) -> Self {
         self.bulk_email_entry_results = input;
         self

@@ -2,7 +2,7 @@
 
 /// <p>Used to specify a stack or deployment command.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeploymentCommand {
     /// <p>Specifies the operation. You can specify only one command.</p>
     /// <p>For stacks, the following commands are available:</p>
@@ -24,7 +24,7 @@ pub struct DeploymentCommand {
     /// <li> <p> <code>undeploy</code>: Undeploy the app.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub name: std::option::Option<crate::types::DeploymentCommandName>,
+    pub name: ::std::option::Option<crate::types::DeploymentCommandName>,
     /// <p>The arguments of those commands that take arguments. It should be set to a JSON object with the following format:</p>
     /// <p> <code>{"arg_name1" : ["value1", "value2", ...], "arg_name2" : ["value1", "value2", ...], ...}</code> </p>
     /// <p>The <code>update_dependencies</code> command takes two arguments:</p>
@@ -35,8 +35,8 @@ pub struct DeploymentCommand {
     /// <p>For example, to upgrade an instance to Amazon Linux 2016.09, set <code>Args</code> to the following.</p>
     /// <p> <code> { "upgrade_os_to":["Amazon Linux 2016.09"], "allow_reboot":["true"] } </code> </p>
     #[doc(hidden)]
-    pub args: std::option::Option<
-        std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    pub args: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
     >,
 }
 impl DeploymentCommand {
@@ -59,7 +59,7 @@ impl DeploymentCommand {
     /// <li> <p> <code>restart</code>: Restart the app's web or application server.</p> </li>
     /// <li> <p> <code>undeploy</code>: Undeploy the app.</p> </li>
     /// </ul>
-    pub fn name(&self) -> std::option::Option<&crate::types::DeploymentCommandName> {
+    pub fn name(&self) -> ::std::option::Option<&crate::types::DeploymentCommandName> {
         self.name.as_ref()
     }
     /// <p>The arguments of those commands that take arguments. It should be set to a JSON object with the following format:</p>
@@ -73,8 +73,8 @@ impl DeploymentCommand {
     /// <p> <code> { "upgrade_os_to":["Amazon Linux 2016.09"], "allow_reboot":["true"] } </code> </p>
     pub fn args(
         &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
     > {
         self.args.as_ref()
     }
@@ -88,11 +88,13 @@ impl DeploymentCommand {
 
 /// A builder for [`DeploymentCommand`](crate::types::DeploymentCommand).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeploymentCommandBuilder {
-    pub(crate) name: std::option::Option<crate::types::DeploymentCommandName>,
-    pub(crate) args: std::option::Option<
-        std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    pub(crate) name: ::std::option::Option<crate::types::DeploymentCommandName>,
+    pub(crate) args: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
     >,
 }
 impl DeploymentCommandBuilder {
@@ -116,7 +118,7 @@ impl DeploymentCommandBuilder {
     /// <li> <p> <code>undeploy</code>: Undeploy the app.</p> </li>
     /// </ul>
     pub fn name(mut self, input: crate::types::DeploymentCommandName) -> Self {
-        self.name = Some(input);
+        self.name = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the operation. You can specify only one command.</p>
@@ -140,7 +142,7 @@ impl DeploymentCommandBuilder {
     /// </ul>
     pub fn set_name(
         mut self,
-        input: std::option::Option<crate::types::DeploymentCommandName>,
+        input: ::std::option::Option<crate::types::DeploymentCommandName>,
     ) -> Self {
         self.name = input;
         self
@@ -160,12 +162,12 @@ impl DeploymentCommandBuilder {
     /// <p> <code> { "upgrade_os_to":["Amazon Linux 2016.09"], "allow_reboot":["true"] } </code> </p>
     pub fn args(
         mut self,
-        k: impl Into<std::string::String>,
-        v: std::vec::Vec<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: ::std::vec::Vec<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.args.unwrap_or_default();
         hash_map.insert(k.into(), v);
-        self.args = Some(hash_map);
+        self.args = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The arguments of those commands that take arguments. It should be set to a JSON object with the following format:</p>
@@ -179,8 +181,11 @@ impl DeploymentCommandBuilder {
     /// <p> <code> { "upgrade_os_to":["Amazon Linux 2016.09"], "allow_reboot":["true"] } </code> </p>
     pub fn set_args(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<
+                ::std::string::String,
+                ::std::vec::Vec<::std::string::String>,
+            >,
         >,
     ) -> Self {
         self.args = input;

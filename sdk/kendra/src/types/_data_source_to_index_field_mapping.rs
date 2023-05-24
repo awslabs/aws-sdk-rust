@@ -2,29 +2,29 @@
 
 /// <p>Maps a column or attribute in the data source to an index field. You must first create the fields in the index using the <code>UpdateIndex</code> API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataSourceToIndexFieldMapping {
     /// <p>The name of the column or attribute in the data source.</p>
     #[doc(hidden)]
-    pub data_source_field_name: std::option::Option<std::string::String>,
+    pub data_source_field_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of data stored in the column or attribute.</p>
     #[doc(hidden)]
-    pub date_field_format: std::option::Option<std::string::String>,
+    pub date_field_format: ::std::option::Option<::std::string::String>,
     /// <p>The name of the field in the index.</p>
     #[doc(hidden)]
-    pub index_field_name: std::option::Option<std::string::String>,
+    pub index_field_name: ::std::option::Option<::std::string::String>,
 }
 impl DataSourceToIndexFieldMapping {
     /// <p>The name of the column or attribute in the data source.</p>
-    pub fn data_source_field_name(&self) -> std::option::Option<&str> {
+    pub fn data_source_field_name(&self) -> ::std::option::Option<&str> {
         self.data_source_field_name.as_deref()
     }
     /// <p>The type of data stored in the column or attribute.</p>
-    pub fn date_field_format(&self) -> std::option::Option<&str> {
+    pub fn date_field_format(&self) -> ::std::option::Option<&str> {
         self.date_field_format.as_deref()
     }
     /// <p>The name of the field in the index.</p>
-    pub fn index_field_name(&self) -> std::option::Option<&str> {
+    pub fn index_field_name(&self) -> ::std::option::Option<&str> {
         self.index_field_name.as_deref()
     }
 }
@@ -37,46 +37,60 @@ impl DataSourceToIndexFieldMapping {
 
 /// A builder for [`DataSourceToIndexFieldMapping`](crate::types::DataSourceToIndexFieldMapping).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DataSourceToIndexFieldMappingBuilder {
-    pub(crate) data_source_field_name: std::option::Option<std::string::String>,
-    pub(crate) date_field_format: std::option::Option<std::string::String>,
-    pub(crate) index_field_name: std::option::Option<std::string::String>,
+    pub(crate) data_source_field_name: ::std::option::Option<::std::string::String>,
+    pub(crate) date_field_format: ::std::option::Option<::std::string::String>,
+    pub(crate) index_field_name: ::std::option::Option<::std::string::String>,
 }
 impl DataSourceToIndexFieldMappingBuilder {
     /// <p>The name of the column or attribute in the data source.</p>
-    pub fn data_source_field_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.data_source_field_name = Some(input.into());
+    pub fn data_source_field_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.data_source_field_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the column or attribute in the data source.</p>
     pub fn set_data_source_field_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.data_source_field_name = input;
         self
     }
     /// <p>The type of data stored in the column or attribute.</p>
-    pub fn date_field_format(mut self, input: impl Into<std::string::String>) -> Self {
-        self.date_field_format = Some(input.into());
+    pub fn date_field_format(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.date_field_format = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of data stored in the column or attribute.</p>
     pub fn set_date_field_format(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.date_field_format = input;
         self
     }
     /// <p>The name of the field in the index.</p>
-    pub fn index_field_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.index_field_name = Some(input.into());
+    pub fn index_field_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.index_field_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the field in the index.</p>
-    pub fn set_index_field_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_index_field_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.index_field_name = input;
         self
     }

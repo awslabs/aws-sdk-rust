@@ -2,11 +2,11 @@
 
 /// <p>The structure of a user account associated with a permission group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UserByPermissionGroup {
     /// <p>The unique identifier for the user.</p>
     #[doc(hidden)]
-    pub user_id: std::option::Option<std::string::String>,
+    pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the user account. </p>
     /// <ul>
     /// <li> <p> <code>CREATING</code> – The user account creation is in progress.</p> </li>
@@ -14,33 +14,33 @@ pub struct UserByPermissionGroup {
     /// <li> <p> <code>DISABLED</code> – The user account is currently inactive.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::UserStatus>,
+    pub status: ::std::option::Option<crate::types::UserStatus>,
     /// <p>The first name of the user.</p>
     #[doc(hidden)]
-    pub first_name: std::option::Option<std::string::String>,
+    pub first_name: ::std::option::Option<::std::string::String>,
     /// <p>The last name of the user.</p>
     #[doc(hidden)]
-    pub last_name: std::option::Option<std::string::String>,
+    pub last_name: ::std::option::Option<::std::string::String>,
     /// <p>The email address of the user. The email address serves as a unique identifier for each user and cannot be changed after it's created.</p>
     #[doc(hidden)]
-    pub email_address: std::option::Option<std::string::String>,
+    pub email_address: ::std::option::Option<::std::string::String>,
     /// <p> Indicates the type of user.</p>
     /// <ul>
     /// <li> <p> <code>SUPER_USER</code> – A user with permission to all the functionality and data in FinSpace.</p> </li>
     /// <li> <p> <code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions by adding them to a permission group.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::UserType>,
+    pub r#type: ::std::option::Option<crate::types::UserType>,
     /// <p>Indicates whether the user can access FinSpace API operations.</p>
     /// <ul>
     /// <li> <p> <code>ENABLED</code> – The user has permissions to use the API operations.</p> </li>
     /// <li> <p> <code>DISABLED</code> – The user does not have permissions to use any API operations.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub api_access: std::option::Option<crate::types::ApiAccess>,
+    pub api_access: ::std::option::Option<crate::types::ApiAccess>,
     /// <p>The IAM ARN identifier that is attached to FinSpace API calls.</p>
     #[doc(hidden)]
-    pub api_access_principal_arn: std::option::Option<std::string::String>,
+    pub api_access_principal_arn: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the status of the user account within a permission group.</p>
     /// <ul>
     /// <li> <p> <code>ADDITION_IN_PROGRESS</code> – The user account is currently being added to the permission group.</p> </li>
@@ -48,11 +48,11 @@ pub struct UserByPermissionGroup {
     /// <li> <p> <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the permission group.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub membership_status: std::option::Option<crate::types::PermissionGroupMembershipStatus>,
+    pub membership_status: ::std::option::Option<crate::types::PermissionGroupMembershipStatus>,
 }
 impl UserByPermissionGroup {
     /// <p>The unique identifier for the user.</p>
-    pub fn user_id(&self) -> std::option::Option<&str> {
+    pub fn user_id(&self) -> ::std::option::Option<&str> {
         self.user_id.as_deref()
     }
     /// <p>The current status of the user account. </p>
@@ -61,19 +61,19 @@ impl UserByPermissionGroup {
     /// <li> <p> <code>ENABLED</code> – The user account is created and is currently active.</p> </li>
     /// <li> <p> <code>DISABLED</code> – The user account is currently inactive.</p> </li>
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::types::UserStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::UserStatus> {
         self.status.as_ref()
     }
     /// <p>The first name of the user.</p>
-    pub fn first_name(&self) -> std::option::Option<&str> {
+    pub fn first_name(&self) -> ::std::option::Option<&str> {
         self.first_name.as_deref()
     }
     /// <p>The last name of the user.</p>
-    pub fn last_name(&self) -> std::option::Option<&str> {
+    pub fn last_name(&self) -> ::std::option::Option<&str> {
         self.last_name.as_deref()
     }
     /// <p>The email address of the user. The email address serves as a unique identifier for each user and cannot be changed after it's created.</p>
-    pub fn email_address(&self) -> std::option::Option<&str> {
+    pub fn email_address(&self) -> ::std::option::Option<&str> {
         self.email_address.as_deref()
     }
     /// <p> Indicates the type of user.</p>
@@ -81,7 +81,7 @@ impl UserByPermissionGroup {
     /// <li> <p> <code>SUPER_USER</code> – A user with permission to all the functionality and data in FinSpace.</p> </li>
     /// <li> <p> <code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions by adding them to a permission group.</p> </li>
     /// </ul>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::UserType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::UserType> {
         self.r#type.as_ref()
     }
     /// <p>Indicates whether the user can access FinSpace API operations.</p>
@@ -89,11 +89,11 @@ impl UserByPermissionGroup {
     /// <li> <p> <code>ENABLED</code> – The user has permissions to use the API operations.</p> </li>
     /// <li> <p> <code>DISABLED</code> – The user does not have permissions to use any API operations.</p> </li>
     /// </ul>
-    pub fn api_access(&self) -> std::option::Option<&crate::types::ApiAccess> {
+    pub fn api_access(&self) -> ::std::option::Option<&crate::types::ApiAccess> {
         self.api_access.as_ref()
     }
     /// <p>The IAM ARN identifier that is attached to FinSpace API calls.</p>
-    pub fn api_access_principal_arn(&self) -> std::option::Option<&str> {
+    pub fn api_access_principal_arn(&self) -> ::std::option::Option<&str> {
         self.api_access_principal_arn.as_deref()
     }
     /// <p>Indicates the status of the user account within a permission group.</p>
@@ -104,12 +104,12 @@ impl UserByPermissionGroup {
     /// </ul>
     pub fn membership_status(
         &self,
-    ) -> std::option::Option<&crate::types::PermissionGroupMembershipStatus> {
+    ) -> ::std::option::Option<&crate::types::PermissionGroupMembershipStatus> {
         self.membership_status.as_ref()
     }
 }
-impl std::fmt::Debug for UserByPermissionGroup {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for UserByPermissionGroup {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UserByPermissionGroup");
         formatter.field("user_id", &self.user_id);
         formatter.field("status", &self.status);
@@ -132,27 +132,27 @@ impl UserByPermissionGroup {
 
 /// A builder for [`UserByPermissionGroup`](crate::types::UserByPermissionGroup).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct UserByPermissionGroupBuilder {
-    pub(crate) user_id: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::UserStatus>,
-    pub(crate) first_name: std::option::Option<std::string::String>,
-    pub(crate) last_name: std::option::Option<std::string::String>,
-    pub(crate) email_address: std::option::Option<std::string::String>,
-    pub(crate) r#type: std::option::Option<crate::types::UserType>,
-    pub(crate) api_access: std::option::Option<crate::types::ApiAccess>,
-    pub(crate) api_access_principal_arn: std::option::Option<std::string::String>,
+    pub(crate) user_id: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::UserStatus>,
+    pub(crate) first_name: ::std::option::Option<::std::string::String>,
+    pub(crate) last_name: ::std::option::Option<::std::string::String>,
+    pub(crate) email_address: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::UserType>,
+    pub(crate) api_access: ::std::option::Option<crate::types::ApiAccess>,
+    pub(crate) api_access_principal_arn: ::std::option::Option<::std::string::String>,
     pub(crate) membership_status:
-        std::option::Option<crate::types::PermissionGroupMembershipStatus>,
+        ::std::option::Option<crate::types::PermissionGroupMembershipStatus>,
 }
 impl UserByPermissionGroupBuilder {
     /// <p>The unique identifier for the user.</p>
-    pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.user_id = Some(input.into());
+    pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.user_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the user.</p>
-    pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_id = input;
         self
     }
@@ -163,7 +163,7 @@ impl UserByPermissionGroupBuilder {
     /// <li> <p> <code>DISABLED</code> – The user account is currently inactive.</p> </li>
     /// </ul>
     pub fn status(mut self, input: crate::types::UserStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current status of the user account. </p>
@@ -172,37 +172,43 @@ impl UserByPermissionGroupBuilder {
     /// <li> <p> <code>ENABLED</code> – The user account is created and is currently active.</p> </li>
     /// <li> <p> <code>DISABLED</code> – The user account is currently inactive.</p> </li>
     /// </ul>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::UserStatus>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::UserStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>The first name of the user.</p>
-    pub fn first_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.first_name = Some(input.into());
+    pub fn first_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.first_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The first name of the user.</p>
-    pub fn set_first_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_first_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.first_name = input;
         self
     }
     /// <p>The last name of the user.</p>
-    pub fn last_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.last_name = Some(input.into());
+    pub fn last_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.last_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The last name of the user.</p>
-    pub fn set_last_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_last_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_name = input;
         self
     }
     /// <p>The email address of the user. The email address serves as a unique identifier for each user and cannot be changed after it's created.</p>
-    pub fn email_address(mut self, input: impl Into<std::string::String>) -> Self {
-        self.email_address = Some(input.into());
+    pub fn email_address(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.email_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The email address of the user. The email address serves as a unique identifier for each user and cannot be changed after it's created.</p>
-    pub fn set_email_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_email_address(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.email_address = input;
         self
     }
@@ -212,7 +218,7 @@ impl UserByPermissionGroupBuilder {
     /// <li> <p> <code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions by adding them to a permission group.</p> </li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::UserType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p> Indicates the type of user.</p>
@@ -220,7 +226,7 @@ impl UserByPermissionGroupBuilder {
     /// <li> <p> <code>SUPER_USER</code> – A user with permission to all the functionality and data in FinSpace.</p> </li>
     /// <li> <p> <code>APP_USER</code> – A user with specific permissions in FinSpace. The users are assigned permissions by adding them to a permission group.</p> </li>
     /// </ul>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::UserType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::UserType>) -> Self {
         self.r#type = input;
         self
     }
@@ -230,7 +236,7 @@ impl UserByPermissionGroupBuilder {
     /// <li> <p> <code>DISABLED</code> – The user does not have permissions to use any API operations.</p> </li>
     /// </ul>
     pub fn api_access(mut self, input: crate::types::ApiAccess) -> Self {
-        self.api_access = Some(input);
+        self.api_access = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether the user can access FinSpace API operations.</p>
@@ -238,19 +244,22 @@ impl UserByPermissionGroupBuilder {
     /// <li> <p> <code>ENABLED</code> – The user has permissions to use the API operations.</p> </li>
     /// <li> <p> <code>DISABLED</code> – The user does not have permissions to use any API operations.</p> </li>
     /// </ul>
-    pub fn set_api_access(mut self, input: std::option::Option<crate::types::ApiAccess>) -> Self {
+    pub fn set_api_access(mut self, input: ::std::option::Option<crate::types::ApiAccess>) -> Self {
         self.api_access = input;
         self
     }
     /// <p>The IAM ARN identifier that is attached to FinSpace API calls.</p>
-    pub fn api_access_principal_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.api_access_principal_arn = Some(input.into());
+    pub fn api_access_principal_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.api_access_principal_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IAM ARN identifier that is attached to FinSpace API calls.</p>
     pub fn set_api_access_principal_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.api_access_principal_arn = input;
         self
@@ -265,7 +274,7 @@ impl UserByPermissionGroupBuilder {
         mut self,
         input: crate::types::PermissionGroupMembershipStatus,
     ) -> Self {
-        self.membership_status = Some(input);
+        self.membership_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates the status of the user account within a permission group.</p>
@@ -276,7 +285,7 @@ impl UserByPermissionGroupBuilder {
     /// </ul>
     pub fn set_membership_status(
         mut self,
-        input: std::option::Option<crate::types::PermissionGroupMembershipStatus>,
+        input: ::std::option::Option<crate::types::PermissionGroupMembershipStatus>,
     ) -> Self {
         self.membership_status = input;
         self
@@ -296,8 +305,8 @@ impl UserByPermissionGroupBuilder {
         }
     }
 }
-impl std::fmt::Debug for UserByPermissionGroupBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for UserByPermissionGroupBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UserByPermissionGroupBuilder");
         formatter.field("user_id", &self.user_id);
         formatter.field("status", &self.status);

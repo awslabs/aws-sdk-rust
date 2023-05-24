@@ -2,20 +2,20 @@
 
 /// <p>The output for the <code>DescribeDeliveryChannels</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDeliveryChannelsOutput {
     /// <p>A list that contains the descriptions of the specified delivery channel.</p>
     #[doc(hidden)]
-    pub delivery_channels: std::option::Option<std::vec::Vec<crate::types::DeliveryChannel>>,
+    pub delivery_channels: ::std::option::Option<::std::vec::Vec<crate::types::DeliveryChannel>>,
     _request_id: Option<String>,
 }
 impl DescribeDeliveryChannelsOutput {
     /// <p>A list that contains the descriptions of the specified delivery channel.</p>
-    pub fn delivery_channels(&self) -> std::option::Option<&[crate::types::DeliveryChannel]> {
+    pub fn delivery_channels(&self) -> ::std::option::Option<&[crate::types::DeliveryChannel]> {
         self.delivery_channels.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeDeliveryChannelsOutput {
+impl ::aws_http::request_id::RequestId for DescribeDeliveryChannelsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -31,9 +31,12 @@ impl DescribeDeliveryChannelsOutput {
 
 /// A builder for [`DescribeDeliveryChannelsOutput`](crate::operation::describe_delivery_channels::DescribeDeliveryChannelsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeDeliveryChannelsOutputBuilder {
-    pub(crate) delivery_channels: std::option::Option<std::vec::Vec<crate::types::DeliveryChannel>>,
+    pub(crate) delivery_channels:
+        ::std::option::Option<::std::vec::Vec<crate::types::DeliveryChannel>>,
     _request_id: Option<String>,
 }
 impl DescribeDeliveryChannelsOutputBuilder {
@@ -45,13 +48,13 @@ impl DescribeDeliveryChannelsOutputBuilder {
     pub fn delivery_channels(mut self, input: crate::types::DeliveryChannel) -> Self {
         let mut v = self.delivery_channels.unwrap_or_default();
         v.push(input);
-        self.delivery_channels = Some(v);
+        self.delivery_channels = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list that contains the descriptions of the specified delivery channel.</p>
     pub fn set_delivery_channels(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DeliveryChannel>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DeliveryChannel>>,
     ) -> Self {
         self.delivery_channels = input;
         self

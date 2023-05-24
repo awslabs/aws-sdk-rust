@@ -2,7 +2,7 @@
 
 /// <p>A request to change the ability of your account to send email.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutAccountSendingAttributesInput {
     /// <p>Enables or disables your account's ability to send email. Set to <code>true</code> to enable email sending, or set to <code>false</code> to disable email sending.</p> <note>
     /// <p>If AWS paused your account's ability to send email, you can't use this operation to resume your account's ability to send email.</p>
@@ -27,33 +27,35 @@ impl PutAccountSendingAttributesInput {
 
 /// A builder for [`PutAccountSendingAttributesInput`](crate::operation::put_account_sending_attributes::PutAccountSendingAttributesInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PutAccountSendingAttributesInputBuilder {
-    pub(crate) sending_enabled: std::option::Option<bool>,
+    pub(crate) sending_enabled: ::std::option::Option<bool>,
 }
 impl PutAccountSendingAttributesInputBuilder {
     /// <p>Enables or disables your account's ability to send email. Set to <code>true</code> to enable email sending, or set to <code>false</code> to disable email sending.</p> <note>
     /// <p>If AWS paused your account's ability to send email, you can't use this operation to resume your account's ability to send email.</p>
     /// </note>
     pub fn sending_enabled(mut self, input: bool) -> Self {
-        self.sending_enabled = Some(input);
+        self.sending_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Enables or disables your account's ability to send email. Set to <code>true</code> to enable email sending, or set to <code>false</code> to disable email sending.</p> <note>
     /// <p>If AWS paused your account's ability to send email, you can't use this operation to resume your account's ability to send email.</p>
     /// </note>
-    pub fn set_sending_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_sending_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.sending_enabled = input;
         self
     }
     /// Consumes the builder and constructs a [`PutAccountSendingAttributesInput`](crate::operation::put_account_sending_attributes::PutAccountSendingAttributesInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::put_account_sending_attributes::PutAccountSendingAttributesInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::put_account_sending_attributes::PutAccountSendingAttributesInput {
                 sending_enabled: self.sending_enabled.unwrap_or_default(),
             },

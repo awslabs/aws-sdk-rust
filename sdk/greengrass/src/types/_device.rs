@@ -2,36 +2,36 @@
 
 /// Information about a device.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Device {
     /// The ARN of the certificate associated with the device.
     #[doc(hidden)]
-    pub certificate_arn: std::option::Option<std::string::String>,
+    pub certificate_arn: ::std::option::Option<::std::string::String>,
     /// A descriptive or arbitrary ID for the device. This value must be unique within the device definition version. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// If true, the device's local shadow will be automatically synced with the cloud.
     #[doc(hidden)]
-    pub sync_shadow: std::option::Option<bool>,
+    pub sync_shadow: ::std::option::Option<bool>,
     /// The thing ARN of the device.
     #[doc(hidden)]
-    pub thing_arn: std::option::Option<std::string::String>,
+    pub thing_arn: ::std::option::Option<::std::string::String>,
 }
 impl Device {
     /// The ARN of the certificate associated with the device.
-    pub fn certificate_arn(&self) -> std::option::Option<&str> {
+    pub fn certificate_arn(&self) -> ::std::option::Option<&str> {
         self.certificate_arn.as_deref()
     }
     /// A descriptive or arbitrary ID for the device. This value must be unique within the device definition version. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// If true, the device's local shadow will be automatically synced with the cloud.
-    pub fn sync_shadow(&self) -> std::option::Option<bool> {
+    pub fn sync_shadow(&self) -> ::std::option::Option<bool> {
         self.sync_shadow
     }
     /// The thing ARN of the device.
-    pub fn thing_arn(&self) -> std::option::Option<&str> {
+    pub fn thing_arn(&self) -> ::std::option::Option<&str> {
         self.thing_arn.as_deref()
     }
 }
@@ -44,51 +44,59 @@ impl Device {
 
 /// A builder for [`Device`](crate::types::Device).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeviceBuilder {
-    pub(crate) certificate_arn: std::option::Option<std::string::String>,
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) sync_shadow: std::option::Option<bool>,
-    pub(crate) thing_arn: std::option::Option<std::string::String>,
+    pub(crate) certificate_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) sync_shadow: ::std::option::Option<bool>,
+    pub(crate) thing_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeviceBuilder {
     /// The ARN of the certificate associated with the device.
-    pub fn certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.certificate_arn = Some(input.into());
+    pub fn certificate_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.certificate_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// The ARN of the certificate associated with the device.
-    pub fn set_certificate_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_certificate_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.certificate_arn = input;
         self
     }
     /// A descriptive or arbitrary ID for the device. This value must be unique within the device definition version. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// A descriptive or arbitrary ID for the device. This value must be unique within the device definition version. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// If true, the device's local shadow will be automatically synced with the cloud.
     pub fn sync_shadow(mut self, input: bool) -> Self {
-        self.sync_shadow = Some(input);
+        self.sync_shadow = ::std::option::Option::Some(input);
         self
     }
     /// If true, the device's local shadow will be automatically synced with the cloud.
-    pub fn set_sync_shadow(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_sync_shadow(mut self, input: ::std::option::Option<bool>) -> Self {
         self.sync_shadow = input;
         self
     }
     /// The thing ARN of the device.
-    pub fn thing_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.thing_arn = Some(input.into());
+    pub fn thing_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.thing_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// The thing ARN of the device.
-    pub fn set_thing_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_thing_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.thing_arn = input;
         self
     }

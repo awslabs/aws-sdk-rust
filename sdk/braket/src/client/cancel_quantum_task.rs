@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CancelQuantumTask`](crate::operation::cancel_quantum_task::builders::CancelQuantumTaskFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`quantum_task_arn(impl Into<String>)`](crate::operation::cancel_quantum_task::builders::CancelQuantumTaskFluentBuilder::quantum_task_arn) / [`set_quantum_task_arn(Option<String>)`](crate::operation::cancel_quantum_task::builders::CancelQuantumTaskFluentBuilder::set_quantum_task_arn): <p>The ARN of the task to cancel.</p>
-    ///   - [`client_token(impl Into<String>)`](crate::operation::cancel_quantum_task::builders::CancelQuantumTaskFluentBuilder::client_token) / [`set_client_token(Option<String>)`](crate::operation::cancel_quantum_task::builders::CancelQuantumTaskFluentBuilder::set_client_token): <p>The client token associated with the request.</p>
+    ///   - [`quantum_task_arn(impl ::std::convert::Into<String>)`](crate::operation::cancel_quantum_task::builders::CancelQuantumTaskFluentBuilder::quantum_task_arn) / [`set_quantum_task_arn(Option<String>)`](crate::operation::cancel_quantum_task::builders::CancelQuantumTaskFluentBuilder::set_quantum_task_arn): <p>The ARN of the task to cancel.</p>
+    ///   - [`client_token(impl ::std::convert::Into<String>)`](crate::operation::cancel_quantum_task::builders::CancelQuantumTaskFluentBuilder::client_token) / [`set_client_token(Option<String>)`](crate::operation::cancel_quantum_task::builders::CancelQuantumTaskFluentBuilder::set_client_token): <p>The client token associated with the request.</p>
     /// - On success, responds with [`CancelQuantumTaskOutput`](crate::operation::cancel_quantum_task::CancelQuantumTaskOutput) with field(s):
     ///   - [`quantum_task_arn(Option<String>)`](crate::operation::cancel_quantum_task::CancelQuantumTaskOutput::quantum_task_arn): <p>The ARN of the task.</p>
     ///   - [`cancellation_status(Option<CancellationStatus>)`](crate::operation::cancel_quantum_task::CancelQuantumTaskOutput::cancellation_status): <p>The status of the cancellation request.</p>

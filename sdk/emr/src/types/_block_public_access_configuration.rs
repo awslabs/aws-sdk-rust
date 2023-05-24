@@ -2,7 +2,7 @@
 
 /// <p>A configuration for Amazon EMR block public access. When <code>BlockPublicSecurityGroupRules</code> is set to <code>true</code>, Amazon EMR prevents cluster creation if one of the cluster's security groups has a rule that allows inbound traffic from 0.0.0.0/0 or ::/0 on a port, unless the port is specified as an exception using <code>PermittedPublicSecurityGroupRuleRanges</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BlockPublicAccessConfiguration {
     /// <p>Indicates whether Amazon EMR block public access is enabled (<code>true</code>) or disabled (<code>false</code>). By default, the value is <code>false</code> for accounts that have created Amazon EMR clusters before July 2019. For accounts created after this, the default is <code>true</code>.</p>
     #[doc(hidden)]
@@ -11,17 +11,18 @@ pub struct BlockPublicAccessConfiguration {
     /// <p>By default, Port 22, which is used for SSH access to the cluster Amazon EC2 instances, is in the list of <code>PermittedPublicSecurityGroupRuleRanges</code>.</p>
     #[doc(hidden)]
     pub permitted_public_security_group_rule_ranges:
-        std::option::Option<std::vec::Vec<crate::types::PortRange>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::PortRange>>,
     /// <p>The classification within a configuration.</p>
     #[doc(hidden)]
-    pub classification: std::option::Option<std::string::String>,
+    pub classification: ::std::option::Option<::std::string::String>,
     /// <p>A list of additional configurations to apply within a configuration object.</p>
     #[doc(hidden)]
-    pub configurations: std::option::Option<std::vec::Vec<crate::types::Configuration>>,
+    pub configurations: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
     /// <p>A set of properties specified within a configuration classification.</p>
     #[doc(hidden)]
-    pub properties:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub properties: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl BlockPublicAccessConfiguration {
     /// <p>Indicates whether Amazon EMR block public access is enabled (<code>true</code>) or disabled (<code>false</code>). By default, the value is <code>false</code> for accounts that have created Amazon EMR clusters before July 2019. For accounts created after this, the default is <code>true</code>.</p>
@@ -32,22 +33,23 @@ impl BlockPublicAccessConfiguration {
     /// <p>By default, Port 22, which is used for SSH access to the cluster Amazon EC2 instances, is in the list of <code>PermittedPublicSecurityGroupRuleRanges</code>.</p>
     pub fn permitted_public_security_group_rule_ranges(
         &self,
-    ) -> std::option::Option<&[crate::types::PortRange]> {
+    ) -> ::std::option::Option<&[crate::types::PortRange]> {
         self.permitted_public_security_group_rule_ranges.as_deref()
     }
     /// <p>The classification within a configuration.</p>
-    pub fn classification(&self) -> std::option::Option<&str> {
+    pub fn classification(&self) -> ::std::option::Option<&str> {
         self.classification.as_deref()
     }
     /// <p>A list of additional configurations to apply within a configuration object.</p>
-    pub fn configurations(&self) -> std::option::Option<&[crate::types::Configuration]> {
+    pub fn configurations(&self) -> ::std::option::Option<&[crate::types::Configuration]> {
         self.configurations.as_deref()
     }
     /// <p>A set of properties specified within a configuration classification.</p>
     pub fn properties(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.properties.as_ref()
     }
 }
@@ -60,26 +62,29 @@ impl BlockPublicAccessConfiguration {
 
 /// A builder for [`BlockPublicAccessConfiguration`](crate::types::BlockPublicAccessConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BlockPublicAccessConfigurationBuilder {
-    pub(crate) block_public_security_group_rules: std::option::Option<bool>,
+    pub(crate) block_public_security_group_rules: ::std::option::Option<bool>,
     pub(crate) permitted_public_security_group_rule_ranges:
-        std::option::Option<std::vec::Vec<crate::types::PortRange>>,
-    pub(crate) classification: std::option::Option<std::string::String>,
-    pub(crate) configurations: std::option::Option<std::vec::Vec<crate::types::Configuration>>,
-    pub(crate) properties:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::PortRange>>,
+    pub(crate) classification: ::std::option::Option<::std::string::String>,
+    pub(crate) configurations: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
+    pub(crate) properties: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl BlockPublicAccessConfigurationBuilder {
     /// <p>Indicates whether Amazon EMR block public access is enabled (<code>true</code>) or disabled (<code>false</code>). By default, the value is <code>false</code> for accounts that have created Amazon EMR clusters before July 2019. For accounts created after this, the default is <code>true</code>.</p>
     pub fn block_public_security_group_rules(mut self, input: bool) -> Self {
-        self.block_public_security_group_rules = Some(input);
+        self.block_public_security_group_rules = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether Amazon EMR block public access is enabled (<code>true</code>) or disabled (<code>false</code>). By default, the value is <code>false</code> for accounts that have created Amazon EMR clusters before July 2019. For accounts created after this, the default is <code>true</code>.</p>
     pub fn set_block_public_security_group_rules(
         mut self,
-        input: std::option::Option<bool>,
+        input: ::std::option::Option<bool>,
     ) -> Self {
         self.block_public_security_group_rules = input;
         self
@@ -98,25 +103,31 @@ impl BlockPublicAccessConfigurationBuilder {
             .permitted_public_security_group_rule_ranges
             .unwrap_or_default();
         v.push(input);
-        self.permitted_public_security_group_rule_ranges = Some(v);
+        self.permitted_public_security_group_rule_ranges = ::std::option::Option::Some(v);
         self
     }
     /// <p>Specifies ports and port ranges that are permitted to have security group rules that allow inbound traffic from all public sources. For example, if Port 23 (Telnet) is specified for <code>PermittedPublicSecurityGroupRuleRanges</code>, Amazon EMR allows cluster creation if a security group associated with the cluster has a rule that allows inbound traffic on Port 23 from IPv4 0.0.0.0/0 or IPv6 port ::/0 as the source.</p>
     /// <p>By default, Port 22, which is used for SSH access to the cluster Amazon EC2 instances, is in the list of <code>PermittedPublicSecurityGroupRuleRanges</code>.</p>
     pub fn set_permitted_public_security_group_rule_ranges(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PortRange>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PortRange>>,
     ) -> Self {
         self.permitted_public_security_group_rule_ranges = input;
         self
     }
     /// <p>The classification within a configuration.</p>
-    pub fn classification(mut self, input: impl Into<std::string::String>) -> Self {
-        self.classification = Some(input.into());
+    pub fn classification(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.classification = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The classification within a configuration.</p>
-    pub fn set_classification(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_classification(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.classification = input;
         self
     }
@@ -128,13 +139,13 @@ impl BlockPublicAccessConfigurationBuilder {
     pub fn configurations(mut self, input: crate::types::Configuration) -> Self {
         let mut v = self.configurations.unwrap_or_default();
         v.push(input);
-        self.configurations = Some(v);
+        self.configurations = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of additional configurations to apply within a configuration object.</p>
     pub fn set_configurations(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Configuration>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
     ) -> Self {
         self.configurations = input;
         self
@@ -146,19 +157,19 @@ impl BlockPublicAccessConfigurationBuilder {
     /// <p>A set of properties specified within a configuration classification.</p>
     pub fn properties(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.properties.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.properties = Some(hash_map);
+        self.properties = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A set of properties specified within a configuration classification.</p>
     pub fn set_properties(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.properties = input;

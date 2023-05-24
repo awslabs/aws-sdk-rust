@@ -2,18 +2,18 @@
 
 /// <p>Summary information about a platform branch.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PlatformBranchSummary {
     /// <p>The name of the platform to which this platform branch belongs.</p>
     #[doc(hidden)]
-    pub platform_name: std::option::Option<std::string::String>,
+    pub platform_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the platform branch.</p>
     #[doc(hidden)]
-    pub branch_name: std::option::Option<std::string::String>,
+    pub branch_name: ::std::option::Option<::std::string::String>,
     /// <p>The support life cycle state of the platform branch.</p>
     /// <p>Possible values: <code>beta</code> | <code>supported</code> | <code>deprecated</code> | <code>retired</code> </p>
     #[doc(hidden)]
-    pub lifecycle_state: std::option::Option<std::string::String>,
+    pub lifecycle_state: ::std::option::Option<::std::string::String>,
     /// <p>An ordinal number that designates the order in which platform branches have been added to a platform. This can be helpful, for example, if your code calls the <code>ListPlatformBranches</code> action and then displays a list of platform branches.</p>
     /// <p>A larger <code>BranchOrder</code> value designates a newer platform branch within the platform.</p>
     #[doc(hidden)]
@@ -21,20 +21,20 @@ pub struct PlatformBranchSummary {
     /// <p>The environment tiers that platform versions in this branch support.</p>
     /// <p>Possible values: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code> </p>
     #[doc(hidden)]
-    pub supported_tier_list: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub supported_tier_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl PlatformBranchSummary {
     /// <p>The name of the platform to which this platform branch belongs.</p>
-    pub fn platform_name(&self) -> std::option::Option<&str> {
+    pub fn platform_name(&self) -> ::std::option::Option<&str> {
         self.platform_name.as_deref()
     }
     /// <p>The name of the platform branch.</p>
-    pub fn branch_name(&self) -> std::option::Option<&str> {
+    pub fn branch_name(&self) -> ::std::option::Option<&str> {
         self.branch_name.as_deref()
     }
     /// <p>The support life cycle state of the platform branch.</p>
     /// <p>Possible values: <code>beta</code> | <code>supported</code> | <code>deprecated</code> | <code>retired</code> </p>
-    pub fn lifecycle_state(&self) -> std::option::Option<&str> {
+    pub fn lifecycle_state(&self) -> ::std::option::Option<&str> {
         self.lifecycle_state.as_deref()
     }
     /// <p>An ordinal number that designates the order in which platform branches have been added to a platform. This can be helpful, for example, if your code calls the <code>ListPlatformBranches</code> action and then displays a list of platform branches.</p>
@@ -44,7 +44,7 @@ impl PlatformBranchSummary {
     }
     /// <p>The environment tiers that platform versions in this branch support.</p>
     /// <p>Possible values: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code> </p>
-    pub fn supported_tier_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn supported_tier_list(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.supported_tier_list.as_deref()
     }
 }
@@ -57,56 +57,70 @@ impl PlatformBranchSummary {
 
 /// A builder for [`PlatformBranchSummary`](crate::types::PlatformBranchSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PlatformBranchSummaryBuilder {
-    pub(crate) platform_name: std::option::Option<std::string::String>,
-    pub(crate) branch_name: std::option::Option<std::string::String>,
-    pub(crate) lifecycle_state: std::option::Option<std::string::String>,
-    pub(crate) branch_order: std::option::Option<i32>,
-    pub(crate) supported_tier_list: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) platform_name: ::std::option::Option<::std::string::String>,
+    pub(crate) branch_name: ::std::option::Option<::std::string::String>,
+    pub(crate) lifecycle_state: ::std::option::Option<::std::string::String>,
+    pub(crate) branch_order: ::std::option::Option<i32>,
+    pub(crate) supported_tier_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl PlatformBranchSummaryBuilder {
     /// <p>The name of the platform to which this platform branch belongs.</p>
-    pub fn platform_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.platform_name = Some(input.into());
+    pub fn platform_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.platform_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the platform to which this platform branch belongs.</p>
-    pub fn set_platform_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_platform_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.platform_name = input;
         self
     }
     /// <p>The name of the platform branch.</p>
-    pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.branch_name = Some(input.into());
+    pub fn branch_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.branch_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the platform branch.</p>
-    pub fn set_branch_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_branch_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.branch_name = input;
         self
     }
     /// <p>The support life cycle state of the platform branch.</p>
     /// <p>Possible values: <code>beta</code> | <code>supported</code> | <code>deprecated</code> | <code>retired</code> </p>
-    pub fn lifecycle_state(mut self, input: impl Into<std::string::String>) -> Self {
-        self.lifecycle_state = Some(input.into());
+    pub fn lifecycle_state(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.lifecycle_state = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The support life cycle state of the platform branch.</p>
     /// <p>Possible values: <code>beta</code> | <code>supported</code> | <code>deprecated</code> | <code>retired</code> </p>
-    pub fn set_lifecycle_state(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_lifecycle_state(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.lifecycle_state = input;
         self
     }
     /// <p>An ordinal number that designates the order in which platform branches have been added to a platform. This can be helpful, for example, if your code calls the <code>ListPlatformBranches</code> action and then displays a list of platform branches.</p>
     /// <p>A larger <code>BranchOrder</code> value designates a newer platform branch within the platform.</p>
     pub fn branch_order(mut self, input: i32) -> Self {
-        self.branch_order = Some(input);
+        self.branch_order = ::std::option::Option::Some(input);
         self
     }
     /// <p>An ordinal number that designates the order in which platform branches have been added to a platform. This can be helpful, for example, if your code calls the <code>ListPlatformBranches</code> action and then displays a list of platform branches.</p>
     /// <p>A larger <code>BranchOrder</code> value designates a newer platform branch within the platform.</p>
-    pub fn set_branch_order(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_branch_order(mut self, input: ::std::option::Option<i32>) -> Self {
         self.branch_order = input;
         self
     }
@@ -116,17 +130,20 @@ impl PlatformBranchSummaryBuilder {
     ///
     /// <p>The environment tiers that platform versions in this branch support.</p>
     /// <p>Possible values: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code> </p>
-    pub fn supported_tier_list(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn supported_tier_list(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.supported_tier_list.unwrap_or_default();
         v.push(input.into());
-        self.supported_tier_list = Some(v);
+        self.supported_tier_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>The environment tiers that platform versions in this branch support.</p>
     /// <p>Possible values: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code> </p>
     pub fn set_supported_tier_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.supported_tier_list = input;
         self

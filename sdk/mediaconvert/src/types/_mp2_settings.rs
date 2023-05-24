@@ -2,29 +2,29 @@
 
 /// Required when you set (Codec) under (AudioDescriptions)&gt;(CodecSettings) to the value MP2.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Mp2Settings {
     /// Specify the average bitrate in bits per second.
     #[doc(hidden)]
-    pub bitrate: std::option::Option<i32>,
+    pub bitrate: ::std::option::Option<i32>,
     /// Set Channels to specify the number of channels in this output audio track. Choosing Mono in the console will give you 1 output channel; choosing Stereo will give you 2. In the API, valid values are 1 and 2.
     #[doc(hidden)]
-    pub channels: std::option::Option<i32>,
+    pub channels: ::std::option::Option<i32>,
     /// Sample rate in hz.
     #[doc(hidden)]
-    pub sample_rate: std::option::Option<i32>,
+    pub sample_rate: ::std::option::Option<i32>,
 }
 impl Mp2Settings {
     /// Specify the average bitrate in bits per second.
-    pub fn bitrate(&self) -> std::option::Option<i32> {
+    pub fn bitrate(&self) -> ::std::option::Option<i32> {
         self.bitrate
     }
     /// Set Channels to specify the number of channels in this output audio track. Choosing Mono in the console will give you 1 output channel; choosing Stereo will give you 2. In the API, valid values are 1 and 2.
-    pub fn channels(&self) -> std::option::Option<i32> {
+    pub fn channels(&self) -> ::std::option::Option<i32> {
         self.channels
     }
     /// Sample rate in hz.
-    pub fn sample_rate(&self) -> std::option::Option<i32> {
+    pub fn sample_rate(&self) -> ::std::option::Option<i32> {
         self.sample_rate
     }
 }
@@ -37,40 +37,42 @@ impl Mp2Settings {
 
 /// A builder for [`Mp2Settings`](crate::types::Mp2Settings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct Mp2SettingsBuilder {
-    pub(crate) bitrate: std::option::Option<i32>,
-    pub(crate) channels: std::option::Option<i32>,
-    pub(crate) sample_rate: std::option::Option<i32>,
+    pub(crate) bitrate: ::std::option::Option<i32>,
+    pub(crate) channels: ::std::option::Option<i32>,
+    pub(crate) sample_rate: ::std::option::Option<i32>,
 }
 impl Mp2SettingsBuilder {
     /// Specify the average bitrate in bits per second.
     pub fn bitrate(mut self, input: i32) -> Self {
-        self.bitrate = Some(input);
+        self.bitrate = ::std::option::Option::Some(input);
         self
     }
     /// Specify the average bitrate in bits per second.
-    pub fn set_bitrate(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_bitrate(mut self, input: ::std::option::Option<i32>) -> Self {
         self.bitrate = input;
         self
     }
     /// Set Channels to specify the number of channels in this output audio track. Choosing Mono in the console will give you 1 output channel; choosing Stereo will give you 2. In the API, valid values are 1 and 2.
     pub fn channels(mut self, input: i32) -> Self {
-        self.channels = Some(input);
+        self.channels = ::std::option::Option::Some(input);
         self
     }
     /// Set Channels to specify the number of channels in this output audio track. Choosing Mono in the console will give you 1 output channel; choosing Stereo will give you 2. In the API, valid values are 1 and 2.
-    pub fn set_channels(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_channels(mut self, input: ::std::option::Option<i32>) -> Self {
         self.channels = input;
         self
     }
     /// Sample rate in hz.
     pub fn sample_rate(mut self, input: i32) -> Self {
-        self.sample_rate = Some(input);
+        self.sample_rate = ::std::option::Option::Some(input);
         self
     }
     /// Sample rate in hz.
-    pub fn set_sample_rate(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_sample_rate(mut self, input: ::std::option::Option<i32>) -> Self {
         self.sample_rate = input;
         self
     }

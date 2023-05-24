@@ -2,20 +2,20 @@
 
 /// <p>Contains the output of AttachVpnGateway.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AttachVpnGatewayOutput {
     /// <p>Information about the attachment.</p>
     #[doc(hidden)]
-    pub vpc_attachment: std::option::Option<crate::types::VpcAttachment>,
+    pub vpc_attachment: ::std::option::Option<crate::types::VpcAttachment>,
     _request_id: Option<String>,
 }
 impl AttachVpnGatewayOutput {
     /// <p>Information about the attachment.</p>
-    pub fn vpc_attachment(&self) -> std::option::Option<&crate::types::VpcAttachment> {
+    pub fn vpc_attachment(&self) -> ::std::option::Option<&crate::types::VpcAttachment> {
         self.vpc_attachment.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for AttachVpnGatewayOutput {
+impl ::aws_http::request_id::RequestId for AttachVpnGatewayOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,21 +30,23 @@ impl AttachVpnGatewayOutput {
 
 /// A builder for [`AttachVpnGatewayOutput`](crate::operation::attach_vpn_gateway::AttachVpnGatewayOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AttachVpnGatewayOutputBuilder {
-    pub(crate) vpc_attachment: std::option::Option<crate::types::VpcAttachment>,
+    pub(crate) vpc_attachment: ::std::option::Option<crate::types::VpcAttachment>,
     _request_id: Option<String>,
 }
 impl AttachVpnGatewayOutputBuilder {
     /// <p>Information about the attachment.</p>
     pub fn vpc_attachment(mut self, input: crate::types::VpcAttachment) -> Self {
-        self.vpc_attachment = Some(input);
+        self.vpc_attachment = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the attachment.</p>
     pub fn set_vpc_attachment(
         mut self,
-        input: std::option::Option<crate::types::VpcAttachment>,
+        input: ::std::option::Option<crate::types::VpcAttachment>,
     ) -> Self {
         self.vpc_attachment = input;
         self

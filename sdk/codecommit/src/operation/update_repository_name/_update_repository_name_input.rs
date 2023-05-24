@@ -2,22 +2,22 @@
 
 /// <p>Represents the input of an update repository description operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateRepositoryNameInput {
     /// <p>The current name of the repository.</p>
     #[doc(hidden)]
-    pub old_name: std::option::Option<std::string::String>,
+    pub old_name: ::std::option::Option<::std::string::String>,
     /// <p>The new name for the repository.</p>
     #[doc(hidden)]
-    pub new_name: std::option::Option<std::string::String>,
+    pub new_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateRepositoryNameInput {
     /// <p>The current name of the repository.</p>
-    pub fn old_name(&self) -> std::option::Option<&str> {
+    pub fn old_name(&self) -> ::std::option::Option<&str> {
         self.old_name.as_deref()
     }
     /// <p>The new name for the repository.</p>
-    pub fn new_name(&self) -> std::option::Option<&str> {
+    pub fn new_name(&self) -> ::std::option::Option<&str> {
         self.new_name.as_deref()
     }
 }
@@ -31,40 +31,42 @@ impl UpdateRepositoryNameInput {
 
 /// A builder for [`UpdateRepositoryNameInput`](crate::operation::update_repository_name::UpdateRepositoryNameInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateRepositoryNameInputBuilder {
-    pub(crate) old_name: std::option::Option<std::string::String>,
-    pub(crate) new_name: std::option::Option<std::string::String>,
+    pub(crate) old_name: ::std::option::Option<::std::string::String>,
+    pub(crate) new_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateRepositoryNameInputBuilder {
     /// <p>The current name of the repository.</p>
-    pub fn old_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.old_name = Some(input.into());
+    pub fn old_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.old_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The current name of the repository.</p>
-    pub fn set_old_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_old_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.old_name = input;
         self
     }
     /// <p>The new name for the repository.</p>
-    pub fn new_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.new_name = Some(input.into());
+    pub fn new_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.new_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The new name for the repository.</p>
-    pub fn set_new_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_new_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.new_name = input;
         self
     }
     /// Consumes the builder and constructs a [`UpdateRepositoryNameInput`](crate::operation::update_repository_name::UpdateRepositoryNameInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::update_repository_name::UpdateRepositoryNameInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::update_repository_name::UpdateRepositoryNameInput {
                 old_name: self.old_name,
                 new_name: self.new_name,

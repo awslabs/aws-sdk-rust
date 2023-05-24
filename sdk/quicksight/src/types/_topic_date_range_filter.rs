@@ -2,14 +2,14 @@
 
 /// <p>A filter used to restrict data based on a range of dates or times.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct TopicDateRangeFilter {
     /// <p>A Boolean value that indicates whether the date range filter should include the boundary values. If set to true, the filter includes the start and end dates. If set to false, the filter excludes them.</p>
     #[doc(hidden)]
     pub inclusive: bool,
     /// <p>The constant used in a date range filter.</p>
     #[doc(hidden)]
-    pub constant: std::option::Option<crate::types::TopicRangeFilterConstant>,
+    pub constant: ::std::option::Option<crate::types::TopicRangeFilterConstant>,
 }
 impl TopicDateRangeFilter {
     /// <p>A Boolean value that indicates whether the date range filter should include the boundary values. If set to true, the filter includes the start and end dates. If set to false, the filter excludes them.</p>
@@ -17,12 +17,12 @@ impl TopicDateRangeFilter {
         self.inclusive
     }
     /// <p>The constant used in a date range filter.</p>
-    pub fn constant(&self) -> std::option::Option<&crate::types::TopicRangeFilterConstant> {
+    pub fn constant(&self) -> ::std::option::Option<&crate::types::TopicRangeFilterConstant> {
         self.constant.as_ref()
     }
 }
-impl std::fmt::Debug for TopicDateRangeFilter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for TopicDateRangeFilter {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("TopicDateRangeFilter");
         formatter.field("inclusive", &self.inclusive);
         formatter.field("constant", &"*** Sensitive Data Redacted ***");
@@ -38,31 +38,31 @@ impl TopicDateRangeFilter {
 
 /// A builder for [`TopicDateRangeFilter`](crate::types::TopicDateRangeFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct TopicDateRangeFilterBuilder {
-    pub(crate) inclusive: std::option::Option<bool>,
-    pub(crate) constant: std::option::Option<crate::types::TopicRangeFilterConstant>,
+    pub(crate) inclusive: ::std::option::Option<bool>,
+    pub(crate) constant: ::std::option::Option<crate::types::TopicRangeFilterConstant>,
 }
 impl TopicDateRangeFilterBuilder {
     /// <p>A Boolean value that indicates whether the date range filter should include the boundary values. If set to true, the filter includes the start and end dates. If set to false, the filter excludes them.</p>
     pub fn inclusive(mut self, input: bool) -> Self {
-        self.inclusive = Some(input);
+        self.inclusive = ::std::option::Option::Some(input);
         self
     }
     /// <p>A Boolean value that indicates whether the date range filter should include the boundary values. If set to true, the filter includes the start and end dates. If set to false, the filter excludes them.</p>
-    pub fn set_inclusive(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_inclusive(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inclusive = input;
         self
     }
     /// <p>The constant used in a date range filter.</p>
     pub fn constant(mut self, input: crate::types::TopicRangeFilterConstant) -> Self {
-        self.constant = Some(input);
+        self.constant = ::std::option::Option::Some(input);
         self
     }
     /// <p>The constant used in a date range filter.</p>
     pub fn set_constant(
         mut self,
-        input: std::option::Option<crate::types::TopicRangeFilterConstant>,
+        input: ::std::option::Option<crate::types::TopicRangeFilterConstant>,
     ) -> Self {
         self.constant = input;
         self
@@ -75,8 +75,8 @@ impl TopicDateRangeFilterBuilder {
         }
     }
 }
-impl std::fmt::Debug for TopicDateRangeFilterBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for TopicDateRangeFilterBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("TopicDateRangeFilterBuilder");
         formatter.field("inclusive", &self.inclusive);
         formatter.field("constant", &"*** Sensitive Data Redacted ***");

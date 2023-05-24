@@ -2,36 +2,36 @@
 
 /// <p>Usage associated with an entitlement resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EntitlementUsage {
     /// <p>Entitlement usage name.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>Resource usage consumed.</p>
     #[doc(hidden)]
-    pub consumed_value: std::option::Option<std::string::String>,
+    pub consumed_value: ::std::option::Option<::std::string::String>,
     /// <p>Maximum entitlement usage count.</p>
     #[doc(hidden)]
-    pub max_count: std::option::Option<std::string::String>,
+    pub max_count: ::std::option::Option<::std::string::String>,
     /// <p>Entitlement usage unit.</p>
     #[doc(hidden)]
-    pub unit: std::option::Option<crate::types::EntitlementDataUnit>,
+    pub unit: ::std::option::Option<crate::types::EntitlementDataUnit>,
 }
 impl EntitlementUsage {
     /// <p>Entitlement usage name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>Resource usage consumed.</p>
-    pub fn consumed_value(&self) -> std::option::Option<&str> {
+    pub fn consumed_value(&self) -> ::std::option::Option<&str> {
         self.consumed_value.as_deref()
     }
     /// <p>Maximum entitlement usage count.</p>
-    pub fn max_count(&self) -> std::option::Option<&str> {
+    pub fn max_count(&self) -> ::std::option::Option<&str> {
         self.max_count.as_deref()
     }
     /// <p>Entitlement usage unit.</p>
-    pub fn unit(&self) -> std::option::Option<&crate::types::EntitlementDataUnit> {
+    pub fn unit(&self) -> ::std::option::Option<&crate::types::EntitlementDataUnit> {
         self.unit.as_ref()
     }
 }
@@ -44,53 +44,61 @@ impl EntitlementUsage {
 
 /// A builder for [`EntitlementUsage`](crate::types::EntitlementUsage).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EntitlementUsageBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) consumed_value: std::option::Option<std::string::String>,
-    pub(crate) max_count: std::option::Option<std::string::String>,
-    pub(crate) unit: std::option::Option<crate::types::EntitlementDataUnit>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) consumed_value: ::std::option::Option<::std::string::String>,
+    pub(crate) max_count: ::std::option::Option<::std::string::String>,
+    pub(crate) unit: ::std::option::Option<crate::types::EntitlementDataUnit>,
 }
 impl EntitlementUsageBuilder {
     /// <p>Entitlement usage name.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Entitlement usage name.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>Resource usage consumed.</p>
-    pub fn consumed_value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.consumed_value = Some(input.into());
+    pub fn consumed_value(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.consumed_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Resource usage consumed.</p>
-    pub fn set_consumed_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_consumed_value(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.consumed_value = input;
         self
     }
     /// <p>Maximum entitlement usage count.</p>
-    pub fn max_count(mut self, input: impl Into<std::string::String>) -> Self {
-        self.max_count = Some(input.into());
+    pub fn max_count(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.max_count = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Maximum entitlement usage count.</p>
-    pub fn set_max_count(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_max_count(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.max_count = input;
         self
     }
     /// <p>Entitlement usage unit.</p>
     pub fn unit(mut self, input: crate::types::EntitlementDataUnit) -> Self {
-        self.unit = Some(input);
+        self.unit = ::std::option::Option::Some(input);
         self
     }
     /// <p>Entitlement usage unit.</p>
     pub fn set_unit(
         mut self,
-        input: std::option::Option<crate::types::EntitlementDataUnit>,
+        input: ::std::option::Option<crate::types::EntitlementDataUnit>,
     ) -> Self {
         self.unit = input;
         self

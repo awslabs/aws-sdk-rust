@@ -2,7 +2,7 @@
 
 /// <p>A face that <code>IndexFaces</code> detected, but didn't index. Use the <code>Reasons</code> response attribute to determine why a face wasn't indexed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UnindexedFace {
     /// <p>An array of reasons that specify why a face wasn't indexed. </p>
     /// <ul>
@@ -14,10 +14,10 @@ pub struct UnindexedFace {
     /// <li> <p>SMALL_BOUNDING_BOX - The bounding box around the face is too small.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub reasons: std::option::Option<std::vec::Vec<crate::types::Reason>>,
+    pub reasons: ::std::option::Option<::std::vec::Vec<crate::types::Reason>>,
     /// <p>The structure that contains attributes of a face that <code>IndexFaces</code>detected, but didn't index. </p>
     #[doc(hidden)]
-    pub face_detail: std::option::Option<crate::types::FaceDetail>,
+    pub face_detail: ::std::option::Option<crate::types::FaceDetail>,
 }
 impl UnindexedFace {
     /// <p>An array of reasons that specify why a face wasn't indexed. </p>
@@ -29,11 +29,11 @@ impl UnindexedFace {
     /// <li> <p>LOW_CONFIDENCE - The face was detected with a low confidence.</p> </li>
     /// <li> <p>SMALL_BOUNDING_BOX - The bounding box around the face is too small.</p> </li>
     /// </ul>
-    pub fn reasons(&self) -> std::option::Option<&[crate::types::Reason]> {
+    pub fn reasons(&self) -> ::std::option::Option<&[crate::types::Reason]> {
         self.reasons.as_deref()
     }
     /// <p>The structure that contains attributes of a face that <code>IndexFaces</code>detected, but didn't index. </p>
-    pub fn face_detail(&self) -> std::option::Option<&crate::types::FaceDetail> {
+    pub fn face_detail(&self) -> ::std::option::Option<&crate::types::FaceDetail> {
         self.face_detail.as_ref()
     }
 }
@@ -46,10 +46,12 @@ impl UnindexedFace {
 
 /// A builder for [`UnindexedFace`](crate::types::UnindexedFace).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UnindexedFaceBuilder {
-    pub(crate) reasons: std::option::Option<std::vec::Vec<crate::types::Reason>>,
-    pub(crate) face_detail: std::option::Option<crate::types::FaceDetail>,
+    pub(crate) reasons: ::std::option::Option<::std::vec::Vec<crate::types::Reason>>,
+    pub(crate) face_detail: ::std::option::Option<crate::types::FaceDetail>,
 }
 impl UnindexedFaceBuilder {
     /// Appends an item to `reasons`.
@@ -68,7 +70,7 @@ impl UnindexedFaceBuilder {
     pub fn reasons(mut self, input: crate::types::Reason) -> Self {
         let mut v = self.reasons.unwrap_or_default();
         v.push(input);
-        self.reasons = Some(v);
+        self.reasons = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of reasons that specify why a face wasn't indexed. </p>
@@ -82,18 +84,21 @@ impl UnindexedFaceBuilder {
     /// </ul>
     pub fn set_reasons(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Reason>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Reason>>,
     ) -> Self {
         self.reasons = input;
         self
     }
     /// <p>The structure that contains attributes of a face that <code>IndexFaces</code>detected, but didn't index. </p>
     pub fn face_detail(mut self, input: crate::types::FaceDetail) -> Self {
-        self.face_detail = Some(input);
+        self.face_detail = ::std::option::Option::Some(input);
         self
     }
     /// <p>The structure that contains attributes of a face that <code>IndexFaces</code>detected, but didn't index. </p>
-    pub fn set_face_detail(mut self, input: std::option::Option<crate::types::FaceDetail>) -> Self {
+    pub fn set_face_detail(
+        mut self,
+        input: ::std::option::Option<crate::types::FaceDetail>,
+    ) -> Self {
         self.face_detail = input;
         self
     }

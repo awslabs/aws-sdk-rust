@@ -6,56 +6,59 @@ pub use crate::operation::import_key_pair::_import_key_pair_input::ImportKeyPair
 /// Fluent builder constructing a request to `ImportKeyPair`.
 ///
 /// <p>Imports a public SSH key from a specific key pair.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ImportKeyPairFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::import_key_pair::builders::ImportKeyPairInputBuilder,
 }
 impl ImportKeyPairFluentBuilder {
     /// Creates a new `ImportKeyPair`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::import_key_pair::ImportKeyPair,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::import_key_pair::ImportKeyPairError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_key_pair::ImportKeyPairError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::import_key_pair::ImportKeyPairOutput,
-        aws_smithy_http::result::SdkError<crate::operation::import_key_pair::ImportKeyPairError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_key_pair::ImportKeyPairError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,31 +71,40 @@ impl ImportKeyPairFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::import_key_pair::ImportKeyPairOutput,
-        aws_smithy_http::result::SdkError<crate::operation::import_key_pair::ImportKeyPairError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_key_pair::ImportKeyPairError>,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the key pair for which you want to import the public key.</p>
-    pub fn key_pair_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn key_pair_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.key_pair_name(input.into());
         self
     }
     /// <p>The name of the key pair for which you want to import the public key.</p>
-    pub fn set_key_pair_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_key_pair_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_key_pair_name(input);
         self
     }
     /// <p>A base64-encoded public key of the <code>ssh-rsa</code> type.</p>
-    pub fn public_key_base64(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn public_key_base64(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.public_key_base64(input.into());
         self
     }
     /// <p>A base64-encoded public key of the <code>ssh-rsa</code> type.</p>
     pub fn set_public_key_base64(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_public_key_base64(input);
         self

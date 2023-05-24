@@ -2,14 +2,14 @@
 
 /// <p>Describes the resources available for a container instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Resource {
     /// <p>The name of the resource, such as <code>CPU</code>, <code>MEMORY</code>, <code>PORTS</code>, <code>PORTS_UDP</code>, or a user-defined resource.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of the resource. Valid values: <code>INTEGER</code>, <code>DOUBLE</code>, <code>LONG</code>, or <code>STRINGSET</code>.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<std::string::String>,
+    pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>When the <code>doubleValue</code> type is set, the value of the resource must be a double precision floating-point type.</p>
     #[doc(hidden)]
     pub double_value: f64,
@@ -21,15 +21,15 @@ pub struct Resource {
     pub integer_value: i32,
     /// <p>When the <code>stringSetValue</code> type is set, the value of the resource must be a string type.</p>
     #[doc(hidden)]
-    pub string_set_value: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub string_set_value: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Resource {
     /// <p>The name of the resource, such as <code>CPU</code>, <code>MEMORY</code>, <code>PORTS</code>, <code>PORTS_UDP</code>, or a user-defined resource.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The type of the resource. Valid values: <code>INTEGER</code>, <code>DOUBLE</code>, <code>LONG</code>, or <code>STRINGSET</code>.</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
     }
     /// <p>When the <code>doubleValue</code> type is set, the value of the resource must be a double precision floating-point type.</p>
@@ -45,7 +45,7 @@ impl Resource {
         self.integer_value
     }
     /// <p>When the <code>stringSetValue</code> type is set, the value of the resource must be a string type.</p>
-    pub fn string_set_value(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn string_set_value(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.string_set_value.as_deref()
     }
 }
@@ -58,63 +58,65 @@ impl Resource {
 
 /// A builder for [`Resource`](crate::types::Resource).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResourceBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) r#type: std::option::Option<std::string::String>,
-    pub(crate) double_value: std::option::Option<f64>,
-    pub(crate) long_value: std::option::Option<i64>,
-    pub(crate) integer_value: std::option::Option<i32>,
-    pub(crate) string_set_value: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<::std::string::String>,
+    pub(crate) double_value: ::std::option::Option<f64>,
+    pub(crate) long_value: ::std::option::Option<i64>,
+    pub(crate) integer_value: ::std::option::Option<i32>,
+    pub(crate) string_set_value: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ResourceBuilder {
     /// <p>The name of the resource, such as <code>CPU</code>, <code>MEMORY</code>, <code>PORTS</code>, <code>PORTS_UDP</code>, or a user-defined resource.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the resource, such as <code>CPU</code>, <code>MEMORY</code>, <code>PORTS</code>, <code>PORTS_UDP</code>, or a user-defined resource.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The type of the resource. Valid values: <code>INTEGER</code>, <code>DOUBLE</code>, <code>LONG</code>, or <code>STRINGSET</code>.</p>
-    pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.r#type = Some(input.into());
+    pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.r#type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of the resource. Valid values: <code>INTEGER</code>, <code>DOUBLE</code>, <code>LONG</code>, or <code>STRINGSET</code>.</p>
-    pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>When the <code>doubleValue</code> type is set, the value of the resource must be a double precision floating-point type.</p>
     pub fn double_value(mut self, input: f64) -> Self {
-        self.double_value = Some(input);
+        self.double_value = ::std::option::Option::Some(input);
         self
     }
     /// <p>When the <code>doubleValue</code> type is set, the value of the resource must be a double precision floating-point type.</p>
-    pub fn set_double_value(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_double_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.double_value = input;
         self
     }
     /// <p>When the <code>longValue</code> type is set, the value of the resource must be an extended precision floating-point type.</p>
     pub fn long_value(mut self, input: i64) -> Self {
-        self.long_value = Some(input);
+        self.long_value = ::std::option::Option::Some(input);
         self
     }
     /// <p>When the <code>longValue</code> type is set, the value of the resource must be an extended precision floating-point type.</p>
-    pub fn set_long_value(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_long_value(mut self, input: ::std::option::Option<i64>) -> Self {
         self.long_value = input;
         self
     }
     /// <p>When the <code>integerValue</code> type is set, the value of the resource must be an integer.</p>
     pub fn integer_value(mut self, input: i32) -> Self {
-        self.integer_value = Some(input);
+        self.integer_value = ::std::option::Option::Some(input);
         self
     }
     /// <p>When the <code>integerValue</code> type is set, the value of the resource must be an integer.</p>
-    pub fn set_integer_value(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_integer_value(mut self, input: ::std::option::Option<i32>) -> Self {
         self.integer_value = input;
         self
     }
@@ -123,16 +125,19 @@ impl ResourceBuilder {
     /// To override the contents of this collection use [`set_string_set_value`](Self::set_string_set_value).
     ///
     /// <p>When the <code>stringSetValue</code> type is set, the value of the resource must be a string type.</p>
-    pub fn string_set_value(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn string_set_value(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.string_set_value.unwrap_or_default();
         v.push(input.into());
-        self.string_set_value = Some(v);
+        self.string_set_value = ::std::option::Option::Some(v);
         self
     }
     /// <p>When the <code>stringSetValue</code> type is set, the value of the resource must be a string type.</p>
     pub fn set_string_set_value(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.string_set_value = input;
         self

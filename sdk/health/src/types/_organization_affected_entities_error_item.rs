@@ -2,42 +2,42 @@
 
 /// <p>Error information returned when a <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeAffectedEntitiesForOrganization.html">DescribeAffectedEntitiesForOrganization</a> operation can't find or process a specific entity.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OrganizationAffectedEntitiesErrorItem {
     /// <p>The 12-digit Amazon Web Services account numbers that contains the affected entities.</p>
     #[doc(hidden)]
-    pub aws_account_id: std::option::Option<std::string::String>,
+    pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
     /// <p>For example, an event ARN might look like the following:</p>
     /// <p> <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code> </p>
     #[doc(hidden)]
-    pub event_arn: std::option::Option<std::string::String>,
+    pub event_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the error.</p>
     #[doc(hidden)]
-    pub error_name: std::option::Option<std::string::String>,
+    pub error_name: ::std::option::Option<::std::string::String>,
     /// <p>A message that describes the error. Follow the error message and retry your request.</p>
     /// <p>For example, the <code>InvalidAccountInputError</code> error message appears if you call the <code>DescribeAffectedEntitiesForOrganization</code> operation and specify the <code>AccountSpecific</code> value for the <code>EventScopeCode</code> parameter, but don't specify an Amazon Web Services account.</p>
     #[doc(hidden)]
-    pub error_message: std::option::Option<std::string::String>,
+    pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl OrganizationAffectedEntitiesErrorItem {
     /// <p>The 12-digit Amazon Web Services account numbers that contains the affected entities.</p>
-    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
     /// <p>For example, an event ARN might look like the following:</p>
     /// <p> <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code> </p>
-    pub fn event_arn(&self) -> std::option::Option<&str> {
+    pub fn event_arn(&self) -> ::std::option::Option<&str> {
         self.event_arn.as_deref()
     }
     /// <p>The name of the error.</p>
-    pub fn error_name(&self) -> std::option::Option<&str> {
+    pub fn error_name(&self) -> ::std::option::Option<&str> {
         self.error_name.as_deref()
     }
     /// <p>A message that describes the error. Follow the error message and retry your request.</p>
     /// <p>For example, the <code>InvalidAccountInputError</code> error message appears if you call the <code>DescribeAffectedEntitiesForOrganization</code> operation and specify the <code>AccountSpecific</code> value for the <code>EventScopeCode</code> parameter, but don't specify an Amazon Web Services account.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<&str> {
         self.error_message.as_deref()
     }
 }
@@ -50,57 +50,71 @@ impl OrganizationAffectedEntitiesErrorItem {
 
 /// A builder for [`OrganizationAffectedEntitiesErrorItem`](crate::types::OrganizationAffectedEntitiesErrorItem).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OrganizationAffectedEntitiesErrorItemBuilder {
-    pub(crate) aws_account_id: std::option::Option<std::string::String>,
-    pub(crate) event_arn: std::option::Option<std::string::String>,
-    pub(crate) error_name: std::option::Option<std::string::String>,
-    pub(crate) error_message: std::option::Option<std::string::String>,
+    pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) event_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) error_name: ::std::option::Option<::std::string::String>,
+    pub(crate) error_message: ::std::option::Option<::std::string::String>,
 }
 impl OrganizationAffectedEntitiesErrorItemBuilder {
     /// <p>The 12-digit Amazon Web Services account numbers that contains the affected entities.</p>
-    pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.aws_account_id = Some(input.into());
+    pub fn aws_account_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The 12-digit Amazon Web Services account numbers that contains the affected entities.</p>
-    pub fn set_aws_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_aws_account_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.aws_account_id = input;
         self
     }
     /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
     /// <p>For example, an event ARN might look like the following:</p>
     /// <p> <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code> </p>
-    pub fn event_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.event_arn = Some(input.into());
+    pub fn event_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.event_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
     /// <p>For example, an event ARN might look like the following:</p>
     /// <p> <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code> </p>
-    pub fn set_event_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_event_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_arn = input;
         self
     }
     /// <p>The name of the error.</p>
-    pub fn error_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.error_name = Some(input.into());
+    pub fn error_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.error_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the error.</p>
-    pub fn set_error_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_error_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_name = input;
         self
     }
     /// <p>A message that describes the error. Follow the error message and retry your request.</p>
     /// <p>For example, the <code>InvalidAccountInputError</code> error message appears if you call the <code>DescribeAffectedEntitiesForOrganization</code> operation and specify the <code>AccountSpecific</code> value for the <code>EventScopeCode</code> parameter, but don't specify an Amazon Web Services account.</p>
-    pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.error_message = Some(input.into());
+    pub fn error_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A message that describes the error. Follow the error message and retry your request.</p>
     /// <p>For example, the <code>InvalidAccountInputError</code> error message appears if you call the <code>DescribeAffectedEntitiesForOrganization</code> operation and specify the <code>AccountSpecific</code> value for the <code>EventScopeCode</code> parameter, but don't specify an Amazon Web Services account.</p>
-    pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_error_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.error_message = input;
         self
     }

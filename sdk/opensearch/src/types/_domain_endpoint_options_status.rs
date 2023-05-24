@@ -2,22 +2,22 @@
 
 /// <p>The configured endpoint options for a domain and their current status.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DomainEndpointOptionsStatus {
     /// <p>Options to configure the endpoint for a domain.</p>
     #[doc(hidden)]
-    pub options: std::option::Option<crate::types::DomainEndpointOptions>,
+    pub options: ::std::option::Option<crate::types::DomainEndpointOptions>,
     /// <p>The status of the endpoint options for a domain.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::OptionStatus>,
+    pub status: ::std::option::Option<crate::types::OptionStatus>,
 }
 impl DomainEndpointOptionsStatus {
     /// <p>Options to configure the endpoint for a domain.</p>
-    pub fn options(&self) -> std::option::Option<&crate::types::DomainEndpointOptions> {
+    pub fn options(&self) -> ::std::option::Option<&crate::types::DomainEndpointOptions> {
         self.options.as_ref()
     }
     /// <p>The status of the endpoint options for a domain.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::OptionStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::OptionStatus> {
         self.status.as_ref()
     }
 }
@@ -30,32 +30,34 @@ impl DomainEndpointOptionsStatus {
 
 /// A builder for [`DomainEndpointOptionsStatus`](crate::types::DomainEndpointOptionsStatus).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DomainEndpointOptionsStatusBuilder {
-    pub(crate) options: std::option::Option<crate::types::DomainEndpointOptions>,
-    pub(crate) status: std::option::Option<crate::types::OptionStatus>,
+    pub(crate) options: ::std::option::Option<crate::types::DomainEndpointOptions>,
+    pub(crate) status: ::std::option::Option<crate::types::OptionStatus>,
 }
 impl DomainEndpointOptionsStatusBuilder {
     /// <p>Options to configure the endpoint for a domain.</p>
     pub fn options(mut self, input: crate::types::DomainEndpointOptions) -> Self {
-        self.options = Some(input);
+        self.options = ::std::option::Option::Some(input);
         self
     }
     /// <p>Options to configure the endpoint for a domain.</p>
     pub fn set_options(
         mut self,
-        input: std::option::Option<crate::types::DomainEndpointOptions>,
+        input: ::std::option::Option<crate::types::DomainEndpointOptions>,
     ) -> Self {
         self.options = input;
         self
     }
     /// <p>The status of the endpoint options for a domain.</p>
     pub fn status(mut self, input: crate::types::OptionStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the endpoint options for a domain.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::OptionStatus>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::OptionStatus>) -> Self {
         self.status = input;
         self
     }

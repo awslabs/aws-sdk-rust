@@ -2,29 +2,29 @@
 
 /// <p>Amazon Virtual Private Cloud configuration details associated with your Lambda function.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VpcConfig {
     /// <p>The identifiers of the subnets that are associated with your Lambda function.</p>
     #[doc(hidden)]
-    pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The identifier of the Amazon Virtual Private Cloud.</p>
     #[doc(hidden)]
-    pub vpc_id: std::option::Option<std::string::String>,
+    pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the security group attached to the Lambda function.</p>
     #[doc(hidden)]
-    pub security_groups: std::option::Option<std::vec::Vec<crate::types::SecurityGroup>>,
+    pub security_groups: ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroup>>,
 }
 impl VpcConfig {
     /// <p>The identifiers of the subnets that are associated with your Lambda function.</p>
-    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn subnet_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.subnet_ids.as_deref()
     }
     /// <p>The identifier of the Amazon Virtual Private Cloud.</p>
-    pub fn vpc_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
     /// <p>The identifier of the security group attached to the Lambda function.</p>
-    pub fn security_groups(&self) -> std::option::Option<&[crate::types::SecurityGroup]> {
+    pub fn security_groups(&self) -> ::std::option::Option<&[crate::types::SecurityGroup]> {
         self.security_groups.as_deref()
     }
 }
@@ -37,11 +37,13 @@ impl VpcConfig {
 
 /// A builder for [`VpcConfig`](crate::types::VpcConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VpcConfigBuilder {
-    pub(crate) subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) vpc_id: std::option::Option<std::string::String>,
-    pub(crate) security_groups: std::option::Option<std::vec::Vec<crate::types::SecurityGroup>>,
+    pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
+    pub(crate) security_groups: ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroup>>,
 }
 impl VpcConfigBuilder {
     /// Appends an item to `subnet_ids`.
@@ -49,27 +51,27 @@ impl VpcConfigBuilder {
     /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
     ///
     /// <p>The identifiers of the subnets that are associated with your Lambda function.</p>
-    pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn subnet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subnet_ids.unwrap_or_default();
         v.push(input.into());
-        self.subnet_ids = Some(v);
+        self.subnet_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The identifiers of the subnets that are associated with your Lambda function.</p>
     pub fn set_subnet_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.subnet_ids = input;
         self
     }
     /// <p>The identifier of the Amazon Virtual Private Cloud.</p>
-    pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.vpc_id = Some(input.into());
+    pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.vpc_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the Amazon Virtual Private Cloud.</p>
-    pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
     }
@@ -81,13 +83,13 @@ impl VpcConfigBuilder {
     pub fn security_groups(mut self, input: crate::types::SecurityGroup) -> Self {
         let mut v = self.security_groups.unwrap_or_default();
         v.push(input);
-        self.security_groups = Some(v);
+        self.security_groups = ::std::option::Option::Some(v);
         self
     }
     /// <p>The identifier of the security group attached to the Lambda function.</p>
     pub fn set_security_groups(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SecurityGroup>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroup>>,
     ) -> Self {
         self.security_groups = input;
         self

@@ -2,22 +2,22 @@
 
 /// <p>A regular expression representing a restriction on a string configuration option value.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OptionRestrictionRegex {
     /// <p>The regular expression pattern that a string configuration option value with this restriction must match.</p>
     #[doc(hidden)]
-    pub pattern: std::option::Option<std::string::String>,
+    pub pattern: ::std::option::Option<::std::string::String>,
     /// <p>A unique name representing this regular expression.</p>
     #[doc(hidden)]
-    pub label: std::option::Option<std::string::String>,
+    pub label: ::std::option::Option<::std::string::String>,
 }
 impl OptionRestrictionRegex {
     /// <p>The regular expression pattern that a string configuration option value with this restriction must match.</p>
-    pub fn pattern(&self) -> std::option::Option<&str> {
+    pub fn pattern(&self) -> ::std::option::Option<&str> {
         self.pattern.as_deref()
     }
     /// <p>A unique name representing this regular expression.</p>
-    pub fn label(&self) -> std::option::Option<&str> {
+    pub fn label(&self) -> ::std::option::Option<&str> {
         self.label.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl OptionRestrictionRegex {
 
 /// A builder for [`OptionRestrictionRegex`](crate::types::OptionRestrictionRegex).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OptionRestrictionRegexBuilder {
-    pub(crate) pattern: std::option::Option<std::string::String>,
-    pub(crate) label: std::option::Option<std::string::String>,
+    pub(crate) pattern: ::std::option::Option<::std::string::String>,
+    pub(crate) label: ::std::option::Option<::std::string::String>,
 }
 impl OptionRestrictionRegexBuilder {
     /// <p>The regular expression pattern that a string configuration option value with this restriction must match.</p>
-    pub fn pattern(mut self, input: impl Into<std::string::String>) -> Self {
-        self.pattern = Some(input.into());
+    pub fn pattern(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.pattern = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The regular expression pattern that a string configuration option value with this restriction must match.</p>
-    pub fn set_pattern(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_pattern(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pattern = input;
         self
     }
     /// <p>A unique name representing this regular expression.</p>
-    pub fn label(mut self, input: impl Into<std::string::String>) -> Self {
-        self.label = Some(input.into());
+    pub fn label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.label = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique name representing this regular expression.</p>
-    pub fn set_label(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.label = input;
         self
     }

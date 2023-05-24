@@ -2,42 +2,42 @@
 
 /// <p>Metadata describing a particular ephemeris.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EphemerisMetaData {
     /// <p>The <code>EphemerisSource</code> that generated a given ephemeris.</p>
     #[doc(hidden)]
-    pub source: std::option::Option<crate::types::EphemerisSource>,
+    pub source: ::std::option::Option<crate::types::EphemerisSource>,
     /// <p>UUID of a customer-provided ephemeris.</p>
     /// <p>This field is not populated for default ephemerides from Space Track.</p>
     #[doc(hidden)]
-    pub ephemeris_id: std::option::Option<std::string::String>,
+    pub ephemeris_id: ::std::option::Option<::std::string::String>,
     /// <p>The epoch of a default, ephemeris from Space Track in UTC.</p>
     /// <p>This field is not populated for customer-provided ephemerides.</p>
     #[doc(hidden)]
-    pub epoch: std::option::Option<aws_smithy_types::DateTime>,
+    pub epoch: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
     /// <p>A name is only returned for customer-provider ephemerides that have a name associated.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
 }
 impl EphemerisMetaData {
     /// <p>The <code>EphemerisSource</code> that generated a given ephemeris.</p>
-    pub fn source(&self) -> std::option::Option<&crate::types::EphemerisSource> {
+    pub fn source(&self) -> ::std::option::Option<&crate::types::EphemerisSource> {
         self.source.as_ref()
     }
     /// <p>UUID of a customer-provided ephemeris.</p>
     /// <p>This field is not populated for default ephemerides from Space Track.</p>
-    pub fn ephemeris_id(&self) -> std::option::Option<&str> {
+    pub fn ephemeris_id(&self) -> ::std::option::Option<&str> {
         self.ephemeris_id.as_deref()
     }
     /// <p>The epoch of a default, ephemeris from Space Track in UTC.</p>
     /// <p>This field is not populated for customer-provided ephemerides.</p>
-    pub fn epoch(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn epoch(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.epoch.as_ref()
     }
     /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
     /// <p>A name is only returned for customer-provider ephemerides that have a name associated.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
 }
@@ -50,57 +50,62 @@ impl EphemerisMetaData {
 
 /// A builder for [`EphemerisMetaData`](crate::types::EphemerisMetaData).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EphemerisMetaDataBuilder {
-    pub(crate) source: std::option::Option<crate::types::EphemerisSource>,
-    pub(crate) ephemeris_id: std::option::Option<std::string::String>,
-    pub(crate) epoch: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) name: std::option::Option<std::string::String>,
+    pub(crate) source: ::std::option::Option<crate::types::EphemerisSource>,
+    pub(crate) ephemeris_id: ::std::option::Option<::std::string::String>,
+    pub(crate) epoch: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
 }
 impl EphemerisMetaDataBuilder {
     /// <p>The <code>EphemerisSource</code> that generated a given ephemeris.</p>
     pub fn source(mut self, input: crate::types::EphemerisSource) -> Self {
-        self.source = Some(input);
+        self.source = ::std::option::Option::Some(input);
         self
     }
     /// <p>The <code>EphemerisSource</code> that generated a given ephemeris.</p>
-    pub fn set_source(mut self, input: std::option::Option<crate::types::EphemerisSource>) -> Self {
+    pub fn set_source(
+        mut self,
+        input: ::std::option::Option<crate::types::EphemerisSource>,
+    ) -> Self {
         self.source = input;
         self
     }
     /// <p>UUID of a customer-provided ephemeris.</p>
     /// <p>This field is not populated for default ephemerides from Space Track.</p>
-    pub fn ephemeris_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ephemeris_id = Some(input.into());
+    pub fn ephemeris_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ephemeris_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>UUID of a customer-provided ephemeris.</p>
     /// <p>This field is not populated for default ephemerides from Space Track.</p>
-    pub fn set_ephemeris_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ephemeris_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ephemeris_id = input;
         self
     }
     /// <p>The epoch of a default, ephemeris from Space Track in UTC.</p>
     /// <p>This field is not populated for customer-provided ephemerides.</p>
-    pub fn epoch(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.epoch = Some(input);
+    pub fn epoch(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.epoch = ::std::option::Option::Some(input);
         self
     }
     /// <p>The epoch of a default, ephemeris from Space Track in UTC.</p>
     /// <p>This field is not populated for customer-provided ephemerides.</p>
-    pub fn set_epoch(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_epoch(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.epoch = input;
         self
     }
     /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
     /// <p>A name is only returned for customer-provider ephemerides that have a name associated.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
     /// <p>A name is only returned for customer-provider ephemerides that have a name associated.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }

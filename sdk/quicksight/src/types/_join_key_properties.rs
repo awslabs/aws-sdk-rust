@@ -2,15 +2,15 @@
 
 /// <p>Properties associated with the columns participating in a join.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JoinKeyProperties {
     /// <p>A value that indicates that a row in a table is uniquely identified by the columns in a join key. This is used by Amazon QuickSight to optimize query performance.</p>
     #[doc(hidden)]
-    pub unique_key: std::option::Option<bool>,
+    pub unique_key: ::std::option::Option<bool>,
 }
 impl JoinKeyProperties {
     /// <p>A value that indicates that a row in a table is uniquely identified by the columns in a join key. This is used by Amazon QuickSight to optimize query performance.</p>
-    pub fn unique_key(&self) -> std::option::Option<bool> {
+    pub fn unique_key(&self) -> ::std::option::Option<bool> {
         self.unique_key
     }
 }
@@ -23,18 +23,20 @@ impl JoinKeyProperties {
 
 /// A builder for [`JoinKeyProperties`](crate::types::JoinKeyProperties).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct JoinKeyPropertiesBuilder {
-    pub(crate) unique_key: std::option::Option<bool>,
+    pub(crate) unique_key: ::std::option::Option<bool>,
 }
 impl JoinKeyPropertiesBuilder {
     /// <p>A value that indicates that a row in a table is uniquely identified by the columns in a join key. This is used by Amazon QuickSight to optimize query performance.</p>
     pub fn unique_key(mut self, input: bool) -> Self {
-        self.unique_key = Some(input);
+        self.unique_key = ::std::option::Option::Some(input);
         self
     }
     /// <p>A value that indicates that a row in a table is uniquely identified by the columns in a join key. This is used by Amazon QuickSight to optimize query performance.</p>
-    pub fn set_unique_key(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_unique_key(mut self, input: ::std::option::Option<bool>) -> Self {
         self.unique_key = input;
         self
     }

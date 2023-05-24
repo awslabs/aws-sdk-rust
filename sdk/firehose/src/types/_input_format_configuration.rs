@@ -2,15 +2,15 @@
 
 /// <p>Specifies the deserializer you want to use to convert the format of the input data. This parameter is required if <code>Enabled</code> is set to true.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InputFormatConfiguration {
     /// <p>Specifies which deserializer to use. You can choose either the Apache Hive JSON SerDe or the OpenX JSON SerDe. If both are non-null, the server rejects the request.</p>
     #[doc(hidden)]
-    pub deserializer: std::option::Option<crate::types::Deserializer>,
+    pub deserializer: ::std::option::Option<crate::types::Deserializer>,
 }
 impl InputFormatConfiguration {
     /// <p>Specifies which deserializer to use. You can choose either the Apache Hive JSON SerDe or the OpenX JSON SerDe. If both are non-null, the server rejects the request.</p>
-    pub fn deserializer(&self) -> std::option::Option<&crate::types::Deserializer> {
+    pub fn deserializer(&self) -> ::std::option::Option<&crate::types::Deserializer> {
         self.deserializer.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl InputFormatConfiguration {
 
 /// A builder for [`InputFormatConfiguration`](crate::types::InputFormatConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InputFormatConfigurationBuilder {
-    pub(crate) deserializer: std::option::Option<crate::types::Deserializer>,
+    pub(crate) deserializer: ::std::option::Option<crate::types::Deserializer>,
 }
 impl InputFormatConfigurationBuilder {
     /// <p>Specifies which deserializer to use. You can choose either the Apache Hive JSON SerDe or the OpenX JSON SerDe. If both are non-null, the server rejects the request.</p>
     pub fn deserializer(mut self, input: crate::types::Deserializer) -> Self {
-        self.deserializer = Some(input);
+        self.deserializer = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies which deserializer to use. You can choose either the Apache Hive JSON SerDe or the OpenX JSON SerDe. If both are non-null, the server rejects the request.</p>
     pub fn set_deserializer(
         mut self,
-        input: std::option::Option<crate::types::Deserializer>,
+        input: ::std::option::Option<crate::types::Deserializer>,
     ) -> Self {
         self.deserializer = input;
         self

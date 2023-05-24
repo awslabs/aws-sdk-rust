@@ -7,38 +7,40 @@
 /// <p>This is part of the <code>AWSManagedRulesATPRuleSet</code> configuration in <code>ManagedRuleGroupConfig</code>.</p>
 /// <p>Enable login response inspection by configuring exactly one component of the response to inspect. You can't configure more than one. If you don't configure any of the response inspection options, response inspection is disabled. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResponseInspection {
     /// <p>Configures inspection of the response status code. </p>
     #[doc(hidden)]
-    pub status_code: std::option::Option<crate::types::ResponseInspectionStatusCode>,
+    pub status_code: ::std::option::Option<crate::types::ResponseInspectionStatusCode>,
     /// <p>Configures inspection of the response header. </p>
     #[doc(hidden)]
-    pub header: std::option::Option<crate::types::ResponseInspectionHeader>,
+    pub header: ::std::option::Option<crate::types::ResponseInspectionHeader>,
     /// <p>Configures inspection of the response body. WAF can inspect the first 65,536 bytes (64 KB) of the response body. </p>
     #[doc(hidden)]
-    pub body_contains: std::option::Option<crate::types::ResponseInspectionBodyContains>,
+    pub body_contains: ::std::option::Option<crate::types::ResponseInspectionBodyContains>,
     /// <p>Configures inspection of the response JSON. WAF can inspect the first 65,536 bytes (64 KB) of the response JSON. </p>
     #[doc(hidden)]
-    pub json: std::option::Option<crate::types::ResponseInspectionJson>,
+    pub json: ::std::option::Option<crate::types::ResponseInspectionJson>,
 }
 impl ResponseInspection {
     /// <p>Configures inspection of the response status code. </p>
-    pub fn status_code(&self) -> std::option::Option<&crate::types::ResponseInspectionStatusCode> {
+    pub fn status_code(
+        &self,
+    ) -> ::std::option::Option<&crate::types::ResponseInspectionStatusCode> {
         self.status_code.as_ref()
     }
     /// <p>Configures inspection of the response header. </p>
-    pub fn header(&self) -> std::option::Option<&crate::types::ResponseInspectionHeader> {
+    pub fn header(&self) -> ::std::option::Option<&crate::types::ResponseInspectionHeader> {
         self.header.as_ref()
     }
     /// <p>Configures inspection of the response body. WAF can inspect the first 65,536 bytes (64 KB) of the response body. </p>
     pub fn body_contains(
         &self,
-    ) -> std::option::Option<&crate::types::ResponseInspectionBodyContains> {
+    ) -> ::std::option::Option<&crate::types::ResponseInspectionBodyContains> {
         self.body_contains.as_ref()
     }
     /// <p>Configures inspection of the response JSON. WAF can inspect the first 65,536 bytes (64 KB) of the response JSON. </p>
-    pub fn json(&self) -> std::option::Option<&crate::types::ResponseInspectionJson> {
+    pub fn json(&self) -> ::std::option::Option<&crate::types::ResponseInspectionJson> {
         self.json.as_ref()
     }
 }
@@ -51,62 +53,64 @@ impl ResponseInspection {
 
 /// A builder for [`ResponseInspection`](crate::types::ResponseInspection).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResponseInspectionBuilder {
-    pub(crate) status_code: std::option::Option<crate::types::ResponseInspectionStatusCode>,
-    pub(crate) header: std::option::Option<crate::types::ResponseInspectionHeader>,
-    pub(crate) body_contains: std::option::Option<crate::types::ResponseInspectionBodyContains>,
-    pub(crate) json: std::option::Option<crate::types::ResponseInspectionJson>,
+    pub(crate) status_code: ::std::option::Option<crate::types::ResponseInspectionStatusCode>,
+    pub(crate) header: ::std::option::Option<crate::types::ResponseInspectionHeader>,
+    pub(crate) body_contains: ::std::option::Option<crate::types::ResponseInspectionBodyContains>,
+    pub(crate) json: ::std::option::Option<crate::types::ResponseInspectionJson>,
 }
 impl ResponseInspectionBuilder {
     /// <p>Configures inspection of the response status code. </p>
     pub fn status_code(mut self, input: crate::types::ResponseInspectionStatusCode) -> Self {
-        self.status_code = Some(input);
+        self.status_code = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configures inspection of the response status code. </p>
     pub fn set_status_code(
         mut self,
-        input: std::option::Option<crate::types::ResponseInspectionStatusCode>,
+        input: ::std::option::Option<crate::types::ResponseInspectionStatusCode>,
     ) -> Self {
         self.status_code = input;
         self
     }
     /// <p>Configures inspection of the response header. </p>
     pub fn header(mut self, input: crate::types::ResponseInspectionHeader) -> Self {
-        self.header = Some(input);
+        self.header = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configures inspection of the response header. </p>
     pub fn set_header(
         mut self,
-        input: std::option::Option<crate::types::ResponseInspectionHeader>,
+        input: ::std::option::Option<crate::types::ResponseInspectionHeader>,
     ) -> Self {
         self.header = input;
         self
     }
     /// <p>Configures inspection of the response body. WAF can inspect the first 65,536 bytes (64 KB) of the response body. </p>
     pub fn body_contains(mut self, input: crate::types::ResponseInspectionBodyContains) -> Self {
-        self.body_contains = Some(input);
+        self.body_contains = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configures inspection of the response body. WAF can inspect the first 65,536 bytes (64 KB) of the response body. </p>
     pub fn set_body_contains(
         mut self,
-        input: std::option::Option<crate::types::ResponseInspectionBodyContains>,
+        input: ::std::option::Option<crate::types::ResponseInspectionBodyContains>,
     ) -> Self {
         self.body_contains = input;
         self
     }
     /// <p>Configures inspection of the response JSON. WAF can inspect the first 65,536 bytes (64 KB) of the response JSON. </p>
     pub fn json(mut self, input: crate::types::ResponseInspectionJson) -> Self {
-        self.json = Some(input);
+        self.json = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configures inspection of the response JSON. WAF can inspect the first 65,536 bytes (64 KB) of the response JSON. </p>
     pub fn set_json(
         mut self,
-        input: std::option::Option<crate::types::ResponseInspectionJson>,
+        input: ::std::option::Option<crate::types::ResponseInspectionJson>,
     ) -> Self {
         self.json = input;
         self

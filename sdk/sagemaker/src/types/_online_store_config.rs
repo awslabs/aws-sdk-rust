@@ -3,11 +3,11 @@
 /// <p>Use this to specify the Amazon Web Services Key Management Service (KMS) Key ID, or <code>KMSKeyId</code>, for at rest data encryption. You can turn <code>OnlineStore</code> on or off by specifying the <code>EnableOnlineStore</code> flag at General Assembly.</p>
 /// <p>The default value is <code>False</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OnlineStoreConfig {
     /// <p>Use to specify KMS Key ID (<code>KMSKeyId</code>) for at-rest encryption of your <code>OnlineStore</code>.</p>
     #[doc(hidden)]
-    pub security_config: std::option::Option<crate::types::OnlineStoreSecurityConfig>,
+    pub security_config: ::std::option::Option<crate::types::OnlineStoreSecurityConfig>,
     /// <p>Turn <code>OnlineStore</code> off by specifying <code>False</code> for the <code>EnableOnlineStore</code> flag. Turn <code>OnlineStore</code> on by specifying <code>True</code> for the <code>EnableOnlineStore</code> flag. </p>
     /// <p>The default value is <code>False</code>.</p>
     #[doc(hidden)]
@@ -15,7 +15,9 @@ pub struct OnlineStoreConfig {
 }
 impl OnlineStoreConfig {
     /// <p>Use to specify KMS Key ID (<code>KMSKeyId</code>) for at-rest encryption of your <code>OnlineStore</code>.</p>
-    pub fn security_config(&self) -> std::option::Option<&crate::types::OnlineStoreSecurityConfig> {
+    pub fn security_config(
+        &self,
+    ) -> ::std::option::Option<&crate::types::OnlineStoreSecurityConfig> {
         self.security_config.as_ref()
     }
     /// <p>Turn <code>OnlineStore</code> off by specifying <code>False</code> for the <code>EnableOnlineStore</code> flag. Turn <code>OnlineStore</code> on by specifying <code>True</code> for the <code>EnableOnlineStore</code> flag. </p>
@@ -33,21 +35,23 @@ impl OnlineStoreConfig {
 
 /// A builder for [`OnlineStoreConfig`](crate::types::OnlineStoreConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OnlineStoreConfigBuilder {
-    pub(crate) security_config: std::option::Option<crate::types::OnlineStoreSecurityConfig>,
-    pub(crate) enable_online_store: std::option::Option<bool>,
+    pub(crate) security_config: ::std::option::Option<crate::types::OnlineStoreSecurityConfig>,
+    pub(crate) enable_online_store: ::std::option::Option<bool>,
 }
 impl OnlineStoreConfigBuilder {
     /// <p>Use to specify KMS Key ID (<code>KMSKeyId</code>) for at-rest encryption of your <code>OnlineStore</code>.</p>
     pub fn security_config(mut self, input: crate::types::OnlineStoreSecurityConfig) -> Self {
-        self.security_config = Some(input);
+        self.security_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>Use to specify KMS Key ID (<code>KMSKeyId</code>) for at-rest encryption of your <code>OnlineStore</code>.</p>
     pub fn set_security_config(
         mut self,
-        input: std::option::Option<crate::types::OnlineStoreSecurityConfig>,
+        input: ::std::option::Option<crate::types::OnlineStoreSecurityConfig>,
     ) -> Self {
         self.security_config = input;
         self
@@ -55,12 +59,12 @@ impl OnlineStoreConfigBuilder {
     /// <p>Turn <code>OnlineStore</code> off by specifying <code>False</code> for the <code>EnableOnlineStore</code> flag. Turn <code>OnlineStore</code> on by specifying <code>True</code> for the <code>EnableOnlineStore</code> flag. </p>
     /// <p>The default value is <code>False</code>.</p>
     pub fn enable_online_store(mut self, input: bool) -> Self {
-        self.enable_online_store = Some(input);
+        self.enable_online_store = ::std::option::Option::Some(input);
         self
     }
     /// <p>Turn <code>OnlineStore</code> off by specifying <code>False</code> for the <code>EnableOnlineStore</code> flag. Turn <code>OnlineStore</code> on by specifying <code>True</code> for the <code>EnableOnlineStore</code> flag. </p>
     /// <p>The default value is <code>False</code>.</p>
-    pub fn set_enable_online_store(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enable_online_store(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_online_store = input;
         self
     }

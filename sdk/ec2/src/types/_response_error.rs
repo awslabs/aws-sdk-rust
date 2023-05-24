@@ -2,22 +2,22 @@
 
 /// <p>Describes the error that's returned when you cannot delete a launch template version.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResponseError {
     /// <p>The error code.</p>
     #[doc(hidden)]
-    pub code: std::option::Option<crate::types::LaunchTemplateErrorCode>,
+    pub code: ::std::option::Option<crate::types::LaunchTemplateErrorCode>,
     /// <p>The error message, if applicable.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
 }
 impl ResponseError {
     /// <p>The error code.</p>
-    pub fn code(&self) -> std::option::Option<&crate::types::LaunchTemplateErrorCode> {
+    pub fn code(&self) -> ::std::option::Option<&crate::types::LaunchTemplateErrorCode> {
         self.code.as_ref()
     }
     /// <p>The error message, if applicable.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -30,32 +30,34 @@ impl ResponseError {
 
 /// A builder for [`ResponseError`](crate::types::ResponseError).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResponseErrorBuilder {
-    pub(crate) code: std::option::Option<crate::types::LaunchTemplateErrorCode>,
-    pub(crate) message: std::option::Option<std::string::String>,
+    pub(crate) code: ::std::option::Option<crate::types::LaunchTemplateErrorCode>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
 }
 impl ResponseErrorBuilder {
     /// <p>The error code.</p>
     pub fn code(mut self, input: crate::types::LaunchTemplateErrorCode) -> Self {
-        self.code = Some(input);
+        self.code = ::std::option::Option::Some(input);
         self
     }
     /// <p>The error code.</p>
     pub fn set_code(
         mut self,
-        input: std::option::Option<crate::types::LaunchTemplateErrorCode>,
+        input: ::std::option::Option<crate::types::LaunchTemplateErrorCode>,
     ) -> Self {
         self.code = input;
         self
     }
     /// <p>The error message, if applicable.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The error message, if applicable.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }

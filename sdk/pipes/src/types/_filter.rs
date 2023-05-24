@@ -2,20 +2,20 @@
 
 /// <p>Filter events using an event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Filter {
     /// <p>The event pattern.</p>
     #[doc(hidden)]
-    pub pattern: std::option::Option<std::string::String>,
+    pub pattern: ::std::option::Option<::std::string::String>,
 }
 impl Filter {
     /// <p>The event pattern.</p>
-    pub fn pattern(&self) -> std::option::Option<&str> {
+    pub fn pattern(&self) -> ::std::option::Option<&str> {
         self.pattern.as_deref()
     }
 }
-impl std::fmt::Debug for Filter {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for Filter {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("Filter");
         formatter.field("pattern", &"*** Sensitive Data Redacted ***");
         formatter.finish()
@@ -30,18 +30,18 @@ impl Filter {
 
 /// A builder for [`Filter`](crate::types::Filter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct FilterBuilder {
-    pub(crate) pattern: std::option::Option<std::string::String>,
+    pub(crate) pattern: ::std::option::Option<::std::string::String>,
 }
 impl FilterBuilder {
     /// <p>The event pattern.</p>
-    pub fn pattern(mut self, input: impl Into<std::string::String>) -> Self {
-        self.pattern = Some(input.into());
+    pub fn pattern(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.pattern = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The event pattern.</p>
-    pub fn set_pattern(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_pattern(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.pattern = input;
         self
     }
@@ -52,8 +52,8 @@ impl FilterBuilder {
         }
     }
 }
-impl std::fmt::Debug for FilterBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for FilterBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("FilterBuilder");
         formatter.field("pattern", &"*** Sensitive Data Redacted ***");
         formatter.finish()

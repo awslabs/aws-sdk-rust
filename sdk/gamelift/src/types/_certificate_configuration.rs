@@ -2,7 +2,7 @@
 
 /// <p>Determines whether a TLS/SSL certificate is generated for a fleet. This feature must be enabled when creating the fleet. All instances in a fleet share the same certificate. The certificate can be retrieved by calling the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk.html">Amazon GameLift Server SDK</a> operation <code>GetInstanceCertificate</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CertificateConfiguration {
     /// <p>Indicates whether a TLS/SSL certificate is generated for a fleet. </p>
     /// <p>Valid values include: </p>
@@ -11,7 +11,7 @@ pub struct CertificateConfiguration {
     /// <li> <p> <b>DISABLED</b> - (default) Do not generate a TLS/SSL certificate for this fleet. </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub certificate_type: std::option::Option<crate::types::CertificateType>,
+    pub certificate_type: ::std::option::Option<crate::types::CertificateType>,
 }
 impl CertificateConfiguration {
     /// <p>Indicates whether a TLS/SSL certificate is generated for a fleet. </p>
@@ -20,7 +20,7 @@ impl CertificateConfiguration {
     /// <li> <p> <b>GENERATED</b> - Generate a TLS/SSL certificate for this fleet.</p> </li>
     /// <li> <p> <b>DISABLED</b> - (default) Do not generate a TLS/SSL certificate for this fleet. </p> </li>
     /// </ul>
-    pub fn certificate_type(&self) -> std::option::Option<&crate::types::CertificateType> {
+    pub fn certificate_type(&self) -> ::std::option::Option<&crate::types::CertificateType> {
         self.certificate_type.as_ref()
     }
 }
@@ -33,9 +33,11 @@ impl CertificateConfiguration {
 
 /// A builder for [`CertificateConfiguration`](crate::types::CertificateConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CertificateConfigurationBuilder {
-    pub(crate) certificate_type: std::option::Option<crate::types::CertificateType>,
+    pub(crate) certificate_type: ::std::option::Option<crate::types::CertificateType>,
 }
 impl CertificateConfigurationBuilder {
     /// <p>Indicates whether a TLS/SSL certificate is generated for a fleet. </p>
@@ -45,7 +47,7 @@ impl CertificateConfigurationBuilder {
     /// <li> <p> <b>DISABLED</b> - (default) Do not generate a TLS/SSL certificate for this fleet. </p> </li>
     /// </ul>
     pub fn certificate_type(mut self, input: crate::types::CertificateType) -> Self {
-        self.certificate_type = Some(input);
+        self.certificate_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether a TLS/SSL certificate is generated for a fleet. </p>
@@ -56,7 +58,7 @@ impl CertificateConfigurationBuilder {
     /// </ul>
     pub fn set_certificate_type(
         mut self,
-        input: std::option::Option<crate::types::CertificateType>,
+        input: ::std::option::Option<crate::types::CertificateType>,
     ) -> Self {
         self.certificate_type = input;
         self

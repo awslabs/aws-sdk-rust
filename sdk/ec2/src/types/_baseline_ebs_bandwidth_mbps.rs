@@ -2,22 +2,22 @@
 
 /// <p>The minimum and maximum baseline bandwidth to Amazon EBS, in Mbps. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-optimized.html">Amazon EBS–optimized instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BaselineEbsBandwidthMbps {
     /// <p>The minimum baseline bandwidth, in Mbps. If this parameter is not specified, there is no minimum limit.</p>
     #[doc(hidden)]
-    pub min: std::option::Option<i32>,
+    pub min: ::std::option::Option<i32>,
     /// <p>The maximum baseline bandwidth, in Mbps. If this parameter is not specified, there is no maximum limit.</p>
     #[doc(hidden)]
-    pub max: std::option::Option<i32>,
+    pub max: ::std::option::Option<i32>,
 }
 impl BaselineEbsBandwidthMbps {
     /// <p>The minimum baseline bandwidth, in Mbps. If this parameter is not specified, there is no minimum limit.</p>
-    pub fn min(&self) -> std::option::Option<i32> {
+    pub fn min(&self) -> ::std::option::Option<i32> {
         self.min
     }
     /// <p>The maximum baseline bandwidth, in Mbps. If this parameter is not specified, there is no maximum limit.</p>
-    pub fn max(&self) -> std::option::Option<i32> {
+    pub fn max(&self) -> ::std::option::Option<i32> {
         self.max
     }
 }
@@ -30,29 +30,31 @@ impl BaselineEbsBandwidthMbps {
 
 /// A builder for [`BaselineEbsBandwidthMbps`](crate::types::BaselineEbsBandwidthMbps).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BaselineEbsBandwidthMbpsBuilder {
-    pub(crate) min: std::option::Option<i32>,
-    pub(crate) max: std::option::Option<i32>,
+    pub(crate) min: ::std::option::Option<i32>,
+    pub(crate) max: ::std::option::Option<i32>,
 }
 impl BaselineEbsBandwidthMbpsBuilder {
     /// <p>The minimum baseline bandwidth, in Mbps. If this parameter is not specified, there is no minimum limit.</p>
     pub fn min(mut self, input: i32) -> Self {
-        self.min = Some(input);
+        self.min = ::std::option::Option::Some(input);
         self
     }
     /// <p>The minimum baseline bandwidth, in Mbps. If this parameter is not specified, there is no minimum limit.</p>
-    pub fn set_min(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_min(mut self, input: ::std::option::Option<i32>) -> Self {
         self.min = input;
         self
     }
     /// <p>The maximum baseline bandwidth, in Mbps. If this parameter is not specified, there is no maximum limit.</p>
     pub fn max(mut self, input: i32) -> Self {
-        self.max = Some(input);
+        self.max = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum baseline bandwidth, in Mbps. If this parameter is not specified, there is no maximum limit.</p>
-    pub fn set_max(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max = input;
         self
     }

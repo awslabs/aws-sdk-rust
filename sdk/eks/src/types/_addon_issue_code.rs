@@ -44,13 +44,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum AddonIssueCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -72,7 +72,7 @@ pub enum AddonIssueCode {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for AddonIssueCode {
+impl ::std::convert::From<&str> for AddonIssueCode {
     fn from(s: &str) -> Self {
         match s {
             "AccessDenied" => AddonIssueCode::AccessDenied,
@@ -89,11 +89,11 @@ impl std::convert::From<&str> for AddonIssueCode {
         }
     }
 }
-impl std::str::FromStr for AddonIssueCode {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for AddonIssueCode {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AddonIssueCode::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(AddonIssueCode::from(s))
     }
 }
 impl AddonIssueCode {
@@ -125,7 +125,7 @@ impl AddonIssueCode {
         ]
     }
 }
-impl AsRef<str> for AddonIssueCode {
+impl ::std::convert::AsRef<str> for AddonIssueCode {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

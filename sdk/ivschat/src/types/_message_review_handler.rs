@@ -2,22 +2,22 @@
 
 /// <p>Configuration information for optional message review.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MessageReviewHandler {
     /// <p>Identifier of the message review handler. Currently this must be an ARN of a lambda function.</p>
     #[doc(hidden)]
-    pub uri: std::option::Option<std::string::String>,
+    pub uri: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the fallback behavior (whether the message is allowed or denied) if the handler does not return a valid response, encounters an error, or times out. (For the timeout period, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/service-quotas.html"> Service Quotas</a>.) If allowed, the message is delivered with returned content to all users connected to the room. If denied, the message is not delivered to any user. Default: <code>ALLOW</code>.</p>
     #[doc(hidden)]
-    pub fallback_result: std::option::Option<crate::types::FallbackResult>,
+    pub fallback_result: ::std::option::Option<crate::types::FallbackResult>,
 }
 impl MessageReviewHandler {
     /// <p>Identifier of the message review handler. Currently this must be an ARN of a lambda function.</p>
-    pub fn uri(&self) -> std::option::Option<&str> {
+    pub fn uri(&self) -> ::std::option::Option<&str> {
         self.uri.as_deref()
     }
     /// <p>Specifies the fallback behavior (whether the message is allowed or denied) if the handler does not return a valid response, encounters an error, or times out. (For the timeout period, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/service-quotas.html"> Service Quotas</a>.) If allowed, the message is delivered with returned content to all users connected to the room. If denied, the message is not delivered to any user. Default: <code>ALLOW</code>.</p>
-    pub fn fallback_result(&self) -> std::option::Option<&crate::types::FallbackResult> {
+    pub fn fallback_result(&self) -> ::std::option::Option<&crate::types::FallbackResult> {
         self.fallback_result.as_ref()
     }
 }
@@ -30,31 +30,33 @@ impl MessageReviewHandler {
 
 /// A builder for [`MessageReviewHandler`](crate::types::MessageReviewHandler).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MessageReviewHandlerBuilder {
-    pub(crate) uri: std::option::Option<std::string::String>,
-    pub(crate) fallback_result: std::option::Option<crate::types::FallbackResult>,
+    pub(crate) uri: ::std::option::Option<::std::string::String>,
+    pub(crate) fallback_result: ::std::option::Option<crate::types::FallbackResult>,
 }
 impl MessageReviewHandlerBuilder {
     /// <p>Identifier of the message review handler. Currently this must be an ARN of a lambda function.</p>
-    pub fn uri(mut self, input: impl Into<std::string::String>) -> Self {
-        self.uri = Some(input.into());
+    pub fn uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.uri = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Identifier of the message review handler. Currently this must be an ARN of a lambda function.</p>
-    pub fn set_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.uri = input;
         self
     }
     /// <p>Specifies the fallback behavior (whether the message is allowed or denied) if the handler does not return a valid response, encounters an error, or times out. (For the timeout period, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/service-quotas.html"> Service Quotas</a>.) If allowed, the message is delivered with returned content to all users connected to the room. If denied, the message is not delivered to any user. Default: <code>ALLOW</code>.</p>
     pub fn fallback_result(mut self, input: crate::types::FallbackResult) -> Self {
-        self.fallback_result = Some(input);
+        self.fallback_result = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the fallback behavior (whether the message is allowed or denied) if the handler does not return a valid response, encounters an error, or times out. (For the timeout period, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/service-quotas.html"> Service Quotas</a>.) If allowed, the message is delivered with returned content to all users connected to the room. If denied, the message is not delivered to any user. Default: <code>ALLOW</code>.</p>
     pub fn set_fallback_result(
         mut self,
-        input: std::option::Option<crate::types::FallbackResult>,
+        input: ::std::option::Option<crate::types::FallbackResult>,
     ) -> Self {
         self.fallback_result = input;
         self

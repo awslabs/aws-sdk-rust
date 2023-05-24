@@ -4,9 +4,9 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_import_errors::builders::ListImportErrorsFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`import_id(impl Into<String>)`](crate::operation::list_import_errors::builders::ListImportErrorsFluentBuilder::import_id) / [`set_import_id(Option<String>)`](crate::operation::list_import_errors::builders::ListImportErrorsFluentBuilder::set_import_id): <p>List import errors request import id.</p>
+    ///   - [`import_id(impl ::std::convert::Into<String>)`](crate::operation::list_import_errors::builders::ListImportErrorsFluentBuilder::import_id) / [`set_import_id(Option<String>)`](crate::operation::list_import_errors::builders::ListImportErrorsFluentBuilder::set_import_id): <p>List import errors request import id.</p>
     ///   - [`max_results(i32)`](crate::operation::list_import_errors::builders::ListImportErrorsFluentBuilder::max_results) / [`set_max_results(i32)`](crate::operation::list_import_errors::builders::ListImportErrorsFluentBuilder::set_max_results): <p>List import errors request max results.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_import_errors::builders::ListImportErrorsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_import_errors::builders::ListImportErrorsFluentBuilder::set_next_token): <p>List import errors request next token.</p>
+    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_import_errors::builders::ListImportErrorsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_import_errors::builders::ListImportErrorsFluentBuilder::set_next_token): <p>List import errors request next token.</p>
     /// - On success, responds with [`ListImportErrorsOutput`](crate::operation::list_import_errors::ListImportErrorsOutput) with field(s):
     ///   - [`items(Option<Vec<ImportTaskError>>)`](crate::operation::list_import_errors::ListImportErrorsOutput::items): <p>List imports errors response items.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_import_errors::ListImportErrorsOutput::next_token): <p>List imports errors response next token.</p>

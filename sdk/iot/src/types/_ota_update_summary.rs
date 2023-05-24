@@ -2,29 +2,29 @@
 
 /// <p>An OTA update summary.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OtaUpdateSummary {
     /// <p>The OTA update ID.</p>
     #[doc(hidden)]
-    pub ota_update_id: std::option::Option<std::string::String>,
+    pub ota_update_id: ::std::option::Option<::std::string::String>,
     /// <p>The OTA update ARN.</p>
     #[doc(hidden)]
-    pub ota_update_arn: std::option::Option<std::string::String>,
+    pub ota_update_arn: ::std::option::Option<::std::string::String>,
     /// <p>The date when the OTA update was created.</p>
     #[doc(hidden)]
-    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl OtaUpdateSummary {
     /// <p>The OTA update ID.</p>
-    pub fn ota_update_id(&self) -> std::option::Option<&str> {
+    pub fn ota_update_id(&self) -> ::std::option::Option<&str> {
         self.ota_update_id.as_deref()
     }
     /// <p>The OTA update ARN.</p>
-    pub fn ota_update_arn(&self) -> std::option::Option<&str> {
+    pub fn ota_update_arn(&self) -> ::std::option::Option<&str> {
         self.ota_update_arn.as_deref()
     }
     /// <p>The date when the OTA update was created.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
 }
@@ -37,42 +37,56 @@ impl OtaUpdateSummary {
 
 /// A builder for [`OtaUpdateSummary`](crate::types::OtaUpdateSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OtaUpdateSummaryBuilder {
-    pub(crate) ota_update_id: std::option::Option<std::string::String>,
-    pub(crate) ota_update_arn: std::option::Option<std::string::String>,
-    pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) ota_update_id: ::std::option::Option<::std::string::String>,
+    pub(crate) ota_update_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl OtaUpdateSummaryBuilder {
     /// <p>The OTA update ID.</p>
-    pub fn ota_update_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ota_update_id = Some(input.into());
+    pub fn ota_update_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.ota_update_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The OTA update ID.</p>
-    pub fn set_ota_update_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ota_update_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.ota_update_id = input;
         self
     }
     /// <p>The OTA update ARN.</p>
-    pub fn ota_update_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ota_update_arn = Some(input.into());
+    pub fn ota_update_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.ota_update_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The OTA update ARN.</p>
-    pub fn set_ota_update_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ota_update_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.ota_update_arn = input;
         self
     }
     /// <p>The date when the OTA update was created.</p>
-    pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_date = Some(input);
+    pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date when the OTA update was created.</p>
     pub fn set_creation_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_date = input;
         self

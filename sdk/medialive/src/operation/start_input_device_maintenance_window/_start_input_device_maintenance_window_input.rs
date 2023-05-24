@@ -2,15 +2,15 @@
 
 /// Placeholder documentation for StartInputDeviceMaintenanceWindowRequest
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartInputDeviceMaintenanceWindowInput {
     /// The unique ID of the input device to start a maintenance window for. For example, hd-123456789abcdef.
     #[doc(hidden)]
-    pub input_device_id: std::option::Option<std::string::String>,
+    pub input_device_id: ::std::option::Option<::std::string::String>,
 }
 impl StartInputDeviceMaintenanceWindowInput {
     /// The unique ID of the input device to start a maintenance window for. For example, hd-123456789abcdef.
-    pub fn input_device_id(&self) -> std::option::Option<&str> {
+    pub fn input_device_id(&self) -> ::std::option::Option<&str> {
         self.input_device_id.as_deref()
     }
 }
@@ -23,24 +23,32 @@ impl StartInputDeviceMaintenanceWindowInput {
 
 /// A builder for [`StartInputDeviceMaintenanceWindowInput`](crate::operation::start_input_device_maintenance_window::StartInputDeviceMaintenanceWindowInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StartInputDeviceMaintenanceWindowInputBuilder {
-    pub(crate) input_device_id: std::option::Option<std::string::String>,
+    pub(crate) input_device_id: ::std::option::Option<::std::string::String>,
 }
 impl StartInputDeviceMaintenanceWindowInputBuilder {
     /// The unique ID of the input device to start a maintenance window for. For example, hd-123456789abcdef.
-    pub fn input_device_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.input_device_id = Some(input.into());
+    pub fn input_device_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.input_device_id = ::std::option::Option::Some(input.into());
         self
     }
     /// The unique ID of the input device to start a maintenance window for. For example, hd-123456789abcdef.
-    pub fn set_input_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_input_device_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.input_device_id = input;
         self
     }
     /// Consumes the builder and constructs a [`StartInputDeviceMaintenanceWindowInput`](crate::operation::start_input_device_maintenance_window::StartInputDeviceMaintenanceWindowInput).
-    pub fn build(self) -> Result<crate::operation::start_input_device_maintenance_window::StartInputDeviceMaintenanceWindowInput, aws_smithy_http::operation::error::BuildError>{
-        Ok(
+    pub fn build(self) -> ::std::result::Result<crate::operation::start_input_device_maintenance_window::StartInputDeviceMaintenanceWindowInput, ::aws_smithy_http::operation::error::BuildError>{
+        ::std::result::Result::Ok(
             crate::operation::start_input_device_maintenance_window::StartInputDeviceMaintenanceWindowInput {
                 input_device_id: self.input_device_id
                 ,

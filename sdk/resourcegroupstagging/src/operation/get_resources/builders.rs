@@ -12,56 +12,59 @@ pub use crate::operation::get_resources::_get_resources_input::GetResourcesInput
 /// <li> <p>Information about compliance with the account's effective tag policy. For more information on tag policies, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">Tag Policies</a> in the <i>Organizations User Guide.</i> </p> </li>
 /// </ul>
 /// <p>This operation supports pagination, where the response can be sent in multiple pages. You should check the <code>PaginationToken</code> response parameter to determine if there are additional results available to return. Repeat the query, passing the <code>PaginationToken</code> response parameter value as an input to the next request until you recieve a <code>null</code> value. A null value for <code>PaginationToken</code> indicates that there are no more results waiting to be returned.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetResourcesFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::get_resources::builders::GetResourcesInputBuilder,
 }
 impl GetResourcesFluentBuilder {
     /// Creates a new `GetResources`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::get_resources::GetResources,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::get_resources::GetResourcesError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resources::GetResourcesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_resources::GetResourcesOutput,
-        aws_smithy_http::result::SdkError<crate::operation::get_resources::GetResourcesError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resources::GetResourcesError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -74,9 +77,9 @@ impl GetResourcesFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_resources::GetResourcesOutput,
-        aws_smithy_http::result::SdkError<crate::operation::get_resources::GetResourcesError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_resources::GetResourcesError>,
     > {
         self.send_middleware().await
     }
@@ -92,12 +95,18 @@ impl GetResourcesFluentBuilder {
         )
     }
     /// <p>Specifies a <code>PaginationToken</code> response value from a previous request to indicate that you want the next page of results. Leave this parameter empty in your initial request.</p>
-    pub fn pagination_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn pagination_token(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.pagination_token(input.into());
         self
     }
     /// <p>Specifies a <code>PaginationToken</code> response value from a previous request to indicate that you want the next page of results. Leave this parameter empty in your initial request.</p>
-    pub fn set_pagination_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_pagination_token(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_pagination_token(input);
         self
     }
@@ -139,7 +148,7 @@ impl GetResourcesFluentBuilder {
     /// </ul>
     pub fn set_tag_filters(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TagFilter>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::TagFilter>>,
     ) -> Self {
         self.inner = self.inner.set_tag_filters(input);
         self
@@ -150,7 +159,7 @@ impl GetResourcesFluentBuilder {
         self
     }
     /// <p>Specifies the maximum number of results to be returned in each page. A query can return fewer than this maximum, even if there are more results still to return. You should always check the <code>PaginationToken</code> response value to see if there are more results. You can specify a minimum of 1 and a maximum value of 100.</p>
-    pub fn set_resources_per_page(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_resources_per_page(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_resources_per_page(input);
         self
     }
@@ -166,7 +175,7 @@ impl GetResourcesFluentBuilder {
     /// <p>A limit that restricts the number of tags (key and value pairs) returned by <code>GetResources</code> in paginated output. A resource with no tags is counted as having one tag (one key and value pair).</p>
     /// <p> <code>GetResources</code> does not split a resource and its associated tags across pages. If the specified <code>TagsPerPage</code> would cause such a break, a <code>PaginationToken</code> is returned in place of the affected resource and its tags. Use that token in another request to get the remaining data. For example, if you specify a <code>TagsPerPage</code> of <code>100</code> and the account has 22 resources with 10 tags each (meaning that each resource has 10 key and value pairs), the output will consist of three pages. The first page displays the first 10 resources, each with its 10 tags. The second page displays the next 10 resources, each with its 10 tags. The third page displays the remaining 2 resources, each with its 10 tags.</p>
     /// <p>You can set <code>TagsPerPage</code> to a minimum of 100 items up to a maximum of 500 items.</p>
-    pub fn set_tags_per_page(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_tags_per_page(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_tags_per_page(input);
         self
     }
@@ -178,7 +187,10 @@ impl GetResourcesFluentBuilder {
     /// <p>The string for each service name and resource type is the same as that embedded in a resource's Amazon Resource Name (ARN). For the list of services whose resources you can use in this parameter, see <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html">Services that support the Resource Groups Tagging API</a>.</p>
     /// <p>You can specify multiple resource types by using an array. The array can include up to 100 items. Note that the length constraint requirement applies to each resource type filter. For example, the following string would limit the response to only Amazon EC2 instances, Amazon S3 buckets, or any Audit Manager resource:</p>
     /// <p> <code>ec2:instance,s3:bucket,auditmanager</code> </p>
-    pub fn resource_type_filters(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn resource_type_filters(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.resource_type_filters(input.into());
         self
     }
@@ -188,7 +200,7 @@ impl GetResourcesFluentBuilder {
     /// <p> <code>ec2:instance,s3:bucket,auditmanager</code> </p>
     pub fn set_resource_type_filters(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_resource_type_filters(input);
         self
@@ -199,7 +211,7 @@ impl GetResourcesFluentBuilder {
         self
     }
     /// <p>Specifies whether to include details regarding the compliance with the effective tag policy. Set this to <code>true</code> to determine whether resources are compliant with the tag policy and to get details.</p>
-    pub fn set_include_compliance_details(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_include_compliance_details(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_include_compliance_details(input);
         self
     }
@@ -211,7 +223,7 @@ impl GetResourcesFluentBuilder {
     }
     /// <p>Specifies whether to exclude resources that are compliant with the tag policy. Set this to <code>true</code> if you are interested in retrieving information on noncompliant resources only.</p>
     /// <p>You can use this parameter only if the <code>IncludeComplianceDetails</code> parameter is also set to <code>true</code>.</p>
-    pub fn set_exclude_compliant_resources(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_exclude_compliant_resources(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_exclude_compliant_resources(input);
         self
     }
@@ -222,7 +234,10 @@ impl GetResourcesFluentBuilder {
     /// <p>Specifies a list of ARNs of resources for which you want to retrieve tag data. You can't specify both this parameter and any of the pagination parameters (<code>ResourcesPerPage</code>, <code>TagsPerPage</code>, <code>PaginationToken</code>) in the same request. If you specify both, you get an <code>Invalid Parameter</code> exception.</p>
     /// <p>If a resource specified by this parameter doesn't exist, it doesn't generate an error; it simply isn't included in the response.</p>
     /// <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn resource_arn_list(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn resource_arn_list(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.resource_arn_list(input.into());
         self
     }
@@ -231,7 +246,7 @@ impl GetResourcesFluentBuilder {
     /// <p>An ARN (Amazon Resource Name) uniquely identifies a resource. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn set_resource_arn_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_resource_arn_list(input);
         self

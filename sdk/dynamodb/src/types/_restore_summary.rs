@@ -2,36 +2,36 @@
 
 /// <p>Contains details for the restore.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RestoreSummary {
     /// <p>The Amazon Resource Name (ARN) of the backup from which the table was restored.</p>
     #[doc(hidden)]
-    pub source_backup_arn: std::option::Option<std::string::String>,
+    pub source_backup_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the source table of the backup that is being restored.</p>
     #[doc(hidden)]
-    pub source_table_arn: std::option::Option<std::string::String>,
+    pub source_table_arn: ::std::option::Option<::std::string::String>,
     /// <p>Point in time or source backup time.</p>
     #[doc(hidden)]
-    pub restore_date_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub restore_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates if a restore is in progress or not.</p>
     #[doc(hidden)]
-    pub restore_in_progress: std::option::Option<bool>,
+    pub restore_in_progress: ::std::option::Option<bool>,
 }
 impl RestoreSummary {
     /// <p>The Amazon Resource Name (ARN) of the backup from which the table was restored.</p>
-    pub fn source_backup_arn(&self) -> std::option::Option<&str> {
+    pub fn source_backup_arn(&self) -> ::std::option::Option<&str> {
         self.source_backup_arn.as_deref()
     }
     /// <p>The ARN of the source table of the backup that is being restored.</p>
-    pub fn source_table_arn(&self) -> std::option::Option<&str> {
+    pub fn source_table_arn(&self) -> ::std::option::Option<&str> {
         self.source_table_arn.as_deref()
     }
     /// <p>Point in time or source backup time.</p>
-    pub fn restore_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn restore_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.restore_date_time.as_ref()
     }
     /// <p>Indicates if a restore is in progress or not.</p>
-    pub fn restore_in_progress(&self) -> std::option::Option<bool> {
+    pub fn restore_in_progress(&self) -> ::std::option::Option<bool> {
         self.restore_in_progress
     }
 }
@@ -44,57 +44,68 @@ impl RestoreSummary {
 
 /// A builder for [`RestoreSummary`](crate::types::RestoreSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RestoreSummaryBuilder {
-    pub(crate) source_backup_arn: std::option::Option<std::string::String>,
-    pub(crate) source_table_arn: std::option::Option<std::string::String>,
-    pub(crate) restore_date_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) restore_in_progress: std::option::Option<bool>,
+    pub(crate) source_backup_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) source_table_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) restore_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) restore_in_progress: ::std::option::Option<bool>,
 }
 impl RestoreSummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the backup from which the table was restored.</p>
-    pub fn source_backup_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.source_backup_arn = Some(input.into());
+    pub fn source_backup_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.source_backup_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the backup from which the table was restored.</p>
     pub fn set_source_backup_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.source_backup_arn = input;
         self
     }
     /// <p>The ARN of the source table of the backup that is being restored.</p>
-    pub fn source_table_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.source_table_arn = Some(input.into());
+    pub fn source_table_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.source_table_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the source table of the backup that is being restored.</p>
-    pub fn set_source_table_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_source_table_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.source_table_arn = input;
         self
     }
     /// <p>Point in time or source backup time.</p>
-    pub fn restore_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.restore_date_time = Some(input);
+    pub fn restore_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.restore_date_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>Point in time or source backup time.</p>
     pub fn set_restore_date_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.restore_date_time = input;
         self
     }
     /// <p>Indicates if a restore is in progress or not.</p>
     pub fn restore_in_progress(mut self, input: bool) -> Self {
-        self.restore_in_progress = Some(input);
+        self.restore_in_progress = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates if a restore is in progress or not.</p>
-    pub fn set_restore_in_progress(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_restore_in_progress(mut self, input: ::std::option::Option<bool>) -> Self {
         self.restore_in_progress = input;
         self
     }

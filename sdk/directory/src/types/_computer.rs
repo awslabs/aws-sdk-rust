@@ -2,29 +2,29 @@
 
 /// <p>Contains information about a computer account in a directory.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Computer {
     /// <p>The identifier of the computer.</p>
     #[doc(hidden)]
-    pub computer_id: std::option::Option<std::string::String>,
+    pub computer_id: ::std::option::Option<::std::string::String>,
     /// <p>The computer name.</p>
     #[doc(hidden)]
-    pub computer_name: std::option::Option<std::string::String>,
+    pub computer_name: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>Attribute</code> objects containing the LDAP attributes that belong to the computer account.</p>
     #[doc(hidden)]
-    pub computer_attributes: std::option::Option<std::vec::Vec<crate::types::Attribute>>,
+    pub computer_attributes: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
 }
 impl Computer {
     /// <p>The identifier of the computer.</p>
-    pub fn computer_id(&self) -> std::option::Option<&str> {
+    pub fn computer_id(&self) -> ::std::option::Option<&str> {
         self.computer_id.as_deref()
     }
     /// <p>The computer name.</p>
-    pub fn computer_name(&self) -> std::option::Option<&str> {
+    pub fn computer_name(&self) -> ::std::option::Option<&str> {
         self.computer_name.as_deref()
     }
     /// <p>An array of <code>Attribute</code> objects containing the LDAP attributes that belong to the computer account.</p>
-    pub fn computer_attributes(&self) -> std::option::Option<&[crate::types::Attribute]> {
+    pub fn computer_attributes(&self) -> ::std::option::Option<&[crate::types::Attribute]> {
         self.computer_attributes.as_deref()
     }
 }
@@ -37,30 +37,38 @@ impl Computer {
 
 /// A builder for [`Computer`](crate::types::Computer).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ComputerBuilder {
-    pub(crate) computer_id: std::option::Option<std::string::String>,
-    pub(crate) computer_name: std::option::Option<std::string::String>,
-    pub(crate) computer_attributes: std::option::Option<std::vec::Vec<crate::types::Attribute>>,
+    pub(crate) computer_id: ::std::option::Option<::std::string::String>,
+    pub(crate) computer_name: ::std::option::Option<::std::string::String>,
+    pub(crate) computer_attributes: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
 }
 impl ComputerBuilder {
     /// <p>The identifier of the computer.</p>
-    pub fn computer_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.computer_id = Some(input.into());
+    pub fn computer_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.computer_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the computer.</p>
-    pub fn set_computer_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_computer_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.computer_id = input;
         self
     }
     /// <p>The computer name.</p>
-    pub fn computer_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.computer_name = Some(input.into());
+    pub fn computer_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.computer_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The computer name.</p>
-    pub fn set_computer_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_computer_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.computer_name = input;
         self
     }
@@ -72,13 +80,13 @@ impl ComputerBuilder {
     pub fn computer_attributes(mut self, input: crate::types::Attribute) -> Self {
         let mut v = self.computer_attributes.unwrap_or_default();
         v.push(input);
-        self.computer_attributes = Some(v);
+        self.computer_attributes = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of <code>Attribute</code> objects containing the LDAP attributes that belong to the computer account.</p>
     pub fn set_computer_attributes(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Attribute>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
     ) -> Self {
         self.computer_attributes = input;
         self

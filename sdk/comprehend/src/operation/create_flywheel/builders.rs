@@ -10,56 +10,59 @@ pub use crate::operation::create_flywheel::_create_flywheel_input::CreateFlywhee
 /// <p>To use a flywheel with an existing trained model, you specify the active model version. Comprehend copies the model's training data and test data into the flywheel's data lake.</p>
 /// <p>To use the flywheel with a new model, you need to provide a dataset for training data (and optional test data) when you create the flywheel.</p>
 /// <p>For more information about flywheels, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/flywheels-about.html"> Flywheel overview</a> in the <i>Amazon Comprehend Developer Guide</i>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateFlywheelFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_flywheel::builders::CreateFlywheelInputBuilder,
 }
 impl CreateFlywheelFluentBuilder {
     /// Creates a new `CreateFlywheel`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_flywheel::CreateFlywheel,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_flywheel::CreateFlywheelError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_flywheel::CreateFlywheelError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_flywheel::CreateFlywheelOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_flywheel::CreateFlywheelError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_flywheel::CreateFlywheelError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,41 +75,56 @@ impl CreateFlywheelFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_flywheel::CreateFlywheelOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_flywheel::CreateFlywheelError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_flywheel::CreateFlywheelError>,
     > {
         self.send_middleware().await
     }
     /// <p>Name for the flywheel.</p>
-    pub fn flywheel_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn flywheel_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.flywheel_name(input.into());
         self
     }
     /// <p>Name for the flywheel.</p>
-    pub fn set_flywheel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_flywheel_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_flywheel_name(input);
         self
     }
     /// <p>To associate an existing model with the flywheel, specify the Amazon Resource Number (ARN) of the model version.</p>
-    pub fn active_model_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn active_model_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.active_model_arn(input.into());
         self
     }
     /// <p>To associate an existing model with the flywheel, specify the Amazon Resource Number (ARN) of the model version.</p>
-    pub fn set_active_model_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_active_model_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_active_model_arn(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend the permissions required to access the flywheel data in the data lake.</p>
-    pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn data_access_role_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.data_access_role_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend the permissions required to access the flywheel data in the data lake.</p>
     pub fn set_data_access_role_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_data_access_role_arn(input);
         self
@@ -117,7 +135,10 @@ impl CreateFlywheelFluentBuilder {
         self
     }
     /// <p>Configuration about the custom classifier associated with the flywheel.</p>
-    pub fn set_task_config(mut self, input: std::option::Option<crate::types::TaskConfig>) -> Self {
+    pub fn set_task_config(
+        mut self,
+        input: ::std::option::Option<crate::types::TaskConfig>,
+    ) -> Self {
         self.inner = self.inner.set_task_config(input);
         self
     }
@@ -127,17 +148,23 @@ impl CreateFlywheelFluentBuilder {
         self
     }
     /// <p>The model type.</p>
-    pub fn set_model_type(mut self, input: std::option::Option<crate::types::ModelType>) -> Self {
+    pub fn set_model_type(mut self, input: ::std::option::Option<crate::types::ModelType>) -> Self {
         self.inner = self.inner.set_model_type(input);
         self
     }
     /// <p>Enter the S3 location for the data lake. You can specify a new S3 bucket or a new folder of an existing S3 bucket. The flywheel creates the data lake at this location.</p>
-    pub fn data_lake_s3_uri(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn data_lake_s3_uri(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.data_lake_s3_uri(input.into());
         self
     }
     /// <p>Enter the S3 location for the data lake. You can specify a new S3 bucket or a new folder of an existing S3 bucket. The flywheel creates the data lake at this location.</p>
-    pub fn set_data_lake_s3_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_data_lake_s3_uri(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_data_lake_s3_uri(input);
         self
     }
@@ -149,20 +176,23 @@ impl CreateFlywheelFluentBuilder {
     /// <p>Data security configurations.</p>
     pub fn set_data_security_config(
         mut self,
-        input: std::option::Option<crate::types::DataSecurityConfig>,
+        input: ::std::option::Option<crate::types::DataSecurityConfig>,
     ) -> Self {
         self.inner = self.inner.set_data_security_config(input);
         self
     }
     /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
-    pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn client_request_token(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
     pub fn set_client_request_token(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
@@ -179,7 +209,7 @@ impl CreateFlywheelFluentBuilder {
     /// <p>The tags to associate with this flywheel.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self

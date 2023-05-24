@@ -3,20 +3,20 @@
 /// <p> Represents the output of a <code>DeleteEvaluation</code> operation. The output indicates that Amazon Machine Learning (Amazon ML) received the request.</p>
 /// <p>You can use the <code>GetEvaluation</code> operation and check the value of the <code>Status</code> parameter to see whether an <code>Evaluation</code> is marked as <code>DELETED</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteEvaluationOutput {
     /// <p>A user-supplied ID that uniquely identifies the <code>Evaluation</code>. This value should be identical to the value of the <code>EvaluationId</code> in the request.</p>
     #[doc(hidden)]
-    pub evaluation_id: std::option::Option<std::string::String>,
+    pub evaluation_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DeleteEvaluationOutput {
     /// <p>A user-supplied ID that uniquely identifies the <code>Evaluation</code>. This value should be identical to the value of the <code>EvaluationId</code> in the request.</p>
-    pub fn evaluation_id(&self) -> std::option::Option<&str> {
+    pub fn evaluation_id(&self) -> ::std::option::Option<&str> {
         self.evaluation_id.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DeleteEvaluationOutput {
+impl ::aws_http::request_id::RequestId for DeleteEvaluationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -31,19 +31,27 @@ impl DeleteEvaluationOutput {
 
 /// A builder for [`DeleteEvaluationOutput`](crate::operation::delete_evaluation::DeleteEvaluationOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteEvaluationOutputBuilder {
-    pub(crate) evaluation_id: std::option::Option<std::string::String>,
+    pub(crate) evaluation_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DeleteEvaluationOutputBuilder {
     /// <p>A user-supplied ID that uniquely identifies the <code>Evaluation</code>. This value should be identical to the value of the <code>EvaluationId</code> in the request.</p>
-    pub fn evaluation_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.evaluation_id = Some(input.into());
+    pub fn evaluation_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.evaluation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A user-supplied ID that uniquely identifies the <code>Evaluation</code>. This value should be identical to the value of the <code>EvaluationId</code> in the request.</p>
-    pub fn set_evaluation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_evaluation_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.evaluation_id = input;
         self
     }

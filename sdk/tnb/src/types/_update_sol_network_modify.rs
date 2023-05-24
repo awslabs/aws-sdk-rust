@@ -3,24 +3,26 @@
 /// <p>Information parameters and/or the configurable properties for a network function.</p>
 /// <p>A network function instance is a function in a function package .</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateSolNetworkModify {
     /// <p>ID of the network function instance.</p>
     /// <p>A network function instance is a function in a function package .</p>
     #[doc(hidden)]
-    pub vnf_instance_id: std::option::Option<std::string::String>,
+    pub vnf_instance_id: ::std::option::Option<::std::string::String>,
     /// <p>Provides values for the configurable properties declared in the function package descriptor.</p>
     #[doc(hidden)]
-    pub vnf_configurable_properties: std::option::Option<aws_smithy_types::Document>,
+    pub vnf_configurable_properties: ::std::option::Option<::aws_smithy_types::Document>,
 }
 impl UpdateSolNetworkModify {
     /// <p>ID of the network function instance.</p>
     /// <p>A network function instance is a function in a function package .</p>
-    pub fn vnf_instance_id(&self) -> std::option::Option<&str> {
+    pub fn vnf_instance_id(&self) -> ::std::option::Option<&str> {
         self.vnf_instance_id.as_deref()
     }
     /// <p>Provides values for the configurable properties declared in the function package descriptor.</p>
-    pub fn vnf_configurable_properties(&self) -> std::option::Option<&aws_smithy_types::Document> {
+    pub fn vnf_configurable_properties(
+        &self,
+    ) -> ::std::option::Option<&::aws_smithy_types::Document> {
         self.vnf_configurable_properties.as_ref()
     }
 }
@@ -33,33 +35,41 @@ impl UpdateSolNetworkModify {
 
 /// A builder for [`UpdateSolNetworkModify`](crate::types::UpdateSolNetworkModify).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateSolNetworkModifyBuilder {
-    pub(crate) vnf_instance_id: std::option::Option<std::string::String>,
-    pub(crate) vnf_configurable_properties: std::option::Option<aws_smithy_types::Document>,
+    pub(crate) vnf_instance_id: ::std::option::Option<::std::string::String>,
+    pub(crate) vnf_configurable_properties: ::std::option::Option<::aws_smithy_types::Document>,
 }
 impl UpdateSolNetworkModifyBuilder {
     /// <p>ID of the network function instance.</p>
     /// <p>A network function instance is a function in a function package .</p>
-    pub fn vnf_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.vnf_instance_id = Some(input.into());
+    pub fn vnf_instance_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.vnf_instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>ID of the network function instance.</p>
     /// <p>A network function instance is a function in a function package .</p>
-    pub fn set_vnf_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_vnf_instance_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.vnf_instance_id = input;
         self
     }
     /// <p>Provides values for the configurable properties declared in the function package descriptor.</p>
-    pub fn vnf_configurable_properties(mut self, input: aws_smithy_types::Document) -> Self {
-        self.vnf_configurable_properties = Some(input);
+    pub fn vnf_configurable_properties(mut self, input: ::aws_smithy_types::Document) -> Self {
+        self.vnf_configurable_properties = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides values for the configurable properties declared in the function package descriptor.</p>
     pub fn set_vnf_configurable_properties(
         mut self,
-        input: std::option::Option<aws_smithy_types::Document>,
+        input: ::std::option::Option<::aws_smithy_types::Document>,
     ) -> Self {
         self.vnf_configurable_properties = input;
         self

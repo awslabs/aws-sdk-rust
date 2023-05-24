@@ -2,18 +2,18 @@
 
 /// SCTE-35 Descriptor settings.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Scte35DescriptorSettings {
     /// SCTE-35 Segmentation Descriptor.
     #[doc(hidden)]
     pub segmentation_descriptor_scte35_descriptor_settings:
-        std::option::Option<crate::types::Scte35SegmentationDescriptor>,
+        ::std::option::Option<crate::types::Scte35SegmentationDescriptor>,
 }
 impl Scte35DescriptorSettings {
     /// SCTE-35 Segmentation Descriptor.
     pub fn segmentation_descriptor_scte35_descriptor_settings(
         &self,
-    ) -> std::option::Option<&crate::types::Scte35SegmentationDescriptor> {
+    ) -> ::std::option::Option<&crate::types::Scte35SegmentationDescriptor> {
         self.segmentation_descriptor_scte35_descriptor_settings
             .as_ref()
     }
@@ -27,10 +27,12 @@ impl Scte35DescriptorSettings {
 
 /// A builder for [`Scte35DescriptorSettings`](crate::types::Scte35DescriptorSettings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct Scte35DescriptorSettingsBuilder {
     pub(crate) segmentation_descriptor_scte35_descriptor_settings:
-        std::option::Option<crate::types::Scte35SegmentationDescriptor>,
+        ::std::option::Option<crate::types::Scte35SegmentationDescriptor>,
 }
 impl Scte35DescriptorSettingsBuilder {
     /// SCTE-35 Segmentation Descriptor.
@@ -38,13 +40,14 @@ impl Scte35DescriptorSettingsBuilder {
         mut self,
         input: crate::types::Scte35SegmentationDescriptor,
     ) -> Self {
-        self.segmentation_descriptor_scte35_descriptor_settings = Some(input);
+        self.segmentation_descriptor_scte35_descriptor_settings =
+            ::std::option::Option::Some(input);
         self
     }
     /// SCTE-35 Segmentation Descriptor.
     pub fn set_segmentation_descriptor_scte35_descriptor_settings(
         mut self,
-        input: std::option::Option<crate::types::Scte35SegmentationDescriptor>,
+        input: ::std::option::Option<crate::types::Scte35SegmentationDescriptor>,
     ) -> Self {
         self.segmentation_descriptor_scte35_descriptor_settings = input;
         self

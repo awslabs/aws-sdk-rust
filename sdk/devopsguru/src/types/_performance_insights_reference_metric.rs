@@ -2,17 +2,17 @@
 
 /// <p>Information about a reference metric used to evaluate Performance Insights.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PerformanceInsightsReferenceMetric {
     /// <p>A query to be processed on the metric.</p>
     #[doc(hidden)]
-    pub metric_query: std::option::Option<crate::types::PerformanceInsightsMetricQuery>,
+    pub metric_query: ::std::option::Option<crate::types::PerformanceInsightsMetricQuery>,
 }
 impl PerformanceInsightsReferenceMetric {
     /// <p>A query to be processed on the metric.</p>
     pub fn metric_query(
         &self,
-    ) -> std::option::Option<&crate::types::PerformanceInsightsMetricQuery> {
+    ) -> ::std::option::Option<&crate::types::PerformanceInsightsMetricQuery> {
         self.metric_query.as_ref()
     }
 }
@@ -25,20 +25,22 @@ impl PerformanceInsightsReferenceMetric {
 
 /// A builder for [`PerformanceInsightsReferenceMetric`](crate::types::PerformanceInsightsReferenceMetric).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PerformanceInsightsReferenceMetricBuilder {
-    pub(crate) metric_query: std::option::Option<crate::types::PerformanceInsightsMetricQuery>,
+    pub(crate) metric_query: ::std::option::Option<crate::types::PerformanceInsightsMetricQuery>,
 }
 impl PerformanceInsightsReferenceMetricBuilder {
     /// <p>A query to be processed on the metric.</p>
     pub fn metric_query(mut self, input: crate::types::PerformanceInsightsMetricQuery) -> Self {
-        self.metric_query = Some(input);
+        self.metric_query = ::std::option::Option::Some(input);
         self
     }
     /// <p>A query to be processed on the metric.</p>
     pub fn set_metric_query(
         mut self,
-        input: std::option::Option<crate::types::PerformanceInsightsMetricQuery>,
+        input: ::std::option::Option<crate::types::PerformanceInsightsMetricQuery>,
     ) -> Self {
         self.metric_query = input;
         self

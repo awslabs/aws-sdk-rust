@@ -2,42 +2,42 @@
 
 /// <p>Import error data.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportErrorData {
     /// <p>Import error data source server ID.</p>
     #[doc(hidden)]
-    pub source_server_id: std::option::Option<std::string::String>,
+    pub source_server_id: ::std::option::Option<::std::string::String>,
     /// <p>Import error data application ID.</p>
     #[doc(hidden)]
-    pub application_id: std::option::Option<std::string::String>,
+    pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>Import error data wave id.</p>
     #[doc(hidden)]
-    pub wave_id: std::option::Option<std::string::String>,
+    pub wave_id: ::std::option::Option<::std::string::String>,
     /// <p>Import error data ec2 LaunchTemplate ID.</p>
     #[doc(hidden)]
-    pub ec2_launch_template_id: std::option::Option<std::string::String>,
+    pub ec2_launch_template_id: ::std::option::Option<::std::string::String>,
     /// <p>Import error data row number.</p>
     #[doc(hidden)]
     pub row_number: i64,
     /// <p>Import error data raw error.</p>
     #[doc(hidden)]
-    pub raw_error: std::option::Option<std::string::String>,
+    pub raw_error: ::std::option::Option<::std::string::String>,
 }
 impl ImportErrorData {
     /// <p>Import error data source server ID.</p>
-    pub fn source_server_id(&self) -> std::option::Option<&str> {
+    pub fn source_server_id(&self) -> ::std::option::Option<&str> {
         self.source_server_id.as_deref()
     }
     /// <p>Import error data application ID.</p>
-    pub fn application_id(&self) -> std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<&str> {
         self.application_id.as_deref()
     }
     /// <p>Import error data wave id.</p>
-    pub fn wave_id(&self) -> std::option::Option<&str> {
+    pub fn wave_id(&self) -> ::std::option::Option<&str> {
         self.wave_id.as_deref()
     }
     /// <p>Import error data ec2 LaunchTemplate ID.</p>
-    pub fn ec2_launch_template_id(&self) -> std::option::Option<&str> {
+    pub fn ec2_launch_template_id(&self) -> ::std::option::Option<&str> {
         self.ec2_launch_template_id.as_deref()
     }
     /// <p>Import error data row number.</p>
@@ -45,7 +45,7 @@ impl ImportErrorData {
         self.row_number
     }
     /// <p>Import error data raw error.</p>
-    pub fn raw_error(&self) -> std::option::Option<&str> {
+    pub fn raw_error(&self) -> ::std::option::Option<&str> {
         self.raw_error.as_deref()
     }
 }
@@ -58,76 +58,93 @@ impl ImportErrorData {
 
 /// A builder for [`ImportErrorData`](crate::types::ImportErrorData).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ImportErrorDataBuilder {
-    pub(crate) source_server_id: std::option::Option<std::string::String>,
-    pub(crate) application_id: std::option::Option<std::string::String>,
-    pub(crate) wave_id: std::option::Option<std::string::String>,
-    pub(crate) ec2_launch_template_id: std::option::Option<std::string::String>,
-    pub(crate) row_number: std::option::Option<i64>,
-    pub(crate) raw_error: std::option::Option<std::string::String>,
+    pub(crate) source_server_id: ::std::option::Option<::std::string::String>,
+    pub(crate) application_id: ::std::option::Option<::std::string::String>,
+    pub(crate) wave_id: ::std::option::Option<::std::string::String>,
+    pub(crate) ec2_launch_template_id: ::std::option::Option<::std::string::String>,
+    pub(crate) row_number: ::std::option::Option<i64>,
+    pub(crate) raw_error: ::std::option::Option<::std::string::String>,
 }
 impl ImportErrorDataBuilder {
     /// <p>Import error data source server ID.</p>
-    pub fn source_server_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.source_server_id = Some(input.into());
+    pub fn source_server_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.source_server_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Import error data source server ID.</p>
-    pub fn set_source_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_source_server_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.source_server_id = input;
         self
     }
     /// <p>Import error data application ID.</p>
-    pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.application_id = Some(input.into());
+    pub fn application_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Import error data application ID.</p>
-    pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_application_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.application_id = input;
         self
     }
     /// <p>Import error data wave id.</p>
-    pub fn wave_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.wave_id = Some(input.into());
+    pub fn wave_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.wave_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Import error data wave id.</p>
-    pub fn set_wave_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_wave_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.wave_id = input;
         self
     }
     /// <p>Import error data ec2 LaunchTemplate ID.</p>
-    pub fn ec2_launch_template_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ec2_launch_template_id = Some(input.into());
+    pub fn ec2_launch_template_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.ec2_launch_template_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Import error data ec2 LaunchTemplate ID.</p>
     pub fn set_ec2_launch_template_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.ec2_launch_template_id = input;
         self
     }
     /// <p>Import error data row number.</p>
     pub fn row_number(mut self, input: i64) -> Self {
-        self.row_number = Some(input);
+        self.row_number = ::std::option::Option::Some(input);
         self
     }
     /// <p>Import error data row number.</p>
-    pub fn set_row_number(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_row_number(mut self, input: ::std::option::Option<i64>) -> Self {
         self.row_number = input;
         self
     }
     /// <p>Import error data raw error.</p>
-    pub fn raw_error(mut self, input: impl Into<std::string::String>) -> Self {
-        self.raw_error = Some(input.into());
+    pub fn raw_error(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.raw_error = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Import error data raw error.</p>
-    pub fn set_raw_error(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_raw_error(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.raw_error = input;
         self
     }

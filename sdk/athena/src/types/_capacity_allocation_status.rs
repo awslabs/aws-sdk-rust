@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum CapacityAllocationStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum CapacityAllocationStatus {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for CapacityAllocationStatus {
+impl ::std::convert::From<&str> for CapacityAllocationStatus {
     fn from(s: &str) -> Self {
         match s {
             "FAILED" => CapacityAllocationStatus::Failed,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for CapacityAllocationStatus {
         }
     }
 }
-impl std::str::FromStr for CapacityAllocationStatus {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for CapacityAllocationStatus {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CapacityAllocationStatus::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(CapacityAllocationStatus::from(s))
     }
 }
 impl CapacityAllocationStatus {
@@ -91,7 +91,7 @@ impl CapacityAllocationStatus {
         &["FAILED", "PENDING", "SUCCEEDED"]
     }
 }
-impl AsRef<str> for CapacityAllocationStatus {
+impl ::std::convert::AsRef<str> for CapacityAllocationStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

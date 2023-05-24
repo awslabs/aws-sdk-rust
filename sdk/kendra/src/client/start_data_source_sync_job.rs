@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StartDataSourceSyncJob`](crate::operation::start_data_source_sync_job::builders::StartDataSourceSyncJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::start_data_source_sync_job::builders::StartDataSourceSyncJobFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::start_data_source_sync_job::builders::StartDataSourceSyncJobFluentBuilder::set_id): <p>The identifier of the data source connector to synchronize.</p>
-    ///   - [`index_id(impl Into<String>)`](crate::operation::start_data_source_sync_job::builders::StartDataSourceSyncJobFluentBuilder::index_id) / [`set_index_id(Option<String>)`](crate::operation::start_data_source_sync_job::builders::StartDataSourceSyncJobFluentBuilder::set_index_id): <p>The identifier of the index used with the data source connector.</p>
+    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::start_data_source_sync_job::builders::StartDataSourceSyncJobFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::start_data_source_sync_job::builders::StartDataSourceSyncJobFluentBuilder::set_id): <p>The identifier of the data source connector to synchronize.</p>
+    ///   - [`index_id(impl ::std::convert::Into<String>)`](crate::operation::start_data_source_sync_job::builders::StartDataSourceSyncJobFluentBuilder::index_id) / [`set_index_id(Option<String>)`](crate::operation::start_data_source_sync_job::builders::StartDataSourceSyncJobFluentBuilder::set_index_id): <p>The identifier of the index used with the data source connector.</p>
     /// - On success, responds with [`StartDataSourceSyncJobOutput`](crate::operation::start_data_source_sync_job::StartDataSourceSyncJobOutput) with field(s):
     ///   - [`execution_id(Option<String>)`](crate::operation::start_data_source_sync_job::StartDataSourceSyncJobOutput::execution_id): <p>Identifies a particular synchronization job.</p>
     /// - On failure, responds with [`SdkError<StartDataSourceSyncJobError>`](crate::operation::start_data_source_sync_job::StartDataSourceSyncJobError)

@@ -2,27 +2,27 @@
 
 /// <p>Provides information about the session that the key was used for.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsIamAccessKeySessionContext {
     /// <p>Attributes of the session that the key was used for.</p>
     #[doc(hidden)]
-    pub attributes: std::option::Option<crate::types::AwsIamAccessKeySessionContextAttributes>,
+    pub attributes: ::std::option::Option<crate::types::AwsIamAccessKeySessionContextAttributes>,
     /// <p>Information about the entity that created the session.</p>
     #[doc(hidden)]
     pub session_issuer:
-        std::option::Option<crate::types::AwsIamAccessKeySessionContextSessionIssuer>,
+        ::std::option::Option<crate::types::AwsIamAccessKeySessionContextSessionIssuer>,
 }
 impl AwsIamAccessKeySessionContext {
     /// <p>Attributes of the session that the key was used for.</p>
     pub fn attributes(
         &self,
-    ) -> std::option::Option<&crate::types::AwsIamAccessKeySessionContextAttributes> {
+    ) -> ::std::option::Option<&crate::types::AwsIamAccessKeySessionContextAttributes> {
         self.attributes.as_ref()
     }
     /// <p>Information about the entity that created the session.</p>
     pub fn session_issuer(
         &self,
-    ) -> std::option::Option<&crate::types::AwsIamAccessKeySessionContextSessionIssuer> {
+    ) -> ::std::option::Option<&crate::types::AwsIamAccessKeySessionContextSessionIssuer> {
         self.session_issuer.as_ref()
     }
 }
@@ -35,12 +35,14 @@ impl AwsIamAccessKeySessionContext {
 
 /// A builder for [`AwsIamAccessKeySessionContext`](crate::types::AwsIamAccessKeySessionContext).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsIamAccessKeySessionContextBuilder {
     pub(crate) attributes:
-        std::option::Option<crate::types::AwsIamAccessKeySessionContextAttributes>,
+        ::std::option::Option<crate::types::AwsIamAccessKeySessionContextAttributes>,
     pub(crate) session_issuer:
-        std::option::Option<crate::types::AwsIamAccessKeySessionContextSessionIssuer>,
+        ::std::option::Option<crate::types::AwsIamAccessKeySessionContextSessionIssuer>,
 }
 impl AwsIamAccessKeySessionContextBuilder {
     /// <p>Attributes of the session that the key was used for.</p>
@@ -48,13 +50,13 @@ impl AwsIamAccessKeySessionContextBuilder {
         mut self,
         input: crate::types::AwsIamAccessKeySessionContextAttributes,
     ) -> Self {
-        self.attributes = Some(input);
+        self.attributes = ::std::option::Option::Some(input);
         self
     }
     /// <p>Attributes of the session that the key was used for.</p>
     pub fn set_attributes(
         mut self,
-        input: std::option::Option<crate::types::AwsIamAccessKeySessionContextAttributes>,
+        input: ::std::option::Option<crate::types::AwsIamAccessKeySessionContextAttributes>,
     ) -> Self {
         self.attributes = input;
         self
@@ -64,13 +66,13 @@ impl AwsIamAccessKeySessionContextBuilder {
         mut self,
         input: crate::types::AwsIamAccessKeySessionContextSessionIssuer,
     ) -> Self {
-        self.session_issuer = Some(input);
+        self.session_issuer = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the entity that created the session.</p>
     pub fn set_session_issuer(
         mut self,
-        input: std::option::Option<crate::types::AwsIamAccessKeySessionContextSessionIssuer>,
+        input: ::std::option::Option<crate::types::AwsIamAccessKeySessionContextSessionIssuer>,
     ) -> Self {
         self.session_issuer = input;
         self

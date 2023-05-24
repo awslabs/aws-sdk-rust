@@ -2,22 +2,22 @@
 
 /// <p>Represents the input of an update repository description operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateRepositoryDescriptionInput {
     /// <p>The name of the repository to set or change the comment or description for.</p>
     #[doc(hidden)]
-    pub repository_name: std::option::Option<std::string::String>,
+    pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The new comment or description for the specified repository. Repository descriptions are limited to 1,000 characters.</p>
     #[doc(hidden)]
-    pub repository_description: std::option::Option<std::string::String>,
+    pub repository_description: ::std::option::Option<::std::string::String>,
 }
 impl UpdateRepositoryDescriptionInput {
     /// <p>The name of the repository to set or change the comment or description for.</p>
-    pub fn repository_name(&self) -> std::option::Option<&str> {
+    pub fn repository_name(&self) -> ::std::option::Option<&str> {
         self.repository_name.as_deref()
     }
     /// <p>The new comment or description for the specified repository. Repository descriptions are limited to 1,000 characters.</p>
-    pub fn repository_description(&self) -> std::option::Option<&str> {
+    pub fn repository_description(&self) -> ::std::option::Option<&str> {
         self.repository_description.as_deref()
     }
 }
@@ -30,31 +30,42 @@ impl UpdateRepositoryDescriptionInput {
 
 /// A builder for [`UpdateRepositoryDescriptionInput`](crate::operation::update_repository_description::UpdateRepositoryDescriptionInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateRepositoryDescriptionInputBuilder {
-    pub(crate) repository_name: std::option::Option<std::string::String>,
-    pub(crate) repository_description: std::option::Option<std::string::String>,
+    pub(crate) repository_name: ::std::option::Option<::std::string::String>,
+    pub(crate) repository_description: ::std::option::Option<::std::string::String>,
 }
 impl UpdateRepositoryDescriptionInputBuilder {
     /// <p>The name of the repository to set or change the comment or description for.</p>
-    pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.repository_name = Some(input.into());
+    pub fn repository_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the repository to set or change the comment or description for.</p>
-    pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_repository_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.repository_name = input;
         self
     }
     /// <p>The new comment or description for the specified repository. Repository descriptions are limited to 1,000 characters.</p>
-    pub fn repository_description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.repository_description = Some(input.into());
+    pub fn repository_description(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.repository_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The new comment or description for the specified repository. Repository descriptions are limited to 1,000 characters.</p>
     pub fn set_repository_description(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.repository_description = input;
         self
@@ -62,11 +73,11 @@ impl UpdateRepositoryDescriptionInputBuilder {
     /// Consumes the builder and constructs a [`UpdateRepositoryDescriptionInput`](crate::operation::update_repository_description::UpdateRepositoryDescriptionInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::update_repository_description::UpdateRepositoryDescriptionInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::update_repository_description::UpdateRepositoryDescriptionInput {
                 repository_name: self.repository_name,
                 repository_description: self.repository_description,

@@ -2,27 +2,30 @@
 
 /// <p>Represents the output of a <code>DescribeReservedCacheNodes</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeReservedCacheNodesOutput {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
     #[doc(hidden)]
-    pub marker: std::option::Option<std::string::String>,
+    pub marker: ::std::option::Option<::std::string::String>,
     /// <p>A list of reserved cache nodes. Each element in the list contains detailed information about one node.</p>
     #[doc(hidden)]
-    pub reserved_cache_nodes: std::option::Option<std::vec::Vec<crate::types::ReservedCacheNode>>,
+    pub reserved_cache_nodes:
+        ::std::option::Option<::std::vec::Vec<crate::types::ReservedCacheNode>>,
     _request_id: Option<String>,
 }
 impl DescribeReservedCacheNodesOutput {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
     /// <p>A list of reserved cache nodes. Each element in the list contains detailed information about one node.</p>
-    pub fn reserved_cache_nodes(&self) -> std::option::Option<&[crate::types::ReservedCacheNode]> {
+    pub fn reserved_cache_nodes(
+        &self,
+    ) -> ::std::option::Option<&[crate::types::ReservedCacheNode]> {
         self.reserved_cache_nodes.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeReservedCacheNodesOutput {
+impl ::aws_http::request_id::RequestId for DescribeReservedCacheNodesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -36,21 +39,23 @@ impl DescribeReservedCacheNodesOutput {
 
 /// A builder for [`DescribeReservedCacheNodesOutput`](crate::operation::describe_reserved_cache_nodes::DescribeReservedCacheNodesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeReservedCacheNodesOutputBuilder {
-    pub(crate) marker: std::option::Option<std::string::String>,
+    pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) reserved_cache_nodes:
-        std::option::Option<std::vec::Vec<crate::types::ReservedCacheNode>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ReservedCacheNode>>,
     _request_id: Option<String>,
 }
 impl DescribeReservedCacheNodesOutputBuilder {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
-    pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-        self.marker = Some(input.into());
+    pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
-    pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
     }
@@ -62,13 +67,13 @@ impl DescribeReservedCacheNodesOutputBuilder {
     pub fn reserved_cache_nodes(mut self, input: crate::types::ReservedCacheNode) -> Self {
         let mut v = self.reserved_cache_nodes.unwrap_or_default();
         v.push(input);
-        self.reserved_cache_nodes = Some(v);
+        self.reserved_cache_nodes = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of reserved cache nodes. Each element in the list contains detailed information about one node.</p>
     pub fn set_reserved_cache_nodes(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ReservedCacheNode>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ReservedCacheNode>>,
     ) -> Self {
         self.reserved_cache_nodes = input;
         self

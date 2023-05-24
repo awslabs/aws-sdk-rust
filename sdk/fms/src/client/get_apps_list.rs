@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetAppsList`](crate::operation::get_apps_list::builders::GetAppsListFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`list_id(impl Into<String>)`](crate::operation::get_apps_list::builders::GetAppsListFluentBuilder::list_id) / [`set_list_id(Option<String>)`](crate::operation::get_apps_list::builders::GetAppsListFluentBuilder::set_list_id): <p>The ID of the Firewall Manager applications list that you want the details for.</p>
+    ///   - [`list_id(impl ::std::convert::Into<String>)`](crate::operation::get_apps_list::builders::GetAppsListFluentBuilder::list_id) / [`set_list_id(Option<String>)`](crate::operation::get_apps_list::builders::GetAppsListFluentBuilder::set_list_id): <p>The ID of the Firewall Manager applications list that you want the details for.</p>
     ///   - [`default_list(bool)`](crate::operation::get_apps_list::builders::GetAppsListFluentBuilder::default_list) / [`set_default_list(Option<bool>)`](crate::operation::get_apps_list::builders::GetAppsListFluentBuilder::set_default_list): <p>Specifies whether the list to retrieve is a default list owned by Firewall Manager.</p>
     /// - On success, responds with [`GetAppsListOutput`](crate::operation::get_apps_list::GetAppsListOutput) with field(s):
     ///   - [`apps_list(Option<AppsListData>)`](crate::operation::get_apps_list::GetAppsListOutput::apps_list): <p>Information about the specified Firewall Manager applications list.</p>

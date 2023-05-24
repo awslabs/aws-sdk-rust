@@ -2,7 +2,7 @@
 
 /// <p>Represents a request to list the IP address filters that exist under your AWS account. You use IP address filters when you receive email with Amazon SES. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListReceiptFiltersInput {}
 impl ListReceiptFiltersInput {
     /// Creates a new builder-style object to manufacture [`ListReceiptFiltersInput`](crate::operation::list_receipt_filters::ListReceiptFiltersInput).
@@ -14,16 +14,20 @@ impl ListReceiptFiltersInput {
 
 /// A builder for [`ListReceiptFiltersInput`](crate::operation::list_receipt_filters::ListReceiptFiltersInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListReceiptFiltersInputBuilder {}
 impl ListReceiptFiltersInputBuilder {
     /// Consumes the builder and constructs a [`ListReceiptFiltersInput`](crate::operation::list_receipt_filters::ListReceiptFiltersInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::list_receipt_filters::ListReceiptFiltersInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::list_receipt_filters::ListReceiptFiltersInput {})
+        ::std::result::Result::Ok(
+            crate::operation::list_receipt_filters::ListReceiptFiltersInput {},
+        )
     }
 }

@@ -2,29 +2,30 @@
 
 /// <p>If you configure a response card when creating your bots, Amazon Lex substitutes the session attributes and slot values that are available, and then returns it. The response card can also come from a Lambda function ( <code>dialogCodeHook</code> and <code>fulfillmentActivity</code> on an intent).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResponseCard {
     /// <p>The version of the response card format.</p>
     #[doc(hidden)]
-    pub version: std::option::Option<std::string::String>,
+    pub version: ::std::option::Option<::std::string::String>,
     /// <p>The content type of the response.</p>
     #[doc(hidden)]
-    pub content_type: std::option::Option<crate::types::ContentType>,
+    pub content_type: ::std::option::Option<crate::types::ContentType>,
     /// <p>An array of attachment objects representing options.</p>
     #[doc(hidden)]
-    pub generic_attachments: std::option::Option<std::vec::Vec<crate::types::GenericAttachment>>,
+    pub generic_attachments:
+        ::std::option::Option<::std::vec::Vec<crate::types::GenericAttachment>>,
 }
 impl ResponseCard {
     /// <p>The version of the response card format.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<&str> {
         self.version.as_deref()
     }
     /// <p>The content type of the response.</p>
-    pub fn content_type(&self) -> std::option::Option<&crate::types::ContentType> {
+    pub fn content_type(&self) -> ::std::option::Option<&crate::types::ContentType> {
         self.content_type.as_ref()
     }
     /// <p>An array of attachment objects representing options.</p>
-    pub fn generic_attachments(&self) -> std::option::Option<&[crate::types::GenericAttachment]> {
+    pub fn generic_attachments(&self) -> ::std::option::Option<&[crate::types::GenericAttachment]> {
         self.generic_attachments.as_deref()
     }
 }
@@ -37,33 +38,35 @@ impl ResponseCard {
 
 /// A builder for [`ResponseCard`](crate::types::ResponseCard).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResponseCardBuilder {
-    pub(crate) version: std::option::Option<std::string::String>,
-    pub(crate) content_type: std::option::Option<crate::types::ContentType>,
+    pub(crate) version: ::std::option::Option<::std::string::String>,
+    pub(crate) content_type: ::std::option::Option<crate::types::ContentType>,
     pub(crate) generic_attachments:
-        std::option::Option<std::vec::Vec<crate::types::GenericAttachment>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::GenericAttachment>>,
 }
 impl ResponseCardBuilder {
     /// <p>The version of the response card format.</p>
-    pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.version = Some(input.into());
+    pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the response card format.</p>
-    pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
     }
     /// <p>The content type of the response.</p>
     pub fn content_type(mut self, input: crate::types::ContentType) -> Self {
-        self.content_type = Some(input);
+        self.content_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The content type of the response.</p>
     pub fn set_content_type(
         mut self,
-        input: std::option::Option<crate::types::ContentType>,
+        input: ::std::option::Option<crate::types::ContentType>,
     ) -> Self {
         self.content_type = input;
         self
@@ -76,13 +79,13 @@ impl ResponseCardBuilder {
     pub fn generic_attachments(mut self, input: crate::types::GenericAttachment) -> Self {
         let mut v = self.generic_attachments.unwrap_or_default();
         v.push(input);
-        self.generic_attachments = Some(v);
+        self.generic_attachments = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of attachment objects representing options.</p>
     pub fn set_generic_attachments(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::GenericAttachment>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::GenericAttachment>>,
     ) -> Self {
         self.generic_attachments = input;
         self

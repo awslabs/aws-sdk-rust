@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum DataLabelContent {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum DataLabelContent {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for DataLabelContent {
+impl ::std::convert::From<&str> for DataLabelContent {
     fn from(s: &str) -> Self {
         match s {
             "PERCENT" => DataLabelContent::Percent,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for DataLabelContent {
         }
     }
 }
-impl std::str::FromStr for DataLabelContent {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for DataLabelContent {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DataLabelContent::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(DataLabelContent::from(s))
     }
 }
 impl DataLabelContent {
@@ -91,7 +91,7 @@ impl DataLabelContent {
         &["PERCENT", "VALUE", "VALUE_AND_PERCENT"]
     }
 }
-impl AsRef<str> for DataLabelContent {
+impl ::std::convert::AsRef<str> for DataLabelContent {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

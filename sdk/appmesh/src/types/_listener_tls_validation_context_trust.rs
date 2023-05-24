@@ -2,7 +2,7 @@
 
 /// <p>An object that represents a listener's Transport Layer Security (TLS) validation context trust.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum ListenerTlsValidationContextTrust {
     /// <p>An object that represents a Transport Layer Security (TLS) validation context trust for a local file.</p>
     File(crate::types::TlsValidationContextFileTrust),
@@ -23,11 +23,11 @@ impl ListenerTlsValidationContextTrust {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_file(
         &self,
-    ) -> std::result::Result<&crate::types::TlsValidationContextFileTrust, &Self> {
+    ) -> ::std::result::Result<&crate::types::TlsValidationContextFileTrust, &Self> {
         if let ListenerTlsValidationContextTrust::File(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`File`](crate::types::ListenerTlsValidationContextTrust::File).
@@ -38,11 +38,11 @@ impl ListenerTlsValidationContextTrust {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_sds(
         &self,
-    ) -> std::result::Result<&crate::types::TlsValidationContextSdsTrust, &Self> {
+    ) -> ::std::result::Result<&crate::types::TlsValidationContextSdsTrust, &Self> {
         if let ListenerTlsValidationContextTrust::Sds(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Sds`](crate::types::ListenerTlsValidationContextTrust::Sds).

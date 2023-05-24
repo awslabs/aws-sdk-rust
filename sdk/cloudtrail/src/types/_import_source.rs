@@ -2,15 +2,15 @@
 
 /// <p> The import source. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportSource {
     /// <p> The source S3 bucket. </p>
     #[doc(hidden)]
-    pub s3: std::option::Option<crate::types::S3ImportSource>,
+    pub s3: ::std::option::Option<crate::types::S3ImportSource>,
 }
 impl ImportSource {
     /// <p> The source S3 bucket. </p>
-    pub fn s3(&self) -> std::option::Option<&crate::types::S3ImportSource> {
+    pub fn s3(&self) -> ::std::option::Option<&crate::types::S3ImportSource> {
         self.s3.as_ref()
     }
 }
@@ -23,18 +23,20 @@ impl ImportSource {
 
 /// A builder for [`ImportSource`](crate::types::ImportSource).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ImportSourceBuilder {
-    pub(crate) s3: std::option::Option<crate::types::S3ImportSource>,
+    pub(crate) s3: ::std::option::Option<crate::types::S3ImportSource>,
 }
 impl ImportSourceBuilder {
     /// <p> The source S3 bucket. </p>
     pub fn s3(mut self, input: crate::types::S3ImportSource) -> Self {
-        self.s3 = Some(input);
+        self.s3 = ::std::option::Option::Some(input);
         self
     }
     /// <p> The source S3 bucket. </p>
-    pub fn set_s3(mut self, input: std::option::Option<crate::types::S3ImportSource>) -> Self {
+    pub fn set_s3(mut self, input: ::std::option::Option<crate::types::S3ImportSource>) -> Self {
         self.s3 = input;
         self
     }

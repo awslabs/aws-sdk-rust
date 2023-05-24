@@ -7,29 +7,29 @@ pub use crate::operation::get_lifecycle_policies::_get_lifecycle_policies_input:
 ///
 /// <p>Gets summary information about all or the specified data lifecycle policies.</p>
 /// <p>To get complete information about a policy, use <code>GetLifecyclePolicy</code>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetLifecyclePoliciesFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::get_lifecycle_policies::builders::GetLifecyclePoliciesInputBuilder,
 }
 impl GetLifecyclePoliciesFluentBuilder {
     /// Creates a new `GetLifecyclePolicies`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::get_lifecycle_policies::GetLifecyclePolicies,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::get_lifecycle_policies::GetLifecyclePoliciesError,
         >,
     > {
@@ -37,30 +37,33 @@ impl GetLifecyclePoliciesFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_lifecycle_policies::GetLifecyclePoliciesOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::get_lifecycle_policies::GetLifecyclePoliciesError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -73,9 +76,9 @@ impl GetLifecyclePoliciesFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_lifecycle_policies::GetLifecyclePoliciesOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::get_lifecycle_policies::GetLifecyclePoliciesError,
         >,
     > {
@@ -86,14 +89,14 @@ impl GetLifecyclePoliciesFluentBuilder {
     /// To override the contents of this collection use [`set_policy_ids`](Self::set_policy_ids).
     ///
     /// <p>The identifiers of the data lifecycle policies.</p>
-    pub fn policy_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn policy_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy_ids(input.into());
         self
     }
     /// <p>The identifiers of the data lifecycle policies.</p>
     pub fn set_policy_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_policy_ids(input);
         self
@@ -106,7 +109,7 @@ impl GetLifecyclePoliciesFluentBuilder {
     /// <p>The activation state.</p>
     pub fn set_state(
         mut self,
-        input: std::option::Option<crate::types::GettablePolicyStateValues>,
+        input: ::std::option::Option<crate::types::GettablePolicyStateValues>,
     ) -> Self {
         self.inner = self.inner.set_state(input);
         self
@@ -123,7 +126,7 @@ impl GetLifecyclePoliciesFluentBuilder {
     /// <p>The resource type.</p>
     pub fn set_resource_types(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ResourceTypeValues>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTypeValues>>,
     ) -> Self {
         self.inner = self.inner.set_resource_types(input);
         self
@@ -134,7 +137,7 @@ impl GetLifecyclePoliciesFluentBuilder {
     ///
     /// <p>The target tag for a policy.</p>
     /// <p>Tags are strings in the format <code>key=value</code>.</p>
-    pub fn target_tags(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn target_tags(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_tags(input.into());
         self
     }
@@ -142,7 +145,7 @@ impl GetLifecyclePoliciesFluentBuilder {
     /// <p>Tags are strings in the format <code>key=value</code>.</p>
     pub fn set_target_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_target_tags(input);
         self
@@ -154,7 +157,7 @@ impl GetLifecyclePoliciesFluentBuilder {
     /// <p>The tags to add to objects created by the policy.</p>
     /// <p>Tags are strings in the format <code>key=value</code>.</p>
     /// <p>These user-defined tags are added in addition to the Amazon Web Services-added lifecycle tags.</p>
-    pub fn tags_to_add(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn tags_to_add(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags_to_add(input.into());
         self
     }
@@ -163,7 +166,7 @@ impl GetLifecyclePoliciesFluentBuilder {
     /// <p>These user-defined tags are added in addition to the Amazon Web Services-added lifecycle tags.</p>
     pub fn set_tags_to_add(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_tags_to_add(input);
         self

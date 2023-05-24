@@ -4,7 +4,7 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_stages::builders::ListStagesFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_stages::builders::ListStagesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_stages::builders::ListStagesFluentBuilder::set_next_token): <p>The first stage to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
+    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_stages::builders::ListStagesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_stages::builders::ListStagesFluentBuilder::set_next_token): <p>The first stage to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     ///   - [`max_results(i32)`](crate::operation::list_stages::builders::ListStagesFluentBuilder::max_results) / [`set_max_results(i32)`](crate::operation::list_stages::builders::ListStagesFluentBuilder::set_max_results): <p>Maximum number of results to return. Default: 50.</p>
     /// - On success, responds with [`ListStagesOutput`](crate::operation::list_stages::ListStagesOutput) with field(s):
     ///   - [`stages(Option<Vec<StageSummary>>)`](crate::operation::list_stages::ListStagesOutput::stages): <p>List of the matching stages (summary information only).</p>

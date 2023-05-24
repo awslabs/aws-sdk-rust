@@ -2,22 +2,22 @@
 
 /// <p>Describes the Amazon S3 bucket for the disk image.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserBucketDetails {
     /// <p>The Amazon S3 bucket from which the disk image was created.</p>
     #[doc(hidden)]
-    pub s3_bucket: std::option::Option<std::string::String>,
+    pub s3_bucket: ::std::option::Option<::std::string::String>,
     /// <p>The file name of the disk image.</p>
     #[doc(hidden)]
-    pub s3_key: std::option::Option<std::string::String>,
+    pub s3_key: ::std::option::Option<::std::string::String>,
 }
 impl UserBucketDetails {
     /// <p>The Amazon S3 bucket from which the disk image was created.</p>
-    pub fn s3_bucket(&self) -> std::option::Option<&str> {
+    pub fn s3_bucket(&self) -> ::std::option::Option<&str> {
         self.s3_bucket.as_deref()
     }
     /// <p>The file name of the disk image.</p>
-    pub fn s3_key(&self) -> std::option::Option<&str> {
+    pub fn s3_key(&self) -> ::std::option::Option<&str> {
         self.s3_key.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl UserBucketDetails {
 
 /// A builder for [`UserBucketDetails`](crate::types::UserBucketDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UserBucketDetailsBuilder {
-    pub(crate) s3_bucket: std::option::Option<std::string::String>,
-    pub(crate) s3_key: std::option::Option<std::string::String>,
+    pub(crate) s3_bucket: ::std::option::Option<::std::string::String>,
+    pub(crate) s3_key: ::std::option::Option<::std::string::String>,
 }
 impl UserBucketDetailsBuilder {
     /// <p>The Amazon S3 bucket from which the disk image was created.</p>
-    pub fn s3_bucket(mut self, input: impl Into<std::string::String>) -> Self {
-        self.s3_bucket = Some(input.into());
+    pub fn s3_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.s3_bucket = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon S3 bucket from which the disk image was created.</p>
-    pub fn set_s3_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_s3_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_bucket = input;
         self
     }
     /// <p>The file name of the disk image.</p>
-    pub fn s3_key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.s3_key = Some(input.into());
+    pub fn s3_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.s3_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The file name of the disk image.</p>
-    pub fn set_s3_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_s3_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_key = input;
         self
     }

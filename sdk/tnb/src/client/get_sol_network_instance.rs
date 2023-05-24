@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetSolNetworkInstance`](crate::operation::get_sol_network_instance::builders::GetSolNetworkInstanceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`ns_instance_id(impl Into<String>)`](crate::operation::get_sol_network_instance::builders::GetSolNetworkInstanceFluentBuilder::ns_instance_id) / [`set_ns_instance_id(Option<String>)`](crate::operation::get_sol_network_instance::builders::GetSolNetworkInstanceFluentBuilder::set_ns_instance_id): <p>ID of the network instance.</p>
+    ///   - [`ns_instance_id(impl ::std::convert::Into<String>)`](crate::operation::get_sol_network_instance::builders::GetSolNetworkInstanceFluentBuilder::ns_instance_id) / [`set_ns_instance_id(Option<String>)`](crate::operation::get_sol_network_instance::builders::GetSolNetworkInstanceFluentBuilder::set_ns_instance_id): <p>ID of the network instance.</p>
     /// - On success, responds with [`GetSolNetworkInstanceOutput`](crate::operation::get_sol_network_instance::GetSolNetworkInstanceOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::get_sol_network_instance::GetSolNetworkInstanceOutput::id): <p>Network instance ID.</p>
     ///   - [`arn(Option<String>)`](crate::operation::get_sol_network_instance::GetSolNetworkInstanceOutput::arn): <p>Network instance ARN.</p>

@@ -2,22 +2,22 @@
 
 /// <p>A value that associates a component and an entity.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RelationshipValue {
     /// <p>The ID of the target entity associated with this relationship value.</p>
     #[doc(hidden)]
-    pub target_entity_id: std::option::Option<std::string::String>,
+    pub target_entity_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the target component associated with the relationship value.</p>
     #[doc(hidden)]
-    pub target_component_name: std::option::Option<std::string::String>,
+    pub target_component_name: ::std::option::Option<::std::string::String>,
 }
 impl RelationshipValue {
     /// <p>The ID of the target entity associated with this relationship value.</p>
-    pub fn target_entity_id(&self) -> std::option::Option<&str> {
+    pub fn target_entity_id(&self) -> ::std::option::Option<&str> {
         self.target_entity_id.as_deref()
     }
     /// <p>The name of the target component associated with the relationship value.</p>
-    pub fn target_component_name(&self) -> std::option::Option<&str> {
+    pub fn target_component_name(&self) -> ::std::option::Option<&str> {
         self.target_component_name.as_deref()
     }
 }
@@ -30,31 +30,42 @@ impl RelationshipValue {
 
 /// A builder for [`RelationshipValue`](crate::types::RelationshipValue).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RelationshipValueBuilder {
-    pub(crate) target_entity_id: std::option::Option<std::string::String>,
-    pub(crate) target_component_name: std::option::Option<std::string::String>,
+    pub(crate) target_entity_id: ::std::option::Option<::std::string::String>,
+    pub(crate) target_component_name: ::std::option::Option<::std::string::String>,
 }
 impl RelationshipValueBuilder {
     /// <p>The ID of the target entity associated with this relationship value.</p>
-    pub fn target_entity_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.target_entity_id = Some(input.into());
+    pub fn target_entity_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.target_entity_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the target entity associated with this relationship value.</p>
-    pub fn set_target_entity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_target_entity_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.target_entity_id = input;
         self
     }
     /// <p>The name of the target component associated with the relationship value.</p>
-    pub fn target_component_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.target_component_name = Some(input.into());
+    pub fn target_component_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.target_component_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the target component associated with the relationship value.</p>
     pub fn set_target_component_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.target_component_name = input;
         self

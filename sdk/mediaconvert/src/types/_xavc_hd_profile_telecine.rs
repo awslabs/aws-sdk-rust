@@ -38,13 +38,13 @@
 /// Ignore this setting unless you set Frame rate (framerateNumerator divided by framerateDenominator) to 29.970. If your input framerate is 23.976, choose Hard (HARD). Otherwise, keep the default value None (NONE). For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-telecine-and-inverse-telecine.html.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum XavcHdProfileTelecine {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum XavcHdProfileTelecine {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for XavcHdProfileTelecine {
+impl ::std::convert::From<&str> for XavcHdProfileTelecine {
     fn from(s: &str) -> Self {
         match s {
             "HARD" => XavcHdProfileTelecine::Hard,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for XavcHdProfileTelecine {
         }
     }
 }
-impl std::str::FromStr for XavcHdProfileTelecine {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for XavcHdProfileTelecine {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(XavcHdProfileTelecine::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(XavcHdProfileTelecine::from(s))
     }
 }
 impl XavcHdProfileTelecine {
@@ -86,7 +86,7 @@ impl XavcHdProfileTelecine {
         &["HARD", "NONE"]
     }
 }
-impl AsRef<str> for XavcHdProfileTelecine {
+impl ::std::convert::AsRef<str> for XavcHdProfileTelecine {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -7,29 +7,29 @@ pub use crate::operation::create_template_sync_config::_create_template_sync_con
 ///
 /// <p>Set up a template to create new template versions automatically by tracking a linked repository. A linked repository is a repository that has been registered with Proton. For more information, see <code>CreateRepository</code>.</p>
 /// <p>When a commit is pushed to your linked repository, Proton checks for changes to your repository template bundles. If it detects a template bundle change, a new major or minor version of its template is created, if the version doesn’t already exist. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-template-sync-configs.html">Template sync configurations</a> in the <i>Proton User Guide</i>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateTemplateSyncConfigFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::create_template_sync_config::builders::CreateTemplateSyncConfigInputBuilder,
 }
 impl CreateTemplateSyncConfigFluentBuilder {
     /// Creates a new `CreateTemplateSyncConfig`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_template_sync_config::CreateTemplateSyncConfig,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_template_sync_config::CreateTemplateSyncConfigError,
         >,
     > {
@@ -37,30 +37,33 @@ impl CreateTemplateSyncConfigFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_template_sync_config::CreateTemplateSyncConfigOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_template_sync_config::CreateTemplateSyncConfigError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -73,21 +76,27 @@ impl CreateTemplateSyncConfigFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_template_sync_config::CreateTemplateSyncConfigOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_template_sync_config::CreateTemplateSyncConfigError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The name of your registered template.</p>
-    pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn template_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.template_name(input.into());
         self
     }
     /// <p>The name of your registered template.</p>
-    pub fn set_template_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_template_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_template_name(input);
         self
     }
@@ -99,7 +108,7 @@ impl CreateTemplateSyncConfigFluentBuilder {
     /// <p>The type of the registered template.</p>
     pub fn set_template_type(
         mut self,
-        input: std::option::Option<crate::types::TemplateType>,
+        input: ::std::option::Option<crate::types::TemplateType>,
     ) -> Self {
         self.inner = self.inner.set_template_type(input);
         self
@@ -112,38 +121,44 @@ impl CreateTemplateSyncConfigFluentBuilder {
     /// <p>The provider type for your repository.</p>
     pub fn set_repository_provider(
         mut self,
-        input: std::option::Option<crate::types::RepositoryProvider>,
+        input: ::std::option::Option<crate::types::RepositoryProvider>,
     ) -> Self {
         self.inner = self.inner.set_repository_provider(input);
         self
     }
     /// <p>The repository name (for example, <code>myrepos/myrepo</code>).</p>
-    pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn repository_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.repository_name(input.into());
         self
     }
     /// <p>The repository name (for example, <code>myrepos/myrepo</code>).</p>
-    pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_repository_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_repository_name(input);
         self
     }
     /// <p>The repository branch for your template.</p>
-    pub fn branch(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn branch(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.branch(input.into());
         self
     }
     /// <p>The repository branch for your template.</p>
-    pub fn set_branch(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_branch(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_branch(input);
         self
     }
     /// <p>A repository subdirectory path to your template bundle directory. When included, Proton limits the template bundle search to this repository directory.</p>
-    pub fn subdirectory(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn subdirectory(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subdirectory(input.into());
         self
     }
     /// <p>A repository subdirectory path to your template bundle directory. When included, Proton limits the template bundle search to this repository directory.</p>
-    pub fn set_subdirectory(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_subdirectory(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_subdirectory(input);
         self
     }

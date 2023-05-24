@@ -2,11 +2,11 @@
 
 /// <p>Provides the details of the <code>WorkflowExecutionTimedOut</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorkflowExecutionTimedOutEventAttributes {
     /// <p>The type of timeout that caused this event.</p>
     #[doc(hidden)]
-    pub timeout_type: std::option::Option<crate::types::WorkflowExecutionTimeoutType>,
+    pub timeout_type: ::std::option::Option<crate::types::WorkflowExecutionTimeoutType>,
     /// <p>The policy used for the child workflow executions of this workflow execution.</p>
     /// <p>The supported child policies are:</p>
     /// <ul>
@@ -15,11 +15,13 @@ pub struct WorkflowExecutionTimedOutEventAttributes {
     /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub child_policy: std::option::Option<crate::types::ChildPolicy>,
+    pub child_policy: ::std::option::Option<crate::types::ChildPolicy>,
 }
 impl WorkflowExecutionTimedOutEventAttributes {
     /// <p>The type of timeout that caused this event.</p>
-    pub fn timeout_type(&self) -> std::option::Option<&crate::types::WorkflowExecutionTimeoutType> {
+    pub fn timeout_type(
+        &self,
+    ) -> ::std::option::Option<&crate::types::WorkflowExecutionTimeoutType> {
         self.timeout_type.as_ref()
     }
     /// <p>The policy used for the child workflow executions of this workflow execution.</p>
@@ -29,7 +31,7 @@ impl WorkflowExecutionTimedOutEventAttributes {
     /// <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> </li>
     /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
     /// </ul>
-    pub fn child_policy(&self) -> std::option::Option<&crate::types::ChildPolicy> {
+    pub fn child_policy(&self) -> ::std::option::Option<&crate::types::ChildPolicy> {
         self.child_policy.as_ref()
     }
 }
@@ -42,21 +44,23 @@ impl WorkflowExecutionTimedOutEventAttributes {
 
 /// A builder for [`WorkflowExecutionTimedOutEventAttributes`](crate::types::WorkflowExecutionTimedOutEventAttributes).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct WorkflowExecutionTimedOutEventAttributesBuilder {
-    pub(crate) timeout_type: std::option::Option<crate::types::WorkflowExecutionTimeoutType>,
-    pub(crate) child_policy: std::option::Option<crate::types::ChildPolicy>,
+    pub(crate) timeout_type: ::std::option::Option<crate::types::WorkflowExecutionTimeoutType>,
+    pub(crate) child_policy: ::std::option::Option<crate::types::ChildPolicy>,
 }
 impl WorkflowExecutionTimedOutEventAttributesBuilder {
     /// <p>The type of timeout that caused this event.</p>
     pub fn timeout_type(mut self, input: crate::types::WorkflowExecutionTimeoutType) -> Self {
-        self.timeout_type = Some(input);
+        self.timeout_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of timeout that caused this event.</p>
     pub fn set_timeout_type(
         mut self,
-        input: std::option::Option<crate::types::WorkflowExecutionTimeoutType>,
+        input: ::std::option::Option<crate::types::WorkflowExecutionTimeoutType>,
     ) -> Self {
         self.timeout_type = input;
         self
@@ -69,7 +73,7 @@ impl WorkflowExecutionTimedOutEventAttributesBuilder {
     /// <li> <p> <code>ABANDON</code> – No action is taken. The child executions continue to run.</p> </li>
     /// </ul>
     pub fn child_policy(mut self, input: crate::types::ChildPolicy) -> Self {
-        self.child_policy = Some(input);
+        self.child_policy = ::std::option::Option::Some(input);
         self
     }
     /// <p>The policy used for the child workflow executions of this workflow execution.</p>
@@ -81,7 +85,7 @@ impl WorkflowExecutionTimedOutEventAttributesBuilder {
     /// </ul>
     pub fn set_child_policy(
         mut self,
-        input: std::option::Option<crate::types::ChildPolicy>,
+        input: ::std::option::Option<crate::types::ChildPolicy>,
     ) -> Self {
         self.child_policy = input;
         self

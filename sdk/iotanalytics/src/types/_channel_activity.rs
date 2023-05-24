@@ -2,29 +2,29 @@
 
 /// <p>The activity that determines the source of the messages to be processed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChannelActivity {
     /// <p>The name of the channel activity.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the channel from which the messages are processed.</p>
     #[doc(hidden)]
-    pub channel_name: std::option::Option<std::string::String>,
+    pub channel_name: ::std::option::Option<::std::string::String>,
     /// <p>The next activity in the pipeline.</p>
     #[doc(hidden)]
-    pub next: std::option::Option<std::string::String>,
+    pub next: ::std::option::Option<::std::string::String>,
 }
 impl ChannelActivity {
     /// <p>The name of the channel activity.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The name of the channel from which the messages are processed.</p>
-    pub fn channel_name(&self) -> std::option::Option<&str> {
+    pub fn channel_name(&self) -> ::std::option::Option<&str> {
         self.channel_name.as_deref()
     }
     /// <p>The next activity in the pipeline.</p>
-    pub fn next(&self) -> std::option::Option<&str> {
+    pub fn next(&self) -> ::std::option::Option<&str> {
         self.next.as_deref()
     }
 }
@@ -37,40 +37,42 @@ impl ChannelActivity {
 
 /// A builder for [`ChannelActivity`](crate::types::ChannelActivity).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ChannelActivityBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) channel_name: std::option::Option<std::string::String>,
-    pub(crate) next: std::option::Option<std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) channel_name: ::std::option::Option<::std::string::String>,
+    pub(crate) next: ::std::option::Option<::std::string::String>,
 }
 impl ChannelActivityBuilder {
     /// <p>The name of the channel activity.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the channel activity.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The name of the channel from which the messages are processed.</p>
-    pub fn channel_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.channel_name = Some(input.into());
+    pub fn channel_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.channel_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the channel from which the messages are processed.</p>
-    pub fn set_channel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_channel_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.channel_name = input;
         self
     }
     /// <p>The next activity in the pipeline.</p>
-    pub fn next(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next = Some(input.into());
+    pub fn next(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The next activity in the pipeline.</p>
-    pub fn set_next(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next = input;
         self
     }

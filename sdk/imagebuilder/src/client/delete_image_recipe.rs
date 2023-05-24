@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteImageRecipe`](crate::operation::delete_image_recipe::builders::DeleteImageRecipeFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`image_recipe_arn(impl Into<String>)`](crate::operation::delete_image_recipe::builders::DeleteImageRecipeFluentBuilder::image_recipe_arn) / [`set_image_recipe_arn(Option<String>)`](crate::operation::delete_image_recipe::builders::DeleteImageRecipeFluentBuilder::set_image_recipe_arn): <p>The Amazon Resource Name (ARN) of the image recipe to delete.</p>
+    ///   - [`image_recipe_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_image_recipe::builders::DeleteImageRecipeFluentBuilder::image_recipe_arn) / [`set_image_recipe_arn(Option<String>)`](crate::operation::delete_image_recipe::builders::DeleteImageRecipeFluentBuilder::set_image_recipe_arn): <p>The Amazon Resource Name (ARN) of the image recipe to delete.</p>
     /// - On success, responds with [`DeleteImageRecipeOutput`](crate::operation::delete_image_recipe::DeleteImageRecipeOutput) with field(s):
     ///   - [`request_id(Option<String>)`](crate::operation::delete_image_recipe::DeleteImageRecipeOutput::request_id): <p>The request ID that uniquely identifies this request.</p>
     ///   - [`image_recipe_arn(Option<String>)`](crate::operation::delete_image_recipe::DeleteImageRecipeOutput::image_recipe_arn): <p>The Amazon Resource Name (ARN) of the image recipe that was deleted.</p>

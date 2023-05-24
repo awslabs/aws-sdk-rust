@@ -42,13 +42,13 @@
 /// State of a logging configuration.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum LoggingConfigurationStatusCode {
     /// Logging configuration has been created/updated. Update/Deletion is disallowed until logging configuration is ACTIVE and workspace status is ACTIVE.
@@ -66,7 +66,7 @@ pub enum LoggingConfigurationStatusCode {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for LoggingConfigurationStatusCode {
+impl ::std::convert::From<&str> for LoggingConfigurationStatusCode {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVE" => LoggingConfigurationStatusCode::Active,
@@ -81,11 +81,11 @@ impl std::convert::From<&str> for LoggingConfigurationStatusCode {
         }
     }
 }
-impl std::str::FromStr for LoggingConfigurationStatusCode {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for LoggingConfigurationStatusCode {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LoggingConfigurationStatusCode::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(LoggingConfigurationStatusCode::from(s))
     }
 }
 impl LoggingConfigurationStatusCode {
@@ -113,7 +113,7 @@ impl LoggingConfigurationStatusCode {
         ]
     }
 }
-impl AsRef<str> for LoggingConfigurationStatusCode {
+impl ::std::convert::AsRef<str> for LoggingConfigurationStatusCode {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

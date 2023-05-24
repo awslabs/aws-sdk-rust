@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeTargetHealth`](crate::operation::describe_target_health::builders::DescribeTargetHealthFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`target_group_arn(impl Into<String>)`](crate::operation::describe_target_health::builders::DescribeTargetHealthFluentBuilder::target_group_arn) / [`set_target_group_arn(Option<String>)`](crate::operation::describe_target_health::builders::DescribeTargetHealthFluentBuilder::set_target_group_arn): <p>The Amazon Resource Name (ARN) of the target group.</p>
+    ///   - [`target_group_arn(impl ::std::convert::Into<String>)`](crate::operation::describe_target_health::builders::DescribeTargetHealthFluentBuilder::target_group_arn) / [`set_target_group_arn(Option<String>)`](crate::operation::describe_target_health::builders::DescribeTargetHealthFluentBuilder::set_target_group_arn): <p>The Amazon Resource Name (ARN) of the target group.</p>
     ///   - [`targets(Vec<TargetDescription>)`](crate::operation::describe_target_health::builders::DescribeTargetHealthFluentBuilder::targets) / [`set_targets(Option<Vec<TargetDescription>>)`](crate::operation::describe_target_health::builders::DescribeTargetHealthFluentBuilder::set_targets): <p>The targets.</p>
     /// - On success, responds with [`DescribeTargetHealthOutput`](crate::operation::describe_target_health::DescribeTargetHealthOutput) with field(s):
     ///   - [`target_health_descriptions(Option<Vec<TargetHealthDescription>>)`](crate::operation::describe_target_health::DescribeTargetHealthOutput::target_health_descriptions): <p>Information about the health of the targets.</p>

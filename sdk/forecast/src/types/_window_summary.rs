@@ -3,39 +3,39 @@
 /// <p>The metrics for a time range within the evaluation portion of a dataset. This object is part of the <code>EvaluationResult</code> object.</p>
 /// <p>The <code>TestWindowStart</code> and <code>TestWindowEnd</code> parameters are determined by the <code>BackTestWindowOffset</code> parameter of the <code>EvaluationParameters</code> object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WindowSummary {
     /// <p>The timestamp that defines the start of the window.</p>
     #[doc(hidden)]
-    pub test_window_start: std::option::Option<aws_smithy_types::DateTime>,
+    pub test_window_start: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp that defines the end of the window.</p>
     #[doc(hidden)]
-    pub test_window_end: std::option::Option<aws_smithy_types::DateTime>,
+    pub test_window_end: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The number of data points within the window.</p>
     #[doc(hidden)]
-    pub item_count: std::option::Option<i32>,
+    pub item_count: ::std::option::Option<i32>,
     /// <p>The type of evaluation.</p>
     /// <ul>
     /// <li> <p> <code>SUMMARY</code> - The average metrics across all windows.</p> </li>
     /// <li> <p> <code>COMPUTED</code> - The metrics for the specified window.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub evaluation_type: std::option::Option<crate::types::EvaluationType>,
+    pub evaluation_type: ::std::option::Option<crate::types::EvaluationType>,
     /// <p>Provides metrics used to evaluate the performance of a predictor.</p>
     #[doc(hidden)]
-    pub metrics: std::option::Option<crate::types::Metrics>,
+    pub metrics: ::std::option::Option<crate::types::Metrics>,
 }
 impl WindowSummary {
     /// <p>The timestamp that defines the start of the window.</p>
-    pub fn test_window_start(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn test_window_start(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.test_window_start.as_ref()
     }
     /// <p>The timestamp that defines the end of the window.</p>
-    pub fn test_window_end(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn test_window_end(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.test_window_end.as_ref()
     }
     /// <p>The number of data points within the window.</p>
-    pub fn item_count(&self) -> std::option::Option<i32> {
+    pub fn item_count(&self) -> ::std::option::Option<i32> {
         self.item_count
     }
     /// <p>The type of evaluation.</p>
@@ -43,11 +43,11 @@ impl WindowSummary {
     /// <li> <p> <code>SUMMARY</code> - The average metrics across all windows.</p> </li>
     /// <li> <p> <code>COMPUTED</code> - The metrics for the specified window.</p> </li>
     /// </ul>
-    pub fn evaluation_type(&self) -> std::option::Option<&crate::types::EvaluationType> {
+    pub fn evaluation_type(&self) -> ::std::option::Option<&crate::types::EvaluationType> {
         self.evaluation_type.as_ref()
     }
     /// <p>Provides metrics used to evaluate the performance of a predictor.</p>
-    pub fn metrics(&self) -> std::option::Option<&crate::types::Metrics> {
+    pub fn metrics(&self) -> ::std::option::Option<&crate::types::Metrics> {
         self.metrics.as_ref()
     }
 }
@@ -60,48 +60,50 @@ impl WindowSummary {
 
 /// A builder for [`WindowSummary`](crate::types::WindowSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct WindowSummaryBuilder {
-    pub(crate) test_window_start: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) test_window_end: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) item_count: std::option::Option<i32>,
-    pub(crate) evaluation_type: std::option::Option<crate::types::EvaluationType>,
-    pub(crate) metrics: std::option::Option<crate::types::Metrics>,
+    pub(crate) test_window_start: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) test_window_end: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) item_count: ::std::option::Option<i32>,
+    pub(crate) evaluation_type: ::std::option::Option<crate::types::EvaluationType>,
+    pub(crate) metrics: ::std::option::Option<crate::types::Metrics>,
 }
 impl WindowSummaryBuilder {
     /// <p>The timestamp that defines the start of the window.</p>
-    pub fn test_window_start(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.test_window_start = Some(input);
+    pub fn test_window_start(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.test_window_start = ::std::option::Option::Some(input);
         self
     }
     /// <p>The timestamp that defines the start of the window.</p>
     pub fn set_test_window_start(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.test_window_start = input;
         self
     }
     /// <p>The timestamp that defines the end of the window.</p>
-    pub fn test_window_end(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.test_window_end = Some(input);
+    pub fn test_window_end(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.test_window_end = ::std::option::Option::Some(input);
         self
     }
     /// <p>The timestamp that defines the end of the window.</p>
     pub fn set_test_window_end(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.test_window_end = input;
         self
     }
     /// <p>The number of data points within the window.</p>
     pub fn item_count(mut self, input: i32) -> Self {
-        self.item_count = Some(input);
+        self.item_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of data points within the window.</p>
-    pub fn set_item_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_item_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.item_count = input;
         self
     }
@@ -111,7 +113,7 @@ impl WindowSummaryBuilder {
     /// <li> <p> <code>COMPUTED</code> - The metrics for the specified window.</p> </li>
     /// </ul>
     pub fn evaluation_type(mut self, input: crate::types::EvaluationType) -> Self {
-        self.evaluation_type = Some(input);
+        self.evaluation_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of evaluation.</p>
@@ -121,18 +123,18 @@ impl WindowSummaryBuilder {
     /// </ul>
     pub fn set_evaluation_type(
         mut self,
-        input: std::option::Option<crate::types::EvaluationType>,
+        input: ::std::option::Option<crate::types::EvaluationType>,
     ) -> Self {
         self.evaluation_type = input;
         self
     }
     /// <p>Provides metrics used to evaluate the performance of a predictor.</p>
     pub fn metrics(mut self, input: crate::types::Metrics) -> Self {
-        self.metrics = Some(input);
+        self.metrics = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides metrics used to evaluate the performance of a predictor.</p>
-    pub fn set_metrics(mut self, input: std::option::Option<crate::types::Metrics>) -> Self {
+    pub fn set_metrics(mut self, input: ::std::option::Option<crate::types::Metrics>) -> Self {
         self.metrics = input;
         self
     }

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteUser`](crate::operation::delete_user::builders::DeleteUserFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`access_token(impl Into<String>)`](crate::operation::delete_user::builders::DeleteUserFluentBuilder::access_token) / [`set_access_token(Option<String>)`](crate::operation::delete_user::builders::DeleteUserFluentBuilder::set_access_token): <p>A valid access token that Amazon Cognito issued to the user whose user profile you want to delete.</p>
+    ///   - [`access_token(impl ::std::convert::Into<String>)`](crate::operation::delete_user::builders::DeleteUserFluentBuilder::access_token) / [`set_access_token(Option<String>)`](crate::operation::delete_user::builders::DeleteUserFluentBuilder::set_access_token): <p>A valid access token that Amazon Cognito issued to the user whose user profile you want to delete.</p>
     /// - On success, responds with [`DeleteUserOutput`](crate::operation::delete_user::DeleteUserOutput)
     /// - On failure, responds with [`SdkError<DeleteUserError>`](crate::operation::delete_user::DeleteUserError)
     pub fn delete_user(&self) -> crate::operation::delete_user::builders::DeleteUserFluentBuilder {

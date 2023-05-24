@@ -2,32 +2,32 @@
 
 /// <p>LoRaWANGetServiceProfileInfo object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoRaWanGetServiceProfileInfo {
     /// <p>The ULRate value.</p>
     #[doc(hidden)]
-    pub ul_rate: std::option::Option<i32>,
+    pub ul_rate: ::std::option::Option<i32>,
     /// <p>The ULBucketSize value.</p>
     #[doc(hidden)]
-    pub ul_bucket_size: std::option::Option<i32>,
+    pub ul_bucket_size: ::std::option::Option<i32>,
     /// <p>The ULRatePolicy value.</p>
     #[doc(hidden)]
-    pub ul_rate_policy: std::option::Option<std::string::String>,
+    pub ul_rate_policy: ::std::option::Option<::std::string::String>,
     /// <p>The DLRate value.</p>
     #[doc(hidden)]
-    pub dl_rate: std::option::Option<i32>,
+    pub dl_rate: ::std::option::Option<i32>,
     /// <p>The DLBucketSize value.</p>
     #[doc(hidden)]
-    pub dl_bucket_size: std::option::Option<i32>,
+    pub dl_bucket_size: ::std::option::Option<i32>,
     /// <p>The DLRatePolicy value.</p>
     #[doc(hidden)]
-    pub dl_rate_policy: std::option::Option<std::string::String>,
+    pub dl_rate_policy: ::std::option::Option<::std::string::String>,
     /// <p>The AddGWMetaData value.</p>
     #[doc(hidden)]
     pub add_gw_metadata: bool,
     /// <p>The DevStatusReqFreq value.</p>
     #[doc(hidden)]
-    pub dev_status_req_freq: std::option::Option<i32>,
+    pub dev_status_req_freq: ::std::option::Option<i32>,
     /// <p>The ReportDevStatusBattery value.</p>
     #[doc(hidden)]
     pub report_dev_status_battery: bool,
@@ -42,7 +42,7 @@ pub struct LoRaWanGetServiceProfileInfo {
     pub dr_max: i32,
     /// <p>The ChannelMask value.</p>
     #[doc(hidden)]
-    pub channel_mask: std::option::Option<std::string::String>,
+    pub channel_mask: ::std::option::Option<::std::string::String>,
     /// <p>The PRAllowed value that describes whether passive roaming is allowed.</p>
     #[doc(hidden)]
     pub pr_allowed: bool,
@@ -60,31 +60,31 @@ pub struct LoRaWanGetServiceProfileInfo {
     pub target_per: i32,
     /// <p>The MinGwDiversity value.</p>
     #[doc(hidden)]
-    pub min_gw_diversity: std::option::Option<i32>,
+    pub min_gw_diversity: ::std::option::Option<i32>,
 }
 impl LoRaWanGetServiceProfileInfo {
     /// <p>The ULRate value.</p>
-    pub fn ul_rate(&self) -> std::option::Option<i32> {
+    pub fn ul_rate(&self) -> ::std::option::Option<i32> {
         self.ul_rate
     }
     /// <p>The ULBucketSize value.</p>
-    pub fn ul_bucket_size(&self) -> std::option::Option<i32> {
+    pub fn ul_bucket_size(&self) -> ::std::option::Option<i32> {
         self.ul_bucket_size
     }
     /// <p>The ULRatePolicy value.</p>
-    pub fn ul_rate_policy(&self) -> std::option::Option<&str> {
+    pub fn ul_rate_policy(&self) -> ::std::option::Option<&str> {
         self.ul_rate_policy.as_deref()
     }
     /// <p>The DLRate value.</p>
-    pub fn dl_rate(&self) -> std::option::Option<i32> {
+    pub fn dl_rate(&self) -> ::std::option::Option<i32> {
         self.dl_rate
     }
     /// <p>The DLBucketSize value.</p>
-    pub fn dl_bucket_size(&self) -> std::option::Option<i32> {
+    pub fn dl_bucket_size(&self) -> ::std::option::Option<i32> {
         self.dl_bucket_size
     }
     /// <p>The DLRatePolicy value.</p>
-    pub fn dl_rate_policy(&self) -> std::option::Option<&str> {
+    pub fn dl_rate_policy(&self) -> ::std::option::Option<&str> {
         self.dl_rate_policy.as_deref()
     }
     /// <p>The AddGWMetaData value.</p>
@@ -92,7 +92,7 @@ impl LoRaWanGetServiceProfileInfo {
         self.add_gw_metadata
     }
     /// <p>The DevStatusReqFreq value.</p>
-    pub fn dev_status_req_freq(&self) -> std::option::Option<i32> {
+    pub fn dev_status_req_freq(&self) -> ::std::option::Option<i32> {
         self.dev_status_req_freq
     }
     /// <p>The ReportDevStatusBattery value.</p>
@@ -112,7 +112,7 @@ impl LoRaWanGetServiceProfileInfo {
         self.dr_max
     }
     /// <p>The ChannelMask value.</p>
-    pub fn channel_mask(&self) -> std::option::Option<&str> {
+    pub fn channel_mask(&self) -> ::std::option::Option<&str> {
         self.channel_mask.as_deref()
     }
     /// <p>The PRAllowed value that describes whether passive roaming is allowed.</p>
@@ -136,7 +136,7 @@ impl LoRaWanGetServiceProfileInfo {
         self.target_per
     }
     /// <p>The MinGwDiversity value.</p>
-    pub fn min_gw_diversity(&self) -> std::option::Option<i32> {
+    pub fn min_gw_diversity(&self) -> ::std::option::Option<i32> {
         self.min_gw_diversity
     }
 }
@@ -149,216 +149,230 @@ impl LoRaWanGetServiceProfileInfo {
 
 /// A builder for [`LoRaWanGetServiceProfileInfo`](crate::types::LoRaWanGetServiceProfileInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LoRaWanGetServiceProfileInfoBuilder {
-    pub(crate) ul_rate: std::option::Option<i32>,
-    pub(crate) ul_bucket_size: std::option::Option<i32>,
-    pub(crate) ul_rate_policy: std::option::Option<std::string::String>,
-    pub(crate) dl_rate: std::option::Option<i32>,
-    pub(crate) dl_bucket_size: std::option::Option<i32>,
-    pub(crate) dl_rate_policy: std::option::Option<std::string::String>,
-    pub(crate) add_gw_metadata: std::option::Option<bool>,
-    pub(crate) dev_status_req_freq: std::option::Option<i32>,
-    pub(crate) report_dev_status_battery: std::option::Option<bool>,
-    pub(crate) report_dev_status_margin: std::option::Option<bool>,
-    pub(crate) dr_min: std::option::Option<i32>,
-    pub(crate) dr_max: std::option::Option<i32>,
-    pub(crate) channel_mask: std::option::Option<std::string::String>,
-    pub(crate) pr_allowed: std::option::Option<bool>,
-    pub(crate) hr_allowed: std::option::Option<bool>,
-    pub(crate) ra_allowed: std::option::Option<bool>,
-    pub(crate) nwk_geo_loc: std::option::Option<bool>,
-    pub(crate) target_per: std::option::Option<i32>,
-    pub(crate) min_gw_diversity: std::option::Option<i32>,
+    pub(crate) ul_rate: ::std::option::Option<i32>,
+    pub(crate) ul_bucket_size: ::std::option::Option<i32>,
+    pub(crate) ul_rate_policy: ::std::option::Option<::std::string::String>,
+    pub(crate) dl_rate: ::std::option::Option<i32>,
+    pub(crate) dl_bucket_size: ::std::option::Option<i32>,
+    pub(crate) dl_rate_policy: ::std::option::Option<::std::string::String>,
+    pub(crate) add_gw_metadata: ::std::option::Option<bool>,
+    pub(crate) dev_status_req_freq: ::std::option::Option<i32>,
+    pub(crate) report_dev_status_battery: ::std::option::Option<bool>,
+    pub(crate) report_dev_status_margin: ::std::option::Option<bool>,
+    pub(crate) dr_min: ::std::option::Option<i32>,
+    pub(crate) dr_max: ::std::option::Option<i32>,
+    pub(crate) channel_mask: ::std::option::Option<::std::string::String>,
+    pub(crate) pr_allowed: ::std::option::Option<bool>,
+    pub(crate) hr_allowed: ::std::option::Option<bool>,
+    pub(crate) ra_allowed: ::std::option::Option<bool>,
+    pub(crate) nwk_geo_loc: ::std::option::Option<bool>,
+    pub(crate) target_per: ::std::option::Option<i32>,
+    pub(crate) min_gw_diversity: ::std::option::Option<i32>,
 }
 impl LoRaWanGetServiceProfileInfoBuilder {
     /// <p>The ULRate value.</p>
     pub fn ul_rate(mut self, input: i32) -> Self {
-        self.ul_rate = Some(input);
+        self.ul_rate = ::std::option::Option::Some(input);
         self
     }
     /// <p>The ULRate value.</p>
-    pub fn set_ul_rate(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_ul_rate(mut self, input: ::std::option::Option<i32>) -> Self {
         self.ul_rate = input;
         self
     }
     /// <p>The ULBucketSize value.</p>
     pub fn ul_bucket_size(mut self, input: i32) -> Self {
-        self.ul_bucket_size = Some(input);
+        self.ul_bucket_size = ::std::option::Option::Some(input);
         self
     }
     /// <p>The ULBucketSize value.</p>
-    pub fn set_ul_bucket_size(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_ul_bucket_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.ul_bucket_size = input;
         self
     }
     /// <p>The ULRatePolicy value.</p>
-    pub fn ul_rate_policy(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ul_rate_policy = Some(input.into());
+    pub fn ul_rate_policy(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.ul_rate_policy = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ULRatePolicy value.</p>
-    pub fn set_ul_rate_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ul_rate_policy(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.ul_rate_policy = input;
         self
     }
     /// <p>The DLRate value.</p>
     pub fn dl_rate(mut self, input: i32) -> Self {
-        self.dl_rate = Some(input);
+        self.dl_rate = ::std::option::Option::Some(input);
         self
     }
     /// <p>The DLRate value.</p>
-    pub fn set_dl_rate(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_dl_rate(mut self, input: ::std::option::Option<i32>) -> Self {
         self.dl_rate = input;
         self
     }
     /// <p>The DLBucketSize value.</p>
     pub fn dl_bucket_size(mut self, input: i32) -> Self {
-        self.dl_bucket_size = Some(input);
+        self.dl_bucket_size = ::std::option::Option::Some(input);
         self
     }
     /// <p>The DLBucketSize value.</p>
-    pub fn set_dl_bucket_size(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_dl_bucket_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.dl_bucket_size = input;
         self
     }
     /// <p>The DLRatePolicy value.</p>
-    pub fn dl_rate_policy(mut self, input: impl Into<std::string::String>) -> Self {
-        self.dl_rate_policy = Some(input.into());
+    pub fn dl_rate_policy(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.dl_rate_policy = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The DLRatePolicy value.</p>
-    pub fn set_dl_rate_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_dl_rate_policy(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.dl_rate_policy = input;
         self
     }
     /// <p>The AddGWMetaData value.</p>
     pub fn add_gw_metadata(mut self, input: bool) -> Self {
-        self.add_gw_metadata = Some(input);
+        self.add_gw_metadata = ::std::option::Option::Some(input);
         self
     }
     /// <p>The AddGWMetaData value.</p>
-    pub fn set_add_gw_metadata(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_add_gw_metadata(mut self, input: ::std::option::Option<bool>) -> Self {
         self.add_gw_metadata = input;
         self
     }
     /// <p>The DevStatusReqFreq value.</p>
     pub fn dev_status_req_freq(mut self, input: i32) -> Self {
-        self.dev_status_req_freq = Some(input);
+        self.dev_status_req_freq = ::std::option::Option::Some(input);
         self
     }
     /// <p>The DevStatusReqFreq value.</p>
-    pub fn set_dev_status_req_freq(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_dev_status_req_freq(mut self, input: ::std::option::Option<i32>) -> Self {
         self.dev_status_req_freq = input;
         self
     }
     /// <p>The ReportDevStatusBattery value.</p>
     pub fn report_dev_status_battery(mut self, input: bool) -> Self {
-        self.report_dev_status_battery = Some(input);
+        self.report_dev_status_battery = ::std::option::Option::Some(input);
         self
     }
     /// <p>The ReportDevStatusBattery value.</p>
-    pub fn set_report_dev_status_battery(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_report_dev_status_battery(mut self, input: ::std::option::Option<bool>) -> Self {
         self.report_dev_status_battery = input;
         self
     }
     /// <p>The ReportDevStatusMargin value.</p>
     pub fn report_dev_status_margin(mut self, input: bool) -> Self {
-        self.report_dev_status_margin = Some(input);
+        self.report_dev_status_margin = ::std::option::Option::Some(input);
         self
     }
     /// <p>The ReportDevStatusMargin value.</p>
-    pub fn set_report_dev_status_margin(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_report_dev_status_margin(mut self, input: ::std::option::Option<bool>) -> Self {
         self.report_dev_status_margin = input;
         self
     }
     /// <p>The DRMin value.</p>
     pub fn dr_min(mut self, input: i32) -> Self {
-        self.dr_min = Some(input);
+        self.dr_min = ::std::option::Option::Some(input);
         self
     }
     /// <p>The DRMin value.</p>
-    pub fn set_dr_min(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_dr_min(mut self, input: ::std::option::Option<i32>) -> Self {
         self.dr_min = input;
         self
     }
     /// <p>The DRMax value.</p>
     pub fn dr_max(mut self, input: i32) -> Self {
-        self.dr_max = Some(input);
+        self.dr_max = ::std::option::Option::Some(input);
         self
     }
     /// <p>The DRMax value.</p>
-    pub fn set_dr_max(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_dr_max(mut self, input: ::std::option::Option<i32>) -> Self {
         self.dr_max = input;
         self
     }
     /// <p>The ChannelMask value.</p>
-    pub fn channel_mask(mut self, input: impl Into<std::string::String>) -> Self {
-        self.channel_mask = Some(input.into());
+    pub fn channel_mask(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.channel_mask = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ChannelMask value.</p>
-    pub fn set_channel_mask(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_channel_mask(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.channel_mask = input;
         self
     }
     /// <p>The PRAllowed value that describes whether passive roaming is allowed.</p>
     pub fn pr_allowed(mut self, input: bool) -> Self {
-        self.pr_allowed = Some(input);
+        self.pr_allowed = ::std::option::Option::Some(input);
         self
     }
     /// <p>The PRAllowed value that describes whether passive roaming is allowed.</p>
-    pub fn set_pr_allowed(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_pr_allowed(mut self, input: ::std::option::Option<bool>) -> Self {
         self.pr_allowed = input;
         self
     }
     /// <p>The HRAllowed value that describes whether handover roaming is allowed.</p>
     pub fn hr_allowed(mut self, input: bool) -> Self {
-        self.hr_allowed = Some(input);
+        self.hr_allowed = ::std::option::Option::Some(input);
         self
     }
     /// <p>The HRAllowed value that describes whether handover roaming is allowed.</p>
-    pub fn set_hr_allowed(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_hr_allowed(mut self, input: ::std::option::Option<bool>) -> Self {
         self.hr_allowed = input;
         self
     }
     /// <p>The RAAllowed value that describes whether roaming activation is allowed.</p>
     pub fn ra_allowed(mut self, input: bool) -> Self {
-        self.ra_allowed = Some(input);
+        self.ra_allowed = ::std::option::Option::Some(input);
         self
     }
     /// <p>The RAAllowed value that describes whether roaming activation is allowed.</p>
-    pub fn set_ra_allowed(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_ra_allowed(mut self, input: ::std::option::Option<bool>) -> Self {
         self.ra_allowed = input;
         self
     }
     /// <p>The NwkGeoLoc value.</p>
     pub fn nwk_geo_loc(mut self, input: bool) -> Self {
-        self.nwk_geo_loc = Some(input);
+        self.nwk_geo_loc = ::std::option::Option::Some(input);
         self
     }
     /// <p>The NwkGeoLoc value.</p>
-    pub fn set_nwk_geo_loc(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_nwk_geo_loc(mut self, input: ::std::option::Option<bool>) -> Self {
         self.nwk_geo_loc = input;
         self
     }
     /// <p>The TargetPER value.</p>
     pub fn target_per(mut self, input: i32) -> Self {
-        self.target_per = Some(input);
+        self.target_per = ::std::option::Option::Some(input);
         self
     }
     /// <p>The TargetPER value.</p>
-    pub fn set_target_per(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_target_per(mut self, input: ::std::option::Option<i32>) -> Self {
         self.target_per = input;
         self
     }
     /// <p>The MinGwDiversity value.</p>
     pub fn min_gw_diversity(mut self, input: i32) -> Self {
-        self.min_gw_diversity = Some(input);
+        self.min_gw_diversity = ::std::option::Option::Some(input);
         self
     }
     /// <p>The MinGwDiversity value.</p>
-    pub fn set_min_gw_diversity(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_min_gw_diversity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.min_gw_diversity = input;
         self
     }

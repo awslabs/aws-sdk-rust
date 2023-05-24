@@ -3,20 +3,20 @@
 /// <p>Properties of a proposal.</p>
 /// <p>Applies only to Hyperledger Fabric.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProposalSummary {
     /// <p> The unique identifier of the proposal. </p>
     #[doc(hidden)]
-    pub proposal_id: std::option::Option<std::string::String>,
+    pub proposal_id: ::std::option::Option<::std::string::String>,
     /// <p> The description of the proposal. </p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p> The unique identifier of the member that created the proposal. </p>
     #[doc(hidden)]
-    pub proposed_by_member_id: std::option::Option<std::string::String>,
+    pub proposed_by_member_id: ::std::option::Option<::std::string::String>,
     /// <p> The name of the member that created the proposal. </p>
     #[doc(hidden)]
-    pub proposed_by_member_name: std::option::Option<std::string::String>,
+    pub proposed_by_member_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the proposal. Values are as follows:</p>
     /// <ul>
     /// <li> <p> <code>IN_PROGRESS</code> - The proposal is active and open for member voting.</p> </li>
@@ -26,32 +26,32 @@ pub struct ProposalSummary {
     /// <li> <p> <code>ACTION_FAILED</code> - One or more of the specified <code>ProposalActions</code> in a proposal that was approved couldn't be completed because of an error.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::ProposalStatus>,
+    pub status: ::std::option::Option<crate::types::ProposalStatus>,
     /// <p> The date and time that the proposal was created. </p>
     #[doc(hidden)]
-    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The date and time that the proposal expires. This is the <code>CreationDate</code> plus the <code>ProposalDurationInHours</code> that is specified in the <code>ProposalThresholdPolicy</code>. After this date and time, if members haven't cast enough votes to determine the outcome according to the voting policy, the proposal is <code>EXPIRED</code> and <code>Actions</code> aren't carried out. </p>
     #[doc(hidden)]
-    pub expiration_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub expiration_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the proposal. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
 }
 impl ProposalSummary {
     /// <p> The unique identifier of the proposal. </p>
-    pub fn proposal_id(&self) -> std::option::Option<&str> {
+    pub fn proposal_id(&self) -> ::std::option::Option<&str> {
         self.proposal_id.as_deref()
     }
     /// <p> The description of the proposal. </p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p> The unique identifier of the member that created the proposal. </p>
-    pub fn proposed_by_member_id(&self) -> std::option::Option<&str> {
+    pub fn proposed_by_member_id(&self) -> ::std::option::Option<&str> {
         self.proposed_by_member_id.as_deref()
     }
     /// <p> The name of the member that created the proposal. </p>
-    pub fn proposed_by_member_name(&self) -> std::option::Option<&str> {
+    pub fn proposed_by_member_name(&self) -> ::std::option::Option<&str> {
         self.proposed_by_member_name.as_deref()
     }
     /// <p>The status of the proposal. Values are as follows:</p>
@@ -62,19 +62,19 @@ impl ProposalSummary {
     /// <li> <p> <code>EXPIRED</code> - Members didn't cast the number of votes required to determine the proposal outcome before the proposal expired. The specified <code>ProposalActions</code> aren't carried out.</p> </li>
     /// <li> <p> <code>ACTION_FAILED</code> - One or more of the specified <code>ProposalActions</code> in a proposal that was approved couldn't be completed because of an error.</p> </li>
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::types::ProposalStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::ProposalStatus> {
         self.status.as_ref()
     }
     /// <p> The date and time that the proposal was created. </p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p> The date and time that the proposal expires. This is the <code>CreationDate</code> plus the <code>ProposalDurationInHours</code> that is specified in the <code>ProposalThresholdPolicy</code>. After this date and time, if members haven't cast enough votes to determine the outcome according to the voting policy, the proposal is <code>EXPIRED</code> and <code>Actions</code> aren't carried out. </p>
-    pub fn expiration_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn expiration_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.expiration_date.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the proposal. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
 }
@@ -87,60 +87,68 @@ impl ProposalSummary {
 
 /// A builder for [`ProposalSummary`](crate::types::ProposalSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ProposalSummaryBuilder {
-    pub(crate) proposal_id: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) proposed_by_member_id: std::option::Option<std::string::String>,
-    pub(crate) proposed_by_member_name: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::ProposalStatus>,
-    pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) expiration_date: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) arn: std::option::Option<std::string::String>,
+    pub(crate) proposal_id: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) proposed_by_member_id: ::std::option::Option<::std::string::String>,
+    pub(crate) proposed_by_member_name: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::ProposalStatus>,
+    pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) expiration_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
 impl ProposalSummaryBuilder {
     /// <p> The unique identifier of the proposal. </p>
-    pub fn proposal_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.proposal_id = Some(input.into());
+    pub fn proposal_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.proposal_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The unique identifier of the proposal. </p>
-    pub fn set_proposal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_proposal_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.proposal_id = input;
         self
     }
     /// <p> The description of the proposal. </p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The description of the proposal. </p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p> The unique identifier of the member that created the proposal. </p>
-    pub fn proposed_by_member_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.proposed_by_member_id = Some(input.into());
+    pub fn proposed_by_member_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.proposed_by_member_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The unique identifier of the member that created the proposal. </p>
     pub fn set_proposed_by_member_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.proposed_by_member_id = input;
         self
     }
     /// <p> The name of the member that created the proposal. </p>
-    pub fn proposed_by_member_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.proposed_by_member_name = Some(input.into());
+    pub fn proposed_by_member_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.proposed_by_member_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the member that created the proposal. </p>
     pub fn set_proposed_by_member_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.proposed_by_member_name = input;
         self
@@ -154,7 +162,7 @@ impl ProposalSummaryBuilder {
     /// <li> <p> <code>ACTION_FAILED</code> - One or more of the specified <code>ProposalActions</code> in a proposal that was approved couldn't be completed because of an error.</p> </li>
     /// </ul>
     pub fn status(mut self, input: crate::types::ProposalStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the proposal. Values are as follows:</p>
@@ -165,43 +173,46 @@ impl ProposalSummaryBuilder {
     /// <li> <p> <code>EXPIRED</code> - Members didn't cast the number of votes required to determine the proposal outcome before the proposal expired. The specified <code>ProposalActions</code> aren't carried out.</p> </li>
     /// <li> <p> <code>ACTION_FAILED</code> - One or more of the specified <code>ProposalActions</code> in a proposal that was approved couldn't be completed because of an error.</p> </li>
     /// </ul>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::ProposalStatus>) -> Self {
+    pub fn set_status(
+        mut self,
+        input: ::std::option::Option<crate::types::ProposalStatus>,
+    ) -> Self {
         self.status = input;
         self
     }
     /// <p> The date and time that the proposal was created. </p>
-    pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_date = Some(input);
+    pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_date = ::std::option::Option::Some(input);
         self
     }
     /// <p> The date and time that the proposal was created. </p>
     pub fn set_creation_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_date = input;
         self
     }
     /// <p> The date and time that the proposal expires. This is the <code>CreationDate</code> plus the <code>ProposalDurationInHours</code> that is specified in the <code>ProposalThresholdPolicy</code>. After this date and time, if members haven't cast enough votes to determine the outcome according to the voting policy, the proposal is <code>EXPIRED</code> and <code>Actions</code> aren't carried out. </p>
-    pub fn expiration_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.expiration_date = Some(input);
+    pub fn expiration_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.expiration_date = ::std::option::Option::Some(input);
         self
     }
     /// <p> The date and time that the proposal expires. This is the <code>CreationDate</code> plus the <code>ProposalDurationInHours</code> that is specified in the <code>ProposalThresholdPolicy</code>. After this date and time, if members haven't cast enough votes to determine the outcome according to the voting policy, the proposal is <code>EXPIRED</code> and <code>Actions</code> aren't carried out. </p>
     pub fn set_expiration_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.expiration_date = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the proposal. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the proposal. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }

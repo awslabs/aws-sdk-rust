@@ -2,20 +2,20 @@
 
 /// <p>The result message containing a list of managed actions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEnvironmentManagedActionsOutput {
     /// <p>A list of upcoming and in-progress managed actions.</p>
     #[doc(hidden)]
-    pub managed_actions: std::option::Option<std::vec::Vec<crate::types::ManagedAction>>,
+    pub managed_actions: ::std::option::Option<::std::vec::Vec<crate::types::ManagedAction>>,
     _request_id: Option<String>,
 }
 impl DescribeEnvironmentManagedActionsOutput {
     /// <p>A list of upcoming and in-progress managed actions.</p>
-    pub fn managed_actions(&self) -> std::option::Option<&[crate::types::ManagedAction]> {
+    pub fn managed_actions(&self) -> ::std::option::Option<&[crate::types::ManagedAction]> {
         self.managed_actions.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeEnvironmentManagedActionsOutput {
+impl ::aws_http::request_id::RequestId for DescribeEnvironmentManagedActionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,9 +29,11 @@ impl DescribeEnvironmentManagedActionsOutput {
 
 /// A builder for [`DescribeEnvironmentManagedActionsOutput`](crate::operation::describe_environment_managed_actions::DescribeEnvironmentManagedActionsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeEnvironmentManagedActionsOutputBuilder {
-    pub(crate) managed_actions: std::option::Option<std::vec::Vec<crate::types::ManagedAction>>,
+    pub(crate) managed_actions: ::std::option::Option<::std::vec::Vec<crate::types::ManagedAction>>,
     _request_id: Option<String>,
 }
 impl DescribeEnvironmentManagedActionsOutputBuilder {
@@ -43,13 +45,13 @@ impl DescribeEnvironmentManagedActionsOutputBuilder {
     pub fn managed_actions(mut self, input: crate::types::ManagedAction) -> Self {
         let mut v = self.managed_actions.unwrap_or_default();
         v.push(input);
-        self.managed_actions = Some(v);
+        self.managed_actions = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of upcoming and in-progress managed actions.</p>
     pub fn set_managed_actions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ManagedAction>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ManagedAction>>,
     ) -> Self {
         self.managed_actions = input;
         self

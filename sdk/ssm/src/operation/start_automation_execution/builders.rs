@@ -6,29 +6,29 @@ pub use crate::operation::start_automation_execution::_start_automation_executio
 /// Fluent builder constructing a request to `StartAutomationExecution`.
 ///
 /// <p>Initiates execution of an Automation runbook.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartAutomationExecutionFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::start_automation_execution::builders::StartAutomationExecutionInputBuilder,
 }
 impl StartAutomationExecutionFluentBuilder {
     /// Creates a new `StartAutomationExecution`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::start_automation_execution::StartAutomationExecution,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::start_automation_execution::StartAutomationExecutionError,
         >,
     > {
@@ -36,30 +36,33 @@ impl StartAutomationExecutionFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::start_automation_execution::StartAutomationExecutionOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::start_automation_execution::StartAutomationExecutionError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,31 +75,43 @@ impl StartAutomationExecutionFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::start_automation_execution::StartAutomationExecutionOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::start_automation_execution::StartAutomationExecutionError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the SSM document to run. This can be a public document or a custom document. To run a shared document belonging to another account, specify the document ARN. For more information about how to use shared documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    pub fn document_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn document_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.document_name(input.into());
         self
     }
     /// <p>The name of the SSM document to run. This can be a public document or a custom document. To run a shared document belonging to another account, specify the document ARN. For more information about how to use shared documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-    pub fn set_document_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_document_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_document_name(input);
         self
     }
     /// <p>The version of the Automation runbook to use for this execution.</p>
-    pub fn document_version(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn document_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.document_version(input.into());
         self
     }
     /// <p>The version of the Automation runbook to use for this execution.</p>
-    pub fn set_document_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_document_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_document_version(input);
         self
     }
@@ -107,8 +122,8 @@ impl StartAutomationExecutionFluentBuilder {
     /// <p>A key-value map of execution parameters, which match the declared parameters in the Automation runbook.</p>
     pub fn parameters(
         mut self,
-        k: impl Into<std::string::String>,
-        v: std::vec::Vec<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: ::std::vec::Vec<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.parameters(k.into(), v);
         self
@@ -116,20 +131,23 @@ impl StartAutomationExecutionFluentBuilder {
     /// <p>A key-value map of execution parameters, which match the declared parameters in the Automation runbook.</p>
     pub fn set_parameters(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<
+                ::std::string::String,
+                ::std::vec::Vec<::std::string::String>,
+            >,
         >,
     ) -> Self {
         self.inner = self.inner.set_parameters(input);
         self
     }
     /// <p>User-provided idempotency token. The token must be unique, is case insensitive, enforces the UUID format, and can't be reused.</p>
-    pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
     /// <p>User-provided idempotency token. The token must be unique, is case insensitive, enforces the UUID format, and can't be reused.</p>
-    pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
@@ -139,19 +157,22 @@ impl StartAutomationExecutionFluentBuilder {
         self
     }
     /// <p>The execution mode of the automation. Valid modes include the following: Auto and Interactive. The default mode is Auto.</p>
-    pub fn set_mode(mut self, input: std::option::Option<crate::types::ExecutionMode>) -> Self {
+    pub fn set_mode(mut self, input: ::std::option::Option<crate::types::ExecutionMode>) -> Self {
         self.inner = self.inner.set_mode(input);
         self
     }
     /// <p>The name of the parameter used as the target resource for the rate-controlled execution. Required if you specify targets.</p>
-    pub fn target_parameter_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn target_parameter_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.target_parameter_name(input.into());
         self
     }
     /// <p>The name of the parameter used as the target resource for the rate-controlled execution. Required if you specify targets.</p>
     pub fn set_target_parameter_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_target_parameter_name(input);
         self
@@ -168,7 +189,7 @@ impl StartAutomationExecutionFluentBuilder {
     /// <p>A key-value mapping to target resources. Required if you specify TargetParameterName.</p>
     pub fn set_targets(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Target>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
     ) -> Self {
         self.inner = self.inner.set_targets(input);
         self
@@ -180,7 +201,10 @@ impl StartAutomationExecutionFluentBuilder {
     /// <p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
     pub fn target_maps(
         mut self,
-        input: std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+        input: ::std::collections::HashMap<
+            ::std::string::String,
+            ::std::vec::Vec<::std::string::String>,
+        >,
     ) -> Self {
         self.inner = self.inner.target_maps(input);
         self
@@ -188,9 +212,12 @@ impl StartAutomationExecutionFluentBuilder {
     /// <p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
     pub fn set_target_maps(
         mut self,
-        input: std::option::Option<
-            std::vec::Vec<
-                std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<
+                ::std::collections::HashMap<
+                    ::std::string::String,
+                    ::std::vec::Vec<::std::string::String>,
+                >,
             >,
         >,
     ) -> Self {
@@ -198,24 +225,30 @@ impl StartAutomationExecutionFluentBuilder {
         self
     }
     /// <p>The maximum number of targets allowed to run this task in parallel. You can specify a number, such as 10, or a percentage, such as 10%. The default value is <code>10</code>.</p>
-    pub fn max_concurrency(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn max_concurrency(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.max_concurrency(input.into());
         self
     }
     /// <p>The maximum number of targets allowed to run this task in parallel. You can specify a number, such as 10, or a percentage, such as 10%. The default value is <code>10</code>.</p>
-    pub fn set_max_concurrency(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_max_concurrency(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_max_concurrency(input);
         self
     }
     /// <p>The number of errors that are allowed before the system stops running the automation on additional targets. You can specify either an absolute number of errors, for example 10, or a percentage of the target set, for example 10%. If you specify 3, for example, the system stops running the automation when the fourth error is received. If you specify 0, then the system stops running the automation on additional targets after the first error result is returned. If you run an automation on 50 resources and set max-errors to 10%, then the system stops running the automation on additional targets when the sixth error is received.</p>
     /// <p>Executions that are already running an automation when max-errors is reached are allowed to complete, but some of these executions may fail as well. If you need to ensure that there won't be more than max-errors failed executions, set max-concurrency to 1 so the executions proceed one at a time.</p>
-    pub fn max_errors(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn max_errors(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.max_errors(input.into());
         self
     }
     /// <p>The number of errors that are allowed before the system stops running the automation on additional targets. You can specify either an absolute number of errors, for example 10, or a percentage of the target set, for example 10%. If you specify 3, for example, the system stops running the automation when the fourth error is received. If you specify 0, then the system stops running the automation on additional targets after the first error result is returned. If you run an automation on 50 resources and set max-errors to 10%, then the system stops running the automation on additional targets when the sixth error is received.</p>
     /// <p>Executions that are already running an automation when max-errors is reached are allowed to complete, but some of these executions may fail as well. If you need to ensure that there won't be more than max-errors failed executions, set max-concurrency to 1 so the executions proceed one at a time.</p>
-    pub fn set_max_errors(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_max_errors(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_max_errors(input);
         self
     }
@@ -231,7 +264,7 @@ impl StartAutomationExecutionFluentBuilder {
     /// <p>A location is a combination of Amazon Web Services Regions and/or Amazon Web Services accounts where you want to run the automation. Use this operation to start an automation in multiple Amazon Web Services Regions and multiple Amazon Web Services accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running Automation workflows in multiple Amazon Web Services Regions and Amazon Web Services accounts</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p>
     pub fn set_target_locations(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TargetLocation>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::TargetLocation>>,
     ) -> Self {
         self.inner = self.inner.set_target_locations(input);
         self
@@ -260,7 +293,7 @@ impl StartAutomationExecutionFluentBuilder {
     /// </note>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
@@ -273,7 +306,7 @@ impl StartAutomationExecutionFluentBuilder {
     /// <p>The CloudWatch alarm you want to apply to your automation.</p>
     pub fn set_alarm_configuration(
         mut self,
-        input: std::option::Option<crate::types::AlarmConfiguration>,
+        input: ::std::option::Option<crate::types::AlarmConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_alarm_configuration(input);
         self

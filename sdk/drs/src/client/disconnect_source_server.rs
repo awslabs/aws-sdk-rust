@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DisconnectSourceServer`](crate::operation::disconnect_source_server::builders::DisconnectSourceServerFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`source_server_id(impl Into<String>)`](crate::operation::disconnect_source_server::builders::DisconnectSourceServerFluentBuilder::source_server_id) / [`set_source_server_id(Option<String>)`](crate::operation::disconnect_source_server::builders::DisconnectSourceServerFluentBuilder::set_source_server_id): <p>The ID of the Source Server to disconnect.</p>
+    ///   - [`source_server_id(impl ::std::convert::Into<String>)`](crate::operation::disconnect_source_server::builders::DisconnectSourceServerFluentBuilder::source_server_id) / [`set_source_server_id(Option<String>)`](crate::operation::disconnect_source_server::builders::DisconnectSourceServerFluentBuilder::set_source_server_id): <p>The ID of the Source Server to disconnect.</p>
     /// - On success, responds with [`DisconnectSourceServerOutput`](crate::operation::disconnect_source_server::DisconnectSourceServerOutput) with field(s):
     ///   - [`source_server_id(Option<String>)`](crate::operation::disconnect_source_server::DisconnectSourceServerOutput::source_server_id): <p>The ID of the Source Server.</p>
     ///   - [`arn(Option<String>)`](crate::operation::disconnect_source_server::DisconnectSourceServerOutput::arn): <p>The ARN of the Source Server.</p>

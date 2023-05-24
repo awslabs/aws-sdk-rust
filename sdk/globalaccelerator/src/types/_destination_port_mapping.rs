@@ -2,70 +2,72 @@
 
 /// <p>The port mappings for a specified endpoint IP address (destination).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DestinationPortMapping {
     /// <p>The Amazon Resource Name (ARN) of the custom routing accelerator that you have port mappings for.</p>
     #[doc(hidden)]
-    pub accelerator_arn: std::option::Option<std::string::String>,
+    pub accelerator_arn: ::std::option::Option<::std::string::String>,
     /// <p>The IP address/port combinations (sockets) that map to a given destination socket address.</p>
     #[doc(hidden)]
     pub accelerator_socket_addresses:
-        std::option::Option<std::vec::Vec<crate::types::SocketAddress>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::SocketAddress>>,
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
     #[doc(hidden)]
-    pub endpoint_group_arn: std::option::Option<std::string::String>,
+    pub endpoint_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID for the virtual private cloud (VPC) subnet.</p>
     #[doc(hidden)]
-    pub endpoint_id: std::option::Option<std::string::String>,
+    pub endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region for the endpoint group.</p>
     #[doc(hidden)]
-    pub endpoint_group_region: std::option::Option<std::string::String>,
+    pub endpoint_group_region: ::std::option::Option<::std::string::String>,
     /// <p>The endpoint IP address/port combination for traffic received on the accelerator socket address.</p>
     #[doc(hidden)]
-    pub destination_socket_address: std::option::Option<crate::types::SocketAddress>,
+    pub destination_socket_address: ::std::option::Option<crate::types::SocketAddress>,
     /// <p>The IP address type that an accelerator supports. For a custom routing accelerator, the value must be IPV4.</p>
     #[doc(hidden)]
-    pub ip_address_type: std::option::Option<crate::types::IpAddressType>,
+    pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     /// <p>Indicates whether or not a port mapping destination can receive traffic. The value is either ALLOW, if traffic is allowed to the destination, or DENY, if traffic is not allowed to the destination.</p>
     #[doc(hidden)]
     pub destination_traffic_state:
-        std::option::Option<crate::types::CustomRoutingDestinationTrafficState>,
+        ::std::option::Option<crate::types::CustomRoutingDestinationTrafficState>,
 }
 impl DestinationPortMapping {
     /// <p>The Amazon Resource Name (ARN) of the custom routing accelerator that you have port mappings for.</p>
-    pub fn accelerator_arn(&self) -> std::option::Option<&str> {
+    pub fn accelerator_arn(&self) -> ::std::option::Option<&str> {
         self.accelerator_arn.as_deref()
     }
     /// <p>The IP address/port combinations (sockets) that map to a given destination socket address.</p>
     pub fn accelerator_socket_addresses(
         &self,
-    ) -> std::option::Option<&[crate::types::SocketAddress]> {
+    ) -> ::std::option::Option<&[crate::types::SocketAddress]> {
         self.accelerator_socket_addresses.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
-    pub fn endpoint_group_arn(&self) -> std::option::Option<&str> {
+    pub fn endpoint_group_arn(&self) -> ::std::option::Option<&str> {
         self.endpoint_group_arn.as_deref()
     }
     /// <p>The ID for the virtual private cloud (VPC) subnet.</p>
-    pub fn endpoint_id(&self) -> std::option::Option<&str> {
+    pub fn endpoint_id(&self) -> ::std::option::Option<&str> {
         self.endpoint_id.as_deref()
     }
     /// <p>The Amazon Web Services Region for the endpoint group.</p>
-    pub fn endpoint_group_region(&self) -> std::option::Option<&str> {
+    pub fn endpoint_group_region(&self) -> ::std::option::Option<&str> {
         self.endpoint_group_region.as_deref()
     }
     /// <p>The endpoint IP address/port combination for traffic received on the accelerator socket address.</p>
-    pub fn destination_socket_address(&self) -> std::option::Option<&crate::types::SocketAddress> {
+    pub fn destination_socket_address(
+        &self,
+    ) -> ::std::option::Option<&crate::types::SocketAddress> {
         self.destination_socket_address.as_ref()
     }
     /// <p>The IP address type that an accelerator supports. For a custom routing accelerator, the value must be IPV4.</p>
-    pub fn ip_address_type(&self) -> std::option::Option<&crate::types::IpAddressType> {
+    pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::IpAddressType> {
         self.ip_address_type.as_ref()
     }
     /// <p>Indicates whether or not a port mapping destination can receive traffic. The value is either ALLOW, if traffic is allowed to the destination, or DENY, if traffic is not allowed to the destination.</p>
     pub fn destination_traffic_state(
         &self,
-    ) -> std::option::Option<&crate::types::CustomRoutingDestinationTrafficState> {
+    ) -> ::std::option::Option<&crate::types::CustomRoutingDestinationTrafficState> {
         self.destination_traffic_state.as_ref()
     }
 }
@@ -78,27 +80,35 @@ impl DestinationPortMapping {
 
 /// A builder for [`DestinationPortMapping`](crate::types::DestinationPortMapping).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DestinationPortMappingBuilder {
-    pub(crate) accelerator_arn: std::option::Option<std::string::String>,
+    pub(crate) accelerator_arn: ::std::option::Option<::std::string::String>,
     pub(crate) accelerator_socket_addresses:
-        std::option::Option<std::vec::Vec<crate::types::SocketAddress>>,
-    pub(crate) endpoint_group_arn: std::option::Option<std::string::String>,
-    pub(crate) endpoint_id: std::option::Option<std::string::String>,
-    pub(crate) endpoint_group_region: std::option::Option<std::string::String>,
-    pub(crate) destination_socket_address: std::option::Option<crate::types::SocketAddress>,
-    pub(crate) ip_address_type: std::option::Option<crate::types::IpAddressType>,
+        ::std::option::Option<::std::vec::Vec<crate::types::SocketAddress>>,
+    pub(crate) endpoint_group_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) endpoint_id: ::std::option::Option<::std::string::String>,
+    pub(crate) endpoint_group_region: ::std::option::Option<::std::string::String>,
+    pub(crate) destination_socket_address: ::std::option::Option<crate::types::SocketAddress>,
+    pub(crate) ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     pub(crate) destination_traffic_state:
-        std::option::Option<crate::types::CustomRoutingDestinationTrafficState>,
+        ::std::option::Option<crate::types::CustomRoutingDestinationTrafficState>,
 }
 impl DestinationPortMappingBuilder {
     /// <p>The Amazon Resource Name (ARN) of the custom routing accelerator that you have port mappings for.</p>
-    pub fn accelerator_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.accelerator_arn = Some(input.into());
+    pub fn accelerator_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.accelerator_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the custom routing accelerator that you have port mappings for.</p>
-    pub fn set_accelerator_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_accelerator_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.accelerator_arn = input;
         self
     }
@@ -110,75 +120,81 @@ impl DestinationPortMappingBuilder {
     pub fn accelerator_socket_addresses(mut self, input: crate::types::SocketAddress) -> Self {
         let mut v = self.accelerator_socket_addresses.unwrap_or_default();
         v.push(input);
-        self.accelerator_socket_addresses = Some(v);
+        self.accelerator_socket_addresses = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IP address/port combinations (sockets) that map to a given destination socket address.</p>
     pub fn set_accelerator_socket_addresses(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SocketAddress>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SocketAddress>>,
     ) -> Self {
         self.accelerator_socket_addresses = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
-    pub fn endpoint_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.endpoint_group_arn = Some(input.into());
+    pub fn endpoint_group_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.endpoint_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
     pub fn set_endpoint_group_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.endpoint_group_arn = input;
         self
     }
     /// <p>The ID for the virtual private cloud (VPC) subnet.</p>
-    pub fn endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.endpoint_id = Some(input.into());
+    pub fn endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.endpoint_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID for the virtual private cloud (VPC) subnet.</p>
-    pub fn set_endpoint_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint_id = input;
         self
     }
     /// <p>The Amazon Web Services Region for the endpoint group.</p>
-    pub fn endpoint_group_region(mut self, input: impl Into<std::string::String>) -> Self {
-        self.endpoint_group_region = Some(input.into());
+    pub fn endpoint_group_region(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.endpoint_group_region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services Region for the endpoint group.</p>
     pub fn set_endpoint_group_region(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.endpoint_group_region = input;
         self
     }
     /// <p>The endpoint IP address/port combination for traffic received on the accelerator socket address.</p>
     pub fn destination_socket_address(mut self, input: crate::types::SocketAddress) -> Self {
-        self.destination_socket_address = Some(input);
+        self.destination_socket_address = ::std::option::Option::Some(input);
         self
     }
     /// <p>The endpoint IP address/port combination for traffic received on the accelerator socket address.</p>
     pub fn set_destination_socket_address(
         mut self,
-        input: std::option::Option<crate::types::SocketAddress>,
+        input: ::std::option::Option<crate::types::SocketAddress>,
     ) -> Self {
         self.destination_socket_address = input;
         self
     }
     /// <p>The IP address type that an accelerator supports. For a custom routing accelerator, the value must be IPV4.</p>
     pub fn ip_address_type(mut self, input: crate::types::IpAddressType) -> Self {
-        self.ip_address_type = Some(input);
+        self.ip_address_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The IP address type that an accelerator supports. For a custom routing accelerator, the value must be IPV4.</p>
     pub fn set_ip_address_type(
         mut self,
-        input: std::option::Option<crate::types::IpAddressType>,
+        input: ::std::option::Option<crate::types::IpAddressType>,
     ) -> Self {
         self.ip_address_type = input;
         self
@@ -188,13 +204,13 @@ impl DestinationPortMappingBuilder {
         mut self,
         input: crate::types::CustomRoutingDestinationTrafficState,
     ) -> Self {
-        self.destination_traffic_state = Some(input);
+        self.destination_traffic_state = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether or not a port mapping destination can receive traffic. The value is either ALLOW, if traffic is allowed to the destination, or DENY, if traffic is not allowed to the destination.</p>
     pub fn set_destination_traffic_state(
         mut self,
-        input: std::option::Option<crate::types::CustomRoutingDestinationTrafficState>,
+        input: ::std::option::Option<crate::types::CustomRoutingDestinationTrafficState>,
     ) -> Self {
         self.destination_traffic_state = input;
         self

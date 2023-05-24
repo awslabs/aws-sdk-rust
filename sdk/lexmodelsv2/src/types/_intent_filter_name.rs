@@ -37,13 +37,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum IntentFilterName {
     #[allow(missing_docs)] // documentation missing in model
@@ -51,7 +51,7 @@ pub enum IntentFilterName {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for IntentFilterName {
+impl ::std::convert::From<&str> for IntentFilterName {
     fn from(s: &str) -> Self {
         match s {
             "IntentName" => IntentFilterName::IntentName,
@@ -61,11 +61,11 @@ impl std::convert::From<&str> for IntentFilterName {
         }
     }
 }
-impl std::str::FromStr for IntentFilterName {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for IntentFilterName {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(IntentFilterName::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(IntentFilterName::from(s))
     }
 }
 impl IntentFilterName {
@@ -81,7 +81,7 @@ impl IntentFilterName {
         &["IntentName"]
     }
 }
-impl AsRef<str> for IntentFilterName {
+impl ::std::convert::AsRef<str> for IntentFilterName {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

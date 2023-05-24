@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateResolverRule`](crate::operation::update_resolver_rule::builders::UpdateResolverRuleFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resolver_rule_id(impl Into<String>)`](crate::operation::update_resolver_rule::builders::UpdateResolverRuleFluentBuilder::resolver_rule_id) / [`set_resolver_rule_id(Option<String>)`](crate::operation::update_resolver_rule::builders::UpdateResolverRuleFluentBuilder::set_resolver_rule_id): <p>The ID of the Resolver rule that you want to update.</p>
+    ///   - [`resolver_rule_id(impl ::std::convert::Into<String>)`](crate::operation::update_resolver_rule::builders::UpdateResolverRuleFluentBuilder::resolver_rule_id) / [`set_resolver_rule_id(Option<String>)`](crate::operation::update_resolver_rule::builders::UpdateResolverRuleFluentBuilder::set_resolver_rule_id): <p>The ID of the Resolver rule that you want to update.</p>
     ///   - [`config(ResolverRuleConfig)`](crate::operation::update_resolver_rule::builders::UpdateResolverRuleFluentBuilder::config) / [`set_config(Option<ResolverRuleConfig>)`](crate::operation::update_resolver_rule::builders::UpdateResolverRuleFluentBuilder::set_config): <p>The new settings for the Resolver rule.</p>
     /// - On success, responds with [`UpdateResolverRuleOutput`](crate::operation::update_resolver_rule::UpdateResolverRuleOutput) with field(s):
     ///   - [`resolver_rule(Option<ResolverRule>)`](crate::operation::update_resolver_rule::UpdateResolverRuleOutput::resolver_rule): <p>The response to an <code>UpdateResolverRule</code> request.</p>

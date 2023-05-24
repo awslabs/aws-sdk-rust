@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub struct Status(String);
 impl Status {
@@ -21,9 +21,9 @@ impl Status {
         &["Active", "Expired"]
     }
 }
-impl<T> std::convert::From<T> for Status
+impl<T> ::std::convert::From<T> for Status
 where
-    T: std::convert::AsRef<str>,
+    T: ::std::convert::AsRef<str>,
 {
     fn from(s: T) -> Self {
         Status(s.as_ref().to_owned())

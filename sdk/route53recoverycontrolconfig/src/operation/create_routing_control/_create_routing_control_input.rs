@@ -2,36 +2,36 @@
 
 /// <p>The details of the routing control that you're creating.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateRoutingControlInput {
     /// <p>A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.</p>
     #[doc(hidden)]
-    pub client_token: std::option::Option<std::string::String>,
+    pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the cluster that includes the routing control.</p>
     #[doc(hidden)]
-    pub cluster_arn: std::option::Option<std::string::String>,
+    pub cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the control panel that includes the routing control.</p>
     #[doc(hidden)]
-    pub control_panel_arn: std::option::Option<std::string::String>,
+    pub control_panel_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the routing control.</p>
     #[doc(hidden)]
-    pub routing_control_name: std::option::Option<std::string::String>,
+    pub routing_control_name: ::std::option::Option<::std::string::String>,
 }
 impl CreateRoutingControlInput {
     /// <p>A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the cluster that includes the routing control.</p>
-    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+    pub fn cluster_arn(&self) -> ::std::option::Option<&str> {
         self.cluster_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the control panel that includes the routing control.</p>
-    pub fn control_panel_arn(&self) -> std::option::Option<&str> {
+    pub fn control_panel_arn(&self) -> ::std::option::Option<&str> {
         self.control_panel_arn.as_deref()
     }
     /// <p>The name of the routing control.</p>
-    pub fn routing_control_name(&self) -> std::option::Option<&str> {
+    pub fn routing_control_name(&self) -> ::std::option::Option<&str> {
         self.routing_control_name.as_deref()
     }
 }
@@ -45,56 +45,64 @@ impl CreateRoutingControlInput {
 
 /// A builder for [`CreateRoutingControlInput`](crate::operation::create_routing_control::CreateRoutingControlInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateRoutingControlInputBuilder {
-    pub(crate) client_token: std::option::Option<std::string::String>,
-    pub(crate) cluster_arn: std::option::Option<std::string::String>,
-    pub(crate) control_panel_arn: std::option::Option<std::string::String>,
-    pub(crate) routing_control_name: std::option::Option<std::string::String>,
+    pub(crate) client_token: ::std::option::Option<::std::string::String>,
+    pub(crate) cluster_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) control_panel_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) routing_control_name: ::std::option::Option<::std::string::String>,
 }
 impl CreateRoutingControlInputBuilder {
     /// <p>A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.</p>
-    pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.client_token = Some(input.into());
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.client_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.</p>
-    pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the cluster that includes the routing control.</p>
-    pub fn cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cluster_arn = Some(input.into());
+    pub fn cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cluster_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the cluster that includes the routing control.</p>
-    pub fn set_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cluster_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the control panel that includes the routing control.</p>
-    pub fn control_panel_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.control_panel_arn = Some(input.into());
+    pub fn control_panel_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.control_panel_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the control panel that includes the routing control.</p>
     pub fn set_control_panel_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.control_panel_arn = input;
         self
     }
     /// <p>The name of the routing control.</p>
-    pub fn routing_control_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.routing_control_name = Some(input.into());
+    pub fn routing_control_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.routing_control_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the routing control.</p>
     pub fn set_routing_control_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.routing_control_name = input;
         self
@@ -102,11 +110,11 @@ impl CreateRoutingControlInputBuilder {
     /// Consumes the builder and constructs a [`CreateRoutingControlInput`](crate::operation::create_routing_control::CreateRoutingControlInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::create_routing_control::CreateRoutingControlInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::create_routing_control::CreateRoutingControlInput {
                 client_token: self.client_token,
                 cluster_arn: self.cluster_arn,

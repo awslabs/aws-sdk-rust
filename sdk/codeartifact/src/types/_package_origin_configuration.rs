@@ -2,15 +2,15 @@
 
 /// <p>Details about the package origin configuration of a package.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PackageOriginConfiguration {
     /// <p>A <code>PackageOriginRestrictions</code> object that contains information about the upstream and publish package origin configuration for the package.</p>
     #[doc(hidden)]
-    pub restrictions: std::option::Option<crate::types::PackageOriginRestrictions>,
+    pub restrictions: ::std::option::Option<crate::types::PackageOriginRestrictions>,
 }
 impl PackageOriginConfiguration {
     /// <p>A <code>PackageOriginRestrictions</code> object that contains information about the upstream and publish package origin configuration for the package.</p>
-    pub fn restrictions(&self) -> std::option::Option<&crate::types::PackageOriginRestrictions> {
+    pub fn restrictions(&self) -> ::std::option::Option<&crate::types::PackageOriginRestrictions> {
         self.restrictions.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl PackageOriginConfiguration {
 
 /// A builder for [`PackageOriginConfiguration`](crate::types::PackageOriginConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PackageOriginConfigurationBuilder {
-    pub(crate) restrictions: std::option::Option<crate::types::PackageOriginRestrictions>,
+    pub(crate) restrictions: ::std::option::Option<crate::types::PackageOriginRestrictions>,
 }
 impl PackageOriginConfigurationBuilder {
     /// <p>A <code>PackageOriginRestrictions</code> object that contains information about the upstream and publish package origin configuration for the package.</p>
     pub fn restrictions(mut self, input: crate::types::PackageOriginRestrictions) -> Self {
-        self.restrictions = Some(input);
+        self.restrictions = ::std::option::Option::Some(input);
         self
     }
     /// <p>A <code>PackageOriginRestrictions</code> object that contains information about the upstream and publish package origin configuration for the package.</p>
     pub fn set_restrictions(
         mut self,
-        input: std::option::Option<crate::types::PackageOriginRestrictions>,
+        input: ::std::option::Option<crate::types::PackageOriginRestrictions>,
     ) -> Self {
         self.restrictions = input;
         self

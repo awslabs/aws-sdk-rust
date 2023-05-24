@@ -2,7 +2,7 @@
 
 /// <p>Identifies where the sensitive data begins and ends.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Range {
     /// <p>The number of lines (for a line range) or characters (for an offset range) from the beginning of the file to the end of the sensitive data.</p>
     #[doc(hidden)]
@@ -37,40 +37,42 @@ impl Range {
 
 /// A builder for [`Range`](crate::types::Range).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RangeBuilder {
-    pub(crate) start: std::option::Option<i64>,
-    pub(crate) end: std::option::Option<i64>,
-    pub(crate) start_column: std::option::Option<i64>,
+    pub(crate) start: ::std::option::Option<i64>,
+    pub(crate) end: ::std::option::Option<i64>,
+    pub(crate) start_column: ::std::option::Option<i64>,
 }
 impl RangeBuilder {
     /// <p>The number of lines (for a line range) or characters (for an offset range) from the beginning of the file to the end of the sensitive data.</p>
     pub fn start(mut self, input: i64) -> Self {
-        self.start = Some(input);
+        self.start = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of lines (for a line range) or characters (for an offset range) from the beginning of the file to the end of the sensitive data.</p>
-    pub fn set_start(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_start(mut self, input: ::std::option::Option<i64>) -> Self {
         self.start = input;
         self
     }
     /// <p>The number of lines (for a line range) or characters (for an offset range) from the beginning of the file to the end of the sensitive data.</p>
     pub fn end(mut self, input: i64) -> Self {
-        self.end = Some(input);
+        self.end = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of lines (for a line range) or characters (for an offset range) from the beginning of the file to the end of the sensitive data.</p>
-    pub fn set_end(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_end(mut self, input: ::std::option::Option<i64>) -> Self {
         self.end = input;
         self
     }
     /// <p>In the line where the sensitive data starts, the column within the line where the sensitive data starts.</p>
     pub fn start_column(mut self, input: i64) -> Self {
-        self.start_column = Some(input);
+        self.start_column = ::std::option::Option::Some(input);
         self
     }
     /// <p>In the line where the sensitive data starts, the column within the line where the sensitive data starts.</p>
-    pub fn set_start_column(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_start_column(mut self, input: ::std::option::Option<i64>) -> Self {
         self.start_column = input;
         self
     }

@@ -2,36 +2,36 @@
 
 /// Caption Language Mapping
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HlsCaptionLanguageMapping {
     /// Caption channel.
     #[doc(hidden)]
-    pub caption_channel: std::option::Option<i32>,
+    pub caption_channel: ::std::option::Option<i32>,
     /// Specify the language for this captions channel, using the ISO 639-2 or ISO 639-3 three-letter language code
     #[doc(hidden)]
-    pub custom_language_code: std::option::Option<std::string::String>,
+    pub custom_language_code: ::std::option::Option<::std::string::String>,
     /// Specify the language, using the ISO 639-2 three-letter code listed at https://www.loc.gov/standards/iso639-2/php/code_list.php.
     #[doc(hidden)]
-    pub language_code: std::option::Option<crate::types::LanguageCode>,
+    pub language_code: ::std::option::Option<crate::types::LanguageCode>,
     /// Caption language description.
     #[doc(hidden)]
-    pub language_description: std::option::Option<std::string::String>,
+    pub language_description: ::std::option::Option<::std::string::String>,
 }
 impl HlsCaptionLanguageMapping {
     /// Caption channel.
-    pub fn caption_channel(&self) -> std::option::Option<i32> {
+    pub fn caption_channel(&self) -> ::std::option::Option<i32> {
         self.caption_channel
     }
     /// Specify the language for this captions channel, using the ISO 639-2 or ISO 639-3 three-letter language code
-    pub fn custom_language_code(&self) -> std::option::Option<&str> {
+    pub fn custom_language_code(&self) -> ::std::option::Option<&str> {
         self.custom_language_code.as_deref()
     }
     /// Specify the language, using the ISO 639-2 three-letter code listed at https://www.loc.gov/standards/iso639-2/php/code_list.php.
-    pub fn language_code(&self) -> std::option::Option<&crate::types::LanguageCode> {
+    pub fn language_code(&self) -> ::std::option::Option<&crate::types::LanguageCode> {
         self.language_code.as_ref()
     }
     /// Caption language description.
-    pub fn language_description(&self) -> std::option::Option<&str> {
+    pub fn language_description(&self) -> ::std::option::Option<&str> {
         self.language_description.as_deref()
     }
 }
@@ -44,59 +44,67 @@ impl HlsCaptionLanguageMapping {
 
 /// A builder for [`HlsCaptionLanguageMapping`](crate::types::HlsCaptionLanguageMapping).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct HlsCaptionLanguageMappingBuilder {
-    pub(crate) caption_channel: std::option::Option<i32>,
-    pub(crate) custom_language_code: std::option::Option<std::string::String>,
-    pub(crate) language_code: std::option::Option<crate::types::LanguageCode>,
-    pub(crate) language_description: std::option::Option<std::string::String>,
+    pub(crate) caption_channel: ::std::option::Option<i32>,
+    pub(crate) custom_language_code: ::std::option::Option<::std::string::String>,
+    pub(crate) language_code: ::std::option::Option<crate::types::LanguageCode>,
+    pub(crate) language_description: ::std::option::Option<::std::string::String>,
 }
 impl HlsCaptionLanguageMappingBuilder {
     /// Caption channel.
     pub fn caption_channel(mut self, input: i32) -> Self {
-        self.caption_channel = Some(input);
+        self.caption_channel = ::std::option::Option::Some(input);
         self
     }
     /// Caption channel.
-    pub fn set_caption_channel(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_caption_channel(mut self, input: ::std::option::Option<i32>) -> Self {
         self.caption_channel = input;
         self
     }
     /// Specify the language for this captions channel, using the ISO 639-2 or ISO 639-3 three-letter language code
-    pub fn custom_language_code(mut self, input: impl Into<std::string::String>) -> Self {
-        self.custom_language_code = Some(input.into());
+    pub fn custom_language_code(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.custom_language_code = ::std::option::Option::Some(input.into());
         self
     }
     /// Specify the language for this captions channel, using the ISO 639-2 or ISO 639-3 three-letter language code
     pub fn set_custom_language_code(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.custom_language_code = input;
         self
     }
     /// Specify the language, using the ISO 639-2 three-letter code listed at https://www.loc.gov/standards/iso639-2/php/code_list.php.
     pub fn language_code(mut self, input: crate::types::LanguageCode) -> Self {
-        self.language_code = Some(input);
+        self.language_code = ::std::option::Option::Some(input);
         self
     }
     /// Specify the language, using the ISO 639-2 three-letter code listed at https://www.loc.gov/standards/iso639-2/php/code_list.php.
     pub fn set_language_code(
         mut self,
-        input: std::option::Option<crate::types::LanguageCode>,
+        input: ::std::option::Option<crate::types::LanguageCode>,
     ) -> Self {
         self.language_code = input;
         self
     }
     /// Caption language description.
-    pub fn language_description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.language_description = Some(input.into());
+    pub fn language_description(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.language_description = ::std::option::Option::Some(input.into());
         self
     }
     /// Caption language description.
     pub fn set_language_description(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.language_description = input;
         self

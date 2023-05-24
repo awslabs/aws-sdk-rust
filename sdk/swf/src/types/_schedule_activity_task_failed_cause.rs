@@ -47,13 +47,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ScheduleActivityTaskFailedCause {
     #[allow(missing_docs)] // documentation missing in model
@@ -81,7 +81,7 @@ pub enum ScheduleActivityTaskFailedCause {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ScheduleActivityTaskFailedCause {
+impl ::std::convert::From<&str> for ScheduleActivityTaskFailedCause {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVITY_CREATION_RATE_EXCEEDED" => {
@@ -117,11 +117,11 @@ impl std::convert::From<&str> for ScheduleActivityTaskFailedCause {
         }
     }
 }
-impl std::str::FromStr for ScheduleActivityTaskFailedCause {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ScheduleActivityTaskFailedCause {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ScheduleActivityTaskFailedCause::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ScheduleActivityTaskFailedCause::from(s))
     }
 }
 impl ScheduleActivityTaskFailedCause {
@@ -175,7 +175,7 @@ impl ScheduleActivityTaskFailedCause {
         ]
     }
 }
-impl AsRef<str> for ScheduleActivityTaskFailedCause {
+impl ::std::convert::AsRef<str> for ScheduleActivityTaskFailedCause {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

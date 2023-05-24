@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteRecommender`](crate::operation::delete_recommender::builders::DeleteRecommenderFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`recommender_arn(impl Into<String>)`](crate::operation::delete_recommender::builders::DeleteRecommenderFluentBuilder::recommender_arn) / [`set_recommender_arn(Option<String>)`](crate::operation::delete_recommender::builders::DeleteRecommenderFluentBuilder::set_recommender_arn): <p>The Amazon Resource Name (ARN) of the recommender to delete.</p>
+    ///   - [`recommender_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_recommender::builders::DeleteRecommenderFluentBuilder::recommender_arn) / [`set_recommender_arn(Option<String>)`](crate::operation::delete_recommender::builders::DeleteRecommenderFluentBuilder::set_recommender_arn): <p>The Amazon Resource Name (ARN) of the recommender to delete.</p>
     /// - On success, responds with [`DeleteRecommenderOutput`](crate::operation::delete_recommender::DeleteRecommenderOutput)
     /// - On failure, responds with [`SdkError<DeleteRecommenderError>`](crate::operation::delete_recommender::DeleteRecommenderError)
     pub fn delete_recommender(

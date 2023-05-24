@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeWorld`](crate::operation::describe_world::builders::DescribeWorldFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`world(impl Into<String>)`](crate::operation::describe_world::builders::DescribeWorldFluentBuilder::world) / [`set_world(Option<String>)`](crate::operation::describe_world::builders::DescribeWorldFluentBuilder::set_world): <p>The Amazon Resource Name (arn) of the world you want to describe.</p>
+    ///   - [`world(impl ::std::convert::Into<String>)`](crate::operation::describe_world::builders::DescribeWorldFluentBuilder::world) / [`set_world(Option<String>)`](crate::operation::describe_world::builders::DescribeWorldFluentBuilder::set_world): <p>The Amazon Resource Name (arn) of the world you want to describe.</p>
     /// - On success, responds with [`DescribeWorldOutput`](crate::operation::describe_world::DescribeWorldOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::describe_world::DescribeWorldOutput::arn): <p>The Amazon Resource Name (arn) of the world.</p>
     ///   - [`generation_job(Option<String>)`](crate::operation::describe_world::DescribeWorldOutput::generation_job): <p>The Amazon Resource Name (arn) of the world generation job that generated the world.</p>

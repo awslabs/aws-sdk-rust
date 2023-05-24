@@ -4,22 +4,22 @@
 /// <p>This data structure is only used with the deprecated <code>ExecuteSql</code> operation. Use the <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code> operation instead.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResultFrame {
     /// <p>The result-set metadata in the result set.</p>
     #[doc(hidden)]
-    pub result_set_metadata: std::option::Option<crate::types::ResultSetMetadata>,
+    pub result_set_metadata: ::std::option::Option<crate::types::ResultSetMetadata>,
     /// <p>The records in the result set.</p>
     #[doc(hidden)]
-    pub records: std::option::Option<std::vec::Vec<crate::types::Record>>,
+    pub records: ::std::option::Option<::std::vec::Vec<crate::types::Record>>,
 }
 impl ResultFrame {
     /// <p>The result-set metadata in the result set.</p>
-    pub fn result_set_metadata(&self) -> std::option::Option<&crate::types::ResultSetMetadata> {
+    pub fn result_set_metadata(&self) -> ::std::option::Option<&crate::types::ResultSetMetadata> {
         self.result_set_metadata.as_ref()
     }
     /// <p>The records in the result set.</p>
-    pub fn records(&self) -> std::option::Option<&[crate::types::Record]> {
+    pub fn records(&self) -> ::std::option::Option<&[crate::types::Record]> {
         self.records.as_deref()
     }
 }
@@ -32,21 +32,23 @@ impl ResultFrame {
 
 /// A builder for [`ResultFrame`](crate::types::ResultFrame).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResultFrameBuilder {
-    pub(crate) result_set_metadata: std::option::Option<crate::types::ResultSetMetadata>,
-    pub(crate) records: std::option::Option<std::vec::Vec<crate::types::Record>>,
+    pub(crate) result_set_metadata: ::std::option::Option<crate::types::ResultSetMetadata>,
+    pub(crate) records: ::std::option::Option<::std::vec::Vec<crate::types::Record>>,
 }
 impl ResultFrameBuilder {
     /// <p>The result-set metadata in the result set.</p>
     pub fn result_set_metadata(mut self, input: crate::types::ResultSetMetadata) -> Self {
-        self.result_set_metadata = Some(input);
+        self.result_set_metadata = ::std::option::Option::Some(input);
         self
     }
     /// <p>The result-set metadata in the result set.</p>
     pub fn set_result_set_metadata(
         mut self,
-        input: std::option::Option<crate::types::ResultSetMetadata>,
+        input: ::std::option::Option<crate::types::ResultSetMetadata>,
     ) -> Self {
         self.result_set_metadata = input;
         self
@@ -59,13 +61,13 @@ impl ResultFrameBuilder {
     pub fn records(mut self, input: crate::types::Record) -> Self {
         let mut v = self.records.unwrap_or_default();
         v.push(input);
-        self.records = Some(v);
+        self.records = ::std::option::Option::Some(v);
         self
     }
     /// <p>The records in the result set.</p>
     pub fn set_records(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Record>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Record>>,
     ) -> Self {
         self.records = input;
         self

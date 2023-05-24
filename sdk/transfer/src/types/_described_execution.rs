@@ -2,66 +2,66 @@
 
 /// <p>The details for an execution object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribedExecution {
     /// <p>A unique identifier for the execution of a workflow.</p>
     #[doc(hidden)]
-    pub execution_id: std::option::Option<std::string::String>,
+    pub execution_id: ::std::option::Option<::std::string::String>,
     /// <p>A structure that describes the Amazon S3 or EFS file location. This is the file location when the execution begins: if the file is being copied, this is the initial (as opposed to destination) file location.</p>
     #[doc(hidden)]
-    pub initial_file_location: std::option::Option<crate::types::FileLocation>,
+    pub initial_file_location: ::std::option::Option<crate::types::FileLocation>,
     /// <p>A container object for the session details that are associated with a workflow.</p>
     #[doc(hidden)]
-    pub service_metadata: std::option::Option<crate::types::ServiceMetadata>,
+    pub service_metadata: ::std::option::Option<crate::types::ServiceMetadata>,
     /// <p>The IAM role associated with the execution.</p>
     #[doc(hidden)]
-    pub execution_role: std::option::Option<std::string::String>,
+    pub execution_role: ::std::option::Option<::std::string::String>,
     /// <p>The IAM logging role associated with the execution.</p>
     #[doc(hidden)]
-    pub logging_configuration: std::option::Option<crate::types::LoggingConfiguration>,
+    pub logging_configuration: ::std::option::Option<crate::types::LoggingConfiguration>,
     /// <p>The full POSIX identity, including user ID (<code>Uid</code>), group ID (<code>Gid</code>), and any secondary groups IDs (<code>SecondaryGids</code>), that controls your users' access to your Amazon EFS file systems. The POSIX permissions that are set on files and directories in your file system determine the level of access your users get when transferring files into and out of your Amazon EFS file systems.</p>
     #[doc(hidden)]
-    pub posix_profile: std::option::Option<crate::types::PosixProfile>,
+    pub posix_profile: ::std::option::Option<crate::types::PosixProfile>,
     /// <p>The status is one of the execution. Can be in progress, completed, exception encountered, or handling the exception. </p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::ExecutionStatus>,
+    pub status: ::std::option::Option<crate::types::ExecutionStatus>,
     /// <p>A structure that describes the execution results. This includes a list of the steps along with the details of each step, error type and message (if any), and the <code>OnExceptionSteps</code> structure.</p>
     #[doc(hidden)]
-    pub results: std::option::Option<crate::types::ExecutionResults>,
+    pub results: ::std::option::Option<crate::types::ExecutionResults>,
 }
 impl DescribedExecution {
     /// <p>A unique identifier for the execution of a workflow.</p>
-    pub fn execution_id(&self) -> std::option::Option<&str> {
+    pub fn execution_id(&self) -> ::std::option::Option<&str> {
         self.execution_id.as_deref()
     }
     /// <p>A structure that describes the Amazon S3 or EFS file location. This is the file location when the execution begins: if the file is being copied, this is the initial (as opposed to destination) file location.</p>
-    pub fn initial_file_location(&self) -> std::option::Option<&crate::types::FileLocation> {
+    pub fn initial_file_location(&self) -> ::std::option::Option<&crate::types::FileLocation> {
         self.initial_file_location.as_ref()
     }
     /// <p>A container object for the session details that are associated with a workflow.</p>
-    pub fn service_metadata(&self) -> std::option::Option<&crate::types::ServiceMetadata> {
+    pub fn service_metadata(&self) -> ::std::option::Option<&crate::types::ServiceMetadata> {
         self.service_metadata.as_ref()
     }
     /// <p>The IAM role associated with the execution.</p>
-    pub fn execution_role(&self) -> std::option::Option<&str> {
+    pub fn execution_role(&self) -> ::std::option::Option<&str> {
         self.execution_role.as_deref()
     }
     /// <p>The IAM logging role associated with the execution.</p>
     pub fn logging_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::LoggingConfiguration> {
+    ) -> ::std::option::Option<&crate::types::LoggingConfiguration> {
         self.logging_configuration.as_ref()
     }
     /// <p>The full POSIX identity, including user ID (<code>Uid</code>), group ID (<code>Gid</code>), and any secondary groups IDs (<code>SecondaryGids</code>), that controls your users' access to your Amazon EFS file systems. The POSIX permissions that are set on files and directories in your file system determine the level of access your users get when transferring files into and out of your Amazon EFS file systems.</p>
-    pub fn posix_profile(&self) -> std::option::Option<&crate::types::PosixProfile> {
+    pub fn posix_profile(&self) -> ::std::option::Option<&crate::types::PosixProfile> {
         self.posix_profile.as_ref()
     }
     /// <p>The status is one of the execution. Can be in progress, completed, exception encountered, or handling the exception. </p>
-    pub fn status(&self) -> std::option::Option<&crate::types::ExecutionStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::ExecutionStatus> {
         self.status.as_ref()
     }
     /// <p>A structure that describes the execution results. This includes a list of the steps along with the details of each step, error type and message (if any), and the <code>OnExceptionSteps</code> structure.</p>
-    pub fn results(&self) -> std::option::Option<&crate::types::ExecutionResults> {
+    pub fn results(&self) -> ::std::option::Option<&crate::types::ExecutionResults> {
         self.results.as_ref()
     }
 }
@@ -74,109 +74,120 @@ impl DescribedExecution {
 
 /// A builder for [`DescribedExecution`](crate::types::DescribedExecution).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribedExecutionBuilder {
-    pub(crate) execution_id: std::option::Option<std::string::String>,
-    pub(crate) initial_file_location: std::option::Option<crate::types::FileLocation>,
-    pub(crate) service_metadata: std::option::Option<crate::types::ServiceMetadata>,
-    pub(crate) execution_role: std::option::Option<std::string::String>,
-    pub(crate) logging_configuration: std::option::Option<crate::types::LoggingConfiguration>,
-    pub(crate) posix_profile: std::option::Option<crate::types::PosixProfile>,
-    pub(crate) status: std::option::Option<crate::types::ExecutionStatus>,
-    pub(crate) results: std::option::Option<crate::types::ExecutionResults>,
+    pub(crate) execution_id: ::std::option::Option<::std::string::String>,
+    pub(crate) initial_file_location: ::std::option::Option<crate::types::FileLocation>,
+    pub(crate) service_metadata: ::std::option::Option<crate::types::ServiceMetadata>,
+    pub(crate) execution_role: ::std::option::Option<::std::string::String>,
+    pub(crate) logging_configuration: ::std::option::Option<crate::types::LoggingConfiguration>,
+    pub(crate) posix_profile: ::std::option::Option<crate::types::PosixProfile>,
+    pub(crate) status: ::std::option::Option<crate::types::ExecutionStatus>,
+    pub(crate) results: ::std::option::Option<crate::types::ExecutionResults>,
 }
 impl DescribedExecutionBuilder {
     /// <p>A unique identifier for the execution of a workflow.</p>
-    pub fn execution_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.execution_id = Some(input.into());
+    pub fn execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.execution_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the execution of a workflow.</p>
-    pub fn set_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_id = input;
         self
     }
     /// <p>A structure that describes the Amazon S3 or EFS file location. This is the file location when the execution begins: if the file is being copied, this is the initial (as opposed to destination) file location.</p>
     pub fn initial_file_location(mut self, input: crate::types::FileLocation) -> Self {
-        self.initial_file_location = Some(input);
+        self.initial_file_location = ::std::option::Option::Some(input);
         self
     }
     /// <p>A structure that describes the Amazon S3 or EFS file location. This is the file location when the execution begins: if the file is being copied, this is the initial (as opposed to destination) file location.</p>
     pub fn set_initial_file_location(
         mut self,
-        input: std::option::Option<crate::types::FileLocation>,
+        input: ::std::option::Option<crate::types::FileLocation>,
     ) -> Self {
         self.initial_file_location = input;
         self
     }
     /// <p>A container object for the session details that are associated with a workflow.</p>
     pub fn service_metadata(mut self, input: crate::types::ServiceMetadata) -> Self {
-        self.service_metadata = Some(input);
+        self.service_metadata = ::std::option::Option::Some(input);
         self
     }
     /// <p>A container object for the session details that are associated with a workflow.</p>
     pub fn set_service_metadata(
         mut self,
-        input: std::option::Option<crate::types::ServiceMetadata>,
+        input: ::std::option::Option<crate::types::ServiceMetadata>,
     ) -> Self {
         self.service_metadata = input;
         self
     }
     /// <p>The IAM role associated with the execution.</p>
-    pub fn execution_role(mut self, input: impl Into<std::string::String>) -> Self {
-        self.execution_role = Some(input.into());
+    pub fn execution_role(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.execution_role = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IAM role associated with the execution.</p>
-    pub fn set_execution_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_execution_role(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.execution_role = input;
         self
     }
     /// <p>The IAM logging role associated with the execution.</p>
     pub fn logging_configuration(mut self, input: crate::types::LoggingConfiguration) -> Self {
-        self.logging_configuration = Some(input);
+        self.logging_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The IAM logging role associated with the execution.</p>
     pub fn set_logging_configuration(
         mut self,
-        input: std::option::Option<crate::types::LoggingConfiguration>,
+        input: ::std::option::Option<crate::types::LoggingConfiguration>,
     ) -> Self {
         self.logging_configuration = input;
         self
     }
     /// <p>The full POSIX identity, including user ID (<code>Uid</code>), group ID (<code>Gid</code>), and any secondary groups IDs (<code>SecondaryGids</code>), that controls your users' access to your Amazon EFS file systems. The POSIX permissions that are set on files and directories in your file system determine the level of access your users get when transferring files into and out of your Amazon EFS file systems.</p>
     pub fn posix_profile(mut self, input: crate::types::PosixProfile) -> Self {
-        self.posix_profile = Some(input);
+        self.posix_profile = ::std::option::Option::Some(input);
         self
     }
     /// <p>The full POSIX identity, including user ID (<code>Uid</code>), group ID (<code>Gid</code>), and any secondary groups IDs (<code>SecondaryGids</code>), that controls your users' access to your Amazon EFS file systems. The POSIX permissions that are set on files and directories in your file system determine the level of access your users get when transferring files into and out of your Amazon EFS file systems.</p>
     pub fn set_posix_profile(
         mut self,
-        input: std::option::Option<crate::types::PosixProfile>,
+        input: ::std::option::Option<crate::types::PosixProfile>,
     ) -> Self {
         self.posix_profile = input;
         self
     }
     /// <p>The status is one of the execution. Can be in progress, completed, exception encountered, or handling the exception. </p>
     pub fn status(mut self, input: crate::types::ExecutionStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status is one of the execution. Can be in progress, completed, exception encountered, or handling the exception. </p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::ExecutionStatus>) -> Self {
+    pub fn set_status(
+        mut self,
+        input: ::std::option::Option<crate::types::ExecutionStatus>,
+    ) -> Self {
         self.status = input;
         self
     }
     /// <p>A structure that describes the execution results. This includes a list of the steps along with the details of each step, error type and message (if any), and the <code>OnExceptionSteps</code> structure.</p>
     pub fn results(mut self, input: crate::types::ExecutionResults) -> Self {
-        self.results = Some(input);
+        self.results = ::std::option::Option::Some(input);
         self
     }
     /// <p>A structure that describes the execution results. This includes a list of the steps along with the details of each step, error type and message (if any), and the <code>OnExceptionSteps</code> structure.</p>
     pub fn set_results(
         mut self,
-        input: std::option::Option<crate::types::ExecutionResults>,
+        input: ::std::option::Option<crate::types::ExecutionResults>,
     ) -> Self {
         self.results = input;
         self

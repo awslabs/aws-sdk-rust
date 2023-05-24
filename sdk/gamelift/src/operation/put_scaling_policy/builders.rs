@@ -20,29 +20,29 @@ pub use crate::operation::put_scaling_policy::_put_scaling_policy_input::PutScal
 /// <p>To implement the example, the rule statement would look like this:</p>
 /// <p>If <code>[PercentIdleInstances]</code> is <code>[GreaterThanThreshold]</code> <code>[20]</code> for <code>[15]</code> minutes, then <code>[PercentChangeInCapacity]</code> to/by <code>[10]</code>.</p>
 /// <p>To create or update a scaling policy, specify a unique combination of name and fleet ID, and set the policy type to "RuleBased". Specify the parameter values for a policy rule statement. On a successful request, the policy name is returned. Scaling policies are automatically in force as soon as they're successfully created. If the fleet's auto-scaling actions are temporarily suspended, the new policy will be in force once the fleet actions are restarted.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutScalingPolicyFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::put_scaling_policy::builders::PutScalingPolicyInputBuilder,
 }
 impl PutScalingPolicyFluentBuilder {
     /// Creates a new `PutScalingPolicy`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::put_scaling_policy::PutScalingPolicy,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::put_scaling_policy::PutScalingPolicyError,
         >,
     > {
@@ -50,30 +50,33 @@ impl PutScalingPolicyFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::put_scaling_policy::PutScalingPolicyOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::put_scaling_policy::PutScalingPolicyError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -86,31 +89,31 @@ impl PutScalingPolicyFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::put_scaling_policy::PutScalingPolicyOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::put_scaling_policy::PutScalingPolicyError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>A descriptive label that is associated with a fleet's scaling policy. Policy names do not need to be unique. A fleet can have only one scaling policy with the same name.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// <p>A descriptive label that is associated with a fleet's scaling policy. Policy names do not need to be unique. A fleet can have only one scaling policy with the same name.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
     /// <p>A unique identifier for the fleet to apply this policy to. You can use either the fleet ID or ARN value. The fleet cannot be in any of the following statuses: ERROR or DELETING.</p>
-    pub fn fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.fleet_id(input.into());
         self
     }
     /// <p>A unique identifier for the fleet to apply this policy to. You can use either the fleet ID or ARN value. The fleet cannot be in any of the following statuses: ERROR or DELETING.</p>
-    pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_fleet_id(input);
         self
     }
@@ -120,7 +123,7 @@ impl PutScalingPolicyFluentBuilder {
         self
     }
     /// <p>Amount of adjustment to make, based on the scaling adjustment type.</p>
-    pub fn set_scaling_adjustment(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_scaling_adjustment(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_scaling_adjustment(input);
         self
     }
@@ -142,7 +145,7 @@ impl PutScalingPolicyFluentBuilder {
     /// </ul>
     pub fn set_scaling_adjustment_type(
         mut self,
-        input: std::option::Option<crate::types::ScalingAdjustmentType>,
+        input: ::std::option::Option<crate::types::ScalingAdjustmentType>,
     ) -> Self {
         self.inner = self.inner.set_scaling_adjustment_type(input);
         self
@@ -153,7 +156,7 @@ impl PutScalingPolicyFluentBuilder {
         self
     }
     /// <p>Metric value used to trigger a scaling event.</p>
-    pub fn set_threshold(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_threshold(mut self, input: ::std::option::Option<f64>) -> Self {
         self.inner = self.inner.set_threshold(input);
         self
     }
@@ -165,7 +168,7 @@ impl PutScalingPolicyFluentBuilder {
     /// <p>Comparison operator to use when measuring the metric against the threshold value.</p>
     pub fn set_comparison_operator(
         mut self,
-        input: std::option::Option<crate::types::ComparisonOperatorType>,
+        input: ::std::option::Option<crate::types::ComparisonOperatorType>,
     ) -> Self {
         self.inner = self.inner.set_comparison_operator(input);
         self
@@ -176,7 +179,7 @@ impl PutScalingPolicyFluentBuilder {
         self
     }
     /// <p>Length of time (in minutes) the metric must be at or beyond the threshold before a scaling event is triggered.</p>
-    pub fn set_evaluation_periods(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_evaluation_periods(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_evaluation_periods(input);
         self
     }
@@ -212,7 +215,10 @@ impl PutScalingPolicyFluentBuilder {
     /// <li> <p> <b>QueueDepth</b> -- Pending game session placement requests, in any queue, where the current fleet is the top-priority destination.</p> </li>
     /// <li> <p> <b>WaitTime</b> -- Current wait time for pending game session placement requests, in any queue, where the current fleet is the top-priority destination. </p> </li>
     /// </ul>
-    pub fn set_metric_name(mut self, input: std::option::Option<crate::types::MetricName>) -> Self {
+    pub fn set_metric_name(
+        mut self,
+        input: ::std::option::Option<crate::types::MetricName>,
+    ) -> Self {
         self.inner = self.inner.set_metric_name(input);
         self
     }
@@ -222,7 +228,10 @@ impl PutScalingPolicyFluentBuilder {
         self
     }
     /// <p>The type of scaling policy to create. For a target-based policy, set the parameter <i>MetricName</i> to 'PercentAvailableGameSessions' and specify a <i>TargetConfiguration</i>. For a rule-based policy set the following parameters: <i>MetricName</i>, <i>ComparisonOperator</i>, <i>Threshold</i>, <i>EvaluationPeriods</i>, <i>ScalingAdjustmentType</i>, and <i>ScalingAdjustment</i>.</p>
-    pub fn set_policy_type(mut self, input: std::option::Option<crate::types::PolicyType>) -> Self {
+    pub fn set_policy_type(
+        mut self,
+        input: ::std::option::Option<crate::types::PolicyType>,
+    ) -> Self {
         self.inner = self.inner.set_policy_type(input);
         self
     }
@@ -234,7 +243,7 @@ impl PutScalingPolicyFluentBuilder {
     /// <p>An object that contains settings for a target-based scaling policy.</p>
     pub fn set_target_configuration(
         mut self,
-        input: std::option::Option<crate::types::TargetConfiguration>,
+        input: ::std::option::Option<crate::types::TargetConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_target_configuration(input);
         self

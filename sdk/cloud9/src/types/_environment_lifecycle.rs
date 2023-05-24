@@ -2,7 +2,7 @@
 
 /// <p>Information about the current creation or deletion lifecycle state of an Cloud9 development environment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnvironmentLifecycle {
     /// <p>The current creation or deletion lifecycle state of the environment.</p>
     /// <ul>
@@ -13,13 +13,13 @@ pub struct EnvironmentLifecycle {
     /// <li> <p> <code>DELETE_FAILED</code>: The environment failed to delete.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::EnvironmentLifecycleStatus>,
+    pub status: ::std::option::Option<crate::types::EnvironmentLifecycleStatus>,
     /// <p>Any informational message about the lifecycle state of the environment.</p>
     #[doc(hidden)]
-    pub reason: std::option::Option<std::string::String>,
+    pub reason: ::std::option::Option<::std::string::String>,
     /// <p>If the environment failed to delete, the Amazon Resource Name (ARN) of the related Amazon Web Services resource.</p>
     #[doc(hidden)]
-    pub failure_resource: std::option::Option<std::string::String>,
+    pub failure_resource: ::std::option::Option<::std::string::String>,
 }
 impl EnvironmentLifecycle {
     /// <p>The current creation or deletion lifecycle state of the environment.</p>
@@ -30,15 +30,15 @@ impl EnvironmentLifecycle {
     /// <li> <p> <code>DELETING</code>: The environment is in the process of being deleted.</p> </li>
     /// <li> <p> <code>DELETE_FAILED</code>: The environment failed to delete.</p> </li>
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::types::EnvironmentLifecycleStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::EnvironmentLifecycleStatus> {
         self.status.as_ref()
     }
     /// <p>Any informational message about the lifecycle state of the environment.</p>
-    pub fn reason(&self) -> std::option::Option<&str> {
+    pub fn reason(&self) -> ::std::option::Option<&str> {
         self.reason.as_deref()
     }
     /// <p>If the environment failed to delete, the Amazon Resource Name (ARN) of the related Amazon Web Services resource.</p>
-    pub fn failure_resource(&self) -> std::option::Option<&str> {
+    pub fn failure_resource(&self) -> ::std::option::Option<&str> {
         self.failure_resource.as_deref()
     }
 }
@@ -51,11 +51,13 @@ impl EnvironmentLifecycle {
 
 /// A builder for [`EnvironmentLifecycle`](crate::types::EnvironmentLifecycle).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EnvironmentLifecycleBuilder {
-    pub(crate) status: std::option::Option<crate::types::EnvironmentLifecycleStatus>,
-    pub(crate) reason: std::option::Option<std::string::String>,
-    pub(crate) failure_resource: std::option::Option<std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::EnvironmentLifecycleStatus>,
+    pub(crate) reason: ::std::option::Option<::std::string::String>,
+    pub(crate) failure_resource: ::std::option::Option<::std::string::String>,
 }
 impl EnvironmentLifecycleBuilder {
     /// <p>The current creation or deletion lifecycle state of the environment.</p>
@@ -67,7 +69,7 @@ impl EnvironmentLifecycleBuilder {
     /// <li> <p> <code>DELETE_FAILED</code>: The environment failed to delete.</p> </li>
     /// </ul>
     pub fn status(mut self, input: crate::types::EnvironmentLifecycleStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current creation or deletion lifecycle state of the environment.</p>
@@ -80,28 +82,34 @@ impl EnvironmentLifecycleBuilder {
     /// </ul>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::EnvironmentLifecycleStatus>,
+        input: ::std::option::Option<crate::types::EnvironmentLifecycleStatus>,
     ) -> Self {
         self.status = input;
         self
     }
     /// <p>Any informational message about the lifecycle state of the environment.</p>
-    pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
-        self.reason = Some(input.into());
+    pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Any informational message about the lifecycle state of the environment.</p>
-    pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reason = input;
         self
     }
     /// <p>If the environment failed to delete, the Amazon Resource Name (ARN) of the related Amazon Web Services resource.</p>
-    pub fn failure_resource(mut self, input: impl Into<std::string::String>) -> Self {
-        self.failure_resource = Some(input.into());
+    pub fn failure_resource(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.failure_resource = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the environment failed to delete, the Amazon Resource Name (ARN) of the related Amazon Web Services resource.</p>
-    pub fn set_failure_resource(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_failure_resource(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.failure_resource = input;
         self
     }

@@ -2,22 +2,22 @@
 
 /// <p>The error code and description resulting from an operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecordError {
     /// <p>The numeric value of the error.</p>
     #[doc(hidden)]
-    pub code: std::option::Option<std::string::String>,
+    pub code: ::std::option::Option<::std::string::String>,
     /// <p>The description of the error.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
 }
 impl RecordError {
     /// <p>The numeric value of the error.</p>
-    pub fn code(&self) -> std::option::Option<&str> {
+    pub fn code(&self) -> ::std::option::Option<&str> {
         self.code.as_deref()
     }
     /// <p>The description of the error.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl RecordError {
 
 /// A builder for [`RecordError`](crate::types::RecordError).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RecordErrorBuilder {
-    pub(crate) code: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
+    pub(crate) code: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
 }
 impl RecordErrorBuilder {
     /// <p>The numeric value of the error.</p>
-    pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
-        self.code = Some(input.into());
+    pub fn code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The numeric value of the error.</p>
-    pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.code = input;
         self
     }
     /// <p>The description of the error.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the error.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }

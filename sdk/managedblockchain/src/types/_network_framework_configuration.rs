@@ -2,15 +2,15 @@
 
 /// <p> Configuration properties relevant to the network for the blockchain framework that the network uses. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkFrameworkConfiguration {
     /// <p> Hyperledger Fabric configuration properties for a Managed Blockchain network that uses Hyperledger Fabric. </p>
     #[doc(hidden)]
-    pub fabric: std::option::Option<crate::types::NetworkFabricConfiguration>,
+    pub fabric: ::std::option::Option<crate::types::NetworkFabricConfiguration>,
 }
 impl NetworkFrameworkConfiguration {
     /// <p> Hyperledger Fabric configuration properties for a Managed Blockchain network that uses Hyperledger Fabric. </p>
-    pub fn fabric(&self) -> std::option::Option<&crate::types::NetworkFabricConfiguration> {
+    pub fn fabric(&self) -> ::std::option::Option<&crate::types::NetworkFabricConfiguration> {
         self.fabric.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl NetworkFrameworkConfiguration {
 
 /// A builder for [`NetworkFrameworkConfiguration`](crate::types::NetworkFrameworkConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NetworkFrameworkConfigurationBuilder {
-    pub(crate) fabric: std::option::Option<crate::types::NetworkFabricConfiguration>,
+    pub(crate) fabric: ::std::option::Option<crate::types::NetworkFabricConfiguration>,
 }
 impl NetworkFrameworkConfigurationBuilder {
     /// <p> Hyperledger Fabric configuration properties for a Managed Blockchain network that uses Hyperledger Fabric. </p>
     pub fn fabric(mut self, input: crate::types::NetworkFabricConfiguration) -> Self {
-        self.fabric = Some(input);
+        self.fabric = ::std::option::Option::Some(input);
         self
     }
     /// <p> Hyperledger Fabric configuration properties for a Managed Blockchain network that uses Hyperledger Fabric. </p>
     pub fn set_fabric(
         mut self,
-        input: std::option::Option<crate::types::NetworkFabricConfiguration>,
+        input: ::std::option::Option<crate::types::NetworkFabricConfiguration>,
     ) -> Self {
         self.fabric = input;
         self

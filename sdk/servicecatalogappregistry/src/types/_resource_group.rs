@@ -2,7 +2,7 @@
 
 /// <p>The information about the resource group integration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceGroup {
     /// <p>The state of the propagation process for the resource group. The states includes:</p>
     /// <p> <code>CREATING </code>if the resource group is in the process of being created.</p>
@@ -12,13 +12,13 @@ pub struct ResourceGroup {
     /// <p> <code>UPDATE_COMPLETE</code> if the resource group updated successfully.</p>
     /// <p> <code>UPDATE_FAILED</code> if the resource group could not update successfully.</p>
     #[doc(hidden)]
-    pub state: std::option::Option<crate::types::ResourceGroupState>,
+    pub state: ::std::option::Option<crate::types::ResourceGroupState>,
     /// <p>The Amazon resource name (ARN) of the resource group.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The error message that generates when the propagation process for the resource group fails.</p>
     #[doc(hidden)]
-    pub error_message: std::option::Option<std::string::String>,
+    pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl ResourceGroup {
     /// <p>The state of the propagation process for the resource group. The states includes:</p>
@@ -28,15 +28,15 @@ impl ResourceGroup {
     /// <p> <code>UPDATING</code> if the resource group is in the process of being updated.</p>
     /// <p> <code>UPDATE_COMPLETE</code> if the resource group updated successfully.</p>
     /// <p> <code>UPDATE_FAILED</code> if the resource group could not update successfully.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::ResourceGroupState> {
+    pub fn state(&self) -> ::std::option::Option<&crate::types::ResourceGroupState> {
         self.state.as_ref()
     }
     /// <p>The Amazon resource name (ARN) of the resource group.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The error message that generates when the propagation process for the resource group fails.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<&str> {
         self.error_message.as_deref()
     }
 }
@@ -49,11 +49,13 @@ impl ResourceGroup {
 
 /// A builder for [`ResourceGroup`](crate::types::ResourceGroup).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResourceGroupBuilder {
-    pub(crate) state: std::option::Option<crate::types::ResourceGroupState>,
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) error_message: std::option::Option<std::string::String>,
+    pub(crate) state: ::std::option::Option<crate::types::ResourceGroupState>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) error_message: ::std::option::Option<::std::string::String>,
 }
 impl ResourceGroupBuilder {
     /// <p>The state of the propagation process for the resource group. The states includes:</p>
@@ -64,7 +66,7 @@ impl ResourceGroupBuilder {
     /// <p> <code>UPDATE_COMPLETE</code> if the resource group updated successfully.</p>
     /// <p> <code>UPDATE_FAILED</code> if the resource group could not update successfully.</p>
     pub fn state(mut self, input: crate::types::ResourceGroupState) -> Self {
-        self.state = Some(input);
+        self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The state of the propagation process for the resource group. The states includes:</p>
@@ -76,28 +78,34 @@ impl ResourceGroupBuilder {
     /// <p> <code>UPDATE_FAILED</code> if the resource group could not update successfully.</p>
     pub fn set_state(
         mut self,
-        input: std::option::Option<crate::types::ResourceGroupState>,
+        input: ::std::option::Option<crate::types::ResourceGroupState>,
     ) -> Self {
         self.state = input;
         self
     }
     /// <p>The Amazon resource name (ARN) of the resource group.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon resource name (ARN) of the resource group.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// <p>The error message that generates when the propagation process for the resource group fails.</p>
-    pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.error_message = Some(input.into());
+    pub fn error_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The error message that generates when the propagation process for the resource group fails.</p>
-    pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_error_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.error_message = input;
         self
     }

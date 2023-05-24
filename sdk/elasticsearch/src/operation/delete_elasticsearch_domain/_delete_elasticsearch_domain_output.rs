@@ -2,20 +2,20 @@
 
 /// <p>The result of a <code>DeleteElasticsearchDomain</code> request. Contains the status of the pending deletion, or no status if the domain and all of its resources have been deleted.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteElasticsearchDomainOutput {
     /// <p>The status of the Elasticsearch domain being deleted.</p>
     #[doc(hidden)]
-    pub domain_status: std::option::Option<crate::types::ElasticsearchDomainStatus>,
+    pub domain_status: ::std::option::Option<crate::types::ElasticsearchDomainStatus>,
     _request_id: Option<String>,
 }
 impl DeleteElasticsearchDomainOutput {
     /// <p>The status of the Elasticsearch domain being deleted.</p>
-    pub fn domain_status(&self) -> std::option::Option<&crate::types::ElasticsearchDomainStatus> {
+    pub fn domain_status(&self) -> ::std::option::Option<&crate::types::ElasticsearchDomainStatus> {
         self.domain_status.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for DeleteElasticsearchDomainOutput {
+impl ::aws_http::request_id::RequestId for DeleteElasticsearchDomainOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,21 +29,23 @@ impl DeleteElasticsearchDomainOutput {
 
 /// A builder for [`DeleteElasticsearchDomainOutput`](crate::operation::delete_elasticsearch_domain::DeleteElasticsearchDomainOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteElasticsearchDomainOutputBuilder {
-    pub(crate) domain_status: std::option::Option<crate::types::ElasticsearchDomainStatus>,
+    pub(crate) domain_status: ::std::option::Option<crate::types::ElasticsearchDomainStatus>,
     _request_id: Option<String>,
 }
 impl DeleteElasticsearchDomainOutputBuilder {
     /// <p>The status of the Elasticsearch domain being deleted.</p>
     pub fn domain_status(mut self, input: crate::types::ElasticsearchDomainStatus) -> Self {
-        self.domain_status = Some(input);
+        self.domain_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the Elasticsearch domain being deleted.</p>
     pub fn set_domain_status(
         mut self,
-        input: std::option::Option<crate::types::ElasticsearchDomainStatus>,
+        input: ::std::option::Option<crate::types::ElasticsearchDomainStatus>,
     ) -> Self {
         self.domain_status = input;
         self

@@ -2,22 +2,22 @@
 
 /// <p>Describes the state of a CIDR block.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SubnetCidrBlockState {
     /// <p>The state of a CIDR block.</p>
     #[doc(hidden)]
-    pub state: std::option::Option<crate::types::SubnetCidrBlockStateCode>,
+    pub state: ::std::option::Option<crate::types::SubnetCidrBlockStateCode>,
     /// <p>A message about the status of the CIDR block, if applicable.</p>
     #[doc(hidden)]
-    pub status_message: std::option::Option<std::string::String>,
+    pub status_message: ::std::option::Option<::std::string::String>,
 }
 impl SubnetCidrBlockState {
     /// <p>The state of a CIDR block.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::SubnetCidrBlockStateCode> {
+    pub fn state(&self) -> ::std::option::Option<&crate::types::SubnetCidrBlockStateCode> {
         self.state.as_ref()
     }
     /// <p>A message about the status of the CIDR block, if applicable.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<&str> {
         self.status_message.as_deref()
     }
 }
@@ -30,32 +30,40 @@ impl SubnetCidrBlockState {
 
 /// A builder for [`SubnetCidrBlockState`](crate::types::SubnetCidrBlockState).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SubnetCidrBlockStateBuilder {
-    pub(crate) state: std::option::Option<crate::types::SubnetCidrBlockStateCode>,
-    pub(crate) status_message: std::option::Option<std::string::String>,
+    pub(crate) state: ::std::option::Option<crate::types::SubnetCidrBlockStateCode>,
+    pub(crate) status_message: ::std::option::Option<::std::string::String>,
 }
 impl SubnetCidrBlockStateBuilder {
     /// <p>The state of a CIDR block.</p>
     pub fn state(mut self, input: crate::types::SubnetCidrBlockStateCode) -> Self {
-        self.state = Some(input);
+        self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The state of a CIDR block.</p>
     pub fn set_state(
         mut self,
-        input: std::option::Option<crate::types::SubnetCidrBlockStateCode>,
+        input: ::std::option::Option<crate::types::SubnetCidrBlockStateCode>,
     ) -> Self {
         self.state = input;
         self
     }
     /// <p>A message about the status of the CIDR block, if applicable.</p>
-    pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status_message = Some(input.into());
+    pub fn status_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A message about the status of the CIDR block, if applicable.</p>
-    pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.status_message = input;
         self
     }

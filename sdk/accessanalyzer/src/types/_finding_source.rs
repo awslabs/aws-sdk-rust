@@ -2,22 +2,22 @@
 
 /// <p>The source of the finding. This indicates how the access that generated the finding is granted. It is populated for Amazon S3 bucket findings.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FindingSource {
     /// <p>Indicates the type of access that generated the finding.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::FindingSourceType>,
+    pub r#type: ::std::option::Option<crate::types::FindingSourceType>,
     /// <p>Includes details about how the access that generated the finding is granted. This is populated for Amazon S3 bucket findings.</p>
     #[doc(hidden)]
-    pub detail: std::option::Option<crate::types::FindingSourceDetail>,
+    pub detail: ::std::option::Option<crate::types::FindingSourceDetail>,
 }
 impl FindingSource {
     /// <p>Indicates the type of access that generated the finding.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::FindingSourceType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::FindingSourceType> {
         self.r#type.as_ref()
     }
     /// <p>Includes details about how the access that generated the finding is granted. This is populated for Amazon S3 bucket findings.</p>
-    pub fn detail(&self) -> std::option::Option<&crate::types::FindingSourceDetail> {
+    pub fn detail(&self) -> ::std::option::Option<&crate::types::FindingSourceDetail> {
         self.detail.as_ref()
     }
 }
@@ -30,31 +30,36 @@ impl FindingSource {
 
 /// A builder for [`FindingSource`](crate::types::FindingSource).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FindingSourceBuilder {
-    pub(crate) r#type: std::option::Option<crate::types::FindingSourceType>,
-    pub(crate) detail: std::option::Option<crate::types::FindingSourceDetail>,
+    pub(crate) r#type: ::std::option::Option<crate::types::FindingSourceType>,
+    pub(crate) detail: ::std::option::Option<crate::types::FindingSourceDetail>,
 }
 impl FindingSourceBuilder {
     /// <p>Indicates the type of access that generated the finding.</p>
     pub fn r#type(mut self, input: crate::types::FindingSourceType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates the type of access that generated the finding.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::FindingSourceType>) -> Self {
+    pub fn set_type(
+        mut self,
+        input: ::std::option::Option<crate::types::FindingSourceType>,
+    ) -> Self {
         self.r#type = input;
         self
     }
     /// <p>Includes details about how the access that generated the finding is granted. This is populated for Amazon S3 bucket findings.</p>
     pub fn detail(mut self, input: crate::types::FindingSourceDetail) -> Self {
-        self.detail = Some(input);
+        self.detail = ::std::option::Option::Some(input);
         self
     }
     /// <p>Includes details about how the access that generated the finding is granted. This is populated for Amazon S3 bucket findings.</p>
     pub fn set_detail(
         mut self,
-        input: std::option::Option<crate::types::FindingSourceDetail>,
+        input: ::std::option::Option<crate::types::FindingSourceDetail>,
     ) -> Self {
         self.detail = input;
         self

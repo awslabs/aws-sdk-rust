@@ -39,13 +39,13 @@
 /// Hls Caption Language Setting
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum HlsCaptionLanguageSetting {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum HlsCaptionLanguageSetting {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for HlsCaptionLanguageSetting {
+impl ::std::convert::From<&str> for HlsCaptionLanguageSetting {
     fn from(s: &str) -> Self {
         match s {
             "INSERT" => HlsCaptionLanguageSetting::Insert,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for HlsCaptionLanguageSetting {
         }
     }
 }
-impl std::str::FromStr for HlsCaptionLanguageSetting {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for HlsCaptionLanguageSetting {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(HlsCaptionLanguageSetting::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(HlsCaptionLanguageSetting::from(s))
     }
 }
 impl HlsCaptionLanguageSetting {
@@ -91,7 +91,7 @@ impl HlsCaptionLanguageSetting {
         &["INSERT", "NONE", "OMIT"]
     }
 }
-impl AsRef<str> for HlsCaptionLanguageSetting {
+impl ::std::convert::AsRef<str> for HlsCaptionLanguageSetting {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

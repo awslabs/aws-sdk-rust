@@ -2,7 +2,7 @@
 
 /// <p> Details about a package dependency. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PackageDependency {
     /// <p>The namespace of the package that this package depends on. The package component that specifies its namespace depends on its type. For example:</p>
     /// <ul>
@@ -11,10 +11,10 @@ pub struct PackageDependency {
     /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub namespace: std::option::Option<std::string::String>,
+    pub namespace: ::std::option::Option<::std::string::String>,
     /// <p> The name of the package that this package depends on. </p>
     #[doc(hidden)]
-    pub package: std::option::Option<std::string::String>,
+    pub package: ::std::option::Option<::std::string::String>,
     /// <p> The type of a package dependency. The possible values depend on the package type.</p>
     /// <ul>
     /// <li> <p>npm: <code>regular</code>, <code>dev</code>, <code>peer</code>, <code>optional</code> </p> </li>
@@ -26,10 +26,10 @@ pub struct PackageDependency {
     /// <li> <p>pypi: <code>Requires-Dist</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub dependency_type: std::option::Option<std::string::String>,
+    pub dependency_type: ::std::option::Option<::std::string::String>,
     /// <p> The required version, or version range, of the package that this package depends on. The version format is specific to the package type. For example, the following are possible valid required versions: <code>1.2.3</code>, <code>^2.3.4</code>, or <code>4.x</code>. </p>
     #[doc(hidden)]
-    pub version_requirement: std::option::Option<std::string::String>,
+    pub version_requirement: ::std::option::Option<::std::string::String>,
 }
 impl PackageDependency {
     /// <p>The namespace of the package that this package depends on. The package component that specifies its namespace depends on its type. For example:</p>
@@ -38,11 +38,11 @@ impl PackageDependency {
     /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
     /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
     /// </ul>
-    pub fn namespace(&self) -> std::option::Option<&str> {
+    pub fn namespace(&self) -> ::std::option::Option<&str> {
         self.namespace.as_deref()
     }
     /// <p> The name of the package that this package depends on. </p>
-    pub fn package(&self) -> std::option::Option<&str> {
+    pub fn package(&self) -> ::std::option::Option<&str> {
         self.package.as_deref()
     }
     /// <p> The type of a package dependency. The possible values depend on the package type.</p>
@@ -55,11 +55,11 @@ impl PackageDependency {
     /// <li> <p>nuget: The <code>dependencyType</code> field is never set for NuGet packages.</p> </li>
     /// <li> <p>pypi: <code>Requires-Dist</code> </p> </li>
     /// </ul>
-    pub fn dependency_type(&self) -> std::option::Option<&str> {
+    pub fn dependency_type(&self) -> ::std::option::Option<&str> {
         self.dependency_type.as_deref()
     }
     /// <p> The required version, or version range, of the package that this package depends on. The version format is specific to the package type. For example, the following are possible valid required versions: <code>1.2.3</code>, <code>^2.3.4</code>, or <code>4.x</code>. </p>
-    pub fn version_requirement(&self) -> std::option::Option<&str> {
+    pub fn version_requirement(&self) -> ::std::option::Option<&str> {
         self.version_requirement.as_deref()
     }
 }
@@ -72,12 +72,14 @@ impl PackageDependency {
 
 /// A builder for [`PackageDependency`](crate::types::PackageDependency).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PackageDependencyBuilder {
-    pub(crate) namespace: std::option::Option<std::string::String>,
-    pub(crate) package: std::option::Option<std::string::String>,
-    pub(crate) dependency_type: std::option::Option<std::string::String>,
-    pub(crate) version_requirement: std::option::Option<std::string::String>,
+    pub(crate) namespace: ::std::option::Option<::std::string::String>,
+    pub(crate) package: ::std::option::Option<::std::string::String>,
+    pub(crate) dependency_type: ::std::option::Option<::std::string::String>,
+    pub(crate) version_requirement: ::std::option::Option<::std::string::String>,
 }
 impl PackageDependencyBuilder {
     /// <p>The namespace of the package that this package depends on. The package component that specifies its namespace depends on its type. For example:</p>
@@ -86,8 +88,8 @@ impl PackageDependencyBuilder {
     /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
     /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
     /// </ul>
-    pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
-        self.namespace = Some(input.into());
+    pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.namespace = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The namespace of the package that this package depends on. The package component that specifies its namespace depends on its type. For example:</p>
@@ -96,17 +98,17 @@ impl PackageDependencyBuilder {
     /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
     /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
     /// </ul>
-    pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.namespace = input;
         self
     }
     /// <p> The name of the package that this package depends on. </p>
-    pub fn package(mut self, input: impl Into<std::string::String>) -> Self {
-        self.package = Some(input.into());
+    pub fn package(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.package = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the package that this package depends on. </p>
-    pub fn set_package(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_package(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.package = input;
         self
     }
@@ -120,8 +122,11 @@ impl PackageDependencyBuilder {
     /// <li> <p>nuget: The <code>dependencyType</code> field is never set for NuGet packages.</p> </li>
     /// <li> <p>pypi: <code>Requires-Dist</code> </p> </li>
     /// </ul>
-    pub fn dependency_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.dependency_type = Some(input.into());
+    pub fn dependency_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.dependency_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The type of a package dependency. The possible values depend on the package type.</p>
@@ -134,19 +139,25 @@ impl PackageDependencyBuilder {
     /// <li> <p>nuget: The <code>dependencyType</code> field is never set for NuGet packages.</p> </li>
     /// <li> <p>pypi: <code>Requires-Dist</code> </p> </li>
     /// </ul>
-    pub fn set_dependency_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_dependency_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.dependency_type = input;
         self
     }
     /// <p> The required version, or version range, of the package that this package depends on. The version format is specific to the package type. For example, the following are possible valid required versions: <code>1.2.3</code>, <code>^2.3.4</code>, or <code>4.x</code>. </p>
-    pub fn version_requirement(mut self, input: impl Into<std::string::String>) -> Self {
-        self.version_requirement = Some(input.into());
+    pub fn version_requirement(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.version_requirement = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The required version, or version range, of the package that this package depends on. The version format is specific to the package type. For example, the following are possible valid required versions: <code>1.2.3</code>, <code>^2.3.4</code>, or <code>4.x</code>. </p>
     pub fn set_version_requirement(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.version_requirement = input;
         self

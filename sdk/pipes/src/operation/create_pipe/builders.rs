@@ -6,56 +6,59 @@ pub use crate::operation::create_pipe::_create_pipe_input::CreatePipeInputBuilde
 /// Fluent builder constructing a request to `CreatePipe`.
 ///
 /// <p>Create a pipe. Amazon EventBridge Pipes connect event sources to targets and reduces the need for specialized knowledge and integration code.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreatePipeFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_pipe::builders::CreatePipeInputBuilder,
 }
 impl CreatePipeFluentBuilder {
     /// Creates a new `CreatePipe`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_pipe::CreatePipe,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_pipe::CreatePipeError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_pipe::CreatePipeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_pipe::CreatePipeOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_pipe::CreatePipeError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_pipe::CreatePipeError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,29 +71,29 @@ impl CreatePipeFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_pipe::CreatePipeOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_pipe::CreatePipeError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_pipe::CreatePipeError>,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the pipe.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// <p>The name of the pipe.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
     /// <p>A description of the pipe.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>A description of the pipe.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
@@ -102,18 +105,18 @@ impl CreatePipeFluentBuilder {
     /// <p>The state the pipe should be in.</p>
     pub fn set_desired_state(
         mut self,
-        input: std::option::Option<crate::types::RequestedPipeState>,
+        input: ::std::option::Option<crate::types::RequestedPipeState>,
     ) -> Self {
         self.inner = self.inner.set_desired_state(input);
         self
     }
     /// <p>The ARN of the source resource.</p>
-    pub fn source(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn source(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source(input.into());
         self
     }
     /// <p>The ARN of the source resource.</p>
-    pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_source(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source(input);
         self
     }
@@ -125,18 +128,18 @@ impl CreatePipeFluentBuilder {
     /// <p>The parameters required to set up a source for your pipe.</p>
     pub fn set_source_parameters(
         mut self,
-        input: std::option::Option<crate::types::PipeSourceParameters>,
+        input: ::std::option::Option<crate::types::PipeSourceParameters>,
     ) -> Self {
         self.inner = self.inner.set_source_parameters(input);
         self
     }
     /// <p>The ARN of the enrichment resource.</p>
-    pub fn enrichment(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn enrichment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.enrichment(input.into());
         self
     }
     /// <p>The ARN of the enrichment resource.</p>
-    pub fn set_enrichment(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_enrichment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_enrichment(input);
         self
     }
@@ -148,18 +151,18 @@ impl CreatePipeFluentBuilder {
     /// <p>The parameters required to set up enrichment on your pipe.</p>
     pub fn set_enrichment_parameters(
         mut self,
-        input: std::option::Option<crate::types::PipeEnrichmentParameters>,
+        input: ::std::option::Option<crate::types::PipeEnrichmentParameters>,
     ) -> Self {
         self.inner = self.inner.set_enrichment_parameters(input);
         self
     }
     /// <p>The ARN of the target resource.</p>
-    pub fn target(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target(input.into());
         self
     }
     /// <p>The ARN of the target resource.</p>
-    pub fn set_target(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target(input);
         self
     }
@@ -171,18 +174,18 @@ impl CreatePipeFluentBuilder {
     /// <p>The parameters required to set up a target for your pipe.</p>
     pub fn set_target_parameters(
         mut self,
-        input: std::option::Option<crate::types::PipeTargetParameters>,
+        input: ::std::option::Option<crate::types::PipeTargetParameters>,
     ) -> Self {
         self.inner = self.inner.set_target_parameters(input);
         self
     }
     /// <p>The ARN of the role that allows the pipe to send data to the target.</p>
-    pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
         self
     }
     /// <p>The ARN of the role that allows the pipe to send data to the target.</p>
-    pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
     }
@@ -193,8 +196,8 @@ impl CreatePipeFluentBuilder {
     /// <p>The list of key-value pairs to associate with the pipe.</p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
@@ -202,8 +205,8 @@ impl CreatePipeFluentBuilder {
     /// <p>The list of key-value pairs to associate with the pipe.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_tags(input);

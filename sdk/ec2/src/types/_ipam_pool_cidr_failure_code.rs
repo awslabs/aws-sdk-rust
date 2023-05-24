@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum IpamPoolCidrFailureCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum IpamPoolCidrFailureCode {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for IpamPoolCidrFailureCode {
+impl ::std::convert::From<&str> for IpamPoolCidrFailureCode {
     fn from(s: &str) -> Self {
         match s {
             "cidr-not-available" => IpamPoolCidrFailureCode::CidrNotAvailable,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for IpamPoolCidrFailureCode {
         }
     }
 }
-impl std::str::FromStr for IpamPoolCidrFailureCode {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for IpamPoolCidrFailureCode {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(IpamPoolCidrFailureCode::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(IpamPoolCidrFailureCode::from(s))
     }
 }
 impl IpamPoolCidrFailureCode {
@@ -86,7 +86,7 @@ impl IpamPoolCidrFailureCode {
         &["cidr-not-available", "limit-exceeded"]
     }
 }
-impl AsRef<str> for IpamPoolCidrFailureCode {
+impl ::std::convert::AsRef<str> for IpamPoolCidrFailureCode {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

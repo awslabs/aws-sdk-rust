@@ -2,22 +2,22 @@
 
 /// <p>Information about requests that failed with a 5xx Server Error status code.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FaultStatistics {
     /// <p>The number of requests that failed with untracked 5xx Server Error status codes.</p>
     #[doc(hidden)]
-    pub other_count: std::option::Option<i64>,
+    pub other_count: ::std::option::Option<i64>,
     /// <p>The total number of requests that failed with a 5xx Server Error status code.</p>
     #[doc(hidden)]
-    pub total_count: std::option::Option<i64>,
+    pub total_count: ::std::option::Option<i64>,
 }
 impl FaultStatistics {
     /// <p>The number of requests that failed with untracked 5xx Server Error status codes.</p>
-    pub fn other_count(&self) -> std::option::Option<i64> {
+    pub fn other_count(&self) -> ::std::option::Option<i64> {
         self.other_count
     }
     /// <p>The total number of requests that failed with a 5xx Server Error status code.</p>
-    pub fn total_count(&self) -> std::option::Option<i64> {
+    pub fn total_count(&self) -> ::std::option::Option<i64> {
         self.total_count
     }
 }
@@ -30,29 +30,31 @@ impl FaultStatistics {
 
 /// A builder for [`FaultStatistics`](crate::types::FaultStatistics).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FaultStatisticsBuilder {
-    pub(crate) other_count: std::option::Option<i64>,
-    pub(crate) total_count: std::option::Option<i64>,
+    pub(crate) other_count: ::std::option::Option<i64>,
+    pub(crate) total_count: ::std::option::Option<i64>,
 }
 impl FaultStatisticsBuilder {
     /// <p>The number of requests that failed with untracked 5xx Server Error status codes.</p>
     pub fn other_count(mut self, input: i64) -> Self {
-        self.other_count = Some(input);
+        self.other_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of requests that failed with untracked 5xx Server Error status codes.</p>
-    pub fn set_other_count(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_other_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.other_count = input;
         self
     }
     /// <p>The total number of requests that failed with a 5xx Server Error status code.</p>
     pub fn total_count(mut self, input: i64) -> Self {
-        self.total_count = Some(input);
+        self.total_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total number of requests that failed with a 5xx Server Error status code.</p>
-    pub fn set_total_count(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_total_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.total_count = input;
         self
     }

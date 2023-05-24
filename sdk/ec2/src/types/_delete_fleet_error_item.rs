@@ -2,22 +2,22 @@
 
 /// <p>Describes an EC2 Fleet that was not successfully deleted.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteFleetErrorItem {
     /// <p>The error.</p>
     #[doc(hidden)]
-    pub error: std::option::Option<crate::types::DeleteFleetError>,
+    pub error: ::std::option::Option<crate::types::DeleteFleetError>,
     /// <p>The ID of the EC2 Fleet.</p>
     #[doc(hidden)]
-    pub fleet_id: std::option::Option<std::string::String>,
+    pub fleet_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteFleetErrorItem {
     /// <p>The error.</p>
-    pub fn error(&self) -> std::option::Option<&crate::types::DeleteFleetError> {
+    pub fn error(&self) -> ::std::option::Option<&crate::types::DeleteFleetError> {
         self.error.as_ref()
     }
     /// <p>The ID of the EC2 Fleet.</p>
-    pub fn fleet_id(&self) -> std::option::Option<&str> {
+    pub fn fleet_id(&self) -> ::std::option::Option<&str> {
         self.fleet_id.as_deref()
     }
 }
@@ -30,29 +30,34 @@ impl DeleteFleetErrorItem {
 
 /// A builder for [`DeleteFleetErrorItem`](crate::types::DeleteFleetErrorItem).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteFleetErrorItemBuilder {
-    pub(crate) error: std::option::Option<crate::types::DeleteFleetError>,
-    pub(crate) fleet_id: std::option::Option<std::string::String>,
+    pub(crate) error: ::std::option::Option<crate::types::DeleteFleetError>,
+    pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteFleetErrorItemBuilder {
     /// <p>The error.</p>
     pub fn error(mut self, input: crate::types::DeleteFleetError) -> Self {
-        self.error = Some(input);
+        self.error = ::std::option::Option::Some(input);
         self
     }
     /// <p>The error.</p>
-    pub fn set_error(mut self, input: std::option::Option<crate::types::DeleteFleetError>) -> Self {
+    pub fn set_error(
+        mut self,
+        input: ::std::option::Option<crate::types::DeleteFleetError>,
+    ) -> Self {
         self.error = input;
         self
     }
     /// <p>The ID of the EC2 Fleet.</p>
-    pub fn fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.fleet_id = Some(input.into());
+    pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.fleet_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the EC2 Fleet.</p>
-    pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fleet_id = input;
         self
     }

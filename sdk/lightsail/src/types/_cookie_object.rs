@@ -3,22 +3,22 @@
 /// <p>Describes whether an Amazon Lightsail content delivery network (CDN) distribution forwards cookies to the origin and, if so, which ones.</p>
 /// <p>For the cookies that you specify, your distribution caches separate versions of the specified content based on the cookie values in viewer requests.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CookieObject {
     /// <p>Specifies which cookies to forward to the distribution's origin for a cache behavior: <code>all</code>, <code>none</code>, or <code>allow-list</code> to forward only the cookies specified in the <code>cookiesAllowList</code> parameter.</p>
     #[doc(hidden)]
-    pub option: std::option::Option<crate::types::ForwardValues>,
+    pub option: ::std::option::Option<crate::types::ForwardValues>,
     /// <p>The specific cookies to forward to your distribution's origin.</p>
     #[doc(hidden)]
-    pub cookies_allow_list: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub cookies_allow_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CookieObject {
     /// <p>Specifies which cookies to forward to the distribution's origin for a cache behavior: <code>all</code>, <code>none</code>, or <code>allow-list</code> to forward only the cookies specified in the <code>cookiesAllowList</code> parameter.</p>
-    pub fn option(&self) -> std::option::Option<&crate::types::ForwardValues> {
+    pub fn option(&self) -> ::std::option::Option<&crate::types::ForwardValues> {
         self.option.as_ref()
     }
     /// <p>The specific cookies to forward to your distribution's origin.</p>
-    pub fn cookies_allow_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn cookies_allow_list(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.cookies_allow_list.as_deref()
     }
 }
@@ -31,19 +31,21 @@ impl CookieObject {
 
 /// A builder for [`CookieObject`](crate::types::CookieObject).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CookieObjectBuilder {
-    pub(crate) option: std::option::Option<crate::types::ForwardValues>,
-    pub(crate) cookies_allow_list: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) option: ::std::option::Option<crate::types::ForwardValues>,
+    pub(crate) cookies_allow_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CookieObjectBuilder {
     /// <p>Specifies which cookies to forward to the distribution's origin for a cache behavior: <code>all</code>, <code>none</code>, or <code>allow-list</code> to forward only the cookies specified in the <code>cookiesAllowList</code> parameter.</p>
     pub fn option(mut self, input: crate::types::ForwardValues) -> Self {
-        self.option = Some(input);
+        self.option = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies which cookies to forward to the distribution's origin for a cache behavior: <code>all</code>, <code>none</code>, or <code>allow-list</code> to forward only the cookies specified in the <code>cookiesAllowList</code> parameter.</p>
-    pub fn set_option(mut self, input: std::option::Option<crate::types::ForwardValues>) -> Self {
+    pub fn set_option(mut self, input: ::std::option::Option<crate::types::ForwardValues>) -> Self {
         self.option = input;
         self
     }
@@ -52,16 +54,19 @@ impl CookieObjectBuilder {
     /// To override the contents of this collection use [`set_cookies_allow_list`](Self::set_cookies_allow_list).
     ///
     /// <p>The specific cookies to forward to your distribution's origin.</p>
-    pub fn cookies_allow_list(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn cookies_allow_list(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.cookies_allow_list.unwrap_or_default();
         v.push(input.into());
-        self.cookies_allow_list = Some(v);
+        self.cookies_allow_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>The specific cookies to forward to your distribution's origin.</p>
     pub fn set_cookies_allow_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.cookies_allow_list = input;
         self

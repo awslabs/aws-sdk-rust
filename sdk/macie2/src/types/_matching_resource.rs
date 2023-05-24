@@ -2,15 +2,15 @@
 
 /// <p>Provides statistical data and other information about an Amazon Web Services resource that Amazon Macie monitors and analyzes for your account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MatchingResource {
     /// <p>The details of an S3 bucket that Amazon Macie monitors and analyzes.</p>
     #[doc(hidden)]
-    pub matching_bucket: std::option::Option<crate::types::MatchingBucket>,
+    pub matching_bucket: ::std::option::Option<crate::types::MatchingBucket>,
 }
 impl MatchingResource {
     /// <p>The details of an S3 bucket that Amazon Macie monitors and analyzes.</p>
-    pub fn matching_bucket(&self) -> std::option::Option<&crate::types::MatchingBucket> {
+    pub fn matching_bucket(&self) -> ::std::option::Option<&crate::types::MatchingBucket> {
         self.matching_bucket.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl MatchingResource {
 
 /// A builder for [`MatchingResource`](crate::types::MatchingResource).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MatchingResourceBuilder {
-    pub(crate) matching_bucket: std::option::Option<crate::types::MatchingBucket>,
+    pub(crate) matching_bucket: ::std::option::Option<crate::types::MatchingBucket>,
 }
 impl MatchingResourceBuilder {
     /// <p>The details of an S3 bucket that Amazon Macie monitors and analyzes.</p>
     pub fn matching_bucket(mut self, input: crate::types::MatchingBucket) -> Self {
-        self.matching_bucket = Some(input);
+        self.matching_bucket = ::std::option::Option::Some(input);
         self
     }
     /// <p>The details of an S3 bucket that Amazon Macie monitors and analyzes.</p>
     pub fn set_matching_bucket(
         mut self,
-        input: std::option::Option<crate::types::MatchingBucket>,
+        input: ::std::option::Option<crate::types::MatchingBucket>,
     ) -> Self {
         self.matching_bucket = input;
         self

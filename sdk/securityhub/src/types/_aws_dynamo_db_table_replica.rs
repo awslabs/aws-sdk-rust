@@ -2,23 +2,23 @@
 
 /// <p>Information about a replica of a DynamoDB table.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsDynamoDbTableReplica {
     /// <p>List of global secondary indexes for the replica.</p>
     #[doc(hidden)]
-    pub global_secondary_indexes: std::option::Option<
-        std::vec::Vec<crate::types::AwsDynamoDbTableReplicaGlobalSecondaryIndex>,
+    pub global_secondary_indexes: ::std::option::Option<
+        ::std::vec::Vec<crate::types::AwsDynamoDbTableReplicaGlobalSecondaryIndex>,
     >,
     /// <p>The identifier of the KMS key that will be used for KMS encryption for the replica.</p>
     #[doc(hidden)]
-    pub kms_master_key_id: std::option::Option<std::string::String>,
+    pub kms_master_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Replica-specific configuration for the provisioned throughput.</p>
     #[doc(hidden)]
     pub provisioned_throughput_override:
-        std::option::Option<crate::types::AwsDynamoDbTableProvisionedThroughputOverride>,
+        ::std::option::Option<crate::types::AwsDynamoDbTableProvisionedThroughputOverride>,
     /// <p>The name of the Region where the replica is located.</p>
     #[doc(hidden)]
-    pub region_name: std::option::Option<std::string::String>,
+    pub region_name: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the replica. Valid values are as follows:</p>
     /// <ul>
     /// <li> <p> <code>ACTIVE</code> </p> </li>
@@ -28,30 +28,30 @@ pub struct AwsDynamoDbTableReplica {
     /// <li> <p> <code>UPDATING</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub replica_status: std::option::Option<std::string::String>,
+    pub replica_status: ::std::option::Option<::std::string::String>,
     /// <p>Detailed information about the replica status.</p>
     #[doc(hidden)]
-    pub replica_status_description: std::option::Option<std::string::String>,
+    pub replica_status_description: ::std::option::Option<::std::string::String>,
 }
 impl AwsDynamoDbTableReplica {
     /// <p>List of global secondary indexes for the replica.</p>
     pub fn global_secondary_indexes(
         &self,
-    ) -> std::option::Option<&[crate::types::AwsDynamoDbTableReplicaGlobalSecondaryIndex]> {
+    ) -> ::std::option::Option<&[crate::types::AwsDynamoDbTableReplicaGlobalSecondaryIndex]> {
         self.global_secondary_indexes.as_deref()
     }
     /// <p>The identifier of the KMS key that will be used for KMS encryption for the replica.</p>
-    pub fn kms_master_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_master_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_master_key_id.as_deref()
     }
     /// <p>Replica-specific configuration for the provisioned throughput.</p>
     pub fn provisioned_throughput_override(
         &self,
-    ) -> std::option::Option<&crate::types::AwsDynamoDbTableProvisionedThroughputOverride> {
+    ) -> ::std::option::Option<&crate::types::AwsDynamoDbTableProvisionedThroughputOverride> {
         self.provisioned_throughput_override.as_ref()
     }
     /// <p>The name of the Region where the replica is located.</p>
-    pub fn region_name(&self) -> std::option::Option<&str> {
+    pub fn region_name(&self) -> ::std::option::Option<&str> {
         self.region_name.as_deref()
     }
     /// <p>The current status of the replica. Valid values are as follows:</p>
@@ -62,11 +62,11 @@ impl AwsDynamoDbTableReplica {
     /// <li> <p> <code>DELETING</code> </p> </li>
     /// <li> <p> <code>UPDATING</code> </p> </li>
     /// </ul>
-    pub fn replica_status(&self) -> std::option::Option<&str> {
+    pub fn replica_status(&self) -> ::std::option::Option<&str> {
         self.replica_status.as_deref()
     }
     /// <p>Detailed information about the replica status.</p>
-    pub fn replica_status_description(&self) -> std::option::Option<&str> {
+    pub fn replica_status_description(&self) -> ::std::option::Option<&str> {
         self.replica_status_description.as_deref()
     }
 }
@@ -79,17 +79,19 @@ impl AwsDynamoDbTableReplica {
 
 /// A builder for [`AwsDynamoDbTableReplica`](crate::types::AwsDynamoDbTableReplica).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsDynamoDbTableReplicaBuilder {
-    pub(crate) global_secondary_indexes: std::option::Option<
-        std::vec::Vec<crate::types::AwsDynamoDbTableReplicaGlobalSecondaryIndex>,
+    pub(crate) global_secondary_indexes: ::std::option::Option<
+        ::std::vec::Vec<crate::types::AwsDynamoDbTableReplicaGlobalSecondaryIndex>,
     >,
-    pub(crate) kms_master_key_id: std::option::Option<std::string::String>,
+    pub(crate) kms_master_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) provisioned_throughput_override:
-        std::option::Option<crate::types::AwsDynamoDbTableProvisionedThroughputOverride>,
-    pub(crate) region_name: std::option::Option<std::string::String>,
-    pub(crate) replica_status: std::option::Option<std::string::String>,
-    pub(crate) replica_status_description: std::option::Option<std::string::String>,
+        ::std::option::Option<crate::types::AwsDynamoDbTableProvisionedThroughputOverride>,
+    pub(crate) region_name: ::std::option::Option<::std::string::String>,
+    pub(crate) replica_status: ::std::option::Option<::std::string::String>,
+    pub(crate) replica_status_description: ::std::option::Option<::std::string::String>,
 }
 impl AwsDynamoDbTableReplicaBuilder {
     /// Appends an item to `global_secondary_indexes`.
@@ -103,28 +105,31 @@ impl AwsDynamoDbTableReplicaBuilder {
     ) -> Self {
         let mut v = self.global_secondary_indexes.unwrap_or_default();
         v.push(input);
-        self.global_secondary_indexes = Some(v);
+        self.global_secondary_indexes = ::std::option::Option::Some(v);
         self
     }
     /// <p>List of global secondary indexes for the replica.</p>
     pub fn set_global_secondary_indexes(
         mut self,
-        input: std::option::Option<
-            std::vec::Vec<crate::types::AwsDynamoDbTableReplicaGlobalSecondaryIndex>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::AwsDynamoDbTableReplicaGlobalSecondaryIndex>,
         >,
     ) -> Self {
         self.global_secondary_indexes = input;
         self
     }
     /// <p>The identifier of the KMS key that will be used for KMS encryption for the replica.</p>
-    pub fn kms_master_key_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.kms_master_key_id = Some(input.into());
+    pub fn kms_master_key_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.kms_master_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the KMS key that will be used for KMS encryption for the replica.</p>
     pub fn set_kms_master_key_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.kms_master_key_id = input;
         self
@@ -134,24 +139,24 @@ impl AwsDynamoDbTableReplicaBuilder {
         mut self,
         input: crate::types::AwsDynamoDbTableProvisionedThroughputOverride,
     ) -> Self {
-        self.provisioned_throughput_override = Some(input);
+        self.provisioned_throughput_override = ::std::option::Option::Some(input);
         self
     }
     /// <p>Replica-specific configuration for the provisioned throughput.</p>
     pub fn set_provisioned_throughput_override(
         mut self,
-        input: std::option::Option<crate::types::AwsDynamoDbTableProvisionedThroughputOverride>,
+        input: ::std::option::Option<crate::types::AwsDynamoDbTableProvisionedThroughputOverride>,
     ) -> Self {
         self.provisioned_throughput_override = input;
         self
     }
     /// <p>The name of the Region where the replica is located.</p>
-    pub fn region_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.region_name = Some(input.into());
+    pub fn region_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.region_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Region where the replica is located.</p>
-    pub fn set_region_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_region_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region_name = input;
         self
     }
@@ -163,8 +168,11 @@ impl AwsDynamoDbTableReplicaBuilder {
     /// <li> <p> <code>DELETING</code> </p> </li>
     /// <li> <p> <code>UPDATING</code> </p> </li>
     /// </ul>
-    pub fn replica_status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.replica_status = Some(input.into());
+    pub fn replica_status(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.replica_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The current status of the replica. Valid values are as follows:</p>
@@ -175,19 +183,25 @@ impl AwsDynamoDbTableReplicaBuilder {
     /// <li> <p> <code>DELETING</code> </p> </li>
     /// <li> <p> <code>UPDATING</code> </p> </li>
     /// </ul>
-    pub fn set_replica_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_replica_status(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.replica_status = input;
         self
     }
     /// <p>Detailed information about the replica status.</p>
-    pub fn replica_status_description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.replica_status_description = Some(input.into());
+    pub fn replica_status_description(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.replica_status_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Detailed information about the replica status.</p>
     pub fn set_replica_status_description(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.replica_status_description = input;
         self

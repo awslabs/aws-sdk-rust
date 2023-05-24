@@ -4,7 +4,7 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_security_configurations::builders::ListSecurityConfigurationsFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`marker(impl Into<String>)`](crate::operation::list_security_configurations::builders::ListSecurityConfigurationsFluentBuilder::marker) / [`set_marker(Option<String>)`](crate::operation::list_security_configurations::builders::ListSecurityConfigurationsFluentBuilder::set_marker): <p>The pagination token that indicates the set of results to retrieve.</p>
+    ///   - [`marker(impl ::std::convert::Into<String>)`](crate::operation::list_security_configurations::builders::ListSecurityConfigurationsFluentBuilder::marker) / [`set_marker(Option<String>)`](crate::operation::list_security_configurations::builders::ListSecurityConfigurationsFluentBuilder::set_marker): <p>The pagination token that indicates the set of results to retrieve.</p>
     /// - On success, responds with [`ListSecurityConfigurationsOutput`](crate::operation::list_security_configurations::ListSecurityConfigurationsOutput) with field(s):
     ///   - [`security_configurations(Option<Vec<SecurityConfigurationSummary>>)`](crate::operation::list_security_configurations::ListSecurityConfigurationsOutput::security_configurations): <p>The creation date and time, and name, of each security configuration.</p>
     ///   - [`marker(Option<String>)`](crate::operation::list_security_configurations::ListSecurityConfigurationsOutput::marker): <p>A pagination token that indicates the next set of results to retrieve. Include the marker in the next ListSecurityConfiguration call to retrieve the next page of results, if required.</p>

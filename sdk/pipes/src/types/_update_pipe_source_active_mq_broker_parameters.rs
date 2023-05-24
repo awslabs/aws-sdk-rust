@@ -2,29 +2,29 @@
 
 /// <p>The parameters for using an Active MQ broker as a source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdatePipeSourceActiveMqBrokerParameters {
     /// <p>The credentials needed to access the resource.</p>
     #[doc(hidden)]
-    pub credentials: std::option::Option<crate::types::MqBrokerAccessCredentials>,
+    pub credentials: ::std::option::Option<crate::types::MqBrokerAccessCredentials>,
     /// <p>The maximum number of records to include in each batch.</p>
     #[doc(hidden)]
-    pub batch_size: std::option::Option<i32>,
+    pub batch_size: ::std::option::Option<i32>,
     /// <p>The maximum length of a time to wait for events.</p>
     #[doc(hidden)]
-    pub maximum_batching_window_in_seconds: std::option::Option<i32>,
+    pub maximum_batching_window_in_seconds: ::std::option::Option<i32>,
 }
 impl UpdatePipeSourceActiveMqBrokerParameters {
     /// <p>The credentials needed to access the resource.</p>
-    pub fn credentials(&self) -> std::option::Option<&crate::types::MqBrokerAccessCredentials> {
+    pub fn credentials(&self) -> ::std::option::Option<&crate::types::MqBrokerAccessCredentials> {
         self.credentials.as_ref()
     }
     /// <p>The maximum number of records to include in each batch.</p>
-    pub fn batch_size(&self) -> std::option::Option<i32> {
+    pub fn batch_size(&self) -> ::std::option::Option<i32> {
         self.batch_size
     }
     /// <p>The maximum length of a time to wait for events.</p>
-    pub fn maximum_batching_window_in_seconds(&self) -> std::option::Option<i32> {
+    pub fn maximum_batching_window_in_seconds(&self) -> ::std::option::Option<i32> {
         self.maximum_batching_window_in_seconds
     }
 }
@@ -37,45 +37,47 @@ impl UpdatePipeSourceActiveMqBrokerParameters {
 
 /// A builder for [`UpdatePipeSourceActiveMqBrokerParameters`](crate::types::UpdatePipeSourceActiveMqBrokerParameters).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdatePipeSourceActiveMqBrokerParametersBuilder {
-    pub(crate) credentials: std::option::Option<crate::types::MqBrokerAccessCredentials>,
-    pub(crate) batch_size: std::option::Option<i32>,
-    pub(crate) maximum_batching_window_in_seconds: std::option::Option<i32>,
+    pub(crate) credentials: ::std::option::Option<crate::types::MqBrokerAccessCredentials>,
+    pub(crate) batch_size: ::std::option::Option<i32>,
+    pub(crate) maximum_batching_window_in_seconds: ::std::option::Option<i32>,
 }
 impl UpdatePipeSourceActiveMqBrokerParametersBuilder {
     /// <p>The credentials needed to access the resource.</p>
     pub fn credentials(mut self, input: crate::types::MqBrokerAccessCredentials) -> Self {
-        self.credentials = Some(input);
+        self.credentials = ::std::option::Option::Some(input);
         self
     }
     /// <p>The credentials needed to access the resource.</p>
     pub fn set_credentials(
         mut self,
-        input: std::option::Option<crate::types::MqBrokerAccessCredentials>,
+        input: ::std::option::Option<crate::types::MqBrokerAccessCredentials>,
     ) -> Self {
         self.credentials = input;
         self
     }
     /// <p>The maximum number of records to include in each batch.</p>
     pub fn batch_size(mut self, input: i32) -> Self {
-        self.batch_size = Some(input);
+        self.batch_size = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum number of records to include in each batch.</p>
-    pub fn set_batch_size(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_batch_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.batch_size = input;
         self
     }
     /// <p>The maximum length of a time to wait for events.</p>
     pub fn maximum_batching_window_in_seconds(mut self, input: i32) -> Self {
-        self.maximum_batching_window_in_seconds = Some(input);
+        self.maximum_batching_window_in_seconds = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum length of a time to wait for events.</p>
     pub fn set_maximum_batching_window_in_seconds(
         mut self,
-        input: std::option::Option<i32>,
+        input: ::std::option::Option<i32>,
     ) -> Self {
         self.maximum_batching_window_in_seconds = input;
         self

@@ -2,36 +2,36 @@
 
 /// <p>Input to the <code>UnlinkDeveloperIdentity</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UnlinkDeveloperIdentityInput {
     /// <p>A unique identifier in the format REGION:GUID.</p>
     #[doc(hidden)]
-    pub identity_id: std::option::Option<std::string::String>,
+    pub identity_id: ::std::option::Option<::std::string::String>,
     /// <p>An identity pool ID in the format REGION:GUID.</p>
     #[doc(hidden)]
-    pub identity_pool_id: std::option::Option<std::string::String>,
+    pub identity_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The "domain" by which Cognito will refer to your users.</p>
     #[doc(hidden)]
-    pub developer_provider_name: std::option::Option<std::string::String>,
+    pub developer_provider_name: ::std::option::Option<::std::string::String>,
     /// <p>A unique ID used by your backend authentication process to identify a user.</p>
     #[doc(hidden)]
-    pub developer_user_identifier: std::option::Option<std::string::String>,
+    pub developer_user_identifier: ::std::option::Option<::std::string::String>,
 }
 impl UnlinkDeveloperIdentityInput {
     /// <p>A unique identifier in the format REGION:GUID.</p>
-    pub fn identity_id(&self) -> std::option::Option<&str> {
+    pub fn identity_id(&self) -> ::std::option::Option<&str> {
         self.identity_id.as_deref()
     }
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
+    pub fn identity_pool_id(&self) -> ::std::option::Option<&str> {
         self.identity_pool_id.as_deref()
     }
     /// <p>The "domain" by which Cognito will refer to your users.</p>
-    pub fn developer_provider_name(&self) -> std::option::Option<&str> {
+    pub fn developer_provider_name(&self) -> ::std::option::Option<&str> {
         self.developer_provider_name.as_deref()
     }
     /// <p>A unique ID used by your backend authentication process to identify a user.</p>
-    pub fn developer_user_identifier(&self) -> std::option::Option<&str> {
+    pub fn developer_user_identifier(&self) -> ::std::option::Option<&str> {
         self.developer_user_identifier.as_deref()
     }
 }
@@ -46,56 +46,70 @@ impl UnlinkDeveloperIdentityInput {
 
 /// A builder for [`UnlinkDeveloperIdentityInput`](crate::operation::unlink_developer_identity::UnlinkDeveloperIdentityInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UnlinkDeveloperIdentityInputBuilder {
-    pub(crate) identity_id: std::option::Option<std::string::String>,
-    pub(crate) identity_pool_id: std::option::Option<std::string::String>,
-    pub(crate) developer_provider_name: std::option::Option<std::string::String>,
-    pub(crate) developer_user_identifier: std::option::Option<std::string::String>,
+    pub(crate) identity_id: ::std::option::Option<::std::string::String>,
+    pub(crate) identity_pool_id: ::std::option::Option<::std::string::String>,
+    pub(crate) developer_provider_name: ::std::option::Option<::std::string::String>,
+    pub(crate) developer_user_identifier: ::std::option::Option<::std::string::String>,
 }
 impl UnlinkDeveloperIdentityInputBuilder {
     /// <p>A unique identifier in the format REGION:GUID.</p>
-    pub fn identity_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.identity_id = Some(input.into());
+    pub fn identity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.identity_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier in the format REGION:GUID.</p>
-    pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_identity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identity_id = input;
         self
     }
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    pub fn identity_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.identity_pool_id = Some(input.into());
+    pub fn identity_pool_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.identity_pool_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    pub fn set_identity_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_identity_pool_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.identity_pool_id = input;
         self
     }
     /// <p>The "domain" by which Cognito will refer to your users.</p>
-    pub fn developer_provider_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.developer_provider_name = Some(input.into());
+    pub fn developer_provider_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.developer_provider_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The "domain" by which Cognito will refer to your users.</p>
     pub fn set_developer_provider_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.developer_provider_name = input;
         self
     }
     /// <p>A unique ID used by your backend authentication process to identify a user.</p>
-    pub fn developer_user_identifier(mut self, input: impl Into<std::string::String>) -> Self {
-        self.developer_user_identifier = Some(input.into());
+    pub fn developer_user_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.developer_user_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique ID used by your backend authentication process to identify a user.</p>
     pub fn set_developer_user_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.developer_user_identifier = input;
         self
@@ -103,11 +117,11 @@ impl UnlinkDeveloperIdentityInputBuilder {
     /// Consumes the builder and constructs a [`UnlinkDeveloperIdentityInput`](crate::operation::unlink_developer_identity::UnlinkDeveloperIdentityInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::unlink_developer_identity::UnlinkDeveloperIdentityInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::unlink_developer_identity::UnlinkDeveloperIdentityInput {
                 identity_id: self.identity_id,
                 identity_pool_id: self.identity_pool_id,

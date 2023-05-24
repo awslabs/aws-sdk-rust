@@ -2,34 +2,34 @@
 
 /// <p>The Dialed Number Identification Service (DNIS) emergency calling configuration details associated with an Amazon Chime SDK Voice Connector's emergency calling configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DnisEmergencyCallingConfiguration {
     /// <p>The DNIS phone number that you route emergency calls to, in E.164 format.</p>
     #[doc(hidden)]
-    pub emergency_phone_number: std::option::Option<std::string::String>,
+    pub emergency_phone_number: ::std::option::Option<::std::string::String>,
     /// <p>The DNIS phone number for routing test emergency calls to, in E.164 format.</p>
     #[doc(hidden)]
-    pub test_phone_number: std::option::Option<std::string::String>,
+    pub test_phone_number: ::std::option::Option<::std::string::String>,
     /// <p>The country from which emergency calls are allowed, in ISO 3166-1 alpha-2 format.</p>
     #[doc(hidden)]
-    pub calling_country: std::option::Option<std::string::String>,
+    pub calling_country: ::std::option::Option<::std::string::String>,
 }
 impl DnisEmergencyCallingConfiguration {
     /// <p>The DNIS phone number that you route emergency calls to, in E.164 format.</p>
-    pub fn emergency_phone_number(&self) -> std::option::Option<&str> {
+    pub fn emergency_phone_number(&self) -> ::std::option::Option<&str> {
         self.emergency_phone_number.as_deref()
     }
     /// <p>The DNIS phone number for routing test emergency calls to, in E.164 format.</p>
-    pub fn test_phone_number(&self) -> std::option::Option<&str> {
+    pub fn test_phone_number(&self) -> ::std::option::Option<&str> {
         self.test_phone_number.as_deref()
     }
     /// <p>The country from which emergency calls are allowed, in ISO 3166-1 alpha-2 format.</p>
-    pub fn calling_country(&self) -> std::option::Option<&str> {
+    pub fn calling_country(&self) -> ::std::option::Option<&str> {
         self.calling_country.as_deref()
     }
 }
-impl std::fmt::Debug for DnisEmergencyCallingConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for DnisEmergencyCallingConfiguration {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DnisEmergencyCallingConfiguration");
         formatter.field("emergency_phone_number", &"*** Sensitive Data Redacted ***");
         formatter.field("test_phone_number", &"*** Sensitive Data Redacted ***");
@@ -46,46 +46,58 @@ impl DnisEmergencyCallingConfiguration {
 
 /// A builder for [`DnisEmergencyCallingConfiguration`](crate::types::DnisEmergencyCallingConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct DnisEmergencyCallingConfigurationBuilder {
-    pub(crate) emergency_phone_number: std::option::Option<std::string::String>,
-    pub(crate) test_phone_number: std::option::Option<std::string::String>,
-    pub(crate) calling_country: std::option::Option<std::string::String>,
+    pub(crate) emergency_phone_number: ::std::option::Option<::std::string::String>,
+    pub(crate) test_phone_number: ::std::option::Option<::std::string::String>,
+    pub(crate) calling_country: ::std::option::Option<::std::string::String>,
 }
 impl DnisEmergencyCallingConfigurationBuilder {
     /// <p>The DNIS phone number that you route emergency calls to, in E.164 format.</p>
-    pub fn emergency_phone_number(mut self, input: impl Into<std::string::String>) -> Self {
-        self.emergency_phone_number = Some(input.into());
+    pub fn emergency_phone_number(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.emergency_phone_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The DNIS phone number that you route emergency calls to, in E.164 format.</p>
     pub fn set_emergency_phone_number(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.emergency_phone_number = input;
         self
     }
     /// <p>The DNIS phone number for routing test emergency calls to, in E.164 format.</p>
-    pub fn test_phone_number(mut self, input: impl Into<std::string::String>) -> Self {
-        self.test_phone_number = Some(input.into());
+    pub fn test_phone_number(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.test_phone_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The DNIS phone number for routing test emergency calls to, in E.164 format.</p>
     pub fn set_test_phone_number(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.test_phone_number = input;
         self
     }
     /// <p>The country from which emergency calls are allowed, in ISO 3166-1 alpha-2 format.</p>
-    pub fn calling_country(mut self, input: impl Into<std::string::String>) -> Self {
-        self.calling_country = Some(input.into());
+    pub fn calling_country(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.calling_country = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The country from which emergency calls are allowed, in ISO 3166-1 alpha-2 format.</p>
-    pub fn set_calling_country(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_calling_country(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.calling_country = input;
         self
     }
@@ -98,8 +110,8 @@ impl DnisEmergencyCallingConfigurationBuilder {
         }
     }
 }
-impl std::fmt::Debug for DnisEmergencyCallingConfigurationBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for DnisEmergencyCallingConfigurationBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DnisEmergencyCallingConfigurationBuilder");
         formatter.field("emergency_phone_number", &"*** Sensitive Data Redacted ***");
         formatter.field("test_phone_number", &"*** Sensitive Data Redacted ***");

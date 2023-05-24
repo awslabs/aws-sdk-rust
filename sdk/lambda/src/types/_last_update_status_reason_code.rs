@@ -57,13 +57,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum LastUpdateStatusReasonCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -111,7 +111,7 @@ pub enum LastUpdateStatusReasonCode {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for LastUpdateStatusReasonCode {
+impl ::std::convert::From<&str> for LastUpdateStatusReasonCode {
     fn from(s: &str) -> Self {
         match s {
             "DisabledKMSKey" => LastUpdateStatusReasonCode::DisabledKmsKey,
@@ -143,11 +143,11 @@ impl std::convert::From<&str> for LastUpdateStatusReasonCode {
         }
     }
 }
-impl std::str::FromStr for LastUpdateStatusReasonCode {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for LastUpdateStatusReasonCode {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LastUpdateStatusReasonCode::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(LastUpdateStatusReasonCode::from(s))
     }
 }
 impl LastUpdateStatusReasonCode {
@@ -207,7 +207,7 @@ impl LastUpdateStatusReasonCode {
         ]
     }
 }
-impl AsRef<str> for LastUpdateStatusReasonCode {
+impl ::std::convert::AsRef<str> for LastUpdateStatusReasonCode {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

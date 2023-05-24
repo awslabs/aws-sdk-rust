@@ -2,20 +2,20 @@
 
 /// <p>The result of a <code>ListTags</code> operation. Contains tags for all requested Elasticsearch domains.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTagsOutput {
     /// <p> List of <code>Tag</code> for the requested Elasticsearch domain.</p>
     #[doc(hidden)]
-    pub tag_list: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     _request_id: Option<String>,
 }
 impl ListTagsOutput {
     /// <p> List of <code>Tag</code> for the requested Elasticsearch domain.</p>
-    pub fn tag_list(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tag_list(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tag_list.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListTagsOutput {
+impl ::aws_http::request_id::RequestId for ListTagsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,9 +29,11 @@ impl ListTagsOutput {
 
 /// A builder for [`ListTagsOutput`](crate::operation::list_tags::ListTagsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListTagsOutputBuilder {
-    pub(crate) tag_list: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub(crate) tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     _request_id: Option<String>,
 }
 impl ListTagsOutputBuilder {
@@ -43,13 +45,13 @@ impl ListTagsOutputBuilder {
     pub fn tag_list(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tag_list.unwrap_or_default();
         v.push(input);
-        self.tag_list = Some(v);
+        self.tag_list = ::std::option::Option::Some(v);
         self
     }
     /// <p> List of <code>Tag</code> for the requested Elasticsearch domain.</p>
     pub fn set_tag_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tag_list = input;
         self

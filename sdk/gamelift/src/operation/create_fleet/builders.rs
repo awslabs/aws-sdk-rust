@@ -14,56 +14,59 @@ pub use crate::operation::create_fleet::_create_fleet_input::CreateFleetInputBui
 /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up fleets</a> </p>
 /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-debug.html#fleets-creating-debug-creation">Debug fleet creation issues</a> </p>
 /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Multi-location fleets</a> </p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateFleetFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_fleet::builders::CreateFleetInputBuilder,
 }
 impl CreateFleetFluentBuilder {
     /// Creates a new `CreateFleet`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_fleet::CreateFleet,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_fleet::CreateFleetError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_fleet::CreateFleetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_fleet::CreateFleetOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_fleet::CreateFleetError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_fleet::CreateFleetError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -76,74 +79,80 @@ impl CreateFleetFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_fleet::CreateFleetOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_fleet::CreateFleetError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_fleet::CreateFleetError>,
     > {
         self.send_middleware().await
     }
     /// <p>A descriptive label that is associated with a fleet. Fleet names do not need to be unique.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// <p>A descriptive label that is associated with a fleet. Fleet names do not need to be unique.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
     /// <p>A description for the fleet.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>A description for the fleet.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
     /// <p>The unique identifier for a custom game server build to be deployed on fleet instances. You can use either the build ID or ARN. The build must be uploaded to Amazon GameLift and in <code>READY</code> status. This fleet property cannot be changed later.</p>
-    pub fn build_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn build_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.build_id(input.into());
         self
     }
     /// <p>The unique identifier for a custom game server build to be deployed on fleet instances. You can use either the build ID or ARN. The build must be uploaded to Amazon GameLift and in <code>READY</code> status. This fleet property cannot be changed later.</p>
-    pub fn set_build_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_build_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_build_id(input);
         self
     }
     /// <p>The unique identifier for a Realtime configuration script to be deployed on fleet instances. You can use either the script ID or ARN. Scripts must be uploaded to Amazon GameLift prior to creating the fleet. This fleet property cannot be changed later.</p>
-    pub fn script_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn script_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.script_id(input.into());
         self
     }
     /// <p>The unique identifier for a Realtime configuration script to be deployed on fleet instances. You can use either the script ID or ARN. Scripts must be uploaded to Amazon GameLift prior to creating the fleet. This fleet property cannot be changed later.</p>
-    pub fn set_script_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_script_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_script_id(input);
         self
     }
     /// <p> <b>This parameter is no longer used.</b> Specify a server launch path using the <code>RuntimeConfiguration</code> parameter. Requests that use this parameter instead continue to be valid.</p>
-    pub fn server_launch_path(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn server_launch_path(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.server_launch_path(input.into());
         self
     }
     /// <p> <b>This parameter is no longer used.</b> Specify a server launch path using the <code>RuntimeConfiguration</code> parameter. Requests that use this parameter instead continue to be valid.</p>
     pub fn set_server_launch_path(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_server_launch_path(input);
         self
     }
     /// <p> <b>This parameter is no longer used.</b> Specify server launch parameters using the <code>RuntimeConfiguration</code> parameter. Requests that use this parameter instead continue to be valid.</p>
-    pub fn server_launch_parameters(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn server_launch_parameters(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.server_launch_parameters(input.into());
         self
     }
     /// <p> <b>This parameter is no longer used.</b> Specify server launch parameters using the <code>RuntimeConfiguration</code> parameter. Requests that use this parameter instead continue to be valid.</p>
     pub fn set_server_launch_parameters(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_server_launch_parameters(input);
         self
@@ -153,14 +162,14 @@ impl CreateFleetFluentBuilder {
     /// To override the contents of this collection use [`set_log_paths`](Self::set_log_paths).
     ///
     /// <p> <b>This parameter is no longer used.</b> To specify where Amazon GameLift should store log files once a server process shuts down, use the Amazon GameLift server API <code>ProcessReady()</code> and specify one or more directory paths in <code>logParameters</code>. For more information, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-initialize">Initialize the server process</a> in the <i>Amazon GameLift Developer Guide</i>. </p>
-    pub fn log_paths(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn log_paths(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.log_paths(input.into());
         self
     }
     /// <p> <b>This parameter is no longer used.</b> To specify where Amazon GameLift should store log files once a server process shuts down, use the Amazon GameLift server API <code>ProcessReady()</code> and specify one or more directory paths in <code>logParameters</code>. For more information, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-initialize">Initialize the server process</a> in the <i>Amazon GameLift Developer Guide</i>. </p>
     pub fn set_log_paths(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_log_paths(input);
         self
@@ -173,7 +182,7 @@ impl CreateFleetFluentBuilder {
     /// <p>The Amazon GameLift-supported Amazon EC2 instance type to use for all fleet instances. Instance type determines the computing resources that will be used to host your game servers, including CPU, memory, storage, and networking capacity. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed descriptions of Amazon EC2 instance types.</p>
     pub fn set_ec2_instance_type(
         mut self,
-        input: std::option::Option<crate::types::Ec2InstanceType>,
+        input: ::std::option::Option<crate::types::Ec2InstanceType>,
     ) -> Self {
         self.inner = self.inner.set_ec2_instance_type(input);
         self
@@ -190,7 +199,7 @@ impl CreateFleetFluentBuilder {
     /// <p>The allowed IP address ranges and port settings that allow inbound traffic to access game sessions on this fleet. If the fleet is hosting a custom game build, this property must be set before players can connect to game sessions. For Realtime Servers fleets, Amazon GameLift automatically sets TCP and UDP ranges. </p>
     pub fn set_ec2_inbound_permissions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::IpPermission>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::IpPermission>>,
     ) -> Self {
         self.inner = self.inner.set_ec2_inbound_permissions(input);
         self
@@ -214,7 +223,7 @@ impl CreateFleetFluentBuilder {
     /// </ul>
     pub fn set_new_game_session_protection_policy(
         mut self,
-        input: std::option::Option<crate::types::ProtectionPolicy>,
+        input: ::std::option::Option<crate::types::ProtectionPolicy>,
     ) -> Self {
         self.inner = self.inner.set_new_game_session_protection_policy(input);
         self
@@ -231,7 +240,7 @@ impl CreateFleetFluentBuilder {
     /// </note>
     pub fn set_runtime_configuration(
         mut self,
-        input: std::option::Option<crate::types::RuntimeConfiguration>,
+        input: ::std::option::Option<crate::types::RuntimeConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_runtime_configuration(input);
         self
@@ -247,7 +256,7 @@ impl CreateFleetFluentBuilder {
     /// <p>A policy that limits the number of game sessions that an individual player can create on instances in this fleet within a specified span of time.</p>
     pub fn set_resource_creation_limit_policy(
         mut self,
-        input: std::option::Option<crate::types::ResourceCreationLimitPolicy>,
+        input: ::std::option::Option<crate::types::ResourceCreationLimitPolicy>,
     ) -> Self {
         self.inner = self.inner.set_resource_creation_limit_policy(input);
         self
@@ -257,38 +266,44 @@ impl CreateFleetFluentBuilder {
     /// To override the contents of this collection use [`set_metric_groups`](Self::set_metric_groups).
     ///
     /// <p>The name of an Amazon Web Services CloudWatch metric group to add this fleet to. A metric group is used to aggregate the metrics for multiple fleets. You can specify an existing metric group name or set a new name to create a new metric group. A fleet can be included in only one metric group at a time. </p>
-    pub fn metric_groups(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn metric_groups(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.metric_groups(input.into());
         self
     }
     /// <p>The name of an Amazon Web Services CloudWatch metric group to add this fleet to. A metric group is used to aggregate the metrics for multiple fleets. You can specify an existing metric group name or set a new name to create a new metric group. A fleet can be included in only one metric group at a time. </p>
     pub fn set_metric_groups(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_metric_groups(input);
         self
     }
     /// <p>Used when peering your Amazon GameLift fleet with a VPC, the unique identifier for the Amazon Web Services account that owns the VPC. You can find your account ID in the Amazon Web Services Management Console under account settings. </p>
-    pub fn peer_vpc_aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn peer_vpc_aws_account_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.peer_vpc_aws_account_id(input.into());
         self
     }
     /// <p>Used when peering your Amazon GameLift fleet with a VPC, the unique identifier for the Amazon Web Services account that owns the VPC. You can find your account ID in the Amazon Web Services Management Console under account settings. </p>
     pub fn set_peer_vpc_aws_account_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_peer_vpc_aws_account_id(input);
         self
     }
     /// <p>A unique identifier for a VPC with resources to be accessed by your Amazon GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the Amazon Web Services Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with Amazon GameLift Fleets</a>.</p>
-    pub fn peer_vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn peer_vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.peer_vpc_id(input.into());
         self
     }
     /// <p>A unique identifier for a VPC with resources to be accessed by your Amazon GameLift fleet. The VPC must be in the same Region as your fleet. To look up a VPC ID, use the <a href="https://console.aws.amazon.com/vpc/">VPC Dashboard</a> in the Amazon Web Services Management Console. Learn more about VPC peering in <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with Amazon GameLift Fleets</a>.</p>
-    pub fn set_peer_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_peer_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_peer_vpc_id(input);
         self
     }
@@ -298,19 +313,22 @@ impl CreateFleetFluentBuilder {
         self
     }
     /// <p>Indicates whether to use On-Demand or Spot instances for this fleet. By default, this property is set to <code>ON_DEMAND</code>. Learn more about when to use <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"> On-Demand versus Spot Instances</a>. This property cannot be changed after the fleet is created.</p>
-    pub fn set_fleet_type(mut self, input: std::option::Option<crate::types::FleetType>) -> Self {
+    pub fn set_fleet_type(mut self, input: ::std::option::Option<crate::types::FleetType>) -> Self {
         self.inner = self.inner.set_fleet_type(input);
         self
     }
     /// <p>A unique identifier for an IAM role that manages access to your Amazon Web Services services. With an instance role ARN set, any application that runs on an instance in this fleet can assume the role, including install scripts, server processes, and daemons (background processes). Create a role or look up a role's ARN by using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the Amazon Web Services Management Console. Learn more about using on-box credentials for your game servers at <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Access external resources from a game server</a>. This property cannot be changed after the fleet is created.</p>
-    pub fn instance_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn instance_role_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.instance_role_arn(input.into());
         self
     }
     /// <p>A unique identifier for an IAM role that manages access to your Amazon Web Services services. With an instance role ARN set, any application that runs on an instance in this fleet can assume the role, including install scripts, server processes, and daemons (background processes). Create a role or look up a role's ARN by using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the Amazon Web Services Management Console. Learn more about using on-box credentials for your game servers at <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Access external resources from a game server</a>. This property cannot be changed after the fleet is created.</p>
     pub fn set_instance_role_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_instance_role_arn(input);
         self
@@ -332,7 +350,7 @@ impl CreateFleetFluentBuilder {
     /// </note>
     pub fn set_certificate_configuration(
         mut self,
-        input: std::option::Option<crate::types::CertificateConfiguration>,
+        input: ::std::option::Option<crate::types::CertificateConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_certificate_configuration(input);
         self
@@ -351,7 +369,7 @@ impl CreateFleetFluentBuilder {
     /// <p>To use this parameter, Amazon GameLift requires you to use your home location in the request.</p>
     pub fn set_locations(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::LocationConfiguration>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::LocationConfiguration>>,
     ) -> Self {
         self.inner = self.inner.set_locations(input);
         self
@@ -368,7 +386,7 @@ impl CreateFleetFluentBuilder {
     /// <p>A list of labels to assign to the new fleet resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
@@ -381,7 +399,7 @@ impl CreateFleetFluentBuilder {
     /// <p>The type of compute resource used to host your game servers. You can use your own compute resources with Amazon GameLift Anywhere or use Amazon EC2 instances with managed Amazon GameLift. By default, this property is set to <code>EC2</code>.</p>
     pub fn set_compute_type(
         mut self,
-        input: std::option::Option<crate::types::ComputeType>,
+        input: ::std::option::Option<crate::types::ComputeType>,
     ) -> Self {
         self.inner = self.inner.set_compute_type(input);
         self
@@ -394,7 +412,7 @@ impl CreateFleetFluentBuilder {
     /// <p>Amazon GameLift Anywhere configuration options.</p>
     pub fn set_anywhere_configuration(
         mut self,
-        input: std::option::Option<crate::types::AnywhereConfiguration>,
+        input: ::std::option::Option<crate::types::AnywhereConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_anywhere_configuration(input);
         self

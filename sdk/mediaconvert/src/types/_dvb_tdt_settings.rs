@@ -2,15 +2,15 @@
 
 /// Use these settings to insert a DVB Time and Date Table (TDT) in the transport stream of this output. When you work directly in your JSON job specification, include this object only when your job has a transport stream output and the container settings contain the object M2tsSettings.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DvbTdtSettings {
     /// The number of milliseconds between instances of this table in the output transport stream.
     #[doc(hidden)]
-    pub tdt_interval: std::option::Option<i32>,
+    pub tdt_interval: ::std::option::Option<i32>,
 }
 impl DvbTdtSettings {
     /// The number of milliseconds between instances of this table in the output transport stream.
-    pub fn tdt_interval(&self) -> std::option::Option<i32> {
+    pub fn tdt_interval(&self) -> ::std::option::Option<i32> {
         self.tdt_interval
     }
 }
@@ -23,18 +23,20 @@ impl DvbTdtSettings {
 
 /// A builder for [`DvbTdtSettings`](crate::types::DvbTdtSettings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DvbTdtSettingsBuilder {
-    pub(crate) tdt_interval: std::option::Option<i32>,
+    pub(crate) tdt_interval: ::std::option::Option<i32>,
 }
 impl DvbTdtSettingsBuilder {
     /// The number of milliseconds between instances of this table in the output transport stream.
     pub fn tdt_interval(mut self, input: i32) -> Self {
-        self.tdt_interval = Some(input);
+        self.tdt_interval = ::std::option::Option::Some(input);
         self
     }
     /// The number of milliseconds between instances of this table in the output transport stream.
-    pub fn set_tdt_interval(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_tdt_interval(mut self, input: ::std::option::Option<i32>) -> Self {
         self.tdt_interval = input;
         self
     }

@@ -2,10 +2,10 @@
 
 /// <p>The structure containing the session token being returned.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub enum Credentials {
     /// <p>The actual session token being returned.</p>
-    Token(std::string::String),
+    Token(::std::string::String),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -18,13 +18,13 @@ pub enum Credentials {
 }
 impl Credentials {
     #[allow(irrefutable_let_patterns)]
-    /// Tries to convert the enum instance into [`Token`](crate::types::Credentials::Token), extracting the inner [`String`](std::string::String).
+    /// Tries to convert the enum instance into [`Token`](crate::types::Credentials::Token), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_token(&self) -> std::result::Result<&std::string::String, &Self> {
+    pub fn as_token(&self) -> ::std::result::Result<&::std::string::String, &Self> {
         if let Credentials::Token(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Token`](crate::types::Credentials::Token).
@@ -36,8 +36,8 @@ impl Credentials {
         matches!(self, Self::Unknown)
     }
 }
-impl std::fmt::Debug for Credentials {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for Credentials {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Credentials::Token(_) => f.debug_tuple("*** Sensitive Data Redacted ***").finish(),
             Credentials::Unknown => f.debug_tuple("Unknown").finish(),

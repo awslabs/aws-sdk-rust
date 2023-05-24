@@ -2,11 +2,11 @@
 
 /// Placeholder documentation for ClaimDeviceResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClaimDeviceOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for ClaimDeviceOutput {
+impl ::aws_http::request_id::RequestId for ClaimDeviceOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -20,7 +20,9 @@ impl ClaimDeviceOutput {
 
 /// A builder for [`ClaimDeviceOutput`](crate::operation::claim_device::ClaimDeviceOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ClaimDeviceOutputBuilder {
     _request_id: Option<String>,
 }

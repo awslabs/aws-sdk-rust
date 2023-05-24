@@ -2,14 +2,14 @@
 
 /// <p>Contains a list of geofences stored in a given geofence collection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListGeofenceResponseEntry {
     /// <p>The geofence identifier.</p>
     #[doc(hidden)]
-    pub geofence_id: std::option::Option<std::string::String>,
+    pub geofence_id: ::std::option::Option<::std::string::String>,
     /// <p>Contains the geofence geometry details describing a polygon or a circle.</p>
     #[doc(hidden)]
-    pub geometry: std::option::Option<crate::types::GeofenceGeometry>,
+    pub geometry: ::std::option::Option<crate::types::GeofenceGeometry>,
     /// <p>Identifies the state of the geofence. A geofence will hold one of the following states:</p>
     /// <ul>
     /// <li> <p> <code>ACTIVE</code> — The geofence has been indexed by the system. </p> </li>
@@ -19,21 +19,21 @@ pub struct ListGeofenceResponseEntry {
     /// <li> <p> <code>DELETING</code> — The geofence is being deleted from the system index.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub status: std::option::Option<std::string::String>,
+    pub status: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp for when the geofence was stored in a geofence collection in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
     #[doc(hidden)]
-    pub create_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp for when the geofence was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
     #[doc(hidden)]
-    pub update_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ListGeofenceResponseEntry {
     /// <p>The geofence identifier.</p>
-    pub fn geofence_id(&self) -> std::option::Option<&str> {
+    pub fn geofence_id(&self) -> ::std::option::Option<&str> {
         self.geofence_id.as_deref()
     }
     /// <p>Contains the geofence geometry details describing a polygon or a circle.</p>
-    pub fn geometry(&self) -> std::option::Option<&crate::types::GeofenceGeometry> {
+    pub fn geometry(&self) -> ::std::option::Option<&crate::types::GeofenceGeometry> {
         self.geometry.as_ref()
     }
     /// <p>Identifies the state of the geofence. A geofence will hold one of the following states:</p>
@@ -44,15 +44,15 @@ impl ListGeofenceResponseEntry {
     /// <li> <p> <code>DELETED</code> — The geofence has been deleted from the system index.</p> </li>
     /// <li> <p> <code>DELETING</code> — The geofence is being deleted from the system index.</p> </li>
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
     /// <p>The timestamp for when the geofence was stored in a geofence collection in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The timestamp for when the geofence was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
 }
@@ -65,34 +65,36 @@ impl ListGeofenceResponseEntry {
 
 /// A builder for [`ListGeofenceResponseEntry`](crate::types::ListGeofenceResponseEntry).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListGeofenceResponseEntryBuilder {
-    pub(crate) geofence_id: std::option::Option<std::string::String>,
-    pub(crate) geometry: std::option::Option<crate::types::GeofenceGeometry>,
-    pub(crate) status: std::option::Option<std::string::String>,
-    pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) update_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) geofence_id: ::std::option::Option<::std::string::String>,
+    pub(crate) geometry: ::std::option::Option<crate::types::GeofenceGeometry>,
+    pub(crate) status: ::std::option::Option<::std::string::String>,
+    pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ListGeofenceResponseEntryBuilder {
     /// <p>The geofence identifier.</p>
-    pub fn geofence_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.geofence_id = Some(input.into());
+    pub fn geofence_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.geofence_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The geofence identifier.</p>
-    pub fn set_geofence_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_geofence_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.geofence_id = input;
         self
     }
     /// <p>Contains the geofence geometry details describing a polygon or a circle.</p>
     pub fn geometry(mut self, input: crate::types::GeofenceGeometry) -> Self {
-        self.geometry = Some(input);
+        self.geometry = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains the geofence geometry details describing a polygon or a circle.</p>
     pub fn set_geometry(
         mut self,
-        input: std::option::Option<crate::types::GeofenceGeometry>,
+        input: ::std::option::Option<crate::types::GeofenceGeometry>,
     ) -> Self {
         self.geometry = input;
         self
@@ -105,8 +107,8 @@ impl ListGeofenceResponseEntryBuilder {
     /// <li> <p> <code>DELETED</code> — The geofence has been deleted from the system index.</p> </li>
     /// <li> <p> <code>DELETING</code> — The geofence is being deleted from the system index.</p> </li>
     /// </ul>
-    pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status = Some(input.into());
+    pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Identifies the state of the geofence. A geofence will hold one of the following states:</p>
@@ -117,32 +119,32 @@ impl ListGeofenceResponseEntryBuilder {
     /// <li> <p> <code>DELETED</code> — The geofence has been deleted from the system index.</p> </li>
     /// <li> <p> <code>DELETING</code> — The geofence is being deleted from the system index.</p> </li>
     /// </ul>
-    pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }
     /// <p>The timestamp for when the geofence was stored in a geofence collection in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-    pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.create_time = Some(input);
+    pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.create_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The timestamp for when the geofence was stored in a geofence collection in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
     pub fn set_create_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.create_time = input;
         self
     }
     /// <p>The timestamp for when the geofence was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-    pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.update_time = Some(input);
+    pub fn update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.update_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The timestamp for when the geofence was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
     pub fn set_update_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.update_time = input;
         self

@@ -41,13 +41,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ChangeSource {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,7 +63,7 @@ pub enum ChangeSource {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ChangeSource {
+impl ::std::convert::From<&str> for ChangeSource {
     fn from(s: &str) -> Self {
         match s {
             "Automatic" => ChangeSource::Automatic,
@@ -77,11 +77,11 @@ impl std::convert::From<&str> for ChangeSource {
         }
     }
 }
-impl std::str::FromStr for ChangeSource {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ChangeSource {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ChangeSource::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ChangeSource::from(s))
     }
 }
 impl ChangeSource {
@@ -107,7 +107,7 @@ impl ChangeSource {
         ]
     }
 }
-impl AsRef<str> for ChangeSource {
+impl ::std::convert::AsRef<str> for ChangeSource {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

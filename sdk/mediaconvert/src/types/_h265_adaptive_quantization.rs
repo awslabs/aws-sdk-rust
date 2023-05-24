@@ -43,13 +43,13 @@
 /// When you set Adaptive Quantization (H265AdaptiveQuantization) to Auto (AUTO), or leave blank, MediaConvert automatically applies quantization to improve the video quality of your output. Set Adaptive Quantization to Low (LOW), Medium (MEDIUM), High (HIGH), Higher (HIGHER), or Max (MAX) to manually control the strength of the quantization filter. When you do, you can specify a value for Spatial Adaptive Quantization (H265SpatialAdaptiveQuantization), Temporal Adaptive Quantization (H265TemporalAdaptiveQuantization), and Flicker Adaptive Quantization (H265FlickerAdaptiveQuantization), to further control the quantization filter. Set Adaptive Quantization to Off (OFF) to apply no quantization to your output.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum H265AdaptiveQuantization {
     #[allow(missing_docs)] // documentation missing in model
@@ -69,7 +69,7 @@ pub enum H265AdaptiveQuantization {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for H265AdaptiveQuantization {
+impl ::std::convert::From<&str> for H265AdaptiveQuantization {
     fn from(s: &str) -> Self {
         match s {
             "AUTO" => H265AdaptiveQuantization::Auto,
@@ -85,11 +85,11 @@ impl std::convert::From<&str> for H265AdaptiveQuantization {
         }
     }
 }
-impl std::str::FromStr for H265AdaptiveQuantization {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for H265AdaptiveQuantization {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(H265AdaptiveQuantization::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(H265AdaptiveQuantization::from(s))
     }
 }
 impl H265AdaptiveQuantization {
@@ -111,7 +111,7 @@ impl H265AdaptiveQuantization {
         &["AUTO", "HIGH", "HIGHER", "LOW", "MAX", "MEDIUM", "OFF"]
     }
 }
-impl AsRef<str> for H265AdaptiveQuantization {
+impl ::std::convert::AsRef<str> for H265AdaptiveQuantization {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

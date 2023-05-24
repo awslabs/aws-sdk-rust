@@ -2,51 +2,52 @@
 
 /// <p>The details of an image scan.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImageScanFindings {
     /// <p>The time of the last completed image scan.</p>
     #[doc(hidden)]
-    pub image_scan_completed_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub image_scan_completed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when the vulnerability data was last scanned.</p>
     #[doc(hidden)]
-    pub vulnerability_source_updated_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub vulnerability_source_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The image vulnerability counts, sorted by severity.</p>
     #[doc(hidden)]
     pub finding_severity_counts:
-        std::option::Option<std::collections::HashMap<crate::types::FindingSeverity, i32>>,
+        ::std::option::Option<::std::collections::HashMap<crate::types::FindingSeverity, i32>>,
     /// <p>The findings from the image scan.</p>
     #[doc(hidden)]
-    pub findings: std::option::Option<std::vec::Vec<crate::types::ImageScanFinding>>,
+    pub findings: ::std::option::Option<::std::vec::Vec<crate::types::ImageScanFinding>>,
     /// <p>Details about the enhanced scan findings from Amazon Inspector.</p>
     #[doc(hidden)]
     pub enhanced_findings:
-        std::option::Option<std::vec::Vec<crate::types::EnhancedImageScanFinding>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::EnhancedImageScanFinding>>,
 }
 impl ImageScanFindings {
     /// <p>The time of the last completed image scan.</p>
-    pub fn image_scan_completed_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn image_scan_completed_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.image_scan_completed_at.as_ref()
     }
     /// <p>The time when the vulnerability data was last scanned.</p>
     pub fn vulnerability_source_updated_at(
         &self,
-    ) -> std::option::Option<&aws_smithy_types::DateTime> {
+    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.vulnerability_source_updated_at.as_ref()
     }
     /// <p>The image vulnerability counts, sorted by severity.</p>
     pub fn finding_severity_counts(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<crate::types::FindingSeverity, i32>> {
+    ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::FindingSeverity, i32>>
+    {
         self.finding_severity_counts.as_ref()
     }
     /// <p>The findings from the image scan.</p>
-    pub fn findings(&self) -> std::option::Option<&[crate::types::ImageScanFinding]> {
+    pub fn findings(&self) -> ::std::option::Option<&[crate::types::ImageScanFinding]> {
         self.findings.as_deref()
     }
     /// <p>Details about the enhanced scan findings from Amazon Inspector.</p>
     pub fn enhanced_findings(
         &self,
-    ) -> std::option::Option<&[crate::types::EnhancedImageScanFinding]> {
+    ) -> ::std::option::Option<&[crate::types::EnhancedImageScanFinding]> {
         self.enhanced_findings.as_deref()
     }
 }
@@ -59,39 +60,41 @@ impl ImageScanFindings {
 
 /// A builder for [`ImageScanFindings`](crate::types::ImageScanFindings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ImageScanFindingsBuilder {
-    pub(crate) image_scan_completed_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) vulnerability_source_updated_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) image_scan_completed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) vulnerability_source_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) finding_severity_counts:
-        std::option::Option<std::collections::HashMap<crate::types::FindingSeverity, i32>>,
-    pub(crate) findings: std::option::Option<std::vec::Vec<crate::types::ImageScanFinding>>,
+        ::std::option::Option<::std::collections::HashMap<crate::types::FindingSeverity, i32>>,
+    pub(crate) findings: ::std::option::Option<::std::vec::Vec<crate::types::ImageScanFinding>>,
     pub(crate) enhanced_findings:
-        std::option::Option<std::vec::Vec<crate::types::EnhancedImageScanFinding>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::EnhancedImageScanFinding>>,
 }
 impl ImageScanFindingsBuilder {
     /// <p>The time of the last completed image scan.</p>
-    pub fn image_scan_completed_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.image_scan_completed_at = Some(input);
+    pub fn image_scan_completed_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.image_scan_completed_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time of the last completed image scan.</p>
     pub fn set_image_scan_completed_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.image_scan_completed_at = input;
         self
     }
     /// <p>The time when the vulnerability data was last scanned.</p>
-    pub fn vulnerability_source_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.vulnerability_source_updated_at = Some(input);
+    pub fn vulnerability_source_updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.vulnerability_source_updated_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time when the vulnerability data was last scanned.</p>
     pub fn set_vulnerability_source_updated_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.vulnerability_source_updated_at = input;
         self
@@ -104,13 +107,15 @@ impl ImageScanFindingsBuilder {
     pub fn finding_severity_counts(mut self, k: crate::types::FindingSeverity, v: i32) -> Self {
         let mut hash_map = self.finding_severity_counts.unwrap_or_default();
         hash_map.insert(k, v);
-        self.finding_severity_counts = Some(hash_map);
+        self.finding_severity_counts = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The image vulnerability counts, sorted by severity.</p>
     pub fn set_finding_severity_counts(
         mut self,
-        input: std::option::Option<std::collections::HashMap<crate::types::FindingSeverity, i32>>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<crate::types::FindingSeverity, i32>,
+        >,
     ) -> Self {
         self.finding_severity_counts = input;
         self
@@ -123,13 +128,13 @@ impl ImageScanFindingsBuilder {
     pub fn findings(mut self, input: crate::types::ImageScanFinding) -> Self {
         let mut v = self.findings.unwrap_or_default();
         v.push(input);
-        self.findings = Some(v);
+        self.findings = ::std::option::Option::Some(v);
         self
     }
     /// <p>The findings from the image scan.</p>
     pub fn set_findings(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ImageScanFinding>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ImageScanFinding>>,
     ) -> Self {
         self.findings = input;
         self
@@ -142,13 +147,13 @@ impl ImageScanFindingsBuilder {
     pub fn enhanced_findings(mut self, input: crate::types::EnhancedImageScanFinding) -> Self {
         let mut v = self.enhanced_findings.unwrap_or_default();
         v.push(input);
-        self.enhanced_findings = Some(v);
+        self.enhanced_findings = ::std::option::Option::Some(v);
         self
     }
     /// <p>Details about the enhanced scan findings from Amazon Inspector.</p>
     pub fn set_enhanced_findings(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::EnhancedImageScanFinding>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::EnhancedImageScanFinding>>,
     ) -> Self {
         self.enhanced_findings = input;
         self

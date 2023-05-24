@@ -2,29 +2,29 @@
 
 /// <p>Describes an app's SSL configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SslConfiguration {
     /// <p>The contents of the certificate's domain.crt file.</p>
     #[doc(hidden)]
-    pub certificate: std::option::Option<std::string::String>,
+    pub certificate: ::std::option::Option<::std::string::String>,
     /// <p>The private key; the contents of the certificate's domain.kex file.</p>
     #[doc(hidden)]
-    pub private_key: std::option::Option<std::string::String>,
+    pub private_key: ::std::option::Option<::std::string::String>,
     /// <p>Optional. Can be used to specify an intermediate certificate authority key or client authentication.</p>
     #[doc(hidden)]
-    pub chain: std::option::Option<std::string::String>,
+    pub chain: ::std::option::Option<::std::string::String>,
 }
 impl SslConfiguration {
     /// <p>The contents of the certificate's domain.crt file.</p>
-    pub fn certificate(&self) -> std::option::Option<&str> {
+    pub fn certificate(&self) -> ::std::option::Option<&str> {
         self.certificate.as_deref()
     }
     /// <p>The private key; the contents of the certificate's domain.kex file.</p>
-    pub fn private_key(&self) -> std::option::Option<&str> {
+    pub fn private_key(&self) -> ::std::option::Option<&str> {
         self.private_key.as_deref()
     }
     /// <p>Optional. Can be used to specify an intermediate certificate authority key or client authentication.</p>
-    pub fn chain(&self) -> std::option::Option<&str> {
+    pub fn chain(&self) -> ::std::option::Option<&str> {
         self.chain.as_deref()
     }
 }
@@ -37,40 +37,42 @@ impl SslConfiguration {
 
 /// A builder for [`SslConfiguration`](crate::types::SslConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SslConfigurationBuilder {
-    pub(crate) certificate: std::option::Option<std::string::String>,
-    pub(crate) private_key: std::option::Option<std::string::String>,
-    pub(crate) chain: std::option::Option<std::string::String>,
+    pub(crate) certificate: ::std::option::Option<::std::string::String>,
+    pub(crate) private_key: ::std::option::Option<::std::string::String>,
+    pub(crate) chain: ::std::option::Option<::std::string::String>,
 }
 impl SslConfigurationBuilder {
     /// <p>The contents of the certificate's domain.crt file.</p>
-    pub fn certificate(mut self, input: impl Into<std::string::String>) -> Self {
-        self.certificate = Some(input.into());
+    pub fn certificate(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.certificate = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The contents of the certificate's domain.crt file.</p>
-    pub fn set_certificate(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_certificate(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.certificate = input;
         self
     }
     /// <p>The private key; the contents of the certificate's domain.kex file.</p>
-    pub fn private_key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.private_key = Some(input.into());
+    pub fn private_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.private_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The private key; the contents of the certificate's domain.kex file.</p>
-    pub fn set_private_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_private_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.private_key = input;
         self
     }
     /// <p>Optional. Can be used to specify an intermediate certificate authority key or client authentication.</p>
-    pub fn chain(mut self, input: impl Into<std::string::String>) -> Self {
-        self.chain = Some(input.into());
+    pub fn chain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.chain = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Optional. Can be used to specify an intermediate certificate authority key or client authentication.</p>
-    pub fn set_chain(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_chain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.chain = input;
         self
     }

@@ -2,7 +2,7 @@
 
 /// <p>Determines whether Amazon Lex will use Amazon Comprehend to detect the sentiment of user utterances.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SentimentAnalysisSettings {
     /// <p>Sets whether Amazon Lex uses Amazon Comprehend to detect the sentiment of user utterances.</p>
     #[doc(hidden)]
@@ -23,18 +23,20 @@ impl SentimentAnalysisSettings {
 
 /// A builder for [`SentimentAnalysisSettings`](crate::types::SentimentAnalysisSettings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SentimentAnalysisSettingsBuilder {
-    pub(crate) detect_sentiment: std::option::Option<bool>,
+    pub(crate) detect_sentiment: ::std::option::Option<bool>,
 }
 impl SentimentAnalysisSettingsBuilder {
     /// <p>Sets whether Amazon Lex uses Amazon Comprehend to detect the sentiment of user utterances.</p>
     pub fn detect_sentiment(mut self, input: bool) -> Self {
-        self.detect_sentiment = Some(input);
+        self.detect_sentiment = ::std::option::Option::Some(input);
         self
     }
     /// <p>Sets whether Amazon Lex uses Amazon Comprehend to detect the sentiment of user utterances.</p>
-    pub fn set_detect_sentiment(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_detect_sentiment(mut self, input: ::std::option::Option<bool>) -> Self {
         self.detect_sentiment = input;
         self
     }

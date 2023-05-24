@@ -3,33 +3,33 @@
 /// <p>Provides the configuration information for invoking a Lambda function in Lambda to alter document metadata and content when ingesting documents into Amazon Kendra. You can configure your Lambda function using <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_CustomDocumentEnrichmentConfiguration.html">PreExtractionHookConfiguration</a> if you want to apply advanced alterations on the original or raw documents. If you want to apply advanced alterations on the Amazon Kendra structured documents, you must configure your Lambda function using <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_CustomDocumentEnrichmentConfiguration.html">PostExtractionHookConfiguration</a>. You can only invoke one Lambda function. However, this function can invoke other functions it requires.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HookConfiguration {
     /// <p>The condition used for when a Lambda function should be invoked.</p>
     /// <p>For example, you can specify a condition that if there are empty date-time values, then Amazon Kendra should invoke a function that inserts the current date-time.</p>
     #[doc(hidden)]
-    pub invocation_condition: std::option::Option<crate::types::DocumentAttributeCondition>,
+    pub invocation_condition: ::std::option::Option<crate::types::DocumentAttributeCondition>,
     /// <p>The Amazon Resource Name (ARN) of a role with permission to run a Lambda function during ingestion. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
     #[doc(hidden)]
-    pub lambda_arn: std::option::Option<std::string::String>,
+    pub lambda_arn: ::std::option::Option<::std::string::String>,
     /// <p>Stores the original, raw documents or the structured, parsed documents before and after altering them. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html#cde-data-contracts-lambda">Data contracts for Lambda functions</a>.</p>
     #[doc(hidden)]
-    pub s3_bucket: std::option::Option<std::string::String>,
+    pub s3_bucket: ::std::option::Option<::std::string::String>,
 }
 impl HookConfiguration {
     /// <p>The condition used for when a Lambda function should be invoked.</p>
     /// <p>For example, you can specify a condition that if there are empty date-time values, then Amazon Kendra should invoke a function that inserts the current date-time.</p>
     pub fn invocation_condition(
         &self,
-    ) -> std::option::Option<&crate::types::DocumentAttributeCondition> {
+    ) -> ::std::option::Option<&crate::types::DocumentAttributeCondition> {
         self.invocation_condition.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of a role with permission to run a Lambda function during ingestion. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
-    pub fn lambda_arn(&self) -> std::option::Option<&str> {
+    pub fn lambda_arn(&self) -> ::std::option::Option<&str> {
         self.lambda_arn.as_deref()
     }
     /// <p>Stores the original, raw documents or the structured, parsed documents before and after altering them. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html#cde-data-contracts-lambda">Data contracts for Lambda functions</a>.</p>
-    pub fn s3_bucket(&self) -> std::option::Option<&str> {
+    pub fn s3_bucket(&self) -> ::std::option::Option<&str> {
         self.s3_bucket.as_deref()
     }
 }
@@ -42,45 +42,48 @@ impl HookConfiguration {
 
 /// A builder for [`HookConfiguration`](crate::types::HookConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct HookConfigurationBuilder {
-    pub(crate) invocation_condition: std::option::Option<crate::types::DocumentAttributeCondition>,
-    pub(crate) lambda_arn: std::option::Option<std::string::String>,
-    pub(crate) s3_bucket: std::option::Option<std::string::String>,
+    pub(crate) invocation_condition:
+        ::std::option::Option<crate::types::DocumentAttributeCondition>,
+    pub(crate) lambda_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) s3_bucket: ::std::option::Option<::std::string::String>,
 }
 impl HookConfigurationBuilder {
     /// <p>The condition used for when a Lambda function should be invoked.</p>
     /// <p>For example, you can specify a condition that if there are empty date-time values, then Amazon Kendra should invoke a function that inserts the current date-time.</p>
     pub fn invocation_condition(mut self, input: crate::types::DocumentAttributeCondition) -> Self {
-        self.invocation_condition = Some(input);
+        self.invocation_condition = ::std::option::Option::Some(input);
         self
     }
     /// <p>The condition used for when a Lambda function should be invoked.</p>
     /// <p>For example, you can specify a condition that if there are empty date-time values, then Amazon Kendra should invoke a function that inserts the current date-time.</p>
     pub fn set_invocation_condition(
         mut self,
-        input: std::option::Option<crate::types::DocumentAttributeCondition>,
+        input: ::std::option::Option<crate::types::DocumentAttributeCondition>,
     ) -> Self {
         self.invocation_condition = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of a role with permission to run a Lambda function during ingestion. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
-    pub fn lambda_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.lambda_arn = Some(input.into());
+    pub fn lambda_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.lambda_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of a role with permission to run a Lambda function during ingestion. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
-    pub fn set_lambda_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_lambda_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lambda_arn = input;
         self
     }
     /// <p>Stores the original, raw documents or the structured, parsed documents before and after altering them. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html#cde-data-contracts-lambda">Data contracts for Lambda functions</a>.</p>
-    pub fn s3_bucket(mut self, input: impl Into<std::string::String>) -> Self {
-        self.s3_bucket = Some(input.into());
+    pub fn s3_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.s3_bucket = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Stores the original, raw documents or the structured, parsed documents before and after altering them. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html#cde-data-contracts-lambda">Data contracts for Lambda functions</a>.</p>
-    pub fn set_s3_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_s3_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_bucket = input;
         self
     }

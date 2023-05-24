@@ -2,15 +2,15 @@
 
 /// <p>Contains the parameters for <code>DescribeJobs</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeJobsInput {
     /// <p>A list of up to 100 job IDs.</p>
     #[doc(hidden)]
-    pub jobs: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub jobs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeJobsInput {
     /// <p>A list of up to 100 job IDs.</p>
-    pub fn jobs(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn jobs(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.jobs.as_deref()
     }
 }
@@ -23,9 +23,11 @@ impl DescribeJobsInput {
 
 /// A builder for [`DescribeJobsInput`](crate::operation::describe_jobs::DescribeJobsInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeJobsInputBuilder {
-    pub(crate) jobs: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) jobs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeJobsInputBuilder {
     /// Appends an item to `jobs`.
@@ -33,16 +35,16 @@ impl DescribeJobsInputBuilder {
     /// To override the contents of this collection use [`set_jobs`](Self::set_jobs).
     ///
     /// <p>A list of up to 100 job IDs.</p>
-    pub fn jobs(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn jobs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.jobs.unwrap_or_default();
         v.push(input.into());
-        self.jobs = Some(v);
+        self.jobs = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of up to 100 job IDs.</p>
     pub fn set_jobs(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.jobs = input;
         self
@@ -50,10 +52,12 @@ impl DescribeJobsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeJobsInput`](crate::operation::describe_jobs::DescribeJobsInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::describe_jobs::DescribeJobsInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::describe_jobs::DescribeJobsInput { jobs: self.jobs })
+        ::std::result::Result::Ok(crate::operation::describe_jobs::DescribeJobsInput {
+            jobs: self.jobs,
+        })
     }
 }

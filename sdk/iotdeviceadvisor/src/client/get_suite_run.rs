@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetSuiteRun`](crate::operation::get_suite_run::builders::GetSuiteRunFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`suite_definition_id(impl Into<String>)`](crate::operation::get_suite_run::builders::GetSuiteRunFluentBuilder::suite_definition_id) / [`set_suite_definition_id(Option<String>)`](crate::operation::get_suite_run::builders::GetSuiteRunFluentBuilder::set_suite_definition_id): <p>Suite definition ID for the test suite run.</p>
-    ///   - [`suite_run_id(impl Into<String>)`](crate::operation::get_suite_run::builders::GetSuiteRunFluentBuilder::suite_run_id) / [`set_suite_run_id(Option<String>)`](crate::operation::get_suite_run::builders::GetSuiteRunFluentBuilder::set_suite_run_id): <p>Suite run ID for the test suite run.</p>
+    ///   - [`suite_definition_id(impl ::std::convert::Into<String>)`](crate::operation::get_suite_run::builders::GetSuiteRunFluentBuilder::suite_definition_id) / [`set_suite_definition_id(Option<String>)`](crate::operation::get_suite_run::builders::GetSuiteRunFluentBuilder::set_suite_definition_id): <p>Suite definition ID for the test suite run.</p>
+    ///   - [`suite_run_id(impl ::std::convert::Into<String>)`](crate::operation::get_suite_run::builders::GetSuiteRunFluentBuilder::suite_run_id) / [`set_suite_run_id(Option<String>)`](crate::operation::get_suite_run::builders::GetSuiteRunFluentBuilder::set_suite_run_id): <p>Suite run ID for the test suite run.</p>
     /// - On success, responds with [`GetSuiteRunOutput`](crate::operation::get_suite_run::GetSuiteRunOutput) with field(s):
     ///   - [`suite_definition_id(Option<String>)`](crate::operation::get_suite_run::GetSuiteRunOutput::suite_definition_id): <p>Suite definition ID for the test suite run.</p>
     ///   - [`suite_definition_version(Option<String>)`](crate::operation::get_suite_run::GetSuiteRunOutput::suite_definition_version): <p>Suite definition version for the test suite run.</p>

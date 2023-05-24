@@ -2,50 +2,50 @@
 
 /// Tile and thumbnail settings applicable when imageBasedTrickPlay is ADVANCED
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HlsImageBasedTrickPlaySettings {
     /// The cadence MediaConvert follows for generating thumbnails. If set to FOLLOW_IFRAME, MediaConvert generates thumbnails for each IDR frame in the output (matching the GOP cadence). If set to FOLLOW_CUSTOM, MediaConvert generates thumbnails according to the interval you specify in thumbnailInterval.
     #[doc(hidden)]
-    pub interval_cadence: std::option::Option<crate::types::HlsIntervalCadence>,
+    pub interval_cadence: ::std::option::Option<crate::types::HlsIntervalCadence>,
     /// Height of each thumbnail within each tile image, in pixels. Leave blank to maintain aspect ratio with thumbnail width. If following the aspect ratio would lead to a total tile height greater than 4096, then the job will be rejected. Must be divisible by 2.
     #[doc(hidden)]
-    pub thumbnail_height: std::option::Option<i32>,
+    pub thumbnail_height: ::std::option::Option<i32>,
     /// Enter the interval, in seconds, that MediaConvert uses to generate thumbnails. If the interval you enter doesn't align with the output frame rate, MediaConvert automatically rounds the interval to align with the output frame rate. For example, if the output frame rate is 29.97 frames per second and you enter 5, MediaConvert uses a 150 frame interval to generate thumbnails.
     #[doc(hidden)]
-    pub thumbnail_interval: std::option::Option<f64>,
+    pub thumbnail_interval: ::std::option::Option<f64>,
     /// Width of each thumbnail within each tile image, in pixels. Default is 312. Must be divisible by 8.
     #[doc(hidden)]
-    pub thumbnail_width: std::option::Option<i32>,
+    pub thumbnail_width: ::std::option::Option<i32>,
     /// Number of thumbnails in each column of a tile image. Set a value between 2 and 2048. Must be divisible by 2.
     #[doc(hidden)]
-    pub tile_height: std::option::Option<i32>,
+    pub tile_height: ::std::option::Option<i32>,
     /// Number of thumbnails in each row of a tile image. Set a value between 1 and 512.
     #[doc(hidden)]
-    pub tile_width: std::option::Option<i32>,
+    pub tile_width: ::std::option::Option<i32>,
 }
 impl HlsImageBasedTrickPlaySettings {
     /// The cadence MediaConvert follows for generating thumbnails. If set to FOLLOW_IFRAME, MediaConvert generates thumbnails for each IDR frame in the output (matching the GOP cadence). If set to FOLLOW_CUSTOM, MediaConvert generates thumbnails according to the interval you specify in thumbnailInterval.
-    pub fn interval_cadence(&self) -> std::option::Option<&crate::types::HlsIntervalCadence> {
+    pub fn interval_cadence(&self) -> ::std::option::Option<&crate::types::HlsIntervalCadence> {
         self.interval_cadence.as_ref()
     }
     /// Height of each thumbnail within each tile image, in pixels. Leave blank to maintain aspect ratio with thumbnail width. If following the aspect ratio would lead to a total tile height greater than 4096, then the job will be rejected. Must be divisible by 2.
-    pub fn thumbnail_height(&self) -> std::option::Option<i32> {
+    pub fn thumbnail_height(&self) -> ::std::option::Option<i32> {
         self.thumbnail_height
     }
     /// Enter the interval, in seconds, that MediaConvert uses to generate thumbnails. If the interval you enter doesn't align with the output frame rate, MediaConvert automatically rounds the interval to align with the output frame rate. For example, if the output frame rate is 29.97 frames per second and you enter 5, MediaConvert uses a 150 frame interval to generate thumbnails.
-    pub fn thumbnail_interval(&self) -> std::option::Option<f64> {
+    pub fn thumbnail_interval(&self) -> ::std::option::Option<f64> {
         self.thumbnail_interval
     }
     /// Width of each thumbnail within each tile image, in pixels. Default is 312. Must be divisible by 8.
-    pub fn thumbnail_width(&self) -> std::option::Option<i32> {
+    pub fn thumbnail_width(&self) -> ::std::option::Option<i32> {
         self.thumbnail_width
     }
     /// Number of thumbnails in each column of a tile image. Set a value between 2 and 2048. Must be divisible by 2.
-    pub fn tile_height(&self) -> std::option::Option<i32> {
+    pub fn tile_height(&self) -> ::std::option::Option<i32> {
         self.tile_height
     }
     /// Number of thumbnails in each row of a tile image. Set a value between 1 and 512.
-    pub fn tile_width(&self) -> std::option::Option<i32> {
+    pub fn tile_width(&self) -> ::std::option::Option<i32> {
         self.tile_width
     }
 }
@@ -58,76 +58,78 @@ impl HlsImageBasedTrickPlaySettings {
 
 /// A builder for [`HlsImageBasedTrickPlaySettings`](crate::types::HlsImageBasedTrickPlaySettings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct HlsImageBasedTrickPlaySettingsBuilder {
-    pub(crate) interval_cadence: std::option::Option<crate::types::HlsIntervalCadence>,
-    pub(crate) thumbnail_height: std::option::Option<i32>,
-    pub(crate) thumbnail_interval: std::option::Option<f64>,
-    pub(crate) thumbnail_width: std::option::Option<i32>,
-    pub(crate) tile_height: std::option::Option<i32>,
-    pub(crate) tile_width: std::option::Option<i32>,
+    pub(crate) interval_cadence: ::std::option::Option<crate::types::HlsIntervalCadence>,
+    pub(crate) thumbnail_height: ::std::option::Option<i32>,
+    pub(crate) thumbnail_interval: ::std::option::Option<f64>,
+    pub(crate) thumbnail_width: ::std::option::Option<i32>,
+    pub(crate) tile_height: ::std::option::Option<i32>,
+    pub(crate) tile_width: ::std::option::Option<i32>,
 }
 impl HlsImageBasedTrickPlaySettingsBuilder {
     /// The cadence MediaConvert follows for generating thumbnails. If set to FOLLOW_IFRAME, MediaConvert generates thumbnails for each IDR frame in the output (matching the GOP cadence). If set to FOLLOW_CUSTOM, MediaConvert generates thumbnails according to the interval you specify in thumbnailInterval.
     pub fn interval_cadence(mut self, input: crate::types::HlsIntervalCadence) -> Self {
-        self.interval_cadence = Some(input);
+        self.interval_cadence = ::std::option::Option::Some(input);
         self
     }
     /// The cadence MediaConvert follows for generating thumbnails. If set to FOLLOW_IFRAME, MediaConvert generates thumbnails for each IDR frame in the output (matching the GOP cadence). If set to FOLLOW_CUSTOM, MediaConvert generates thumbnails according to the interval you specify in thumbnailInterval.
     pub fn set_interval_cadence(
         mut self,
-        input: std::option::Option<crate::types::HlsIntervalCadence>,
+        input: ::std::option::Option<crate::types::HlsIntervalCadence>,
     ) -> Self {
         self.interval_cadence = input;
         self
     }
     /// Height of each thumbnail within each tile image, in pixels. Leave blank to maintain aspect ratio with thumbnail width. If following the aspect ratio would lead to a total tile height greater than 4096, then the job will be rejected. Must be divisible by 2.
     pub fn thumbnail_height(mut self, input: i32) -> Self {
-        self.thumbnail_height = Some(input);
+        self.thumbnail_height = ::std::option::Option::Some(input);
         self
     }
     /// Height of each thumbnail within each tile image, in pixels. Leave blank to maintain aspect ratio with thumbnail width. If following the aspect ratio would lead to a total tile height greater than 4096, then the job will be rejected. Must be divisible by 2.
-    pub fn set_thumbnail_height(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_thumbnail_height(mut self, input: ::std::option::Option<i32>) -> Self {
         self.thumbnail_height = input;
         self
     }
     /// Enter the interval, in seconds, that MediaConvert uses to generate thumbnails. If the interval you enter doesn't align with the output frame rate, MediaConvert automatically rounds the interval to align with the output frame rate. For example, if the output frame rate is 29.97 frames per second and you enter 5, MediaConvert uses a 150 frame interval to generate thumbnails.
     pub fn thumbnail_interval(mut self, input: f64) -> Self {
-        self.thumbnail_interval = Some(input);
+        self.thumbnail_interval = ::std::option::Option::Some(input);
         self
     }
     /// Enter the interval, in seconds, that MediaConvert uses to generate thumbnails. If the interval you enter doesn't align with the output frame rate, MediaConvert automatically rounds the interval to align with the output frame rate. For example, if the output frame rate is 29.97 frames per second and you enter 5, MediaConvert uses a 150 frame interval to generate thumbnails.
-    pub fn set_thumbnail_interval(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_thumbnail_interval(mut self, input: ::std::option::Option<f64>) -> Self {
         self.thumbnail_interval = input;
         self
     }
     /// Width of each thumbnail within each tile image, in pixels. Default is 312. Must be divisible by 8.
     pub fn thumbnail_width(mut self, input: i32) -> Self {
-        self.thumbnail_width = Some(input);
+        self.thumbnail_width = ::std::option::Option::Some(input);
         self
     }
     /// Width of each thumbnail within each tile image, in pixels. Default is 312. Must be divisible by 8.
-    pub fn set_thumbnail_width(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_thumbnail_width(mut self, input: ::std::option::Option<i32>) -> Self {
         self.thumbnail_width = input;
         self
     }
     /// Number of thumbnails in each column of a tile image. Set a value between 2 and 2048. Must be divisible by 2.
     pub fn tile_height(mut self, input: i32) -> Self {
-        self.tile_height = Some(input);
+        self.tile_height = ::std::option::Option::Some(input);
         self
     }
     /// Number of thumbnails in each column of a tile image. Set a value between 2 and 2048. Must be divisible by 2.
-    pub fn set_tile_height(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_tile_height(mut self, input: ::std::option::Option<i32>) -> Self {
         self.tile_height = input;
         self
     }
     /// Number of thumbnails in each row of a tile image. Set a value between 1 and 512.
     pub fn tile_width(mut self, input: i32) -> Self {
-        self.tile_width = Some(input);
+        self.tile_width = ::std::option::Option::Some(input);
         self
     }
     /// Number of thumbnails in each row of a tile image. Set a value between 1 and 512.
-    pub fn set_tile_width(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_tile_width(mut self, input: ::std::option::Option<i32>) -> Self {
         self.tile_width = input;
         self
     }

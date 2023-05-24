@@ -2,57 +2,57 @@
 
 /// <p>Describes a route table.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RouteTable {
     /// <p>The associations between the route table and one or more subnets or a gateway.</p>
     #[doc(hidden)]
-    pub associations: std::option::Option<std::vec::Vec<crate::types::RouteTableAssociation>>,
+    pub associations: ::std::option::Option<::std::vec::Vec<crate::types::RouteTableAssociation>>,
     /// <p>Any virtual private gateway (VGW) propagating routes.</p>
     #[doc(hidden)]
-    pub propagating_vgws: std::option::Option<std::vec::Vec<crate::types::PropagatingVgw>>,
+    pub propagating_vgws: ::std::option::Option<::std::vec::Vec<crate::types::PropagatingVgw>>,
     /// <p>The ID of the route table.</p>
     #[doc(hidden)]
-    pub route_table_id: std::option::Option<std::string::String>,
+    pub route_table_id: ::std::option::Option<::std::string::String>,
     /// <p>The routes in the route table.</p>
     #[doc(hidden)]
-    pub routes: std::option::Option<std::vec::Vec<crate::types::Route>>,
+    pub routes: ::std::option::Option<::std::vec::Vec<crate::types::Route>>,
     /// <p>Any tags assigned to the route table.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The ID of the VPC.</p>
     #[doc(hidden)]
-    pub vpc_id: std::option::Option<std::string::String>,
+    pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services account that owns the route table.</p>
     #[doc(hidden)]
-    pub owner_id: std::option::Option<std::string::String>,
+    pub owner_id: ::std::option::Option<::std::string::String>,
 }
 impl RouteTable {
     /// <p>The associations between the route table and one or more subnets or a gateway.</p>
-    pub fn associations(&self) -> std::option::Option<&[crate::types::RouteTableAssociation]> {
+    pub fn associations(&self) -> ::std::option::Option<&[crate::types::RouteTableAssociation]> {
         self.associations.as_deref()
     }
     /// <p>Any virtual private gateway (VGW) propagating routes.</p>
-    pub fn propagating_vgws(&self) -> std::option::Option<&[crate::types::PropagatingVgw]> {
+    pub fn propagating_vgws(&self) -> ::std::option::Option<&[crate::types::PropagatingVgw]> {
         self.propagating_vgws.as_deref()
     }
     /// <p>The ID of the route table.</p>
-    pub fn route_table_id(&self) -> std::option::Option<&str> {
+    pub fn route_table_id(&self) -> ::std::option::Option<&str> {
         self.route_table_id.as_deref()
     }
     /// <p>The routes in the route table.</p>
-    pub fn routes(&self) -> std::option::Option<&[crate::types::Route]> {
+    pub fn routes(&self) -> ::std::option::Option<&[crate::types::Route]> {
         self.routes.as_deref()
     }
     /// <p>Any tags assigned to the route table.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The ID of the VPC.</p>
-    pub fn vpc_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
     /// <p>The ID of the Amazon Web Services account that owns the route table.</p>
-    pub fn owner_id(&self) -> std::option::Option<&str> {
+    pub fn owner_id(&self) -> ::std::option::Option<&str> {
         self.owner_id.as_deref()
     }
 }
@@ -65,16 +65,19 @@ impl RouteTable {
 
 /// A builder for [`RouteTable`](crate::types::RouteTable).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RouteTableBuilder {
     pub(crate) associations:
-        std::option::Option<std::vec::Vec<crate::types::RouteTableAssociation>>,
-    pub(crate) propagating_vgws: std::option::Option<std::vec::Vec<crate::types::PropagatingVgw>>,
-    pub(crate) route_table_id: std::option::Option<std::string::String>,
-    pub(crate) routes: std::option::Option<std::vec::Vec<crate::types::Route>>,
-    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    pub(crate) vpc_id: std::option::Option<std::string::String>,
-    pub(crate) owner_id: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::RouteTableAssociation>>,
+    pub(crate) propagating_vgws:
+        ::std::option::Option<::std::vec::Vec<crate::types::PropagatingVgw>>,
+    pub(crate) route_table_id: ::std::option::Option<::std::string::String>,
+    pub(crate) routes: ::std::option::Option<::std::vec::Vec<crate::types::Route>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
+    pub(crate) owner_id: ::std::option::Option<::std::string::String>,
 }
 impl RouteTableBuilder {
     /// Appends an item to `associations`.
@@ -85,13 +88,13 @@ impl RouteTableBuilder {
     pub fn associations(mut self, input: crate::types::RouteTableAssociation) -> Self {
         let mut v = self.associations.unwrap_or_default();
         v.push(input);
-        self.associations = Some(v);
+        self.associations = ::std::option::Option::Some(v);
         self
     }
     /// <p>The associations between the route table and one or more subnets or a gateway.</p>
     pub fn set_associations(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RouteTableAssociation>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::RouteTableAssociation>>,
     ) -> Self {
         self.associations = input;
         self
@@ -104,24 +107,30 @@ impl RouteTableBuilder {
     pub fn propagating_vgws(mut self, input: crate::types::PropagatingVgw) -> Self {
         let mut v = self.propagating_vgws.unwrap_or_default();
         v.push(input);
-        self.propagating_vgws = Some(v);
+        self.propagating_vgws = ::std::option::Option::Some(v);
         self
     }
     /// <p>Any virtual private gateway (VGW) propagating routes.</p>
     pub fn set_propagating_vgws(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PropagatingVgw>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PropagatingVgw>>,
     ) -> Self {
         self.propagating_vgws = input;
         self
     }
     /// <p>The ID of the route table.</p>
-    pub fn route_table_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.route_table_id = Some(input.into());
+    pub fn route_table_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.route_table_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the route table.</p>
-    pub fn set_route_table_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_route_table_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.route_table_id = input;
         self
     }
@@ -133,13 +142,13 @@ impl RouteTableBuilder {
     pub fn routes(mut self, input: crate::types::Route) -> Self {
         let mut v = self.routes.unwrap_or_default();
         v.push(input);
-        self.routes = Some(v);
+        self.routes = ::std::option::Option::Some(v);
         self
     }
     /// <p>The routes in the route table.</p>
     pub fn set_routes(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Route>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Route>>,
     ) -> Self {
         self.routes = input;
         self
@@ -152,34 +161,34 @@ impl RouteTableBuilder {
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
-        self.tags = Some(v);
+        self.tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>Any tags assigned to the route table.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tags = input;
         self
     }
     /// <p>The ID of the VPC.</p>
-    pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.vpc_id = Some(input.into());
+    pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.vpc_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the VPC.</p>
-    pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
     }
     /// <p>The ID of the Amazon Web Services account that owns the route table.</p>
-    pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.owner_id = Some(input.into());
+    pub fn owner_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.owner_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that owns the route table.</p>
-    pub fn set_owner_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_owner_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner_id = input;
         self
     }

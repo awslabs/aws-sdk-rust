@@ -2,22 +2,22 @@
 
 /// <p>List of filter keys that you can use for LIST, UPDATE, and DELETE requests to OpenSearch Serverless collections.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CollectionFilters {
     /// <p>The name of the collection.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the collection.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::CollectionStatus>,
+    pub status: ::std::option::Option<crate::types::CollectionStatus>,
 }
 impl CollectionFilters {
     /// <p>The name of the collection.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The current status of the collection.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::CollectionStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::CollectionStatus> {
         self.status.as_ref()
     }
 }
@@ -30,31 +30,33 @@ impl CollectionFilters {
 
 /// A builder for [`CollectionFilters`](crate::types::CollectionFilters).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CollectionFiltersBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::CollectionStatus>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::CollectionStatus>,
 }
 impl CollectionFiltersBuilder {
     /// <p>The name of the collection.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the collection.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The current status of the collection.</p>
     pub fn status(mut self, input: crate::types::CollectionStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current status of the collection.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::CollectionStatus>,
+        input: ::std::option::Option<crate::types::CollectionStatus>,
     ) -> Self {
         self.status = input;
         self

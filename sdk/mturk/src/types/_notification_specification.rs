@@ -2,7 +2,7 @@
 
 /// <p>The NotificationSpecification data structure describes a HIT event notification for a HIT type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NotificationSpecification {
     /// <p> The target for notification messages. The Destination’s format is determined by the specified Transport: </p>
     /// <ul>
@@ -11,16 +11,16 @@ pub struct NotificationSpecification {
     /// <li> <p>When Transport is SNS, the Destination is the ARN of your topic.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub destination: std::option::Option<std::string::String>,
+    pub destination: ::std::option::Option<::std::string::String>,
     /// <p> The method Amazon Mechanical Turk uses to send the notification. Valid Values: Email | SQS | SNS. </p>
     #[doc(hidden)]
-    pub transport: std::option::Option<crate::types::NotificationTransport>,
+    pub transport: ::std::option::Option<crate::types::NotificationTransport>,
     /// <p>The version of the Notification API to use. Valid value is 2006-05-05.</p>
     #[doc(hidden)]
-    pub version: std::option::Option<std::string::String>,
+    pub version: ::std::option::Option<::std::string::String>,
     /// <p> The list of events that should cause notifications to be sent. Valid Values: AssignmentAccepted | AssignmentAbandoned | AssignmentReturned | AssignmentSubmitted | AssignmentRejected | AssignmentApproved | HITCreated | HITExtended | HITDisposed | HITReviewable | HITExpired | Ping. The Ping event is only valid for the SendTestEventNotification operation. </p>
     #[doc(hidden)]
-    pub event_types: std::option::Option<std::vec::Vec<crate::types::EventType>>,
+    pub event_types: ::std::option::Option<::std::vec::Vec<crate::types::EventType>>,
 }
 impl NotificationSpecification {
     /// <p> The target for notification messages. The Destination’s format is determined by the specified Transport: </p>
@@ -29,19 +29,19 @@ impl NotificationSpecification {
     /// <li> <p>When Transport is SQS, the Destination is your queue URL.</p> </li>
     /// <li> <p>When Transport is SNS, the Destination is the ARN of your topic.</p> </li>
     /// </ul>
-    pub fn destination(&self) -> std::option::Option<&str> {
+    pub fn destination(&self) -> ::std::option::Option<&str> {
         self.destination.as_deref()
     }
     /// <p> The method Amazon Mechanical Turk uses to send the notification. Valid Values: Email | SQS | SNS. </p>
-    pub fn transport(&self) -> std::option::Option<&crate::types::NotificationTransport> {
+    pub fn transport(&self) -> ::std::option::Option<&crate::types::NotificationTransport> {
         self.transport.as_ref()
     }
     /// <p>The version of the Notification API to use. Valid value is 2006-05-05.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<&str> {
         self.version.as_deref()
     }
     /// <p> The list of events that should cause notifications to be sent. Valid Values: AssignmentAccepted | AssignmentAbandoned | AssignmentReturned | AssignmentSubmitted | AssignmentRejected | AssignmentApproved | HITCreated | HITExtended | HITDisposed | HITReviewable | HITExpired | Ping. The Ping event is only valid for the SendTestEventNotification operation. </p>
-    pub fn event_types(&self) -> std::option::Option<&[crate::types::EventType]> {
+    pub fn event_types(&self) -> ::std::option::Option<&[crate::types::EventType]> {
         self.event_types.as_deref()
     }
 }
@@ -54,12 +54,14 @@ impl NotificationSpecification {
 
 /// A builder for [`NotificationSpecification`](crate::types::NotificationSpecification).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NotificationSpecificationBuilder {
-    pub(crate) destination: std::option::Option<std::string::String>,
-    pub(crate) transport: std::option::Option<crate::types::NotificationTransport>,
-    pub(crate) version: std::option::Option<std::string::String>,
-    pub(crate) event_types: std::option::Option<std::vec::Vec<crate::types::EventType>>,
+    pub(crate) destination: ::std::option::Option<::std::string::String>,
+    pub(crate) transport: ::std::option::Option<crate::types::NotificationTransport>,
+    pub(crate) version: ::std::option::Option<::std::string::String>,
+    pub(crate) event_types: ::std::option::Option<::std::vec::Vec<crate::types::EventType>>,
 }
 impl NotificationSpecificationBuilder {
     /// <p> The target for notification messages. The Destination’s format is determined by the specified Transport: </p>
@@ -68,8 +70,8 @@ impl NotificationSpecificationBuilder {
     /// <li> <p>When Transport is SQS, the Destination is your queue URL.</p> </li>
     /// <li> <p>When Transport is SNS, the Destination is the ARN of your topic.</p> </li>
     /// </ul>
-    pub fn destination(mut self, input: impl Into<std::string::String>) -> Self {
-        self.destination = Some(input.into());
+    pub fn destination(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.destination = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The target for notification messages. The Destination’s format is determined by the specified Transport: </p>
@@ -78,30 +80,30 @@ impl NotificationSpecificationBuilder {
     /// <li> <p>When Transport is SQS, the Destination is your queue URL.</p> </li>
     /// <li> <p>When Transport is SNS, the Destination is the ARN of your topic.</p> </li>
     /// </ul>
-    pub fn set_destination(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_destination(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination = input;
         self
     }
     /// <p> The method Amazon Mechanical Turk uses to send the notification. Valid Values: Email | SQS | SNS. </p>
     pub fn transport(mut self, input: crate::types::NotificationTransport) -> Self {
-        self.transport = Some(input);
+        self.transport = ::std::option::Option::Some(input);
         self
     }
     /// <p> The method Amazon Mechanical Turk uses to send the notification. Valid Values: Email | SQS | SNS. </p>
     pub fn set_transport(
         mut self,
-        input: std::option::Option<crate::types::NotificationTransport>,
+        input: ::std::option::Option<crate::types::NotificationTransport>,
     ) -> Self {
         self.transport = input;
         self
     }
     /// <p>The version of the Notification API to use. Valid value is 2006-05-05.</p>
-    pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.version = Some(input.into());
+    pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the Notification API to use. Valid value is 2006-05-05.</p>
-    pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
     }
@@ -113,13 +115,13 @@ impl NotificationSpecificationBuilder {
     pub fn event_types(mut self, input: crate::types::EventType) -> Self {
         let mut v = self.event_types.unwrap_or_default();
         v.push(input);
-        self.event_types = Some(v);
+        self.event_types = ::std::option::Option::Some(v);
         self
     }
     /// <p> The list of events that should cause notifications to be sent. Valid Values: AssignmentAccepted | AssignmentAbandoned | AssignmentReturned | AssignmentSubmitted | AssignmentRejected | AssignmentApproved | HITCreated | HITExtended | HITDisposed | HITReviewable | HITExpired | Ping. The Ping event is only valid for the SendTestEventNotification operation. </p>
     pub fn set_event_types(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::EventType>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::EventType>>,
     ) -> Self {
         self.event_types = input;
         self

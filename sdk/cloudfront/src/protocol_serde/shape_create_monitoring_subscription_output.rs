@@ -2,7 +2,7 @@
 pub(crate) fn de_monitoring_subscription_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::types::MonitoringSubscription>,
+    ::std::option::Option<crate::types::MonitoringSubscription>,
     crate::operation::create_monitoring_subscription::CreateMonitoringSubscriptionError,
 > {
     (!body.is_empty()).then(||{
@@ -12,13 +12,13 @@ pub(crate) fn de_monitoring_subscription_payload(
 
 pub fn de_monitoring_subscription(
     inp: &[u8],
-) -> Result<crate::types::MonitoringSubscription, aws_smithy_xml::decode::XmlDecodeError> {
-    let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
+) -> Result<crate::types::MonitoringSubscription, ::aws_smithy_xml::decode::XmlDecodeError> {
+    let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
     let start_el = decoder.start_el();
     if !(start_el.matches("MonitoringSubscription")) {
-        return Err(aws_smithy_xml::decode::XmlDecodeError::custom(format!(
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected MonitoringSubscription got {:?}",
             start_el
         )));

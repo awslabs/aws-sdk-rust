@@ -2,17 +2,17 @@
 
 /// Frame Capture Cdn Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FrameCaptureCdnSettings {
     /// Frame Capture S3 Settings
     #[doc(hidden)]
-    pub frame_capture_s3_settings: std::option::Option<crate::types::FrameCaptureS3Settings>,
+    pub frame_capture_s3_settings: ::std::option::Option<crate::types::FrameCaptureS3Settings>,
 }
 impl FrameCaptureCdnSettings {
     /// Frame Capture S3 Settings
     pub fn frame_capture_s3_settings(
         &self,
-    ) -> std::option::Option<&crate::types::FrameCaptureS3Settings> {
+    ) -> ::std::option::Option<&crate::types::FrameCaptureS3Settings> {
         self.frame_capture_s3_settings.as_ref()
     }
 }
@@ -25,9 +25,12 @@ impl FrameCaptureCdnSettings {
 
 /// A builder for [`FrameCaptureCdnSettings`](crate::types::FrameCaptureCdnSettings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FrameCaptureCdnSettingsBuilder {
-    pub(crate) frame_capture_s3_settings: std::option::Option<crate::types::FrameCaptureS3Settings>,
+    pub(crate) frame_capture_s3_settings:
+        ::std::option::Option<crate::types::FrameCaptureS3Settings>,
 }
 impl FrameCaptureCdnSettingsBuilder {
     /// Frame Capture S3 Settings
@@ -35,13 +38,13 @@ impl FrameCaptureCdnSettingsBuilder {
         mut self,
         input: crate::types::FrameCaptureS3Settings,
     ) -> Self {
-        self.frame_capture_s3_settings = Some(input);
+        self.frame_capture_s3_settings = ::std::option::Option::Some(input);
         self
     }
     /// Frame Capture S3 Settings
     pub fn set_frame_capture_s3_settings(
         mut self,
-        input: std::option::Option<crate::types::FrameCaptureS3Settings>,
+        input: ::std::option::Option<crate::types::FrameCaptureS3Settings>,
     ) -> Self {
         self.frame_capture_s3_settings = input;
         self

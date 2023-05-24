@@ -2,71 +2,71 @@
 
 /// <p>The summary of the step.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TemplateStepSummary {
     /// <p>The ID of the step.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the step group.</p>
     #[doc(hidden)]
-    pub step_group_id: std::option::Option<std::string::String>,
+    pub step_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the template.</p>
     #[doc(hidden)]
-    pub template_id: std::option::Option<std::string::String>,
+    pub template_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the step.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The action type of the step. You must run and update the status of a manual step for the workflow to continue after the completion of the step.</p>
     #[doc(hidden)]
-    pub step_action_type: std::option::Option<crate::types::StepActionType>,
+    pub step_action_type: ::std::option::Option<crate::types::StepActionType>,
     /// <p>The servers on which to run the script.</p>
     #[doc(hidden)]
-    pub target_type: std::option::Option<crate::types::TargetType>,
+    pub target_type: ::std::option::Option<crate::types::TargetType>,
     /// <p>The owner of the step.</p>
     #[doc(hidden)]
-    pub owner: std::option::Option<crate::types::Owner>,
+    pub owner: ::std::option::Option<crate::types::Owner>,
     /// <p>The previous step.</p>
     #[doc(hidden)]
-    pub previous: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub previous: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The next step.</p>
     #[doc(hidden)]
-    pub next: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub next: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl TemplateStepSummary {
     /// <p>The ID of the step.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The ID of the step group.</p>
-    pub fn step_group_id(&self) -> std::option::Option<&str> {
+    pub fn step_group_id(&self) -> ::std::option::Option<&str> {
         self.step_group_id.as_deref()
     }
     /// <p>The ID of the template.</p>
-    pub fn template_id(&self) -> std::option::Option<&str> {
+    pub fn template_id(&self) -> ::std::option::Option<&str> {
         self.template_id.as_deref()
     }
     /// <p>The name of the step.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The action type of the step. You must run and update the status of a manual step for the workflow to continue after the completion of the step.</p>
-    pub fn step_action_type(&self) -> std::option::Option<&crate::types::StepActionType> {
+    pub fn step_action_type(&self) -> ::std::option::Option<&crate::types::StepActionType> {
         self.step_action_type.as_ref()
     }
     /// <p>The servers on which to run the script.</p>
-    pub fn target_type(&self) -> std::option::Option<&crate::types::TargetType> {
+    pub fn target_type(&self) -> ::std::option::Option<&crate::types::TargetType> {
         self.target_type.as_ref()
     }
     /// <p>The owner of the step.</p>
-    pub fn owner(&self) -> std::option::Option<&crate::types::Owner> {
+    pub fn owner(&self) -> ::std::option::Option<&crate::types::Owner> {
         self.owner.as_ref()
     }
     /// <p>The previous step.</p>
-    pub fn previous(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn previous(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.previous.as_deref()
     }
     /// <p>The next step.</p>
-    pub fn next(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn next(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.next.as_deref()
     }
 }
@@ -79,89 +79,100 @@ impl TemplateStepSummary {
 
 /// A builder for [`TemplateStepSummary`](crate::types::TemplateStepSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TemplateStepSummaryBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) step_group_id: std::option::Option<std::string::String>,
-    pub(crate) template_id: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) step_action_type: std::option::Option<crate::types::StepActionType>,
-    pub(crate) target_type: std::option::Option<crate::types::TargetType>,
-    pub(crate) owner: std::option::Option<crate::types::Owner>,
-    pub(crate) previous: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) next: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) step_group_id: ::std::option::Option<::std::string::String>,
+    pub(crate) template_id: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) step_action_type: ::std::option::Option<crate::types::StepActionType>,
+    pub(crate) target_type: ::std::option::Option<crate::types::TargetType>,
+    pub(crate) owner: ::std::option::Option<crate::types::Owner>,
+    pub(crate) previous: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) next: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl TemplateStepSummaryBuilder {
     /// <p>The ID of the step.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the step.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>The ID of the step group.</p>
-    pub fn step_group_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.step_group_id = Some(input.into());
+    pub fn step_group_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.step_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the step group.</p>
-    pub fn set_step_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_step_group_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.step_group_id = input;
         self
     }
     /// <p>The ID of the template.</p>
-    pub fn template_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.template_id = Some(input.into());
+    pub fn template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.template_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the template.</p>
-    pub fn set_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_id = input;
         self
     }
     /// <p>The name of the step.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the step.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The action type of the step. You must run and update the status of a manual step for the workflow to continue after the completion of the step.</p>
     pub fn step_action_type(mut self, input: crate::types::StepActionType) -> Self {
-        self.step_action_type = Some(input);
+        self.step_action_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The action type of the step. You must run and update the status of a manual step for the workflow to continue after the completion of the step.</p>
     pub fn set_step_action_type(
         mut self,
-        input: std::option::Option<crate::types::StepActionType>,
+        input: ::std::option::Option<crate::types::StepActionType>,
     ) -> Self {
         self.step_action_type = input;
         self
     }
     /// <p>The servers on which to run the script.</p>
     pub fn target_type(mut self, input: crate::types::TargetType) -> Self {
-        self.target_type = Some(input);
+        self.target_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The servers on which to run the script.</p>
-    pub fn set_target_type(mut self, input: std::option::Option<crate::types::TargetType>) -> Self {
+    pub fn set_target_type(
+        mut self,
+        input: ::std::option::Option<crate::types::TargetType>,
+    ) -> Self {
         self.target_type = input;
         self
     }
     /// <p>The owner of the step.</p>
     pub fn owner(mut self, input: crate::types::Owner) -> Self {
-        self.owner = Some(input);
+        self.owner = ::std::option::Option::Some(input);
         self
     }
     /// <p>The owner of the step.</p>
-    pub fn set_owner(mut self, input: std::option::Option<crate::types::Owner>) -> Self {
+    pub fn set_owner(mut self, input: ::std::option::Option<crate::types::Owner>) -> Self {
         self.owner = input;
         self
     }
@@ -170,16 +181,16 @@ impl TemplateStepSummaryBuilder {
     /// To override the contents of this collection use [`set_previous`](Self::set_previous).
     ///
     /// <p>The previous step.</p>
-    pub fn previous(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn previous(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.previous.unwrap_or_default();
         v.push(input.into());
-        self.previous = Some(v);
+        self.previous = ::std::option::Option::Some(v);
         self
     }
     /// <p>The previous step.</p>
     pub fn set_previous(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.previous = input;
         self
@@ -189,16 +200,16 @@ impl TemplateStepSummaryBuilder {
     /// To override the contents of this collection use [`set_next`](Self::set_next).
     ///
     /// <p>The next step.</p>
-    pub fn next(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn next(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.next.unwrap_or_default();
         v.push(input.into());
-        self.next = Some(v);
+        self.next = ::std::option::Option::Some(v);
         self
     }
     /// <p>The next step.</p>
     pub fn set_next(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.next = input;
         self

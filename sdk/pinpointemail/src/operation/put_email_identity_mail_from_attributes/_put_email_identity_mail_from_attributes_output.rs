@@ -2,11 +2,11 @@
 
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutEmailIdentityMailFromAttributesOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for PutEmailIdentityMailFromAttributesOutput {
+impl ::aws_http::request_id::RequestId for PutEmailIdentityMailFromAttributesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -20,7 +20,9 @@ impl PutEmailIdentityMailFromAttributesOutput {
 
 /// A builder for [`PutEmailIdentityMailFromAttributesOutput`](crate::operation::put_email_identity_mail_from_attributes::PutEmailIdentityMailFromAttributesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PutEmailIdentityMailFromAttributesOutputBuilder {
     _request_id: Option<String>,
 }

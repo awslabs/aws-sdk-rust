@@ -2,7 +2,7 @@
 pub(crate) fn de_events_response_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::types::EventsResponse>,
+    ::std::option::Option<crate::types::EventsResponse>,
     crate::operation::put_events::PutEventsError,
 > {
     (!body.is_empty())

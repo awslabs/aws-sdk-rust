@@ -2,11 +2,11 @@
 
 /// <p>The output of the DeleteThing operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteThingOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for DeleteThingOutput {
+impl ::aws_http::request_id::RequestId for DeleteThingOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -20,7 +20,9 @@ impl DeleteThingOutput {
 
 /// A builder for [`DeleteThingOutput`](crate::operation::delete_thing::DeleteThingOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteThingOutputBuilder {
     _request_id: Option<String>,
 }

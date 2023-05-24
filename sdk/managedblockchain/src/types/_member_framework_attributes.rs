@@ -2,15 +2,15 @@
 
 /// <p>Attributes relevant to a member for the blockchain framework that the Managed Blockchain network uses.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MemberFrameworkAttributes {
     /// <p>Attributes of Hyperledger Fabric relevant to a member on a Managed Blockchain network that uses Hyperledger Fabric.</p>
     #[doc(hidden)]
-    pub fabric: std::option::Option<crate::types::MemberFabricAttributes>,
+    pub fabric: ::std::option::Option<crate::types::MemberFabricAttributes>,
 }
 impl MemberFrameworkAttributes {
     /// <p>Attributes of Hyperledger Fabric relevant to a member on a Managed Blockchain network that uses Hyperledger Fabric.</p>
-    pub fn fabric(&self) -> std::option::Option<&crate::types::MemberFabricAttributes> {
+    pub fn fabric(&self) -> ::std::option::Option<&crate::types::MemberFabricAttributes> {
         self.fabric.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl MemberFrameworkAttributes {
 
 /// A builder for [`MemberFrameworkAttributes`](crate::types::MemberFrameworkAttributes).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MemberFrameworkAttributesBuilder {
-    pub(crate) fabric: std::option::Option<crate::types::MemberFabricAttributes>,
+    pub(crate) fabric: ::std::option::Option<crate::types::MemberFabricAttributes>,
 }
 impl MemberFrameworkAttributesBuilder {
     /// <p>Attributes of Hyperledger Fabric relevant to a member on a Managed Blockchain network that uses Hyperledger Fabric.</p>
     pub fn fabric(mut self, input: crate::types::MemberFabricAttributes) -> Self {
-        self.fabric = Some(input);
+        self.fabric = ::std::option::Option::Some(input);
         self
     }
     /// <p>Attributes of Hyperledger Fabric relevant to a member on a Managed Blockchain network that uses Hyperledger Fabric.</p>
     pub fn set_fabric(
         mut self,
-        input: std::option::Option<crate::types::MemberFabricAttributes>,
+        input: ::std::option::Option<crate::types::MemberFabricAttributes>,
     ) -> Self {
         self.fabric = input;
         self

@@ -2,41 +2,41 @@
 
 /// <p>A description of the identity.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeIdentityOutput {
     /// <p>A unique identifier in the format REGION:GUID.</p>
     #[doc(hidden)]
-    pub identity_id: std::option::Option<std::string::String>,
+    pub identity_id: ::std::option::Option<::std::string::String>,
     /// <p>The provider names.</p>
     #[doc(hidden)]
-    pub logins: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub logins: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Date on which the identity was created.</p>
     #[doc(hidden)]
-    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Date on which the identity was last modified.</p>
     #[doc(hidden)]
-    pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
 impl DescribeIdentityOutput {
     /// <p>A unique identifier in the format REGION:GUID.</p>
-    pub fn identity_id(&self) -> std::option::Option<&str> {
+    pub fn identity_id(&self) -> ::std::option::Option<&str> {
         self.identity_id.as_deref()
     }
     /// <p>The provider names.</p>
-    pub fn logins(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn logins(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.logins.as_deref()
     }
     /// <p>Date on which the identity was created.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>Date on which the identity was last modified.</p>
-    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeIdentityOutput {
+impl ::aws_http::request_id::RequestId for DescribeIdentityOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -51,22 +51,24 @@ impl DescribeIdentityOutput {
 
 /// A builder for [`DescribeIdentityOutput`](crate::operation::describe_identity::DescribeIdentityOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeIdentityOutputBuilder {
-    pub(crate) identity_id: std::option::Option<std::string::String>,
-    pub(crate) logins: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) identity_id: ::std::option::Option<::std::string::String>,
+    pub(crate) logins: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
 impl DescribeIdentityOutputBuilder {
     /// <p>A unique identifier in the format REGION:GUID.</p>
-    pub fn identity_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.identity_id = Some(input.into());
+    pub fn identity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.identity_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier in the format REGION:GUID.</p>
-    pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_identity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identity_id = input;
         self
     }
@@ -75,42 +77,42 @@ impl DescribeIdentityOutputBuilder {
     /// To override the contents of this collection use [`set_logins`](Self::set_logins).
     ///
     /// <p>The provider names.</p>
-    pub fn logins(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn logins(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.logins.unwrap_or_default();
         v.push(input.into());
-        self.logins = Some(v);
+        self.logins = ::std::option::Option::Some(v);
         self
     }
     /// <p>The provider names.</p>
     pub fn set_logins(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.logins = input;
         self
     }
     /// <p>Date on which the identity was created.</p>
-    pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_date = Some(input);
+    pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>Date on which the identity was created.</p>
     pub fn set_creation_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_date = input;
         self
     }
     /// <p>Date on which the identity was last modified.</p>
-    pub fn last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_modified_date = Some(input);
+    pub fn last_modified_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_modified_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>Date on which the identity was last modified.</p>
     pub fn set_last_modified_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_modified_date = input;
         self

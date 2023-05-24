@@ -2,7 +2,7 @@
 
 /// <p>Aggregation for numerical values.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NumericalAggregationFunction {
     /// <p>Built-in aggregation functions for numerical values.</p>
     /// <ul>
@@ -20,10 +20,10 @@ pub struct NumericalAggregationFunction {
     /// </ul>
     #[doc(hidden)]
     pub simple_numerical_aggregation:
-        std::option::Option<crate::types::SimpleNumericalAggregationFunction>,
+        ::std::option::Option<crate::types::SimpleNumericalAggregationFunction>,
     /// <p>An aggregation based on the percentile of values in a dimension or measure.</p>
     #[doc(hidden)]
-    pub percentile_aggregation: std::option::Option<crate::types::PercentileAggregation>,
+    pub percentile_aggregation: ::std::option::Option<crate::types::PercentileAggregation>,
 }
 impl NumericalAggregationFunction {
     /// <p>Built-in aggregation functions for numerical values.</p>
@@ -42,13 +42,13 @@ impl NumericalAggregationFunction {
     /// </ul>
     pub fn simple_numerical_aggregation(
         &self,
-    ) -> std::option::Option<&crate::types::SimpleNumericalAggregationFunction> {
+    ) -> ::std::option::Option<&crate::types::SimpleNumericalAggregationFunction> {
         self.simple_numerical_aggregation.as_ref()
     }
     /// <p>An aggregation based on the percentile of values in a dimension or measure.</p>
     pub fn percentile_aggregation(
         &self,
-    ) -> std::option::Option<&crate::types::PercentileAggregation> {
+    ) -> ::std::option::Option<&crate::types::PercentileAggregation> {
         self.percentile_aggregation.as_ref()
     }
 }
@@ -61,11 +61,13 @@ impl NumericalAggregationFunction {
 
 /// A builder for [`NumericalAggregationFunction`](crate::types::NumericalAggregationFunction).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NumericalAggregationFunctionBuilder {
     pub(crate) simple_numerical_aggregation:
-        std::option::Option<crate::types::SimpleNumericalAggregationFunction>,
-    pub(crate) percentile_aggregation: std::option::Option<crate::types::PercentileAggregation>,
+        ::std::option::Option<crate::types::SimpleNumericalAggregationFunction>,
+    pub(crate) percentile_aggregation: ::std::option::Option<crate::types::PercentileAggregation>,
 }
 impl NumericalAggregationFunctionBuilder {
     /// <p>Built-in aggregation functions for numerical values.</p>
@@ -86,7 +88,7 @@ impl NumericalAggregationFunctionBuilder {
         mut self,
         input: crate::types::SimpleNumericalAggregationFunction,
     ) -> Self {
-        self.simple_numerical_aggregation = Some(input);
+        self.simple_numerical_aggregation = ::std::option::Option::Some(input);
         self
     }
     /// <p>Built-in aggregation functions for numerical values.</p>
@@ -105,20 +107,20 @@ impl NumericalAggregationFunctionBuilder {
     /// </ul>
     pub fn set_simple_numerical_aggregation(
         mut self,
-        input: std::option::Option<crate::types::SimpleNumericalAggregationFunction>,
+        input: ::std::option::Option<crate::types::SimpleNumericalAggregationFunction>,
     ) -> Self {
         self.simple_numerical_aggregation = input;
         self
     }
     /// <p>An aggregation based on the percentile of values in a dimension or measure.</p>
     pub fn percentile_aggregation(mut self, input: crate::types::PercentileAggregation) -> Self {
-        self.percentile_aggregation = Some(input);
+        self.percentile_aggregation = ::std::option::Option::Some(input);
         self
     }
     /// <p>An aggregation based on the percentile of values in a dimension or measure.</p>
     pub fn set_percentile_aggregation(
         mut self,
-        input: std::option::Option<crate::types::PercentileAggregation>,
+        input: ::std::option::Option<crate::types::PercentileAggregation>,
     ) -> Self {
         self.percentile_aggregation = input;
         self

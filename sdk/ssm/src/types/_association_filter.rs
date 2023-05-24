@@ -2,26 +2,26 @@
 
 /// <p>Describes a filter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociationFilter {
     /// <p>The name of the filter.</p> <note>
     /// <p> <code>InstanceId</code> has been deprecated.</p>
     /// </note>
     #[doc(hidden)]
-    pub key: std::option::Option<crate::types::AssociationFilterKey>,
+    pub key: ::std::option::Option<crate::types::AssociationFilterKey>,
     /// <p>The filter value.</p>
     #[doc(hidden)]
-    pub value: std::option::Option<std::string::String>,
+    pub value: ::std::option::Option<::std::string::String>,
 }
 impl AssociationFilter {
     /// <p>The name of the filter.</p> <note>
     /// <p> <code>InstanceId</code> has been deprecated.</p>
     /// </note>
-    pub fn key(&self) -> std::option::Option<&crate::types::AssociationFilterKey> {
+    pub fn key(&self) -> ::std::option::Option<&crate::types::AssociationFilterKey> {
         self.key.as_ref()
     }
     /// <p>The filter value.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
 }
@@ -34,17 +34,19 @@ impl AssociationFilter {
 
 /// A builder for [`AssociationFilter`](crate::types::AssociationFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AssociationFilterBuilder {
-    pub(crate) key: std::option::Option<crate::types::AssociationFilterKey>,
-    pub(crate) value: std::option::Option<std::string::String>,
+    pub(crate) key: ::std::option::Option<crate::types::AssociationFilterKey>,
+    pub(crate) value: ::std::option::Option<::std::string::String>,
 }
 impl AssociationFilterBuilder {
     /// <p>The name of the filter.</p> <note>
     /// <p> <code>InstanceId</code> has been deprecated.</p>
     /// </note>
     pub fn key(mut self, input: crate::types::AssociationFilterKey) -> Self {
-        self.key = Some(input);
+        self.key = ::std::option::Option::Some(input);
         self
     }
     /// <p>The name of the filter.</p> <note>
@@ -52,18 +54,18 @@ impl AssociationFilterBuilder {
     /// </note>
     pub fn set_key(
         mut self,
-        input: std::option::Option<crate::types::AssociationFilterKey>,
+        input: ::std::option::Option<crate::types::AssociationFilterKey>,
     ) -> Self {
         self.key = input;
         self
     }
     /// <p>The filter value.</p>
-    pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.value = Some(input.into());
+    pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The filter value.</p>
-    pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
     }

@@ -2,17 +2,17 @@
 
 /// <p>Information about the location of a manifest file that Amazon Lookout for Vision uses to to create a dataset.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatasetSource {
     /// <p>Location information for the manifest file.</p>
     #[doc(hidden)]
-    pub ground_truth_manifest: std::option::Option<crate::types::DatasetGroundTruthManifest>,
+    pub ground_truth_manifest: ::std::option::Option<crate::types::DatasetGroundTruthManifest>,
 }
 impl DatasetSource {
     /// <p>Location information for the manifest file.</p>
     pub fn ground_truth_manifest(
         &self,
-    ) -> std::option::Option<&crate::types::DatasetGroundTruthManifest> {
+    ) -> ::std::option::Option<&crate::types::DatasetGroundTruthManifest> {
         self.ground_truth_manifest.as_ref()
     }
 }
@@ -25,9 +25,12 @@ impl DatasetSource {
 
 /// A builder for [`DatasetSource`](crate::types::DatasetSource).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DatasetSourceBuilder {
-    pub(crate) ground_truth_manifest: std::option::Option<crate::types::DatasetGroundTruthManifest>,
+    pub(crate) ground_truth_manifest:
+        ::std::option::Option<crate::types::DatasetGroundTruthManifest>,
 }
 impl DatasetSourceBuilder {
     /// <p>Location information for the manifest file.</p>
@@ -35,13 +38,13 @@ impl DatasetSourceBuilder {
         mut self,
         input: crate::types::DatasetGroundTruthManifest,
     ) -> Self {
-        self.ground_truth_manifest = Some(input);
+        self.ground_truth_manifest = ::std::option::Option::Some(input);
         self
     }
     /// <p>Location information for the manifest file.</p>
     pub fn set_ground_truth_manifest(
         mut self,
-        input: std::option::Option<crate::types::DatasetGroundTruthManifest>,
+        input: ::std::option::Option<crate::types::DatasetGroundTruthManifest>,
     ) -> Self {
         self.ground_truth_manifest = input;
         self

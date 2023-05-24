@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum CustomerPolicyStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum CustomerPolicyStatus {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for CustomerPolicyStatus {
+impl ::std::convert::From<&str> for CustomerPolicyStatus {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVE" => CustomerPolicyStatus::Active,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for CustomerPolicyStatus {
         }
     }
 }
-impl std::str::FromStr for CustomerPolicyStatus {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for CustomerPolicyStatus {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CustomerPolicyStatus::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(CustomerPolicyStatus::from(s))
     }
 }
 impl CustomerPolicyStatus {
@@ -86,7 +86,7 @@ impl CustomerPolicyStatus {
         &["ACTIVE", "OUT_OF_ADMIN_SCOPE"]
     }
 }
-impl AsRef<str> for CustomerPolicyStatus {
+impl ::std::convert::AsRef<str> for CustomerPolicyStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

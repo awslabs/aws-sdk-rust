@@ -2,87 +2,87 @@
 
 /// <p>Information about an Amazon QLDB journal stream, including the Amazon Resource Name (ARN), stream name, creation time, current status, and the parameters of the original stream creation request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JournalKinesisStreamDescription {
     /// <p>The name of the ledger.</p>
     #[doc(hidden)]
-    pub ledger_name: std::option::Option<std::string::String>,
+    pub ledger_name: ::std::option::Option<::std::string::String>,
     /// <p>The date and time, in epoch time format, when the QLDB journal stream was created. (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
     #[doc(hidden)]
-    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The inclusive start date and time from which to start streaming journal data.</p>
     #[doc(hidden)]
-    pub inclusive_start_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub inclusive_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The exclusive date and time that specifies when the stream ends. If this parameter is undefined, the stream runs indefinitely until you cancel it.</p>
     #[doc(hidden)]
-    pub exclusive_end_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub exclusive_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a journal stream to write data records to a Kinesis Data Streams resource.</p>
     #[doc(hidden)]
-    pub role_arn: std::option::Option<std::string::String>,
+    pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream.</p>
     #[doc(hidden)]
-    pub stream_id: std::option::Option<std::string::String>,
+    pub stream_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the QLDB journal stream.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the QLDB journal stream.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::StreamStatus>,
+    pub status: ::std::option::Option<crate::types::StreamStatus>,
     /// <p>The configuration settings of the Amazon Kinesis Data Streams destination for a QLDB journal stream.</p>
     #[doc(hidden)]
-    pub kinesis_configuration: std::option::Option<crate::types::KinesisConfiguration>,
+    pub kinesis_configuration: ::std::option::Option<crate::types::KinesisConfiguration>,
     /// <p>The error message that describes the reason that a stream has a status of <code>IMPAIRED</code> or <code>FAILED</code>. This is not applicable to streams that have other status values.</p>
     #[doc(hidden)]
-    pub error_cause: std::option::Option<crate::types::ErrorCause>,
+    pub error_cause: ::std::option::Option<crate::types::ErrorCause>,
     /// <p>The user-defined name of the QLDB journal stream.</p>
     #[doc(hidden)]
-    pub stream_name: std::option::Option<std::string::String>,
+    pub stream_name: ::std::option::Option<::std::string::String>,
 }
 impl JournalKinesisStreamDescription {
     /// <p>The name of the ledger.</p>
-    pub fn ledger_name(&self) -> std::option::Option<&str> {
+    pub fn ledger_name(&self) -> ::std::option::Option<&str> {
         self.ledger_name.as_deref()
     }
     /// <p>The date and time, in epoch time format, when the QLDB journal stream was created. (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The inclusive start date and time from which to start streaming journal data.</p>
-    pub fn inclusive_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn inclusive_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.inclusive_start_time.as_ref()
     }
     /// <p>The exclusive date and time that specifies when the stream ends. If this parameter is undefined, the stream runs indefinitely until you cancel it.</p>
-    pub fn exclusive_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn exclusive_end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.exclusive_end_time.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a journal stream to write data records to a Kinesis Data Streams resource.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
     /// <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream.</p>
-    pub fn stream_id(&self) -> std::option::Option<&str> {
+    pub fn stream_id(&self) -> ::std::option::Option<&str> {
         self.stream_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the QLDB journal stream.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The current state of the QLDB journal stream.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::StreamStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::StreamStatus> {
         self.status.as_ref()
     }
     /// <p>The configuration settings of the Amazon Kinesis Data Streams destination for a QLDB journal stream.</p>
     pub fn kinesis_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::KinesisConfiguration> {
+    ) -> ::std::option::Option<&crate::types::KinesisConfiguration> {
         self.kinesis_configuration.as_ref()
     }
     /// <p>The error message that describes the reason that a stream has a status of <code>IMPAIRED</code> or <code>FAILED</code>. This is not applicable to streams that have other status values.</p>
-    pub fn error_cause(&self) -> std::option::Option<&crate::types::ErrorCause> {
+    pub fn error_cause(&self) -> ::std::option::Option<&crate::types::ErrorCause> {
         self.error_cause.as_ref()
     }
     /// <p>The user-defined name of the QLDB journal stream.</p>
-    pub fn stream_name(&self) -> std::option::Option<&str> {
+    pub fn stream_name(&self) -> ::std::option::Option<&str> {
         self.stream_name.as_deref()
     }
 }
@@ -95,140 +95,145 @@ impl JournalKinesisStreamDescription {
 
 /// A builder for [`JournalKinesisStreamDescription`](crate::types::JournalKinesisStreamDescription).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct JournalKinesisStreamDescriptionBuilder {
-    pub(crate) ledger_name: std::option::Option<std::string::String>,
-    pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) inclusive_start_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) exclusive_end_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) role_arn: std::option::Option<std::string::String>,
-    pub(crate) stream_id: std::option::Option<std::string::String>,
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::StreamStatus>,
-    pub(crate) kinesis_configuration: std::option::Option<crate::types::KinesisConfiguration>,
-    pub(crate) error_cause: std::option::Option<crate::types::ErrorCause>,
-    pub(crate) stream_name: std::option::Option<std::string::String>,
+    pub(crate) ledger_name: ::std::option::Option<::std::string::String>,
+    pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) inclusive_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) exclusive_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) stream_id: ::std::option::Option<::std::string::String>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::StreamStatus>,
+    pub(crate) kinesis_configuration: ::std::option::Option<crate::types::KinesisConfiguration>,
+    pub(crate) error_cause: ::std::option::Option<crate::types::ErrorCause>,
+    pub(crate) stream_name: ::std::option::Option<::std::string::String>,
 }
 impl JournalKinesisStreamDescriptionBuilder {
     /// <p>The name of the ledger.</p>
-    pub fn ledger_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ledger_name = Some(input.into());
+    pub fn ledger_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ledger_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the ledger.</p>
-    pub fn set_ledger_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ledger_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ledger_name = input;
         self
     }
     /// <p>The date and time, in epoch time format, when the QLDB journal stream was created. (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
-    pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_time = Some(input);
+    pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time, in epoch time format, when the QLDB journal stream was created. (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
     pub fn set_creation_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_time = input;
         self
     }
     /// <p>The inclusive start date and time from which to start streaming journal data.</p>
-    pub fn inclusive_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.inclusive_start_time = Some(input);
+    pub fn inclusive_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.inclusive_start_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The inclusive start date and time from which to start streaming journal data.</p>
     pub fn set_inclusive_start_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.inclusive_start_time = input;
         self
     }
     /// <p>The exclusive date and time that specifies when the stream ends. If this parameter is undefined, the stream runs indefinitely until you cancel it.</p>
-    pub fn exclusive_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.exclusive_end_time = Some(input);
+    pub fn exclusive_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.exclusive_end_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The exclusive date and time that specifies when the stream ends. If this parameter is undefined, the stream runs indefinitely until you cancel it.</p>
     pub fn set_exclusive_end_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.exclusive_end_time = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a journal stream to write data records to a Kinesis Data Streams resource.</p>
-    pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.role_arn = Some(input.into());
+    pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a journal stream to write data records to a Kinesis Data Streams resource.</p>
-    pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
     /// <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream.</p>
-    pub fn stream_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.stream_id = Some(input.into());
+    pub fn stream_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.stream_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream.</p>
-    pub fn set_stream_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_stream_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stream_id = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the QLDB journal stream.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the QLDB journal stream.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// <p>The current state of the QLDB journal stream.</p>
     pub fn status(mut self, input: crate::types::StreamStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current state of the QLDB journal stream.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::StreamStatus>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::StreamStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>The configuration settings of the Amazon Kinesis Data Streams destination for a QLDB journal stream.</p>
     pub fn kinesis_configuration(mut self, input: crate::types::KinesisConfiguration) -> Self {
-        self.kinesis_configuration = Some(input);
+        self.kinesis_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration settings of the Amazon Kinesis Data Streams destination for a QLDB journal stream.</p>
     pub fn set_kinesis_configuration(
         mut self,
-        input: std::option::Option<crate::types::KinesisConfiguration>,
+        input: ::std::option::Option<crate::types::KinesisConfiguration>,
     ) -> Self {
         self.kinesis_configuration = input;
         self
     }
     /// <p>The error message that describes the reason that a stream has a status of <code>IMPAIRED</code> or <code>FAILED</code>. This is not applicable to streams that have other status values.</p>
     pub fn error_cause(mut self, input: crate::types::ErrorCause) -> Self {
-        self.error_cause = Some(input);
+        self.error_cause = ::std::option::Option::Some(input);
         self
     }
     /// <p>The error message that describes the reason that a stream has a status of <code>IMPAIRED</code> or <code>FAILED</code>. This is not applicable to streams that have other status values.</p>
-    pub fn set_error_cause(mut self, input: std::option::Option<crate::types::ErrorCause>) -> Self {
+    pub fn set_error_cause(
+        mut self,
+        input: ::std::option::Option<crate::types::ErrorCause>,
+    ) -> Self {
         self.error_cause = input;
         self
     }
     /// <p>The user-defined name of the QLDB journal stream.</p>
-    pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.stream_name = Some(input.into());
+    pub fn stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.stream_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user-defined name of the QLDB journal stream.</p>
-    pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stream_name = input;
         self
     }

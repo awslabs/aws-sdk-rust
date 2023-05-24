@@ -2,25 +2,25 @@
 
 /// <p>Additional parameter included in the header. You can include up to 100 additional header parameters per request. An event payload cannot exceed 64 KB.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConnectionHeaderParameter {
     /// <p>The key for the parameter.</p>
     #[doc(hidden)]
-    pub key: std::option::Option<std::string::String>,
+    pub key: ::std::option::Option<::std::string::String>,
     /// <p>The value associated with the key.</p>
     #[doc(hidden)]
-    pub value: std::option::Option<std::string::String>,
+    pub value: ::std::option::Option<::std::string::String>,
     /// <p>Specified whether the value is a secret.</p>
     #[doc(hidden)]
     pub is_value_secret: bool,
 }
 impl ConnectionHeaderParameter {
     /// <p>The key for the parameter.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<&str> {
         self.key.as_deref()
     }
     /// <p>The value associated with the key.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
     /// <p>Specified whether the value is a secret.</p>
@@ -37,40 +37,42 @@ impl ConnectionHeaderParameter {
 
 /// A builder for [`ConnectionHeaderParameter`](crate::types::ConnectionHeaderParameter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ConnectionHeaderParameterBuilder {
-    pub(crate) key: std::option::Option<std::string::String>,
-    pub(crate) value: std::option::Option<std::string::String>,
-    pub(crate) is_value_secret: std::option::Option<bool>,
+    pub(crate) key: ::std::option::Option<::std::string::String>,
+    pub(crate) value: ::std::option::Option<::std::string::String>,
+    pub(crate) is_value_secret: ::std::option::Option<bool>,
 }
 impl ConnectionHeaderParameterBuilder {
     /// <p>The key for the parameter.</p>
-    pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.key = Some(input.into());
+    pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The key for the parameter.</p>
-    pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key = input;
         self
     }
     /// <p>The value associated with the key.</p>
-    pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.value = Some(input.into());
+    pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value associated with the key.</p>
-    pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
     }
     /// <p>Specified whether the value is a secret.</p>
     pub fn is_value_secret(mut self, input: bool) -> Self {
-        self.is_value_secret = Some(input);
+        self.is_value_secret = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specified whether the value is a secret.</p>
-    pub fn set_is_value_secret(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_value_secret(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_value_secret = input;
         self
     }

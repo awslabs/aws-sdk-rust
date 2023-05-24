@@ -6,56 +6,59 @@ pub use crate::operation::create_contact::_create_contact_input::CreateContactIn
 /// Fluent builder constructing a request to `CreateContact`.
 ///
 /// <p>Creates a contact with the specified details.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateContactFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_contact::builders::CreateContactInputBuilder,
 }
 impl CreateContactFluentBuilder {
     /// Creates a new `CreateContact`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_contact::CreateContact,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_contact::CreateContactError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_contact::CreateContactError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_contact::CreateContactOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_contact::CreateContactError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_contact::CreateContactError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,49 +71,49 @@ impl CreateContactFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_contact::CreateContactOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_contact::CreateContactError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_contact::CreateContactError>,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the contact to display on the console.</p>
-    pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.display_name(input.into());
         self
     }
     /// <p>The name of the contact to display on the console.</p>
-    pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_display_name(input);
         self
     }
     /// <p>The first name of the contact that is used to call the contact on the device.</p>
-    pub fn first_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn first_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.first_name(input.into());
         self
     }
     /// <p>The first name of the contact that is used to call the contact on the device.</p>
-    pub fn set_first_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_first_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_first_name(input);
         self
     }
     /// <p>The last name of the contact that is used to call the contact on the device.</p>
-    pub fn last_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn last_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.last_name(input.into());
         self
     }
     /// <p>The last name of the contact that is used to call the contact on the device.</p>
-    pub fn set_last_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_last_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_last_name(input);
         self
     }
     /// <p>The phone number of the contact in E.164 format. The phone number type defaults to WORK. You can specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers, which lets you specify the phone number type and multiple numbers.</p>
-    pub fn phone_number(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.phone_number(input.into());
         self
     }
     /// <p>The phone number of the contact in E.164 format. The phone number type defaults to WORK. You can specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers, which lets you specify the phone number type and multiple numbers.</p>
-    pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_phone_number(input);
         self
     }
@@ -126,7 +129,7 @@ impl CreateContactFluentBuilder {
     /// <p>The list of phone numbers for the contact.</p>
     pub fn set_phone_numbers(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PhoneNumber>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumber>>,
     ) -> Self {
         self.inner = self.inner.set_phone_numbers(input);
         self
@@ -143,20 +146,23 @@ impl CreateContactFluentBuilder {
     /// <p>The list of SIP addresses for the contact.</p>
     pub fn set_sip_addresses(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SipAddress>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SipAddress>>,
     ) -> Self {
         self.inner = self.inner.set_sip_addresses(input);
         self
     }
     /// <p>A unique, user-specified identifier for this request that ensures idempotency.</p>
-    pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn client_request_token(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>A unique, user-specified identifier for this request that ensures idempotency.</p>
     pub fn set_client_request_token(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
@@ -173,7 +179,7 @@ impl CreateContactFluentBuilder {
     /// <p>The tags to be added to the specified resource. Do not provide system tags.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self

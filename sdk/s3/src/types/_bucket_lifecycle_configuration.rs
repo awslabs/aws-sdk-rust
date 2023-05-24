@@ -2,15 +2,15 @@
 
 /// <p>Specifies the lifecycle configuration for objects in an Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html">Object Lifecycle Management</a> in the <i>Amazon S3 User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BucketLifecycleConfiguration {
     /// <p>A lifecycle rule for individual objects in an Amazon S3 bucket.</p>
     #[doc(hidden)]
-    pub rules: std::option::Option<std::vec::Vec<crate::types::LifecycleRule>>,
+    pub rules: ::std::option::Option<::std::vec::Vec<crate::types::LifecycleRule>>,
 }
 impl BucketLifecycleConfiguration {
     /// <p>A lifecycle rule for individual objects in an Amazon S3 bucket.</p>
-    pub fn rules(&self) -> std::option::Option<&[crate::types::LifecycleRule]> {
+    pub fn rules(&self) -> ::std::option::Option<&[crate::types::LifecycleRule]> {
         self.rules.as_deref()
     }
 }
@@ -23,9 +23,11 @@ impl BucketLifecycleConfiguration {
 
 /// A builder for [`BucketLifecycleConfiguration`](crate::types::BucketLifecycleConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BucketLifecycleConfigurationBuilder {
-    pub(crate) rules: std::option::Option<std::vec::Vec<crate::types::LifecycleRule>>,
+    pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::LifecycleRule>>,
 }
 impl BucketLifecycleConfigurationBuilder {
     /// Appends an item to `rules`.
@@ -36,13 +38,13 @@ impl BucketLifecycleConfigurationBuilder {
     pub fn rules(mut self, input: crate::types::LifecycleRule) -> Self {
         let mut v = self.rules.unwrap_or_default();
         v.push(input);
-        self.rules = Some(v);
+        self.rules = ::std::option::Option::Some(v);
         self
     }
     /// <p>A lifecycle rule for individual objects in an Amazon S3 bucket.</p>
     pub fn set_rules(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::LifecycleRule>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::LifecycleRule>>,
     ) -> Self {
         self.rules = input;
         self

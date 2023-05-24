@@ -3,7 +3,7 @@
 /// <p>Point-in-time recovery (PITR) helps protect your Amazon Keyspaces tables from accidental write or delete operations by providing you continuous backups of your table data.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery.html">Point-in-time recovery</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PointInTimeRecovery {
     /// <p>The options are:</p>
     /// <ul>
@@ -11,7 +11,7 @@ pub struct PointInTimeRecovery {
     /// <li> <p> <code>status=DISABLED</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::PointInTimeRecoveryStatus>,
+    pub status: ::std::option::Option<crate::types::PointInTimeRecoveryStatus>,
 }
 impl PointInTimeRecovery {
     /// <p>The options are:</p>
@@ -19,7 +19,7 @@ impl PointInTimeRecovery {
     /// <li> <p> <code>status=ENABLED</code> </p> </li>
     /// <li> <p> <code>status=DISABLED</code> </p> </li>
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::types::PointInTimeRecoveryStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::PointInTimeRecoveryStatus> {
         self.status.as_ref()
     }
 }
@@ -32,9 +32,11 @@ impl PointInTimeRecovery {
 
 /// A builder for [`PointInTimeRecovery`](crate::types::PointInTimeRecovery).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PointInTimeRecoveryBuilder {
-    pub(crate) status: std::option::Option<crate::types::PointInTimeRecoveryStatus>,
+    pub(crate) status: ::std::option::Option<crate::types::PointInTimeRecoveryStatus>,
 }
 impl PointInTimeRecoveryBuilder {
     /// <p>The options are:</p>
@@ -43,7 +45,7 @@ impl PointInTimeRecoveryBuilder {
     /// <li> <p> <code>status=DISABLED</code> </p> </li>
     /// </ul>
     pub fn status(mut self, input: crate::types::PointInTimeRecoveryStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The options are:</p>
@@ -53,7 +55,7 @@ impl PointInTimeRecoveryBuilder {
     /// </ul>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::PointInTimeRecoveryStatus>,
+        input: ::std::option::Option<crate::types::PointInTimeRecoveryStatus>,
     ) -> Self {
         self.status = input;
         self

@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateAlias`](crate::operation::create_alias::builders::CreateAliasFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`organization_id(impl Into<String>)`](crate::operation::create_alias::builders::CreateAliasFluentBuilder::organization_id) / [`set_organization_id(Option<String>)`](crate::operation::create_alias::builders::CreateAliasFluentBuilder::set_organization_id): <p>The organization under which the member (user or group) exists.</p>
-    ///   - [`entity_id(impl Into<String>)`](crate::operation::create_alias::builders::CreateAliasFluentBuilder::entity_id) / [`set_entity_id(Option<String>)`](crate::operation::create_alias::builders::CreateAliasFluentBuilder::set_entity_id): <p>The member (user or group) to which this alias is added.</p>
-    ///   - [`alias(impl Into<String>)`](crate::operation::create_alias::builders::CreateAliasFluentBuilder::alias) / [`set_alias(Option<String>)`](crate::operation::create_alias::builders::CreateAliasFluentBuilder::set_alias): <p>The alias to add to the member set.</p>
+    ///   - [`organization_id(impl ::std::convert::Into<String>)`](crate::operation::create_alias::builders::CreateAliasFluentBuilder::organization_id) / [`set_organization_id(Option<String>)`](crate::operation::create_alias::builders::CreateAliasFluentBuilder::set_organization_id): <p>The organization under which the member (user or group) exists.</p>
+    ///   - [`entity_id(impl ::std::convert::Into<String>)`](crate::operation::create_alias::builders::CreateAliasFluentBuilder::entity_id) / [`set_entity_id(Option<String>)`](crate::operation::create_alias::builders::CreateAliasFluentBuilder::set_entity_id): <p>The member (user or group) to which this alias is added.</p>
+    ///   - [`alias(impl ::std::convert::Into<String>)`](crate::operation::create_alias::builders::CreateAliasFluentBuilder::alias) / [`set_alias(Option<String>)`](crate::operation::create_alias::builders::CreateAliasFluentBuilder::set_alias): <p>The alias to add to the member set.</p>
     /// - On success, responds with [`CreateAliasOutput`](crate::operation::create_alias::CreateAliasOutput)
     /// - On failure, responds with [`SdkError<CreateAliasError>`](crate::operation::create_alias::CreateAliasError)
     pub fn create_alias(

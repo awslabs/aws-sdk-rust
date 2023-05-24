@@ -3,15 +3,15 @@
 /// <p>The proposed access control policy for the Multi-Region Access Point.</p>
 /// <p>When you update the policy, the update is first listed as the proposed policy. After the update is finished and all Regions have been updated, the proposed policy is listed as the established policy. If both policies have the same version number, the proposed policy is the established policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProposedMultiRegionAccessPointPolicy {
     /// <p>The details of the proposed policy.</p>
     #[doc(hidden)]
-    pub policy: std::option::Option<std::string::String>,
+    pub policy: ::std::option::Option<::std::string::String>,
 }
 impl ProposedMultiRegionAccessPointPolicy {
     /// <p>The details of the proposed policy.</p>
-    pub fn policy(&self) -> std::option::Option<&str> {
+    pub fn policy(&self) -> ::std::option::Option<&str> {
         self.policy.as_deref()
     }
 }
@@ -24,18 +24,20 @@ impl ProposedMultiRegionAccessPointPolicy {
 
 /// A builder for [`ProposedMultiRegionAccessPointPolicy`](crate::types::ProposedMultiRegionAccessPointPolicy).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ProposedMultiRegionAccessPointPolicyBuilder {
-    pub(crate) policy: std::option::Option<std::string::String>,
+    pub(crate) policy: ::std::option::Option<::std::string::String>,
 }
 impl ProposedMultiRegionAccessPointPolicyBuilder {
     /// <p>The details of the proposed policy.</p>
-    pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
-        self.policy = Some(input.into());
+    pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.policy = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The details of the proposed policy.</p>
-    pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy = input;
         self
     }

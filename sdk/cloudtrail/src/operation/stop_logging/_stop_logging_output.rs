@@ -2,11 +2,11 @@
 
 /// <p>Returns the objects or data listed below if successful. Otherwise, returns an error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopLoggingOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for StopLoggingOutput {
+impl ::aws_http::request_id::RequestId for StopLoggingOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -20,7 +20,9 @@ impl StopLoggingOutput {
 
 /// A builder for [`StopLoggingOutput`](crate::operation::stop_logging::StopLoggingOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StopLoggingOutputBuilder {
     _request_id: Option<String>,
 }

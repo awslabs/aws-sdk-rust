@@ -2,20 +2,20 @@
 
 /// <p>A complex type containing tags for the specified resources.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTagsForResourcesOutput {
     /// <p>A list of <code>ResourceTagSet</code>s containing tags associated with the specified resources.</p>
     #[doc(hidden)]
-    pub resource_tag_sets: std::option::Option<std::vec::Vec<crate::types::ResourceTagSet>>,
+    pub resource_tag_sets: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTagSet>>,
     _request_id: Option<String>,
 }
 impl ListTagsForResourcesOutput {
     /// <p>A list of <code>ResourceTagSet</code>s containing tags associated with the specified resources.</p>
-    pub fn resource_tag_sets(&self) -> std::option::Option<&[crate::types::ResourceTagSet]> {
+    pub fn resource_tag_sets(&self) -> ::std::option::Option<&[crate::types::ResourceTagSet]> {
         self.resource_tag_sets.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListTagsForResourcesOutput {
+impl ::aws_http::request_id::RequestId for ListTagsForResourcesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -31,9 +31,12 @@ impl ListTagsForResourcesOutput {
 
 /// A builder for [`ListTagsForResourcesOutput`](crate::operation::list_tags_for_resources::ListTagsForResourcesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListTagsForResourcesOutputBuilder {
-    pub(crate) resource_tag_sets: std::option::Option<std::vec::Vec<crate::types::ResourceTagSet>>,
+    pub(crate) resource_tag_sets:
+        ::std::option::Option<::std::vec::Vec<crate::types::ResourceTagSet>>,
     _request_id: Option<String>,
 }
 impl ListTagsForResourcesOutputBuilder {
@@ -45,13 +48,13 @@ impl ListTagsForResourcesOutputBuilder {
     pub fn resource_tag_sets(mut self, input: crate::types::ResourceTagSet) -> Self {
         let mut v = self.resource_tag_sets.unwrap_or_default();
         v.push(input);
-        self.resource_tag_sets = Some(v);
+        self.resource_tag_sets = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of <code>ResourceTagSet</code>s containing tags associated with the specified resources.</p>
     pub fn set_resource_tag_sets(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ResourceTagSet>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTagSet>>,
     ) -> Self {
         self.resource_tag_sets = input;
         self

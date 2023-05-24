@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteUser`](crate::operation::delete_user::builders::DeleteUserFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`organization_id(impl Into<String>)`](crate::operation::delete_user::builders::DeleteUserFluentBuilder::organization_id) / [`set_organization_id(Option<String>)`](crate::operation::delete_user::builders::DeleteUserFluentBuilder::set_organization_id): <p>The organization that contains the user to be deleted.</p>
-    ///   - [`user_id(impl Into<String>)`](crate::operation::delete_user::builders::DeleteUserFluentBuilder::user_id) / [`set_user_id(Option<String>)`](crate::operation::delete_user::builders::DeleteUserFluentBuilder::set_user_id): <p>The identifier of the user to be deleted.</p>
+    ///   - [`organization_id(impl ::std::convert::Into<String>)`](crate::operation::delete_user::builders::DeleteUserFluentBuilder::organization_id) / [`set_organization_id(Option<String>)`](crate::operation::delete_user::builders::DeleteUserFluentBuilder::set_organization_id): <p>The organization that contains the user to be deleted.</p>
+    ///   - [`user_id(impl ::std::convert::Into<String>)`](crate::operation::delete_user::builders::DeleteUserFluentBuilder::user_id) / [`set_user_id(Option<String>)`](crate::operation::delete_user::builders::DeleteUserFluentBuilder::set_user_id): <p>The identifier of the user to be deleted.</p>
     /// - On success, responds with [`DeleteUserOutput`](crate::operation::delete_user::DeleteUserOutput)
     /// - On failure, responds with [`SdkError<DeleteUserError>`](crate::operation::delete_user::DeleteUserError)
     pub fn delete_user(&self) -> crate::operation::delete_user::builders::DeleteUserFluentBuilder {

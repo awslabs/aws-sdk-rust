@@ -5,12 +5,12 @@ pub fn de_invalid_domain_name_for_origin_access_control_xml_err(
     mut builder: crate::types::error::builders::InvalidDomainNameForOriginAccessControlBuilder,
 ) -> Result<
     crate::types::error::builders::InvalidDomainNameForOriginAccessControlBuilder,
-    aws_smithy_xml::decode::XmlDecodeError,
+    ::aws_smithy_xml::decode::XmlDecodeError,
 > {
     if inp.is_empty() {
         return Ok(builder);
     }
-    let mut document = aws_smithy_xml::decode::Document::try_from(inp)?;
+    let mut document = ::aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut error_decoder = crate::rest_xml_wrapped_errors::error_scope(&mut document)?;
     while let Some(mut tag) = error_decoder.next_tag() {
@@ -18,8 +18,8 @@ pub fn de_invalid_domain_name_for_origin_access_control_xml_err(
             s if s.matches("Message") /* Message com.amazonaws.cloudfront#InvalidDomainNameForOriginAccessControl$Message */ =>  {
                 let var_1 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?

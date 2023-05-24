@@ -2,22 +2,22 @@
 
 /// <p>Contains the parameters for DeleteNetworkInterface.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteNetworkInterfaceInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
-    pub dry_run: std::option::Option<bool>,
+    pub dry_run: ::std::option::Option<bool>,
     /// <p>The ID of the network interface.</p>
     #[doc(hidden)]
-    pub network_interface_id: std::option::Option<std::string::String>,
+    pub network_interface_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteNetworkInterfaceInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn dry_run(&self) -> std::option::Option<bool> {
+    pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
     /// <p>The ID of the network interface.</p>
-    pub fn network_interface_id(&self) -> std::option::Option<&str> {
+    pub fn network_interface_id(&self) -> ::std::option::Option<&str> {
         self.network_interface_id.as_deref()
     }
 }
@@ -32,31 +32,36 @@ impl DeleteNetworkInterfaceInput {
 
 /// A builder for [`DeleteNetworkInterfaceInput`](crate::operation::delete_network_interface::DeleteNetworkInterfaceInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteNetworkInterfaceInputBuilder {
-    pub(crate) dry_run: std::option::Option<bool>,
-    pub(crate) network_interface_id: std::option::Option<std::string::String>,
+    pub(crate) dry_run: ::std::option::Option<bool>,
+    pub(crate) network_interface_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteNetworkInterfaceInputBuilder {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
-        self.dry_run = Some(input);
+        self.dry_run = ::std::option::Option::Some(input);
         self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
     }
     /// <p>The ID of the network interface.</p>
-    pub fn network_interface_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.network_interface_id = Some(input.into());
+    pub fn network_interface_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.network_interface_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the network interface.</p>
     pub fn set_network_interface_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.network_interface_id = input;
         self
@@ -64,11 +69,11 @@ impl DeleteNetworkInterfaceInputBuilder {
     /// Consumes the builder and constructs a [`DeleteNetworkInterfaceInput`](crate::operation::delete_network_interface::DeleteNetworkInterfaceInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::delete_network_interface::DeleteNetworkInterfaceInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::delete_network_interface::DeleteNetworkInterfaceInput {
                 dry_run: self.dry_run,
                 network_interface_id: self.network_interface_id,

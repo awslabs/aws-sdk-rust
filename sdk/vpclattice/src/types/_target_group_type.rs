@@ -40,13 +40,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum TargetGroupType {
     /// Indicates target in this target group is an ALB
@@ -60,7 +60,7 @@ pub enum TargetGroupType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for TargetGroupType {
+impl ::std::convert::From<&str> for TargetGroupType {
     fn from(s: &str) -> Self {
         match s {
             "ALB" => TargetGroupType::Alb,
@@ -73,11 +73,11 @@ impl std::convert::From<&str> for TargetGroupType {
         }
     }
 }
-impl std::str::FromStr for TargetGroupType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for TargetGroupType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TargetGroupType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(TargetGroupType::from(s))
     }
 }
 impl TargetGroupType {
@@ -96,7 +96,7 @@ impl TargetGroupType {
         &["ALB", "INSTANCE", "IP", "LAMBDA"]
     }
 }
-impl AsRef<str> for TargetGroupType {
+impl ::std::convert::AsRef<str> for TargetGroupType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

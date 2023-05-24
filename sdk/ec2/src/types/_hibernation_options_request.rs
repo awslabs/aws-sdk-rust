@@ -2,17 +2,17 @@
 
 /// <p>Indicates whether your instance is configured for hibernation. This parameter is valid only if the instance meets the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites">hibernation prerequisites</a>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in the <i>Amazon EC2 User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HibernationOptionsRequest {
     /// <p>If you set this parameter to <code>true</code>, your instance is enabled for hibernation.</p>
     /// <p>Default: <code>false</code> </p>
     #[doc(hidden)]
-    pub configured: std::option::Option<bool>,
+    pub configured: ::std::option::Option<bool>,
 }
 impl HibernationOptionsRequest {
     /// <p>If you set this parameter to <code>true</code>, your instance is enabled for hibernation.</p>
     /// <p>Default: <code>false</code> </p>
-    pub fn configured(&self) -> std::option::Option<bool> {
+    pub fn configured(&self) -> ::std::option::Option<bool> {
         self.configured
     }
 }
@@ -25,20 +25,22 @@ impl HibernationOptionsRequest {
 
 /// A builder for [`HibernationOptionsRequest`](crate::types::HibernationOptionsRequest).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct HibernationOptionsRequestBuilder {
-    pub(crate) configured: std::option::Option<bool>,
+    pub(crate) configured: ::std::option::Option<bool>,
 }
 impl HibernationOptionsRequestBuilder {
     /// <p>If you set this parameter to <code>true</code>, your instance is enabled for hibernation.</p>
     /// <p>Default: <code>false</code> </p>
     pub fn configured(mut self, input: bool) -> Self {
-        self.configured = Some(input);
+        self.configured = ::std::option::Option::Some(input);
         self
     }
     /// <p>If you set this parameter to <code>true</code>, your instance is enabled for hibernation.</p>
     /// <p>Default: <code>false</code> </p>
-    pub fn set_configured(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_configured(mut self, input: ::std::option::Option<bool>) -> Self {
         self.configured = input;
         self
     }

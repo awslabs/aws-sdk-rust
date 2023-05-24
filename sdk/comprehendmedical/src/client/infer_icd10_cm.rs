@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`InferICD10CM`](crate::operation::infer_icd10_cm::builders::InferICD10CMFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`text(impl Into<String>)`](crate::operation::infer_icd10_cm::builders::InferICD10CMFluentBuilder::text) / [`set_text(Option<String>)`](crate::operation::infer_icd10_cm::builders::InferICD10CMFluentBuilder::set_text): <p>The input text used for analysis. The input for InferICD10CM is a string from 1 to 10000 characters.</p>
+    ///   - [`text(impl ::std::convert::Into<String>)`](crate::operation::infer_icd10_cm::builders::InferICD10CMFluentBuilder::text) / [`set_text(Option<String>)`](crate::operation::infer_icd10_cm::builders::InferICD10CMFluentBuilder::set_text): <p>The input text used for analysis. The input for InferICD10CM is a string from 1 to 10000 characters.</p>
     /// - On success, responds with [`InferIcd10CmOutput`](crate::operation::infer_icd10_cm::InferIcd10CmOutput) with field(s):
     ///   - [`entities(Option<Vec<Icd10CmEntity>>)`](crate::operation::infer_icd10_cm::InferIcd10CmOutput::entities): <p>The medical conditions detected in the text linked to ICD-10-CM concepts. If the action is successful, the service sends back an HTTP 200 response, as well as the entities detected.</p>
     ///   - [`pagination_token(Option<String>)`](crate::operation::infer_icd10_cm::InferIcd10CmOutput::pagination_token): <p>If the result of the previous request to <code>InferICD10CM</code> was truncated, include the <code>PaginationToken</code> to fetch the next page of medical condition entities. </p>

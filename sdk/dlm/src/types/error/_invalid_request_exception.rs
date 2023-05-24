@@ -2,62 +2,63 @@
 
 /// <p>Bad request. The request is missing required parameters or has invalid parameters.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InvalidRequestException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
-    pub code: std::option::Option<std::string::String>,
+    pub code: ::std::option::Option<::std::string::String>,
     /// <p>The request omitted one or more required parameters.</p>
     #[doc(hidden)]
-    pub required_parameters: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub required_parameters: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The request included parameters that cannot be provided together.</p>
     #[doc(hidden)]
-    pub mutually_exclusive_parameters: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
+    pub mutually_exclusive_parameters:
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidRequestException {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn code(&self) -> std::option::Option<&str> {
+    pub fn code(&self) -> ::std::option::Option<&str> {
         self.code.as_deref()
     }
     /// <p>The request omitted one or more required parameters.</p>
-    pub fn required_parameters(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn required_parameters(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.required_parameters.as_deref()
     }
     /// <p>The request included parameters that cannot be provided together.</p>
-    pub fn mutually_exclusive_parameters(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn mutually_exclusive_parameters(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.mutually_exclusive_parameters.as_deref()
     }
 }
 impl InvalidRequestException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for InvalidRequestException {
+impl ::std::fmt::Display for InvalidRequestException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidRequestException")?;
-        if let Some(inner_1) = &self.message {
+        ::std::write!(f, "InvalidRequestException")?;
+        if let ::std::option::Option::Some(inner_1) = &self.message {
             {
-                write!(f, ": {}", inner_1)?;
+                ::std::write!(f, ": {}", inner_1)?;
             }
         }
         Ok(())
     }
 }
-impl std::error::Error for InvalidRequestException {}
-impl aws_http::request_id::RequestId for crate::types::error::InvalidRequestException {
+impl ::std::error::Error for InvalidRequestException {}
+impl ::aws_http::request_id::RequestId for crate::types::error::InvalidRequestException {
     fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidRequestException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidRequestException {
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
@@ -70,33 +71,35 @@ impl InvalidRequestException {
 
 /// A builder for [`InvalidRequestException`](crate::types::error::InvalidRequestException).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InvalidRequestExceptionBuilder {
-    pub(crate) message: std::option::Option<std::string::String>,
-    pub(crate) code: std::option::Option<std::string::String>,
-    pub(crate) required_parameters: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
+    pub(crate) code: ::std::option::Option<::std::string::String>,
+    pub(crate) required_parameters: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) mutually_exclusive_parameters:
-        std::option::Option<std::vec::Vec<std::string::String>>,
-    meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl InvalidRequestExceptionBuilder {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
-        self.code = Some(input.into());
+    pub fn code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.code = ::std::option::Option::Some(input.into());
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.code = input;
         self
     }
@@ -105,16 +108,19 @@ impl InvalidRequestExceptionBuilder {
     /// To override the contents of this collection use [`set_required_parameters`](Self::set_required_parameters).
     ///
     /// <p>The request omitted one or more required parameters.</p>
-    pub fn required_parameters(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn required_parameters(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.required_parameters.unwrap_or_default();
         v.push(input.into());
-        self.required_parameters = Some(v);
+        self.required_parameters = ::std::option::Option::Some(v);
         self
     }
     /// <p>The request omitted one or more required parameters.</p>
     pub fn set_required_parameters(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.required_parameters = input;
         self
@@ -124,22 +130,25 @@ impl InvalidRequestExceptionBuilder {
     /// To override the contents of this collection use [`set_mutually_exclusive_parameters`](Self::set_mutually_exclusive_parameters).
     ///
     /// <p>The request included parameters that cannot be provided together.</p>
-    pub fn mutually_exclusive_parameters(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn mutually_exclusive_parameters(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.mutually_exclusive_parameters.unwrap_or_default();
         v.push(input.into());
-        self.mutually_exclusive_parameters = Some(v);
+        self.mutually_exclusive_parameters = ::std::option::Option::Some(v);
         self
     }
     /// <p>The request included parameters that cannot be provided together.</p>
     pub fn set_mutually_exclusive_parameters(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.mutually_exclusive_parameters = input;
         self
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
         self.meta = Some(meta);
         self
     }
@@ -147,7 +156,7 @@ impl InvalidRequestExceptionBuilder {
     /// Sets error metadata
     pub fn set_meta(
         &mut self,
-        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
     ) -> &mut Self {
         self.meta = meta;
         self

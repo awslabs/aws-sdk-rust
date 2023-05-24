@@ -2,34 +2,34 @@
 
 /// <p>You can use this parameter to set an MFA configuration that uses the SMS delivery medium.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AdminSetUserSettingsInput {
     /// <p>The ID of the user pool that contains the user whose options you're setting.</p>
     #[doc(hidden)]
-    pub user_pool_id: std::option::Option<std::string::String>,
+    pub user_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The user name of the user whose options you're setting.</p>
     #[doc(hidden)]
-    pub username: std::option::Option<std::string::String>,
+    pub username: ::std::option::Option<::std::string::String>,
     /// <p>You can use this parameter only to set an SMS configuration that uses SMS for delivery.</p>
     #[doc(hidden)]
-    pub mfa_options: std::option::Option<std::vec::Vec<crate::types::MfaOptionType>>,
+    pub mfa_options: ::std::option::Option<::std::vec::Vec<crate::types::MfaOptionType>>,
 }
 impl AdminSetUserSettingsInput {
     /// <p>The ID of the user pool that contains the user whose options you're setting.</p>
-    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+    pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
         self.user_pool_id.as_deref()
     }
     /// <p>The user name of the user whose options you're setting.</p>
-    pub fn username(&self) -> std::option::Option<&str> {
+    pub fn username(&self) -> ::std::option::Option<&str> {
         self.username.as_deref()
     }
     /// <p>You can use this parameter only to set an SMS configuration that uses SMS for delivery.</p>
-    pub fn mfa_options(&self) -> std::option::Option<&[crate::types::MfaOptionType]> {
+    pub fn mfa_options(&self) -> ::std::option::Option<&[crate::types::MfaOptionType]> {
         self.mfa_options.as_deref()
     }
 }
-impl std::fmt::Debug for AdminSetUserSettingsInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for AdminSetUserSettingsInput {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AdminSetUserSettingsInput");
         formatter.field("user_pool_id", &self.user_pool_id);
         formatter.field("username", &"*** Sensitive Data Redacted ***");
@@ -47,30 +47,30 @@ impl AdminSetUserSettingsInput {
 
 /// A builder for [`AdminSetUserSettingsInput`](crate::operation::admin_set_user_settings::AdminSetUserSettingsInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct AdminSetUserSettingsInputBuilder {
-    pub(crate) user_pool_id: std::option::Option<std::string::String>,
-    pub(crate) username: std::option::Option<std::string::String>,
-    pub(crate) mfa_options: std::option::Option<std::vec::Vec<crate::types::MfaOptionType>>,
+    pub(crate) user_pool_id: ::std::option::Option<::std::string::String>,
+    pub(crate) username: ::std::option::Option<::std::string::String>,
+    pub(crate) mfa_options: ::std::option::Option<::std::vec::Vec<crate::types::MfaOptionType>>,
 }
 impl AdminSetUserSettingsInputBuilder {
     /// <p>The ID of the user pool that contains the user whose options you're setting.</p>
-    pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.user_pool_id = Some(input.into());
+    pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.user_pool_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the user pool that contains the user whose options you're setting.</p>
-    pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_pool_id = input;
         self
     }
     /// <p>The user name of the user whose options you're setting.</p>
-    pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
-        self.username = Some(input.into());
+    pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.username = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user name of the user whose options you're setting.</p>
-    pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.username = input;
         self
     }
@@ -82,13 +82,13 @@ impl AdminSetUserSettingsInputBuilder {
     pub fn mfa_options(mut self, input: crate::types::MfaOptionType) -> Self {
         let mut v = self.mfa_options.unwrap_or_default();
         v.push(input);
-        self.mfa_options = Some(v);
+        self.mfa_options = ::std::option::Option::Some(v);
         self
     }
     /// <p>You can use this parameter only to set an SMS configuration that uses SMS for delivery.</p>
     pub fn set_mfa_options(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::MfaOptionType>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::MfaOptionType>>,
     ) -> Self {
         self.mfa_options = input;
         self
@@ -96,11 +96,11 @@ impl AdminSetUserSettingsInputBuilder {
     /// Consumes the builder and constructs a [`AdminSetUserSettingsInput`](crate::operation::admin_set_user_settings::AdminSetUserSettingsInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::admin_set_user_settings::AdminSetUserSettingsInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::admin_set_user_settings::AdminSetUserSettingsInput {
                 user_pool_id: self.user_pool_id,
                 username: self.username,
@@ -109,8 +109,8 @@ impl AdminSetUserSettingsInputBuilder {
         )
     }
 }
-impl std::fmt::Debug for AdminSetUserSettingsInputBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for AdminSetUserSettingsInputBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AdminSetUserSettingsInputBuilder");
         formatter.field("user_pool_id", &self.user_pool_id);
         formatter.field("username", &"*** Sensitive Data Redacted ***");

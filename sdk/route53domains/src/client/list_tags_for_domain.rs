@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ListTagsForDomain`](crate::operation::list_tags_for_domain::builders::ListTagsForDomainFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_name(impl Into<String>)`](crate::operation::list_tags_for_domain::builders::ListTagsForDomainFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::list_tags_for_domain::builders::ListTagsForDomainFluentBuilder::set_domain_name): <p>The domain for which you want to get a list of tags.</p>
+    ///   - [`domain_name(impl ::std::convert::Into<String>)`](crate::operation::list_tags_for_domain::builders::ListTagsForDomainFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::list_tags_for_domain::builders::ListTagsForDomainFluentBuilder::set_domain_name): <p>The domain for which you want to get a list of tags.</p>
     /// - On success, responds with [`ListTagsForDomainOutput`](crate::operation::list_tags_for_domain::ListTagsForDomainOutput) with field(s):
     ///   - [`tag_list(Option<Vec<Tag>>)`](crate::operation::list_tags_for_domain::ListTagsForDomainOutput::tag_list): <p>A list of the tags that are associated with the specified domain.</p>
     /// - On failure, responds with [`SdkError<ListTagsForDomainError>`](crate::operation::list_tags_for_domain::ListTagsForDomainError)

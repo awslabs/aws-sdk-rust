@@ -2,29 +2,29 @@
 
 /// <p>The information for all keywords in a pool.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KeywordInformation {
     /// <p>The keyword as a string.</p>
     #[doc(hidden)]
-    pub keyword: std::option::Option<std::string::String>,
+    pub keyword: ::std::option::Option<::std::string::String>,
     /// <p>A custom message that can be used with the keyword.</p>
     #[doc(hidden)]
-    pub keyword_message: std::option::Option<std::string::String>,
+    pub keyword_message: ::std::option::Option<::std::string::String>,
     /// <p>The action to perform for the keyword.</p>
     #[doc(hidden)]
-    pub keyword_action: std::option::Option<crate::types::KeywordAction>,
+    pub keyword_action: ::std::option::Option<crate::types::KeywordAction>,
 }
 impl KeywordInformation {
     /// <p>The keyword as a string.</p>
-    pub fn keyword(&self) -> std::option::Option<&str> {
+    pub fn keyword(&self) -> ::std::option::Option<&str> {
         self.keyword.as_deref()
     }
     /// <p>A custom message that can be used with the keyword.</p>
-    pub fn keyword_message(&self) -> std::option::Option<&str> {
+    pub fn keyword_message(&self) -> ::std::option::Option<&str> {
         self.keyword_message.as_deref()
     }
     /// <p>The action to perform for the keyword.</p>
-    pub fn keyword_action(&self) -> std::option::Option<&crate::types::KeywordAction> {
+    pub fn keyword_action(&self) -> ::std::option::Option<&crate::types::KeywordAction> {
         self.keyword_action.as_ref()
     }
 }
@@ -37,42 +37,50 @@ impl KeywordInformation {
 
 /// A builder for [`KeywordInformation`](crate::types::KeywordInformation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct KeywordInformationBuilder {
-    pub(crate) keyword: std::option::Option<std::string::String>,
-    pub(crate) keyword_message: std::option::Option<std::string::String>,
-    pub(crate) keyword_action: std::option::Option<crate::types::KeywordAction>,
+    pub(crate) keyword: ::std::option::Option<::std::string::String>,
+    pub(crate) keyword_message: ::std::option::Option<::std::string::String>,
+    pub(crate) keyword_action: ::std::option::Option<crate::types::KeywordAction>,
 }
 impl KeywordInformationBuilder {
     /// <p>The keyword as a string.</p>
-    pub fn keyword(mut self, input: impl Into<std::string::String>) -> Self {
-        self.keyword = Some(input.into());
+    pub fn keyword(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.keyword = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The keyword as a string.</p>
-    pub fn set_keyword(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_keyword(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.keyword = input;
         self
     }
     /// <p>A custom message that can be used with the keyword.</p>
-    pub fn keyword_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.keyword_message = Some(input.into());
+    pub fn keyword_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.keyword_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A custom message that can be used with the keyword.</p>
-    pub fn set_keyword_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_keyword_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.keyword_message = input;
         self
     }
     /// <p>The action to perform for the keyword.</p>
     pub fn keyword_action(mut self, input: crate::types::KeywordAction) -> Self {
-        self.keyword_action = Some(input);
+        self.keyword_action = ::std::option::Option::Some(input);
         self
     }
     /// <p>The action to perform for the keyword.</p>
     pub fn set_keyword_action(
         mut self,
-        input: std::option::Option<crate::types::KeywordAction>,
+        input: ::std::option::Option<crate::types::KeywordAction>,
     ) -> Self {
         self.keyword_action = input;
         self

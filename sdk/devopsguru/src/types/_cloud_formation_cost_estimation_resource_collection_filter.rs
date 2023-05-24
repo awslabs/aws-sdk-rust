@@ -2,15 +2,15 @@
 
 /// <p>Information about an Amazon Web Services CloudFormation stack used to create a monthly cost estimate for DevOps Guru to analyze Amazon Web Services resources. The maximum number of stacks you can specify for a cost estimate is one. The estimate created is for the cost to analyze the Amazon Web Services resources defined by the stack. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacks.html">Stacks</a> in the <i>Amazon Web Services CloudFormation User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CloudFormationCostEstimationResourceCollectionFilter {
     /// <p>An array of CloudFormation stack names. Its size is fixed at 1 item.</p>
     #[doc(hidden)]
-    pub stack_names: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub stack_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CloudFormationCostEstimationResourceCollectionFilter {
     /// <p>An array of CloudFormation stack names. Its size is fixed at 1 item.</p>
-    pub fn stack_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn stack_names(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.stack_names.as_deref()
     }
 }
@@ -25,9 +25,11 @@ impl CloudFormationCostEstimationResourceCollectionFilter {
 
 /// A builder for [`CloudFormationCostEstimationResourceCollectionFilter`](crate::types::CloudFormationCostEstimationResourceCollectionFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CloudFormationCostEstimationResourceCollectionFilterBuilder {
-    pub(crate) stack_names: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) stack_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CloudFormationCostEstimationResourceCollectionFilterBuilder {
     /// Appends an item to `stack_names`.
@@ -35,16 +37,16 @@ impl CloudFormationCostEstimationResourceCollectionFilterBuilder {
     /// To override the contents of this collection use [`set_stack_names`](Self::set_stack_names).
     ///
     /// <p>An array of CloudFormation stack names. Its size is fixed at 1 item.</p>
-    pub fn stack_names(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn stack_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.stack_names.unwrap_or_default();
         v.push(input.into());
-        self.stack_names = Some(v);
+        self.stack_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of CloudFormation stack names. Its size is fixed at 1 item.</p>
     pub fn set_stack_names(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.stack_names = input;
         self

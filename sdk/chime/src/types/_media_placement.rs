@@ -2,64 +2,64 @@
 
 /// <p>A set of endpoints used by clients to connect to the media service group for an Amazon Chime SDK meeting.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MediaPlacement {
     /// <p>The audio host URL.</p>
     #[doc(hidden)]
-    pub audio_host_url: std::option::Option<std::string::String>,
+    pub audio_host_url: ::std::option::Option<::std::string::String>,
     /// <p>The audio fallback URL.</p>
     #[doc(hidden)]
-    pub audio_fallback_url: std::option::Option<std::string::String>,
+    pub audio_fallback_url: ::std::option::Option<::std::string::String>,
     /// <p>The screen data URL.</p>
     #[doc(hidden)]
-    pub screen_data_url: std::option::Option<std::string::String>,
+    pub screen_data_url: ::std::option::Option<::std::string::String>,
     /// <p>The screen sharing URL.</p>
     #[doc(hidden)]
-    pub screen_sharing_url: std::option::Option<std::string::String>,
+    pub screen_sharing_url: ::std::option::Option<::std::string::String>,
     /// <p>The screen viewing URL.</p>
     #[doc(hidden)]
-    pub screen_viewing_url: std::option::Option<std::string::String>,
+    pub screen_viewing_url: ::std::option::Option<::std::string::String>,
     /// <p>The signaling URL.</p>
     #[doc(hidden)]
-    pub signaling_url: std::option::Option<std::string::String>,
+    pub signaling_url: ::std::option::Option<::std::string::String>,
     /// <p>The turn control URL.</p>
     #[doc(hidden)]
-    pub turn_control_url: std::option::Option<std::string::String>,
+    pub turn_control_url: ::std::option::Option<::std::string::String>,
     /// <p>The event ingestion URL to which you send client meeting events.</p>
     #[doc(hidden)]
-    pub event_ingestion_url: std::option::Option<std::string::String>,
+    pub event_ingestion_url: ::std::option::Option<::std::string::String>,
 }
 impl MediaPlacement {
     /// <p>The audio host URL.</p>
-    pub fn audio_host_url(&self) -> std::option::Option<&str> {
+    pub fn audio_host_url(&self) -> ::std::option::Option<&str> {
         self.audio_host_url.as_deref()
     }
     /// <p>The audio fallback URL.</p>
-    pub fn audio_fallback_url(&self) -> std::option::Option<&str> {
+    pub fn audio_fallback_url(&self) -> ::std::option::Option<&str> {
         self.audio_fallback_url.as_deref()
     }
     /// <p>The screen data URL.</p>
-    pub fn screen_data_url(&self) -> std::option::Option<&str> {
+    pub fn screen_data_url(&self) -> ::std::option::Option<&str> {
         self.screen_data_url.as_deref()
     }
     /// <p>The screen sharing URL.</p>
-    pub fn screen_sharing_url(&self) -> std::option::Option<&str> {
+    pub fn screen_sharing_url(&self) -> ::std::option::Option<&str> {
         self.screen_sharing_url.as_deref()
     }
     /// <p>The screen viewing URL.</p>
-    pub fn screen_viewing_url(&self) -> std::option::Option<&str> {
+    pub fn screen_viewing_url(&self) -> ::std::option::Option<&str> {
         self.screen_viewing_url.as_deref()
     }
     /// <p>The signaling URL.</p>
-    pub fn signaling_url(&self) -> std::option::Option<&str> {
+    pub fn signaling_url(&self) -> ::std::option::Option<&str> {
         self.signaling_url.as_deref()
     }
     /// <p>The turn control URL.</p>
-    pub fn turn_control_url(&self) -> std::option::Option<&str> {
+    pub fn turn_control_url(&self) -> ::std::option::Option<&str> {
         self.turn_control_url.as_deref()
     }
     /// <p>The event ingestion URL to which you send client meeting events.</p>
-    pub fn event_ingestion_url(&self) -> std::option::Option<&str> {
+    pub fn event_ingestion_url(&self) -> ::std::option::Option<&str> {
         self.event_ingestion_url.as_deref()
     }
 }
@@ -72,106 +72,144 @@ impl MediaPlacement {
 
 /// A builder for [`MediaPlacement`](crate::types::MediaPlacement).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MediaPlacementBuilder {
-    pub(crate) audio_host_url: std::option::Option<std::string::String>,
-    pub(crate) audio_fallback_url: std::option::Option<std::string::String>,
-    pub(crate) screen_data_url: std::option::Option<std::string::String>,
-    pub(crate) screen_sharing_url: std::option::Option<std::string::String>,
-    pub(crate) screen_viewing_url: std::option::Option<std::string::String>,
-    pub(crate) signaling_url: std::option::Option<std::string::String>,
-    pub(crate) turn_control_url: std::option::Option<std::string::String>,
-    pub(crate) event_ingestion_url: std::option::Option<std::string::String>,
+    pub(crate) audio_host_url: ::std::option::Option<::std::string::String>,
+    pub(crate) audio_fallback_url: ::std::option::Option<::std::string::String>,
+    pub(crate) screen_data_url: ::std::option::Option<::std::string::String>,
+    pub(crate) screen_sharing_url: ::std::option::Option<::std::string::String>,
+    pub(crate) screen_viewing_url: ::std::option::Option<::std::string::String>,
+    pub(crate) signaling_url: ::std::option::Option<::std::string::String>,
+    pub(crate) turn_control_url: ::std::option::Option<::std::string::String>,
+    pub(crate) event_ingestion_url: ::std::option::Option<::std::string::String>,
 }
 impl MediaPlacementBuilder {
     /// <p>The audio host URL.</p>
-    pub fn audio_host_url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.audio_host_url = Some(input.into());
+    pub fn audio_host_url(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.audio_host_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The audio host URL.</p>
-    pub fn set_audio_host_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_audio_host_url(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.audio_host_url = input;
         self
     }
     /// <p>The audio fallback URL.</p>
-    pub fn audio_fallback_url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.audio_fallback_url = Some(input.into());
+    pub fn audio_fallback_url(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.audio_fallback_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The audio fallback URL.</p>
     pub fn set_audio_fallback_url(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.audio_fallback_url = input;
         self
     }
     /// <p>The screen data URL.</p>
-    pub fn screen_data_url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.screen_data_url = Some(input.into());
+    pub fn screen_data_url(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.screen_data_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The screen data URL.</p>
-    pub fn set_screen_data_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_screen_data_url(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.screen_data_url = input;
         self
     }
     /// <p>The screen sharing URL.</p>
-    pub fn screen_sharing_url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.screen_sharing_url = Some(input.into());
+    pub fn screen_sharing_url(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.screen_sharing_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The screen sharing URL.</p>
     pub fn set_screen_sharing_url(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.screen_sharing_url = input;
         self
     }
     /// <p>The screen viewing URL.</p>
-    pub fn screen_viewing_url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.screen_viewing_url = Some(input.into());
+    pub fn screen_viewing_url(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.screen_viewing_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The screen viewing URL.</p>
     pub fn set_screen_viewing_url(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.screen_viewing_url = input;
         self
     }
     /// <p>The signaling URL.</p>
-    pub fn signaling_url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.signaling_url = Some(input.into());
+    pub fn signaling_url(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.signaling_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The signaling URL.</p>
-    pub fn set_signaling_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_signaling_url(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.signaling_url = input;
         self
     }
     /// <p>The turn control URL.</p>
-    pub fn turn_control_url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.turn_control_url = Some(input.into());
+    pub fn turn_control_url(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.turn_control_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The turn control URL.</p>
-    pub fn set_turn_control_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_turn_control_url(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.turn_control_url = input;
         self
     }
     /// <p>The event ingestion URL to which you send client meeting events.</p>
-    pub fn event_ingestion_url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.event_ingestion_url = Some(input.into());
+    pub fn event_ingestion_url(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.event_ingestion_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The event ingestion URL to which you send client meeting events.</p>
     pub fn set_event_ingestion_url(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.event_ingestion_url = input;
         self

@@ -2,22 +2,22 @@
 
 /// <p>Represents the body of the email message.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Body {
     /// <p>An object that represents the version of the message that is displayed in email clients that don't support HTML, or clients where the recipient has disabled HTML rendering.</p>
     #[doc(hidden)]
-    pub text: std::option::Option<crate::types::Content>,
+    pub text: ::std::option::Option<crate::types::Content>,
     /// <p>An object that represents the version of the message that is displayed in email clients that support HTML. HTML messages can include formatted text, hyperlinks, images, and more. </p>
     #[doc(hidden)]
-    pub html: std::option::Option<crate::types::Content>,
+    pub html: ::std::option::Option<crate::types::Content>,
 }
 impl Body {
     /// <p>An object that represents the version of the message that is displayed in email clients that don't support HTML, or clients where the recipient has disabled HTML rendering.</p>
-    pub fn text(&self) -> std::option::Option<&crate::types::Content> {
+    pub fn text(&self) -> ::std::option::Option<&crate::types::Content> {
         self.text.as_ref()
     }
     /// <p>An object that represents the version of the message that is displayed in email clients that support HTML. HTML messages can include formatted text, hyperlinks, images, and more. </p>
-    pub fn html(&self) -> std::option::Option<&crate::types::Content> {
+    pub fn html(&self) -> ::std::option::Option<&crate::types::Content> {
         self.html.as_ref()
     }
 }
@@ -30,29 +30,31 @@ impl Body {
 
 /// A builder for [`Body`](crate::types::Body).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BodyBuilder {
-    pub(crate) text: std::option::Option<crate::types::Content>,
-    pub(crate) html: std::option::Option<crate::types::Content>,
+    pub(crate) text: ::std::option::Option<crate::types::Content>,
+    pub(crate) html: ::std::option::Option<crate::types::Content>,
 }
 impl BodyBuilder {
     /// <p>An object that represents the version of the message that is displayed in email clients that don't support HTML, or clients where the recipient has disabled HTML rendering.</p>
     pub fn text(mut self, input: crate::types::Content) -> Self {
-        self.text = Some(input);
+        self.text = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that represents the version of the message that is displayed in email clients that don't support HTML, or clients where the recipient has disabled HTML rendering.</p>
-    pub fn set_text(mut self, input: std::option::Option<crate::types::Content>) -> Self {
+    pub fn set_text(mut self, input: ::std::option::Option<crate::types::Content>) -> Self {
         self.text = input;
         self
     }
     /// <p>An object that represents the version of the message that is displayed in email clients that support HTML. HTML messages can include formatted text, hyperlinks, images, and more. </p>
     pub fn html(mut self, input: crate::types::Content) -> Self {
-        self.html = Some(input);
+        self.html = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that represents the version of the message that is displayed in email clients that support HTML. HTML messages can include formatted text, hyperlinks, images, and more. </p>
-    pub fn set_html(mut self, input: std::option::Option<crate::types::Content>) -> Self {
+    pub fn set_html(mut self, input: ::std::option::Option<crate::types::Content>) -> Self {
         self.html = input;
         self
     }

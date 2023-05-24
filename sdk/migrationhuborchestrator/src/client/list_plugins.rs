@@ -5,7 +5,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_plugins::builders::ListPluginsFluentBuilder::max_results) / [`set_max_results(i32)`](crate::operation::list_plugins::builders::ListPluginsFluentBuilder::set_max_results): <p>The maximum number of plugins that can be returned.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_plugins::builders::ListPluginsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_plugins::builders::ListPluginsFluentBuilder::set_next_token): <p>The pagination token.</p>
+    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_plugins::builders::ListPluginsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_plugins::builders::ListPluginsFluentBuilder::set_next_token): <p>The pagination token.</p>
     /// - On success, responds with [`ListPluginsOutput`](crate::operation::list_plugins::ListPluginsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_plugins::ListPluginsOutput::next_token): <p>The pagination token.</p>
     ///   - [`plugins(Option<Vec<PluginSummary>>)`](crate::operation::list_plugins::ListPluginsOutput::plugins): <p>Migration Hub Orchestrator plugins.</p>

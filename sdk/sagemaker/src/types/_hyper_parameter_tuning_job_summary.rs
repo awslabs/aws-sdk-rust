@@ -2,89 +2,90 @@
 
 /// <p>Provides summary information about a hyperparameter tuning job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HyperParameterTuningJobSummary {
     /// <p>The name of the tuning job.</p>
     #[doc(hidden)]
-    pub hyper_parameter_tuning_job_name: std::option::Option<std::string::String>,
+    pub hyper_parameter_tuning_job_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the tuning job.</p>
     #[doc(hidden)]
-    pub hyper_parameter_tuning_job_arn: std::option::Option<std::string::String>,
+    pub hyper_parameter_tuning_job_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the tuning job.</p>
     #[doc(hidden)]
     pub hyper_parameter_tuning_job_status:
-        std::option::Option<crate::types::HyperParameterTuningJobStatus>,
+        ::std::option::Option<crate::types::HyperParameterTuningJobStatus>,
     /// <p>Specifies the search strategy hyperparameter tuning uses to choose which hyperparameters to evaluate at each iteration.</p>
     #[doc(hidden)]
-    pub strategy: std::option::Option<crate::types::HyperParameterTuningJobStrategyType>,
+    pub strategy: ::std::option::Option<crate::types::HyperParameterTuningJobStrategyType>,
     /// <p>The date and time that the tuning job was created.</p>
     #[doc(hidden)]
-    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the tuning job ended.</p>
     #[doc(hidden)]
-    pub hyper_parameter_tuning_end_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub hyper_parameter_tuning_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the tuning job was modified.</p>
     #[doc(hidden)]
-    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrainingJobStatusCounters.html">TrainingJobStatusCounters</a> object that specifies the numbers of training jobs, categorized by status, that this tuning job launched.</p>
     #[doc(hidden)]
-    pub training_job_status_counters: std::option::Option<crate::types::TrainingJobStatusCounters>,
+    pub training_job_status_counters:
+        ::std::option::Option<crate::types::TrainingJobStatusCounters>,
     /// <p>The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ObjectiveStatusCounters.html">ObjectiveStatusCounters</a> object that specifies the numbers of training jobs, categorized by objective metric status, that this tuning job launched.</p>
     #[doc(hidden)]
-    pub objective_status_counters: std::option::Option<crate::types::ObjectiveStatusCounters>,
+    pub objective_status_counters: ::std::option::Option<crate::types::ObjectiveStatusCounters>,
     /// <p>The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ResourceLimits.html">ResourceLimits</a> object that specifies the maximum number of training jobs and parallel training jobs allowed for this tuning job.</p>
     #[doc(hidden)]
-    pub resource_limits: std::option::Option<crate::types::ResourceLimits>,
+    pub resource_limits: ::std::option::Option<crate::types::ResourceLimits>,
 }
 impl HyperParameterTuningJobSummary {
     /// <p>The name of the tuning job.</p>
-    pub fn hyper_parameter_tuning_job_name(&self) -> std::option::Option<&str> {
+    pub fn hyper_parameter_tuning_job_name(&self) -> ::std::option::Option<&str> {
         self.hyper_parameter_tuning_job_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the tuning job.</p>
-    pub fn hyper_parameter_tuning_job_arn(&self) -> std::option::Option<&str> {
+    pub fn hyper_parameter_tuning_job_arn(&self) -> ::std::option::Option<&str> {
         self.hyper_parameter_tuning_job_arn.as_deref()
     }
     /// <p>The status of the tuning job.</p>
     pub fn hyper_parameter_tuning_job_status(
         &self,
-    ) -> std::option::Option<&crate::types::HyperParameterTuningJobStatus> {
+    ) -> ::std::option::Option<&crate::types::HyperParameterTuningJobStatus> {
         self.hyper_parameter_tuning_job_status.as_ref()
     }
     /// <p>Specifies the search strategy hyperparameter tuning uses to choose which hyperparameters to evaluate at each iteration.</p>
     pub fn strategy(
         &self,
-    ) -> std::option::Option<&crate::types::HyperParameterTuningJobStrategyType> {
+    ) -> ::std::option::Option<&crate::types::HyperParameterTuningJobStrategyType> {
         self.strategy.as_ref()
     }
     /// <p>The date and time that the tuning job was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The date and time that the tuning job ended.</p>
     pub fn hyper_parameter_tuning_end_time(
         &self,
-    ) -> std::option::Option<&aws_smithy_types::DateTime> {
+    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.hyper_parameter_tuning_end_time.as_ref()
     }
     /// <p>The date and time that the tuning job was modified.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrainingJobStatusCounters.html">TrainingJobStatusCounters</a> object that specifies the numbers of training jobs, categorized by status, that this tuning job launched.</p>
     pub fn training_job_status_counters(
         &self,
-    ) -> std::option::Option<&crate::types::TrainingJobStatusCounters> {
+    ) -> ::std::option::Option<&crate::types::TrainingJobStatusCounters> {
         self.training_job_status_counters.as_ref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ObjectiveStatusCounters.html">ObjectiveStatusCounters</a> object that specifies the numbers of training jobs, categorized by objective metric status, that this tuning job launched.</p>
     pub fn objective_status_counters(
         &self,
-    ) -> std::option::Option<&crate::types::ObjectiveStatusCounters> {
+    ) -> ::std::option::Option<&crate::types::ObjectiveStatusCounters> {
         self.objective_status_counters.as_ref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ResourceLimits.html">ResourceLimits</a> object that specifies the maximum number of training jobs and parallel training jobs allowed for this tuning job.</p>
-    pub fn resource_limits(&self) -> std::option::Option<&crate::types::ResourceLimits> {
+    pub fn resource_limits(&self) -> ::std::option::Option<&crate::types::ResourceLimits> {
         self.resource_limits.as_ref()
     }
 }
@@ -97,48 +98,53 @@ impl HyperParameterTuningJobSummary {
 
 /// A builder for [`HyperParameterTuningJobSummary`](crate::types::HyperParameterTuningJobSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct HyperParameterTuningJobSummaryBuilder {
-    pub(crate) hyper_parameter_tuning_job_name: std::option::Option<std::string::String>,
-    pub(crate) hyper_parameter_tuning_job_arn: std::option::Option<std::string::String>,
+    pub(crate) hyper_parameter_tuning_job_name: ::std::option::Option<::std::string::String>,
+    pub(crate) hyper_parameter_tuning_job_arn: ::std::option::Option<::std::string::String>,
     pub(crate) hyper_parameter_tuning_job_status:
-        std::option::Option<crate::types::HyperParameterTuningJobStatus>,
-    pub(crate) strategy: std::option::Option<crate::types::HyperParameterTuningJobStrategyType>,
-    pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) hyper_parameter_tuning_end_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+        ::std::option::Option<crate::types::HyperParameterTuningJobStatus>,
+    pub(crate) strategy: ::std::option::Option<crate::types::HyperParameterTuningJobStrategyType>,
+    pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) hyper_parameter_tuning_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) training_job_status_counters:
-        std::option::Option<crate::types::TrainingJobStatusCounters>,
+        ::std::option::Option<crate::types::TrainingJobStatusCounters>,
     pub(crate) objective_status_counters:
-        std::option::Option<crate::types::ObjectiveStatusCounters>,
-    pub(crate) resource_limits: std::option::Option<crate::types::ResourceLimits>,
+        ::std::option::Option<crate::types::ObjectiveStatusCounters>,
+    pub(crate) resource_limits: ::std::option::Option<crate::types::ResourceLimits>,
 }
 impl HyperParameterTuningJobSummaryBuilder {
     /// <p>The name of the tuning job.</p>
     pub fn hyper_parameter_tuning_job_name(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.hyper_parameter_tuning_job_name = Some(input.into());
+        self.hyper_parameter_tuning_job_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the tuning job.</p>
     pub fn set_hyper_parameter_tuning_job_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.hyper_parameter_tuning_job_name = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the tuning job.</p>
-    pub fn hyper_parameter_tuning_job_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.hyper_parameter_tuning_job_arn = Some(input.into());
+    pub fn hyper_parameter_tuning_job_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.hyper_parameter_tuning_job_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the tuning job.</p>
     pub fn set_hyper_parameter_tuning_job_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.hyper_parameter_tuning_job_arn = input;
         self
@@ -148,65 +154,65 @@ impl HyperParameterTuningJobSummaryBuilder {
         mut self,
         input: crate::types::HyperParameterTuningJobStatus,
     ) -> Self {
-        self.hyper_parameter_tuning_job_status = Some(input);
+        self.hyper_parameter_tuning_job_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the tuning job.</p>
     pub fn set_hyper_parameter_tuning_job_status(
         mut self,
-        input: std::option::Option<crate::types::HyperParameterTuningJobStatus>,
+        input: ::std::option::Option<crate::types::HyperParameterTuningJobStatus>,
     ) -> Self {
         self.hyper_parameter_tuning_job_status = input;
         self
     }
     /// <p>Specifies the search strategy hyperparameter tuning uses to choose which hyperparameters to evaluate at each iteration.</p>
     pub fn strategy(mut self, input: crate::types::HyperParameterTuningJobStrategyType) -> Self {
-        self.strategy = Some(input);
+        self.strategy = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the search strategy hyperparameter tuning uses to choose which hyperparameters to evaluate at each iteration.</p>
     pub fn set_strategy(
         mut self,
-        input: std::option::Option<crate::types::HyperParameterTuningJobStrategyType>,
+        input: ::std::option::Option<crate::types::HyperParameterTuningJobStrategyType>,
     ) -> Self {
         self.strategy = input;
         self
     }
     /// <p>The date and time that the tuning job was created.</p>
-    pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_time = Some(input);
+    pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time that the tuning job was created.</p>
     pub fn set_creation_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_time = input;
         self
     }
     /// <p>The date and time that the tuning job ended.</p>
-    pub fn hyper_parameter_tuning_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.hyper_parameter_tuning_end_time = Some(input);
+    pub fn hyper_parameter_tuning_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.hyper_parameter_tuning_end_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time that the tuning job ended.</p>
     pub fn set_hyper_parameter_tuning_end_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.hyper_parameter_tuning_end_time = input;
         self
     }
     /// <p>The date and time that the tuning job was modified.</p>
-    pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_modified_time = Some(input);
+    pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_modified_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time that the tuning job was modified.</p>
     pub fn set_last_modified_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_modified_time = input;
         self
@@ -216,13 +222,13 @@ impl HyperParameterTuningJobSummaryBuilder {
         mut self,
         input: crate::types::TrainingJobStatusCounters,
     ) -> Self {
-        self.training_job_status_counters = Some(input);
+        self.training_job_status_counters = ::std::option::Option::Some(input);
         self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrainingJobStatusCounters.html">TrainingJobStatusCounters</a> object that specifies the numbers of training jobs, categorized by status, that this tuning job launched.</p>
     pub fn set_training_job_status_counters(
         mut self,
-        input: std::option::Option<crate::types::TrainingJobStatusCounters>,
+        input: ::std::option::Option<crate::types::TrainingJobStatusCounters>,
     ) -> Self {
         self.training_job_status_counters = input;
         self
@@ -232,26 +238,26 @@ impl HyperParameterTuningJobSummaryBuilder {
         mut self,
         input: crate::types::ObjectiveStatusCounters,
     ) -> Self {
-        self.objective_status_counters = Some(input);
+        self.objective_status_counters = ::std::option::Option::Some(input);
         self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ObjectiveStatusCounters.html">ObjectiveStatusCounters</a> object that specifies the numbers of training jobs, categorized by objective metric status, that this tuning job launched.</p>
     pub fn set_objective_status_counters(
         mut self,
-        input: std::option::Option<crate::types::ObjectiveStatusCounters>,
+        input: ::std::option::Option<crate::types::ObjectiveStatusCounters>,
     ) -> Self {
         self.objective_status_counters = input;
         self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ResourceLimits.html">ResourceLimits</a> object that specifies the maximum number of training jobs and parallel training jobs allowed for this tuning job.</p>
     pub fn resource_limits(mut self, input: crate::types::ResourceLimits) -> Self {
-        self.resource_limits = Some(input);
+        self.resource_limits = ::std::option::Option::Some(input);
         self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ResourceLimits.html">ResourceLimits</a> object that specifies the maximum number of training jobs and parallel training jobs allowed for this tuning job.</p>
     pub fn set_resource_limits(
         mut self,
-        input: std::option::Option<crate::types::ResourceLimits>,
+        input: ::std::option::Option<crate::types::ResourceLimits>,
     ) -> Self {
         self.resource_limits = input;
         self

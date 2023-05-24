@@ -2,11 +2,11 @@
 
 /// <p>The configuration of an Amazon FSx for OpenZFS root volume.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OpenZfsCreateRootVolumeConfiguration {
     /// <p>Specifies the record size of an OpenZFS root volume, in kibibytes (KiB). Valid values are 4, 8, 16, 32, 64, 128, 256, 512, or 1024 KiB. The default is 128 KiB. Most workloads should use the default record size. Database workflows can benefit from a smaller record size, while streaming workflows can benefit from a larger record size. For additional guidance on setting a custom record size, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#performance-tips-zfs"> Tips for maximizing performance</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
     #[doc(hidden)]
-    pub record_size_ki_b: std::option::Option<i32>,
+    pub record_size_ki_b: ::std::option::Option<i32>,
     /// <p>Specifies the method used to compress the data on the volume. The compression type is <code>NONE</code> by default.</p>
     /// <ul>
     /// <li> <p> <code>NONE</code> - Doesn't compress the data on the volume. <code>NONE</code> is the default.</p> </li>
@@ -14,24 +14,24 @@ pub struct OpenZfsCreateRootVolumeConfiguration {
     /// <li> <p> <code>LZ4</code> - Compresses the data in the volume using the LZ4 compression algorithm. Compared to Z-Standard, LZ4 is less compute-intensive and delivers higher write throughput speeds.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub data_compression_type: std::option::Option<crate::types::OpenZfsDataCompressionType>,
+    pub data_compression_type: ::std::option::Option<crate::types::OpenZfsDataCompressionType>,
     /// <p>The configuration object for mounting a file system.</p>
     #[doc(hidden)]
-    pub nfs_exports: std::option::Option<std::vec::Vec<crate::types::OpenZfsNfsExport>>,
+    pub nfs_exports: ::std::option::Option<::std::vec::Vec<crate::types::OpenZfsNfsExport>>,
     /// <p>An object specifying how much storage users or groups can use on the volume.</p>
     #[doc(hidden)]
     pub user_and_group_quotas:
-        std::option::Option<std::vec::Vec<crate::types::OpenZfsUserOrGroupQuota>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::OpenZfsUserOrGroupQuota>>,
     /// <p>A Boolean value indicating whether tags for the volume should be copied to snapshots of the volume. This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the volume are copied to snapshots where the user doesn't specify tags. If this value is <code>true</code> and you specify one or more tags, only the specified tags are copied to snapshots. If you specify one or more tags when creating the snapshot, no tags are copied from the volume, regardless of this value. </p>
     #[doc(hidden)]
-    pub copy_tags_to_snapshots: std::option::Option<bool>,
+    pub copy_tags_to_snapshots: ::std::option::Option<bool>,
     /// <p>A Boolean value indicating whether the volume is read-only. Setting this value to <code>true</code> can be useful after you have completed changes to a volume and no longer want changes to occur. </p>
     #[doc(hidden)]
-    pub read_only: std::option::Option<bool>,
+    pub read_only: ::std::option::Option<bool>,
 }
 impl OpenZfsCreateRootVolumeConfiguration {
     /// <p>Specifies the record size of an OpenZFS root volume, in kibibytes (KiB). Valid values are 4, 8, 16, 32, 64, 128, 256, 512, or 1024 KiB. The default is 128 KiB. Most workloads should use the default record size. Database workflows can benefit from a smaller record size, while streaming workflows can benefit from a larger record size. For additional guidance on setting a custom record size, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#performance-tips-zfs"> Tips for maximizing performance</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
-    pub fn record_size_ki_b(&self) -> std::option::Option<i32> {
+    pub fn record_size_ki_b(&self) -> ::std::option::Option<i32> {
         self.record_size_ki_b
     }
     /// <p>Specifies the method used to compress the data on the volume. The compression type is <code>NONE</code> by default.</p>
@@ -42,25 +42,25 @@ impl OpenZfsCreateRootVolumeConfiguration {
     /// </ul>
     pub fn data_compression_type(
         &self,
-    ) -> std::option::Option<&crate::types::OpenZfsDataCompressionType> {
+    ) -> ::std::option::Option<&crate::types::OpenZfsDataCompressionType> {
         self.data_compression_type.as_ref()
     }
     /// <p>The configuration object for mounting a file system.</p>
-    pub fn nfs_exports(&self) -> std::option::Option<&[crate::types::OpenZfsNfsExport]> {
+    pub fn nfs_exports(&self) -> ::std::option::Option<&[crate::types::OpenZfsNfsExport]> {
         self.nfs_exports.as_deref()
     }
     /// <p>An object specifying how much storage users or groups can use on the volume.</p>
     pub fn user_and_group_quotas(
         &self,
-    ) -> std::option::Option<&[crate::types::OpenZfsUserOrGroupQuota]> {
+    ) -> ::std::option::Option<&[crate::types::OpenZfsUserOrGroupQuota]> {
         self.user_and_group_quotas.as_deref()
     }
     /// <p>A Boolean value indicating whether tags for the volume should be copied to snapshots of the volume. This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the volume are copied to snapshots where the user doesn't specify tags. If this value is <code>true</code> and you specify one or more tags, only the specified tags are copied to snapshots. If you specify one or more tags when creating the snapshot, no tags are copied from the volume, regardless of this value. </p>
-    pub fn copy_tags_to_snapshots(&self) -> std::option::Option<bool> {
+    pub fn copy_tags_to_snapshots(&self) -> ::std::option::Option<bool> {
         self.copy_tags_to_snapshots
     }
     /// <p>A Boolean value indicating whether the volume is read-only. Setting this value to <code>true</code> can be useful after you have completed changes to a volume and no longer want changes to occur. </p>
-    pub fn read_only(&self) -> std::option::Option<bool> {
+    pub fn read_only(&self) -> ::std::option::Option<bool> {
         self.read_only
     }
 }
@@ -73,24 +73,27 @@ impl OpenZfsCreateRootVolumeConfiguration {
 
 /// A builder for [`OpenZfsCreateRootVolumeConfiguration`](crate::types::OpenZfsCreateRootVolumeConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OpenZfsCreateRootVolumeConfigurationBuilder {
-    pub(crate) record_size_ki_b: std::option::Option<i32>,
-    pub(crate) data_compression_type: std::option::Option<crate::types::OpenZfsDataCompressionType>,
-    pub(crate) nfs_exports: std::option::Option<std::vec::Vec<crate::types::OpenZfsNfsExport>>,
+    pub(crate) record_size_ki_b: ::std::option::Option<i32>,
+    pub(crate) data_compression_type:
+        ::std::option::Option<crate::types::OpenZfsDataCompressionType>,
+    pub(crate) nfs_exports: ::std::option::Option<::std::vec::Vec<crate::types::OpenZfsNfsExport>>,
     pub(crate) user_and_group_quotas:
-        std::option::Option<std::vec::Vec<crate::types::OpenZfsUserOrGroupQuota>>,
-    pub(crate) copy_tags_to_snapshots: std::option::Option<bool>,
-    pub(crate) read_only: std::option::Option<bool>,
+        ::std::option::Option<::std::vec::Vec<crate::types::OpenZfsUserOrGroupQuota>>,
+    pub(crate) copy_tags_to_snapshots: ::std::option::Option<bool>,
+    pub(crate) read_only: ::std::option::Option<bool>,
 }
 impl OpenZfsCreateRootVolumeConfigurationBuilder {
     /// <p>Specifies the record size of an OpenZFS root volume, in kibibytes (KiB). Valid values are 4, 8, 16, 32, 64, 128, 256, 512, or 1024 KiB. The default is 128 KiB. Most workloads should use the default record size. Database workflows can benefit from a smaller record size, while streaming workflows can benefit from a larger record size. For additional guidance on setting a custom record size, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#performance-tips-zfs"> Tips for maximizing performance</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
     pub fn record_size_ki_b(mut self, input: i32) -> Self {
-        self.record_size_ki_b = Some(input);
+        self.record_size_ki_b = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the record size of an OpenZFS root volume, in kibibytes (KiB). Valid values are 4, 8, 16, 32, 64, 128, 256, 512, or 1024 KiB. The default is 128 KiB. Most workloads should use the default record size. Database workflows can benefit from a smaller record size, while streaming workflows can benefit from a larger record size. For additional guidance on setting a custom record size, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#performance-tips-zfs"> Tips for maximizing performance</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
-    pub fn set_record_size_ki_b(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_record_size_ki_b(mut self, input: ::std::option::Option<i32>) -> Self {
         self.record_size_ki_b = input;
         self
     }
@@ -104,7 +107,7 @@ impl OpenZfsCreateRootVolumeConfigurationBuilder {
         mut self,
         input: crate::types::OpenZfsDataCompressionType,
     ) -> Self {
-        self.data_compression_type = Some(input);
+        self.data_compression_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the method used to compress the data on the volume. The compression type is <code>NONE</code> by default.</p>
@@ -115,7 +118,7 @@ impl OpenZfsCreateRootVolumeConfigurationBuilder {
     /// </ul>
     pub fn set_data_compression_type(
         mut self,
-        input: std::option::Option<crate::types::OpenZfsDataCompressionType>,
+        input: ::std::option::Option<crate::types::OpenZfsDataCompressionType>,
     ) -> Self {
         self.data_compression_type = input;
         self
@@ -128,13 +131,13 @@ impl OpenZfsCreateRootVolumeConfigurationBuilder {
     pub fn nfs_exports(mut self, input: crate::types::OpenZfsNfsExport) -> Self {
         let mut v = self.nfs_exports.unwrap_or_default();
         v.push(input);
-        self.nfs_exports = Some(v);
+        self.nfs_exports = ::std::option::Option::Some(v);
         self
     }
     /// <p>The configuration object for mounting a file system.</p>
     pub fn set_nfs_exports(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::OpenZfsNfsExport>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::OpenZfsNfsExport>>,
     ) -> Self {
         self.nfs_exports = input;
         self
@@ -147,34 +150,34 @@ impl OpenZfsCreateRootVolumeConfigurationBuilder {
     pub fn user_and_group_quotas(mut self, input: crate::types::OpenZfsUserOrGroupQuota) -> Self {
         let mut v = self.user_and_group_quotas.unwrap_or_default();
         v.push(input);
-        self.user_and_group_quotas = Some(v);
+        self.user_and_group_quotas = ::std::option::Option::Some(v);
         self
     }
     /// <p>An object specifying how much storage users or groups can use on the volume.</p>
     pub fn set_user_and_group_quotas(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::OpenZfsUserOrGroupQuota>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::OpenZfsUserOrGroupQuota>>,
     ) -> Self {
         self.user_and_group_quotas = input;
         self
     }
     /// <p>A Boolean value indicating whether tags for the volume should be copied to snapshots of the volume. This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the volume are copied to snapshots where the user doesn't specify tags. If this value is <code>true</code> and you specify one or more tags, only the specified tags are copied to snapshots. If you specify one or more tags when creating the snapshot, no tags are copied from the volume, regardless of this value. </p>
     pub fn copy_tags_to_snapshots(mut self, input: bool) -> Self {
-        self.copy_tags_to_snapshots = Some(input);
+        self.copy_tags_to_snapshots = ::std::option::Option::Some(input);
         self
     }
     /// <p>A Boolean value indicating whether tags for the volume should be copied to snapshots of the volume. This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags for the volume are copied to snapshots where the user doesn't specify tags. If this value is <code>true</code> and you specify one or more tags, only the specified tags are copied to snapshots. If you specify one or more tags when creating the snapshot, no tags are copied from the volume, regardless of this value. </p>
-    pub fn set_copy_tags_to_snapshots(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_copy_tags_to_snapshots(mut self, input: ::std::option::Option<bool>) -> Self {
         self.copy_tags_to_snapshots = input;
         self
     }
     /// <p>A Boolean value indicating whether the volume is read-only. Setting this value to <code>true</code> can be useful after you have completed changes to a volume and no longer want changes to occur. </p>
     pub fn read_only(mut self, input: bool) -> Self {
-        self.read_only = Some(input);
+        self.read_only = ::std::option::Option::Some(input);
         self
     }
     /// <p>A Boolean value indicating whether the volume is read-only. Setting this value to <code>true</code> can be useful after you have completed changes to a volume and no longer want changes to occur. </p>
-    pub fn set_read_only(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_read_only(mut self, input: ::std::option::Option<bool>) -> Self {
         self.read_only = input;
         self
     }

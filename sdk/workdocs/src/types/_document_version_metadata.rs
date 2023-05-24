@@ -2,116 +2,120 @@
 
 /// <p>Describes a version of a document.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DocumentVersionMetadata {
     /// <p>The ID of the version.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the version.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The content type of the document.</p>
     #[doc(hidden)]
-    pub content_type: std::option::Option<std::string::String>,
+    pub content_type: ::std::option::Option<::std::string::String>,
     /// <p>The size of the document, in bytes.</p>
     #[doc(hidden)]
-    pub size: std::option::Option<i64>,
+    pub size: ::std::option::Option<i64>,
     /// <p>The signature of the document.</p>
     #[doc(hidden)]
-    pub signature: std::option::Option<std::string::String>,
+    pub signature: ::std::option::Option<::std::string::String>,
     /// <p>The status of the document.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::DocumentStatusType>,
+    pub status: ::std::option::Option<crate::types::DocumentStatusType>,
     /// <p>The timestamp when the document was first uploaded.</p>
     #[doc(hidden)]
-    pub created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp when the document was last uploaded.</p>
     #[doc(hidden)]
-    pub modified_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub modified_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp when the content of the document was originally created.</p>
     #[doc(hidden)]
-    pub content_created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub content_created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp when the content of the document was modified.</p>
     #[doc(hidden)]
-    pub content_modified_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub content_modified_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ID of the creator.</p>
     #[doc(hidden)]
-    pub creator_id: std::option::Option<std::string::String>,
+    pub creator_id: ::std::option::Option<::std::string::String>,
     /// <p>The thumbnail of the document.</p>
     #[doc(hidden)]
-    pub thumbnail: std::option::Option<
-        std::collections::HashMap<crate::types::DocumentThumbnailType, std::string::String>,
+    pub thumbnail: ::std::option::Option<
+        ::std::collections::HashMap<crate::types::DocumentThumbnailType, ::std::string::String>,
     >,
     /// <p>The source of the document.</p>
     #[doc(hidden)]
-    pub source: std::option::Option<
-        std::collections::HashMap<crate::types::DocumentSourceType, std::string::String>,
+    pub source: ::std::option::Option<
+        ::std::collections::HashMap<crate::types::DocumentSourceType, ::std::string::String>,
     >,
 }
 impl DocumentVersionMetadata {
     /// <p>The ID of the version.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The name of the version.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The content type of the document.</p>
-    pub fn content_type(&self) -> std::option::Option<&str> {
+    pub fn content_type(&self) -> ::std::option::Option<&str> {
         self.content_type.as_deref()
     }
     /// <p>The size of the document, in bytes.</p>
-    pub fn size(&self) -> std::option::Option<i64> {
+    pub fn size(&self) -> ::std::option::Option<i64> {
         self.size
     }
     /// <p>The signature of the document.</p>
-    pub fn signature(&self) -> std::option::Option<&str> {
+    pub fn signature(&self) -> ::std::option::Option<&str> {
         self.signature.as_deref()
     }
     /// <p>The status of the document.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::DocumentStatusType> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::DocumentStatusType> {
         self.status.as_ref()
     }
     /// <p>The timestamp when the document was first uploaded.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The timestamp when the document was last uploaded.</p>
-    pub fn modified_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn modified_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.modified_timestamp.as_ref()
     }
     /// <p>The timestamp when the content of the document was originally created.</p>
-    pub fn content_created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn content_created_timestamp(
+        &self,
+    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.content_created_timestamp.as_ref()
     }
     /// <p>The timestamp when the content of the document was modified.</p>
-    pub fn content_modified_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn content_modified_timestamp(
+        &self,
+    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.content_modified_timestamp.as_ref()
     }
     /// <p>The ID of the creator.</p>
-    pub fn creator_id(&self) -> std::option::Option<&str> {
+    pub fn creator_id(&self) -> ::std::option::Option<&str> {
         self.creator_id.as_deref()
     }
     /// <p>The thumbnail of the document.</p>
     pub fn thumbnail(
         &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<crate::types::DocumentThumbnailType, std::string::String>,
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<crate::types::DocumentThumbnailType, ::std::string::String>,
     > {
         self.thumbnail.as_ref()
     }
     /// <p>The source of the document.</p>
     pub fn source(
         &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<crate::types::DocumentSourceType, std::string::String>,
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<crate::types::DocumentSourceType, ::std::string::String>,
     > {
         self.source.as_ref()
     }
 }
-impl std::fmt::Debug for DocumentVersionMetadata {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for DocumentVersionMetadata {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DocumentVersionMetadata");
         formatter.field("id", &self.id);
         formatter.field("name", &"*** Sensitive Data Redacted ***");
@@ -141,149 +145,149 @@ impl DocumentVersionMetadata {
 
 /// A builder for [`DocumentVersionMetadata`](crate::types::DocumentVersionMetadata).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct DocumentVersionMetadataBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) content_type: std::option::Option<std::string::String>,
-    pub(crate) size: std::option::Option<i64>,
-    pub(crate) signature: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::DocumentStatusType>,
-    pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) modified_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) content_created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) content_modified_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) creator_id: std::option::Option<std::string::String>,
-    pub(crate) thumbnail: std::option::Option<
-        std::collections::HashMap<crate::types::DocumentThumbnailType, std::string::String>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) content_type: ::std::option::Option<::std::string::String>,
+    pub(crate) size: ::std::option::Option<i64>,
+    pub(crate) signature: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::DocumentStatusType>,
+    pub(crate) created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) modified_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) content_created_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) content_modified_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) creator_id: ::std::option::Option<::std::string::String>,
+    pub(crate) thumbnail: ::std::option::Option<
+        ::std::collections::HashMap<crate::types::DocumentThumbnailType, ::std::string::String>,
     >,
-    pub(crate) source: std::option::Option<
-        std::collections::HashMap<crate::types::DocumentSourceType, std::string::String>,
+    pub(crate) source: ::std::option::Option<
+        ::std::collections::HashMap<crate::types::DocumentSourceType, ::std::string::String>,
     >,
 }
 impl DocumentVersionMetadataBuilder {
     /// <p>The ID of the version.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the version.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>The name of the version.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the version.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The content type of the document.</p>
-    pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.content_type = Some(input.into());
+    pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.content_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The content type of the document.</p>
-    pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_type = input;
         self
     }
     /// <p>The size of the document, in bytes.</p>
     pub fn size(mut self, input: i64) -> Self {
-        self.size = Some(input);
+        self.size = ::std::option::Option::Some(input);
         self
     }
     /// <p>The size of the document, in bytes.</p>
-    pub fn set_size(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_size(mut self, input: ::std::option::Option<i64>) -> Self {
         self.size = input;
         self
     }
     /// <p>The signature of the document.</p>
-    pub fn signature(mut self, input: impl Into<std::string::String>) -> Self {
-        self.signature = Some(input.into());
+    pub fn signature(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.signature = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The signature of the document.</p>
-    pub fn set_signature(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_signature(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.signature = input;
         self
     }
     /// <p>The status of the document.</p>
     pub fn status(mut self, input: crate::types::DocumentStatusType) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the document.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::DocumentStatusType>,
+        input: ::std::option::Option<crate::types::DocumentStatusType>,
     ) -> Self {
         self.status = input;
         self
     }
     /// <p>The timestamp when the document was first uploaded.</p>
-    pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_timestamp = Some(input);
+    pub fn created_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>The timestamp when the document was first uploaded.</p>
     pub fn set_created_timestamp(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_timestamp = input;
         self
     }
     /// <p>The timestamp when the document was last uploaded.</p>
-    pub fn modified_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.modified_timestamp = Some(input);
+    pub fn modified_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.modified_timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>The timestamp when the document was last uploaded.</p>
     pub fn set_modified_timestamp(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.modified_timestamp = input;
         self
     }
     /// <p>The timestamp when the content of the document was originally created.</p>
-    pub fn content_created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.content_created_timestamp = Some(input);
+    pub fn content_created_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.content_created_timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>The timestamp when the content of the document was originally created.</p>
     pub fn set_content_created_timestamp(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.content_created_timestamp = input;
         self
     }
     /// <p>The timestamp when the content of the document was modified.</p>
-    pub fn content_modified_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.content_modified_timestamp = Some(input);
+    pub fn content_modified_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.content_modified_timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>The timestamp when the content of the document was modified.</p>
     pub fn set_content_modified_timestamp(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.content_modified_timestamp = input;
         self
     }
     /// <p>The ID of the creator.</p>
-    pub fn creator_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.creator_id = Some(input.into());
+    pub fn creator_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.creator_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the creator.</p>
-    pub fn set_creator_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_creator_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.creator_id = input;
         self
     }
@@ -295,18 +299,18 @@ impl DocumentVersionMetadataBuilder {
     pub fn thumbnail(
         mut self,
         k: crate::types::DocumentThumbnailType,
-        v: impl Into<std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.thumbnail.unwrap_or_default();
         hash_map.insert(k, v.into());
-        self.thumbnail = Some(hash_map);
+        self.thumbnail = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The thumbnail of the document.</p>
     pub fn set_thumbnail(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<crate::types::DocumentThumbnailType, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<crate::types::DocumentThumbnailType, ::std::string::String>,
         >,
     ) -> Self {
         self.thumbnail = input;
@@ -320,18 +324,18 @@ impl DocumentVersionMetadataBuilder {
     pub fn source(
         mut self,
         k: crate::types::DocumentSourceType,
-        v: impl Into<std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.source.unwrap_or_default();
         hash_map.insert(k, v.into());
-        self.source = Some(hash_map);
+        self.source = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The source of the document.</p>
     pub fn set_source(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<crate::types::DocumentSourceType, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<crate::types::DocumentSourceType, ::std::string::String>,
         >,
     ) -> Self {
         self.source = input;
@@ -356,8 +360,8 @@ impl DocumentVersionMetadataBuilder {
         }
     }
 }
-impl std::fmt::Debug for DocumentVersionMetadataBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for DocumentVersionMetadataBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DocumentVersionMetadataBuilder");
         formatter.field("id", &self.id);
         formatter.field("name", &"*** Sensitive Data Redacted ***");

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`PutInboundDmarcSettings`](crate::operation::put_inbound_dmarc_settings::builders::PutInboundDmarcSettingsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`organization_id(impl Into<String>)`](crate::operation::put_inbound_dmarc_settings::builders::PutInboundDmarcSettingsFluentBuilder::organization_id) / [`set_organization_id(Option<String>)`](crate::operation::put_inbound_dmarc_settings::builders::PutInboundDmarcSettingsFluentBuilder::set_organization_id): <p>The ID of the organization that you are applying the DMARC policy to.</p>
+    ///   - [`organization_id(impl ::std::convert::Into<String>)`](crate::operation::put_inbound_dmarc_settings::builders::PutInboundDmarcSettingsFluentBuilder::organization_id) / [`set_organization_id(Option<String>)`](crate::operation::put_inbound_dmarc_settings::builders::PutInboundDmarcSettingsFluentBuilder::set_organization_id): <p>The ID of the organization that you are applying the DMARC policy to.</p>
     ///   - [`enforced(bool)`](crate::operation::put_inbound_dmarc_settings::builders::PutInboundDmarcSettingsFluentBuilder::enforced) / [`set_enforced(Option<bool>)`](crate::operation::put_inbound_dmarc_settings::builders::PutInboundDmarcSettingsFluentBuilder::set_enforced): <p>Enforces or suspends a policy after it's applied.</p>
     /// - On success, responds with [`PutInboundDmarcSettingsOutput`](crate::operation::put_inbound_dmarc_settings::PutInboundDmarcSettingsOutput)
     /// - On failure, responds with [`SdkError<PutInboundDmarcSettingsError>`](crate::operation::put_inbound_dmarc_settings::PutInboundDmarcSettingsError)

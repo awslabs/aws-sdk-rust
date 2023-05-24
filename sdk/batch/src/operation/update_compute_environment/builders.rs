@@ -6,29 +6,29 @@ pub use crate::operation::update_compute_environment::_update_compute_environmen
 /// Fluent builder constructing a request to `UpdateComputeEnvironment`.
 ///
 /// <p>Updates an Batch compute environment.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateComputeEnvironmentFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::update_compute_environment::builders::UpdateComputeEnvironmentInputBuilder,
 }
 impl UpdateComputeEnvironmentFluentBuilder {
     /// Creates a new `UpdateComputeEnvironment`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_compute_environment::UpdateComputeEnvironment,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_compute_environment::UpdateComputeEnvironmentError,
         >,
     > {
@@ -36,30 +36,33 @@ impl UpdateComputeEnvironmentFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_compute_environment::UpdateComputeEnvironmentOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_compute_environment::UpdateComputeEnvironmentError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,23 +75,26 @@ impl UpdateComputeEnvironmentFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_compute_environment::UpdateComputeEnvironmentOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_compute_environment::UpdateComputeEnvironmentError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The name or full Amazon Resource Name (ARN) of the compute environment to update.</p>
-    pub fn compute_environment(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn compute_environment(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.compute_environment(input.into());
         self
     }
     /// <p>The name or full Amazon Resource Name (ARN) of the compute environment to update.</p>
     pub fn set_compute_environment(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_compute_environment(input);
         self
@@ -109,7 +115,7 @@ impl UpdateComputeEnvironmentFluentBuilder {
     /// <p>Compute environments in a <code>DISABLED</code> state may continue to incur billing charges. To prevent additional charges, turn off and then delete the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environment_parameters.html#compute_environment_state">State</a> in the <i>Batch User Guide</i>.</p>
     /// </note>
     /// <p>When an instance is idle, the instance scales down to the <code>minvCpus</code> value. However, the instance size doesn't change. For example, consider a <code>c5.8xlarge</code> instance with a <code>minvCpus</code> value of <code>4</code> and a <code>desiredvCpus</code> value of <code>36</code>. This instance doesn't scale down to a <code>c5.large</code> instance.</p>
-    pub fn set_state(mut self, input: std::option::Option<crate::types::CeState>) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::CeState>) -> Self {
         self.inner = self.inner.set_state(input);
         self
     }
@@ -119,7 +125,7 @@ impl UpdateComputeEnvironmentFluentBuilder {
         self
     }
     /// <p>The maximum number of vCPUs expected to be used for an unmanaged compute environment. Don't specify this parameter for a managed compute environment. This parameter is only used for fair share scheduling to reserve vCPU capacity for new share identifiers. If this parameter isn't provided for a fair share job queue, no vCPU capacity is reserved.</p>
-    pub fn set_unmanagedv_cpus(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_unmanagedv_cpus(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_unmanagedv_cpus(input);
         self
     }
@@ -131,7 +137,7 @@ impl UpdateComputeEnvironmentFluentBuilder {
     /// <p>Details of the compute resources managed by the compute environment. Required for a managed compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in the <i>Batch User Guide</i>.</p>
     pub fn set_compute_resources(
         mut self,
-        input: std::option::Option<crate::types::ComputeResourceUpdate>,
+        input: ::std::option::Option<crate::types::ComputeResourceUpdate>,
     ) -> Self {
         self.inner = self.inner.set_compute_resources(input);
         self
@@ -142,7 +148,7 @@ impl UpdateComputeEnvironmentFluentBuilder {
     /// <p>If your specified role has a path other than <code>/</code>, then you must either specify the full role ARN (recommended) or prefix the role name with the path.</p> <note>
     /// <p>Depending on how you created your Batch service role, its ARN might contain the <code>service-role</code> path prefix. When you only specify the name of the service role, Batch assumes that your ARN doesn't use the <code>service-role</code> path prefix. Because of this, we recommend that you specify the full ARN of your service role when you create compute environments.</p>
     /// </note>
-    pub fn service_role(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn service_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_role(input.into());
         self
     }
@@ -152,7 +158,7 @@ impl UpdateComputeEnvironmentFluentBuilder {
     /// <p>If your specified role has a path other than <code>/</code>, then you must either specify the full role ARN (recommended) or prefix the role name with the path.</p> <note>
     /// <p>Depending on how you created your Batch service role, its ARN might contain the <code>service-role</code> path prefix. When you only specify the name of the service role, Batch assumes that your ARN doesn't use the <code>service-role</code> path prefix. Because of this, we recommend that you specify the full ARN of your service role when you create compute environments.</p>
     /// </note>
-    pub fn set_service_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_service_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service_role(input);
         self
     }
@@ -164,7 +170,7 @@ impl UpdateComputeEnvironmentFluentBuilder {
     /// <p>Specifies the updated infrastructure update policy for the compute environment. For more information about infrastructure updates, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p>
     pub fn set_update_policy(
         mut self,
-        input: std::option::Option<crate::types::UpdatePolicy>,
+        input: ::std::option::Option<crate::types::UpdatePolicy>,
     ) -> Self {
         self.inner = self.inner.set_update_policy(input);
         self

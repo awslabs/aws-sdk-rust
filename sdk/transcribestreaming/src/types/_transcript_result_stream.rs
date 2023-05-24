@@ -2,7 +2,7 @@
 
 /// <p>Contains detailed information about your streaming session.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum TranscriptResultStream {
     /// <p>Contains <code>Transcript</code>, which contains <code>Results</code>. The <code></code> object contains a set of transcription results from one or more audio segments, along with additional information per your request parameters.</p>
     TranscriptEvent(crate::types::TranscriptEvent),
@@ -22,11 +22,11 @@ impl TranscriptResultStream {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_transcript_event(
         &self,
-    ) -> std::result::Result<&crate::types::TranscriptEvent, &Self> {
+    ) -> ::std::result::Result<&crate::types::TranscriptEvent, &Self> {
         if let TranscriptResultStream::TranscriptEvent(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`TranscriptEvent`](crate::types::TranscriptResultStream::TranscriptEvent).

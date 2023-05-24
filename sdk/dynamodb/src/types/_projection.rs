@@ -2,7 +2,7 @@
 
 /// <p>Represents attributes that are copied (projected) from the table into an index. These are in addition to the primary key attributes and index key attributes, which are automatically projected.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Projection {
     /// <p>The set of attributes that are projected into the index:</p>
     /// <ul>
@@ -11,11 +11,11 @@ pub struct Projection {
     /// <li> <p> <code>ALL</code> - All of the table attributes are projected into the index.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub projection_type: std::option::Option<crate::types::ProjectionType>,
+    pub projection_type: ::std::option::Option<crate::types::ProjectionType>,
     /// <p>Represents the non-key attribute names which will be projected into the index.</p>
     /// <p>For local secondary indexes, the total count of <code>NonKeyAttributes</code> summed across all of the local secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p>
     #[doc(hidden)]
-    pub non_key_attributes: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub non_key_attributes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Projection {
     /// <p>The set of attributes that are projected into the index:</p>
@@ -24,12 +24,12 @@ impl Projection {
     /// <li> <p> <code>INCLUDE</code> - In addition to the attributes described in <code>KEYS_ONLY</code>, the secondary index will include other non-key attributes that you specify.</p> </li>
     /// <li> <p> <code>ALL</code> - All of the table attributes are projected into the index.</p> </li>
     /// </ul>
-    pub fn projection_type(&self) -> std::option::Option<&crate::types::ProjectionType> {
+    pub fn projection_type(&self) -> ::std::option::Option<&crate::types::ProjectionType> {
         self.projection_type.as_ref()
     }
     /// <p>Represents the non-key attribute names which will be projected into the index.</p>
     /// <p>For local secondary indexes, the total count of <code>NonKeyAttributes</code> summed across all of the local secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p>
-    pub fn non_key_attributes(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn non_key_attributes(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.non_key_attributes.as_deref()
     }
 }
@@ -42,10 +42,12 @@ impl Projection {
 
 /// A builder for [`Projection`](crate::types::Projection).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ProjectionBuilder {
-    pub(crate) projection_type: std::option::Option<crate::types::ProjectionType>,
-    pub(crate) non_key_attributes: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) projection_type: ::std::option::Option<crate::types::ProjectionType>,
+    pub(crate) non_key_attributes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ProjectionBuilder {
     /// <p>The set of attributes that are projected into the index:</p>
@@ -55,7 +57,7 @@ impl ProjectionBuilder {
     /// <li> <p> <code>ALL</code> - All of the table attributes are projected into the index.</p> </li>
     /// </ul>
     pub fn projection_type(mut self, input: crate::types::ProjectionType) -> Self {
-        self.projection_type = Some(input);
+        self.projection_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The set of attributes that are projected into the index:</p>
@@ -66,7 +68,7 @@ impl ProjectionBuilder {
     /// </ul>
     pub fn set_projection_type(
         mut self,
-        input: std::option::Option<crate::types::ProjectionType>,
+        input: ::std::option::Option<crate::types::ProjectionType>,
     ) -> Self {
         self.projection_type = input;
         self
@@ -77,17 +79,20 @@ impl ProjectionBuilder {
     ///
     /// <p>Represents the non-key attribute names which will be projected into the index.</p>
     /// <p>For local secondary indexes, the total count of <code>NonKeyAttributes</code> summed across all of the local secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p>
-    pub fn non_key_attributes(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn non_key_attributes(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.non_key_attributes.unwrap_or_default();
         v.push(input.into());
-        self.non_key_attributes = Some(v);
+        self.non_key_attributes = ::std::option::Option::Some(v);
         self
     }
     /// <p>Represents the non-key attribute names which will be projected into the index.</p>
     /// <p>For local secondary indexes, the total count of <code>NonKeyAttributes</code> summed across all of the local secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this counts as two distinct attributes when determining the total.</p>
     pub fn set_non_key_attributes(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.non_key_attributes = input;
         self

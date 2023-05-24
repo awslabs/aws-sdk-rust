@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ChildType {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum ChildType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ChildType {
+impl ::std::convert::From<&str> for ChildType {
     fn from(s: &str) -> Self {
         match s {
             "ACCOUNT" => ChildType::Account,
@@ -63,11 +63,11 @@ impl std::convert::From<&str> for ChildType {
         }
     }
 }
-impl std::str::FromStr for ChildType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ChildType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ChildType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ChildType::from(s))
     }
 }
 impl ChildType {
@@ -84,7 +84,7 @@ impl ChildType {
         &["ACCOUNT", "ORGANIZATIONAL_UNIT"]
     }
 }
-impl AsRef<str> for ChildType {
+impl ::std::convert::AsRef<str> for ChildType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

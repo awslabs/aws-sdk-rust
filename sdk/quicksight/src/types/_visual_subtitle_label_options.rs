@@ -2,22 +2,22 @@
 
 /// <p>The subtitle label options for a visual.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VisualSubtitleLabelOptions {
     /// <p>The visibility of the subtitle label.</p>
     #[doc(hidden)]
-    pub visibility: std::option::Option<crate::types::Visibility>,
+    pub visibility: ::std::option::Option<crate::types::Visibility>,
     /// <p>The long text format of the subtitle label, such as plain text or rich text.</p>
     #[doc(hidden)]
-    pub format_text: std::option::Option<crate::types::LongFormatText>,
+    pub format_text: ::std::option::Option<crate::types::LongFormatText>,
 }
 impl VisualSubtitleLabelOptions {
     /// <p>The visibility of the subtitle label.</p>
-    pub fn visibility(&self) -> std::option::Option<&crate::types::Visibility> {
+    pub fn visibility(&self) -> ::std::option::Option<&crate::types::Visibility> {
         self.visibility.as_ref()
     }
     /// <p>The long text format of the subtitle label, such as plain text or rich text.</p>
-    pub fn format_text(&self) -> std::option::Option<&crate::types::LongFormatText> {
+    pub fn format_text(&self) -> ::std::option::Option<&crate::types::LongFormatText> {
         self.format_text.as_ref()
     }
 }
@@ -30,31 +30,36 @@ impl VisualSubtitleLabelOptions {
 
 /// A builder for [`VisualSubtitleLabelOptions`](crate::types::VisualSubtitleLabelOptions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VisualSubtitleLabelOptionsBuilder {
-    pub(crate) visibility: std::option::Option<crate::types::Visibility>,
-    pub(crate) format_text: std::option::Option<crate::types::LongFormatText>,
+    pub(crate) visibility: ::std::option::Option<crate::types::Visibility>,
+    pub(crate) format_text: ::std::option::Option<crate::types::LongFormatText>,
 }
 impl VisualSubtitleLabelOptionsBuilder {
     /// <p>The visibility of the subtitle label.</p>
     pub fn visibility(mut self, input: crate::types::Visibility) -> Self {
-        self.visibility = Some(input);
+        self.visibility = ::std::option::Option::Some(input);
         self
     }
     /// <p>The visibility of the subtitle label.</p>
-    pub fn set_visibility(mut self, input: std::option::Option<crate::types::Visibility>) -> Self {
+    pub fn set_visibility(
+        mut self,
+        input: ::std::option::Option<crate::types::Visibility>,
+    ) -> Self {
         self.visibility = input;
         self
     }
     /// <p>The long text format of the subtitle label, such as plain text or rich text.</p>
     pub fn format_text(mut self, input: crate::types::LongFormatText) -> Self {
-        self.format_text = Some(input);
+        self.format_text = ::std::option::Option::Some(input);
         self
     }
     /// <p>The long text format of the subtitle label, such as plain text or rich text.</p>
     pub fn set_format_text(
         mut self,
-        input: std::option::Option<crate::types::LongFormatText>,
+        input: ::std::option::Option<crate::types::LongFormatText>,
     ) -> Self {
         self.format_text = input;
         self

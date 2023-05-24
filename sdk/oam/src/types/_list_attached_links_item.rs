@@ -2,29 +2,29 @@
 
 /// <p>A structure that contains information about one link attached to this monitoring account sink.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAttachedLinksItem {
     /// <p>The label that was assigned to this link at creation, with the variables resolved to their actual values.</p>
     #[doc(hidden)]
-    pub label: std::option::Option<std::string::String>,
+    pub label: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the link.</p>
     #[doc(hidden)]
-    pub link_arn: std::option::Option<std::string::String>,
+    pub link_arn: ::std::option::Option<::std::string::String>,
     /// <p>The resource types supported by this link.</p>
     #[doc(hidden)]
-    pub resource_types: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub resource_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ListAttachedLinksItem {
     /// <p>The label that was assigned to this link at creation, with the variables resolved to their actual values.</p>
-    pub fn label(&self) -> std::option::Option<&str> {
+    pub fn label(&self) -> ::std::option::Option<&str> {
         self.label.as_deref()
     }
     /// <p>The ARN of the link.</p>
-    pub fn link_arn(&self) -> std::option::Option<&str> {
+    pub fn link_arn(&self) -> ::std::option::Option<&str> {
         self.link_arn.as_deref()
     }
     /// <p>The resource types supported by this link.</p>
-    pub fn resource_types(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn resource_types(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.resource_types.as_deref()
     }
 }
@@ -37,30 +37,32 @@ impl ListAttachedLinksItem {
 
 /// A builder for [`ListAttachedLinksItem`](crate::types::ListAttachedLinksItem).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListAttachedLinksItemBuilder {
-    pub(crate) label: std::option::Option<std::string::String>,
-    pub(crate) link_arn: std::option::Option<std::string::String>,
-    pub(crate) resource_types: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) label: ::std::option::Option<::std::string::String>,
+    pub(crate) link_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ListAttachedLinksItemBuilder {
     /// <p>The label that was assigned to this link at creation, with the variables resolved to their actual values.</p>
-    pub fn label(mut self, input: impl Into<std::string::String>) -> Self {
-        self.label = Some(input.into());
+    pub fn label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.label = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The label that was assigned to this link at creation, with the variables resolved to their actual values.</p>
-    pub fn set_label(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.label = input;
         self
     }
     /// <p>The ARN of the link.</p>
-    pub fn link_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.link_arn = Some(input.into());
+    pub fn link_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.link_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the link.</p>
-    pub fn set_link_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_link_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.link_arn = input;
         self
     }
@@ -69,16 +71,19 @@ impl ListAttachedLinksItemBuilder {
     /// To override the contents of this collection use [`set_resource_types`](Self::set_resource_types).
     ///
     /// <p>The resource types supported by this link.</p>
-    pub fn resource_types(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn resource_types(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.resource_types.unwrap_or_default();
         v.push(input.into());
-        self.resource_types = Some(v);
+        self.resource_types = ::std::option::Option::Some(v);
         self
     }
     /// <p>The resource types supported by this link.</p>
     pub fn set_resource_types(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.resource_types = input;
         self

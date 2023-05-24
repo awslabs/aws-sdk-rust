@@ -2,22 +2,22 @@
 
 /// <p>Provides information about an S3 object that lists specific text to ignore.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3WordsList {
     /// <p>The full name of the S3 bucket that contains the object.</p>
     #[doc(hidden)]
-    pub bucket_name: std::option::Option<std::string::String>,
+    pub bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>The full name (key) of the object.</p>
     #[doc(hidden)]
-    pub object_key: std::option::Option<std::string::String>,
+    pub object_key: ::std::option::Option<::std::string::String>,
 }
 impl S3WordsList {
     /// <p>The full name of the S3 bucket that contains the object.</p>
-    pub fn bucket_name(&self) -> std::option::Option<&str> {
+    pub fn bucket_name(&self) -> ::std::option::Option<&str> {
         self.bucket_name.as_deref()
     }
     /// <p>The full name (key) of the object.</p>
-    pub fn object_key(&self) -> std::option::Option<&str> {
+    pub fn object_key(&self) -> ::std::option::Option<&str> {
         self.object_key.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl S3WordsList {
 
 /// A builder for [`S3WordsList`](crate::types::S3WordsList).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct S3WordsListBuilder {
-    pub(crate) bucket_name: std::option::Option<std::string::String>,
-    pub(crate) object_key: std::option::Option<std::string::String>,
+    pub(crate) bucket_name: ::std::option::Option<::std::string::String>,
+    pub(crate) object_key: ::std::option::Option<::std::string::String>,
 }
 impl S3WordsListBuilder {
     /// <p>The full name of the S3 bucket that contains the object.</p>
-    pub fn bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.bucket_name = Some(input.into());
+    pub fn bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.bucket_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The full name of the S3 bucket that contains the object.</p>
-    pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket_name = input;
         self
     }
     /// <p>The full name (key) of the object.</p>
-    pub fn object_key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.object_key = Some(input.into());
+    pub fn object_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.object_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The full name (key) of the object.</p>
-    pub fn set_object_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_object_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.object_key = input;
         self
     }

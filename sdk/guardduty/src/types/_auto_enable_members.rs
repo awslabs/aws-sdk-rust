@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum AutoEnableMembers {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum AutoEnableMembers {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for AutoEnableMembers {
+impl ::std::convert::From<&str> for AutoEnableMembers {
     fn from(s: &str) -> Self {
         match s {
             "ALL" => AutoEnableMembers::All,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for AutoEnableMembers {
         }
     }
 }
-impl std::str::FromStr for AutoEnableMembers {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for AutoEnableMembers {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AutoEnableMembers::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(AutoEnableMembers::from(s))
     }
 }
 impl AutoEnableMembers {
@@ -91,7 +91,7 @@ impl AutoEnableMembers {
         &["ALL", "NEW", "NONE"]
     }
 }
-impl AsRef<str> for AutoEnableMembers {
+impl ::std::convert::AsRef<str> for AutoEnableMembers {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

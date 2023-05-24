@@ -2,43 +2,43 @@
 
 /// <p>Revision detail data for a commit and push that activates a sync attempt</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Revision {
     /// <p>The repository name.</p>
     #[doc(hidden)]
-    pub repository_name: std::option::Option<std::string::String>,
+    pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The repository provider.</p>
     #[doc(hidden)]
-    pub repository_provider: std::option::Option<crate::types::RepositoryProvider>,
+    pub repository_provider: ::std::option::Option<crate::types::RepositoryProvider>,
     /// <p>The secure hash algorithm (SHA) hash for the revision.</p>
     #[doc(hidden)]
-    pub sha: std::option::Option<std::string::String>,
+    pub sha: ::std::option::Option<::std::string::String>,
     /// <p>The repository directory changed by a commit and push that activated the sync attempt.</p>
     #[doc(hidden)]
-    pub directory: std::option::Option<std::string::String>,
+    pub directory: ::std::option::Option<::std::string::String>,
     /// <p>The repository branch.</p>
     #[doc(hidden)]
-    pub branch: std::option::Option<std::string::String>,
+    pub branch: ::std::option::Option<::std::string::String>,
 }
 impl Revision {
     /// <p>The repository name.</p>
-    pub fn repository_name(&self) -> std::option::Option<&str> {
+    pub fn repository_name(&self) -> ::std::option::Option<&str> {
         self.repository_name.as_deref()
     }
     /// <p>The repository provider.</p>
-    pub fn repository_provider(&self) -> std::option::Option<&crate::types::RepositoryProvider> {
+    pub fn repository_provider(&self) -> ::std::option::Option<&crate::types::RepositoryProvider> {
         self.repository_provider.as_ref()
     }
     /// <p>The secure hash algorithm (SHA) hash for the revision.</p>
-    pub fn sha(&self) -> std::option::Option<&str> {
+    pub fn sha(&self) -> ::std::option::Option<&str> {
         self.sha.as_deref()
     }
     /// <p>The repository directory changed by a commit and push that activated the sync attempt.</p>
-    pub fn directory(&self) -> std::option::Option<&str> {
+    pub fn directory(&self) -> ::std::option::Option<&str> {
         self.directory.as_deref()
     }
     /// <p>The repository branch.</p>
-    pub fn branch(&self) -> std::option::Option<&str> {
+    pub fn branch(&self) -> ::std::option::Option<&str> {
         self.branch.as_deref()
     }
 }
@@ -51,65 +51,73 @@ impl Revision {
 
 /// A builder for [`Revision`](crate::types::Revision).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RevisionBuilder {
-    pub(crate) repository_name: std::option::Option<std::string::String>,
-    pub(crate) repository_provider: std::option::Option<crate::types::RepositoryProvider>,
-    pub(crate) sha: std::option::Option<std::string::String>,
-    pub(crate) directory: std::option::Option<std::string::String>,
-    pub(crate) branch: std::option::Option<std::string::String>,
+    pub(crate) repository_name: ::std::option::Option<::std::string::String>,
+    pub(crate) repository_provider: ::std::option::Option<crate::types::RepositoryProvider>,
+    pub(crate) sha: ::std::option::Option<::std::string::String>,
+    pub(crate) directory: ::std::option::Option<::std::string::String>,
+    pub(crate) branch: ::std::option::Option<::std::string::String>,
 }
 impl RevisionBuilder {
     /// <p>The repository name.</p>
-    pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.repository_name = Some(input.into());
+    pub fn repository_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The repository name.</p>
-    pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_repository_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.repository_name = input;
         self
     }
     /// <p>The repository provider.</p>
     pub fn repository_provider(mut self, input: crate::types::RepositoryProvider) -> Self {
-        self.repository_provider = Some(input);
+        self.repository_provider = ::std::option::Option::Some(input);
         self
     }
     /// <p>The repository provider.</p>
     pub fn set_repository_provider(
         mut self,
-        input: std::option::Option<crate::types::RepositoryProvider>,
+        input: ::std::option::Option<crate::types::RepositoryProvider>,
     ) -> Self {
         self.repository_provider = input;
         self
     }
     /// <p>The secure hash algorithm (SHA) hash for the revision.</p>
-    pub fn sha(mut self, input: impl Into<std::string::String>) -> Self {
-        self.sha = Some(input.into());
+    pub fn sha(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.sha = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The secure hash algorithm (SHA) hash for the revision.</p>
-    pub fn set_sha(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_sha(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sha = input;
         self
     }
     /// <p>The repository directory changed by a commit and push that activated the sync attempt.</p>
-    pub fn directory(mut self, input: impl Into<std::string::String>) -> Self {
-        self.directory = Some(input.into());
+    pub fn directory(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.directory = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The repository directory changed by a commit and push that activated the sync attempt.</p>
-    pub fn set_directory(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_directory(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.directory = input;
         self
     }
     /// <p>The repository branch.</p>
-    pub fn branch(mut self, input: impl Into<std::string::String>) -> Self {
-        self.branch = Some(input.into());
+    pub fn branch(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.branch = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The repository branch.</p>
-    pub fn set_branch(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_branch(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.branch = input;
         self
     }

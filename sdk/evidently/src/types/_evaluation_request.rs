@@ -2,29 +2,29 @@
 
 /// <p>This structure assigns a feature variation to one user session.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluationRequest {
     /// <p>The name of the feature being evaluated.</p>
     #[doc(hidden)]
-    pub feature: std::option::Option<std::string::String>,
+    pub feature: ::std::option::Option<::std::string::String>,
     /// <p>An internal ID that represents a unique user session of the application. This <code>entityID</code> is checked against any override rules assigned for this feature.</p>
     #[doc(hidden)]
-    pub entity_id: std::option::Option<std::string::String>,
+    pub entity_id: ::std::option::Option<::std::string::String>,
     /// <p>A JSON block of attributes that you can optionally pass in. This JSON block is included in the evaluation events sent to Evidently from the user session. </p>
     #[doc(hidden)]
-    pub evaluation_context: std::option::Option<std::string::String>,
+    pub evaluation_context: ::std::option::Option<::std::string::String>,
 }
 impl EvaluationRequest {
     /// <p>The name of the feature being evaluated.</p>
-    pub fn feature(&self) -> std::option::Option<&str> {
+    pub fn feature(&self) -> ::std::option::Option<&str> {
         self.feature.as_deref()
     }
     /// <p>An internal ID that represents a unique user session of the application. This <code>entityID</code> is checked against any override rules assigned for this feature.</p>
-    pub fn entity_id(&self) -> std::option::Option<&str> {
+    pub fn entity_id(&self) -> ::std::option::Option<&str> {
         self.entity_id.as_deref()
     }
     /// <p>A JSON block of attributes that you can optionally pass in. This JSON block is included in the evaluation events sent to Evidently from the user session. </p>
-    pub fn evaluation_context(&self) -> std::option::Option<&str> {
+    pub fn evaluation_context(&self) -> ::std::option::Option<&str> {
         self.evaluation_context.as_deref()
     }
 }
@@ -37,42 +37,47 @@ impl EvaluationRequest {
 
 /// A builder for [`EvaluationRequest`](crate::types::EvaluationRequest).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EvaluationRequestBuilder {
-    pub(crate) feature: std::option::Option<std::string::String>,
-    pub(crate) entity_id: std::option::Option<std::string::String>,
-    pub(crate) evaluation_context: std::option::Option<std::string::String>,
+    pub(crate) feature: ::std::option::Option<::std::string::String>,
+    pub(crate) entity_id: ::std::option::Option<::std::string::String>,
+    pub(crate) evaluation_context: ::std::option::Option<::std::string::String>,
 }
 impl EvaluationRequestBuilder {
     /// <p>The name of the feature being evaluated.</p>
-    pub fn feature(mut self, input: impl Into<std::string::String>) -> Self {
-        self.feature = Some(input.into());
+    pub fn feature(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.feature = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the feature being evaluated.</p>
-    pub fn set_feature(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_feature(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.feature = input;
         self
     }
     /// <p>An internal ID that represents a unique user session of the application. This <code>entityID</code> is checked against any override rules assigned for this feature.</p>
-    pub fn entity_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.entity_id = Some(input.into());
+    pub fn entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.entity_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An internal ID that represents a unique user session of the application. This <code>entityID</code> is checked against any override rules assigned for this feature.</p>
-    pub fn set_entity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_entity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.entity_id = input;
         self
     }
     /// <p>A JSON block of attributes that you can optionally pass in. This JSON block is included in the evaluation events sent to Evidently from the user session. </p>
-    pub fn evaluation_context(mut self, input: impl Into<std::string::String>) -> Self {
-        self.evaluation_context = Some(input.into());
+    pub fn evaluation_context(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.evaluation_context = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A JSON block of attributes that you can optionally pass in. This JSON block is included in the evaluation events sent to Evidently from the user session. </p>
     pub fn set_evaluation_context(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.evaluation_context = input;
         self

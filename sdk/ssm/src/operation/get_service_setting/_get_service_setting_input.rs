@@ -2,7 +2,7 @@
 
 /// <p>The request body of the GetServiceSetting API operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetServiceSettingInput {
     /// <p>The ID of the service setting to get. The setting ID can be one of the following.</p>
     /// <ul>
@@ -16,7 +16,7 @@ pub struct GetServiceSettingInput {
     /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub setting_id: std::option::Option<std::string::String>,
+    pub setting_id: ::std::option::Option<::std::string::String>,
 }
 impl GetServiceSettingInput {
     /// <p>The ID of the service setting to get. The setting ID can be one of the following.</p>
@@ -30,7 +30,7 @@ impl GetServiceSettingInput {
     /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li>
     /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li>
     /// </ul>
-    pub fn setting_id(&self) -> std::option::Option<&str> {
+    pub fn setting_id(&self) -> ::std::option::Option<&str> {
         self.setting_id.as_deref()
     }
 }
@@ -44,9 +44,11 @@ impl GetServiceSettingInput {
 
 /// A builder for [`GetServiceSettingInput`](crate::operation::get_service_setting::GetServiceSettingInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetServiceSettingInputBuilder {
-    pub(crate) setting_id: std::option::Option<std::string::String>,
+    pub(crate) setting_id: ::std::option::Option<::std::string::String>,
 }
 impl GetServiceSettingInputBuilder {
     /// <p>The ID of the service setting to get. The setting ID can be one of the following.</p>
@@ -60,8 +62,8 @@ impl GetServiceSettingInputBuilder {
     /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li>
     /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li>
     /// </ul>
-    pub fn setting_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.setting_id = Some(input.into());
+    pub fn setting_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.setting_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the service setting to get. The setting ID can be one of the following.</p>
@@ -75,18 +77,18 @@ impl GetServiceSettingInputBuilder {
     /// <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code> </p> </li>
     /// <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code> </p> </li>
     /// </ul>
-    pub fn set_setting_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_setting_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.setting_id = input;
         self
     }
     /// Consumes the builder and constructs a [`GetServiceSettingInput`](crate::operation::get_service_setting::GetServiceSettingInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::get_service_setting::GetServiceSettingInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::get_service_setting::GetServiceSettingInput {
                 setting_id: self.setting_id,
             },

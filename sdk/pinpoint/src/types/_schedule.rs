@@ -2,20 +2,20 @@
 
 /// <p>Specifies the schedule settings for a campaign.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Schedule {
     /// <p>The scheduled time, in ISO 8601 format, when the campaign ended or will end.</p>
     #[doc(hidden)]
-    pub end_time: std::option::Option<std::string::String>,
+    pub end_time: ::std::option::Option<::std::string::String>,
     /// <p>The type of event that causes the campaign to be sent, if the value of the Frequency property is EVENT.</p>
     #[doc(hidden)]
-    pub event_filter: std::option::Option<crate::types::CampaignEventFilter>,
+    pub event_filter: ::std::option::Option<crate::types::CampaignEventFilter>,
     /// <p>Specifies how often the campaign is sent or whether the campaign is sent in response to a specific event.</p>
     #[doc(hidden)]
-    pub frequency: std::option::Option<crate::types::Frequency>,
+    pub frequency: ::std::option::Option<crate::types::Frequency>,
     /// <p>Specifies whether the start and end times for the campaign schedule use each recipient's local time. To base the schedule on each recipient's local time, set this value to true.</p>
     #[doc(hidden)]
-    pub is_local_time: std::option::Option<bool>,
+    pub is_local_time: ::std::option::Option<bool>,
     /// <p>The default quiet time for the campaign. Quiet time is a specific time range when a campaign doesn't send messages to endpoints, if all the following conditions are met:</p>
     /// <ul>
     /// <li><p>The EndpointDemographic.Timezone property of the endpoint is set to a valid value.</p></li>
@@ -24,29 +24,29 @@ pub struct Schedule {
     /// </ul>
     /// <p>If any of the preceding conditions isn't met, the endpoint will receive messages from the campaign, even if quiet time is enabled.</p>
     #[doc(hidden)]
-    pub quiet_time: std::option::Option<crate::types::QuietTime>,
+    pub quiet_time: ::std::option::Option<crate::types::QuietTime>,
     /// <p>The scheduled time when the campaign began or will begin. Valid values are: IMMEDIATE, to start the campaign immediately; or, a specific time in ISO 8601 format.</p>
     #[doc(hidden)]
-    pub start_time: std::option::Option<std::string::String>,
+    pub start_time: ::std::option::Option<::std::string::String>,
     /// <p>The starting UTC offset for the campaign schedule, if the value of the IsLocalTime property is true. Valid values are: UTC, UTC+01, UTC+02, UTC+03, UTC+03:30, UTC+04, UTC+04:30, UTC+05, UTC+05:30, UTC+05:45, UTC+06, UTC+06:30, UTC+07, UTC+08, UTC+09, UTC+09:30, UTC+10, UTC+10:30, UTC+11, UTC+12, UTC+13, UTC-02, UTC-03, UTC-04, UTC-05, UTC-06, UTC-07, UTC-08, UTC-09, UTC-10, and UTC-11.</p>
     #[doc(hidden)]
-    pub timezone: std::option::Option<std::string::String>,
+    pub timezone: ::std::option::Option<::std::string::String>,
 }
 impl Schedule {
     /// <p>The scheduled time, in ISO 8601 format, when the campaign ended or will end.</p>
-    pub fn end_time(&self) -> std::option::Option<&str> {
+    pub fn end_time(&self) -> ::std::option::Option<&str> {
         self.end_time.as_deref()
     }
     /// <p>The type of event that causes the campaign to be sent, if the value of the Frequency property is EVENT.</p>
-    pub fn event_filter(&self) -> std::option::Option<&crate::types::CampaignEventFilter> {
+    pub fn event_filter(&self) -> ::std::option::Option<&crate::types::CampaignEventFilter> {
         self.event_filter.as_ref()
     }
     /// <p>Specifies how often the campaign is sent or whether the campaign is sent in response to a specific event.</p>
-    pub fn frequency(&self) -> std::option::Option<&crate::types::Frequency> {
+    pub fn frequency(&self) -> ::std::option::Option<&crate::types::Frequency> {
         self.frequency.as_ref()
     }
     /// <p>Specifies whether the start and end times for the campaign schedule use each recipient's local time. To base the schedule on each recipient's local time, set this value to true.</p>
-    pub fn is_local_time(&self) -> std::option::Option<bool> {
+    pub fn is_local_time(&self) -> ::std::option::Option<bool> {
         self.is_local_time
     }
     /// <p>The default quiet time for the campaign. Quiet time is a specific time range when a campaign doesn't send messages to endpoints, if all the following conditions are met:</p>
@@ -56,15 +56,15 @@ impl Schedule {
     /// <li><p>The current time in the endpoint's time zone is earlier than or equal to the time specified by the QuietTime.End property for the campaign.</p></li>
     /// </ul>
     /// <p>If any of the preceding conditions isn't met, the endpoint will receive messages from the campaign, even if quiet time is enabled.</p>
-    pub fn quiet_time(&self) -> std::option::Option<&crate::types::QuietTime> {
+    pub fn quiet_time(&self) -> ::std::option::Option<&crate::types::QuietTime> {
         self.quiet_time.as_ref()
     }
     /// <p>The scheduled time when the campaign began or will begin. Valid values are: IMMEDIATE, to start the campaign immediately; or, a specific time in ISO 8601 format.</p>
-    pub fn start_time(&self) -> std::option::Option<&str> {
+    pub fn start_time(&self) -> ::std::option::Option<&str> {
         self.start_time.as_deref()
     }
     /// <p>The starting UTC offset for the campaign schedule, if the value of the IsLocalTime property is true. Valid values are: UTC, UTC+01, UTC+02, UTC+03, UTC+03:30, UTC+04, UTC+04:30, UTC+05, UTC+05:30, UTC+05:45, UTC+06, UTC+06:30, UTC+07, UTC+08, UTC+09, UTC+09:30, UTC+10, UTC+10:30, UTC+11, UTC+12, UTC+13, UTC-02, UTC-03, UTC-04, UTC-05, UTC-06, UTC-07, UTC-08, UTC-09, UTC-10, and UTC-11.</p>
-    pub fn timezone(&self) -> std::option::Option<&str> {
+    pub fn timezone(&self) -> ::std::option::Option<&str> {
         self.timezone.as_deref()
     }
 }
@@ -77,57 +77,59 @@ impl Schedule {
 
 /// A builder for [`Schedule`](crate::types::Schedule).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ScheduleBuilder {
-    pub(crate) end_time: std::option::Option<std::string::String>,
-    pub(crate) event_filter: std::option::Option<crate::types::CampaignEventFilter>,
-    pub(crate) frequency: std::option::Option<crate::types::Frequency>,
-    pub(crate) is_local_time: std::option::Option<bool>,
-    pub(crate) quiet_time: std::option::Option<crate::types::QuietTime>,
-    pub(crate) start_time: std::option::Option<std::string::String>,
-    pub(crate) timezone: std::option::Option<std::string::String>,
+    pub(crate) end_time: ::std::option::Option<::std::string::String>,
+    pub(crate) event_filter: ::std::option::Option<crate::types::CampaignEventFilter>,
+    pub(crate) frequency: ::std::option::Option<crate::types::Frequency>,
+    pub(crate) is_local_time: ::std::option::Option<bool>,
+    pub(crate) quiet_time: ::std::option::Option<crate::types::QuietTime>,
+    pub(crate) start_time: ::std::option::Option<::std::string::String>,
+    pub(crate) timezone: ::std::option::Option<::std::string::String>,
 }
 impl ScheduleBuilder {
     /// <p>The scheduled time, in ISO 8601 format, when the campaign ended or will end.</p>
-    pub fn end_time(mut self, input: impl Into<std::string::String>) -> Self {
-        self.end_time = Some(input.into());
+    pub fn end_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.end_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The scheduled time, in ISO 8601 format, when the campaign ended or will end.</p>
-    pub fn set_end_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.end_time = input;
         self
     }
     /// <p>The type of event that causes the campaign to be sent, if the value of the Frequency property is EVENT.</p>
     pub fn event_filter(mut self, input: crate::types::CampaignEventFilter) -> Self {
-        self.event_filter = Some(input);
+        self.event_filter = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of event that causes the campaign to be sent, if the value of the Frequency property is EVENT.</p>
     pub fn set_event_filter(
         mut self,
-        input: std::option::Option<crate::types::CampaignEventFilter>,
+        input: ::std::option::Option<crate::types::CampaignEventFilter>,
     ) -> Self {
         self.event_filter = input;
         self
     }
     /// <p>Specifies how often the campaign is sent or whether the campaign is sent in response to a specific event.</p>
     pub fn frequency(mut self, input: crate::types::Frequency) -> Self {
-        self.frequency = Some(input);
+        self.frequency = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies how often the campaign is sent or whether the campaign is sent in response to a specific event.</p>
-    pub fn set_frequency(mut self, input: std::option::Option<crate::types::Frequency>) -> Self {
+    pub fn set_frequency(mut self, input: ::std::option::Option<crate::types::Frequency>) -> Self {
         self.frequency = input;
         self
     }
     /// <p>Specifies whether the start and end times for the campaign schedule use each recipient's local time. To base the schedule on each recipient's local time, set this value to true.</p>
     pub fn is_local_time(mut self, input: bool) -> Self {
-        self.is_local_time = Some(input);
+        self.is_local_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether the start and end times for the campaign schedule use each recipient's local time. To base the schedule on each recipient's local time, set this value to true.</p>
-    pub fn set_is_local_time(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_local_time(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_local_time = input;
         self
     }
@@ -139,7 +141,7 @@ impl ScheduleBuilder {
     /// </ul>
     /// <p>If any of the preceding conditions isn't met, the endpoint will receive messages from the campaign, even if quiet time is enabled.</p>
     pub fn quiet_time(mut self, input: crate::types::QuietTime) -> Self {
-        self.quiet_time = Some(input);
+        self.quiet_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The default quiet time for the campaign. Quiet time is a specific time range when a campaign doesn't send messages to endpoints, if all the following conditions are met:</p>
@@ -149,27 +151,27 @@ impl ScheduleBuilder {
     /// <li><p>The current time in the endpoint's time zone is earlier than or equal to the time specified by the QuietTime.End property for the campaign.</p></li>
     /// </ul>
     /// <p>If any of the preceding conditions isn't met, the endpoint will receive messages from the campaign, even if quiet time is enabled.</p>
-    pub fn set_quiet_time(mut self, input: std::option::Option<crate::types::QuietTime>) -> Self {
+    pub fn set_quiet_time(mut self, input: ::std::option::Option<crate::types::QuietTime>) -> Self {
         self.quiet_time = input;
         self
     }
     /// <p>The scheduled time when the campaign began or will begin. Valid values are: IMMEDIATE, to start the campaign immediately; or, a specific time in ISO 8601 format.</p>
-    pub fn start_time(mut self, input: impl Into<std::string::String>) -> Self {
-        self.start_time = Some(input.into());
+    pub fn start_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.start_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The scheduled time when the campaign began or will begin. Valid values are: IMMEDIATE, to start the campaign immediately; or, a specific time in ISO 8601 format.</p>
-    pub fn set_start_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.start_time = input;
         self
     }
     /// <p>The starting UTC offset for the campaign schedule, if the value of the IsLocalTime property is true. Valid values are: UTC, UTC+01, UTC+02, UTC+03, UTC+03:30, UTC+04, UTC+04:30, UTC+05, UTC+05:30, UTC+05:45, UTC+06, UTC+06:30, UTC+07, UTC+08, UTC+09, UTC+09:30, UTC+10, UTC+10:30, UTC+11, UTC+12, UTC+13, UTC-02, UTC-03, UTC-04, UTC-05, UTC-06, UTC-07, UTC-08, UTC-09, UTC-10, and UTC-11.</p>
-    pub fn timezone(mut self, input: impl Into<std::string::String>) -> Self {
-        self.timezone = Some(input.into());
+    pub fn timezone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.timezone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The starting UTC offset for the campaign schedule, if the value of the IsLocalTime property is true. Valid values are: UTC, UTC+01, UTC+02, UTC+03, UTC+03:30, UTC+04, UTC+04:30, UTC+05, UTC+05:30, UTC+05:45, UTC+06, UTC+06:30, UTC+07, UTC+08, UTC+09, UTC+09:30, UTC+10, UTC+10:30, UTC+11, UTC+12, UTC+13, UTC-02, UTC-03, UTC-04, UTC-05, UTC-06, UTC-07, UTC-08, UTC-09, UTC-10, and UTC-11.</p>
-    pub fn set_timezone(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_timezone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.timezone = input;
         self
     }

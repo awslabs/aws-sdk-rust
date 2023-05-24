@@ -2,20 +2,20 @@
 
 /// <p>TBD</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateApplicationOutput {
     /// <p>In response to your <code>CreateApplication</code> request, Amazon Kinesis Analytics returns a response with a summary of the application it created, including the application Amazon Resource Name (ARN), name, and status.</p>
     #[doc(hidden)]
-    pub application_summary: std::option::Option<crate::types::ApplicationSummary>,
+    pub application_summary: ::std::option::Option<crate::types::ApplicationSummary>,
     _request_id: Option<String>,
 }
 impl CreateApplicationOutput {
     /// <p>In response to your <code>CreateApplication</code> request, Amazon Kinesis Analytics returns a response with a summary of the application it created, including the application Amazon Resource Name (ARN), name, and status.</p>
-    pub fn application_summary(&self) -> std::option::Option<&crate::types::ApplicationSummary> {
+    pub fn application_summary(&self) -> ::std::option::Option<&crate::types::ApplicationSummary> {
         self.application_summary.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for CreateApplicationOutput {
+impl ::aws_http::request_id::RequestId for CreateApplicationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,21 +30,23 @@ impl CreateApplicationOutput {
 
 /// A builder for [`CreateApplicationOutput`](crate::operation::create_application::CreateApplicationOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateApplicationOutputBuilder {
-    pub(crate) application_summary: std::option::Option<crate::types::ApplicationSummary>,
+    pub(crate) application_summary: ::std::option::Option<crate::types::ApplicationSummary>,
     _request_id: Option<String>,
 }
 impl CreateApplicationOutputBuilder {
     /// <p>In response to your <code>CreateApplication</code> request, Amazon Kinesis Analytics returns a response with a summary of the application it created, including the application Amazon Resource Name (ARN), name, and status.</p>
     pub fn application_summary(mut self, input: crate::types::ApplicationSummary) -> Self {
-        self.application_summary = Some(input);
+        self.application_summary = ::std::option::Option::Some(input);
         self
     }
     /// <p>In response to your <code>CreateApplication</code> request, Amazon Kinesis Analytics returns a response with a summary of the application it created, including the application Amazon Resource Name (ARN), name, and status.</p>
     pub fn set_application_summary(
         mut self,
-        input: std::option::Option<crate::types::ApplicationSummary>,
+        input: ::std::option::Option<crate::types::ApplicationSummary>,
     ) -> Self {
         self.application_summary = input;
         self

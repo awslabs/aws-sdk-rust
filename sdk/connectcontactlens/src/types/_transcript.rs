@@ -2,20 +2,20 @@
 
 /// <p>A list of messages in the session.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Transcript {
     /// <p>The identifier of the transcript.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the participant.</p>
     #[doc(hidden)]
-    pub participant_id: std::option::Option<std::string::String>,
+    pub participant_id: ::std::option::Option<::std::string::String>,
     /// <p>The role of participant. For example, is it a customer, agent, or system.</p>
     #[doc(hidden)]
-    pub participant_role: std::option::Option<std::string::String>,
+    pub participant_role: ::std::option::Option<::std::string::String>,
     /// <p>The content of the transcript.</p>
     #[doc(hidden)]
-    pub content: std::option::Option<std::string::String>,
+    pub content: ::std::option::Option<::std::string::String>,
     /// <p>The beginning offset in the contact for this transcript.</p>
     #[doc(hidden)]
     pub begin_offset_millis: i32,
@@ -24,26 +24,26 @@ pub struct Transcript {
     pub end_offset_millis: i32,
     /// <p>The sentiment of the detected for this piece of transcript.</p>
     #[doc(hidden)]
-    pub sentiment: std::option::Option<crate::types::SentimentValue>,
+    pub sentiment: ::std::option::Option<crate::types::SentimentValue>,
     /// <p>List of positions where issues were detected on the transcript.</p>
     #[doc(hidden)]
-    pub issues_detected: std::option::Option<std::vec::Vec<crate::types::IssueDetected>>,
+    pub issues_detected: ::std::option::Option<::std::vec::Vec<crate::types::IssueDetected>>,
 }
 impl Transcript {
     /// <p>The identifier of the transcript.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The identifier of the participant.</p>
-    pub fn participant_id(&self) -> std::option::Option<&str> {
+    pub fn participant_id(&self) -> ::std::option::Option<&str> {
         self.participant_id.as_deref()
     }
     /// <p>The role of participant. For example, is it a customer, agent, or system.</p>
-    pub fn participant_role(&self) -> std::option::Option<&str> {
+    pub fn participant_role(&self) -> ::std::option::Option<&str> {
         self.participant_role.as_deref()
     }
     /// <p>The content of the transcript.</p>
-    pub fn content(&self) -> std::option::Option<&str> {
+    pub fn content(&self) -> ::std::option::Option<&str> {
         self.content.as_deref()
     }
     /// <p>The beginning offset in the contact for this transcript.</p>
@@ -55,11 +55,11 @@ impl Transcript {
         self.end_offset_millis
     }
     /// <p>The sentiment of the detected for this piece of transcript.</p>
-    pub fn sentiment(&self) -> std::option::Option<&crate::types::SentimentValue> {
+    pub fn sentiment(&self) -> ::std::option::Option<&crate::types::SentimentValue> {
         self.sentiment.as_ref()
     }
     /// <p>List of positions where issues were detected on the transcript.</p>
-    pub fn issues_detected(&self) -> std::option::Option<&[crate::types::IssueDetected]> {
+    pub fn issues_detected(&self) -> ::std::option::Option<&[crate::types::IssueDetected]> {
         self.issues_detected.as_deref()
     }
 }
@@ -72,87 +72,101 @@ impl Transcript {
 
 /// A builder for [`Transcript`](crate::types::Transcript).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TranscriptBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) participant_id: std::option::Option<std::string::String>,
-    pub(crate) participant_role: std::option::Option<std::string::String>,
-    pub(crate) content: std::option::Option<std::string::String>,
-    pub(crate) begin_offset_millis: std::option::Option<i32>,
-    pub(crate) end_offset_millis: std::option::Option<i32>,
-    pub(crate) sentiment: std::option::Option<crate::types::SentimentValue>,
-    pub(crate) issues_detected: std::option::Option<std::vec::Vec<crate::types::IssueDetected>>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) participant_id: ::std::option::Option<::std::string::String>,
+    pub(crate) participant_role: ::std::option::Option<::std::string::String>,
+    pub(crate) content: ::std::option::Option<::std::string::String>,
+    pub(crate) begin_offset_millis: ::std::option::Option<i32>,
+    pub(crate) end_offset_millis: ::std::option::Option<i32>,
+    pub(crate) sentiment: ::std::option::Option<crate::types::SentimentValue>,
+    pub(crate) issues_detected: ::std::option::Option<::std::vec::Vec<crate::types::IssueDetected>>,
 }
 impl TranscriptBuilder {
     /// <p>The identifier of the transcript.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the transcript.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>The identifier of the participant.</p>
-    pub fn participant_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.participant_id = Some(input.into());
+    pub fn participant_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.participant_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the participant.</p>
-    pub fn set_participant_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_participant_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.participant_id = input;
         self
     }
     /// <p>The role of participant. For example, is it a customer, agent, or system.</p>
-    pub fn participant_role(mut self, input: impl Into<std::string::String>) -> Self {
-        self.participant_role = Some(input.into());
+    pub fn participant_role(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.participant_role = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The role of participant. For example, is it a customer, agent, or system.</p>
-    pub fn set_participant_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_participant_role(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.participant_role = input;
         self
     }
     /// <p>The content of the transcript.</p>
-    pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
-        self.content = Some(input.into());
+    pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.content = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The content of the transcript.</p>
-    pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content = input;
         self
     }
     /// <p>The beginning offset in the contact for this transcript.</p>
     pub fn begin_offset_millis(mut self, input: i32) -> Self {
-        self.begin_offset_millis = Some(input);
+        self.begin_offset_millis = ::std::option::Option::Some(input);
         self
     }
     /// <p>The beginning offset in the contact for this transcript.</p>
-    pub fn set_begin_offset_millis(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_begin_offset_millis(mut self, input: ::std::option::Option<i32>) -> Self {
         self.begin_offset_millis = input;
         self
     }
     /// <p>The end offset in the contact for this transcript.</p>
     pub fn end_offset_millis(mut self, input: i32) -> Self {
-        self.end_offset_millis = Some(input);
+        self.end_offset_millis = ::std::option::Option::Some(input);
         self
     }
     /// <p>The end offset in the contact for this transcript.</p>
-    pub fn set_end_offset_millis(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_end_offset_millis(mut self, input: ::std::option::Option<i32>) -> Self {
         self.end_offset_millis = input;
         self
     }
     /// <p>The sentiment of the detected for this piece of transcript.</p>
     pub fn sentiment(mut self, input: crate::types::SentimentValue) -> Self {
-        self.sentiment = Some(input);
+        self.sentiment = ::std::option::Option::Some(input);
         self
     }
     /// <p>The sentiment of the detected for this piece of transcript.</p>
     pub fn set_sentiment(
         mut self,
-        input: std::option::Option<crate::types::SentimentValue>,
+        input: ::std::option::Option<crate::types::SentimentValue>,
     ) -> Self {
         self.sentiment = input;
         self
@@ -165,13 +179,13 @@ impl TranscriptBuilder {
     pub fn issues_detected(mut self, input: crate::types::IssueDetected) -> Self {
         let mut v = self.issues_detected.unwrap_or_default();
         v.push(input);
-        self.issues_detected = Some(v);
+        self.issues_detected = ::std::option::Option::Some(v);
         self
     }
     /// <p>List of positions where issues were detected on the transcript.</p>
     pub fn set_issues_detected(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::IssueDetected>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::IssueDetected>>,
     ) -> Self {
         self.issues_detected = input;
         self

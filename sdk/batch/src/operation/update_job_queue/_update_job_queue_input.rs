@@ -2,42 +2,42 @@
 
 /// <p>Contains the parameters for <code>UpdateJobQueue</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateJobQueueInput {
     /// <p>The name or the Amazon Resource Name (ARN) of the job queue.</p>
     #[doc(hidden)]
-    pub job_queue: std::option::Option<std::string::String>,
+    pub job_queue: ::std::option::Option<::std::string::String>,
     /// <p>Describes the queue's ability to accept new jobs. If the job queue state is <code>ENABLED</code>, it can accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs already in the queue can finish.</p>
     #[doc(hidden)]
-    pub state: std::option::Option<crate::types::JqState>,
+    pub state: ::std::option::Option<crate::types::JqState>,
     /// <p>Amazon Resource Name (ARN) of the fair share scheduling policy. Once a job queue is created, the fair share scheduling policy can be replaced but not removed. The format is <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i> </code>. For example, <code>aws:aws:batch:us-west-2:123456789012:scheduling-policy/MySchedulingPolicy</code>.</p>
     #[doc(hidden)]
-    pub scheduling_policy_arn: std::option::Option<std::string::String>,
+    pub scheduling_policy_arn: ::std::option::Option<::std::string::String>,
     /// <p>The priority of the job queue. Job queues with a higher priority (or a higher integer value for the <code>priority</code> parameter) are evaluated first when associated with the same compute environment. Priority is determined in descending order. For example, a job queue with a priority value of <code>10</code> is given scheduling preference over a job queue with a priority value of <code>1</code>. All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be mixed.</p>
     #[doc(hidden)]
-    pub priority: std::option::Option<i32>,
+    pub priority: ::std::option::Option<i32>,
     /// <p>Details the set of compute environments mapped to a job queue and their order relative to each other. This is one of the parameters used by the job scheduler to determine which compute environment runs a given job. Compute environments must be in the <code>VALID</code> state before you can associate them with a job queue. All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be mixed.</p> <note>
     /// <p>All compute environments that are associated with a job queue must share the same architecture. Batch doesn't support mixing compute environment architecture types in a single job queue.</p>
     /// </note>
     #[doc(hidden)]
     pub compute_environment_order:
-        std::option::Option<std::vec::Vec<crate::types::ComputeEnvironmentOrder>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ComputeEnvironmentOrder>>,
 }
 impl UpdateJobQueueInput {
     /// <p>The name or the Amazon Resource Name (ARN) of the job queue.</p>
-    pub fn job_queue(&self) -> std::option::Option<&str> {
+    pub fn job_queue(&self) -> ::std::option::Option<&str> {
         self.job_queue.as_deref()
     }
     /// <p>Describes the queue's ability to accept new jobs. If the job queue state is <code>ENABLED</code>, it can accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs already in the queue can finish.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::JqState> {
+    pub fn state(&self) -> ::std::option::Option<&crate::types::JqState> {
         self.state.as_ref()
     }
     /// <p>Amazon Resource Name (ARN) of the fair share scheduling policy. Once a job queue is created, the fair share scheduling policy can be replaced but not removed. The format is <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i> </code>. For example, <code>aws:aws:batch:us-west-2:123456789012:scheduling-policy/MySchedulingPolicy</code>.</p>
-    pub fn scheduling_policy_arn(&self) -> std::option::Option<&str> {
+    pub fn scheduling_policy_arn(&self) -> ::std::option::Option<&str> {
         self.scheduling_policy_arn.as_deref()
     }
     /// <p>The priority of the job queue. Job queues with a higher priority (or a higher integer value for the <code>priority</code> parameter) are evaluated first when associated with the same compute environment. Priority is determined in descending order. For example, a job queue with a priority value of <code>10</code> is given scheduling preference over a job queue with a priority value of <code>1</code>. All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be mixed.</p>
-    pub fn priority(&self) -> std::option::Option<i32> {
+    pub fn priority(&self) -> ::std::option::Option<i32> {
         self.priority
     }
     /// <p>Details the set of compute environments mapped to a job queue and their order relative to each other. This is one of the parameters used by the job scheduler to determine which compute environment runs a given job. Compute environments must be in the <code>VALID</code> state before you can associate them with a job queue. All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be mixed.</p> <note>
@@ -45,7 +45,7 @@ impl UpdateJobQueueInput {
     /// </note>
     pub fn compute_environment_order(
         &self,
-    ) -> std::option::Option<&[crate::types::ComputeEnvironmentOrder]> {
+    ) -> ::std::option::Option<&[crate::types::ComputeEnvironmentOrder]> {
         self.compute_environment_order.as_deref()
     }
 }
@@ -58,56 +58,61 @@ impl UpdateJobQueueInput {
 
 /// A builder for [`UpdateJobQueueInput`](crate::operation::update_job_queue::UpdateJobQueueInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateJobQueueInputBuilder {
-    pub(crate) job_queue: std::option::Option<std::string::String>,
-    pub(crate) state: std::option::Option<crate::types::JqState>,
-    pub(crate) scheduling_policy_arn: std::option::Option<std::string::String>,
-    pub(crate) priority: std::option::Option<i32>,
+    pub(crate) job_queue: ::std::option::Option<::std::string::String>,
+    pub(crate) state: ::std::option::Option<crate::types::JqState>,
+    pub(crate) scheduling_policy_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) priority: ::std::option::Option<i32>,
     pub(crate) compute_environment_order:
-        std::option::Option<std::vec::Vec<crate::types::ComputeEnvironmentOrder>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ComputeEnvironmentOrder>>,
 }
 impl UpdateJobQueueInputBuilder {
     /// <p>The name or the Amazon Resource Name (ARN) of the job queue.</p>
-    pub fn job_queue(mut self, input: impl Into<std::string::String>) -> Self {
-        self.job_queue = Some(input.into());
+    pub fn job_queue(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.job_queue = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name or the Amazon Resource Name (ARN) of the job queue.</p>
-    pub fn set_job_queue(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_job_queue(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_queue = input;
         self
     }
     /// <p>Describes the queue's ability to accept new jobs. If the job queue state is <code>ENABLED</code>, it can accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs already in the queue can finish.</p>
     pub fn state(mut self, input: crate::types::JqState) -> Self {
-        self.state = Some(input);
+        self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes the queue's ability to accept new jobs. If the job queue state is <code>ENABLED</code>, it can accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs already in the queue can finish.</p>
-    pub fn set_state(mut self, input: std::option::Option<crate::types::JqState>) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::JqState>) -> Self {
         self.state = input;
         self
     }
     /// <p>Amazon Resource Name (ARN) of the fair share scheduling policy. Once a job queue is created, the fair share scheduling policy can be replaced but not removed. The format is <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i> </code>. For example, <code>aws:aws:batch:us-west-2:123456789012:scheduling-policy/MySchedulingPolicy</code>.</p>
-    pub fn scheduling_policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.scheduling_policy_arn = Some(input.into());
+    pub fn scheduling_policy_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.scheduling_policy_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Amazon Resource Name (ARN) of the fair share scheduling policy. Once a job queue is created, the fair share scheduling policy can be replaced but not removed. The format is <code>aws:<i>Partition</i>:batch:<i>Region</i>:<i>Account</i>:scheduling-policy/<i>Name</i> </code>. For example, <code>aws:aws:batch:us-west-2:123456789012:scheduling-policy/MySchedulingPolicy</code>.</p>
     pub fn set_scheduling_policy_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.scheduling_policy_arn = input;
         self
     }
     /// <p>The priority of the job queue. Job queues with a higher priority (or a higher integer value for the <code>priority</code> parameter) are evaluated first when associated with the same compute environment. Priority is determined in descending order. For example, a job queue with a priority value of <code>10</code> is given scheduling preference over a job queue with a priority value of <code>1</code>. All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be mixed.</p>
     pub fn priority(mut self, input: i32) -> Self {
-        self.priority = Some(input);
+        self.priority = ::std::option::Option::Some(input);
         self
     }
     /// <p>The priority of the job queue. Job queues with a higher priority (or a higher integer value for the <code>priority</code> parameter) are evaluated first when associated with the same compute environment. Priority is determined in descending order. For example, a job queue with a priority value of <code>10</code> is given scheduling preference over a job queue with a priority value of <code>1</code>. All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be mixed.</p>
-    pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
         self.priority = input;
         self
     }
@@ -124,7 +129,7 @@ impl UpdateJobQueueInputBuilder {
     ) -> Self {
         let mut v = self.compute_environment_order.unwrap_or_default();
         v.push(input);
-        self.compute_environment_order = Some(v);
+        self.compute_environment_order = ::std::option::Option::Some(v);
         self
     }
     /// <p>Details the set of compute environments mapped to a job queue and their order relative to each other. This is one of the parameters used by the job scheduler to determine which compute environment runs a given job. Compute environments must be in the <code>VALID</code> state before you can associate them with a job queue. All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be mixed.</p> <note>
@@ -132,7 +137,7 @@ impl UpdateJobQueueInputBuilder {
     /// </note>
     pub fn set_compute_environment_order(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ComputeEnvironmentOrder>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ComputeEnvironmentOrder>>,
     ) -> Self {
         self.compute_environment_order = input;
         self
@@ -140,11 +145,11 @@ impl UpdateJobQueueInputBuilder {
     /// Consumes the builder and constructs a [`UpdateJobQueueInput`](crate::operation::update_job_queue::UpdateJobQueueInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::update_job_queue::UpdateJobQueueInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::update_job_queue::UpdateJobQueueInput {
+        ::std::result::Result::Ok(crate::operation::update_job_queue::UpdateJobQueueInput {
             job_queue: self.job_queue,
             state: self.state,
             scheduling_policy_arn: self.scheduling_policy_arn,

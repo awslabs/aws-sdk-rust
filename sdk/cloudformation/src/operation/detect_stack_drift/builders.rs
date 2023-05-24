@@ -10,29 +10,29 @@ pub use crate::operation::detect_stack_drift::_detect_stack_drift_input::DetectS
 /// <p>For a list of stack resources that currently support drift detection, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources that Support Drift Detection</a>.</p>
 /// <p> <code>DetectStackDrift</code> can take up to several minutes, depending on the number of resources contained within the stack. Use <code>DescribeStackDriftDetectionStatus</code> to monitor the progress of a detect stack drift operation. Once the drift detection operation has completed, use <code>DescribeStackResourceDrifts</code> to return drift information about the stack and its resources.</p>
 /// <p>When detecting drift on a stack, CloudFormation doesn't detect drift on any nested stacks belonging to that stack. Perform <code>DetectStackDrift</code> directly on the nested stack itself.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DetectStackDriftFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::detect_stack_drift::builders::DetectStackDriftInputBuilder,
 }
 impl DetectStackDriftFluentBuilder {
     /// Creates a new `DetectStackDrift`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::detect_stack_drift::DetectStackDrift,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::detect_stack_drift::DetectStackDriftError,
         >,
     > {
@@ -40,30 +40,33 @@ impl DetectStackDriftFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::detect_stack_drift::DetectStackDriftOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::detect_stack_drift::DetectStackDriftError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -76,21 +79,21 @@ impl DetectStackDriftFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::detect_stack_drift::DetectStackDriftOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::detect_stack_drift::DetectStackDriftError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the stack for which you want to detect drift.</p>
-    pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stack_name(input.into());
         self
     }
     /// <p>The name of the stack for which you want to detect drift.</p>
-    pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_stack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stack_name(input);
         self
     }
@@ -99,14 +102,17 @@ impl DetectStackDriftFluentBuilder {
     /// To override the contents of this collection use [`set_logical_resource_ids`](Self::set_logical_resource_ids).
     ///
     /// <p>The logical names of any resources you want to use as filters.</p>
-    pub fn logical_resource_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn logical_resource_ids(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.logical_resource_ids(input.into());
         self
     }
     /// <p>The logical names of any resources you want to use as filters.</p>
     pub fn set_logical_resource_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_logical_resource_ids(input);
         self

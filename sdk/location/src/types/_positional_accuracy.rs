@@ -2,15 +2,15 @@
 
 /// <p>Defines the level of certainty of the position.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PositionalAccuracy {
     /// <p>Estimated maximum distance, in meters, between the measured position and the true position of a device, along the Earth's surface.</p>
     #[doc(hidden)]
-    pub horizontal: std::option::Option<f64>,
+    pub horizontal: ::std::option::Option<f64>,
 }
 impl PositionalAccuracy {
     /// <p>Estimated maximum distance, in meters, between the measured position and the true position of a device, along the Earth's surface.</p>
-    pub fn horizontal(&self) -> std::option::Option<f64> {
+    pub fn horizontal(&self) -> ::std::option::Option<f64> {
         self.horizontal
     }
 }
@@ -23,18 +23,20 @@ impl PositionalAccuracy {
 
 /// A builder for [`PositionalAccuracy`](crate::types::PositionalAccuracy).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PositionalAccuracyBuilder {
-    pub(crate) horizontal: std::option::Option<f64>,
+    pub(crate) horizontal: ::std::option::Option<f64>,
 }
 impl PositionalAccuracyBuilder {
     /// <p>Estimated maximum distance, in meters, between the measured position and the true position of a device, along the Earth's surface.</p>
     pub fn horizontal(mut self, input: f64) -> Self {
-        self.horizontal = Some(input);
+        self.horizontal = ::std::option::Option::Some(input);
         self
     }
     /// <p>Estimated maximum distance, in meters, between the measured position and the true position of a device, along the Earth's surface.</p>
-    pub fn set_horizontal(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_horizontal(mut self, input: ::std::option::Option<f64>) -> Self {
         self.horizontal = input;
         self
     }

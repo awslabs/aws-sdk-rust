@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeResourcePolicy`](crate::operation::describe_resource_policy::builders::DescribeResourcePolicyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::operation::describe_resource_policy::builders::DescribeResourcePolicyFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::describe_resource_policy::builders::DescribeResourcePolicyFluentBuilder::set_resource_arn): <p>The Amazon Resource Name (ARN) of the custom model version that has the resource policy.</p>
+    ///   - [`resource_arn(impl ::std::convert::Into<String>)`](crate::operation::describe_resource_policy::builders::DescribeResourcePolicyFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::describe_resource_policy::builders::DescribeResourcePolicyFluentBuilder::set_resource_arn): <p>The Amazon Resource Name (ARN) of the custom model version that has the resource policy.</p>
     /// - On success, responds with [`DescribeResourcePolicyOutput`](crate::operation::describe_resource_policy::DescribeResourcePolicyOutput) with field(s):
     ///   - [`resource_policy(Option<String>)`](crate::operation::describe_resource_policy::DescribeResourcePolicyOutput::resource_policy): <p>The JSON body of the resource-based policy.</p>
     ///   - [`creation_time(Option<DateTime>)`](crate::operation::describe_resource_policy::DescribeResourcePolicyOutput::creation_time): <p>The time at which the policy was created.</p>

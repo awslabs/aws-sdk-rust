@@ -2,7 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_reusable_delegation_sets_http_error(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::list_reusable_delegation_sets::ListReusableDelegationSetsOutput,
@@ -17,7 +17,7 @@ pub fn de_list_reusable_delegation_sets_http_error(
     .map_err(
         crate::operation::list_reusable_delegation_sets::ListReusableDelegationSetsError::unhandled,
     )?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
+    generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -49,7 +49,7 @@ pub fn de_list_reusable_delegation_sets_http_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_reusable_delegation_sets_http_response_with_props(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::list_reusable_delegation_sets::ListReusableDelegationSetsOutput,
@@ -60,15 +60,15 @@ pub fn de_list_reusable_delegation_sets_http_response_with_props(
         let mut output = crate::operation::list_reusable_delegation_sets::builders::ListReusableDelegationSetsOutputBuilder::default();
         output = crate::protocol_serde::shape_list_reusable_delegation_sets::de_list_reusable_delegation_sets(_response_body, output).map_err(crate::operation::list_reusable_delegation_sets::ListReusableDelegationSetsError::unhandled)?;
         output._set_request_id(
-            aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
+            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
         );
         output.build()
     })
 }
 
 #[allow(unused_mut)]
-pub fn de_list_reusable_delegation_sets(inp: &[u8], mut builder: crate::operation::list_reusable_delegation_sets::builders::ListReusableDelegationSetsOutputBuilder) -> Result<crate::operation::list_reusable_delegation_sets::builders::ListReusableDelegationSetsOutputBuilder, aws_smithy_xml::decode::XmlDecodeError>{
-    let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
+pub fn de_list_reusable_delegation_sets(inp: &[u8], mut builder: crate::operation::list_reusable_delegation_sets::builders::ListReusableDelegationSetsOutputBuilder) -> Result<crate::operation::list_reusable_delegation_sets::builders::ListReusableDelegationSetsOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>{
+    let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
@@ -76,7 +76,7 @@ pub fn de_list_reusable_delegation_sets(inp: &[u8], mut builder: crate::operatio
     let start_el = decoder.start_el();
     if !start_el.matches("ListReusableDelegationSetsResponse") {
         return Err(
-                                aws_smithy_xml::decode::XmlDecodeError::custom(
+                                ::aws_smithy_xml::decode::XmlDecodeError::custom(
                                     format!("encountered invalid XML root: expected ListReusableDelegationSetsResponse but got {:?}. This is likely a bug in the SDK.", start_el)
                                 )
                             );
@@ -87,10 +87,10 @@ pub fn de_list_reusable_delegation_sets(inp: &[u8], mut builder: crate::operatio
                 let var_1 =
                     Some(
                          {
-                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
-                            .map_err(|_|aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.route53#PageTruncated`)"))
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.route53#PageTruncated`)"))
                         }
                         ?
                     )
@@ -101,8 +101,8 @@ pub fn de_list_reusable_delegation_sets(inp: &[u8], mut builder: crate::operatio
             s if s.matches("Marker") /* Marker com.amazonaws.route53.synthetic#ListReusableDelegationSetsOutput$Marker */ =>  {
                 let var_2 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -115,10 +115,10 @@ pub fn de_list_reusable_delegation_sets(inp: &[u8], mut builder: crate::operatio
                 let var_3 =
                     Some(
                          {
-                            <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
-                            .map_err(|_|aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `smithy.api#Integer`)"))
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `smithy.api#Integer`)"))
                         }
                         ?
                     )
@@ -129,8 +129,8 @@ pub fn de_list_reusable_delegation_sets(inp: &[u8], mut builder: crate::operatio
             s if s.matches("NextMarker") /* NextMarker com.amazonaws.route53.synthetic#ListReusableDelegationSetsOutput$NextMarker */ =>  {
                 let var_4 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?

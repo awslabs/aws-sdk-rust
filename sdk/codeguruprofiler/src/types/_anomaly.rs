@@ -2,29 +2,29 @@
 
 /// <p> Details about an anomaly in a specific metric of application profile. The anomaly is detected using analysis of the metric data over a period of time. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Anomaly {
     /// <p> Details about the metric that the analysis used when it detected the anomaly. The metric includes the name of the frame that was analyzed with the type and thread states used to derive the metric value for that frame. </p>
     #[doc(hidden)]
-    pub metric: std::option::Option<crate::types::Metric>,
+    pub metric: ::std::option::Option<crate::types::Metric>,
     /// <p>The reason for which metric was flagged as anomalous.</p>
     #[doc(hidden)]
-    pub reason: std::option::Option<std::string::String>,
+    pub reason: ::std::option::Option<::std::string::String>,
     /// <p> A list of the instances of the detected anomalies during the requested period. </p>
     #[doc(hidden)]
-    pub instances: std::option::Option<std::vec::Vec<crate::types::AnomalyInstance>>,
+    pub instances: ::std::option::Option<::std::vec::Vec<crate::types::AnomalyInstance>>,
 }
 impl Anomaly {
     /// <p> Details about the metric that the analysis used when it detected the anomaly. The metric includes the name of the frame that was analyzed with the type and thread states used to derive the metric value for that frame. </p>
-    pub fn metric(&self) -> std::option::Option<&crate::types::Metric> {
+    pub fn metric(&self) -> ::std::option::Option<&crate::types::Metric> {
         self.metric.as_ref()
     }
     /// <p>The reason for which metric was flagged as anomalous.</p>
-    pub fn reason(&self) -> std::option::Option<&str> {
+    pub fn reason(&self) -> ::std::option::Option<&str> {
         self.reason.as_deref()
     }
     /// <p> A list of the instances of the detected anomalies during the requested period. </p>
-    pub fn instances(&self) -> std::option::Option<&[crate::types::AnomalyInstance]> {
+    pub fn instances(&self) -> ::std::option::Option<&[crate::types::AnomalyInstance]> {
         self.instances.as_deref()
     }
 }
@@ -37,30 +37,32 @@ impl Anomaly {
 
 /// A builder for [`Anomaly`](crate::types::Anomaly).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AnomalyBuilder {
-    pub(crate) metric: std::option::Option<crate::types::Metric>,
-    pub(crate) reason: std::option::Option<std::string::String>,
-    pub(crate) instances: std::option::Option<std::vec::Vec<crate::types::AnomalyInstance>>,
+    pub(crate) metric: ::std::option::Option<crate::types::Metric>,
+    pub(crate) reason: ::std::option::Option<::std::string::String>,
+    pub(crate) instances: ::std::option::Option<::std::vec::Vec<crate::types::AnomalyInstance>>,
 }
 impl AnomalyBuilder {
     /// <p> Details about the metric that the analysis used when it detected the anomaly. The metric includes the name of the frame that was analyzed with the type and thread states used to derive the metric value for that frame. </p>
     pub fn metric(mut self, input: crate::types::Metric) -> Self {
-        self.metric = Some(input);
+        self.metric = ::std::option::Option::Some(input);
         self
     }
     /// <p> Details about the metric that the analysis used when it detected the anomaly. The metric includes the name of the frame that was analyzed with the type and thread states used to derive the metric value for that frame. </p>
-    pub fn set_metric(mut self, input: std::option::Option<crate::types::Metric>) -> Self {
+    pub fn set_metric(mut self, input: ::std::option::Option<crate::types::Metric>) -> Self {
         self.metric = input;
         self
     }
     /// <p>The reason for which metric was flagged as anomalous.</p>
-    pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
-        self.reason = Some(input.into());
+    pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason for which metric was flagged as anomalous.</p>
-    pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reason = input;
         self
     }
@@ -72,13 +74,13 @@ impl AnomalyBuilder {
     pub fn instances(mut self, input: crate::types::AnomalyInstance) -> Self {
         let mut v = self.instances.unwrap_or_default();
         v.push(input);
-        self.instances = Some(v);
+        self.instances = ::std::option::Option::Some(v);
         self
     }
     /// <p> A list of the instances of the detected anomalies during the requested period. </p>
     pub fn set_instances(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AnomalyInstance>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AnomalyInstance>>,
     ) -> Self {
         self.instances = input;
         self

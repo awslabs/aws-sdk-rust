@@ -2,7 +2,7 @@
 
 /// <p>An object that determines whether any HTTP headers (and if so, which headers) are included in the cache key and in requests that CloudFront sends to the origin.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CachePolicyHeadersConfig {
     /// <p>Determines whether any HTTP headers are included in the cache key and in requests that CloudFront sends to the origin. Valid values are:</p>
     /// <ul>
@@ -10,10 +10,10 @@ pub struct CachePolicyHeadersConfig {
     /// <li> <p> <code>whitelist</code> – Only the HTTP headers that are listed in the <code>Headers</code> type are included in the cache key and in requests that CloudFront sends to the origin.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub header_behavior: std::option::Option<crate::types::CachePolicyHeaderBehavior>,
+    pub header_behavior: ::std::option::Option<crate::types::CachePolicyHeaderBehavior>,
     /// <p>Contains a list of HTTP header names.</p>
     #[doc(hidden)]
-    pub headers: std::option::Option<crate::types::Headers>,
+    pub headers: ::std::option::Option<crate::types::Headers>,
 }
 impl CachePolicyHeadersConfig {
     /// <p>Determines whether any HTTP headers are included in the cache key and in requests that CloudFront sends to the origin. Valid values are:</p>
@@ -21,11 +21,13 @@ impl CachePolicyHeadersConfig {
     /// <li> <p> <code>none</code> – No HTTP headers are included in the cache key or in requests that CloudFront sends to the origin. Even when this field is set to <code>none</code>, any headers that are listed in an <code>OriginRequestPolicy</code> <i>are</i> included in origin requests.</p> </li>
     /// <li> <p> <code>whitelist</code> – Only the HTTP headers that are listed in the <code>Headers</code> type are included in the cache key and in requests that CloudFront sends to the origin.</p> </li>
     /// </ul>
-    pub fn header_behavior(&self) -> std::option::Option<&crate::types::CachePolicyHeaderBehavior> {
+    pub fn header_behavior(
+        &self,
+    ) -> ::std::option::Option<&crate::types::CachePolicyHeaderBehavior> {
         self.header_behavior.as_ref()
     }
     /// <p>Contains a list of HTTP header names.</p>
-    pub fn headers(&self) -> std::option::Option<&crate::types::Headers> {
+    pub fn headers(&self) -> ::std::option::Option<&crate::types::Headers> {
         self.headers.as_ref()
     }
 }
@@ -38,10 +40,12 @@ impl CachePolicyHeadersConfig {
 
 /// A builder for [`CachePolicyHeadersConfig`](crate::types::CachePolicyHeadersConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CachePolicyHeadersConfigBuilder {
-    pub(crate) header_behavior: std::option::Option<crate::types::CachePolicyHeaderBehavior>,
-    pub(crate) headers: std::option::Option<crate::types::Headers>,
+    pub(crate) header_behavior: ::std::option::Option<crate::types::CachePolicyHeaderBehavior>,
+    pub(crate) headers: ::std::option::Option<crate::types::Headers>,
 }
 impl CachePolicyHeadersConfigBuilder {
     /// <p>Determines whether any HTTP headers are included in the cache key and in requests that CloudFront sends to the origin. Valid values are:</p>
@@ -50,7 +54,7 @@ impl CachePolicyHeadersConfigBuilder {
     /// <li> <p> <code>whitelist</code> – Only the HTTP headers that are listed in the <code>Headers</code> type are included in the cache key and in requests that CloudFront sends to the origin.</p> </li>
     /// </ul>
     pub fn header_behavior(mut self, input: crate::types::CachePolicyHeaderBehavior) -> Self {
-        self.header_behavior = Some(input);
+        self.header_behavior = ::std::option::Option::Some(input);
         self
     }
     /// <p>Determines whether any HTTP headers are included in the cache key and in requests that CloudFront sends to the origin. Valid values are:</p>
@@ -60,18 +64,18 @@ impl CachePolicyHeadersConfigBuilder {
     /// </ul>
     pub fn set_header_behavior(
         mut self,
-        input: std::option::Option<crate::types::CachePolicyHeaderBehavior>,
+        input: ::std::option::Option<crate::types::CachePolicyHeaderBehavior>,
     ) -> Self {
         self.header_behavior = input;
         self
     }
     /// <p>Contains a list of HTTP header names.</p>
     pub fn headers(mut self, input: crate::types::Headers) -> Self {
-        self.headers = Some(input);
+        self.headers = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains a list of HTTP header names.</p>
-    pub fn set_headers(mut self, input: std::option::Option<crate::types::Headers>) -> Self {
+    pub fn set_headers(mut self, input: ::std::option::Option<crate::types::Headers>) -> Self {
         self.headers = input;
         self
     }

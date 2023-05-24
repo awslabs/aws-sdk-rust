@@ -2,29 +2,29 @@
 
 /// <p>Specifies information about the master user of the domain. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsOpenSearchServiceDomainMasterUserOptionsDetails {
     /// <p>The Amazon Resource Name (ARN) for the master user. </p>
     #[doc(hidden)]
-    pub master_user_arn: std::option::Option<std::string::String>,
+    pub master_user_arn: ::std::option::Option<::std::string::String>,
     /// <p>The username for the master user. </p>
     #[doc(hidden)]
-    pub master_user_name: std::option::Option<std::string::String>,
+    pub master_user_name: ::std::option::Option<::std::string::String>,
     /// <p>The password for the master user. </p>
     #[doc(hidden)]
-    pub master_user_password: std::option::Option<std::string::String>,
+    pub master_user_password: ::std::option::Option<::std::string::String>,
 }
 impl AwsOpenSearchServiceDomainMasterUserOptionsDetails {
     /// <p>The Amazon Resource Name (ARN) for the master user. </p>
-    pub fn master_user_arn(&self) -> std::option::Option<&str> {
+    pub fn master_user_arn(&self) -> ::std::option::Option<&str> {
         self.master_user_arn.as_deref()
     }
     /// <p>The username for the master user. </p>
-    pub fn master_user_name(&self) -> std::option::Option<&str> {
+    pub fn master_user_name(&self) -> ::std::option::Option<&str> {
         self.master_user_name.as_deref()
     }
     /// <p>The password for the master user. </p>
-    pub fn master_user_password(&self) -> std::option::Option<&str> {
+    pub fn master_user_password(&self) -> ::std::option::Option<&str> {
         self.master_user_password.as_deref()
     }
 }
@@ -38,42 +38,59 @@ impl AwsOpenSearchServiceDomainMasterUserOptionsDetails {
 
 /// A builder for [`AwsOpenSearchServiceDomainMasterUserOptionsDetails`](crate::types::AwsOpenSearchServiceDomainMasterUserOptionsDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsOpenSearchServiceDomainMasterUserOptionsDetailsBuilder {
-    pub(crate) master_user_arn: std::option::Option<std::string::String>,
-    pub(crate) master_user_name: std::option::Option<std::string::String>,
-    pub(crate) master_user_password: std::option::Option<std::string::String>,
+    pub(crate) master_user_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) master_user_name: ::std::option::Option<::std::string::String>,
+    pub(crate) master_user_password: ::std::option::Option<::std::string::String>,
 }
 impl AwsOpenSearchServiceDomainMasterUserOptionsDetailsBuilder {
     /// <p>The Amazon Resource Name (ARN) for the master user. </p>
-    pub fn master_user_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.master_user_arn = Some(input.into());
+    pub fn master_user_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.master_user_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the master user. </p>
-    pub fn set_master_user_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_master_user_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.master_user_arn = input;
         self
     }
     /// <p>The username for the master user. </p>
-    pub fn master_user_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.master_user_name = Some(input.into());
+    pub fn master_user_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.master_user_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The username for the master user. </p>
-    pub fn set_master_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_master_user_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.master_user_name = input;
         self
     }
     /// <p>The password for the master user. </p>
-    pub fn master_user_password(mut self, input: impl Into<std::string::String>) -> Self {
-        self.master_user_password = Some(input.into());
+    pub fn master_user_password(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.master_user_password = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The password for the master user. </p>
     pub fn set_master_user_password(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.master_user_password = input;
         self

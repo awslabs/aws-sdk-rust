@@ -2,22 +2,22 @@
 
 /// <p>Information about the Amazon Inspector free trial for an account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FreeTrialAccountInfo {
     /// <p>The account associated with the Amazon Inspector free trial information.</p>
     #[doc(hidden)]
-    pub account_id: std::option::Option<std::string::String>,
+    pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>Contains information about the Amazon Inspector free trial for an account.</p>
     #[doc(hidden)]
-    pub free_trial_info: std::option::Option<std::vec::Vec<crate::types::FreeTrialInfo>>,
+    pub free_trial_info: ::std::option::Option<::std::vec::Vec<crate::types::FreeTrialInfo>>,
 }
 impl FreeTrialAccountInfo {
     /// <p>The account associated with the Amazon Inspector free trial information.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>Contains information about the Amazon Inspector free trial for an account.</p>
-    pub fn free_trial_info(&self) -> std::option::Option<&[crate::types::FreeTrialInfo]> {
+    pub fn free_trial_info(&self) -> ::std::option::Option<&[crate::types::FreeTrialInfo]> {
         self.free_trial_info.as_deref()
     }
 }
@@ -30,19 +30,21 @@ impl FreeTrialAccountInfo {
 
 /// A builder for [`FreeTrialAccountInfo`](crate::types::FreeTrialAccountInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FreeTrialAccountInfoBuilder {
-    pub(crate) account_id: std::option::Option<std::string::String>,
-    pub(crate) free_trial_info: std::option::Option<std::vec::Vec<crate::types::FreeTrialInfo>>,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) free_trial_info: ::std::option::Option<::std::vec::Vec<crate::types::FreeTrialInfo>>,
 }
 impl FreeTrialAccountInfoBuilder {
     /// <p>The account associated with the Amazon Inspector free trial information.</p>
-    pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.account_id = Some(input.into());
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The account associated with the Amazon Inspector free trial information.</p>
-    pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
     }
@@ -54,13 +56,13 @@ impl FreeTrialAccountInfoBuilder {
     pub fn free_trial_info(mut self, input: crate::types::FreeTrialInfo) -> Self {
         let mut v = self.free_trial_info.unwrap_or_default();
         v.push(input);
-        self.free_trial_info = Some(v);
+        self.free_trial_info = ::std::option::Option::Some(v);
         self
     }
     /// <p>Contains information about the Amazon Inspector free trial for an account.</p>
     pub fn set_free_trial_info(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::FreeTrialInfo>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::FreeTrialInfo>>,
     ) -> Self {
         self.free_trial_info = input;
         self

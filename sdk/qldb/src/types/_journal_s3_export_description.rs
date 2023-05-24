@@ -2,69 +2,69 @@
 
 /// <p>Information about a journal export job, including the ledger name, export ID, creation time, current status, and the parameters of the original export creation request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JournalS3ExportDescription {
     /// <p>The name of the ledger.</p>
     #[doc(hidden)]
-    pub ledger_name: std::option::Option<std::string::String>,
+    pub ledger_name: ::std::option::Option<::std::string::String>,
     /// <p>The UUID (represented in Base62-encoded text) of the journal export job.</p>
     #[doc(hidden)]
-    pub export_id: std::option::Option<std::string::String>,
+    pub export_id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time, in epoch time format, when the export job was created. (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
     #[doc(hidden)]
-    pub export_creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub export_creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The current state of the journal export job.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::ExportStatus>,
+    pub status: ::std::option::Option<crate::types::ExportStatus>,
     /// <p>The inclusive start date and time for the range of journal contents that was specified in the original export request.</p>
     #[doc(hidden)]
-    pub inclusive_start_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub inclusive_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The exclusive end date and time for the range of journal contents that was specified in the original export request.</p>
     #[doc(hidden)]
-    pub exclusive_end_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub exclusive_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Simple Storage Service (Amazon S3) bucket location in which a journal export job writes the journal contents.</p>
     #[doc(hidden)]
-    pub s3_export_configuration: std::option::Option<crate::types::S3ExportConfiguration>,
+    pub s3_export_configuration: ::std::option::Option<crate::types::S3ExportConfiguration>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a journal export job to do the following:</p>
     /// <ul>
     /// <li> <p>Write objects into your Amazon Simple Storage Service (Amazon S3) bucket.</p> </li>
     /// <li> <p>(Optional) Use your customer managed key in Key Management Service (KMS) for server-side encryption of your exported data.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub role_arn: std::option::Option<std::string::String>,
+    pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The output format of the exported journal data.</p>
     #[doc(hidden)]
-    pub output_format: std::option::Option<crate::types::OutputFormat>,
+    pub output_format: ::std::option::Option<crate::types::OutputFormat>,
 }
 impl JournalS3ExportDescription {
     /// <p>The name of the ledger.</p>
-    pub fn ledger_name(&self) -> std::option::Option<&str> {
+    pub fn ledger_name(&self) -> ::std::option::Option<&str> {
         self.ledger_name.as_deref()
     }
     /// <p>The UUID (represented in Base62-encoded text) of the journal export job.</p>
-    pub fn export_id(&self) -> std::option::Option<&str> {
+    pub fn export_id(&self) -> ::std::option::Option<&str> {
         self.export_id.as_deref()
     }
     /// <p>The date and time, in epoch time format, when the export job was created. (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
-    pub fn export_creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn export_creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.export_creation_time.as_ref()
     }
     /// <p>The current state of the journal export job.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::ExportStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::ExportStatus> {
         self.status.as_ref()
     }
     /// <p>The inclusive start date and time for the range of journal contents that was specified in the original export request.</p>
-    pub fn inclusive_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn inclusive_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.inclusive_start_time.as_ref()
     }
     /// <p>The exclusive end date and time for the range of journal contents that was specified in the original export request.</p>
-    pub fn exclusive_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn exclusive_end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.exclusive_end_time.as_ref()
     }
     /// <p>The Amazon Simple Storage Service (Amazon S3) bucket location in which a journal export job writes the journal contents.</p>
     pub fn s3_export_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::S3ExportConfiguration> {
+    ) -> ::std::option::Option<&crate::types::S3ExportConfiguration> {
         self.s3_export_configuration.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a journal export job to do the following:</p>
@@ -72,11 +72,11 @@ impl JournalS3ExportDescription {
     /// <li> <p>Write objects into your Amazon Simple Storage Service (Amazon S3) bucket.</p> </li>
     /// <li> <p>(Optional) Use your customer managed key in Key Management Service (KMS) for server-side encryption of your exported data.</p> </li>
     /// </ul>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
     /// <p>The output format of the exported journal data.</p>
-    pub fn output_format(&self) -> std::option::Option<&crate::types::OutputFormat> {
+    pub fn output_format(&self) -> ::std::option::Option<&crate::types::OutputFormat> {
         self.output_format.as_ref()
     }
 }
@@ -89,97 +89,99 @@ impl JournalS3ExportDescription {
 
 /// A builder for [`JournalS3ExportDescription`](crate::types::JournalS3ExportDescription).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct JournalS3ExportDescriptionBuilder {
-    pub(crate) ledger_name: std::option::Option<std::string::String>,
-    pub(crate) export_id: std::option::Option<std::string::String>,
-    pub(crate) export_creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) status: std::option::Option<crate::types::ExportStatus>,
-    pub(crate) inclusive_start_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) exclusive_end_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) s3_export_configuration: std::option::Option<crate::types::S3ExportConfiguration>,
-    pub(crate) role_arn: std::option::Option<std::string::String>,
-    pub(crate) output_format: std::option::Option<crate::types::OutputFormat>,
+    pub(crate) ledger_name: ::std::option::Option<::std::string::String>,
+    pub(crate) export_id: ::std::option::Option<::std::string::String>,
+    pub(crate) export_creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) status: ::std::option::Option<crate::types::ExportStatus>,
+    pub(crate) inclusive_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) exclusive_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) s3_export_configuration: ::std::option::Option<crate::types::S3ExportConfiguration>,
+    pub(crate) role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) output_format: ::std::option::Option<crate::types::OutputFormat>,
 }
 impl JournalS3ExportDescriptionBuilder {
     /// <p>The name of the ledger.</p>
-    pub fn ledger_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ledger_name = Some(input.into());
+    pub fn ledger_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ledger_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the ledger.</p>
-    pub fn set_ledger_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ledger_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ledger_name = input;
         self
     }
     /// <p>The UUID (represented in Base62-encoded text) of the journal export job.</p>
-    pub fn export_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.export_id = Some(input.into());
+    pub fn export_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.export_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The UUID (represented in Base62-encoded text) of the journal export job.</p>
-    pub fn set_export_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_export_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.export_id = input;
         self
     }
     /// <p>The date and time, in epoch time format, when the export job was created. (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
-    pub fn export_creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.export_creation_time = Some(input);
+    pub fn export_creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.export_creation_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time, in epoch time format, when the export job was created. (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
     pub fn set_export_creation_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.export_creation_time = input;
         self
     }
     /// <p>The current state of the journal export job.</p>
     pub fn status(mut self, input: crate::types::ExportStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current state of the journal export job.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::ExportStatus>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ExportStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>The inclusive start date and time for the range of journal contents that was specified in the original export request.</p>
-    pub fn inclusive_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.inclusive_start_time = Some(input);
+    pub fn inclusive_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.inclusive_start_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The inclusive start date and time for the range of journal contents that was specified in the original export request.</p>
     pub fn set_inclusive_start_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.inclusive_start_time = input;
         self
     }
     /// <p>The exclusive end date and time for the range of journal contents that was specified in the original export request.</p>
-    pub fn exclusive_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.exclusive_end_time = Some(input);
+    pub fn exclusive_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.exclusive_end_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The exclusive end date and time for the range of journal contents that was specified in the original export request.</p>
     pub fn set_exclusive_end_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.exclusive_end_time = input;
         self
     }
     /// <p>The Amazon Simple Storage Service (Amazon S3) bucket location in which a journal export job writes the journal contents.</p>
     pub fn s3_export_configuration(mut self, input: crate::types::S3ExportConfiguration) -> Self {
-        self.s3_export_configuration = Some(input);
+        self.s3_export_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Amazon Simple Storage Service (Amazon S3) bucket location in which a journal export job writes the journal contents.</p>
     pub fn set_s3_export_configuration(
         mut self,
-        input: std::option::Option<crate::types::S3ExportConfiguration>,
+        input: ::std::option::Option<crate::types::S3ExportConfiguration>,
     ) -> Self {
         self.s3_export_configuration = input;
         self
@@ -189,8 +191,8 @@ impl JournalS3ExportDescriptionBuilder {
     /// <li> <p>Write objects into your Amazon Simple Storage Service (Amazon S3) bucket.</p> </li>
     /// <li> <p>(Optional) Use your customer managed key in Key Management Service (KMS) for server-side encryption of your exported data.</p> </li>
     /// </ul>
-    pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.role_arn = Some(input.into());
+    pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a journal export job to do the following:</p>
@@ -198,19 +200,19 @@ impl JournalS3ExportDescriptionBuilder {
     /// <li> <p>Write objects into your Amazon Simple Storage Service (Amazon S3) bucket.</p> </li>
     /// <li> <p>(Optional) Use your customer managed key in Key Management Service (KMS) for server-side encryption of your exported data.</p> </li>
     /// </ul>
-    pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
     /// <p>The output format of the exported journal data.</p>
     pub fn output_format(mut self, input: crate::types::OutputFormat) -> Self {
-        self.output_format = Some(input);
+        self.output_format = ::std::option::Option::Some(input);
         self
     }
     /// <p>The output format of the exported journal data.</p>
     pub fn set_output_format(
         mut self,
-        input: std::option::Option<crate::types::OutputFormat>,
+        input: ::std::option::Option<crate::types::OutputFormat>,
     ) -> Self {
         self.output_format = input;
         self

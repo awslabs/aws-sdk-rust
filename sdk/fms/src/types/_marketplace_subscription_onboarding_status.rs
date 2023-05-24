@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum MarketplaceSubscriptionOnboardingStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum MarketplaceSubscriptionOnboardingStatus {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for MarketplaceSubscriptionOnboardingStatus {
+impl ::std::convert::From<&str> for MarketplaceSubscriptionOnboardingStatus {
     fn from(s: &str) -> Self {
         match s {
             "COMPLETE" => MarketplaceSubscriptionOnboardingStatus::Complete,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for MarketplaceSubscriptionOnboardingStatus {
         }
     }
 }
-impl std::str::FromStr for MarketplaceSubscriptionOnboardingStatus {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for MarketplaceSubscriptionOnboardingStatus {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(MarketplaceSubscriptionOnboardingStatus::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(MarketplaceSubscriptionOnboardingStatus::from(s))
     }
 }
 impl MarketplaceSubscriptionOnboardingStatus {
@@ -91,7 +91,7 @@ impl MarketplaceSubscriptionOnboardingStatus {
         &["COMPLETE", "NOT_COMPLETE", "NO_SUBSCRIPTION"]
     }
 }
-impl AsRef<str> for MarketplaceSubscriptionOnboardingStatus {
+impl ::std::convert::AsRef<str> for MarketplaceSubscriptionOnboardingStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

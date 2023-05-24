@@ -2,22 +2,22 @@
 
 /// <p>Used to filter the workflow executions in visibility APIs by various time-based rules. Each parameter, if specified, defines a rule that must be satisfied by each returned query result. The parameter values are in the <a href="https://en.wikipedia.org/wiki/Unix_time">Unix Time format</a>. For example: <code>"oldestDate": 1325376070.</code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExecutionTimeFilter {
     /// <p>Specifies the oldest start or close date and time to return.</p>
     #[doc(hidden)]
-    pub oldest_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub oldest_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Specifies the latest start or close date and time to return.</p>
     #[doc(hidden)]
-    pub latest_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub latest_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ExecutionTimeFilter {
     /// <p>Specifies the oldest start or close date and time to return.</p>
-    pub fn oldest_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn oldest_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.oldest_date.as_ref()
     }
     /// <p>Specifies the latest start or close date and time to return.</p>
-    pub fn latest_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn latest_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.latest_date.as_ref()
     }
 }
@@ -30,34 +30,36 @@ impl ExecutionTimeFilter {
 
 /// A builder for [`ExecutionTimeFilter`](crate::types::ExecutionTimeFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ExecutionTimeFilterBuilder {
-    pub(crate) oldest_date: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) latest_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) oldest_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) latest_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ExecutionTimeFilterBuilder {
     /// <p>Specifies the oldest start or close date and time to return.</p>
-    pub fn oldest_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.oldest_date = Some(input);
+    pub fn oldest_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.oldest_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the oldest start or close date and time to return.</p>
     pub fn set_oldest_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.oldest_date = input;
         self
     }
     /// <p>Specifies the latest start or close date and time to return.</p>
-    pub fn latest_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.latest_date = Some(input);
+    pub fn latest_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.latest_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the latest start or close date and time to return.</p>
     pub fn set_latest_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.latest_date = input;
         self

@@ -7,29 +7,29 @@ pub use crate::operation::provision_public_ipv4_pool_cidr::_provision_public_ipv
 ///
 /// <p>Provision a CIDR to a public IPv4 pool.</p>
 /// <p>For more information about IPAM, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/what-is-it-ipam.html">What is IPAM?</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ProvisionPublicIpv4PoolCidrFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::provision_public_ipv4_pool_cidr::builders::ProvisionPublicIpv4PoolCidrInputBuilder,
 }
 impl ProvisionPublicIpv4PoolCidrFluentBuilder {
     /// Creates a new `ProvisionPublicIpv4PoolCidr`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::provision_public_ipv4_pool_cidr::ProvisionPublicIpv4PoolCidr,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::provision_public_ipv4_pool_cidr::ProvisionPublicIpv4PoolCidrError,
         >,
     > {
@@ -37,30 +37,33 @@ impl ProvisionPublicIpv4PoolCidrFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::provision_public_ipv4_pool_cidr::ProvisionPublicIpv4PoolCidrOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::provision_public_ipv4_pool_cidr::ProvisionPublicIpv4PoolCidrError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -73,9 +76,9 @@ impl ProvisionPublicIpv4PoolCidrFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::provision_public_ipv4_pool_cidr::ProvisionPublicIpv4PoolCidrOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::provision_public_ipv4_pool_cidr::ProvisionPublicIpv4PoolCidrError,
         >,
     > {
@@ -87,27 +90,27 @@ impl ProvisionPublicIpv4PoolCidrFluentBuilder {
         self
     }
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
     }
     /// <p>The ID of the IPAM pool you would like to use to allocate this CIDR.</p>
-    pub fn ipam_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn ipam_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ipam_pool_id(input.into());
         self
     }
     /// <p>The ID of the IPAM pool you would like to use to allocate this CIDR.</p>
-    pub fn set_ipam_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ipam_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ipam_pool_id(input);
         self
     }
     /// <p>The ID of the public IPv4 pool you would like to use for this CIDR.</p>
-    pub fn pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pool_id(input.into());
         self
     }
     /// <p>The ID of the public IPv4 pool you would like to use for this CIDR.</p>
-    pub fn set_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pool_id(input);
         self
     }
@@ -117,7 +120,7 @@ impl ProvisionPublicIpv4PoolCidrFluentBuilder {
         self
     }
     /// <p>The netmask length of the CIDR you would like to allocate to the public IPv4 pool.</p>
-    pub fn set_netmask_length(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_netmask_length(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_netmask_length(input);
         self
     }

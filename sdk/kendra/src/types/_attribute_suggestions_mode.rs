@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum AttributeSuggestionsMode {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum AttributeSuggestionsMode {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for AttributeSuggestionsMode {
+impl ::std::convert::From<&str> for AttributeSuggestionsMode {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVE" => AttributeSuggestionsMode::Active,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for AttributeSuggestionsMode {
         }
     }
 }
-impl std::str::FromStr for AttributeSuggestionsMode {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for AttributeSuggestionsMode {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AttributeSuggestionsMode::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(AttributeSuggestionsMode::from(s))
     }
 }
 impl AttributeSuggestionsMode {
@@ -86,7 +86,7 @@ impl AttributeSuggestionsMode {
         &["ACTIVE", "INACTIVE"]
     }
 }
-impl AsRef<str> for AttributeSuggestionsMode {
+impl ::std::convert::AsRef<str> for AttributeSuggestionsMode {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

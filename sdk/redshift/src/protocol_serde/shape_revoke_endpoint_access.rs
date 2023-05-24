@@ -2,7 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_revoke_endpoint_access_http_error(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::revoke_endpoint_access::RevokeEndpointAccessOutput,
@@ -15,7 +15,7 @@ pub fn de_revoke_endpoint_access_http_error(
         _response_body,
     )
     .map_err(crate::operation::revoke_endpoint_access::RevokeEndpointAccessError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
+    generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
@@ -149,7 +149,7 @@ pub fn de_revoke_endpoint_access_http_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_revoke_endpoint_access_http_response_with_props(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::revoke_endpoint_access::RevokeEndpointAccessOutput,
@@ -164,7 +164,7 @@ pub fn de_revoke_endpoint_access_http_response_with_props(
         )
         .map_err(crate::operation::revoke_endpoint_access::RevokeEndpointAccessError::unhandled)?;
         output._set_request_id(
-            aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
+            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
         );
         output.build()
     })
@@ -176,16 +176,16 @@ pub fn de_revoke_endpoint_access(
     mut builder: crate::operation::revoke_endpoint_access::builders::RevokeEndpointAccessOutputBuilder,
 ) -> Result<
     crate::operation::revoke_endpoint_access::builders::RevokeEndpointAccessOutputBuilder,
-    aws_smithy_xml::decode::XmlDecodeError,
+    ::aws_smithy_xml::decode::XmlDecodeError,
 > {
-    let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
+    let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("RevokeEndpointAccessResponse")) {
-        return Err(aws_smithy_xml::decode::XmlDecodeError::custom(format!(
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected RevokeEndpointAccessResponse got {:?}",
             start_el
         )));
@@ -193,7 +193,7 @@ pub fn de_revoke_endpoint_access(
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("RevokeEndpointAccessResult")) {
-            return Err(aws_smithy_xml::decode::XmlDecodeError::custom(format!(
+            return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
                 "invalid result, expected RevokeEndpointAccessResult got {:?}",
                 start_el
             )));
@@ -203,8 +203,8 @@ pub fn de_revoke_endpoint_access(
             s if s.matches("Grantor") /* Grantor com.amazonaws.redshift.synthetic#RevokeEndpointAccessOutput$Grantor */ =>  {
                 let var_1 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -216,8 +216,8 @@ pub fn de_revoke_endpoint_access(
             s if s.matches("Grantee") /* Grantee com.amazonaws.redshift.synthetic#RevokeEndpointAccessOutput$Grantee */ =>  {
                 let var_2 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -229,8 +229,8 @@ pub fn de_revoke_endpoint_access(
             s if s.matches("ClusterIdentifier") /* ClusterIdentifier com.amazonaws.redshift.synthetic#RevokeEndpointAccessOutput$ClusterIdentifier */ =>  {
                 let var_3 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -242,11 +242,11 @@ pub fn de_revoke_endpoint_access(
             s if s.matches("AuthorizeTime") /* AuthorizeTime com.amazonaws.redshift.synthetic#RevokeEndpointAccessOutput$AuthorizeTime */ =>  {
                 let var_4 =
                     Some(
-                        aws_smithy_types::DateTime::from_str(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::date_time::Format::DateTimeWithOffset
+                        ::aws_smithy_types::DateTime::from_str(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            , ::aws_smithy_types::date_time::Format::DateTimeWithOffset
                         )
-                        .map_err(|_|aws_smithy_xml::decode::XmlDecodeError::custom("expected (timestamp: `com.amazonaws.redshift#TStamp`)"))
+                        .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (timestamp: `com.amazonaws.redshift#TStamp`)"))
                         ?
                     )
                 ;
@@ -256,8 +256,8 @@ pub fn de_revoke_endpoint_access(
             s if s.matches("ClusterStatus") /* ClusterStatus com.amazonaws.redshift.synthetic#RevokeEndpointAccessOutput$ClusterStatus */ =>  {
                 let var_5 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -269,9 +269,9 @@ pub fn de_revoke_endpoint_access(
             s if s.matches("Status") /* Status com.amazonaws.redshift.synthetic#RevokeEndpointAccessOutput$Status */ =>  {
                 let var_6 =
                     Some(
-                        Result::<crate::types::AuthorizationStatus, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                        Result::<crate::types::AuthorizationStatus, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::AuthorizationStatus::from(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )
                         ?
@@ -284,10 +284,10 @@ pub fn de_revoke_endpoint_access(
                 let var_7 =
                     Some(
                          {
-                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
-                            .map_err(|_|aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.redshift#Boolean`)"))
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.redshift#Boolean`)"))
                         }
                         ?
                     )
@@ -309,10 +309,10 @@ pub fn de_revoke_endpoint_access(
                 let var_9 =
                     Some(
                          {
-                            <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
-                            .map_err(|_|aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.redshift#Integer`)"))
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.redshift#Integer`)"))
                         }
                         ?
                     )
@@ -324,7 +324,7 @@ pub fn de_revoke_endpoint_access(
         }
         }
     } else {
-        return Err(aws_smithy_xml::decode::XmlDecodeError::custom(
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(
             "expected RevokeEndpointAccessResult tag",
         ));
     };

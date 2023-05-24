@@ -37,13 +37,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum MediaPipelineSinkType {
     #[allow(missing_docs)] // documentation missing in model
@@ -51,7 +51,7 @@ pub enum MediaPipelineSinkType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for MediaPipelineSinkType {
+impl ::std::convert::From<&str> for MediaPipelineSinkType {
     fn from(s: &str) -> Self {
         match s {
             "S3Bucket" => MediaPipelineSinkType::S3Bucket,
@@ -61,11 +61,11 @@ impl std::convert::From<&str> for MediaPipelineSinkType {
         }
     }
 }
-impl std::str::FromStr for MediaPipelineSinkType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for MediaPipelineSinkType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(MediaPipelineSinkType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(MediaPipelineSinkType::from(s))
     }
 }
 impl MediaPipelineSinkType {
@@ -81,7 +81,7 @@ impl MediaPipelineSinkType {
         &["S3Bucket"]
     }
 }
-impl AsRef<str> for MediaPipelineSinkType {
+impl ::std::convert::AsRef<str> for MediaPipelineSinkType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -2,56 +2,56 @@
 
 /// <p>Represents a request to the update device pool operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDevicePoolInput {
     /// <p>The Amazon Resource Name (ARN) of the Device Farm device pool to update.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>A string that represents the name of the device pool to update.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the device pool to update.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>Represents the rules to modify for the device pool. Updating rules is optional. If you update rules for your request, the update replaces the existing rules.</p>
     #[doc(hidden)]
-    pub rules: std::option::Option<std::vec::Vec<crate::types::Rule>>,
+    pub rules: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>,
     /// <p>The number of devices that Device Farm can add to your device pool. Device Farm adds devices that are available and that meet the criteria that you assign for the <code>rules</code> parameter. Depending on how many devices meet these constraints, your device pool might contain fewer devices than the value for this parameter.</p>
     /// <p>By specifying the maximum number of devices, you can control the costs that you incur by running tests.</p>
     /// <p>If you use this parameter in your request, you cannot use the <code>clearMaxDevices</code> parameter in the same request.</p>
     #[doc(hidden)]
-    pub max_devices: std::option::Option<i32>,
+    pub max_devices: ::std::option::Option<i32>,
     /// <p>Sets whether the <code>maxDevices</code> parameter applies to your device pool. If you set this parameter to <code>true</code>, the <code>maxDevices</code> parameter does not apply, and Device Farm does not limit the number of devices that it adds to your device pool. In this case, Device Farm adds all available devices that meet the criteria specified in the <code>rules</code> parameter.</p>
     /// <p>If you use this parameter in your request, you cannot use the <code>maxDevices</code> parameter in the same request.</p>
     #[doc(hidden)]
-    pub clear_max_devices: std::option::Option<bool>,
+    pub clear_max_devices: ::std::option::Option<bool>,
 }
 impl UpdateDevicePoolInput {
     /// <p>The Amazon Resource Name (ARN) of the Device Farm device pool to update.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>A string that represents the name of the device pool to update.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>A description of the device pool to update.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>Represents the rules to modify for the device pool. Updating rules is optional. If you update rules for your request, the update replaces the existing rules.</p>
-    pub fn rules(&self) -> std::option::Option<&[crate::types::Rule]> {
+    pub fn rules(&self) -> ::std::option::Option<&[crate::types::Rule]> {
         self.rules.as_deref()
     }
     /// <p>The number of devices that Device Farm can add to your device pool. Device Farm adds devices that are available and that meet the criteria that you assign for the <code>rules</code> parameter. Depending on how many devices meet these constraints, your device pool might contain fewer devices than the value for this parameter.</p>
     /// <p>By specifying the maximum number of devices, you can control the costs that you incur by running tests.</p>
     /// <p>If you use this parameter in your request, you cannot use the <code>clearMaxDevices</code> parameter in the same request.</p>
-    pub fn max_devices(&self) -> std::option::Option<i32> {
+    pub fn max_devices(&self) -> ::std::option::Option<i32> {
         self.max_devices
     }
     /// <p>Sets whether the <code>maxDevices</code> parameter applies to your device pool. If you set this parameter to <code>true</code>, the <code>maxDevices</code> parameter does not apply, and Device Farm does not limit the number of devices that it adds to your device pool. In this case, Device Farm adds all available devices that meet the criteria specified in the <code>rules</code> parameter.</p>
     /// <p>If you use this parameter in your request, you cannot use the <code>maxDevices</code> parameter in the same request.</p>
-    pub fn clear_max_devices(&self) -> std::option::Option<bool> {
+    pub fn clear_max_devices(&self) -> ::std::option::Option<bool> {
         self.clear_max_devices
     }
 }
@@ -65,43 +65,45 @@ impl UpdateDevicePoolInput {
 
 /// A builder for [`UpdateDevicePoolInput`](crate::operation::update_device_pool::UpdateDevicePoolInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateDevicePoolInputBuilder {
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) rules: std::option::Option<std::vec::Vec<crate::types::Rule>>,
-    pub(crate) max_devices: std::option::Option<i32>,
-    pub(crate) clear_max_devices: std::option::Option<bool>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>,
+    pub(crate) max_devices: ::std::option::Option<i32>,
+    pub(crate) clear_max_devices: ::std::option::Option<bool>,
 }
 impl UpdateDevicePoolInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Device Farm device pool to update.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Device Farm device pool to update.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// <p>A string that represents the name of the device pool to update.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A string that represents the name of the device pool to update.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>A description of the device pool to update.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of the device pool to update.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
@@ -113,13 +115,13 @@ impl UpdateDevicePoolInputBuilder {
     pub fn rules(mut self, input: crate::types::Rule) -> Self {
         let mut v = self.rules.unwrap_or_default();
         v.push(input);
-        self.rules = Some(v);
+        self.rules = ::std::option::Option::Some(v);
         self
     }
     /// <p>Represents the rules to modify for the device pool. Updating rules is optional. If you update rules for your request, the update replaces the existing rules.</p>
     pub fn set_rules(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Rule>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>,
     ) -> Self {
         self.rules = input;
         self
@@ -128,36 +130,36 @@ impl UpdateDevicePoolInputBuilder {
     /// <p>By specifying the maximum number of devices, you can control the costs that you incur by running tests.</p>
     /// <p>If you use this parameter in your request, you cannot use the <code>clearMaxDevices</code> parameter in the same request.</p>
     pub fn max_devices(mut self, input: i32) -> Self {
-        self.max_devices = Some(input);
+        self.max_devices = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of devices that Device Farm can add to your device pool. Device Farm adds devices that are available and that meet the criteria that you assign for the <code>rules</code> parameter. Depending on how many devices meet these constraints, your device pool might contain fewer devices than the value for this parameter.</p>
     /// <p>By specifying the maximum number of devices, you can control the costs that you incur by running tests.</p>
     /// <p>If you use this parameter in your request, you cannot use the <code>clearMaxDevices</code> parameter in the same request.</p>
-    pub fn set_max_devices(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_devices(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_devices = input;
         self
     }
     /// <p>Sets whether the <code>maxDevices</code> parameter applies to your device pool. If you set this parameter to <code>true</code>, the <code>maxDevices</code> parameter does not apply, and Device Farm does not limit the number of devices that it adds to your device pool. In this case, Device Farm adds all available devices that meet the criteria specified in the <code>rules</code> parameter.</p>
     /// <p>If you use this parameter in your request, you cannot use the <code>maxDevices</code> parameter in the same request.</p>
     pub fn clear_max_devices(mut self, input: bool) -> Self {
-        self.clear_max_devices = Some(input);
+        self.clear_max_devices = ::std::option::Option::Some(input);
         self
     }
     /// <p>Sets whether the <code>maxDevices</code> parameter applies to your device pool. If you set this parameter to <code>true</code>, the <code>maxDevices</code> parameter does not apply, and Device Farm does not limit the number of devices that it adds to your device pool. In this case, Device Farm adds all available devices that meet the criteria specified in the <code>rules</code> parameter.</p>
     /// <p>If you use this parameter in your request, you cannot use the <code>maxDevices</code> parameter in the same request.</p>
-    pub fn set_clear_max_devices(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_clear_max_devices(mut self, input: ::std::option::Option<bool>) -> Self {
         self.clear_max_devices = input;
         self
     }
     /// Consumes the builder and constructs a [`UpdateDevicePoolInput`](crate::operation::update_device_pool::UpdateDevicePoolInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::update_device_pool::UpdateDevicePoolInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::update_device_pool::UpdateDevicePoolInput {
                 arn: self.arn,
                 name: self.name,

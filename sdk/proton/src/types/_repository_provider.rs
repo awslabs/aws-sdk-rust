@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum RepositoryProvider {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum RepositoryProvider {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for RepositoryProvider {
+impl ::std::convert::From<&str> for RepositoryProvider {
     fn from(s: &str) -> Self {
         match s {
             "BITBUCKET" => RepositoryProvider::Bitbucket,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for RepositoryProvider {
         }
     }
 }
-impl std::str::FromStr for RepositoryProvider {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for RepositoryProvider {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RepositoryProvider::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(RepositoryProvider::from(s))
     }
 }
 impl RepositoryProvider {
@@ -91,7 +91,7 @@ impl RepositoryProvider {
         &["BITBUCKET", "GITHUB", "GITHUB_ENTERPRISE"]
     }
 }
-impl AsRef<str> for RepositoryProvider {
+impl ::std::convert::AsRef<str> for RepositoryProvider {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

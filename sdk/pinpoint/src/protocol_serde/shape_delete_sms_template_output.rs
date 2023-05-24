@@ -2,7 +2,7 @@
 pub(crate) fn de_message_body_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::types::MessageBody>,
+    ::std::option::Option<crate::types::MessageBody>,
     crate::operation::delete_sms_template::DeleteSmsTemplateError,
 > {
     (!body.is_empty())

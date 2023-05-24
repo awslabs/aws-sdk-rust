@@ -2,22 +2,22 @@
 
 /// <p> <b>[Event-based policies only]</b> Specifies an event that activates an event-based policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventSource {
     /// <p>The source of the event. Currently only managed CloudWatch Events rules are supported.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::EventSourceValues>,
+    pub r#type: ::std::option::Option<crate::types::EventSourceValues>,
     /// <p>Information about the event.</p>
     #[doc(hidden)]
-    pub parameters: std::option::Option<crate::types::EventParameters>,
+    pub parameters: ::std::option::Option<crate::types::EventParameters>,
 }
 impl EventSource {
     /// <p>The source of the event. Currently only managed CloudWatch Events rules are supported.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::EventSourceValues> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::EventSourceValues> {
         self.r#type.as_ref()
     }
     /// <p>Information about the event.</p>
-    pub fn parameters(&self) -> std::option::Option<&crate::types::EventParameters> {
+    pub fn parameters(&self) -> ::std::option::Option<&crate::types::EventParameters> {
         self.parameters.as_ref()
     }
 }
@@ -30,31 +30,36 @@ impl EventSource {
 
 /// A builder for [`EventSource`](crate::types::EventSource).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EventSourceBuilder {
-    pub(crate) r#type: std::option::Option<crate::types::EventSourceValues>,
-    pub(crate) parameters: std::option::Option<crate::types::EventParameters>,
+    pub(crate) r#type: ::std::option::Option<crate::types::EventSourceValues>,
+    pub(crate) parameters: ::std::option::Option<crate::types::EventParameters>,
 }
 impl EventSourceBuilder {
     /// <p>The source of the event. Currently only managed CloudWatch Events rules are supported.</p>
     pub fn r#type(mut self, input: crate::types::EventSourceValues) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The source of the event. Currently only managed CloudWatch Events rules are supported.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::EventSourceValues>) -> Self {
+    pub fn set_type(
+        mut self,
+        input: ::std::option::Option<crate::types::EventSourceValues>,
+    ) -> Self {
         self.r#type = input;
         self
     }
     /// <p>Information about the event.</p>
     pub fn parameters(mut self, input: crate::types::EventParameters) -> Self {
-        self.parameters = Some(input);
+        self.parameters = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the event.</p>
     pub fn set_parameters(
         mut self,
-        input: std::option::Option<crate::types::EventParameters>,
+        input: ::std::option::Option<crate::types::EventParameters>,
     ) -> Self {
         self.parameters = input;
         self

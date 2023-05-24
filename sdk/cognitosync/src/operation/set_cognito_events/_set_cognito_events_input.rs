@@ -2,26 +2,28 @@
 
 /// <p>A request to configure Cognito Events"</p>"
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SetCognitoEventsInput {
     /// <p>The Cognito Identity Pool to use when configuring Cognito Events</p>
     #[doc(hidden)]
-    pub identity_pool_id: std::option::Option<std::string::String>,
+    pub identity_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The events to configure</p>
     #[doc(hidden)]
-    pub events:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub events: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl SetCognitoEventsInput {
     /// <p>The Cognito Identity Pool to use when configuring Cognito Events</p>
-    pub fn identity_pool_id(&self) -> std::option::Option<&str> {
+    pub fn identity_pool_id(&self) -> ::std::option::Option<&str> {
         self.identity_pool_id.as_deref()
     }
     /// <p>The events to configure</p>
     pub fn events(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.events.as_ref()
     }
 }
@@ -35,20 +37,29 @@ impl SetCognitoEventsInput {
 
 /// A builder for [`SetCognitoEventsInput`](crate::operation::set_cognito_events::SetCognitoEventsInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SetCognitoEventsInputBuilder {
-    pub(crate) identity_pool_id: std::option::Option<std::string::String>,
-    pub(crate) events:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) identity_pool_id: ::std::option::Option<::std::string::String>,
+    pub(crate) events: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl SetCognitoEventsInputBuilder {
     /// <p>The Cognito Identity Pool to use when configuring Cognito Events</p>
-    pub fn identity_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.identity_pool_id = Some(input.into());
+    pub fn identity_pool_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.identity_pool_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Cognito Identity Pool to use when configuring Cognito Events</p>
-    pub fn set_identity_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_identity_pool_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.identity_pool_id = input;
         self
     }
@@ -59,19 +70,19 @@ impl SetCognitoEventsInputBuilder {
     /// <p>The events to configure</p>
     pub fn events(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.events.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.events = Some(hash_map);
+        self.events = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The events to configure</p>
     pub fn set_events(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.events = input;
@@ -80,11 +91,11 @@ impl SetCognitoEventsInputBuilder {
     /// Consumes the builder and constructs a [`SetCognitoEventsInput`](crate::operation::set_cognito_events::SetCognitoEventsInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::set_cognito_events::SetCognitoEventsInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::set_cognito_events::SetCognitoEventsInput {
                 identity_pool_id: self.identity_pool_id,
                 events: self.events,

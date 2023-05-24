@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum GameServerInstanceStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum GameServerInstanceStatus {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for GameServerInstanceStatus {
+impl ::std::convert::From<&str> for GameServerInstanceStatus {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVE" => GameServerInstanceStatus::Active,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for GameServerInstanceStatus {
         }
     }
 }
-impl std::str::FromStr for GameServerInstanceStatus {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for GameServerInstanceStatus {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(GameServerInstanceStatus::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(GameServerInstanceStatus::from(s))
     }
 }
 impl GameServerInstanceStatus {
@@ -91,7 +91,7 @@ impl GameServerInstanceStatus {
         &["ACTIVE", "DRAINING", "SPOT_TERMINATING"]
     }
 }
-impl AsRef<str> for GameServerInstanceStatus {
+impl ::std::convert::AsRef<str> for GameServerInstanceStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -2,11 +2,11 @@
 
 /// <p>Represents the response from the server to reset a user password as an administrator.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AdminResetUserPasswordOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for AdminResetUserPasswordOutput {
+impl ::aws_http::request_id::RequestId for AdminResetUserPasswordOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -22,7 +22,9 @@ impl AdminResetUserPasswordOutput {
 
 /// A builder for [`AdminResetUserPasswordOutput`](crate::operation::admin_reset_user_password::AdminResetUserPasswordOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AdminResetUserPasswordOutputBuilder {
     _request_id: Option<String>,
 }

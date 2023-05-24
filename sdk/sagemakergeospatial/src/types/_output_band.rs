@@ -2,22 +2,22 @@
 
 /// <p>A single EarthObservationJob output band.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OutputBand {
     /// <p>The name of the band.</p>
     #[doc(hidden)]
-    pub band_name: std::option::Option<std::string::String>,
+    pub band_name: ::std::option::Option<::std::string::String>,
     /// <p>The datatype of the output band.</p>
     #[doc(hidden)]
-    pub output_data_type: std::option::Option<crate::types::OutputType>,
+    pub output_data_type: ::std::option::Option<crate::types::OutputType>,
 }
 impl OutputBand {
     /// <p>The name of the band.</p>
-    pub fn band_name(&self) -> std::option::Option<&str> {
+    pub fn band_name(&self) -> ::std::option::Option<&str> {
         self.band_name.as_deref()
     }
     /// <p>The datatype of the output band.</p>
-    pub fn output_data_type(&self) -> std::option::Option<&crate::types::OutputType> {
+    pub fn output_data_type(&self) -> ::std::option::Option<&crate::types::OutputType> {
         self.output_data_type.as_ref()
     }
 }
@@ -30,31 +30,33 @@ impl OutputBand {
 
 /// A builder for [`OutputBand`](crate::types::OutputBand).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OutputBandBuilder {
-    pub(crate) band_name: std::option::Option<std::string::String>,
-    pub(crate) output_data_type: std::option::Option<crate::types::OutputType>,
+    pub(crate) band_name: ::std::option::Option<::std::string::String>,
+    pub(crate) output_data_type: ::std::option::Option<crate::types::OutputType>,
 }
 impl OutputBandBuilder {
     /// <p>The name of the band.</p>
-    pub fn band_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.band_name = Some(input.into());
+    pub fn band_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.band_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the band.</p>
-    pub fn set_band_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_band_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.band_name = input;
         self
     }
     /// <p>The datatype of the output band.</p>
     pub fn output_data_type(mut self, input: crate::types::OutputType) -> Self {
-        self.output_data_type = Some(input);
+        self.output_data_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The datatype of the output band.</p>
     pub fn set_output_data_type(
         mut self,
-        input: std::option::Option<crate::types::OutputType>,
+        input: ::std::option::Option<crate::types::OutputType>,
     ) -> Self {
         self.output_data_type = input;
         self

@@ -52,13 +52,13 @@
 /// for the <code>IdentityProviderDetails</code> data type.</p>
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum IdentityProviderType {
     #[allow(missing_docs)] // documentation missing in model
@@ -72,7 +72,7 @@ pub enum IdentityProviderType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for IdentityProviderType {
+impl ::std::convert::From<&str> for IdentityProviderType {
     fn from(s: &str) -> Self {
         match s {
             "API_GATEWAY" => IdentityProviderType::ApiGateway,
@@ -85,11 +85,11 @@ impl std::convert::From<&str> for IdentityProviderType {
         }
     }
 }
-impl std::str::FromStr for IdentityProviderType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for IdentityProviderType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(IdentityProviderType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(IdentityProviderType::from(s))
     }
 }
 impl IdentityProviderType {
@@ -113,7 +113,7 @@ impl IdentityProviderType {
         ]
     }
 }
-impl AsRef<str> for IdentityProviderType {
+impl ::std::convert::AsRef<str> for IdentityProviderType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

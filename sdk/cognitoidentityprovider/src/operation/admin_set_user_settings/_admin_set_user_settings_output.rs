@@ -2,11 +2,11 @@
 
 /// <p>Represents the response from the server to set user settings as an administrator.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AdminSetUserSettingsOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for AdminSetUserSettingsOutput {
+impl ::aws_http::request_id::RequestId for AdminSetUserSettingsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -22,7 +22,9 @@ impl AdminSetUserSettingsOutput {
 
 /// A builder for [`AdminSetUserSettingsOutput`](crate::operation::admin_set_user_settings::AdminSetUserSettingsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AdminSetUserSettingsOutputBuilder {
     _request_id: Option<String>,
 }

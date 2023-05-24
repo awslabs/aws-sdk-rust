@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeListener`](crate::operation::describe_listener::builders::DescribeListenerFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`listener_arn(impl Into<String>)`](crate::operation::describe_listener::builders::DescribeListenerFluentBuilder::listener_arn) / [`set_listener_arn(Option<String>)`](crate::operation::describe_listener::builders::DescribeListenerFluentBuilder::set_listener_arn): <p>The Amazon Resource Name (ARN) of the listener to describe.</p>
+    ///   - [`listener_arn(impl ::std::convert::Into<String>)`](crate::operation::describe_listener::builders::DescribeListenerFluentBuilder::listener_arn) / [`set_listener_arn(Option<String>)`](crate::operation::describe_listener::builders::DescribeListenerFluentBuilder::set_listener_arn): <p>The Amazon Resource Name (ARN) of the listener to describe.</p>
     /// - On success, responds with [`DescribeListenerOutput`](crate::operation::describe_listener::DescribeListenerOutput) with field(s):
     ///   - [`listener(Option<Listener>)`](crate::operation::describe_listener::DescribeListenerOutput::listener): <p>The description of a listener.</p>
     /// - On failure, responds with [`SdkError<DescribeListenerError>`](crate::operation::describe_listener::DescribeListenerError)

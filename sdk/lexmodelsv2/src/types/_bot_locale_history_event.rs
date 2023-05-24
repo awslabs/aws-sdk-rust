@@ -2,22 +2,22 @@
 
 /// <p>Provides information about an event that occurred affecting the bot locale.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BotLocaleHistoryEvent {
     /// <p>A description of the event that occurred.</p>
     #[doc(hidden)]
-    pub event: std::option::Option<std::string::String>,
+    pub event: ::std::option::Option<::std::string::String>,
     /// <p>A timestamp of the date and time that the event occurred.</p>
     #[doc(hidden)]
-    pub event_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub event_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl BotLocaleHistoryEvent {
     /// <p>A description of the event that occurred.</p>
-    pub fn event(&self) -> std::option::Option<&str> {
+    pub fn event(&self) -> ::std::option::Option<&str> {
         self.event.as_deref()
     }
     /// <p>A timestamp of the date and time that the event occurred.</p>
-    pub fn event_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn event_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.event_date.as_ref()
     }
 }
@@ -30,31 +30,33 @@ impl BotLocaleHistoryEvent {
 
 /// A builder for [`BotLocaleHistoryEvent`](crate::types::BotLocaleHistoryEvent).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BotLocaleHistoryEventBuilder {
-    pub(crate) event: std::option::Option<std::string::String>,
-    pub(crate) event_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) event: ::std::option::Option<::std::string::String>,
+    pub(crate) event_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl BotLocaleHistoryEventBuilder {
     /// <p>A description of the event that occurred.</p>
-    pub fn event(mut self, input: impl Into<std::string::String>) -> Self {
-        self.event = Some(input.into());
+    pub fn event(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.event = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of the event that occurred.</p>
-    pub fn set_event(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_event(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event = input;
         self
     }
     /// <p>A timestamp of the date and time that the event occurred.</p>
-    pub fn event_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.event_date = Some(input);
+    pub fn event_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.event_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>A timestamp of the date and time that the event occurred.</p>
     pub fn set_event_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.event_date = input;
         self

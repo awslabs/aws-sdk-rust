@@ -26,9 +26,9 @@ Then in code, a client can be created with the following:
 ```rust,no_run
 use aws_sdk_firehose as firehose;
 
-#[tokio::main]
+#[::tokio::main]
 async fn main() -> Result<(), firehose::Error> {
-    let config = aws_config::load_from_env().await;
+    let config = ::aws_config::load_from_env().await;
     let client = firehose::Client::new(&config);
 
     // ... make some calls with the client

@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum AwsEcrContainerSortBy {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum AwsEcrContainerSortBy {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for AwsEcrContainerSortBy {
+impl ::std::convert::From<&str> for AwsEcrContainerSortBy {
     fn from(s: &str) -> Self {
         match s {
             "ALL" => AwsEcrContainerSortBy::All,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for AwsEcrContainerSortBy {
         }
     }
 }
-impl std::str::FromStr for AwsEcrContainerSortBy {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for AwsEcrContainerSortBy {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AwsEcrContainerSortBy::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(AwsEcrContainerSortBy::from(s))
     }
 }
 impl AwsEcrContainerSortBy {
@@ -91,7 +91,7 @@ impl AwsEcrContainerSortBy {
         &["ALL", "CRITICAL", "HIGH"]
     }
 }
-impl AsRef<str> for AwsEcrContainerSortBy {
+impl ::std::convert::AsRef<str> for AwsEcrContainerSortBy {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

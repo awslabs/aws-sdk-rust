@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteSourceCredentials`](crate::operation::delete_source_credentials::builders::DeleteSourceCredentialsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl Into<String>)`](crate::operation::delete_source_credentials::builders::DeleteSourceCredentialsFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::delete_source_credentials::builders::DeleteSourceCredentialsFluentBuilder::set_arn): <p> The Amazon Resource Name (ARN) of the token.</p>
+    ///   - [`arn(impl ::std::convert::Into<String>)`](crate::operation::delete_source_credentials::builders::DeleteSourceCredentialsFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::delete_source_credentials::builders::DeleteSourceCredentialsFluentBuilder::set_arn): <p> The Amazon Resource Name (ARN) of the token.</p>
     /// - On success, responds with [`DeleteSourceCredentialsOutput`](crate::operation::delete_source_credentials::DeleteSourceCredentialsOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::delete_source_credentials::DeleteSourceCredentialsOutput::arn): <p> The Amazon Resource Name (ARN) of the token. </p>
     /// - On failure, responds with [`SdkError<DeleteSourceCredentialsError>`](crate::operation::delete_source_credentials::DeleteSourceCredentialsError)

@@ -6,36 +6,36 @@
 /// <p> The bounding box coordinates can have negative values. For example, if Amazon Rekognition is able to detect a face that is at the image edge and is only partially visible, the service can return coordinates that are outside the image bounds and, depending on the image edge, you might get negative values or values greater than 1 for the <code>left</code> or <code>top</code> values. </p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BoundingBox {
     /// <p>Width of the bounding box as a ratio of the overall image width.</p>
     #[doc(hidden)]
-    pub width: std::option::Option<f32>,
+    pub width: ::std::option::Option<f32>,
     /// <p>Height of the bounding box as a ratio of the overall image height.</p>
     #[doc(hidden)]
-    pub height: std::option::Option<f32>,
+    pub height: ::std::option::Option<f32>,
     /// <p>Left coordinate of the bounding box as a ratio of overall image width.</p>
     #[doc(hidden)]
-    pub left: std::option::Option<f32>,
+    pub left: ::std::option::Option<f32>,
     /// <p>Top coordinate of the bounding box as a ratio of overall image height.</p>
     #[doc(hidden)]
-    pub top: std::option::Option<f32>,
+    pub top: ::std::option::Option<f32>,
 }
 impl BoundingBox {
     /// <p>Width of the bounding box as a ratio of the overall image width.</p>
-    pub fn width(&self) -> std::option::Option<f32> {
+    pub fn width(&self) -> ::std::option::Option<f32> {
         self.width
     }
     /// <p>Height of the bounding box as a ratio of the overall image height.</p>
-    pub fn height(&self) -> std::option::Option<f32> {
+    pub fn height(&self) -> ::std::option::Option<f32> {
         self.height
     }
     /// <p>Left coordinate of the bounding box as a ratio of overall image width.</p>
-    pub fn left(&self) -> std::option::Option<f32> {
+    pub fn left(&self) -> ::std::option::Option<f32> {
         self.left
     }
     /// <p>Top coordinate of the bounding box as a ratio of overall image height.</p>
-    pub fn top(&self) -> std::option::Option<f32> {
+    pub fn top(&self) -> ::std::option::Option<f32> {
         self.top
     }
 }
@@ -48,51 +48,53 @@ impl BoundingBox {
 
 /// A builder for [`BoundingBox`](crate::types::BoundingBox).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BoundingBoxBuilder {
-    pub(crate) width: std::option::Option<f32>,
-    pub(crate) height: std::option::Option<f32>,
-    pub(crate) left: std::option::Option<f32>,
-    pub(crate) top: std::option::Option<f32>,
+    pub(crate) width: ::std::option::Option<f32>,
+    pub(crate) height: ::std::option::Option<f32>,
+    pub(crate) left: ::std::option::Option<f32>,
+    pub(crate) top: ::std::option::Option<f32>,
 }
 impl BoundingBoxBuilder {
     /// <p>Width of the bounding box as a ratio of the overall image width.</p>
     pub fn width(mut self, input: f32) -> Self {
-        self.width = Some(input);
+        self.width = ::std::option::Option::Some(input);
         self
     }
     /// <p>Width of the bounding box as a ratio of the overall image width.</p>
-    pub fn set_width(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_width(mut self, input: ::std::option::Option<f32>) -> Self {
         self.width = input;
         self
     }
     /// <p>Height of the bounding box as a ratio of the overall image height.</p>
     pub fn height(mut self, input: f32) -> Self {
-        self.height = Some(input);
+        self.height = ::std::option::Option::Some(input);
         self
     }
     /// <p>Height of the bounding box as a ratio of the overall image height.</p>
-    pub fn set_height(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_height(mut self, input: ::std::option::Option<f32>) -> Self {
         self.height = input;
         self
     }
     /// <p>Left coordinate of the bounding box as a ratio of overall image width.</p>
     pub fn left(mut self, input: f32) -> Self {
-        self.left = Some(input);
+        self.left = ::std::option::Option::Some(input);
         self
     }
     /// <p>Left coordinate of the bounding box as a ratio of overall image width.</p>
-    pub fn set_left(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_left(mut self, input: ::std::option::Option<f32>) -> Self {
         self.left = input;
         self
     }
     /// <p>Top coordinate of the bounding box as a ratio of overall image height.</p>
     pub fn top(mut self, input: f32) -> Self {
-        self.top = Some(input);
+        self.top = ::std::option::Option::Some(input);
         self
     }
     /// <p>Top coordinate of the bounding box as a ratio of overall image height.</p>
-    pub fn set_top(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_top(mut self, input: ::std::option::Option<f32>) -> Self {
         self.top = input;
         self
     }

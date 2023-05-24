@@ -2,37 +2,37 @@
 
 /// <p>Provides information about the bot or bot locale that you want to import. You can specify the <code>botImportSpecification</code> or the <code>botLocaleImportSpecification</code>, but not both.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportResourceSpecification {
     /// <p>Parameters for importing a bot.</p>
     #[doc(hidden)]
-    pub bot_import_specification: std::option::Option<crate::types::BotImportSpecification>,
+    pub bot_import_specification: ::std::option::Option<crate::types::BotImportSpecification>,
     /// <p>Parameters for importing a bot locale.</p>
     #[doc(hidden)]
     pub bot_locale_import_specification:
-        std::option::Option<crate::types::BotLocaleImportSpecification>,
+        ::std::option::Option<crate::types::BotLocaleImportSpecification>,
     /// <p>Provides the parameters required for importing a custom vocabulary.</p>
     #[doc(hidden)]
     pub custom_vocabulary_import_specification:
-        std::option::Option<crate::types::CustomVocabularyImportSpecification>,
+        ::std::option::Option<crate::types::CustomVocabularyImportSpecification>,
 }
 impl ImportResourceSpecification {
     /// <p>Parameters for importing a bot.</p>
     pub fn bot_import_specification(
         &self,
-    ) -> std::option::Option<&crate::types::BotImportSpecification> {
+    ) -> ::std::option::Option<&crate::types::BotImportSpecification> {
         self.bot_import_specification.as_ref()
     }
     /// <p>Parameters for importing a bot locale.</p>
     pub fn bot_locale_import_specification(
         &self,
-    ) -> std::option::Option<&crate::types::BotLocaleImportSpecification> {
+    ) -> ::std::option::Option<&crate::types::BotLocaleImportSpecification> {
         self.bot_locale_import_specification.as_ref()
     }
     /// <p>Provides the parameters required for importing a custom vocabulary.</p>
     pub fn custom_vocabulary_import_specification(
         &self,
-    ) -> std::option::Option<&crate::types::CustomVocabularyImportSpecification> {
+    ) -> ::std::option::Option<&crate::types::CustomVocabularyImportSpecification> {
         self.custom_vocabulary_import_specification.as_ref()
     }
 }
@@ -45,24 +45,27 @@ impl ImportResourceSpecification {
 
 /// A builder for [`ImportResourceSpecification`](crate::types::ImportResourceSpecification).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ImportResourceSpecificationBuilder {
-    pub(crate) bot_import_specification: std::option::Option<crate::types::BotImportSpecification>,
+    pub(crate) bot_import_specification:
+        ::std::option::Option<crate::types::BotImportSpecification>,
     pub(crate) bot_locale_import_specification:
-        std::option::Option<crate::types::BotLocaleImportSpecification>,
+        ::std::option::Option<crate::types::BotLocaleImportSpecification>,
     pub(crate) custom_vocabulary_import_specification:
-        std::option::Option<crate::types::CustomVocabularyImportSpecification>,
+        ::std::option::Option<crate::types::CustomVocabularyImportSpecification>,
 }
 impl ImportResourceSpecificationBuilder {
     /// <p>Parameters for importing a bot.</p>
     pub fn bot_import_specification(mut self, input: crate::types::BotImportSpecification) -> Self {
-        self.bot_import_specification = Some(input);
+        self.bot_import_specification = ::std::option::Option::Some(input);
         self
     }
     /// <p>Parameters for importing a bot.</p>
     pub fn set_bot_import_specification(
         mut self,
-        input: std::option::Option<crate::types::BotImportSpecification>,
+        input: ::std::option::Option<crate::types::BotImportSpecification>,
     ) -> Self {
         self.bot_import_specification = input;
         self
@@ -72,13 +75,13 @@ impl ImportResourceSpecificationBuilder {
         mut self,
         input: crate::types::BotLocaleImportSpecification,
     ) -> Self {
-        self.bot_locale_import_specification = Some(input);
+        self.bot_locale_import_specification = ::std::option::Option::Some(input);
         self
     }
     /// <p>Parameters for importing a bot locale.</p>
     pub fn set_bot_locale_import_specification(
         mut self,
-        input: std::option::Option<crate::types::BotLocaleImportSpecification>,
+        input: ::std::option::Option<crate::types::BotLocaleImportSpecification>,
     ) -> Self {
         self.bot_locale_import_specification = input;
         self
@@ -88,13 +91,13 @@ impl ImportResourceSpecificationBuilder {
         mut self,
         input: crate::types::CustomVocabularyImportSpecification,
     ) -> Self {
-        self.custom_vocabulary_import_specification = Some(input);
+        self.custom_vocabulary_import_specification = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides the parameters required for importing a custom vocabulary.</p>
     pub fn set_custom_vocabulary_import_specification(
         mut self,
-        input: std::option::Option<crate::types::CustomVocabularyImportSpecification>,
+        input: ::std::option::Option<crate::types::CustomVocabularyImportSpecification>,
     ) -> Self {
         self.custom_vocabulary_import_specification = input;
         self

@@ -2,14 +2,14 @@
 
 /// <p>A custom origin. A custom origin is any origin that is <i>not</i> an Amazon S3 bucket, with one exception. An Amazon S3 bucket that is <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html">configured with static website hosting</a> <i>is</i> a custom origin.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomOriginConfig {
     /// <p>The HTTP port that CloudFront uses to connect to the origin. Specify the HTTP port that the origin listens on.</p>
     #[doc(hidden)]
-    pub http_port: std::option::Option<i32>,
+    pub http_port: ::std::option::Option<i32>,
     /// <p>The HTTPS port that CloudFront uses to connect to the origin. Specify the HTTPS port that the origin listens on.</p>
     #[doc(hidden)]
-    pub https_port: std::option::Option<i32>,
+    pub https_port: ::std::option::Option<i32>,
     /// <p>Specifies the protocol (HTTP or HTTPS) that CloudFront uses to connect to the origin. Valid values are:</p>
     /// <ul>
     /// <li> <p> <code>http-only</code> – CloudFront always uses HTTP to connect to the origin.</p> </li>
@@ -17,27 +17,27 @@ pub struct CustomOriginConfig {
     /// <li> <p> <code>https-only</code> – CloudFront always uses HTTPS to connect to the origin.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub origin_protocol_policy: std::option::Option<crate::types::OriginProtocolPolicy>,
+    pub origin_protocol_policy: ::std::option::Option<crate::types::OriginProtocolPolicy>,
     /// <p>Specifies the minimum SSL/TLS protocol that CloudFront uses when connecting to your origin over HTTPS. Valid values include <code>SSLv3</code>, <code>TLSv1</code>, <code>TLSv1.1</code>, and <code>TLSv1.2</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginSSLProtocols">Minimum Origin SSL Protocol</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     #[doc(hidden)]
-    pub origin_ssl_protocols: std::option::Option<crate::types::OriginSslProtocols>,
+    pub origin_ssl_protocols: ::std::option::Option<crate::types::OriginSslProtocols>,
     /// <p>Specifies how long, in seconds, CloudFront waits for a response from the origin. This is also known as the <i>origin response timeout</i>. The minimum timeout is 1 second, the maximum is 60 seconds, and the default (if you don't specify otherwise) is 30 seconds.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginResponseTimeout">Origin Response Timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     #[doc(hidden)]
-    pub origin_read_timeout: std::option::Option<i32>,
+    pub origin_read_timeout: ::std::option::Option<i32>,
     /// <p>Specifies how long, in seconds, CloudFront persists its connection to the origin. The minimum timeout is 1 second, the maximum is 60 seconds, and the default (if you don't specify otherwise) is 5 seconds.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginKeepaliveTimeout">Origin Keep-alive Timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     #[doc(hidden)]
-    pub origin_keepalive_timeout: std::option::Option<i32>,
+    pub origin_keepalive_timeout: ::std::option::Option<i32>,
 }
 impl CustomOriginConfig {
     /// <p>The HTTP port that CloudFront uses to connect to the origin. Specify the HTTP port that the origin listens on.</p>
-    pub fn http_port(&self) -> std::option::Option<i32> {
+    pub fn http_port(&self) -> ::std::option::Option<i32> {
         self.http_port
     }
     /// <p>The HTTPS port that CloudFront uses to connect to the origin. Specify the HTTPS port that the origin listens on.</p>
-    pub fn https_port(&self) -> std::option::Option<i32> {
+    pub fn https_port(&self) -> ::std::option::Option<i32> {
         self.https_port
     }
     /// <p>Specifies the protocol (HTTP or HTTPS) that CloudFront uses to connect to the origin. Valid values are:</p>
@@ -48,22 +48,22 @@ impl CustomOriginConfig {
     /// </ul>
     pub fn origin_protocol_policy(
         &self,
-    ) -> std::option::Option<&crate::types::OriginProtocolPolicy> {
+    ) -> ::std::option::Option<&crate::types::OriginProtocolPolicy> {
         self.origin_protocol_policy.as_ref()
     }
     /// <p>Specifies the minimum SSL/TLS protocol that CloudFront uses when connecting to your origin over HTTPS. Valid values include <code>SSLv3</code>, <code>TLSv1</code>, <code>TLSv1.1</code>, and <code>TLSv1.2</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginSSLProtocols">Minimum Origin SSL Protocol</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn origin_ssl_protocols(&self) -> std::option::Option<&crate::types::OriginSslProtocols> {
+    pub fn origin_ssl_protocols(&self) -> ::std::option::Option<&crate::types::OriginSslProtocols> {
         self.origin_ssl_protocols.as_ref()
     }
     /// <p>Specifies how long, in seconds, CloudFront waits for a response from the origin. This is also known as the <i>origin response timeout</i>. The minimum timeout is 1 second, the maximum is 60 seconds, and the default (if you don't specify otherwise) is 30 seconds.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginResponseTimeout">Origin Response Timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn origin_read_timeout(&self) -> std::option::Option<i32> {
+    pub fn origin_read_timeout(&self) -> ::std::option::Option<i32> {
         self.origin_read_timeout
     }
     /// <p>Specifies how long, in seconds, CloudFront persists its connection to the origin. The minimum timeout is 1 second, the maximum is 60 seconds, and the default (if you don't specify otherwise) is 5 seconds.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginKeepaliveTimeout">Origin Keep-alive Timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn origin_keepalive_timeout(&self) -> std::option::Option<i32> {
+    pub fn origin_keepalive_timeout(&self) -> ::std::option::Option<i32> {
         self.origin_keepalive_timeout
     }
 }
@@ -76,33 +76,35 @@ impl CustomOriginConfig {
 
 /// A builder for [`CustomOriginConfig`](crate::types::CustomOriginConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CustomOriginConfigBuilder {
-    pub(crate) http_port: std::option::Option<i32>,
-    pub(crate) https_port: std::option::Option<i32>,
-    pub(crate) origin_protocol_policy: std::option::Option<crate::types::OriginProtocolPolicy>,
-    pub(crate) origin_ssl_protocols: std::option::Option<crate::types::OriginSslProtocols>,
-    pub(crate) origin_read_timeout: std::option::Option<i32>,
-    pub(crate) origin_keepalive_timeout: std::option::Option<i32>,
+    pub(crate) http_port: ::std::option::Option<i32>,
+    pub(crate) https_port: ::std::option::Option<i32>,
+    pub(crate) origin_protocol_policy: ::std::option::Option<crate::types::OriginProtocolPolicy>,
+    pub(crate) origin_ssl_protocols: ::std::option::Option<crate::types::OriginSslProtocols>,
+    pub(crate) origin_read_timeout: ::std::option::Option<i32>,
+    pub(crate) origin_keepalive_timeout: ::std::option::Option<i32>,
 }
 impl CustomOriginConfigBuilder {
     /// <p>The HTTP port that CloudFront uses to connect to the origin. Specify the HTTP port that the origin listens on.</p>
     pub fn http_port(mut self, input: i32) -> Self {
-        self.http_port = Some(input);
+        self.http_port = ::std::option::Option::Some(input);
         self
     }
     /// <p>The HTTP port that CloudFront uses to connect to the origin. Specify the HTTP port that the origin listens on.</p>
-    pub fn set_http_port(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_http_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.http_port = input;
         self
     }
     /// <p>The HTTPS port that CloudFront uses to connect to the origin. Specify the HTTPS port that the origin listens on.</p>
     pub fn https_port(mut self, input: i32) -> Self {
-        self.https_port = Some(input);
+        self.https_port = ::std::option::Option::Some(input);
         self
     }
     /// <p>The HTTPS port that CloudFront uses to connect to the origin. Specify the HTTPS port that the origin listens on.</p>
-    pub fn set_https_port(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_https_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.https_port = input;
         self
     }
@@ -113,7 +115,7 @@ impl CustomOriginConfigBuilder {
     /// <li> <p> <code>https-only</code> – CloudFront always uses HTTPS to connect to the origin.</p> </li>
     /// </ul>
     pub fn origin_protocol_policy(mut self, input: crate::types::OriginProtocolPolicy) -> Self {
-        self.origin_protocol_policy = Some(input);
+        self.origin_protocol_policy = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the protocol (HTTP or HTTPS) that CloudFront uses to connect to the origin. Valid values are:</p>
@@ -124,7 +126,7 @@ impl CustomOriginConfigBuilder {
     /// </ul>
     pub fn set_origin_protocol_policy(
         mut self,
-        input: std::option::Option<crate::types::OriginProtocolPolicy>,
+        input: ::std::option::Option<crate::types::OriginProtocolPolicy>,
     ) -> Self {
         self.origin_protocol_policy = input;
         self
@@ -132,14 +134,14 @@ impl CustomOriginConfigBuilder {
     /// <p>Specifies the minimum SSL/TLS protocol that CloudFront uses when connecting to your origin over HTTPS. Valid values include <code>SSLv3</code>, <code>TLSv1</code>, <code>TLSv1.1</code>, and <code>TLSv1.2</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginSSLProtocols">Minimum Origin SSL Protocol</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub fn origin_ssl_protocols(mut self, input: crate::types::OriginSslProtocols) -> Self {
-        self.origin_ssl_protocols = Some(input);
+        self.origin_ssl_protocols = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the minimum SSL/TLS protocol that CloudFront uses when connecting to your origin over HTTPS. Valid values include <code>SSLv3</code>, <code>TLSv1</code>, <code>TLSv1.1</code>, and <code>TLSv1.2</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginSSLProtocols">Minimum Origin SSL Protocol</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub fn set_origin_ssl_protocols(
         mut self,
-        input: std::option::Option<crate::types::OriginSslProtocols>,
+        input: ::std::option::Option<crate::types::OriginSslProtocols>,
     ) -> Self {
         self.origin_ssl_protocols = input;
         self
@@ -147,24 +149,24 @@ impl CustomOriginConfigBuilder {
     /// <p>Specifies how long, in seconds, CloudFront waits for a response from the origin. This is also known as the <i>origin response timeout</i>. The minimum timeout is 1 second, the maximum is 60 seconds, and the default (if you don't specify otherwise) is 30 seconds.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginResponseTimeout">Origin Response Timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub fn origin_read_timeout(mut self, input: i32) -> Self {
-        self.origin_read_timeout = Some(input);
+        self.origin_read_timeout = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies how long, in seconds, CloudFront waits for a response from the origin. This is also known as the <i>origin response timeout</i>. The minimum timeout is 1 second, the maximum is 60 seconds, and the default (if you don't specify otherwise) is 30 seconds.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginResponseTimeout">Origin Response Timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn set_origin_read_timeout(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_origin_read_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
         self.origin_read_timeout = input;
         self
     }
     /// <p>Specifies how long, in seconds, CloudFront persists its connection to the origin. The minimum timeout is 1 second, the maximum is 60 seconds, and the default (if you don't specify otherwise) is 5 seconds.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginKeepaliveTimeout">Origin Keep-alive Timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub fn origin_keepalive_timeout(mut self, input: i32) -> Self {
-        self.origin_keepalive_timeout = Some(input);
+        self.origin_keepalive_timeout = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies how long, in seconds, CloudFront persists its connection to the origin. The minimum timeout is 1 second, the maximum is 60 seconds, and the default (if you don't specify otherwise) is 5 seconds.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginKeepaliveTimeout">Origin Keep-alive Timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn set_origin_keepalive_timeout(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_origin_keepalive_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
         self.origin_keepalive_timeout = input;
         self
     }

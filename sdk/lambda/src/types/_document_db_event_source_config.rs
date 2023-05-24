@@ -2,29 +2,29 @@
 
 /// <p> Specific configuration settings for a DocumentDB event source. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DocumentDbEventSourceConfig {
     /// <p> The name of the database to consume within the DocumentDB cluster. </p>
     #[doc(hidden)]
-    pub database_name: std::option::Option<std::string::String>,
+    pub database_name: ::std::option::Option<::std::string::String>,
     /// <p> The name of the collection to consume within the database. If you do not specify a collection, Lambda consumes all collections. </p>
     #[doc(hidden)]
-    pub collection_name: std::option::Option<std::string::String>,
+    pub collection_name: ::std::option::Option<::std::string::String>,
     /// <p> Determines what DocumentDB sends to your event stream during document update operations. If set to UpdateLookup, DocumentDB sends a delta describing the changes, along with a copy of the entire document. Otherwise, DocumentDB sends only a partial document that contains the changes. </p>
     #[doc(hidden)]
-    pub full_document: std::option::Option<crate::types::FullDocument>,
+    pub full_document: ::std::option::Option<crate::types::FullDocument>,
 }
 impl DocumentDbEventSourceConfig {
     /// <p> The name of the database to consume within the DocumentDB cluster. </p>
-    pub fn database_name(&self) -> std::option::Option<&str> {
+    pub fn database_name(&self) -> ::std::option::Option<&str> {
         self.database_name.as_deref()
     }
     /// <p> The name of the collection to consume within the database. If you do not specify a collection, Lambda consumes all collections. </p>
-    pub fn collection_name(&self) -> std::option::Option<&str> {
+    pub fn collection_name(&self) -> ::std::option::Option<&str> {
         self.collection_name.as_deref()
     }
     /// <p> Determines what DocumentDB sends to your event stream during document update operations. If set to UpdateLookup, DocumentDB sends a delta describing the changes, along with a copy of the entire document. Otherwise, DocumentDB sends only a partial document that contains the changes. </p>
-    pub fn full_document(&self) -> std::option::Option<&crate::types::FullDocument> {
+    pub fn full_document(&self) -> ::std::option::Option<&crate::types::FullDocument> {
         self.full_document.as_ref()
     }
 }
@@ -37,42 +37,56 @@ impl DocumentDbEventSourceConfig {
 
 /// A builder for [`DocumentDbEventSourceConfig`](crate::types::DocumentDbEventSourceConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DocumentDbEventSourceConfigBuilder {
-    pub(crate) database_name: std::option::Option<std::string::String>,
-    pub(crate) collection_name: std::option::Option<std::string::String>,
-    pub(crate) full_document: std::option::Option<crate::types::FullDocument>,
+    pub(crate) database_name: ::std::option::Option<::std::string::String>,
+    pub(crate) collection_name: ::std::option::Option<::std::string::String>,
+    pub(crate) full_document: ::std::option::Option<crate::types::FullDocument>,
 }
 impl DocumentDbEventSourceConfigBuilder {
     /// <p> The name of the database to consume within the DocumentDB cluster. </p>
-    pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.database_name = Some(input.into());
+    pub fn database_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.database_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the database to consume within the DocumentDB cluster. </p>
-    pub fn set_database_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_database_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.database_name = input;
         self
     }
     /// <p> The name of the collection to consume within the database. If you do not specify a collection, Lambda consumes all collections. </p>
-    pub fn collection_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.collection_name = Some(input.into());
+    pub fn collection_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.collection_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the collection to consume within the database. If you do not specify a collection, Lambda consumes all collections. </p>
-    pub fn set_collection_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_collection_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.collection_name = input;
         self
     }
     /// <p> Determines what DocumentDB sends to your event stream during document update operations. If set to UpdateLookup, DocumentDB sends a delta describing the changes, along with a copy of the entire document. Otherwise, DocumentDB sends only a partial document that contains the changes. </p>
     pub fn full_document(mut self, input: crate::types::FullDocument) -> Self {
-        self.full_document = Some(input);
+        self.full_document = ::std::option::Option::Some(input);
         self
     }
     /// <p> Determines what DocumentDB sends to your event stream during document update operations. If set to UpdateLookup, DocumentDB sends a delta describing the changes, along with a copy of the entire document. Otherwise, DocumentDB sends only a partial document that contains the changes. </p>
     pub fn set_full_document(
         mut self,
-        input: std::option::Option<crate::types::FullDocument>,
+        input: ::std::option::Option<crate::types::FullDocument>,
     ) -> Self {
         self.full_document = input;
         self

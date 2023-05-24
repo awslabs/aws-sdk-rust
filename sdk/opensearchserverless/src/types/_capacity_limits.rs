@@ -2,22 +2,22 @@
 
 /// <p>The maximum capacity limits for all OpenSearch Serverless collections, in OpenSearch Compute Units (OCUs). These limits are used to scale your collections based on the current workload. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-scaling.html">Managing capacity limits for Amazon OpenSearch Serverless</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CapacityLimits {
     /// <p>The maximum indexing capacity for collections.</p>
     #[doc(hidden)]
-    pub max_indexing_capacity_in_ocu: std::option::Option<i32>,
+    pub max_indexing_capacity_in_ocu: ::std::option::Option<i32>,
     /// <p>The maximum search capacity for collections.</p>
     #[doc(hidden)]
-    pub max_search_capacity_in_ocu: std::option::Option<i32>,
+    pub max_search_capacity_in_ocu: ::std::option::Option<i32>,
 }
 impl CapacityLimits {
     /// <p>The maximum indexing capacity for collections.</p>
-    pub fn max_indexing_capacity_in_ocu(&self) -> std::option::Option<i32> {
+    pub fn max_indexing_capacity_in_ocu(&self) -> ::std::option::Option<i32> {
         self.max_indexing_capacity_in_ocu
     }
     /// <p>The maximum search capacity for collections.</p>
-    pub fn max_search_capacity_in_ocu(&self) -> std::option::Option<i32> {
+    pub fn max_search_capacity_in_ocu(&self) -> ::std::option::Option<i32> {
         self.max_search_capacity_in_ocu
     }
 }
@@ -30,29 +30,31 @@ impl CapacityLimits {
 
 /// A builder for [`CapacityLimits`](crate::types::CapacityLimits).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CapacityLimitsBuilder {
-    pub(crate) max_indexing_capacity_in_ocu: std::option::Option<i32>,
-    pub(crate) max_search_capacity_in_ocu: std::option::Option<i32>,
+    pub(crate) max_indexing_capacity_in_ocu: ::std::option::Option<i32>,
+    pub(crate) max_search_capacity_in_ocu: ::std::option::Option<i32>,
 }
 impl CapacityLimitsBuilder {
     /// <p>The maximum indexing capacity for collections.</p>
     pub fn max_indexing_capacity_in_ocu(mut self, input: i32) -> Self {
-        self.max_indexing_capacity_in_ocu = Some(input);
+        self.max_indexing_capacity_in_ocu = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum indexing capacity for collections.</p>
-    pub fn set_max_indexing_capacity_in_ocu(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_indexing_capacity_in_ocu(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_indexing_capacity_in_ocu = input;
         self
     }
     /// <p>The maximum search capacity for collections.</p>
     pub fn max_search_capacity_in_ocu(mut self, input: i32) -> Self {
-        self.max_search_capacity_in_ocu = Some(input);
+        self.max_search_capacity_in_ocu = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum search capacity for collections.</p>
-    pub fn set_max_search_capacity_in_ocu(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_search_capacity_in_ocu(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_search_capacity_in_ocu = input;
         self
     }

@@ -12,56 +12,59 @@ pub use crate::operation::send_command::_send_command_input::SendCommandInputBui
 /// <li> <p>If you are working with the AWS Command Line Interface (AWS CLI), use the QLDB shell. The shell is a command line interface that uses the QLDB driver to interact with a ledger. For information, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/data-shell.html">Accessing Amazon QLDB using the QLDB shell</a>.</p> </li>
 /// </ul>
 /// </note>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SendCommandFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::send_command::builders::SendCommandInputBuilder,
 }
 impl SendCommandFluentBuilder {
     /// Creates a new `SendCommand`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::send_command::SendCommand,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::send_command::SendCommandError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_command::SendCommandError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::send_command::SendCommandOutput,
-        aws_smithy_http::result::SdkError<crate::operation::send_command::SendCommandError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_command::SendCommandError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -74,21 +77,27 @@ impl SendCommandFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::send_command::SendCommandOutput,
-        aws_smithy_http::result::SdkError<crate::operation::send_command::SendCommandError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::send_command::SendCommandError>,
     > {
         self.send_middleware().await
     }
     /// <p>Specifies the session token for the current command. A session token is constant throughout the life of the session.</p>
     /// <p>To obtain a session token, run the <code>StartSession</code> command. This <code>SessionToken</code> is required for every subsequent command that is issued during the current session.</p>
-    pub fn session_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn session_token(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.session_token(input.into());
         self
     }
     /// <p>Specifies the session token for the current command. A session token is constant throughout the life of the session.</p>
     /// <p>To obtain a session token, run the <code>StartSession</code> command. This <code>SessionToken</code> is required for every subsequent command that is issued during the current session.</p>
-    pub fn set_session_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_session_token(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_session_token(input);
         self
     }
@@ -100,7 +109,7 @@ impl SendCommandFluentBuilder {
     /// <p>Command to start a new session. A session token is obtained as part of the response.</p>
     pub fn set_start_session(
         mut self,
-        input: std::option::Option<crate::types::StartSessionRequest>,
+        input: ::std::option::Option<crate::types::StartSessionRequest>,
     ) -> Self {
         self.inner = self.inner.set_start_session(input);
         self
@@ -113,7 +122,7 @@ impl SendCommandFluentBuilder {
     /// <p>Command to start a new transaction.</p>
     pub fn set_start_transaction(
         mut self,
-        input: std::option::Option<crate::types::StartTransactionRequest>,
+        input: ::std::option::Option<crate::types::StartTransactionRequest>,
     ) -> Self {
         self.inner = self.inner.set_start_transaction(input);
         self
@@ -126,7 +135,7 @@ impl SendCommandFluentBuilder {
     /// <p>Command to end the current session.</p>
     pub fn set_end_session(
         mut self,
-        input: std::option::Option<crate::types::EndSessionRequest>,
+        input: ::std::option::Option<crate::types::EndSessionRequest>,
     ) -> Self {
         self.inner = self.inner.set_end_session(input);
         self
@@ -139,7 +148,7 @@ impl SendCommandFluentBuilder {
     /// <p>Command to commit the specified transaction.</p>
     pub fn set_commit_transaction(
         mut self,
-        input: std::option::Option<crate::types::CommitTransactionRequest>,
+        input: ::std::option::Option<crate::types::CommitTransactionRequest>,
     ) -> Self {
         self.inner = self.inner.set_commit_transaction(input);
         self
@@ -152,7 +161,7 @@ impl SendCommandFluentBuilder {
     /// <p>Command to abort the current transaction.</p>
     pub fn set_abort_transaction(
         mut self,
-        input: std::option::Option<crate::types::AbortTransactionRequest>,
+        input: ::std::option::Option<crate::types::AbortTransactionRequest>,
     ) -> Self {
         self.inner = self.inner.set_abort_transaction(input);
         self
@@ -165,7 +174,7 @@ impl SendCommandFluentBuilder {
     /// <p>Command to execute a statement in the specified transaction.</p>
     pub fn set_execute_statement(
         mut self,
-        input: std::option::Option<crate::types::ExecuteStatementRequest>,
+        input: ::std::option::Option<crate::types::ExecuteStatementRequest>,
     ) -> Self {
         self.inner = self.inner.set_execute_statement(input);
         self
@@ -178,7 +187,7 @@ impl SendCommandFluentBuilder {
     /// <p>Command to fetch a page.</p>
     pub fn set_fetch_page(
         mut self,
-        input: std::option::Option<crate::types::FetchPageRequest>,
+        input: ::std::option::Option<crate::types::FetchPageRequest>,
     ) -> Self {
         self.inner = self.inner.set_fetch_page(input);
         self

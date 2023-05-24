@@ -2,22 +2,22 @@
 
 /// <p>Contains information about a security group associated with a network interface. This data type is used as one of the elements of the <code>NetworkInterface</code> data type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SecurityGroup {
     /// <p>The name of the security group.</p>
     #[doc(hidden)]
-    pub group_name: std::option::Option<std::string::String>,
+    pub group_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the security group.</p>
     #[doc(hidden)]
-    pub group_id: std::option::Option<std::string::String>,
+    pub group_id: ::std::option::Option<::std::string::String>,
 }
 impl SecurityGroup {
     /// <p>The name of the security group.</p>
-    pub fn group_name(&self) -> std::option::Option<&str> {
+    pub fn group_name(&self) -> ::std::option::Option<&str> {
         self.group_name.as_deref()
     }
     /// <p>The ID of the security group.</p>
-    pub fn group_id(&self) -> std::option::Option<&str> {
+    pub fn group_id(&self) -> ::std::option::Option<&str> {
         self.group_id.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl SecurityGroup {
 
 /// A builder for [`SecurityGroup`](crate::types::SecurityGroup).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SecurityGroupBuilder {
-    pub(crate) group_name: std::option::Option<std::string::String>,
-    pub(crate) group_id: std::option::Option<std::string::String>,
+    pub(crate) group_name: ::std::option::Option<::std::string::String>,
+    pub(crate) group_id: ::std::option::Option<::std::string::String>,
 }
 impl SecurityGroupBuilder {
     /// <p>The name of the security group.</p>
-    pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.group_name = Some(input.into());
+    pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the security group.</p>
-    pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_name = input;
         self
     }
     /// <p>The ID of the security group.</p>
-    pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.group_id = Some(input.into());
+    pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the security group.</p>
-    pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_id = input;
         self
     }

@@ -2,22 +2,22 @@
 
 /// <p>Provides information that describes a recommendation of a target engine on Amazon RDS.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RdsRecommendation {
     /// <p>Supplemental information about the requirements to the recommended target database on Amazon RDS.</p>
     #[doc(hidden)]
-    pub requirements_to_target: std::option::Option<crate::types::RdsRequirements>,
+    pub requirements_to_target: ::std::option::Option<crate::types::RdsRequirements>,
     /// <p>Supplemental information about the configuration of the recommended target database on Amazon RDS.</p>
     #[doc(hidden)]
-    pub target_configuration: std::option::Option<crate::types::RdsConfiguration>,
+    pub target_configuration: ::std::option::Option<crate::types::RdsConfiguration>,
 }
 impl RdsRecommendation {
     /// <p>Supplemental information about the requirements to the recommended target database on Amazon RDS.</p>
-    pub fn requirements_to_target(&self) -> std::option::Option<&crate::types::RdsRequirements> {
+    pub fn requirements_to_target(&self) -> ::std::option::Option<&crate::types::RdsRequirements> {
         self.requirements_to_target.as_ref()
     }
     /// <p>Supplemental information about the configuration of the recommended target database on Amazon RDS.</p>
-    pub fn target_configuration(&self) -> std::option::Option<&crate::types::RdsConfiguration> {
+    pub fn target_configuration(&self) -> ::std::option::Option<&crate::types::RdsConfiguration> {
         self.target_configuration.as_ref()
     }
 }
@@ -30,34 +30,36 @@ impl RdsRecommendation {
 
 /// A builder for [`RdsRecommendation`](crate::types::RdsRecommendation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RdsRecommendationBuilder {
-    pub(crate) requirements_to_target: std::option::Option<crate::types::RdsRequirements>,
-    pub(crate) target_configuration: std::option::Option<crate::types::RdsConfiguration>,
+    pub(crate) requirements_to_target: ::std::option::Option<crate::types::RdsRequirements>,
+    pub(crate) target_configuration: ::std::option::Option<crate::types::RdsConfiguration>,
 }
 impl RdsRecommendationBuilder {
     /// <p>Supplemental information about the requirements to the recommended target database on Amazon RDS.</p>
     pub fn requirements_to_target(mut self, input: crate::types::RdsRequirements) -> Self {
-        self.requirements_to_target = Some(input);
+        self.requirements_to_target = ::std::option::Option::Some(input);
         self
     }
     /// <p>Supplemental information about the requirements to the recommended target database on Amazon RDS.</p>
     pub fn set_requirements_to_target(
         mut self,
-        input: std::option::Option<crate::types::RdsRequirements>,
+        input: ::std::option::Option<crate::types::RdsRequirements>,
     ) -> Self {
         self.requirements_to_target = input;
         self
     }
     /// <p>Supplemental information about the configuration of the recommended target database on Amazon RDS.</p>
     pub fn target_configuration(mut self, input: crate::types::RdsConfiguration) -> Self {
-        self.target_configuration = Some(input);
+        self.target_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Supplemental information about the configuration of the recommended target database on Amazon RDS.</p>
     pub fn set_target_configuration(
         mut self,
-        input: std::option::Option<crate::types::RdsConfiguration>,
+        input: ::std::option::Option<crate::types::RdsConfiguration>,
     ) -> Self {
         self.target_configuration = input;
         self

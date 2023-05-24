@@ -2,7 +2,7 @@
 pub(crate) fn de_virtual_service_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::types::VirtualServiceData>,
+    ::std::option::Option<crate::types::VirtualServiceData>,
     crate::operation::describe_virtual_service::DescribeVirtualServiceError,
 > {
     (!body.is_empty()).then(||{

@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`EnableRule`](crate::operation::enable_rule::builders::EnableRuleFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::enable_rule::builders::EnableRuleFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::enable_rule::builders::EnableRuleFluentBuilder::set_name): <p>The name of the rule.</p>
-    ///   - [`event_bus_name(impl Into<String>)`](crate::operation::enable_rule::builders::EnableRuleFluentBuilder::event_bus_name) / [`set_event_bus_name(Option<String>)`](crate::operation::enable_rule::builders::EnableRuleFluentBuilder::set_event_bus_name): <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
+    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::enable_rule::builders::EnableRuleFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::enable_rule::builders::EnableRuleFluentBuilder::set_name): <p>The name of the rule.</p>
+    ///   - [`event_bus_name(impl ::std::convert::Into<String>)`](crate::operation::enable_rule::builders::EnableRuleFluentBuilder::event_bus_name) / [`set_event_bus_name(Option<String>)`](crate::operation::enable_rule::builders::EnableRuleFluentBuilder::set_event_bus_name): <p>The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.</p>
     /// - On success, responds with [`EnableRuleOutput`](crate::operation::enable_rule::EnableRuleOutput)
     /// - On failure, responds with [`SdkError<EnableRuleError>`](crate::operation::enable_rule::EnableRuleError)
     pub fn enable_rule(&self) -> crate::operation::enable_rule::builders::EnableRuleFluentBuilder {

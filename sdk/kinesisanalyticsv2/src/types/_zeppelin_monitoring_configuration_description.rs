@@ -2,15 +2,15 @@
 
 /// <p>The monitoring configuration for Apache Zeppelin within a Kinesis Data Analytics Studio notebook.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ZeppelinMonitoringConfigurationDescription {
     /// <p>Describes the verbosity of the CloudWatch Logs for an application.</p>
     #[doc(hidden)]
-    pub log_level: std::option::Option<crate::types::LogLevel>,
+    pub log_level: ::std::option::Option<crate::types::LogLevel>,
 }
 impl ZeppelinMonitoringConfigurationDescription {
     /// <p>Describes the verbosity of the CloudWatch Logs for an application.</p>
-    pub fn log_level(&self) -> std::option::Option<&crate::types::LogLevel> {
+    pub fn log_level(&self) -> ::std::option::Option<&crate::types::LogLevel> {
         self.log_level.as_ref()
     }
 }
@@ -23,18 +23,20 @@ impl ZeppelinMonitoringConfigurationDescription {
 
 /// A builder for [`ZeppelinMonitoringConfigurationDescription`](crate::types::ZeppelinMonitoringConfigurationDescription).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ZeppelinMonitoringConfigurationDescriptionBuilder {
-    pub(crate) log_level: std::option::Option<crate::types::LogLevel>,
+    pub(crate) log_level: ::std::option::Option<crate::types::LogLevel>,
 }
 impl ZeppelinMonitoringConfigurationDescriptionBuilder {
     /// <p>Describes the verbosity of the CloudWatch Logs for an application.</p>
     pub fn log_level(mut self, input: crate::types::LogLevel) -> Self {
-        self.log_level = Some(input);
+        self.log_level = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes the verbosity of the CloudWatch Logs for an application.</p>
-    pub fn set_log_level(mut self, input: std::option::Option<crate::types::LogLevel>) -> Self {
+    pub fn set_log_level(mut self, input: ::std::option::Option<crate::types::LogLevel>) -> Self {
         self.log_level = input;
         self
     }

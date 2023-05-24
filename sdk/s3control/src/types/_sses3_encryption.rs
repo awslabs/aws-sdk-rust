@@ -2,7 +2,7 @@
 
 /// <p>Configuration for the use of SSE-S3 to encrypt generated manifest objects.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Sses3Encryption {}
 impl Sses3Encryption {
     /// Creates a new builder-style object to manufacture [`Sses3Encryption`](crate::types::Sses3Encryption).
@@ -13,7 +13,9 @@ impl Sses3Encryption {
 
 /// A builder for [`Sses3Encryption`](crate::types::Sses3Encryption).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct Sses3EncryptionBuilder {}
 impl Sses3EncryptionBuilder {
     /// Consumes the builder and constructs a [`Sses3Encryption`](crate::types::Sses3Encryption).

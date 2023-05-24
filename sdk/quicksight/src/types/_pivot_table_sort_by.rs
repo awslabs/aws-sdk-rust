@@ -2,29 +2,29 @@
 
 /// <p>The sort by field for the field sort options.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PivotTableSortBy {
     /// <p>The field sort (field id, direction) for the pivot table sort by options.</p>
     #[doc(hidden)]
-    pub field: std::option::Option<crate::types::FieldSort>,
+    pub field: ::std::option::Option<crate::types::FieldSort>,
     /// <p>The column sort (field id, direction) for the pivot table sort by options.</p>
     #[doc(hidden)]
-    pub column: std::option::Option<crate::types::ColumnSort>,
+    pub column: ::std::option::Option<crate::types::ColumnSort>,
     /// <p>The data path sort (data path value, direction) for the pivot table sort by options.</p>
     #[doc(hidden)]
-    pub data_path: std::option::Option<crate::types::DataPathSort>,
+    pub data_path: ::std::option::Option<crate::types::DataPathSort>,
 }
 impl PivotTableSortBy {
     /// <p>The field sort (field id, direction) for the pivot table sort by options.</p>
-    pub fn field(&self) -> std::option::Option<&crate::types::FieldSort> {
+    pub fn field(&self) -> ::std::option::Option<&crate::types::FieldSort> {
         self.field.as_ref()
     }
     /// <p>The column sort (field id, direction) for the pivot table sort by options.</p>
-    pub fn column(&self) -> std::option::Option<&crate::types::ColumnSort> {
+    pub fn column(&self) -> ::std::option::Option<&crate::types::ColumnSort> {
         self.column.as_ref()
     }
     /// <p>The data path sort (data path value, direction) for the pivot table sort by options.</p>
-    pub fn data_path(&self) -> std::option::Option<&crate::types::DataPathSort> {
+    pub fn data_path(&self) -> ::std::option::Option<&crate::types::DataPathSort> {
         self.data_path.as_ref()
     }
 }
@@ -37,40 +37,45 @@ impl PivotTableSortBy {
 
 /// A builder for [`PivotTableSortBy`](crate::types::PivotTableSortBy).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PivotTableSortByBuilder {
-    pub(crate) field: std::option::Option<crate::types::FieldSort>,
-    pub(crate) column: std::option::Option<crate::types::ColumnSort>,
-    pub(crate) data_path: std::option::Option<crate::types::DataPathSort>,
+    pub(crate) field: ::std::option::Option<crate::types::FieldSort>,
+    pub(crate) column: ::std::option::Option<crate::types::ColumnSort>,
+    pub(crate) data_path: ::std::option::Option<crate::types::DataPathSort>,
 }
 impl PivotTableSortByBuilder {
     /// <p>The field sort (field id, direction) for the pivot table sort by options.</p>
     pub fn field(mut self, input: crate::types::FieldSort) -> Self {
-        self.field = Some(input);
+        self.field = ::std::option::Option::Some(input);
         self
     }
     /// <p>The field sort (field id, direction) for the pivot table sort by options.</p>
-    pub fn set_field(mut self, input: std::option::Option<crate::types::FieldSort>) -> Self {
+    pub fn set_field(mut self, input: ::std::option::Option<crate::types::FieldSort>) -> Self {
         self.field = input;
         self
     }
     /// <p>The column sort (field id, direction) for the pivot table sort by options.</p>
     pub fn column(mut self, input: crate::types::ColumnSort) -> Self {
-        self.column = Some(input);
+        self.column = ::std::option::Option::Some(input);
         self
     }
     /// <p>The column sort (field id, direction) for the pivot table sort by options.</p>
-    pub fn set_column(mut self, input: std::option::Option<crate::types::ColumnSort>) -> Self {
+    pub fn set_column(mut self, input: ::std::option::Option<crate::types::ColumnSort>) -> Self {
         self.column = input;
         self
     }
     /// <p>The data path sort (data path value, direction) for the pivot table sort by options.</p>
     pub fn data_path(mut self, input: crate::types::DataPathSort) -> Self {
-        self.data_path = Some(input);
+        self.data_path = ::std::option::Option::Some(input);
         self
     }
     /// <p>The data path sort (data path value, direction) for the pivot table sort by options.</p>
-    pub fn set_data_path(mut self, input: std::option::Option<crate::types::DataPathSort>) -> Self {
+    pub fn set_data_path(
+        mut self,
+        input: ::std::option::Option<crate::types::DataPathSort>,
+    ) -> Self {
         self.data_path = input;
         self
     }

@@ -51,13 +51,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum CreateAccountFailureReason {
     #[allow(missing_docs)] // documentation missing in model
@@ -93,7 +93,7 @@ pub enum CreateAccountFailureReason {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for CreateAccountFailureReason {
+impl ::std::convert::From<&str> for CreateAccountFailureReason {
     fn from(s: &str) -> Self {
         match s {
             "ACCOUNT_LIMIT_EXCEEDED" => CreateAccountFailureReason::AccountLimitExceeded,
@@ -125,11 +125,11 @@ impl std::convert::From<&str> for CreateAccountFailureReason {
         }
     }
 }
-impl std::str::FromStr for CreateAccountFailureReason {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for CreateAccountFailureReason {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CreateAccountFailureReason::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(CreateAccountFailureReason::from(s))
     }
 }
 impl CreateAccountFailureReason {
@@ -183,7 +183,7 @@ impl CreateAccountFailureReason {
         ]
     }
 }
-impl AsRef<str> for CreateAccountFailureReason {
+impl ::std::convert::AsRef<str> for CreateAccountFailureReason {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

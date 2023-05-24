@@ -2,7 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_api_http_error(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::get_api::GetApiOutput,
@@ -15,7 +15,7 @@ pub fn de_get_api_http_error(
         _response_body,
     )
     .map_err(crate::operation::get_api::GetApiError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
+    generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
@@ -62,7 +62,7 @@ pub fn de_get_api_http_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_api_http_response_with_props(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::get_api::GetApiOutput,
@@ -74,7 +74,7 @@ pub fn de_get_api_http_response_with_props(
         output = crate::protocol_serde::shape_get_api::de_get_api(_response_body, output)
             .map_err(crate::operation::get_api::GetApiError::unhandled)?;
         output._set_request_id(
-            aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
+            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
         );
         output.build()
     })
@@ -85,21 +85,21 @@ pub(crate) fn de_get_api(
     mut builder: crate::operation::get_api::builders::GetApiOutputBuilder,
 ) -> Result<
     crate::operation::get_api::builders::GetApiOutputBuilder,
-    aws_smithy_json::deserialize::error::DeserializeError,
+    ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =
-        aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
+        ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
             .peekable();
     let tokens = &mut tokens_owned;
-    aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
-            Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+            Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "apiEndpoint" => {
                         builder = builder.set_api_endpoint(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -108,14 +108,14 @@ pub(crate) fn de_get_api(
                     }
                     "apiGatewayManaged" => {
                         builder = builder.set_api_gateway_managed(
-                            aws_smithy_json::deserialize::token::expect_bool_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_bool_or_null(
                                 tokens.next(),
                             )?,
                         );
                     }
                     "apiId" => {
                         builder = builder.set_api_id(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -124,7 +124,7 @@ pub(crate) fn de_get_api(
                     }
                     "apiKeySelectionExpression" => {
                         builder = builder.set_api_key_selection_expression(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -138,15 +138,15 @@ pub(crate) fn de_get_api(
                     }
                     "createdDate" => {
                         builder = builder.set_created_date(
-                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),
-                                aws_smithy_types::date_time::Format::DateTimeWithOffset,
+                                ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
                             )?,
                         );
                     }
                     "description" => {
                         builder = builder.set_description(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -155,14 +155,14 @@ pub(crate) fn de_get_api(
                     }
                     "disableExecuteApiEndpoint" => {
                         builder = builder.set_disable_execute_api_endpoint(
-                            aws_smithy_json::deserialize::token::expect_bool_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_bool_or_null(
                                 tokens.next(),
                             )?,
                         );
                     }
                     "disableSchemaValidation" => {
                         builder = builder.set_disable_schema_validation(
-                            aws_smithy_json::deserialize::token::expect_bool_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_bool_or_null(
                                 tokens.next(),
                             )?,
                         );
@@ -176,7 +176,7 @@ pub(crate) fn de_get_api(
                     }
                     "name" => {
                         builder = builder.set_name(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -185,7 +185,7 @@ pub(crate) fn de_get_api(
                     }
                     "protocolType" => {
                         builder = builder.set_protocol_type(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| {
@@ -197,7 +197,7 @@ pub(crate) fn de_get_api(
                     }
                     "routeSelectionExpression" => {
                         builder = builder.set_route_selection_expression(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -210,7 +210,7 @@ pub(crate) fn de_get_api(
                     }
                     "version" => {
                         builder = builder.set_version(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -224,12 +224,12 @@ pub(crate) fn de_get_api(
                             )?,
                         );
                     }
-                    _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }
             other => {
                 return Err(
-                    aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                         "expected object key or end object, found: {:?}",
                         other
                     )),
@@ -239,7 +239,7 @@ pub(crate) fn de_get_api(
     }
     if tokens.next().is_some() {
         return Err(
-            aws_smithy_json::deserialize::error::DeserializeError::custom(
+            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
                 "found more JSON tokens after completing parsing",
             ),
         );

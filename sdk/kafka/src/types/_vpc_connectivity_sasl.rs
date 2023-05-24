@@ -2,22 +2,22 @@
 
 /// <p>Details for SASL client authentication for VPC connectivity.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VpcConnectivitySasl {
     /// <p>Details for SASL/SCRAM client authentication for VPC connectivity.</p>
     #[doc(hidden)]
-    pub scram: std::option::Option<crate::types::VpcConnectivityScram>,
+    pub scram: ::std::option::Option<crate::types::VpcConnectivityScram>,
     /// <p>Details for SASL/IAM client authentication for VPC connectivity.</p>
     #[doc(hidden)]
-    pub iam: std::option::Option<crate::types::VpcConnectivityIam>,
+    pub iam: ::std::option::Option<crate::types::VpcConnectivityIam>,
 }
 impl VpcConnectivitySasl {
     /// <p>Details for SASL/SCRAM client authentication for VPC connectivity.</p>
-    pub fn scram(&self) -> std::option::Option<&crate::types::VpcConnectivityScram> {
+    pub fn scram(&self) -> ::std::option::Option<&crate::types::VpcConnectivityScram> {
         self.scram.as_ref()
     }
     /// <p>Details for SASL/IAM client authentication for VPC connectivity.</p>
-    pub fn iam(&self) -> std::option::Option<&crate::types::VpcConnectivityIam> {
+    pub fn iam(&self) -> ::std::option::Option<&crate::types::VpcConnectivityIam> {
         self.iam.as_ref()
     }
 }
@@ -30,32 +30,37 @@ impl VpcConnectivitySasl {
 
 /// A builder for [`VpcConnectivitySasl`](crate::types::VpcConnectivitySasl).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VpcConnectivitySaslBuilder {
-    pub(crate) scram: std::option::Option<crate::types::VpcConnectivityScram>,
-    pub(crate) iam: std::option::Option<crate::types::VpcConnectivityIam>,
+    pub(crate) scram: ::std::option::Option<crate::types::VpcConnectivityScram>,
+    pub(crate) iam: ::std::option::Option<crate::types::VpcConnectivityIam>,
 }
 impl VpcConnectivitySaslBuilder {
     /// <p>Details for SASL/SCRAM client authentication for VPC connectivity.</p>
     pub fn scram(mut self, input: crate::types::VpcConnectivityScram) -> Self {
-        self.scram = Some(input);
+        self.scram = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details for SASL/SCRAM client authentication for VPC connectivity.</p>
     pub fn set_scram(
         mut self,
-        input: std::option::Option<crate::types::VpcConnectivityScram>,
+        input: ::std::option::Option<crate::types::VpcConnectivityScram>,
     ) -> Self {
         self.scram = input;
         self
     }
     /// <p>Details for SASL/IAM client authentication for VPC connectivity.</p>
     pub fn iam(mut self, input: crate::types::VpcConnectivityIam) -> Self {
-        self.iam = Some(input);
+        self.iam = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details for SASL/IAM client authentication for VPC connectivity.</p>
-    pub fn set_iam(mut self, input: std::option::Option<crate::types::VpcConnectivityIam>) -> Self {
+    pub fn set_iam(
+        mut self,
+        input: ::std::option::Option<crate::types::VpcConnectivityIam>,
+    ) -> Self {
         self.iam = input;
         self
     }

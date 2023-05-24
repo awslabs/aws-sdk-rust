@@ -2,24 +2,24 @@
 
 /// <p>Configuration for the rollout of OTA updates.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsJobExecutionsRolloutConfig {
     /// <p>The maximum number of OTA update job executions started per minute.</p>
     #[doc(hidden)]
-    pub maximum_per_minute: std::option::Option<i32>,
+    pub maximum_per_minute: ::std::option::Option<i32>,
     /// <p>The rate of increase for a job rollout. This parameter allows you to define an exponential rate increase for a job rollout.</p>
     #[doc(hidden)]
-    pub exponential_rate: std::option::Option<crate::types::AwsJobExponentialRolloutRate>,
+    pub exponential_rate: ::std::option::Option<crate::types::AwsJobExponentialRolloutRate>,
 }
 impl AwsJobExecutionsRolloutConfig {
     /// <p>The maximum number of OTA update job executions started per minute.</p>
-    pub fn maximum_per_minute(&self) -> std::option::Option<i32> {
+    pub fn maximum_per_minute(&self) -> ::std::option::Option<i32> {
         self.maximum_per_minute
     }
     /// <p>The rate of increase for a job rollout. This parameter allows you to define an exponential rate increase for a job rollout.</p>
     pub fn exponential_rate(
         &self,
-    ) -> std::option::Option<&crate::types::AwsJobExponentialRolloutRate> {
+    ) -> ::std::option::Option<&crate::types::AwsJobExponentialRolloutRate> {
         self.exponential_rate.as_ref()
     }
 }
@@ -32,31 +32,33 @@ impl AwsJobExecutionsRolloutConfig {
 
 /// A builder for [`AwsJobExecutionsRolloutConfig`](crate::types::AwsJobExecutionsRolloutConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsJobExecutionsRolloutConfigBuilder {
-    pub(crate) maximum_per_minute: std::option::Option<i32>,
-    pub(crate) exponential_rate: std::option::Option<crate::types::AwsJobExponentialRolloutRate>,
+    pub(crate) maximum_per_minute: ::std::option::Option<i32>,
+    pub(crate) exponential_rate: ::std::option::Option<crate::types::AwsJobExponentialRolloutRate>,
 }
 impl AwsJobExecutionsRolloutConfigBuilder {
     /// <p>The maximum number of OTA update job executions started per minute.</p>
     pub fn maximum_per_minute(mut self, input: i32) -> Self {
-        self.maximum_per_minute = Some(input);
+        self.maximum_per_minute = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum number of OTA update job executions started per minute.</p>
-    pub fn set_maximum_per_minute(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_maximum_per_minute(mut self, input: ::std::option::Option<i32>) -> Self {
         self.maximum_per_minute = input;
         self
     }
     /// <p>The rate of increase for a job rollout. This parameter allows you to define an exponential rate increase for a job rollout.</p>
     pub fn exponential_rate(mut self, input: crate::types::AwsJobExponentialRolloutRate) -> Self {
-        self.exponential_rate = Some(input);
+        self.exponential_rate = ::std::option::Option::Some(input);
         self
     }
     /// <p>The rate of increase for a job rollout. This parameter allows you to define an exponential rate increase for a job rollout.</p>
     pub fn set_exponential_rate(
         mut self,
-        input: std::option::Option<crate::types::AwsJobExponentialRolloutRate>,
+        input: ::std::option::Option<crate::types::AwsJobExponentialRolloutRate>,
     ) -> Self {
         self.exponential_rate = input;
         self

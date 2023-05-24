@@ -38,13 +38,13 @@
 /// Ignore this setting unless Style Passthrough (StylePassthrough) is set to Enabled and Font color (FontColor) set to Black, Yellow, Red, Green, Blue, or Hex. Use Apply font color (ApplyFontColor) for additional font color controls. When you choose White text only (WHITE_TEXT_ONLY), or leave blank, your font color setting only applies to white text in your input captions. For example, if your font color setting is Yellow, and your input captions have red and white text, your output captions will have red and yellow text. When you choose ALL_TEXT, your font color setting applies to all of your output captions text.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum DvbSubtitleApplyFontColor {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum DvbSubtitleApplyFontColor {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for DvbSubtitleApplyFontColor {
+impl ::std::convert::From<&str> for DvbSubtitleApplyFontColor {
     fn from(s: &str) -> Self {
         match s {
             "ALL_TEXT" => DvbSubtitleApplyFontColor::AllText,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for DvbSubtitleApplyFontColor {
         }
     }
 }
-impl std::str::FromStr for DvbSubtitleApplyFontColor {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for DvbSubtitleApplyFontColor {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DvbSubtitleApplyFontColor::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(DvbSubtitleApplyFontColor::from(s))
     }
 }
 impl DvbSubtitleApplyFontColor {
@@ -86,7 +86,7 @@ impl DvbSubtitleApplyFontColor {
         &["ALL_TEXT", "WHITE_TEXT_ONLY"]
     }
 }
-impl AsRef<str> for DvbSubtitleApplyFontColor {
+impl ::std::convert::AsRef<str> for DvbSubtitleApplyFontColor {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -2,15 +2,18 @@
 
 /// <p>Contains information about one or more notification actions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AlarmNotification {
     /// <p>Contains the notification settings of an alarm model. The settings apply to all alarms that were created based on this alarm model.</p>
     #[doc(hidden)]
-    pub notification_actions: std::option::Option<std::vec::Vec<crate::types::NotificationAction>>,
+    pub notification_actions:
+        ::std::option::Option<::std::vec::Vec<crate::types::NotificationAction>>,
 }
 impl AlarmNotification {
     /// <p>Contains the notification settings of an alarm model. The settings apply to all alarms that were created based on this alarm model.</p>
-    pub fn notification_actions(&self) -> std::option::Option<&[crate::types::NotificationAction]> {
+    pub fn notification_actions(
+        &self,
+    ) -> ::std::option::Option<&[crate::types::NotificationAction]> {
         self.notification_actions.as_deref()
     }
 }
@@ -23,10 +26,12 @@ impl AlarmNotification {
 
 /// A builder for [`AlarmNotification`](crate::types::AlarmNotification).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AlarmNotificationBuilder {
     pub(crate) notification_actions:
-        std::option::Option<std::vec::Vec<crate::types::NotificationAction>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::NotificationAction>>,
 }
 impl AlarmNotificationBuilder {
     /// Appends an item to `notification_actions`.
@@ -37,13 +42,13 @@ impl AlarmNotificationBuilder {
     pub fn notification_actions(mut self, input: crate::types::NotificationAction) -> Self {
         let mut v = self.notification_actions.unwrap_or_default();
         v.push(input);
-        self.notification_actions = Some(v);
+        self.notification_actions = ::std::option::Option::Some(v);
         self
     }
     /// <p>Contains the notification settings of an alarm model. The settings apply to all alarms that were created based on this alarm model.</p>
     pub fn set_notification_actions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::NotificationAction>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::NotificationAction>>,
     ) -> Self {
         self.notification_actions = input;
         self

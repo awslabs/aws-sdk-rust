@@ -3,11 +3,11 @@
 /// <p>A collection of app instances that run the same executable app code and have the same launch options and commands.</p>
 /// <p>For more information about domains, see <a href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html#what-is_key-concepts_domains">Key concepts: Domains</a> in the <i>SimSpace Weaver User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Domain {
     /// <p>The name of the domain.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of lifecycle management for apps in the domain. Indicates whether apps in this domain are <i>managed</i> (SimSpace Weaver starts and stops the apps) or <i>unmanaged</i> (you must start and stop the apps).</p>
     /// <p class="title"> <b>Lifecycle types</b> </p>
     /// <ul>
@@ -16,11 +16,11 @@ pub struct Domain {
     /// <li> <p> <code>ByRequest</code> – Unmanaged: You use the <code>StartApp</code> API to start the apps and use the <code>StopApp</code> API to stop the apps.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub lifecycle: std::option::Option<crate::types::LifecycleManagementStrategy>,
+    pub lifecycle: ::std::option::Option<crate::types::LifecycleManagementStrategy>,
 }
 impl Domain {
     /// <p>The name of the domain.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The type of lifecycle management for apps in the domain. Indicates whether apps in this domain are <i>managed</i> (SimSpace Weaver starts and stops the apps) or <i>unmanaged</i> (you must start and stop the apps).</p>
@@ -30,7 +30,7 @@ impl Domain {
     /// <li> <p> <code>BySpatialSubdivision</code> – Managed: SimSpace Weaver starts one app for each spatial partition.</p> </li>
     /// <li> <p> <code>ByRequest</code> – Unmanaged: You use the <code>StartApp</code> API to start the apps and use the <code>StopApp</code> API to stop the apps.</p> </li>
     /// </ul>
-    pub fn lifecycle(&self) -> std::option::Option<&crate::types::LifecycleManagementStrategy> {
+    pub fn lifecycle(&self) -> ::std::option::Option<&crate::types::LifecycleManagementStrategy> {
         self.lifecycle.as_ref()
     }
 }
@@ -43,19 +43,21 @@ impl Domain {
 
 /// A builder for [`Domain`](crate::types::Domain).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DomainBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) lifecycle: std::option::Option<crate::types::LifecycleManagementStrategy>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) lifecycle: ::std::option::Option<crate::types::LifecycleManagementStrategy>,
 }
 impl DomainBuilder {
     /// <p>The name of the domain.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the domain.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
@@ -67,7 +69,7 @@ impl DomainBuilder {
     /// <li> <p> <code>ByRequest</code> – Unmanaged: You use the <code>StartApp</code> API to start the apps and use the <code>StopApp</code> API to stop the apps.</p> </li>
     /// </ul>
     pub fn lifecycle(mut self, input: crate::types::LifecycleManagementStrategy) -> Self {
-        self.lifecycle = Some(input);
+        self.lifecycle = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of lifecycle management for apps in the domain. Indicates whether apps in this domain are <i>managed</i> (SimSpace Weaver starts and stops the apps) or <i>unmanaged</i> (you must start and stop the apps).</p>
@@ -79,7 +81,7 @@ impl DomainBuilder {
     /// </ul>
     pub fn set_lifecycle(
         mut self,
-        input: std::option::Option<crate::types::LifecycleManagementStrategy>,
+        input: ::std::option::Option<crate::types::LifecycleManagementStrategy>,
     ) -> Self {
         self.lifecycle = input;
         self

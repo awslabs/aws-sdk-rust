@@ -2,15 +2,15 @@
 
 /// <p>Contains the client response parameters for the connection when OAuth is specified as the authorization type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConnectionOAuthClientResponseParameters {
     /// <p>The client ID associated with the response to the connection request.</p>
     #[doc(hidden)]
-    pub client_id: std::option::Option<std::string::String>,
+    pub client_id: ::std::option::Option<::std::string::String>,
 }
 impl ConnectionOAuthClientResponseParameters {
     /// <p>The client ID associated with the response to the connection request.</p>
-    pub fn client_id(&self) -> std::option::Option<&str> {
+    pub fn client_id(&self) -> ::std::option::Option<&str> {
         self.client_id.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl ConnectionOAuthClientResponseParameters {
 
 /// A builder for [`ConnectionOAuthClientResponseParameters`](crate::types::ConnectionOAuthClientResponseParameters).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ConnectionOAuthClientResponseParametersBuilder {
-    pub(crate) client_id: std::option::Option<std::string::String>,
+    pub(crate) client_id: ::std::option::Option<::std::string::String>,
 }
 impl ConnectionOAuthClientResponseParametersBuilder {
     /// <p>The client ID associated with the response to the connection request.</p>
-    pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.client_id = Some(input.into());
+    pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.client_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The client ID associated with the response to the connection request.</p>
-    pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_id = input;
         self
     }

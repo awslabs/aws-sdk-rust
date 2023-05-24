@@ -2,20 +2,20 @@
 
 /// <p>Represents the output of a <code>PollForThirdPartyJobs</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PollForThirdPartyJobsOutput {
     /// <p>Information about the jobs to take action on.</p>
     #[doc(hidden)]
-    pub jobs: std::option::Option<std::vec::Vec<crate::types::ThirdPartyJob>>,
+    pub jobs: ::std::option::Option<::std::vec::Vec<crate::types::ThirdPartyJob>>,
     _request_id: Option<String>,
 }
 impl PollForThirdPartyJobsOutput {
     /// <p>Information about the jobs to take action on.</p>
-    pub fn jobs(&self) -> std::option::Option<&[crate::types::ThirdPartyJob]> {
+    pub fn jobs(&self) -> ::std::option::Option<&[crate::types::ThirdPartyJob]> {
         self.jobs.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for PollForThirdPartyJobsOutput {
+impl ::aws_http::request_id::RequestId for PollForThirdPartyJobsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -31,9 +31,11 @@ impl PollForThirdPartyJobsOutput {
 
 /// A builder for [`PollForThirdPartyJobsOutput`](crate::operation::poll_for_third_party_jobs::PollForThirdPartyJobsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PollForThirdPartyJobsOutputBuilder {
-    pub(crate) jobs: std::option::Option<std::vec::Vec<crate::types::ThirdPartyJob>>,
+    pub(crate) jobs: ::std::option::Option<::std::vec::Vec<crate::types::ThirdPartyJob>>,
     _request_id: Option<String>,
 }
 impl PollForThirdPartyJobsOutputBuilder {
@@ -45,13 +47,13 @@ impl PollForThirdPartyJobsOutputBuilder {
     pub fn jobs(mut self, input: crate::types::ThirdPartyJob) -> Self {
         let mut v = self.jobs.unwrap_or_default();
         v.push(input);
-        self.jobs = Some(v);
+        self.jobs = ::std::option::Option::Some(v);
         self
     }
     /// <p>Information about the jobs to take action on.</p>
     pub fn set_jobs(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ThirdPartyJob>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ThirdPartyJob>>,
     ) -> Self {
         self.jobs = input;
         self

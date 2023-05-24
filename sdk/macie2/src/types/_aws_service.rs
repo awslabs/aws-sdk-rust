@@ -2,15 +2,15 @@
 
 /// <p>Provides information about an Amazon Web Service that performed an action on an affected resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsService {
     /// <p>The name of the Amazon Web Service that performed the action.</p>
     #[doc(hidden)]
-    pub invoked_by: std::option::Option<std::string::String>,
+    pub invoked_by: ::std::option::Option<::std::string::String>,
 }
 impl AwsService {
     /// <p>The name of the Amazon Web Service that performed the action.</p>
-    pub fn invoked_by(&self) -> std::option::Option<&str> {
+    pub fn invoked_by(&self) -> ::std::option::Option<&str> {
         self.invoked_by.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl AwsService {
 
 /// A builder for [`AwsService`](crate::types::AwsService).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsServiceBuilder {
-    pub(crate) invoked_by: std::option::Option<std::string::String>,
+    pub(crate) invoked_by: ::std::option::Option<::std::string::String>,
 }
 impl AwsServiceBuilder {
     /// <p>The name of the Amazon Web Service that performed the action.</p>
-    pub fn invoked_by(mut self, input: impl Into<std::string::String>) -> Self {
-        self.invoked_by = Some(input.into());
+    pub fn invoked_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.invoked_by = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Amazon Web Service that performed the action.</p>
-    pub fn set_invoked_by(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_invoked_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.invoked_by = input;
         self
     }

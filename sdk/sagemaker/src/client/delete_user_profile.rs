@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteUserProfile`](crate::operation::delete_user_profile::builders::DeleteUserProfileFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_id(impl Into<String>)`](crate::operation::delete_user_profile::builders::DeleteUserProfileFluentBuilder::domain_id) / [`set_domain_id(Option<String>)`](crate::operation::delete_user_profile::builders::DeleteUserProfileFluentBuilder::set_domain_id): <p>The domain ID.</p>
-    ///   - [`user_profile_name(impl Into<String>)`](crate::operation::delete_user_profile::builders::DeleteUserProfileFluentBuilder::user_profile_name) / [`set_user_profile_name(Option<String>)`](crate::operation::delete_user_profile::builders::DeleteUserProfileFluentBuilder::set_user_profile_name): <p>The user profile name.</p>
+    ///   - [`domain_id(impl ::std::convert::Into<String>)`](crate::operation::delete_user_profile::builders::DeleteUserProfileFluentBuilder::domain_id) / [`set_domain_id(Option<String>)`](crate::operation::delete_user_profile::builders::DeleteUserProfileFluentBuilder::set_domain_id): <p>The domain ID.</p>
+    ///   - [`user_profile_name(impl ::std::convert::Into<String>)`](crate::operation::delete_user_profile::builders::DeleteUserProfileFluentBuilder::user_profile_name) / [`set_user_profile_name(Option<String>)`](crate::operation::delete_user_profile::builders::DeleteUserProfileFluentBuilder::set_user_profile_name): <p>The user profile name.</p>
     /// - On success, responds with [`DeleteUserProfileOutput`](crate::operation::delete_user_profile::DeleteUserProfileOutput)
     /// - On failure, responds with [`SdkError<DeleteUserProfileError>`](crate::operation::delete_user_profile::DeleteUserProfileError)
     pub fn delete_user_profile(

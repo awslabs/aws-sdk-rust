@@ -2,7 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_open_id_connect_provider_http_error(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::get_open_id_connect_provider::GetOpenIdConnectProviderOutput,
@@ -17,7 +17,7 @@ pub fn de_get_open_id_connect_provider_http_error(
     .map_err(
         crate::operation::get_open_id_connect_provider::GetOpenIDConnectProviderError::unhandled,
     )?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
+    generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -81,7 +81,7 @@ pub fn de_get_open_id_connect_provider_http_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_open_id_connect_provider_http_response_with_props(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::get_open_id_connect_provider::GetOpenIdConnectProviderOutput,
@@ -92,7 +92,7 @@ pub fn de_get_open_id_connect_provider_http_response_with_props(
         let mut output = crate::operation::get_open_id_connect_provider::builders::GetOpenIdConnectProviderOutputBuilder::default();
         output = crate::protocol_serde::shape_get_open_id_connect_provider::de_get_open_id_connect_provider(_response_body, output).map_err(crate::operation::get_open_id_connect_provider::GetOpenIDConnectProviderError::unhandled)?;
         output._set_request_id(
-            aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
+            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
         );
         output.build()
     })
@@ -104,16 +104,16 @@ pub fn de_get_open_id_connect_provider(
     mut builder: crate::operation::get_open_id_connect_provider::builders::GetOpenIdConnectProviderOutputBuilder,
 ) -> Result<
     crate::operation::get_open_id_connect_provider::builders::GetOpenIdConnectProviderOutputBuilder,
-    aws_smithy_xml::decode::XmlDecodeError,
+    ::aws_smithy_xml::decode::XmlDecodeError,
 > {
-    let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
+    let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("GetOpenIDConnectProviderResponse")) {
-        return Err(aws_smithy_xml::decode::XmlDecodeError::custom(format!(
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected GetOpenIDConnectProviderResponse got {:?}",
             start_el
         )));
@@ -121,7 +121,7 @@ pub fn de_get_open_id_connect_provider(
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("GetOpenIDConnectProviderResult")) {
-            return Err(aws_smithy_xml::decode::XmlDecodeError::custom(format!(
+            return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
                 "invalid result, expected GetOpenIDConnectProviderResult got {:?}",
                 start_el
             )));
@@ -131,8 +131,8 @@ pub fn de_get_open_id_connect_provider(
             s if s.matches("Url") /* Url com.amazonaws.iam.synthetic#GetOpenIDConnectProviderOutput$Url */ =>  {
                 let var_1 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -164,11 +164,11 @@ pub fn de_get_open_id_connect_provider(
             s if s.matches("CreateDate") /* CreateDate com.amazonaws.iam.synthetic#GetOpenIDConnectProviderOutput$CreateDate */ =>  {
                 let var_4 =
                     Some(
-                        aws_smithy_types::DateTime::from_str(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::date_time::Format::DateTimeWithOffset
+                        ::aws_smithy_types::DateTime::from_str(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            , ::aws_smithy_types::date_time::Format::DateTimeWithOffset
                         )
-                        .map_err(|_|aws_smithy_xml::decode::XmlDecodeError::custom("expected (timestamp: `com.amazonaws.iam#dateType`)"))
+                        .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (timestamp: `com.amazonaws.iam#dateType`)"))
                         ?
                     )
                 ;
@@ -189,7 +189,7 @@ pub fn de_get_open_id_connect_provider(
         }
         }
     } else {
-        return Err(aws_smithy_xml::decode::XmlDecodeError::custom(
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(
             "expected GetOpenIDConnectProviderResult tag",
         ));
     };

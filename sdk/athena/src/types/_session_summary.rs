@@ -2,43 +2,43 @@
 
 /// <p>Contains summary information about a session.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SessionSummary {
     /// <p>The session ID.</p>
     #[doc(hidden)]
-    pub session_id: std::option::Option<std::string::String>,
+    pub session_id: ::std::option::Option<::std::string::String>,
     /// <p>The session description.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The engine version used by the session (for example, <code>PySpark engine version 3</code>).</p>
     #[doc(hidden)]
-    pub engine_version: std::option::Option<crate::types::EngineVersion>,
+    pub engine_version: ::std::option::Option<crate::types::EngineVersion>,
     /// <p>The notebook version.</p>
     #[doc(hidden)]
-    pub notebook_version: std::option::Option<std::string::String>,
+    pub notebook_version: ::std::option::Option<::std::string::String>,
     /// <p>Contains information about the session status.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::SessionStatus>,
+    pub status: ::std::option::Option<crate::types::SessionStatus>,
 }
 impl SessionSummary {
     /// <p>The session ID.</p>
-    pub fn session_id(&self) -> std::option::Option<&str> {
+    pub fn session_id(&self) -> ::std::option::Option<&str> {
         self.session_id.as_deref()
     }
     /// <p>The session description.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The engine version used by the session (for example, <code>PySpark engine version 3</code>).</p>
-    pub fn engine_version(&self) -> std::option::Option<&crate::types::EngineVersion> {
+    pub fn engine_version(&self) -> ::std::option::Option<&crate::types::EngineVersion> {
         self.engine_version.as_ref()
     }
     /// <p>The notebook version.</p>
-    pub fn notebook_version(&self) -> std::option::Option<&str> {
+    pub fn notebook_version(&self) -> ::std::option::Option<&str> {
         self.notebook_version.as_deref()
     }
     /// <p>Contains information about the session status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::SessionStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::SessionStatus> {
         self.status.as_ref()
     }
 }
@@ -51,65 +51,73 @@ impl SessionSummary {
 
 /// A builder for [`SessionSummary`](crate::types::SessionSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SessionSummaryBuilder {
-    pub(crate) session_id: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) engine_version: std::option::Option<crate::types::EngineVersion>,
-    pub(crate) notebook_version: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::SessionStatus>,
+    pub(crate) session_id: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) engine_version: ::std::option::Option<crate::types::EngineVersion>,
+    pub(crate) notebook_version: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::SessionStatus>,
 }
 impl SessionSummaryBuilder {
     /// <p>The session ID.</p>
-    pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.session_id = Some(input.into());
+    pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.session_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The session ID.</p>
-    pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.session_id = input;
         self
     }
     /// <p>The session description.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The session description.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>The engine version used by the session (for example, <code>PySpark engine version 3</code>).</p>
     pub fn engine_version(mut self, input: crate::types::EngineVersion) -> Self {
-        self.engine_version = Some(input);
+        self.engine_version = ::std::option::Option::Some(input);
         self
     }
     /// <p>The engine version used by the session (for example, <code>PySpark engine version 3</code>).</p>
     pub fn set_engine_version(
         mut self,
-        input: std::option::Option<crate::types::EngineVersion>,
+        input: ::std::option::Option<crate::types::EngineVersion>,
     ) -> Self {
         self.engine_version = input;
         self
     }
     /// <p>The notebook version.</p>
-    pub fn notebook_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.notebook_version = Some(input.into());
+    pub fn notebook_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.notebook_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The notebook version.</p>
-    pub fn set_notebook_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_notebook_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.notebook_version = input;
         self
     }
     /// <p>Contains information about the session status.</p>
     pub fn status(mut self, input: crate::types::SessionStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains information about the session status.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::SessionStatus>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::SessionStatus>) -> Self {
         self.status = input;
         self
     }

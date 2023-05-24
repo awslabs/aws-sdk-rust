@@ -2,22 +2,22 @@
 
 /// <p>For Amazon Chime SDK Voice Connector groups, the Amazon Chime SDK Voice Connectors to which you route inbound calls. Includes priority configuration settings. Limit: 3 VoiceConnectorItems per Voice Connector group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VoiceConnectorItem {
     /// <p>The Voice Connector ID.</p>
     #[doc(hidden)]
-    pub voice_connector_id: std::option::Option<std::string::String>,
+    pub voice_connector_id: ::std::option::Option<::std::string::String>,
     /// <p>The priority setting of a Voice Connector item. Calls are routed to hosts in priority order, with 1 as the highest priority. When hosts have equal priority, the system distributes calls among them based on their relative weight.</p>
     #[doc(hidden)]
-    pub priority: std::option::Option<i32>,
+    pub priority: ::std::option::Option<i32>,
 }
 impl VoiceConnectorItem {
     /// <p>The Voice Connector ID.</p>
-    pub fn voice_connector_id(&self) -> std::option::Option<&str> {
+    pub fn voice_connector_id(&self) -> ::std::option::Option<&str> {
         self.voice_connector_id.as_deref()
     }
     /// <p>The priority setting of a Voice Connector item. Calls are routed to hosts in priority order, with 1 as the highest priority. When hosts have equal priority, the system distributes calls among them based on their relative weight.</p>
-    pub fn priority(&self) -> std::option::Option<i32> {
+    pub fn priority(&self) -> ::std::option::Option<i32> {
         self.priority
     }
 }
@@ -30,32 +30,37 @@ impl VoiceConnectorItem {
 
 /// A builder for [`VoiceConnectorItem`](crate::types::VoiceConnectorItem).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VoiceConnectorItemBuilder {
-    pub(crate) voice_connector_id: std::option::Option<std::string::String>,
-    pub(crate) priority: std::option::Option<i32>,
+    pub(crate) voice_connector_id: ::std::option::Option<::std::string::String>,
+    pub(crate) priority: ::std::option::Option<i32>,
 }
 impl VoiceConnectorItemBuilder {
     /// <p>The Voice Connector ID.</p>
-    pub fn voice_connector_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.voice_connector_id = Some(input.into());
+    pub fn voice_connector_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.voice_connector_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Voice Connector ID.</p>
     pub fn set_voice_connector_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.voice_connector_id = input;
         self
     }
     /// <p>The priority setting of a Voice Connector item. Calls are routed to hosts in priority order, with 1 as the highest priority. When hosts have equal priority, the system distributes calls among them based on their relative weight.</p>
     pub fn priority(mut self, input: i32) -> Self {
-        self.priority = Some(input);
+        self.priority = ::std::option::Option::Some(input);
         self
     }
     /// <p>The priority setting of a Voice Connector item. Calls are routed to hosts in priority order, with 1 as the highest priority. When hosts have equal priority, the system distributes calls among them based on their relative weight.</p>
-    pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
         self.priority = input;
         self
     }

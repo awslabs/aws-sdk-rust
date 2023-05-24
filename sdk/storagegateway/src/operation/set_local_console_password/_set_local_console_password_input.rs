@@ -2,27 +2,27 @@
 
 /// <p>SetLocalConsolePasswordInput</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SetLocalConsolePasswordInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
-    pub gateway_arn: std::option::Option<std::string::String>,
+    pub gateway_arn: ::std::option::Option<::std::string::String>,
     /// <p>The password you want to set for your VM local console.</p>
     #[doc(hidden)]
-    pub local_console_password: std::option::Option<std::string::String>,
+    pub local_console_password: ::std::option::Option<::std::string::String>,
 }
 impl SetLocalConsolePasswordInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+    pub fn gateway_arn(&self) -> ::std::option::Option<&str> {
         self.gateway_arn.as_deref()
     }
     /// <p>The password you want to set for your VM local console.</p>
-    pub fn local_console_password(&self) -> std::option::Option<&str> {
+    pub fn local_console_password(&self) -> ::std::option::Option<&str> {
         self.local_console_password.as_deref()
     }
 }
-impl std::fmt::Debug for SetLocalConsolePasswordInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for SetLocalConsolePasswordInput {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SetLocalConsolePasswordInput");
         formatter.field("gateway_arn", &self.gateway_arn);
         formatter.field("local_console_password", &"*** Sensitive Data Redacted ***");
@@ -40,31 +40,34 @@ impl SetLocalConsolePasswordInput {
 
 /// A builder for [`SetLocalConsolePasswordInput`](crate::operation::set_local_console_password::SetLocalConsolePasswordInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct SetLocalConsolePasswordInputBuilder {
-    pub(crate) gateway_arn: std::option::Option<std::string::String>,
-    pub(crate) local_console_password: std::option::Option<std::string::String>,
+    pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) local_console_password: ::std::option::Option<::std::string::String>,
 }
 impl SetLocalConsolePasswordInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.gateway_arn = Some(input.into());
+    pub fn gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.gateway_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    pub fn set_gateway_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_gateway_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.gateway_arn = input;
         self
     }
     /// <p>The password you want to set for your VM local console.</p>
-    pub fn local_console_password(mut self, input: impl Into<std::string::String>) -> Self {
-        self.local_console_password = Some(input.into());
+    pub fn local_console_password(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.local_console_password = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The password you want to set for your VM local console.</p>
     pub fn set_local_console_password(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.local_console_password = input;
         self
@@ -72,11 +75,11 @@ impl SetLocalConsolePasswordInputBuilder {
     /// Consumes the builder and constructs a [`SetLocalConsolePasswordInput`](crate::operation::set_local_console_password::SetLocalConsolePasswordInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::set_local_console_password::SetLocalConsolePasswordInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::set_local_console_password::SetLocalConsolePasswordInput {
                 gateway_arn: self.gateway_arn,
                 local_console_password: self.local_console_password,
@@ -84,8 +87,8 @@ impl SetLocalConsolePasswordInputBuilder {
         )
     }
 }
-impl std::fmt::Debug for SetLocalConsolePasswordInputBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for SetLocalConsolePasswordInputBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SetLocalConsolePasswordInputBuilder");
         formatter.field("gateway_arn", &self.gateway_arn);
         formatter.field("local_console_password", &"*** Sensitive Data Redacted ***");

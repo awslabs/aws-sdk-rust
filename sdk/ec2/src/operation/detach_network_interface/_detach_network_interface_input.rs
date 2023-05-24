@@ -2,14 +2,14 @@
 
 /// <p>Contains the parameters for DetachNetworkInterface.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetachNetworkInterfaceInput {
     /// <p>The ID of the attachment.</p>
     #[doc(hidden)]
-    pub attachment_id: std::option::Option<std::string::String>,
+    pub attachment_id: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
-    pub dry_run: std::option::Option<bool>,
+    pub dry_run: ::std::option::Option<bool>,
     /// <p>Specifies whether to force a detachment.</p> <note>
     /// <ul>
     /// <li> <p>Use the <code>Force</code> parameter only as a last resort to detach a network interface from a failed instance. </p> </li>
@@ -18,15 +18,15 @@ pub struct DetachNetworkInterfaceInput {
     /// </ul>
     /// </note>
     #[doc(hidden)]
-    pub force: std::option::Option<bool>,
+    pub force: ::std::option::Option<bool>,
 }
 impl DetachNetworkInterfaceInput {
     /// <p>The ID of the attachment.</p>
-    pub fn attachment_id(&self) -> std::option::Option<&str> {
+    pub fn attachment_id(&self) -> ::std::option::Option<&str> {
         self.attachment_id.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn dry_run(&self) -> std::option::Option<bool> {
+    pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
     /// <p>Specifies whether to force a detachment.</p> <note>
@@ -36,7 +36,7 @@ impl DetachNetworkInterfaceInput {
     /// <li> <p>If you force the detachment of a network interface, the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">instance metadata</a> might not get updated. This means that the attributes associated with the detached network interface might still be visible. The instance metadata will get updated when you stop and start the instance.</p> </li>
     /// </ul>
     /// </note>
-    pub fn force(&self) -> std::option::Option<bool> {
+    pub fn force(&self) -> ::std::option::Option<bool> {
         self.force
     }
 }
@@ -51,30 +51,38 @@ impl DetachNetworkInterfaceInput {
 
 /// A builder for [`DetachNetworkInterfaceInput`](crate::operation::detach_network_interface::DetachNetworkInterfaceInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DetachNetworkInterfaceInputBuilder {
-    pub(crate) attachment_id: std::option::Option<std::string::String>,
-    pub(crate) dry_run: std::option::Option<bool>,
-    pub(crate) force: std::option::Option<bool>,
+    pub(crate) attachment_id: ::std::option::Option<::std::string::String>,
+    pub(crate) dry_run: ::std::option::Option<bool>,
+    pub(crate) force: ::std::option::Option<bool>,
 }
 impl DetachNetworkInterfaceInputBuilder {
     /// <p>The ID of the attachment.</p>
-    pub fn attachment_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.attachment_id = Some(input.into());
+    pub fn attachment_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.attachment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the attachment.</p>
-    pub fn set_attachment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_attachment_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.attachment_id = input;
         self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
-        self.dry_run = Some(input);
+        self.dry_run = ::std::option::Option::Some(input);
         self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
     }
@@ -86,7 +94,7 @@ impl DetachNetworkInterfaceInputBuilder {
     /// </ul>
     /// </note>
     pub fn force(mut self, input: bool) -> Self {
-        self.force = Some(input);
+        self.force = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether to force a detachment.</p> <note>
@@ -96,18 +104,18 @@ impl DetachNetworkInterfaceInputBuilder {
     /// <li> <p>If you force the detachment of a network interface, the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">instance metadata</a> might not get updated. This means that the attributes associated with the detached network interface might still be visible. The instance metadata will get updated when you stop and start the instance.</p> </li>
     /// </ul>
     /// </note>
-    pub fn set_force(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_force(mut self, input: ::std::option::Option<bool>) -> Self {
         self.force = input;
         self
     }
     /// Consumes the builder and constructs a [`DetachNetworkInterfaceInput`](crate::operation::detach_network_interface::DetachNetworkInterfaceInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::detach_network_interface::DetachNetworkInterfaceInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::detach_network_interface::DetachNetworkInterfaceInput {
                 attachment_id: self.attachment_id,
                 dry_run: self.dry_run,

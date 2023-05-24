@@ -2,7 +2,7 @@
 
 /// <p>The geographic extent of the Earth Observation job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum AreaOfInterest {
     /// <p>A GeoJSON object representing the geographic extent in the coordinate space.</p>
     AreaOfInterestGeometry(crate::types::AreaOfInterestGeometry),
@@ -22,11 +22,11 @@ impl AreaOfInterest {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_area_of_interest_geometry(
         &self,
-    ) -> std::result::Result<&crate::types::AreaOfInterestGeometry, &Self> {
+    ) -> ::std::result::Result<&crate::types::AreaOfInterestGeometry, &Self> {
         if let AreaOfInterest::AreaOfInterestGeometry(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`AreaOfInterestGeometry`](crate::types::AreaOfInterest::AreaOfInterestGeometry).

@@ -2,7 +2,7 @@
 
 /// <p>An object that contains the response from the <code>SendBulkTemplatedEmail</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BulkEmailDestinationStatus {
     /// <p>The status of a message sent using the <code>SendBulkTemplatedEmail</code> operation.</p>
     /// <p>Possible values for this parameter include:</p>
@@ -23,13 +23,13 @@ pub struct BulkEmailDestinationStatus {
     /// <li> <p> <code>Failed</code>: Amazon SES was unable to process your request. See the error message for additional information.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::BulkEmailStatus>,
+    pub status: ::std::option::Option<crate::types::BulkEmailStatus>,
     /// <p>A description of an error that prevented a message being sent using the <code>SendBulkTemplatedEmail</code> operation.</p>
     #[doc(hidden)]
-    pub error: std::option::Option<std::string::String>,
+    pub error: ::std::option::Option<::std::string::String>,
     /// <p>The unique message identifier returned from the <code>SendBulkTemplatedEmail</code> operation.</p>
     #[doc(hidden)]
-    pub message_id: std::option::Option<std::string::String>,
+    pub message_id: ::std::option::Option<::std::string::String>,
 }
 impl BulkEmailDestinationStatus {
     /// <p>The status of a message sent using the <code>SendBulkTemplatedEmail</code> operation.</p>
@@ -50,15 +50,15 @@ impl BulkEmailDestinationStatus {
     /// <li> <p> <code>TransientFailure</code>: Amazon SES was unable to process your request because of a temporary issue.</p> </li>
     /// <li> <p> <code>Failed</code>: Amazon SES was unable to process your request. See the error message for additional information.</p> </li>
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::types::BulkEmailStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::BulkEmailStatus> {
         self.status.as_ref()
     }
     /// <p>A description of an error that prevented a message being sent using the <code>SendBulkTemplatedEmail</code> operation.</p>
-    pub fn error(&self) -> std::option::Option<&str> {
+    pub fn error(&self) -> ::std::option::Option<&str> {
         self.error.as_deref()
     }
     /// <p>The unique message identifier returned from the <code>SendBulkTemplatedEmail</code> operation.</p>
-    pub fn message_id(&self) -> std::option::Option<&str> {
+    pub fn message_id(&self) -> ::std::option::Option<&str> {
         self.message_id.as_deref()
     }
 }
@@ -71,11 +71,13 @@ impl BulkEmailDestinationStatus {
 
 /// A builder for [`BulkEmailDestinationStatus`](crate::types::BulkEmailDestinationStatus).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BulkEmailDestinationStatusBuilder {
-    pub(crate) status: std::option::Option<crate::types::BulkEmailStatus>,
-    pub(crate) error: std::option::Option<std::string::String>,
-    pub(crate) message_id: std::option::Option<std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::BulkEmailStatus>,
+    pub(crate) error: ::std::option::Option<::std::string::String>,
+    pub(crate) message_id: ::std::option::Option<::std::string::String>,
 }
 impl BulkEmailDestinationStatusBuilder {
     /// <p>The status of a message sent using the <code>SendBulkTemplatedEmail</code> operation.</p>
@@ -97,7 +99,7 @@ impl BulkEmailDestinationStatusBuilder {
     /// <li> <p> <code>Failed</code>: Amazon SES was unable to process your request. See the error message for additional information.</p> </li>
     /// </ul>
     pub fn status(mut self, input: crate::types::BulkEmailStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of a message sent using the <code>SendBulkTemplatedEmail</code> operation.</p>
@@ -118,27 +120,30 @@ impl BulkEmailDestinationStatusBuilder {
     /// <li> <p> <code>TransientFailure</code>: Amazon SES was unable to process your request because of a temporary issue.</p> </li>
     /// <li> <p> <code>Failed</code>: Amazon SES was unable to process your request. See the error message for additional information.</p> </li>
     /// </ul>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::BulkEmailStatus>) -> Self {
+    pub fn set_status(
+        mut self,
+        input: ::std::option::Option<crate::types::BulkEmailStatus>,
+    ) -> Self {
         self.status = input;
         self
     }
     /// <p>A description of an error that prevented a message being sent using the <code>SendBulkTemplatedEmail</code> operation.</p>
-    pub fn error(mut self, input: impl Into<std::string::String>) -> Self {
-        self.error = Some(input.into());
+    pub fn error(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.error = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of an error that prevented a message being sent using the <code>SendBulkTemplatedEmail</code> operation.</p>
-    pub fn set_error(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_error(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error = input;
         self
     }
     /// <p>The unique message identifier returned from the <code>SendBulkTemplatedEmail</code> operation.</p>
-    pub fn message_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message_id = Some(input.into());
+    pub fn message_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique message identifier returned from the <code>SendBulkTemplatedEmail</code> operation.</p>
-    pub fn set_message_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message_id = input;
         self
     }

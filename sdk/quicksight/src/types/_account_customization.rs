@@ -2,22 +2,22 @@
 
 /// <p>The Amazon QuickSight customizations associated with your Amazon Web Services account or a QuickSight namespace in a specific Amazon Web Services Region.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccountCustomization {
     /// <p>The default theme for this Amazon QuickSight subscription.</p>
     #[doc(hidden)]
-    pub default_theme: std::option::Option<std::string::String>,
+    pub default_theme: ::std::option::Option<::std::string::String>,
     /// <p>The default email customization template.</p>
     #[doc(hidden)]
-    pub default_email_customization_template: std::option::Option<std::string::String>,
+    pub default_email_customization_template: ::std::option::Option<::std::string::String>,
 }
 impl AccountCustomization {
     /// <p>The default theme for this Amazon QuickSight subscription.</p>
-    pub fn default_theme(&self) -> std::option::Option<&str> {
+    pub fn default_theme(&self) -> ::std::option::Option<&str> {
         self.default_theme.as_deref()
     }
     /// <p>The default email customization template.</p>
-    pub fn default_email_customization_template(&self) -> std::option::Option<&str> {
+    pub fn default_email_customization_template(&self) -> ::std::option::Option<&str> {
         self.default_email_customization_template.as_deref()
     }
 }
@@ -30,34 +30,42 @@ impl AccountCustomization {
 
 /// A builder for [`AccountCustomization`](crate::types::AccountCustomization).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AccountCustomizationBuilder {
-    pub(crate) default_theme: std::option::Option<std::string::String>,
-    pub(crate) default_email_customization_template: std::option::Option<std::string::String>,
+    pub(crate) default_theme: ::std::option::Option<::std::string::String>,
+    pub(crate) default_email_customization_template: ::std::option::Option<::std::string::String>,
 }
 impl AccountCustomizationBuilder {
     /// <p>The default theme for this Amazon QuickSight subscription.</p>
-    pub fn default_theme(mut self, input: impl Into<std::string::String>) -> Self {
-        self.default_theme = Some(input.into());
+    pub fn default_theme(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.default_theme = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The default theme for this Amazon QuickSight subscription.</p>
-    pub fn set_default_theme(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_default_theme(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.default_theme = input;
         self
     }
     /// <p>The default email customization template.</p>
     pub fn default_email_customization_template(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.default_email_customization_template = Some(input.into());
+        self.default_email_customization_template = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The default email customization template.</p>
     pub fn set_default_email_customization_template(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.default_email_customization_template = input;
         self

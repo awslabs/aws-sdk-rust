@@ -57,13 +57,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum FailbackReplicationError {
     #[allow(missing_docs)] // documentation missing in model
@@ -111,7 +111,7 @@ pub enum FailbackReplicationError {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for FailbackReplicationError {
+impl ::std::convert::From<&str> for FailbackReplicationError {
     fn from(s: &str) -> Self {
         match s {
             "AGENT_NOT_SEEN" => FailbackReplicationError::AgentNotSeen,
@@ -171,11 +171,11 @@ impl std::convert::From<&str> for FailbackReplicationError {
         }
     }
 }
-impl std::str::FromStr for FailbackReplicationError {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for FailbackReplicationError {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FailbackReplicationError::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(FailbackReplicationError::from(s))
     }
 }
 impl FailbackReplicationError {
@@ -263,7 +263,7 @@ impl FailbackReplicationError {
         ]
     }
 }
-impl AsRef<str> for FailbackReplicationError {
+impl ::std::convert::AsRef<str> for FailbackReplicationError {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

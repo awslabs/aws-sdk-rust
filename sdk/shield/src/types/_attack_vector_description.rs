@@ -2,7 +2,7 @@
 
 /// <p>Describes the attack.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AttackVectorDescription {
     /// <p>The attack type. Valid values:</p>
     /// <ul>
@@ -26,7 +26,7 @@ pub struct AttackVectorDescription {
     /// <li> <p>MEMCACHED_REFLECTION</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub vector_type: std::option::Option<std::string::String>,
+    pub vector_type: ::std::option::Option<::std::string::String>,
 }
 impl AttackVectorDescription {
     /// <p>The attack type. Valid values:</p>
@@ -50,7 +50,7 @@ impl AttackVectorDescription {
     /// <li> <p>UDS_REFLECTION</p> </li>
     /// <li> <p>MEMCACHED_REFLECTION</p> </li>
     /// </ul>
-    pub fn vector_type(&self) -> std::option::Option<&str> {
+    pub fn vector_type(&self) -> ::std::option::Option<&str> {
         self.vector_type.as_deref()
     }
 }
@@ -63,9 +63,11 @@ impl AttackVectorDescription {
 
 /// A builder for [`AttackVectorDescription`](crate::types::AttackVectorDescription).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AttackVectorDescriptionBuilder {
-    pub(crate) vector_type: std::option::Option<std::string::String>,
+    pub(crate) vector_type: ::std::option::Option<::std::string::String>,
 }
 impl AttackVectorDescriptionBuilder {
     /// <p>The attack type. Valid values:</p>
@@ -89,8 +91,8 @@ impl AttackVectorDescriptionBuilder {
     /// <li> <p>UDS_REFLECTION</p> </li>
     /// <li> <p>MEMCACHED_REFLECTION</p> </li>
     /// </ul>
-    pub fn vector_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.vector_type = Some(input.into());
+    pub fn vector_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.vector_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The attack type. Valid values:</p>
@@ -114,7 +116,7 @@ impl AttackVectorDescriptionBuilder {
     /// <li> <p>UDS_REFLECTION</p> </li>
     /// <li> <p>MEMCACHED_REFLECTION</p> </li>
     /// </ul>
-    pub fn set_vector_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_vector_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vector_type = input;
         self
     }

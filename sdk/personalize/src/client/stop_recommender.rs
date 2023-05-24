@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopRecommender`](crate::operation::stop_recommender::builders::StopRecommenderFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`recommender_arn(impl Into<String>)`](crate::operation::stop_recommender::builders::StopRecommenderFluentBuilder::recommender_arn) / [`set_recommender_arn(Option<String>)`](crate::operation::stop_recommender::builders::StopRecommenderFluentBuilder::set_recommender_arn): <p>The Amazon Resource Name (ARN) of the recommender to stop.</p>
+    ///   - [`recommender_arn(impl ::std::convert::Into<String>)`](crate::operation::stop_recommender::builders::StopRecommenderFluentBuilder::recommender_arn) / [`set_recommender_arn(Option<String>)`](crate::operation::stop_recommender::builders::StopRecommenderFluentBuilder::set_recommender_arn): <p>The Amazon Resource Name (ARN) of the recommender to stop.</p>
     /// - On success, responds with [`StopRecommenderOutput`](crate::operation::stop_recommender::StopRecommenderOutput) with field(s):
     ///   - [`recommender_arn(Option<String>)`](crate::operation::stop_recommender::StopRecommenderOutput::recommender_arn): <p>The Amazon Resource Name (ARN) of the recommender you stopped.</p>
     /// - On failure, responds with [`SdkError<StopRecommenderError>`](crate::operation::stop_recommender::StopRecommenderError)

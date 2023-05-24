@@ -2,50 +2,52 @@
 
 /// <p>Information about the domain price associated with a TLD.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DomainPrice {
     /// <p>The name of the TLD for which the prices apply.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The price for domain registration with Route&nbsp;53.</p>
     #[doc(hidden)]
-    pub registration_price: std::option::Option<crate::types::PriceWithCurrency>,
+    pub registration_price: ::std::option::Option<crate::types::PriceWithCurrency>,
     /// <p>The price for transferring the domain registration to Route&nbsp;53.</p>
     #[doc(hidden)]
-    pub transfer_price: std::option::Option<crate::types::PriceWithCurrency>,
+    pub transfer_price: ::std::option::Option<crate::types::PriceWithCurrency>,
     /// <p>The price for renewing domain registration with Route&nbsp;53.</p>
     #[doc(hidden)]
-    pub renewal_price: std::option::Option<crate::types::PriceWithCurrency>,
+    pub renewal_price: ::std::option::Option<crate::types::PriceWithCurrency>,
     /// <p>The price for changing domain ownership.</p>
     #[doc(hidden)]
-    pub change_ownership_price: std::option::Option<crate::types::PriceWithCurrency>,
+    pub change_ownership_price: ::std::option::Option<crate::types::PriceWithCurrency>,
     /// <p>The price for restoring the domain with Route&nbsp;53.</p>
     #[doc(hidden)]
-    pub restoration_price: std::option::Option<crate::types::PriceWithCurrency>,
+    pub restoration_price: ::std::option::Option<crate::types::PriceWithCurrency>,
 }
 impl DomainPrice {
     /// <p>The name of the TLD for which the prices apply.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The price for domain registration with Route&nbsp;53.</p>
-    pub fn registration_price(&self) -> std::option::Option<&crate::types::PriceWithCurrency> {
+    pub fn registration_price(&self) -> ::std::option::Option<&crate::types::PriceWithCurrency> {
         self.registration_price.as_ref()
     }
     /// <p>The price for transferring the domain registration to Route&nbsp;53.</p>
-    pub fn transfer_price(&self) -> std::option::Option<&crate::types::PriceWithCurrency> {
+    pub fn transfer_price(&self) -> ::std::option::Option<&crate::types::PriceWithCurrency> {
         self.transfer_price.as_ref()
     }
     /// <p>The price for renewing domain registration with Route&nbsp;53.</p>
-    pub fn renewal_price(&self) -> std::option::Option<&crate::types::PriceWithCurrency> {
+    pub fn renewal_price(&self) -> ::std::option::Option<&crate::types::PriceWithCurrency> {
         self.renewal_price.as_ref()
     }
     /// <p>The price for changing domain ownership.</p>
-    pub fn change_ownership_price(&self) -> std::option::Option<&crate::types::PriceWithCurrency> {
+    pub fn change_ownership_price(
+        &self,
+    ) -> ::std::option::Option<&crate::types::PriceWithCurrency> {
         self.change_ownership_price.as_ref()
     }
     /// <p>The price for restoring the domain with Route&nbsp;53.</p>
-    pub fn restoration_price(&self) -> std::option::Option<&crate::types::PriceWithCurrency> {
+    pub fn restoration_price(&self) -> ::std::option::Option<&crate::types::PriceWithCurrency> {
         self.restoration_price.as_ref()
     }
 }
@@ -58,87 +60,89 @@ impl DomainPrice {
 
 /// A builder for [`DomainPrice`](crate::types::DomainPrice).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DomainPriceBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) registration_price: std::option::Option<crate::types::PriceWithCurrency>,
-    pub(crate) transfer_price: std::option::Option<crate::types::PriceWithCurrency>,
-    pub(crate) renewal_price: std::option::Option<crate::types::PriceWithCurrency>,
-    pub(crate) change_ownership_price: std::option::Option<crate::types::PriceWithCurrency>,
-    pub(crate) restoration_price: std::option::Option<crate::types::PriceWithCurrency>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) registration_price: ::std::option::Option<crate::types::PriceWithCurrency>,
+    pub(crate) transfer_price: ::std::option::Option<crate::types::PriceWithCurrency>,
+    pub(crate) renewal_price: ::std::option::Option<crate::types::PriceWithCurrency>,
+    pub(crate) change_ownership_price: ::std::option::Option<crate::types::PriceWithCurrency>,
+    pub(crate) restoration_price: ::std::option::Option<crate::types::PriceWithCurrency>,
 }
 impl DomainPriceBuilder {
     /// <p>The name of the TLD for which the prices apply.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the TLD for which the prices apply.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The price for domain registration with Route&nbsp;53.</p>
     pub fn registration_price(mut self, input: crate::types::PriceWithCurrency) -> Self {
-        self.registration_price = Some(input);
+        self.registration_price = ::std::option::Option::Some(input);
         self
     }
     /// <p>The price for domain registration with Route&nbsp;53.</p>
     pub fn set_registration_price(
         mut self,
-        input: std::option::Option<crate::types::PriceWithCurrency>,
+        input: ::std::option::Option<crate::types::PriceWithCurrency>,
     ) -> Self {
         self.registration_price = input;
         self
     }
     /// <p>The price for transferring the domain registration to Route&nbsp;53.</p>
     pub fn transfer_price(mut self, input: crate::types::PriceWithCurrency) -> Self {
-        self.transfer_price = Some(input);
+        self.transfer_price = ::std::option::Option::Some(input);
         self
     }
     /// <p>The price for transferring the domain registration to Route&nbsp;53.</p>
     pub fn set_transfer_price(
         mut self,
-        input: std::option::Option<crate::types::PriceWithCurrency>,
+        input: ::std::option::Option<crate::types::PriceWithCurrency>,
     ) -> Self {
         self.transfer_price = input;
         self
     }
     /// <p>The price for renewing domain registration with Route&nbsp;53.</p>
     pub fn renewal_price(mut self, input: crate::types::PriceWithCurrency) -> Self {
-        self.renewal_price = Some(input);
+        self.renewal_price = ::std::option::Option::Some(input);
         self
     }
     /// <p>The price for renewing domain registration with Route&nbsp;53.</p>
     pub fn set_renewal_price(
         mut self,
-        input: std::option::Option<crate::types::PriceWithCurrency>,
+        input: ::std::option::Option<crate::types::PriceWithCurrency>,
     ) -> Self {
         self.renewal_price = input;
         self
     }
     /// <p>The price for changing domain ownership.</p>
     pub fn change_ownership_price(mut self, input: crate::types::PriceWithCurrency) -> Self {
-        self.change_ownership_price = Some(input);
+        self.change_ownership_price = ::std::option::Option::Some(input);
         self
     }
     /// <p>The price for changing domain ownership.</p>
     pub fn set_change_ownership_price(
         mut self,
-        input: std::option::Option<crate::types::PriceWithCurrency>,
+        input: ::std::option::Option<crate::types::PriceWithCurrency>,
     ) -> Self {
         self.change_ownership_price = input;
         self
     }
     /// <p>The price for restoring the domain with Route&nbsp;53.</p>
     pub fn restoration_price(mut self, input: crate::types::PriceWithCurrency) -> Self {
-        self.restoration_price = Some(input);
+        self.restoration_price = ::std::option::Option::Some(input);
         self
     }
     /// <p>The price for restoring the domain with Route&nbsp;53.</p>
     pub fn set_restoration_price(
         mut self,
-        input: std::option::Option<crate::types::PriceWithCurrency>,
+        input: ::std::option::Option<crate::types::PriceWithCurrency>,
     ) -> Self {
         self.restoration_price = input;
         self

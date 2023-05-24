@@ -2,31 +2,32 @@
 
 /// <p>Request parameters to use when integrating with Amazon Cognito to authenticate users.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AuthenticateCognitoActionConfig {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Cognito user pool.</p>
     #[doc(hidden)]
-    pub user_pool_arn: std::option::Option<std::string::String>,
+    pub user_pool_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Cognito user pool client.</p>
     #[doc(hidden)]
-    pub user_pool_client_id: std::option::Option<std::string::String>,
+    pub user_pool_client_id: ::std::option::Option<::std::string::String>,
     /// <p>The domain prefix or fully-qualified domain name of the Amazon Cognito user pool.</p>
     #[doc(hidden)]
-    pub user_pool_domain: std::option::Option<std::string::String>,
+    pub user_pool_domain: ::std::option::Option<::std::string::String>,
     /// <p>The name of the cookie used to maintain session information. The default is AWSELBAuthSessionCookie.</p>
     #[doc(hidden)]
-    pub session_cookie_name: std::option::Option<std::string::String>,
+    pub session_cookie_name: ::std::option::Option<::std::string::String>,
     /// <p>The set of user claims to be requested from the IdP. The default is <code>openid</code>.</p>
     /// <p>To verify which scope values your IdP supports and how to separate multiple values, see the documentation for your IdP.</p>
     #[doc(hidden)]
-    pub scope: std::option::Option<std::string::String>,
+    pub scope: ::std::option::Option<::std::string::String>,
     /// <p>The maximum duration of the authentication session, in seconds. The default is 604800 seconds (7 days).</p>
     #[doc(hidden)]
-    pub session_timeout: std::option::Option<i64>,
+    pub session_timeout: ::std::option::Option<i64>,
     /// <p>The query parameters (up to 10) to include in the redirect request to the authorization endpoint.</p>
     #[doc(hidden)]
-    pub authentication_request_extra_params:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub authentication_request_extra_params: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>The behavior if the user is not authenticated. The following are possible values:</p>
     /// <ul>
     /// <li> <p>deny<code></code> - Return an HTTP 401 Unauthorized error.</p> </li>
@@ -35,39 +36,40 @@ pub struct AuthenticateCognitoActionConfig {
     /// </ul>
     #[doc(hidden)]
     pub on_unauthenticated_request:
-        std::option::Option<crate::types::AuthenticateCognitoActionConditionalBehaviorEnum>,
+        ::std::option::Option<crate::types::AuthenticateCognitoActionConditionalBehaviorEnum>,
 }
 impl AuthenticateCognitoActionConfig {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Cognito user pool.</p>
-    pub fn user_pool_arn(&self) -> std::option::Option<&str> {
+    pub fn user_pool_arn(&self) -> ::std::option::Option<&str> {
         self.user_pool_arn.as_deref()
     }
     /// <p>The ID of the Amazon Cognito user pool client.</p>
-    pub fn user_pool_client_id(&self) -> std::option::Option<&str> {
+    pub fn user_pool_client_id(&self) -> ::std::option::Option<&str> {
         self.user_pool_client_id.as_deref()
     }
     /// <p>The domain prefix or fully-qualified domain name of the Amazon Cognito user pool.</p>
-    pub fn user_pool_domain(&self) -> std::option::Option<&str> {
+    pub fn user_pool_domain(&self) -> ::std::option::Option<&str> {
         self.user_pool_domain.as_deref()
     }
     /// <p>The name of the cookie used to maintain session information. The default is AWSELBAuthSessionCookie.</p>
-    pub fn session_cookie_name(&self) -> std::option::Option<&str> {
+    pub fn session_cookie_name(&self) -> ::std::option::Option<&str> {
         self.session_cookie_name.as_deref()
     }
     /// <p>The set of user claims to be requested from the IdP. The default is <code>openid</code>.</p>
     /// <p>To verify which scope values your IdP supports and how to separate multiple values, see the documentation for your IdP.</p>
-    pub fn scope(&self) -> std::option::Option<&str> {
+    pub fn scope(&self) -> ::std::option::Option<&str> {
         self.scope.as_deref()
     }
     /// <p>The maximum duration of the authentication session, in seconds. The default is 604800 seconds (7 days).</p>
-    pub fn session_timeout(&self) -> std::option::Option<i64> {
+    pub fn session_timeout(&self) -> ::std::option::Option<i64> {
         self.session_timeout
     }
     /// <p>The query parameters (up to 10) to include in the redirect request to the authorization endpoint.</p>
     pub fn authentication_request_extra_params(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.authentication_request_extra_params.as_ref()
     }
     /// <p>The behavior if the user is not authenticated. The following are possible values:</p>
@@ -78,7 +80,8 @@ impl AuthenticateCognitoActionConfig {
     /// </ul>
     pub fn on_unauthenticated_request(
         &self,
-    ) -> std::option::Option<&crate::types::AuthenticateCognitoActionConditionalBehaviorEnum> {
+    ) -> ::std::option::Option<&crate::types::AuthenticateCognitoActionConditionalBehaviorEnum>
+    {
         self.on_unauthenticated_request.as_ref()
     }
 }
@@ -91,85 +94,106 @@ impl AuthenticateCognitoActionConfig {
 
 /// A builder for [`AuthenticateCognitoActionConfig`](crate::types::AuthenticateCognitoActionConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AuthenticateCognitoActionConfigBuilder {
-    pub(crate) user_pool_arn: std::option::Option<std::string::String>,
-    pub(crate) user_pool_client_id: std::option::Option<std::string::String>,
-    pub(crate) user_pool_domain: std::option::Option<std::string::String>,
-    pub(crate) session_cookie_name: std::option::Option<std::string::String>,
-    pub(crate) scope: std::option::Option<std::string::String>,
-    pub(crate) session_timeout: std::option::Option<i64>,
-    pub(crate) authentication_request_extra_params:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) user_pool_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) user_pool_client_id: ::std::option::Option<::std::string::String>,
+    pub(crate) user_pool_domain: ::std::option::Option<::std::string::String>,
+    pub(crate) session_cookie_name: ::std::option::Option<::std::string::String>,
+    pub(crate) scope: ::std::option::Option<::std::string::String>,
+    pub(crate) session_timeout: ::std::option::Option<i64>,
+    pub(crate) authentication_request_extra_params: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     pub(crate) on_unauthenticated_request:
-        std::option::Option<crate::types::AuthenticateCognitoActionConditionalBehaviorEnum>,
+        ::std::option::Option<crate::types::AuthenticateCognitoActionConditionalBehaviorEnum>,
 }
 impl AuthenticateCognitoActionConfigBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Cognito user pool.</p>
-    pub fn user_pool_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.user_pool_arn = Some(input.into());
+    pub fn user_pool_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.user_pool_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Cognito user pool.</p>
-    pub fn set_user_pool_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_user_pool_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.user_pool_arn = input;
         self
     }
     /// <p>The ID of the Amazon Cognito user pool client.</p>
-    pub fn user_pool_client_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.user_pool_client_id = Some(input.into());
+    pub fn user_pool_client_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.user_pool_client_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Cognito user pool client.</p>
     pub fn set_user_pool_client_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.user_pool_client_id = input;
         self
     }
     /// <p>The domain prefix or fully-qualified domain name of the Amazon Cognito user pool.</p>
-    pub fn user_pool_domain(mut self, input: impl Into<std::string::String>) -> Self {
-        self.user_pool_domain = Some(input.into());
+    pub fn user_pool_domain(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.user_pool_domain = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The domain prefix or fully-qualified domain name of the Amazon Cognito user pool.</p>
-    pub fn set_user_pool_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_user_pool_domain(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.user_pool_domain = input;
         self
     }
     /// <p>The name of the cookie used to maintain session information. The default is AWSELBAuthSessionCookie.</p>
-    pub fn session_cookie_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.session_cookie_name = Some(input.into());
+    pub fn session_cookie_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.session_cookie_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the cookie used to maintain session information. The default is AWSELBAuthSessionCookie.</p>
     pub fn set_session_cookie_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.session_cookie_name = input;
         self
     }
     /// <p>The set of user claims to be requested from the IdP. The default is <code>openid</code>.</p>
     /// <p>To verify which scope values your IdP supports and how to separate multiple values, see the documentation for your IdP.</p>
-    pub fn scope(mut self, input: impl Into<std::string::String>) -> Self {
-        self.scope = Some(input.into());
+    pub fn scope(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.scope = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The set of user claims to be requested from the IdP. The default is <code>openid</code>.</p>
     /// <p>To verify which scope values your IdP supports and how to separate multiple values, see the documentation for your IdP.</p>
-    pub fn set_scope(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_scope(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.scope = input;
         self
     }
     /// <p>The maximum duration of the authentication session, in seconds. The default is 604800 seconds (7 days).</p>
     pub fn session_timeout(mut self, input: i64) -> Self {
-        self.session_timeout = Some(input);
+        self.session_timeout = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum duration of the authentication session, in seconds. The default is 604800 seconds (7 days).</p>
-    pub fn set_session_timeout(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_session_timeout(mut self, input: ::std::option::Option<i64>) -> Self {
         self.session_timeout = input;
         self
     }
@@ -180,19 +204,19 @@ impl AuthenticateCognitoActionConfigBuilder {
     /// <p>The query parameters (up to 10) to include in the redirect request to the authorization endpoint.</p>
     pub fn authentication_request_extra_params(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.authentication_request_extra_params.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.authentication_request_extra_params = Some(hash_map);
+        self.authentication_request_extra_params = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The query parameters (up to 10) to include in the redirect request to the authorization endpoint.</p>
     pub fn set_authentication_request_extra_params(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.authentication_request_extra_params = input;
@@ -208,7 +232,7 @@ impl AuthenticateCognitoActionConfigBuilder {
         mut self,
         input: crate::types::AuthenticateCognitoActionConditionalBehaviorEnum,
     ) -> Self {
-        self.on_unauthenticated_request = Some(input);
+        self.on_unauthenticated_request = ::std::option::Option::Some(input);
         self
     }
     /// <p>The behavior if the user is not authenticated. The following are possible values:</p>
@@ -219,7 +243,9 @@ impl AuthenticateCognitoActionConfigBuilder {
     /// </ul>
     pub fn set_on_unauthenticated_request(
         mut self,
-        input: std::option::Option<crate::types::AuthenticateCognitoActionConditionalBehaviorEnum>,
+        input: ::std::option::Option<
+            crate::types::AuthenticateCognitoActionConditionalBehaviorEnum,
+        >,
     ) -> Self {
         self.on_unauthenticated_request = input;
         self

@@ -2,51 +2,53 @@
 
 /// <p>The result of a <code><code>CreateOutboundCrossClusterSearchConnection</code></code> request. Contains the details of the newly created cross-cluster search connection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateOutboundCrossClusterSearchConnectionOutput {
     /// <p>Specifies the <code><code>DomainInformation</code></code> for the source Elasticsearch domain.</p>
     #[doc(hidden)]
-    pub source_domain_info: std::option::Option<crate::types::DomainInformation>,
+    pub source_domain_info: ::std::option::Option<crate::types::DomainInformation>,
     /// <p>Specifies the <code><code>DomainInformation</code></code> for the destination Elasticsearch domain.</p>
     #[doc(hidden)]
-    pub destination_domain_info: std::option::Option<crate::types::DomainInformation>,
+    pub destination_domain_info: ::std::option::Option<crate::types::DomainInformation>,
     /// <p>Specifies the connection alias provided during the create connection request.</p>
     #[doc(hidden)]
-    pub connection_alias: std::option::Option<std::string::String>,
+    pub connection_alias: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the <code><code>OutboundCrossClusterSearchConnectionStatus</code></code> for the newly created connection.</p>
     #[doc(hidden)]
     pub connection_status:
-        std::option::Option<crate::types::OutboundCrossClusterSearchConnectionStatus>,
+        ::std::option::Option<crate::types::OutboundCrossClusterSearchConnectionStatus>,
     /// <p>Unique id for the created outbound connection, which is used for subsequent operations on connection.</p>
     #[doc(hidden)]
-    pub cross_cluster_search_connection_id: std::option::Option<std::string::String>,
+    pub cross_cluster_search_connection_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateOutboundCrossClusterSearchConnectionOutput {
     /// <p>Specifies the <code><code>DomainInformation</code></code> for the source Elasticsearch domain.</p>
-    pub fn source_domain_info(&self) -> std::option::Option<&crate::types::DomainInformation> {
+    pub fn source_domain_info(&self) -> ::std::option::Option<&crate::types::DomainInformation> {
         self.source_domain_info.as_ref()
     }
     /// <p>Specifies the <code><code>DomainInformation</code></code> for the destination Elasticsearch domain.</p>
-    pub fn destination_domain_info(&self) -> std::option::Option<&crate::types::DomainInformation> {
+    pub fn destination_domain_info(
+        &self,
+    ) -> ::std::option::Option<&crate::types::DomainInformation> {
         self.destination_domain_info.as_ref()
     }
     /// <p>Specifies the connection alias provided during the create connection request.</p>
-    pub fn connection_alias(&self) -> std::option::Option<&str> {
+    pub fn connection_alias(&self) -> ::std::option::Option<&str> {
         self.connection_alias.as_deref()
     }
     /// <p>Specifies the <code><code>OutboundCrossClusterSearchConnectionStatus</code></code> for the newly created connection.</p>
     pub fn connection_status(
         &self,
-    ) -> std::option::Option<&crate::types::OutboundCrossClusterSearchConnectionStatus> {
+    ) -> ::std::option::Option<&crate::types::OutboundCrossClusterSearchConnectionStatus> {
         self.connection_status.as_ref()
     }
     /// <p>Unique id for the created outbound connection, which is used for subsequent operations on connection.</p>
-    pub fn cross_cluster_search_connection_id(&self) -> std::option::Option<&str> {
+    pub fn cross_cluster_search_connection_id(&self) -> ::std::option::Option<&str> {
         self.cross_cluster_search_connection_id.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for CreateOutboundCrossClusterSearchConnectionOutput {
+impl ::aws_http::request_id::RequestId for CreateOutboundCrossClusterSearchConnectionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -60,50 +62,58 @@ impl CreateOutboundCrossClusterSearchConnectionOutput {
 
 /// A builder for [`CreateOutboundCrossClusterSearchConnectionOutput`](crate::operation::create_outbound_cross_cluster_search_connection::CreateOutboundCrossClusterSearchConnectionOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateOutboundCrossClusterSearchConnectionOutputBuilder {
-    pub(crate) source_domain_info: std::option::Option<crate::types::DomainInformation>,
-    pub(crate) destination_domain_info: std::option::Option<crate::types::DomainInformation>,
-    pub(crate) connection_alias: std::option::Option<std::string::String>,
+    pub(crate) source_domain_info: ::std::option::Option<crate::types::DomainInformation>,
+    pub(crate) destination_domain_info: ::std::option::Option<crate::types::DomainInformation>,
+    pub(crate) connection_alias: ::std::option::Option<::std::string::String>,
     pub(crate) connection_status:
-        std::option::Option<crate::types::OutboundCrossClusterSearchConnectionStatus>,
-    pub(crate) cross_cluster_search_connection_id: std::option::Option<std::string::String>,
+        ::std::option::Option<crate::types::OutboundCrossClusterSearchConnectionStatus>,
+    pub(crate) cross_cluster_search_connection_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateOutboundCrossClusterSearchConnectionOutputBuilder {
     /// <p>Specifies the <code><code>DomainInformation</code></code> for the source Elasticsearch domain.</p>
     pub fn source_domain_info(mut self, input: crate::types::DomainInformation) -> Self {
-        self.source_domain_info = Some(input);
+        self.source_domain_info = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the <code><code>DomainInformation</code></code> for the source Elasticsearch domain.</p>
     pub fn set_source_domain_info(
         mut self,
-        input: std::option::Option<crate::types::DomainInformation>,
+        input: ::std::option::Option<crate::types::DomainInformation>,
     ) -> Self {
         self.source_domain_info = input;
         self
     }
     /// <p>Specifies the <code><code>DomainInformation</code></code> for the destination Elasticsearch domain.</p>
     pub fn destination_domain_info(mut self, input: crate::types::DomainInformation) -> Self {
-        self.destination_domain_info = Some(input);
+        self.destination_domain_info = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the <code><code>DomainInformation</code></code> for the destination Elasticsearch domain.</p>
     pub fn set_destination_domain_info(
         mut self,
-        input: std::option::Option<crate::types::DomainInformation>,
+        input: ::std::option::Option<crate::types::DomainInformation>,
     ) -> Self {
         self.destination_domain_info = input;
         self
     }
     /// <p>Specifies the connection alias provided during the create connection request.</p>
-    pub fn connection_alias(mut self, input: impl Into<std::string::String>) -> Self {
-        self.connection_alias = Some(input.into());
+    pub fn connection_alias(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.connection_alias = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the connection alias provided during the create connection request.</p>
-    pub fn set_connection_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_connection_alias(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.connection_alias = input;
         self
     }
@@ -112,13 +122,13 @@ impl CreateOutboundCrossClusterSearchConnectionOutputBuilder {
         mut self,
         input: crate::types::OutboundCrossClusterSearchConnectionStatus,
     ) -> Self {
-        self.connection_status = Some(input);
+        self.connection_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the <code><code>OutboundCrossClusterSearchConnectionStatus</code></code> for the newly created connection.</p>
     pub fn set_connection_status(
         mut self,
-        input: std::option::Option<crate::types::OutboundCrossClusterSearchConnectionStatus>,
+        input: ::std::option::Option<crate::types::OutboundCrossClusterSearchConnectionStatus>,
     ) -> Self {
         self.connection_status = input;
         self
@@ -126,15 +136,15 @@ impl CreateOutboundCrossClusterSearchConnectionOutputBuilder {
     /// <p>Unique id for the created outbound connection, which is used for subsequent operations on connection.</p>
     pub fn cross_cluster_search_connection_id(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.cross_cluster_search_connection_id = Some(input.into());
+        self.cross_cluster_search_connection_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Unique id for the created outbound connection, which is used for subsequent operations on connection.</p>
     pub fn set_cross_cluster_search_connection_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.cross_cluster_search_connection_id = input;
         self

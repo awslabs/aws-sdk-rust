@@ -2,22 +2,22 @@
 
 /// <p>A dimension name and value.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DimensionNameValue {
     /// <p>The name of the dimension.</p>
     #[doc(hidden)]
-    pub dimension_name: std::option::Option<std::string::String>,
+    pub dimension_name: ::std::option::Option<::std::string::String>,
     /// <p>The value of the dimension.</p>
     #[doc(hidden)]
-    pub dimension_value: std::option::Option<std::string::String>,
+    pub dimension_value: ::std::option::Option<::std::string::String>,
 }
 impl DimensionNameValue {
     /// <p>The name of the dimension.</p>
-    pub fn dimension_name(&self) -> std::option::Option<&str> {
+    pub fn dimension_name(&self) -> ::std::option::Option<&str> {
         self.dimension_name.as_deref()
     }
     /// <p>The value of the dimension.</p>
-    pub fn dimension_value(&self) -> std::option::Option<&str> {
+    pub fn dimension_value(&self) -> ::std::option::Option<&str> {
         self.dimension_value.as_deref()
     }
 }
@@ -30,29 +30,43 @@ impl DimensionNameValue {
 
 /// A builder for [`DimensionNameValue`](crate::types::DimensionNameValue).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DimensionNameValueBuilder {
-    pub(crate) dimension_name: std::option::Option<std::string::String>,
-    pub(crate) dimension_value: std::option::Option<std::string::String>,
+    pub(crate) dimension_name: ::std::option::Option<::std::string::String>,
+    pub(crate) dimension_value: ::std::option::Option<::std::string::String>,
 }
 impl DimensionNameValueBuilder {
     /// <p>The name of the dimension.</p>
-    pub fn dimension_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.dimension_name = Some(input.into());
+    pub fn dimension_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.dimension_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the dimension.</p>
-    pub fn set_dimension_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_dimension_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.dimension_name = input;
         self
     }
     /// <p>The value of the dimension.</p>
-    pub fn dimension_value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.dimension_value = Some(input.into());
+    pub fn dimension_value(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.dimension_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value of the dimension.</p>
-    pub fn set_dimension_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_dimension_value(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.dimension_value = input;
         self
     }

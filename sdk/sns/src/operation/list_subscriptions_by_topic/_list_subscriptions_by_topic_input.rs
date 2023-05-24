@@ -2,22 +2,22 @@
 
 /// <p>Input for ListSubscriptionsByTopic action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSubscriptionsByTopicInput {
     /// <p>The ARN of the topic for which you wish to find subscriptions.</p>
     #[doc(hidden)]
-    pub topic_arn: std::option::Option<std::string::String>,
+    pub topic_arn: ::std::option::Option<::std::string::String>,
     /// <p>Token returned by the previous <code>ListSubscriptionsByTopic</code> request.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListSubscriptionsByTopicInput {
     /// <p>The ARN of the topic for which you wish to find subscriptions.</p>
-    pub fn topic_arn(&self) -> std::option::Option<&str> {
+    pub fn topic_arn(&self) -> ::std::option::Option<&str> {
         self.topic_arn.as_deref()
     }
     /// <p>Token returned by the previous <code>ListSubscriptionsByTopic</code> request.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
@@ -32,40 +32,42 @@ impl ListSubscriptionsByTopicInput {
 
 /// A builder for [`ListSubscriptionsByTopicInput`](crate::operation::list_subscriptions_by_topic::ListSubscriptionsByTopicInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListSubscriptionsByTopicInputBuilder {
-    pub(crate) topic_arn: std::option::Option<std::string::String>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) topic_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListSubscriptionsByTopicInputBuilder {
     /// <p>The ARN of the topic for which you wish to find subscriptions.</p>
-    pub fn topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.topic_arn = Some(input.into());
+    pub fn topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.topic_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the topic for which you wish to find subscriptions.</p>
-    pub fn set_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.topic_arn = input;
         self
     }
     /// <p>Token returned by the previous <code>ListSubscriptionsByTopic</code> request.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Token returned by the previous <code>ListSubscriptionsByTopic</code> request.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
     /// Consumes the builder and constructs a [`ListSubscriptionsByTopicInput`](crate::operation::list_subscriptions_by_topic::ListSubscriptionsByTopicInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::list_subscriptions_by_topic::ListSubscriptionsByTopicInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::list_subscriptions_by_topic::ListSubscriptionsByTopicInput {
                 topic_arn: self.topic_arn,
                 next_token: self.next_token,

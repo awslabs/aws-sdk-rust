@@ -2,30 +2,31 @@
 
 /// <p>For each message in the batch, the response contains a <code> <code>ChangeMessageVisibilityBatchResultEntry</code> </code> tag if the message succeeds or a <code> <code>BatchResultErrorEntry</code> </code> tag if the message fails.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChangeMessageVisibilityBatchOutput {
     /// <p>A list of <code> <code>ChangeMessageVisibilityBatchResultEntry</code> </code> items.</p>
     #[doc(hidden)]
-    pub successful:
-        std::option::Option<std::vec::Vec<crate::types::ChangeMessageVisibilityBatchResultEntry>>,
+    pub successful: ::std::option::Option<
+        ::std::vec::Vec<crate::types::ChangeMessageVisibilityBatchResultEntry>,
+    >,
     /// <p>A list of <code> <code>BatchResultErrorEntry</code> </code> items.</p>
     #[doc(hidden)]
-    pub failed: std::option::Option<std::vec::Vec<crate::types::BatchResultErrorEntry>>,
+    pub failed: ::std::option::Option<::std::vec::Vec<crate::types::BatchResultErrorEntry>>,
     _request_id: Option<String>,
 }
 impl ChangeMessageVisibilityBatchOutput {
     /// <p>A list of <code> <code>ChangeMessageVisibilityBatchResultEntry</code> </code> items.</p>
     pub fn successful(
         &self,
-    ) -> std::option::Option<&[crate::types::ChangeMessageVisibilityBatchResultEntry]> {
+    ) -> ::std::option::Option<&[crate::types::ChangeMessageVisibilityBatchResultEntry]> {
         self.successful.as_deref()
     }
     /// <p>A list of <code> <code>BatchResultErrorEntry</code> </code> items.</p>
-    pub fn failed(&self) -> std::option::Option<&[crate::types::BatchResultErrorEntry]> {
+    pub fn failed(&self) -> ::std::option::Option<&[crate::types::BatchResultErrorEntry]> {
         self.failed.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ChangeMessageVisibilityBatchOutput {
+impl ::aws_http::request_id::RequestId for ChangeMessageVisibilityBatchOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -39,11 +40,14 @@ impl ChangeMessageVisibilityBatchOutput {
 
 /// A builder for [`ChangeMessageVisibilityBatchOutput`](crate::operation::change_message_visibility_batch::ChangeMessageVisibilityBatchOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ChangeMessageVisibilityBatchOutputBuilder {
-    pub(crate) successful:
-        std::option::Option<std::vec::Vec<crate::types::ChangeMessageVisibilityBatchResultEntry>>,
-    pub(crate) failed: std::option::Option<std::vec::Vec<crate::types::BatchResultErrorEntry>>,
+    pub(crate) successful: ::std::option::Option<
+        ::std::vec::Vec<crate::types::ChangeMessageVisibilityBatchResultEntry>,
+    >,
+    pub(crate) failed: ::std::option::Option<::std::vec::Vec<crate::types::BatchResultErrorEntry>>,
     _request_id: Option<String>,
 }
 impl ChangeMessageVisibilityBatchOutputBuilder {
@@ -58,14 +62,14 @@ impl ChangeMessageVisibilityBatchOutputBuilder {
     ) -> Self {
         let mut v = self.successful.unwrap_or_default();
         v.push(input);
-        self.successful = Some(v);
+        self.successful = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of <code> <code>ChangeMessageVisibilityBatchResultEntry</code> </code> items.</p>
     pub fn set_successful(
         mut self,
-        input: std::option::Option<
-            std::vec::Vec<crate::types::ChangeMessageVisibilityBatchResultEntry>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::ChangeMessageVisibilityBatchResultEntry>,
         >,
     ) -> Self {
         self.successful = input;
@@ -79,13 +83,13 @@ impl ChangeMessageVisibilityBatchOutputBuilder {
     pub fn failed(mut self, input: crate::types::BatchResultErrorEntry) -> Self {
         let mut v = self.failed.unwrap_or_default();
         v.push(input);
-        self.failed = Some(v);
+        self.failed = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of <code> <code>BatchResultErrorEntry</code> </code> items.</p>
     pub fn set_failed(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::BatchResultErrorEntry>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::BatchResultErrorEntry>>,
     ) -> Self {
         self.failed = input;
         self

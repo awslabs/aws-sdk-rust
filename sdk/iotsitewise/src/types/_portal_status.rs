@@ -2,22 +2,22 @@
 
 /// <p>Contains information about the current status of a portal.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PortalStatus {
     /// <p>The current state of the portal.</p>
     #[doc(hidden)]
-    pub state: std::option::Option<crate::types::PortalState>,
+    pub state: ::std::option::Option<crate::types::PortalState>,
     /// <p>Contains associated error information, if any.</p>
     #[doc(hidden)]
-    pub error: std::option::Option<crate::types::MonitorErrorDetails>,
+    pub error: ::std::option::Option<crate::types::MonitorErrorDetails>,
 }
 impl PortalStatus {
     /// <p>The current state of the portal.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::PortalState> {
+    pub fn state(&self) -> ::std::option::Option<&crate::types::PortalState> {
         self.state.as_ref()
     }
     /// <p>Contains associated error information, if any.</p>
-    pub fn error(&self) -> std::option::Option<&crate::types::MonitorErrorDetails> {
+    pub fn error(&self) -> ::std::option::Option<&crate::types::MonitorErrorDetails> {
         self.error.as_ref()
     }
 }
@@ -30,31 +30,33 @@ impl PortalStatus {
 
 /// A builder for [`PortalStatus`](crate::types::PortalStatus).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PortalStatusBuilder {
-    pub(crate) state: std::option::Option<crate::types::PortalState>,
-    pub(crate) error: std::option::Option<crate::types::MonitorErrorDetails>,
+    pub(crate) state: ::std::option::Option<crate::types::PortalState>,
+    pub(crate) error: ::std::option::Option<crate::types::MonitorErrorDetails>,
 }
 impl PortalStatusBuilder {
     /// <p>The current state of the portal.</p>
     pub fn state(mut self, input: crate::types::PortalState) -> Self {
-        self.state = Some(input);
+        self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current state of the portal.</p>
-    pub fn set_state(mut self, input: std::option::Option<crate::types::PortalState>) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::PortalState>) -> Self {
         self.state = input;
         self
     }
     /// <p>Contains associated error information, if any.</p>
     pub fn error(mut self, input: crate::types::MonitorErrorDetails) -> Self {
-        self.error = Some(input);
+        self.error = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains associated error information, if any.</p>
     pub fn set_error(
         mut self,
-        input: std::option::Option<crate::types::MonitorErrorDetails>,
+        input: ::std::option::Option<crate::types::MonitorErrorDetails>,
     ) -> Self {
         self.error = input;
         self

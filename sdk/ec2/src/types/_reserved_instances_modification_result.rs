@@ -2,24 +2,24 @@
 
 /// <p>Describes the modification request/s.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReservedInstancesModificationResult {
     /// <p>The ID for the Reserved Instances that were created as part of the modification request. This field is only available when the modification is fulfilled.</p>
     #[doc(hidden)]
-    pub reserved_instances_id: std::option::Option<std::string::String>,
+    pub reserved_instances_id: ::std::option::Option<::std::string::String>,
     /// <p>The target Reserved Instances configurations supplied as part of the modification request.</p>
     #[doc(hidden)]
-    pub target_configuration: std::option::Option<crate::types::ReservedInstancesConfiguration>,
+    pub target_configuration: ::std::option::Option<crate::types::ReservedInstancesConfiguration>,
 }
 impl ReservedInstancesModificationResult {
     /// <p>The ID for the Reserved Instances that were created as part of the modification request. This field is only available when the modification is fulfilled.</p>
-    pub fn reserved_instances_id(&self) -> std::option::Option<&str> {
+    pub fn reserved_instances_id(&self) -> ::std::option::Option<&str> {
         self.reserved_instances_id.as_deref()
     }
     /// <p>The target Reserved Instances configurations supplied as part of the modification request.</p>
     pub fn target_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::ReservedInstancesConfiguration> {
+    ) -> ::std::option::Option<&crate::types::ReservedInstancesConfiguration> {
         self.target_configuration.as_ref()
     }
 }
@@ -32,22 +32,27 @@ impl ReservedInstancesModificationResult {
 
 /// A builder for [`ReservedInstancesModificationResult`](crate::types::ReservedInstancesModificationResult).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ReservedInstancesModificationResultBuilder {
-    pub(crate) reserved_instances_id: std::option::Option<std::string::String>,
+    pub(crate) reserved_instances_id: ::std::option::Option<::std::string::String>,
     pub(crate) target_configuration:
-        std::option::Option<crate::types::ReservedInstancesConfiguration>,
+        ::std::option::Option<crate::types::ReservedInstancesConfiguration>,
 }
 impl ReservedInstancesModificationResultBuilder {
     /// <p>The ID for the Reserved Instances that were created as part of the modification request. This field is only available when the modification is fulfilled.</p>
-    pub fn reserved_instances_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.reserved_instances_id = Some(input.into());
+    pub fn reserved_instances_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.reserved_instances_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID for the Reserved Instances that were created as part of the modification request. This field is only available when the modification is fulfilled.</p>
     pub fn set_reserved_instances_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.reserved_instances_id = input;
         self
@@ -57,13 +62,13 @@ impl ReservedInstancesModificationResultBuilder {
         mut self,
         input: crate::types::ReservedInstancesConfiguration,
     ) -> Self {
-        self.target_configuration = Some(input);
+        self.target_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The target Reserved Instances configurations supplied as part of the modification request.</p>
     pub fn set_target_configuration(
         mut self,
-        input: std::option::Option<crate::types::ReservedInstancesConfiguration>,
+        input: ::std::option::Option<crate::types::ReservedInstancesConfiguration>,
     ) -> Self {
         self.target_configuration = input;
         self

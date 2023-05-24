@@ -2,43 +2,43 @@
 
 /// <p>Information about a position.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Position {
     /// <p>The latitude of the position.</p>
     #[doc(hidden)]
-    pub latitude: std::option::Option<f64>,
+    pub latitude: ::std::option::Option<f64>,
     /// <p>The longitude of the position.</p>
     #[doc(hidden)]
-    pub longitude: std::option::Option<f64>,
+    pub longitude: ::std::option::Option<f64>,
     /// <p>The elevation of the equipment at this position.</p>
     #[doc(hidden)]
-    pub elevation: std::option::Option<f64>,
+    pub elevation: ::std::option::Option<f64>,
     /// <p>The units used to measure the elevation of the position.</p>
     #[doc(hidden)]
-    pub elevation_unit: std::option::Option<crate::types::ElevationUnit>,
+    pub elevation_unit: ::std::option::Option<crate::types::ElevationUnit>,
     /// <p>The reference point from which elevation is reported.</p>
     #[doc(hidden)]
-    pub elevation_reference: std::option::Option<crate::types::ElevationReference>,
+    pub elevation_reference: ::std::option::Option<crate::types::ElevationReference>,
 }
 impl Position {
     /// <p>The latitude of the position.</p>
-    pub fn latitude(&self) -> std::option::Option<f64> {
+    pub fn latitude(&self) -> ::std::option::Option<f64> {
         self.latitude
     }
     /// <p>The longitude of the position.</p>
-    pub fn longitude(&self) -> std::option::Option<f64> {
+    pub fn longitude(&self) -> ::std::option::Option<f64> {
         self.longitude
     }
     /// <p>The elevation of the equipment at this position.</p>
-    pub fn elevation(&self) -> std::option::Option<f64> {
+    pub fn elevation(&self) -> ::std::option::Option<f64> {
         self.elevation
     }
     /// <p>The units used to measure the elevation of the position.</p>
-    pub fn elevation_unit(&self) -> std::option::Option<&crate::types::ElevationUnit> {
+    pub fn elevation_unit(&self) -> ::std::option::Option<&crate::types::ElevationUnit> {
         self.elevation_unit.as_ref()
     }
     /// <p>The reference point from which elevation is reported.</p>
-    pub fn elevation_reference(&self) -> std::option::Option<&crate::types::ElevationReference> {
+    pub fn elevation_reference(&self) -> ::std::option::Option<&crate::types::ElevationReference> {
         self.elevation_reference.as_ref()
     }
 }
@@ -51,67 +51,69 @@ impl Position {
 
 /// A builder for [`Position`](crate::types::Position).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PositionBuilder {
-    pub(crate) latitude: std::option::Option<f64>,
-    pub(crate) longitude: std::option::Option<f64>,
-    pub(crate) elevation: std::option::Option<f64>,
-    pub(crate) elevation_unit: std::option::Option<crate::types::ElevationUnit>,
-    pub(crate) elevation_reference: std::option::Option<crate::types::ElevationReference>,
+    pub(crate) latitude: ::std::option::Option<f64>,
+    pub(crate) longitude: ::std::option::Option<f64>,
+    pub(crate) elevation: ::std::option::Option<f64>,
+    pub(crate) elevation_unit: ::std::option::Option<crate::types::ElevationUnit>,
+    pub(crate) elevation_reference: ::std::option::Option<crate::types::ElevationReference>,
 }
 impl PositionBuilder {
     /// <p>The latitude of the position.</p>
     pub fn latitude(mut self, input: f64) -> Self {
-        self.latitude = Some(input);
+        self.latitude = ::std::option::Option::Some(input);
         self
     }
     /// <p>The latitude of the position.</p>
-    pub fn set_latitude(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_latitude(mut self, input: ::std::option::Option<f64>) -> Self {
         self.latitude = input;
         self
     }
     /// <p>The longitude of the position.</p>
     pub fn longitude(mut self, input: f64) -> Self {
-        self.longitude = Some(input);
+        self.longitude = ::std::option::Option::Some(input);
         self
     }
     /// <p>The longitude of the position.</p>
-    pub fn set_longitude(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_longitude(mut self, input: ::std::option::Option<f64>) -> Self {
         self.longitude = input;
         self
     }
     /// <p>The elevation of the equipment at this position.</p>
     pub fn elevation(mut self, input: f64) -> Self {
-        self.elevation = Some(input);
+        self.elevation = ::std::option::Option::Some(input);
         self
     }
     /// <p>The elevation of the equipment at this position.</p>
-    pub fn set_elevation(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_elevation(mut self, input: ::std::option::Option<f64>) -> Self {
         self.elevation = input;
         self
     }
     /// <p>The units used to measure the elevation of the position.</p>
     pub fn elevation_unit(mut self, input: crate::types::ElevationUnit) -> Self {
-        self.elevation_unit = Some(input);
+        self.elevation_unit = ::std::option::Option::Some(input);
         self
     }
     /// <p>The units used to measure the elevation of the position.</p>
     pub fn set_elevation_unit(
         mut self,
-        input: std::option::Option<crate::types::ElevationUnit>,
+        input: ::std::option::Option<crate::types::ElevationUnit>,
     ) -> Self {
         self.elevation_unit = input;
         self
     }
     /// <p>The reference point from which elevation is reported.</p>
     pub fn elevation_reference(mut self, input: crate::types::ElevationReference) -> Self {
-        self.elevation_reference = Some(input);
+        self.elevation_reference = ::std::option::Option::Some(input);
         self
     }
     /// <p>The reference point from which elevation is reported.</p>
     pub fn set_elevation_reference(
         mut self,
-        input: std::option::Option<crate::types::ElevationReference>,
+        input: ::std::option::Option<crate::types::ElevationReference>,
     ) -> Self {
         self.elevation_reference = input;
         self

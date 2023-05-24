@@ -2,61 +2,61 @@
 
 /// <p>Describes a load-based auto scaling upscaling or downscaling threshold configuration, which specifies when AWS OpsWorks Stacks starts or stops load-based instances.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoScalingThresholds {
     /// <p>The number of instances to add or remove when the load exceeds a threshold.</p>
     #[doc(hidden)]
-    pub instance_count: std::option::Option<i32>,
+    pub instance_count: ::std::option::Option<i32>,
     /// <p>The amount of time, in minutes, that the load must exceed a threshold before more instances are added or removed.</p>
     #[doc(hidden)]
-    pub thresholds_wait_time: std::option::Option<i32>,
+    pub thresholds_wait_time: ::std::option::Option<i32>,
     /// <p>The amount of time (in minutes) after a scaling event occurs that AWS OpsWorks Stacks should ignore metrics and suppress additional scaling events. For example, AWS OpsWorks Stacks adds new instances following an upscaling event but the instances won't start reducing the load until they have been booted and configured. There is no point in raising additional scaling events during that operation, which typically takes several minutes. <code>IgnoreMetricsTime</code> allows you to direct AWS OpsWorks Stacks to suppress scaling events long enough to get the new instances online.</p>
     #[doc(hidden)]
-    pub ignore_metrics_time: std::option::Option<i32>,
+    pub ignore_metrics_time: ::std::option::Option<i32>,
     /// <p>The CPU utilization threshold, as a percent of the available CPU. A value of -1 disables the threshold.</p>
     #[doc(hidden)]
-    pub cpu_threshold: std::option::Option<f64>,
+    pub cpu_threshold: ::std::option::Option<f64>,
     /// <p>The memory utilization threshold, as a percent of the available memory. A value of -1 disables the threshold.</p>
     #[doc(hidden)]
-    pub memory_threshold: std::option::Option<f64>,
+    pub memory_threshold: ::std::option::Option<f64>,
     /// <p>The load threshold. A value of -1 disables the threshold. For more information about how load is computed, see <a href="http://en.wikipedia.org/wiki/Load_%28computing%29">Load (computing)</a>.</p>
     #[doc(hidden)]
-    pub load_threshold: std::option::Option<f64>,
+    pub load_threshold: ::std::option::Option<f64>,
     /// <p>Custom Cloudwatch auto scaling alarms, to be used as thresholds. This parameter takes a list of up to five alarm names, which are case sensitive and must be in the same region as the stack.</p> <note>
     /// <p>To use custom alarms, you must update your service role to allow <code>cloudwatch:DescribeAlarms</code>. You can either have AWS OpsWorks Stacks update the role for you when you first use this feature or you can edit the role manually. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing AWS OpsWorks Stacks to Act on Your Behalf</a>.</p>
     /// </note>
     #[doc(hidden)]
-    pub alarms: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub alarms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AutoScalingThresholds {
     /// <p>The number of instances to add or remove when the load exceeds a threshold.</p>
-    pub fn instance_count(&self) -> std::option::Option<i32> {
+    pub fn instance_count(&self) -> ::std::option::Option<i32> {
         self.instance_count
     }
     /// <p>The amount of time, in minutes, that the load must exceed a threshold before more instances are added or removed.</p>
-    pub fn thresholds_wait_time(&self) -> std::option::Option<i32> {
+    pub fn thresholds_wait_time(&self) -> ::std::option::Option<i32> {
         self.thresholds_wait_time
     }
     /// <p>The amount of time (in minutes) after a scaling event occurs that AWS OpsWorks Stacks should ignore metrics and suppress additional scaling events. For example, AWS OpsWorks Stacks adds new instances following an upscaling event but the instances won't start reducing the load until they have been booted and configured. There is no point in raising additional scaling events during that operation, which typically takes several minutes. <code>IgnoreMetricsTime</code> allows you to direct AWS OpsWorks Stacks to suppress scaling events long enough to get the new instances online.</p>
-    pub fn ignore_metrics_time(&self) -> std::option::Option<i32> {
+    pub fn ignore_metrics_time(&self) -> ::std::option::Option<i32> {
         self.ignore_metrics_time
     }
     /// <p>The CPU utilization threshold, as a percent of the available CPU. A value of -1 disables the threshold.</p>
-    pub fn cpu_threshold(&self) -> std::option::Option<f64> {
+    pub fn cpu_threshold(&self) -> ::std::option::Option<f64> {
         self.cpu_threshold
     }
     /// <p>The memory utilization threshold, as a percent of the available memory. A value of -1 disables the threshold.</p>
-    pub fn memory_threshold(&self) -> std::option::Option<f64> {
+    pub fn memory_threshold(&self) -> ::std::option::Option<f64> {
         self.memory_threshold
     }
     /// <p>The load threshold. A value of -1 disables the threshold. For more information about how load is computed, see <a href="http://en.wikipedia.org/wiki/Load_%28computing%29">Load (computing)</a>.</p>
-    pub fn load_threshold(&self) -> std::option::Option<f64> {
+    pub fn load_threshold(&self) -> ::std::option::Option<f64> {
         self.load_threshold
     }
     /// <p>Custom Cloudwatch auto scaling alarms, to be used as thresholds. This parameter takes a list of up to five alarm names, which are case sensitive and must be in the same region as the stack.</p> <note>
     /// <p>To use custom alarms, you must update your service role to allow <code>cloudwatch:DescribeAlarms</code>. You can either have AWS OpsWorks Stacks update the role for you when you first use this feature or you can edit the role manually. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing AWS OpsWorks Stacks to Act on Your Behalf</a>.</p>
     /// </note>
-    pub fn alarms(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn alarms(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.alarms.as_deref()
     }
 }
@@ -69,74 +69,76 @@ impl AutoScalingThresholds {
 
 /// A builder for [`AutoScalingThresholds`](crate::types::AutoScalingThresholds).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AutoScalingThresholdsBuilder {
-    pub(crate) instance_count: std::option::Option<i32>,
-    pub(crate) thresholds_wait_time: std::option::Option<i32>,
-    pub(crate) ignore_metrics_time: std::option::Option<i32>,
-    pub(crate) cpu_threshold: std::option::Option<f64>,
-    pub(crate) memory_threshold: std::option::Option<f64>,
-    pub(crate) load_threshold: std::option::Option<f64>,
-    pub(crate) alarms: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) instance_count: ::std::option::Option<i32>,
+    pub(crate) thresholds_wait_time: ::std::option::Option<i32>,
+    pub(crate) ignore_metrics_time: ::std::option::Option<i32>,
+    pub(crate) cpu_threshold: ::std::option::Option<f64>,
+    pub(crate) memory_threshold: ::std::option::Option<f64>,
+    pub(crate) load_threshold: ::std::option::Option<f64>,
+    pub(crate) alarms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AutoScalingThresholdsBuilder {
     /// <p>The number of instances to add or remove when the load exceeds a threshold.</p>
     pub fn instance_count(mut self, input: i32) -> Self {
-        self.instance_count = Some(input);
+        self.instance_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of instances to add or remove when the load exceeds a threshold.</p>
-    pub fn set_instance_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.instance_count = input;
         self
     }
     /// <p>The amount of time, in minutes, that the load must exceed a threshold before more instances are added or removed.</p>
     pub fn thresholds_wait_time(mut self, input: i32) -> Self {
-        self.thresholds_wait_time = Some(input);
+        self.thresholds_wait_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The amount of time, in minutes, that the load must exceed a threshold before more instances are added or removed.</p>
-    pub fn set_thresholds_wait_time(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_thresholds_wait_time(mut self, input: ::std::option::Option<i32>) -> Self {
         self.thresholds_wait_time = input;
         self
     }
     /// <p>The amount of time (in minutes) after a scaling event occurs that AWS OpsWorks Stacks should ignore metrics and suppress additional scaling events. For example, AWS OpsWorks Stacks adds new instances following an upscaling event but the instances won't start reducing the load until they have been booted and configured. There is no point in raising additional scaling events during that operation, which typically takes several minutes. <code>IgnoreMetricsTime</code> allows you to direct AWS OpsWorks Stacks to suppress scaling events long enough to get the new instances online.</p>
     pub fn ignore_metrics_time(mut self, input: i32) -> Self {
-        self.ignore_metrics_time = Some(input);
+        self.ignore_metrics_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The amount of time (in minutes) after a scaling event occurs that AWS OpsWorks Stacks should ignore metrics and suppress additional scaling events. For example, AWS OpsWorks Stacks adds new instances following an upscaling event but the instances won't start reducing the load until they have been booted and configured. There is no point in raising additional scaling events during that operation, which typically takes several minutes. <code>IgnoreMetricsTime</code> allows you to direct AWS OpsWorks Stacks to suppress scaling events long enough to get the new instances online.</p>
-    pub fn set_ignore_metrics_time(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_ignore_metrics_time(mut self, input: ::std::option::Option<i32>) -> Self {
         self.ignore_metrics_time = input;
         self
     }
     /// <p>The CPU utilization threshold, as a percent of the available CPU. A value of -1 disables the threshold.</p>
     pub fn cpu_threshold(mut self, input: f64) -> Self {
-        self.cpu_threshold = Some(input);
+        self.cpu_threshold = ::std::option::Option::Some(input);
         self
     }
     /// <p>The CPU utilization threshold, as a percent of the available CPU. A value of -1 disables the threshold.</p>
-    pub fn set_cpu_threshold(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_cpu_threshold(mut self, input: ::std::option::Option<f64>) -> Self {
         self.cpu_threshold = input;
         self
     }
     /// <p>The memory utilization threshold, as a percent of the available memory. A value of -1 disables the threshold.</p>
     pub fn memory_threshold(mut self, input: f64) -> Self {
-        self.memory_threshold = Some(input);
+        self.memory_threshold = ::std::option::Option::Some(input);
         self
     }
     /// <p>The memory utilization threshold, as a percent of the available memory. A value of -1 disables the threshold.</p>
-    pub fn set_memory_threshold(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_memory_threshold(mut self, input: ::std::option::Option<f64>) -> Self {
         self.memory_threshold = input;
         self
     }
     /// <p>The load threshold. A value of -1 disables the threshold. For more information about how load is computed, see <a href="http://en.wikipedia.org/wiki/Load_%28computing%29">Load (computing)</a>.</p>
     pub fn load_threshold(mut self, input: f64) -> Self {
-        self.load_threshold = Some(input);
+        self.load_threshold = ::std::option::Option::Some(input);
         self
     }
     /// <p>The load threshold. A value of -1 disables the threshold. For more information about how load is computed, see <a href="http://en.wikipedia.org/wiki/Load_%28computing%29">Load (computing)</a>.</p>
-    pub fn set_load_threshold(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_load_threshold(mut self, input: ::std::option::Option<f64>) -> Self {
         self.load_threshold = input;
         self
     }
@@ -147,10 +149,10 @@ impl AutoScalingThresholdsBuilder {
     /// <p>Custom Cloudwatch auto scaling alarms, to be used as thresholds. This parameter takes a list of up to five alarm names, which are case sensitive and must be in the same region as the stack.</p> <note>
     /// <p>To use custom alarms, you must update your service role to allow <code>cloudwatch:DescribeAlarms</code>. You can either have AWS OpsWorks Stacks update the role for you when you first use this feature or you can edit the role manually. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing AWS OpsWorks Stacks to Act on Your Behalf</a>.</p>
     /// </note>
-    pub fn alarms(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn alarms(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.alarms.unwrap_or_default();
         v.push(input.into());
-        self.alarms = Some(v);
+        self.alarms = ::std::option::Option::Some(v);
         self
     }
     /// <p>Custom Cloudwatch auto scaling alarms, to be used as thresholds. This parameter takes a list of up to five alarm names, which are case sensitive and must be in the same region as the stack.</p> <note>
@@ -158,7 +160,7 @@ impl AutoScalingThresholdsBuilder {
     /// </note>
     pub fn set_alarms(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.alarms = input;
         self

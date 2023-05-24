@@ -2,11 +2,11 @@
 
 /// <p>Provides information about the Explainability resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExplainabilityInfo {
     /// <p>The Amazon Resource Name (ARN) of the Explainability.</p>
     #[doc(hidden)]
-    pub explainability_arn: std::option::Option<std::string::String>,
+    pub explainability_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the Explainability. States include: </p>
     /// <ul>
     /// <li> <p> <code>ACTIVE</code> </p> </li>
@@ -15,11 +15,11 @@ pub struct ExplainabilityInfo {
     /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub status: std::option::Option<std::string::String>,
+    pub status: ::std::option::Option<::std::string::String>,
 }
 impl ExplainabilityInfo {
     /// <p>The Amazon Resource Name (ARN) of the Explainability.</p>
-    pub fn explainability_arn(&self) -> std::option::Option<&str> {
+    pub fn explainability_arn(&self) -> ::std::option::Option<&str> {
         self.explainability_arn.as_deref()
     }
     /// <p>The status of the Explainability. States include: </p>
@@ -29,7 +29,7 @@ impl ExplainabilityInfo {
     /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
     /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
 }
@@ -42,21 +42,26 @@ impl ExplainabilityInfo {
 
 /// A builder for [`ExplainabilityInfo`](crate::types::ExplainabilityInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ExplainabilityInfoBuilder {
-    pub(crate) explainability_arn: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<std::string::String>,
+    pub(crate) explainability_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<::std::string::String>,
 }
 impl ExplainabilityInfoBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Explainability.</p>
-    pub fn explainability_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.explainability_arn = Some(input.into());
+    pub fn explainability_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.explainability_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Explainability.</p>
     pub fn set_explainability_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.explainability_arn = input;
         self
@@ -68,8 +73,8 @@ impl ExplainabilityInfoBuilder {
     /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
     /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
     /// </ul>
-    pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status = Some(input.into());
+    pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the Explainability. States include: </p>
@@ -79,7 +84,7 @@ impl ExplainabilityInfoBuilder {
     /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
     /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
     /// </ul>
-    pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }

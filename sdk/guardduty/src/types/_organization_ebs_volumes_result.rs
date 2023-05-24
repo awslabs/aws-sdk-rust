@@ -2,7 +2,7 @@
 
 /// <p>An object that contains information on the status of whether EBS volumes scanning will be enabled as a data source for an organization.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OrganizationEbsVolumesResult {
     /// <p>An object that contains the status of whether scanning EBS volumes should be auto-enabled for new members joining the organization.</p>
     #[doc(hidden)]
@@ -23,18 +23,20 @@ impl OrganizationEbsVolumesResult {
 
 /// A builder for [`OrganizationEbsVolumesResult`](crate::types::OrganizationEbsVolumesResult).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OrganizationEbsVolumesResultBuilder {
-    pub(crate) auto_enable: std::option::Option<bool>,
+    pub(crate) auto_enable: ::std::option::Option<bool>,
 }
 impl OrganizationEbsVolumesResultBuilder {
     /// <p>An object that contains the status of whether scanning EBS volumes should be auto-enabled for new members joining the organization.</p>
     pub fn auto_enable(mut self, input: bool) -> Self {
-        self.auto_enable = Some(input);
+        self.auto_enable = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that contains the status of whether scanning EBS volumes should be auto-enabled for new members joining the organization.</p>
-    pub fn set_auto_enable(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_auto_enable(mut self, input: ::std::option::Option<bool>) -> Self {
         self.auto_enable = input;
         self
     }

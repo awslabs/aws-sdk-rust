@@ -2,22 +2,22 @@
 
 /// <p>Configuration information of an Amazon Lex or Amazon Lex V2 bot.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LexBotConfig {
     /// <p>Configuration information of an Amazon Lex bot.</p>
     #[doc(hidden)]
-    pub lex_bot: std::option::Option<crate::types::LexBot>,
+    pub lex_bot: ::std::option::Option<crate::types::LexBot>,
     /// <p>Configuration information of an Amazon Lex V2 bot.</p>
     #[doc(hidden)]
-    pub lex_v2_bot: std::option::Option<crate::types::LexV2Bot>,
+    pub lex_v2_bot: ::std::option::Option<crate::types::LexV2Bot>,
 }
 impl LexBotConfig {
     /// <p>Configuration information of an Amazon Lex bot.</p>
-    pub fn lex_bot(&self) -> std::option::Option<&crate::types::LexBot> {
+    pub fn lex_bot(&self) -> ::std::option::Option<&crate::types::LexBot> {
         self.lex_bot.as_ref()
     }
     /// <p>Configuration information of an Amazon Lex V2 bot.</p>
-    pub fn lex_v2_bot(&self) -> std::option::Option<&crate::types::LexV2Bot> {
+    pub fn lex_v2_bot(&self) -> ::std::option::Option<&crate::types::LexV2Bot> {
         self.lex_v2_bot.as_ref()
     }
 }
@@ -30,29 +30,31 @@ impl LexBotConfig {
 
 /// A builder for [`LexBotConfig`](crate::types::LexBotConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LexBotConfigBuilder {
-    pub(crate) lex_bot: std::option::Option<crate::types::LexBot>,
-    pub(crate) lex_v2_bot: std::option::Option<crate::types::LexV2Bot>,
+    pub(crate) lex_bot: ::std::option::Option<crate::types::LexBot>,
+    pub(crate) lex_v2_bot: ::std::option::Option<crate::types::LexV2Bot>,
 }
 impl LexBotConfigBuilder {
     /// <p>Configuration information of an Amazon Lex bot.</p>
     pub fn lex_bot(mut self, input: crate::types::LexBot) -> Self {
-        self.lex_bot = Some(input);
+        self.lex_bot = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configuration information of an Amazon Lex bot.</p>
-    pub fn set_lex_bot(mut self, input: std::option::Option<crate::types::LexBot>) -> Self {
+    pub fn set_lex_bot(mut self, input: ::std::option::Option<crate::types::LexBot>) -> Self {
         self.lex_bot = input;
         self
     }
     /// <p>Configuration information of an Amazon Lex V2 bot.</p>
     pub fn lex_v2_bot(mut self, input: crate::types::LexV2Bot) -> Self {
-        self.lex_v2_bot = Some(input);
+        self.lex_v2_bot = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configuration information of an Amazon Lex V2 bot.</p>
-    pub fn set_lex_v2_bot(mut self, input: std::option::Option<crate::types::LexV2Bot>) -> Self {
+    pub fn set_lex_v2_bot(mut self, input: ::std::option::Option<crate::types::LexV2Bot>) -> Self {
         self.lex_v2_bot = input;
         self
     }

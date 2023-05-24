@@ -2,11 +2,11 @@
 
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDedicatedIpPoolOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for CreateDedicatedIpPoolOutput {
+impl ::aws_http::request_id::RequestId for CreateDedicatedIpPoolOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -22,7 +22,9 @@ impl CreateDedicatedIpPoolOutput {
 
 /// A builder for [`CreateDedicatedIpPoolOutput`](crate::operation::create_dedicated_ip_pool::CreateDedicatedIpPoolOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateDedicatedIpPoolOutputBuilder {
     _request_id: Option<String>,
 }

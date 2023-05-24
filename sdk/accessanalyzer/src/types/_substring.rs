@@ -2,22 +2,22 @@
 
 /// <p>A reference to a substring of a literal string in a JSON document.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Substring {
     /// <p>The start index of the substring, starting from 0.</p>
     #[doc(hidden)]
-    pub start: std::option::Option<i32>,
+    pub start: ::std::option::Option<i32>,
     /// <p>The length of the substring.</p>
     #[doc(hidden)]
-    pub length: std::option::Option<i32>,
+    pub length: ::std::option::Option<i32>,
 }
 impl Substring {
     /// <p>The start index of the substring, starting from 0.</p>
-    pub fn start(&self) -> std::option::Option<i32> {
+    pub fn start(&self) -> ::std::option::Option<i32> {
         self.start
     }
     /// <p>The length of the substring.</p>
-    pub fn length(&self) -> std::option::Option<i32> {
+    pub fn length(&self) -> ::std::option::Option<i32> {
         self.length
     }
 }
@@ -30,29 +30,31 @@ impl Substring {
 
 /// A builder for [`Substring`](crate::types::Substring).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SubstringBuilder {
-    pub(crate) start: std::option::Option<i32>,
-    pub(crate) length: std::option::Option<i32>,
+    pub(crate) start: ::std::option::Option<i32>,
+    pub(crate) length: ::std::option::Option<i32>,
 }
 impl SubstringBuilder {
     /// <p>The start index of the substring, starting from 0.</p>
     pub fn start(mut self, input: i32) -> Self {
-        self.start = Some(input);
+        self.start = ::std::option::Option::Some(input);
         self
     }
     /// <p>The start index of the substring, starting from 0.</p>
-    pub fn set_start(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_start(mut self, input: ::std::option::Option<i32>) -> Self {
         self.start = input;
         self
     }
     /// <p>The length of the substring.</p>
     pub fn length(mut self, input: i32) -> Self {
-        self.length = Some(input);
+        self.length = ::std::option::Option::Some(input);
         self
     }
     /// <p>The length of the substring.</p>
-    pub fn set_length(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_length(mut self, input: ::std::option::Option<i32>) -> Self {
         self.length = input;
         self
     }

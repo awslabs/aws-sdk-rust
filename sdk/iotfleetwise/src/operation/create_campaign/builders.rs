@@ -7,56 +7,59 @@ pub use crate::operation::create_campaign::_create_campaign_input::CreateCampaig
 ///
 /// <p>Creates an orchestration of data collection rules. The Amazon Web Services IoT FleetWise Edge Agent software running in vehicles uses campaigns to decide how to collect and transfer data to the cloud. You create campaigns in the cloud. After you or your team approve campaigns, Amazon Web Services IoT FleetWise automatically deploys them to vehicles. </p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/campaigns.html">Collect and transfer data with campaigns</a> in the <i>Amazon Web Services IoT FleetWise Developer Guide</i>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateCampaignFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_campaign::builders::CreateCampaignInputBuilder,
 }
 impl CreateCampaignFluentBuilder {
     /// Creates a new `CreateCampaign`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_campaign::CreateCampaign,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_campaign::CreateCampaignError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_campaign::CreateCampaignError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_campaign::CreateCampaignOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_campaign::CreateCampaignError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_campaign::CreateCampaignError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -69,58 +72,61 @@ impl CreateCampaignFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_campaign::CreateCampaignOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_campaign::CreateCampaignError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_campaign::CreateCampaignError>,
     > {
         self.send_middleware().await
     }
     /// <p> The name of the campaign to create. </p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// <p> The name of the campaign to create. </p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
     /// <p>An optional description of the campaign to help identify its purpose.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>An optional description of the campaign to help identify its purpose.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
     /// <p>(Optional) The Amazon Resource Name (ARN) of the signal catalog to associate with the campaign. </p>
-    pub fn signal_catalog_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn signal_catalog_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.signal_catalog_arn(input.into());
         self
     }
     /// <p>(Optional) The Amazon Resource Name (ARN) of the signal catalog to associate with the campaign. </p>
     pub fn set_signal_catalog_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_signal_catalog_arn(input);
         self
     }
     /// <p> The ARN of the vehicle or fleet to deploy a campaign to. </p>
-    pub fn target_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_arn(input.into());
         self
     }
     /// <p> The ARN of the vehicle or fleet to deploy a campaign to. </p>
-    pub fn set_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_target_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target_arn(input);
         self
     }
     /// <p>(Optional) The time, in milliseconds, to deliver a campaign after it was approved. If it's not specified, <code>0</code> is used.</p>
     /// <p>Default: <code>0</code> </p>
-    pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+    pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.start_time(input);
         self
     }
@@ -128,14 +134,14 @@ impl CreateCampaignFluentBuilder {
     /// <p>Default: <code>0</code> </p>
     pub fn set_start_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
     /// <p> (Optional) The time the campaign expires, in seconds since epoch (January 1, 1970 at midnight UTC time). Vehicle data won't be collected after the campaign expires. </p>
     /// <p>Default: 253402214400 (December 31, 9999, 00:00:00 UTC)</p>
-    pub fn expiry_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+    pub fn expiry_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.expiry_time(input);
         self
     }
@@ -143,7 +149,7 @@ impl CreateCampaignFluentBuilder {
     /// <p>Default: 253402214400 (December 31, 9999, 00:00:00 UTC)</p>
     pub fn set_expiry_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.inner = self.inner.set_expiry_time(input);
         self
@@ -156,7 +162,10 @@ impl CreateCampaignFluentBuilder {
     }
     /// <p> (Optional) How long (in milliseconds) to collect raw data after a triggering event initiates the collection. If it's not specified, <code>0</code> is used.</p>
     /// <p>Default: <code>0</code> </p>
-    pub fn set_post_trigger_collection_duration(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_post_trigger_collection_duration(
+        mut self,
+        input: ::std::option::Option<i64>,
+    ) -> Self {
         self.inner = self.inner.set_post_trigger_collection_duration(input);
         self
     }
@@ -170,7 +179,7 @@ impl CreateCampaignFluentBuilder {
     /// <p>Default: <code>OFF</code> </p>
     pub fn set_diagnostics_mode(
         mut self,
-        input: std::option::Option<crate::types::DiagnosticsMode>,
+        input: ::std::option::Option<crate::types::DiagnosticsMode>,
     ) -> Self {
         self.inner = self.inner.set_diagnostics_mode(input);
         self
@@ -185,7 +194,7 @@ impl CreateCampaignFluentBuilder {
     /// <p>Default: <code>OFF</code> </p>
     pub fn set_spooling_mode(
         mut self,
-        input: std::option::Option<crate::types::SpoolingMode>,
+        input: ::std::option::Option<crate::types::SpoolingMode>,
     ) -> Self {
         self.inner = self.inner.set_spooling_mode(input);
         self
@@ -200,7 +209,7 @@ impl CreateCampaignFluentBuilder {
     /// <p>Default: <code>SNAPPY</code> </p>
     pub fn set_compression(
         mut self,
-        input: std::option::Option<crate::types::Compression>,
+        input: ::std::option::Option<crate::types::Compression>,
     ) -> Self {
         self.inner = self.inner.set_compression(input);
         self
@@ -213,7 +222,7 @@ impl CreateCampaignFluentBuilder {
     }
     /// <p>(Optional) A number indicating the priority of one campaign over another campaign for a certain vehicle or fleet. A campaign with the lowest value is deployed to vehicles before any other campaigns. If it's not specified, <code>0</code> is used. </p>
     /// <p>Default: <code>0</code> </p>
-    pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_priority(input);
         self
     }
@@ -229,7 +238,7 @@ impl CreateCampaignFluentBuilder {
     /// <p>(Optional) A list of information about signals to collect. </p>
     pub fn set_signals_to_collect(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SignalInformation>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SignalInformation>>,
     ) -> Self {
         self.inner = self.inner.set_signals_to_collect(input);
         self
@@ -242,7 +251,7 @@ impl CreateCampaignFluentBuilder {
     /// <p> The data collection scheme associated with the campaign. You can specify a scheme that collects data based on time or an event.</p>
     pub fn set_collection_scheme(
         mut self,
-        input: std::option::Option<crate::types::CollectionScheme>,
+        input: ::std::option::Option<crate::types::CollectionScheme>,
     ) -> Self {
         self.inner = self.inner.set_collection_scheme(input);
         self
@@ -254,7 +263,10 @@ impl CreateCampaignFluentBuilder {
     /// <p> (Optional) A list of vehicle attributes to associate with a campaign. </p>
     /// <p>Enrich the data with specified vehicle attributes. For example, add <code>make</code> and <code>model</code> to the campaign, and Amazon Web Services IoT FleetWise will associate the data with those attributes as dimensions in Amazon Timestream. You can then query the data against <code>make</code> and <code>model</code>.</p>
     /// <p>Default: An empty array</p>
-    pub fn data_extra_dimensions(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn data_extra_dimensions(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.data_extra_dimensions(input.into());
         self
     }
@@ -263,7 +275,7 @@ impl CreateCampaignFluentBuilder {
     /// <p>Default: An empty array</p>
     pub fn set_data_extra_dimensions(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_data_extra_dimensions(input);
         self
@@ -280,7 +292,7 @@ impl CreateCampaignFluentBuilder {
     /// <p>Metadata that can be used to manage the campaign.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self

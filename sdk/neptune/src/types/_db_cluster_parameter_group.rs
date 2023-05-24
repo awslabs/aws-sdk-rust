@@ -3,36 +3,36 @@
 /// <p>Contains the details of an Amazon Neptune DB cluster parameter group.</p>
 /// <p>This data type is used as a response element in the <code>DescribeDBClusterParameterGroups</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DbClusterParameterGroup {
     /// <p>Provides the name of the DB cluster parameter group.</p>
     #[doc(hidden)]
-    pub db_cluster_parameter_group_name: std::option::Option<std::string::String>,
+    pub db_cluster_parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>Provides the name of the DB parameter group family that this DB cluster parameter group is compatible with.</p>
     #[doc(hidden)]
-    pub db_parameter_group_family: std::option::Option<std::string::String>,
+    pub db_parameter_group_family: ::std::option::Option<::std::string::String>,
     /// <p>Provides the customer-specified description for this DB cluster parameter group.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the DB cluster parameter group.</p>
     #[doc(hidden)]
-    pub db_cluster_parameter_group_arn: std::option::Option<std::string::String>,
+    pub db_cluster_parameter_group_arn: ::std::option::Option<::std::string::String>,
 }
 impl DbClusterParameterGroup {
     /// <p>Provides the name of the DB cluster parameter group.</p>
-    pub fn db_cluster_parameter_group_name(&self) -> std::option::Option<&str> {
+    pub fn db_cluster_parameter_group_name(&self) -> ::std::option::Option<&str> {
         self.db_cluster_parameter_group_name.as_deref()
     }
     /// <p>Provides the name of the DB parameter group family that this DB cluster parameter group is compatible with.</p>
-    pub fn db_parameter_group_family(&self) -> std::option::Option<&str> {
+    pub fn db_parameter_group_family(&self) -> ::std::option::Option<&str> {
         self.db_parameter_group_family.as_deref()
     }
     /// <p>Provides the customer-specified description for this DB cluster parameter group.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the DB cluster parameter group.</p>
-    pub fn db_cluster_parameter_group_arn(&self) -> std::option::Option<&str> {
+    pub fn db_cluster_parameter_group_arn(&self) -> ::std::option::Option<&str> {
         self.db_cluster_parameter_group_arn.as_deref()
     }
 }
@@ -45,62 +45,70 @@ impl DbClusterParameterGroup {
 
 /// A builder for [`DbClusterParameterGroup`](crate::types::DbClusterParameterGroup).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DbClusterParameterGroupBuilder {
-    pub(crate) db_cluster_parameter_group_name: std::option::Option<std::string::String>,
-    pub(crate) db_parameter_group_family: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) db_cluster_parameter_group_arn: std::option::Option<std::string::String>,
+    pub(crate) db_cluster_parameter_group_name: ::std::option::Option<::std::string::String>,
+    pub(crate) db_parameter_group_family: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) db_cluster_parameter_group_arn: ::std::option::Option<::std::string::String>,
 }
 impl DbClusterParameterGroupBuilder {
     /// <p>Provides the name of the DB cluster parameter group.</p>
     pub fn db_cluster_parameter_group_name(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.db_cluster_parameter_group_name = Some(input.into());
+        self.db_cluster_parameter_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Provides the name of the DB cluster parameter group.</p>
     pub fn set_db_cluster_parameter_group_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.db_cluster_parameter_group_name = input;
         self
     }
     /// <p>Provides the name of the DB parameter group family that this DB cluster parameter group is compatible with.</p>
-    pub fn db_parameter_group_family(mut self, input: impl Into<std::string::String>) -> Self {
-        self.db_parameter_group_family = Some(input.into());
+    pub fn db_parameter_group_family(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.db_parameter_group_family = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Provides the name of the DB parameter group family that this DB cluster parameter group is compatible with.</p>
     pub fn set_db_parameter_group_family(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.db_parameter_group_family = input;
         self
     }
     /// <p>Provides the customer-specified description for this DB cluster parameter group.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Provides the customer-specified description for this DB cluster parameter group.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the DB cluster parameter group.</p>
-    pub fn db_cluster_parameter_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.db_cluster_parameter_group_arn = Some(input.into());
+    pub fn db_cluster_parameter_group_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.db_cluster_parameter_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the DB cluster parameter group.</p>
     pub fn set_db_cluster_parameter_group_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.db_cluster_parameter_group_arn = input;
         self

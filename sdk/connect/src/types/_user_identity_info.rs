@@ -2,45 +2,45 @@
 
 /// <p>Contains information about the identity of a user.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserIdentityInfo {
     /// <p>The first name. This is required if you are using Amazon Connect or SAML for identity management.</p>
     #[doc(hidden)]
-    pub first_name: std::option::Option<std::string::String>,
+    pub first_name: ::std::option::Option<::std::string::String>,
     /// <p>The last name. This is required if you are using Amazon Connect or SAML for identity management.</p>
     #[doc(hidden)]
-    pub last_name: std::option::Option<std::string::String>,
+    pub last_name: ::std::option::Option<::std::string::String>,
     /// <p>The email address. If you are using SAML for identity management and include this parameter, an error is returned.</p>
     #[doc(hidden)]
-    pub email: std::option::Option<std::string::String>,
+    pub email: ::std::option::Option<::std::string::String>,
     /// <p>The user's secondary email address. If you provide a secondary email, the user receives email notifications - other than password reset notifications - to this email address instead of to their primary email address.</p>
     /// <p>Pattern: <code>(?=^.{0,265}$)[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63}</code> </p>
     #[doc(hidden)]
-    pub secondary_email: std::option::Option<std::string::String>,
+    pub secondary_email: ::std::option::Option<::std::string::String>,
     /// <p>The user's mobile number.</p>
     #[doc(hidden)]
-    pub mobile: std::option::Option<std::string::String>,
+    pub mobile: ::std::option::Option<::std::string::String>,
 }
 impl UserIdentityInfo {
     /// <p>The first name. This is required if you are using Amazon Connect or SAML for identity management.</p>
-    pub fn first_name(&self) -> std::option::Option<&str> {
+    pub fn first_name(&self) -> ::std::option::Option<&str> {
         self.first_name.as_deref()
     }
     /// <p>The last name. This is required if you are using Amazon Connect or SAML for identity management.</p>
-    pub fn last_name(&self) -> std::option::Option<&str> {
+    pub fn last_name(&self) -> ::std::option::Option<&str> {
         self.last_name.as_deref()
     }
     /// <p>The email address. If you are using SAML for identity management and include this parameter, an error is returned.</p>
-    pub fn email(&self) -> std::option::Option<&str> {
+    pub fn email(&self) -> ::std::option::Option<&str> {
         self.email.as_deref()
     }
     /// <p>The user's secondary email address. If you provide a secondary email, the user receives email notifications - other than password reset notifications - to this email address instead of to their primary email address.</p>
     /// <p>Pattern: <code>(?=^.{0,265}$)[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63}</code> </p>
-    pub fn secondary_email(&self) -> std::option::Option<&str> {
+    pub fn secondary_email(&self) -> ::std::option::Option<&str> {
         self.secondary_email.as_deref()
     }
     /// <p>The user's mobile number.</p>
-    pub fn mobile(&self) -> std::option::Option<&str> {
+    pub fn mobile(&self) -> ::std::option::Option<&str> {
         self.mobile.as_deref()
     }
 }
@@ -53,64 +53,72 @@ impl UserIdentityInfo {
 
 /// A builder for [`UserIdentityInfo`](crate::types::UserIdentityInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UserIdentityInfoBuilder {
-    pub(crate) first_name: std::option::Option<std::string::String>,
-    pub(crate) last_name: std::option::Option<std::string::String>,
-    pub(crate) email: std::option::Option<std::string::String>,
-    pub(crate) secondary_email: std::option::Option<std::string::String>,
-    pub(crate) mobile: std::option::Option<std::string::String>,
+    pub(crate) first_name: ::std::option::Option<::std::string::String>,
+    pub(crate) last_name: ::std::option::Option<::std::string::String>,
+    pub(crate) email: ::std::option::Option<::std::string::String>,
+    pub(crate) secondary_email: ::std::option::Option<::std::string::String>,
+    pub(crate) mobile: ::std::option::Option<::std::string::String>,
 }
 impl UserIdentityInfoBuilder {
     /// <p>The first name. This is required if you are using Amazon Connect or SAML for identity management.</p>
-    pub fn first_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.first_name = Some(input.into());
+    pub fn first_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.first_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The first name. This is required if you are using Amazon Connect or SAML for identity management.</p>
-    pub fn set_first_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_first_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.first_name = input;
         self
     }
     /// <p>The last name. This is required if you are using Amazon Connect or SAML for identity management.</p>
-    pub fn last_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.last_name = Some(input.into());
+    pub fn last_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.last_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The last name. This is required if you are using Amazon Connect or SAML for identity management.</p>
-    pub fn set_last_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_last_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_name = input;
         self
     }
     /// <p>The email address. If you are using SAML for identity management and include this parameter, an error is returned.</p>
-    pub fn email(mut self, input: impl Into<std::string::String>) -> Self {
-        self.email = Some(input.into());
+    pub fn email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.email = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The email address. If you are using SAML for identity management and include this parameter, an error is returned.</p>
-    pub fn set_email(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.email = input;
         self
     }
     /// <p>The user's secondary email address. If you provide a secondary email, the user receives email notifications - other than password reset notifications - to this email address instead of to their primary email address.</p>
     /// <p>Pattern: <code>(?=^.{0,265}$)[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63}</code> </p>
-    pub fn secondary_email(mut self, input: impl Into<std::string::String>) -> Self {
-        self.secondary_email = Some(input.into());
+    pub fn secondary_email(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.secondary_email = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user's secondary email address. If you provide a secondary email, the user receives email notifications - other than password reset notifications - to this email address instead of to their primary email address.</p>
     /// <p>Pattern: <code>(?=^.{0,265}$)[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63}</code> </p>
-    pub fn set_secondary_email(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_secondary_email(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.secondary_email = input;
         self
     }
     /// <p>The user's mobile number.</p>
-    pub fn mobile(mut self, input: impl Into<std::string::String>) -> Self {
-        self.mobile = Some(input.into());
+    pub fn mobile(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.mobile = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user's mobile number.</p>
-    pub fn set_mobile(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_mobile(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.mobile = input;
         self
     }

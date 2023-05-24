@@ -2,15 +2,15 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteEventSubscriptionInput {
     /// <p>The name of the Amazon Redshift event notification subscription to be deleted.</p>
     #[doc(hidden)]
-    pub subscription_name: std::option::Option<std::string::String>,
+    pub subscription_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteEventSubscriptionInput {
     /// <p>The name of the Amazon Redshift event notification subscription to be deleted.</p>
-    pub fn subscription_name(&self) -> std::option::Option<&str> {
+    pub fn subscription_name(&self) -> ::std::option::Option<&str> {
         self.subscription_name.as_deref()
     }
 }
@@ -25,20 +25,25 @@ impl DeleteEventSubscriptionInput {
 
 /// A builder for [`DeleteEventSubscriptionInput`](crate::operation::delete_event_subscription::DeleteEventSubscriptionInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteEventSubscriptionInputBuilder {
-    pub(crate) subscription_name: std::option::Option<std::string::String>,
+    pub(crate) subscription_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteEventSubscriptionInputBuilder {
     /// <p>The name of the Amazon Redshift event notification subscription to be deleted.</p>
-    pub fn subscription_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.subscription_name = Some(input.into());
+    pub fn subscription_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.subscription_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Amazon Redshift event notification subscription to be deleted.</p>
     pub fn set_subscription_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.subscription_name = input;
         self
@@ -46,11 +51,11 @@ impl DeleteEventSubscriptionInputBuilder {
     /// Consumes the builder and constructs a [`DeleteEventSubscriptionInput`](crate::operation::delete_event_subscription::DeleteEventSubscriptionInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::delete_event_subscription::DeleteEventSubscriptionInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::delete_event_subscription::DeleteEventSubscriptionInput {
                 subscription_name: self.subscription_name,
             },

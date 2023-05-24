@@ -7,29 +7,29 @@ pub use crate::operation::create_security_profile::_create_security_profile_inpu
 ///
 /// <p>Creates a Device Defender security profile.</p>
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateSecurityProfile</a> action.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateSecurityProfileFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_security_profile::builders::CreateSecurityProfileInputBuilder,
 }
 impl CreateSecurityProfileFluentBuilder {
     /// Creates a new `CreateSecurityProfile`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_security_profile::CreateSecurityProfile,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_security_profile::CreateSecurityProfileError,
         >,
     > {
@@ -37,30 +37,33 @@ impl CreateSecurityProfileFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_security_profile::CreateSecurityProfileOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_security_profile::CreateSecurityProfileError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -73,36 +76,42 @@ impl CreateSecurityProfileFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_security_profile::CreateSecurityProfileOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_security_profile::CreateSecurityProfileError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The name you are giving to the security profile.</p>
-    pub fn security_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn security_profile_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.security_profile_name(input.into());
         self
     }
     /// <p>The name you are giving to the security profile.</p>
     pub fn set_security_profile_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_security_profile_name(input);
         self
     }
     /// <p>A description of the security profile.</p>
-    pub fn security_profile_description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn security_profile_description(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.security_profile_description(input.into());
         self
     }
     /// <p>A description of the security profile.</p>
     pub fn set_security_profile_description(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_security_profile_description(input);
         self
@@ -119,7 +128,7 @@ impl CreateSecurityProfileFluentBuilder {
     /// <p>Specifies the behaviors that, when violated by a device (thing), cause an alert.</p>
     pub fn set_behaviors(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Behavior>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Behavior>>,
     ) -> Self {
         self.inner = self.inner.set_behaviors(input);
         self
@@ -140,8 +149,8 @@ impl CreateSecurityProfileFluentBuilder {
     /// <p>Specifies the destinations to which alerts are sent. (Alerts are always sent to the console.) Alerts are generated when a device (thing) violates a behavior.</p>
     pub fn set_alert_targets(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<crate::types::AlertTargetType, crate::types::AlertTarget>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<crate::types::AlertTargetType, crate::types::AlertTarget>,
         >,
     ) -> Self {
         self.inner = self.inner.set_alert_targets(input);
@@ -154,7 +163,10 @@ impl CreateSecurityProfileFluentBuilder {
     /// <p> <i>Please use <code>CreateSecurityProfileRequest$additionalMetricsToRetainV2</code> instead.</i> </p>
     /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
     #[deprecated(note = "Use additionalMetricsToRetainV2.")]
-    pub fn additional_metrics_to_retain(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn additional_metrics_to_retain(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.additional_metrics_to_retain(input.into());
         self
     }
@@ -163,7 +175,7 @@ impl CreateSecurityProfileFluentBuilder {
     #[deprecated(note = "Use additionalMetricsToRetainV2.")]
     pub fn set_additional_metrics_to_retain(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_additional_metrics_to_retain(input);
         self
@@ -180,7 +192,7 @@ impl CreateSecurityProfileFluentBuilder {
     /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
     pub fn set_additional_metrics_to_retain_v2(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::MetricToRetain>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricToRetain>>,
     ) -> Self {
         self.inner = self.inner.set_additional_metrics_to_retain_v2(input);
         self
@@ -197,7 +209,7 @@ impl CreateSecurityProfileFluentBuilder {
     /// <p>Metadata that can be used to manage the security profile.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self

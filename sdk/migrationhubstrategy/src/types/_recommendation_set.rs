@@ -2,29 +2,29 @@
 
 /// <p> Contains a recommendation set. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecommendationSet {
     /// <p> The target destination for the recommendation set. </p>
     #[doc(hidden)]
-    pub transformation_tool: std::option::Option<crate::types::TransformationTool>,
+    pub transformation_tool: ::std::option::Option<crate::types::TransformationTool>,
     /// <p> The recommended target destination. </p>
     #[doc(hidden)]
-    pub target_destination: std::option::Option<crate::types::TargetDestination>,
+    pub target_destination: ::std::option::Option<crate::types::TargetDestination>,
     /// <p> The recommended strategy. </p>
     #[doc(hidden)]
-    pub strategy: std::option::Option<crate::types::Strategy>,
+    pub strategy: ::std::option::Option<crate::types::Strategy>,
 }
 impl RecommendationSet {
     /// <p> The target destination for the recommendation set. </p>
-    pub fn transformation_tool(&self) -> std::option::Option<&crate::types::TransformationTool> {
+    pub fn transformation_tool(&self) -> ::std::option::Option<&crate::types::TransformationTool> {
         self.transformation_tool.as_ref()
     }
     /// <p> The recommended target destination. </p>
-    pub fn target_destination(&self) -> std::option::Option<&crate::types::TargetDestination> {
+    pub fn target_destination(&self) -> ::std::option::Option<&crate::types::TargetDestination> {
         self.target_destination.as_ref()
     }
     /// <p> The recommended strategy. </p>
-    pub fn strategy(&self) -> std::option::Option<&crate::types::Strategy> {
+    pub fn strategy(&self) -> ::std::option::Option<&crate::types::Strategy> {
         self.strategy.as_ref()
     }
 }
@@ -37,46 +37,48 @@ impl RecommendationSet {
 
 /// A builder for [`RecommendationSet`](crate::types::RecommendationSet).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RecommendationSetBuilder {
-    pub(crate) transformation_tool: std::option::Option<crate::types::TransformationTool>,
-    pub(crate) target_destination: std::option::Option<crate::types::TargetDestination>,
-    pub(crate) strategy: std::option::Option<crate::types::Strategy>,
+    pub(crate) transformation_tool: ::std::option::Option<crate::types::TransformationTool>,
+    pub(crate) target_destination: ::std::option::Option<crate::types::TargetDestination>,
+    pub(crate) strategy: ::std::option::Option<crate::types::Strategy>,
 }
 impl RecommendationSetBuilder {
     /// <p> The target destination for the recommendation set. </p>
     pub fn transformation_tool(mut self, input: crate::types::TransformationTool) -> Self {
-        self.transformation_tool = Some(input);
+        self.transformation_tool = ::std::option::Option::Some(input);
         self
     }
     /// <p> The target destination for the recommendation set. </p>
     pub fn set_transformation_tool(
         mut self,
-        input: std::option::Option<crate::types::TransformationTool>,
+        input: ::std::option::Option<crate::types::TransformationTool>,
     ) -> Self {
         self.transformation_tool = input;
         self
     }
     /// <p> The recommended target destination. </p>
     pub fn target_destination(mut self, input: crate::types::TargetDestination) -> Self {
-        self.target_destination = Some(input);
+        self.target_destination = ::std::option::Option::Some(input);
         self
     }
     /// <p> The recommended target destination. </p>
     pub fn set_target_destination(
         mut self,
-        input: std::option::Option<crate::types::TargetDestination>,
+        input: ::std::option::Option<crate::types::TargetDestination>,
     ) -> Self {
         self.target_destination = input;
         self
     }
     /// <p> The recommended strategy. </p>
     pub fn strategy(mut self, input: crate::types::Strategy) -> Self {
-        self.strategy = Some(input);
+        self.strategy = ::std::option::Option::Some(input);
         self
     }
     /// <p> The recommended strategy. </p>
-    pub fn set_strategy(mut self, input: std::option::Option<crate::types::Strategy>) -> Self {
+    pub fn set_strategy(mut self, input: ::std::option::Option<crate::types::Strategy>) -> Self {
         self.strategy = input;
         self
     }

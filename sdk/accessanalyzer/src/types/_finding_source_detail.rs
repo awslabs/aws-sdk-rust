@@ -2,22 +2,22 @@
 
 /// <p>Includes details about how the access that generated the finding is granted. This is populated for Amazon S3 bucket findings.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FindingSourceDetail {
     /// <p>The ARN of the access point that generated the finding. The ARN format depends on whether the ARN represents an access point or a multi-region access point.</p>
     #[doc(hidden)]
-    pub access_point_arn: std::option::Option<std::string::String>,
+    pub access_point_arn: ::std::option::Option<::std::string::String>,
     /// <p>The account of the cross-account access point that generated the finding.</p>
     #[doc(hidden)]
-    pub access_point_account: std::option::Option<std::string::String>,
+    pub access_point_account: ::std::option::Option<::std::string::String>,
 }
 impl FindingSourceDetail {
     /// <p>The ARN of the access point that generated the finding. The ARN format depends on whether the ARN represents an access point or a multi-region access point.</p>
-    pub fn access_point_arn(&self) -> std::option::Option<&str> {
+    pub fn access_point_arn(&self) -> ::std::option::Option<&str> {
         self.access_point_arn.as_deref()
     }
     /// <p>The account of the cross-account access point that generated the finding.</p>
-    pub fn access_point_account(&self) -> std::option::Option<&str> {
+    pub fn access_point_account(&self) -> ::std::option::Option<&str> {
         self.access_point_account.as_deref()
     }
 }
@@ -30,31 +30,42 @@ impl FindingSourceDetail {
 
 /// A builder for [`FindingSourceDetail`](crate::types::FindingSourceDetail).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FindingSourceDetailBuilder {
-    pub(crate) access_point_arn: std::option::Option<std::string::String>,
-    pub(crate) access_point_account: std::option::Option<std::string::String>,
+    pub(crate) access_point_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) access_point_account: ::std::option::Option<::std::string::String>,
 }
 impl FindingSourceDetailBuilder {
     /// <p>The ARN of the access point that generated the finding. The ARN format depends on whether the ARN represents an access point or a multi-region access point.</p>
-    pub fn access_point_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.access_point_arn = Some(input.into());
+    pub fn access_point_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.access_point_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the access point that generated the finding. The ARN format depends on whether the ARN represents an access point or a multi-region access point.</p>
-    pub fn set_access_point_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_access_point_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.access_point_arn = input;
         self
     }
     /// <p>The account of the cross-account access point that generated the finding.</p>
-    pub fn access_point_account(mut self, input: impl Into<std::string::String>) -> Self {
-        self.access_point_account = Some(input.into());
+    pub fn access_point_account(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.access_point_account = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The account of the cross-account access point that generated the finding.</p>
     pub fn set_access_point_account(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.access_point_account = input;
         self

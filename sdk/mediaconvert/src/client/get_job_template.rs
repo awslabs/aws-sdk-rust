@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetJobTemplate`](crate::operation::get_job_template::builders::GetJobTemplateFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::get_job_template::builders::GetJobTemplateFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_job_template::builders::GetJobTemplateFluentBuilder::set_name): The name of the job template.
+    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::get_job_template::builders::GetJobTemplateFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_job_template::builders::GetJobTemplateFluentBuilder::set_name): The name of the job template.
     /// - On success, responds with [`GetJobTemplateOutput`](crate::operation::get_job_template::GetJobTemplateOutput) with field(s):
     ///   - [`job_template(Option<JobTemplate>)`](crate::operation::get_job_template::GetJobTemplateOutput::job_template): A job template is a pre-made set of encoding instructions that you can use to quickly create a job.
     /// - On failure, responds with [`SdkError<GetJobTemplateError>`](crate::operation::get_job_template::GetJobTemplateError)

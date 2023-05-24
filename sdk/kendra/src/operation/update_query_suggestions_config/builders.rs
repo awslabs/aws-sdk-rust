@@ -11,29 +11,29 @@ pub use crate::operation::update_query_suggestions_config::_update_query_suggest
 /// <p>Updates to query suggestions settings might not take effect right away. The time for your updated settings to take effect depends on the updates made and the number of search queries in your index.</p>
 /// <p>You can still enable/disable query suggestions at any time.</p>
 /// <p> <code>UpdateQuerySuggestionsConfig</code> is currently not supported in the Amazon Web Services GovCloud (US-West) region.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateQuerySuggestionsConfigFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::update_query_suggestions_config::builders::UpdateQuerySuggestionsConfigInputBuilder,
 }
 impl UpdateQuerySuggestionsConfigFluentBuilder {
     /// Creates a new `UpdateQuerySuggestionsConfig`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_query_suggestions_config::UpdateQuerySuggestionsConfig,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_query_suggestions_config::UpdateQuerySuggestionsConfigError,
         >,
     > {
@@ -41,30 +41,33 @@ impl UpdateQuerySuggestionsConfigFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_query_suggestions_config::UpdateQuerySuggestionsConfigOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_query_suggestions_config::UpdateQuerySuggestionsConfigError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -77,21 +80,21 @@ impl UpdateQuerySuggestionsConfigFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_query_suggestions_config::UpdateQuerySuggestionsConfigOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_query_suggestions_config::UpdateQuerySuggestionsConfigError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p> The identifier of the index with query suggestions you want to update.</p>
-    pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.index_id(input.into());
         self
     }
     /// <p> The identifier of the index with query suggestions you want to update.</p>
-    pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_index_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_index_id(input);
         self
     }
@@ -105,7 +108,7 @@ impl UpdateQuerySuggestionsConfigFluentBuilder {
     /// <p>Set the mode to <code>ENABLED</code> or <code>LEARN_ONLY</code>.</p>
     /// <p>By default, Amazon Kendra enables query suggestions. <code>LEARN_ONLY</code> mode allows you to turn off query suggestions. You can to update this at any time.</p>
     /// <p>In <code>LEARN_ONLY</code> mode, Amazon Kendra continues to learn from new queries to keep suggestions up to date for when you are ready to switch to ENABLED mode again.</p>
-    pub fn set_mode(mut self, input: std::option::Option<crate::types::Mode>) -> Self {
+    pub fn set_mode(mut self, input: ::std::option::Option<crate::types::Mode>) -> Self {
         self.inner = self.inner.set_mode(input);
         self
     }
@@ -121,7 +124,7 @@ impl UpdateQuerySuggestionsConfigFluentBuilder {
     /// <p>By default, Amazon Kendra sets this to 180.</p>
     pub fn set_query_log_look_back_window_in_days(
         mut self,
-        input: std::option::Option<i32>,
+        input: ::std::option::Option<i32>,
     ) -> Self {
         self.inner = self.inner.set_query_log_look_back_window_in_days(input);
         self
@@ -140,7 +143,7 @@ impl UpdateQuerySuggestionsConfigFluentBuilder {
     /// <p>If you set to <code>TRUE</code>, Amazon Kendra ignores all user information and learns from all queries.</p>
     pub fn set_include_queries_without_user_information(
         mut self,
-        input: std::option::Option<bool>,
+        input: ::std::option::Option<bool>,
     ) -> Self {
         self.inner = self
             .inner
@@ -157,7 +160,10 @@ impl UpdateQuerySuggestionsConfigFluentBuilder {
     /// <p>The minimum number of unique users who must search a query in order for the query to be eligible to suggest to your users.</p>
     /// <p>Increasing this number might decrease the number of suggestions. However, this ensures a query is searched by many users and is truly popular to suggest to users.</p>
     /// <p>How you tune this setting depends on your specific needs.</p>
-    pub fn set_minimum_number_of_querying_users(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_minimum_number_of_querying_users(
+        mut self,
+        input: ::std::option::Option<i32>,
+    ) -> Self {
         self.inner = self.inner.set_minimum_number_of_querying_users(input);
         self
     }
@@ -171,7 +177,7 @@ impl UpdateQuerySuggestionsConfigFluentBuilder {
     /// <p>The the minimum number of times a query must be searched in order to be eligible to suggest to your users.</p>
     /// <p>Decreasing this number increases the number of suggestions. However, this affects the quality of suggestions as it sets a low bar for a query to be considered popular to suggest to users.</p>
     /// <p>How you tune this setting depends on your specific needs.</p>
-    pub fn set_minimum_query_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_minimum_query_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_minimum_query_count(input);
         self
     }
@@ -186,7 +192,7 @@ impl UpdateQuerySuggestionsConfigFluentBuilder {
     /// <p>Configuration information for the document fields/attributes that you want to base query suggestions on.</p>
     pub fn set_attribute_suggestions_config(
         mut self,
-        input: std::option::Option<crate::types::AttributeSuggestionsUpdateConfig>,
+        input: ::std::option::Option<crate::types::AttributeSuggestionsUpdateConfig>,
     ) -> Self {
         self.inner = self.inner.set_attribute_suggestions_config(input);
         self

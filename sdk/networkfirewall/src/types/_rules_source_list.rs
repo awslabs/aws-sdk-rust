@@ -4,7 +4,7 @@
 /// <p>For HTTPS traffic, domain filtering is SNI-based. It uses the server name indicator extension of the TLS handshake.</p>
 /// <p>By default, Network Firewall domain list inspection only includes traffic coming from the VPC where you deploy the firewall. To inspect traffic from IP addresses outside of the deployment VPC, you set the <code>HOME_NET</code> rule variable to include the CIDR range of the deployment VPC plus the other CIDR ranges. For more information, see <code>RuleVariables</code> in this guide and <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/stateful-rule-groups-domain-names.html">Stateful domain list rule groups in Network Firewall</a> in the <i>Network Firewall Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RulesSourceList {
     /// <p>The domains that you want to inspect for in your traffic flows. Valid domain specifications are the following:</p>
     /// <ul>
@@ -12,13 +12,13 @@ pub struct RulesSourceList {
     /// <li> <p>Names that use a domain wildcard, which you indicate with an initial '<code>.</code>'. For example,<code>.example.com</code> matches <code>example.com</code> and matches all subdomains of <code>example.com</code>, such as <code>abc.example.com</code> and <code>www.example.com</code>. </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub targets: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub targets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The protocols you want to inspect. Specify <code>TLS_SNI</code> for <code>HTTPS</code>. Specify <code>HTTP_HOST</code> for <code>HTTP</code>. You can specify either or both. </p>
     #[doc(hidden)]
-    pub target_types: std::option::Option<std::vec::Vec<crate::types::TargetType>>,
+    pub target_types: ::std::option::Option<::std::vec::Vec<crate::types::TargetType>>,
     /// <p>Whether you want to allow or deny access to the domains in your target list.</p>
     #[doc(hidden)]
-    pub generated_rules_type: std::option::Option<crate::types::GeneratedRulesType>,
+    pub generated_rules_type: ::std::option::Option<crate::types::GeneratedRulesType>,
 }
 impl RulesSourceList {
     /// <p>The domains that you want to inspect for in your traffic flows. Valid domain specifications are the following:</p>
@@ -26,15 +26,15 @@ impl RulesSourceList {
     /// <li> <p>Explicit names. For example, <code>abc.example.com</code> matches only the domain <code>abc.example.com</code>.</p> </li>
     /// <li> <p>Names that use a domain wildcard, which you indicate with an initial '<code>.</code>'. For example,<code>.example.com</code> matches <code>example.com</code> and matches all subdomains of <code>example.com</code>, such as <code>abc.example.com</code> and <code>www.example.com</code>. </p> </li>
     /// </ul>
-    pub fn targets(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn targets(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.targets.as_deref()
     }
     /// <p>The protocols you want to inspect. Specify <code>TLS_SNI</code> for <code>HTTPS</code>. Specify <code>HTTP_HOST</code> for <code>HTTP</code>. You can specify either or both. </p>
-    pub fn target_types(&self) -> std::option::Option<&[crate::types::TargetType]> {
+    pub fn target_types(&self) -> ::std::option::Option<&[crate::types::TargetType]> {
         self.target_types.as_deref()
     }
     /// <p>Whether you want to allow or deny access to the domains in your target list.</p>
-    pub fn generated_rules_type(&self) -> std::option::Option<&crate::types::GeneratedRulesType> {
+    pub fn generated_rules_type(&self) -> ::std::option::Option<&crate::types::GeneratedRulesType> {
         self.generated_rules_type.as_ref()
     }
 }
@@ -47,11 +47,13 @@ impl RulesSourceList {
 
 /// A builder for [`RulesSourceList`](crate::types::RulesSourceList).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RulesSourceListBuilder {
-    pub(crate) targets: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) target_types: std::option::Option<std::vec::Vec<crate::types::TargetType>>,
-    pub(crate) generated_rules_type: std::option::Option<crate::types::GeneratedRulesType>,
+    pub(crate) targets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) target_types: ::std::option::Option<::std::vec::Vec<crate::types::TargetType>>,
+    pub(crate) generated_rules_type: ::std::option::Option<crate::types::GeneratedRulesType>,
 }
 impl RulesSourceListBuilder {
     /// Appends an item to `targets`.
@@ -63,10 +65,10 @@ impl RulesSourceListBuilder {
     /// <li> <p>Explicit names. For example, <code>abc.example.com</code> matches only the domain <code>abc.example.com</code>.</p> </li>
     /// <li> <p>Names that use a domain wildcard, which you indicate with an initial '<code>.</code>'. For example,<code>.example.com</code> matches <code>example.com</code> and matches all subdomains of <code>example.com</code>, such as <code>abc.example.com</code> and <code>www.example.com</code>. </p> </li>
     /// </ul>
-    pub fn targets(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn targets(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.targets.unwrap_or_default();
         v.push(input.into());
-        self.targets = Some(v);
+        self.targets = ::std::option::Option::Some(v);
         self
     }
     /// <p>The domains that you want to inspect for in your traffic flows. Valid domain specifications are the following:</p>
@@ -76,7 +78,7 @@ impl RulesSourceListBuilder {
     /// </ul>
     pub fn set_targets(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.targets = input;
         self
@@ -89,26 +91,26 @@ impl RulesSourceListBuilder {
     pub fn target_types(mut self, input: crate::types::TargetType) -> Self {
         let mut v = self.target_types.unwrap_or_default();
         v.push(input);
-        self.target_types = Some(v);
+        self.target_types = ::std::option::Option::Some(v);
         self
     }
     /// <p>The protocols you want to inspect. Specify <code>TLS_SNI</code> for <code>HTTPS</code>. Specify <code>HTTP_HOST</code> for <code>HTTP</code>. You can specify either or both. </p>
     pub fn set_target_types(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TargetType>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::TargetType>>,
     ) -> Self {
         self.target_types = input;
         self
     }
     /// <p>Whether you want to allow or deny access to the domains in your target list.</p>
     pub fn generated_rules_type(mut self, input: crate::types::GeneratedRulesType) -> Self {
-        self.generated_rules_type = Some(input);
+        self.generated_rules_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether you want to allow or deny access to the domains in your target list.</p>
     pub fn set_generated_rules_type(
         mut self,
-        input: std::option::Option<crate::types::GeneratedRulesType>,
+        input: ::std::option::Option<crate::types::GeneratedRulesType>,
     ) -> Self {
         self.generated_rules_type = input;
         self

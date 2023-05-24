@@ -2,22 +2,22 @@
 
 /// Specify the offset between the upper-left corner of the video frame and the top left corner of the overlay.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MotionImageInsertionOffset {
     /// Set the distance, in pixels, between the overlay and the left edge of the video frame.
     #[doc(hidden)]
-    pub image_x: std::option::Option<i32>,
+    pub image_x: ::std::option::Option<i32>,
     /// Set the distance, in pixels, between the overlay and the top edge of the video frame.
     #[doc(hidden)]
-    pub image_y: std::option::Option<i32>,
+    pub image_y: ::std::option::Option<i32>,
 }
 impl MotionImageInsertionOffset {
     /// Set the distance, in pixels, between the overlay and the left edge of the video frame.
-    pub fn image_x(&self) -> std::option::Option<i32> {
+    pub fn image_x(&self) -> ::std::option::Option<i32> {
         self.image_x
     }
     /// Set the distance, in pixels, between the overlay and the top edge of the video frame.
-    pub fn image_y(&self) -> std::option::Option<i32> {
+    pub fn image_y(&self) -> ::std::option::Option<i32> {
         self.image_y
     }
 }
@@ -30,29 +30,31 @@ impl MotionImageInsertionOffset {
 
 /// A builder for [`MotionImageInsertionOffset`](crate::types::MotionImageInsertionOffset).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MotionImageInsertionOffsetBuilder {
-    pub(crate) image_x: std::option::Option<i32>,
-    pub(crate) image_y: std::option::Option<i32>,
+    pub(crate) image_x: ::std::option::Option<i32>,
+    pub(crate) image_y: ::std::option::Option<i32>,
 }
 impl MotionImageInsertionOffsetBuilder {
     /// Set the distance, in pixels, between the overlay and the left edge of the video frame.
     pub fn image_x(mut self, input: i32) -> Self {
-        self.image_x = Some(input);
+        self.image_x = ::std::option::Option::Some(input);
         self
     }
     /// Set the distance, in pixels, between the overlay and the left edge of the video frame.
-    pub fn set_image_x(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_image_x(mut self, input: ::std::option::Option<i32>) -> Self {
         self.image_x = input;
         self
     }
     /// Set the distance, in pixels, between the overlay and the top edge of the video frame.
     pub fn image_y(mut self, input: i32) -> Self {
-        self.image_y = Some(input);
+        self.image_y = ::std::option::Option::Some(input);
         self
     }
     /// Set the distance, in pixels, between the overlay and the top edge of the video frame.
-    pub fn set_image_y(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_image_y(mut self, input: ::std::option::Option<i32>) -> Self {
         self.image_y = input;
         self
     }

@@ -2,15 +2,15 @@
 
 /// <p>Specifies the schedule you want your task to use for repeated executions. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule Expressions for Rules</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TaskSchedule {
     /// <p>A cron expression that specifies when DataSync initiates a scheduled transfer from a source to a destination location. </p>
     #[doc(hidden)]
-    pub schedule_expression: std::option::Option<std::string::String>,
+    pub schedule_expression: ::std::option::Option<::std::string::String>,
 }
 impl TaskSchedule {
     /// <p>A cron expression that specifies when DataSync initiates a scheduled transfer from a source to a destination location. </p>
-    pub fn schedule_expression(&self) -> std::option::Option<&str> {
+    pub fn schedule_expression(&self) -> ::std::option::Option<&str> {
         self.schedule_expression.as_deref()
     }
 }
@@ -23,20 +23,25 @@ impl TaskSchedule {
 
 /// A builder for [`TaskSchedule`](crate::types::TaskSchedule).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TaskScheduleBuilder {
-    pub(crate) schedule_expression: std::option::Option<std::string::String>,
+    pub(crate) schedule_expression: ::std::option::Option<::std::string::String>,
 }
 impl TaskScheduleBuilder {
     /// <p>A cron expression that specifies when DataSync initiates a scheduled transfer from a source to a destination location. </p>
-    pub fn schedule_expression(mut self, input: impl Into<std::string::String>) -> Self {
-        self.schedule_expression = Some(input.into());
+    pub fn schedule_expression(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.schedule_expression = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A cron expression that specifies when DataSync initiates a scheduled transfer from a source to a destination location. </p>
     pub fn set_schedule_expression(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.schedule_expression = input;
         self

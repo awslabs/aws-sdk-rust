@@ -2,24 +2,25 @@
 
 /// <p>Aggregate status of Agent components.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AggregateStatus {
     /// <p>Aggregate status.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::AgentStatus>,
+    pub status: ::std::option::Option<crate::types::AgentStatus>,
     /// <p>Sparse map of failure signatures.</p>
     #[doc(hidden)]
-    pub signature_map: std::option::Option<std::collections::HashMap<std::string::String, bool>>,
+    pub signature_map:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, bool>>,
 }
 impl AggregateStatus {
     /// <p>Aggregate status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::AgentStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::AgentStatus> {
         self.status.as_ref()
     }
     /// <p>Sparse map of failure signatures.</p>
     pub fn signature_map(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, bool>> {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, bool>> {
         self.signature_map.as_ref()
     }
 }
@@ -32,20 +33,22 @@ impl AggregateStatus {
 
 /// A builder for [`AggregateStatus`](crate::types::AggregateStatus).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AggregateStatusBuilder {
-    pub(crate) status: std::option::Option<crate::types::AgentStatus>,
+    pub(crate) status: ::std::option::Option<crate::types::AgentStatus>,
     pub(crate) signature_map:
-        std::option::Option<std::collections::HashMap<std::string::String, bool>>,
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, bool>>,
 }
 impl AggregateStatusBuilder {
     /// <p>Aggregate status.</p>
     pub fn status(mut self, input: crate::types::AgentStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Aggregate status.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::AgentStatus>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::AgentStatus>) -> Self {
         self.status = input;
         self
     }
@@ -54,16 +57,20 @@ impl AggregateStatusBuilder {
     /// To override the contents of this collection use [`set_signature_map`](Self::set_signature_map).
     ///
     /// <p>Sparse map of failure signatures.</p>
-    pub fn signature_map(mut self, k: impl Into<std::string::String>, v: bool) -> Self {
+    pub fn signature_map(
+        mut self,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: bool,
+    ) -> Self {
         let mut hash_map = self.signature_map.unwrap_or_default();
         hash_map.insert(k.into(), v);
-        self.signature_map = Some(hash_map);
+        self.signature_map = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Sparse map of failure signatures.</p>
     pub fn set_signature_map(
         mut self,
-        input: std::option::Option<std::collections::HashMap<std::string::String, bool>>,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, bool>>,
     ) -> Self {
         self.signature_map = input;
         self

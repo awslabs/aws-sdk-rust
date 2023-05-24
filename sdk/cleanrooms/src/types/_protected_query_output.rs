@@ -2,7 +2,7 @@
 
 /// <p>Contains details about the protected query output.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum ProtectedQueryOutput {
     /// <p>If present, the output for a protected query with an `S3` output type.</p>
     S3(crate::types::ProtectedQueryS3Output),
@@ -20,11 +20,11 @@ impl ProtectedQueryOutput {
     #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`S3`](crate::types::ProtectedQueryOutput::S3), extracting the inner [`ProtectedQueryS3Output`](crate::types::ProtectedQueryS3Output).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_s3(&self) -> std::result::Result<&crate::types::ProtectedQueryS3Output, &Self> {
+    pub fn as_s3(&self) -> ::std::result::Result<&crate::types::ProtectedQueryS3Output, &Self> {
         if let ProtectedQueryOutput::S3(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`S3`](crate::types::ProtectedQueryOutput::S3).

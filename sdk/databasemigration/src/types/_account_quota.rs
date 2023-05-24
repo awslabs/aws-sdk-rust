@@ -2,11 +2,11 @@
 
 /// <p>Describes a quota for an Amazon Web Services account, for example the number of replication instances allowed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccountQuota {
     /// <p>The name of the DMS quota for this Amazon Web Services account.</p>
     #[doc(hidden)]
-    pub account_quota_name: std::option::Option<std::string::String>,
+    pub account_quota_name: ::std::option::Option<::std::string::String>,
     /// <p>The amount currently used toward the quota maximum.</p>
     #[doc(hidden)]
     pub used: i64,
@@ -16,7 +16,7 @@ pub struct AccountQuota {
 }
 impl AccountQuota {
     /// <p>The name of the DMS quota for this Amazon Web Services account.</p>
-    pub fn account_quota_name(&self) -> std::option::Option<&str> {
+    pub fn account_quota_name(&self) -> ::std::option::Option<&str> {
         self.account_quota_name.as_deref()
     }
     /// <p>The amount currently used toward the quota maximum.</p>
@@ -37,43 +37,48 @@ impl AccountQuota {
 
 /// A builder for [`AccountQuota`](crate::types::AccountQuota).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AccountQuotaBuilder {
-    pub(crate) account_quota_name: std::option::Option<std::string::String>,
-    pub(crate) used: std::option::Option<i64>,
-    pub(crate) max: std::option::Option<i64>,
+    pub(crate) account_quota_name: ::std::option::Option<::std::string::String>,
+    pub(crate) used: ::std::option::Option<i64>,
+    pub(crate) max: ::std::option::Option<i64>,
 }
 impl AccountQuotaBuilder {
     /// <p>The name of the DMS quota for this Amazon Web Services account.</p>
-    pub fn account_quota_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.account_quota_name = Some(input.into());
+    pub fn account_quota_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.account_quota_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the DMS quota for this Amazon Web Services account.</p>
     pub fn set_account_quota_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.account_quota_name = input;
         self
     }
     /// <p>The amount currently used toward the quota maximum.</p>
     pub fn used(mut self, input: i64) -> Self {
-        self.used = Some(input);
+        self.used = ::std::option::Option::Some(input);
         self
     }
     /// <p>The amount currently used toward the quota maximum.</p>
-    pub fn set_used(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_used(mut self, input: ::std::option::Option<i64>) -> Self {
         self.used = input;
         self
     }
     /// <p>The maximum allowed value for the quota.</p>
     pub fn max(mut self, input: i64) -> Self {
-        self.max = Some(input);
+        self.max = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum allowed value for the quota.</p>
-    pub fn set_max(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_max(mut self, input: ::std::option::Option<i64>) -> Self {
         self.max = input;
         self
     }

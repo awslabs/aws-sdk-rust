@@ -2,36 +2,36 @@
 
 /// Required when you set (Codec) under (AudioDescriptions)&gt;(CodecSettings) to the value WAV.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WavSettings {
     /// Specify Bit depth (BitDepth), in bits per sample, to choose the encoding quality for this audio track.
     #[doc(hidden)]
-    pub bit_depth: std::option::Option<i32>,
+    pub bit_depth: ::std::option::Option<i32>,
     /// Specify the number of channels in this output audio track. Valid values are 1 and even numbers up to 64. For example, 1, 2, 4, 6, and so on, up to 64.
     #[doc(hidden)]
-    pub channels: std::option::Option<i32>,
+    pub channels: ::std::option::Option<i32>,
     /// The service defaults to using RIFF for WAV outputs. If your output audio is likely to exceed 4 GB in file size, or if you otherwise need the extended support of the RF64 format, set your output WAV file format to RF64.
     #[doc(hidden)]
-    pub format: std::option::Option<crate::types::WavFormat>,
+    pub format: ::std::option::Option<crate::types::WavFormat>,
     /// Sample rate in Hz.
     #[doc(hidden)]
-    pub sample_rate: std::option::Option<i32>,
+    pub sample_rate: ::std::option::Option<i32>,
 }
 impl WavSettings {
     /// Specify Bit depth (BitDepth), in bits per sample, to choose the encoding quality for this audio track.
-    pub fn bit_depth(&self) -> std::option::Option<i32> {
+    pub fn bit_depth(&self) -> ::std::option::Option<i32> {
         self.bit_depth
     }
     /// Specify the number of channels in this output audio track. Valid values are 1 and even numbers up to 64. For example, 1, 2, 4, 6, and so on, up to 64.
-    pub fn channels(&self) -> std::option::Option<i32> {
+    pub fn channels(&self) -> ::std::option::Option<i32> {
         self.channels
     }
     /// The service defaults to using RIFF for WAV outputs. If your output audio is likely to exceed 4 GB in file size, or if you otherwise need the extended support of the RF64 format, set your output WAV file format to RF64.
-    pub fn format(&self) -> std::option::Option<&crate::types::WavFormat> {
+    pub fn format(&self) -> ::std::option::Option<&crate::types::WavFormat> {
         self.format.as_ref()
     }
     /// Sample rate in Hz.
-    pub fn sample_rate(&self) -> std::option::Option<i32> {
+    pub fn sample_rate(&self) -> ::std::option::Option<i32> {
         self.sample_rate
     }
 }
@@ -44,51 +44,53 @@ impl WavSettings {
 
 /// A builder for [`WavSettings`](crate::types::WavSettings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct WavSettingsBuilder {
-    pub(crate) bit_depth: std::option::Option<i32>,
-    pub(crate) channels: std::option::Option<i32>,
-    pub(crate) format: std::option::Option<crate::types::WavFormat>,
-    pub(crate) sample_rate: std::option::Option<i32>,
+    pub(crate) bit_depth: ::std::option::Option<i32>,
+    pub(crate) channels: ::std::option::Option<i32>,
+    pub(crate) format: ::std::option::Option<crate::types::WavFormat>,
+    pub(crate) sample_rate: ::std::option::Option<i32>,
 }
 impl WavSettingsBuilder {
     /// Specify Bit depth (BitDepth), in bits per sample, to choose the encoding quality for this audio track.
     pub fn bit_depth(mut self, input: i32) -> Self {
-        self.bit_depth = Some(input);
+        self.bit_depth = ::std::option::Option::Some(input);
         self
     }
     /// Specify Bit depth (BitDepth), in bits per sample, to choose the encoding quality for this audio track.
-    pub fn set_bit_depth(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_bit_depth(mut self, input: ::std::option::Option<i32>) -> Self {
         self.bit_depth = input;
         self
     }
     /// Specify the number of channels in this output audio track. Valid values are 1 and even numbers up to 64. For example, 1, 2, 4, 6, and so on, up to 64.
     pub fn channels(mut self, input: i32) -> Self {
-        self.channels = Some(input);
+        self.channels = ::std::option::Option::Some(input);
         self
     }
     /// Specify the number of channels in this output audio track. Valid values are 1 and even numbers up to 64. For example, 1, 2, 4, 6, and so on, up to 64.
-    pub fn set_channels(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_channels(mut self, input: ::std::option::Option<i32>) -> Self {
         self.channels = input;
         self
     }
     /// The service defaults to using RIFF for WAV outputs. If your output audio is likely to exceed 4 GB in file size, or if you otherwise need the extended support of the RF64 format, set your output WAV file format to RF64.
     pub fn format(mut self, input: crate::types::WavFormat) -> Self {
-        self.format = Some(input);
+        self.format = ::std::option::Option::Some(input);
         self
     }
     /// The service defaults to using RIFF for WAV outputs. If your output audio is likely to exceed 4 GB in file size, or if you otherwise need the extended support of the RF64 format, set your output WAV file format to RF64.
-    pub fn set_format(mut self, input: std::option::Option<crate::types::WavFormat>) -> Self {
+    pub fn set_format(mut self, input: ::std::option::Option<crate::types::WavFormat>) -> Self {
         self.format = input;
         self
     }
     /// Sample rate in Hz.
     pub fn sample_rate(mut self, input: i32) -> Self {
-        self.sample_rate = Some(input);
+        self.sample_rate = ::std::option::Option::Some(input);
         self
     }
     /// Sample rate in Hz.
-    pub fn set_sample_rate(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_sample_rate(mut self, input: ::std::option::Option<i32>) -> Self {
         self.sample_rate = input;
         self
     }

@@ -2,22 +2,22 @@
 
 /// <p>The result of a <code>CancelElasticsearchServiceSoftwareUpdate</code> operation. Contains the status of the update.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelElasticsearchServiceSoftwareUpdateOutput {
     /// <p>The current status of the Elasticsearch service software update.</p>
     #[doc(hidden)]
-    pub service_software_options: std::option::Option<crate::types::ServiceSoftwareOptions>,
+    pub service_software_options: ::std::option::Option<crate::types::ServiceSoftwareOptions>,
     _request_id: Option<String>,
 }
 impl CancelElasticsearchServiceSoftwareUpdateOutput {
     /// <p>The current status of the Elasticsearch service software update.</p>
     pub fn service_software_options(
         &self,
-    ) -> std::option::Option<&crate::types::ServiceSoftwareOptions> {
+    ) -> ::std::option::Option<&crate::types::ServiceSoftwareOptions> {
         self.service_software_options.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for CancelElasticsearchServiceSoftwareUpdateOutput {
+impl ::aws_http::request_id::RequestId for CancelElasticsearchServiceSoftwareUpdateOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -31,21 +31,24 @@ impl CancelElasticsearchServiceSoftwareUpdateOutput {
 
 /// A builder for [`CancelElasticsearchServiceSoftwareUpdateOutput`](crate::operation::cancel_elasticsearch_service_software_update::CancelElasticsearchServiceSoftwareUpdateOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CancelElasticsearchServiceSoftwareUpdateOutputBuilder {
-    pub(crate) service_software_options: std::option::Option<crate::types::ServiceSoftwareOptions>,
+    pub(crate) service_software_options:
+        ::std::option::Option<crate::types::ServiceSoftwareOptions>,
     _request_id: Option<String>,
 }
 impl CancelElasticsearchServiceSoftwareUpdateOutputBuilder {
     /// <p>The current status of the Elasticsearch service software update.</p>
     pub fn service_software_options(mut self, input: crate::types::ServiceSoftwareOptions) -> Self {
-        self.service_software_options = Some(input);
+        self.service_software_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current status of the Elasticsearch service software update.</p>
     pub fn set_service_software_options(
         mut self,
-        input: std::option::Option<crate::types::ServiceSoftwareOptions>,
+        input: ::std::option::Option<crate::types::ServiceSoftwareOptions>,
     ) -> Self {
         self.service_software_options = input;
         self

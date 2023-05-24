@@ -45,13 +45,13 @@
 /// <p>Specifies the Auto-Tune state for the Elasticsearch domain. For valid states see the <a href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html" target="_blank">Developer Guide</a>.</p>
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum AutoTuneState {
     #[allow(missing_docs)] // documentation missing in model
@@ -75,7 +75,7 @@ pub enum AutoTuneState {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for AutoTuneState {
+impl ::std::convert::From<&str> for AutoTuneState {
     fn from(s: &str) -> Self {
         match s {
             "DISABLED" => AutoTuneState::Disabled,
@@ -93,11 +93,11 @@ impl std::convert::From<&str> for AutoTuneState {
         }
     }
 }
-impl std::str::FromStr for AutoTuneState {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for AutoTuneState {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AutoTuneState::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(AutoTuneState::from(s))
     }
 }
 impl AutoTuneState {
@@ -131,7 +131,7 @@ impl AutoTuneState {
         ]
     }
 }
-impl AsRef<str> for AutoTuneState {
+impl ::std::convert::AsRef<str> for AutoTuneState {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

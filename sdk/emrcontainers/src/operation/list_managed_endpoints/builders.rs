@@ -6,29 +6,29 @@ pub use crate::operation::list_managed_endpoints::_list_managed_endpoints_input:
 /// Fluent builder constructing a request to `ListManagedEndpoints`.
 ///
 /// <p>Lists managed endpoints based on a set of parameters. A managed endpoint is a gateway that connects Amazon EMR Studio to Amazon EMR on EKS so that Amazon EMR Studio can communicate with your virtual cluster.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListManagedEndpointsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::list_managed_endpoints::builders::ListManagedEndpointsInputBuilder,
 }
 impl ListManagedEndpointsFluentBuilder {
     /// Creates a new `ListManagedEndpoints`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::list_managed_endpoints::ListManagedEndpoints,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::list_managed_endpoints::ListManagedEndpointsError,
         >,
     > {
@@ -36,30 +36,33 @@ impl ListManagedEndpointsFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::list_managed_endpoints::ListManagedEndpointsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::list_managed_endpoints::ListManagedEndpointsError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,9 +75,9 @@ impl ListManagedEndpointsFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::list_managed_endpoints::ListManagedEndpointsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::list_managed_endpoints::ListManagedEndpointsError,
         >,
     > {
@@ -92,40 +95,43 @@ impl ListManagedEndpointsFluentBuilder {
         )
     }
     /// <p>The ID of the virtual cluster.</p>
-    pub fn virtual_cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn virtual_cluster_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.virtual_cluster_id(input.into());
         self
     }
     /// <p>The ID of the virtual cluster.</p>
     pub fn set_virtual_cluster_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_virtual_cluster_id(input);
         self
     }
     /// <p>The date and time before which the endpoints are created.</p>
-    pub fn created_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+    pub fn created_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.created_before(input);
         self
     }
     /// <p>The date and time before which the endpoints are created.</p>
     pub fn set_created_before(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.inner = self.inner.set_created_before(input);
         self
     }
     /// <p> The date and time after which the endpoints are created.</p>
-    pub fn created_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+    pub fn created_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.created_after(input);
         self
     }
     /// <p> The date and time after which the endpoints are created.</p>
     pub fn set_created_after(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.inner = self.inner.set_created_after(input);
         self
@@ -135,14 +141,14 @@ impl ListManagedEndpointsFluentBuilder {
     /// To override the contents of this collection use [`set_types`](Self::set_types).
     ///
     /// <p>The types of the managed endpoints.</p>
-    pub fn types(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.types(input.into());
         self
     }
     /// <p>The types of the managed endpoints.</p>
     pub fn set_types(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_types(input);
         self
@@ -159,7 +165,7 @@ impl ListManagedEndpointsFluentBuilder {
     /// <p>The states of the managed endpoints.</p>
     pub fn set_states(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::EndpointState>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::EndpointState>>,
     ) -> Self {
         self.inner = self.inner.set_states(input);
         self
@@ -170,17 +176,17 @@ impl ListManagedEndpointsFluentBuilder {
         self
     }
     /// <p>The maximum number of managed endpoints that can be listed.</p>
-    pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
     /// <p> The token for the next set of managed endpoints to return. </p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
     /// <p> The token for the next set of managed endpoints to return. </p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }

@@ -6,29 +6,29 @@ pub use crate::operation::update_user_settings::_update_user_settings_input::Upd
 /// Fluent builder constructing a request to `UpdateUserSettings`.
 ///
 /// <p>Updates the user settings.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateUserSettingsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::update_user_settings::builders::UpdateUserSettingsInputBuilder,
 }
 impl UpdateUserSettingsFluentBuilder {
     /// Creates a new `UpdateUserSettings`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_user_settings::UpdateUserSettings,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_user_settings::UpdateUserSettingsError,
         >,
     > {
@@ -36,30 +36,33 @@ impl UpdateUserSettingsFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_user_settings::UpdateUserSettingsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_user_settings::UpdateUserSettingsError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,23 +75,26 @@ impl UpdateUserSettingsFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_user_settings::UpdateUserSettingsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_user_settings::UpdateUserSettingsError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The ARN of the user settings.</p>
-    pub fn user_settings_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn user_settings_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.user_settings_arn(input.into());
         self
     }
     /// <p>The ARN of the user settings.</p>
     pub fn set_user_settings_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_user_settings_arn(input);
         self
@@ -101,7 +107,7 @@ impl UpdateUserSettingsFluentBuilder {
     /// <p>Specifies whether the user can copy text from the streaming session to the local device.</p>
     pub fn set_copy_allowed(
         mut self,
-        input: std::option::Option<crate::types::EnabledType>,
+        input: ::std::option::Option<crate::types::EnabledType>,
     ) -> Self {
         self.inner = self.inner.set_copy_allowed(input);
         self
@@ -114,7 +120,7 @@ impl UpdateUserSettingsFluentBuilder {
     /// <p>Specifies whether the user can paste text from the local device to the streaming session.</p>
     pub fn set_paste_allowed(
         mut self,
-        input: std::option::Option<crate::types::EnabledType>,
+        input: ::std::option::Option<crate::types::EnabledType>,
     ) -> Self {
         self.inner = self.inner.set_paste_allowed(input);
         self
@@ -127,7 +133,7 @@ impl UpdateUserSettingsFluentBuilder {
     /// <p>Specifies whether the user can download files from the streaming session to the local device.</p>
     pub fn set_download_allowed(
         mut self,
-        input: std::option::Option<crate::types::EnabledType>,
+        input: ::std::option::Option<crate::types::EnabledType>,
     ) -> Self {
         self.inner = self.inner.set_download_allowed(input);
         self
@@ -140,7 +146,7 @@ impl UpdateUserSettingsFluentBuilder {
     /// <p>Specifies whether the user can upload files from the local device to the streaming session.</p>
     pub fn set_upload_allowed(
         mut self,
-        input: std::option::Option<crate::types::EnabledType>,
+        input: ::std::option::Option<crate::types::EnabledType>,
     ) -> Self {
         self.inner = self.inner.set_upload_allowed(input);
         self
@@ -153,7 +159,7 @@ impl UpdateUserSettingsFluentBuilder {
     /// <p>Specifies whether the user can print to the local device.</p>
     pub fn set_print_allowed(
         mut self,
-        input: std::option::Option<crate::types::EnabledType>,
+        input: ::std::option::Option<crate::types::EnabledType>,
     ) -> Self {
         self.inner = self.inner.set_print_allowed(input);
         self
@@ -164,7 +170,7 @@ impl UpdateUserSettingsFluentBuilder {
         self
     }
     /// <p>The amount of time that a streaming session remains active after users disconnect.</p>
-    pub fn set_disconnect_timeout_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_disconnect_timeout_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_disconnect_timeout_in_minutes(input);
         self
     }
@@ -176,20 +182,20 @@ impl UpdateUserSettingsFluentBuilder {
     /// <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the disconnect timeout interval begins.</p>
     pub fn set_idle_disconnect_timeout_in_minutes(
         mut self,
-        input: std::option::Option<i32>,
+        input: ::std::option::Option<i32>,
     ) -> Self {
         self.inner = self.inner.set_idle_disconnect_timeout_in_minutes(input);
         self
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token return the result from the original successful request. </p>
     /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
-    pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token return the result from the original successful request. </p>
     /// <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
-    pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }

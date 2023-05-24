@@ -2,15 +2,15 @@
 
 /// <p>An object that contains overrides for the Kubernetes resources of a job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EksPropertiesOverride {
     /// <p>The overrides for the Kubernetes pod resources of a job.</p>
     #[doc(hidden)]
-    pub pod_properties: std::option::Option<crate::types::EksPodPropertiesOverride>,
+    pub pod_properties: ::std::option::Option<crate::types::EksPodPropertiesOverride>,
 }
 impl EksPropertiesOverride {
     /// <p>The overrides for the Kubernetes pod resources of a job.</p>
-    pub fn pod_properties(&self) -> std::option::Option<&crate::types::EksPodPropertiesOverride> {
+    pub fn pod_properties(&self) -> ::std::option::Option<&crate::types::EksPodPropertiesOverride> {
         self.pod_properties.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl EksPropertiesOverride {
 
 /// A builder for [`EksPropertiesOverride`](crate::types::EksPropertiesOverride).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EksPropertiesOverrideBuilder {
-    pub(crate) pod_properties: std::option::Option<crate::types::EksPodPropertiesOverride>,
+    pub(crate) pod_properties: ::std::option::Option<crate::types::EksPodPropertiesOverride>,
 }
 impl EksPropertiesOverrideBuilder {
     /// <p>The overrides for the Kubernetes pod resources of a job.</p>
     pub fn pod_properties(mut self, input: crate::types::EksPodPropertiesOverride) -> Self {
-        self.pod_properties = Some(input);
+        self.pod_properties = ::std::option::Option::Some(input);
         self
     }
     /// <p>The overrides for the Kubernetes pod resources of a job.</p>
     pub fn set_pod_properties(
         mut self,
-        input: std::option::Option<crate::types::EksPodPropertiesOverride>,
+        input: ::std::option::Option<crate::types::EksPodPropertiesOverride>,
     ) -> Self {
         self.pod_properties = input;
         self

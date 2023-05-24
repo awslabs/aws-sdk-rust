@@ -2,22 +2,22 @@
 
 /// <p>Case summary information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CaseSummary {
     /// <p>A unique identifier of the case.</p>
     #[doc(hidden)]
-    pub case_id: std::option::Option<std::string::String>,
+    pub case_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier of a template.</p>
     #[doc(hidden)]
-    pub template_id: std::option::Option<std::string::String>,
+    pub template_id: ::std::option::Option<::std::string::String>,
 }
 impl CaseSummary {
     /// <p>A unique identifier of the case.</p>
-    pub fn case_id(&self) -> std::option::Option<&str> {
+    pub fn case_id(&self) -> ::std::option::Option<&str> {
         self.case_id.as_deref()
     }
     /// <p>A unique identifier of a template.</p>
-    pub fn template_id(&self) -> std::option::Option<&str> {
+    pub fn template_id(&self) -> ::std::option::Option<&str> {
         self.template_id.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl CaseSummary {
 
 /// A builder for [`CaseSummary`](crate::types::CaseSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CaseSummaryBuilder {
-    pub(crate) case_id: std::option::Option<std::string::String>,
-    pub(crate) template_id: std::option::Option<std::string::String>,
+    pub(crate) case_id: ::std::option::Option<::std::string::String>,
+    pub(crate) template_id: ::std::option::Option<::std::string::String>,
 }
 impl CaseSummaryBuilder {
     /// <p>A unique identifier of the case.</p>
-    pub fn case_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.case_id = Some(input.into());
+    pub fn case_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.case_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier of the case.</p>
-    pub fn set_case_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_case_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.case_id = input;
         self
     }
     /// <p>A unique identifier of a template.</p>
-    pub fn template_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.template_id = Some(input.into());
+    pub fn template_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.template_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier of a template.</p>
-    pub fn set_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_template_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_id = input;
         self
     }

@@ -2,29 +2,29 @@
 
 /// <p>The GetOperationDetail response includes the following elements.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetOperationDetailOutput {
     /// <p>The identifier for the operation.</p>
     #[doc(hidden)]
-    pub operation_id: std::option::Option<std::string::String>,
+    pub operation_id: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the requested operation in the system.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::OperationStatus>,
+    pub status: ::std::option::Option<crate::types::OperationStatus>,
     /// <p>Detailed information on the status including possible errors.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
     /// <p>The name of a domain.</p>
     #[doc(hidden)]
-    pub domain_name: std::option::Option<std::string::String>,
+    pub domain_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of operation that was requested.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::OperationType>,
+    pub r#type: ::std::option::Option<crate::types::OperationType>,
     /// <p>The date when the request was submitted.</p>
     #[doc(hidden)]
-    pub submitted_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub submitted_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The date when the operation was last updated. </p>
     #[doc(hidden)]
-    pub last_updated_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_updated_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> Lists any outstanding operations that require customer action. Valid values are:</p>
     /// <ul>
     /// <li> <p> <code>PENDING_ACCEPTANCE</code>: The operation is waiting for acceptance from the account that is receiving the domain.</p> </li>
@@ -34,36 +34,36 @@ pub struct GetOperationDetailOutput {
     /// <li> <p> <code>PENDING_SUPPORT_CASE</code>: The operation includes a support case and is waiting for its resolution.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub status_flag: std::option::Option<crate::types::StatusFlag>,
+    pub status_flag: ::std::option::Option<crate::types::StatusFlag>,
     _request_id: Option<String>,
 }
 impl GetOperationDetailOutput {
     /// <p>The identifier for the operation.</p>
-    pub fn operation_id(&self) -> std::option::Option<&str> {
+    pub fn operation_id(&self) -> ::std::option::Option<&str> {
         self.operation_id.as_deref()
     }
     /// <p>The current status of the requested operation in the system.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::OperationStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::OperationStatus> {
         self.status.as_ref()
     }
     /// <p>Detailed information on the status including possible errors.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
     /// <p>The name of a domain.</p>
-    pub fn domain_name(&self) -> std::option::Option<&str> {
+    pub fn domain_name(&self) -> ::std::option::Option<&str> {
         self.domain_name.as_deref()
     }
     /// <p>The type of operation that was requested.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::OperationType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::OperationType> {
         self.r#type.as_ref()
     }
     /// <p>The date when the request was submitted.</p>
-    pub fn submitted_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn submitted_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.submitted_date.as_ref()
     }
     /// <p> The date when the operation was last updated. </p>
-    pub fn last_updated_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_date.as_ref()
     }
     /// <p> Lists any outstanding operations that require customer action. Valid values are:</p>
@@ -74,11 +74,11 @@ impl GetOperationDetailOutput {
     /// <li> <p> <code>PENDING_PAYMENT_VERIFICATION</code>: The operation is waiting for the payment method to validate.</p> </li>
     /// <li> <p> <code>PENDING_SUPPORT_CASE</code>: The operation includes a support case and is waiting for its resolution.</p> </li>
     /// </ul>
-    pub fn status_flag(&self) -> std::option::Option<&crate::types::StatusFlag> {
+    pub fn status_flag(&self) -> ::std::option::Option<&crate::types::StatusFlag> {
         self.status_flag.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for GetOperationDetailOutput {
+impl ::aws_http::request_id::RequestId for GetOperationDetailOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -93,91 +93,96 @@ impl GetOperationDetailOutput {
 
 /// A builder for [`GetOperationDetailOutput`](crate::operation::get_operation_detail::GetOperationDetailOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetOperationDetailOutputBuilder {
-    pub(crate) operation_id: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::OperationStatus>,
-    pub(crate) message: std::option::Option<std::string::String>,
-    pub(crate) domain_name: std::option::Option<std::string::String>,
-    pub(crate) r#type: std::option::Option<crate::types::OperationType>,
-    pub(crate) submitted_date: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_updated_date: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) status_flag: std::option::Option<crate::types::StatusFlag>,
+    pub(crate) operation_id: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::OperationStatus>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
+    pub(crate) domain_name: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::OperationType>,
+    pub(crate) submitted_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_updated_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) status_flag: ::std::option::Option<crate::types::StatusFlag>,
     _request_id: Option<String>,
 }
 impl GetOperationDetailOutputBuilder {
     /// <p>The identifier for the operation.</p>
-    pub fn operation_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.operation_id = Some(input.into());
+    pub fn operation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.operation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for the operation.</p>
-    pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_operation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.operation_id = input;
         self
     }
     /// <p>The current status of the requested operation in the system.</p>
     pub fn status(mut self, input: crate::types::OperationStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current status of the requested operation in the system.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::OperationStatus>) -> Self {
+    pub fn set_status(
+        mut self,
+        input: ::std::option::Option<crate::types::OperationStatus>,
+    ) -> Self {
         self.status = input;
         self
     }
     /// <p>Detailed information on the status including possible errors.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Detailed information on the status including possible errors.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
     /// <p>The name of a domain.</p>
-    pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.domain_name = Some(input.into());
+    pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.domain_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a domain.</p>
-    pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain_name = input;
         self
     }
     /// <p>The type of operation that was requested.</p>
     pub fn r#type(mut self, input: crate::types::OperationType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of operation that was requested.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::OperationType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::OperationType>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The date when the request was submitted.</p>
-    pub fn submitted_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.submitted_date = Some(input);
+    pub fn submitted_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.submitted_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date when the request was submitted.</p>
     pub fn set_submitted_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.submitted_date = input;
         self
     }
     /// <p> The date when the operation was last updated. </p>
-    pub fn last_updated_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_updated_date = Some(input);
+    pub fn last_updated_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_updated_date = ::std::option::Option::Some(input);
         self
     }
     /// <p> The date when the operation was last updated. </p>
     pub fn set_last_updated_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_updated_date = input;
         self
@@ -191,7 +196,7 @@ impl GetOperationDetailOutputBuilder {
     /// <li> <p> <code>PENDING_SUPPORT_CASE</code>: The operation includes a support case and is waiting for its resolution.</p> </li>
     /// </ul>
     pub fn status_flag(mut self, input: crate::types::StatusFlag) -> Self {
-        self.status_flag = Some(input);
+        self.status_flag = ::std::option::Option::Some(input);
         self
     }
     /// <p> Lists any outstanding operations that require customer action. Valid values are:</p>
@@ -202,7 +207,10 @@ impl GetOperationDetailOutputBuilder {
     /// <li> <p> <code>PENDING_PAYMENT_VERIFICATION</code>: The operation is waiting for the payment method to validate.</p> </li>
     /// <li> <p> <code>PENDING_SUPPORT_CASE</code>: The operation includes a support case and is waiting for its resolution.</p> </li>
     /// </ul>
-    pub fn set_status_flag(mut self, input: std::option::Option<crate::types::StatusFlag>) -> Self {
+    pub fn set_status_flag(
+        mut self,
+        input: ::std::option::Option<crate::types::StatusFlag>,
+    ) -> Self {
         self.status_flag = input;
         self
     }

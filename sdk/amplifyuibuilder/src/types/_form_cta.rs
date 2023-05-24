@@ -2,36 +2,36 @@
 
 /// <p>Describes the call to action button configuration for the form.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FormCta {
     /// <p>The position of the button.</p>
     #[doc(hidden)]
-    pub position: std::option::Option<crate::types::FormButtonsPosition>,
+    pub position: ::std::option::Option<crate::types::FormButtonsPosition>,
     /// <p>Displays a clear button.</p>
     #[doc(hidden)]
-    pub clear: std::option::Option<crate::types::FormButton>,
+    pub clear: ::std::option::Option<crate::types::FormButton>,
     /// <p>Displays a cancel button.</p>
     #[doc(hidden)]
-    pub cancel: std::option::Option<crate::types::FormButton>,
+    pub cancel: ::std::option::Option<crate::types::FormButton>,
     /// <p>Displays a submit button.</p>
     #[doc(hidden)]
-    pub submit: std::option::Option<crate::types::FormButton>,
+    pub submit: ::std::option::Option<crate::types::FormButton>,
 }
 impl FormCta {
     /// <p>The position of the button.</p>
-    pub fn position(&self) -> std::option::Option<&crate::types::FormButtonsPosition> {
+    pub fn position(&self) -> ::std::option::Option<&crate::types::FormButtonsPosition> {
         self.position.as_ref()
     }
     /// <p>Displays a clear button.</p>
-    pub fn clear(&self) -> std::option::Option<&crate::types::FormButton> {
+    pub fn clear(&self) -> ::std::option::Option<&crate::types::FormButton> {
         self.clear.as_ref()
     }
     /// <p>Displays a cancel button.</p>
-    pub fn cancel(&self) -> std::option::Option<&crate::types::FormButton> {
+    pub fn cancel(&self) -> ::std::option::Option<&crate::types::FormButton> {
         self.cancel.as_ref()
     }
     /// <p>Displays a submit button.</p>
-    pub fn submit(&self) -> std::option::Option<&crate::types::FormButton> {
+    pub fn submit(&self) -> ::std::option::Option<&crate::types::FormButton> {
         self.submit.as_ref()
     }
 }
@@ -44,54 +44,56 @@ impl FormCta {
 
 /// A builder for [`FormCta`](crate::types::FormCta).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FormCtaBuilder {
-    pub(crate) position: std::option::Option<crate::types::FormButtonsPosition>,
-    pub(crate) clear: std::option::Option<crate::types::FormButton>,
-    pub(crate) cancel: std::option::Option<crate::types::FormButton>,
-    pub(crate) submit: std::option::Option<crate::types::FormButton>,
+    pub(crate) position: ::std::option::Option<crate::types::FormButtonsPosition>,
+    pub(crate) clear: ::std::option::Option<crate::types::FormButton>,
+    pub(crate) cancel: ::std::option::Option<crate::types::FormButton>,
+    pub(crate) submit: ::std::option::Option<crate::types::FormButton>,
 }
 impl FormCtaBuilder {
     /// <p>The position of the button.</p>
     pub fn position(mut self, input: crate::types::FormButtonsPosition) -> Self {
-        self.position = Some(input);
+        self.position = ::std::option::Option::Some(input);
         self
     }
     /// <p>The position of the button.</p>
     pub fn set_position(
         mut self,
-        input: std::option::Option<crate::types::FormButtonsPosition>,
+        input: ::std::option::Option<crate::types::FormButtonsPosition>,
     ) -> Self {
         self.position = input;
         self
     }
     /// <p>Displays a clear button.</p>
     pub fn clear(mut self, input: crate::types::FormButton) -> Self {
-        self.clear = Some(input);
+        self.clear = ::std::option::Option::Some(input);
         self
     }
     /// <p>Displays a clear button.</p>
-    pub fn set_clear(mut self, input: std::option::Option<crate::types::FormButton>) -> Self {
+    pub fn set_clear(mut self, input: ::std::option::Option<crate::types::FormButton>) -> Self {
         self.clear = input;
         self
     }
     /// <p>Displays a cancel button.</p>
     pub fn cancel(mut self, input: crate::types::FormButton) -> Self {
-        self.cancel = Some(input);
+        self.cancel = ::std::option::Option::Some(input);
         self
     }
     /// <p>Displays a cancel button.</p>
-    pub fn set_cancel(mut self, input: std::option::Option<crate::types::FormButton>) -> Self {
+    pub fn set_cancel(mut self, input: ::std::option::Option<crate::types::FormButton>) -> Self {
         self.cancel = input;
         self
     }
     /// <p>Displays a submit button.</p>
     pub fn submit(mut self, input: crate::types::FormButton) -> Self {
-        self.submit = Some(input);
+        self.submit = ::std::option::Option::Some(input);
         self
     }
     /// <p>Displays a submit button.</p>
-    pub fn set_submit(mut self, input: std::option::Option<crate::types::FormButton>) -> Self {
+    pub fn set_submit(mut self, input: ::std::option::Option<crate::types::FormButton>) -> Self {
         self.submit = input;
         self
     }

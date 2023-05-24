@@ -2,15 +2,15 @@
 
 /// <p> The properties that are applied when Amplitude is being used as a source. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AmplitudeSourceProperties {
     /// <p> The object specified in the Amplitude flow source. </p>
     #[doc(hidden)]
-    pub object: std::option::Option<std::string::String>,
+    pub object: ::std::option::Option<::std::string::String>,
 }
 impl AmplitudeSourceProperties {
     /// <p> The object specified in the Amplitude flow source. </p>
-    pub fn object(&self) -> std::option::Option<&str> {
+    pub fn object(&self) -> ::std::option::Option<&str> {
         self.object.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl AmplitudeSourceProperties {
 
 /// A builder for [`AmplitudeSourceProperties`](crate::types::AmplitudeSourceProperties).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AmplitudeSourcePropertiesBuilder {
-    pub(crate) object: std::option::Option<std::string::String>,
+    pub(crate) object: ::std::option::Option<::std::string::String>,
 }
 impl AmplitudeSourcePropertiesBuilder {
     /// <p> The object specified in the Amplitude flow source. </p>
-    pub fn object(mut self, input: impl Into<std::string::String>) -> Self {
-        self.object = Some(input.into());
+    pub fn object(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.object = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The object specified in the Amplitude flow source. </p>
-    pub fn set_object(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_object(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.object = input;
         self
     }

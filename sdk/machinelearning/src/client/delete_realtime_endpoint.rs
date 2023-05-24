@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteRealtimeEndpoint`](crate::operation::delete_realtime_endpoint::builders::DeleteRealtimeEndpointFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`ml_model_id(impl Into<String>)`](crate::operation::delete_realtime_endpoint::builders::DeleteRealtimeEndpointFluentBuilder::ml_model_id) / [`set_ml_model_id(Option<String>)`](crate::operation::delete_realtime_endpoint::builders::DeleteRealtimeEndpointFluentBuilder::set_ml_model_id): <p>The ID assigned to the <code>MLModel</code> during creation.</p>
+    ///   - [`ml_model_id(impl ::std::convert::Into<String>)`](crate::operation::delete_realtime_endpoint::builders::DeleteRealtimeEndpointFluentBuilder::ml_model_id) / [`set_ml_model_id(Option<String>)`](crate::operation::delete_realtime_endpoint::builders::DeleteRealtimeEndpointFluentBuilder::set_ml_model_id): <p>The ID assigned to the <code>MLModel</code> during creation.</p>
     /// - On success, responds with [`DeleteRealtimeEndpointOutput`](crate::operation::delete_realtime_endpoint::DeleteRealtimeEndpointOutput) with field(s):
     ///   - [`ml_model_id(Option<String>)`](crate::operation::delete_realtime_endpoint::DeleteRealtimeEndpointOutput::ml_model_id): <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>. This value should be identical to the value of the <code>MLModelId</code> in the request.</p>
     ///   - [`realtime_endpoint_info(Option<RealtimeEndpointInfo>)`](crate::operation::delete_realtime_endpoint::DeleteRealtimeEndpointOutput::realtime_endpoint_info): <p>The endpoint information of the <code>MLModel</code> </p>

@@ -6,56 +6,59 @@ pub use crate::operation::update_pool::_update_pool_input::UpdatePoolInputBuilde
 /// Fluent builder constructing a request to `UpdatePool`.
 ///
 /// <p>Updates the configuration of an existing pool. You can update the opt-out list, enable or disable two-way messaging, change the <code>TwoWayChannelArn</code>, enable or disable self-managed opt-outs, enable or disable deletion protection, and enable or disable shared routes.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdatePoolFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::update_pool::builders::UpdatePoolInputBuilder,
 }
 impl UpdatePoolFluentBuilder {
     /// Creates a new `UpdatePool`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_pool::UpdatePool,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::update_pool::UpdatePoolError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_pool::UpdatePoolError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_pool::UpdatePoolOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_pool::UpdatePoolError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_pool::UpdatePoolError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,19 +71,19 @@ impl UpdatePoolFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_pool::UpdatePoolOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_pool::UpdatePoolError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_pool::UpdatePoolError>,
     > {
         self.send_middleware().await
     }
     /// <p>The unique identifier of the pool to update. Valid values are either the PoolId or PoolArn.</p>
-    pub fn pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pool_id(input.into());
         self
     }
     /// <p>The unique identifier of the pool to update. Valid values are either the PoolId or PoolArn.</p>
-    pub fn set_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pool_id(input);
         self
     }
@@ -90,19 +93,22 @@ impl UpdatePoolFluentBuilder {
         self
     }
     /// <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients.</p>
-    pub fn set_two_way_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_two_way_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_two_way_enabled(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the two way channel.</p>
-    pub fn two_way_channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn two_way_channel_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.two_way_channel_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the two way channel.</p>
     pub fn set_two_way_channel_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_two_way_channel_arn(input);
         self
@@ -113,19 +119,22 @@ impl UpdatePoolFluentBuilder {
         self
     }
     /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
-    pub fn set_self_managed_opt_outs_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_self_managed_opt_outs_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_self_managed_opt_outs_enabled(input);
         self
     }
     /// <p>The OptOutList to associate with the pool. Valid values are either OptOutListName or OptOutListArn.</p>
-    pub fn opt_out_list_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn opt_out_list_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.opt_out_list_name(input.into());
         self
     }
     /// <p>The OptOutList to associate with the pool. Valid values are either OptOutListName or OptOutListArn.</p>
     pub fn set_opt_out_list_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_opt_out_list_name(input);
         self
@@ -136,7 +145,7 @@ impl UpdatePoolFluentBuilder {
         self
     }
     /// <p>Indicates whether shared routes are enabled for the pool.</p>
-    pub fn set_shared_routes_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_shared_routes_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_shared_routes_enabled(input);
         self
     }
@@ -146,7 +155,7 @@ impl UpdatePoolFluentBuilder {
         self
     }
     /// <p>When set to true the pool can't be deleted.</p>
-    pub fn set_deletion_protection_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_deletion_protection_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_deletion_protection_enabled(input);
         self
     }

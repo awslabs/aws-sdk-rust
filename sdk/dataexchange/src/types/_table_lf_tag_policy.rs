@@ -2,15 +2,15 @@
 
 /// <p>The LF-tag policy for a table resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TableLfTagPolicy {
     /// <p>A list of LF-tag conditions that apply to table resources.</p>
     #[doc(hidden)]
-    pub expression: std::option::Option<std::vec::Vec<crate::types::LfTag>>,
+    pub expression: ::std::option::Option<::std::vec::Vec<crate::types::LfTag>>,
 }
 impl TableLfTagPolicy {
     /// <p>A list of LF-tag conditions that apply to table resources.</p>
-    pub fn expression(&self) -> std::option::Option<&[crate::types::LfTag]> {
+    pub fn expression(&self) -> ::std::option::Option<&[crate::types::LfTag]> {
         self.expression.as_deref()
     }
 }
@@ -23,9 +23,11 @@ impl TableLfTagPolicy {
 
 /// A builder for [`TableLfTagPolicy`](crate::types::TableLfTagPolicy).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TableLfTagPolicyBuilder {
-    pub(crate) expression: std::option::Option<std::vec::Vec<crate::types::LfTag>>,
+    pub(crate) expression: ::std::option::Option<::std::vec::Vec<crate::types::LfTag>>,
 }
 impl TableLfTagPolicyBuilder {
     /// Appends an item to `expression`.
@@ -36,13 +38,13 @@ impl TableLfTagPolicyBuilder {
     pub fn expression(mut self, input: crate::types::LfTag) -> Self {
         let mut v = self.expression.unwrap_or_default();
         v.push(input);
-        self.expression = Some(v);
+        self.expression = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of LF-tag conditions that apply to table resources.</p>
     pub fn set_expression(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::LfTag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::LfTag>>,
     ) -> Self {
         self.expression = input;
         self

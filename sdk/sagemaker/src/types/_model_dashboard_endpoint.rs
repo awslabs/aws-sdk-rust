@@ -2,43 +2,43 @@
 
 /// <p>An endpoint that hosts a model displayed in the Amazon SageMaker Model Dashboard.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModelDashboardEndpoint {
     /// <p>The endpoint name.</p>
     #[doc(hidden)]
-    pub endpoint_name: std::option::Option<std::string::String>,
+    pub endpoint_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the endpoint.</p>
     #[doc(hidden)]
-    pub endpoint_arn: std::option::Option<std::string::String>,
+    pub endpoint_arn: ::std::option::Option<::std::string::String>,
     /// <p>A timestamp that indicates when the endpoint was created.</p>
     #[doc(hidden)]
-    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time the endpoint was modified.</p>
     #[doc(hidden)]
-    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The endpoint status.</p>
     #[doc(hidden)]
-    pub endpoint_status: std::option::Option<crate::types::EndpointStatus>,
+    pub endpoint_status: ::std::option::Option<crate::types::EndpointStatus>,
 }
 impl ModelDashboardEndpoint {
     /// <p>The endpoint name.</p>
-    pub fn endpoint_name(&self) -> std::option::Option<&str> {
+    pub fn endpoint_name(&self) -> ::std::option::Option<&str> {
         self.endpoint_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint.</p>
-    pub fn endpoint_arn(&self) -> std::option::Option<&str> {
+    pub fn endpoint_arn(&self) -> ::std::option::Option<&str> {
         self.endpoint_arn.as_deref()
     }
     /// <p>A timestamp that indicates when the endpoint was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The last time the endpoint was modified.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>The endpoint status.</p>
-    pub fn endpoint_status(&self) -> std::option::Option<&crate::types::EndpointStatus> {
+    pub fn endpoint_status(&self) -> ::std::option::Option<&crate::types::EndpointStatus> {
         self.endpoint_status.as_ref()
     }
 }
@@ -51,70 +51,78 @@ impl ModelDashboardEndpoint {
 
 /// A builder for [`ModelDashboardEndpoint`](crate::types::ModelDashboardEndpoint).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ModelDashboardEndpointBuilder {
-    pub(crate) endpoint_name: std::option::Option<std::string::String>,
-    pub(crate) endpoint_arn: std::option::Option<std::string::String>,
-    pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) endpoint_status: std::option::Option<crate::types::EndpointStatus>,
+    pub(crate) endpoint_name: ::std::option::Option<::std::string::String>,
+    pub(crate) endpoint_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) endpoint_status: ::std::option::Option<crate::types::EndpointStatus>,
 }
 impl ModelDashboardEndpointBuilder {
     /// <p>The endpoint name.</p>
-    pub fn endpoint_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.endpoint_name = Some(input.into());
+    pub fn endpoint_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.endpoint_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The endpoint name.</p>
-    pub fn set_endpoint_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_endpoint_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.endpoint_name = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint.</p>
-    pub fn endpoint_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.endpoint_arn = Some(input.into());
+    pub fn endpoint_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.endpoint_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint.</p>
-    pub fn set_endpoint_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_endpoint_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint_arn = input;
         self
     }
     /// <p>A timestamp that indicates when the endpoint was created.</p>
-    pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_time = Some(input);
+    pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>A timestamp that indicates when the endpoint was created.</p>
     pub fn set_creation_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_time = input;
         self
     }
     /// <p>The last time the endpoint was modified.</p>
-    pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_modified_time = Some(input);
+    pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_modified_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The last time the endpoint was modified.</p>
     pub fn set_last_modified_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_modified_time = input;
         self
     }
     /// <p>The endpoint status.</p>
     pub fn endpoint_status(mut self, input: crate::types::EndpointStatus) -> Self {
-        self.endpoint_status = Some(input);
+        self.endpoint_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The endpoint status.</p>
     pub fn set_endpoint_status(
         mut self,
-        input: std::option::Option<crate::types::EndpointStatus>,
+        input: ::std::option::Option<crate::types::EndpointStatus>,
     ) -> Self {
         self.endpoint_status = input;
         self

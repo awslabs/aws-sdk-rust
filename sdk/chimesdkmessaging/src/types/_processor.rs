@@ -2,41 +2,41 @@
 
 /// <p>The information about a processor in a channel flow.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Processor {
     /// <p>The name of the channel flow.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The information about the type of processor and its identifier.</p>
     #[doc(hidden)]
-    pub configuration: std::option::Option<crate::types::ProcessorConfiguration>,
+    pub configuration: ::std::option::Option<crate::types::ProcessorConfiguration>,
     /// <p>The sequence in which processors run. If you have multiple processors in a channel flow, message processing goes through each processor in the sequence. The value determines the sequence. At this point, we support only 1 processor within a flow.</p>
     #[doc(hidden)]
-    pub execution_order: std::option::Option<i32>,
+    pub execution_order: ::std::option::Option<i32>,
     /// <p>Determines whether to continue with message processing or stop it in cases where communication with a processor fails. If a processor has a fallback action of <code>ABORT</code> and communication with it fails, the processor sets the message status to <code>FAILED</code> and does not send the message to any recipients. Note that if the last processor in the channel flow sequence has a fallback action of <code>CONTINUE</code> and communication with the processor fails, then the message is considered processed and sent to recipients of the channel.</p>
     #[doc(hidden)]
-    pub fallback_action: std::option::Option<crate::types::FallbackAction>,
+    pub fallback_action: ::std::option::Option<crate::types::FallbackAction>,
 }
 impl Processor {
     /// <p>The name of the channel flow.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The information about the type of processor and its identifier.</p>
-    pub fn configuration(&self) -> std::option::Option<&crate::types::ProcessorConfiguration> {
+    pub fn configuration(&self) -> ::std::option::Option<&crate::types::ProcessorConfiguration> {
         self.configuration.as_ref()
     }
     /// <p>The sequence in which processors run. If you have multiple processors in a channel flow, message processing goes through each processor in the sequence. The value determines the sequence. At this point, we support only 1 processor within a flow.</p>
-    pub fn execution_order(&self) -> std::option::Option<i32> {
+    pub fn execution_order(&self) -> ::std::option::Option<i32> {
         self.execution_order
     }
     /// <p>Determines whether to continue with message processing or stop it in cases where communication with a processor fails. If a processor has a fallback action of <code>ABORT</code> and communication with it fails, the processor sets the message status to <code>FAILED</code> and does not send the message to any recipients. Note that if the last processor in the channel flow sequence has a fallback action of <code>CONTINUE</code> and communication with the processor fails, then the message is considered processed and sent to recipients of the channel.</p>
-    pub fn fallback_action(&self) -> std::option::Option<&crate::types::FallbackAction> {
+    pub fn fallback_action(&self) -> ::std::option::Option<&crate::types::FallbackAction> {
         self.fallback_action.as_ref()
     }
 }
-impl std::fmt::Debug for Processor {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for Processor {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("Processor");
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("configuration", &self.configuration);
@@ -54,56 +54,56 @@ impl Processor {
 
 /// A builder for [`Processor`](crate::types::Processor).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct ProcessorBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) configuration: std::option::Option<crate::types::ProcessorConfiguration>,
-    pub(crate) execution_order: std::option::Option<i32>,
-    pub(crate) fallback_action: std::option::Option<crate::types::FallbackAction>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) configuration: ::std::option::Option<crate::types::ProcessorConfiguration>,
+    pub(crate) execution_order: ::std::option::Option<i32>,
+    pub(crate) fallback_action: ::std::option::Option<crate::types::FallbackAction>,
 }
 impl ProcessorBuilder {
     /// <p>The name of the channel flow.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the channel flow.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The information about the type of processor and its identifier.</p>
     pub fn configuration(mut self, input: crate::types::ProcessorConfiguration) -> Self {
-        self.configuration = Some(input);
+        self.configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The information about the type of processor and its identifier.</p>
     pub fn set_configuration(
         mut self,
-        input: std::option::Option<crate::types::ProcessorConfiguration>,
+        input: ::std::option::Option<crate::types::ProcessorConfiguration>,
     ) -> Self {
         self.configuration = input;
         self
     }
     /// <p>The sequence in which processors run. If you have multiple processors in a channel flow, message processing goes through each processor in the sequence. The value determines the sequence. At this point, we support only 1 processor within a flow.</p>
     pub fn execution_order(mut self, input: i32) -> Self {
-        self.execution_order = Some(input);
+        self.execution_order = ::std::option::Option::Some(input);
         self
     }
     /// <p>The sequence in which processors run. If you have multiple processors in a channel flow, message processing goes through each processor in the sequence. The value determines the sequence. At this point, we support only 1 processor within a flow.</p>
-    pub fn set_execution_order(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_execution_order(mut self, input: ::std::option::Option<i32>) -> Self {
         self.execution_order = input;
         self
     }
     /// <p>Determines whether to continue with message processing or stop it in cases where communication with a processor fails. If a processor has a fallback action of <code>ABORT</code> and communication with it fails, the processor sets the message status to <code>FAILED</code> and does not send the message to any recipients. Note that if the last processor in the channel flow sequence has a fallback action of <code>CONTINUE</code> and communication with the processor fails, then the message is considered processed and sent to recipients of the channel.</p>
     pub fn fallback_action(mut self, input: crate::types::FallbackAction) -> Self {
-        self.fallback_action = Some(input);
+        self.fallback_action = ::std::option::Option::Some(input);
         self
     }
     /// <p>Determines whether to continue with message processing or stop it in cases where communication with a processor fails. If a processor has a fallback action of <code>ABORT</code> and communication with it fails, the processor sets the message status to <code>FAILED</code> and does not send the message to any recipients. Note that if the last processor in the channel flow sequence has a fallback action of <code>CONTINUE</code> and communication with the processor fails, then the message is considered processed and sent to recipients of the channel.</p>
     pub fn set_fallback_action(
         mut self,
-        input: std::option::Option<crate::types::FallbackAction>,
+        input: ::std::option::Option<crate::types::FallbackAction>,
     ) -> Self {
         self.fallback_action = input;
         self
@@ -118,8 +118,8 @@ impl ProcessorBuilder {
         }
     }
 }
-impl std::fmt::Debug for ProcessorBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for ProcessorBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ProcessorBuilder");
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("configuration", &self.configuration);

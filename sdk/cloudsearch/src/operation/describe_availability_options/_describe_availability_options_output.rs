@@ -2,22 +2,22 @@
 
 /// <p>The result of a <code>DescribeAvailabilityOptions</code> request. Indicates whether or not the Multi-AZ option is enabled for the domain specified in the request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAvailabilityOptionsOutput {
     /// <p>The availability options configured for the domain. Indicates whether Multi-AZ is enabled for the domain. </p>
     #[doc(hidden)]
-    pub availability_options: std::option::Option<crate::types::AvailabilityOptionsStatus>,
+    pub availability_options: ::std::option::Option<crate::types::AvailabilityOptionsStatus>,
     _request_id: Option<String>,
 }
 impl DescribeAvailabilityOptionsOutput {
     /// <p>The availability options configured for the domain. Indicates whether Multi-AZ is enabled for the domain. </p>
     pub fn availability_options(
         &self,
-    ) -> std::option::Option<&crate::types::AvailabilityOptionsStatus> {
+    ) -> ::std::option::Option<&crate::types::AvailabilityOptionsStatus> {
         self.availability_options.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeAvailabilityOptionsOutput {
+impl ::aws_http::request_id::RequestId for DescribeAvailabilityOptionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -31,21 +31,23 @@ impl DescribeAvailabilityOptionsOutput {
 
 /// A builder for [`DescribeAvailabilityOptionsOutput`](crate::operation::describe_availability_options::DescribeAvailabilityOptionsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeAvailabilityOptionsOutputBuilder {
-    pub(crate) availability_options: std::option::Option<crate::types::AvailabilityOptionsStatus>,
+    pub(crate) availability_options: ::std::option::Option<crate::types::AvailabilityOptionsStatus>,
     _request_id: Option<String>,
 }
 impl DescribeAvailabilityOptionsOutputBuilder {
     /// <p>The availability options configured for the domain. Indicates whether Multi-AZ is enabled for the domain. </p>
     pub fn availability_options(mut self, input: crate::types::AvailabilityOptionsStatus) -> Self {
-        self.availability_options = Some(input);
+        self.availability_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The availability options configured for the domain. Indicates whether Multi-AZ is enabled for the domain. </p>
     pub fn set_availability_options(
         mut self,
-        input: std::option::Option<crate::types::AvailabilityOptionsStatus>,
+        input: ::std::option::Option<crate::types::AvailabilityOptionsStatus>,
     ) -> Self {
         self.availability_options = input;
         self

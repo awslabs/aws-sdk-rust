@@ -2,22 +2,22 @@
 
 /// <p>Error information for the data source creation or update.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataSourceErrorInfo {
     /// <p>Error type.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::DataSourceErrorInfoType>,
+    pub r#type: ::std::option::Option<crate::types::DataSourceErrorInfoType>,
     /// <p>Error message.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
 }
 impl DataSourceErrorInfo {
     /// <p>Error type.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::DataSourceErrorInfoType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::DataSourceErrorInfoType> {
         self.r#type.as_ref()
     }
     /// <p>Error message.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -30,32 +30,34 @@ impl DataSourceErrorInfo {
 
 /// A builder for [`DataSourceErrorInfo`](crate::types::DataSourceErrorInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DataSourceErrorInfoBuilder {
-    pub(crate) r#type: std::option::Option<crate::types::DataSourceErrorInfoType>,
-    pub(crate) message: std::option::Option<std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::DataSourceErrorInfoType>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
 }
 impl DataSourceErrorInfoBuilder {
     /// <p>Error type.</p>
     pub fn r#type(mut self, input: crate::types::DataSourceErrorInfoType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Error type.</p>
     pub fn set_type(
         mut self,
-        input: std::option::Option<crate::types::DataSourceErrorInfoType>,
+        input: ::std::option::Option<crate::types::DataSourceErrorInfoType>,
     ) -> Self {
         self.r#type = input;
         self
     }
     /// <p>Error message.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Error message.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }

@@ -6,27 +6,27 @@
 /// <li> <p> <code>ListTapesOutput$VolumeInfos</code> </p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTapesOutput {
     /// <p>An array of <code>TapeInfo</code> objects, where each object describes a single tape. If there are no tapes in the tape library or VTS, then the <code>TapeInfos</code> is an empty array.</p>
     #[doc(hidden)]
-    pub tape_infos: std::option::Option<std::vec::Vec<crate::types::TapeInfo>>,
+    pub tape_infos: ::std::option::Option<::std::vec::Vec<crate::types::TapeInfo>>,
     /// <p>A string that indicates the position at which to begin returning the next list of tapes. Use the marker in your next request to continue pagination of tapes. If there are no more tapes to list, this element does not appear in the response body.</p>
     #[doc(hidden)]
-    pub marker: std::option::Option<std::string::String>,
+    pub marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListTapesOutput {
     /// <p>An array of <code>TapeInfo</code> objects, where each object describes a single tape. If there are no tapes in the tape library or VTS, then the <code>TapeInfos</code> is an empty array.</p>
-    pub fn tape_infos(&self) -> std::option::Option<&[crate::types::TapeInfo]> {
+    pub fn tape_infos(&self) -> ::std::option::Option<&[crate::types::TapeInfo]> {
         self.tape_infos.as_deref()
     }
     /// <p>A string that indicates the position at which to begin returning the next list of tapes. Use the marker in your next request to continue pagination of tapes. If there are no more tapes to list, this element does not appear in the response body.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListTapesOutput {
+impl ::aws_http::request_id::RequestId for ListTapesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -40,10 +40,12 @@ impl ListTapesOutput {
 
 /// A builder for [`ListTapesOutput`](crate::operation::list_tapes::ListTapesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListTapesOutputBuilder {
-    pub(crate) tape_infos: std::option::Option<std::vec::Vec<crate::types::TapeInfo>>,
-    pub(crate) marker: std::option::Option<std::string::String>,
+    pub(crate) tape_infos: ::std::option::Option<::std::vec::Vec<crate::types::TapeInfo>>,
+    pub(crate) marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListTapesOutputBuilder {
@@ -55,24 +57,24 @@ impl ListTapesOutputBuilder {
     pub fn tape_infos(mut self, input: crate::types::TapeInfo) -> Self {
         let mut v = self.tape_infos.unwrap_or_default();
         v.push(input);
-        self.tape_infos = Some(v);
+        self.tape_infos = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of <code>TapeInfo</code> objects, where each object describes a single tape. If there are no tapes in the tape library or VTS, then the <code>TapeInfos</code> is an empty array.</p>
     pub fn set_tape_infos(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TapeInfo>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::TapeInfo>>,
     ) -> Self {
         self.tape_infos = input;
         self
     }
     /// <p>A string that indicates the position at which to begin returning the next list of tapes. Use the marker in your next request to continue pagination of tapes. If there are no more tapes to list, this element does not appear in the response body.</p>
-    pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-        self.marker = Some(input.into());
+    pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A string that indicates the position at which to begin returning the next list of tapes. Use the marker in your next request to continue pagination of tapes. If there are no more tapes to list, this element does not appear in the response body.</p>
-    pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
     }

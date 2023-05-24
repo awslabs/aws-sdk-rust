@@ -3,7 +3,7 @@
 /// <p>Enable or disable the Deliverability dashboard for your Amazon Pinpoint account. When you enable the Deliverability dashboard, you gain access to reputation, deliverability, and other metrics for the domains that you use to send email using Amazon Pinpoint. You also gain the ability to perform predictive inbox placement tests.</p>
 /// <p>When you use the Deliverability dashboard, you pay a monthly subscription charge, in addition to any other fees that you accrue by using Amazon Pinpoint. For more information about the features and cost of a Deliverability dashboard subscription, see <a href="http://aws.amazon.com/pinpoint/pricing/">Amazon Pinpoint Pricing</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutDeliverabilityDashboardOptionInput {
     /// <p>Specifies whether to enable the Deliverability dashboard for your Amazon Pinpoint account. To enable the dashboard, set this value to <code>true</code>.</p>
     #[doc(hidden)]
@@ -11,7 +11,7 @@ pub struct PutDeliverabilityDashboardOptionInput {
     /// <p>An array of objects, one for each verified domain that you use to send email and enabled the Deliverability dashboard for.</p>
     #[doc(hidden)]
     pub subscribed_domains:
-        std::option::Option<std::vec::Vec<crate::types::DomainDeliverabilityTrackingOption>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::DomainDeliverabilityTrackingOption>>,
 }
 impl PutDeliverabilityDashboardOptionInput {
     /// <p>Specifies whether to enable the Deliverability dashboard for your Amazon Pinpoint account. To enable the dashboard, set this value to <code>true</code>.</p>
@@ -21,7 +21,7 @@ impl PutDeliverabilityDashboardOptionInput {
     /// <p>An array of objects, one for each verified domain that you use to send email and enabled the Deliverability dashboard for.</p>
     pub fn subscribed_domains(
         &self,
-    ) -> std::option::Option<&[crate::types::DomainDeliverabilityTrackingOption]> {
+    ) -> ::std::option::Option<&[crate::types::DomainDeliverabilityTrackingOption]> {
         self.subscribed_domains.as_deref()
     }
 }
@@ -34,20 +34,22 @@ impl PutDeliverabilityDashboardOptionInput {
 
 /// A builder for [`PutDeliverabilityDashboardOptionInput`](crate::operation::put_deliverability_dashboard_option::PutDeliverabilityDashboardOptionInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PutDeliverabilityDashboardOptionInputBuilder {
-    pub(crate) dashboard_enabled: std::option::Option<bool>,
+    pub(crate) dashboard_enabled: ::std::option::Option<bool>,
     pub(crate) subscribed_domains:
-        std::option::Option<std::vec::Vec<crate::types::DomainDeliverabilityTrackingOption>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::DomainDeliverabilityTrackingOption>>,
 }
 impl PutDeliverabilityDashboardOptionInputBuilder {
     /// <p>Specifies whether to enable the Deliverability dashboard for your Amazon Pinpoint account. To enable the dashboard, set this value to <code>true</code>.</p>
     pub fn dashboard_enabled(mut self, input: bool) -> Self {
-        self.dashboard_enabled = Some(input);
+        self.dashboard_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether to enable the Deliverability dashboard for your Amazon Pinpoint account. To enable the dashboard, set this value to <code>true</code>.</p>
-    pub fn set_dashboard_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_dashboard_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dashboard_enabled = input;
         self
     }
@@ -62,20 +64,22 @@ impl PutDeliverabilityDashboardOptionInputBuilder {
     ) -> Self {
         let mut v = self.subscribed_domains.unwrap_or_default();
         v.push(input);
-        self.subscribed_domains = Some(v);
+        self.subscribed_domains = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of objects, one for each verified domain that you use to send email and enabled the Deliverability dashboard for.</p>
     pub fn set_subscribed_domains(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DomainDeliverabilityTrackingOption>>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::DomainDeliverabilityTrackingOption>,
+        >,
     ) -> Self {
         self.subscribed_domains = input;
         self
     }
     /// Consumes the builder and constructs a [`PutDeliverabilityDashboardOptionInput`](crate::operation::put_deliverability_dashboard_option::PutDeliverabilityDashboardOptionInput).
-    pub fn build(self) -> Result<crate::operation::put_deliverability_dashboard_option::PutDeliverabilityDashboardOptionInput, aws_smithy_http::operation::error::BuildError>{
-        Ok(
+    pub fn build(self) -> ::std::result::Result<crate::operation::put_deliverability_dashboard_option::PutDeliverabilityDashboardOptionInput, ::aws_smithy_http::operation::error::BuildError>{
+        ::std::result::Result::Ok(
             crate::operation::put_deliverability_dashboard_option::PutDeliverabilityDashboardOptionInput {
                 dashboard_enabled: self.dashboard_enabled
                     .unwrap_or_default()

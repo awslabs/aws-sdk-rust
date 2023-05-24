@@ -2,14 +2,14 @@
 
 /// <p>Contains the output of ListPipelines.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPipelinesOutput {
     /// <p>The pipeline identifiers. If you require additional information about the pipelines, you can use these identifiers to call <code>DescribePipelines</code> and <code>GetPipelineDefinition</code>.</p>
     #[doc(hidden)]
-    pub pipeline_id_list: std::option::Option<std::vec::Vec<crate::types::PipelineIdName>>,
+    pub pipeline_id_list: ::std::option::Option<::std::vec::Vec<crate::types::PipelineIdName>>,
     /// <p>The starting point for the next page of results. To view the next page of results, call <code>ListPipelinesOutput</code> again with this marker value. If the value is null, there are no more results.</p>
     #[doc(hidden)]
-    pub marker: std::option::Option<std::string::String>,
+    pub marker: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether there are more results that can be obtained by a subsequent call.</p>
     #[doc(hidden)]
     pub has_more_results: bool,
@@ -17,11 +17,11 @@ pub struct ListPipelinesOutput {
 }
 impl ListPipelinesOutput {
     /// <p>The pipeline identifiers. If you require additional information about the pipelines, you can use these identifiers to call <code>DescribePipelines</code> and <code>GetPipelineDefinition</code>.</p>
-    pub fn pipeline_id_list(&self) -> std::option::Option<&[crate::types::PipelineIdName]> {
+    pub fn pipeline_id_list(&self) -> ::std::option::Option<&[crate::types::PipelineIdName]> {
         self.pipeline_id_list.as_deref()
     }
     /// <p>The starting point for the next page of results. To view the next page of results, call <code>ListPipelinesOutput</code> again with this marker value. If the value is null, there are no more results.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
     /// <p>Indicates whether there are more results that can be obtained by a subsequent call.</p>
@@ -29,7 +29,7 @@ impl ListPipelinesOutput {
         self.has_more_results
     }
 }
-impl aws_http::request_id::RequestId for ListPipelinesOutput {
+impl ::aws_http::request_id::RequestId for ListPipelinesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -43,11 +43,14 @@ impl ListPipelinesOutput {
 
 /// A builder for [`ListPipelinesOutput`](crate::operation::list_pipelines::ListPipelinesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListPipelinesOutputBuilder {
-    pub(crate) pipeline_id_list: std::option::Option<std::vec::Vec<crate::types::PipelineIdName>>,
-    pub(crate) marker: std::option::Option<std::string::String>,
-    pub(crate) has_more_results: std::option::Option<bool>,
+    pub(crate) pipeline_id_list:
+        ::std::option::Option<::std::vec::Vec<crate::types::PipelineIdName>>,
+    pub(crate) marker: ::std::option::Option<::std::string::String>,
+    pub(crate) has_more_results: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl ListPipelinesOutputBuilder {
@@ -59,34 +62,34 @@ impl ListPipelinesOutputBuilder {
     pub fn pipeline_id_list(mut self, input: crate::types::PipelineIdName) -> Self {
         let mut v = self.pipeline_id_list.unwrap_or_default();
         v.push(input);
-        self.pipeline_id_list = Some(v);
+        self.pipeline_id_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>The pipeline identifiers. If you require additional information about the pipelines, you can use these identifiers to call <code>DescribePipelines</code> and <code>GetPipelineDefinition</code>.</p>
     pub fn set_pipeline_id_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PipelineIdName>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PipelineIdName>>,
     ) -> Self {
         self.pipeline_id_list = input;
         self
     }
     /// <p>The starting point for the next page of results. To view the next page of results, call <code>ListPipelinesOutput</code> again with this marker value. If the value is null, there are no more results.</p>
-    pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-        self.marker = Some(input.into());
+    pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The starting point for the next page of results. To view the next page of results, call <code>ListPipelinesOutput</code> again with this marker value. If the value is null, there are no more results.</p>
-    pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
     }
     /// <p>Indicates whether there are more results that can be obtained by a subsequent call.</p>
     pub fn has_more_results(mut self, input: bool) -> Self {
-        self.has_more_results = Some(input);
+        self.has_more_results = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether there are more results that can be obtained by a subsequent call.</p>
-    pub fn set_has_more_results(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_has_more_results(mut self, input: ::std::option::Option<bool>) -> Self {
         self.has_more_results = input;
         self
     }

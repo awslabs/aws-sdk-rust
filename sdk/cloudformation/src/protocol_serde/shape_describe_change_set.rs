@@ -2,7 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_change_set_http_error(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::describe_change_set::DescribeChangeSetOutput,
@@ -15,7 +15,7 @@ pub fn de_describe_change_set_http_error(
         _response_body,
     )
     .map_err(crate::operation::describe_change_set::DescribeChangeSetError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
+    generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
@@ -51,7 +51,7 @@ pub fn de_describe_change_set_http_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_change_set_http_response_with_props(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::describe_change_set::DescribeChangeSetOutput,
@@ -66,7 +66,7 @@ pub fn de_describe_change_set_http_response_with_props(
         )
         .map_err(crate::operation::describe_change_set::DescribeChangeSetError::unhandled)?;
         output._set_request_id(
-            aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
+            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
         );
         output.build()
     })
@@ -78,16 +78,16 @@ pub fn de_describe_change_set(
     mut builder: crate::operation::describe_change_set::builders::DescribeChangeSetOutputBuilder,
 ) -> Result<
     crate::operation::describe_change_set::builders::DescribeChangeSetOutputBuilder,
-    aws_smithy_xml::decode::XmlDecodeError,
+    ::aws_smithy_xml::decode::XmlDecodeError,
 > {
-    let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
+    let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeChangeSetResponse")) {
-        return Err(aws_smithy_xml::decode::XmlDecodeError::custom(format!(
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeChangeSetResponse got {:?}",
             start_el
         )));
@@ -95,7 +95,7 @@ pub fn de_describe_change_set(
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("DescribeChangeSetResult")) {
-            return Err(aws_smithy_xml::decode::XmlDecodeError::custom(format!(
+            return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
                 "invalid result, expected DescribeChangeSetResult got {:?}",
                 start_el
             )));
@@ -105,8 +105,8 @@ pub fn de_describe_change_set(
             s if s.matches("ChangeSetName") /* ChangeSetName com.amazonaws.cloudformation.synthetic#DescribeChangeSetOutput$ChangeSetName */ =>  {
                 let var_1 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -118,8 +118,8 @@ pub fn de_describe_change_set(
             s if s.matches("ChangeSetId") /* ChangeSetId com.amazonaws.cloudformation.synthetic#DescribeChangeSetOutput$ChangeSetId */ =>  {
                 let var_2 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -131,8 +131,8 @@ pub fn de_describe_change_set(
             s if s.matches("StackId") /* StackId com.amazonaws.cloudformation.synthetic#DescribeChangeSetOutput$StackId */ =>  {
                 let var_3 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -144,8 +144,8 @@ pub fn de_describe_change_set(
             s if s.matches("StackName") /* StackName com.amazonaws.cloudformation.synthetic#DescribeChangeSetOutput$StackName */ =>  {
                 let var_4 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -157,8 +157,8 @@ pub fn de_describe_change_set(
             s if s.matches("Description") /* Description com.amazonaws.cloudformation.synthetic#DescribeChangeSetOutput$Description */ =>  {
                 let var_5 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -180,11 +180,11 @@ pub fn de_describe_change_set(
             s if s.matches("CreationTime") /* CreationTime com.amazonaws.cloudformation.synthetic#DescribeChangeSetOutput$CreationTime */ =>  {
                 let var_7 =
                     Some(
-                        aws_smithy_types::DateTime::from_str(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , aws_smithy_types::date_time::Format::DateTimeWithOffset
+                        ::aws_smithy_types::DateTime::from_str(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            , ::aws_smithy_types::date_time::Format::DateTimeWithOffset
                         )
-                        .map_err(|_|aws_smithy_xml::decode::XmlDecodeError::custom("expected (timestamp: `com.amazonaws.cloudformation#CreationTime`)"))
+                        .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (timestamp: `com.amazonaws.cloudformation#CreationTime`)"))
                         ?
                     )
                 ;
@@ -194,9 +194,9 @@ pub fn de_describe_change_set(
             s if s.matches("ExecutionStatus") /* ExecutionStatus com.amazonaws.cloudformation.synthetic#DescribeChangeSetOutput$ExecutionStatus */ =>  {
                 let var_8 =
                     Some(
-                        Result::<crate::types::ExecutionStatus, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                        Result::<crate::types::ExecutionStatus, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::ExecutionStatus::from(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )
                         ?
@@ -208,9 +208,9 @@ pub fn de_describe_change_set(
             s if s.matches("Status") /* Status com.amazonaws.cloudformation.synthetic#DescribeChangeSetOutput$Status */ =>  {
                 let var_9 =
                     Some(
-                        Result::<crate::types::ChangeSetStatus, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                        Result::<crate::types::ChangeSetStatus, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::ChangeSetStatus::from(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )
                         ?
@@ -222,8 +222,8 @@ pub fn de_describe_change_set(
             s if s.matches("StatusReason") /* StatusReason com.amazonaws.cloudformation.synthetic#DescribeChangeSetOutput$StatusReason */ =>  {
                 let var_10 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -285,8 +285,8 @@ pub fn de_describe_change_set(
             s if s.matches("NextToken") /* NextToken com.amazonaws.cloudformation.synthetic#DescribeChangeSetOutput$NextToken */ =>  {
                 let var_16 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -299,10 +299,10 @@ pub fn de_describe_change_set(
                 let var_17 =
                     Some(
                          {
-                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
-                            .map_err(|_|aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.cloudformation#IncludeNestedStacks`)"))
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.cloudformation#IncludeNestedStacks`)"))
                         }
                         ?
                     )
@@ -313,8 +313,8 @@ pub fn de_describe_change_set(
             s if s.matches("ParentChangeSetId") /* ParentChangeSetId com.amazonaws.cloudformation.synthetic#DescribeChangeSetOutput$ParentChangeSetId */ =>  {
                 let var_18 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -326,8 +326,8 @@ pub fn de_describe_change_set(
             s if s.matches("RootChangeSetId") /* RootChangeSetId com.amazonaws.cloudformation.synthetic#DescribeChangeSetOutput$RootChangeSetId */ =>  {
                 let var_19 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -340,7 +340,7 @@ pub fn de_describe_change_set(
         }
         }
     } else {
-        return Err(aws_smithy_xml::decode::XmlDecodeError::custom(
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(
             "expected DescribeChangeSetResult tag",
         ));
     };

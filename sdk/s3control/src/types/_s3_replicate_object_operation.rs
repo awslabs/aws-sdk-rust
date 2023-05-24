@@ -2,7 +2,7 @@
 
 /// <p>Directs the specified job to invoke <code>ReplicateObject</code> on every object in the job's manifest.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3ReplicateObjectOperation {}
 impl S3ReplicateObjectOperation {
     /// Creates a new builder-style object to manufacture [`S3ReplicateObjectOperation`](crate::types::S3ReplicateObjectOperation).
@@ -13,7 +13,9 @@ impl S3ReplicateObjectOperation {
 
 /// A builder for [`S3ReplicateObjectOperation`](crate::types::S3ReplicateObjectOperation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct S3ReplicateObjectOperationBuilder {}
 impl S3ReplicateObjectOperationBuilder {
     /// Consumes the builder and constructs a [`S3ReplicateObjectOperation`](crate::types::S3ReplicateObjectOperation).

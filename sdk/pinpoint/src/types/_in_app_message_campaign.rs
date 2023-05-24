@@ -2,64 +2,64 @@
 
 /// <p>Targeted in-app message campaign.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InAppMessageCampaign {
     /// <p>Campaign id of the corresponding campaign.</p>
     #[doc(hidden)]
-    pub campaign_id: std::option::Option<std::string::String>,
+    pub campaign_id: ::std::option::Option<::std::string::String>,
     /// <p>Daily cap which controls the number of times any in-app messages can be shown to the endpoint during a day.</p>
     #[doc(hidden)]
-    pub daily_cap: std::option::Option<i32>,
+    pub daily_cap: ::std::option::Option<i32>,
     /// <p>In-app message content with all fields required for rendering an in-app message.</p>
     #[doc(hidden)]
-    pub in_app_message: std::option::Option<crate::types::InAppMessage>,
+    pub in_app_message: ::std::option::Option<crate::types::InAppMessage>,
     /// <p>Priority of the in-app message.</p>
     #[doc(hidden)]
-    pub priority: std::option::Option<i32>,
+    pub priority: ::std::option::Option<i32>,
     /// <p>Schedule of the campaign.</p>
     #[doc(hidden)]
-    pub schedule: std::option::Option<crate::types::InAppCampaignSchedule>,
+    pub schedule: ::std::option::Option<crate::types::InAppCampaignSchedule>,
     /// <p>Session cap which controls the number of times an in-app message can be shown to the endpoint during an application session.</p>
     #[doc(hidden)]
-    pub session_cap: std::option::Option<i32>,
+    pub session_cap: ::std::option::Option<i32>,
     /// <p>Total cap which controls the number of times an in-app message can be shown to the endpoint.</p>
     #[doc(hidden)]
-    pub total_cap: std::option::Option<i32>,
+    pub total_cap: ::std::option::Option<i32>,
     /// <p>Treatment id of the campaign.</p>
     #[doc(hidden)]
-    pub treatment_id: std::option::Option<std::string::String>,
+    pub treatment_id: ::std::option::Option<::std::string::String>,
 }
 impl InAppMessageCampaign {
     /// <p>Campaign id of the corresponding campaign.</p>
-    pub fn campaign_id(&self) -> std::option::Option<&str> {
+    pub fn campaign_id(&self) -> ::std::option::Option<&str> {
         self.campaign_id.as_deref()
     }
     /// <p>Daily cap which controls the number of times any in-app messages can be shown to the endpoint during a day.</p>
-    pub fn daily_cap(&self) -> std::option::Option<i32> {
+    pub fn daily_cap(&self) -> ::std::option::Option<i32> {
         self.daily_cap
     }
     /// <p>In-app message content with all fields required for rendering an in-app message.</p>
-    pub fn in_app_message(&self) -> std::option::Option<&crate::types::InAppMessage> {
+    pub fn in_app_message(&self) -> ::std::option::Option<&crate::types::InAppMessage> {
         self.in_app_message.as_ref()
     }
     /// <p>Priority of the in-app message.</p>
-    pub fn priority(&self) -> std::option::Option<i32> {
+    pub fn priority(&self) -> ::std::option::Option<i32> {
         self.priority
     }
     /// <p>Schedule of the campaign.</p>
-    pub fn schedule(&self) -> std::option::Option<&crate::types::InAppCampaignSchedule> {
+    pub fn schedule(&self) -> ::std::option::Option<&crate::types::InAppCampaignSchedule> {
         self.schedule.as_ref()
     }
     /// <p>Session cap which controls the number of times an in-app message can be shown to the endpoint during an application session.</p>
-    pub fn session_cap(&self) -> std::option::Option<i32> {
+    pub fn session_cap(&self) -> ::std::option::Option<i32> {
         self.session_cap
     }
     /// <p>Total cap which controls the number of times an in-app message can be shown to the endpoint.</p>
-    pub fn total_cap(&self) -> std::option::Option<i32> {
+    pub fn total_cap(&self) -> ::std::option::Option<i32> {
         self.total_cap
     }
     /// <p>Treatment id of the campaign.</p>
-    pub fn treatment_id(&self) -> std::option::Option<&str> {
+    pub fn treatment_id(&self) -> ::std::option::Option<&str> {
         self.treatment_id.as_deref()
     }
 }
@@ -72,101 +72,103 @@ impl InAppMessageCampaign {
 
 /// A builder for [`InAppMessageCampaign`](crate::types::InAppMessageCampaign).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InAppMessageCampaignBuilder {
-    pub(crate) campaign_id: std::option::Option<std::string::String>,
-    pub(crate) daily_cap: std::option::Option<i32>,
-    pub(crate) in_app_message: std::option::Option<crate::types::InAppMessage>,
-    pub(crate) priority: std::option::Option<i32>,
-    pub(crate) schedule: std::option::Option<crate::types::InAppCampaignSchedule>,
-    pub(crate) session_cap: std::option::Option<i32>,
-    pub(crate) total_cap: std::option::Option<i32>,
-    pub(crate) treatment_id: std::option::Option<std::string::String>,
+    pub(crate) campaign_id: ::std::option::Option<::std::string::String>,
+    pub(crate) daily_cap: ::std::option::Option<i32>,
+    pub(crate) in_app_message: ::std::option::Option<crate::types::InAppMessage>,
+    pub(crate) priority: ::std::option::Option<i32>,
+    pub(crate) schedule: ::std::option::Option<crate::types::InAppCampaignSchedule>,
+    pub(crate) session_cap: ::std::option::Option<i32>,
+    pub(crate) total_cap: ::std::option::Option<i32>,
+    pub(crate) treatment_id: ::std::option::Option<::std::string::String>,
 }
 impl InAppMessageCampaignBuilder {
     /// <p>Campaign id of the corresponding campaign.</p>
-    pub fn campaign_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.campaign_id = Some(input.into());
+    pub fn campaign_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.campaign_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Campaign id of the corresponding campaign.</p>
-    pub fn set_campaign_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_campaign_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.campaign_id = input;
         self
     }
     /// <p>Daily cap which controls the number of times any in-app messages can be shown to the endpoint during a day.</p>
     pub fn daily_cap(mut self, input: i32) -> Self {
-        self.daily_cap = Some(input);
+        self.daily_cap = ::std::option::Option::Some(input);
         self
     }
     /// <p>Daily cap which controls the number of times any in-app messages can be shown to the endpoint during a day.</p>
-    pub fn set_daily_cap(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_daily_cap(mut self, input: ::std::option::Option<i32>) -> Self {
         self.daily_cap = input;
         self
     }
     /// <p>In-app message content with all fields required for rendering an in-app message.</p>
     pub fn in_app_message(mut self, input: crate::types::InAppMessage) -> Self {
-        self.in_app_message = Some(input);
+        self.in_app_message = ::std::option::Option::Some(input);
         self
     }
     /// <p>In-app message content with all fields required for rendering an in-app message.</p>
     pub fn set_in_app_message(
         mut self,
-        input: std::option::Option<crate::types::InAppMessage>,
+        input: ::std::option::Option<crate::types::InAppMessage>,
     ) -> Self {
         self.in_app_message = input;
         self
     }
     /// <p>Priority of the in-app message.</p>
     pub fn priority(mut self, input: i32) -> Self {
-        self.priority = Some(input);
+        self.priority = ::std::option::Option::Some(input);
         self
     }
     /// <p>Priority of the in-app message.</p>
-    pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
         self.priority = input;
         self
     }
     /// <p>Schedule of the campaign.</p>
     pub fn schedule(mut self, input: crate::types::InAppCampaignSchedule) -> Self {
-        self.schedule = Some(input);
+        self.schedule = ::std::option::Option::Some(input);
         self
     }
     /// <p>Schedule of the campaign.</p>
     pub fn set_schedule(
         mut self,
-        input: std::option::Option<crate::types::InAppCampaignSchedule>,
+        input: ::std::option::Option<crate::types::InAppCampaignSchedule>,
     ) -> Self {
         self.schedule = input;
         self
     }
     /// <p>Session cap which controls the number of times an in-app message can be shown to the endpoint during an application session.</p>
     pub fn session_cap(mut self, input: i32) -> Self {
-        self.session_cap = Some(input);
+        self.session_cap = ::std::option::Option::Some(input);
         self
     }
     /// <p>Session cap which controls the number of times an in-app message can be shown to the endpoint during an application session.</p>
-    pub fn set_session_cap(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_session_cap(mut self, input: ::std::option::Option<i32>) -> Self {
         self.session_cap = input;
         self
     }
     /// <p>Total cap which controls the number of times an in-app message can be shown to the endpoint.</p>
     pub fn total_cap(mut self, input: i32) -> Self {
-        self.total_cap = Some(input);
+        self.total_cap = ::std::option::Option::Some(input);
         self
     }
     /// <p>Total cap which controls the number of times an in-app message can be shown to the endpoint.</p>
-    pub fn set_total_cap(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_total_cap(mut self, input: ::std::option::Option<i32>) -> Self {
         self.total_cap = input;
         self
     }
     /// <p>Treatment id of the campaign.</p>
-    pub fn treatment_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.treatment_id = Some(input.into());
+    pub fn treatment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.treatment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Treatment id of the campaign.</p>
-    pub fn set_treatment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_treatment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.treatment_id = input;
         self
     }

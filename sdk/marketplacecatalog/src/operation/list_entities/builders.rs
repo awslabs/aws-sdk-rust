@@ -6,56 +6,59 @@ pub use crate::operation::list_entities::_list_entities_input::ListEntitiesInput
 /// Fluent builder constructing a request to `ListEntities`.
 ///
 /// <p>Provides the list of entities of a given type.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListEntitiesFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::list_entities::builders::ListEntitiesInputBuilder,
 }
 impl ListEntitiesFluentBuilder {
     /// Creates a new `ListEntities`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::list_entities::ListEntities,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::list_entities::ListEntitiesError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_entities::ListEntitiesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::list_entities::ListEntitiesOutput,
-        aws_smithy_http::result::SdkError<crate::operation::list_entities::ListEntitiesError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_entities::ListEntitiesError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,9 +71,9 @@ impl ListEntitiesFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::list_entities::ListEntitiesOutput,
-        aws_smithy_http::result::SdkError<crate::operation::list_entities::ListEntitiesError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_entities::ListEntitiesError>,
     > {
         self.send_middleware().await
     }
@@ -86,22 +89,22 @@ impl ListEntitiesFluentBuilder {
         )
     }
     /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
-    pub fn catalog(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn catalog(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.catalog(input.into());
         self
     }
     /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>
-    pub fn set_catalog(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_catalog(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_catalog(input);
         self
     }
     /// <p>The type of entities to retrieve.</p>
-    pub fn entity_type(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn entity_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.entity_type(input.into());
         self
     }
     /// <p>The type of entities to retrieve.</p>
-    pub fn set_entity_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_entity_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_entity_type(input);
         self
     }
@@ -117,7 +120,7 @@ impl ListEntitiesFluentBuilder {
     /// <p>An array of filter objects. Each filter object contains two attributes, <code>filterName</code> and <code>filterValues</code>.</p>
     pub fn set_filter_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     ) -> Self {
         self.inner = self.inner.set_filter_list(input);
         self
@@ -128,17 +131,17 @@ impl ListEntitiesFluentBuilder {
         self
     }
     /// <p>An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.</p>
-    pub fn set_sort(mut self, input: std::option::Option<crate::types::Sort>) -> Self {
+    pub fn set_sort(mut self, input: ::std::option::Option<crate::types::Sort>) -> Self {
         self.inner = self.inner.set_sort(input);
         self
     }
     /// <p>The value of the next token, if it exists. Null if there are no more results.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
     /// <p>The value of the next token, if it exists. Null if there are no more results.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
@@ -148,7 +151,7 @@ impl ListEntitiesFluentBuilder {
         self
     }
     /// <p>Specifies the upper limit of the elements on a single page. If a value isn't provided, the default value is 20.</p>
-    pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
@@ -160,7 +163,7 @@ impl ListEntitiesFluentBuilder {
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_ownership_type(
         mut self,
-        input: std::option::Option<crate::types::OwnershipType>,
+        input: ::std::option::Option<crate::types::OwnershipType>,
     ) -> Self {
         self.inner = self.inner.set_ownership_type(input);
         self

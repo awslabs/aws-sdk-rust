@@ -2,64 +2,64 @@
 
 /// <p>Describes the failure of a license operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LicenseOperationFailure {
     /// <p>Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
-    pub resource_arn: std::option::Option<std::string::String>,
+    pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>Resource type.</p>
     #[doc(hidden)]
-    pub resource_type: std::option::Option<crate::types::ResourceType>,
+    pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>Error message.</p>
     #[doc(hidden)]
-    pub error_message: std::option::Option<std::string::String>,
+    pub error_message: ::std::option::Option<::std::string::String>,
     /// <p>Failure time.</p>
     #[doc(hidden)]
-    pub failure_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub failure_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Name of the operation.</p>
     #[doc(hidden)]
-    pub operation_name: std::option::Option<std::string::String>,
+    pub operation_name: ::std::option::Option<::std::string::String>,
     /// <p>ID of the Amazon Web Services account that owns the resource.</p>
     #[doc(hidden)]
-    pub resource_owner_id: std::option::Option<std::string::String>,
+    pub resource_owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The requester is "License Manager Automated Discovery".</p>
     #[doc(hidden)]
-    pub operation_requested_by: std::option::Option<std::string::String>,
+    pub operation_requested_by: ::std::option::Option<::std::string::String>,
     /// <p>Reserved.</p>
     #[doc(hidden)]
-    pub metadata_list: std::option::Option<std::vec::Vec<crate::types::Metadata>>,
+    pub metadata_list: ::std::option::Option<::std::vec::Vec<crate::types::Metadata>>,
 }
 impl LicenseOperationFailure {
     /// <p>Amazon Resource Name (ARN) of the resource.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
     /// <p>Resource type.</p>
-    pub fn resource_type(&self) -> std::option::Option<&crate::types::ResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>Error message.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<&str> {
         self.error_message.as_deref()
     }
     /// <p>Failure time.</p>
-    pub fn failure_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn failure_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.failure_time.as_ref()
     }
     /// <p>Name of the operation.</p>
-    pub fn operation_name(&self) -> std::option::Option<&str> {
+    pub fn operation_name(&self) -> ::std::option::Option<&str> {
         self.operation_name.as_deref()
     }
     /// <p>ID of the Amazon Web Services account that owns the resource.</p>
-    pub fn resource_owner_id(&self) -> std::option::Option<&str> {
+    pub fn resource_owner_id(&self) -> ::std::option::Option<&str> {
         self.resource_owner_id.as_deref()
     }
     /// <p>The requester is "License Manager Automated Discovery".</p>
-    pub fn operation_requested_by(&self) -> std::option::Option<&str> {
+    pub fn operation_requested_by(&self) -> ::std::option::Option<&str> {
         self.operation_requested_by.as_deref()
     }
     /// <p>Reserved.</p>
-    pub fn metadata_list(&self) -> std::option::Option<&[crate::types::Metadata]> {
+    pub fn metadata_list(&self) -> ::std::option::Option<&[crate::types::Metadata]> {
         self.metadata_list.as_deref()
     }
 }
@@ -72,96 +72,116 @@ impl LicenseOperationFailure {
 
 /// A builder for [`LicenseOperationFailure`](crate::types::LicenseOperationFailure).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LicenseOperationFailureBuilder {
-    pub(crate) resource_arn: std::option::Option<std::string::String>,
-    pub(crate) resource_type: std::option::Option<crate::types::ResourceType>,
-    pub(crate) error_message: std::option::Option<std::string::String>,
-    pub(crate) failure_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) operation_name: std::option::Option<std::string::String>,
-    pub(crate) resource_owner_id: std::option::Option<std::string::String>,
-    pub(crate) operation_requested_by: std::option::Option<std::string::String>,
-    pub(crate) metadata_list: std::option::Option<std::vec::Vec<crate::types::Metadata>>,
+    pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
+    pub(crate) error_message: ::std::option::Option<::std::string::String>,
+    pub(crate) failure_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) operation_name: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_owner_id: ::std::option::Option<::std::string::String>,
+    pub(crate) operation_requested_by: ::std::option::Option<::std::string::String>,
+    pub(crate) metadata_list: ::std::option::Option<::std::vec::Vec<crate::types::Metadata>>,
 }
 impl LicenseOperationFailureBuilder {
     /// <p>Amazon Resource Name (ARN) of the resource.</p>
-    pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_arn = Some(input.into());
+    pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Amazon Resource Name (ARN) of the resource.</p>
-    pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
     }
     /// <p>Resource type.</p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
-        self.resource_type = Some(input);
+        self.resource_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Resource type.</p>
     pub fn set_resource_type(
         mut self,
-        input: std::option::Option<crate::types::ResourceType>,
+        input: ::std::option::Option<crate::types::ResourceType>,
     ) -> Self {
         self.resource_type = input;
         self
     }
     /// <p>Error message.</p>
-    pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.error_message = Some(input.into());
+    pub fn error_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Error message.</p>
-    pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_error_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.error_message = input;
         self
     }
     /// <p>Failure time.</p>
-    pub fn failure_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.failure_time = Some(input);
+    pub fn failure_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.failure_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>Failure time.</p>
     pub fn set_failure_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.failure_time = input;
         self
     }
     /// <p>Name of the operation.</p>
-    pub fn operation_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.operation_name = Some(input.into());
+    pub fn operation_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.operation_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of the operation.</p>
-    pub fn set_operation_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_operation_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.operation_name = input;
         self
     }
     /// <p>ID of the Amazon Web Services account that owns the resource.</p>
-    pub fn resource_owner_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_owner_id = Some(input.into());
+    pub fn resource_owner_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.resource_owner_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>ID of the Amazon Web Services account that owns the resource.</p>
     pub fn set_resource_owner_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.resource_owner_id = input;
         self
     }
     /// <p>The requester is "License Manager Automated Discovery".</p>
-    pub fn operation_requested_by(mut self, input: impl Into<std::string::String>) -> Self {
-        self.operation_requested_by = Some(input.into());
+    pub fn operation_requested_by(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.operation_requested_by = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The requester is "License Manager Automated Discovery".</p>
     pub fn set_operation_requested_by(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.operation_requested_by = input;
         self
@@ -174,13 +194,13 @@ impl LicenseOperationFailureBuilder {
     pub fn metadata_list(mut self, input: crate::types::Metadata) -> Self {
         let mut v = self.metadata_list.unwrap_or_default();
         v.push(input);
-        self.metadata_list = Some(v);
+        self.metadata_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>Reserved.</p>
     pub fn set_metadata_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Metadata>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Metadata>>,
     ) -> Self {
         self.metadata_list = input;
         self

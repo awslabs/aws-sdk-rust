@@ -5,19 +5,19 @@
 /// <p>If you are using an earlier version of the replication configuration, Amazon S3 handles replication of delete markers differently. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-add-config.html#replication-backward-compat-considerations">Backward Compatibility</a>.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteMarkerReplication {
     /// <p>Indicates whether to replicate delete markers.</p> <note>
     /// <p>Indicates whether to replicate delete markers.</p>
     /// </note>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::DeleteMarkerReplicationStatus>,
+    pub status: ::std::option::Option<crate::types::DeleteMarkerReplicationStatus>,
 }
 impl DeleteMarkerReplication {
     /// <p>Indicates whether to replicate delete markers.</p> <note>
     /// <p>Indicates whether to replicate delete markers.</p>
     /// </note>
-    pub fn status(&self) -> std::option::Option<&crate::types::DeleteMarkerReplicationStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::DeleteMarkerReplicationStatus> {
         self.status.as_ref()
     }
 }
@@ -30,16 +30,18 @@ impl DeleteMarkerReplication {
 
 /// A builder for [`DeleteMarkerReplication`](crate::types::DeleteMarkerReplication).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteMarkerReplicationBuilder {
-    pub(crate) status: std::option::Option<crate::types::DeleteMarkerReplicationStatus>,
+    pub(crate) status: ::std::option::Option<crate::types::DeleteMarkerReplicationStatus>,
 }
 impl DeleteMarkerReplicationBuilder {
     /// <p>Indicates whether to replicate delete markers.</p> <note>
     /// <p>Indicates whether to replicate delete markers.</p>
     /// </note>
     pub fn status(mut self, input: crate::types::DeleteMarkerReplicationStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether to replicate delete markers.</p> <note>
@@ -47,7 +49,7 @@ impl DeleteMarkerReplicationBuilder {
     /// </note>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::DeleteMarkerReplicationStatus>,
+        input: ::std::option::Option<crate::types::DeleteMarkerReplicationStatus>,
     ) -> Self {
         self.status = input;
         self

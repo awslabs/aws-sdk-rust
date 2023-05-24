@@ -44,13 +44,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ScalingPlanStatusCode {
     #[allow(missing_docs)] // documentation missing in model
@@ -72,7 +72,7 @@ pub enum ScalingPlanStatusCode {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ScalingPlanStatusCode {
+impl ::std::convert::From<&str> for ScalingPlanStatusCode {
     fn from(s: &str) -> Self {
         match s {
             "Active" => ScalingPlanStatusCode::Active,
@@ -89,11 +89,11 @@ impl std::convert::From<&str> for ScalingPlanStatusCode {
         }
     }
 }
-impl std::str::FromStr for ScalingPlanStatusCode {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ScalingPlanStatusCode {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ScalingPlanStatusCode::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ScalingPlanStatusCode::from(s))
     }
 }
 impl ScalingPlanStatusCode {
@@ -125,7 +125,7 @@ impl ScalingPlanStatusCode {
         ]
     }
 }
-impl AsRef<str> for ScalingPlanStatusCode {
+impl ::std::convert::AsRef<str> for ScalingPlanStatusCode {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

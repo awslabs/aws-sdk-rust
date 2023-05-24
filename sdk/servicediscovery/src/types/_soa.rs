@@ -2,15 +2,15 @@
 
 /// <p>Start of Authority (SOA) properties for a public or private DNS namespace.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Soa {
     /// <p>The time to live (TTL) for purposes of negative caching.</p>
     #[doc(hidden)]
-    pub ttl: std::option::Option<i64>,
+    pub ttl: ::std::option::Option<i64>,
 }
 impl Soa {
     /// <p>The time to live (TTL) for purposes of negative caching.</p>
-    pub fn ttl(&self) -> std::option::Option<i64> {
+    pub fn ttl(&self) -> ::std::option::Option<i64> {
         self.ttl
     }
 }
@@ -23,18 +23,20 @@ impl Soa {
 
 /// A builder for [`Soa`](crate::types::Soa).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SoaBuilder {
-    pub(crate) ttl: std::option::Option<i64>,
+    pub(crate) ttl: ::std::option::Option<i64>,
 }
 impl SoaBuilder {
     /// <p>The time to live (TTL) for purposes of negative caching.</p>
     pub fn ttl(mut self, input: i64) -> Self {
-        self.ttl = Some(input);
+        self.ttl = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time to live (TTL) for purposes of negative caching.</p>
-    pub fn set_ttl(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_ttl(mut self, input: ::std::option::Option<i64>) -> Self {
         self.ttl = input;
         self
     }

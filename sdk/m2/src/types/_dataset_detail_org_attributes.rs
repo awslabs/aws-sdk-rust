@@ -2,7 +2,7 @@
 
 /// <p>Additional details about the data set. Different attributes correspond to different data set organizations. The values are populated based on datasetOrg, storageType and backend (Blu Age or Micro Focus).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum DatasetDetailOrgAttributes {
     /// <p>The generation data group of the data set.</p>
     Gdg(crate::types::GdgDetailAttributes),
@@ -21,11 +21,11 @@ pub enum DatasetDetailOrgAttributes {
 impl DatasetDetailOrgAttributes {
     /// Tries to convert the enum instance into [`Gdg`](crate::types::DatasetDetailOrgAttributes::Gdg), extracting the inner [`GdgDetailAttributes`](crate::types::GdgDetailAttributes).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_gdg(&self) -> std::result::Result<&crate::types::GdgDetailAttributes, &Self> {
+    pub fn as_gdg(&self) -> ::std::result::Result<&crate::types::GdgDetailAttributes, &Self> {
         if let DatasetDetailOrgAttributes::Gdg(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Gdg`](crate::types::DatasetDetailOrgAttributes::Gdg).
@@ -34,11 +34,11 @@ impl DatasetDetailOrgAttributes {
     }
     /// Tries to convert the enum instance into [`Vsam`](crate::types::DatasetDetailOrgAttributes::Vsam), extracting the inner [`VsamDetailAttributes`](crate::types::VsamDetailAttributes).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_vsam(&self) -> std::result::Result<&crate::types::VsamDetailAttributes, &Self> {
+    pub fn as_vsam(&self) -> ::std::result::Result<&crate::types::VsamDetailAttributes, &Self> {
         if let DatasetDetailOrgAttributes::Vsam(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Vsam`](crate::types::DatasetDetailOrgAttributes::Vsam).

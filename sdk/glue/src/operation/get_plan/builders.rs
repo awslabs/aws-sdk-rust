@@ -6,56 +6,59 @@ pub use crate::operation::get_plan::_get_plan_input::GetPlanInputBuilder;
 /// Fluent builder constructing a request to `GetPlan`.
 ///
 /// <p>Gets code to perform a specified mapping.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetPlanFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::get_plan::builders::GetPlanInputBuilder,
 }
 impl GetPlanFluentBuilder {
     /// Creates a new `GetPlan`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::get_plan::GetPlan,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::get_plan::GetPlanError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_plan::GetPlanError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_plan::GetPlanOutput,
-        aws_smithy_http::result::SdkError<crate::operation::get_plan::GetPlanError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_plan::GetPlanError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,9 +71,9 @@ impl GetPlanFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_plan::GetPlanOutput,
-        aws_smithy_http::result::SdkError<crate::operation::get_plan::GetPlanError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_plan::GetPlanError>,
     > {
         self.send_middleware().await
     }
@@ -86,7 +89,7 @@ impl GetPlanFluentBuilder {
     /// <p>The list of mappings from a source table to target tables.</p>
     pub fn set_mapping(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::MappingEntry>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::MappingEntry>>,
     ) -> Self {
         self.inner = self.inner.set_mapping(input);
         self
@@ -97,7 +100,7 @@ impl GetPlanFluentBuilder {
         self
     }
     /// <p>The source table.</p>
-    pub fn set_source(mut self, input: std::option::Option<crate::types::CatalogEntry>) -> Self {
+    pub fn set_source(mut self, input: ::std::option::Option<crate::types::CatalogEntry>) -> Self {
         self.inner = self.inner.set_source(input);
         self
     }
@@ -113,7 +116,7 @@ impl GetPlanFluentBuilder {
     /// <p>The target tables.</p>
     pub fn set_sinks(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CatalogEntry>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::CatalogEntry>>,
     ) -> Self {
         self.inner = self.inner.set_sinks(input);
         self
@@ -124,7 +127,7 @@ impl GetPlanFluentBuilder {
         self
     }
     /// <p>The parameters for the mapping.</p>
-    pub fn set_location(mut self, input: std::option::Option<crate::types::Location>) -> Self {
+    pub fn set_location(mut self, input: ::std::option::Option<crate::types::Location>) -> Self {
         self.inner = self.inner.set_location(input);
         self
     }
@@ -134,7 +137,7 @@ impl GetPlanFluentBuilder {
         self
     }
     /// <p>The programming language of the code to perform the mapping.</p>
-    pub fn set_language(mut self, input: std::option::Option<crate::types::Language>) -> Self {
+    pub fn set_language(mut self, input: ::std::option::Option<crate::types::Language>) -> Self {
         self.inner = self.inner.set_language(input);
         self
     }
@@ -149,8 +152,8 @@ impl GetPlanFluentBuilder {
     /// </ul>
     pub fn additional_plan_options_map(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.additional_plan_options_map(k.into(), v.into());
         self
@@ -162,8 +165,8 @@ impl GetPlanFluentBuilder {
     /// </ul>
     pub fn set_additional_plan_options_map(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_additional_plan_options_map(input);

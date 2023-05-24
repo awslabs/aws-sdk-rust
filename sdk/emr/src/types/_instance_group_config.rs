@@ -2,84 +2,84 @@
 
 /// <p>Configuration defining a new instance group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceGroupConfig {
     /// <p>Friendly name given to the instance group.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>Market type of the Amazon EC2 instances used to create a cluster node.</p>
     #[doc(hidden)]
-    pub market: std::option::Option<crate::types::MarketType>,
+    pub market: ::std::option::Option<crate::types::MarketType>,
     /// <p>The role of the instance group in the cluster.</p>
     #[doc(hidden)]
-    pub instance_role: std::option::Option<crate::types::InstanceRoleType>,
+    pub instance_role: ::std::option::Option<crate::types::InstanceRoleType>,
     /// <p>If specified, indicates that the instance group uses Spot Instances. This is the maximum price you are willing to pay for Spot Instances. Specify <code>OnDemandPrice</code> to set the amount equal to the On-Demand price, or specify an amount in USD.</p>
     #[doc(hidden)]
-    pub bid_price: std::option::Option<std::string::String>,
+    pub bid_price: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon EC2 instance type for all instances in the instance group.</p>
     #[doc(hidden)]
-    pub instance_type: std::option::Option<std::string::String>,
+    pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>Target number of instances for the instance group.</p>
     #[doc(hidden)]
-    pub instance_count: std::option::Option<i32>,
+    pub instance_count: ::std::option::Option<i32>,
     /// <note>
     /// <p>Amazon EMR releases 4.x or later.</p>
     /// </note>
     /// <p>The list of configurations supplied for an Amazon EMR cluster instance group. You can specify a separate configuration for each instance group (master, core, and task).</p>
     #[doc(hidden)]
-    pub configurations: std::option::Option<std::vec::Vec<crate::types::Configuration>>,
+    pub configurations: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
     /// <p>EBS configurations that will be attached to each Amazon EC2 instance in the instance group.</p>
     #[doc(hidden)]
-    pub ebs_configuration: std::option::Option<crate::types::EbsConfiguration>,
+    pub ebs_configuration: ::std::option::Option<crate::types::EbsConfiguration>,
     /// <p>An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. The automatic scaling policy defines how an instance group dynamically adds and terminates Amazon EC2 instances in response to the value of a CloudWatch metric. See <code>PutAutoScalingPolicy</code>.</p>
     #[doc(hidden)]
-    pub auto_scaling_policy: std::option::Option<crate::types::AutoScalingPolicy>,
+    pub auto_scaling_policy: ::std::option::Option<crate::types::AutoScalingPolicy>,
     /// <p>The custom AMI ID to use for the provisioned instance group.</p>
     #[doc(hidden)]
-    pub custom_ami_id: std::option::Option<std::string::String>,
+    pub custom_ami_id: ::std::option::Option<::std::string::String>,
 }
 impl InstanceGroupConfig {
     /// <p>Friendly name given to the instance group.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>Market type of the Amazon EC2 instances used to create a cluster node.</p>
-    pub fn market(&self) -> std::option::Option<&crate::types::MarketType> {
+    pub fn market(&self) -> ::std::option::Option<&crate::types::MarketType> {
         self.market.as_ref()
     }
     /// <p>The role of the instance group in the cluster.</p>
-    pub fn instance_role(&self) -> std::option::Option<&crate::types::InstanceRoleType> {
+    pub fn instance_role(&self) -> ::std::option::Option<&crate::types::InstanceRoleType> {
         self.instance_role.as_ref()
     }
     /// <p>If specified, indicates that the instance group uses Spot Instances. This is the maximum price you are willing to pay for Spot Instances. Specify <code>OnDemandPrice</code> to set the amount equal to the On-Demand price, or specify an amount in USD.</p>
-    pub fn bid_price(&self) -> std::option::Option<&str> {
+    pub fn bid_price(&self) -> ::std::option::Option<&str> {
         self.bid_price.as_deref()
     }
     /// <p>The Amazon EC2 instance type for all instances in the instance group.</p>
-    pub fn instance_type(&self) -> std::option::Option<&str> {
+    pub fn instance_type(&self) -> ::std::option::Option<&str> {
         self.instance_type.as_deref()
     }
     /// <p>Target number of instances for the instance group.</p>
-    pub fn instance_count(&self) -> std::option::Option<i32> {
+    pub fn instance_count(&self) -> ::std::option::Option<i32> {
         self.instance_count
     }
     /// <note>
     /// <p>Amazon EMR releases 4.x or later.</p>
     /// </note>
     /// <p>The list of configurations supplied for an Amazon EMR cluster instance group. You can specify a separate configuration for each instance group (master, core, and task).</p>
-    pub fn configurations(&self) -> std::option::Option<&[crate::types::Configuration]> {
+    pub fn configurations(&self) -> ::std::option::Option<&[crate::types::Configuration]> {
         self.configurations.as_deref()
     }
     /// <p>EBS configurations that will be attached to each Amazon EC2 instance in the instance group.</p>
-    pub fn ebs_configuration(&self) -> std::option::Option<&crate::types::EbsConfiguration> {
+    pub fn ebs_configuration(&self) -> ::std::option::Option<&crate::types::EbsConfiguration> {
         self.ebs_configuration.as_ref()
     }
     /// <p>An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. The automatic scaling policy defines how an instance group dynamically adds and terminates Amazon EC2 instances in response to the value of a CloudWatch metric. See <code>PutAutoScalingPolicy</code>.</p>
-    pub fn auto_scaling_policy(&self) -> std::option::Option<&crate::types::AutoScalingPolicy> {
+    pub fn auto_scaling_policy(&self) -> ::std::option::Option<&crate::types::AutoScalingPolicy> {
         self.auto_scaling_policy.as_ref()
     }
     /// <p>The custom AMI ID to use for the provisioned instance group.</p>
-    pub fn custom_ami_id(&self) -> std::option::Option<&str> {
+    pub fn custom_ami_id(&self) -> ::std::option::Option<&str> {
         self.custom_ami_id.as_deref()
     }
 }
@@ -92,80 +92,88 @@ impl InstanceGroupConfig {
 
 /// A builder for [`InstanceGroupConfig`](crate::types::InstanceGroupConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InstanceGroupConfigBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) market: std::option::Option<crate::types::MarketType>,
-    pub(crate) instance_role: std::option::Option<crate::types::InstanceRoleType>,
-    pub(crate) bid_price: std::option::Option<std::string::String>,
-    pub(crate) instance_type: std::option::Option<std::string::String>,
-    pub(crate) instance_count: std::option::Option<i32>,
-    pub(crate) configurations: std::option::Option<std::vec::Vec<crate::types::Configuration>>,
-    pub(crate) ebs_configuration: std::option::Option<crate::types::EbsConfiguration>,
-    pub(crate) auto_scaling_policy: std::option::Option<crate::types::AutoScalingPolicy>,
-    pub(crate) custom_ami_id: std::option::Option<std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) market: ::std::option::Option<crate::types::MarketType>,
+    pub(crate) instance_role: ::std::option::Option<crate::types::InstanceRoleType>,
+    pub(crate) bid_price: ::std::option::Option<::std::string::String>,
+    pub(crate) instance_type: ::std::option::Option<::std::string::String>,
+    pub(crate) instance_count: ::std::option::Option<i32>,
+    pub(crate) configurations: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
+    pub(crate) ebs_configuration: ::std::option::Option<crate::types::EbsConfiguration>,
+    pub(crate) auto_scaling_policy: ::std::option::Option<crate::types::AutoScalingPolicy>,
+    pub(crate) custom_ami_id: ::std::option::Option<::std::string::String>,
 }
 impl InstanceGroupConfigBuilder {
     /// <p>Friendly name given to the instance group.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Friendly name given to the instance group.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>Market type of the Amazon EC2 instances used to create a cluster node.</p>
     pub fn market(mut self, input: crate::types::MarketType) -> Self {
-        self.market = Some(input);
+        self.market = ::std::option::Option::Some(input);
         self
     }
     /// <p>Market type of the Amazon EC2 instances used to create a cluster node.</p>
-    pub fn set_market(mut self, input: std::option::Option<crate::types::MarketType>) -> Self {
+    pub fn set_market(mut self, input: ::std::option::Option<crate::types::MarketType>) -> Self {
         self.market = input;
         self
     }
     /// <p>The role of the instance group in the cluster.</p>
     pub fn instance_role(mut self, input: crate::types::InstanceRoleType) -> Self {
-        self.instance_role = Some(input);
+        self.instance_role = ::std::option::Option::Some(input);
         self
     }
     /// <p>The role of the instance group in the cluster.</p>
     pub fn set_instance_role(
         mut self,
-        input: std::option::Option<crate::types::InstanceRoleType>,
+        input: ::std::option::Option<crate::types::InstanceRoleType>,
     ) -> Self {
         self.instance_role = input;
         self
     }
     /// <p>If specified, indicates that the instance group uses Spot Instances. This is the maximum price you are willing to pay for Spot Instances. Specify <code>OnDemandPrice</code> to set the amount equal to the On-Demand price, or specify an amount in USD.</p>
-    pub fn bid_price(mut self, input: impl Into<std::string::String>) -> Self {
-        self.bid_price = Some(input.into());
+    pub fn bid_price(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.bid_price = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If specified, indicates that the instance group uses Spot Instances. This is the maximum price you are willing to pay for Spot Instances. Specify <code>OnDemandPrice</code> to set the amount equal to the On-Demand price, or specify an amount in USD.</p>
-    pub fn set_bid_price(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_bid_price(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bid_price = input;
         self
     }
     /// <p>The Amazon EC2 instance type for all instances in the instance group.</p>
-    pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.instance_type = Some(input.into());
+    pub fn instance_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.instance_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon EC2 instance type for all instances in the instance group.</p>
-    pub fn set_instance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_instance_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.instance_type = input;
         self
     }
     /// <p>Target number of instances for the instance group.</p>
     pub fn instance_count(mut self, input: i32) -> Self {
-        self.instance_count = Some(input);
+        self.instance_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>Target number of instances for the instance group.</p>
-    pub fn set_instance_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.instance_count = input;
         self
     }
@@ -180,7 +188,7 @@ impl InstanceGroupConfigBuilder {
     pub fn configurations(mut self, input: crate::types::Configuration) -> Self {
         let mut v = self.configurations.unwrap_or_default();
         v.push(input);
-        self.configurations = Some(v);
+        self.configurations = ::std::option::Option::Some(v);
         self
     }
     /// <note>
@@ -189,44 +197,50 @@ impl InstanceGroupConfigBuilder {
     /// <p>The list of configurations supplied for an Amazon EMR cluster instance group. You can specify a separate configuration for each instance group (master, core, and task).</p>
     pub fn set_configurations(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Configuration>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Configuration>>,
     ) -> Self {
         self.configurations = input;
         self
     }
     /// <p>EBS configurations that will be attached to each Amazon EC2 instance in the instance group.</p>
     pub fn ebs_configuration(mut self, input: crate::types::EbsConfiguration) -> Self {
-        self.ebs_configuration = Some(input);
+        self.ebs_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>EBS configurations that will be attached to each Amazon EC2 instance in the instance group.</p>
     pub fn set_ebs_configuration(
         mut self,
-        input: std::option::Option<crate::types::EbsConfiguration>,
+        input: ::std::option::Option<crate::types::EbsConfiguration>,
     ) -> Self {
         self.ebs_configuration = input;
         self
     }
     /// <p>An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. The automatic scaling policy defines how an instance group dynamically adds and terminates Amazon EC2 instances in response to the value of a CloudWatch metric. See <code>PutAutoScalingPolicy</code>.</p>
     pub fn auto_scaling_policy(mut self, input: crate::types::AutoScalingPolicy) -> Self {
-        self.auto_scaling_policy = Some(input);
+        self.auto_scaling_policy = ::std::option::Option::Some(input);
         self
     }
     /// <p>An automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. The automatic scaling policy defines how an instance group dynamically adds and terminates Amazon EC2 instances in response to the value of a CloudWatch metric. See <code>PutAutoScalingPolicy</code>.</p>
     pub fn set_auto_scaling_policy(
         mut self,
-        input: std::option::Option<crate::types::AutoScalingPolicy>,
+        input: ::std::option::Option<crate::types::AutoScalingPolicy>,
     ) -> Self {
         self.auto_scaling_policy = input;
         self
     }
     /// <p>The custom AMI ID to use for the provisioned instance group.</p>
-    pub fn custom_ami_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.custom_ami_id = Some(input.into());
+    pub fn custom_ami_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.custom_ami_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The custom AMI ID to use for the provisioned instance group.</p>
-    pub fn set_custom_ami_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_custom_ami_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.custom_ami_id = input;
         self
     }

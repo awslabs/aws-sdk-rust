@@ -2,84 +2,89 @@
 
 /// <p>Granular information about the skill.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SkillDetails {
     /// <p>The description of the product.</p>
     #[doc(hidden)]
-    pub product_description: std::option::Option<std::string::String>,
+    pub product_description: ::std::option::Option<::std::string::String>,
     /// <p>The phrase used to trigger the skill.</p>
     #[doc(hidden)]
-    pub invocation_phrase: std::option::Option<std::string::String>,
+    pub invocation_phrase: ::std::option::Option<::std::string::String>,
     /// <p>The date when the skill was released.</p>
     #[doc(hidden)]
-    pub release_date: std::option::Option<std::string::String>,
+    pub release_date: ::std::option::Option<::std::string::String>,
     /// <p>The URL of the end user license agreement.</p>
     #[doc(hidden)]
-    pub end_user_license_agreement: std::option::Option<std::string::String>,
+    pub end_user_license_agreement: ::std::option::Option<::std::string::String>,
     /// <p>The generic keywords associated with the skill that can be used to find a skill.</p>
     #[doc(hidden)]
-    pub generic_keywords: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub generic_keywords: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The details about what the skill supports organized as bullet points.</p>
     #[doc(hidden)]
-    pub bullet_points: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub bullet_points: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The updates added in bullet points.</p>
     #[doc(hidden)]
-    pub new_in_this_version_bullet_points: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub new_in_this_version_bullet_points:
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The types of skills.</p>
     #[doc(hidden)]
-    pub skill_types: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub skill_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> <i>This member has been deprecated.</i> </p>
     /// <p>The list of reviews for the skill, including Key and Value pair.</p>
     #[doc(hidden)]
-    pub reviews:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub reviews: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>The details about the developer that published the skill.</p>
     #[doc(hidden)]
-    pub developer_info: std::option::Option<crate::types::DeveloperInfo>,
+    pub developer_info: ::std::option::Option<crate::types::DeveloperInfo>,
 }
 impl SkillDetails {
     /// <p>The description of the product.</p>
-    pub fn product_description(&self) -> std::option::Option<&str> {
+    pub fn product_description(&self) -> ::std::option::Option<&str> {
         self.product_description.as_deref()
     }
     /// <p>The phrase used to trigger the skill.</p>
-    pub fn invocation_phrase(&self) -> std::option::Option<&str> {
+    pub fn invocation_phrase(&self) -> ::std::option::Option<&str> {
         self.invocation_phrase.as_deref()
     }
     /// <p>The date when the skill was released.</p>
-    pub fn release_date(&self) -> std::option::Option<&str> {
+    pub fn release_date(&self) -> ::std::option::Option<&str> {
         self.release_date.as_deref()
     }
     /// <p>The URL of the end user license agreement.</p>
-    pub fn end_user_license_agreement(&self) -> std::option::Option<&str> {
+    pub fn end_user_license_agreement(&self) -> ::std::option::Option<&str> {
         self.end_user_license_agreement.as_deref()
     }
     /// <p>The generic keywords associated with the skill that can be used to find a skill.</p>
-    pub fn generic_keywords(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn generic_keywords(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.generic_keywords.as_deref()
     }
     /// <p>The details about what the skill supports organized as bullet points.</p>
-    pub fn bullet_points(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn bullet_points(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.bullet_points.as_deref()
     }
     /// <p>The updates added in bullet points.</p>
-    pub fn new_in_this_version_bullet_points(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn new_in_this_version_bullet_points(
+        &self,
+    ) -> ::std::option::Option<&[::std::string::String]> {
         self.new_in_this_version_bullet_points.as_deref()
     }
     /// <p>The types of skills.</p>
-    pub fn skill_types(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn skill_types(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.skill_types.as_deref()
     }
     /// <p> <i>This member has been deprecated.</i> </p>
     /// <p>The list of reviews for the skill, including Key and Value pair.</p>
     pub fn reviews(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.reviews.as_ref()
     }
     /// <p>The details about the developer that published the skill.</p>
-    pub fn developer_info(&self) -> std::option::Option<&crate::types::DeveloperInfo> {
+    pub fn developer_info(&self) -> ::std::option::Option<&crate::types::DeveloperInfo> {
         self.developer_info.as_ref()
     }
 }
@@ -92,67 +97,79 @@ impl SkillDetails {
 
 /// A builder for [`SkillDetails`](crate::types::SkillDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SkillDetailsBuilder {
-    pub(crate) product_description: std::option::Option<std::string::String>,
-    pub(crate) invocation_phrase: std::option::Option<std::string::String>,
-    pub(crate) release_date: std::option::Option<std::string::String>,
-    pub(crate) end_user_license_agreement: std::option::Option<std::string::String>,
-    pub(crate) generic_keywords: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) bullet_points: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) product_description: ::std::option::Option<::std::string::String>,
+    pub(crate) invocation_phrase: ::std::option::Option<::std::string::String>,
+    pub(crate) release_date: ::std::option::Option<::std::string::String>,
+    pub(crate) end_user_license_agreement: ::std::option::Option<::std::string::String>,
+    pub(crate) generic_keywords: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) bullet_points: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) new_in_this_version_bullet_points:
-        std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) skill_types: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) reviews:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) developer_info: std::option::Option<crate::types::DeveloperInfo>,
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) skill_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) reviews: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) developer_info: ::std::option::Option<crate::types::DeveloperInfo>,
 }
 impl SkillDetailsBuilder {
     /// <p>The description of the product.</p>
-    pub fn product_description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.product_description = Some(input.into());
+    pub fn product_description(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.product_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the product.</p>
     pub fn set_product_description(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.product_description = input;
         self
     }
     /// <p>The phrase used to trigger the skill.</p>
-    pub fn invocation_phrase(mut self, input: impl Into<std::string::String>) -> Self {
-        self.invocation_phrase = Some(input.into());
+    pub fn invocation_phrase(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.invocation_phrase = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The phrase used to trigger the skill.</p>
     pub fn set_invocation_phrase(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.invocation_phrase = input;
         self
     }
     /// <p>The date when the skill was released.</p>
-    pub fn release_date(mut self, input: impl Into<std::string::String>) -> Self {
-        self.release_date = Some(input.into());
+    pub fn release_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.release_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date when the skill was released.</p>
-    pub fn set_release_date(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_release_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.release_date = input;
         self
     }
     /// <p>The URL of the end user license agreement.</p>
-    pub fn end_user_license_agreement(mut self, input: impl Into<std::string::String>) -> Self {
-        self.end_user_license_agreement = Some(input.into());
+    pub fn end_user_license_agreement(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.end_user_license_agreement = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL of the end user license agreement.</p>
     pub fn set_end_user_license_agreement(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.end_user_license_agreement = input;
         self
@@ -162,16 +179,19 @@ impl SkillDetailsBuilder {
     /// To override the contents of this collection use [`set_generic_keywords`](Self::set_generic_keywords).
     ///
     /// <p>The generic keywords associated with the skill that can be used to find a skill.</p>
-    pub fn generic_keywords(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn generic_keywords(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.generic_keywords.unwrap_or_default();
         v.push(input.into());
-        self.generic_keywords = Some(v);
+        self.generic_keywords = ::std::option::Option::Some(v);
         self
     }
     /// <p>The generic keywords associated with the skill that can be used to find a skill.</p>
     pub fn set_generic_keywords(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.generic_keywords = input;
         self
@@ -181,16 +201,19 @@ impl SkillDetailsBuilder {
     /// To override the contents of this collection use [`set_bullet_points`](Self::set_bullet_points).
     ///
     /// <p>The details about what the skill supports organized as bullet points.</p>
-    pub fn bullet_points(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn bullet_points(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.bullet_points.unwrap_or_default();
         v.push(input.into());
-        self.bullet_points = Some(v);
+        self.bullet_points = ::std::option::Option::Some(v);
         self
     }
     /// <p>The details about what the skill supports organized as bullet points.</p>
     pub fn set_bullet_points(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.bullet_points = input;
         self
@@ -202,17 +225,17 @@ impl SkillDetailsBuilder {
     /// <p>The updates added in bullet points.</p>
     pub fn new_in_this_version_bullet_points(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut v = self.new_in_this_version_bullet_points.unwrap_or_default();
         v.push(input.into());
-        self.new_in_this_version_bullet_points = Some(v);
+        self.new_in_this_version_bullet_points = ::std::option::Option::Some(v);
         self
     }
     /// <p>The updates added in bullet points.</p>
     pub fn set_new_in_this_version_bullet_points(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.new_in_this_version_bullet_points = input;
         self
@@ -222,16 +245,16 @@ impl SkillDetailsBuilder {
     /// To override the contents of this collection use [`set_skill_types`](Self::set_skill_types).
     ///
     /// <p>The types of skills.</p>
-    pub fn skill_types(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn skill_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.skill_types.unwrap_or_default();
         v.push(input.into());
-        self.skill_types = Some(v);
+        self.skill_types = ::std::option::Option::Some(v);
         self
     }
     /// <p>The types of skills.</p>
     pub fn set_skill_types(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.skill_types = input;
         self
@@ -244,20 +267,20 @@ impl SkillDetailsBuilder {
     /// <p>The list of reviews for the skill, including Key and Value pair.</p>
     pub fn reviews(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.reviews.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.reviews = Some(hash_map);
+        self.reviews = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p> <i>This member has been deprecated.</i> </p>
     /// <p>The list of reviews for the skill, including Key and Value pair.</p>
     pub fn set_reviews(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.reviews = input;
@@ -265,13 +288,13 @@ impl SkillDetailsBuilder {
     }
     /// <p>The details about the developer that published the skill.</p>
     pub fn developer_info(mut self, input: crate::types::DeveloperInfo) -> Self {
-        self.developer_info = Some(input);
+        self.developer_info = ::std::option::Option::Some(input);
         self
     }
     /// <p>The details about the developer that published the skill.</p>
     pub fn set_developer_info(
         mut self,
-        input: std::option::Option<crate::types::DeveloperInfo>,
+        input: ::std::option::Option<crate::types::DeveloperInfo>,
     ) -> Self {
         self.developer_info = input;
         self

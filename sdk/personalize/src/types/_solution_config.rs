@@ -2,60 +2,64 @@
 
 /// <p>Describes the configuration properties for the solution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SolutionConfig {
     /// <p>Only events with a value greater than or equal to this threshold are used for training a model.</p>
     #[doc(hidden)]
-    pub event_value_threshold: std::option::Option<std::string::String>,
+    pub event_value_threshold: ::std::option::Option<::std::string::String>,
     /// <p>Describes the properties for hyperparameter optimization (HPO).</p>
     #[doc(hidden)]
-    pub hpo_config: std::option::Option<crate::types::HpoConfig>,
+    pub hpo_config: ::std::option::Option<crate::types::HpoConfig>,
     /// <p>Lists the hyperparameter names and ranges.</p>
     #[doc(hidden)]
-    pub algorithm_hyper_parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub algorithm_hyper_parameters: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>Lists the feature transformation parameters.</p>
     #[doc(hidden)]
-    pub feature_transformation_parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub feature_transformation_parameters: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>The <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_AutoMLConfig.html">AutoMLConfig</a> object containing a list of recipes to search when AutoML is performed.</p>
     #[doc(hidden)]
-    pub auto_ml_config: std::option::Option<crate::types::AutoMlConfig>,
+    pub auto_ml_config: ::std::option::Option<crate::types::AutoMlConfig>,
     /// <p>Describes the additional objective for the solution, such as maximizing streaming minutes or increasing revenue. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/optimizing-solution-for-objective.html">Optimizing a solution</a>.</p>
     #[doc(hidden)]
-    pub optimization_objective: std::option::Option<crate::types::OptimizationObjective>,
+    pub optimization_objective: ::std::option::Option<crate::types::OptimizationObjective>,
 }
 impl SolutionConfig {
     /// <p>Only events with a value greater than or equal to this threshold are used for training a model.</p>
-    pub fn event_value_threshold(&self) -> std::option::Option<&str> {
+    pub fn event_value_threshold(&self) -> ::std::option::Option<&str> {
         self.event_value_threshold.as_deref()
     }
     /// <p>Describes the properties for hyperparameter optimization (HPO).</p>
-    pub fn hpo_config(&self) -> std::option::Option<&crate::types::HpoConfig> {
+    pub fn hpo_config(&self) -> ::std::option::Option<&crate::types::HpoConfig> {
         self.hpo_config.as_ref()
     }
     /// <p>Lists the hyperparameter names and ranges.</p>
     pub fn algorithm_hyper_parameters(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.algorithm_hyper_parameters.as_ref()
     }
     /// <p>Lists the feature transformation parameters.</p>
     pub fn feature_transformation_parameters(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.feature_transformation_parameters.as_ref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_AutoMLConfig.html">AutoMLConfig</a> object containing a list of recipes to search when AutoML is performed.</p>
-    pub fn auto_ml_config(&self) -> std::option::Option<&crate::types::AutoMlConfig> {
+    pub fn auto_ml_config(&self) -> ::std::option::Option<&crate::types::AutoMlConfig> {
         self.auto_ml_config.as_ref()
     }
     /// <p>Describes the additional objective for the solution, such as maximizing streaming minutes or increasing revenue. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/optimizing-solution-for-objective.html">Optimizing a solution</a>.</p>
     pub fn optimization_objective(
         &self,
-    ) -> std::option::Option<&crate::types::OptimizationObjective> {
+    ) -> ::std::option::Option<&crate::types::OptimizationObjective> {
         self.optimization_objective.as_ref()
     }
 }
@@ -68,38 +72,45 @@ impl SolutionConfig {
 
 /// A builder for [`SolutionConfig`](crate::types::SolutionConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SolutionConfigBuilder {
-    pub(crate) event_value_threshold: std::option::Option<std::string::String>,
-    pub(crate) hpo_config: std::option::Option<crate::types::HpoConfig>,
-    pub(crate) algorithm_hyper_parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) feature_transformation_parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) auto_ml_config: std::option::Option<crate::types::AutoMlConfig>,
-    pub(crate) optimization_objective: std::option::Option<crate::types::OptimizationObjective>,
+    pub(crate) event_value_threshold: ::std::option::Option<::std::string::String>,
+    pub(crate) hpo_config: ::std::option::Option<crate::types::HpoConfig>,
+    pub(crate) algorithm_hyper_parameters: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) feature_transformation_parameters: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) auto_ml_config: ::std::option::Option<crate::types::AutoMlConfig>,
+    pub(crate) optimization_objective: ::std::option::Option<crate::types::OptimizationObjective>,
 }
 impl SolutionConfigBuilder {
     /// <p>Only events with a value greater than or equal to this threshold are used for training a model.</p>
-    pub fn event_value_threshold(mut self, input: impl Into<std::string::String>) -> Self {
-        self.event_value_threshold = Some(input.into());
+    pub fn event_value_threshold(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.event_value_threshold = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Only events with a value greater than or equal to this threshold are used for training a model.</p>
     pub fn set_event_value_threshold(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.event_value_threshold = input;
         self
     }
     /// <p>Describes the properties for hyperparameter optimization (HPO).</p>
     pub fn hpo_config(mut self, input: crate::types::HpoConfig) -> Self {
-        self.hpo_config = Some(input);
+        self.hpo_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes the properties for hyperparameter optimization (HPO).</p>
-    pub fn set_hpo_config(mut self, input: std::option::Option<crate::types::HpoConfig>) -> Self {
+    pub fn set_hpo_config(mut self, input: ::std::option::Option<crate::types::HpoConfig>) -> Self {
         self.hpo_config = input;
         self
     }
@@ -110,19 +121,19 @@ impl SolutionConfigBuilder {
     /// <p>Lists the hyperparameter names and ranges.</p>
     pub fn algorithm_hyper_parameters(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.algorithm_hyper_parameters.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.algorithm_hyper_parameters = Some(hash_map);
+        self.algorithm_hyper_parameters = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Lists the hyperparameter names and ranges.</p>
     pub fn set_algorithm_hyper_parameters(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.algorithm_hyper_parameters = input;
@@ -135,19 +146,19 @@ impl SolutionConfigBuilder {
     /// <p>Lists the feature transformation parameters.</p>
     pub fn feature_transformation_parameters(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.feature_transformation_parameters.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.feature_transformation_parameters = Some(hash_map);
+        self.feature_transformation_parameters = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Lists the feature transformation parameters.</p>
     pub fn set_feature_transformation_parameters(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.feature_transformation_parameters = input;
@@ -155,26 +166,26 @@ impl SolutionConfigBuilder {
     }
     /// <p>The <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_AutoMLConfig.html">AutoMLConfig</a> object containing a list of recipes to search when AutoML is performed.</p>
     pub fn auto_ml_config(mut self, input: crate::types::AutoMlConfig) -> Self {
-        self.auto_ml_config = Some(input);
+        self.auto_ml_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_AutoMLConfig.html">AutoMLConfig</a> object containing a list of recipes to search when AutoML is performed.</p>
     pub fn set_auto_ml_config(
         mut self,
-        input: std::option::Option<crate::types::AutoMlConfig>,
+        input: ::std::option::Option<crate::types::AutoMlConfig>,
     ) -> Self {
         self.auto_ml_config = input;
         self
     }
     /// <p>Describes the additional objective for the solution, such as maximizing streaming minutes or increasing revenue. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/optimizing-solution-for-objective.html">Optimizing a solution</a>.</p>
     pub fn optimization_objective(mut self, input: crate::types::OptimizationObjective) -> Self {
-        self.optimization_objective = Some(input);
+        self.optimization_objective = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes the additional objective for the solution, such as maximizing streaming minutes or increasing revenue. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/optimizing-solution-for-objective.html">Optimizing a solution</a>.</p>
     pub fn set_optimization_objective(
         mut self,
-        input: std::option::Option<crate::types::OptimizationObjective>,
+        input: ::std::option::Option<crate::types::OptimizationObjective>,
     ) -> Self {
         self.optimization_objective = input;
         self

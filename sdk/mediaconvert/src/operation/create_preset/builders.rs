@@ -6,56 +6,59 @@ pub use crate::operation::create_preset::_create_preset_input::CreatePresetInput
 /// Fluent builder constructing a request to `CreatePreset`.
 ///
 /// Create a new preset. For information about job templates see the User Guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreatePresetFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_preset::builders::CreatePresetInputBuilder,
 }
 impl CreatePresetFluentBuilder {
     /// Creates a new `CreatePreset`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_preset::CreatePreset,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_preset::CreatePresetError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_preset::CreatePresetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_preset::CreatePresetOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_preset::CreatePresetError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_preset::CreatePresetError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,39 +71,39 @@ impl CreatePresetFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_preset::CreatePresetOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_preset::CreatePresetError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_preset::CreatePresetError>,
     > {
         self.send_middleware().await
     }
     /// Optional. A category for the preset you are creating.
-    pub fn category(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn category(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.category(input.into());
         self
     }
     /// Optional. A category for the preset you are creating.
-    pub fn set_category(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_category(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_category(input);
         self
     }
     /// Optional. A description of the preset you are creating.
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// Optional. A description of the preset you are creating.
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
     /// The name of the preset you are creating.
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// The name of the preset you are creating.
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
@@ -112,7 +115,7 @@ impl CreatePresetFluentBuilder {
     /// Settings for preset
     pub fn set_settings(
         mut self,
-        input: std::option::Option<crate::types::PresetSettings>,
+        input: ::std::option::Option<crate::types::PresetSettings>,
     ) -> Self {
         self.inner = self.inner.set_settings(input);
         self
@@ -124,8 +127,8 @@ impl CreatePresetFluentBuilder {
     /// The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a key.
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
@@ -133,8 +136,8 @@ impl CreatePresetFluentBuilder {
     /// The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a key.
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_tags(input);

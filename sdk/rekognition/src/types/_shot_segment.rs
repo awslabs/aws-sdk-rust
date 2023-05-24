@@ -2,22 +2,22 @@
 
 /// <p>Information about a shot detection segment detected in a video. For more information, see <code>SegmentDetection</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ShotSegment {
     /// <p>An Identifier for a shot detection segment detected in a video. </p>
     #[doc(hidden)]
-    pub index: std::option::Option<i64>,
+    pub index: ::std::option::Option<i64>,
     /// <p>The confidence that Amazon Rekognition Video has in the accuracy of the detected segment.</p>
     #[doc(hidden)]
-    pub confidence: std::option::Option<f32>,
+    pub confidence: ::std::option::Option<f32>,
 }
 impl ShotSegment {
     /// <p>An Identifier for a shot detection segment detected in a video. </p>
-    pub fn index(&self) -> std::option::Option<i64> {
+    pub fn index(&self) -> ::std::option::Option<i64> {
         self.index
     }
     /// <p>The confidence that Amazon Rekognition Video has in the accuracy of the detected segment.</p>
-    pub fn confidence(&self) -> std::option::Option<f32> {
+    pub fn confidence(&self) -> ::std::option::Option<f32> {
         self.confidence
     }
 }
@@ -30,29 +30,31 @@ impl ShotSegment {
 
 /// A builder for [`ShotSegment`](crate::types::ShotSegment).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ShotSegmentBuilder {
-    pub(crate) index: std::option::Option<i64>,
-    pub(crate) confidence: std::option::Option<f32>,
+    pub(crate) index: ::std::option::Option<i64>,
+    pub(crate) confidence: ::std::option::Option<f32>,
 }
 impl ShotSegmentBuilder {
     /// <p>An Identifier for a shot detection segment detected in a video. </p>
     pub fn index(mut self, input: i64) -> Self {
-        self.index = Some(input);
+        self.index = ::std::option::Option::Some(input);
         self
     }
     /// <p>An Identifier for a shot detection segment detected in a video. </p>
-    pub fn set_index(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_index(mut self, input: ::std::option::Option<i64>) -> Self {
         self.index = input;
         self
     }
     /// <p>The confidence that Amazon Rekognition Video has in the accuracy of the detected segment.</p>
     pub fn confidence(mut self, input: f32) -> Self {
-        self.confidence = Some(input);
+        self.confidence = ::std::option::Option::Some(input);
         self
     }
     /// <p>The confidence that Amazon Rekognition Video has in the accuracy of the detected segment.</p>
-    pub fn set_confidence(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
         self.confidence = input;
         self
     }

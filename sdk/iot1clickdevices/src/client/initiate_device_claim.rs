@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`InitiateDeviceClaim`](crate::operation::initiate_device_claim::builders::InitiateDeviceClaimFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`device_id(impl Into<String>)`](crate::operation::initiate_device_claim::builders::InitiateDeviceClaimFluentBuilder::device_id) / [`set_device_id(Option<String>)`](crate::operation::initiate_device_claim::builders::InitiateDeviceClaimFluentBuilder::set_device_id): <p>The unique identifier of the device.</p>
+    ///   - [`device_id(impl ::std::convert::Into<String>)`](crate::operation::initiate_device_claim::builders::InitiateDeviceClaimFluentBuilder::device_id) / [`set_device_id(Option<String>)`](crate::operation::initiate_device_claim::builders::InitiateDeviceClaimFluentBuilder::set_device_id): <p>The unique identifier of the device.</p>
     /// - On success, responds with [`InitiateDeviceClaimOutput`](crate::operation::initiate_device_claim::InitiateDeviceClaimOutput) with field(s):
     ///   - [`state(Option<String>)`](crate::operation::initiate_device_claim::InitiateDeviceClaimOutput::state): <p>The device's final claim state.</p>
     /// - On failure, responds with [`SdkError<InitiateDeviceClaimError>`](crate::operation::initiate_device_claim::InitiateDeviceClaimError)

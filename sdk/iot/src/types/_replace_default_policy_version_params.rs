@@ -2,15 +2,15 @@
 
 /// <p>Parameters to define a mitigation action that adds a blank policy to restrict permissions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplaceDefaultPolicyVersionParams {
     /// <p>The name of the template to be applied. The only supported value is <code>BLANK_POLICY</code>.</p>
     #[doc(hidden)]
-    pub template_name: std::option::Option<crate::types::PolicyTemplateName>,
+    pub template_name: ::std::option::Option<crate::types::PolicyTemplateName>,
 }
 impl ReplaceDefaultPolicyVersionParams {
     /// <p>The name of the template to be applied. The only supported value is <code>BLANK_POLICY</code>.</p>
-    pub fn template_name(&self) -> std::option::Option<&crate::types::PolicyTemplateName> {
+    pub fn template_name(&self) -> ::std::option::Option<&crate::types::PolicyTemplateName> {
         self.template_name.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl ReplaceDefaultPolicyVersionParams {
 
 /// A builder for [`ReplaceDefaultPolicyVersionParams`](crate::types::ReplaceDefaultPolicyVersionParams).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ReplaceDefaultPolicyVersionParamsBuilder {
-    pub(crate) template_name: std::option::Option<crate::types::PolicyTemplateName>,
+    pub(crate) template_name: ::std::option::Option<crate::types::PolicyTemplateName>,
 }
 impl ReplaceDefaultPolicyVersionParamsBuilder {
     /// <p>The name of the template to be applied. The only supported value is <code>BLANK_POLICY</code>.</p>
     pub fn template_name(mut self, input: crate::types::PolicyTemplateName) -> Self {
-        self.template_name = Some(input);
+        self.template_name = ::std::option::Option::Some(input);
         self
     }
     /// <p>The name of the template to be applied. The only supported value is <code>BLANK_POLICY</code>.</p>
     pub fn set_template_name(
         mut self,
-        input: std::option::Option<crate::types::PolicyTemplateName>,
+        input: ::std::option::Option<crate::types::PolicyTemplateName>,
     ) -> Self {
         self.template_name = input;
         self

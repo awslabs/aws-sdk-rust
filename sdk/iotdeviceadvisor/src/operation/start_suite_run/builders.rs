@@ -7,56 +7,59 @@ pub use crate::operation::start_suite_run::_start_suite_run_input::StartSuiteRun
 ///
 /// <p>Starts a Device Advisor test suite run.</p>
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">StartSuiteRun</a> action.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartSuiteRunFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::start_suite_run::builders::StartSuiteRunInputBuilder,
 }
 impl StartSuiteRunFluentBuilder {
     /// Creates a new `StartSuiteRun`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::start_suite_run::StartSuiteRun,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::start_suite_run::StartSuiteRunError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_suite_run::StartSuiteRunError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::start_suite_run::StartSuiteRunOutput,
-        aws_smithy_http::result::SdkError<crate::operation::start_suite_run::StartSuiteRunError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_suite_run::StartSuiteRunError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -69,34 +72,40 @@ impl StartSuiteRunFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::start_suite_run::StartSuiteRunOutput,
-        aws_smithy_http::result::SdkError<crate::operation::start_suite_run::StartSuiteRunError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_suite_run::StartSuiteRunError>,
     > {
         self.send_middleware().await
     }
     /// <p>Suite definition ID of the test suite.</p>
-    pub fn suite_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn suite_definition_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.suite_definition_id(input.into());
         self
     }
     /// <p>Suite definition ID of the test suite.</p>
     pub fn set_suite_definition_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_suite_definition_id(input);
         self
     }
     /// <p>Suite definition version of the test suite.</p>
-    pub fn suite_definition_version(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn suite_definition_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.suite_definition_version(input.into());
         self
     }
     /// <p>Suite definition version of the test suite.</p>
     pub fn set_suite_definition_version(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_suite_definition_version(input);
         self
@@ -109,7 +118,7 @@ impl StartSuiteRunFluentBuilder {
     /// <p>Suite run configuration.</p>
     pub fn set_suite_run_configuration(
         mut self,
-        input: std::option::Option<crate::types::SuiteRunConfiguration>,
+        input: ::std::option::Option<crate::types::SuiteRunConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_suite_run_configuration(input);
         self
@@ -121,8 +130,8 @@ impl StartSuiteRunFluentBuilder {
     /// <p>The tags to be attached to the suite run.</p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
@@ -130,8 +139,8 @@ impl StartSuiteRunFluentBuilder {
     /// <p>The tags to be attached to the suite run.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_tags(input);

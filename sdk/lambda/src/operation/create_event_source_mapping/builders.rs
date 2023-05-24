@@ -34,29 +34,29 @@ pub use crate::operation::create_event_source_mapping::_create_event_source_mapp
 /// <li> <p> <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-kafka.html#services-kafka-parms"> Apache Kafka</a> </p> </li>
 /// <li> <p> <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-documentdb.html#docdb-configuration"> Amazon DocumentDB</a> </p> </li>
 /// </ul>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateEventSourceMappingFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::create_event_source_mapping::builders::CreateEventSourceMappingInputBuilder,
 }
 impl CreateEventSourceMappingFluentBuilder {
     /// Creates a new `CreateEventSourceMapping`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_event_source_mapping::CreateEventSourceMapping,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_event_source_mapping::CreateEventSourceMappingError,
         >,
     > {
@@ -64,30 +64,33 @@ impl CreateEventSourceMappingFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_event_source_mapping::CreateEventSourceMappingOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_event_source_mapping::CreateEventSourceMappingError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -100,9 +103,9 @@ impl CreateEventSourceMappingFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_event_source_mapping::CreateEventSourceMappingOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_event_source_mapping::CreateEventSourceMappingError,
         >,
     > {
@@ -117,7 +120,10 @@ impl CreateEventSourceMappingFluentBuilder {
     /// <li> <p> <b>Amazon MQ</b> – The ARN of the broker.</p> </li>
     /// <li> <p> <b>Amazon DocumentDB</b> – The ARN of the DocumentDB change stream.</p> </li>
     /// </ul>
-    pub fn event_source_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn event_source_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.event_source_arn(input.into());
         self
     }
@@ -130,7 +136,10 @@ impl CreateEventSourceMappingFluentBuilder {
     /// <li> <p> <b>Amazon MQ</b> – The ARN of the broker.</p> </li>
     /// <li> <p> <b>Amazon DocumentDB</b> – The ARN of the DocumentDB change stream.</p> </li>
     /// </ul>
-    pub fn set_event_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_event_source_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_event_source_arn(input);
         self
     }
@@ -143,7 +152,10 @@ impl CreateEventSourceMappingFluentBuilder {
     /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:MyFunction</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64 characters in length.</p>
-    pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn function_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.function_name(input.into());
         self
     }
@@ -156,7 +168,10 @@ impl CreateEventSourceMappingFluentBuilder {
     /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:MyFunction</code>.</p> </li>
     /// </ul>
     /// <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64 characters in length.</p>
-    pub fn set_function_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_function_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_function_name(input);
         self
     }
@@ -168,7 +183,7 @@ impl CreateEventSourceMappingFluentBuilder {
     }
     /// <p>When true, the event source mapping is active. When false, Lambda pauses polling and invocation.</p>
     /// <p>Default: True</p>
-    pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enabled(input);
         self
     }
@@ -196,7 +211,7 @@ impl CreateEventSourceMappingFluentBuilder {
     /// <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> – Default 100. Max 10,000.</p> </li>
     /// <li> <p> <b>DocumentDB</b> – Default 100. Max 10,000.</p> </li>
     /// </ul>
-    pub fn set_batch_size(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_batch_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_batch_size(input);
         self
     }
@@ -208,7 +223,7 @@ impl CreateEventSourceMappingFluentBuilder {
     /// <p>An object that defines the filter criteria that determine whether Lambda should process an event. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.</p>
     pub fn set_filter_criteria(
         mut self,
-        input: std::option::Option<crate::types::FilterCriteria>,
+        input: ::std::option::Option<crate::types::FilterCriteria>,
     ) -> Self {
         self.inner = self.inner.set_filter_criteria(input);
         self
@@ -225,7 +240,7 @@ impl CreateEventSourceMappingFluentBuilder {
     /// <p>Related setting: For streams and Amazon SQS event sources, when you set <code>BatchSize</code> to a value greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
     pub fn set_maximum_batching_window_in_seconds(
         mut self,
-        input: std::option::Option<i32>,
+        input: ::std::option::Option<i32>,
     ) -> Self {
         self.inner = self.inner.set_maximum_batching_window_in_seconds(input);
         self
@@ -236,7 +251,7 @@ impl CreateEventSourceMappingFluentBuilder {
         self
     }
     /// <p>(Kinesis and DynamoDB Streams only) The number of batches to process from each shard concurrently.</p>
-    pub fn set_parallelization_factor(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_parallelization_factor(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_parallelization_factor(input);
         self
     }
@@ -248,20 +263,20 @@ impl CreateEventSourceMappingFluentBuilder {
     /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK Streams sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams and Amazon DocumentDB.</p>
     pub fn set_starting_position(
         mut self,
-        input: std::option::Option<crate::types::EventSourcePosition>,
+        input: ::std::option::Option<crate::types::EventSourcePosition>,
     ) -> Self {
         self.inner = self.inner.set_starting_position(input);
         self
     }
     /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading.</p>
-    pub fn starting_position_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
+    pub fn starting_position_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.starting_position_timestamp(input);
         self
     }
     /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading.</p>
     pub fn set_starting_position_timestamp(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.inner = self.inner.set_starting_position_timestamp(input);
         self
@@ -274,7 +289,7 @@ impl CreateEventSourceMappingFluentBuilder {
     /// <p>(Kinesis and DynamoDB Streams only) A standard Amazon SQS queue or standard Amazon SNS topic destination for discarded records.</p>
     pub fn set_destination_config(
         mut self,
-        input: std::option::Option<crate::types::DestinationConfig>,
+        input: ::std::option::Option<crate::types::DestinationConfig>,
     ) -> Self {
         self.inner = self.inner.set_destination_config(input);
         self
@@ -285,7 +300,7 @@ impl CreateEventSourceMappingFluentBuilder {
         self
     }
     /// <p>(Kinesis and DynamoDB Streams only) Discard records older than the specified age. The default value is infinite (-1).</p>
-    pub fn set_maximum_record_age_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_maximum_record_age_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_maximum_record_age_in_seconds(input);
         self
     }
@@ -295,7 +310,10 @@ impl CreateEventSourceMappingFluentBuilder {
         self
     }
     /// <p>(Kinesis and DynamoDB Streams only) If the function returns an error, split the batch in two and retry.</p>
-    pub fn set_bisect_batch_on_function_error(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_bisect_batch_on_function_error(
+        mut self,
+        input: ::std::option::Option<bool>,
+    ) -> Self {
         self.inner = self.inner.set_bisect_batch_on_function_error(input);
         self
     }
@@ -305,7 +323,7 @@ impl CreateEventSourceMappingFluentBuilder {
         self
     }
     /// <p>(Kinesis and DynamoDB Streams only) Discard records after the specified number of retries. The default value is infinite (-1). When set to infinite (-1), failed records are retried until the record expires.</p>
-    pub fn set_maximum_retry_attempts(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_maximum_retry_attempts(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_maximum_retry_attempts(input);
         self
     }
@@ -315,7 +333,7 @@ impl CreateEventSourceMappingFluentBuilder {
         self
     }
     /// <p>(Kinesis and DynamoDB Streams only) The duration in seconds of a processing window for DynamoDB and Kinesis Streams event sources. A value of 0 seconds indicates no tumbling window.</p>
-    pub fn set_tumbling_window_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_tumbling_window_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_tumbling_window_in_seconds(input);
         self
     }
@@ -324,14 +342,14 @@ impl CreateEventSourceMappingFluentBuilder {
     /// To override the contents of this collection use [`set_topics`](Self::set_topics).
     ///
     /// <p>The name of the Kafka topic.</p>
-    pub fn topics(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn topics(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.topics(input.into());
         self
     }
     /// <p>The name of the Kafka topic.</p>
     pub fn set_topics(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_topics(input);
         self
@@ -341,14 +359,14 @@ impl CreateEventSourceMappingFluentBuilder {
     /// To override the contents of this collection use [`set_queues`](Self::set_queues).
     ///
     /// <p> (MQ) The name of the Amazon MQ broker destination queue to consume. </p>
-    pub fn queues(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn queues(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.queues(input.into());
         self
     }
     /// <p> (MQ) The name of the Amazon MQ broker destination queue to consume. </p>
     pub fn set_queues(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_queues(input);
         self
@@ -368,7 +386,7 @@ impl CreateEventSourceMappingFluentBuilder {
     /// <p>An array of authentication protocols or VPC components required to secure your event source.</p>
     pub fn set_source_access_configurations(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SourceAccessConfiguration>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SourceAccessConfiguration>>,
     ) -> Self {
         self.inner = self.inner.set_source_access_configurations(input);
         self
@@ -384,7 +402,7 @@ impl CreateEventSourceMappingFluentBuilder {
     /// <p>The self-managed Apache Kafka cluster to receive records from.</p>
     pub fn set_self_managed_event_source(
         mut self,
-        input: std::option::Option<crate::types::SelfManagedEventSource>,
+        input: ::std::option::Option<crate::types::SelfManagedEventSource>,
     ) -> Self {
         self.inner = self.inner.set_self_managed_event_source(input);
         self
@@ -401,7 +419,7 @@ impl CreateEventSourceMappingFluentBuilder {
     /// <p>(Kinesis, DynamoDB Streams, and Amazon SQS) A list of current response type enums applied to the event source mapping.</p>
     pub fn set_function_response_types(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::FunctionResponseType>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::FunctionResponseType>>,
     ) -> Self {
         self.inner = self.inner.set_function_response_types(input);
         self
@@ -417,7 +435,7 @@ impl CreateEventSourceMappingFluentBuilder {
     /// <p>Specific configuration settings for an Amazon Managed Streaming for Apache Kafka (Amazon MSK) event source.</p>
     pub fn set_amazon_managed_kafka_event_source_config(
         mut self,
-        input: std::option::Option<crate::types::AmazonManagedKafkaEventSourceConfig>,
+        input: ::std::option::Option<crate::types::AmazonManagedKafkaEventSourceConfig>,
     ) -> Self {
         self.inner = self
             .inner
@@ -435,7 +453,7 @@ impl CreateEventSourceMappingFluentBuilder {
     /// <p>Specific configuration settings for a self-managed Apache Kafka event source.</p>
     pub fn set_self_managed_kafka_event_source_config(
         mut self,
-        input: std::option::Option<crate::types::SelfManagedKafkaEventSourceConfig>,
+        input: ::std::option::Option<crate::types::SelfManagedKafkaEventSourceConfig>,
     ) -> Self {
         self.inner = self.inner.set_self_managed_kafka_event_source_config(input);
         self
@@ -448,7 +466,7 @@ impl CreateEventSourceMappingFluentBuilder {
     /// <p>(Amazon SQS only) The scaling configuration for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring maximum concurrency for Amazon SQS event sources</a>.</p>
     pub fn set_scaling_config(
         mut self,
-        input: std::option::Option<crate::types::ScalingConfig>,
+        input: ::std::option::Option<crate::types::ScalingConfig>,
     ) -> Self {
         self.inner = self.inner.set_scaling_config(input);
         self
@@ -464,7 +482,7 @@ impl CreateEventSourceMappingFluentBuilder {
     /// <p>Specific configuration settings for a DocumentDB event source.</p>
     pub fn set_document_db_event_source_config(
         mut self,
-        input: std::option::Option<crate::types::DocumentDbEventSourceConfig>,
+        input: ::std::option::Option<crate::types::DocumentDbEventSourceConfig>,
     ) -> Self {
         self.inner = self.inner.set_document_db_event_source_config(input);
         self

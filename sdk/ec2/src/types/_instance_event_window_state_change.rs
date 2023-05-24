@@ -2,22 +2,22 @@
 
 /// <p>The state of the event window.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceEventWindowStateChange {
     /// <p>The ID of the event window.</p>
     #[doc(hidden)]
-    pub instance_event_window_id: std::option::Option<std::string::String>,
+    pub instance_event_window_id: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the event window.</p>
     #[doc(hidden)]
-    pub state: std::option::Option<crate::types::InstanceEventWindowState>,
+    pub state: ::std::option::Option<crate::types::InstanceEventWindowState>,
 }
 impl InstanceEventWindowStateChange {
     /// <p>The ID of the event window.</p>
-    pub fn instance_event_window_id(&self) -> std::option::Option<&str> {
+    pub fn instance_event_window_id(&self) -> ::std::option::Option<&str> {
         self.instance_event_window_id.as_deref()
     }
     /// <p>The current state of the event window.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::InstanceEventWindowState> {
+    pub fn state(&self) -> ::std::option::Option<&crate::types::InstanceEventWindowState> {
         self.state.as_ref()
     }
 }
@@ -30,34 +30,39 @@ impl InstanceEventWindowStateChange {
 
 /// A builder for [`InstanceEventWindowStateChange`](crate::types::InstanceEventWindowStateChange).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InstanceEventWindowStateChangeBuilder {
-    pub(crate) instance_event_window_id: std::option::Option<std::string::String>,
-    pub(crate) state: std::option::Option<crate::types::InstanceEventWindowState>,
+    pub(crate) instance_event_window_id: ::std::option::Option<::std::string::String>,
+    pub(crate) state: ::std::option::Option<crate::types::InstanceEventWindowState>,
 }
 impl InstanceEventWindowStateChangeBuilder {
     /// <p>The ID of the event window.</p>
-    pub fn instance_event_window_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.instance_event_window_id = Some(input.into());
+    pub fn instance_event_window_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.instance_event_window_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the event window.</p>
     pub fn set_instance_event_window_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.instance_event_window_id = input;
         self
     }
     /// <p>The current state of the event window.</p>
     pub fn state(mut self, input: crate::types::InstanceEventWindowState) -> Self {
-        self.state = Some(input);
+        self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current state of the event window.</p>
     pub fn set_state(
         mut self,
-        input: std::option::Option<crate::types::InstanceEventWindowState>,
+        input: ::std::option::Option<crate::types::InstanceEventWindowState>,
     ) -> Self {
         self.state = input;
         self

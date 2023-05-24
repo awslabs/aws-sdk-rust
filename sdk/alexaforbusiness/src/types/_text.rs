@@ -2,22 +2,22 @@
 
 /// <p>The text message.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Text {
     /// <p>The locale of the text message. Currently, en-US is supported.</p>
     #[doc(hidden)]
-    pub locale: std::option::Option<crate::types::Locale>,
+    pub locale: ::std::option::Option<crate::types::Locale>,
     /// <p>The value of the text message.</p>
     #[doc(hidden)]
-    pub value: std::option::Option<std::string::String>,
+    pub value: ::std::option::Option<::std::string::String>,
 }
 impl Text {
     /// <p>The locale of the text message. Currently, en-US is supported.</p>
-    pub fn locale(&self) -> std::option::Option<&crate::types::Locale> {
+    pub fn locale(&self) -> ::std::option::Option<&crate::types::Locale> {
         self.locale.as_ref()
     }
     /// <p>The value of the text message.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl Text {
 
 /// A builder for [`Text`](crate::types::Text).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TextBuilder {
-    pub(crate) locale: std::option::Option<crate::types::Locale>,
-    pub(crate) value: std::option::Option<std::string::String>,
+    pub(crate) locale: ::std::option::Option<crate::types::Locale>,
+    pub(crate) value: ::std::option::Option<::std::string::String>,
 }
 impl TextBuilder {
     /// <p>The locale of the text message. Currently, en-US is supported.</p>
     pub fn locale(mut self, input: crate::types::Locale) -> Self {
-        self.locale = Some(input);
+        self.locale = ::std::option::Option::Some(input);
         self
     }
     /// <p>The locale of the text message. Currently, en-US is supported.</p>
-    pub fn set_locale(mut self, input: std::option::Option<crate::types::Locale>) -> Self {
+    pub fn set_locale(mut self, input: ::std::option::Option<crate::types::Locale>) -> Self {
         self.locale = input;
         self
     }
     /// <p>The value of the text message.</p>
-    pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.value = Some(input.into());
+    pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value of the text message.</p>
-    pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
     }

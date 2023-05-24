@@ -2,36 +2,36 @@
 
 /// <p>Represents the percentage of requests over the last 10 seconds that resulted in each type of status code response. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html">Status Code Definitions</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StatusCodes {
     /// <p>The percentage of requests over the last 10 seconds that resulted in a 2xx (200, 201, etc.) status code.</p>
     #[doc(hidden)]
-    pub status2xx: std::option::Option<i32>,
+    pub status2xx: ::std::option::Option<i32>,
     /// <p>The percentage of requests over the last 10 seconds that resulted in a 3xx (300, 301, etc.) status code.</p>
     #[doc(hidden)]
-    pub status3xx: std::option::Option<i32>,
+    pub status3xx: ::std::option::Option<i32>,
     /// <p>The percentage of requests over the last 10 seconds that resulted in a 4xx (400, 401, etc.) status code.</p>
     #[doc(hidden)]
-    pub status4xx: std::option::Option<i32>,
+    pub status4xx: ::std::option::Option<i32>,
     /// <p>The percentage of requests over the last 10 seconds that resulted in a 5xx (500, 501, etc.) status code.</p>
     #[doc(hidden)]
-    pub status5xx: std::option::Option<i32>,
+    pub status5xx: ::std::option::Option<i32>,
 }
 impl StatusCodes {
     /// <p>The percentage of requests over the last 10 seconds that resulted in a 2xx (200, 201, etc.) status code.</p>
-    pub fn status2xx(&self) -> std::option::Option<i32> {
+    pub fn status2xx(&self) -> ::std::option::Option<i32> {
         self.status2xx
     }
     /// <p>The percentage of requests over the last 10 seconds that resulted in a 3xx (300, 301, etc.) status code.</p>
-    pub fn status3xx(&self) -> std::option::Option<i32> {
+    pub fn status3xx(&self) -> ::std::option::Option<i32> {
         self.status3xx
     }
     /// <p>The percentage of requests over the last 10 seconds that resulted in a 4xx (400, 401, etc.) status code.</p>
-    pub fn status4xx(&self) -> std::option::Option<i32> {
+    pub fn status4xx(&self) -> ::std::option::Option<i32> {
         self.status4xx
     }
     /// <p>The percentage of requests over the last 10 seconds that resulted in a 5xx (500, 501, etc.) status code.</p>
-    pub fn status5xx(&self) -> std::option::Option<i32> {
+    pub fn status5xx(&self) -> ::std::option::Option<i32> {
         self.status5xx
     }
 }
@@ -44,51 +44,53 @@ impl StatusCodes {
 
 /// A builder for [`StatusCodes`](crate::types::StatusCodes).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StatusCodesBuilder {
-    pub(crate) status2xx: std::option::Option<i32>,
-    pub(crate) status3xx: std::option::Option<i32>,
-    pub(crate) status4xx: std::option::Option<i32>,
-    pub(crate) status5xx: std::option::Option<i32>,
+    pub(crate) status2xx: ::std::option::Option<i32>,
+    pub(crate) status3xx: ::std::option::Option<i32>,
+    pub(crate) status4xx: ::std::option::Option<i32>,
+    pub(crate) status5xx: ::std::option::Option<i32>,
 }
 impl StatusCodesBuilder {
     /// <p>The percentage of requests over the last 10 seconds that resulted in a 2xx (200, 201, etc.) status code.</p>
     pub fn status2xx(mut self, input: i32) -> Self {
-        self.status2xx = Some(input);
+        self.status2xx = ::std::option::Option::Some(input);
         self
     }
     /// <p>The percentage of requests over the last 10 seconds that resulted in a 2xx (200, 201, etc.) status code.</p>
-    pub fn set_status2xx(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_status2xx(mut self, input: ::std::option::Option<i32>) -> Self {
         self.status2xx = input;
         self
     }
     /// <p>The percentage of requests over the last 10 seconds that resulted in a 3xx (300, 301, etc.) status code.</p>
     pub fn status3xx(mut self, input: i32) -> Self {
-        self.status3xx = Some(input);
+        self.status3xx = ::std::option::Option::Some(input);
         self
     }
     /// <p>The percentage of requests over the last 10 seconds that resulted in a 3xx (300, 301, etc.) status code.</p>
-    pub fn set_status3xx(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_status3xx(mut self, input: ::std::option::Option<i32>) -> Self {
         self.status3xx = input;
         self
     }
     /// <p>The percentage of requests over the last 10 seconds that resulted in a 4xx (400, 401, etc.) status code.</p>
     pub fn status4xx(mut self, input: i32) -> Self {
-        self.status4xx = Some(input);
+        self.status4xx = ::std::option::Option::Some(input);
         self
     }
     /// <p>The percentage of requests over the last 10 seconds that resulted in a 4xx (400, 401, etc.) status code.</p>
-    pub fn set_status4xx(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_status4xx(mut self, input: ::std::option::Option<i32>) -> Self {
         self.status4xx = input;
         self
     }
     /// <p>The percentage of requests over the last 10 seconds that resulted in a 5xx (500, 501, etc.) status code.</p>
     pub fn status5xx(mut self, input: i32) -> Self {
-        self.status5xx = Some(input);
+        self.status5xx = ::std::option::Option::Some(input);
         self
     }
     /// <p>The percentage of requests over the last 10 seconds that resulted in a 5xx (500, 501, etc.) status code.</p>
-    pub fn set_status5xx(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_status5xx(mut self, input: ::std::option::Option<i32>) -> Self {
         self.status5xx = input;
         self
     }

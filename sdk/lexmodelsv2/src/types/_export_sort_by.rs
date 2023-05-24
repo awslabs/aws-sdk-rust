@@ -2,22 +2,22 @@
 
 /// <p>Provides information about sorting a list of exports.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportSortBy {
     /// <p>The export field to use for sorting.</p>
     #[doc(hidden)]
-    pub attribute: std::option::Option<crate::types::ExportSortAttribute>,
+    pub attribute: ::std::option::Option<crate::types::ExportSortAttribute>,
     /// <p>The order to sort the list.</p>
     #[doc(hidden)]
-    pub order: std::option::Option<crate::types::SortOrder>,
+    pub order: ::std::option::Option<crate::types::SortOrder>,
 }
 impl ExportSortBy {
     /// <p>The export field to use for sorting.</p>
-    pub fn attribute(&self) -> std::option::Option<&crate::types::ExportSortAttribute> {
+    pub fn attribute(&self) -> ::std::option::Option<&crate::types::ExportSortAttribute> {
         self.attribute.as_ref()
     }
     /// <p>The order to sort the list.</p>
-    pub fn order(&self) -> std::option::Option<&crate::types::SortOrder> {
+    pub fn order(&self) -> ::std::option::Option<&crate::types::SortOrder> {
         self.order.as_ref()
     }
 }
@@ -30,32 +30,34 @@ impl ExportSortBy {
 
 /// A builder for [`ExportSortBy`](crate::types::ExportSortBy).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ExportSortByBuilder {
-    pub(crate) attribute: std::option::Option<crate::types::ExportSortAttribute>,
-    pub(crate) order: std::option::Option<crate::types::SortOrder>,
+    pub(crate) attribute: ::std::option::Option<crate::types::ExportSortAttribute>,
+    pub(crate) order: ::std::option::Option<crate::types::SortOrder>,
 }
 impl ExportSortByBuilder {
     /// <p>The export field to use for sorting.</p>
     pub fn attribute(mut self, input: crate::types::ExportSortAttribute) -> Self {
-        self.attribute = Some(input);
+        self.attribute = ::std::option::Option::Some(input);
         self
     }
     /// <p>The export field to use for sorting.</p>
     pub fn set_attribute(
         mut self,
-        input: std::option::Option<crate::types::ExportSortAttribute>,
+        input: ::std::option::Option<crate::types::ExportSortAttribute>,
     ) -> Self {
         self.attribute = input;
         self
     }
     /// <p>The order to sort the list.</p>
     pub fn order(mut self, input: crate::types::SortOrder) -> Self {
-        self.order = Some(input);
+        self.order = ::std::option::Option::Some(input);
         self
     }
     /// <p>The order to sort the list.</p>
-    pub fn set_order(mut self, input: std::option::Option<crate::types::SortOrder>) -> Self {
+    pub fn set_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.order = input;
         self
     }

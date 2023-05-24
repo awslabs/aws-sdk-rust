@@ -2,15 +2,15 @@
 
 /// <p>A collection of the names of Amazon Web Services services.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceCollection {
     /// <p>An array of strings that each specifies the name of an Amazon Web Services service.</p>
     #[doc(hidden)]
-    pub service_names: std::option::Option<std::vec::Vec<crate::types::ServiceName>>,
+    pub service_names: ::std::option::Option<::std::vec::Vec<crate::types::ServiceName>>,
 }
 impl ServiceCollection {
     /// <p>An array of strings that each specifies the name of an Amazon Web Services service.</p>
-    pub fn service_names(&self) -> std::option::Option<&[crate::types::ServiceName]> {
+    pub fn service_names(&self) -> ::std::option::Option<&[crate::types::ServiceName]> {
         self.service_names.as_deref()
     }
 }
@@ -23,9 +23,11 @@ impl ServiceCollection {
 
 /// A builder for [`ServiceCollection`](crate::types::ServiceCollection).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ServiceCollectionBuilder {
-    pub(crate) service_names: std::option::Option<std::vec::Vec<crate::types::ServiceName>>,
+    pub(crate) service_names: ::std::option::Option<::std::vec::Vec<crate::types::ServiceName>>,
 }
 impl ServiceCollectionBuilder {
     /// Appends an item to `service_names`.
@@ -36,13 +38,13 @@ impl ServiceCollectionBuilder {
     pub fn service_names(mut self, input: crate::types::ServiceName) -> Self {
         let mut v = self.service_names.unwrap_or_default();
         v.push(input);
-        self.service_names = Some(v);
+        self.service_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of strings that each specifies the name of an Amazon Web Services service.</p>
     pub fn set_service_names(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ServiceName>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceName>>,
     ) -> Self {
         self.service_names = input;
         self

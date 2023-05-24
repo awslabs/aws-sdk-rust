@@ -2,22 +2,22 @@
 
 /// <p>Specifies configuration information for the input data for the inference, including timestamp format and delimiter. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InferenceInputNameConfiguration {
     /// <p>The format of the timestamp, whether Epoch time, or standard, with or without hyphens (-). </p>
     #[doc(hidden)]
-    pub timestamp_format: std::option::Option<std::string::String>,
+    pub timestamp_format: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the delimiter character used between items in the data. </p>
     #[doc(hidden)]
-    pub component_timestamp_delimiter: std::option::Option<std::string::String>,
+    pub component_timestamp_delimiter: ::std::option::Option<::std::string::String>,
 }
 impl InferenceInputNameConfiguration {
     /// <p>The format of the timestamp, whether Epoch time, or standard, with or without hyphens (-). </p>
-    pub fn timestamp_format(&self) -> std::option::Option<&str> {
+    pub fn timestamp_format(&self) -> ::std::option::Option<&str> {
         self.timestamp_format.as_deref()
     }
     /// <p>Indicates the delimiter character used between items in the data. </p>
-    pub fn component_timestamp_delimiter(&self) -> std::option::Option<&str> {
+    pub fn component_timestamp_delimiter(&self) -> ::std::option::Option<&str> {
         self.component_timestamp_delimiter.as_deref()
     }
 }
@@ -30,31 +30,42 @@ impl InferenceInputNameConfiguration {
 
 /// A builder for [`InferenceInputNameConfiguration`](crate::types::InferenceInputNameConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InferenceInputNameConfigurationBuilder {
-    pub(crate) timestamp_format: std::option::Option<std::string::String>,
-    pub(crate) component_timestamp_delimiter: std::option::Option<std::string::String>,
+    pub(crate) timestamp_format: ::std::option::Option<::std::string::String>,
+    pub(crate) component_timestamp_delimiter: ::std::option::Option<::std::string::String>,
 }
 impl InferenceInputNameConfigurationBuilder {
     /// <p>The format of the timestamp, whether Epoch time, or standard, with or without hyphens (-). </p>
-    pub fn timestamp_format(mut self, input: impl Into<std::string::String>) -> Self {
-        self.timestamp_format = Some(input.into());
+    pub fn timestamp_format(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.timestamp_format = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The format of the timestamp, whether Epoch time, or standard, with or without hyphens (-). </p>
-    pub fn set_timestamp_format(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_timestamp_format(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.timestamp_format = input;
         self
     }
     /// <p>Indicates the delimiter character used between items in the data. </p>
-    pub fn component_timestamp_delimiter(mut self, input: impl Into<std::string::String>) -> Self {
-        self.component_timestamp_delimiter = Some(input.into());
+    pub fn component_timestamp_delimiter(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.component_timestamp_delimiter = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates the delimiter character used between items in the data. </p>
     pub fn set_component_timestamp_delimiter(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.component_timestamp_delimiter = input;
         self

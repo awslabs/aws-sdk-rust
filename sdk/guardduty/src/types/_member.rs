@@ -2,64 +2,64 @@
 
 /// <p>Contains information about the member account. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Member {
     /// <p>The ID of the member account.</p>
     #[doc(hidden)]
-    pub account_id: std::option::Option<std::string::String>,
+    pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The detector ID of the member account.</p>
     #[doc(hidden)]
-    pub detector_id: std::option::Option<std::string::String>,
+    pub detector_id: ::std::option::Option<::std::string::String>,
     /// <p>The administrator account ID.</p>
     #[doc(hidden)]
-    pub master_id: std::option::Option<std::string::String>,
+    pub master_id: ::std::option::Option<::std::string::String>,
     /// <p>The email address of the member account.</p>
     #[doc(hidden)]
-    pub email: std::option::Option<std::string::String>,
+    pub email: ::std::option::Option<::std::string::String>,
     /// <p>The status of the relationship between the member and the administrator.</p>
     #[doc(hidden)]
-    pub relationship_status: std::option::Option<std::string::String>,
+    pub relationship_status: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the invitation was sent.</p>
     #[doc(hidden)]
-    pub invited_at: std::option::Option<std::string::String>,
+    pub invited_at: ::std::option::Option<::std::string::String>,
     /// <p>The last-updated timestamp of the member.</p>
     #[doc(hidden)]
-    pub updated_at: std::option::Option<std::string::String>,
+    pub updated_at: ::std::option::Option<::std::string::String>,
     /// <p>The administrator account ID.</p>
     #[doc(hidden)]
-    pub administrator_id: std::option::Option<std::string::String>,
+    pub administrator_id: ::std::option::Option<::std::string::String>,
 }
 impl Member {
     /// <p>The ID of the member account.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The detector ID of the member account.</p>
-    pub fn detector_id(&self) -> std::option::Option<&str> {
+    pub fn detector_id(&self) -> ::std::option::Option<&str> {
         self.detector_id.as_deref()
     }
     /// <p>The administrator account ID.</p>
-    pub fn master_id(&self) -> std::option::Option<&str> {
+    pub fn master_id(&self) -> ::std::option::Option<&str> {
         self.master_id.as_deref()
     }
     /// <p>The email address of the member account.</p>
-    pub fn email(&self) -> std::option::Option<&str> {
+    pub fn email(&self) -> ::std::option::Option<&str> {
         self.email.as_deref()
     }
     /// <p>The status of the relationship between the member and the administrator.</p>
-    pub fn relationship_status(&self) -> std::option::Option<&str> {
+    pub fn relationship_status(&self) -> ::std::option::Option<&str> {
         self.relationship_status.as_deref()
     }
     /// <p>The timestamp when the invitation was sent.</p>
-    pub fn invited_at(&self) -> std::option::Option<&str> {
+    pub fn invited_at(&self) -> ::std::option::Option<&str> {
         self.invited_at.as_deref()
     }
     /// <p>The last-updated timestamp of the member.</p>
-    pub fn updated_at(&self) -> std::option::Option<&str> {
+    pub fn updated_at(&self) -> ::std::option::Option<&str> {
         self.updated_at.as_deref()
     }
     /// <p>The administrator account ID.</p>
-    pub fn administrator_id(&self) -> std::option::Option<&str> {
+    pub fn administrator_id(&self) -> ::std::option::Option<&str> {
         self.administrator_id.as_deref()
     }
 }
@@ -72,98 +72,109 @@ impl Member {
 
 /// A builder for [`Member`](crate::types::Member).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MemberBuilder {
-    pub(crate) account_id: std::option::Option<std::string::String>,
-    pub(crate) detector_id: std::option::Option<std::string::String>,
-    pub(crate) master_id: std::option::Option<std::string::String>,
-    pub(crate) email: std::option::Option<std::string::String>,
-    pub(crate) relationship_status: std::option::Option<std::string::String>,
-    pub(crate) invited_at: std::option::Option<std::string::String>,
-    pub(crate) updated_at: std::option::Option<std::string::String>,
-    pub(crate) administrator_id: std::option::Option<std::string::String>,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) detector_id: ::std::option::Option<::std::string::String>,
+    pub(crate) master_id: ::std::option::Option<::std::string::String>,
+    pub(crate) email: ::std::option::Option<::std::string::String>,
+    pub(crate) relationship_status: ::std::option::Option<::std::string::String>,
+    pub(crate) invited_at: ::std::option::Option<::std::string::String>,
+    pub(crate) updated_at: ::std::option::Option<::std::string::String>,
+    pub(crate) administrator_id: ::std::option::Option<::std::string::String>,
 }
 impl MemberBuilder {
     /// <p>The ID of the member account.</p>
-    pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.account_id = Some(input.into());
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the member account.</p>
-    pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
     }
     /// <p>The detector ID of the member account.</p>
-    pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.detector_id = Some(input.into());
+    pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.detector_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The detector ID of the member account.</p>
-    pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_detector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.detector_id = input;
         self
     }
     /// <p>The administrator account ID.</p>
-    pub fn master_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.master_id = Some(input.into());
+    pub fn master_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.master_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The administrator account ID.</p>
-    pub fn set_master_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_master_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.master_id = input;
         self
     }
     /// <p>The email address of the member account.</p>
-    pub fn email(mut self, input: impl Into<std::string::String>) -> Self {
-        self.email = Some(input.into());
+    pub fn email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.email = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The email address of the member account.</p>
-    pub fn set_email(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.email = input;
         self
     }
     /// <p>The status of the relationship between the member and the administrator.</p>
-    pub fn relationship_status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.relationship_status = Some(input.into());
+    pub fn relationship_status(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.relationship_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the relationship between the member and the administrator.</p>
     pub fn set_relationship_status(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.relationship_status = input;
         self
     }
     /// <p>The timestamp when the invitation was sent.</p>
-    pub fn invited_at(mut self, input: impl Into<std::string::String>) -> Self {
-        self.invited_at = Some(input.into());
+    pub fn invited_at(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.invited_at = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The timestamp when the invitation was sent.</p>
-    pub fn set_invited_at(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_invited_at(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.invited_at = input;
         self
     }
     /// <p>The last-updated timestamp of the member.</p>
-    pub fn updated_at(mut self, input: impl Into<std::string::String>) -> Self {
-        self.updated_at = Some(input.into());
+    pub fn updated_at(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.updated_at = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The last-updated timestamp of the member.</p>
-    pub fn set_updated_at(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_updated_at(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.updated_at = input;
         self
     }
     /// <p>The administrator account ID.</p>
-    pub fn administrator_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.administrator_id = Some(input.into());
+    pub fn administrator_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.administrator_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The administrator account ID.</p>
-    pub fn set_administrator_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_administrator_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.administrator_id = input;
         self
     }

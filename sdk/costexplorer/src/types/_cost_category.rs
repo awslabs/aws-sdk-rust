@@ -2,77 +2,77 @@
 
 /// <p>The structure of Cost Categories. This includes detailed metadata and the set of rules for the <code>CostCategory</code> object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CostCategory {
     /// <p>The unique identifier for your Cost Category. </p>
     #[doc(hidden)]
-    pub cost_category_arn: std::option::Option<std::string::String>,
+    pub cost_category_arn: ::std::option::Option<::std::string::String>,
     /// <p>The effective start date of your Cost Category.</p>
     #[doc(hidden)]
-    pub effective_start: std::option::Option<std::string::String>,
+    pub effective_start: ::std::option::Option<::std::string::String>,
     /// <p>The effective end date of your Cost Category.</p>
     #[doc(hidden)]
-    pub effective_end: std::option::Option<std::string::String>,
+    pub effective_end: ::std::option::Option<::std::string::String>,
     /// <p>The unique name of the Cost Category.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The rule schema version in this particular Cost Category.</p>
     #[doc(hidden)]
-    pub rule_version: std::option::Option<crate::types::CostCategoryRuleVersion>,
+    pub rule_version: ::std::option::Option<crate::types::CostCategoryRuleVersion>,
     /// <p>The rules are processed in order. If there are multiple rules that match the line item, then the first rule to match is used to determine that Cost Category value. </p>
     #[doc(hidden)]
-    pub rules: std::option::Option<std::vec::Vec<crate::types::CostCategoryRule>>,
+    pub rules: ::std::option::Option<::std::vec::Vec<crate::types::CostCategoryRule>>,
     /// <p> The split charge rules that are used to allocate your charges between your Cost Category values. </p>
     #[doc(hidden)]
     pub split_charge_rules:
-        std::option::Option<std::vec::Vec<crate::types::CostCategorySplitChargeRule>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::CostCategorySplitChargeRule>>,
     /// <p>The list of processing statuses for Cost Management products for a specific cost category. </p>
     #[doc(hidden)]
     pub processing_status:
-        std::option::Option<std::vec::Vec<crate::types::CostCategoryProcessingStatus>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::CostCategoryProcessingStatus>>,
     /// <p>The default value for the cost category.</p>
     #[doc(hidden)]
-    pub default_value: std::option::Option<std::string::String>,
+    pub default_value: ::std::option::Option<::std::string::String>,
 }
 impl CostCategory {
     /// <p>The unique identifier for your Cost Category. </p>
-    pub fn cost_category_arn(&self) -> std::option::Option<&str> {
+    pub fn cost_category_arn(&self) -> ::std::option::Option<&str> {
         self.cost_category_arn.as_deref()
     }
     /// <p>The effective start date of your Cost Category.</p>
-    pub fn effective_start(&self) -> std::option::Option<&str> {
+    pub fn effective_start(&self) -> ::std::option::Option<&str> {
         self.effective_start.as_deref()
     }
     /// <p>The effective end date of your Cost Category.</p>
-    pub fn effective_end(&self) -> std::option::Option<&str> {
+    pub fn effective_end(&self) -> ::std::option::Option<&str> {
         self.effective_end.as_deref()
     }
     /// <p>The unique name of the Cost Category.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The rule schema version in this particular Cost Category.</p>
-    pub fn rule_version(&self) -> std::option::Option<&crate::types::CostCategoryRuleVersion> {
+    pub fn rule_version(&self) -> ::std::option::Option<&crate::types::CostCategoryRuleVersion> {
         self.rule_version.as_ref()
     }
     /// <p>The rules are processed in order. If there are multiple rules that match the line item, then the first rule to match is used to determine that Cost Category value. </p>
-    pub fn rules(&self) -> std::option::Option<&[crate::types::CostCategoryRule]> {
+    pub fn rules(&self) -> ::std::option::Option<&[crate::types::CostCategoryRule]> {
         self.rules.as_deref()
     }
     /// <p> The split charge rules that are used to allocate your charges between your Cost Category values. </p>
     pub fn split_charge_rules(
         &self,
-    ) -> std::option::Option<&[crate::types::CostCategorySplitChargeRule]> {
+    ) -> ::std::option::Option<&[crate::types::CostCategorySplitChargeRule]> {
         self.split_charge_rules.as_deref()
     }
     /// <p>The list of processing statuses for Cost Management products for a specific cost category. </p>
     pub fn processing_status(
         &self,
-    ) -> std::option::Option<&[crate::types::CostCategoryProcessingStatus]> {
+    ) -> ::std::option::Option<&[crate::types::CostCategoryProcessingStatus]> {
         self.processing_status.as_deref()
     }
     /// <p>The default value for the cost category.</p>
-    pub fn default_value(&self) -> std::option::Option<&str> {
+    pub fn default_value(&self) -> ::std::option::Option<&str> {
         self.default_value.as_deref()
     }
 }
@@ -85,73 +85,90 @@ impl CostCategory {
 
 /// A builder for [`CostCategory`](crate::types::CostCategory).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CostCategoryBuilder {
-    pub(crate) cost_category_arn: std::option::Option<std::string::String>,
-    pub(crate) effective_start: std::option::Option<std::string::String>,
-    pub(crate) effective_end: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) rule_version: std::option::Option<crate::types::CostCategoryRuleVersion>,
-    pub(crate) rules: std::option::Option<std::vec::Vec<crate::types::CostCategoryRule>>,
+    pub(crate) cost_category_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) effective_start: ::std::option::Option<::std::string::String>,
+    pub(crate) effective_end: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) rule_version: ::std::option::Option<crate::types::CostCategoryRuleVersion>,
+    pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::CostCategoryRule>>,
     pub(crate) split_charge_rules:
-        std::option::Option<std::vec::Vec<crate::types::CostCategorySplitChargeRule>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::CostCategorySplitChargeRule>>,
     pub(crate) processing_status:
-        std::option::Option<std::vec::Vec<crate::types::CostCategoryProcessingStatus>>,
-    pub(crate) default_value: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::CostCategoryProcessingStatus>>,
+    pub(crate) default_value: ::std::option::Option<::std::string::String>,
 }
 impl CostCategoryBuilder {
     /// <p>The unique identifier for your Cost Category. </p>
-    pub fn cost_category_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cost_category_arn = Some(input.into());
+    pub fn cost_category_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.cost_category_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for your Cost Category. </p>
     pub fn set_cost_category_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.cost_category_arn = input;
         self
     }
     /// <p>The effective start date of your Cost Category.</p>
-    pub fn effective_start(mut self, input: impl Into<std::string::String>) -> Self {
-        self.effective_start = Some(input.into());
+    pub fn effective_start(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.effective_start = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The effective start date of your Cost Category.</p>
-    pub fn set_effective_start(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_effective_start(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.effective_start = input;
         self
     }
     /// <p>The effective end date of your Cost Category.</p>
-    pub fn effective_end(mut self, input: impl Into<std::string::String>) -> Self {
-        self.effective_end = Some(input.into());
+    pub fn effective_end(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.effective_end = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The effective end date of your Cost Category.</p>
-    pub fn set_effective_end(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_effective_end(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.effective_end = input;
         self
     }
     /// <p>The unique name of the Cost Category.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique name of the Cost Category.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The rule schema version in this particular Cost Category.</p>
     pub fn rule_version(mut self, input: crate::types::CostCategoryRuleVersion) -> Self {
-        self.rule_version = Some(input);
+        self.rule_version = ::std::option::Option::Some(input);
         self
     }
     /// <p>The rule schema version in this particular Cost Category.</p>
     pub fn set_rule_version(
         mut self,
-        input: std::option::Option<crate::types::CostCategoryRuleVersion>,
+        input: ::std::option::Option<crate::types::CostCategoryRuleVersion>,
     ) -> Self {
         self.rule_version = input;
         self
@@ -164,13 +181,13 @@ impl CostCategoryBuilder {
     pub fn rules(mut self, input: crate::types::CostCategoryRule) -> Self {
         let mut v = self.rules.unwrap_or_default();
         v.push(input);
-        self.rules = Some(v);
+        self.rules = ::std::option::Option::Some(v);
         self
     }
     /// <p>The rules are processed in order. If there are multiple rules that match the line item, then the first rule to match is used to determine that Cost Category value. </p>
     pub fn set_rules(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CostCategoryRule>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::CostCategoryRule>>,
     ) -> Self {
         self.rules = input;
         self
@@ -183,13 +200,13 @@ impl CostCategoryBuilder {
     pub fn split_charge_rules(mut self, input: crate::types::CostCategorySplitChargeRule) -> Self {
         let mut v = self.split_charge_rules.unwrap_or_default();
         v.push(input);
-        self.split_charge_rules = Some(v);
+        self.split_charge_rules = ::std::option::Option::Some(v);
         self
     }
     /// <p> The split charge rules that are used to allocate your charges between your Cost Category values. </p>
     pub fn set_split_charge_rules(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CostCategorySplitChargeRule>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::CostCategorySplitChargeRule>>,
     ) -> Self {
         self.split_charge_rules = input;
         self
@@ -202,24 +219,30 @@ impl CostCategoryBuilder {
     pub fn processing_status(mut self, input: crate::types::CostCategoryProcessingStatus) -> Self {
         let mut v = self.processing_status.unwrap_or_default();
         v.push(input);
-        self.processing_status = Some(v);
+        self.processing_status = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of processing statuses for Cost Management products for a specific cost category. </p>
     pub fn set_processing_status(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CostCategoryProcessingStatus>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::CostCategoryProcessingStatus>>,
     ) -> Self {
         self.processing_status = input;
         self
     }
     /// <p>The default value for the cost category.</p>
-    pub fn default_value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.default_value = Some(input.into());
+    pub fn default_value(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.default_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The default value for the cost category.</p>
-    pub fn set_default_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_default_value(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.default_value = input;
         self
     }

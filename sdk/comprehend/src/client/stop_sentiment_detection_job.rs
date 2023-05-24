@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopSentimentDetectionJob`](crate::operation::stop_sentiment_detection_job::builders::StopSentimentDetectionJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`job_id(impl Into<String>)`](crate::operation::stop_sentiment_detection_job::builders::StopSentimentDetectionJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::stop_sentiment_detection_job::builders::StopSentimentDetectionJobFluentBuilder::set_job_id): <p>The identifier of the sentiment detection job to stop.</p>
+    ///   - [`job_id(impl ::std::convert::Into<String>)`](crate::operation::stop_sentiment_detection_job::builders::StopSentimentDetectionJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::stop_sentiment_detection_job::builders::StopSentimentDetectionJobFluentBuilder::set_job_id): <p>The identifier of the sentiment detection job to stop.</p>
     /// - On success, responds with [`StopSentimentDetectionJobOutput`](crate::operation::stop_sentiment_detection_job::StopSentimentDetectionJobOutput) with field(s):
     ///   - [`job_id(Option<String>)`](crate::operation::stop_sentiment_detection_job::StopSentimentDetectionJobOutput::job_id): <p>The identifier of the sentiment detection job to stop.</p>
     ///   - [`job_status(Option<JobStatus>)`](crate::operation::stop_sentiment_detection_job::StopSentimentDetectionJobOutput::job_status): <p>Either <code>STOP_REQUESTED</code> if the job is currently running, or <code>STOPPED</code> if the job was previously stopped with the <code>StopSentimentDetectionJob</code> operation.</p>

@@ -2,22 +2,22 @@
 
 /// <p>Represents the input of a <code>GetPipeline</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPipelineInput {
     /// <p>The name of the pipeline for which you want to get information. Pipeline names must be unique under an AWS user account.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the pipeline. If you do not specify a version, defaults to the current version.</p>
     #[doc(hidden)]
-    pub version: std::option::Option<i32>,
+    pub version: ::std::option::Option<i32>,
 }
 impl GetPipelineInput {
     /// <p>The name of the pipeline for which you want to get information. Pipeline names must be unique under an AWS user account.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The version number of the pipeline. If you do not specify a version, defaults to the current version.</p>
-    pub fn version(&self) -> std::option::Option<i32> {
+    pub fn version(&self) -> ::std::option::Option<i32> {
         self.version
     }
 }
@@ -30,40 +30,42 @@ impl GetPipelineInput {
 
 /// A builder for [`GetPipelineInput`](crate::operation::get_pipeline::GetPipelineInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetPipelineInputBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) version: std::option::Option<i32>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) version: ::std::option::Option<i32>,
 }
 impl GetPipelineInputBuilder {
     /// <p>The name of the pipeline for which you want to get information. Pipeline names must be unique under an AWS user account.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the pipeline for which you want to get information. Pipeline names must be unique under an AWS user account.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The version number of the pipeline. If you do not specify a version, defaults to the current version.</p>
     pub fn version(mut self, input: i32) -> Self {
-        self.version = Some(input);
+        self.version = ::std::option::Option::Some(input);
         self
     }
     /// <p>The version number of the pipeline. If you do not specify a version, defaults to the current version.</p>
-    pub fn set_version(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_version(mut self, input: ::std::option::Option<i32>) -> Self {
         self.version = input;
         self
     }
     /// Consumes the builder and constructs a [`GetPipelineInput`](crate::operation::get_pipeline::GetPipelineInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::get_pipeline::GetPipelineInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::get_pipeline::GetPipelineInput {
+        ::std::result::Result::Ok(crate::operation::get_pipeline::GetPipelineInput {
             name: self.name,
             version: self.version,
         })

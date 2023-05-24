@@ -2,22 +2,22 @@
 
 /// <p>Elevation angle of the satellite in the sky during a contact.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Elevation {
     /// <p>Elevation angle value.</p>
     #[doc(hidden)]
-    pub value: std::option::Option<f64>,
+    pub value: ::std::option::Option<f64>,
     /// <p>Elevation angle units.</p>
     #[doc(hidden)]
-    pub unit: std::option::Option<crate::types::AngleUnits>,
+    pub unit: ::std::option::Option<crate::types::AngleUnits>,
 }
 impl Elevation {
     /// <p>Elevation angle value.</p>
-    pub fn value(&self) -> std::option::Option<f64> {
+    pub fn value(&self) -> ::std::option::Option<f64> {
         self.value
     }
     /// <p>Elevation angle units.</p>
-    pub fn unit(&self) -> std::option::Option<&crate::types::AngleUnits> {
+    pub fn unit(&self) -> ::std::option::Option<&crate::types::AngleUnits> {
         self.unit.as_ref()
     }
 }
@@ -30,29 +30,31 @@ impl Elevation {
 
 /// A builder for [`Elevation`](crate::types::Elevation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ElevationBuilder {
-    pub(crate) value: std::option::Option<f64>,
-    pub(crate) unit: std::option::Option<crate::types::AngleUnits>,
+    pub(crate) value: ::std::option::Option<f64>,
+    pub(crate) unit: ::std::option::Option<crate::types::AngleUnits>,
 }
 impl ElevationBuilder {
     /// <p>Elevation angle value.</p>
     pub fn value(mut self, input: f64) -> Self {
-        self.value = Some(input);
+        self.value = ::std::option::Option::Some(input);
         self
     }
     /// <p>Elevation angle value.</p>
-    pub fn set_value(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.value = input;
         self
     }
     /// <p>Elevation angle units.</p>
     pub fn unit(mut self, input: crate::types::AngleUnits) -> Self {
-        self.unit = Some(input);
+        self.unit = ::std::option::Option::Some(input);
         self
     }
     /// <p>Elevation angle units.</p>
-    pub fn set_unit(mut self, input: std::option::Option<crate::types::AngleUnits>) -> Self {
+    pub fn set_unit(mut self, input: ::std::option::Option<crate::types::AngleUnits>) -> Self {
         self.unit = input;
         self
     }

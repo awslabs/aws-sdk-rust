@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteRoomMembership`](crate::operation::delete_room_membership::builders::DeleteRoomMembershipFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::operation::delete_room_membership::builders::DeleteRoomMembershipFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::delete_room_membership::builders::DeleteRoomMembershipFluentBuilder::set_account_id): <p>The Amazon Chime account ID.</p>
-    ///   - [`room_id(impl Into<String>)`](crate::operation::delete_room_membership::builders::DeleteRoomMembershipFluentBuilder::room_id) / [`set_room_id(Option<String>)`](crate::operation::delete_room_membership::builders::DeleteRoomMembershipFluentBuilder::set_room_id): <p>The room ID.</p>
-    ///   - [`member_id(impl Into<String>)`](crate::operation::delete_room_membership::builders::DeleteRoomMembershipFluentBuilder::member_id) / [`set_member_id(Option<String>)`](crate::operation::delete_room_membership::builders::DeleteRoomMembershipFluentBuilder::set_member_id): <p>The member ID (user ID or bot ID).</p>
+    ///   - [`account_id(impl ::std::convert::Into<String>)`](crate::operation::delete_room_membership::builders::DeleteRoomMembershipFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::delete_room_membership::builders::DeleteRoomMembershipFluentBuilder::set_account_id): <p>The Amazon Chime account ID.</p>
+    ///   - [`room_id(impl ::std::convert::Into<String>)`](crate::operation::delete_room_membership::builders::DeleteRoomMembershipFluentBuilder::room_id) / [`set_room_id(Option<String>)`](crate::operation::delete_room_membership::builders::DeleteRoomMembershipFluentBuilder::set_room_id): <p>The room ID.</p>
+    ///   - [`member_id(impl ::std::convert::Into<String>)`](crate::operation::delete_room_membership::builders::DeleteRoomMembershipFluentBuilder::member_id) / [`set_member_id(Option<String>)`](crate::operation::delete_room_membership::builders::DeleteRoomMembershipFluentBuilder::set_member_id): <p>The member ID (user ID or bot ID).</p>
     /// - On success, responds with [`DeleteRoomMembershipOutput`](crate::operation::delete_room_membership::DeleteRoomMembershipOutput)
     /// - On failure, responds with [`SdkError<DeleteRoomMembershipError>`](crate::operation::delete_room_membership::DeleteRoomMembershipError)
     pub fn delete_room_membership(

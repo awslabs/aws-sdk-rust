@@ -2,7 +2,7 @@
 
 /// <p>Information about the size of files in a merge or pull request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FileSizes {
     /// <p>The size of a file in the source of a merge or pull request.</p>
     #[doc(hidden)]
@@ -37,40 +37,42 @@ impl FileSizes {
 
 /// A builder for [`FileSizes`](crate::types::FileSizes).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FileSizesBuilder {
-    pub(crate) source: std::option::Option<i64>,
-    pub(crate) destination: std::option::Option<i64>,
-    pub(crate) base: std::option::Option<i64>,
+    pub(crate) source: ::std::option::Option<i64>,
+    pub(crate) destination: ::std::option::Option<i64>,
+    pub(crate) base: ::std::option::Option<i64>,
 }
 impl FileSizesBuilder {
     /// <p>The size of a file in the source of a merge or pull request.</p>
     pub fn source(mut self, input: i64) -> Self {
-        self.source = Some(input);
+        self.source = ::std::option::Option::Some(input);
         self
     }
     /// <p>The size of a file in the source of a merge or pull request.</p>
-    pub fn set_source(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_source(mut self, input: ::std::option::Option<i64>) -> Self {
         self.source = input;
         self
     }
     /// <p>The size of a file in the destination of a merge or pull request.</p>
     pub fn destination(mut self, input: i64) -> Self {
-        self.destination = Some(input);
+        self.destination = ::std::option::Option::Some(input);
         self
     }
     /// <p>The size of a file in the destination of a merge or pull request.</p>
-    pub fn set_destination(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_destination(mut self, input: ::std::option::Option<i64>) -> Self {
         self.destination = input;
         self
     }
     /// <p>The size of a file in the base of a merge or pull request.</p>
     pub fn base(mut self, input: i64) -> Self {
-        self.base = Some(input);
+        self.base = ::std::option::Option::Some(input);
         self
     }
     /// <p>The size of a file in the base of a merge or pull request.</p>
-    pub fn set_base(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_base(mut self, input: ::std::option::Option<i64>) -> Self {
         self.base = input;
         self
     }

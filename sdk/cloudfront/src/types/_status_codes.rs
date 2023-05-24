@@ -2,22 +2,22 @@
 
 /// <p>A complex data type for the status codes that you specify that, when returned by a primary origin, trigger CloudFront to failover to a second origin.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StatusCodes {
     /// <p>The number of status codes.</p>
     #[doc(hidden)]
-    pub quantity: std::option::Option<i32>,
+    pub quantity: ::std::option::Option<i32>,
     /// <p>The items (status codes) for an origin group.</p>
     #[doc(hidden)]
-    pub items: std::option::Option<std::vec::Vec<i32>>,
+    pub items: ::std::option::Option<::std::vec::Vec<i32>>,
 }
 impl StatusCodes {
     /// <p>The number of status codes.</p>
-    pub fn quantity(&self) -> std::option::Option<i32> {
+    pub fn quantity(&self) -> ::std::option::Option<i32> {
         self.quantity
     }
     /// <p>The items (status codes) for an origin group.</p>
-    pub fn items(&self) -> std::option::Option<&[i32]> {
+    pub fn items(&self) -> ::std::option::Option<&[i32]> {
         self.items.as_deref()
     }
 }
@@ -30,19 +30,21 @@ impl StatusCodes {
 
 /// A builder for [`StatusCodes`](crate::types::StatusCodes).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StatusCodesBuilder {
-    pub(crate) quantity: std::option::Option<i32>,
-    pub(crate) items: std::option::Option<std::vec::Vec<i32>>,
+    pub(crate) quantity: ::std::option::Option<i32>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec<i32>>,
 }
 impl StatusCodesBuilder {
     /// <p>The number of status codes.</p>
     pub fn quantity(mut self, input: i32) -> Self {
-        self.quantity = Some(input);
+        self.quantity = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of status codes.</p>
-    pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_quantity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.quantity = input;
         self
     }
@@ -54,11 +56,11 @@ impl StatusCodesBuilder {
     pub fn items(mut self, input: i32) -> Self {
         let mut v = self.items.unwrap_or_default();
         v.push(input);
-        self.items = Some(v);
+        self.items = ::std::option::Option::Some(v);
         self
     }
     /// <p>The items (status codes) for an origin group.</p>
-    pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<i32>>) -> Self {
+    pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<i32>>) -> Self {
         self.items = input;
         self
     }

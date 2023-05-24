@@ -38,13 +38,13 @@
 /// <p>Replication direction designates if this is a failover replication, or a failback replication. When a DRS agent is installed on an instance, the replication direction is failover. In cases where a recovery launch was made in the recovery location and a new recovery instance was created, and then a failback replication was initiated from that recovery instance back to the origin location, then the replication direction will be failback.</p>
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ReplicationDirection {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum ReplicationDirection {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ReplicationDirection {
+impl ::std::convert::From<&str> for ReplicationDirection {
     fn from(s: &str) -> Self {
         match s {
             "FAILBACK" => ReplicationDirection::Failback,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for ReplicationDirection {
         }
     }
 }
-impl std::str::FromStr for ReplicationDirection {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ReplicationDirection {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ReplicationDirection::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ReplicationDirection::from(s))
     }
 }
 impl ReplicationDirection {
@@ -86,7 +86,7 @@ impl ReplicationDirection {
         &["FAILBACK", "FAILOVER"]
     }
 }
-impl AsRef<str> for ReplicationDirection {
+impl ::std::convert::AsRef<str> for ReplicationDirection {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

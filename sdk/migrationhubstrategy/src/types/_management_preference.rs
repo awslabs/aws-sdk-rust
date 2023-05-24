@@ -2,7 +2,7 @@
 
 /// <p> Preferences for migrating an application to AWS. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum ManagementPreference {
     /// <p> Indicates interest in solutions that are managed by AWS. </p>
     AwsManagedResources(crate::types::AwsManagedResources),
@@ -25,11 +25,11 @@ impl ManagementPreference {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_aws_managed_resources(
         &self,
-    ) -> std::result::Result<&crate::types::AwsManagedResources, &Self> {
+    ) -> ::std::result::Result<&crate::types::AwsManagedResources, &Self> {
         if let ManagementPreference::AwsManagedResources(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`AwsManagedResources`](crate::types::ManagementPreference::AwsManagedResources).
@@ -40,11 +40,11 @@ impl ManagementPreference {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_no_preference(
         &self,
-    ) -> std::result::Result<&crate::types::NoManagementPreference, &Self> {
+    ) -> ::std::result::Result<&crate::types::NoManagementPreference, &Self> {
         if let ManagementPreference::NoPreference(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`NoPreference`](crate::types::ManagementPreference::NoPreference).
@@ -55,11 +55,11 @@ impl ManagementPreference {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_self_manage_resources(
         &self,
-    ) -> std::result::Result<&crate::types::SelfManageResources, &Self> {
+    ) -> ::std::result::Result<&crate::types::SelfManageResources, &Self> {
         if let ManagementPreference::SelfManageResources(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`SelfManageResources`](crate::types::ManagementPreference::SelfManageResources).

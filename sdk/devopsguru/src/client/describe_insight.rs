@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeInsight`](crate::operation::describe_insight::builders::DescribeInsightFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::describe_insight::builders::DescribeInsightFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::describe_insight::builders::DescribeInsightFluentBuilder::set_id): <p> The ID of the insight. </p>
-    ///   - [`account_id(impl Into<String>)`](crate::operation::describe_insight::builders::DescribeInsightFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::describe_insight::builders::DescribeInsightFluentBuilder::set_account_id): <p>The ID of the member account in the organization.</p>
+    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::describe_insight::builders::DescribeInsightFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::describe_insight::builders::DescribeInsightFluentBuilder::set_id): <p> The ID of the insight. </p>
+    ///   - [`account_id(impl ::std::convert::Into<String>)`](crate::operation::describe_insight::builders::DescribeInsightFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::describe_insight::builders::DescribeInsightFluentBuilder::set_account_id): <p>The ID of the member account in the organization.</p>
     /// - On success, responds with [`DescribeInsightOutput`](crate::operation::describe_insight::DescribeInsightOutput) with field(s):
     ///   - [`proactive_insight(Option<ProactiveInsight>)`](crate::operation::describe_insight::DescribeInsightOutput::proactive_insight): <p> A <code>ProactiveInsight</code> object that represents the requested insight. </p>
     ///   - [`reactive_insight(Option<ReactiveInsight>)`](crate::operation::describe_insight::DescribeInsightOutput::reactive_insight): <p> A <code>ReactiveInsight</code> object that represents the requested insight. </p>

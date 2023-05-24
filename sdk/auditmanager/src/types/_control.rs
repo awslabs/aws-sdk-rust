@@ -2,120 +2,122 @@
 
 /// <p> A control in Audit Manager. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Control {
     /// <p> The Amazon Resource Name (ARN) of the control. </p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p> The unique identifier for the control. </p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p> The type of control, such as a custom control or a standard control. </p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::ControlType>,
+    pub r#type: ::std::option::Option<crate::types::ControlType>,
     /// <p> The name of the control. </p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p> The description of the control. </p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p> The steps that you should follow to determine if the control has been satisfied. </p>
     #[doc(hidden)]
-    pub testing_information: std::option::Option<std::string::String>,
+    pub testing_information: ::std::option::Option<::std::string::String>,
     /// <p> The title of the action plan for remediating the control. </p>
     #[doc(hidden)]
-    pub action_plan_title: std::option::Option<std::string::String>,
+    pub action_plan_title: ::std::option::Option<::std::string::String>,
     /// <p> The recommended actions to carry out if the control isn't fulfilled. </p>
     #[doc(hidden)]
-    pub action_plan_instructions: std::option::Option<std::string::String>,
+    pub action_plan_instructions: ::std::option::Option<::std::string::String>,
     /// <p> The data source types that determine where Audit Manager collects evidence from for the control. </p>
     #[doc(hidden)]
-    pub control_sources: std::option::Option<std::string::String>,
+    pub control_sources: ::std::option::Option<::std::string::String>,
     /// <p> The data mapping sources for the control. </p>
     #[doc(hidden)]
     pub control_mapping_sources:
-        std::option::Option<std::vec::Vec<crate::types::ControlMappingSource>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ControlMappingSource>>,
     /// <p> The time when the control was created. </p>
     #[doc(hidden)]
-    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The time when the control was most recently updated. </p>
     #[doc(hidden)]
-    pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The user or role that created the control. </p>
     #[doc(hidden)]
-    pub created_by: std::option::Option<std::string::String>,
+    pub created_by: ::std::option::Option<::std::string::String>,
     /// <p> The user or role that most recently updated the control. </p>
     #[doc(hidden)]
-    pub last_updated_by: std::option::Option<std::string::String>,
+    pub last_updated_by: ::std::option::Option<::std::string::String>,
     /// <p> The tags associated with the control. </p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl Control {
     /// <p> The Amazon Resource Name (ARN) of the control. </p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p> The unique identifier for the control. </p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p> The type of control, such as a custom control or a standard control. </p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::ControlType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ControlType> {
         self.r#type.as_ref()
     }
     /// <p> The name of the control. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p> The description of the control. </p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p> The steps that you should follow to determine if the control has been satisfied. </p>
-    pub fn testing_information(&self) -> std::option::Option<&str> {
+    pub fn testing_information(&self) -> ::std::option::Option<&str> {
         self.testing_information.as_deref()
     }
     /// <p> The title of the action plan for remediating the control. </p>
-    pub fn action_plan_title(&self) -> std::option::Option<&str> {
+    pub fn action_plan_title(&self) -> ::std::option::Option<&str> {
         self.action_plan_title.as_deref()
     }
     /// <p> The recommended actions to carry out if the control isn't fulfilled. </p>
-    pub fn action_plan_instructions(&self) -> std::option::Option<&str> {
+    pub fn action_plan_instructions(&self) -> ::std::option::Option<&str> {
         self.action_plan_instructions.as_deref()
     }
     /// <p> The data source types that determine where Audit Manager collects evidence from for the control. </p>
-    pub fn control_sources(&self) -> std::option::Option<&str> {
+    pub fn control_sources(&self) -> ::std::option::Option<&str> {
         self.control_sources.as_deref()
     }
     /// <p> The data mapping sources for the control. </p>
     pub fn control_mapping_sources(
         &self,
-    ) -> std::option::Option<&[crate::types::ControlMappingSource]> {
+    ) -> ::std::option::Option<&[crate::types::ControlMappingSource]> {
         self.control_mapping_sources.as_deref()
     }
     /// <p> The time when the control was created. </p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p> The time when the control was most recently updated. </p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p> The user or role that created the control. </p>
-    pub fn created_by(&self) -> std::option::Option<&str> {
+    pub fn created_by(&self) -> ::std::option::Option<&str> {
         self.created_by.as_deref()
     }
     /// <p> The user or role that most recently updated the control. </p>
-    pub fn last_updated_by(&self) -> std::option::Option<&str> {
+    pub fn last_updated_by(&self) -> ::std::option::Option<&str> {
         self.last_updated_by.as_deref()
     }
     /// <p> The tags associated with the control. </p>
     pub fn tags(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.tags.as_ref()
     }
 }
@@ -128,123 +130,141 @@ impl Control {
 
 /// A builder for [`Control`](crate::types::Control).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ControlBuilder {
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) r#type: std::option::Option<crate::types::ControlType>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) testing_information: std::option::Option<std::string::String>,
-    pub(crate) action_plan_title: std::option::Option<std::string::String>,
-    pub(crate) action_plan_instructions: std::option::Option<std::string::String>,
-    pub(crate) control_sources: std::option::Option<std::string::String>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::ControlType>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) testing_information: ::std::option::Option<::std::string::String>,
+    pub(crate) action_plan_title: ::std::option::Option<::std::string::String>,
+    pub(crate) action_plan_instructions: ::std::option::Option<::std::string::String>,
+    pub(crate) control_sources: ::std::option::Option<::std::string::String>,
     pub(crate) control_mapping_sources:
-        std::option::Option<std::vec::Vec<crate::types::ControlMappingSource>>,
-    pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) created_by: std::option::Option<std::string::String>,
-    pub(crate) last_updated_by: std::option::Option<std::string::String>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ControlMappingSource>>,
+    pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) created_by: ::std::option::Option<::std::string::String>,
+    pub(crate) last_updated_by: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl ControlBuilder {
     /// <p> The Amazon Resource Name (ARN) of the control. </p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Amazon Resource Name (ARN) of the control. </p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// <p> The unique identifier for the control. </p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The unique identifier for the control. </p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p> The type of control, such as a custom control or a standard control. </p>
     pub fn r#type(mut self, input: crate::types::ControlType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p> The type of control, such as a custom control or a standard control. </p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::ControlType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ControlType>) -> Self {
         self.r#type = input;
         self
     }
     /// <p> The name of the control. </p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the control. </p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p> The description of the control. </p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The description of the control. </p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p> The steps that you should follow to determine if the control has been satisfied. </p>
-    pub fn testing_information(mut self, input: impl Into<std::string::String>) -> Self {
-        self.testing_information = Some(input.into());
+    pub fn testing_information(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.testing_information = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The steps that you should follow to determine if the control has been satisfied. </p>
     pub fn set_testing_information(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.testing_information = input;
         self
     }
     /// <p> The title of the action plan for remediating the control. </p>
-    pub fn action_plan_title(mut self, input: impl Into<std::string::String>) -> Self {
-        self.action_plan_title = Some(input.into());
+    pub fn action_plan_title(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.action_plan_title = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The title of the action plan for remediating the control. </p>
     pub fn set_action_plan_title(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.action_plan_title = input;
         self
     }
     /// <p> The recommended actions to carry out if the control isn't fulfilled. </p>
-    pub fn action_plan_instructions(mut self, input: impl Into<std::string::String>) -> Self {
-        self.action_plan_instructions = Some(input.into());
+    pub fn action_plan_instructions(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.action_plan_instructions = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The recommended actions to carry out if the control isn't fulfilled. </p>
     pub fn set_action_plan_instructions(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.action_plan_instructions = input;
         self
     }
     /// <p> The data source types that determine where Audit Manager collects evidence from for the control. </p>
-    pub fn control_sources(mut self, input: impl Into<std::string::String>) -> Self {
-        self.control_sources = Some(input.into());
+    pub fn control_sources(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.control_sources = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The data source types that determine where Audit Manager collects evidence from for the control. </p>
-    pub fn set_control_sources(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_control_sources(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.control_sources = input;
         self
     }
@@ -256,60 +276,66 @@ impl ControlBuilder {
     pub fn control_mapping_sources(mut self, input: crate::types::ControlMappingSource) -> Self {
         let mut v = self.control_mapping_sources.unwrap_or_default();
         v.push(input);
-        self.control_mapping_sources = Some(v);
+        self.control_mapping_sources = ::std::option::Option::Some(v);
         self
     }
     /// <p> The data mapping sources for the control. </p>
     pub fn set_control_mapping_sources(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ControlMappingSource>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ControlMappingSource>>,
     ) -> Self {
         self.control_mapping_sources = input;
         self
     }
     /// <p> The time when the control was created. </p>
-    pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_at = Some(input);
+    pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_at = ::std::option::Option::Some(input);
         self
     }
     /// <p> The time when the control was created. </p>
     pub fn set_created_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_at = input;
         self
     }
     /// <p> The time when the control was most recently updated. </p>
-    pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_updated_at = Some(input);
+    pub fn last_updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_updated_at = ::std::option::Option::Some(input);
         self
     }
     /// <p> The time when the control was most recently updated. </p>
     pub fn set_last_updated_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_updated_at = input;
         self
     }
     /// <p> The user or role that created the control. </p>
-    pub fn created_by(mut self, input: impl Into<std::string::String>) -> Self {
-        self.created_by = Some(input.into());
+    pub fn created_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.created_by = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The user or role that created the control. </p>
-    pub fn set_created_by(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_created_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_by = input;
         self
     }
     /// <p> The user or role that most recently updated the control. </p>
-    pub fn last_updated_by(mut self, input: impl Into<std::string::String>) -> Self {
-        self.last_updated_by = Some(input.into());
+    pub fn last_updated_by(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.last_updated_by = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The user or role that most recently updated the control. </p>
-    pub fn set_last_updated_by(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_last_updated_by(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.last_updated_by = input;
         self
     }
@@ -320,19 +346,19 @@ impl ControlBuilder {
     /// <p> The tags associated with the control. </p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
+        self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p> The tags associated with the control. </p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.tags = input;

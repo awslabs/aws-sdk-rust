@@ -2,50 +2,50 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BackendConnectionErrors {
     /// <p></p>
     #[doc(hidden)]
-    pub timeout_count: std::option::Option<i32>,
+    pub timeout_count: ::std::option::Option<i32>,
     /// <p></p>
     #[doc(hidden)]
-    pub connection_refused_count: std::option::Option<i32>,
+    pub connection_refused_count: ::std::option::Option<i32>,
     /// <p></p>
     #[doc(hidden)]
-    pub http_code4_xx_count: std::option::Option<i32>,
+    pub http_code4_xx_count: ::std::option::Option<i32>,
     /// <p></p>
     #[doc(hidden)]
-    pub http_code5_xx_count: std::option::Option<i32>,
+    pub http_code5_xx_count: ::std::option::Option<i32>,
     /// <p></p>
     #[doc(hidden)]
-    pub unknown_host_count: std::option::Option<i32>,
+    pub unknown_host_count: ::std::option::Option<i32>,
     /// <p></p>
     #[doc(hidden)]
-    pub other_count: std::option::Option<i32>,
+    pub other_count: ::std::option::Option<i32>,
 }
 impl BackendConnectionErrors {
     /// <p></p>
-    pub fn timeout_count(&self) -> std::option::Option<i32> {
+    pub fn timeout_count(&self) -> ::std::option::Option<i32> {
         self.timeout_count
     }
     /// <p></p>
-    pub fn connection_refused_count(&self) -> std::option::Option<i32> {
+    pub fn connection_refused_count(&self) -> ::std::option::Option<i32> {
         self.connection_refused_count
     }
     /// <p></p>
-    pub fn http_code4_xx_count(&self) -> std::option::Option<i32> {
+    pub fn http_code4_xx_count(&self) -> ::std::option::Option<i32> {
         self.http_code4_xx_count
     }
     /// <p></p>
-    pub fn http_code5_xx_count(&self) -> std::option::Option<i32> {
+    pub fn http_code5_xx_count(&self) -> ::std::option::Option<i32> {
         self.http_code5_xx_count
     }
     /// <p></p>
-    pub fn unknown_host_count(&self) -> std::option::Option<i32> {
+    pub fn unknown_host_count(&self) -> ::std::option::Option<i32> {
         self.unknown_host_count
     }
     /// <p></p>
-    pub fn other_count(&self) -> std::option::Option<i32> {
+    pub fn other_count(&self) -> ::std::option::Option<i32> {
         self.other_count
     }
 }
@@ -58,73 +58,75 @@ impl BackendConnectionErrors {
 
 /// A builder for [`BackendConnectionErrors`](crate::types::BackendConnectionErrors).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BackendConnectionErrorsBuilder {
-    pub(crate) timeout_count: std::option::Option<i32>,
-    pub(crate) connection_refused_count: std::option::Option<i32>,
-    pub(crate) http_code4_xx_count: std::option::Option<i32>,
-    pub(crate) http_code5_xx_count: std::option::Option<i32>,
-    pub(crate) unknown_host_count: std::option::Option<i32>,
-    pub(crate) other_count: std::option::Option<i32>,
+    pub(crate) timeout_count: ::std::option::Option<i32>,
+    pub(crate) connection_refused_count: ::std::option::Option<i32>,
+    pub(crate) http_code4_xx_count: ::std::option::Option<i32>,
+    pub(crate) http_code5_xx_count: ::std::option::Option<i32>,
+    pub(crate) unknown_host_count: ::std::option::Option<i32>,
+    pub(crate) other_count: ::std::option::Option<i32>,
 }
 impl BackendConnectionErrorsBuilder {
     /// <p></p>
     pub fn timeout_count(mut self, input: i32) -> Self {
-        self.timeout_count = Some(input);
+        self.timeout_count = ::std::option::Option::Some(input);
         self
     }
     /// <p></p>
-    pub fn set_timeout_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_timeout_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.timeout_count = input;
         self
     }
     /// <p></p>
     pub fn connection_refused_count(mut self, input: i32) -> Self {
-        self.connection_refused_count = Some(input);
+        self.connection_refused_count = ::std::option::Option::Some(input);
         self
     }
     /// <p></p>
-    pub fn set_connection_refused_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_connection_refused_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.connection_refused_count = input;
         self
     }
     /// <p></p>
     pub fn http_code4_xx_count(mut self, input: i32) -> Self {
-        self.http_code4_xx_count = Some(input);
+        self.http_code4_xx_count = ::std::option::Option::Some(input);
         self
     }
     /// <p></p>
-    pub fn set_http_code4_xx_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_http_code4_xx_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.http_code4_xx_count = input;
         self
     }
     /// <p></p>
     pub fn http_code5_xx_count(mut self, input: i32) -> Self {
-        self.http_code5_xx_count = Some(input);
+        self.http_code5_xx_count = ::std::option::Option::Some(input);
         self
     }
     /// <p></p>
-    pub fn set_http_code5_xx_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_http_code5_xx_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.http_code5_xx_count = input;
         self
     }
     /// <p></p>
     pub fn unknown_host_count(mut self, input: i32) -> Self {
-        self.unknown_host_count = Some(input);
+        self.unknown_host_count = ::std::option::Option::Some(input);
         self
     }
     /// <p></p>
-    pub fn set_unknown_host_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_unknown_host_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.unknown_host_count = input;
         self
     }
     /// <p></p>
     pub fn other_count(mut self, input: i32) -> Self {
-        self.other_count = Some(input);
+        self.other_count = ::std::option::Option::Some(input);
         self
     }
     /// <p></p>
-    pub fn set_other_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_other_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.other_count = input;
         self
     }

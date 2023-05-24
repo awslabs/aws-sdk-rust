@@ -2,20 +2,20 @@
 
 /// <p>Information about a deployment lifecycle event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LifecycleEvent {
     /// <p>The deployment lifecycle event name, such as <code>ApplicationStop</code>, <code>BeforeInstall</code>, <code>AfterInstall</code>, <code>ApplicationStart</code>, or <code>ValidateService</code>.</p>
     #[doc(hidden)]
-    pub lifecycle_event_name: std::option::Option<std::string::String>,
+    pub lifecycle_event_name: ::std::option::Option<::std::string::String>,
     /// <p>Diagnostic information about the deployment lifecycle event.</p>
     #[doc(hidden)]
-    pub diagnostics: std::option::Option<crate::types::Diagnostics>,
+    pub diagnostics: ::std::option::Option<crate::types::Diagnostics>,
     /// <p>A timestamp that indicates when the deployment lifecycle event started.</p>
     #[doc(hidden)]
-    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A timestamp that indicates when the deployment lifecycle event ended.</p>
     #[doc(hidden)]
-    pub end_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The deployment lifecycle event status:</p>
     /// <ul>
     /// <li> <p>Pending: The deployment lifecycle event is pending.</p> </li>
@@ -26,23 +26,23 @@ pub struct LifecycleEvent {
     /// <li> <p>Unknown: The deployment lifecycle event is unknown.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::LifecycleEventStatus>,
+    pub status: ::std::option::Option<crate::types::LifecycleEventStatus>,
 }
 impl LifecycleEvent {
     /// <p>The deployment lifecycle event name, such as <code>ApplicationStop</code>, <code>BeforeInstall</code>, <code>AfterInstall</code>, <code>ApplicationStart</code>, or <code>ValidateService</code>.</p>
-    pub fn lifecycle_event_name(&self) -> std::option::Option<&str> {
+    pub fn lifecycle_event_name(&self) -> ::std::option::Option<&str> {
         self.lifecycle_event_name.as_deref()
     }
     /// <p>Diagnostic information about the deployment lifecycle event.</p>
-    pub fn diagnostics(&self) -> std::option::Option<&crate::types::Diagnostics> {
+    pub fn diagnostics(&self) -> ::std::option::Option<&crate::types::Diagnostics> {
         self.diagnostics.as_ref()
     }
     /// <p>A timestamp that indicates when the deployment lifecycle event started.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>A timestamp that indicates when the deployment lifecycle event ended.</p>
-    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The deployment lifecycle event status:</p>
@@ -54,7 +54,7 @@ impl LifecycleEvent {
     /// <li> <p>Skipped: The deployment lifecycle event has been skipped.</p> </li>
     /// <li> <p>Unknown: The deployment lifecycle event is unknown.</p> </li>
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::types::LifecycleEventStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::LifecycleEventStatus> {
         self.status.as_ref()
     }
 }
@@ -67,61 +67,69 @@ impl LifecycleEvent {
 
 /// A builder for [`LifecycleEvent`](crate::types::LifecycleEvent).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LifecycleEventBuilder {
-    pub(crate) lifecycle_event_name: std::option::Option<std::string::String>,
-    pub(crate) diagnostics: std::option::Option<crate::types::Diagnostics>,
-    pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) status: std::option::Option<crate::types::LifecycleEventStatus>,
+    pub(crate) lifecycle_event_name: ::std::option::Option<::std::string::String>,
+    pub(crate) diagnostics: ::std::option::Option<crate::types::Diagnostics>,
+    pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) status: ::std::option::Option<crate::types::LifecycleEventStatus>,
 }
 impl LifecycleEventBuilder {
     /// <p>The deployment lifecycle event name, such as <code>ApplicationStop</code>, <code>BeforeInstall</code>, <code>AfterInstall</code>, <code>ApplicationStart</code>, or <code>ValidateService</code>.</p>
-    pub fn lifecycle_event_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.lifecycle_event_name = Some(input.into());
+    pub fn lifecycle_event_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.lifecycle_event_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The deployment lifecycle event name, such as <code>ApplicationStop</code>, <code>BeforeInstall</code>, <code>AfterInstall</code>, <code>ApplicationStart</code>, or <code>ValidateService</code>.</p>
     pub fn set_lifecycle_event_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.lifecycle_event_name = input;
         self
     }
     /// <p>Diagnostic information about the deployment lifecycle event.</p>
     pub fn diagnostics(mut self, input: crate::types::Diagnostics) -> Self {
-        self.diagnostics = Some(input);
+        self.diagnostics = ::std::option::Option::Some(input);
         self
     }
     /// <p>Diagnostic information about the deployment lifecycle event.</p>
     pub fn set_diagnostics(
         mut self,
-        input: std::option::Option<crate::types::Diagnostics>,
+        input: ::std::option::Option<crate::types::Diagnostics>,
     ) -> Self {
         self.diagnostics = input;
         self
     }
     /// <p>A timestamp that indicates when the deployment lifecycle event started.</p>
-    pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.start_time = Some(input);
+    pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.start_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>A timestamp that indicates when the deployment lifecycle event started.</p>
     pub fn set_start_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.start_time = input;
         self
     }
     /// <p>A timestamp that indicates when the deployment lifecycle event ended.</p>
-    pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.end_time = Some(input);
+    pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.end_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>A timestamp that indicates when the deployment lifecycle event ended.</p>
-    pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_end_time(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
         self.end_time = input;
         self
     }
@@ -135,7 +143,7 @@ impl LifecycleEventBuilder {
     /// <li> <p>Unknown: The deployment lifecycle event is unknown.</p> </li>
     /// </ul>
     pub fn status(mut self, input: crate::types::LifecycleEventStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The deployment lifecycle event status:</p>
@@ -149,7 +157,7 @@ impl LifecycleEventBuilder {
     /// </ul>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::LifecycleEventStatus>,
+        input: ::std::option::Option<crate::types::LifecycleEventStatus>,
     ) -> Self {
         self.status = input;
         self

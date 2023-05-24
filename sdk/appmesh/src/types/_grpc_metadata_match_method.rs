@@ -2,18 +2,18 @@
 
 /// <p>An object representing the method header to be matched.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum GrpcMetadataMatchMethod {
     /// <p>The exact method header to be matched on.</p>
-    Exact(std::string::String),
+    Exact(::std::string::String),
     /// <p>The specified beginning characters of the method header to be matched on.</p>
-    Prefix(std::string::String),
+    Prefix(::std::string::String),
     /// <p>An object that represents the range of values to match on. The first character of the range is included in the range, though the last character is not. For example, if the range specified were 1-100, only values 1-99 would be matched.</p>
     Range(crate::types::MatchRange),
     /// <p>The regex used to match the method header.</p>
-    Regex(std::string::String),
+    Regex(::std::string::String),
     /// <p>The specified ending characters of the method header to match on.</p>
-    Suffix(std::string::String),
+    Suffix(::std::string::String),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -25,26 +25,26 @@ pub enum GrpcMetadataMatchMethod {
     Unknown,
 }
 impl GrpcMetadataMatchMethod {
-    /// Tries to convert the enum instance into [`Exact`](crate::types::GrpcMetadataMatchMethod::Exact), extracting the inner [`String`](std::string::String).
+    /// Tries to convert the enum instance into [`Exact`](crate::types::GrpcMetadataMatchMethod::Exact), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_exact(&self) -> std::result::Result<&std::string::String, &Self> {
+    pub fn as_exact(&self) -> ::std::result::Result<&::std::string::String, &Self> {
         if let GrpcMetadataMatchMethod::Exact(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Exact`](crate::types::GrpcMetadataMatchMethod::Exact).
     pub fn is_exact(&self) -> bool {
         self.as_exact().is_ok()
     }
-    /// Tries to convert the enum instance into [`Prefix`](crate::types::GrpcMetadataMatchMethod::Prefix), extracting the inner [`String`](std::string::String).
+    /// Tries to convert the enum instance into [`Prefix`](crate::types::GrpcMetadataMatchMethod::Prefix), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_prefix(&self) -> std::result::Result<&std::string::String, &Self> {
+    pub fn as_prefix(&self) -> ::std::result::Result<&::std::string::String, &Self> {
         if let GrpcMetadataMatchMethod::Prefix(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Prefix`](crate::types::GrpcMetadataMatchMethod::Prefix).
@@ -53,37 +53,37 @@ impl GrpcMetadataMatchMethod {
     }
     /// Tries to convert the enum instance into [`Range`](crate::types::GrpcMetadataMatchMethod::Range), extracting the inner [`MatchRange`](crate::types::MatchRange).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_range(&self) -> std::result::Result<&crate::types::MatchRange, &Self> {
+    pub fn as_range(&self) -> ::std::result::Result<&crate::types::MatchRange, &Self> {
         if let GrpcMetadataMatchMethod::Range(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Range`](crate::types::GrpcMetadataMatchMethod::Range).
     pub fn is_range(&self) -> bool {
         self.as_range().is_ok()
     }
-    /// Tries to convert the enum instance into [`Regex`](crate::types::GrpcMetadataMatchMethod::Regex), extracting the inner [`String`](std::string::String).
+    /// Tries to convert the enum instance into [`Regex`](crate::types::GrpcMetadataMatchMethod::Regex), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_regex(&self) -> std::result::Result<&std::string::String, &Self> {
+    pub fn as_regex(&self) -> ::std::result::Result<&::std::string::String, &Self> {
         if let GrpcMetadataMatchMethod::Regex(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Regex`](crate::types::GrpcMetadataMatchMethod::Regex).
     pub fn is_regex(&self) -> bool {
         self.as_regex().is_ok()
     }
-    /// Tries to convert the enum instance into [`Suffix`](crate::types::GrpcMetadataMatchMethod::Suffix), extracting the inner [`String`](std::string::String).
+    /// Tries to convert the enum instance into [`Suffix`](crate::types::GrpcMetadataMatchMethod::Suffix), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_suffix(&self) -> std::result::Result<&std::string::String, &Self> {
+    pub fn as_suffix(&self) -> ::std::result::Result<&::std::string::String, &Self> {
         if let GrpcMetadataMatchMethod::Suffix(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Suffix`](crate::types::GrpcMetadataMatchMethod::Suffix).

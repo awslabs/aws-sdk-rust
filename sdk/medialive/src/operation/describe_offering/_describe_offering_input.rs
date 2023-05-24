@@ -2,15 +2,15 @@
 
 /// Placeholder documentation for DescribeOfferingRequest
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeOfferingInput {
     /// Unique offering ID, e.g. '87654321'
     #[doc(hidden)]
-    pub offering_id: std::option::Option<std::string::String>,
+    pub offering_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeOfferingInput {
     /// Unique offering ID, e.g. '87654321'
-    pub fn offering_id(&self) -> std::option::Option<&str> {
+    pub fn offering_id(&self) -> ::std::option::Option<&str> {
         self.offering_id.as_deref()
     }
 }
@@ -24,29 +24,31 @@ impl DescribeOfferingInput {
 
 /// A builder for [`DescribeOfferingInput`](crate::operation::describe_offering::DescribeOfferingInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeOfferingInputBuilder {
-    pub(crate) offering_id: std::option::Option<std::string::String>,
+    pub(crate) offering_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeOfferingInputBuilder {
     /// Unique offering ID, e.g. '87654321'
-    pub fn offering_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.offering_id = Some(input.into());
+    pub fn offering_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.offering_id = ::std::option::Option::Some(input.into());
         self
     }
     /// Unique offering ID, e.g. '87654321'
-    pub fn set_offering_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_offering_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.offering_id = input;
         self
     }
     /// Consumes the builder and constructs a [`DescribeOfferingInput`](crate::operation::describe_offering::DescribeOfferingInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::describe_offering::DescribeOfferingInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::describe_offering::DescribeOfferingInput {
+        ::std::result::Result::Ok(crate::operation::describe_offering::DescribeOfferingInput {
             offering_id: self.offering_id,
         })
     }

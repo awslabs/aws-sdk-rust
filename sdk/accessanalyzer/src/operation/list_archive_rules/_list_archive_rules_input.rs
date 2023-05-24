@@ -2,29 +2,29 @@
 
 /// <p>Retrieves a list of archive rules created for the specified analyzer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListArchiveRulesInput {
     /// <p>The name of the analyzer to retrieve rules from.</p>
     #[doc(hidden)]
-    pub analyzer_name: std::option::Option<std::string::String>,
+    pub analyzer_name: ::std::option::Option<::std::string::String>,
     /// <p>A token used for pagination of results returned.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return in the request.</p>
     #[doc(hidden)]
-    pub max_results: std::option::Option<i32>,
+    pub max_results: ::std::option::Option<i32>,
 }
 impl ListArchiveRulesInput {
     /// <p>The name of the analyzer to retrieve rules from.</p>
-    pub fn analyzer_name(&self) -> std::option::Option<&str> {
+    pub fn analyzer_name(&self) -> ::std::option::Option<&str> {
         self.analyzer_name.as_deref()
     }
     /// <p>A token used for pagination of results returned.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return in the request.</p>
-    pub fn max_results(&self) -> std::option::Option<i32> {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
 }
@@ -38,51 +38,59 @@ impl ListArchiveRulesInput {
 
 /// A builder for [`ListArchiveRulesInput`](crate::operation::list_archive_rules::ListArchiveRulesInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListArchiveRulesInputBuilder {
-    pub(crate) analyzer_name: std::option::Option<std::string::String>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
-    pub(crate) max_results: std::option::Option<i32>,
+    pub(crate) analyzer_name: ::std::option::Option<::std::string::String>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
+    pub(crate) max_results: ::std::option::Option<i32>,
 }
 impl ListArchiveRulesInputBuilder {
     /// <p>The name of the analyzer to retrieve rules from.</p>
-    pub fn analyzer_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.analyzer_name = Some(input.into());
+    pub fn analyzer_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.analyzer_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the analyzer to retrieve rules from.</p>
-    pub fn set_analyzer_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_analyzer_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.analyzer_name = input;
         self
     }
     /// <p>A token used for pagination of results returned.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A token used for pagination of results returned.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
     /// <p>The maximum number of results to return in the request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
-        self.max_results = Some(input);
+        self.max_results = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum number of results to return in the request.</p>
-    pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
     /// Consumes the builder and constructs a [`ListArchiveRulesInput`](crate::operation::list_archive_rules::ListArchiveRulesInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::list_archive_rules::ListArchiveRulesInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::list_archive_rules::ListArchiveRulesInput {
                 analyzer_name: self.analyzer_name,
                 next_token: self.next_token,

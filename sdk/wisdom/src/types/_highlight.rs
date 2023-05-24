@@ -2,7 +2,7 @@
 
 /// <p>Offset specification to describe highlighting of document excerpts for rendering search results and recommendations.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Highlight {
     /// <p>The offset for the start of the highlight.</p>
     #[doc(hidden)]
@@ -30,29 +30,31 @@ impl Highlight {
 
 /// A builder for [`Highlight`](crate::types::Highlight).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct HighlightBuilder {
-    pub(crate) begin_offset_inclusive: std::option::Option<i32>,
-    pub(crate) end_offset_exclusive: std::option::Option<i32>,
+    pub(crate) begin_offset_inclusive: ::std::option::Option<i32>,
+    pub(crate) end_offset_exclusive: ::std::option::Option<i32>,
 }
 impl HighlightBuilder {
     /// <p>The offset for the start of the highlight.</p>
     pub fn begin_offset_inclusive(mut self, input: i32) -> Self {
-        self.begin_offset_inclusive = Some(input);
+        self.begin_offset_inclusive = ::std::option::Option::Some(input);
         self
     }
     /// <p>The offset for the start of the highlight.</p>
-    pub fn set_begin_offset_inclusive(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_begin_offset_inclusive(mut self, input: ::std::option::Option<i32>) -> Self {
         self.begin_offset_inclusive = input;
         self
     }
     /// <p>The offset for the end of the highlight.</p>
     pub fn end_offset_exclusive(mut self, input: i32) -> Self {
-        self.end_offset_exclusive = Some(input);
+        self.end_offset_exclusive = ::std::option::Option::Some(input);
         self
     }
     /// <p>The offset for the end of the highlight.</p>
-    pub fn set_end_offset_exclusive(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_end_offset_exclusive(mut self, input: ::std::option::Option<i32>) -> Self {
         self.end_offset_exclusive = input;
         self
     }

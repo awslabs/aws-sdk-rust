@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteTrafficPolicy`](crate::operation::delete_traffic_policy::builders::DeleteTrafficPolicyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::delete_traffic_policy::builders::DeleteTrafficPolicyFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_traffic_policy::builders::DeleteTrafficPolicyFluentBuilder::set_id): <p>The ID of the traffic policy that you want to delete.</p>
+    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::delete_traffic_policy::builders::DeleteTrafficPolicyFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_traffic_policy::builders::DeleteTrafficPolicyFluentBuilder::set_id): <p>The ID of the traffic policy that you want to delete.</p>
     ///   - [`version(i32)`](crate::operation::delete_traffic_policy::builders::DeleteTrafficPolicyFluentBuilder::version) / [`set_version(Option<i32>)`](crate::operation::delete_traffic_policy::builders::DeleteTrafficPolicyFluentBuilder::set_version): <p>The version number of the traffic policy that you want to delete.</p>
     /// - On success, responds with [`DeleteTrafficPolicyOutput`](crate::operation::delete_traffic_policy::DeleteTrafficPolicyOutput)
     /// - On failure, responds with [`SdkError<DeleteTrafficPolicyError>`](crate::operation::delete_traffic_policy::DeleteTrafficPolicyError)

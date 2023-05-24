@@ -2,15 +2,15 @@
 
 /// <p>When entering this state, perform these <code>actions</code> if the <code>condition</code> is TRUE.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OnEnterLifecycle {
     /// <p>Specifies the actions that are performed when the state is entered and the <code>condition</code> is <code>TRUE</code>.</p>
     #[doc(hidden)]
-    pub events: std::option::Option<std::vec::Vec<crate::types::Event>>,
+    pub events: ::std::option::Option<::std::vec::Vec<crate::types::Event>>,
 }
 impl OnEnterLifecycle {
     /// <p>Specifies the actions that are performed when the state is entered and the <code>condition</code> is <code>TRUE</code>.</p>
-    pub fn events(&self) -> std::option::Option<&[crate::types::Event]> {
+    pub fn events(&self) -> ::std::option::Option<&[crate::types::Event]> {
         self.events.as_deref()
     }
 }
@@ -23,9 +23,11 @@ impl OnEnterLifecycle {
 
 /// A builder for [`OnEnterLifecycle`](crate::types::OnEnterLifecycle).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OnEnterLifecycleBuilder {
-    pub(crate) events: std::option::Option<std::vec::Vec<crate::types::Event>>,
+    pub(crate) events: ::std::option::Option<::std::vec::Vec<crate::types::Event>>,
 }
 impl OnEnterLifecycleBuilder {
     /// Appends an item to `events`.
@@ -36,13 +38,13 @@ impl OnEnterLifecycleBuilder {
     pub fn events(mut self, input: crate::types::Event) -> Self {
         let mut v = self.events.unwrap_or_default();
         v.push(input);
-        self.events = Some(v);
+        self.events = ::std::option::Option::Some(v);
         self
     }
     /// <p>Specifies the actions that are performed when the state is entered and the <code>condition</code> is <code>TRUE</code>.</p>
     pub fn set_events(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Event>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Event>>,
     ) -> Self {
         self.events = input;
         self

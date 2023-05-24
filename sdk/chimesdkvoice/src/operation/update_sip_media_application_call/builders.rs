@@ -6,29 +6,29 @@ pub use crate::operation::update_sip_media_application_call::_update_sip_media_a
 /// Fluent builder constructing a request to `UpdateSipMediaApplicationCall`.
 ///
 /// <p>Invokes the AWS Lambda function associated with the SIP media application and transaction ID in an update request. The Lambda function can then return a new set of actions.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateSipMediaApplicationCallFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::update_sip_media_application_call::builders::UpdateSipMediaApplicationCallInputBuilder,
 }
 impl UpdateSipMediaApplicationCallFluentBuilder {
     /// Creates a new `UpdateSipMediaApplicationCall`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_sip_media_application_call::UpdateSipMediaApplicationCall,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_sip_media_application_call::UpdateSipMediaApplicationCallError,
         >,
     > {
@@ -36,30 +36,33 @@ impl UpdateSipMediaApplicationCallFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_sip_media_application_call::UpdateSipMediaApplicationCallOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_sip_media_application_call::UpdateSipMediaApplicationCallError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,34 +75,43 @@ impl UpdateSipMediaApplicationCallFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_sip_media_application_call::UpdateSipMediaApplicationCallOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_sip_media_application_call::UpdateSipMediaApplicationCallError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The ID of the SIP media application handling the call.</p>
-    pub fn sip_media_application_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn sip_media_application_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.sip_media_application_id(input.into());
         self
     }
     /// <p>The ID of the SIP media application handling the call.</p>
     pub fn set_sip_media_application_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_sip_media_application_id(input);
         self
     }
     /// <p>The ID of the call transaction.</p>
-    pub fn transaction_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn transaction_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.transaction_id(input.into());
         self
     }
     /// <p>The ID of the call transaction.</p>
-    pub fn set_transaction_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_transaction_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_transaction_id(input);
         self
     }
@@ -110,8 +122,8 @@ impl UpdateSipMediaApplicationCallFluentBuilder {
     /// <p>Arguments made available to the Lambda function as part of the <code>CALL_UPDATE_REQUESTED</code> event. Can contain 0-20 key-value pairs.</p>
     pub fn arguments(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.arguments(k.into(), v.into());
         self
@@ -119,8 +131,8 @@ impl UpdateSipMediaApplicationCallFluentBuilder {
     /// <p>Arguments made available to the Lambda function as part of the <code>CALL_UPDATE_REQUESTED</code> event. Can contain 0-20 key-value pairs.</p>
     pub fn set_arguments(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_arguments(input);

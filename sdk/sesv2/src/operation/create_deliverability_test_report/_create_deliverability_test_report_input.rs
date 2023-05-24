@@ -2,36 +2,36 @@
 
 /// <p>A request to perform a predictive inbox placement test. Predictive inbox placement tests can help you predict how your messages will be handled by various email providers around the world. When you perform a predictive inbox placement test, you provide a sample message that contains the content that you plan to send to your customers. We send that message to special email addresses spread across several major email providers around the world. The test takes about 24 hours to complete. When the test is complete, you can use the <code>GetDeliverabilityTestReport</code> operation to view the results of the test.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDeliverabilityTestReportInput {
     /// <p>A unique name that helps you to identify the predictive inbox placement test when you retrieve the results.</p>
     #[doc(hidden)]
-    pub report_name: std::option::Option<std::string::String>,
+    pub report_name: ::std::option::Option<::std::string::String>,
     /// <p>The email address that the predictive inbox placement test email was sent from.</p>
     #[doc(hidden)]
-    pub from_email_address: std::option::Option<std::string::String>,
+    pub from_email_address: ::std::option::Option<::std::string::String>,
     /// <p>The HTML body of the message that you sent when you performed the predictive inbox placement test.</p>
     #[doc(hidden)]
-    pub content: std::option::Option<crate::types::EmailContent>,
+    pub content: ::std::option::Option<crate::types::EmailContent>,
     /// <p>An array of objects that define the tags (keys and values) that you want to associate with the predictive inbox placement test.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateDeliverabilityTestReportInput {
     /// <p>A unique name that helps you to identify the predictive inbox placement test when you retrieve the results.</p>
-    pub fn report_name(&self) -> std::option::Option<&str> {
+    pub fn report_name(&self) -> ::std::option::Option<&str> {
         self.report_name.as_deref()
     }
     /// <p>The email address that the predictive inbox placement test email was sent from.</p>
-    pub fn from_email_address(&self) -> std::option::Option<&str> {
+    pub fn from_email_address(&self) -> ::std::option::Option<&str> {
         self.from_email_address.as_deref()
     }
     /// <p>The HTML body of the message that you sent when you performed the predictive inbox placement test.</p>
-    pub fn content(&self) -> std::option::Option<&crate::types::EmailContent> {
+    pub fn content(&self) -> ::std::option::Option<&crate::types::EmailContent> {
         self.content.as_ref()
     }
     /// <p>An array of objects that define the tags (keys and values) that you want to associate with the predictive inbox placement test.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -44,44 +44,49 @@ impl CreateDeliverabilityTestReportInput {
 
 /// A builder for [`CreateDeliverabilityTestReportInput`](crate::operation::create_deliverability_test_report::CreateDeliverabilityTestReportInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateDeliverabilityTestReportInputBuilder {
-    pub(crate) report_name: std::option::Option<std::string::String>,
-    pub(crate) from_email_address: std::option::Option<std::string::String>,
-    pub(crate) content: std::option::Option<crate::types::EmailContent>,
-    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub(crate) report_name: ::std::option::Option<::std::string::String>,
+    pub(crate) from_email_address: ::std::option::Option<::std::string::String>,
+    pub(crate) content: ::std::option::Option<crate::types::EmailContent>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateDeliverabilityTestReportInputBuilder {
     /// <p>A unique name that helps you to identify the predictive inbox placement test when you retrieve the results.</p>
-    pub fn report_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.report_name = Some(input.into());
+    pub fn report_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.report_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique name that helps you to identify the predictive inbox placement test when you retrieve the results.</p>
-    pub fn set_report_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_report_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.report_name = input;
         self
     }
     /// <p>The email address that the predictive inbox placement test email was sent from.</p>
-    pub fn from_email_address(mut self, input: impl Into<std::string::String>) -> Self {
-        self.from_email_address = Some(input.into());
+    pub fn from_email_address(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.from_email_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The email address that the predictive inbox placement test email was sent from.</p>
     pub fn set_from_email_address(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.from_email_address = input;
         self
     }
     /// <p>The HTML body of the message that you sent when you performed the predictive inbox placement test.</p>
     pub fn content(mut self, input: crate::types::EmailContent) -> Self {
-        self.content = Some(input);
+        self.content = ::std::option::Option::Some(input);
         self
     }
     /// <p>The HTML body of the message that you sent when you performed the predictive inbox placement test.</p>
-    pub fn set_content(mut self, input: std::option::Option<crate::types::EmailContent>) -> Self {
+    pub fn set_content(mut self, input: ::std::option::Option<crate::types::EmailContent>) -> Self {
         self.content = input;
         self
     }
@@ -93,13 +98,13 @@ impl CreateDeliverabilityTestReportInputBuilder {
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
-        self.tags = Some(v);
+        self.tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of objects that define the tags (keys and values) that you want to associate with the predictive inbox placement test.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tags = input;
         self
@@ -107,11 +112,11 @@ impl CreateDeliverabilityTestReportInputBuilder {
     /// Consumes the builder and constructs a [`CreateDeliverabilityTestReportInput`](crate::operation::create_deliverability_test_report::CreateDeliverabilityTestReportInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::create_deliverability_test_report::CreateDeliverabilityTestReportInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::create_deliverability_test_report::CreateDeliverabilityTestReportInput {
                 report_name: self.report_name
                 ,

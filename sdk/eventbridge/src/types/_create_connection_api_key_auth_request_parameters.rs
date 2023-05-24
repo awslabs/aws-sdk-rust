@@ -2,22 +2,22 @@
 
 /// <p>Contains the API key authorization parameters for the connection.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateConnectionApiKeyAuthRequestParameters {
     /// <p>The name of the API key to use for authorization.</p>
     #[doc(hidden)]
-    pub api_key_name: std::option::Option<std::string::String>,
+    pub api_key_name: ::std::option::Option<::std::string::String>,
     /// <p>The value for the API key to use for authorization.</p>
     #[doc(hidden)]
-    pub api_key_value: std::option::Option<std::string::String>,
+    pub api_key_value: ::std::option::Option<::std::string::String>,
 }
 impl CreateConnectionApiKeyAuthRequestParameters {
     /// <p>The name of the API key to use for authorization.</p>
-    pub fn api_key_name(&self) -> std::option::Option<&str> {
+    pub fn api_key_name(&self) -> ::std::option::Option<&str> {
         self.api_key_name.as_deref()
     }
     /// <p>The value for the API key to use for authorization.</p>
-    pub fn api_key_value(&self) -> std::option::Option<&str> {
+    pub fn api_key_value(&self) -> ::std::option::Option<&str> {
         self.api_key_value.as_deref()
     }
 }
@@ -30,29 +30,37 @@ impl CreateConnectionApiKeyAuthRequestParameters {
 
 /// A builder for [`CreateConnectionApiKeyAuthRequestParameters`](crate::types::CreateConnectionApiKeyAuthRequestParameters).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateConnectionApiKeyAuthRequestParametersBuilder {
-    pub(crate) api_key_name: std::option::Option<std::string::String>,
-    pub(crate) api_key_value: std::option::Option<std::string::String>,
+    pub(crate) api_key_name: ::std::option::Option<::std::string::String>,
+    pub(crate) api_key_value: ::std::option::Option<::std::string::String>,
 }
 impl CreateConnectionApiKeyAuthRequestParametersBuilder {
     /// <p>The name of the API key to use for authorization.</p>
-    pub fn api_key_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.api_key_name = Some(input.into());
+    pub fn api_key_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.api_key_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the API key to use for authorization.</p>
-    pub fn set_api_key_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_api_key_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.api_key_name = input;
         self
     }
     /// <p>The value for the API key to use for authorization.</p>
-    pub fn api_key_value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.api_key_value = Some(input.into());
+    pub fn api_key_value(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.api_key_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value for the API key to use for authorization.</p>
-    pub fn set_api_key_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_api_key_value(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.api_key_value = input;
         self
     }

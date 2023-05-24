@@ -9,43 +9,43 @@
 /// <li> <p>The status of the Amazon QuickSight account's subscription.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccountInfo {
     /// <p>The account name that you provided for the Amazon QuickSight subscription in your Amazon Web Services account. You create this name when you sign up for Amazon QuickSight. It's unique over all of Amazon Web Services, and it appears only when users sign in.</p>
     #[doc(hidden)]
-    pub account_name: std::option::Option<std::string::String>,
+    pub account_name: ::std::option::Option<::std::string::String>,
     /// <p>The edition of your Amazon QuickSight account.</p>
     #[doc(hidden)]
-    pub edition: std::option::Option<crate::types::Edition>,
+    pub edition: ::std::option::Option<crate::types::Edition>,
     /// <p>The email address that will be used for Amazon QuickSight to send notifications regarding your Amazon Web Services account or Amazon QuickSight subscription.</p>
     #[doc(hidden)]
-    pub notification_email: std::option::Option<std::string::String>,
+    pub notification_email: ::std::option::Option<::std::string::String>,
     /// <p>The way that your Amazon QuickSight account is authenticated.</p>
     #[doc(hidden)]
-    pub authentication_type: std::option::Option<std::string::String>,
+    pub authentication_type: ::std::option::Option<::std::string::String>,
     /// <p>The status of your account subscription.</p>
     #[doc(hidden)]
-    pub account_subscription_status: std::option::Option<std::string::String>,
+    pub account_subscription_status: ::std::option::Option<::std::string::String>,
 }
 impl AccountInfo {
     /// <p>The account name that you provided for the Amazon QuickSight subscription in your Amazon Web Services account. You create this name when you sign up for Amazon QuickSight. It's unique over all of Amazon Web Services, and it appears only when users sign in.</p>
-    pub fn account_name(&self) -> std::option::Option<&str> {
+    pub fn account_name(&self) -> ::std::option::Option<&str> {
         self.account_name.as_deref()
     }
     /// <p>The edition of your Amazon QuickSight account.</p>
-    pub fn edition(&self) -> std::option::Option<&crate::types::Edition> {
+    pub fn edition(&self) -> ::std::option::Option<&crate::types::Edition> {
         self.edition.as_ref()
     }
     /// <p>The email address that will be used for Amazon QuickSight to send notifications regarding your Amazon Web Services account or Amazon QuickSight subscription.</p>
-    pub fn notification_email(&self) -> std::option::Option<&str> {
+    pub fn notification_email(&self) -> ::std::option::Option<&str> {
         self.notification_email.as_deref()
     }
     /// <p>The way that your Amazon QuickSight account is authenticated.</p>
-    pub fn authentication_type(&self) -> std::option::Option<&str> {
+    pub fn authentication_type(&self) -> ::std::option::Option<&str> {
         self.authentication_type.as_deref()
     }
     /// <p>The status of your account subscription.</p>
-    pub fn account_subscription_status(&self) -> std::option::Option<&str> {
+    pub fn account_subscription_status(&self) -> ::std::option::Option<&str> {
         self.account_subscription_status.as_deref()
     }
 }
@@ -58,70 +58,81 @@ impl AccountInfo {
 
 /// A builder for [`AccountInfo`](crate::types::AccountInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AccountInfoBuilder {
-    pub(crate) account_name: std::option::Option<std::string::String>,
-    pub(crate) edition: std::option::Option<crate::types::Edition>,
-    pub(crate) notification_email: std::option::Option<std::string::String>,
-    pub(crate) authentication_type: std::option::Option<std::string::String>,
-    pub(crate) account_subscription_status: std::option::Option<std::string::String>,
+    pub(crate) account_name: ::std::option::Option<::std::string::String>,
+    pub(crate) edition: ::std::option::Option<crate::types::Edition>,
+    pub(crate) notification_email: ::std::option::Option<::std::string::String>,
+    pub(crate) authentication_type: ::std::option::Option<::std::string::String>,
+    pub(crate) account_subscription_status: ::std::option::Option<::std::string::String>,
 }
 impl AccountInfoBuilder {
     /// <p>The account name that you provided for the Amazon QuickSight subscription in your Amazon Web Services account. You create this name when you sign up for Amazon QuickSight. It's unique over all of Amazon Web Services, and it appears only when users sign in.</p>
-    pub fn account_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.account_name = Some(input.into());
+    pub fn account_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The account name that you provided for the Amazon QuickSight subscription in your Amazon Web Services account. You create this name when you sign up for Amazon QuickSight. It's unique over all of Amazon Web Services, and it appears only when users sign in.</p>
-    pub fn set_account_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_account_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_name = input;
         self
     }
     /// <p>The edition of your Amazon QuickSight account.</p>
     pub fn edition(mut self, input: crate::types::Edition) -> Self {
-        self.edition = Some(input);
+        self.edition = ::std::option::Option::Some(input);
         self
     }
     /// <p>The edition of your Amazon QuickSight account.</p>
-    pub fn set_edition(mut self, input: std::option::Option<crate::types::Edition>) -> Self {
+    pub fn set_edition(mut self, input: ::std::option::Option<crate::types::Edition>) -> Self {
         self.edition = input;
         self
     }
     /// <p>The email address that will be used for Amazon QuickSight to send notifications regarding your Amazon Web Services account or Amazon QuickSight subscription.</p>
-    pub fn notification_email(mut self, input: impl Into<std::string::String>) -> Self {
-        self.notification_email = Some(input.into());
+    pub fn notification_email(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.notification_email = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The email address that will be used for Amazon QuickSight to send notifications regarding your Amazon Web Services account or Amazon QuickSight subscription.</p>
     pub fn set_notification_email(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.notification_email = input;
         self
     }
     /// <p>The way that your Amazon QuickSight account is authenticated.</p>
-    pub fn authentication_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.authentication_type = Some(input.into());
+    pub fn authentication_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.authentication_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The way that your Amazon QuickSight account is authenticated.</p>
     pub fn set_authentication_type(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.authentication_type = input;
         self
     }
     /// <p>The status of your account subscription.</p>
-    pub fn account_subscription_status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.account_subscription_status = Some(input.into());
+    pub fn account_subscription_status(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.account_subscription_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of your account subscription.</p>
     pub fn set_account_subscription_status(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.account_subscription_status = input;
         self

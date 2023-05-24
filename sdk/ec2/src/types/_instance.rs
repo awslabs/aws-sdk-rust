@@ -2,440 +2,446 @@
 
 /// <p>Describes an instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Instance {
     /// <p>The AMI launch index, which can be used to find this instance in the launch group.</p>
     #[doc(hidden)]
-    pub ami_launch_index: std::option::Option<i32>,
+    pub ami_launch_index: ::std::option::Option<i32>,
     /// <p>The ID of the AMI used to launch the instance.</p>
     #[doc(hidden)]
-    pub image_id: std::option::Option<std::string::String>,
+    pub image_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the instance.</p>
     #[doc(hidden)]
-    pub instance_id: std::option::Option<std::string::String>,
+    pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The instance type.</p>
     #[doc(hidden)]
-    pub instance_type: std::option::Option<crate::types::InstanceType>,
+    pub instance_type: ::std::option::Option<crate::types::InstanceType>,
     /// <p>The kernel associated with this instance, if applicable.</p>
     #[doc(hidden)]
-    pub kernel_id: std::option::Option<std::string::String>,
+    pub kernel_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the key pair, if this instance was launched with an associated key pair.</p>
     #[doc(hidden)]
-    pub key_name: std::option::Option<std::string::String>,
+    pub key_name: ::std::option::Option<::std::string::String>,
     /// <p>The time the instance was launched.</p>
     #[doc(hidden)]
-    pub launch_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub launch_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The monitoring for the instance.</p>
     #[doc(hidden)]
-    pub monitoring: std::option::Option<crate::types::Monitoring>,
+    pub monitoring: ::std::option::Option<crate::types::Monitoring>,
     /// <p>The location where the instance launched, if applicable.</p>
     #[doc(hidden)]
-    pub placement: std::option::Option<crate::types::Placement>,
+    pub placement: ::std::option::Option<crate::types::Placement>,
     /// <p>The value is <code>Windows</code> for Windows instances; otherwise blank.</p>
     #[doc(hidden)]
-    pub platform: std::option::Option<crate::types::PlatformValues>,
+    pub platform: ::std::option::Option<crate::types::PlatformValues>,
     /// <p>[IPv4 only] The private DNS hostname name assigned to the instance. This DNS hostname can only be used inside the Amazon EC2 network. This name is not available until the instance enters the <code>running</code> state. </p>
     /// <p>The Amazon-provided DNS server resolves Amazon-provided private DNS hostnames if you've enabled DNS resolution and DNS hostnames in your VPC. If you are not using the Amazon-provided DNS server in your VPC, your custom domain name servers must resolve the hostname as appropriate.</p>
     #[doc(hidden)]
-    pub private_dns_name: std::option::Option<std::string::String>,
+    pub private_dns_name: ::std::option::Option<::std::string::String>,
     /// <p>The private IPv4 address assigned to the instance.</p>
     #[doc(hidden)]
-    pub private_ip_address: std::option::Option<std::string::String>,
+    pub private_ip_address: ::std::option::Option<::std::string::String>,
     /// <p>The product codes attached to this instance, if applicable.</p>
     #[doc(hidden)]
-    pub product_codes: std::option::Option<std::vec::Vec<crate::types::ProductCode>>,
+    pub product_codes: ::std::option::Option<::std::vec::Vec<crate::types::ProductCode>>,
     /// <p>[IPv4 only] The public DNS name assigned to the instance. This name is not available until the instance enters the <code>running</code> state. This name is only available if you've enabled DNS hostnames for your VPC.</p>
     #[doc(hidden)]
-    pub public_dns_name: std::option::Option<std::string::String>,
+    pub public_dns_name: ::std::option::Option<::std::string::String>,
     /// <p>The public IPv4 address, or the Carrier IP address assigned to the instance, if applicable.</p>
     /// <p>A Carrier IP address only applies to an instance launched in a subnet associated with a Wavelength Zone.</p>
     #[doc(hidden)]
-    pub public_ip_address: std::option::Option<std::string::String>,
+    pub public_ip_address: ::std::option::Option<::std::string::String>,
     /// <p>The RAM disk associated with this instance, if applicable.</p>
     #[doc(hidden)]
-    pub ramdisk_id: std::option::Option<std::string::String>,
+    pub ramdisk_id: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the instance.</p>
     #[doc(hidden)]
-    pub state: std::option::Option<crate::types::InstanceState>,
+    pub state: ::std::option::Option<crate::types::InstanceState>,
     /// <p>The reason for the most recent state transition. This might be an empty string.</p>
     #[doc(hidden)]
-    pub state_transition_reason: std::option::Option<std::string::String>,
+    pub state_transition_reason: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the subnet in which the instance is running.</p>
     #[doc(hidden)]
-    pub subnet_id: std::option::Option<std::string::String>,
+    pub subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the VPC in which the instance is running.</p>
     #[doc(hidden)]
-    pub vpc_id: std::option::Option<std::string::String>,
+    pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The architecture of the image.</p>
     #[doc(hidden)]
-    pub architecture: std::option::Option<crate::types::ArchitectureValues>,
+    pub architecture: ::std::option::Option<crate::types::ArchitectureValues>,
     /// <p>Any block device mapping entries for the instance.</p>
     #[doc(hidden)]
     pub block_device_mappings:
-        std::option::Option<std::vec::Vec<crate::types::InstanceBlockDeviceMapping>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::InstanceBlockDeviceMapping>>,
     /// <p>The idempotency token you provided when you launched the instance, if applicable.</p>
     #[doc(hidden)]
-    pub client_token: std::option::Option<std::string::String>,
+    pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the instance is optimized for Amazon EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal I/O performance. This optimization isn't available with all instance types. Additional usage charges apply when using an EBS Optimized instance.</p>
     #[doc(hidden)]
-    pub ebs_optimized: std::option::Option<bool>,
+    pub ebs_optimized: ::std::option::Option<bool>,
     /// <p>Specifies whether enhanced networking with ENA is enabled.</p>
     #[doc(hidden)]
-    pub ena_support: std::option::Option<bool>,
+    pub ena_support: ::std::option::Option<bool>,
     /// <p>The hypervisor type of the instance. The value <code>xen</code> is used for both Xen and Nitro hypervisors.</p>
     #[doc(hidden)]
-    pub hypervisor: std::option::Option<crate::types::HypervisorType>,
+    pub hypervisor: ::std::option::Option<crate::types::HypervisorType>,
     /// <p>The IAM instance profile associated with the instance, if applicable.</p>
     #[doc(hidden)]
-    pub iam_instance_profile: std::option::Option<crate::types::IamInstanceProfile>,
+    pub iam_instance_profile: ::std::option::Option<crate::types::IamInstanceProfile>,
     /// <p>Indicates whether this is a Spot Instance or a Scheduled Instance.</p>
     #[doc(hidden)]
-    pub instance_lifecycle: std::option::Option<crate::types::InstanceLifecycleType>,
+    pub instance_lifecycle: ::std::option::Option<crate::types::InstanceLifecycleType>,
     /// <p>The Elastic GPU associated with the instance.</p>
     #[doc(hidden)]
     pub elastic_gpu_associations:
-        std::option::Option<std::vec::Vec<crate::types::ElasticGpuAssociation>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ElasticGpuAssociation>>,
     /// <p>The elastic inference accelerator associated with the instance.</p>
     #[doc(hidden)]
-    pub elastic_inference_accelerator_associations:
-        std::option::Option<std::vec::Vec<crate::types::ElasticInferenceAcceleratorAssociation>>,
+    pub elastic_inference_accelerator_associations: ::std::option::Option<
+        ::std::vec::Vec<crate::types::ElasticInferenceAcceleratorAssociation>,
+    >,
     /// <p>The network interfaces for the instance.</p>
     #[doc(hidden)]
     pub network_interfaces:
-        std::option::Option<std::vec::Vec<crate::types::InstanceNetworkInterface>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::InstanceNetworkInterface>>,
     /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
     #[doc(hidden)]
-    pub outpost_arn: std::option::Option<std::string::String>,
+    pub outpost_arn: ::std::option::Option<::std::string::String>,
     /// <p>The device name of the root device volume (for example, <code>/dev/sda1</code>).</p>
     #[doc(hidden)]
-    pub root_device_name: std::option::Option<std::string::String>,
+    pub root_device_name: ::std::option::Option<::std::string::String>,
     /// <p>The root device type used by the AMI. The AMI can use an EBS volume or an instance store volume.</p>
     #[doc(hidden)]
-    pub root_device_type: std::option::Option<crate::types::DeviceType>,
+    pub root_device_type: ::std::option::Option<crate::types::DeviceType>,
     /// <p>The security groups for the instance.</p>
     #[doc(hidden)]
-    pub security_groups: std::option::Option<std::vec::Vec<crate::types::GroupIdentifier>>,
+    pub security_groups: ::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>>,
     /// <p>Indicates whether source/destination checking is enabled.</p>
     #[doc(hidden)]
-    pub source_dest_check: std::option::Option<bool>,
+    pub source_dest_check: ::std::option::Option<bool>,
     /// <p>If the request is a Spot Instance request, the ID of the request.</p>
     #[doc(hidden)]
-    pub spot_instance_request_id: std::option::Option<std::string::String>,
+    pub spot_instance_request_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether enhanced networking with the Intel 82599 Virtual Function interface is enabled.</p>
     #[doc(hidden)]
-    pub sriov_net_support: std::option::Option<std::string::String>,
+    pub sriov_net_support: ::std::option::Option<::std::string::String>,
     /// <p>The reason for the most recent state transition.</p>
     #[doc(hidden)]
-    pub state_reason: std::option::Option<crate::types::StateReason>,
+    pub state_reason: ::std::option::Option<crate::types::StateReason>,
     /// <p>Any tags assigned to the instance.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The virtualization type of the instance.</p>
     #[doc(hidden)]
-    pub virtualization_type: std::option::Option<crate::types::VirtualizationType>,
+    pub virtualization_type: ::std::option::Option<crate::types::VirtualizationType>,
     /// <p>The CPU options for the instance.</p>
     #[doc(hidden)]
-    pub cpu_options: std::option::Option<crate::types::CpuOptions>,
+    pub cpu_options: ::std::option::Option<crate::types::CpuOptions>,
     /// <p>The ID of the Capacity Reservation.</p>
     #[doc(hidden)]
-    pub capacity_reservation_id: std::option::Option<std::string::String>,
+    pub capacity_reservation_id: ::std::option::Option<::std::string::String>,
     /// <p>Information about the Capacity Reservation targeting option.</p>
     #[doc(hidden)]
     pub capacity_reservation_specification:
-        std::option::Option<crate::types::CapacityReservationSpecificationResponse>,
+        ::std::option::Option<crate::types::CapacityReservationSpecificationResponse>,
     /// <p>Indicates whether the instance is enabled for hibernation.</p>
     #[doc(hidden)]
-    pub hibernation_options: std::option::Option<crate::types::HibernationOptions>,
+    pub hibernation_options: ::std::option::Option<crate::types::HibernationOptions>,
     /// <p>The license configurations for the instance.</p>
     #[doc(hidden)]
-    pub licenses: std::option::Option<std::vec::Vec<crate::types::LicenseConfiguration>>,
+    pub licenses: ::std::option::Option<::std::vec::Vec<crate::types::LicenseConfiguration>>,
     /// <p>The metadata options for the instance.</p>
     #[doc(hidden)]
-    pub metadata_options: std::option::Option<crate::types::InstanceMetadataOptionsResponse>,
+    pub metadata_options: ::std::option::Option<crate::types::InstanceMetadataOptionsResponse>,
     /// <p>Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves.</p>
     #[doc(hidden)]
-    pub enclave_options: std::option::Option<crate::types::EnclaveOptions>,
+    pub enclave_options: ::std::option::Option<crate::types::EnclaveOptions>,
     /// <p>The boot mode that was specified by the AMI. If the value is <code>uefi-preferred</code>, the AMI supports both UEFI and Legacy BIOS. The <code>currentInstanceBootMode</code> parameter is the boot mode that is used to boot the instance at launch or start.</p> <note>
     /// <p>The operating system contained in the AMI must be configured to support the specified boot mode.</p>
     /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
     #[doc(hidden)]
-    pub boot_mode: std::option::Option<crate::types::BootModeValues>,
+    pub boot_mode: ::std::option::Option<crate::types::BootModeValues>,
     /// <p>The platform details value for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info-fields.html">AMI billing information fields</a> in the <i>Amazon EC2 User Guide</i>.</p>
     #[doc(hidden)]
-    pub platform_details: std::option::Option<std::string::String>,
+    pub platform_details: ::std::option::Option<::std::string::String>,
     /// <p>The usage operation value for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info-fields.html">AMI billing information fields</a> in the <i>Amazon EC2 User Guide</i>.</p>
     #[doc(hidden)]
-    pub usage_operation: std::option::Option<std::string::String>,
+    pub usage_operation: ::std::option::Option<::std::string::String>,
     /// <p>The time that the usage operation was last updated.</p>
     #[doc(hidden)]
-    pub usage_operation_update_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub usage_operation_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The options for the instance hostname.</p>
     #[doc(hidden)]
-    pub private_dns_name_options: std::option::Option<crate::types::PrivateDnsNameOptionsResponse>,
+    pub private_dns_name_options:
+        ::std::option::Option<crate::types::PrivateDnsNameOptionsResponse>,
     /// <p>The IPv6 address assigned to the instance.</p>
     #[doc(hidden)]
-    pub ipv6_address: std::option::Option<std::string::String>,
+    pub ipv6_address: ::std::option::Option<::std::string::String>,
     /// <p>If the instance is configured for NitroTPM support, the value is <code>v2.0</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a> in the <i>Amazon EC2 User Guide</i>.</p>
     #[doc(hidden)]
-    pub tpm_support: std::option::Option<std::string::String>,
+    pub tpm_support: ::std::option::Option<::std::string::String>,
     /// <p>Provides information on the recovery and maintenance options of your instance.</p>
     #[doc(hidden)]
-    pub maintenance_options: std::option::Option<crate::types::InstanceMaintenanceOptions>,
+    pub maintenance_options: ::std::option::Option<crate::types::InstanceMaintenanceOptions>,
     /// <p>The boot mode that is used to boot the instance at launch or start. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
     #[doc(hidden)]
-    pub current_instance_boot_mode: std::option::Option<crate::types::InstanceBootModeValues>,
+    pub current_instance_boot_mode: ::std::option::Option<crate::types::InstanceBootModeValues>,
 }
 impl Instance {
     /// <p>The AMI launch index, which can be used to find this instance in the launch group.</p>
-    pub fn ami_launch_index(&self) -> std::option::Option<i32> {
+    pub fn ami_launch_index(&self) -> ::std::option::Option<i32> {
         self.ami_launch_index
     }
     /// <p>The ID of the AMI used to launch the instance.</p>
-    pub fn image_id(&self) -> std::option::Option<&str> {
+    pub fn image_id(&self) -> ::std::option::Option<&str> {
         self.image_id.as_deref()
     }
     /// <p>The ID of the instance.</p>
-    pub fn instance_id(&self) -> std::option::Option<&str> {
+    pub fn instance_id(&self) -> ::std::option::Option<&str> {
         self.instance_id.as_deref()
     }
     /// <p>The instance type.</p>
-    pub fn instance_type(&self) -> std::option::Option<&crate::types::InstanceType> {
+    pub fn instance_type(&self) -> ::std::option::Option<&crate::types::InstanceType> {
         self.instance_type.as_ref()
     }
     /// <p>The kernel associated with this instance, if applicable.</p>
-    pub fn kernel_id(&self) -> std::option::Option<&str> {
+    pub fn kernel_id(&self) -> ::std::option::Option<&str> {
         self.kernel_id.as_deref()
     }
     /// <p>The name of the key pair, if this instance was launched with an associated key pair.</p>
-    pub fn key_name(&self) -> std::option::Option<&str> {
+    pub fn key_name(&self) -> ::std::option::Option<&str> {
         self.key_name.as_deref()
     }
     /// <p>The time the instance was launched.</p>
-    pub fn launch_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn launch_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.launch_time.as_ref()
     }
     /// <p>The monitoring for the instance.</p>
-    pub fn monitoring(&self) -> std::option::Option<&crate::types::Monitoring> {
+    pub fn monitoring(&self) -> ::std::option::Option<&crate::types::Monitoring> {
         self.monitoring.as_ref()
     }
     /// <p>The location where the instance launched, if applicable.</p>
-    pub fn placement(&self) -> std::option::Option<&crate::types::Placement> {
+    pub fn placement(&self) -> ::std::option::Option<&crate::types::Placement> {
         self.placement.as_ref()
     }
     /// <p>The value is <code>Windows</code> for Windows instances; otherwise blank.</p>
-    pub fn platform(&self) -> std::option::Option<&crate::types::PlatformValues> {
+    pub fn platform(&self) -> ::std::option::Option<&crate::types::PlatformValues> {
         self.platform.as_ref()
     }
     /// <p>[IPv4 only] The private DNS hostname name assigned to the instance. This DNS hostname can only be used inside the Amazon EC2 network. This name is not available until the instance enters the <code>running</code> state. </p>
     /// <p>The Amazon-provided DNS server resolves Amazon-provided private DNS hostnames if you've enabled DNS resolution and DNS hostnames in your VPC. If you are not using the Amazon-provided DNS server in your VPC, your custom domain name servers must resolve the hostname as appropriate.</p>
-    pub fn private_dns_name(&self) -> std::option::Option<&str> {
+    pub fn private_dns_name(&self) -> ::std::option::Option<&str> {
         self.private_dns_name.as_deref()
     }
     /// <p>The private IPv4 address assigned to the instance.</p>
-    pub fn private_ip_address(&self) -> std::option::Option<&str> {
+    pub fn private_ip_address(&self) -> ::std::option::Option<&str> {
         self.private_ip_address.as_deref()
     }
     /// <p>The product codes attached to this instance, if applicable.</p>
-    pub fn product_codes(&self) -> std::option::Option<&[crate::types::ProductCode]> {
+    pub fn product_codes(&self) -> ::std::option::Option<&[crate::types::ProductCode]> {
         self.product_codes.as_deref()
     }
     /// <p>[IPv4 only] The public DNS name assigned to the instance. This name is not available until the instance enters the <code>running</code> state. This name is only available if you've enabled DNS hostnames for your VPC.</p>
-    pub fn public_dns_name(&self) -> std::option::Option<&str> {
+    pub fn public_dns_name(&self) -> ::std::option::Option<&str> {
         self.public_dns_name.as_deref()
     }
     /// <p>The public IPv4 address, or the Carrier IP address assigned to the instance, if applicable.</p>
     /// <p>A Carrier IP address only applies to an instance launched in a subnet associated with a Wavelength Zone.</p>
-    pub fn public_ip_address(&self) -> std::option::Option<&str> {
+    pub fn public_ip_address(&self) -> ::std::option::Option<&str> {
         self.public_ip_address.as_deref()
     }
     /// <p>The RAM disk associated with this instance, if applicable.</p>
-    pub fn ramdisk_id(&self) -> std::option::Option<&str> {
+    pub fn ramdisk_id(&self) -> ::std::option::Option<&str> {
         self.ramdisk_id.as_deref()
     }
     /// <p>The current state of the instance.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::InstanceState> {
+    pub fn state(&self) -> ::std::option::Option<&crate::types::InstanceState> {
         self.state.as_ref()
     }
     /// <p>The reason for the most recent state transition. This might be an empty string.</p>
-    pub fn state_transition_reason(&self) -> std::option::Option<&str> {
+    pub fn state_transition_reason(&self) -> ::std::option::Option<&str> {
         self.state_transition_reason.as_deref()
     }
     /// <p>The ID of the subnet in which the instance is running.</p>
-    pub fn subnet_id(&self) -> std::option::Option<&str> {
+    pub fn subnet_id(&self) -> ::std::option::Option<&str> {
         self.subnet_id.as_deref()
     }
     /// <p>The ID of the VPC in which the instance is running.</p>
-    pub fn vpc_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
     /// <p>The architecture of the image.</p>
-    pub fn architecture(&self) -> std::option::Option<&crate::types::ArchitectureValues> {
+    pub fn architecture(&self) -> ::std::option::Option<&crate::types::ArchitectureValues> {
         self.architecture.as_ref()
     }
     /// <p>Any block device mapping entries for the instance.</p>
     pub fn block_device_mappings(
         &self,
-    ) -> std::option::Option<&[crate::types::InstanceBlockDeviceMapping]> {
+    ) -> ::std::option::Option<&[crate::types::InstanceBlockDeviceMapping]> {
         self.block_device_mappings.as_deref()
     }
     /// <p>The idempotency token you provided when you launched the instance, if applicable.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
     /// <p>Indicates whether the instance is optimized for Amazon EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal I/O performance. This optimization isn't available with all instance types. Additional usage charges apply when using an EBS Optimized instance.</p>
-    pub fn ebs_optimized(&self) -> std::option::Option<bool> {
+    pub fn ebs_optimized(&self) -> ::std::option::Option<bool> {
         self.ebs_optimized
     }
     /// <p>Specifies whether enhanced networking with ENA is enabled.</p>
-    pub fn ena_support(&self) -> std::option::Option<bool> {
+    pub fn ena_support(&self) -> ::std::option::Option<bool> {
         self.ena_support
     }
     /// <p>The hypervisor type of the instance. The value <code>xen</code> is used for both Xen and Nitro hypervisors.</p>
-    pub fn hypervisor(&self) -> std::option::Option<&crate::types::HypervisorType> {
+    pub fn hypervisor(&self) -> ::std::option::Option<&crate::types::HypervisorType> {
         self.hypervisor.as_ref()
     }
     /// <p>The IAM instance profile associated with the instance, if applicable.</p>
-    pub fn iam_instance_profile(&self) -> std::option::Option<&crate::types::IamInstanceProfile> {
+    pub fn iam_instance_profile(&self) -> ::std::option::Option<&crate::types::IamInstanceProfile> {
         self.iam_instance_profile.as_ref()
     }
     /// <p>Indicates whether this is a Spot Instance or a Scheduled Instance.</p>
-    pub fn instance_lifecycle(&self) -> std::option::Option<&crate::types::InstanceLifecycleType> {
+    pub fn instance_lifecycle(
+        &self,
+    ) -> ::std::option::Option<&crate::types::InstanceLifecycleType> {
         self.instance_lifecycle.as_ref()
     }
     /// <p>The Elastic GPU associated with the instance.</p>
     pub fn elastic_gpu_associations(
         &self,
-    ) -> std::option::Option<&[crate::types::ElasticGpuAssociation]> {
+    ) -> ::std::option::Option<&[crate::types::ElasticGpuAssociation]> {
         self.elastic_gpu_associations.as_deref()
     }
     /// <p>The elastic inference accelerator associated with the instance.</p>
     pub fn elastic_inference_accelerator_associations(
         &self,
-    ) -> std::option::Option<&[crate::types::ElasticInferenceAcceleratorAssociation]> {
+    ) -> ::std::option::Option<&[crate::types::ElasticInferenceAcceleratorAssociation]> {
         self.elastic_inference_accelerator_associations.as_deref()
     }
     /// <p>The network interfaces for the instance.</p>
     pub fn network_interfaces(
         &self,
-    ) -> std::option::Option<&[crate::types::InstanceNetworkInterface]> {
+    ) -> ::std::option::Option<&[crate::types::InstanceNetworkInterface]> {
         self.network_interfaces.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
-    pub fn outpost_arn(&self) -> std::option::Option<&str> {
+    pub fn outpost_arn(&self) -> ::std::option::Option<&str> {
         self.outpost_arn.as_deref()
     }
     /// <p>The device name of the root device volume (for example, <code>/dev/sda1</code>).</p>
-    pub fn root_device_name(&self) -> std::option::Option<&str> {
+    pub fn root_device_name(&self) -> ::std::option::Option<&str> {
         self.root_device_name.as_deref()
     }
     /// <p>The root device type used by the AMI. The AMI can use an EBS volume or an instance store volume.</p>
-    pub fn root_device_type(&self) -> std::option::Option<&crate::types::DeviceType> {
+    pub fn root_device_type(&self) -> ::std::option::Option<&crate::types::DeviceType> {
         self.root_device_type.as_ref()
     }
     /// <p>The security groups for the instance.</p>
-    pub fn security_groups(&self) -> std::option::Option<&[crate::types::GroupIdentifier]> {
+    pub fn security_groups(&self) -> ::std::option::Option<&[crate::types::GroupIdentifier]> {
         self.security_groups.as_deref()
     }
     /// <p>Indicates whether source/destination checking is enabled.</p>
-    pub fn source_dest_check(&self) -> std::option::Option<bool> {
+    pub fn source_dest_check(&self) -> ::std::option::Option<bool> {
         self.source_dest_check
     }
     /// <p>If the request is a Spot Instance request, the ID of the request.</p>
-    pub fn spot_instance_request_id(&self) -> std::option::Option<&str> {
+    pub fn spot_instance_request_id(&self) -> ::std::option::Option<&str> {
         self.spot_instance_request_id.as_deref()
     }
     /// <p>Specifies whether enhanced networking with the Intel 82599 Virtual Function interface is enabled.</p>
-    pub fn sriov_net_support(&self) -> std::option::Option<&str> {
+    pub fn sriov_net_support(&self) -> ::std::option::Option<&str> {
         self.sriov_net_support.as_deref()
     }
     /// <p>The reason for the most recent state transition.</p>
-    pub fn state_reason(&self) -> std::option::Option<&crate::types::StateReason> {
+    pub fn state_reason(&self) -> ::std::option::Option<&crate::types::StateReason> {
         self.state_reason.as_ref()
     }
     /// <p>Any tags assigned to the instance.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The virtualization type of the instance.</p>
-    pub fn virtualization_type(&self) -> std::option::Option<&crate::types::VirtualizationType> {
+    pub fn virtualization_type(&self) -> ::std::option::Option<&crate::types::VirtualizationType> {
         self.virtualization_type.as_ref()
     }
     /// <p>The CPU options for the instance.</p>
-    pub fn cpu_options(&self) -> std::option::Option<&crate::types::CpuOptions> {
+    pub fn cpu_options(&self) -> ::std::option::Option<&crate::types::CpuOptions> {
         self.cpu_options.as_ref()
     }
     /// <p>The ID of the Capacity Reservation.</p>
-    pub fn capacity_reservation_id(&self) -> std::option::Option<&str> {
+    pub fn capacity_reservation_id(&self) -> ::std::option::Option<&str> {
         self.capacity_reservation_id.as_deref()
     }
     /// <p>Information about the Capacity Reservation targeting option.</p>
     pub fn capacity_reservation_specification(
         &self,
-    ) -> std::option::Option<&crate::types::CapacityReservationSpecificationResponse> {
+    ) -> ::std::option::Option<&crate::types::CapacityReservationSpecificationResponse> {
         self.capacity_reservation_specification.as_ref()
     }
     /// <p>Indicates whether the instance is enabled for hibernation.</p>
-    pub fn hibernation_options(&self) -> std::option::Option<&crate::types::HibernationOptions> {
+    pub fn hibernation_options(&self) -> ::std::option::Option<&crate::types::HibernationOptions> {
         self.hibernation_options.as_ref()
     }
     /// <p>The license configurations for the instance.</p>
-    pub fn licenses(&self) -> std::option::Option<&[crate::types::LicenseConfiguration]> {
+    pub fn licenses(&self) -> ::std::option::Option<&[crate::types::LicenseConfiguration]> {
         self.licenses.as_deref()
     }
     /// <p>The metadata options for the instance.</p>
     pub fn metadata_options(
         &self,
-    ) -> std::option::Option<&crate::types::InstanceMetadataOptionsResponse> {
+    ) -> ::std::option::Option<&crate::types::InstanceMetadataOptionsResponse> {
         self.metadata_options.as_ref()
     }
     /// <p>Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves.</p>
-    pub fn enclave_options(&self) -> std::option::Option<&crate::types::EnclaveOptions> {
+    pub fn enclave_options(&self) -> ::std::option::Option<&crate::types::EnclaveOptions> {
         self.enclave_options.as_ref()
     }
     /// <p>The boot mode that was specified by the AMI. If the value is <code>uefi-preferred</code>, the AMI supports both UEFI and Legacy BIOS. The <code>currentInstanceBootMode</code> parameter is the boot mode that is used to boot the instance at launch or start.</p> <note>
     /// <p>The operating system contained in the AMI must be configured to support the specified boot mode.</p>
     /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn boot_mode(&self) -> std::option::Option<&crate::types::BootModeValues> {
+    pub fn boot_mode(&self) -> ::std::option::Option<&crate::types::BootModeValues> {
         self.boot_mode.as_ref()
     }
     /// <p>The platform details value for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info-fields.html">AMI billing information fields</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn platform_details(&self) -> std::option::Option<&str> {
+    pub fn platform_details(&self) -> ::std::option::Option<&str> {
         self.platform_details.as_deref()
     }
     /// <p>The usage operation value for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info-fields.html">AMI billing information fields</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn usage_operation(&self) -> std::option::Option<&str> {
+    pub fn usage_operation(&self) -> ::std::option::Option<&str> {
         self.usage_operation.as_deref()
     }
     /// <p>The time that the usage operation was last updated.</p>
-    pub fn usage_operation_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn usage_operation_update_time(
+        &self,
+    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.usage_operation_update_time.as_ref()
     }
     /// <p>The options for the instance hostname.</p>
     pub fn private_dns_name_options(
         &self,
-    ) -> std::option::Option<&crate::types::PrivateDnsNameOptionsResponse> {
+    ) -> ::std::option::Option<&crate::types::PrivateDnsNameOptionsResponse> {
         self.private_dns_name_options.as_ref()
     }
     /// <p>The IPv6 address assigned to the instance.</p>
-    pub fn ipv6_address(&self) -> std::option::Option<&str> {
+    pub fn ipv6_address(&self) -> ::std::option::Option<&str> {
         self.ipv6_address.as_deref()
     }
     /// <p>If the instance is configured for NitroTPM support, the value is <code>v2.0</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn tpm_support(&self) -> std::option::Option<&str> {
+    pub fn tpm_support(&self) -> ::std::option::Option<&str> {
         self.tpm_support.as_deref()
     }
     /// <p>Provides information on the recovery and maintenance options of your instance.</p>
     pub fn maintenance_options(
         &self,
-    ) -> std::option::Option<&crate::types::InstanceMaintenanceOptions> {
+    ) -> ::std::option::Option<&crate::types::InstanceMaintenanceOptions> {
         self.maintenance_options.as_ref()
     }
     /// <p>The boot mode that is used to boot the instance at launch or start. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn current_instance_boot_mode(
         &self,
-    ) -> std::option::Option<&crate::types::InstanceBootModeValues> {
+    ) -> ::std::option::Option<&crate::types::InstanceBootModeValues> {
         self.current_instance_boot_mode.as_ref()
     }
 }
@@ -448,204 +454,221 @@ impl Instance {
 
 /// A builder for [`Instance`](crate::types::Instance).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InstanceBuilder {
-    pub(crate) ami_launch_index: std::option::Option<i32>,
-    pub(crate) image_id: std::option::Option<std::string::String>,
-    pub(crate) instance_id: std::option::Option<std::string::String>,
-    pub(crate) instance_type: std::option::Option<crate::types::InstanceType>,
-    pub(crate) kernel_id: std::option::Option<std::string::String>,
-    pub(crate) key_name: std::option::Option<std::string::String>,
-    pub(crate) launch_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) monitoring: std::option::Option<crate::types::Monitoring>,
-    pub(crate) placement: std::option::Option<crate::types::Placement>,
-    pub(crate) platform: std::option::Option<crate::types::PlatformValues>,
-    pub(crate) private_dns_name: std::option::Option<std::string::String>,
-    pub(crate) private_ip_address: std::option::Option<std::string::String>,
-    pub(crate) product_codes: std::option::Option<std::vec::Vec<crate::types::ProductCode>>,
-    pub(crate) public_dns_name: std::option::Option<std::string::String>,
-    pub(crate) public_ip_address: std::option::Option<std::string::String>,
-    pub(crate) ramdisk_id: std::option::Option<std::string::String>,
-    pub(crate) state: std::option::Option<crate::types::InstanceState>,
-    pub(crate) state_transition_reason: std::option::Option<std::string::String>,
-    pub(crate) subnet_id: std::option::Option<std::string::String>,
-    pub(crate) vpc_id: std::option::Option<std::string::String>,
-    pub(crate) architecture: std::option::Option<crate::types::ArchitectureValues>,
+    pub(crate) ami_launch_index: ::std::option::Option<i32>,
+    pub(crate) image_id: ::std::option::Option<::std::string::String>,
+    pub(crate) instance_id: ::std::option::Option<::std::string::String>,
+    pub(crate) instance_type: ::std::option::Option<crate::types::InstanceType>,
+    pub(crate) kernel_id: ::std::option::Option<::std::string::String>,
+    pub(crate) key_name: ::std::option::Option<::std::string::String>,
+    pub(crate) launch_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) monitoring: ::std::option::Option<crate::types::Monitoring>,
+    pub(crate) placement: ::std::option::Option<crate::types::Placement>,
+    pub(crate) platform: ::std::option::Option<crate::types::PlatformValues>,
+    pub(crate) private_dns_name: ::std::option::Option<::std::string::String>,
+    pub(crate) private_ip_address: ::std::option::Option<::std::string::String>,
+    pub(crate) product_codes: ::std::option::Option<::std::vec::Vec<crate::types::ProductCode>>,
+    pub(crate) public_dns_name: ::std::option::Option<::std::string::String>,
+    pub(crate) public_ip_address: ::std::option::Option<::std::string::String>,
+    pub(crate) ramdisk_id: ::std::option::Option<::std::string::String>,
+    pub(crate) state: ::std::option::Option<crate::types::InstanceState>,
+    pub(crate) state_transition_reason: ::std::option::Option<::std::string::String>,
+    pub(crate) subnet_id: ::std::option::Option<::std::string::String>,
+    pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
+    pub(crate) architecture: ::std::option::Option<crate::types::ArchitectureValues>,
     pub(crate) block_device_mappings:
-        std::option::Option<std::vec::Vec<crate::types::InstanceBlockDeviceMapping>>,
-    pub(crate) client_token: std::option::Option<std::string::String>,
-    pub(crate) ebs_optimized: std::option::Option<bool>,
-    pub(crate) ena_support: std::option::Option<bool>,
-    pub(crate) hypervisor: std::option::Option<crate::types::HypervisorType>,
-    pub(crate) iam_instance_profile: std::option::Option<crate::types::IamInstanceProfile>,
-    pub(crate) instance_lifecycle: std::option::Option<crate::types::InstanceLifecycleType>,
+        ::std::option::Option<::std::vec::Vec<crate::types::InstanceBlockDeviceMapping>>,
+    pub(crate) client_token: ::std::option::Option<::std::string::String>,
+    pub(crate) ebs_optimized: ::std::option::Option<bool>,
+    pub(crate) ena_support: ::std::option::Option<bool>,
+    pub(crate) hypervisor: ::std::option::Option<crate::types::HypervisorType>,
+    pub(crate) iam_instance_profile: ::std::option::Option<crate::types::IamInstanceProfile>,
+    pub(crate) instance_lifecycle: ::std::option::Option<crate::types::InstanceLifecycleType>,
     pub(crate) elastic_gpu_associations:
-        std::option::Option<std::vec::Vec<crate::types::ElasticGpuAssociation>>,
-    pub(crate) elastic_inference_accelerator_associations:
-        std::option::Option<std::vec::Vec<crate::types::ElasticInferenceAcceleratorAssociation>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ElasticGpuAssociation>>,
+    pub(crate) elastic_inference_accelerator_associations: ::std::option::Option<
+        ::std::vec::Vec<crate::types::ElasticInferenceAcceleratorAssociation>,
+    >,
     pub(crate) network_interfaces:
-        std::option::Option<std::vec::Vec<crate::types::InstanceNetworkInterface>>,
-    pub(crate) outpost_arn: std::option::Option<std::string::String>,
-    pub(crate) root_device_name: std::option::Option<std::string::String>,
-    pub(crate) root_device_type: std::option::Option<crate::types::DeviceType>,
-    pub(crate) security_groups: std::option::Option<std::vec::Vec<crate::types::GroupIdentifier>>,
-    pub(crate) source_dest_check: std::option::Option<bool>,
-    pub(crate) spot_instance_request_id: std::option::Option<std::string::String>,
-    pub(crate) sriov_net_support: std::option::Option<std::string::String>,
-    pub(crate) state_reason: std::option::Option<crate::types::StateReason>,
-    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    pub(crate) virtualization_type: std::option::Option<crate::types::VirtualizationType>,
-    pub(crate) cpu_options: std::option::Option<crate::types::CpuOptions>,
-    pub(crate) capacity_reservation_id: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::InstanceNetworkInterface>>,
+    pub(crate) outpost_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) root_device_name: ::std::option::Option<::std::string::String>,
+    pub(crate) root_device_type: ::std::option::Option<crate::types::DeviceType>,
+    pub(crate) security_groups:
+        ::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>>,
+    pub(crate) source_dest_check: ::std::option::Option<bool>,
+    pub(crate) spot_instance_request_id: ::std::option::Option<::std::string::String>,
+    pub(crate) sriov_net_support: ::std::option::Option<::std::string::String>,
+    pub(crate) state_reason: ::std::option::Option<crate::types::StateReason>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) virtualization_type: ::std::option::Option<crate::types::VirtualizationType>,
+    pub(crate) cpu_options: ::std::option::Option<crate::types::CpuOptions>,
+    pub(crate) capacity_reservation_id: ::std::option::Option<::std::string::String>,
     pub(crate) capacity_reservation_specification:
-        std::option::Option<crate::types::CapacityReservationSpecificationResponse>,
-    pub(crate) hibernation_options: std::option::Option<crate::types::HibernationOptions>,
-    pub(crate) licenses: std::option::Option<std::vec::Vec<crate::types::LicenseConfiguration>>,
-    pub(crate) metadata_options: std::option::Option<crate::types::InstanceMetadataOptionsResponse>,
-    pub(crate) enclave_options: std::option::Option<crate::types::EnclaveOptions>,
-    pub(crate) boot_mode: std::option::Option<crate::types::BootModeValues>,
-    pub(crate) platform_details: std::option::Option<std::string::String>,
-    pub(crate) usage_operation: std::option::Option<std::string::String>,
-    pub(crate) usage_operation_update_time: std::option::Option<aws_smithy_types::DateTime>,
+        ::std::option::Option<crate::types::CapacityReservationSpecificationResponse>,
+    pub(crate) hibernation_options: ::std::option::Option<crate::types::HibernationOptions>,
+    pub(crate) licenses: ::std::option::Option<::std::vec::Vec<crate::types::LicenseConfiguration>>,
+    pub(crate) metadata_options:
+        ::std::option::Option<crate::types::InstanceMetadataOptionsResponse>,
+    pub(crate) enclave_options: ::std::option::Option<crate::types::EnclaveOptions>,
+    pub(crate) boot_mode: ::std::option::Option<crate::types::BootModeValues>,
+    pub(crate) platform_details: ::std::option::Option<::std::string::String>,
+    pub(crate) usage_operation: ::std::option::Option<::std::string::String>,
+    pub(crate) usage_operation_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) private_dns_name_options:
-        std::option::Option<crate::types::PrivateDnsNameOptionsResponse>,
-    pub(crate) ipv6_address: std::option::Option<std::string::String>,
-    pub(crate) tpm_support: std::option::Option<std::string::String>,
-    pub(crate) maintenance_options: std::option::Option<crate::types::InstanceMaintenanceOptions>,
+        ::std::option::Option<crate::types::PrivateDnsNameOptionsResponse>,
+    pub(crate) ipv6_address: ::std::option::Option<::std::string::String>,
+    pub(crate) tpm_support: ::std::option::Option<::std::string::String>,
+    pub(crate) maintenance_options: ::std::option::Option<crate::types::InstanceMaintenanceOptions>,
     pub(crate) current_instance_boot_mode:
-        std::option::Option<crate::types::InstanceBootModeValues>,
+        ::std::option::Option<crate::types::InstanceBootModeValues>,
 }
 impl InstanceBuilder {
     /// <p>The AMI launch index, which can be used to find this instance in the launch group.</p>
     pub fn ami_launch_index(mut self, input: i32) -> Self {
-        self.ami_launch_index = Some(input);
+        self.ami_launch_index = ::std::option::Option::Some(input);
         self
     }
     /// <p>The AMI launch index, which can be used to find this instance in the launch group.</p>
-    pub fn set_ami_launch_index(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_ami_launch_index(mut self, input: ::std::option::Option<i32>) -> Self {
         self.ami_launch_index = input;
         self
     }
     /// <p>The ID of the AMI used to launch the instance.</p>
-    pub fn image_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.image_id = Some(input.into());
+    pub fn image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.image_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the AMI used to launch the instance.</p>
-    pub fn set_image_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_id = input;
         self
     }
     /// <p>The ID of the instance.</p>
-    pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.instance_id = Some(input.into());
+    pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the instance.</p>
-    pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_id = input;
         self
     }
     /// <p>The instance type.</p>
     pub fn instance_type(mut self, input: crate::types::InstanceType) -> Self {
-        self.instance_type = Some(input);
+        self.instance_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The instance type.</p>
     pub fn set_instance_type(
         mut self,
-        input: std::option::Option<crate::types::InstanceType>,
+        input: ::std::option::Option<crate::types::InstanceType>,
     ) -> Self {
         self.instance_type = input;
         self
     }
     /// <p>The kernel associated with this instance, if applicable.</p>
-    pub fn kernel_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.kernel_id = Some(input.into());
+    pub fn kernel_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kernel_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The kernel associated with this instance, if applicable.</p>
-    pub fn set_kernel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_kernel_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kernel_id = input;
         self
     }
     /// <p>The name of the key pair, if this instance was launched with an associated key pair.</p>
-    pub fn key_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.key_name = Some(input.into());
+    pub fn key_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.key_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the key pair, if this instance was launched with an associated key pair.</p>
-    pub fn set_key_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_key_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_name = input;
         self
     }
     /// <p>The time the instance was launched.</p>
-    pub fn launch_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.launch_time = Some(input);
+    pub fn launch_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.launch_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time the instance was launched.</p>
     pub fn set_launch_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.launch_time = input;
         self
     }
     /// <p>The monitoring for the instance.</p>
     pub fn monitoring(mut self, input: crate::types::Monitoring) -> Self {
-        self.monitoring = Some(input);
+        self.monitoring = ::std::option::Option::Some(input);
         self
     }
     /// <p>The monitoring for the instance.</p>
-    pub fn set_monitoring(mut self, input: std::option::Option<crate::types::Monitoring>) -> Self {
+    pub fn set_monitoring(
+        mut self,
+        input: ::std::option::Option<crate::types::Monitoring>,
+    ) -> Self {
         self.monitoring = input;
         self
     }
     /// <p>The location where the instance launched, if applicable.</p>
     pub fn placement(mut self, input: crate::types::Placement) -> Self {
-        self.placement = Some(input);
+        self.placement = ::std::option::Option::Some(input);
         self
     }
     /// <p>The location where the instance launched, if applicable.</p>
-    pub fn set_placement(mut self, input: std::option::Option<crate::types::Placement>) -> Self {
+    pub fn set_placement(mut self, input: ::std::option::Option<crate::types::Placement>) -> Self {
         self.placement = input;
         self
     }
     /// <p>The value is <code>Windows</code> for Windows instances; otherwise blank.</p>
     pub fn platform(mut self, input: crate::types::PlatformValues) -> Self {
-        self.platform = Some(input);
+        self.platform = ::std::option::Option::Some(input);
         self
     }
     /// <p>The value is <code>Windows</code> for Windows instances; otherwise blank.</p>
     pub fn set_platform(
         mut self,
-        input: std::option::Option<crate::types::PlatformValues>,
+        input: ::std::option::Option<crate::types::PlatformValues>,
     ) -> Self {
         self.platform = input;
         self
     }
     /// <p>[IPv4 only] The private DNS hostname name assigned to the instance. This DNS hostname can only be used inside the Amazon EC2 network. This name is not available until the instance enters the <code>running</code> state. </p>
     /// <p>The Amazon-provided DNS server resolves Amazon-provided private DNS hostnames if you've enabled DNS resolution and DNS hostnames in your VPC. If you are not using the Amazon-provided DNS server in your VPC, your custom domain name servers must resolve the hostname as appropriate.</p>
-    pub fn private_dns_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.private_dns_name = Some(input.into());
+    pub fn private_dns_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.private_dns_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>[IPv4 only] The private DNS hostname name assigned to the instance. This DNS hostname can only be used inside the Amazon EC2 network. This name is not available until the instance enters the <code>running</code> state. </p>
     /// <p>The Amazon-provided DNS server resolves Amazon-provided private DNS hostnames if you've enabled DNS resolution and DNS hostnames in your VPC. If you are not using the Amazon-provided DNS server in your VPC, your custom domain name servers must resolve the hostname as appropriate.</p>
-    pub fn set_private_dns_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_private_dns_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.private_dns_name = input;
         self
     }
     /// <p>The private IPv4 address assigned to the instance.</p>
-    pub fn private_ip_address(mut self, input: impl Into<std::string::String>) -> Self {
-        self.private_ip_address = Some(input.into());
+    pub fn private_ip_address(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.private_ip_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The private IPv4 address assigned to the instance.</p>
     pub fn set_private_ip_address(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.private_ip_address = input;
         self
@@ -658,104 +681,116 @@ impl InstanceBuilder {
     pub fn product_codes(mut self, input: crate::types::ProductCode) -> Self {
         let mut v = self.product_codes.unwrap_or_default();
         v.push(input);
-        self.product_codes = Some(v);
+        self.product_codes = ::std::option::Option::Some(v);
         self
     }
     /// <p>The product codes attached to this instance, if applicable.</p>
     pub fn set_product_codes(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ProductCode>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ProductCode>>,
     ) -> Self {
         self.product_codes = input;
         self
     }
     /// <p>[IPv4 only] The public DNS name assigned to the instance. This name is not available until the instance enters the <code>running</code> state. This name is only available if you've enabled DNS hostnames for your VPC.</p>
-    pub fn public_dns_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.public_dns_name = Some(input.into());
+    pub fn public_dns_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.public_dns_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>[IPv4 only] The public DNS name assigned to the instance. This name is not available until the instance enters the <code>running</code> state. This name is only available if you've enabled DNS hostnames for your VPC.</p>
-    pub fn set_public_dns_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_public_dns_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.public_dns_name = input;
         self
     }
     /// <p>The public IPv4 address, or the Carrier IP address assigned to the instance, if applicable.</p>
     /// <p>A Carrier IP address only applies to an instance launched in a subnet associated with a Wavelength Zone.</p>
-    pub fn public_ip_address(mut self, input: impl Into<std::string::String>) -> Self {
-        self.public_ip_address = Some(input.into());
+    pub fn public_ip_address(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.public_ip_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The public IPv4 address, or the Carrier IP address assigned to the instance, if applicable.</p>
     /// <p>A Carrier IP address only applies to an instance launched in a subnet associated with a Wavelength Zone.</p>
     pub fn set_public_ip_address(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.public_ip_address = input;
         self
     }
     /// <p>The RAM disk associated with this instance, if applicable.</p>
-    pub fn ramdisk_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ramdisk_id = Some(input.into());
+    pub fn ramdisk_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ramdisk_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The RAM disk associated with this instance, if applicable.</p>
-    pub fn set_ramdisk_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ramdisk_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ramdisk_id = input;
         self
     }
     /// <p>The current state of the instance.</p>
     pub fn state(mut self, input: crate::types::InstanceState) -> Self {
-        self.state = Some(input);
+        self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current state of the instance.</p>
-    pub fn set_state(mut self, input: std::option::Option<crate::types::InstanceState>) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::InstanceState>) -> Self {
         self.state = input;
         self
     }
     /// <p>The reason for the most recent state transition. This might be an empty string.</p>
-    pub fn state_transition_reason(mut self, input: impl Into<std::string::String>) -> Self {
-        self.state_transition_reason = Some(input.into());
+    pub fn state_transition_reason(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.state_transition_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason for the most recent state transition. This might be an empty string.</p>
     pub fn set_state_transition_reason(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.state_transition_reason = input;
         self
     }
     /// <p>The ID of the subnet in which the instance is running.</p>
-    pub fn subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.subnet_id = Some(input.into());
+    pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.subnet_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the subnet in which the instance is running.</p>
-    pub fn set_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_subnet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subnet_id = input;
         self
     }
     /// <p>The ID of the VPC in which the instance is running.</p>
-    pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.vpc_id = Some(input.into());
+    pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.vpc_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the VPC in which the instance is running.</p>
-    pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
     }
     /// <p>The architecture of the image.</p>
     pub fn architecture(mut self, input: crate::types::ArchitectureValues) -> Self {
-        self.architecture = Some(input);
+        self.architecture = ::std::option::Option::Some(input);
         self
     }
     /// <p>The architecture of the image.</p>
     pub fn set_architecture(
         mut self,
-        input: std::option::Option<crate::types::ArchitectureValues>,
+        input: ::std::option::Option<crate::types::ArchitectureValues>,
     ) -> Self {
         self.architecture = input;
         self
@@ -771,82 +806,82 @@ impl InstanceBuilder {
     ) -> Self {
         let mut v = self.block_device_mappings.unwrap_or_default();
         v.push(input);
-        self.block_device_mappings = Some(v);
+        self.block_device_mappings = ::std::option::Option::Some(v);
         self
     }
     /// <p>Any block device mapping entries for the instance.</p>
     pub fn set_block_device_mappings(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::InstanceBlockDeviceMapping>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceBlockDeviceMapping>>,
     ) -> Self {
         self.block_device_mappings = input;
         self
     }
     /// <p>The idempotency token you provided when you launched the instance, if applicable.</p>
-    pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.client_token = Some(input.into());
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.client_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The idempotency token you provided when you launched the instance, if applicable.</p>
-    pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
     }
     /// <p>Indicates whether the instance is optimized for Amazon EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal I/O performance. This optimization isn't available with all instance types. Additional usage charges apply when using an EBS Optimized instance.</p>
     pub fn ebs_optimized(mut self, input: bool) -> Self {
-        self.ebs_optimized = Some(input);
+        self.ebs_optimized = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether the instance is optimized for Amazon EBS I/O. This optimization provides dedicated throughput to Amazon EBS and an optimized configuration stack to provide optimal I/O performance. This optimization isn't available with all instance types. Additional usage charges apply when using an EBS Optimized instance.</p>
-    pub fn set_ebs_optimized(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_ebs_optimized(mut self, input: ::std::option::Option<bool>) -> Self {
         self.ebs_optimized = input;
         self
     }
     /// <p>Specifies whether enhanced networking with ENA is enabled.</p>
     pub fn ena_support(mut self, input: bool) -> Self {
-        self.ena_support = Some(input);
+        self.ena_support = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether enhanced networking with ENA is enabled.</p>
-    pub fn set_ena_support(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_ena_support(mut self, input: ::std::option::Option<bool>) -> Self {
         self.ena_support = input;
         self
     }
     /// <p>The hypervisor type of the instance. The value <code>xen</code> is used for both Xen and Nitro hypervisors.</p>
     pub fn hypervisor(mut self, input: crate::types::HypervisorType) -> Self {
-        self.hypervisor = Some(input);
+        self.hypervisor = ::std::option::Option::Some(input);
         self
     }
     /// <p>The hypervisor type of the instance. The value <code>xen</code> is used for both Xen and Nitro hypervisors.</p>
     pub fn set_hypervisor(
         mut self,
-        input: std::option::Option<crate::types::HypervisorType>,
+        input: ::std::option::Option<crate::types::HypervisorType>,
     ) -> Self {
         self.hypervisor = input;
         self
     }
     /// <p>The IAM instance profile associated with the instance, if applicable.</p>
     pub fn iam_instance_profile(mut self, input: crate::types::IamInstanceProfile) -> Self {
-        self.iam_instance_profile = Some(input);
+        self.iam_instance_profile = ::std::option::Option::Some(input);
         self
     }
     /// <p>The IAM instance profile associated with the instance, if applicable.</p>
     pub fn set_iam_instance_profile(
         mut self,
-        input: std::option::Option<crate::types::IamInstanceProfile>,
+        input: ::std::option::Option<crate::types::IamInstanceProfile>,
     ) -> Self {
         self.iam_instance_profile = input;
         self
     }
     /// <p>Indicates whether this is a Spot Instance or a Scheduled Instance.</p>
     pub fn instance_lifecycle(mut self, input: crate::types::InstanceLifecycleType) -> Self {
-        self.instance_lifecycle = Some(input);
+        self.instance_lifecycle = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether this is a Spot Instance or a Scheduled Instance.</p>
     pub fn set_instance_lifecycle(
         mut self,
-        input: std::option::Option<crate::types::InstanceLifecycleType>,
+        input: ::std::option::Option<crate::types::InstanceLifecycleType>,
     ) -> Self {
         self.instance_lifecycle = input;
         self
@@ -859,13 +894,13 @@ impl InstanceBuilder {
     pub fn elastic_gpu_associations(mut self, input: crate::types::ElasticGpuAssociation) -> Self {
         let mut v = self.elastic_gpu_associations.unwrap_or_default();
         v.push(input);
-        self.elastic_gpu_associations = Some(v);
+        self.elastic_gpu_associations = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Elastic GPU associated with the instance.</p>
     pub fn set_elastic_gpu_associations(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ElasticGpuAssociation>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ElasticGpuAssociation>>,
     ) -> Self {
         self.elastic_gpu_associations = input;
         self
@@ -883,14 +918,14 @@ impl InstanceBuilder {
             .elastic_inference_accelerator_associations
             .unwrap_or_default();
         v.push(input);
-        self.elastic_inference_accelerator_associations = Some(v);
+        self.elastic_inference_accelerator_associations = ::std::option::Option::Some(v);
         self
     }
     /// <p>The elastic inference accelerator associated with the instance.</p>
     pub fn set_elastic_inference_accelerator_associations(
         mut self,
-        input: std::option::Option<
-            std::vec::Vec<crate::types::ElasticInferenceAcceleratorAssociation>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::ElasticInferenceAcceleratorAssociation>,
         >,
     ) -> Self {
         self.elastic_inference_accelerator_associations = input;
@@ -904,46 +939,52 @@ impl InstanceBuilder {
     pub fn network_interfaces(mut self, input: crate::types::InstanceNetworkInterface) -> Self {
         let mut v = self.network_interfaces.unwrap_or_default();
         v.push(input);
-        self.network_interfaces = Some(v);
+        self.network_interfaces = ::std::option::Option::Some(v);
         self
     }
     /// <p>The network interfaces for the instance.</p>
     pub fn set_network_interfaces(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::InstanceNetworkInterface>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceNetworkInterface>>,
     ) -> Self {
         self.network_interfaces = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
-    pub fn outpost_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.outpost_arn = Some(input.into());
+    pub fn outpost_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.outpost_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
-    pub fn set_outpost_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_outpost_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.outpost_arn = input;
         self
     }
     /// <p>The device name of the root device volume (for example, <code>/dev/sda1</code>).</p>
-    pub fn root_device_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.root_device_name = Some(input.into());
+    pub fn root_device_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.root_device_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The device name of the root device volume (for example, <code>/dev/sda1</code>).</p>
-    pub fn set_root_device_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_root_device_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.root_device_name = input;
         self
     }
     /// <p>The root device type used by the AMI. The AMI can use an EBS volume or an instance store volume.</p>
     pub fn root_device_type(mut self, input: crate::types::DeviceType) -> Self {
-        self.root_device_type = Some(input);
+        self.root_device_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The root device type used by the AMI. The AMI can use an EBS volume or an instance store volume.</p>
     pub fn set_root_device_type(
         mut self,
-        input: std::option::Option<crate::types::DeviceType>,
+        input: ::std::option::Option<crate::types::DeviceType>,
     ) -> Self {
         self.root_device_type = input;
         self
@@ -956,62 +997,68 @@ impl InstanceBuilder {
     pub fn security_groups(mut self, input: crate::types::GroupIdentifier) -> Self {
         let mut v = self.security_groups.unwrap_or_default();
         v.push(input);
-        self.security_groups = Some(v);
+        self.security_groups = ::std::option::Option::Some(v);
         self
     }
     /// <p>The security groups for the instance.</p>
     pub fn set_security_groups(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::GroupIdentifier>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::GroupIdentifier>>,
     ) -> Self {
         self.security_groups = input;
         self
     }
     /// <p>Indicates whether source/destination checking is enabled.</p>
     pub fn source_dest_check(mut self, input: bool) -> Self {
-        self.source_dest_check = Some(input);
+        self.source_dest_check = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether source/destination checking is enabled.</p>
-    pub fn set_source_dest_check(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_source_dest_check(mut self, input: ::std::option::Option<bool>) -> Self {
         self.source_dest_check = input;
         self
     }
     /// <p>If the request is a Spot Instance request, the ID of the request.</p>
-    pub fn spot_instance_request_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.spot_instance_request_id = Some(input.into());
+    pub fn spot_instance_request_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.spot_instance_request_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the request is a Spot Instance request, the ID of the request.</p>
     pub fn set_spot_instance_request_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.spot_instance_request_id = input;
         self
     }
     /// <p>Specifies whether enhanced networking with the Intel 82599 Virtual Function interface is enabled.</p>
-    pub fn sriov_net_support(mut self, input: impl Into<std::string::String>) -> Self {
-        self.sriov_net_support = Some(input.into());
+    pub fn sriov_net_support(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.sriov_net_support = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies whether enhanced networking with the Intel 82599 Virtual Function interface is enabled.</p>
     pub fn set_sriov_net_support(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.sriov_net_support = input;
         self
     }
     /// <p>The reason for the most recent state transition.</p>
     pub fn state_reason(mut self, input: crate::types::StateReason) -> Self {
-        self.state_reason = Some(input);
+        self.state_reason = ::std::option::Option::Some(input);
         self
     }
     /// <p>The reason for the most recent state transition.</p>
     pub fn set_state_reason(
         mut self,
-        input: std::option::Option<crate::types::StateReason>,
+        input: ::std::option::Option<crate::types::StateReason>,
     ) -> Self {
         self.state_reason = input;
         self
@@ -1024,49 +1071,55 @@ impl InstanceBuilder {
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
-        self.tags = Some(v);
+        self.tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>Any tags assigned to the instance.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tags = input;
         self
     }
     /// <p>The virtualization type of the instance.</p>
     pub fn virtualization_type(mut self, input: crate::types::VirtualizationType) -> Self {
-        self.virtualization_type = Some(input);
+        self.virtualization_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The virtualization type of the instance.</p>
     pub fn set_virtualization_type(
         mut self,
-        input: std::option::Option<crate::types::VirtualizationType>,
+        input: ::std::option::Option<crate::types::VirtualizationType>,
     ) -> Self {
         self.virtualization_type = input;
         self
     }
     /// <p>The CPU options for the instance.</p>
     pub fn cpu_options(mut self, input: crate::types::CpuOptions) -> Self {
-        self.cpu_options = Some(input);
+        self.cpu_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The CPU options for the instance.</p>
-    pub fn set_cpu_options(mut self, input: std::option::Option<crate::types::CpuOptions>) -> Self {
+    pub fn set_cpu_options(
+        mut self,
+        input: ::std::option::Option<crate::types::CpuOptions>,
+    ) -> Self {
         self.cpu_options = input;
         self
     }
     /// <p>The ID of the Capacity Reservation.</p>
-    pub fn capacity_reservation_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.capacity_reservation_id = Some(input.into());
+    pub fn capacity_reservation_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.capacity_reservation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Capacity Reservation.</p>
     pub fn set_capacity_reservation_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.capacity_reservation_id = input;
         self
@@ -1076,26 +1129,26 @@ impl InstanceBuilder {
         mut self,
         input: crate::types::CapacityReservationSpecificationResponse,
     ) -> Self {
-        self.capacity_reservation_specification = Some(input);
+        self.capacity_reservation_specification = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the Capacity Reservation targeting option.</p>
     pub fn set_capacity_reservation_specification(
         mut self,
-        input: std::option::Option<crate::types::CapacityReservationSpecificationResponse>,
+        input: ::std::option::Option<crate::types::CapacityReservationSpecificationResponse>,
     ) -> Self {
         self.capacity_reservation_specification = input;
         self
     }
     /// <p>Indicates whether the instance is enabled for hibernation.</p>
     pub fn hibernation_options(mut self, input: crate::types::HibernationOptions) -> Self {
-        self.hibernation_options = Some(input);
+        self.hibernation_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether the instance is enabled for hibernation.</p>
     pub fn set_hibernation_options(
         mut self,
-        input: std::option::Option<crate::types::HibernationOptions>,
+        input: ::std::option::Option<crate::types::HibernationOptions>,
     ) -> Self {
         self.hibernation_options = input;
         self
@@ -1108,13 +1161,13 @@ impl InstanceBuilder {
     pub fn licenses(mut self, input: crate::types::LicenseConfiguration) -> Self {
         let mut v = self.licenses.unwrap_or_default();
         v.push(input);
-        self.licenses = Some(v);
+        self.licenses = ::std::option::Option::Some(v);
         self
     }
     /// <p>The license configurations for the instance.</p>
     pub fn set_licenses(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::LicenseConfiguration>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::LicenseConfiguration>>,
     ) -> Self {
         self.licenses = input;
         self
@@ -1124,26 +1177,26 @@ impl InstanceBuilder {
         mut self,
         input: crate::types::InstanceMetadataOptionsResponse,
     ) -> Self {
-        self.metadata_options = Some(input);
+        self.metadata_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The metadata options for the instance.</p>
     pub fn set_metadata_options(
         mut self,
-        input: std::option::Option<crate::types::InstanceMetadataOptionsResponse>,
+        input: ::std::option::Option<crate::types::InstanceMetadataOptionsResponse>,
     ) -> Self {
         self.metadata_options = input;
         self
     }
     /// <p>Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves.</p>
     pub fn enclave_options(mut self, input: crate::types::EnclaveOptions) -> Self {
-        self.enclave_options = Some(input);
+        self.enclave_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves.</p>
     pub fn set_enclave_options(
         mut self,
-        input: std::option::Option<crate::types::EnclaveOptions>,
+        input: ::std::option::Option<crate::types::EnclaveOptions>,
     ) -> Self {
         self.enclave_options = input;
         self
@@ -1153,7 +1206,7 @@ impl InstanceBuilder {
     /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn boot_mode(mut self, input: crate::types::BootModeValues) -> Self {
-        self.boot_mode = Some(input);
+        self.boot_mode = ::std::option::Option::Some(input);
         self
     }
     /// <p>The boot mode that was specified by the AMI. If the value is <code>uefi-preferred</code>, the AMI supports both UEFI and Legacy BIOS. The <code>currentInstanceBootMode</code> parameter is the boot mode that is used to boot the instance at launch or start.</p> <note>
@@ -1162,40 +1215,52 @@ impl InstanceBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn set_boot_mode(
         mut self,
-        input: std::option::Option<crate::types::BootModeValues>,
+        input: ::std::option::Option<crate::types::BootModeValues>,
     ) -> Self {
         self.boot_mode = input;
         self
     }
     /// <p>The platform details value for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info-fields.html">AMI billing information fields</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn platform_details(mut self, input: impl Into<std::string::String>) -> Self {
-        self.platform_details = Some(input.into());
+    pub fn platform_details(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.platform_details = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The platform details value for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info-fields.html">AMI billing information fields</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn set_platform_details(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_platform_details(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.platform_details = input;
         self
     }
     /// <p>The usage operation value for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info-fields.html">AMI billing information fields</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn usage_operation(mut self, input: impl Into<std::string::String>) -> Self {
-        self.usage_operation = Some(input.into());
+    pub fn usage_operation(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.usage_operation = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The usage operation value for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info-fields.html">AMI billing information fields</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn set_usage_operation(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_usage_operation(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.usage_operation = input;
         self
     }
     /// <p>The time that the usage operation was last updated.</p>
-    pub fn usage_operation_update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.usage_operation_update_time = Some(input);
+    pub fn usage_operation_update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.usage_operation_update_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time that the usage operation was last updated.</p>
     pub fn set_usage_operation_update_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.usage_operation_update_time = input;
         self
@@ -1205,46 +1270,46 @@ impl InstanceBuilder {
         mut self,
         input: crate::types::PrivateDnsNameOptionsResponse,
     ) -> Self {
-        self.private_dns_name_options = Some(input);
+        self.private_dns_name_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The options for the instance hostname.</p>
     pub fn set_private_dns_name_options(
         mut self,
-        input: std::option::Option<crate::types::PrivateDnsNameOptionsResponse>,
+        input: ::std::option::Option<crate::types::PrivateDnsNameOptionsResponse>,
     ) -> Self {
         self.private_dns_name_options = input;
         self
     }
     /// <p>The IPv6 address assigned to the instance.</p>
-    pub fn ipv6_address(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ipv6_address = Some(input.into());
+    pub fn ipv6_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ipv6_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IPv6 address assigned to the instance.</p>
-    pub fn set_ipv6_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ipv6_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ipv6_address = input;
         self
     }
     /// <p>If the instance is configured for NitroTPM support, the value is <code>v2.0</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn tpm_support(mut self, input: impl Into<std::string::String>) -> Self {
-        self.tpm_support = Some(input.into());
+    pub fn tpm_support(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.tpm_support = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the instance is configured for NitroTPM support, the value is <code>v2.0</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a> in the <i>Amazon EC2 User Guide</i>.</p>
-    pub fn set_tpm_support(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_tpm_support(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tpm_support = input;
         self
     }
     /// <p>Provides information on the recovery and maintenance options of your instance.</p>
     pub fn maintenance_options(mut self, input: crate::types::InstanceMaintenanceOptions) -> Self {
-        self.maintenance_options = Some(input);
+        self.maintenance_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides information on the recovery and maintenance options of your instance.</p>
     pub fn set_maintenance_options(
         mut self,
-        input: std::option::Option<crate::types::InstanceMaintenanceOptions>,
+        input: ::std::option::Option<crate::types::InstanceMaintenanceOptions>,
     ) -> Self {
         self.maintenance_options = input;
         self
@@ -1254,13 +1319,13 @@ impl InstanceBuilder {
         mut self,
         input: crate::types::InstanceBootModeValues,
     ) -> Self {
-        self.current_instance_boot_mode = Some(input);
+        self.current_instance_boot_mode = ::std::option::Option::Some(input);
         self
     }
     /// <p>The boot mode that is used to boot the instance at launch or start. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
     pub fn set_current_instance_boot_mode(
         mut self,
-        input: std::option::Option<crate::types::InstanceBootModeValues>,
+        input: ::std::option::Option<crate::types::InstanceBootModeValues>,
     ) -> Self {
         self.current_instance_boot_mode = input;
         self

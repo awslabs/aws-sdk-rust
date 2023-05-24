@@ -2,29 +2,29 @@
 
 /// <p>Summary information for users or groups in your IAM Identity Center identity source with granted access to your Amazon Kendra experience. You can create an Amazon Kendra experience such as a search application. For more information on creating a search application experience, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building a search experience with no code</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExperienceEntitiesSummary {
     /// <p>The identifier of a user or group in your IAM Identity Center identity source. For example, a user ID could be an email.</p>
     #[doc(hidden)]
-    pub entity_id: std::option::Option<std::string::String>,
+    pub entity_id: ::std::option::Option<::std::string::String>,
     /// <p>Shows the type as <code>User</code> or <code>Group</code>.</p>
     #[doc(hidden)]
-    pub entity_type: std::option::Option<crate::types::EntityType>,
+    pub entity_type: ::std::option::Option<crate::types::EntityType>,
     /// <p>Information about the user entity.</p>
     #[doc(hidden)]
-    pub display_data: std::option::Option<crate::types::EntityDisplayData>,
+    pub display_data: ::std::option::Option<crate::types::EntityDisplayData>,
 }
 impl ExperienceEntitiesSummary {
     /// <p>The identifier of a user or group in your IAM Identity Center identity source. For example, a user ID could be an email.</p>
-    pub fn entity_id(&self) -> std::option::Option<&str> {
+    pub fn entity_id(&self) -> ::std::option::Option<&str> {
         self.entity_id.as_deref()
     }
     /// <p>Shows the type as <code>User</code> or <code>Group</code>.</p>
-    pub fn entity_type(&self) -> std::option::Option<&crate::types::EntityType> {
+    pub fn entity_type(&self) -> ::std::option::Option<&crate::types::EntityType> {
         self.entity_type.as_ref()
     }
     /// <p>Information about the user entity.</p>
-    pub fn display_data(&self) -> std::option::Option<&crate::types::EntityDisplayData> {
+    pub fn display_data(&self) -> ::std::option::Option<&crate::types::EntityDisplayData> {
         self.display_data.as_ref()
     }
 }
@@ -37,42 +37,47 @@ impl ExperienceEntitiesSummary {
 
 /// A builder for [`ExperienceEntitiesSummary`](crate::types::ExperienceEntitiesSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ExperienceEntitiesSummaryBuilder {
-    pub(crate) entity_id: std::option::Option<std::string::String>,
-    pub(crate) entity_type: std::option::Option<crate::types::EntityType>,
-    pub(crate) display_data: std::option::Option<crate::types::EntityDisplayData>,
+    pub(crate) entity_id: ::std::option::Option<::std::string::String>,
+    pub(crate) entity_type: ::std::option::Option<crate::types::EntityType>,
+    pub(crate) display_data: ::std::option::Option<crate::types::EntityDisplayData>,
 }
 impl ExperienceEntitiesSummaryBuilder {
     /// <p>The identifier of a user or group in your IAM Identity Center identity source. For example, a user ID could be an email.</p>
-    pub fn entity_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.entity_id = Some(input.into());
+    pub fn entity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.entity_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of a user or group in your IAM Identity Center identity source. For example, a user ID could be an email.</p>
-    pub fn set_entity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_entity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.entity_id = input;
         self
     }
     /// <p>Shows the type as <code>User</code> or <code>Group</code>.</p>
     pub fn entity_type(mut self, input: crate::types::EntityType) -> Self {
-        self.entity_type = Some(input);
+        self.entity_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Shows the type as <code>User</code> or <code>Group</code>.</p>
-    pub fn set_entity_type(mut self, input: std::option::Option<crate::types::EntityType>) -> Self {
+    pub fn set_entity_type(
+        mut self,
+        input: ::std::option::Option<crate::types::EntityType>,
+    ) -> Self {
         self.entity_type = input;
         self
     }
     /// <p>Information about the user entity.</p>
     pub fn display_data(mut self, input: crate::types::EntityDisplayData) -> Self {
-        self.display_data = Some(input);
+        self.display_data = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the user entity.</p>
     pub fn set_display_data(
         mut self,
-        input: std::option::Option<crate::types::EntityDisplayData>,
+        input: ::std::option::Option<crate::types::EntityDisplayData>,
     ) -> Self {
         self.display_data = input;
         self

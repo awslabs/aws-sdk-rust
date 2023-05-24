@@ -2,11 +2,11 @@
 
 /// <p>Provides the details of the <code>DecisionTaskCompleted</code> event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DecisionTaskCompletedEventAttributes {
     /// <p>User defined context for the workflow execution.</p>
     #[doc(hidden)]
-    pub execution_context: std::option::Option<std::string::String>,
+    pub execution_context: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the <code>DecisionTaskScheduled</code> event that was recorded when this decision task was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     #[doc(hidden)]
     pub scheduled_event_id: i64,
@@ -16,7 +16,7 @@ pub struct DecisionTaskCompletedEventAttributes {
 }
 impl DecisionTaskCompletedEventAttributes {
     /// <p>User defined context for the workflow execution.</p>
-    pub fn execution_context(&self) -> std::option::Option<&str> {
+    pub fn execution_context(&self) -> ::std::option::Option<&str> {
         self.execution_context.as_deref()
     }
     /// <p>The ID of the <code>DecisionTaskScheduled</code> event that was recorded when this decision task was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
@@ -37,43 +37,48 @@ impl DecisionTaskCompletedEventAttributes {
 
 /// A builder for [`DecisionTaskCompletedEventAttributes`](crate::types::DecisionTaskCompletedEventAttributes).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DecisionTaskCompletedEventAttributesBuilder {
-    pub(crate) execution_context: std::option::Option<std::string::String>,
-    pub(crate) scheduled_event_id: std::option::Option<i64>,
-    pub(crate) started_event_id: std::option::Option<i64>,
+    pub(crate) execution_context: ::std::option::Option<::std::string::String>,
+    pub(crate) scheduled_event_id: ::std::option::Option<i64>,
+    pub(crate) started_event_id: ::std::option::Option<i64>,
 }
 impl DecisionTaskCompletedEventAttributesBuilder {
     /// <p>User defined context for the workflow execution.</p>
-    pub fn execution_context(mut self, input: impl Into<std::string::String>) -> Self {
-        self.execution_context = Some(input.into());
+    pub fn execution_context(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.execution_context = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>User defined context for the workflow execution.</p>
     pub fn set_execution_context(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.execution_context = input;
         self
     }
     /// <p>The ID of the <code>DecisionTaskScheduled</code> event that was recorded when this decision task was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn scheduled_event_id(mut self, input: i64) -> Self {
-        self.scheduled_event_id = Some(input);
+        self.scheduled_event_id = ::std::option::Option::Some(input);
         self
     }
     /// <p>The ID of the <code>DecisionTaskScheduled</code> event that was recorded when this decision task was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
-    pub fn set_scheduled_event_id(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_scheduled_event_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.scheduled_event_id = input;
         self
     }
     /// <p>The ID of the <code>DecisionTaskStarted</code> event recorded when this decision task was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn started_event_id(mut self, input: i64) -> Self {
-        self.started_event_id = Some(input);
+        self.started_event_id = ::std::option::Option::Some(input);
         self
     }
     /// <p>The ID of the <code>DecisionTaskStarted</code> event recorded when this decision task was started. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
-    pub fn set_started_event_id(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_started_event_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.started_event_id = input;
         self
     }

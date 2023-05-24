@@ -37,13 +37,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum SecurityConfigType {
     /// saml provider
@@ -51,7 +51,7 @@ pub enum SecurityConfigType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for SecurityConfigType {
+impl ::std::convert::From<&str> for SecurityConfigType {
     fn from(s: &str) -> Self {
         match s {
             "saml" => SecurityConfigType::Saml,
@@ -61,11 +61,11 @@ impl std::convert::From<&str> for SecurityConfigType {
         }
     }
 }
-impl std::str::FromStr for SecurityConfigType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for SecurityConfigType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SecurityConfigType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(SecurityConfigType::from(s))
     }
 }
 impl SecurityConfigType {
@@ -81,7 +81,7 @@ impl SecurityConfigType {
         &["saml"]
     }
 }
-impl AsRef<str> for SecurityConfigType {
+impl ::std::convert::AsRef<str> for SecurityConfigType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

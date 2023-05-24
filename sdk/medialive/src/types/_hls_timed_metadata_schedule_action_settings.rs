@@ -2,15 +2,15 @@
 
 /// Settings for the action to emit HLS metadata
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HlsTimedMetadataScheduleActionSettings {
     /// Base64 string formatted according to the ID3 specification: http://id3.org/id3v2.4.0-structure
     #[doc(hidden)]
-    pub id3: std::option::Option<std::string::String>,
+    pub id3: ::std::option::Option<::std::string::String>,
 }
 impl HlsTimedMetadataScheduleActionSettings {
     /// Base64 string formatted according to the ID3 specification: http://id3.org/id3v2.4.0-structure
-    pub fn id3(&self) -> std::option::Option<&str> {
+    pub fn id3(&self) -> ::std::option::Option<&str> {
         self.id3.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl HlsTimedMetadataScheduleActionSettings {
 
 /// A builder for [`HlsTimedMetadataScheduleActionSettings`](crate::types::HlsTimedMetadataScheduleActionSettings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct HlsTimedMetadataScheduleActionSettingsBuilder {
-    pub(crate) id3: std::option::Option<std::string::String>,
+    pub(crate) id3: ::std::option::Option<::std::string::String>,
 }
 impl HlsTimedMetadataScheduleActionSettingsBuilder {
     /// Base64 string formatted according to the ID3 specification: http://id3.org/id3v2.4.0-structure
-    pub fn id3(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id3 = Some(input.into());
+    pub fn id3(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id3 = ::std::option::Option::Some(input.into());
         self
     }
     /// Base64 string formatted according to the ID3 specification: http://id3.org/id3v2.4.0-structure
-    pub fn set_id3(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id3(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id3 = input;
         self
     }

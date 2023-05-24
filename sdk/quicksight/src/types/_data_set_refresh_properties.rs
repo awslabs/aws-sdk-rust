@@ -2,17 +2,17 @@
 
 /// <p>The refresh properties of a dataset.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataSetRefreshProperties {
     /// <p>The refresh configuration for a dataset.</p>
     #[doc(hidden)]
-    pub refresh_configuration: std::option::Option<crate::types::RefreshConfiguration>,
+    pub refresh_configuration: ::std::option::Option<crate::types::RefreshConfiguration>,
 }
 impl DataSetRefreshProperties {
     /// <p>The refresh configuration for a dataset.</p>
     pub fn refresh_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::RefreshConfiguration> {
+    ) -> ::std::option::Option<&crate::types::RefreshConfiguration> {
         self.refresh_configuration.as_ref()
     }
 }
@@ -25,20 +25,22 @@ impl DataSetRefreshProperties {
 
 /// A builder for [`DataSetRefreshProperties`](crate::types::DataSetRefreshProperties).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DataSetRefreshPropertiesBuilder {
-    pub(crate) refresh_configuration: std::option::Option<crate::types::RefreshConfiguration>,
+    pub(crate) refresh_configuration: ::std::option::Option<crate::types::RefreshConfiguration>,
 }
 impl DataSetRefreshPropertiesBuilder {
     /// <p>The refresh configuration for a dataset.</p>
     pub fn refresh_configuration(mut self, input: crate::types::RefreshConfiguration) -> Self {
-        self.refresh_configuration = Some(input);
+        self.refresh_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The refresh configuration for a dataset.</p>
     pub fn set_refresh_configuration(
         mut self,
-        input: std::option::Option<crate::types::RefreshConfiguration>,
+        input: ::std::option::Option<crate::types::RefreshConfiguration>,
     ) -> Self {
         self.refresh_configuration = input;
         self

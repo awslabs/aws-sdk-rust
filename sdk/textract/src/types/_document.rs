@@ -7,24 +7,24 @@
 /// <p>If you use the AWS CLI to call Amazon Textract operations, passing image bytes using the Bytes property isn't supported. You must first upload the document to an Amazon S3 bucket, and then call the operation using the S3Object property.</p>
 /// <p>For Amazon Textract to process an S3 object, the user must have permission to access the S3 object. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Document {
     /// <p>A blob of base64-encoded document bytes. The maximum size of a document that's provided in a blob of bytes is 5 MB. The document bytes must be in PNG or JPEG format.</p>
     /// <p>If you're using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. </p>
     #[doc(hidden)]
-    pub bytes: std::option::Option<aws_smithy_types::Blob>,
+    pub bytes: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>Identifies an S3 object as the document source. The maximum size of a document that's stored in an S3 bucket is 5 MB.</p>
     #[doc(hidden)]
-    pub s3_object: std::option::Option<crate::types::S3Object>,
+    pub s3_object: ::std::option::Option<crate::types::S3Object>,
 }
 impl Document {
     /// <p>A blob of base64-encoded document bytes. The maximum size of a document that's provided in a blob of bytes is 5 MB. The document bytes must be in PNG or JPEG format.</p>
     /// <p>If you're using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. </p>
-    pub fn bytes(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn bytes(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
         self.bytes.as_ref()
     }
     /// <p>Identifies an S3 object as the document source. The maximum size of a document that's stored in an S3 bucket is 5 MB.</p>
-    pub fn s3_object(&self) -> std::option::Option<&crate::types::S3Object> {
+    pub fn s3_object(&self) -> ::std::option::Option<&crate::types::S3Object> {
         self.s3_object.as_ref()
     }
 }
@@ -37,31 +37,33 @@ impl Document {
 
 /// A builder for [`Document`](crate::types::Document).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DocumentBuilder {
-    pub(crate) bytes: std::option::Option<aws_smithy_types::Blob>,
-    pub(crate) s3_object: std::option::Option<crate::types::S3Object>,
+    pub(crate) bytes: ::std::option::Option<::aws_smithy_types::Blob>,
+    pub(crate) s3_object: ::std::option::Option<crate::types::S3Object>,
 }
 impl DocumentBuilder {
     /// <p>A blob of base64-encoded document bytes. The maximum size of a document that's provided in a blob of bytes is 5 MB. The document bytes must be in PNG or JPEG format.</p>
     /// <p>If you're using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. </p>
-    pub fn bytes(mut self, input: aws_smithy_types::Blob) -> Self {
-        self.bytes = Some(input);
+    pub fn bytes(mut self, input: ::aws_smithy_types::Blob) -> Self {
+        self.bytes = ::std::option::Option::Some(input);
         self
     }
     /// <p>A blob of base64-encoded document bytes. The maximum size of a document that's provided in a blob of bytes is 5 MB. The document bytes must be in PNG or JPEG format.</p>
     /// <p>If you're using an AWS SDK to call Amazon Textract, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. </p>
-    pub fn set_bytes(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
+    pub fn set_bytes(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.bytes = input;
         self
     }
     /// <p>Identifies an S3 object as the document source. The maximum size of a document that's stored in an S3 bucket is 5 MB.</p>
     pub fn s3_object(mut self, input: crate::types::S3Object) -> Self {
-        self.s3_object = Some(input);
+        self.s3_object = ::std::option::Option::Some(input);
         self
     }
     /// <p>Identifies an S3 object as the document source. The maximum size of a document that's stored in an S3 bucket is 5 MB.</p>
-    pub fn set_s3_object(mut self, input: std::option::Option<crate::types::S3Object>) -> Self {
+    pub fn set_s3_object(mut self, input: ::std::option::Option<crate::types::S3Object>) -> Self {
         self.s3_object = input;
         self
     }

@@ -2,82 +2,82 @@
 
 /// <p>The information that DataSync Discovery collects about an on-premises storage system cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetAppOntapCluster {
     /// <p>The number of CIFS shares in the cluster.</p>
     #[doc(hidden)]
-    pub cifs_share_count: std::option::Option<i64>,
+    pub cifs_share_count: ::std::option::Option<i64>,
     /// <p>The number of NFS volumes in the cluster.</p>
     #[doc(hidden)]
-    pub nfs_exported_volumes: std::option::Option<i64>,
+    pub nfs_exported_volumes: ::std::option::Option<i64>,
     /// <p>The universally unique identifier (UUID) of the cluster.</p>
     #[doc(hidden)]
-    pub resource_id: std::option::Option<std::string::String>,
+    pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the cluster.</p>
     #[doc(hidden)]
-    pub cluster_name: std::option::Option<std::string::String>,
+    pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The performance data that DataSync Discovery collects about the cluster.</p>
     #[doc(hidden)]
-    pub max_p95_performance: std::option::Option<crate::types::MaxP95Performance>,
+    pub max_p95_performance: ::std::option::Option<crate::types::MaxP95Performance>,
     /// <p>The total storage space that's available in the cluster.</p>
     #[doc(hidden)]
-    pub cluster_block_storage_size: std::option::Option<i64>,
+    pub cluster_block_storage_size: ::std::option::Option<i64>,
     /// <p>The storage space that's being used in a cluster.</p>
     #[doc(hidden)]
-    pub cluster_block_storage_used: std::option::Option<i64>,
+    pub cluster_block_storage_used: ::std::option::Option<i64>,
     /// <p>The storage space that's being used in the cluster without accounting for compression or deduplication.</p>
     #[doc(hidden)]
-    pub cluster_block_storage_logical_used: std::option::Option<i64>,
+    pub cluster_block_storage_logical_used: ::std::option::Option<i64>,
     /// <p>The Amazon Web Services storage services that DataSync Discovery recommends for the cluster. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-understand-recommendations.html">Recommendations provided by DataSync Discovery</a>.</p>
     #[doc(hidden)]
-    pub recommendations: std::option::Option<std::vec::Vec<crate::types::Recommendation>>,
+    pub recommendations: ::std::option::Option<::std::vec::Vec<crate::types::Recommendation>>,
     /// <p>Indicates whether DataSync Discovery recommendations for the cluster are ready to view, incomplete, or can't be determined.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-job-statuses.html#recommendation-statuses-table">Recommendation statuses</a>.</p>
     #[doc(hidden)]
-    pub recommendation_status: std::option::Option<crate::types::RecommendationStatus>,
+    pub recommendation_status: ::std::option::Option<crate::types::RecommendationStatus>,
 }
 impl NetAppOntapCluster {
     /// <p>The number of CIFS shares in the cluster.</p>
-    pub fn cifs_share_count(&self) -> std::option::Option<i64> {
+    pub fn cifs_share_count(&self) -> ::std::option::Option<i64> {
         self.cifs_share_count
     }
     /// <p>The number of NFS volumes in the cluster.</p>
-    pub fn nfs_exported_volumes(&self) -> std::option::Option<i64> {
+    pub fn nfs_exported_volumes(&self) -> ::std::option::Option<i64> {
         self.nfs_exported_volumes
     }
     /// <p>The universally unique identifier (UUID) of the cluster.</p>
-    pub fn resource_id(&self) -> std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<&str> {
         self.resource_id.as_deref()
     }
     /// <p>The name of the cluster.</p>
-    pub fn cluster_name(&self) -> std::option::Option<&str> {
+    pub fn cluster_name(&self) -> ::std::option::Option<&str> {
         self.cluster_name.as_deref()
     }
     /// <p>The performance data that DataSync Discovery collects about the cluster.</p>
-    pub fn max_p95_performance(&self) -> std::option::Option<&crate::types::MaxP95Performance> {
+    pub fn max_p95_performance(&self) -> ::std::option::Option<&crate::types::MaxP95Performance> {
         self.max_p95_performance.as_ref()
     }
     /// <p>The total storage space that's available in the cluster.</p>
-    pub fn cluster_block_storage_size(&self) -> std::option::Option<i64> {
+    pub fn cluster_block_storage_size(&self) -> ::std::option::Option<i64> {
         self.cluster_block_storage_size
     }
     /// <p>The storage space that's being used in a cluster.</p>
-    pub fn cluster_block_storage_used(&self) -> std::option::Option<i64> {
+    pub fn cluster_block_storage_used(&self) -> ::std::option::Option<i64> {
         self.cluster_block_storage_used
     }
     /// <p>The storage space that's being used in the cluster without accounting for compression or deduplication.</p>
-    pub fn cluster_block_storage_logical_used(&self) -> std::option::Option<i64> {
+    pub fn cluster_block_storage_logical_used(&self) -> ::std::option::Option<i64> {
         self.cluster_block_storage_logical_used
     }
     /// <p>The Amazon Web Services storage services that DataSync Discovery recommends for the cluster. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-understand-recommendations.html">Recommendations provided by DataSync Discovery</a>.</p>
-    pub fn recommendations(&self) -> std::option::Option<&[crate::types::Recommendation]> {
+    pub fn recommendations(&self) -> ::std::option::Option<&[crate::types::Recommendation]> {
         self.recommendations.as_deref()
     }
     /// <p>Indicates whether DataSync Discovery recommendations for the cluster are ready to view, incomplete, or can't be determined.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-job-statuses.html#recommendation-statuses-table">Recommendation statuses</a>.</p>
     pub fn recommendation_status(
         &self,
-    ) -> std::option::Option<&crate::types::RecommendationStatus> {
+    ) -> ::std::option::Option<&crate::types::RecommendationStatus> {
         self.recommendation_status.as_ref()
     }
 }
@@ -90,102 +90,105 @@ impl NetAppOntapCluster {
 
 /// A builder for [`NetAppOntapCluster`](crate::types::NetAppOntapCluster).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NetAppOntapClusterBuilder {
-    pub(crate) cifs_share_count: std::option::Option<i64>,
-    pub(crate) nfs_exported_volumes: std::option::Option<i64>,
-    pub(crate) resource_id: std::option::Option<std::string::String>,
-    pub(crate) cluster_name: std::option::Option<std::string::String>,
-    pub(crate) max_p95_performance: std::option::Option<crate::types::MaxP95Performance>,
-    pub(crate) cluster_block_storage_size: std::option::Option<i64>,
-    pub(crate) cluster_block_storage_used: std::option::Option<i64>,
-    pub(crate) cluster_block_storage_logical_used: std::option::Option<i64>,
-    pub(crate) recommendations: std::option::Option<std::vec::Vec<crate::types::Recommendation>>,
-    pub(crate) recommendation_status: std::option::Option<crate::types::RecommendationStatus>,
+    pub(crate) cifs_share_count: ::std::option::Option<i64>,
+    pub(crate) nfs_exported_volumes: ::std::option::Option<i64>,
+    pub(crate) resource_id: ::std::option::Option<::std::string::String>,
+    pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
+    pub(crate) max_p95_performance: ::std::option::Option<crate::types::MaxP95Performance>,
+    pub(crate) cluster_block_storage_size: ::std::option::Option<i64>,
+    pub(crate) cluster_block_storage_used: ::std::option::Option<i64>,
+    pub(crate) cluster_block_storage_logical_used: ::std::option::Option<i64>,
+    pub(crate) recommendations:
+        ::std::option::Option<::std::vec::Vec<crate::types::Recommendation>>,
+    pub(crate) recommendation_status: ::std::option::Option<crate::types::RecommendationStatus>,
 }
 impl NetAppOntapClusterBuilder {
     /// <p>The number of CIFS shares in the cluster.</p>
     pub fn cifs_share_count(mut self, input: i64) -> Self {
-        self.cifs_share_count = Some(input);
+        self.cifs_share_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of CIFS shares in the cluster.</p>
-    pub fn set_cifs_share_count(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_cifs_share_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.cifs_share_count = input;
         self
     }
     /// <p>The number of NFS volumes in the cluster.</p>
     pub fn nfs_exported_volumes(mut self, input: i64) -> Self {
-        self.nfs_exported_volumes = Some(input);
+        self.nfs_exported_volumes = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of NFS volumes in the cluster.</p>
-    pub fn set_nfs_exported_volumes(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_nfs_exported_volumes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.nfs_exported_volumes = input;
         self
     }
     /// <p>The universally unique identifier (UUID) of the cluster.</p>
-    pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_id = Some(input.into());
+    pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The universally unique identifier (UUID) of the cluster.</p>
-    pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
     }
     /// <p>The name of the cluster.</p>
-    pub fn cluster_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cluster_name = Some(input.into());
+    pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cluster_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the cluster.</p>
-    pub fn set_cluster_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_name = input;
         self
     }
     /// <p>The performance data that DataSync Discovery collects about the cluster.</p>
     pub fn max_p95_performance(mut self, input: crate::types::MaxP95Performance) -> Self {
-        self.max_p95_performance = Some(input);
+        self.max_p95_performance = ::std::option::Option::Some(input);
         self
     }
     /// <p>The performance data that DataSync Discovery collects about the cluster.</p>
     pub fn set_max_p95_performance(
         mut self,
-        input: std::option::Option<crate::types::MaxP95Performance>,
+        input: ::std::option::Option<crate::types::MaxP95Performance>,
     ) -> Self {
         self.max_p95_performance = input;
         self
     }
     /// <p>The total storage space that's available in the cluster.</p>
     pub fn cluster_block_storage_size(mut self, input: i64) -> Self {
-        self.cluster_block_storage_size = Some(input);
+        self.cluster_block_storage_size = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total storage space that's available in the cluster.</p>
-    pub fn set_cluster_block_storage_size(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_cluster_block_storage_size(mut self, input: ::std::option::Option<i64>) -> Self {
         self.cluster_block_storage_size = input;
         self
     }
     /// <p>The storage space that's being used in a cluster.</p>
     pub fn cluster_block_storage_used(mut self, input: i64) -> Self {
-        self.cluster_block_storage_used = Some(input);
+        self.cluster_block_storage_used = ::std::option::Option::Some(input);
         self
     }
     /// <p>The storage space that's being used in a cluster.</p>
-    pub fn set_cluster_block_storage_used(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_cluster_block_storage_used(mut self, input: ::std::option::Option<i64>) -> Self {
         self.cluster_block_storage_used = input;
         self
     }
     /// <p>The storage space that's being used in the cluster without accounting for compression or deduplication.</p>
     pub fn cluster_block_storage_logical_used(mut self, input: i64) -> Self {
-        self.cluster_block_storage_logical_used = Some(input);
+        self.cluster_block_storage_logical_used = ::std::option::Option::Some(input);
         self
     }
     /// <p>The storage space that's being used in the cluster without accounting for compression or deduplication.</p>
     pub fn set_cluster_block_storage_logical_used(
         mut self,
-        input: std::option::Option<i64>,
+        input: ::std::option::Option<i64>,
     ) -> Self {
         self.cluster_block_storage_logical_used = input;
         self
@@ -198,13 +201,13 @@ impl NetAppOntapClusterBuilder {
     pub fn recommendations(mut self, input: crate::types::Recommendation) -> Self {
         let mut v = self.recommendations.unwrap_or_default();
         v.push(input);
-        self.recommendations = Some(v);
+        self.recommendations = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Amazon Web Services storage services that DataSync Discovery recommends for the cluster. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-understand-recommendations.html">Recommendations provided by DataSync Discovery</a>.</p>
     pub fn set_recommendations(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Recommendation>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Recommendation>>,
     ) -> Self {
         self.recommendations = input;
         self
@@ -212,14 +215,14 @@ impl NetAppOntapClusterBuilder {
     /// <p>Indicates whether DataSync Discovery recommendations for the cluster are ready to view, incomplete, or can't be determined.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-job-statuses.html#recommendation-statuses-table">Recommendation statuses</a>.</p>
     pub fn recommendation_status(mut self, input: crate::types::RecommendationStatus) -> Self {
-        self.recommendation_status = Some(input);
+        self.recommendation_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether DataSync Discovery recommendations for the cluster are ready to view, incomplete, or can't be determined.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-job-statuses.html#recommendation-statuses-table">Recommendation statuses</a>.</p>
     pub fn set_recommendation_status(
         mut self,
-        input: std::option::Option<crate::types::RecommendationStatus>,
+        input: ::std::option::Option<crate::types::RecommendationStatus>,
     ) -> Self {
         self.recommendation_status = input;
         self

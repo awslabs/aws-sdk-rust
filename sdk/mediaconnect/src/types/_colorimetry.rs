@@ -43,13 +43,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum Colorimetry {
     #[allow(missing_docs)] // documentation missing in model
@@ -69,7 +69,7 @@ pub enum Colorimetry {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for Colorimetry {
+impl ::std::convert::From<&str> for Colorimetry {
     fn from(s: &str) -> Self {
         match s {
             "BT2020" => Colorimetry::Bt2020,
@@ -83,11 +83,11 @@ impl std::convert::From<&str> for Colorimetry {
         }
     }
 }
-impl std::str::FromStr for Colorimetry {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for Colorimetry {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Colorimetry::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(Colorimetry::from(s))
     }
 }
 impl Colorimetry {
@@ -111,7 +111,7 @@ impl Colorimetry {
         ]
     }
 }
-impl AsRef<str> for Colorimetry {
+impl ::std::convert::AsRef<str> for Colorimetry {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

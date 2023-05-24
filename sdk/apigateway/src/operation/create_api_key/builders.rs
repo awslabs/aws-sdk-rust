@@ -6,56 +6,59 @@ pub use crate::operation::create_api_key::_create_api_key_input::CreateApiKeyInp
 /// Fluent builder constructing a request to `CreateApiKey`.
 ///
 /// <p>Create an ApiKey resource. </p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateApiKeyFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_api_key::builders::CreateApiKeyInputBuilder,
 }
 impl CreateApiKeyFluentBuilder {
     /// Creates a new `CreateApiKey`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_api_key::CreateApiKey,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_api_key::CreateApiKeyError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_api_key::CreateApiKeyError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_api_key::CreateApiKeyOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_api_key::CreateApiKeyError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_api_key::CreateApiKeyError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,29 +71,29 @@ impl CreateApiKeyFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_api_key::CreateApiKeyOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_api_key::CreateApiKeyError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_api_key::CreateApiKeyError>,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the ApiKey.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// <p>The name of the ApiKey.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
     /// <p>The description of the ApiKey.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>The description of the ApiKey.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
@@ -100,7 +103,7 @@ impl CreateApiKeyFluentBuilder {
         self
     }
     /// <p>Specifies whether the ApiKey can be used by callers.</p>
-    pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enabled(input);
         self
     }
@@ -110,17 +113,17 @@ impl CreateApiKeyFluentBuilder {
         self
     }
     /// <p>Specifies whether (<code>true</code>) or not (<code>false</code>) the key identifier is distinct from the created API key value. This parameter is deprecated and should not be used.</p>
-    pub fn set_generate_distinct_id(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_generate_distinct_id(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_generate_distinct_id(input);
         self
     }
     /// <p>Specifies a value of the API key.</p>
-    pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.value(input.into());
         self
     }
     /// <p>Specifies a value of the API key.</p>
-    pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_value(input);
         self
     }
@@ -136,18 +139,18 @@ impl CreateApiKeyFluentBuilder {
     /// <p>DEPRECATED FOR USAGE PLANS - Specifies stages associated with the API key.</p>
     pub fn set_stage_keys(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::StageKey>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::StageKey>>,
     ) -> Self {
         self.inner = self.inner.set_stage_keys(input);
         self
     }
     /// <p>An AWS Marketplace customer identifier , when integrating with the AWS SaaS Marketplace.</p>
-    pub fn customer_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn customer_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.customer_id(input.into());
         self
     }
     /// <p>An AWS Marketplace customer identifier , when integrating with the AWS SaaS Marketplace.</p>
-    pub fn set_customer_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_customer_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_customer_id(input);
         self
     }
@@ -158,8 +161,8 @@ impl CreateApiKeyFluentBuilder {
     /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
@@ -167,8 +170,8 @@ impl CreateApiKeyFluentBuilder {
     /// <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_tags(input);

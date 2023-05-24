@@ -43,13 +43,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum StorageClass {
     #[allow(missing_docs)] // documentation missing in model
@@ -69,7 +69,7 @@ pub enum StorageClass {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for StorageClass {
+impl ::std::convert::From<&str> for StorageClass {
     fn from(s: &str) -> Self {
         match s {
             "DEEP_ARCHIVE" => StorageClass::DeepArchive,
@@ -85,11 +85,11 @@ impl std::convert::From<&str> for StorageClass {
         }
     }
 }
-impl std::str::FromStr for StorageClass {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for StorageClass {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(StorageClass::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(StorageClass::from(s))
     }
 }
 impl StorageClass {
@@ -119,7 +119,7 @@ impl StorageClass {
         ]
     }
 }
-impl AsRef<str> for StorageClass {
+impl ::std::convert::AsRef<str> for StorageClass {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

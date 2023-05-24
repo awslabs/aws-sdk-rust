@@ -6,47 +6,50 @@ pub use crate::operation::list_bulk_deployment_detailed_reports::_list_bulk_depl
 /// Fluent builder constructing a request to `ListBulkDeploymentDetailedReports`.
 ///
 /// Gets a paginated list of the deployments that have been started in a bulk deployment operation, and their current deployment status.
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListBulkDeploymentDetailedReportsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::list_bulk_deployment_detailed_reports::builders::ListBulkDeploymentDetailedReportsInputBuilder,
 }
 impl ListBulkDeploymentDetailedReportsFluentBuilder {
     /// Creates a new `ListBulkDeploymentDetailedReports`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::list_bulk_deployment_detailed_reports::ListBulkDeploymentDetailedReports, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::list_bulk_deployment_detailed_reports::ListBulkDeploymentDetailedReportsError>
+                    pub async fn customize(self) -> ::std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::list_bulk_deployment_detailed_reports::ListBulkDeploymentDetailedReports, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                        ::aws_smithy_http::result::SdkError<crate::operation::list_bulk_deployment_detailed_reports::ListBulkDeploymentDetailedReportsError>
     >{
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::list_bulk_deployment_detailed_reports::ListBulkDeploymentDetailedReportsOutput, aws_smithy_http::result::SdkError<crate::operation::list_bulk_deployment_detailed_reports::ListBulkDeploymentDetailedReportsError>>
+                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_bulk_deployment_detailed_reports::ListBulkDeploymentDetailedReportsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_bulk_deployment_detailed_reports::ListBulkDeploymentDetailedReportsError>>
                      {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -57,40 +60,43 @@ impl ListBulkDeploymentDetailedReportsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> std::result::Result<crate::operation::list_bulk_deployment_detailed_reports::ListBulkDeploymentDetailedReportsOutput, aws_smithy_http::result::SdkError<crate::operation::list_bulk_deployment_detailed_reports::ListBulkDeploymentDetailedReportsError>>
+                        pub async fn send(self) -> ::std::result::Result<crate::operation::list_bulk_deployment_detailed_reports::ListBulkDeploymentDetailedReportsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_bulk_deployment_detailed_reports::ListBulkDeploymentDetailedReportsError>>
                          {
         self.send_middleware().await
     }
     /// The ID of the bulk deployment.
-    pub fn bulk_deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn bulk_deployment_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.bulk_deployment_id(input.into());
         self
     }
     /// The ID of the bulk deployment.
     pub fn set_bulk_deployment_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_bulk_deployment_id(input);
         self
     }
     /// The maximum number of results to be returned per request.
-    pub fn max_results(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn max_results(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.max_results(input.into());
         self
     }
     /// The maximum number of results to be returned per request.
-    pub fn set_max_results(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_max_results(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
     /// The token for the next set of results, or ''null'' if there are no additional results.
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
     /// The token for the next set of results, or ''null'' if there are no additional results.
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }

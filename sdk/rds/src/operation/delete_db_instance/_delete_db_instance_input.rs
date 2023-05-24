@@ -2,7 +2,7 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteDbInstanceInput {
     /// <p>The DB instance identifier for the DB instance to be deleted. This parameter isn't case-sensitive.</p>
     /// <p>Constraints:</p>
@@ -10,7 +10,7 @@ pub struct DeleteDbInstanceInput {
     /// <li> <p>Must match the name of an existing DB instance.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub db_instance_identifier: std::option::Option<std::string::String>,
+    pub db_instance_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A value that indicates whether to skip the creation of a final DB snapshot before deleting the instance. If you enable this parameter, RDS doesn't create a DB snapshot. If you don't enable this parameter, RDS creates a DB snapshot before the DB instance is deleted. By default, skip isn't enabled, and the DB snapshot is created.</p> <note>
     /// <p>If you don't enable this parameter, you must specify the <code>FinalDBSnapshotIdentifier</code> parameter.</p>
     /// </note>
@@ -31,10 +31,10 @@ pub struct DeleteDbInstanceInput {
     /// <li> <p>Can't be specified when deleting a read replica.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub final_db_snapshot_identifier: std::option::Option<std::string::String>,
+    pub final_db_snapshot_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A value that indicates whether to remove automated backups immediately after the DB instance is deleted. This parameter isn't case-sensitive. The default is to remove automated backups immediately after the DB instance is deleted.</p>
     #[doc(hidden)]
-    pub delete_automated_backups: std::option::Option<bool>,
+    pub delete_automated_backups: ::std::option::Option<bool>,
 }
 impl DeleteDbInstanceInput {
     /// <p>The DB instance identifier for the DB instance to be deleted. This parameter isn't case-sensitive.</p>
@@ -42,7 +42,7 @@ impl DeleteDbInstanceInput {
     /// <ul>
     /// <li> <p>Must match the name of an existing DB instance.</p> </li>
     /// </ul>
-    pub fn db_instance_identifier(&self) -> std::option::Option<&str> {
+    pub fn db_instance_identifier(&self) -> ::std::option::Option<&str> {
         self.db_instance_identifier.as_deref()
     }
     /// <p>A value that indicates whether to skip the creation of a final DB snapshot before deleting the instance. If you enable this parameter, RDS doesn't create a DB snapshot. If you don't enable this parameter, RDS creates a DB snapshot before the DB instance is deleted. By default, skip isn't enabled, and the DB snapshot is created.</p> <note>
@@ -65,11 +65,11 @@ impl DeleteDbInstanceInput {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// <li> <p>Can't be specified when deleting a read replica.</p> </li>
     /// </ul>
-    pub fn final_db_snapshot_identifier(&self) -> std::option::Option<&str> {
+    pub fn final_db_snapshot_identifier(&self) -> ::std::option::Option<&str> {
         self.final_db_snapshot_identifier.as_deref()
     }
     /// <p>A value that indicates whether to remove automated backups immediately after the DB instance is deleted. This parameter isn't case-sensitive. The default is to remove automated backups immediately after the DB instance is deleted.</p>
-    pub fn delete_automated_backups(&self) -> std::option::Option<bool> {
+    pub fn delete_automated_backups(&self) -> ::std::option::Option<bool> {
         self.delete_automated_backups
     }
 }
@@ -83,12 +83,14 @@ impl DeleteDbInstanceInput {
 
 /// A builder for [`DeleteDbInstanceInput`](crate::operation::delete_db_instance::DeleteDbInstanceInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteDbInstanceInputBuilder {
-    pub(crate) db_instance_identifier: std::option::Option<std::string::String>,
-    pub(crate) skip_final_snapshot: std::option::Option<bool>,
-    pub(crate) final_db_snapshot_identifier: std::option::Option<std::string::String>,
-    pub(crate) delete_automated_backups: std::option::Option<bool>,
+    pub(crate) db_instance_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) skip_final_snapshot: ::std::option::Option<bool>,
+    pub(crate) final_db_snapshot_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) delete_automated_backups: ::std::option::Option<bool>,
 }
 impl DeleteDbInstanceInputBuilder {
     /// <p>The DB instance identifier for the DB instance to be deleted. This parameter isn't case-sensitive.</p>
@@ -96,8 +98,11 @@ impl DeleteDbInstanceInputBuilder {
     /// <ul>
     /// <li> <p>Must match the name of an existing DB instance.</p> </li>
     /// </ul>
-    pub fn db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
-        self.db_instance_identifier = Some(input.into());
+    pub fn db_instance_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.db_instance_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The DB instance identifier for the DB instance to be deleted. This parameter isn't case-sensitive.</p>
@@ -107,7 +112,7 @@ impl DeleteDbInstanceInputBuilder {
     /// </ul>
     pub fn set_db_instance_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.db_instance_identifier = input;
         self
@@ -119,7 +124,7 @@ impl DeleteDbInstanceInputBuilder {
     /// <p>If you delete a read replica or an RDS Custom instance, you must enable this setting.</p>
     /// <p>This setting is required for RDS Custom.</p>
     pub fn skip_final_snapshot(mut self, input: bool) -> Self {
-        self.skip_final_snapshot = Some(input);
+        self.skip_final_snapshot = ::std::option::Option::Some(input);
         self
     }
     /// <p>A value that indicates whether to skip the creation of a final DB snapshot before deleting the instance. If you enable this parameter, RDS doesn't create a DB snapshot. If you don't enable this parameter, RDS creates a DB snapshot before the DB instance is deleted. By default, skip isn't enabled, and the DB snapshot is created.</p> <note>
@@ -128,7 +133,7 @@ impl DeleteDbInstanceInputBuilder {
     /// <p>When a DB instance is in a failure state and has a status of <code>failed</code>, <code>incompatible-restore</code>, or <code>incompatible-network</code>, RDS can delete the instance only if you enable this parameter.</p>
     /// <p>If you delete a read replica or an RDS Custom instance, you must enable this setting.</p>
     /// <p>This setting is required for RDS Custom.</p>
-    pub fn set_skip_final_snapshot(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_skip_final_snapshot(mut self, input: ::std::option::Option<bool>) -> Self {
         self.skip_final_snapshot = input;
         self
     }
@@ -143,8 +148,11 @@ impl DeleteDbInstanceInputBuilder {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// <li> <p>Can't be specified when deleting a read replica.</p> </li>
     /// </ul>
-    pub fn final_db_snapshot_identifier(mut self, input: impl Into<std::string::String>) -> Self {
-        self.final_db_snapshot_identifier = Some(input.into());
+    pub fn final_db_snapshot_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.final_db_snapshot_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>DBSnapshotIdentifier</code> of the new <code>DBSnapshot</code> created when the <code>SkipFinalSnapshot</code> parameter is disabled.</p> <note>
@@ -160,29 +168,29 @@ impl DeleteDbInstanceInputBuilder {
     /// </ul>
     pub fn set_final_db_snapshot_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.final_db_snapshot_identifier = input;
         self
     }
     /// <p>A value that indicates whether to remove automated backups immediately after the DB instance is deleted. This parameter isn't case-sensitive. The default is to remove automated backups immediately after the DB instance is deleted.</p>
     pub fn delete_automated_backups(mut self, input: bool) -> Self {
-        self.delete_automated_backups = Some(input);
+        self.delete_automated_backups = ::std::option::Option::Some(input);
         self
     }
     /// <p>A value that indicates whether to remove automated backups immediately after the DB instance is deleted. This parameter isn't case-sensitive. The default is to remove automated backups immediately after the DB instance is deleted.</p>
-    pub fn set_delete_automated_backups(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_delete_automated_backups(mut self, input: ::std::option::Option<bool>) -> Self {
         self.delete_automated_backups = input;
         self
     }
     /// Consumes the builder and constructs a [`DeleteDbInstanceInput`](crate::operation::delete_db_instance::DeleteDbInstanceInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::delete_db_instance::DeleteDbInstanceInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::delete_db_instance::DeleteDbInstanceInput {
                 db_instance_identifier: self.db_instance_identifier,
                 skip_final_snapshot: self.skip_final_snapshot.unwrap_or_default(),

@@ -2,24 +2,24 @@
 
 /// <p>Represents the input of, and adds tags to, an on-premises instance operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddTagsToOnPremisesInstancesInput {
     /// <p>The tag key-value pairs to add to the on-premises instances.</p>
     /// <p>Keys and values are both required. Keys cannot be null or empty strings. Value-only tags are not allowed.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The names of the on-premises instances to which to add tags.</p>
     #[doc(hidden)]
-    pub instance_names: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub instance_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AddTagsToOnPremisesInstancesInput {
     /// <p>The tag key-value pairs to add to the on-premises instances.</p>
     /// <p>Keys and values are both required. Keys cannot be null or empty strings. Value-only tags are not allowed.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The names of the on-premises instances to which to add tags.</p>
-    pub fn instance_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn instance_names(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.instance_names.as_deref()
     }
 }
@@ -32,10 +32,12 @@ impl AddTagsToOnPremisesInstancesInput {
 
 /// A builder for [`AddTagsToOnPremisesInstancesInput`](crate::operation::add_tags_to_on_premises_instances::AddTagsToOnPremisesInstancesInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AddTagsToOnPremisesInstancesInputBuilder {
-    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    pub(crate) instance_names: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) instance_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AddTagsToOnPremisesInstancesInputBuilder {
     /// Appends an item to `tags`.
@@ -47,14 +49,14 @@ impl AddTagsToOnPremisesInstancesInputBuilder {
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
-        self.tags = Some(v);
+        self.tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>The tag key-value pairs to add to the on-premises instances.</p>
     /// <p>Keys and values are both required. Keys cannot be null or empty strings. Value-only tags are not allowed.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tags = input;
         self
@@ -64,16 +66,19 @@ impl AddTagsToOnPremisesInstancesInputBuilder {
     /// To override the contents of this collection use [`set_instance_names`](Self::set_instance_names).
     ///
     /// <p>The names of the on-premises instances to which to add tags.</p>
-    pub fn instance_names(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn instance_names(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.instance_names.unwrap_or_default();
         v.push(input.into());
-        self.instance_names = Some(v);
+        self.instance_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>The names of the on-premises instances to which to add tags.</p>
     pub fn set_instance_names(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.instance_names = input;
         self
@@ -81,11 +86,11 @@ impl AddTagsToOnPremisesInstancesInputBuilder {
     /// Consumes the builder and constructs a [`AddTagsToOnPremisesInstancesInput`](crate::operation::add_tags_to_on_premises_instances::AddTagsToOnPremisesInstancesInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::add_tags_to_on_premises_instances::AddTagsToOnPremisesInstancesInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::add_tags_to_on_premises_instances::AddTagsToOnPremisesInstancesInput {
                 tags: self.tags
                 ,

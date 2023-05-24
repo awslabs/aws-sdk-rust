@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetDataQualityRuleset`](crate::operation::get_data_quality_ruleset::builders::GetDataQualityRulesetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::get_data_quality_ruleset::builders::GetDataQualityRulesetFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_data_quality_ruleset::builders::GetDataQualityRulesetFluentBuilder::set_name): <p>The name of the ruleset.</p>
+    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::get_data_quality_ruleset::builders::GetDataQualityRulesetFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_data_quality_ruleset::builders::GetDataQualityRulesetFluentBuilder::set_name): <p>The name of the ruleset.</p>
     /// - On success, responds with [`GetDataQualityRulesetOutput`](crate::operation::get_data_quality_ruleset::GetDataQualityRulesetOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::get_data_quality_ruleset::GetDataQualityRulesetOutput::name): <p>The name of the ruleset.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_data_quality_ruleset::GetDataQualityRulesetOutput::description): <p>A description of the ruleset.</p>

@@ -39,13 +39,13 @@
 /// Eac3 Surround Mode
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum Eac3SurroundMode {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum Eac3SurroundMode {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for Eac3SurroundMode {
+impl ::std::convert::From<&str> for Eac3SurroundMode {
     fn from(s: &str) -> Self {
         match s {
             "DISABLED" => Eac3SurroundMode::Disabled,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for Eac3SurroundMode {
         }
     }
 }
-impl std::str::FromStr for Eac3SurroundMode {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for Eac3SurroundMode {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Eac3SurroundMode::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(Eac3SurroundMode::from(s))
     }
 }
 impl Eac3SurroundMode {
@@ -91,7 +91,7 @@ impl Eac3SurroundMode {
         &["DISABLED", "ENABLED", "NOT_INDICATED"]
     }
 }
-impl AsRef<str> for Eac3SurroundMode {
+impl ::std::convert::AsRef<str> for Eac3SurroundMode {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

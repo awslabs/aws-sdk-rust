@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`RegenerateSecurityToken`](crate::operation::regenerate_security_token::builders::RegenerateSecurityTokenFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::operation::regenerate_security_token::builders::RegenerateSecurityTokenFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::regenerate_security_token::builders::RegenerateSecurityTokenFluentBuilder::set_account_id): <p>The Amazon Chime account ID.</p>
-    ///   - [`bot_id(impl Into<String>)`](crate::operation::regenerate_security_token::builders::RegenerateSecurityTokenFluentBuilder::bot_id) / [`set_bot_id(Option<String>)`](crate::operation::regenerate_security_token::builders::RegenerateSecurityTokenFluentBuilder::set_bot_id): <p>The bot ID.</p>
+    ///   - [`account_id(impl ::std::convert::Into<String>)`](crate::operation::regenerate_security_token::builders::RegenerateSecurityTokenFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::regenerate_security_token::builders::RegenerateSecurityTokenFluentBuilder::set_account_id): <p>The Amazon Chime account ID.</p>
+    ///   - [`bot_id(impl ::std::convert::Into<String>)`](crate::operation::regenerate_security_token::builders::RegenerateSecurityTokenFluentBuilder::bot_id) / [`set_bot_id(Option<String>)`](crate::operation::regenerate_security_token::builders::RegenerateSecurityTokenFluentBuilder::set_bot_id): <p>The bot ID.</p>
     /// - On success, responds with [`RegenerateSecurityTokenOutput`](crate::operation::regenerate_security_token::RegenerateSecurityTokenOutput) with field(s):
     ///   - [`bot(Option<Bot>)`](crate::operation::regenerate_security_token::RegenerateSecurityTokenOutput::bot): <p>A resource that allows Enterprise account administrators to configure an interface that receives events from Amazon Chime.</p>
     /// - On failure, responds with [`SdkError<RegenerateSecurityTokenError>`](crate::operation::regenerate_security_token::RegenerateSecurityTokenError)

@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum NsdOnboardingState {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum NsdOnboardingState {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for NsdOnboardingState {
+impl ::std::convert::From<&str> for NsdOnboardingState {
     fn from(s: &str) -> Self {
         match s {
             "CREATED" => NsdOnboardingState::Created,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for NsdOnboardingState {
         }
     }
 }
-impl std::str::FromStr for NsdOnboardingState {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for NsdOnboardingState {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(NsdOnboardingState::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(NsdOnboardingState::from(s))
     }
 }
 impl NsdOnboardingState {
@@ -91,7 +91,7 @@ impl NsdOnboardingState {
         &["CREATED", "ERROR", "ONBOARDED"]
     }
 }
-impl AsRef<str> for NsdOnboardingState {
+impl ::std::convert::AsRef<str> for NsdOnboardingState {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

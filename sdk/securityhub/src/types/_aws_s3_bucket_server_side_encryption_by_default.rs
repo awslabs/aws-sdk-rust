@@ -2,22 +2,22 @@
 
 /// <p>Specifies the default server-side encryption to apply to new objects in the bucket.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsS3BucketServerSideEncryptionByDefault {
     /// <p>Server-side encryption algorithm to use for the default encryption. Valid values are <code>aws: kms</code> or <code>AES256</code>.</p>
     #[doc(hidden)]
-    pub sse_algorithm: std::option::Option<std::string::String>,
+    pub sse_algorithm: ::std::option::Option<::std::string::String>,
     /// <p>KMS key ID to use for the default encryption.</p>
     #[doc(hidden)]
-    pub kms_master_key_id: std::option::Option<std::string::String>,
+    pub kms_master_key_id: ::std::option::Option<::std::string::String>,
 }
 impl AwsS3BucketServerSideEncryptionByDefault {
     /// <p>Server-side encryption algorithm to use for the default encryption. Valid values are <code>aws: kms</code> or <code>AES256</code>.</p>
-    pub fn sse_algorithm(&self) -> std::option::Option<&str> {
+    pub fn sse_algorithm(&self) -> ::std::option::Option<&str> {
         self.sse_algorithm.as_deref()
     }
     /// <p>KMS key ID to use for the default encryption.</p>
-    pub fn kms_master_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_master_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_master_key_id.as_deref()
     }
 }
@@ -30,31 +30,42 @@ impl AwsS3BucketServerSideEncryptionByDefault {
 
 /// A builder for [`AwsS3BucketServerSideEncryptionByDefault`](crate::types::AwsS3BucketServerSideEncryptionByDefault).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsS3BucketServerSideEncryptionByDefaultBuilder {
-    pub(crate) sse_algorithm: std::option::Option<std::string::String>,
-    pub(crate) kms_master_key_id: std::option::Option<std::string::String>,
+    pub(crate) sse_algorithm: ::std::option::Option<::std::string::String>,
+    pub(crate) kms_master_key_id: ::std::option::Option<::std::string::String>,
 }
 impl AwsS3BucketServerSideEncryptionByDefaultBuilder {
     /// <p>Server-side encryption algorithm to use for the default encryption. Valid values are <code>aws: kms</code> or <code>AES256</code>.</p>
-    pub fn sse_algorithm(mut self, input: impl Into<std::string::String>) -> Self {
-        self.sse_algorithm = Some(input.into());
+    pub fn sse_algorithm(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.sse_algorithm = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Server-side encryption algorithm to use for the default encryption. Valid values are <code>aws: kms</code> or <code>AES256</code>.</p>
-    pub fn set_sse_algorithm(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_sse_algorithm(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.sse_algorithm = input;
         self
     }
     /// <p>KMS key ID to use for the default encryption.</p>
-    pub fn kms_master_key_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.kms_master_key_id = Some(input.into());
+    pub fn kms_master_key_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.kms_master_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>KMS key ID to use for the default encryption.</p>
     pub fn set_kms_master_key_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.kms_master_key_id = input;
         self

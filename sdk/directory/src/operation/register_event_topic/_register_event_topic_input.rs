@@ -2,22 +2,22 @@
 
 /// <p>Registers a new event topic.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegisterEventTopicInput {
     /// <p>The Directory ID that will publish status messages to the Amazon SNS topic.</p>
     #[doc(hidden)]
-    pub directory_id: std::option::Option<std::string::String>,
+    pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon SNS topic name to which the directory will publish status messages. This Amazon SNS topic must be in the same region as the specified Directory ID.</p>
     #[doc(hidden)]
-    pub topic_name: std::option::Option<std::string::String>,
+    pub topic_name: ::std::option::Option<::std::string::String>,
 }
 impl RegisterEventTopicInput {
     /// <p>The Directory ID that will publish status messages to the Amazon SNS topic.</p>
-    pub fn directory_id(&self) -> std::option::Option<&str> {
+    pub fn directory_id(&self) -> ::std::option::Option<&str> {
         self.directory_id.as_deref()
     }
     /// <p>The Amazon SNS topic name to which the directory will publish status messages. This Amazon SNS topic must be in the same region as the specified Directory ID.</p>
-    pub fn topic_name(&self) -> std::option::Option<&str> {
+    pub fn topic_name(&self) -> ::std::option::Option<&str> {
         self.topic_name.as_deref()
     }
 }
@@ -31,40 +31,42 @@ impl RegisterEventTopicInput {
 
 /// A builder for [`RegisterEventTopicInput`](crate::operation::register_event_topic::RegisterEventTopicInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RegisterEventTopicInputBuilder {
-    pub(crate) directory_id: std::option::Option<std::string::String>,
-    pub(crate) topic_name: std::option::Option<std::string::String>,
+    pub(crate) directory_id: ::std::option::Option<::std::string::String>,
+    pub(crate) topic_name: ::std::option::Option<::std::string::String>,
 }
 impl RegisterEventTopicInputBuilder {
     /// <p>The Directory ID that will publish status messages to the Amazon SNS topic.</p>
-    pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.directory_id = Some(input.into());
+    pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.directory_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Directory ID that will publish status messages to the Amazon SNS topic.</p>
-    pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.directory_id = input;
         self
     }
     /// <p>The Amazon SNS topic name to which the directory will publish status messages. This Amazon SNS topic must be in the same region as the specified Directory ID.</p>
-    pub fn topic_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.topic_name = Some(input.into());
+    pub fn topic_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.topic_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon SNS topic name to which the directory will publish status messages. This Amazon SNS topic must be in the same region as the specified Directory ID.</p>
-    pub fn set_topic_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_topic_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.topic_name = input;
         self
     }
     /// Consumes the builder and constructs a [`RegisterEventTopicInput`](crate::operation::register_event_topic::RegisterEventTopicInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::register_event_topic::RegisterEventTopicInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::register_event_topic::RegisterEventTopicInput {
                 directory_id: self.directory_id,
                 topic_name: self.topic_name,

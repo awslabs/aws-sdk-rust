@@ -6,56 +6,59 @@ pub use crate::operation::update_resource::_update_resource_input::UpdateResourc
 /// Fluent builder constructing a request to `UpdateResource`.
 ///
 /// <p>Updates data for the resource. To have the latest information, it must be preceded by a <code>DescribeResource</code> call. The dataset in the request should be the one expected when performing another <code>DescribeResource</code> call.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateResourceFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::update_resource::builders::UpdateResourceInputBuilder,
 }
 impl UpdateResourceFluentBuilder {
     /// Creates a new `UpdateResource`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_resource::UpdateResource,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::update_resource::UpdateResourceError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_resource::UpdateResourceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_resource::UpdateResourceOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_resource::UpdateResourceError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_resource::UpdateResourceError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,39 +71,45 @@ impl UpdateResourceFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_resource::UpdateResourceOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_resource::UpdateResourceError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_resource::UpdateResourceError>,
     > {
         self.send_middleware().await
     }
     /// <p>The identifier associated with the organization for which the resource is updated.</p>
-    pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn organization_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.organization_id(input.into());
         self
     }
     /// <p>The identifier associated with the organization for which the resource is updated.</p>
-    pub fn set_organization_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_organization_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_organization_id(input);
         self
     }
     /// <p>The identifier of the resource to be updated.</p>
-    pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_id(input.into());
         self
     }
     /// <p>The identifier of the resource to be updated.</p>
-    pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_id(input);
         self
     }
     /// <p>The name of the resource to be updated.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// <p>The name of the resource to be updated.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
@@ -112,7 +121,7 @@ impl UpdateResourceFluentBuilder {
     /// <p>The resource's booking options to be updated.</p>
     pub fn set_booking_options(
         mut self,
-        input: std::option::Option<crate::types::BookingOptions>,
+        input: ::std::option::Option<crate::types::BookingOptions>,
     ) -> Self {
         self.inner = self.inner.set_booking_options(input);
         self

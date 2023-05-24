@@ -10,47 +10,50 @@ pub use crate::operation::describe_reserved_instances_listings::_describe_reserv
 /// <p>As a seller, you choose to list some or all of your Reserved Instances, and you specify the upfront price to receive for them. Your Reserved Instances are then listed in the Reserved Instance Marketplace and are available for purchase.</p>
 /// <p>As a buyer, you specify the configuration of the Reserved Instance to purchase, and the Marketplace matches what you're searching for with what's available. The Marketplace first sells the lowest priced Reserved Instances to you, and continues to sell available Reserved Instance listings to you until your demand is met. You are charged based on the total price of all of the listings that you purchase.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeReservedInstancesListingsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::describe_reserved_instances_listings::builders::DescribeReservedInstancesListingsInputBuilder,
 }
 impl DescribeReservedInstancesListingsFluentBuilder {
     /// Creates a new `DescribeReservedInstancesListings`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::describe_reserved_instances_listings::DescribeReservedInstancesListings, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::describe_reserved_instances_listings::DescribeReservedInstancesListingsError>
+                    pub async fn customize(self) -> ::std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::describe_reserved_instances_listings::DescribeReservedInstancesListings, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                        ::aws_smithy_http::result::SdkError<crate::operation::describe_reserved_instances_listings::DescribeReservedInstancesListingsError>
     >{
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::describe_reserved_instances_listings::DescribeReservedInstancesListingsOutput, aws_smithy_http::result::SdkError<crate::operation::describe_reserved_instances_listings::DescribeReservedInstancesListingsError>>
+                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::describe_reserved_instances_listings::DescribeReservedInstancesListingsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_reserved_instances_listings::DescribeReservedInstancesListingsError>>
                      {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -61,7 +64,7 @@ impl DescribeReservedInstancesListingsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> std::result::Result<crate::operation::describe_reserved_instances_listings::DescribeReservedInstancesListingsOutput, aws_smithy_http::result::SdkError<crate::operation::describe_reserved_instances_listings::DescribeReservedInstancesListingsError>>
+                        pub async fn send(self) -> ::std::result::Result<crate::operation::describe_reserved_instances_listings::DescribeReservedInstancesListingsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_reserved_instances_listings::DescribeReservedInstancesListingsError>>
                          {
         self.send_middleware().await
     }
@@ -89,33 +92,39 @@ impl DescribeReservedInstancesListingsFluentBuilder {
     /// </ul>
     pub fn set_filters(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>One or more Reserved Instance IDs.</p>
-    pub fn reserved_instances_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn reserved_instances_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.reserved_instances_id(input.into());
         self
     }
     /// <p>One or more Reserved Instance IDs.</p>
     pub fn set_reserved_instances_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_reserved_instances_id(input);
         self
     }
     /// <p>One or more Reserved Instance listing IDs.</p>
-    pub fn reserved_instances_listing_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn reserved_instances_listing_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.reserved_instances_listing_id(input.into());
         self
     }
     /// <p>One or more Reserved Instance listing IDs.</p>
     pub fn set_reserved_instances_listing_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_reserved_instances_listing_id(input);
         self

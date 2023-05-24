@@ -2,62 +2,62 @@
 
 /// <p>The request throughput limit was exceeded. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda quotas</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TooManyRequestsException {
     /// <p>The number of seconds the caller should wait before retrying.</p>
     #[doc(hidden)]
-    pub retry_after_seconds: std::option::Option<std::string::String>,
+    pub retry_after_seconds: ::std::option::Option<::std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
-    pub r#type: std::option::Option<std::string::String>,
+    pub r#type: ::std::option::Option<::std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
-    pub reason: std::option::Option<crate::types::ThrottleReason>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
+    pub reason: ::std::option::Option<crate::types::ThrottleReason>,
+    pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl TooManyRequestsException {
     /// <p>The number of seconds the caller should wait before retrying.</p>
-    pub fn retry_after_seconds(&self) -> std::option::Option<&str> {
+    pub fn retry_after_seconds(&self) -> ::std::option::Option<&str> {
         self.retry_after_seconds.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn reason(&self) -> std::option::Option<&crate::types::ThrottleReason> {
+    pub fn reason(&self) -> ::std::option::Option<&crate::types::ThrottleReason> {
         self.reason.as_ref()
     }
 }
 impl TooManyRequestsException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for TooManyRequestsException {
+impl ::std::fmt::Display for TooManyRequestsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "TooManyRequestsException")?;
-        if let Some(inner_1) = &self.message {
+        ::std::write!(f, "TooManyRequestsException")?;
+        if let ::std::option::Option::Some(inner_1) = &self.message {
             {
-                write!(f, ": {}", inner_1)?;
+                ::std::write!(f, ": {}", inner_1)?;
             }
         }
         Ok(())
     }
 }
-impl std::error::Error for TooManyRequestsException {}
-impl aws_http::request_id::RequestId for crate::types::error::TooManyRequestsException {
+impl ::std::error::Error for TooManyRequestsException {}
+impl ::aws_http::request_id::RequestId for crate::types::error::TooManyRequestsException {
     fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TooManyRequestsException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for TooManyRequestsException {
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
@@ -70,60 +70,68 @@ impl TooManyRequestsException {
 
 /// A builder for [`TooManyRequestsException`](crate::types::error::TooManyRequestsException).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TooManyRequestsExceptionBuilder {
-    pub(crate) retry_after_seconds: std::option::Option<std::string::String>,
-    pub(crate) r#type: std::option::Option<std::string::String>,
-    pub(crate) message: std::option::Option<std::string::String>,
-    pub(crate) reason: std::option::Option<crate::types::ThrottleReason>,
-    meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+    pub(crate) retry_after_seconds: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<::std::string::String>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
+    pub(crate) reason: ::std::option::Option<crate::types::ThrottleReason>,
+    meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl TooManyRequestsExceptionBuilder {
     /// <p>The number of seconds the caller should wait before retrying.</p>
-    pub fn retry_after_seconds(mut self, input: impl Into<std::string::String>) -> Self {
-        self.retry_after_seconds = Some(input.into());
+    pub fn retry_after_seconds(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.retry_after_seconds = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The number of seconds the caller should wait before retrying.</p>
     pub fn set_retry_after_seconds(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.retry_after_seconds = input;
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.r#type = Some(input.into());
+    pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.r#type = ::std::option::Option::Some(input.into());
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn reason(mut self, input: crate::types::ThrottleReason) -> Self {
-        self.reason = Some(input);
+        self.reason = ::std::option::Option::Some(input);
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_reason(mut self, input: std::option::Option<crate::types::ThrottleReason>) -> Self {
+    pub fn set_reason(
+        mut self,
+        input: ::std::option::Option<crate::types::ThrottleReason>,
+    ) -> Self {
         self.reason = input;
         self
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
         self.meta = Some(meta);
         self
     }
@@ -131,7 +139,7 @@ impl TooManyRequestsExceptionBuilder {
     /// Sets error metadata
     pub fn set_meta(
         &mut self,
-        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
     ) -> &mut Self {
         self.meta = meta;
         self

@@ -15,56 +15,59 @@ pub use crate::operation::create_route::_create_route_input::CreateRouteInputBui
 /// <p> <b>Environments without a network bridge</b> </p>
 /// <p>When you create environments without a network bridge (<a href="https://docs.aws.amazon.com/migrationhub-refactor-spaces/latest/APIReference/API_CreateEnvironment.html#migrationhubrefactorspaces-CreateEnvironment-request-NetworkFabricType">CreateEnvironment:NetworkFabricType</a> is <code>NONE)</code> and you use your own networking infrastructure, you need to configure <a href="https://docs.aws.amazon.com/whitepapers/latest/aws-vpc-connectivity-options/amazon-vpc-to-amazon-vpc-connectivity-options.html">VPC to VPC connectivity</a> between your network and the application proxy VPC. Route creation from the application proxy to service endpoints will fail if your network is not configured to connect to the application proxy VPC. For more information, see <a href="https://docs.aws.amazon.com/migrationhub-refactor-spaces/latest/userguide/getting-started-create-role.html"> Create a route</a> in the <i>Refactor Spaces User Guide</i>.</p>
 /// <p></p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateRouteFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_route::builders::CreateRouteInputBuilder,
 }
 impl CreateRouteFluentBuilder {
     /// Creates a new `CreateRoute`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_route::CreateRoute,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_route::CreateRouteError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_route::CreateRouteError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_route::CreateRouteOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_route::CreateRouteError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_route::CreateRouteError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -77,47 +80,56 @@ impl CreateRouteFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_route::CreateRouteOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_route::CreateRouteError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_route::CreateRouteError>,
     > {
         self.send_middleware().await
     }
     /// <p>The ID of the environment in which the route is created.</p>
-    pub fn environment_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn environment_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.environment_identifier(input.into());
         self
     }
     /// <p>The ID of the environment in which the route is created.</p>
     pub fn set_environment_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_environment_identifier(input);
         self
     }
     /// <p>The ID of the application within which the route is being created.</p>
-    pub fn application_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn application_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.application_identifier(input.into());
         self
     }
     /// <p>The ID of the application within which the route is being created.</p>
     pub fn set_application_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_application_identifier(input);
         self
     }
     /// <p>The ID of the service in which the route is created. Traffic that matches this route is forwarded to this service.</p>
-    pub fn service_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn service_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.service_identifier(input.into());
         self
     }
     /// <p>The ID of the service in which the route is created. Traffic that matches this route is forwarded to this service.</p>
     pub fn set_service_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_service_identifier(input);
         self
@@ -128,7 +140,7 @@ impl CreateRouteFluentBuilder {
         self
     }
     /// <p>The route type of the route. <code>DEFAULT</code> indicates that all traffic that does not match another route is forwarded to the default route. Applications must have a default route before any other routes can be created. <code>URI_PATH</code> indicates a route that is based on a URI path.</p>
-    pub fn set_route_type(mut self, input: std::option::Option<crate::types::RouteType>) -> Self {
+    pub fn set_route_type(mut self, input: ::std::option::Option<crate::types::RouteType>) -> Self {
         self.inner = self.inner.set_route_type(input);
         self
     }
@@ -140,7 +152,7 @@ impl CreateRouteFluentBuilder {
     /// <p> Configuration for the default route type. </p>
     pub fn set_default_route(
         mut self,
-        input: std::option::Option<crate::types::DefaultRouteInput>,
+        input: ::std::option::Option<crate::types::DefaultRouteInput>,
     ) -> Self {
         self.inner = self.inner.set_default_route(input);
         self
@@ -153,7 +165,7 @@ impl CreateRouteFluentBuilder {
     /// <p>The configuration for the URI path route type. </p>
     pub fn set_uri_path_route(
         mut self,
-        input: std::option::Option<crate::types::UriPathRouteInput>,
+        input: ::std::option::Option<crate::types::UriPathRouteInput>,
     ) -> Self {
         self.inner = self.inner.set_uri_path_route(input);
         self
@@ -165,8 +177,8 @@ impl CreateRouteFluentBuilder {
     /// <p>The tags to assign to the route. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.. </p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
@@ -174,20 +186,20 @@ impl CreateRouteFluentBuilder {
     /// <p>The tags to assign to the route. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.. </p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }

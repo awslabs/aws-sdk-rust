@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteReferenceStore`](crate::operation::delete_reference_store::builders::DeleteReferenceStoreFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::delete_reference_store::builders::DeleteReferenceStoreFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_reference_store::builders::DeleteReferenceStoreFluentBuilder::set_id): <p>The store's ID.</p>
+    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::delete_reference_store::builders::DeleteReferenceStoreFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_reference_store::builders::DeleteReferenceStoreFluentBuilder::set_id): <p>The store's ID.</p>
     /// - On success, responds with [`DeleteReferenceStoreOutput`](crate::operation::delete_reference_store::DeleteReferenceStoreOutput)
     /// - On failure, responds with [`SdkError<DeleteReferenceStoreError>`](crate::operation::delete_reference_store::DeleteReferenceStoreError)
     pub fn delete_reference_store(

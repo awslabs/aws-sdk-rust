@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetPermissionGroup`](crate::operation::get_permission_group::builders::GetPermissionGroupFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`permission_group_id(impl Into<String>)`](crate::operation::get_permission_group::builders::GetPermissionGroupFluentBuilder::permission_group_id) / [`set_permission_group_id(Option<String>)`](crate::operation::get_permission_group::builders::GetPermissionGroupFluentBuilder::set_permission_group_id): <p>The unique identifier for the permission group.</p>
+    ///   - [`permission_group_id(impl ::std::convert::Into<String>)`](crate::operation::get_permission_group::builders::GetPermissionGroupFluentBuilder::permission_group_id) / [`set_permission_group_id(Option<String>)`](crate::operation::get_permission_group::builders::GetPermissionGroupFluentBuilder::set_permission_group_id): <p>The unique identifier for the permission group.</p>
     /// - On success, responds with [`GetPermissionGroupOutput`](crate::operation::get_permission_group::GetPermissionGroupOutput) with field(s):
     ///   - [`permission_group(Option<PermissionGroup>)`](crate::operation::get_permission_group::GetPermissionGroupOutput::permission_group): <p>The structure for a permission group.</p>
     /// - On failure, responds with [`SdkError<GetPermissionGroupError>`](crate::operation::get_permission_group::GetPermissionGroupError)

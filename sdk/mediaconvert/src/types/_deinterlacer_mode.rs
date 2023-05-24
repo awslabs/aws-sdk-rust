@@ -39,13 +39,13 @@
 /// Use Deinterlacer (DeinterlaceMode) to choose how the service will do deinterlacing. Default is Deinterlace. - Deinterlace converts interlaced to progressive. - Inverse telecine converts Hard Telecine 29.97i to progressive 23.976p. - Adaptive auto-detects and converts to progressive.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum DeinterlacerMode {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum DeinterlacerMode {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for DeinterlacerMode {
+impl ::std::convert::From<&str> for DeinterlacerMode {
     fn from(s: &str) -> Self {
         match s {
             "ADAPTIVE" => DeinterlacerMode::Adaptive,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for DeinterlacerMode {
         }
     }
 }
-impl std::str::FromStr for DeinterlacerMode {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for DeinterlacerMode {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DeinterlacerMode::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(DeinterlacerMode::from(s))
     }
 }
 impl DeinterlacerMode {
@@ -91,7 +91,7 @@ impl DeinterlacerMode {
         &["ADAPTIVE", "DEINTERLACE", "INVERSE_TELECINE"]
     }
 }
-impl AsRef<str> for DeinterlacerMode {
+impl ::std::convert::AsRef<str> for DeinterlacerMode {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

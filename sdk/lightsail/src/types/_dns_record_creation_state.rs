@@ -3,7 +3,7 @@
 /// <p>Describes the creation state of the canonical name (CNAME) records that are automatically added by Amazon Lightsail to the DNS of a domain to validate domain ownership for an SSL/TLS certificate.</p>
 /// <p>When you create an SSL/TLS certificate for a Lightsail resource, you must add a set of CNAME records to the DNS of the domains for the certificate to validate that you own the domains. Lightsail can automatically add the CNAME records to the DNS of the domain if the DNS zone for the domain exists within your Lightsail account. If automatic record addition fails, or if you manage the DNS of your domain using a third-party service, then you must manually add the CNAME records to the DNS of your domain. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/verify-tls-ssl-certificate-using-dns-cname-https">Verify an SSL/TLS certificate in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DnsRecordCreationState {
     /// <p>The status code for the automated DNS record creation.</p>
     /// <p>Following are the possible values:</p>
@@ -13,10 +13,10 @@ pub struct DnsRecordCreationState {
     /// <li> <p> <code>FAILED</code> - The validation records failed to be added to the domain.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub code: std::option::Option<crate::types::DnsRecordCreationStateCode>,
+    pub code: ::std::option::Option<crate::types::DnsRecordCreationStateCode>,
     /// <p>The message that describes the reason for the status code.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
 }
 impl DnsRecordCreationState {
     /// <p>The status code for the automated DNS record creation.</p>
@@ -26,11 +26,11 @@ impl DnsRecordCreationState {
     /// <li> <p> <code>STARTED</code> - The automatic DNS record creation has started.</p> </li>
     /// <li> <p> <code>FAILED</code> - The validation records failed to be added to the domain.</p> </li>
     /// </ul>
-    pub fn code(&self) -> std::option::Option<&crate::types::DnsRecordCreationStateCode> {
+    pub fn code(&self) -> ::std::option::Option<&crate::types::DnsRecordCreationStateCode> {
         self.code.as_ref()
     }
     /// <p>The message that describes the reason for the status code.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -43,10 +43,12 @@ impl DnsRecordCreationState {
 
 /// A builder for [`DnsRecordCreationState`](crate::types::DnsRecordCreationState).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DnsRecordCreationStateBuilder {
-    pub(crate) code: std::option::Option<crate::types::DnsRecordCreationStateCode>,
-    pub(crate) message: std::option::Option<std::string::String>,
+    pub(crate) code: ::std::option::Option<crate::types::DnsRecordCreationStateCode>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
 }
 impl DnsRecordCreationStateBuilder {
     /// <p>The status code for the automated DNS record creation.</p>
@@ -57,7 +59,7 @@ impl DnsRecordCreationStateBuilder {
     /// <li> <p> <code>FAILED</code> - The validation records failed to be added to the domain.</p> </li>
     /// </ul>
     pub fn code(mut self, input: crate::types::DnsRecordCreationStateCode) -> Self {
-        self.code = Some(input);
+        self.code = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status code for the automated DNS record creation.</p>
@@ -69,18 +71,18 @@ impl DnsRecordCreationStateBuilder {
     /// </ul>
     pub fn set_code(
         mut self,
-        input: std::option::Option<crate::types::DnsRecordCreationStateCode>,
+        input: ::std::option::Option<crate::types::DnsRecordCreationStateCode>,
     ) -> Self {
         self.code = input;
         self
     }
     /// <p>The message that describes the reason for the status code.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The message that describes the reason for the status code.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }

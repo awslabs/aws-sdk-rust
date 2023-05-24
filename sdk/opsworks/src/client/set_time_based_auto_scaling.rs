@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`SetTimeBasedAutoScaling`](crate::operation::set_time_based_auto_scaling::builders::SetTimeBasedAutoScalingFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`instance_id(impl Into<String>)`](crate::operation::set_time_based_auto_scaling::builders::SetTimeBasedAutoScalingFluentBuilder::instance_id) / [`set_instance_id(Option<String>)`](crate::operation::set_time_based_auto_scaling::builders::SetTimeBasedAutoScalingFluentBuilder::set_instance_id): <p>The instance ID.</p>
+    ///   - [`instance_id(impl ::std::convert::Into<String>)`](crate::operation::set_time_based_auto_scaling::builders::SetTimeBasedAutoScalingFluentBuilder::instance_id) / [`set_instance_id(Option<String>)`](crate::operation::set_time_based_auto_scaling::builders::SetTimeBasedAutoScalingFluentBuilder::set_instance_id): <p>The instance ID.</p>
     ///   - [`auto_scaling_schedule(WeeklyAutoScalingSchedule)`](crate::operation::set_time_based_auto_scaling::builders::SetTimeBasedAutoScalingFluentBuilder::auto_scaling_schedule) / [`set_auto_scaling_schedule(Option<WeeklyAutoScalingSchedule>)`](crate::operation::set_time_based_auto_scaling::builders::SetTimeBasedAutoScalingFluentBuilder::set_auto_scaling_schedule): <p>An <code>AutoScalingSchedule</code> with the instance schedule.</p>
     /// - On success, responds with [`SetTimeBasedAutoScalingOutput`](crate::operation::set_time_based_auto_scaling::SetTimeBasedAutoScalingOutput)
     /// - On failure, responds with [`SdkError<SetTimeBasedAutoScalingError>`](crate::operation::set_time_based_auto_scaling::SetTimeBasedAutoScalingError)

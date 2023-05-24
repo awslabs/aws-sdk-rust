@@ -2,36 +2,36 @@
 
 /// <p>Describes Apple social federation configurations for allowing your app users to sign in using OAuth.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BackendAuthAppleProviderConfig {
     /// <p>Describes the client_id (also called Services ID) that comes from Apple.</p>
     #[doc(hidden)]
-    pub client_id: std::option::Option<std::string::String>,
+    pub client_id: ::std::option::Option<::std::string::String>,
     /// <p>Describes the key_id that comes from Apple.</p>
     #[doc(hidden)]
-    pub key_id: std::option::Option<std::string::String>,
+    pub key_id: ::std::option::Option<::std::string::String>,
     /// <p>Describes the private_key that comes from Apple.</p>
     #[doc(hidden)]
-    pub private_key: std::option::Option<std::string::String>,
+    pub private_key: ::std::option::Option<::std::string::String>,
     /// <p>Describes the team_id that comes from Apple.</p>
     #[doc(hidden)]
-    pub team_id: std::option::Option<std::string::String>,
+    pub team_id: ::std::option::Option<::std::string::String>,
 }
 impl BackendAuthAppleProviderConfig {
     /// <p>Describes the client_id (also called Services ID) that comes from Apple.</p>
-    pub fn client_id(&self) -> std::option::Option<&str> {
+    pub fn client_id(&self) -> ::std::option::Option<&str> {
         self.client_id.as_deref()
     }
     /// <p>Describes the key_id that comes from Apple.</p>
-    pub fn key_id(&self) -> std::option::Option<&str> {
+    pub fn key_id(&self) -> ::std::option::Option<&str> {
         self.key_id.as_deref()
     }
     /// <p>Describes the private_key that comes from Apple.</p>
-    pub fn private_key(&self) -> std::option::Option<&str> {
+    pub fn private_key(&self) -> ::std::option::Option<&str> {
         self.private_key.as_deref()
     }
     /// <p>Describes the team_id that comes from Apple.</p>
-    pub fn team_id(&self) -> std::option::Option<&str> {
+    pub fn team_id(&self) -> ::std::option::Option<&str> {
         self.team_id.as_deref()
     }
 }
@@ -44,51 +44,53 @@ impl BackendAuthAppleProviderConfig {
 
 /// A builder for [`BackendAuthAppleProviderConfig`](crate::types::BackendAuthAppleProviderConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BackendAuthAppleProviderConfigBuilder {
-    pub(crate) client_id: std::option::Option<std::string::String>,
-    pub(crate) key_id: std::option::Option<std::string::String>,
-    pub(crate) private_key: std::option::Option<std::string::String>,
-    pub(crate) team_id: std::option::Option<std::string::String>,
+    pub(crate) client_id: ::std::option::Option<::std::string::String>,
+    pub(crate) key_id: ::std::option::Option<::std::string::String>,
+    pub(crate) private_key: ::std::option::Option<::std::string::String>,
+    pub(crate) team_id: ::std::option::Option<::std::string::String>,
 }
 impl BackendAuthAppleProviderConfigBuilder {
     /// <p>Describes the client_id (also called Services ID) that comes from Apple.</p>
-    pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.client_id = Some(input.into());
+    pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.client_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Describes the client_id (also called Services ID) that comes from Apple.</p>
-    pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_id = input;
         self
     }
     /// <p>Describes the key_id that comes from Apple.</p>
-    pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.key_id = Some(input.into());
+    pub fn key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Describes the key_id that comes from Apple.</p>
-    pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_id = input;
         self
     }
     /// <p>Describes the private_key that comes from Apple.</p>
-    pub fn private_key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.private_key = Some(input.into());
+    pub fn private_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.private_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Describes the private_key that comes from Apple.</p>
-    pub fn set_private_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_private_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.private_key = input;
         self
     }
     /// <p>Describes the team_id that comes from Apple.</p>
-    pub fn team_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.team_id = Some(input.into());
+    pub fn team_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.team_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Describes the team_id that comes from Apple.</p>
-    pub fn set_team_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_team_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.team_id = input;
         self
     }

@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetReadSetActivationJob`](crate::operation::get_read_set_activation_job::builders::GetReadSetActivationJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::get_read_set_activation_job::builders::GetReadSetActivationJobFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_read_set_activation_job::builders::GetReadSetActivationJobFluentBuilder::set_id): <p>The job's ID.</p>
-    ///   - [`sequence_store_id(impl Into<String>)`](crate::operation::get_read_set_activation_job::builders::GetReadSetActivationJobFluentBuilder::sequence_store_id) / [`set_sequence_store_id(Option<String>)`](crate::operation::get_read_set_activation_job::builders::GetReadSetActivationJobFluentBuilder::set_sequence_store_id): <p>The job's sequence store ID.</p>
+    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::get_read_set_activation_job::builders::GetReadSetActivationJobFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_read_set_activation_job::builders::GetReadSetActivationJobFluentBuilder::set_id): <p>The job's ID.</p>
+    ///   - [`sequence_store_id(impl ::std::convert::Into<String>)`](crate::operation::get_read_set_activation_job::builders::GetReadSetActivationJobFluentBuilder::sequence_store_id) / [`set_sequence_store_id(Option<String>)`](crate::operation::get_read_set_activation_job::builders::GetReadSetActivationJobFluentBuilder::set_sequence_store_id): <p>The job's sequence store ID.</p>
     /// - On success, responds with [`GetReadSetActivationJobOutput`](crate::operation::get_read_set_activation_job::GetReadSetActivationJobOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::get_read_set_activation_job::GetReadSetActivationJobOutput::id): <p>The job's ID.</p>
     ///   - [`sequence_store_id(Option<String>)`](crate::operation::get_read_set_activation_job::GetReadSetActivationJobOutput::sequence_store_id): <p>The job's sequence store ID.</p>

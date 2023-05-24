@@ -2,57 +2,57 @@
 
 /// <p>Describes a resize cluster operation. For example, a scheduled action to run the <code>ResizeCluster</code> API operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResizeClusterMessage {
     /// <p>The unique identifier for the cluster to resize.</p>
     #[doc(hidden)]
-    pub cluster_identifier: std::option::Option<std::string::String>,
+    pub cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The new cluster type for the specified cluster.</p>
     #[doc(hidden)]
-    pub cluster_type: std::option::Option<std::string::String>,
+    pub cluster_type: ::std::option::Option<::std::string::String>,
     /// <p>The new node type for the nodes you are adding. If not specified, the cluster's current node type is used.</p>
     #[doc(hidden)]
-    pub node_type: std::option::Option<std::string::String>,
+    pub node_type: ::std::option::Option<::std::string::String>,
     /// <p>The new number of nodes for the cluster. If not specified, the cluster's current number of nodes is used.</p>
     #[doc(hidden)]
-    pub number_of_nodes: std::option::Option<i32>,
+    pub number_of_nodes: ::std::option::Option<i32>,
     /// <p>A boolean value indicating whether the resize operation is using the classic resize process. If you don't provide this parameter or set the value to <code>false</code>, the resize type is elastic. </p>
     #[doc(hidden)]
-    pub classic: std::option::Option<bool>,
+    pub classic: ::std::option::Option<bool>,
     /// <p>The identifier of the reserved node.</p>
     #[doc(hidden)]
-    pub reserved_node_id: std::option::Option<std::string::String>,
+    pub reserved_node_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the target reserved node offering.</p>
     #[doc(hidden)]
-    pub target_reserved_node_offering_id: std::option::Option<std::string::String>,
+    pub target_reserved_node_offering_id: ::std::option::Option<::std::string::String>,
 }
 impl ResizeClusterMessage {
     /// <p>The unique identifier for the cluster to resize.</p>
-    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+    pub fn cluster_identifier(&self) -> ::std::option::Option<&str> {
         self.cluster_identifier.as_deref()
     }
     /// <p>The new cluster type for the specified cluster.</p>
-    pub fn cluster_type(&self) -> std::option::Option<&str> {
+    pub fn cluster_type(&self) -> ::std::option::Option<&str> {
         self.cluster_type.as_deref()
     }
     /// <p>The new node type for the nodes you are adding. If not specified, the cluster's current node type is used.</p>
-    pub fn node_type(&self) -> std::option::Option<&str> {
+    pub fn node_type(&self) -> ::std::option::Option<&str> {
         self.node_type.as_deref()
     }
     /// <p>The new number of nodes for the cluster. If not specified, the cluster's current number of nodes is used.</p>
-    pub fn number_of_nodes(&self) -> std::option::Option<i32> {
+    pub fn number_of_nodes(&self) -> ::std::option::Option<i32> {
         self.number_of_nodes
     }
     /// <p>A boolean value indicating whether the resize operation is using the classic resize process. If you don't provide this parameter or set the value to <code>false</code>, the resize type is elastic. </p>
-    pub fn classic(&self) -> std::option::Option<bool> {
+    pub fn classic(&self) -> ::std::option::Option<bool> {
         self.classic
     }
     /// <p>The identifier of the reserved node.</p>
-    pub fn reserved_node_id(&self) -> std::option::Option<&str> {
+    pub fn reserved_node_id(&self) -> ::std::option::Option<&str> {
         self.reserved_node_id.as_deref()
     }
     /// <p>The identifier of the target reserved node offering.</p>
-    pub fn target_reserved_node_offering_id(&self) -> std::option::Option<&str> {
+    pub fn target_reserved_node_offering_id(&self) -> ::std::option::Option<&str> {
         self.target_reserved_node_offering_id.as_deref()
     }
 }
@@ -65,92 +65,103 @@ impl ResizeClusterMessage {
 
 /// A builder for [`ResizeClusterMessage`](crate::types::ResizeClusterMessage).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResizeClusterMessageBuilder {
-    pub(crate) cluster_identifier: std::option::Option<std::string::String>,
-    pub(crate) cluster_type: std::option::Option<std::string::String>,
-    pub(crate) node_type: std::option::Option<std::string::String>,
-    pub(crate) number_of_nodes: std::option::Option<i32>,
-    pub(crate) classic: std::option::Option<bool>,
-    pub(crate) reserved_node_id: std::option::Option<std::string::String>,
-    pub(crate) target_reserved_node_offering_id: std::option::Option<std::string::String>,
+    pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) cluster_type: ::std::option::Option<::std::string::String>,
+    pub(crate) node_type: ::std::option::Option<::std::string::String>,
+    pub(crate) number_of_nodes: ::std::option::Option<i32>,
+    pub(crate) classic: ::std::option::Option<bool>,
+    pub(crate) reserved_node_id: ::std::option::Option<::std::string::String>,
+    pub(crate) target_reserved_node_offering_id: ::std::option::Option<::std::string::String>,
 }
 impl ResizeClusterMessageBuilder {
     /// <p>The unique identifier for the cluster to resize.</p>
-    pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cluster_identifier = Some(input.into());
+    pub fn cluster_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the cluster to resize.</p>
     pub fn set_cluster_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.cluster_identifier = input;
         self
     }
     /// <p>The new cluster type for the specified cluster.</p>
-    pub fn cluster_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cluster_type = Some(input.into());
+    pub fn cluster_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cluster_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The new cluster type for the specified cluster.</p>
-    pub fn set_cluster_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cluster_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_type = input;
         self
     }
     /// <p>The new node type for the nodes you are adding. If not specified, the cluster's current node type is used.</p>
-    pub fn node_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.node_type = Some(input.into());
+    pub fn node_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.node_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The new node type for the nodes you are adding. If not specified, the cluster's current node type is used.</p>
-    pub fn set_node_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_node_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.node_type = input;
         self
     }
     /// <p>The new number of nodes for the cluster. If not specified, the cluster's current number of nodes is used.</p>
     pub fn number_of_nodes(mut self, input: i32) -> Self {
-        self.number_of_nodes = Some(input);
+        self.number_of_nodes = ::std::option::Option::Some(input);
         self
     }
     /// <p>The new number of nodes for the cluster. If not specified, the cluster's current number of nodes is used.</p>
-    pub fn set_number_of_nodes(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_number_of_nodes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.number_of_nodes = input;
         self
     }
     /// <p>A boolean value indicating whether the resize operation is using the classic resize process. If you don't provide this parameter or set the value to <code>false</code>, the resize type is elastic. </p>
     pub fn classic(mut self, input: bool) -> Self {
-        self.classic = Some(input);
+        self.classic = ::std::option::Option::Some(input);
         self
     }
     /// <p>A boolean value indicating whether the resize operation is using the classic resize process. If you don't provide this parameter or set the value to <code>false</code>, the resize type is elastic. </p>
-    pub fn set_classic(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_classic(mut self, input: ::std::option::Option<bool>) -> Self {
         self.classic = input;
         self
     }
     /// <p>The identifier of the reserved node.</p>
-    pub fn reserved_node_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.reserved_node_id = Some(input.into());
+    pub fn reserved_node_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.reserved_node_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the reserved node.</p>
-    pub fn set_reserved_node_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_reserved_node_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.reserved_node_id = input;
         self
     }
     /// <p>The identifier of the target reserved node offering.</p>
     pub fn target_reserved_node_offering_id(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.target_reserved_node_offering_id = Some(input.into());
+        self.target_reserved_node_offering_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the target reserved node offering.</p>
     pub fn set_target_reserved_node_offering_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.target_reserved_node_offering_id = input;
         self

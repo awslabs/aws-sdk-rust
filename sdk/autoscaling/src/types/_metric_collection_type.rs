@@ -2,7 +2,7 @@
 
 /// <p>Describes a metric.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetricCollectionType {
     /// <p>One of the following metrics:</p>
     /// <ul>
@@ -28,7 +28,7 @@ pub struct MetricCollectionType {
     /// <li> <p> <code>GroupAndWarmPoolTotalCapacity</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub metric: std::option::Option<std::string::String>,
+    pub metric: ::std::option::Option<::std::string::String>,
 }
 impl MetricCollectionType {
     /// <p>One of the following metrics:</p>
@@ -54,7 +54,7 @@ impl MetricCollectionType {
     /// <li> <p> <code>GroupAndWarmPoolDesiredCapacity</code> </p> </li>
     /// <li> <p> <code>GroupAndWarmPoolTotalCapacity</code> </p> </li>
     /// </ul>
-    pub fn metric(&self) -> std::option::Option<&str> {
+    pub fn metric(&self) -> ::std::option::Option<&str> {
         self.metric.as_deref()
     }
 }
@@ -67,9 +67,11 @@ impl MetricCollectionType {
 
 /// A builder for [`MetricCollectionType`](crate::types::MetricCollectionType).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MetricCollectionTypeBuilder {
-    pub(crate) metric: std::option::Option<std::string::String>,
+    pub(crate) metric: ::std::option::Option<::std::string::String>,
 }
 impl MetricCollectionTypeBuilder {
     /// <p>One of the following metrics:</p>
@@ -95,8 +97,8 @@ impl MetricCollectionTypeBuilder {
     /// <li> <p> <code>GroupAndWarmPoolDesiredCapacity</code> </p> </li>
     /// <li> <p> <code>GroupAndWarmPoolTotalCapacity</code> </p> </li>
     /// </ul>
-    pub fn metric(mut self, input: impl Into<std::string::String>) -> Self {
-        self.metric = Some(input.into());
+    pub fn metric(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.metric = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>One of the following metrics:</p>
@@ -122,7 +124,7 @@ impl MetricCollectionTypeBuilder {
     /// <li> <p> <code>GroupAndWarmPoolDesiredCapacity</code> </p> </li>
     /// <li> <p> <code>GroupAndWarmPoolTotalCapacity</code> </p> </li>
     /// </ul>
-    pub fn set_metric(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_metric(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metric = input;
         self
     }

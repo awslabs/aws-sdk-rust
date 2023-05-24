@@ -2,57 +2,57 @@
 
 /// <p>Information about a recognized celebrity.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CelebrityDetail {
     /// <p>An array of URLs pointing to additional celebrity information. </p>
     #[doc(hidden)]
-    pub urls: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub urls: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The name of the celebrity.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the celebrity. </p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The confidence, in percentage, that Amazon Rekognition has that the recognized face is the celebrity. </p>
     #[doc(hidden)]
-    pub confidence: std::option::Option<f32>,
+    pub confidence: ::std::option::Option<f32>,
     /// <p>Bounding box around the body of a celebrity.</p>
     #[doc(hidden)]
-    pub bounding_box: std::option::Option<crate::types::BoundingBox>,
+    pub bounding_box: ::std::option::Option<crate::types::BoundingBox>,
     /// <p>Face details for the recognized celebrity.</p>
     #[doc(hidden)]
-    pub face: std::option::Option<crate::types::FaceDetail>,
+    pub face: ::std::option::Option<crate::types::FaceDetail>,
     /// <p>Retrieves the known gender for the celebrity.</p>
     #[doc(hidden)]
-    pub known_gender: std::option::Option<crate::types::KnownGender>,
+    pub known_gender: ::std::option::Option<crate::types::KnownGender>,
 }
 impl CelebrityDetail {
     /// <p>An array of URLs pointing to additional celebrity information. </p>
-    pub fn urls(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn urls(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.urls.as_deref()
     }
     /// <p>The name of the celebrity.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The unique identifier for the celebrity. </p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The confidence, in percentage, that Amazon Rekognition has that the recognized face is the celebrity. </p>
-    pub fn confidence(&self) -> std::option::Option<f32> {
+    pub fn confidence(&self) -> ::std::option::Option<f32> {
         self.confidence
     }
     /// <p>Bounding box around the body of a celebrity.</p>
-    pub fn bounding_box(&self) -> std::option::Option<&crate::types::BoundingBox> {
+    pub fn bounding_box(&self) -> ::std::option::Option<&crate::types::BoundingBox> {
         self.bounding_box.as_ref()
     }
     /// <p>Face details for the recognized celebrity.</p>
-    pub fn face(&self) -> std::option::Option<&crate::types::FaceDetail> {
+    pub fn face(&self) -> ::std::option::Option<&crate::types::FaceDetail> {
         self.face.as_ref()
     }
     /// <p>Retrieves the known gender for the celebrity.</p>
-    pub fn known_gender(&self) -> std::option::Option<&crate::types::KnownGender> {
+    pub fn known_gender(&self) -> ::std::option::Option<&crate::types::KnownGender> {
         self.known_gender.as_ref()
     }
 }
@@ -65,15 +65,17 @@ impl CelebrityDetail {
 
 /// A builder for [`CelebrityDetail`](crate::types::CelebrityDetail).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CelebrityDetailBuilder {
-    pub(crate) urls: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) confidence: std::option::Option<f32>,
-    pub(crate) bounding_box: std::option::Option<crate::types::BoundingBox>,
-    pub(crate) face: std::option::Option<crate::types::FaceDetail>,
-    pub(crate) known_gender: std::option::Option<crate::types::KnownGender>,
+    pub(crate) urls: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) confidence: ::std::option::Option<f32>,
+    pub(crate) bounding_box: ::std::option::Option<crate::types::BoundingBox>,
+    pub(crate) face: ::std::option::Option<crate::types::FaceDetail>,
+    pub(crate) known_gender: ::std::option::Option<crate::types::KnownGender>,
 }
 impl CelebrityDetailBuilder {
     /// Appends an item to `urls`.
@@ -81,82 +83,82 @@ impl CelebrityDetailBuilder {
     /// To override the contents of this collection use [`set_urls`](Self::set_urls).
     ///
     /// <p>An array of URLs pointing to additional celebrity information. </p>
-    pub fn urls(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn urls(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.urls.unwrap_or_default();
         v.push(input.into());
-        self.urls = Some(v);
+        self.urls = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of URLs pointing to additional celebrity information. </p>
     pub fn set_urls(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.urls = input;
         self
     }
     /// <p>The name of the celebrity.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the celebrity.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The unique identifier for the celebrity. </p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the celebrity. </p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>The confidence, in percentage, that Amazon Rekognition has that the recognized face is the celebrity. </p>
     pub fn confidence(mut self, input: f32) -> Self {
-        self.confidence = Some(input);
+        self.confidence = ::std::option::Option::Some(input);
         self
     }
     /// <p>The confidence, in percentage, that Amazon Rekognition has that the recognized face is the celebrity. </p>
-    pub fn set_confidence(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_confidence(mut self, input: ::std::option::Option<f32>) -> Self {
         self.confidence = input;
         self
     }
     /// <p>Bounding box around the body of a celebrity.</p>
     pub fn bounding_box(mut self, input: crate::types::BoundingBox) -> Self {
-        self.bounding_box = Some(input);
+        self.bounding_box = ::std::option::Option::Some(input);
         self
     }
     /// <p>Bounding box around the body of a celebrity.</p>
     pub fn set_bounding_box(
         mut self,
-        input: std::option::Option<crate::types::BoundingBox>,
+        input: ::std::option::Option<crate::types::BoundingBox>,
     ) -> Self {
         self.bounding_box = input;
         self
     }
     /// <p>Face details for the recognized celebrity.</p>
     pub fn face(mut self, input: crate::types::FaceDetail) -> Self {
-        self.face = Some(input);
+        self.face = ::std::option::Option::Some(input);
         self
     }
     /// <p>Face details for the recognized celebrity.</p>
-    pub fn set_face(mut self, input: std::option::Option<crate::types::FaceDetail>) -> Self {
+    pub fn set_face(mut self, input: ::std::option::Option<crate::types::FaceDetail>) -> Self {
         self.face = input;
         self
     }
     /// <p>Retrieves the known gender for the celebrity.</p>
     pub fn known_gender(mut self, input: crate::types::KnownGender) -> Self {
-        self.known_gender = Some(input);
+        self.known_gender = ::std::option::Option::Some(input);
         self
     }
     /// <p>Retrieves the known gender for the celebrity.</p>
     pub fn set_known_gender(
         mut self,
-        input: std::option::Option<crate::types::KnownGender>,
+        input: ::std::option::Option<crate::types::KnownGender>,
     ) -> Self {
         self.known_gender = input;
         self

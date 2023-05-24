@@ -2,20 +2,20 @@
 
 /// <p>Describes a network resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkResource {
     /// <p>The ARN of the gateway.</p>
     #[doc(hidden)]
-    pub registered_gateway_arn: std::option::Option<std::string::String>,
+    pub registered_gateway_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of a core network.</p>
     #[doc(hidden)]
-    pub core_network_id: std::option::Option<std::string::String>,
+    pub core_network_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region.</p>
     #[doc(hidden)]
-    pub aws_region: std::option::Option<std::string::String>,
+    pub aws_region: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID.</p>
     #[doc(hidden)]
-    pub account_id: std::option::Option<std::string::String>,
+    pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The resource type.</p>
     /// <p>The following are the supported resource types for Direct Connect:</p>
     /// <ul>
@@ -40,42 +40,43 @@ pub struct NetworkResource {
     /// <li> <p> <code>vpn-connection</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub resource_type: std::option::Option<std::string::String>,
+    pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the resource.</p>
     #[doc(hidden)]
-    pub resource_id: std::option::Option<std::string::String>,
+    pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the resource.</p>
     #[doc(hidden)]
-    pub resource_arn: std::option::Option<std::string::String>,
+    pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>Information about the resource, in JSON format. Network Manager gets this information by describing the resource using its Describe API call.</p>
     #[doc(hidden)]
-    pub definition: std::option::Option<std::string::String>,
+    pub definition: ::std::option::Option<::std::string::String>,
     /// <p>The time that the resource definition was retrieved.</p>
     #[doc(hidden)]
-    pub definition_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub definition_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The tags.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The resource metadata.</p>
     #[doc(hidden)]
-    pub metadata:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub metadata: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl NetworkResource {
     /// <p>The ARN of the gateway.</p>
-    pub fn registered_gateway_arn(&self) -> std::option::Option<&str> {
+    pub fn registered_gateway_arn(&self) -> ::std::option::Option<&str> {
         self.registered_gateway_arn.as_deref()
     }
     /// <p>The ID of a core network.</p>
-    pub fn core_network_id(&self) -> std::option::Option<&str> {
+    pub fn core_network_id(&self) -> ::std::option::Option<&str> {
         self.core_network_id.as_deref()
     }
     /// <p>The Amazon Web Services Region.</p>
-    pub fn aws_region(&self) -> std::option::Option<&str> {
+    pub fn aws_region(&self) -> ::std::option::Option<&str> {
         self.aws_region.as_deref()
     }
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The resource type.</p>
@@ -101,34 +102,35 @@ impl NetworkResource {
     /// <li> <p> <code>transit-gateway-route-table</code> </p> </li>
     /// <li> <p> <code>vpn-connection</code> </p> </li>
     /// </ul>
-    pub fn resource_type(&self) -> std::option::Option<&str> {
+    pub fn resource_type(&self) -> ::std::option::Option<&str> {
         self.resource_type.as_deref()
     }
     /// <p>The ID of the resource.</p>
-    pub fn resource_id(&self) -> std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<&str> {
         self.resource_id.as_deref()
     }
     /// <p>The ARN of the resource.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
     /// <p>Information about the resource, in JSON format. Network Manager gets this information by describing the resource using its Describe API call.</p>
-    pub fn definition(&self) -> std::option::Option<&str> {
+    pub fn definition(&self) -> ::std::option::Option<&str> {
         self.definition.as_deref()
     }
     /// <p>The time that the resource definition was retrieved.</p>
-    pub fn definition_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn definition_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.definition_timestamp.as_ref()
     }
     /// <p>The tags.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The resource metadata.</p>
     pub fn metadata(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.metadata.as_ref()
     }
 }
@@ -141,62 +143,74 @@ impl NetworkResource {
 
 /// A builder for [`NetworkResource`](crate::types::NetworkResource).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NetworkResourceBuilder {
-    pub(crate) registered_gateway_arn: std::option::Option<std::string::String>,
-    pub(crate) core_network_id: std::option::Option<std::string::String>,
-    pub(crate) aws_region: std::option::Option<std::string::String>,
-    pub(crate) account_id: std::option::Option<std::string::String>,
-    pub(crate) resource_type: std::option::Option<std::string::String>,
-    pub(crate) resource_id: std::option::Option<std::string::String>,
-    pub(crate) resource_arn: std::option::Option<std::string::String>,
-    pub(crate) definition: std::option::Option<std::string::String>,
-    pub(crate) definition_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    pub(crate) metadata:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) registered_gateway_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) core_network_id: ::std::option::Option<::std::string::String>,
+    pub(crate) aws_region: ::std::option::Option<::std::string::String>,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_type: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_id: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) definition: ::std::option::Option<::std::string::String>,
+    pub(crate) definition_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) metadata: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl NetworkResourceBuilder {
     /// <p>The ARN of the gateway.</p>
-    pub fn registered_gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.registered_gateway_arn = Some(input.into());
+    pub fn registered_gateway_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.registered_gateway_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the gateway.</p>
     pub fn set_registered_gateway_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.registered_gateway_arn = input;
         self
     }
     /// <p>The ID of a core network.</p>
-    pub fn core_network_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.core_network_id = Some(input.into());
+    pub fn core_network_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.core_network_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of a core network.</p>
-    pub fn set_core_network_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_core_network_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.core_network_id = input;
         self
     }
     /// <p>The Amazon Web Services Region.</p>
-    pub fn aws_region(mut self, input: impl Into<std::string::String>) -> Self {
-        self.aws_region = Some(input.into());
+    pub fn aws_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.aws_region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services Region.</p>
-    pub fn set_aws_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_aws_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_region = input;
         self
     }
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.account_id = Some(input.into());
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
     }
@@ -223,8 +237,11 @@ impl NetworkResourceBuilder {
     /// <li> <p> <code>transit-gateway-route-table</code> </p> </li>
     /// <li> <p> <code>vpn-connection</code> </p> </li>
     /// </ul>
-    pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_type = Some(input.into());
+    pub fn resource_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The resource type.</p>
@@ -250,49 +267,52 @@ impl NetworkResourceBuilder {
     /// <li> <p> <code>transit-gateway-route-table</code> </p> </li>
     /// <li> <p> <code>vpn-connection</code> </p> </li>
     /// </ul>
-    pub fn set_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.resource_type = input;
         self
     }
     /// <p>The ID of the resource.</p>
-    pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_id = Some(input.into());
+    pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the resource.</p>
-    pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
     }
     /// <p>The ARN of the resource.</p>
-    pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_arn = Some(input.into());
+    pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the resource.</p>
-    pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
     }
     /// <p>Information about the resource, in JSON format. Network Manager gets this information by describing the resource using its Describe API call.</p>
-    pub fn definition(mut self, input: impl Into<std::string::String>) -> Self {
-        self.definition = Some(input.into());
+    pub fn definition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.definition = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Information about the resource, in JSON format. Network Manager gets this information by describing the resource using its Describe API call.</p>
-    pub fn set_definition(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_definition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.definition = input;
         self
     }
     /// <p>The time that the resource definition was retrieved.</p>
-    pub fn definition_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.definition_timestamp = Some(input);
+    pub fn definition_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.definition_timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time that the resource definition was retrieved.</p>
     pub fn set_definition_timestamp(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.definition_timestamp = input;
         self
@@ -305,13 +325,13 @@ impl NetworkResourceBuilder {
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
-        self.tags = Some(v);
+        self.tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>The tags.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tags = input;
         self
@@ -323,19 +343,19 @@ impl NetworkResourceBuilder {
     /// <p>The resource metadata.</p>
     pub fn metadata(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.metadata.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.metadata = Some(hash_map);
+        self.metadata = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The resource metadata.</p>
     pub fn set_metadata(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.metadata = input;

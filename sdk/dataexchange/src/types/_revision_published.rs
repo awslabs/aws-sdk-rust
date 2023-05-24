@@ -2,15 +2,15 @@
 
 /// <p>Information about the published revision.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RevisionPublished {
     /// <p>The data set ID of the published revision.</p>
     #[doc(hidden)]
-    pub data_set_id: std::option::Option<std::string::String>,
+    pub data_set_id: ::std::option::Option<::std::string::String>,
 }
 impl RevisionPublished {
     /// <p>The data set ID of the published revision.</p>
-    pub fn data_set_id(&self) -> std::option::Option<&str> {
+    pub fn data_set_id(&self) -> ::std::option::Option<&str> {
         self.data_set_id.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl RevisionPublished {
 
 /// A builder for [`RevisionPublished`](crate::types::RevisionPublished).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RevisionPublishedBuilder {
-    pub(crate) data_set_id: std::option::Option<std::string::String>,
+    pub(crate) data_set_id: ::std::option::Option<::std::string::String>,
 }
 impl RevisionPublishedBuilder {
     /// <p>The data set ID of the published revision.</p>
-    pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.data_set_id = Some(input.into());
+    pub fn data_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.data_set_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The data set ID of the published revision.</p>
-    pub fn set_data_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_data_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_set_id = input;
         self
     }

@@ -3,29 +3,29 @@
 /// <p> Properties of an individual vote that a member cast for a proposal. </p>
 /// <p>Applies only to Hyperledger Fabric.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VoteSummary {
     /// <p> The vote value, either <code>YES</code> or <code>NO</code>. </p>
     #[doc(hidden)]
-    pub vote: std::option::Option<crate::types::VoteValue>,
+    pub vote: ::std::option::Option<crate::types::VoteValue>,
     /// <p> The name of the member that cast the vote. </p>
     #[doc(hidden)]
-    pub member_name: std::option::Option<std::string::String>,
+    pub member_name: ::std::option::Option<::std::string::String>,
     /// <p> The unique identifier of the member that cast the vote. </p>
     #[doc(hidden)]
-    pub member_id: std::option::Option<std::string::String>,
+    pub member_id: ::std::option::Option<::std::string::String>,
 }
 impl VoteSummary {
     /// <p> The vote value, either <code>YES</code> or <code>NO</code>. </p>
-    pub fn vote(&self) -> std::option::Option<&crate::types::VoteValue> {
+    pub fn vote(&self) -> ::std::option::Option<&crate::types::VoteValue> {
         self.vote.as_ref()
     }
     /// <p> The name of the member that cast the vote. </p>
-    pub fn member_name(&self) -> std::option::Option<&str> {
+    pub fn member_name(&self) -> ::std::option::Option<&str> {
         self.member_name.as_deref()
     }
     /// <p> The unique identifier of the member that cast the vote. </p>
-    pub fn member_id(&self) -> std::option::Option<&str> {
+    pub fn member_id(&self) -> ::std::option::Option<&str> {
         self.member_id.as_deref()
     }
 }
@@ -38,40 +38,42 @@ impl VoteSummary {
 
 /// A builder for [`VoteSummary`](crate::types::VoteSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VoteSummaryBuilder {
-    pub(crate) vote: std::option::Option<crate::types::VoteValue>,
-    pub(crate) member_name: std::option::Option<std::string::String>,
-    pub(crate) member_id: std::option::Option<std::string::String>,
+    pub(crate) vote: ::std::option::Option<crate::types::VoteValue>,
+    pub(crate) member_name: ::std::option::Option<::std::string::String>,
+    pub(crate) member_id: ::std::option::Option<::std::string::String>,
 }
 impl VoteSummaryBuilder {
     /// <p> The vote value, either <code>YES</code> or <code>NO</code>. </p>
     pub fn vote(mut self, input: crate::types::VoteValue) -> Self {
-        self.vote = Some(input);
+        self.vote = ::std::option::Option::Some(input);
         self
     }
     /// <p> The vote value, either <code>YES</code> or <code>NO</code>. </p>
-    pub fn set_vote(mut self, input: std::option::Option<crate::types::VoteValue>) -> Self {
+    pub fn set_vote(mut self, input: ::std::option::Option<crate::types::VoteValue>) -> Self {
         self.vote = input;
         self
     }
     /// <p> The name of the member that cast the vote. </p>
-    pub fn member_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.member_name = Some(input.into());
+    pub fn member_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.member_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the member that cast the vote. </p>
-    pub fn set_member_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_member_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.member_name = input;
         self
     }
     /// <p> The unique identifier of the member that cast the vote. </p>
-    pub fn member_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.member_id = Some(input.into());
+    pub fn member_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.member_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The unique identifier of the member that cast the vote. </p>
-    pub fn set_member_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_member_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.member_id = input;
         self
     }

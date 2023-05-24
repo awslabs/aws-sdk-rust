@@ -2,15 +2,15 @@
 
 /// <p>A list of port ranges.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuleGroupVariablesPortSetsDetails {
     /// <p>The list of port ranges.</p>
     #[doc(hidden)]
-    pub definition: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub definition: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RuleGroupVariablesPortSetsDetails {
     /// <p>The list of port ranges.</p>
-    pub fn definition(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn definition(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.definition.as_deref()
     }
 }
@@ -23,9 +23,11 @@ impl RuleGroupVariablesPortSetsDetails {
 
 /// A builder for [`RuleGroupVariablesPortSetsDetails`](crate::types::RuleGroupVariablesPortSetsDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RuleGroupVariablesPortSetsDetailsBuilder {
-    pub(crate) definition: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) definition: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RuleGroupVariablesPortSetsDetailsBuilder {
     /// Appends an item to `definition`.
@@ -33,16 +35,16 @@ impl RuleGroupVariablesPortSetsDetailsBuilder {
     /// To override the contents of this collection use [`set_definition`](Self::set_definition).
     ///
     /// <p>The list of port ranges.</p>
-    pub fn definition(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn definition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.definition.unwrap_or_default();
         v.push(input.into());
-        self.definition = Some(v);
+        self.definition = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of port ranges.</p>
     pub fn set_definition(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.definition = input;
         self

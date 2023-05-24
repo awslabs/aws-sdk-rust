@@ -4,7 +4,7 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_blueprints::builders::ListBlueprintsFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_blueprints::builders::ListBlueprintsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_blueprints::builders::ListBlueprintsFluentBuilder::set_next_token): <p>A continuation token, if this is a continuation request.</p>
+    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_blueprints::builders::ListBlueprintsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_blueprints::builders::ListBlueprintsFluentBuilder::set_next_token): <p>A continuation token, if this is a continuation request.</p>
     ///   - [`max_results(i32)`](crate::operation::list_blueprints::builders::ListBlueprintsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_blueprints::builders::ListBlueprintsFluentBuilder::set_max_results): <p>The maximum size of a list to return.</p>
     ///   - [`tags(HashMap<String, String>)`](crate::operation::list_blueprints::builders::ListBlueprintsFluentBuilder::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::operation::list_blueprints::builders::ListBlueprintsFluentBuilder::set_tags): <p>Filters the list by an Amazon Web Services resource tag.</p>
     /// - On success, responds with [`ListBlueprintsOutput`](crate::operation::list_blueprints::ListBlueprintsOutput) with field(s):

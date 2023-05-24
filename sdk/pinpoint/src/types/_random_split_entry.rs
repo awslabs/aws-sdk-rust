@@ -2,24 +2,24 @@
 
 /// <p>Specifies the settings for a path in a random split activity in a journey.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RandomSplitEntry {
     /// <p>The unique identifier for the next activity to perform, after completing the activity for the path.</p>
     #[doc(hidden)]
-    pub next_activity: std::option::Option<std::string::String>,
+    pub next_activity: ::std::option::Option<::std::string::String>,
     /// <p>The percentage of participants to send down the activity path.</p>
     /// <p>To determine which participants are sent down each path, Amazon Pinpoint applies a probability-based algorithm to the percentages that you specify for the paths. Therefore, the actual percentage of participants who are sent down a path may not be equal to the percentage that you specify.</p>
     #[doc(hidden)]
-    pub percentage: std::option::Option<i32>,
+    pub percentage: ::std::option::Option<i32>,
 }
 impl RandomSplitEntry {
     /// <p>The unique identifier for the next activity to perform, after completing the activity for the path.</p>
-    pub fn next_activity(&self) -> std::option::Option<&str> {
+    pub fn next_activity(&self) -> ::std::option::Option<&str> {
         self.next_activity.as_deref()
     }
     /// <p>The percentage of participants to send down the activity path.</p>
     /// <p>To determine which participants are sent down each path, Amazon Pinpoint applies a probability-based algorithm to the percentages that you specify for the paths. Therefore, the actual percentage of participants who are sent down a path may not be equal to the percentage that you specify.</p>
-    pub fn percentage(&self) -> std::option::Option<i32> {
+    pub fn percentage(&self) -> ::std::option::Option<i32> {
         self.percentage
     }
 }
@@ -32,31 +32,39 @@ impl RandomSplitEntry {
 
 /// A builder for [`RandomSplitEntry`](crate::types::RandomSplitEntry).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RandomSplitEntryBuilder {
-    pub(crate) next_activity: std::option::Option<std::string::String>,
-    pub(crate) percentage: std::option::Option<i32>,
+    pub(crate) next_activity: ::std::option::Option<::std::string::String>,
+    pub(crate) percentage: ::std::option::Option<i32>,
 }
 impl RandomSplitEntryBuilder {
     /// <p>The unique identifier for the next activity to perform, after completing the activity for the path.</p>
-    pub fn next_activity(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_activity = Some(input.into());
+    pub fn next_activity(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.next_activity = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the next activity to perform, after completing the activity for the path.</p>
-    pub fn set_next_activity(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_activity(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.next_activity = input;
         self
     }
     /// <p>The percentage of participants to send down the activity path.</p>
     /// <p>To determine which participants are sent down each path, Amazon Pinpoint applies a probability-based algorithm to the percentages that you specify for the paths. Therefore, the actual percentage of participants who are sent down a path may not be equal to the percentage that you specify.</p>
     pub fn percentage(mut self, input: i32) -> Self {
-        self.percentage = Some(input);
+        self.percentage = ::std::option::Option::Some(input);
         self
     }
     /// <p>The percentage of participants to send down the activity path.</p>
     /// <p>To determine which participants are sent down each path, Amazon Pinpoint applies a probability-based algorithm to the percentages that you specify for the paths. Therefore, the actual percentage of participants who are sent down a path may not be equal to the percentage that you specify.</p>
-    pub fn set_percentage(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_percentage(mut self, input: ::std::option::Option<i32>) -> Self {
         self.percentage = input;
         self
     }

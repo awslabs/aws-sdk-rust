@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum AggregateConformancePackComplianceSummaryGroupKey {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum AggregateConformancePackComplianceSummaryGroupKey {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for AggregateConformancePackComplianceSummaryGroupKey {
+impl ::std::convert::From<&str> for AggregateConformancePackComplianceSummaryGroupKey {
     fn from(s: &str) -> Self {
         match s {
             "ACCOUNT_ID" => AggregateConformancePackComplianceSummaryGroupKey::AccountId,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for AggregateConformancePackComplianceSummaryGroup
         }
     }
 }
-impl std::str::FromStr for AggregateConformancePackComplianceSummaryGroupKey {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for AggregateConformancePackComplianceSummaryGroupKey {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AggregateConformancePackComplianceSummaryGroupKey::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(AggregateConformancePackComplianceSummaryGroupKey::from(s))
     }
 }
 impl AggregateConformancePackComplianceSummaryGroupKey {
@@ -86,7 +86,7 @@ impl AggregateConformancePackComplianceSummaryGroupKey {
         &["ACCOUNT_ID", "AWS_REGION"]
     }
 }
-impl AsRef<str> for AggregateConformancePackComplianceSummaryGroupKey {
+impl ::std::convert::AsRef<str> for AggregateConformancePackComplianceSummaryGroupKey {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

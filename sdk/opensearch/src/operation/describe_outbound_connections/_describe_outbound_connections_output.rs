@@ -2,27 +2,27 @@
 
 /// <p>Contains a list of connections matching the filter criteria.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeOutboundConnectionsOutput {
     /// <p>List of outbound connections that match the filter criteria.</p>
     #[doc(hidden)]
-    pub connections: std::option::Option<std::vec::Vec<crate::types::OutboundConnection>>,
+    pub connections: ::std::option::Option<::std::vec::Vec<crate::types::OutboundConnection>>,
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeOutboundConnectionsOutput {
     /// <p>List of outbound connections that match the filter criteria.</p>
-    pub fn connections(&self) -> std::option::Option<&[crate::types::OutboundConnection]> {
+    pub fn connections(&self) -> ::std::option::Option<&[crate::types::OutboundConnection]> {
         self.connections.as_deref()
     }
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeOutboundConnectionsOutput {
+impl ::aws_http::request_id::RequestId for DescribeOutboundConnectionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -36,10 +36,13 @@ impl DescribeOutboundConnectionsOutput {
 
 /// A builder for [`DescribeOutboundConnectionsOutput`](crate::operation::describe_outbound_connections::DescribeOutboundConnectionsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeOutboundConnectionsOutputBuilder {
-    pub(crate) connections: std::option::Option<std::vec::Vec<crate::types::OutboundConnection>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) connections:
+        ::std::option::Option<::std::vec::Vec<crate::types::OutboundConnection>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeOutboundConnectionsOutputBuilder {
@@ -51,24 +54,24 @@ impl DescribeOutboundConnectionsOutputBuilder {
     pub fn connections(mut self, input: crate::types::OutboundConnection) -> Self {
         let mut v = self.connections.unwrap_or_default();
         v.push(input);
-        self.connections = Some(v);
+        self.connections = ::std::option::Option::Some(v);
         self
     }
     /// <p>List of outbound connections that match the filter criteria.</p>
     pub fn set_connections(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::OutboundConnection>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::OutboundConnection>>,
     ) -> Self {
         self.connections = input;
         self
     }
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

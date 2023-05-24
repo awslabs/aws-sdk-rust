@@ -2,43 +2,43 @@
 
 /// <p>An object representing a Bonus payment paid to a Worker.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BonusPayment {
     /// <p>The ID of the Worker to whom the bonus was paid.</p>
     #[doc(hidden)]
-    pub worker_id: std::option::Option<std::string::String>,
+    pub worker_id: ::std::option::Option<::std::string::String>,
     /// <p>A string representing a currency amount.</p>
     #[doc(hidden)]
-    pub bonus_amount: std::option::Option<std::string::String>,
+    pub bonus_amount: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the assignment associated with this bonus payment.</p>
     #[doc(hidden)]
-    pub assignment_id: std::option::Option<std::string::String>,
+    pub assignment_id: ::std::option::Option<::std::string::String>,
     /// <p>The Reason text given when the bonus was granted, if any.</p>
     #[doc(hidden)]
-    pub reason: std::option::Option<std::string::String>,
+    pub reason: ::std::option::Option<::std::string::String>,
     /// <p>The date and time of when the bonus was granted.</p>
     #[doc(hidden)]
-    pub grant_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub grant_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl BonusPayment {
     /// <p>The ID of the Worker to whom the bonus was paid.</p>
-    pub fn worker_id(&self) -> std::option::Option<&str> {
+    pub fn worker_id(&self) -> ::std::option::Option<&str> {
         self.worker_id.as_deref()
     }
     /// <p>A string representing a currency amount.</p>
-    pub fn bonus_amount(&self) -> std::option::Option<&str> {
+    pub fn bonus_amount(&self) -> ::std::option::Option<&str> {
         self.bonus_amount.as_deref()
     }
     /// <p>The ID of the assignment associated with this bonus payment.</p>
-    pub fn assignment_id(&self) -> std::option::Option<&str> {
+    pub fn assignment_id(&self) -> ::std::option::Option<&str> {
         self.assignment_id.as_deref()
     }
     /// <p>The Reason text given when the bonus was granted, if any.</p>
-    pub fn reason(&self) -> std::option::Option<&str> {
+    pub fn reason(&self) -> ::std::option::Option<&str> {
         self.reason.as_deref()
     }
     /// <p>The date and time of when the bonus was granted.</p>
-    pub fn grant_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn grant_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.grant_time.as_ref()
     }
 }
@@ -51,64 +51,72 @@ impl BonusPayment {
 
 /// A builder for [`BonusPayment`](crate::types::BonusPayment).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BonusPaymentBuilder {
-    pub(crate) worker_id: std::option::Option<std::string::String>,
-    pub(crate) bonus_amount: std::option::Option<std::string::String>,
-    pub(crate) assignment_id: std::option::Option<std::string::String>,
-    pub(crate) reason: std::option::Option<std::string::String>,
-    pub(crate) grant_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) worker_id: ::std::option::Option<::std::string::String>,
+    pub(crate) bonus_amount: ::std::option::Option<::std::string::String>,
+    pub(crate) assignment_id: ::std::option::Option<::std::string::String>,
+    pub(crate) reason: ::std::option::Option<::std::string::String>,
+    pub(crate) grant_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl BonusPaymentBuilder {
     /// <p>The ID of the Worker to whom the bonus was paid.</p>
-    pub fn worker_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.worker_id = Some(input.into());
+    pub fn worker_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.worker_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Worker to whom the bonus was paid.</p>
-    pub fn set_worker_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_worker_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.worker_id = input;
         self
     }
     /// <p>A string representing a currency amount.</p>
-    pub fn bonus_amount(mut self, input: impl Into<std::string::String>) -> Self {
-        self.bonus_amount = Some(input.into());
+    pub fn bonus_amount(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.bonus_amount = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A string representing a currency amount.</p>
-    pub fn set_bonus_amount(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_bonus_amount(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bonus_amount = input;
         self
     }
     /// <p>The ID of the assignment associated with this bonus payment.</p>
-    pub fn assignment_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.assignment_id = Some(input.into());
+    pub fn assignment_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.assignment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the assignment associated with this bonus payment.</p>
-    pub fn set_assignment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_assignment_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.assignment_id = input;
         self
     }
     /// <p>The Reason text given when the bonus was granted, if any.</p>
-    pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
-        self.reason = Some(input.into());
+    pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Reason text given when the bonus was granted, if any.</p>
-    pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reason = input;
         self
     }
     /// <p>The date and time of when the bonus was granted.</p>
-    pub fn grant_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.grant_time = Some(input);
+    pub fn grant_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.grant_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time of when the bonus was granted.</p>
     pub fn set_grant_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.grant_time = input;
         self

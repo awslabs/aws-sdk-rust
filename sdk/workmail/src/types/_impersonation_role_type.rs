@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ImpersonationRoleType {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum ImpersonationRoleType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ImpersonationRoleType {
+impl ::std::convert::From<&str> for ImpersonationRoleType {
     fn from(s: &str) -> Self {
         match s {
             "FULL_ACCESS" => ImpersonationRoleType::FullAccess,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for ImpersonationRoleType {
         }
     }
 }
-impl std::str::FromStr for ImpersonationRoleType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ImpersonationRoleType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ImpersonationRoleType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ImpersonationRoleType::from(s))
     }
 }
 impl ImpersonationRoleType {
@@ -86,7 +86,7 @@ impl ImpersonationRoleType {
         &["FULL_ACCESS", "READ_ONLY"]
     }
 }
-impl AsRef<str> for ImpersonationRoleType {
+impl ::std::convert::AsRef<str> for ImpersonationRoleType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

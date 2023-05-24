@@ -2,22 +2,22 @@
 
 /// <p>Response element for actions that make changes, namely create, update, or delete actions. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FailuresResponse {
     /// <p>List of Amazon Web Services Regions where the failure occurred. </p>
     #[doc(hidden)]
-    pub region: std::option::Option<std::string::String>,
+    pub region: ::std::option::Option<::std::string::String>,
     /// <p>List of all failures. </p>
     #[doc(hidden)]
-    pub failures: std::option::Option<std::vec::Vec<crate::types::Failures>>,
+    pub failures: ::std::option::Option<::std::vec::Vec<crate::types::Failures>>,
 }
 impl FailuresResponse {
     /// <p>List of Amazon Web Services Regions where the failure occurred. </p>
-    pub fn region(&self) -> std::option::Option<&str> {
+    pub fn region(&self) -> ::std::option::Option<&str> {
         self.region.as_deref()
     }
     /// <p>List of all failures. </p>
-    pub fn failures(&self) -> std::option::Option<&[crate::types::Failures]> {
+    pub fn failures(&self) -> ::std::option::Option<&[crate::types::Failures]> {
         self.failures.as_deref()
     }
 }
@@ -30,19 +30,21 @@ impl FailuresResponse {
 
 /// A builder for [`FailuresResponse`](crate::types::FailuresResponse).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FailuresResponseBuilder {
-    pub(crate) region: std::option::Option<std::string::String>,
-    pub(crate) failures: std::option::Option<std::vec::Vec<crate::types::Failures>>,
+    pub(crate) region: ::std::option::Option<::std::string::String>,
+    pub(crate) failures: ::std::option::Option<::std::vec::Vec<crate::types::Failures>>,
 }
 impl FailuresResponseBuilder {
     /// <p>List of Amazon Web Services Regions where the failure occurred. </p>
-    pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
-        self.region = Some(input.into());
+    pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>List of Amazon Web Services Regions where the failure occurred. </p>
-    pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region = input;
         self
     }
@@ -54,13 +56,13 @@ impl FailuresResponseBuilder {
     pub fn failures(mut self, input: crate::types::Failures) -> Self {
         let mut v = self.failures.unwrap_or_default();
         v.push(input);
-        self.failures = Some(v);
+        self.failures = ::std::option::Option::Some(v);
         self
     }
     /// <p>List of all failures. </p>
     pub fn set_failures(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Failures>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Failures>>,
     ) -> Self {
         self.failures = input;
         self

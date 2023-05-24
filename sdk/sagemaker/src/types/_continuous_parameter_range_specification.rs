@@ -2,22 +2,22 @@
 
 /// <p>Defines the possible values for a continuous hyperparameter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContinuousParameterRangeSpecification {
     /// <p>The minimum floating-point value allowed.</p>
     #[doc(hidden)]
-    pub min_value: std::option::Option<std::string::String>,
+    pub min_value: ::std::option::Option<::std::string::String>,
     /// <p>The maximum floating-point value allowed.</p>
     #[doc(hidden)]
-    pub max_value: std::option::Option<std::string::String>,
+    pub max_value: ::std::option::Option<::std::string::String>,
 }
 impl ContinuousParameterRangeSpecification {
     /// <p>The minimum floating-point value allowed.</p>
-    pub fn min_value(&self) -> std::option::Option<&str> {
+    pub fn min_value(&self) -> ::std::option::Option<&str> {
         self.min_value.as_deref()
     }
     /// <p>The maximum floating-point value allowed.</p>
-    pub fn max_value(&self) -> std::option::Option<&str> {
+    pub fn max_value(&self) -> ::std::option::Option<&str> {
         self.max_value.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl ContinuousParameterRangeSpecification {
 
 /// A builder for [`ContinuousParameterRangeSpecification`](crate::types::ContinuousParameterRangeSpecification).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ContinuousParameterRangeSpecificationBuilder {
-    pub(crate) min_value: std::option::Option<std::string::String>,
-    pub(crate) max_value: std::option::Option<std::string::String>,
+    pub(crate) min_value: ::std::option::Option<::std::string::String>,
+    pub(crate) max_value: ::std::option::Option<::std::string::String>,
 }
 impl ContinuousParameterRangeSpecificationBuilder {
     /// <p>The minimum floating-point value allowed.</p>
-    pub fn min_value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.min_value = Some(input.into());
+    pub fn min_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.min_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The minimum floating-point value allowed.</p>
-    pub fn set_min_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_min_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.min_value = input;
         self
     }
     /// <p>The maximum floating-point value allowed.</p>
-    pub fn max_value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.max_value = Some(input.into());
+    pub fn max_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.max_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The maximum floating-point value allowed.</p>
-    pub fn set_max_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_max_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.max_value = input;
         self
     }

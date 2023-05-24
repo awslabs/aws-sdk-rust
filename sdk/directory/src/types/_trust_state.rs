@@ -47,13 +47,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum TrustState {
     #[allow(missing_docs)] // documentation missing in model
@@ -81,7 +81,7 @@ pub enum TrustState {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for TrustState {
+impl ::std::convert::From<&str> for TrustState {
     fn from(s: &str) -> Self {
         match s {
             "Created" => TrustState::Created,
@@ -99,11 +99,11 @@ impl std::convert::From<&str> for TrustState {
         }
     }
 }
-impl std::str::FromStr for TrustState {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for TrustState {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TrustState::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(TrustState::from(s))
     }
 }
 impl TrustState {
@@ -141,7 +141,7 @@ impl TrustState {
         ]
     }
 }
-impl AsRef<str> for TrustState {
+impl ::std::convert::AsRef<str> for TrustState {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

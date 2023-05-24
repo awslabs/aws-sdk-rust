@@ -5,7 +5,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`max_results(i32)`](crate::operation::list_accessors::builders::ListAccessorsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_accessors::builders::ListAccessorsFluentBuilder::set_max_results): <p> The maximum number of accessors to list.</p>
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_accessors::builders::ListAccessorsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_accessors::builders::ListAccessorsFluentBuilder::set_next_token): <p> The pagination token that indicates the next set of results to retrieve. </p>
+    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_accessors::builders::ListAccessorsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_accessors::builders::ListAccessorsFluentBuilder::set_next_token): <p> The pagination token that indicates the next set of results to retrieve. </p>
     /// - On success, responds with [`ListAccessorsOutput`](crate::operation::list_accessors::ListAccessorsOutput) with field(s):
     ///   - [`accessors(Option<Vec<AccessorSummary>>)`](crate::operation::list_accessors::ListAccessorsOutput::accessors): <p>An array of AccessorSummary objects that contain configuration properties for each accessor.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_accessors::ListAccessorsOutput::next_token): <p> The pagination token that indicates the next set of results to retrieve. </p>

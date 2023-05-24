@@ -2,7 +2,7 @@
 pub(crate) fn de_key_group_list_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::types::KeyGroupList>,
+    ::std::option::Option<crate::types::KeyGroupList>,
     crate::operation::list_key_groups::ListKeyGroupsError,
 > {
     (!body.is_empty())
@@ -15,13 +15,13 @@ pub(crate) fn de_key_group_list_payload(
 
 pub fn de_key_group_list(
     inp: &[u8],
-) -> Result<crate::types::KeyGroupList, aws_smithy_xml::decode::XmlDecodeError> {
-    let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
+) -> Result<crate::types::KeyGroupList, ::aws_smithy_xml::decode::XmlDecodeError> {
+    let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
     let start_el = decoder.start_el();
     if !(start_el.matches("KeyGroupList")) {
-        return Err(aws_smithy_xml::decode::XmlDecodeError::custom(format!(
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected KeyGroupList got {:?}",
             start_el
         )));

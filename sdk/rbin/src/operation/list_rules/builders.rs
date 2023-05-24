@@ -6,56 +6,59 @@ pub use crate::operation::list_rules::_list_rules_input::ListRulesInputBuilder;
 /// Fluent builder constructing a request to `ListRules`.
 ///
 /// <p>Lists the Recycle Bin retention rules in the Region.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListRulesFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::list_rules::builders::ListRulesInputBuilder,
 }
 impl ListRulesFluentBuilder {
     /// Creates a new `ListRules`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::list_rules::ListRules,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::list_rules::ListRulesError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_rules::ListRulesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::list_rules::ListRulesOutput,
-        aws_smithy_http::result::SdkError<crate::operation::list_rules::ListRulesError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_rules::ListRulesError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,9 +71,9 @@ impl ListRulesFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::list_rules::ListRulesOutput,
-        aws_smithy_http::result::SdkError<crate::operation::list_rules::ListRulesError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_rules::ListRulesError>,
     > {
         self.send_middleware().await
     }
@@ -86,17 +89,17 @@ impl ListRulesFluentBuilder {
         self
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
-    pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
     /// <p>The token for the next page of results.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
     /// <p>The token for the next page of results.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
@@ -108,7 +111,7 @@ impl ListRulesFluentBuilder {
     /// <p>The resource type retained by the retention rule. Only retention rules that retain the specified resource type are listed. Currently, only Amazon EBS snapshots and EBS-backed AMIs are supported. To list retention rules that retain snapshots, specify <code>EBS_SNAPSHOT</code>. To list retention rules that retain EBS-backed AMIs, specify <code>EC2_IMAGE</code>.</p>
     pub fn set_resource_type(
         mut self,
-        input: std::option::Option<crate::types::ResourceType>,
+        input: ::std::option::Option<crate::types::ResourceType>,
     ) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
@@ -125,7 +128,7 @@ impl ListRulesFluentBuilder {
     /// <p>Information about the resource tags used to identify resources that are retained by the retention rule.</p>
     pub fn set_resource_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ResourceTag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTag>>,
     ) -> Self {
         self.inner = self.inner.set_resource_tags(input);
         self
@@ -136,7 +139,7 @@ impl ListRulesFluentBuilder {
         self
     }
     /// <p>The lock state of the retention rules to list. Only retention rules with the specified lock state are returned.</p>
-    pub fn set_lock_state(mut self, input: std::option::Option<crate::types::LockState>) -> Self {
+    pub fn set_lock_state(mut self, input: ::std::option::Option<crate::types::LockState>) -> Self {
         self.inner = self.inner.set_lock_state(input);
         self
     }

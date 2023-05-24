@@ -2,15 +2,15 @@
 
 /// Use automated encoding to have MediaConvert choose your encoding settings for you, based on characteristics of your input video.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutomatedEncodingSettings {
     /// Use automated ABR to have MediaConvert set up the renditions in your ABR package for you automatically, based on characteristics of your input video. This feature optimizes video quality while minimizing the overall size of your ABR package.
     #[doc(hidden)]
-    pub abr_settings: std::option::Option<crate::types::AutomatedAbrSettings>,
+    pub abr_settings: ::std::option::Option<crate::types::AutomatedAbrSettings>,
 }
 impl AutomatedEncodingSettings {
     /// Use automated ABR to have MediaConvert set up the renditions in your ABR package for you automatically, based on characteristics of your input video. This feature optimizes video quality while minimizing the overall size of your ABR package.
-    pub fn abr_settings(&self) -> std::option::Option<&crate::types::AutomatedAbrSettings> {
+    pub fn abr_settings(&self) -> ::std::option::Option<&crate::types::AutomatedAbrSettings> {
         self.abr_settings.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl AutomatedEncodingSettings {
 
 /// A builder for [`AutomatedEncodingSettings`](crate::types::AutomatedEncodingSettings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AutomatedEncodingSettingsBuilder {
-    pub(crate) abr_settings: std::option::Option<crate::types::AutomatedAbrSettings>,
+    pub(crate) abr_settings: ::std::option::Option<crate::types::AutomatedAbrSettings>,
 }
 impl AutomatedEncodingSettingsBuilder {
     /// Use automated ABR to have MediaConvert set up the renditions in your ABR package for you automatically, based on characteristics of your input video. This feature optimizes video quality while minimizing the overall size of your ABR package.
     pub fn abr_settings(mut self, input: crate::types::AutomatedAbrSettings) -> Self {
-        self.abr_settings = Some(input);
+        self.abr_settings = ::std::option::Option::Some(input);
         self
     }
     /// Use automated ABR to have MediaConvert set up the renditions in your ABR package for you automatically, based on characteristics of your input video. This feature optimizes video quality while minimizing the overall size of your ABR package.
     pub fn set_abr_settings(
         mut self,
-        input: std::option::Option<crate::types::AutomatedAbrSettings>,
+        input: ::std::option::Option<crate::types::AutomatedAbrSettings>,
     ) -> Self {
         self.abr_settings = input;
         self

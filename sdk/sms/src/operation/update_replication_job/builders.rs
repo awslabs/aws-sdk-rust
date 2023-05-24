@@ -6,29 +6,29 @@ pub use crate::operation::update_replication_job::_update_replication_job_input:
 /// Fluent builder constructing a request to `UpdateReplicationJob`.
 ///
 /// <p>Updates the specified settings for the specified replication job.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateReplicationJobFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::update_replication_job::builders::UpdateReplicationJobInputBuilder,
 }
 impl UpdateReplicationJobFluentBuilder {
     /// Creates a new `UpdateReplicationJob`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_replication_job::UpdateReplicationJob,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_replication_job::UpdateReplicationJobError,
         >,
     > {
@@ -36,30 +36,33 @@ impl UpdateReplicationJobFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_replication_job::UpdateReplicationJobOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_replication_job::UpdateReplicationJobError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,23 +75,26 @@ impl UpdateReplicationJobFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_replication_job::UpdateReplicationJobOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_replication_job::UpdateReplicationJobError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The ID of the replication job.</p>
-    pub fn replication_job_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn replication_job_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.replication_job_id(input.into());
         self
     }
     /// <p>The ID of the replication job.</p>
     pub fn set_replication_job_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_replication_job_id(input);
         self
@@ -99,19 +105,19 @@ impl UpdateReplicationJobFluentBuilder {
         self
     }
     /// <p>The time between consecutive replication runs, in hours.</p>
-    pub fn set_frequency(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_frequency(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_frequency(input);
         self
     }
     /// <p>The start time of the next replication run.</p>
-    pub fn next_replication_run_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+    pub fn next_replication_run_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.next_replication_run_start_time(input);
         self
     }
     /// <p>The start time of the next replication run.</p>
     pub fn set_next_replication_run_start_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.inner = self.inner.set_next_replication_run_start_time(input);
         self
@@ -124,28 +130,28 @@ impl UpdateReplicationJobFluentBuilder {
     /// <p>The license type to be used for the AMI created by a successful replication run.</p>
     pub fn set_license_type(
         mut self,
-        input: std::option::Option<crate::types::LicenseType>,
+        input: ::std::option::Option<crate::types::LicenseType>,
     ) -> Self {
         self.inner = self.inner.set_license_type(input);
         self
     }
     /// <p>The name of the IAM role to be used by Server Migration Service.</p>
-    pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn role_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_name(input.into());
         self
     }
     /// <p>The name of the IAM role to be used by Server Migration Service.</p>
-    pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_role_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_name(input);
         self
     }
     /// <p>The description of the replication job.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>The description of the replication job.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
@@ -155,7 +161,7 @@ impl UpdateReplicationJobFluentBuilder {
         self
     }
     /// <p>The maximum number of SMS-created AMIs to retain. The oldest is deleted after the maximum number is reached and a new AMI is created.</p>
-    pub fn set_number_of_recent_amis_to_keep(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_number_of_recent_amis_to_keep(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_number_of_recent_amis_to_keep(input);
         self
     }
@@ -165,7 +171,7 @@ impl UpdateReplicationJobFluentBuilder {
         self
     }
     /// <p>When true, the replication job produces encrypted AMIs. For more information, <code>KmsKeyId</code>.</p>
-    pub fn set_encrypted(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_encrypted(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_encrypted(input);
         self
     }
@@ -177,7 +183,7 @@ impl UpdateReplicationJobFluentBuilder {
     /// <li> <p>ARN referring to the KMS key alias</p> </li>
     /// </ul>
     /// <p>If encrypted is enabled but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used.</p>
-    pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kms_key_id(input.into());
         self
     }
@@ -189,7 +195,7 @@ impl UpdateReplicationJobFluentBuilder {
     /// <li> <p>ARN referring to the KMS key alias</p> </li>
     /// </ul>
     /// <p>If encrypted is enabled but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used.</p>
-    pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kms_key_id(input);
         self
     }

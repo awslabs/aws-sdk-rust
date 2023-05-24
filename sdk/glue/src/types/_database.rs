@@ -2,78 +2,80 @@
 
 /// <p>The <code>Database</code> object represents a logical grouping of tables that might reside in a Hive metastore or an RDBMS.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Database {
     /// <p>The name of the database. For Hive compatibility, this is folded to lowercase when it is stored.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the database.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The location of the database (for example, an HDFS path).</p>
     #[doc(hidden)]
-    pub location_uri: std::option::Option<std::string::String>,
+    pub location_uri: ::std::option::Option<::std::string::String>,
     /// <p>These key-value pairs define parameters and properties of the database.</p>
     #[doc(hidden)]
-    pub parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub parameters: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>The time at which the metadata database was created in the catalog.</p>
     #[doc(hidden)]
-    pub create_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Creates a set of default permissions on the table for principals. Used by Lake Formation. Not used in the normal course of Glue operations.</p>
     #[doc(hidden)]
     pub create_table_default_permissions:
-        std::option::Option<std::vec::Vec<crate::types::PrincipalPermissions>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::PrincipalPermissions>>,
     /// <p>A <code>DatabaseIdentifier</code> structure that describes a target database for resource linking.</p>
     #[doc(hidden)]
-    pub target_database: std::option::Option<crate::types::DatabaseIdentifier>,
+    pub target_database: ::std::option::Option<crate::types::DatabaseIdentifier>,
     /// <p>The ID of the Data Catalog in which the database resides.</p>
     #[doc(hidden)]
-    pub catalog_id: std::option::Option<std::string::String>,
+    pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>A <code>FederatedDatabase</code> structure that references an entity outside the Glue Data Catalog.</p>
     #[doc(hidden)]
-    pub federated_database: std::option::Option<crate::types::FederatedDatabase>,
+    pub federated_database: ::std::option::Option<crate::types::FederatedDatabase>,
 }
 impl Database {
     /// <p>The name of the database. For Hive compatibility, this is folded to lowercase when it is stored.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>A description of the database.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The location of the database (for example, an HDFS path).</p>
-    pub fn location_uri(&self) -> std::option::Option<&str> {
+    pub fn location_uri(&self) -> ::std::option::Option<&str> {
         self.location_uri.as_deref()
     }
     /// <p>These key-value pairs define parameters and properties of the database.</p>
     pub fn parameters(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.parameters.as_ref()
     }
     /// <p>The time at which the metadata database was created in the catalog.</p>
-    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>Creates a set of default permissions on the table for principals. Used by Lake Formation. Not used in the normal course of Glue operations.</p>
     pub fn create_table_default_permissions(
         &self,
-    ) -> std::option::Option<&[crate::types::PrincipalPermissions]> {
+    ) -> ::std::option::Option<&[crate::types::PrincipalPermissions]> {
         self.create_table_default_permissions.as_deref()
     }
     /// <p>A <code>DatabaseIdentifier</code> structure that describes a target database for resource linking.</p>
-    pub fn target_database(&self) -> std::option::Option<&crate::types::DatabaseIdentifier> {
+    pub fn target_database(&self) -> ::std::option::Option<&crate::types::DatabaseIdentifier> {
         self.target_database.as_ref()
     }
     /// <p>The ID of the Data Catalog in which the database resides.</p>
-    pub fn catalog_id(&self) -> std::option::Option<&str> {
+    pub fn catalog_id(&self) -> ::std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
     /// <p>A <code>FederatedDatabase</code> structure that references an entity outside the Glue Data Catalog.</p>
-    pub fn federated_database(&self) -> std::option::Option<&crate::types::FederatedDatabase> {
+    pub fn federated_database(&self) -> ::std::option::Option<&crate::types::FederatedDatabase> {
         self.federated_database.as_ref()
     }
 }
@@ -86,48 +88,51 @@ impl Database {
 
 /// A builder for [`Database`](crate::types::Database).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DatabaseBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) location_uri: std::option::Option<std::string::String>,
-    pub(crate) parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) location_uri: ::std::option::Option<::std::string::String>,
+    pub(crate) parameters: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) create_table_default_permissions:
-        std::option::Option<std::vec::Vec<crate::types::PrincipalPermissions>>,
-    pub(crate) target_database: std::option::Option<crate::types::DatabaseIdentifier>,
-    pub(crate) catalog_id: std::option::Option<std::string::String>,
-    pub(crate) federated_database: std::option::Option<crate::types::FederatedDatabase>,
+        ::std::option::Option<::std::vec::Vec<crate::types::PrincipalPermissions>>,
+    pub(crate) target_database: ::std::option::Option<crate::types::DatabaseIdentifier>,
+    pub(crate) catalog_id: ::std::option::Option<::std::string::String>,
+    pub(crate) federated_database: ::std::option::Option<crate::types::FederatedDatabase>,
 }
 impl DatabaseBuilder {
     /// <p>The name of the database. For Hive compatibility, this is folded to lowercase when it is stored.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the database. For Hive compatibility, this is folded to lowercase when it is stored.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>A description of the database.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of the database.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>The location of the database (for example, an HDFS path).</p>
-    pub fn location_uri(mut self, input: impl Into<std::string::String>) -> Self {
-        self.location_uri = Some(input.into());
+    pub fn location_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.location_uri = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The location of the database (for example, an HDFS path).</p>
-    pub fn set_location_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_location_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location_uri = input;
         self
     }
@@ -138,33 +143,33 @@ impl DatabaseBuilder {
     /// <p>These key-value pairs define parameters and properties of the database.</p>
     pub fn parameters(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.parameters = Some(hash_map);
+        self.parameters = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>These key-value pairs define parameters and properties of the database.</p>
     pub fn set_parameters(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.parameters = input;
         self
     }
     /// <p>The time at which the metadata database was created in the catalog.</p>
-    pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.create_time = Some(input);
+    pub fn create_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.create_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time at which the metadata database was created in the catalog.</p>
     pub fn set_create_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.create_time = input;
         self
@@ -180,49 +185,49 @@ impl DatabaseBuilder {
     ) -> Self {
         let mut v = self.create_table_default_permissions.unwrap_or_default();
         v.push(input);
-        self.create_table_default_permissions = Some(v);
+        self.create_table_default_permissions = ::std::option::Option::Some(v);
         self
     }
     /// <p>Creates a set of default permissions on the table for principals. Used by Lake Formation. Not used in the normal course of Glue operations.</p>
     pub fn set_create_table_default_permissions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PrincipalPermissions>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PrincipalPermissions>>,
     ) -> Self {
         self.create_table_default_permissions = input;
         self
     }
     /// <p>A <code>DatabaseIdentifier</code> structure that describes a target database for resource linking.</p>
     pub fn target_database(mut self, input: crate::types::DatabaseIdentifier) -> Self {
-        self.target_database = Some(input);
+        self.target_database = ::std::option::Option::Some(input);
         self
     }
     /// <p>A <code>DatabaseIdentifier</code> structure that describes a target database for resource linking.</p>
     pub fn set_target_database(
         mut self,
-        input: std::option::Option<crate::types::DatabaseIdentifier>,
+        input: ::std::option::Option<crate::types::DatabaseIdentifier>,
     ) -> Self {
         self.target_database = input;
         self
     }
     /// <p>The ID of the Data Catalog in which the database resides.</p>
-    pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.catalog_id = Some(input.into());
+    pub fn catalog_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.catalog_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Data Catalog in which the database resides.</p>
-    pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_catalog_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.catalog_id = input;
         self
     }
     /// <p>A <code>FederatedDatabase</code> structure that references an entity outside the Glue Data Catalog.</p>
     pub fn federated_database(mut self, input: crate::types::FederatedDatabase) -> Self {
-        self.federated_database = Some(input);
+        self.federated_database = ::std::option::Option::Some(input);
         self
     }
     /// <p>A <code>FederatedDatabase</code> structure that references an entity outside the Glue Data Catalog.</p>
     pub fn set_federated_database(
         mut self,
-        input: std::option::Option<crate::types::FederatedDatabase>,
+        input: ::std::option::Option<crate::types::FederatedDatabase>,
     ) -> Self {
         self.federated_database = input;
         self

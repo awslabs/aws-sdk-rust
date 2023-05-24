@@ -2,45 +2,45 @@
 
 /// <p>Represents a request to the create device pool operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDevicePoolInput {
     /// <p>The ARN of the project for the device pool.</p>
     #[doc(hidden)]
-    pub project_arn: std::option::Option<std::string::String>,
+    pub project_arn: ::std::option::Option<::std::string::String>,
     /// <p>The device pool's name.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The device pool's description.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The device pool's rules.</p>
     #[doc(hidden)]
-    pub rules: std::option::Option<std::vec::Vec<crate::types::Rule>>,
+    pub rules: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>,
     /// <p>The number of devices that Device Farm can add to your device pool. Device Farm adds devices that are available and meet the criteria that you assign for the <code>rules</code> parameter. Depending on how many devices meet these constraints, your device pool might contain fewer devices than the value for this parameter.</p>
     /// <p>By specifying the maximum number of devices, you can control the costs that you incur by running tests.</p>
     #[doc(hidden)]
-    pub max_devices: std::option::Option<i32>,
+    pub max_devices: ::std::option::Option<i32>,
 }
 impl CreateDevicePoolInput {
     /// <p>The ARN of the project for the device pool.</p>
-    pub fn project_arn(&self) -> std::option::Option<&str> {
+    pub fn project_arn(&self) -> ::std::option::Option<&str> {
         self.project_arn.as_deref()
     }
     /// <p>The device pool's name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The device pool's description.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The device pool's rules.</p>
-    pub fn rules(&self) -> std::option::Option<&[crate::types::Rule]> {
+    pub fn rules(&self) -> ::std::option::Option<&[crate::types::Rule]> {
         self.rules.as_deref()
     }
     /// <p>The number of devices that Device Farm can add to your device pool. Device Farm adds devices that are available and meet the criteria that you assign for the <code>rules</code> parameter. Depending on how many devices meet these constraints, your device pool might contain fewer devices than the value for this parameter.</p>
     /// <p>By specifying the maximum number of devices, you can control the costs that you incur by running tests.</p>
-    pub fn max_devices(&self) -> std::option::Option<i32> {
+    pub fn max_devices(&self) -> ::std::option::Option<i32> {
         self.max_devices
     }
 }
@@ -54,42 +54,44 @@ impl CreateDevicePoolInput {
 
 /// A builder for [`CreateDevicePoolInput`](crate::operation::create_device_pool::CreateDevicePoolInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateDevicePoolInputBuilder {
-    pub(crate) project_arn: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) rules: std::option::Option<std::vec::Vec<crate::types::Rule>>,
-    pub(crate) max_devices: std::option::Option<i32>,
+    pub(crate) project_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>,
+    pub(crate) max_devices: ::std::option::Option<i32>,
 }
 impl CreateDevicePoolInputBuilder {
     /// <p>The ARN of the project for the device pool.</p>
-    pub fn project_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.project_arn = Some(input.into());
+    pub fn project_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.project_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the project for the device pool.</p>
-    pub fn set_project_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_project_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.project_arn = input;
         self
     }
     /// <p>The device pool's name.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The device pool's name.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The device pool's description.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The device pool's description.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
@@ -101,13 +103,13 @@ impl CreateDevicePoolInputBuilder {
     pub fn rules(mut self, input: crate::types::Rule) -> Self {
         let mut v = self.rules.unwrap_or_default();
         v.push(input);
-        self.rules = Some(v);
+        self.rules = ::std::option::Option::Some(v);
         self
     }
     /// <p>The device pool's rules.</p>
     pub fn set_rules(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Rule>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>,
     ) -> Self {
         self.rules = input;
         self
@@ -115,23 +117,23 @@ impl CreateDevicePoolInputBuilder {
     /// <p>The number of devices that Device Farm can add to your device pool. Device Farm adds devices that are available and meet the criteria that you assign for the <code>rules</code> parameter. Depending on how many devices meet these constraints, your device pool might contain fewer devices than the value for this parameter.</p>
     /// <p>By specifying the maximum number of devices, you can control the costs that you incur by running tests.</p>
     pub fn max_devices(mut self, input: i32) -> Self {
-        self.max_devices = Some(input);
+        self.max_devices = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of devices that Device Farm can add to your device pool. Device Farm adds devices that are available and meet the criteria that you assign for the <code>rules</code> parameter. Depending on how many devices meet these constraints, your device pool might contain fewer devices than the value for this parameter.</p>
     /// <p>By specifying the maximum number of devices, you can control the costs that you incur by running tests.</p>
-    pub fn set_max_devices(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_devices(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_devices = input;
         self
     }
     /// Consumes the builder and constructs a [`CreateDevicePoolInput`](crate::operation::create_device_pool::CreateDevicePoolInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::create_device_pool::CreateDevicePoolInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::create_device_pool::CreateDevicePoolInput {
                 project_arn: self.project_arn,
                 name: self.name,

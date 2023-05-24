@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ResetCache`](crate::operation::reset_cache::builders::ResetCacheFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`gateway_arn(impl Into<String>)`](crate::operation::reset_cache::builders::ResetCacheFluentBuilder::gateway_arn) / [`set_gateway_arn(Option<String>)`](crate::operation::reset_cache::builders::ResetCacheFluentBuilder::set_gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
+    ///   - [`gateway_arn(impl ::std::convert::Into<String>)`](crate::operation::reset_cache::builders::ResetCacheFluentBuilder::gateway_arn) / [`set_gateway_arn(Option<String>)`](crate::operation::reset_cache::builders::ResetCacheFluentBuilder::set_gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     /// - On success, responds with [`ResetCacheOutput`](crate::operation::reset_cache::ResetCacheOutput) with field(s):
     ///   - [`gateway_arn(Option<String>)`](crate::operation::reset_cache::ResetCacheOutput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     /// - On failure, responds with [`SdkError<ResetCacheError>`](crate::operation::reset_cache::ResetCacheError)

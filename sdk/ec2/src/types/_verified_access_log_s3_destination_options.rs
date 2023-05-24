@@ -2,36 +2,36 @@
 
 /// <p>Options for Amazon S3 as a logging destination.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VerifiedAccessLogS3DestinationOptions {
     /// <p>Indicates whether logging is enabled.</p>
     #[doc(hidden)]
-    pub enabled: std::option::Option<bool>,
+    pub enabled: ::std::option::Option<bool>,
     /// <p>The bucket name.</p>
     #[doc(hidden)]
-    pub bucket_name: std::option::Option<std::string::String>,
+    pub bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>The bucket prefix.</p>
     #[doc(hidden)]
-    pub prefix: std::option::Option<std::string::String>,
+    pub prefix: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services account that owns the Amazon S3 bucket.</p>
     #[doc(hidden)]
-    pub bucket_owner: std::option::Option<std::string::String>,
+    pub bucket_owner: ::std::option::Option<::std::string::String>,
 }
 impl VerifiedAccessLogS3DestinationOptions {
     /// <p>Indicates whether logging is enabled.</p>
-    pub fn enabled(&self) -> std::option::Option<bool> {
+    pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
     /// <p>The bucket name.</p>
-    pub fn bucket_name(&self) -> std::option::Option<&str> {
+    pub fn bucket_name(&self) -> ::std::option::Option<&str> {
         self.bucket_name.as_deref()
     }
     /// <p>The bucket prefix.</p>
-    pub fn prefix(&self) -> std::option::Option<&str> {
+    pub fn prefix(&self) -> ::std::option::Option<&str> {
         self.prefix.as_deref()
     }
     /// <p>The ID of the Amazon Web Services account that owns the Amazon S3 bucket.</p>
-    pub fn bucket_owner(&self) -> std::option::Option<&str> {
+    pub fn bucket_owner(&self) -> ::std::option::Option<&str> {
         self.bucket_owner.as_deref()
     }
 }
@@ -44,51 +44,53 @@ impl VerifiedAccessLogS3DestinationOptions {
 
 /// A builder for [`VerifiedAccessLogS3DestinationOptions`](crate::types::VerifiedAccessLogS3DestinationOptions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VerifiedAccessLogS3DestinationOptionsBuilder {
-    pub(crate) enabled: std::option::Option<bool>,
-    pub(crate) bucket_name: std::option::Option<std::string::String>,
-    pub(crate) prefix: std::option::Option<std::string::String>,
-    pub(crate) bucket_owner: std::option::Option<std::string::String>,
+    pub(crate) enabled: ::std::option::Option<bool>,
+    pub(crate) bucket_name: ::std::option::Option<::std::string::String>,
+    pub(crate) prefix: ::std::option::Option<::std::string::String>,
+    pub(crate) bucket_owner: ::std::option::Option<::std::string::String>,
 }
 impl VerifiedAccessLogS3DestinationOptionsBuilder {
     /// <p>Indicates whether logging is enabled.</p>
     pub fn enabled(mut self, input: bool) -> Self {
-        self.enabled = Some(input);
+        self.enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether logging is enabled.</p>
-    pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
     }
     /// <p>The bucket name.</p>
-    pub fn bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.bucket_name = Some(input.into());
+    pub fn bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.bucket_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The bucket name.</p>
-    pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket_name = input;
         self
     }
     /// <p>The bucket prefix.</p>
-    pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
-        self.prefix = Some(input.into());
+    pub fn prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The bucket prefix.</p>
-    pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.prefix = input;
         self
     }
     /// <p>The ID of the Amazon Web Services account that owns the Amazon S3 bucket.</p>
-    pub fn bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
-        self.bucket_owner = Some(input.into());
+    pub fn bucket_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.bucket_owner = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services account that owns the Amazon S3 bucket.</p>
-    pub fn set_bucket_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_bucket_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket_owner = input;
         self
     }

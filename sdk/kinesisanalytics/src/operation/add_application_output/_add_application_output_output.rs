@@ -2,11 +2,11 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddApplicationOutputOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for AddApplicationOutputOutput {
+impl ::aws_http::request_id::RequestId for AddApplicationOutputOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -21,7 +21,9 @@ impl AddApplicationOutputOutput {
 
 /// A builder for [`AddApplicationOutputOutput`](crate::operation::add_application_output::AddApplicationOutputOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AddApplicationOutputOutputBuilder {
     _request_id: Option<String>,
 }

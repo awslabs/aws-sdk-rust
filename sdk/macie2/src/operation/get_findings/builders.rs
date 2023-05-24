@@ -6,56 +6,59 @@ pub use crate::operation::get_findings::_get_findings_input::GetFindingsInputBui
 /// Fluent builder constructing a request to `GetFindings`.
 ///
 /// <p>Retrieves the details of one or more findings.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetFindingsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::get_findings::builders::GetFindingsInputBuilder,
 }
 impl GetFindingsFluentBuilder {
     /// Creates a new `GetFindings`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::get_findings::GetFindings,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::get_findings::GetFindingsError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_findings::GetFindingsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_findings::GetFindingsOutput,
-        aws_smithy_http::result::SdkError<crate::operation::get_findings::GetFindingsError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_findings::GetFindingsError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,9 +71,9 @@ impl GetFindingsFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_findings::GetFindingsOutput,
-        aws_smithy_http::result::SdkError<crate::operation::get_findings::GetFindingsError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_findings::GetFindingsError>,
     > {
         self.send_middleware().await
     }
@@ -79,14 +82,14 @@ impl GetFindingsFluentBuilder {
     /// To override the contents of this collection use [`set_finding_ids`](Self::set_finding_ids).
     ///
     /// <p>An array of strings that lists the unique identifiers for the findings to retrieve. You can specify as many as 50 unique identifiers in this array.</p>
-    pub fn finding_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn finding_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.finding_ids(input.into());
         self
     }
     /// <p>An array of strings that lists the unique identifiers for the findings to retrieve. You can specify as many as 50 unique identifiers in this array.</p>
     pub fn set_finding_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_finding_ids(input);
         self
@@ -99,7 +102,7 @@ impl GetFindingsFluentBuilder {
     /// <p>The criteria for sorting the results of the request.</p>
     pub fn set_sort_criteria(
         mut self,
-        input: std::option::Option<crate::types::SortCriteria>,
+        input: ::std::option::Option<crate::types::SortCriteria>,
     ) -> Self {
         self.inner = self.inner.set_sort_criteria(input);
         self

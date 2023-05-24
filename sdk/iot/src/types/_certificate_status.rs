@@ -42,13 +42,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum CertificateStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -66,7 +66,7 @@ pub enum CertificateStatus {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for CertificateStatus {
+impl ::std::convert::From<&str> for CertificateStatus {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVE" => CertificateStatus::Active,
@@ -81,11 +81,11 @@ impl std::convert::From<&str> for CertificateStatus {
         }
     }
 }
-impl std::str::FromStr for CertificateStatus {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for CertificateStatus {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CertificateStatus::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(CertificateStatus::from(s))
     }
 }
 impl CertificateStatus {
@@ -113,7 +113,7 @@ impl CertificateStatus {
         ]
     }
 }
-impl AsRef<str> for CertificateStatus {
+impl ::std::convert::AsRef<str> for CertificateStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetMembers`](crate::operation::get_members::builders::GetMembersFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`graph_arn(impl Into<String>)`](crate::operation::get_members::builders::GetMembersFluentBuilder::graph_arn) / [`set_graph_arn(Option<String>)`](crate::operation::get_members::builders::GetMembersFluentBuilder::set_graph_arn): <p>The ARN of the behavior graph for which to request the member details.</p>
+    ///   - [`graph_arn(impl ::std::convert::Into<String>)`](crate::operation::get_members::builders::GetMembersFluentBuilder::graph_arn) / [`set_graph_arn(Option<String>)`](crate::operation::get_members::builders::GetMembersFluentBuilder::set_graph_arn): <p>The ARN of the behavior graph for which to request the member details.</p>
     ///   - [`account_ids(Vec<String>)`](crate::operation::get_members::builders::GetMembersFluentBuilder::account_ids) / [`set_account_ids(Option<Vec<String>>)`](crate::operation::get_members::builders::GetMembersFluentBuilder::set_account_ids): <p>The list of Amazon Web Services account identifiers for the member account for which to return member details. You can request details for up to 50 member accounts at a time.</p>  <p>You cannot use <code>GetMembers</code> to retrieve information about member accounts that were removed from the behavior graph.</p>
     /// - On success, responds with [`GetMembersOutput`](crate::operation::get_members::GetMembersOutput) with field(s):
     ///   - [`member_details(Option<Vec<MemberDetail>>)`](crate::operation::get_members::GetMembersOutput::member_details): <p>The member account details that Detective is returning in response to the request.</p>

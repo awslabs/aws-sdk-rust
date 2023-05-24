@@ -2,22 +2,23 @@
 
 /// <p>Identifies </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LambdaResource {
     /// <p>An Amazon Resource Name (ARN) that represents an Lambda function to be triggered by PUT object actions on the associated local Amazon S3 resource.</p>
     #[doc(hidden)]
-    pub lambda_arn: std::option::Option<std::string::String>,
+    pub lambda_arn: ::std::option::Option<::std::string::String>,
     /// <p>The array of ARNs for <code>S3Resource</code> objects to trigger the <code>LambdaResource</code> objects associated with this job.</p>
     #[doc(hidden)]
-    pub event_triggers: std::option::Option<std::vec::Vec<crate::types::EventTriggerDefinition>>,
+    pub event_triggers:
+        ::std::option::Option<::std::vec::Vec<crate::types::EventTriggerDefinition>>,
 }
 impl LambdaResource {
     /// <p>An Amazon Resource Name (ARN) that represents an Lambda function to be triggered by PUT object actions on the associated local Amazon S3 resource.</p>
-    pub fn lambda_arn(&self) -> std::option::Option<&str> {
+    pub fn lambda_arn(&self) -> ::std::option::Option<&str> {
         self.lambda_arn.as_deref()
     }
     /// <p>The array of ARNs for <code>S3Resource</code> objects to trigger the <code>LambdaResource</code> objects associated with this job.</p>
-    pub fn event_triggers(&self) -> std::option::Option<&[crate::types::EventTriggerDefinition]> {
+    pub fn event_triggers(&self) -> ::std::option::Option<&[crate::types::EventTriggerDefinition]> {
         self.event_triggers.as_deref()
     }
 }
@@ -30,20 +31,22 @@ impl LambdaResource {
 
 /// A builder for [`LambdaResource`](crate::types::LambdaResource).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LambdaResourceBuilder {
-    pub(crate) lambda_arn: std::option::Option<std::string::String>,
+    pub(crate) lambda_arn: ::std::option::Option<::std::string::String>,
     pub(crate) event_triggers:
-        std::option::Option<std::vec::Vec<crate::types::EventTriggerDefinition>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::EventTriggerDefinition>>,
 }
 impl LambdaResourceBuilder {
     /// <p>An Amazon Resource Name (ARN) that represents an Lambda function to be triggered by PUT object actions on the associated local Amazon S3 resource.</p>
-    pub fn lambda_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.lambda_arn = Some(input.into());
+    pub fn lambda_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.lambda_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An Amazon Resource Name (ARN) that represents an Lambda function to be triggered by PUT object actions on the associated local Amazon S3 resource.</p>
-    pub fn set_lambda_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_lambda_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lambda_arn = input;
         self
     }
@@ -55,13 +58,13 @@ impl LambdaResourceBuilder {
     pub fn event_triggers(mut self, input: crate::types::EventTriggerDefinition) -> Self {
         let mut v = self.event_triggers.unwrap_or_default();
         v.push(input);
-        self.event_triggers = Some(v);
+        self.event_triggers = ::std::option::Option::Some(v);
         self
     }
     /// <p>The array of ARNs for <code>S3Resource</code> objects to trigger the <code>LambdaResource</code> objects associated with this job.</p>
     pub fn set_event_triggers(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::EventTriggerDefinition>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::EventTriggerDefinition>>,
     ) -> Self {
         self.event_triggers = input;
         self

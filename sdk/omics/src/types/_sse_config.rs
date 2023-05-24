@@ -2,22 +2,22 @@
 
 /// <p>Server-side encryption (SSE) settings for a store.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SseConfig {
     /// <p>The encryption type.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::EncryptionType>,
+    pub r#type: ::std::option::Option<crate::types::EncryptionType>,
     /// <p>An encryption key ARN.</p>
     #[doc(hidden)]
-    pub key_arn: std::option::Option<std::string::String>,
+    pub key_arn: ::std::option::Option<::std::string::String>,
 }
 impl SseConfig {
     /// <p>The encryption type.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::EncryptionType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::EncryptionType> {
         self.r#type.as_ref()
     }
     /// <p>An encryption key ARN.</p>
-    pub fn key_arn(&self) -> std::option::Option<&str> {
+    pub fn key_arn(&self) -> ::std::option::Option<&str> {
         self.key_arn.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl SseConfig {
 
 /// A builder for [`SseConfig`](crate::types::SseConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SseConfigBuilder {
-    pub(crate) r#type: std::option::Option<crate::types::EncryptionType>,
-    pub(crate) key_arn: std::option::Option<std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::EncryptionType>,
+    pub(crate) key_arn: ::std::option::Option<::std::string::String>,
 }
 impl SseConfigBuilder {
     /// <p>The encryption type.</p>
     pub fn r#type(mut self, input: crate::types::EncryptionType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The encryption type.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::EncryptionType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::EncryptionType>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>An encryption key ARN.</p>
-    pub fn key_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.key_arn = Some(input.into());
+    pub fn key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.key_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An encryption key ARN.</p>
-    pub fn set_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_arn = input;
         self
     }

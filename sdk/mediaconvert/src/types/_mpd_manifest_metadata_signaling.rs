@@ -38,13 +38,13 @@
 /// To add an InbandEventStream element in your output MPD manifest for each type of event message, set Manifest metadata signaling to Enabled. For ID3 event messages, the InbandEventStream element schemeIdUri will be same value that you specify for ID3 metadata scheme ID URI. For SCTE35 event messages, the InbandEventStream element schemeIdUri will be "urn:scte:scte35:2013:bin". To leave these elements out of your output MPD manifest, set Manifest metadata signaling to Disabled. To enable Manifest metadata signaling, you must also set SCTE-35 source to Passthrough, ESAM SCTE-35 to insert, or ID3 metadata (TimedMetadata) to Passthrough.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum MpdManifestMetadataSignaling {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum MpdManifestMetadataSignaling {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for MpdManifestMetadataSignaling {
+impl ::std::convert::From<&str> for MpdManifestMetadataSignaling {
     fn from(s: &str) -> Self {
         match s {
             "DISABLED" => MpdManifestMetadataSignaling::Disabled,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for MpdManifestMetadataSignaling {
         }
     }
 }
-impl std::str::FromStr for MpdManifestMetadataSignaling {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for MpdManifestMetadataSignaling {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(MpdManifestMetadataSignaling::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(MpdManifestMetadataSignaling::from(s))
     }
 }
 impl MpdManifestMetadataSignaling {
@@ -86,7 +86,7 @@ impl MpdManifestMetadataSignaling {
         &["DISABLED", "ENABLED"]
     }
 }
-impl AsRef<str> for MpdManifestMetadataSignaling {
+impl ::std::convert::AsRef<str> for MpdManifestMetadataSignaling {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

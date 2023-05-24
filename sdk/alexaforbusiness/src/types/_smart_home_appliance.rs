@@ -2,29 +2,29 @@
 
 /// <p>A smart home appliance that can connect to a central system. Any domestic device can be a smart appliance. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SmartHomeAppliance {
     /// <p>The friendly name of the smart home appliance.</p>
     #[doc(hidden)]
-    pub friendly_name: std::option::Option<std::string::String>,
+    pub friendly_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the smart home appliance.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The name of the manufacturer of the smart home appliance.</p>
     #[doc(hidden)]
-    pub manufacturer_name: std::option::Option<std::string::String>,
+    pub manufacturer_name: ::std::option::Option<::std::string::String>,
 }
 impl SmartHomeAppliance {
     /// <p>The friendly name of the smart home appliance.</p>
-    pub fn friendly_name(&self) -> std::option::Option<&str> {
+    pub fn friendly_name(&self) -> ::std::option::Option<&str> {
         self.friendly_name.as_deref()
     }
     /// <p>The description of the smart home appliance.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The name of the manufacturer of the smart home appliance.</p>
-    pub fn manufacturer_name(&self) -> std::option::Option<&str> {
+    pub fn manufacturer_name(&self) -> ::std::option::Option<&str> {
         self.manufacturer_name.as_deref()
     }
 }
@@ -37,42 +37,53 @@ impl SmartHomeAppliance {
 
 /// A builder for [`SmartHomeAppliance`](crate::types::SmartHomeAppliance).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SmartHomeApplianceBuilder {
-    pub(crate) friendly_name: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) manufacturer_name: std::option::Option<std::string::String>,
+    pub(crate) friendly_name: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) manufacturer_name: ::std::option::Option<::std::string::String>,
 }
 impl SmartHomeApplianceBuilder {
     /// <p>The friendly name of the smart home appliance.</p>
-    pub fn friendly_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.friendly_name = Some(input.into());
+    pub fn friendly_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.friendly_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The friendly name of the smart home appliance.</p>
-    pub fn set_friendly_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_friendly_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.friendly_name = input;
         self
     }
     /// <p>The description of the smart home appliance.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the smart home appliance.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>The name of the manufacturer of the smart home appliance.</p>
-    pub fn manufacturer_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.manufacturer_name = Some(input.into());
+    pub fn manufacturer_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.manufacturer_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the manufacturer of the smart home appliance.</p>
     pub fn set_manufacturer_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.manufacturer_name = input;
         self

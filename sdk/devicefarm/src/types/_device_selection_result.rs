@@ -2,29 +2,29 @@
 
 /// <p>Contains the run results requested by the device selection configuration and how many devices were returned. For an example of the JSON response syntax, see <code>ScheduleRun</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeviceSelectionResult {
     /// <p>The filters in a device selection result.</p>
     #[doc(hidden)]
-    pub filters: std::option::Option<std::vec::Vec<crate::types::DeviceFilter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::DeviceFilter>>,
     /// <p>The number of devices that matched the device filter selection criteria.</p>
     #[doc(hidden)]
-    pub matched_devices_count: std::option::Option<i32>,
+    pub matched_devices_count: ::std::option::Option<i32>,
     /// <p>The maximum number of devices to be selected by a device filter and included in a test run.</p>
     #[doc(hidden)]
-    pub max_devices: std::option::Option<i32>,
+    pub max_devices: ::std::option::Option<i32>,
 }
 impl DeviceSelectionResult {
     /// <p>The filters in a device selection result.</p>
-    pub fn filters(&self) -> std::option::Option<&[crate::types::DeviceFilter]> {
+    pub fn filters(&self) -> ::std::option::Option<&[crate::types::DeviceFilter]> {
         self.filters.as_deref()
     }
     /// <p>The number of devices that matched the device filter selection criteria.</p>
-    pub fn matched_devices_count(&self) -> std::option::Option<i32> {
+    pub fn matched_devices_count(&self) -> ::std::option::Option<i32> {
         self.matched_devices_count
     }
     /// <p>The maximum number of devices to be selected by a device filter and included in a test run.</p>
-    pub fn max_devices(&self) -> std::option::Option<i32> {
+    pub fn max_devices(&self) -> ::std::option::Option<i32> {
         self.max_devices
     }
 }
@@ -37,11 +37,13 @@ impl DeviceSelectionResult {
 
 /// A builder for [`DeviceSelectionResult`](crate::types::DeviceSelectionResult).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeviceSelectionResultBuilder {
-    pub(crate) filters: std::option::Option<std::vec::Vec<crate::types::DeviceFilter>>,
-    pub(crate) matched_devices_count: std::option::Option<i32>,
-    pub(crate) max_devices: std::option::Option<i32>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::DeviceFilter>>,
+    pub(crate) matched_devices_count: ::std::option::Option<i32>,
+    pub(crate) max_devices: ::std::option::Option<i32>,
 }
 impl DeviceSelectionResultBuilder {
     /// Appends an item to `filters`.
@@ -52,34 +54,34 @@ impl DeviceSelectionResultBuilder {
     pub fn filters(mut self, input: crate::types::DeviceFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
         v.push(input);
-        self.filters = Some(v);
+        self.filters = ::std::option::Option::Some(v);
         self
     }
     /// <p>The filters in a device selection result.</p>
     pub fn set_filters(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DeviceFilter>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DeviceFilter>>,
     ) -> Self {
         self.filters = input;
         self
     }
     /// <p>The number of devices that matched the device filter selection criteria.</p>
     pub fn matched_devices_count(mut self, input: i32) -> Self {
-        self.matched_devices_count = Some(input);
+        self.matched_devices_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of devices that matched the device filter selection criteria.</p>
-    pub fn set_matched_devices_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_matched_devices_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.matched_devices_count = input;
         self
     }
     /// <p>The maximum number of devices to be selected by a device filter and included in a test run.</p>
     pub fn max_devices(mut self, input: i32) -> Self {
-        self.max_devices = Some(input);
+        self.max_devices = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum number of devices to be selected by a device filter and included in a test run.</p>
-    pub fn set_max_devices(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_devices(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_devices = input;
         self
     }

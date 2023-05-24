@@ -2,11 +2,11 @@
 
 /// <p> Response of UpdateSubscriber </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateSubscriberOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for UpdateSubscriberOutput {
+impl ::aws_http::request_id::RequestId for UpdateSubscriberOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -21,7 +21,9 @@ impl UpdateSubscriberOutput {
 
 /// A builder for [`UpdateSubscriberOutput`](crate::operation::update_subscriber::UpdateSubscriberOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateSubscriberOutputBuilder {
     _request_id: Option<String>,
 }

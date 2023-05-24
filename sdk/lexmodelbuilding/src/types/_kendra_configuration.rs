@@ -2,31 +2,31 @@
 
 /// <p>Provides configuration information for the AMAZON.KendraSearchIntent intent. When you use this intent, Amazon Lex searches the specified Amazon Kendra index and returns documents from the index that match the user's utterance. For more information, see <a href="http://docs.aws.amazon.com/lex/latest/dg/built-in-intent-kendra-search.html"> AMAZON.KendraSearchIntent</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KendraConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Kendra index that you want the AMAZON.KendraSearchIntent intent to search. The index must be in the same account and Region as the Amazon Lex bot. If the Amazon Kendra index does not exist, you get an exception when you call the <code>PutIntent</code> operation.</p>
     #[doc(hidden)]
-    pub kendra_index: std::option::Option<std::string::String>,
+    pub kendra_index: ::std::option::Option<::std::string::String>,
     /// <p>A query filter that Amazon Lex sends to Amazon Kendra to filter the response from the query. The filter is in the format defined by Amazon Kendra. For more information, see <a href="http://docs.aws.amazon.com/kendra/latest/dg/filtering.html">Filtering queries</a>.</p>
     /// <p>You can override this filter string with a new filter string at runtime.</p>
     #[doc(hidden)]
-    pub query_filter_string: std::option::Option<std::string::String>,
+    pub query_filter_string: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an IAM role that has permission to search the Amazon Kendra index. The role must be in the same account and Region as the Amazon Lex bot. If the role does not exist, you get an exception when you call the <code>PutIntent</code> operation.</p>
     #[doc(hidden)]
-    pub role: std::option::Option<std::string::String>,
+    pub role: ::std::option::Option<::std::string::String>,
 }
 impl KendraConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Kendra index that you want the AMAZON.KendraSearchIntent intent to search. The index must be in the same account and Region as the Amazon Lex bot. If the Amazon Kendra index does not exist, you get an exception when you call the <code>PutIntent</code> operation.</p>
-    pub fn kendra_index(&self) -> std::option::Option<&str> {
+    pub fn kendra_index(&self) -> ::std::option::Option<&str> {
         self.kendra_index.as_deref()
     }
     /// <p>A query filter that Amazon Lex sends to Amazon Kendra to filter the response from the query. The filter is in the format defined by Amazon Kendra. For more information, see <a href="http://docs.aws.amazon.com/kendra/latest/dg/filtering.html">Filtering queries</a>.</p>
     /// <p>You can override this filter string with a new filter string at runtime.</p>
-    pub fn query_filter_string(&self) -> std::option::Option<&str> {
+    pub fn query_filter_string(&self) -> ::std::option::Option<&str> {
         self.query_filter_string.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that has permission to search the Amazon Kendra index. The role must be in the same account and Region as the Amazon Lex bot. If the role does not exist, you get an exception when you call the <code>PutIntent</code> operation.</p>
-    pub fn role(&self) -> std::option::Option<&str> {
+    pub fn role(&self) -> ::std::option::Option<&str> {
         self.role.as_deref()
     }
 }
@@ -39,45 +39,50 @@ impl KendraConfiguration {
 
 /// A builder for [`KendraConfiguration`](crate::types::KendraConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct KendraConfigurationBuilder {
-    pub(crate) kendra_index: std::option::Option<std::string::String>,
-    pub(crate) query_filter_string: std::option::Option<std::string::String>,
-    pub(crate) role: std::option::Option<std::string::String>,
+    pub(crate) kendra_index: ::std::option::Option<::std::string::String>,
+    pub(crate) query_filter_string: ::std::option::Option<::std::string::String>,
+    pub(crate) role: ::std::option::Option<::std::string::String>,
 }
 impl KendraConfigurationBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Kendra index that you want the AMAZON.KendraSearchIntent intent to search. The index must be in the same account and Region as the Amazon Lex bot. If the Amazon Kendra index does not exist, you get an exception when you call the <code>PutIntent</code> operation.</p>
-    pub fn kendra_index(mut self, input: impl Into<std::string::String>) -> Self {
-        self.kendra_index = Some(input.into());
+    pub fn kendra_index(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kendra_index = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Kendra index that you want the AMAZON.KendraSearchIntent intent to search. The index must be in the same account and Region as the Amazon Lex bot. If the Amazon Kendra index does not exist, you get an exception when you call the <code>PutIntent</code> operation.</p>
-    pub fn set_kendra_index(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_kendra_index(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kendra_index = input;
         self
     }
     /// <p>A query filter that Amazon Lex sends to Amazon Kendra to filter the response from the query. The filter is in the format defined by Amazon Kendra. For more information, see <a href="http://docs.aws.amazon.com/kendra/latest/dg/filtering.html">Filtering queries</a>.</p>
     /// <p>You can override this filter string with a new filter string at runtime.</p>
-    pub fn query_filter_string(mut self, input: impl Into<std::string::String>) -> Self {
-        self.query_filter_string = Some(input.into());
+    pub fn query_filter_string(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.query_filter_string = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A query filter that Amazon Lex sends to Amazon Kendra to filter the response from the query. The filter is in the format defined by Amazon Kendra. For more information, see <a href="http://docs.aws.amazon.com/kendra/latest/dg/filtering.html">Filtering queries</a>.</p>
     /// <p>You can override this filter string with a new filter string at runtime.</p>
     pub fn set_query_filter_string(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.query_filter_string = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that has permission to search the Amazon Kendra index. The role must be in the same account and Region as the Amazon Lex bot. If the role does not exist, you get an exception when you call the <code>PutIntent</code> operation.</p>
-    pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
-        self.role = Some(input.into());
+    pub fn role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.role = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that has permission to search the Amazon Kendra index. The role must be in the same account and Region as the Amazon Lex bot. If the role does not exist, you get an exception when you call the <code>PutIntent</code> operation.</p>
-    pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role = input;
         self
     }

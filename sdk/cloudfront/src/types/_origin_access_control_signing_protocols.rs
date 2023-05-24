@@ -37,13 +37,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum OriginAccessControlSigningProtocols {
     #[allow(missing_docs)] // documentation missing in model
@@ -51,7 +51,7 @@ pub enum OriginAccessControlSigningProtocols {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for OriginAccessControlSigningProtocols {
+impl ::std::convert::From<&str> for OriginAccessControlSigningProtocols {
     fn from(s: &str) -> Self {
         match s {
             "sigv4" => OriginAccessControlSigningProtocols::Sigv4,
@@ -61,11 +61,11 @@ impl std::convert::From<&str> for OriginAccessControlSigningProtocols {
         }
     }
 }
-impl std::str::FromStr for OriginAccessControlSigningProtocols {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for OriginAccessControlSigningProtocols {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(OriginAccessControlSigningProtocols::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(OriginAccessControlSigningProtocols::from(s))
     }
 }
 impl OriginAccessControlSigningProtocols {
@@ -81,7 +81,7 @@ impl OriginAccessControlSigningProtocols {
         &["sigv4"]
     }
 }
-impl AsRef<str> for OriginAccessControlSigningProtocols {
+impl ::std::convert::AsRef<str> for OriginAccessControlSigningProtocols {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -2,29 +2,29 @@
 
 /// <p> Contains information about a strategy recommendation for an application component. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApplicationComponentStrategy {
     /// <p> Strategy recommendation for the application component. </p>
     #[doc(hidden)]
-    pub recommendation: std::option::Option<crate::types::RecommendationSet>,
+    pub recommendation: ::std::option::Option<crate::types::RecommendationSet>,
     /// <p> The recommendation status of a strategy for an application component. </p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::StrategyRecommendation>,
+    pub status: ::std::option::Option<crate::types::StrategyRecommendation>,
     /// <p> Set to true if the recommendation is set as preferred. </p>
     #[doc(hidden)]
-    pub is_preferred: std::option::Option<bool>,
+    pub is_preferred: ::std::option::Option<bool>,
 }
 impl ApplicationComponentStrategy {
     /// <p> Strategy recommendation for the application component. </p>
-    pub fn recommendation(&self) -> std::option::Option<&crate::types::RecommendationSet> {
+    pub fn recommendation(&self) -> ::std::option::Option<&crate::types::RecommendationSet> {
         self.recommendation.as_ref()
     }
     /// <p> The recommendation status of a strategy for an application component. </p>
-    pub fn status(&self) -> std::option::Option<&crate::types::StrategyRecommendation> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::StrategyRecommendation> {
         self.status.as_ref()
     }
     /// <p> Set to true if the recommendation is set as preferred. </p>
-    pub fn is_preferred(&self) -> std::option::Option<bool> {
+    pub fn is_preferred(&self) -> ::std::option::Option<bool> {
         self.is_preferred
     }
 }
@@ -37,46 +37,48 @@ impl ApplicationComponentStrategy {
 
 /// A builder for [`ApplicationComponentStrategy`](crate::types::ApplicationComponentStrategy).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ApplicationComponentStrategyBuilder {
-    pub(crate) recommendation: std::option::Option<crate::types::RecommendationSet>,
-    pub(crate) status: std::option::Option<crate::types::StrategyRecommendation>,
-    pub(crate) is_preferred: std::option::Option<bool>,
+    pub(crate) recommendation: ::std::option::Option<crate::types::RecommendationSet>,
+    pub(crate) status: ::std::option::Option<crate::types::StrategyRecommendation>,
+    pub(crate) is_preferred: ::std::option::Option<bool>,
 }
 impl ApplicationComponentStrategyBuilder {
     /// <p> Strategy recommendation for the application component. </p>
     pub fn recommendation(mut self, input: crate::types::RecommendationSet) -> Self {
-        self.recommendation = Some(input);
+        self.recommendation = ::std::option::Option::Some(input);
         self
     }
     /// <p> Strategy recommendation for the application component. </p>
     pub fn set_recommendation(
         mut self,
-        input: std::option::Option<crate::types::RecommendationSet>,
+        input: ::std::option::Option<crate::types::RecommendationSet>,
     ) -> Self {
         self.recommendation = input;
         self
     }
     /// <p> The recommendation status of a strategy for an application component. </p>
     pub fn status(mut self, input: crate::types::StrategyRecommendation) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p> The recommendation status of a strategy for an application component. </p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::StrategyRecommendation>,
+        input: ::std::option::Option<crate::types::StrategyRecommendation>,
     ) -> Self {
         self.status = input;
         self
     }
     /// <p> Set to true if the recommendation is set as preferred. </p>
     pub fn is_preferred(mut self, input: bool) -> Self {
-        self.is_preferred = Some(input);
+        self.is_preferred = ::std::option::Option::Some(input);
         self
     }
     /// <p> Set to true if the recommendation is set as preferred. </p>
-    pub fn set_is_preferred(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_preferred(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_preferred = input;
         self
     }

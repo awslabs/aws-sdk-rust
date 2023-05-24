@@ -2,11 +2,11 @@
 
 /// <p>Container for response parameters to the <code><code>RevokeVpcEndpointAccess</code></code> operation. The response body for this operation is empty.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RevokeVpcEndpointAccessOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for RevokeVpcEndpointAccessOutput {
+impl ::aws_http::request_id::RequestId for RevokeVpcEndpointAccessOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -22,7 +22,9 @@ impl RevokeVpcEndpointAccessOutput {
 
 /// A builder for [`RevokeVpcEndpointAccessOutput`](crate::operation::revoke_vpc_endpoint_access::RevokeVpcEndpointAccessOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RevokeVpcEndpointAccessOutputBuilder {
     _request_id: Option<String>,
 }

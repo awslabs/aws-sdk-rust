@@ -2,22 +2,22 @@
 
 /// <p>Information about scoring strategy for an evaluation form.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluationFormScoringStrategy {
     /// <p>The scoring mode of the evaluation form.</p>
     #[doc(hidden)]
-    pub mode: std::option::Option<crate::types::EvaluationFormScoringMode>,
+    pub mode: ::std::option::Option<crate::types::EvaluationFormScoringMode>,
     /// <p>The scoring status of the evaluation form.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::EvaluationFormScoringStatus>,
+    pub status: ::std::option::Option<crate::types::EvaluationFormScoringStatus>,
 }
 impl EvaluationFormScoringStrategy {
     /// <p>The scoring mode of the evaluation form.</p>
-    pub fn mode(&self) -> std::option::Option<&crate::types::EvaluationFormScoringMode> {
+    pub fn mode(&self) -> ::std::option::Option<&crate::types::EvaluationFormScoringMode> {
         self.mode.as_ref()
     }
     /// <p>The scoring status of the evaluation form.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::EvaluationFormScoringStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::EvaluationFormScoringStatus> {
         self.status.as_ref()
     }
 }
@@ -30,34 +30,36 @@ impl EvaluationFormScoringStrategy {
 
 /// A builder for [`EvaluationFormScoringStrategy`](crate::types::EvaluationFormScoringStrategy).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EvaluationFormScoringStrategyBuilder {
-    pub(crate) mode: std::option::Option<crate::types::EvaluationFormScoringMode>,
-    pub(crate) status: std::option::Option<crate::types::EvaluationFormScoringStatus>,
+    pub(crate) mode: ::std::option::Option<crate::types::EvaluationFormScoringMode>,
+    pub(crate) status: ::std::option::Option<crate::types::EvaluationFormScoringStatus>,
 }
 impl EvaluationFormScoringStrategyBuilder {
     /// <p>The scoring mode of the evaluation form.</p>
     pub fn mode(mut self, input: crate::types::EvaluationFormScoringMode) -> Self {
-        self.mode = Some(input);
+        self.mode = ::std::option::Option::Some(input);
         self
     }
     /// <p>The scoring mode of the evaluation form.</p>
     pub fn set_mode(
         mut self,
-        input: std::option::Option<crate::types::EvaluationFormScoringMode>,
+        input: ::std::option::Option<crate::types::EvaluationFormScoringMode>,
     ) -> Self {
         self.mode = input;
         self
     }
     /// <p>The scoring status of the evaluation form.</p>
     pub fn status(mut self, input: crate::types::EvaluationFormScoringStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The scoring status of the evaluation form.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::EvaluationFormScoringStatus>,
+        input: ::std::option::Option<crate::types::EvaluationFormScoringStatus>,
     ) -> Self {
         self.status = input;
         self

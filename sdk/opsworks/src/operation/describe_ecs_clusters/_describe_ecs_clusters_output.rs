@@ -2,27 +2,27 @@
 
 /// <p>Contains the response to a <code>DescribeEcsClusters</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEcsClustersOutput {
     /// <p>A list of <code>EcsCluster</code> objects containing the cluster descriptions.</p>
     #[doc(hidden)]
-    pub ecs_clusters: std::option::Option<std::vec::Vec<crate::types::EcsCluster>>,
+    pub ecs_clusters: ::std::option::Option<::std::vec::Vec<crate::types::EcsCluster>>,
     /// <p>If a paginated request does not return all of the remaining results, this parameter is set to a token that you can assign to the request object's <code>NextToken</code> parameter to retrieve the next set of results. If the previous paginated request returned all of the remaining results, this parameter is set to <code>null</code>.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeEcsClustersOutput {
     /// <p>A list of <code>EcsCluster</code> objects containing the cluster descriptions.</p>
-    pub fn ecs_clusters(&self) -> std::option::Option<&[crate::types::EcsCluster]> {
+    pub fn ecs_clusters(&self) -> ::std::option::Option<&[crate::types::EcsCluster]> {
         self.ecs_clusters.as_deref()
     }
     /// <p>If a paginated request does not return all of the remaining results, this parameter is set to a token that you can assign to the request object's <code>NextToken</code> parameter to retrieve the next set of results. If the previous paginated request returned all of the remaining results, this parameter is set to <code>null</code>.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeEcsClustersOutput {
+impl ::aws_http::request_id::RequestId for DescribeEcsClustersOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -38,10 +38,12 @@ impl DescribeEcsClustersOutput {
 
 /// A builder for [`DescribeEcsClustersOutput`](crate::operation::describe_ecs_clusters::DescribeEcsClustersOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeEcsClustersOutputBuilder {
-    pub(crate) ecs_clusters: std::option::Option<std::vec::Vec<crate::types::EcsCluster>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) ecs_clusters: ::std::option::Option<::std::vec::Vec<crate::types::EcsCluster>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeEcsClustersOutputBuilder {
@@ -53,24 +55,24 @@ impl DescribeEcsClustersOutputBuilder {
     pub fn ecs_clusters(mut self, input: crate::types::EcsCluster) -> Self {
         let mut v = self.ecs_clusters.unwrap_or_default();
         v.push(input);
-        self.ecs_clusters = Some(v);
+        self.ecs_clusters = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of <code>EcsCluster</code> objects containing the cluster descriptions.</p>
     pub fn set_ecs_clusters(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::EcsCluster>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::EcsCluster>>,
     ) -> Self {
         self.ecs_clusters = input;
         self
     }
     /// <p>If a paginated request does not return all of the remaining results, this parameter is set to a token that you can assign to the request object's <code>NextToken</code> parameter to retrieve the next set of results. If the previous paginated request returned all of the remaining results, this parameter is set to <code>null</code>.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If a paginated request does not return all of the remaining results, this parameter is set to a token that you can assign to the request object's <code>NextToken</code> parameter to retrieve the next set of results. If the previous paginated request returned all of the remaining results, this parameter is set to <code>null</code>.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

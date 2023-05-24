@@ -6,29 +6,29 @@ pub use crate::operation::start_change_request_execution::_start_change_request_
 /// Fluent builder constructing a request to `StartChangeRequestExecution`.
 ///
 /// <p>Creates a change request for Change Manager. The Automation runbooks specified in the change request run only after all required approvals for the change request have been received.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartChangeRequestExecutionFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::start_change_request_execution::builders::StartChangeRequestExecutionInputBuilder,
 }
 impl StartChangeRequestExecutionFluentBuilder {
     /// Creates a new `StartChangeRequestExecution`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::start_change_request_execution::StartChangeRequestExecution,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::start_change_request_execution::StartChangeRequestExecutionError,
         >,
     > {
@@ -36,30 +36,33 @@ impl StartChangeRequestExecutionFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::start_change_request_execution::StartChangeRequestExecutionOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::start_change_request_execution::StartChangeRequestExecutionError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,9 +75,9 @@ impl StartChangeRequestExecutionFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::start_change_request_execution::StartChangeRequestExecutionOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::start_change_request_execution::StartChangeRequestExecutionError,
         >,
     > {
@@ -83,7 +86,7 @@ impl StartChangeRequestExecutionFluentBuilder {
     /// <p>The date and time specified in the change request to run the Automation runbooks.</p> <note>
     /// <p>The Automation runbooks specified for the runbook workflow can't run until all required approvals for the change request have been received.</p>
     /// </note>
-    pub fn scheduled_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+    pub fn scheduled_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.scheduled_time(input);
         self
     }
@@ -92,28 +95,40 @@ impl StartChangeRequestExecutionFluentBuilder {
     /// </note>
     pub fn set_scheduled_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.inner = self.inner.set_scheduled_time(input);
         self
     }
     /// <p>The name of the change template document to run during the runbook workflow.</p>
-    pub fn document_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn document_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.document_name(input.into());
         self
     }
     /// <p>The name of the change template document to run during the runbook workflow.</p>
-    pub fn set_document_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_document_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_document_name(input);
         self
     }
     /// <p>The version of the change template document to run during the runbook workflow.</p>
-    pub fn document_version(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn document_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.document_version(input.into());
         self
     }
     /// <p>The version of the change template document to run during the runbook workflow.</p>
-    pub fn set_document_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_document_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_document_version(input);
         self
     }
@@ -124,8 +139,8 @@ impl StartChangeRequestExecutionFluentBuilder {
     /// <p>A key-value map of parameters that match the declared parameters in the change template document.</p>
     pub fn parameters(
         mut self,
-        k: impl Into<std::string::String>,
-        v: std::vec::Vec<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: ::std::vec::Vec<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.parameters(k.into(), v);
         self
@@ -133,33 +148,39 @@ impl StartChangeRequestExecutionFluentBuilder {
     /// <p>A key-value map of parameters that match the declared parameters in the change template document.</p>
     pub fn set_parameters(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<
+                ::std::string::String,
+                ::std::vec::Vec<::std::string::String>,
+            >,
         >,
     ) -> Self {
         self.inner = self.inner.set_parameters(input);
         self
     }
     /// <p>The name of the change request associated with the runbook workflow to be run.</p>
-    pub fn change_request_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn change_request_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.change_request_name(input.into());
         self
     }
     /// <p>The name of the change request associated with the runbook workflow to be run.</p>
     pub fn set_change_request_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_change_request_name(input);
         self
     }
     /// <p>The user-provided idempotency token. The token must be unique, is case insensitive, enforces the UUID format, and can't be reused.</p>
-    pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
     /// <p>The user-provided idempotency token. The token must be unique, is case insensitive, enforces the UUID format, and can't be reused.</p>
-    pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
@@ -175,7 +196,7 @@ impl StartChangeRequestExecutionFluentBuilder {
     /// <p>If <code>AutoApprovable</code> is enabled in a change template, then setting <code>AutoApprove</code> to <code>true</code> in <code>StartChangeRequestExecution</code> creates a change request that bypasses approver review.</p> <note>
     /// <p>Change Calendar restrictions are not bypassed in this scenario. If the state of an associated calendar is <code>CLOSED</code>, change freeze approvers must still grant permission for this change request to run. If they don't, the change won't be processed until the calendar state is again <code>OPEN</code>. </p>
     /// </note>
-    pub fn set_auto_approve(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_auto_approve(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_auto_approve(input);
         self
     }
@@ -195,7 +216,7 @@ impl StartChangeRequestExecutionFluentBuilder {
     /// </note>
     pub fn set_runbooks(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Runbook>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Runbook>>,
     ) -> Self {
         self.inner = self.inner.set_runbooks(input);
         self
@@ -220,31 +241,37 @@ impl StartChangeRequestExecutionFluentBuilder {
     /// </ul>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The time that the requester expects the runbook workflow related to the change request to complete. The time is an estimate only that the requester provides for reviewers.</p>
-    pub fn scheduled_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+    pub fn scheduled_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.scheduled_end_time(input);
         self
     }
     /// <p>The time that the requester expects the runbook workflow related to the change request to complete. The time is an estimate only that the requester provides for reviewers.</p>
     pub fn set_scheduled_end_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.inner = self.inner.set_scheduled_end_time(input);
         self
     }
     /// <p>User-provided details about the change. If no details are provided, content specified in the <b>Template information</b> section of the associated change template is added.</p>
-    pub fn change_details(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn change_details(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.change_details(input.into());
         self
     }
     /// <p>User-provided details about the change. If no details are provided, content specified in the <b>Template information</b> section of the associated change template is added.</p>
-    pub fn set_change_details(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_change_details(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_change_details(input);
         self
     }

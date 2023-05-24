@@ -6,56 +6,59 @@ pub use crate::operation::rescore::_rescore_input::RescoreInputBuilder;
 /// Fluent builder constructing a request to `Rescore`.
 ///
 /// <p>Rescores or re-ranks search results from a search service such as OpenSearch (self managed). You use the semantic search capabilities of Amazon Kendra Intelligent Ranking to improve the search service's results.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RescoreFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::rescore::builders::RescoreInputBuilder,
 }
 impl RescoreFluentBuilder {
     /// Creates a new `Rescore`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::rescore::Rescore,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::rescore::RescoreError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::rescore::RescoreError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::rescore::RescoreOutput,
-        aws_smithy_http::result::SdkError<crate::operation::rescore::RescoreError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::rescore::RescoreError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,32 +71,35 @@ impl RescoreFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::rescore::RescoreOutput,
-        aws_smithy_http::result::SdkError<crate::operation::rescore::RescoreError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::rescore::RescoreError>,
     > {
         self.send_middleware().await
     }
     /// <p>The identifier of the rescore execution plan. A rescore execution plan is an Amazon Kendra Intelligent Ranking resource used for provisioning the <code>Rescore</code> API.</p>
-    pub fn rescore_execution_plan_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn rescore_execution_plan_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.rescore_execution_plan_id(input.into());
         self
     }
     /// <p>The identifier of the rescore execution plan. A rescore execution plan is an Amazon Kendra Intelligent Ranking resource used for provisioning the <code>Rescore</code> API.</p>
     pub fn set_rescore_execution_plan_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_rescore_execution_plan_id(input);
         self
     }
     /// <p>The input query from the search service.</p>
-    pub fn search_query(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn search_query(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.search_query(input.into());
         self
     }
     /// <p>The input query from the search service.</p>
-    pub fn set_search_query(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_search_query(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_search_query(input);
         self
     }
@@ -109,7 +115,7 @@ impl RescoreFluentBuilder {
     /// <p>The list of documents for Amazon Kendra Intelligent Ranking to rescore or rank on.</p>
     pub fn set_documents(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Document>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Document>>,
     ) -> Self {
         self.inner = self.inner.set_documents(input);
         self

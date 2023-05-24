@@ -2,24 +2,24 @@
 
 /// <p>Provides a list of status information for a DB instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DbInstanceStatusInfo {
     /// <p>This value is currently "read replication."</p>
     #[doc(hidden)]
-    pub status_type: std::option::Option<std::string::String>,
+    pub status_type: ::std::option::Option<::std::string::String>,
     /// <p>Boolean value that is true if the instance is operating normally, or false if the instance is in an error state.</p>
     #[doc(hidden)]
     pub normal: bool,
     /// <p>Status of the DB instance. For a StatusType of read replica, the values can be replicating, replication stop point set, replication stop point reached, error, stopped, or terminated.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<std::string::String>,
+    pub status: ::std::option::Option<::std::string::String>,
     /// <p>Details of the error if there is an error for the instance. If the instance isn't in an error state, this value is blank.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
 }
 impl DbInstanceStatusInfo {
     /// <p>This value is currently "read replication."</p>
-    pub fn status_type(&self) -> std::option::Option<&str> {
+    pub fn status_type(&self) -> ::std::option::Option<&str> {
         self.status_type.as_deref()
     }
     /// <p>Boolean value that is true if the instance is operating normally, or false if the instance is in an error state.</p>
@@ -27,11 +27,11 @@ impl DbInstanceStatusInfo {
         self.normal
     }
     /// <p>Status of the DB instance. For a StatusType of read replica, the values can be replicating, replication stop point set, replication stop point reached, error, stopped, or terminated.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
     /// <p>Details of the error if there is an error for the instance. If the instance isn't in an error state, this value is blank.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -44,51 +44,53 @@ impl DbInstanceStatusInfo {
 
 /// A builder for [`DbInstanceStatusInfo`](crate::types::DbInstanceStatusInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DbInstanceStatusInfoBuilder {
-    pub(crate) status_type: std::option::Option<std::string::String>,
-    pub(crate) normal: std::option::Option<bool>,
-    pub(crate) status: std::option::Option<std::string::String>,
-    pub(crate) message: std::option::Option<std::string::String>,
+    pub(crate) status_type: ::std::option::Option<::std::string::String>,
+    pub(crate) normal: ::std::option::Option<bool>,
+    pub(crate) status: ::std::option::Option<::std::string::String>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
 }
 impl DbInstanceStatusInfoBuilder {
     /// <p>This value is currently "read replication."</p>
-    pub fn status_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status_type = Some(input.into());
+    pub fn status_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>This value is currently "read replication."</p>
-    pub fn set_status_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_type = input;
         self
     }
     /// <p>Boolean value that is true if the instance is operating normally, or false if the instance is in an error state.</p>
     pub fn normal(mut self, input: bool) -> Self {
-        self.normal = Some(input);
+        self.normal = ::std::option::Option::Some(input);
         self
     }
     /// <p>Boolean value that is true if the instance is operating normally, or false if the instance is in an error state.</p>
-    pub fn set_normal(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_normal(mut self, input: ::std::option::Option<bool>) -> Self {
         self.normal = input;
         self
     }
     /// <p>Status of the DB instance. For a StatusType of read replica, the values can be replicating, replication stop point set, replication stop point reached, error, stopped, or terminated.</p>
-    pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status = Some(input.into());
+    pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Status of the DB instance. For a StatusType of read replica, the values can be replicating, replication stop point set, replication stop point reached, error, stopped, or terminated.</p>
-    pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }
     /// <p>Details of the error if there is an error for the instance. If the instance isn't in an error state, this value is blank.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Details of the error if there is an error for the instance. If the instance isn't in an error state, this value is blank.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }

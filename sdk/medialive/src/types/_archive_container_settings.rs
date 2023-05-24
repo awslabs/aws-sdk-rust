@@ -2,22 +2,22 @@
 
 /// Archive Container Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ArchiveContainerSettings {
     /// M2ts Settings
     #[doc(hidden)]
-    pub m2ts_settings: std::option::Option<crate::types::M2tsSettings>,
+    pub m2ts_settings: ::std::option::Option<crate::types::M2tsSettings>,
     /// Raw Settings
     #[doc(hidden)]
-    pub raw_settings: std::option::Option<crate::types::RawSettings>,
+    pub raw_settings: ::std::option::Option<crate::types::RawSettings>,
 }
 impl ArchiveContainerSettings {
     /// M2ts Settings
-    pub fn m2ts_settings(&self) -> std::option::Option<&crate::types::M2tsSettings> {
+    pub fn m2ts_settings(&self) -> ::std::option::Option<&crate::types::M2tsSettings> {
         self.m2ts_settings.as_ref()
     }
     /// Raw Settings
-    pub fn raw_settings(&self) -> std::option::Option<&crate::types::RawSettings> {
+    pub fn raw_settings(&self) -> ::std::option::Option<&crate::types::RawSettings> {
         self.raw_settings.as_ref()
     }
 }
@@ -30,34 +30,36 @@ impl ArchiveContainerSettings {
 
 /// A builder for [`ArchiveContainerSettings`](crate::types::ArchiveContainerSettings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ArchiveContainerSettingsBuilder {
-    pub(crate) m2ts_settings: std::option::Option<crate::types::M2tsSettings>,
-    pub(crate) raw_settings: std::option::Option<crate::types::RawSettings>,
+    pub(crate) m2ts_settings: ::std::option::Option<crate::types::M2tsSettings>,
+    pub(crate) raw_settings: ::std::option::Option<crate::types::RawSettings>,
 }
 impl ArchiveContainerSettingsBuilder {
     /// M2ts Settings
     pub fn m2ts_settings(mut self, input: crate::types::M2tsSettings) -> Self {
-        self.m2ts_settings = Some(input);
+        self.m2ts_settings = ::std::option::Option::Some(input);
         self
     }
     /// M2ts Settings
     pub fn set_m2ts_settings(
         mut self,
-        input: std::option::Option<crate::types::M2tsSettings>,
+        input: ::std::option::Option<crate::types::M2tsSettings>,
     ) -> Self {
         self.m2ts_settings = input;
         self
     }
     /// Raw Settings
     pub fn raw_settings(mut self, input: crate::types::RawSettings) -> Self {
-        self.raw_settings = Some(input);
+        self.raw_settings = ::std::option::Option::Some(input);
         self
     }
     /// Raw Settings
     pub fn set_raw_settings(
         mut self,
-        input: std::option::Option<crate::types::RawSettings>,
+        input: ::std::option::Option<crate::types::RawSettings>,
     ) -> Self {
         self.raw_settings = input;
         self

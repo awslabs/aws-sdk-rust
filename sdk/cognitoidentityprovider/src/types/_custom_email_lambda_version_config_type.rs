@@ -2,24 +2,24 @@
 
 /// <p>A custom email sender Lambda configuration type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomEmailLambdaVersionConfigType {
     /// <p>Signature of the "request" attribute in the "event" information Amazon Cognito passes to your custom email Lambda function. The only supported value is <code>V1_0</code>.</p>
     #[doc(hidden)]
-    pub lambda_version: std::option::Option<crate::types::CustomEmailSenderLambdaVersionType>,
+    pub lambda_version: ::std::option::Option<crate::types::CustomEmailSenderLambdaVersionType>,
     /// <p>The Amazon Resource Name (ARN) of the Lambda function that Amazon Cognito activates to send email notifications to users.</p>
     #[doc(hidden)]
-    pub lambda_arn: std::option::Option<std::string::String>,
+    pub lambda_arn: ::std::option::Option<::std::string::String>,
 }
 impl CustomEmailLambdaVersionConfigType {
     /// <p>Signature of the "request" attribute in the "event" information Amazon Cognito passes to your custom email Lambda function. The only supported value is <code>V1_0</code>.</p>
     pub fn lambda_version(
         &self,
-    ) -> std::option::Option<&crate::types::CustomEmailSenderLambdaVersionType> {
+    ) -> ::std::option::Option<&crate::types::CustomEmailSenderLambdaVersionType> {
         self.lambda_version.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Lambda function that Amazon Cognito activates to send email notifications to users.</p>
-    pub fn lambda_arn(&self) -> std::option::Option<&str> {
+    pub fn lambda_arn(&self) -> ::std::option::Option<&str> {
         self.lambda_arn.as_deref()
     }
 }
@@ -32,11 +32,13 @@ impl CustomEmailLambdaVersionConfigType {
 
 /// A builder for [`CustomEmailLambdaVersionConfigType`](crate::types::CustomEmailLambdaVersionConfigType).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CustomEmailLambdaVersionConfigTypeBuilder {
     pub(crate) lambda_version:
-        std::option::Option<crate::types::CustomEmailSenderLambdaVersionType>,
-    pub(crate) lambda_arn: std::option::Option<std::string::String>,
+        ::std::option::Option<crate::types::CustomEmailSenderLambdaVersionType>,
+    pub(crate) lambda_arn: ::std::option::Option<::std::string::String>,
 }
 impl CustomEmailLambdaVersionConfigTypeBuilder {
     /// <p>Signature of the "request" attribute in the "event" information Amazon Cognito passes to your custom email Lambda function. The only supported value is <code>V1_0</code>.</p>
@@ -44,24 +46,24 @@ impl CustomEmailLambdaVersionConfigTypeBuilder {
         mut self,
         input: crate::types::CustomEmailSenderLambdaVersionType,
     ) -> Self {
-        self.lambda_version = Some(input);
+        self.lambda_version = ::std::option::Option::Some(input);
         self
     }
     /// <p>Signature of the "request" attribute in the "event" information Amazon Cognito passes to your custom email Lambda function. The only supported value is <code>V1_0</code>.</p>
     pub fn set_lambda_version(
         mut self,
-        input: std::option::Option<crate::types::CustomEmailSenderLambdaVersionType>,
+        input: ::std::option::Option<crate::types::CustomEmailSenderLambdaVersionType>,
     ) -> Self {
         self.lambda_version = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Lambda function that Amazon Cognito activates to send email notifications to users.</p>
-    pub fn lambda_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.lambda_arn = Some(input.into());
+    pub fn lambda_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.lambda_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Lambda function that Amazon Cognito activates to send email notifications to users.</p>
-    pub fn set_lambda_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_lambda_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lambda_arn = input;
         self
     }

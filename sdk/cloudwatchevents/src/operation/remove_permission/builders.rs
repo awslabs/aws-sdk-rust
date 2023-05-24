@@ -6,29 +6,29 @@ pub use crate::operation::remove_permission::_remove_permission_input::RemovePer
 /// Fluent builder constructing a request to `RemovePermission`.
 ///
 /// <p>Revokes the permission of another Amazon Web Services account to be able to put events to the specified event bus. Specify the account to revoke by the <code>StatementId</code> value that you associated with the account when you granted it permission with <code>PutPermission</code>. You can find the <code>StatementId</code> by using <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DescribeEventBus.html">DescribeEventBus</a>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RemovePermissionFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::remove_permission::builders::RemovePermissionInputBuilder,
 }
 impl RemovePermissionFluentBuilder {
     /// Creates a new `RemovePermission`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::remove_permission::RemovePermission,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::remove_permission::RemovePermissionError,
         >,
     > {
@@ -36,30 +36,33 @@ impl RemovePermissionFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::remove_permission::RemovePermissionOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::remove_permission::RemovePermissionError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,21 +75,21 @@ impl RemovePermissionFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::remove_permission::RemovePermissionOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::remove_permission::RemovePermissionError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The statement ID corresponding to the account that is no longer allowed to put events to the default event bus.</p>
-    pub fn statement_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn statement_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.statement_id(input.into());
         self
     }
     /// <p>The statement ID corresponding to the account that is no longer allowed to put events to the default event bus.</p>
-    pub fn set_statement_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_statement_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_statement_id(input);
         self
     }
@@ -96,17 +99,23 @@ impl RemovePermissionFluentBuilder {
         self
     }
     /// <p>Specifies whether to remove all permissions.</p>
-    pub fn set_remove_all_permissions(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_remove_all_permissions(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_remove_all_permissions(input);
         self
     }
     /// <p>The name of the event bus to revoke permissions for. If you omit this, the default event bus is used.</p>
-    pub fn event_bus_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn event_bus_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.event_bus_name(input.into());
         self
     }
     /// <p>The name of the event bus to revoke permissions for. If you omit this, the default event bus is used.</p>
-    pub fn set_event_bus_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_event_bus_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_event_bus_name(input);
         self
     }

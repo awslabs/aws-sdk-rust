@@ -2,27 +2,27 @@
 
 /// <p>The output from the ListTopicRules operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTopicRulesOutput {
     /// <p>The rules.</p>
     #[doc(hidden)]
-    pub rules: std::option::Option<std::vec::Vec<crate::types::TopicRuleListItem>>,
+    pub rules: ::std::option::Option<::std::vec::Vec<crate::types::TopicRuleListItem>>,
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListTopicRulesOutput {
     /// <p>The rules.</p>
-    pub fn rules(&self) -> std::option::Option<&[crate::types::TopicRuleListItem]> {
+    pub fn rules(&self) -> ::std::option::Option<&[crate::types::TopicRuleListItem]> {
         self.rules.as_deref()
     }
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListTopicRulesOutput {
+impl ::aws_http::request_id::RequestId for ListTopicRulesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -36,10 +36,12 @@ impl ListTopicRulesOutput {
 
 /// A builder for [`ListTopicRulesOutput`](crate::operation::list_topic_rules::ListTopicRulesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListTopicRulesOutputBuilder {
-    pub(crate) rules: std::option::Option<std::vec::Vec<crate::types::TopicRuleListItem>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) rules: ::std::option::Option<::std::vec::Vec<crate::types::TopicRuleListItem>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListTopicRulesOutputBuilder {
@@ -51,24 +53,24 @@ impl ListTopicRulesOutputBuilder {
     pub fn rules(mut self, input: crate::types::TopicRuleListItem) -> Self {
         let mut v = self.rules.unwrap_or_default();
         v.push(input);
-        self.rules = Some(v);
+        self.rules = ::std::option::Option::Some(v);
         self
     }
     /// <p>The rules.</p>
     pub fn set_rules(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TopicRuleListItem>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::TopicRuleListItem>>,
     ) -> Self {
         self.rules = input;
         self
     }
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

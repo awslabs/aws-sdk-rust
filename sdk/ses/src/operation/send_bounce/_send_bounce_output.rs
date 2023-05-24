@@ -2,20 +2,20 @@
 
 /// <p>Represents a unique message ID.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SendBounceOutput {
     /// <p>The message ID of the bounce message.</p>
     #[doc(hidden)]
-    pub message_id: std::option::Option<std::string::String>,
+    pub message_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl SendBounceOutput {
     /// <p>The message ID of the bounce message.</p>
-    pub fn message_id(&self) -> std::option::Option<&str> {
+    pub fn message_id(&self) -> ::std::option::Option<&str> {
         self.message_id.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for SendBounceOutput {
+impl ::aws_http::request_id::RequestId for SendBounceOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,21 @@ impl SendBounceOutput {
 
 /// A builder for [`SendBounceOutput`](crate::operation::send_bounce::SendBounceOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SendBounceOutputBuilder {
-    pub(crate) message_id: std::option::Option<std::string::String>,
+    pub(crate) message_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl SendBounceOutputBuilder {
     /// <p>The message ID of the bounce message.</p>
-    pub fn message_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message_id = Some(input.into());
+    pub fn message_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The message ID of the bounce message.</p>
-    pub fn set_message_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message_id = input;
         self
     }

@@ -18,56 +18,59 @@ pub use crate::operation::create_domain::_create_domain_input::CreateDomainInput
 /// <p>NFS traffic over TCP on port 2049 needs to be allowed in both inbound and outbound rules in order to launch a SageMaker Studio app successfully.</p>
 /// </important>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-notebooks-and-internet-access.html">Connect SageMaker Studio Notebooks to Resources in a VPC</a>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateDomainFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_domain::builders::CreateDomainInputBuilder,
 }
 impl CreateDomainFluentBuilder {
     /// Creates a new `CreateDomain`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_domain::CreateDomain,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_domain::CreateDomainError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_domain::CreateDomainError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_domain::CreateDomainOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_domain::CreateDomainError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_domain::CreateDomainError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -80,19 +83,19 @@ impl CreateDomainFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_domain::CreateDomainOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_domain::CreateDomainError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_domain::CreateDomainError>,
     > {
         self.send_middleware().await
     }
     /// <p>A name for the domain.</p>
-    pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_name(input.into());
         self
     }
     /// <p>A name for the domain.</p>
-    pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_name(input);
         self
     }
@@ -102,7 +105,7 @@ impl CreateDomainFluentBuilder {
         self
     }
     /// <p>The mode of authentication that members use to access the domain.</p>
-    pub fn set_auth_mode(mut self, input: std::option::Option<crate::types::AuthMode>) -> Self {
+    pub fn set_auth_mode(mut self, input: ::std::option::Option<crate::types::AuthMode>) -> Self {
         self.inner = self.inner.set_auth_mode(input);
         self
     }
@@ -116,7 +119,7 @@ impl CreateDomainFluentBuilder {
     /// <p> <code>SecurityGroups</code> is aggregated when specified in both calls. For all other settings in <code>UserSettings</code>, the values specified in <code>CreateUserProfile</code> take precedence over those specified in <code>CreateDomain</code>.</p>
     pub fn set_default_user_settings(
         mut self,
-        input: std::option::Option<crate::types::UserSettings>,
+        input: ::std::option::Option<crate::types::UserSettings>,
     ) -> Self {
         self.inner = self.inner.set_default_user_settings(input);
         self
@@ -126,25 +129,25 @@ impl CreateDomainFluentBuilder {
     /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
     ///
     /// <p>The VPC subnets that Studio uses for communication.</p>
-    pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn subnet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subnet_ids(input.into());
         self
     }
     /// <p>The VPC subnets that Studio uses for communication.</p>
     pub fn set_subnet_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_subnet_ids(input);
         self
     }
     /// <p>The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.</p>
-    pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpc_id(input.into());
         self
     }
     /// <p>The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.</p>
-    pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_vpc_id(input);
         self
     }
@@ -162,7 +165,7 @@ impl CreateDomainFluentBuilder {
     /// <p>Tags that you specify for the Domain are also added to all Apps that the Domain launches.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
@@ -183,7 +186,7 @@ impl CreateDomainFluentBuilder {
     /// </ul>
     pub fn set_app_network_access_type(
         mut self,
-        input: std::option::Option<crate::types::AppNetworkAccessType>,
+        input: ::std::option::Option<crate::types::AppNetworkAccessType>,
     ) -> Self {
         self.inner = self.inner.set_app_network_access_type(input);
         self
@@ -192,7 +195,7 @@ impl CreateDomainFluentBuilder {
     #[deprecated(note = "This property is deprecated, use KmsKeyId instead.")]
     pub fn home_efs_file_system_kms_key_id(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.home_efs_file_system_kms_key_id(input.into());
         self
@@ -201,18 +204,18 @@ impl CreateDomainFluentBuilder {
     #[deprecated(note = "This property is deprecated, use KmsKeyId instead.")]
     pub fn set_home_efs_file_system_kms_key_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_home_efs_file_system_kms_key_id(input);
         self
     }
     /// <p>SageMaker uses Amazon Web Services KMS to encrypt the EFS volume attached to the domain with an Amazon Web Services managed key by default. For more control, specify a customer managed key.</p>
-    pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kms_key_id(input.into());
         self
     }
     /// <p>SageMaker uses Amazon Web Services KMS to encrypt the EFS volume attached to the domain with an Amazon Web Services managed key by default. For more control, specify a customer managed key.</p>
-    pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kms_key_id(input);
         self
     }
@@ -227,7 +230,7 @@ impl CreateDomainFluentBuilder {
     /// <p>The entity that creates and manages the required security groups for inter-app communication in <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided. If setting up the domain for use with RStudio, this value must be set to <code>Service</code>.</p>
     pub fn set_app_security_group_management(
         mut self,
-        input: std::option::Option<crate::types::AppSecurityGroupManagement>,
+        input: ::std::option::Option<crate::types::AppSecurityGroupManagement>,
     ) -> Self {
         self.inner = self.inner.set_app_security_group_management(input);
         self
@@ -240,7 +243,7 @@ impl CreateDomainFluentBuilder {
     /// <p>A collection of <code>Domain</code> settings.</p>
     pub fn set_domain_settings(
         mut self,
-        input: std::option::Option<crate::types::DomainSettings>,
+        input: ::std::option::Option<crate::types::DomainSettings>,
     ) -> Self {
         self.inner = self.inner.set_domain_settings(input);
         self
@@ -253,7 +256,7 @@ impl CreateDomainFluentBuilder {
     /// <p>The default settings used to create a space.</p>
     pub fn set_default_space_settings(
         mut self,
-        input: std::option::Option<crate::types::DefaultSpaceSettings>,
+        input: ::std::option::Option<crate::types::DefaultSpaceSettings>,
     ) -> Self {
         self.inner = self.inner.set_default_space_settings(input);
         self

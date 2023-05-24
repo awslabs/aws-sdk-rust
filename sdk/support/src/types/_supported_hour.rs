@@ -2,22 +2,22 @@
 
 /// <p>Time range object with <code>startTime</code> and <code>endTime</code> range in RFC 3339 format. <code>'HH:mm:ss.SSS'</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SupportedHour {
     /// <p> Start Time. RFC 3339 format <code>'HH:mm:ss.SSS'</code>. </p>
     #[doc(hidden)]
-    pub start_time: std::option::Option<std::string::String>,
+    pub start_time: ::std::option::Option<::std::string::String>,
     /// <p> End Time. RFC 3339 format <code>'HH:mm:ss.SSS'</code>. </p>
     #[doc(hidden)]
-    pub end_time: std::option::Option<std::string::String>,
+    pub end_time: ::std::option::Option<::std::string::String>,
 }
 impl SupportedHour {
     /// <p> Start Time. RFC 3339 format <code>'HH:mm:ss.SSS'</code>. </p>
-    pub fn start_time(&self) -> std::option::Option<&str> {
+    pub fn start_time(&self) -> ::std::option::Option<&str> {
         self.start_time.as_deref()
     }
     /// <p> End Time. RFC 3339 format <code>'HH:mm:ss.SSS'</code>. </p>
-    pub fn end_time(&self) -> std::option::Option<&str> {
+    pub fn end_time(&self) -> ::std::option::Option<&str> {
         self.end_time.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl SupportedHour {
 
 /// A builder for [`SupportedHour`](crate::types::SupportedHour).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SupportedHourBuilder {
-    pub(crate) start_time: std::option::Option<std::string::String>,
-    pub(crate) end_time: std::option::Option<std::string::String>,
+    pub(crate) start_time: ::std::option::Option<::std::string::String>,
+    pub(crate) end_time: ::std::option::Option<::std::string::String>,
 }
 impl SupportedHourBuilder {
     /// <p> Start Time. RFC 3339 format <code>'HH:mm:ss.SSS'</code>. </p>
-    pub fn start_time(mut self, input: impl Into<std::string::String>) -> Self {
-        self.start_time = Some(input.into());
+    pub fn start_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.start_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Start Time. RFC 3339 format <code>'HH:mm:ss.SSS'</code>. </p>
-    pub fn set_start_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.start_time = input;
         self
     }
     /// <p> End Time. RFC 3339 format <code>'HH:mm:ss.SSS'</code>. </p>
-    pub fn end_time(mut self, input: impl Into<std::string::String>) -> Self {
-        self.end_time = Some(input.into());
+    pub fn end_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.end_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> End Time. RFC 3339 format <code>'HH:mm:ss.SSS'</code>. </p>
-    pub fn set_end_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.end_time = input;
         self
     }

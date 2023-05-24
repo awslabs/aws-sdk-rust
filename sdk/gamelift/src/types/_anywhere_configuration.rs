@@ -2,15 +2,15 @@
 
 /// <p>Amazon GameLift Anywhere configuration options for your Anywhere fleets.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnywhereConfiguration {
     /// <p>The cost to run your fleet per hour. Amazon GameLift uses the provided cost of your fleet to balance usage in queues. For more information about queues, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queues-intro.html">Setting up queues</a> in the <i>Amazon GameLift Developer Guide</i>.</p>
     #[doc(hidden)]
-    pub cost: std::option::Option<std::string::String>,
+    pub cost: ::std::option::Option<::std::string::String>,
 }
 impl AnywhereConfiguration {
     /// <p>The cost to run your fleet per hour. Amazon GameLift uses the provided cost of your fleet to balance usage in queues. For more information about queues, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queues-intro.html">Setting up queues</a> in the <i>Amazon GameLift Developer Guide</i>.</p>
-    pub fn cost(&self) -> std::option::Option<&str> {
+    pub fn cost(&self) -> ::std::option::Option<&str> {
         self.cost.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl AnywhereConfiguration {
 
 /// A builder for [`AnywhereConfiguration`](crate::types::AnywhereConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AnywhereConfigurationBuilder {
-    pub(crate) cost: std::option::Option<std::string::String>,
+    pub(crate) cost: ::std::option::Option<::std::string::String>,
 }
 impl AnywhereConfigurationBuilder {
     /// <p>The cost to run your fleet per hour. Amazon GameLift uses the provided cost of your fleet to balance usage in queues. For more information about queues, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queues-intro.html">Setting up queues</a> in the <i>Amazon GameLift Developer Guide</i>.</p>
-    pub fn cost(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cost = Some(input.into());
+    pub fn cost(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cost = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The cost to run your fleet per hour. Amazon GameLift uses the provided cost of your fleet to balance usage in queues. For more information about queues, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queues-intro.html">Setting up queues</a> in the <i>Amazon GameLift Developer Guide</i>.</p>
-    pub fn set_cost(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cost(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cost = input;
         self
     }

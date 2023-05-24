@@ -2,20 +2,20 @@
 
 /// <p>Contains the results for the <code>CreateComputer</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateComputerOutput {
     /// <p>A <code>Computer</code> object that represents the computer account.</p>
     #[doc(hidden)]
-    pub computer: std::option::Option<crate::types::Computer>,
+    pub computer: ::std::option::Option<crate::types::Computer>,
     _request_id: Option<String>,
 }
 impl CreateComputerOutput {
     /// <p>A <code>Computer</code> object that represents the computer account.</p>
-    pub fn computer(&self) -> std::option::Option<&crate::types::Computer> {
+    pub fn computer(&self) -> ::std::option::Option<&crate::types::Computer> {
         self.computer.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for CreateComputerOutput {
+impl ::aws_http::request_id::RequestId for CreateComputerOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,21 @@ impl CreateComputerOutput {
 
 /// A builder for [`CreateComputerOutput`](crate::operation::create_computer::CreateComputerOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateComputerOutputBuilder {
-    pub(crate) computer: std::option::Option<crate::types::Computer>,
+    pub(crate) computer: ::std::option::Option<crate::types::Computer>,
     _request_id: Option<String>,
 }
 impl CreateComputerOutputBuilder {
     /// <p>A <code>Computer</code> object that represents the computer account.</p>
     pub fn computer(mut self, input: crate::types::Computer) -> Self {
-        self.computer = Some(input);
+        self.computer = ::std::option::Option::Some(input);
         self
     }
     /// <p>A <code>Computer</code> object that represents the computer account.</p>
-    pub fn set_computer(mut self, input: std::option::Option<crate::types::Computer>) -> Self {
+    pub fn set_computer(mut self, input: ::std::option::Option<crate::types::Computer>) -> Self {
         self.computer = input;
         self
     }

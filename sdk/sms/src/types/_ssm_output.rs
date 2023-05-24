@@ -2,15 +2,15 @@
 
 /// <p>Contains the location of validation output.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SsmOutput {
     /// <p>Location of an Amazon S3 object.</p>
     #[doc(hidden)]
-    pub s3_location: std::option::Option<crate::types::S3Location>,
+    pub s3_location: ::std::option::Option<crate::types::S3Location>,
 }
 impl SsmOutput {
     /// <p>Location of an Amazon S3 object.</p>
-    pub fn s3_location(&self) -> std::option::Option<&crate::types::S3Location> {
+    pub fn s3_location(&self) -> ::std::option::Option<&crate::types::S3Location> {
         self.s3_location.as_ref()
     }
 }
@@ -23,18 +23,23 @@ impl SsmOutput {
 
 /// A builder for [`SsmOutput`](crate::types::SsmOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SsmOutputBuilder {
-    pub(crate) s3_location: std::option::Option<crate::types::S3Location>,
+    pub(crate) s3_location: ::std::option::Option<crate::types::S3Location>,
 }
 impl SsmOutputBuilder {
     /// <p>Location of an Amazon S3 object.</p>
     pub fn s3_location(mut self, input: crate::types::S3Location) -> Self {
-        self.s3_location = Some(input);
+        self.s3_location = ::std::option::Option::Some(input);
         self
     }
     /// <p>Location of an Amazon S3 object.</p>
-    pub fn set_s3_location(mut self, input: std::option::Option<crate::types::S3Location>) -> Self {
+    pub fn set_s3_location(
+        mut self,
+        input: ::std::option::Option<crate::types::S3Location>,
+    ) -> Self {
         self.s3_location = input;
         self
     }

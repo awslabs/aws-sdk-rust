@@ -2,15 +2,15 @@
 
 /// <p>Defines the cross-channel routing behavior that allows an agent working on a contact in one channel to be offered a contact from a different channel.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CrossChannelBehavior {
     /// <p>Specifies the other channels that can be routed to an agent handling their current channel.</p>
     #[doc(hidden)]
-    pub behavior_type: std::option::Option<crate::types::BehaviorType>,
+    pub behavior_type: ::std::option::Option<crate::types::BehaviorType>,
 }
 impl CrossChannelBehavior {
     /// <p>Specifies the other channels that can be routed to an agent handling their current channel.</p>
-    pub fn behavior_type(&self) -> std::option::Option<&crate::types::BehaviorType> {
+    pub fn behavior_type(&self) -> ::std::option::Option<&crate::types::BehaviorType> {
         self.behavior_type.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl CrossChannelBehavior {
 
 /// A builder for [`CrossChannelBehavior`](crate::types::CrossChannelBehavior).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CrossChannelBehaviorBuilder {
-    pub(crate) behavior_type: std::option::Option<crate::types::BehaviorType>,
+    pub(crate) behavior_type: ::std::option::Option<crate::types::BehaviorType>,
 }
 impl CrossChannelBehaviorBuilder {
     /// <p>Specifies the other channels that can be routed to an agent handling their current channel.</p>
     pub fn behavior_type(mut self, input: crate::types::BehaviorType) -> Self {
-        self.behavior_type = Some(input);
+        self.behavior_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the other channels that can be routed to an agent handling their current channel.</p>
     pub fn set_behavior_type(
         mut self,
-        input: std::option::Option<crate::types::BehaviorType>,
+        input: ::std::option::Option<crate::types::BehaviorType>,
     ) -> Self {
         self.behavior_type = input;
         self

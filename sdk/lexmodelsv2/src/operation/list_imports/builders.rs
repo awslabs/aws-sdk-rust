@@ -6,56 +6,59 @@ pub use crate::operation::list_imports::_list_imports_input::ListImportsInputBui
 /// Fluent builder constructing a request to `ListImports`.
 ///
 /// <p>Lists the imports for a bot, bot locale, or custom vocabulary. Imports are kept in the list for 7 days.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListImportsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::list_imports::builders::ListImportsInputBuilder,
 }
 impl ListImportsFluentBuilder {
     /// Creates a new `ListImports`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::list_imports::ListImports,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::list_imports::ListImportsError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_imports::ListImportsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::list_imports::ListImportsOutput,
-        aws_smithy_http::result::SdkError<crate::operation::list_imports::ListImportsError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_imports::ListImportsError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,9 +71,9 @@ impl ListImportsFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::list_imports::ListImportsOutput,
-        aws_smithy_http::result::SdkError<crate::operation::list_imports::ListImportsError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_imports::ListImportsError>,
     > {
         self.send_middleware().await
     }
@@ -84,22 +87,22 @@ impl ListImportsFluentBuilder {
         )
     }
     /// <p>The unique identifier that Amazon Lex assigned to the bot.</p>
-    pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn bot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bot_id(input.into());
         self
     }
     /// <p>The unique identifier that Amazon Lex assigned to the bot.</p>
-    pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_bot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bot_id(input);
         self
     }
     /// <p>The version of the bot to list imports for.</p>
-    pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn bot_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bot_version(input.into());
         self
     }
     /// <p>The version of the bot to list imports for.</p>
-    pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_bot_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bot_version(input);
         self
     }
@@ -109,7 +112,7 @@ impl ListImportsFluentBuilder {
         self
     }
     /// <p>Determines the field that the list of imports is sorted by. You can sort by the <code>LastUpdatedDateTime</code> field in ascending or descending order.</p>
-    pub fn set_sort_by(mut self, input: std::option::Option<crate::types::ImportSortBy>) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::ImportSortBy>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }
@@ -125,7 +128,7 @@ impl ListImportsFluentBuilder {
     /// <p>Provides the specification of a filter used to limit the bots in the response to only those that match the filter specification. You can only specify one filter and one string to filter on.</p>
     pub fn set_filters(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ImportFilter>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ImportFilter>>,
     ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
@@ -136,29 +139,29 @@ impl ListImportsFluentBuilder {
         self
     }
     /// <p>The maximum number of imports to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.</p>
-    pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
     /// <p>If the response from the <code>ListImports</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response.</p>
     /// <p>Use the returned token in the <code>nextToken</code> parameter of a <code>ListImports</code> request to return the next page of results. For a complete set of results, call the <code>ListImports</code> operation until the <code>nextToken</code> returned in the response is null.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
     /// <p>If the response from the <code>ListImports</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response.</p>
     /// <p>Use the returned token in the <code>nextToken</code> parameter of a <code>ListImports</code> request to return the next page of results. For a complete set of results, call the <code>ListImports</code> operation until the <code>nextToken</code> returned in the response is null.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
     /// <p>Specifies the locale that should be present in the list. If you don't specify a resource type in the <code>filters</code> parameter, the list contains both bot locales and custom vocabularies.</p>
-    pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn locale_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.locale_id(input.into());
         self
     }
     /// <p>Specifies the locale that should be present in the list. If you don't specify a resource type in the <code>filters</code> parameter, the list contains both bot locales and custom vocabularies.</p>
-    pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_locale_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_locale_id(input);
         self
     }

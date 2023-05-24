@@ -2,29 +2,29 @@
 
 /// <p>Information about whether a file is binary or textual in a merge or pull request operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IsBinaryFile {
     /// <p>The binary or non-binary status of file in the source of a merge or pull request.</p>
     #[doc(hidden)]
-    pub source: std::option::Option<bool>,
+    pub source: ::std::option::Option<bool>,
     /// <p>The binary or non-binary status of a file in the destination of a merge or pull request.</p>
     #[doc(hidden)]
-    pub destination: std::option::Option<bool>,
+    pub destination: ::std::option::Option<bool>,
     /// <p>The binary or non-binary status of a file in the base of a merge or pull request.</p>
     #[doc(hidden)]
-    pub base: std::option::Option<bool>,
+    pub base: ::std::option::Option<bool>,
 }
 impl IsBinaryFile {
     /// <p>The binary or non-binary status of file in the source of a merge or pull request.</p>
-    pub fn source(&self) -> std::option::Option<bool> {
+    pub fn source(&self) -> ::std::option::Option<bool> {
         self.source
     }
     /// <p>The binary or non-binary status of a file in the destination of a merge or pull request.</p>
-    pub fn destination(&self) -> std::option::Option<bool> {
+    pub fn destination(&self) -> ::std::option::Option<bool> {
         self.destination
     }
     /// <p>The binary or non-binary status of a file in the base of a merge or pull request.</p>
-    pub fn base(&self) -> std::option::Option<bool> {
+    pub fn base(&self) -> ::std::option::Option<bool> {
         self.base
     }
 }
@@ -37,40 +37,42 @@ impl IsBinaryFile {
 
 /// A builder for [`IsBinaryFile`](crate::types::IsBinaryFile).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct IsBinaryFileBuilder {
-    pub(crate) source: std::option::Option<bool>,
-    pub(crate) destination: std::option::Option<bool>,
-    pub(crate) base: std::option::Option<bool>,
+    pub(crate) source: ::std::option::Option<bool>,
+    pub(crate) destination: ::std::option::Option<bool>,
+    pub(crate) base: ::std::option::Option<bool>,
 }
 impl IsBinaryFileBuilder {
     /// <p>The binary or non-binary status of file in the source of a merge or pull request.</p>
     pub fn source(mut self, input: bool) -> Self {
-        self.source = Some(input);
+        self.source = ::std::option::Option::Some(input);
         self
     }
     /// <p>The binary or non-binary status of file in the source of a merge or pull request.</p>
-    pub fn set_source(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_source(mut self, input: ::std::option::Option<bool>) -> Self {
         self.source = input;
         self
     }
     /// <p>The binary or non-binary status of a file in the destination of a merge or pull request.</p>
     pub fn destination(mut self, input: bool) -> Self {
-        self.destination = Some(input);
+        self.destination = ::std::option::Option::Some(input);
         self
     }
     /// <p>The binary or non-binary status of a file in the destination of a merge or pull request.</p>
-    pub fn set_destination(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_destination(mut self, input: ::std::option::Option<bool>) -> Self {
         self.destination = input;
         self
     }
     /// <p>The binary or non-binary status of a file in the base of a merge or pull request.</p>
     pub fn base(mut self, input: bool) -> Self {
-        self.base = Some(input);
+        self.base = ::std::option::Option::Some(input);
         self
     }
     /// <p>The binary or non-binary status of a file in the base of a merge or pull request.</p>
-    pub fn set_base(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_base(mut self, input: ::std::option::Option<bool>) -> Self {
         self.base = input;
         self
     }

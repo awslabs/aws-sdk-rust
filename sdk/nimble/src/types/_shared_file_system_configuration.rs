@@ -2,48 +2,48 @@
 
 /// <p>The configuration for a shared file storage system that is associated with a studio resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SharedFileSystemConfiguration {
     /// <p>The endpoint of the shared file system that is accessed by the studio component resource.</p>
     #[doc(hidden)]
-    pub endpoint: std::option::Option<std::string::String>,
+    pub endpoint: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for a file system.</p>
     #[doc(hidden)]
-    pub file_system_id: std::option::Option<std::string::String>,
+    pub file_system_id: ::std::option::Option<::std::string::String>,
     /// <p>The mount location for a shared file system on a Linux virtual workstation.</p>
     #[doc(hidden)]
-    pub linux_mount_point: std::option::Option<std::string::String>,
+    pub linux_mount_point: ::std::option::Option<::std::string::String>,
     /// <p>The name of the file share.</p>
     #[doc(hidden)]
-    pub share_name: std::option::Option<std::string::String>,
+    pub share_name: ::std::option::Option<::std::string::String>,
     /// <p>The mount location for a shared file system on a Windows virtual workstation.</p>
     #[doc(hidden)]
-    pub windows_mount_drive: std::option::Option<std::string::String>,
+    pub windows_mount_drive: ::std::option::Option<::std::string::String>,
 }
 impl SharedFileSystemConfiguration {
     /// <p>The endpoint of the shared file system that is accessed by the studio component resource.</p>
-    pub fn endpoint(&self) -> std::option::Option<&str> {
+    pub fn endpoint(&self) -> ::std::option::Option<&str> {
         self.endpoint.as_deref()
     }
     /// <p>The unique identifier for a file system.</p>
-    pub fn file_system_id(&self) -> std::option::Option<&str> {
+    pub fn file_system_id(&self) -> ::std::option::Option<&str> {
         self.file_system_id.as_deref()
     }
     /// <p>The mount location for a shared file system on a Linux virtual workstation.</p>
-    pub fn linux_mount_point(&self) -> std::option::Option<&str> {
+    pub fn linux_mount_point(&self) -> ::std::option::Option<&str> {
         self.linux_mount_point.as_deref()
     }
     /// <p>The name of the file share.</p>
-    pub fn share_name(&self) -> std::option::Option<&str> {
+    pub fn share_name(&self) -> ::std::option::Option<&str> {
         self.share_name.as_deref()
     }
     /// <p>The mount location for a shared file system on a Windows virtual workstation.</p>
-    pub fn windows_mount_drive(&self) -> std::option::Option<&str> {
+    pub fn windows_mount_drive(&self) -> ::std::option::Option<&str> {
         self.windows_mount_drive.as_deref()
     }
 }
-impl std::fmt::Debug for SharedFileSystemConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for SharedFileSystemConfiguration {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SharedFileSystemConfiguration");
         formatter.field("endpoint", &"*** Sensitive Data Redacted ***");
         formatter.field("file_system_id", &self.file_system_id);
@@ -62,67 +62,79 @@ impl SharedFileSystemConfiguration {
 
 /// A builder for [`SharedFileSystemConfiguration`](crate::types::SharedFileSystemConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct SharedFileSystemConfigurationBuilder {
-    pub(crate) endpoint: std::option::Option<std::string::String>,
-    pub(crate) file_system_id: std::option::Option<std::string::String>,
-    pub(crate) linux_mount_point: std::option::Option<std::string::String>,
-    pub(crate) share_name: std::option::Option<std::string::String>,
-    pub(crate) windows_mount_drive: std::option::Option<std::string::String>,
+    pub(crate) endpoint: ::std::option::Option<::std::string::String>,
+    pub(crate) file_system_id: ::std::option::Option<::std::string::String>,
+    pub(crate) linux_mount_point: ::std::option::Option<::std::string::String>,
+    pub(crate) share_name: ::std::option::Option<::std::string::String>,
+    pub(crate) windows_mount_drive: ::std::option::Option<::std::string::String>,
 }
 impl SharedFileSystemConfigurationBuilder {
     /// <p>The endpoint of the shared file system that is accessed by the studio component resource.</p>
-    pub fn endpoint(mut self, input: impl Into<std::string::String>) -> Self {
-        self.endpoint = Some(input.into());
+    pub fn endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.endpoint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The endpoint of the shared file system that is accessed by the studio component resource.</p>
-    pub fn set_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.endpoint = input;
         self
     }
     /// <p>The unique identifier for a file system.</p>
-    pub fn file_system_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.file_system_id = Some(input.into());
+    pub fn file_system_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.file_system_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for a file system.</p>
-    pub fn set_file_system_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_file_system_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.file_system_id = input;
         self
     }
     /// <p>The mount location for a shared file system on a Linux virtual workstation.</p>
-    pub fn linux_mount_point(mut self, input: impl Into<std::string::String>) -> Self {
-        self.linux_mount_point = Some(input.into());
+    pub fn linux_mount_point(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.linux_mount_point = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The mount location for a shared file system on a Linux virtual workstation.</p>
     pub fn set_linux_mount_point(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.linux_mount_point = input;
         self
     }
     /// <p>The name of the file share.</p>
-    pub fn share_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.share_name = Some(input.into());
+    pub fn share_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.share_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the file share.</p>
-    pub fn set_share_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_share_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.share_name = input;
         self
     }
     /// <p>The mount location for a shared file system on a Windows virtual workstation.</p>
-    pub fn windows_mount_drive(mut self, input: impl Into<std::string::String>) -> Self {
-        self.windows_mount_drive = Some(input.into());
+    pub fn windows_mount_drive(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.windows_mount_drive = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The mount location for a shared file system on a Windows virtual workstation.</p>
     pub fn set_windows_mount_drive(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.windows_mount_drive = input;
         self
@@ -138,8 +150,8 @@ impl SharedFileSystemConfigurationBuilder {
         }
     }
 }
-impl std::fmt::Debug for SharedFileSystemConfigurationBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for SharedFileSystemConfigurationBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SharedFileSystemConfigurationBuilder");
         formatter.field("endpoint", &"*** Sensitive Data Redacted ***");
         formatter.field("file_system_id", &self.file_system_id);

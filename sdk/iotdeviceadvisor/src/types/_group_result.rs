@@ -2,29 +2,29 @@
 
 /// <p>Show Group Result.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GroupResult {
     /// <p>Group result ID.</p>
     #[doc(hidden)]
-    pub group_id: std::option::Option<std::string::String>,
+    pub group_id: ::std::option::Option<::std::string::String>,
     /// <p>Group Result Name.</p>
     #[doc(hidden)]
-    pub group_name: std::option::Option<std::string::String>,
+    pub group_name: ::std::option::Option<::std::string::String>,
     /// <p>Tests under Group Result.</p>
     #[doc(hidden)]
-    pub tests: std::option::Option<std::vec::Vec<crate::types::TestCaseRun>>,
+    pub tests: ::std::option::Option<::std::vec::Vec<crate::types::TestCaseRun>>,
 }
 impl GroupResult {
     /// <p>Group result ID.</p>
-    pub fn group_id(&self) -> std::option::Option<&str> {
+    pub fn group_id(&self) -> ::std::option::Option<&str> {
         self.group_id.as_deref()
     }
     /// <p>Group Result Name.</p>
-    pub fn group_name(&self) -> std::option::Option<&str> {
+    pub fn group_name(&self) -> ::std::option::Option<&str> {
         self.group_name.as_deref()
     }
     /// <p>Tests under Group Result.</p>
-    pub fn tests(&self) -> std::option::Option<&[crate::types::TestCaseRun]> {
+    pub fn tests(&self) -> ::std::option::Option<&[crate::types::TestCaseRun]> {
         self.tests.as_deref()
     }
 }
@@ -37,30 +37,32 @@ impl GroupResult {
 
 /// A builder for [`GroupResult`](crate::types::GroupResult).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GroupResultBuilder {
-    pub(crate) group_id: std::option::Option<std::string::String>,
-    pub(crate) group_name: std::option::Option<std::string::String>,
-    pub(crate) tests: std::option::Option<std::vec::Vec<crate::types::TestCaseRun>>,
+    pub(crate) group_id: ::std::option::Option<::std::string::String>,
+    pub(crate) group_name: ::std::option::Option<::std::string::String>,
+    pub(crate) tests: ::std::option::Option<::std::vec::Vec<crate::types::TestCaseRun>>,
 }
 impl GroupResultBuilder {
     /// <p>Group result ID.</p>
-    pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.group_id = Some(input.into());
+    pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Group result ID.</p>
-    pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_id = input;
         self
     }
     /// <p>Group Result Name.</p>
-    pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.group_name = Some(input.into());
+    pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Group Result Name.</p>
-    pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_name = input;
         self
     }
@@ -72,13 +74,13 @@ impl GroupResultBuilder {
     pub fn tests(mut self, input: crate::types::TestCaseRun) -> Self {
         let mut v = self.tests.unwrap_or_default();
         v.push(input);
-        self.tests = Some(v);
+        self.tests = ::std::option::Option::Some(v);
         self
     }
     /// <p>Tests under Group Result.</p>
     pub fn set_tests(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TestCaseRun>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::TestCaseRun>>,
     ) -> Self {
         self.tests = input;
         self

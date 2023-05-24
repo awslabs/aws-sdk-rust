@@ -2,22 +2,22 @@
 
 /// <p>Specifies how Amazon Simple Storage Service (Amazon S3) data should be encrypted.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3Encryption {
     /// <p>The encryption mode to use for Amazon S3 data.</p>
     #[doc(hidden)]
-    pub s3_encryption_mode: std::option::Option<crate::types::S3EncryptionMode>,
+    pub s3_encryption_mode: ::std::option::Option<crate::types::S3EncryptionMode>,
     /// <p>The Amazon Resource Name (ARN) of the KMS key to be used to encrypt the data.</p>
     #[doc(hidden)]
-    pub kms_key_arn: std::option::Option<std::string::String>,
+    pub kms_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl S3Encryption {
     /// <p>The encryption mode to use for Amazon S3 data.</p>
-    pub fn s3_encryption_mode(&self) -> std::option::Option<&crate::types::S3EncryptionMode> {
+    pub fn s3_encryption_mode(&self) -> ::std::option::Option<&crate::types::S3EncryptionMode> {
         self.s3_encryption_mode.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the KMS key to be used to encrypt the data.</p>
-    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
+    pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
 }
@@ -30,32 +30,34 @@ impl S3Encryption {
 
 /// A builder for [`S3Encryption`](crate::types::S3Encryption).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct S3EncryptionBuilder {
-    pub(crate) s3_encryption_mode: std::option::Option<crate::types::S3EncryptionMode>,
-    pub(crate) kms_key_arn: std::option::Option<std::string::String>,
+    pub(crate) s3_encryption_mode: ::std::option::Option<crate::types::S3EncryptionMode>,
+    pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl S3EncryptionBuilder {
     /// <p>The encryption mode to use for Amazon S3 data.</p>
     pub fn s3_encryption_mode(mut self, input: crate::types::S3EncryptionMode) -> Self {
-        self.s3_encryption_mode = Some(input);
+        self.s3_encryption_mode = ::std::option::Option::Some(input);
         self
     }
     /// <p>The encryption mode to use for Amazon S3 data.</p>
     pub fn set_s3_encryption_mode(
         mut self,
-        input: std::option::Option<crate::types::S3EncryptionMode>,
+        input: ::std::option::Option<crate::types::S3EncryptionMode>,
     ) -> Self {
         self.s3_encryption_mode = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the KMS key to be used to encrypt the data.</p>
-    pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.kms_key_arn = Some(input.into());
+    pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the KMS key to be used to encrypt the data.</p>
-    pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_arn = input;
         self
     }

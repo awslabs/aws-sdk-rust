@@ -2,31 +2,33 @@
 
 /// <p>The input for the model quality monitoring job. Currently endponts are supported for input for model quality monitoring jobs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModelQualityJobInput {
     /// <p>Input object for the endpoint</p>
     #[doc(hidden)]
-    pub endpoint_input: std::option::Option<crate::types::EndpointInput>,
+    pub endpoint_input: ::std::option::Option<crate::types::EndpointInput>,
     /// <p>Input object for the batch transform job.</p>
     #[doc(hidden)]
-    pub batch_transform_input: std::option::Option<crate::types::BatchTransformInput>,
+    pub batch_transform_input: ::std::option::Option<crate::types::BatchTransformInput>,
     /// <p>The ground truth label provided for the model.</p>
     #[doc(hidden)]
-    pub ground_truth_s3_input: std::option::Option<crate::types::MonitoringGroundTruthS3Input>,
+    pub ground_truth_s3_input: ::std::option::Option<crate::types::MonitoringGroundTruthS3Input>,
 }
 impl ModelQualityJobInput {
     /// <p>Input object for the endpoint</p>
-    pub fn endpoint_input(&self) -> std::option::Option<&crate::types::EndpointInput> {
+    pub fn endpoint_input(&self) -> ::std::option::Option<&crate::types::EndpointInput> {
         self.endpoint_input.as_ref()
     }
     /// <p>Input object for the batch transform job.</p>
-    pub fn batch_transform_input(&self) -> std::option::Option<&crate::types::BatchTransformInput> {
+    pub fn batch_transform_input(
+        &self,
+    ) -> ::std::option::Option<&crate::types::BatchTransformInput> {
         self.batch_transform_input.as_ref()
     }
     /// <p>The ground truth label provided for the model.</p>
     pub fn ground_truth_s3_input(
         &self,
-    ) -> std::option::Option<&crate::types::MonitoringGroundTruthS3Input> {
+    ) -> ::std::option::Option<&crate::types::MonitoringGroundTruthS3Input> {
         self.ground_truth_s3_input.as_ref()
     }
 }
@@ -39,36 +41,38 @@ impl ModelQualityJobInput {
 
 /// A builder for [`ModelQualityJobInput`](crate::types::ModelQualityJobInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ModelQualityJobInputBuilder {
-    pub(crate) endpoint_input: std::option::Option<crate::types::EndpointInput>,
-    pub(crate) batch_transform_input: std::option::Option<crate::types::BatchTransformInput>,
+    pub(crate) endpoint_input: ::std::option::Option<crate::types::EndpointInput>,
+    pub(crate) batch_transform_input: ::std::option::Option<crate::types::BatchTransformInput>,
     pub(crate) ground_truth_s3_input:
-        std::option::Option<crate::types::MonitoringGroundTruthS3Input>,
+        ::std::option::Option<crate::types::MonitoringGroundTruthS3Input>,
 }
 impl ModelQualityJobInputBuilder {
     /// <p>Input object for the endpoint</p>
     pub fn endpoint_input(mut self, input: crate::types::EndpointInput) -> Self {
-        self.endpoint_input = Some(input);
+        self.endpoint_input = ::std::option::Option::Some(input);
         self
     }
     /// <p>Input object for the endpoint</p>
     pub fn set_endpoint_input(
         mut self,
-        input: std::option::Option<crate::types::EndpointInput>,
+        input: ::std::option::Option<crate::types::EndpointInput>,
     ) -> Self {
         self.endpoint_input = input;
         self
     }
     /// <p>Input object for the batch transform job.</p>
     pub fn batch_transform_input(mut self, input: crate::types::BatchTransformInput) -> Self {
-        self.batch_transform_input = Some(input);
+        self.batch_transform_input = ::std::option::Option::Some(input);
         self
     }
     /// <p>Input object for the batch transform job.</p>
     pub fn set_batch_transform_input(
         mut self,
-        input: std::option::Option<crate::types::BatchTransformInput>,
+        input: ::std::option::Option<crate::types::BatchTransformInput>,
     ) -> Self {
         self.batch_transform_input = input;
         self
@@ -78,13 +82,13 @@ impl ModelQualityJobInputBuilder {
         mut self,
         input: crate::types::MonitoringGroundTruthS3Input,
     ) -> Self {
-        self.ground_truth_s3_input = Some(input);
+        self.ground_truth_s3_input = ::std::option::Option::Some(input);
         self
     }
     /// <p>The ground truth label provided for the model.</p>
     pub fn set_ground_truth_s3_input(
         mut self,
-        input: std::option::Option<crate::types::MonitoringGroundTruthS3Input>,
+        input: ::std::option::Option<crate::types::MonitoringGroundTruthS3Input>,
     ) -> Self {
         self.ground_truth_s3_input = input;
         self

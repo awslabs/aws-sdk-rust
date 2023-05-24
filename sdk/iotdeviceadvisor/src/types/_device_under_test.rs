@@ -2,29 +2,29 @@
 
 /// <p>Information of a test device. A thing ARN, certificate ARN or device role ARN is required.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeviceUnderTest {
     /// <p>Lists device's thing ARN.</p>
     #[doc(hidden)]
-    pub thing_arn: std::option::Option<std::string::String>,
+    pub thing_arn: ::std::option::Option<::std::string::String>,
     /// <p>Lists device's certificate ARN.</p>
     #[doc(hidden)]
-    pub certificate_arn: std::option::Option<std::string::String>,
+    pub certificate_arn: ::std::option::Option<::std::string::String>,
     /// <p>Lists device's role ARN.</p>
     #[doc(hidden)]
-    pub device_role_arn: std::option::Option<std::string::String>,
+    pub device_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeviceUnderTest {
     /// <p>Lists device's thing ARN.</p>
-    pub fn thing_arn(&self) -> std::option::Option<&str> {
+    pub fn thing_arn(&self) -> ::std::option::Option<&str> {
         self.thing_arn.as_deref()
     }
     /// <p>Lists device's certificate ARN.</p>
-    pub fn certificate_arn(&self) -> std::option::Option<&str> {
+    pub fn certificate_arn(&self) -> ::std::option::Option<&str> {
         self.certificate_arn.as_deref()
     }
     /// <p>Lists device's role ARN.</p>
-    pub fn device_role_arn(&self) -> std::option::Option<&str> {
+    pub fn device_role_arn(&self) -> ::std::option::Option<&str> {
         self.device_role_arn.as_deref()
     }
 }
@@ -37,40 +37,54 @@ impl DeviceUnderTest {
 
 /// A builder for [`DeviceUnderTest`](crate::types::DeviceUnderTest).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeviceUnderTestBuilder {
-    pub(crate) thing_arn: std::option::Option<std::string::String>,
-    pub(crate) certificate_arn: std::option::Option<std::string::String>,
-    pub(crate) device_role_arn: std::option::Option<std::string::String>,
+    pub(crate) thing_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) certificate_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) device_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeviceUnderTestBuilder {
     /// <p>Lists device's thing ARN.</p>
-    pub fn thing_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.thing_arn = Some(input.into());
+    pub fn thing_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.thing_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Lists device's thing ARN.</p>
-    pub fn set_thing_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_thing_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.thing_arn = input;
         self
     }
     /// <p>Lists device's certificate ARN.</p>
-    pub fn certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.certificate_arn = Some(input.into());
+    pub fn certificate_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.certificate_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Lists device's certificate ARN.</p>
-    pub fn set_certificate_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_certificate_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.certificate_arn = input;
         self
     }
     /// <p>Lists device's role ARN.</p>
-    pub fn device_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.device_role_arn = Some(input.into());
+    pub fn device_role_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.device_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Lists device's role ARN.</p>
-    pub fn set_device_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_device_role_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.device_role_arn = input;
         self
     }

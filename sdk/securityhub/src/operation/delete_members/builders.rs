@@ -7,56 +7,59 @@ pub use crate::operation::delete_members::_delete_members_input::DeleteMembersIn
 ///
 /// <p>Deletes the specified member accounts from Security Hub.</p>
 /// <p>Can be used to delete member accounts that belong to an organization as well as member accounts that were invited manually.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteMembersFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::delete_members::builders::DeleteMembersInputBuilder,
 }
 impl DeleteMembersFluentBuilder {
     /// Creates a new `DeleteMembers`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::delete_members::DeleteMembers,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::delete_members::DeleteMembersError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_members::DeleteMembersError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::delete_members::DeleteMembersOutput,
-        aws_smithy_http::result::SdkError<crate::operation::delete_members::DeleteMembersError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_members::DeleteMembersError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -69,9 +72,9 @@ impl DeleteMembersFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::delete_members::DeleteMembersOutput,
-        aws_smithy_http::result::SdkError<crate::operation::delete_members::DeleteMembersError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_members::DeleteMembersError>,
     > {
         self.send_middleware().await
     }
@@ -80,14 +83,14 @@ impl DeleteMembersFluentBuilder {
     /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
     ///
     /// <p>The list of account IDs for the member accounts to delete.</p>
-    pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn account_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.account_ids(input.into());
         self
     }
     /// <p>The list of account IDs for the member accounts to delete.</p>
     pub fn set_account_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_account_ids(input);
         self

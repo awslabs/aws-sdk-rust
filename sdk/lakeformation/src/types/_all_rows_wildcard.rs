@@ -2,7 +2,7 @@
 
 /// <p>A structure that you pass to indicate you want all rows in a filter. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AllRowsWildcard {}
 impl AllRowsWildcard {
     /// Creates a new builder-style object to manufacture [`AllRowsWildcard`](crate::types::AllRowsWildcard).
@@ -13,7 +13,9 @@ impl AllRowsWildcard {
 
 /// A builder for [`AllRowsWildcard`](crate::types::AllRowsWildcard).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AllRowsWildcardBuilder {}
 impl AllRowsWildcardBuilder {
     /// Consumes the builder and constructs a [`AllRowsWildcard`](crate::types::AllRowsWildcard).

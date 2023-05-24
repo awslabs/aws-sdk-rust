@@ -13,56 +13,63 @@ pub use crate::operation::get_geo_location::_get_geo_location_input::GetGeoLocat
 /// <p> <code>GET /2013-04-01/geolocation?countrycode=<i>two-character country code</i> </code> </p>
 /// <p>Use the following syntax to determine whether a subdivision of a country is supported for geolocation:</p>
 /// <p> <code>GET /2013-04-01/geolocation?countrycode=<i>two-character country code</i>&amp;subdivisioncode=<i>subdivision code</i> </code> </p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetGeoLocationFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::get_geo_location::builders::GetGeoLocationInputBuilder,
 }
 impl GetGeoLocationFluentBuilder {
     /// Creates a new `GetGeoLocation`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::get_geo_location::GetGeoLocation,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::get_geo_location::GetGeoLocationError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_geo_location::GetGeoLocationError,
+        >,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_geo_location::GetGeoLocationOutput,
-        aws_smithy_http::result::SdkError<crate::operation::get_geo_location::GetGeoLocationError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_geo_location::GetGeoLocationError,
+        >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -75,9 +82,11 @@ impl GetGeoLocationFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_geo_location::GetGeoLocationOutput,
-        aws_smithy_http::result::SdkError<crate::operation::get_geo_location::GetGeoLocationError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_geo_location::GetGeoLocationError,
+        >,
     > {
         self.send_middleware().await
     }
@@ -91,7 +100,10 @@ impl GetGeoLocationFluentBuilder {
     /// <li> <p> <b>NA</b>: North America</p> </li>
     /// <li> <p> <b>SA</b>: South America</p> </li>
     /// </ul>
-    pub fn continent_code(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn continent_code(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.continent_code(input.into());
         self
     }
@@ -105,27 +117,36 @@ impl GetGeoLocationFluentBuilder {
     /// <li> <p> <b>NA</b>: North America</p> </li>
     /// <li> <p> <b>SA</b>: South America</p> </li>
     /// </ul>
-    pub fn set_continent_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_continent_code(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_continent_code(input);
         self
     }
     /// <p>Amazon Route 53 uses the two-letter country codes that are specified in <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1 alpha-2</a>.</p>
-    pub fn country_code(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn country_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.country_code(input.into());
         self
     }
     /// <p>Amazon Route 53 uses the two-letter country codes that are specified in <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1 alpha-2</a>.</p>
-    pub fn set_country_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_country_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_country_code(input);
         self
     }
     /// <p>The code for the subdivision, such as a particular state within the United States. For a list of US state abbreviations, see <a href="https://pe.usps.com/text/pub28/28apb.htm">Appendix B: Two–Letter State and Possession Abbreviations</a> on the United States Postal Service website. For a list of all supported subdivision codes, use the <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListGeoLocations.html">ListGeoLocations</a> API.</p>
-    pub fn subdivision_code(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn subdivision_code(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.subdivision_code(input.into());
         self
     }
     /// <p>The code for the subdivision, such as a particular state within the United States. For a list of US state abbreviations, see <a href="https://pe.usps.com/text/pub28/28apb.htm">Appendix B: Two–Letter State and Possession Abbreviations</a> on the United States Postal Service website. For a list of all supported subdivision codes, use the <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListGeoLocations.html">ListGeoLocations</a> API.</p>
-    pub fn set_subdivision_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_subdivision_code(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_subdivision_code(input);
         self
     }

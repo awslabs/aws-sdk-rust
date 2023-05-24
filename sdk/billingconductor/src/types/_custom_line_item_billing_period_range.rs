@@ -2,22 +2,22 @@
 
 /// <p> The billing period range in which the custom line item request will be applied. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomLineItemBillingPeriodRange {
     /// <p> The inclusive start billing period that defines a billing period range where a custom line is applied. </p>
     #[doc(hidden)]
-    pub inclusive_start_billing_period: std::option::Option<std::string::String>,
+    pub inclusive_start_billing_period: ::std::option::Option<::std::string::String>,
     /// <p> The inclusive end billing period that defines a billing period range where a custom line is applied. </p>
     #[doc(hidden)]
-    pub exclusive_end_billing_period: std::option::Option<std::string::String>,
+    pub exclusive_end_billing_period: ::std::option::Option<::std::string::String>,
 }
 impl CustomLineItemBillingPeriodRange {
     /// <p> The inclusive start billing period that defines a billing period range where a custom line is applied. </p>
-    pub fn inclusive_start_billing_period(&self) -> std::option::Option<&str> {
+    pub fn inclusive_start_billing_period(&self) -> ::std::option::Option<&str> {
         self.inclusive_start_billing_period.as_deref()
     }
     /// <p> The inclusive end billing period that defines a billing period range where a custom line is applied. </p>
-    pub fn exclusive_end_billing_period(&self) -> std::option::Option<&str> {
+    pub fn exclusive_end_billing_period(&self) -> ::std::option::Option<&str> {
         self.exclusive_end_billing_period.as_deref()
     }
 }
@@ -30,34 +30,42 @@ impl CustomLineItemBillingPeriodRange {
 
 /// A builder for [`CustomLineItemBillingPeriodRange`](crate::types::CustomLineItemBillingPeriodRange).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CustomLineItemBillingPeriodRangeBuilder {
-    pub(crate) inclusive_start_billing_period: std::option::Option<std::string::String>,
-    pub(crate) exclusive_end_billing_period: std::option::Option<std::string::String>,
+    pub(crate) inclusive_start_billing_period: ::std::option::Option<::std::string::String>,
+    pub(crate) exclusive_end_billing_period: ::std::option::Option<::std::string::String>,
 }
 impl CustomLineItemBillingPeriodRangeBuilder {
     /// <p> The inclusive start billing period that defines a billing period range where a custom line is applied. </p>
-    pub fn inclusive_start_billing_period(mut self, input: impl Into<std::string::String>) -> Self {
-        self.inclusive_start_billing_period = Some(input.into());
+    pub fn inclusive_start_billing_period(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.inclusive_start_billing_period = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The inclusive start billing period that defines a billing period range where a custom line is applied. </p>
     pub fn set_inclusive_start_billing_period(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inclusive_start_billing_period = input;
         self
     }
     /// <p> The inclusive end billing period that defines a billing period range where a custom line is applied. </p>
-    pub fn exclusive_end_billing_period(mut self, input: impl Into<std::string::String>) -> Self {
-        self.exclusive_end_billing_period = Some(input.into());
+    pub fn exclusive_end_billing_period(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.exclusive_end_billing_period = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The inclusive end billing period that defines a billing period range where a custom line is applied. </p>
     pub fn set_exclusive_end_billing_period(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.exclusive_end_billing_period = input;
         self

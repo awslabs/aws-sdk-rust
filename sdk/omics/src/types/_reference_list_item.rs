@@ -2,71 +2,71 @@
 
 /// <p>A genome reference.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReferenceListItem {
     /// <p>The reference's ID.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The reference's ARN.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The reference's store ID.</p>
     #[doc(hidden)]
-    pub reference_store_id: std::option::Option<std::string::String>,
+    pub reference_store_id: ::std::option::Option<::std::string::String>,
     /// <p>The reference's MD5 checksum.</p>
     #[doc(hidden)]
-    pub md5: std::option::Option<std::string::String>,
+    pub md5: ::std::option::Option<::std::string::String>,
     /// <p>The reference's status.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::ReferenceStatus>,
+    pub status: ::std::option::Option<crate::types::ReferenceStatus>,
     /// <p>The reference's name.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The reference's description.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>When the reference was created.</p>
     #[doc(hidden)]
-    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>When the reference was updated.</p>
     #[doc(hidden)]
-    pub update_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ReferenceListItem {
     /// <p>The reference's ID.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The reference's ARN.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The reference's store ID.</p>
-    pub fn reference_store_id(&self) -> std::option::Option<&str> {
+    pub fn reference_store_id(&self) -> ::std::option::Option<&str> {
         self.reference_store_id.as_deref()
     }
     /// <p>The reference's MD5 checksum.</p>
-    pub fn md5(&self) -> std::option::Option<&str> {
+    pub fn md5(&self) -> ::std::option::Option<&str> {
         self.md5.as_deref()
     }
     /// <p>The reference's status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::ReferenceStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::ReferenceStatus> {
         self.status.as_ref()
     }
     /// <p>The reference's name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The reference's description.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>When the reference was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>When the reference was updated.</p>
-    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
 }
@@ -79,114 +79,122 @@ impl ReferenceListItem {
 
 /// A builder for [`ReferenceListItem`](crate::types::ReferenceListItem).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ReferenceListItemBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) reference_store_id: std::option::Option<std::string::String>,
-    pub(crate) md5: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::ReferenceStatus>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) update_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) reference_store_id: ::std::option::Option<::std::string::String>,
+    pub(crate) md5: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::ReferenceStatus>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ReferenceListItemBuilder {
     /// <p>The reference's ID.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reference's ID.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>The reference's ARN.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reference's ARN.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// <p>The reference's store ID.</p>
-    pub fn reference_store_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.reference_store_id = Some(input.into());
+    pub fn reference_store_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.reference_store_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reference's store ID.</p>
     pub fn set_reference_store_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.reference_store_id = input;
         self
     }
     /// <p>The reference's MD5 checksum.</p>
-    pub fn md5(mut self, input: impl Into<std::string::String>) -> Self {
-        self.md5 = Some(input.into());
+    pub fn md5(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.md5 = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reference's MD5 checksum.</p>
-    pub fn set_md5(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_md5(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.md5 = input;
         self
     }
     /// <p>The reference's status.</p>
     pub fn status(mut self, input: crate::types::ReferenceStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The reference's status.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::ReferenceStatus>) -> Self {
+    pub fn set_status(
+        mut self,
+        input: ::std::option::Option<crate::types::ReferenceStatus>,
+    ) -> Self {
         self.status = input;
         self
     }
     /// <p>The reference's name.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reference's name.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The reference's description.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reference's description.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>When the reference was created.</p>
-    pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_time = Some(input);
+    pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>When the reference was created.</p>
     pub fn set_creation_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_time = input;
         self
     }
     /// <p>When the reference was updated.</p>
-    pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.update_time = Some(input);
+    pub fn update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.update_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>When the reference was updated.</p>
     pub fn set_update_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.update_time = input;
         self

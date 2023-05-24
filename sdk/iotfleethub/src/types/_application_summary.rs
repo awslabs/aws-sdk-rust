@@ -4,20 +4,20 @@
 /// <p>Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApplicationSummary {
     /// <p>The unique Id of the web application.</p>
     #[doc(hidden)]
-    pub application_id: std::option::Option<std::string::String>,
+    pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the web application.</p>
     #[doc(hidden)]
-    pub application_name: std::option::Option<std::string::String>,
+    pub application_name: ::std::option::Option<::std::string::String>,
     /// <p>An optional description of the web application.</p>
     #[doc(hidden)]
-    pub application_description: std::option::Option<std::string::String>,
+    pub application_description: ::std::option::Option<::std::string::String>,
     /// <p>The URL of the web application.</p>
     #[doc(hidden)]
-    pub application_url: std::option::Option<std::string::String>,
+    pub application_url: ::std::option::Option<::std::string::String>,
     /// <p>The date (in Unix epoch time) when the web application was created.</p>
     #[doc(hidden)]
     pub application_creation_date: i64,
@@ -26,23 +26,23 @@ pub struct ApplicationSummary {
     pub application_last_update_date: i64,
     /// <p>The current state of the web application.</p>
     #[doc(hidden)]
-    pub application_state: std::option::Option<crate::types::ApplicationState>,
+    pub application_state: ::std::option::Option<crate::types::ApplicationState>,
 }
 impl ApplicationSummary {
     /// <p>The unique Id of the web application.</p>
-    pub fn application_id(&self) -> std::option::Option<&str> {
+    pub fn application_id(&self) -> ::std::option::Option<&str> {
         self.application_id.as_deref()
     }
     /// <p>The name of the web application.</p>
-    pub fn application_name(&self) -> std::option::Option<&str> {
+    pub fn application_name(&self) -> ::std::option::Option<&str> {
         self.application_name.as_deref()
     }
     /// <p>An optional description of the web application.</p>
-    pub fn application_description(&self) -> std::option::Option<&str> {
+    pub fn application_description(&self) -> ::std::option::Option<&str> {
         self.application_description.as_deref()
     }
     /// <p>The URL of the web application.</p>
-    pub fn application_url(&self) -> std::option::Option<&str> {
+    pub fn application_url(&self) -> ::std::option::Option<&str> {
         self.application_url.as_deref()
     }
     /// <p>The date (in Unix epoch time) when the web application was created.</p>
@@ -54,7 +54,7 @@ impl ApplicationSummary {
         self.application_last_update_date
     }
     /// <p>The current state of the web application.</p>
-    pub fn application_state(&self) -> std::option::Option<&crate::types::ApplicationState> {
+    pub fn application_state(&self) -> ::std::option::Option<&crate::types::ApplicationState> {
         self.application_state.as_ref()
     }
 }
@@ -67,89 +67,112 @@ impl ApplicationSummary {
 
 /// A builder for [`ApplicationSummary`](crate::types::ApplicationSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ApplicationSummaryBuilder {
-    pub(crate) application_id: std::option::Option<std::string::String>,
-    pub(crate) application_name: std::option::Option<std::string::String>,
-    pub(crate) application_description: std::option::Option<std::string::String>,
-    pub(crate) application_url: std::option::Option<std::string::String>,
-    pub(crate) application_creation_date: std::option::Option<i64>,
-    pub(crate) application_last_update_date: std::option::Option<i64>,
-    pub(crate) application_state: std::option::Option<crate::types::ApplicationState>,
+    pub(crate) application_id: ::std::option::Option<::std::string::String>,
+    pub(crate) application_name: ::std::option::Option<::std::string::String>,
+    pub(crate) application_description: ::std::option::Option<::std::string::String>,
+    pub(crate) application_url: ::std::option::Option<::std::string::String>,
+    pub(crate) application_creation_date: ::std::option::Option<i64>,
+    pub(crate) application_last_update_date: ::std::option::Option<i64>,
+    pub(crate) application_state: ::std::option::Option<crate::types::ApplicationState>,
 }
 impl ApplicationSummaryBuilder {
     /// <p>The unique Id of the web application.</p>
-    pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.application_id = Some(input.into());
+    pub fn application_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.application_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique Id of the web application.</p>
-    pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_application_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.application_id = input;
         self
     }
     /// <p>The name of the web application.</p>
-    pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.application_name = Some(input.into());
+    pub fn application_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.application_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the web application.</p>
-    pub fn set_application_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_application_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.application_name = input;
         self
     }
     /// <p>An optional description of the web application.</p>
-    pub fn application_description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.application_description = Some(input.into());
+    pub fn application_description(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.application_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An optional description of the web application.</p>
     pub fn set_application_description(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.application_description = input;
         self
     }
     /// <p>The URL of the web application.</p>
-    pub fn application_url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.application_url = Some(input.into());
+    pub fn application_url(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.application_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL of the web application.</p>
-    pub fn set_application_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_application_url(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.application_url = input;
         self
     }
     /// <p>The date (in Unix epoch time) when the web application was created.</p>
     pub fn application_creation_date(mut self, input: i64) -> Self {
-        self.application_creation_date = Some(input);
+        self.application_creation_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date (in Unix epoch time) when the web application was created.</p>
-    pub fn set_application_creation_date(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_application_creation_date(mut self, input: ::std::option::Option<i64>) -> Self {
         self.application_creation_date = input;
         self
     }
     /// <p>The date (in Unix epoch time) when the web application was last updated.</p>
     pub fn application_last_update_date(mut self, input: i64) -> Self {
-        self.application_last_update_date = Some(input);
+        self.application_last_update_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date (in Unix epoch time) when the web application was last updated.</p>
-    pub fn set_application_last_update_date(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_application_last_update_date(mut self, input: ::std::option::Option<i64>) -> Self {
         self.application_last_update_date = input;
         self
     }
     /// <p>The current state of the web application.</p>
     pub fn application_state(mut self, input: crate::types::ApplicationState) -> Self {
-        self.application_state = Some(input);
+        self.application_state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current state of the web application.</p>
     pub fn set_application_state(
         mut self,
-        input: std::option::Option<crate::types::ApplicationState>,
+        input: ::std::option::Option<crate::types::ApplicationState>,
     ) -> Self {
         self.application_state = input;
         self

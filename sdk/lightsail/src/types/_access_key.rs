@@ -5,56 +5,56 @@
 /// <p>The <code>secretAccessKey</code> value is returned only in response to the <code>CreateBucketAccessKey</code> action. You can get a secret access key only when you first create an access key; you cannot get the secret access key later. If you lose the secret access key, you must create a new access key.</p>
 /// </important>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AccessKey {
     /// <p>The ID of the access key.</p>
     #[doc(hidden)]
-    pub access_key_id: std::option::Option<std::string::String>,
+    pub access_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The secret access key used to sign requests.</p>
     /// <p>You should store the secret access key in a safe location. We recommend that you delete the access key if the secret access key is compromised.</p>
     #[doc(hidden)]
-    pub secret_access_key: std::option::Option<std::string::String>,
+    pub secret_access_key: ::std::option::Option<::std::string::String>,
     /// <p>The status of the access key.</p>
     /// <p>A status of <code>Active</code> means that the key is valid, while <code>Inactive</code> means it is not.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::StatusType>,
+    pub status: ::std::option::Option<crate::types::StatusType>,
     /// <p>The timestamp when the access key was created.</p>
     #[doc(hidden)]
-    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>An object that describes the last time the access key was used.</p> <note>
     /// <p>This object does not include data in the response of a <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateBucketAccessKey.html">CreateBucketAccessKey</a> action. If the access key has not been used, the <code>region</code> and <code>serviceName</code> values are <code>N/A</code>, and the <code>lastUsedDate</code> value is null.</p>
     /// </note>
     #[doc(hidden)]
-    pub last_used: std::option::Option<crate::types::AccessKeyLastUsed>,
+    pub last_used: ::std::option::Option<crate::types::AccessKeyLastUsed>,
 }
 impl AccessKey {
     /// <p>The ID of the access key.</p>
-    pub fn access_key_id(&self) -> std::option::Option<&str> {
+    pub fn access_key_id(&self) -> ::std::option::Option<&str> {
         self.access_key_id.as_deref()
     }
     /// <p>The secret access key used to sign requests.</p>
     /// <p>You should store the secret access key in a safe location. We recommend that you delete the access key if the secret access key is compromised.</p>
-    pub fn secret_access_key(&self) -> std::option::Option<&str> {
+    pub fn secret_access_key(&self) -> ::std::option::Option<&str> {
         self.secret_access_key.as_deref()
     }
     /// <p>The status of the access key.</p>
     /// <p>A status of <code>Active</code> means that the key is valid, while <code>Inactive</code> means it is not.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::StatusType> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::StatusType> {
         self.status.as_ref()
     }
     /// <p>The timestamp when the access key was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>An object that describes the last time the access key was used.</p> <note>
     /// <p>This object does not include data in the response of a <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateBucketAccessKey.html">CreateBucketAccessKey</a> action. If the access key has not been used, the <code>region</code> and <code>serviceName</code> values are <code>N/A</code>, and the <code>lastUsedDate</code> value is null.</p>
     /// </note>
-    pub fn last_used(&self) -> std::option::Option<&crate::types::AccessKeyLastUsed> {
+    pub fn last_used(&self) -> ::std::option::Option<&crate::types::AccessKeyLastUsed> {
         self.last_used.as_ref()
     }
 }
-impl std::fmt::Debug for AccessKey {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for AccessKey {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AccessKey");
         formatter.field("access_key_id", &"*** Sensitive Data Redacted ***");
         formatter.field("secret_access_key", &self.secret_access_key);
@@ -73,36 +73,45 @@ impl AccessKey {
 
 /// A builder for [`AccessKey`](crate::types::AccessKey).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct AccessKeyBuilder {
-    pub(crate) access_key_id: std::option::Option<std::string::String>,
-    pub(crate) secret_access_key: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::StatusType>,
-    pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_used: std::option::Option<crate::types::AccessKeyLastUsed>,
+    pub(crate) access_key_id: ::std::option::Option<::std::string::String>,
+    pub(crate) secret_access_key: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::StatusType>,
+    pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_used: ::std::option::Option<crate::types::AccessKeyLastUsed>,
 }
 impl AccessKeyBuilder {
     /// <p>The ID of the access key.</p>
-    pub fn access_key_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.access_key_id = Some(input.into());
+    pub fn access_key_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.access_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the access key.</p>
-    pub fn set_access_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_access_key_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.access_key_id = input;
         self
     }
     /// <p>The secret access key used to sign requests.</p>
     /// <p>You should store the secret access key in a safe location. We recommend that you delete the access key if the secret access key is compromised.</p>
-    pub fn secret_access_key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.secret_access_key = Some(input.into());
+    pub fn secret_access_key(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.secret_access_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The secret access key used to sign requests.</p>
     /// <p>You should store the secret access key in a safe location. We recommend that you delete the access key if the secret access key is compromised.</p>
     pub fn set_secret_access_key(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.secret_access_key = input;
         self
@@ -110,24 +119,24 @@ impl AccessKeyBuilder {
     /// <p>The status of the access key.</p>
     /// <p>A status of <code>Active</code> means that the key is valid, while <code>Inactive</code> means it is not.</p>
     pub fn status(mut self, input: crate::types::StatusType) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the access key.</p>
     /// <p>A status of <code>Active</code> means that the key is valid, while <code>Inactive</code> means it is not.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::StatusType>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::StatusType>) -> Self {
         self.status = input;
         self
     }
     /// <p>The timestamp when the access key was created.</p>
-    pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_at = Some(input);
+    pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The timestamp when the access key was created.</p>
     pub fn set_created_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_at = input;
         self
@@ -136,7 +145,7 @@ impl AccessKeyBuilder {
     /// <p>This object does not include data in the response of a <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateBucketAccessKey.html">CreateBucketAccessKey</a> action. If the access key has not been used, the <code>region</code> and <code>serviceName</code> values are <code>N/A</code>, and the <code>lastUsedDate</code> value is null.</p>
     /// </note>
     pub fn last_used(mut self, input: crate::types::AccessKeyLastUsed) -> Self {
-        self.last_used = Some(input);
+        self.last_used = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that describes the last time the access key was used.</p> <note>
@@ -144,7 +153,7 @@ impl AccessKeyBuilder {
     /// </note>
     pub fn set_last_used(
         mut self,
-        input: std::option::Option<crate::types::AccessKeyLastUsed>,
+        input: ::std::option::Option<crate::types::AccessKeyLastUsed>,
     ) -> Self {
         self.last_used = input;
         self
@@ -160,8 +169,8 @@ impl AccessKeyBuilder {
         }
     }
 }
-impl std::fmt::Debug for AccessKeyBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for AccessKeyBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AccessKeyBuilder");
         formatter.field("access_key_id", &"*** Sensitive Data Redacted ***");
         formatter.field("secret_access_key", &self.secret_access_key);

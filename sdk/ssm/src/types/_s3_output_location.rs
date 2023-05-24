@@ -2,29 +2,29 @@
 
 /// <p>An S3 bucket where you want to store the results of this request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3OutputLocation {
     /// <p>The Amazon Web Services Region of the S3 bucket.</p>
     #[doc(hidden)]
-    pub output_s3_region: std::option::Option<std::string::String>,
+    pub output_s3_region: ::std::option::Option<::std::string::String>,
     /// <p>The name of the S3 bucket.</p>
     #[doc(hidden)]
-    pub output_s3_bucket_name: std::option::Option<std::string::String>,
+    pub output_s3_bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>The S3 bucket subfolder.</p>
     #[doc(hidden)]
-    pub output_s3_key_prefix: std::option::Option<std::string::String>,
+    pub output_s3_key_prefix: ::std::option::Option<::std::string::String>,
 }
 impl S3OutputLocation {
     /// <p>The Amazon Web Services Region of the S3 bucket.</p>
-    pub fn output_s3_region(&self) -> std::option::Option<&str> {
+    pub fn output_s3_region(&self) -> ::std::option::Option<&str> {
         self.output_s3_region.as_deref()
     }
     /// <p>The name of the S3 bucket.</p>
-    pub fn output_s3_bucket_name(&self) -> std::option::Option<&str> {
+    pub fn output_s3_bucket_name(&self) -> ::std::option::Option<&str> {
         self.output_s3_bucket_name.as_deref()
     }
     /// <p>The S3 bucket subfolder.</p>
-    pub fn output_s3_key_prefix(&self) -> std::option::Option<&str> {
+    pub fn output_s3_key_prefix(&self) -> ::std::option::Option<&str> {
         self.output_s3_key_prefix.as_deref()
     }
 }
@@ -37,45 +37,59 @@ impl S3OutputLocation {
 
 /// A builder for [`S3OutputLocation`](crate::types::S3OutputLocation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct S3OutputLocationBuilder {
-    pub(crate) output_s3_region: std::option::Option<std::string::String>,
-    pub(crate) output_s3_bucket_name: std::option::Option<std::string::String>,
-    pub(crate) output_s3_key_prefix: std::option::Option<std::string::String>,
+    pub(crate) output_s3_region: ::std::option::Option<::std::string::String>,
+    pub(crate) output_s3_bucket_name: ::std::option::Option<::std::string::String>,
+    pub(crate) output_s3_key_prefix: ::std::option::Option<::std::string::String>,
 }
 impl S3OutputLocationBuilder {
     /// <p>The Amazon Web Services Region of the S3 bucket.</p>
-    pub fn output_s3_region(mut self, input: impl Into<std::string::String>) -> Self {
-        self.output_s3_region = Some(input.into());
+    pub fn output_s3_region(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.output_s3_region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services Region of the S3 bucket.</p>
-    pub fn set_output_s3_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_output_s3_region(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.output_s3_region = input;
         self
     }
     /// <p>The name of the S3 bucket.</p>
-    pub fn output_s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.output_s3_bucket_name = Some(input.into());
+    pub fn output_s3_bucket_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.output_s3_bucket_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the S3 bucket.</p>
     pub fn set_output_s3_bucket_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.output_s3_bucket_name = input;
         self
     }
     /// <p>The S3 bucket subfolder.</p>
-    pub fn output_s3_key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
-        self.output_s3_key_prefix = Some(input.into());
+    pub fn output_s3_key_prefix(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.output_s3_key_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The S3 bucket subfolder.</p>
     pub fn set_output_s3_key_prefix(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.output_s3_key_prefix = input;
         self

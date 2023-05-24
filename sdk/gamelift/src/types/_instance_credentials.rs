@@ -2,27 +2,27 @@
 
 /// <p>Set of credentials required to remotely access a fleet instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct InstanceCredentials {
     /// <p>User login string.</p>
     #[doc(hidden)]
-    pub user_name: std::option::Option<std::string::String>,
+    pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>Secret string. For Windows instances, the secret is a password for use with Windows Remote Desktop. For Linux instances, it is a private key (which must be saved as a <code>.pem</code> file) for use with SSH.</p>
     #[doc(hidden)]
-    pub secret: std::option::Option<std::string::String>,
+    pub secret: ::std::option::Option<::std::string::String>,
 }
 impl InstanceCredentials {
     /// <p>User login string.</p>
-    pub fn user_name(&self) -> std::option::Option<&str> {
+    pub fn user_name(&self) -> ::std::option::Option<&str> {
         self.user_name.as_deref()
     }
     /// <p>Secret string. For Windows instances, the secret is a password for use with Windows Remote Desktop. For Linux instances, it is a private key (which must be saved as a <code>.pem</code> file) for use with SSH.</p>
-    pub fn secret(&self) -> std::option::Option<&str> {
+    pub fn secret(&self) -> ::std::option::Option<&str> {
         self.secret.as_deref()
     }
 }
-impl std::fmt::Debug for InstanceCredentials {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for InstanceCredentials {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("InstanceCredentials");
         formatter.field("user_name", &"*** Sensitive Data Redacted ***");
         formatter.field("secret", &"*** Sensitive Data Redacted ***");
@@ -38,29 +38,29 @@ impl InstanceCredentials {
 
 /// A builder for [`InstanceCredentials`](crate::types::InstanceCredentials).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct InstanceCredentialsBuilder {
-    pub(crate) user_name: std::option::Option<std::string::String>,
-    pub(crate) secret: std::option::Option<std::string::String>,
+    pub(crate) user_name: ::std::option::Option<::std::string::String>,
+    pub(crate) secret: ::std::option::Option<::std::string::String>,
 }
 impl InstanceCredentialsBuilder {
     /// <p>User login string.</p>
-    pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.user_name = Some(input.into());
+    pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.user_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>User login string.</p>
-    pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_name = input;
         self
     }
     /// <p>Secret string. For Windows instances, the secret is a password for use with Windows Remote Desktop. For Linux instances, it is a private key (which must be saved as a <code>.pem</code> file) for use with SSH.</p>
-    pub fn secret(mut self, input: impl Into<std::string::String>) -> Self {
-        self.secret = Some(input.into());
+    pub fn secret(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.secret = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Secret string. For Windows instances, the secret is a password for use with Windows Remote Desktop. For Linux instances, it is a private key (which must be saved as a <code>.pem</code> file) for use with SSH.</p>
-    pub fn set_secret(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_secret(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secret = input;
         self
     }
@@ -72,8 +72,8 @@ impl InstanceCredentialsBuilder {
         }
     }
 }
-impl std::fmt::Debug for InstanceCredentialsBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for InstanceCredentialsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("InstanceCredentialsBuilder");
         formatter.field("user_name", &"*** Sensitive Data Redacted ***");
         formatter.field("secret", &"*** Sensitive Data Redacted ***");

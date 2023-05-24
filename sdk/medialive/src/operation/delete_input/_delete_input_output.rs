@@ -2,11 +2,11 @@
 
 /// Placeholder documentation for DeleteInputResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteInputOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for DeleteInputOutput {
+impl ::aws_http::request_id::RequestId for DeleteInputOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -20,7 +20,9 @@ impl DeleteInputOutput {
 
 /// A builder for [`DeleteInputOutput`](crate::operation::delete_input::DeleteInputOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteInputOutputBuilder {
     _request_id: Option<String>,
 }

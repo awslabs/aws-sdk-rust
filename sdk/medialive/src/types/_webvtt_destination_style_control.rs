@@ -38,13 +38,13 @@
 /// Webvtt Destination Style Control
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum WebvttDestinationStyleControl {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum WebvttDestinationStyleControl {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for WebvttDestinationStyleControl {
+impl ::std::convert::From<&str> for WebvttDestinationStyleControl {
     fn from(s: &str) -> Self {
         match s {
             "NO_STYLE_DATA" => WebvttDestinationStyleControl::NoStyleData,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for WebvttDestinationStyleControl {
         }
     }
 }
-impl std::str::FromStr for WebvttDestinationStyleControl {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for WebvttDestinationStyleControl {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(WebvttDestinationStyleControl::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(WebvttDestinationStyleControl::from(s))
     }
 }
 impl WebvttDestinationStyleControl {
@@ -86,7 +86,7 @@ impl WebvttDestinationStyleControl {
         &["NO_STYLE_DATA", "PASSTHROUGH"]
     }
 }
-impl AsRef<str> for WebvttDestinationStyleControl {
+impl ::std::convert::AsRef<str> for WebvttDestinationStyleControl {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

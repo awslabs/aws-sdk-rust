@@ -6,56 +6,59 @@ pub use crate::operation::update_lf_tag::_update_lf_tag_input::UpdateLfTagInputB
 /// Fluent builder constructing a request to `UpdateLFTag`.
 ///
 /// <p>Updates the list of possible values for the specified LF-tag key. If the LF-tag does not exist, the operation throws an EntityNotFoundException. The values in the delete key values will be deleted from list of possible values. If any value in the delete key values is attached to a resource, then API errors out with a 400 Exception - "Update not allowed". Untag the attribute before deleting the LF-tag key's value. </p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateLFTagFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::update_lf_tag::builders::UpdateLfTagInputBuilder,
 }
 impl UpdateLFTagFluentBuilder {
     /// Creates a new `UpdateLFTag`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_lf_tag::UpdateLFTag,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::update_lf_tag::UpdateLFTagError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_lf_tag::UpdateLFTagError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_lf_tag::UpdateLfTagOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_lf_tag::UpdateLFTagError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_lf_tag::UpdateLFTagError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,29 +71,29 @@ impl UpdateLFTagFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_lf_tag::UpdateLfTagOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_lf_tag::UpdateLFTagError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_lf_tag::UpdateLFTagError>,
     > {
         self.send_middleware().await
     }
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
-    pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn catalog_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.catalog_id(input.into());
         self
     }
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
-    pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_catalog_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_catalog_id(input);
         self
     }
     /// <p>The key-name for the LF-tag for which to add or delete values.</p>
-    pub fn tag_key(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn tag_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tag_key(input.into());
         self
     }
     /// <p>The key-name for the LF-tag for which to add or delete values.</p>
-    pub fn set_tag_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_tag_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_tag_key(input);
         self
     }
@@ -99,14 +102,17 @@ impl UpdateLFTagFluentBuilder {
     /// To override the contents of this collection use [`set_tag_values_to_delete`](Self::set_tag_values_to_delete).
     ///
     /// <p>A list of LF-tag values to delete from the LF-tag.</p>
-    pub fn tag_values_to_delete(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn tag_values_to_delete(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.tag_values_to_delete(input.into());
         self
     }
     /// <p>A list of LF-tag values to delete from the LF-tag.</p>
     pub fn set_tag_values_to_delete(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_tag_values_to_delete(input);
         self
@@ -116,14 +122,17 @@ impl UpdateLFTagFluentBuilder {
     /// To override the contents of this collection use [`set_tag_values_to_add`](Self::set_tag_values_to_add).
     ///
     /// <p>A list of LF-tag values to add from the LF-tag.</p>
-    pub fn tag_values_to_add(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn tag_values_to_add(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.tag_values_to_add(input.into());
         self
     }
     /// <p>A list of LF-tag values to add from the LF-tag.</p>
     pub fn set_tag_values_to_add(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_tag_values_to_add(input);
         self

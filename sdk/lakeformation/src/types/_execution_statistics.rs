@@ -2,7 +2,7 @@
 
 /// <p>Statistics related to the processing of a query statement.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExecutionStatistics {
     /// <p>The average time the request took to be executed.</p>
     #[doc(hidden)]
@@ -37,40 +37,42 @@ impl ExecutionStatistics {
 
 /// A builder for [`ExecutionStatistics`](crate::types::ExecutionStatistics).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ExecutionStatisticsBuilder {
-    pub(crate) average_execution_time_millis: std::option::Option<i64>,
-    pub(crate) data_scanned_bytes: std::option::Option<i64>,
-    pub(crate) work_units_executed_count: std::option::Option<i64>,
+    pub(crate) average_execution_time_millis: ::std::option::Option<i64>,
+    pub(crate) data_scanned_bytes: ::std::option::Option<i64>,
+    pub(crate) work_units_executed_count: ::std::option::Option<i64>,
 }
 impl ExecutionStatisticsBuilder {
     /// <p>The average time the request took to be executed.</p>
     pub fn average_execution_time_millis(mut self, input: i64) -> Self {
-        self.average_execution_time_millis = Some(input);
+        self.average_execution_time_millis = ::std::option::Option::Some(input);
         self
     }
     /// <p>The average time the request took to be executed.</p>
-    pub fn set_average_execution_time_millis(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_average_execution_time_millis(mut self, input: ::std::option::Option<i64>) -> Self {
         self.average_execution_time_millis = input;
         self
     }
     /// <p>The amount of data that was scanned in bytes.</p>
     pub fn data_scanned_bytes(mut self, input: i64) -> Self {
-        self.data_scanned_bytes = Some(input);
+        self.data_scanned_bytes = ::std::option::Option::Some(input);
         self
     }
     /// <p>The amount of data that was scanned in bytes.</p>
-    pub fn set_data_scanned_bytes(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_data_scanned_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.data_scanned_bytes = input;
         self
     }
     /// <p>The number of work units executed.</p>
     pub fn work_units_executed_count(mut self, input: i64) -> Self {
-        self.work_units_executed_count = Some(input);
+        self.work_units_executed_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of work units executed.</p>
-    pub fn set_work_units_executed_count(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_work_units_executed_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.work_units_executed_count = input;
         self
     }

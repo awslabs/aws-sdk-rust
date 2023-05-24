@@ -2,38 +2,38 @@
 
 /// <p>The anti-pattern report result.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AntipatternReportResult {
     /// <p>The analyzer name.</p>
     #[doc(hidden)]
-    pub analyzer_name: std::option::Option<crate::types::AnalyzerNameUnion>,
+    pub analyzer_name: ::std::option::Option<crate::types::AnalyzerNameUnion>,
     /// <p> Contains the S3 bucket name and the Amazon S3 key name. </p>
     #[doc(hidden)]
-    pub anti_pattern_report_s3_object: std::option::Option<crate::types::S3Object>,
+    pub anti_pattern_report_s3_object: ::std::option::Option<crate::types::S3Object>,
     /// <p>The status of the anti-pattern report generation.</p>
     #[doc(hidden)]
-    pub antipattern_report_status: std::option::Option<crate::types::AntipatternReportStatus>,
+    pub antipattern_report_status: ::std::option::Option<crate::types::AntipatternReportStatus>,
     /// <p>The status message for the anti-pattern.</p>
     #[doc(hidden)]
-    pub antipattern_report_status_message: std::option::Option<std::string::String>,
+    pub antipattern_report_status_message: ::std::option::Option<::std::string::String>,
 }
 impl AntipatternReportResult {
     /// <p>The analyzer name.</p>
-    pub fn analyzer_name(&self) -> std::option::Option<&crate::types::AnalyzerNameUnion> {
+    pub fn analyzer_name(&self) -> ::std::option::Option<&crate::types::AnalyzerNameUnion> {
         self.analyzer_name.as_ref()
     }
     /// <p> Contains the S3 bucket name and the Amazon S3 key name. </p>
-    pub fn anti_pattern_report_s3_object(&self) -> std::option::Option<&crate::types::S3Object> {
+    pub fn anti_pattern_report_s3_object(&self) -> ::std::option::Option<&crate::types::S3Object> {
         self.anti_pattern_report_s3_object.as_ref()
     }
     /// <p>The status of the anti-pattern report generation.</p>
     pub fn antipattern_report_status(
         &self,
-    ) -> std::option::Option<&crate::types::AntipatternReportStatus> {
+    ) -> ::std::option::Option<&crate::types::AntipatternReportStatus> {
         self.antipattern_report_status.as_ref()
     }
     /// <p>The status message for the anti-pattern.</p>
-    pub fn antipattern_report_status_message(&self) -> std::option::Option<&str> {
+    pub fn antipattern_report_status_message(&self) -> ::std::option::Option<&str> {
         self.antipattern_report_status_message.as_deref()
     }
 }
@@ -46,37 +46,39 @@ impl AntipatternReportResult {
 
 /// A builder for [`AntipatternReportResult`](crate::types::AntipatternReportResult).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AntipatternReportResultBuilder {
-    pub(crate) analyzer_name: std::option::Option<crate::types::AnalyzerNameUnion>,
-    pub(crate) anti_pattern_report_s3_object: std::option::Option<crate::types::S3Object>,
+    pub(crate) analyzer_name: ::std::option::Option<crate::types::AnalyzerNameUnion>,
+    pub(crate) anti_pattern_report_s3_object: ::std::option::Option<crate::types::S3Object>,
     pub(crate) antipattern_report_status:
-        std::option::Option<crate::types::AntipatternReportStatus>,
-    pub(crate) antipattern_report_status_message: std::option::Option<std::string::String>,
+        ::std::option::Option<crate::types::AntipatternReportStatus>,
+    pub(crate) antipattern_report_status_message: ::std::option::Option<::std::string::String>,
 }
 impl AntipatternReportResultBuilder {
     /// <p>The analyzer name.</p>
     pub fn analyzer_name(mut self, input: crate::types::AnalyzerNameUnion) -> Self {
-        self.analyzer_name = Some(input);
+        self.analyzer_name = ::std::option::Option::Some(input);
         self
     }
     /// <p>The analyzer name.</p>
     pub fn set_analyzer_name(
         mut self,
-        input: std::option::Option<crate::types::AnalyzerNameUnion>,
+        input: ::std::option::Option<crate::types::AnalyzerNameUnion>,
     ) -> Self {
         self.analyzer_name = input;
         self
     }
     /// <p> Contains the S3 bucket name and the Amazon S3 key name. </p>
     pub fn anti_pattern_report_s3_object(mut self, input: crate::types::S3Object) -> Self {
-        self.anti_pattern_report_s3_object = Some(input);
+        self.anti_pattern_report_s3_object = ::std::option::Option::Some(input);
         self
     }
     /// <p> Contains the S3 bucket name and the Amazon S3 key name. </p>
     pub fn set_anti_pattern_report_s3_object(
         mut self,
-        input: std::option::Option<crate::types::S3Object>,
+        input: ::std::option::Option<crate::types::S3Object>,
     ) -> Self {
         self.anti_pattern_report_s3_object = input;
         self
@@ -86,13 +88,13 @@ impl AntipatternReportResultBuilder {
         mut self,
         input: crate::types::AntipatternReportStatus,
     ) -> Self {
-        self.antipattern_report_status = Some(input);
+        self.antipattern_report_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the anti-pattern report generation.</p>
     pub fn set_antipattern_report_status(
         mut self,
-        input: std::option::Option<crate::types::AntipatternReportStatus>,
+        input: ::std::option::Option<crate::types::AntipatternReportStatus>,
     ) -> Self {
         self.antipattern_report_status = input;
         self
@@ -100,15 +102,15 @@ impl AntipatternReportResultBuilder {
     /// <p>The status message for the anti-pattern.</p>
     pub fn antipattern_report_status_message(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.antipattern_report_status_message = Some(input.into());
+        self.antipattern_report_status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status message for the anti-pattern.</p>
     pub fn set_antipattern_report_status_message(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.antipattern_report_status_message = input;
         self

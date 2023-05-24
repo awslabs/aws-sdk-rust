@@ -2,7 +2,7 @@
 
 /// <p>The security configuration for <code>OnlineStore</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OnlineStoreSecurityConfig {
     /// <p>The Amazon Web Services Key Management Service (KMS) key ARN that SageMaker Feature Store uses to encrypt the Amazon S3 objects at rest using Amazon S3 server-side encryption.</p>
     /// <p>The caller (either user or IAM role) of <code>CreateFeatureGroup</code> must have below permissions to the <code>OnlineStore</code> <code>KmsKeyId</code>:</p>
@@ -24,7 +24,7 @@ pub struct OnlineStoreSecurityConfig {
     /// <li> <p> <code>"kms:Decrypt"</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub kms_key_id: std::option::Option<std::string::String>,
+    pub kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl OnlineStoreSecurityConfig {
     /// <p>The Amazon Web Services Key Management Service (KMS) key ARN that SageMaker Feature Store uses to encrypt the Amazon S3 objects at rest using Amazon S3 server-side encryption.</p>
@@ -46,7 +46,7 @@ impl OnlineStoreSecurityConfig {
     /// <ul>
     /// <li> <p> <code>"kms:Decrypt"</code> </p> </li>
     /// </ul>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
 }
@@ -59,9 +59,11 @@ impl OnlineStoreSecurityConfig {
 
 /// A builder for [`OnlineStoreSecurityConfig`](crate::types::OnlineStoreSecurityConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OnlineStoreSecurityConfigBuilder {
-    pub(crate) kms_key_id: std::option::Option<std::string::String>,
+    pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl OnlineStoreSecurityConfigBuilder {
     /// <p>The Amazon Web Services Key Management Service (KMS) key ARN that SageMaker Feature Store uses to encrypt the Amazon S3 objects at rest using Amazon S3 server-side encryption.</p>
@@ -83,8 +85,8 @@ impl OnlineStoreSecurityConfigBuilder {
     /// <ul>
     /// <li> <p> <code>"kms:Decrypt"</code> </p> </li>
     /// </ul>
-    pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.kms_key_id = Some(input.into());
+    pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services Key Management Service (KMS) key ARN that SageMaker Feature Store uses to encrypt the Amazon S3 objects at rest using Amazon S3 server-side encryption.</p>
@@ -106,7 +108,7 @@ impl OnlineStoreSecurityConfigBuilder {
     /// <ul>
     /// <li> <p> <code>"kms:Decrypt"</code> </p> </li>
     /// </ul>
-    pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
     }

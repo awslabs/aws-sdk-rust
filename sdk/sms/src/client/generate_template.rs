@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GenerateTemplate`](crate::operation::generate_template::builders::GenerateTemplateFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`app_id(impl Into<String>)`](crate::operation::generate_template::builders::GenerateTemplateFluentBuilder::app_id) / [`set_app_id(Option<String>)`](crate::operation::generate_template::builders::GenerateTemplateFluentBuilder::set_app_id): <p>The ID of the application associated with the CloudFormation template.</p>
+    ///   - [`app_id(impl ::std::convert::Into<String>)`](crate::operation::generate_template::builders::GenerateTemplateFluentBuilder::app_id) / [`set_app_id(Option<String>)`](crate::operation::generate_template::builders::GenerateTemplateFluentBuilder::set_app_id): <p>The ID of the application associated with the CloudFormation template.</p>
     ///   - [`template_format(OutputFormat)`](crate::operation::generate_template::builders::GenerateTemplateFluentBuilder::template_format) / [`set_template_format(Option<OutputFormat>)`](crate::operation::generate_template::builders::GenerateTemplateFluentBuilder::set_template_format): <p>The format for generating the CloudFormation template.</p>
     /// - On success, responds with [`GenerateTemplateOutput`](crate::operation::generate_template::GenerateTemplateOutput) with field(s):
     ///   - [`s3_location(Option<S3Location>)`](crate::operation::generate_template::GenerateTemplateOutput::s3_location): <p>The location of the Amazon S3 object.</p>

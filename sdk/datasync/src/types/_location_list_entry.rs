@@ -2,11 +2,11 @@
 
 /// <p>Represents a single entry in a list of locations. <code>LocationListEntry</code> returns an array that contains a list of locations when the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_ListLocations.html">ListLocations</a> operation is called.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LocationListEntry {
     /// <p>The Amazon Resource Name (ARN) of the location. For Network File System (NFS) or Amazon EFS, the location is the export path. For Amazon S3, the location is the prefix path that you want to mount and use as the root of the location.</p>
     #[doc(hidden)]
-    pub location_arn: std::option::Option<std::string::String>,
+    pub location_arn: ::std::option::Option<::std::string::String>,
     /// <p>Represents a list of URIs of a location. <code>LocationUri</code> returns an array that contains a list of locations when the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_ListLocations.html">ListLocations</a> operation is called.</p>
     /// <p>Format: <code>TYPE://GLOBAL_ID/SUBDIR</code>.</p>
     /// <p>TYPE designates the type of location (for example, <code>nfs</code> or <code>s3</code>).</p>
@@ -14,11 +14,11 @@ pub struct LocationListEntry {
     /// <p>SUBDIR is a valid file system path, delimited by forward slashes as is the *nix convention. For NFS and Amazon EFS, it's the export path to mount the location. For Amazon S3, it's the prefix path that you mount to and treat as the root of the location.</p>
     /// <p></p>
     #[doc(hidden)]
-    pub location_uri: std::option::Option<std::string::String>,
+    pub location_uri: ::std::option::Option<::std::string::String>,
 }
 impl LocationListEntry {
     /// <p>The Amazon Resource Name (ARN) of the location. For Network File System (NFS) or Amazon EFS, the location is the export path. For Amazon S3, the location is the prefix path that you want to mount and use as the root of the location.</p>
-    pub fn location_arn(&self) -> std::option::Option<&str> {
+    pub fn location_arn(&self) -> ::std::option::Option<&str> {
         self.location_arn.as_deref()
     }
     /// <p>Represents a list of URIs of a location. <code>LocationUri</code> returns an array that contains a list of locations when the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_ListLocations.html">ListLocations</a> operation is called.</p>
@@ -27,7 +27,7 @@ impl LocationListEntry {
     /// <p>GLOBAL_ID is the globally unique identifier of the resource that backs the location. An example for EFS is <code>us-east-2.fs-abcd1234</code>. An example for Amazon S3 is the bucket name, such as <code>myBucket</code>. An example for NFS is a valid IPv4 address or a hostname that is compliant with Domain Name Service (DNS).</p>
     /// <p>SUBDIR is a valid file system path, delimited by forward slashes as is the *nix convention. For NFS and Amazon EFS, it's the export path to mount the location. For Amazon S3, it's the prefix path that you mount to and treat as the root of the location.</p>
     /// <p></p>
-    pub fn location_uri(&self) -> std::option::Option<&str> {
+    pub fn location_uri(&self) -> ::std::option::Option<&str> {
         self.location_uri.as_deref()
     }
 }
@@ -40,19 +40,21 @@ impl LocationListEntry {
 
 /// A builder for [`LocationListEntry`](crate::types::LocationListEntry).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LocationListEntryBuilder {
-    pub(crate) location_arn: std::option::Option<std::string::String>,
-    pub(crate) location_uri: std::option::Option<std::string::String>,
+    pub(crate) location_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) location_uri: ::std::option::Option<::std::string::String>,
 }
 impl LocationListEntryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the location. For Network File System (NFS) or Amazon EFS, the location is the export path. For Amazon S3, the location is the prefix path that you want to mount and use as the root of the location.</p>
-    pub fn location_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.location_arn = Some(input.into());
+    pub fn location_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.location_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the location. For Network File System (NFS) or Amazon EFS, the location is the export path. For Amazon S3, the location is the prefix path that you want to mount and use as the root of the location.</p>
-    pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_location_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location_arn = input;
         self
     }
@@ -62,8 +64,8 @@ impl LocationListEntryBuilder {
     /// <p>GLOBAL_ID is the globally unique identifier of the resource that backs the location. An example for EFS is <code>us-east-2.fs-abcd1234</code>. An example for Amazon S3 is the bucket name, such as <code>myBucket</code>. An example for NFS is a valid IPv4 address or a hostname that is compliant with Domain Name Service (DNS).</p>
     /// <p>SUBDIR is a valid file system path, delimited by forward slashes as is the *nix convention. For NFS and Amazon EFS, it's the export path to mount the location. For Amazon S3, it's the prefix path that you mount to and treat as the root of the location.</p>
     /// <p></p>
-    pub fn location_uri(mut self, input: impl Into<std::string::String>) -> Self {
-        self.location_uri = Some(input.into());
+    pub fn location_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.location_uri = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Represents a list of URIs of a location. <code>LocationUri</code> returns an array that contains a list of locations when the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_ListLocations.html">ListLocations</a> operation is called.</p>
@@ -72,7 +74,7 @@ impl LocationListEntryBuilder {
     /// <p>GLOBAL_ID is the globally unique identifier of the resource that backs the location. An example for EFS is <code>us-east-2.fs-abcd1234</code>. An example for Amazon S3 is the bucket name, such as <code>myBucket</code>. An example for NFS is a valid IPv4 address or a hostname that is compliant with Domain Name Service (DNS).</p>
     /// <p>SUBDIR is a valid file system path, delimited by forward slashes as is the *nix convention. For NFS and Amazon EFS, it's the export path to mount the location. For Amazon S3, it's the prefix path that you mount to and treat as the root of the location.</p>
     /// <p></p>
-    pub fn set_location_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_location_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location_uri = input;
         self
     }

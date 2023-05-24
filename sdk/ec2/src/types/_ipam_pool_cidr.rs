@@ -2,43 +2,45 @@
 
 /// <p>A CIDR provisioned to an IPAM pool.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IpamPoolCidr {
     /// <p>The CIDR provisioned to the IPAM pool. A CIDR is a representation of an IP address and its associated network mask (or netmask) and refers to a range of IP addresses. An IPv4 CIDR example is <code>10.24.34.0/23</code>. An IPv6 CIDR example is <code>2001:DB8::/32</code>.</p>
     #[doc(hidden)]
-    pub cidr: std::option::Option<std::string::String>,
+    pub cidr: ::std::option::Option<::std::string::String>,
     /// <p>The state of the CIDR.</p>
     #[doc(hidden)]
-    pub state: std::option::Option<crate::types::IpamPoolCidrState>,
+    pub state: ::std::option::Option<crate::types::IpamPoolCidrState>,
     /// <p>Details related to why an IPAM pool CIDR failed to be provisioned.</p>
     #[doc(hidden)]
-    pub failure_reason: std::option::Option<crate::types::IpamPoolCidrFailureReason>,
+    pub failure_reason: ::std::option::Option<crate::types::IpamPoolCidrFailureReason>,
     /// <p>The IPAM pool CIDR ID.</p>
     #[doc(hidden)]
-    pub ipam_pool_cidr_id: std::option::Option<std::string::String>,
+    pub ipam_pool_cidr_id: ::std::option::Option<::std::string::String>,
     /// <p>The netmask length of the CIDR you'd like to provision to a pool. Can be used for provisioning Amazon-provided IPv6 CIDRs to top-level pools and for provisioning CIDRs to pools with source pools. Cannot be used to provision BYOIP CIDRs to top-level pools. "NetmaskLength" or "Cidr" is required.</p>
     #[doc(hidden)]
-    pub netmask_length: std::option::Option<i32>,
+    pub netmask_length: ::std::option::Option<i32>,
 }
 impl IpamPoolCidr {
     /// <p>The CIDR provisioned to the IPAM pool. A CIDR is a representation of an IP address and its associated network mask (or netmask) and refers to a range of IP addresses. An IPv4 CIDR example is <code>10.24.34.0/23</code>. An IPv6 CIDR example is <code>2001:DB8::/32</code>.</p>
-    pub fn cidr(&self) -> std::option::Option<&str> {
+    pub fn cidr(&self) -> ::std::option::Option<&str> {
         self.cidr.as_deref()
     }
     /// <p>The state of the CIDR.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::IpamPoolCidrState> {
+    pub fn state(&self) -> ::std::option::Option<&crate::types::IpamPoolCidrState> {
         self.state.as_ref()
     }
     /// <p>Details related to why an IPAM pool CIDR failed to be provisioned.</p>
-    pub fn failure_reason(&self) -> std::option::Option<&crate::types::IpamPoolCidrFailureReason> {
+    pub fn failure_reason(
+        &self,
+    ) -> ::std::option::Option<&crate::types::IpamPoolCidrFailureReason> {
         self.failure_reason.as_ref()
     }
     /// <p>The IPAM pool CIDR ID.</p>
-    pub fn ipam_pool_cidr_id(&self) -> std::option::Option<&str> {
+    pub fn ipam_pool_cidr_id(&self) -> ::std::option::Option<&str> {
         self.ipam_pool_cidr_id.as_deref()
     }
     /// <p>The netmask length of the CIDR you'd like to provision to a pool. Can be used for provisioning Amazon-provided IPv6 CIDRs to top-level pools and for provisioning CIDRs to pools with source pools. Cannot be used to provision BYOIP CIDRs to top-level pools. "NetmaskLength" or "Cidr" is required.</p>
-    pub fn netmask_length(&self) -> std::option::Option<i32> {
+    pub fn netmask_length(&self) -> ::std::option::Option<i32> {
         self.netmask_length
     }
 }
@@ -51,71 +53,76 @@ impl IpamPoolCidr {
 
 /// A builder for [`IpamPoolCidr`](crate::types::IpamPoolCidr).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct IpamPoolCidrBuilder {
-    pub(crate) cidr: std::option::Option<std::string::String>,
-    pub(crate) state: std::option::Option<crate::types::IpamPoolCidrState>,
-    pub(crate) failure_reason: std::option::Option<crate::types::IpamPoolCidrFailureReason>,
-    pub(crate) ipam_pool_cidr_id: std::option::Option<std::string::String>,
-    pub(crate) netmask_length: std::option::Option<i32>,
+    pub(crate) cidr: ::std::option::Option<::std::string::String>,
+    pub(crate) state: ::std::option::Option<crate::types::IpamPoolCidrState>,
+    pub(crate) failure_reason: ::std::option::Option<crate::types::IpamPoolCidrFailureReason>,
+    pub(crate) ipam_pool_cidr_id: ::std::option::Option<::std::string::String>,
+    pub(crate) netmask_length: ::std::option::Option<i32>,
 }
 impl IpamPoolCidrBuilder {
     /// <p>The CIDR provisioned to the IPAM pool. A CIDR is a representation of an IP address and its associated network mask (or netmask) and refers to a range of IP addresses. An IPv4 CIDR example is <code>10.24.34.0/23</code>. An IPv6 CIDR example is <code>2001:DB8::/32</code>.</p>
-    pub fn cidr(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cidr = Some(input.into());
+    pub fn cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cidr = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The CIDR provisioned to the IPAM pool. A CIDR is a representation of an IP address and its associated network mask (or netmask) and refers to a range of IP addresses. An IPv4 CIDR example is <code>10.24.34.0/23</code>. An IPv6 CIDR example is <code>2001:DB8::/32</code>.</p>
-    pub fn set_cidr(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cidr = input;
         self
     }
     /// <p>The state of the CIDR.</p>
     pub fn state(mut self, input: crate::types::IpamPoolCidrState) -> Self {
-        self.state = Some(input);
+        self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The state of the CIDR.</p>
     pub fn set_state(
         mut self,
-        input: std::option::Option<crate::types::IpamPoolCidrState>,
+        input: ::std::option::Option<crate::types::IpamPoolCidrState>,
     ) -> Self {
         self.state = input;
         self
     }
     /// <p>Details related to why an IPAM pool CIDR failed to be provisioned.</p>
     pub fn failure_reason(mut self, input: crate::types::IpamPoolCidrFailureReason) -> Self {
-        self.failure_reason = Some(input);
+        self.failure_reason = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details related to why an IPAM pool CIDR failed to be provisioned.</p>
     pub fn set_failure_reason(
         mut self,
-        input: std::option::Option<crate::types::IpamPoolCidrFailureReason>,
+        input: ::std::option::Option<crate::types::IpamPoolCidrFailureReason>,
     ) -> Self {
         self.failure_reason = input;
         self
     }
     /// <p>The IPAM pool CIDR ID.</p>
-    pub fn ipam_pool_cidr_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ipam_pool_cidr_id = Some(input.into());
+    pub fn ipam_pool_cidr_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.ipam_pool_cidr_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IPAM pool CIDR ID.</p>
     pub fn set_ipam_pool_cidr_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.ipam_pool_cidr_id = input;
         self
     }
     /// <p>The netmask length of the CIDR you'd like to provision to a pool. Can be used for provisioning Amazon-provided IPv6 CIDRs to top-level pools and for provisioning CIDRs to pools with source pools. Cannot be used to provision BYOIP CIDRs to top-level pools. "NetmaskLength" or "Cidr" is required.</p>
     pub fn netmask_length(mut self, input: i32) -> Self {
-        self.netmask_length = Some(input);
+        self.netmask_length = ::std::option::Option::Some(input);
         self
     }
     /// <p>The netmask length of the CIDR you'd like to provision to a pool. Can be used for provisioning Amazon-provided IPv6 CIDRs to top-level pools and for provisioning CIDRs to pools with source pools. Cannot be used to provision BYOIP CIDRs to top-level pools. "NetmaskLength" or "Cidr" is required.</p>
-    pub fn set_netmask_length(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_netmask_length(mut self, input: ::std::option::Option<i32>) -> Self {
         self.netmask_length = input;
         self
     }

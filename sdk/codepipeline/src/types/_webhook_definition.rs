@@ -2,20 +2,20 @@
 
 /// <p>Represents information about a webhook and its definition.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WebhookDefinition {
     /// <p>The name of the webhook.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the pipeline you want to connect to the webhook.</p>
     #[doc(hidden)]
-    pub target_pipeline: std::option::Option<std::string::String>,
+    pub target_pipeline: ::std::option::Option<::std::string::String>,
     /// <p>The name of the action in a pipeline you want to connect to the webhook. The action must be from the source (first) stage of the pipeline.</p>
     #[doc(hidden)]
-    pub target_action: std::option::Option<std::string::String>,
+    pub target_action: ::std::option::Option<::std::string::String>,
     /// <p>A list of rules applied to the body/payload sent in the POST request to a webhook URL. All defined rules must pass for the request to be accepted and the pipeline started.</p>
     #[doc(hidden)]
-    pub filters: std::option::Option<std::vec::Vec<crate::types::WebhookFilterRule>>,
+    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::WebhookFilterRule>>,
     /// <p>Supported options are GITHUB_HMAC, IP, and UNAUTHENTICATED.</p>
     /// <ul>
     /// <li> <p>For information about the authentication scheme implemented by GITHUB_HMAC, see <a href="https://developer.github.com/webhooks/securing/">Securing your webhooks</a> on the GitHub Developer website.</p> </li>
@@ -23,26 +23,26 @@ pub struct WebhookDefinition {
     /// <li> <p> UNAUTHENTICATED accepts all webhook trigger requests regardless of origin.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub authentication: std::option::Option<crate::types::WebhookAuthenticationType>,
+    pub authentication: ::std::option::Option<crate::types::WebhookAuthenticationType>,
     /// <p>Properties that configure the authentication applied to incoming webhook trigger requests. The required properties depend on the authentication type. For GITHUB_HMAC, only the <code>SecretToken </code>property must be set. For IP, only the <code>AllowedIPRange </code>property must be set to a valid CIDR range. For UNAUTHENTICATED, no properties can be set.</p>
     #[doc(hidden)]
-    pub authentication_configuration: std::option::Option<crate::types::WebhookAuthConfiguration>,
+    pub authentication_configuration: ::std::option::Option<crate::types::WebhookAuthConfiguration>,
 }
 impl WebhookDefinition {
     /// <p>The name of the webhook.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The name of the pipeline you want to connect to the webhook.</p>
-    pub fn target_pipeline(&self) -> std::option::Option<&str> {
+    pub fn target_pipeline(&self) -> ::std::option::Option<&str> {
         self.target_pipeline.as_deref()
     }
     /// <p>The name of the action in a pipeline you want to connect to the webhook. The action must be from the source (first) stage of the pipeline.</p>
-    pub fn target_action(&self) -> std::option::Option<&str> {
+    pub fn target_action(&self) -> ::std::option::Option<&str> {
         self.target_action.as_deref()
     }
     /// <p>A list of rules applied to the body/payload sent in the POST request to a webhook URL. All defined rules must pass for the request to be accepted and the pipeline started.</p>
-    pub fn filters(&self) -> std::option::Option<&[crate::types::WebhookFilterRule]> {
+    pub fn filters(&self) -> ::std::option::Option<&[crate::types::WebhookFilterRule]> {
         self.filters.as_deref()
     }
     /// <p>Supported options are GITHUB_HMAC, IP, and UNAUTHENTICATED.</p>
@@ -51,13 +51,15 @@ impl WebhookDefinition {
     /// <li> <p> IP rejects webhooks trigger requests unless they originate from an IP address in the IP range whitelisted in the authentication configuration.</p> </li>
     /// <li> <p> UNAUTHENTICATED accepts all webhook trigger requests regardless of origin.</p> </li>
     /// </ul>
-    pub fn authentication(&self) -> std::option::Option<&crate::types::WebhookAuthenticationType> {
+    pub fn authentication(
+        &self,
+    ) -> ::std::option::Option<&crate::types::WebhookAuthenticationType> {
         self.authentication.as_ref()
     }
     /// <p>Properties that configure the authentication applied to incoming webhook trigger requests. The required properties depend on the authentication type. For GITHUB_HMAC, only the <code>SecretToken </code>property must be set. For IP, only the <code>AllowedIPRange </code>property must be set to a valid CIDR range. For UNAUTHENTICATED, no properties can be set.</p>
     pub fn authentication_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::WebhookAuthConfiguration> {
+    ) -> ::std::option::Option<&crate::types::WebhookAuthConfiguration> {
         self.authentication_configuration.as_ref()
     }
 }
@@ -70,44 +72,58 @@ impl WebhookDefinition {
 
 /// A builder for [`WebhookDefinition`](crate::types::WebhookDefinition).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct WebhookDefinitionBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) target_pipeline: std::option::Option<std::string::String>,
-    pub(crate) target_action: std::option::Option<std::string::String>,
-    pub(crate) filters: std::option::Option<std::vec::Vec<crate::types::WebhookFilterRule>>,
-    pub(crate) authentication: std::option::Option<crate::types::WebhookAuthenticationType>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) target_pipeline: ::std::option::Option<::std::string::String>,
+    pub(crate) target_action: ::std::option::Option<::std::string::String>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::WebhookFilterRule>>,
+    pub(crate) authentication: ::std::option::Option<crate::types::WebhookAuthenticationType>,
     pub(crate) authentication_configuration:
-        std::option::Option<crate::types::WebhookAuthConfiguration>,
+        ::std::option::Option<crate::types::WebhookAuthConfiguration>,
 }
 impl WebhookDefinitionBuilder {
     /// <p>The name of the webhook.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the webhook.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The name of the pipeline you want to connect to the webhook.</p>
-    pub fn target_pipeline(mut self, input: impl Into<std::string::String>) -> Self {
-        self.target_pipeline = Some(input.into());
+    pub fn target_pipeline(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.target_pipeline = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the pipeline you want to connect to the webhook.</p>
-    pub fn set_target_pipeline(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_target_pipeline(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.target_pipeline = input;
         self
     }
     /// <p>The name of the action in a pipeline you want to connect to the webhook. The action must be from the source (first) stage of the pipeline.</p>
-    pub fn target_action(mut self, input: impl Into<std::string::String>) -> Self {
-        self.target_action = Some(input.into());
+    pub fn target_action(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.target_action = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the action in a pipeline you want to connect to the webhook. The action must be from the source (first) stage of the pipeline.</p>
-    pub fn set_target_action(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_target_action(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.target_action = input;
         self
     }
@@ -119,13 +135,13 @@ impl WebhookDefinitionBuilder {
     pub fn filters(mut self, input: crate::types::WebhookFilterRule) -> Self {
         let mut v = self.filters.unwrap_or_default();
         v.push(input);
-        self.filters = Some(v);
+        self.filters = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of rules applied to the body/payload sent in the POST request to a webhook URL. All defined rules must pass for the request to be accepted and the pipeline started.</p>
     pub fn set_filters(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::WebhookFilterRule>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::WebhookFilterRule>>,
     ) -> Self {
         self.filters = input;
         self
@@ -137,7 +153,7 @@ impl WebhookDefinitionBuilder {
     /// <li> <p> UNAUTHENTICATED accepts all webhook trigger requests regardless of origin.</p> </li>
     /// </ul>
     pub fn authentication(mut self, input: crate::types::WebhookAuthenticationType) -> Self {
-        self.authentication = Some(input);
+        self.authentication = ::std::option::Option::Some(input);
         self
     }
     /// <p>Supported options are GITHUB_HMAC, IP, and UNAUTHENTICATED.</p>
@@ -148,7 +164,7 @@ impl WebhookDefinitionBuilder {
     /// </ul>
     pub fn set_authentication(
         mut self,
-        input: std::option::Option<crate::types::WebhookAuthenticationType>,
+        input: ::std::option::Option<crate::types::WebhookAuthenticationType>,
     ) -> Self {
         self.authentication = input;
         self
@@ -158,13 +174,13 @@ impl WebhookDefinitionBuilder {
         mut self,
         input: crate::types::WebhookAuthConfiguration,
     ) -> Self {
-        self.authentication_configuration = Some(input);
+        self.authentication_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Properties that configure the authentication applied to incoming webhook trigger requests. The required properties depend on the authentication type. For GITHUB_HMAC, only the <code>SecretToken </code>property must be set. For IP, only the <code>AllowedIPRange </code>property must be set to a valid CIDR range. For UNAUTHENTICATED, no properties can be set.</p>
     pub fn set_authentication_configuration(
         mut self,
-        input: std::option::Option<crate::types::WebhookAuthConfiguration>,
+        input: ::std::option::Option<crate::types::WebhookAuthConfiguration>,
     ) -> Self {
         self.authentication_configuration = input;
         self

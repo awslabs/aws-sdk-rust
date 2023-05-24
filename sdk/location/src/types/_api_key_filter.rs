@@ -2,15 +2,15 @@
 
 /// <p>Options for filtering API keys.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ApiKeyFilter {
     /// <p>Filter on <code>Active</code> or <code>Expired</code> API keys.</p>
     #[doc(hidden)]
-    pub key_status: std::option::Option<crate::types::Status>,
+    pub key_status: ::std::option::Option<crate::types::Status>,
 }
 impl ApiKeyFilter {
     /// <p>Filter on <code>Active</code> or <code>Expired</code> API keys.</p>
-    pub fn key_status(&self) -> std::option::Option<&crate::types::Status> {
+    pub fn key_status(&self) -> ::std::option::Option<&crate::types::Status> {
         self.key_status.as_ref()
     }
 }
@@ -23,18 +23,20 @@ impl ApiKeyFilter {
 
 /// A builder for [`ApiKeyFilter`](crate::types::ApiKeyFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ApiKeyFilterBuilder {
-    pub(crate) key_status: std::option::Option<crate::types::Status>,
+    pub(crate) key_status: ::std::option::Option<crate::types::Status>,
 }
 impl ApiKeyFilterBuilder {
     /// <p>Filter on <code>Active</code> or <code>Expired</code> API keys.</p>
     pub fn key_status(mut self, input: crate::types::Status) -> Self {
-        self.key_status = Some(input);
+        self.key_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Filter on <code>Active</code> or <code>Expired</code> API keys.</p>
-    pub fn set_key_status(mut self, input: std::option::Option<crate::types::Status>) -> Self {
+    pub fn set_key_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
         self.key_status = input;
         self
     }

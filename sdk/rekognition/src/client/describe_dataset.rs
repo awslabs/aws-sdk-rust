@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeDataset`](crate::operation::describe_dataset::builders::DescribeDatasetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`dataset_arn(impl Into<String>)`](crate::operation::describe_dataset::builders::DescribeDatasetFluentBuilder::dataset_arn) / [`set_dataset_arn(Option<String>)`](crate::operation::describe_dataset::builders::DescribeDatasetFluentBuilder::set_dataset_arn): <p> The Amazon Resource Name (ARN) of the dataset that you want to describe. </p>
+    ///   - [`dataset_arn(impl ::std::convert::Into<String>)`](crate::operation::describe_dataset::builders::DescribeDatasetFluentBuilder::dataset_arn) / [`set_dataset_arn(Option<String>)`](crate::operation::describe_dataset::builders::DescribeDatasetFluentBuilder::set_dataset_arn): <p> The Amazon Resource Name (ARN) of the dataset that you want to describe. </p>
     /// - On success, responds with [`DescribeDatasetOutput`](crate::operation::describe_dataset::DescribeDatasetOutput) with field(s):
     ///   - [`dataset_description(Option<DatasetDescription>)`](crate::operation::describe_dataset::DescribeDatasetOutput::dataset_description): <p> The description for the dataset. </p>
     /// - On failure, responds with [`SdkError<DescribeDatasetError>`](crate::operation::describe_dataset::DescribeDatasetError)

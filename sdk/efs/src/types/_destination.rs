@@ -2,36 +2,38 @@
 
 /// <p>Describes the destination file system in the replication configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Destination {
     /// <p>Describes the status of the destination Amazon EFS file system. If the status is <code>ERROR</code>, the destination file system in the replication configuration is in a failed state and is unrecoverable. To access the file system data, restore a backup of the failed file system to a new file system.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::ReplicationStatus>,
+    pub status: ::std::option::Option<crate::types::ReplicationStatus>,
     /// <p>The ID of the destination Amazon EFS file system.</p>
     #[doc(hidden)]
-    pub file_system_id: std::option::Option<std::string::String>,
+    pub file_system_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region in which the destination file system is located.</p>
     #[doc(hidden)]
-    pub region: std::option::Option<std::string::String>,
+    pub region: ::std::option::Option<::std::string::String>,
     /// <p>The time when the most recent sync was successfully completed on the destination file system. Any changes to data on the source file system that occurred before this time have been successfully replicated to the destination file system. Any changes that occurred after this time might not be fully replicated.</p>
     #[doc(hidden)]
-    pub last_replicated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_replicated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Destination {
     /// <p>Describes the status of the destination Amazon EFS file system. If the status is <code>ERROR</code>, the destination file system in the replication configuration is in a failed state and is unrecoverable. To access the file system data, restore a backup of the failed file system to a new file system.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::ReplicationStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::ReplicationStatus> {
         self.status.as_ref()
     }
     /// <p>The ID of the destination Amazon EFS file system.</p>
-    pub fn file_system_id(&self) -> std::option::Option<&str> {
+    pub fn file_system_id(&self) -> ::std::option::Option<&str> {
         self.file_system_id.as_deref()
     }
     /// <p>The Amazon Web Services Region in which the destination file system is located.</p>
-    pub fn region(&self) -> std::option::Option<&str> {
+    pub fn region(&self) -> ::std::option::Option<&str> {
         self.region.as_deref()
     }
     /// <p>The time when the most recent sync was successfully completed on the destination file system. Any changes to data on the source file system that occurred before this time have been successfully replicated to the destination file system. Any changes that occurred after this time might not be fully replicated.</p>
-    pub fn last_replicated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_replicated_timestamp(
+        &self,
+    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_replicated_timestamp.as_ref()
     }
 }
@@ -44,56 +46,64 @@ impl Destination {
 
 /// A builder for [`Destination`](crate::types::Destination).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DestinationBuilder {
-    pub(crate) status: std::option::Option<crate::types::ReplicationStatus>,
-    pub(crate) file_system_id: std::option::Option<std::string::String>,
-    pub(crate) region: std::option::Option<std::string::String>,
-    pub(crate) last_replicated_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) status: ::std::option::Option<crate::types::ReplicationStatus>,
+    pub(crate) file_system_id: ::std::option::Option<::std::string::String>,
+    pub(crate) region: ::std::option::Option<::std::string::String>,
+    pub(crate) last_replicated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl DestinationBuilder {
     /// <p>Describes the status of the destination Amazon EFS file system. If the status is <code>ERROR</code>, the destination file system in the replication configuration is in a failed state and is unrecoverable. To access the file system data, restore a backup of the failed file system to a new file system.</p>
     pub fn status(mut self, input: crate::types::ReplicationStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes the status of the destination Amazon EFS file system. If the status is <code>ERROR</code>, the destination file system in the replication configuration is in a failed state and is unrecoverable. To access the file system data, restore a backup of the failed file system to a new file system.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::ReplicationStatus>,
+        input: ::std::option::Option<crate::types::ReplicationStatus>,
     ) -> Self {
         self.status = input;
         self
     }
     /// <p>The ID of the destination Amazon EFS file system.</p>
-    pub fn file_system_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.file_system_id = Some(input.into());
+    pub fn file_system_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.file_system_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the destination Amazon EFS file system.</p>
-    pub fn set_file_system_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_file_system_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.file_system_id = input;
         self
     }
     /// <p>The Amazon Web Services Region in which the destination file system is located.</p>
-    pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
-        self.region = Some(input.into());
+    pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services Region in which the destination file system is located.</p>
-    pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region = input;
         self
     }
     /// <p>The time when the most recent sync was successfully completed on the destination file system. Any changes to data on the source file system that occurred before this time have been successfully replicated to the destination file system. Any changes that occurred after this time might not be fully replicated.</p>
-    pub fn last_replicated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_replicated_timestamp = Some(input);
+    pub fn last_replicated_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_replicated_timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time when the most recent sync was successfully completed on the destination file system. Any changes to data on the source file system that occurred before this time have been successfully replicated to the destination file system. Any changes that occurred after this time might not be fully replicated.</p>
     pub fn set_last_replicated_timestamp(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_replicated_timestamp = input;
         self

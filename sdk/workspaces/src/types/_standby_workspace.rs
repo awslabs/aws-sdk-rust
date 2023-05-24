@@ -2,36 +2,36 @@
 
 /// <p>Describes a standby WorkSpace.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StandbyWorkspace {
     /// <p>The identifier of the standby WorkSpace.</p>
     #[doc(hidden)]
-    pub primary_workspace_id: std::option::Option<std::string::String>,
+    pub primary_workspace_id: ::std::option::Option<::std::string::String>,
     /// <p>The volume encryption key of the standby WorkSpace.</p>
     #[doc(hidden)]
-    pub volume_encryption_key: std::option::Option<std::string::String>,
+    pub volume_encryption_key: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the directory for the standby WorkSpace.</p>
     #[doc(hidden)]
-    pub directory_id: std::option::Option<std::string::String>,
+    pub directory_id: ::std::option::Option<::std::string::String>,
     /// <p>The tags associated with the standby WorkSpace.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl StandbyWorkspace {
     /// <p>The identifier of the standby WorkSpace.</p>
-    pub fn primary_workspace_id(&self) -> std::option::Option<&str> {
+    pub fn primary_workspace_id(&self) -> ::std::option::Option<&str> {
         self.primary_workspace_id.as_deref()
     }
     /// <p>The volume encryption key of the standby WorkSpace.</p>
-    pub fn volume_encryption_key(&self) -> std::option::Option<&str> {
+    pub fn volume_encryption_key(&self) -> ::std::option::Option<&str> {
         self.volume_encryption_key.as_deref()
     }
     /// <p>The identifier of the directory for the standby WorkSpace.</p>
-    pub fn directory_id(&self) -> std::option::Option<&str> {
+    pub fn directory_id(&self) -> ::std::option::Option<&str> {
         self.directory_id.as_deref()
     }
     /// <p>The tags associated with the standby WorkSpace.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -44,47 +44,55 @@ impl StandbyWorkspace {
 
 /// A builder for [`StandbyWorkspace`](crate::types::StandbyWorkspace).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StandbyWorkspaceBuilder {
-    pub(crate) primary_workspace_id: std::option::Option<std::string::String>,
-    pub(crate) volume_encryption_key: std::option::Option<std::string::String>,
-    pub(crate) directory_id: std::option::Option<std::string::String>,
-    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub(crate) primary_workspace_id: ::std::option::Option<::std::string::String>,
+    pub(crate) volume_encryption_key: ::std::option::Option<::std::string::String>,
+    pub(crate) directory_id: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl StandbyWorkspaceBuilder {
     /// <p>The identifier of the standby WorkSpace.</p>
-    pub fn primary_workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.primary_workspace_id = Some(input.into());
+    pub fn primary_workspace_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.primary_workspace_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the standby WorkSpace.</p>
     pub fn set_primary_workspace_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.primary_workspace_id = input;
         self
     }
     /// <p>The volume encryption key of the standby WorkSpace.</p>
-    pub fn volume_encryption_key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.volume_encryption_key = Some(input.into());
+    pub fn volume_encryption_key(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.volume_encryption_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The volume encryption key of the standby WorkSpace.</p>
     pub fn set_volume_encryption_key(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.volume_encryption_key = input;
         self
     }
     /// <p>The identifier of the directory for the standby WorkSpace.</p>
-    pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.directory_id = Some(input.into());
+    pub fn directory_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.directory_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the directory for the standby WorkSpace.</p>
-    pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_directory_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.directory_id = input;
         self
     }
@@ -96,13 +104,13 @@ impl StandbyWorkspaceBuilder {
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
-        self.tags = Some(v);
+        self.tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>The tags associated with the standby WorkSpace.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tags = input;
         self

@@ -2,29 +2,29 @@
 
 /// <p>Details about the type and time events occurred related to the Amazon Braket job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobEventDetails {
     /// <p>The type of event that occurred related to the Amazon Braket job.</p>
     #[doc(hidden)]
-    pub event_type: std::option::Option<crate::types::JobEventType>,
+    pub event_type: ::std::option::Option<crate::types::JobEventType>,
     /// <p>TThe type of event that occurred related to the Amazon Braket job.</p>
     #[doc(hidden)]
-    pub time_of_event: std::option::Option<aws_smithy_types::DateTime>,
+    pub time_of_event: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A message describing the event that occurred related to the Amazon Braket job.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
 }
 impl JobEventDetails {
     /// <p>The type of event that occurred related to the Amazon Braket job.</p>
-    pub fn event_type(&self) -> std::option::Option<&crate::types::JobEventType> {
+    pub fn event_type(&self) -> ::std::option::Option<&crate::types::JobEventType> {
         self.event_type.as_ref()
     }
     /// <p>TThe type of event that occurred related to the Amazon Braket job.</p>
-    pub fn time_of_event(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn time_of_event(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.time_of_event.as_ref()
     }
     /// <p>A message describing the event that occurred related to the Amazon Braket job.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -37,46 +37,48 @@ impl JobEventDetails {
 
 /// A builder for [`JobEventDetails`](crate::types::JobEventDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct JobEventDetailsBuilder {
-    pub(crate) event_type: std::option::Option<crate::types::JobEventType>,
-    pub(crate) time_of_event: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) message: std::option::Option<std::string::String>,
+    pub(crate) event_type: ::std::option::Option<crate::types::JobEventType>,
+    pub(crate) time_of_event: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
 }
 impl JobEventDetailsBuilder {
     /// <p>The type of event that occurred related to the Amazon Braket job.</p>
     pub fn event_type(mut self, input: crate::types::JobEventType) -> Self {
-        self.event_type = Some(input);
+        self.event_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of event that occurred related to the Amazon Braket job.</p>
     pub fn set_event_type(
         mut self,
-        input: std::option::Option<crate::types::JobEventType>,
+        input: ::std::option::Option<crate::types::JobEventType>,
     ) -> Self {
         self.event_type = input;
         self
     }
     /// <p>TThe type of event that occurred related to the Amazon Braket job.</p>
-    pub fn time_of_event(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.time_of_event = Some(input);
+    pub fn time_of_event(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.time_of_event = ::std::option::Option::Some(input);
         self
     }
     /// <p>TThe type of event that occurred related to the Amazon Braket job.</p>
     pub fn set_time_of_event(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.time_of_event = input;
         self
     }
     /// <p>A message describing the event that occurred related to the Amazon Braket job.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A message describing the event that occurred related to the Amazon Braket job.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }

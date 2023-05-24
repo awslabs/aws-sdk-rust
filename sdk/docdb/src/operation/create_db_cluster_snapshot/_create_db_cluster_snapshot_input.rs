@@ -2,7 +2,7 @@
 
 /// <p>Represents the input of <code>CreateDBClusterSnapshot</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDbClusterSnapshotInput {
     /// <p>The identifier of the cluster snapshot. This parameter is stored as a lowercase string.</p>
     /// <p>Constraints:</p>
@@ -13,7 +13,7 @@ pub struct CreateDbClusterSnapshotInput {
     /// </ul>
     /// <p>Example: <code>my-cluster-snapshot1</code> </p>
     #[doc(hidden)]
-    pub db_cluster_snapshot_identifier: std::option::Option<std::string::String>,
+    pub db_cluster_snapshot_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the cluster to create a snapshot for. This parameter is not case sensitive.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -21,10 +21,10 @@ pub struct CreateDbClusterSnapshotInput {
     /// </ul>
     /// <p>Example: <code>my-cluster</code> </p>
     #[doc(hidden)]
-    pub db_cluster_identifier: std::option::Option<std::string::String>,
+    pub db_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The tags to be assigned to the cluster snapshot.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateDbClusterSnapshotInput {
     /// <p>The identifier of the cluster snapshot. This parameter is stored as a lowercase string.</p>
@@ -35,7 +35,7 @@ impl CreateDbClusterSnapshotInput {
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens. </p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster-snapshot1</code> </p>
-    pub fn db_cluster_snapshot_identifier(&self) -> std::option::Option<&str> {
+    pub fn db_cluster_snapshot_identifier(&self) -> ::std::option::Option<&str> {
         self.db_cluster_snapshot_identifier.as_deref()
     }
     /// <p>The identifier of the cluster to create a snapshot for. This parameter is not case sensitive.</p>
@@ -44,11 +44,11 @@ impl CreateDbClusterSnapshotInput {
     /// <li> <p>Must match the identifier of an existing <code>DBCluster</code>.</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster</code> </p>
-    pub fn db_cluster_identifier(&self) -> std::option::Option<&str> {
+    pub fn db_cluster_identifier(&self) -> ::std::option::Option<&str> {
         self.db_cluster_identifier.as_deref()
     }
     /// <p>The tags to be assigned to the cluster snapshot.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -63,11 +63,13 @@ impl CreateDbClusterSnapshotInput {
 
 /// A builder for [`CreateDbClusterSnapshotInput`](crate::operation::create_db_cluster_snapshot::CreateDbClusterSnapshotInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateDbClusterSnapshotInputBuilder {
-    pub(crate) db_cluster_snapshot_identifier: std::option::Option<std::string::String>,
-    pub(crate) db_cluster_identifier: std::option::Option<std::string::String>,
-    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub(crate) db_cluster_snapshot_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) db_cluster_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateDbClusterSnapshotInputBuilder {
     /// <p>The identifier of the cluster snapshot. This parameter is stored as a lowercase string.</p>
@@ -78,8 +80,11 @@ impl CreateDbClusterSnapshotInputBuilder {
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens. </p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster-snapshot1</code> </p>
-    pub fn db_cluster_snapshot_identifier(mut self, input: impl Into<std::string::String>) -> Self {
-        self.db_cluster_snapshot_identifier = Some(input.into());
+    pub fn db_cluster_snapshot_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.db_cluster_snapshot_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the cluster snapshot. This parameter is stored as a lowercase string.</p>
@@ -92,7 +97,7 @@ impl CreateDbClusterSnapshotInputBuilder {
     /// <p>Example: <code>my-cluster-snapshot1</code> </p>
     pub fn set_db_cluster_snapshot_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.db_cluster_snapshot_identifier = input;
         self
@@ -103,8 +108,11 @@ impl CreateDbClusterSnapshotInputBuilder {
     /// <li> <p>Must match the identifier of an existing <code>DBCluster</code>.</p> </li>
     /// </ul>
     /// <p>Example: <code>my-cluster</code> </p>
-    pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
-        self.db_cluster_identifier = Some(input.into());
+    pub fn db_cluster_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.db_cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the cluster to create a snapshot for. This parameter is not case sensitive.</p>
@@ -115,7 +123,7 @@ impl CreateDbClusterSnapshotInputBuilder {
     /// <p>Example: <code>my-cluster</code> </p>
     pub fn set_db_cluster_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.db_cluster_identifier = input;
         self
@@ -128,13 +136,13 @@ impl CreateDbClusterSnapshotInputBuilder {
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
-        self.tags = Some(v);
+        self.tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>The tags to be assigned to the cluster snapshot.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tags = input;
         self
@@ -142,11 +150,11 @@ impl CreateDbClusterSnapshotInputBuilder {
     /// Consumes the builder and constructs a [`CreateDbClusterSnapshotInput`](crate::operation::create_db_cluster_snapshot::CreateDbClusterSnapshotInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::create_db_cluster_snapshot::CreateDbClusterSnapshotInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::create_db_cluster_snapshot::CreateDbClusterSnapshotInput {
                 db_cluster_snapshot_identifier: self.db_cluster_snapshot_identifier,
                 db_cluster_identifier: self.db_cluster_identifier,

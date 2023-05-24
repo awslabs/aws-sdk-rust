@@ -2,70 +2,70 @@
 
 /// <p>The set of Amazon Web Services Region that your Incident Manager data will be replicated to and the KMS key used to encrypt the data. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplicationSet {
     /// <p>The Amazon Resource Name (ARN) of the replication set.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The map between each Amazon Web Services Region in your replication set and the KMS key that's used to encrypt the data in that Region.</p>
     #[doc(hidden)]
-    pub region_map: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::RegionInfo>,
+    pub region_map: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::RegionInfo>,
     >,
     /// <p>The status of the replication set. If the replication set is still pending, you can't use Incident Manager functionality.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::ReplicationSetStatus>,
+    pub status: ::std::option::Option<crate::types::ReplicationSetStatus>,
     /// <p>Determines if the replication set deletion protection is enabled or not. If deletion protection is enabled, you can't delete the last Amazon Web Services Region in the replication set. </p>
     #[doc(hidden)]
-    pub deletion_protected: std::option::Option<bool>,
+    pub deletion_protected: ::std::option::Option<bool>,
     /// <p>When the replication set was created.</p>
     #[doc(hidden)]
-    pub created_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Details about who created the replication set.</p>
     #[doc(hidden)]
-    pub created_by: std::option::Option<std::string::String>,
+    pub created_by: ::std::option::Option<::std::string::String>,
     /// <p>When the replication set was last updated.</p>
     #[doc(hidden)]
-    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Who last modified the replication set.</p>
     #[doc(hidden)]
-    pub last_modified_by: std::option::Option<std::string::String>,
+    pub last_modified_by: ::std::option::Option<::std::string::String>,
 }
 impl ReplicationSet {
     /// <p>The Amazon Resource Name (ARN) of the replication set.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The map between each Amazon Web Services Region in your replication set and the KMS key that's used to encrypt the data in that Region.</p>
     pub fn region_map(
         &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::types::RegionInfo>,
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, crate::types::RegionInfo>,
     > {
         self.region_map.as_ref()
     }
     /// <p>The status of the replication set. If the replication set is still pending, you can't use Incident Manager functionality.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::ReplicationSetStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::ReplicationSetStatus> {
         self.status.as_ref()
     }
     /// <p>Determines if the replication set deletion protection is enabled or not. If deletion protection is enabled, you can't delete the last Amazon Web Services Region in the replication set. </p>
-    pub fn deletion_protected(&self) -> std::option::Option<bool> {
+    pub fn deletion_protected(&self) -> ::std::option::Option<bool> {
         self.deletion_protected
     }
     /// <p>When the replication set was created.</p>
-    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>Details about who created the replication set.</p>
-    pub fn created_by(&self) -> std::option::Option<&str> {
+    pub fn created_by(&self) -> ::std::option::Option<&str> {
         self.created_by.as_deref()
     }
     /// <p>When the replication set was last updated.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>Who last modified the replication set.</p>
-    pub fn last_modified_by(&self) -> std::option::Option<&str> {
+    pub fn last_modified_by(&self) -> ::std::option::Option<&str> {
         self.last_modified_by.as_deref()
     }
 }
@@ -78,27 +78,29 @@ impl ReplicationSet {
 
 /// A builder for [`ReplicationSet`](crate::types::ReplicationSet).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ReplicationSetBuilder {
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) region_map: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::RegionInfo>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) region_map: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::RegionInfo>,
     >,
-    pub(crate) status: std::option::Option<crate::types::ReplicationSetStatus>,
-    pub(crate) deletion_protected: std::option::Option<bool>,
-    pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) created_by: std::option::Option<std::string::String>,
-    pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_modified_by: std::option::Option<std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::ReplicationSetStatus>,
+    pub(crate) deletion_protected: ::std::option::Option<bool>,
+    pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) created_by: ::std::option::Option<::std::string::String>,
+    pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_modified_by: ::std::option::Option<::std::string::String>,
 }
 impl ReplicationSetBuilder {
     /// <p>The Amazon Resource Name (ARN) of the replication set.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the replication set.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
@@ -109,19 +111,19 @@ impl ReplicationSetBuilder {
     /// <p>The map between each Amazon Web Services Region in your replication set and the KMS key that's used to encrypt the data in that Region.</p>
     pub fn region_map(
         mut self,
-        k: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
         v: crate::types::RegionInfo,
     ) -> Self {
         let mut hash_map = self.region_map.unwrap_or_default();
         hash_map.insert(k.into(), v);
-        self.region_map = Some(hash_map);
+        self.region_map = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The map between each Amazon Web Services Region in your replication set and the KMS key that's used to encrypt the data in that Region.</p>
     pub fn set_region_map(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::types::RegionInfo>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, crate::types::RegionInfo>,
         >,
     ) -> Self {
         self.region_map = input;
@@ -129,70 +131,76 @@ impl ReplicationSetBuilder {
     }
     /// <p>The status of the replication set. If the replication set is still pending, you can't use Incident Manager functionality.</p>
     pub fn status(mut self, input: crate::types::ReplicationSetStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the replication set. If the replication set is still pending, you can't use Incident Manager functionality.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::ReplicationSetStatus>,
+        input: ::std::option::Option<crate::types::ReplicationSetStatus>,
     ) -> Self {
         self.status = input;
         self
     }
     /// <p>Determines if the replication set deletion protection is enabled or not. If deletion protection is enabled, you can't delete the last Amazon Web Services Region in the replication set. </p>
     pub fn deletion_protected(mut self, input: bool) -> Self {
-        self.deletion_protected = Some(input);
+        self.deletion_protected = ::std::option::Option::Some(input);
         self
     }
     /// <p>Determines if the replication set deletion protection is enabled or not. If deletion protection is enabled, you can't delete the last Amazon Web Services Region in the replication set. </p>
-    pub fn set_deletion_protected(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_deletion_protected(mut self, input: ::std::option::Option<bool>) -> Self {
         self.deletion_protected = input;
         self
     }
     /// <p>When the replication set was created.</p>
-    pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_time = Some(input);
+    pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>When the replication set was created.</p>
     pub fn set_created_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_time = input;
         self
     }
     /// <p>Details about who created the replication set.</p>
-    pub fn created_by(mut self, input: impl Into<std::string::String>) -> Self {
-        self.created_by = Some(input.into());
+    pub fn created_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.created_by = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Details about who created the replication set.</p>
-    pub fn set_created_by(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_created_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_by = input;
         self
     }
     /// <p>When the replication set was last updated.</p>
-    pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_modified_time = Some(input);
+    pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_modified_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>When the replication set was last updated.</p>
     pub fn set_last_modified_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_modified_time = input;
         self
     }
     /// <p>Who last modified the replication set.</p>
-    pub fn last_modified_by(mut self, input: impl Into<std::string::String>) -> Self {
-        self.last_modified_by = Some(input.into());
+    pub fn last_modified_by(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.last_modified_by = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Who last modified the replication set.</p>
-    pub fn set_last_modified_by(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_last_modified_by(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.last_modified_by = input;
         self
     }

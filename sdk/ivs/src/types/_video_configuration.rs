@@ -2,20 +2,20 @@
 
 /// <p>Object specifying a stream’s video configuration, as set up by the broadcaster (usually in an encoder). This is part of the <code>IngestConfiguration</code> object and used for monitoring stream health.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VideoConfiguration {
     /// <p>Indicates to the decoder the requirements for decoding the stream. For definitions of the valid values, see the H.264 specification.</p>
     #[doc(hidden)]
-    pub avc_profile: std::option::Option<std::string::String>,
+    pub avc_profile: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the degree of required decoder performance for a profile. Normally this is set automatically by the encoder. For details, see the H.264 specification.</p>
     #[doc(hidden)]
-    pub avc_level: std::option::Option<std::string::String>,
+    pub avc_level: ::std::option::Option<::std::string::String>,
     /// <p>Codec used for the video encoding.</p>
     #[doc(hidden)]
-    pub codec: std::option::Option<std::string::String>,
+    pub codec: ::std::option::Option<::std::string::String>,
     /// <p>Software or hardware used to encode the video.</p>
     #[doc(hidden)]
-    pub encoder: std::option::Option<std::string::String>,
+    pub encoder: ::std::option::Option<::std::string::String>,
     /// <p>The expected ingest bitrate (bits per second). This is configured in the encoder.</p>
     #[doc(hidden)]
     pub target_bitrate: i64,
@@ -31,19 +31,19 @@ pub struct VideoConfiguration {
 }
 impl VideoConfiguration {
     /// <p>Indicates to the decoder the requirements for decoding the stream. For definitions of the valid values, see the H.264 specification.</p>
-    pub fn avc_profile(&self) -> std::option::Option<&str> {
+    pub fn avc_profile(&self) -> ::std::option::Option<&str> {
         self.avc_profile.as_deref()
     }
     /// <p>Indicates the degree of required decoder performance for a profile. Normally this is set automatically by the encoder. For details, see the H.264 specification.</p>
-    pub fn avc_level(&self) -> std::option::Option<&str> {
+    pub fn avc_level(&self) -> ::std::option::Option<&str> {
         self.avc_level.as_deref()
     }
     /// <p>Codec used for the video encoding.</p>
-    pub fn codec(&self) -> std::option::Option<&str> {
+    pub fn codec(&self) -> ::std::option::Option<&str> {
         self.codec.as_deref()
     }
     /// <p>Software or hardware used to encode the video.</p>
-    pub fn encoder(&self) -> std::option::Option<&str> {
+    pub fn encoder(&self) -> ::std::option::Option<&str> {
         self.encoder.as_deref()
     }
     /// <p>The expected ingest bitrate (bits per second). This is configured in the encoder.</p>
@@ -72,95 +72,97 @@ impl VideoConfiguration {
 
 /// A builder for [`VideoConfiguration`](crate::types::VideoConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VideoConfigurationBuilder {
-    pub(crate) avc_profile: std::option::Option<std::string::String>,
-    pub(crate) avc_level: std::option::Option<std::string::String>,
-    pub(crate) codec: std::option::Option<std::string::String>,
-    pub(crate) encoder: std::option::Option<std::string::String>,
-    pub(crate) target_bitrate: std::option::Option<i64>,
-    pub(crate) target_framerate: std::option::Option<i64>,
-    pub(crate) video_height: std::option::Option<i64>,
-    pub(crate) video_width: std::option::Option<i64>,
+    pub(crate) avc_profile: ::std::option::Option<::std::string::String>,
+    pub(crate) avc_level: ::std::option::Option<::std::string::String>,
+    pub(crate) codec: ::std::option::Option<::std::string::String>,
+    pub(crate) encoder: ::std::option::Option<::std::string::String>,
+    pub(crate) target_bitrate: ::std::option::Option<i64>,
+    pub(crate) target_framerate: ::std::option::Option<i64>,
+    pub(crate) video_height: ::std::option::Option<i64>,
+    pub(crate) video_width: ::std::option::Option<i64>,
 }
 impl VideoConfigurationBuilder {
     /// <p>Indicates to the decoder the requirements for decoding the stream. For definitions of the valid values, see the H.264 specification.</p>
-    pub fn avc_profile(mut self, input: impl Into<std::string::String>) -> Self {
-        self.avc_profile = Some(input.into());
+    pub fn avc_profile(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.avc_profile = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates to the decoder the requirements for decoding the stream. For definitions of the valid values, see the H.264 specification.</p>
-    pub fn set_avc_profile(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_avc_profile(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.avc_profile = input;
         self
     }
     /// <p>Indicates the degree of required decoder performance for a profile. Normally this is set automatically by the encoder. For details, see the H.264 specification.</p>
-    pub fn avc_level(mut self, input: impl Into<std::string::String>) -> Self {
-        self.avc_level = Some(input.into());
+    pub fn avc_level(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.avc_level = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates the degree of required decoder performance for a profile. Normally this is set automatically by the encoder. For details, see the H.264 specification.</p>
-    pub fn set_avc_level(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_avc_level(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.avc_level = input;
         self
     }
     /// <p>Codec used for the video encoding.</p>
-    pub fn codec(mut self, input: impl Into<std::string::String>) -> Self {
-        self.codec = Some(input.into());
+    pub fn codec(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.codec = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Codec used for the video encoding.</p>
-    pub fn set_codec(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_codec(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.codec = input;
         self
     }
     /// <p>Software or hardware used to encode the video.</p>
-    pub fn encoder(mut self, input: impl Into<std::string::String>) -> Self {
-        self.encoder = Some(input.into());
+    pub fn encoder(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.encoder = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Software or hardware used to encode the video.</p>
-    pub fn set_encoder(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_encoder(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.encoder = input;
         self
     }
     /// <p>The expected ingest bitrate (bits per second). This is configured in the encoder.</p>
     pub fn target_bitrate(mut self, input: i64) -> Self {
-        self.target_bitrate = Some(input);
+        self.target_bitrate = ::std::option::Option::Some(input);
         self
     }
     /// <p>The expected ingest bitrate (bits per second). This is configured in the encoder.</p>
-    pub fn set_target_bitrate(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_target_bitrate(mut self, input: ::std::option::Option<i64>) -> Self {
         self.target_bitrate = input;
         self
     }
     /// <p>The expected ingest framerate. This is configured in the encoder.</p>
     pub fn target_framerate(mut self, input: i64) -> Self {
-        self.target_framerate = Some(input);
+        self.target_framerate = ::std::option::Option::Some(input);
         self
     }
     /// <p>The expected ingest framerate. This is configured in the encoder.</p>
-    pub fn set_target_framerate(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_target_framerate(mut self, input: ::std::option::Option<i64>) -> Self {
         self.target_framerate = input;
         self
     }
     /// <p>Video-resolution height in pixels.</p>
     pub fn video_height(mut self, input: i64) -> Self {
-        self.video_height = Some(input);
+        self.video_height = ::std::option::Option::Some(input);
         self
     }
     /// <p>Video-resolution height in pixels.</p>
-    pub fn set_video_height(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_video_height(mut self, input: ::std::option::Option<i64>) -> Self {
         self.video_height = input;
         self
     }
     /// <p>Video-resolution width in pixels.</p>
     pub fn video_width(mut self, input: i64) -> Self {
-        self.video_width = Some(input);
+        self.video_width = ::std::option::Option::Some(input);
         self
     }
     /// <p>Video-resolution width in pixels.</p>
-    pub fn set_video_width(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_video_width(mut self, input: ::std::option::Option<i64>) -> Self {
         self.video_width = input;
         self
     }

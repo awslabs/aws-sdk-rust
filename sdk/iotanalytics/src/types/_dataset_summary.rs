@@ -2,50 +2,50 @@
 
 /// <p>A summary of information about a dataset.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatasetSummary {
     /// <p>The name of the dataset.</p>
     #[doc(hidden)]
-    pub dataset_name: std::option::Option<std::string::String>,
+    pub dataset_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the dataset.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::DatasetStatus>,
+    pub status: ::std::option::Option<crate::types::DatasetStatus>,
     /// <p>The time the dataset was created.</p>
     #[doc(hidden)]
-    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last time the dataset was updated.</p>
     #[doc(hidden)]
-    pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A list of triggers. A trigger causes dataset content to be populated at a specified time interval or when another dataset is populated. The list of triggers can be empty or contain up to five <code>DataSetTrigger</code> objects</p>
     #[doc(hidden)]
-    pub triggers: std::option::Option<std::vec::Vec<crate::types::DatasetTrigger>>,
+    pub triggers: ::std::option::Option<::std::vec::Vec<crate::types::DatasetTrigger>>,
     /// <p>A list of <code>DataActionSummary</code> objects.</p>
     #[doc(hidden)]
-    pub actions: std::option::Option<std::vec::Vec<crate::types::DatasetActionSummary>>,
+    pub actions: ::std::option::Option<::std::vec::Vec<crate::types::DatasetActionSummary>>,
 }
 impl DatasetSummary {
     /// <p>The name of the dataset.</p>
-    pub fn dataset_name(&self) -> std::option::Option<&str> {
+    pub fn dataset_name(&self) -> ::std::option::Option<&str> {
         self.dataset_name.as_deref()
     }
     /// <p>The status of the dataset.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::DatasetStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::DatasetStatus> {
         self.status.as_ref()
     }
     /// <p>The time the dataset was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The last time the dataset was updated.</p>
-    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
     /// <p>A list of triggers. A trigger causes dataset content to be populated at a specified time interval or when another dataset is populated. The list of triggers can be empty or contain up to five <code>DataSetTrigger</code> objects</p>
-    pub fn triggers(&self) -> std::option::Option<&[crate::types::DatasetTrigger]> {
+    pub fn triggers(&self) -> ::std::option::Option<&[crate::types::DatasetTrigger]> {
         self.triggers.as_deref()
     }
     /// <p>A list of <code>DataActionSummary</code> objects.</p>
-    pub fn actions(&self) -> std::option::Option<&[crate::types::DatasetActionSummary]> {
+    pub fn actions(&self) -> ::std::option::Option<&[crate::types::DatasetActionSummary]> {
         self.actions.as_deref()
     }
 }
@@ -58,58 +58,60 @@ impl DatasetSummary {
 
 /// A builder for [`DatasetSummary`](crate::types::DatasetSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DatasetSummaryBuilder {
-    pub(crate) dataset_name: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::DatasetStatus>,
-    pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_update_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) triggers: std::option::Option<std::vec::Vec<crate::types::DatasetTrigger>>,
-    pub(crate) actions: std::option::Option<std::vec::Vec<crate::types::DatasetActionSummary>>,
+    pub(crate) dataset_name: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::DatasetStatus>,
+    pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) triggers: ::std::option::Option<::std::vec::Vec<crate::types::DatasetTrigger>>,
+    pub(crate) actions: ::std::option::Option<::std::vec::Vec<crate::types::DatasetActionSummary>>,
 }
 impl DatasetSummaryBuilder {
     /// <p>The name of the dataset.</p>
-    pub fn dataset_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.dataset_name = Some(input.into());
+    pub fn dataset_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.dataset_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the dataset.</p>
-    pub fn set_dataset_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_dataset_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataset_name = input;
         self
     }
     /// <p>The status of the dataset.</p>
     pub fn status(mut self, input: crate::types::DatasetStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the dataset.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::DatasetStatus>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::DatasetStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>The time the dataset was created.</p>
-    pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_time = Some(input);
+    pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time the dataset was created.</p>
     pub fn set_creation_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_time = input;
         self
     }
     /// <p>The last time the dataset was updated.</p>
-    pub fn last_update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_update_time = Some(input);
+    pub fn last_update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_update_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The last time the dataset was updated.</p>
     pub fn set_last_update_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_update_time = input;
         self
@@ -122,13 +124,13 @@ impl DatasetSummaryBuilder {
     pub fn triggers(mut self, input: crate::types::DatasetTrigger) -> Self {
         let mut v = self.triggers.unwrap_or_default();
         v.push(input);
-        self.triggers = Some(v);
+        self.triggers = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of triggers. A trigger causes dataset content to be populated at a specified time interval or when another dataset is populated. The list of triggers can be empty or contain up to five <code>DataSetTrigger</code> objects</p>
     pub fn set_triggers(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DatasetTrigger>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DatasetTrigger>>,
     ) -> Self {
         self.triggers = input;
         self
@@ -141,13 +143,13 @@ impl DatasetSummaryBuilder {
     pub fn actions(mut self, input: crate::types::DatasetActionSummary) -> Self {
         let mut v = self.actions.unwrap_or_default();
         v.push(input);
-        self.actions = Some(v);
+        self.actions = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of <code>DataActionSummary</code> objects.</p>
     pub fn set_actions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DatasetActionSummary>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DatasetActionSummary>>,
     ) -> Self {
         self.actions = input;
         self

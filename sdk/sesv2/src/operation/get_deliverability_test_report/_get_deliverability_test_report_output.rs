@@ -2,50 +2,50 @@
 
 /// <p>The results of the predictive inbox placement test.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDeliverabilityTestReportOutput {
     /// <p>An object that contains the results of the predictive inbox placement test.</p>
     #[doc(hidden)]
-    pub deliverability_test_report: std::option::Option<crate::types::DeliverabilityTestReport>,
+    pub deliverability_test_report: ::std::option::Option<crate::types::DeliverabilityTestReport>,
     /// <p>An object that specifies how many test messages that were sent during the predictive inbox placement test were delivered to recipients' inboxes, how many were sent to recipients' spam folders, and how many weren't delivered.</p>
     #[doc(hidden)]
-    pub overall_placement: std::option::Option<crate::types::PlacementStatistics>,
+    pub overall_placement: ::std::option::Option<crate::types::PlacementStatistics>,
     /// <p>An object that describes how the test email was handled by several email providers, including Gmail, Hotmail, Yahoo, AOL, and others.</p>
     #[doc(hidden)]
-    pub isp_placements: std::option::Option<std::vec::Vec<crate::types::IspPlacement>>,
+    pub isp_placements: ::std::option::Option<::std::vec::Vec<crate::types::IspPlacement>>,
     /// <p>An object that contains the message that you sent when you performed this predictive inbox placement test.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
     /// <p>An array of objects that define the tags (keys and values) that are associated with the predictive inbox placement test.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     _request_id: Option<String>,
 }
 impl GetDeliverabilityTestReportOutput {
     /// <p>An object that contains the results of the predictive inbox placement test.</p>
     pub fn deliverability_test_report(
         &self,
-    ) -> std::option::Option<&crate::types::DeliverabilityTestReport> {
+    ) -> ::std::option::Option<&crate::types::DeliverabilityTestReport> {
         self.deliverability_test_report.as_ref()
     }
     /// <p>An object that specifies how many test messages that were sent during the predictive inbox placement test were delivered to recipients' inboxes, how many were sent to recipients' spam folders, and how many weren't delivered.</p>
-    pub fn overall_placement(&self) -> std::option::Option<&crate::types::PlacementStatistics> {
+    pub fn overall_placement(&self) -> ::std::option::Option<&crate::types::PlacementStatistics> {
         self.overall_placement.as_ref()
     }
     /// <p>An object that describes how the test email was handled by several email providers, including Gmail, Hotmail, Yahoo, AOL, and others.</p>
-    pub fn isp_placements(&self) -> std::option::Option<&[crate::types::IspPlacement]> {
+    pub fn isp_placements(&self) -> ::std::option::Option<&[crate::types::IspPlacement]> {
         self.isp_placements.as_deref()
     }
     /// <p>An object that contains the message that you sent when you performed this predictive inbox placement test.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
     /// <p>An array of objects that define the tags (keys and values) that are associated with the predictive inbox placement test.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for GetDeliverabilityTestReportOutput {
+impl ::aws_http::request_id::RequestId for GetDeliverabilityTestReportOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -59,14 +59,16 @@ impl GetDeliverabilityTestReportOutput {
 
 /// A builder for [`GetDeliverabilityTestReportOutput`](crate::operation::get_deliverability_test_report::GetDeliverabilityTestReportOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetDeliverabilityTestReportOutputBuilder {
     pub(crate) deliverability_test_report:
-        std::option::Option<crate::types::DeliverabilityTestReport>,
-    pub(crate) overall_placement: std::option::Option<crate::types::PlacementStatistics>,
-    pub(crate) isp_placements: std::option::Option<std::vec::Vec<crate::types::IspPlacement>>,
-    pub(crate) message: std::option::Option<std::string::String>,
-    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        ::std::option::Option<crate::types::DeliverabilityTestReport>,
+    pub(crate) overall_placement: ::std::option::Option<crate::types::PlacementStatistics>,
+    pub(crate) isp_placements: ::std::option::Option<::std::vec::Vec<crate::types::IspPlacement>>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     _request_id: Option<String>,
 }
 impl GetDeliverabilityTestReportOutputBuilder {
@@ -75,26 +77,26 @@ impl GetDeliverabilityTestReportOutputBuilder {
         mut self,
         input: crate::types::DeliverabilityTestReport,
     ) -> Self {
-        self.deliverability_test_report = Some(input);
+        self.deliverability_test_report = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that contains the results of the predictive inbox placement test.</p>
     pub fn set_deliverability_test_report(
         mut self,
-        input: std::option::Option<crate::types::DeliverabilityTestReport>,
+        input: ::std::option::Option<crate::types::DeliverabilityTestReport>,
     ) -> Self {
         self.deliverability_test_report = input;
         self
     }
     /// <p>An object that specifies how many test messages that were sent during the predictive inbox placement test were delivered to recipients' inboxes, how many were sent to recipients' spam folders, and how many weren't delivered.</p>
     pub fn overall_placement(mut self, input: crate::types::PlacementStatistics) -> Self {
-        self.overall_placement = Some(input);
+        self.overall_placement = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that specifies how many test messages that were sent during the predictive inbox placement test were delivered to recipients' inboxes, how many were sent to recipients' spam folders, and how many weren't delivered.</p>
     pub fn set_overall_placement(
         mut self,
-        input: std::option::Option<crate::types::PlacementStatistics>,
+        input: ::std::option::Option<crate::types::PlacementStatistics>,
     ) -> Self {
         self.overall_placement = input;
         self
@@ -107,24 +109,24 @@ impl GetDeliverabilityTestReportOutputBuilder {
     pub fn isp_placements(mut self, input: crate::types::IspPlacement) -> Self {
         let mut v = self.isp_placements.unwrap_or_default();
         v.push(input);
-        self.isp_placements = Some(v);
+        self.isp_placements = ::std::option::Option::Some(v);
         self
     }
     /// <p>An object that describes how the test email was handled by several email providers, including Gmail, Hotmail, Yahoo, AOL, and others.</p>
     pub fn set_isp_placements(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::IspPlacement>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::IspPlacement>>,
     ) -> Self {
         self.isp_placements = input;
         self
     }
     /// <p>An object that contains the message that you sent when you performed this predictive inbox placement test.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An object that contains the message that you sent when you performed this predictive inbox placement test.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
@@ -136,13 +138,13 @@ impl GetDeliverabilityTestReportOutputBuilder {
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
-        self.tags = Some(v);
+        self.tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of objects that define the tags (keys and values) that are associated with the predictive inbox placement test.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tags = input;
         self

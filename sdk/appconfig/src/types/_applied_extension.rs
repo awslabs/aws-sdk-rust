@@ -2,29 +2,30 @@
 
 /// <p>An extension that was invoked during a deployment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AppliedExtension {
     /// <p>The system-generated ID of the extension.</p>
     #[doc(hidden)]
-    pub extension_id: std::option::Option<std::string::String>,
+    pub extension_id: ::std::option::Option<::std::string::String>,
     /// <p>The system-generated ID for the association.</p>
     #[doc(hidden)]
-    pub extension_association_id: std::option::Option<std::string::String>,
+    pub extension_association_id: ::std::option::Option<::std::string::String>,
     /// <p>The extension version number.</p>
     #[doc(hidden)]
     pub version_number: i32,
     /// <p>One or more parameters for the actions called by the extension.</p>
     #[doc(hidden)]
-    pub parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub parameters: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl AppliedExtension {
     /// <p>The system-generated ID of the extension.</p>
-    pub fn extension_id(&self) -> std::option::Option<&str> {
+    pub fn extension_id(&self) -> ::std::option::Option<&str> {
         self.extension_id.as_deref()
     }
     /// <p>The system-generated ID for the association.</p>
-    pub fn extension_association_id(&self) -> std::option::Option<&str> {
+    pub fn extension_association_id(&self) -> ::std::option::Option<&str> {
         self.extension_association_id.as_deref()
     }
     /// <p>The extension version number.</p>
@@ -34,8 +35,9 @@ impl AppliedExtension {
     /// <p>One or more parameters for the actions called by the extension.</p>
     pub fn parameters(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.parameters.as_ref()
     }
 }
@@ -48,45 +50,51 @@ impl AppliedExtension {
 
 /// A builder for [`AppliedExtension`](crate::types::AppliedExtension).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AppliedExtensionBuilder {
-    pub(crate) extension_id: std::option::Option<std::string::String>,
-    pub(crate) extension_association_id: std::option::Option<std::string::String>,
-    pub(crate) version_number: std::option::Option<i32>,
-    pub(crate) parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) extension_id: ::std::option::Option<::std::string::String>,
+    pub(crate) extension_association_id: ::std::option::Option<::std::string::String>,
+    pub(crate) version_number: ::std::option::Option<i32>,
+    pub(crate) parameters: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl AppliedExtensionBuilder {
     /// <p>The system-generated ID of the extension.</p>
-    pub fn extension_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.extension_id = Some(input.into());
+    pub fn extension_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.extension_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The system-generated ID of the extension.</p>
-    pub fn set_extension_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_extension_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.extension_id = input;
         self
     }
     /// <p>The system-generated ID for the association.</p>
-    pub fn extension_association_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.extension_association_id = Some(input.into());
+    pub fn extension_association_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.extension_association_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The system-generated ID for the association.</p>
     pub fn set_extension_association_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.extension_association_id = input;
         self
     }
     /// <p>The extension version number.</p>
     pub fn version_number(mut self, input: i32) -> Self {
-        self.version_number = Some(input);
+        self.version_number = ::std::option::Option::Some(input);
         self
     }
     /// <p>The extension version number.</p>
-    pub fn set_version_number(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_version_number(mut self, input: ::std::option::Option<i32>) -> Self {
         self.version_number = input;
         self
     }
@@ -97,19 +105,19 @@ impl AppliedExtensionBuilder {
     /// <p>One or more parameters for the actions called by the extension.</p>
     pub fn parameters(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.parameters = Some(hash_map);
+        self.parameters = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>One or more parameters for the actions called by the extension.</p>
     pub fn set_parameters(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.parameters = input;

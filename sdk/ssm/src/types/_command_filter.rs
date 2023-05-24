@@ -4,13 +4,13 @@
 /// <p>A managed node ID can't be specified when a command status is <code>Pending</code> because the command hasn't run on the node yet.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CommandFilter {
     /// <p>The name of the filter.</p> <note>
     /// <p>The <code>ExecutionStage</code> filter can't be used with the <code>ListCommandInvocations</code> operation, only with <code>ListCommands</code>.</p>
     /// </note>
     #[doc(hidden)]
-    pub key: std::option::Option<crate::types::CommandFilterKey>,
+    pub key: ::std::option::Option<crate::types::CommandFilterKey>,
     /// <p>The filter value. Valid values for each filter key are as follows:</p>
     /// <ul>
     /// <li> <p> <b>InvokedAfter</b>: Specify a timestamp to limit your results. For example, specify <code>2021-07-07T00:00:00Z</code> to see a list of command executions occurring July 7, 2021, and later.</p> </li>
@@ -53,13 +53,13 @@ pub struct CommandFilter {
     /// </ul> </li>
     /// </ul>
     #[doc(hidden)]
-    pub value: std::option::Option<std::string::String>,
+    pub value: ::std::option::Option<::std::string::String>,
 }
 impl CommandFilter {
     /// <p>The name of the filter.</p> <note>
     /// <p>The <code>ExecutionStage</code> filter can't be used with the <code>ListCommandInvocations</code> operation, only with <code>ListCommands</code>.</p>
     /// </note>
-    pub fn key(&self) -> std::option::Option<&crate::types::CommandFilterKey> {
+    pub fn key(&self) -> ::std::option::Option<&crate::types::CommandFilterKey> {
         self.key.as_ref()
     }
     /// <p>The filter value. Valid values for each filter key are as follows:</p>
@@ -103,7 +103,7 @@ impl CommandFilter {
     /// <li> <p> <code>Complete</code>: Returns a list of command executions that have already completed. </p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
 }
@@ -116,23 +116,25 @@ impl CommandFilter {
 
 /// A builder for [`CommandFilter`](crate::types::CommandFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CommandFilterBuilder {
-    pub(crate) key: std::option::Option<crate::types::CommandFilterKey>,
-    pub(crate) value: std::option::Option<std::string::String>,
+    pub(crate) key: ::std::option::Option<crate::types::CommandFilterKey>,
+    pub(crate) value: ::std::option::Option<::std::string::String>,
 }
 impl CommandFilterBuilder {
     /// <p>The name of the filter.</p> <note>
     /// <p>The <code>ExecutionStage</code> filter can't be used with the <code>ListCommandInvocations</code> operation, only with <code>ListCommands</code>.</p>
     /// </note>
     pub fn key(mut self, input: crate::types::CommandFilterKey) -> Self {
-        self.key = Some(input);
+        self.key = ::std::option::Option::Some(input);
         self
     }
     /// <p>The name of the filter.</p> <note>
     /// <p>The <code>ExecutionStage</code> filter can't be used with the <code>ListCommandInvocations</code> operation, only with <code>ListCommands</code>.</p>
     /// </note>
-    pub fn set_key(mut self, input: std::option::Option<crate::types::CommandFilterKey>) -> Self {
+    pub fn set_key(mut self, input: ::std::option::Option<crate::types::CommandFilterKey>) -> Self {
         self.key = input;
         self
     }
@@ -177,8 +179,8 @@ impl CommandFilterBuilder {
     /// <li> <p> <code>Complete</code>: Returns a list of command executions that have already completed. </p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.value = Some(input.into());
+    pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The filter value. Valid values for each filter key are as follows:</p>
@@ -222,7 +224,7 @@ impl CommandFilterBuilder {
     /// <li> <p> <code>Complete</code>: Returns a list of command executions that have already completed. </p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
     }

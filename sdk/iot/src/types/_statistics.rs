@@ -2,32 +2,32 @@
 
 /// <p>A map of key-value pairs for all supported statistics. For issues with missing or unexpected values for this API, consult <a href="https://docs.aws.amazon.com/iot/latest/developerguide/fleet-indexing-troubleshooting.html"> Fleet indexing troubleshooting guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Statistics {
     /// <p>The count of things that match the query string criteria and contain a valid aggregation field value.</p>
     #[doc(hidden)]
     pub count: i32,
     /// <p>The average of the aggregated field values.</p>
     #[doc(hidden)]
-    pub average: std::option::Option<f64>,
+    pub average: ::std::option::Option<f64>,
     /// <p>The sum of the aggregated field values.</p>
     #[doc(hidden)]
-    pub sum: std::option::Option<f64>,
+    pub sum: ::std::option::Option<f64>,
     /// <p>The minimum aggregated field value.</p>
     #[doc(hidden)]
-    pub minimum: std::option::Option<f64>,
+    pub minimum: ::std::option::Option<f64>,
     /// <p>The maximum aggregated field value.</p>
     #[doc(hidden)]
-    pub maximum: std::option::Option<f64>,
+    pub maximum: ::std::option::Option<f64>,
     /// <p>The sum of the squares of the aggregated field values.</p>
     #[doc(hidden)]
-    pub sum_of_squares: std::option::Option<f64>,
+    pub sum_of_squares: ::std::option::Option<f64>,
     /// <p>The variance of the aggregated field values.</p>
     #[doc(hidden)]
-    pub variance: std::option::Option<f64>,
+    pub variance: ::std::option::Option<f64>,
     /// <p>The standard deviation of the aggregated field values.</p>
     #[doc(hidden)]
-    pub std_deviation: std::option::Option<f64>,
+    pub std_deviation: ::std::option::Option<f64>,
 }
 impl Statistics {
     /// <p>The count of things that match the query string criteria and contain a valid aggregation field value.</p>
@@ -35,31 +35,31 @@ impl Statistics {
         self.count
     }
     /// <p>The average of the aggregated field values.</p>
-    pub fn average(&self) -> std::option::Option<f64> {
+    pub fn average(&self) -> ::std::option::Option<f64> {
         self.average
     }
     /// <p>The sum of the aggregated field values.</p>
-    pub fn sum(&self) -> std::option::Option<f64> {
+    pub fn sum(&self) -> ::std::option::Option<f64> {
         self.sum
     }
     /// <p>The minimum aggregated field value.</p>
-    pub fn minimum(&self) -> std::option::Option<f64> {
+    pub fn minimum(&self) -> ::std::option::Option<f64> {
         self.minimum
     }
     /// <p>The maximum aggregated field value.</p>
-    pub fn maximum(&self) -> std::option::Option<f64> {
+    pub fn maximum(&self) -> ::std::option::Option<f64> {
         self.maximum
     }
     /// <p>The sum of the squares of the aggregated field values.</p>
-    pub fn sum_of_squares(&self) -> std::option::Option<f64> {
+    pub fn sum_of_squares(&self) -> ::std::option::Option<f64> {
         self.sum_of_squares
     }
     /// <p>The variance of the aggregated field values.</p>
-    pub fn variance(&self) -> std::option::Option<f64> {
+    pub fn variance(&self) -> ::std::option::Option<f64> {
         self.variance
     }
     /// <p>The standard deviation of the aggregated field values.</p>
-    pub fn std_deviation(&self) -> std::option::Option<f64> {
+    pub fn std_deviation(&self) -> ::std::option::Option<f64> {
         self.std_deviation
     }
 }
@@ -72,95 +72,97 @@ impl Statistics {
 
 /// A builder for [`Statistics`](crate::types::Statistics).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StatisticsBuilder {
-    pub(crate) count: std::option::Option<i32>,
-    pub(crate) average: std::option::Option<f64>,
-    pub(crate) sum: std::option::Option<f64>,
-    pub(crate) minimum: std::option::Option<f64>,
-    pub(crate) maximum: std::option::Option<f64>,
-    pub(crate) sum_of_squares: std::option::Option<f64>,
-    pub(crate) variance: std::option::Option<f64>,
-    pub(crate) std_deviation: std::option::Option<f64>,
+    pub(crate) count: ::std::option::Option<i32>,
+    pub(crate) average: ::std::option::Option<f64>,
+    pub(crate) sum: ::std::option::Option<f64>,
+    pub(crate) minimum: ::std::option::Option<f64>,
+    pub(crate) maximum: ::std::option::Option<f64>,
+    pub(crate) sum_of_squares: ::std::option::Option<f64>,
+    pub(crate) variance: ::std::option::Option<f64>,
+    pub(crate) std_deviation: ::std::option::Option<f64>,
 }
 impl StatisticsBuilder {
     /// <p>The count of things that match the query string criteria and contain a valid aggregation field value.</p>
     pub fn count(mut self, input: i32) -> Self {
-        self.count = Some(input);
+        self.count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The count of things that match the query string criteria and contain a valid aggregation field value.</p>
-    pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.count = input;
         self
     }
     /// <p>The average of the aggregated field values.</p>
     pub fn average(mut self, input: f64) -> Self {
-        self.average = Some(input);
+        self.average = ::std::option::Option::Some(input);
         self
     }
     /// <p>The average of the aggregated field values.</p>
-    pub fn set_average(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_average(mut self, input: ::std::option::Option<f64>) -> Self {
         self.average = input;
         self
     }
     /// <p>The sum of the aggregated field values.</p>
     pub fn sum(mut self, input: f64) -> Self {
-        self.sum = Some(input);
+        self.sum = ::std::option::Option::Some(input);
         self
     }
     /// <p>The sum of the aggregated field values.</p>
-    pub fn set_sum(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_sum(mut self, input: ::std::option::Option<f64>) -> Self {
         self.sum = input;
         self
     }
     /// <p>The minimum aggregated field value.</p>
     pub fn minimum(mut self, input: f64) -> Self {
-        self.minimum = Some(input);
+        self.minimum = ::std::option::Option::Some(input);
         self
     }
     /// <p>The minimum aggregated field value.</p>
-    pub fn set_minimum(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_minimum(mut self, input: ::std::option::Option<f64>) -> Self {
         self.minimum = input;
         self
     }
     /// <p>The maximum aggregated field value.</p>
     pub fn maximum(mut self, input: f64) -> Self {
-        self.maximum = Some(input);
+        self.maximum = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum aggregated field value.</p>
-    pub fn set_maximum(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_maximum(mut self, input: ::std::option::Option<f64>) -> Self {
         self.maximum = input;
         self
     }
     /// <p>The sum of the squares of the aggregated field values.</p>
     pub fn sum_of_squares(mut self, input: f64) -> Self {
-        self.sum_of_squares = Some(input);
+        self.sum_of_squares = ::std::option::Option::Some(input);
         self
     }
     /// <p>The sum of the squares of the aggregated field values.</p>
-    pub fn set_sum_of_squares(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_sum_of_squares(mut self, input: ::std::option::Option<f64>) -> Self {
         self.sum_of_squares = input;
         self
     }
     /// <p>The variance of the aggregated field values.</p>
     pub fn variance(mut self, input: f64) -> Self {
-        self.variance = Some(input);
+        self.variance = ::std::option::Option::Some(input);
         self
     }
     /// <p>The variance of the aggregated field values.</p>
-    pub fn set_variance(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_variance(mut self, input: ::std::option::Option<f64>) -> Self {
         self.variance = input;
         self
     }
     /// <p>The standard deviation of the aggregated field values.</p>
     pub fn std_deviation(mut self, input: f64) -> Self {
-        self.std_deviation = Some(input);
+        self.std_deviation = ::std::option::Option::Some(input);
         self
     }
     /// <p>The standard deviation of the aggregated field values.</p>
-    pub fn set_std_deviation(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_std_deviation(mut self, input: ::std::option::Option<f64>) -> Self {
         self.std_deviation = input;
         self
     }

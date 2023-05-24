@@ -2,22 +2,22 @@
 
 /// <p>Status information for a single Multi-Region Access Point Region.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MultiRegionAccessPointRegionalResponse {
     /// <p>The name of the Region in the Multi-Region Access Point.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the Multi-Region Access Point in this Region.</p>
     #[doc(hidden)]
-    pub request_status: std::option::Option<std::string::String>,
+    pub request_status: ::std::option::Option<::std::string::String>,
 }
 impl MultiRegionAccessPointRegionalResponse {
     /// <p>The name of the Region in the Multi-Region Access Point.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The current status of the Multi-Region Access Point in this Region.</p>
-    pub fn request_status(&self) -> std::option::Option<&str> {
+    pub fn request_status(&self) -> ::std::option::Option<&str> {
         self.request_status.as_deref()
     }
 }
@@ -30,29 +30,37 @@ impl MultiRegionAccessPointRegionalResponse {
 
 /// A builder for [`MultiRegionAccessPointRegionalResponse`](crate::types::MultiRegionAccessPointRegionalResponse).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MultiRegionAccessPointRegionalResponseBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) request_status: std::option::Option<std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) request_status: ::std::option::Option<::std::string::String>,
 }
 impl MultiRegionAccessPointRegionalResponseBuilder {
     /// <p>The name of the Region in the Multi-Region Access Point.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Region in the Multi-Region Access Point.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The current status of the Multi-Region Access Point in this Region.</p>
-    pub fn request_status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.request_status = Some(input.into());
+    pub fn request_status(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.request_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The current status of the Multi-Region Access Point in this Region.</p>
-    pub fn set_request_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_request_status(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.request_status = input;
         self
     }

@@ -2,22 +2,22 @@
 
 /// <p>Information about the Semtech GNSS solver configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SemtechGnssConfiguration {
     /// <p>The status indicating whether the solver is enabled.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::PositionConfigurationStatus>,
+    pub status: ::std::option::Option<crate::types::PositionConfigurationStatus>,
     /// <p>Whether forward error correction is enabled.</p>
     #[doc(hidden)]
-    pub fec: std::option::Option<crate::types::PositionConfigurationFec>,
+    pub fec: ::std::option::Option<crate::types::PositionConfigurationFec>,
 }
 impl SemtechGnssConfiguration {
     /// <p>The status indicating whether the solver is enabled.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::PositionConfigurationStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::PositionConfigurationStatus> {
         self.status.as_ref()
     }
     /// <p>Whether forward error correction is enabled.</p>
-    pub fn fec(&self) -> std::option::Option<&crate::types::PositionConfigurationFec> {
+    pub fn fec(&self) -> ::std::option::Option<&crate::types::PositionConfigurationFec> {
         self.fec.as_ref()
     }
 }
@@ -30,34 +30,36 @@ impl SemtechGnssConfiguration {
 
 /// A builder for [`SemtechGnssConfiguration`](crate::types::SemtechGnssConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SemtechGnssConfigurationBuilder {
-    pub(crate) status: std::option::Option<crate::types::PositionConfigurationStatus>,
-    pub(crate) fec: std::option::Option<crate::types::PositionConfigurationFec>,
+    pub(crate) status: ::std::option::Option<crate::types::PositionConfigurationStatus>,
+    pub(crate) fec: ::std::option::Option<crate::types::PositionConfigurationFec>,
 }
 impl SemtechGnssConfigurationBuilder {
     /// <p>The status indicating whether the solver is enabled.</p>
     pub fn status(mut self, input: crate::types::PositionConfigurationStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status indicating whether the solver is enabled.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::PositionConfigurationStatus>,
+        input: ::std::option::Option<crate::types::PositionConfigurationStatus>,
     ) -> Self {
         self.status = input;
         self
     }
     /// <p>Whether forward error correction is enabled.</p>
     pub fn fec(mut self, input: crate::types::PositionConfigurationFec) -> Self {
-        self.fec = Some(input);
+        self.fec = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether forward error correction is enabled.</p>
     pub fn set_fec(
         mut self,
-        input: std::option::Option<crate::types::PositionConfigurationFec>,
+        input: ::std::option::Option<crate::types::PositionConfigurationFec>,
     ) -> Self {
         self.fec = input;
         self

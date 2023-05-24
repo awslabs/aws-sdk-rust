@@ -2,27 +2,27 @@
 
 /// <p>An infrastructure as code defined resource output.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Output {
     /// <p>The output key.</p>
     #[doc(hidden)]
-    pub key: std::option::Option<std::string::String>,
+    pub key: ::std::option::Option<::std::string::String>,
     /// <p>The output value.</p>
     #[doc(hidden)]
-    pub value_string: std::option::Option<std::string::String>,
+    pub value_string: ::std::option::Option<::std::string::String>,
 }
 impl Output {
     /// <p>The output key.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<&str> {
         self.key.as_deref()
     }
     /// <p>The output value.</p>
-    pub fn value_string(&self) -> std::option::Option<&str> {
+    pub fn value_string(&self) -> ::std::option::Option<&str> {
         self.value_string.as_deref()
     }
 }
-impl std::fmt::Debug for Output {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for Output {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("Output");
         formatter.field("key", &"*** Sensitive Data Redacted ***");
         formatter.field("value_string", &"*** Sensitive Data Redacted ***");
@@ -38,29 +38,29 @@ impl Output {
 
 /// A builder for [`Output`](crate::types::Output).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct OutputBuilder {
-    pub(crate) key: std::option::Option<std::string::String>,
-    pub(crate) value_string: std::option::Option<std::string::String>,
+    pub(crate) key: ::std::option::Option<::std::string::String>,
+    pub(crate) value_string: ::std::option::Option<::std::string::String>,
 }
 impl OutputBuilder {
     /// <p>The output key.</p>
-    pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.key = Some(input.into());
+    pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The output key.</p>
-    pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key = input;
         self
     }
     /// <p>The output value.</p>
-    pub fn value_string(mut self, input: impl Into<std::string::String>) -> Self {
-        self.value_string = Some(input.into());
+    pub fn value_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.value_string = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The output value.</p>
-    pub fn set_value_string(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_value_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value_string = input;
         self
     }
@@ -72,8 +72,8 @@ impl OutputBuilder {
         }
     }
 }
-impl std::fmt::Debug for OutputBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for OutputBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("OutputBuilder");
         formatter.field("key", &"*** Sensitive Data Redacted ***");
         formatter.field("value_string", &"*** Sensitive Data Redacted ***");

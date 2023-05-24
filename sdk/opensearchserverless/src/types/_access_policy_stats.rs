@@ -2,15 +2,15 @@
 
 /// <p>Statistics for an OpenSearch Serverless access policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccessPolicyStats {
     /// <p>The number of data access policies in the current account.</p>
     #[doc(hidden)]
-    pub data_policy_count: std::option::Option<i64>,
+    pub data_policy_count: ::std::option::Option<i64>,
 }
 impl AccessPolicyStats {
     /// <p>The number of data access policies in the current account.</p>
-    pub fn data_policy_count(&self) -> std::option::Option<i64> {
+    pub fn data_policy_count(&self) -> ::std::option::Option<i64> {
         self.data_policy_count
     }
 }
@@ -23,18 +23,20 @@ impl AccessPolicyStats {
 
 /// A builder for [`AccessPolicyStats`](crate::types::AccessPolicyStats).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AccessPolicyStatsBuilder {
-    pub(crate) data_policy_count: std::option::Option<i64>,
+    pub(crate) data_policy_count: ::std::option::Option<i64>,
 }
 impl AccessPolicyStatsBuilder {
     /// <p>The number of data access policies in the current account.</p>
     pub fn data_policy_count(mut self, input: i64) -> Self {
-        self.data_policy_count = Some(input);
+        self.data_policy_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of data access policies in the current account.</p>
-    pub fn set_data_policy_count(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_data_policy_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.data_policy_count = input;
         self
     }

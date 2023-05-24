@@ -2,20 +2,20 @@
 
 /// <p>The collection of SdkType instances.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSdkTypesOutput {
     /// <p>The current page of elements from this collection.</p>
     #[doc(hidden)]
-    pub items: std::option::Option<std::vec::Vec<crate::types::SdkType>>,
+    pub items: ::std::option::Option<::std::vec::Vec<crate::types::SdkType>>,
     _request_id: Option<String>,
 }
 impl GetSdkTypesOutput {
     /// <p>The current page of elements from this collection.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::types::SdkType]> {
+    pub fn items(&self) -> ::std::option::Option<&[crate::types::SdkType]> {
         self.items.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for GetSdkTypesOutput {
+impl ::aws_http::request_id::RequestId for GetSdkTypesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,9 +29,11 @@ impl GetSdkTypesOutput {
 
 /// A builder for [`GetSdkTypesOutput`](crate::operation::get_sdk_types::GetSdkTypesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetSdkTypesOutputBuilder {
-    pub(crate) items: std::option::Option<std::vec::Vec<crate::types::SdkType>>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::SdkType>>,
     _request_id: Option<String>,
 }
 impl GetSdkTypesOutputBuilder {
@@ -43,13 +45,13 @@ impl GetSdkTypesOutputBuilder {
     pub fn items(mut self, input: crate::types::SdkType) -> Self {
         let mut v = self.items.unwrap_or_default();
         v.push(input);
-        self.items = Some(v);
+        self.items = ::std::option::Option::Some(v);
         self
     }
     /// <p>The current page of elements from this collection.</p>
     pub fn set_items(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SdkType>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SdkType>>,
     ) -> Self {
         self.items = input;
         self

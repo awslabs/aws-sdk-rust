@@ -2,7 +2,7 @@
 
 /// <p> The API request rate limits.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ThrottleSettings {
     /// <p>The API target request burst rate limit. This allows more requests through for a period of time than the target rate limit.</p>
     #[doc(hidden)]
@@ -30,29 +30,31 @@ impl ThrottleSettings {
 
 /// A builder for [`ThrottleSettings`](crate::types::ThrottleSettings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ThrottleSettingsBuilder {
-    pub(crate) burst_limit: std::option::Option<i32>,
-    pub(crate) rate_limit: std::option::Option<f64>,
+    pub(crate) burst_limit: ::std::option::Option<i32>,
+    pub(crate) rate_limit: ::std::option::Option<f64>,
 }
 impl ThrottleSettingsBuilder {
     /// <p>The API target request burst rate limit. This allows more requests through for a period of time than the target rate limit.</p>
     pub fn burst_limit(mut self, input: i32) -> Self {
-        self.burst_limit = Some(input);
+        self.burst_limit = ::std::option::Option::Some(input);
         self
     }
     /// <p>The API target request burst rate limit. This allows more requests through for a period of time than the target rate limit.</p>
-    pub fn set_burst_limit(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_burst_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.burst_limit = input;
         self
     }
     /// <p>The API target request rate limit.</p>
     pub fn rate_limit(mut self, input: f64) -> Self {
-        self.rate_limit = Some(input);
+        self.rate_limit = ::std::option::Option::Some(input);
         self
     }
     /// <p>The API target request rate limit.</p>
-    pub fn set_rate_limit(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_rate_limit(mut self, input: ::std::option::Option<f64>) -> Self {
         self.rate_limit = input;
         self
     }

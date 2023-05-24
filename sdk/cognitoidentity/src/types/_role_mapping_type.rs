@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum RoleMappingType {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum RoleMappingType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for RoleMappingType {
+impl ::std::convert::From<&str> for RoleMappingType {
     fn from(s: &str) -> Self {
         match s {
             "Rules" => RoleMappingType::Rules,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for RoleMappingType {
         }
     }
 }
-impl std::str::FromStr for RoleMappingType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for RoleMappingType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RoleMappingType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(RoleMappingType::from(s))
     }
 }
 impl RoleMappingType {
@@ -86,7 +86,7 @@ impl RoleMappingType {
         &["Rules", "Token"]
     }
 }
-impl AsRef<str> for RoleMappingType {
+impl ::std::convert::AsRef<str> for RoleMappingType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -8,7 +8,7 @@
 /// </ul>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EphemeralStorage {
     /// <p>The total amount, in GiB, of ephemeral storage to set for the task. The minimum supported value is <code>21</code> GiB and the maximum supported value is <code>200</code> GiB.</p>
     #[doc(hidden)]
@@ -29,18 +29,20 @@ impl EphemeralStorage {
 
 /// A builder for [`EphemeralStorage`](crate::types::EphemeralStorage).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EphemeralStorageBuilder {
-    pub(crate) size_in_gi_b: std::option::Option<i32>,
+    pub(crate) size_in_gi_b: ::std::option::Option<i32>,
 }
 impl EphemeralStorageBuilder {
     /// <p>The total amount, in GiB, of ephemeral storage to set for the task. The minimum supported value is <code>21</code> GiB and the maximum supported value is <code>200</code> GiB.</p>
     pub fn size_in_gi_b(mut self, input: i32) -> Self {
-        self.size_in_gi_b = Some(input);
+        self.size_in_gi_b = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total amount, in GiB, of ephemeral storage to set for the task. The minimum supported value is <code>21</code> GiB and the maximum supported value is <code>200</code> GiB.</p>
-    pub fn set_size_in_gi_b(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_size_in_gi_b(mut self, input: ::std::option::Option<i32>) -> Self {
         self.size_in_gi_b = input;
         self
     }

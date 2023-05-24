@@ -2,17 +2,18 @@
 
 /// <p>Specifies the names of the data sources that couldn't be enabled.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UnprocessedDataSourcesResult {
     /// <p>An object that contains information on the status of all Malware Protection data sources.</p>
     #[doc(hidden)]
-    pub malware_protection: std::option::Option<crate::types::MalwareProtectionConfigurationResult>,
+    pub malware_protection:
+        ::std::option::Option<crate::types::MalwareProtectionConfigurationResult>,
 }
 impl UnprocessedDataSourcesResult {
     /// <p>An object that contains information on the status of all Malware Protection data sources.</p>
     pub fn malware_protection(
         &self,
-    ) -> std::option::Option<&crate::types::MalwareProtectionConfigurationResult> {
+    ) -> ::std::option::Option<&crate::types::MalwareProtectionConfigurationResult> {
         self.malware_protection.as_ref()
     }
 }
@@ -25,10 +26,12 @@ impl UnprocessedDataSourcesResult {
 
 /// A builder for [`UnprocessedDataSourcesResult`](crate::types::UnprocessedDataSourcesResult).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UnprocessedDataSourcesResultBuilder {
     pub(crate) malware_protection:
-        std::option::Option<crate::types::MalwareProtectionConfigurationResult>,
+        ::std::option::Option<crate::types::MalwareProtectionConfigurationResult>,
 }
 impl UnprocessedDataSourcesResultBuilder {
     /// <p>An object that contains information on the status of all Malware Protection data sources.</p>
@@ -36,13 +39,13 @@ impl UnprocessedDataSourcesResultBuilder {
         mut self,
         input: crate::types::MalwareProtectionConfigurationResult,
     ) -> Self {
-        self.malware_protection = Some(input);
+        self.malware_protection = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that contains information on the status of all Malware Protection data sources.</p>
     pub fn set_malware_protection(
         mut self,
-        input: std::option::Option<crate::types::MalwareProtectionConfigurationResult>,
+        input: ::std::option::Option<crate::types::MalwareProtectionConfigurationResult>,
     ) -> Self {
         self.malware_protection = input;
         self

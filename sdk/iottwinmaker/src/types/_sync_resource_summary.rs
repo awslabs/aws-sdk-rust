@@ -2,43 +2,43 @@
 
 /// <p>The sync resource summary.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SyncResourceSummary {
     /// <p>The resource type.</p>
     #[doc(hidden)]
-    pub resource_type: std::option::Option<crate::types::SyncResourceType>,
+    pub resource_type: ::std::option::Option<crate::types::SyncResourceType>,
     /// <p>The external ID.</p>
     #[doc(hidden)]
-    pub external_id: std::option::Option<std::string::String>,
+    pub external_id: ::std::option::Option<::std::string::String>,
     /// <p>The resource ID.</p>
     #[doc(hidden)]
-    pub resource_id: std::option::Option<std::string::String>,
+    pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The sync resource summary status.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::SyncResourceStatus>,
+    pub status: ::std::option::Option<crate::types::SyncResourceStatus>,
     /// <p>The update date and time.</p>
     #[doc(hidden)]
-    pub update_date_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub update_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl SyncResourceSummary {
     /// <p>The resource type.</p>
-    pub fn resource_type(&self) -> std::option::Option<&crate::types::SyncResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::SyncResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The external ID.</p>
-    pub fn external_id(&self) -> std::option::Option<&str> {
+    pub fn external_id(&self) -> ::std::option::Option<&str> {
         self.external_id.as_deref()
     }
     /// <p>The resource ID.</p>
-    pub fn resource_id(&self) -> std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<&str> {
         self.resource_id.as_deref()
     }
     /// <p>The sync resource summary status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::SyncResourceStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::SyncResourceStatus> {
         self.status.as_ref()
     }
     /// <p>The update date and time.</p>
-    pub fn update_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn update_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.update_date_time.as_ref()
     }
 }
@@ -51,70 +51,72 @@ impl SyncResourceSummary {
 
 /// A builder for [`SyncResourceSummary`](crate::types::SyncResourceSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SyncResourceSummaryBuilder {
-    pub(crate) resource_type: std::option::Option<crate::types::SyncResourceType>,
-    pub(crate) external_id: std::option::Option<std::string::String>,
-    pub(crate) resource_id: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::SyncResourceStatus>,
-    pub(crate) update_date_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) resource_type: ::std::option::Option<crate::types::SyncResourceType>,
+    pub(crate) external_id: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_id: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::SyncResourceStatus>,
+    pub(crate) update_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl SyncResourceSummaryBuilder {
     /// <p>The resource type.</p>
     pub fn resource_type(mut self, input: crate::types::SyncResourceType) -> Self {
-        self.resource_type = Some(input);
+        self.resource_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The resource type.</p>
     pub fn set_resource_type(
         mut self,
-        input: std::option::Option<crate::types::SyncResourceType>,
+        input: ::std::option::Option<crate::types::SyncResourceType>,
     ) -> Self {
         self.resource_type = input;
         self
     }
     /// <p>The external ID.</p>
-    pub fn external_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.external_id = Some(input.into());
+    pub fn external_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.external_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The external ID.</p>
-    pub fn set_external_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_external_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.external_id = input;
         self
     }
     /// <p>The resource ID.</p>
-    pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_id = Some(input.into());
+    pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The resource ID.</p>
-    pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
     }
     /// <p>The sync resource summary status.</p>
     pub fn status(mut self, input: crate::types::SyncResourceStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The sync resource summary status.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::SyncResourceStatus>,
+        input: ::std::option::Option<crate::types::SyncResourceStatus>,
     ) -> Self {
         self.status = input;
         self
     }
     /// <p>The update date and time.</p>
-    pub fn update_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.update_date_time = Some(input);
+    pub fn update_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.update_date_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The update date and time.</p>
     pub fn set_update_date_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.update_date_time = input;
         self

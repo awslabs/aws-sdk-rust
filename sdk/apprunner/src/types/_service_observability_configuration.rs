@@ -2,7 +2,7 @@
 
 /// <p>Describes the observability configuration of an App Runner service. These are additional observability features, like tracing, that you choose to enable. They're configured in a separate resource that you associate with your service.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceObservabilityConfiguration {
     /// <p>When <code>true</code>, an observability configuration resource is associated with the service, and an <code>ObservabilityConfigurationArn</code> is specified.</p>
     #[doc(hidden)]
@@ -11,7 +11,7 @@ pub struct ServiceObservabilityConfiguration {
     /// <p>Specify an ARN with a name and a revision number to associate that revision. For example: <code>arn:aws:apprunner:us-east-1:123456789012:observabilityconfiguration/xray-tracing/3</code> </p>
     /// <p>Specify just the name to associate the latest revision. For example: <code>arn:aws:apprunner:us-east-1:123456789012:observabilityconfiguration/xray-tracing</code> </p>
     #[doc(hidden)]
-    pub observability_configuration_arn: std::option::Option<std::string::String>,
+    pub observability_configuration_arn: ::std::option::Option<::std::string::String>,
 }
 impl ServiceObservabilityConfiguration {
     /// <p>When <code>true</code>, an observability configuration resource is associated with the service, and an <code>ObservabilityConfigurationArn</code> is specified.</p>
@@ -21,7 +21,7 @@ impl ServiceObservabilityConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the observability configuration that is associated with the service. Specified only when <code>ObservabilityEnabled</code> is <code>true</code>.</p>
     /// <p>Specify an ARN with a name and a revision number to associate that revision. For example: <code>arn:aws:apprunner:us-east-1:123456789012:observabilityconfiguration/xray-tracing/3</code> </p>
     /// <p>Specify just the name to associate the latest revision. For example: <code>arn:aws:apprunner:us-east-1:123456789012:observabilityconfiguration/xray-tracing</code> </p>
-    pub fn observability_configuration_arn(&self) -> std::option::Option<&str> {
+    pub fn observability_configuration_arn(&self) -> ::std::option::Option<&str> {
         self.observability_configuration_arn.as_deref()
     }
 }
@@ -34,19 +34,21 @@ impl ServiceObservabilityConfiguration {
 
 /// A builder for [`ServiceObservabilityConfiguration`](crate::types::ServiceObservabilityConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ServiceObservabilityConfigurationBuilder {
-    pub(crate) observability_enabled: std::option::Option<bool>,
-    pub(crate) observability_configuration_arn: std::option::Option<std::string::String>,
+    pub(crate) observability_enabled: ::std::option::Option<bool>,
+    pub(crate) observability_configuration_arn: ::std::option::Option<::std::string::String>,
 }
 impl ServiceObservabilityConfigurationBuilder {
     /// <p>When <code>true</code>, an observability configuration resource is associated with the service, and an <code>ObservabilityConfigurationArn</code> is specified.</p>
     pub fn observability_enabled(mut self, input: bool) -> Self {
-        self.observability_enabled = Some(input);
+        self.observability_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>When <code>true</code>, an observability configuration resource is associated with the service, and an <code>ObservabilityConfigurationArn</code> is specified.</p>
-    pub fn set_observability_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_observability_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.observability_enabled = input;
         self
     }
@@ -55,9 +57,9 @@ impl ServiceObservabilityConfigurationBuilder {
     /// <p>Specify just the name to associate the latest revision. For example: <code>arn:aws:apprunner:us-east-1:123456789012:observabilityconfiguration/xray-tracing</code> </p>
     pub fn observability_configuration_arn(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.observability_configuration_arn = Some(input.into());
+        self.observability_configuration_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the observability configuration that is associated with the service. Specified only when <code>ObservabilityEnabled</code> is <code>true</code>.</p>
@@ -65,7 +67,7 @@ impl ServiceObservabilityConfigurationBuilder {
     /// <p>Specify just the name to associate the latest revision. For example: <code>arn:aws:apprunner:us-east-1:123456789012:observabilityconfiguration/xray-tracing</code> </p>
     pub fn set_observability_configuration_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.observability_configuration_arn = input;
         self

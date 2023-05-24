@@ -2,29 +2,29 @@
 
 /// <p>Information about a network resource definition.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkResourceDefinition {
     /// <p>The type in the network resource definition.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::NetworkResourceDefinitionType>,
+    pub r#type: ::std::option::Option<crate::types::NetworkResourceDefinitionType>,
     /// <p>The options in the network resource definition.</p>
     #[doc(hidden)]
-    pub options: std::option::Option<std::vec::Vec<crate::types::NameValuePair>>,
+    pub options: ::std::option::Option<::std::vec::Vec<crate::types::NameValuePair>>,
     /// <p>The count in the network resource definition.</p>
     #[doc(hidden)]
-    pub count: std::option::Option<i32>,
+    pub count: ::std::option::Option<i32>,
 }
 impl NetworkResourceDefinition {
     /// <p>The type in the network resource definition.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::NetworkResourceDefinitionType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::NetworkResourceDefinitionType> {
         self.r#type.as_ref()
     }
     /// <p>The options in the network resource definition.</p>
-    pub fn options(&self) -> std::option::Option<&[crate::types::NameValuePair]> {
+    pub fn options(&self) -> ::std::option::Option<&[crate::types::NameValuePair]> {
         self.options.as_deref()
     }
     /// <p>The count in the network resource definition.</p>
-    pub fn count(&self) -> std::option::Option<i32> {
+    pub fn count(&self) -> ::std::option::Option<i32> {
         self.count
     }
 }
@@ -37,22 +37,24 @@ impl NetworkResourceDefinition {
 
 /// A builder for [`NetworkResourceDefinition`](crate::types::NetworkResourceDefinition).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NetworkResourceDefinitionBuilder {
-    pub(crate) r#type: std::option::Option<crate::types::NetworkResourceDefinitionType>,
-    pub(crate) options: std::option::Option<std::vec::Vec<crate::types::NameValuePair>>,
-    pub(crate) count: std::option::Option<i32>,
+    pub(crate) r#type: ::std::option::Option<crate::types::NetworkResourceDefinitionType>,
+    pub(crate) options: ::std::option::Option<::std::vec::Vec<crate::types::NameValuePair>>,
+    pub(crate) count: ::std::option::Option<i32>,
 }
 impl NetworkResourceDefinitionBuilder {
     /// <p>The type in the network resource definition.</p>
     pub fn r#type(mut self, input: crate::types::NetworkResourceDefinitionType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type in the network resource definition.</p>
     pub fn set_type(
         mut self,
-        input: std::option::Option<crate::types::NetworkResourceDefinitionType>,
+        input: ::std::option::Option<crate::types::NetworkResourceDefinitionType>,
     ) -> Self {
         self.r#type = input;
         self
@@ -65,24 +67,24 @@ impl NetworkResourceDefinitionBuilder {
     pub fn options(mut self, input: crate::types::NameValuePair) -> Self {
         let mut v = self.options.unwrap_or_default();
         v.push(input);
-        self.options = Some(v);
+        self.options = ::std::option::Option::Some(v);
         self
     }
     /// <p>The options in the network resource definition.</p>
     pub fn set_options(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::NameValuePair>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::NameValuePair>>,
     ) -> Self {
         self.options = input;
         self
     }
     /// <p>The count in the network resource definition.</p>
     pub fn count(mut self, input: i32) -> Self {
-        self.count = Some(input);
+        self.count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The count in the network resource definition.</p>
-    pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.count = input;
         self
     }

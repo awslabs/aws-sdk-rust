@@ -2,22 +2,22 @@
 
 /// <p>Describes the Amazon CloudWatch logging option updates.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CloudWatchLoggingOptionUpdate {
     /// <p>The ID of the CloudWatch logging option to update</p>
     #[doc(hidden)]
-    pub cloud_watch_logging_option_id: std::option::Option<std::string::String>,
+    pub cloud_watch_logging_option_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch log to receive application messages.</p>
     #[doc(hidden)]
-    pub log_stream_arn_update: std::option::Option<std::string::String>,
+    pub log_stream_arn_update: ::std::option::Option<::std::string::String>,
 }
 impl CloudWatchLoggingOptionUpdate {
     /// <p>The ID of the CloudWatch logging option to update</p>
-    pub fn cloud_watch_logging_option_id(&self) -> std::option::Option<&str> {
+    pub fn cloud_watch_logging_option_id(&self) -> ::std::option::Option<&str> {
         self.cloud_watch_logging_option_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch log to receive application messages.</p>
-    pub fn log_stream_arn_update(&self) -> std::option::Option<&str> {
+    pub fn log_stream_arn_update(&self) -> ::std::option::Option<&str> {
         self.log_stream_arn_update.as_deref()
     }
 }
@@ -30,34 +30,42 @@ impl CloudWatchLoggingOptionUpdate {
 
 /// A builder for [`CloudWatchLoggingOptionUpdate`](crate::types::CloudWatchLoggingOptionUpdate).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CloudWatchLoggingOptionUpdateBuilder {
-    pub(crate) cloud_watch_logging_option_id: std::option::Option<std::string::String>,
-    pub(crate) log_stream_arn_update: std::option::Option<std::string::String>,
+    pub(crate) cloud_watch_logging_option_id: ::std::option::Option<::std::string::String>,
+    pub(crate) log_stream_arn_update: ::std::option::Option<::std::string::String>,
 }
 impl CloudWatchLoggingOptionUpdateBuilder {
     /// <p>The ID of the CloudWatch logging option to update</p>
-    pub fn cloud_watch_logging_option_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cloud_watch_logging_option_id = Some(input.into());
+    pub fn cloud_watch_logging_option_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.cloud_watch_logging_option_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the CloudWatch logging option to update</p>
     pub fn set_cloud_watch_logging_option_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.cloud_watch_logging_option_id = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch log to receive application messages.</p>
-    pub fn log_stream_arn_update(mut self, input: impl Into<std::string::String>) -> Self {
-        self.log_stream_arn_update = Some(input.into());
+    pub fn log_stream_arn_update(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.log_stream_arn_update = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch log to receive application messages.</p>
     pub fn set_log_stream_arn_update(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.log_stream_arn_update = input;
         self

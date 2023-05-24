@@ -6,14 +6,14 @@
 /// <li> <p>For a <code>Scan</code> operation, <code>Condition</code> is used in a <code>ScanFilter</code>, which evaluates the scan results and returns only the desired values.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Condition {
     /// <p>One or more values to evaluate against the supplied attribute. The number of values in the list depends on the <code>ComparisonOperator</code> being used.</p>
     /// <p>For type Number, value comparisons are numeric.</p>
     /// <p>String value comparisons for greater than, equals, or less than are based on ASCII character code values. For example, <code>a</code> is greater than <code>A</code>, and <code>a</code> is greater than <code>B</code>. For a list of code values, see <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.</p>
     /// <p>For Binary, DynamoDB treats each byte of the binary data as unsigned when it compares binary values.</p>
     #[doc(hidden)]
-    pub attribute_value_list: std::option::Option<std::vec::Vec<crate::types::AttributeValue>>,
+    pub attribute_value_list: ::std::option::Option<::std::vec::Vec<crate::types::AttributeValue>>,
     /// <p>A comparator for evaluating attributes. For example, equals, greater than, less than, etc.</p>
     /// <p>The following comparison operators are available:</p>
     /// <p> <code>EQ | NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH | IN | BETWEEN</code> </p>
@@ -39,14 +39,14 @@ pub struct Condition {
     /// </ul>
     /// <p>For usage examples of <code>AttributeValueList</code> and <code>ComparisonOperator</code>, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy Conditional Parameters</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     #[doc(hidden)]
-    pub comparison_operator: std::option::Option<crate::types::ComparisonOperator>,
+    pub comparison_operator: ::std::option::Option<crate::types::ComparisonOperator>,
 }
 impl Condition {
     /// <p>One or more values to evaluate against the supplied attribute. The number of values in the list depends on the <code>ComparisonOperator</code> being used.</p>
     /// <p>For type Number, value comparisons are numeric.</p>
     /// <p>String value comparisons for greater than, equals, or less than are based on ASCII character code values. For example, <code>a</code> is greater than <code>A</code>, and <code>a</code> is greater than <code>B</code>. For a list of code values, see <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.</p>
     /// <p>For Binary, DynamoDB treats each byte of the binary data as unsigned when it compares binary values.</p>
-    pub fn attribute_value_list(&self) -> std::option::Option<&[crate::types::AttributeValue]> {
+    pub fn attribute_value_list(&self) -> ::std::option::Option<&[crate::types::AttributeValue]> {
         self.attribute_value_list.as_deref()
     }
     /// <p>A comparator for evaluating attributes. For example, equals, greater than, less than, etc.</p>
@@ -73,7 +73,7 @@ impl Condition {
     /// <li> <p> <code>BETWEEN</code> : Greater than or equal to the first value, and less than or equal to the second value. </p> <p> <code>AttributeValueList</code> must contain two <code>AttributeValue</code> elements of the same type, either String, Number, or Binary (not a set type). A target attribute matches if the target value is greater than, or equal to, the first element and less than, or equal to, the second element. If an item contains an <code>AttributeValue</code> element of a different type than the one provided in the request, the value does not match. For example, <code>{"S":"6"}</code> does not compare to <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code> </p> </li>
     /// </ul>
     /// <p>For usage examples of <code>AttributeValueList</code> and <code>ComparisonOperator</code>, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy Conditional Parameters</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    pub fn comparison_operator(&self) -> std::option::Option<&crate::types::ComparisonOperator> {
+    pub fn comparison_operator(&self) -> ::std::option::Option<&crate::types::ComparisonOperator> {
         self.comparison_operator.as_ref()
     }
 }
@@ -86,11 +86,13 @@ impl Condition {
 
 /// A builder for [`Condition`](crate::types::Condition).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ConditionBuilder {
     pub(crate) attribute_value_list:
-        std::option::Option<std::vec::Vec<crate::types::AttributeValue>>,
-    pub(crate) comparison_operator: std::option::Option<crate::types::ComparisonOperator>,
+        ::std::option::Option<::std::vec::Vec<crate::types::AttributeValue>>,
+    pub(crate) comparison_operator: ::std::option::Option<crate::types::ComparisonOperator>,
 }
 impl ConditionBuilder {
     /// Appends an item to `attribute_value_list`.
@@ -104,7 +106,7 @@ impl ConditionBuilder {
     pub fn attribute_value_list(mut self, input: crate::types::AttributeValue) -> Self {
         let mut v = self.attribute_value_list.unwrap_or_default();
         v.push(input);
-        self.attribute_value_list = Some(v);
+        self.attribute_value_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>One or more values to evaluate against the supplied attribute. The number of values in the list depends on the <code>ComparisonOperator</code> being used.</p>
@@ -113,7 +115,7 @@ impl ConditionBuilder {
     /// <p>For Binary, DynamoDB treats each byte of the binary data as unsigned when it compares binary values.</p>
     pub fn set_attribute_value_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AttributeValue>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeValue>>,
     ) -> Self {
         self.attribute_value_list = input;
         self
@@ -143,7 +145,7 @@ impl ConditionBuilder {
     /// </ul>
     /// <p>For usage examples of <code>AttributeValueList</code> and <code>ComparisonOperator</code>, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy Conditional Parameters</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn comparison_operator(mut self, input: crate::types::ComparisonOperator) -> Self {
-        self.comparison_operator = Some(input);
+        self.comparison_operator = ::std::option::Option::Some(input);
         self
     }
     /// <p>A comparator for evaluating attributes. For example, equals, greater than, less than, etc.</p>
@@ -172,7 +174,7 @@ impl ConditionBuilder {
     /// <p>For usage examples of <code>AttributeValueList</code> and <code>ComparisonOperator</code>, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy Conditional Parameters</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn set_comparison_operator(
         mut self,
-        input: std::option::Option<crate::types::ComparisonOperator>,
+        input: ::std::option::Option<crate::types::ComparisonOperator>,
     ) -> Self {
         self.comparison_operator = input;
         self

@@ -2,165 +2,168 @@
 
 /// <p>The configuration of a line chart.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LineChartConfiguration {
     /// <p>The field well configuration of a line chart.</p>
     #[doc(hidden)]
-    pub field_wells: std::option::Option<crate::types::LineChartFieldWells>,
+    pub field_wells: ::std::option::Option<crate::types::LineChartFieldWells>,
     /// <p>The sort configuration of a line chart.</p>
     #[doc(hidden)]
-    pub sort_configuration: std::option::Option<crate::types::LineChartSortConfiguration>,
+    pub sort_configuration: ::std::option::Option<crate::types::LineChartSortConfiguration>,
     /// <p>The forecast configuration of a line chart.</p>
     #[doc(hidden)]
     pub forecast_configurations:
-        std::option::Option<std::vec::Vec<crate::types::ForecastConfiguration>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ForecastConfiguration>>,
     /// <p>Determines the type of the line chart.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::LineChartType>,
+    pub r#type: ::std::option::Option<crate::types::LineChartType>,
     /// <p>The small multiples setup for the visual.</p>
     #[doc(hidden)]
-    pub small_multiples_options: std::option::Option<crate::types::SmallMultiplesOptions>,
+    pub small_multiples_options: ::std::option::Option<crate::types::SmallMultiplesOptions>,
     /// <p>The options that determine the presentation of the x-axis.</p>
     #[doc(hidden)]
-    pub x_axis_display_options: std::option::Option<crate::types::AxisDisplayOptions>,
+    pub x_axis_display_options: ::std::option::Option<crate::types::AxisDisplayOptions>,
     /// <p>The options that determine the presentation of the x-axis label.</p>
     #[doc(hidden)]
-    pub x_axis_label_options: std::option::Option<crate::types::ChartAxisLabelOptions>,
+    pub x_axis_label_options: ::std::option::Option<crate::types::ChartAxisLabelOptions>,
     /// <p>The series axis configuration of a line chart.</p>
     #[doc(hidden)]
     pub primary_y_axis_display_options:
-        std::option::Option<crate::types::LineSeriesAxisDisplayOptions>,
+        ::std::option::Option<crate::types::LineSeriesAxisDisplayOptions>,
     /// <p>The options that determine the presentation of the y-axis label.</p>
     #[doc(hidden)]
-    pub primary_y_axis_label_options: std::option::Option<crate::types::ChartAxisLabelOptions>,
+    pub primary_y_axis_label_options: ::std::option::Option<crate::types::ChartAxisLabelOptions>,
     /// <p>The series axis configuration of a line chart.</p>
     #[doc(hidden)]
     pub secondary_y_axis_display_options:
-        std::option::Option<crate::types::LineSeriesAxisDisplayOptions>,
+        ::std::option::Option<crate::types::LineSeriesAxisDisplayOptions>,
     /// <p>The options that determine the presentation of the secondary y-axis label.</p>
     #[doc(hidden)]
-    pub secondary_y_axis_label_options: std::option::Option<crate::types::ChartAxisLabelOptions>,
+    pub secondary_y_axis_label_options: ::std::option::Option<crate::types::ChartAxisLabelOptions>,
     /// <p>The options that determine the default presentation of all line series in <code>LineChartVisual</code>.</p>
     #[doc(hidden)]
-    pub default_series_settings: std::option::Option<crate::types::LineChartDefaultSeriesSettings>,
+    pub default_series_settings:
+        ::std::option::Option<crate::types::LineChartDefaultSeriesSettings>,
     /// <p>The series item configuration of a line chart.</p>
     #[doc(hidden)]
-    pub series: std::option::Option<std::vec::Vec<crate::types::SeriesItem>>,
+    pub series: ::std::option::Option<::std::vec::Vec<crate::types::SeriesItem>>,
     /// <p>The legend configuration of a line chart.</p>
     #[doc(hidden)]
-    pub legend: std::option::Option<crate::types::LegendOptions>,
+    pub legend: ::std::option::Option<crate::types::LegendOptions>,
     /// <p>The data label configuration of a line chart.</p>
     #[doc(hidden)]
-    pub data_labels: std::option::Option<crate::types::DataLabelOptions>,
+    pub data_labels: ::std::option::Option<crate::types::DataLabelOptions>,
     /// <p>The reference lines configuration of a line chart.</p>
     #[doc(hidden)]
-    pub reference_lines: std::option::Option<std::vec::Vec<crate::types::ReferenceLine>>,
+    pub reference_lines: ::std::option::Option<::std::vec::Vec<crate::types::ReferenceLine>>,
     /// <p>The tooltip configuration of a line chart.</p>
     #[doc(hidden)]
-    pub tooltip: std::option::Option<crate::types::TooltipOptions>,
+    pub tooltip: ::std::option::Option<crate::types::TooltipOptions>,
     /// <p>The default configuration of a line chart's contribution analysis.</p>
     #[doc(hidden)]
     pub contribution_analysis_defaults:
-        std::option::Option<std::vec::Vec<crate::types::ContributionAnalysisDefault>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ContributionAnalysisDefault>>,
     /// <p>The visual palette configuration of a line chart.</p>
     #[doc(hidden)]
-    pub visual_palette: std::option::Option<crate::types::VisualPalette>,
+    pub visual_palette: ::std::option::Option<crate::types::VisualPalette>,
 }
 impl LineChartConfiguration {
     /// <p>The field well configuration of a line chart.</p>
-    pub fn field_wells(&self) -> std::option::Option<&crate::types::LineChartFieldWells> {
+    pub fn field_wells(&self) -> ::std::option::Option<&crate::types::LineChartFieldWells> {
         self.field_wells.as_ref()
     }
     /// <p>The sort configuration of a line chart.</p>
     pub fn sort_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::LineChartSortConfiguration> {
+    ) -> ::std::option::Option<&crate::types::LineChartSortConfiguration> {
         self.sort_configuration.as_ref()
     }
     /// <p>The forecast configuration of a line chart.</p>
     pub fn forecast_configurations(
         &self,
-    ) -> std::option::Option<&[crate::types::ForecastConfiguration]> {
+    ) -> ::std::option::Option<&[crate::types::ForecastConfiguration]> {
         self.forecast_configurations.as_deref()
     }
     /// <p>Determines the type of the line chart.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::LineChartType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::LineChartType> {
         self.r#type.as_ref()
     }
     /// <p>The small multiples setup for the visual.</p>
     pub fn small_multiples_options(
         &self,
-    ) -> std::option::Option<&crate::types::SmallMultiplesOptions> {
+    ) -> ::std::option::Option<&crate::types::SmallMultiplesOptions> {
         self.small_multiples_options.as_ref()
     }
     /// <p>The options that determine the presentation of the x-axis.</p>
-    pub fn x_axis_display_options(&self) -> std::option::Option<&crate::types::AxisDisplayOptions> {
+    pub fn x_axis_display_options(
+        &self,
+    ) -> ::std::option::Option<&crate::types::AxisDisplayOptions> {
         self.x_axis_display_options.as_ref()
     }
     /// <p>The options that determine the presentation of the x-axis label.</p>
     pub fn x_axis_label_options(
         &self,
-    ) -> std::option::Option<&crate::types::ChartAxisLabelOptions> {
+    ) -> ::std::option::Option<&crate::types::ChartAxisLabelOptions> {
         self.x_axis_label_options.as_ref()
     }
     /// <p>The series axis configuration of a line chart.</p>
     pub fn primary_y_axis_display_options(
         &self,
-    ) -> std::option::Option<&crate::types::LineSeriesAxisDisplayOptions> {
+    ) -> ::std::option::Option<&crate::types::LineSeriesAxisDisplayOptions> {
         self.primary_y_axis_display_options.as_ref()
     }
     /// <p>The options that determine the presentation of the y-axis label.</p>
     pub fn primary_y_axis_label_options(
         &self,
-    ) -> std::option::Option<&crate::types::ChartAxisLabelOptions> {
+    ) -> ::std::option::Option<&crate::types::ChartAxisLabelOptions> {
         self.primary_y_axis_label_options.as_ref()
     }
     /// <p>The series axis configuration of a line chart.</p>
     pub fn secondary_y_axis_display_options(
         &self,
-    ) -> std::option::Option<&crate::types::LineSeriesAxisDisplayOptions> {
+    ) -> ::std::option::Option<&crate::types::LineSeriesAxisDisplayOptions> {
         self.secondary_y_axis_display_options.as_ref()
     }
     /// <p>The options that determine the presentation of the secondary y-axis label.</p>
     pub fn secondary_y_axis_label_options(
         &self,
-    ) -> std::option::Option<&crate::types::ChartAxisLabelOptions> {
+    ) -> ::std::option::Option<&crate::types::ChartAxisLabelOptions> {
         self.secondary_y_axis_label_options.as_ref()
     }
     /// <p>The options that determine the default presentation of all line series in <code>LineChartVisual</code>.</p>
     pub fn default_series_settings(
         &self,
-    ) -> std::option::Option<&crate::types::LineChartDefaultSeriesSettings> {
+    ) -> ::std::option::Option<&crate::types::LineChartDefaultSeriesSettings> {
         self.default_series_settings.as_ref()
     }
     /// <p>The series item configuration of a line chart.</p>
-    pub fn series(&self) -> std::option::Option<&[crate::types::SeriesItem]> {
+    pub fn series(&self) -> ::std::option::Option<&[crate::types::SeriesItem]> {
         self.series.as_deref()
     }
     /// <p>The legend configuration of a line chart.</p>
-    pub fn legend(&self) -> std::option::Option<&crate::types::LegendOptions> {
+    pub fn legend(&self) -> ::std::option::Option<&crate::types::LegendOptions> {
         self.legend.as_ref()
     }
     /// <p>The data label configuration of a line chart.</p>
-    pub fn data_labels(&self) -> std::option::Option<&crate::types::DataLabelOptions> {
+    pub fn data_labels(&self) -> ::std::option::Option<&crate::types::DataLabelOptions> {
         self.data_labels.as_ref()
     }
     /// <p>The reference lines configuration of a line chart.</p>
-    pub fn reference_lines(&self) -> std::option::Option<&[crate::types::ReferenceLine]> {
+    pub fn reference_lines(&self) -> ::std::option::Option<&[crate::types::ReferenceLine]> {
         self.reference_lines.as_deref()
     }
     /// <p>The tooltip configuration of a line chart.</p>
-    pub fn tooltip(&self) -> std::option::Option<&crate::types::TooltipOptions> {
+    pub fn tooltip(&self) -> ::std::option::Option<&crate::types::TooltipOptions> {
         self.tooltip.as_ref()
     }
     /// <p>The default configuration of a line chart's contribution analysis.</p>
     pub fn contribution_analysis_defaults(
         &self,
-    ) -> std::option::Option<&[crate::types::ContributionAnalysisDefault]> {
+    ) -> ::std::option::Option<&[crate::types::ContributionAnalysisDefault]> {
         self.contribution_analysis_defaults.as_deref()
     }
     /// <p>The visual palette configuration of a line chart.</p>
-    pub fn visual_palette(&self) -> std::option::Option<&crate::types::VisualPalette> {
+    pub fn visual_palette(&self) -> ::std::option::Option<&crate::types::VisualPalette> {
         self.visual_palette.as_ref()
     }
 }
@@ -173,58 +176,60 @@ impl LineChartConfiguration {
 
 /// A builder for [`LineChartConfiguration`](crate::types::LineChartConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LineChartConfigurationBuilder {
-    pub(crate) field_wells: std::option::Option<crate::types::LineChartFieldWells>,
-    pub(crate) sort_configuration: std::option::Option<crate::types::LineChartSortConfiguration>,
+    pub(crate) field_wells: ::std::option::Option<crate::types::LineChartFieldWells>,
+    pub(crate) sort_configuration: ::std::option::Option<crate::types::LineChartSortConfiguration>,
     pub(crate) forecast_configurations:
-        std::option::Option<std::vec::Vec<crate::types::ForecastConfiguration>>,
-    pub(crate) r#type: std::option::Option<crate::types::LineChartType>,
-    pub(crate) small_multiples_options: std::option::Option<crate::types::SmallMultiplesOptions>,
-    pub(crate) x_axis_display_options: std::option::Option<crate::types::AxisDisplayOptions>,
-    pub(crate) x_axis_label_options: std::option::Option<crate::types::ChartAxisLabelOptions>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ForecastConfiguration>>,
+    pub(crate) r#type: ::std::option::Option<crate::types::LineChartType>,
+    pub(crate) small_multiples_options: ::std::option::Option<crate::types::SmallMultiplesOptions>,
+    pub(crate) x_axis_display_options: ::std::option::Option<crate::types::AxisDisplayOptions>,
+    pub(crate) x_axis_label_options: ::std::option::Option<crate::types::ChartAxisLabelOptions>,
     pub(crate) primary_y_axis_display_options:
-        std::option::Option<crate::types::LineSeriesAxisDisplayOptions>,
+        ::std::option::Option<crate::types::LineSeriesAxisDisplayOptions>,
     pub(crate) primary_y_axis_label_options:
-        std::option::Option<crate::types::ChartAxisLabelOptions>,
+        ::std::option::Option<crate::types::ChartAxisLabelOptions>,
     pub(crate) secondary_y_axis_display_options:
-        std::option::Option<crate::types::LineSeriesAxisDisplayOptions>,
+        ::std::option::Option<crate::types::LineSeriesAxisDisplayOptions>,
     pub(crate) secondary_y_axis_label_options:
-        std::option::Option<crate::types::ChartAxisLabelOptions>,
+        ::std::option::Option<crate::types::ChartAxisLabelOptions>,
     pub(crate) default_series_settings:
-        std::option::Option<crate::types::LineChartDefaultSeriesSettings>,
-    pub(crate) series: std::option::Option<std::vec::Vec<crate::types::SeriesItem>>,
-    pub(crate) legend: std::option::Option<crate::types::LegendOptions>,
-    pub(crate) data_labels: std::option::Option<crate::types::DataLabelOptions>,
-    pub(crate) reference_lines: std::option::Option<std::vec::Vec<crate::types::ReferenceLine>>,
-    pub(crate) tooltip: std::option::Option<crate::types::TooltipOptions>,
+        ::std::option::Option<crate::types::LineChartDefaultSeriesSettings>,
+    pub(crate) series: ::std::option::Option<::std::vec::Vec<crate::types::SeriesItem>>,
+    pub(crate) legend: ::std::option::Option<crate::types::LegendOptions>,
+    pub(crate) data_labels: ::std::option::Option<crate::types::DataLabelOptions>,
+    pub(crate) reference_lines: ::std::option::Option<::std::vec::Vec<crate::types::ReferenceLine>>,
+    pub(crate) tooltip: ::std::option::Option<crate::types::TooltipOptions>,
     pub(crate) contribution_analysis_defaults:
-        std::option::Option<std::vec::Vec<crate::types::ContributionAnalysisDefault>>,
-    pub(crate) visual_palette: std::option::Option<crate::types::VisualPalette>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ContributionAnalysisDefault>>,
+    pub(crate) visual_palette: ::std::option::Option<crate::types::VisualPalette>,
 }
 impl LineChartConfigurationBuilder {
     /// <p>The field well configuration of a line chart.</p>
     pub fn field_wells(mut self, input: crate::types::LineChartFieldWells) -> Self {
-        self.field_wells = Some(input);
+        self.field_wells = ::std::option::Option::Some(input);
         self
     }
     /// <p>The field well configuration of a line chart.</p>
     pub fn set_field_wells(
         mut self,
-        input: std::option::Option<crate::types::LineChartFieldWells>,
+        input: ::std::option::Option<crate::types::LineChartFieldWells>,
     ) -> Self {
         self.field_wells = input;
         self
     }
     /// <p>The sort configuration of a line chart.</p>
     pub fn sort_configuration(mut self, input: crate::types::LineChartSortConfiguration) -> Self {
-        self.sort_configuration = Some(input);
+        self.sort_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The sort configuration of a line chart.</p>
     pub fn set_sort_configuration(
         mut self,
-        input: std::option::Option<crate::types::LineChartSortConfiguration>,
+        input: ::std::option::Option<crate::types::LineChartSortConfiguration>,
     ) -> Self {
         self.sort_configuration = input;
         self
@@ -237,62 +242,62 @@ impl LineChartConfigurationBuilder {
     pub fn forecast_configurations(mut self, input: crate::types::ForecastConfiguration) -> Self {
         let mut v = self.forecast_configurations.unwrap_or_default();
         v.push(input);
-        self.forecast_configurations = Some(v);
+        self.forecast_configurations = ::std::option::Option::Some(v);
         self
     }
     /// <p>The forecast configuration of a line chart.</p>
     pub fn set_forecast_configurations(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ForecastConfiguration>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ForecastConfiguration>>,
     ) -> Self {
         self.forecast_configurations = input;
         self
     }
     /// <p>Determines the type of the line chart.</p>
     pub fn r#type(mut self, input: crate::types::LineChartType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Determines the type of the line chart.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::LineChartType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::LineChartType>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The small multiples setup for the visual.</p>
     pub fn small_multiples_options(mut self, input: crate::types::SmallMultiplesOptions) -> Self {
-        self.small_multiples_options = Some(input);
+        self.small_multiples_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The small multiples setup for the visual.</p>
     pub fn set_small_multiples_options(
         mut self,
-        input: std::option::Option<crate::types::SmallMultiplesOptions>,
+        input: ::std::option::Option<crate::types::SmallMultiplesOptions>,
     ) -> Self {
         self.small_multiples_options = input;
         self
     }
     /// <p>The options that determine the presentation of the x-axis.</p>
     pub fn x_axis_display_options(mut self, input: crate::types::AxisDisplayOptions) -> Self {
-        self.x_axis_display_options = Some(input);
+        self.x_axis_display_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The options that determine the presentation of the x-axis.</p>
     pub fn set_x_axis_display_options(
         mut self,
-        input: std::option::Option<crate::types::AxisDisplayOptions>,
+        input: ::std::option::Option<crate::types::AxisDisplayOptions>,
     ) -> Self {
         self.x_axis_display_options = input;
         self
     }
     /// <p>The options that determine the presentation of the x-axis label.</p>
     pub fn x_axis_label_options(mut self, input: crate::types::ChartAxisLabelOptions) -> Self {
-        self.x_axis_label_options = Some(input);
+        self.x_axis_label_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The options that determine the presentation of the x-axis label.</p>
     pub fn set_x_axis_label_options(
         mut self,
-        input: std::option::Option<crate::types::ChartAxisLabelOptions>,
+        input: ::std::option::Option<crate::types::ChartAxisLabelOptions>,
     ) -> Self {
         self.x_axis_label_options = input;
         self
@@ -302,13 +307,13 @@ impl LineChartConfigurationBuilder {
         mut self,
         input: crate::types::LineSeriesAxisDisplayOptions,
     ) -> Self {
-        self.primary_y_axis_display_options = Some(input);
+        self.primary_y_axis_display_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The series axis configuration of a line chart.</p>
     pub fn set_primary_y_axis_display_options(
         mut self,
-        input: std::option::Option<crate::types::LineSeriesAxisDisplayOptions>,
+        input: ::std::option::Option<crate::types::LineSeriesAxisDisplayOptions>,
     ) -> Self {
         self.primary_y_axis_display_options = input;
         self
@@ -318,13 +323,13 @@ impl LineChartConfigurationBuilder {
         mut self,
         input: crate::types::ChartAxisLabelOptions,
     ) -> Self {
-        self.primary_y_axis_label_options = Some(input);
+        self.primary_y_axis_label_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The options that determine the presentation of the y-axis label.</p>
     pub fn set_primary_y_axis_label_options(
         mut self,
-        input: std::option::Option<crate::types::ChartAxisLabelOptions>,
+        input: ::std::option::Option<crate::types::ChartAxisLabelOptions>,
     ) -> Self {
         self.primary_y_axis_label_options = input;
         self
@@ -334,13 +339,13 @@ impl LineChartConfigurationBuilder {
         mut self,
         input: crate::types::LineSeriesAxisDisplayOptions,
     ) -> Self {
-        self.secondary_y_axis_display_options = Some(input);
+        self.secondary_y_axis_display_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The series axis configuration of a line chart.</p>
     pub fn set_secondary_y_axis_display_options(
         mut self,
-        input: std::option::Option<crate::types::LineSeriesAxisDisplayOptions>,
+        input: ::std::option::Option<crate::types::LineSeriesAxisDisplayOptions>,
     ) -> Self {
         self.secondary_y_axis_display_options = input;
         self
@@ -350,13 +355,13 @@ impl LineChartConfigurationBuilder {
         mut self,
         input: crate::types::ChartAxisLabelOptions,
     ) -> Self {
-        self.secondary_y_axis_label_options = Some(input);
+        self.secondary_y_axis_label_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The options that determine the presentation of the secondary y-axis label.</p>
     pub fn set_secondary_y_axis_label_options(
         mut self,
-        input: std::option::Option<crate::types::ChartAxisLabelOptions>,
+        input: ::std::option::Option<crate::types::ChartAxisLabelOptions>,
     ) -> Self {
         self.secondary_y_axis_label_options = input;
         self
@@ -366,13 +371,13 @@ impl LineChartConfigurationBuilder {
         mut self,
         input: crate::types::LineChartDefaultSeriesSettings,
     ) -> Self {
-        self.default_series_settings = Some(input);
+        self.default_series_settings = ::std::option::Option::Some(input);
         self
     }
     /// <p>The options that determine the default presentation of all line series in <code>LineChartVisual</code>.</p>
     pub fn set_default_series_settings(
         mut self,
-        input: std::option::Option<crate::types::LineChartDefaultSeriesSettings>,
+        input: ::std::option::Option<crate::types::LineChartDefaultSeriesSettings>,
     ) -> Self {
         self.default_series_settings = input;
         self
@@ -385,36 +390,36 @@ impl LineChartConfigurationBuilder {
     pub fn series(mut self, input: crate::types::SeriesItem) -> Self {
         let mut v = self.series.unwrap_or_default();
         v.push(input);
-        self.series = Some(v);
+        self.series = ::std::option::Option::Some(v);
         self
     }
     /// <p>The series item configuration of a line chart.</p>
     pub fn set_series(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SeriesItem>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SeriesItem>>,
     ) -> Self {
         self.series = input;
         self
     }
     /// <p>The legend configuration of a line chart.</p>
     pub fn legend(mut self, input: crate::types::LegendOptions) -> Self {
-        self.legend = Some(input);
+        self.legend = ::std::option::Option::Some(input);
         self
     }
     /// <p>The legend configuration of a line chart.</p>
-    pub fn set_legend(mut self, input: std::option::Option<crate::types::LegendOptions>) -> Self {
+    pub fn set_legend(mut self, input: ::std::option::Option<crate::types::LegendOptions>) -> Self {
         self.legend = input;
         self
     }
     /// <p>The data label configuration of a line chart.</p>
     pub fn data_labels(mut self, input: crate::types::DataLabelOptions) -> Self {
-        self.data_labels = Some(input);
+        self.data_labels = ::std::option::Option::Some(input);
         self
     }
     /// <p>The data label configuration of a line chart.</p>
     pub fn set_data_labels(
         mut self,
-        input: std::option::Option<crate::types::DataLabelOptions>,
+        input: ::std::option::Option<crate::types::DataLabelOptions>,
     ) -> Self {
         self.data_labels = input;
         self
@@ -427,24 +432,27 @@ impl LineChartConfigurationBuilder {
     pub fn reference_lines(mut self, input: crate::types::ReferenceLine) -> Self {
         let mut v = self.reference_lines.unwrap_or_default();
         v.push(input);
-        self.reference_lines = Some(v);
+        self.reference_lines = ::std::option::Option::Some(v);
         self
     }
     /// <p>The reference lines configuration of a line chart.</p>
     pub fn set_reference_lines(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ReferenceLine>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ReferenceLine>>,
     ) -> Self {
         self.reference_lines = input;
         self
     }
     /// <p>The tooltip configuration of a line chart.</p>
     pub fn tooltip(mut self, input: crate::types::TooltipOptions) -> Self {
-        self.tooltip = Some(input);
+        self.tooltip = ::std::option::Option::Some(input);
         self
     }
     /// <p>The tooltip configuration of a line chart.</p>
-    pub fn set_tooltip(mut self, input: std::option::Option<crate::types::TooltipOptions>) -> Self {
+    pub fn set_tooltip(
+        mut self,
+        input: ::std::option::Option<crate::types::TooltipOptions>,
+    ) -> Self {
         self.tooltip = input;
         self
     }
@@ -459,26 +467,26 @@ impl LineChartConfigurationBuilder {
     ) -> Self {
         let mut v = self.contribution_analysis_defaults.unwrap_or_default();
         v.push(input);
-        self.contribution_analysis_defaults = Some(v);
+        self.contribution_analysis_defaults = ::std::option::Option::Some(v);
         self
     }
     /// <p>The default configuration of a line chart's contribution analysis.</p>
     pub fn set_contribution_analysis_defaults(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ContributionAnalysisDefault>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ContributionAnalysisDefault>>,
     ) -> Self {
         self.contribution_analysis_defaults = input;
         self
     }
     /// <p>The visual palette configuration of a line chart.</p>
     pub fn visual_palette(mut self, input: crate::types::VisualPalette) -> Self {
-        self.visual_palette = Some(input);
+        self.visual_palette = ::std::option::Option::Some(input);
         self
     }
     /// <p>The visual palette configuration of a line chart.</p>
     pub fn set_visual_palette(
         mut self,
-        input: std::option::Option<crate::types::VisualPalette>,
+        input: ::std::option::Option<crate::types::VisualPalette>,
     ) -> Self {
         self.visual_palette = input;
         self

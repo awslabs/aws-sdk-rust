@@ -2,22 +2,22 @@
 
 /// <p>Summary of the membership details of an <code>AppInstanceUser</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AppInstanceUserMembershipSummary {
     /// <p>The type of <code>ChannelMembership</code>.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::ChannelMembershipType>,
+    pub r#type: ::std::option::Option<crate::types::ChannelMembershipType>,
     /// <p>The time at which a message was last read.</p>
     #[doc(hidden)]
-    pub read_marker_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub read_marker_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl AppInstanceUserMembershipSummary {
     /// <p>The type of <code>ChannelMembership</code>.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::ChannelMembershipType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ChannelMembershipType> {
         self.r#type.as_ref()
     }
     /// <p>The time at which a message was last read.</p>
-    pub fn read_marker_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn read_marker_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.read_marker_timestamp.as_ref()
     }
 }
@@ -30,34 +30,36 @@ impl AppInstanceUserMembershipSummary {
 
 /// A builder for [`AppInstanceUserMembershipSummary`](crate::types::AppInstanceUserMembershipSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AppInstanceUserMembershipSummaryBuilder {
-    pub(crate) r#type: std::option::Option<crate::types::ChannelMembershipType>,
-    pub(crate) read_marker_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) r#type: ::std::option::Option<crate::types::ChannelMembershipType>,
+    pub(crate) read_marker_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl AppInstanceUserMembershipSummaryBuilder {
     /// <p>The type of <code>ChannelMembership</code>.</p>
     pub fn r#type(mut self, input: crate::types::ChannelMembershipType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of <code>ChannelMembership</code>.</p>
     pub fn set_type(
         mut self,
-        input: std::option::Option<crate::types::ChannelMembershipType>,
+        input: ::std::option::Option<crate::types::ChannelMembershipType>,
     ) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The time at which a message was last read.</p>
-    pub fn read_marker_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.read_marker_timestamp = Some(input);
+    pub fn read_marker_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.read_marker_timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time at which a message was last read.</p>
     pub fn set_read_marker_timestamp(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.read_marker_timestamp = input;
         self

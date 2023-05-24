@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopTransformJob`](crate::operation::stop_transform_job::builders::StopTransformJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`transform_job_name(impl Into<String>)`](crate::operation::stop_transform_job::builders::StopTransformJobFluentBuilder::transform_job_name) / [`set_transform_job_name(Option<String>)`](crate::operation::stop_transform_job::builders::StopTransformJobFluentBuilder::set_transform_job_name): <p>The name of the batch transform job to stop.</p>
+    ///   - [`transform_job_name(impl ::std::convert::Into<String>)`](crate::operation::stop_transform_job::builders::StopTransformJobFluentBuilder::transform_job_name) / [`set_transform_job_name(Option<String>)`](crate::operation::stop_transform_job::builders::StopTransformJobFluentBuilder::set_transform_job_name): <p>The name of the batch transform job to stop.</p>
     /// - On success, responds with [`StopTransformJobOutput`](crate::operation::stop_transform_job::StopTransformJobOutput)
     /// - On failure, responds with [`SdkError<StopTransformJobError>`](crate::operation::stop_transform_job::StopTransformJobError)
     pub fn stop_transform_job(

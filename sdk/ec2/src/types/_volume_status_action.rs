@@ -2,36 +2,36 @@
 
 /// <p>Describes a volume status operation code.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VolumeStatusAction {
     /// <p>The code identifying the operation, for example, <code>enable-volume-io</code>.</p>
     #[doc(hidden)]
-    pub code: std::option::Option<std::string::String>,
+    pub code: ::std::option::Option<::std::string::String>,
     /// <p>A description of the operation.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the event associated with this operation.</p>
     #[doc(hidden)]
-    pub event_id: std::option::Option<std::string::String>,
+    pub event_id: ::std::option::Option<::std::string::String>,
     /// <p>The event type associated with this operation.</p>
     #[doc(hidden)]
-    pub event_type: std::option::Option<std::string::String>,
+    pub event_type: ::std::option::Option<::std::string::String>,
 }
 impl VolumeStatusAction {
     /// <p>The code identifying the operation, for example, <code>enable-volume-io</code>.</p>
-    pub fn code(&self) -> std::option::Option<&str> {
+    pub fn code(&self) -> ::std::option::Option<&str> {
         self.code.as_deref()
     }
     /// <p>A description of the operation.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The ID of the event associated with this operation.</p>
-    pub fn event_id(&self) -> std::option::Option<&str> {
+    pub fn event_id(&self) -> ::std::option::Option<&str> {
         self.event_id.as_deref()
     }
     /// <p>The event type associated with this operation.</p>
-    pub fn event_type(&self) -> std::option::Option<&str> {
+    pub fn event_type(&self) -> ::std::option::Option<&str> {
         self.event_type.as_deref()
     }
 }
@@ -44,51 +44,53 @@ impl VolumeStatusAction {
 
 /// A builder for [`VolumeStatusAction`](crate::types::VolumeStatusAction).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VolumeStatusActionBuilder {
-    pub(crate) code: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) event_id: std::option::Option<std::string::String>,
-    pub(crate) event_type: std::option::Option<std::string::String>,
+    pub(crate) code: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) event_id: ::std::option::Option<::std::string::String>,
+    pub(crate) event_type: ::std::option::Option<::std::string::String>,
 }
 impl VolumeStatusActionBuilder {
     /// <p>The code identifying the operation, for example, <code>enable-volume-io</code>.</p>
-    pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
-        self.code = Some(input.into());
+    pub fn code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The code identifying the operation, for example, <code>enable-volume-io</code>.</p>
-    pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.code = input;
         self
     }
     /// <p>A description of the operation.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of the operation.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>The ID of the event associated with this operation.</p>
-    pub fn event_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.event_id = Some(input.into());
+    pub fn event_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.event_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the event associated with this operation.</p>
-    pub fn set_event_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_event_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_id = input;
         self
     }
     /// <p>The event type associated with this operation.</p>
-    pub fn event_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.event_type = Some(input.into());
+    pub fn event_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.event_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The event type associated with this operation.</p>
-    pub fn set_event_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_event_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_type = input;
         self
     }

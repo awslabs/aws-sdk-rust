@@ -2,35 +2,35 @@
 
 /// <p> Provides details about rules in a rule group. A rule identifies web requests that you want to allow, block, or count. Each rule includes one top-level Statement that WAF uses to identify matching web requests, and parameters that govern how WAF handles them. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsWafv2RulesDetails {
     /// <p> The action that WAF should take on a web request when it matches the rule statement. Settings at the web ACL level can override the rule action setting. </p>
     #[doc(hidden)]
-    pub action: std::option::Option<crate::types::AwsWafv2RulesActionDetails>,
+    pub action: ::std::option::Option<crate::types::AwsWafv2RulesActionDetails>,
     /// <p> The name of the rule. </p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p> The action to use in the place of the action that results from the rule group evaluation. </p>
     #[doc(hidden)]
-    pub override_action: std::option::Option<std::string::String>,
+    pub override_action: ::std::option::Option<::std::string::String>,
     /// <p> If you define more than one Rule in a WebACL, WAF evaluates each request against the Rules in order based on the value of <code>Priority</code>. WAF processes rules with lower priority first. The priorities don't need to be consecutive, but they must all be different. </p>
     #[doc(hidden)]
     pub priority: i32,
     /// <p> Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
     #[doc(hidden)]
-    pub visibility_config: std::option::Option<crate::types::AwsWafv2VisibilityConfigDetails>,
+    pub visibility_config: ::std::option::Option<crate::types::AwsWafv2VisibilityConfigDetails>,
 }
 impl AwsWafv2RulesDetails {
     /// <p> The action that WAF should take on a web request when it matches the rule statement. Settings at the web ACL level can override the rule action setting. </p>
-    pub fn action(&self) -> std::option::Option<&crate::types::AwsWafv2RulesActionDetails> {
+    pub fn action(&self) -> ::std::option::Option<&crate::types::AwsWafv2RulesActionDetails> {
         self.action.as_ref()
     }
     /// <p> The name of the rule. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p> The action to use in the place of the action that results from the rule group evaluation. </p>
-    pub fn override_action(&self) -> std::option::Option<&str> {
+    pub fn override_action(&self) -> ::std::option::Option<&str> {
         self.override_action.as_deref()
     }
     /// <p> If you define more than one Rule in a WebACL, WAF evaluates each request against the Rules in order based on the value of <code>Priority</code>. WAF processes rules with lower priority first. The priorities don't need to be consecutive, but they must all be different. </p>
@@ -40,7 +40,7 @@ impl AwsWafv2RulesDetails {
     /// <p> Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
     pub fn visibility_config(
         &self,
-    ) -> std::option::Option<&crate::types::AwsWafv2VisibilityConfigDetails> {
+    ) -> ::std::option::Option<&crate::types::AwsWafv2VisibilityConfigDetails> {
         self.visibility_config.as_ref()
     }
 }
@@ -53,56 +53,64 @@ impl AwsWafv2RulesDetails {
 
 /// A builder for [`AwsWafv2RulesDetails`](crate::types::AwsWafv2RulesDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsWafv2RulesDetailsBuilder {
-    pub(crate) action: std::option::Option<crate::types::AwsWafv2RulesActionDetails>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) override_action: std::option::Option<std::string::String>,
-    pub(crate) priority: std::option::Option<i32>,
+    pub(crate) action: ::std::option::Option<crate::types::AwsWafv2RulesActionDetails>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) override_action: ::std::option::Option<::std::string::String>,
+    pub(crate) priority: ::std::option::Option<i32>,
     pub(crate) visibility_config:
-        std::option::Option<crate::types::AwsWafv2VisibilityConfigDetails>,
+        ::std::option::Option<crate::types::AwsWafv2VisibilityConfigDetails>,
 }
 impl AwsWafv2RulesDetailsBuilder {
     /// <p> The action that WAF should take on a web request when it matches the rule statement. Settings at the web ACL level can override the rule action setting. </p>
     pub fn action(mut self, input: crate::types::AwsWafv2RulesActionDetails) -> Self {
-        self.action = Some(input);
+        self.action = ::std::option::Option::Some(input);
         self
     }
     /// <p> The action that WAF should take on a web request when it matches the rule statement. Settings at the web ACL level can override the rule action setting. </p>
     pub fn set_action(
         mut self,
-        input: std::option::Option<crate::types::AwsWafv2RulesActionDetails>,
+        input: ::std::option::Option<crate::types::AwsWafv2RulesActionDetails>,
     ) -> Self {
         self.action = input;
         self
     }
     /// <p> The name of the rule. </p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the rule. </p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p> The action to use in the place of the action that results from the rule group evaluation. </p>
-    pub fn override_action(mut self, input: impl Into<std::string::String>) -> Self {
-        self.override_action = Some(input.into());
+    pub fn override_action(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.override_action = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The action to use in the place of the action that results from the rule group evaluation. </p>
-    pub fn set_override_action(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_override_action(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.override_action = input;
         self
     }
     /// <p> If you define more than one Rule in a WebACL, WAF evaluates each request against the Rules in order based on the value of <code>Priority</code>. WAF processes rules with lower priority first. The priorities don't need to be consecutive, but they must all be different. </p>
     pub fn priority(mut self, input: i32) -> Self {
-        self.priority = Some(input);
+        self.priority = ::std::option::Option::Some(input);
         self
     }
     /// <p> If you define more than one Rule in a WebACL, WAF evaluates each request against the Rules in order based on the value of <code>Priority</code>. WAF processes rules with lower priority first. The priorities don't need to be consecutive, but they must all be different. </p>
-    pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
         self.priority = input;
         self
     }
@@ -111,13 +119,13 @@ impl AwsWafv2RulesDetailsBuilder {
         mut self,
         input: crate::types::AwsWafv2VisibilityConfigDetails,
     ) -> Self {
-        self.visibility_config = Some(input);
+        self.visibility_config = ::std::option::Option::Some(input);
         self
     }
     /// <p> Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
     pub fn set_visibility_config(
         mut self,
-        input: std::option::Option<crate::types::AwsWafv2VisibilityConfigDetails>,
+        input: ::std::option::Option<crate::types::AwsWafv2VisibilityConfigDetails>,
     ) -> Self {
         self.visibility_config = input;
         self

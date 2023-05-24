@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum EncryptionOption {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum EncryptionOption {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for EncryptionOption {
+impl ::std::convert::From<&str> for EncryptionOption {
     fn from(s: &str) -> Self {
         match s {
             "CSE_KMS" => EncryptionOption::CseKms,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for EncryptionOption {
         }
     }
 }
-impl std::str::FromStr for EncryptionOption {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for EncryptionOption {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EncryptionOption::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(EncryptionOption::from(s))
     }
 }
 impl EncryptionOption {
@@ -91,7 +91,7 @@ impl EncryptionOption {
         &["CSE_KMS", "SSE_KMS", "SSE_S3"]
     }
 }
-impl AsRef<str> for EncryptionOption {
+impl ::std::convert::AsRef<str> for EncryptionOption {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

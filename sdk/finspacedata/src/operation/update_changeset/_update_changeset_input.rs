@@ -2,25 +2,26 @@
 
 /// Request to update an existing changeset.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateChangesetInput {
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     #[doc(hidden)]
-    pub client_token: std::option::Option<std::string::String>,
+    pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the FinSpace Dataset in which the Changeset is created.</p>
     #[doc(hidden)]
-    pub dataset_id: std::option::Option<std::string::String>,
+    pub dataset_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the Changeset to update.</p>
     #[doc(hidden)]
-    pub changeset_id: std::option::Option<std::string::String>,
+    pub changeset_id: ::std::option::Option<::std::string::String>,
     /// <p>Options that define the location of the data being ingested (<code>s3SourcePath</code>) and the source of the changeset (<code>sourceType</code>).</p>
     /// <p>Both <code>s3SourcePath</code> and <code>sourceType</code> are required attributes.</p>
     /// <p>Here is an example of how you could specify the <code>sourceParams</code>:</p>
     /// <p> <code> "sourceParams": { "s3SourcePath": "s3://finspace-landing-us-east-2-bk7gcfvitndqa6ebnvys4d/scratch/wr5hh8pwkpqqkxa4sxrmcw/ingestion/equity.csv", "sourceType": "S3" } </code> </p>
     /// <p>The S3 path that you specify must allow the FinSpace role access. To do that, you first need to configure the IAM policy on S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/finspace/latest/data-api/fs-using-the-finspace-api.html#access-s3-buckets">Loading data from an Amazon S3 Bucket using the FinSpace API</a>section.</p>
     #[doc(hidden)]
-    pub source_params:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub source_params: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>Options that define the structure of the source file(s) including the format type (<code>formatType</code>), header row (<code>withHeader</code>), data separation character (<code>separator</code>) and the type of compression (<code>compression</code>). </p>
     /// <p> <code>formatType</code> is a required attribute and can have the following values: </p>
     /// <ul>
@@ -35,20 +36,21 @@ pub struct UpdateChangesetInput {
     /// <p> <code> { "withHeader": "true", "separator": "," } </code> </p>
     /// <p> For more information about supported file formats, see <a href="https://docs.aws.amazon.com/finspace/latest/userguide/supported-data-types.html">Supported Data Types and File Formats</a> in the FinSpace User Guide.</p>
     #[doc(hidden)]
-    pub format_params:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub format_params: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl UpdateChangesetInput {
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
     /// <p>The unique identifier for the FinSpace Dataset in which the Changeset is created.</p>
-    pub fn dataset_id(&self) -> std::option::Option<&str> {
+    pub fn dataset_id(&self) -> ::std::option::Option<&str> {
         self.dataset_id.as_deref()
     }
     /// <p>The unique identifier for the Changeset to update.</p>
-    pub fn changeset_id(&self) -> std::option::Option<&str> {
+    pub fn changeset_id(&self) -> ::std::option::Option<&str> {
         self.changeset_id.as_deref()
     }
     /// <p>Options that define the location of the data being ingested (<code>s3SourcePath</code>) and the source of the changeset (<code>sourceType</code>).</p>
@@ -58,8 +60,9 @@ impl UpdateChangesetInput {
     /// <p>The S3 path that you specify must allow the FinSpace role access. To do that, you first need to configure the IAM policy on S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/finspace/latest/data-api/fs-using-the-finspace-api.html#access-s3-buckets">Loading data from an Amazon S3 Bucket using the FinSpace API</a>section.</p>
     pub fn source_params(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.source_params.as_ref()
     }
     /// <p>Options that define the structure of the source file(s) including the format type (<code>formatType</code>), header row (<code>withHeader</code>), data separation character (<code>separator</code>) and the type of compression (<code>compression</code>). </p>
@@ -77,8 +80,9 @@ impl UpdateChangesetInput {
     /// <p> For more information about supported file formats, see <a href="https://docs.aws.amazon.com/finspace/latest/userguide/supported-data-types.html">Supported Data Types and File Formats</a> in the FinSpace User Guide.</p>
     pub fn format_params(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.format_params.as_ref()
     }
 }
@@ -91,44 +95,48 @@ impl UpdateChangesetInput {
 
 /// A builder for [`UpdateChangesetInput`](crate::operation::update_changeset::UpdateChangesetInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateChangesetInputBuilder {
-    pub(crate) client_token: std::option::Option<std::string::String>,
-    pub(crate) dataset_id: std::option::Option<std::string::String>,
-    pub(crate) changeset_id: std::option::Option<std::string::String>,
-    pub(crate) source_params:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) format_params:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) client_token: ::std::option::Option<::std::string::String>,
+    pub(crate) dataset_id: ::std::option::Option<::std::string::String>,
+    pub(crate) changeset_id: ::std::option::Option<::std::string::String>,
+    pub(crate) source_params: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) format_params: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl UpdateChangesetInputBuilder {
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
-    pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.client_token = Some(input.into());
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.client_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
-    pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
     }
     /// <p>The unique identifier for the FinSpace Dataset in which the Changeset is created.</p>
-    pub fn dataset_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.dataset_id = Some(input.into());
+    pub fn dataset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.dataset_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the FinSpace Dataset in which the Changeset is created.</p>
-    pub fn set_dataset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_dataset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataset_id = input;
         self
     }
     /// <p>The unique identifier for the Changeset to update.</p>
-    pub fn changeset_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.changeset_id = Some(input.into());
+    pub fn changeset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.changeset_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the Changeset to update.</p>
-    pub fn set_changeset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_changeset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.changeset_id = input;
         self
     }
@@ -143,12 +151,12 @@ impl UpdateChangesetInputBuilder {
     /// <p>The S3 path that you specify must allow the FinSpace role access. To do that, you first need to configure the IAM policy on S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/finspace/latest/data-api/fs-using-the-finspace-api.html#access-s3-buckets">Loading data from an Amazon S3 Bucket using the FinSpace API</a>section.</p>
     pub fn source_params(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.source_params.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.source_params = Some(hash_map);
+        self.source_params = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Options that define the location of the data being ingested (<code>s3SourcePath</code>) and the source of the changeset (<code>sourceType</code>).</p>
@@ -158,8 +166,8 @@ impl UpdateChangesetInputBuilder {
     /// <p>The S3 path that you specify must allow the FinSpace role access. To do that, you first need to configure the IAM policy on S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/finspace/latest/data-api/fs-using-the-finspace-api.html#access-s3-buckets">Loading data from an Amazon S3 Bucket using the FinSpace API</a>section.</p>
     pub fn set_source_params(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.source_params = input;
@@ -184,12 +192,12 @@ impl UpdateChangesetInputBuilder {
     /// <p> For more information about supported file formats, see <a href="https://docs.aws.amazon.com/finspace/latest/userguide/supported-data-types.html">Supported Data Types and File Formats</a> in the FinSpace User Guide.</p>
     pub fn format_params(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.format_params.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.format_params = Some(hash_map);
+        self.format_params = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Options that define the structure of the source file(s) including the format type (<code>formatType</code>), header row (<code>withHeader</code>), data separation character (<code>separator</code>) and the type of compression (<code>compression</code>). </p>
@@ -207,8 +215,8 @@ impl UpdateChangesetInputBuilder {
     /// <p> For more information about supported file formats, see <a href="https://docs.aws.amazon.com/finspace/latest/userguide/supported-data-types.html">Supported Data Types and File Formats</a> in the FinSpace User Guide.</p>
     pub fn set_format_params(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.format_params = input;
@@ -217,11 +225,11 @@ impl UpdateChangesetInputBuilder {
     /// Consumes the builder and constructs a [`UpdateChangesetInput`](crate::operation::update_changeset::UpdateChangesetInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::update_changeset::UpdateChangesetInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::update_changeset::UpdateChangesetInput {
+        ::std::result::Result::Ok(crate::operation::update_changeset::UpdateChangesetInput {
             client_token: self.client_token,
             dataset_id: self.dataset_id,
             changeset_id: self.changeset_id,

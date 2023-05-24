@@ -2,29 +2,29 @@
 
 /// <p>Specifies a filter expression.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FilterExpression {
     /// <p>The type of operation to perform in the expression.</p>
     #[doc(hidden)]
-    pub operation: std::option::Option<crate::types::FilterOperation>,
+    pub operation: ::std::option::Option<crate::types::FilterOperation>,
     /// <p>Whether the expression is to be negated.</p>
     #[doc(hidden)]
-    pub negated: std::option::Option<bool>,
+    pub negated: ::std::option::Option<bool>,
     /// <p>A list of filter values.</p>
     #[doc(hidden)]
-    pub values: std::option::Option<std::vec::Vec<crate::types::FilterValue>>,
+    pub values: ::std::option::Option<::std::vec::Vec<crate::types::FilterValue>>,
 }
 impl FilterExpression {
     /// <p>The type of operation to perform in the expression.</p>
-    pub fn operation(&self) -> std::option::Option<&crate::types::FilterOperation> {
+    pub fn operation(&self) -> ::std::option::Option<&crate::types::FilterOperation> {
         self.operation.as_ref()
     }
     /// <p>Whether the expression is to be negated.</p>
-    pub fn negated(&self) -> std::option::Option<bool> {
+    pub fn negated(&self) -> ::std::option::Option<bool> {
         self.negated
     }
     /// <p>A list of filter values.</p>
-    pub fn values(&self) -> std::option::Option<&[crate::types::FilterValue]> {
+    pub fn values(&self) -> ::std::option::Option<&[crate::types::FilterValue]> {
         self.values.as_deref()
     }
 }
@@ -37,33 +37,35 @@ impl FilterExpression {
 
 /// A builder for [`FilterExpression`](crate::types::FilterExpression).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FilterExpressionBuilder {
-    pub(crate) operation: std::option::Option<crate::types::FilterOperation>,
-    pub(crate) negated: std::option::Option<bool>,
-    pub(crate) values: std::option::Option<std::vec::Vec<crate::types::FilterValue>>,
+    pub(crate) operation: ::std::option::Option<crate::types::FilterOperation>,
+    pub(crate) negated: ::std::option::Option<bool>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec<crate::types::FilterValue>>,
 }
 impl FilterExpressionBuilder {
     /// <p>The type of operation to perform in the expression.</p>
     pub fn operation(mut self, input: crate::types::FilterOperation) -> Self {
-        self.operation = Some(input);
+        self.operation = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of operation to perform in the expression.</p>
     pub fn set_operation(
         mut self,
-        input: std::option::Option<crate::types::FilterOperation>,
+        input: ::std::option::Option<crate::types::FilterOperation>,
     ) -> Self {
         self.operation = input;
         self
     }
     /// <p>Whether the expression is to be negated.</p>
     pub fn negated(mut self, input: bool) -> Self {
-        self.negated = Some(input);
+        self.negated = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether the expression is to be negated.</p>
-    pub fn set_negated(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_negated(mut self, input: ::std::option::Option<bool>) -> Self {
         self.negated = input;
         self
     }
@@ -75,13 +77,13 @@ impl FilterExpressionBuilder {
     pub fn values(mut self, input: crate::types::FilterValue) -> Self {
         let mut v = self.values.unwrap_or_default();
         v.push(input);
-        self.values = Some(v);
+        self.values = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of filter values.</p>
     pub fn set_values(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::FilterValue>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::FilterValue>>,
     ) -> Self {
         self.values = input;
         self

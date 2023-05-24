@@ -6,29 +6,29 @@ pub use crate::operation::get_object_attributes::_get_object_attributes_input::G
 /// Fluent builder constructing a request to `GetObjectAttributes`.
 ///
 /// <p>Retrieves attributes within a facet that are associated with an object.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetObjectAttributesFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::get_object_attributes::builders::GetObjectAttributesInputBuilder,
 }
 impl GetObjectAttributesFluentBuilder {
     /// Creates a new `GetObjectAttributes`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::get_object_attributes::GetObjectAttributes,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::get_object_attributes::GetObjectAttributesError,
         >,
     > {
@@ -36,30 +36,33 @@ impl GetObjectAttributesFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_object_attributes::GetObjectAttributesOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::get_object_attributes::GetObjectAttributesError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,21 +75,27 @@ impl GetObjectAttributesFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_object_attributes::GetObjectAttributesOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::get_object_attributes::GetObjectAttributesError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides.</p>
-    pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn directory_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.directory_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides.</p>
-    pub fn set_directory_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_directory_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_directory_arn(input);
         self
     }
@@ -98,7 +107,7 @@ impl GetObjectAttributesFluentBuilder {
     /// <p>Reference that identifies the object whose attributes will be retrieved.</p>
     pub fn set_object_reference(
         mut self,
-        input: std::option::Option<crate::types::ObjectReference>,
+        input: ::std::option::Option<crate::types::ObjectReference>,
     ) -> Self {
         self.inner = self.inner.set_object_reference(input);
         self
@@ -111,7 +120,7 @@ impl GetObjectAttributesFluentBuilder {
     /// <p>The consistency level at which to retrieve the attributes on an object.</p>
     pub fn set_consistency_level(
         mut self,
-        input: std::option::Option<crate::types::ConsistencyLevel>,
+        input: ::std::option::Option<crate::types::ConsistencyLevel>,
     ) -> Self {
         self.inner = self.inner.set_consistency_level(input);
         self
@@ -124,7 +133,7 @@ impl GetObjectAttributesFluentBuilder {
     /// <p>Identifier for the facet whose attributes will be retrieved. See <code>SchemaFacet</code> for details.</p>
     pub fn set_schema_facet(
         mut self,
-        input: std::option::Option<crate::types::SchemaFacet>,
+        input: ::std::option::Option<crate::types::SchemaFacet>,
     ) -> Self {
         self.inner = self.inner.set_schema_facet(input);
         self
@@ -134,14 +143,17 @@ impl GetObjectAttributesFluentBuilder {
     /// To override the contents of this collection use [`set_attribute_names`](Self::set_attribute_names).
     ///
     /// <p>List of attribute names whose values will be retrieved.</p>
-    pub fn attribute_names(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn attribute_names(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.attribute_names(input.into());
         self
     }
     /// <p>List of attribute names whose values will be retrieved.</p>
     pub fn set_attribute_names(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_attribute_names(input);
         self

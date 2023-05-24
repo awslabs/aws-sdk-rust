@@ -37,13 +37,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum RespondsTo {
     #[allow(missing_docs)] // documentation missing in model
@@ -51,7 +51,7 @@ pub enum RespondsTo {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for RespondsTo {
+impl ::std::convert::From<&str> for RespondsTo {
     fn from(s: &str) -> Self {
         match s {
             "STANDARD_MESSAGES" => RespondsTo::StandardMessages,
@@ -59,11 +59,11 @@ impl std::convert::From<&str> for RespondsTo {
         }
     }
 }
-impl std::str::FromStr for RespondsTo {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for RespondsTo {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RespondsTo::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(RespondsTo::from(s))
     }
 }
 impl RespondsTo {
@@ -79,7 +79,7 @@ impl RespondsTo {
         &["STANDARD_MESSAGES"]
     }
 }
-impl AsRef<str> for RespondsTo {
+impl ::std::convert::AsRef<str> for RespondsTo {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -2,64 +2,64 @@
 
 /// <p> Detailed information about an AWS Mobile Hub project. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProjectDetails {
     /// <p> Name of the project. </p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p> Unique project identifier. </p>
     #[doc(hidden)]
-    pub project_id: std::option::Option<std::string::String>,
+    pub project_id: ::std::option::Option<::std::string::String>,
     /// <p> Default region to use for AWS resource creation in the AWS Mobile Hub project. </p>
     #[doc(hidden)]
-    pub region: std::option::Option<std::string::String>,
+    pub region: ::std::option::Option<::std::string::String>,
     /// <p> Synchronization state for a project. </p>
     #[doc(hidden)]
-    pub state: std::option::Option<crate::types::ProjectState>,
+    pub state: ::std::option::Option<crate::types::ProjectState>,
     /// <p> Date the project was created. </p>
     #[doc(hidden)]
-    pub created_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> Date of the last modification of the project. </p>
     #[doc(hidden)]
-    pub last_updated_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_updated_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> Website URL for this project in the AWS Mobile Hub console. </p>
     #[doc(hidden)]
-    pub console_url: std::option::Option<std::string::String>,
+    pub console_url: ::std::option::Option<::std::string::String>,
     /// <p> List of AWS resources associated with a project. </p>
     #[doc(hidden)]
-    pub resources: std::option::Option<std::vec::Vec<crate::types::Resource>>,
+    pub resources: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
 }
 impl ProjectDetails {
     /// <p> Name of the project. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p> Unique project identifier. </p>
-    pub fn project_id(&self) -> std::option::Option<&str> {
+    pub fn project_id(&self) -> ::std::option::Option<&str> {
         self.project_id.as_deref()
     }
     /// <p> Default region to use for AWS resource creation in the AWS Mobile Hub project. </p>
-    pub fn region(&self) -> std::option::Option<&str> {
+    pub fn region(&self) -> ::std::option::Option<&str> {
         self.region.as_deref()
     }
     /// <p> Synchronization state for a project. </p>
-    pub fn state(&self) -> std::option::Option<&crate::types::ProjectState> {
+    pub fn state(&self) -> ::std::option::Option<&crate::types::ProjectState> {
         self.state.as_ref()
     }
     /// <p> Date the project was created. </p>
-    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p> Date of the last modification of the project. </p>
-    pub fn last_updated_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_date.as_ref()
     }
     /// <p> Website URL for this project in the AWS Mobile Hub console. </p>
-    pub fn console_url(&self) -> std::option::Option<&str> {
+    pub fn console_url(&self) -> ::std::option::Option<&str> {
         self.console_url.as_deref()
     }
     /// <p> List of AWS resources associated with a project. </p>
-    pub fn resources(&self) -> std::option::Option<&[crate::types::Resource]> {
+    pub fn resources(&self) -> ::std::option::Option<&[crate::types::Resource]> {
         self.resources.as_deref()
     }
 }
@@ -72,91 +72,93 @@ impl ProjectDetails {
 
 /// A builder for [`ProjectDetails`](crate::types::ProjectDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ProjectDetailsBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) project_id: std::option::Option<std::string::String>,
-    pub(crate) region: std::option::Option<std::string::String>,
-    pub(crate) state: std::option::Option<crate::types::ProjectState>,
-    pub(crate) created_date: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_updated_date: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) console_url: std::option::Option<std::string::String>,
-    pub(crate) resources: std::option::Option<std::vec::Vec<crate::types::Resource>>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) project_id: ::std::option::Option<::std::string::String>,
+    pub(crate) region: ::std::option::Option<::std::string::String>,
+    pub(crate) state: ::std::option::Option<crate::types::ProjectState>,
+    pub(crate) created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_updated_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) console_url: ::std::option::Option<::std::string::String>,
+    pub(crate) resources: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
 }
 impl ProjectDetailsBuilder {
     /// <p> Name of the project. </p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Name of the project. </p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p> Unique project identifier. </p>
-    pub fn project_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.project_id = Some(input.into());
+    pub fn project_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.project_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Unique project identifier. </p>
-    pub fn set_project_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_project_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.project_id = input;
         self
     }
     /// <p> Default region to use for AWS resource creation in the AWS Mobile Hub project. </p>
-    pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
-        self.region = Some(input.into());
+    pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Default region to use for AWS resource creation in the AWS Mobile Hub project. </p>
-    pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region = input;
         self
     }
     /// <p> Synchronization state for a project. </p>
     pub fn state(mut self, input: crate::types::ProjectState) -> Self {
-        self.state = Some(input);
+        self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p> Synchronization state for a project. </p>
-    pub fn set_state(mut self, input: std::option::Option<crate::types::ProjectState>) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::ProjectState>) -> Self {
         self.state = input;
         self
     }
     /// <p> Date the project was created. </p>
-    pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_date = Some(input);
+    pub fn created_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_date = ::std::option::Option::Some(input);
         self
     }
     /// <p> Date the project was created. </p>
     pub fn set_created_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_date = input;
         self
     }
     /// <p> Date of the last modification of the project. </p>
-    pub fn last_updated_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_updated_date = Some(input);
+    pub fn last_updated_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_updated_date = ::std::option::Option::Some(input);
         self
     }
     /// <p> Date of the last modification of the project. </p>
     pub fn set_last_updated_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_updated_date = input;
         self
     }
     /// <p> Website URL for this project in the AWS Mobile Hub console. </p>
-    pub fn console_url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.console_url = Some(input.into());
+    pub fn console_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.console_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Website URL for this project in the AWS Mobile Hub console. </p>
-    pub fn set_console_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_console_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.console_url = input;
         self
     }
@@ -168,13 +170,13 @@ impl ProjectDetailsBuilder {
     pub fn resources(mut self, input: crate::types::Resource) -> Self {
         let mut v = self.resources.unwrap_or_default();
         v.push(input);
-        self.resources = Some(v);
+        self.resources = ::std::option::Option::Some(v);
         self
     }
     /// <p> List of AWS resources associated with a project. </p>
     pub fn set_resources(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Resource>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
     ) -> Self {
         self.resources = input;
         self

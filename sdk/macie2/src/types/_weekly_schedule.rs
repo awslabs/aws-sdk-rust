@@ -2,15 +2,15 @@
 
 /// <p>Specifies a weekly recurrence pattern for running a classification job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WeeklySchedule {
     /// <p>The day of the week when Amazon Macie runs the job.</p>
     #[doc(hidden)]
-    pub day_of_week: std::option::Option<crate::types::DayOfWeek>,
+    pub day_of_week: ::std::option::Option<crate::types::DayOfWeek>,
 }
 impl WeeklySchedule {
     /// <p>The day of the week when Amazon Macie runs the job.</p>
-    pub fn day_of_week(&self) -> std::option::Option<&crate::types::DayOfWeek> {
+    pub fn day_of_week(&self) -> ::std::option::Option<&crate::types::DayOfWeek> {
         self.day_of_week.as_ref()
     }
 }
@@ -23,18 +23,23 @@ impl WeeklySchedule {
 
 /// A builder for [`WeeklySchedule`](crate::types::WeeklySchedule).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct WeeklyScheduleBuilder {
-    pub(crate) day_of_week: std::option::Option<crate::types::DayOfWeek>,
+    pub(crate) day_of_week: ::std::option::Option<crate::types::DayOfWeek>,
 }
 impl WeeklyScheduleBuilder {
     /// <p>The day of the week when Amazon Macie runs the job.</p>
     pub fn day_of_week(mut self, input: crate::types::DayOfWeek) -> Self {
-        self.day_of_week = Some(input);
+        self.day_of_week = ::std::option::Option::Some(input);
         self
     }
     /// <p>The day of the week when Amazon Macie runs the job.</p>
-    pub fn set_day_of_week(mut self, input: std::option::Option<crate::types::DayOfWeek>) -> Self {
+    pub fn set_day_of_week(
+        mut self,
+        input: ::std::option::Option<crate::types::DayOfWeek>,
+    ) -> Self {
         self.day_of_week = input;
         self
     }

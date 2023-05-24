@@ -2,22 +2,22 @@
 
 /// <p>Contains the list of errors from a code evaluation response.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluateCodeErrorDetail {
     /// <p>The error payload.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
     /// <p>Contains the list of <code>CodeError</code> objects.</p>
     #[doc(hidden)]
-    pub code_errors: std::option::Option<std::vec::Vec<crate::types::CodeError>>,
+    pub code_errors: ::std::option::Option<::std::vec::Vec<crate::types::CodeError>>,
 }
 impl EvaluateCodeErrorDetail {
     /// <p>The error payload.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
     /// <p>Contains the list of <code>CodeError</code> objects.</p>
-    pub fn code_errors(&self) -> std::option::Option<&[crate::types::CodeError]> {
+    pub fn code_errors(&self) -> ::std::option::Option<&[crate::types::CodeError]> {
         self.code_errors.as_deref()
     }
 }
@@ -30,19 +30,21 @@ impl EvaluateCodeErrorDetail {
 
 /// A builder for [`EvaluateCodeErrorDetail`](crate::types::EvaluateCodeErrorDetail).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EvaluateCodeErrorDetailBuilder {
-    pub(crate) message: std::option::Option<std::string::String>,
-    pub(crate) code_errors: std::option::Option<std::vec::Vec<crate::types::CodeError>>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
+    pub(crate) code_errors: ::std::option::Option<::std::vec::Vec<crate::types::CodeError>>,
 }
 impl EvaluateCodeErrorDetailBuilder {
     /// <p>The error payload.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The error payload.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
@@ -54,13 +56,13 @@ impl EvaluateCodeErrorDetailBuilder {
     pub fn code_errors(mut self, input: crate::types::CodeError) -> Self {
         let mut v = self.code_errors.unwrap_or_default();
         v.push(input);
-        self.code_errors = Some(v);
+        self.code_errors = ::std::option::Option::Some(v);
         self
     }
     /// <p>Contains the list of <code>CodeError</code> objects.</p>
     pub fn set_code_errors(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CodeError>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::CodeError>>,
     ) -> Self {
         self.code_errors = input;
         self

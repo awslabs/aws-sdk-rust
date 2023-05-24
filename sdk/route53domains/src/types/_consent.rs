@@ -2,14 +2,14 @@
 
 /// <p> Customer's consent for the owner change request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Consent {
     /// <p> Maximum amount the customer agreed to accept. </p>
     #[doc(hidden)]
     pub max_price: f64,
     /// <p> Currency for the <code>MaxPrice</code>. </p>
     #[doc(hidden)]
-    pub currency: std::option::Option<std::string::String>,
+    pub currency: ::std::option::Option<::std::string::String>,
 }
 impl Consent {
     /// <p> Maximum amount the customer agreed to accept. </p>
@@ -17,7 +17,7 @@ impl Consent {
         self.max_price
     }
     /// <p> Currency for the <code>MaxPrice</code>. </p>
-    pub fn currency(&self) -> std::option::Option<&str> {
+    pub fn currency(&self) -> ::std::option::Option<&str> {
         self.currency.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl Consent {
 
 /// A builder for [`Consent`](crate::types::Consent).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ConsentBuilder {
-    pub(crate) max_price: std::option::Option<f64>,
-    pub(crate) currency: std::option::Option<std::string::String>,
+    pub(crate) max_price: ::std::option::Option<f64>,
+    pub(crate) currency: ::std::option::Option<::std::string::String>,
 }
 impl ConsentBuilder {
     /// <p> Maximum amount the customer agreed to accept. </p>
     pub fn max_price(mut self, input: f64) -> Self {
-        self.max_price = Some(input);
+        self.max_price = ::std::option::Option::Some(input);
         self
     }
     /// <p> Maximum amount the customer agreed to accept. </p>
-    pub fn set_max_price(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_max_price(mut self, input: ::std::option::Option<f64>) -> Self {
         self.max_price = input;
         self
     }
     /// <p> Currency for the <code>MaxPrice</code>. </p>
-    pub fn currency(mut self, input: impl Into<std::string::String>) -> Self {
-        self.currency = Some(input.into());
+    pub fn currency(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.currency = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Currency for the <code>MaxPrice</code>. </p>
-    pub fn set_currency(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_currency(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.currency = input;
         self
     }

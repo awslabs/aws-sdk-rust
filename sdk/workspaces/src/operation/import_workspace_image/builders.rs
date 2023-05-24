@@ -6,29 +6,29 @@ pub use crate::operation::import_workspace_image::_import_workspace_image_input:
 /// Fluent builder constructing a request to `ImportWorkspaceImage`.
 ///
 /// <p>Imports the specified Windows 10 or 11 Bring Your Own License (BYOL) image into Amazon WorkSpaces. The image must be an already licensed Amazon EC2 image that is in your Amazon Web Services account, and you must own the image. For more information about creating BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html"> Bring Your Own Windows Desktop Licenses</a>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ImportWorkspaceImageFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::import_workspace_image::builders::ImportWorkspaceImageInputBuilder,
 }
 impl ImportWorkspaceImageFluentBuilder {
     /// Creates a new `ImportWorkspaceImage`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::import_workspace_image::ImportWorkspaceImage,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::import_workspace_image::ImportWorkspaceImageError,
         >,
     > {
@@ -36,30 +36,33 @@ impl ImportWorkspaceImageFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::import_workspace_image::ImportWorkspaceImageOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::import_workspace_image::ImportWorkspaceImageError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,21 +75,21 @@ impl ImportWorkspaceImageFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::import_workspace_image::ImportWorkspaceImageOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::import_workspace_image::ImportWorkspaceImageError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The identifier of the EC2 image.</p>
-    pub fn ec2_image_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn ec2_image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ec2_image_id(input.into());
         self
     }
     /// <p>The identifier of the EC2 image.</p>
-    pub fn set_ec2_image_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ec2_image_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ec2_image_id(input);
         self
     }
@@ -107,30 +110,33 @@ impl ImportWorkspaceImageFluentBuilder {
     /// </note>
     pub fn set_ingestion_process(
         mut self,
-        input: std::option::Option<crate::types::WorkspaceImageIngestionProcess>,
+        input: ::std::option::Option<crate::types::WorkspaceImageIngestionProcess>,
     ) -> Self {
         self.inner = self.inner.set_ingestion_process(input);
         self
     }
     /// <p>The name of the WorkSpace image.</p>
-    pub fn image_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn image_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.image_name(input.into());
         self
     }
     /// <p>The name of the WorkSpace image.</p>
-    pub fn set_image_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_image_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_image_name(input);
         self
     }
     /// <p>The description of the WorkSpace image.</p>
-    pub fn image_description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn image_description(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.image_description(input.into());
         self
     }
     /// <p>The description of the WorkSpace image.</p>
     pub fn set_image_description(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_image_description(input);
         self
@@ -147,7 +153,7 @@ impl ImportWorkspaceImageFluentBuilder {
     /// <p>The tags. Each WorkSpaces resource can have a maximum of 50 tags.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
@@ -174,7 +180,7 @@ impl ImportWorkspaceImageFluentBuilder {
     /// </note>
     pub fn set_applications(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Application>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Application>>,
     ) -> Self {
         self.inner = self.inner.set_applications(input);
         self

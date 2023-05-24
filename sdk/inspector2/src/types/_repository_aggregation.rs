@@ -2,29 +2,29 @@
 
 /// <p>The details that define an aggregation based on repository.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RepositoryAggregation {
     /// <p>The names of repositories to aggregate findings on.</p>
     #[doc(hidden)]
-    pub repositories: std::option::Option<std::vec::Vec<crate::types::StringFilter>>,
+    pub repositories: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>The order to sort results by.</p>
     #[doc(hidden)]
-    pub sort_order: std::option::Option<crate::types::SortOrder>,
+    pub sort_order: ::std::option::Option<crate::types::SortOrder>,
     /// <p>The value to sort results by.</p>
     #[doc(hidden)]
-    pub sort_by: std::option::Option<crate::types::RepositorySortBy>,
+    pub sort_by: ::std::option::Option<crate::types::RepositorySortBy>,
 }
 impl RepositoryAggregation {
     /// <p>The names of repositories to aggregate findings on.</p>
-    pub fn repositories(&self) -> std::option::Option<&[crate::types::StringFilter]> {
+    pub fn repositories(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
         self.repositories.as_deref()
     }
     /// <p>The order to sort results by.</p>
-    pub fn sort_order(&self) -> std::option::Option<&crate::types::SortOrder> {
+    pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SortOrder> {
         self.sort_order.as_ref()
     }
     /// <p>The value to sort results by.</p>
-    pub fn sort_by(&self) -> std::option::Option<&crate::types::RepositorySortBy> {
+    pub fn sort_by(&self) -> ::std::option::Option<&crate::types::RepositorySortBy> {
         self.sort_by.as_ref()
     }
 }
@@ -37,11 +37,13 @@ impl RepositoryAggregation {
 
 /// A builder for [`RepositoryAggregation`](crate::types::RepositoryAggregation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RepositoryAggregationBuilder {
-    pub(crate) repositories: std::option::Option<std::vec::Vec<crate::types::StringFilter>>,
-    pub(crate) sort_order: std::option::Option<crate::types::SortOrder>,
-    pub(crate) sort_by: std::option::Option<crate::types::RepositorySortBy>,
+    pub(crate) repositories: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub(crate) sort_order: ::std::option::Option<crate::types::SortOrder>,
+    pub(crate) sort_by: ::std::option::Option<crate::types::RepositorySortBy>,
 }
 impl RepositoryAggregationBuilder {
     /// Appends an item to `repositories`.
@@ -52,36 +54,36 @@ impl RepositoryAggregationBuilder {
     pub fn repositories(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.repositories.unwrap_or_default();
         v.push(input);
-        self.repositories = Some(v);
+        self.repositories = ::std::option::Option::Some(v);
         self
     }
     /// <p>The names of repositories to aggregate findings on.</p>
     pub fn set_repositories(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::StringFilter>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     ) -> Self {
         self.repositories = input;
         self
     }
     /// <p>The order to sort results by.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
-        self.sort_order = Some(input);
+        self.sort_order = ::std::option::Option::Some(input);
         self
     }
     /// <p>The order to sort results by.</p>
-    pub fn set_sort_order(mut self, input: std::option::Option<crate::types::SortOrder>) -> Self {
+    pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.sort_order = input;
         self
     }
     /// <p>The value to sort results by.</p>
     pub fn sort_by(mut self, input: crate::types::RepositorySortBy) -> Self {
-        self.sort_by = Some(input);
+        self.sort_by = ::std::option::Option::Some(input);
         self
     }
     /// <p>The value to sort results by.</p>
     pub fn set_sort_by(
         mut self,
-        input: std::option::Option<crate::types::RepositorySortBy>,
+        input: ::std::option::Option<crate::types::RepositorySortBy>,
     ) -> Self {
         self.sort_by = input;
         self

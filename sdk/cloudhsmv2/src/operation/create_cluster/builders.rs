@@ -6,56 +6,59 @@ pub use crate::operation::create_cluster::_create_cluster_input::CreateClusterIn
 /// Fluent builder constructing a request to `CreateCluster`.
 ///
 /// <p>Creates a new AWS CloudHSM cluster.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateClusterFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_cluster::builders::CreateClusterInputBuilder,
 }
 impl CreateClusterFluentBuilder {
     /// Creates a new `CreateCluster`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_cluster::CreateCluster,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_cluster::CreateClusterError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_cluster::CreateClusterError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_cluster::CreateClusterOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_cluster::CreateClusterError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_cluster::CreateClusterError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,9 +71,9 @@ impl CreateClusterFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_cluster::CreateClusterOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_cluster::CreateClusterError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_cluster::CreateClusterError>,
     > {
         self.send_middleware().await
     }
@@ -82,28 +85,34 @@ impl CreateClusterFluentBuilder {
     /// <p>A policy that defines how the service retains backups.</p>
     pub fn set_backup_retention_policy(
         mut self,
-        input: std::option::Option<crate::types::BackupRetentionPolicy>,
+        input: ::std::option::Option<crate::types::BackupRetentionPolicy>,
     ) -> Self {
         self.inner = self.inner.set_backup_retention_policy(input);
         self
     }
     /// <p>The type of HSM to use in the cluster. Currently the only allowed value is <code>hsm1.medium</code>.</p>
-    pub fn hsm_type(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn hsm_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.hsm_type(input.into());
         self
     }
     /// <p>The type of HSM to use in the cluster. Currently the only allowed value is <code>hsm1.medium</code>.</p>
-    pub fn set_hsm_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_hsm_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_hsm_type(input);
         self
     }
     /// <p>The identifier (ID) of the cluster backup to restore. Use this value to restore the cluster from a backup instead of creating a new cluster. To find the backup ID, use <code>DescribeBackups</code>.</p>
-    pub fn source_backup_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn source_backup_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.source_backup_id(input.into());
         self
     }
     /// <p>The identifier (ID) of the cluster backup to restore. Use this value to restore the cluster from a backup instead of creating a new cluster. To find the backup ID, use <code>DescribeBackups</code>.</p>
-    pub fn set_source_backup_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_source_backup_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_source_backup_id(input);
         self
     }
@@ -116,7 +125,7 @@ impl CreateClusterFluentBuilder {
     /// <li> <p>All subnets must be in the same virtual private cloud (VPC).</p> </li>
     /// <li> <p>You can specify only one subnet per Availability Zone.</p> </li>
     /// </ul>
-    pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn subnet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subnet_ids(input.into());
         self
     }
@@ -127,7 +136,7 @@ impl CreateClusterFluentBuilder {
     /// </ul>
     pub fn set_subnet_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_subnet_ids(input);
         self
@@ -144,7 +153,7 @@ impl CreateClusterFluentBuilder {
     /// <p>Tags to apply to the CloudHSM cluster during creation.</p>
     pub fn set_tag_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tag_list(input);
         self

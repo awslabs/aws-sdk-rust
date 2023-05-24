@@ -2,15 +2,15 @@
 
 /// <p>Details of what case data is published through the case event stream.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CaseEventIncludedData {
     /// <p>List of field identifiers.</p>
     #[doc(hidden)]
-    pub fields: std::option::Option<std::vec::Vec<crate::types::FieldIdentifier>>,
+    pub fields: ::std::option::Option<::std::vec::Vec<crate::types::FieldIdentifier>>,
 }
 impl CaseEventIncludedData {
     /// <p>List of field identifiers.</p>
-    pub fn fields(&self) -> std::option::Option<&[crate::types::FieldIdentifier]> {
+    pub fn fields(&self) -> ::std::option::Option<&[crate::types::FieldIdentifier]> {
         self.fields.as_deref()
     }
 }
@@ -23,9 +23,11 @@ impl CaseEventIncludedData {
 
 /// A builder for [`CaseEventIncludedData`](crate::types::CaseEventIncludedData).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CaseEventIncludedDataBuilder {
-    pub(crate) fields: std::option::Option<std::vec::Vec<crate::types::FieldIdentifier>>,
+    pub(crate) fields: ::std::option::Option<::std::vec::Vec<crate::types::FieldIdentifier>>,
 }
 impl CaseEventIncludedDataBuilder {
     /// Appends an item to `fields`.
@@ -36,13 +38,13 @@ impl CaseEventIncludedDataBuilder {
     pub fn fields(mut self, input: crate::types::FieldIdentifier) -> Self {
         let mut v = self.fields.unwrap_or_default();
         v.push(input);
-        self.fields = Some(v);
+        self.fields = ::std::option::Option::Some(v);
         self
     }
     /// <p>List of field identifiers.</p>
     pub fn set_fields(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::FieldIdentifier>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::FieldIdentifier>>,
     ) -> Self {
         self.fields = input;
         self

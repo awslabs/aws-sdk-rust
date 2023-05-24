@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteRoom`](crate::operation::delete_room::builders::DeleteRoomFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::operation::delete_room::builders::DeleteRoomFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::delete_room::builders::DeleteRoomFluentBuilder::set_account_id): <p>The Amazon Chime account ID.</p>
-    ///   - [`room_id(impl Into<String>)`](crate::operation::delete_room::builders::DeleteRoomFluentBuilder::room_id) / [`set_room_id(Option<String>)`](crate::operation::delete_room::builders::DeleteRoomFluentBuilder::set_room_id): <p>The chat room ID.</p>
+    ///   - [`account_id(impl ::std::convert::Into<String>)`](crate::operation::delete_room::builders::DeleteRoomFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::delete_room::builders::DeleteRoomFluentBuilder::set_account_id): <p>The Amazon Chime account ID.</p>
+    ///   - [`room_id(impl ::std::convert::Into<String>)`](crate::operation::delete_room::builders::DeleteRoomFluentBuilder::room_id) / [`set_room_id(Option<String>)`](crate::operation::delete_room::builders::DeleteRoomFluentBuilder::set_room_id): <p>The chat room ID.</p>
     /// - On success, responds with [`DeleteRoomOutput`](crate::operation::delete_room::DeleteRoomOutput)
     /// - On failure, responds with [`SdkError<DeleteRoomError>`](crate::operation::delete_room::DeleteRoomError)
     pub fn delete_room(&self) -> crate::operation::delete_room::builders::DeleteRoomFluentBuilder {

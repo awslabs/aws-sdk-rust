@@ -2,11 +2,11 @@
 
 /// An empty object that indicates that the configuration set was successfully created.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateConfigurationSetOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for CreateConfigurationSetOutput {
+impl ::aws_http::request_id::RequestId for CreateConfigurationSetOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -22,7 +22,9 @@ impl CreateConfigurationSetOutput {
 
 /// A builder for [`CreateConfigurationSetOutput`](crate::operation::create_configuration_set::CreateConfigurationSetOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateConfigurationSetOutputBuilder {
     _request_id: Option<String>,
 }

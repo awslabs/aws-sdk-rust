@@ -2,15 +2,15 @@
 
 /// <p>Defines the details of a high availability configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HighAvailabilityConfig {
     /// <p>The number of instances in a high availability configuration.</p>
     #[doc(hidden)]
-    pub desired_capacity: std::option::Option<i32>,
+    pub desired_capacity: ::std::option::Option<i32>,
 }
 impl HighAvailabilityConfig {
     /// <p>The number of instances in a high availability configuration.</p>
-    pub fn desired_capacity(&self) -> std::option::Option<i32> {
+    pub fn desired_capacity(&self) -> ::std::option::Option<i32> {
         self.desired_capacity
     }
 }
@@ -23,18 +23,20 @@ impl HighAvailabilityConfig {
 
 /// A builder for [`HighAvailabilityConfig`](crate::types::HighAvailabilityConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct HighAvailabilityConfigBuilder {
-    pub(crate) desired_capacity: std::option::Option<i32>,
+    pub(crate) desired_capacity: ::std::option::Option<i32>,
 }
 impl HighAvailabilityConfigBuilder {
     /// <p>The number of instances in a high availability configuration.</p>
     pub fn desired_capacity(mut self, input: i32) -> Self {
-        self.desired_capacity = Some(input);
+        self.desired_capacity = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of instances in a high availability configuration.</p>
-    pub fn set_desired_capacity(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_desired_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.desired_capacity = input;
         self
     }

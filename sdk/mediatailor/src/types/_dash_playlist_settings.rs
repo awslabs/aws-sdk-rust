@@ -2,7 +2,7 @@
 
 /// <p>Dash manifest configuration parameters.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DashPlaylistSettings {
     /// <p>The total duration (in seconds) of each manifest. Minimum value: <code>30</code> seconds. Maximum value: <code>3600</code> seconds.</p>
     #[doc(hidden)]
@@ -44,53 +44,55 @@ impl DashPlaylistSettings {
 
 /// A builder for [`DashPlaylistSettings`](crate::types::DashPlaylistSettings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DashPlaylistSettingsBuilder {
-    pub(crate) manifest_window_seconds: std::option::Option<i32>,
-    pub(crate) min_buffer_time_seconds: std::option::Option<i32>,
-    pub(crate) min_update_period_seconds: std::option::Option<i32>,
-    pub(crate) suggested_presentation_delay_seconds: std::option::Option<i32>,
+    pub(crate) manifest_window_seconds: ::std::option::Option<i32>,
+    pub(crate) min_buffer_time_seconds: ::std::option::Option<i32>,
+    pub(crate) min_update_period_seconds: ::std::option::Option<i32>,
+    pub(crate) suggested_presentation_delay_seconds: ::std::option::Option<i32>,
 }
 impl DashPlaylistSettingsBuilder {
     /// <p>The total duration (in seconds) of each manifest. Minimum value: <code>30</code> seconds. Maximum value: <code>3600</code> seconds.</p>
     pub fn manifest_window_seconds(mut self, input: i32) -> Self {
-        self.manifest_window_seconds = Some(input);
+        self.manifest_window_seconds = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total duration (in seconds) of each manifest. Minimum value: <code>30</code> seconds. Maximum value: <code>3600</code> seconds.</p>
-    pub fn set_manifest_window_seconds(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_manifest_window_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.manifest_window_seconds = input;
         self
     }
     /// <p>Minimum amount of content (measured in seconds) that a player must keep available in the buffer. Minimum value: <code>2</code> seconds. Maximum value: <code>60</code> seconds.</p>
     pub fn min_buffer_time_seconds(mut self, input: i32) -> Self {
-        self.min_buffer_time_seconds = Some(input);
+        self.min_buffer_time_seconds = ::std::option::Option::Some(input);
         self
     }
     /// <p>Minimum amount of content (measured in seconds) that a player must keep available in the buffer. Minimum value: <code>2</code> seconds. Maximum value: <code>60</code> seconds.</p>
-    pub fn set_min_buffer_time_seconds(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_min_buffer_time_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.min_buffer_time_seconds = input;
         self
     }
     /// <p>Minimum amount of time (in seconds) that the player should wait before requesting updates to the manifest. Minimum value: <code>2</code> seconds. Maximum value: <code>60</code> seconds.</p>
     pub fn min_update_period_seconds(mut self, input: i32) -> Self {
-        self.min_update_period_seconds = Some(input);
+        self.min_update_period_seconds = ::std::option::Option::Some(input);
         self
     }
     /// <p>Minimum amount of time (in seconds) that the player should wait before requesting updates to the manifest. Minimum value: <code>2</code> seconds. Maximum value: <code>60</code> seconds.</p>
-    pub fn set_min_update_period_seconds(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_min_update_period_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.min_update_period_seconds = input;
         self
     }
     /// <p>Amount of time (in seconds) that the player should be from the live point at the end of the manifest. Minimum value: <code>2</code> seconds. Maximum value: <code>60</code> seconds.</p>
     pub fn suggested_presentation_delay_seconds(mut self, input: i32) -> Self {
-        self.suggested_presentation_delay_seconds = Some(input);
+        self.suggested_presentation_delay_seconds = ::std::option::Option::Some(input);
         self
     }
     /// <p>Amount of time (in seconds) that the player should be from the live point at the end of the manifest. Minimum value: <code>2</code> seconds. Maximum value: <code>60</code> seconds.</p>
     pub fn set_suggested_presentation_delay_seconds(
         mut self,
-        input: std::option::Option<i32>,
+        input: ::std::option::Option<i32>,
     ) -> Self {
         self.suggested_presentation_delay_seconds = input;
         self

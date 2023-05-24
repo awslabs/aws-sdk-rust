@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateDomain`](crate::operation::create_domain::builders::CreateDomainFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_name(impl Into<String>)`](crate::operation::create_domain::builders::CreateDomainFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::create_domain::builders::CreateDomainFluentBuilder::set_domain_name): <p>The domain name to manage (e.g., <code>example.com</code>).</p>
+    ///   - [`domain_name(impl ::std::convert::Into<String>)`](crate::operation::create_domain::builders::CreateDomainFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::create_domain::builders::CreateDomainFluentBuilder::set_domain_name): <p>The domain name to manage (e.g., <code>example.com</code>).</p>
     ///   - [`tags(Vec<Tag>)`](crate::operation::create_domain::builders::CreateDomainFluentBuilder::tags) / [`set_tags(Option<Vec<Tag>>)`](crate::operation::create_domain::builders::CreateDomainFluentBuilder::set_tags): <p>The tag keys and optional values to add to the resource during create.</p>  <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
     /// - On success, responds with [`CreateDomainOutput`](crate::operation::create_domain::CreateDomainOutput) with field(s):
     ///   - [`operation(Option<Operation>)`](crate::operation::create_domain::CreateDomainOutput::operation): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>

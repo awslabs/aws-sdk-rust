@@ -2,43 +2,43 @@
 
 /// <p>Describes a rule.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TopicRuleListItem {
     /// <p>The rule ARN.</p>
     #[doc(hidden)]
-    pub rule_arn: std::option::Option<std::string::String>,
+    pub rule_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the rule.</p>
     #[doc(hidden)]
-    pub rule_name: std::option::Option<std::string::String>,
+    pub rule_name: ::std::option::Option<::std::string::String>,
     /// <p>The pattern for the topic names that apply.</p>
     #[doc(hidden)]
-    pub topic_pattern: std::option::Option<std::string::String>,
+    pub topic_pattern: ::std::option::Option<::std::string::String>,
     /// <p>The date and time the rule was created.</p>
     #[doc(hidden)]
-    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Specifies whether the rule is disabled.</p>
     #[doc(hidden)]
-    pub rule_disabled: std::option::Option<bool>,
+    pub rule_disabled: ::std::option::Option<bool>,
 }
 impl TopicRuleListItem {
     /// <p>The rule ARN.</p>
-    pub fn rule_arn(&self) -> std::option::Option<&str> {
+    pub fn rule_arn(&self) -> ::std::option::Option<&str> {
         self.rule_arn.as_deref()
     }
     /// <p>The name of the rule.</p>
-    pub fn rule_name(&self) -> std::option::Option<&str> {
+    pub fn rule_name(&self) -> ::std::option::Option<&str> {
         self.rule_name.as_deref()
     }
     /// <p>The pattern for the topic names that apply.</p>
-    pub fn topic_pattern(&self) -> std::option::Option<&str> {
+    pub fn topic_pattern(&self) -> ::std::option::Option<&str> {
         self.topic_pattern.as_deref()
     }
     /// <p>The date and time the rule was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>Specifies whether the rule is disabled.</p>
-    pub fn rule_disabled(&self) -> std::option::Option<bool> {
+    pub fn rule_disabled(&self) -> ::std::option::Option<bool> {
         self.rule_disabled
     }
 }
@@ -51,65 +51,73 @@ impl TopicRuleListItem {
 
 /// A builder for [`TopicRuleListItem`](crate::types::TopicRuleListItem).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TopicRuleListItemBuilder {
-    pub(crate) rule_arn: std::option::Option<std::string::String>,
-    pub(crate) rule_name: std::option::Option<std::string::String>,
-    pub(crate) topic_pattern: std::option::Option<std::string::String>,
-    pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) rule_disabled: std::option::Option<bool>,
+    pub(crate) rule_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) rule_name: ::std::option::Option<::std::string::String>,
+    pub(crate) topic_pattern: ::std::option::Option<::std::string::String>,
+    pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) rule_disabled: ::std::option::Option<bool>,
 }
 impl TopicRuleListItemBuilder {
     /// <p>The rule ARN.</p>
-    pub fn rule_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.rule_arn = Some(input.into());
+    pub fn rule_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.rule_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The rule ARN.</p>
-    pub fn set_rule_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_rule_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_arn = input;
         self
     }
     /// <p>The name of the rule.</p>
-    pub fn rule_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.rule_name = Some(input.into());
+    pub fn rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.rule_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the rule.</p>
-    pub fn set_rule_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_rule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_name = input;
         self
     }
     /// <p>The pattern for the topic names that apply.</p>
-    pub fn topic_pattern(mut self, input: impl Into<std::string::String>) -> Self {
-        self.topic_pattern = Some(input.into());
+    pub fn topic_pattern(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.topic_pattern = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The pattern for the topic names that apply.</p>
-    pub fn set_topic_pattern(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_topic_pattern(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.topic_pattern = input;
         self
     }
     /// <p>The date and time the rule was created.</p>
-    pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_at = Some(input);
+    pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time the rule was created.</p>
     pub fn set_created_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_at = input;
         self
     }
     /// <p>Specifies whether the rule is disabled.</p>
     pub fn rule_disabled(mut self, input: bool) -> Self {
-        self.rule_disabled = Some(input);
+        self.rule_disabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether the rule is disabled.</p>
-    pub fn set_rule_disabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_rule_disabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.rule_disabled = input;
         self
     }

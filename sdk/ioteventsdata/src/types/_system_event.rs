@@ -2,24 +2,24 @@
 
 /// <p>Contains information about alarm state changes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SystemEvent {
     /// <p>The event type. If the value is <code>STATE_CHANGE</code>, the event contains information about alarm state changes.</p>
     #[doc(hidden)]
-    pub event_type: std::option::Option<crate::types::EventType>,
+    pub event_type: ::std::option::Option<crate::types::EventType>,
     /// <p>Contains the configuration information of alarm state changes.</p>
     #[doc(hidden)]
-    pub state_change_configuration: std::option::Option<crate::types::StateChangeConfiguration>,
+    pub state_change_configuration: ::std::option::Option<crate::types::StateChangeConfiguration>,
 }
 impl SystemEvent {
     /// <p>The event type. If the value is <code>STATE_CHANGE</code>, the event contains information about alarm state changes.</p>
-    pub fn event_type(&self) -> std::option::Option<&crate::types::EventType> {
+    pub fn event_type(&self) -> ::std::option::Option<&crate::types::EventType> {
         self.event_type.as_ref()
     }
     /// <p>Contains the configuration information of alarm state changes.</p>
     pub fn state_change_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::StateChangeConfiguration> {
+    ) -> ::std::option::Option<&crate::types::StateChangeConfiguration> {
         self.state_change_configuration.as_ref()
     }
 }
@@ -32,20 +32,22 @@ impl SystemEvent {
 
 /// A builder for [`SystemEvent`](crate::types::SystemEvent).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SystemEventBuilder {
-    pub(crate) event_type: std::option::Option<crate::types::EventType>,
+    pub(crate) event_type: ::std::option::Option<crate::types::EventType>,
     pub(crate) state_change_configuration:
-        std::option::Option<crate::types::StateChangeConfiguration>,
+        ::std::option::Option<crate::types::StateChangeConfiguration>,
 }
 impl SystemEventBuilder {
     /// <p>The event type. If the value is <code>STATE_CHANGE</code>, the event contains information about alarm state changes.</p>
     pub fn event_type(mut self, input: crate::types::EventType) -> Self {
-        self.event_type = Some(input);
+        self.event_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The event type. If the value is <code>STATE_CHANGE</code>, the event contains information about alarm state changes.</p>
-    pub fn set_event_type(mut self, input: std::option::Option<crate::types::EventType>) -> Self {
+    pub fn set_event_type(mut self, input: ::std::option::Option<crate::types::EventType>) -> Self {
         self.event_type = input;
         self
     }
@@ -54,13 +56,13 @@ impl SystemEventBuilder {
         mut self,
         input: crate::types::StateChangeConfiguration,
     ) -> Self {
-        self.state_change_configuration = Some(input);
+        self.state_change_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains the configuration information of alarm state changes.</p>
     pub fn set_state_change_configuration(
         mut self,
-        input: std::option::Option<crate::types::StateChangeConfiguration>,
+        input: ::std::option::Option<crate::types::StateChangeConfiguration>,
     ) -> Self {
         self.state_change_configuration = input;
         self

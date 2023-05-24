@@ -2,7 +2,7 @@
 
 /// <p>Configuration information for Amazon AppIntegrations to automatically ingest content.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AppIntegrationsConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the AppIntegrations DataIntegration to use for ingesting content.</p>
     /// <ul>
@@ -12,7 +12,7 @@ pub struct AppIntegrationsConfiguration {
     /// <li> <p> For <a href="https://learn.microsoft.com/en-us/sharepoint/dev/sp-add-ins/sharepoint-net-server-csom-jsom-and-rest-api-index"> SharePoint</a>, your AppIntegrations DataIntegration must have a FileConfiguration, including only file extensions that are among <code>docx</code>, <code>pdf</code>, <code>html</code>, <code>htm</code>, and <code>txt</code>. </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub app_integration_arn: std::option::Option<std::string::String>,
+    pub app_integration_arn: ::std::option::Option<::std::string::String>,
     /// <p>The fields from the source that are made available to your agents in Wisdom. Optional if ObjectConfiguration is included in the provided DataIntegration. </p>
     /// <ul>
     /// <li> <p> For <a href="https://developer.salesforce.com/docs/atlas.en-us.knowledge_dev.meta/knowledge_dev/sforce_api_objects_knowledge__kav.htm"> Salesforce</a>, you must include at least <code>Id</code>, <code>ArticleNumber</code>, <code>VersionNumber</code>, <code>Title</code>, <code>PublishStatus</code>, and <code>IsDeleted</code>. </p> </li>
@@ -21,7 +21,7 @@ pub struct AppIntegrationsConfiguration {
     /// </ul>
     /// <p>Make sure to include additional fields. These fields are indexed and used to source recommendations. </p>
     #[doc(hidden)]
-    pub object_fields: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub object_fields: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AppIntegrationsConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the AppIntegrations DataIntegration to use for ingesting content.</p>
@@ -31,7 +31,7 @@ impl AppIntegrationsConfiguration {
     /// <li> <p> For <a href="https://developer.zendesk.com/api-reference/help_center/help-center-api/articles/"> Zendesk</a>, your AppIntegrations DataIntegration must have an ObjectConfiguration if <code>objectFields</code> is not provided, including at least <code>id</code>, <code>title</code>, <code>updated_at</code>, and <code>draft</code> as source fields. </p> </li>
     /// <li> <p> For <a href="https://learn.microsoft.com/en-us/sharepoint/dev/sp-add-ins/sharepoint-net-server-csom-jsom-and-rest-api-index"> SharePoint</a>, your AppIntegrations DataIntegration must have a FileConfiguration, including only file extensions that are among <code>docx</code>, <code>pdf</code>, <code>html</code>, <code>htm</code>, and <code>txt</code>. </p> </li>
     /// </ul>
-    pub fn app_integration_arn(&self) -> std::option::Option<&str> {
+    pub fn app_integration_arn(&self) -> ::std::option::Option<&str> {
         self.app_integration_arn.as_deref()
     }
     /// <p>The fields from the source that are made available to your agents in Wisdom. Optional if ObjectConfiguration is included in the provided DataIntegration. </p>
@@ -41,7 +41,7 @@ impl AppIntegrationsConfiguration {
     /// <li> <p>For <a href="https://developer.zendesk.com/api-reference/help_center/help-center-api/articles/"> Zendesk</a>, you must include at least <code>id</code>, <code>title</code>, <code>updated_at</code>, and <code>draft</code>. </p> </li>
     /// </ul>
     /// <p>Make sure to include additional fields. These fields are indexed and used to source recommendations. </p>
-    pub fn object_fields(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn object_fields(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.object_fields.as_deref()
     }
 }
@@ -54,10 +54,12 @@ impl AppIntegrationsConfiguration {
 
 /// A builder for [`AppIntegrationsConfiguration`](crate::types::AppIntegrationsConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AppIntegrationsConfigurationBuilder {
-    pub(crate) app_integration_arn: std::option::Option<std::string::String>,
-    pub(crate) object_fields: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) app_integration_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) object_fields: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AppIntegrationsConfigurationBuilder {
     /// <p>The Amazon Resource Name (ARN) of the AppIntegrations DataIntegration to use for ingesting content.</p>
@@ -67,8 +69,11 @@ impl AppIntegrationsConfigurationBuilder {
     /// <li> <p> For <a href="https://developer.zendesk.com/api-reference/help_center/help-center-api/articles/"> Zendesk</a>, your AppIntegrations DataIntegration must have an ObjectConfiguration if <code>objectFields</code> is not provided, including at least <code>id</code>, <code>title</code>, <code>updated_at</code>, and <code>draft</code> as source fields. </p> </li>
     /// <li> <p> For <a href="https://learn.microsoft.com/en-us/sharepoint/dev/sp-add-ins/sharepoint-net-server-csom-jsom-and-rest-api-index"> SharePoint</a>, your AppIntegrations DataIntegration must have a FileConfiguration, including only file extensions that are among <code>docx</code>, <code>pdf</code>, <code>html</code>, <code>htm</code>, and <code>txt</code>. </p> </li>
     /// </ul>
-    pub fn app_integration_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.app_integration_arn = Some(input.into());
+    pub fn app_integration_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.app_integration_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the AppIntegrations DataIntegration to use for ingesting content.</p>
@@ -80,7 +85,7 @@ impl AppIntegrationsConfigurationBuilder {
     /// </ul>
     pub fn set_app_integration_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.app_integration_arn = input;
         self
@@ -96,10 +101,13 @@ impl AppIntegrationsConfigurationBuilder {
     /// <li> <p>For <a href="https://developer.zendesk.com/api-reference/help_center/help-center-api/articles/"> Zendesk</a>, you must include at least <code>id</code>, <code>title</code>, <code>updated_at</code>, and <code>draft</code>. </p> </li>
     /// </ul>
     /// <p>Make sure to include additional fields. These fields are indexed and used to source recommendations. </p>
-    pub fn object_fields(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn object_fields(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.object_fields.unwrap_or_default();
         v.push(input.into());
-        self.object_fields = Some(v);
+        self.object_fields = ::std::option::Option::Some(v);
         self
     }
     /// <p>The fields from the source that are made available to your agents in Wisdom. Optional if ObjectConfiguration is included in the provided DataIntegration. </p>
@@ -111,7 +119,7 @@ impl AppIntegrationsConfigurationBuilder {
     /// <p>Make sure to include additional fields. These fields are indexed and used to source recommendations. </p>
     pub fn set_object_fields(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.object_fields = input;
         self

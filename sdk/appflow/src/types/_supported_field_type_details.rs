@@ -2,15 +2,15 @@
 
 /// <p> Contains details regarding all the supported <code>FieldTypes</code> and their corresponding <code>filterOperators</code> and <code>supportedValues</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SupportedFieldTypeDetails {
     /// <p> The initial supported version for <code>fieldType</code>. If this is later changed to a different version, v2 will be introduced. </p>
     #[doc(hidden)]
-    pub v1: std::option::Option<crate::types::FieldTypeDetails>,
+    pub v1: ::std::option::Option<crate::types::FieldTypeDetails>,
 }
 impl SupportedFieldTypeDetails {
     /// <p> The initial supported version for <code>fieldType</code>. If this is later changed to a different version, v2 will be introduced. </p>
-    pub fn v1(&self) -> std::option::Option<&crate::types::FieldTypeDetails> {
+    pub fn v1(&self) -> ::std::option::Option<&crate::types::FieldTypeDetails> {
         self.v1.as_ref()
     }
 }
@@ -23,18 +23,20 @@ impl SupportedFieldTypeDetails {
 
 /// A builder for [`SupportedFieldTypeDetails`](crate::types::SupportedFieldTypeDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SupportedFieldTypeDetailsBuilder {
-    pub(crate) v1: std::option::Option<crate::types::FieldTypeDetails>,
+    pub(crate) v1: ::std::option::Option<crate::types::FieldTypeDetails>,
 }
 impl SupportedFieldTypeDetailsBuilder {
     /// <p> The initial supported version for <code>fieldType</code>. If this is later changed to a different version, v2 will be introduced. </p>
     pub fn v1(mut self, input: crate::types::FieldTypeDetails) -> Self {
-        self.v1 = Some(input);
+        self.v1 = ::std::option::Option::Some(input);
         self
     }
     /// <p> The initial supported version for <code>fieldType</code>. If this is later changed to a different version, v2 will be introduced. </p>
-    pub fn set_v1(mut self, input: std::option::Option<crate::types::FieldTypeDetails>) -> Self {
+    pub fn set_v1(mut self, input: ::std::option::Option<crate::types::FieldTypeDetails>) -> Self {
         self.v1 = input;
         self
     }

@@ -9,28 +9,28 @@
 /// <li> <p>Expansions -- Optional. Expansions allow you to relax the rules after a period of time when no acceptable matches are found. This feature lets you balance getting players into games in a reasonable amount of time instead of making them wait indefinitely for the best possible match. For example, you might use an expansion to increase the maximum skill variance between players after 30 seconds.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MatchmakingRuleSet {
     /// <p>A unique identifier for the matchmaking rule set</p>
     #[doc(hidden)]
-    pub rule_set_name: std::option::Option<std::string::String>,
+    pub rule_set_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift matchmaking rule set resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
     /// <region>
     /// ::matchmakingruleset/
     /// <ruleset name></ruleset>
     /// </region></code>. In a GameLift rule set ARN, the resource ID matches the <i>RuleSetName</i> value.</p>
     #[doc(hidden)]
-    pub rule_set_arn: std::option::Option<std::string::String>,
+    pub rule_set_arn: ::std::option::Option<::std::string::String>,
     /// <p>A collection of matchmaking rules, formatted as a JSON string. Comments are not allowed in JSON, but most elements support a description field.</p>
     #[doc(hidden)]
-    pub rule_set_body: std::option::Option<std::string::String>,
+    pub rule_set_body: ::std::option::Option<::std::string::String>,
     /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
     #[doc(hidden)]
-    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl MatchmakingRuleSet {
     /// <p>A unique identifier for the matchmaking rule set</p>
-    pub fn rule_set_name(&self) -> std::option::Option<&str> {
+    pub fn rule_set_name(&self) -> ::std::option::Option<&str> {
         self.rule_set_name.as_deref()
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift matchmaking rule set resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
@@ -38,15 +38,15 @@ impl MatchmakingRuleSet {
     /// ::matchmakingruleset/
     /// <ruleset name></ruleset>
     /// </region></code>. In a GameLift rule set ARN, the resource ID matches the <i>RuleSetName</i> value.</p>
-    pub fn rule_set_arn(&self) -> std::option::Option<&str> {
+    pub fn rule_set_arn(&self) -> ::std::option::Option<&str> {
         self.rule_set_arn.as_deref()
     }
     /// <p>A collection of matchmaking rules, formatted as a JSON string. Comments are not allowed in JSON, but most elements support a description field.</p>
-    pub fn rule_set_body(&self) -> std::option::Option<&str> {
+    pub fn rule_set_body(&self) -> ::std::option::Option<&str> {
         self.rule_set_body.as_deref()
     }
     /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
@@ -59,21 +59,29 @@ impl MatchmakingRuleSet {
 
 /// A builder for [`MatchmakingRuleSet`](crate::types::MatchmakingRuleSet).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MatchmakingRuleSetBuilder {
-    pub(crate) rule_set_name: std::option::Option<std::string::String>,
-    pub(crate) rule_set_arn: std::option::Option<std::string::String>,
-    pub(crate) rule_set_body: std::option::Option<std::string::String>,
-    pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) rule_set_name: ::std::option::Option<::std::string::String>,
+    pub(crate) rule_set_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) rule_set_body: ::std::option::Option<::std::string::String>,
+    pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl MatchmakingRuleSetBuilder {
     /// <p>A unique identifier for the matchmaking rule set</p>
-    pub fn rule_set_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.rule_set_name = Some(input.into());
+    pub fn rule_set_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.rule_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the matchmaking rule set</p>
-    pub fn set_rule_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_rule_set_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.rule_set_name = input;
         self
     }
@@ -82,8 +90,8 @@ impl MatchmakingRuleSetBuilder {
     /// ::matchmakingruleset/
     /// <ruleset name></ruleset>
     /// </region></code>. In a GameLift rule set ARN, the resource ID matches the <i>RuleSetName</i> value.</p>
-    pub fn rule_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.rule_set_arn = Some(input.into());
+    pub fn rule_set_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.rule_set_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift matchmaking rule set resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
@@ -91,29 +99,35 @@ impl MatchmakingRuleSetBuilder {
     /// ::matchmakingruleset/
     /// <ruleset name></ruleset>
     /// </region></code>. In a GameLift rule set ARN, the resource ID matches the <i>RuleSetName</i> value.</p>
-    pub fn set_rule_set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_rule_set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_set_arn = input;
         self
     }
     /// <p>A collection of matchmaking rules, formatted as a JSON string. Comments are not allowed in JSON, but most elements support a description field.</p>
-    pub fn rule_set_body(mut self, input: impl Into<std::string::String>) -> Self {
-        self.rule_set_body = Some(input.into());
+    pub fn rule_set_body(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.rule_set_body = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A collection of matchmaking rules, formatted as a JSON string. Comments are not allowed in JSON, but most elements support a description field.</p>
-    pub fn set_rule_set_body(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_rule_set_body(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.rule_set_body = input;
         self
     }
     /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_time = Some(input);
+    pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
     pub fn set_creation_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_time = input;
         self

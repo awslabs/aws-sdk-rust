@@ -2,11 +2,11 @@
 
 /// <p>Output of a create milestone call.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateMilestoneOutput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     #[doc(hidden)]
-    pub workload_id: std::option::Option<std::string::String>,
+    pub workload_id: ::std::option::Option<::std::string::String>,
     /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
     #[doc(hidden)]
@@ -15,7 +15,7 @@ pub struct CreateMilestoneOutput {
 }
 impl CreateMilestoneOutput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    pub fn workload_id(&self) -> std::option::Option<&str> {
+    pub fn workload_id(&self) -> ::std::option::Option<&str> {
         self.workload_id.as_deref()
     }
     /// <p>The milestone number.</p>
@@ -24,7 +24,7 @@ impl CreateMilestoneOutput {
         self.milestone_number
     }
 }
-impl aws_http::request_id::RequestId for CreateMilestoneOutput {
+impl ::aws_http::request_id::RequestId for CreateMilestoneOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -38,32 +38,34 @@ impl CreateMilestoneOutput {
 
 /// A builder for [`CreateMilestoneOutput`](crate::operation::create_milestone::CreateMilestoneOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateMilestoneOutputBuilder {
-    pub(crate) workload_id: std::option::Option<std::string::String>,
-    pub(crate) milestone_number: std::option::Option<i32>,
+    pub(crate) workload_id: ::std::option::Option<::std::string::String>,
+    pub(crate) milestone_number: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }
 impl CreateMilestoneOutputBuilder {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.workload_id = Some(input.into());
+    pub fn workload_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.workload_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_workload_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.workload_id = input;
         self
     }
     /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
     pub fn milestone_number(mut self, input: i32) -> Self {
-        self.milestone_number = Some(input);
+        self.milestone_number = ::std::option::Option::Some(input);
         self
     }
     /// <p>The milestone number.</p>
     /// <p>A workload can have a maximum of 100 milestones.</p>
-    pub fn set_milestone_number(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_milestone_number(mut self, input: ::std::option::Option<i32>) -> Self {
         self.milestone_number = input;
         self
     }

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetApiCache`](crate::operation::get_api_cache::builders::GetApiCacheFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`api_id(impl Into<String>)`](crate::operation::get_api_cache::builders::GetApiCacheFluentBuilder::api_id) / [`set_api_id(Option<String>)`](crate::operation::get_api_cache::builders::GetApiCacheFluentBuilder::set_api_id): <p>The API ID.</p>
+    ///   - [`api_id(impl ::std::convert::Into<String>)`](crate::operation::get_api_cache::builders::GetApiCacheFluentBuilder::api_id) / [`set_api_id(Option<String>)`](crate::operation::get_api_cache::builders::GetApiCacheFluentBuilder::set_api_id): <p>The API ID.</p>
     /// - On success, responds with [`GetApiCacheOutput`](crate::operation::get_api_cache::GetApiCacheOutput) with field(s):
     ///   - [`api_cache(Option<ApiCache>)`](crate::operation::get_api_cache::GetApiCacheOutput::api_cache): <p>The <code>ApiCache</code> object.</p>
     /// - On failure, responds with [`SdkError<GetApiCacheError>`](crate::operation::get_api_cache::GetApiCacheError)

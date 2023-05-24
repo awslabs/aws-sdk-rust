@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetVocabulary`](crate::operation::get_vocabulary::builders::GetVocabularyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`vocabulary_name(impl Into<String>)`](crate::operation::get_vocabulary::builders::GetVocabularyFluentBuilder::vocabulary_name) / [`set_vocabulary_name(Option<String>)`](crate::operation::get_vocabulary::builders::GetVocabularyFluentBuilder::set_vocabulary_name): <p>The name of the custom vocabulary you want information about. Custom vocabulary names are case sensitive.</p>
+    ///   - [`vocabulary_name(impl ::std::convert::Into<String>)`](crate::operation::get_vocabulary::builders::GetVocabularyFluentBuilder::vocabulary_name) / [`set_vocabulary_name(Option<String>)`](crate::operation::get_vocabulary::builders::GetVocabularyFluentBuilder::set_vocabulary_name): <p>The name of the custom vocabulary you want information about. Custom vocabulary names are case sensitive.</p>
     /// - On success, responds with [`GetVocabularyOutput`](crate::operation::get_vocabulary::GetVocabularyOutput) with field(s):
     ///   - [`vocabulary_name(Option<String>)`](crate::operation::get_vocabulary::GetVocabularyOutput::vocabulary_name): <p>The name of the custom vocabulary you requested information about.</p>
     ///   - [`language_code(Option<LanguageCode>)`](crate::operation::get_vocabulary::GetVocabularyOutput::language_code): <p>The language code you selected for your custom vocabulary.</p>

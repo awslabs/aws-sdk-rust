@@ -2,14 +2,14 @@
 
 /// <p>Specifies the method setting properties.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MethodSetting {
     /// <p>Specifies whether Amazon CloudWatch metrics are enabled for this method. The PATCH path for this setting is <code>/{method_setting_key}/metrics/enabled</code>, and the value is a Boolean.</p>
     #[doc(hidden)]
     pub metrics_enabled: bool,
     /// <p>Specifies the logging level for this method, which affects the log entries pushed to Amazon CloudWatch Logs. The PATCH path for this setting is <code>/{method_setting_key}/logging/loglevel</code>, and the available levels are <code>OFF</code>, <code>ERROR</code>, and <code>INFO</code>. Choose <code>ERROR</code> to write only error-level entries to CloudWatch Logs, or choose <code>INFO</code> to include all <code>ERROR</code> events as well as extra informational events.</p>
     #[doc(hidden)]
-    pub logging_level: std::option::Option<std::string::String>,
+    pub logging_level: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether data trace logging is enabled for this method, which affects the log entries pushed to Amazon CloudWatch Logs. The PATCH path for this setting is <code>/{method_setting_key}/logging/dataTrace</code>, and the value is a Boolean.</p>
     #[doc(hidden)]
     pub data_trace_enabled: bool,
@@ -34,7 +34,7 @@ pub struct MethodSetting {
     /// <p>Specifies how to handle unauthorized requests for cache invalidation. The PATCH path for this setting is <code>/{method_setting_key}/caching/unauthorizedCacheControlHeaderStrategy</code>, and the available values are <code>FAIL_WITH_403</code>, <code>SUCCEED_WITH_RESPONSE_HEADER</code>, <code>SUCCEED_WITHOUT_RESPONSE_HEADER</code>.</p>
     #[doc(hidden)]
     pub unauthorized_cache_control_header_strategy:
-        std::option::Option<crate::types::UnauthorizedCacheControlHeaderStrategy>,
+        ::std::option::Option<crate::types::UnauthorizedCacheControlHeaderStrategy>,
 }
 impl MethodSetting {
     /// <p>Specifies whether Amazon CloudWatch metrics are enabled for this method. The PATCH path for this setting is <code>/{method_setting_key}/metrics/enabled</code>, and the value is a Boolean.</p>
@@ -42,7 +42,7 @@ impl MethodSetting {
         self.metrics_enabled
     }
     /// <p>Specifies the logging level for this method, which affects the log entries pushed to Amazon CloudWatch Logs. The PATCH path for this setting is <code>/{method_setting_key}/logging/loglevel</code>, and the available levels are <code>OFF</code>, <code>ERROR</code>, and <code>INFO</code>. Choose <code>ERROR</code> to write only error-level entries to CloudWatch Logs, or choose <code>INFO</code> to include all <code>ERROR</code> events as well as extra informational events.</p>
-    pub fn logging_level(&self) -> std::option::Option<&str> {
+    pub fn logging_level(&self) -> ::std::option::Option<&str> {
         self.logging_level.as_deref()
     }
     /// <p>Specifies whether data trace logging is enabled for this method, which affects the log entries pushed to Amazon CloudWatch Logs. The PATCH path for this setting is <code>/{method_setting_key}/logging/dataTrace</code>, and the value is a Boolean.</p>
@@ -76,7 +76,7 @@ impl MethodSetting {
     /// <p>Specifies how to handle unauthorized requests for cache invalidation. The PATCH path for this setting is <code>/{method_setting_key}/caching/unauthorizedCacheControlHeaderStrategy</code>, and the available values are <code>FAIL_WITH_403</code>, <code>SUCCEED_WITH_RESPONSE_HEADER</code>, <code>SUCCEED_WITHOUT_RESPONSE_HEADER</code>.</p>
     pub fn unauthorized_cache_control_header_strategy(
         &self,
-    ) -> std::option::Option<&crate::types::UnauthorizedCacheControlHeaderStrategy> {
+    ) -> ::std::option::Option<&crate::types::UnauthorizedCacheControlHeaderStrategy> {
         self.unauthorized_cache_control_header_strategy.as_ref()
     }
 }
@@ -89,110 +89,118 @@ impl MethodSetting {
 
 /// A builder for [`MethodSetting`](crate::types::MethodSetting).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MethodSettingBuilder {
-    pub(crate) metrics_enabled: std::option::Option<bool>,
-    pub(crate) logging_level: std::option::Option<std::string::String>,
-    pub(crate) data_trace_enabled: std::option::Option<bool>,
-    pub(crate) throttling_burst_limit: std::option::Option<i32>,
-    pub(crate) throttling_rate_limit: std::option::Option<f64>,
-    pub(crate) caching_enabled: std::option::Option<bool>,
-    pub(crate) cache_ttl_in_seconds: std::option::Option<i32>,
-    pub(crate) cache_data_encrypted: std::option::Option<bool>,
-    pub(crate) require_authorization_for_cache_control: std::option::Option<bool>,
+    pub(crate) metrics_enabled: ::std::option::Option<bool>,
+    pub(crate) logging_level: ::std::option::Option<::std::string::String>,
+    pub(crate) data_trace_enabled: ::std::option::Option<bool>,
+    pub(crate) throttling_burst_limit: ::std::option::Option<i32>,
+    pub(crate) throttling_rate_limit: ::std::option::Option<f64>,
+    pub(crate) caching_enabled: ::std::option::Option<bool>,
+    pub(crate) cache_ttl_in_seconds: ::std::option::Option<i32>,
+    pub(crate) cache_data_encrypted: ::std::option::Option<bool>,
+    pub(crate) require_authorization_for_cache_control: ::std::option::Option<bool>,
     pub(crate) unauthorized_cache_control_header_strategy:
-        std::option::Option<crate::types::UnauthorizedCacheControlHeaderStrategy>,
+        ::std::option::Option<crate::types::UnauthorizedCacheControlHeaderStrategy>,
 }
 impl MethodSettingBuilder {
     /// <p>Specifies whether Amazon CloudWatch metrics are enabled for this method. The PATCH path for this setting is <code>/{method_setting_key}/metrics/enabled</code>, and the value is a Boolean.</p>
     pub fn metrics_enabled(mut self, input: bool) -> Self {
-        self.metrics_enabled = Some(input);
+        self.metrics_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether Amazon CloudWatch metrics are enabled for this method. The PATCH path for this setting is <code>/{method_setting_key}/metrics/enabled</code>, and the value is a Boolean.</p>
-    pub fn set_metrics_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_metrics_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.metrics_enabled = input;
         self
     }
     /// <p>Specifies the logging level for this method, which affects the log entries pushed to Amazon CloudWatch Logs. The PATCH path for this setting is <code>/{method_setting_key}/logging/loglevel</code>, and the available levels are <code>OFF</code>, <code>ERROR</code>, and <code>INFO</code>. Choose <code>ERROR</code> to write only error-level entries to CloudWatch Logs, or choose <code>INFO</code> to include all <code>ERROR</code> events as well as extra informational events.</p>
-    pub fn logging_level(mut self, input: impl Into<std::string::String>) -> Self {
-        self.logging_level = Some(input.into());
+    pub fn logging_level(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.logging_level = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the logging level for this method, which affects the log entries pushed to Amazon CloudWatch Logs. The PATCH path for this setting is <code>/{method_setting_key}/logging/loglevel</code>, and the available levels are <code>OFF</code>, <code>ERROR</code>, and <code>INFO</code>. Choose <code>ERROR</code> to write only error-level entries to CloudWatch Logs, or choose <code>INFO</code> to include all <code>ERROR</code> events as well as extra informational events.</p>
-    pub fn set_logging_level(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_logging_level(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.logging_level = input;
         self
     }
     /// <p>Specifies whether data trace logging is enabled for this method, which affects the log entries pushed to Amazon CloudWatch Logs. The PATCH path for this setting is <code>/{method_setting_key}/logging/dataTrace</code>, and the value is a Boolean.</p>
     pub fn data_trace_enabled(mut self, input: bool) -> Self {
-        self.data_trace_enabled = Some(input);
+        self.data_trace_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether data trace logging is enabled for this method, which affects the log entries pushed to Amazon CloudWatch Logs. The PATCH path for this setting is <code>/{method_setting_key}/logging/dataTrace</code>, and the value is a Boolean.</p>
-    pub fn set_data_trace_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_data_trace_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.data_trace_enabled = input;
         self
     }
     /// <p>Specifies the throttling burst limit. The PATCH path for this setting is <code>/{method_setting_key}/throttling/burstLimit</code>, and the value is an integer.</p>
     pub fn throttling_burst_limit(mut self, input: i32) -> Self {
-        self.throttling_burst_limit = Some(input);
+        self.throttling_burst_limit = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the throttling burst limit. The PATCH path for this setting is <code>/{method_setting_key}/throttling/burstLimit</code>, and the value is an integer.</p>
-    pub fn set_throttling_burst_limit(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_throttling_burst_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.throttling_burst_limit = input;
         self
     }
     /// <p>Specifies the throttling rate limit. The PATCH path for this setting is <code>/{method_setting_key}/throttling/rateLimit</code>, and the value is a double.</p>
     pub fn throttling_rate_limit(mut self, input: f64) -> Self {
-        self.throttling_rate_limit = Some(input);
+        self.throttling_rate_limit = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the throttling rate limit. The PATCH path for this setting is <code>/{method_setting_key}/throttling/rateLimit</code>, and the value is a double.</p>
-    pub fn set_throttling_rate_limit(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_throttling_rate_limit(mut self, input: ::std::option::Option<f64>) -> Self {
         self.throttling_rate_limit = input;
         self
     }
     /// <p>Specifies whether responses should be cached and returned for requests. A cache cluster must be enabled on the stage for responses to be cached. The PATCH path for this setting is <code>/{method_setting_key}/caching/enabled</code>, and the value is a Boolean.</p>
     pub fn caching_enabled(mut self, input: bool) -> Self {
-        self.caching_enabled = Some(input);
+        self.caching_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether responses should be cached and returned for requests. A cache cluster must be enabled on the stage for responses to be cached. The PATCH path for this setting is <code>/{method_setting_key}/caching/enabled</code>, and the value is a Boolean.</p>
-    pub fn set_caching_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_caching_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.caching_enabled = input;
         self
     }
     /// <p>Specifies the time to live (TTL), in seconds, for cached responses. The higher the TTL, the longer the response will be cached. The PATCH path for this setting is <code>/{method_setting_key}/caching/ttlInSeconds</code>, and the value is an integer.</p>
     pub fn cache_ttl_in_seconds(mut self, input: i32) -> Self {
-        self.cache_ttl_in_seconds = Some(input);
+        self.cache_ttl_in_seconds = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the time to live (TTL), in seconds, for cached responses. The higher the TTL, the longer the response will be cached. The PATCH path for this setting is <code>/{method_setting_key}/caching/ttlInSeconds</code>, and the value is an integer.</p>
-    pub fn set_cache_ttl_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_cache_ttl_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.cache_ttl_in_seconds = input;
         self
     }
     /// <p>Specifies whether the cached responses are encrypted. The PATCH path for this setting is <code>/{method_setting_key}/caching/dataEncrypted</code>, and the value is a Boolean.</p>
     pub fn cache_data_encrypted(mut self, input: bool) -> Self {
-        self.cache_data_encrypted = Some(input);
+        self.cache_data_encrypted = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether the cached responses are encrypted. The PATCH path for this setting is <code>/{method_setting_key}/caching/dataEncrypted</code>, and the value is a Boolean.</p>
-    pub fn set_cache_data_encrypted(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_cache_data_encrypted(mut self, input: ::std::option::Option<bool>) -> Self {
         self.cache_data_encrypted = input;
         self
     }
     /// <p>Specifies whether authorization is required for a cache invalidation request. The PATCH path for this setting is <code>/{method_setting_key}/caching/requireAuthorizationForCacheControl</code>, and the value is a Boolean.</p>
     pub fn require_authorization_for_cache_control(mut self, input: bool) -> Self {
-        self.require_authorization_for_cache_control = Some(input);
+        self.require_authorization_for_cache_control = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether authorization is required for a cache invalidation request. The PATCH path for this setting is <code>/{method_setting_key}/caching/requireAuthorizationForCacheControl</code>, and the value is a Boolean.</p>
     pub fn set_require_authorization_for_cache_control(
         mut self,
-        input: std::option::Option<bool>,
+        input: ::std::option::Option<bool>,
     ) -> Self {
         self.require_authorization_for_cache_control = input;
         self
@@ -202,13 +210,13 @@ impl MethodSettingBuilder {
         mut self,
         input: crate::types::UnauthorizedCacheControlHeaderStrategy,
     ) -> Self {
-        self.unauthorized_cache_control_header_strategy = Some(input);
+        self.unauthorized_cache_control_header_strategy = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies how to handle unauthorized requests for cache invalidation. The PATCH path for this setting is <code>/{method_setting_key}/caching/unauthorizedCacheControlHeaderStrategy</code>, and the available values are <code>FAIL_WITH_403</code>, <code>SUCCEED_WITH_RESPONSE_HEADER</code>, <code>SUCCEED_WITHOUT_RESPONSE_HEADER</code>.</p>
     pub fn set_unauthorized_cache_control_header_strategy(
         mut self,
-        input: std::option::Option<crate::types::UnauthorizedCacheControlHeaderStrategy>,
+        input: ::std::option::Option<crate::types::UnauthorizedCacheControlHeaderStrategy>,
     ) -> Self {
         self.unauthorized_cache_control_header_strategy = input;
         self

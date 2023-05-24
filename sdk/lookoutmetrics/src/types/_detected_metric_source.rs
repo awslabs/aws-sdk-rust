@@ -2,15 +2,15 @@
 
 /// <p>An inferred data source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DetectedMetricSource {
     /// <p>The data source's source configuration.</p>
     #[doc(hidden)]
-    pub s3_source_config: std::option::Option<crate::types::DetectedS3SourceConfig>,
+    pub s3_source_config: ::std::option::Option<crate::types::DetectedS3SourceConfig>,
 }
 impl DetectedMetricSource {
     /// <p>The data source's source configuration.</p>
-    pub fn s3_source_config(&self) -> std::option::Option<&crate::types::DetectedS3SourceConfig> {
+    pub fn s3_source_config(&self) -> ::std::option::Option<&crate::types::DetectedS3SourceConfig> {
         self.s3_source_config.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl DetectedMetricSource {
 
 /// A builder for [`DetectedMetricSource`](crate::types::DetectedMetricSource).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DetectedMetricSourceBuilder {
-    pub(crate) s3_source_config: std::option::Option<crate::types::DetectedS3SourceConfig>,
+    pub(crate) s3_source_config: ::std::option::Option<crate::types::DetectedS3SourceConfig>,
 }
 impl DetectedMetricSourceBuilder {
     /// <p>The data source's source configuration.</p>
     pub fn s3_source_config(mut self, input: crate::types::DetectedS3SourceConfig) -> Self {
-        self.s3_source_config = Some(input);
+        self.s3_source_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The data source's source configuration.</p>
     pub fn set_s3_source_config(
         mut self,
-        input: std::option::Option<crate::types::DetectedS3SourceConfig>,
+        input: ::std::option::Option<crate::types::DetectedS3SourceConfig>,
     ) -> Self {
         self.s3_source_config = input;
         self

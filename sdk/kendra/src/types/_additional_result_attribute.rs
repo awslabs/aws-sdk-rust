@@ -2,31 +2,31 @@
 
 /// <p>An attribute returned from an index query.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AdditionalResultAttribute {
     /// <p>The key that identifies the attribute.</p>
     #[doc(hidden)]
-    pub key: std::option::Option<std::string::String>,
+    pub key: ::std::option::Option<::std::string::String>,
     /// <p>The data type of the <code>Value</code> property.</p>
     #[doc(hidden)]
-    pub value_type: std::option::Option<crate::types::AdditionalResultAttributeValueType>,
+    pub value_type: ::std::option::Option<crate::types::AdditionalResultAttributeValueType>,
     /// <p>An object that contains the attribute value.</p>
     #[doc(hidden)]
-    pub value: std::option::Option<crate::types::AdditionalResultAttributeValue>,
+    pub value: ::std::option::Option<crate::types::AdditionalResultAttributeValue>,
 }
 impl AdditionalResultAttribute {
     /// <p>The key that identifies the attribute.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<&str> {
         self.key.as_deref()
     }
     /// <p>The data type of the <code>Value</code> property.</p>
     pub fn value_type(
         &self,
-    ) -> std::option::Option<&crate::types::AdditionalResultAttributeValueType> {
+    ) -> ::std::option::Option<&crate::types::AdditionalResultAttributeValueType> {
         self.value_type.as_ref()
     }
     /// <p>An object that contains the attribute value.</p>
-    pub fn value(&self) -> std::option::Option<&crate::types::AdditionalResultAttributeValue> {
+    pub fn value(&self) -> ::std::option::Option<&crate::types::AdditionalResultAttributeValue> {
         self.value.as_ref()
     }
 }
@@ -39,45 +39,47 @@ impl AdditionalResultAttribute {
 
 /// A builder for [`AdditionalResultAttribute`](crate::types::AdditionalResultAttribute).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AdditionalResultAttributeBuilder {
-    pub(crate) key: std::option::Option<std::string::String>,
-    pub(crate) value_type: std::option::Option<crate::types::AdditionalResultAttributeValueType>,
-    pub(crate) value: std::option::Option<crate::types::AdditionalResultAttributeValue>,
+    pub(crate) key: ::std::option::Option<::std::string::String>,
+    pub(crate) value_type: ::std::option::Option<crate::types::AdditionalResultAttributeValueType>,
+    pub(crate) value: ::std::option::Option<crate::types::AdditionalResultAttributeValue>,
 }
 impl AdditionalResultAttributeBuilder {
     /// <p>The key that identifies the attribute.</p>
-    pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.key = Some(input.into());
+    pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The key that identifies the attribute.</p>
-    pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key = input;
         self
     }
     /// <p>The data type of the <code>Value</code> property.</p>
     pub fn value_type(mut self, input: crate::types::AdditionalResultAttributeValueType) -> Self {
-        self.value_type = Some(input);
+        self.value_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The data type of the <code>Value</code> property.</p>
     pub fn set_value_type(
         mut self,
-        input: std::option::Option<crate::types::AdditionalResultAttributeValueType>,
+        input: ::std::option::Option<crate::types::AdditionalResultAttributeValueType>,
     ) -> Self {
         self.value_type = input;
         self
     }
     /// <p>An object that contains the attribute value.</p>
     pub fn value(mut self, input: crate::types::AdditionalResultAttributeValue) -> Self {
-        self.value = Some(input);
+        self.value = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that contains the attribute value.</p>
     pub fn set_value(
         mut self,
-        input: std::option::Option<crate::types::AdditionalResultAttributeValue>,
+        input: ::std::option::Option<crate::types::AdditionalResultAttributeValue>,
     ) -> Self {
         self.value = input;
         self

@@ -6,47 +6,50 @@ pub use crate::operation::create_environment_template_version::_create_environme
 /// Fluent builder constructing a request to `CreateEnvironmentTemplateVersion`.
 ///
 /// <p>Create a new major or minor version of an environment template. A major version of an environment template is a version that <i>isn't</i> backwards compatible. A minor version of an environment template is a version that's backwards compatible within its major version.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateEnvironmentTemplateVersionFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::create_environment_template_version::builders::CreateEnvironmentTemplateVersionInputBuilder,
 }
 impl CreateEnvironmentTemplateVersionFluentBuilder {
     /// Creates a new `CreateEnvironmentTemplateVersion`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_environment_template_version::CreateEnvironmentTemplateVersion, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_environment_template_version::CreateEnvironmentTemplateVersionError>
+                    pub async fn customize(self) -> ::std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::create_environment_template_version::CreateEnvironmentTemplateVersion, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                        ::aws_smithy_http::result::SdkError<crate::operation::create_environment_template_version::CreateEnvironmentTemplateVersionError>
     >{
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::create_environment_template_version::CreateEnvironmentTemplateVersionOutput, aws_smithy_http::result::SdkError<crate::operation::create_environment_template_version::CreateEnvironmentTemplateVersionError>>
+                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::create_environment_template_version::CreateEnvironmentTemplateVersionOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_environment_template_version::CreateEnvironmentTemplateVersionError>>
                      {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -57,49 +60,61 @@ impl CreateEnvironmentTemplateVersionFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> std::result::Result<crate::operation::create_environment_template_version::CreateEnvironmentTemplateVersionOutput, aws_smithy_http::result::SdkError<crate::operation::create_environment_template_version::CreateEnvironmentTemplateVersionError>>
+                        pub async fn send(self) -> ::std::result::Result<crate::operation::create_environment_template_version::CreateEnvironmentTemplateVersionOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_environment_template_version::CreateEnvironmentTemplateVersionError>>
                          {
         self.send_middleware().await
     }
     /// <p>When included, if two identical requests are made with the same client token, Proton returns the environment template version that the first request created.</p>
-    pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
     /// <p>When included, if two identical requests are made with the same client token, Proton returns the environment template version that the first request created.</p>
-    pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
     /// <p>The name of the environment template.</p>
-    pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn template_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.template_name(input.into());
         self
     }
     /// <p>The name of the environment template.</p>
-    pub fn set_template_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_template_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_template_name(input);
         self
     }
     /// <p>A description of the new version of an environment template.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>A description of the new version of an environment template.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
     /// <p>To create a new minor version of the environment template, include <code>major Version</code>.</p>
     /// <p>To create a new major and minor version of the environment template, exclude <code>major Version</code>.</p>
-    pub fn major_version(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn major_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.major_version(input.into());
         self
     }
     /// <p>To create a new minor version of the environment template, include <code>major Version</code>.</p>
     /// <p>To create a new major and minor version of the environment template, exclude <code>major Version</code>.</p>
-    pub fn set_major_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_major_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_major_version(input);
         self
     }
@@ -111,7 +126,7 @@ impl CreateEnvironmentTemplateVersionFluentBuilder {
     /// <p>An object that includes the template bundle S3 bucket path and name for the new version of an template.</p>
     pub fn set_source(
         mut self,
-        input: std::option::Option<crate::types::TemplateVersionSourceInput>,
+        input: ::std::option::Option<crate::types::TemplateVersionSourceInput>,
     ) -> Self {
         self.inner = self.inner.set_source(input);
         self
@@ -130,7 +145,7 @@ impl CreateEnvironmentTemplateVersionFluentBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self

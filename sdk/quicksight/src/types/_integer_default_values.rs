@@ -2,22 +2,22 @@
 
 /// <p>The default values of the <code>IntegerParameterDeclaration</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IntegerDefaultValues {
     /// <p>The dynamic value of the <code>IntegerDefaultValues</code>. Different defaults are displayed according to users, groups, and values mapping.</p>
     #[doc(hidden)]
-    pub dynamic_value: std::option::Option<crate::types::DynamicDefaultValue>,
+    pub dynamic_value: ::std::option::Option<crate::types::DynamicDefaultValue>,
     /// <p>The static values of the <code>IntegerDefaultValues</code>.</p>
     #[doc(hidden)]
-    pub static_values: std::option::Option<std::vec::Vec<i64>>,
+    pub static_values: ::std::option::Option<::std::vec::Vec<i64>>,
 }
 impl IntegerDefaultValues {
     /// <p>The dynamic value of the <code>IntegerDefaultValues</code>. Different defaults are displayed according to users, groups, and values mapping.</p>
-    pub fn dynamic_value(&self) -> std::option::Option<&crate::types::DynamicDefaultValue> {
+    pub fn dynamic_value(&self) -> ::std::option::Option<&crate::types::DynamicDefaultValue> {
         self.dynamic_value.as_ref()
     }
     /// <p>The static values of the <code>IntegerDefaultValues</code>.</p>
-    pub fn static_values(&self) -> std::option::Option<&[i64]> {
+    pub fn static_values(&self) -> ::std::option::Option<&[i64]> {
         self.static_values.as_deref()
     }
 }
@@ -30,21 +30,23 @@ impl IntegerDefaultValues {
 
 /// A builder for [`IntegerDefaultValues`](crate::types::IntegerDefaultValues).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct IntegerDefaultValuesBuilder {
-    pub(crate) dynamic_value: std::option::Option<crate::types::DynamicDefaultValue>,
-    pub(crate) static_values: std::option::Option<std::vec::Vec<i64>>,
+    pub(crate) dynamic_value: ::std::option::Option<crate::types::DynamicDefaultValue>,
+    pub(crate) static_values: ::std::option::Option<::std::vec::Vec<i64>>,
 }
 impl IntegerDefaultValuesBuilder {
     /// <p>The dynamic value of the <code>IntegerDefaultValues</code>. Different defaults are displayed according to users, groups, and values mapping.</p>
     pub fn dynamic_value(mut self, input: crate::types::DynamicDefaultValue) -> Self {
-        self.dynamic_value = Some(input);
+        self.dynamic_value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The dynamic value of the <code>IntegerDefaultValues</code>. Different defaults are displayed according to users, groups, and values mapping.</p>
     pub fn set_dynamic_value(
         mut self,
-        input: std::option::Option<crate::types::DynamicDefaultValue>,
+        input: ::std::option::Option<crate::types::DynamicDefaultValue>,
     ) -> Self {
         self.dynamic_value = input;
         self
@@ -57,11 +59,11 @@ impl IntegerDefaultValuesBuilder {
     pub fn static_values(mut self, input: i64) -> Self {
         let mut v = self.static_values.unwrap_or_default();
         v.push(input);
-        self.static_values = Some(v);
+        self.static_values = ::std::option::Option::Some(v);
         self
     }
     /// <p>The static values of the <code>IntegerDefaultValues</code>.</p>
-    pub fn set_static_values(mut self, input: std::option::Option<std::vec::Vec<i64>>) -> Self {
+    pub fn set_static_values(mut self, input: ::std::option::Option<::std::vec::Vec<i64>>) -> Self {
         self.static_values = input;
         self
     }

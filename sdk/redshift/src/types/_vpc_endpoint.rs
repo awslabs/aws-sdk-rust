@@ -2,29 +2,29 @@
 
 /// <p>The connection endpoint for connecting to an Amazon Redshift cluster through the proxy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VpcEndpoint {
     /// <p>The connection endpoint ID for connecting an Amazon Redshift cluster through the proxy.</p>
     #[doc(hidden)]
-    pub vpc_endpoint_id: std::option::Option<std::string::String>,
+    pub vpc_endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>The VPC identifier that the endpoint is associated. </p>
     #[doc(hidden)]
-    pub vpc_id: std::option::Option<std::string::String>,
+    pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>One or more network interfaces of the endpoint. Also known as an interface endpoint. </p>
     #[doc(hidden)]
-    pub network_interfaces: std::option::Option<std::vec::Vec<crate::types::NetworkInterface>>,
+    pub network_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>,
 }
 impl VpcEndpoint {
     /// <p>The connection endpoint ID for connecting an Amazon Redshift cluster through the proxy.</p>
-    pub fn vpc_endpoint_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_endpoint_id(&self) -> ::std::option::Option<&str> {
         self.vpc_endpoint_id.as_deref()
     }
     /// <p>The VPC identifier that the endpoint is associated. </p>
-    pub fn vpc_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
     /// <p>One or more network interfaces of the endpoint. Also known as an interface endpoint. </p>
-    pub fn network_interfaces(&self) -> std::option::Option<&[crate::types::NetworkInterface]> {
+    pub fn network_interfaces(&self) -> ::std::option::Option<&[crate::types::NetworkInterface]> {
         self.network_interfaces.as_deref()
     }
 }
@@ -37,31 +37,39 @@ impl VpcEndpoint {
 
 /// A builder for [`VpcEndpoint`](crate::types::VpcEndpoint).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VpcEndpointBuilder {
-    pub(crate) vpc_endpoint_id: std::option::Option<std::string::String>,
-    pub(crate) vpc_id: std::option::Option<std::string::String>,
+    pub(crate) vpc_endpoint_id: ::std::option::Option<::std::string::String>,
+    pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
     pub(crate) network_interfaces:
-        std::option::Option<std::vec::Vec<crate::types::NetworkInterface>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>,
 }
 impl VpcEndpointBuilder {
     /// <p>The connection endpoint ID for connecting an Amazon Redshift cluster through the proxy.</p>
-    pub fn vpc_endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.vpc_endpoint_id = Some(input.into());
+    pub fn vpc_endpoint_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.vpc_endpoint_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The connection endpoint ID for connecting an Amazon Redshift cluster through the proxy.</p>
-    pub fn set_vpc_endpoint_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_vpc_endpoint_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.vpc_endpoint_id = input;
         self
     }
     /// <p>The VPC identifier that the endpoint is associated. </p>
-    pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.vpc_id = Some(input.into());
+    pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.vpc_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The VPC identifier that the endpoint is associated. </p>
-    pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
     }
@@ -73,13 +81,13 @@ impl VpcEndpointBuilder {
     pub fn network_interfaces(mut self, input: crate::types::NetworkInterface) -> Self {
         let mut v = self.network_interfaces.unwrap_or_default();
         v.push(input);
-        self.network_interfaces = Some(v);
+        self.network_interfaces = ::std::option::Option::Some(v);
         self
     }
     /// <p>One or more network interfaces of the endpoint. Also known as an interface endpoint. </p>
     pub fn set_network_interfaces(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::NetworkInterface>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>>,
     ) -> Self {
         self.network_interfaces = input;
         self

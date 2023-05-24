@@ -7,56 +7,59 @@ pub use crate::operation::create_service::_create_service_input::CreateServiceIn
 ///
 /// <p>Create an App Runner service. After the service is created, the action also automatically starts a deployment.</p>
 /// <p>This is an asynchronous operation. On a successful call, you can use the returned <code>OperationId</code> and the <a href="https://docs.aws.amazon.com/apprunner/latest/api/API_ListOperations.html">ListOperations</a> call to track the operation's progress.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateServiceFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_service::builders::CreateServiceInputBuilder,
 }
 impl CreateServiceFluentBuilder {
     /// Creates a new `CreateService`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_service::CreateService,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_service::CreateServiceError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_service::CreateServiceError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_service::CreateServiceOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_service::CreateServiceError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_service::CreateServiceError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -69,19 +72,19 @@ impl CreateServiceFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_service::CreateServiceOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_service::CreateServiceError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_service::CreateServiceError>,
     > {
         self.send_middleware().await
     }
     /// <p>A name for the App Runner service. It must be unique across all the running App Runner services in your Amazon Web Services account in the Amazon Web Services Region.</p>
-    pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_name(input.into());
         self
     }
     /// <p>A name for the App Runner service. It must be unique across all the running App Runner services in your Amazon Web Services account in the Amazon Web Services Region.</p>
-    pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service_name(input);
         self
     }
@@ -93,7 +96,7 @@ impl CreateServiceFluentBuilder {
     /// <p>The source to deploy to the App Runner service. It can be a code or an image repository.</p>
     pub fn set_source_configuration(
         mut self,
-        input: std::option::Option<crate::types::SourceConfiguration>,
+        input: ::std::option::Option<crate::types::SourceConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_source_configuration(input);
         self
@@ -106,7 +109,7 @@ impl CreateServiceFluentBuilder {
     /// <p>The runtime configuration of instances (scaling units) of your service.</p>
     pub fn set_instance_configuration(
         mut self,
-        input: std::option::Option<crate::types::InstanceConfiguration>,
+        input: ::std::option::Option<crate::types::InstanceConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_instance_configuration(input);
         self
@@ -123,7 +126,7 @@ impl CreateServiceFluentBuilder {
     /// <p>An optional list of metadata items that you can associate with the App Runner service resource. A tag is a key-value pair.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
@@ -139,7 +142,7 @@ impl CreateServiceFluentBuilder {
     /// <p>An optional custom encryption key that App Runner uses to encrypt the copy of your source repository that it maintains and your service logs. By default, App Runner uses an Amazon Web Services managed key.</p>
     pub fn set_encryption_configuration(
         mut self,
-        input: std::option::Option<crate::types::EncryptionConfiguration>,
+        input: ::std::option::Option<crate::types::EncryptionConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_encryption_configuration(input);
         self
@@ -155,7 +158,7 @@ impl CreateServiceFluentBuilder {
     /// <p>The settings for the health check that App Runner performs to monitor the health of the App Runner service.</p>
     pub fn set_health_check_configuration(
         mut self,
-        input: std::option::Option<crate::types::HealthCheckConfiguration>,
+        input: ::std::option::Option<crate::types::HealthCheckConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_health_check_configuration(input);
         self
@@ -163,7 +166,10 @@ impl CreateServiceFluentBuilder {
     /// <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling configuration resource that you want to associate with your service. If not provided, App Runner associates the latest revision of a default auto scaling configuration.</p>
     /// <p>Specify an ARN with a name and a revision number to associate that revision. For example: <code>arn:aws:apprunner:us-east-1:123456789012:autoscalingconfiguration/high-availability/3</code> </p>
     /// <p>Specify just the name to associate the latest revision. For example: <code>arn:aws:apprunner:us-east-1:123456789012:autoscalingconfiguration/high-availability</code> </p>
-    pub fn auto_scaling_configuration_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn auto_scaling_configuration_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.auto_scaling_configuration_arn(input.into());
         self
     }
@@ -172,7 +178,7 @@ impl CreateServiceFluentBuilder {
     /// <p>Specify just the name to associate the latest revision. For example: <code>arn:aws:apprunner:us-east-1:123456789012:autoscalingconfiguration/high-availability</code> </p>
     pub fn set_auto_scaling_configuration_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_auto_scaling_configuration_arn(input);
         self
@@ -185,7 +191,7 @@ impl CreateServiceFluentBuilder {
     /// <p>Configuration settings related to network traffic of the web application that the App Runner service runs.</p>
     pub fn set_network_configuration(
         mut self,
-        input: std::option::Option<crate::types::NetworkConfiguration>,
+        input: ::std::option::Option<crate::types::NetworkConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_network_configuration(input);
         self
@@ -201,7 +207,7 @@ impl CreateServiceFluentBuilder {
     /// <p>The observability configuration of your service.</p>
     pub fn set_observability_configuration(
         mut self,
-        input: std::option::Option<crate::types::ServiceObservabilityConfiguration>,
+        input: ::std::option::Option<crate::types::ServiceObservabilityConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_observability_configuration(input);
         self

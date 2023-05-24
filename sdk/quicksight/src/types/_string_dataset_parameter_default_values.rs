@@ -2,15 +2,15 @@
 
 /// <p>The default values of a string parameter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StringDatasetParameterDefaultValues {
     /// <p>A list of static default values for a given string parameter.</p>
     #[doc(hidden)]
-    pub static_values: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub static_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl StringDatasetParameterDefaultValues {
     /// <p>A list of static default values for a given string parameter.</p>
-    pub fn static_values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn static_values(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.static_values.as_deref()
     }
 }
@@ -23,9 +23,11 @@ impl StringDatasetParameterDefaultValues {
 
 /// A builder for [`StringDatasetParameterDefaultValues`](crate::types::StringDatasetParameterDefaultValues).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StringDatasetParameterDefaultValuesBuilder {
-    pub(crate) static_values: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) static_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl StringDatasetParameterDefaultValuesBuilder {
     /// Appends an item to `static_values`.
@@ -33,16 +35,19 @@ impl StringDatasetParameterDefaultValuesBuilder {
     /// To override the contents of this collection use [`set_static_values`](Self::set_static_values).
     ///
     /// <p>A list of static default values for a given string parameter.</p>
-    pub fn static_values(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn static_values(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.static_values.unwrap_or_default();
         v.push(input.into());
-        self.static_values = Some(v);
+        self.static_values = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of static default values for a given string parameter.</p>
     pub fn set_static_values(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.static_values = input;
         self

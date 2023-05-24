@@ -2,23 +2,23 @@
 
 /// <p>DescribeNFSFileSharesOutput</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeNfsFileSharesOutput {
     /// <p>An array containing a description for each requested file share.</p>
     #[doc(hidden)]
     pub nfs_file_share_info_list:
-        std::option::Option<std::vec::Vec<crate::types::NfsFileShareInfo>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::NfsFileShareInfo>>,
     _request_id: Option<String>,
 }
 impl DescribeNfsFileSharesOutput {
     /// <p>An array containing a description for each requested file share.</p>
     pub fn nfs_file_share_info_list(
         &self,
-    ) -> std::option::Option<&[crate::types::NfsFileShareInfo]> {
+    ) -> ::std::option::Option<&[crate::types::NfsFileShareInfo]> {
         self.nfs_file_share_info_list.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeNfsFileSharesOutput {
+impl ::aws_http::request_id::RequestId for DescribeNfsFileSharesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -34,10 +34,12 @@ impl DescribeNfsFileSharesOutput {
 
 /// A builder for [`DescribeNfsFileSharesOutput`](crate::operation::describe_nfs_file_shares::DescribeNfsFileSharesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeNfsFileSharesOutputBuilder {
     pub(crate) nfs_file_share_info_list:
-        std::option::Option<std::vec::Vec<crate::types::NfsFileShareInfo>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::NfsFileShareInfo>>,
     _request_id: Option<String>,
 }
 impl DescribeNfsFileSharesOutputBuilder {
@@ -49,13 +51,13 @@ impl DescribeNfsFileSharesOutputBuilder {
     pub fn nfs_file_share_info_list(mut self, input: crate::types::NfsFileShareInfo) -> Self {
         let mut v = self.nfs_file_share_info_list.unwrap_or_default();
         v.push(input);
-        self.nfs_file_share_info_list = Some(v);
+        self.nfs_file_share_info_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array containing a description for each requested file share.</p>
     pub fn set_nfs_file_share_info_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::NfsFileShareInfo>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::NfsFileShareInfo>>,
     ) -> Self {
         self.nfs_file_share_info_list = input;
         self

@@ -2,36 +2,36 @@
 
 /// <p>Contains the details of the committed transaction.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CommitTransactionResult {
     /// <p>The transaction ID of the committed transaction.</p>
     #[doc(hidden)]
-    pub transaction_id: std::option::Option<std::string::String>,
+    pub transaction_id: ::std::option::Option<::std::string::String>,
     /// <p>The commit digest of the committed transaction.</p>
     #[doc(hidden)]
-    pub commit_digest: std::option::Option<aws_smithy_types::Blob>,
+    pub commit_digest: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>Contains server-side performance information for the command.</p>
     #[doc(hidden)]
-    pub timing_information: std::option::Option<crate::types::TimingInformation>,
+    pub timing_information: ::std::option::Option<crate::types::TimingInformation>,
     /// <p>Contains metrics about the number of I/O requests that were consumed.</p>
     #[doc(hidden)]
-    pub consumed_i_os: std::option::Option<crate::types::IoUsage>,
+    pub consumed_i_os: ::std::option::Option<crate::types::IoUsage>,
 }
 impl CommitTransactionResult {
     /// <p>The transaction ID of the committed transaction.</p>
-    pub fn transaction_id(&self) -> std::option::Option<&str> {
+    pub fn transaction_id(&self) -> ::std::option::Option<&str> {
         self.transaction_id.as_deref()
     }
     /// <p>The commit digest of the committed transaction.</p>
-    pub fn commit_digest(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn commit_digest(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
         self.commit_digest.as_ref()
     }
     /// <p>Contains server-side performance information for the command.</p>
-    pub fn timing_information(&self) -> std::option::Option<&crate::types::TimingInformation> {
+    pub fn timing_information(&self) -> ::std::option::Option<&crate::types::TimingInformation> {
         self.timing_information.as_ref()
     }
     /// <p>Contains metrics about the number of I/O requests that were consumed.</p>
-    pub fn consumed_i_os(&self) -> std::option::Option<&crate::types::IoUsage> {
+    pub fn consumed_i_os(&self) -> ::std::option::Option<&crate::types::IoUsage> {
         self.consumed_i_os.as_ref()
     }
 }
@@ -44,54 +44,68 @@ impl CommitTransactionResult {
 
 /// A builder for [`CommitTransactionResult`](crate::types::CommitTransactionResult).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CommitTransactionResultBuilder {
-    pub(crate) transaction_id: std::option::Option<std::string::String>,
-    pub(crate) commit_digest: std::option::Option<aws_smithy_types::Blob>,
-    pub(crate) timing_information: std::option::Option<crate::types::TimingInformation>,
-    pub(crate) consumed_i_os: std::option::Option<crate::types::IoUsage>,
+    pub(crate) transaction_id: ::std::option::Option<::std::string::String>,
+    pub(crate) commit_digest: ::std::option::Option<::aws_smithy_types::Blob>,
+    pub(crate) timing_information: ::std::option::Option<crate::types::TimingInformation>,
+    pub(crate) consumed_i_os: ::std::option::Option<crate::types::IoUsage>,
 }
 impl CommitTransactionResultBuilder {
     /// <p>The transaction ID of the committed transaction.</p>
-    pub fn transaction_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.transaction_id = Some(input.into());
+    pub fn transaction_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.transaction_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The transaction ID of the committed transaction.</p>
-    pub fn set_transaction_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_transaction_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.transaction_id = input;
         self
     }
     /// <p>The commit digest of the committed transaction.</p>
-    pub fn commit_digest(mut self, input: aws_smithy_types::Blob) -> Self {
-        self.commit_digest = Some(input);
+    pub fn commit_digest(mut self, input: ::aws_smithy_types::Blob) -> Self {
+        self.commit_digest = ::std::option::Option::Some(input);
         self
     }
     /// <p>The commit digest of the committed transaction.</p>
-    pub fn set_commit_digest(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
+    pub fn set_commit_digest(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::Blob>,
+    ) -> Self {
         self.commit_digest = input;
         self
     }
     /// <p>Contains server-side performance information for the command.</p>
     pub fn timing_information(mut self, input: crate::types::TimingInformation) -> Self {
-        self.timing_information = Some(input);
+        self.timing_information = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains server-side performance information for the command.</p>
     pub fn set_timing_information(
         mut self,
-        input: std::option::Option<crate::types::TimingInformation>,
+        input: ::std::option::Option<crate::types::TimingInformation>,
     ) -> Self {
         self.timing_information = input;
         self
     }
     /// <p>Contains metrics about the number of I/O requests that were consumed.</p>
     pub fn consumed_i_os(mut self, input: crate::types::IoUsage) -> Self {
-        self.consumed_i_os = Some(input);
+        self.consumed_i_os = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains metrics about the number of I/O requests that were consumed.</p>
-    pub fn set_consumed_i_os(mut self, input: std::option::Option<crate::types::IoUsage>) -> Self {
+    pub fn set_consumed_i_os(
+        mut self,
+        input: ::std::option::Option<crate::types::IoUsage>,
+    ) -> Self {
         self.consumed_i_os = input;
         self
     }

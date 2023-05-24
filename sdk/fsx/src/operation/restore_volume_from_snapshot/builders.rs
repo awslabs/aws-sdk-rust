@@ -6,29 +6,29 @@ pub use crate::operation::restore_volume_from_snapshot::_restore_volume_from_sna
 /// Fluent builder constructing a request to `RestoreVolumeFromSnapshot`.
 ///
 /// <p>Returns an Amazon FSx for OpenZFS volume to the state saved by the specified snapshot.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RestoreVolumeFromSnapshotFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::restore_volume_from_snapshot::builders::RestoreVolumeFromSnapshotInputBuilder,
 }
 impl RestoreVolumeFromSnapshotFluentBuilder {
     /// Creates a new `RestoreVolumeFromSnapshot`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::restore_volume_from_snapshot::RestoreVolumeFromSnapshot,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::restore_volume_from_snapshot::RestoreVolumeFromSnapshotError,
         >,
     > {
@@ -36,30 +36,33 @@ impl RestoreVolumeFromSnapshotFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::restore_volume_from_snapshot::RestoreVolumeFromSnapshotOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::restore_volume_from_snapshot::RestoreVolumeFromSnapshotError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,44 +75,47 @@ impl RestoreVolumeFromSnapshotFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::restore_volume_from_snapshot::RestoreVolumeFromSnapshotOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::restore_volume_from_snapshot::RestoreVolumeFromSnapshotError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn client_request_token(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     pub fn set_client_request_token(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
     /// <p>The ID of the volume that you are restoring.</p>
-    pub fn volume_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn volume_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.volume_id(input.into());
         self
     }
     /// <p>The ID of the volume that you are restoring.</p>
-    pub fn set_volume_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_volume_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_volume_id(input);
         self
     }
     /// <p>The ID of the source snapshot. Specifies the snapshot that you are restoring from.</p>
-    pub fn snapshot_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn snapshot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.snapshot_id(input.into());
         self
     }
     /// <p>The ID of the source snapshot. Specifies the snapshot that you are restoring from.</p>
-    pub fn set_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_snapshot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_snapshot_id(input);
         self
     }
@@ -133,7 +139,7 @@ impl RestoreVolumeFromSnapshotFluentBuilder {
     /// </ul>
     pub fn set_options(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RestoreOpenZfsVolumeOption>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::RestoreOpenZfsVolumeOption>>,
     ) -> Self {
         self.inner = self.inner.set_options(input);
         self

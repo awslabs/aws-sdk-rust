@@ -10,15 +10,15 @@
 /// </ul>
 /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelTimerDecisionAttributes {
     /// <p> The unique ID of the timer to cancel.</p>
     #[doc(hidden)]
-    pub timer_id: std::option::Option<std::string::String>,
+    pub timer_id: ::std::option::Option<::std::string::String>,
 }
 impl CancelTimerDecisionAttributes {
     /// <p> The unique ID of the timer to cancel.</p>
-    pub fn timer_id(&self) -> std::option::Option<&str> {
+    pub fn timer_id(&self) -> ::std::option::Option<&str> {
         self.timer_id.as_deref()
     }
 }
@@ -31,18 +31,20 @@ impl CancelTimerDecisionAttributes {
 
 /// A builder for [`CancelTimerDecisionAttributes`](crate::types::CancelTimerDecisionAttributes).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CancelTimerDecisionAttributesBuilder {
-    pub(crate) timer_id: std::option::Option<std::string::String>,
+    pub(crate) timer_id: ::std::option::Option<::std::string::String>,
 }
 impl CancelTimerDecisionAttributesBuilder {
     /// <p> The unique ID of the timer to cancel.</p>
-    pub fn timer_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.timer_id = Some(input.into());
+    pub fn timer_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.timer_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The unique ID of the timer to cancel.</p>
-    pub fn set_timer_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_timer_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.timer_id = input;
         self
     }

@@ -2,36 +2,36 @@
 
 /// <p> Object containing source code information that is linked to an application component. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SourceCode {
     /// <p> The type of repository to use for the source code. </p>
     #[doc(hidden)]
-    pub version_control: std::option::Option<crate::types::VersionControl>,
+    pub version_control: ::std::option::Option<crate::types::VersionControl>,
     /// <p> The branch of the source code. </p>
     #[doc(hidden)]
-    pub source_version: std::option::Option<std::string::String>,
+    pub source_version: ::std::option::Option<::std::string::String>,
     /// <p> The repository name for the source code. </p>
     #[doc(hidden)]
-    pub location: std::option::Option<std::string::String>,
+    pub location: ::std::option::Option<::std::string::String>,
     /// <p>The name of the project.</p>
     #[doc(hidden)]
-    pub project_name: std::option::Option<std::string::String>,
+    pub project_name: ::std::option::Option<::std::string::String>,
 }
 impl SourceCode {
     /// <p> The type of repository to use for the source code. </p>
-    pub fn version_control(&self) -> std::option::Option<&crate::types::VersionControl> {
+    pub fn version_control(&self) -> ::std::option::Option<&crate::types::VersionControl> {
         self.version_control.as_ref()
     }
     /// <p> The branch of the source code. </p>
-    pub fn source_version(&self) -> std::option::Option<&str> {
+    pub fn source_version(&self) -> ::std::option::Option<&str> {
         self.source_version.as_deref()
     }
     /// <p> The repository name for the source code. </p>
-    pub fn location(&self) -> std::option::Option<&str> {
+    pub fn location(&self) -> ::std::option::Option<&str> {
         self.location.as_deref()
     }
     /// <p>The name of the project.</p>
-    pub fn project_name(&self) -> std::option::Option<&str> {
+    pub fn project_name(&self) -> ::std::option::Option<&str> {
         self.project_name.as_deref()
     }
 }
@@ -44,54 +44,62 @@ impl SourceCode {
 
 /// A builder for [`SourceCode`](crate::types::SourceCode).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SourceCodeBuilder {
-    pub(crate) version_control: std::option::Option<crate::types::VersionControl>,
-    pub(crate) source_version: std::option::Option<std::string::String>,
-    pub(crate) location: std::option::Option<std::string::String>,
-    pub(crate) project_name: std::option::Option<std::string::String>,
+    pub(crate) version_control: ::std::option::Option<crate::types::VersionControl>,
+    pub(crate) source_version: ::std::option::Option<::std::string::String>,
+    pub(crate) location: ::std::option::Option<::std::string::String>,
+    pub(crate) project_name: ::std::option::Option<::std::string::String>,
 }
 impl SourceCodeBuilder {
     /// <p> The type of repository to use for the source code. </p>
     pub fn version_control(mut self, input: crate::types::VersionControl) -> Self {
-        self.version_control = Some(input);
+        self.version_control = ::std::option::Option::Some(input);
         self
     }
     /// <p> The type of repository to use for the source code. </p>
     pub fn set_version_control(
         mut self,
-        input: std::option::Option<crate::types::VersionControl>,
+        input: ::std::option::Option<crate::types::VersionControl>,
     ) -> Self {
         self.version_control = input;
         self
     }
     /// <p> The branch of the source code. </p>
-    pub fn source_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.source_version = Some(input.into());
+    pub fn source_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.source_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The branch of the source code. </p>
-    pub fn set_source_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_source_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.source_version = input;
         self
     }
     /// <p> The repository name for the source code. </p>
-    pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
-        self.location = Some(input.into());
+    pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.location = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The repository name for the source code. </p>
-    pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location = input;
         self
     }
     /// <p>The name of the project.</p>
-    pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.project_name = Some(input.into());
+    pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.project_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the project.</p>
-    pub fn set_project_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_project_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.project_name = input;
         self
     }

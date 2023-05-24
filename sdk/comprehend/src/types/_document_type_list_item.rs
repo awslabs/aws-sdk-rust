@@ -2,22 +2,22 @@
 
 /// <p>Document type for each page in the document.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DocumentTypeListItem {
     /// <p>Page number.</p>
     #[doc(hidden)]
-    pub page: std::option::Option<i32>,
+    pub page: ::std::option::Option<i32>,
     /// <p>Document type.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::DocumentType>,
+    pub r#type: ::std::option::Option<crate::types::DocumentType>,
 }
 impl DocumentTypeListItem {
     /// <p>Page number.</p>
-    pub fn page(&self) -> std::option::Option<i32> {
+    pub fn page(&self) -> ::std::option::Option<i32> {
         self.page
     }
     /// <p>Document type.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::DocumentType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::DocumentType> {
         self.r#type.as_ref()
     }
 }
@@ -30,29 +30,31 @@ impl DocumentTypeListItem {
 
 /// A builder for [`DocumentTypeListItem`](crate::types::DocumentTypeListItem).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DocumentTypeListItemBuilder {
-    pub(crate) page: std::option::Option<i32>,
-    pub(crate) r#type: std::option::Option<crate::types::DocumentType>,
+    pub(crate) page: ::std::option::Option<i32>,
+    pub(crate) r#type: ::std::option::Option<crate::types::DocumentType>,
 }
 impl DocumentTypeListItemBuilder {
     /// <p>Page number.</p>
     pub fn page(mut self, input: i32) -> Self {
-        self.page = Some(input);
+        self.page = ::std::option::Option::Some(input);
         self
     }
     /// <p>Page number.</p>
-    pub fn set_page(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_page(mut self, input: ::std::option::Option<i32>) -> Self {
         self.page = input;
         self
     }
     /// <p>Document type.</p>
     pub fn r#type(mut self, input: crate::types::DocumentType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Document type.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::DocumentType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::DocumentType>) -> Self {
         self.r#type = input;
         self
     }

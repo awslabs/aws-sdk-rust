@@ -7,29 +7,29 @@ pub use crate::operation::get_query_suggestions::_get_query_suggestions_input::G
 ///
 /// <p>Fetches the queries that are suggested to your users.</p>
 /// <p> <code>GetQuerySuggestions</code> is currently not supported in the Amazon Web Services GovCloud (US-West) region.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetQuerySuggestionsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::get_query_suggestions::builders::GetQuerySuggestionsInputBuilder,
 }
 impl GetQuerySuggestionsFluentBuilder {
     /// Creates a new `GetQuerySuggestions`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::get_query_suggestions::GetQuerySuggestions,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::get_query_suggestions::GetQuerySuggestionsError,
         >,
     > {
@@ -37,30 +37,33 @@ impl GetQuerySuggestionsFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_query_suggestions::GetQuerySuggestionsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::get_query_suggestions::GetQuerySuggestionsError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -73,35 +76,35 @@ impl GetQuerySuggestionsFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_query_suggestions::GetQuerySuggestionsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::get_query_suggestions::GetQuerySuggestionsError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The identifier of the index you want to get query suggestions from.</p>
-    pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.index_id(input.into());
         self
     }
     /// <p>The identifier of the index you want to get query suggestions from.</p>
-    pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_index_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_index_id(input);
         self
     }
     /// <p>The text of a user's query to generate query suggestions.</p>
     /// <p>A query is suggested if the query prefix matches what a user starts to type as their query.</p>
     /// <p>Amazon Kendra does not show any suggestions if a user types fewer than two characters or more than 60 characters. A query must also have at least one search result and contain at least one word of more than four characters.</p>
-    pub fn query_text(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn query_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.query_text(input.into());
         self
     }
     /// <p>The text of a user's query to generate query suggestions.</p>
     /// <p>A query is suggested if the query prefix matches what a user starts to type as their query.</p>
     /// <p>Amazon Kendra does not show any suggestions if a user types fewer than two characters or more than 60 characters. A query must also have at least one search result and contain at least one word of more than four characters.</p>
-    pub fn set_query_text(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_query_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_query_text(input);
         self
     }
@@ -111,7 +114,7 @@ impl GetQuerySuggestionsFluentBuilder {
         self
     }
     /// <p>The maximum number of query suggestions you want to show to your users.</p>
-    pub fn set_max_suggestions_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_suggestions_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_suggestions_count(input);
         self
     }
@@ -131,7 +134,7 @@ impl GetQuerySuggestionsFluentBuilder {
     /// <p>If you set document fields/attributes as your suggestions type, Amazon Kendra suggests queries relevant to your users based on the contents of document fields.</p>
     pub fn set_suggestion_types(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SuggestionType>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SuggestionType>>,
     ) -> Self {
         self.inner = self.inner.set_suggestion_types(input);
         self
@@ -147,7 +150,7 @@ impl GetQuerySuggestionsFluentBuilder {
     /// <p>Configuration information for the document fields/attributes that you want to base query suggestions on.</p>
     pub fn set_attribute_suggestions_config(
         mut self,
-        input: std::option::Option<crate::types::AttributeSuggestionsGetConfig>,
+        input: ::std::option::Option<crate::types::AttributeSuggestionsGetConfig>,
     ) -> Self {
         self.inner = self.inner.set_attribute_suggestions_config(input);
         self

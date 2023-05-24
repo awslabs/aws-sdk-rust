@@ -2,22 +2,22 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails {
     /// <p>The Amazon EFS access point identifier to use.</p>
     #[doc(hidden)]
-    pub access_point_id: std::option::Option<std::string::String>,
+    pub access_point_id: ::std::option::Option<::std::string::String>,
     /// <p>Whether to use the Amazon ECS task IAM role defined in a task definition when mounting the Amazon EFS file system.</p>
     #[doc(hidden)]
-    pub iam: std::option::Option<std::string::String>,
+    pub iam: ::std::option::Option<::std::string::String>,
 }
 impl AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails {
     /// <p>The Amazon EFS access point identifier to use.</p>
-    pub fn access_point_id(&self) -> std::option::Option<&str> {
+    pub fn access_point_id(&self) -> ::std::option::Option<&str> {
         self.access_point_id.as_deref()
     }
     /// <p>Whether to use the Amazon ECS task IAM role defined in a task definition when mounting the Amazon EFS file system.</p>
-    pub fn iam(&self) -> std::option::Option<&str> {
+    pub fn iam(&self) -> ::std::option::Option<&str> {
         self.iam.as_deref()
     }
 }
@@ -30,29 +30,37 @@ impl AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails
 
 /// A builder for [`AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails`](crate::types::AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetailsBuilder {
-    pub(crate) access_point_id: std::option::Option<std::string::String>,
-    pub(crate) iam: std::option::Option<std::string::String>,
+    pub(crate) access_point_id: ::std::option::Option<::std::string::String>,
+    pub(crate) iam: ::std::option::Option<::std::string::String>,
 }
 impl AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationAuthorizationConfigDetailsBuilder {
     /// <p>The Amazon EFS access point identifier to use.</p>
-    pub fn access_point_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.access_point_id = Some(input.into());
+    pub fn access_point_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.access_point_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon EFS access point identifier to use.</p>
-    pub fn set_access_point_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_access_point_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.access_point_id = input;
         self
     }
     /// <p>Whether to use the Amazon ECS task IAM role defined in a task definition when mounting the Amazon EFS file system.</p>
-    pub fn iam(mut self, input: impl Into<std::string::String>) -> Self {
-        self.iam = Some(input.into());
+    pub fn iam(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.iam = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Whether to use the Amazon ECS task IAM role defined in a task definition when mounting the Amazon EFS file system.</p>
-    pub fn set_iam(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_iam(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.iam = input;
         self
     }

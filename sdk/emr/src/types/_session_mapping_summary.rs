@@ -2,50 +2,50 @@
 
 /// <p>Details for an Amazon EMR Studio session mapping. The details do not include the time the session mapping was last modified.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SessionMappingSummary {
     /// <p>The ID of the Amazon EMR Studio.</p>
     #[doc(hidden)]
-    pub studio_id: std::option::Option<std::string::String>,
+    pub studio_id: ::std::option::Option<::std::string::String>,
     /// <p>The globally unique identifier (GUID) of the user or group from the IAM Identity Center Identity Store.</p>
     #[doc(hidden)]
-    pub identity_id: std::option::Option<std::string::String>,
+    pub identity_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>IAM Identity Center Identity Store API Reference</i>.</p>
     #[doc(hidden)]
-    pub identity_name: std::option::Option<std::string::String>,
+    pub identity_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the identity mapped to the Amazon EMR Studio is a user or a group.</p>
     #[doc(hidden)]
-    pub identity_type: std::option::Option<crate::types::IdentityType>,
+    pub identity_type: ::std::option::Option<crate::types::IdentityType>,
     /// <p>The Amazon Resource Name (ARN) of the session policy associated with the user or group.</p>
     #[doc(hidden)]
-    pub session_policy_arn: std::option::Option<std::string::String>,
+    pub session_policy_arn: ::std::option::Option<::std::string::String>,
     /// <p>The time the session mapping was created.</p>
     #[doc(hidden)]
-    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl SessionMappingSummary {
     /// <p>The ID of the Amazon EMR Studio.</p>
-    pub fn studio_id(&self) -> std::option::Option<&str> {
+    pub fn studio_id(&self) -> ::std::option::Option<&str> {
         self.studio_id.as_deref()
     }
     /// <p>The globally unique identifier (GUID) of the user or group from the IAM Identity Center Identity Store.</p>
-    pub fn identity_id(&self) -> std::option::Option<&str> {
+    pub fn identity_id(&self) -> ::std::option::Option<&str> {
         self.identity_id.as_deref()
     }
     /// <p>The name of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>IAM Identity Center Identity Store API Reference</i>.</p>
-    pub fn identity_name(&self) -> std::option::Option<&str> {
+    pub fn identity_name(&self) -> ::std::option::Option<&str> {
         self.identity_name.as_deref()
     }
     /// <p>Specifies whether the identity mapped to the Amazon EMR Studio is a user or a group.</p>
-    pub fn identity_type(&self) -> std::option::Option<&crate::types::IdentityType> {
+    pub fn identity_type(&self) -> ::std::option::Option<&crate::types::IdentityType> {
         self.identity_type.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the session policy associated with the user or group.</p>
-    pub fn session_policy_arn(&self) -> std::option::Option<&str> {
+    pub fn session_policy_arn(&self) -> ::std::option::Option<&str> {
         self.session_policy_arn.as_deref()
     }
     /// <p>The time the session mapping was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
@@ -58,81 +58,92 @@ impl SessionMappingSummary {
 
 /// A builder for [`SessionMappingSummary`](crate::types::SessionMappingSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SessionMappingSummaryBuilder {
-    pub(crate) studio_id: std::option::Option<std::string::String>,
-    pub(crate) identity_id: std::option::Option<std::string::String>,
-    pub(crate) identity_name: std::option::Option<std::string::String>,
-    pub(crate) identity_type: std::option::Option<crate::types::IdentityType>,
-    pub(crate) session_policy_arn: std::option::Option<std::string::String>,
-    pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) studio_id: ::std::option::Option<::std::string::String>,
+    pub(crate) identity_id: ::std::option::Option<::std::string::String>,
+    pub(crate) identity_name: ::std::option::Option<::std::string::String>,
+    pub(crate) identity_type: ::std::option::Option<crate::types::IdentityType>,
+    pub(crate) session_policy_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl SessionMappingSummaryBuilder {
     /// <p>The ID of the Amazon EMR Studio.</p>
-    pub fn studio_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.studio_id = Some(input.into());
+    pub fn studio_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.studio_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon EMR Studio.</p>
-    pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_studio_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.studio_id = input;
         self
     }
     /// <p>The globally unique identifier (GUID) of the user or group from the IAM Identity Center Identity Store.</p>
-    pub fn identity_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.identity_id = Some(input.into());
+    pub fn identity_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.identity_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The globally unique identifier (GUID) of the user or group from the IAM Identity Center Identity Store.</p>
-    pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_identity_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.identity_id = input;
         self
     }
     /// <p>The name of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>IAM Identity Center Identity Store API Reference</i>.</p>
-    pub fn identity_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.identity_name = Some(input.into());
+    pub fn identity_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.identity_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>IAM Identity Center Identity Store API Reference</i>.</p>
-    pub fn set_identity_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_identity_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.identity_name = input;
         self
     }
     /// <p>Specifies whether the identity mapped to the Amazon EMR Studio is a user or a group.</p>
     pub fn identity_type(mut self, input: crate::types::IdentityType) -> Self {
-        self.identity_type = Some(input);
+        self.identity_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether the identity mapped to the Amazon EMR Studio is a user or a group.</p>
     pub fn set_identity_type(
         mut self,
-        input: std::option::Option<crate::types::IdentityType>,
+        input: ::std::option::Option<crate::types::IdentityType>,
     ) -> Self {
         self.identity_type = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the session policy associated with the user or group.</p>
-    pub fn session_policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.session_policy_arn = Some(input.into());
+    pub fn session_policy_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.session_policy_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the session policy associated with the user or group.</p>
     pub fn set_session_policy_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.session_policy_arn = input;
         self
     }
     /// <p>The time the session mapping was created.</p>
-    pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_time = Some(input);
+    pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time the session mapping was created.</p>
     pub fn set_creation_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_time = input;
         self

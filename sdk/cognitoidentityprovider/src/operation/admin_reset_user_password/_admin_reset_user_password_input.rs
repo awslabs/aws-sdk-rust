@@ -2,14 +2,14 @@
 
 /// <p>Represents the request to reset a user's password as an administrator.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AdminResetUserPasswordInput {
     /// <p>The user pool ID for the user pool where you want to reset the user's password.</p>
     #[doc(hidden)]
-    pub user_pool_id: std::option::Option<std::string::String>,
+    pub user_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The user name of the user whose password you want to reset.</p>
     #[doc(hidden)]
-    pub username: std::option::Option<std::string::String>,
+    pub username: ::std::option::Option<::std::string::String>,
     /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers.</p>
     /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the AdminResetUserPassword API action, Amazon Cognito invokes the function that is assigned to the <i>custom message</i> trigger. When Amazon Cognito invokes this function, it passes a JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code> attribute, which provides the data that you assigned to the ClientMetadata parameter in your AdminResetUserPassword request. In your function code in Lambda, you can process the <code>clientMetadata</code> value to enhance your workflow for your specific needs. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html"> Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon Cognito Developer Guide</i>.</p> <note>
@@ -21,16 +21,17 @@ pub struct AdminResetUserPasswordInput {
     /// </ul>
     /// </note>
     #[doc(hidden)]
-    pub client_metadata:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub client_metadata: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl AdminResetUserPasswordInput {
     /// <p>The user pool ID for the user pool where you want to reset the user's password.</p>
-    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+    pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
         self.user_pool_id.as_deref()
     }
     /// <p>The user name of the user whose password you want to reset.</p>
-    pub fn username(&self) -> std::option::Option<&str> {
+    pub fn username(&self) -> ::std::option::Option<&str> {
         self.username.as_deref()
     }
     /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers.</p>
@@ -45,13 +46,14 @@ impl AdminResetUserPasswordInput {
     /// </note>
     pub fn client_metadata(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.client_metadata.as_ref()
     }
 }
-impl std::fmt::Debug for AdminResetUserPasswordInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for AdminResetUserPasswordInput {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AdminResetUserPasswordInput");
         formatter.field("user_pool_id", &self.user_pool_id);
         formatter.field("username", &"*** Sensitive Data Redacted ***");
@@ -70,31 +72,32 @@ impl AdminResetUserPasswordInput {
 
 /// A builder for [`AdminResetUserPasswordInput`](crate::operation::admin_reset_user_password::AdminResetUserPasswordInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct AdminResetUserPasswordInputBuilder {
-    pub(crate) user_pool_id: std::option::Option<std::string::String>,
-    pub(crate) username: std::option::Option<std::string::String>,
-    pub(crate) client_metadata:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) user_pool_id: ::std::option::Option<::std::string::String>,
+    pub(crate) username: ::std::option::Option<::std::string::String>,
+    pub(crate) client_metadata: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl AdminResetUserPasswordInputBuilder {
     /// <p>The user pool ID for the user pool where you want to reset the user's password.</p>
-    pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.user_pool_id = Some(input.into());
+    pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.user_pool_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user pool ID for the user pool where you want to reset the user's password.</p>
-    pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_pool_id = input;
         self
     }
     /// <p>The user name of the user whose password you want to reset.</p>
-    pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
-        self.username = Some(input.into());
+    pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.username = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user name of the user whose password you want to reset.</p>
-    pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.username = input;
         self
     }
@@ -114,12 +117,12 @@ impl AdminResetUserPasswordInputBuilder {
     /// </note>
     pub fn client_metadata(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.client_metadata.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.client_metadata = Some(hash_map);
+        self.client_metadata = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers.</p>
@@ -134,8 +137,8 @@ impl AdminResetUserPasswordInputBuilder {
     /// </note>
     pub fn set_client_metadata(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.client_metadata = input;
@@ -144,11 +147,11 @@ impl AdminResetUserPasswordInputBuilder {
     /// Consumes the builder and constructs a [`AdminResetUserPasswordInput`](crate::operation::admin_reset_user_password::AdminResetUserPasswordInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::admin_reset_user_password::AdminResetUserPasswordInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::admin_reset_user_password::AdminResetUserPasswordInput {
                 user_pool_id: self.user_pool_id,
                 username: self.username,
@@ -157,8 +160,8 @@ impl AdminResetUserPasswordInputBuilder {
         )
     }
 }
-impl std::fmt::Debug for AdminResetUserPasswordInputBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for AdminResetUserPasswordInputBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AdminResetUserPasswordInputBuilder");
         formatter.field("user_pool_id", &self.user_pool_id);
         formatter.field("username", &"*** Sensitive Data Redacted ***");

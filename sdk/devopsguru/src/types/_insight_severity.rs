@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum InsightSeverity {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum InsightSeverity {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for InsightSeverity {
+impl ::std::convert::From<&str> for InsightSeverity {
     fn from(s: &str) -> Self {
         match s {
             "HIGH" => InsightSeverity::High,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for InsightSeverity {
         }
     }
 }
-impl std::str::FromStr for InsightSeverity {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for InsightSeverity {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(InsightSeverity::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(InsightSeverity::from(s))
     }
 }
 impl InsightSeverity {
@@ -91,7 +91,7 @@ impl InsightSeverity {
         &["HIGH", "LOW", "MEDIUM"]
     }
 }
-impl AsRef<str> for InsightSeverity {
+impl ::std::convert::AsRef<str> for InsightSeverity {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

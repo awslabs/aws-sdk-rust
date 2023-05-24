@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeLocationSmb`](crate::operation::describe_location_smb::builders::DescribeLocationSmbFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`location_arn(impl Into<String>)`](crate::operation::describe_location_smb::builders::DescribeLocationSmbFluentBuilder::location_arn) / [`set_location_arn(Option<String>)`](crate::operation::describe_location_smb::builders::DescribeLocationSmbFluentBuilder::set_location_arn): <p>The Amazon Resource Name (ARN) of the SMB location to describe.</p>
+    ///   - [`location_arn(impl ::std::convert::Into<String>)`](crate::operation::describe_location_smb::builders::DescribeLocationSmbFluentBuilder::location_arn) / [`set_location_arn(Option<String>)`](crate::operation::describe_location_smb::builders::DescribeLocationSmbFluentBuilder::set_location_arn): <p>The Amazon Resource Name (ARN) of the SMB location to describe.</p>
     /// - On success, responds with [`DescribeLocationSmbOutput`](crate::operation::describe_location_smb::DescribeLocationSmbOutput) with field(s):
     ///   - [`location_arn(Option<String>)`](crate::operation::describe_location_smb::DescribeLocationSmbOutput::location_arn): <p>The Amazon Resource Name (ARN) of the SMB location that was described.</p>
     ///   - [`location_uri(Option<String>)`](crate::operation::describe_location_smb::DescribeLocationSmbOutput::location_uri): <p>The URL of the source SMB location that was described.</p>

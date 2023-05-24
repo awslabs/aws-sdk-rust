@@ -2,29 +2,31 @@
 
 /// <p>A calculation made by contrasting a measure and a dimension from your source data.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Metric {
     /// <p>The name of the metric.</p>
     #[doc(hidden)]
-    pub metric_name: std::option::Option<std::string::String>,
+    pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p>The function with which the metric is calculated.</p>
     #[doc(hidden)]
-    pub aggregation_function: std::option::Option<crate::types::AggregationFunction>,
+    pub aggregation_function: ::std::option::Option<crate::types::AggregationFunction>,
     /// <p>The namespace for the metric.</p>
     #[doc(hidden)]
-    pub namespace: std::option::Option<std::string::String>,
+    pub namespace: ::std::option::Option<::std::string::String>,
 }
 impl Metric {
     /// <p>The name of the metric.</p>
-    pub fn metric_name(&self) -> std::option::Option<&str> {
+    pub fn metric_name(&self) -> ::std::option::Option<&str> {
         self.metric_name.as_deref()
     }
     /// <p>The function with which the metric is calculated.</p>
-    pub fn aggregation_function(&self) -> std::option::Option<&crate::types::AggregationFunction> {
+    pub fn aggregation_function(
+        &self,
+    ) -> ::std::option::Option<&crate::types::AggregationFunction> {
         self.aggregation_function.as_ref()
     }
     /// <p>The namespace for the metric.</p>
-    pub fn namespace(&self) -> std::option::Option<&str> {
+    pub fn namespace(&self) -> ::std::option::Option<&str> {
         self.namespace.as_deref()
     }
 }
@@ -37,43 +39,45 @@ impl Metric {
 
 /// A builder for [`Metric`](crate::types::Metric).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MetricBuilder {
-    pub(crate) metric_name: std::option::Option<std::string::String>,
-    pub(crate) aggregation_function: std::option::Option<crate::types::AggregationFunction>,
-    pub(crate) namespace: std::option::Option<std::string::String>,
+    pub(crate) metric_name: ::std::option::Option<::std::string::String>,
+    pub(crate) aggregation_function: ::std::option::Option<crate::types::AggregationFunction>,
+    pub(crate) namespace: ::std::option::Option<::std::string::String>,
 }
 impl MetricBuilder {
     /// <p>The name of the metric.</p>
-    pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.metric_name = Some(input.into());
+    pub fn metric_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.metric_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the metric.</p>
-    pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_metric_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metric_name = input;
         self
     }
     /// <p>The function with which the metric is calculated.</p>
     pub fn aggregation_function(mut self, input: crate::types::AggregationFunction) -> Self {
-        self.aggregation_function = Some(input);
+        self.aggregation_function = ::std::option::Option::Some(input);
         self
     }
     /// <p>The function with which the metric is calculated.</p>
     pub fn set_aggregation_function(
         mut self,
-        input: std::option::Option<crate::types::AggregationFunction>,
+        input: ::std::option::Option<crate::types::AggregationFunction>,
     ) -> Self {
         self.aggregation_function = input;
         self
     }
     /// <p>The namespace for the metric.</p>
-    pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
-        self.namespace = Some(input.into());
+    pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.namespace = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The namespace for the metric.</p>
-    pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.namespace = input;
         self
     }

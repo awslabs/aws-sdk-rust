@@ -2,21 +2,24 @@
 
 /// <p>Specifies, as a map, one or more property-based conditions that filter the results of a query for findings.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FindingCriteria {
     /// <p>A condition that specifies the property, operator, and one or more values to use to filter the results.</p>
     #[doc(hidden)]
-    pub criterion: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::CriterionAdditionalProperties>,
+    pub criterion: ::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            crate::types::CriterionAdditionalProperties,
+        >,
     >,
 }
 impl FindingCriteria {
     /// <p>A condition that specifies the property, operator, and one or more values to use to filter the results.</p>
     pub fn criterion(
         &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<
-            std::string::String,
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<
+            ::std::string::String,
             crate::types::CriterionAdditionalProperties,
         >,
     > {
@@ -32,10 +35,15 @@ impl FindingCriteria {
 
 /// A builder for [`FindingCriteria`](crate::types::FindingCriteria).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FindingCriteriaBuilder {
-    pub(crate) criterion: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::CriterionAdditionalProperties>,
+    pub(crate) criterion: ::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
+            crate::types::CriterionAdditionalProperties,
+        >,
     >,
 }
 impl FindingCriteriaBuilder {
@@ -46,20 +54,20 @@ impl FindingCriteriaBuilder {
     /// <p>A condition that specifies the property, operator, and one or more values to use to filter the results.</p>
     pub fn criterion(
         mut self,
-        k: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
         v: crate::types::CriterionAdditionalProperties,
     ) -> Self {
         let mut hash_map = self.criterion.unwrap_or_default();
         hash_map.insert(k.into(), v);
-        self.criterion = Some(hash_map);
+        self.criterion = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A condition that specifies the property, operator, and one or more values to use to filter the results.</p>
     pub fn set_criterion(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<
-                std::string::String,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<
+                ::std::string::String,
                 crate::types::CriterionAdditionalProperties,
             >,
         >,

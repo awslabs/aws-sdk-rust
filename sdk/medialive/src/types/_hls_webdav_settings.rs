@@ -2,45 +2,45 @@
 
 /// Hls Webdav Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HlsWebdavSettings {
     /// Number of seconds to wait before retrying connection to the CDN if the connection is lost.
     #[doc(hidden)]
-    pub connection_retry_interval: std::option::Option<i32>,
+    pub connection_retry_interval: ::std::option::Option<i32>,
     /// Size in seconds of file cache for streaming outputs.
     #[doc(hidden)]
-    pub filecache_duration: std::option::Option<i32>,
+    pub filecache_duration: ::std::option::Option<i32>,
     /// Specify whether or not to use chunked transfer encoding to WebDAV.
     #[doc(hidden)]
-    pub http_transfer_mode: std::option::Option<crate::types::HlsWebdavHttpTransferMode>,
+    pub http_transfer_mode: ::std::option::Option<crate::types::HlsWebdavHttpTransferMode>,
     /// Number of retry attempts that will be made before the Live Event is put into an error state. Applies only if the CDN destination URI begins with "s3" or "mediastore". For other URIs, the value is always 3.
     #[doc(hidden)]
-    pub num_retries: std::option::Option<i32>,
+    pub num_retries: ::std::option::Option<i32>,
     /// If a streaming output fails, number of seconds to wait until a restart is initiated. A value of 0 means never restart.
     #[doc(hidden)]
-    pub restart_delay: std::option::Option<i32>,
+    pub restart_delay: ::std::option::Option<i32>,
 }
 impl HlsWebdavSettings {
     /// Number of seconds to wait before retrying connection to the CDN if the connection is lost.
-    pub fn connection_retry_interval(&self) -> std::option::Option<i32> {
+    pub fn connection_retry_interval(&self) -> ::std::option::Option<i32> {
         self.connection_retry_interval
     }
     /// Size in seconds of file cache for streaming outputs.
-    pub fn filecache_duration(&self) -> std::option::Option<i32> {
+    pub fn filecache_duration(&self) -> ::std::option::Option<i32> {
         self.filecache_duration
     }
     /// Specify whether or not to use chunked transfer encoding to WebDAV.
     pub fn http_transfer_mode(
         &self,
-    ) -> std::option::Option<&crate::types::HlsWebdavHttpTransferMode> {
+    ) -> ::std::option::Option<&crate::types::HlsWebdavHttpTransferMode> {
         self.http_transfer_mode.as_ref()
     }
     /// Number of retry attempts that will be made before the Live Event is put into an error state. Applies only if the CDN destination URI begins with "s3" or "mediastore". For other URIs, the value is always 3.
-    pub fn num_retries(&self) -> std::option::Option<i32> {
+    pub fn num_retries(&self) -> ::std::option::Option<i32> {
         self.num_retries
     }
     /// If a streaming output fails, number of seconds to wait until a restart is initiated. A value of 0 means never restart.
-    pub fn restart_delay(&self) -> std::option::Option<i32> {
+    pub fn restart_delay(&self) -> ::std::option::Option<i32> {
         self.restart_delay
     }
 }
@@ -53,65 +53,67 @@ impl HlsWebdavSettings {
 
 /// A builder for [`HlsWebdavSettings`](crate::types::HlsWebdavSettings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct HlsWebdavSettingsBuilder {
-    pub(crate) connection_retry_interval: std::option::Option<i32>,
-    pub(crate) filecache_duration: std::option::Option<i32>,
-    pub(crate) http_transfer_mode: std::option::Option<crate::types::HlsWebdavHttpTransferMode>,
-    pub(crate) num_retries: std::option::Option<i32>,
-    pub(crate) restart_delay: std::option::Option<i32>,
+    pub(crate) connection_retry_interval: ::std::option::Option<i32>,
+    pub(crate) filecache_duration: ::std::option::Option<i32>,
+    pub(crate) http_transfer_mode: ::std::option::Option<crate::types::HlsWebdavHttpTransferMode>,
+    pub(crate) num_retries: ::std::option::Option<i32>,
+    pub(crate) restart_delay: ::std::option::Option<i32>,
 }
 impl HlsWebdavSettingsBuilder {
     /// Number of seconds to wait before retrying connection to the CDN if the connection is lost.
     pub fn connection_retry_interval(mut self, input: i32) -> Self {
-        self.connection_retry_interval = Some(input);
+        self.connection_retry_interval = ::std::option::Option::Some(input);
         self
     }
     /// Number of seconds to wait before retrying connection to the CDN if the connection is lost.
-    pub fn set_connection_retry_interval(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_connection_retry_interval(mut self, input: ::std::option::Option<i32>) -> Self {
         self.connection_retry_interval = input;
         self
     }
     /// Size in seconds of file cache for streaming outputs.
     pub fn filecache_duration(mut self, input: i32) -> Self {
-        self.filecache_duration = Some(input);
+        self.filecache_duration = ::std::option::Option::Some(input);
         self
     }
     /// Size in seconds of file cache for streaming outputs.
-    pub fn set_filecache_duration(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_filecache_duration(mut self, input: ::std::option::Option<i32>) -> Self {
         self.filecache_duration = input;
         self
     }
     /// Specify whether or not to use chunked transfer encoding to WebDAV.
     pub fn http_transfer_mode(mut self, input: crate::types::HlsWebdavHttpTransferMode) -> Self {
-        self.http_transfer_mode = Some(input);
+        self.http_transfer_mode = ::std::option::Option::Some(input);
         self
     }
     /// Specify whether or not to use chunked transfer encoding to WebDAV.
     pub fn set_http_transfer_mode(
         mut self,
-        input: std::option::Option<crate::types::HlsWebdavHttpTransferMode>,
+        input: ::std::option::Option<crate::types::HlsWebdavHttpTransferMode>,
     ) -> Self {
         self.http_transfer_mode = input;
         self
     }
     /// Number of retry attempts that will be made before the Live Event is put into an error state. Applies only if the CDN destination URI begins with "s3" or "mediastore". For other URIs, the value is always 3.
     pub fn num_retries(mut self, input: i32) -> Self {
-        self.num_retries = Some(input);
+        self.num_retries = ::std::option::Option::Some(input);
         self
     }
     /// Number of retry attempts that will be made before the Live Event is put into an error state. Applies only if the CDN destination URI begins with "s3" or "mediastore". For other URIs, the value is always 3.
-    pub fn set_num_retries(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_num_retries(mut self, input: ::std::option::Option<i32>) -> Self {
         self.num_retries = input;
         self
     }
     /// If a streaming output fails, number of seconds to wait until a restart is initiated. A value of 0 means never restart.
     pub fn restart_delay(mut self, input: i32) -> Self {
-        self.restart_delay = Some(input);
+        self.restart_delay = ::std::option::Option::Some(input);
         self
     }
     /// If a streaming output fails, number of seconds to wait until a restart is initiated. A value of 0 means never restart.
-    pub fn set_restart_delay(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_restart_delay(mut self, input: ::std::option::Option<i32>) -> Self {
         self.restart_delay = input;
         self
     }

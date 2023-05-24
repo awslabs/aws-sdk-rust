@@ -6,56 +6,59 @@ pub use crate::operation::delete_speaker::_delete_speaker_input::DeleteSpeakerIn
 /// Fluent builder constructing a request to `DeleteSpeaker`.
 ///
 /// <p>Deletes the specified speaker from Voice ID.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteSpeakerFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::delete_speaker::builders::DeleteSpeakerInputBuilder,
 }
 impl DeleteSpeakerFluentBuilder {
     /// Creates a new `DeleteSpeaker`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::delete_speaker::DeleteSpeaker,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::delete_speaker::DeleteSpeakerError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_speaker::DeleteSpeakerError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::delete_speaker::DeleteSpeakerOutput,
-        aws_smithy_http::result::SdkError<crate::operation::delete_speaker::DeleteSpeakerError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_speaker::DeleteSpeakerError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,29 +71,29 @@ impl DeleteSpeakerFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::delete_speaker::DeleteSpeakerOutput,
-        aws_smithy_http::result::SdkError<crate::operation::delete_speaker::DeleteSpeakerError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::delete_speaker::DeleteSpeakerError>,
     > {
         self.send_middleware().await
     }
     /// <p>The identifier of the domain that contains the speaker.</p>
-    pub fn domain_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn domain_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_id(input.into());
         self
     }
     /// <p>The identifier of the domain that contains the speaker.</p>
-    pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_domain_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_id(input);
         self
     }
     /// <p>The identifier of the speaker you want to delete.</p>
-    pub fn speaker_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn speaker_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.speaker_id(input.into());
         self
     }
     /// <p>The identifier of the speaker you want to delete.</p>
-    pub fn set_speaker_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_speaker_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_speaker_id(input);
         self
     }

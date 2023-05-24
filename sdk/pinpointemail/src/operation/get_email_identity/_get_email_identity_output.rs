@@ -2,11 +2,11 @@
 
 /// <p>Details about an email identity.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetEmailIdentityOutput {
     /// <p>The email identity type.</p>
     #[doc(hidden)]
-    pub identity_type: std::option::Option<crate::types::IdentityType>,
+    pub identity_type: ::std::option::Option<crate::types::IdentityType>,
     /// <p>The feedback forwarding configuration for the identity.</p>
     /// <p>If the value is <code>true</code>, Amazon Pinpoint sends you email notifications when bounce or complaint events occur. Amazon Pinpoint sends this notification to the address that you specified in the Return-Path header of the original email.</p>
     /// <p>When you set this value to <code>false</code>, Amazon Pinpoint sends notifications through other mechanisms, such as by notifying an Amazon SNS topic or another event destination. You're required to have a method of tracking bounces and complaints. If you haven't set up another mechanism for receiving bounce or complaint notifications, Amazon Pinpoint sends an email notification when these events occur (even if this setting is disabled).</p>
@@ -17,18 +17,18 @@ pub struct GetEmailIdentityOutput {
     pub verified_for_sending_status: bool,
     /// <p>An object that contains information about the DKIM attributes for the identity. This object includes the tokens that you use to create the CNAME records that are required to complete the DKIM verification process.</p>
     #[doc(hidden)]
-    pub dkim_attributes: std::option::Option<crate::types::DkimAttributes>,
+    pub dkim_attributes: ::std::option::Option<crate::types::DkimAttributes>,
     /// <p>An object that contains information about the Mail-From attributes for the email identity.</p>
     #[doc(hidden)]
-    pub mail_from_attributes: std::option::Option<crate::types::MailFromAttributes>,
+    pub mail_from_attributes: ::std::option::Option<crate::types::MailFromAttributes>,
     /// <p>An array of objects that define the tags (keys and values) that are associated with the email identity.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     _request_id: Option<String>,
 }
 impl GetEmailIdentityOutput {
     /// <p>The email identity type.</p>
-    pub fn identity_type(&self) -> std::option::Option<&crate::types::IdentityType> {
+    pub fn identity_type(&self) -> ::std::option::Option<&crate::types::IdentityType> {
         self.identity_type.as_ref()
     }
     /// <p>The feedback forwarding configuration for the identity.</p>
@@ -42,19 +42,19 @@ impl GetEmailIdentityOutput {
         self.verified_for_sending_status
     }
     /// <p>An object that contains information about the DKIM attributes for the identity. This object includes the tokens that you use to create the CNAME records that are required to complete the DKIM verification process.</p>
-    pub fn dkim_attributes(&self) -> std::option::Option<&crate::types::DkimAttributes> {
+    pub fn dkim_attributes(&self) -> ::std::option::Option<&crate::types::DkimAttributes> {
         self.dkim_attributes.as_ref()
     }
     /// <p>An object that contains information about the Mail-From attributes for the email identity.</p>
-    pub fn mail_from_attributes(&self) -> std::option::Option<&crate::types::MailFromAttributes> {
+    pub fn mail_from_attributes(&self) -> ::std::option::Option<&crate::types::MailFromAttributes> {
         self.mail_from_attributes.as_ref()
     }
     /// <p>An array of objects that define the tags (keys and values) that are associated with the email identity.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for GetEmailIdentityOutput {
+impl ::aws_http::request_id::RequestId for GetEmailIdentityOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -69,26 +69,28 @@ impl GetEmailIdentityOutput {
 
 /// A builder for [`GetEmailIdentityOutput`](crate::operation::get_email_identity::GetEmailIdentityOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetEmailIdentityOutputBuilder {
-    pub(crate) identity_type: std::option::Option<crate::types::IdentityType>,
-    pub(crate) feedback_forwarding_status: std::option::Option<bool>,
-    pub(crate) verified_for_sending_status: std::option::Option<bool>,
-    pub(crate) dkim_attributes: std::option::Option<crate::types::DkimAttributes>,
-    pub(crate) mail_from_attributes: std::option::Option<crate::types::MailFromAttributes>,
-    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub(crate) identity_type: ::std::option::Option<crate::types::IdentityType>,
+    pub(crate) feedback_forwarding_status: ::std::option::Option<bool>,
+    pub(crate) verified_for_sending_status: ::std::option::Option<bool>,
+    pub(crate) dkim_attributes: ::std::option::Option<crate::types::DkimAttributes>,
+    pub(crate) mail_from_attributes: ::std::option::Option<crate::types::MailFromAttributes>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     _request_id: Option<String>,
 }
 impl GetEmailIdentityOutputBuilder {
     /// <p>The email identity type.</p>
     pub fn identity_type(mut self, input: crate::types::IdentityType) -> Self {
-        self.identity_type = Some(input);
+        self.identity_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The email identity type.</p>
     pub fn set_identity_type(
         mut self,
-        input: std::option::Option<crate::types::IdentityType>,
+        input: ::std::option::Option<crate::types::IdentityType>,
     ) -> Self {
         self.identity_type = input;
         self
@@ -97,48 +99,48 @@ impl GetEmailIdentityOutputBuilder {
     /// <p>If the value is <code>true</code>, Amazon Pinpoint sends you email notifications when bounce or complaint events occur. Amazon Pinpoint sends this notification to the address that you specified in the Return-Path header of the original email.</p>
     /// <p>When you set this value to <code>false</code>, Amazon Pinpoint sends notifications through other mechanisms, such as by notifying an Amazon SNS topic or another event destination. You're required to have a method of tracking bounces and complaints. If you haven't set up another mechanism for receiving bounce or complaint notifications, Amazon Pinpoint sends an email notification when these events occur (even if this setting is disabled).</p>
     pub fn feedback_forwarding_status(mut self, input: bool) -> Self {
-        self.feedback_forwarding_status = Some(input);
+        self.feedback_forwarding_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The feedback forwarding configuration for the identity.</p>
     /// <p>If the value is <code>true</code>, Amazon Pinpoint sends you email notifications when bounce or complaint events occur. Amazon Pinpoint sends this notification to the address that you specified in the Return-Path header of the original email.</p>
     /// <p>When you set this value to <code>false</code>, Amazon Pinpoint sends notifications through other mechanisms, such as by notifying an Amazon SNS topic or another event destination. You're required to have a method of tracking bounces and complaints. If you haven't set up another mechanism for receiving bounce or complaint notifications, Amazon Pinpoint sends an email notification when these events occur (even if this setting is disabled).</p>
-    pub fn set_feedback_forwarding_status(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_feedback_forwarding_status(mut self, input: ::std::option::Option<bool>) -> Self {
         self.feedback_forwarding_status = input;
         self
     }
     /// <p>Specifies whether or not the identity is verified. In Amazon Pinpoint, you can only send email from verified email addresses or domains. For more information about verifying identities, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon Pinpoint User Guide</a>.</p>
     pub fn verified_for_sending_status(mut self, input: bool) -> Self {
-        self.verified_for_sending_status = Some(input);
+        self.verified_for_sending_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether or not the identity is verified. In Amazon Pinpoint, you can only send email from verified email addresses or domains. For more information about verifying identities, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon Pinpoint User Guide</a>.</p>
-    pub fn set_verified_for_sending_status(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_verified_for_sending_status(mut self, input: ::std::option::Option<bool>) -> Self {
         self.verified_for_sending_status = input;
         self
     }
     /// <p>An object that contains information about the DKIM attributes for the identity. This object includes the tokens that you use to create the CNAME records that are required to complete the DKIM verification process.</p>
     pub fn dkim_attributes(mut self, input: crate::types::DkimAttributes) -> Self {
-        self.dkim_attributes = Some(input);
+        self.dkim_attributes = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that contains information about the DKIM attributes for the identity. This object includes the tokens that you use to create the CNAME records that are required to complete the DKIM verification process.</p>
     pub fn set_dkim_attributes(
         mut self,
-        input: std::option::Option<crate::types::DkimAttributes>,
+        input: ::std::option::Option<crate::types::DkimAttributes>,
     ) -> Self {
         self.dkim_attributes = input;
         self
     }
     /// <p>An object that contains information about the Mail-From attributes for the email identity.</p>
     pub fn mail_from_attributes(mut self, input: crate::types::MailFromAttributes) -> Self {
-        self.mail_from_attributes = Some(input);
+        self.mail_from_attributes = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that contains information about the Mail-From attributes for the email identity.</p>
     pub fn set_mail_from_attributes(
         mut self,
-        input: std::option::Option<crate::types::MailFromAttributes>,
+        input: ::std::option::Option<crate::types::MailFromAttributes>,
     ) -> Self {
         self.mail_from_attributes = input;
         self
@@ -151,13 +153,13 @@ impl GetEmailIdentityOutputBuilder {
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
-        self.tags = Some(v);
+        self.tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of objects that define the tags (keys and values) that are associated with the email identity.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tags = input;
         self

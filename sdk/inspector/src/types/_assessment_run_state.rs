@@ -49,13 +49,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum AssessmentRunState {
     #[allow(missing_docs)] // documentation missing in model
@@ -87,7 +87,7 @@ pub enum AssessmentRunState {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for AssessmentRunState {
+impl ::std::convert::From<&str> for AssessmentRunState {
     fn from(s: &str) -> Self {
         match s {
             "CANCELED" => AssessmentRunState::Canceled,
@@ -111,11 +111,11 @@ impl std::convert::From<&str> for AssessmentRunState {
         }
     }
 }
-impl std::str::FromStr for AssessmentRunState {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for AssessmentRunState {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AssessmentRunState::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(AssessmentRunState::from(s))
     }
 }
 impl AssessmentRunState {
@@ -159,7 +159,7 @@ impl AssessmentRunState {
         ]
     }
 }
-impl AsRef<str> for AssessmentRunState {
+impl ::std::convert::AsRef<str> for AssessmentRunState {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

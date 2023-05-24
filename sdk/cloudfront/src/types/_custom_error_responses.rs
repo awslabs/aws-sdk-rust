@@ -7,22 +7,22 @@
 /// </ul>
 /// <p>For more information about custom error pages, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing Error Responses</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomErrorResponses {
     /// <p>The number of HTTP status codes for which you want to specify a custom error page and/or a caching duration. If <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.</p>
     #[doc(hidden)]
-    pub quantity: std::option::Option<i32>,
+    pub quantity: ::std::option::Option<i32>,
     /// <p>A complex type that contains a <code>CustomErrorResponse</code> element for each HTTP status code for which you want to specify a custom error page and/or a caching duration. </p>
     #[doc(hidden)]
-    pub items: std::option::Option<std::vec::Vec<crate::types::CustomErrorResponse>>,
+    pub items: ::std::option::Option<::std::vec::Vec<crate::types::CustomErrorResponse>>,
 }
 impl CustomErrorResponses {
     /// <p>The number of HTTP status codes for which you want to specify a custom error page and/or a caching duration. If <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.</p>
-    pub fn quantity(&self) -> std::option::Option<i32> {
+    pub fn quantity(&self) -> ::std::option::Option<i32> {
         self.quantity
     }
     /// <p>A complex type that contains a <code>CustomErrorResponse</code> element for each HTTP status code for which you want to specify a custom error page and/or a caching duration. </p>
-    pub fn items(&self) -> std::option::Option<&[crate::types::CustomErrorResponse]> {
+    pub fn items(&self) -> ::std::option::Option<&[crate::types::CustomErrorResponse]> {
         self.items.as_deref()
     }
 }
@@ -35,19 +35,21 @@ impl CustomErrorResponses {
 
 /// A builder for [`CustomErrorResponses`](crate::types::CustomErrorResponses).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CustomErrorResponsesBuilder {
-    pub(crate) quantity: std::option::Option<i32>,
-    pub(crate) items: std::option::Option<std::vec::Vec<crate::types::CustomErrorResponse>>,
+    pub(crate) quantity: ::std::option::Option<i32>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::CustomErrorResponse>>,
 }
 impl CustomErrorResponsesBuilder {
     /// <p>The number of HTTP status codes for which you want to specify a custom error page and/or a caching duration. If <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.</p>
     pub fn quantity(mut self, input: i32) -> Self {
-        self.quantity = Some(input);
+        self.quantity = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of HTTP status codes for which you want to specify a custom error page and/or a caching duration. If <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.</p>
-    pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_quantity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.quantity = input;
         self
     }
@@ -59,13 +61,13 @@ impl CustomErrorResponsesBuilder {
     pub fn items(mut self, input: crate::types::CustomErrorResponse) -> Self {
         let mut v = self.items.unwrap_or_default();
         v.push(input);
-        self.items = Some(v);
+        self.items = ::std::option::Option::Some(v);
         self
     }
     /// <p>A complex type that contains a <code>CustomErrorResponse</code> element for each HTTP status code for which you want to specify a custom error page and/or a caching duration. </p>
     pub fn set_items(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CustomErrorResponse>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::CustomErrorResponse>>,
     ) -> Self {
         self.items = input;
         self

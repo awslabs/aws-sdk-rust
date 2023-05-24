@@ -85,13 +85,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum TrainingInstanceType {
     #[allow(missing_docs)] // documentation missing in model
@@ -195,7 +195,7 @@ pub enum TrainingInstanceType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for TrainingInstanceType {
+impl ::std::convert::From<&str> for TrainingInstanceType {
     fn from(s: &str) -> Self {
         match s {
             "ml.c4.2xlarge" => TrainingInstanceType::MlC42Xlarge,
@@ -253,11 +253,11 @@ impl std::convert::From<&str> for TrainingInstanceType {
         }
     }
 }
-impl std::str::FromStr for TrainingInstanceType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for TrainingInstanceType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TrainingInstanceType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(TrainingInstanceType::from(s))
     }
 }
 impl TrainingInstanceType {
@@ -371,7 +371,7 @@ impl TrainingInstanceType {
         ]
     }
 }
-impl AsRef<str> for TrainingInstanceType {
+impl ::std::convert::AsRef<str> for TrainingInstanceType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

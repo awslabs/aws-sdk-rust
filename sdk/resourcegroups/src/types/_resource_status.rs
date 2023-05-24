@@ -2,15 +2,15 @@
 
 /// <p>A structure that identifies the current group membership status for a resource. Adding a resource to a resource group is performed asynchronously as a background task. A <code>PENDING</code> status indicates, for this resource, that the process isn't completed yet.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceStatus {
     /// <p>The current status.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<crate::types::ResourceStatusValue>,
+    pub name: ::std::option::Option<crate::types::ResourceStatusValue>,
 }
 impl ResourceStatus {
     /// <p>The current status.</p>
-    pub fn name(&self) -> std::option::Option<&crate::types::ResourceStatusValue> {
+    pub fn name(&self) -> ::std::option::Option<&crate::types::ResourceStatusValue> {
         self.name.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl ResourceStatus {
 
 /// A builder for [`ResourceStatus`](crate::types::ResourceStatus).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResourceStatusBuilder {
-    pub(crate) name: std::option::Option<crate::types::ResourceStatusValue>,
+    pub(crate) name: ::std::option::Option<crate::types::ResourceStatusValue>,
 }
 impl ResourceStatusBuilder {
     /// <p>The current status.</p>
     pub fn name(mut self, input: crate::types::ResourceStatusValue) -> Self {
-        self.name = Some(input);
+        self.name = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current status.</p>
     pub fn set_name(
         mut self,
-        input: std::option::Option<crate::types::ResourceStatusValue>,
+        input: ::std::option::Option<crate::types::ResourceStatusValue>,
     ) -> Self {
         self.name = input;
         self

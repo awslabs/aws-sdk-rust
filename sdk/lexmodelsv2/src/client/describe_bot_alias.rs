@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeBotAlias`](crate::operation::describe_bot_alias::builders::DescribeBotAliasFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`bot_alias_id(impl Into<String>)`](crate::operation::describe_bot_alias::builders::DescribeBotAliasFluentBuilder::bot_alias_id) / [`set_bot_alias_id(Option<String>)`](crate::operation::describe_bot_alias::builders::DescribeBotAliasFluentBuilder::set_bot_alias_id): <p>The identifier of the bot alias to describe.</p>
-    ///   - [`bot_id(impl Into<String>)`](crate::operation::describe_bot_alias::builders::DescribeBotAliasFluentBuilder::bot_id) / [`set_bot_id(Option<String>)`](crate::operation::describe_bot_alias::builders::DescribeBotAliasFluentBuilder::set_bot_id): <p>The identifier of the bot associated with the bot alias to describe.</p>
+    ///   - [`bot_alias_id(impl ::std::convert::Into<String>)`](crate::operation::describe_bot_alias::builders::DescribeBotAliasFluentBuilder::bot_alias_id) / [`set_bot_alias_id(Option<String>)`](crate::operation::describe_bot_alias::builders::DescribeBotAliasFluentBuilder::set_bot_alias_id): <p>The identifier of the bot alias to describe.</p>
+    ///   - [`bot_id(impl ::std::convert::Into<String>)`](crate::operation::describe_bot_alias::builders::DescribeBotAliasFluentBuilder::bot_id) / [`set_bot_id(Option<String>)`](crate::operation::describe_bot_alias::builders::DescribeBotAliasFluentBuilder::set_bot_id): <p>The identifier of the bot associated with the bot alias to describe.</p>
     /// - On success, responds with [`DescribeBotAliasOutput`](crate::operation::describe_bot_alias::DescribeBotAliasOutput) with field(s):
     ///   - [`bot_alias_id(Option<String>)`](crate::operation::describe_bot_alias::DescribeBotAliasOutput::bot_alias_id): <p>The identifier of the bot alias.</p>
     ///   - [`bot_alias_name(Option<String>)`](crate::operation::describe_bot_alias::DescribeBotAliasOutput::bot_alias_name): <p>The name of the bot alias.</p>

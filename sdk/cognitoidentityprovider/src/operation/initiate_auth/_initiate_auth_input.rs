@@ -2,7 +2,7 @@
 
 /// <p>Initiates the authentication request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct InitiateAuthInput {
     /// <p>The authentication flow for this call to run. The API action will depend on this value. For example:</p>
     /// <ul>
@@ -19,7 +19,7 @@ pub struct InitiateAuthInput {
     /// </ul>
     /// <p> <code>ADMIN_NO_SRP_AUTH</code> isn't a valid value.</p>
     #[doc(hidden)]
-    pub auth_flow: std::option::Option<crate::types::AuthFlowType>,
+    pub auth_flow: ::std::option::Option<crate::types::AuthFlowType>,
     /// <p>The authentication parameters. These are inputs corresponding to the <code>AuthFlow</code> that you're invoking. The required values depend on the value of <code>AuthFlow</code>:</p>
     /// <ul>
     /// <li> <p>For <code>USER_SRP_AUTH</code>: <code>USERNAME</code> (required), <code>SRP_A</code> (required), <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>.</p> </li>
@@ -27,8 +27,9 @@ pub struct InitiateAuthInput {
     /// <li> <p>For <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required), <code>SECRET_HASH</code> (if app client is configured with client secret), <code>DEVICE_KEY</code>. To start the authentication flow with password verification, include <code>ChallengeName: SRP_A</code> and <code>SRP_A: (The SRP_A Value)</code>.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub auth_parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub auth_parameters: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>A map of custom key-value pairs that you can provide as input for certain custom workflows that this action triggers.</p>
     /// <p>You create custom workflows by assigning Lambda functions to user pool triggers. When you use the InitiateAuth API action, Amazon Cognito invokes the Lambda functions that are specified for various triggers. The ClientMetadata value is passed as input to the functions for only the following triggers:</p>
     /// <ul>
@@ -55,17 +56,18 @@ pub struct InitiateAuthInput {
     /// </ul>
     /// </note>
     #[doc(hidden)]
-    pub client_metadata:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub client_metadata: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>The app client ID.</p>
     #[doc(hidden)]
-    pub client_id: std::option::Option<std::string::String>,
+    pub client_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>InitiateAuth</code> calls.</p>
     #[doc(hidden)]
-    pub analytics_metadata: std::option::Option<crate::types::AnalyticsMetadataType>,
+    pub analytics_metadata: ::std::option::Option<crate::types::AnalyticsMetadataType>,
     /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
     #[doc(hidden)]
-    pub user_context_data: std::option::Option<crate::types::UserContextDataType>,
+    pub user_context_data: ::std::option::Option<crate::types::UserContextDataType>,
 }
 impl InitiateAuthInput {
     /// <p>The authentication flow for this call to run. The API action will depend on this value. For example:</p>
@@ -82,7 +84,7 @@ impl InitiateAuthInput {
     /// <li> <p> <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; user name and password are passed directly. If a user migration Lambda trigger is set, this flow will invoke the user migration Lambda if it doesn't find the user name in the user pool. </p> </li>
     /// </ul>
     /// <p> <code>ADMIN_NO_SRP_AUTH</code> isn't a valid value.</p>
-    pub fn auth_flow(&self) -> std::option::Option<&crate::types::AuthFlowType> {
+    pub fn auth_flow(&self) -> ::std::option::Option<&crate::types::AuthFlowType> {
         self.auth_flow.as_ref()
     }
     /// <p>The authentication parameters. These are inputs corresponding to the <code>AuthFlow</code> that you're invoking. The required values depend on the value of <code>AuthFlow</code>:</p>
@@ -93,8 +95,9 @@ impl InitiateAuthInput {
     /// </ul>
     pub fn auth_parameters(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.auth_parameters.as_ref()
     }
     /// <p>A map of custom key-value pairs that you can provide as input for certain custom workflows that this action triggers.</p>
@@ -124,25 +127,28 @@ impl InitiateAuthInput {
     /// </note>
     pub fn client_metadata(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.client_metadata.as_ref()
     }
     /// <p>The app client ID.</p>
-    pub fn client_id(&self) -> std::option::Option<&str> {
+    pub fn client_id(&self) -> ::std::option::Option<&str> {
         self.client_id.as_deref()
     }
     /// <p>The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>InitiateAuth</code> calls.</p>
-    pub fn analytics_metadata(&self) -> std::option::Option<&crate::types::AnalyticsMetadataType> {
+    pub fn analytics_metadata(
+        &self,
+    ) -> ::std::option::Option<&crate::types::AnalyticsMetadataType> {
         self.analytics_metadata.as_ref()
     }
     /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
-    pub fn user_context_data(&self) -> std::option::Option<&crate::types::UserContextDataType> {
+    pub fn user_context_data(&self) -> ::std::option::Option<&crate::types::UserContextDataType> {
         self.user_context_data.as_ref()
     }
 }
-impl std::fmt::Debug for InitiateAuthInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for InitiateAuthInput {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("InitiateAuthInput");
         formatter.field("auth_flow", &self.auth_flow);
         formatter.field("auth_parameters", &"*** Sensitive Data Redacted ***");
@@ -162,16 +168,18 @@ impl InitiateAuthInput {
 
 /// A builder for [`InitiateAuthInput`](crate::operation::initiate_auth::InitiateAuthInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct InitiateAuthInputBuilder {
-    pub(crate) auth_flow: std::option::Option<crate::types::AuthFlowType>,
-    pub(crate) auth_parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) client_metadata:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) client_id: std::option::Option<std::string::String>,
-    pub(crate) analytics_metadata: std::option::Option<crate::types::AnalyticsMetadataType>,
-    pub(crate) user_context_data: std::option::Option<crate::types::UserContextDataType>,
+    pub(crate) auth_flow: ::std::option::Option<crate::types::AuthFlowType>,
+    pub(crate) auth_parameters: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) client_metadata: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) client_id: ::std::option::Option<::std::string::String>,
+    pub(crate) analytics_metadata: ::std::option::Option<crate::types::AnalyticsMetadataType>,
+    pub(crate) user_context_data: ::std::option::Option<crate::types::UserContextDataType>,
 }
 impl InitiateAuthInputBuilder {
     /// <p>The authentication flow for this call to run. The API action will depend on this value. For example:</p>
@@ -189,7 +197,7 @@ impl InitiateAuthInputBuilder {
     /// </ul>
     /// <p> <code>ADMIN_NO_SRP_AUTH</code> isn't a valid value.</p>
     pub fn auth_flow(mut self, input: crate::types::AuthFlowType) -> Self {
-        self.auth_flow = Some(input);
+        self.auth_flow = ::std::option::Option::Some(input);
         self
     }
     /// <p>The authentication flow for this call to run. The API action will depend on this value. For example:</p>
@@ -206,7 +214,10 @@ impl InitiateAuthInputBuilder {
     /// <li> <p> <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; user name and password are passed directly. If a user migration Lambda trigger is set, this flow will invoke the user migration Lambda if it doesn't find the user name in the user pool. </p> </li>
     /// </ul>
     /// <p> <code>ADMIN_NO_SRP_AUTH</code> isn't a valid value.</p>
-    pub fn set_auth_flow(mut self, input: std::option::Option<crate::types::AuthFlowType>) -> Self {
+    pub fn set_auth_flow(
+        mut self,
+        input: ::std::option::Option<crate::types::AuthFlowType>,
+    ) -> Self {
         self.auth_flow = input;
         self
     }
@@ -222,12 +233,12 @@ impl InitiateAuthInputBuilder {
     /// </ul>
     pub fn auth_parameters(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.auth_parameters.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.auth_parameters = Some(hash_map);
+        self.auth_parameters = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The authentication parameters. These are inputs corresponding to the <code>AuthFlow</code> that you're invoking. The required values depend on the value of <code>AuthFlow</code>:</p>
@@ -238,8 +249,8 @@ impl InitiateAuthInputBuilder {
     /// </ul>
     pub fn set_auth_parameters(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.auth_parameters = input;
@@ -276,12 +287,12 @@ impl InitiateAuthInputBuilder {
     /// </note>
     pub fn client_metadata(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.client_metadata.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.client_metadata = Some(hash_map);
+        self.client_metadata = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A map of custom key-value pairs that you can provide as input for certain custom workflows that this action triggers.</p>
@@ -311,45 +322,45 @@ impl InitiateAuthInputBuilder {
     /// </note>
     pub fn set_client_metadata(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.client_metadata = input;
         self
     }
     /// <p>The app client ID.</p>
-    pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.client_id = Some(input.into());
+    pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.client_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The app client ID.</p>
-    pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_id = input;
         self
     }
     /// <p>The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>InitiateAuth</code> calls.</p>
     pub fn analytics_metadata(mut self, input: crate::types::AnalyticsMetadataType) -> Self {
-        self.analytics_metadata = Some(input);
+        self.analytics_metadata = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>InitiateAuth</code> calls.</p>
     pub fn set_analytics_metadata(
         mut self,
-        input: std::option::Option<crate::types::AnalyticsMetadataType>,
+        input: ::std::option::Option<crate::types::AnalyticsMetadataType>,
     ) -> Self {
         self.analytics_metadata = input;
         self
     }
     /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
     pub fn user_context_data(mut self, input: crate::types::UserContextDataType) -> Self {
-        self.user_context_data = Some(input);
+        self.user_context_data = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contextual data about your user session, such as the device fingerprint, IP address, or location. Amazon Cognito advanced security evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.</p>
     pub fn set_user_context_data(
         mut self,
-        input: std::option::Option<crate::types::UserContextDataType>,
+        input: ::std::option::Option<crate::types::UserContextDataType>,
     ) -> Self {
         self.user_context_data = input;
         self
@@ -357,11 +368,11 @@ impl InitiateAuthInputBuilder {
     /// Consumes the builder and constructs a [`InitiateAuthInput`](crate::operation::initiate_auth::InitiateAuthInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::initiate_auth::InitiateAuthInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::initiate_auth::InitiateAuthInput {
+        ::std::result::Result::Ok(crate::operation::initiate_auth::InitiateAuthInput {
             auth_flow: self.auth_flow,
             auth_parameters: self.auth_parameters,
             client_metadata: self.client_metadata,
@@ -371,8 +382,8 @@ impl InitiateAuthInputBuilder {
         })
     }
 }
-impl std::fmt::Debug for InitiateAuthInputBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for InitiateAuthInputBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("InitiateAuthInputBuilder");
         formatter.field("auth_flow", &self.auth_flow);
         formatter.field("auth_parameters", &"*** Sensitive Data Redacted ***");

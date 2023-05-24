@@ -38,13 +38,13 @@
 /// If the location of parameter set NAL units doesn't matter in your workflow, ignore this setting. Use this setting only with CMAF or DASH outputs, or with standalone file outputs in an MPEG-4 container (MP4 outputs). Choose HVC1 to mark your output as HVC1. This makes your output compliant with the following specification: ISO IECJTC1 SC29 N13798 Text ISO/IEC FDIS 14496-15 3rd Edition. For these outputs, the service stores parameter set NAL units in the sample headers but not in the samples directly. For MP4 outputs, when you choose HVC1, your output video might not work properly with some downstream systems and video players. The service defaults to marking your output as HEV1. For these outputs, the service writes parameter set NAL units directly into the samples.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum H265WriteMp4PackagingType {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum H265WriteMp4PackagingType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for H265WriteMp4PackagingType {
+impl ::std::convert::From<&str> for H265WriteMp4PackagingType {
     fn from(s: &str) -> Self {
         match s {
             "HEV1" => H265WriteMp4PackagingType::Hev1,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for H265WriteMp4PackagingType {
         }
     }
 }
-impl std::str::FromStr for H265WriteMp4PackagingType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for H265WriteMp4PackagingType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(H265WriteMp4PackagingType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(H265WriteMp4PackagingType::from(s))
     }
 }
 impl H265WriteMp4PackagingType {
@@ -86,7 +86,7 @@ impl H265WriteMp4PackagingType {
         &["HEV1", "HVC1"]
     }
 }
-impl AsRef<str> for H265WriteMp4PackagingType {
+impl ::std::convert::AsRef<str> for H265WriteMp4PackagingType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

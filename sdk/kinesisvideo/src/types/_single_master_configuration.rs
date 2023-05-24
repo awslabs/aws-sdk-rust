@@ -2,15 +2,15 @@
 
 /// <p>A structure that contains the configuration for the <code>SINGLE_MASTER</code> channel type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SingleMasterConfiguration {
     /// <p>The period of time a signaling channel retains undelivered messages before they are discarded.</p>
     #[doc(hidden)]
-    pub message_ttl_seconds: std::option::Option<i32>,
+    pub message_ttl_seconds: ::std::option::Option<i32>,
 }
 impl SingleMasterConfiguration {
     /// <p>The period of time a signaling channel retains undelivered messages before they are discarded.</p>
-    pub fn message_ttl_seconds(&self) -> std::option::Option<i32> {
+    pub fn message_ttl_seconds(&self) -> ::std::option::Option<i32> {
         self.message_ttl_seconds
     }
 }
@@ -23,18 +23,20 @@ impl SingleMasterConfiguration {
 
 /// A builder for [`SingleMasterConfiguration`](crate::types::SingleMasterConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SingleMasterConfigurationBuilder {
-    pub(crate) message_ttl_seconds: std::option::Option<i32>,
+    pub(crate) message_ttl_seconds: ::std::option::Option<i32>,
 }
 impl SingleMasterConfigurationBuilder {
     /// <p>The period of time a signaling channel retains undelivered messages before they are discarded.</p>
     pub fn message_ttl_seconds(mut self, input: i32) -> Self {
-        self.message_ttl_seconds = Some(input);
+        self.message_ttl_seconds = ::std::option::Option::Some(input);
         self
     }
     /// <p>The period of time a signaling channel retains undelivered messages before they are discarded.</p>
-    pub fn set_message_ttl_seconds(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_message_ttl_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.message_ttl_seconds = input;
         self
     }

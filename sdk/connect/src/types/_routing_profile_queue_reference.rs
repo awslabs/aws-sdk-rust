@@ -2,22 +2,22 @@
 
 /// <p>Contains the channel and queue identifier for a routing profile.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RoutingProfileQueueReference {
     /// <p>The identifier for the queue.</p>
     #[doc(hidden)]
-    pub queue_id: std::option::Option<std::string::String>,
+    pub queue_id: ::std::option::Option<::std::string::String>,
     /// <p>The channels agents can handle in the Contact Control Panel (CCP) for this routing profile.</p>
     #[doc(hidden)]
-    pub channel: std::option::Option<crate::types::Channel>,
+    pub channel: ::std::option::Option<crate::types::Channel>,
 }
 impl RoutingProfileQueueReference {
     /// <p>The identifier for the queue.</p>
-    pub fn queue_id(&self) -> std::option::Option<&str> {
+    pub fn queue_id(&self) -> ::std::option::Option<&str> {
         self.queue_id.as_deref()
     }
     /// <p>The channels agents can handle in the Contact Control Panel (CCP) for this routing profile.</p>
-    pub fn channel(&self) -> std::option::Option<&crate::types::Channel> {
+    pub fn channel(&self) -> ::std::option::Option<&crate::types::Channel> {
         self.channel.as_ref()
     }
 }
@@ -30,29 +30,31 @@ impl RoutingProfileQueueReference {
 
 /// A builder for [`RoutingProfileQueueReference`](crate::types::RoutingProfileQueueReference).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RoutingProfileQueueReferenceBuilder {
-    pub(crate) queue_id: std::option::Option<std::string::String>,
-    pub(crate) channel: std::option::Option<crate::types::Channel>,
+    pub(crate) queue_id: ::std::option::Option<::std::string::String>,
+    pub(crate) channel: ::std::option::Option<crate::types::Channel>,
 }
 impl RoutingProfileQueueReferenceBuilder {
     /// <p>The identifier for the queue.</p>
-    pub fn queue_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.queue_id = Some(input.into());
+    pub fn queue_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.queue_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for the queue.</p>
-    pub fn set_queue_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_queue_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.queue_id = input;
         self
     }
     /// <p>The channels agents can handle in the Contact Control Panel (CCP) for this routing profile.</p>
     pub fn channel(mut self, input: crate::types::Channel) -> Self {
-        self.channel = Some(input);
+        self.channel = ::std::option::Option::Some(input);
         self
     }
     /// <p>The channels agents can handle in the Contact Control Panel (CCP) for this routing profile.</p>
-    pub fn set_channel(mut self, input: std::option::Option<crate::types::Channel>) -> Self {
+    pub fn set_channel(mut self, input: ::std::option::Option<crate::types::Channel>) -> Self {
         self.channel = input;
         self
     }

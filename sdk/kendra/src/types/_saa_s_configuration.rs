@@ -2,22 +2,22 @@
 
 /// <p>Provides the configuration information to connect to GitHub Enterprise Cloud (SaaS).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SaaSConfiguration {
     /// <p>The name of the organization of the GitHub Enterprise Cloud (SaaS) account you want to connect to. You can find your organization name by logging into GitHub desktop and selecting <b>Your organizations</b> under your profile picture dropdown.</p>
     #[doc(hidden)]
-    pub organization_name: std::option::Option<std::string::String>,
+    pub organization_name: ::std::option::Option<::std::string::String>,
     /// <p>The GitHub host URL or API endpoint URL. For example, <i>https://api.github.com</i>.</p>
     #[doc(hidden)]
-    pub host_url: std::option::Option<std::string::String>,
+    pub host_url: ::std::option::Option<::std::string::String>,
 }
 impl SaaSConfiguration {
     /// <p>The name of the organization of the GitHub Enterprise Cloud (SaaS) account you want to connect to. You can find your organization name by logging into GitHub desktop and selecting <b>Your organizations</b> under your profile picture dropdown.</p>
-    pub fn organization_name(&self) -> std::option::Option<&str> {
+    pub fn organization_name(&self) -> ::std::option::Option<&str> {
         self.organization_name.as_deref()
     }
     /// <p>The GitHub host URL or API endpoint URL. For example, <i>https://api.github.com</i>.</p>
-    pub fn host_url(&self) -> std::option::Option<&str> {
+    pub fn host_url(&self) -> ::std::option::Option<&str> {
         self.host_url.as_deref()
     }
 }
@@ -30,32 +30,37 @@ impl SaaSConfiguration {
 
 /// A builder for [`SaaSConfiguration`](crate::types::SaaSConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SaaSConfigurationBuilder {
-    pub(crate) organization_name: std::option::Option<std::string::String>,
-    pub(crate) host_url: std::option::Option<std::string::String>,
+    pub(crate) organization_name: ::std::option::Option<::std::string::String>,
+    pub(crate) host_url: ::std::option::Option<::std::string::String>,
 }
 impl SaaSConfigurationBuilder {
     /// <p>The name of the organization of the GitHub Enterprise Cloud (SaaS) account you want to connect to. You can find your organization name by logging into GitHub desktop and selecting <b>Your organizations</b> under your profile picture dropdown.</p>
-    pub fn organization_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.organization_name = Some(input.into());
+    pub fn organization_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.organization_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the organization of the GitHub Enterprise Cloud (SaaS) account you want to connect to. You can find your organization name by logging into GitHub desktop and selecting <b>Your organizations</b> under your profile picture dropdown.</p>
     pub fn set_organization_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.organization_name = input;
         self
     }
     /// <p>The GitHub host URL or API endpoint URL. For example, <i>https://api.github.com</i>.</p>
-    pub fn host_url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.host_url = Some(input.into());
+    pub fn host_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.host_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The GitHub host URL or API endpoint URL. For example, <i>https://api.github.com</i>.</p>
-    pub fn set_host_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_host_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.host_url = input;
         self
     }

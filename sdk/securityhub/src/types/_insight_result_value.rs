@@ -2,18 +2,18 @@
 
 /// <p>The insight result values returned by the <code>GetInsightResults</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InsightResultValue {
     /// <p>The value of the attribute that the findings are grouped by for the insight whose results are returned by the <code>GetInsightResults</code> operation.</p>
     #[doc(hidden)]
-    pub group_by_attribute_value: std::option::Option<std::string::String>,
+    pub group_by_attribute_value: ::std::option::Option<::std::string::String>,
     /// <p>The number of findings returned for each <code>GroupByAttributeValue</code>.</p>
     #[doc(hidden)]
     pub count: i32,
 }
 impl InsightResultValue {
     /// <p>The value of the attribute that the findings are grouped by for the insight whose results are returned by the <code>GetInsightResults</code> operation.</p>
-    pub fn group_by_attribute_value(&self) -> std::option::Option<&str> {
+    pub fn group_by_attribute_value(&self) -> ::std::option::Option<&str> {
         self.group_by_attribute_value.as_deref()
     }
     /// <p>The number of findings returned for each <code>GroupByAttributeValue</code>.</p>
@@ -30,32 +30,37 @@ impl InsightResultValue {
 
 /// A builder for [`InsightResultValue`](crate::types::InsightResultValue).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InsightResultValueBuilder {
-    pub(crate) group_by_attribute_value: std::option::Option<std::string::String>,
-    pub(crate) count: std::option::Option<i32>,
+    pub(crate) group_by_attribute_value: ::std::option::Option<::std::string::String>,
+    pub(crate) count: ::std::option::Option<i32>,
 }
 impl InsightResultValueBuilder {
     /// <p>The value of the attribute that the findings are grouped by for the insight whose results are returned by the <code>GetInsightResults</code> operation.</p>
-    pub fn group_by_attribute_value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.group_by_attribute_value = Some(input.into());
+    pub fn group_by_attribute_value(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.group_by_attribute_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value of the attribute that the findings are grouped by for the insight whose results are returned by the <code>GetInsightResults</code> operation.</p>
     pub fn set_group_by_attribute_value(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.group_by_attribute_value = input;
         self
     }
     /// <p>The number of findings returned for each <code>GroupByAttributeValue</code>.</p>
     pub fn count(mut self, input: i32) -> Self {
-        self.count = Some(input);
+        self.count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of findings returned for each <code>GroupByAttributeValue</code>.</p>
-    pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.count = input;
         self
     }

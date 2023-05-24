@@ -2,22 +2,22 @@
 
 /// <p>Contains statistics for a notebook calculation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CalculationStatistics {
     /// <p>The data processing unit execution time in milliseconds for the calculation.</p>
     #[doc(hidden)]
-    pub dpu_execution_in_millis: std::option::Option<i64>,
+    pub dpu_execution_in_millis: ::std::option::Option<i64>,
     /// <p>The progress of the calculation.</p>
     #[doc(hidden)]
-    pub progress: std::option::Option<std::string::String>,
+    pub progress: ::std::option::Option<::std::string::String>,
 }
 impl CalculationStatistics {
     /// <p>The data processing unit execution time in milliseconds for the calculation.</p>
-    pub fn dpu_execution_in_millis(&self) -> std::option::Option<i64> {
+    pub fn dpu_execution_in_millis(&self) -> ::std::option::Option<i64> {
         self.dpu_execution_in_millis
     }
     /// <p>The progress of the calculation.</p>
-    pub fn progress(&self) -> std::option::Option<&str> {
+    pub fn progress(&self) -> ::std::option::Option<&str> {
         self.progress.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl CalculationStatistics {
 
 /// A builder for [`CalculationStatistics`](crate::types::CalculationStatistics).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CalculationStatisticsBuilder {
-    pub(crate) dpu_execution_in_millis: std::option::Option<i64>,
-    pub(crate) progress: std::option::Option<std::string::String>,
+    pub(crate) dpu_execution_in_millis: ::std::option::Option<i64>,
+    pub(crate) progress: ::std::option::Option<::std::string::String>,
 }
 impl CalculationStatisticsBuilder {
     /// <p>The data processing unit execution time in milliseconds for the calculation.</p>
     pub fn dpu_execution_in_millis(mut self, input: i64) -> Self {
-        self.dpu_execution_in_millis = Some(input);
+        self.dpu_execution_in_millis = ::std::option::Option::Some(input);
         self
     }
     /// <p>The data processing unit execution time in milliseconds for the calculation.</p>
-    pub fn set_dpu_execution_in_millis(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_dpu_execution_in_millis(mut self, input: ::std::option::Option<i64>) -> Self {
         self.dpu_execution_in_millis = input;
         self
     }
     /// <p>The progress of the calculation.</p>
-    pub fn progress(mut self, input: impl Into<std::string::String>) -> Self {
-        self.progress = Some(input.into());
+    pub fn progress(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.progress = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The progress of the calculation.</p>
-    pub fn set_progress(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_progress(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.progress = input;
         self
     }

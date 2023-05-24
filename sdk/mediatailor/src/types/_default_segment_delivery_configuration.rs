@@ -2,15 +2,15 @@
 
 /// <p>The optional configuration for a server that serves segments. Use this if you want the segment delivery server to be different from the source location server. For example, you can configure your source location server to be an origination server, such as MediaPackage, and the segment delivery server to be a content delivery network (CDN), such as CloudFront. If you don't specify a segment delivery server, then the source location server is used.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DefaultSegmentDeliveryConfiguration {
     /// <p>The hostname of the server that will be used to serve segments. This string must include the protocol, such as <b>https://</b>.</p>
     #[doc(hidden)]
-    pub base_url: std::option::Option<std::string::String>,
+    pub base_url: ::std::option::Option<::std::string::String>,
 }
 impl DefaultSegmentDeliveryConfiguration {
     /// <p>The hostname of the server that will be used to serve segments. This string must include the protocol, such as <b>https://</b>.</p>
-    pub fn base_url(&self) -> std::option::Option<&str> {
+    pub fn base_url(&self) -> ::std::option::Option<&str> {
         self.base_url.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl DefaultSegmentDeliveryConfiguration {
 
 /// A builder for [`DefaultSegmentDeliveryConfiguration`](crate::types::DefaultSegmentDeliveryConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DefaultSegmentDeliveryConfigurationBuilder {
-    pub(crate) base_url: std::option::Option<std::string::String>,
+    pub(crate) base_url: ::std::option::Option<::std::string::String>,
 }
 impl DefaultSegmentDeliveryConfigurationBuilder {
     /// <p>The hostname of the server that will be used to serve segments. This string must include the protocol, such as <b>https://</b>.</p>
-    pub fn base_url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.base_url = Some(input.into());
+    pub fn base_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.base_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The hostname of the server that will be used to serve segments. This string must include the protocol, such as <b>https://</b>.</p>
-    pub fn set_base_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_base_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.base_url = input;
         self
     }

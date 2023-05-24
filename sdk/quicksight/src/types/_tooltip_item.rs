@@ -3,22 +3,22 @@
 /// <p>The tooltip.</p>
 /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TooltipItem {
     /// <p>The tooltip item for the fields.</p>
     #[doc(hidden)]
-    pub field_tooltip_item: std::option::Option<crate::types::FieldTooltipItem>,
+    pub field_tooltip_item: ::std::option::Option<crate::types::FieldTooltipItem>,
     /// <p>The tooltip item for the columns that are not part of a field well.</p>
     #[doc(hidden)]
-    pub column_tooltip_item: std::option::Option<crate::types::ColumnTooltipItem>,
+    pub column_tooltip_item: ::std::option::Option<crate::types::ColumnTooltipItem>,
 }
 impl TooltipItem {
     /// <p>The tooltip item for the fields.</p>
-    pub fn field_tooltip_item(&self) -> std::option::Option<&crate::types::FieldTooltipItem> {
+    pub fn field_tooltip_item(&self) -> ::std::option::Option<&crate::types::FieldTooltipItem> {
         self.field_tooltip_item.as_ref()
     }
     /// <p>The tooltip item for the columns that are not part of a field well.</p>
-    pub fn column_tooltip_item(&self) -> std::option::Option<&crate::types::ColumnTooltipItem> {
+    pub fn column_tooltip_item(&self) -> ::std::option::Option<&crate::types::ColumnTooltipItem> {
         self.column_tooltip_item.as_ref()
     }
 }
@@ -31,34 +31,36 @@ impl TooltipItem {
 
 /// A builder for [`TooltipItem`](crate::types::TooltipItem).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TooltipItemBuilder {
-    pub(crate) field_tooltip_item: std::option::Option<crate::types::FieldTooltipItem>,
-    pub(crate) column_tooltip_item: std::option::Option<crate::types::ColumnTooltipItem>,
+    pub(crate) field_tooltip_item: ::std::option::Option<crate::types::FieldTooltipItem>,
+    pub(crate) column_tooltip_item: ::std::option::Option<crate::types::ColumnTooltipItem>,
 }
 impl TooltipItemBuilder {
     /// <p>The tooltip item for the fields.</p>
     pub fn field_tooltip_item(mut self, input: crate::types::FieldTooltipItem) -> Self {
-        self.field_tooltip_item = Some(input);
+        self.field_tooltip_item = ::std::option::Option::Some(input);
         self
     }
     /// <p>The tooltip item for the fields.</p>
     pub fn set_field_tooltip_item(
         mut self,
-        input: std::option::Option<crate::types::FieldTooltipItem>,
+        input: ::std::option::Option<crate::types::FieldTooltipItem>,
     ) -> Self {
         self.field_tooltip_item = input;
         self
     }
     /// <p>The tooltip item for the columns that are not part of a field well.</p>
     pub fn column_tooltip_item(mut self, input: crate::types::ColumnTooltipItem) -> Self {
-        self.column_tooltip_item = Some(input);
+        self.column_tooltip_item = ::std::option::Option::Some(input);
         self
     }
     /// <p>The tooltip item for the columns that are not part of a field well.</p>
     pub fn set_column_tooltip_item(
         mut self,
-        input: std::option::Option<crate::types::ColumnTooltipItem>,
+        input: ::std::option::Option<crate::types::ColumnTooltipItem>,
     ) -> Self {
         self.column_tooltip_item = input;
         self

@@ -2,43 +2,43 @@
 
 /// <p>Detailed data of the service sync configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceSyncConfig {
     /// <p>The name of the service that the service instance is added to.</p>
     #[doc(hidden)]
-    pub service_name: std::option::Option<std::string::String>,
+    pub service_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the repository provider that holds the repository Proton will sync with.</p>
     #[doc(hidden)]
-    pub repository_provider: std::option::Option<crate::types::RepositoryProvider>,
+    pub repository_provider: ::std::option::Option<crate::types::RepositoryProvider>,
     /// <p>The name of the code repository that holds the service code Proton will sync with.</p>
     #[doc(hidden)]
-    pub repository_name: std::option::Option<std::string::String>,
+    pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the code repository branch that holds the service code Proton will sync with.</p>
     #[doc(hidden)]
-    pub branch: std::option::Option<std::string::String>,
+    pub branch: ::std::option::Option<::std::string::String>,
     /// <p>The file path to the service sync configuration file.</p>
     #[doc(hidden)]
-    pub file_path: std::option::Option<std::string::String>,
+    pub file_path: ::std::option::Option<::std::string::String>,
 }
 impl ServiceSyncConfig {
     /// <p>The name of the service that the service instance is added to.</p>
-    pub fn service_name(&self) -> std::option::Option<&str> {
+    pub fn service_name(&self) -> ::std::option::Option<&str> {
         self.service_name.as_deref()
     }
     /// <p>The name of the repository provider that holds the repository Proton will sync with.</p>
-    pub fn repository_provider(&self) -> std::option::Option<&crate::types::RepositoryProvider> {
+    pub fn repository_provider(&self) -> ::std::option::Option<&crate::types::RepositoryProvider> {
         self.repository_provider.as_ref()
     }
     /// <p>The name of the code repository that holds the service code Proton will sync with.</p>
-    pub fn repository_name(&self) -> std::option::Option<&str> {
+    pub fn repository_name(&self) -> ::std::option::Option<&str> {
         self.repository_name.as_deref()
     }
     /// <p>The name of the code repository branch that holds the service code Proton will sync with.</p>
-    pub fn branch(&self) -> std::option::Option<&str> {
+    pub fn branch(&self) -> ::std::option::Option<&str> {
         self.branch.as_deref()
     }
     /// <p>The file path to the service sync configuration file.</p>
-    pub fn file_path(&self) -> std::option::Option<&str> {
+    pub fn file_path(&self) -> ::std::option::Option<&str> {
         self.file_path.as_deref()
     }
 }
@@ -51,65 +51,73 @@ impl ServiceSyncConfig {
 
 /// A builder for [`ServiceSyncConfig`](crate::types::ServiceSyncConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ServiceSyncConfigBuilder {
-    pub(crate) service_name: std::option::Option<std::string::String>,
-    pub(crate) repository_provider: std::option::Option<crate::types::RepositoryProvider>,
-    pub(crate) repository_name: std::option::Option<std::string::String>,
-    pub(crate) branch: std::option::Option<std::string::String>,
-    pub(crate) file_path: std::option::Option<std::string::String>,
+    pub(crate) service_name: ::std::option::Option<::std::string::String>,
+    pub(crate) repository_provider: ::std::option::Option<crate::types::RepositoryProvider>,
+    pub(crate) repository_name: ::std::option::Option<::std::string::String>,
+    pub(crate) branch: ::std::option::Option<::std::string::String>,
+    pub(crate) file_path: ::std::option::Option<::std::string::String>,
 }
 impl ServiceSyncConfigBuilder {
     /// <p>The name of the service that the service instance is added to.</p>
-    pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.service_name = Some(input.into());
+    pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.service_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the service that the service instance is added to.</p>
-    pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_name = input;
         self
     }
     /// <p>The name of the repository provider that holds the repository Proton will sync with.</p>
     pub fn repository_provider(mut self, input: crate::types::RepositoryProvider) -> Self {
-        self.repository_provider = Some(input);
+        self.repository_provider = ::std::option::Option::Some(input);
         self
     }
     /// <p>The name of the repository provider that holds the repository Proton will sync with.</p>
     pub fn set_repository_provider(
         mut self,
-        input: std::option::Option<crate::types::RepositoryProvider>,
+        input: ::std::option::Option<crate::types::RepositoryProvider>,
     ) -> Self {
         self.repository_provider = input;
         self
     }
     /// <p>The name of the code repository that holds the service code Proton will sync with.</p>
-    pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.repository_name = Some(input.into());
+    pub fn repository_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the code repository that holds the service code Proton will sync with.</p>
-    pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_repository_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.repository_name = input;
         self
     }
     /// <p>The name of the code repository branch that holds the service code Proton will sync with.</p>
-    pub fn branch(mut self, input: impl Into<std::string::String>) -> Self {
-        self.branch = Some(input.into());
+    pub fn branch(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.branch = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the code repository branch that holds the service code Proton will sync with.</p>
-    pub fn set_branch(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_branch(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.branch = input;
         self
     }
     /// <p>The file path to the service sync configuration file.</p>
-    pub fn file_path(mut self, input: impl Into<std::string::String>) -> Self {
-        self.file_path = Some(input.into());
+    pub fn file_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.file_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The file path to the service sync configuration file.</p>
-    pub fn set_file_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_file_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_path = input;
         self
     }

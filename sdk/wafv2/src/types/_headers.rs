@@ -5,16 +5,16 @@
 /// <p>If you want to inspect just the value of a single header, use the <code>SingleHeader</code> <code>FieldToMatch</code> setting instead.</p>
 /// <p>Example JSON: <code>"Headers": { "MatchPattern": { "All": {} }, "MatchScope": "KEY", "OversizeHandling": "MATCH" }</code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Headers {
     /// <p>The filter to use to identify the subset of headers to inspect in a web request. </p>
     /// <p>You must specify exactly one setting: either <code>All</code>, <code>IncludedHeaders</code>, or <code>ExcludedHeaders</code>.</p>
     /// <p>Example JSON: <code>"MatchPattern": { "ExcludedHeaders": {"KeyToExclude1", "KeyToExclude2"} }</code> </p>
     #[doc(hidden)]
-    pub match_pattern: std::option::Option<crate::types::HeaderMatchPattern>,
+    pub match_pattern: ::std::option::Option<crate::types::HeaderMatchPattern>,
     /// <p>The parts of the headers to match with the rule inspection criteria. If you specify <code>All</code>, WAF inspects both keys and values. </p>
     #[doc(hidden)]
-    pub match_scope: std::option::Option<crate::types::MapMatchScope>,
+    pub match_scope: ::std::option::Option<crate::types::MapMatchScope>,
     /// <p>What WAF should do if the headers of the request are larger than WAF can inspect. WAF does not support inspecting the entire contents of request headers when they exceed 8 KB (8192 bytes) or 200 total headers. The underlying host service forwards a maximum of 200 headers and at most 8 KB of header contents to WAF. </p>
     /// <p>The options for oversize handling are the following:</p>
     /// <ul>
@@ -23,17 +23,17 @@ pub struct Headers {
     /// <li> <p> <code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub oversize_handling: std::option::Option<crate::types::OversizeHandling>,
+    pub oversize_handling: ::std::option::Option<crate::types::OversizeHandling>,
 }
 impl Headers {
     /// <p>The filter to use to identify the subset of headers to inspect in a web request. </p>
     /// <p>You must specify exactly one setting: either <code>All</code>, <code>IncludedHeaders</code>, or <code>ExcludedHeaders</code>.</p>
     /// <p>Example JSON: <code>"MatchPattern": { "ExcludedHeaders": {"KeyToExclude1", "KeyToExclude2"} }</code> </p>
-    pub fn match_pattern(&self) -> std::option::Option<&crate::types::HeaderMatchPattern> {
+    pub fn match_pattern(&self) -> ::std::option::Option<&crate::types::HeaderMatchPattern> {
         self.match_pattern.as_ref()
     }
     /// <p>The parts of the headers to match with the rule inspection criteria. If you specify <code>All</code>, WAF inspects both keys and values. </p>
-    pub fn match_scope(&self) -> std::option::Option<&crate::types::MapMatchScope> {
+    pub fn match_scope(&self) -> ::std::option::Option<&crate::types::MapMatchScope> {
         self.match_scope.as_ref()
     }
     /// <p>What WAF should do if the headers of the request are larger than WAF can inspect. WAF does not support inspecting the entire contents of request headers when they exceed 8 KB (8192 bytes) or 200 total headers. The underlying host service forwards a maximum of 200 headers and at most 8 KB of header contents to WAF. </p>
@@ -43,7 +43,7 @@ impl Headers {
     /// <li> <p> <code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the request.</p> </li>
     /// <li> <p> <code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p> </li>
     /// </ul>
-    pub fn oversize_handling(&self) -> std::option::Option<&crate::types::OversizeHandling> {
+    pub fn oversize_handling(&self) -> ::std::option::Option<&crate::types::OversizeHandling> {
         self.oversize_handling.as_ref()
     }
 }
@@ -56,18 +56,20 @@ impl Headers {
 
 /// A builder for [`Headers`](crate::types::Headers).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct HeadersBuilder {
-    pub(crate) match_pattern: std::option::Option<crate::types::HeaderMatchPattern>,
-    pub(crate) match_scope: std::option::Option<crate::types::MapMatchScope>,
-    pub(crate) oversize_handling: std::option::Option<crate::types::OversizeHandling>,
+    pub(crate) match_pattern: ::std::option::Option<crate::types::HeaderMatchPattern>,
+    pub(crate) match_scope: ::std::option::Option<crate::types::MapMatchScope>,
+    pub(crate) oversize_handling: ::std::option::Option<crate::types::OversizeHandling>,
 }
 impl HeadersBuilder {
     /// <p>The filter to use to identify the subset of headers to inspect in a web request. </p>
     /// <p>You must specify exactly one setting: either <code>All</code>, <code>IncludedHeaders</code>, or <code>ExcludedHeaders</code>.</p>
     /// <p>Example JSON: <code>"MatchPattern": { "ExcludedHeaders": {"KeyToExclude1", "KeyToExclude2"} }</code> </p>
     pub fn match_pattern(mut self, input: crate::types::HeaderMatchPattern) -> Self {
-        self.match_pattern = Some(input);
+        self.match_pattern = ::std::option::Option::Some(input);
         self
     }
     /// <p>The filter to use to identify the subset of headers to inspect in a web request. </p>
@@ -75,20 +77,20 @@ impl HeadersBuilder {
     /// <p>Example JSON: <code>"MatchPattern": { "ExcludedHeaders": {"KeyToExclude1", "KeyToExclude2"} }</code> </p>
     pub fn set_match_pattern(
         mut self,
-        input: std::option::Option<crate::types::HeaderMatchPattern>,
+        input: ::std::option::Option<crate::types::HeaderMatchPattern>,
     ) -> Self {
         self.match_pattern = input;
         self
     }
     /// <p>The parts of the headers to match with the rule inspection criteria. If you specify <code>All</code>, WAF inspects both keys and values. </p>
     pub fn match_scope(mut self, input: crate::types::MapMatchScope) -> Self {
-        self.match_scope = Some(input);
+        self.match_scope = ::std::option::Option::Some(input);
         self
     }
     /// <p>The parts of the headers to match with the rule inspection criteria. If you specify <code>All</code>, WAF inspects both keys and values. </p>
     pub fn set_match_scope(
         mut self,
-        input: std::option::Option<crate::types::MapMatchScope>,
+        input: ::std::option::Option<crate::types::MapMatchScope>,
     ) -> Self {
         self.match_scope = input;
         self
@@ -101,7 +103,7 @@ impl HeadersBuilder {
     /// <li> <p> <code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p> </li>
     /// </ul>
     pub fn oversize_handling(mut self, input: crate::types::OversizeHandling) -> Self {
-        self.oversize_handling = Some(input);
+        self.oversize_handling = ::std::option::Option::Some(input);
         self
     }
     /// <p>What WAF should do if the headers of the request are larger than WAF can inspect. WAF does not support inspecting the entire contents of request headers when they exceed 8 KB (8192 bytes) or 200 total headers. The underlying host service forwards a maximum of 200 headers and at most 8 KB of header contents to WAF. </p>
@@ -113,7 +115,7 @@ impl HeadersBuilder {
     /// </ul>
     pub fn set_oversize_handling(
         mut self,
-        input: std::option::Option<crate::types::OversizeHandling>,
+        input: ::std::option::Option<crate::types::OversizeHandling>,
     ) -> Self {
         self.oversize_handling = input;
         self

@@ -2,15 +2,15 @@
 
 /// Placeholder documentation for DeleteInputSecurityGroupRequest
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteInputSecurityGroupInput {
     /// The Input Security Group to delete
     #[doc(hidden)]
-    pub input_security_group_id: std::option::Option<std::string::String>,
+    pub input_security_group_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteInputSecurityGroupInput {
     /// The Input Security Group to delete
-    pub fn input_security_group_id(&self) -> std::option::Option<&str> {
+    pub fn input_security_group_id(&self) -> ::std::option::Option<&str> {
         self.input_security_group_id.as_deref()
     }
 }
@@ -25,20 +25,25 @@ impl DeleteInputSecurityGroupInput {
 
 /// A builder for [`DeleteInputSecurityGroupInput`](crate::operation::delete_input_security_group::DeleteInputSecurityGroupInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteInputSecurityGroupInputBuilder {
-    pub(crate) input_security_group_id: std::option::Option<std::string::String>,
+    pub(crate) input_security_group_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteInputSecurityGroupInputBuilder {
     /// The Input Security Group to delete
-    pub fn input_security_group_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.input_security_group_id = Some(input.into());
+    pub fn input_security_group_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.input_security_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// The Input Security Group to delete
     pub fn set_input_security_group_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.input_security_group_id = input;
         self
@@ -46,11 +51,11 @@ impl DeleteInputSecurityGroupInputBuilder {
     /// Consumes the builder and constructs a [`DeleteInputSecurityGroupInput`](crate::operation::delete_input_security_group::DeleteInputSecurityGroupInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::delete_input_security_group::DeleteInputSecurityGroupInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::delete_input_security_group::DeleteInputSecurityGroupInput {
                 input_security_group_id: self.input_security_group_id,
             },

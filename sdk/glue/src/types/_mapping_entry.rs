@@ -2,50 +2,50 @@
 
 /// <p>Defines a mapping.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MappingEntry {
     /// <p>The name of the source table.</p>
     #[doc(hidden)]
-    pub source_table: std::option::Option<std::string::String>,
+    pub source_table: ::std::option::Option<::std::string::String>,
     /// <p>The source path.</p>
     #[doc(hidden)]
-    pub source_path: std::option::Option<std::string::String>,
+    pub source_path: ::std::option::Option<::std::string::String>,
     /// <p>The source type.</p>
     #[doc(hidden)]
-    pub source_type: std::option::Option<std::string::String>,
+    pub source_type: ::std::option::Option<::std::string::String>,
     /// <p>The target table.</p>
     #[doc(hidden)]
-    pub target_table: std::option::Option<std::string::String>,
+    pub target_table: ::std::option::Option<::std::string::String>,
     /// <p>The target path.</p>
     #[doc(hidden)]
-    pub target_path: std::option::Option<std::string::String>,
+    pub target_path: ::std::option::Option<::std::string::String>,
     /// <p>The target type.</p>
     #[doc(hidden)]
-    pub target_type: std::option::Option<std::string::String>,
+    pub target_type: ::std::option::Option<::std::string::String>,
 }
 impl MappingEntry {
     /// <p>The name of the source table.</p>
-    pub fn source_table(&self) -> std::option::Option<&str> {
+    pub fn source_table(&self) -> ::std::option::Option<&str> {
         self.source_table.as_deref()
     }
     /// <p>The source path.</p>
-    pub fn source_path(&self) -> std::option::Option<&str> {
+    pub fn source_path(&self) -> ::std::option::Option<&str> {
         self.source_path.as_deref()
     }
     /// <p>The source type.</p>
-    pub fn source_type(&self) -> std::option::Option<&str> {
+    pub fn source_type(&self) -> ::std::option::Option<&str> {
         self.source_type.as_deref()
     }
     /// <p>The target table.</p>
-    pub fn target_table(&self) -> std::option::Option<&str> {
+    pub fn target_table(&self) -> ::std::option::Option<&str> {
         self.target_table.as_deref()
     }
     /// <p>The target path.</p>
-    pub fn target_path(&self) -> std::option::Option<&str> {
+    pub fn target_path(&self) -> ::std::option::Option<&str> {
         self.target_path.as_deref()
     }
     /// <p>The target type.</p>
-    pub fn target_type(&self) -> std::option::Option<&str> {
+    pub fn target_type(&self) -> ::std::option::Option<&str> {
         self.target_type.as_deref()
     }
 }
@@ -58,73 +58,75 @@ impl MappingEntry {
 
 /// A builder for [`MappingEntry`](crate::types::MappingEntry).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MappingEntryBuilder {
-    pub(crate) source_table: std::option::Option<std::string::String>,
-    pub(crate) source_path: std::option::Option<std::string::String>,
-    pub(crate) source_type: std::option::Option<std::string::String>,
-    pub(crate) target_table: std::option::Option<std::string::String>,
-    pub(crate) target_path: std::option::Option<std::string::String>,
-    pub(crate) target_type: std::option::Option<std::string::String>,
+    pub(crate) source_table: ::std::option::Option<::std::string::String>,
+    pub(crate) source_path: ::std::option::Option<::std::string::String>,
+    pub(crate) source_type: ::std::option::Option<::std::string::String>,
+    pub(crate) target_table: ::std::option::Option<::std::string::String>,
+    pub(crate) target_path: ::std::option::Option<::std::string::String>,
+    pub(crate) target_type: ::std::option::Option<::std::string::String>,
 }
 impl MappingEntryBuilder {
     /// <p>The name of the source table.</p>
-    pub fn source_table(mut self, input: impl Into<std::string::String>) -> Self {
-        self.source_table = Some(input.into());
+    pub fn source_table(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source_table = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the source table.</p>
-    pub fn set_source_table(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_source_table(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_table = input;
         self
     }
     /// <p>The source path.</p>
-    pub fn source_path(mut self, input: impl Into<std::string::String>) -> Self {
-        self.source_path = Some(input.into());
+    pub fn source_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The source path.</p>
-    pub fn set_source_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_source_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_path = input;
         self
     }
     /// <p>The source type.</p>
-    pub fn source_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.source_type = Some(input.into());
+    pub fn source_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The source type.</p>
-    pub fn set_source_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_source_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_type = input;
         self
     }
     /// <p>The target table.</p>
-    pub fn target_table(mut self, input: impl Into<std::string::String>) -> Self {
-        self.target_table = Some(input.into());
+    pub fn target_table(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.target_table = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The target table.</p>
-    pub fn set_target_table(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_target_table(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_table = input;
         self
     }
     /// <p>The target path.</p>
-    pub fn target_path(mut self, input: impl Into<std::string::String>) -> Self {
-        self.target_path = Some(input.into());
+    pub fn target_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.target_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The target path.</p>
-    pub fn set_target_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_target_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_path = input;
         self
     }
     /// <p>The target type.</p>
-    pub fn target_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.target_type = Some(input.into());
+    pub fn target_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.target_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The target type.</p>
-    pub fn set_target_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_target_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_type = input;
         self
     }

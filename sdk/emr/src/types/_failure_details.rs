@@ -2,29 +2,29 @@
 
 /// <p>The details of the step failure. The service attempts to detect the root cause for many common failures.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FailureDetails {
     /// <p>The reason for the step failure. In the case where the service cannot successfully determine the root cause of the failure, it returns "Unknown Error" as a reason.</p>
     #[doc(hidden)]
-    pub reason: std::option::Option<std::string::String>,
+    pub reason: ::std::option::Option<::std::string::String>,
     /// <p>The descriptive message including the error the Amazon EMR service has identified as the cause of step failure. This is text from an error log that describes the root cause of the failure.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
     /// <p>The path to the log file where the step failure root cause was originally recorded.</p>
     #[doc(hidden)]
-    pub log_file: std::option::Option<std::string::String>,
+    pub log_file: ::std::option::Option<::std::string::String>,
 }
 impl FailureDetails {
     /// <p>The reason for the step failure. In the case where the service cannot successfully determine the root cause of the failure, it returns "Unknown Error" as a reason.</p>
-    pub fn reason(&self) -> std::option::Option<&str> {
+    pub fn reason(&self) -> ::std::option::Option<&str> {
         self.reason.as_deref()
     }
     /// <p>The descriptive message including the error the Amazon EMR service has identified as the cause of step failure. This is text from an error log that describes the root cause of the failure.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
     /// <p>The path to the log file where the step failure root cause was originally recorded.</p>
-    pub fn log_file(&self) -> std::option::Option<&str> {
+    pub fn log_file(&self) -> ::std::option::Option<&str> {
         self.log_file.as_deref()
     }
 }
@@ -37,40 +37,42 @@ impl FailureDetails {
 
 /// A builder for [`FailureDetails`](crate::types::FailureDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FailureDetailsBuilder {
-    pub(crate) reason: std::option::Option<std::string::String>,
-    pub(crate) message: std::option::Option<std::string::String>,
-    pub(crate) log_file: std::option::Option<std::string::String>,
+    pub(crate) reason: ::std::option::Option<::std::string::String>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
+    pub(crate) log_file: ::std::option::Option<::std::string::String>,
 }
 impl FailureDetailsBuilder {
     /// <p>The reason for the step failure. In the case where the service cannot successfully determine the root cause of the failure, it returns "Unknown Error" as a reason.</p>
-    pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
-        self.reason = Some(input.into());
+    pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason for the step failure. In the case where the service cannot successfully determine the root cause of the failure, it returns "Unknown Error" as a reason.</p>
-    pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reason = input;
         self
     }
     /// <p>The descriptive message including the error the Amazon EMR service has identified as the cause of step failure. This is text from an error log that describes the root cause of the failure.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The descriptive message including the error the Amazon EMR service has identified as the cause of step failure. This is text from an error log that describes the root cause of the failure.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
     /// <p>The path to the log file where the step failure root cause was originally recorded.</p>
-    pub fn log_file(mut self, input: impl Into<std::string::String>) -> Self {
-        self.log_file = Some(input.into());
+    pub fn log_file(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.log_file = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The path to the log file where the step failure root cause was originally recorded.</p>
-    pub fn set_log_file(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_log_file(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_file = input;
         self
     }

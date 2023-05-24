@@ -2,17 +2,17 @@
 
 /// <p>The version of the database engine that a DB instance can be upgraded to.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpgradeTarget {
     /// <p>The name of the upgrade target database engine.</p>
     #[doc(hidden)]
-    pub engine: std::option::Option<std::string::String>,
+    pub engine: ::std::option::Option<::std::string::String>,
     /// <p>The version number of the upgrade target database engine.</p>
     #[doc(hidden)]
-    pub engine_version: std::option::Option<std::string::String>,
+    pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The version of the database engine that a DB instance can be upgraded to.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>A value that indicates whether the target version is applied to any source DB instances that have AutoMinorVersionUpgrade set to true.</p>
     #[doc(hidden)]
     pub auto_upgrade: bool,
@@ -21,19 +21,19 @@ pub struct UpgradeTarget {
     pub is_major_version_upgrade: bool,
     /// <p>A value that indicates whether you can use Neptune global databases with the target engine version.</p>
     #[doc(hidden)]
-    pub supports_global_databases: std::option::Option<bool>,
+    pub supports_global_databases: ::std::option::Option<bool>,
 }
 impl UpgradeTarget {
     /// <p>The name of the upgrade target database engine.</p>
-    pub fn engine(&self) -> std::option::Option<&str> {
+    pub fn engine(&self) -> ::std::option::Option<&str> {
         self.engine.as_deref()
     }
     /// <p>The version number of the upgrade target database engine.</p>
-    pub fn engine_version(&self) -> std::option::Option<&str> {
+    pub fn engine_version(&self) -> ::std::option::Option<&str> {
         self.engine_version.as_deref()
     }
     /// <p>The version of the database engine that a DB instance can be upgraded to.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>A value that indicates whether the target version is applied to any source DB instances that have AutoMinorVersionUpgrade set to true.</p>
@@ -45,7 +45,7 @@ impl UpgradeTarget {
         self.is_major_version_upgrade
     }
     /// <p>A value that indicates whether you can use Neptune global databases with the target engine version.</p>
-    pub fn supports_global_databases(&self) -> std::option::Option<bool> {
+    pub fn supports_global_databases(&self) -> ::std::option::Option<bool> {
         self.supports_global_databases
     }
 }
@@ -58,73 +58,81 @@ impl UpgradeTarget {
 
 /// A builder for [`UpgradeTarget`](crate::types::UpgradeTarget).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpgradeTargetBuilder {
-    pub(crate) engine: std::option::Option<std::string::String>,
-    pub(crate) engine_version: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) auto_upgrade: std::option::Option<bool>,
-    pub(crate) is_major_version_upgrade: std::option::Option<bool>,
-    pub(crate) supports_global_databases: std::option::Option<bool>,
+    pub(crate) engine: ::std::option::Option<::std::string::String>,
+    pub(crate) engine_version: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) auto_upgrade: ::std::option::Option<bool>,
+    pub(crate) is_major_version_upgrade: ::std::option::Option<bool>,
+    pub(crate) supports_global_databases: ::std::option::Option<bool>,
 }
 impl UpgradeTargetBuilder {
     /// <p>The name of the upgrade target database engine.</p>
-    pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
-        self.engine = Some(input.into());
+    pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.engine = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the upgrade target database engine.</p>
-    pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine = input;
         self
     }
     /// <p>The version number of the upgrade target database engine.</p>
-    pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.engine_version = Some(input.into());
+    pub fn engine_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.engine_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version number of the upgrade target database engine.</p>
-    pub fn set_engine_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_engine_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.engine_version = input;
         self
     }
     /// <p>The version of the database engine that a DB instance can be upgraded to.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the database engine that a DB instance can be upgraded to.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>A value that indicates whether the target version is applied to any source DB instances that have AutoMinorVersionUpgrade set to true.</p>
     pub fn auto_upgrade(mut self, input: bool) -> Self {
-        self.auto_upgrade = Some(input);
+        self.auto_upgrade = ::std::option::Option::Some(input);
         self
     }
     /// <p>A value that indicates whether the target version is applied to any source DB instances that have AutoMinorVersionUpgrade set to true.</p>
-    pub fn set_auto_upgrade(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_auto_upgrade(mut self, input: ::std::option::Option<bool>) -> Self {
         self.auto_upgrade = input;
         self
     }
     /// <p>A value that indicates whether a database engine is upgraded to a major version.</p>
     pub fn is_major_version_upgrade(mut self, input: bool) -> Self {
-        self.is_major_version_upgrade = Some(input);
+        self.is_major_version_upgrade = ::std::option::Option::Some(input);
         self
     }
     /// <p>A value that indicates whether a database engine is upgraded to a major version.</p>
-    pub fn set_is_major_version_upgrade(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_major_version_upgrade(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_major_version_upgrade = input;
         self
     }
     /// <p>A value that indicates whether you can use Neptune global databases with the target engine version.</p>
     pub fn supports_global_databases(mut self, input: bool) -> Self {
-        self.supports_global_databases = Some(input);
+        self.supports_global_databases = ::std::option::Option::Some(input);
         self
     }
     /// <p>A value that indicates whether you can use Neptune global databases with the target engine version.</p>
-    pub fn set_supports_global_databases(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_supports_global_databases(mut self, input: ::std::option::Option<bool>) -> Self {
         self.supports_global_databases = input;
         self
     }

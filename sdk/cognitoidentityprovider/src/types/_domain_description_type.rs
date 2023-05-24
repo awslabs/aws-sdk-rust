@@ -2,66 +2,66 @@
 
 /// <p>A container for information about a domain.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DomainDescriptionType {
     /// <p>The user pool ID.</p>
     #[doc(hidden)]
-    pub user_pool_id: std::option::Option<std::string::String>,
+    pub user_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services ID for the user pool owner.</p>
     #[doc(hidden)]
-    pub aws_account_id: std::option::Option<std::string::String>,
+    pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The domain string. For custom domains, this is the fully-qualified domain name, such as <code>auth.example.com</code>. For Amazon Cognito prefix domains, this is the prefix alone, such as <code>auth</code>.</p>
     #[doc(hidden)]
-    pub domain: std::option::Option<std::string::String>,
+    pub domain: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 bucket where the static files for this domain are stored.</p>
     #[doc(hidden)]
-    pub s3_bucket: std::option::Option<std::string::String>,
+    pub s3_bucket: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon CloudFront distribution.</p>
     #[doc(hidden)]
-    pub cloud_front_distribution: std::option::Option<std::string::String>,
+    pub cloud_front_distribution: ::std::option::Option<::std::string::String>,
     /// <p>The app version.</p>
     #[doc(hidden)]
-    pub version: std::option::Option<std::string::String>,
+    pub version: ::std::option::Option<::std::string::String>,
     /// <p>The domain status.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::DomainStatusType>,
+    pub status: ::std::option::Option<crate::types::DomainStatusType>,
     /// <p>The configuration for a custom domain that hosts the sign-up and sign-in webpages for your application.</p>
     #[doc(hidden)]
-    pub custom_domain_config: std::option::Option<crate::types::CustomDomainConfigType>,
+    pub custom_domain_config: ::std::option::Option<crate::types::CustomDomainConfigType>,
 }
 impl DomainDescriptionType {
     /// <p>The user pool ID.</p>
-    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+    pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
         self.user_pool_id.as_deref()
     }
     /// <p>The Amazon Web Services ID for the user pool owner.</p>
-    pub fn aws_account_id(&self) -> std::option::Option<&str> {
+    pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The domain string. For custom domains, this is the fully-qualified domain name, such as <code>auth.example.com</code>. For Amazon Cognito prefix domains, this is the prefix alone, such as <code>auth</code>.</p>
-    pub fn domain(&self) -> std::option::Option<&str> {
+    pub fn domain(&self) -> ::std::option::Option<&str> {
         self.domain.as_deref()
     }
     /// <p>The Amazon S3 bucket where the static files for this domain are stored.</p>
-    pub fn s3_bucket(&self) -> std::option::Option<&str> {
+    pub fn s3_bucket(&self) -> ::std::option::Option<&str> {
         self.s3_bucket.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon CloudFront distribution.</p>
-    pub fn cloud_front_distribution(&self) -> std::option::Option<&str> {
+    pub fn cloud_front_distribution(&self) -> ::std::option::Option<&str> {
         self.cloud_front_distribution.as_deref()
     }
     /// <p>The app version.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<&str> {
         self.version.as_deref()
     }
     /// <p>The domain status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::DomainStatusType> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::DomainStatusType> {
         self.status.as_ref()
     }
     /// <p>The configuration for a custom domain that hosts the sign-up and sign-in webpages for your application.</p>
     pub fn custom_domain_config(
         &self,
-    ) -> std::option::Option<&crate::types::CustomDomainConfigType> {
+    ) -> ::std::option::Option<&crate::types::CustomDomainConfigType> {
         self.custom_domain_config.as_ref()
     }
 }
@@ -74,103 +74,114 @@ impl DomainDescriptionType {
 
 /// A builder for [`DomainDescriptionType`](crate::types::DomainDescriptionType).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DomainDescriptionTypeBuilder {
-    pub(crate) user_pool_id: std::option::Option<std::string::String>,
-    pub(crate) aws_account_id: std::option::Option<std::string::String>,
-    pub(crate) domain: std::option::Option<std::string::String>,
-    pub(crate) s3_bucket: std::option::Option<std::string::String>,
-    pub(crate) cloud_front_distribution: std::option::Option<std::string::String>,
-    pub(crate) version: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::DomainStatusType>,
-    pub(crate) custom_domain_config: std::option::Option<crate::types::CustomDomainConfigType>,
+    pub(crate) user_pool_id: ::std::option::Option<::std::string::String>,
+    pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) domain: ::std::option::Option<::std::string::String>,
+    pub(crate) s3_bucket: ::std::option::Option<::std::string::String>,
+    pub(crate) cloud_front_distribution: ::std::option::Option<::std::string::String>,
+    pub(crate) version: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::DomainStatusType>,
+    pub(crate) custom_domain_config: ::std::option::Option<crate::types::CustomDomainConfigType>,
 }
 impl DomainDescriptionTypeBuilder {
     /// <p>The user pool ID.</p>
-    pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.user_pool_id = Some(input.into());
+    pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.user_pool_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user pool ID.</p>
-    pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_pool_id = input;
         self
     }
     /// <p>The Amazon Web Services ID for the user pool owner.</p>
-    pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.aws_account_id = Some(input.into());
+    pub fn aws_account_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services ID for the user pool owner.</p>
-    pub fn set_aws_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_aws_account_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.aws_account_id = input;
         self
     }
     /// <p>The domain string. For custom domains, this is the fully-qualified domain name, such as <code>auth.example.com</code>. For Amazon Cognito prefix domains, this is the prefix alone, such as <code>auth</code>.</p>
-    pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
-        self.domain = Some(input.into());
+    pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.domain = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The domain string. For custom domains, this is the fully-qualified domain name, such as <code>auth.example.com</code>. For Amazon Cognito prefix domains, this is the prefix alone, such as <code>auth</code>.</p>
-    pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.domain = input;
         self
     }
     /// <p>The Amazon S3 bucket where the static files for this domain are stored.</p>
-    pub fn s3_bucket(mut self, input: impl Into<std::string::String>) -> Self {
-        self.s3_bucket = Some(input.into());
+    pub fn s3_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.s3_bucket = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon S3 bucket where the static files for this domain are stored.</p>
-    pub fn set_s3_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_s3_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_bucket = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon CloudFront distribution.</p>
-    pub fn cloud_front_distribution(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cloud_front_distribution = Some(input.into());
+    pub fn cloud_front_distribution(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.cloud_front_distribution = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon CloudFront distribution.</p>
     pub fn set_cloud_front_distribution(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.cloud_front_distribution = input;
         self
     }
     /// <p>The app version.</p>
-    pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.version = Some(input.into());
+    pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The app version.</p>
-    pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
     }
     /// <p>The domain status.</p>
     pub fn status(mut self, input: crate::types::DomainStatusType) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The domain status.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::DomainStatusType>,
+        input: ::std::option::Option<crate::types::DomainStatusType>,
     ) -> Self {
         self.status = input;
         self
     }
     /// <p>The configuration for a custom domain that hosts the sign-up and sign-in webpages for your application.</p>
     pub fn custom_domain_config(mut self, input: crate::types::CustomDomainConfigType) -> Self {
-        self.custom_domain_config = Some(input);
+        self.custom_domain_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration for a custom domain that hosts the sign-up and sign-in webpages for your application.</p>
     pub fn set_custom_domain_config(
         mut self,
-        input: std::option::Option<crate::types::CustomDomainConfigType>,
+        input: ::std::option::Option<crate::types::CustomDomainConfigType>,
     ) -> Self {
         self.custom_domain_config = input;
         self

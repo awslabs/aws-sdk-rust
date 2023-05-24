@@ -2,22 +2,22 @@
 
 /// <p>The minimum and maximum number of accelerators (GPUs, FPGAs, or Amazon Web Services Inferentia chips) on an instance. To exclude accelerator-enabled instance types, set <code>Max</code> to <code>0</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AcceleratorCountRequest {
     /// <p>The minimum number of accelerators. To specify no minimum limit, omit this parameter.</p>
     #[doc(hidden)]
-    pub min: std::option::Option<i32>,
+    pub min: ::std::option::Option<i32>,
     /// <p>The maximum number of accelerators. To specify no maximum limit, omit this parameter. To exclude accelerator-enabled instance types, set <code>Max</code> to <code>0</code>.</p>
     #[doc(hidden)]
-    pub max: std::option::Option<i32>,
+    pub max: ::std::option::Option<i32>,
 }
 impl AcceleratorCountRequest {
     /// <p>The minimum number of accelerators. To specify no minimum limit, omit this parameter.</p>
-    pub fn min(&self) -> std::option::Option<i32> {
+    pub fn min(&self) -> ::std::option::Option<i32> {
         self.min
     }
     /// <p>The maximum number of accelerators. To specify no maximum limit, omit this parameter. To exclude accelerator-enabled instance types, set <code>Max</code> to <code>0</code>.</p>
-    pub fn max(&self) -> std::option::Option<i32> {
+    pub fn max(&self) -> ::std::option::Option<i32> {
         self.max
     }
 }
@@ -30,29 +30,31 @@ impl AcceleratorCountRequest {
 
 /// A builder for [`AcceleratorCountRequest`](crate::types::AcceleratorCountRequest).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AcceleratorCountRequestBuilder {
-    pub(crate) min: std::option::Option<i32>,
-    pub(crate) max: std::option::Option<i32>,
+    pub(crate) min: ::std::option::Option<i32>,
+    pub(crate) max: ::std::option::Option<i32>,
 }
 impl AcceleratorCountRequestBuilder {
     /// <p>The minimum number of accelerators. To specify no minimum limit, omit this parameter.</p>
     pub fn min(mut self, input: i32) -> Self {
-        self.min = Some(input);
+        self.min = ::std::option::Option::Some(input);
         self
     }
     /// <p>The minimum number of accelerators. To specify no minimum limit, omit this parameter.</p>
-    pub fn set_min(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_min(mut self, input: ::std::option::Option<i32>) -> Self {
         self.min = input;
         self
     }
     /// <p>The maximum number of accelerators. To specify no maximum limit, omit this parameter. To exclude accelerator-enabled instance types, set <code>Max</code> to <code>0</code>.</p>
     pub fn max(mut self, input: i32) -> Self {
-        self.max = Some(input);
+        self.max = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum number of accelerators. To specify no maximum limit, omit this parameter. To exclude accelerator-enabled instance types, set <code>Max</code> to <code>0</code>.</p>
-    pub fn set_max(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max = input;
         self
     }

@@ -2,27 +2,27 @@
 
 /// <p>The rolling date configuration of a date time filter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RollingDateConfiguration {
     /// <p>The data set that is used in the rolling date configuration.</p>
     #[doc(hidden)]
-    pub data_set_identifier: std::option::Option<std::string::String>,
+    pub data_set_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The expression of the rolling date configuration.</p>
     #[doc(hidden)]
-    pub expression: std::option::Option<std::string::String>,
+    pub expression: ::std::option::Option<::std::string::String>,
 }
 impl RollingDateConfiguration {
     /// <p>The data set that is used in the rolling date configuration.</p>
-    pub fn data_set_identifier(&self) -> std::option::Option<&str> {
+    pub fn data_set_identifier(&self) -> ::std::option::Option<&str> {
         self.data_set_identifier.as_deref()
     }
     /// <p>The expression of the rolling date configuration.</p>
-    pub fn expression(&self) -> std::option::Option<&str> {
+    pub fn expression(&self) -> ::std::option::Option<&str> {
         self.expression.as_deref()
     }
 }
-impl std::fmt::Debug for RollingDateConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for RollingDateConfiguration {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("RollingDateConfiguration");
         formatter.field("data_set_identifier", &self.data_set_identifier);
         formatter.field("expression", &"*** Sensitive Data Redacted ***");
@@ -38,32 +38,35 @@ impl RollingDateConfiguration {
 
 /// A builder for [`RollingDateConfiguration`](crate::types::RollingDateConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct RollingDateConfigurationBuilder {
-    pub(crate) data_set_identifier: std::option::Option<std::string::String>,
-    pub(crate) expression: std::option::Option<std::string::String>,
+    pub(crate) data_set_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) expression: ::std::option::Option<::std::string::String>,
 }
 impl RollingDateConfigurationBuilder {
     /// <p>The data set that is used in the rolling date configuration.</p>
-    pub fn data_set_identifier(mut self, input: impl Into<std::string::String>) -> Self {
-        self.data_set_identifier = Some(input.into());
+    pub fn data_set_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.data_set_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The data set that is used in the rolling date configuration.</p>
     pub fn set_data_set_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.data_set_identifier = input;
         self
     }
     /// <p>The expression of the rolling date configuration.</p>
-    pub fn expression(mut self, input: impl Into<std::string::String>) -> Self {
-        self.expression = Some(input.into());
+    pub fn expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.expression = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The expression of the rolling date configuration.</p>
-    pub fn set_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.expression = input;
         self
     }
@@ -75,8 +78,8 @@ impl RollingDateConfigurationBuilder {
         }
     }
 }
-impl std::fmt::Debug for RollingDateConfigurationBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for RollingDateConfigurationBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("RollingDateConfigurationBuilder");
         formatter.field("data_set_identifier", &self.data_set_identifier);
         formatter.field("expression", &"*** Sensitive Data Redacted ***");

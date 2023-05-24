@@ -2,22 +2,22 @@
 
 /// <p>Represents a parameter value that is applicable to a particular node type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NodeTypeSpecificValue {
     /// <p>A node type to which the parameter value applies.</p>
     #[doc(hidden)]
-    pub node_type: std::option::Option<std::string::String>,
+    pub node_type: ::std::option::Option<::std::string::String>,
     /// <p>The parameter value for this node type.</p>
     #[doc(hidden)]
-    pub value: std::option::Option<std::string::String>,
+    pub value: ::std::option::Option<::std::string::String>,
 }
 impl NodeTypeSpecificValue {
     /// <p>A node type to which the parameter value applies.</p>
-    pub fn node_type(&self) -> std::option::Option<&str> {
+    pub fn node_type(&self) -> ::std::option::Option<&str> {
         self.node_type.as_deref()
     }
     /// <p>The parameter value for this node type.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl NodeTypeSpecificValue {
 
 /// A builder for [`NodeTypeSpecificValue`](crate::types::NodeTypeSpecificValue).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NodeTypeSpecificValueBuilder {
-    pub(crate) node_type: std::option::Option<std::string::String>,
-    pub(crate) value: std::option::Option<std::string::String>,
+    pub(crate) node_type: ::std::option::Option<::std::string::String>,
+    pub(crate) value: ::std::option::Option<::std::string::String>,
 }
 impl NodeTypeSpecificValueBuilder {
     /// <p>A node type to which the parameter value applies.</p>
-    pub fn node_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.node_type = Some(input.into());
+    pub fn node_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.node_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A node type to which the parameter value applies.</p>
-    pub fn set_node_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_node_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.node_type = input;
         self
     }
     /// <p>The parameter value for this node type.</p>
-    pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.value = Some(input.into());
+    pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The parameter value for this node type.</p>
-    pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
     }

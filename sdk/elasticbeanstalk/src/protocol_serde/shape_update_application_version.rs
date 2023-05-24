@@ -2,7 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_update_application_version_http_error(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::update_application_version::UpdateApplicationVersionOutput,
@@ -17,7 +17,7 @@ pub fn de_update_application_version_http_error(
     .map_err(
         crate::operation::update_application_version::UpdateApplicationVersionError::unhandled,
     )?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
+    generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     Err(
         crate::operation::update_application_version::UpdateApplicationVersionError::generic(
@@ -29,7 +29,7 @@ pub fn de_update_application_version_http_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_update_application_version_http_response_with_props(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::update_application_version::UpdateApplicationVersionOutput,
@@ -40,7 +40,7 @@ pub fn de_update_application_version_http_response_with_props(
         let mut output = crate::operation::update_application_version::builders::UpdateApplicationVersionOutputBuilder::default();
         output = crate::protocol_serde::shape_update_application_version::de_update_application_version(_response_body, output).map_err(crate::operation::update_application_version::UpdateApplicationVersionError::unhandled)?;
         output._set_request_id(
-            aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
+            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
         );
         output.build()
     })
@@ -52,16 +52,16 @@ pub fn de_update_application_version(
     mut builder: crate::operation::update_application_version::builders::UpdateApplicationVersionOutputBuilder,
 ) -> Result<
     crate::operation::update_application_version::builders::UpdateApplicationVersionOutputBuilder,
-    aws_smithy_xml::decode::XmlDecodeError,
+    ::aws_smithy_xml::decode::XmlDecodeError,
 > {
-    let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
+    let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("UpdateApplicationVersionResponse")) {
-        return Err(aws_smithy_xml::decode::XmlDecodeError::custom(format!(
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected UpdateApplicationVersionResponse got {:?}",
             start_el
         )));
@@ -69,7 +69,7 @@ pub fn de_update_application_version(
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("UpdateApplicationVersionResult")) {
-            return Err(aws_smithy_xml::decode::XmlDecodeError::custom(format!(
+            return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
                 "invalid result, expected UpdateApplicationVersionResult got {:?}",
                 start_el
             )));
@@ -90,7 +90,7 @@ pub fn de_update_application_version(
         }
         }
     } else {
-        return Err(aws_smithy_xml::decode::XmlDecodeError::custom(
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(
             "expected UpdateApplicationVersionResult tag",
         ));
     };

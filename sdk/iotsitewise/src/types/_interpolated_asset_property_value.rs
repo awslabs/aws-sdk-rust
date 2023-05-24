@@ -2,22 +2,22 @@
 
 /// <p>Contains information about an interpolated asset property value.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InterpolatedAssetPropertyValue {
     /// <p>Contains a timestamp with optional nanosecond granularity.</p>
     #[doc(hidden)]
-    pub timestamp: std::option::Option<crate::types::TimeInNanos>,
+    pub timestamp: ::std::option::Option<crate::types::TimeInNanos>,
     /// <p>Contains an asset property value (of a single type only).</p>
     #[doc(hidden)]
-    pub value: std::option::Option<crate::types::Variant>,
+    pub value: ::std::option::Option<crate::types::Variant>,
 }
 impl InterpolatedAssetPropertyValue {
     /// <p>Contains a timestamp with optional nanosecond granularity.</p>
-    pub fn timestamp(&self) -> std::option::Option<&crate::types::TimeInNanos> {
+    pub fn timestamp(&self) -> ::std::option::Option<&crate::types::TimeInNanos> {
         self.timestamp.as_ref()
     }
     /// <p>Contains an asset property value (of a single type only).</p>
-    pub fn value(&self) -> std::option::Option<&crate::types::Variant> {
+    pub fn value(&self) -> ::std::option::Option<&crate::types::Variant> {
         self.value.as_ref()
     }
 }
@@ -30,29 +30,34 @@ impl InterpolatedAssetPropertyValue {
 
 /// A builder for [`InterpolatedAssetPropertyValue`](crate::types::InterpolatedAssetPropertyValue).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InterpolatedAssetPropertyValueBuilder {
-    pub(crate) timestamp: std::option::Option<crate::types::TimeInNanos>,
-    pub(crate) value: std::option::Option<crate::types::Variant>,
+    pub(crate) timestamp: ::std::option::Option<crate::types::TimeInNanos>,
+    pub(crate) value: ::std::option::Option<crate::types::Variant>,
 }
 impl InterpolatedAssetPropertyValueBuilder {
     /// <p>Contains a timestamp with optional nanosecond granularity.</p>
     pub fn timestamp(mut self, input: crate::types::TimeInNanos) -> Self {
-        self.timestamp = Some(input);
+        self.timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains a timestamp with optional nanosecond granularity.</p>
-    pub fn set_timestamp(mut self, input: std::option::Option<crate::types::TimeInNanos>) -> Self {
+    pub fn set_timestamp(
+        mut self,
+        input: ::std::option::Option<crate::types::TimeInNanos>,
+    ) -> Self {
         self.timestamp = input;
         self
     }
     /// <p>Contains an asset property value (of a single type only).</p>
     pub fn value(mut self, input: crate::types::Variant) -> Self {
-        self.value = Some(input);
+        self.value = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains an asset property value (of a single type only).</p>
-    pub fn set_value(mut self, input: std::option::Option<crate::types::Variant>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<crate::types::Variant>) -> Self {
         self.value = input;
         self
     }

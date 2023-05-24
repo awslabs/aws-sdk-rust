@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeDomain`](crate::operation::describe_domain::builders::DescribeDomainFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`fleet_arn(impl Into<String>)`](crate::operation::describe_domain::builders::DescribeDomainFluentBuilder::fleet_arn) / [`set_fleet_arn(Option<String>)`](crate::operation::describe_domain::builders::DescribeDomainFluentBuilder::set_fleet_arn): <p>The ARN of the fleet.</p>
-    ///   - [`domain_name(impl Into<String>)`](crate::operation::describe_domain::builders::DescribeDomainFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::describe_domain::builders::DescribeDomainFluentBuilder::set_domain_name): <p>The name of the domain.</p>
+    ///   - [`fleet_arn(impl ::std::convert::Into<String>)`](crate::operation::describe_domain::builders::DescribeDomainFluentBuilder::fleet_arn) / [`set_fleet_arn(Option<String>)`](crate::operation::describe_domain::builders::DescribeDomainFluentBuilder::set_fleet_arn): <p>The ARN of the fleet.</p>
+    ///   - [`domain_name(impl ::std::convert::Into<String>)`](crate::operation::describe_domain::builders::DescribeDomainFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::describe_domain::builders::DescribeDomainFluentBuilder::set_domain_name): <p>The name of the domain.</p>
     /// - On success, responds with [`DescribeDomainOutput`](crate::operation::describe_domain::DescribeDomainOutput) with field(s):
     ///   - [`domain_name(Option<String>)`](crate::operation::describe_domain::DescribeDomainOutput::domain_name): <p>The name of the domain.</p>
     ///   - [`display_name(Option<String>)`](crate::operation::describe_domain::DescribeDomainOutput::display_name): <p>The name to display.</p>

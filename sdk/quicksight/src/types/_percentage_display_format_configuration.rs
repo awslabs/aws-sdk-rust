@@ -2,64 +2,66 @@
 
 /// <p>The options that determine the percentage display format configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct PercentageDisplayFormatConfiguration {
     /// <p>Determines the prefix value of the percentage format.</p>
     #[doc(hidden)]
-    pub prefix: std::option::Option<std::string::String>,
+    pub prefix: ::std::option::Option<::std::string::String>,
     /// <p>Determines the suffix value of the percentage format.</p>
     #[doc(hidden)]
-    pub suffix: std::option::Option<std::string::String>,
+    pub suffix: ::std::option::Option<::std::string::String>,
     /// <p>The options that determine the numeric separator configuration.</p>
     #[doc(hidden)]
-    pub separator_configuration: std::option::Option<crate::types::NumericSeparatorConfiguration>,
+    pub separator_configuration: ::std::option::Option<crate::types::NumericSeparatorConfiguration>,
     /// <p>The option that determines the decimal places configuration.</p>
     #[doc(hidden)]
-    pub decimal_places_configuration: std::option::Option<crate::types::DecimalPlacesConfiguration>,
+    pub decimal_places_configuration:
+        ::std::option::Option<crate::types::DecimalPlacesConfiguration>,
     /// <p>The options that determine the negative value configuration.</p>
     #[doc(hidden)]
-    pub negative_value_configuration: std::option::Option<crate::types::NegativeValueConfiguration>,
+    pub negative_value_configuration:
+        ::std::option::Option<crate::types::NegativeValueConfiguration>,
     /// <p>The options that determine the null value format configuration.</p>
     #[doc(hidden)]
     pub null_value_format_configuration:
-        std::option::Option<crate::types::NullValueFormatConfiguration>,
+        ::std::option::Option<crate::types::NullValueFormatConfiguration>,
 }
 impl PercentageDisplayFormatConfiguration {
     /// <p>Determines the prefix value of the percentage format.</p>
-    pub fn prefix(&self) -> std::option::Option<&str> {
+    pub fn prefix(&self) -> ::std::option::Option<&str> {
         self.prefix.as_deref()
     }
     /// <p>Determines the suffix value of the percentage format.</p>
-    pub fn suffix(&self) -> std::option::Option<&str> {
+    pub fn suffix(&self) -> ::std::option::Option<&str> {
         self.suffix.as_deref()
     }
     /// <p>The options that determine the numeric separator configuration.</p>
     pub fn separator_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::NumericSeparatorConfiguration> {
+    ) -> ::std::option::Option<&crate::types::NumericSeparatorConfiguration> {
         self.separator_configuration.as_ref()
     }
     /// <p>The option that determines the decimal places configuration.</p>
     pub fn decimal_places_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::DecimalPlacesConfiguration> {
+    ) -> ::std::option::Option<&crate::types::DecimalPlacesConfiguration> {
         self.decimal_places_configuration.as_ref()
     }
     /// <p>The options that determine the negative value configuration.</p>
     pub fn negative_value_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::NegativeValueConfiguration> {
+    ) -> ::std::option::Option<&crate::types::NegativeValueConfiguration> {
         self.negative_value_configuration.as_ref()
     }
     /// <p>The options that determine the null value format configuration.</p>
     pub fn null_value_format_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::NullValueFormatConfiguration> {
+    ) -> ::std::option::Option<&crate::types::NullValueFormatConfiguration> {
         self.null_value_format_configuration.as_ref()
     }
 }
-impl std::fmt::Debug for PercentageDisplayFormatConfiguration {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for PercentageDisplayFormatConfiguration {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("PercentageDisplayFormatConfiguration");
         formatter.field("prefix", &"*** Sensitive Data Redacted ***");
         formatter.field("suffix", &"*** Sensitive Data Redacted ***");
@@ -88,37 +90,37 @@ impl PercentageDisplayFormatConfiguration {
 
 /// A builder for [`PercentageDisplayFormatConfiguration`](crate::types::PercentageDisplayFormatConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct PercentageDisplayFormatConfigurationBuilder {
-    pub(crate) prefix: std::option::Option<std::string::String>,
-    pub(crate) suffix: std::option::Option<std::string::String>,
+    pub(crate) prefix: ::std::option::Option<::std::string::String>,
+    pub(crate) suffix: ::std::option::Option<::std::string::String>,
     pub(crate) separator_configuration:
-        std::option::Option<crate::types::NumericSeparatorConfiguration>,
+        ::std::option::Option<crate::types::NumericSeparatorConfiguration>,
     pub(crate) decimal_places_configuration:
-        std::option::Option<crate::types::DecimalPlacesConfiguration>,
+        ::std::option::Option<crate::types::DecimalPlacesConfiguration>,
     pub(crate) negative_value_configuration:
-        std::option::Option<crate::types::NegativeValueConfiguration>,
+        ::std::option::Option<crate::types::NegativeValueConfiguration>,
     pub(crate) null_value_format_configuration:
-        std::option::Option<crate::types::NullValueFormatConfiguration>,
+        ::std::option::Option<crate::types::NullValueFormatConfiguration>,
 }
 impl PercentageDisplayFormatConfigurationBuilder {
     /// <p>Determines the prefix value of the percentage format.</p>
-    pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
-        self.prefix = Some(input.into());
+    pub fn prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Determines the prefix value of the percentage format.</p>
-    pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.prefix = input;
         self
     }
     /// <p>Determines the suffix value of the percentage format.</p>
-    pub fn suffix(mut self, input: impl Into<std::string::String>) -> Self {
-        self.suffix = Some(input.into());
+    pub fn suffix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.suffix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Determines the suffix value of the percentage format.</p>
-    pub fn set_suffix(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_suffix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.suffix = input;
         self
     }
@@ -127,13 +129,13 @@ impl PercentageDisplayFormatConfigurationBuilder {
         mut self,
         input: crate::types::NumericSeparatorConfiguration,
     ) -> Self {
-        self.separator_configuration = Some(input);
+        self.separator_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The options that determine the numeric separator configuration.</p>
     pub fn set_separator_configuration(
         mut self,
-        input: std::option::Option<crate::types::NumericSeparatorConfiguration>,
+        input: ::std::option::Option<crate::types::NumericSeparatorConfiguration>,
     ) -> Self {
         self.separator_configuration = input;
         self
@@ -143,13 +145,13 @@ impl PercentageDisplayFormatConfigurationBuilder {
         mut self,
         input: crate::types::DecimalPlacesConfiguration,
     ) -> Self {
-        self.decimal_places_configuration = Some(input);
+        self.decimal_places_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The option that determines the decimal places configuration.</p>
     pub fn set_decimal_places_configuration(
         mut self,
-        input: std::option::Option<crate::types::DecimalPlacesConfiguration>,
+        input: ::std::option::Option<crate::types::DecimalPlacesConfiguration>,
     ) -> Self {
         self.decimal_places_configuration = input;
         self
@@ -159,13 +161,13 @@ impl PercentageDisplayFormatConfigurationBuilder {
         mut self,
         input: crate::types::NegativeValueConfiguration,
     ) -> Self {
-        self.negative_value_configuration = Some(input);
+        self.negative_value_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The options that determine the negative value configuration.</p>
     pub fn set_negative_value_configuration(
         mut self,
-        input: std::option::Option<crate::types::NegativeValueConfiguration>,
+        input: ::std::option::Option<crate::types::NegativeValueConfiguration>,
     ) -> Self {
         self.negative_value_configuration = input;
         self
@@ -175,13 +177,13 @@ impl PercentageDisplayFormatConfigurationBuilder {
         mut self,
         input: crate::types::NullValueFormatConfiguration,
     ) -> Self {
-        self.null_value_format_configuration = Some(input);
+        self.null_value_format_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The options that determine the null value format configuration.</p>
     pub fn set_null_value_format_configuration(
         mut self,
-        input: std::option::Option<crate::types::NullValueFormatConfiguration>,
+        input: ::std::option::Option<crate::types::NullValueFormatConfiguration>,
     ) -> Self {
         self.null_value_format_configuration = input;
         self
@@ -198,8 +200,8 @@ impl PercentageDisplayFormatConfigurationBuilder {
         }
     }
 }
-impl std::fmt::Debug for PercentageDisplayFormatConfigurationBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for PercentageDisplayFormatConfigurationBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("PercentageDisplayFormatConfigurationBuilder");
         formatter.field("prefix", &"*** Sensitive Data Redacted ***");
         formatter.field("suffix", &"*** Sensitive Data Redacted ***");

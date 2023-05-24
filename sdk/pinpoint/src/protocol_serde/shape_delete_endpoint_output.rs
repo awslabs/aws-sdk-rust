@@ -2,7 +2,7 @@
 pub(crate) fn de_endpoint_response_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::types::EndpointResponse>,
+    ::std::option::Option<crate::types::EndpointResponse>,
     crate::operation::delete_endpoint::DeleteEndpointError,
 > {
     (!body.is_empty())

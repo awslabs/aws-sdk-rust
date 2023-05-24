@@ -6,22 +6,22 @@
 /// <li> <p>The ID of the Amazon Web Services KMS key that is associated with a repository association.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KmsKeyDetails {
     /// <p>The ID of the Amazon Web Services KMS key that is associated with a repository association.</p>
     #[doc(hidden)]
-    pub kms_key_id: std::option::Option<std::string::String>,
+    pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The encryption option for a repository association. It is either owned by Amazon Web Services Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p>
     #[doc(hidden)]
-    pub encryption_option: std::option::Option<crate::types::EncryptionOption>,
+    pub encryption_option: ::std::option::Option<crate::types::EncryptionOption>,
 }
 impl KmsKeyDetails {
     /// <p>The ID of the Amazon Web Services KMS key that is associated with a repository association.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The encryption option for a repository association. It is either owned by Amazon Web Services Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p>
-    pub fn encryption_option(&self) -> std::option::Option<&crate::types::EncryptionOption> {
+    pub fn encryption_option(&self) -> ::std::option::Option<&crate::types::EncryptionOption> {
         self.encryption_option.as_ref()
     }
 }
@@ -34,31 +34,33 @@ impl KmsKeyDetails {
 
 /// A builder for [`KmsKeyDetails`](crate::types::KmsKeyDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct KmsKeyDetailsBuilder {
-    pub(crate) kms_key_id: std::option::Option<std::string::String>,
-    pub(crate) encryption_option: std::option::Option<crate::types::EncryptionOption>,
+    pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
+    pub(crate) encryption_option: ::std::option::Option<crate::types::EncryptionOption>,
 }
 impl KmsKeyDetailsBuilder {
     /// <p>The ID of the Amazon Web Services KMS key that is associated with a repository association.</p>
-    pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.kms_key_id = Some(input.into());
+    pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services KMS key that is associated with a repository association.</p>
-    pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
     }
     /// <p>The encryption option for a repository association. It is either owned by Amazon Web Services Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p>
     pub fn encryption_option(mut self, input: crate::types::EncryptionOption) -> Self {
-        self.encryption_option = Some(input);
+        self.encryption_option = ::std::option::Option::Some(input);
         self
     }
     /// <p>The encryption option for a repository association. It is either owned by Amazon Web Services Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p>
     pub fn set_encryption_option(
         mut self,
-        input: std::option::Option<crate::types::EncryptionOption>,
+        input: ::std::option::Option<crate::types::EncryptionOption>,
     ) -> Self {
         self.encryption_option = input;
         self

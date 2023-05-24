@@ -43,13 +43,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ReplicationConfigurationReplicatedDiskStagingDiskType {
     #[allow(missing_docs)] // documentation missing in model
@@ -69,7 +69,7 @@ pub enum ReplicationConfigurationReplicatedDiskStagingDiskType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ReplicationConfigurationReplicatedDiskStagingDiskType {
+impl ::std::convert::From<&str> for ReplicationConfigurationReplicatedDiskStagingDiskType {
     fn from(s: &str) -> Self {
         match s {
             "AUTO" => ReplicationConfigurationReplicatedDiskStagingDiskType::Auto,
@@ -85,11 +85,11 @@ impl std::convert::From<&str> for ReplicationConfigurationReplicatedDiskStagingD
         }
     }
 }
-impl std::str::FromStr for ReplicationConfigurationReplicatedDiskStagingDiskType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ReplicationConfigurationReplicatedDiskStagingDiskType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ReplicationConfigurationReplicatedDiskStagingDiskType::from(
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ReplicationConfigurationReplicatedDiskStagingDiskType::from(
             s,
         ))
     }
@@ -113,7 +113,7 @@ impl ReplicationConfigurationReplicatedDiskStagingDiskType {
         &["AUTO", "GP2", "GP3", "IO1", "SC1", "ST1", "STANDARD"]
     }
 }
-impl AsRef<str> for ReplicationConfigurationReplicatedDiskStagingDiskType {
+impl ::std::convert::AsRef<str> for ReplicationConfigurationReplicatedDiskStagingDiskType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

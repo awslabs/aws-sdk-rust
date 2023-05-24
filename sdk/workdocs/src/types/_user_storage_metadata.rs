@@ -2,22 +2,22 @@
 
 /// <p>Describes the storage for a user.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserStorageMetadata {
     /// <p>The amount of storage used, in bytes.</p>
     #[doc(hidden)]
-    pub storage_utilized_in_bytes: std::option::Option<i64>,
+    pub storage_utilized_in_bytes: ::std::option::Option<i64>,
     /// <p>The storage for a user.</p>
     #[doc(hidden)]
-    pub storage_rule: std::option::Option<crate::types::StorageRuleType>,
+    pub storage_rule: ::std::option::Option<crate::types::StorageRuleType>,
 }
 impl UserStorageMetadata {
     /// <p>The amount of storage used, in bytes.</p>
-    pub fn storage_utilized_in_bytes(&self) -> std::option::Option<i64> {
+    pub fn storage_utilized_in_bytes(&self) -> ::std::option::Option<i64> {
         self.storage_utilized_in_bytes
     }
     /// <p>The storage for a user.</p>
-    pub fn storage_rule(&self) -> std::option::Option<&crate::types::StorageRuleType> {
+    pub fn storage_rule(&self) -> ::std::option::Option<&crate::types::StorageRuleType> {
         self.storage_rule.as_ref()
     }
 }
@@ -30,31 +30,33 @@ impl UserStorageMetadata {
 
 /// A builder for [`UserStorageMetadata`](crate::types::UserStorageMetadata).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UserStorageMetadataBuilder {
-    pub(crate) storage_utilized_in_bytes: std::option::Option<i64>,
-    pub(crate) storage_rule: std::option::Option<crate::types::StorageRuleType>,
+    pub(crate) storage_utilized_in_bytes: ::std::option::Option<i64>,
+    pub(crate) storage_rule: ::std::option::Option<crate::types::StorageRuleType>,
 }
 impl UserStorageMetadataBuilder {
     /// <p>The amount of storage used, in bytes.</p>
     pub fn storage_utilized_in_bytes(mut self, input: i64) -> Self {
-        self.storage_utilized_in_bytes = Some(input);
+        self.storage_utilized_in_bytes = ::std::option::Option::Some(input);
         self
     }
     /// <p>The amount of storage used, in bytes.</p>
-    pub fn set_storage_utilized_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_storage_utilized_in_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.storage_utilized_in_bytes = input;
         self
     }
     /// <p>The storage for a user.</p>
     pub fn storage_rule(mut self, input: crate::types::StorageRuleType) -> Self {
-        self.storage_rule = Some(input);
+        self.storage_rule = ::std::option::Option::Some(input);
         self
     }
     /// <p>The storage for a user.</p>
     pub fn set_storage_rule(
         mut self,
-        input: std::option::Option<crate::types::StorageRuleType>,
+        input: ::std::option::Option<crate::types::StorageRuleType>,
     ) -> Self {
         self.storage_rule = input;
         self

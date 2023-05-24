@@ -8,56 +8,59 @@ pub use crate::operation::create_budget::_create_budget_input::CreateBudgetInput
 /// <p>Creates a budget and, if included, notifications and subscribers. </p> <important>
 /// <p>Only one of <code>BudgetLimit</code> or <code>PlannedBudgetLimits</code> can be present in the syntax at one time. Use the syntax that matches your case. The Request Syntax section shows the <code>BudgetLimit</code> syntax. For <code>PlannedBudgetLimits</code>, see the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_CreateBudget.html#API_CreateBudget_Examples">Examples</a> section. </p>
 /// </important>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateBudgetFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_budget::builders::CreateBudgetInputBuilder,
 }
 impl CreateBudgetFluentBuilder {
     /// Creates a new `CreateBudget`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_budget::CreateBudget,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_budget::CreateBudgetError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_budget::CreateBudgetError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_budget::CreateBudgetOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_budget::CreateBudgetError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_budget::CreateBudgetError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -70,19 +73,19 @@ impl CreateBudgetFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_budget::CreateBudgetOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_budget::CreateBudgetError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_budget::CreateBudgetError>,
     > {
         self.send_middleware().await
     }
     /// <p>The <code>accountId</code> that is associated with the budget.</p>
-    pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.account_id(input.into());
         self
     }
     /// <p>The <code>accountId</code> that is associated with the budget.</p>
-    pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_account_id(input);
         self
     }
@@ -92,7 +95,7 @@ impl CreateBudgetFluentBuilder {
         self
     }
     /// <p>The budget object that you want to create.</p>
-    pub fn set_budget(mut self, input: std::option::Option<crate::types::Budget>) -> Self {
+    pub fn set_budget(mut self, input: ::std::option::Option<crate::types::Budget>) -> Self {
         self.inner = self.inner.set_budget(input);
         self
     }
@@ -111,7 +114,7 @@ impl CreateBudgetFluentBuilder {
     /// <p>A notification that you want to associate with a budget. A budget can have up to five notifications, and each notification can have one SNS subscriber and up to 10 email subscribers. If you include notifications and subscribers in your <code>CreateBudget</code> call, Amazon Web Services creates the notifications and subscribers for you.</p>
     pub fn set_notifications_with_subscribers(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::NotificationWithSubscribers>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::NotificationWithSubscribers>>,
     ) -> Self {
         self.inner = self.inner.set_notifications_with_subscribers(input);
         self

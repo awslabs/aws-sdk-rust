@@ -2,7 +2,7 @@
 pub(crate) fn de_journey_date_range_kpi_response_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::types::JourneyDateRangeKpiResponse>,
+    ::std::option::Option<crate::types::JourneyDateRangeKpiResponse>,
     crate::operation::get_journey_date_range_kpi::GetJourneyDateRangeKpiError,
 > {
     (!body.is_empty()).then(||{

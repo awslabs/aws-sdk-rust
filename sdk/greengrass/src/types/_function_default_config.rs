@@ -2,15 +2,17 @@
 
 /// The default configuration that applies to all Lambda functions in the group. Individual Lambda functions can override these settings.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FunctionDefaultConfig {
     /// Configuration information that specifies how a Lambda function runs.
     #[doc(hidden)]
-    pub execution: std::option::Option<crate::types::FunctionDefaultExecutionConfig>,
+    pub execution: ::std::option::Option<crate::types::FunctionDefaultExecutionConfig>,
 }
 impl FunctionDefaultConfig {
     /// Configuration information that specifies how a Lambda function runs.
-    pub fn execution(&self) -> std::option::Option<&crate::types::FunctionDefaultExecutionConfig> {
+    pub fn execution(
+        &self,
+    ) -> ::std::option::Option<&crate::types::FunctionDefaultExecutionConfig> {
         self.execution.as_ref()
     }
 }
@@ -23,20 +25,22 @@ impl FunctionDefaultConfig {
 
 /// A builder for [`FunctionDefaultConfig`](crate::types::FunctionDefaultConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FunctionDefaultConfigBuilder {
-    pub(crate) execution: std::option::Option<crate::types::FunctionDefaultExecutionConfig>,
+    pub(crate) execution: ::std::option::Option<crate::types::FunctionDefaultExecutionConfig>,
 }
 impl FunctionDefaultConfigBuilder {
     /// Configuration information that specifies how a Lambda function runs.
     pub fn execution(mut self, input: crate::types::FunctionDefaultExecutionConfig) -> Self {
-        self.execution = Some(input);
+        self.execution = ::std::option::Option::Some(input);
         self
     }
     /// Configuration information that specifies how a Lambda function runs.
     pub fn set_execution(
         mut self,
-        input: std::option::Option<crate::types::FunctionDefaultExecutionConfig>,
+        input: ::std::option::Option<crate::types::FunctionDefaultExecutionConfig>,
     ) -> Self {
         self.execution = input;
         self

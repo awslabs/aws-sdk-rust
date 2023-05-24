@@ -2,15 +2,15 @@
 
 /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/services-xray.html">X-Ray</a> tracing configuration. To sample and record incoming requests, set <code>Mode</code> to <code>Active</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TracingConfig {
     /// <p>The tracing mode.</p>
     #[doc(hidden)]
-    pub mode: std::option::Option<crate::types::TracingMode>,
+    pub mode: ::std::option::Option<crate::types::TracingMode>,
 }
 impl TracingConfig {
     /// <p>The tracing mode.</p>
-    pub fn mode(&self) -> std::option::Option<&crate::types::TracingMode> {
+    pub fn mode(&self) -> ::std::option::Option<&crate::types::TracingMode> {
         self.mode.as_ref()
     }
 }
@@ -23,18 +23,20 @@ impl TracingConfig {
 
 /// A builder for [`TracingConfig`](crate::types::TracingConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TracingConfigBuilder {
-    pub(crate) mode: std::option::Option<crate::types::TracingMode>,
+    pub(crate) mode: ::std::option::Option<crate::types::TracingMode>,
 }
 impl TracingConfigBuilder {
     /// <p>The tracing mode.</p>
     pub fn mode(mut self, input: crate::types::TracingMode) -> Self {
-        self.mode = Some(input);
+        self.mode = ::std::option::Option::Some(input);
         self
     }
     /// <p>The tracing mode.</p>
-    pub fn set_mode(mut self, input: std::option::Option<crate::types::TracingMode>) -> Self {
+    pub fn set_mode(mut self, input: ::std::option::Option<crate::types::TracingMode>) -> Self {
         self.mode = input;
         self
     }

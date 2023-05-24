@@ -2,38 +2,38 @@
 
 /// <p>A CA certificate.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CaCertificate {
     /// <p>The ARN of the CA certificate.</p>
     #[doc(hidden)]
-    pub certificate_arn: std::option::Option<std::string::String>,
+    pub certificate_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the CA certificate.</p>
     #[doc(hidden)]
-    pub certificate_id: std::option::Option<std::string::String>,
+    pub certificate_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the CA certificate.</p>
     /// <p>The status value REGISTER_INACTIVE is deprecated and should not be used.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::CaCertificateStatus>,
+    pub status: ::std::option::Option<crate::types::CaCertificateStatus>,
     /// <p>The date the CA certificate was created.</p>
     #[doc(hidden)]
-    pub creation_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl CaCertificate {
     /// <p>The ARN of the CA certificate.</p>
-    pub fn certificate_arn(&self) -> std::option::Option<&str> {
+    pub fn certificate_arn(&self) -> ::std::option::Option<&str> {
         self.certificate_arn.as_deref()
     }
     /// <p>The ID of the CA certificate.</p>
-    pub fn certificate_id(&self) -> std::option::Option<&str> {
+    pub fn certificate_id(&self) -> ::std::option::Option<&str> {
         self.certificate_id.as_deref()
     }
     /// <p>The status of the CA certificate.</p>
     /// <p>The status value REGISTER_INACTIVE is deprecated and should not be used.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::CaCertificateStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::CaCertificateStatus> {
         self.status.as_ref()
     }
     /// <p>The date the CA certificate was created.</p>
-    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
 }
@@ -46,58 +46,72 @@ impl CaCertificate {
 
 /// A builder for [`CaCertificate`](crate::types::CaCertificate).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CaCertificateBuilder {
-    pub(crate) certificate_arn: std::option::Option<std::string::String>,
-    pub(crate) certificate_id: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::CaCertificateStatus>,
-    pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) certificate_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) certificate_id: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::CaCertificateStatus>,
+    pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl CaCertificateBuilder {
     /// <p>The ARN of the CA certificate.</p>
-    pub fn certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.certificate_arn = Some(input.into());
+    pub fn certificate_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.certificate_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the CA certificate.</p>
-    pub fn set_certificate_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_certificate_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.certificate_arn = input;
         self
     }
     /// <p>The ID of the CA certificate.</p>
-    pub fn certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.certificate_id = Some(input.into());
+    pub fn certificate_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.certificate_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the CA certificate.</p>
-    pub fn set_certificate_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_certificate_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.certificate_id = input;
         self
     }
     /// <p>The status of the CA certificate.</p>
     /// <p>The status value REGISTER_INACTIVE is deprecated and should not be used.</p>
     pub fn status(mut self, input: crate::types::CaCertificateStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the CA certificate.</p>
     /// <p>The status value REGISTER_INACTIVE is deprecated and should not be used.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::CaCertificateStatus>,
+        input: ::std::option::Option<crate::types::CaCertificateStatus>,
     ) -> Self {
         self.status = input;
         self
     }
     /// <p>The date the CA certificate was created.</p>
-    pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_date = Some(input);
+    pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date the CA certificate was created.</p>
     pub fn set_creation_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_date = input;
         self

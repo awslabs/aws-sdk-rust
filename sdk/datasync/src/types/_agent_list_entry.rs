@@ -2,29 +2,29 @@
 
 /// <p>Represents a single entry in a list (or array) of DataSync agents when you call the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_ListAgents.html">ListAgents</a> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AgentListEntry {
     /// <p>The Amazon Resource Name (ARN) of a DataSync agent.</p>
     #[doc(hidden)]
-    pub agent_arn: std::option::Option<std::string::String>,
+    pub agent_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of an agent.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The status of an agent. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/understand-agent-statuses.html">DataSync agent statuses</a>.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::AgentStatus>,
+    pub status: ::std::option::Option<crate::types::AgentStatus>,
 }
 impl AgentListEntry {
     /// <p>The Amazon Resource Name (ARN) of a DataSync agent.</p>
-    pub fn agent_arn(&self) -> std::option::Option<&str> {
+    pub fn agent_arn(&self) -> ::std::option::Option<&str> {
         self.agent_arn.as_deref()
     }
     /// <p>The name of an agent.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The status of an agent. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/understand-agent-statuses.html">DataSync agent statuses</a>.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::AgentStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::AgentStatus> {
         self.status.as_ref()
     }
 }
@@ -37,40 +37,42 @@ impl AgentListEntry {
 
 /// A builder for [`AgentListEntry`](crate::types::AgentListEntry).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AgentListEntryBuilder {
-    pub(crate) agent_arn: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::AgentStatus>,
+    pub(crate) agent_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::AgentStatus>,
 }
 impl AgentListEntryBuilder {
     /// <p>The Amazon Resource Name (ARN) of a DataSync agent.</p>
-    pub fn agent_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.agent_arn = Some(input.into());
+    pub fn agent_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.agent_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of a DataSync agent.</p>
-    pub fn set_agent_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_agent_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.agent_arn = input;
         self
     }
     /// <p>The name of an agent.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of an agent.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The status of an agent. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/understand-agent-statuses.html">DataSync agent statuses</a>.</p>
     pub fn status(mut self, input: crate::types::AgentStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of an agent. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/understand-agent-statuses.html">DataSync agent statuses</a>.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::AgentStatus>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::AgentStatus>) -> Self {
         self.status = input;
         self
     }

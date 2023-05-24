@@ -2,22 +2,22 @@
 
 /// <p> The Transaction Fraud Insights (TFI) model performance score. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TfiModelPerformance {
     /// <p> The area under the curve (auc). This summarizes the total positive rate (tpr) and false positive rate (FPR) across all possible model score thresholds. </p>
     #[doc(hidden)]
-    pub auc: std::option::Option<f32>,
+    pub auc: ::std::option::Option<f32>,
     /// <p> Indicates the range of area under curve (auc) expected from the TFI model. A range greater than 0.1 indicates higher model uncertainity. </p>
     #[doc(hidden)]
-    pub uncertainty_range: std::option::Option<crate::types::UncertaintyRange>,
+    pub uncertainty_range: ::std::option::Option<crate::types::UncertaintyRange>,
 }
 impl TfiModelPerformance {
     /// <p> The area under the curve (auc). This summarizes the total positive rate (tpr) and false positive rate (FPR) across all possible model score thresholds. </p>
-    pub fn auc(&self) -> std::option::Option<f32> {
+    pub fn auc(&self) -> ::std::option::Option<f32> {
         self.auc
     }
     /// <p> Indicates the range of area under curve (auc) expected from the TFI model. A range greater than 0.1 indicates higher model uncertainity. </p>
-    pub fn uncertainty_range(&self) -> std::option::Option<&crate::types::UncertaintyRange> {
+    pub fn uncertainty_range(&self) -> ::std::option::Option<&crate::types::UncertaintyRange> {
         self.uncertainty_range.as_ref()
     }
 }
@@ -30,31 +30,33 @@ impl TfiModelPerformance {
 
 /// A builder for [`TfiModelPerformance`](crate::types::TfiModelPerformance).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TfiModelPerformanceBuilder {
-    pub(crate) auc: std::option::Option<f32>,
-    pub(crate) uncertainty_range: std::option::Option<crate::types::UncertaintyRange>,
+    pub(crate) auc: ::std::option::Option<f32>,
+    pub(crate) uncertainty_range: ::std::option::Option<crate::types::UncertaintyRange>,
 }
 impl TfiModelPerformanceBuilder {
     /// <p> The area under the curve (auc). This summarizes the total positive rate (tpr) and false positive rate (FPR) across all possible model score thresholds. </p>
     pub fn auc(mut self, input: f32) -> Self {
-        self.auc = Some(input);
+        self.auc = ::std::option::Option::Some(input);
         self
     }
     /// <p> The area under the curve (auc). This summarizes the total positive rate (tpr) and false positive rate (FPR) across all possible model score thresholds. </p>
-    pub fn set_auc(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_auc(mut self, input: ::std::option::Option<f32>) -> Self {
         self.auc = input;
         self
     }
     /// <p> Indicates the range of area under curve (auc) expected from the TFI model. A range greater than 0.1 indicates higher model uncertainity. </p>
     pub fn uncertainty_range(mut self, input: crate::types::UncertaintyRange) -> Self {
-        self.uncertainty_range = Some(input);
+        self.uncertainty_range = ::std::option::Option::Some(input);
         self
     }
     /// <p> Indicates the range of area under curve (auc) expected from the TFI model. A range greater than 0.1 indicates higher model uncertainity. </p>
     pub fn set_uncertainty_range(
         mut self,
-        input: std::option::Option<crate::types::UncertaintyRange>,
+        input: ::std::option::Option<crate::types::UncertaintyRange>,
     ) -> Self {
         self.uncertainty_range = input;
         self

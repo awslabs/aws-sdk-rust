@@ -2,14 +2,14 @@
 
 /// <p>Lists iSCSI information about a VTL device.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeviceiScsiAttributes {
     /// <p>Specifies the unique Amazon Resource Name (ARN) that encodes the iSCSI qualified name(iqn) of a tape drive or media changer target.</p>
     #[doc(hidden)]
-    pub target_arn: std::option::Option<std::string::String>,
+    pub target_arn: ::std::option::Option<::std::string::String>,
     /// <p>The network interface identifier of the VTL device.</p>
     #[doc(hidden)]
-    pub network_interface_id: std::option::Option<std::string::String>,
+    pub network_interface_id: ::std::option::Option<::std::string::String>,
     /// <p>The port used to communicate with iSCSI VTL device targets.</p>
     #[doc(hidden)]
     pub network_interface_port: i32,
@@ -19,11 +19,11 @@ pub struct DeviceiScsiAttributes {
 }
 impl DeviceiScsiAttributes {
     /// <p>Specifies the unique Amazon Resource Name (ARN) that encodes the iSCSI qualified name(iqn) of a tape drive or media changer target.</p>
-    pub fn target_arn(&self) -> std::option::Option<&str> {
+    pub fn target_arn(&self) -> ::std::option::Option<&str> {
         self.target_arn.as_deref()
     }
     /// <p>The network interface identifier of the VTL device.</p>
-    pub fn network_interface_id(&self) -> std::option::Option<&str> {
+    pub fn network_interface_id(&self) -> ::std::option::Option<&str> {
         self.network_interface_id.as_deref()
     }
     /// <p>The port used to communicate with iSCSI VTL device targets.</p>
@@ -44,54 +44,59 @@ impl DeviceiScsiAttributes {
 
 /// A builder for [`DeviceiScsiAttributes`](crate::types::DeviceiScsiAttributes).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeviceiScsiAttributesBuilder {
-    pub(crate) target_arn: std::option::Option<std::string::String>,
-    pub(crate) network_interface_id: std::option::Option<std::string::String>,
-    pub(crate) network_interface_port: std::option::Option<i32>,
-    pub(crate) chap_enabled: std::option::Option<bool>,
+    pub(crate) target_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) network_interface_id: ::std::option::Option<::std::string::String>,
+    pub(crate) network_interface_port: ::std::option::Option<i32>,
+    pub(crate) chap_enabled: ::std::option::Option<bool>,
 }
 impl DeviceiScsiAttributesBuilder {
     /// <p>Specifies the unique Amazon Resource Name (ARN) that encodes the iSCSI qualified name(iqn) of a tape drive or media changer target.</p>
-    pub fn target_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.target_arn = Some(input.into());
+    pub fn target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.target_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the unique Amazon Resource Name (ARN) that encodes the iSCSI qualified name(iqn) of a tape drive or media changer target.</p>
-    pub fn set_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_target_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_arn = input;
         self
     }
     /// <p>The network interface identifier of the VTL device.</p>
-    pub fn network_interface_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.network_interface_id = Some(input.into());
+    pub fn network_interface_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.network_interface_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The network interface identifier of the VTL device.</p>
     pub fn set_network_interface_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.network_interface_id = input;
         self
     }
     /// <p>The port used to communicate with iSCSI VTL device targets.</p>
     pub fn network_interface_port(mut self, input: i32) -> Self {
-        self.network_interface_port = Some(input);
+        self.network_interface_port = ::std::option::Option::Some(input);
         self
     }
     /// <p>The port used to communicate with iSCSI VTL device targets.</p>
-    pub fn set_network_interface_port(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_network_interface_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.network_interface_port = input;
         self
     }
     /// <p>Indicates whether mutual CHAP is enabled for the iSCSI target.</p>
     pub fn chap_enabled(mut self, input: bool) -> Self {
-        self.chap_enabled = Some(input);
+        self.chap_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether mutual CHAP is enabled for the iSCSI target.</p>
-    pub fn set_chap_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_chap_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.chap_enabled = input;
         self
     }

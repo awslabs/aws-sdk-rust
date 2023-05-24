@@ -6,30 +6,30 @@ pub use crate::operation::list_batch_job_executions::_list_batch_job_executions_
 /// Fluent builder constructing a request to `ListBatchJobExecutions`.
 ///
 /// <p>Lists historical, current, and scheduled batch job executions for a specific application.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListBatchJobExecutionsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner:
         crate::operation::list_batch_job_executions::builders::ListBatchJobExecutionsInputBuilder,
 }
 impl ListBatchJobExecutionsFluentBuilder {
     /// Creates a new `ListBatchJobExecutions`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::list_batch_job_executions::ListBatchJobExecutions,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::list_batch_job_executions::ListBatchJobExecutionsError,
         >,
     > {
@@ -37,30 +37,33 @@ impl ListBatchJobExecutionsFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::list_batch_job_executions::ListBatchJobExecutionsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::list_batch_job_executions::ListBatchJobExecutionsError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -73,9 +76,9 @@ impl ListBatchJobExecutionsFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::list_batch_job_executions::ListBatchJobExecutionsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::list_batch_job_executions::ListBatchJobExecutionsError,
         >,
     > {
@@ -94,12 +97,12 @@ impl ListBatchJobExecutionsFluentBuilder {
         )
     }
     /// <p>A pagination token to control the number of batch job executions displayed in the list.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
     /// <p>A pagination token to control the number of batch job executions displayed in the list.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
@@ -109,17 +112,23 @@ impl ListBatchJobExecutionsFluentBuilder {
         self
     }
     /// <p>The maximum number of batch job executions to return.</p>
-    pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
     /// <p>The unique identifier of the application.</p>
-    pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn application_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.application_id(input.into());
         self
     }
     /// <p>The unique identifier of the application.</p>
-    pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_application_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_application_id(input);
         self
     }
@@ -128,25 +137,28 @@ impl ListBatchJobExecutionsFluentBuilder {
     /// To override the contents of this collection use [`set_execution_ids`](Self::set_execution_ids).
     ///
     /// <p>The unique identifier of each batch job execution.</p>
-    pub fn execution_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn execution_ids(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.execution_ids(input.into());
         self
     }
     /// <p>The unique identifier of each batch job execution.</p>
     pub fn set_execution_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_execution_ids(input);
         self
     }
     /// <p>The name of each batch job execution.</p>
-    pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.job_name(input.into());
         self
     }
     /// <p>The name of each batch job execution.</p>
-    pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_job_name(input);
         self
     }
@@ -158,33 +170,33 @@ impl ListBatchJobExecutionsFluentBuilder {
     /// <p>The status of the batch job executions.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::BatchJobExecutionStatus>,
+        input: ::std::option::Option<crate::types::BatchJobExecutionStatus>,
     ) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }
     /// <p>The time after which the batch job executions started.</p>
-    pub fn started_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+    pub fn started_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.started_after(input);
         self
     }
     /// <p>The time after which the batch job executions started.</p>
     pub fn set_started_after(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.inner = self.inner.set_started_after(input);
         self
     }
     /// <p>The time before the batch job executions started.</p>
-    pub fn started_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+    pub fn started_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.started_before(input);
         self
     }
     /// <p>The time before the batch job executions started.</p>
     pub fn set_started_before(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.inner = self.inner.set_started_before(input);
         self

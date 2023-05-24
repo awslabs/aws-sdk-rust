@@ -2,49 +2,51 @@
 
 /// <p>A collection of resources of the same type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceSetOutput {
     /// <p>The Amazon Resource Name (ARN) for the resource set.</p>
     #[doc(hidden)]
-    pub resource_set_arn: std::option::Option<std::string::String>,
+    pub resource_set_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the resource set.</p>
     #[doc(hidden)]
-    pub resource_set_name: std::option::Option<std::string::String>,
+    pub resource_set_name: ::std::option::Option<::std::string::String>,
     /// <p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p>
     /// <p>AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume, AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck, AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource</p>
     #[doc(hidden)]
-    pub resource_set_type: std::option::Option<std::string::String>,
+    pub resource_set_type: ::std::option::Option<::std::string::String>,
     /// <p>A list of resource objects.</p>
     #[doc(hidden)]
-    pub resources: std::option::Option<std::vec::Vec<crate::types::Resource>>,
+    pub resources: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
     /// <p>A collection of tags associated with a resource.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl ResourceSetOutput {
     /// <p>The Amazon Resource Name (ARN) for the resource set.</p>
-    pub fn resource_set_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_set_arn(&self) -> ::std::option::Option<&str> {
         self.resource_set_arn.as_deref()
     }
     /// <p>The name of the resource set.</p>
-    pub fn resource_set_name(&self) -> std::option::Option<&str> {
+    pub fn resource_set_name(&self) -> ::std::option::Option<&str> {
         self.resource_set_name.as_deref()
     }
     /// <p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p>
     /// <p>AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume, AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck, AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource</p>
-    pub fn resource_set_type(&self) -> std::option::Option<&str> {
+    pub fn resource_set_type(&self) -> ::std::option::Option<&str> {
         self.resource_set_type.as_deref()
     }
     /// <p>A list of resource objects.</p>
-    pub fn resources(&self) -> std::option::Option<&[crate::types::Resource]> {
+    pub fn resources(&self) -> ::std::option::Option<&[crate::types::Resource]> {
         self.resources.as_deref()
     }
     /// <p>A collection of tags associated with a resource.</p>
     pub fn tags(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.tags.as_ref()
     }
 }
@@ -57,50 +59,65 @@ impl ResourceSetOutput {
 
 /// A builder for [`ResourceSetOutput`](crate::types::ResourceSetOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResourceSetOutputBuilder {
-    pub(crate) resource_set_arn: std::option::Option<std::string::String>,
-    pub(crate) resource_set_name: std::option::Option<std::string::String>,
-    pub(crate) resource_set_type: std::option::Option<std::string::String>,
-    pub(crate) resources: std::option::Option<std::vec::Vec<crate::types::Resource>>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) resource_set_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_set_name: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_set_type: ::std::option::Option<::std::string::String>,
+    pub(crate) resources: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
+    pub(crate) tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl ResourceSetOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) for the resource set.</p>
-    pub fn resource_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_set_arn = Some(input.into());
+    pub fn resource_set_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.resource_set_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the resource set.</p>
-    pub fn set_resource_set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_set_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.resource_set_arn = input;
         self
     }
     /// <p>The name of the resource set.</p>
-    pub fn resource_set_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_set_name = Some(input.into());
+    pub fn resource_set_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.resource_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the resource set.</p>
     pub fn set_resource_set_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.resource_set_name = input;
         self
     }
     /// <p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p>
     /// <p>AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume, AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck, AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource</p>
-    pub fn resource_set_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_set_type = Some(input.into());
+    pub fn resource_set_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.resource_set_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p>
     /// <p>AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume, AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck, AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource</p>
     pub fn set_resource_set_type(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.resource_set_type = input;
         self
@@ -113,13 +130,13 @@ impl ResourceSetOutputBuilder {
     pub fn resources(mut self, input: crate::types::Resource) -> Self {
         let mut v = self.resources.unwrap_or_default();
         v.push(input);
-        self.resources = Some(v);
+        self.resources = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of resource objects.</p>
     pub fn set_resources(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Resource>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
     ) -> Self {
         self.resources = input;
         self
@@ -131,19 +148,19 @@ impl ResourceSetOutputBuilder {
     /// <p>A collection of tags associated with a resource.</p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
+        self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A collection of tags associated with a resource.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.tags = input;

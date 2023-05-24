@@ -6,29 +6,29 @@ pub use crate::operation::describe_evaluations::_describe_evaluations_input::Des
 /// Fluent builder constructing a request to `DescribeEvaluations`.
 ///
 /// <p>Returns a list of <code>DescribeEvaluations</code> that match the search criteria in the request.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeEvaluationsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::describe_evaluations::builders::DescribeEvaluationsInputBuilder,
 }
 impl DescribeEvaluationsFluentBuilder {
     /// Creates a new `DescribeEvaluations`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::describe_evaluations::DescribeEvaluations,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::describe_evaluations::DescribeEvaluationsError,
         >,
     > {
@@ -36,30 +36,33 @@ impl DescribeEvaluationsFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::describe_evaluations::DescribeEvaluationsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::describe_evaluations::DescribeEvaluationsError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,9 +75,9 @@ impl DescribeEvaluationsFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::describe_evaluations::DescribeEvaluationsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::describe_evaluations::DescribeEvaluationsError,
         >,
     > {
@@ -117,68 +120,68 @@ impl DescribeEvaluationsFluentBuilder {
     /// </ul>
     pub fn set_filter_variable(
         mut self,
-        input: std::option::Option<crate::types::EvaluationFilterVariable>,
+        input: ::std::option::Option<crate::types::EvaluationFilterVariable>,
     ) -> Self {
         self.inner = self.inner.set_filter_variable(input);
         self
     }
     /// <p>The equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
-    pub fn eq(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn eq(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.eq(input.into());
         self
     }
     /// <p>The equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
-    pub fn set_eq(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_eq(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_eq(input);
         self
     }
     /// <p>The greater than operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
-    pub fn gt(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn gt(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.gt(input.into());
         self
     }
     /// <p>The greater than operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
-    pub fn set_gt(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_gt(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_gt(input);
         self
     }
     /// <p>The less than operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
-    pub fn lt(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn lt(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.lt(input.into());
         self
     }
     /// <p>The less than operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
-    pub fn set_lt(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_lt(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_lt(input);
         self
     }
     /// <p>The greater than or equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>. </p>
-    pub fn ge(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn ge(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ge(input.into());
         self
     }
     /// <p>The greater than or equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>. </p>
-    pub fn set_ge(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ge(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ge(input);
         self
     }
     /// <p>The less than or equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that are less than or equal to the value specified with <code>LE</code>.</p>
-    pub fn le(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn le(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.le(input.into());
         self
     }
     /// <p>The less than or equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that are less than or equal to the value specified with <code>LE</code>.</p>
-    pub fn set_le(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_le(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_le(input);
         self
     }
     /// <p>The not equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values not equal to the value specified with <code>NE</code>.</p>
-    pub fn ne(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn ne(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ne(input.into());
         self
     }
     /// <p>The not equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values not equal to the value specified with <code>NE</code>.</p>
-    pub fn set_ne(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ne(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ne(input);
         self
     }
@@ -189,7 +192,7 @@ impl DescribeEvaluationsFluentBuilder {
     /// <li> <p>2014-09-09</p> </li>
     /// <li> <p>2014-09-09-Holiday</p> </li>
     /// </ul>
-    pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.prefix(input.into());
         self
     }
@@ -200,7 +203,7 @@ impl DescribeEvaluationsFluentBuilder {
     /// <li> <p>2014-09-09</p> </li>
     /// <li> <p>2014-09-09-Holiday</p> </li>
     /// </ul>
-    pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_prefix(input);
         self
     }
@@ -220,17 +223,17 @@ impl DescribeEvaluationsFluentBuilder {
     /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li>
     /// </ul>
     /// <p>Results are sorted by <code>FilterVariable</code>.</p>
-    pub fn set_sort_order(mut self, input: std::option::Option<crate::types::SortOrder>) -> Self {
+    pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.inner = self.inner.set_sort_order(input);
         self
     }
     /// <p>The ID of the page in the paginated results.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
     /// <p>The ID of the page in the paginated results.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
@@ -240,7 +243,7 @@ impl DescribeEvaluationsFluentBuilder {
         self
     }
     /// <p> The maximum number of <code>Evaluation</code> to include in the result.</p>
-    pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_limit(input);
         self
     }

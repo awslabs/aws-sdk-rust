@@ -2,49 +2,49 @@
 
 /// <p>The configuration for SHAP analysis using SageMaker Clarify Explainer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClarifyShapConfig {
     /// <p>The configuration for the SHAP baseline of the Kernal SHAP algorithm.</p>
     #[doc(hidden)]
-    pub shap_baseline_config: std::option::Option<crate::types::ClarifyShapBaselineConfig>,
+    pub shap_baseline_config: ::std::option::Option<crate::types::ClarifyShapBaselineConfig>,
     /// <p>The number of samples to be used for analysis by the Kernal SHAP algorithm. </p> <note>
     /// <p>The number of samples determines the size of the synthetic dataset, which has an impact on latency of explainability requests. For more information, see the <b>Synthetic data</b> of <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-create-endpoint.html">Configure and create an endpoint</a>.</p>
     /// </note>
     #[doc(hidden)]
-    pub number_of_samples: std::option::Option<i32>,
+    pub number_of_samples: ::std::option::Option<i32>,
     /// <p>A Boolean toggle to indicate if you want to use the logit function (true) or log-odds units (false) for model predictions. Defaults to false.</p>
     #[doc(hidden)]
-    pub use_logit: std::option::Option<bool>,
+    pub use_logit: ::std::option::Option<bool>,
     /// <p>The starting value used to initialize the random number generator in the explainer. Provide a value for this parameter to obtain a deterministic SHAP result.</p>
     #[doc(hidden)]
-    pub seed: std::option::Option<i32>,
+    pub seed: ::std::option::Option<i32>,
     /// <p>A parameter that indicates if text features are treated as text and explanations are provided for individual units of text. Required for natural language processing (NLP) explainability only.</p>
     #[doc(hidden)]
-    pub text_config: std::option::Option<crate::types::ClarifyTextConfig>,
+    pub text_config: ::std::option::Option<crate::types::ClarifyTextConfig>,
 }
 impl ClarifyShapConfig {
     /// <p>The configuration for the SHAP baseline of the Kernal SHAP algorithm.</p>
     pub fn shap_baseline_config(
         &self,
-    ) -> std::option::Option<&crate::types::ClarifyShapBaselineConfig> {
+    ) -> ::std::option::Option<&crate::types::ClarifyShapBaselineConfig> {
         self.shap_baseline_config.as_ref()
     }
     /// <p>The number of samples to be used for analysis by the Kernal SHAP algorithm. </p> <note>
     /// <p>The number of samples determines the size of the synthetic dataset, which has an impact on latency of explainability requests. For more information, see the <b>Synthetic data</b> of <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-create-endpoint.html">Configure and create an endpoint</a>.</p>
     /// </note>
-    pub fn number_of_samples(&self) -> std::option::Option<i32> {
+    pub fn number_of_samples(&self) -> ::std::option::Option<i32> {
         self.number_of_samples
     }
     /// <p>A Boolean toggle to indicate if you want to use the logit function (true) or log-odds units (false) for model predictions. Defaults to false.</p>
-    pub fn use_logit(&self) -> std::option::Option<bool> {
+    pub fn use_logit(&self) -> ::std::option::Option<bool> {
         self.use_logit
     }
     /// <p>The starting value used to initialize the random number generator in the explainer. Provide a value for this parameter to obtain a deterministic SHAP result.</p>
-    pub fn seed(&self) -> std::option::Option<i32> {
+    pub fn seed(&self) -> ::std::option::Option<i32> {
         self.seed
     }
     /// <p>A parameter that indicates if text features are treated as text and explanations are provided for individual units of text. Required for natural language processing (NLP) explainability only.</p>
-    pub fn text_config(&self) -> std::option::Option<&crate::types::ClarifyTextConfig> {
+    pub fn text_config(&self) -> ::std::option::Option<&crate::types::ClarifyTextConfig> {
         self.text_config.as_ref()
     }
 }
@@ -57,24 +57,26 @@ impl ClarifyShapConfig {
 
 /// A builder for [`ClarifyShapConfig`](crate::types::ClarifyShapConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ClarifyShapConfigBuilder {
-    pub(crate) shap_baseline_config: std::option::Option<crate::types::ClarifyShapBaselineConfig>,
-    pub(crate) number_of_samples: std::option::Option<i32>,
-    pub(crate) use_logit: std::option::Option<bool>,
-    pub(crate) seed: std::option::Option<i32>,
-    pub(crate) text_config: std::option::Option<crate::types::ClarifyTextConfig>,
+    pub(crate) shap_baseline_config: ::std::option::Option<crate::types::ClarifyShapBaselineConfig>,
+    pub(crate) number_of_samples: ::std::option::Option<i32>,
+    pub(crate) use_logit: ::std::option::Option<bool>,
+    pub(crate) seed: ::std::option::Option<i32>,
+    pub(crate) text_config: ::std::option::Option<crate::types::ClarifyTextConfig>,
 }
 impl ClarifyShapConfigBuilder {
     /// <p>The configuration for the SHAP baseline of the Kernal SHAP algorithm.</p>
     pub fn shap_baseline_config(mut self, input: crate::types::ClarifyShapBaselineConfig) -> Self {
-        self.shap_baseline_config = Some(input);
+        self.shap_baseline_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration for the SHAP baseline of the Kernal SHAP algorithm.</p>
     pub fn set_shap_baseline_config(
         mut self,
-        input: std::option::Option<crate::types::ClarifyShapBaselineConfig>,
+        input: ::std::option::Option<crate::types::ClarifyShapBaselineConfig>,
     ) -> Self {
         self.shap_baseline_config = input;
         self
@@ -83,45 +85,45 @@ impl ClarifyShapConfigBuilder {
     /// <p>The number of samples determines the size of the synthetic dataset, which has an impact on latency of explainability requests. For more information, see the <b>Synthetic data</b> of <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-create-endpoint.html">Configure and create an endpoint</a>.</p>
     /// </note>
     pub fn number_of_samples(mut self, input: i32) -> Self {
-        self.number_of_samples = Some(input);
+        self.number_of_samples = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of samples to be used for analysis by the Kernal SHAP algorithm. </p> <note>
     /// <p>The number of samples determines the size of the synthetic dataset, which has an impact on latency of explainability requests. For more information, see the <b>Synthetic data</b> of <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-create-endpoint.html">Configure and create an endpoint</a>.</p>
     /// </note>
-    pub fn set_number_of_samples(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_number_of_samples(mut self, input: ::std::option::Option<i32>) -> Self {
         self.number_of_samples = input;
         self
     }
     /// <p>A Boolean toggle to indicate if you want to use the logit function (true) or log-odds units (false) for model predictions. Defaults to false.</p>
     pub fn use_logit(mut self, input: bool) -> Self {
-        self.use_logit = Some(input);
+        self.use_logit = ::std::option::Option::Some(input);
         self
     }
     /// <p>A Boolean toggle to indicate if you want to use the logit function (true) or log-odds units (false) for model predictions. Defaults to false.</p>
-    pub fn set_use_logit(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_use_logit(mut self, input: ::std::option::Option<bool>) -> Self {
         self.use_logit = input;
         self
     }
     /// <p>The starting value used to initialize the random number generator in the explainer. Provide a value for this parameter to obtain a deterministic SHAP result.</p>
     pub fn seed(mut self, input: i32) -> Self {
-        self.seed = Some(input);
+        self.seed = ::std::option::Option::Some(input);
         self
     }
     /// <p>The starting value used to initialize the random number generator in the explainer. Provide a value for this parameter to obtain a deterministic SHAP result.</p>
-    pub fn set_seed(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_seed(mut self, input: ::std::option::Option<i32>) -> Self {
         self.seed = input;
         self
     }
     /// <p>A parameter that indicates if text features are treated as text and explanations are provided for individual units of text. Required for natural language processing (NLP) explainability only.</p>
     pub fn text_config(mut self, input: crate::types::ClarifyTextConfig) -> Self {
-        self.text_config = Some(input);
+        self.text_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>A parameter that indicates if text features are treated as text and explanations are provided for individual units of text. Required for natural language processing (NLP) explainability only.</p>
     pub fn set_text_config(
         mut self,
-        input: std::option::Option<crate::types::ClarifyTextConfig>,
+        input: ::std::option::Option<crate::types::ClarifyTextConfig>,
     ) -> Self {
         self.text_config = input;
         self

@@ -2,22 +2,22 @@
 
 /// Use Force include renditions to specify one or more resolutions to include your ABR stack. * (Recommended) To optimize automated ABR, specify as few resolutions as possible. * (Required) The number of resolutions that you specify must be equal to, or less than, the Max renditions setting. * If you specify a Min top rendition size rule, specify at least one resolution that is equal to, or greater than, Min top rendition size. * If you specify a Min bottom rendition size rule, only specify resolutions that are equal to, or greater than, Min bottom rendition size. * If you specify a Force include renditions rule, do not specify a separate rule for Allowed renditions. * Note: The ABR stack may include other resolutions that you do not specify here, depending on the Max renditions setting.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ForceIncludeRenditionSize {
     /// Use Height to define the video resolution height, in pixels, for this rule.
     #[doc(hidden)]
-    pub height: std::option::Option<i32>,
+    pub height: ::std::option::Option<i32>,
     /// Use Width to define the video resolution width, in pixels, for this rule.
     #[doc(hidden)]
-    pub width: std::option::Option<i32>,
+    pub width: ::std::option::Option<i32>,
 }
 impl ForceIncludeRenditionSize {
     /// Use Height to define the video resolution height, in pixels, for this rule.
-    pub fn height(&self) -> std::option::Option<i32> {
+    pub fn height(&self) -> ::std::option::Option<i32> {
         self.height
     }
     /// Use Width to define the video resolution width, in pixels, for this rule.
-    pub fn width(&self) -> std::option::Option<i32> {
+    pub fn width(&self) -> ::std::option::Option<i32> {
         self.width
     }
 }
@@ -30,29 +30,31 @@ impl ForceIncludeRenditionSize {
 
 /// A builder for [`ForceIncludeRenditionSize`](crate::types::ForceIncludeRenditionSize).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ForceIncludeRenditionSizeBuilder {
-    pub(crate) height: std::option::Option<i32>,
-    pub(crate) width: std::option::Option<i32>,
+    pub(crate) height: ::std::option::Option<i32>,
+    pub(crate) width: ::std::option::Option<i32>,
 }
 impl ForceIncludeRenditionSizeBuilder {
     /// Use Height to define the video resolution height, in pixels, for this rule.
     pub fn height(mut self, input: i32) -> Self {
-        self.height = Some(input);
+        self.height = ::std::option::Option::Some(input);
         self
     }
     /// Use Height to define the video resolution height, in pixels, for this rule.
-    pub fn set_height(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_height(mut self, input: ::std::option::Option<i32>) -> Self {
         self.height = input;
         self
     }
     /// Use Width to define the video resolution width, in pixels, for this rule.
     pub fn width(mut self, input: i32) -> Self {
-        self.width = Some(input);
+        self.width = ::std::option::Option::Some(input);
         self
     }
     /// Use Width to define the video resolution width, in pixels, for this rule.
-    pub fn set_width(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_width(mut self, input: ::std::option::Option<i32>) -> Self {
         self.width = input;
         self
     }

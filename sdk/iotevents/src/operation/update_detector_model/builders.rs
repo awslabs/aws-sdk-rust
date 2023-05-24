@@ -6,29 +6,29 @@ pub use crate::operation::update_detector_model::_update_detector_model_input::U
 /// Fluent builder constructing a request to `UpdateDetectorModel`.
 ///
 /// <p>Updates a detector model. Detectors (instances) spawned by the previous version are deleted and then re-created as new inputs arrive.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateDetectorModelFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::update_detector_model::builders::UpdateDetectorModelInputBuilder,
 }
 impl UpdateDetectorModelFluentBuilder {
     /// Creates a new `UpdateDetectorModel`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_detector_model::UpdateDetectorModel,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_detector_model::UpdateDetectorModelError,
         >,
     > {
@@ -36,30 +36,33 @@ impl UpdateDetectorModelFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_detector_model::UpdateDetectorModelOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_detector_model::UpdateDetectorModelError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,23 +75,26 @@ impl UpdateDetectorModelFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_detector_model::UpdateDetectorModelOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_detector_model::UpdateDetectorModelError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the detector model that is updated.</p>
-    pub fn detector_model_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn detector_model_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.detector_model_name(input.into());
         self
     }
     /// <p>The name of the detector model that is updated.</p>
     pub fn set_detector_model_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_detector_model_name(input);
         self
@@ -104,31 +110,34 @@ impl UpdateDetectorModelFluentBuilder {
     /// <p>Information that defines how a detector operates.</p>
     pub fn set_detector_model_definition(
         mut self,
-        input: std::option::Option<crate::types::DetectorModelDefinition>,
+        input: ::std::option::Option<crate::types::DetectorModelDefinition>,
     ) -> Self {
         self.inner = self.inner.set_detector_model_definition(input);
         self
     }
     /// <p>A brief description of the detector model.</p>
-    pub fn detector_model_description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn detector_model_description(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.detector_model_description(input.into());
         self
     }
     /// <p>A brief description of the detector model.</p>
     pub fn set_detector_model_description(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_detector_model_description(input);
         self
     }
     /// <p>The ARN of the role that grants permission to AWS IoT Events to perform its operations.</p>
-    pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
         self
     }
     /// <p>The ARN of the role that grants permission to AWS IoT Events to perform its operations.</p>
-    pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
     }
@@ -140,7 +149,7 @@ impl UpdateDetectorModelFluentBuilder {
     /// <p>Information about the order in which events are evaluated and how actions are executed. </p>
     pub fn set_evaluation_method(
         mut self,
-        input: std::option::Option<crate::types::EvaluationMethod>,
+        input: ::std::option::Option<crate::types::EvaluationMethod>,
     ) -> Self {
         self.inner = self.inner.set_evaluation_method(input);
         self

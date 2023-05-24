@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetLayerVersionByArn`](crate::operation::get_layer_version_by_arn::builders::GetLayerVersionByArnFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl Into<String>)`](crate::operation::get_layer_version_by_arn::builders::GetLayerVersionByArnFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::get_layer_version_by_arn::builders::GetLayerVersionByArnFluentBuilder::set_arn): <p>The ARN of the layer version.</p>
+    ///   - [`arn(impl ::std::convert::Into<String>)`](crate::operation::get_layer_version_by_arn::builders::GetLayerVersionByArnFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::get_layer_version_by_arn::builders::GetLayerVersionByArnFluentBuilder::set_arn): <p>The ARN of the layer version.</p>
     /// - On success, responds with [`GetLayerVersionByArnOutput`](crate::operation::get_layer_version_by_arn::GetLayerVersionByArnOutput) with field(s):
     ///   - [`content(Option<LayerVersionContentOutput>)`](crate::operation::get_layer_version_by_arn::GetLayerVersionByArnOutput::content): <p>Details about the layer version.</p>
     ///   - [`layer_arn(Option<String>)`](crate::operation::get_layer_version_by_arn::GetLayerVersionByArnOutput::layer_arn): <p>The ARN of the layer.</p>

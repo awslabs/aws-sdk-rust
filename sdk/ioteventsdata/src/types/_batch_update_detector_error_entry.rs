@@ -2,29 +2,29 @@
 
 /// <p>Information about the error that occurred when attempting to update a detector.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchUpdateDetectorErrorEntry {
     /// <p>The <code>"messageId"</code> of the update request that caused the error. (The value of the <code>"messageId"</code> in the update request <code>"Detector"</code> object.)</p>
     #[doc(hidden)]
-    pub message_id: std::option::Option<std::string::String>,
+    pub message_id: ::std::option::Option<::std::string::String>,
     /// <p>The error code.</p>
     #[doc(hidden)]
-    pub error_code: std::option::Option<crate::types::ErrorCode>,
+    pub error_code: ::std::option::Option<crate::types::ErrorCode>,
     /// <p>A message that describes the error.</p>
     #[doc(hidden)]
-    pub error_message: std::option::Option<std::string::String>,
+    pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl BatchUpdateDetectorErrorEntry {
     /// <p>The <code>"messageId"</code> of the update request that caused the error. (The value of the <code>"messageId"</code> in the update request <code>"Detector"</code> object.)</p>
-    pub fn message_id(&self) -> std::option::Option<&str> {
+    pub fn message_id(&self) -> ::std::option::Option<&str> {
         self.message_id.as_deref()
     }
     /// <p>The error code.</p>
-    pub fn error_code(&self) -> std::option::Option<&crate::types::ErrorCode> {
+    pub fn error_code(&self) -> ::std::option::Option<&crate::types::ErrorCode> {
         self.error_code.as_ref()
     }
     /// <p>A message that describes the error.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<&str> {
         self.error_message.as_deref()
     }
 }
@@ -37,40 +37,48 @@ impl BatchUpdateDetectorErrorEntry {
 
 /// A builder for [`BatchUpdateDetectorErrorEntry`](crate::types::BatchUpdateDetectorErrorEntry).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BatchUpdateDetectorErrorEntryBuilder {
-    pub(crate) message_id: std::option::Option<std::string::String>,
-    pub(crate) error_code: std::option::Option<crate::types::ErrorCode>,
-    pub(crate) error_message: std::option::Option<std::string::String>,
+    pub(crate) message_id: ::std::option::Option<::std::string::String>,
+    pub(crate) error_code: ::std::option::Option<crate::types::ErrorCode>,
+    pub(crate) error_message: ::std::option::Option<::std::string::String>,
 }
 impl BatchUpdateDetectorErrorEntryBuilder {
     /// <p>The <code>"messageId"</code> of the update request that caused the error. (The value of the <code>"messageId"</code> in the update request <code>"Detector"</code> object.)</p>
-    pub fn message_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message_id = Some(input.into());
+    pub fn message_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>"messageId"</code> of the update request that caused the error. (The value of the <code>"messageId"</code> in the update request <code>"Detector"</code> object.)</p>
-    pub fn set_message_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message_id = input;
         self
     }
     /// <p>The error code.</p>
     pub fn error_code(mut self, input: crate::types::ErrorCode) -> Self {
-        self.error_code = Some(input);
+        self.error_code = ::std::option::Option::Some(input);
         self
     }
     /// <p>The error code.</p>
-    pub fn set_error_code(mut self, input: std::option::Option<crate::types::ErrorCode>) -> Self {
+    pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::ErrorCode>) -> Self {
         self.error_code = input;
         self
     }
     /// <p>A message that describes the error.</p>
-    pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.error_message = Some(input.into());
+    pub fn error_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A message that describes the error.</p>
-    pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_error_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.error_message = input;
         self
     }

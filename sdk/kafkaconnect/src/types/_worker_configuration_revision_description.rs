@@ -2,32 +2,32 @@
 
 /// <p>The description of the worker configuration revision.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct WorkerConfigurationRevisionDescription {
     /// <p>The time that the worker configuration was created.</p>
     #[doc(hidden)]
-    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The description of the worker configuration revision.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>Base64 encoded contents of the connect-distributed.properties file.</p>
     #[doc(hidden)]
-    pub properties_file_content: std::option::Option<std::string::String>,
+    pub properties_file_content: ::std::option::Option<::std::string::String>,
     /// <p>The description of a revision of the worker configuration.</p>
     #[doc(hidden)]
     pub revision: i64,
 }
 impl WorkerConfigurationRevisionDescription {
     /// <p>The time that the worker configuration was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The description of the worker configuration revision.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>Base64 encoded contents of the connect-distributed.properties file.</p>
-    pub fn properties_file_content(&self) -> std::option::Option<&str> {
+    pub fn properties_file_content(&self) -> ::std::option::Option<&str> {
         self.properties_file_content.as_deref()
     }
     /// <p>The description of a revision of the worker configuration.</p>
@@ -35,8 +35,8 @@ impl WorkerConfigurationRevisionDescription {
         self.revision
     }
 }
-impl std::fmt::Debug for WorkerConfigurationRevisionDescription {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for WorkerConfigurationRevisionDescription {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("WorkerConfigurationRevisionDescription");
         formatter.field("creation_time", &self.creation_time);
         formatter.field("description", &self.description);
@@ -57,57 +57,60 @@ impl WorkerConfigurationRevisionDescription {
 
 /// A builder for [`WorkerConfigurationRevisionDescription`](crate::types::WorkerConfigurationRevisionDescription).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct WorkerConfigurationRevisionDescriptionBuilder {
-    pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) properties_file_content: std::option::Option<std::string::String>,
-    pub(crate) revision: std::option::Option<i64>,
+    pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) properties_file_content: ::std::option::Option<::std::string::String>,
+    pub(crate) revision: ::std::option::Option<i64>,
 }
 impl WorkerConfigurationRevisionDescriptionBuilder {
     /// <p>The time that the worker configuration was created.</p>
-    pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_time = Some(input);
+    pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time that the worker configuration was created.</p>
     pub fn set_creation_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_time = input;
         self
     }
     /// <p>The description of the worker configuration revision.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the worker configuration revision.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>Base64 encoded contents of the connect-distributed.properties file.</p>
-    pub fn properties_file_content(mut self, input: impl Into<std::string::String>) -> Self {
-        self.properties_file_content = Some(input.into());
+    pub fn properties_file_content(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.properties_file_content = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Base64 encoded contents of the connect-distributed.properties file.</p>
     pub fn set_properties_file_content(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.properties_file_content = input;
         self
     }
     /// <p>The description of a revision of the worker configuration.</p>
     pub fn revision(mut self, input: i64) -> Self {
-        self.revision = Some(input);
+        self.revision = ::std::option::Option::Some(input);
         self
     }
     /// <p>The description of a revision of the worker configuration.</p>
-    pub fn set_revision(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_revision(mut self, input: ::std::option::Option<i64>) -> Self {
         self.revision = input;
         self
     }
@@ -121,8 +124,8 @@ impl WorkerConfigurationRevisionDescriptionBuilder {
         }
     }
 }
-impl std::fmt::Debug for WorkerConfigurationRevisionDescriptionBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for WorkerConfigurationRevisionDescriptionBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("WorkerConfigurationRevisionDescriptionBuilder");
         formatter.field("creation_time", &self.creation_time);
         formatter.field("description", &self.description);

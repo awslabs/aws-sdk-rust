@@ -2,40 +2,40 @@
 
 /// <p>DescribeVTLDevicesInput</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeVtlDevicesInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
-    pub gateway_arn: std::option::Option<std::string::String>,
+    pub gateway_arn: ::std::option::Option<::std::string::String>,
     /// <p>An array of strings, where each string represents the Amazon Resource Name (ARN) of a VTL device.</p> <note>
     /// <p>All of the specified VTL devices must be from the same gateway. If no VTL devices are specified, the result will contain all devices on the specified gateway.</p>
     /// </note>
     #[doc(hidden)]
-    pub vtl_device_ar_ns: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub vtl_device_ar_ns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An opaque string that indicates the position at which to begin describing the VTL devices.</p>
     #[doc(hidden)]
-    pub marker: std::option::Option<std::string::String>,
+    pub marker: ::std::option::Option<::std::string::String>,
     /// <p>Specifies that the number of VTL devices described be limited to the specified number.</p>
     #[doc(hidden)]
-    pub limit: std::option::Option<i32>,
+    pub limit: ::std::option::Option<i32>,
 }
 impl DescribeVtlDevicesInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+    pub fn gateway_arn(&self) -> ::std::option::Option<&str> {
         self.gateway_arn.as_deref()
     }
     /// <p>An array of strings, where each string represents the Amazon Resource Name (ARN) of a VTL device.</p> <note>
     /// <p>All of the specified VTL devices must be from the same gateway. If no VTL devices are specified, the result will contain all devices on the specified gateway.</p>
     /// </note>
-    pub fn vtl_device_ar_ns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn vtl_device_ar_ns(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.vtl_device_ar_ns.as_deref()
     }
     /// <p>An opaque string that indicates the position at which to begin describing the VTL devices.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
     /// <p>Specifies that the number of VTL devices described be limited to the specified number.</p>
-    pub fn limit(&self) -> std::option::Option<i32> {
+    pub fn limit(&self) -> ::std::option::Option<i32> {
         self.limit
     }
 }
@@ -49,21 +49,23 @@ impl DescribeVtlDevicesInput {
 
 /// A builder for [`DescribeVtlDevicesInput`](crate::operation::describe_vtl_devices::DescribeVtlDevicesInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeVtlDevicesInputBuilder {
-    pub(crate) gateway_arn: std::option::Option<std::string::String>,
-    pub(crate) vtl_device_ar_ns: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) marker: std::option::Option<std::string::String>,
-    pub(crate) limit: std::option::Option<i32>,
+    pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) vtl_device_ar_ns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) marker: ::std::option::Option<::std::string::String>,
+    pub(crate) limit: ::std::option::Option<i32>,
 }
 impl DescribeVtlDevicesInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.gateway_arn = Some(input.into());
+    pub fn gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.gateway_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    pub fn set_gateway_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_gateway_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.gateway_arn = input;
         self
     }
@@ -74,10 +76,13 @@ impl DescribeVtlDevicesInputBuilder {
     /// <p>An array of strings, where each string represents the Amazon Resource Name (ARN) of a VTL device.</p> <note>
     /// <p>All of the specified VTL devices must be from the same gateway. If no VTL devices are specified, the result will contain all devices on the specified gateway.</p>
     /// </note>
-    pub fn vtl_device_ar_ns(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn vtl_device_ar_ns(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.vtl_device_ar_ns.unwrap_or_default();
         v.push(input.into());
-        self.vtl_device_ar_ns = Some(v);
+        self.vtl_device_ar_ns = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of strings, where each string represents the Amazon Resource Name (ARN) of a VTL device.</p> <note>
@@ -85,39 +90,39 @@ impl DescribeVtlDevicesInputBuilder {
     /// </note>
     pub fn set_vtl_device_ar_ns(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.vtl_device_ar_ns = input;
         self
     }
     /// <p>An opaque string that indicates the position at which to begin describing the VTL devices.</p>
-    pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-        self.marker = Some(input.into());
+    pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An opaque string that indicates the position at which to begin describing the VTL devices.</p>
-    pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
     }
     /// <p>Specifies that the number of VTL devices described be limited to the specified number.</p>
     pub fn limit(mut self, input: i32) -> Self {
-        self.limit = Some(input);
+        self.limit = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies that the number of VTL devices described be limited to the specified number.</p>
-    pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.limit = input;
         self
     }
     /// Consumes the builder and constructs a [`DescribeVtlDevicesInput`](crate::operation::describe_vtl_devices::DescribeVtlDevicesInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::describe_vtl_devices::DescribeVtlDevicesInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::describe_vtl_devices::DescribeVtlDevicesInput {
                 gateway_arn: self.gateway_arn,
                 vtl_device_ar_ns: self.vtl_device_ar_ns,

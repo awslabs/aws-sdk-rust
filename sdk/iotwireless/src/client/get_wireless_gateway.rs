@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetWirelessGateway`](crate::operation::get_wireless_gateway::builders::GetWirelessGatewayFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`identifier(impl Into<String>)`](crate::operation::get_wireless_gateway::builders::GetWirelessGatewayFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::get_wireless_gateway::builders::GetWirelessGatewayFluentBuilder::set_identifier): <p>The identifier of the wireless gateway to get.</p>
+    ///   - [`identifier(impl ::std::convert::Into<String>)`](crate::operation::get_wireless_gateway::builders::GetWirelessGatewayFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::get_wireless_gateway::builders::GetWirelessGatewayFluentBuilder::set_identifier): <p>The identifier of the wireless gateway to get.</p>
     ///   - [`identifier_type(WirelessGatewayIdType)`](crate::operation::get_wireless_gateway::builders::GetWirelessGatewayFluentBuilder::identifier_type) / [`set_identifier_type(Option<WirelessGatewayIdType>)`](crate::operation::get_wireless_gateway::builders::GetWirelessGatewayFluentBuilder::set_identifier_type): <p>The type of identifier used in <code>identifier</code>.</p>
     /// - On success, responds with [`GetWirelessGatewayOutput`](crate::operation::get_wireless_gateway::GetWirelessGatewayOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::get_wireless_gateway::GetWirelessGatewayOutput::name): <p>The name of the resource.</p>

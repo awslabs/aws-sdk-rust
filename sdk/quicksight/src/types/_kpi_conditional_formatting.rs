@@ -2,18 +2,18 @@
 
 /// <p>The conditional formatting of a KPI visual.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KpiConditionalFormatting {
     /// <p>The conditional formatting options of a KPI visual.</p>
     #[doc(hidden)]
     pub conditional_formatting_options:
-        std::option::Option<std::vec::Vec<crate::types::KpiConditionalFormattingOption>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::KpiConditionalFormattingOption>>,
 }
 impl KpiConditionalFormatting {
     /// <p>The conditional formatting options of a KPI visual.</p>
     pub fn conditional_formatting_options(
         &self,
-    ) -> std::option::Option<&[crate::types::KpiConditionalFormattingOption]> {
+    ) -> ::std::option::Option<&[crate::types::KpiConditionalFormattingOption]> {
         self.conditional_formatting_options.as_deref()
     }
 }
@@ -26,10 +26,12 @@ impl KpiConditionalFormatting {
 
 /// A builder for [`KpiConditionalFormatting`](crate::types::KpiConditionalFormatting).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct KpiConditionalFormattingBuilder {
     pub(crate) conditional_formatting_options:
-        std::option::Option<std::vec::Vec<crate::types::KpiConditionalFormattingOption>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::KpiConditionalFormattingOption>>,
 }
 impl KpiConditionalFormattingBuilder {
     /// Appends an item to `conditional_formatting_options`.
@@ -43,13 +45,13 @@ impl KpiConditionalFormattingBuilder {
     ) -> Self {
         let mut v = self.conditional_formatting_options.unwrap_or_default();
         v.push(input);
-        self.conditional_formatting_options = Some(v);
+        self.conditional_formatting_options = ::std::option::Option::Some(v);
         self
     }
     /// <p>The conditional formatting options of a KPI visual.</p>
     pub fn set_conditional_formatting_options(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::KpiConditionalFormattingOption>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::KpiConditionalFormattingOption>>,
     ) -> Self {
         self.conditional_formatting_options = input;
         self

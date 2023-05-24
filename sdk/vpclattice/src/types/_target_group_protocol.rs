@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum TargetGroupProtocol {
     /// Indicates HTTP protocol
@@ -54,7 +54,7 @@ pub enum TargetGroupProtocol {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for TargetGroupProtocol {
+impl ::std::convert::From<&str> for TargetGroupProtocol {
     fn from(s: &str) -> Self {
         match s {
             "HTTP" => TargetGroupProtocol::Http,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for TargetGroupProtocol {
         }
     }
 }
-impl std::str::FromStr for TargetGroupProtocol {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for TargetGroupProtocol {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TargetGroupProtocol::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(TargetGroupProtocol::from(s))
     }
 }
 impl TargetGroupProtocol {
@@ -86,7 +86,7 @@ impl TargetGroupProtocol {
         &["HTTP", "HTTPS"]
     }
 }
-impl AsRef<str> for TargetGroupProtocol {
+impl ::std::convert::AsRef<str> for TargetGroupProtocol {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

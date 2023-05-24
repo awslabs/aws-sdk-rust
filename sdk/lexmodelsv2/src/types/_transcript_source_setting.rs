@@ -2,17 +2,17 @@
 
 /// <p>Indicates the setting of the location where the transcript is stored.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TranscriptSourceSetting {
     /// <p>Indicates the setting of the Amazon S3 bucket where the transcript is stored.</p>
     #[doc(hidden)]
-    pub s3_bucket_transcript_source: std::option::Option<crate::types::S3BucketTranscriptSource>,
+    pub s3_bucket_transcript_source: ::std::option::Option<crate::types::S3BucketTranscriptSource>,
 }
 impl TranscriptSourceSetting {
     /// <p>Indicates the setting of the Amazon S3 bucket where the transcript is stored.</p>
     pub fn s3_bucket_transcript_source(
         &self,
-    ) -> std::option::Option<&crate::types::S3BucketTranscriptSource> {
+    ) -> ::std::option::Option<&crate::types::S3BucketTranscriptSource> {
         self.s3_bucket_transcript_source.as_ref()
     }
 }
@@ -25,10 +25,12 @@ impl TranscriptSourceSetting {
 
 /// A builder for [`TranscriptSourceSetting`](crate::types::TranscriptSourceSetting).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TranscriptSourceSettingBuilder {
     pub(crate) s3_bucket_transcript_source:
-        std::option::Option<crate::types::S3BucketTranscriptSource>,
+        ::std::option::Option<crate::types::S3BucketTranscriptSource>,
 }
 impl TranscriptSourceSettingBuilder {
     /// <p>Indicates the setting of the Amazon S3 bucket where the transcript is stored.</p>
@@ -36,13 +38,13 @@ impl TranscriptSourceSettingBuilder {
         mut self,
         input: crate::types::S3BucketTranscriptSource,
     ) -> Self {
-        self.s3_bucket_transcript_source = Some(input);
+        self.s3_bucket_transcript_source = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates the setting of the Amazon S3 bucket where the transcript is stored.</p>
     pub fn set_s3_bucket_transcript_source(
         mut self,
-        input: std::option::Option<crate::types::S3BucketTranscriptSource>,
+        input: ::std::option::Option<crate::types::S3BucketTranscriptSource>,
     ) -> Self {
         self.s3_bucket_transcript_source = input;
         self

@@ -2,29 +2,29 @@
 
 /// <p>Information about the current software installed on the cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BrokerSoftwareInfo {
     /// <p>The Amazon Resource Name (ARN) of the configuration used for the cluster. This field isn't visible in this preview release.</p>
     #[doc(hidden)]
-    pub configuration_arn: std::option::Option<std::string::String>,
+    pub configuration_arn: ::std::option::Option<::std::string::String>,
     /// <p>The revision of the configuration to use. This field isn't visible in this preview release.</p>
     #[doc(hidden)]
-    pub configuration_revision: std::option::Option<i64>,
+    pub configuration_revision: ::std::option::Option<i64>,
     /// <p>The version of Apache Kafka.</p>
     #[doc(hidden)]
-    pub kafka_version: std::option::Option<std::string::String>,
+    pub kafka_version: ::std::option::Option<::std::string::String>,
 }
 impl BrokerSoftwareInfo {
     /// <p>The Amazon Resource Name (ARN) of the configuration used for the cluster. This field isn't visible in this preview release.</p>
-    pub fn configuration_arn(&self) -> std::option::Option<&str> {
+    pub fn configuration_arn(&self) -> ::std::option::Option<&str> {
         self.configuration_arn.as_deref()
     }
     /// <p>The revision of the configuration to use. This field isn't visible in this preview release.</p>
-    pub fn configuration_revision(&self) -> std::option::Option<i64> {
+    pub fn configuration_revision(&self) -> ::std::option::Option<i64> {
         self.configuration_revision
     }
     /// <p>The version of Apache Kafka.</p>
-    pub fn kafka_version(&self) -> std::option::Option<&str> {
+    pub fn kafka_version(&self) -> ::std::option::Option<&str> {
         self.kafka_version.as_deref()
     }
 }
@@ -37,43 +37,54 @@ impl BrokerSoftwareInfo {
 
 /// A builder for [`BrokerSoftwareInfo`](crate::types::BrokerSoftwareInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BrokerSoftwareInfoBuilder {
-    pub(crate) configuration_arn: std::option::Option<std::string::String>,
-    pub(crate) configuration_revision: std::option::Option<i64>,
-    pub(crate) kafka_version: std::option::Option<std::string::String>,
+    pub(crate) configuration_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) configuration_revision: ::std::option::Option<i64>,
+    pub(crate) kafka_version: ::std::option::Option<::std::string::String>,
 }
 impl BrokerSoftwareInfoBuilder {
     /// <p>The Amazon Resource Name (ARN) of the configuration used for the cluster. This field isn't visible in this preview release.</p>
-    pub fn configuration_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.configuration_arn = Some(input.into());
+    pub fn configuration_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.configuration_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the configuration used for the cluster. This field isn't visible in this preview release.</p>
     pub fn set_configuration_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.configuration_arn = input;
         self
     }
     /// <p>The revision of the configuration to use. This field isn't visible in this preview release.</p>
     pub fn configuration_revision(mut self, input: i64) -> Self {
-        self.configuration_revision = Some(input);
+        self.configuration_revision = ::std::option::Option::Some(input);
         self
     }
     /// <p>The revision of the configuration to use. This field isn't visible in this preview release.</p>
-    pub fn set_configuration_revision(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_configuration_revision(mut self, input: ::std::option::Option<i64>) -> Self {
         self.configuration_revision = input;
         self
     }
     /// <p>The version of Apache Kafka.</p>
-    pub fn kafka_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.kafka_version = Some(input.into());
+    pub fn kafka_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.kafka_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of Apache Kafka.</p>
-    pub fn set_kafka_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_kafka_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.kafka_version = input;
         self
     }

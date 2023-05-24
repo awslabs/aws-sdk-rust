@@ -2,36 +2,36 @@
 
 /// <p>The field that contains a list of disk (local storage) metrics that are associated with the current instance. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DiskResourceUtilization {
     /// <p>The maximum number of read operations per second. </p>
     #[doc(hidden)]
-    pub disk_read_ops_per_second: std::option::Option<std::string::String>,
+    pub disk_read_ops_per_second: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of write operations per second. </p>
     #[doc(hidden)]
-    pub disk_write_ops_per_second: std::option::Option<std::string::String>,
+    pub disk_write_ops_per_second: ::std::option::Option<::std::string::String>,
     /// <p>The maximum read throughput operations per second. </p>
     #[doc(hidden)]
-    pub disk_read_bytes_per_second: std::option::Option<std::string::String>,
+    pub disk_read_bytes_per_second: ::std::option::Option<::std::string::String>,
     /// <p>The maximum write throughput operations per second. </p>
     #[doc(hidden)]
-    pub disk_write_bytes_per_second: std::option::Option<std::string::String>,
+    pub disk_write_bytes_per_second: ::std::option::Option<::std::string::String>,
 }
 impl DiskResourceUtilization {
     /// <p>The maximum number of read operations per second. </p>
-    pub fn disk_read_ops_per_second(&self) -> std::option::Option<&str> {
+    pub fn disk_read_ops_per_second(&self) -> ::std::option::Option<&str> {
         self.disk_read_ops_per_second.as_deref()
     }
     /// <p>The maximum number of write operations per second. </p>
-    pub fn disk_write_ops_per_second(&self) -> std::option::Option<&str> {
+    pub fn disk_write_ops_per_second(&self) -> ::std::option::Option<&str> {
         self.disk_write_ops_per_second.as_deref()
     }
     /// <p>The maximum read throughput operations per second. </p>
-    pub fn disk_read_bytes_per_second(&self) -> std::option::Option<&str> {
+    pub fn disk_read_bytes_per_second(&self) -> ::std::option::Option<&str> {
         self.disk_read_bytes_per_second.as_deref()
     }
     /// <p>The maximum write throughput operations per second. </p>
-    pub fn disk_write_bytes_per_second(&self) -> std::option::Option<&str> {
+    pub fn disk_write_bytes_per_second(&self) -> ::std::option::Option<&str> {
         self.disk_write_bytes_per_second.as_deref()
     }
 }
@@ -44,62 +44,76 @@ impl DiskResourceUtilization {
 
 /// A builder for [`DiskResourceUtilization`](crate::types::DiskResourceUtilization).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DiskResourceUtilizationBuilder {
-    pub(crate) disk_read_ops_per_second: std::option::Option<std::string::String>,
-    pub(crate) disk_write_ops_per_second: std::option::Option<std::string::String>,
-    pub(crate) disk_read_bytes_per_second: std::option::Option<std::string::String>,
-    pub(crate) disk_write_bytes_per_second: std::option::Option<std::string::String>,
+    pub(crate) disk_read_ops_per_second: ::std::option::Option<::std::string::String>,
+    pub(crate) disk_write_ops_per_second: ::std::option::Option<::std::string::String>,
+    pub(crate) disk_read_bytes_per_second: ::std::option::Option<::std::string::String>,
+    pub(crate) disk_write_bytes_per_second: ::std::option::Option<::std::string::String>,
 }
 impl DiskResourceUtilizationBuilder {
     /// <p>The maximum number of read operations per second. </p>
-    pub fn disk_read_ops_per_second(mut self, input: impl Into<std::string::String>) -> Self {
-        self.disk_read_ops_per_second = Some(input.into());
+    pub fn disk_read_ops_per_second(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.disk_read_ops_per_second = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The maximum number of read operations per second. </p>
     pub fn set_disk_read_ops_per_second(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.disk_read_ops_per_second = input;
         self
     }
     /// <p>The maximum number of write operations per second. </p>
-    pub fn disk_write_ops_per_second(mut self, input: impl Into<std::string::String>) -> Self {
-        self.disk_write_ops_per_second = Some(input.into());
+    pub fn disk_write_ops_per_second(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.disk_write_ops_per_second = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The maximum number of write operations per second. </p>
     pub fn set_disk_write_ops_per_second(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.disk_write_ops_per_second = input;
         self
     }
     /// <p>The maximum read throughput operations per second. </p>
-    pub fn disk_read_bytes_per_second(mut self, input: impl Into<std::string::String>) -> Self {
-        self.disk_read_bytes_per_second = Some(input.into());
+    pub fn disk_read_bytes_per_second(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.disk_read_bytes_per_second = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The maximum read throughput operations per second. </p>
     pub fn set_disk_read_bytes_per_second(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.disk_read_bytes_per_second = input;
         self
     }
     /// <p>The maximum write throughput operations per second. </p>
-    pub fn disk_write_bytes_per_second(mut self, input: impl Into<std::string::String>) -> Self {
-        self.disk_write_bytes_per_second = Some(input.into());
+    pub fn disk_write_bytes_per_second(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.disk_write_bytes_per_second = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The maximum write throughput operations per second. </p>
     pub fn set_disk_write_bytes_per_second(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.disk_write_bytes_per_second = input;
         self

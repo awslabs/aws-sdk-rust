@@ -9,29 +9,29 @@ pub use crate::operation::publish_package_version::_publish_package_version_inpu
 /// <p>The <code>unfinished</code> flag can be used to keep the package version in the <code>Unfinished</code> state until all of its assets have been uploaded (see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/packages-overview.html#package-version-status.html#package-version-status">Package version status</a> in the <i>CodeArtifact user guide</i>). To set the package version’s status to <code>Published</code>, omit the <code>unfinished</code> flag when uploading the final asset, or set the status using <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_UpdatePackageVersionsStatus.html">UpdatePackageVersionStatus</a>. Once a package version’s status is set to <code>Published</code>, it cannot change back to <code>Unfinished</code>.</p> <note>
 /// <p>Only generic packages can be published using this API. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-generic.html">Using generic packages</a> in the <i>CodeArtifact User Guide</i>.</p>
 /// </note>
-#[derive(std::fmt::Debug)]
+#[derive(::std::fmt::Debug)]
 pub struct PublishPackageVersionFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::publish_package_version::builders::PublishPackageVersionInputBuilder,
 }
 impl PublishPackageVersionFluentBuilder {
     /// Creates a new `PublishPackageVersion`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::publish_package_version::PublishPackageVersion,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::publish_package_version::PublishPackageVersionError,
         >,
     > {
@@ -39,30 +39,33 @@ impl PublishPackageVersionFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::publish_package_version::PublishPackageVersionOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::publish_package_version::PublishPackageVersionError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -75,41 +78,41 @@ impl PublishPackageVersionFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::publish_package_version::PublishPackageVersionOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::publish_package_version::PublishPackageVersionError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the domain that contains the repository that contains the package version to publish.</p>
-    pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain(input.into());
         self
     }
     /// <p>The name of the domain that contains the repository that contains the package version to publish.</p>
-    pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain(input);
         self
     }
     /// <p>The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces.</p>
-    pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn domain_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_owner(input.into());
         self
     }
     /// <p>The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces.</p>
-    pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_domain_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_owner(input);
         self
     }
     /// <p>The name of the repository that the package version will be published to.</p>
-    pub fn repository(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn repository(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.repository(input.into());
         self
     }
     /// <p>The name of the repository that the package version will be published to.</p>
-    pub fn set_repository(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_repository(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_repository(input);
         self
     }
@@ -119,72 +122,78 @@ impl PublishPackageVersionFluentBuilder {
         self
     }
     /// <p>A format that specifies the type of the package version with the requested asset file.</p>
-    pub fn set_format(mut self, input: std::option::Option<crate::types::PackageFormat>) -> Self {
+    pub fn set_format(mut self, input: ::std::option::Option<crate::types::PackageFormat>) -> Self {
         self.inner = self.inner.set_format(input);
         self
     }
     /// <p>The namespace of the package version to publish.</p>
-    pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.namespace(input.into());
         self
     }
     /// <p>The namespace of the package version to publish.</p>
-    pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_namespace(input);
         self
     }
     /// <p>The name of the package version to publish.</p>
-    pub fn package(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn package(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.package(input.into());
         self
     }
     /// <p>The name of the package version to publish.</p>
-    pub fn set_package(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_package(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_package(input);
         self
     }
     /// <p>The package version to publish (for example, <code>3.5.2</code>).</p>
-    pub fn package_version(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn package_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.package_version(input.into());
         self
     }
     /// <p>The package version to publish (for example, <code>3.5.2</code>).</p>
-    pub fn set_package_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_package_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_package_version(input);
         self
     }
     /// <p>The content of the asset to publish.</p>
-    pub fn asset_content(mut self, input: aws_smithy_http::byte_stream::ByteStream) -> Self {
+    pub fn asset_content(mut self, input: ::aws_smithy_http::byte_stream::ByteStream) -> Self {
         self.inner = self.inner.asset_content(input);
         self
     }
     /// <p>The content of the asset to publish.</p>
     pub fn set_asset_content(
         mut self,
-        input: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
+        input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>,
     ) -> Self {
         self.inner = self.inner.set_asset_content(input);
         self
     }
     /// <p>The name of the asset to publish. Asset names can include Unicode letters and numbers, and the following special characters: <code>~ ! @ ^ &amp; ( ) - ` _ + [ ] { } ; , . `</code> </p>
-    pub fn asset_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn asset_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.asset_name(input.into());
         self
     }
     /// <p>The name of the asset to publish. Asset names can include Unicode letters and numbers, and the following special characters: <code>~ ! @ ^ &amp; ( ) - ` _ + [ ] { } ; , . `</code> </p>
-    pub fn set_asset_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_asset_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_asset_name(input);
         self
     }
     /// <p>The SHA256 hash of the <code>assetContent</code> to publish. This value must be calculated by the caller and provided with the request (see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-generic.html#publishing-generic-packages">Publishing a generic package</a> in the <i>CodeArtifact User Guide</i>).</p>
     /// <p>This value is used as an integrity check to verify that the <code>assetContent</code> has not changed after it was originally sent.</p>
-    pub fn asset_sha256(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn asset_sha256(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.asset_sha256(input.into());
         self
     }
     /// <p>The SHA256 hash of the <code>assetContent</code> to publish. This value must be calculated by the caller and provided with the request (see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-generic.html#publishing-generic-packages">Publishing a generic package</a> in the <i>CodeArtifact User Guide</i>).</p>
     /// <p>This value is used as an integrity check to verify that the <code>assetContent</code> has not changed after it was originally sent.</p>
-    pub fn set_asset_sha256(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_asset_sha256(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_asset_sha256(input);
         self
     }
@@ -196,7 +205,7 @@ impl PublishPackageVersionFluentBuilder {
     }
     /// <p>Specifies whether the package version should remain in the <code>unfinished</code> state. If omitted, the package version status will be set to <code>Published</code> (see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/packages-overview.html#package-version-status">Package version status</a> in the <i>CodeArtifact User Guide</i>).</p>
     /// <p>Valid values: <code>unfinished</code> </p>
-    pub fn set_unfinished(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_unfinished(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_unfinished(input);
         self
     }

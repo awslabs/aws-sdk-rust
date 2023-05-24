@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetDomainDetail`](crate::operation::get_domain_detail::builders::GetDomainDetailFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_name(impl Into<String>)`](crate::operation::get_domain_detail::builders::GetDomainDetailFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::get_domain_detail::builders::GetDomainDetailFluentBuilder::set_domain_name): <p>The name of the domain that you want to get detailed information about.</p>
+    ///   - [`domain_name(impl ::std::convert::Into<String>)`](crate::operation::get_domain_detail::builders::GetDomainDetailFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::get_domain_detail::builders::GetDomainDetailFluentBuilder::set_domain_name): <p>The name of the domain that you want to get detailed information about.</p>
     /// - On success, responds with [`GetDomainDetailOutput`](crate::operation::get_domain_detail::GetDomainDetailOutput) with field(s):
     ///   - [`domain_name(Option<String>)`](crate::operation::get_domain_detail::GetDomainDetailOutput::domain_name): <p>The name of a domain.</p>
     ///   - [`nameservers(Option<Vec<Nameserver>>)`](crate::operation::get_domain_detail::GetDomainDetailOutput::nameservers): <p>The name servers of the domain.</p>

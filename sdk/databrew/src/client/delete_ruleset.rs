@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteRuleset`](crate::operation::delete_ruleset::builders::DeleteRulesetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::delete_ruleset::builders::DeleteRulesetFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_ruleset::builders::DeleteRulesetFluentBuilder::set_name): <p>The name of the ruleset to be deleted.</p>
+    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::delete_ruleset::builders::DeleteRulesetFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_ruleset::builders::DeleteRulesetFluentBuilder::set_name): <p>The name of the ruleset to be deleted.</p>
     /// - On success, responds with [`DeleteRulesetOutput`](crate::operation::delete_ruleset::DeleteRulesetOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::delete_ruleset::DeleteRulesetOutput::name): <p>The name of the deleted ruleset.</p>
     /// - On failure, responds with [`SdkError<DeleteRulesetError>`](crate::operation::delete_ruleset::DeleteRulesetError)

@@ -3,52 +3,52 @@
 /// <p>A visual that contains custom content.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/custom-visual-content.html">Using custom visual content</a> in the <i>Amazon QuickSight User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomContentVisual {
     /// <p>The unique identifier of a visual. This identifier must be unique within the context of a dashboard, template, or analysis. Two dashboards, analyses, or templates can have visuals with the same identifiers.</p>
     #[doc(hidden)]
-    pub visual_id: std::option::Option<std::string::String>,
+    pub visual_id: ::std::option::Option<::std::string::String>,
     /// <p>The title that is displayed on the visual.</p>
     #[doc(hidden)]
-    pub title: std::option::Option<crate::types::VisualTitleLabelOptions>,
+    pub title: ::std::option::Option<crate::types::VisualTitleLabelOptions>,
     /// <p>The subtitle that is displayed on the visual.</p>
     #[doc(hidden)]
-    pub subtitle: std::option::Option<crate::types::VisualSubtitleLabelOptions>,
+    pub subtitle: ::std::option::Option<crate::types::VisualSubtitleLabelOptions>,
     /// <p>The configuration of a <code>CustomContentVisual</code>.</p>
     #[doc(hidden)]
-    pub chart_configuration: std::option::Option<crate::types::CustomContentConfiguration>,
+    pub chart_configuration: ::std::option::Option<crate::types::CustomContentConfiguration>,
     /// <p>The list of custom actions that are configured for a visual.</p>
     #[doc(hidden)]
-    pub actions: std::option::Option<std::vec::Vec<crate::types::VisualCustomAction>>,
+    pub actions: ::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>>,
     /// <p>The dataset that is used to create the custom content visual. You can't create a visual without a dataset.</p>
     #[doc(hidden)]
-    pub data_set_identifier: std::option::Option<std::string::String>,
+    pub data_set_identifier: ::std::option::Option<::std::string::String>,
 }
 impl CustomContentVisual {
     /// <p>The unique identifier of a visual. This identifier must be unique within the context of a dashboard, template, or analysis. Two dashboards, analyses, or templates can have visuals with the same identifiers.</p>
-    pub fn visual_id(&self) -> std::option::Option<&str> {
+    pub fn visual_id(&self) -> ::std::option::Option<&str> {
         self.visual_id.as_deref()
     }
     /// <p>The title that is displayed on the visual.</p>
-    pub fn title(&self) -> std::option::Option<&crate::types::VisualTitleLabelOptions> {
+    pub fn title(&self) -> ::std::option::Option<&crate::types::VisualTitleLabelOptions> {
         self.title.as_ref()
     }
     /// <p>The subtitle that is displayed on the visual.</p>
-    pub fn subtitle(&self) -> std::option::Option<&crate::types::VisualSubtitleLabelOptions> {
+    pub fn subtitle(&self) -> ::std::option::Option<&crate::types::VisualSubtitleLabelOptions> {
         self.subtitle.as_ref()
     }
     /// <p>The configuration of a <code>CustomContentVisual</code>.</p>
     pub fn chart_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::CustomContentConfiguration> {
+    ) -> ::std::option::Option<&crate::types::CustomContentConfiguration> {
         self.chart_configuration.as_ref()
     }
     /// <p>The list of custom actions that are configured for a visual.</p>
-    pub fn actions(&self) -> std::option::Option<&[crate::types::VisualCustomAction]> {
+    pub fn actions(&self) -> ::std::option::Option<&[crate::types::VisualCustomAction]> {
         self.actions.as_deref()
     }
     /// <p>The dataset that is used to create the custom content visual. You can't create a visual without a dataset.</p>
-    pub fn data_set_identifier(&self) -> std::option::Option<&str> {
+    pub fn data_set_identifier(&self) -> ::std::option::Option<&str> {
         self.data_set_identifier.as_deref()
     }
 }
@@ -61,61 +61,63 @@ impl CustomContentVisual {
 
 /// A builder for [`CustomContentVisual`](crate::types::CustomContentVisual).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CustomContentVisualBuilder {
-    pub(crate) visual_id: std::option::Option<std::string::String>,
-    pub(crate) title: std::option::Option<crate::types::VisualTitleLabelOptions>,
-    pub(crate) subtitle: std::option::Option<crate::types::VisualSubtitleLabelOptions>,
-    pub(crate) chart_configuration: std::option::Option<crate::types::CustomContentConfiguration>,
-    pub(crate) actions: std::option::Option<std::vec::Vec<crate::types::VisualCustomAction>>,
-    pub(crate) data_set_identifier: std::option::Option<std::string::String>,
+    pub(crate) visual_id: ::std::option::Option<::std::string::String>,
+    pub(crate) title: ::std::option::Option<crate::types::VisualTitleLabelOptions>,
+    pub(crate) subtitle: ::std::option::Option<crate::types::VisualSubtitleLabelOptions>,
+    pub(crate) chart_configuration: ::std::option::Option<crate::types::CustomContentConfiguration>,
+    pub(crate) actions: ::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>>,
+    pub(crate) data_set_identifier: ::std::option::Option<::std::string::String>,
 }
 impl CustomContentVisualBuilder {
     /// <p>The unique identifier of a visual. This identifier must be unique within the context of a dashboard, template, or analysis. Two dashboards, analyses, or templates can have visuals with the same identifiers.</p>
-    pub fn visual_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.visual_id = Some(input.into());
+    pub fn visual_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.visual_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of a visual. This identifier must be unique within the context of a dashboard, template, or analysis. Two dashboards, analyses, or templates can have visuals with the same identifiers.</p>
-    pub fn set_visual_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_visual_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.visual_id = input;
         self
     }
     /// <p>The title that is displayed on the visual.</p>
     pub fn title(mut self, input: crate::types::VisualTitleLabelOptions) -> Self {
-        self.title = Some(input);
+        self.title = ::std::option::Option::Some(input);
         self
     }
     /// <p>The title that is displayed on the visual.</p>
     pub fn set_title(
         mut self,
-        input: std::option::Option<crate::types::VisualTitleLabelOptions>,
+        input: ::std::option::Option<crate::types::VisualTitleLabelOptions>,
     ) -> Self {
         self.title = input;
         self
     }
     /// <p>The subtitle that is displayed on the visual.</p>
     pub fn subtitle(mut self, input: crate::types::VisualSubtitleLabelOptions) -> Self {
-        self.subtitle = Some(input);
+        self.subtitle = ::std::option::Option::Some(input);
         self
     }
     /// <p>The subtitle that is displayed on the visual.</p>
     pub fn set_subtitle(
         mut self,
-        input: std::option::Option<crate::types::VisualSubtitleLabelOptions>,
+        input: ::std::option::Option<crate::types::VisualSubtitleLabelOptions>,
     ) -> Self {
         self.subtitle = input;
         self
     }
     /// <p>The configuration of a <code>CustomContentVisual</code>.</p>
     pub fn chart_configuration(mut self, input: crate::types::CustomContentConfiguration) -> Self {
-        self.chart_configuration = Some(input);
+        self.chart_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration of a <code>CustomContentVisual</code>.</p>
     pub fn set_chart_configuration(
         mut self,
-        input: std::option::Option<crate::types::CustomContentConfiguration>,
+        input: ::std::option::Option<crate::types::CustomContentConfiguration>,
     ) -> Self {
         self.chart_configuration = input;
         self
@@ -128,26 +130,29 @@ impl CustomContentVisualBuilder {
     pub fn actions(mut self, input: crate::types::VisualCustomAction) -> Self {
         let mut v = self.actions.unwrap_or_default();
         v.push(input);
-        self.actions = Some(v);
+        self.actions = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of custom actions that are configured for a visual.</p>
     pub fn set_actions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::VisualCustomAction>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>>,
     ) -> Self {
         self.actions = input;
         self
     }
     /// <p>The dataset that is used to create the custom content visual. You can't create a visual without a dataset.</p>
-    pub fn data_set_identifier(mut self, input: impl Into<std::string::String>) -> Self {
-        self.data_set_identifier = Some(input.into());
+    pub fn data_set_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.data_set_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The dataset that is used to create the custom content visual. You can't create a visual without a dataset.</p>
     pub fn set_data_set_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.data_set_identifier = input;
         self

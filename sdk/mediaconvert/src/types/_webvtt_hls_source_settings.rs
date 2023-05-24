@@ -2,29 +2,29 @@
 
 /// Settings specific to WebVTT sources in HLS alternative rendition group. Specify the properties (renditionGroupId, renditionName or renditionLanguageCode) to identify the unique subtitle track among the alternative rendition groups present in the HLS manifest. If no unique track is found, or multiple tracks match the specified properties, the job fails. If there is only one subtitle track in the rendition group, the settings can be left empty and the default subtitle track will be chosen. If your caption source is a sidecar file, use FileSourceSettings instead of WebvttHlsSourceSettings.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WebvttHlsSourceSettings {
     /// Optional. Specify alternative group ID
     #[doc(hidden)]
-    pub rendition_group_id: std::option::Option<std::string::String>,
+    pub rendition_group_id: ::std::option::Option<::std::string::String>,
     /// Optional. Specify ISO 639-2 or ISO 639-3 code in the language property
     #[doc(hidden)]
-    pub rendition_language_code: std::option::Option<crate::types::LanguageCode>,
+    pub rendition_language_code: ::std::option::Option<crate::types::LanguageCode>,
     /// Optional. Specify media name
     #[doc(hidden)]
-    pub rendition_name: std::option::Option<std::string::String>,
+    pub rendition_name: ::std::option::Option<::std::string::String>,
 }
 impl WebvttHlsSourceSettings {
     /// Optional. Specify alternative group ID
-    pub fn rendition_group_id(&self) -> std::option::Option<&str> {
+    pub fn rendition_group_id(&self) -> ::std::option::Option<&str> {
         self.rendition_group_id.as_deref()
     }
     /// Optional. Specify ISO 639-2 or ISO 639-3 code in the language property
-    pub fn rendition_language_code(&self) -> std::option::Option<&crate::types::LanguageCode> {
+    pub fn rendition_language_code(&self) -> ::std::option::Option<&crate::types::LanguageCode> {
         self.rendition_language_code.as_ref()
     }
     /// Optional. Specify media name
-    pub fn rendition_name(&self) -> std::option::Option<&str> {
+    pub fn rendition_name(&self) -> ::std::option::Option<&str> {
         self.rendition_name.as_deref()
     }
 }
@@ -37,46 +37,57 @@ impl WebvttHlsSourceSettings {
 
 /// A builder for [`WebvttHlsSourceSettings`](crate::types::WebvttHlsSourceSettings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct WebvttHlsSourceSettingsBuilder {
-    pub(crate) rendition_group_id: std::option::Option<std::string::String>,
-    pub(crate) rendition_language_code: std::option::Option<crate::types::LanguageCode>,
-    pub(crate) rendition_name: std::option::Option<std::string::String>,
+    pub(crate) rendition_group_id: ::std::option::Option<::std::string::String>,
+    pub(crate) rendition_language_code: ::std::option::Option<crate::types::LanguageCode>,
+    pub(crate) rendition_name: ::std::option::Option<::std::string::String>,
 }
 impl WebvttHlsSourceSettingsBuilder {
     /// Optional. Specify alternative group ID
-    pub fn rendition_group_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.rendition_group_id = Some(input.into());
+    pub fn rendition_group_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.rendition_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// Optional. Specify alternative group ID
     pub fn set_rendition_group_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.rendition_group_id = input;
         self
     }
     /// Optional. Specify ISO 639-2 or ISO 639-3 code in the language property
     pub fn rendition_language_code(mut self, input: crate::types::LanguageCode) -> Self {
-        self.rendition_language_code = Some(input);
+        self.rendition_language_code = ::std::option::Option::Some(input);
         self
     }
     /// Optional. Specify ISO 639-2 or ISO 639-3 code in the language property
     pub fn set_rendition_language_code(
         mut self,
-        input: std::option::Option<crate::types::LanguageCode>,
+        input: ::std::option::Option<crate::types::LanguageCode>,
     ) -> Self {
         self.rendition_language_code = input;
         self
     }
     /// Optional. Specify media name
-    pub fn rendition_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.rendition_name = Some(input.into());
+    pub fn rendition_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.rendition_name = ::std::option::Option::Some(input.into());
         self
     }
     /// Optional. Specify media name
-    pub fn set_rendition_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_rendition_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.rendition_name = input;
         self
     }

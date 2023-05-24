@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ConnectivityType {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum ConnectivityType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ConnectivityType {
+impl ::std::convert::From<&str> for ConnectivityType {
     fn from(s: &str) -> Self {
         match s {
             "private" => ConnectivityType::Private,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for ConnectivityType {
         }
     }
 }
-impl std::str::FromStr for ConnectivityType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ConnectivityType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ConnectivityType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ConnectivityType::from(s))
     }
 }
 impl ConnectivityType {
@@ -86,7 +86,7 @@ impl ConnectivityType {
         &["private", "public"]
     }
 }
-impl AsRef<str> for ConnectivityType {
+impl ::std::convert::AsRef<str> for ConnectivityType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

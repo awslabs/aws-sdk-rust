@@ -2,14 +2,14 @@
 
 /// <p>A tag and its associated resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TaggedResource {
     /// <p>The tag for the resource.</p>
     #[doc(hidden)]
-    pub tag: std::option::Option<crate::types::Tag>,
+    pub tag: ::std::option::Option<crate::types::Tag>,
     /// <p>The Amazon Resource Name (ARN) with which the tag is associated, for example: <code>arn:aws:redshift:us-east-2:123456789:cluster:t1</code>.</p>
     #[doc(hidden)]
-    pub resource_name: std::option::Option<std::string::String>,
+    pub resource_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of resource with which the tag is associated. Valid resource types are: </p>
     /// <ul>
     /// <li> <p>Cluster</p> </li>
@@ -24,15 +24,15 @@ pub struct TaggedResource {
     /// </ul>
     /// <p>For more information about Amazon Redshift resource types and constructing ARNs, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-iam-access-control-specify-actions">Constructing an Amazon Redshift Amazon Resource Name (ARN)</a> in the Amazon Redshift Cluster Management Guide. </p>
     #[doc(hidden)]
-    pub resource_type: std::option::Option<std::string::String>,
+    pub resource_type: ::std::option::Option<::std::string::String>,
 }
 impl TaggedResource {
     /// <p>The tag for the resource.</p>
-    pub fn tag(&self) -> std::option::Option<&crate::types::Tag> {
+    pub fn tag(&self) -> ::std::option::Option<&crate::types::Tag> {
         self.tag.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) with which the tag is associated, for example: <code>arn:aws:redshift:us-east-2:123456789:cluster:t1</code>.</p>
-    pub fn resource_name(&self) -> std::option::Option<&str> {
+    pub fn resource_name(&self) -> ::std::option::Option<&str> {
         self.resource_name.as_deref()
     }
     /// <p>The type of resource with which the tag is associated. Valid resource types are: </p>
@@ -48,7 +48,7 @@ impl TaggedResource {
     /// <li> <p>Parameter group</p> </li>
     /// </ul>
     /// <p>For more information about Amazon Redshift resource types and constructing ARNs, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-iam-access-control-specify-actions">Constructing an Amazon Redshift Amazon Resource Name (ARN)</a> in the Amazon Redshift Cluster Management Guide. </p>
-    pub fn resource_type(&self) -> std::option::Option<&str> {
+    pub fn resource_type(&self) -> ::std::option::Option<&str> {
         self.resource_type.as_deref()
     }
 }
@@ -61,30 +61,38 @@ impl TaggedResource {
 
 /// A builder for [`TaggedResource`](crate::types::TaggedResource).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TaggedResourceBuilder {
-    pub(crate) tag: std::option::Option<crate::types::Tag>,
-    pub(crate) resource_name: std::option::Option<std::string::String>,
-    pub(crate) resource_type: std::option::Option<std::string::String>,
+    pub(crate) tag: ::std::option::Option<crate::types::Tag>,
+    pub(crate) resource_name: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_type: ::std::option::Option<::std::string::String>,
 }
 impl TaggedResourceBuilder {
     /// <p>The tag for the resource.</p>
     pub fn tag(mut self, input: crate::types::Tag) -> Self {
-        self.tag = Some(input);
+        self.tag = ::std::option::Option::Some(input);
         self
     }
     /// <p>The tag for the resource.</p>
-    pub fn set_tag(mut self, input: std::option::Option<crate::types::Tag>) -> Self {
+    pub fn set_tag(mut self, input: ::std::option::Option<crate::types::Tag>) -> Self {
         self.tag = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) with which the tag is associated, for example: <code>arn:aws:redshift:us-east-2:123456789:cluster:t1</code>.</p>
-    pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_name = Some(input.into());
+    pub fn resource_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.resource_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) with which the tag is associated, for example: <code>arn:aws:redshift:us-east-2:123456789:cluster:t1</code>.</p>
-    pub fn set_resource_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.resource_name = input;
         self
     }
@@ -101,8 +109,11 @@ impl TaggedResourceBuilder {
     /// <li> <p>Parameter group</p> </li>
     /// </ul>
     /// <p>For more information about Amazon Redshift resource types and constructing ARNs, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-iam-access-control-specify-actions">Constructing an Amazon Redshift Amazon Resource Name (ARN)</a> in the Amazon Redshift Cluster Management Guide. </p>
-    pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_type = Some(input.into());
+    pub fn resource_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of resource with which the tag is associated. Valid resource types are: </p>
@@ -118,7 +129,10 @@ impl TaggedResourceBuilder {
     /// <li> <p>Parameter group</p> </li>
     /// </ul>
     /// <p>For more information about Amazon Redshift resource types and constructing ARNs, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-iam-access-control-specify-actions">Constructing an Amazon Redshift Amazon Resource Name (ARN)</a> in the Amazon Redshift Cluster Management Guide. </p>
-    pub fn set_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.resource_type = input;
         self
     }

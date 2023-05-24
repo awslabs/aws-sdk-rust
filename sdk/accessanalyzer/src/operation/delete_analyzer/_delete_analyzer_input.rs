@@ -2,22 +2,22 @@
 
 /// <p>Deletes an analyzer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteAnalyzerInput {
     /// <p>The name of the analyzer to delete.</p>
     #[doc(hidden)]
-    pub analyzer_name: std::option::Option<std::string::String>,
+    pub analyzer_name: ::std::option::Option<::std::string::String>,
     /// <p>A client token.</p>
     #[doc(hidden)]
-    pub client_token: std::option::Option<std::string::String>,
+    pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl DeleteAnalyzerInput {
     /// <p>The name of the analyzer to delete.</p>
-    pub fn analyzer_name(&self) -> std::option::Option<&str> {
+    pub fn analyzer_name(&self) -> ::std::option::Option<&str> {
         self.analyzer_name.as_deref()
     }
     /// <p>A client token.</p>
-    pub fn client_token(&self) -> std::option::Option<&str> {
+    pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
 }
@@ -30,40 +30,48 @@ impl DeleteAnalyzerInput {
 
 /// A builder for [`DeleteAnalyzerInput`](crate::operation::delete_analyzer::DeleteAnalyzerInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteAnalyzerInputBuilder {
-    pub(crate) analyzer_name: std::option::Option<std::string::String>,
-    pub(crate) client_token: std::option::Option<std::string::String>,
+    pub(crate) analyzer_name: ::std::option::Option<::std::string::String>,
+    pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl DeleteAnalyzerInputBuilder {
     /// <p>The name of the analyzer to delete.</p>
-    pub fn analyzer_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.analyzer_name = Some(input.into());
+    pub fn analyzer_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.analyzer_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the analyzer to delete.</p>
-    pub fn set_analyzer_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_analyzer_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.analyzer_name = input;
         self
     }
     /// <p>A client token.</p>
-    pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.client_token = Some(input.into());
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.client_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A client token.</p>
-    pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
     }
     /// Consumes the builder and constructs a [`DeleteAnalyzerInput`](crate::operation::delete_analyzer::DeleteAnalyzerInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::delete_analyzer::DeleteAnalyzerInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::delete_analyzer::DeleteAnalyzerInput {
+        ::std::result::Result::Ok(crate::operation::delete_analyzer::DeleteAnalyzerInput {
             analyzer_name: self.analyzer_name,
             client_token: self.client_token,
         })

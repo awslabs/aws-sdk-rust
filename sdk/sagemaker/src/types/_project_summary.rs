@@ -2,50 +2,50 @@
 
 /// <p>Information about a project.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProjectSummary {
     /// <p>The name of the project.</p>
     #[doc(hidden)]
-    pub project_name: std::option::Option<std::string::String>,
+    pub project_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the project.</p>
     #[doc(hidden)]
-    pub project_description: std::option::Option<std::string::String>,
+    pub project_description: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the project.</p>
     #[doc(hidden)]
-    pub project_arn: std::option::Option<std::string::String>,
+    pub project_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the project.</p>
     #[doc(hidden)]
-    pub project_id: std::option::Option<std::string::String>,
+    pub project_id: ::std::option::Option<::std::string::String>,
     /// <p>The time that the project was created.</p>
     #[doc(hidden)]
-    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the project.</p>
     #[doc(hidden)]
-    pub project_status: std::option::Option<crate::types::ProjectStatus>,
+    pub project_status: ::std::option::Option<crate::types::ProjectStatus>,
 }
 impl ProjectSummary {
     /// <p>The name of the project.</p>
-    pub fn project_name(&self) -> std::option::Option<&str> {
+    pub fn project_name(&self) -> ::std::option::Option<&str> {
         self.project_name.as_deref()
     }
     /// <p>The description of the project.</p>
-    pub fn project_description(&self) -> std::option::Option<&str> {
+    pub fn project_description(&self) -> ::std::option::Option<&str> {
         self.project_description.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the project.</p>
-    pub fn project_arn(&self) -> std::option::Option<&str> {
+    pub fn project_arn(&self) -> ::std::option::Option<&str> {
         self.project_arn.as_deref()
     }
     /// <p>The ID of the project.</p>
-    pub fn project_id(&self) -> std::option::Option<&str> {
+    pub fn project_id(&self) -> ::std::option::Option<&str> {
         self.project_id.as_deref()
     }
     /// <p>The time that the project was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The status of the project.</p>
-    pub fn project_status(&self) -> std::option::Option<&crate::types::ProjectStatus> {
+    pub fn project_status(&self) -> ::std::option::Option<&crate::types::ProjectStatus> {
         self.project_status.as_ref()
     }
 }
@@ -58,81 +58,86 @@ impl ProjectSummary {
 
 /// A builder for [`ProjectSummary`](crate::types::ProjectSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ProjectSummaryBuilder {
-    pub(crate) project_name: std::option::Option<std::string::String>,
-    pub(crate) project_description: std::option::Option<std::string::String>,
-    pub(crate) project_arn: std::option::Option<std::string::String>,
-    pub(crate) project_id: std::option::Option<std::string::String>,
-    pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) project_status: std::option::Option<crate::types::ProjectStatus>,
+    pub(crate) project_name: ::std::option::Option<::std::string::String>,
+    pub(crate) project_description: ::std::option::Option<::std::string::String>,
+    pub(crate) project_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) project_id: ::std::option::Option<::std::string::String>,
+    pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) project_status: ::std::option::Option<crate::types::ProjectStatus>,
 }
 impl ProjectSummaryBuilder {
     /// <p>The name of the project.</p>
-    pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.project_name = Some(input.into());
+    pub fn project_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.project_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the project.</p>
-    pub fn set_project_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_project_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.project_name = input;
         self
     }
     /// <p>The description of the project.</p>
-    pub fn project_description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.project_description = Some(input.into());
+    pub fn project_description(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.project_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the project.</p>
     pub fn set_project_description(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.project_description = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the project.</p>
-    pub fn project_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.project_arn = Some(input.into());
+    pub fn project_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.project_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the project.</p>
-    pub fn set_project_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_project_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.project_arn = input;
         self
     }
     /// <p>The ID of the project.</p>
-    pub fn project_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.project_id = Some(input.into());
+    pub fn project_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.project_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the project.</p>
-    pub fn set_project_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_project_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.project_id = input;
         self
     }
     /// <p>The time that the project was created.</p>
-    pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_time = Some(input);
+    pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time that the project was created.</p>
     pub fn set_creation_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_time = input;
         self
     }
     /// <p>The status of the project.</p>
     pub fn project_status(mut self, input: crate::types::ProjectStatus) -> Self {
-        self.project_status = Some(input);
+        self.project_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the project.</p>
     pub fn set_project_status(
         mut self,
-        input: std::option::Option<crate::types::ProjectStatus>,
+        input: ::std::option::Option<crate::types::ProjectStatus>,
     ) -> Self {
         self.project_status = input;
         self

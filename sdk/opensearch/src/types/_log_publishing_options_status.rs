@@ -2,28 +2,28 @@
 
 /// <p>The configured log publishing options for the domain and their current status.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LogPublishingOptionsStatus {
     /// <p>The log publishing options configured for the domain.</p>
     #[doc(hidden)]
-    pub options: std::option::Option<
-        std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>,
+    pub options: ::std::option::Option<
+        ::std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>,
     >,
     /// <p>The status of the log publishing options for the domain.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::OptionStatus>,
+    pub status: ::std::option::Option<crate::types::OptionStatus>,
 }
 impl LogPublishingOptionsStatus {
     /// <p>The log publishing options configured for the domain.</p>
     pub fn options(
         &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>,
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>,
     > {
         self.options.as_ref()
     }
     /// <p>The status of the log publishing options for the domain.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::OptionStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::OptionStatus> {
         self.status.as_ref()
     }
 }
@@ -36,12 +36,14 @@ impl LogPublishingOptionsStatus {
 
 /// A builder for [`LogPublishingOptionsStatus`](crate::types::LogPublishingOptionsStatus).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LogPublishingOptionsStatusBuilder {
-    pub(crate) options: std::option::Option<
-        std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>,
+    pub(crate) options: ::std::option::Option<
+        ::std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>,
     >,
-    pub(crate) status: std::option::Option<crate::types::OptionStatus>,
+    pub(crate) status: ::std::option::Option<crate::types::OptionStatus>,
 }
 impl LogPublishingOptionsStatusBuilder {
     /// Adds a key-value pair to `options`.
@@ -56,14 +58,14 @@ impl LogPublishingOptionsStatusBuilder {
     ) -> Self {
         let mut hash_map = self.options.unwrap_or_default();
         hash_map.insert(k, v);
-        self.options = Some(hash_map);
+        self.options = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The log publishing options configured for the domain.</p>
     pub fn set_options(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>,
         >,
     ) -> Self {
         self.options = input;
@@ -71,11 +73,11 @@ impl LogPublishingOptionsStatusBuilder {
     }
     /// <p>The status of the log publishing options for the domain.</p>
     pub fn status(mut self, input: crate::types::OptionStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the log publishing options for the domain.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::OptionStatus>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::OptionStatus>) -> Self {
         self.status = input;
         self
     }

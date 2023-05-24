@@ -2,57 +2,57 @@
 
 /// The settings for a flow entitlement.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Entitlement {
     /// Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
     #[doc(hidden)]
-    pub data_transfer_subscriber_fee_percent: std::option::Option<i32>,
+    pub data_transfer_subscriber_fee_percent: ::std::option::Option<i32>,
     /// A description of the entitlement.
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// The type of encryption that will be used on the output that is associated with this entitlement.
     #[doc(hidden)]
-    pub encryption: std::option::Option<crate::types::Encryption>,
+    pub encryption: ::std::option::Option<crate::types::Encryption>,
     /// The ARN of the entitlement.
     #[doc(hidden)]
-    pub entitlement_arn: std::option::Option<std::string::String>,
+    pub entitlement_arn: ::std::option::Option<::std::string::String>,
     /// An indication of whether the entitlement is enabled.
     #[doc(hidden)]
-    pub entitlement_status: std::option::Option<crate::types::EntitlementStatus>,
+    pub entitlement_status: ::std::option::Option<crate::types::EntitlementStatus>,
     /// The name of the entitlement.
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// The AWS account IDs that you want to share your content with. The receiving accounts (subscribers) will be allowed to create their own flow using your content as the source.
     #[doc(hidden)]
-    pub subscribers: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub subscribers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Entitlement {
     /// Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
-    pub fn data_transfer_subscriber_fee_percent(&self) -> std::option::Option<i32> {
+    pub fn data_transfer_subscriber_fee_percent(&self) -> ::std::option::Option<i32> {
         self.data_transfer_subscriber_fee_percent
     }
     /// A description of the entitlement.
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// The type of encryption that will be used on the output that is associated with this entitlement.
-    pub fn encryption(&self) -> std::option::Option<&crate::types::Encryption> {
+    pub fn encryption(&self) -> ::std::option::Option<&crate::types::Encryption> {
         self.encryption.as_ref()
     }
     /// The ARN of the entitlement.
-    pub fn entitlement_arn(&self) -> std::option::Option<&str> {
+    pub fn entitlement_arn(&self) -> ::std::option::Option<&str> {
         self.entitlement_arn.as_deref()
     }
     /// An indication of whether the entitlement is enabled.
-    pub fn entitlement_status(&self) -> std::option::Option<&crate::types::EntitlementStatus> {
+    pub fn entitlement_status(&self) -> ::std::option::Option<&crate::types::EntitlementStatus> {
         self.entitlement_status.as_ref()
     }
     /// The name of the entitlement.
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// The AWS account IDs that you want to share your content with. The receiving accounts (subscribers) will be allowed to create their own flow using your content as the source.
-    pub fn subscribers(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn subscribers(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.subscribers.as_deref()
     }
 }
@@ -65,80 +65,91 @@ impl Entitlement {
 
 /// A builder for [`Entitlement`](crate::types::Entitlement).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EntitlementBuilder {
-    pub(crate) data_transfer_subscriber_fee_percent: std::option::Option<i32>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) encryption: std::option::Option<crate::types::Encryption>,
-    pub(crate) entitlement_arn: std::option::Option<std::string::String>,
-    pub(crate) entitlement_status: std::option::Option<crate::types::EntitlementStatus>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) subscribers: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) data_transfer_subscriber_fee_percent: ::std::option::Option<i32>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) encryption: ::std::option::Option<crate::types::Encryption>,
+    pub(crate) entitlement_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) entitlement_status: ::std::option::Option<crate::types::EntitlementStatus>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) subscribers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl EntitlementBuilder {
     /// Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
     pub fn data_transfer_subscriber_fee_percent(mut self, input: i32) -> Self {
-        self.data_transfer_subscriber_fee_percent = Some(input);
+        self.data_transfer_subscriber_fee_percent = ::std::option::Option::Some(input);
         self
     }
     /// Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
     pub fn set_data_transfer_subscriber_fee_percent(
         mut self,
-        input: std::option::Option<i32>,
+        input: ::std::option::Option<i32>,
     ) -> Self {
         self.data_transfer_subscriber_fee_percent = input;
         self
     }
     /// A description of the entitlement.
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// A description of the entitlement.
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// The type of encryption that will be used on the output that is associated with this entitlement.
     pub fn encryption(mut self, input: crate::types::Encryption) -> Self {
-        self.encryption = Some(input);
+        self.encryption = ::std::option::Option::Some(input);
         self
     }
     /// The type of encryption that will be used on the output that is associated with this entitlement.
-    pub fn set_encryption(mut self, input: std::option::Option<crate::types::Encryption>) -> Self {
+    pub fn set_encryption(
+        mut self,
+        input: ::std::option::Option<crate::types::Encryption>,
+    ) -> Self {
         self.encryption = input;
         self
     }
     /// The ARN of the entitlement.
-    pub fn entitlement_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.entitlement_arn = Some(input.into());
+    pub fn entitlement_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.entitlement_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// The ARN of the entitlement.
-    pub fn set_entitlement_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_entitlement_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.entitlement_arn = input;
         self
     }
     /// An indication of whether the entitlement is enabled.
     pub fn entitlement_status(mut self, input: crate::types::EntitlementStatus) -> Self {
-        self.entitlement_status = Some(input);
+        self.entitlement_status = ::std::option::Option::Some(input);
         self
     }
     /// An indication of whether the entitlement is enabled.
     pub fn set_entitlement_status(
         mut self,
-        input: std::option::Option<crate::types::EntitlementStatus>,
+        input: ::std::option::Option<crate::types::EntitlementStatus>,
     ) -> Self {
         self.entitlement_status = input;
         self
     }
     /// The name of the entitlement.
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// The name of the entitlement.
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
@@ -147,16 +158,16 @@ impl EntitlementBuilder {
     /// To override the contents of this collection use [`set_subscribers`](Self::set_subscribers).
     ///
     /// The AWS account IDs that you want to share your content with. The receiving accounts (subscribers) will be allowed to create their own flow using your content as the source.
-    pub fn subscribers(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn subscribers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.subscribers.unwrap_or_default();
         v.push(input.into());
-        self.subscribers = Some(v);
+        self.subscribers = ::std::option::Option::Some(v);
         self
     }
     /// The AWS account IDs that you want to share your content with. The receiving accounts (subscribers) will be allowed to create their own flow using your content as the source.
     pub fn set_subscribers(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.subscribers = input;
         self

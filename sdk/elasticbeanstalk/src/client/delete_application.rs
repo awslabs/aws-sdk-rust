@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteApplication`](crate::operation::delete_application::builders::DeleteApplicationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`application_name(impl Into<String>)`](crate::operation::delete_application::builders::DeleteApplicationFluentBuilder::application_name) / [`set_application_name(Option<String>)`](crate::operation::delete_application::builders::DeleteApplicationFluentBuilder::set_application_name): <p>The name of the application to delete.</p>
+    ///   - [`application_name(impl ::std::convert::Into<String>)`](crate::operation::delete_application::builders::DeleteApplicationFluentBuilder::application_name) / [`set_application_name(Option<String>)`](crate::operation::delete_application::builders::DeleteApplicationFluentBuilder::set_application_name): <p>The name of the application to delete.</p>
     ///   - [`terminate_env_by_force(bool)`](crate::operation::delete_application::builders::DeleteApplicationFluentBuilder::terminate_env_by_force) / [`set_terminate_env_by_force(Option<bool>)`](crate::operation::delete_application::builders::DeleteApplicationFluentBuilder::set_terminate_env_by_force): <p>When set to true, running environments will be terminated before deleting the application.</p>
     /// - On success, responds with [`DeleteApplicationOutput`](crate::operation::delete_application::DeleteApplicationOutput)
     /// - On failure, responds with [`SdkError<DeleteApplicationError>`](crate::operation::delete_application::DeleteApplicationError)

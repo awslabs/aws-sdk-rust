@@ -2,18 +2,18 @@
 
 /// <p>Information about the integration of DevOps Guru as consumer with another AWS service, such as AWS CodeGuru Profiler via EventBridge.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EventSourcesConfig {
     /// <p>Information about whether DevOps Guru is configured to consume recommendations which are generated from AWS CodeGuru Profiler.</p>
     #[doc(hidden)]
     pub amazon_code_guru_profiler:
-        std::option::Option<crate::types::AmazonCodeGuruProfilerIntegration>,
+        ::std::option::Option<crate::types::AmazonCodeGuruProfilerIntegration>,
 }
 impl EventSourcesConfig {
     /// <p>Information about whether DevOps Guru is configured to consume recommendations which are generated from AWS CodeGuru Profiler.</p>
     pub fn amazon_code_guru_profiler(
         &self,
-    ) -> std::option::Option<&crate::types::AmazonCodeGuruProfilerIntegration> {
+    ) -> ::std::option::Option<&crate::types::AmazonCodeGuruProfilerIntegration> {
         self.amazon_code_guru_profiler.as_ref()
     }
 }
@@ -26,10 +26,12 @@ impl EventSourcesConfig {
 
 /// A builder for [`EventSourcesConfig`](crate::types::EventSourcesConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EventSourcesConfigBuilder {
     pub(crate) amazon_code_guru_profiler:
-        std::option::Option<crate::types::AmazonCodeGuruProfilerIntegration>,
+        ::std::option::Option<crate::types::AmazonCodeGuruProfilerIntegration>,
 }
 impl EventSourcesConfigBuilder {
     /// <p>Information about whether DevOps Guru is configured to consume recommendations which are generated from AWS CodeGuru Profiler.</p>
@@ -37,13 +39,13 @@ impl EventSourcesConfigBuilder {
         mut self,
         input: crate::types::AmazonCodeGuruProfilerIntegration,
     ) -> Self {
-        self.amazon_code_guru_profiler = Some(input);
+        self.amazon_code_guru_profiler = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about whether DevOps Guru is configured to consume recommendations which are generated from AWS CodeGuru Profiler.</p>
     pub fn set_amazon_code_guru_profiler(
         mut self,
-        input: std::option::Option<crate::types::AmazonCodeGuruProfilerIntegration>,
+        input: ::std::option::Option<crate::types::AmazonCodeGuruProfilerIntegration>,
     ) -> Self {
         self.amazon_code_guru_profiler = input;
         self

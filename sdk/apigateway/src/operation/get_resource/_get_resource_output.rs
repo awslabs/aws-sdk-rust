@@ -2,52 +2,54 @@
 
 /// <p>Represents an API resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetResourceOutput {
     /// <p>The resource's identifier.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The parent resource's identifier.</p>
     #[doc(hidden)]
-    pub parent_id: std::option::Option<std::string::String>,
+    pub parent_id: ::std::option::Option<::std::string::String>,
     /// <p>The last path segment for this resource.</p>
     #[doc(hidden)]
-    pub path_part: std::option::Option<std::string::String>,
+    pub path_part: ::std::option::Option<::std::string::String>,
     /// <p>The full path for this resource.</p>
     #[doc(hidden)]
-    pub path: std::option::Option<std::string::String>,
+    pub path: ::std::option::Option<::std::string::String>,
     /// <p>Gets an API resource's method of a given HTTP verb.</p>
     #[doc(hidden)]
-    pub resource_methods:
-        std::option::Option<std::collections::HashMap<std::string::String, crate::types::Method>>,
+    pub resource_methods: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::Method>,
+    >,
     _request_id: Option<String>,
 }
 impl GetResourceOutput {
     /// <p>The resource's identifier.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The parent resource's identifier.</p>
-    pub fn parent_id(&self) -> std::option::Option<&str> {
+    pub fn parent_id(&self) -> ::std::option::Option<&str> {
         self.parent_id.as_deref()
     }
     /// <p>The last path segment for this resource.</p>
-    pub fn path_part(&self) -> std::option::Option<&str> {
+    pub fn path_part(&self) -> ::std::option::Option<&str> {
         self.path_part.as_deref()
     }
     /// <p>The full path for this resource.</p>
-    pub fn path(&self) -> std::option::Option<&str> {
+    pub fn path(&self) -> ::std::option::Option<&str> {
         self.path.as_deref()
     }
     /// <p>Gets an API resource's method of a given HTTP verb.</p>
     pub fn resource_methods(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::types::Method>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, crate::types::Method>,
+    > {
         self.resource_methods.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for GetResourceOutput {
+impl ::aws_http::request_id::RequestId for GetResourceOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -61,54 +63,57 @@ impl GetResourceOutput {
 
 /// A builder for [`GetResourceOutput`](crate::operation::get_resource::GetResourceOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetResourceOutputBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) parent_id: std::option::Option<std::string::String>,
-    pub(crate) path_part: std::option::Option<std::string::String>,
-    pub(crate) path: std::option::Option<std::string::String>,
-    pub(crate) resource_methods:
-        std::option::Option<std::collections::HashMap<std::string::String, crate::types::Method>>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) parent_id: ::std::option::Option<::std::string::String>,
+    pub(crate) path_part: ::std::option::Option<::std::string::String>,
+    pub(crate) path: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_methods: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::Method>,
+    >,
     _request_id: Option<String>,
 }
 impl GetResourceOutputBuilder {
     /// <p>The resource's identifier.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The resource's identifier.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>The parent resource's identifier.</p>
-    pub fn parent_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.parent_id = Some(input.into());
+    pub fn parent_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.parent_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The parent resource's identifier.</p>
-    pub fn set_parent_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_parent_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parent_id = input;
         self
     }
     /// <p>The last path segment for this resource.</p>
-    pub fn path_part(mut self, input: impl Into<std::string::String>) -> Self {
-        self.path_part = Some(input.into());
+    pub fn path_part(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.path_part = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The last path segment for this resource.</p>
-    pub fn set_path_part(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_path_part(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.path_part = input;
         self
     }
     /// <p>The full path for this resource.</p>
-    pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
-        self.path = Some(input.into());
+    pub fn path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The full path for this resource.</p>
-    pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.path = input;
         self
     }
@@ -119,19 +124,19 @@ impl GetResourceOutputBuilder {
     /// <p>Gets an API resource's method of a given HTTP verb.</p>
     pub fn resource_methods(
         mut self,
-        k: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
         v: crate::types::Method,
     ) -> Self {
         let mut hash_map = self.resource_methods.unwrap_or_default();
         hash_map.insert(k.into(), v);
-        self.resource_methods = Some(hash_map);
+        self.resource_methods = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Gets an API resource's method of a given HTTP verb.</p>
     pub fn set_resource_methods(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::types::Method>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, crate::types::Method>,
         >,
     ) -> Self {
         self.resource_methods = input;

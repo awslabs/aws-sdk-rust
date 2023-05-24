@@ -2,15 +2,15 @@
 
 /// <p>When exiting this state, perform these <code>actions</code> if the specified <code>condition</code> is <code>TRUE</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OnExitLifecycle {
     /// <p>Specifies the <code>actions</code> that are performed when the state is exited and the <code>condition</code> is <code>TRUE</code>.</p>
     #[doc(hidden)]
-    pub events: std::option::Option<std::vec::Vec<crate::types::Event>>,
+    pub events: ::std::option::Option<::std::vec::Vec<crate::types::Event>>,
 }
 impl OnExitLifecycle {
     /// <p>Specifies the <code>actions</code> that are performed when the state is exited and the <code>condition</code> is <code>TRUE</code>.</p>
-    pub fn events(&self) -> std::option::Option<&[crate::types::Event]> {
+    pub fn events(&self) -> ::std::option::Option<&[crate::types::Event]> {
         self.events.as_deref()
     }
 }
@@ -23,9 +23,11 @@ impl OnExitLifecycle {
 
 /// A builder for [`OnExitLifecycle`](crate::types::OnExitLifecycle).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OnExitLifecycleBuilder {
-    pub(crate) events: std::option::Option<std::vec::Vec<crate::types::Event>>,
+    pub(crate) events: ::std::option::Option<::std::vec::Vec<crate::types::Event>>,
 }
 impl OnExitLifecycleBuilder {
     /// Appends an item to `events`.
@@ -36,13 +38,13 @@ impl OnExitLifecycleBuilder {
     pub fn events(mut self, input: crate::types::Event) -> Self {
         let mut v = self.events.unwrap_or_default();
         v.push(input);
-        self.events = Some(v);
+        self.events = ::std::option::Option::Some(v);
         self
     }
     /// <p>Specifies the <code>actions</code> that are performed when the state is exited and the <code>condition</code> is <code>TRUE</code>.</p>
     pub fn set_events(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Event>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Event>>,
     ) -> Self {
         self.events = input;
         self

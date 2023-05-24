@@ -2,22 +2,22 @@
 
 /// <p>A setting that enables metrics at the object level. Each rule contains an object group and an object group name. If the policy includes the MetricPolicyRules parameter, you must include at least one rule. Each metric policy can include up to five rules by default. You can also <a href="https://console.aws.amazon.com/servicequotas/home?region=us-east-1#!/services/mediastore/quotas">request a quota increase</a> to allow up to 300 rules per policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetricPolicyRule {
     /// <p>A path or file name that defines which objects to include in the group. Wildcards (*) are acceptable.</p>
     #[doc(hidden)]
-    pub object_group: std::option::Option<std::string::String>,
+    pub object_group: ::std::option::Option<::std::string::String>,
     /// <p>A name that allows you to refer to the object group.</p>
     #[doc(hidden)]
-    pub object_group_name: std::option::Option<std::string::String>,
+    pub object_group_name: ::std::option::Option<::std::string::String>,
 }
 impl MetricPolicyRule {
     /// <p>A path or file name that defines which objects to include in the group. Wildcards (*) are acceptable.</p>
-    pub fn object_group(&self) -> std::option::Option<&str> {
+    pub fn object_group(&self) -> ::std::option::Option<&str> {
         self.object_group.as_deref()
     }
     /// <p>A name that allows you to refer to the object group.</p>
-    pub fn object_group_name(&self) -> std::option::Option<&str> {
+    pub fn object_group_name(&self) -> ::std::option::Option<&str> {
         self.object_group_name.as_deref()
     }
 }
@@ -30,31 +30,36 @@ impl MetricPolicyRule {
 
 /// A builder for [`MetricPolicyRule`](crate::types::MetricPolicyRule).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MetricPolicyRuleBuilder {
-    pub(crate) object_group: std::option::Option<std::string::String>,
-    pub(crate) object_group_name: std::option::Option<std::string::String>,
+    pub(crate) object_group: ::std::option::Option<::std::string::String>,
+    pub(crate) object_group_name: ::std::option::Option<::std::string::String>,
 }
 impl MetricPolicyRuleBuilder {
     /// <p>A path or file name that defines which objects to include in the group. Wildcards (*) are acceptable.</p>
-    pub fn object_group(mut self, input: impl Into<std::string::String>) -> Self {
-        self.object_group = Some(input.into());
+    pub fn object_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.object_group = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A path or file name that defines which objects to include in the group. Wildcards (*) are acceptable.</p>
-    pub fn set_object_group(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_object_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.object_group = input;
         self
     }
     /// <p>A name that allows you to refer to the object group.</p>
-    pub fn object_group_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.object_group_name = Some(input.into());
+    pub fn object_group_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.object_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A name that allows you to refer to the object group.</p>
     pub fn set_object_group_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.object_group_name = input;
         self

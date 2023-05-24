@@ -2,21 +2,21 @@
 
 /// <p>Describes a policy version.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PolicyVersion {
     /// <p>The policy version ID.</p>
     #[doc(hidden)]
-    pub version_id: std::option::Option<std::string::String>,
+    pub version_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the policy version is the default.</p>
     #[doc(hidden)]
     pub is_default_version: bool,
     /// <p>The date and time the policy was created.</p>
     #[doc(hidden)]
-    pub create_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl PolicyVersion {
     /// <p>The policy version ID.</p>
-    pub fn version_id(&self) -> std::option::Option<&str> {
+    pub fn version_id(&self) -> ::std::option::Option<&str> {
         self.version_id.as_deref()
     }
     /// <p>Specifies whether the policy version is the default.</p>
@@ -24,7 +24,7 @@ impl PolicyVersion {
         self.is_default_version
     }
     /// <p>The date and time the policy was created.</p>
-    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.create_date.as_ref()
     }
 }
@@ -37,42 +37,44 @@ impl PolicyVersion {
 
 /// A builder for [`PolicyVersion`](crate::types::PolicyVersion).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PolicyVersionBuilder {
-    pub(crate) version_id: std::option::Option<std::string::String>,
-    pub(crate) is_default_version: std::option::Option<bool>,
-    pub(crate) create_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) version_id: ::std::option::Option<::std::string::String>,
+    pub(crate) is_default_version: ::std::option::Option<bool>,
+    pub(crate) create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl PolicyVersionBuilder {
     /// <p>The policy version ID.</p>
-    pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.version_id = Some(input.into());
+    pub fn version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.version_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The policy version ID.</p>
-    pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version_id = input;
         self
     }
     /// <p>Specifies whether the policy version is the default.</p>
     pub fn is_default_version(mut self, input: bool) -> Self {
-        self.is_default_version = Some(input);
+        self.is_default_version = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether the policy version is the default.</p>
-    pub fn set_is_default_version(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_default_version(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_default_version = input;
         self
     }
     /// <p>The date and time the policy was created.</p>
-    pub fn create_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.create_date = Some(input);
+    pub fn create_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.create_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time the policy was created.</p>
     pub fn set_create_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.create_date = input;
         self

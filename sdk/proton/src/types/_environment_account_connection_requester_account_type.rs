@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum EnvironmentAccountConnectionRequesterAccountType {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum EnvironmentAccountConnectionRequesterAccountType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for EnvironmentAccountConnectionRequesterAccountType {
+impl ::std::convert::From<&str> for EnvironmentAccountConnectionRequesterAccountType {
     fn from(s: &str) -> Self {
         match s {
             "ENVIRONMENT_ACCOUNT" => {
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for EnvironmentAccountConnectionRequesterAccountTy
         }
     }
 }
-impl std::str::FromStr for EnvironmentAccountConnectionRequesterAccountType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for EnvironmentAccountConnectionRequesterAccountType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EnvironmentAccountConnectionRequesterAccountType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(EnvironmentAccountConnectionRequesterAccountType::from(s))
     }
 }
 impl EnvironmentAccountConnectionRequesterAccountType {
@@ -94,7 +94,7 @@ impl EnvironmentAccountConnectionRequesterAccountType {
         &["ENVIRONMENT_ACCOUNT", "MANAGEMENT_ACCOUNT"]
     }
 }
-impl AsRef<str> for EnvironmentAccountConnectionRequesterAccountType {
+impl ::std::convert::AsRef<str> for EnvironmentAccountConnectionRequesterAccountType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

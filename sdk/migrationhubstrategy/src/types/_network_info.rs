@@ -2,36 +2,36 @@
 
 /// <p> Information about the server's network for which the assessment was run. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkInfo {
     /// <p> Information about the name of the interface of the server for which the assessment was run. </p>
     #[doc(hidden)]
-    pub interface_name: std::option::Option<std::string::String>,
+    pub interface_name: ::std::option::Option<::std::string::String>,
     /// <p> Information about the IP address of the server for which the assessment was run. </p>
     #[doc(hidden)]
-    pub ip_address: std::option::Option<std::string::String>,
+    pub ip_address: ::std::option::Option<::std::string::String>,
     /// <p> Information about the MAC address of the server for which the assessment was run. </p>
     #[doc(hidden)]
-    pub mac_address: std::option::Option<std::string::String>,
+    pub mac_address: ::std::option::Option<::std::string::String>,
     /// <p> Information about the subnet mask of the server for which the assessment was run. </p>
     #[doc(hidden)]
-    pub net_mask: std::option::Option<std::string::String>,
+    pub net_mask: ::std::option::Option<::std::string::String>,
 }
 impl NetworkInfo {
     /// <p> Information about the name of the interface of the server for which the assessment was run. </p>
-    pub fn interface_name(&self) -> std::option::Option<&str> {
+    pub fn interface_name(&self) -> ::std::option::Option<&str> {
         self.interface_name.as_deref()
     }
     /// <p> Information about the IP address of the server for which the assessment was run. </p>
-    pub fn ip_address(&self) -> std::option::Option<&str> {
+    pub fn ip_address(&self) -> ::std::option::Option<&str> {
         self.ip_address.as_deref()
     }
     /// <p> Information about the MAC address of the server for which the assessment was run. </p>
-    pub fn mac_address(&self) -> std::option::Option<&str> {
+    pub fn mac_address(&self) -> ::std::option::Option<&str> {
         self.mac_address.as_deref()
     }
     /// <p> Information about the subnet mask of the server for which the assessment was run. </p>
-    pub fn net_mask(&self) -> std::option::Option<&str> {
+    pub fn net_mask(&self) -> ::std::option::Option<&str> {
         self.net_mask.as_deref()
     }
 }
@@ -44,51 +44,59 @@ impl NetworkInfo {
 
 /// A builder for [`NetworkInfo`](crate::types::NetworkInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NetworkInfoBuilder {
-    pub(crate) interface_name: std::option::Option<std::string::String>,
-    pub(crate) ip_address: std::option::Option<std::string::String>,
-    pub(crate) mac_address: std::option::Option<std::string::String>,
-    pub(crate) net_mask: std::option::Option<std::string::String>,
+    pub(crate) interface_name: ::std::option::Option<::std::string::String>,
+    pub(crate) ip_address: ::std::option::Option<::std::string::String>,
+    pub(crate) mac_address: ::std::option::Option<::std::string::String>,
+    pub(crate) net_mask: ::std::option::Option<::std::string::String>,
 }
 impl NetworkInfoBuilder {
     /// <p> Information about the name of the interface of the server for which the assessment was run. </p>
-    pub fn interface_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.interface_name = Some(input.into());
+    pub fn interface_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.interface_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Information about the name of the interface of the server for which the assessment was run. </p>
-    pub fn set_interface_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_interface_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.interface_name = input;
         self
     }
     /// <p> Information about the IP address of the server for which the assessment was run. </p>
-    pub fn ip_address(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ip_address = Some(input.into());
+    pub fn ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ip_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Information about the IP address of the server for which the assessment was run. </p>
-    pub fn set_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ip_address = input;
         self
     }
     /// <p> Information about the MAC address of the server for which the assessment was run. </p>
-    pub fn mac_address(mut self, input: impl Into<std::string::String>) -> Self {
-        self.mac_address = Some(input.into());
+    pub fn mac_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.mac_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Information about the MAC address of the server for which the assessment was run. </p>
-    pub fn set_mac_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_mac_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.mac_address = input;
         self
     }
     /// <p> Information about the subnet mask of the server for which the assessment was run. </p>
-    pub fn net_mask(mut self, input: impl Into<std::string::String>) -> Self {
-        self.net_mask = Some(input.into());
+    pub fn net_mask(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.net_mask = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Information about the subnet mask of the server for which the assessment was run. </p>
-    pub fn set_net_mask(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_net_mask(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.net_mask = input;
         self
     }

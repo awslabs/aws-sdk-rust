@@ -2,15 +2,15 @@
 
 /// <p>The container image used to create an Amazon Braket job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ContainerImage {
     /// <p>The URI locating the container image.</p>
     #[doc(hidden)]
-    pub uri: std::option::Option<std::string::String>,
+    pub uri: ::std::option::Option<::std::string::String>,
 }
 impl ContainerImage {
     /// <p>The URI locating the container image.</p>
-    pub fn uri(&self) -> std::option::Option<&str> {
+    pub fn uri(&self) -> ::std::option::Option<&str> {
         self.uri.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl ContainerImage {
 
 /// A builder for [`ContainerImage`](crate::types::ContainerImage).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ContainerImageBuilder {
-    pub(crate) uri: std::option::Option<std::string::String>,
+    pub(crate) uri: ::std::option::Option<::std::string::String>,
 }
 impl ContainerImageBuilder {
     /// <p>The URI locating the container image.</p>
-    pub fn uri(mut self, input: impl Into<std::string::String>) -> Self {
-        self.uri = Some(input.into());
+    pub fn uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.uri = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URI locating the container image.</p>
-    pub fn set_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.uri = input;
         self
     }

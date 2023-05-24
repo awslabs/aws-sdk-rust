@@ -2,29 +2,29 @@
 
 /// <p>Represents the state configuration when an action modifies a property of another element within the same component.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MutationActionSetStateParameter {
     /// <p>The name of the component that is being modified.</p>
     #[doc(hidden)]
-    pub component_name: std::option::Option<std::string::String>,
+    pub component_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the component property to apply the state configuration to.</p>
     #[doc(hidden)]
-    pub property: std::option::Option<std::string::String>,
+    pub property: ::std::option::Option<::std::string::String>,
     /// <p>The state configuration to assign to the property.</p>
     #[doc(hidden)]
-    pub set: std::option::Option<crate::types::ComponentProperty>,
+    pub set: ::std::option::Option<crate::types::ComponentProperty>,
 }
 impl MutationActionSetStateParameter {
     /// <p>The name of the component that is being modified.</p>
-    pub fn component_name(&self) -> std::option::Option<&str> {
+    pub fn component_name(&self) -> ::std::option::Option<&str> {
         self.component_name.as_deref()
     }
     /// <p>The name of the component property to apply the state configuration to.</p>
-    pub fn property(&self) -> std::option::Option<&str> {
+    pub fn property(&self) -> ::std::option::Option<&str> {
         self.property.as_deref()
     }
     /// <p>The state configuration to assign to the property.</p>
-    pub fn set(&self) -> std::option::Option<&crate::types::ComponentProperty> {
+    pub fn set(&self) -> ::std::option::Option<&crate::types::ComponentProperty> {
         self.set.as_ref()
     }
 }
@@ -37,40 +37,51 @@ impl MutationActionSetStateParameter {
 
 /// A builder for [`MutationActionSetStateParameter`](crate::types::MutationActionSetStateParameter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MutationActionSetStateParameterBuilder {
-    pub(crate) component_name: std::option::Option<std::string::String>,
-    pub(crate) property: std::option::Option<std::string::String>,
-    pub(crate) set: std::option::Option<crate::types::ComponentProperty>,
+    pub(crate) component_name: ::std::option::Option<::std::string::String>,
+    pub(crate) property: ::std::option::Option<::std::string::String>,
+    pub(crate) set: ::std::option::Option<crate::types::ComponentProperty>,
 }
 impl MutationActionSetStateParameterBuilder {
     /// <p>The name of the component that is being modified.</p>
-    pub fn component_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.component_name = Some(input.into());
+    pub fn component_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.component_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the component that is being modified.</p>
-    pub fn set_component_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_component_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.component_name = input;
         self
     }
     /// <p>The name of the component property to apply the state configuration to.</p>
-    pub fn property(mut self, input: impl Into<std::string::String>) -> Self {
-        self.property = Some(input.into());
+    pub fn property(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.property = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the component property to apply the state configuration to.</p>
-    pub fn set_property(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_property(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.property = input;
         self
     }
     /// <p>The state configuration to assign to the property.</p>
     pub fn set(mut self, input: crate::types::ComponentProperty) -> Self {
-        self.set = Some(input);
+        self.set = ::std::option::Option::Some(input);
         self
     }
     /// <p>The state configuration to assign to the property.</p>
-    pub fn set_set(mut self, input: std::option::Option<crate::types::ComponentProperty>) -> Self {
+    pub fn set_set(
+        mut self,
+        input: ::std::option::Option<crate::types::ComponentProperty>,
+    ) -> Self {
         self.set = input;
         self
     }

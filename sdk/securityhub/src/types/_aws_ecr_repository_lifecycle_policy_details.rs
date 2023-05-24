@@ -2,22 +2,22 @@
 
 /// <p>Information about the lifecycle policy for the repository.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEcrRepositoryLifecyclePolicyDetails {
     /// <p>The text of the lifecycle policy.</p>
     #[doc(hidden)]
-    pub lifecycle_policy_text: std::option::Option<std::string::String>,
+    pub lifecycle_policy_text: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account identifier that is associated with the registry that contains the repository.</p>
     #[doc(hidden)]
-    pub registry_id: std::option::Option<std::string::String>,
+    pub registry_id: ::std::option::Option<::std::string::String>,
 }
 impl AwsEcrRepositoryLifecyclePolicyDetails {
     /// <p>The text of the lifecycle policy.</p>
-    pub fn lifecycle_policy_text(&self) -> std::option::Option<&str> {
+    pub fn lifecycle_policy_text(&self) -> ::std::option::Option<&str> {
         self.lifecycle_policy_text.as_deref()
     }
     /// <p>The Amazon Web Services account identifier that is associated with the registry that contains the repository.</p>
-    pub fn registry_id(&self) -> std::option::Option<&str> {
+    pub fn registry_id(&self) -> ::std::option::Option<&str> {
         self.registry_id.as_deref()
     }
 }
@@ -30,32 +30,37 @@ impl AwsEcrRepositoryLifecyclePolicyDetails {
 
 /// A builder for [`AwsEcrRepositoryLifecyclePolicyDetails`](crate::types::AwsEcrRepositoryLifecyclePolicyDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsEcrRepositoryLifecyclePolicyDetailsBuilder {
-    pub(crate) lifecycle_policy_text: std::option::Option<std::string::String>,
-    pub(crate) registry_id: std::option::Option<std::string::String>,
+    pub(crate) lifecycle_policy_text: ::std::option::Option<::std::string::String>,
+    pub(crate) registry_id: ::std::option::Option<::std::string::String>,
 }
 impl AwsEcrRepositoryLifecyclePolicyDetailsBuilder {
     /// <p>The text of the lifecycle policy.</p>
-    pub fn lifecycle_policy_text(mut self, input: impl Into<std::string::String>) -> Self {
-        self.lifecycle_policy_text = Some(input.into());
+    pub fn lifecycle_policy_text(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.lifecycle_policy_text = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The text of the lifecycle policy.</p>
     pub fn set_lifecycle_policy_text(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.lifecycle_policy_text = input;
         self
     }
     /// <p>The Amazon Web Services account identifier that is associated with the registry that contains the repository.</p>
-    pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.registry_id = Some(input.into());
+    pub fn registry_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.registry_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account identifier that is associated with the registry that contains the repository.</p>
-    pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_registry_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.registry_id = input;
         self
     }

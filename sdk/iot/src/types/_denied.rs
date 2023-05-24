@@ -2,22 +2,22 @@
 
 /// <p>Contains information that denied the authorization.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Denied {
     /// <p>Information that implicitly denies the authorization. When a policy doesn't explicitly deny or allow an action on a resource it is considered an implicit deny.</p>
     #[doc(hidden)]
-    pub implicit_deny: std::option::Option<crate::types::ImplicitDeny>,
+    pub implicit_deny: ::std::option::Option<crate::types::ImplicitDeny>,
     /// <p>Information that explicitly denies the authorization. </p>
     #[doc(hidden)]
-    pub explicit_deny: std::option::Option<crate::types::ExplicitDeny>,
+    pub explicit_deny: ::std::option::Option<crate::types::ExplicitDeny>,
 }
 impl Denied {
     /// <p>Information that implicitly denies the authorization. When a policy doesn't explicitly deny or allow an action on a resource it is considered an implicit deny.</p>
-    pub fn implicit_deny(&self) -> std::option::Option<&crate::types::ImplicitDeny> {
+    pub fn implicit_deny(&self) -> ::std::option::Option<&crate::types::ImplicitDeny> {
         self.implicit_deny.as_ref()
     }
     /// <p>Information that explicitly denies the authorization. </p>
-    pub fn explicit_deny(&self) -> std::option::Option<&crate::types::ExplicitDeny> {
+    pub fn explicit_deny(&self) -> ::std::option::Option<&crate::types::ExplicitDeny> {
         self.explicit_deny.as_ref()
     }
 }
@@ -30,34 +30,36 @@ impl Denied {
 
 /// A builder for [`Denied`](crate::types::Denied).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeniedBuilder {
-    pub(crate) implicit_deny: std::option::Option<crate::types::ImplicitDeny>,
-    pub(crate) explicit_deny: std::option::Option<crate::types::ExplicitDeny>,
+    pub(crate) implicit_deny: ::std::option::Option<crate::types::ImplicitDeny>,
+    pub(crate) explicit_deny: ::std::option::Option<crate::types::ExplicitDeny>,
 }
 impl DeniedBuilder {
     /// <p>Information that implicitly denies the authorization. When a policy doesn't explicitly deny or allow an action on a resource it is considered an implicit deny.</p>
     pub fn implicit_deny(mut self, input: crate::types::ImplicitDeny) -> Self {
-        self.implicit_deny = Some(input);
+        self.implicit_deny = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information that implicitly denies the authorization. When a policy doesn't explicitly deny or allow an action on a resource it is considered an implicit deny.</p>
     pub fn set_implicit_deny(
         mut self,
-        input: std::option::Option<crate::types::ImplicitDeny>,
+        input: ::std::option::Option<crate::types::ImplicitDeny>,
     ) -> Self {
         self.implicit_deny = input;
         self
     }
     /// <p>Information that explicitly denies the authorization. </p>
     pub fn explicit_deny(mut self, input: crate::types::ExplicitDeny) -> Self {
-        self.explicit_deny = Some(input);
+        self.explicit_deny = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information that explicitly denies the authorization. </p>
     pub fn set_explicit_deny(
         mut self,
-        input: std::option::Option<crate::types::ExplicitDeny>,
+        input: ::std::option::Option<crate::types::ExplicitDeny>,
     ) -> Self {
         self.explicit_deny = input;
         self

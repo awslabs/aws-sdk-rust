@@ -2,87 +2,92 @@
 
 /// Placeholder documentation for DescribeMultiplexResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeMultiplexOutput {
     /// The unique arn of the multiplex.
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// A list of availability zones for the multiplex.
     #[doc(hidden)]
-    pub availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// A list of the multiplex output destinations.
     #[doc(hidden)]
-    pub destinations: std::option::Option<std::vec::Vec<crate::types::MultiplexOutputDestination>>,
+    pub destinations:
+        ::std::option::Option<::std::vec::Vec<crate::types::MultiplexOutputDestination>>,
     /// The unique id of the multiplex.
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// Configuration for a multiplex event.
     #[doc(hidden)]
-    pub multiplex_settings: std::option::Option<crate::types::MultiplexSettings>,
+    pub multiplex_settings: ::std::option::Option<crate::types::MultiplexSettings>,
     /// The name of the multiplex.
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// The number of currently healthy pipelines.
     #[doc(hidden)]
-    pub pipelines_running_count: std::option::Option<i32>,
+    pub pipelines_running_count: ::std::option::Option<i32>,
     /// The number of programs in the multiplex.
     #[doc(hidden)]
-    pub program_count: std::option::Option<i32>,
+    pub program_count: ::std::option::Option<i32>,
     /// The current state of the multiplex.
     #[doc(hidden)]
-    pub state: std::option::Option<crate::types::MultiplexState>,
+    pub state: ::std::option::Option<crate::types::MultiplexState>,
     /// A collection of key-value pairs.
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     _request_id: Option<String>,
 }
 impl DescribeMultiplexOutput {
     /// The unique arn of the multiplex.
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// A list of availability zones for the multiplex.
-    pub fn availability_zones(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn availability_zones(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.availability_zones.as_deref()
     }
     /// A list of the multiplex output destinations.
-    pub fn destinations(&self) -> std::option::Option<&[crate::types::MultiplexOutputDestination]> {
+    pub fn destinations(
+        &self,
+    ) -> ::std::option::Option<&[crate::types::MultiplexOutputDestination]> {
         self.destinations.as_deref()
     }
     /// The unique id of the multiplex.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// Configuration for a multiplex event.
-    pub fn multiplex_settings(&self) -> std::option::Option<&crate::types::MultiplexSettings> {
+    pub fn multiplex_settings(&self) -> ::std::option::Option<&crate::types::MultiplexSettings> {
         self.multiplex_settings.as_ref()
     }
     /// The name of the multiplex.
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// The number of currently healthy pipelines.
-    pub fn pipelines_running_count(&self) -> std::option::Option<i32> {
+    pub fn pipelines_running_count(&self) -> ::std::option::Option<i32> {
         self.pipelines_running_count
     }
     /// The number of programs in the multiplex.
-    pub fn program_count(&self) -> std::option::Option<i32> {
+    pub fn program_count(&self) -> ::std::option::Option<i32> {
         self.program_count
     }
     /// The current state of the multiplex.
-    pub fn state(&self) -> std::option::Option<&crate::types::MultiplexState> {
+    pub fn state(&self) -> ::std::option::Option<&crate::types::MultiplexState> {
         self.state.as_ref()
     }
     /// A collection of key-value pairs.
     pub fn tags(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.tags.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeMultiplexOutput {
+impl ::aws_http::request_id::RequestId for DescribeMultiplexOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -97,30 +102,33 @@ impl DescribeMultiplexOutput {
 
 /// A builder for [`DescribeMultiplexOutput`](crate::operation::describe_multiplex::DescribeMultiplexOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeMultiplexOutputBuilder {
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) availability_zones: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) destinations:
-        std::option::Option<std::vec::Vec<crate::types::MultiplexOutputDestination>>,
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) multiplex_settings: std::option::Option<crate::types::MultiplexSettings>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) pipelines_running_count: std::option::Option<i32>,
-    pub(crate) program_count: std::option::Option<i32>,
-    pub(crate) state: std::option::Option<crate::types::MultiplexState>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::MultiplexOutputDestination>>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) multiplex_settings: ::std::option::Option<crate::types::MultiplexSettings>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) pipelines_running_count: ::std::option::Option<i32>,
+    pub(crate) program_count: ::std::option::Option<i32>,
+    pub(crate) state: ::std::option::Option<crate::types::MultiplexState>,
+    pub(crate) tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     _request_id: Option<String>,
 }
 impl DescribeMultiplexOutputBuilder {
     /// The unique arn of the multiplex.
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// The unique arn of the multiplex.
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
@@ -129,16 +137,19 @@ impl DescribeMultiplexOutputBuilder {
     /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
     ///
     /// A list of availability zones for the multiplex.
-    pub fn availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn availability_zones(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.availability_zones.unwrap_or_default();
         v.push(input.into());
-        self.availability_zones = Some(v);
+        self.availability_zones = ::std::option::Option::Some(v);
         self
     }
     /// A list of availability zones for the multiplex.
     pub fn set_availability_zones(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.availability_zones = input;
         self
@@ -151,77 +162,77 @@ impl DescribeMultiplexOutputBuilder {
     pub fn destinations(mut self, input: crate::types::MultiplexOutputDestination) -> Self {
         let mut v = self.destinations.unwrap_or_default();
         v.push(input);
-        self.destinations = Some(v);
+        self.destinations = ::std::option::Option::Some(v);
         self
     }
     /// A list of the multiplex output destinations.
     pub fn set_destinations(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::MultiplexOutputDestination>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::MultiplexOutputDestination>>,
     ) -> Self {
         self.destinations = input;
         self
     }
     /// The unique id of the multiplex.
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// The unique id of the multiplex.
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// Configuration for a multiplex event.
     pub fn multiplex_settings(mut self, input: crate::types::MultiplexSettings) -> Self {
-        self.multiplex_settings = Some(input);
+        self.multiplex_settings = ::std::option::Option::Some(input);
         self
     }
     /// Configuration for a multiplex event.
     pub fn set_multiplex_settings(
         mut self,
-        input: std::option::Option<crate::types::MultiplexSettings>,
+        input: ::std::option::Option<crate::types::MultiplexSettings>,
     ) -> Self {
         self.multiplex_settings = input;
         self
     }
     /// The name of the multiplex.
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// The name of the multiplex.
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// The number of currently healthy pipelines.
     pub fn pipelines_running_count(mut self, input: i32) -> Self {
-        self.pipelines_running_count = Some(input);
+        self.pipelines_running_count = ::std::option::Option::Some(input);
         self
     }
     /// The number of currently healthy pipelines.
-    pub fn set_pipelines_running_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_pipelines_running_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.pipelines_running_count = input;
         self
     }
     /// The number of programs in the multiplex.
     pub fn program_count(mut self, input: i32) -> Self {
-        self.program_count = Some(input);
+        self.program_count = ::std::option::Option::Some(input);
         self
     }
     /// The number of programs in the multiplex.
-    pub fn set_program_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_program_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.program_count = input;
         self
     }
     /// The current state of the multiplex.
     pub fn state(mut self, input: crate::types::MultiplexState) -> Self {
-        self.state = Some(input);
+        self.state = ::std::option::Option::Some(input);
         self
     }
     /// The current state of the multiplex.
-    pub fn set_state(mut self, input: std::option::Option<crate::types::MultiplexState>) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::MultiplexState>) -> Self {
         self.state = input;
         self
     }
@@ -232,19 +243,19 @@ impl DescribeMultiplexOutputBuilder {
     /// A collection of key-value pairs.
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
+        self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// A collection of key-value pairs.
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.tags = input;

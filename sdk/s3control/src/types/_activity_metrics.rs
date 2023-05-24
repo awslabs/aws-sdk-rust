@@ -3,7 +3,7 @@
 /// <p>The container element for Amazon S3 Storage Lens activity metrics. Activity metrics show details about how your storage is requested, such as requests (for example, All requests, Get requests, Put requests), bytes uploaded or downloaded, and errors.</p>
 /// <p>For more information about S3 Storage Lens, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens.html">Assessing your storage activity and usage with S3 Storage Lens</a> in the <i>Amazon S3 User Guide</i>. For a complete list of S3 Storage Lens metrics, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_metrics_glossary.html">S3 Storage Lens metrics glossary</a> in the <i>Amazon S3 User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActivityMetrics {
     /// <p>A container that indicates whether activity metrics are enabled.</p>
     #[doc(hidden)]
@@ -24,18 +24,20 @@ impl ActivityMetrics {
 
 /// A builder for [`ActivityMetrics`](crate::types::ActivityMetrics).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ActivityMetricsBuilder {
-    pub(crate) is_enabled: std::option::Option<bool>,
+    pub(crate) is_enabled: ::std::option::Option<bool>,
 }
 impl ActivityMetricsBuilder {
     /// <p>A container that indicates whether activity metrics are enabled.</p>
     pub fn is_enabled(mut self, input: bool) -> Self {
-        self.is_enabled = Some(input);
+        self.is_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>A container that indicates whether activity metrics are enabled.</p>
-    pub fn set_is_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_enabled = input;
         self
     }

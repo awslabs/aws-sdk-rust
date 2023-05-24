@@ -2,22 +2,22 @@
 
 /// <p>Contains information about how a source JSON data file should be analyzed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JsonFormatDescriptor {
     /// <p>The level of compression of the source CSV file.</p>
     #[doc(hidden)]
-    pub file_compression: std::option::Option<crate::types::JsonFileCompression>,
+    pub file_compression: ::std::option::Option<crate::types::JsonFileCompression>,
     /// <p>The character set in which the source JSON file is written.</p>
     #[doc(hidden)]
-    pub charset: std::option::Option<std::string::String>,
+    pub charset: ::std::option::Option<::std::string::String>,
 }
 impl JsonFormatDescriptor {
     /// <p>The level of compression of the source CSV file.</p>
-    pub fn file_compression(&self) -> std::option::Option<&crate::types::JsonFileCompression> {
+    pub fn file_compression(&self) -> ::std::option::Option<&crate::types::JsonFileCompression> {
         self.file_compression.as_ref()
     }
     /// <p>The character set in which the source JSON file is written.</p>
-    pub fn charset(&self) -> std::option::Option<&str> {
+    pub fn charset(&self) -> ::std::option::Option<&str> {
         self.charset.as_deref()
     }
 }
@@ -30,32 +30,34 @@ impl JsonFormatDescriptor {
 
 /// A builder for [`JsonFormatDescriptor`](crate::types::JsonFormatDescriptor).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct JsonFormatDescriptorBuilder {
-    pub(crate) file_compression: std::option::Option<crate::types::JsonFileCompression>,
-    pub(crate) charset: std::option::Option<std::string::String>,
+    pub(crate) file_compression: ::std::option::Option<crate::types::JsonFileCompression>,
+    pub(crate) charset: ::std::option::Option<::std::string::String>,
 }
 impl JsonFormatDescriptorBuilder {
     /// <p>The level of compression of the source CSV file.</p>
     pub fn file_compression(mut self, input: crate::types::JsonFileCompression) -> Self {
-        self.file_compression = Some(input);
+        self.file_compression = ::std::option::Option::Some(input);
         self
     }
     /// <p>The level of compression of the source CSV file.</p>
     pub fn set_file_compression(
         mut self,
-        input: std::option::Option<crate::types::JsonFileCompression>,
+        input: ::std::option::Option<crate::types::JsonFileCompression>,
     ) -> Self {
         self.file_compression = input;
         self
     }
     /// <p>The character set in which the source JSON file is written.</p>
-    pub fn charset(mut self, input: impl Into<std::string::String>) -> Self {
-        self.charset = Some(input.into());
+    pub fn charset(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.charset = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The character set in which the source JSON file is written.</p>
-    pub fn set_charset(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_charset(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.charset = input;
         self
     }

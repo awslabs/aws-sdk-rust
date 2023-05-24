@@ -2,15 +2,15 @@
 
 /// <p>Object that determines whether tracking should be used during a contact executed with this <code>Config</code> in the mission profile.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrackingConfig {
     /// <p>Current setting for autotrack.</p>
     #[doc(hidden)]
-    pub autotrack: std::option::Option<crate::types::Criticality>,
+    pub autotrack: ::std::option::Option<crate::types::Criticality>,
 }
 impl TrackingConfig {
     /// <p>Current setting for autotrack.</p>
-    pub fn autotrack(&self) -> std::option::Option<&crate::types::Criticality> {
+    pub fn autotrack(&self) -> ::std::option::Option<&crate::types::Criticality> {
         self.autotrack.as_ref()
     }
 }
@@ -23,18 +23,23 @@ impl TrackingConfig {
 
 /// A builder for [`TrackingConfig`](crate::types::TrackingConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TrackingConfigBuilder {
-    pub(crate) autotrack: std::option::Option<crate::types::Criticality>,
+    pub(crate) autotrack: ::std::option::Option<crate::types::Criticality>,
 }
 impl TrackingConfigBuilder {
     /// <p>Current setting for autotrack.</p>
     pub fn autotrack(mut self, input: crate::types::Criticality) -> Self {
-        self.autotrack = Some(input);
+        self.autotrack = ::std::option::Option::Some(input);
         self
     }
     /// <p>Current setting for autotrack.</p>
-    pub fn set_autotrack(mut self, input: std::option::Option<crate::types::Criticality>) -> Self {
+    pub fn set_autotrack(
+        mut self,
+        input: ::std::option::Option<crate::types::Criticality>,
+    ) -> Self {
         self.autotrack = input;
         self
     }

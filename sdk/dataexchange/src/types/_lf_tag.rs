@@ -2,22 +2,22 @@
 
 /// <p>A structure that allows an LF-admin to grant permissions on certain conditions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LfTag {
     /// <p>The key name for the LF-tag.</p>
     #[doc(hidden)]
-    pub tag_key: std::option::Option<std::string::String>,
+    pub tag_key: ::std::option::Option<::std::string::String>,
     /// <p>A list of LF-tag values.</p>
     #[doc(hidden)]
-    pub tag_values: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub tag_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl LfTag {
     /// <p>The key name for the LF-tag.</p>
-    pub fn tag_key(&self) -> std::option::Option<&str> {
+    pub fn tag_key(&self) -> ::std::option::Option<&str> {
         self.tag_key.as_deref()
     }
     /// <p>A list of LF-tag values.</p>
-    pub fn tag_values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn tag_values(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.tag_values.as_deref()
     }
 }
@@ -30,19 +30,21 @@ impl LfTag {
 
 /// A builder for [`LfTag`](crate::types::LfTag).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LfTagBuilder {
-    pub(crate) tag_key: std::option::Option<std::string::String>,
-    pub(crate) tag_values: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) tag_key: ::std::option::Option<::std::string::String>,
+    pub(crate) tag_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl LfTagBuilder {
     /// <p>The key name for the LF-tag.</p>
-    pub fn tag_key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.tag_key = Some(input.into());
+    pub fn tag_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.tag_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The key name for the LF-tag.</p>
-    pub fn set_tag_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_tag_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tag_key = input;
         self
     }
@@ -51,16 +53,16 @@ impl LfTagBuilder {
     /// To override the contents of this collection use [`set_tag_values`](Self::set_tag_values).
     ///
     /// <p>A list of LF-tag values.</p>
-    pub fn tag_values(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn tag_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.tag_values.unwrap_or_default();
         v.push(input.into());
-        self.tag_values = Some(v);
+        self.tag_values = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of LF-tag values.</p>
     pub fn set_tag_values(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.tag_values = input;
         self

@@ -2,7 +2,7 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteDbSecurityGroupInput {
     /// <p>The name of the DB security group to delete.</p> <note>
     /// <p>You can't delete the default DB security group.</p>
@@ -15,7 +15,7 @@ pub struct DeleteDbSecurityGroupInput {
     /// <li> <p>Must not be "Default"</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub db_security_group_name: std::option::Option<std::string::String>,
+    pub db_security_group_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDbSecurityGroupInput {
     /// <p>The name of the DB security group to delete.</p> <note>
@@ -28,7 +28,7 @@ impl DeleteDbSecurityGroupInput {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
     /// <li> <p>Must not be "Default"</p> </li>
     /// </ul>
-    pub fn db_security_group_name(&self) -> std::option::Option<&str> {
+    pub fn db_security_group_name(&self) -> ::std::option::Option<&str> {
         self.db_security_group_name.as_deref()
     }
 }
@@ -43,9 +43,11 @@ impl DeleteDbSecurityGroupInput {
 
 /// A builder for [`DeleteDbSecurityGroupInput`](crate::operation::delete_db_security_group::DeleteDbSecurityGroupInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteDbSecurityGroupInputBuilder {
-    pub(crate) db_security_group_name: std::option::Option<std::string::String>,
+    pub(crate) db_security_group_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDbSecurityGroupInputBuilder {
     /// <p>The name of the DB security group to delete.</p> <note>
@@ -58,8 +60,11 @@ impl DeleteDbSecurityGroupInputBuilder {
     /// <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li>
     /// <li> <p>Must not be "Default"</p> </li>
     /// </ul>
-    pub fn db_security_group_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.db_security_group_name = Some(input.into());
+    pub fn db_security_group_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.db_security_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the DB security group to delete.</p> <note>
@@ -74,7 +79,7 @@ impl DeleteDbSecurityGroupInputBuilder {
     /// </ul>
     pub fn set_db_security_group_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.db_security_group_name = input;
         self
@@ -82,11 +87,11 @@ impl DeleteDbSecurityGroupInputBuilder {
     /// Consumes the builder and constructs a [`DeleteDbSecurityGroupInput`](crate::operation::delete_db_security_group::DeleteDbSecurityGroupInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::delete_db_security_group::DeleteDbSecurityGroupInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::delete_db_security_group::DeleteDbSecurityGroupInput {
                 db_security_group_name: self.db_security_group_name,
             },

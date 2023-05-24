@@ -2,22 +2,22 @@
 
 /// <p>Column in configured table that can be used in aggregate function in query.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AggregateColumn {
     /// <p>Column names in configured table of aggregate columns.</p>
     #[doc(hidden)]
-    pub column_names: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub column_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Aggregation function that can be applied to aggregate column in query.</p>
     #[doc(hidden)]
-    pub function: std::option::Option<crate::types::AggregateFunctionName>,
+    pub function: ::std::option::Option<crate::types::AggregateFunctionName>,
 }
 impl AggregateColumn {
     /// <p>Column names in configured table of aggregate columns.</p>
-    pub fn column_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn column_names(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.column_names.as_deref()
     }
     /// <p>Aggregation function that can be applied to aggregate column in query.</p>
-    pub fn function(&self) -> std::option::Option<&crate::types::AggregateFunctionName> {
+    pub fn function(&self) -> ::std::option::Option<&crate::types::AggregateFunctionName> {
         self.function.as_ref()
     }
 }
@@ -30,10 +30,12 @@ impl AggregateColumn {
 
 /// A builder for [`AggregateColumn`](crate::types::AggregateColumn).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AggregateColumnBuilder {
-    pub(crate) column_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) function: std::option::Option<crate::types::AggregateFunctionName>,
+    pub(crate) column_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) function: ::std::option::Option<crate::types::AggregateFunctionName>,
 }
 impl AggregateColumnBuilder {
     /// Appends an item to `column_names`.
@@ -41,29 +43,29 @@ impl AggregateColumnBuilder {
     /// To override the contents of this collection use [`set_column_names`](Self::set_column_names).
     ///
     /// <p>Column names in configured table of aggregate columns.</p>
-    pub fn column_names(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn column_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.column_names.unwrap_or_default();
         v.push(input.into());
-        self.column_names = Some(v);
+        self.column_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>Column names in configured table of aggregate columns.</p>
     pub fn set_column_names(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.column_names = input;
         self
     }
     /// <p>Aggregation function that can be applied to aggregate column in query.</p>
     pub fn function(mut self, input: crate::types::AggregateFunctionName) -> Self {
-        self.function = Some(input);
+        self.function = ::std::option::Option::Some(input);
         self
     }
     /// <p>Aggregation function that can be applied to aggregate column in query.</p>
     pub fn set_function(
         mut self,
-        input: std::option::Option<crate::types::AggregateFunctionName>,
+        input: ::std::option::Option<crate::types::AggregateFunctionName>,
     ) -> Self {
         self.function = input;
         self

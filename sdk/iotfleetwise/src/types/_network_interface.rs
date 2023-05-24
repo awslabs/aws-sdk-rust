@@ -3,36 +3,36 @@
 /// <p>Represents a node and its specifications in an in-vehicle communication network. All signal decoders must be associated with a network node. </p>
 /// <p> To return this information about all the network interfaces specified in a decoder manifest, use the API operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkInterface {
     /// <p>The ID of the network interface.</p>
     #[doc(hidden)]
-    pub interface_id: std::option::Option<std::string::String>,
+    pub interface_id: ::std::option::Option<::std::string::String>,
     /// <p>The network protocol for the vehicle. For example, <code>CAN_SIGNAL</code> specifies a protocol that defines how data is communicated between electronic control units (ECUs). <code>OBD_SIGNAL</code> specifies a protocol that defines how self-diagnostic data is communicated between ECUs.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::NetworkInterfaceType>,
+    pub r#type: ::std::option::Option<crate::types::NetworkInterfaceType>,
     /// <p>Information about a network interface specified by the Controller Area Network (CAN) protocol.</p>
     #[doc(hidden)]
-    pub can_interface: std::option::Option<crate::types::CanInterface>,
+    pub can_interface: ::std::option::Option<crate::types::CanInterface>,
     /// <p>Information about a network interface specified by the On-board diagnostic (OBD) II protocol.</p>
     #[doc(hidden)]
-    pub obd_interface: std::option::Option<crate::types::ObdInterface>,
+    pub obd_interface: ::std::option::Option<crate::types::ObdInterface>,
 }
 impl NetworkInterface {
     /// <p>The ID of the network interface.</p>
-    pub fn interface_id(&self) -> std::option::Option<&str> {
+    pub fn interface_id(&self) -> ::std::option::Option<&str> {
         self.interface_id.as_deref()
     }
     /// <p>The network protocol for the vehicle. For example, <code>CAN_SIGNAL</code> specifies a protocol that defines how data is communicated between electronic control units (ECUs). <code>OBD_SIGNAL</code> specifies a protocol that defines how self-diagnostic data is communicated between ECUs.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::NetworkInterfaceType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::NetworkInterfaceType> {
         self.r#type.as_ref()
     }
     /// <p>Information about a network interface specified by the Controller Area Network (CAN) protocol.</p>
-    pub fn can_interface(&self) -> std::option::Option<&crate::types::CanInterface> {
+    pub fn can_interface(&self) -> ::std::option::Option<&crate::types::CanInterface> {
         self.can_interface.as_ref()
     }
     /// <p>Information about a network interface specified by the On-board diagnostic (OBD) II protocol.</p>
-    pub fn obd_interface(&self) -> std::option::Option<&crate::types::ObdInterface> {
+    pub fn obd_interface(&self) -> ::std::option::Option<&crate::types::ObdInterface> {
         self.obd_interface.as_ref()
     }
 }
@@ -45,59 +45,61 @@ impl NetworkInterface {
 
 /// A builder for [`NetworkInterface`](crate::types::NetworkInterface).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NetworkInterfaceBuilder {
-    pub(crate) interface_id: std::option::Option<std::string::String>,
-    pub(crate) r#type: std::option::Option<crate::types::NetworkInterfaceType>,
-    pub(crate) can_interface: std::option::Option<crate::types::CanInterface>,
-    pub(crate) obd_interface: std::option::Option<crate::types::ObdInterface>,
+    pub(crate) interface_id: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::NetworkInterfaceType>,
+    pub(crate) can_interface: ::std::option::Option<crate::types::CanInterface>,
+    pub(crate) obd_interface: ::std::option::Option<crate::types::ObdInterface>,
 }
 impl NetworkInterfaceBuilder {
     /// <p>The ID of the network interface.</p>
-    pub fn interface_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.interface_id = Some(input.into());
+    pub fn interface_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.interface_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the network interface.</p>
-    pub fn set_interface_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_interface_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.interface_id = input;
         self
     }
     /// <p>The network protocol for the vehicle. For example, <code>CAN_SIGNAL</code> specifies a protocol that defines how data is communicated between electronic control units (ECUs). <code>OBD_SIGNAL</code> specifies a protocol that defines how self-diagnostic data is communicated between ECUs.</p>
     pub fn r#type(mut self, input: crate::types::NetworkInterfaceType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The network protocol for the vehicle. For example, <code>CAN_SIGNAL</code> specifies a protocol that defines how data is communicated between electronic control units (ECUs). <code>OBD_SIGNAL</code> specifies a protocol that defines how self-diagnostic data is communicated between ECUs.</p>
     pub fn set_type(
         mut self,
-        input: std::option::Option<crate::types::NetworkInterfaceType>,
+        input: ::std::option::Option<crate::types::NetworkInterfaceType>,
     ) -> Self {
         self.r#type = input;
         self
     }
     /// <p>Information about a network interface specified by the Controller Area Network (CAN) protocol.</p>
     pub fn can_interface(mut self, input: crate::types::CanInterface) -> Self {
-        self.can_interface = Some(input);
+        self.can_interface = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about a network interface specified by the Controller Area Network (CAN) protocol.</p>
     pub fn set_can_interface(
         mut self,
-        input: std::option::Option<crate::types::CanInterface>,
+        input: ::std::option::Option<crate::types::CanInterface>,
     ) -> Self {
         self.can_interface = input;
         self
     }
     /// <p>Information about a network interface specified by the On-board diagnostic (OBD) II protocol.</p>
     pub fn obd_interface(mut self, input: crate::types::ObdInterface) -> Self {
-        self.obd_interface = Some(input);
+        self.obd_interface = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about a network interface specified by the On-board diagnostic (OBD) II protocol.</p>
     pub fn set_obd_interface(
         mut self,
-        input: std::option::Option<crate::types::ObdInterface>,
+        input: ::std::option::Option<crate::types::ObdInterface>,
     ) -> Self {
         self.obd_interface = input;
         self

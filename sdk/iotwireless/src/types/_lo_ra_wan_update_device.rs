@@ -2,43 +2,43 @@
 
 /// <p>LoRaWAN object for update functions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoRaWanUpdateDevice {
     /// <p>The ID of the device profile for the wireless device.</p>
     #[doc(hidden)]
-    pub device_profile_id: std::option::Option<std::string::String>,
+    pub device_profile_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the service profile.</p>
     #[doc(hidden)]
-    pub service_profile_id: std::option::Option<std::string::String>,
+    pub service_profile_id: ::std::option::Option<::std::string::String>,
     /// <p>ABP device object for update APIs for v1.1</p>
     #[doc(hidden)]
-    pub abp_v1_1: std::option::Option<crate::types::UpdateAbpV11>,
+    pub abp_v1_1: ::std::option::Option<crate::types::UpdateAbpV11>,
     /// <p>ABP device object for update APIs for v1.0.x</p>
     #[doc(hidden)]
-    pub abp_v1_0_x: std::option::Option<crate::types::UpdateAbpV10X>,
+    pub abp_v1_0_x: ::std::option::Option<crate::types::UpdateAbpV10X>,
     /// <p>FPorts object for the positioning information of the device.</p>
     #[doc(hidden)]
-    pub f_ports: std::option::Option<crate::types::UpdateFPorts>,
+    pub f_ports: ::std::option::Option<crate::types::UpdateFPorts>,
 }
 impl LoRaWanUpdateDevice {
     /// <p>The ID of the device profile for the wireless device.</p>
-    pub fn device_profile_id(&self) -> std::option::Option<&str> {
+    pub fn device_profile_id(&self) -> ::std::option::Option<&str> {
         self.device_profile_id.as_deref()
     }
     /// <p>The ID of the service profile.</p>
-    pub fn service_profile_id(&self) -> std::option::Option<&str> {
+    pub fn service_profile_id(&self) -> ::std::option::Option<&str> {
         self.service_profile_id.as_deref()
     }
     /// <p>ABP device object for update APIs for v1.1</p>
-    pub fn abp_v1_1(&self) -> std::option::Option<&crate::types::UpdateAbpV11> {
+    pub fn abp_v1_1(&self) -> ::std::option::Option<&crate::types::UpdateAbpV11> {
         self.abp_v1_1.as_ref()
     }
     /// <p>ABP device object for update APIs for v1.0.x</p>
-    pub fn abp_v1_0_x(&self) -> std::option::Option<&crate::types::UpdateAbpV10X> {
+    pub fn abp_v1_0_x(&self) -> ::std::option::Option<&crate::types::UpdateAbpV10X> {
         self.abp_v1_0_x.as_ref()
     }
     /// <p>FPorts object for the positioning information of the device.</p>
-    pub fn f_ports(&self) -> std::option::Option<&crate::types::UpdateFPorts> {
+    pub fn f_ports(&self) -> ::std::option::Option<&crate::types::UpdateFPorts> {
         self.f_ports.as_ref()
     }
 }
@@ -51,71 +51,82 @@ impl LoRaWanUpdateDevice {
 
 /// A builder for [`LoRaWanUpdateDevice`](crate::types::LoRaWanUpdateDevice).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LoRaWanUpdateDeviceBuilder {
-    pub(crate) device_profile_id: std::option::Option<std::string::String>,
-    pub(crate) service_profile_id: std::option::Option<std::string::String>,
-    pub(crate) abp_v1_1: std::option::Option<crate::types::UpdateAbpV11>,
-    pub(crate) abp_v1_0_x: std::option::Option<crate::types::UpdateAbpV10X>,
-    pub(crate) f_ports: std::option::Option<crate::types::UpdateFPorts>,
+    pub(crate) device_profile_id: ::std::option::Option<::std::string::String>,
+    pub(crate) service_profile_id: ::std::option::Option<::std::string::String>,
+    pub(crate) abp_v1_1: ::std::option::Option<crate::types::UpdateAbpV11>,
+    pub(crate) abp_v1_0_x: ::std::option::Option<crate::types::UpdateAbpV10X>,
+    pub(crate) f_ports: ::std::option::Option<crate::types::UpdateFPorts>,
 }
 impl LoRaWanUpdateDeviceBuilder {
     /// <p>The ID of the device profile for the wireless device.</p>
-    pub fn device_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.device_profile_id = Some(input.into());
+    pub fn device_profile_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.device_profile_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the device profile for the wireless device.</p>
     pub fn set_device_profile_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.device_profile_id = input;
         self
     }
     /// <p>The ID of the service profile.</p>
-    pub fn service_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.service_profile_id = Some(input.into());
+    pub fn service_profile_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.service_profile_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the service profile.</p>
     pub fn set_service_profile_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.service_profile_id = input;
         self
     }
     /// <p>ABP device object for update APIs for v1.1</p>
     pub fn abp_v1_1(mut self, input: crate::types::UpdateAbpV11) -> Self {
-        self.abp_v1_1 = Some(input);
+        self.abp_v1_1 = ::std::option::Option::Some(input);
         self
     }
     /// <p>ABP device object for update APIs for v1.1</p>
-    pub fn set_abp_v1_1(mut self, input: std::option::Option<crate::types::UpdateAbpV11>) -> Self {
+    pub fn set_abp_v1_1(
+        mut self,
+        input: ::std::option::Option<crate::types::UpdateAbpV11>,
+    ) -> Self {
         self.abp_v1_1 = input;
         self
     }
     /// <p>ABP device object for update APIs for v1.0.x</p>
     pub fn abp_v1_0_x(mut self, input: crate::types::UpdateAbpV10X) -> Self {
-        self.abp_v1_0_x = Some(input);
+        self.abp_v1_0_x = ::std::option::Option::Some(input);
         self
     }
     /// <p>ABP device object for update APIs for v1.0.x</p>
     pub fn set_abp_v1_0_x(
         mut self,
-        input: std::option::Option<crate::types::UpdateAbpV10X>,
+        input: ::std::option::Option<crate::types::UpdateAbpV10X>,
     ) -> Self {
         self.abp_v1_0_x = input;
         self
     }
     /// <p>FPorts object for the positioning information of the device.</p>
     pub fn f_ports(mut self, input: crate::types::UpdateFPorts) -> Self {
-        self.f_ports = Some(input);
+        self.f_ports = ::std::option::Option::Some(input);
         self
     }
     /// <p>FPorts object for the positioning information of the device.</p>
-    pub fn set_f_ports(mut self, input: std::option::Option<crate::types::UpdateFPorts>) -> Self {
+    pub fn set_f_ports(mut self, input: ::std::option::Option<crate::types::UpdateFPorts>) -> Self {
         self.f_ports = input;
         self
     }

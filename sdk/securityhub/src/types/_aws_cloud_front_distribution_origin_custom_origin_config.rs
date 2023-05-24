@@ -2,7 +2,7 @@
 
 /// <p>A custom origin. A custom origin is any origin that is not an Amazon S3 bucket, with one exception. An Amazon S3 bucket that is <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html">configured with static website hosting</a> is a custom origin. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsCloudFrontDistributionOriginCustomOriginConfig {
     /// <p>The HTTP port that CloudFront uses to connect to the origin. </p>
     #[doc(hidden)]
@@ -15,14 +15,14 @@ pub struct AwsCloudFrontDistributionOriginCustomOriginConfig {
     pub origin_keepalive_timeout: i32,
     /// <p>Specifies the protocol (HTTP or HTTPS) that CloudFront uses to connect to the origin. </p>
     #[doc(hidden)]
-    pub origin_protocol_policy: std::option::Option<std::string::String>,
+    pub origin_protocol_policy: ::std::option::Option<::std::string::String>,
     /// <p>Specifies how long, in seconds, CloudFront waits for a response from the origin. </p>
     #[doc(hidden)]
     pub origin_read_timeout: i32,
     /// <p>Specifies the minimum SSL/TLS protocol that CloudFront uses when connecting to your origin over HTTPS. </p>
     #[doc(hidden)]
     pub origin_ssl_protocols:
-        std::option::Option<crate::types::AwsCloudFrontDistributionOriginSslProtocols>,
+        ::std::option::Option<crate::types::AwsCloudFrontDistributionOriginSslProtocols>,
 }
 impl AwsCloudFrontDistributionOriginCustomOriginConfig {
     /// <p>The HTTP port that CloudFront uses to connect to the origin. </p>
@@ -38,7 +38,7 @@ impl AwsCloudFrontDistributionOriginCustomOriginConfig {
         self.origin_keepalive_timeout
     }
     /// <p>Specifies the protocol (HTTP or HTTPS) that CloudFront uses to connect to the origin. </p>
-    pub fn origin_protocol_policy(&self) -> std::option::Option<&str> {
+    pub fn origin_protocol_policy(&self) -> ::std::option::Option<&str> {
         self.origin_protocol_policy.as_deref()
     }
     /// <p>Specifies how long, in seconds, CloudFront waits for a response from the origin. </p>
@@ -48,7 +48,7 @@ impl AwsCloudFrontDistributionOriginCustomOriginConfig {
     /// <p>Specifies the minimum SSL/TLS protocol that CloudFront uses when connecting to your origin over HTTPS. </p>
     pub fn origin_ssl_protocols(
         &self,
-    ) -> std::option::Option<&crate::types::AwsCloudFrontDistributionOriginSslProtocols> {
+    ) -> ::std::option::Option<&crate::types::AwsCloudFrontDistributionOriginSslProtocols> {
         self.origin_ssl_protocols.as_ref()
     }
 }
@@ -62,67 +62,72 @@ impl AwsCloudFrontDistributionOriginCustomOriginConfig {
 
 /// A builder for [`AwsCloudFrontDistributionOriginCustomOriginConfig`](crate::types::AwsCloudFrontDistributionOriginCustomOriginConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsCloudFrontDistributionOriginCustomOriginConfigBuilder {
-    pub(crate) http_port: std::option::Option<i32>,
-    pub(crate) https_port: std::option::Option<i32>,
-    pub(crate) origin_keepalive_timeout: std::option::Option<i32>,
-    pub(crate) origin_protocol_policy: std::option::Option<std::string::String>,
-    pub(crate) origin_read_timeout: std::option::Option<i32>,
+    pub(crate) http_port: ::std::option::Option<i32>,
+    pub(crate) https_port: ::std::option::Option<i32>,
+    pub(crate) origin_keepalive_timeout: ::std::option::Option<i32>,
+    pub(crate) origin_protocol_policy: ::std::option::Option<::std::string::String>,
+    pub(crate) origin_read_timeout: ::std::option::Option<i32>,
     pub(crate) origin_ssl_protocols:
-        std::option::Option<crate::types::AwsCloudFrontDistributionOriginSslProtocols>,
+        ::std::option::Option<crate::types::AwsCloudFrontDistributionOriginSslProtocols>,
 }
 impl AwsCloudFrontDistributionOriginCustomOriginConfigBuilder {
     /// <p>The HTTP port that CloudFront uses to connect to the origin. </p>
     pub fn http_port(mut self, input: i32) -> Self {
-        self.http_port = Some(input);
+        self.http_port = ::std::option::Option::Some(input);
         self
     }
     /// <p>The HTTP port that CloudFront uses to connect to the origin. </p>
-    pub fn set_http_port(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_http_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.http_port = input;
         self
     }
     /// <p>The HTTPS port that CloudFront uses to connect to the origin. </p>
     pub fn https_port(mut self, input: i32) -> Self {
-        self.https_port = Some(input);
+        self.https_port = ::std::option::Option::Some(input);
         self
     }
     /// <p>The HTTPS port that CloudFront uses to connect to the origin. </p>
-    pub fn set_https_port(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_https_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.https_port = input;
         self
     }
     /// <p>Specifies how long, in seconds, CloudFront persists its connection to the origin. </p>
     pub fn origin_keepalive_timeout(mut self, input: i32) -> Self {
-        self.origin_keepalive_timeout = Some(input);
+        self.origin_keepalive_timeout = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies how long, in seconds, CloudFront persists its connection to the origin. </p>
-    pub fn set_origin_keepalive_timeout(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_origin_keepalive_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
         self.origin_keepalive_timeout = input;
         self
     }
     /// <p>Specifies the protocol (HTTP or HTTPS) that CloudFront uses to connect to the origin. </p>
-    pub fn origin_protocol_policy(mut self, input: impl Into<std::string::String>) -> Self {
-        self.origin_protocol_policy = Some(input.into());
+    pub fn origin_protocol_policy(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.origin_protocol_policy = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the protocol (HTTP or HTTPS) that CloudFront uses to connect to the origin. </p>
     pub fn set_origin_protocol_policy(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.origin_protocol_policy = input;
         self
     }
     /// <p>Specifies how long, in seconds, CloudFront waits for a response from the origin. </p>
     pub fn origin_read_timeout(mut self, input: i32) -> Self {
-        self.origin_read_timeout = Some(input);
+        self.origin_read_timeout = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies how long, in seconds, CloudFront waits for a response from the origin. </p>
-    pub fn set_origin_read_timeout(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_origin_read_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
         self.origin_read_timeout = input;
         self
     }
@@ -131,13 +136,13 @@ impl AwsCloudFrontDistributionOriginCustomOriginConfigBuilder {
         mut self,
         input: crate::types::AwsCloudFrontDistributionOriginSslProtocols,
     ) -> Self {
-        self.origin_ssl_protocols = Some(input);
+        self.origin_ssl_protocols = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the minimum SSL/TLS protocol that CloudFront uses when connecting to your origin over HTTPS. </p>
     pub fn set_origin_ssl_protocols(
         mut self,
-        input: std::option::Option<crate::types::AwsCloudFrontDistributionOriginSslProtocols>,
+        input: ::std::option::Option<crate::types::AwsCloudFrontDistributionOriginSslProtocols>,
     ) -> Self {
         self.origin_ssl_protocols = input;
         self

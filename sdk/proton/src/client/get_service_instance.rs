@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetServiceInstance`](crate::operation::get_service_instance::builders::GetServiceInstanceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::get_service_instance::builders::GetServiceInstanceFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_service_instance::builders::GetServiceInstanceFluentBuilder::set_name): <p>The name of a service instance that you want to get the detailed data for.</p>
-    ///   - [`service_name(impl Into<String>)`](crate::operation::get_service_instance::builders::GetServiceInstanceFluentBuilder::service_name) / [`set_service_name(Option<String>)`](crate::operation::get_service_instance::builders::GetServiceInstanceFluentBuilder::set_service_name): <p>The name of the service that you want the service instance input for.</p>
+    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::get_service_instance::builders::GetServiceInstanceFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_service_instance::builders::GetServiceInstanceFluentBuilder::set_name): <p>The name of a service instance that you want to get the detailed data for.</p>
+    ///   - [`service_name(impl ::std::convert::Into<String>)`](crate::operation::get_service_instance::builders::GetServiceInstanceFluentBuilder::service_name) / [`set_service_name(Option<String>)`](crate::operation::get_service_instance::builders::GetServiceInstanceFluentBuilder::set_service_name): <p>The name of the service that you want the service instance input for.</p>
     /// - On success, responds with [`GetServiceInstanceOutput`](crate::operation::get_service_instance::GetServiceInstanceOutput) with field(s):
     ///   - [`service_instance(Option<ServiceInstance>)`](crate::operation::get_service_instance::GetServiceInstanceOutput::service_instance): <p>The detailed data of the requested service instance.</p>
     /// - On failure, responds with [`SdkError<GetServiceInstanceError>`](crate::operation::get_service_instance::GetServiceInstanceError)

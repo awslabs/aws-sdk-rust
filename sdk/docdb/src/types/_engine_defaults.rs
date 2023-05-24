@@ -2,29 +2,29 @@
 
 /// <p>Contains the result of a successful invocation of the <code>DescribeEngineDefaultClusterParameters</code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EngineDefaults {
     /// <p>The name of the cluster parameter group family to return the engine parameter information for.</p>
     #[doc(hidden)]
-    pub db_parameter_group_family: std::option::Option<std::string::String>,
+    pub db_parameter_group_family: ::std::option::Option<::std::string::String>,
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     #[doc(hidden)]
-    pub marker: std::option::Option<std::string::String>,
+    pub marker: ::std::option::Option<::std::string::String>,
     /// <p>The parameters of a particular cluster parameter group family.</p>
     #[doc(hidden)]
-    pub parameters: std::option::Option<std::vec::Vec<crate::types::Parameter>>,
+    pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
 }
 impl EngineDefaults {
     /// <p>The name of the cluster parameter group family to return the engine parameter information for.</p>
-    pub fn db_parameter_group_family(&self) -> std::option::Option<&str> {
+    pub fn db_parameter_group_family(&self) -> ::std::option::Option<&str> {
         self.db_parameter_group_family.as_deref()
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
     /// <p>The parameters of a particular cluster parameter group family.</p>
-    pub fn parameters(&self) -> std::option::Option<&[crate::types::Parameter]> {
+    pub fn parameters(&self) -> ::std::option::Option<&[crate::types::Parameter]> {
         self.parameters.as_deref()
     }
 }
@@ -37,33 +37,38 @@ impl EngineDefaults {
 
 /// A builder for [`EngineDefaults`](crate::types::EngineDefaults).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EngineDefaultsBuilder {
-    pub(crate) db_parameter_group_family: std::option::Option<std::string::String>,
-    pub(crate) marker: std::option::Option<std::string::String>,
-    pub(crate) parameters: std::option::Option<std::vec::Vec<crate::types::Parameter>>,
+    pub(crate) db_parameter_group_family: ::std::option::Option<::std::string::String>,
+    pub(crate) marker: ::std::option::Option<::std::string::String>,
+    pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
 }
 impl EngineDefaultsBuilder {
     /// <p>The name of the cluster parameter group family to return the engine parameter information for.</p>
-    pub fn db_parameter_group_family(mut self, input: impl Into<std::string::String>) -> Self {
-        self.db_parameter_group_family = Some(input.into());
+    pub fn db_parameter_group_family(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.db_parameter_group_family = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the cluster parameter group family to return the engine parameter information for.</p>
     pub fn set_db_parameter_group_family(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.db_parameter_group_family = input;
         self
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-        self.marker = Some(input.into());
+    pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
     }
@@ -75,13 +80,13 @@ impl EngineDefaultsBuilder {
     pub fn parameters(mut self, input: crate::types::Parameter) -> Self {
         let mut v = self.parameters.unwrap_or_default();
         v.push(input);
-        self.parameters = Some(v);
+        self.parameters = ::std::option::Option::Some(v);
         self
     }
     /// <p>The parameters of a particular cluster parameter group family.</p>
     pub fn set_parameters(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Parameter>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Parameter>>,
     ) -> Self {
         self.parameters = input;
         self

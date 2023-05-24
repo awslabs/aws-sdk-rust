@@ -2,42 +2,42 @@
 
 /// <p>Describes a block device mapping.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BlockDeviceMapping {
     /// <p>The name of the instance store volume (virtual device) to attach to an instance at launch. The name must be in the form ephemeral<i>X</i> where <i>X</i> is a number starting from zero (0), for example, <code>ephemeral0</code>.</p>
     #[doc(hidden)]
-    pub virtual_name: std::option::Option<std::string::String>,
+    pub virtual_name: ::std::option::Option<::std::string::String>,
     /// <p>The device name assigned to the volume (for example, <code>/dev/sdh</code> or <code>xvdh</code>). For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/device_naming.html">Device naming on Linux instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p> <note>
     /// <p>To define a block device mapping, set the device name and exactly one of the following properties: <code>Ebs</code>, <code>NoDevice</code>, or <code>VirtualName</code>.</p>
     /// </note>
     #[doc(hidden)]
-    pub device_name: std::option::Option<std::string::String>,
+    pub device_name: ::std::option::Option<::std::string::String>,
     /// <p>Information to attach an EBS volume to an instance at launch.</p>
     #[doc(hidden)]
-    pub ebs: std::option::Option<crate::types::Ebs>,
+    pub ebs: ::std::option::Option<crate::types::Ebs>,
     /// <p>Setting this value to <code>true</code> prevents a volume that is included in the block device mapping of the AMI from being mapped to the specified device name at launch.</p>
     /// <p>If <code>NoDevice</code> is <code>true</code> for the root device, instances might fail the EC2 health check. In that case, Amazon EC2 Auto Scaling launches replacement instances.</p>
     #[doc(hidden)]
-    pub no_device: std::option::Option<bool>,
+    pub no_device: ::std::option::Option<bool>,
 }
 impl BlockDeviceMapping {
     /// <p>The name of the instance store volume (virtual device) to attach to an instance at launch. The name must be in the form ephemeral<i>X</i> where <i>X</i> is a number starting from zero (0), for example, <code>ephemeral0</code>.</p>
-    pub fn virtual_name(&self) -> std::option::Option<&str> {
+    pub fn virtual_name(&self) -> ::std::option::Option<&str> {
         self.virtual_name.as_deref()
     }
     /// <p>The device name assigned to the volume (for example, <code>/dev/sdh</code> or <code>xvdh</code>). For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/device_naming.html">Device naming on Linux instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p> <note>
     /// <p>To define a block device mapping, set the device name and exactly one of the following properties: <code>Ebs</code>, <code>NoDevice</code>, or <code>VirtualName</code>.</p>
     /// </note>
-    pub fn device_name(&self) -> std::option::Option<&str> {
+    pub fn device_name(&self) -> ::std::option::Option<&str> {
         self.device_name.as_deref()
     }
     /// <p>Information to attach an EBS volume to an instance at launch.</p>
-    pub fn ebs(&self) -> std::option::Option<&crate::types::Ebs> {
+    pub fn ebs(&self) -> ::std::option::Option<&crate::types::Ebs> {
         self.ebs.as_ref()
     }
     /// <p>Setting this value to <code>true</code> prevents a volume that is included in the block device mapping of the AMI from being mapped to the specified device name at launch.</p>
     /// <p>If <code>NoDevice</code> is <code>true</code> for the root device, instances might fail the EC2 health check. In that case, Amazon EC2 Auto Scaling launches replacement instances.</p>
-    pub fn no_device(&self) -> std::option::Option<bool> {
+    pub fn no_device(&self) -> ::std::option::Option<bool> {
         self.no_device
     }
 }
@@ -50,57 +50,59 @@ impl BlockDeviceMapping {
 
 /// A builder for [`BlockDeviceMapping`](crate::types::BlockDeviceMapping).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BlockDeviceMappingBuilder {
-    pub(crate) virtual_name: std::option::Option<std::string::String>,
-    pub(crate) device_name: std::option::Option<std::string::String>,
-    pub(crate) ebs: std::option::Option<crate::types::Ebs>,
-    pub(crate) no_device: std::option::Option<bool>,
+    pub(crate) virtual_name: ::std::option::Option<::std::string::String>,
+    pub(crate) device_name: ::std::option::Option<::std::string::String>,
+    pub(crate) ebs: ::std::option::Option<crate::types::Ebs>,
+    pub(crate) no_device: ::std::option::Option<bool>,
 }
 impl BlockDeviceMappingBuilder {
     /// <p>The name of the instance store volume (virtual device) to attach to an instance at launch. The name must be in the form ephemeral<i>X</i> where <i>X</i> is a number starting from zero (0), for example, <code>ephemeral0</code>.</p>
-    pub fn virtual_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.virtual_name = Some(input.into());
+    pub fn virtual_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.virtual_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the instance store volume (virtual device) to attach to an instance at launch. The name must be in the form ephemeral<i>X</i> where <i>X</i> is a number starting from zero (0), for example, <code>ephemeral0</code>.</p>
-    pub fn set_virtual_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_virtual_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.virtual_name = input;
         self
     }
     /// <p>The device name assigned to the volume (for example, <code>/dev/sdh</code> or <code>xvdh</code>). For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/device_naming.html">Device naming on Linux instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p> <note>
     /// <p>To define a block device mapping, set the device name and exactly one of the following properties: <code>Ebs</code>, <code>NoDevice</code>, or <code>VirtualName</code>.</p>
     /// </note>
-    pub fn device_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.device_name = Some(input.into());
+    pub fn device_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.device_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The device name assigned to the volume (for example, <code>/dev/sdh</code> or <code>xvdh</code>). For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/device_naming.html">Device naming on Linux instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p> <note>
     /// <p>To define a block device mapping, set the device name and exactly one of the following properties: <code>Ebs</code>, <code>NoDevice</code>, or <code>VirtualName</code>.</p>
     /// </note>
-    pub fn set_device_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_device_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_name = input;
         self
     }
     /// <p>Information to attach an EBS volume to an instance at launch.</p>
     pub fn ebs(mut self, input: crate::types::Ebs) -> Self {
-        self.ebs = Some(input);
+        self.ebs = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information to attach an EBS volume to an instance at launch.</p>
-    pub fn set_ebs(mut self, input: std::option::Option<crate::types::Ebs>) -> Self {
+    pub fn set_ebs(mut self, input: ::std::option::Option<crate::types::Ebs>) -> Self {
         self.ebs = input;
         self
     }
     /// <p>Setting this value to <code>true</code> prevents a volume that is included in the block device mapping of the AMI from being mapped to the specified device name at launch.</p>
     /// <p>If <code>NoDevice</code> is <code>true</code> for the root device, instances might fail the EC2 health check. In that case, Amazon EC2 Auto Scaling launches replacement instances.</p>
     pub fn no_device(mut self, input: bool) -> Self {
-        self.no_device = Some(input);
+        self.no_device = ::std::option::Option::Some(input);
         self
     }
     /// <p>Setting this value to <code>true</code> prevents a volume that is included in the block device mapping of the AMI from being mapped to the specified device name at launch.</p>
     /// <p>If <code>NoDevice</code> is <code>true</code> for the root device, instances might fail the EC2 health check. In that case, Amazon EC2 Auto Scaling launches replacement instances.</p>
-    pub fn set_no_device(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_no_device(mut self, input: ::std::option::Option<bool>) -> Self {
         self.no_device = input;
         self
     }

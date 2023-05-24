@@ -2,7 +2,7 @@
 
 /// <p>Statistics about the Identity Resolution Job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobStats {
     /// <p>The number of profiles reviewed.</p>
     #[doc(hidden)]
@@ -37,40 +37,42 @@ impl JobStats {
 
 /// A builder for [`JobStats`](crate::types::JobStats).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct JobStatsBuilder {
-    pub(crate) number_of_profiles_reviewed: std::option::Option<i64>,
-    pub(crate) number_of_matches_found: std::option::Option<i64>,
-    pub(crate) number_of_merges_done: std::option::Option<i64>,
+    pub(crate) number_of_profiles_reviewed: ::std::option::Option<i64>,
+    pub(crate) number_of_matches_found: ::std::option::Option<i64>,
+    pub(crate) number_of_merges_done: ::std::option::Option<i64>,
 }
 impl JobStatsBuilder {
     /// <p>The number of profiles reviewed.</p>
     pub fn number_of_profiles_reviewed(mut self, input: i64) -> Self {
-        self.number_of_profiles_reviewed = Some(input);
+        self.number_of_profiles_reviewed = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of profiles reviewed.</p>
-    pub fn set_number_of_profiles_reviewed(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_number_of_profiles_reviewed(mut self, input: ::std::option::Option<i64>) -> Self {
         self.number_of_profiles_reviewed = input;
         self
     }
     /// <p>The number of matches found.</p>
     pub fn number_of_matches_found(mut self, input: i64) -> Self {
-        self.number_of_matches_found = Some(input);
+        self.number_of_matches_found = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of matches found.</p>
-    pub fn set_number_of_matches_found(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_number_of_matches_found(mut self, input: ::std::option::Option<i64>) -> Self {
         self.number_of_matches_found = input;
         self
     }
     /// <p>The number of merges completed.</p>
     pub fn number_of_merges_done(mut self, input: i64) -> Self {
-        self.number_of_merges_done = Some(input);
+        self.number_of_merges_done = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of merges completed.</p>
-    pub fn set_number_of_merges_done(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_number_of_merges_done(mut self, input: ::std::option::Option<i64>) -> Self {
         self.number_of_merges_done = input;
         self
     }

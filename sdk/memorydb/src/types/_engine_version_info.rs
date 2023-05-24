@@ -2,29 +2,29 @@
 
 /// <p>Provides details of the Redis engine version</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EngineVersionInfo {
     /// <p>The engine version</p>
     #[doc(hidden)]
-    pub engine_version: std::option::Option<std::string::String>,
+    pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The patched engine version</p>
     #[doc(hidden)]
-    pub engine_patch_version: std::option::Option<std::string::String>,
+    pub engine_patch_version: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the name of the parameter group family to which the engine default parameters apply.</p>
     #[doc(hidden)]
-    pub parameter_group_family: std::option::Option<std::string::String>,
+    pub parameter_group_family: ::std::option::Option<::std::string::String>,
 }
 impl EngineVersionInfo {
     /// <p>The engine version</p>
-    pub fn engine_version(&self) -> std::option::Option<&str> {
+    pub fn engine_version(&self) -> ::std::option::Option<&str> {
         self.engine_version.as_deref()
     }
     /// <p>The patched engine version</p>
-    pub fn engine_patch_version(&self) -> std::option::Option<&str> {
+    pub fn engine_patch_version(&self) -> ::std::option::Option<&str> {
         self.engine_patch_version.as_deref()
     }
     /// <p>Specifies the name of the parameter group family to which the engine default parameters apply.</p>
-    pub fn parameter_group_family(&self) -> std::option::Option<&str> {
+    pub fn parameter_group_family(&self) -> ::std::option::Option<&str> {
         self.parameter_group_family.as_deref()
     }
 }
@@ -37,45 +37,59 @@ impl EngineVersionInfo {
 
 /// A builder for [`EngineVersionInfo`](crate::types::EngineVersionInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EngineVersionInfoBuilder {
-    pub(crate) engine_version: std::option::Option<std::string::String>,
-    pub(crate) engine_patch_version: std::option::Option<std::string::String>,
-    pub(crate) parameter_group_family: std::option::Option<std::string::String>,
+    pub(crate) engine_version: ::std::option::Option<::std::string::String>,
+    pub(crate) engine_patch_version: ::std::option::Option<::std::string::String>,
+    pub(crate) parameter_group_family: ::std::option::Option<::std::string::String>,
 }
 impl EngineVersionInfoBuilder {
     /// <p>The engine version</p>
-    pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.engine_version = Some(input.into());
+    pub fn engine_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.engine_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The engine version</p>
-    pub fn set_engine_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_engine_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.engine_version = input;
         self
     }
     /// <p>The patched engine version</p>
-    pub fn engine_patch_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.engine_patch_version = Some(input.into());
+    pub fn engine_patch_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.engine_patch_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The patched engine version</p>
     pub fn set_engine_patch_version(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.engine_patch_version = input;
         self
     }
     /// <p>Specifies the name of the parameter group family to which the engine default parameters apply.</p>
-    pub fn parameter_group_family(mut self, input: impl Into<std::string::String>) -> Self {
-        self.parameter_group_family = Some(input.into());
+    pub fn parameter_group_family(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.parameter_group_family = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the name of the parameter group family to which the engine default parameters apply.</p>
     pub fn set_parameter_group_family(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.parameter_group_family = input;
         self

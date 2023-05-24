@@ -2,38 +2,38 @@
 
 /// <p>Specifies a file system data source for a channel.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FileSystemDataSource {
     /// <p>The file system id.</p>
     #[doc(hidden)]
-    pub file_system_id: std::option::Option<std::string::String>,
+    pub file_system_id: ::std::option::Option<::std::string::String>,
     /// <p>The access mode of the mount of the directory associated with the channel. A directory can be mounted either in <code>ro</code> (read-only) or <code>rw</code> (read-write) mode.</p>
     #[doc(hidden)]
-    pub file_system_access_mode: std::option::Option<crate::types::FileSystemAccessMode>,
+    pub file_system_access_mode: ::std::option::Option<crate::types::FileSystemAccessMode>,
     /// <p>The file system type. </p>
     #[doc(hidden)]
-    pub file_system_type: std::option::Option<crate::types::FileSystemType>,
+    pub file_system_type: ::std::option::Option<crate::types::FileSystemType>,
     /// <p>The full path to the directory to associate with the channel.</p>
     #[doc(hidden)]
-    pub directory_path: std::option::Option<std::string::String>,
+    pub directory_path: ::std::option::Option<::std::string::String>,
 }
 impl FileSystemDataSource {
     /// <p>The file system id.</p>
-    pub fn file_system_id(&self) -> std::option::Option<&str> {
+    pub fn file_system_id(&self) -> ::std::option::Option<&str> {
         self.file_system_id.as_deref()
     }
     /// <p>The access mode of the mount of the directory associated with the channel. A directory can be mounted either in <code>ro</code> (read-only) or <code>rw</code> (read-write) mode.</p>
     pub fn file_system_access_mode(
         &self,
-    ) -> std::option::Option<&crate::types::FileSystemAccessMode> {
+    ) -> ::std::option::Option<&crate::types::FileSystemAccessMode> {
         self.file_system_access_mode.as_ref()
     }
     /// <p>The file system type. </p>
-    pub fn file_system_type(&self) -> std::option::Option<&crate::types::FileSystemType> {
+    pub fn file_system_type(&self) -> ::std::option::Option<&crate::types::FileSystemType> {
         self.file_system_type.as_ref()
     }
     /// <p>The full path to the directory to associate with the channel.</p>
-    pub fn directory_path(&self) -> std::option::Option<&str> {
+    pub fn directory_path(&self) -> ::std::option::Option<&str> {
         self.directory_path.as_deref()
     }
 }
@@ -46,57 +46,71 @@ impl FileSystemDataSource {
 
 /// A builder for [`FileSystemDataSource`](crate::types::FileSystemDataSource).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FileSystemDataSourceBuilder {
-    pub(crate) file_system_id: std::option::Option<std::string::String>,
-    pub(crate) file_system_access_mode: std::option::Option<crate::types::FileSystemAccessMode>,
-    pub(crate) file_system_type: std::option::Option<crate::types::FileSystemType>,
-    pub(crate) directory_path: std::option::Option<std::string::String>,
+    pub(crate) file_system_id: ::std::option::Option<::std::string::String>,
+    pub(crate) file_system_access_mode: ::std::option::Option<crate::types::FileSystemAccessMode>,
+    pub(crate) file_system_type: ::std::option::Option<crate::types::FileSystemType>,
+    pub(crate) directory_path: ::std::option::Option<::std::string::String>,
 }
 impl FileSystemDataSourceBuilder {
     /// <p>The file system id.</p>
-    pub fn file_system_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.file_system_id = Some(input.into());
+    pub fn file_system_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.file_system_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The file system id.</p>
-    pub fn set_file_system_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_file_system_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.file_system_id = input;
         self
     }
     /// <p>The access mode of the mount of the directory associated with the channel. A directory can be mounted either in <code>ro</code> (read-only) or <code>rw</code> (read-write) mode.</p>
     pub fn file_system_access_mode(mut self, input: crate::types::FileSystemAccessMode) -> Self {
-        self.file_system_access_mode = Some(input);
+        self.file_system_access_mode = ::std::option::Option::Some(input);
         self
     }
     /// <p>The access mode of the mount of the directory associated with the channel. A directory can be mounted either in <code>ro</code> (read-only) or <code>rw</code> (read-write) mode.</p>
     pub fn set_file_system_access_mode(
         mut self,
-        input: std::option::Option<crate::types::FileSystemAccessMode>,
+        input: ::std::option::Option<crate::types::FileSystemAccessMode>,
     ) -> Self {
         self.file_system_access_mode = input;
         self
     }
     /// <p>The file system type. </p>
     pub fn file_system_type(mut self, input: crate::types::FileSystemType) -> Self {
-        self.file_system_type = Some(input);
+        self.file_system_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The file system type. </p>
     pub fn set_file_system_type(
         mut self,
-        input: std::option::Option<crate::types::FileSystemType>,
+        input: ::std::option::Option<crate::types::FileSystemType>,
     ) -> Self {
         self.file_system_type = input;
         self
     }
     /// <p>The full path to the directory to associate with the channel.</p>
-    pub fn directory_path(mut self, input: impl Into<std::string::String>) -> Self {
-        self.directory_path = Some(input.into());
+    pub fn directory_path(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.directory_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The full path to the directory to associate with the channel.</p>
-    pub fn set_directory_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_directory_path(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.directory_path = input;
         self
     }

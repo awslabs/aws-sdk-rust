@@ -2,36 +2,36 @@
 
 /// <p>Specifies a target that uses Microsoft SQL.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MicrosoftSqlServerCatalogTarget {
     /// <p>The name of the data target.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The nodes that are inputs to the data target.</p>
     #[doc(hidden)]
-    pub inputs: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The name of the database to write to.</p>
     #[doc(hidden)]
-    pub database: std::option::Option<std::string::String>,
+    pub database: ::std::option::Option<::std::string::String>,
     /// <p>The name of the table in the database to write to.</p>
     #[doc(hidden)]
-    pub table: std::option::Option<std::string::String>,
+    pub table: ::std::option::Option<::std::string::String>,
 }
 impl MicrosoftSqlServerCatalogTarget {
     /// <p>The name of the data target.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The nodes that are inputs to the data target.</p>
-    pub fn inputs(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn inputs(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.inputs.as_deref()
     }
     /// <p>The name of the database to write to.</p>
-    pub fn database(&self) -> std::option::Option<&str> {
+    pub fn database(&self) -> ::std::option::Option<&str> {
         self.database.as_deref()
     }
     /// <p>The name of the table in the database to write to.</p>
-    pub fn table(&self) -> std::option::Option<&str> {
+    pub fn table(&self) -> ::std::option::Option<&str> {
         self.table.as_deref()
     }
 }
@@ -44,21 +44,23 @@ impl MicrosoftSqlServerCatalogTarget {
 
 /// A builder for [`MicrosoftSqlServerCatalogTarget`](crate::types::MicrosoftSqlServerCatalogTarget).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MicrosoftSqlServerCatalogTargetBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) inputs: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) database: std::option::Option<std::string::String>,
-    pub(crate) table: std::option::Option<std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) database: ::std::option::Option<::std::string::String>,
+    pub(crate) table: ::std::option::Option<::std::string::String>,
 }
 impl MicrosoftSqlServerCatalogTargetBuilder {
     /// <p>The name of the data target.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the data target.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
@@ -67,37 +69,37 @@ impl MicrosoftSqlServerCatalogTargetBuilder {
     /// To override the contents of this collection use [`set_inputs`](Self::set_inputs).
     ///
     /// <p>The nodes that are inputs to the data target.</p>
-    pub fn inputs(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn inputs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.inputs.unwrap_or_default();
         v.push(input.into());
-        self.inputs = Some(v);
+        self.inputs = ::std::option::Option::Some(v);
         self
     }
     /// <p>The nodes that are inputs to the data target.</p>
     pub fn set_inputs(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inputs = input;
         self
     }
     /// <p>The name of the database to write to.</p>
-    pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
-        self.database = Some(input.into());
+    pub fn database(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.database = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the database to write to.</p>
-    pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_database(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database = input;
         self
     }
     /// <p>The name of the table in the database to write to.</p>
-    pub fn table(mut self, input: impl Into<std::string::String>) -> Self {
-        self.table = Some(input.into());
+    pub fn table(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.table = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the table in the database to write to.</p>
-    pub fn set_table(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_table(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table = input;
         self
     }

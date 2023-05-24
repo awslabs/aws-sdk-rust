@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeConnections`](crate::operation::describe_connections::builders::DescribeConnectionsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`connection_id(impl Into<String>)`](crate::operation::describe_connections::builders::DescribeConnectionsFluentBuilder::connection_id) / [`set_connection_id(Option<String>)`](crate::operation::describe_connections::builders::DescribeConnectionsFluentBuilder::set_connection_id): <p>The ID of the connection.</p>
+    ///   - [`connection_id(impl ::std::convert::Into<String>)`](crate::operation::describe_connections::builders::DescribeConnectionsFluentBuilder::connection_id) / [`set_connection_id(Option<String>)`](crate::operation::describe_connections::builders::DescribeConnectionsFluentBuilder::set_connection_id): <p>The ID of the connection.</p>
     /// - On success, responds with [`DescribeConnectionsOutput`](crate::operation::describe_connections::DescribeConnectionsOutput) with field(s):
     ///   - [`connections(Option<Vec<Connection>>)`](crate::operation::describe_connections::DescribeConnectionsOutput::connections): <p>The connections.</p>
     /// - On failure, responds with [`SdkError<DescribeConnectionsError>`](crate::operation::describe_connections::DescribeConnectionsError)

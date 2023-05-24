@@ -2,27 +2,27 @@
 
 /// <p>List export errors response.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListExportErrorsOutput {
     /// <p>List export errors response items.</p>
     #[doc(hidden)]
-    pub items: std::option::Option<std::vec::Vec<crate::types::ExportTaskError>>,
+    pub items: ::std::option::Option<::std::vec::Vec<crate::types::ExportTaskError>>,
     /// <p>List export errors response next token.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListExportErrorsOutput {
     /// <p>List export errors response items.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::types::ExportTaskError]> {
+    pub fn items(&self) -> ::std::option::Option<&[crate::types::ExportTaskError]> {
         self.items.as_deref()
     }
     /// <p>List export errors response next token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListExportErrorsOutput {
+impl ::aws_http::request_id::RequestId for ListExportErrorsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -37,10 +37,12 @@ impl ListExportErrorsOutput {
 
 /// A builder for [`ListExportErrorsOutput`](crate::operation::list_export_errors::ListExportErrorsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListExportErrorsOutputBuilder {
-    pub(crate) items: std::option::Option<std::vec::Vec<crate::types::ExportTaskError>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::ExportTaskError>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListExportErrorsOutputBuilder {
@@ -52,24 +54,24 @@ impl ListExportErrorsOutputBuilder {
     pub fn items(mut self, input: crate::types::ExportTaskError) -> Self {
         let mut v = self.items.unwrap_or_default();
         v.push(input);
-        self.items = Some(v);
+        self.items = ::std::option::Option::Some(v);
         self
     }
     /// <p>List export errors response items.</p>
     pub fn set_items(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ExportTaskError>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ExportTaskError>>,
     ) -> Self {
         self.items = input;
         self
     }
     /// <p>List export errors response next token.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>List export errors response next token.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

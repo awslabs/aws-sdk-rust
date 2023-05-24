@@ -2,29 +2,29 @@
 
 /// <p>An object that filters items returned by a property request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PropertyFilter {
     /// <p>The property name associated with this property filter.</p>
     #[doc(hidden)]
-    pub property_name: std::option::Option<std::string::String>,
+    pub property_name: ::std::option::Option<::std::string::String>,
     /// <p>The operator associated with this property filter.</p>
     #[doc(hidden)]
-    pub operator: std::option::Option<std::string::String>,
+    pub operator: ::std::option::Option<::std::string::String>,
     /// <p>The value associated with this property filter.</p>
     #[doc(hidden)]
-    pub value: std::option::Option<crate::types::DataValue>,
+    pub value: ::std::option::Option<crate::types::DataValue>,
 }
 impl PropertyFilter {
     /// <p>The property name associated with this property filter.</p>
-    pub fn property_name(&self) -> std::option::Option<&str> {
+    pub fn property_name(&self) -> ::std::option::Option<&str> {
         self.property_name.as_deref()
     }
     /// <p>The operator associated with this property filter.</p>
-    pub fn operator(&self) -> std::option::Option<&str> {
+    pub fn operator(&self) -> ::std::option::Option<&str> {
         self.operator.as_deref()
     }
     /// <p>The value associated with this property filter.</p>
-    pub fn value(&self) -> std::option::Option<&crate::types::DataValue> {
+    pub fn value(&self) -> ::std::option::Option<&crate::types::DataValue> {
         self.value.as_ref()
     }
 }
@@ -37,40 +37,48 @@ impl PropertyFilter {
 
 /// A builder for [`PropertyFilter`](crate::types::PropertyFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PropertyFilterBuilder {
-    pub(crate) property_name: std::option::Option<std::string::String>,
-    pub(crate) operator: std::option::Option<std::string::String>,
-    pub(crate) value: std::option::Option<crate::types::DataValue>,
+    pub(crate) property_name: ::std::option::Option<::std::string::String>,
+    pub(crate) operator: ::std::option::Option<::std::string::String>,
+    pub(crate) value: ::std::option::Option<crate::types::DataValue>,
 }
 impl PropertyFilterBuilder {
     /// <p>The property name associated with this property filter.</p>
-    pub fn property_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.property_name = Some(input.into());
+    pub fn property_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.property_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The property name associated with this property filter.</p>
-    pub fn set_property_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_property_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.property_name = input;
         self
     }
     /// <p>The operator associated with this property filter.</p>
-    pub fn operator(mut self, input: impl Into<std::string::String>) -> Self {
-        self.operator = Some(input.into());
+    pub fn operator(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.operator = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The operator associated with this property filter.</p>
-    pub fn set_operator(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_operator(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.operator = input;
         self
     }
     /// <p>The value associated with this property filter.</p>
     pub fn value(mut self, input: crate::types::DataValue) -> Self {
-        self.value = Some(input);
+        self.value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The value associated with this property filter.</p>
-    pub fn set_value(mut self, input: std::option::Option<crate::types::DataValue>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<crate::types::DataValue>) -> Self {
         self.value = input;
         self
     }

@@ -2,36 +2,36 @@
 
 /// <p>Information about a network path component.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkPathComponent {
     /// <p>The identifier of a component in the network path.</p>
     #[doc(hidden)]
-    pub component_id: std::option::Option<std::string::String>,
+    pub component_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of component.</p>
     #[doc(hidden)]
-    pub component_type: std::option::Option<std::string::String>,
+    pub component_type: ::std::option::Option<::std::string::String>,
     /// <p>Information about the component that comes after the current component in the network path.</p>
     #[doc(hidden)]
-    pub egress: std::option::Option<crate::types::NetworkHeader>,
+    pub egress: ::std::option::Option<crate::types::NetworkHeader>,
     /// <p>Information about the component that comes before the current node in the network path.</p>
     #[doc(hidden)]
-    pub ingress: std::option::Option<crate::types::NetworkHeader>,
+    pub ingress: ::std::option::Option<crate::types::NetworkHeader>,
 }
 impl NetworkPathComponent {
     /// <p>The identifier of a component in the network path.</p>
-    pub fn component_id(&self) -> std::option::Option<&str> {
+    pub fn component_id(&self) -> ::std::option::Option<&str> {
         self.component_id.as_deref()
     }
     /// <p>The type of component.</p>
-    pub fn component_type(&self) -> std::option::Option<&str> {
+    pub fn component_type(&self) -> ::std::option::Option<&str> {
         self.component_type.as_deref()
     }
     /// <p>Information about the component that comes after the current component in the network path.</p>
-    pub fn egress(&self) -> std::option::Option<&crate::types::NetworkHeader> {
+    pub fn egress(&self) -> ::std::option::Option<&crate::types::NetworkHeader> {
         self.egress.as_ref()
     }
     /// <p>Information about the component that comes before the current node in the network path.</p>
-    pub fn ingress(&self) -> std::option::Option<&crate::types::NetworkHeader> {
+    pub fn ingress(&self) -> ::std::option::Option<&crate::types::NetworkHeader> {
         self.ingress.as_ref()
     }
 }
@@ -44,51 +44,62 @@ impl NetworkPathComponent {
 
 /// A builder for [`NetworkPathComponent`](crate::types::NetworkPathComponent).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NetworkPathComponentBuilder {
-    pub(crate) component_id: std::option::Option<std::string::String>,
-    pub(crate) component_type: std::option::Option<std::string::String>,
-    pub(crate) egress: std::option::Option<crate::types::NetworkHeader>,
-    pub(crate) ingress: std::option::Option<crate::types::NetworkHeader>,
+    pub(crate) component_id: ::std::option::Option<::std::string::String>,
+    pub(crate) component_type: ::std::option::Option<::std::string::String>,
+    pub(crate) egress: ::std::option::Option<crate::types::NetworkHeader>,
+    pub(crate) ingress: ::std::option::Option<crate::types::NetworkHeader>,
 }
 impl NetworkPathComponentBuilder {
     /// <p>The identifier of a component in the network path.</p>
-    pub fn component_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.component_id = Some(input.into());
+    pub fn component_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.component_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of a component in the network path.</p>
-    pub fn set_component_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_component_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.component_id = input;
         self
     }
     /// <p>The type of component.</p>
-    pub fn component_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.component_type = Some(input.into());
+    pub fn component_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.component_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of component.</p>
-    pub fn set_component_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_component_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.component_type = input;
         self
     }
     /// <p>Information about the component that comes after the current component in the network path.</p>
     pub fn egress(mut self, input: crate::types::NetworkHeader) -> Self {
-        self.egress = Some(input);
+        self.egress = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the component that comes after the current component in the network path.</p>
-    pub fn set_egress(mut self, input: std::option::Option<crate::types::NetworkHeader>) -> Self {
+    pub fn set_egress(mut self, input: ::std::option::Option<crate::types::NetworkHeader>) -> Self {
         self.egress = input;
         self
     }
     /// <p>Information about the component that comes before the current node in the network path.</p>
     pub fn ingress(mut self, input: crate::types::NetworkHeader) -> Self {
-        self.ingress = Some(input);
+        self.ingress = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the component that comes before the current node in the network path.</p>
-    pub fn set_ingress(mut self, input: std::option::Option<crate::types::NetworkHeader>) -> Self {
+    pub fn set_ingress(
+        mut self,
+        input: ::std::option::Option<crate::types::NetworkHeader>,
+    ) -> Self {
         self.ingress = input;
         self
     }

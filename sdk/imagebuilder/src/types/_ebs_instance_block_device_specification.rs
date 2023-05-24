@@ -2,64 +2,64 @@
 
 /// <p>Amazon EBS-specific block device mapping specifications.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EbsInstanceBlockDeviceSpecification {
     /// <p>Use to configure device encryption.</p>
     #[doc(hidden)]
-    pub encrypted: std::option::Option<bool>,
+    pub encrypted: ::std::option::Option<bool>,
     /// <p>Use to configure delete on termination of the associated device.</p>
     #[doc(hidden)]
-    pub delete_on_termination: std::option::Option<bool>,
+    pub delete_on_termination: ::std::option::Option<bool>,
     /// <p>Use to configure device IOPS.</p>
     #[doc(hidden)]
-    pub iops: std::option::Option<i32>,
+    pub iops: ::std::option::Option<i32>,
     /// <p>Use to configure the KMS key to use when encrypting the device.</p>
     #[doc(hidden)]
-    pub kms_key_id: std::option::Option<std::string::String>,
+    pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The snapshot that defines the device contents.</p>
     #[doc(hidden)]
-    pub snapshot_id: std::option::Option<std::string::String>,
+    pub snapshot_id: ::std::option::Option<::std::string::String>,
     /// <p>Use to override the device's volume size.</p>
     #[doc(hidden)]
-    pub volume_size: std::option::Option<i32>,
+    pub volume_size: ::std::option::Option<i32>,
     /// <p>Use to override the device's volume type.</p>
     #[doc(hidden)]
-    pub volume_type: std::option::Option<crate::types::EbsVolumeType>,
+    pub volume_type: ::std::option::Option<crate::types::EbsVolumeType>,
     /// <p> <b>For GP3 volumes only</b> – The throughput in MiB/s that the volume supports.</p>
     #[doc(hidden)]
-    pub throughput: std::option::Option<i32>,
+    pub throughput: ::std::option::Option<i32>,
 }
 impl EbsInstanceBlockDeviceSpecification {
     /// <p>Use to configure device encryption.</p>
-    pub fn encrypted(&self) -> std::option::Option<bool> {
+    pub fn encrypted(&self) -> ::std::option::Option<bool> {
         self.encrypted
     }
     /// <p>Use to configure delete on termination of the associated device.</p>
-    pub fn delete_on_termination(&self) -> std::option::Option<bool> {
+    pub fn delete_on_termination(&self) -> ::std::option::Option<bool> {
         self.delete_on_termination
     }
     /// <p>Use to configure device IOPS.</p>
-    pub fn iops(&self) -> std::option::Option<i32> {
+    pub fn iops(&self) -> ::std::option::Option<i32> {
         self.iops
     }
     /// <p>Use to configure the KMS key to use when encrypting the device.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The snapshot that defines the device contents.</p>
-    pub fn snapshot_id(&self) -> std::option::Option<&str> {
+    pub fn snapshot_id(&self) -> ::std::option::Option<&str> {
         self.snapshot_id.as_deref()
     }
     /// <p>Use to override the device's volume size.</p>
-    pub fn volume_size(&self) -> std::option::Option<i32> {
+    pub fn volume_size(&self) -> ::std::option::Option<i32> {
         self.volume_size
     }
     /// <p>Use to override the device's volume type.</p>
-    pub fn volume_type(&self) -> std::option::Option<&crate::types::EbsVolumeType> {
+    pub fn volume_type(&self) -> ::std::option::Option<&crate::types::EbsVolumeType> {
         self.volume_type.as_ref()
     }
     /// <p> <b>For GP3 volumes only</b> – The throughput in MiB/s that the volume supports.</p>
-    pub fn throughput(&self) -> std::option::Option<i32> {
+    pub fn throughput(&self) -> ::std::option::Option<i32> {
         self.throughput
     }
 }
@@ -72,98 +72,100 @@ impl EbsInstanceBlockDeviceSpecification {
 
 /// A builder for [`EbsInstanceBlockDeviceSpecification`](crate::types::EbsInstanceBlockDeviceSpecification).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EbsInstanceBlockDeviceSpecificationBuilder {
-    pub(crate) encrypted: std::option::Option<bool>,
-    pub(crate) delete_on_termination: std::option::Option<bool>,
-    pub(crate) iops: std::option::Option<i32>,
-    pub(crate) kms_key_id: std::option::Option<std::string::String>,
-    pub(crate) snapshot_id: std::option::Option<std::string::String>,
-    pub(crate) volume_size: std::option::Option<i32>,
-    pub(crate) volume_type: std::option::Option<crate::types::EbsVolumeType>,
-    pub(crate) throughput: std::option::Option<i32>,
+    pub(crate) encrypted: ::std::option::Option<bool>,
+    pub(crate) delete_on_termination: ::std::option::Option<bool>,
+    pub(crate) iops: ::std::option::Option<i32>,
+    pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
+    pub(crate) snapshot_id: ::std::option::Option<::std::string::String>,
+    pub(crate) volume_size: ::std::option::Option<i32>,
+    pub(crate) volume_type: ::std::option::Option<crate::types::EbsVolumeType>,
+    pub(crate) throughput: ::std::option::Option<i32>,
 }
 impl EbsInstanceBlockDeviceSpecificationBuilder {
     /// <p>Use to configure device encryption.</p>
     pub fn encrypted(mut self, input: bool) -> Self {
-        self.encrypted = Some(input);
+        self.encrypted = ::std::option::Option::Some(input);
         self
     }
     /// <p>Use to configure device encryption.</p>
-    pub fn set_encrypted(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_encrypted(mut self, input: ::std::option::Option<bool>) -> Self {
         self.encrypted = input;
         self
     }
     /// <p>Use to configure delete on termination of the associated device.</p>
     pub fn delete_on_termination(mut self, input: bool) -> Self {
-        self.delete_on_termination = Some(input);
+        self.delete_on_termination = ::std::option::Option::Some(input);
         self
     }
     /// <p>Use to configure delete on termination of the associated device.</p>
-    pub fn set_delete_on_termination(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_delete_on_termination(mut self, input: ::std::option::Option<bool>) -> Self {
         self.delete_on_termination = input;
         self
     }
     /// <p>Use to configure device IOPS.</p>
     pub fn iops(mut self, input: i32) -> Self {
-        self.iops = Some(input);
+        self.iops = ::std::option::Option::Some(input);
         self
     }
     /// <p>Use to configure device IOPS.</p>
-    pub fn set_iops(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_iops(mut self, input: ::std::option::Option<i32>) -> Self {
         self.iops = input;
         self
     }
     /// <p>Use to configure the KMS key to use when encrypting the device.</p>
-    pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.kms_key_id = Some(input.into());
+    pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Use to configure the KMS key to use when encrypting the device.</p>
-    pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
     }
     /// <p>The snapshot that defines the device contents.</p>
-    pub fn snapshot_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.snapshot_id = Some(input.into());
+    pub fn snapshot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.snapshot_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The snapshot that defines the device contents.</p>
-    pub fn set_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_snapshot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.snapshot_id = input;
         self
     }
     /// <p>Use to override the device's volume size.</p>
     pub fn volume_size(mut self, input: i32) -> Self {
-        self.volume_size = Some(input);
+        self.volume_size = ::std::option::Option::Some(input);
         self
     }
     /// <p>Use to override the device's volume size.</p>
-    pub fn set_volume_size(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_volume_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.volume_size = input;
         self
     }
     /// <p>Use to override the device's volume type.</p>
     pub fn volume_type(mut self, input: crate::types::EbsVolumeType) -> Self {
-        self.volume_type = Some(input);
+        self.volume_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Use to override the device's volume type.</p>
     pub fn set_volume_type(
         mut self,
-        input: std::option::Option<crate::types::EbsVolumeType>,
+        input: ::std::option::Option<crate::types::EbsVolumeType>,
     ) -> Self {
         self.volume_type = input;
         self
     }
     /// <p> <b>For GP3 volumes only</b> – The throughput in MiB/s that the volume supports.</p>
     pub fn throughput(mut self, input: i32) -> Self {
-        self.throughput = Some(input);
+        self.throughput = ::std::option::Option::Some(input);
         self
     }
     /// <p> <b>For GP3 volumes only</b> – The throughput in MiB/s that the volume supports.</p>
-    pub fn set_throughput(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_throughput(mut self, input: ::std::option::Option<i32>) -> Self {
         self.throughput = input;
         self
     }

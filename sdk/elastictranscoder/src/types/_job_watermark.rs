@@ -2,31 +2,31 @@
 
 /// <p>Watermarks can be in .png or .jpg format. If you want to display a watermark that is not rectangular, use the .png format, which supports transparency.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobWatermark {
     /// <p>The ID of the watermark settings that Elastic Transcoder uses to add watermarks to the video during transcoding. The settings are in the preset specified by Preset for the current output. In that preset, the value of Watermarks Id tells Elastic Transcoder which settings to use.</p>
     #[doc(hidden)]
-    pub preset_watermark_id: std::option::Option<std::string::String>,
+    pub preset_watermark_id: ::std::option::Option<::std::string::String>,
     /// <p> The name of the .png or .jpg file that you want to use for the watermark. To determine which Amazon S3 bucket contains the specified file, Elastic Transcoder checks the pipeline specified by <code>Pipeline</code>; the <code>Input Bucket</code> object in that pipeline identifies the bucket.</p>
     /// <p> If the file name includes a prefix, for example, <b>logos/128x64.png</b>, include the prefix in the key. If the file isn't in the specified bucket, Elastic Transcoder returns an error. </p>
     #[doc(hidden)]
-    pub input_key: std::option::Option<std::string::String>,
+    pub input_key: ::std::option::Option<::std::string::String>,
     /// <p>The encryption settings, if any, that you want Elastic Transcoder to apply to your watermarks.</p>
     #[doc(hidden)]
-    pub encryption: std::option::Option<crate::types::Encryption>,
+    pub encryption: ::std::option::Option<crate::types::Encryption>,
 }
 impl JobWatermark {
     /// <p>The ID of the watermark settings that Elastic Transcoder uses to add watermarks to the video during transcoding. The settings are in the preset specified by Preset for the current output. In that preset, the value of Watermarks Id tells Elastic Transcoder which settings to use.</p>
-    pub fn preset_watermark_id(&self) -> std::option::Option<&str> {
+    pub fn preset_watermark_id(&self) -> ::std::option::Option<&str> {
         self.preset_watermark_id.as_deref()
     }
     /// <p> The name of the .png or .jpg file that you want to use for the watermark. To determine which Amazon S3 bucket contains the specified file, Elastic Transcoder checks the pipeline specified by <code>Pipeline</code>; the <code>Input Bucket</code> object in that pipeline identifies the bucket.</p>
     /// <p> If the file name includes a prefix, for example, <b>logos/128x64.png</b>, include the prefix in the key. If the file isn't in the specified bucket, Elastic Transcoder returns an error. </p>
-    pub fn input_key(&self) -> std::option::Option<&str> {
+    pub fn input_key(&self) -> ::std::option::Option<&str> {
         self.input_key.as_deref()
     }
     /// <p>The encryption settings, if any, that you want Elastic Transcoder to apply to your watermarks.</p>
-    pub fn encryption(&self) -> std::option::Option<&crate::types::Encryption> {
+    pub fn encryption(&self) -> ::std::option::Option<&crate::types::Encryption> {
         self.encryption.as_ref()
     }
 }
@@ -39,45 +39,53 @@ impl JobWatermark {
 
 /// A builder for [`JobWatermark`](crate::types::JobWatermark).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct JobWatermarkBuilder {
-    pub(crate) preset_watermark_id: std::option::Option<std::string::String>,
-    pub(crate) input_key: std::option::Option<std::string::String>,
-    pub(crate) encryption: std::option::Option<crate::types::Encryption>,
+    pub(crate) preset_watermark_id: ::std::option::Option<::std::string::String>,
+    pub(crate) input_key: ::std::option::Option<::std::string::String>,
+    pub(crate) encryption: ::std::option::Option<crate::types::Encryption>,
 }
 impl JobWatermarkBuilder {
     /// <p>The ID of the watermark settings that Elastic Transcoder uses to add watermarks to the video during transcoding. The settings are in the preset specified by Preset for the current output. In that preset, the value of Watermarks Id tells Elastic Transcoder which settings to use.</p>
-    pub fn preset_watermark_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.preset_watermark_id = Some(input.into());
+    pub fn preset_watermark_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.preset_watermark_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the watermark settings that Elastic Transcoder uses to add watermarks to the video during transcoding. The settings are in the preset specified by Preset for the current output. In that preset, the value of Watermarks Id tells Elastic Transcoder which settings to use.</p>
     pub fn set_preset_watermark_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.preset_watermark_id = input;
         self
     }
     /// <p> The name of the .png or .jpg file that you want to use for the watermark. To determine which Amazon S3 bucket contains the specified file, Elastic Transcoder checks the pipeline specified by <code>Pipeline</code>; the <code>Input Bucket</code> object in that pipeline identifies the bucket.</p>
     /// <p> If the file name includes a prefix, for example, <b>logos/128x64.png</b>, include the prefix in the key. If the file isn't in the specified bucket, Elastic Transcoder returns an error. </p>
-    pub fn input_key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.input_key = Some(input.into());
+    pub fn input_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.input_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the .png or .jpg file that you want to use for the watermark. To determine which Amazon S3 bucket contains the specified file, Elastic Transcoder checks the pipeline specified by <code>Pipeline</code>; the <code>Input Bucket</code> object in that pipeline identifies the bucket.</p>
     /// <p> If the file name includes a prefix, for example, <b>logos/128x64.png</b>, include the prefix in the key. If the file isn't in the specified bucket, Elastic Transcoder returns an error. </p>
-    pub fn set_input_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_input_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.input_key = input;
         self
     }
     /// <p>The encryption settings, if any, that you want Elastic Transcoder to apply to your watermarks.</p>
     pub fn encryption(mut self, input: crate::types::Encryption) -> Self {
-        self.encryption = Some(input);
+        self.encryption = ::std::option::Option::Some(input);
         self
     }
     /// <p>The encryption settings, if any, that you want Elastic Transcoder to apply to your watermarks.</p>
-    pub fn set_encryption(mut self, input: std::option::Option<crate::types::Encryption>) -> Self {
+    pub fn set_encryption(
+        mut self,
+        input: ::std::option::Option<crate::types::Encryption>,
+    ) -> Self {
         self.encryption = input;
         self
     }

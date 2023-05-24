@@ -2,47 +2,47 @@
 
 /// <p>Identifies an Amazon Web Services resource and indicates whether it complies with the Config rule that it was evaluated against.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Evaluation {
     /// <p>The type of Amazon Web Services resource that was evaluated.</p>
     #[doc(hidden)]
-    pub compliance_resource_type: std::option::Option<std::string::String>,
+    pub compliance_resource_type: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services resource that was evaluated.</p>
     #[doc(hidden)]
-    pub compliance_resource_id: std::option::Option<std::string::String>,
+    pub compliance_resource_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the Amazon Web Services resource complies with the Config rule that it was evaluated against.</p>
     /// <p>For the <code>Evaluation</code> data type, Config supports only the <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code> values. Config does not support the <code>INSUFFICIENT_DATA</code> value for this data type.</p>
     /// <p>Similarly, Config does not accept <code>INSUFFICIENT_DATA</code> as the value for <code>ComplianceType</code> from a <code>PutEvaluations</code> request. For example, an Lambda function for a custom Config rule cannot pass an <code>INSUFFICIENT_DATA</code> value to Config.</p>
     #[doc(hidden)]
-    pub compliance_type: std::option::Option<crate::types::ComplianceType>,
+    pub compliance_type: ::std::option::Option<crate::types::ComplianceType>,
     /// <p>Supplementary information about how the evaluation determined the compliance.</p>
     #[doc(hidden)]
-    pub annotation: std::option::Option<std::string::String>,
+    pub annotation: ::std::option::Option<::std::string::String>,
     /// <p>The time of the event in Config that triggered the evaluation. For event-based evaluations, the time indicates when Config created the configuration item that triggered the evaluation. For periodic evaluations, the time indicates when Config triggered the evaluation at the frequency that you specified (for example, every 24 hours).</p>
     #[doc(hidden)]
-    pub ordering_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub ordering_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Evaluation {
     /// <p>The type of Amazon Web Services resource that was evaluated.</p>
-    pub fn compliance_resource_type(&self) -> std::option::Option<&str> {
+    pub fn compliance_resource_type(&self) -> ::std::option::Option<&str> {
         self.compliance_resource_type.as_deref()
     }
     /// <p>The ID of the Amazon Web Services resource that was evaluated.</p>
-    pub fn compliance_resource_id(&self) -> std::option::Option<&str> {
+    pub fn compliance_resource_id(&self) -> ::std::option::Option<&str> {
         self.compliance_resource_id.as_deref()
     }
     /// <p>Indicates whether the Amazon Web Services resource complies with the Config rule that it was evaluated against.</p>
     /// <p>For the <code>Evaluation</code> data type, Config supports only the <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code> values. Config does not support the <code>INSUFFICIENT_DATA</code> value for this data type.</p>
     /// <p>Similarly, Config does not accept <code>INSUFFICIENT_DATA</code> as the value for <code>ComplianceType</code> from a <code>PutEvaluations</code> request. For example, an Lambda function for a custom Config rule cannot pass an <code>INSUFFICIENT_DATA</code> value to Config.</p>
-    pub fn compliance_type(&self) -> std::option::Option<&crate::types::ComplianceType> {
+    pub fn compliance_type(&self) -> ::std::option::Option<&crate::types::ComplianceType> {
         self.compliance_type.as_ref()
     }
     /// <p>Supplementary information about how the evaluation determined the compliance.</p>
-    pub fn annotation(&self) -> std::option::Option<&str> {
+    pub fn annotation(&self) -> ::std::option::Option<&str> {
         self.annotation.as_deref()
     }
     /// <p>The time of the event in Config that triggered the evaluation. For event-based evaluations, the time indicates when Config created the configuration item that triggered the evaluation. For periodic evaluations, the time indicates when Config triggered the evaluation at the frequency that you specified (for example, every 24 hours).</p>
-    pub fn ordering_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn ordering_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.ordering_timestamp.as_ref()
     }
 }
@@ -55,37 +55,45 @@ impl Evaluation {
 
 /// A builder for [`Evaluation`](crate::types::Evaluation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EvaluationBuilder {
-    pub(crate) compliance_resource_type: std::option::Option<std::string::String>,
-    pub(crate) compliance_resource_id: std::option::Option<std::string::String>,
-    pub(crate) compliance_type: std::option::Option<crate::types::ComplianceType>,
-    pub(crate) annotation: std::option::Option<std::string::String>,
-    pub(crate) ordering_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) compliance_resource_type: ::std::option::Option<::std::string::String>,
+    pub(crate) compliance_resource_id: ::std::option::Option<::std::string::String>,
+    pub(crate) compliance_type: ::std::option::Option<crate::types::ComplianceType>,
+    pub(crate) annotation: ::std::option::Option<::std::string::String>,
+    pub(crate) ordering_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl EvaluationBuilder {
     /// <p>The type of Amazon Web Services resource that was evaluated.</p>
-    pub fn compliance_resource_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.compliance_resource_type = Some(input.into());
+    pub fn compliance_resource_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.compliance_resource_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of Amazon Web Services resource that was evaluated.</p>
     pub fn set_compliance_resource_type(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.compliance_resource_type = input;
         self
     }
     /// <p>The ID of the Amazon Web Services resource that was evaluated.</p>
-    pub fn compliance_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.compliance_resource_id = Some(input.into());
+    pub fn compliance_resource_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.compliance_resource_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services resource that was evaluated.</p>
     pub fn set_compliance_resource_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.compliance_resource_id = input;
         self
@@ -94,7 +102,7 @@ impl EvaluationBuilder {
     /// <p>For the <code>Evaluation</code> data type, Config supports only the <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code> values. Config does not support the <code>INSUFFICIENT_DATA</code> value for this data type.</p>
     /// <p>Similarly, Config does not accept <code>INSUFFICIENT_DATA</code> as the value for <code>ComplianceType</code> from a <code>PutEvaluations</code> request. For example, an Lambda function for a custom Config rule cannot pass an <code>INSUFFICIENT_DATA</code> value to Config.</p>
     pub fn compliance_type(mut self, input: crate::types::ComplianceType) -> Self {
-        self.compliance_type = Some(input);
+        self.compliance_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether the Amazon Web Services resource complies with the Config rule that it was evaluated against.</p>
@@ -102,30 +110,30 @@ impl EvaluationBuilder {
     /// <p>Similarly, Config does not accept <code>INSUFFICIENT_DATA</code> as the value for <code>ComplianceType</code> from a <code>PutEvaluations</code> request. For example, an Lambda function for a custom Config rule cannot pass an <code>INSUFFICIENT_DATA</code> value to Config.</p>
     pub fn set_compliance_type(
         mut self,
-        input: std::option::Option<crate::types::ComplianceType>,
+        input: ::std::option::Option<crate::types::ComplianceType>,
     ) -> Self {
         self.compliance_type = input;
         self
     }
     /// <p>Supplementary information about how the evaluation determined the compliance.</p>
-    pub fn annotation(mut self, input: impl Into<std::string::String>) -> Self {
-        self.annotation = Some(input.into());
+    pub fn annotation(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.annotation = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Supplementary information about how the evaluation determined the compliance.</p>
-    pub fn set_annotation(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_annotation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.annotation = input;
         self
     }
     /// <p>The time of the event in Config that triggered the evaluation. For event-based evaluations, the time indicates when Config created the configuration item that triggered the evaluation. For periodic evaluations, the time indicates when Config triggered the evaluation at the frequency that you specified (for example, every 24 hours).</p>
-    pub fn ordering_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.ordering_timestamp = Some(input);
+    pub fn ordering_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.ordering_timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time of the event in Config that triggered the evaluation. For event-based evaluations, the time indicates when Config created the configuration item that triggered the evaluation. For periodic evaluations, the time indicates when Config triggered the evaluation at the frequency that you specified (for example, every 24 hours).</p>
     pub fn set_ordering_timestamp(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.ordering_timestamp = input;
         self

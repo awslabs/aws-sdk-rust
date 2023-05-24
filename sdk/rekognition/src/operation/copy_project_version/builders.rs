@@ -13,29 +13,29 @@ pub use crate::operation::copy_project_version::_copy_project_version_input::Cop
 /// </note>
 /// <p>Copying a model version takes a while to complete. To get the current status, call <code>DescribeProjectVersions</code> and check the value of <code>Status</code> in the <code>ProjectVersionDescription</code> object. The copy operation has finished when the value of <code>Status</code> is <code>COPYING_COMPLETED</code>.</p>
 /// <p>This operation requires permissions to perform the <code>rekognition:CopyProjectVersion</code> action.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CopyProjectVersionFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::copy_project_version::builders::CopyProjectVersionInputBuilder,
 }
 impl CopyProjectVersionFluentBuilder {
     /// Creates a new `CopyProjectVersion`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::copy_project_version::CopyProjectVersion,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::copy_project_version::CopyProjectVersionError,
         >,
     > {
@@ -43,30 +43,33 @@ impl CopyProjectVersionFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::copy_project_version::CopyProjectVersionOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::copy_project_version::CopyProjectVersionError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -79,60 +82,69 @@ impl CopyProjectVersionFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::copy_project_version::CopyProjectVersionOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::copy_project_version::CopyProjectVersionError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The ARN of the source project in the trusting AWS account.</p>
-    pub fn source_project_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn source_project_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.source_project_arn(input.into());
         self
     }
     /// <p>The ARN of the source project in the trusting AWS account.</p>
     pub fn set_source_project_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_source_project_arn(input);
         self
     }
     /// <p>The ARN of the model version in the source project that you want to copy to a destination project.</p>
-    pub fn source_project_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn source_project_version_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.source_project_version_arn(input.into());
         self
     }
     /// <p>The ARN of the model version in the source project that you want to copy to a destination project.</p>
     pub fn set_source_project_version_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_source_project_version_arn(input);
         self
     }
     /// <p>The ARN of the project in the trusted AWS account that you want to copy the model version to. </p>
-    pub fn destination_project_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn destination_project_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.destination_project_arn(input.into());
         self
     }
     /// <p>The ARN of the project in the trusted AWS account that you want to copy the model version to. </p>
     pub fn set_destination_project_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_destination_project_arn(input);
         self
     }
     /// <p>A name for the version of the model that's copied to the destination project.</p>
-    pub fn version_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn version_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.version_name(input.into());
         self
     }
     /// <p>A name for the version of the model that's copied to the destination project.</p>
-    pub fn set_version_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_version_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_version_name(input);
         self
     }
@@ -144,7 +156,7 @@ impl CopyProjectVersionFluentBuilder {
     /// <p>The S3 bucket and folder location where the training output for the source model version is placed.</p>
     pub fn set_output_config(
         mut self,
-        input: std::option::Option<crate::types::OutputConfig>,
+        input: ::std::option::Option<crate::types::OutputConfig>,
     ) -> Self {
         self.inner = self.inner.set_output_config(input);
         self
@@ -156,8 +168,8 @@ impl CopyProjectVersionFluentBuilder {
     /// <p>The key-value tags to assign to the model version. </p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
@@ -165,8 +177,8 @@ impl CopyProjectVersionFluentBuilder {
     /// <p>The key-value tags to assign to the model version. </p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
@@ -181,7 +193,7 @@ impl CopyProjectVersionFluentBuilder {
     /// <li> <p>kms:Decrypt</p> </li>
     /// </ul>
     /// <p>If you don't specify a value for <code>KmsKeyId</code>, images copied into the service are encrypted using a key that AWS owns and manages.</p>
-    pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kms_key_id(input.into());
         self
     }
@@ -194,7 +206,7 @@ impl CopyProjectVersionFluentBuilder {
     /// <li> <p>kms:Decrypt</p> </li>
     /// </ul>
     /// <p>If you don't specify a value for <code>KmsKeyId</code>, images copied into the service are encrypted using a key that AWS owns and manages.</p>
-    pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kms_key_id(input);
         self
     }

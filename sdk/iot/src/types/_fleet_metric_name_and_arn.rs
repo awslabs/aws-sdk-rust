@@ -2,22 +2,22 @@
 
 /// <p>The name and ARN of a fleet metric.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FleetMetricNameAndArn {
     /// <p>The fleet metric name.</p>
     #[doc(hidden)]
-    pub metric_name: std::option::Option<std::string::String>,
+    pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p>The fleet metric ARN.</p>
     #[doc(hidden)]
-    pub metric_arn: std::option::Option<std::string::String>,
+    pub metric_arn: ::std::option::Option<::std::string::String>,
 }
 impl FleetMetricNameAndArn {
     /// <p>The fleet metric name.</p>
-    pub fn metric_name(&self) -> std::option::Option<&str> {
+    pub fn metric_name(&self) -> ::std::option::Option<&str> {
         self.metric_name.as_deref()
     }
     /// <p>The fleet metric ARN.</p>
-    pub fn metric_arn(&self) -> std::option::Option<&str> {
+    pub fn metric_arn(&self) -> ::std::option::Option<&str> {
         self.metric_arn.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl FleetMetricNameAndArn {
 
 /// A builder for [`FleetMetricNameAndArn`](crate::types::FleetMetricNameAndArn).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FleetMetricNameAndArnBuilder {
-    pub(crate) metric_name: std::option::Option<std::string::String>,
-    pub(crate) metric_arn: std::option::Option<std::string::String>,
+    pub(crate) metric_name: ::std::option::Option<::std::string::String>,
+    pub(crate) metric_arn: ::std::option::Option<::std::string::String>,
 }
 impl FleetMetricNameAndArnBuilder {
     /// <p>The fleet metric name.</p>
-    pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.metric_name = Some(input.into());
+    pub fn metric_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.metric_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The fleet metric name.</p>
-    pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_metric_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metric_name = input;
         self
     }
     /// <p>The fleet metric ARN.</p>
-    pub fn metric_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.metric_arn = Some(input.into());
+    pub fn metric_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.metric_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The fleet metric ARN.</p>
-    pub fn set_metric_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_metric_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metric_arn = input;
         self
     }

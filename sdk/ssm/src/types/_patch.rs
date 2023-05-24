@@ -2,149 +2,149 @@
 
 /// <p>Represents metadata about a patch.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Patch {
     /// <p>The ID of the patch. Applies to Windows patches only.</p> <note>
     /// <p>This ID isn't the same as the Microsoft Knowledge Base ID.</p>
     /// </note>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The date the patch was released.</p>
     #[doc(hidden)]
-    pub release_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub release_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The title of the patch.</p>
     #[doc(hidden)]
-    pub title: std::option::Option<std::string::String>,
+    pub title: ::std::option::Option<::std::string::String>,
     /// <p>The description of the patch.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The URL where more information can be obtained about the patch.</p>
     #[doc(hidden)]
-    pub content_url: std::option::Option<std::string::String>,
+    pub content_url: ::std::option::Option<::std::string::String>,
     /// <p>The name of the vendor providing the patch.</p>
     #[doc(hidden)]
-    pub vendor: std::option::Option<std::string::String>,
+    pub vendor: ::std::option::Option<::std::string::String>,
     /// <p>The product family the patch is applicable for. For example, <code>Windows</code> or <code>Amazon Linux 2</code>.</p>
     #[doc(hidden)]
-    pub product_family: std::option::Option<std::string::String>,
+    pub product_family: ::std::option::Option<::std::string::String>,
     /// <p>The specific product the patch is applicable for. For example, <code>WindowsServer2016</code> or <code>AmazonLinux2018.03</code>.</p>
     #[doc(hidden)]
-    pub product: std::option::Option<std::string::String>,
+    pub product: ::std::option::Option<::std::string::String>,
     /// <p>The classification of the patch. For example, <code>SecurityUpdates</code>, <code>Updates</code>, or <code>CriticalUpdates</code>.</p>
     #[doc(hidden)]
-    pub classification: std::option::Option<std::string::String>,
+    pub classification: ::std::option::Option<::std::string::String>,
     /// <p>The severity of the patch, such as <code>Critical</code>, <code>Important</code>, or <code>Moderate</code>. Applies to Windows patches only.</p>
     #[doc(hidden)]
-    pub msrc_severity: std::option::Option<std::string::String>,
+    pub msrc_severity: ::std::option::Option<::std::string::String>,
     /// <p>The Microsoft Knowledge Base ID of the patch. Applies to Windows patches only.</p>
     #[doc(hidden)]
-    pub kb_number: std::option::Option<std::string::String>,
+    pub kb_number: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Microsoft Security Response Center (MSRC) bulletin the patch is related to. For example, <code>MS14-045</code>. Applies to Windows patches only.</p>
     #[doc(hidden)]
-    pub msrc_number: std::option::Option<std::string::String>,
+    pub msrc_number: ::std::option::Option<::std::string::String>,
     /// <p>The language of the patch if it's language-specific.</p>
     #[doc(hidden)]
-    pub language: std::option::Option<std::string::String>,
+    pub language: ::std::option::Option<::std::string::String>,
     /// <p>The Advisory ID of the patch. For example, <code>RHSA-2020:3779</code>. Applies to Linux-based managed nodes only.</p>
     #[doc(hidden)]
-    pub advisory_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub advisory_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Bugzilla ID of the patch. For example, <code>1600646</code>. Applies to Linux-based managed nodes only.</p>
     #[doc(hidden)]
-    pub bugzilla_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub bugzilla_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Common Vulnerabilities and Exposures (CVE) ID of the patch. For example, <code>CVE-2011-3192</code>. Applies to Linux-based managed nodes only.</p>
     #[doc(hidden)]
-    pub cve_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub cve_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The name of the patch. Applies to Linux-based managed nodes only.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The epoch of the patch. For example in <code>pkg-example-EE-20180914-2.2.amzn1.noarch</code>, the epoch value is <code>20180914-2</code>. Applies to Linux-based managed nodes only.</p>
     #[doc(hidden)]
     pub epoch: i32,
     /// <p>The version number of the patch. For example, in <code>example-pkg-1.710.10-2.7.abcd.x86_64</code>, the version number is indicated by <code>-1</code>. Applies to Linux-based managed nodes only.</p>
     #[doc(hidden)]
-    pub version: std::option::Option<std::string::String>,
+    pub version: ::std::option::Option<::std::string::String>,
     /// <p>The particular release of a patch. For example, in <code>pkg-example-EE-20180914-2.2.amzn1.noarch</code>, the release is <code>2.amaz1</code>. Applies to Linux-based managed nodes only.</p>
     #[doc(hidden)]
-    pub release: std::option::Option<std::string::String>,
+    pub release: ::std::option::Option<::std::string::String>,
     /// <p>The architecture of the patch. For example, in <code>example-pkg-0.710.10-2.7.abcd.x86_64</code>, the architecture is indicated by <code>x86_64</code>. Applies to Linux-based managed nodes only.</p>
     #[doc(hidden)]
-    pub arch: std::option::Option<std::string::String>,
+    pub arch: ::std::option::Option<::std::string::String>,
     /// <p>The severity level of the patch. For example, <code>CRITICAL</code> or <code>MODERATE</code>.</p>
     #[doc(hidden)]
-    pub severity: std::option::Option<std::string::String>,
+    pub severity: ::std::option::Option<::std::string::String>,
     /// <p>The source patch repository for the operating system and version, such as <code>trusty-security</code> for Ubuntu Server 14.04 LTE and <code>focal-security</code> for Ubuntu Server 20.04 LTE. Applies to Linux-based managed nodes only.</p>
     #[doc(hidden)]
-    pub repository: std::option::Option<std::string::String>,
+    pub repository: ::std::option::Option<::std::string::String>,
 }
 impl Patch {
     /// <p>The ID of the patch. Applies to Windows patches only.</p> <note>
     /// <p>This ID isn't the same as the Microsoft Knowledge Base ID.</p>
     /// </note>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The date the patch was released.</p>
-    pub fn release_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn release_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.release_date.as_ref()
     }
     /// <p>The title of the patch.</p>
-    pub fn title(&self) -> std::option::Option<&str> {
+    pub fn title(&self) -> ::std::option::Option<&str> {
         self.title.as_deref()
     }
     /// <p>The description of the patch.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The URL where more information can be obtained about the patch.</p>
-    pub fn content_url(&self) -> std::option::Option<&str> {
+    pub fn content_url(&self) -> ::std::option::Option<&str> {
         self.content_url.as_deref()
     }
     /// <p>The name of the vendor providing the patch.</p>
-    pub fn vendor(&self) -> std::option::Option<&str> {
+    pub fn vendor(&self) -> ::std::option::Option<&str> {
         self.vendor.as_deref()
     }
     /// <p>The product family the patch is applicable for. For example, <code>Windows</code> or <code>Amazon Linux 2</code>.</p>
-    pub fn product_family(&self) -> std::option::Option<&str> {
+    pub fn product_family(&self) -> ::std::option::Option<&str> {
         self.product_family.as_deref()
     }
     /// <p>The specific product the patch is applicable for. For example, <code>WindowsServer2016</code> or <code>AmazonLinux2018.03</code>.</p>
-    pub fn product(&self) -> std::option::Option<&str> {
+    pub fn product(&self) -> ::std::option::Option<&str> {
         self.product.as_deref()
     }
     /// <p>The classification of the patch. For example, <code>SecurityUpdates</code>, <code>Updates</code>, or <code>CriticalUpdates</code>.</p>
-    pub fn classification(&self) -> std::option::Option<&str> {
+    pub fn classification(&self) -> ::std::option::Option<&str> {
         self.classification.as_deref()
     }
     /// <p>The severity of the patch, such as <code>Critical</code>, <code>Important</code>, or <code>Moderate</code>. Applies to Windows patches only.</p>
-    pub fn msrc_severity(&self) -> std::option::Option<&str> {
+    pub fn msrc_severity(&self) -> ::std::option::Option<&str> {
         self.msrc_severity.as_deref()
     }
     /// <p>The Microsoft Knowledge Base ID of the patch. Applies to Windows patches only.</p>
-    pub fn kb_number(&self) -> std::option::Option<&str> {
+    pub fn kb_number(&self) -> ::std::option::Option<&str> {
         self.kb_number.as_deref()
     }
     /// <p>The ID of the Microsoft Security Response Center (MSRC) bulletin the patch is related to. For example, <code>MS14-045</code>. Applies to Windows patches only.</p>
-    pub fn msrc_number(&self) -> std::option::Option<&str> {
+    pub fn msrc_number(&self) -> ::std::option::Option<&str> {
         self.msrc_number.as_deref()
     }
     /// <p>The language of the patch if it's language-specific.</p>
-    pub fn language(&self) -> std::option::Option<&str> {
+    pub fn language(&self) -> ::std::option::Option<&str> {
         self.language.as_deref()
     }
     /// <p>The Advisory ID of the patch. For example, <code>RHSA-2020:3779</code>. Applies to Linux-based managed nodes only.</p>
-    pub fn advisory_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn advisory_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.advisory_ids.as_deref()
     }
     /// <p>The Bugzilla ID of the patch. For example, <code>1600646</code>. Applies to Linux-based managed nodes only.</p>
-    pub fn bugzilla_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn bugzilla_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.bugzilla_ids.as_deref()
     }
     /// <p>The Common Vulnerabilities and Exposures (CVE) ID of the patch. For example, <code>CVE-2011-3192</code>. Applies to Linux-based managed nodes only.</p>
-    pub fn cve_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn cve_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.cve_ids.as_deref()
     }
     /// <p>The name of the patch. Applies to Linux-based managed nodes only.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The epoch of the patch. For example in <code>pkg-example-EE-20180914-2.2.amzn1.noarch</code>, the epoch value is <code>20180914-2</code>. Applies to Linux-based managed nodes only.</p>
@@ -152,23 +152,23 @@ impl Patch {
         self.epoch
     }
     /// <p>The version number of the patch. For example, in <code>example-pkg-1.710.10-2.7.abcd.x86_64</code>, the version number is indicated by <code>-1</code>. Applies to Linux-based managed nodes only.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<&str> {
         self.version.as_deref()
     }
     /// <p>The particular release of a patch. For example, in <code>pkg-example-EE-20180914-2.2.amzn1.noarch</code>, the release is <code>2.amaz1</code>. Applies to Linux-based managed nodes only.</p>
-    pub fn release(&self) -> std::option::Option<&str> {
+    pub fn release(&self) -> ::std::option::Option<&str> {
         self.release.as_deref()
     }
     /// <p>The architecture of the patch. For example, in <code>example-pkg-0.710.10-2.7.abcd.x86_64</code>, the architecture is indicated by <code>x86_64</code>. Applies to Linux-based managed nodes only.</p>
-    pub fn arch(&self) -> std::option::Option<&str> {
+    pub fn arch(&self) -> ::std::option::Option<&str> {
         self.arch.as_deref()
     }
     /// <p>The severity level of the patch. For example, <code>CRITICAL</code> or <code>MODERATE</code>.</p>
-    pub fn severity(&self) -> std::option::Option<&str> {
+    pub fn severity(&self) -> ::std::option::Option<&str> {
         self.severity.as_deref()
     }
     /// <p>The source patch repository for the operating system and version, such as <code>trusty-security</code> for Ubuntu Server 14.04 LTE and <code>focal-security</code> for Ubuntu Server 20.04 LTE. Applies to Linux-based managed nodes only.</p>
-    pub fn repository(&self) -> std::option::Option<&str> {
+    pub fn repository(&self) -> ::std::option::Option<&str> {
         self.repository.as_deref()
     }
 }
@@ -181,167 +181,187 @@ impl Patch {
 
 /// A builder for [`Patch`](crate::types::Patch).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PatchBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) release_date: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) title: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) content_url: std::option::Option<std::string::String>,
-    pub(crate) vendor: std::option::Option<std::string::String>,
-    pub(crate) product_family: std::option::Option<std::string::String>,
-    pub(crate) product: std::option::Option<std::string::String>,
-    pub(crate) classification: std::option::Option<std::string::String>,
-    pub(crate) msrc_severity: std::option::Option<std::string::String>,
-    pub(crate) kb_number: std::option::Option<std::string::String>,
-    pub(crate) msrc_number: std::option::Option<std::string::String>,
-    pub(crate) language: std::option::Option<std::string::String>,
-    pub(crate) advisory_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) bugzilla_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) cve_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) epoch: std::option::Option<i32>,
-    pub(crate) version: std::option::Option<std::string::String>,
-    pub(crate) release: std::option::Option<std::string::String>,
-    pub(crate) arch: std::option::Option<std::string::String>,
-    pub(crate) severity: std::option::Option<std::string::String>,
-    pub(crate) repository: std::option::Option<std::string::String>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) release_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) title: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) content_url: ::std::option::Option<::std::string::String>,
+    pub(crate) vendor: ::std::option::Option<::std::string::String>,
+    pub(crate) product_family: ::std::option::Option<::std::string::String>,
+    pub(crate) product: ::std::option::Option<::std::string::String>,
+    pub(crate) classification: ::std::option::Option<::std::string::String>,
+    pub(crate) msrc_severity: ::std::option::Option<::std::string::String>,
+    pub(crate) kb_number: ::std::option::Option<::std::string::String>,
+    pub(crate) msrc_number: ::std::option::Option<::std::string::String>,
+    pub(crate) language: ::std::option::Option<::std::string::String>,
+    pub(crate) advisory_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) bugzilla_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) cve_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) epoch: ::std::option::Option<i32>,
+    pub(crate) version: ::std::option::Option<::std::string::String>,
+    pub(crate) release: ::std::option::Option<::std::string::String>,
+    pub(crate) arch: ::std::option::Option<::std::string::String>,
+    pub(crate) severity: ::std::option::Option<::std::string::String>,
+    pub(crate) repository: ::std::option::Option<::std::string::String>,
 }
 impl PatchBuilder {
     /// <p>The ID of the patch. Applies to Windows patches only.</p> <note>
     /// <p>This ID isn't the same as the Microsoft Knowledge Base ID.</p>
     /// </note>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the patch. Applies to Windows patches only.</p> <note>
     /// <p>This ID isn't the same as the Microsoft Knowledge Base ID.</p>
     /// </note>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>The date the patch was released.</p>
-    pub fn release_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.release_date = Some(input);
+    pub fn release_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.release_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date the patch was released.</p>
     pub fn set_release_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.release_date = input;
         self
     }
     /// <p>The title of the patch.</p>
-    pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
-        self.title = Some(input.into());
+    pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.title = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The title of the patch.</p>
-    pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_title(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.title = input;
         self
     }
     /// <p>The description of the patch.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the patch.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>The URL where more information can be obtained about the patch.</p>
-    pub fn content_url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.content_url = Some(input.into());
+    pub fn content_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.content_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL where more information can be obtained about the patch.</p>
-    pub fn set_content_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_content_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_url = input;
         self
     }
     /// <p>The name of the vendor providing the patch.</p>
-    pub fn vendor(mut self, input: impl Into<std::string::String>) -> Self {
-        self.vendor = Some(input.into());
+    pub fn vendor(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.vendor = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the vendor providing the patch.</p>
-    pub fn set_vendor(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_vendor(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vendor = input;
         self
     }
     /// <p>The product family the patch is applicable for. For example, <code>Windows</code> or <code>Amazon Linux 2</code>.</p>
-    pub fn product_family(mut self, input: impl Into<std::string::String>) -> Self {
-        self.product_family = Some(input.into());
+    pub fn product_family(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.product_family = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The product family the patch is applicable for. For example, <code>Windows</code> or <code>Amazon Linux 2</code>.</p>
-    pub fn set_product_family(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_product_family(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.product_family = input;
         self
     }
     /// <p>The specific product the patch is applicable for. For example, <code>WindowsServer2016</code> or <code>AmazonLinux2018.03</code>.</p>
-    pub fn product(mut self, input: impl Into<std::string::String>) -> Self {
-        self.product = Some(input.into());
+    pub fn product(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.product = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The specific product the patch is applicable for. For example, <code>WindowsServer2016</code> or <code>AmazonLinux2018.03</code>.</p>
-    pub fn set_product(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_product(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.product = input;
         self
     }
     /// <p>The classification of the patch. For example, <code>SecurityUpdates</code>, <code>Updates</code>, or <code>CriticalUpdates</code>.</p>
-    pub fn classification(mut self, input: impl Into<std::string::String>) -> Self {
-        self.classification = Some(input.into());
+    pub fn classification(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.classification = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The classification of the patch. For example, <code>SecurityUpdates</code>, <code>Updates</code>, or <code>CriticalUpdates</code>.</p>
-    pub fn set_classification(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_classification(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.classification = input;
         self
     }
     /// <p>The severity of the patch, such as <code>Critical</code>, <code>Important</code>, or <code>Moderate</code>. Applies to Windows patches only.</p>
-    pub fn msrc_severity(mut self, input: impl Into<std::string::String>) -> Self {
-        self.msrc_severity = Some(input.into());
+    pub fn msrc_severity(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.msrc_severity = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The severity of the patch, such as <code>Critical</code>, <code>Important</code>, or <code>Moderate</code>. Applies to Windows patches only.</p>
-    pub fn set_msrc_severity(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_msrc_severity(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.msrc_severity = input;
         self
     }
     /// <p>The Microsoft Knowledge Base ID of the patch. Applies to Windows patches only.</p>
-    pub fn kb_number(mut self, input: impl Into<std::string::String>) -> Self {
-        self.kb_number = Some(input.into());
+    pub fn kb_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kb_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Microsoft Knowledge Base ID of the patch. Applies to Windows patches only.</p>
-    pub fn set_kb_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_kb_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kb_number = input;
         self
     }
     /// <p>The ID of the Microsoft Security Response Center (MSRC) bulletin the patch is related to. For example, <code>MS14-045</code>. Applies to Windows patches only.</p>
-    pub fn msrc_number(mut self, input: impl Into<std::string::String>) -> Self {
-        self.msrc_number = Some(input.into());
+    pub fn msrc_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.msrc_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Microsoft Security Response Center (MSRC) bulletin the patch is related to. For example, <code>MS14-045</code>. Applies to Windows patches only.</p>
-    pub fn set_msrc_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_msrc_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.msrc_number = input;
         self
     }
     /// <p>The language of the patch if it's language-specific.</p>
-    pub fn language(mut self, input: impl Into<std::string::String>) -> Self {
-        self.language = Some(input.into());
+    pub fn language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.language = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The language of the patch if it's language-specific.</p>
-    pub fn set_language(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.language = input;
         self
     }
@@ -350,16 +370,16 @@ impl PatchBuilder {
     /// To override the contents of this collection use [`set_advisory_ids`](Self::set_advisory_ids).
     ///
     /// <p>The Advisory ID of the patch. For example, <code>RHSA-2020:3779</code>. Applies to Linux-based managed nodes only.</p>
-    pub fn advisory_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn advisory_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.advisory_ids.unwrap_or_default();
         v.push(input.into());
-        self.advisory_ids = Some(v);
+        self.advisory_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Advisory ID of the patch. For example, <code>RHSA-2020:3779</code>. Applies to Linux-based managed nodes only.</p>
     pub fn set_advisory_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.advisory_ids = input;
         self
@@ -369,16 +389,16 @@ impl PatchBuilder {
     /// To override the contents of this collection use [`set_bugzilla_ids`](Self::set_bugzilla_ids).
     ///
     /// <p>The Bugzilla ID of the patch. For example, <code>1600646</code>. Applies to Linux-based managed nodes only.</p>
-    pub fn bugzilla_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn bugzilla_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.bugzilla_ids.unwrap_or_default();
         v.push(input.into());
-        self.bugzilla_ids = Some(v);
+        self.bugzilla_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Bugzilla ID of the patch. For example, <code>1600646</code>. Applies to Linux-based managed nodes only.</p>
     pub fn set_bugzilla_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.bugzilla_ids = input;
         self
@@ -388,87 +408,87 @@ impl PatchBuilder {
     /// To override the contents of this collection use [`set_cve_ids`](Self::set_cve_ids).
     ///
     /// <p>The Common Vulnerabilities and Exposures (CVE) ID of the patch. For example, <code>CVE-2011-3192</code>. Applies to Linux-based managed nodes only.</p>
-    pub fn cve_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn cve_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.cve_ids.unwrap_or_default();
         v.push(input.into());
-        self.cve_ids = Some(v);
+        self.cve_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Common Vulnerabilities and Exposures (CVE) ID of the patch. For example, <code>CVE-2011-3192</code>. Applies to Linux-based managed nodes only.</p>
     pub fn set_cve_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.cve_ids = input;
         self
     }
     /// <p>The name of the patch. Applies to Linux-based managed nodes only.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the patch. Applies to Linux-based managed nodes only.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The epoch of the patch. For example in <code>pkg-example-EE-20180914-2.2.amzn1.noarch</code>, the epoch value is <code>20180914-2</code>. Applies to Linux-based managed nodes only.</p>
     pub fn epoch(mut self, input: i32) -> Self {
-        self.epoch = Some(input);
+        self.epoch = ::std::option::Option::Some(input);
         self
     }
     /// <p>The epoch of the patch. For example in <code>pkg-example-EE-20180914-2.2.amzn1.noarch</code>, the epoch value is <code>20180914-2</code>. Applies to Linux-based managed nodes only.</p>
-    pub fn set_epoch(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_epoch(mut self, input: ::std::option::Option<i32>) -> Self {
         self.epoch = input;
         self
     }
     /// <p>The version number of the patch. For example, in <code>example-pkg-1.710.10-2.7.abcd.x86_64</code>, the version number is indicated by <code>-1</code>. Applies to Linux-based managed nodes only.</p>
-    pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.version = Some(input.into());
+    pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version number of the patch. For example, in <code>example-pkg-1.710.10-2.7.abcd.x86_64</code>, the version number is indicated by <code>-1</code>. Applies to Linux-based managed nodes only.</p>
-    pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
     }
     /// <p>The particular release of a patch. For example, in <code>pkg-example-EE-20180914-2.2.amzn1.noarch</code>, the release is <code>2.amaz1</code>. Applies to Linux-based managed nodes only.</p>
-    pub fn release(mut self, input: impl Into<std::string::String>) -> Self {
-        self.release = Some(input.into());
+    pub fn release(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.release = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The particular release of a patch. For example, in <code>pkg-example-EE-20180914-2.2.amzn1.noarch</code>, the release is <code>2.amaz1</code>. Applies to Linux-based managed nodes only.</p>
-    pub fn set_release(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_release(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.release = input;
         self
     }
     /// <p>The architecture of the patch. For example, in <code>example-pkg-0.710.10-2.7.abcd.x86_64</code>, the architecture is indicated by <code>x86_64</code>. Applies to Linux-based managed nodes only.</p>
-    pub fn arch(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arch = Some(input.into());
+    pub fn arch(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arch = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The architecture of the patch. For example, in <code>example-pkg-0.710.10-2.7.abcd.x86_64</code>, the architecture is indicated by <code>x86_64</code>. Applies to Linux-based managed nodes only.</p>
-    pub fn set_arch(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arch(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arch = input;
         self
     }
     /// <p>The severity level of the patch. For example, <code>CRITICAL</code> or <code>MODERATE</code>.</p>
-    pub fn severity(mut self, input: impl Into<std::string::String>) -> Self {
-        self.severity = Some(input.into());
+    pub fn severity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.severity = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The severity level of the patch. For example, <code>CRITICAL</code> or <code>MODERATE</code>.</p>
-    pub fn set_severity(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_severity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.severity = input;
         self
     }
     /// <p>The source patch repository for the operating system and version, such as <code>trusty-security</code> for Ubuntu Server 14.04 LTE and <code>focal-security</code> for Ubuntu Server 20.04 LTE. Applies to Linux-based managed nodes only.</p>
-    pub fn repository(mut self, input: impl Into<std::string::String>) -> Self {
-        self.repository = Some(input.into());
+    pub fn repository(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.repository = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The source patch repository for the operating system and version, such as <code>trusty-security</code> for Ubuntu Server 14.04 LTE and <code>focal-security</code> for Ubuntu Server 20.04 LTE. Applies to Linux-based managed nodes only.</p>
-    pub fn set_repository(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_repository(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository = input;
         self
     }

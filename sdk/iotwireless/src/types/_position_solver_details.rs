@@ -2,15 +2,15 @@
 
 /// <p>The wrapper for position solver details.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PositionSolverDetails {
     /// <p>The Semtech GNSS solver object details.</p>
     #[doc(hidden)]
-    pub semtech_gnss: std::option::Option<crate::types::SemtechGnssDetail>,
+    pub semtech_gnss: ::std::option::Option<crate::types::SemtechGnssDetail>,
 }
 impl PositionSolverDetails {
     /// <p>The Semtech GNSS solver object details.</p>
-    pub fn semtech_gnss(&self) -> std::option::Option<&crate::types::SemtechGnssDetail> {
+    pub fn semtech_gnss(&self) -> ::std::option::Option<&crate::types::SemtechGnssDetail> {
         self.semtech_gnss.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl PositionSolverDetails {
 
 /// A builder for [`PositionSolverDetails`](crate::types::PositionSolverDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PositionSolverDetailsBuilder {
-    pub(crate) semtech_gnss: std::option::Option<crate::types::SemtechGnssDetail>,
+    pub(crate) semtech_gnss: ::std::option::Option<crate::types::SemtechGnssDetail>,
 }
 impl PositionSolverDetailsBuilder {
     /// <p>The Semtech GNSS solver object details.</p>
     pub fn semtech_gnss(mut self, input: crate::types::SemtechGnssDetail) -> Self {
-        self.semtech_gnss = Some(input);
+        self.semtech_gnss = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Semtech GNSS solver object details.</p>
     pub fn set_semtech_gnss(
         mut self,
-        input: std::option::Option<crate::types::SemtechGnssDetail>,
+        input: ::std::option::Option<crate::types::SemtechGnssDetail>,
     ) -> Self {
         self.semtech_gnss = input;
         self

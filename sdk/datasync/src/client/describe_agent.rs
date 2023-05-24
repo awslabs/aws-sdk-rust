@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeAgent`](crate::operation::describe_agent::builders::DescribeAgentFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`agent_arn(impl Into<String>)`](crate::operation::describe_agent::builders::DescribeAgentFluentBuilder::agent_arn) / [`set_agent_arn(Option<String>)`](crate::operation::describe_agent::builders::DescribeAgentFluentBuilder::set_agent_arn): <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent to describe.</p>
+    ///   - [`agent_arn(impl ::std::convert::Into<String>)`](crate::operation::describe_agent::builders::DescribeAgentFluentBuilder::agent_arn) / [`set_agent_arn(Option<String>)`](crate::operation::describe_agent::builders::DescribeAgentFluentBuilder::set_agent_arn): <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent to describe.</p>
     /// - On success, responds with [`DescribeAgentOutput`](crate::operation::describe_agent::DescribeAgentOutput) with field(s):
     ///   - [`agent_arn(Option<String>)`](crate::operation::describe_agent::DescribeAgentOutput::agent_arn): <p>The ARN of the agent.</p>
     ///   - [`name(Option<String>)`](crate::operation::describe_agent::DescribeAgentOutput::name): <p>The name of the agent.</p>

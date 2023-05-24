@@ -7,29 +7,29 @@ pub use crate::operation::send_text_message::_send_text_message_input::SendTextM
 ///
 /// <p>Creates a new text message and sends it to a recipient's phone number.</p>
 /// <p>SMS throughput limits are measured in Message Parts per Second (MPS). Your MPS limit depends on the destination country of your messages, as well as the type of phone number (origination number) that you use to send the message. For more information, see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-sms-limitations-mps.html">Message Parts per Second (MPS) limits</a> in the <i>Amazon Pinpoint User Guide</i>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SendTextMessageFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::send_text_message::builders::SendTextMessageInputBuilder,
 }
 impl SendTextMessageFluentBuilder {
     /// Creates a new `SendTextMessage`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::send_text_message::SendTextMessage,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::send_text_message::SendTextMessageError,
         >,
     > {
@@ -37,30 +37,33 @@ impl SendTextMessageFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::send_text_message::SendTextMessageOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::send_text_message::SendTextMessageError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -73,47 +76,53 @@ impl SendTextMessageFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::send_text_message::SendTextMessageOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::send_text_message::SendTextMessageError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The destination phone number in E.164 format.</p>
-    pub fn destination_phone_number(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn destination_phone_number(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.destination_phone_number(input.into());
         self
     }
     /// <p>The destination phone number in E.164 format.</p>
     pub fn set_destination_phone_number(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_destination_phone_number(input);
         self
     }
     /// <p>The origination identity of the message. This can be either the PhoneNumber, PhoneNumberId, PhoneNumberArn, SenderId, SenderIdArn, PoolId, or PoolArn.</p>
-    pub fn origination_identity(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn origination_identity(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.origination_identity(input.into());
         self
     }
     /// <p>The origination identity of the message. This can be either the PhoneNumber, PhoneNumberId, PhoneNumberArn, SenderId, SenderIdArn, PoolId, or PoolArn.</p>
     pub fn set_origination_identity(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_origination_identity(input);
         self
     }
     /// <p>The body of the text message.</p>
-    pub fn message_body(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn message_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.message_body(input.into());
         self
     }
     /// <p>The body of the text message.</p>
-    pub fn set_message_body(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_message_body(input);
         self
     }
@@ -125,41 +134,44 @@ impl SendTextMessageFluentBuilder {
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
     pub fn set_message_type(
         mut self,
-        input: std::option::Option<crate::types::MessageType>,
+        input: ::std::option::Option<crate::types::MessageType>,
     ) -> Self {
         self.inner = self.inner.set_message_type(input);
         self
     }
     /// <p>When you register a short code in the US, you must specify a program name. If you don’t have a US short code, omit this attribute.</p>
-    pub fn keyword(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn keyword(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.keyword(input.into());
         self
     }
     /// <p>When you register a short code in the US, you must specify a program name. If you don’t have a US short code, omit this attribute.</p>
-    pub fn set_keyword(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_keyword(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_keyword(input);
         self
     }
     /// <p>The name of the configuration set to use. This can be either the ConfigurationSetName or ConfigurationSetArn.</p>
-    pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn configuration_set_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.configuration_set_name(input.into());
         self
     }
     /// <p>The name of the configuration set to use. This can be either the ConfigurationSetName or ConfigurationSetArn.</p>
     pub fn set_configuration_set_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_configuration_set_name(input);
         self
     }
     /// <p>The maximum amount that you want to spend, in US dollars, per each text message part. A text message can contain multiple parts.</p>
-    pub fn max_price(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn max_price(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.max_price(input.into());
         self
     }
     /// <p>The maximum amount that you want to spend, in US dollars, per each text message part. A text message can contain multiple parts.</p>
-    pub fn set_max_price(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_max_price(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_max_price(input);
         self
     }
@@ -169,7 +181,7 @@ impl SendTextMessageFluentBuilder {
         self
     }
     /// <p>How long the text message is valid for. By default this is 72 hours.</p>
-    pub fn set_time_to_live(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_time_to_live(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_time_to_live(input);
         self
     }
@@ -180,8 +192,8 @@ impl SendTextMessageFluentBuilder {
     /// <p>You can specify custom data in this field. If you do, that data is logged to the event destination.</p>
     pub fn context(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.context(k.into(), v.into());
         self
@@ -189,8 +201,8 @@ impl SendTextMessageFluentBuilder {
     /// <p>You can specify custom data in this field. If you do, that data is logged to the event destination.</p>
     pub fn set_context(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_context(input);
@@ -204,7 +216,7 @@ impl SendTextMessageFluentBuilder {
     pub fn destination_country_parameters(
         mut self,
         k: crate::types::DestinationCountryParameterKey,
-        v: impl Into<std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.destination_country_parameters(k, v.into());
         self
@@ -212,10 +224,10 @@ impl SendTextMessageFluentBuilder {
     /// <p>This field is used for any country-specific registration requirements. Currently, this setting is only used when you send messages to recipients in India using a sender ID. For more information see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-sms-senderid-india.html">Special requirements for sending SMS messages to recipients in India</a>. </p>
     pub fn set_destination_country_parameters(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<
+        input: ::std::option::Option<
+            ::std::collections::HashMap<
                 crate::types::DestinationCountryParameterKey,
-                std::string::String,
+                ::std::string::String,
             >,
         >,
     ) -> Self {
@@ -228,7 +240,7 @@ impl SendTextMessageFluentBuilder {
         self
     }
     /// <p>When set to true, the message is checked and validated, but isn't sent to the end recipient.</p>
-    pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
     }

@@ -3,11 +3,11 @@
 /// <p>Provides the number of compliant and noncompliant rules within a conformance pack. Also provides the compliance status of the conformance pack and the total rule count which includes compliant rules, noncompliant rules, and rules that cannot be evaluated due to insufficient data.</p>
 /// <p>A conformance pack is compliant if all of the rules in a conformance packs are compliant. It is noncompliant if any of the rules are not compliant. The compliance status of a conformance pack is INSUFFICIENT_DATA only if all rules within a conformance pack cannot be evaluated due to insufficient data. If some of the rules in a conformance pack are compliant but the compliance status of other rules in that same conformance pack is INSUFFICIENT_DATA, the conformance pack shows compliant.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AggregateConformancePackCompliance {
     /// <p>The compliance status of the conformance pack.</p>
     #[doc(hidden)]
-    pub compliance_type: std::option::Option<crate::types::ConformancePackComplianceType>,
+    pub compliance_type: ::std::option::Option<crate::types::ConformancePackComplianceType>,
     /// <p>The number of compliant Config Rules.</p>
     #[doc(hidden)]
     pub compliant_rule_count: i32,
@@ -22,7 +22,7 @@ impl AggregateConformancePackCompliance {
     /// <p>The compliance status of the conformance pack.</p>
     pub fn compliance_type(
         &self,
-    ) -> std::option::Option<&crate::types::ConformancePackComplianceType> {
+    ) -> ::std::option::Option<&crate::types::ConformancePackComplianceType> {
         self.compliance_type.as_ref()
     }
     /// <p>The number of compliant Config Rules.</p>
@@ -47,54 +47,56 @@ impl AggregateConformancePackCompliance {
 
 /// A builder for [`AggregateConformancePackCompliance`](crate::types::AggregateConformancePackCompliance).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AggregateConformancePackComplianceBuilder {
-    pub(crate) compliance_type: std::option::Option<crate::types::ConformancePackComplianceType>,
-    pub(crate) compliant_rule_count: std::option::Option<i32>,
-    pub(crate) non_compliant_rule_count: std::option::Option<i32>,
-    pub(crate) total_rule_count: std::option::Option<i32>,
+    pub(crate) compliance_type: ::std::option::Option<crate::types::ConformancePackComplianceType>,
+    pub(crate) compliant_rule_count: ::std::option::Option<i32>,
+    pub(crate) non_compliant_rule_count: ::std::option::Option<i32>,
+    pub(crate) total_rule_count: ::std::option::Option<i32>,
 }
 impl AggregateConformancePackComplianceBuilder {
     /// <p>The compliance status of the conformance pack.</p>
     pub fn compliance_type(mut self, input: crate::types::ConformancePackComplianceType) -> Self {
-        self.compliance_type = Some(input);
+        self.compliance_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The compliance status of the conformance pack.</p>
     pub fn set_compliance_type(
         mut self,
-        input: std::option::Option<crate::types::ConformancePackComplianceType>,
+        input: ::std::option::Option<crate::types::ConformancePackComplianceType>,
     ) -> Self {
         self.compliance_type = input;
         self
     }
     /// <p>The number of compliant Config Rules.</p>
     pub fn compliant_rule_count(mut self, input: i32) -> Self {
-        self.compliant_rule_count = Some(input);
+        self.compliant_rule_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of compliant Config Rules.</p>
-    pub fn set_compliant_rule_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_compliant_rule_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.compliant_rule_count = input;
         self
     }
     /// <p>The number of noncompliant Config Rules.</p>
     pub fn non_compliant_rule_count(mut self, input: i32) -> Self {
-        self.non_compliant_rule_count = Some(input);
+        self.non_compliant_rule_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of noncompliant Config Rules.</p>
-    pub fn set_non_compliant_rule_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_non_compliant_rule_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.non_compliant_rule_count = input;
         self
     }
     /// <p>Total number of compliant rules, noncompliant rules, and the rules that do not have any applicable resources to evaluate upon resulting in insufficient data.</p>
     pub fn total_rule_count(mut self, input: i32) -> Self {
-        self.total_rule_count = Some(input);
+        self.total_rule_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>Total number of compliant rules, noncompliant rules, and the rules that do not have any applicable resources to evaluate upon resulting in insufficient data.</p>
-    pub fn set_total_rule_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_total_rule_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.total_rule_count = input;
         self
     }

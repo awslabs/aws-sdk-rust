@@ -2,27 +2,27 @@
 
 /// <p>A list of all identities that you have attempted to verify under your AWS account, regardless of verification status.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListIdentitiesOutput {
     /// <p>A list of identities.</p>
     #[doc(hidden)]
-    pub identities: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub identities: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The token used for pagination.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListIdentitiesOutput {
     /// <p>A list of identities.</p>
-    pub fn identities(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn identities(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.identities.as_deref()
     }
     /// <p>The token used for pagination.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListIdentitiesOutput {
+impl ::aws_http::request_id::RequestId for ListIdentitiesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -36,10 +36,12 @@ impl ListIdentitiesOutput {
 
 /// A builder for [`ListIdentitiesOutput`](crate::operation::list_identities::ListIdentitiesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListIdentitiesOutputBuilder {
-    pub(crate) identities: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) identities: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListIdentitiesOutputBuilder {
@@ -48,27 +50,27 @@ impl ListIdentitiesOutputBuilder {
     /// To override the contents of this collection use [`set_identities`](Self::set_identities).
     ///
     /// <p>A list of identities.</p>
-    pub fn identities(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn identities(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.identities.unwrap_or_default();
         v.push(input.into());
-        self.identities = Some(v);
+        self.identities = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of identities.</p>
     pub fn set_identities(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.identities = input;
         self
     }
     /// <p>The token used for pagination.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The token used for pagination.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

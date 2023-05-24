@@ -38,13 +38,13 @@
 /// Specify the codec profile for this output. Choose High, 8-bit, 4:2:0 (HIGH) or High, 10-bit, 4:2:2 (HIGH_422). These profiles are specified in ITU-T H.264.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum Xavc4kProfileCodecProfile {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum Xavc4kProfileCodecProfile {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for Xavc4kProfileCodecProfile {
+impl ::std::convert::From<&str> for Xavc4kProfileCodecProfile {
     fn from(s: &str) -> Self {
         match s {
             "HIGH" => Xavc4kProfileCodecProfile::High,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for Xavc4kProfileCodecProfile {
         }
     }
 }
-impl std::str::FromStr for Xavc4kProfileCodecProfile {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for Xavc4kProfileCodecProfile {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Xavc4kProfileCodecProfile::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(Xavc4kProfileCodecProfile::from(s))
     }
 }
 impl Xavc4kProfileCodecProfile {
@@ -86,7 +86,7 @@ impl Xavc4kProfileCodecProfile {
         &["HIGH", "HIGH_422"]
     }
 }
-impl AsRef<str> for Xavc4kProfileCodecProfile {
+impl ::std::convert::AsRef<str> for Xavc4kProfileCodecProfile {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

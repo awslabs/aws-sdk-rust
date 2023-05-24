@@ -2,7 +2,7 @@
 
 /// <p>Configuration options for zone awareness.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails {
     /// <p>he number of Availability Zones that the domain uses. Valid values are 2 and 3. The default is 2.</p>
     #[doc(hidden)]
@@ -23,18 +23,20 @@ impl AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails 
 
 /// A builder for [`AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails`](crate::types::AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetailsBuilder {
-    pub(crate) availability_zone_count: std::option::Option<i32>,
+    pub(crate) availability_zone_count: ::std::option::Option<i32>,
 }
 impl AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetailsBuilder {
     /// <p>he number of Availability Zones that the domain uses. Valid values are 2 and 3. The default is 2.</p>
     pub fn availability_zone_count(mut self, input: i32) -> Self {
-        self.availability_zone_count = Some(input);
+        self.availability_zone_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>he number of Availability Zones that the domain uses. Valid values are 2 and 3. The default is 2.</p>
-    pub fn set_availability_zone_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_availability_zone_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.availability_zone_count = input;
         self
     }

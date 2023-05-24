@@ -2,43 +2,43 @@
 
 /// <p>For <code>AwsApiAction</code>, <code>NetworkConnectionAction</code>, and <code>PortProbeAction</code>, <code>RemoteIpDetails</code> provides information about the remote IP address that was involved in the action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActionRemoteIpDetails {
     /// <p>The IP address.</p>
     #[doc(hidden)]
-    pub ip_address_v4: std::option::Option<std::string::String>,
+    pub ip_address_v4: ::std::option::Option<::std::string::String>,
     /// <p>The internet service provider (ISP) organization associated with the remote IP address.</p>
     #[doc(hidden)]
-    pub organization: std::option::Option<crate::types::IpOrganizationDetails>,
+    pub organization: ::std::option::Option<crate::types::IpOrganizationDetails>,
     /// <p>The country where the remote IP address is located.</p>
     #[doc(hidden)]
-    pub country: std::option::Option<crate::types::Country>,
+    pub country: ::std::option::Option<crate::types::Country>,
     /// <p>The city where the remote IP address is located.</p>
     #[doc(hidden)]
-    pub city: std::option::Option<crate::types::City>,
+    pub city: ::std::option::Option<crate::types::City>,
     /// <p>The coordinates of the location of the remote IP address.</p>
     #[doc(hidden)]
-    pub geo_location: std::option::Option<crate::types::GeoLocation>,
+    pub geo_location: ::std::option::Option<crate::types::GeoLocation>,
 }
 impl ActionRemoteIpDetails {
     /// <p>The IP address.</p>
-    pub fn ip_address_v4(&self) -> std::option::Option<&str> {
+    pub fn ip_address_v4(&self) -> ::std::option::Option<&str> {
         self.ip_address_v4.as_deref()
     }
     /// <p>The internet service provider (ISP) organization associated with the remote IP address.</p>
-    pub fn organization(&self) -> std::option::Option<&crate::types::IpOrganizationDetails> {
+    pub fn organization(&self) -> ::std::option::Option<&crate::types::IpOrganizationDetails> {
         self.organization.as_ref()
     }
     /// <p>The country where the remote IP address is located.</p>
-    pub fn country(&self) -> std::option::Option<&crate::types::Country> {
+    pub fn country(&self) -> ::std::option::Option<&crate::types::Country> {
         self.country.as_ref()
     }
     /// <p>The city where the remote IP address is located.</p>
-    pub fn city(&self) -> std::option::Option<&crate::types::City> {
+    pub fn city(&self) -> ::std::option::Option<&crate::types::City> {
         self.city.as_ref()
     }
     /// <p>The coordinates of the location of the remote IP address.</p>
-    pub fn geo_location(&self) -> std::option::Option<&crate::types::GeoLocation> {
+    pub fn geo_location(&self) -> ::std::option::Option<&crate::types::GeoLocation> {
         self.geo_location.as_ref()
     }
 }
@@ -51,67 +51,75 @@ impl ActionRemoteIpDetails {
 
 /// A builder for [`ActionRemoteIpDetails`](crate::types::ActionRemoteIpDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ActionRemoteIpDetailsBuilder {
-    pub(crate) ip_address_v4: std::option::Option<std::string::String>,
-    pub(crate) organization: std::option::Option<crate::types::IpOrganizationDetails>,
-    pub(crate) country: std::option::Option<crate::types::Country>,
-    pub(crate) city: std::option::Option<crate::types::City>,
-    pub(crate) geo_location: std::option::Option<crate::types::GeoLocation>,
+    pub(crate) ip_address_v4: ::std::option::Option<::std::string::String>,
+    pub(crate) organization: ::std::option::Option<crate::types::IpOrganizationDetails>,
+    pub(crate) country: ::std::option::Option<crate::types::Country>,
+    pub(crate) city: ::std::option::Option<crate::types::City>,
+    pub(crate) geo_location: ::std::option::Option<crate::types::GeoLocation>,
 }
 impl ActionRemoteIpDetailsBuilder {
     /// <p>The IP address.</p>
-    pub fn ip_address_v4(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ip_address_v4 = Some(input.into());
+    pub fn ip_address_v4(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.ip_address_v4 = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IP address.</p>
-    pub fn set_ip_address_v4(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ip_address_v4(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.ip_address_v4 = input;
         self
     }
     /// <p>The internet service provider (ISP) organization associated with the remote IP address.</p>
     pub fn organization(mut self, input: crate::types::IpOrganizationDetails) -> Self {
-        self.organization = Some(input);
+        self.organization = ::std::option::Option::Some(input);
         self
     }
     /// <p>The internet service provider (ISP) organization associated with the remote IP address.</p>
     pub fn set_organization(
         mut self,
-        input: std::option::Option<crate::types::IpOrganizationDetails>,
+        input: ::std::option::Option<crate::types::IpOrganizationDetails>,
     ) -> Self {
         self.organization = input;
         self
     }
     /// <p>The country where the remote IP address is located.</p>
     pub fn country(mut self, input: crate::types::Country) -> Self {
-        self.country = Some(input);
+        self.country = ::std::option::Option::Some(input);
         self
     }
     /// <p>The country where the remote IP address is located.</p>
-    pub fn set_country(mut self, input: std::option::Option<crate::types::Country>) -> Self {
+    pub fn set_country(mut self, input: ::std::option::Option<crate::types::Country>) -> Self {
         self.country = input;
         self
     }
     /// <p>The city where the remote IP address is located.</p>
     pub fn city(mut self, input: crate::types::City) -> Self {
-        self.city = Some(input);
+        self.city = ::std::option::Option::Some(input);
         self
     }
     /// <p>The city where the remote IP address is located.</p>
-    pub fn set_city(mut self, input: std::option::Option<crate::types::City>) -> Self {
+    pub fn set_city(mut self, input: ::std::option::Option<crate::types::City>) -> Self {
         self.city = input;
         self
     }
     /// <p>The coordinates of the location of the remote IP address.</p>
     pub fn geo_location(mut self, input: crate::types::GeoLocation) -> Self {
-        self.geo_location = Some(input);
+        self.geo_location = ::std::option::Option::Some(input);
         self
     }
     /// <p>The coordinates of the location of the remote IP address.</p>
     pub fn set_geo_location(
         mut self,
-        input: std::option::Option<crate::types::GeoLocation>,
+        input: ::std::option::Option<crate::types::GeoLocation>,
     ) -> Self {
         self.geo_location = input;
         self

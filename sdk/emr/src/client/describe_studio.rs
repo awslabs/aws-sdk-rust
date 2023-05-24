@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeStudio`](crate::operation::describe_studio::builders::DescribeStudioFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`studio_id(impl Into<String>)`](crate::operation::describe_studio::builders::DescribeStudioFluentBuilder::studio_id) / [`set_studio_id(Option<String>)`](crate::operation::describe_studio::builders::DescribeStudioFluentBuilder::set_studio_id): <p>The Amazon EMR Studio ID.</p>
+    ///   - [`studio_id(impl ::std::convert::Into<String>)`](crate::operation::describe_studio::builders::DescribeStudioFluentBuilder::studio_id) / [`set_studio_id(Option<String>)`](crate::operation::describe_studio::builders::DescribeStudioFluentBuilder::set_studio_id): <p>The Amazon EMR Studio ID.</p>
     /// - On success, responds with [`DescribeStudioOutput`](crate::operation::describe_studio::DescribeStudioOutput) with field(s):
     ///   - [`studio(Option<Studio>)`](crate::operation::describe_studio::DescribeStudioOutput::studio): <p>The Amazon EMR Studio details.</p>
     /// - On failure, responds with [`SdkError<DescribeStudioError>`](crate::operation::describe_studio::DescribeStudioError)

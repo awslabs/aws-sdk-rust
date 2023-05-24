@@ -26,9 +26,9 @@ Then in code, a client can be created with the following:
 ```rust,no_run
 use aws_sdk_machinelearning as machinelearning;
 
-#[tokio::main]
+#[::tokio::main]
 async fn main() -> Result<(), machinelearning::Error> {
-    let config = aws_config::load_from_env().await;
+    let config = ::aws_config::load_from_env().await;
     let client = machinelearning::Client::new(&config);
 
     // ... make some calls with the client

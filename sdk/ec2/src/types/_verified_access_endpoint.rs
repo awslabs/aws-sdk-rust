@@ -2,142 +2,144 @@
 
 /// <p>An Amazon Web Services Verified Access endpoint specifies the application that Amazon Web Services Verified Access provides access to. It must be attached to an Amazon Web Services Verified Access group. An Amazon Web Services Verified Access endpoint must also have an attached access policy before you attached it to a group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VerifiedAccessEndpoint {
     /// <p>The ID of the Amazon Web Services Verified Access instance.</p>
     #[doc(hidden)]
-    pub verified_access_instance_id: std::option::Option<std::string::String>,
+    pub verified_access_instance_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services Verified Access group.</p>
     #[doc(hidden)]
-    pub verified_access_group_id: std::option::Option<std::string::String>,
+    pub verified_access_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the Amazon Web Services Verified Access endpoint.</p>
     #[doc(hidden)]
-    pub verified_access_endpoint_id: std::option::Option<std::string::String>,
+    pub verified_access_endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>The DNS name for users to reach your application.</p>
     #[doc(hidden)]
-    pub application_domain: std::option::Option<std::string::String>,
+    pub application_domain: ::std::option::Option<::std::string::String>,
     /// <p>The type of Amazon Web Services Verified Access endpoint. Incoming application requests will be sent to an IP address, load balancer or a network interface depending on the endpoint type specified.</p>
     #[doc(hidden)]
-    pub endpoint_type: std::option::Option<crate::types::VerifiedAccessEndpointType>,
+    pub endpoint_type: ::std::option::Option<crate::types::VerifiedAccessEndpointType>,
     /// <p>The type of attachment used to provide connectivity between the Amazon Web Services Verified Access endpoint and the application.</p>
     #[doc(hidden)]
-    pub attachment_type: std::option::Option<crate::types::VerifiedAccessEndpointAttachmentType>,
+    pub attachment_type: ::std::option::Option<crate::types::VerifiedAccessEndpointAttachmentType>,
     /// <p>The ARN of a public TLS/SSL certificate imported into or created with ACM.</p>
     #[doc(hidden)]
-    pub domain_certificate_arn: std::option::Option<std::string::String>,
+    pub domain_certificate_arn: ::std::option::Option<::std::string::String>,
     /// <p>A DNS name that is generated for the endpoint.</p>
     #[doc(hidden)]
-    pub endpoint_domain: std::option::Option<std::string::String>,
+    pub endpoint_domain: ::std::option::Option<::std::string::String>,
     /// <p>Returned if endpoint has a device trust provider attached.</p>
     #[doc(hidden)]
-    pub device_validation_domain: std::option::Option<std::string::String>,
+    pub device_validation_domain: ::std::option::Option<::std::string::String>,
     /// <p>The IDs of the security groups for the endpoint.</p>
     #[doc(hidden)]
-    pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The load balancer details if creating the Amazon Web Services Verified Access endpoint as <code>load-balancer</code>type.</p>
     #[doc(hidden)]
     pub load_balancer_options:
-        std::option::Option<crate::types::VerifiedAccessEndpointLoadBalancerOptions>,
+        ::std::option::Option<crate::types::VerifiedAccessEndpointLoadBalancerOptions>,
     /// <p>The options for network-interface type endpoint.</p>
     #[doc(hidden)]
     pub network_interface_options:
-        std::option::Option<crate::types::VerifiedAccessEndpointEniOptions>,
+        ::std::option::Option<crate::types::VerifiedAccessEndpointEniOptions>,
     /// <p>The endpoint status.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::VerifiedAccessEndpointStatus>,
+    pub status: ::std::option::Option<crate::types::VerifiedAccessEndpointStatus>,
     /// <p>A description for the Amazon Web Services Verified Access endpoint.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The creation time.</p>
     #[doc(hidden)]
-    pub creation_time: std::option::Option<std::string::String>,
+    pub creation_time: ::std::option::Option<::std::string::String>,
     /// <p>The last updated time.</p>
     #[doc(hidden)]
-    pub last_updated_time: std::option::Option<std::string::String>,
+    pub last_updated_time: ::std::option::Option<::std::string::String>,
     /// <p>The deletion time.</p>
     #[doc(hidden)]
-    pub deletion_time: std::option::Option<std::string::String>,
+    pub deletion_time: ::std::option::Option<::std::string::String>,
     /// <p>The tags.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl VerifiedAccessEndpoint {
     /// <p>The ID of the Amazon Web Services Verified Access instance.</p>
-    pub fn verified_access_instance_id(&self) -> std::option::Option<&str> {
+    pub fn verified_access_instance_id(&self) -> ::std::option::Option<&str> {
         self.verified_access_instance_id.as_deref()
     }
     /// <p>The ID of the Amazon Web Services Verified Access group.</p>
-    pub fn verified_access_group_id(&self) -> std::option::Option<&str> {
+    pub fn verified_access_group_id(&self) -> ::std::option::Option<&str> {
         self.verified_access_group_id.as_deref()
     }
     /// <p>The ID of the Amazon Web Services Verified Access endpoint.</p>
-    pub fn verified_access_endpoint_id(&self) -> std::option::Option<&str> {
+    pub fn verified_access_endpoint_id(&self) -> ::std::option::Option<&str> {
         self.verified_access_endpoint_id.as_deref()
     }
     /// <p>The DNS name for users to reach your application.</p>
-    pub fn application_domain(&self) -> std::option::Option<&str> {
+    pub fn application_domain(&self) -> ::std::option::Option<&str> {
         self.application_domain.as_deref()
     }
     /// <p>The type of Amazon Web Services Verified Access endpoint. Incoming application requests will be sent to an IP address, load balancer or a network interface depending on the endpoint type specified.</p>
-    pub fn endpoint_type(&self) -> std::option::Option<&crate::types::VerifiedAccessEndpointType> {
+    pub fn endpoint_type(
+        &self,
+    ) -> ::std::option::Option<&crate::types::VerifiedAccessEndpointType> {
         self.endpoint_type.as_ref()
     }
     /// <p>The type of attachment used to provide connectivity between the Amazon Web Services Verified Access endpoint and the application.</p>
     pub fn attachment_type(
         &self,
-    ) -> std::option::Option<&crate::types::VerifiedAccessEndpointAttachmentType> {
+    ) -> ::std::option::Option<&crate::types::VerifiedAccessEndpointAttachmentType> {
         self.attachment_type.as_ref()
     }
     /// <p>The ARN of a public TLS/SSL certificate imported into or created with ACM.</p>
-    pub fn domain_certificate_arn(&self) -> std::option::Option<&str> {
+    pub fn domain_certificate_arn(&self) -> ::std::option::Option<&str> {
         self.domain_certificate_arn.as_deref()
     }
     /// <p>A DNS name that is generated for the endpoint.</p>
-    pub fn endpoint_domain(&self) -> std::option::Option<&str> {
+    pub fn endpoint_domain(&self) -> ::std::option::Option<&str> {
         self.endpoint_domain.as_deref()
     }
     /// <p>Returned if endpoint has a device trust provider attached.</p>
-    pub fn device_validation_domain(&self) -> std::option::Option<&str> {
+    pub fn device_validation_domain(&self) -> ::std::option::Option<&str> {
         self.device_validation_domain.as_deref()
     }
     /// <p>The IDs of the security groups for the endpoint.</p>
-    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.security_group_ids.as_deref()
     }
     /// <p>The load balancer details if creating the Amazon Web Services Verified Access endpoint as <code>load-balancer</code>type.</p>
     pub fn load_balancer_options(
         &self,
-    ) -> std::option::Option<&crate::types::VerifiedAccessEndpointLoadBalancerOptions> {
+    ) -> ::std::option::Option<&crate::types::VerifiedAccessEndpointLoadBalancerOptions> {
         self.load_balancer_options.as_ref()
     }
     /// <p>The options for network-interface type endpoint.</p>
     pub fn network_interface_options(
         &self,
-    ) -> std::option::Option<&crate::types::VerifiedAccessEndpointEniOptions> {
+    ) -> ::std::option::Option<&crate::types::VerifiedAccessEndpointEniOptions> {
         self.network_interface_options.as_ref()
     }
     /// <p>The endpoint status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::VerifiedAccessEndpointStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::VerifiedAccessEndpointStatus> {
         self.status.as_ref()
     }
     /// <p>A description for the Amazon Web Services Verified Access endpoint.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The creation time.</p>
-    pub fn creation_time(&self) -> std::option::Option<&str> {
+    pub fn creation_time(&self) -> ::std::option::Option<&str> {
         self.creation_time.as_deref()
     }
     /// <p>The last updated time.</p>
-    pub fn last_updated_time(&self) -> std::option::Option<&str> {
+    pub fn last_updated_time(&self) -> ::std::option::Option<&str> {
         self.last_updated_time.as_deref()
     }
     /// <p>The deletion time.</p>
-    pub fn deletion_time(&self) -> std::option::Option<&str> {
+    pub fn deletion_time(&self) -> ::std::option::Option<&str> {
         self.deletion_time.as_deref()
     }
     /// <p>The tags.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -150,92 +152,106 @@ impl VerifiedAccessEndpoint {
 
 /// A builder for [`VerifiedAccessEndpoint`](crate::types::VerifiedAccessEndpoint).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VerifiedAccessEndpointBuilder {
-    pub(crate) verified_access_instance_id: std::option::Option<std::string::String>,
-    pub(crate) verified_access_group_id: std::option::Option<std::string::String>,
-    pub(crate) verified_access_endpoint_id: std::option::Option<std::string::String>,
-    pub(crate) application_domain: std::option::Option<std::string::String>,
-    pub(crate) endpoint_type: std::option::Option<crate::types::VerifiedAccessEndpointType>,
+    pub(crate) verified_access_instance_id: ::std::option::Option<::std::string::String>,
+    pub(crate) verified_access_group_id: ::std::option::Option<::std::string::String>,
+    pub(crate) verified_access_endpoint_id: ::std::option::Option<::std::string::String>,
+    pub(crate) application_domain: ::std::option::Option<::std::string::String>,
+    pub(crate) endpoint_type: ::std::option::Option<crate::types::VerifiedAccessEndpointType>,
     pub(crate) attachment_type:
-        std::option::Option<crate::types::VerifiedAccessEndpointAttachmentType>,
-    pub(crate) domain_certificate_arn: std::option::Option<std::string::String>,
-    pub(crate) endpoint_domain: std::option::Option<std::string::String>,
-    pub(crate) device_validation_domain: std::option::Option<std::string::String>,
-    pub(crate) security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+        ::std::option::Option<crate::types::VerifiedAccessEndpointAttachmentType>,
+    pub(crate) domain_certificate_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) endpoint_domain: ::std::option::Option<::std::string::String>,
+    pub(crate) device_validation_domain: ::std::option::Option<::std::string::String>,
+    pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) load_balancer_options:
-        std::option::Option<crate::types::VerifiedAccessEndpointLoadBalancerOptions>,
+        ::std::option::Option<crate::types::VerifiedAccessEndpointLoadBalancerOptions>,
     pub(crate) network_interface_options:
-        std::option::Option<crate::types::VerifiedAccessEndpointEniOptions>,
-    pub(crate) status: std::option::Option<crate::types::VerifiedAccessEndpointStatus>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) creation_time: std::option::Option<std::string::String>,
-    pub(crate) last_updated_time: std::option::Option<std::string::String>,
-    pub(crate) deletion_time: std::option::Option<std::string::String>,
-    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        ::std::option::Option<crate::types::VerifiedAccessEndpointEniOptions>,
+    pub(crate) status: ::std::option::Option<crate::types::VerifiedAccessEndpointStatus>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) creation_time: ::std::option::Option<::std::string::String>,
+    pub(crate) last_updated_time: ::std::option::Option<::std::string::String>,
+    pub(crate) deletion_time: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl VerifiedAccessEndpointBuilder {
     /// <p>The ID of the Amazon Web Services Verified Access instance.</p>
-    pub fn verified_access_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.verified_access_instance_id = Some(input.into());
+    pub fn verified_access_instance_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.verified_access_instance_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services Verified Access instance.</p>
     pub fn set_verified_access_instance_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.verified_access_instance_id = input;
         self
     }
     /// <p>The ID of the Amazon Web Services Verified Access group.</p>
-    pub fn verified_access_group_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.verified_access_group_id = Some(input.into());
+    pub fn verified_access_group_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.verified_access_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services Verified Access group.</p>
     pub fn set_verified_access_group_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.verified_access_group_id = input;
         self
     }
     /// <p>The ID of the Amazon Web Services Verified Access endpoint.</p>
-    pub fn verified_access_endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.verified_access_endpoint_id = Some(input.into());
+    pub fn verified_access_endpoint_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.verified_access_endpoint_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Amazon Web Services Verified Access endpoint.</p>
     pub fn set_verified_access_endpoint_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.verified_access_endpoint_id = input;
         self
     }
     /// <p>The DNS name for users to reach your application.</p>
-    pub fn application_domain(mut self, input: impl Into<std::string::String>) -> Self {
-        self.application_domain = Some(input.into());
+    pub fn application_domain(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.application_domain = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The DNS name for users to reach your application.</p>
     pub fn set_application_domain(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.application_domain = input;
         self
     }
     /// <p>The type of Amazon Web Services Verified Access endpoint. Incoming application requests will be sent to an IP address, load balancer or a network interface depending on the endpoint type specified.</p>
     pub fn endpoint_type(mut self, input: crate::types::VerifiedAccessEndpointType) -> Self {
-        self.endpoint_type = Some(input);
+        self.endpoint_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of Amazon Web Services Verified Access endpoint. Incoming application requests will be sent to an IP address, load balancer or a network interface depending on the endpoint type specified.</p>
     pub fn set_endpoint_type(
         mut self,
-        input: std::option::Option<crate::types::VerifiedAccessEndpointType>,
+        input: ::std::option::Option<crate::types::VerifiedAccessEndpointType>,
     ) -> Self {
         self.endpoint_type = input;
         self
@@ -245,49 +261,61 @@ impl VerifiedAccessEndpointBuilder {
         mut self,
         input: crate::types::VerifiedAccessEndpointAttachmentType,
     ) -> Self {
-        self.attachment_type = Some(input);
+        self.attachment_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of attachment used to provide connectivity between the Amazon Web Services Verified Access endpoint and the application.</p>
     pub fn set_attachment_type(
         mut self,
-        input: std::option::Option<crate::types::VerifiedAccessEndpointAttachmentType>,
+        input: ::std::option::Option<crate::types::VerifiedAccessEndpointAttachmentType>,
     ) -> Self {
         self.attachment_type = input;
         self
     }
     /// <p>The ARN of a public TLS/SSL certificate imported into or created with ACM.</p>
-    pub fn domain_certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.domain_certificate_arn = Some(input.into());
+    pub fn domain_certificate_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.domain_certificate_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of a public TLS/SSL certificate imported into or created with ACM.</p>
     pub fn set_domain_certificate_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.domain_certificate_arn = input;
         self
     }
     /// <p>A DNS name that is generated for the endpoint.</p>
-    pub fn endpoint_domain(mut self, input: impl Into<std::string::String>) -> Self {
-        self.endpoint_domain = Some(input.into());
+    pub fn endpoint_domain(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.endpoint_domain = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A DNS name that is generated for the endpoint.</p>
-    pub fn set_endpoint_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_endpoint_domain(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.endpoint_domain = input;
         self
     }
     /// <p>Returned if endpoint has a device trust provider attached.</p>
-    pub fn device_validation_domain(mut self, input: impl Into<std::string::String>) -> Self {
-        self.device_validation_domain = Some(input.into());
+    pub fn device_validation_domain(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.device_validation_domain = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Returned if endpoint has a device trust provider attached.</p>
     pub fn set_device_validation_domain(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.device_validation_domain = input;
         self
@@ -297,16 +325,19 @@ impl VerifiedAccessEndpointBuilder {
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
     ///
     /// <p>The IDs of the security groups for the endpoint.</p>
-    pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn security_group_ids(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
         v.push(input.into());
-        self.security_group_ids = Some(v);
+        self.security_group_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IDs of the security groups for the endpoint.</p>
     pub fn set_security_group_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.security_group_ids = input;
         self
@@ -316,13 +347,13 @@ impl VerifiedAccessEndpointBuilder {
         mut self,
         input: crate::types::VerifiedAccessEndpointLoadBalancerOptions,
     ) -> Self {
-        self.load_balancer_options = Some(input);
+        self.load_balancer_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The load balancer details if creating the Amazon Web Services Verified Access endpoint as <code>load-balancer</code>type.</p>
     pub fn set_load_balancer_options(
         mut self,
-        input: std::option::Option<crate::types::VerifiedAccessEndpointLoadBalancerOptions>,
+        input: ::std::option::Option<crate::types::VerifiedAccessEndpointLoadBalancerOptions>,
     ) -> Self {
         self.load_balancer_options = input;
         self
@@ -332,70 +363,85 @@ impl VerifiedAccessEndpointBuilder {
         mut self,
         input: crate::types::VerifiedAccessEndpointEniOptions,
     ) -> Self {
-        self.network_interface_options = Some(input);
+        self.network_interface_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The options for network-interface type endpoint.</p>
     pub fn set_network_interface_options(
         mut self,
-        input: std::option::Option<crate::types::VerifiedAccessEndpointEniOptions>,
+        input: ::std::option::Option<crate::types::VerifiedAccessEndpointEniOptions>,
     ) -> Self {
         self.network_interface_options = input;
         self
     }
     /// <p>The endpoint status.</p>
     pub fn status(mut self, input: crate::types::VerifiedAccessEndpointStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The endpoint status.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::VerifiedAccessEndpointStatus>,
+        input: ::std::option::Option<crate::types::VerifiedAccessEndpointStatus>,
     ) -> Self {
         self.status = input;
         self
     }
     /// <p>A description for the Amazon Web Services Verified Access endpoint.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description for the Amazon Web Services Verified Access endpoint.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>The creation time.</p>
-    pub fn creation_time(mut self, input: impl Into<std::string::String>) -> Self {
-        self.creation_time = Some(input.into());
+    pub fn creation_time(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.creation_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The creation time.</p>
-    pub fn set_creation_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_creation_time(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.creation_time = input;
         self
     }
     /// <p>The last updated time.</p>
-    pub fn last_updated_time(mut self, input: impl Into<std::string::String>) -> Self {
-        self.last_updated_time = Some(input.into());
+    pub fn last_updated_time(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.last_updated_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The last updated time.</p>
     pub fn set_last_updated_time(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.last_updated_time = input;
         self
     }
     /// <p>The deletion time.</p>
-    pub fn deletion_time(mut self, input: impl Into<std::string::String>) -> Self {
-        self.deletion_time = Some(input.into());
+    pub fn deletion_time(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.deletion_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The deletion time.</p>
-    pub fn set_deletion_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_deletion_time(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.deletion_time = input;
         self
     }
@@ -407,13 +453,13 @@ impl VerifiedAccessEndpointBuilder {
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
-        self.tags = Some(v);
+        self.tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>The tags.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tags = input;
         self

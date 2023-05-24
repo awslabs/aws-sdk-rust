@@ -2,29 +2,29 @@
 
 /// Description of the source and destination queues between which the job has moved, along with the timestamp of the move
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QueueTransition {
     /// The queue that the job was on after the transition.
     #[doc(hidden)]
-    pub destination_queue: std::option::Option<std::string::String>,
+    pub destination_queue: ::std::option::Option<::std::string::String>,
     /// The queue that the job was on before the transition.
     #[doc(hidden)]
-    pub source_queue: std::option::Option<std::string::String>,
+    pub source_queue: ::std::option::Option<::std::string::String>,
     /// The time, in Unix epoch format, that the job moved from the source queue to the destination queue.
     #[doc(hidden)]
-    pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl QueueTransition {
     /// The queue that the job was on after the transition.
-    pub fn destination_queue(&self) -> std::option::Option<&str> {
+    pub fn destination_queue(&self) -> ::std::option::Option<&str> {
         self.destination_queue.as_deref()
     }
     /// The queue that the job was on before the transition.
-    pub fn source_queue(&self) -> std::option::Option<&str> {
+    pub fn source_queue(&self) -> ::std::option::Option<&str> {
         self.source_queue.as_deref()
     }
     /// The time, in Unix epoch format, that the job moved from the source queue to the destination queue.
-    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
 }
@@ -37,43 +37,51 @@ impl QueueTransition {
 
 /// A builder for [`QueueTransition`](crate::types::QueueTransition).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct QueueTransitionBuilder {
-    pub(crate) destination_queue: std::option::Option<std::string::String>,
-    pub(crate) source_queue: std::option::Option<std::string::String>,
-    pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) destination_queue: ::std::option::Option<::std::string::String>,
+    pub(crate) source_queue: ::std::option::Option<::std::string::String>,
+    pub(crate) timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl QueueTransitionBuilder {
     /// The queue that the job was on after the transition.
-    pub fn destination_queue(mut self, input: impl Into<std::string::String>) -> Self {
-        self.destination_queue = Some(input.into());
+    pub fn destination_queue(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.destination_queue = ::std::option::Option::Some(input.into());
         self
     }
     /// The queue that the job was on after the transition.
     pub fn set_destination_queue(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.destination_queue = input;
         self
     }
     /// The queue that the job was on before the transition.
-    pub fn source_queue(mut self, input: impl Into<std::string::String>) -> Self {
-        self.source_queue = Some(input.into());
+    pub fn source_queue(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source_queue = ::std::option::Option::Some(input.into());
         self
     }
     /// The queue that the job was on before the transition.
-    pub fn set_source_queue(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_source_queue(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_queue = input;
         self
     }
     /// The time, in Unix epoch format, that the job moved from the source queue to the destination queue.
-    pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.timestamp = Some(input);
+    pub fn timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.timestamp = ::std::option::Option::Some(input);
         self
     }
     /// The time, in Unix epoch format, that the job moved from the source queue to the destination queue.
-    pub fn set_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_timestamp(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
         self.timestamp = input;
         self
     }

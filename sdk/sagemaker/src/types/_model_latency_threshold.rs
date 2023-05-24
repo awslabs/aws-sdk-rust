@@ -2,18 +2,18 @@
 
 /// <p>The model latency threshold.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModelLatencyThreshold {
     /// <p>The model latency percentile threshold.</p>
     #[doc(hidden)]
-    pub percentile: std::option::Option<std::string::String>,
+    pub percentile: ::std::option::Option<::std::string::String>,
     /// <p>The model latency percentile value in milliseconds.</p>
     #[doc(hidden)]
     pub value_in_milliseconds: i32,
 }
 impl ModelLatencyThreshold {
     /// <p>The model latency percentile threshold.</p>
-    pub fn percentile(&self) -> std::option::Option<&str> {
+    pub fn percentile(&self) -> ::std::option::Option<&str> {
         self.percentile.as_deref()
     }
     /// <p>The model latency percentile value in milliseconds.</p>
@@ -30,29 +30,31 @@ impl ModelLatencyThreshold {
 
 /// A builder for [`ModelLatencyThreshold`](crate::types::ModelLatencyThreshold).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ModelLatencyThresholdBuilder {
-    pub(crate) percentile: std::option::Option<std::string::String>,
-    pub(crate) value_in_milliseconds: std::option::Option<i32>,
+    pub(crate) percentile: ::std::option::Option<::std::string::String>,
+    pub(crate) value_in_milliseconds: ::std::option::Option<i32>,
 }
 impl ModelLatencyThresholdBuilder {
     /// <p>The model latency percentile threshold.</p>
-    pub fn percentile(mut self, input: impl Into<std::string::String>) -> Self {
-        self.percentile = Some(input.into());
+    pub fn percentile(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.percentile = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The model latency percentile threshold.</p>
-    pub fn set_percentile(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_percentile(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.percentile = input;
         self
     }
     /// <p>The model latency percentile value in milliseconds.</p>
     pub fn value_in_milliseconds(mut self, input: i32) -> Self {
-        self.value_in_milliseconds = Some(input);
+        self.value_in_milliseconds = ::std::option::Option::Some(input);
         self
     }
     /// <p>The model latency percentile value in milliseconds.</p>
-    pub fn set_value_in_milliseconds(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_value_in_milliseconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.value_in_milliseconds = input;
         self
     }

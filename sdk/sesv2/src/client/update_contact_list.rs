@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateContactList`](crate::operation::update_contact_list::builders::UpdateContactListFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`contact_list_name(impl Into<String>)`](crate::operation::update_contact_list::builders::UpdateContactListFluentBuilder::contact_list_name) / [`set_contact_list_name(Option<String>)`](crate::operation::update_contact_list::builders::UpdateContactListFluentBuilder::set_contact_list_name): <p>The name of the contact list.</p>
+    ///   - [`contact_list_name(impl ::std::convert::Into<String>)`](crate::operation::update_contact_list::builders::UpdateContactListFluentBuilder::contact_list_name) / [`set_contact_list_name(Option<String>)`](crate::operation::update_contact_list::builders::UpdateContactListFluentBuilder::set_contact_list_name): <p>The name of the contact list.</p>
     ///   - [`topics(Vec<Topic>)`](crate::operation::update_contact_list::builders::UpdateContactListFluentBuilder::topics) / [`set_topics(Option<Vec<Topic>>)`](crate::operation::update_contact_list::builders::UpdateContactListFluentBuilder::set_topics): <p>An interest group, theme, or label within a list. A contact list can have multiple topics.</p>
-    ///   - [`description(impl Into<String>)`](crate::operation::update_contact_list::builders::UpdateContactListFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_contact_list::builders::UpdateContactListFluentBuilder::set_description): <p>A description of what the contact list is about.</p>
+    ///   - [`description(impl ::std::convert::Into<String>)`](crate::operation::update_contact_list::builders::UpdateContactListFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_contact_list::builders::UpdateContactListFluentBuilder::set_description): <p>A description of what the contact list is about.</p>
     /// - On success, responds with [`UpdateContactListOutput`](crate::operation::update_contact_list::UpdateContactListOutput)
     /// - On failure, responds with [`SdkError<UpdateContactListError>`](crate::operation::update_contact_list::UpdateContactListError)
     pub fn update_contact_list(

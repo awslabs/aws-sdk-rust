@@ -4,7 +4,7 @@
 /// <p>This is used only in the <code>FieldToMatch</code> specification for some web request component types. </p>
 /// <p>JSON specification: <code>"AllQueryArguments": {}</code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AllQueryArguments {}
 impl AllQueryArguments {
     /// Creates a new builder-style object to manufacture [`AllQueryArguments`](crate::types::AllQueryArguments).
@@ -15,7 +15,9 @@ impl AllQueryArguments {
 
 /// A builder for [`AllQueryArguments`](crate::types::AllQueryArguments).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AllQueryArgumentsBuilder {}
 impl AllQueryArgumentsBuilder {
     /// Consumes the builder and constructs a [`AllQueryArguments`](crate::types::AllQueryArguments).

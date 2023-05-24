@@ -2,29 +2,29 @@
 
 /// <p> The settings for the source S3 bucket. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3ImportSource {
     /// <p> The URI for the source S3 bucket. </p>
     #[doc(hidden)]
-    pub s3_location_uri: std::option::Option<std::string::String>,
+    pub s3_location_uri: ::std::option::Option<::std::string::String>,
     /// <p> The region associated with the source S3 bucket. </p>
     #[doc(hidden)]
-    pub s3_bucket_region: std::option::Option<std::string::String>,
+    pub s3_bucket_region: ::std::option::Option<::std::string::String>,
     /// <p> The IAM ARN role used to access the source S3 bucket. </p>
     #[doc(hidden)]
-    pub s3_bucket_access_role_arn: std::option::Option<std::string::String>,
+    pub s3_bucket_access_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl S3ImportSource {
     /// <p> The URI for the source S3 bucket. </p>
-    pub fn s3_location_uri(&self) -> std::option::Option<&str> {
+    pub fn s3_location_uri(&self) -> ::std::option::Option<&str> {
         self.s3_location_uri.as_deref()
     }
     /// <p> The region associated with the source S3 bucket. </p>
-    pub fn s3_bucket_region(&self) -> std::option::Option<&str> {
+    pub fn s3_bucket_region(&self) -> ::std::option::Option<&str> {
         self.s3_bucket_region.as_deref()
     }
     /// <p> The IAM ARN role used to access the source S3 bucket. </p>
-    pub fn s3_bucket_access_role_arn(&self) -> std::option::Option<&str> {
+    pub fn s3_bucket_access_role_arn(&self) -> ::std::option::Option<&str> {
         self.s3_bucket_access_role_arn.as_deref()
     }
 }
@@ -37,42 +37,59 @@ impl S3ImportSource {
 
 /// A builder for [`S3ImportSource`](crate::types::S3ImportSource).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct S3ImportSourceBuilder {
-    pub(crate) s3_location_uri: std::option::Option<std::string::String>,
-    pub(crate) s3_bucket_region: std::option::Option<std::string::String>,
-    pub(crate) s3_bucket_access_role_arn: std::option::Option<std::string::String>,
+    pub(crate) s3_location_uri: ::std::option::Option<::std::string::String>,
+    pub(crate) s3_bucket_region: ::std::option::Option<::std::string::String>,
+    pub(crate) s3_bucket_access_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl S3ImportSourceBuilder {
     /// <p> The URI for the source S3 bucket. </p>
-    pub fn s3_location_uri(mut self, input: impl Into<std::string::String>) -> Self {
-        self.s3_location_uri = Some(input.into());
+    pub fn s3_location_uri(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.s3_location_uri = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The URI for the source S3 bucket. </p>
-    pub fn set_s3_location_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_s3_location_uri(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.s3_location_uri = input;
         self
     }
     /// <p> The region associated with the source S3 bucket. </p>
-    pub fn s3_bucket_region(mut self, input: impl Into<std::string::String>) -> Self {
-        self.s3_bucket_region = Some(input.into());
+    pub fn s3_bucket_region(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.s3_bucket_region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The region associated with the source S3 bucket. </p>
-    pub fn set_s3_bucket_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_s3_bucket_region(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.s3_bucket_region = input;
         self
     }
     /// <p> The IAM ARN role used to access the source S3 bucket. </p>
-    pub fn s3_bucket_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.s3_bucket_access_role_arn = Some(input.into());
+    pub fn s3_bucket_access_role_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.s3_bucket_access_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The IAM ARN role used to access the source S3 bucket. </p>
     pub fn set_s3_bucket_access_role_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.s3_bucket_access_role_arn = input;
         self

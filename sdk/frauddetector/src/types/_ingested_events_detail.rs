@@ -2,17 +2,17 @@
 
 /// <p>The details of the ingested event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IngestedEventsDetail {
     /// <p>The start and stop time of the ingested events.</p>
     #[doc(hidden)]
-    pub ingested_events_time_window: std::option::Option<crate::types::IngestedEventsTimeWindow>,
+    pub ingested_events_time_window: ::std::option::Option<crate::types::IngestedEventsTimeWindow>,
 }
 impl IngestedEventsDetail {
     /// <p>The start and stop time of the ingested events.</p>
     pub fn ingested_events_time_window(
         &self,
-    ) -> std::option::Option<&crate::types::IngestedEventsTimeWindow> {
+    ) -> ::std::option::Option<&crate::types::IngestedEventsTimeWindow> {
         self.ingested_events_time_window.as_ref()
     }
 }
@@ -25,10 +25,12 @@ impl IngestedEventsDetail {
 
 /// A builder for [`IngestedEventsDetail`](crate::types::IngestedEventsDetail).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct IngestedEventsDetailBuilder {
     pub(crate) ingested_events_time_window:
-        std::option::Option<crate::types::IngestedEventsTimeWindow>,
+        ::std::option::Option<crate::types::IngestedEventsTimeWindow>,
 }
 impl IngestedEventsDetailBuilder {
     /// <p>The start and stop time of the ingested events.</p>
@@ -36,13 +38,13 @@ impl IngestedEventsDetailBuilder {
         mut self,
         input: crate::types::IngestedEventsTimeWindow,
     ) -> Self {
-        self.ingested_events_time_window = Some(input);
+        self.ingested_events_time_window = ::std::option::Option::Some(input);
         self
     }
     /// <p>The start and stop time of the ingested events.</p>
     pub fn set_ingested_events_time_window(
         mut self,
-        input: std::option::Option<crate::types::IngestedEventsTimeWindow>,
+        input: ::std::option::Option<crate::types::IngestedEventsTimeWindow>,
     ) -> Self {
         self.ingested_events_time_window = input;
         self

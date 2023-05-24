@@ -2,22 +2,22 @@
 
 /// <p>Defines the predicate of the trigger, which determines when it fires.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Predicate {
     /// <p>An optional field if only one condition is listed. If multiple conditions are listed, then this field is required.</p>
     #[doc(hidden)]
-    pub logical: std::option::Option<crate::types::Logical>,
+    pub logical: ::std::option::Option<crate::types::Logical>,
     /// <p>A list of the conditions that determine when the trigger will fire.</p>
     #[doc(hidden)]
-    pub conditions: std::option::Option<std::vec::Vec<crate::types::Condition>>,
+    pub conditions: ::std::option::Option<::std::vec::Vec<crate::types::Condition>>,
 }
 impl Predicate {
     /// <p>An optional field if only one condition is listed. If multiple conditions are listed, then this field is required.</p>
-    pub fn logical(&self) -> std::option::Option<&crate::types::Logical> {
+    pub fn logical(&self) -> ::std::option::Option<&crate::types::Logical> {
         self.logical.as_ref()
     }
     /// <p>A list of the conditions that determine when the trigger will fire.</p>
-    pub fn conditions(&self) -> std::option::Option<&[crate::types::Condition]> {
+    pub fn conditions(&self) -> ::std::option::Option<&[crate::types::Condition]> {
         self.conditions.as_deref()
     }
 }
@@ -30,19 +30,21 @@ impl Predicate {
 
 /// A builder for [`Predicate`](crate::types::Predicate).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PredicateBuilder {
-    pub(crate) logical: std::option::Option<crate::types::Logical>,
-    pub(crate) conditions: std::option::Option<std::vec::Vec<crate::types::Condition>>,
+    pub(crate) logical: ::std::option::Option<crate::types::Logical>,
+    pub(crate) conditions: ::std::option::Option<::std::vec::Vec<crate::types::Condition>>,
 }
 impl PredicateBuilder {
     /// <p>An optional field if only one condition is listed. If multiple conditions are listed, then this field is required.</p>
     pub fn logical(mut self, input: crate::types::Logical) -> Self {
-        self.logical = Some(input);
+        self.logical = ::std::option::Option::Some(input);
         self
     }
     /// <p>An optional field if only one condition is listed. If multiple conditions are listed, then this field is required.</p>
-    pub fn set_logical(mut self, input: std::option::Option<crate::types::Logical>) -> Self {
+    pub fn set_logical(mut self, input: ::std::option::Option<crate::types::Logical>) -> Self {
         self.logical = input;
         self
     }
@@ -54,13 +56,13 @@ impl PredicateBuilder {
     pub fn conditions(mut self, input: crate::types::Condition) -> Self {
         let mut v = self.conditions.unwrap_or_default();
         v.push(input);
-        self.conditions = Some(v);
+        self.conditions = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of the conditions that determine when the trigger will fire.</p>
     pub fn set_conditions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Condition>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Condition>>,
     ) -> Self {
         self.conditions = input;
         self

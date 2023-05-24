@@ -2,20 +2,20 @@
 
 /// <p>The result of a <code><code>DeleteExpression</code></code> request. Specifies the expression being deleted.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteExpressionOutput {
     /// <p>The status of the expression being deleted.</p>
     #[doc(hidden)]
-    pub expression: std::option::Option<crate::types::ExpressionStatus>,
+    pub expression: ::std::option::Option<crate::types::ExpressionStatus>,
     _request_id: Option<String>,
 }
 impl DeleteExpressionOutput {
     /// <p>The status of the expression being deleted.</p>
-    pub fn expression(&self) -> std::option::Option<&crate::types::ExpressionStatus> {
+    pub fn expression(&self) -> ::std::option::Option<&crate::types::ExpressionStatus> {
         self.expression.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for DeleteExpressionOutput {
+impl ::aws_http::request_id::RequestId for DeleteExpressionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,21 +30,23 @@ impl DeleteExpressionOutput {
 
 /// A builder for [`DeleteExpressionOutput`](crate::operation::delete_expression::DeleteExpressionOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteExpressionOutputBuilder {
-    pub(crate) expression: std::option::Option<crate::types::ExpressionStatus>,
+    pub(crate) expression: ::std::option::Option<crate::types::ExpressionStatus>,
     _request_id: Option<String>,
 }
 impl DeleteExpressionOutputBuilder {
     /// <p>The status of the expression being deleted.</p>
     pub fn expression(mut self, input: crate::types::ExpressionStatus) -> Self {
-        self.expression = Some(input);
+        self.expression = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the expression being deleted.</p>
     pub fn set_expression(
         mut self,
-        input: std::option::Option<crate::types::ExpressionStatus>,
+        input: ::std::option::Option<crate::types::ExpressionStatus>,
     ) -> Self {
         self.expression = input;
         self

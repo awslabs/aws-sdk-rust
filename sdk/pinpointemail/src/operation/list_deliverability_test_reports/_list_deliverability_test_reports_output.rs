@@ -2,30 +2,30 @@
 
 /// <p>A list of the predictive inbox placement test reports that are available for your account, regardless of whether or not those tests are complete.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDeliverabilityTestReportsOutput {
     /// <p>An object that contains a lists of predictive inbox placement tests that you've performed.</p>
     #[doc(hidden)]
     pub deliverability_test_reports:
-        std::option::Option<std::vec::Vec<crate::types::DeliverabilityTestReport>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::DeliverabilityTestReport>>,
     /// <p>A token that indicates that there are additional predictive inbox placement tests to list. To view additional predictive inbox placement tests, issue another request to <code>ListDeliverabilityTestReports</code>, and pass this token in the <code>NextToken</code> parameter.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListDeliverabilityTestReportsOutput {
     /// <p>An object that contains a lists of predictive inbox placement tests that you've performed.</p>
     pub fn deliverability_test_reports(
         &self,
-    ) -> std::option::Option<&[crate::types::DeliverabilityTestReport]> {
+    ) -> ::std::option::Option<&[crate::types::DeliverabilityTestReport]> {
         self.deliverability_test_reports.as_deref()
     }
     /// <p>A token that indicates that there are additional predictive inbox placement tests to list. To view additional predictive inbox placement tests, issue another request to <code>ListDeliverabilityTestReports</code>, and pass this token in the <code>NextToken</code> parameter.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListDeliverabilityTestReportsOutput {
+impl ::aws_http::request_id::RequestId for ListDeliverabilityTestReportsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -39,11 +39,13 @@ impl ListDeliverabilityTestReportsOutput {
 
 /// A builder for [`ListDeliverabilityTestReportsOutput`](crate::operation::list_deliverability_test_reports::ListDeliverabilityTestReportsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListDeliverabilityTestReportsOutputBuilder {
     pub(crate) deliverability_test_reports:
-        std::option::Option<std::vec::Vec<crate::types::DeliverabilityTestReport>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::DeliverabilityTestReport>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListDeliverabilityTestReportsOutputBuilder {
@@ -58,24 +60,24 @@ impl ListDeliverabilityTestReportsOutputBuilder {
     ) -> Self {
         let mut v = self.deliverability_test_reports.unwrap_or_default();
         v.push(input);
-        self.deliverability_test_reports = Some(v);
+        self.deliverability_test_reports = ::std::option::Option::Some(v);
         self
     }
     /// <p>An object that contains a lists of predictive inbox placement tests that you've performed.</p>
     pub fn set_deliverability_test_reports(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DeliverabilityTestReport>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DeliverabilityTestReport>>,
     ) -> Self {
         self.deliverability_test_reports = input;
         self
     }
     /// <p>A token that indicates that there are additional predictive inbox placement tests to list. To view additional predictive inbox placement tests, issue another request to <code>ListDeliverabilityTestReports</code>, and pass this token in the <code>NextToken</code> parameter.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A token that indicates that there are additional predictive inbox placement tests to list. To view additional predictive inbox placement tests, issue another request to <code>ListDeliverabilityTestReports</code>, and pass this token in the <code>NextToken</code> parameter.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

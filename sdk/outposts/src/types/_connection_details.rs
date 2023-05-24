@@ -2,50 +2,50 @@
 
 /// <p> Information about a connection. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConnectionDetails {
     /// <p> The public key of the client. </p>
     #[doc(hidden)]
-    pub client_public_key: std::option::Option<std::string::String>,
+    pub client_public_key: ::std::option::Option<::std::string::String>,
     /// <p> The public key of the server. </p>
     #[doc(hidden)]
-    pub server_public_key: std::option::Option<std::string::String>,
+    pub server_public_key: ::std::option::Option<::std::string::String>,
     /// <p> The endpoint for the server. </p>
     #[doc(hidden)]
-    pub server_endpoint: std::option::Option<std::string::String>,
+    pub server_endpoint: ::std::option::Option<::std::string::String>,
     /// <p> The client tunnel address. </p>
     #[doc(hidden)]
-    pub client_tunnel_address: std::option::Option<std::string::String>,
+    pub client_tunnel_address: ::std::option::Option<::std::string::String>,
     /// <p> The server tunnel address. </p>
     #[doc(hidden)]
-    pub server_tunnel_address: std::option::Option<std::string::String>,
+    pub server_tunnel_address: ::std::option::Option<::std::string::String>,
     /// <p> The allowed IP addresses. </p>
     #[doc(hidden)]
-    pub allowed_ips: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub allowed_ips: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ConnectionDetails {
     /// <p> The public key of the client. </p>
-    pub fn client_public_key(&self) -> std::option::Option<&str> {
+    pub fn client_public_key(&self) -> ::std::option::Option<&str> {
         self.client_public_key.as_deref()
     }
     /// <p> The public key of the server. </p>
-    pub fn server_public_key(&self) -> std::option::Option<&str> {
+    pub fn server_public_key(&self) -> ::std::option::Option<&str> {
         self.server_public_key.as_deref()
     }
     /// <p> The endpoint for the server. </p>
-    pub fn server_endpoint(&self) -> std::option::Option<&str> {
+    pub fn server_endpoint(&self) -> ::std::option::Option<&str> {
         self.server_endpoint.as_deref()
     }
     /// <p> The client tunnel address. </p>
-    pub fn client_tunnel_address(&self) -> std::option::Option<&str> {
+    pub fn client_tunnel_address(&self) -> ::std::option::Option<&str> {
         self.client_tunnel_address.as_deref()
     }
     /// <p> The server tunnel address. </p>
-    pub fn server_tunnel_address(&self) -> std::option::Option<&str> {
+    pub fn server_tunnel_address(&self) -> ::std::option::Option<&str> {
         self.server_tunnel_address.as_deref()
     }
     /// <p> The allowed IP addresses. </p>
-    pub fn allowed_ips(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn allowed_ips(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.allowed_ips.as_deref()
     }
 }
@@ -58,74 +58,94 @@ impl ConnectionDetails {
 
 /// A builder for [`ConnectionDetails`](crate::types::ConnectionDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ConnectionDetailsBuilder {
-    pub(crate) client_public_key: std::option::Option<std::string::String>,
-    pub(crate) server_public_key: std::option::Option<std::string::String>,
-    pub(crate) server_endpoint: std::option::Option<std::string::String>,
-    pub(crate) client_tunnel_address: std::option::Option<std::string::String>,
-    pub(crate) server_tunnel_address: std::option::Option<std::string::String>,
-    pub(crate) allowed_ips: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) client_public_key: ::std::option::Option<::std::string::String>,
+    pub(crate) server_public_key: ::std::option::Option<::std::string::String>,
+    pub(crate) server_endpoint: ::std::option::Option<::std::string::String>,
+    pub(crate) client_tunnel_address: ::std::option::Option<::std::string::String>,
+    pub(crate) server_tunnel_address: ::std::option::Option<::std::string::String>,
+    pub(crate) allowed_ips: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ConnectionDetailsBuilder {
     /// <p> The public key of the client. </p>
-    pub fn client_public_key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.client_public_key = Some(input.into());
+    pub fn client_public_key(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.client_public_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The public key of the client. </p>
     pub fn set_client_public_key(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.client_public_key = input;
         self
     }
     /// <p> The public key of the server. </p>
-    pub fn server_public_key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.server_public_key = Some(input.into());
+    pub fn server_public_key(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.server_public_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The public key of the server. </p>
     pub fn set_server_public_key(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.server_public_key = input;
         self
     }
     /// <p> The endpoint for the server. </p>
-    pub fn server_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
-        self.server_endpoint = Some(input.into());
+    pub fn server_endpoint(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.server_endpoint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The endpoint for the server. </p>
-    pub fn set_server_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_server_endpoint(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.server_endpoint = input;
         self
     }
     /// <p> The client tunnel address. </p>
-    pub fn client_tunnel_address(mut self, input: impl Into<std::string::String>) -> Self {
-        self.client_tunnel_address = Some(input.into());
+    pub fn client_tunnel_address(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.client_tunnel_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The client tunnel address. </p>
     pub fn set_client_tunnel_address(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.client_tunnel_address = input;
         self
     }
     /// <p> The server tunnel address. </p>
-    pub fn server_tunnel_address(mut self, input: impl Into<std::string::String>) -> Self {
-        self.server_tunnel_address = Some(input.into());
+    pub fn server_tunnel_address(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.server_tunnel_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The server tunnel address. </p>
     pub fn set_server_tunnel_address(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.server_tunnel_address = input;
         self
@@ -135,16 +155,16 @@ impl ConnectionDetailsBuilder {
     /// To override the contents of this collection use [`set_allowed_ips`](Self::set_allowed_ips).
     ///
     /// <p> The allowed IP addresses. </p>
-    pub fn allowed_ips(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn allowed_ips(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.allowed_ips.unwrap_or_default();
         v.push(input.into());
-        self.allowed_ips = Some(v);
+        self.allowed_ips = ::std::option::Option::Some(v);
         self
     }
     /// <p> The allowed IP addresses. </p>
     pub fn set_allowed_ips(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.allowed_ips = input;
         self

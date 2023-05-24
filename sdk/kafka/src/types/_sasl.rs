@@ -2,22 +2,22 @@
 
 /// <p>Details for client authentication using SASL.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Sasl {
     /// <p>Details for SASL/SCRAM client authentication.</p>
     #[doc(hidden)]
-    pub scram: std::option::Option<crate::types::Scram>,
+    pub scram: ::std::option::Option<crate::types::Scram>,
     /// <p>Indicates whether IAM access control is enabled.</p>
     #[doc(hidden)]
-    pub iam: std::option::Option<crate::types::Iam>,
+    pub iam: ::std::option::Option<crate::types::Iam>,
 }
 impl Sasl {
     /// <p>Details for SASL/SCRAM client authentication.</p>
-    pub fn scram(&self) -> std::option::Option<&crate::types::Scram> {
+    pub fn scram(&self) -> ::std::option::Option<&crate::types::Scram> {
         self.scram.as_ref()
     }
     /// <p>Indicates whether IAM access control is enabled.</p>
-    pub fn iam(&self) -> std::option::Option<&crate::types::Iam> {
+    pub fn iam(&self) -> ::std::option::Option<&crate::types::Iam> {
         self.iam.as_ref()
     }
 }
@@ -30,29 +30,31 @@ impl Sasl {
 
 /// A builder for [`Sasl`](crate::types::Sasl).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SaslBuilder {
-    pub(crate) scram: std::option::Option<crate::types::Scram>,
-    pub(crate) iam: std::option::Option<crate::types::Iam>,
+    pub(crate) scram: ::std::option::Option<crate::types::Scram>,
+    pub(crate) iam: ::std::option::Option<crate::types::Iam>,
 }
 impl SaslBuilder {
     /// <p>Details for SASL/SCRAM client authentication.</p>
     pub fn scram(mut self, input: crate::types::Scram) -> Self {
-        self.scram = Some(input);
+        self.scram = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details for SASL/SCRAM client authentication.</p>
-    pub fn set_scram(mut self, input: std::option::Option<crate::types::Scram>) -> Self {
+    pub fn set_scram(mut self, input: ::std::option::Option<crate::types::Scram>) -> Self {
         self.scram = input;
         self
     }
     /// <p>Indicates whether IAM access control is enabled.</p>
     pub fn iam(mut self, input: crate::types::Iam) -> Self {
-        self.iam = Some(input);
+        self.iam = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether IAM access control is enabled.</p>
-    pub fn set_iam(mut self, input: std::option::Option<crate::types::Iam>) -> Self {
+    pub fn set_iam(mut self, input: ::std::option::Option<crate::types::Iam>) -> Self {
         self.iam = input;
         self
     }

@@ -2,17 +2,17 @@
 
 /// <p>For a hyperparameter of the integer type, specifies the range that a hyperparameter tuning job searches.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IntegerParameterRange {
     /// <p>The name of the hyperparameter to search.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The minimum value of the hyperparameter to search.</p>
     #[doc(hidden)]
-    pub min_value: std::option::Option<std::string::String>,
+    pub min_value: ::std::option::Option<::std::string::String>,
     /// <p>The maximum value of the hyperparameter to search.</p>
     #[doc(hidden)]
-    pub max_value: std::option::Option<std::string::String>,
+    pub max_value: ::std::option::Option<::std::string::String>,
     /// <p>The scale that hyperparameter tuning uses to search the hyperparameter range. For information about choosing a hyperparameter scale, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type">Hyperparameter Scaling</a>. One of the following values:</p>
     /// <dl>
     /// <dt>
@@ -36,19 +36,19 @@ pub struct IntegerParameterRange {
     /// </dd>
     /// </dl>
     #[doc(hidden)]
-    pub scaling_type: std::option::Option<crate::types::HyperParameterScalingType>,
+    pub scaling_type: ::std::option::Option<crate::types::HyperParameterScalingType>,
 }
 impl IntegerParameterRange {
     /// <p>The name of the hyperparameter to search.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The minimum value of the hyperparameter to search.</p>
-    pub fn min_value(&self) -> std::option::Option<&str> {
+    pub fn min_value(&self) -> ::std::option::Option<&str> {
         self.min_value.as_deref()
     }
     /// <p>The maximum value of the hyperparameter to search.</p>
-    pub fn max_value(&self) -> std::option::Option<&str> {
+    pub fn max_value(&self) -> ::std::option::Option<&str> {
         self.max_value.as_deref()
     }
     /// <p>The scale that hyperparameter tuning uses to search the hyperparameter range. For information about choosing a hyperparameter scale, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type">Hyperparameter Scaling</a>. One of the following values:</p>
@@ -73,7 +73,7 @@ impl IntegerParameterRange {
     /// <p>Logarithmic scaling works only for ranges that have only values greater than 0.</p>
     /// </dd>
     /// </dl>
-    pub fn scaling_type(&self) -> std::option::Option<&crate::types::HyperParameterScalingType> {
+    pub fn scaling_type(&self) -> ::std::option::Option<&crate::types::HyperParameterScalingType> {
         self.scaling_type.as_ref()
     }
 }
@@ -86,41 +86,43 @@ impl IntegerParameterRange {
 
 /// A builder for [`IntegerParameterRange`](crate::types::IntegerParameterRange).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct IntegerParameterRangeBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) min_value: std::option::Option<std::string::String>,
-    pub(crate) max_value: std::option::Option<std::string::String>,
-    pub(crate) scaling_type: std::option::Option<crate::types::HyperParameterScalingType>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) min_value: ::std::option::Option<::std::string::String>,
+    pub(crate) max_value: ::std::option::Option<::std::string::String>,
+    pub(crate) scaling_type: ::std::option::Option<crate::types::HyperParameterScalingType>,
 }
 impl IntegerParameterRangeBuilder {
     /// <p>The name of the hyperparameter to search.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the hyperparameter to search.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The minimum value of the hyperparameter to search.</p>
-    pub fn min_value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.min_value = Some(input.into());
+    pub fn min_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.min_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The minimum value of the hyperparameter to search.</p>
-    pub fn set_min_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_min_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.min_value = input;
         self
     }
     /// <p>The maximum value of the hyperparameter to search.</p>
-    pub fn max_value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.max_value = Some(input.into());
+    pub fn max_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.max_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The maximum value of the hyperparameter to search.</p>
-    pub fn set_max_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_max_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.max_value = input;
         self
     }
@@ -147,7 +149,7 @@ impl IntegerParameterRangeBuilder {
     /// </dd>
     /// </dl>
     pub fn scaling_type(mut self, input: crate::types::HyperParameterScalingType) -> Self {
-        self.scaling_type = Some(input);
+        self.scaling_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The scale that hyperparameter tuning uses to search the hyperparameter range. For information about choosing a hyperparameter scale, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type">Hyperparameter Scaling</a>. One of the following values:</p>
@@ -174,7 +176,7 @@ impl IntegerParameterRangeBuilder {
     /// </dl>
     pub fn set_scaling_type(
         mut self,
-        input: std::option::Option<crate::types::HyperParameterScalingType>,
+        input: ::std::option::Option<crate::types::HyperParameterScalingType>,
     ) -> Self {
         self.scaling_type = input;
         self

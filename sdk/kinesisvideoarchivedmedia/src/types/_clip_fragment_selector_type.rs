@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ClipFragmentSelectorType {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum ClipFragmentSelectorType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ClipFragmentSelectorType {
+impl ::std::convert::From<&str> for ClipFragmentSelectorType {
     fn from(s: &str) -> Self {
         match s {
             "PRODUCER_TIMESTAMP" => ClipFragmentSelectorType::ProducerTimestamp,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for ClipFragmentSelectorType {
         }
     }
 }
-impl std::str::FromStr for ClipFragmentSelectorType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ClipFragmentSelectorType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ClipFragmentSelectorType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ClipFragmentSelectorType::from(s))
     }
 }
 impl ClipFragmentSelectorType {
@@ -86,7 +86,7 @@ impl ClipFragmentSelectorType {
         &["PRODUCER_TIMESTAMP", "SERVER_TIMESTAMP"]
     }
 }
-impl AsRef<str> for ClipFragmentSelectorType {
+impl ::std::convert::AsRef<str> for ClipFragmentSelectorType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

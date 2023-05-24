@@ -2,15 +2,15 @@
 
 /// <p>An object that represents the gateway route to rewrite.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GrpcGatewayRouteRewrite {
     /// <p>The host name of the gateway route to rewrite.</p>
     #[doc(hidden)]
-    pub hostname: std::option::Option<crate::types::GatewayRouteHostnameRewrite>,
+    pub hostname: ::std::option::Option<crate::types::GatewayRouteHostnameRewrite>,
 }
 impl GrpcGatewayRouteRewrite {
     /// <p>The host name of the gateway route to rewrite.</p>
-    pub fn hostname(&self) -> std::option::Option<&crate::types::GatewayRouteHostnameRewrite> {
+    pub fn hostname(&self) -> ::std::option::Option<&crate::types::GatewayRouteHostnameRewrite> {
         self.hostname.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl GrpcGatewayRouteRewrite {
 
 /// A builder for [`GrpcGatewayRouteRewrite`](crate::types::GrpcGatewayRouteRewrite).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GrpcGatewayRouteRewriteBuilder {
-    pub(crate) hostname: std::option::Option<crate::types::GatewayRouteHostnameRewrite>,
+    pub(crate) hostname: ::std::option::Option<crate::types::GatewayRouteHostnameRewrite>,
 }
 impl GrpcGatewayRouteRewriteBuilder {
     /// <p>The host name of the gateway route to rewrite.</p>
     pub fn hostname(mut self, input: crate::types::GatewayRouteHostnameRewrite) -> Self {
-        self.hostname = Some(input);
+        self.hostname = ::std::option::Option::Some(input);
         self
     }
     /// <p>The host name of the gateway route to rewrite.</p>
     pub fn set_hostname(
         mut self,
-        input: std::option::Option<crate::types::GatewayRouteHostnameRewrite>,
+        input: ::std::option::Option<crate::types::GatewayRouteHostnameRewrite>,
     ) -> Self {
         self.hostname = input;
         self

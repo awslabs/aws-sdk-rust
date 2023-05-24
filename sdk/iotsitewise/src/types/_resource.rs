@@ -2,22 +2,22 @@
 
 /// <p>Contains an IoT SiteWise Monitor resource ID for a portal or project.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Resource {
     /// <p>A portal resource.</p>
     #[doc(hidden)]
-    pub portal: std::option::Option<crate::types::PortalResource>,
+    pub portal: ::std::option::Option<crate::types::PortalResource>,
     /// <p>A project resource.</p>
     #[doc(hidden)]
-    pub project: std::option::Option<crate::types::ProjectResource>,
+    pub project: ::std::option::Option<crate::types::ProjectResource>,
 }
 impl Resource {
     /// <p>A portal resource.</p>
-    pub fn portal(&self) -> std::option::Option<&crate::types::PortalResource> {
+    pub fn portal(&self) -> ::std::option::Option<&crate::types::PortalResource> {
         self.portal.as_ref()
     }
     /// <p>A project resource.</p>
-    pub fn project(&self) -> std::option::Option<&crate::types::ProjectResource> {
+    pub fn project(&self) -> ::std::option::Option<&crate::types::ProjectResource> {
         self.project.as_ref()
     }
 }
@@ -30,31 +30,36 @@ impl Resource {
 
 /// A builder for [`Resource`](crate::types::Resource).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResourceBuilder {
-    pub(crate) portal: std::option::Option<crate::types::PortalResource>,
-    pub(crate) project: std::option::Option<crate::types::ProjectResource>,
+    pub(crate) portal: ::std::option::Option<crate::types::PortalResource>,
+    pub(crate) project: ::std::option::Option<crate::types::ProjectResource>,
 }
 impl ResourceBuilder {
     /// <p>A portal resource.</p>
     pub fn portal(mut self, input: crate::types::PortalResource) -> Self {
-        self.portal = Some(input);
+        self.portal = ::std::option::Option::Some(input);
         self
     }
     /// <p>A portal resource.</p>
-    pub fn set_portal(mut self, input: std::option::Option<crate::types::PortalResource>) -> Self {
+    pub fn set_portal(
+        mut self,
+        input: ::std::option::Option<crate::types::PortalResource>,
+    ) -> Self {
         self.portal = input;
         self
     }
     /// <p>A project resource.</p>
     pub fn project(mut self, input: crate::types::ProjectResource) -> Self {
-        self.project = Some(input);
+        self.project = ::std::option::Option::Some(input);
         self
     }
     /// <p>A project resource.</p>
     pub fn set_project(
         mut self,
-        input: std::option::Option<crate::types::ProjectResource>,
+        input: ::std::option::Option<crate::types::ProjectResource>,
     ) -> Self {
         self.project = input;
         self

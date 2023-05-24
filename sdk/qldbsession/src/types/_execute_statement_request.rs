@@ -2,29 +2,29 @@
 
 /// <p>Specifies a request to execute a statement.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExecuteStatementRequest {
     /// <p>Specifies the transaction ID of the request.</p>
     #[doc(hidden)]
-    pub transaction_id: std::option::Option<std::string::String>,
+    pub transaction_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the statement of the request.</p>
     #[doc(hidden)]
-    pub statement: std::option::Option<std::string::String>,
+    pub statement: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the parameters for the parameterized statement in the request.</p>
     #[doc(hidden)]
-    pub parameters: std::option::Option<std::vec::Vec<crate::types::ValueHolder>>,
+    pub parameters: ::std::option::Option<::std::vec::Vec<crate::types::ValueHolder>>,
 }
 impl ExecuteStatementRequest {
     /// <p>Specifies the transaction ID of the request.</p>
-    pub fn transaction_id(&self) -> std::option::Option<&str> {
+    pub fn transaction_id(&self) -> ::std::option::Option<&str> {
         self.transaction_id.as_deref()
     }
     /// <p>Specifies the statement of the request.</p>
-    pub fn statement(&self) -> std::option::Option<&str> {
+    pub fn statement(&self) -> ::std::option::Option<&str> {
         self.statement.as_deref()
     }
     /// <p>Specifies the parameters for the parameterized statement in the request.</p>
-    pub fn parameters(&self) -> std::option::Option<&[crate::types::ValueHolder]> {
+    pub fn parameters(&self) -> ::std::option::Option<&[crate::types::ValueHolder]> {
         self.parameters.as_deref()
     }
 }
@@ -37,30 +37,38 @@ impl ExecuteStatementRequest {
 
 /// A builder for [`ExecuteStatementRequest`](crate::types::ExecuteStatementRequest).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ExecuteStatementRequestBuilder {
-    pub(crate) transaction_id: std::option::Option<std::string::String>,
-    pub(crate) statement: std::option::Option<std::string::String>,
-    pub(crate) parameters: std::option::Option<std::vec::Vec<crate::types::ValueHolder>>,
+    pub(crate) transaction_id: ::std::option::Option<::std::string::String>,
+    pub(crate) statement: ::std::option::Option<::std::string::String>,
+    pub(crate) parameters: ::std::option::Option<::std::vec::Vec<crate::types::ValueHolder>>,
 }
 impl ExecuteStatementRequestBuilder {
     /// <p>Specifies the transaction ID of the request.</p>
-    pub fn transaction_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.transaction_id = Some(input.into());
+    pub fn transaction_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.transaction_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the transaction ID of the request.</p>
-    pub fn set_transaction_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_transaction_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.transaction_id = input;
         self
     }
     /// <p>Specifies the statement of the request.</p>
-    pub fn statement(mut self, input: impl Into<std::string::String>) -> Self {
-        self.statement = Some(input.into());
+    pub fn statement(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.statement = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the statement of the request.</p>
-    pub fn set_statement(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_statement(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.statement = input;
         self
     }
@@ -72,13 +80,13 @@ impl ExecuteStatementRequestBuilder {
     pub fn parameters(mut self, input: crate::types::ValueHolder) -> Self {
         let mut v = self.parameters.unwrap_or_default();
         v.push(input);
-        self.parameters = Some(v);
+        self.parameters = ::std::option::Option::Some(v);
         self
     }
     /// <p>Specifies the parameters for the parameterized statement in the request.</p>
     pub fn set_parameters(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ValueHolder>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ValueHolder>>,
     ) -> Self {
         self.parameters = input;
         self

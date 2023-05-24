@@ -2,22 +2,22 @@
 
 /// <p>An array of objects representing the replication destinations and repository filters for a replication configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplicationRule {
     /// <p>An array of objects representing the destination for a replication rule.</p>
     #[doc(hidden)]
-    pub destinations: std::option::Option<std::vec::Vec<crate::types::ReplicationDestination>>,
+    pub destinations: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationDestination>>,
     /// <p>An array of objects representing the filters for a replication rule. Specifying a repository filter for a replication rule provides a method for controlling which repositories in a private registry are replicated.</p>
     #[doc(hidden)]
-    pub repository_filters: std::option::Option<std::vec::Vec<crate::types::RepositoryFilter>>,
+    pub repository_filters: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryFilter>>,
 }
 impl ReplicationRule {
     /// <p>An array of objects representing the destination for a replication rule.</p>
-    pub fn destinations(&self) -> std::option::Option<&[crate::types::ReplicationDestination]> {
+    pub fn destinations(&self) -> ::std::option::Option<&[crate::types::ReplicationDestination]> {
         self.destinations.as_deref()
     }
     /// <p>An array of objects representing the filters for a replication rule. Specifying a repository filter for a replication rule provides a method for controlling which repositories in a private registry are replicated.</p>
-    pub fn repository_filters(&self) -> std::option::Option<&[crate::types::RepositoryFilter]> {
+    pub fn repository_filters(&self) -> ::std::option::Option<&[crate::types::RepositoryFilter]> {
         self.repository_filters.as_deref()
     }
 }
@@ -30,12 +30,14 @@ impl ReplicationRule {
 
 /// A builder for [`ReplicationRule`](crate::types::ReplicationRule).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ReplicationRuleBuilder {
     pub(crate) destinations:
-        std::option::Option<std::vec::Vec<crate::types::ReplicationDestination>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ReplicationDestination>>,
     pub(crate) repository_filters:
-        std::option::Option<std::vec::Vec<crate::types::RepositoryFilter>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::RepositoryFilter>>,
 }
 impl ReplicationRuleBuilder {
     /// Appends an item to `destinations`.
@@ -46,13 +48,13 @@ impl ReplicationRuleBuilder {
     pub fn destinations(mut self, input: crate::types::ReplicationDestination) -> Self {
         let mut v = self.destinations.unwrap_or_default();
         v.push(input);
-        self.destinations = Some(v);
+        self.destinations = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of objects representing the destination for a replication rule.</p>
     pub fn set_destinations(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ReplicationDestination>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationDestination>>,
     ) -> Self {
         self.destinations = input;
         self
@@ -65,13 +67,13 @@ impl ReplicationRuleBuilder {
     pub fn repository_filters(mut self, input: crate::types::RepositoryFilter) -> Self {
         let mut v = self.repository_filters.unwrap_or_default();
         v.push(input);
-        self.repository_filters = Some(v);
+        self.repository_filters = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of objects representing the filters for a replication rule. Specifying a repository filter for a replication rule provides a method for controlling which repositories in a private registry are replicated.</p>
     pub fn set_repository_filters(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RepositoryFilter>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryFilter>>,
     ) -> Self {
         self.repository_filters = input;
         self

@@ -2,18 +2,18 @@
 
 /// <p>The conditional formatting for a <code>PivotTableVisual</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TableConditionalFormatting {
     /// <p>Conditional formatting options for a <code>PivotTableVisual</code>.</p>
     #[doc(hidden)]
     pub conditional_formatting_options:
-        std::option::Option<std::vec::Vec<crate::types::TableConditionalFormattingOption>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::TableConditionalFormattingOption>>,
 }
 impl TableConditionalFormatting {
     /// <p>Conditional formatting options for a <code>PivotTableVisual</code>.</p>
     pub fn conditional_formatting_options(
         &self,
-    ) -> std::option::Option<&[crate::types::TableConditionalFormattingOption]> {
+    ) -> ::std::option::Option<&[crate::types::TableConditionalFormattingOption]> {
         self.conditional_formatting_options.as_deref()
     }
 }
@@ -26,10 +26,12 @@ impl TableConditionalFormatting {
 
 /// A builder for [`TableConditionalFormatting`](crate::types::TableConditionalFormatting).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TableConditionalFormattingBuilder {
     pub(crate) conditional_formatting_options:
-        std::option::Option<std::vec::Vec<crate::types::TableConditionalFormattingOption>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::TableConditionalFormattingOption>>,
 }
 impl TableConditionalFormattingBuilder {
     /// Appends an item to `conditional_formatting_options`.
@@ -43,13 +45,15 @@ impl TableConditionalFormattingBuilder {
     ) -> Self {
         let mut v = self.conditional_formatting_options.unwrap_or_default();
         v.push(input);
-        self.conditional_formatting_options = Some(v);
+        self.conditional_formatting_options = ::std::option::Option::Some(v);
         self
     }
     /// <p>Conditional formatting options for a <code>PivotTableVisual</code>.</p>
     pub fn set_conditional_formatting_options(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TableConditionalFormattingOption>>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::TableConditionalFormattingOption>,
+        >,
     ) -> Self {
         self.conditional_formatting_options = input;
         self

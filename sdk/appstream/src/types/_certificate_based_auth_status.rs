@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum CertificateBasedAuthStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum CertificateBasedAuthStatus {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for CertificateBasedAuthStatus {
+impl ::std::convert::From<&str> for CertificateBasedAuthStatus {
     fn from(s: &str) -> Self {
         match s {
             "DISABLED" => CertificateBasedAuthStatus::Disabled,
@@ -71,11 +71,11 @@ impl std::convert::From<&str> for CertificateBasedAuthStatus {
         }
     }
 }
-impl std::str::FromStr for CertificateBasedAuthStatus {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for CertificateBasedAuthStatus {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CertificateBasedAuthStatus::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(CertificateBasedAuthStatus::from(s))
     }
 }
 impl CertificateBasedAuthStatus {
@@ -95,7 +95,7 @@ impl CertificateBasedAuthStatus {
         &["DISABLED", "ENABLED", "ENABLED_NO_DIRECTORY_LOGIN_FALLBACK"]
     }
 }
-impl AsRef<str> for CertificateBasedAuthStatus {
+impl ::std::convert::AsRef<str> for CertificateBasedAuthStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

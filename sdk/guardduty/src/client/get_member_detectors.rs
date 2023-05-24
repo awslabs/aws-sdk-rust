@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetMemberDetectors`](crate::operation::get_member_detectors::builders::GetMemberDetectorsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`detector_id(impl Into<String>)`](crate::operation::get_member_detectors::builders::GetMemberDetectorsFluentBuilder::detector_id) / [`set_detector_id(Option<String>)`](crate::operation::get_member_detectors::builders::GetMemberDetectorsFluentBuilder::set_detector_id): <p>The detector ID for the administrator account.</p>
+    ///   - [`detector_id(impl ::std::convert::Into<String>)`](crate::operation::get_member_detectors::builders::GetMemberDetectorsFluentBuilder::detector_id) / [`set_detector_id(Option<String>)`](crate::operation::get_member_detectors::builders::GetMemberDetectorsFluentBuilder::set_detector_id): <p>The detector ID for the administrator account.</p>
     ///   - [`account_ids(Vec<String>)`](crate::operation::get_member_detectors::builders::GetMemberDetectorsFluentBuilder::account_ids) / [`set_account_ids(Option<Vec<String>>)`](crate::operation::get_member_detectors::builders::GetMemberDetectorsFluentBuilder::set_account_ids): <p>The account ID of the member account.</p>
     /// - On success, responds with [`GetMemberDetectorsOutput`](crate::operation::get_member_detectors::GetMemberDetectorsOutput) with field(s):
     ///   - [`member_data_source_configurations(Option<Vec<MemberDataSourceConfiguration>>)`](crate::operation::get_member_detectors::GetMemberDetectorsOutput::member_data_source_configurations): <p>An object that describes which data sources are enabled for a member account.</p>

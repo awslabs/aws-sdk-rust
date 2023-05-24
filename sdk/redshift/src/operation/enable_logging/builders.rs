@@ -6,56 +6,59 @@ pub use crate::operation::enable_logging::_enable_logging_input::EnableLoggingIn
 /// Fluent builder constructing a request to `EnableLogging`.
 ///
 /// <p>Starts logging information, such as queries and connection attempts, for the specified Amazon Redshift cluster.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct EnableLoggingFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::enable_logging::builders::EnableLoggingInputBuilder,
 }
 impl EnableLoggingFluentBuilder {
     /// Creates a new `EnableLogging`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::enable_logging::EnableLogging,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::enable_logging::EnableLoggingError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_logging::EnableLoggingError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::enable_logging::EnableLoggingOutput,
-        aws_smithy_http::result::SdkError<crate::operation::enable_logging::EnableLoggingError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_logging::EnableLoggingError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,15 +71,18 @@ impl EnableLoggingFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::enable_logging::EnableLoggingOutput,
-        aws_smithy_http::result::SdkError<crate::operation::enable_logging::EnableLoggingError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::enable_logging::EnableLoggingError>,
     > {
         self.send_middleware().await
     }
     /// <p>The identifier of the cluster on which logging is to be started.</p>
     /// <p>Example: <code>examplecluster</code> </p>
-    pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn cluster_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.cluster_identifier(input.into());
         self
     }
@@ -84,7 +90,7 @@ impl EnableLoggingFluentBuilder {
     /// <p>Example: <code>examplecluster</code> </p>
     pub fn set_cluster_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_cluster_identifier(input);
         self
@@ -95,7 +101,7 @@ impl EnableLoggingFluentBuilder {
     /// <li> <p>Must be in the same region as the cluster</p> </li>
     /// <li> <p>The cluster must have read bucket and put object permissions</p> </li>
     /// </ul>
-    pub fn bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bucket_name(input.into());
         self
     }
@@ -105,7 +111,7 @@ impl EnableLoggingFluentBuilder {
     /// <li> <p>Must be in the same region as the cluster</p> </li>
     /// <li> <p>The cluster must have read bucket and put object permissions</p> </li>
     /// </ul>
-    pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bucket_name(input);
         self
     }
@@ -122,7 +128,10 @@ impl EnableLoggingFluentBuilder {
     /// <li> <p>x7f or larger</p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn s3_key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn s3_key_prefix(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.s3_key_prefix(input.into());
         self
     }
@@ -139,7 +148,10 @@ impl EnableLoggingFluentBuilder {
     /// <li> <p>x7f or larger</p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn set_s3_key_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_s3_key_prefix(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_s3_key_prefix(input);
         self
     }
@@ -151,7 +163,7 @@ impl EnableLoggingFluentBuilder {
     /// <p>The log destination type. An enum with possible values of <code>s3</code> and <code>cloudwatch</code>.</p>
     pub fn set_log_destination_type(
         mut self,
-        input: std::option::Option<crate::types::LogDestinationType>,
+        input: ::std::option::Option<crate::types::LogDestinationType>,
     ) -> Self {
         self.inner = self.inner.set_log_destination_type(input);
         self
@@ -161,14 +173,14 @@ impl EnableLoggingFluentBuilder {
     /// To override the contents of this collection use [`set_log_exports`](Self::set_log_exports).
     ///
     /// <p>The collection of exported log types. Possible values are <code>connectionlog</code>, <code>useractivitylog</code>, and <code>userlog</code>.</p>
-    pub fn log_exports(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn log_exports(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.log_exports(input.into());
         self
     }
     /// <p>The collection of exported log types. Possible values are <code>connectionlog</code>, <code>useractivitylog</code>, and <code>userlog</code>.</p>
     pub fn set_log_exports(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_log_exports(input);
         self

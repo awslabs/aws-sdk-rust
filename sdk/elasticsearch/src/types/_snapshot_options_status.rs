@@ -2,22 +2,22 @@
 
 /// <p>Status of a daily automated snapshot.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SnapshotOptionsStatus {
     /// <p>Specifies the daily snapshot options specified for the Elasticsearch domain.</p>
     #[doc(hidden)]
-    pub options: std::option::Option<crate::types::SnapshotOptions>,
+    pub options: ::std::option::Option<crate::types::SnapshotOptions>,
     /// <p>Specifies the status of a daily automated snapshot.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::OptionStatus>,
+    pub status: ::std::option::Option<crate::types::OptionStatus>,
 }
 impl SnapshotOptionsStatus {
     /// <p>Specifies the daily snapshot options specified for the Elasticsearch domain.</p>
-    pub fn options(&self) -> std::option::Option<&crate::types::SnapshotOptions> {
+    pub fn options(&self) -> ::std::option::Option<&crate::types::SnapshotOptions> {
         self.options.as_ref()
     }
     /// <p>Specifies the status of a daily automated snapshot.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::OptionStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::OptionStatus> {
         self.status.as_ref()
     }
 }
@@ -30,32 +30,34 @@ impl SnapshotOptionsStatus {
 
 /// A builder for [`SnapshotOptionsStatus`](crate::types::SnapshotOptionsStatus).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SnapshotOptionsStatusBuilder {
-    pub(crate) options: std::option::Option<crate::types::SnapshotOptions>,
-    pub(crate) status: std::option::Option<crate::types::OptionStatus>,
+    pub(crate) options: ::std::option::Option<crate::types::SnapshotOptions>,
+    pub(crate) status: ::std::option::Option<crate::types::OptionStatus>,
 }
 impl SnapshotOptionsStatusBuilder {
     /// <p>Specifies the daily snapshot options specified for the Elasticsearch domain.</p>
     pub fn options(mut self, input: crate::types::SnapshotOptions) -> Self {
-        self.options = Some(input);
+        self.options = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the daily snapshot options specified for the Elasticsearch domain.</p>
     pub fn set_options(
         mut self,
-        input: std::option::Option<crate::types::SnapshotOptions>,
+        input: ::std::option::Option<crate::types::SnapshotOptions>,
     ) -> Self {
         self.options = input;
         self
     }
     /// <p>Specifies the status of a daily automated snapshot.</p>
     pub fn status(mut self, input: crate::types::OptionStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the status of a daily automated snapshot.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::OptionStatus>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::OptionStatus>) -> Self {
         self.status = input;
         self
     }

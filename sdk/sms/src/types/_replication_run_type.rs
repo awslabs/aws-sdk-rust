@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ReplicationRunType {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum ReplicationRunType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ReplicationRunType {
+impl ::std::convert::From<&str> for ReplicationRunType {
     fn from(s: &str) -> Self {
         match s {
             "AUTOMATIC" => ReplicationRunType::Automatic,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for ReplicationRunType {
         }
     }
 }
-impl std::str::FromStr for ReplicationRunType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ReplicationRunType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ReplicationRunType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ReplicationRunType::from(s))
     }
 }
 impl ReplicationRunType {
@@ -86,7 +86,7 @@ impl ReplicationRunType {
         &["AUTOMATIC", "ON_DEMAND"]
     }
 }
-impl AsRef<str> for ReplicationRunType {
+impl ::std::convert::AsRef<str> for ReplicationRunType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -2,15 +2,15 @@
 
 /// <p>A sample utterance that invokes an intent or respond to a slot elicitation prompt.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SampleUtterance {
     /// <p>The sample utterance that Amazon Lex uses to build its machine-learning model to recognize intents.</p>
     #[doc(hidden)]
-    pub utterance: std::option::Option<std::string::String>,
+    pub utterance: ::std::option::Option<::std::string::String>,
 }
 impl SampleUtterance {
     /// <p>The sample utterance that Amazon Lex uses to build its machine-learning model to recognize intents.</p>
-    pub fn utterance(&self) -> std::option::Option<&str> {
+    pub fn utterance(&self) -> ::std::option::Option<&str> {
         self.utterance.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl SampleUtterance {
 
 /// A builder for [`SampleUtterance`](crate::types::SampleUtterance).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SampleUtteranceBuilder {
-    pub(crate) utterance: std::option::Option<std::string::String>,
+    pub(crate) utterance: ::std::option::Option<::std::string::String>,
 }
 impl SampleUtteranceBuilder {
     /// <p>The sample utterance that Amazon Lex uses to build its machine-learning model to recognize intents.</p>
-    pub fn utterance(mut self, input: impl Into<std::string::String>) -> Self {
-        self.utterance = Some(input.into());
+    pub fn utterance(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.utterance = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The sample utterance that Amazon Lex uses to build its machine-learning model to recognize intents.</p>
-    pub fn set_utterance(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_utterance(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.utterance = input;
         self
     }

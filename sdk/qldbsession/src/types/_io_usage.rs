@@ -2,7 +2,7 @@
 
 /// <p>Contains I/O usage metrics for a command that was invoked.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IoUsage {
     /// <p>The number of read I/O requests that the command made.</p>
     #[doc(hidden)]
@@ -30,29 +30,31 @@ impl IoUsage {
 
 /// A builder for [`IoUsage`](crate::types::IoUsage).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct IoUsageBuilder {
-    pub(crate) read_i_os: std::option::Option<i64>,
-    pub(crate) write_i_os: std::option::Option<i64>,
+    pub(crate) read_i_os: ::std::option::Option<i64>,
+    pub(crate) write_i_os: ::std::option::Option<i64>,
 }
 impl IoUsageBuilder {
     /// <p>The number of read I/O requests that the command made.</p>
     pub fn read_i_os(mut self, input: i64) -> Self {
-        self.read_i_os = Some(input);
+        self.read_i_os = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of read I/O requests that the command made.</p>
-    pub fn set_read_i_os(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_read_i_os(mut self, input: ::std::option::Option<i64>) -> Self {
         self.read_i_os = input;
         self
     }
     /// <p>The number of write I/O requests that the command made.</p>
     pub fn write_i_os(mut self, input: i64) -> Self {
-        self.write_i_os = Some(input);
+        self.write_i_os = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of write I/O requests that the command made.</p>
-    pub fn set_write_i_os(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_write_i_os(mut self, input: ::std::option::Option<i64>) -> Self {
         self.write_i_os = input;
         self
     }

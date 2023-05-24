@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum OntapVolumeType {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum OntapVolumeType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for OntapVolumeType {
+impl ::std::convert::From<&str> for OntapVolumeType {
     fn from(s: &str) -> Self {
         match s {
             "DP" => OntapVolumeType::Dp,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for OntapVolumeType {
         }
     }
 }
-impl std::str::FromStr for OntapVolumeType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for OntapVolumeType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(OntapVolumeType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(OntapVolumeType::from(s))
     }
 }
 impl OntapVolumeType {
@@ -91,7 +91,7 @@ impl OntapVolumeType {
         &["DP", "LS", "RW"]
     }
 }
-impl AsRef<str> for OntapVolumeType {
+impl ::std::convert::AsRef<str> for OntapVolumeType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetPhoneNumber`](crate::operation::get_phone_number::builders::GetPhoneNumberFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`phone_number_id(impl Into<String>)`](crate::operation::get_phone_number::builders::GetPhoneNumberFluentBuilder::phone_number_id) / [`set_phone_number_id(Option<String>)`](crate::operation::get_phone_number::builders::GetPhoneNumberFluentBuilder::set_phone_number_id): <p>The phone number ID.</p>
+    ///   - [`phone_number_id(impl ::std::convert::Into<String>)`](crate::operation::get_phone_number::builders::GetPhoneNumberFluentBuilder::phone_number_id) / [`set_phone_number_id(Option<String>)`](crate::operation::get_phone_number::builders::GetPhoneNumberFluentBuilder::set_phone_number_id): <p>The phone number ID.</p>
     /// - On success, responds with [`GetPhoneNumberOutput`](crate::operation::get_phone_number::GetPhoneNumberOutput) with field(s):
     ///   - [`phone_number(Option<PhoneNumber>)`](crate::operation::get_phone_number::GetPhoneNumberOutput::phone_number): <p>The phone number details.</p>
     /// - On failure, responds with [`SdkError<GetPhoneNumberError>`](crate::operation::get_phone_number::GetPhoneNumberError)

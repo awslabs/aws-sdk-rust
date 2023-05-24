@@ -2,7 +2,7 @@
 
 /// <p>Specifications for defining a vehicle network.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum NetworkFileDefinition {
     /// <p>Information, including CAN DBC files, about the configurations used to create a decoder manifest.</p>
     CanDbc(crate::types::CanDbcDefinition),
@@ -20,11 +20,11 @@ impl NetworkFileDefinition {
     #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`CanDbc`](crate::types::NetworkFileDefinition::CanDbc), extracting the inner [`CanDbcDefinition`](crate::types::CanDbcDefinition).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_can_dbc(&self) -> std::result::Result<&crate::types::CanDbcDefinition, &Self> {
+    pub fn as_can_dbc(&self) -> ::std::result::Result<&crate::types::CanDbcDefinition, &Self> {
         if let NetworkFileDefinition::CanDbc(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`CanDbc`](crate::types::NetworkFileDefinition::CanDbc).

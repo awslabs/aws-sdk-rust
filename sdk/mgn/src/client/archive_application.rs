@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ArchiveApplication`](crate::operation::archive_application::builders::ArchiveApplicationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::operation::archive_application::builders::ArchiveApplicationFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::archive_application::builders::ArchiveApplicationFluentBuilder::set_application_id): <p>Application ID.</p>
+    ///   - [`application_id(impl ::std::convert::Into<String>)`](crate::operation::archive_application::builders::ArchiveApplicationFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::archive_application::builders::ArchiveApplicationFluentBuilder::set_application_id): <p>Application ID.</p>
     /// - On success, responds with [`ArchiveApplicationOutput`](crate::operation::archive_application::ArchiveApplicationOutput) with field(s):
     ///   - [`application_id(Option<String>)`](crate::operation::archive_application::ArchiveApplicationOutput::application_id): <p>Application ID.</p>
     ///   - [`arn(Option<String>)`](crate::operation::archive_application::ArchiveApplicationOutput::arn): <p>Application ARN.</p>

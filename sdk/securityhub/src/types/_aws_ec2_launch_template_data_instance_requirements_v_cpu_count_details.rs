@@ -2,7 +2,7 @@
 
 /// <p> The minimum and maximum number of vCPUs for an Amazon EC2 instance. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetails {
     /// <p> The maximum number of vCPUs. </p>
     #[doc(hidden)]
@@ -32,29 +32,31 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetails {
 
 /// A builder for [`AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetails`](crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetailsBuilder {
-    pub(crate) max: std::option::Option<i32>,
-    pub(crate) min: std::option::Option<i32>,
+    pub(crate) max: ::std::option::Option<i32>,
+    pub(crate) min: ::std::option::Option<i32>,
 }
 impl AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetailsBuilder {
     /// <p> The maximum number of vCPUs. </p>
     pub fn max(mut self, input: i32) -> Self {
-        self.max = Some(input);
+        self.max = ::std::option::Option::Some(input);
         self
     }
     /// <p> The maximum number of vCPUs. </p>
-    pub fn set_max(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max = input;
         self
     }
     /// <p> The minimum number of vCPUs. </p>
     pub fn min(mut self, input: i32) -> Self {
-        self.min = Some(input);
+        self.min = ::std::option::Option::Some(input);
         self
     }
     /// <p> The minimum number of vCPUs. </p>
-    pub fn set_min(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_min(mut self, input: ::std::option::Option<i32>) -> Self {
         self.min = input;
         self
     }

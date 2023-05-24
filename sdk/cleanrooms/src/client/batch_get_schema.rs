@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`BatchGetSchema`](crate::operation::batch_get_schema::builders::BatchGetSchemaFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`collaboration_identifier(impl Into<String>)`](crate::operation::batch_get_schema::builders::BatchGetSchemaFluentBuilder::collaboration_identifier) / [`set_collaboration_identifier(Option<String>)`](crate::operation::batch_get_schema::builders::BatchGetSchemaFluentBuilder::set_collaboration_identifier): <p>A unique identifier for the collaboration that the schemas belong to. Currently accepts collaboration ID.</p>
+    ///   - [`collaboration_identifier(impl ::std::convert::Into<String>)`](crate::operation::batch_get_schema::builders::BatchGetSchemaFluentBuilder::collaboration_identifier) / [`set_collaboration_identifier(Option<String>)`](crate::operation::batch_get_schema::builders::BatchGetSchemaFluentBuilder::set_collaboration_identifier): <p>A unique identifier for the collaboration that the schemas belong to. Currently accepts collaboration ID.</p>
     ///   - [`names(Vec<String>)`](crate::operation::batch_get_schema::builders::BatchGetSchemaFluentBuilder::names) / [`set_names(Option<Vec<String>>)`](crate::operation::batch_get_schema::builders::BatchGetSchemaFluentBuilder::set_names): <p>The names for the schema objects to retrieve.&gt;</p>
     /// - On success, responds with [`BatchGetSchemaOutput`](crate::operation::batch_get_schema::BatchGetSchemaOutput) with field(s):
     ///   - [`schemas(Option<Vec<Schema>>)`](crate::operation::batch_get_schema::BatchGetSchemaOutput::schemas): <p>The retrieved list of schemas.</p>

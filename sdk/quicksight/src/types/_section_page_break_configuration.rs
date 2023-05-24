@@ -2,15 +2,15 @@
 
 /// <p>The configuration of a page break for a section.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SectionPageBreakConfiguration {
     /// <p>The configuration of a page break after a section.</p>
     #[doc(hidden)]
-    pub after: std::option::Option<crate::types::SectionAfterPageBreak>,
+    pub after: ::std::option::Option<crate::types::SectionAfterPageBreak>,
 }
 impl SectionPageBreakConfiguration {
     /// <p>The configuration of a page break after a section.</p>
-    pub fn after(&self) -> std::option::Option<&crate::types::SectionAfterPageBreak> {
+    pub fn after(&self) -> ::std::option::Option<&crate::types::SectionAfterPageBreak> {
         self.after.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl SectionPageBreakConfiguration {
 
 /// A builder for [`SectionPageBreakConfiguration`](crate::types::SectionPageBreakConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SectionPageBreakConfigurationBuilder {
-    pub(crate) after: std::option::Option<crate::types::SectionAfterPageBreak>,
+    pub(crate) after: ::std::option::Option<crate::types::SectionAfterPageBreak>,
 }
 impl SectionPageBreakConfigurationBuilder {
     /// <p>The configuration of a page break after a section.</p>
     pub fn after(mut self, input: crate::types::SectionAfterPageBreak) -> Self {
-        self.after = Some(input);
+        self.after = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration of a page break after a section.</p>
     pub fn set_after(
         mut self,
-        input: std::option::Option<crate::types::SectionAfterPageBreak>,
+        input: ::std::option::Option<crate::types::SectionAfterPageBreak>,
     ) -> Self {
         self.after = input;
         self

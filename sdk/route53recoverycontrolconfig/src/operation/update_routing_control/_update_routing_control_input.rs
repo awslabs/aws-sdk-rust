@@ -2,22 +2,22 @@
 
 /// <p>The details of the routing control that you're updating.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateRoutingControlInput {
     /// <p>The Amazon Resource Name (ARN) of the routing control.</p>
     #[doc(hidden)]
-    pub routing_control_arn: std::option::Option<std::string::String>,
+    pub routing_control_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the routing control.</p>
     #[doc(hidden)]
-    pub routing_control_name: std::option::Option<std::string::String>,
+    pub routing_control_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateRoutingControlInput {
     /// <p>The Amazon Resource Name (ARN) of the routing control.</p>
-    pub fn routing_control_arn(&self) -> std::option::Option<&str> {
+    pub fn routing_control_arn(&self) -> ::std::option::Option<&str> {
         self.routing_control_arn.as_deref()
     }
     /// <p>The name of the routing control.</p>
-    pub fn routing_control_name(&self) -> std::option::Option<&str> {
+    pub fn routing_control_name(&self) -> ::std::option::Option<&str> {
         self.routing_control_name.as_deref()
     }
 }
@@ -31,34 +31,42 @@ impl UpdateRoutingControlInput {
 
 /// A builder for [`UpdateRoutingControlInput`](crate::operation::update_routing_control::UpdateRoutingControlInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateRoutingControlInputBuilder {
-    pub(crate) routing_control_arn: std::option::Option<std::string::String>,
-    pub(crate) routing_control_name: std::option::Option<std::string::String>,
+    pub(crate) routing_control_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) routing_control_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateRoutingControlInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the routing control.</p>
-    pub fn routing_control_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.routing_control_arn = Some(input.into());
+    pub fn routing_control_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.routing_control_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the routing control.</p>
     pub fn set_routing_control_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.routing_control_arn = input;
         self
     }
     /// <p>The name of the routing control.</p>
-    pub fn routing_control_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.routing_control_name = Some(input.into());
+    pub fn routing_control_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.routing_control_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the routing control.</p>
     pub fn set_routing_control_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.routing_control_name = input;
         self
@@ -66,11 +74,11 @@ impl UpdateRoutingControlInputBuilder {
     /// Consumes the builder and constructs a [`UpdateRoutingControlInput`](crate::operation::update_routing_control::UpdateRoutingControlInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::update_routing_control::UpdateRoutingControlInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::update_routing_control::UpdateRoutingControlInput {
                 routing_control_arn: self.routing_control_arn,
                 routing_control_name: self.routing_control_name,

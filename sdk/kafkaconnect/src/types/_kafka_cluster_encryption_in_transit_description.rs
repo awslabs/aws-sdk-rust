@@ -2,17 +2,17 @@
 
 /// <p>The description of the encryption in transit to the Apache Kafka cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KafkaClusterEncryptionInTransitDescription {
     /// <p>The type of encryption in transit to the Apache Kafka cluster.</p>
     #[doc(hidden)]
-    pub encryption_type: std::option::Option<crate::types::KafkaClusterEncryptionInTransitType>,
+    pub encryption_type: ::std::option::Option<crate::types::KafkaClusterEncryptionInTransitType>,
 }
 impl KafkaClusterEncryptionInTransitDescription {
     /// <p>The type of encryption in transit to the Apache Kafka cluster.</p>
     pub fn encryption_type(
         &self,
-    ) -> std::option::Option<&crate::types::KafkaClusterEncryptionInTransitType> {
+    ) -> ::std::option::Option<&crate::types::KafkaClusterEncryptionInTransitType> {
         self.encryption_type.as_ref()
     }
 }
@@ -25,10 +25,12 @@ impl KafkaClusterEncryptionInTransitDescription {
 
 /// A builder for [`KafkaClusterEncryptionInTransitDescription`](crate::types::KafkaClusterEncryptionInTransitDescription).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct KafkaClusterEncryptionInTransitDescriptionBuilder {
     pub(crate) encryption_type:
-        std::option::Option<crate::types::KafkaClusterEncryptionInTransitType>,
+        ::std::option::Option<crate::types::KafkaClusterEncryptionInTransitType>,
 }
 impl KafkaClusterEncryptionInTransitDescriptionBuilder {
     /// <p>The type of encryption in transit to the Apache Kafka cluster.</p>
@@ -36,13 +38,13 @@ impl KafkaClusterEncryptionInTransitDescriptionBuilder {
         mut self,
         input: crate::types::KafkaClusterEncryptionInTransitType,
     ) -> Self {
-        self.encryption_type = Some(input);
+        self.encryption_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of encryption in transit to the Apache Kafka cluster.</p>
     pub fn set_encryption_type(
         mut self,
-        input: std::option::Option<crate::types::KafkaClusterEncryptionInTransitType>,
+        input: ::std::option::Option<crate::types::KafkaClusterEncryptionInTransitType>,
     ) -> Self {
         self.encryption_type = input;
         self

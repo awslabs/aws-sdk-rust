@@ -39,13 +39,13 @@
 /// Dvb Sub Destination Alignment
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum DvbSubDestinationAlignment {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum DvbSubDestinationAlignment {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for DvbSubDestinationAlignment {
+impl ::std::convert::From<&str> for DvbSubDestinationAlignment {
     fn from(s: &str) -> Self {
         match s {
             "CENTERED" => DvbSubDestinationAlignment::Centered,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for DvbSubDestinationAlignment {
         }
     }
 }
-impl std::str::FromStr for DvbSubDestinationAlignment {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for DvbSubDestinationAlignment {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DvbSubDestinationAlignment::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(DvbSubDestinationAlignment::from(s))
     }
 }
 impl DvbSubDestinationAlignment {
@@ -91,7 +91,7 @@ impl DvbSubDestinationAlignment {
         &["CENTERED", "LEFT", "SMART"]
     }
 }
-impl AsRef<str> for DvbSubDestinationAlignment {
+impl ::std::convert::AsRef<str> for DvbSubDestinationAlignment {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

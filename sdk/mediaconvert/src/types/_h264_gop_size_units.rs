@@ -39,13 +39,13 @@
 /// Specify how the transcoder determines GOP size for this output. We recommend that you have the transcoder automatically choose this value for you based on characteristics of your input video. To enable this automatic behavior, choose Auto (AUTO) and and leave GOP size (GopSize) blank. By default, if you don't specify GOP mode control (GopSizeUnits), MediaConvert will use automatic behavior. If your output group specifies HLS, DASH, or CMAF, set GOP mode control to Auto and leave GOP size blank in each output in your output group. To explicitly specify the GOP length, choose Specified, frames (FRAMES) or Specified, seconds (SECONDS) and then provide the GOP length in the related setting GOP size (GopSize).
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum H264GopSizeUnits {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum H264GopSizeUnits {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for H264GopSizeUnits {
+impl ::std::convert::From<&str> for H264GopSizeUnits {
     fn from(s: &str) -> Self {
         match s {
             "AUTO" => H264GopSizeUnits::Auto,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for H264GopSizeUnits {
         }
     }
 }
-impl std::str::FromStr for H264GopSizeUnits {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for H264GopSizeUnits {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(H264GopSizeUnits::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(H264GopSizeUnits::from(s))
     }
 }
 impl H264GopSizeUnits {
@@ -91,7 +91,7 @@ impl H264GopSizeUnits {
         &["AUTO", "FRAMES", "SECONDS"]
     }
 }
-impl AsRef<str> for H264GopSizeUnits {
+impl ::std::convert::AsRef<str> for H264GopSizeUnits {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

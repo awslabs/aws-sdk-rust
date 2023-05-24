@@ -2,11 +2,11 @@
 
 /// <p>The output when you start the evaluation for the specified Config rule.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartConfigRulesEvaluationOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for StartConfigRulesEvaluationOutput {
+impl ::aws_http::request_id::RequestId for StartConfigRulesEvaluationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -20,7 +20,9 @@ impl StartConfigRulesEvaluationOutput {
 
 /// A builder for [`StartConfigRulesEvaluationOutput`](crate::operation::start_config_rules_evaluation::StartConfigRulesEvaluationOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StartConfigRulesEvaluationOutputBuilder {
     _request_id: Option<String>,
 }

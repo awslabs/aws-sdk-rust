@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ReplacePermissionAssociationsWorkStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum ReplacePermissionAssociationsWorkStatus {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ReplacePermissionAssociationsWorkStatus {
+impl ::std::convert::From<&str> for ReplacePermissionAssociationsWorkStatus {
     fn from(s: &str) -> Self {
         match s {
             "COMPLETED" => ReplacePermissionAssociationsWorkStatus::Completed,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for ReplacePermissionAssociationsWorkStatus {
         }
     }
 }
-impl std::str::FromStr for ReplacePermissionAssociationsWorkStatus {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ReplacePermissionAssociationsWorkStatus {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ReplacePermissionAssociationsWorkStatus::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ReplacePermissionAssociationsWorkStatus::from(s))
     }
 }
 impl ReplacePermissionAssociationsWorkStatus {
@@ -91,7 +91,7 @@ impl ReplacePermissionAssociationsWorkStatus {
         &["COMPLETED", "FAILED", "IN_PROGRESS"]
     }
 }
-impl AsRef<str> for ReplacePermissionAssociationsWorkStatus {
+impl ::std::convert::AsRef<str> for ReplacePermissionAssociationsWorkStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

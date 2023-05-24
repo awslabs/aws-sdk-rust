@@ -9,56 +9,59 @@ pub use crate::operation::create_task::_create_task_input::CreateTaskInputBuilde
 /// <p>A task includes a source location, a destination location, and the preferences for how and when you want to transfer your data (such as bandwidth limits, scheduling, among other options).</p> <important>
 /// <p>If you're planning to transfer data to or from an Amazon S3 location, review <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#create-s3-location-s3-requests">how DataSync can affect your S3 request charges</a> and the <a href="http://aws.amazon.com/datasync/pricing/">DataSync pricing page</a> before you begin.</p>
 /// </important>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateTaskFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_task::builders::CreateTaskInputBuilder,
 }
 impl CreateTaskFluentBuilder {
     /// Creates a new `CreateTask`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_task::CreateTask,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_task::CreateTaskError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_task::CreateTaskError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_task::CreateTaskOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_task::CreateTaskError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_task::CreateTaskError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -71,58 +74,67 @@ impl CreateTaskFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_task::CreateTaskOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_task::CreateTaskError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_task::CreateTaskError>,
     > {
         self.send_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the source location for the task.</p>
-    pub fn source_location_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn source_location_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.source_location_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the source location for the task.</p>
     pub fn set_source_location_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_source_location_arn(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) of an Amazon Web Services storage resource's location. </p>
-    pub fn destination_location_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn destination_location_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.destination_location_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of an Amazon Web Services storage resource's location. </p>
     pub fn set_destination_location_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_destination_location_arn(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is used to monitor and log events in the task. </p>
-    pub fn cloud_watch_log_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn cloud_watch_log_group_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.cloud_watch_log_group_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is used to monitor and log events in the task. </p>
     pub fn set_cloud_watch_log_group_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_cloud_watch_log_group_arn(input);
         self
     }
     /// <p>The name of a task. This value is a text reference that is used to identify the task in the console. </p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// <p>The name of a task. This value is a text reference that is used to identify the task in the console. </p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
@@ -134,7 +146,7 @@ impl CreateTaskFluentBuilder {
     }
     /// <p>Specifies the configuration options for a task. Some options include preserving file or object metadata and verifying data integrity.</p>
     /// <p>You can also override these options before starting an individual run of a task (also known as a <i>task execution</i>). For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
-    pub fn set_options(mut self, input: std::option::Option<crate::types::Options>) -> Self {
+    pub fn set_options(mut self, input: ::std::option::Option<crate::types::Options>) -> Self {
         self.inner = self.inner.set_options(input);
         self
     }
@@ -150,7 +162,7 @@ impl CreateTaskFluentBuilder {
     /// <p>Specifies a list of filter rules that exclude specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
     pub fn set_excludes(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::FilterRule>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>,
     ) -> Self {
         self.inner = self.inner.set_excludes(input);
         self
@@ -161,7 +173,10 @@ impl CreateTaskFluentBuilder {
         self
     }
     /// <p>Specifies a schedule used to periodically transfer files from a source to a destination location. The schedule should be specified in UTC time. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your task</a>.</p>
-    pub fn set_schedule(mut self, input: std::option::Option<crate::types::TaskSchedule>) -> Self {
+    pub fn set_schedule(
+        mut self,
+        input: ::std::option::Option<crate::types::TaskSchedule>,
+    ) -> Self {
         self.inner = self.inner.set_schedule(input);
         self
     }
@@ -179,7 +194,7 @@ impl CreateTaskFluentBuilder {
     /// <p> <i>Tags</i> are key-value pairs that help you manage, filter, and search for your DataSync resources.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TagListEntry>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::TagListEntry>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
@@ -196,7 +211,7 @@ impl CreateTaskFluentBuilder {
     /// <p>Specifies a list of filter rules that include specific data during your transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by DataSync</a>.</p>
     pub fn set_includes(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::FilterRule>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::FilterRule>>,
     ) -> Self {
         self.inner = self.inner.set_includes(input);
         self

@@ -2,29 +2,29 @@
 
 /// <p>Updates the specified configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateConfigurationInput {
     /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
     #[doc(hidden)]
-    pub configuration_id: std::option::Option<std::string::String>,
+    pub configuration_id: ::std::option::Option<::std::string::String>,
     /// <p>Required. The base64-encoded XML configuration.</p>
     #[doc(hidden)]
-    pub data: std::option::Option<std::string::String>,
+    pub data: ::std::option::Option<::std::string::String>,
     /// <p>The description of the configuration.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
 }
 impl UpdateConfigurationInput {
     /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
-    pub fn configuration_id(&self) -> std::option::Option<&str> {
+    pub fn configuration_id(&self) -> ::std::option::Option<&str> {
         self.configuration_id.as_deref()
     }
     /// <p>Required. The base64-encoded XML configuration.</p>
-    pub fn data(&self) -> std::option::Option<&str> {
+    pub fn data(&self) -> ::std::option::Option<&str> {
         self.data.as_deref()
     }
     /// <p>The description of the configuration.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
 }
@@ -38,51 +38,59 @@ impl UpdateConfigurationInput {
 
 /// A builder for [`UpdateConfigurationInput`](crate::operation::update_configuration::UpdateConfigurationInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateConfigurationInputBuilder {
-    pub(crate) configuration_id: std::option::Option<std::string::String>,
-    pub(crate) data: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
+    pub(crate) configuration_id: ::std::option::Option<::std::string::String>,
+    pub(crate) data: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
 }
 impl UpdateConfigurationInputBuilder {
     /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
-    pub fn configuration_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.configuration_id = Some(input.into());
+    pub fn configuration_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.configuration_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
-    pub fn set_configuration_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_configuration_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.configuration_id = input;
         self
     }
     /// <p>Required. The base64-encoded XML configuration.</p>
-    pub fn data(mut self, input: impl Into<std::string::String>) -> Self {
-        self.data = Some(input.into());
+    pub fn data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.data = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Required. The base64-encoded XML configuration.</p>
-    pub fn set_data(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data = input;
         self
     }
     /// <p>The description of the configuration.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the configuration.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// Consumes the builder and constructs a [`UpdateConfigurationInput`](crate::operation::update_configuration::UpdateConfigurationInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::update_configuration::UpdateConfigurationInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::update_configuration::UpdateConfigurationInput {
                 configuration_id: self.configuration_id,
                 data: self.data,

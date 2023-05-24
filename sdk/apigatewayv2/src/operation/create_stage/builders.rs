@@ -6,56 +6,59 @@ pub use crate::operation::create_stage::_create_stage_input::CreateStageInputBui
 /// Fluent builder constructing a request to `CreateStage`.
 ///
 /// <p>Creates a Stage for an API.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateStageFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_stage::builders::CreateStageInputBuilder,
 }
 impl CreateStageFluentBuilder {
     /// Creates a new `CreateStage`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_stage::CreateStage,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_stage::CreateStageError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_stage::CreateStageError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_stage::CreateStageOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_stage::CreateStageError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_stage::CreateStageError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,9 +71,9 @@ impl CreateStageFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_stage::CreateStageOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_stage::CreateStageError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_stage::CreateStageError>,
     > {
         self.send_middleware().await
     }
@@ -82,18 +85,18 @@ impl CreateStageFluentBuilder {
     /// <p>Settings for logging access in this stage.</p>
     pub fn set_access_log_settings(
         mut self,
-        input: std::option::Option<crate::types::AccessLogSettings>,
+        input: ::std::option::Option<crate::types::AccessLogSettings>,
     ) -> Self {
         self.inner = self.inner.set_access_log_settings(input);
         self
     }
     /// <p>The API identifier.</p>
-    pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.api_id(input.into());
         self
     }
     /// <p>The API identifier.</p>
-    pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_api_id(input);
         self
     }
@@ -103,19 +106,22 @@ impl CreateStageFluentBuilder {
         self
     }
     /// <p>Specifies whether updates to an API automatically trigger a new deployment. The default value is false.</p>
-    pub fn set_auto_deploy(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_auto_deploy(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_auto_deploy(input);
         self
     }
     /// <p>The identifier of a client certificate for a Stage. Supported only for WebSocket APIs.</p>
-    pub fn client_certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn client_certificate_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.client_certificate_id(input.into());
         self
     }
     /// <p>The identifier of a client certificate for a Stage. Supported only for WebSocket APIs.</p>
     pub fn set_client_certificate_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_client_certificate_id(input);
         self
@@ -128,28 +134,34 @@ impl CreateStageFluentBuilder {
     /// <p>The default route settings for the stage.</p>
     pub fn set_default_route_settings(
         mut self,
-        input: std::option::Option<crate::types::RouteSettings>,
+        input: ::std::option::Option<crate::types::RouteSettings>,
     ) -> Self {
         self.inner = self.inner.set_default_route_settings(input);
         self
     }
     /// <p>The deployment identifier of the API stage.</p>
-    pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn deployment_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.deployment_id(input.into());
         self
     }
     /// <p>The deployment identifier of the API stage.</p>
-    pub fn set_deployment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_deployment_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_deployment_id(input);
         self
     }
     /// <p>The description for the API stage.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>The description for the API stage.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
@@ -160,7 +172,7 @@ impl CreateStageFluentBuilder {
     /// <p>Route settings for the stage, by routeKey.</p>
     pub fn route_settings(
         mut self,
-        k: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
         v: crate::types::RouteSettings,
     ) -> Self {
         self.inner = self.inner.route_settings(k.into(), v);
@@ -169,20 +181,20 @@ impl CreateStageFluentBuilder {
     /// <p>Route settings for the stage, by routeKey.</p>
     pub fn set_route_settings(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::types::RouteSettings>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, crate::types::RouteSettings>,
         >,
     ) -> Self {
         self.inner = self.inner.set_route_settings(input);
         self
     }
     /// <p>The name of the stage.</p>
-    pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn stage_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.stage_name(input.into());
         self
     }
     /// <p>The name of the stage.</p>
-    pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_stage_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_stage_name(input);
         self
     }
@@ -193,8 +205,8 @@ impl CreateStageFluentBuilder {
     /// <p>A map that defines the stage variables for a Stage. Variable names can have alphanumeric and underscore characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+.</p>
     pub fn stage_variables(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.stage_variables(k.into(), v.into());
         self
@@ -202,8 +214,8 @@ impl CreateStageFluentBuilder {
     /// <p>A map that defines the stage variables for a Stage. Variable names can have alphanumeric and underscore characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+.</p>
     pub fn set_stage_variables(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_stage_variables(input);
@@ -216,8 +228,8 @@ impl CreateStageFluentBuilder {
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
@@ -225,8 +237,8 @@ impl CreateStageFluentBuilder {
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_tags(input);

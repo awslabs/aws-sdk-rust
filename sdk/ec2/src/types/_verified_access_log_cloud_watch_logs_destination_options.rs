@@ -2,22 +2,22 @@
 
 /// <p>Options for CloudWatch Logs as a logging destination.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VerifiedAccessLogCloudWatchLogsDestinationOptions {
     /// <p>Indicates whether logging is enabled.</p>
     #[doc(hidden)]
-    pub enabled: std::option::Option<bool>,
+    pub enabled: ::std::option::Option<bool>,
     /// <p>The ID of the CloudWatch Logs log group.</p>
     #[doc(hidden)]
-    pub log_group: std::option::Option<std::string::String>,
+    pub log_group: ::std::option::Option<::std::string::String>,
 }
 impl VerifiedAccessLogCloudWatchLogsDestinationOptions {
     /// <p>Indicates whether logging is enabled.</p>
-    pub fn enabled(&self) -> std::option::Option<bool> {
+    pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
     /// <p>The ID of the CloudWatch Logs log group.</p>
-    pub fn log_group(&self) -> std::option::Option<&str> {
+    pub fn log_group(&self) -> ::std::option::Option<&str> {
         self.log_group.as_deref()
     }
 }
@@ -31,29 +31,31 @@ impl VerifiedAccessLogCloudWatchLogsDestinationOptions {
 
 /// A builder for [`VerifiedAccessLogCloudWatchLogsDestinationOptions`](crate::types::VerifiedAccessLogCloudWatchLogsDestinationOptions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VerifiedAccessLogCloudWatchLogsDestinationOptionsBuilder {
-    pub(crate) enabled: std::option::Option<bool>,
-    pub(crate) log_group: std::option::Option<std::string::String>,
+    pub(crate) enabled: ::std::option::Option<bool>,
+    pub(crate) log_group: ::std::option::Option<::std::string::String>,
 }
 impl VerifiedAccessLogCloudWatchLogsDestinationOptionsBuilder {
     /// <p>Indicates whether logging is enabled.</p>
     pub fn enabled(mut self, input: bool) -> Self {
-        self.enabled = Some(input);
+        self.enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether logging is enabled.</p>
-    pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
     }
     /// <p>The ID of the CloudWatch Logs log group.</p>
-    pub fn log_group(mut self, input: impl Into<std::string::String>) -> Self {
-        self.log_group = Some(input.into());
+    pub fn log_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.log_group = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the CloudWatch Logs log group.</p>
-    pub fn set_log_group(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_log_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_group = input;
         self
     }

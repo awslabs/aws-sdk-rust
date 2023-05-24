@@ -2,34 +2,34 @@
 
 /// <p>Amazon ML returns the following elements.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTagsOutput {
     /// <p>The ID of the tagged ML object.</p>
     #[doc(hidden)]
-    pub resource_id: std::option::Option<std::string::String>,
+    pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of the tagged ML object.</p>
     #[doc(hidden)]
-    pub resource_type: std::option::Option<crate::types::TaggableResourceType>,
+    pub resource_type: ::std::option::Option<crate::types::TaggableResourceType>,
     /// <p>A list of tags associated with the ML object.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     _request_id: Option<String>,
 }
 impl DescribeTagsOutput {
     /// <p>The ID of the tagged ML object.</p>
-    pub fn resource_id(&self) -> std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<&str> {
         self.resource_id.as_deref()
     }
     /// <p>The type of the tagged ML object.</p>
-    pub fn resource_type(&self) -> std::option::Option<&crate::types::TaggableResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::TaggableResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>A list of tags associated with the ML object.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeTagsOutput {
+impl ::aws_http::request_id::RequestId for DescribeTagsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -43,33 +43,35 @@ impl DescribeTagsOutput {
 
 /// A builder for [`DescribeTagsOutput`](crate::operation::describe_tags::DescribeTagsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeTagsOutputBuilder {
-    pub(crate) resource_id: std::option::Option<std::string::String>,
-    pub(crate) resource_type: std::option::Option<crate::types::TaggableResourceType>,
-    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub(crate) resource_id: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_type: ::std::option::Option<crate::types::TaggableResourceType>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     _request_id: Option<String>,
 }
 impl DescribeTagsOutputBuilder {
     /// <p>The ID of the tagged ML object.</p>
-    pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_id = Some(input.into());
+    pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the tagged ML object.</p>
-    pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
     }
     /// <p>The type of the tagged ML object.</p>
     pub fn resource_type(mut self, input: crate::types::TaggableResourceType) -> Self {
-        self.resource_type = Some(input);
+        self.resource_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of the tagged ML object.</p>
     pub fn set_resource_type(
         mut self,
-        input: std::option::Option<crate::types::TaggableResourceType>,
+        input: ::std::option::Option<crate::types::TaggableResourceType>,
     ) -> Self {
         self.resource_type = input;
         self
@@ -82,13 +84,13 @@ impl DescribeTagsOutputBuilder {
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
-        self.tags = Some(v);
+        self.tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of tags associated with the ML object.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tags = input;
         self

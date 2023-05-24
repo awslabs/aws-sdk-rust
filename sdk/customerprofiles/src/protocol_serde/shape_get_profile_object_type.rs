@@ -2,7 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_profile_object_type_http_error(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::get_profile_object_type::GetProfileObjectTypeOutput,
@@ -15,7 +15,7 @@ pub fn de_get_profile_object_type_http_error(
         _response_body,
     )
     .map_err(crate::operation::get_profile_object_type::GetProfileObjectTypeError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
+    generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
@@ -117,7 +117,7 @@ pub fn de_get_profile_object_type_http_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_profile_object_type_http_response_with_props(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::get_profile_object_type::GetProfileObjectTypeOutput,
@@ -132,7 +132,7 @@ pub fn de_get_profile_object_type_http_response_with_props(
         )
         .map_err(crate::operation::get_profile_object_type::GetProfileObjectTypeError::unhandled)?;
         output._set_request_id(
-            aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
+            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
         );
         output.build()
     })
@@ -143,36 +143,36 @@ pub(crate) fn de_get_profile_object_type(
     mut builder: crate::operation::get_profile_object_type::builders::GetProfileObjectTypeOutputBuilder,
 ) -> Result<
     crate::operation::get_profile_object_type::builders::GetProfileObjectTypeOutputBuilder,
-    aws_smithy_json::deserialize::error::DeserializeError,
+    ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =
-        aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
+        ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
             .peekable();
     let tokens = &mut tokens_owned;
-    aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
-            Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+            Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "AllowProfileCreation" => {
                         builder = builder.set_allow_profile_creation(
-                            aws_smithy_json::deserialize::token::expect_bool_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_bool_or_null(
                                 tokens.next(),
                             )?,
                         );
                     }
                     "CreatedAt" => {
                         builder = builder.set_created_at(
-                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),
-                                aws_smithy_types::date_time::Format::EpochSeconds,
+                                ::aws_smithy_types::date_time::Format::EpochSeconds,
                             )?,
                         );
                     }
                     "Description" => {
                         builder = builder.set_description(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -181,7 +181,7 @@ pub(crate) fn de_get_profile_object_type(
                     }
                     "EncryptionKey" => {
                         builder = builder.set_encryption_key(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -190,7 +190,7 @@ pub(crate) fn de_get_profile_object_type(
                     }
                     "ExpirationDays" => {
                         builder = builder.set_expiration_days(
-                            aws_smithy_json::deserialize::token::expect_number_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_number_or_null(
                                 tokens.next(),
                             )?
                             .map(i32::try_from)
@@ -208,15 +208,15 @@ pub(crate) fn de_get_profile_object_type(
                     }
                     "LastUpdatedAt" => {
                         builder = builder.set_last_updated_at(
-                            aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),
-                                aws_smithy_types::date_time::Format::EpochSeconds,
+                                ::aws_smithy_types::date_time::Format::EpochSeconds,
                             )?,
                         );
                     }
                     "ObjectTypeName" => {
                         builder = builder.set_object_type_name(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -225,7 +225,7 @@ pub(crate) fn de_get_profile_object_type(
                     }
                     "SourceLastUpdatedTimestampFormat" => {
                         builder = builder.set_source_last_updated_timestamp_format(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
@@ -238,19 +238,19 @@ pub(crate) fn de_get_profile_object_type(
                     }
                     "TemplateId" => {
                         builder = builder.set_template_id(
-                            aws_smithy_json::deserialize::token::expect_string_or_null(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(
                                 tokens.next(),
                             )?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
                         );
                     }
-                    _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }
             other => {
                 return Err(
-                    aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                         "expected object key or end object, found: {:?}",
                         other
                     )),
@@ -260,7 +260,7 @@ pub(crate) fn de_get_profile_object_type(
     }
     if tokens.next().is_some() {
         return Err(
-            aws_smithy_json::deserialize::error::DeserializeError::custom(
+            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
                 "found more JSON tokens after completing parsing",
             ),
         );

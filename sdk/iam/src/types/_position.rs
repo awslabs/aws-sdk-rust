@@ -3,7 +3,7 @@
 /// <p>Contains the row and column of a location of a <code>Statement</code> element in a policy document.</p>
 /// <p>This data type is used as a member of the <code> <code>Statement</code> </code> type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Position {
     /// <p>The line containing the specified position in the document.</p>
     #[doc(hidden)]
@@ -31,29 +31,31 @@ impl Position {
 
 /// A builder for [`Position`](crate::types::Position).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PositionBuilder {
-    pub(crate) line: std::option::Option<i32>,
-    pub(crate) column: std::option::Option<i32>,
+    pub(crate) line: ::std::option::Option<i32>,
+    pub(crate) column: ::std::option::Option<i32>,
 }
 impl PositionBuilder {
     /// <p>The line containing the specified position in the document.</p>
     pub fn line(mut self, input: i32) -> Self {
-        self.line = Some(input);
+        self.line = ::std::option::Option::Some(input);
         self
     }
     /// <p>The line containing the specified position in the document.</p>
-    pub fn set_line(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_line(mut self, input: ::std::option::Option<i32>) -> Self {
         self.line = input;
         self
     }
     /// <p>The column in the line containing the specified position in the document.</p>
     pub fn column(mut self, input: i32) -> Self {
-        self.column = Some(input);
+        self.column = ::std::option::Option::Some(input);
         self
     }
     /// <p>The column in the line containing the specified position in the document.</p>
-    pub fn set_column(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_column(mut self, input: ::std::option::Option<i32>) -> Self {
         self.column = input;
         self
     }

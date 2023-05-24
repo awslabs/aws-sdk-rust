@@ -2,22 +2,22 @@
 
 /// <p>An object representing the gateway route host name to match.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GatewayRouteHostnameMatch {
     /// <p>The exact host name to match on.</p>
     #[doc(hidden)]
-    pub exact: std::option::Option<std::string::String>,
+    pub exact: ::std::option::Option<::std::string::String>,
     /// <p>The specified ending characters of the host name to match on.</p>
     #[doc(hidden)]
-    pub suffix: std::option::Option<std::string::String>,
+    pub suffix: ::std::option::Option<::std::string::String>,
 }
 impl GatewayRouteHostnameMatch {
     /// <p>The exact host name to match on.</p>
-    pub fn exact(&self) -> std::option::Option<&str> {
+    pub fn exact(&self) -> ::std::option::Option<&str> {
         self.exact.as_deref()
     }
     /// <p>The specified ending characters of the host name to match on.</p>
-    pub fn suffix(&self) -> std::option::Option<&str> {
+    pub fn suffix(&self) -> ::std::option::Option<&str> {
         self.suffix.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl GatewayRouteHostnameMatch {
 
 /// A builder for [`GatewayRouteHostnameMatch`](crate::types::GatewayRouteHostnameMatch).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GatewayRouteHostnameMatchBuilder {
-    pub(crate) exact: std::option::Option<std::string::String>,
-    pub(crate) suffix: std::option::Option<std::string::String>,
+    pub(crate) exact: ::std::option::Option<::std::string::String>,
+    pub(crate) suffix: ::std::option::Option<::std::string::String>,
 }
 impl GatewayRouteHostnameMatchBuilder {
     /// <p>The exact host name to match on.</p>
-    pub fn exact(mut self, input: impl Into<std::string::String>) -> Self {
-        self.exact = Some(input.into());
+    pub fn exact(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.exact = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The exact host name to match on.</p>
-    pub fn set_exact(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_exact(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.exact = input;
         self
     }
     /// <p>The specified ending characters of the host name to match on.</p>
-    pub fn suffix(mut self, input: impl Into<std::string::String>) -> Self {
-        self.suffix = Some(input.into());
+    pub fn suffix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.suffix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The specified ending characters of the host name to match on.</p>
-    pub fn set_suffix(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_suffix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.suffix = input;
         self
     }

@@ -2,20 +2,20 @@
 
 /// <p>A complex type that contains the <code>ChangeInfo</code> element.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetChangeOutput {
     /// <p>A complex type that contains information about the specified change batch.</p>
     #[doc(hidden)]
-    pub change_info: std::option::Option<crate::types::ChangeInfo>,
+    pub change_info: ::std::option::Option<crate::types::ChangeInfo>,
     _request_id: Option<String>,
 }
 impl GetChangeOutput {
     /// <p>A complex type that contains information about the specified change batch.</p>
-    pub fn change_info(&self) -> std::option::Option<&crate::types::ChangeInfo> {
+    pub fn change_info(&self) -> ::std::option::Option<&crate::types::ChangeInfo> {
         self.change_info.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for GetChangeOutput {
+impl ::aws_http::request_id::RequestId for GetChangeOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,24 @@ impl GetChangeOutput {
 
 /// A builder for [`GetChangeOutput`](crate::operation::get_change::GetChangeOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetChangeOutputBuilder {
-    pub(crate) change_info: std::option::Option<crate::types::ChangeInfo>,
+    pub(crate) change_info: ::std::option::Option<crate::types::ChangeInfo>,
     _request_id: Option<String>,
 }
 impl GetChangeOutputBuilder {
     /// <p>A complex type that contains information about the specified change batch.</p>
     pub fn change_info(mut self, input: crate::types::ChangeInfo) -> Self {
-        self.change_info = Some(input);
+        self.change_info = ::std::option::Option::Some(input);
         self
     }
     /// <p>A complex type that contains information about the specified change batch.</p>
-    pub fn set_change_info(mut self, input: std::option::Option<crate::types::ChangeInfo>) -> Self {
+    pub fn set_change_info(
+        mut self,
+        input: ::std::option::Option<crate::types::ChangeInfo>,
+    ) -> Self {
         self.change_info = input;
         self
     }

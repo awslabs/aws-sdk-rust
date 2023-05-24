@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CancelResize`](crate::operation::cancel_resize::builders::CancelResizeFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`cluster_identifier(impl Into<String>)`](crate::operation::cancel_resize::builders::CancelResizeFluentBuilder::cluster_identifier) / [`set_cluster_identifier(Option<String>)`](crate::operation::cancel_resize::builders::CancelResizeFluentBuilder::set_cluster_identifier): <p>The unique identifier for the cluster that you want to cancel a resize operation for.</p>
+    ///   - [`cluster_identifier(impl ::std::convert::Into<String>)`](crate::operation::cancel_resize::builders::CancelResizeFluentBuilder::cluster_identifier) / [`set_cluster_identifier(Option<String>)`](crate::operation::cancel_resize::builders::CancelResizeFluentBuilder::set_cluster_identifier): <p>The unique identifier for the cluster that you want to cancel a resize operation for.</p>
     /// - On success, responds with [`CancelResizeOutput`](crate::operation::cancel_resize::CancelResizeOutput) with field(s):
     ///   - [`target_node_type(Option<String>)`](crate::operation::cancel_resize::CancelResizeOutput::target_node_type): <p>The node type that the cluster will have after the resize operation is complete.</p>
     ///   - [`target_number_of_nodes(Option<i32>)`](crate::operation::cancel_resize::CancelResizeOutput::target_number_of_nodes): <p>The number of nodes that the cluster will have after the resize operation is complete.</p>

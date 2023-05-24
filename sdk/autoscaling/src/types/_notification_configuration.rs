@@ -2,14 +2,14 @@
 
 /// <p>Describes a notification.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NotificationConfiguration {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
-    pub auto_scaling_group_name: std::option::Option<std::string::String>,
+    pub auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic.</p>
     #[doc(hidden)]
-    pub topic_arn: std::option::Option<std::string::String>,
+    pub topic_arn: ::std::option::Option<::std::string::String>,
     /// <p>One of the following event notification types:</p>
     /// <ul>
     /// <li> <p> <code>autoscaling:EC2_INSTANCE_LAUNCH</code> </p> </li>
@@ -19,15 +19,15 @@ pub struct NotificationConfiguration {
     /// <li> <p> <code>autoscaling:TEST_NOTIFICATION</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub notification_type: std::option::Option<std::string::String>,
+    pub notification_type: ::std::option::Option<::std::string::String>,
 }
 impl NotificationConfiguration {
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(&self) -> std::option::Option<&str> {
+    pub fn auto_scaling_group_name(&self) -> ::std::option::Option<&str> {
         self.auto_scaling_group_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic.</p>
-    pub fn topic_arn(&self) -> std::option::Option<&str> {
+    pub fn topic_arn(&self) -> ::std::option::Option<&str> {
         self.topic_arn.as_deref()
     }
     /// <p>One of the following event notification types:</p>
@@ -38,7 +38,7 @@ impl NotificationConfiguration {
     /// <li> <p> <code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code> </p> </li>
     /// <li> <p> <code>autoscaling:TEST_NOTIFICATION</code> </p> </li>
     /// </ul>
-    pub fn notification_type(&self) -> std::option::Option<&str> {
+    pub fn notification_type(&self) -> ::std::option::Option<&str> {
         self.notification_type.as_deref()
     }
 }
@@ -51,33 +51,38 @@ impl NotificationConfiguration {
 
 /// A builder for [`NotificationConfiguration`](crate::types::NotificationConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NotificationConfigurationBuilder {
-    pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
-    pub(crate) topic_arn: std::option::Option<std::string::String>,
-    pub(crate) notification_type: std::option::Option<std::string::String>,
+    pub(crate) auto_scaling_group_name: ::std::option::Option<::std::string::String>,
+    pub(crate) topic_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) notification_type: ::std::option::Option<::std::string::String>,
 }
 impl NotificationConfigurationBuilder {
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.auto_scaling_group_name = Some(input.into());
+    pub fn auto_scaling_group_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.auto_scaling_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
     pub fn set_auto_scaling_group_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.auto_scaling_group_name = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic.</p>
-    pub fn topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.topic_arn = Some(input.into());
+    pub fn topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.topic_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic.</p>
-    pub fn set_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.topic_arn = input;
         self
     }
@@ -89,8 +94,11 @@ impl NotificationConfigurationBuilder {
     /// <li> <p> <code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code> </p> </li>
     /// <li> <p> <code>autoscaling:TEST_NOTIFICATION</code> </p> </li>
     /// </ul>
-    pub fn notification_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.notification_type = Some(input.into());
+    pub fn notification_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.notification_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>One of the following event notification types:</p>
@@ -103,7 +111,7 @@ impl NotificationConfigurationBuilder {
     /// </ul>
     pub fn set_notification_type(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.notification_type = input;
         self

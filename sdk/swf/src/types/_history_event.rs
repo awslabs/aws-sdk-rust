@@ -52,242 +52,246 @@
 /// <li> <p> <code>WorkflowExecutionTimedOut</code> – The workflow execution was closed because a time out was exceeded.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HistoryEvent {
     /// <p>The date and time when the event occurred.</p>
     #[doc(hidden)]
-    pub event_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub event_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The type of the history event.</p>
     #[doc(hidden)]
-    pub event_type: std::option::Option<crate::types::EventType>,
+    pub event_type: ::std::option::Option<crate::types::EventType>,
     /// <p>The system generated ID of the event. This ID uniquely identifies the event with in the workflow execution history.</p>
     #[doc(hidden)]
     pub event_id: i64,
     /// <p>If the event is of type <code>WorkflowExecutionStarted</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     #[doc(hidden)]
     pub workflow_execution_started_event_attributes:
-        std::option::Option<crate::types::WorkflowExecutionStartedEventAttributes>,
+        ::std::option::Option<crate::types::WorkflowExecutionStartedEventAttributes>,
     /// <p>If the event is of type <code>WorkflowExecutionCompleted</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     #[doc(hidden)]
     pub workflow_execution_completed_event_attributes:
-        std::option::Option<crate::types::WorkflowExecutionCompletedEventAttributes>,
+        ::std::option::Option<crate::types::WorkflowExecutionCompletedEventAttributes>,
     /// <p>If the event is of type <code>CompleteWorkflowExecutionFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     #[doc(hidden)]
     pub complete_workflow_execution_failed_event_attributes:
-        std::option::Option<crate::types::CompleteWorkflowExecutionFailedEventAttributes>,
+        ::std::option::Option<crate::types::CompleteWorkflowExecutionFailedEventAttributes>,
     /// <p>If the event is of type <code>WorkflowExecutionFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     #[doc(hidden)]
     pub workflow_execution_failed_event_attributes:
-        std::option::Option<crate::types::WorkflowExecutionFailedEventAttributes>,
+        ::std::option::Option<crate::types::WorkflowExecutionFailedEventAttributes>,
     /// <p>If the event is of type <code>FailWorkflowExecutionFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     #[doc(hidden)]
     pub fail_workflow_execution_failed_event_attributes:
-        std::option::Option<crate::types::FailWorkflowExecutionFailedEventAttributes>,
+        ::std::option::Option<crate::types::FailWorkflowExecutionFailedEventAttributes>,
     /// <p>If the event is of type <code>WorkflowExecutionTimedOut</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     #[doc(hidden)]
     pub workflow_execution_timed_out_event_attributes:
-        std::option::Option<crate::types::WorkflowExecutionTimedOutEventAttributes>,
+        ::std::option::Option<crate::types::WorkflowExecutionTimedOutEventAttributes>,
     /// <p>If the event is of type <code>WorkflowExecutionCanceled</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     #[doc(hidden)]
     pub workflow_execution_canceled_event_attributes:
-        std::option::Option<crate::types::WorkflowExecutionCanceledEventAttributes>,
+        ::std::option::Option<crate::types::WorkflowExecutionCanceledEventAttributes>,
     /// <p>If the event is of type <code>CancelWorkflowExecutionFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     #[doc(hidden)]
     pub cancel_workflow_execution_failed_event_attributes:
-        std::option::Option<crate::types::CancelWorkflowExecutionFailedEventAttributes>,
+        ::std::option::Option<crate::types::CancelWorkflowExecutionFailedEventAttributes>,
     /// <p>If the event is of type <code>WorkflowExecutionContinuedAsNew</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     #[doc(hidden)]
     pub workflow_execution_continued_as_new_event_attributes:
-        std::option::Option<crate::types::WorkflowExecutionContinuedAsNewEventAttributes>,
+        ::std::option::Option<crate::types::WorkflowExecutionContinuedAsNewEventAttributes>,
     /// <p>If the event is of type <code>ContinueAsNewWorkflowExecutionFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     #[doc(hidden)]
     pub continue_as_new_workflow_execution_failed_event_attributes:
-        std::option::Option<crate::types::ContinueAsNewWorkflowExecutionFailedEventAttributes>,
+        ::std::option::Option<crate::types::ContinueAsNewWorkflowExecutionFailedEventAttributes>,
     /// <p>If the event is of type <code>WorkflowExecutionTerminated</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     #[doc(hidden)]
     pub workflow_execution_terminated_event_attributes:
-        std::option::Option<crate::types::WorkflowExecutionTerminatedEventAttributes>,
+        ::std::option::Option<crate::types::WorkflowExecutionTerminatedEventAttributes>,
     /// <p>If the event is of type <code>WorkflowExecutionCancelRequested</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     #[doc(hidden)]
     pub workflow_execution_cancel_requested_event_attributes:
-        std::option::Option<crate::types::WorkflowExecutionCancelRequestedEventAttributes>,
+        ::std::option::Option<crate::types::WorkflowExecutionCancelRequestedEventAttributes>,
     /// <p>If the event is of type <code>DecisionTaskScheduled</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     #[doc(hidden)]
     pub decision_task_scheduled_event_attributes:
-        std::option::Option<crate::types::DecisionTaskScheduledEventAttributes>,
+        ::std::option::Option<crate::types::DecisionTaskScheduledEventAttributes>,
     /// <p>If the event is of type <code>DecisionTaskStarted</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     #[doc(hidden)]
     pub decision_task_started_event_attributes:
-        std::option::Option<crate::types::DecisionTaskStartedEventAttributes>,
+        ::std::option::Option<crate::types::DecisionTaskStartedEventAttributes>,
     /// <p>If the event is of type <code>DecisionTaskCompleted</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     #[doc(hidden)]
     pub decision_task_completed_event_attributes:
-        std::option::Option<crate::types::DecisionTaskCompletedEventAttributes>,
+        ::std::option::Option<crate::types::DecisionTaskCompletedEventAttributes>,
     /// <p>If the event is of type <code>DecisionTaskTimedOut</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     #[doc(hidden)]
     pub decision_task_timed_out_event_attributes:
-        std::option::Option<crate::types::DecisionTaskTimedOutEventAttributes>,
+        ::std::option::Option<crate::types::DecisionTaskTimedOutEventAttributes>,
     /// <p>If the event is of type <code>ActivityTaskScheduled</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     #[doc(hidden)]
     pub activity_task_scheduled_event_attributes:
-        std::option::Option<crate::types::ActivityTaskScheduledEventAttributes>,
+        ::std::option::Option<crate::types::ActivityTaskScheduledEventAttributes>,
     /// <p>If the event is of type <code>ActivityTaskStarted</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     #[doc(hidden)]
     pub activity_task_started_event_attributes:
-        std::option::Option<crate::types::ActivityTaskStartedEventAttributes>,
+        ::std::option::Option<crate::types::ActivityTaskStartedEventAttributes>,
     /// <p>If the event is of type <code>ActivityTaskCompleted</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     #[doc(hidden)]
     pub activity_task_completed_event_attributes:
-        std::option::Option<crate::types::ActivityTaskCompletedEventAttributes>,
+        ::std::option::Option<crate::types::ActivityTaskCompletedEventAttributes>,
     /// <p>If the event is of type <code>ActivityTaskFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     #[doc(hidden)]
     pub activity_task_failed_event_attributes:
-        std::option::Option<crate::types::ActivityTaskFailedEventAttributes>,
+        ::std::option::Option<crate::types::ActivityTaskFailedEventAttributes>,
     /// <p>If the event is of type <code>ActivityTaskTimedOut</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     #[doc(hidden)]
     pub activity_task_timed_out_event_attributes:
-        std::option::Option<crate::types::ActivityTaskTimedOutEventAttributes>,
+        ::std::option::Option<crate::types::ActivityTaskTimedOutEventAttributes>,
     /// <p>If the event is of type <code>ActivityTaskCanceled</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     #[doc(hidden)]
     pub activity_task_canceled_event_attributes:
-        std::option::Option<crate::types::ActivityTaskCanceledEventAttributes>,
+        ::std::option::Option<crate::types::ActivityTaskCanceledEventAttributes>,
     /// <p>If the event is of type <code>ActivityTaskcancelRequested</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     #[doc(hidden)]
     pub activity_task_cancel_requested_event_attributes:
-        std::option::Option<crate::types::ActivityTaskCancelRequestedEventAttributes>,
+        ::std::option::Option<crate::types::ActivityTaskCancelRequestedEventAttributes>,
     /// <p>If the event is of type <code>WorkflowExecutionSignaled</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     #[doc(hidden)]
     pub workflow_execution_signaled_event_attributes:
-        std::option::Option<crate::types::WorkflowExecutionSignaledEventAttributes>,
+        ::std::option::Option<crate::types::WorkflowExecutionSignaledEventAttributes>,
     /// <p>If the event is of type <code>MarkerRecorded</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     #[doc(hidden)]
     pub marker_recorded_event_attributes:
-        std::option::Option<crate::types::MarkerRecordedEventAttributes>,
+        ::std::option::Option<crate::types::MarkerRecordedEventAttributes>,
     /// <p>If the event is of type <code>DecisionTaskFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     #[doc(hidden)]
     pub record_marker_failed_event_attributes:
-        std::option::Option<crate::types::RecordMarkerFailedEventAttributes>,
+        ::std::option::Option<crate::types::RecordMarkerFailedEventAttributes>,
     /// <p>If the event is of type <code>TimerStarted</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     #[doc(hidden)]
     pub timer_started_event_attributes:
-        std::option::Option<crate::types::TimerStartedEventAttributes>,
+        ::std::option::Option<crate::types::TimerStartedEventAttributes>,
     /// <p>If the event is of type <code>TimerFired</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     #[doc(hidden)]
-    pub timer_fired_event_attributes: std::option::Option<crate::types::TimerFiredEventAttributes>,
+    pub timer_fired_event_attributes:
+        ::std::option::Option<crate::types::TimerFiredEventAttributes>,
     /// <p>If the event is of type <code>TimerCanceled</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     #[doc(hidden)]
     pub timer_canceled_event_attributes:
-        std::option::Option<crate::types::TimerCanceledEventAttributes>,
+        ::std::option::Option<crate::types::TimerCanceledEventAttributes>,
     /// <p>If the event is of type <code>StartChildWorkflowExecutionInitiated</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     #[doc(hidden)]
     pub start_child_workflow_execution_initiated_event_attributes:
-        std::option::Option<crate::types::StartChildWorkflowExecutionInitiatedEventAttributes>,
+        ::std::option::Option<crate::types::StartChildWorkflowExecutionInitiatedEventAttributes>,
     /// <p>If the event is of type <code>ChildWorkflowExecutionStarted</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     #[doc(hidden)]
     pub child_workflow_execution_started_event_attributes:
-        std::option::Option<crate::types::ChildWorkflowExecutionStartedEventAttributes>,
+        ::std::option::Option<crate::types::ChildWorkflowExecutionStartedEventAttributes>,
     /// <p>If the event is of type <code>ChildWorkflowExecutionCompleted</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     #[doc(hidden)]
     pub child_workflow_execution_completed_event_attributes:
-        std::option::Option<crate::types::ChildWorkflowExecutionCompletedEventAttributes>,
+        ::std::option::Option<crate::types::ChildWorkflowExecutionCompletedEventAttributes>,
     /// <p>If the event is of type <code>ChildWorkflowExecutionFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     #[doc(hidden)]
     pub child_workflow_execution_failed_event_attributes:
-        std::option::Option<crate::types::ChildWorkflowExecutionFailedEventAttributes>,
+        ::std::option::Option<crate::types::ChildWorkflowExecutionFailedEventAttributes>,
     /// <p>If the event is of type <code>ChildWorkflowExecutionTimedOut</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     #[doc(hidden)]
     pub child_workflow_execution_timed_out_event_attributes:
-        std::option::Option<crate::types::ChildWorkflowExecutionTimedOutEventAttributes>,
+        ::std::option::Option<crate::types::ChildWorkflowExecutionTimedOutEventAttributes>,
     /// <p>If the event is of type <code>ChildWorkflowExecutionCanceled</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     #[doc(hidden)]
     pub child_workflow_execution_canceled_event_attributes:
-        std::option::Option<crate::types::ChildWorkflowExecutionCanceledEventAttributes>,
+        ::std::option::Option<crate::types::ChildWorkflowExecutionCanceledEventAttributes>,
     /// <p>If the event is of type <code>ChildWorkflowExecutionTerminated</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     #[doc(hidden)]
     pub child_workflow_execution_terminated_event_attributes:
-        std::option::Option<crate::types::ChildWorkflowExecutionTerminatedEventAttributes>,
+        ::std::option::Option<crate::types::ChildWorkflowExecutionTerminatedEventAttributes>,
     /// <p>If the event is of type <code>SignalExternalWorkflowExecutionInitiated</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     #[doc(hidden)]
-    pub signal_external_workflow_execution_initiated_event_attributes:
-        std::option::Option<crate::types::SignalExternalWorkflowExecutionInitiatedEventAttributes>,
+    pub signal_external_workflow_execution_initiated_event_attributes: ::std::option::Option<
+        crate::types::SignalExternalWorkflowExecutionInitiatedEventAttributes,
+    >,
     /// <p>If the event is of type <code>ExternalWorkflowExecutionSignaled</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     #[doc(hidden)]
     pub external_workflow_execution_signaled_event_attributes:
-        std::option::Option<crate::types::ExternalWorkflowExecutionSignaledEventAttributes>,
+        ::std::option::Option<crate::types::ExternalWorkflowExecutionSignaledEventAttributes>,
     /// <p>If the event is of type <code>SignalExternalWorkflowExecutionFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     #[doc(hidden)]
     pub signal_external_workflow_execution_failed_event_attributes:
-        std::option::Option<crate::types::SignalExternalWorkflowExecutionFailedEventAttributes>,
+        ::std::option::Option<crate::types::SignalExternalWorkflowExecutionFailedEventAttributes>,
     /// <p>If the event is of type <code>ExternalWorkflowExecutionCancelRequested</code> then this member is set and provides detailed information about the event. It isn't set for other event types. </p>
     #[doc(hidden)]
-    pub external_workflow_execution_cancel_requested_event_attributes:
-        std::option::Option<crate::types::ExternalWorkflowExecutionCancelRequestedEventAttributes>,
+    pub external_workflow_execution_cancel_requested_event_attributes: ::std::option::Option<
+        crate::types::ExternalWorkflowExecutionCancelRequestedEventAttributes,
+    >,
     /// <p>If the event is of type <code>RequestCancelExternalWorkflowExecutionInitiated</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     #[doc(hidden)]
-    pub request_cancel_external_workflow_execution_initiated_event_attributes: std::option::Option<
-        crate::types::RequestCancelExternalWorkflowExecutionInitiatedEventAttributes,
-    >,
+    pub request_cancel_external_workflow_execution_initiated_event_attributes:
+        ::std::option::Option<
+            crate::types::RequestCancelExternalWorkflowExecutionInitiatedEventAttributes,
+        >,
     /// <p>If the event is of type <code>RequestCancelExternalWorkflowExecutionFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     #[doc(hidden)]
-    pub request_cancel_external_workflow_execution_failed_event_attributes: std::option::Option<
+    pub request_cancel_external_workflow_execution_failed_event_attributes: ::std::option::Option<
         crate::types::RequestCancelExternalWorkflowExecutionFailedEventAttributes,
     >,
     /// <p>If the event is of type <code>ScheduleActivityTaskFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     #[doc(hidden)]
     pub schedule_activity_task_failed_event_attributes:
-        std::option::Option<crate::types::ScheduleActivityTaskFailedEventAttributes>,
+        ::std::option::Option<crate::types::ScheduleActivityTaskFailedEventAttributes>,
     /// <p>If the event is of type <code>RequestCancelActivityTaskFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     #[doc(hidden)]
     pub request_cancel_activity_task_failed_event_attributes:
-        std::option::Option<crate::types::RequestCancelActivityTaskFailedEventAttributes>,
+        ::std::option::Option<crate::types::RequestCancelActivityTaskFailedEventAttributes>,
     /// <p>If the event is of type <code>StartTimerFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     #[doc(hidden)]
     pub start_timer_failed_event_attributes:
-        std::option::Option<crate::types::StartTimerFailedEventAttributes>,
+        ::std::option::Option<crate::types::StartTimerFailedEventAttributes>,
     /// <p>If the event is of type <code>CancelTimerFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     #[doc(hidden)]
     pub cancel_timer_failed_event_attributes:
-        std::option::Option<crate::types::CancelTimerFailedEventAttributes>,
+        ::std::option::Option<crate::types::CancelTimerFailedEventAttributes>,
     /// <p>If the event is of type <code>StartChildWorkflowExecutionFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     #[doc(hidden)]
     pub start_child_workflow_execution_failed_event_attributes:
-        std::option::Option<crate::types::StartChildWorkflowExecutionFailedEventAttributes>,
+        ::std::option::Option<crate::types::StartChildWorkflowExecutionFailedEventAttributes>,
     /// <p>Provides the details of the <code>LambdaFunctionScheduled</code> event. It isn't set for other event types.</p>
     #[doc(hidden)]
     pub lambda_function_scheduled_event_attributes:
-        std::option::Option<crate::types::LambdaFunctionScheduledEventAttributes>,
+        ::std::option::Option<crate::types::LambdaFunctionScheduledEventAttributes>,
     /// <p>Provides the details of the <code>LambdaFunctionStarted</code> event. It isn't set for other event types.</p>
     #[doc(hidden)]
     pub lambda_function_started_event_attributes:
-        std::option::Option<crate::types::LambdaFunctionStartedEventAttributes>,
+        ::std::option::Option<crate::types::LambdaFunctionStartedEventAttributes>,
     /// <p>Provides the details of the <code>LambdaFunctionCompleted</code> event. It isn't set for other event types.</p>
     #[doc(hidden)]
     pub lambda_function_completed_event_attributes:
-        std::option::Option<crate::types::LambdaFunctionCompletedEventAttributes>,
+        ::std::option::Option<crate::types::LambdaFunctionCompletedEventAttributes>,
     /// <p>Provides the details of the <code>LambdaFunctionFailed</code> event. It isn't set for other event types.</p>
     #[doc(hidden)]
     pub lambda_function_failed_event_attributes:
-        std::option::Option<crate::types::LambdaFunctionFailedEventAttributes>,
+        ::std::option::Option<crate::types::LambdaFunctionFailedEventAttributes>,
     /// <p>Provides the details of the <code>LambdaFunctionTimedOut</code> event. It isn't set for other event types.</p>
     #[doc(hidden)]
     pub lambda_function_timed_out_event_attributes:
-        std::option::Option<crate::types::LambdaFunctionTimedOutEventAttributes>,
+        ::std::option::Option<crate::types::LambdaFunctionTimedOutEventAttributes>,
     /// <p>Provides the details of the <code>ScheduleLambdaFunctionFailed</code> event. It isn't set for other event types.</p>
     #[doc(hidden)]
     pub schedule_lambda_function_failed_event_attributes:
-        std::option::Option<crate::types::ScheduleLambdaFunctionFailedEventAttributes>,
+        ::std::option::Option<crate::types::ScheduleLambdaFunctionFailedEventAttributes>,
     /// <p>Provides the details of the <code>StartLambdaFunctionFailed</code> event. It isn't set for other event types.</p>
     #[doc(hidden)]
     pub start_lambda_function_failed_event_attributes:
-        std::option::Option<crate::types::StartLambdaFunctionFailedEventAttributes>,
+        ::std::option::Option<crate::types::StartLambdaFunctionFailedEventAttributes>,
 }
 impl HistoryEvent {
     /// <p>The date and time when the event occurred.</p>
-    pub fn event_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn event_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.event_timestamp.as_ref()
     }
     /// <p>The type of the history event.</p>
-    pub fn event_type(&self) -> std::option::Option<&crate::types::EventType> {
+    pub fn event_type(&self) -> ::std::option::Option<&crate::types::EventType> {
         self.event_type.as_ref()
     }
     /// <p>The system generated ID of the event. This ID uniquely identifies the event with in the workflow execution history.</p>
@@ -297,65 +301,65 @@ impl HistoryEvent {
     /// <p>If the event is of type <code>WorkflowExecutionStarted</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn workflow_execution_started_event_attributes(
         &self,
-    ) -> std::option::Option<&crate::types::WorkflowExecutionStartedEventAttributes> {
+    ) -> ::std::option::Option<&crate::types::WorkflowExecutionStartedEventAttributes> {
         self.workflow_execution_started_event_attributes.as_ref()
     }
     /// <p>If the event is of type <code>WorkflowExecutionCompleted</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn workflow_execution_completed_event_attributes(
         &self,
-    ) -> std::option::Option<&crate::types::WorkflowExecutionCompletedEventAttributes> {
+    ) -> ::std::option::Option<&crate::types::WorkflowExecutionCompletedEventAttributes> {
         self.workflow_execution_completed_event_attributes.as_ref()
     }
     /// <p>If the event is of type <code>CompleteWorkflowExecutionFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn complete_workflow_execution_failed_event_attributes(
         &self,
-    ) -> std::option::Option<&crate::types::CompleteWorkflowExecutionFailedEventAttributes> {
+    ) -> ::std::option::Option<&crate::types::CompleteWorkflowExecutionFailedEventAttributes> {
         self.complete_workflow_execution_failed_event_attributes
             .as_ref()
     }
     /// <p>If the event is of type <code>WorkflowExecutionFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn workflow_execution_failed_event_attributes(
         &self,
-    ) -> std::option::Option<&crate::types::WorkflowExecutionFailedEventAttributes> {
+    ) -> ::std::option::Option<&crate::types::WorkflowExecutionFailedEventAttributes> {
         self.workflow_execution_failed_event_attributes.as_ref()
     }
     /// <p>If the event is of type <code>FailWorkflowExecutionFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn fail_workflow_execution_failed_event_attributes(
         &self,
-    ) -> std::option::Option<&crate::types::FailWorkflowExecutionFailedEventAttributes> {
+    ) -> ::std::option::Option<&crate::types::FailWorkflowExecutionFailedEventAttributes> {
         self.fail_workflow_execution_failed_event_attributes
             .as_ref()
     }
     /// <p>If the event is of type <code>WorkflowExecutionTimedOut</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn workflow_execution_timed_out_event_attributes(
         &self,
-    ) -> std::option::Option<&crate::types::WorkflowExecutionTimedOutEventAttributes> {
+    ) -> ::std::option::Option<&crate::types::WorkflowExecutionTimedOutEventAttributes> {
         self.workflow_execution_timed_out_event_attributes.as_ref()
     }
     /// <p>If the event is of type <code>WorkflowExecutionCanceled</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn workflow_execution_canceled_event_attributes(
         &self,
-    ) -> std::option::Option<&crate::types::WorkflowExecutionCanceledEventAttributes> {
+    ) -> ::std::option::Option<&crate::types::WorkflowExecutionCanceledEventAttributes> {
         self.workflow_execution_canceled_event_attributes.as_ref()
     }
     /// <p>If the event is of type <code>CancelWorkflowExecutionFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn cancel_workflow_execution_failed_event_attributes(
         &self,
-    ) -> std::option::Option<&crate::types::CancelWorkflowExecutionFailedEventAttributes> {
+    ) -> ::std::option::Option<&crate::types::CancelWorkflowExecutionFailedEventAttributes> {
         self.cancel_workflow_execution_failed_event_attributes
             .as_ref()
     }
     /// <p>If the event is of type <code>WorkflowExecutionContinuedAsNew</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn workflow_execution_continued_as_new_event_attributes(
         &self,
-    ) -> std::option::Option<&crate::types::WorkflowExecutionContinuedAsNewEventAttributes> {
+    ) -> ::std::option::Option<&crate::types::WorkflowExecutionContinuedAsNewEventAttributes> {
         self.workflow_execution_continued_as_new_event_attributes
             .as_ref()
     }
     /// <p>If the event is of type <code>ContinueAsNewWorkflowExecutionFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn continue_as_new_workflow_execution_failed_event_attributes(
         &self,
-    ) -> std::option::Option<&crate::types::ContinueAsNewWorkflowExecutionFailedEventAttributes>
+    ) -> ::std::option::Option<&crate::types::ContinueAsNewWorkflowExecutionFailedEventAttributes>
     {
         self.continue_as_new_workflow_execution_failed_event_attributes
             .as_ref()
@@ -363,123 +367,123 @@ impl HistoryEvent {
     /// <p>If the event is of type <code>WorkflowExecutionTerminated</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn workflow_execution_terminated_event_attributes(
         &self,
-    ) -> std::option::Option<&crate::types::WorkflowExecutionTerminatedEventAttributes> {
+    ) -> ::std::option::Option<&crate::types::WorkflowExecutionTerminatedEventAttributes> {
         self.workflow_execution_terminated_event_attributes.as_ref()
     }
     /// <p>If the event is of type <code>WorkflowExecutionCancelRequested</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn workflow_execution_cancel_requested_event_attributes(
         &self,
-    ) -> std::option::Option<&crate::types::WorkflowExecutionCancelRequestedEventAttributes> {
+    ) -> ::std::option::Option<&crate::types::WorkflowExecutionCancelRequestedEventAttributes> {
         self.workflow_execution_cancel_requested_event_attributes
             .as_ref()
     }
     /// <p>If the event is of type <code>DecisionTaskScheduled</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn decision_task_scheduled_event_attributes(
         &self,
-    ) -> std::option::Option<&crate::types::DecisionTaskScheduledEventAttributes> {
+    ) -> ::std::option::Option<&crate::types::DecisionTaskScheduledEventAttributes> {
         self.decision_task_scheduled_event_attributes.as_ref()
     }
     /// <p>If the event is of type <code>DecisionTaskStarted</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn decision_task_started_event_attributes(
         &self,
-    ) -> std::option::Option<&crate::types::DecisionTaskStartedEventAttributes> {
+    ) -> ::std::option::Option<&crate::types::DecisionTaskStartedEventAttributes> {
         self.decision_task_started_event_attributes.as_ref()
     }
     /// <p>If the event is of type <code>DecisionTaskCompleted</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn decision_task_completed_event_attributes(
         &self,
-    ) -> std::option::Option<&crate::types::DecisionTaskCompletedEventAttributes> {
+    ) -> ::std::option::Option<&crate::types::DecisionTaskCompletedEventAttributes> {
         self.decision_task_completed_event_attributes.as_ref()
     }
     /// <p>If the event is of type <code>DecisionTaskTimedOut</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn decision_task_timed_out_event_attributes(
         &self,
-    ) -> std::option::Option<&crate::types::DecisionTaskTimedOutEventAttributes> {
+    ) -> ::std::option::Option<&crate::types::DecisionTaskTimedOutEventAttributes> {
         self.decision_task_timed_out_event_attributes.as_ref()
     }
     /// <p>If the event is of type <code>ActivityTaskScheduled</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn activity_task_scheduled_event_attributes(
         &self,
-    ) -> std::option::Option<&crate::types::ActivityTaskScheduledEventAttributes> {
+    ) -> ::std::option::Option<&crate::types::ActivityTaskScheduledEventAttributes> {
         self.activity_task_scheduled_event_attributes.as_ref()
     }
     /// <p>If the event is of type <code>ActivityTaskStarted</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn activity_task_started_event_attributes(
         &self,
-    ) -> std::option::Option<&crate::types::ActivityTaskStartedEventAttributes> {
+    ) -> ::std::option::Option<&crate::types::ActivityTaskStartedEventAttributes> {
         self.activity_task_started_event_attributes.as_ref()
     }
     /// <p>If the event is of type <code>ActivityTaskCompleted</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn activity_task_completed_event_attributes(
         &self,
-    ) -> std::option::Option<&crate::types::ActivityTaskCompletedEventAttributes> {
+    ) -> ::std::option::Option<&crate::types::ActivityTaskCompletedEventAttributes> {
         self.activity_task_completed_event_attributes.as_ref()
     }
     /// <p>If the event is of type <code>ActivityTaskFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn activity_task_failed_event_attributes(
         &self,
-    ) -> std::option::Option<&crate::types::ActivityTaskFailedEventAttributes> {
+    ) -> ::std::option::Option<&crate::types::ActivityTaskFailedEventAttributes> {
         self.activity_task_failed_event_attributes.as_ref()
     }
     /// <p>If the event is of type <code>ActivityTaskTimedOut</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn activity_task_timed_out_event_attributes(
         &self,
-    ) -> std::option::Option<&crate::types::ActivityTaskTimedOutEventAttributes> {
+    ) -> ::std::option::Option<&crate::types::ActivityTaskTimedOutEventAttributes> {
         self.activity_task_timed_out_event_attributes.as_ref()
     }
     /// <p>If the event is of type <code>ActivityTaskCanceled</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn activity_task_canceled_event_attributes(
         &self,
-    ) -> std::option::Option<&crate::types::ActivityTaskCanceledEventAttributes> {
+    ) -> ::std::option::Option<&crate::types::ActivityTaskCanceledEventAttributes> {
         self.activity_task_canceled_event_attributes.as_ref()
     }
     /// <p>If the event is of type <code>ActivityTaskcancelRequested</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn activity_task_cancel_requested_event_attributes(
         &self,
-    ) -> std::option::Option<&crate::types::ActivityTaskCancelRequestedEventAttributes> {
+    ) -> ::std::option::Option<&crate::types::ActivityTaskCancelRequestedEventAttributes> {
         self.activity_task_cancel_requested_event_attributes
             .as_ref()
     }
     /// <p>If the event is of type <code>WorkflowExecutionSignaled</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn workflow_execution_signaled_event_attributes(
         &self,
-    ) -> std::option::Option<&crate::types::WorkflowExecutionSignaledEventAttributes> {
+    ) -> ::std::option::Option<&crate::types::WorkflowExecutionSignaledEventAttributes> {
         self.workflow_execution_signaled_event_attributes.as_ref()
     }
     /// <p>If the event is of type <code>MarkerRecorded</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn marker_recorded_event_attributes(
         &self,
-    ) -> std::option::Option<&crate::types::MarkerRecordedEventAttributes> {
+    ) -> ::std::option::Option<&crate::types::MarkerRecordedEventAttributes> {
         self.marker_recorded_event_attributes.as_ref()
     }
     /// <p>If the event is of type <code>DecisionTaskFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn record_marker_failed_event_attributes(
         &self,
-    ) -> std::option::Option<&crate::types::RecordMarkerFailedEventAttributes> {
+    ) -> ::std::option::Option<&crate::types::RecordMarkerFailedEventAttributes> {
         self.record_marker_failed_event_attributes.as_ref()
     }
     /// <p>If the event is of type <code>TimerStarted</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn timer_started_event_attributes(
         &self,
-    ) -> std::option::Option<&crate::types::TimerStartedEventAttributes> {
+    ) -> ::std::option::Option<&crate::types::TimerStartedEventAttributes> {
         self.timer_started_event_attributes.as_ref()
     }
     /// <p>If the event is of type <code>TimerFired</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn timer_fired_event_attributes(
         &self,
-    ) -> std::option::Option<&crate::types::TimerFiredEventAttributes> {
+    ) -> ::std::option::Option<&crate::types::TimerFiredEventAttributes> {
         self.timer_fired_event_attributes.as_ref()
     }
     /// <p>If the event is of type <code>TimerCanceled</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn timer_canceled_event_attributes(
         &self,
-    ) -> std::option::Option<&crate::types::TimerCanceledEventAttributes> {
+    ) -> ::std::option::Option<&crate::types::TimerCanceledEventAttributes> {
         self.timer_canceled_event_attributes.as_ref()
     }
     /// <p>If the event is of type <code>StartChildWorkflowExecutionInitiated</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn start_child_workflow_execution_initiated_event_attributes(
         &self,
-    ) -> std::option::Option<&crate::types::StartChildWorkflowExecutionInitiatedEventAttributes>
+    ) -> ::std::option::Option<&crate::types::StartChildWorkflowExecutionInitiatedEventAttributes>
     {
         self.start_child_workflow_execution_initiated_event_attributes
             .as_ref()
@@ -487,49 +491,49 @@ impl HistoryEvent {
     /// <p>If the event is of type <code>ChildWorkflowExecutionStarted</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn child_workflow_execution_started_event_attributes(
         &self,
-    ) -> std::option::Option<&crate::types::ChildWorkflowExecutionStartedEventAttributes> {
+    ) -> ::std::option::Option<&crate::types::ChildWorkflowExecutionStartedEventAttributes> {
         self.child_workflow_execution_started_event_attributes
             .as_ref()
     }
     /// <p>If the event is of type <code>ChildWorkflowExecutionCompleted</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn child_workflow_execution_completed_event_attributes(
         &self,
-    ) -> std::option::Option<&crate::types::ChildWorkflowExecutionCompletedEventAttributes> {
+    ) -> ::std::option::Option<&crate::types::ChildWorkflowExecutionCompletedEventAttributes> {
         self.child_workflow_execution_completed_event_attributes
             .as_ref()
     }
     /// <p>If the event is of type <code>ChildWorkflowExecutionFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn child_workflow_execution_failed_event_attributes(
         &self,
-    ) -> std::option::Option<&crate::types::ChildWorkflowExecutionFailedEventAttributes> {
+    ) -> ::std::option::Option<&crate::types::ChildWorkflowExecutionFailedEventAttributes> {
         self.child_workflow_execution_failed_event_attributes
             .as_ref()
     }
     /// <p>If the event is of type <code>ChildWorkflowExecutionTimedOut</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn child_workflow_execution_timed_out_event_attributes(
         &self,
-    ) -> std::option::Option<&crate::types::ChildWorkflowExecutionTimedOutEventAttributes> {
+    ) -> ::std::option::Option<&crate::types::ChildWorkflowExecutionTimedOutEventAttributes> {
         self.child_workflow_execution_timed_out_event_attributes
             .as_ref()
     }
     /// <p>If the event is of type <code>ChildWorkflowExecutionCanceled</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn child_workflow_execution_canceled_event_attributes(
         &self,
-    ) -> std::option::Option<&crate::types::ChildWorkflowExecutionCanceledEventAttributes> {
+    ) -> ::std::option::Option<&crate::types::ChildWorkflowExecutionCanceledEventAttributes> {
         self.child_workflow_execution_canceled_event_attributes
             .as_ref()
     }
     /// <p>If the event is of type <code>ChildWorkflowExecutionTerminated</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn child_workflow_execution_terminated_event_attributes(
         &self,
-    ) -> std::option::Option<&crate::types::ChildWorkflowExecutionTerminatedEventAttributes> {
+    ) -> ::std::option::Option<&crate::types::ChildWorkflowExecutionTerminatedEventAttributes> {
         self.child_workflow_execution_terminated_event_attributes
             .as_ref()
     }
     /// <p>If the event is of type <code>SignalExternalWorkflowExecutionInitiated</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn signal_external_workflow_execution_initiated_event_attributes(
         &self,
-    ) -> std::option::Option<&crate::types::SignalExternalWorkflowExecutionInitiatedEventAttributes>
+    ) -> ::std::option::Option<&crate::types::SignalExternalWorkflowExecutionInitiatedEventAttributes>
     {
         self.signal_external_workflow_execution_initiated_event_attributes
             .as_ref()
@@ -537,14 +541,15 @@ impl HistoryEvent {
     /// <p>If the event is of type <code>ExternalWorkflowExecutionSignaled</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn external_workflow_execution_signaled_event_attributes(
         &self,
-    ) -> std::option::Option<&crate::types::ExternalWorkflowExecutionSignaledEventAttributes> {
+    ) -> ::std::option::Option<&crate::types::ExternalWorkflowExecutionSignaledEventAttributes>
+    {
         self.external_workflow_execution_signaled_event_attributes
             .as_ref()
     }
     /// <p>If the event is of type <code>SignalExternalWorkflowExecutionFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn signal_external_workflow_execution_failed_event_attributes(
         &self,
-    ) -> std::option::Option<&crate::types::SignalExternalWorkflowExecutionFailedEventAttributes>
+    ) -> ::std::option::Option<&crate::types::SignalExternalWorkflowExecutionFailedEventAttributes>
     {
         self.signal_external_workflow_execution_failed_event_attributes
             .as_ref()
@@ -552,7 +557,7 @@ impl HistoryEvent {
     /// <p>If the event is of type <code>ExternalWorkflowExecutionCancelRequested</code> then this member is set and provides detailed information about the event. It isn't set for other event types. </p>
     pub fn external_workflow_execution_cancel_requested_event_attributes(
         &self,
-    ) -> std::option::Option<&crate::types::ExternalWorkflowExecutionCancelRequestedEventAttributes>
+    ) -> ::std::option::Option<&crate::types::ExternalWorkflowExecutionCancelRequestedEventAttributes>
     {
         self.external_workflow_execution_cancel_requested_event_attributes
             .as_ref()
@@ -560,7 +565,7 @@ impl HistoryEvent {
     /// <p>If the event is of type <code>RequestCancelExternalWorkflowExecutionInitiated</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn request_cancel_external_workflow_execution_initiated_event_attributes(
         &self,
-    ) -> std::option::Option<
+    ) -> ::std::option::Option<
         &crate::types::RequestCancelExternalWorkflowExecutionInitiatedEventAttributes,
     > {
         self.request_cancel_external_workflow_execution_initiated_event_attributes
@@ -569,7 +574,7 @@ impl HistoryEvent {
     /// <p>If the event is of type <code>RequestCancelExternalWorkflowExecutionFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn request_cancel_external_workflow_execution_failed_event_attributes(
         &self,
-    ) -> std::option::Option<
+    ) -> ::std::option::Option<
         &crate::types::RequestCancelExternalWorkflowExecutionFailedEventAttributes,
     > {
         self.request_cancel_external_workflow_execution_failed_event_attributes
@@ -578,76 +583,77 @@ impl HistoryEvent {
     /// <p>If the event is of type <code>ScheduleActivityTaskFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn schedule_activity_task_failed_event_attributes(
         &self,
-    ) -> std::option::Option<&crate::types::ScheduleActivityTaskFailedEventAttributes> {
+    ) -> ::std::option::Option<&crate::types::ScheduleActivityTaskFailedEventAttributes> {
         self.schedule_activity_task_failed_event_attributes.as_ref()
     }
     /// <p>If the event is of type <code>RequestCancelActivityTaskFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn request_cancel_activity_task_failed_event_attributes(
         &self,
-    ) -> std::option::Option<&crate::types::RequestCancelActivityTaskFailedEventAttributes> {
+    ) -> ::std::option::Option<&crate::types::RequestCancelActivityTaskFailedEventAttributes> {
         self.request_cancel_activity_task_failed_event_attributes
             .as_ref()
     }
     /// <p>If the event is of type <code>StartTimerFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn start_timer_failed_event_attributes(
         &self,
-    ) -> std::option::Option<&crate::types::StartTimerFailedEventAttributes> {
+    ) -> ::std::option::Option<&crate::types::StartTimerFailedEventAttributes> {
         self.start_timer_failed_event_attributes.as_ref()
     }
     /// <p>If the event is of type <code>CancelTimerFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn cancel_timer_failed_event_attributes(
         &self,
-    ) -> std::option::Option<&crate::types::CancelTimerFailedEventAttributes> {
+    ) -> ::std::option::Option<&crate::types::CancelTimerFailedEventAttributes> {
         self.cancel_timer_failed_event_attributes.as_ref()
     }
     /// <p>If the event is of type <code>StartChildWorkflowExecutionFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn start_child_workflow_execution_failed_event_attributes(
         &self,
-    ) -> std::option::Option<&crate::types::StartChildWorkflowExecutionFailedEventAttributes> {
+    ) -> ::std::option::Option<&crate::types::StartChildWorkflowExecutionFailedEventAttributes>
+    {
         self.start_child_workflow_execution_failed_event_attributes
             .as_ref()
     }
     /// <p>Provides the details of the <code>LambdaFunctionScheduled</code> event. It isn't set for other event types.</p>
     pub fn lambda_function_scheduled_event_attributes(
         &self,
-    ) -> std::option::Option<&crate::types::LambdaFunctionScheduledEventAttributes> {
+    ) -> ::std::option::Option<&crate::types::LambdaFunctionScheduledEventAttributes> {
         self.lambda_function_scheduled_event_attributes.as_ref()
     }
     /// <p>Provides the details of the <code>LambdaFunctionStarted</code> event. It isn't set for other event types.</p>
     pub fn lambda_function_started_event_attributes(
         &self,
-    ) -> std::option::Option<&crate::types::LambdaFunctionStartedEventAttributes> {
+    ) -> ::std::option::Option<&crate::types::LambdaFunctionStartedEventAttributes> {
         self.lambda_function_started_event_attributes.as_ref()
     }
     /// <p>Provides the details of the <code>LambdaFunctionCompleted</code> event. It isn't set for other event types.</p>
     pub fn lambda_function_completed_event_attributes(
         &self,
-    ) -> std::option::Option<&crate::types::LambdaFunctionCompletedEventAttributes> {
+    ) -> ::std::option::Option<&crate::types::LambdaFunctionCompletedEventAttributes> {
         self.lambda_function_completed_event_attributes.as_ref()
     }
     /// <p>Provides the details of the <code>LambdaFunctionFailed</code> event. It isn't set for other event types.</p>
     pub fn lambda_function_failed_event_attributes(
         &self,
-    ) -> std::option::Option<&crate::types::LambdaFunctionFailedEventAttributes> {
+    ) -> ::std::option::Option<&crate::types::LambdaFunctionFailedEventAttributes> {
         self.lambda_function_failed_event_attributes.as_ref()
     }
     /// <p>Provides the details of the <code>LambdaFunctionTimedOut</code> event. It isn't set for other event types.</p>
     pub fn lambda_function_timed_out_event_attributes(
         &self,
-    ) -> std::option::Option<&crate::types::LambdaFunctionTimedOutEventAttributes> {
+    ) -> ::std::option::Option<&crate::types::LambdaFunctionTimedOutEventAttributes> {
         self.lambda_function_timed_out_event_attributes.as_ref()
     }
     /// <p>Provides the details of the <code>ScheduleLambdaFunctionFailed</code> event. It isn't set for other event types.</p>
     pub fn schedule_lambda_function_failed_event_attributes(
         &self,
-    ) -> std::option::Option<&crate::types::ScheduleLambdaFunctionFailedEventAttributes> {
+    ) -> ::std::option::Option<&crate::types::ScheduleLambdaFunctionFailedEventAttributes> {
         self.schedule_lambda_function_failed_event_attributes
             .as_ref()
     }
     /// <p>Provides the details of the <code>StartLambdaFunctionFailed</code> event. It isn't set for other event types.</p>
     pub fn start_lambda_function_failed_event_attributes(
         &self,
-    ) -> std::option::Option<&crate::types::StartLambdaFunctionFailedEventAttributes> {
+    ) -> ::std::option::Option<&crate::types::StartLambdaFunctionFailedEventAttributes> {
         self.start_lambda_function_failed_event_attributes.as_ref()
     }
 }
@@ -660,155 +666,159 @@ impl HistoryEvent {
 
 /// A builder for [`HistoryEvent`](crate::types::HistoryEvent).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct HistoryEventBuilder {
-    pub(crate) event_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) event_type: std::option::Option<crate::types::EventType>,
-    pub(crate) event_id: std::option::Option<i64>,
+    pub(crate) event_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) event_type: ::std::option::Option<crate::types::EventType>,
+    pub(crate) event_id: ::std::option::Option<i64>,
     pub(crate) workflow_execution_started_event_attributes:
-        std::option::Option<crate::types::WorkflowExecutionStartedEventAttributes>,
+        ::std::option::Option<crate::types::WorkflowExecutionStartedEventAttributes>,
     pub(crate) workflow_execution_completed_event_attributes:
-        std::option::Option<crate::types::WorkflowExecutionCompletedEventAttributes>,
+        ::std::option::Option<crate::types::WorkflowExecutionCompletedEventAttributes>,
     pub(crate) complete_workflow_execution_failed_event_attributes:
-        std::option::Option<crate::types::CompleteWorkflowExecutionFailedEventAttributes>,
+        ::std::option::Option<crate::types::CompleteWorkflowExecutionFailedEventAttributes>,
     pub(crate) workflow_execution_failed_event_attributes:
-        std::option::Option<crate::types::WorkflowExecutionFailedEventAttributes>,
+        ::std::option::Option<crate::types::WorkflowExecutionFailedEventAttributes>,
     pub(crate) fail_workflow_execution_failed_event_attributes:
-        std::option::Option<crate::types::FailWorkflowExecutionFailedEventAttributes>,
+        ::std::option::Option<crate::types::FailWorkflowExecutionFailedEventAttributes>,
     pub(crate) workflow_execution_timed_out_event_attributes:
-        std::option::Option<crate::types::WorkflowExecutionTimedOutEventAttributes>,
+        ::std::option::Option<crate::types::WorkflowExecutionTimedOutEventAttributes>,
     pub(crate) workflow_execution_canceled_event_attributes:
-        std::option::Option<crate::types::WorkflowExecutionCanceledEventAttributes>,
+        ::std::option::Option<crate::types::WorkflowExecutionCanceledEventAttributes>,
     pub(crate) cancel_workflow_execution_failed_event_attributes:
-        std::option::Option<crate::types::CancelWorkflowExecutionFailedEventAttributes>,
+        ::std::option::Option<crate::types::CancelWorkflowExecutionFailedEventAttributes>,
     pub(crate) workflow_execution_continued_as_new_event_attributes:
-        std::option::Option<crate::types::WorkflowExecutionContinuedAsNewEventAttributes>,
+        ::std::option::Option<crate::types::WorkflowExecutionContinuedAsNewEventAttributes>,
     pub(crate) continue_as_new_workflow_execution_failed_event_attributes:
-        std::option::Option<crate::types::ContinueAsNewWorkflowExecutionFailedEventAttributes>,
+        ::std::option::Option<crate::types::ContinueAsNewWorkflowExecutionFailedEventAttributes>,
     pub(crate) workflow_execution_terminated_event_attributes:
-        std::option::Option<crate::types::WorkflowExecutionTerminatedEventAttributes>,
+        ::std::option::Option<crate::types::WorkflowExecutionTerminatedEventAttributes>,
     pub(crate) workflow_execution_cancel_requested_event_attributes:
-        std::option::Option<crate::types::WorkflowExecutionCancelRequestedEventAttributes>,
+        ::std::option::Option<crate::types::WorkflowExecutionCancelRequestedEventAttributes>,
     pub(crate) decision_task_scheduled_event_attributes:
-        std::option::Option<crate::types::DecisionTaskScheduledEventAttributes>,
+        ::std::option::Option<crate::types::DecisionTaskScheduledEventAttributes>,
     pub(crate) decision_task_started_event_attributes:
-        std::option::Option<crate::types::DecisionTaskStartedEventAttributes>,
+        ::std::option::Option<crate::types::DecisionTaskStartedEventAttributes>,
     pub(crate) decision_task_completed_event_attributes:
-        std::option::Option<crate::types::DecisionTaskCompletedEventAttributes>,
+        ::std::option::Option<crate::types::DecisionTaskCompletedEventAttributes>,
     pub(crate) decision_task_timed_out_event_attributes:
-        std::option::Option<crate::types::DecisionTaskTimedOutEventAttributes>,
+        ::std::option::Option<crate::types::DecisionTaskTimedOutEventAttributes>,
     pub(crate) activity_task_scheduled_event_attributes:
-        std::option::Option<crate::types::ActivityTaskScheduledEventAttributes>,
+        ::std::option::Option<crate::types::ActivityTaskScheduledEventAttributes>,
     pub(crate) activity_task_started_event_attributes:
-        std::option::Option<crate::types::ActivityTaskStartedEventAttributes>,
+        ::std::option::Option<crate::types::ActivityTaskStartedEventAttributes>,
     pub(crate) activity_task_completed_event_attributes:
-        std::option::Option<crate::types::ActivityTaskCompletedEventAttributes>,
+        ::std::option::Option<crate::types::ActivityTaskCompletedEventAttributes>,
     pub(crate) activity_task_failed_event_attributes:
-        std::option::Option<crate::types::ActivityTaskFailedEventAttributes>,
+        ::std::option::Option<crate::types::ActivityTaskFailedEventAttributes>,
     pub(crate) activity_task_timed_out_event_attributes:
-        std::option::Option<crate::types::ActivityTaskTimedOutEventAttributes>,
+        ::std::option::Option<crate::types::ActivityTaskTimedOutEventAttributes>,
     pub(crate) activity_task_canceled_event_attributes:
-        std::option::Option<crate::types::ActivityTaskCanceledEventAttributes>,
+        ::std::option::Option<crate::types::ActivityTaskCanceledEventAttributes>,
     pub(crate) activity_task_cancel_requested_event_attributes:
-        std::option::Option<crate::types::ActivityTaskCancelRequestedEventAttributes>,
+        ::std::option::Option<crate::types::ActivityTaskCancelRequestedEventAttributes>,
     pub(crate) workflow_execution_signaled_event_attributes:
-        std::option::Option<crate::types::WorkflowExecutionSignaledEventAttributes>,
+        ::std::option::Option<crate::types::WorkflowExecutionSignaledEventAttributes>,
     pub(crate) marker_recorded_event_attributes:
-        std::option::Option<crate::types::MarkerRecordedEventAttributes>,
+        ::std::option::Option<crate::types::MarkerRecordedEventAttributes>,
     pub(crate) record_marker_failed_event_attributes:
-        std::option::Option<crate::types::RecordMarkerFailedEventAttributes>,
+        ::std::option::Option<crate::types::RecordMarkerFailedEventAttributes>,
     pub(crate) timer_started_event_attributes:
-        std::option::Option<crate::types::TimerStartedEventAttributes>,
+        ::std::option::Option<crate::types::TimerStartedEventAttributes>,
     pub(crate) timer_fired_event_attributes:
-        std::option::Option<crate::types::TimerFiredEventAttributes>,
+        ::std::option::Option<crate::types::TimerFiredEventAttributes>,
     pub(crate) timer_canceled_event_attributes:
-        std::option::Option<crate::types::TimerCanceledEventAttributes>,
+        ::std::option::Option<crate::types::TimerCanceledEventAttributes>,
     pub(crate) start_child_workflow_execution_initiated_event_attributes:
-        std::option::Option<crate::types::StartChildWorkflowExecutionInitiatedEventAttributes>,
+        ::std::option::Option<crate::types::StartChildWorkflowExecutionInitiatedEventAttributes>,
     pub(crate) child_workflow_execution_started_event_attributes:
-        std::option::Option<crate::types::ChildWorkflowExecutionStartedEventAttributes>,
+        ::std::option::Option<crate::types::ChildWorkflowExecutionStartedEventAttributes>,
     pub(crate) child_workflow_execution_completed_event_attributes:
-        std::option::Option<crate::types::ChildWorkflowExecutionCompletedEventAttributes>,
+        ::std::option::Option<crate::types::ChildWorkflowExecutionCompletedEventAttributes>,
     pub(crate) child_workflow_execution_failed_event_attributes:
-        std::option::Option<crate::types::ChildWorkflowExecutionFailedEventAttributes>,
+        ::std::option::Option<crate::types::ChildWorkflowExecutionFailedEventAttributes>,
     pub(crate) child_workflow_execution_timed_out_event_attributes:
-        std::option::Option<crate::types::ChildWorkflowExecutionTimedOutEventAttributes>,
+        ::std::option::Option<crate::types::ChildWorkflowExecutionTimedOutEventAttributes>,
     pub(crate) child_workflow_execution_canceled_event_attributes:
-        std::option::Option<crate::types::ChildWorkflowExecutionCanceledEventAttributes>,
+        ::std::option::Option<crate::types::ChildWorkflowExecutionCanceledEventAttributes>,
     pub(crate) child_workflow_execution_terminated_event_attributes:
-        std::option::Option<crate::types::ChildWorkflowExecutionTerminatedEventAttributes>,
-    pub(crate) signal_external_workflow_execution_initiated_event_attributes:
-        std::option::Option<crate::types::SignalExternalWorkflowExecutionInitiatedEventAttributes>,
+        ::std::option::Option<crate::types::ChildWorkflowExecutionTerminatedEventAttributes>,
+    pub(crate) signal_external_workflow_execution_initiated_event_attributes: ::std::option::Option<
+        crate::types::SignalExternalWorkflowExecutionInitiatedEventAttributes,
+    >,
     pub(crate) external_workflow_execution_signaled_event_attributes:
-        std::option::Option<crate::types::ExternalWorkflowExecutionSignaledEventAttributes>,
+        ::std::option::Option<crate::types::ExternalWorkflowExecutionSignaledEventAttributes>,
     pub(crate) signal_external_workflow_execution_failed_event_attributes:
-        std::option::Option<crate::types::SignalExternalWorkflowExecutionFailedEventAttributes>,
-    pub(crate) external_workflow_execution_cancel_requested_event_attributes:
-        std::option::Option<crate::types::ExternalWorkflowExecutionCancelRequestedEventAttributes>,
+        ::std::option::Option<crate::types::SignalExternalWorkflowExecutionFailedEventAttributes>,
+    pub(crate) external_workflow_execution_cancel_requested_event_attributes: ::std::option::Option<
+        crate::types::ExternalWorkflowExecutionCancelRequestedEventAttributes,
+    >,
     pub(crate) request_cancel_external_workflow_execution_initiated_event_attributes:
-        std::option::Option<
+        ::std::option::Option<
             crate::types::RequestCancelExternalWorkflowExecutionInitiatedEventAttributes,
         >,
     pub(crate) request_cancel_external_workflow_execution_failed_event_attributes:
-        std::option::Option<
+        ::std::option::Option<
             crate::types::RequestCancelExternalWorkflowExecutionFailedEventAttributes,
         >,
     pub(crate) schedule_activity_task_failed_event_attributes:
-        std::option::Option<crate::types::ScheduleActivityTaskFailedEventAttributes>,
+        ::std::option::Option<crate::types::ScheduleActivityTaskFailedEventAttributes>,
     pub(crate) request_cancel_activity_task_failed_event_attributes:
-        std::option::Option<crate::types::RequestCancelActivityTaskFailedEventAttributes>,
+        ::std::option::Option<crate::types::RequestCancelActivityTaskFailedEventAttributes>,
     pub(crate) start_timer_failed_event_attributes:
-        std::option::Option<crate::types::StartTimerFailedEventAttributes>,
+        ::std::option::Option<crate::types::StartTimerFailedEventAttributes>,
     pub(crate) cancel_timer_failed_event_attributes:
-        std::option::Option<crate::types::CancelTimerFailedEventAttributes>,
+        ::std::option::Option<crate::types::CancelTimerFailedEventAttributes>,
     pub(crate) start_child_workflow_execution_failed_event_attributes:
-        std::option::Option<crate::types::StartChildWorkflowExecutionFailedEventAttributes>,
+        ::std::option::Option<crate::types::StartChildWorkflowExecutionFailedEventAttributes>,
     pub(crate) lambda_function_scheduled_event_attributes:
-        std::option::Option<crate::types::LambdaFunctionScheduledEventAttributes>,
+        ::std::option::Option<crate::types::LambdaFunctionScheduledEventAttributes>,
     pub(crate) lambda_function_started_event_attributes:
-        std::option::Option<crate::types::LambdaFunctionStartedEventAttributes>,
+        ::std::option::Option<crate::types::LambdaFunctionStartedEventAttributes>,
     pub(crate) lambda_function_completed_event_attributes:
-        std::option::Option<crate::types::LambdaFunctionCompletedEventAttributes>,
+        ::std::option::Option<crate::types::LambdaFunctionCompletedEventAttributes>,
     pub(crate) lambda_function_failed_event_attributes:
-        std::option::Option<crate::types::LambdaFunctionFailedEventAttributes>,
+        ::std::option::Option<crate::types::LambdaFunctionFailedEventAttributes>,
     pub(crate) lambda_function_timed_out_event_attributes:
-        std::option::Option<crate::types::LambdaFunctionTimedOutEventAttributes>,
+        ::std::option::Option<crate::types::LambdaFunctionTimedOutEventAttributes>,
     pub(crate) schedule_lambda_function_failed_event_attributes:
-        std::option::Option<crate::types::ScheduleLambdaFunctionFailedEventAttributes>,
+        ::std::option::Option<crate::types::ScheduleLambdaFunctionFailedEventAttributes>,
     pub(crate) start_lambda_function_failed_event_attributes:
-        std::option::Option<crate::types::StartLambdaFunctionFailedEventAttributes>,
+        ::std::option::Option<crate::types::StartLambdaFunctionFailedEventAttributes>,
 }
 impl HistoryEventBuilder {
     /// <p>The date and time when the event occurred.</p>
-    pub fn event_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.event_timestamp = Some(input);
+    pub fn event_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.event_timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time when the event occurred.</p>
     pub fn set_event_timestamp(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.event_timestamp = input;
         self
     }
     /// <p>The type of the history event.</p>
     pub fn event_type(mut self, input: crate::types::EventType) -> Self {
-        self.event_type = Some(input);
+        self.event_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of the history event.</p>
-    pub fn set_event_type(mut self, input: std::option::Option<crate::types::EventType>) -> Self {
+    pub fn set_event_type(mut self, input: ::std::option::Option<crate::types::EventType>) -> Self {
         self.event_type = input;
         self
     }
     /// <p>The system generated ID of the event. This ID uniquely identifies the event with in the workflow execution history.</p>
     pub fn event_id(mut self, input: i64) -> Self {
-        self.event_id = Some(input);
+        self.event_id = ::std::option::Option::Some(input);
         self
     }
     /// <p>The system generated ID of the event. This ID uniquely identifies the event with in the workflow execution history.</p>
-    pub fn set_event_id(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_event_id(mut self, input: ::std::option::Option<i64>) -> Self {
         self.event_id = input;
         self
     }
@@ -817,13 +827,13 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::WorkflowExecutionStartedEventAttributes,
     ) -> Self {
-        self.workflow_execution_started_event_attributes = Some(input);
+        self.workflow_execution_started_event_attributes = ::std::option::Option::Some(input);
         self
     }
     /// <p>If the event is of type <code>WorkflowExecutionStarted</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn set_workflow_execution_started_event_attributes(
         mut self,
-        input: std::option::Option<crate::types::WorkflowExecutionStartedEventAttributes>,
+        input: ::std::option::Option<crate::types::WorkflowExecutionStartedEventAttributes>,
     ) -> Self {
         self.workflow_execution_started_event_attributes = input;
         self
@@ -833,13 +843,13 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::WorkflowExecutionCompletedEventAttributes,
     ) -> Self {
-        self.workflow_execution_completed_event_attributes = Some(input);
+        self.workflow_execution_completed_event_attributes = ::std::option::Option::Some(input);
         self
     }
     /// <p>If the event is of type <code>WorkflowExecutionCompleted</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn set_workflow_execution_completed_event_attributes(
         mut self,
-        input: std::option::Option<crate::types::WorkflowExecutionCompletedEventAttributes>,
+        input: ::std::option::Option<crate::types::WorkflowExecutionCompletedEventAttributes>,
     ) -> Self {
         self.workflow_execution_completed_event_attributes = input;
         self
@@ -849,13 +859,14 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::CompleteWorkflowExecutionFailedEventAttributes,
     ) -> Self {
-        self.complete_workflow_execution_failed_event_attributes = Some(input);
+        self.complete_workflow_execution_failed_event_attributes =
+            ::std::option::Option::Some(input);
         self
     }
     /// <p>If the event is of type <code>CompleteWorkflowExecutionFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn set_complete_workflow_execution_failed_event_attributes(
         mut self,
-        input: std::option::Option<crate::types::CompleteWorkflowExecutionFailedEventAttributes>,
+        input: ::std::option::Option<crate::types::CompleteWorkflowExecutionFailedEventAttributes>,
     ) -> Self {
         self.complete_workflow_execution_failed_event_attributes = input;
         self
@@ -865,13 +876,13 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::WorkflowExecutionFailedEventAttributes,
     ) -> Self {
-        self.workflow_execution_failed_event_attributes = Some(input);
+        self.workflow_execution_failed_event_attributes = ::std::option::Option::Some(input);
         self
     }
     /// <p>If the event is of type <code>WorkflowExecutionFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn set_workflow_execution_failed_event_attributes(
         mut self,
-        input: std::option::Option<crate::types::WorkflowExecutionFailedEventAttributes>,
+        input: ::std::option::Option<crate::types::WorkflowExecutionFailedEventAttributes>,
     ) -> Self {
         self.workflow_execution_failed_event_attributes = input;
         self
@@ -881,13 +892,13 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::FailWorkflowExecutionFailedEventAttributes,
     ) -> Self {
-        self.fail_workflow_execution_failed_event_attributes = Some(input);
+        self.fail_workflow_execution_failed_event_attributes = ::std::option::Option::Some(input);
         self
     }
     /// <p>If the event is of type <code>FailWorkflowExecutionFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn set_fail_workflow_execution_failed_event_attributes(
         mut self,
-        input: std::option::Option<crate::types::FailWorkflowExecutionFailedEventAttributes>,
+        input: ::std::option::Option<crate::types::FailWorkflowExecutionFailedEventAttributes>,
     ) -> Self {
         self.fail_workflow_execution_failed_event_attributes = input;
         self
@@ -897,13 +908,13 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::WorkflowExecutionTimedOutEventAttributes,
     ) -> Self {
-        self.workflow_execution_timed_out_event_attributes = Some(input);
+        self.workflow_execution_timed_out_event_attributes = ::std::option::Option::Some(input);
         self
     }
     /// <p>If the event is of type <code>WorkflowExecutionTimedOut</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn set_workflow_execution_timed_out_event_attributes(
         mut self,
-        input: std::option::Option<crate::types::WorkflowExecutionTimedOutEventAttributes>,
+        input: ::std::option::Option<crate::types::WorkflowExecutionTimedOutEventAttributes>,
     ) -> Self {
         self.workflow_execution_timed_out_event_attributes = input;
         self
@@ -913,13 +924,13 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::WorkflowExecutionCanceledEventAttributes,
     ) -> Self {
-        self.workflow_execution_canceled_event_attributes = Some(input);
+        self.workflow_execution_canceled_event_attributes = ::std::option::Option::Some(input);
         self
     }
     /// <p>If the event is of type <code>WorkflowExecutionCanceled</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn set_workflow_execution_canceled_event_attributes(
         mut self,
-        input: std::option::Option<crate::types::WorkflowExecutionCanceledEventAttributes>,
+        input: ::std::option::Option<crate::types::WorkflowExecutionCanceledEventAttributes>,
     ) -> Self {
         self.workflow_execution_canceled_event_attributes = input;
         self
@@ -929,13 +940,13 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::CancelWorkflowExecutionFailedEventAttributes,
     ) -> Self {
-        self.cancel_workflow_execution_failed_event_attributes = Some(input);
+        self.cancel_workflow_execution_failed_event_attributes = ::std::option::Option::Some(input);
         self
     }
     /// <p>If the event is of type <code>CancelWorkflowExecutionFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn set_cancel_workflow_execution_failed_event_attributes(
         mut self,
-        input: std::option::Option<crate::types::CancelWorkflowExecutionFailedEventAttributes>,
+        input: ::std::option::Option<crate::types::CancelWorkflowExecutionFailedEventAttributes>,
     ) -> Self {
         self.cancel_workflow_execution_failed_event_attributes = input;
         self
@@ -945,13 +956,14 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::WorkflowExecutionContinuedAsNewEventAttributes,
     ) -> Self {
-        self.workflow_execution_continued_as_new_event_attributes = Some(input);
+        self.workflow_execution_continued_as_new_event_attributes =
+            ::std::option::Option::Some(input);
         self
     }
     /// <p>If the event is of type <code>WorkflowExecutionContinuedAsNew</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn set_workflow_execution_continued_as_new_event_attributes(
         mut self,
-        input: std::option::Option<crate::types::WorkflowExecutionContinuedAsNewEventAttributes>,
+        input: ::std::option::Option<crate::types::WorkflowExecutionContinuedAsNewEventAttributes>,
     ) -> Self {
         self.workflow_execution_continued_as_new_event_attributes = input;
         self
@@ -961,13 +973,14 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::ContinueAsNewWorkflowExecutionFailedEventAttributes,
     ) -> Self {
-        self.continue_as_new_workflow_execution_failed_event_attributes = Some(input);
+        self.continue_as_new_workflow_execution_failed_event_attributes =
+            ::std::option::Option::Some(input);
         self
     }
     /// <p>If the event is of type <code>ContinueAsNewWorkflowExecutionFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn set_continue_as_new_workflow_execution_failed_event_attributes(
         mut self,
-        input: std::option::Option<
+        input: ::std::option::Option<
             crate::types::ContinueAsNewWorkflowExecutionFailedEventAttributes,
         >,
     ) -> Self {
@@ -979,13 +992,13 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::WorkflowExecutionTerminatedEventAttributes,
     ) -> Self {
-        self.workflow_execution_terminated_event_attributes = Some(input);
+        self.workflow_execution_terminated_event_attributes = ::std::option::Option::Some(input);
         self
     }
     /// <p>If the event is of type <code>WorkflowExecutionTerminated</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn set_workflow_execution_terminated_event_attributes(
         mut self,
-        input: std::option::Option<crate::types::WorkflowExecutionTerminatedEventAttributes>,
+        input: ::std::option::Option<crate::types::WorkflowExecutionTerminatedEventAttributes>,
     ) -> Self {
         self.workflow_execution_terminated_event_attributes = input;
         self
@@ -995,13 +1008,14 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::WorkflowExecutionCancelRequestedEventAttributes,
     ) -> Self {
-        self.workflow_execution_cancel_requested_event_attributes = Some(input);
+        self.workflow_execution_cancel_requested_event_attributes =
+            ::std::option::Option::Some(input);
         self
     }
     /// <p>If the event is of type <code>WorkflowExecutionCancelRequested</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn set_workflow_execution_cancel_requested_event_attributes(
         mut self,
-        input: std::option::Option<crate::types::WorkflowExecutionCancelRequestedEventAttributes>,
+        input: ::std::option::Option<crate::types::WorkflowExecutionCancelRequestedEventAttributes>,
     ) -> Self {
         self.workflow_execution_cancel_requested_event_attributes = input;
         self
@@ -1011,13 +1025,13 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::DecisionTaskScheduledEventAttributes,
     ) -> Self {
-        self.decision_task_scheduled_event_attributes = Some(input);
+        self.decision_task_scheduled_event_attributes = ::std::option::Option::Some(input);
         self
     }
     /// <p>If the event is of type <code>DecisionTaskScheduled</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn set_decision_task_scheduled_event_attributes(
         mut self,
-        input: std::option::Option<crate::types::DecisionTaskScheduledEventAttributes>,
+        input: ::std::option::Option<crate::types::DecisionTaskScheduledEventAttributes>,
     ) -> Self {
         self.decision_task_scheduled_event_attributes = input;
         self
@@ -1027,13 +1041,13 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::DecisionTaskStartedEventAttributes,
     ) -> Self {
-        self.decision_task_started_event_attributes = Some(input);
+        self.decision_task_started_event_attributes = ::std::option::Option::Some(input);
         self
     }
     /// <p>If the event is of type <code>DecisionTaskStarted</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn set_decision_task_started_event_attributes(
         mut self,
-        input: std::option::Option<crate::types::DecisionTaskStartedEventAttributes>,
+        input: ::std::option::Option<crate::types::DecisionTaskStartedEventAttributes>,
     ) -> Self {
         self.decision_task_started_event_attributes = input;
         self
@@ -1043,13 +1057,13 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::DecisionTaskCompletedEventAttributes,
     ) -> Self {
-        self.decision_task_completed_event_attributes = Some(input);
+        self.decision_task_completed_event_attributes = ::std::option::Option::Some(input);
         self
     }
     /// <p>If the event is of type <code>DecisionTaskCompleted</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn set_decision_task_completed_event_attributes(
         mut self,
-        input: std::option::Option<crate::types::DecisionTaskCompletedEventAttributes>,
+        input: ::std::option::Option<crate::types::DecisionTaskCompletedEventAttributes>,
     ) -> Self {
         self.decision_task_completed_event_attributes = input;
         self
@@ -1059,13 +1073,13 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::DecisionTaskTimedOutEventAttributes,
     ) -> Self {
-        self.decision_task_timed_out_event_attributes = Some(input);
+        self.decision_task_timed_out_event_attributes = ::std::option::Option::Some(input);
         self
     }
     /// <p>If the event is of type <code>DecisionTaskTimedOut</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn set_decision_task_timed_out_event_attributes(
         mut self,
-        input: std::option::Option<crate::types::DecisionTaskTimedOutEventAttributes>,
+        input: ::std::option::Option<crate::types::DecisionTaskTimedOutEventAttributes>,
     ) -> Self {
         self.decision_task_timed_out_event_attributes = input;
         self
@@ -1075,13 +1089,13 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::ActivityTaskScheduledEventAttributes,
     ) -> Self {
-        self.activity_task_scheduled_event_attributes = Some(input);
+        self.activity_task_scheduled_event_attributes = ::std::option::Option::Some(input);
         self
     }
     /// <p>If the event is of type <code>ActivityTaskScheduled</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn set_activity_task_scheduled_event_attributes(
         mut self,
-        input: std::option::Option<crate::types::ActivityTaskScheduledEventAttributes>,
+        input: ::std::option::Option<crate::types::ActivityTaskScheduledEventAttributes>,
     ) -> Self {
         self.activity_task_scheduled_event_attributes = input;
         self
@@ -1091,13 +1105,13 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::ActivityTaskStartedEventAttributes,
     ) -> Self {
-        self.activity_task_started_event_attributes = Some(input);
+        self.activity_task_started_event_attributes = ::std::option::Option::Some(input);
         self
     }
     /// <p>If the event is of type <code>ActivityTaskStarted</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn set_activity_task_started_event_attributes(
         mut self,
-        input: std::option::Option<crate::types::ActivityTaskStartedEventAttributes>,
+        input: ::std::option::Option<crate::types::ActivityTaskStartedEventAttributes>,
     ) -> Self {
         self.activity_task_started_event_attributes = input;
         self
@@ -1107,13 +1121,13 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::ActivityTaskCompletedEventAttributes,
     ) -> Self {
-        self.activity_task_completed_event_attributes = Some(input);
+        self.activity_task_completed_event_attributes = ::std::option::Option::Some(input);
         self
     }
     /// <p>If the event is of type <code>ActivityTaskCompleted</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn set_activity_task_completed_event_attributes(
         mut self,
-        input: std::option::Option<crate::types::ActivityTaskCompletedEventAttributes>,
+        input: ::std::option::Option<crate::types::ActivityTaskCompletedEventAttributes>,
     ) -> Self {
         self.activity_task_completed_event_attributes = input;
         self
@@ -1123,13 +1137,13 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::ActivityTaskFailedEventAttributes,
     ) -> Self {
-        self.activity_task_failed_event_attributes = Some(input);
+        self.activity_task_failed_event_attributes = ::std::option::Option::Some(input);
         self
     }
     /// <p>If the event is of type <code>ActivityTaskFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn set_activity_task_failed_event_attributes(
         mut self,
-        input: std::option::Option<crate::types::ActivityTaskFailedEventAttributes>,
+        input: ::std::option::Option<crate::types::ActivityTaskFailedEventAttributes>,
     ) -> Self {
         self.activity_task_failed_event_attributes = input;
         self
@@ -1139,13 +1153,13 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::ActivityTaskTimedOutEventAttributes,
     ) -> Self {
-        self.activity_task_timed_out_event_attributes = Some(input);
+        self.activity_task_timed_out_event_attributes = ::std::option::Option::Some(input);
         self
     }
     /// <p>If the event is of type <code>ActivityTaskTimedOut</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn set_activity_task_timed_out_event_attributes(
         mut self,
-        input: std::option::Option<crate::types::ActivityTaskTimedOutEventAttributes>,
+        input: ::std::option::Option<crate::types::ActivityTaskTimedOutEventAttributes>,
     ) -> Self {
         self.activity_task_timed_out_event_attributes = input;
         self
@@ -1155,13 +1169,13 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::ActivityTaskCanceledEventAttributes,
     ) -> Self {
-        self.activity_task_canceled_event_attributes = Some(input);
+        self.activity_task_canceled_event_attributes = ::std::option::Option::Some(input);
         self
     }
     /// <p>If the event is of type <code>ActivityTaskCanceled</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn set_activity_task_canceled_event_attributes(
         mut self,
-        input: std::option::Option<crate::types::ActivityTaskCanceledEventAttributes>,
+        input: ::std::option::Option<crate::types::ActivityTaskCanceledEventAttributes>,
     ) -> Self {
         self.activity_task_canceled_event_attributes = input;
         self
@@ -1171,13 +1185,13 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::ActivityTaskCancelRequestedEventAttributes,
     ) -> Self {
-        self.activity_task_cancel_requested_event_attributes = Some(input);
+        self.activity_task_cancel_requested_event_attributes = ::std::option::Option::Some(input);
         self
     }
     /// <p>If the event is of type <code>ActivityTaskcancelRequested</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn set_activity_task_cancel_requested_event_attributes(
         mut self,
-        input: std::option::Option<crate::types::ActivityTaskCancelRequestedEventAttributes>,
+        input: ::std::option::Option<crate::types::ActivityTaskCancelRequestedEventAttributes>,
     ) -> Self {
         self.activity_task_cancel_requested_event_attributes = input;
         self
@@ -1187,13 +1201,13 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::WorkflowExecutionSignaledEventAttributes,
     ) -> Self {
-        self.workflow_execution_signaled_event_attributes = Some(input);
+        self.workflow_execution_signaled_event_attributes = ::std::option::Option::Some(input);
         self
     }
     /// <p>If the event is of type <code>WorkflowExecutionSignaled</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn set_workflow_execution_signaled_event_attributes(
         mut self,
-        input: std::option::Option<crate::types::WorkflowExecutionSignaledEventAttributes>,
+        input: ::std::option::Option<crate::types::WorkflowExecutionSignaledEventAttributes>,
     ) -> Self {
         self.workflow_execution_signaled_event_attributes = input;
         self
@@ -1203,13 +1217,13 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::MarkerRecordedEventAttributes,
     ) -> Self {
-        self.marker_recorded_event_attributes = Some(input);
+        self.marker_recorded_event_attributes = ::std::option::Option::Some(input);
         self
     }
     /// <p>If the event is of type <code>MarkerRecorded</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn set_marker_recorded_event_attributes(
         mut self,
-        input: std::option::Option<crate::types::MarkerRecordedEventAttributes>,
+        input: ::std::option::Option<crate::types::MarkerRecordedEventAttributes>,
     ) -> Self {
         self.marker_recorded_event_attributes = input;
         self
@@ -1219,13 +1233,13 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::RecordMarkerFailedEventAttributes,
     ) -> Self {
-        self.record_marker_failed_event_attributes = Some(input);
+        self.record_marker_failed_event_attributes = ::std::option::Option::Some(input);
         self
     }
     /// <p>If the event is of type <code>DecisionTaskFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn set_record_marker_failed_event_attributes(
         mut self,
-        input: std::option::Option<crate::types::RecordMarkerFailedEventAttributes>,
+        input: ::std::option::Option<crate::types::RecordMarkerFailedEventAttributes>,
     ) -> Self {
         self.record_marker_failed_event_attributes = input;
         self
@@ -1235,13 +1249,13 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::TimerStartedEventAttributes,
     ) -> Self {
-        self.timer_started_event_attributes = Some(input);
+        self.timer_started_event_attributes = ::std::option::Option::Some(input);
         self
     }
     /// <p>If the event is of type <code>TimerStarted</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn set_timer_started_event_attributes(
         mut self,
-        input: std::option::Option<crate::types::TimerStartedEventAttributes>,
+        input: ::std::option::Option<crate::types::TimerStartedEventAttributes>,
     ) -> Self {
         self.timer_started_event_attributes = input;
         self
@@ -1251,13 +1265,13 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::TimerFiredEventAttributes,
     ) -> Self {
-        self.timer_fired_event_attributes = Some(input);
+        self.timer_fired_event_attributes = ::std::option::Option::Some(input);
         self
     }
     /// <p>If the event is of type <code>TimerFired</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn set_timer_fired_event_attributes(
         mut self,
-        input: std::option::Option<crate::types::TimerFiredEventAttributes>,
+        input: ::std::option::Option<crate::types::TimerFiredEventAttributes>,
     ) -> Self {
         self.timer_fired_event_attributes = input;
         self
@@ -1267,13 +1281,13 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::TimerCanceledEventAttributes,
     ) -> Self {
-        self.timer_canceled_event_attributes = Some(input);
+        self.timer_canceled_event_attributes = ::std::option::Option::Some(input);
         self
     }
     /// <p>If the event is of type <code>TimerCanceled</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn set_timer_canceled_event_attributes(
         mut self,
-        input: std::option::Option<crate::types::TimerCanceledEventAttributes>,
+        input: ::std::option::Option<crate::types::TimerCanceledEventAttributes>,
     ) -> Self {
         self.timer_canceled_event_attributes = input;
         self
@@ -1283,13 +1297,14 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::StartChildWorkflowExecutionInitiatedEventAttributes,
     ) -> Self {
-        self.start_child_workflow_execution_initiated_event_attributes = Some(input);
+        self.start_child_workflow_execution_initiated_event_attributes =
+            ::std::option::Option::Some(input);
         self
     }
     /// <p>If the event is of type <code>StartChildWorkflowExecutionInitiated</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn set_start_child_workflow_execution_initiated_event_attributes(
         mut self,
-        input: std::option::Option<
+        input: ::std::option::Option<
             crate::types::StartChildWorkflowExecutionInitiatedEventAttributes,
         >,
     ) -> Self {
@@ -1301,13 +1316,13 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::ChildWorkflowExecutionStartedEventAttributes,
     ) -> Self {
-        self.child_workflow_execution_started_event_attributes = Some(input);
+        self.child_workflow_execution_started_event_attributes = ::std::option::Option::Some(input);
         self
     }
     /// <p>If the event is of type <code>ChildWorkflowExecutionStarted</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn set_child_workflow_execution_started_event_attributes(
         mut self,
-        input: std::option::Option<crate::types::ChildWorkflowExecutionStartedEventAttributes>,
+        input: ::std::option::Option<crate::types::ChildWorkflowExecutionStartedEventAttributes>,
     ) -> Self {
         self.child_workflow_execution_started_event_attributes = input;
         self
@@ -1317,13 +1332,14 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::ChildWorkflowExecutionCompletedEventAttributes,
     ) -> Self {
-        self.child_workflow_execution_completed_event_attributes = Some(input);
+        self.child_workflow_execution_completed_event_attributes =
+            ::std::option::Option::Some(input);
         self
     }
     /// <p>If the event is of type <code>ChildWorkflowExecutionCompleted</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn set_child_workflow_execution_completed_event_attributes(
         mut self,
-        input: std::option::Option<crate::types::ChildWorkflowExecutionCompletedEventAttributes>,
+        input: ::std::option::Option<crate::types::ChildWorkflowExecutionCompletedEventAttributes>,
     ) -> Self {
         self.child_workflow_execution_completed_event_attributes = input;
         self
@@ -1333,13 +1349,13 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::ChildWorkflowExecutionFailedEventAttributes,
     ) -> Self {
-        self.child_workflow_execution_failed_event_attributes = Some(input);
+        self.child_workflow_execution_failed_event_attributes = ::std::option::Option::Some(input);
         self
     }
     /// <p>If the event is of type <code>ChildWorkflowExecutionFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn set_child_workflow_execution_failed_event_attributes(
         mut self,
-        input: std::option::Option<crate::types::ChildWorkflowExecutionFailedEventAttributes>,
+        input: ::std::option::Option<crate::types::ChildWorkflowExecutionFailedEventAttributes>,
     ) -> Self {
         self.child_workflow_execution_failed_event_attributes = input;
         self
@@ -1349,13 +1365,14 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::ChildWorkflowExecutionTimedOutEventAttributes,
     ) -> Self {
-        self.child_workflow_execution_timed_out_event_attributes = Some(input);
+        self.child_workflow_execution_timed_out_event_attributes =
+            ::std::option::Option::Some(input);
         self
     }
     /// <p>If the event is of type <code>ChildWorkflowExecutionTimedOut</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn set_child_workflow_execution_timed_out_event_attributes(
         mut self,
-        input: std::option::Option<crate::types::ChildWorkflowExecutionTimedOutEventAttributes>,
+        input: ::std::option::Option<crate::types::ChildWorkflowExecutionTimedOutEventAttributes>,
     ) -> Self {
         self.child_workflow_execution_timed_out_event_attributes = input;
         self
@@ -1365,13 +1382,14 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::ChildWorkflowExecutionCanceledEventAttributes,
     ) -> Self {
-        self.child_workflow_execution_canceled_event_attributes = Some(input);
+        self.child_workflow_execution_canceled_event_attributes =
+            ::std::option::Option::Some(input);
         self
     }
     /// <p>If the event is of type <code>ChildWorkflowExecutionCanceled</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn set_child_workflow_execution_canceled_event_attributes(
         mut self,
-        input: std::option::Option<crate::types::ChildWorkflowExecutionCanceledEventAttributes>,
+        input: ::std::option::Option<crate::types::ChildWorkflowExecutionCanceledEventAttributes>,
     ) -> Self {
         self.child_workflow_execution_canceled_event_attributes = input;
         self
@@ -1381,13 +1399,14 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::ChildWorkflowExecutionTerminatedEventAttributes,
     ) -> Self {
-        self.child_workflow_execution_terminated_event_attributes = Some(input);
+        self.child_workflow_execution_terminated_event_attributes =
+            ::std::option::Option::Some(input);
         self
     }
     /// <p>If the event is of type <code>ChildWorkflowExecutionTerminated</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn set_child_workflow_execution_terminated_event_attributes(
         mut self,
-        input: std::option::Option<crate::types::ChildWorkflowExecutionTerminatedEventAttributes>,
+        input: ::std::option::Option<crate::types::ChildWorkflowExecutionTerminatedEventAttributes>,
     ) -> Self {
         self.child_workflow_execution_terminated_event_attributes = input;
         self
@@ -1397,13 +1416,14 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::SignalExternalWorkflowExecutionInitiatedEventAttributes,
     ) -> Self {
-        self.signal_external_workflow_execution_initiated_event_attributes = Some(input);
+        self.signal_external_workflow_execution_initiated_event_attributes =
+            ::std::option::Option::Some(input);
         self
     }
     /// <p>If the event is of type <code>SignalExternalWorkflowExecutionInitiated</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn set_signal_external_workflow_execution_initiated_event_attributes(
         mut self,
-        input: std::option::Option<
+        input: ::std::option::Option<
             crate::types::SignalExternalWorkflowExecutionInitiatedEventAttributes,
         >,
     ) -> Self {
@@ -1415,13 +1435,16 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::ExternalWorkflowExecutionSignaledEventAttributes,
     ) -> Self {
-        self.external_workflow_execution_signaled_event_attributes = Some(input);
+        self.external_workflow_execution_signaled_event_attributes =
+            ::std::option::Option::Some(input);
         self
     }
     /// <p>If the event is of type <code>ExternalWorkflowExecutionSignaled</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn set_external_workflow_execution_signaled_event_attributes(
         mut self,
-        input: std::option::Option<crate::types::ExternalWorkflowExecutionSignaledEventAttributes>,
+        input: ::std::option::Option<
+            crate::types::ExternalWorkflowExecutionSignaledEventAttributes,
+        >,
     ) -> Self {
         self.external_workflow_execution_signaled_event_attributes = input;
         self
@@ -1431,13 +1454,14 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::SignalExternalWorkflowExecutionFailedEventAttributes,
     ) -> Self {
-        self.signal_external_workflow_execution_failed_event_attributes = Some(input);
+        self.signal_external_workflow_execution_failed_event_attributes =
+            ::std::option::Option::Some(input);
         self
     }
     /// <p>If the event is of type <code>SignalExternalWorkflowExecutionFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn set_signal_external_workflow_execution_failed_event_attributes(
         mut self,
-        input: std::option::Option<
+        input: ::std::option::Option<
             crate::types::SignalExternalWorkflowExecutionFailedEventAttributes,
         >,
     ) -> Self {
@@ -1449,13 +1473,14 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::ExternalWorkflowExecutionCancelRequestedEventAttributes,
     ) -> Self {
-        self.external_workflow_execution_cancel_requested_event_attributes = Some(input);
+        self.external_workflow_execution_cancel_requested_event_attributes =
+            ::std::option::Option::Some(input);
         self
     }
     /// <p>If the event is of type <code>ExternalWorkflowExecutionCancelRequested</code> then this member is set and provides detailed information about the event. It isn't set for other event types. </p>
     pub fn set_external_workflow_execution_cancel_requested_event_attributes(
         mut self,
-        input: std::option::Option<
+        input: ::std::option::Option<
             crate::types::ExternalWorkflowExecutionCancelRequestedEventAttributes,
         >,
     ) -> Self {
@@ -1467,13 +1492,14 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::RequestCancelExternalWorkflowExecutionInitiatedEventAttributes,
     ) -> Self {
-        self.request_cancel_external_workflow_execution_initiated_event_attributes = Some(input);
+        self.request_cancel_external_workflow_execution_initiated_event_attributes =
+            ::std::option::Option::Some(input);
         self
     }
     /// <p>If the event is of type <code>RequestCancelExternalWorkflowExecutionInitiated</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn set_request_cancel_external_workflow_execution_initiated_event_attributes(
         mut self,
-        input: std::option::Option<
+        input: ::std::option::Option<
             crate::types::RequestCancelExternalWorkflowExecutionInitiatedEventAttributes,
         >,
     ) -> Self {
@@ -1485,13 +1511,14 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::RequestCancelExternalWorkflowExecutionFailedEventAttributes,
     ) -> Self {
-        self.request_cancel_external_workflow_execution_failed_event_attributes = Some(input);
+        self.request_cancel_external_workflow_execution_failed_event_attributes =
+            ::std::option::Option::Some(input);
         self
     }
     /// <p>If the event is of type <code>RequestCancelExternalWorkflowExecutionFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn set_request_cancel_external_workflow_execution_failed_event_attributes(
         mut self,
-        input: std::option::Option<
+        input: ::std::option::Option<
             crate::types::RequestCancelExternalWorkflowExecutionFailedEventAttributes,
         >,
     ) -> Self {
@@ -1503,13 +1530,13 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::ScheduleActivityTaskFailedEventAttributes,
     ) -> Self {
-        self.schedule_activity_task_failed_event_attributes = Some(input);
+        self.schedule_activity_task_failed_event_attributes = ::std::option::Option::Some(input);
         self
     }
     /// <p>If the event is of type <code>ScheduleActivityTaskFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn set_schedule_activity_task_failed_event_attributes(
         mut self,
-        input: std::option::Option<crate::types::ScheduleActivityTaskFailedEventAttributes>,
+        input: ::std::option::Option<crate::types::ScheduleActivityTaskFailedEventAttributes>,
     ) -> Self {
         self.schedule_activity_task_failed_event_attributes = input;
         self
@@ -1519,13 +1546,14 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::RequestCancelActivityTaskFailedEventAttributes,
     ) -> Self {
-        self.request_cancel_activity_task_failed_event_attributes = Some(input);
+        self.request_cancel_activity_task_failed_event_attributes =
+            ::std::option::Option::Some(input);
         self
     }
     /// <p>If the event is of type <code>RequestCancelActivityTaskFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn set_request_cancel_activity_task_failed_event_attributes(
         mut self,
-        input: std::option::Option<crate::types::RequestCancelActivityTaskFailedEventAttributes>,
+        input: ::std::option::Option<crate::types::RequestCancelActivityTaskFailedEventAttributes>,
     ) -> Self {
         self.request_cancel_activity_task_failed_event_attributes = input;
         self
@@ -1535,13 +1563,13 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::StartTimerFailedEventAttributes,
     ) -> Self {
-        self.start_timer_failed_event_attributes = Some(input);
+        self.start_timer_failed_event_attributes = ::std::option::Option::Some(input);
         self
     }
     /// <p>If the event is of type <code>StartTimerFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn set_start_timer_failed_event_attributes(
         mut self,
-        input: std::option::Option<crate::types::StartTimerFailedEventAttributes>,
+        input: ::std::option::Option<crate::types::StartTimerFailedEventAttributes>,
     ) -> Self {
         self.start_timer_failed_event_attributes = input;
         self
@@ -1551,13 +1579,13 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::CancelTimerFailedEventAttributes,
     ) -> Self {
-        self.cancel_timer_failed_event_attributes = Some(input);
+        self.cancel_timer_failed_event_attributes = ::std::option::Option::Some(input);
         self
     }
     /// <p>If the event is of type <code>CancelTimerFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn set_cancel_timer_failed_event_attributes(
         mut self,
-        input: std::option::Option<crate::types::CancelTimerFailedEventAttributes>,
+        input: ::std::option::Option<crate::types::CancelTimerFailedEventAttributes>,
     ) -> Self {
         self.cancel_timer_failed_event_attributes = input;
         self
@@ -1567,13 +1595,16 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::StartChildWorkflowExecutionFailedEventAttributes,
     ) -> Self {
-        self.start_child_workflow_execution_failed_event_attributes = Some(input);
+        self.start_child_workflow_execution_failed_event_attributes =
+            ::std::option::Option::Some(input);
         self
     }
     /// <p>If the event is of type <code>StartChildWorkflowExecutionFailed</code> then this member is set and provides detailed information about the event. It isn't set for other event types.</p>
     pub fn set_start_child_workflow_execution_failed_event_attributes(
         mut self,
-        input: std::option::Option<crate::types::StartChildWorkflowExecutionFailedEventAttributes>,
+        input: ::std::option::Option<
+            crate::types::StartChildWorkflowExecutionFailedEventAttributes,
+        >,
     ) -> Self {
         self.start_child_workflow_execution_failed_event_attributes = input;
         self
@@ -1583,13 +1614,13 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::LambdaFunctionScheduledEventAttributes,
     ) -> Self {
-        self.lambda_function_scheduled_event_attributes = Some(input);
+        self.lambda_function_scheduled_event_attributes = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides the details of the <code>LambdaFunctionScheduled</code> event. It isn't set for other event types.</p>
     pub fn set_lambda_function_scheduled_event_attributes(
         mut self,
-        input: std::option::Option<crate::types::LambdaFunctionScheduledEventAttributes>,
+        input: ::std::option::Option<crate::types::LambdaFunctionScheduledEventAttributes>,
     ) -> Self {
         self.lambda_function_scheduled_event_attributes = input;
         self
@@ -1599,13 +1630,13 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::LambdaFunctionStartedEventAttributes,
     ) -> Self {
-        self.lambda_function_started_event_attributes = Some(input);
+        self.lambda_function_started_event_attributes = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides the details of the <code>LambdaFunctionStarted</code> event. It isn't set for other event types.</p>
     pub fn set_lambda_function_started_event_attributes(
         mut self,
-        input: std::option::Option<crate::types::LambdaFunctionStartedEventAttributes>,
+        input: ::std::option::Option<crate::types::LambdaFunctionStartedEventAttributes>,
     ) -> Self {
         self.lambda_function_started_event_attributes = input;
         self
@@ -1615,13 +1646,13 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::LambdaFunctionCompletedEventAttributes,
     ) -> Self {
-        self.lambda_function_completed_event_attributes = Some(input);
+        self.lambda_function_completed_event_attributes = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides the details of the <code>LambdaFunctionCompleted</code> event. It isn't set for other event types.</p>
     pub fn set_lambda_function_completed_event_attributes(
         mut self,
-        input: std::option::Option<crate::types::LambdaFunctionCompletedEventAttributes>,
+        input: ::std::option::Option<crate::types::LambdaFunctionCompletedEventAttributes>,
     ) -> Self {
         self.lambda_function_completed_event_attributes = input;
         self
@@ -1631,13 +1662,13 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::LambdaFunctionFailedEventAttributes,
     ) -> Self {
-        self.lambda_function_failed_event_attributes = Some(input);
+        self.lambda_function_failed_event_attributes = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides the details of the <code>LambdaFunctionFailed</code> event. It isn't set for other event types.</p>
     pub fn set_lambda_function_failed_event_attributes(
         mut self,
-        input: std::option::Option<crate::types::LambdaFunctionFailedEventAttributes>,
+        input: ::std::option::Option<crate::types::LambdaFunctionFailedEventAttributes>,
     ) -> Self {
         self.lambda_function_failed_event_attributes = input;
         self
@@ -1647,13 +1678,13 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::LambdaFunctionTimedOutEventAttributes,
     ) -> Self {
-        self.lambda_function_timed_out_event_attributes = Some(input);
+        self.lambda_function_timed_out_event_attributes = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides the details of the <code>LambdaFunctionTimedOut</code> event. It isn't set for other event types.</p>
     pub fn set_lambda_function_timed_out_event_attributes(
         mut self,
-        input: std::option::Option<crate::types::LambdaFunctionTimedOutEventAttributes>,
+        input: ::std::option::Option<crate::types::LambdaFunctionTimedOutEventAttributes>,
     ) -> Self {
         self.lambda_function_timed_out_event_attributes = input;
         self
@@ -1663,13 +1694,13 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::ScheduleLambdaFunctionFailedEventAttributes,
     ) -> Self {
-        self.schedule_lambda_function_failed_event_attributes = Some(input);
+        self.schedule_lambda_function_failed_event_attributes = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides the details of the <code>ScheduleLambdaFunctionFailed</code> event. It isn't set for other event types.</p>
     pub fn set_schedule_lambda_function_failed_event_attributes(
         mut self,
-        input: std::option::Option<crate::types::ScheduleLambdaFunctionFailedEventAttributes>,
+        input: ::std::option::Option<crate::types::ScheduleLambdaFunctionFailedEventAttributes>,
     ) -> Self {
         self.schedule_lambda_function_failed_event_attributes = input;
         self
@@ -1679,13 +1710,13 @@ impl HistoryEventBuilder {
         mut self,
         input: crate::types::StartLambdaFunctionFailedEventAttributes,
     ) -> Self {
-        self.start_lambda_function_failed_event_attributes = Some(input);
+        self.start_lambda_function_failed_event_attributes = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides the details of the <code>StartLambdaFunctionFailed</code> event. It isn't set for other event types.</p>
     pub fn set_start_lambda_function_failed_event_attributes(
         mut self,
-        input: std::option::Option<crate::types::StartLambdaFunctionFailedEventAttributes>,
+        input: ::std::option::Option<crate::types::StartLambdaFunctionFailedEventAttributes>,
     ) -> Self {
         self.start_lambda_function_failed_event_attributes = input;
         self

@@ -2,11 +2,11 @@
 
 /// <p>A response that indicates whether the Deliverability dashboard is enabled.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutDeliverabilityDashboardOptionOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for PutDeliverabilityDashboardOptionOutput {
+impl ::aws_http::request_id::RequestId for PutDeliverabilityDashboardOptionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -20,7 +20,9 @@ impl PutDeliverabilityDashboardOptionOutput {
 
 /// A builder for [`PutDeliverabilityDashboardOptionOutput`](crate::operation::put_deliverability_dashboard_option::PutDeliverabilityDashboardOptionOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PutDeliverabilityDashboardOptionOutputBuilder {
     _request_id: Option<String>,
 }

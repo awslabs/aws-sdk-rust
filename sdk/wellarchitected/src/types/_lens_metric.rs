@@ -2,31 +2,31 @@
 
 /// <p>A metric for a particular lens in a workload.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LensMetric {
     /// <p>The lens ARN.</p>
     #[doc(hidden)]
-    pub lens_arn: std::option::Option<std::string::String>,
+    pub lens_arn: ::std::option::Option<::std::string::String>,
     /// <p>The metrics for the pillars in a lens.</p>
     #[doc(hidden)]
-    pub pillars: std::option::Option<std::vec::Vec<crate::types::PillarMetric>>,
+    pub pillars: ::std::option::Option<::std::vec::Vec<crate::types::PillarMetric>>,
     /// <p>A map from risk names to the count of how many questions have that rating.</p>
     #[doc(hidden)]
-    pub risk_counts: std::option::Option<std::collections::HashMap<crate::types::Risk, i32>>,
+    pub risk_counts: ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>,
 }
 impl LensMetric {
     /// <p>The lens ARN.</p>
-    pub fn lens_arn(&self) -> std::option::Option<&str> {
+    pub fn lens_arn(&self) -> ::std::option::Option<&str> {
         self.lens_arn.as_deref()
     }
     /// <p>The metrics for the pillars in a lens.</p>
-    pub fn pillars(&self) -> std::option::Option<&[crate::types::PillarMetric]> {
+    pub fn pillars(&self) -> ::std::option::Option<&[crate::types::PillarMetric]> {
         self.pillars.as_deref()
     }
     /// <p>A map from risk names to the count of how many questions have that rating.</p>
     pub fn risk_counts(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<crate::types::Risk, i32>> {
+    ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::Risk, i32>> {
         self.risk_counts.as_ref()
     }
 }
@@ -39,20 +39,23 @@ impl LensMetric {
 
 /// A builder for [`LensMetric`](crate::types::LensMetric).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LensMetricBuilder {
-    pub(crate) lens_arn: std::option::Option<std::string::String>,
-    pub(crate) pillars: std::option::Option<std::vec::Vec<crate::types::PillarMetric>>,
-    pub(crate) risk_counts: std::option::Option<std::collections::HashMap<crate::types::Risk, i32>>,
+    pub(crate) lens_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) pillars: ::std::option::Option<::std::vec::Vec<crate::types::PillarMetric>>,
+    pub(crate) risk_counts:
+        ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>,
 }
 impl LensMetricBuilder {
     /// <p>The lens ARN.</p>
-    pub fn lens_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.lens_arn = Some(input.into());
+    pub fn lens_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.lens_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The lens ARN.</p>
-    pub fn set_lens_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_lens_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lens_arn = input;
         self
     }
@@ -64,13 +67,13 @@ impl LensMetricBuilder {
     pub fn pillars(mut self, input: crate::types::PillarMetric) -> Self {
         let mut v = self.pillars.unwrap_or_default();
         v.push(input);
-        self.pillars = Some(v);
+        self.pillars = ::std::option::Option::Some(v);
         self
     }
     /// <p>The metrics for the pillars in a lens.</p>
     pub fn set_pillars(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PillarMetric>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PillarMetric>>,
     ) -> Self {
         self.pillars = input;
         self
@@ -83,13 +86,13 @@ impl LensMetricBuilder {
     pub fn risk_counts(mut self, k: crate::types::Risk, v: i32) -> Self {
         let mut hash_map = self.risk_counts.unwrap_or_default();
         hash_map.insert(k, v);
-        self.risk_counts = Some(hash_map);
+        self.risk_counts = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A map from risk names to the count of how many questions have that rating.</p>
     pub fn set_risk_counts(
         mut self,
-        input: std::option::Option<std::collections::HashMap<crate::types::Risk, i32>>,
+        input: ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>,
     ) -> Self {
         self.risk_counts = input;
         self

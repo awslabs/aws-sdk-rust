@@ -7,56 +7,63 @@ pub use crate::operation::put_insight_rule::_put_insight_rule_input::PutInsightR
 ///
 /// <p>Creates a Contributor Insights rule. Rules evaluate log events in a CloudWatch Logs log group, enabling you to find contributor data for the log events in that log group. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights.html">Using Contributor Insights to Analyze High-Cardinality Data</a>.</p>
 /// <p>If you create a rule, delete it, and then re-create it with the same name, historical data from the first time the rule was created might not be available.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutInsightRuleFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::put_insight_rule::builders::PutInsightRuleInputBuilder,
 }
 impl PutInsightRuleFluentBuilder {
     /// Creates a new `PutInsightRule`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::put_insight_rule::PutInsightRule,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::put_insight_rule::PutInsightRuleError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_insight_rule::PutInsightRuleError,
+        >,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::put_insight_rule::PutInsightRuleOutput,
-        aws_smithy_http::result::SdkError<crate::operation::put_insight_rule::PutInsightRuleError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_insight_rule::PutInsightRuleError,
+        >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -69,39 +76,47 @@ impl PutInsightRuleFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::put_insight_rule::PutInsightRuleOutput,
-        aws_smithy_http::result::SdkError<crate::operation::put_insight_rule::PutInsightRuleError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_insight_rule::PutInsightRuleError,
+        >,
     > {
         self.send_middleware().await
     }
     /// <p>A unique name for the rule.</p>
-    pub fn rule_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.rule_name(input.into());
         self
     }
     /// <p>A unique name for the rule.</p>
-    pub fn set_rule_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_rule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_rule_name(input);
         self
     }
     /// <p>The state of the rule. Valid values are ENABLED and DISABLED.</p>
-    pub fn rule_state(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn rule_state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.rule_state(input.into());
         self
     }
     /// <p>The state of the rule. Valid values are ENABLED and DISABLED.</p>
-    pub fn set_rule_state(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_rule_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_rule_state(input);
         self
     }
     /// <p>The definition of the rule, as a JSON object. For details on the valid syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights-RuleSyntax.html">Contributor Insights Rule Syntax</a>.</p>
-    pub fn rule_definition(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn rule_definition(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.rule_definition(input.into());
         self
     }
     /// <p>The definition of the rule, as a JSON object. For details on the valid syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights-RuleSyntax.html">Contributor Insights Rule Syntax</a>.</p>
-    pub fn set_rule_definition(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_rule_definition(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_rule_definition(input);
         self
     }
@@ -123,7 +138,7 @@ impl PutInsightRuleFluentBuilder {
     /// <p>If you are using this operation to update an existing Contributor Insights rule, any tags you specify in this parameter are ignored. To change the tags of an existing rule, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self

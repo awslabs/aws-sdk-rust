@@ -2,38 +2,38 @@
 
 /// <p>Information about an associated Amazon Web Services CodeCommit repository or an associated repository that is managed by Amazon Web Services CodeStar Connections (for example, Bitbucket). This <code>Repository</code> object is not used if your source code is in an associated GitHub repository.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Repository {
     /// <p>Information about an Amazon Web Services CodeCommit repository.</p>
     #[doc(hidden)]
-    pub code_commit: std::option::Option<crate::types::CodeCommitRepository>,
+    pub code_commit: ::std::option::Option<crate::types::CodeCommitRepository>,
     /// <p> Information about a Bitbucket repository. </p>
     #[doc(hidden)]
-    pub bitbucket: std::option::Option<crate::types::ThirdPartySourceRepository>,
+    pub bitbucket: ::std::option::Option<crate::types::ThirdPartySourceRepository>,
     /// <p>Information about a GitHub Enterprise Server repository.</p>
     #[doc(hidden)]
-    pub git_hub_enterprise_server: std::option::Option<crate::types::ThirdPartySourceRepository>,
+    pub git_hub_enterprise_server: ::std::option::Option<crate::types::ThirdPartySourceRepository>,
     /// <p>Information about a repository in an S3 bucket.</p>
     #[doc(hidden)]
-    pub s3_bucket: std::option::Option<crate::types::S3Repository>,
+    pub s3_bucket: ::std::option::Option<crate::types::S3Repository>,
 }
 impl Repository {
     /// <p>Information about an Amazon Web Services CodeCommit repository.</p>
-    pub fn code_commit(&self) -> std::option::Option<&crate::types::CodeCommitRepository> {
+    pub fn code_commit(&self) -> ::std::option::Option<&crate::types::CodeCommitRepository> {
         self.code_commit.as_ref()
     }
     /// <p> Information about a Bitbucket repository. </p>
-    pub fn bitbucket(&self) -> std::option::Option<&crate::types::ThirdPartySourceRepository> {
+    pub fn bitbucket(&self) -> ::std::option::Option<&crate::types::ThirdPartySourceRepository> {
         self.bitbucket.as_ref()
     }
     /// <p>Information about a GitHub Enterprise Server repository.</p>
     pub fn git_hub_enterprise_server(
         &self,
-    ) -> std::option::Option<&crate::types::ThirdPartySourceRepository> {
+    ) -> ::std::option::Option<&crate::types::ThirdPartySourceRepository> {
         self.git_hub_enterprise_server.as_ref()
     }
     /// <p>Information about a repository in an S3 bucket.</p>
-    pub fn s3_bucket(&self) -> std::option::Option<&crate::types::S3Repository> {
+    pub fn s3_bucket(&self) -> ::std::option::Option<&crate::types::S3Repository> {
         self.s3_bucket.as_ref()
     }
 }
@@ -46,37 +46,39 @@ impl Repository {
 
 /// A builder for [`Repository`](crate::types::Repository).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RepositoryBuilder {
-    pub(crate) code_commit: std::option::Option<crate::types::CodeCommitRepository>,
-    pub(crate) bitbucket: std::option::Option<crate::types::ThirdPartySourceRepository>,
+    pub(crate) code_commit: ::std::option::Option<crate::types::CodeCommitRepository>,
+    pub(crate) bitbucket: ::std::option::Option<crate::types::ThirdPartySourceRepository>,
     pub(crate) git_hub_enterprise_server:
-        std::option::Option<crate::types::ThirdPartySourceRepository>,
-    pub(crate) s3_bucket: std::option::Option<crate::types::S3Repository>,
+        ::std::option::Option<crate::types::ThirdPartySourceRepository>,
+    pub(crate) s3_bucket: ::std::option::Option<crate::types::S3Repository>,
 }
 impl RepositoryBuilder {
     /// <p>Information about an Amazon Web Services CodeCommit repository.</p>
     pub fn code_commit(mut self, input: crate::types::CodeCommitRepository) -> Self {
-        self.code_commit = Some(input);
+        self.code_commit = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about an Amazon Web Services CodeCommit repository.</p>
     pub fn set_code_commit(
         mut self,
-        input: std::option::Option<crate::types::CodeCommitRepository>,
+        input: ::std::option::Option<crate::types::CodeCommitRepository>,
     ) -> Self {
         self.code_commit = input;
         self
     }
     /// <p> Information about a Bitbucket repository. </p>
     pub fn bitbucket(mut self, input: crate::types::ThirdPartySourceRepository) -> Self {
-        self.bitbucket = Some(input);
+        self.bitbucket = ::std::option::Option::Some(input);
         self
     }
     /// <p> Information about a Bitbucket repository. </p>
     pub fn set_bitbucket(
         mut self,
-        input: std::option::Option<crate::types::ThirdPartySourceRepository>,
+        input: ::std::option::Option<crate::types::ThirdPartySourceRepository>,
     ) -> Self {
         self.bitbucket = input;
         self
@@ -86,24 +88,27 @@ impl RepositoryBuilder {
         mut self,
         input: crate::types::ThirdPartySourceRepository,
     ) -> Self {
-        self.git_hub_enterprise_server = Some(input);
+        self.git_hub_enterprise_server = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about a GitHub Enterprise Server repository.</p>
     pub fn set_git_hub_enterprise_server(
         mut self,
-        input: std::option::Option<crate::types::ThirdPartySourceRepository>,
+        input: ::std::option::Option<crate::types::ThirdPartySourceRepository>,
     ) -> Self {
         self.git_hub_enterprise_server = input;
         self
     }
     /// <p>Information about a repository in an S3 bucket.</p>
     pub fn s3_bucket(mut self, input: crate::types::S3Repository) -> Self {
-        self.s3_bucket = Some(input);
+        self.s3_bucket = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about a repository in an S3 bucket.</p>
-    pub fn set_s3_bucket(mut self, input: std::option::Option<crate::types::S3Repository>) -> Self {
+    pub fn set_s3_bucket(
+        mut self,
+        input: ::std::option::Option<crate::types::S3Repository>,
+    ) -> Self {
         self.s3_bucket = input;
         self
     }

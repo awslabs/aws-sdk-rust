@@ -2,29 +2,29 @@
 
 /// <p>Information about CloudWatch Logs for the build project.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails {
     /// <p>The group name of the logs in CloudWatch Logs.</p>
     #[doc(hidden)]
-    pub group_name: std::option::Option<std::string::String>,
+    pub group_name: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the logs in CloudWatch Logs for a build project.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<std::string::String>,
+    pub status: ::std::option::Option<::std::string::String>,
     /// <p>The prefix of the stream name of the CloudWatch Logs.</p>
     #[doc(hidden)]
-    pub stream_name: std::option::Option<std::string::String>,
+    pub stream_name: ::std::option::Option<::std::string::String>,
 }
 impl AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails {
     /// <p>The group name of the logs in CloudWatch Logs.</p>
-    pub fn group_name(&self) -> std::option::Option<&str> {
+    pub fn group_name(&self) -> ::std::option::Option<&str> {
         self.group_name.as_deref()
     }
     /// <p>The current status of the logs in CloudWatch Logs for a build project.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
     /// <p>The prefix of the stream name of the CloudWatch Logs.</p>
-    pub fn stream_name(&self) -> std::option::Option<&str> {
+    pub fn stream_name(&self) -> ::std::option::Option<&str> {
         self.stream_name.as_deref()
     }
 }
@@ -38,40 +38,42 @@ impl AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails {
 
 /// A builder for [`AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails`](crate::types::AwsCodeBuildProjectLogsConfigCloudWatchLogsDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsCodeBuildProjectLogsConfigCloudWatchLogsDetailsBuilder {
-    pub(crate) group_name: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<std::string::String>,
-    pub(crate) stream_name: std::option::Option<std::string::String>,
+    pub(crate) group_name: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<::std::string::String>,
+    pub(crate) stream_name: ::std::option::Option<::std::string::String>,
 }
 impl AwsCodeBuildProjectLogsConfigCloudWatchLogsDetailsBuilder {
     /// <p>The group name of the logs in CloudWatch Logs.</p>
-    pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.group_name = Some(input.into());
+    pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The group name of the logs in CloudWatch Logs.</p>
-    pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_name = input;
         self
     }
     /// <p>The current status of the logs in CloudWatch Logs for a build project.</p>
-    pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status = Some(input.into());
+    pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The current status of the logs in CloudWatch Logs for a build project.</p>
-    pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }
     /// <p>The prefix of the stream name of the CloudWatch Logs.</p>
-    pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.stream_name = Some(input.into());
+    pub fn stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.stream_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The prefix of the stream name of the CloudWatch Logs.</p>
-    pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stream_name = input;
         self
     }

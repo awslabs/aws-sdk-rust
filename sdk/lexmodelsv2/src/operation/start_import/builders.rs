@@ -6,56 +6,59 @@ pub use crate::operation::start_import::_start_import_input::StartImportInputBui
 /// Fluent builder constructing a request to `StartImport`.
 ///
 /// <p>Starts importing a bot, bot locale, or custom vocabulary from a zip archive that you uploaded to an S3 bucket.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartImportFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::start_import::builders::StartImportInputBuilder,
 }
 impl StartImportFluentBuilder {
     /// Creates a new `StartImport`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::start_import::StartImport,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::start_import::StartImportError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_import::StartImportError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::start_import::StartImportOutput,
-        aws_smithy_http::result::SdkError<crate::operation::start_import::StartImportError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_import::StartImportError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,19 +71,19 @@ impl StartImportFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::start_import::StartImportOutput,
-        aws_smithy_http::result::SdkError<crate::operation::start_import::StartImportError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::start_import::StartImportError>,
     > {
         self.send_middleware().await
     }
     /// <p>The unique identifier for the import. It is included in the response from the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateUploadUrl.html">CreateUploadUrl</a> operation.</p>
-    pub fn import_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn import_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.import_id(input.into());
         self
     }
     /// <p>The unique identifier for the import. It is included in the response from the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateUploadUrl.html">CreateUploadUrl</a> operation.</p>
-    pub fn set_import_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_import_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_import_id(input);
         self
     }
@@ -95,7 +98,7 @@ impl StartImportFluentBuilder {
     /// <p>Parameters for creating the bot, bot locale or custom vocabulary.</p>
     pub fn set_resource_specification(
         mut self,
-        input: std::option::Option<crate::types::ImportResourceSpecification>,
+        input: ::std::option::Option<crate::types::ImportResourceSpecification>,
     ) -> Self {
         self.inner = self.inner.set_resource_specification(input);
         self
@@ -108,18 +111,24 @@ impl StartImportFluentBuilder {
     /// <p>The strategy to use when there is a name conflict between the imported resource and an existing resource. When the merge strategy is <code>FailOnConflict</code> existing resources are not overwritten and the import fails.</p>
     pub fn set_merge_strategy(
         mut self,
-        input: std::option::Option<crate::types::MergeStrategy>,
+        input: ::std::option::Option<crate::types::MergeStrategy>,
     ) -> Self {
         self.inner = self.inner.set_merge_strategy(input);
         self
     }
     /// <p>The password used to encrypt the zip archive that contains the resource definition. You should always encrypt the zip archive to protect it during transit between your site and Amazon Lex.</p>
-    pub fn file_password(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn file_password(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.file_password(input.into());
         self
     }
     /// <p>The password used to encrypt the zip archive that contains the resource definition. You should always encrypt the zip archive to protect it during transit between your site and Amazon Lex.</p>
-    pub fn set_file_password(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_file_password(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_file_password(input);
         self
     }

@@ -2,15 +2,15 @@
 
 /// <p>The TensorBoard app settings.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TensorBoardAppSettings {
     /// <p>The default instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p>
     #[doc(hidden)]
-    pub default_resource_spec: std::option::Option<crate::types::ResourceSpec>,
+    pub default_resource_spec: ::std::option::Option<crate::types::ResourceSpec>,
 }
 impl TensorBoardAppSettings {
     /// <p>The default instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p>
-    pub fn default_resource_spec(&self) -> std::option::Option<&crate::types::ResourceSpec> {
+    pub fn default_resource_spec(&self) -> ::std::option::Option<&crate::types::ResourceSpec> {
         self.default_resource_spec.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl TensorBoardAppSettings {
 
 /// A builder for [`TensorBoardAppSettings`](crate::types::TensorBoardAppSettings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TensorBoardAppSettingsBuilder {
-    pub(crate) default_resource_spec: std::option::Option<crate::types::ResourceSpec>,
+    pub(crate) default_resource_spec: ::std::option::Option<crate::types::ResourceSpec>,
 }
 impl TensorBoardAppSettingsBuilder {
     /// <p>The default instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p>
     pub fn default_resource_spec(mut self, input: crate::types::ResourceSpec) -> Self {
-        self.default_resource_spec = Some(input);
+        self.default_resource_spec = ::std::option::Option::Some(input);
         self
     }
     /// <p>The default instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p>
     pub fn set_default_resource_spec(
         mut self,
-        input: std::option::Option<crate::types::ResourceSpec>,
+        input: ::std::option::Option<crate::types::ResourceSpec>,
     ) -> Self {
         self.default_resource_spec = input;
         self

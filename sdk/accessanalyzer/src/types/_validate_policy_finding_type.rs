@@ -40,13 +40,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ValidatePolicyFindingType {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,7 +60,7 @@ pub enum ValidatePolicyFindingType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ValidatePolicyFindingType {
+impl ::std::convert::From<&str> for ValidatePolicyFindingType {
     fn from(s: &str) -> Self {
         match s {
             "ERROR" => ValidatePolicyFindingType::Error,
@@ -73,11 +73,11 @@ impl std::convert::From<&str> for ValidatePolicyFindingType {
         }
     }
 }
-impl std::str::FromStr for ValidatePolicyFindingType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ValidatePolicyFindingType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ValidatePolicyFindingType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ValidatePolicyFindingType::from(s))
     }
 }
 impl ValidatePolicyFindingType {
@@ -96,7 +96,7 @@ impl ValidatePolicyFindingType {
         &["ERROR", "SECURITY_WARNING", "SUGGESTION", "WARNING"]
     }
 }
-impl AsRef<str> for ValidatePolicyFindingType {
+impl ::std::convert::AsRef<str> for ValidatePolicyFindingType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -2,15 +2,15 @@
 
 /// <p>An object representing a filter on a <code>DescribeImages</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeImagesFilter {
     /// <p>The tag status with which to filter your <code>DescribeImages</code> results. You can filter results based on whether they are <code>TAGGED</code> or <code>UNTAGGED</code>.</p>
     #[doc(hidden)]
-    pub tag_status: std::option::Option<crate::types::TagStatus>,
+    pub tag_status: ::std::option::Option<crate::types::TagStatus>,
 }
 impl DescribeImagesFilter {
     /// <p>The tag status with which to filter your <code>DescribeImages</code> results. You can filter results based on whether they are <code>TAGGED</code> or <code>UNTAGGED</code>.</p>
-    pub fn tag_status(&self) -> std::option::Option<&crate::types::TagStatus> {
+    pub fn tag_status(&self) -> ::std::option::Option<&crate::types::TagStatus> {
         self.tag_status.as_ref()
     }
 }
@@ -23,18 +23,20 @@ impl DescribeImagesFilter {
 
 /// A builder for [`DescribeImagesFilter`](crate::types::DescribeImagesFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeImagesFilterBuilder {
-    pub(crate) tag_status: std::option::Option<crate::types::TagStatus>,
+    pub(crate) tag_status: ::std::option::Option<crate::types::TagStatus>,
 }
 impl DescribeImagesFilterBuilder {
     /// <p>The tag status with which to filter your <code>DescribeImages</code> results. You can filter results based on whether they are <code>TAGGED</code> or <code>UNTAGGED</code>.</p>
     pub fn tag_status(mut self, input: crate::types::TagStatus) -> Self {
-        self.tag_status = Some(input);
+        self.tag_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The tag status with which to filter your <code>DescribeImages</code> results. You can filter results based on whether they are <code>TAGGED</code> or <code>UNTAGGED</code>.</p>
-    pub fn set_tag_status(mut self, input: std::option::Option<crate::types::TagStatus>) -> Self {
+    pub fn set_tag_status(mut self, input: ::std::option::Option<crate::types::TagStatus>) -> Self {
         self.tag_status = input;
         self
     }

@@ -2,27 +2,27 @@
 
 /// <p>A complex type that contains the response information for the <code>CreateTrafficPolicyVersion</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateTrafficPolicyVersionOutput {
     /// <p>A complex type that contains settings for the new version of the traffic policy.</p>
     #[doc(hidden)]
-    pub traffic_policy: std::option::Option<crate::types::TrafficPolicy>,
+    pub traffic_policy: ::std::option::Option<crate::types::TrafficPolicy>,
     /// <p>A unique URL that represents a new traffic policy version.</p>
     #[doc(hidden)]
-    pub location: std::option::Option<std::string::String>,
+    pub location: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateTrafficPolicyVersionOutput {
     /// <p>A complex type that contains settings for the new version of the traffic policy.</p>
-    pub fn traffic_policy(&self) -> std::option::Option<&crate::types::TrafficPolicy> {
+    pub fn traffic_policy(&self) -> ::std::option::Option<&crate::types::TrafficPolicy> {
         self.traffic_policy.as_ref()
     }
     /// <p>A unique URL that represents a new traffic policy version.</p>
-    pub fn location(&self) -> std::option::Option<&str> {
+    pub fn location(&self) -> ::std::option::Option<&str> {
         self.location.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for CreateTrafficPolicyVersionOutput {
+impl ::aws_http::request_id::RequestId for CreateTrafficPolicyVersionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -36,33 +36,35 @@ impl CreateTrafficPolicyVersionOutput {
 
 /// A builder for [`CreateTrafficPolicyVersionOutput`](crate::operation::create_traffic_policy_version::CreateTrafficPolicyVersionOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateTrafficPolicyVersionOutputBuilder {
-    pub(crate) traffic_policy: std::option::Option<crate::types::TrafficPolicy>,
-    pub(crate) location: std::option::Option<std::string::String>,
+    pub(crate) traffic_policy: ::std::option::Option<crate::types::TrafficPolicy>,
+    pub(crate) location: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateTrafficPolicyVersionOutputBuilder {
     /// <p>A complex type that contains settings for the new version of the traffic policy.</p>
     pub fn traffic_policy(mut self, input: crate::types::TrafficPolicy) -> Self {
-        self.traffic_policy = Some(input);
+        self.traffic_policy = ::std::option::Option::Some(input);
         self
     }
     /// <p>A complex type that contains settings for the new version of the traffic policy.</p>
     pub fn set_traffic_policy(
         mut self,
-        input: std::option::Option<crate::types::TrafficPolicy>,
+        input: ::std::option::Option<crate::types::TrafficPolicy>,
     ) -> Self {
         self.traffic_policy = input;
         self
     }
     /// <p>A unique URL that represents a new traffic policy version.</p>
-    pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
-        self.location = Some(input.into());
+    pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.location = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique URL that represents a new traffic policy version.</p>
-    pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location = input;
         self
     }

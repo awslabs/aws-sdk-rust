@@ -2,20 +2,20 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutEvaluationsOutput {
     /// <p>Requests that failed because of a client or server error.</p>
     #[doc(hidden)]
-    pub failed_evaluations: std::option::Option<std::vec::Vec<crate::types::Evaluation>>,
+    pub failed_evaluations: ::std::option::Option<::std::vec::Vec<crate::types::Evaluation>>,
     _request_id: Option<String>,
 }
 impl PutEvaluationsOutput {
     /// <p>Requests that failed because of a client or server error.</p>
-    pub fn failed_evaluations(&self) -> std::option::Option<&[crate::types::Evaluation]> {
+    pub fn failed_evaluations(&self) -> ::std::option::Option<&[crate::types::Evaluation]> {
         self.failed_evaluations.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for PutEvaluationsOutput {
+impl ::aws_http::request_id::RequestId for PutEvaluationsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,9 +29,11 @@ impl PutEvaluationsOutput {
 
 /// A builder for [`PutEvaluationsOutput`](crate::operation::put_evaluations::PutEvaluationsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PutEvaluationsOutputBuilder {
-    pub(crate) failed_evaluations: std::option::Option<std::vec::Vec<crate::types::Evaluation>>,
+    pub(crate) failed_evaluations: ::std::option::Option<::std::vec::Vec<crate::types::Evaluation>>,
     _request_id: Option<String>,
 }
 impl PutEvaluationsOutputBuilder {
@@ -43,13 +45,13 @@ impl PutEvaluationsOutputBuilder {
     pub fn failed_evaluations(mut self, input: crate::types::Evaluation) -> Self {
         let mut v = self.failed_evaluations.unwrap_or_default();
         v.push(input);
-        self.failed_evaluations = Some(v);
+        self.failed_evaluations = ::std::option::Option::Some(v);
         self
     }
     /// <p>Requests that failed because of a client or server error.</p>
     pub fn set_failed_evaluations(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Evaluation>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Evaluation>>,
     ) -> Self {
         self.failed_evaluations = input;
         self

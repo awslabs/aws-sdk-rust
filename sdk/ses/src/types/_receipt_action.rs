@@ -3,57 +3,57 @@
 /// <p>An action that Amazon SES can take when it receives an email on behalf of one or more email addresses or domains that you own. An instance of this data type can represent only one action.</p>
 /// <p>For information about setting up receipt rules, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rules.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReceiptAction {
     /// <p>Saves the received message to an Amazon Simple Storage Service (Amazon S3) bucket and, optionally, publishes a notification to Amazon SNS.</p>
     #[doc(hidden)]
-    pub s3_action: std::option::Option<crate::types::S3Action>,
+    pub s3_action: ::std::option::Option<crate::types::S3Action>,
     /// <p>Rejects the received email by returning a bounce response to the sender and, optionally, publishes a notification to Amazon Simple Notification Service (Amazon SNS).</p>
     #[doc(hidden)]
-    pub bounce_action: std::option::Option<crate::types::BounceAction>,
+    pub bounce_action: ::std::option::Option<crate::types::BounceAction>,
     /// <p>Calls Amazon WorkMail and, optionally, publishes a notification to Amazon Amazon SNS.</p>
     #[doc(hidden)]
-    pub workmail_action: std::option::Option<crate::types::WorkmailAction>,
+    pub workmail_action: ::std::option::Option<crate::types::WorkmailAction>,
     /// <p>Calls an AWS Lambda function, and optionally, publishes a notification to Amazon SNS.</p>
     #[doc(hidden)]
-    pub lambda_action: std::option::Option<crate::types::LambdaAction>,
+    pub lambda_action: ::std::option::Option<crate::types::LambdaAction>,
     /// <p>Terminates the evaluation of the receipt rule set and optionally publishes a notification to Amazon SNS.</p>
     #[doc(hidden)]
-    pub stop_action: std::option::Option<crate::types::StopAction>,
+    pub stop_action: ::std::option::Option<crate::types::StopAction>,
     /// <p>Adds a header to the received email.</p>
     #[doc(hidden)]
-    pub add_header_action: std::option::Option<crate::types::AddHeaderAction>,
+    pub add_header_action: ::std::option::Option<crate::types::AddHeaderAction>,
     /// <p>Publishes the email content within a notification to Amazon SNS.</p>
     #[doc(hidden)]
-    pub sns_action: std::option::Option<crate::types::SnsAction>,
+    pub sns_action: ::std::option::Option<crate::types::SnsAction>,
 }
 impl ReceiptAction {
     /// <p>Saves the received message to an Amazon Simple Storage Service (Amazon S3) bucket and, optionally, publishes a notification to Amazon SNS.</p>
-    pub fn s3_action(&self) -> std::option::Option<&crate::types::S3Action> {
+    pub fn s3_action(&self) -> ::std::option::Option<&crate::types::S3Action> {
         self.s3_action.as_ref()
     }
     /// <p>Rejects the received email by returning a bounce response to the sender and, optionally, publishes a notification to Amazon Simple Notification Service (Amazon SNS).</p>
-    pub fn bounce_action(&self) -> std::option::Option<&crate::types::BounceAction> {
+    pub fn bounce_action(&self) -> ::std::option::Option<&crate::types::BounceAction> {
         self.bounce_action.as_ref()
     }
     /// <p>Calls Amazon WorkMail and, optionally, publishes a notification to Amazon Amazon SNS.</p>
-    pub fn workmail_action(&self) -> std::option::Option<&crate::types::WorkmailAction> {
+    pub fn workmail_action(&self) -> ::std::option::Option<&crate::types::WorkmailAction> {
         self.workmail_action.as_ref()
     }
     /// <p>Calls an AWS Lambda function, and optionally, publishes a notification to Amazon SNS.</p>
-    pub fn lambda_action(&self) -> std::option::Option<&crate::types::LambdaAction> {
+    pub fn lambda_action(&self) -> ::std::option::Option<&crate::types::LambdaAction> {
         self.lambda_action.as_ref()
     }
     /// <p>Terminates the evaluation of the receipt rule set and optionally publishes a notification to Amazon SNS.</p>
-    pub fn stop_action(&self) -> std::option::Option<&crate::types::StopAction> {
+    pub fn stop_action(&self) -> ::std::option::Option<&crate::types::StopAction> {
         self.stop_action.as_ref()
     }
     /// <p>Adds a header to the received email.</p>
-    pub fn add_header_action(&self) -> std::option::Option<&crate::types::AddHeaderAction> {
+    pub fn add_header_action(&self) -> ::std::option::Option<&crate::types::AddHeaderAction> {
         self.add_header_action.as_ref()
     }
     /// <p>Publishes the email content within a notification to Amazon SNS.</p>
-    pub fn sns_action(&self) -> std::option::Option<&crate::types::SnsAction> {
+    pub fn sns_action(&self) -> ::std::option::Option<&crate::types::SnsAction> {
         self.sns_action.as_ref()
     }
 }
@@ -66,96 +66,101 @@ impl ReceiptAction {
 
 /// A builder for [`ReceiptAction`](crate::types::ReceiptAction).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ReceiptActionBuilder {
-    pub(crate) s3_action: std::option::Option<crate::types::S3Action>,
-    pub(crate) bounce_action: std::option::Option<crate::types::BounceAction>,
-    pub(crate) workmail_action: std::option::Option<crate::types::WorkmailAction>,
-    pub(crate) lambda_action: std::option::Option<crate::types::LambdaAction>,
-    pub(crate) stop_action: std::option::Option<crate::types::StopAction>,
-    pub(crate) add_header_action: std::option::Option<crate::types::AddHeaderAction>,
-    pub(crate) sns_action: std::option::Option<crate::types::SnsAction>,
+    pub(crate) s3_action: ::std::option::Option<crate::types::S3Action>,
+    pub(crate) bounce_action: ::std::option::Option<crate::types::BounceAction>,
+    pub(crate) workmail_action: ::std::option::Option<crate::types::WorkmailAction>,
+    pub(crate) lambda_action: ::std::option::Option<crate::types::LambdaAction>,
+    pub(crate) stop_action: ::std::option::Option<crate::types::StopAction>,
+    pub(crate) add_header_action: ::std::option::Option<crate::types::AddHeaderAction>,
+    pub(crate) sns_action: ::std::option::Option<crate::types::SnsAction>,
 }
 impl ReceiptActionBuilder {
     /// <p>Saves the received message to an Amazon Simple Storage Service (Amazon S3) bucket and, optionally, publishes a notification to Amazon SNS.</p>
     pub fn s3_action(mut self, input: crate::types::S3Action) -> Self {
-        self.s3_action = Some(input);
+        self.s3_action = ::std::option::Option::Some(input);
         self
     }
     /// <p>Saves the received message to an Amazon Simple Storage Service (Amazon S3) bucket and, optionally, publishes a notification to Amazon SNS.</p>
-    pub fn set_s3_action(mut self, input: std::option::Option<crate::types::S3Action>) -> Self {
+    pub fn set_s3_action(mut self, input: ::std::option::Option<crate::types::S3Action>) -> Self {
         self.s3_action = input;
         self
     }
     /// <p>Rejects the received email by returning a bounce response to the sender and, optionally, publishes a notification to Amazon Simple Notification Service (Amazon SNS).</p>
     pub fn bounce_action(mut self, input: crate::types::BounceAction) -> Self {
-        self.bounce_action = Some(input);
+        self.bounce_action = ::std::option::Option::Some(input);
         self
     }
     /// <p>Rejects the received email by returning a bounce response to the sender and, optionally, publishes a notification to Amazon Simple Notification Service (Amazon SNS).</p>
     pub fn set_bounce_action(
         mut self,
-        input: std::option::Option<crate::types::BounceAction>,
+        input: ::std::option::Option<crate::types::BounceAction>,
     ) -> Self {
         self.bounce_action = input;
         self
     }
     /// <p>Calls Amazon WorkMail and, optionally, publishes a notification to Amazon Amazon SNS.</p>
     pub fn workmail_action(mut self, input: crate::types::WorkmailAction) -> Self {
-        self.workmail_action = Some(input);
+        self.workmail_action = ::std::option::Option::Some(input);
         self
     }
     /// <p>Calls Amazon WorkMail and, optionally, publishes a notification to Amazon Amazon SNS.</p>
     pub fn set_workmail_action(
         mut self,
-        input: std::option::Option<crate::types::WorkmailAction>,
+        input: ::std::option::Option<crate::types::WorkmailAction>,
     ) -> Self {
         self.workmail_action = input;
         self
     }
     /// <p>Calls an AWS Lambda function, and optionally, publishes a notification to Amazon SNS.</p>
     pub fn lambda_action(mut self, input: crate::types::LambdaAction) -> Self {
-        self.lambda_action = Some(input);
+        self.lambda_action = ::std::option::Option::Some(input);
         self
     }
     /// <p>Calls an AWS Lambda function, and optionally, publishes a notification to Amazon SNS.</p>
     pub fn set_lambda_action(
         mut self,
-        input: std::option::Option<crate::types::LambdaAction>,
+        input: ::std::option::Option<crate::types::LambdaAction>,
     ) -> Self {
         self.lambda_action = input;
         self
     }
     /// <p>Terminates the evaluation of the receipt rule set and optionally publishes a notification to Amazon SNS.</p>
     pub fn stop_action(mut self, input: crate::types::StopAction) -> Self {
-        self.stop_action = Some(input);
+        self.stop_action = ::std::option::Option::Some(input);
         self
     }
     /// <p>Terminates the evaluation of the receipt rule set and optionally publishes a notification to Amazon SNS.</p>
-    pub fn set_stop_action(mut self, input: std::option::Option<crate::types::StopAction>) -> Self {
+    pub fn set_stop_action(
+        mut self,
+        input: ::std::option::Option<crate::types::StopAction>,
+    ) -> Self {
         self.stop_action = input;
         self
     }
     /// <p>Adds a header to the received email.</p>
     pub fn add_header_action(mut self, input: crate::types::AddHeaderAction) -> Self {
-        self.add_header_action = Some(input);
+        self.add_header_action = ::std::option::Option::Some(input);
         self
     }
     /// <p>Adds a header to the received email.</p>
     pub fn set_add_header_action(
         mut self,
-        input: std::option::Option<crate::types::AddHeaderAction>,
+        input: ::std::option::Option<crate::types::AddHeaderAction>,
     ) -> Self {
         self.add_header_action = input;
         self
     }
     /// <p>Publishes the email content within a notification to Amazon SNS.</p>
     pub fn sns_action(mut self, input: crate::types::SnsAction) -> Self {
-        self.sns_action = Some(input);
+        self.sns_action = ::std::option::Option::Some(input);
         self
     }
     /// <p>Publishes the email content within a notification to Amazon SNS.</p>
-    pub fn set_sns_action(mut self, input: std::option::Option<crate::types::SnsAction>) -> Self {
+    pub fn set_sns_action(mut self, input: ::std::option::Option<crate::types::SnsAction>) -> Self {
         self.sns_action = input;
         self
     }

@@ -42,13 +42,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ContainerServicePowerName {
     #[allow(missing_docs)] // documentation missing in model
@@ -66,7 +66,7 @@ pub enum ContainerServicePowerName {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ContainerServicePowerName {
+impl ::std::convert::From<&str> for ContainerServicePowerName {
     fn from(s: &str) -> Self {
         match s {
             "large" => ContainerServicePowerName::Large,
@@ -81,11 +81,11 @@ impl std::convert::From<&str> for ContainerServicePowerName {
         }
     }
 }
-impl std::str::FromStr for ContainerServicePowerName {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ContainerServicePowerName {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ContainerServicePowerName::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ContainerServicePowerName::from(s))
     }
 }
 impl ContainerServicePowerName {
@@ -106,7 +106,7 @@ impl ContainerServicePowerName {
         &["large", "medium", "micro", "nano", "small", "xlarge"]
     }
 }
-impl AsRef<str> for ContainerServicePowerName {
+impl ::std::convert::AsRef<str> for ContainerServicePowerName {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

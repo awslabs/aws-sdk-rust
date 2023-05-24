@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeRiskConfiguration`](crate::operation::describe_risk_configuration::builders::DescribeRiskConfigurationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`user_pool_id(impl Into<String>)`](crate::operation::describe_risk_configuration::builders::DescribeRiskConfigurationFluentBuilder::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::operation::describe_risk_configuration::builders::DescribeRiskConfigurationFluentBuilder::set_user_pool_id): <p>The user pool ID.</p>
-    ///   - [`client_id(impl Into<String>)`](crate::operation::describe_risk_configuration::builders::DescribeRiskConfigurationFluentBuilder::client_id) / [`set_client_id(Option<String>)`](crate::operation::describe_risk_configuration::builders::DescribeRiskConfigurationFluentBuilder::set_client_id): <p>The app client ID.</p>
+    ///   - [`user_pool_id(impl ::std::convert::Into<String>)`](crate::operation::describe_risk_configuration::builders::DescribeRiskConfigurationFluentBuilder::user_pool_id) / [`set_user_pool_id(Option<String>)`](crate::operation::describe_risk_configuration::builders::DescribeRiskConfigurationFluentBuilder::set_user_pool_id): <p>The user pool ID.</p>
+    ///   - [`client_id(impl ::std::convert::Into<String>)`](crate::operation::describe_risk_configuration::builders::DescribeRiskConfigurationFluentBuilder::client_id) / [`set_client_id(Option<String>)`](crate::operation::describe_risk_configuration::builders::DescribeRiskConfigurationFluentBuilder::set_client_id): <p>The app client ID.</p>
     /// - On success, responds with [`DescribeRiskConfigurationOutput`](crate::operation::describe_risk_configuration::DescribeRiskConfigurationOutput) with field(s):
     ///   - [`risk_configuration(Option<RiskConfigurationType>)`](crate::operation::describe_risk_configuration::DescribeRiskConfigurationOutput::risk_configuration): <p>The risk configuration.</p>
     /// - On failure, responds with [`SdkError<DescribeRiskConfigurationError>`](crate::operation::describe_risk_configuration::DescribeRiskConfigurationError)

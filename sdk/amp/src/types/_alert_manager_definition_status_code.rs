@@ -42,13 +42,13 @@
 /// State of an alert manager definition.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum AlertManagerDefinitionStatusCode {
     /// Definition has been created/updated. Update/Deletion is disallowed until definition is ACTIVE and workspace status is ACTIVE.
@@ -66,7 +66,7 @@ pub enum AlertManagerDefinitionStatusCode {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for AlertManagerDefinitionStatusCode {
+impl ::std::convert::From<&str> for AlertManagerDefinitionStatusCode {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVE" => AlertManagerDefinitionStatusCode::Active,
@@ -81,11 +81,11 @@ impl std::convert::From<&str> for AlertManagerDefinitionStatusCode {
         }
     }
 }
-impl std::str::FromStr for AlertManagerDefinitionStatusCode {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for AlertManagerDefinitionStatusCode {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AlertManagerDefinitionStatusCode::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(AlertManagerDefinitionStatusCode::from(s))
     }
 }
 impl AlertManagerDefinitionStatusCode {
@@ -113,7 +113,7 @@ impl AlertManagerDefinitionStatusCode {
         ]
     }
 }
-impl AsRef<str> for AlertManagerDefinitionStatusCode {
+impl ::std::convert::AsRef<str> for AlertManagerDefinitionStatusCode {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

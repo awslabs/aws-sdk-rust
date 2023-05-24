@@ -2,33 +2,35 @@
 
 /// <p>A context is a variable that contains information about the current state of the conversation between a user and Amazon Lex. Context can be set automatically by Amazon Lex when an intent is fulfilled, or it can be set at runtime using the <code>PutContent</code>, <code>PutText</code>, or <code>PutSession</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActiveContext {
     /// <p>The name of the context.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The length of time or number of turns that a context remains active.</p>
     #[doc(hidden)]
-    pub time_to_live: std::option::Option<crate::types::ActiveContextTimeToLive>,
+    pub time_to_live: ::std::option::Option<crate::types::ActiveContextTimeToLive>,
     /// <p>State variables for the current context. You can use these values as default values for slots in subsequent events.</p>
     #[doc(hidden)]
-    pub parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub parameters: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl ActiveContext {
     /// <p>The name of the context.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The length of time or number of turns that a context remains active.</p>
-    pub fn time_to_live(&self) -> std::option::Option<&crate::types::ActiveContextTimeToLive> {
+    pub fn time_to_live(&self) -> ::std::option::Option<&crate::types::ActiveContextTimeToLive> {
         self.time_to_live.as_ref()
     }
     /// <p>State variables for the current context. You can use these values as default values for slots in subsequent events.</p>
     pub fn parameters(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.parameters.as_ref()
     }
 }
@@ -41,33 +43,36 @@ impl ActiveContext {
 
 /// A builder for [`ActiveContext`](crate::types::ActiveContext).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ActiveContextBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) time_to_live: std::option::Option<crate::types::ActiveContextTimeToLive>,
-    pub(crate) parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) time_to_live: ::std::option::Option<crate::types::ActiveContextTimeToLive>,
+    pub(crate) parameters: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl ActiveContextBuilder {
     /// <p>The name of the context.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the context.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The length of time or number of turns that a context remains active.</p>
     pub fn time_to_live(mut self, input: crate::types::ActiveContextTimeToLive) -> Self {
-        self.time_to_live = Some(input);
+        self.time_to_live = ::std::option::Option::Some(input);
         self
     }
     /// <p>The length of time or number of turns that a context remains active.</p>
     pub fn set_time_to_live(
         mut self,
-        input: std::option::Option<crate::types::ActiveContextTimeToLive>,
+        input: ::std::option::Option<crate::types::ActiveContextTimeToLive>,
     ) -> Self {
         self.time_to_live = input;
         self
@@ -79,19 +84,19 @@ impl ActiveContextBuilder {
     /// <p>State variables for the current context. You can use these values as default values for slots in subsequent events.</p>
     pub fn parameters(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.parameters = Some(hash_map);
+        self.parameters = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>State variables for the current context. You can use these values as default values for slots in subsequent events.</p>
     pub fn set_parameters(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.parameters = input;

@@ -2,34 +2,34 @@
 
 /// <p>A constant used in a category filter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct TopicCategoryFilterConstant {
     /// <p>The type of category filter constant. This element is used to specify whether a constant is a singular or collective. Valid values are <code>SINGULAR</code> and <code>COLLECTIVE</code>.</p>
     #[doc(hidden)]
-    pub constant_type: std::option::Option<crate::types::ConstantType>,
+    pub constant_type: ::std::option::Option<crate::types::ConstantType>,
     /// <p>A singular constant used in a category filter. This element is used to specify a single value for the constant.</p>
     #[doc(hidden)]
-    pub singular_constant: std::option::Option<std::string::String>,
+    pub singular_constant: ::std::option::Option<::std::string::String>,
     /// <p>A collective constant used in a category filter. This element is used to specify a list of values for the constant.</p>
     #[doc(hidden)]
-    pub collective_constant: std::option::Option<crate::types::CollectiveConstant>,
+    pub collective_constant: ::std::option::Option<crate::types::CollectiveConstant>,
 }
 impl TopicCategoryFilterConstant {
     /// <p>The type of category filter constant. This element is used to specify whether a constant is a singular or collective. Valid values are <code>SINGULAR</code> and <code>COLLECTIVE</code>.</p>
-    pub fn constant_type(&self) -> std::option::Option<&crate::types::ConstantType> {
+    pub fn constant_type(&self) -> ::std::option::Option<&crate::types::ConstantType> {
         self.constant_type.as_ref()
     }
     /// <p>A singular constant used in a category filter. This element is used to specify a single value for the constant.</p>
-    pub fn singular_constant(&self) -> std::option::Option<&str> {
+    pub fn singular_constant(&self) -> ::std::option::Option<&str> {
         self.singular_constant.as_deref()
     }
     /// <p>A collective constant used in a category filter. This element is used to specify a list of values for the constant.</p>
-    pub fn collective_constant(&self) -> std::option::Option<&crate::types::CollectiveConstant> {
+    pub fn collective_constant(&self) -> ::std::option::Option<&crate::types::CollectiveConstant> {
         self.collective_constant.as_ref()
     }
 }
-impl std::fmt::Debug for TopicCategoryFilterConstant {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for TopicCategoryFilterConstant {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("TopicCategoryFilterConstant");
         formatter.field("constant_type", &"*** Sensitive Data Redacted ***");
         formatter.field("singular_constant", &"*** Sensitive Data Redacted ***");
@@ -46,48 +46,51 @@ impl TopicCategoryFilterConstant {
 
 /// A builder for [`TopicCategoryFilterConstant`](crate::types::TopicCategoryFilterConstant).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct TopicCategoryFilterConstantBuilder {
-    pub(crate) constant_type: std::option::Option<crate::types::ConstantType>,
-    pub(crate) singular_constant: std::option::Option<std::string::String>,
-    pub(crate) collective_constant: std::option::Option<crate::types::CollectiveConstant>,
+    pub(crate) constant_type: ::std::option::Option<crate::types::ConstantType>,
+    pub(crate) singular_constant: ::std::option::Option<::std::string::String>,
+    pub(crate) collective_constant: ::std::option::Option<crate::types::CollectiveConstant>,
 }
 impl TopicCategoryFilterConstantBuilder {
     /// <p>The type of category filter constant. This element is used to specify whether a constant is a singular or collective. Valid values are <code>SINGULAR</code> and <code>COLLECTIVE</code>.</p>
     pub fn constant_type(mut self, input: crate::types::ConstantType) -> Self {
-        self.constant_type = Some(input);
+        self.constant_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of category filter constant. This element is used to specify whether a constant is a singular or collective. Valid values are <code>SINGULAR</code> and <code>COLLECTIVE</code>.</p>
     pub fn set_constant_type(
         mut self,
-        input: std::option::Option<crate::types::ConstantType>,
+        input: ::std::option::Option<crate::types::ConstantType>,
     ) -> Self {
         self.constant_type = input;
         self
     }
     /// <p>A singular constant used in a category filter. This element is used to specify a single value for the constant.</p>
-    pub fn singular_constant(mut self, input: impl Into<std::string::String>) -> Self {
-        self.singular_constant = Some(input.into());
+    pub fn singular_constant(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.singular_constant = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A singular constant used in a category filter. This element is used to specify a single value for the constant.</p>
     pub fn set_singular_constant(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.singular_constant = input;
         self
     }
     /// <p>A collective constant used in a category filter. This element is used to specify a list of values for the constant.</p>
     pub fn collective_constant(mut self, input: crate::types::CollectiveConstant) -> Self {
-        self.collective_constant = Some(input);
+        self.collective_constant = ::std::option::Option::Some(input);
         self
     }
     /// <p>A collective constant used in a category filter. This element is used to specify a list of values for the constant.</p>
     pub fn set_collective_constant(
         mut self,
-        input: std::option::Option<crate::types::CollectiveConstant>,
+        input: ::std::option::Option<crate::types::CollectiveConstant>,
     ) -> Self {
         self.collective_constant = input;
         self
@@ -101,8 +104,8 @@ impl TopicCategoryFilterConstantBuilder {
         }
     }
 }
-impl std::fmt::Debug for TopicCategoryFilterConstantBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for TopicCategoryFilterConstantBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("TopicCategoryFilterConstantBuilder");
         formatter.field("constant_type", &"*** Sensitive Data Redacted ***");
         formatter.field("singular_constant", &"*** Sensitive Data Redacted ***");

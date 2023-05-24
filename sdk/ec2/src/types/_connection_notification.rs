@@ -2,62 +2,63 @@
 
 /// <p>Describes a connection notification for a VPC endpoint or VPC endpoint service.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConnectionNotification {
     /// <p>The ID of the notification.</p>
     #[doc(hidden)]
-    pub connection_notification_id: std::option::Option<std::string::String>,
+    pub connection_notification_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the endpoint service.</p>
     #[doc(hidden)]
-    pub service_id: std::option::Option<std::string::String>,
+    pub service_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the VPC endpoint.</p>
     #[doc(hidden)]
-    pub vpc_endpoint_id: std::option::Option<std::string::String>,
+    pub vpc_endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of notification.</p>
     #[doc(hidden)]
-    pub connection_notification_type: std::option::Option<crate::types::ConnectionNotificationType>,
+    pub connection_notification_type:
+        ::std::option::Option<crate::types::ConnectionNotificationType>,
     /// <p>The ARN of the SNS topic for the notification.</p>
     #[doc(hidden)]
-    pub connection_notification_arn: std::option::Option<std::string::String>,
+    pub connection_notification_arn: ::std::option::Option<::std::string::String>,
     /// <p>The events for the notification. Valid values are <code>Accept</code>, <code>Connect</code>, <code>Delete</code>, and <code>Reject</code>.</p>
     #[doc(hidden)]
-    pub connection_events: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub connection_events: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The state of the notification.</p>
     #[doc(hidden)]
     pub connection_notification_state:
-        std::option::Option<crate::types::ConnectionNotificationState>,
+        ::std::option::Option<crate::types::ConnectionNotificationState>,
 }
 impl ConnectionNotification {
     /// <p>The ID of the notification.</p>
-    pub fn connection_notification_id(&self) -> std::option::Option<&str> {
+    pub fn connection_notification_id(&self) -> ::std::option::Option<&str> {
         self.connection_notification_id.as_deref()
     }
     /// <p>The ID of the endpoint service.</p>
-    pub fn service_id(&self) -> std::option::Option<&str> {
+    pub fn service_id(&self) -> ::std::option::Option<&str> {
         self.service_id.as_deref()
     }
     /// <p>The ID of the VPC endpoint.</p>
-    pub fn vpc_endpoint_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_endpoint_id(&self) -> ::std::option::Option<&str> {
         self.vpc_endpoint_id.as_deref()
     }
     /// <p>The type of notification.</p>
     pub fn connection_notification_type(
         &self,
-    ) -> std::option::Option<&crate::types::ConnectionNotificationType> {
+    ) -> ::std::option::Option<&crate::types::ConnectionNotificationType> {
         self.connection_notification_type.as_ref()
     }
     /// <p>The ARN of the SNS topic for the notification.</p>
-    pub fn connection_notification_arn(&self) -> std::option::Option<&str> {
+    pub fn connection_notification_arn(&self) -> ::std::option::Option<&str> {
         self.connection_notification_arn.as_deref()
     }
     /// <p>The events for the notification. Valid values are <code>Accept</code>, <code>Connect</code>, <code>Delete</code>, and <code>Reject</code>.</p>
-    pub fn connection_events(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn connection_events(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.connection_events.as_deref()
     }
     /// <p>The state of the notification.</p>
     pub fn connection_notification_state(
         &self,
-    ) -> std::option::Option<&crate::types::ConnectionNotificationState> {
+    ) -> ::std::option::Option<&crate::types::ConnectionNotificationState> {
         self.connection_notification_state.as_ref()
     }
 }
@@ -70,49 +71,60 @@ impl ConnectionNotification {
 
 /// A builder for [`ConnectionNotification`](crate::types::ConnectionNotification).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ConnectionNotificationBuilder {
-    pub(crate) connection_notification_id: std::option::Option<std::string::String>,
-    pub(crate) service_id: std::option::Option<std::string::String>,
-    pub(crate) vpc_endpoint_id: std::option::Option<std::string::String>,
+    pub(crate) connection_notification_id: ::std::option::Option<::std::string::String>,
+    pub(crate) service_id: ::std::option::Option<::std::string::String>,
+    pub(crate) vpc_endpoint_id: ::std::option::Option<::std::string::String>,
     pub(crate) connection_notification_type:
-        std::option::Option<crate::types::ConnectionNotificationType>,
-    pub(crate) connection_notification_arn: std::option::Option<std::string::String>,
-    pub(crate) connection_events: std::option::Option<std::vec::Vec<std::string::String>>,
+        ::std::option::Option<crate::types::ConnectionNotificationType>,
+    pub(crate) connection_notification_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) connection_events: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) connection_notification_state:
-        std::option::Option<crate::types::ConnectionNotificationState>,
+        ::std::option::Option<crate::types::ConnectionNotificationState>,
 }
 impl ConnectionNotificationBuilder {
     /// <p>The ID of the notification.</p>
-    pub fn connection_notification_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.connection_notification_id = Some(input.into());
+    pub fn connection_notification_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.connection_notification_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the notification.</p>
     pub fn set_connection_notification_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.connection_notification_id = input;
         self
     }
     /// <p>The ID of the endpoint service.</p>
-    pub fn service_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.service_id = Some(input.into());
+    pub fn service_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.service_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the endpoint service.</p>
-    pub fn set_service_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_service_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_id = input;
         self
     }
     /// <p>The ID of the VPC endpoint.</p>
-    pub fn vpc_endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.vpc_endpoint_id = Some(input.into());
+    pub fn vpc_endpoint_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.vpc_endpoint_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the VPC endpoint.</p>
-    pub fn set_vpc_endpoint_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_vpc_endpoint_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.vpc_endpoint_id = input;
         self
     }
@@ -121,26 +133,29 @@ impl ConnectionNotificationBuilder {
         mut self,
         input: crate::types::ConnectionNotificationType,
     ) -> Self {
-        self.connection_notification_type = Some(input);
+        self.connection_notification_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of notification.</p>
     pub fn set_connection_notification_type(
         mut self,
-        input: std::option::Option<crate::types::ConnectionNotificationType>,
+        input: ::std::option::Option<crate::types::ConnectionNotificationType>,
     ) -> Self {
         self.connection_notification_type = input;
         self
     }
     /// <p>The ARN of the SNS topic for the notification.</p>
-    pub fn connection_notification_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.connection_notification_arn = Some(input.into());
+    pub fn connection_notification_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.connection_notification_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the SNS topic for the notification.</p>
     pub fn set_connection_notification_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.connection_notification_arn = input;
         self
@@ -150,16 +165,19 @@ impl ConnectionNotificationBuilder {
     /// To override the contents of this collection use [`set_connection_events`](Self::set_connection_events).
     ///
     /// <p>The events for the notification. Valid values are <code>Accept</code>, <code>Connect</code>, <code>Delete</code>, and <code>Reject</code>.</p>
-    pub fn connection_events(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn connection_events(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.connection_events.unwrap_or_default();
         v.push(input.into());
-        self.connection_events = Some(v);
+        self.connection_events = ::std::option::Option::Some(v);
         self
     }
     /// <p>The events for the notification. Valid values are <code>Accept</code>, <code>Connect</code>, <code>Delete</code>, and <code>Reject</code>.</p>
     pub fn set_connection_events(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.connection_events = input;
         self
@@ -169,13 +187,13 @@ impl ConnectionNotificationBuilder {
         mut self,
         input: crate::types::ConnectionNotificationState,
     ) -> Self {
-        self.connection_notification_state = Some(input);
+        self.connection_notification_state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The state of the notification.</p>
     pub fn set_connection_notification_state(
         mut self,
-        input: std::option::Option<crate::types::ConnectionNotificationState>,
+        input: ::std::option::Option<crate::types::ConnectionNotificationState>,
     ) -> Self {
         self.connection_notification_state = input;
         self

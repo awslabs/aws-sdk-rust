@@ -2,28 +2,28 @@
 
 /// <p>The encryption configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EncryptionConfig {
     /// <p>The type of encryption.</p>
     #[doc(hidden)]
-    pub encryption_type: std::option::Option<crate::types::EncryptionType>,
+    pub encryption_type: ::std::option::Option<crate::types::EncryptionType>,
     /// <p>The full ARN of the encryption key. </p> <note>
     /// <p>Be sure to provide the full ARN of the encryption key, not just the ID.</p>
     /// <p>Amazon Connect supports only KMS keys with the default key spec of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-symmetric-default"> <code>SYMMETRIC_DEFAULT</code> </a>. </p>
     /// </note>
     #[doc(hidden)]
-    pub key_id: std::option::Option<std::string::String>,
+    pub key_id: ::std::option::Option<::std::string::String>,
 }
 impl EncryptionConfig {
     /// <p>The type of encryption.</p>
-    pub fn encryption_type(&self) -> std::option::Option<&crate::types::EncryptionType> {
+    pub fn encryption_type(&self) -> ::std::option::Option<&crate::types::EncryptionType> {
         self.encryption_type.as_ref()
     }
     /// <p>The full ARN of the encryption key. </p> <note>
     /// <p>Be sure to provide the full ARN of the encryption key, not just the ID.</p>
     /// <p>Amazon Connect supports only KMS keys with the default key spec of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-symmetric-default"> <code>SYMMETRIC_DEFAULT</code> </a>. </p>
     /// </note>
-    pub fn key_id(&self) -> std::option::Option<&str> {
+    pub fn key_id(&self) -> ::std::option::Option<&str> {
         self.key_id.as_deref()
     }
 }
@@ -36,21 +36,23 @@ impl EncryptionConfig {
 
 /// A builder for [`EncryptionConfig`](crate::types::EncryptionConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EncryptionConfigBuilder {
-    pub(crate) encryption_type: std::option::Option<crate::types::EncryptionType>,
-    pub(crate) key_id: std::option::Option<std::string::String>,
+    pub(crate) encryption_type: ::std::option::Option<crate::types::EncryptionType>,
+    pub(crate) key_id: ::std::option::Option<::std::string::String>,
 }
 impl EncryptionConfigBuilder {
     /// <p>The type of encryption.</p>
     pub fn encryption_type(mut self, input: crate::types::EncryptionType) -> Self {
-        self.encryption_type = Some(input);
+        self.encryption_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of encryption.</p>
     pub fn set_encryption_type(
         mut self,
-        input: std::option::Option<crate::types::EncryptionType>,
+        input: ::std::option::Option<crate::types::EncryptionType>,
     ) -> Self {
         self.encryption_type = input;
         self
@@ -59,15 +61,15 @@ impl EncryptionConfigBuilder {
     /// <p>Be sure to provide the full ARN of the encryption key, not just the ID.</p>
     /// <p>Amazon Connect supports only KMS keys with the default key spec of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-symmetric-default"> <code>SYMMETRIC_DEFAULT</code> </a>. </p>
     /// </note>
-    pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.key_id = Some(input.into());
+    pub fn key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The full ARN of the encryption key. </p> <note>
     /// <p>Be sure to provide the full ARN of the encryption key, not just the ID.</p>
     /// <p>Amazon Connect supports only KMS keys with the default key spec of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-symmetric-default"> <code>SYMMETRIC_DEFAULT</code> </a>. </p>
     /// </note>
-    pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_id = input;
         self
     }

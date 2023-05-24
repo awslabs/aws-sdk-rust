@@ -2,18 +2,18 @@
 
 /// <p> Object containing the choice of application destination that you specify. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NoManagementPreference {
     /// <p> The choice of application destination that you specify. </p>
     #[doc(hidden)]
     pub target_destination:
-        std::option::Option<std::vec::Vec<crate::types::NoPreferenceTargetDestination>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::NoPreferenceTargetDestination>>,
 }
 impl NoManagementPreference {
     /// <p> The choice of application destination that you specify. </p>
     pub fn target_destination(
         &self,
-    ) -> std::option::Option<&[crate::types::NoPreferenceTargetDestination]> {
+    ) -> ::std::option::Option<&[crate::types::NoPreferenceTargetDestination]> {
         self.target_destination.as_deref()
     }
 }
@@ -26,10 +26,12 @@ impl NoManagementPreference {
 
 /// A builder for [`NoManagementPreference`](crate::types::NoManagementPreference).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NoManagementPreferenceBuilder {
     pub(crate) target_destination:
-        std::option::Option<std::vec::Vec<crate::types::NoPreferenceTargetDestination>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::NoPreferenceTargetDestination>>,
 }
 impl NoManagementPreferenceBuilder {
     /// Appends an item to `target_destination`.
@@ -43,13 +45,13 @@ impl NoManagementPreferenceBuilder {
     ) -> Self {
         let mut v = self.target_destination.unwrap_or_default();
         v.push(input);
-        self.target_destination = Some(v);
+        self.target_destination = ::std::option::Option::Some(v);
         self
     }
     /// <p> The choice of application destination that you specify. </p>
     pub fn set_target_destination(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::NoPreferenceTargetDestination>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::NoPreferenceTargetDestination>>,
     ) -> Self {
         self.target_destination = input;
         self

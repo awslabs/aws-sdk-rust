@@ -2,43 +2,45 @@
 
 /// <p> Describes the information about an entity recognizer and its versions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EntityRecognizerSummary {
     /// <p> The name that you assigned the entity recognizer.</p>
     #[doc(hidden)]
-    pub recognizer_name: std::option::Option<std::string::String>,
+    pub recognizer_name: ::std::option::Option<::std::string::String>,
     /// <p> The number of versions you created.</p>
     #[doc(hidden)]
-    pub number_of_versions: std::option::Option<i32>,
+    pub number_of_versions: ::std::option::Option<i32>,
     /// <p> The time that the latest entity recognizer version was submitted for processing.</p>
     #[doc(hidden)]
-    pub latest_version_created_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub latest_version_created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The version name you assigned to the latest entity recognizer version.</p>
     #[doc(hidden)]
-    pub latest_version_name: std::option::Option<std::string::String>,
+    pub latest_version_name: ::std::option::Option<::std::string::String>,
     /// <p> Provides the status of the latest entity recognizer version.</p>
     #[doc(hidden)]
-    pub latest_version_status: std::option::Option<crate::types::ModelStatus>,
+    pub latest_version_status: ::std::option::Option<crate::types::ModelStatus>,
 }
 impl EntityRecognizerSummary {
     /// <p> The name that you assigned the entity recognizer.</p>
-    pub fn recognizer_name(&self) -> std::option::Option<&str> {
+    pub fn recognizer_name(&self) -> ::std::option::Option<&str> {
         self.recognizer_name.as_deref()
     }
     /// <p> The number of versions you created.</p>
-    pub fn number_of_versions(&self) -> std::option::Option<i32> {
+    pub fn number_of_versions(&self) -> ::std::option::Option<i32> {
         self.number_of_versions
     }
     /// <p> The time that the latest entity recognizer version was submitted for processing.</p>
-    pub fn latest_version_created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn latest_version_created_at(
+        &self,
+    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.latest_version_created_at.as_ref()
     }
     /// <p> The version name you assigned to the latest entity recognizer version.</p>
-    pub fn latest_version_name(&self) -> std::option::Option<&str> {
+    pub fn latest_version_name(&self) -> ::std::option::Option<&str> {
         self.latest_version_name.as_deref()
     }
     /// <p> Provides the status of the latest entity recognizer version.</p>
-    pub fn latest_version_status(&self) -> std::option::Option<&crate::types::ModelStatus> {
+    pub fn latest_version_status(&self) -> ::std::option::Option<&crate::types::ModelStatus> {
         self.latest_version_status.as_ref()
     }
 }
@@ -51,70 +53,81 @@ impl EntityRecognizerSummary {
 
 /// A builder for [`EntityRecognizerSummary`](crate::types::EntityRecognizerSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EntityRecognizerSummaryBuilder {
-    pub(crate) recognizer_name: std::option::Option<std::string::String>,
-    pub(crate) number_of_versions: std::option::Option<i32>,
-    pub(crate) latest_version_created_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) latest_version_name: std::option::Option<std::string::String>,
-    pub(crate) latest_version_status: std::option::Option<crate::types::ModelStatus>,
+    pub(crate) recognizer_name: ::std::option::Option<::std::string::String>,
+    pub(crate) number_of_versions: ::std::option::Option<i32>,
+    pub(crate) latest_version_created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) latest_version_name: ::std::option::Option<::std::string::String>,
+    pub(crate) latest_version_status: ::std::option::Option<crate::types::ModelStatus>,
 }
 impl EntityRecognizerSummaryBuilder {
     /// <p> The name that you assigned the entity recognizer.</p>
-    pub fn recognizer_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.recognizer_name = Some(input.into());
+    pub fn recognizer_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.recognizer_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name that you assigned the entity recognizer.</p>
-    pub fn set_recognizer_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_recognizer_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.recognizer_name = input;
         self
     }
     /// <p> The number of versions you created.</p>
     pub fn number_of_versions(mut self, input: i32) -> Self {
-        self.number_of_versions = Some(input);
+        self.number_of_versions = ::std::option::Option::Some(input);
         self
     }
     /// <p> The number of versions you created.</p>
-    pub fn set_number_of_versions(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_number_of_versions(mut self, input: ::std::option::Option<i32>) -> Self {
         self.number_of_versions = input;
         self
     }
     /// <p> The time that the latest entity recognizer version was submitted for processing.</p>
-    pub fn latest_version_created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.latest_version_created_at = Some(input);
+    pub fn latest_version_created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.latest_version_created_at = ::std::option::Option::Some(input);
         self
     }
     /// <p> The time that the latest entity recognizer version was submitted for processing.</p>
     pub fn set_latest_version_created_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.latest_version_created_at = input;
         self
     }
     /// <p> The version name you assigned to the latest entity recognizer version.</p>
-    pub fn latest_version_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.latest_version_name = Some(input.into());
+    pub fn latest_version_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.latest_version_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The version name you assigned to the latest entity recognizer version.</p>
     pub fn set_latest_version_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.latest_version_name = input;
         self
     }
     /// <p> Provides the status of the latest entity recognizer version.</p>
     pub fn latest_version_status(mut self, input: crate::types::ModelStatus) -> Self {
-        self.latest_version_status = Some(input);
+        self.latest_version_status = ::std::option::Option::Some(input);
         self
     }
     /// <p> Provides the status of the latest entity recognizer version.</p>
     pub fn set_latest_version_status(
         mut self,
-        input: std::option::Option<crate::types::ModelStatus>,
+        input: ::std::option::Option<crate::types::ModelStatus>,
     ) -> Self {
         self.latest_version_status = input;
         self

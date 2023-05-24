@@ -2,20 +2,20 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateMissionProfileOutput {
     /// <p>UUID of a mission profile.</p>
     #[doc(hidden)]
-    pub mission_profile_id: std::option::Option<std::string::String>,
+    pub mission_profile_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateMissionProfileOutput {
     /// <p>UUID of a mission profile.</p>
-    pub fn mission_profile_id(&self) -> std::option::Option<&str> {
+    pub fn mission_profile_id(&self) -> ::std::option::Option<&str> {
         self.mission_profile_id.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for CreateMissionProfileOutput {
+impl ::aws_http::request_id::RequestId for CreateMissionProfileOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,21 +30,26 @@ impl CreateMissionProfileOutput {
 
 /// A builder for [`CreateMissionProfileOutput`](crate::operation::create_mission_profile::CreateMissionProfileOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateMissionProfileOutputBuilder {
-    pub(crate) mission_profile_id: std::option::Option<std::string::String>,
+    pub(crate) mission_profile_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateMissionProfileOutputBuilder {
     /// <p>UUID of a mission profile.</p>
-    pub fn mission_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.mission_profile_id = Some(input.into());
+    pub fn mission_profile_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.mission_profile_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>UUID of a mission profile.</p>
     pub fn set_mission_profile_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.mission_profile_id = input;
         self

@@ -40,13 +40,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum AuditFrequency {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,7 +60,7 @@ pub enum AuditFrequency {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for AuditFrequency {
+impl ::std::convert::From<&str> for AuditFrequency {
     fn from(s: &str) -> Self {
         match s {
             "BIWEEKLY" => AuditFrequency::Biweekly,
@@ -73,11 +73,11 @@ impl std::convert::From<&str> for AuditFrequency {
         }
     }
 }
-impl std::str::FromStr for AuditFrequency {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for AuditFrequency {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AuditFrequency::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(AuditFrequency::from(s))
     }
 }
 impl AuditFrequency {
@@ -96,7 +96,7 @@ impl AuditFrequency {
         &["BIWEEKLY", "DAILY", "MONTHLY", "WEEKLY"]
     }
 }
-impl AsRef<str> for AuditFrequency {
+impl ::std::convert::AsRef<str> for AuditFrequency {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

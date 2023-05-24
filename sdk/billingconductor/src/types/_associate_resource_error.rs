@@ -2,22 +2,22 @@
 
 /// <p> A representation of a resource association error. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateResourceError {
     /// <p> The reason why the resource association failed. </p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
     /// <p> A static error code that's used to classify the type of failure. </p>
     #[doc(hidden)]
-    pub reason: std::option::Option<crate::types::AssociateResourceErrorReason>,
+    pub reason: ::std::option::Option<crate::types::AssociateResourceErrorReason>,
 }
 impl AssociateResourceError {
     /// <p> The reason why the resource association failed. </p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
     /// <p> A static error code that's used to classify the type of failure. </p>
-    pub fn reason(&self) -> std::option::Option<&crate::types::AssociateResourceErrorReason> {
+    pub fn reason(&self) -> ::std::option::Option<&crate::types::AssociateResourceErrorReason> {
         self.reason.as_ref()
     }
 }
@@ -30,31 +30,33 @@ impl AssociateResourceError {
 
 /// A builder for [`AssociateResourceError`](crate::types::AssociateResourceError).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AssociateResourceErrorBuilder {
-    pub(crate) message: std::option::Option<std::string::String>,
-    pub(crate) reason: std::option::Option<crate::types::AssociateResourceErrorReason>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
+    pub(crate) reason: ::std::option::Option<crate::types::AssociateResourceErrorReason>,
 }
 impl AssociateResourceErrorBuilder {
     /// <p> The reason why the resource association failed. </p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The reason why the resource association failed. </p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
     /// <p> A static error code that's used to classify the type of failure. </p>
     pub fn reason(mut self, input: crate::types::AssociateResourceErrorReason) -> Self {
-        self.reason = Some(input);
+        self.reason = ::std::option::Option::Some(input);
         self
     }
     /// <p> A static error code that's used to classify the type of failure. </p>
     pub fn set_reason(
         mut self,
-        input: std::option::Option<crate::types::AssociateResourceErrorReason>,
+        input: ::std::option::Option<crate::types::AssociateResourceErrorReason>,
     ) -> Self {
         self.reason = input;
         self

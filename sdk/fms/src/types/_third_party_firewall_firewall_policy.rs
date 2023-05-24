@@ -2,22 +2,22 @@
 
 /// <p>Configures the third-party firewall's firewall policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ThirdPartyFirewallFirewallPolicy {
     /// <p>The ID of the specified firewall policy.</p>
     #[doc(hidden)]
-    pub firewall_policy_id: std::option::Option<std::string::String>,
+    pub firewall_policy_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the specified firewall policy.</p>
     #[doc(hidden)]
-    pub firewall_policy_name: std::option::Option<std::string::String>,
+    pub firewall_policy_name: ::std::option::Option<::std::string::String>,
 }
 impl ThirdPartyFirewallFirewallPolicy {
     /// <p>The ID of the specified firewall policy.</p>
-    pub fn firewall_policy_id(&self) -> std::option::Option<&str> {
+    pub fn firewall_policy_id(&self) -> ::std::option::Option<&str> {
         self.firewall_policy_id.as_deref()
     }
     /// <p>The name of the specified firewall policy.</p>
-    pub fn firewall_policy_name(&self) -> std::option::Option<&str> {
+    pub fn firewall_policy_name(&self) -> ::std::option::Option<&str> {
         self.firewall_policy_name.as_deref()
     }
 }
@@ -30,34 +30,42 @@ impl ThirdPartyFirewallFirewallPolicy {
 
 /// A builder for [`ThirdPartyFirewallFirewallPolicy`](crate::types::ThirdPartyFirewallFirewallPolicy).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ThirdPartyFirewallFirewallPolicyBuilder {
-    pub(crate) firewall_policy_id: std::option::Option<std::string::String>,
-    pub(crate) firewall_policy_name: std::option::Option<std::string::String>,
+    pub(crate) firewall_policy_id: ::std::option::Option<::std::string::String>,
+    pub(crate) firewall_policy_name: ::std::option::Option<::std::string::String>,
 }
 impl ThirdPartyFirewallFirewallPolicyBuilder {
     /// <p>The ID of the specified firewall policy.</p>
-    pub fn firewall_policy_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.firewall_policy_id = Some(input.into());
+    pub fn firewall_policy_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.firewall_policy_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the specified firewall policy.</p>
     pub fn set_firewall_policy_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.firewall_policy_id = input;
         self
     }
     /// <p>The name of the specified firewall policy.</p>
-    pub fn firewall_policy_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.firewall_policy_name = Some(input.into());
+    pub fn firewall_policy_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.firewall_policy_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the specified firewall policy.</p>
     pub fn set_firewall_policy_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.firewall_policy_name = input;
         self

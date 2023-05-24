@@ -2,20 +2,20 @@
 
 /// <p>The returned result of the corresponding request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTagsForResourceOutput {
     /// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<crate::types::Tags>,
+    pub tags: ::std::option::Option<crate::types::Tags>,
     _request_id: Option<String>,
 }
 impl ListTagsForResourceOutput {
     /// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
-    pub fn tags(&self) -> std::option::Option<&crate::types::Tags> {
+    pub fn tags(&self) -> ::std::option::Option<&crate::types::Tags> {
         self.tags.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
+impl ::aws_http::request_id::RequestId for ListTagsForResourceOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,19 +30,21 @@ impl ListTagsForResourceOutput {
 
 /// A builder for [`ListTagsForResourceOutput`](crate::operation::list_tags_for_resource::ListTagsForResourceOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListTagsForResourceOutputBuilder {
-    pub(crate) tags: std::option::Option<crate::types::Tags>,
+    pub(crate) tags: ::std::option::Option<crate::types::Tags>,
     _request_id: Option<String>,
 }
 impl ListTagsForResourceOutputBuilder {
     /// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
     pub fn tags(mut self, input: crate::types::Tags) -> Self {
-        self.tags = Some(input);
+        self.tags = ::std::option::Option::Some(input);
         self
     }
     /// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
-    pub fn set_tags(mut self, input: std::option::Option<crate::types::Tags>) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<crate::types::Tags>) -> Self {
         self.tags = input;
         self
     }

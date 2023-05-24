@@ -2,20 +2,20 @@
 
 /// <p>The output from the GetRegistrationCode operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRegistrationCodeOutput {
     /// <p>The CA certificate registration code.</p>
     #[doc(hidden)]
-    pub registration_code: std::option::Option<std::string::String>,
+    pub registration_code: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetRegistrationCodeOutput {
     /// <p>The CA certificate registration code.</p>
-    pub fn registration_code(&self) -> std::option::Option<&str> {
+    pub fn registration_code(&self) -> ::std::option::Option<&str> {
         self.registration_code.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for GetRegistrationCodeOutput {
+impl ::aws_http::request_id::RequestId for GetRegistrationCodeOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -31,21 +31,26 @@ impl GetRegistrationCodeOutput {
 
 /// A builder for [`GetRegistrationCodeOutput`](crate::operation::get_registration_code::GetRegistrationCodeOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetRegistrationCodeOutputBuilder {
-    pub(crate) registration_code: std::option::Option<std::string::String>,
+    pub(crate) registration_code: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetRegistrationCodeOutputBuilder {
     /// <p>The CA certificate registration code.</p>
-    pub fn registration_code(mut self, input: impl Into<std::string::String>) -> Self {
-        self.registration_code = Some(input.into());
+    pub fn registration_code(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.registration_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The CA certificate registration code.</p>
     pub fn set_registration_code(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.registration_code = input;
         self

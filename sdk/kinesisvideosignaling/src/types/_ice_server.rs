@@ -2,32 +2,32 @@
 
 /// <p>A structure for the ICE server connection data.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IceServer {
     /// <p>An array of URIs, in the form specified in the <a href="https://tools.ietf.org/html/draft-petithuguenin-behave-turn-uris-03">I-D.petithuguenin-behave-turn-uris</a> spec. These URIs provide the different addresses and/or protocols that can be used to reach the TURN server.</p>
     #[doc(hidden)]
-    pub uris: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub uris: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A username to login to the ICE server.</p>
     #[doc(hidden)]
-    pub username: std::option::Option<std::string::String>,
+    pub username: ::std::option::Option<::std::string::String>,
     /// <p>A password to login to the ICE server.</p>
     #[doc(hidden)]
-    pub password: std::option::Option<std::string::String>,
+    pub password: ::std::option::Option<::std::string::String>,
     /// <p>The period of time, in seconds, during which the username and password are valid.</p>
     #[doc(hidden)]
     pub ttl: i32,
 }
 impl IceServer {
     /// <p>An array of URIs, in the form specified in the <a href="https://tools.ietf.org/html/draft-petithuguenin-behave-turn-uris-03">I-D.petithuguenin-behave-turn-uris</a> spec. These URIs provide the different addresses and/or protocols that can be used to reach the TURN server.</p>
-    pub fn uris(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn uris(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.uris.as_deref()
     }
     /// <p>A username to login to the ICE server.</p>
-    pub fn username(&self) -> std::option::Option<&str> {
+    pub fn username(&self) -> ::std::option::Option<&str> {
         self.username.as_deref()
     }
     /// <p>A password to login to the ICE server.</p>
-    pub fn password(&self) -> std::option::Option<&str> {
+    pub fn password(&self) -> ::std::option::Option<&str> {
         self.password.as_deref()
     }
     /// <p>The period of time, in seconds, during which the username and password are valid.</p>
@@ -44,12 +44,14 @@ impl IceServer {
 
 /// A builder for [`IceServer`](crate::types::IceServer).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct IceServerBuilder {
-    pub(crate) uris: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) username: std::option::Option<std::string::String>,
-    pub(crate) password: std::option::Option<std::string::String>,
-    pub(crate) ttl: std::option::Option<i32>,
+    pub(crate) uris: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) username: ::std::option::Option<::std::string::String>,
+    pub(crate) password: ::std::option::Option<::std::string::String>,
+    pub(crate) ttl: ::std::option::Option<i32>,
 }
 impl IceServerBuilder {
     /// Appends an item to `uris`.
@@ -57,47 +59,47 @@ impl IceServerBuilder {
     /// To override the contents of this collection use [`set_uris`](Self::set_uris).
     ///
     /// <p>An array of URIs, in the form specified in the <a href="https://tools.ietf.org/html/draft-petithuguenin-behave-turn-uris-03">I-D.petithuguenin-behave-turn-uris</a> spec. These URIs provide the different addresses and/or protocols that can be used to reach the TURN server.</p>
-    pub fn uris(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn uris(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.uris.unwrap_or_default();
         v.push(input.into());
-        self.uris = Some(v);
+        self.uris = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of URIs, in the form specified in the <a href="https://tools.ietf.org/html/draft-petithuguenin-behave-turn-uris-03">I-D.petithuguenin-behave-turn-uris</a> spec. These URIs provide the different addresses and/or protocols that can be used to reach the TURN server.</p>
     pub fn set_uris(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.uris = input;
         self
     }
     /// <p>A username to login to the ICE server.</p>
-    pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
-        self.username = Some(input.into());
+    pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.username = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A username to login to the ICE server.</p>
-    pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.username = input;
         self
     }
     /// <p>A password to login to the ICE server.</p>
-    pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
-        self.password = Some(input.into());
+    pub fn password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.password = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A password to login to the ICE server.</p>
-    pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.password = input;
         self
     }
     /// <p>The period of time, in seconds, during which the username and password are valid.</p>
     pub fn ttl(mut self, input: i32) -> Self {
-        self.ttl = Some(input);
+        self.ttl = ::std::option::Option::Some(input);
         self
     }
     /// <p>The period of time, in seconds, during which the username and password are valid.</p>
-    pub fn set_ttl(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_ttl(mut self, input: ::std::option::Option<i32>) -> Self {
         self.ttl = input;
         self
     }

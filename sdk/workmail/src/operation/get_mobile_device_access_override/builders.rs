@@ -6,29 +6,29 @@ pub use crate::operation::get_mobile_device_access_override::_get_mobile_device_
 /// Fluent builder constructing a request to `GetMobileDeviceAccessOverride`.
 ///
 /// <p>Gets the mobile device access override for the given WorkMail organization, user, and device.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetMobileDeviceAccessOverrideFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::get_mobile_device_access_override::builders::GetMobileDeviceAccessOverrideInputBuilder,
 }
 impl GetMobileDeviceAccessOverrideFluentBuilder {
     /// Creates a new `GetMobileDeviceAccessOverride`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::get_mobile_device_access_override::GetMobileDeviceAccessOverride,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::get_mobile_device_access_override::GetMobileDeviceAccessOverrideError,
         >,
     > {
@@ -36,30 +36,33 @@ impl GetMobileDeviceAccessOverrideFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_mobile_device_access_override::GetMobileDeviceAccessOverrideOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::get_mobile_device_access_override::GetMobileDeviceAccessOverrideError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,21 +75,27 @@ impl GetMobileDeviceAccessOverrideFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_mobile_device_access_override::GetMobileDeviceAccessOverrideOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::get_mobile_device_access_override::GetMobileDeviceAccessOverrideError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The WorkMail organization to which you want to apply the override.</p>
-    pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn organization_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.organization_id(input.into());
         self
     }
     /// <p>The WorkMail organization to which you want to apply the override.</p>
-    pub fn set_organization_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_organization_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_organization_id(input);
         self
     }
@@ -96,7 +105,7 @@ impl GetMobileDeviceAccessOverrideFluentBuilder {
     /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
     /// <li> <p>User name: <code>user</code> </p> </li>
     /// </ul>
-    pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_id(input.into());
         self
     }
@@ -106,17 +115,17 @@ impl GetMobileDeviceAccessOverrideFluentBuilder {
     /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
     /// <li> <p>User name: <code>user</code> </p> </li>
     /// </ul>
-    pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_id(input);
         self
     }
     /// <p>The mobile device to which the override applies. <code>DeviceId</code> is case insensitive.</p>
-    pub fn device_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.device_id(input.into());
         self
     }
     /// <p>The mobile device to which the override applies. <code>DeviceId</code> is case insensitive.</p>
-    pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_device_id(input);
         self
     }

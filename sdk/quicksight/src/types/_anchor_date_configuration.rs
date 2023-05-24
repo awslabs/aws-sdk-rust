@@ -2,28 +2,28 @@
 
 /// <p>The date configuration of the filter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnchorDateConfiguration {
     /// <p>The options for the date configuration. Choose one of the options below:</p>
     /// <ul>
     /// <li> <p> <code>NOW</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub anchor_option: std::option::Option<crate::types::AnchorOption>,
+    pub anchor_option: ::std::option::Option<crate::types::AnchorOption>,
     /// <p>The name of the parameter that is used for the anchor date configuration.</p>
     #[doc(hidden)]
-    pub parameter_name: std::option::Option<std::string::String>,
+    pub parameter_name: ::std::option::Option<::std::string::String>,
 }
 impl AnchorDateConfiguration {
     /// <p>The options for the date configuration. Choose one of the options below:</p>
     /// <ul>
     /// <li> <p> <code>NOW</code> </p> </li>
     /// </ul>
-    pub fn anchor_option(&self) -> std::option::Option<&crate::types::AnchorOption> {
+    pub fn anchor_option(&self) -> ::std::option::Option<&crate::types::AnchorOption> {
         self.anchor_option.as_ref()
     }
     /// <p>The name of the parameter that is used for the anchor date configuration.</p>
-    pub fn parameter_name(&self) -> std::option::Option<&str> {
+    pub fn parameter_name(&self) -> ::std::option::Option<&str> {
         self.parameter_name.as_deref()
     }
 }
@@ -36,10 +36,12 @@ impl AnchorDateConfiguration {
 
 /// A builder for [`AnchorDateConfiguration`](crate::types::AnchorDateConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AnchorDateConfigurationBuilder {
-    pub(crate) anchor_option: std::option::Option<crate::types::AnchorOption>,
-    pub(crate) parameter_name: std::option::Option<std::string::String>,
+    pub(crate) anchor_option: ::std::option::Option<crate::types::AnchorOption>,
+    pub(crate) parameter_name: ::std::option::Option<::std::string::String>,
 }
 impl AnchorDateConfigurationBuilder {
     /// <p>The options for the date configuration. Choose one of the options below:</p>
@@ -47,7 +49,7 @@ impl AnchorDateConfigurationBuilder {
     /// <li> <p> <code>NOW</code> </p> </li>
     /// </ul>
     pub fn anchor_option(mut self, input: crate::types::AnchorOption) -> Self {
-        self.anchor_option = Some(input);
+        self.anchor_option = ::std::option::Option::Some(input);
         self
     }
     /// <p>The options for the date configuration. Choose one of the options below:</p>
@@ -56,18 +58,24 @@ impl AnchorDateConfigurationBuilder {
     /// </ul>
     pub fn set_anchor_option(
         mut self,
-        input: std::option::Option<crate::types::AnchorOption>,
+        input: ::std::option::Option<crate::types::AnchorOption>,
     ) -> Self {
         self.anchor_option = input;
         self
     }
     /// <p>The name of the parameter that is used for the anchor date configuration.</p>
-    pub fn parameter_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.parameter_name = Some(input.into());
+    pub fn parameter_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.parameter_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the parameter that is used for the anchor date configuration.</p>
-    pub fn set_parameter_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_parameter_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.parameter_name = input;
         self
     }

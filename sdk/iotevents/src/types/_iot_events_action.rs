@@ -2,22 +2,22 @@
 
 /// <p>Sends an AWS IoT Events input, passing in information about the detector model instance and the event that triggered the action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IotEventsAction {
     /// <p>The name of the AWS IoT Events input where the data is sent.</p>
     #[doc(hidden)]
-    pub input_name: std::option::Option<std::string::String>,
+    pub input_name: ::std::option::Option<::std::string::String>,
     /// <p>You can configure the action payload when you send a message to an AWS IoT Events input.</p>
     #[doc(hidden)]
-    pub payload: std::option::Option<crate::types::Payload>,
+    pub payload: ::std::option::Option<crate::types::Payload>,
 }
 impl IotEventsAction {
     /// <p>The name of the AWS IoT Events input where the data is sent.</p>
-    pub fn input_name(&self) -> std::option::Option<&str> {
+    pub fn input_name(&self) -> ::std::option::Option<&str> {
         self.input_name.as_deref()
     }
     /// <p>You can configure the action payload when you send a message to an AWS IoT Events input.</p>
-    pub fn payload(&self) -> std::option::Option<&crate::types::Payload> {
+    pub fn payload(&self) -> ::std::option::Option<&crate::types::Payload> {
         self.payload.as_ref()
     }
 }
@@ -30,29 +30,31 @@ impl IotEventsAction {
 
 /// A builder for [`IotEventsAction`](crate::types::IotEventsAction).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct IotEventsActionBuilder {
-    pub(crate) input_name: std::option::Option<std::string::String>,
-    pub(crate) payload: std::option::Option<crate::types::Payload>,
+    pub(crate) input_name: ::std::option::Option<::std::string::String>,
+    pub(crate) payload: ::std::option::Option<crate::types::Payload>,
 }
 impl IotEventsActionBuilder {
     /// <p>The name of the AWS IoT Events input where the data is sent.</p>
-    pub fn input_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.input_name = Some(input.into());
+    pub fn input_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.input_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the AWS IoT Events input where the data is sent.</p>
-    pub fn set_input_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_input_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.input_name = input;
         self
     }
     /// <p>You can configure the action payload when you send a message to an AWS IoT Events input.</p>
     pub fn payload(mut self, input: crate::types::Payload) -> Self {
-        self.payload = Some(input);
+        self.payload = ::std::option::Option::Some(input);
         self
     }
     /// <p>You can configure the action payload when you send a message to an AWS IoT Events input.</p>
-    pub fn set_payload(mut self, input: std::option::Option<crate::types::Payload>) -> Self {
+    pub fn set_payload(mut self, input: ::std::option::Option<crate::types::Payload>) -> Self {
         self.payload = input;
         self
     }

@@ -2,27 +2,27 @@
 
 /// <p>The identifier issued to this resource by an external identity provider.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ExternalId {
     /// <p>The issuer for an external identifier.</p>
     #[doc(hidden)]
-    pub issuer: std::option::Option<std::string::String>,
+    pub issuer: ::std::option::Option<::std::string::String>,
     /// <p>The identifier issued to this resource by an external identity provider.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
 }
 impl ExternalId {
     /// <p>The issuer for an external identifier.</p>
-    pub fn issuer(&self) -> std::option::Option<&str> {
+    pub fn issuer(&self) -> ::std::option::Option<&str> {
         self.issuer.as_deref()
     }
     /// <p>The identifier issued to this resource by an external identity provider.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
 }
-impl std::fmt::Debug for ExternalId {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for ExternalId {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ExternalId");
         formatter.field("issuer", &"*** Sensitive Data Redacted ***");
         formatter.field("id", &"*** Sensitive Data Redacted ***");
@@ -38,29 +38,29 @@ impl ExternalId {
 
 /// A builder for [`ExternalId`](crate::types::ExternalId).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct ExternalIdBuilder {
-    pub(crate) issuer: std::option::Option<std::string::String>,
-    pub(crate) id: std::option::Option<std::string::String>,
+    pub(crate) issuer: ::std::option::Option<::std::string::String>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
 }
 impl ExternalIdBuilder {
     /// <p>The issuer for an external identifier.</p>
-    pub fn issuer(mut self, input: impl Into<std::string::String>) -> Self {
-        self.issuer = Some(input.into());
+    pub fn issuer(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.issuer = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The issuer for an external identifier.</p>
-    pub fn set_issuer(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_issuer(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.issuer = input;
         self
     }
     /// <p>The identifier issued to this resource by an external identity provider.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier issued to this resource by an external identity provider.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
@@ -72,8 +72,8 @@ impl ExternalIdBuilder {
         }
     }
 }
-impl std::fmt::Debug for ExternalIdBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for ExternalIdBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ExternalIdBuilder");
         formatter.field("issuer", &"*** Sensitive Data Redacted ***");
         formatter.field("id", &"*** Sensitive Data Redacted ***");

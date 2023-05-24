@@ -6,29 +6,29 @@ pub use crate::operation::change_server_life_cycle_state::_change_server_life_cy
 /// Fluent builder constructing a request to `ChangeServerLifeCycleState`.
 ///
 /// <p>Allows the user to set the SourceServer.LifeCycle.state property for specific Source Server IDs to one of the following: READY_FOR_TEST or READY_FOR_CUTOVER. This command only works if the Source Server is already launchable (dataReplicationInfo.lagDuration is not null.)</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ChangeServerLifeCycleStateFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::change_server_life_cycle_state::builders::ChangeServerLifeCycleStateInputBuilder,
 }
 impl ChangeServerLifeCycleStateFluentBuilder {
     /// Creates a new `ChangeServerLifeCycleState`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::change_server_life_cycle_state::ChangeServerLifeCycleState,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::change_server_life_cycle_state::ChangeServerLifeCycleStateError,
         >,
     > {
@@ -36,30 +36,33 @@ impl ChangeServerLifeCycleStateFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::change_server_life_cycle_state::ChangeServerLifeCycleStateOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::change_server_life_cycle_state::ChangeServerLifeCycleStateError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,21 +75,27 @@ impl ChangeServerLifeCycleStateFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::change_server_life_cycle_state::ChangeServerLifeCycleStateOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::change_server_life_cycle_state::ChangeServerLifeCycleStateError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The request to change the source server migration lifecycle state by source server ID.</p>
-    pub fn source_server_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn source_server_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.source_server_id(input.into());
         self
     }
     /// <p>The request to change the source server migration lifecycle state by source server ID.</p>
-    pub fn set_source_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_source_server_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_source_server_id(input);
         self
     }
@@ -101,7 +110,7 @@ impl ChangeServerLifeCycleStateFluentBuilder {
     /// <p>The request to change the source server migration lifecycle state.</p>
     pub fn set_life_cycle(
         mut self,
-        input: std::option::Option<crate::types::ChangeServerLifeCycleStateSourceServerLifecycle>,
+        input: ::std::option::Option<crate::types::ChangeServerLifeCycleStateSourceServerLifecycle>,
     ) -> Self {
         self.inner = self.inner.set_life_cycle(input);
         self

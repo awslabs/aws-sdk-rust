@@ -5,7 +5,7 @@
 /// <p>To learn more about Call Analytics rules and categories, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-batch.html">Creating categories for post-call transcriptions</a> and <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-stream.html">Creating categories for real-time transcriptions</a>.</p>
 /// <p>To learn more about Call Analytics, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics.html">Analyzing call center audio with Call Analytics</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum Rule {
     /// <p>Flag the presence or absence of interruptions in your Call Analytics transcription output. Refer to for more detail.</p>
     InterruptionFilter(crate::types::InterruptionFilter),
@@ -30,11 +30,11 @@ impl Rule {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_interruption_filter(
         &self,
-    ) -> std::result::Result<&crate::types::InterruptionFilter, &Self> {
+    ) -> ::std::result::Result<&crate::types::InterruptionFilter, &Self> {
         if let Rule::InterruptionFilter(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`InterruptionFilter`](crate::types::Rule::InterruptionFilter).
@@ -45,11 +45,11 @@ impl Rule {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_non_talk_time_filter(
         &self,
-    ) -> std::result::Result<&crate::types::NonTalkTimeFilter, &Self> {
+    ) -> ::std::result::Result<&crate::types::NonTalkTimeFilter, &Self> {
         if let Rule::NonTalkTimeFilter(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`NonTalkTimeFilter`](crate::types::Rule::NonTalkTimeFilter).
@@ -60,11 +60,11 @@ impl Rule {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_sentiment_filter(
         &self,
-    ) -> std::result::Result<&crate::types::SentimentFilter, &Self> {
+    ) -> ::std::result::Result<&crate::types::SentimentFilter, &Self> {
         if let Rule::SentimentFilter(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`SentimentFilter`](crate::types::Rule::SentimentFilter).
@@ -75,11 +75,11 @@ impl Rule {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_transcript_filter(
         &self,
-    ) -> std::result::Result<&crate::types::TranscriptFilter, &Self> {
+    ) -> ::std::result::Result<&crate::types::TranscriptFilter, &Self> {
         if let Rule::TranscriptFilter(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`TranscriptFilter`](crate::types::Rule::TranscriptFilter).

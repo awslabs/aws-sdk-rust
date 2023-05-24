@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetRevision`](crate::operation::get_revision::builders::GetRevisionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`data_set_id(impl Into<String>)`](crate::operation::get_revision::builders::GetRevisionFluentBuilder::data_set_id) / [`set_data_set_id(Option<String>)`](crate::operation::get_revision::builders::GetRevisionFluentBuilder::set_data_set_id): <p>The unique identifier for a data set.</p>
-    ///   - [`revision_id(impl Into<String>)`](crate::operation::get_revision::builders::GetRevisionFluentBuilder::revision_id) / [`set_revision_id(Option<String>)`](crate::operation::get_revision::builders::GetRevisionFluentBuilder::set_revision_id): <p>The unique identifier for a revision.</p>
+    ///   - [`data_set_id(impl ::std::convert::Into<String>)`](crate::operation::get_revision::builders::GetRevisionFluentBuilder::data_set_id) / [`set_data_set_id(Option<String>)`](crate::operation::get_revision::builders::GetRevisionFluentBuilder::set_data_set_id): <p>The unique identifier for a data set.</p>
+    ///   - [`revision_id(impl ::std::convert::Into<String>)`](crate::operation::get_revision::builders::GetRevisionFluentBuilder::revision_id) / [`set_revision_id(Option<String>)`](crate::operation::get_revision::builders::GetRevisionFluentBuilder::set_revision_id): <p>The unique identifier for a revision.</p>
     /// - On success, responds with [`GetRevisionOutput`](crate::operation::get_revision::GetRevisionOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::get_revision::GetRevisionOutput::arn): <p>The ARN for the revision.</p>
     ///   - [`comment(Option<String>)`](crate::operation::get_revision::GetRevisionOutput::comment): <p>An optional comment about the revision.</p>

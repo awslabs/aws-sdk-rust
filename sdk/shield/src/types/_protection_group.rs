@@ -2,11 +2,11 @@
 
 /// <p>A grouping of protected resources that you and Shield Advanced can monitor as a collective. This resource grouping improves the accuracy of detection and reduces false positives. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProtectionGroup {
     /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it. </p>
     #[doc(hidden)]
-    pub protection_group_id: std::option::Option<std::string::String>,
+    pub protection_group_id: ::std::option::Option<::std::string::String>,
     /// <p>Defines how Shield combines resource data for the group in order to detect, mitigate, and report events.</p>
     /// <ul>
     /// <li> <p>Sum - Use the total traffic across the group. This is a good choice for most cases. Examples include Elastic IP addresses for EC2 instances that scale manually or automatically.</p> </li>
@@ -14,23 +14,23 @@ pub struct ProtectionGroup {
     /// <li> <p>Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic and for resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront distributions and origin resources for CloudFront distributions.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub aggregation: std::option::Option<crate::types::ProtectionGroupAggregation>,
+    pub aggregation: ::std::option::Option<crate::types::ProtectionGroupAggregation>,
     /// <p>The criteria to use to choose the protected resources for inclusion in the group. You can include all resources that have protections, provide a list of resource ARNs (Amazon Resource Names), or include all resources of a specified resource type.</p>
     #[doc(hidden)]
-    pub pattern: std::option::Option<crate::types::ProtectionGroupPattern>,
+    pub pattern: ::std::option::Option<crate::types::ProtectionGroupPattern>,
     /// <p>The resource type to include in the protection group. All protected resources of this type are included in the protection group. You must set this when you set <code>Pattern</code> to <code>BY_RESOURCE_TYPE</code> and you must not set it for any other <code>Pattern</code> setting. </p>
     #[doc(hidden)]
-    pub resource_type: std::option::Option<crate::types::ProtectedResourceType>,
+    pub resource_type: ::std::option::Option<crate::types::ProtectedResourceType>,
     /// <p>The ARNs (Amazon Resource Names) of the resources to include in the protection group. You must set this when you set <code>Pattern</code> to <code>ARBITRARY</code> and you must not set it for any other <code>Pattern</code> setting. </p>
     #[doc(hidden)]
-    pub members: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub members: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ARN (Amazon Resource Name) of the protection group.</p>
     #[doc(hidden)]
-    pub protection_group_arn: std::option::Option<std::string::String>,
+    pub protection_group_arn: ::std::option::Option<::std::string::String>,
 }
 impl ProtectionGroup {
     /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it. </p>
-    pub fn protection_group_id(&self) -> std::option::Option<&str> {
+    pub fn protection_group_id(&self) -> ::std::option::Option<&str> {
         self.protection_group_id.as_deref()
     }
     /// <p>Defines how Shield combines resource data for the group in order to detect, mitigate, and report events.</p>
@@ -39,23 +39,23 @@ impl ProtectionGroup {
     /// <li> <p>Mean - Use the average of the traffic across the group. This is a good choice for resources that share traffic uniformly. Examples include accelerators and load balancers.</p> </li>
     /// <li> <p>Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic and for resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront distributions and origin resources for CloudFront distributions.</p> </li>
     /// </ul>
-    pub fn aggregation(&self) -> std::option::Option<&crate::types::ProtectionGroupAggregation> {
+    pub fn aggregation(&self) -> ::std::option::Option<&crate::types::ProtectionGroupAggregation> {
         self.aggregation.as_ref()
     }
     /// <p>The criteria to use to choose the protected resources for inclusion in the group. You can include all resources that have protections, provide a list of resource ARNs (Amazon Resource Names), or include all resources of a specified resource type.</p>
-    pub fn pattern(&self) -> std::option::Option<&crate::types::ProtectionGroupPattern> {
+    pub fn pattern(&self) -> ::std::option::Option<&crate::types::ProtectionGroupPattern> {
         self.pattern.as_ref()
     }
     /// <p>The resource type to include in the protection group. All protected resources of this type are included in the protection group. You must set this when you set <code>Pattern</code> to <code>BY_RESOURCE_TYPE</code> and you must not set it for any other <code>Pattern</code> setting. </p>
-    pub fn resource_type(&self) -> std::option::Option<&crate::types::ProtectedResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ProtectedResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The ARNs (Amazon Resource Names) of the resources to include in the protection group. You must set this when you set <code>Pattern</code> to <code>ARBITRARY</code> and you must not set it for any other <code>Pattern</code> setting. </p>
-    pub fn members(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn members(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.members.as_deref()
     }
     /// <p>The ARN (Amazon Resource Name) of the protection group.</p>
-    pub fn protection_group_arn(&self) -> std::option::Option<&str> {
+    pub fn protection_group_arn(&self) -> ::std::option::Option<&str> {
         self.protection_group_arn.as_deref()
     }
 }
@@ -68,25 +68,30 @@ impl ProtectionGroup {
 
 /// A builder for [`ProtectionGroup`](crate::types::ProtectionGroup).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ProtectionGroupBuilder {
-    pub(crate) protection_group_id: std::option::Option<std::string::String>,
-    pub(crate) aggregation: std::option::Option<crate::types::ProtectionGroupAggregation>,
-    pub(crate) pattern: std::option::Option<crate::types::ProtectionGroupPattern>,
-    pub(crate) resource_type: std::option::Option<crate::types::ProtectedResourceType>,
-    pub(crate) members: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) protection_group_arn: std::option::Option<std::string::String>,
+    pub(crate) protection_group_id: ::std::option::Option<::std::string::String>,
+    pub(crate) aggregation: ::std::option::Option<crate::types::ProtectionGroupAggregation>,
+    pub(crate) pattern: ::std::option::Option<crate::types::ProtectionGroupPattern>,
+    pub(crate) resource_type: ::std::option::Option<crate::types::ProtectedResourceType>,
+    pub(crate) members: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) protection_group_arn: ::std::option::Option<::std::string::String>,
 }
 impl ProtectionGroupBuilder {
     /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it. </p>
-    pub fn protection_group_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.protection_group_id = Some(input.into());
+    pub fn protection_group_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.protection_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it. </p>
     pub fn set_protection_group_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.protection_group_id = input;
         self
@@ -98,7 +103,7 @@ impl ProtectionGroupBuilder {
     /// <li> <p>Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic and for resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront distributions and origin resources for CloudFront distributions.</p> </li>
     /// </ul>
     pub fn aggregation(mut self, input: crate::types::ProtectionGroupAggregation) -> Self {
-        self.aggregation = Some(input);
+        self.aggregation = ::std::option::Option::Some(input);
         self
     }
     /// <p>Defines how Shield combines resource data for the group in order to detect, mitigate, and report events.</p>
@@ -109,33 +114,33 @@ impl ProtectionGroupBuilder {
     /// </ul>
     pub fn set_aggregation(
         mut self,
-        input: std::option::Option<crate::types::ProtectionGroupAggregation>,
+        input: ::std::option::Option<crate::types::ProtectionGroupAggregation>,
     ) -> Self {
         self.aggregation = input;
         self
     }
     /// <p>The criteria to use to choose the protected resources for inclusion in the group. You can include all resources that have protections, provide a list of resource ARNs (Amazon Resource Names), or include all resources of a specified resource type.</p>
     pub fn pattern(mut self, input: crate::types::ProtectionGroupPattern) -> Self {
-        self.pattern = Some(input);
+        self.pattern = ::std::option::Option::Some(input);
         self
     }
     /// <p>The criteria to use to choose the protected resources for inclusion in the group. You can include all resources that have protections, provide a list of resource ARNs (Amazon Resource Names), or include all resources of a specified resource type.</p>
     pub fn set_pattern(
         mut self,
-        input: std::option::Option<crate::types::ProtectionGroupPattern>,
+        input: ::std::option::Option<crate::types::ProtectionGroupPattern>,
     ) -> Self {
         self.pattern = input;
         self
     }
     /// <p>The resource type to include in the protection group. All protected resources of this type are included in the protection group. You must set this when you set <code>Pattern</code> to <code>BY_RESOURCE_TYPE</code> and you must not set it for any other <code>Pattern</code> setting. </p>
     pub fn resource_type(mut self, input: crate::types::ProtectedResourceType) -> Self {
-        self.resource_type = Some(input);
+        self.resource_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The resource type to include in the protection group. All protected resources of this type are included in the protection group. You must set this when you set <code>Pattern</code> to <code>BY_RESOURCE_TYPE</code> and you must not set it for any other <code>Pattern</code> setting. </p>
     pub fn set_resource_type(
         mut self,
-        input: std::option::Option<crate::types::ProtectedResourceType>,
+        input: ::std::option::Option<crate::types::ProtectedResourceType>,
     ) -> Self {
         self.resource_type = input;
         self
@@ -145,29 +150,32 @@ impl ProtectionGroupBuilder {
     /// To override the contents of this collection use [`set_members`](Self::set_members).
     ///
     /// <p>The ARNs (Amazon Resource Names) of the resources to include in the protection group. You must set this when you set <code>Pattern</code> to <code>ARBITRARY</code> and you must not set it for any other <code>Pattern</code> setting. </p>
-    pub fn members(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn members(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.members.unwrap_or_default();
         v.push(input.into());
-        self.members = Some(v);
+        self.members = ::std::option::Option::Some(v);
         self
     }
     /// <p>The ARNs (Amazon Resource Names) of the resources to include in the protection group. You must set this when you set <code>Pattern</code> to <code>ARBITRARY</code> and you must not set it for any other <code>Pattern</code> setting. </p>
     pub fn set_members(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.members = input;
         self
     }
     /// <p>The ARN (Amazon Resource Name) of the protection group.</p>
-    pub fn protection_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.protection_group_arn = Some(input.into());
+    pub fn protection_group_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.protection_group_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN (Amazon Resource Name) of the protection group.</p>
     pub fn set_protection_group_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.protection_group_arn = input;
         self

@@ -40,13 +40,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum PortProtocol {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,7 +60,7 @@ pub enum PortProtocol {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for PortProtocol {
+impl ::std::convert::From<&str> for PortProtocol {
     fn from(s: &str) -> Self {
         match s {
             "grpc" => PortProtocol::Grpc,
@@ -73,11 +73,11 @@ impl std::convert::From<&str> for PortProtocol {
         }
     }
 }
-impl std::str::FromStr for PortProtocol {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for PortProtocol {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PortProtocol::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(PortProtocol::from(s))
     }
 }
 impl PortProtocol {
@@ -96,7 +96,7 @@ impl PortProtocol {
         &["grpc", "http", "http2", "tcp"]
     }
 }
-impl AsRef<str> for PortProtocol {
+impl ::std::convert::AsRef<str> for PortProtocol {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

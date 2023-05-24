@@ -2,57 +2,57 @@
 
 /// <p>Details of a container.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Container {
     /// <p>The container runtime (such as, Docker or containerd) used to run the container.</p>
     #[doc(hidden)]
-    pub container_runtime: std::option::Option<std::string::String>,
+    pub container_runtime: ::std::option::Option<::std::string::String>,
     /// <p>Container ID.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>Container name.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>Container image.</p>
     #[doc(hidden)]
-    pub image: std::option::Option<std::string::String>,
+    pub image: ::std::option::Option<::std::string::String>,
     /// <p>Part of the image name before the last slash. For example, imagePrefix for public.ecr.aws/amazonlinux/amazonlinux:latest would be public.ecr.aws/amazonlinux. If the image name is relative and does not have a slash, this field is empty.</p>
     #[doc(hidden)]
-    pub image_prefix: std::option::Option<std::string::String>,
+    pub image_prefix: ::std::option::Option<::std::string::String>,
     /// <p>Container volume mounts.</p>
     #[doc(hidden)]
-    pub volume_mounts: std::option::Option<std::vec::Vec<crate::types::VolumeMount>>,
+    pub volume_mounts: ::std::option::Option<::std::vec::Vec<crate::types::VolumeMount>>,
     /// <p>Container security context.</p>
     #[doc(hidden)]
-    pub security_context: std::option::Option<crate::types::SecurityContext>,
+    pub security_context: ::std::option::Option<crate::types::SecurityContext>,
 }
 impl Container {
     /// <p>The container runtime (such as, Docker or containerd) used to run the container.</p>
-    pub fn container_runtime(&self) -> std::option::Option<&str> {
+    pub fn container_runtime(&self) -> ::std::option::Option<&str> {
         self.container_runtime.as_deref()
     }
     /// <p>Container ID.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>Container name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>Container image.</p>
-    pub fn image(&self) -> std::option::Option<&str> {
+    pub fn image(&self) -> ::std::option::Option<&str> {
         self.image.as_deref()
     }
     /// <p>Part of the image name before the last slash. For example, imagePrefix for public.ecr.aws/amazonlinux/amazonlinux:latest would be public.ecr.aws/amazonlinux. If the image name is relative and does not have a slash, this field is empty.</p>
-    pub fn image_prefix(&self) -> std::option::Option<&str> {
+    pub fn image_prefix(&self) -> ::std::option::Option<&str> {
         self.image_prefix.as_deref()
     }
     /// <p>Container volume mounts.</p>
-    pub fn volume_mounts(&self) -> std::option::Option<&[crate::types::VolumeMount]> {
+    pub fn volume_mounts(&self) -> ::std::option::Option<&[crate::types::VolumeMount]> {
         self.volume_mounts.as_deref()
     }
     /// <p>Container security context.</p>
-    pub fn security_context(&self) -> std::option::Option<&crate::types::SecurityContext> {
+    pub fn security_context(&self) -> ::std::option::Option<&crate::types::SecurityContext> {
         self.security_context.as_ref()
     }
 }
@@ -65,67 +65,72 @@ impl Container {
 
 /// A builder for [`Container`](crate::types::Container).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ContainerBuilder {
-    pub(crate) container_runtime: std::option::Option<std::string::String>,
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) image: std::option::Option<std::string::String>,
-    pub(crate) image_prefix: std::option::Option<std::string::String>,
-    pub(crate) volume_mounts: std::option::Option<std::vec::Vec<crate::types::VolumeMount>>,
-    pub(crate) security_context: std::option::Option<crate::types::SecurityContext>,
+    pub(crate) container_runtime: ::std::option::Option<::std::string::String>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) image: ::std::option::Option<::std::string::String>,
+    pub(crate) image_prefix: ::std::option::Option<::std::string::String>,
+    pub(crate) volume_mounts: ::std::option::Option<::std::vec::Vec<crate::types::VolumeMount>>,
+    pub(crate) security_context: ::std::option::Option<crate::types::SecurityContext>,
 }
 impl ContainerBuilder {
     /// <p>The container runtime (such as, Docker or containerd) used to run the container.</p>
-    pub fn container_runtime(mut self, input: impl Into<std::string::String>) -> Self {
-        self.container_runtime = Some(input.into());
+    pub fn container_runtime(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.container_runtime = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The container runtime (such as, Docker or containerd) used to run the container.</p>
     pub fn set_container_runtime(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.container_runtime = input;
         self
     }
     /// <p>Container ID.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Container ID.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>Container name.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Container name.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>Container image.</p>
-    pub fn image(mut self, input: impl Into<std::string::String>) -> Self {
-        self.image = Some(input.into());
+    pub fn image(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.image = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Container image.</p>
-    pub fn set_image(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_image(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image = input;
         self
     }
     /// <p>Part of the image name before the last slash. For example, imagePrefix for public.ecr.aws/amazonlinux/amazonlinux:latest would be public.ecr.aws/amazonlinux. If the image name is relative and does not have a slash, this field is empty.</p>
-    pub fn image_prefix(mut self, input: impl Into<std::string::String>) -> Self {
-        self.image_prefix = Some(input.into());
+    pub fn image_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.image_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Part of the image name before the last slash. For example, imagePrefix for public.ecr.aws/amazonlinux/amazonlinux:latest would be public.ecr.aws/amazonlinux. If the image name is relative and does not have a slash, this field is empty.</p>
-    pub fn set_image_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_image_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_prefix = input;
         self
     }
@@ -137,26 +142,26 @@ impl ContainerBuilder {
     pub fn volume_mounts(mut self, input: crate::types::VolumeMount) -> Self {
         let mut v = self.volume_mounts.unwrap_or_default();
         v.push(input);
-        self.volume_mounts = Some(v);
+        self.volume_mounts = ::std::option::Option::Some(v);
         self
     }
     /// <p>Container volume mounts.</p>
     pub fn set_volume_mounts(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::VolumeMount>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::VolumeMount>>,
     ) -> Self {
         self.volume_mounts = input;
         self
     }
     /// <p>Container security context.</p>
     pub fn security_context(mut self, input: crate::types::SecurityContext) -> Self {
-        self.security_context = Some(input);
+        self.security_context = ::std::option::Option::Some(input);
         self
     }
     /// <p>Container security context.</p>
     pub fn set_security_context(
         mut self,
-        input: std::option::Option<crate::types::SecurityContext>,
+        input: ::std::option::Option<crate::types::SecurityContext>,
     ) -> Self {
         self.security_context = input;
         self

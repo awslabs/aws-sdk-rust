@@ -18,47 +18,50 @@ pub use crate::operation::generate_service_last_accessed_details::_generate_serv
 /// <p>Service last accessed data does not use other policy types when determining whether a resource could access a service. These other policy types include resource-based policies, access control lists, Organizations policies, IAM permissions boundaries, and STS assume role policies. It only applies permissions policy logic. For more about the evaluation of policy types, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html#policy-eval-basics">Evaluating policies</a> in the <i>IAM User Guide</i>.</p>
 /// </note>
 /// <p>For more information about service and action last accessed data, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html">Reducing permissions using service last accessed data</a> in the <i>IAM User Guide</i>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GenerateServiceLastAccessedDetailsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::generate_service_last_accessed_details::builders::GenerateServiceLastAccessedDetailsInputBuilder,
 }
 impl GenerateServiceLastAccessedDetailsFluentBuilder {
     /// Creates a new `GenerateServiceLastAccessedDetails`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::generate_service_last_accessed_details::GenerateServiceLastAccessedDetails, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::generate_service_last_accessed_details::GenerateServiceLastAccessedDetailsError>
+                    pub async fn customize(self) -> ::std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::generate_service_last_accessed_details::GenerateServiceLastAccessedDetails, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                        ::aws_smithy_http::result::SdkError<crate::operation::generate_service_last_accessed_details::GenerateServiceLastAccessedDetailsError>
     >{
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::generate_service_last_accessed_details::GenerateServiceLastAccessedDetailsOutput, aws_smithy_http::result::SdkError<crate::operation::generate_service_last_accessed_details::GenerateServiceLastAccessedDetailsError>>
+                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::generate_service_last_accessed_details::GenerateServiceLastAccessedDetailsOutput, ::aws_smithy_http::result::SdkError<crate::operation::generate_service_last_accessed_details::GenerateServiceLastAccessedDetailsError>>
                      {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -69,17 +72,17 @@ impl GenerateServiceLastAccessedDetailsFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> std::result::Result<crate::operation::generate_service_last_accessed_details::GenerateServiceLastAccessedDetailsOutput, aws_smithy_http::result::SdkError<crate::operation::generate_service_last_accessed_details::GenerateServiceLastAccessedDetailsError>>
+                        pub async fn send(self) -> ::std::result::Result<crate::operation::generate_service_last_accessed_details::GenerateServiceLastAccessedDetailsOutput, ::aws_smithy_http::result::SdkError<crate::operation::generate_service_last_accessed_details::GenerateServiceLastAccessedDetailsError>>
                          {
         self.send_middleware().await
     }
     /// <p>The ARN of the IAM resource (user, group, role, or managed policy) used to generate information about when the resource was last used in an attempt to access an Amazon Web Services service.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.arn(input.into());
         self
     }
     /// <p>The ARN of the IAM resource (user, group, role, or managed policy) used to generate information about when the resource was last used in an attempt to access an Amazon Web Services service.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_arn(input);
         self
     }
@@ -91,7 +94,7 @@ impl GenerateServiceLastAccessedDetailsFluentBuilder {
     /// <p>The level of detail that you want to generate. You can specify whether you want to generate information about the last attempt to access services or actions. If you specify service-level granularity, this operation generates only service data. If you specify action-level granularity, it generates service and action data. If you don't include this optional parameter, the operation generates service data.</p>
     pub fn set_granularity(
         mut self,
-        input: std::option::Option<crate::types::AccessAdvisorUsageGranularityType>,
+        input: ::std::option::Option<crate::types::AccessAdvisorUsageGranularityType>,
     ) -> Self {
         self.inner = self.inner.set_granularity(input);
         self

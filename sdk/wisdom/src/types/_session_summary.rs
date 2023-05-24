@@ -2,36 +2,36 @@
 
 /// <p>Summary information about the session.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SessionSummary {
     /// <p>The identifier of the session.</p>
     #[doc(hidden)]
-    pub session_id: std::option::Option<std::string::String>,
+    pub session_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the session.</p>
     #[doc(hidden)]
-    pub session_arn: std::option::Option<std::string::String>,
+    pub session_arn: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the Wisdom assistant.</p>
     #[doc(hidden)]
-    pub assistant_id: std::option::Option<std::string::String>,
+    pub assistant_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
     #[doc(hidden)]
-    pub assistant_arn: std::option::Option<std::string::String>,
+    pub assistant_arn: ::std::option::Option<::std::string::String>,
 }
 impl SessionSummary {
     /// <p>The identifier of the session.</p>
-    pub fn session_id(&self) -> std::option::Option<&str> {
+    pub fn session_id(&self) -> ::std::option::Option<&str> {
         self.session_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the session.</p>
-    pub fn session_arn(&self) -> std::option::Option<&str> {
+    pub fn session_arn(&self) -> ::std::option::Option<&str> {
         self.session_arn.as_deref()
     }
     /// <p>The identifier of the Wisdom assistant.</p>
-    pub fn assistant_id(&self) -> std::option::Option<&str> {
+    pub fn assistant_id(&self) -> ::std::option::Option<&str> {
         self.assistant_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
-    pub fn assistant_arn(&self) -> std::option::Option<&str> {
+    pub fn assistant_arn(&self) -> ::std::option::Option<&str> {
         self.assistant_arn.as_deref()
     }
 }
@@ -44,51 +44,59 @@ impl SessionSummary {
 
 /// A builder for [`SessionSummary`](crate::types::SessionSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SessionSummaryBuilder {
-    pub(crate) session_id: std::option::Option<std::string::String>,
-    pub(crate) session_arn: std::option::Option<std::string::String>,
-    pub(crate) assistant_id: std::option::Option<std::string::String>,
-    pub(crate) assistant_arn: std::option::Option<std::string::String>,
+    pub(crate) session_id: ::std::option::Option<::std::string::String>,
+    pub(crate) session_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) assistant_id: ::std::option::Option<::std::string::String>,
+    pub(crate) assistant_arn: ::std::option::Option<::std::string::String>,
 }
 impl SessionSummaryBuilder {
     /// <p>The identifier of the session.</p>
-    pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.session_id = Some(input.into());
+    pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.session_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the session.</p>
-    pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.session_id = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the session.</p>
-    pub fn session_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.session_arn = Some(input.into());
+    pub fn session_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.session_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the session.</p>
-    pub fn set_session_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_session_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.session_arn = input;
         self
     }
     /// <p>The identifier of the Wisdom assistant.</p>
-    pub fn assistant_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.assistant_id = Some(input.into());
+    pub fn assistant_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.assistant_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the Wisdom assistant.</p>
-    pub fn set_assistant_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_assistant_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.assistant_id = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
-    pub fn assistant_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.assistant_arn = Some(input.into());
+    pub fn assistant_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.assistant_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant.</p>
-    pub fn set_assistant_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_assistant_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.assistant_arn = input;
         self
     }

@@ -2,36 +2,36 @@
 
 /// <p>The metadata of the endpoint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EndpointMetadata {
     /// <p>The name of the endpoint.</p>
     #[doc(hidden)]
-    pub endpoint_name: std::option::Option<std::string::String>,
+    pub endpoint_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the endpoint configuration.</p>
     #[doc(hidden)]
-    pub endpoint_config_name: std::option::Option<std::string::String>,
+    pub endpoint_config_name: ::std::option::Option<::std::string::String>,
     /// <p> The status of the endpoint. For possible values of the status of an endpoint, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_EndpointSummary.html">EndpointSummary</a>. </p>
     #[doc(hidden)]
-    pub endpoint_status: std::option::Option<crate::types::EndpointStatus>,
+    pub endpoint_status: ::std::option::Option<crate::types::EndpointStatus>,
     /// <p> If the status of the endpoint is <code>Failed</code>, or the status is <code>InService</code> but update operation fails, this provides the reason why it failed. </p>
     #[doc(hidden)]
-    pub failure_reason: std::option::Option<std::string::String>,
+    pub failure_reason: ::std::option::Option<::std::string::String>,
 }
 impl EndpointMetadata {
     /// <p>The name of the endpoint.</p>
-    pub fn endpoint_name(&self) -> std::option::Option<&str> {
+    pub fn endpoint_name(&self) -> ::std::option::Option<&str> {
         self.endpoint_name.as_deref()
     }
     /// <p>The name of the endpoint configuration.</p>
-    pub fn endpoint_config_name(&self) -> std::option::Option<&str> {
+    pub fn endpoint_config_name(&self) -> ::std::option::Option<&str> {
         self.endpoint_config_name.as_deref()
     }
     /// <p> The status of the endpoint. For possible values of the status of an endpoint, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_EndpointSummary.html">EndpointSummary</a>. </p>
-    pub fn endpoint_status(&self) -> std::option::Option<&crate::types::EndpointStatus> {
+    pub fn endpoint_status(&self) -> ::std::option::Option<&crate::types::EndpointStatus> {
         self.endpoint_status.as_ref()
     }
     /// <p> If the status of the endpoint is <code>Failed</code>, or the status is <code>InService</code> but update operation fails, this provides the reason why it failed. </p>
-    pub fn failure_reason(&self) -> std::option::Option<&str> {
+    pub fn failure_reason(&self) -> ::std::option::Option<&str> {
         self.failure_reason.as_deref()
     }
 }
@@ -44,57 +44,74 @@ impl EndpointMetadata {
 
 /// A builder for [`EndpointMetadata`](crate::types::EndpointMetadata).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EndpointMetadataBuilder {
-    pub(crate) endpoint_name: std::option::Option<std::string::String>,
-    pub(crate) endpoint_config_name: std::option::Option<std::string::String>,
-    pub(crate) endpoint_status: std::option::Option<crate::types::EndpointStatus>,
-    pub(crate) failure_reason: std::option::Option<std::string::String>,
+    pub(crate) endpoint_name: ::std::option::Option<::std::string::String>,
+    pub(crate) endpoint_config_name: ::std::option::Option<::std::string::String>,
+    pub(crate) endpoint_status: ::std::option::Option<crate::types::EndpointStatus>,
+    pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
 }
 impl EndpointMetadataBuilder {
     /// <p>The name of the endpoint.</p>
-    pub fn endpoint_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.endpoint_name = Some(input.into());
+    pub fn endpoint_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.endpoint_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the endpoint.</p>
-    pub fn set_endpoint_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_endpoint_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.endpoint_name = input;
         self
     }
     /// <p>The name of the endpoint configuration.</p>
-    pub fn endpoint_config_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.endpoint_config_name = Some(input.into());
+    pub fn endpoint_config_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.endpoint_config_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the endpoint configuration.</p>
     pub fn set_endpoint_config_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.endpoint_config_name = input;
         self
     }
     /// <p> The status of the endpoint. For possible values of the status of an endpoint, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_EndpointSummary.html">EndpointSummary</a>. </p>
     pub fn endpoint_status(mut self, input: crate::types::EndpointStatus) -> Self {
-        self.endpoint_status = Some(input);
+        self.endpoint_status = ::std::option::Option::Some(input);
         self
     }
     /// <p> The status of the endpoint. For possible values of the status of an endpoint, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_EndpointSummary.html">EndpointSummary</a>. </p>
     pub fn set_endpoint_status(
         mut self,
-        input: std::option::Option<crate::types::EndpointStatus>,
+        input: ::std::option::Option<crate::types::EndpointStatus>,
     ) -> Self {
         self.endpoint_status = input;
         self
     }
     /// <p> If the status of the endpoint is <code>Failed</code>, or the status is <code>InService</code> but update operation fails, this provides the reason why it failed. </p>
-    pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
-        self.failure_reason = Some(input.into());
+    pub fn failure_reason(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> If the status of the endpoint is <code>Failed</code>, or the status is <code>InService</code> but update operation fails, this provides the reason why it failed. </p>
-    pub fn set_failure_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_failure_reason(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.failure_reason = input;
         self
     }

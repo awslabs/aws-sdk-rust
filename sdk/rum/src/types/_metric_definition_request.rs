@@ -49,7 +49,7 @@
 /// <li> <p> <code>userId</code> </p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetricDefinitionRequest {
     /// <p>The name for the metric that is defined in this structure. For custom metrics, you can specify any name that you like. For extended metrics, valid values are the following:</p>
     /// <ul>
@@ -66,15 +66,15 @@ pub struct MetricDefinitionRequest {
     /// <li> <p> <code>SessionCount</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The field within the event object that the metric value is sourced from.</p>
     /// <p>If you omit this field, a hardcoded value of 1 is pushed as the metric value. This is useful if you just want to count the number of events that the filter catches. </p>
     /// <p>If this metric is sent to CloudWatch Evidently, this field will be passed to Evidently raw and Evidently will handle data extraction from the event.</p>
     #[doc(hidden)]
-    pub value_key: std::option::Option<std::string::String>,
+    pub value_key: ::std::option::Option<::std::string::String>,
     /// <p>The CloudWatch metric unit to use for this metric. If you omit this field, the metric is recorded with no unit.</p>
     #[doc(hidden)]
-    pub unit_label: std::option::Option<std::string::String>,
+    pub unit_label: ::std::option::Option<::std::string::String>,
     /// <p>Use this field only if you are sending the metric to CloudWatch.</p>
     /// <p>This field is a map of field paths to dimension names. It defines the dimensions to associate with this metric in CloudWatch. For extended metrics, valid values for the entries in this field are the following:</p>
     /// <ul>
@@ -87,8 +87,9 @@ pub struct MetricDefinitionRequest {
     /// </ul>
     /// <p> For both extended metrics and custom metrics, all dimensions listed in this field must also be included in <code>EventPattern</code>.</p>
     #[doc(hidden)]
-    pub dimension_keys:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub dimension_keys: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>The pattern that defines the metric, specified as a JSON object. RUM checks events that happen in a user's session against the pattern, and events that match the pattern are sent to the metric destination.</p>
     /// <p>When you define extended metrics, the metric definition is not valid if <code>EventPattern</code> is omitted.</p>
     /// <p>Example event patterns:</p>
@@ -99,11 +100,11 @@ pub struct MetricDefinitionRequest {
     /// </ul>
     /// <p>If the metrics destination' is <code>CloudWatch</code> and the event also matches a value in <code>DimensionKeys</code>, then the metric is published with the specified dimensions. </p>
     #[doc(hidden)]
-    pub event_pattern: std::option::Option<std::string::String>,
+    pub event_pattern: ::std::option::Option<::std::string::String>,
     /// <p>If this structure is for a custom metric instead of an extended metrics, use this parameter to define the metric namespace for that custom metric. Do not specify this parameter if this structure is for an extended metric.</p>
     /// <p>You cannot use any string that starts with <code>AWS/</code> for your namespace.</p>
     #[doc(hidden)]
-    pub namespace: std::option::Option<std::string::String>,
+    pub namespace: ::std::option::Option<::std::string::String>,
 }
 impl MetricDefinitionRequest {
     /// <p>The name for the metric that is defined in this structure. For custom metrics, you can specify any name that you like. For extended metrics, valid values are the following:</p>
@@ -120,17 +121,17 @@ impl MetricDefinitionRequest {
     /// <li> <p> <code>HttpErrorCount</code> </p> </li>
     /// <li> <p> <code>SessionCount</code> </p> </li>
     /// </ul>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The field within the event object that the metric value is sourced from.</p>
     /// <p>If you omit this field, a hardcoded value of 1 is pushed as the metric value. This is useful if you just want to count the number of events that the filter catches. </p>
     /// <p>If this metric is sent to CloudWatch Evidently, this field will be passed to Evidently raw and Evidently will handle data extraction from the event.</p>
-    pub fn value_key(&self) -> std::option::Option<&str> {
+    pub fn value_key(&self) -> ::std::option::Option<&str> {
         self.value_key.as_deref()
     }
     /// <p>The CloudWatch metric unit to use for this metric. If you omit this field, the metric is recorded with no unit.</p>
-    pub fn unit_label(&self) -> std::option::Option<&str> {
+    pub fn unit_label(&self) -> ::std::option::Option<&str> {
         self.unit_label.as_deref()
     }
     /// <p>Use this field only if you are sending the metric to CloudWatch.</p>
@@ -146,8 +147,9 @@ impl MetricDefinitionRequest {
     /// <p> For both extended metrics and custom metrics, all dimensions listed in this field must also be included in <code>EventPattern</code>.</p>
     pub fn dimension_keys(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.dimension_keys.as_ref()
     }
     /// <p>The pattern that defines the metric, specified as a JSON object. RUM checks events that happen in a user's session against the pattern, and events that match the pattern are sent to the metric destination.</p>
@@ -159,12 +161,12 @@ impl MetricDefinitionRequest {
     /// <li> <p> <code>'{ "event_type": ["com.amazon.rum.performance_navigation_event"], "metadata": { "browserName": [ "Chrome", "Safari" ], "countryCode": [ "US" ] }, "event_details": { "duration": [{ "numeric": [ "&gt;=", 2000, "&lt;", 8000 ] }] } }'</code> </p> </li>
     /// </ul>
     /// <p>If the metrics destination' is <code>CloudWatch</code> and the event also matches a value in <code>DimensionKeys</code>, then the metric is published with the specified dimensions. </p>
-    pub fn event_pattern(&self) -> std::option::Option<&str> {
+    pub fn event_pattern(&self) -> ::std::option::Option<&str> {
         self.event_pattern.as_deref()
     }
     /// <p>If this structure is for a custom metric instead of an extended metrics, use this parameter to define the metric namespace for that custom metric. Do not specify this parameter if this structure is for an extended metric.</p>
     /// <p>You cannot use any string that starts with <code>AWS/</code> for your namespace.</p>
-    pub fn namespace(&self) -> std::option::Option<&str> {
+    pub fn namespace(&self) -> ::std::option::Option<&str> {
         self.namespace.as_deref()
     }
 }
@@ -177,15 +179,18 @@ impl MetricDefinitionRequest {
 
 /// A builder for [`MetricDefinitionRequest`](crate::types::MetricDefinitionRequest).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MetricDefinitionRequestBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) value_key: std::option::Option<std::string::String>,
-    pub(crate) unit_label: std::option::Option<std::string::String>,
-    pub(crate) dimension_keys:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) event_pattern: std::option::Option<std::string::String>,
-    pub(crate) namespace: std::option::Option<std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) value_key: ::std::option::Option<::std::string::String>,
+    pub(crate) unit_label: ::std::option::Option<::std::string::String>,
+    pub(crate) dimension_keys: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) event_pattern: ::std::option::Option<::std::string::String>,
+    pub(crate) namespace: ::std::option::Option<::std::string::String>,
 }
 impl MetricDefinitionRequestBuilder {
     /// <p>The name for the metric that is defined in this structure. For custom metrics, you can specify any name that you like. For extended metrics, valid values are the following:</p>
@@ -202,8 +207,8 @@ impl MetricDefinitionRequestBuilder {
     /// <li> <p> <code>HttpErrorCount</code> </p> </li>
     /// <li> <p> <code>SessionCount</code> </p> </li>
     /// </ul>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name for the metric that is defined in this structure. For custom metrics, you can specify any name that you like. For extended metrics, valid values are the following:</p>
@@ -220,31 +225,31 @@ impl MetricDefinitionRequestBuilder {
     /// <li> <p> <code>HttpErrorCount</code> </p> </li>
     /// <li> <p> <code>SessionCount</code> </p> </li>
     /// </ul>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The field within the event object that the metric value is sourced from.</p>
     /// <p>If you omit this field, a hardcoded value of 1 is pushed as the metric value. This is useful if you just want to count the number of events that the filter catches. </p>
     /// <p>If this metric is sent to CloudWatch Evidently, this field will be passed to Evidently raw and Evidently will handle data extraction from the event.</p>
-    pub fn value_key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.value_key = Some(input.into());
+    pub fn value_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.value_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The field within the event object that the metric value is sourced from.</p>
     /// <p>If you omit this field, a hardcoded value of 1 is pushed as the metric value. This is useful if you just want to count the number of events that the filter catches. </p>
     /// <p>If this metric is sent to CloudWatch Evidently, this field will be passed to Evidently raw and Evidently will handle data extraction from the event.</p>
-    pub fn set_value_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_value_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value_key = input;
         self
     }
     /// <p>The CloudWatch metric unit to use for this metric. If you omit this field, the metric is recorded with no unit.</p>
-    pub fn unit_label(mut self, input: impl Into<std::string::String>) -> Self {
-        self.unit_label = Some(input.into());
+    pub fn unit_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.unit_label = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The CloudWatch metric unit to use for this metric. If you omit this field, the metric is recorded with no unit.</p>
-    pub fn set_unit_label(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_unit_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.unit_label = input;
         self
     }
@@ -265,12 +270,12 @@ impl MetricDefinitionRequestBuilder {
     /// <p> For both extended metrics and custom metrics, all dimensions listed in this field must also be included in <code>EventPattern</code>.</p>
     pub fn dimension_keys(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.dimension_keys.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.dimension_keys = Some(hash_map);
+        self.dimension_keys = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Use this field only if you are sending the metric to CloudWatch.</p>
@@ -286,8 +291,8 @@ impl MetricDefinitionRequestBuilder {
     /// <p> For both extended metrics and custom metrics, all dimensions listed in this field must also be included in <code>EventPattern</code>.</p>
     pub fn set_dimension_keys(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.dimension_keys = input;
@@ -302,8 +307,11 @@ impl MetricDefinitionRequestBuilder {
     /// <li> <p> <code>'{ "event_type": ["com.amazon.rum.performance_navigation_event"], "metadata": { "browserName": [ "Chrome", "Safari" ], "countryCode": [ "US" ] }, "event_details": { "duration": [{ "numeric": [ "&gt;=", 2000, "&lt;", 8000 ] }] } }'</code> </p> </li>
     /// </ul>
     /// <p>If the metrics destination' is <code>CloudWatch</code> and the event also matches a value in <code>DimensionKeys</code>, then the metric is published with the specified dimensions. </p>
-    pub fn event_pattern(mut self, input: impl Into<std::string::String>) -> Self {
-        self.event_pattern = Some(input.into());
+    pub fn event_pattern(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.event_pattern = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The pattern that defines the metric, specified as a JSON object. RUM checks events that happen in a user's session against the pattern, and events that match the pattern are sent to the metric destination.</p>
@@ -315,19 +323,22 @@ impl MetricDefinitionRequestBuilder {
     /// <li> <p> <code>'{ "event_type": ["com.amazon.rum.performance_navigation_event"], "metadata": { "browserName": [ "Chrome", "Safari" ], "countryCode": [ "US" ] }, "event_details": { "duration": [{ "numeric": [ "&gt;=", 2000, "&lt;", 8000 ] }] } }'</code> </p> </li>
     /// </ul>
     /// <p>If the metrics destination' is <code>CloudWatch</code> and the event also matches a value in <code>DimensionKeys</code>, then the metric is published with the specified dimensions. </p>
-    pub fn set_event_pattern(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_event_pattern(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.event_pattern = input;
         self
     }
     /// <p>If this structure is for a custom metric instead of an extended metrics, use this parameter to define the metric namespace for that custom metric. Do not specify this parameter if this structure is for an extended metric.</p>
     /// <p>You cannot use any string that starts with <code>AWS/</code> for your namespace.</p>
-    pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
-        self.namespace = Some(input.into());
+    pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.namespace = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If this structure is for a custom metric instead of an extended metrics, use this parameter to define the metric namespace for that custom metric. Do not specify this parameter if this structure is for an extended metric.</p>
     /// <p>You cannot use any string that starts with <code>AWS/</code> for your namespace.</p>
-    pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.namespace = input;
         self
     }

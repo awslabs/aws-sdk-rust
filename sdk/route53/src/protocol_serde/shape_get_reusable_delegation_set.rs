@@ -2,7 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_reusable_delegation_set_http_error(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::get_reusable_delegation_set::GetReusableDelegationSetOutput,
@@ -17,7 +17,7 @@ pub fn de_get_reusable_delegation_set_http_error(
     .map_err(
         crate::operation::get_reusable_delegation_set::GetReusableDelegationSetError::unhandled,
     )?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
+    generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
@@ -85,7 +85,7 @@ pub fn de_get_reusable_delegation_set_http_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_get_reusable_delegation_set_http_response_with_props(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::get_reusable_delegation_set::GetReusableDelegationSetOutput,
@@ -96,7 +96,7 @@ pub fn de_get_reusable_delegation_set_http_response_with_props(
         let mut output = crate::operation::get_reusable_delegation_set::builders::GetReusableDelegationSetOutputBuilder::default();
         output = crate::protocol_serde::shape_get_reusable_delegation_set::de_get_reusable_delegation_set(_response_body, output).map_err(crate::operation::get_reusable_delegation_set::GetReusableDelegationSetError::unhandled)?;
         output._set_request_id(
-            aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
+            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
         );
         output.build()
     })
@@ -108,9 +108,9 @@ pub fn de_get_reusable_delegation_set(
     mut builder: crate::operation::get_reusable_delegation_set::builders::GetReusableDelegationSetOutputBuilder,
 ) -> Result<
     crate::operation::get_reusable_delegation_set::builders::GetReusableDelegationSetOutputBuilder,
-    aws_smithy_xml::decode::XmlDecodeError,
+    ::aws_smithy_xml::decode::XmlDecodeError,
 > {
-    let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
+    let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
@@ -118,7 +118,7 @@ pub fn de_get_reusable_delegation_set(
     let start_el = decoder.start_el();
     if !start_el.matches("GetReusableDelegationSetResponse") {
         return Err(
-                                aws_smithy_xml::decode::XmlDecodeError::custom(
+                                ::aws_smithy_xml::decode::XmlDecodeError::custom(
                                     format!("encountered invalid XML root: expected GetReusableDelegationSetResponse but got {:?}. This is likely a bug in the SDK.", start_el)
                                 )
                             );

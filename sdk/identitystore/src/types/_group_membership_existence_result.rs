@@ -2,25 +2,25 @@
 
 /// <p>Indicates whether a resource is a member of a group in the identity store.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GroupMembershipExistenceResult {
     /// <p>The identifier for a group in the identity store.</p>
     #[doc(hidden)]
-    pub group_id: std::option::Option<std::string::String>,
+    pub group_id: ::std::option::Option<::std::string::String>,
     /// <p>An object that contains the identifier of a group member. Setting the <code>UserID</code> field to the specific identifier for a user indicates that the user is a member of the group.</p>
     #[doc(hidden)]
-    pub member_id: std::option::Option<crate::types::MemberId>,
+    pub member_id: ::std::option::Option<crate::types::MemberId>,
     /// <p>Indicates whether a membership relation exists or not.</p>
     #[doc(hidden)]
     pub membership_exists: bool,
 }
 impl GroupMembershipExistenceResult {
     /// <p>The identifier for a group in the identity store.</p>
-    pub fn group_id(&self) -> std::option::Option<&str> {
+    pub fn group_id(&self) -> ::std::option::Option<&str> {
         self.group_id.as_deref()
     }
     /// <p>An object that contains the identifier of a group member. Setting the <code>UserID</code> field to the specific identifier for a user indicates that the user is a member of the group.</p>
-    pub fn member_id(&self) -> std::option::Option<&crate::types::MemberId> {
+    pub fn member_id(&self) -> ::std::option::Option<&crate::types::MemberId> {
         self.member_id.as_ref()
     }
     /// <p>Indicates whether a membership relation exists or not.</p>
@@ -28,8 +28,8 @@ impl GroupMembershipExistenceResult {
         self.membership_exists
     }
 }
-impl std::fmt::Debug for GroupMembershipExistenceResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for GroupMembershipExistenceResult {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GroupMembershipExistenceResult");
         formatter.field("group_id", &self.group_id);
         formatter.field("member_id", &self.member_id);
@@ -46,40 +46,40 @@ impl GroupMembershipExistenceResult {
 
 /// A builder for [`GroupMembershipExistenceResult`](crate::types::GroupMembershipExistenceResult).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct GroupMembershipExistenceResultBuilder {
-    pub(crate) group_id: std::option::Option<std::string::String>,
-    pub(crate) member_id: std::option::Option<crate::types::MemberId>,
-    pub(crate) membership_exists: std::option::Option<bool>,
+    pub(crate) group_id: ::std::option::Option<::std::string::String>,
+    pub(crate) member_id: ::std::option::Option<crate::types::MemberId>,
+    pub(crate) membership_exists: ::std::option::Option<bool>,
 }
 impl GroupMembershipExistenceResultBuilder {
     /// <p>The identifier for a group in the identity store.</p>
-    pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.group_id = Some(input.into());
+    pub fn group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for a group in the identity store.</p>
-    pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_id = input;
         self
     }
     /// <p>An object that contains the identifier of a group member. Setting the <code>UserID</code> field to the specific identifier for a user indicates that the user is a member of the group.</p>
     pub fn member_id(mut self, input: crate::types::MemberId) -> Self {
-        self.member_id = Some(input);
+        self.member_id = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that contains the identifier of a group member. Setting the <code>UserID</code> field to the specific identifier for a user indicates that the user is a member of the group.</p>
-    pub fn set_member_id(mut self, input: std::option::Option<crate::types::MemberId>) -> Self {
+    pub fn set_member_id(mut self, input: ::std::option::Option<crate::types::MemberId>) -> Self {
         self.member_id = input;
         self
     }
     /// <p>Indicates whether a membership relation exists or not.</p>
     pub fn membership_exists(mut self, input: bool) -> Self {
-        self.membership_exists = Some(input);
+        self.membership_exists = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether a membership relation exists or not.</p>
-    pub fn set_membership_exists(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_membership_exists(mut self, input: ::std::option::Option<bool>) -> Self {
         self.membership_exists = input;
         self
     }
@@ -92,8 +92,8 @@ impl GroupMembershipExistenceResultBuilder {
         }
     }
 }
-impl std::fmt::Debug for GroupMembershipExistenceResultBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for GroupMembershipExistenceResultBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GroupMembershipExistenceResultBuilder");
         formatter.field("group_id", &self.group_id);
         formatter.field("member_id", &self.member_id);

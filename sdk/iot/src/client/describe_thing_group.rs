@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeThingGroup`](crate::operation::describe_thing_group::builders::DescribeThingGroupFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`thing_group_name(impl Into<String>)`](crate::operation::describe_thing_group::builders::DescribeThingGroupFluentBuilder::thing_group_name) / [`set_thing_group_name(Option<String>)`](crate::operation::describe_thing_group::builders::DescribeThingGroupFluentBuilder::set_thing_group_name): <p>The name of the thing group.</p>
+    ///   - [`thing_group_name(impl ::std::convert::Into<String>)`](crate::operation::describe_thing_group::builders::DescribeThingGroupFluentBuilder::thing_group_name) / [`set_thing_group_name(Option<String>)`](crate::operation::describe_thing_group::builders::DescribeThingGroupFluentBuilder::set_thing_group_name): <p>The name of the thing group.</p>
     /// - On success, responds with [`DescribeThingGroupOutput`](crate::operation::describe_thing_group::DescribeThingGroupOutput) with field(s):
     ///   - [`thing_group_name(Option<String>)`](crate::operation::describe_thing_group::DescribeThingGroupOutput::thing_group_name): <p>The name of the thing group.</p>
     ///   - [`thing_group_id(Option<String>)`](crate::operation::describe_thing_group::DescribeThingGroupOutput::thing_group_id): <p>The thing group ID.</p>

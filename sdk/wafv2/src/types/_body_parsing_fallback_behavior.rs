@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum BodyParsingFallbackBehavior {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum BodyParsingFallbackBehavior {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for BodyParsingFallbackBehavior {
+impl ::std::convert::From<&str> for BodyParsingFallbackBehavior {
     fn from(s: &str) -> Self {
         match s {
             "EVALUATE_AS_STRING" => BodyParsingFallbackBehavior::EvaluateAsString,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for BodyParsingFallbackBehavior {
         }
     }
 }
-impl std::str::FromStr for BodyParsingFallbackBehavior {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for BodyParsingFallbackBehavior {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(BodyParsingFallbackBehavior::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(BodyParsingFallbackBehavior::from(s))
     }
 }
 impl BodyParsingFallbackBehavior {
@@ -91,7 +91,7 @@ impl BodyParsingFallbackBehavior {
         &["EVALUATE_AS_STRING", "MATCH", "NO_MATCH"]
     }
 }
-impl AsRef<str> for BodyParsingFallbackBehavior {
+impl ::std::convert::AsRef<str> for BodyParsingFallbackBehavior {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

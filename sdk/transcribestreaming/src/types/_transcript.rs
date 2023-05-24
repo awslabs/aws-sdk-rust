@@ -3,15 +3,15 @@
 /// <p>The <code>Transcript</code> associated with a <code></code>.</p>
 /// <p> <code>Transcript</code> contains <code>Results</code>, which contains a set of transcription results from one or more audio segments, along with additional information per your request parameters.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Transcript {
     /// <p>Contains a set of transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to alternative transcriptions, channel identification, partial result stabilization, language identification, and other transcription-related data.</p>
     #[doc(hidden)]
-    pub results: std::option::Option<std::vec::Vec<crate::types::Result>>,
+    pub results: ::std::option::Option<::std::vec::Vec<crate::types::Result>>,
 }
 impl Transcript {
     /// <p>Contains a set of transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to alternative transcriptions, channel identification, partial result stabilization, language identification, and other transcription-related data.</p>
-    pub fn results(&self) -> std::option::Option<&[crate::types::Result]> {
+    pub fn results(&self) -> ::std::option::Option<&[crate::types::Result]> {
         self.results.as_deref()
     }
 }
@@ -24,9 +24,11 @@ impl Transcript {
 
 /// A builder for [`Transcript`](crate::types::Transcript).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TranscriptBuilder {
-    pub(crate) results: std::option::Option<std::vec::Vec<crate::types::Result>>,
+    pub(crate) results: ::std::option::Option<::std::vec::Vec<crate::types::Result>>,
 }
 impl TranscriptBuilder {
     /// Appends an item to `results`.
@@ -37,13 +39,13 @@ impl TranscriptBuilder {
     pub fn results(mut self, input: crate::types::Result) -> Self {
         let mut v = self.results.unwrap_or_default();
         v.push(input);
-        self.results = Some(v);
+        self.results = ::std::option::Option::Some(v);
         self
     }
     /// <p>Contains a set of transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to alternative transcriptions, channel identification, partial result stabilization, language identification, and other transcription-related data.</p>
     pub fn set_results(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Result>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Result>>,
     ) -> Self {
         self.results = input;
         self

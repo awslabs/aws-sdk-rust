@@ -2,27 +2,27 @@
 
 /// <p>Represents the output for <code>ListTagsForStream</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTagsForStreamOutput {
     /// <p>A list of tags associated with <code>StreamName</code>, starting with the first tag after <code>ExclusiveStartTagKey</code> and up to the specified <code>Limit</code>. </p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>If set to <code>true</code>, more tags are available. To request additional tags, set <code>ExclusiveStartTagKey</code> to the key of the last tag returned.</p>
     #[doc(hidden)]
-    pub has_more_tags: std::option::Option<bool>,
+    pub has_more_tags: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl ListTagsForStreamOutput {
     /// <p>A list of tags associated with <code>StreamName</code>, starting with the first tag after <code>ExclusiveStartTagKey</code> and up to the specified <code>Limit</code>. </p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>If set to <code>true</code>, more tags are available. To request additional tags, set <code>ExclusiveStartTagKey</code> to the key of the last tag returned.</p>
-    pub fn has_more_tags(&self) -> std::option::Option<bool> {
+    pub fn has_more_tags(&self) -> ::std::option::Option<bool> {
         self.has_more_tags
     }
 }
-impl aws_http::request_id::RequestId for ListTagsForStreamOutput {
+impl ::aws_http::request_id::RequestId for ListTagsForStreamOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -37,10 +37,12 @@ impl ListTagsForStreamOutput {
 
 /// A builder for [`ListTagsForStreamOutput`](crate::operation::list_tags_for_stream::ListTagsForStreamOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListTagsForStreamOutputBuilder {
-    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    pub(crate) has_more_tags: std::option::Option<bool>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) has_more_tags: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl ListTagsForStreamOutputBuilder {
@@ -52,24 +54,24 @@ impl ListTagsForStreamOutputBuilder {
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
-        self.tags = Some(v);
+        self.tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of tags associated with <code>StreamName</code>, starting with the first tag after <code>ExclusiveStartTagKey</code> and up to the specified <code>Limit</code>. </p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tags = input;
         self
     }
     /// <p>If set to <code>true</code>, more tags are available. To request additional tags, set <code>ExclusiveStartTagKey</code> to the key of the last tag returned.</p>
     pub fn has_more_tags(mut self, input: bool) -> Self {
-        self.has_more_tags = Some(input);
+        self.has_more_tags = ::std::option::Option::Some(input);
         self
     }
     /// <p>If set to <code>true</code>, more tags are available. To request additional tags, set <code>ExclusiveStartTagKey</code> to the key of the last tag returned.</p>
-    pub fn set_has_more_tags(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_has_more_tags(mut self, input: ::std::option::Option<bool>) -> Self {
         self.has_more_tags = input;
         self
     }

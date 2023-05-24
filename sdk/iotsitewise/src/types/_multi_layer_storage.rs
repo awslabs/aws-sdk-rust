@@ -2,17 +2,17 @@
 
 /// <p>Contains information about the storage destination.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MultiLayerStorage {
     /// <p>Contains information about a customer managed Amazon S3 bucket.</p>
     #[doc(hidden)]
-    pub customer_managed_s3_storage: std::option::Option<crate::types::CustomerManagedS3Storage>,
+    pub customer_managed_s3_storage: ::std::option::Option<crate::types::CustomerManagedS3Storage>,
 }
 impl MultiLayerStorage {
     /// <p>Contains information about a customer managed Amazon S3 bucket.</p>
     pub fn customer_managed_s3_storage(
         &self,
-    ) -> std::option::Option<&crate::types::CustomerManagedS3Storage> {
+    ) -> ::std::option::Option<&crate::types::CustomerManagedS3Storage> {
         self.customer_managed_s3_storage.as_ref()
     }
 }
@@ -25,10 +25,12 @@ impl MultiLayerStorage {
 
 /// A builder for [`MultiLayerStorage`](crate::types::MultiLayerStorage).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MultiLayerStorageBuilder {
     pub(crate) customer_managed_s3_storage:
-        std::option::Option<crate::types::CustomerManagedS3Storage>,
+        ::std::option::Option<crate::types::CustomerManagedS3Storage>,
 }
 impl MultiLayerStorageBuilder {
     /// <p>Contains information about a customer managed Amazon S3 bucket.</p>
@@ -36,13 +38,13 @@ impl MultiLayerStorageBuilder {
         mut self,
         input: crate::types::CustomerManagedS3Storage,
     ) -> Self {
-        self.customer_managed_s3_storage = Some(input);
+        self.customer_managed_s3_storage = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains information about a customer managed Amazon S3 bucket.</p>
     pub fn set_customer_managed_s3_storage(
         mut self,
-        input: std::option::Option<crate::types::CustomerManagedS3Storage>,
+        input: ::std::option::Option<crate::types::CustomerManagedS3Storage>,
     ) -> Self {
         self.customer_managed_s3_storage = input;
         self

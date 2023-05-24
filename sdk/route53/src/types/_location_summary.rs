@@ -2,15 +2,15 @@
 
 /// <p>A complex type that contains information about the CIDR location.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LocationSummary {
     /// <p>A string that specifies a location name.</p>
     #[doc(hidden)]
-    pub location_name: std::option::Option<std::string::String>,
+    pub location_name: ::std::option::Option<::std::string::String>,
 }
 impl LocationSummary {
     /// <p>A string that specifies a location name.</p>
-    pub fn location_name(&self) -> std::option::Option<&str> {
+    pub fn location_name(&self) -> ::std::option::Option<&str> {
         self.location_name.as_deref()
     }
 }
@@ -23,18 +23,26 @@ impl LocationSummary {
 
 /// A builder for [`LocationSummary`](crate::types::LocationSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LocationSummaryBuilder {
-    pub(crate) location_name: std::option::Option<std::string::String>,
+    pub(crate) location_name: ::std::option::Option<::std::string::String>,
 }
 impl LocationSummaryBuilder {
     /// <p>A string that specifies a location name.</p>
-    pub fn location_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.location_name = Some(input.into());
+    pub fn location_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.location_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A string that specifies a location name.</p>
-    pub fn set_location_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_location_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.location_name = input;
         self
     }

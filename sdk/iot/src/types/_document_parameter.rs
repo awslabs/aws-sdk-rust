@@ -4,39 +4,39 @@
 /// <p> <code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed templates. This parameter can't be used with custom job templates or to create jobs from them.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DocumentParameter {
     /// <p>Key of the map field containing the patterns that need to be replaced in a managed template job document schema.</p>
     #[doc(hidden)]
-    pub key: std::option::Option<std::string::String>,
+    pub key: ::std::option::Option<::std::string::String>,
     /// <p>Description of the map field containing the patterns that need to be replaced in a managed template job document schema.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>A regular expression of the patterns that need to be replaced in a managed template job document schema.</p>
     #[doc(hidden)]
-    pub regex: std::option::Option<std::string::String>,
+    pub regex: ::std::option::Option<::std::string::String>,
     /// <p>An example illustrating a pattern that need to be replaced in a managed template job document schema.</p>
     #[doc(hidden)]
-    pub example: std::option::Option<std::string::String>,
+    pub example: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether a pattern that needs to be replaced in a managed template job document schema is optional or required.</p>
     #[doc(hidden)]
     pub optional: bool,
 }
 impl DocumentParameter {
     /// <p>Key of the map field containing the patterns that need to be replaced in a managed template job document schema.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<&str> {
         self.key.as_deref()
     }
     /// <p>Description of the map field containing the patterns that need to be replaced in a managed template job document schema.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>A regular expression of the patterns that need to be replaced in a managed template job document schema.</p>
-    pub fn regex(&self) -> std::option::Option<&str> {
+    pub fn regex(&self) -> ::std::option::Option<&str> {
         self.regex.as_deref()
     }
     /// <p>An example illustrating a pattern that need to be replaced in a managed template job document schema.</p>
-    pub fn example(&self) -> std::option::Option<&str> {
+    pub fn example(&self) -> ::std::option::Option<&str> {
         self.example.as_deref()
     }
     /// <p>Specifies whether a pattern that needs to be replaced in a managed template job document schema is optional or required.</p>
@@ -53,62 +53,64 @@ impl DocumentParameter {
 
 /// A builder for [`DocumentParameter`](crate::types::DocumentParameter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DocumentParameterBuilder {
-    pub(crate) key: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) regex: std::option::Option<std::string::String>,
-    pub(crate) example: std::option::Option<std::string::String>,
-    pub(crate) optional: std::option::Option<bool>,
+    pub(crate) key: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) regex: ::std::option::Option<::std::string::String>,
+    pub(crate) example: ::std::option::Option<::std::string::String>,
+    pub(crate) optional: ::std::option::Option<bool>,
 }
 impl DocumentParameterBuilder {
     /// <p>Key of the map field containing the patterns that need to be replaced in a managed template job document schema.</p>
-    pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.key = Some(input.into());
+    pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Key of the map field containing the patterns that need to be replaced in a managed template job document schema.</p>
-    pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key = input;
         self
     }
     /// <p>Description of the map field containing the patterns that need to be replaced in a managed template job document schema.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Description of the map field containing the patterns that need to be replaced in a managed template job document schema.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>A regular expression of the patterns that need to be replaced in a managed template job document schema.</p>
-    pub fn regex(mut self, input: impl Into<std::string::String>) -> Self {
-        self.regex = Some(input.into());
+    pub fn regex(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.regex = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A regular expression of the patterns that need to be replaced in a managed template job document schema.</p>
-    pub fn set_regex(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_regex(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.regex = input;
         self
     }
     /// <p>An example illustrating a pattern that need to be replaced in a managed template job document schema.</p>
-    pub fn example(mut self, input: impl Into<std::string::String>) -> Self {
-        self.example = Some(input.into());
+    pub fn example(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.example = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An example illustrating a pattern that need to be replaced in a managed template job document schema.</p>
-    pub fn set_example(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_example(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.example = input;
         self
     }
     /// <p>Specifies whether a pattern that needs to be replaced in a managed template job document schema is optional or required.</p>
     pub fn optional(mut self, input: bool) -> Self {
-        self.optional = Some(input);
+        self.optional = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether a pattern that needs to be replaced in a managed template job document schema is optional or required.</p>
-    pub fn set_optional(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_optional(mut self, input: ::std::option::Option<bool>) -> Self {
         self.optional = input;
         self
     }

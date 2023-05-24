@@ -41,13 +41,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum WorkflowRunStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,7 +63,7 @@ pub enum WorkflowRunStatus {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for WorkflowRunStatus {
+impl ::std::convert::From<&str> for WorkflowRunStatus {
     fn from(s: &str) -> Self {
         match s {
             "COMPLETED" => WorkflowRunStatus::Completed,
@@ -77,11 +77,11 @@ impl std::convert::From<&str> for WorkflowRunStatus {
         }
     }
 }
-impl std::str::FromStr for WorkflowRunStatus {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for WorkflowRunStatus {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(WorkflowRunStatus::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(WorkflowRunStatus::from(s))
     }
 }
 impl WorkflowRunStatus {
@@ -101,7 +101,7 @@ impl WorkflowRunStatus {
         &["COMPLETED", "ERROR", "RUNNING", "STOPPED", "STOPPING"]
     }
 }
-impl AsRef<str> for WorkflowRunStatus {
+impl ::std::convert::AsRef<str> for WorkflowRunStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

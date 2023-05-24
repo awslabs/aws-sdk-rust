@@ -6,29 +6,29 @@ pub use crate::operation::list_notebook_executions::_list_notebook_executions_in
 /// Fluent builder constructing a request to `ListNotebookExecutions`.
 ///
 /// <p>Provides summaries of all notebook executions. You can filter the list based on multiple criteria such as status, time range, and editor id. Returns a maximum of 50 notebook executions and a marker to track the paging of a longer notebook execution list across multiple <code>ListNotebookExecutions</code> calls.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListNotebookExecutionsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::list_notebook_executions::builders::ListNotebookExecutionsInputBuilder,
 }
 impl ListNotebookExecutionsFluentBuilder {
     /// Creates a new `ListNotebookExecutions`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::list_notebook_executions::ListNotebookExecutions,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::list_notebook_executions::ListNotebookExecutionsError,
         >,
     > {
@@ -36,30 +36,33 @@ impl ListNotebookExecutionsFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::list_notebook_executions::ListNotebookExecutionsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::list_notebook_executions::ListNotebookExecutionsError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,9 +75,9 @@ impl ListNotebookExecutionsFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::list_notebook_executions::ListNotebookExecutionsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::list_notebook_executions::ListNotebookExecutionsError,
         >,
     > {
@@ -93,12 +96,12 @@ impl ListNotebookExecutionsFluentBuilder {
         )
     }
     /// <p>The unique ID of the editor associated with the notebook execution.</p>
-    pub fn editor_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn editor_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.editor_id(input.into());
         self
     }
     /// <p>The unique ID of the editor associated with the notebook execution.</p>
-    pub fn set_editor_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_editor_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_editor_id(input);
         self
     }
@@ -134,50 +137,53 @@ impl ListNotebookExecutionsFluentBuilder {
     /// </ul>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::NotebookExecutionStatus>,
+        input: ::std::option::Option<crate::types::NotebookExecutionStatus>,
     ) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }
     /// <p>The beginning of time range filter for listing notebook executions. The default is the timestamp of 30 days ago.</p>
-    pub fn from(mut self, input: aws_smithy_types::DateTime) -> Self {
+    pub fn from(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.from(input);
         self
     }
     /// <p>The beginning of time range filter for listing notebook executions. The default is the timestamp of 30 days ago.</p>
-    pub fn set_from(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_from(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_from(input);
         self
     }
     /// <p>The end of time range filter for listing notebook executions. The default is the current timestamp.</p>
-    pub fn to(mut self, input: aws_smithy_types::DateTime) -> Self {
+    pub fn to(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.to(input);
         self
     }
     /// <p>The end of time range filter for listing notebook executions. The default is the current timestamp.</p>
-    pub fn set_to(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_to(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_to(input);
         self
     }
     /// <p>The pagination token, returned by a previous <code>ListNotebookExecutions</code> call, that indicates the start of the list for this <code>ListNotebookExecutions</code> call.</p>
-    pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.marker(input.into());
         self
     }
     /// <p>The pagination token, returned by a previous <code>ListNotebookExecutions</code> call, that indicates the start of the list for this <code>ListNotebookExecutions</code> call.</p>
-    pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_marker(input);
         self
     }
     /// <p>The unique ID of the execution engine.</p>
-    pub fn execution_engine_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn execution_engine_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.execution_engine_id(input.into());
         self
     }
     /// <p>The unique ID of the execution engine.</p>
     pub fn set_execution_engine_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_execution_engine_id(input);
         self

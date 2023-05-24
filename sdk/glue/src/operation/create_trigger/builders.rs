@@ -6,56 +6,59 @@ pub use crate::operation::create_trigger::_create_trigger_input::CreateTriggerIn
 /// Fluent builder constructing a request to `CreateTrigger`.
 ///
 /// <p>Creates a new trigger.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateTriggerFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_trigger::builders::CreateTriggerInputBuilder,
 }
 impl CreateTriggerFluentBuilder {
     /// Creates a new `CreateTrigger`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_trigger::CreateTrigger,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_trigger::CreateTriggerError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_trigger::CreateTriggerError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_trigger::CreateTriggerOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_trigger::CreateTriggerError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_trigger::CreateTriggerError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,29 +71,35 @@ impl CreateTriggerFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_trigger::CreateTriggerOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_trigger::CreateTriggerError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_trigger::CreateTriggerError>,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the trigger.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// <p>The name of the trigger.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
     /// <p>The name of the workflow associated with the trigger.</p>
-    pub fn workflow_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn workflow_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.workflow_name(input.into());
         self
     }
     /// <p>The name of the workflow associated with the trigger.</p>
-    pub fn set_workflow_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_workflow_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_workflow_name(input);
         self
     }
@@ -100,19 +109,19 @@ impl CreateTriggerFluentBuilder {
         self
     }
     /// <p>The type of the new trigger.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::TriggerType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::TriggerType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }
     /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
     /// <p>This field is required when the trigger type is SCHEDULED.</p>
-    pub fn schedule(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn schedule(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.schedule(input.into());
         self
     }
     /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
     /// <p>This field is required when the trigger type is SCHEDULED.</p>
-    pub fn set_schedule(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_schedule(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_schedule(input);
         self
     }
@@ -124,7 +133,7 @@ impl CreateTriggerFluentBuilder {
     }
     /// <p>A predicate to specify when the new trigger should fire.</p>
     /// <p>This field is required when the trigger type is <code>CONDITIONAL</code>.</p>
-    pub fn set_predicate(mut self, input: std::option::Option<crate::types::Predicate>) -> Self {
+    pub fn set_predicate(mut self, input: ::std::option::Option<crate::types::Predicate>) -> Self {
         self.inner = self.inner.set_predicate(input);
         self
     }
@@ -140,18 +149,18 @@ impl CreateTriggerFluentBuilder {
     /// <p>The actions initiated by this trigger when it fires.</p>
     pub fn set_actions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Action>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Action>>,
     ) -> Self {
         self.inner = self.inner.set_actions(input);
         self
     }
     /// <p>A description of the new trigger.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>A description of the new trigger.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
@@ -161,7 +170,7 @@ impl CreateTriggerFluentBuilder {
         self
     }
     /// <p>Set to <code>true</code> to start <code>SCHEDULED</code> and <code>CONDITIONAL</code> triggers when created. True is not supported for <code>ON_DEMAND</code> triggers.</p>
-    pub fn set_start_on_creation(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_start_on_creation(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_start_on_creation(input);
         self
     }
@@ -172,8 +181,8 @@ impl CreateTriggerFluentBuilder {
     /// <p>The tags to use with this trigger. You may use tags to limit access to the trigger. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide. </p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
@@ -181,8 +190,8 @@ impl CreateTriggerFluentBuilder {
     /// <p>The tags to use with this trigger. You may use tags to limit access to the trigger. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide. </p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
@@ -196,7 +205,7 @@ impl CreateTriggerFluentBuilder {
     /// <p>Batch condition that must be met (specified number of events received or batch time window expired) before EventBridge event trigger fires.</p>
     pub fn set_event_batching_condition(
         mut self,
-        input: std::option::Option<crate::types::EventBatchingCondition>,
+        input: ::std::option::Option<crate::types::EventBatchingCondition>,
     ) -> Self {
         self.inner = self.inner.set_event_batching_condition(input);
         self

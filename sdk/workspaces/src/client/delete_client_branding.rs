@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteClientBranding`](crate::operation::delete_client_branding::builders::DeleteClientBrandingFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_id(impl Into<String>)`](crate::operation::delete_client_branding::builders::DeleteClientBrandingFluentBuilder::resource_id) / [`set_resource_id(Option<String>)`](crate::operation::delete_client_branding::builders::DeleteClientBrandingFluentBuilder::set_resource_id): <p>The directory identifier of the WorkSpace for which you want to delete client branding.</p>
+    ///   - [`resource_id(impl ::std::convert::Into<String>)`](crate::operation::delete_client_branding::builders::DeleteClientBrandingFluentBuilder::resource_id) / [`set_resource_id(Option<String>)`](crate::operation::delete_client_branding::builders::DeleteClientBrandingFluentBuilder::set_resource_id): <p>The directory identifier of the WorkSpace for which you want to delete client branding.</p>
     ///   - [`platforms(Vec<ClientDeviceType>)`](crate::operation::delete_client_branding::builders::DeleteClientBrandingFluentBuilder::platforms) / [`set_platforms(Option<Vec<ClientDeviceType>>)`](crate::operation::delete_client_branding::builders::DeleteClientBrandingFluentBuilder::set_platforms): <p>The device type for which you want to delete client branding.</p>
     /// - On success, responds with [`DeleteClientBrandingOutput`](crate::operation::delete_client_branding::DeleteClientBrandingOutput)
     /// - On failure, responds with [`SdkError<DeleteClientBrandingError>`](crate::operation::delete_client_branding::DeleteClientBrandingError)

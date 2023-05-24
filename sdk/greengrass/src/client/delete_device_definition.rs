@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteDeviceDefinition`](crate::operation::delete_device_definition::builders::DeleteDeviceDefinitionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`device_definition_id(impl Into<String>)`](crate::operation::delete_device_definition::builders::DeleteDeviceDefinitionFluentBuilder::device_definition_id) / [`set_device_definition_id(Option<String>)`](crate::operation::delete_device_definition::builders::DeleteDeviceDefinitionFluentBuilder::set_device_definition_id): The ID of the device definition.
+    ///   - [`device_definition_id(impl ::std::convert::Into<String>)`](crate::operation::delete_device_definition::builders::DeleteDeviceDefinitionFluentBuilder::device_definition_id) / [`set_device_definition_id(Option<String>)`](crate::operation::delete_device_definition::builders::DeleteDeviceDefinitionFluentBuilder::set_device_definition_id): The ID of the device definition.
     /// - On success, responds with [`DeleteDeviceDefinitionOutput`](crate::operation::delete_device_definition::DeleteDeviceDefinitionOutput)
     /// - On failure, responds with [`SdkError<DeleteDeviceDefinitionError>`](crate::operation::delete_device_definition::DeleteDeviceDefinitionError)
     pub fn delete_device_definition(

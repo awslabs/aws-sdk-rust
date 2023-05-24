@@ -3,25 +3,25 @@
 /// <p>Contains the results of a successful call to the <code>DescribeDBClusterSnapshotAttributes</code> API action.</p>
 /// <p>Manual DB cluster snapshot attributes are used to authorize other Amazon Web Services accounts to copy or restore a manual DB cluster snapshot. For more information, see the <code>ModifyDBClusterSnapshotAttribute</code> API action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DbClusterSnapshotAttributesResult {
     /// <p>The identifier of the manual DB cluster snapshot that the attributes apply to.</p>
     #[doc(hidden)]
-    pub db_cluster_snapshot_identifier: std::option::Option<std::string::String>,
+    pub db_cluster_snapshot_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The list of attributes and values for the manual DB cluster snapshot.</p>
     #[doc(hidden)]
     pub db_cluster_snapshot_attributes:
-        std::option::Option<std::vec::Vec<crate::types::DbClusterSnapshotAttribute>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::DbClusterSnapshotAttribute>>,
 }
 impl DbClusterSnapshotAttributesResult {
     /// <p>The identifier of the manual DB cluster snapshot that the attributes apply to.</p>
-    pub fn db_cluster_snapshot_identifier(&self) -> std::option::Option<&str> {
+    pub fn db_cluster_snapshot_identifier(&self) -> ::std::option::Option<&str> {
         self.db_cluster_snapshot_identifier.as_deref()
     }
     /// <p>The list of attributes and values for the manual DB cluster snapshot.</p>
     pub fn db_cluster_snapshot_attributes(
         &self,
-    ) -> std::option::Option<&[crate::types::DbClusterSnapshotAttribute]> {
+    ) -> ::std::option::Option<&[crate::types::DbClusterSnapshotAttribute]> {
         self.db_cluster_snapshot_attributes.as_deref()
     }
 }
@@ -34,22 +34,27 @@ impl DbClusterSnapshotAttributesResult {
 
 /// A builder for [`DbClusterSnapshotAttributesResult`](crate::types::DbClusterSnapshotAttributesResult).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DbClusterSnapshotAttributesResultBuilder {
-    pub(crate) db_cluster_snapshot_identifier: std::option::Option<std::string::String>,
+    pub(crate) db_cluster_snapshot_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) db_cluster_snapshot_attributes:
-        std::option::Option<std::vec::Vec<crate::types::DbClusterSnapshotAttribute>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::DbClusterSnapshotAttribute>>,
 }
 impl DbClusterSnapshotAttributesResultBuilder {
     /// <p>The identifier of the manual DB cluster snapshot that the attributes apply to.</p>
-    pub fn db_cluster_snapshot_identifier(mut self, input: impl Into<std::string::String>) -> Self {
-        self.db_cluster_snapshot_identifier = Some(input.into());
+    pub fn db_cluster_snapshot_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.db_cluster_snapshot_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the manual DB cluster snapshot that the attributes apply to.</p>
     pub fn set_db_cluster_snapshot_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.db_cluster_snapshot_identifier = input;
         self
@@ -65,13 +70,13 @@ impl DbClusterSnapshotAttributesResultBuilder {
     ) -> Self {
         let mut v = self.db_cluster_snapshot_attributes.unwrap_or_default();
         v.push(input);
-        self.db_cluster_snapshot_attributes = Some(v);
+        self.db_cluster_snapshot_attributes = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of attributes and values for the manual DB cluster snapshot.</p>
     pub fn set_db_cluster_snapshot_attributes(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DbClusterSnapshotAttribute>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DbClusterSnapshotAttribute>>,
     ) -> Self {
         self.db_cluster_snapshot_attributes = input;
         self

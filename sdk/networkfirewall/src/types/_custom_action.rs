@@ -8,22 +8,22 @@
 /// <li> <p>In a <code>FirewallPolicy</code> specification, in <code>StatelessCustomActions</code>. The custom actions are available for use inside the policy where you define them. You can use them for the policy's default stateless actions settings to specify what to do with packets that don't match any of the policy's stateless rules. </p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomAction {
     /// <p>The descriptive name of the custom action. You can't change the name of a custom action after you create it.</p>
     #[doc(hidden)]
-    pub action_name: std::option::Option<std::string::String>,
+    pub action_name: ::std::option::Option<::std::string::String>,
     /// <p>The custom action associated with the action name.</p>
     #[doc(hidden)]
-    pub action_definition: std::option::Option<crate::types::ActionDefinition>,
+    pub action_definition: ::std::option::Option<crate::types::ActionDefinition>,
 }
 impl CustomAction {
     /// <p>The descriptive name of the custom action. You can't change the name of a custom action after you create it.</p>
-    pub fn action_name(&self) -> std::option::Option<&str> {
+    pub fn action_name(&self) -> ::std::option::Option<&str> {
         self.action_name.as_deref()
     }
     /// <p>The custom action associated with the action name.</p>
-    pub fn action_definition(&self) -> std::option::Option<&crate::types::ActionDefinition> {
+    pub fn action_definition(&self) -> ::std::option::Option<&crate::types::ActionDefinition> {
         self.action_definition.as_ref()
     }
 }
@@ -36,31 +36,33 @@ impl CustomAction {
 
 /// A builder for [`CustomAction`](crate::types::CustomAction).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CustomActionBuilder {
-    pub(crate) action_name: std::option::Option<std::string::String>,
-    pub(crate) action_definition: std::option::Option<crate::types::ActionDefinition>,
+    pub(crate) action_name: ::std::option::Option<::std::string::String>,
+    pub(crate) action_definition: ::std::option::Option<crate::types::ActionDefinition>,
 }
 impl CustomActionBuilder {
     /// <p>The descriptive name of the custom action. You can't change the name of a custom action after you create it.</p>
-    pub fn action_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.action_name = Some(input.into());
+    pub fn action_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.action_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The descriptive name of the custom action. You can't change the name of a custom action after you create it.</p>
-    pub fn set_action_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_action_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.action_name = input;
         self
     }
     /// <p>The custom action associated with the action name.</p>
     pub fn action_definition(mut self, input: crate::types::ActionDefinition) -> Self {
-        self.action_definition = Some(input);
+        self.action_definition = ::std::option::Option::Some(input);
         self
     }
     /// <p>The custom action associated with the action name.</p>
     pub fn set_action_definition(
         mut self,
-        input: std::option::Option<crate::types::ActionDefinition>,
+        input: ::std::option::Option<crate::types::ActionDefinition>,
     ) -> Self {
         self.action_definition = input;
         self

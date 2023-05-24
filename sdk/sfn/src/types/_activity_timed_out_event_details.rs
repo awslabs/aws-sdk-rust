@@ -2,27 +2,27 @@
 
 /// <p>Contains details about an activity timeout that occurred during an execution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ActivityTimedOutEventDetails {
     /// <p>The error code of the failure.</p>
     #[doc(hidden)]
-    pub error: std::option::Option<std::string::String>,
+    pub error: ::std::option::Option<::std::string::String>,
     /// <p>A more detailed explanation of the cause of the timeout.</p>
     #[doc(hidden)]
-    pub cause: std::option::Option<std::string::String>,
+    pub cause: ::std::option::Option<::std::string::String>,
 }
 impl ActivityTimedOutEventDetails {
     /// <p>The error code of the failure.</p>
-    pub fn error(&self) -> std::option::Option<&str> {
+    pub fn error(&self) -> ::std::option::Option<&str> {
         self.error.as_deref()
     }
     /// <p>A more detailed explanation of the cause of the timeout.</p>
-    pub fn cause(&self) -> std::option::Option<&str> {
+    pub fn cause(&self) -> ::std::option::Option<&str> {
         self.cause.as_deref()
     }
 }
-impl std::fmt::Debug for ActivityTimedOutEventDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for ActivityTimedOutEventDetails {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ActivityTimedOutEventDetails");
         formatter.field("error", &"*** Sensitive Data Redacted ***");
         formatter.field("cause", &"*** Sensitive Data Redacted ***");
@@ -38,29 +38,29 @@ impl ActivityTimedOutEventDetails {
 
 /// A builder for [`ActivityTimedOutEventDetails`](crate::types::ActivityTimedOutEventDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct ActivityTimedOutEventDetailsBuilder {
-    pub(crate) error: std::option::Option<std::string::String>,
-    pub(crate) cause: std::option::Option<std::string::String>,
+    pub(crate) error: ::std::option::Option<::std::string::String>,
+    pub(crate) cause: ::std::option::Option<::std::string::String>,
 }
 impl ActivityTimedOutEventDetailsBuilder {
     /// <p>The error code of the failure.</p>
-    pub fn error(mut self, input: impl Into<std::string::String>) -> Self {
-        self.error = Some(input.into());
+    pub fn error(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.error = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The error code of the failure.</p>
-    pub fn set_error(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_error(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error = input;
         self
     }
     /// <p>A more detailed explanation of the cause of the timeout.</p>
-    pub fn cause(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cause = Some(input.into());
+    pub fn cause(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cause = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A more detailed explanation of the cause of the timeout.</p>
-    pub fn set_cause(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cause(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cause = input;
         self
     }
@@ -72,8 +72,8 @@ impl ActivityTimedOutEventDetailsBuilder {
         }
     }
 }
-impl std::fmt::Debug for ActivityTimedOutEventDetailsBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for ActivityTimedOutEventDetailsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("ActivityTimedOutEventDetailsBuilder");
         formatter.field("error", &"*** Sensitive Data Redacted ***");
         formatter.field("cause", &"*** Sensitive Data Redacted ***");

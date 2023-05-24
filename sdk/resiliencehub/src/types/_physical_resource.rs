@@ -2,61 +2,61 @@
 
 /// <p>Defines a physical resource. A physical resource is a resource that exists in your account. It can be identified using an Amazon Resource Name (ARN) or an Resilience Hub-native identifier. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PhysicalResource {
     /// <p>The name of the resource.</p>
     #[doc(hidden)]
-    pub resource_name: std::option::Option<std::string::String>,
+    pub resource_name: ::std::option::Option<::std::string::String>,
     /// <p>The logical identifier of the resource.</p>
     #[doc(hidden)]
-    pub logical_resource_id: std::option::Option<crate::types::LogicalResourceId>,
+    pub logical_resource_id: ::std::option::Option<crate::types::LogicalResourceId>,
     /// <p>The physical identifier of the resource.</p>
     #[doc(hidden)]
-    pub physical_resource_id: std::option::Option<crate::types::PhysicalResourceId>,
+    pub physical_resource_id: ::std::option::Option<crate::types::PhysicalResourceId>,
     /// <p>The type of resource.</p>
     #[doc(hidden)]
-    pub resource_type: std::option::Option<std::string::String>,
+    pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>The application components that belong to this resource.</p>
     #[doc(hidden)]
-    pub app_components: std::option::Option<std::vec::Vec<crate::types::AppComponent>>,
+    pub app_components: ::std::option::Option<::std::vec::Vec<crate::types::AppComponent>>,
     /// <p>Additional configuration parameters for an Resilience Hub application. If you want to implement <code>additionalInfo</code> through the Resilience Hub console rather than using an API call, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/app-config-param.html">Configure the application configuration parameters</a>.</p> <note>
     /// <p>Currently, this parameter accepts a key-value mapping (in a string format) of only one failover region and one associated account.</p>
     /// <p>Key: <code>"failover-regions"</code> </p>
     /// <p>Value: <code>"[{"region":"&lt;REGION&gt;", "accounts":[{"id":"&lt;ACCOUNT_ID&gt;"}]}]"</code> </p>
     /// </note>
     #[doc(hidden)]
-    pub additional_info: std::option::Option<
-        std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    pub additional_info: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
     >,
     /// <p>Indicates if a resource is included or excluded from the assessment.</p>
     #[doc(hidden)]
-    pub excluded: std::option::Option<bool>,
+    pub excluded: ::std::option::Option<bool>,
     /// <p>The type of input source.</p>
     #[doc(hidden)]
-    pub source_type: std::option::Option<crate::types::ResourceSourceType>,
+    pub source_type: ::std::option::Option<crate::types::ResourceSourceType>,
     /// <p>The name of the parent resource.</p>
     #[doc(hidden)]
-    pub parent_resource_name: std::option::Option<std::string::String>,
+    pub parent_resource_name: ::std::option::Option<::std::string::String>,
 }
 impl PhysicalResource {
     /// <p>The name of the resource.</p>
-    pub fn resource_name(&self) -> std::option::Option<&str> {
+    pub fn resource_name(&self) -> ::std::option::Option<&str> {
         self.resource_name.as_deref()
     }
     /// <p>The logical identifier of the resource.</p>
-    pub fn logical_resource_id(&self) -> std::option::Option<&crate::types::LogicalResourceId> {
+    pub fn logical_resource_id(&self) -> ::std::option::Option<&crate::types::LogicalResourceId> {
         self.logical_resource_id.as_ref()
     }
     /// <p>The physical identifier of the resource.</p>
-    pub fn physical_resource_id(&self) -> std::option::Option<&crate::types::PhysicalResourceId> {
+    pub fn physical_resource_id(&self) -> ::std::option::Option<&crate::types::PhysicalResourceId> {
         self.physical_resource_id.as_ref()
     }
     /// <p>The type of resource.</p>
-    pub fn resource_type(&self) -> std::option::Option<&str> {
+    pub fn resource_type(&self) -> ::std::option::Option<&str> {
         self.resource_type.as_deref()
     }
     /// <p>The application components that belong to this resource.</p>
-    pub fn app_components(&self) -> std::option::Option<&[crate::types::AppComponent]> {
+    pub fn app_components(&self) -> ::std::option::Option<&[crate::types::AppComponent]> {
         self.app_components.as_deref()
     }
     /// <p>Additional configuration parameters for an Resilience Hub application. If you want to implement <code>additionalInfo</code> through the Resilience Hub console rather than using an API call, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/app-config-param.html">Configure the application configuration parameters</a>.</p> <note>
@@ -66,21 +66,21 @@ impl PhysicalResource {
     /// </note>
     pub fn additional_info(
         &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
     > {
         self.additional_info.as_ref()
     }
     /// <p>Indicates if a resource is included or excluded from the assessment.</p>
-    pub fn excluded(&self) -> std::option::Option<bool> {
+    pub fn excluded(&self) -> ::std::option::Option<bool> {
         self.excluded
     }
     /// <p>The type of input source.</p>
-    pub fn source_type(&self) -> std::option::Option<&crate::types::ResourceSourceType> {
+    pub fn source_type(&self) -> ::std::option::Option<&crate::types::ResourceSourceType> {
         self.source_type.as_ref()
     }
     /// <p>The name of the parent resource.</p>
-    pub fn parent_resource_name(&self) -> std::option::Option<&str> {
+    pub fn parent_resource_name(&self) -> ::std::option::Option<&str> {
         self.parent_resource_name.as_deref()
     }
 }
@@ -93,64 +93,78 @@ impl PhysicalResource {
 
 /// A builder for [`PhysicalResource`](crate::types::PhysicalResource).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PhysicalResourceBuilder {
-    pub(crate) resource_name: std::option::Option<std::string::String>,
-    pub(crate) logical_resource_id: std::option::Option<crate::types::LogicalResourceId>,
-    pub(crate) physical_resource_id: std::option::Option<crate::types::PhysicalResourceId>,
-    pub(crate) resource_type: std::option::Option<std::string::String>,
-    pub(crate) app_components: std::option::Option<std::vec::Vec<crate::types::AppComponent>>,
-    pub(crate) additional_info: std::option::Option<
-        std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    pub(crate) resource_name: ::std::option::Option<::std::string::String>,
+    pub(crate) logical_resource_id: ::std::option::Option<crate::types::LogicalResourceId>,
+    pub(crate) physical_resource_id: ::std::option::Option<crate::types::PhysicalResourceId>,
+    pub(crate) resource_type: ::std::option::Option<::std::string::String>,
+    pub(crate) app_components: ::std::option::Option<::std::vec::Vec<crate::types::AppComponent>>,
+    pub(crate) additional_info: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>,
     >,
-    pub(crate) excluded: std::option::Option<bool>,
-    pub(crate) source_type: std::option::Option<crate::types::ResourceSourceType>,
-    pub(crate) parent_resource_name: std::option::Option<std::string::String>,
+    pub(crate) excluded: ::std::option::Option<bool>,
+    pub(crate) source_type: ::std::option::Option<crate::types::ResourceSourceType>,
+    pub(crate) parent_resource_name: ::std::option::Option<::std::string::String>,
 }
 impl PhysicalResourceBuilder {
     /// <p>The name of the resource.</p>
-    pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_name = Some(input.into());
+    pub fn resource_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.resource_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the resource.</p>
-    pub fn set_resource_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.resource_name = input;
         self
     }
     /// <p>The logical identifier of the resource.</p>
     pub fn logical_resource_id(mut self, input: crate::types::LogicalResourceId) -> Self {
-        self.logical_resource_id = Some(input);
+        self.logical_resource_id = ::std::option::Option::Some(input);
         self
     }
     /// <p>The logical identifier of the resource.</p>
     pub fn set_logical_resource_id(
         mut self,
-        input: std::option::Option<crate::types::LogicalResourceId>,
+        input: ::std::option::Option<crate::types::LogicalResourceId>,
     ) -> Self {
         self.logical_resource_id = input;
         self
     }
     /// <p>The physical identifier of the resource.</p>
     pub fn physical_resource_id(mut self, input: crate::types::PhysicalResourceId) -> Self {
-        self.physical_resource_id = Some(input);
+        self.physical_resource_id = ::std::option::Option::Some(input);
         self
     }
     /// <p>The physical identifier of the resource.</p>
     pub fn set_physical_resource_id(
         mut self,
-        input: std::option::Option<crate::types::PhysicalResourceId>,
+        input: ::std::option::Option<crate::types::PhysicalResourceId>,
     ) -> Self {
         self.physical_resource_id = input;
         self
     }
     /// <p>The type of resource.</p>
-    pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_type = Some(input.into());
+    pub fn resource_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of resource.</p>
-    pub fn set_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.resource_type = input;
         self
     }
@@ -162,13 +176,13 @@ impl PhysicalResourceBuilder {
     pub fn app_components(mut self, input: crate::types::AppComponent) -> Self {
         let mut v = self.app_components.unwrap_or_default();
         v.push(input);
-        self.app_components = Some(v);
+        self.app_components = ::std::option::Option::Some(v);
         self
     }
     /// <p>The application components that belong to this resource.</p>
     pub fn set_app_components(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AppComponent>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AppComponent>>,
     ) -> Self {
         self.app_components = input;
         self
@@ -184,12 +198,12 @@ impl PhysicalResourceBuilder {
     /// </note>
     pub fn additional_info(
         mut self,
-        k: impl Into<std::string::String>,
-        v: std::vec::Vec<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: ::std::vec::Vec<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.additional_info.unwrap_or_default();
         hash_map.insert(k.into(), v);
-        self.additional_info = Some(hash_map);
+        self.additional_info = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Additional configuration parameters for an Resilience Hub application. If you want to implement <code>additionalInfo</code> through the Resilience Hub console rather than using an API call, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/app-config-param.html">Configure the application configuration parameters</a>.</p> <note>
@@ -199,8 +213,11 @@ impl PhysicalResourceBuilder {
     /// </note>
     pub fn set_additional_info(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<
+                ::std::string::String,
+                ::std::vec::Vec<::std::string::String>,
+            >,
         >,
     ) -> Self {
         self.additional_info = input;
@@ -208,36 +225,39 @@ impl PhysicalResourceBuilder {
     }
     /// <p>Indicates if a resource is included or excluded from the assessment.</p>
     pub fn excluded(mut self, input: bool) -> Self {
-        self.excluded = Some(input);
+        self.excluded = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates if a resource is included or excluded from the assessment.</p>
-    pub fn set_excluded(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_excluded(mut self, input: ::std::option::Option<bool>) -> Self {
         self.excluded = input;
         self
     }
     /// <p>The type of input source.</p>
     pub fn source_type(mut self, input: crate::types::ResourceSourceType) -> Self {
-        self.source_type = Some(input);
+        self.source_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of input source.</p>
     pub fn set_source_type(
         mut self,
-        input: std::option::Option<crate::types::ResourceSourceType>,
+        input: ::std::option::Option<crate::types::ResourceSourceType>,
     ) -> Self {
         self.source_type = input;
         self
     }
     /// <p>The name of the parent resource.</p>
-    pub fn parent_resource_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.parent_resource_name = Some(input.into());
+    pub fn parent_resource_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.parent_resource_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the parent resource.</p>
     pub fn set_parent_resource_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.parent_resource_name = input;
         self

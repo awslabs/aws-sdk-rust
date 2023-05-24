@@ -2,15 +2,15 @@
 
 /// <p> The connector-specific profile properties required when using ServiceNow. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceNowConnectorProfileProperties {
     /// <p> The location of the ServiceNow resource. </p>
     #[doc(hidden)]
-    pub instance_url: std::option::Option<std::string::String>,
+    pub instance_url: ::std::option::Option<::std::string::String>,
 }
 impl ServiceNowConnectorProfileProperties {
     /// <p> The location of the ServiceNow resource. </p>
-    pub fn instance_url(&self) -> std::option::Option<&str> {
+    pub fn instance_url(&self) -> ::std::option::Option<&str> {
         self.instance_url.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl ServiceNowConnectorProfileProperties {
 
 /// A builder for [`ServiceNowConnectorProfileProperties`](crate::types::ServiceNowConnectorProfileProperties).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ServiceNowConnectorProfilePropertiesBuilder {
-    pub(crate) instance_url: std::option::Option<std::string::String>,
+    pub(crate) instance_url: ::std::option::Option<::std::string::String>,
 }
 impl ServiceNowConnectorProfilePropertiesBuilder {
     /// <p> The location of the ServiceNow resource. </p>
-    pub fn instance_url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.instance_url = Some(input.into());
+    pub fn instance_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.instance_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The location of the ServiceNow resource. </p>
-    pub fn set_instance_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_instance_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_url = input;
         self
     }

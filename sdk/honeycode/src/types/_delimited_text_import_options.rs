@@ -2,11 +2,11 @@
 
 /// <p> An object that contains the options relating to parsing delimited text as part of an import request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DelimitedTextImportOptions {
     /// <p>The delimiter to use for separating columns in a single row of the input.</p>
     #[doc(hidden)]
-    pub delimiter: std::option::Option<std::string::String>,
+    pub delimiter: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the input file has a header row at the top containing the column names.</p>
     #[doc(hidden)]
     pub has_header_row: bool,
@@ -15,11 +15,11 @@ pub struct DelimitedTextImportOptions {
     pub ignore_empty_rows: bool,
     /// <p>The encoding of the data in the input file.</p>
     #[doc(hidden)]
-    pub data_character_encoding: std::option::Option<crate::types::ImportDataCharacterEncoding>,
+    pub data_character_encoding: ::std::option::Option<crate::types::ImportDataCharacterEncoding>,
 }
 impl DelimitedTextImportOptions {
     /// <p>The delimiter to use for separating columns in a single row of the input.</p>
-    pub fn delimiter(&self) -> std::option::Option<&str> {
+    pub fn delimiter(&self) -> ::std::option::Option<&str> {
         self.delimiter.as_deref()
     }
     /// <p>Indicates whether the input file has a header row at the top containing the column names.</p>
@@ -33,7 +33,7 @@ impl DelimitedTextImportOptions {
     /// <p>The encoding of the data in the input file.</p>
     pub fn data_character_encoding(
         &self,
-    ) -> std::option::Option<&crate::types::ImportDataCharacterEncoding> {
+    ) -> ::std::option::Option<&crate::types::ImportDataCharacterEncoding> {
         self.data_character_encoding.as_ref()
     }
 }
@@ -46,42 +46,44 @@ impl DelimitedTextImportOptions {
 
 /// A builder for [`DelimitedTextImportOptions`](crate::types::DelimitedTextImportOptions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DelimitedTextImportOptionsBuilder {
-    pub(crate) delimiter: std::option::Option<std::string::String>,
-    pub(crate) has_header_row: std::option::Option<bool>,
-    pub(crate) ignore_empty_rows: std::option::Option<bool>,
+    pub(crate) delimiter: ::std::option::Option<::std::string::String>,
+    pub(crate) has_header_row: ::std::option::Option<bool>,
+    pub(crate) ignore_empty_rows: ::std::option::Option<bool>,
     pub(crate) data_character_encoding:
-        std::option::Option<crate::types::ImportDataCharacterEncoding>,
+        ::std::option::Option<crate::types::ImportDataCharacterEncoding>,
 }
 impl DelimitedTextImportOptionsBuilder {
     /// <p>The delimiter to use for separating columns in a single row of the input.</p>
-    pub fn delimiter(mut self, input: impl Into<std::string::String>) -> Self {
-        self.delimiter = Some(input.into());
+    pub fn delimiter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.delimiter = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The delimiter to use for separating columns in a single row of the input.</p>
-    pub fn set_delimiter(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_delimiter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.delimiter = input;
         self
     }
     /// <p>Indicates whether the input file has a header row at the top containing the column names.</p>
     pub fn has_header_row(mut self, input: bool) -> Self {
-        self.has_header_row = Some(input);
+        self.has_header_row = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether the input file has a header row at the top containing the column names.</p>
-    pub fn set_has_header_row(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_has_header_row(mut self, input: ::std::option::Option<bool>) -> Self {
         self.has_header_row = input;
         self
     }
     /// <p>A parameter to indicate whether empty rows should be ignored or be included in the import.</p>
     pub fn ignore_empty_rows(mut self, input: bool) -> Self {
-        self.ignore_empty_rows = Some(input);
+        self.ignore_empty_rows = ::std::option::Option::Some(input);
         self
     }
     /// <p>A parameter to indicate whether empty rows should be ignored or be included in the import.</p>
-    pub fn set_ignore_empty_rows(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_ignore_empty_rows(mut self, input: ::std::option::Option<bool>) -> Self {
         self.ignore_empty_rows = input;
         self
     }
@@ -90,13 +92,13 @@ impl DelimitedTextImportOptionsBuilder {
         mut self,
         input: crate::types::ImportDataCharacterEncoding,
     ) -> Self {
-        self.data_character_encoding = Some(input);
+        self.data_character_encoding = ::std::option::Option::Some(input);
         self
     }
     /// <p>The encoding of the data in the input file.</p>
     pub fn set_data_character_encoding(
         mut self,
-        input: std::option::Option<crate::types::ImportDataCharacterEncoding>,
+        input: ::std::option::Option<crate::types::ImportDataCharacterEncoding>,
     ) -> Self {
         self.data_character_encoding = input;
         self

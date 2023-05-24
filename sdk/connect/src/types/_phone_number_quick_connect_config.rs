@@ -2,15 +2,15 @@
 
 /// <p>Contains information about a phone number for a quick connect.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PhoneNumberQuickConnectConfig {
     /// <p>The phone number in E.164 format.</p>
     #[doc(hidden)]
-    pub phone_number: std::option::Option<std::string::String>,
+    pub phone_number: ::std::option::Option<::std::string::String>,
 }
 impl PhoneNumberQuickConnectConfig {
     /// <p>The phone number in E.164 format.</p>
-    pub fn phone_number(&self) -> std::option::Option<&str> {
+    pub fn phone_number(&self) -> ::std::option::Option<&str> {
         self.phone_number.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl PhoneNumberQuickConnectConfig {
 
 /// A builder for [`PhoneNumberQuickConnectConfig`](crate::types::PhoneNumberQuickConnectConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PhoneNumberQuickConnectConfigBuilder {
-    pub(crate) phone_number: std::option::Option<std::string::String>,
+    pub(crate) phone_number: ::std::option::Option<::std::string::String>,
 }
 impl PhoneNumberQuickConnectConfigBuilder {
     /// <p>The phone number in E.164 format.</p>
-    pub fn phone_number(mut self, input: impl Into<std::string::String>) -> Self {
-        self.phone_number = Some(input.into());
+    pub fn phone_number(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.phone_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The phone number in E.164 format.</p>
-    pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_phone_number(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.phone_number = input;
         self
     }

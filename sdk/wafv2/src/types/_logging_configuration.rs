@@ -11,43 +11,43 @@
 /// <p>When you successfully enable logging using a <code>PutLoggingConfiguration</code> request, WAF creates an additional role or policy that is required to write logs to the logging destination. For an Amazon CloudWatch Logs log group, WAF creates a resource policy on the log group. For an Amazon S3 bucket, WAF creates a bucket policy. For an Amazon Kinesis Data Firehose, WAF creates a service-linked role.</p>
 /// <p>For additional information about web ACL logging, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging web ACL traffic information</a> in the <i>WAF Developer Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoggingConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with <code>LogDestinationConfigs</code>.</p>
     #[doc(hidden)]
-    pub resource_arn: std::option::Option<std::string::String>,
+    pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The logging destination configuration that you want to associate with the web ACL.</p> <note>
     /// <p>You can associate one logging destination to a web ACL.</p>
     /// </note>
     #[doc(hidden)]
-    pub log_destination_configs: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub log_destination_configs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The parts of the request that you want to keep out of the logs. For example, if you redact the <code>SingleHeader</code> field, the <code>HEADER</code> field in the logs will be <code>REDACTED</code>. </p> <note>
     /// <p>You can specify only the following fields for redaction: <code>UriPath</code>, <code>QueryString</code>, <code>SingleHeader</code>, <code>Method</code>, and <code>JsonBody</code>.</p>
     /// </note>
     #[doc(hidden)]
-    pub redacted_fields: std::option::Option<std::vec::Vec<crate::types::FieldToMatch>>,
+    pub redacted_fields: ::std::option::Option<::std::vec::Vec<crate::types::FieldToMatch>>,
     /// <p>Indicates whether the logging configuration was created by Firewall Manager, as part of an WAF policy configuration. If true, only Firewall Manager can modify or delete the configuration. </p>
     #[doc(hidden)]
     pub managed_by_firewall_manager: bool,
     /// <p>Filtering that specifies which web requests are kept in the logs and which are dropped. You can filter on the rule action and on the web request labels that were applied by matching rules during web ACL evaluation. </p>
     #[doc(hidden)]
-    pub logging_filter: std::option::Option<crate::types::LoggingFilter>,
+    pub logging_filter: ::std::option::Option<crate::types::LoggingFilter>,
 }
 impl LoggingConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with <code>LogDestinationConfigs</code>.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
     /// <p>The logging destination configuration that you want to associate with the web ACL.</p> <note>
     /// <p>You can associate one logging destination to a web ACL.</p>
     /// </note>
-    pub fn log_destination_configs(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn log_destination_configs(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.log_destination_configs.as_deref()
     }
     /// <p>The parts of the request that you want to keep out of the logs. For example, if you redact the <code>SingleHeader</code> field, the <code>HEADER</code> field in the logs will be <code>REDACTED</code>. </p> <note>
     /// <p>You can specify only the following fields for redaction: <code>UriPath</code>, <code>QueryString</code>, <code>SingleHeader</code>, <code>Method</code>, and <code>JsonBody</code>.</p>
     /// </note>
-    pub fn redacted_fields(&self) -> std::option::Option<&[crate::types::FieldToMatch]> {
+    pub fn redacted_fields(&self) -> ::std::option::Option<&[crate::types::FieldToMatch]> {
         self.redacted_fields.as_deref()
     }
     /// <p>Indicates whether the logging configuration was created by Firewall Manager, as part of an WAF policy configuration. If true, only Firewall Manager can modify or delete the configuration. </p>
@@ -55,7 +55,7 @@ impl LoggingConfiguration {
         self.managed_by_firewall_manager
     }
     /// <p>Filtering that specifies which web requests are kept in the logs and which are dropped. You can filter on the rule action and on the web request labels that were applied by matching rules during web ACL evaluation. </p>
-    pub fn logging_filter(&self) -> std::option::Option<&crate::types::LoggingFilter> {
+    pub fn logging_filter(&self) -> ::std::option::Option<&crate::types::LoggingFilter> {
         self.logging_filter.as_ref()
     }
 }
@@ -68,22 +68,25 @@ impl LoggingConfiguration {
 
 /// A builder for [`LoggingConfiguration`](crate::types::LoggingConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LoggingConfigurationBuilder {
-    pub(crate) resource_arn: std::option::Option<std::string::String>,
-    pub(crate) log_destination_configs: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) redacted_fields: std::option::Option<std::vec::Vec<crate::types::FieldToMatch>>,
-    pub(crate) managed_by_firewall_manager: std::option::Option<bool>,
-    pub(crate) logging_filter: std::option::Option<crate::types::LoggingFilter>,
+    pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) log_destination_configs:
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) redacted_fields: ::std::option::Option<::std::vec::Vec<crate::types::FieldToMatch>>,
+    pub(crate) managed_by_firewall_manager: ::std::option::Option<bool>,
+    pub(crate) logging_filter: ::std::option::Option<crate::types::LoggingFilter>,
 }
 impl LoggingConfigurationBuilder {
     /// <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with <code>LogDestinationConfigs</code>.</p>
-    pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_arn = Some(input.into());
+    pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with <code>LogDestinationConfigs</code>.</p>
-    pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
     }
@@ -94,10 +97,13 @@ impl LoggingConfigurationBuilder {
     /// <p>The logging destination configuration that you want to associate with the web ACL.</p> <note>
     /// <p>You can associate one logging destination to a web ACL.</p>
     /// </note>
-    pub fn log_destination_configs(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn log_destination_configs(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.log_destination_configs.unwrap_or_default();
         v.push(input.into());
-        self.log_destination_configs = Some(v);
+        self.log_destination_configs = ::std::option::Option::Some(v);
         self
     }
     /// <p>The logging destination configuration that you want to associate with the web ACL.</p> <note>
@@ -105,7 +111,7 @@ impl LoggingConfigurationBuilder {
     /// </note>
     pub fn set_log_destination_configs(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.log_destination_configs = input;
         self
@@ -120,7 +126,7 @@ impl LoggingConfigurationBuilder {
     pub fn redacted_fields(mut self, input: crate::types::FieldToMatch) -> Self {
         let mut v = self.redacted_fields.unwrap_or_default();
         v.push(input);
-        self.redacted_fields = Some(v);
+        self.redacted_fields = ::std::option::Option::Some(v);
         self
     }
     /// <p>The parts of the request that you want to keep out of the logs. For example, if you redact the <code>SingleHeader</code> field, the <code>HEADER</code> field in the logs will be <code>REDACTED</code>. </p> <note>
@@ -128,30 +134,30 @@ impl LoggingConfigurationBuilder {
     /// </note>
     pub fn set_redacted_fields(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::FieldToMatch>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::FieldToMatch>>,
     ) -> Self {
         self.redacted_fields = input;
         self
     }
     /// <p>Indicates whether the logging configuration was created by Firewall Manager, as part of an WAF policy configuration. If true, only Firewall Manager can modify or delete the configuration. </p>
     pub fn managed_by_firewall_manager(mut self, input: bool) -> Self {
-        self.managed_by_firewall_manager = Some(input);
+        self.managed_by_firewall_manager = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether the logging configuration was created by Firewall Manager, as part of an WAF policy configuration. If true, only Firewall Manager can modify or delete the configuration. </p>
-    pub fn set_managed_by_firewall_manager(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_managed_by_firewall_manager(mut self, input: ::std::option::Option<bool>) -> Self {
         self.managed_by_firewall_manager = input;
         self
     }
     /// <p>Filtering that specifies which web requests are kept in the logs and which are dropped. You can filter on the rule action and on the web request labels that were applied by matching rules during web ACL evaluation. </p>
     pub fn logging_filter(mut self, input: crate::types::LoggingFilter) -> Self {
-        self.logging_filter = Some(input);
+        self.logging_filter = ::std::option::Option::Some(input);
         self
     }
     /// <p>Filtering that specifies which web requests are kept in the logs and which are dropped. You can filter on the rule action and on the web request labels that were applied by matching rules during web ACL evaluation. </p>
     pub fn set_logging_filter(
         mut self,
-        input: std::option::Option<crate::types::LoggingFilter>,
+        input: ::std::option::Option<crate::types::LoggingFilter>,
     ) -> Self {
         self.logging_filter = input;
         self

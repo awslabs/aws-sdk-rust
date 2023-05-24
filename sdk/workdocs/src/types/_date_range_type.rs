@@ -2,22 +2,22 @@
 
 /// <p>Filters results based on timestamp range (in epochs).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DateRangeType {
     /// <p>Timestamp range start value (in epochs)</p>
     #[doc(hidden)]
-    pub start_value: std::option::Option<aws_smithy_types::DateTime>,
+    pub start_value: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Timestamp range end value (in epochs).</p>
     #[doc(hidden)]
-    pub end_value: std::option::Option<aws_smithy_types::DateTime>,
+    pub end_value: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl DateRangeType {
     /// <p>Timestamp range start value (in epochs)</p>
-    pub fn start_value(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_value(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.start_value.as_ref()
     }
     /// <p>Timestamp range end value (in epochs).</p>
-    pub fn end_value(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn end_value(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.end_value.as_ref()
     }
 }
@@ -30,32 +30,37 @@ impl DateRangeType {
 
 /// A builder for [`DateRangeType`](crate::types::DateRangeType).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DateRangeTypeBuilder {
-    pub(crate) start_value: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) end_value: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) start_value: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) end_value: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl DateRangeTypeBuilder {
     /// <p>Timestamp range start value (in epochs)</p>
-    pub fn start_value(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.start_value = Some(input);
+    pub fn start_value(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.start_value = ::std::option::Option::Some(input);
         self
     }
     /// <p>Timestamp range start value (in epochs)</p>
     pub fn set_start_value(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.start_value = input;
         self
     }
     /// <p>Timestamp range end value (in epochs).</p>
-    pub fn end_value(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.end_value = Some(input);
+    pub fn end_value(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.end_value = ::std::option::Option::Some(input);
         self
     }
     /// <p>Timestamp range end value (in epochs).</p>
-    pub fn set_end_value(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_end_value(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
         self.end_value = input;
         self
     }

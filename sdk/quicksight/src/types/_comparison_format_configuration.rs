@@ -3,28 +3,28 @@
 /// <p>The format of the comparison.</p>
 /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComparisonFormatConfiguration {
     /// <p>The number display format.</p>
     #[doc(hidden)]
     pub number_display_format_configuration:
-        std::option::Option<crate::types::NumberDisplayFormatConfiguration>,
+        ::std::option::Option<crate::types::NumberDisplayFormatConfiguration>,
     /// <p>The percentage display format.</p>
     #[doc(hidden)]
     pub percentage_display_format_configuration:
-        std::option::Option<crate::types::PercentageDisplayFormatConfiguration>,
+        ::std::option::Option<crate::types::PercentageDisplayFormatConfiguration>,
 }
 impl ComparisonFormatConfiguration {
     /// <p>The number display format.</p>
     pub fn number_display_format_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::NumberDisplayFormatConfiguration> {
+    ) -> ::std::option::Option<&crate::types::NumberDisplayFormatConfiguration> {
         self.number_display_format_configuration.as_ref()
     }
     /// <p>The percentage display format.</p>
     pub fn percentage_display_format_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::PercentageDisplayFormatConfiguration> {
+    ) -> ::std::option::Option<&crate::types::PercentageDisplayFormatConfiguration> {
         self.percentage_display_format_configuration.as_ref()
     }
 }
@@ -37,12 +37,14 @@ impl ComparisonFormatConfiguration {
 
 /// A builder for [`ComparisonFormatConfiguration`](crate::types::ComparisonFormatConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ComparisonFormatConfigurationBuilder {
     pub(crate) number_display_format_configuration:
-        std::option::Option<crate::types::NumberDisplayFormatConfiguration>,
+        ::std::option::Option<crate::types::NumberDisplayFormatConfiguration>,
     pub(crate) percentage_display_format_configuration:
-        std::option::Option<crate::types::PercentageDisplayFormatConfiguration>,
+        ::std::option::Option<crate::types::PercentageDisplayFormatConfiguration>,
 }
 impl ComparisonFormatConfigurationBuilder {
     /// <p>The number display format.</p>
@@ -50,13 +52,13 @@ impl ComparisonFormatConfigurationBuilder {
         mut self,
         input: crate::types::NumberDisplayFormatConfiguration,
     ) -> Self {
-        self.number_display_format_configuration = Some(input);
+        self.number_display_format_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number display format.</p>
     pub fn set_number_display_format_configuration(
         mut self,
-        input: std::option::Option<crate::types::NumberDisplayFormatConfiguration>,
+        input: ::std::option::Option<crate::types::NumberDisplayFormatConfiguration>,
     ) -> Self {
         self.number_display_format_configuration = input;
         self
@@ -66,13 +68,13 @@ impl ComparisonFormatConfigurationBuilder {
         mut self,
         input: crate::types::PercentageDisplayFormatConfiguration,
     ) -> Self {
-        self.percentage_display_format_configuration = Some(input);
+        self.percentage_display_format_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The percentage display format.</p>
     pub fn set_percentage_display_format_configuration(
         mut self,
-        input: std::option::Option<crate::types::PercentageDisplayFormatConfiguration>,
+        input: ::std::option::Option<crate::types::PercentageDisplayFormatConfiguration>,
     ) -> Self {
         self.percentage_display_format_configuration = input;
         self

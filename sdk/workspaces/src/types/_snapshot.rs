@@ -2,15 +2,15 @@
 
 /// <p>Describes a snapshot.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Snapshot {
     /// <p>The time when the snapshot was created.</p>
     #[doc(hidden)]
-    pub snapshot_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub snapshot_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Snapshot {
     /// <p>The time when the snapshot was created.</p>
-    pub fn snapshot_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn snapshot_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.snapshot_time.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl Snapshot {
 
 /// A builder for [`Snapshot`](crate::types::Snapshot).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SnapshotBuilder {
-    pub(crate) snapshot_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) snapshot_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl SnapshotBuilder {
     /// <p>The time when the snapshot was created.</p>
-    pub fn snapshot_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.snapshot_time = Some(input);
+    pub fn snapshot_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.snapshot_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time when the snapshot was created.</p>
     pub fn set_snapshot_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.snapshot_time = input;
         self

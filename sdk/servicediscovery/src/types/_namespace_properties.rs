@@ -2,22 +2,22 @@
 
 /// <p>A complex type that contains information that's specific to the namespace type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NamespaceProperties {
     /// <p>A complex type that contains the ID for the Route&nbsp;53 hosted zone that Cloud Map creates when you create a namespace.</p>
     #[doc(hidden)]
-    pub dns_properties: std::option::Option<crate::types::DnsProperties>,
+    pub dns_properties: ::std::option::Option<crate::types::DnsProperties>,
     /// <p>A complex type that contains the name of an HTTP namespace.</p>
     #[doc(hidden)]
-    pub http_properties: std::option::Option<crate::types::HttpProperties>,
+    pub http_properties: ::std::option::Option<crate::types::HttpProperties>,
 }
 impl NamespaceProperties {
     /// <p>A complex type that contains the ID for the Route&nbsp;53 hosted zone that Cloud Map creates when you create a namespace.</p>
-    pub fn dns_properties(&self) -> std::option::Option<&crate::types::DnsProperties> {
+    pub fn dns_properties(&self) -> ::std::option::Option<&crate::types::DnsProperties> {
         self.dns_properties.as_ref()
     }
     /// <p>A complex type that contains the name of an HTTP namespace.</p>
-    pub fn http_properties(&self) -> std::option::Option<&crate::types::HttpProperties> {
+    pub fn http_properties(&self) -> ::std::option::Option<&crate::types::HttpProperties> {
         self.http_properties.as_ref()
     }
 }
@@ -30,34 +30,36 @@ impl NamespaceProperties {
 
 /// A builder for [`NamespaceProperties`](crate::types::NamespaceProperties).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NamespacePropertiesBuilder {
-    pub(crate) dns_properties: std::option::Option<crate::types::DnsProperties>,
-    pub(crate) http_properties: std::option::Option<crate::types::HttpProperties>,
+    pub(crate) dns_properties: ::std::option::Option<crate::types::DnsProperties>,
+    pub(crate) http_properties: ::std::option::Option<crate::types::HttpProperties>,
 }
 impl NamespacePropertiesBuilder {
     /// <p>A complex type that contains the ID for the Route&nbsp;53 hosted zone that Cloud Map creates when you create a namespace.</p>
     pub fn dns_properties(mut self, input: crate::types::DnsProperties) -> Self {
-        self.dns_properties = Some(input);
+        self.dns_properties = ::std::option::Option::Some(input);
         self
     }
     /// <p>A complex type that contains the ID for the Route&nbsp;53 hosted zone that Cloud Map creates when you create a namespace.</p>
     pub fn set_dns_properties(
         mut self,
-        input: std::option::Option<crate::types::DnsProperties>,
+        input: ::std::option::Option<crate::types::DnsProperties>,
     ) -> Self {
         self.dns_properties = input;
         self
     }
     /// <p>A complex type that contains the name of an HTTP namespace.</p>
     pub fn http_properties(mut self, input: crate::types::HttpProperties) -> Self {
-        self.http_properties = Some(input);
+        self.http_properties = ::std::option::Option::Some(input);
         self
     }
     /// <p>A complex type that contains the name of an HTTP namespace.</p>
     pub fn set_http_properties(
         mut self,
-        input: std::option::Option<crate::types::HttpProperties>,
+        input: ::std::option::Option<crate::types::HttpProperties>,
     ) -> Self {
         self.http_properties = input;
         self

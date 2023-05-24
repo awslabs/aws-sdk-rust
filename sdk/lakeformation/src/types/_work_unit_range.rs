@@ -2,7 +2,7 @@
 
 /// <p>Defines the valid range of work unit IDs for querying the execution service.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorkUnitRange {
     /// <p>Defines the maximum work unit ID in the range. The maximum value is inclusive.</p>
     #[doc(hidden)]
@@ -12,7 +12,7 @@ pub struct WorkUnitRange {
     pub work_unit_id_min: i64,
     /// <p>A work token used to query the execution service.</p>
     #[doc(hidden)]
-    pub work_unit_token: std::option::Option<std::string::String>,
+    pub work_unit_token: ::std::option::Option<::std::string::String>,
 }
 impl WorkUnitRange {
     /// <p>Defines the maximum work unit ID in the range. The maximum value is inclusive.</p>
@@ -24,7 +24,7 @@ impl WorkUnitRange {
         self.work_unit_id_min
     }
     /// <p>A work token used to query the execution service.</p>
-    pub fn work_unit_token(&self) -> std::option::Option<&str> {
+    pub fn work_unit_token(&self) -> ::std::option::Option<&str> {
         self.work_unit_token.as_deref()
     }
 }
@@ -37,40 +37,48 @@ impl WorkUnitRange {
 
 /// A builder for [`WorkUnitRange`](crate::types::WorkUnitRange).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct WorkUnitRangeBuilder {
-    pub(crate) work_unit_id_max: std::option::Option<i64>,
-    pub(crate) work_unit_id_min: std::option::Option<i64>,
-    pub(crate) work_unit_token: std::option::Option<std::string::String>,
+    pub(crate) work_unit_id_max: ::std::option::Option<i64>,
+    pub(crate) work_unit_id_min: ::std::option::Option<i64>,
+    pub(crate) work_unit_token: ::std::option::Option<::std::string::String>,
 }
 impl WorkUnitRangeBuilder {
     /// <p>Defines the maximum work unit ID in the range. The maximum value is inclusive.</p>
     pub fn work_unit_id_max(mut self, input: i64) -> Self {
-        self.work_unit_id_max = Some(input);
+        self.work_unit_id_max = ::std::option::Option::Some(input);
         self
     }
     /// <p>Defines the maximum work unit ID in the range. The maximum value is inclusive.</p>
-    pub fn set_work_unit_id_max(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_work_unit_id_max(mut self, input: ::std::option::Option<i64>) -> Self {
         self.work_unit_id_max = input;
         self
     }
     /// <p>Defines the minimum work unit ID in the range.</p>
     pub fn work_unit_id_min(mut self, input: i64) -> Self {
-        self.work_unit_id_min = Some(input);
+        self.work_unit_id_min = ::std::option::Option::Some(input);
         self
     }
     /// <p>Defines the minimum work unit ID in the range.</p>
-    pub fn set_work_unit_id_min(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_work_unit_id_min(mut self, input: ::std::option::Option<i64>) -> Self {
         self.work_unit_id_min = input;
         self
     }
     /// <p>A work token used to query the execution service.</p>
-    pub fn work_unit_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.work_unit_token = Some(input.into());
+    pub fn work_unit_token(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.work_unit_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A work token used to query the execution service.</p>
-    pub fn set_work_unit_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_work_unit_token(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.work_unit_token = input;
         self
     }

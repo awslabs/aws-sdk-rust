@@ -2,38 +2,40 @@
 
 /// <p>An intent that Amazon Lex suggests satisfies the user's intent. Includes the name of the intent, the confidence that Amazon Lex has that the user's intent is satisfied, and the slots defined for the intent.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct PredictedIntent {
     /// <p>The name of the intent that Amazon Lex suggests satisfies the user's intent.</p>
     #[doc(hidden)]
-    pub intent_name: std::option::Option<std::string::String>,
+    pub intent_name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates how confident Amazon Lex is that an intent satisfies the user's intent.</p>
     #[doc(hidden)]
-    pub nlu_intent_confidence: std::option::Option<crate::types::IntentConfidence>,
+    pub nlu_intent_confidence: ::std::option::Option<crate::types::IntentConfidence>,
     /// <p>The slot and slot values associated with the predicted intent.</p>
     #[doc(hidden)]
-    pub slots:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub slots: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl PredictedIntent {
     /// <p>The name of the intent that Amazon Lex suggests satisfies the user's intent.</p>
-    pub fn intent_name(&self) -> std::option::Option<&str> {
+    pub fn intent_name(&self) -> ::std::option::Option<&str> {
         self.intent_name.as_deref()
     }
     /// <p>Indicates how confident Amazon Lex is that an intent satisfies the user's intent.</p>
-    pub fn nlu_intent_confidence(&self) -> std::option::Option<&crate::types::IntentConfidence> {
+    pub fn nlu_intent_confidence(&self) -> ::std::option::Option<&crate::types::IntentConfidence> {
         self.nlu_intent_confidence.as_ref()
     }
     /// <p>The slot and slot values associated with the predicted intent.</p>
     pub fn slots(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.slots.as_ref()
     }
 }
-impl std::fmt::Debug for PredictedIntent {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for PredictedIntent {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("PredictedIntent");
         formatter.field("intent_name", &self.intent_name);
         formatter.field("nlu_intent_confidence", &self.nlu_intent_confidence);
@@ -50,33 +52,34 @@ impl PredictedIntent {
 
 /// A builder for [`PredictedIntent`](crate::types::PredictedIntent).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct PredictedIntentBuilder {
-    pub(crate) intent_name: std::option::Option<std::string::String>,
-    pub(crate) nlu_intent_confidence: std::option::Option<crate::types::IntentConfidence>,
-    pub(crate) slots:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) intent_name: ::std::option::Option<::std::string::String>,
+    pub(crate) nlu_intent_confidence: ::std::option::Option<crate::types::IntentConfidence>,
+    pub(crate) slots: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl PredictedIntentBuilder {
     /// <p>The name of the intent that Amazon Lex suggests satisfies the user's intent.</p>
-    pub fn intent_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.intent_name = Some(input.into());
+    pub fn intent_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.intent_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the intent that Amazon Lex suggests satisfies the user's intent.</p>
-    pub fn set_intent_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_intent_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.intent_name = input;
         self
     }
     /// <p>Indicates how confident Amazon Lex is that an intent satisfies the user's intent.</p>
     pub fn nlu_intent_confidence(mut self, input: crate::types::IntentConfidence) -> Self {
-        self.nlu_intent_confidence = Some(input);
+        self.nlu_intent_confidence = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates how confident Amazon Lex is that an intent satisfies the user's intent.</p>
     pub fn set_nlu_intent_confidence(
         mut self,
-        input: std::option::Option<crate::types::IntentConfidence>,
+        input: ::std::option::Option<crate::types::IntentConfidence>,
     ) -> Self {
         self.nlu_intent_confidence = input;
         self
@@ -88,19 +91,19 @@ impl PredictedIntentBuilder {
     /// <p>The slot and slot values associated with the predicted intent.</p>
     pub fn slots(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.slots.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.slots = Some(hash_map);
+        self.slots = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The slot and slot values associated with the predicted intent.</p>
     pub fn set_slots(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.slots = input;
@@ -115,8 +118,8 @@ impl PredictedIntentBuilder {
         }
     }
 }
-impl std::fmt::Debug for PredictedIntentBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for PredictedIntentBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("PredictedIntentBuilder");
         formatter.field("intent_name", &self.intent_name);
         formatter.field("nlu_intent_confidence", &self.nlu_intent_confidence);

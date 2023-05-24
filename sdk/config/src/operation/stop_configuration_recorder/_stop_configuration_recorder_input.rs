@@ -2,15 +2,15 @@
 
 /// <p>The input for the <code>StopConfigurationRecorder</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopConfigurationRecorderInput {
     /// <p>The name of the recorder object that records each configuration change made to the resources.</p>
     #[doc(hidden)]
-    pub configuration_recorder_name: std::option::Option<std::string::String>,
+    pub configuration_recorder_name: ::std::option::Option<::std::string::String>,
 }
 impl StopConfigurationRecorderInput {
     /// <p>The name of the recorder object that records each configuration change made to the resources.</p>
-    pub fn configuration_recorder_name(&self) -> std::option::Option<&str> {
+    pub fn configuration_recorder_name(&self) -> ::std::option::Option<&str> {
         self.configuration_recorder_name.as_deref()
     }
 }
@@ -23,20 +23,25 @@ impl StopConfigurationRecorderInput {
 
 /// A builder for [`StopConfigurationRecorderInput`](crate::operation::stop_configuration_recorder::StopConfigurationRecorderInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StopConfigurationRecorderInputBuilder {
-    pub(crate) configuration_recorder_name: std::option::Option<std::string::String>,
+    pub(crate) configuration_recorder_name: ::std::option::Option<::std::string::String>,
 }
 impl StopConfigurationRecorderInputBuilder {
     /// <p>The name of the recorder object that records each configuration change made to the resources.</p>
-    pub fn configuration_recorder_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.configuration_recorder_name = Some(input.into());
+    pub fn configuration_recorder_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.configuration_recorder_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the recorder object that records each configuration change made to the resources.</p>
     pub fn set_configuration_recorder_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.configuration_recorder_name = input;
         self
@@ -44,11 +49,11 @@ impl StopConfigurationRecorderInputBuilder {
     /// Consumes the builder and constructs a [`StopConfigurationRecorderInput`](crate::operation::stop_configuration_recorder::StopConfigurationRecorderInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::stop_configuration_recorder::StopConfigurationRecorderInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::stop_configuration_recorder::StopConfigurationRecorderInput {
                 configuration_recorder_name: self.configuration_recorder_name,
             },

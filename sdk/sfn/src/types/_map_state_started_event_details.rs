@@ -2,7 +2,7 @@
 
 /// <p>Details about a Map state that was started.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MapStateStartedEventDetails {
     /// <p>The size of the array for Map state iterations.</p>
     #[doc(hidden)]
@@ -23,18 +23,20 @@ impl MapStateStartedEventDetails {
 
 /// A builder for [`MapStateStartedEventDetails`](crate::types::MapStateStartedEventDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MapStateStartedEventDetailsBuilder {
-    pub(crate) length: std::option::Option<i32>,
+    pub(crate) length: ::std::option::Option<i32>,
 }
 impl MapStateStartedEventDetailsBuilder {
     /// <p>The size of the array for Map state iterations.</p>
     pub fn length(mut self, input: i32) -> Self {
-        self.length = Some(input);
+        self.length = ::std::option::Option::Some(input);
         self
     }
     /// <p>The size of the array for Map state iterations.</p>
-    pub fn set_length(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_length(mut self, input: ::std::option::Option<i32>) -> Self {
         self.length = input;
         self
     }

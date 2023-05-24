@@ -2,29 +2,31 @@
 
 /// <p>The option that determines the hierarchy of the fields for a visual element.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ColumnHierarchy {
     /// <p>The option that determines the hierarchy of the fields that are built within a visual's field wells. These fields can't be duplicated to other visuals.</p>
     #[doc(hidden)]
-    pub explicit_hierarchy: std::option::Option<crate::types::ExplicitHierarchy>,
+    pub explicit_hierarchy: ::std::option::Option<crate::types::ExplicitHierarchy>,
     /// <p>The option that determines the hierarchy of any <code>DateTime</code> fields.</p>
     #[doc(hidden)]
-    pub date_time_hierarchy: std::option::Option<crate::types::DateTimeHierarchy>,
+    pub date_time_hierarchy: ::std::option::Option<crate::types::DateTimeHierarchy>,
     /// <p>The option that determines the hierarchy of the fields that are defined during data preparation. These fields are available to use in any analysis that uses the data source.</p>
     #[doc(hidden)]
-    pub predefined_hierarchy: std::option::Option<crate::types::PredefinedHierarchy>,
+    pub predefined_hierarchy: ::std::option::Option<crate::types::PredefinedHierarchy>,
 }
 impl ColumnHierarchy {
     /// <p>The option that determines the hierarchy of the fields that are built within a visual's field wells. These fields can't be duplicated to other visuals.</p>
-    pub fn explicit_hierarchy(&self) -> std::option::Option<&crate::types::ExplicitHierarchy> {
+    pub fn explicit_hierarchy(&self) -> ::std::option::Option<&crate::types::ExplicitHierarchy> {
         self.explicit_hierarchy.as_ref()
     }
     /// <p>The option that determines the hierarchy of any <code>DateTime</code> fields.</p>
-    pub fn date_time_hierarchy(&self) -> std::option::Option<&crate::types::DateTimeHierarchy> {
+    pub fn date_time_hierarchy(&self) -> ::std::option::Option<&crate::types::DateTimeHierarchy> {
         self.date_time_hierarchy.as_ref()
     }
     /// <p>The option that determines the hierarchy of the fields that are defined during data preparation. These fields are available to use in any analysis that uses the data source.</p>
-    pub fn predefined_hierarchy(&self) -> std::option::Option<&crate::types::PredefinedHierarchy> {
+    pub fn predefined_hierarchy(
+        &self,
+    ) -> ::std::option::Option<&crate::types::PredefinedHierarchy> {
         self.predefined_hierarchy.as_ref()
     }
 }
@@ -37,48 +39,50 @@ impl ColumnHierarchy {
 
 /// A builder for [`ColumnHierarchy`](crate::types::ColumnHierarchy).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ColumnHierarchyBuilder {
-    pub(crate) explicit_hierarchy: std::option::Option<crate::types::ExplicitHierarchy>,
-    pub(crate) date_time_hierarchy: std::option::Option<crate::types::DateTimeHierarchy>,
-    pub(crate) predefined_hierarchy: std::option::Option<crate::types::PredefinedHierarchy>,
+    pub(crate) explicit_hierarchy: ::std::option::Option<crate::types::ExplicitHierarchy>,
+    pub(crate) date_time_hierarchy: ::std::option::Option<crate::types::DateTimeHierarchy>,
+    pub(crate) predefined_hierarchy: ::std::option::Option<crate::types::PredefinedHierarchy>,
 }
 impl ColumnHierarchyBuilder {
     /// <p>The option that determines the hierarchy of the fields that are built within a visual's field wells. These fields can't be duplicated to other visuals.</p>
     pub fn explicit_hierarchy(mut self, input: crate::types::ExplicitHierarchy) -> Self {
-        self.explicit_hierarchy = Some(input);
+        self.explicit_hierarchy = ::std::option::Option::Some(input);
         self
     }
     /// <p>The option that determines the hierarchy of the fields that are built within a visual's field wells. These fields can't be duplicated to other visuals.</p>
     pub fn set_explicit_hierarchy(
         mut self,
-        input: std::option::Option<crate::types::ExplicitHierarchy>,
+        input: ::std::option::Option<crate::types::ExplicitHierarchy>,
     ) -> Self {
         self.explicit_hierarchy = input;
         self
     }
     /// <p>The option that determines the hierarchy of any <code>DateTime</code> fields.</p>
     pub fn date_time_hierarchy(mut self, input: crate::types::DateTimeHierarchy) -> Self {
-        self.date_time_hierarchy = Some(input);
+        self.date_time_hierarchy = ::std::option::Option::Some(input);
         self
     }
     /// <p>The option that determines the hierarchy of any <code>DateTime</code> fields.</p>
     pub fn set_date_time_hierarchy(
         mut self,
-        input: std::option::Option<crate::types::DateTimeHierarchy>,
+        input: ::std::option::Option<crate::types::DateTimeHierarchy>,
     ) -> Self {
         self.date_time_hierarchy = input;
         self
     }
     /// <p>The option that determines the hierarchy of the fields that are defined during data preparation. These fields are available to use in any analysis that uses the data source.</p>
     pub fn predefined_hierarchy(mut self, input: crate::types::PredefinedHierarchy) -> Self {
-        self.predefined_hierarchy = Some(input);
+        self.predefined_hierarchy = ::std::option::Option::Some(input);
         self
     }
     /// <p>The option that determines the hierarchy of the fields that are defined during data preparation. These fields are available to use in any analysis that uses the data source.</p>
     pub fn set_predefined_hierarchy(
         mut self,
-        input: std::option::Option<crate::types::PredefinedHierarchy>,
+        input: ::std::option::Option<crate::types::PredefinedHierarchy>,
     ) -> Self {
         self.predefined_hierarchy = input;
         self

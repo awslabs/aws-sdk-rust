@@ -2,15 +2,15 @@
 
 /// <p>Specifies the message content for a custom channel message that's sent to participants in a journey.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JourneyCustomMessage {
     /// <p>The message content that's passed to an AWS Lambda function or to a web hook.</p>
     #[doc(hidden)]
-    pub data: std::option::Option<std::string::String>,
+    pub data: ::std::option::Option<::std::string::String>,
 }
 impl JourneyCustomMessage {
     /// <p>The message content that's passed to an AWS Lambda function or to a web hook.</p>
-    pub fn data(&self) -> std::option::Option<&str> {
+    pub fn data(&self) -> ::std::option::Option<&str> {
         self.data.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl JourneyCustomMessage {
 
 /// A builder for [`JourneyCustomMessage`](crate::types::JourneyCustomMessage).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct JourneyCustomMessageBuilder {
-    pub(crate) data: std::option::Option<std::string::String>,
+    pub(crate) data: ::std::option::Option<::std::string::String>,
 }
 impl JourneyCustomMessageBuilder {
     /// <p>The message content that's passed to an AWS Lambda function or to a web hook.</p>
-    pub fn data(mut self, input: impl Into<std::string::String>) -> Self {
-        self.data = Some(input.into());
+    pub fn data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.data = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The message content that's passed to an AWS Lambda function or to a web hook.</p>
-    pub fn set_data(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data = input;
         self
     }

@@ -2,19 +2,19 @@
 
 /// <p>Information about the persistent storage for a Dev Environment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PersistentStorage {
     /// <p>The size of the persistent storage in gigabytes (specifically GiB).</p> <note>
     /// <p>Valid values for storage are based on memory sizes in 16GB increments. Valid values are 16, 32, and 64.</p>
     /// </note>
     #[doc(hidden)]
-    pub size_in_gi_b: std::option::Option<i32>,
+    pub size_in_gi_b: ::std::option::Option<i32>,
 }
 impl PersistentStorage {
     /// <p>The size of the persistent storage in gigabytes (specifically GiB).</p> <note>
     /// <p>Valid values for storage are based on memory sizes in 16GB increments. Valid values are 16, 32, and 64.</p>
     /// </note>
-    pub fn size_in_gi_b(&self) -> std::option::Option<i32> {
+    pub fn size_in_gi_b(&self) -> ::std::option::Option<i32> {
         self.size_in_gi_b
     }
 }
@@ -27,22 +27,24 @@ impl PersistentStorage {
 
 /// A builder for [`PersistentStorage`](crate::types::PersistentStorage).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PersistentStorageBuilder {
-    pub(crate) size_in_gi_b: std::option::Option<i32>,
+    pub(crate) size_in_gi_b: ::std::option::Option<i32>,
 }
 impl PersistentStorageBuilder {
     /// <p>The size of the persistent storage in gigabytes (specifically GiB).</p> <note>
     /// <p>Valid values for storage are based on memory sizes in 16GB increments. Valid values are 16, 32, and 64.</p>
     /// </note>
     pub fn size_in_gi_b(mut self, input: i32) -> Self {
-        self.size_in_gi_b = Some(input);
+        self.size_in_gi_b = ::std::option::Option::Some(input);
         self
     }
     /// <p>The size of the persistent storage in gigabytes (specifically GiB).</p> <note>
     /// <p>Valid values for storage are based on memory sizes in 16GB increments. Valid values are 16, 32, and 64.</p>
     /// </note>
-    pub fn set_size_in_gi_b(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_size_in_gi_b(mut self, input: ::std::option::Option<i32>) -> Self {
         self.size_in_gi_b = input;
         self
     }

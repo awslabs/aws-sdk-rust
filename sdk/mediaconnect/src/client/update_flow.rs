@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateFlow`](crate::operation::update_flow::builders::UpdateFlowFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`flow_arn(impl Into<String>)`](crate::operation::update_flow::builders::UpdateFlowFluentBuilder::flow_arn) / [`set_flow_arn(Option<String>)`](crate::operation::update_flow::builders::UpdateFlowFluentBuilder::set_flow_arn): The flow that you want to update.
+    ///   - [`flow_arn(impl ::std::convert::Into<String>)`](crate::operation::update_flow::builders::UpdateFlowFluentBuilder::flow_arn) / [`set_flow_arn(Option<String>)`](crate::operation::update_flow::builders::UpdateFlowFluentBuilder::set_flow_arn): The flow that you want to update.
     ///   - [`source_failover_config(UpdateFailoverConfig)`](crate::operation::update_flow::builders::UpdateFlowFluentBuilder::source_failover_config) / [`set_source_failover_config(Option<UpdateFailoverConfig>)`](crate::operation::update_flow::builders::UpdateFlowFluentBuilder::set_source_failover_config): The settings for source failover.
     ///   - [`maintenance(UpdateMaintenance)`](crate::operation::update_flow::builders::UpdateFlowFluentBuilder::maintenance) / [`set_maintenance(Option<UpdateMaintenance>)`](crate::operation::update_flow::builders::UpdateFlowFluentBuilder::set_maintenance): Update maintenance setting for a flow
     /// - On success, responds with [`UpdateFlowOutput`](crate::operation::update_flow::UpdateFlowOutput) with field(s):

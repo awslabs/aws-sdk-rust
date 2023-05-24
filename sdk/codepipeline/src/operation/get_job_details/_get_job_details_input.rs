@@ -2,15 +2,15 @@
 
 /// <p>Represents the input of a <code>GetJobDetails</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetJobDetailsInput {
     /// <p>The unique system-generated ID for the job.</p>
     #[doc(hidden)]
-    pub job_id: std::option::Option<std::string::String>,
+    pub job_id: ::std::option::Option<::std::string::String>,
 }
 impl GetJobDetailsInput {
     /// <p>The unique system-generated ID for the job.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<&str> {
         self.job_id.as_deref()
     }
 }
@@ -23,29 +23,31 @@ impl GetJobDetailsInput {
 
 /// A builder for [`GetJobDetailsInput`](crate::operation::get_job_details::GetJobDetailsInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetJobDetailsInputBuilder {
-    pub(crate) job_id: std::option::Option<std::string::String>,
+    pub(crate) job_id: ::std::option::Option<::std::string::String>,
 }
 impl GetJobDetailsInputBuilder {
     /// <p>The unique system-generated ID for the job.</p>
-    pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.job_id = Some(input.into());
+    pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.job_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique system-generated ID for the job.</p>
-    pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_id = input;
         self
     }
     /// Consumes the builder and constructs a [`GetJobDetailsInput`](crate::operation::get_job_details::GetJobDetailsInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::get_job_details::GetJobDetailsInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::get_job_details::GetJobDetailsInput {
+        ::std::result::Result::Ok(crate::operation::get_job_details::GetJobDetailsInput {
             job_id: self.job_id,
         })
     }

@@ -6,22 +6,22 @@
 /// </note>
 /// <p>Specifies a <code>Predicate</code> (such as an <code>IPSet</code>) and indicates whether you want to add it to a <code>Rule</code> or delete it from a <code>Rule</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuleUpdate {
     /// <p>Specify <code>INSERT</code> to add a <code>Predicate</code> to a <code>Rule</code>. Use <code>DELETE</code> to remove a <code>Predicate</code> from a <code>Rule</code>.</p>
     #[doc(hidden)]
-    pub action: std::option::Option<crate::types::ChangeAction>,
+    pub action: ::std::option::Option<crate::types::ChangeAction>,
     /// <p>The ID of the <code>Predicate</code> (such as an <code>IPSet</code>) that you want to add to a <code>Rule</code>.</p>
     #[doc(hidden)]
-    pub predicate: std::option::Option<crate::types::Predicate>,
+    pub predicate: ::std::option::Option<crate::types::Predicate>,
 }
 impl RuleUpdate {
     /// <p>Specify <code>INSERT</code> to add a <code>Predicate</code> to a <code>Rule</code>. Use <code>DELETE</code> to remove a <code>Predicate</code> from a <code>Rule</code>.</p>
-    pub fn action(&self) -> std::option::Option<&crate::types::ChangeAction> {
+    pub fn action(&self) -> ::std::option::Option<&crate::types::ChangeAction> {
         self.action.as_ref()
     }
     /// <p>The ID of the <code>Predicate</code> (such as an <code>IPSet</code>) that you want to add to a <code>Rule</code>.</p>
-    pub fn predicate(&self) -> std::option::Option<&crate::types::Predicate> {
+    pub fn predicate(&self) -> ::std::option::Option<&crate::types::Predicate> {
         self.predicate.as_ref()
     }
 }
@@ -34,29 +34,31 @@ impl RuleUpdate {
 
 /// A builder for [`RuleUpdate`](crate::types::RuleUpdate).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RuleUpdateBuilder {
-    pub(crate) action: std::option::Option<crate::types::ChangeAction>,
-    pub(crate) predicate: std::option::Option<crate::types::Predicate>,
+    pub(crate) action: ::std::option::Option<crate::types::ChangeAction>,
+    pub(crate) predicate: ::std::option::Option<crate::types::Predicate>,
 }
 impl RuleUpdateBuilder {
     /// <p>Specify <code>INSERT</code> to add a <code>Predicate</code> to a <code>Rule</code>. Use <code>DELETE</code> to remove a <code>Predicate</code> from a <code>Rule</code>.</p>
     pub fn action(mut self, input: crate::types::ChangeAction) -> Self {
-        self.action = Some(input);
+        self.action = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specify <code>INSERT</code> to add a <code>Predicate</code> to a <code>Rule</code>. Use <code>DELETE</code> to remove a <code>Predicate</code> from a <code>Rule</code>.</p>
-    pub fn set_action(mut self, input: std::option::Option<crate::types::ChangeAction>) -> Self {
+    pub fn set_action(mut self, input: ::std::option::Option<crate::types::ChangeAction>) -> Self {
         self.action = input;
         self
     }
     /// <p>The ID of the <code>Predicate</code> (such as an <code>IPSet</code>) that you want to add to a <code>Rule</code>.</p>
     pub fn predicate(mut self, input: crate::types::Predicate) -> Self {
-        self.predicate = Some(input);
+        self.predicate = ::std::option::Option::Some(input);
         self
     }
     /// <p>The ID of the <code>Predicate</code> (such as an <code>IPSet</code>) that you want to add to a <code>Rule</code>.</p>
-    pub fn set_predicate(mut self, input: std::option::Option<crate::types::Predicate>) -> Self {
+    pub fn set_predicate(mut self, input: ::std::option::Option<crate::types::Predicate>) -> Self {
         self.predicate = input;
         self
     }

@@ -2,18 +2,18 @@
 
 /// <p>The field wells of a radar chart visual.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RadarChartFieldWells {
     /// <p>The aggregated field wells of a radar chart visual.</p>
     #[doc(hidden)]
     pub radar_chart_aggregated_field_wells:
-        std::option::Option<crate::types::RadarChartAggregatedFieldWells>,
+        ::std::option::Option<crate::types::RadarChartAggregatedFieldWells>,
 }
 impl RadarChartFieldWells {
     /// <p>The aggregated field wells of a radar chart visual.</p>
     pub fn radar_chart_aggregated_field_wells(
         &self,
-    ) -> std::option::Option<&crate::types::RadarChartAggregatedFieldWells> {
+    ) -> ::std::option::Option<&crate::types::RadarChartAggregatedFieldWells> {
         self.radar_chart_aggregated_field_wells.as_ref()
     }
 }
@@ -26,10 +26,12 @@ impl RadarChartFieldWells {
 
 /// A builder for [`RadarChartFieldWells`](crate::types::RadarChartFieldWells).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RadarChartFieldWellsBuilder {
     pub(crate) radar_chart_aggregated_field_wells:
-        std::option::Option<crate::types::RadarChartAggregatedFieldWells>,
+        ::std::option::Option<crate::types::RadarChartAggregatedFieldWells>,
 }
 impl RadarChartFieldWellsBuilder {
     /// <p>The aggregated field wells of a radar chart visual.</p>
@@ -37,13 +39,13 @@ impl RadarChartFieldWellsBuilder {
         mut self,
         input: crate::types::RadarChartAggregatedFieldWells,
     ) -> Self {
-        self.radar_chart_aggregated_field_wells = Some(input);
+        self.radar_chart_aggregated_field_wells = ::std::option::Option::Some(input);
         self
     }
     /// <p>The aggregated field wells of a radar chart visual.</p>
     pub fn set_radar_chart_aggregated_field_wells(
         mut self,
-        input: std::option::Option<crate::types::RadarChartAggregatedFieldWells>,
+        input: ::std::option::Option<crate::types::RadarChartAggregatedFieldWells>,
     ) -> Self {
         self.radar_chart_aggregated_field_wells = input;
         self

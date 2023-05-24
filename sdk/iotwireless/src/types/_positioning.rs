@@ -2,29 +2,29 @@
 
 /// <p>The FPorts for the position information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Positioning {
     /// <p>The Fport value.</p>
     #[doc(hidden)]
-    pub clock_sync: std::option::Option<i32>,
+    pub clock_sync: ::std::option::Option<i32>,
     /// <p>The Fport value.</p>
     #[doc(hidden)]
-    pub stream: std::option::Option<i32>,
+    pub stream: ::std::option::Option<i32>,
     /// <p>The Fport value.</p>
     #[doc(hidden)]
-    pub gnss: std::option::Option<i32>,
+    pub gnss: ::std::option::Option<i32>,
 }
 impl Positioning {
     /// <p>The Fport value.</p>
-    pub fn clock_sync(&self) -> std::option::Option<i32> {
+    pub fn clock_sync(&self) -> ::std::option::Option<i32> {
         self.clock_sync
     }
     /// <p>The Fport value.</p>
-    pub fn stream(&self) -> std::option::Option<i32> {
+    pub fn stream(&self) -> ::std::option::Option<i32> {
         self.stream
     }
     /// <p>The Fport value.</p>
-    pub fn gnss(&self) -> std::option::Option<i32> {
+    pub fn gnss(&self) -> ::std::option::Option<i32> {
         self.gnss
     }
 }
@@ -37,40 +37,42 @@ impl Positioning {
 
 /// A builder for [`Positioning`](crate::types::Positioning).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PositioningBuilder {
-    pub(crate) clock_sync: std::option::Option<i32>,
-    pub(crate) stream: std::option::Option<i32>,
-    pub(crate) gnss: std::option::Option<i32>,
+    pub(crate) clock_sync: ::std::option::Option<i32>,
+    pub(crate) stream: ::std::option::Option<i32>,
+    pub(crate) gnss: ::std::option::Option<i32>,
 }
 impl PositioningBuilder {
     /// <p>The Fport value.</p>
     pub fn clock_sync(mut self, input: i32) -> Self {
-        self.clock_sync = Some(input);
+        self.clock_sync = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Fport value.</p>
-    pub fn set_clock_sync(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_clock_sync(mut self, input: ::std::option::Option<i32>) -> Self {
         self.clock_sync = input;
         self
     }
     /// <p>The Fport value.</p>
     pub fn stream(mut self, input: i32) -> Self {
-        self.stream = Some(input);
+        self.stream = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Fport value.</p>
-    pub fn set_stream(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_stream(mut self, input: ::std::option::Option<i32>) -> Self {
         self.stream = input;
         self
     }
     /// <p>The Fport value.</p>
     pub fn gnss(mut self, input: i32) -> Self {
-        self.gnss = Some(input);
+        self.gnss = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Fport value.</p>
-    pub fn set_gnss(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_gnss(mut self, input: ::std::option::Option<i32>) -> Self {
         self.gnss = input;
         self
     }

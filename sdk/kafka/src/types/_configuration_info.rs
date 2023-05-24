@@ -2,22 +2,22 @@
 
 /// <p>Specifies the configuration to use for the brokers.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConfigurationInfo {
     /// <p>ARN of the configuration to use.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The revision of the configuration to use.</p>
     #[doc(hidden)]
-    pub revision: std::option::Option<i64>,
+    pub revision: ::std::option::Option<i64>,
 }
 impl ConfigurationInfo {
     /// <p>ARN of the configuration to use.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The revision of the configuration to use.</p>
-    pub fn revision(&self) -> std::option::Option<i64> {
+    pub fn revision(&self) -> ::std::option::Option<i64> {
         self.revision
     }
 }
@@ -30,29 +30,31 @@ impl ConfigurationInfo {
 
 /// A builder for [`ConfigurationInfo`](crate::types::ConfigurationInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ConfigurationInfoBuilder {
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) revision: std::option::Option<i64>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) revision: ::std::option::Option<i64>,
 }
 impl ConfigurationInfoBuilder {
     /// <p>ARN of the configuration to use.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>ARN of the configuration to use.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// <p>The revision of the configuration to use.</p>
     pub fn revision(mut self, input: i64) -> Self {
-        self.revision = Some(input);
+        self.revision = ::std::option::Option::Some(input);
         self
     }
     /// <p>The revision of the configuration to use.</p>
-    pub fn set_revision(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_revision(mut self, input: ::std::option::Option<i64>) -> Self {
         self.revision = input;
         self
     }

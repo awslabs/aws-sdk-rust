@@ -2,15 +2,15 @@
 
 /// <p> Contains the names of Amazon Web Services CloudFormation stacks used to update a collection of stacks. You can specify up to 500 Amazon Web Services CloudFormation stacks.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateCloudFormationCollectionFilter {
     /// <p> An array of the names of the Amazon Web Services CloudFormation stacks to update. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
     #[doc(hidden)]
-    pub stack_names: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub stack_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateCloudFormationCollectionFilter {
     /// <p> An array of the names of the Amazon Web Services CloudFormation stacks to update. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
-    pub fn stack_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn stack_names(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.stack_names.as_deref()
     }
 }
@@ -23,9 +23,11 @@ impl UpdateCloudFormationCollectionFilter {
 
 /// A builder for [`UpdateCloudFormationCollectionFilter`](crate::types::UpdateCloudFormationCollectionFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateCloudFormationCollectionFilterBuilder {
-    pub(crate) stack_names: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) stack_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateCloudFormationCollectionFilterBuilder {
     /// Appends an item to `stack_names`.
@@ -33,16 +35,16 @@ impl UpdateCloudFormationCollectionFilterBuilder {
     /// To override the contents of this collection use [`set_stack_names`](Self::set_stack_names).
     ///
     /// <p> An array of the names of the Amazon Web Services CloudFormation stacks to update. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
-    pub fn stack_names(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn stack_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.stack_names.unwrap_or_default();
         v.push(input.into());
-        self.stack_names = Some(v);
+        self.stack_names = ::std::option::Option::Some(v);
         self
     }
     /// <p> An array of the names of the Amazon Web Services CloudFormation stacks to update. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
     pub fn set_stack_names(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.stack_names = input;
         self

@@ -3,20 +3,20 @@
 /// <p>Represents the output of an <code>UpdateBatchPrediction</code> operation.</p>
 /// <p>You can see the updated content by using the <code>GetBatchPrediction</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateBatchPredictionOutput {
     /// <p>The ID assigned to the <code>BatchPrediction</code> during creation. This value should be identical to the value of the <code>BatchPredictionId</code> in the request.</p>
     #[doc(hidden)]
-    pub batch_prediction_id: std::option::Option<std::string::String>,
+    pub batch_prediction_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl UpdateBatchPredictionOutput {
     /// <p>The ID assigned to the <code>BatchPrediction</code> during creation. This value should be identical to the value of the <code>BatchPredictionId</code> in the request.</p>
-    pub fn batch_prediction_id(&self) -> std::option::Option<&str> {
+    pub fn batch_prediction_id(&self) -> ::std::option::Option<&str> {
         self.batch_prediction_id.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for UpdateBatchPredictionOutput {
+impl ::aws_http::request_id::RequestId for UpdateBatchPredictionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -32,21 +32,26 @@ impl UpdateBatchPredictionOutput {
 
 /// A builder for [`UpdateBatchPredictionOutput`](crate::operation::update_batch_prediction::UpdateBatchPredictionOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateBatchPredictionOutputBuilder {
-    pub(crate) batch_prediction_id: std::option::Option<std::string::String>,
+    pub(crate) batch_prediction_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl UpdateBatchPredictionOutputBuilder {
     /// <p>The ID assigned to the <code>BatchPrediction</code> during creation. This value should be identical to the value of the <code>BatchPredictionId</code> in the request.</p>
-    pub fn batch_prediction_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.batch_prediction_id = Some(input.into());
+    pub fn batch_prediction_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.batch_prediction_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID assigned to the <code>BatchPrediction</code> during creation. This value should be identical to the value of the <code>BatchPredictionId</code> in the request.</p>
     pub fn set_batch_prediction_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.batch_prediction_id = input;
         self

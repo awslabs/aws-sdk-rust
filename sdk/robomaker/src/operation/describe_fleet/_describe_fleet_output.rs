@@ -4,73 +4,75 @@
     note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
 )]
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeFleetOutput {
     /// <p>The name of the fleet.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of robots.</p>
     #[doc(hidden)]
-    pub robots: std::option::Option<std::vec::Vec<crate::types::Robot>>,
+    pub robots: ::std::option::Option<::std::vec::Vec<crate::types::Robot>>,
     /// <p>The time, in milliseconds since the epoch, when the fleet was created.</p>
     #[doc(hidden)]
-    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the last deployment.</p>
     #[doc(hidden)]
-    pub last_deployment_status: std::option::Option<crate::types::DeploymentStatus>,
+    pub last_deployment_status: ::std::option::Option<crate::types::DeploymentStatus>,
     /// <p>The Amazon Resource Name (ARN) of the last deployment job.</p>
     #[doc(hidden)]
-    pub last_deployment_job: std::option::Option<std::string::String>,
+    pub last_deployment_job: ::std::option::Option<::std::string::String>,
     /// <p>The time of the last deployment.</p>
     #[doc(hidden)]
-    pub last_deployment_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_deployment_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The list of all tags added to the specified fleet.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     _request_id: Option<String>,
 }
 impl DescribeFleetOutput {
     /// <p>The name of the fleet.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>A list of robots.</p>
-    pub fn robots(&self) -> std::option::Option<&[crate::types::Robot]> {
+    pub fn robots(&self) -> ::std::option::Option<&[crate::types::Robot]> {
         self.robots.as_deref()
     }
     /// <p>The time, in milliseconds since the epoch, when the fleet was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The status of the last deployment.</p>
-    pub fn last_deployment_status(&self) -> std::option::Option<&crate::types::DeploymentStatus> {
+    pub fn last_deployment_status(&self) -> ::std::option::Option<&crate::types::DeploymentStatus> {
         self.last_deployment_status.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the last deployment job.</p>
-    pub fn last_deployment_job(&self) -> std::option::Option<&str> {
+    pub fn last_deployment_job(&self) -> ::std::option::Option<&str> {
         self.last_deployment_job.as_deref()
     }
     /// <p>The time of the last deployment.</p>
-    pub fn last_deployment_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_deployment_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_deployment_time.as_ref()
     }
     /// <p>The list of all tags added to the specified fleet.</p>
     pub fn tags(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.tags.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeFleetOutput {
+impl ::aws_http::request_id::RequestId for DescribeFleetOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -84,37 +86,40 @@ impl DescribeFleetOutput {
 
 /// A builder for [`DescribeFleetOutput`](crate::operation::describe_fleet::DescribeFleetOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeFleetOutputBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) robots: std::option::Option<std::vec::Vec<crate::types::Robot>>,
-    pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_deployment_status: std::option::Option<crate::types::DeploymentStatus>,
-    pub(crate) last_deployment_job: std::option::Option<std::string::String>,
-    pub(crate) last_deployment_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) robots: ::std::option::Option<::std::vec::Vec<crate::types::Robot>>,
+    pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_deployment_status: ::std::option::Option<crate::types::DeploymentStatus>,
+    pub(crate) last_deployment_job: ::std::option::Option<::std::string::String>,
+    pub(crate) last_deployment_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     _request_id: Option<String>,
 }
 impl DescribeFleetOutputBuilder {
     /// <p>The name of the fleet.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the fleet.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
@@ -126,65 +131,68 @@ impl DescribeFleetOutputBuilder {
     pub fn robots(mut self, input: crate::types::Robot) -> Self {
         let mut v = self.robots.unwrap_or_default();
         v.push(input);
-        self.robots = Some(v);
+        self.robots = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of robots.</p>
     pub fn set_robots(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Robot>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Robot>>,
     ) -> Self {
         self.robots = input;
         self
     }
     /// <p>The time, in milliseconds since the epoch, when the fleet was created.</p>
-    pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_at = Some(input);
+    pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time, in milliseconds since the epoch, when the fleet was created.</p>
     pub fn set_created_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_at = input;
         self
     }
     /// <p>The status of the last deployment.</p>
     pub fn last_deployment_status(mut self, input: crate::types::DeploymentStatus) -> Self {
-        self.last_deployment_status = Some(input);
+        self.last_deployment_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the last deployment.</p>
     pub fn set_last_deployment_status(
         mut self,
-        input: std::option::Option<crate::types::DeploymentStatus>,
+        input: ::std::option::Option<crate::types::DeploymentStatus>,
     ) -> Self {
         self.last_deployment_status = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the last deployment job.</p>
-    pub fn last_deployment_job(mut self, input: impl Into<std::string::String>) -> Self {
-        self.last_deployment_job = Some(input.into());
+    pub fn last_deployment_job(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.last_deployment_job = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the last deployment job.</p>
     pub fn set_last_deployment_job(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.last_deployment_job = input;
         self
     }
     /// <p>The time of the last deployment.</p>
-    pub fn last_deployment_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_deployment_time = Some(input);
+    pub fn last_deployment_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_deployment_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time of the last deployment.</p>
     pub fn set_last_deployment_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_deployment_time = input;
         self
@@ -196,19 +204,19 @@ impl DescribeFleetOutputBuilder {
     /// <p>The list of all tags added to the specified fleet.</p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
+        self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The list of all tags added to the specified fleet.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.tags = input;

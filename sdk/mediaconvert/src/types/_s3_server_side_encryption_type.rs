@@ -38,13 +38,13 @@
 /// Specify how you want your data keys managed. AWS uses data keys to encrypt your content. AWS also encrypts the data keys themselves, using a customer master key (CMK), and then stores the encrypted data keys alongside your encrypted content. Use this setting to specify which AWS service manages the CMK. For simplest set up, choose Amazon S3 (SERVER_SIDE_ENCRYPTION_S3). If you want your master key to be managed by AWS Key Management Service (KMS), choose AWS KMS (SERVER_SIDE_ENCRYPTION_KMS). By default, when you choose AWS KMS, KMS uses the AWS managed customer master key (CMK) associated with Amazon S3 to encrypt your data keys. You can optionally choose to specify a different, customer managed CMK. Do so by specifying the Amazon Resource Name (ARN) of the key for the setting KMS ARN (kmsKeyArn).
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum S3ServerSideEncryptionType {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum S3ServerSideEncryptionType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for S3ServerSideEncryptionType {
+impl ::std::convert::From<&str> for S3ServerSideEncryptionType {
     fn from(s: &str) -> Self {
         match s {
             "SERVER_SIDE_ENCRYPTION_KMS" => S3ServerSideEncryptionType::ServerSideEncryptionKms,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for S3ServerSideEncryptionType {
         }
     }
 }
-impl std::str::FromStr for S3ServerSideEncryptionType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for S3ServerSideEncryptionType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(S3ServerSideEncryptionType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(S3ServerSideEncryptionType::from(s))
     }
 }
 impl S3ServerSideEncryptionType {
@@ -86,7 +86,7 @@ impl S3ServerSideEncryptionType {
         &["SERVER_SIDE_ENCRYPTION_KMS", "SERVER_SIDE_ENCRYPTION_S3"]
     }
 }
-impl AsRef<str> for S3ServerSideEncryptionType {
+impl ::std::convert::AsRef<str> for S3ServerSideEncryptionType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

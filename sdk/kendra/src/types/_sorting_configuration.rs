@@ -12,7 +12,7 @@
 /// <li> <p>String list value</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SortingConfiguration {
     /// <p>The name of the document attribute used to sort the response. You can use any field that has the <code>Sortable</code> flag set to true.</p>
     /// <p>You can also sort by any of the following built-in attributes:</p>
@@ -24,10 +24,10 @@ pub struct SortingConfiguration {
     /// <li> <p>_view_count</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub document_attribute_key: std::option::Option<std::string::String>,
+    pub document_attribute_key: ::std::option::Option<::std::string::String>,
     /// <p>The order that the results should be returned in. In case of ties, the relevance assigned to the result by Amazon Kendra is used as the tie-breaker.</p>
     #[doc(hidden)]
-    pub sort_order: std::option::Option<crate::types::SortOrder>,
+    pub sort_order: ::std::option::Option<crate::types::SortOrder>,
 }
 impl SortingConfiguration {
     /// <p>The name of the document attribute used to sort the response. You can use any field that has the <code>Sortable</code> flag set to true.</p>
@@ -39,11 +39,11 @@ impl SortingConfiguration {
     /// <li> <p>_version</p> </li>
     /// <li> <p>_view_count</p> </li>
     /// </ul>
-    pub fn document_attribute_key(&self) -> std::option::Option<&str> {
+    pub fn document_attribute_key(&self) -> ::std::option::Option<&str> {
         self.document_attribute_key.as_deref()
     }
     /// <p>The order that the results should be returned in. In case of ties, the relevance assigned to the result by Amazon Kendra is used as the tie-breaker.</p>
-    pub fn sort_order(&self) -> std::option::Option<&crate::types::SortOrder> {
+    pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SortOrder> {
         self.sort_order.as_ref()
     }
 }
@@ -56,10 +56,12 @@ impl SortingConfiguration {
 
 /// A builder for [`SortingConfiguration`](crate::types::SortingConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SortingConfigurationBuilder {
-    pub(crate) document_attribute_key: std::option::Option<std::string::String>,
-    pub(crate) sort_order: std::option::Option<crate::types::SortOrder>,
+    pub(crate) document_attribute_key: ::std::option::Option<::std::string::String>,
+    pub(crate) sort_order: ::std::option::Option<crate::types::SortOrder>,
 }
 impl SortingConfigurationBuilder {
     /// <p>The name of the document attribute used to sort the response. You can use any field that has the <code>Sortable</code> flag set to true.</p>
@@ -71,8 +73,11 @@ impl SortingConfigurationBuilder {
     /// <li> <p>_version</p> </li>
     /// <li> <p>_view_count</p> </li>
     /// </ul>
-    pub fn document_attribute_key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.document_attribute_key = Some(input.into());
+    pub fn document_attribute_key(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.document_attribute_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the document attribute used to sort the response. You can use any field that has the <code>Sortable</code> flag set to true.</p>
@@ -86,18 +91,18 @@ impl SortingConfigurationBuilder {
     /// </ul>
     pub fn set_document_attribute_key(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.document_attribute_key = input;
         self
     }
     /// <p>The order that the results should be returned in. In case of ties, the relevance assigned to the result by Amazon Kendra is used as the tie-breaker.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
-        self.sort_order = Some(input);
+        self.sort_order = ::std::option::Option::Some(input);
         self
     }
     /// <p>The order that the results should be returned in. In case of ties, the relevance assigned to the result by Amazon Kendra is used as the tie-breaker.</p>
-    pub fn set_sort_order(mut self, input: std::option::Option<crate::types::SortOrder>) -> Self {
+    pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.sort_order = input;
         self
     }

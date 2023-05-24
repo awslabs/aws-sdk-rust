@@ -3,15 +3,15 @@
 /// <p>Provides information about the location that is configured for storing model artifacts. </p>
 /// <p>Model artifacts are the output that results from training a model, and typically consist of trained parameters, a model definition that describes how to compute inferences, and other metadata.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModelArtifacts {
     /// <p>The path of the S3 object that contains the model artifacts. For example, <code>s3://bucket-name/keynameprefix/model.tar.gz</code>.</p>
     #[doc(hidden)]
-    pub s3_model_artifacts: std::option::Option<std::string::String>,
+    pub s3_model_artifacts: ::std::option::Option<::std::string::String>,
 }
 impl ModelArtifacts {
     /// <p>The path of the S3 object that contains the model artifacts. For example, <code>s3://bucket-name/keynameprefix/model.tar.gz</code>.</p>
-    pub fn s3_model_artifacts(&self) -> std::option::Option<&str> {
+    pub fn s3_model_artifacts(&self) -> ::std::option::Option<&str> {
         self.s3_model_artifacts.as_deref()
     }
 }
@@ -24,20 +24,25 @@ impl ModelArtifacts {
 
 /// A builder for [`ModelArtifacts`](crate::types::ModelArtifacts).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ModelArtifactsBuilder {
-    pub(crate) s3_model_artifacts: std::option::Option<std::string::String>,
+    pub(crate) s3_model_artifacts: ::std::option::Option<::std::string::String>,
 }
 impl ModelArtifactsBuilder {
     /// <p>The path of the S3 object that contains the model artifacts. For example, <code>s3://bucket-name/keynameprefix/model.tar.gz</code>.</p>
-    pub fn s3_model_artifacts(mut self, input: impl Into<std::string::String>) -> Self {
-        self.s3_model_artifacts = Some(input.into());
+    pub fn s3_model_artifacts(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.s3_model_artifacts = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The path of the S3 object that contains the model artifacts. For example, <code>s3://bucket-name/keynameprefix/model.tar.gz</code>.</p>
     pub fn set_s3_model_artifacts(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.s3_model_artifacts = input;
         self

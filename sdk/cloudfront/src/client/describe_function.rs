@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeFunction`](crate::operation::describe_function::builders::DescribeFunctionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::describe_function::builders::DescribeFunctionFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::describe_function::builders::DescribeFunctionFluentBuilder::set_name): <p>The name of the function that you are getting information about.</p>
+    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::describe_function::builders::DescribeFunctionFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::describe_function::builders::DescribeFunctionFluentBuilder::set_name): <p>The name of the function that you are getting information about.</p>
     ///   - [`stage(FunctionStage)`](crate::operation::describe_function::builders::DescribeFunctionFluentBuilder::stage) / [`set_stage(Option<FunctionStage>)`](crate::operation::describe_function::builders::DescribeFunctionFluentBuilder::set_stage): <p>The function's stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
     /// - On success, responds with [`DescribeFunctionOutput`](crate::operation::describe_function::DescribeFunctionOutput) with field(s):
     ///   - [`function_summary(Option<FunctionSummary>)`](crate::operation::describe_function::DescribeFunctionOutput::function_summary): <p>Contains configuration information and metadata about a CloudFront function.</p>

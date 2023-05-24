@@ -6,56 +6,59 @@ pub use crate::operation::create_cluster::_create_cluster_input::CreateClusterIn
 /// Fluent builder constructing a request to `CreateCluster`.
 ///
 /// <p>Creates an empty cluster. Each cluster supports five nodes. You use the <code>CreateJob</code> action separately to create the jobs for each of these nodes. The cluster does not ship until these five node jobs have been created.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateClusterFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_cluster::builders::CreateClusterInputBuilder,
 }
 impl CreateClusterFluentBuilder {
     /// Creates a new `CreateCluster`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_cluster::CreateCluster,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_cluster::CreateClusterError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_cluster::CreateClusterError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_cluster::CreateClusterOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_cluster::CreateClusterError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_cluster::CreateClusterError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,9 +71,9 @@ impl CreateClusterFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_cluster::CreateClusterOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_cluster::CreateClusterError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_cluster::CreateClusterError>,
     > {
         self.send_middleware().await
     }
@@ -82,7 +85,7 @@ impl CreateClusterFluentBuilder {
     }
     /// <p>The type of job for this cluster. Currently, the only job type supported for clusters is <code>LOCAL_USE</code>.</p>
     /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
-    pub fn set_job_type(mut self, input: std::option::Option<crate::types::JobType>) -> Self {
+    pub fn set_job_type(mut self, input: ::std::option::Option<crate::types::JobType>) -> Self {
         self.inner = self.inner.set_job_type(input);
         self
     }
@@ -92,7 +95,10 @@ impl CreateClusterFluentBuilder {
         self
     }
     /// <p>The resources associated with the cluster job. These resources include Amazon S3 buckets and optional Lambda functions written in the Python language. </p>
-    pub fn set_resources(mut self, input: std::option::Option<crate::types::JobResource>) -> Self {
+    pub fn set_resources(
+        mut self,
+        input: ::std::option::Option<crate::types::JobResource>,
+    ) -> Self {
         self.inner = self.inner.set_resources(input);
         self
     }
@@ -107,48 +113,48 @@ impl CreateClusterFluentBuilder {
     /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family device clusters support Amazon S3 and NFS (Network File System).</p>
     pub fn set_on_device_service_configuration(
         mut self,
-        input: std::option::Option<crate::types::OnDeviceServiceConfiguration>,
+        input: ::std::option::Option<crate::types::OnDeviceServiceConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_on_device_service_configuration(input);
         self
     }
     /// <p>An optional description of this specific cluster, for example <code>Environmental Data Cluster-01</code>.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>An optional description of this specific cluster, for example <code>Environmental Data Cluster-01</code>.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
     /// <p>The ID for the address that you want the cluster shipped to.</p>
-    pub fn address_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn address_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.address_id(input.into());
         self
     }
     /// <p>The ID for the address that you want the cluster shipped to.</p>
-    pub fn set_address_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_address_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_address_id(input);
         self
     }
     /// <p>The <code>KmsKeyARN</code> value that you want to associate with this cluster. <code>KmsKeyARN</code> values are created by using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in Key Management Service (KMS). </p>
-    pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kms_key_arn(input.into());
         self
     }
     /// <p>The <code>KmsKeyARN</code> value that you want to associate with this cluster. <code>KmsKeyARN</code> values are created by using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in Key Management Service (KMS). </p>
-    pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kms_key_arn(input);
         self
     }
     /// <p>The <code>RoleARN</code> that you want to associate with this cluster. <code>RoleArn</code> values are created by using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in Identity and Access Management (IAM).</p>
-    pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());
         self
     }
     /// <p>The <code>RoleARN</code> that you want to associate with this cluster. <code>RoleArn</code> values are created by using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in Identity and Access Management (IAM).</p>
-    pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_role_arn(input);
         self
     }
@@ -166,7 +172,7 @@ impl CreateClusterFluentBuilder {
     /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
     pub fn set_snowball_type(
         mut self,
-        input: std::option::Option<crate::types::SnowballType>,
+        input: ::std::option::Option<crate::types::SnowballType>,
     ) -> Self {
         self.inner = self.inner.set_snowball_type(input);
         self
@@ -203,7 +209,7 @@ impl CreateClusterFluentBuilder {
     /// </ul>
     pub fn set_shipping_option(
         mut self,
-        input: std::option::Option<crate::types::ShippingOption>,
+        input: ::std::option::Option<crate::types::ShippingOption>,
     ) -> Self {
         self.inner = self.inner.set_shipping_option(input);
         self
@@ -216,20 +222,23 @@ impl CreateClusterFluentBuilder {
     /// <p>The Amazon Simple Notification Service (Amazon SNS) notification settings for this cluster.</p>
     pub fn set_notification(
         mut self,
-        input: std::option::Option<crate::types::Notification>,
+        input: ::std::option::Option<crate::types::Notification>,
     ) -> Self {
         self.inner = self.inner.set_notification(input);
         self
     }
     /// <p>The forwarding address ID for a cluster. This field is not supported in most regions.</p>
-    pub fn forwarding_address_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn forwarding_address_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.forwarding_address_id(input.into());
         self
     }
     /// <p>The forwarding address ID for a cluster. This field is not supported in most regions.</p>
     pub fn set_forwarding_address_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_forwarding_address_id(input);
         self
@@ -242,7 +251,7 @@ impl CreateClusterFluentBuilder {
     /// <p>The tax documents required in your Amazon Web Services Region.</p>
     pub fn set_tax_documents(
         mut self,
-        input: std::option::Option<crate::types::TaxDocuments>,
+        input: ::std::option::Option<crate::types::TaxDocuments>,
     ) -> Self {
         self.inner = self.inner.set_tax_documents(input);
         self
@@ -255,7 +264,7 @@ impl CreateClusterFluentBuilder {
     /// <p>Allows you to securely operate and manage Snow devices in a cluster remotely from outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the device arrives at your location. Otherwise, you need to use the Snowball Client to manage the device.</p>
     pub fn set_remote_management(
         mut self,
-        input: std::option::Option<crate::types::RemoteManagement>,
+        input: ::std::option::Option<crate::types::RemoteManagement>,
     ) -> Self {
         self.inner = self.inner.set_remote_management(input);
         self
@@ -266,7 +275,7 @@ impl CreateClusterFluentBuilder {
         self
     }
     /// <p>If provided, each job will be automatically created and associated with the new cluster. If not provided, will be treated as 0.</p>
-    pub fn set_initial_cluster_size(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_initial_cluster_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_initial_cluster_size(input);
         self
     }
@@ -276,7 +285,7 @@ impl CreateClusterFluentBuilder {
         self
     }
     /// <p>Force to create cluster when user attempts to overprovision or underprovision a cluster. A cluster is overprovisioned or underprovisioned if the initial size of the cluster is more (overprovisioned) or less (underprovisioned) than what needed to meet capacity requirement specified with <code>OnDeviceServiceConfiguration</code>.</p>
-    pub fn set_force_create_jobs(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_force_create_jobs(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_force_create_jobs(input);
         self
     }
@@ -285,14 +294,17 @@ impl CreateClusterFluentBuilder {
     /// To override the contents of this collection use [`set_long_term_pricing_ids`](Self::set_long_term_pricing_ids).
     ///
     /// <p>Lists long-term pricing id that will be used to associate with jobs automatically created for the new cluster.</p>
-    pub fn long_term_pricing_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn long_term_pricing_ids(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.long_term_pricing_ids(input.into());
         self
     }
     /// <p>Lists long-term pricing id that will be used to associate with jobs automatically created for the new cluster.</p>
     pub fn set_long_term_pricing_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_long_term_pricing_ids(input);
         self
@@ -307,7 +319,7 @@ impl CreateClusterFluentBuilder {
     /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
     pub fn set_snowball_capacity_preference(
         mut self,
-        input: std::option::Option<crate::types::SnowballCapacity>,
+        input: ::std::option::Option<crate::types::SnowballCapacity>,
     ) -> Self {
         self.inner = self.inner.set_snowball_capacity_preference(input);
         self

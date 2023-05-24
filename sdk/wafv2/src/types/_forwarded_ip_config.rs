@@ -6,13 +6,13 @@
 /// <p>This configuration is used for <code>GeoMatchStatement</code> and <code>RateBasedStatement</code>. For <code>IPSetReferenceStatement</code>, use <code>IPSetForwardedIPConfig</code> instead. </p>
 /// <p>WAF only evaluates the first IP address found in the specified HTTP header. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ForwardedIpConfig {
     /// <p>The name of the HTTP header to use for the IP address. For example, to use the X-Forwarded-For (XFF) header, set this to <code>X-Forwarded-For</code>.</p> <note>
     /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
     /// </note>
     #[doc(hidden)]
-    pub header_name: std::option::Option<std::string::String>,
+    pub header_name: ::std::option::Option<::std::string::String>,
     /// <p>The match status to assign to the web request if the request doesn't have a valid IP address in the specified position.</p> <note>
     /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
     /// </note>
@@ -22,13 +22,13 @@ pub struct ForwardedIpConfig {
     /// <li> <p> <code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub fallback_behavior: std::option::Option<crate::types::FallbackBehavior>,
+    pub fallback_behavior: ::std::option::Option<crate::types::FallbackBehavior>,
 }
 impl ForwardedIpConfig {
     /// <p>The name of the HTTP header to use for the IP address. For example, to use the X-Forwarded-For (XFF) header, set this to <code>X-Forwarded-For</code>.</p> <note>
     /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
     /// </note>
-    pub fn header_name(&self) -> std::option::Option<&str> {
+    pub fn header_name(&self) -> ::std::option::Option<&str> {
         self.header_name.as_deref()
     }
     /// <p>The match status to assign to the web request if the request doesn't have a valid IP address in the specified position.</p> <note>
@@ -39,7 +39,7 @@ impl ForwardedIpConfig {
     /// <li> <p> <code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies the rule action to the request.</p> </li>
     /// <li> <p> <code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p> </li>
     /// </ul>
-    pub fn fallback_behavior(&self) -> std::option::Option<&crate::types::FallbackBehavior> {
+    pub fn fallback_behavior(&self) -> ::std::option::Option<&crate::types::FallbackBehavior> {
         self.fallback_behavior.as_ref()
     }
 }
@@ -52,23 +52,25 @@ impl ForwardedIpConfig {
 
 /// A builder for [`ForwardedIpConfig`](crate::types::ForwardedIpConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ForwardedIpConfigBuilder {
-    pub(crate) header_name: std::option::Option<std::string::String>,
-    pub(crate) fallback_behavior: std::option::Option<crate::types::FallbackBehavior>,
+    pub(crate) header_name: ::std::option::Option<::std::string::String>,
+    pub(crate) fallback_behavior: ::std::option::Option<crate::types::FallbackBehavior>,
 }
 impl ForwardedIpConfigBuilder {
     /// <p>The name of the HTTP header to use for the IP address. For example, to use the X-Forwarded-For (XFF) header, set this to <code>X-Forwarded-For</code>.</p> <note>
     /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
     /// </note>
-    pub fn header_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.header_name = Some(input.into());
+    pub fn header_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.header_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the HTTP header to use for the IP address. For example, to use the X-Forwarded-For (XFF) header, set this to <code>X-Forwarded-For</code>.</p> <note>
     /// <p>If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all.</p>
     /// </note>
-    pub fn set_header_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_header_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.header_name = input;
         self
     }
@@ -81,7 +83,7 @@ impl ForwardedIpConfigBuilder {
     /// <li> <p> <code>NO_MATCH</code> - Treat the web request as not matching the rule statement.</p> </li>
     /// </ul>
     pub fn fallback_behavior(mut self, input: crate::types::FallbackBehavior) -> Self {
-        self.fallback_behavior = Some(input);
+        self.fallback_behavior = ::std::option::Option::Some(input);
         self
     }
     /// <p>The match status to assign to the web request if the request doesn't have a valid IP address in the specified position.</p> <note>
@@ -94,7 +96,7 @@ impl ForwardedIpConfigBuilder {
     /// </ul>
     pub fn set_fallback_behavior(
         mut self,
-        input: std::option::Option<crate::types::FallbackBehavior>,
+        input: ::std::option::Option<crate::types::FallbackBehavior>,
     ) -> Self {
         self.fallback_behavior = input;
         self

@@ -2,20 +2,20 @@
 
 /// <p>Contains the output of CreateCustomerGateway.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateCustomerGatewayOutput {
     /// <p>Information about the customer gateway.</p>
     #[doc(hidden)]
-    pub customer_gateway: std::option::Option<crate::types::CustomerGateway>,
+    pub customer_gateway: ::std::option::Option<crate::types::CustomerGateway>,
     _request_id: Option<String>,
 }
 impl CreateCustomerGatewayOutput {
     /// <p>Information about the customer gateway.</p>
-    pub fn customer_gateway(&self) -> std::option::Option<&crate::types::CustomerGateway> {
+    pub fn customer_gateway(&self) -> ::std::option::Option<&crate::types::CustomerGateway> {
         self.customer_gateway.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for CreateCustomerGatewayOutput {
+impl ::aws_http::request_id::RequestId for CreateCustomerGatewayOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -31,21 +31,23 @@ impl CreateCustomerGatewayOutput {
 
 /// A builder for [`CreateCustomerGatewayOutput`](crate::operation::create_customer_gateway::CreateCustomerGatewayOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateCustomerGatewayOutputBuilder {
-    pub(crate) customer_gateway: std::option::Option<crate::types::CustomerGateway>,
+    pub(crate) customer_gateway: ::std::option::Option<crate::types::CustomerGateway>,
     _request_id: Option<String>,
 }
 impl CreateCustomerGatewayOutputBuilder {
     /// <p>Information about the customer gateway.</p>
     pub fn customer_gateway(mut self, input: crate::types::CustomerGateway) -> Self {
-        self.customer_gateway = Some(input);
+        self.customer_gateway = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the customer gateway.</p>
     pub fn set_customer_gateway(
         mut self,
-        input: std::option::Option<crate::types::CustomerGateway>,
+        input: ::std::option::Option<crate::types::CustomerGateway>,
     ) -> Self {
         self.customer_gateway = input;
         self

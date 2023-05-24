@@ -2,20 +2,20 @@
 
 /// <p>The output for a <code>DescribeStackResources</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeStackResourcesOutput {
     /// <p>A list of <code>StackResource</code> structures.</p>
     #[doc(hidden)]
-    pub stack_resources: std::option::Option<std::vec::Vec<crate::types::StackResource>>,
+    pub stack_resources: ::std::option::Option<::std::vec::Vec<crate::types::StackResource>>,
     _request_id: Option<String>,
 }
 impl DescribeStackResourcesOutput {
     /// <p>A list of <code>StackResource</code> structures.</p>
-    pub fn stack_resources(&self) -> std::option::Option<&[crate::types::StackResource]> {
+    pub fn stack_resources(&self) -> ::std::option::Option<&[crate::types::StackResource]> {
         self.stack_resources.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeStackResourcesOutput {
+impl ::aws_http::request_id::RequestId for DescribeStackResourcesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -31,9 +31,11 @@ impl DescribeStackResourcesOutput {
 
 /// A builder for [`DescribeStackResourcesOutput`](crate::operation::describe_stack_resources::DescribeStackResourcesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeStackResourcesOutputBuilder {
-    pub(crate) stack_resources: std::option::Option<std::vec::Vec<crate::types::StackResource>>,
+    pub(crate) stack_resources: ::std::option::Option<::std::vec::Vec<crate::types::StackResource>>,
     _request_id: Option<String>,
 }
 impl DescribeStackResourcesOutputBuilder {
@@ -45,13 +47,13 @@ impl DescribeStackResourcesOutputBuilder {
     pub fn stack_resources(mut self, input: crate::types::StackResource) -> Self {
         let mut v = self.stack_resources.unwrap_or_default();
         v.push(input);
-        self.stack_resources = Some(v);
+        self.stack_resources = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of <code>StackResource</code> structures.</p>
     pub fn set_stack_resources(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::StackResource>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::StackResource>>,
     ) -> Self {
         self.stack_resources = input;
         self

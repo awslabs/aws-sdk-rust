@@ -2,11 +2,11 @@
 
 /// <p>Describes the status of a parameter group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClusterParameterStatus {
     /// <p>The name of the parameter.</p>
     #[doc(hidden)]
-    pub parameter_name: std::option::Option<std::string::String>,
+    pub parameter_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the parameter that indicates whether the parameter is in sync with the database, waiting for a cluster reboot, or encountered an error when being applied.</p>
     /// <p>The following are possible statuses and descriptions.</p>
     /// <ul>
@@ -19,14 +19,14 @@ pub struct ClusterParameterStatus {
     /// <li> <p> <code>unknown-error</code>: Cannot apply the parameter change right now. The change will be applied after the cluster reboots.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub parameter_apply_status: std::option::Option<std::string::String>,
+    pub parameter_apply_status: ::std::option::Option<::std::string::String>,
     /// <p>The error that prevented the parameter from being applied to the database.</p>
     #[doc(hidden)]
-    pub parameter_apply_error_description: std::option::Option<std::string::String>,
+    pub parameter_apply_error_description: ::std::option::Option<::std::string::String>,
 }
 impl ClusterParameterStatus {
     /// <p>The name of the parameter.</p>
-    pub fn parameter_name(&self) -> std::option::Option<&str> {
+    pub fn parameter_name(&self) -> ::std::option::Option<&str> {
         self.parameter_name.as_deref()
     }
     /// <p>The status of the parameter that indicates whether the parameter is in sync with the database, waiting for a cluster reboot, or encountered an error when being applied.</p>
@@ -40,11 +40,11 @@ impl ClusterParameterStatus {
     /// <li> <p> <code>apply-error</code>: Cannot connect to the cluster. The parameter change will be applied after the cluster reboots.</p> </li>
     /// <li> <p> <code>unknown-error</code>: Cannot apply the parameter change right now. The change will be applied after the cluster reboots.</p> </li>
     /// </ul>
-    pub fn parameter_apply_status(&self) -> std::option::Option<&str> {
+    pub fn parameter_apply_status(&self) -> ::std::option::Option<&str> {
         self.parameter_apply_status.as_deref()
     }
     /// <p>The error that prevented the parameter from being applied to the database.</p>
-    pub fn parameter_apply_error_description(&self) -> std::option::Option<&str> {
+    pub fn parameter_apply_error_description(&self) -> ::std::option::Option<&str> {
         self.parameter_apply_error_description.as_deref()
     }
 }
@@ -57,20 +57,28 @@ impl ClusterParameterStatus {
 
 /// A builder for [`ClusterParameterStatus`](crate::types::ClusterParameterStatus).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ClusterParameterStatusBuilder {
-    pub(crate) parameter_name: std::option::Option<std::string::String>,
-    pub(crate) parameter_apply_status: std::option::Option<std::string::String>,
-    pub(crate) parameter_apply_error_description: std::option::Option<std::string::String>,
+    pub(crate) parameter_name: ::std::option::Option<::std::string::String>,
+    pub(crate) parameter_apply_status: ::std::option::Option<::std::string::String>,
+    pub(crate) parameter_apply_error_description: ::std::option::Option<::std::string::String>,
 }
 impl ClusterParameterStatusBuilder {
     /// <p>The name of the parameter.</p>
-    pub fn parameter_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.parameter_name = Some(input.into());
+    pub fn parameter_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.parameter_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the parameter.</p>
-    pub fn set_parameter_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_parameter_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.parameter_name = input;
         self
     }
@@ -85,8 +93,11 @@ impl ClusterParameterStatusBuilder {
     /// <li> <p> <code>apply-error</code>: Cannot connect to the cluster. The parameter change will be applied after the cluster reboots.</p> </li>
     /// <li> <p> <code>unknown-error</code>: Cannot apply the parameter change right now. The change will be applied after the cluster reboots.</p> </li>
     /// </ul>
-    pub fn parameter_apply_status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.parameter_apply_status = Some(input.into());
+    pub fn parameter_apply_status(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.parameter_apply_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the parameter that indicates whether the parameter is in sync with the database, waiting for a cluster reboot, or encountered an error when being applied.</p>
@@ -102,7 +113,7 @@ impl ClusterParameterStatusBuilder {
     /// </ul>
     pub fn set_parameter_apply_status(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.parameter_apply_status = input;
         self
@@ -110,15 +121,15 @@ impl ClusterParameterStatusBuilder {
     /// <p>The error that prevented the parameter from being applied to the database.</p>
     pub fn parameter_apply_error_description(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.parameter_apply_error_description = Some(input.into());
+        self.parameter_apply_error_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The error that prevented the parameter from being applied to the database.</p>
     pub fn set_parameter_apply_error_description(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.parameter_apply_error_description = input;
         self

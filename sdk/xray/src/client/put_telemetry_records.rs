@@ -4,9 +4,9 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`telemetry_records(Vec<TelemetryRecord>)`](crate::operation::put_telemetry_records::builders::PutTelemetryRecordsFluentBuilder::telemetry_records) / [`set_telemetry_records(Option<Vec<TelemetryRecord>>)`](crate::operation::put_telemetry_records::builders::PutTelemetryRecordsFluentBuilder::set_telemetry_records): <p></p>
-    ///   - [`ec2_instance_id(impl Into<String>)`](crate::operation::put_telemetry_records::builders::PutTelemetryRecordsFluentBuilder::ec2_instance_id) / [`set_ec2_instance_id(Option<String>)`](crate::operation::put_telemetry_records::builders::PutTelemetryRecordsFluentBuilder::set_ec2_instance_id): <p></p>
-    ///   - [`hostname(impl Into<String>)`](crate::operation::put_telemetry_records::builders::PutTelemetryRecordsFluentBuilder::hostname) / [`set_hostname(Option<String>)`](crate::operation::put_telemetry_records::builders::PutTelemetryRecordsFluentBuilder::set_hostname): <p></p>
-    ///   - [`resource_arn(impl Into<String>)`](crate::operation::put_telemetry_records::builders::PutTelemetryRecordsFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::put_telemetry_records::builders::PutTelemetryRecordsFluentBuilder::set_resource_arn): <p></p>
+    ///   - [`ec2_instance_id(impl ::std::convert::Into<String>)`](crate::operation::put_telemetry_records::builders::PutTelemetryRecordsFluentBuilder::ec2_instance_id) / [`set_ec2_instance_id(Option<String>)`](crate::operation::put_telemetry_records::builders::PutTelemetryRecordsFluentBuilder::set_ec2_instance_id): <p></p>
+    ///   - [`hostname(impl ::std::convert::Into<String>)`](crate::operation::put_telemetry_records::builders::PutTelemetryRecordsFluentBuilder::hostname) / [`set_hostname(Option<String>)`](crate::operation::put_telemetry_records::builders::PutTelemetryRecordsFluentBuilder::set_hostname): <p></p>
+    ///   - [`resource_arn(impl ::std::convert::Into<String>)`](crate::operation::put_telemetry_records::builders::PutTelemetryRecordsFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::put_telemetry_records::builders::PutTelemetryRecordsFluentBuilder::set_resource_arn): <p></p>
     /// - On success, responds with [`PutTelemetryRecordsOutput`](crate::operation::put_telemetry_records::PutTelemetryRecordsOutput)
     /// - On failure, responds with [`SdkError<PutTelemetryRecordsError>`](crate::operation::put_telemetry_records::PutTelemetryRecordsError)
     pub fn put_telemetry_records(

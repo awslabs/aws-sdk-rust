@@ -33,9 +33,9 @@ Then in code, a client can be created with the following:
 ```rust,no_run
 use aws_sdk_serverlessapplicationrepository as serverlessapplicationrepository;
 
-#[tokio::main]
+#[::tokio::main]
 async fn main() -> Result<(), serverlessapplicationrepository::Error> {
-    let config = aws_config::load_from_env().await;
+    let config = ::aws_config::load_from_env().await;
     let client = serverlessapplicationrepository::Client::new(&config);
 
     // ... make some calls with the client

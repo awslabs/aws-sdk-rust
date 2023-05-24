@@ -2,20 +2,20 @@
 
 /// <p>Contains the response to a <code>DescribeElasticIps</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeElasticIpsOutput {
     /// <p>An <code>ElasticIps</code> object that describes the specified Elastic IP addresses.</p>
     #[doc(hidden)]
-    pub elastic_ips: std::option::Option<std::vec::Vec<crate::types::ElasticIp>>,
+    pub elastic_ips: ::std::option::Option<::std::vec::Vec<crate::types::ElasticIp>>,
     _request_id: Option<String>,
 }
 impl DescribeElasticIpsOutput {
     /// <p>An <code>ElasticIps</code> object that describes the specified Elastic IP addresses.</p>
-    pub fn elastic_ips(&self) -> std::option::Option<&[crate::types::ElasticIp]> {
+    pub fn elastic_ips(&self) -> ::std::option::Option<&[crate::types::ElasticIp]> {
         self.elastic_ips.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeElasticIpsOutput {
+impl ::aws_http::request_id::RequestId for DescribeElasticIpsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,9 +30,11 @@ impl DescribeElasticIpsOutput {
 
 /// A builder for [`DescribeElasticIpsOutput`](crate::operation::describe_elastic_ips::DescribeElasticIpsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeElasticIpsOutputBuilder {
-    pub(crate) elastic_ips: std::option::Option<std::vec::Vec<crate::types::ElasticIp>>,
+    pub(crate) elastic_ips: ::std::option::Option<::std::vec::Vec<crate::types::ElasticIp>>,
     _request_id: Option<String>,
 }
 impl DescribeElasticIpsOutputBuilder {
@@ -44,13 +46,13 @@ impl DescribeElasticIpsOutputBuilder {
     pub fn elastic_ips(mut self, input: crate::types::ElasticIp) -> Self {
         let mut v = self.elastic_ips.unwrap_or_default();
         v.push(input);
-        self.elastic_ips = Some(v);
+        self.elastic_ips = ::std::option::Option::Some(v);
         self
     }
     /// <p>An <code>ElasticIps</code> object that describes the specified Elastic IP addresses.</p>
     pub fn set_elastic_ips(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ElasticIp>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ElasticIp>>,
     ) -> Self {
         self.elastic_ips = input;
         self

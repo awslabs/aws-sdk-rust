@@ -2,36 +2,36 @@
 
 /// <p>Specifies a Delta data store to crawl one or more Delta tables.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeltaTarget {
     /// <p>A list of the Amazon S3 paths to the Delta tables.</p>
     #[doc(hidden)]
-    pub delta_tables: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub delta_tables: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The name of the connection to use to connect to the Delta table target.</p>
     #[doc(hidden)]
-    pub connection_name: std::option::Option<std::string::String>,
+    pub connection_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether to write the manifest files to the Delta table path.</p>
     #[doc(hidden)]
-    pub write_manifest: std::option::Option<bool>,
+    pub write_manifest: ::std::option::Option<bool>,
     /// <p>Specifies whether the crawler will create native tables, to allow integration with query engines that support querying of the Delta transaction log directly.</p>
     #[doc(hidden)]
-    pub create_native_delta_table: std::option::Option<bool>,
+    pub create_native_delta_table: ::std::option::Option<bool>,
 }
 impl DeltaTarget {
     /// <p>A list of the Amazon S3 paths to the Delta tables.</p>
-    pub fn delta_tables(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn delta_tables(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.delta_tables.as_deref()
     }
     /// <p>The name of the connection to use to connect to the Delta table target.</p>
-    pub fn connection_name(&self) -> std::option::Option<&str> {
+    pub fn connection_name(&self) -> ::std::option::Option<&str> {
         self.connection_name.as_deref()
     }
     /// <p>Specifies whether to write the manifest files to the Delta table path.</p>
-    pub fn write_manifest(&self) -> std::option::Option<bool> {
+    pub fn write_manifest(&self) -> ::std::option::Option<bool> {
         self.write_manifest
     }
     /// <p>Specifies whether the crawler will create native tables, to allow integration with query engines that support querying of the Delta transaction log directly.</p>
-    pub fn create_native_delta_table(&self) -> std::option::Option<bool> {
+    pub fn create_native_delta_table(&self) -> ::std::option::Option<bool> {
         self.create_native_delta_table
     }
 }
@@ -44,12 +44,14 @@ impl DeltaTarget {
 
 /// A builder for [`DeltaTarget`](crate::types::DeltaTarget).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeltaTargetBuilder {
-    pub(crate) delta_tables: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) connection_name: std::option::Option<std::string::String>,
-    pub(crate) write_manifest: std::option::Option<bool>,
-    pub(crate) create_native_delta_table: std::option::Option<bool>,
+    pub(crate) delta_tables: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) connection_name: ::std::option::Option<::std::string::String>,
+    pub(crate) write_manifest: ::std::option::Option<bool>,
+    pub(crate) create_native_delta_table: ::std::option::Option<bool>,
 }
 impl DeltaTargetBuilder {
     /// Appends an item to `delta_tables`.
@@ -57,47 +59,53 @@ impl DeltaTargetBuilder {
     /// To override the contents of this collection use [`set_delta_tables`](Self::set_delta_tables).
     ///
     /// <p>A list of the Amazon S3 paths to the Delta tables.</p>
-    pub fn delta_tables(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn delta_tables(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.delta_tables.unwrap_or_default();
         v.push(input.into());
-        self.delta_tables = Some(v);
+        self.delta_tables = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of the Amazon S3 paths to the Delta tables.</p>
     pub fn set_delta_tables(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.delta_tables = input;
         self
     }
     /// <p>The name of the connection to use to connect to the Delta table target.</p>
-    pub fn connection_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.connection_name = Some(input.into());
+    pub fn connection_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.connection_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the connection to use to connect to the Delta table target.</p>
-    pub fn set_connection_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_connection_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.connection_name = input;
         self
     }
     /// <p>Specifies whether to write the manifest files to the Delta table path.</p>
     pub fn write_manifest(mut self, input: bool) -> Self {
-        self.write_manifest = Some(input);
+        self.write_manifest = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether to write the manifest files to the Delta table path.</p>
-    pub fn set_write_manifest(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_write_manifest(mut self, input: ::std::option::Option<bool>) -> Self {
         self.write_manifest = input;
         self
     }
     /// <p>Specifies whether the crawler will create native tables, to allow integration with query engines that support querying of the Delta transaction log directly.</p>
     pub fn create_native_delta_table(mut self, input: bool) -> Self {
-        self.create_native_delta_table = Some(input);
+        self.create_native_delta_table = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether the crawler will create native tables, to allow integration with query engines that support querying of the Delta transaction log directly.</p>
-    pub fn set_create_native_delta_table(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_create_native_delta_table(mut self, input: ::std::option::Option<bool>) -> Self {
         self.create_native_delta_table = input;
         self
     }

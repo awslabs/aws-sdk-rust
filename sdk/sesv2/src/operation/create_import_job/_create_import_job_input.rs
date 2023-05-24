@@ -2,22 +2,22 @@
 
 /// <p>Represents a request to create an import job from a data source for a data destination.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateImportJobInput {
     /// <p>The destination for the import job.</p>
     #[doc(hidden)]
-    pub import_destination: std::option::Option<crate::types::ImportDestination>,
+    pub import_destination: ::std::option::Option<crate::types::ImportDestination>,
     /// <p>The data source for the import job.</p>
     #[doc(hidden)]
-    pub import_data_source: std::option::Option<crate::types::ImportDataSource>,
+    pub import_data_source: ::std::option::Option<crate::types::ImportDataSource>,
 }
 impl CreateImportJobInput {
     /// <p>The destination for the import job.</p>
-    pub fn import_destination(&self) -> std::option::Option<&crate::types::ImportDestination> {
+    pub fn import_destination(&self) -> ::std::option::Option<&crate::types::ImportDestination> {
         self.import_destination.as_ref()
     }
     /// <p>The data source for the import job.</p>
-    pub fn import_data_source(&self) -> std::option::Option<&crate::types::ImportDataSource> {
+    pub fn import_data_source(&self) -> ::std::option::Option<&crate::types::ImportDataSource> {
         self.import_data_source.as_ref()
     }
 }
@@ -30,34 +30,36 @@ impl CreateImportJobInput {
 
 /// A builder for [`CreateImportJobInput`](crate::operation::create_import_job::CreateImportJobInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateImportJobInputBuilder {
-    pub(crate) import_destination: std::option::Option<crate::types::ImportDestination>,
-    pub(crate) import_data_source: std::option::Option<crate::types::ImportDataSource>,
+    pub(crate) import_destination: ::std::option::Option<crate::types::ImportDestination>,
+    pub(crate) import_data_source: ::std::option::Option<crate::types::ImportDataSource>,
 }
 impl CreateImportJobInputBuilder {
     /// <p>The destination for the import job.</p>
     pub fn import_destination(mut self, input: crate::types::ImportDestination) -> Self {
-        self.import_destination = Some(input);
+        self.import_destination = ::std::option::Option::Some(input);
         self
     }
     /// <p>The destination for the import job.</p>
     pub fn set_import_destination(
         mut self,
-        input: std::option::Option<crate::types::ImportDestination>,
+        input: ::std::option::Option<crate::types::ImportDestination>,
     ) -> Self {
         self.import_destination = input;
         self
     }
     /// <p>The data source for the import job.</p>
     pub fn import_data_source(mut self, input: crate::types::ImportDataSource) -> Self {
-        self.import_data_source = Some(input);
+        self.import_data_source = ::std::option::Option::Some(input);
         self
     }
     /// <p>The data source for the import job.</p>
     pub fn set_import_data_source(
         mut self,
-        input: std::option::Option<crate::types::ImportDataSource>,
+        input: ::std::option::Option<crate::types::ImportDataSource>,
     ) -> Self {
         self.import_data_source = input;
         self
@@ -65,11 +67,11 @@ impl CreateImportJobInputBuilder {
     /// Consumes the builder and constructs a [`CreateImportJobInput`](crate::operation::create_import_job::CreateImportJobInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::create_import_job::CreateImportJobInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::create_import_job::CreateImportJobInput {
+        ::std::result::Result::Ok(crate::operation::create_import_job::CreateImportJobInput {
             import_destination: self.import_destination,
             import_data_source: self.import_data_source,
         })

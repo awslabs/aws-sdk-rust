@@ -2,29 +2,29 @@
 
 /// <p>Filters the response from the <code>ListSlots</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SlotFilter {
     /// <p>The name of the field to use for filtering.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<crate::types::SlotFilterName>,
+    pub name: ::std::option::Option<crate::types::SlotFilterName>,
     /// <p>The value to use to filter the response.</p>
     #[doc(hidden)]
-    pub values: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListSlots</code> operation should return only aliases that equal the specified value. Specify <code>CO</code> when the <code>ListSlots</code> operation should return aliases that contain the specified value.</p>
     #[doc(hidden)]
-    pub operator: std::option::Option<crate::types::SlotFilterOperator>,
+    pub operator: ::std::option::Option<crate::types::SlotFilterOperator>,
 }
 impl SlotFilter {
     /// <p>The name of the field to use for filtering.</p>
-    pub fn name(&self) -> std::option::Option<&crate::types::SlotFilterName> {
+    pub fn name(&self) -> ::std::option::Option<&crate::types::SlotFilterName> {
         self.name.as_ref()
     }
     /// <p>The value to use to filter the response.</p>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.values.as_deref()
     }
     /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListSlots</code> operation should return only aliases that equal the specified value. Specify <code>CO</code> when the <code>ListSlots</code> operation should return aliases that contain the specified value.</p>
-    pub fn operator(&self) -> std::option::Option<&crate::types::SlotFilterOperator> {
+    pub fn operator(&self) -> ::std::option::Option<&crate::types::SlotFilterOperator> {
         self.operator.as_ref()
     }
 }
@@ -37,20 +37,22 @@ impl SlotFilter {
 
 /// A builder for [`SlotFilter`](crate::types::SlotFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SlotFilterBuilder {
-    pub(crate) name: std::option::Option<crate::types::SlotFilterName>,
-    pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) operator: std::option::Option<crate::types::SlotFilterOperator>,
+    pub(crate) name: ::std::option::Option<crate::types::SlotFilterName>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) operator: ::std::option::Option<crate::types::SlotFilterOperator>,
 }
 impl SlotFilterBuilder {
     /// <p>The name of the field to use for filtering.</p>
     pub fn name(mut self, input: crate::types::SlotFilterName) -> Self {
-        self.name = Some(input);
+        self.name = ::std::option::Option::Some(input);
         self
     }
     /// <p>The name of the field to use for filtering.</p>
-    pub fn set_name(mut self, input: std::option::Option<crate::types::SlotFilterName>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::SlotFilterName>) -> Self {
         self.name = input;
         self
     }
@@ -59,29 +61,29 @@ impl SlotFilterBuilder {
     /// To override the contents of this collection use [`set_values`](Self::set_values).
     ///
     /// <p>The value to use to filter the response.</p>
-    pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
         v.push(input.into());
-        self.values = Some(v);
+        self.values = ::std::option::Option::Some(v);
         self
     }
     /// <p>The value to use to filter the response.</p>
     pub fn set_values(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.values = input;
         self
     }
     /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListSlots</code> operation should return only aliases that equal the specified value. Specify <code>CO</code> when the <code>ListSlots</code> operation should return aliases that contain the specified value.</p>
     pub fn operator(mut self, input: crate::types::SlotFilterOperator) -> Self {
-        self.operator = Some(input);
+        self.operator = ::std::option::Option::Some(input);
         self
     }
     /// <p>The operator to use for the filter. Specify <code>EQ</code> when the <code>ListSlots</code> operation should return only aliases that equal the specified value. Specify <code>CO</code> when the <code>ListSlots</code> operation should return aliases that contain the specified value.</p>
     pub fn set_operator(
         mut self,
-        input: std::option::Option<crate::types::SlotFilterOperator>,
+        input: ::std::option::Option<crate::types::SlotFilterOperator>,
     ) -> Self {
         self.operator = input;
         self

@@ -2,22 +2,22 @@
 
 /// <p>A time-ordered series of data points, corresponding to a dimension of a Performance Insights metric.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetricKeyDataPoints {
     /// <p>The dimensions to which the data points apply.</p>
     #[doc(hidden)]
-    pub key: std::option::Option<crate::types::ResponseResourceMetricKey>,
+    pub key: ::std::option::Option<crate::types::ResponseResourceMetricKey>,
     /// <p>An array of timestamp-value pairs, representing measurements over a period of time.</p>
     #[doc(hidden)]
-    pub data_points: std::option::Option<std::vec::Vec<crate::types::DataPoint>>,
+    pub data_points: ::std::option::Option<::std::vec::Vec<crate::types::DataPoint>>,
 }
 impl MetricKeyDataPoints {
     /// <p>The dimensions to which the data points apply.</p>
-    pub fn key(&self) -> std::option::Option<&crate::types::ResponseResourceMetricKey> {
+    pub fn key(&self) -> ::std::option::Option<&crate::types::ResponseResourceMetricKey> {
         self.key.as_ref()
     }
     /// <p>An array of timestamp-value pairs, representing measurements over a period of time.</p>
-    pub fn data_points(&self) -> std::option::Option<&[crate::types::DataPoint]> {
+    pub fn data_points(&self) -> ::std::option::Option<&[crate::types::DataPoint]> {
         self.data_points.as_deref()
     }
 }
@@ -30,21 +30,23 @@ impl MetricKeyDataPoints {
 
 /// A builder for [`MetricKeyDataPoints`](crate::types::MetricKeyDataPoints).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MetricKeyDataPointsBuilder {
-    pub(crate) key: std::option::Option<crate::types::ResponseResourceMetricKey>,
-    pub(crate) data_points: std::option::Option<std::vec::Vec<crate::types::DataPoint>>,
+    pub(crate) key: ::std::option::Option<crate::types::ResponseResourceMetricKey>,
+    pub(crate) data_points: ::std::option::Option<::std::vec::Vec<crate::types::DataPoint>>,
 }
 impl MetricKeyDataPointsBuilder {
     /// <p>The dimensions to which the data points apply.</p>
     pub fn key(mut self, input: crate::types::ResponseResourceMetricKey) -> Self {
-        self.key = Some(input);
+        self.key = ::std::option::Option::Some(input);
         self
     }
     /// <p>The dimensions to which the data points apply.</p>
     pub fn set_key(
         mut self,
-        input: std::option::Option<crate::types::ResponseResourceMetricKey>,
+        input: ::std::option::Option<crate::types::ResponseResourceMetricKey>,
     ) -> Self {
         self.key = input;
         self
@@ -57,13 +59,13 @@ impl MetricKeyDataPointsBuilder {
     pub fn data_points(mut self, input: crate::types::DataPoint) -> Self {
         let mut v = self.data_points.unwrap_or_default();
         v.push(input);
-        self.data_points = Some(v);
+        self.data_points = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of timestamp-value pairs, representing measurements over a period of time.</p>
     pub fn set_data_points(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DataPoint>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DataPoint>>,
     ) -> Self {
         self.data_points = input;
         self

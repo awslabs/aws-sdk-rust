@@ -2,22 +2,22 @@
 
 /// <p>Indicates the slot configuration and global identifier for a slice group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GlobalNodeGroup {
     /// <p>The name of the global node group</p>
     #[doc(hidden)]
-    pub global_node_group_id: std::option::Option<std::string::String>,
+    pub global_node_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The keyspace for this node group</p>
     #[doc(hidden)]
-    pub slots: std::option::Option<std::string::String>,
+    pub slots: ::std::option::Option<::std::string::String>,
 }
 impl GlobalNodeGroup {
     /// <p>The name of the global node group</p>
-    pub fn global_node_group_id(&self) -> std::option::Option<&str> {
+    pub fn global_node_group_id(&self) -> ::std::option::Option<&str> {
         self.global_node_group_id.as_deref()
     }
     /// <p>The keyspace for this node group</p>
-    pub fn slots(&self) -> std::option::Option<&str> {
+    pub fn slots(&self) -> ::std::option::Option<&str> {
         self.slots.as_deref()
     }
 }
@@ -30,32 +30,37 @@ impl GlobalNodeGroup {
 
 /// A builder for [`GlobalNodeGroup`](crate::types::GlobalNodeGroup).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GlobalNodeGroupBuilder {
-    pub(crate) global_node_group_id: std::option::Option<std::string::String>,
-    pub(crate) slots: std::option::Option<std::string::String>,
+    pub(crate) global_node_group_id: ::std::option::Option<::std::string::String>,
+    pub(crate) slots: ::std::option::Option<::std::string::String>,
 }
 impl GlobalNodeGroupBuilder {
     /// <p>The name of the global node group</p>
-    pub fn global_node_group_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.global_node_group_id = Some(input.into());
+    pub fn global_node_group_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.global_node_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the global node group</p>
     pub fn set_global_node_group_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.global_node_group_id = input;
         self
     }
     /// <p>The keyspace for this node group</p>
-    pub fn slots(mut self, input: impl Into<std::string::String>) -> Self {
-        self.slots = Some(input.into());
+    pub fn slots(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.slots = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The keyspace for this node group</p>
-    pub fn set_slots(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_slots(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.slots = input;
         self
     }

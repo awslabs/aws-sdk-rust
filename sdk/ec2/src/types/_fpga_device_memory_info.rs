@@ -2,15 +2,15 @@
 
 /// <p>Describes the memory for the FPGA accelerator for the instance type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FpgaDeviceMemoryInfo {
     /// <p>The size of the memory available to the FPGA accelerator, in MiB.</p>
     #[doc(hidden)]
-    pub size_in_mi_b: std::option::Option<i32>,
+    pub size_in_mi_b: ::std::option::Option<i32>,
 }
 impl FpgaDeviceMemoryInfo {
     /// <p>The size of the memory available to the FPGA accelerator, in MiB.</p>
-    pub fn size_in_mi_b(&self) -> std::option::Option<i32> {
+    pub fn size_in_mi_b(&self) -> ::std::option::Option<i32> {
         self.size_in_mi_b
     }
 }
@@ -23,18 +23,20 @@ impl FpgaDeviceMemoryInfo {
 
 /// A builder for [`FpgaDeviceMemoryInfo`](crate::types::FpgaDeviceMemoryInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FpgaDeviceMemoryInfoBuilder {
-    pub(crate) size_in_mi_b: std::option::Option<i32>,
+    pub(crate) size_in_mi_b: ::std::option::Option<i32>,
 }
 impl FpgaDeviceMemoryInfoBuilder {
     /// <p>The size of the memory available to the FPGA accelerator, in MiB.</p>
     pub fn size_in_mi_b(mut self, input: i32) -> Self {
-        self.size_in_mi_b = Some(input);
+        self.size_in_mi_b = ::std::option::Option::Some(input);
         self
     }
     /// <p>The size of the memory available to the FPGA accelerator, in MiB.</p>
-    pub fn set_size_in_mi_b(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_size_in_mi_b(mut self, input: ::std::option::Option<i32>) -> Self {
         self.size_in_mi_b = input;
         self
     }

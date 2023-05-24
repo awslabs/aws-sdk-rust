@@ -5,7 +5,7 @@
 /// <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned when you run the <code>GetEC2RecommendationProjectedMetrics</code> action. Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProjectedMetric {
     /// <p>The name of the projected utilization metric.</p>
     /// <p>The following projected utilization metrics are returned:</p>
@@ -16,13 +16,13 @@ pub struct ProjectedMetric {
     /// </note> </li>
     /// </ul>
     #[doc(hidden)]
-    pub name: std::option::Option<crate::types::MetricName>,
+    pub name: ::std::option::Option<crate::types::MetricName>,
     /// <p>The timestamps of the projected utilization metric.</p>
     #[doc(hidden)]
-    pub timestamps: std::option::Option<std::vec::Vec<aws_smithy_types::DateTime>>,
+    pub timestamps: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>,
     /// <p>The values of the projected utilization metrics.</p>
     #[doc(hidden)]
-    pub values: std::option::Option<std::vec::Vec<f64>>,
+    pub values: ::std::option::Option<::std::vec::Vec<f64>>,
 }
 impl ProjectedMetric {
     /// <p>The name of the projected utilization metric.</p>
@@ -33,15 +33,15 @@ impl ProjectedMetric {
     /// <p>The <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>
     /// </note> </li>
     /// </ul>
-    pub fn name(&self) -> std::option::Option<&crate::types::MetricName> {
+    pub fn name(&self) -> ::std::option::Option<&crate::types::MetricName> {
         self.name.as_ref()
     }
     /// <p>The timestamps of the projected utilization metric.</p>
-    pub fn timestamps(&self) -> std::option::Option<&[aws_smithy_types::DateTime]> {
+    pub fn timestamps(&self) -> ::std::option::Option<&[::aws_smithy_types::DateTime]> {
         self.timestamps.as_deref()
     }
     /// <p>The values of the projected utilization metrics.</p>
-    pub fn values(&self) -> std::option::Option<&[f64]> {
+    pub fn values(&self) -> ::std::option::Option<&[f64]> {
         self.values.as_deref()
     }
 }
@@ -54,11 +54,13 @@ impl ProjectedMetric {
 
 /// A builder for [`ProjectedMetric`](crate::types::ProjectedMetric).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ProjectedMetricBuilder {
-    pub(crate) name: std::option::Option<crate::types::MetricName>,
-    pub(crate) timestamps: std::option::Option<std::vec::Vec<aws_smithy_types::DateTime>>,
-    pub(crate) values: std::option::Option<std::vec::Vec<f64>>,
+    pub(crate) name: ::std::option::Option<crate::types::MetricName>,
+    pub(crate) timestamps: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec<f64>>,
 }
 impl ProjectedMetricBuilder {
     /// <p>The name of the projected utilization metric.</p>
@@ -70,7 +72,7 @@ impl ProjectedMetricBuilder {
     /// </note> </li>
     /// </ul>
     pub fn name(mut self, input: crate::types::MetricName) -> Self {
-        self.name = Some(input);
+        self.name = ::std::option::Option::Some(input);
         self
     }
     /// <p>The name of the projected utilization metric.</p>
@@ -81,7 +83,7 @@ impl ProjectedMetricBuilder {
     /// <p>The <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>
     /// </note> </li>
     /// </ul>
-    pub fn set_name(mut self, input: std::option::Option<crate::types::MetricName>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::MetricName>) -> Self {
         self.name = input;
         self
     }
@@ -90,16 +92,16 @@ impl ProjectedMetricBuilder {
     /// To override the contents of this collection use [`set_timestamps`](Self::set_timestamps).
     ///
     /// <p>The timestamps of the projected utilization metric.</p>
-    pub fn timestamps(mut self, input: aws_smithy_types::DateTime) -> Self {
+    pub fn timestamps(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         let mut v = self.timestamps.unwrap_or_default();
         v.push(input);
-        self.timestamps = Some(v);
+        self.timestamps = ::std::option::Option::Some(v);
         self
     }
     /// <p>The timestamps of the projected utilization metric.</p>
     pub fn set_timestamps(
         mut self,
-        input: std::option::Option<std::vec::Vec<aws_smithy_types::DateTime>>,
+        input: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::DateTime>>,
     ) -> Self {
         self.timestamps = input;
         self
@@ -112,11 +114,11 @@ impl ProjectedMetricBuilder {
     pub fn values(mut self, input: f64) -> Self {
         let mut v = self.values.unwrap_or_default();
         v.push(input);
-        self.values = Some(v);
+        self.values = ::std::option::Option::Some(v);
         self
     }
     /// <p>The values of the projected utilization metrics.</p>
-    pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
+    pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<f64>>) -> Self {
         self.values = input;
         self
     }

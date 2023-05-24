@@ -2,22 +2,22 @@
 
 /// <p>Information about the file mode changes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SetFileModeEntry {
     /// <p>The full path to the file, including the name of the file.</p>
     #[doc(hidden)]
-    pub file_path: std::option::Option<std::string::String>,
+    pub file_path: ::std::option::Option<::std::string::String>,
     /// <p>The file mode for the file.</p>
     #[doc(hidden)]
-    pub file_mode: std::option::Option<crate::types::FileModeTypeEnum>,
+    pub file_mode: ::std::option::Option<crate::types::FileModeTypeEnum>,
 }
 impl SetFileModeEntry {
     /// <p>The full path to the file, including the name of the file.</p>
-    pub fn file_path(&self) -> std::option::Option<&str> {
+    pub fn file_path(&self) -> ::std::option::Option<&str> {
         self.file_path.as_deref()
     }
     /// <p>The file mode for the file.</p>
-    pub fn file_mode(&self) -> std::option::Option<&crate::types::FileModeTypeEnum> {
+    pub fn file_mode(&self) -> ::std::option::Option<&crate::types::FileModeTypeEnum> {
         self.file_mode.as_ref()
     }
 }
@@ -30,31 +30,33 @@ impl SetFileModeEntry {
 
 /// A builder for [`SetFileModeEntry`](crate::types::SetFileModeEntry).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SetFileModeEntryBuilder {
-    pub(crate) file_path: std::option::Option<std::string::String>,
-    pub(crate) file_mode: std::option::Option<crate::types::FileModeTypeEnum>,
+    pub(crate) file_path: ::std::option::Option<::std::string::String>,
+    pub(crate) file_mode: ::std::option::Option<crate::types::FileModeTypeEnum>,
 }
 impl SetFileModeEntryBuilder {
     /// <p>The full path to the file, including the name of the file.</p>
-    pub fn file_path(mut self, input: impl Into<std::string::String>) -> Self {
-        self.file_path = Some(input.into());
+    pub fn file_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.file_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The full path to the file, including the name of the file.</p>
-    pub fn set_file_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_file_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_path = input;
         self
     }
     /// <p>The file mode for the file.</p>
     pub fn file_mode(mut self, input: crate::types::FileModeTypeEnum) -> Self {
-        self.file_mode = Some(input);
+        self.file_mode = ::std::option::Option::Some(input);
         self
     }
     /// <p>The file mode for the file.</p>
     pub fn set_file_mode(
         mut self,
-        input: std::option::Option<crate::types::FileModeTypeEnum>,
+        input: ::std::option::Option<crate::types::FileModeTypeEnum>,
     ) -> Self {
         self.file_mode = input;
         self

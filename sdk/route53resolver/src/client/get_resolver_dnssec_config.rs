@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetResolverDnssecConfig`](crate::operation::get_resolver_dnssec_config::builders::GetResolverDnssecConfigFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_id(impl Into<String>)`](crate::operation::get_resolver_dnssec_config::builders::GetResolverDnssecConfigFluentBuilder::resource_id) / [`set_resource_id(Option<String>)`](crate::operation::get_resolver_dnssec_config::builders::GetResolverDnssecConfigFluentBuilder::set_resource_id): <p>The ID of the virtual private cloud (VPC) for the DNSSEC validation status.</p>
+    ///   - [`resource_id(impl ::std::convert::Into<String>)`](crate::operation::get_resolver_dnssec_config::builders::GetResolverDnssecConfigFluentBuilder::resource_id) / [`set_resource_id(Option<String>)`](crate::operation::get_resolver_dnssec_config::builders::GetResolverDnssecConfigFluentBuilder::set_resource_id): <p>The ID of the virtual private cloud (VPC) for the DNSSEC validation status.</p>
     /// - On success, responds with [`GetResolverDnssecConfigOutput`](crate::operation::get_resolver_dnssec_config::GetResolverDnssecConfigOutput) with field(s):
     ///   - [`resolver_dnssec_config(Option<ResolverDnssecConfig>)`](crate::operation::get_resolver_dnssec_config::GetResolverDnssecConfigOutput::resolver_dnssec_config): <p>The information about a configuration for DNSSEC validation.</p>
     /// - On failure, responds with [`SdkError<GetResolverDnssecConfigError>`](crate::operation::get_resolver_dnssec_config::GetResolverDnssecConfigError)

@@ -2,36 +2,36 @@
 
 /// <p>The details that identify a resource that is discovered by Config, including the resource type, ID, and (if available) the custom resource name.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceIdentifier {
     /// <p>The type of resource.</p>
     #[doc(hidden)]
-    pub resource_type: std::option::Option<crate::types::ResourceType>,
+    pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>The ID of the resource (for example, <code>sg-xxxxxx</code>).</p>
     #[doc(hidden)]
-    pub resource_id: std::option::Option<std::string::String>,
+    pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The custom name of the resource (if available).</p>
     #[doc(hidden)]
-    pub resource_name: std::option::Option<std::string::String>,
+    pub resource_name: ::std::option::Option<::std::string::String>,
     /// <p>The time that the resource was deleted.</p>
     #[doc(hidden)]
-    pub resource_deletion_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub resource_deletion_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ResourceIdentifier {
     /// <p>The type of resource.</p>
-    pub fn resource_type(&self) -> std::option::Option<&crate::types::ResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The ID of the resource (for example, <code>sg-xxxxxx</code>).</p>
-    pub fn resource_id(&self) -> std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<&str> {
         self.resource_id.as_deref()
     }
     /// <p>The custom name of the resource (if available).</p>
-    pub fn resource_name(&self) -> std::option::Option<&str> {
+    pub fn resource_name(&self) -> ::std::option::Option<&str> {
         self.resource_name.as_deref()
     }
     /// <p>The time that the resource was deleted.</p>
-    pub fn resource_deletion_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn resource_deletion_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.resource_deletion_time.as_ref()
     }
 }
@@ -44,56 +44,64 @@ impl ResourceIdentifier {
 
 /// A builder for [`ResourceIdentifier`](crate::types::ResourceIdentifier).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResourceIdentifierBuilder {
-    pub(crate) resource_type: std::option::Option<crate::types::ResourceType>,
-    pub(crate) resource_id: std::option::Option<std::string::String>,
-    pub(crate) resource_name: std::option::Option<std::string::String>,
-    pub(crate) resource_deletion_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
+    pub(crate) resource_id: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_name: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_deletion_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ResourceIdentifierBuilder {
     /// <p>The type of resource.</p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
-        self.resource_type = Some(input);
+        self.resource_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of resource.</p>
     pub fn set_resource_type(
         mut self,
-        input: std::option::Option<crate::types::ResourceType>,
+        input: ::std::option::Option<crate::types::ResourceType>,
     ) -> Self {
         self.resource_type = input;
         self
     }
     /// <p>The ID of the resource (for example, <code>sg-xxxxxx</code>).</p>
-    pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_id = Some(input.into());
+    pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the resource (for example, <code>sg-xxxxxx</code>).</p>
-    pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
     }
     /// <p>The custom name of the resource (if available).</p>
-    pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_name = Some(input.into());
+    pub fn resource_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.resource_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The custom name of the resource (if available).</p>
-    pub fn set_resource_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.resource_name = input;
         self
     }
     /// <p>The time that the resource was deleted.</p>
-    pub fn resource_deletion_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.resource_deletion_time = Some(input);
+    pub fn resource_deletion_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.resource_deletion_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time that the resource was deleted.</p>
     pub fn set_resource_deletion_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.resource_deletion_time = input;
         self

@@ -2,7 +2,7 @@
 
 /// <p>The name and values of a manual Amazon RDS DB snapshot attribute. Manual DB snapshot attributes are used to authorize other Amazon Web Services accounts to restore a manual DB snapshot.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum RdsDbSnapshotAttributeValue {
     /// <p>The Amazon Web Services account IDs that have access to the manual Amazon RDS DB snapshot. If the value <code>all</code> is specified, then the Amazon RDS DB snapshot is public and can be copied or restored by all Amazon Web Services accounts.</p>
     /// <ul>
@@ -10,7 +10,7 @@ pub enum RdsDbSnapshotAttributeValue {
     /// <li> <p>If the access preview is for a new resource and you do not specify the specify the <code>accountIds</code> in <code>RdsDbSnapshotAttributeValue</code>, then the access preview considers the snapshot without any attributes.</p> </li>
     /// <li> <p>To propose deletion of an existing shared <code>accountIds</code>, you can specify an empty list for <code>accountIds</code> in the <code>RdsDbSnapshotAttributeValue</code>.</p> </li>
     /// </ul>
-    AccountIds(std::vec::Vec<std::string::String>),
+    AccountIds(::std::vec::Vec<::std::string::String>),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -23,15 +23,15 @@ pub enum RdsDbSnapshotAttributeValue {
 }
 impl RdsDbSnapshotAttributeValue {
     #[allow(irrefutable_let_patterns)]
-    /// Tries to convert the enum instance into [`AccountIds`](crate::types::RdsDbSnapshotAttributeValue::AccountIds), extracting the inner [`Vec`](std::vec::Vec).
+    /// Tries to convert the enum instance into [`AccountIds`](crate::types::RdsDbSnapshotAttributeValue::AccountIds), extracting the inner [`Vec`](::std::vec::Vec).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_account_ids(
         &self,
-    ) -> std::result::Result<&std::vec::Vec<std::string::String>, &Self> {
+    ) -> ::std::result::Result<&::std::vec::Vec<::std::string::String>, &Self> {
         if let RdsDbSnapshotAttributeValue::AccountIds(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`AccountIds`](crate::types::RdsDbSnapshotAttributeValue::AccountIds).

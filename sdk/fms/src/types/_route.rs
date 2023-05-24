@@ -2,36 +2,36 @@
 
 /// <p>Describes a route in a route table.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Route {
     /// <p>The type of destination for the route.</p>
     #[doc(hidden)]
-    pub destination_type: std::option::Option<crate::types::DestinationType>,
+    pub destination_type: ::std::option::Option<crate::types::DestinationType>,
     /// <p>The type of target for the route.</p>
     #[doc(hidden)]
-    pub target_type: std::option::Option<crate::types::TargetType>,
+    pub target_type: ::std::option::Option<crate::types::TargetType>,
     /// <p>The destination of the route.</p>
     #[doc(hidden)]
-    pub destination: std::option::Option<std::string::String>,
+    pub destination: ::std::option::Option<::std::string::String>,
     /// <p>The route's target.</p>
     #[doc(hidden)]
-    pub target: std::option::Option<std::string::String>,
+    pub target: ::std::option::Option<::std::string::String>,
 }
 impl Route {
     /// <p>The type of destination for the route.</p>
-    pub fn destination_type(&self) -> std::option::Option<&crate::types::DestinationType> {
+    pub fn destination_type(&self) -> ::std::option::Option<&crate::types::DestinationType> {
         self.destination_type.as_ref()
     }
     /// <p>The type of target for the route.</p>
-    pub fn target_type(&self) -> std::option::Option<&crate::types::TargetType> {
+    pub fn target_type(&self) -> ::std::option::Option<&crate::types::TargetType> {
         self.target_type.as_ref()
     }
     /// <p>The destination of the route.</p>
-    pub fn destination(&self) -> std::option::Option<&str> {
+    pub fn destination(&self) -> ::std::option::Option<&str> {
         self.destination.as_deref()
     }
     /// <p>The route's target.</p>
-    pub fn target(&self) -> std::option::Option<&str> {
+    pub fn target(&self) -> ::std::option::Option<&str> {
         self.target.as_deref()
     }
 }
@@ -44,54 +44,59 @@ impl Route {
 
 /// A builder for [`Route`](crate::types::Route).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RouteBuilder {
-    pub(crate) destination_type: std::option::Option<crate::types::DestinationType>,
-    pub(crate) target_type: std::option::Option<crate::types::TargetType>,
-    pub(crate) destination: std::option::Option<std::string::String>,
-    pub(crate) target: std::option::Option<std::string::String>,
+    pub(crate) destination_type: ::std::option::Option<crate::types::DestinationType>,
+    pub(crate) target_type: ::std::option::Option<crate::types::TargetType>,
+    pub(crate) destination: ::std::option::Option<::std::string::String>,
+    pub(crate) target: ::std::option::Option<::std::string::String>,
 }
 impl RouteBuilder {
     /// <p>The type of destination for the route.</p>
     pub fn destination_type(mut self, input: crate::types::DestinationType) -> Self {
-        self.destination_type = Some(input);
+        self.destination_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of destination for the route.</p>
     pub fn set_destination_type(
         mut self,
-        input: std::option::Option<crate::types::DestinationType>,
+        input: ::std::option::Option<crate::types::DestinationType>,
     ) -> Self {
         self.destination_type = input;
         self
     }
     /// <p>The type of target for the route.</p>
     pub fn target_type(mut self, input: crate::types::TargetType) -> Self {
-        self.target_type = Some(input);
+        self.target_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of target for the route.</p>
-    pub fn set_target_type(mut self, input: std::option::Option<crate::types::TargetType>) -> Self {
+    pub fn set_target_type(
+        mut self,
+        input: ::std::option::Option<crate::types::TargetType>,
+    ) -> Self {
         self.target_type = input;
         self
     }
     /// <p>The destination of the route.</p>
-    pub fn destination(mut self, input: impl Into<std::string::String>) -> Self {
-        self.destination = Some(input.into());
+    pub fn destination(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.destination = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The destination of the route.</p>
-    pub fn set_destination(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_destination(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination = input;
         self
     }
     /// <p>The route's target.</p>
-    pub fn target(mut self, input: impl Into<std::string::String>) -> Self {
-        self.target = Some(input.into());
+    pub fn target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.target = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The route's target.</p>
-    pub fn set_target(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target = input;
         self
     }

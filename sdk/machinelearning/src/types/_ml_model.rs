@@ -3,26 +3,26 @@
 /// <p> Represents the output of a <code>GetMLModel</code> operation. </p>
 /// <p>The content consists of the detailed metadata and the current status of the <code>MLModel</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MlModel {
     /// <p>The ID assigned to the <code>MLModel</code> at creation.</p>
     #[doc(hidden)]
-    pub ml_model_id: std::option::Option<std::string::String>,
+    pub ml_model_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the training <code>DataSource</code>. The <code>CreateMLModel</code> operation uses the <code>TrainingDataSourceId</code>.</p>
     #[doc(hidden)]
-    pub training_data_source_id: std::option::Option<std::string::String>,
+    pub training_data_source_id: ::std::option::Option<::std::string::String>,
     /// <p>The AWS user account from which the <code>MLModel</code> was created. The account type can be either an AWS root account or an AWS Identity and Access Management (IAM) user account.</p>
     #[doc(hidden)]
-    pub created_by_iam_user: std::option::Option<std::string::String>,
+    pub created_by_iam_user: ::std::option::Option<::std::string::String>,
     /// <p>The time that the <code>MLModel</code> was created. The time is expressed in epoch time.</p>
     #[doc(hidden)]
-    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time of the most recent edit to the <code>MLModel</code>. The time is expressed in epoch time.</p>
     #[doc(hidden)]
-    pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A user-supplied name or description of the <code>MLModel</code>.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The current status of an <code>MLModel</code>. This element can have one of the following values: </p>
     /// <ul>
     /// <li> <p> <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to create an <code>MLModel</code>.</p> </li>
@@ -32,13 +32,13 @@ pub struct MlModel {
     /// <li> <p> <code>DELETED</code> - The <code>MLModel</code> is marked as deleted. It isn't usable.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::EntityStatus>,
+    pub status: ::std::option::Option<crate::types::EntityStatus>,
     /// <p>Long integer type that is a 64-bit signed number.</p>
     #[doc(hidden)]
-    pub size_in_bytes: std::option::Option<i64>,
+    pub size_in_bytes: ::std::option::Option<i64>,
     /// <p>The current endpoint of the <code>MLModel</code>.</p>
     #[doc(hidden)]
-    pub endpoint_info: std::option::Option<crate::types::RealtimeEndpointInfo>,
+    pub endpoint_info: ::std::option::Option<crate::types::RealtimeEndpointInfo>,
     /// <p>A list of the training parameters in the <code>MLModel</code>. The list is implemented as a map of key-value pairs.</p>
     /// <p>The following is the current set of training parameters:</p>
     /// <ul>
@@ -49,17 +49,18 @@ pub struct MlModel {
     /// <li> <p> <code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2 norm, which controls overfitting the data by penalizing large coefficients. This tends to drive coefficients to small, nonzero values. If you use this parameter, start by specifying a small value, such as <code>1.0E-08</code>.</p> <p>The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>. The default is to not use L2 normalization. This parameter can't be used when <code>L1</code> is specified. Use this parameter sparingly.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub training_parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub training_parameters: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>The location of the data file or directory in Amazon Simple Storage Service (Amazon S3).</p>
     #[doc(hidden)]
-    pub input_data_location_s3: std::option::Option<std::string::String>,
+    pub input_data_location_s3: ::std::option::Option<::std::string::String>,
     /// <p>The algorithm used to train the <code>MLModel</code>. The following algorithm is supported:</p>
     /// <ul>
     /// <li> <p> <code>SGD</code> -- Stochastic gradient descent. The goal of <code>SGD</code> is to minimize the gradient of the loss function. </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub algorithm: std::option::Option<crate::types::Algorithm>,
+    pub algorithm: ::std::option::Option<crate::types::Algorithm>,
     /// <p>Identifies the <code>MLModel</code> category. The following are the available types:</p>
     /// <ul>
     /// <li> <p> <code>REGRESSION</code> - Produces a numeric result. For example, "What price should a house be listed at?"</p> </li>
@@ -67,49 +68,49 @@ pub struct MlModel {
     /// <li> <p> <code>MULTICLASS</code> - Produces one of several possible results. For example, "Is this a HIGH-, LOW-, or MEDIUM-risk trade?".</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub ml_model_type: std::option::Option<crate::types::MlModelType>,
+    pub ml_model_type: ::std::option::Option<crate::types::MlModelType>,
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
-    pub score_threshold: std::option::Option<f32>,
+    pub score_threshold: ::std::option::Option<f32>,
     /// <p>The time of the most recent edit to the <code>ScoreThreshold</code>. The time is expressed in epoch time.</p>
     #[doc(hidden)]
-    pub score_threshold_last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub score_threshold_last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A description of the most recent details about accessing the <code>MLModel</code>.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
     /// <p>Long integer type that is a 64-bit signed number.</p>
     #[doc(hidden)]
-    pub compute_time: std::option::Option<i64>,
+    pub compute_time: ::std::option::Option<i64>,
     /// <p>A timestamp represented in epoch time.</p>
     #[doc(hidden)]
-    pub finished_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub finished_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A timestamp represented in epoch time.</p>
     #[doc(hidden)]
-    pub started_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl MlModel {
     /// <p>The ID assigned to the <code>MLModel</code> at creation.</p>
-    pub fn ml_model_id(&self) -> std::option::Option<&str> {
+    pub fn ml_model_id(&self) -> ::std::option::Option<&str> {
         self.ml_model_id.as_deref()
     }
     /// <p>The ID of the training <code>DataSource</code>. The <code>CreateMLModel</code> operation uses the <code>TrainingDataSourceId</code>.</p>
-    pub fn training_data_source_id(&self) -> std::option::Option<&str> {
+    pub fn training_data_source_id(&self) -> ::std::option::Option<&str> {
         self.training_data_source_id.as_deref()
     }
     /// <p>The AWS user account from which the <code>MLModel</code> was created. The account type can be either an AWS root account or an AWS Identity and Access Management (IAM) user account.</p>
-    pub fn created_by_iam_user(&self) -> std::option::Option<&str> {
+    pub fn created_by_iam_user(&self) -> ::std::option::Option<&str> {
         self.created_by_iam_user.as_deref()
     }
     /// <p>The time that the <code>MLModel</code> was created. The time is expressed in epoch time.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time of the most recent edit to the <code>MLModel</code>. The time is expressed in epoch time.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>A user-supplied name or description of the <code>MLModel</code>.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The current status of an <code>MLModel</code>. This element can have one of the following values: </p>
@@ -120,15 +121,15 @@ impl MlModel {
     /// <li> <p> <code>COMPLETED</code> - The creation process completed successfully.</p> </li>
     /// <li> <p> <code>DELETED</code> - The <code>MLModel</code> is marked as deleted. It isn't usable.</p> </li>
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::types::EntityStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::EntityStatus> {
         self.status.as_ref()
     }
     /// <p>Long integer type that is a 64-bit signed number.</p>
-    pub fn size_in_bytes(&self) -> std::option::Option<i64> {
+    pub fn size_in_bytes(&self) -> ::std::option::Option<i64> {
         self.size_in_bytes
     }
     /// <p>The current endpoint of the <code>MLModel</code>.</p>
-    pub fn endpoint_info(&self) -> std::option::Option<&crate::types::RealtimeEndpointInfo> {
+    pub fn endpoint_info(&self) -> ::std::option::Option<&crate::types::RealtimeEndpointInfo> {
         self.endpoint_info.as_ref()
     }
     /// <p>A list of the training parameters in the <code>MLModel</code>. The list is implemented as a map of key-value pairs.</p>
@@ -142,19 +143,20 @@ impl MlModel {
     /// </ul>
     pub fn training_parameters(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.training_parameters.as_ref()
     }
     /// <p>The location of the data file or directory in Amazon Simple Storage Service (Amazon S3).</p>
-    pub fn input_data_location_s3(&self) -> std::option::Option<&str> {
+    pub fn input_data_location_s3(&self) -> ::std::option::Option<&str> {
         self.input_data_location_s3.as_deref()
     }
     /// <p>The algorithm used to train the <code>MLModel</code>. The following algorithm is supported:</p>
     /// <ul>
     /// <li> <p> <code>SGD</code> -- Stochastic gradient descent. The goal of <code>SGD</code> is to minimize the gradient of the loss function. </p> </li>
     /// </ul>
-    pub fn algorithm(&self) -> std::option::Option<&crate::types::Algorithm> {
+    pub fn algorithm(&self) -> ::std::option::Option<&crate::types::Algorithm> {
         self.algorithm.as_ref()
     }
     /// <p>Identifies the <code>MLModel</code> category. The following are the available types:</p>
@@ -163,33 +165,33 @@ impl MlModel {
     /// <li> <p> <code>BINARY</code> - Produces one of two possible results. For example, "Is this a child-friendly web site?".</p> </li>
     /// <li> <p> <code>MULTICLASS</code> - Produces one of several possible results. For example, "Is this a HIGH-, LOW-, or MEDIUM-risk trade?".</p> </li>
     /// </ul>
-    pub fn ml_model_type(&self) -> std::option::Option<&crate::types::MlModelType> {
+    pub fn ml_model_type(&self) -> ::std::option::Option<&crate::types::MlModelType> {
         self.ml_model_type.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn score_threshold(&self) -> std::option::Option<f32> {
+    pub fn score_threshold(&self) -> ::std::option::Option<f32> {
         self.score_threshold
     }
     /// <p>The time of the most recent edit to the <code>ScoreThreshold</code>. The time is expressed in epoch time.</p>
     pub fn score_threshold_last_updated_at(
         &self,
-    ) -> std::option::Option<&aws_smithy_types::DateTime> {
+    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.score_threshold_last_updated_at.as_ref()
     }
     /// <p>A description of the most recent details about accessing the <code>MLModel</code>.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
     /// <p>Long integer type that is a 64-bit signed number.</p>
-    pub fn compute_time(&self) -> std::option::Option<i64> {
+    pub fn compute_time(&self) -> ::std::option::Option<i64> {
         self.compute_time
     }
     /// <p>A timestamp represented in epoch time.</p>
-    pub fn finished_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn finished_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.finished_at.as_ref()
     }
     /// <p>A timestamp represented in epoch time.</p>
-    pub fn started_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn started_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.started_at.as_ref()
     }
 }
@@ -202,99 +204,108 @@ impl MlModel {
 
 /// A builder for [`MlModel`](crate::types::MlModel).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MlModelBuilder {
-    pub(crate) ml_model_id: std::option::Option<std::string::String>,
-    pub(crate) training_data_source_id: std::option::Option<std::string::String>,
-    pub(crate) created_by_iam_user: std::option::Option<std::string::String>,
-    pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::EntityStatus>,
-    pub(crate) size_in_bytes: std::option::Option<i64>,
-    pub(crate) endpoint_info: std::option::Option<crate::types::RealtimeEndpointInfo>,
-    pub(crate) training_parameters:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) input_data_location_s3: std::option::Option<std::string::String>,
-    pub(crate) algorithm: std::option::Option<crate::types::Algorithm>,
-    pub(crate) ml_model_type: std::option::Option<crate::types::MlModelType>,
-    pub(crate) score_threshold: std::option::Option<f32>,
-    pub(crate) score_threshold_last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) message: std::option::Option<std::string::String>,
-    pub(crate) compute_time: std::option::Option<i64>,
-    pub(crate) finished_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) started_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) ml_model_id: ::std::option::Option<::std::string::String>,
+    pub(crate) training_data_source_id: ::std::option::Option<::std::string::String>,
+    pub(crate) created_by_iam_user: ::std::option::Option<::std::string::String>,
+    pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::EntityStatus>,
+    pub(crate) size_in_bytes: ::std::option::Option<i64>,
+    pub(crate) endpoint_info: ::std::option::Option<crate::types::RealtimeEndpointInfo>,
+    pub(crate) training_parameters: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) input_data_location_s3: ::std::option::Option<::std::string::String>,
+    pub(crate) algorithm: ::std::option::Option<crate::types::Algorithm>,
+    pub(crate) ml_model_type: ::std::option::Option<crate::types::MlModelType>,
+    pub(crate) score_threshold: ::std::option::Option<f32>,
+    pub(crate) score_threshold_last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
+    pub(crate) compute_time: ::std::option::Option<i64>,
+    pub(crate) finished_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl MlModelBuilder {
     /// <p>The ID assigned to the <code>MLModel</code> at creation.</p>
-    pub fn ml_model_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ml_model_id = Some(input.into());
+    pub fn ml_model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ml_model_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID assigned to the <code>MLModel</code> at creation.</p>
-    pub fn set_ml_model_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ml_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ml_model_id = input;
         self
     }
     /// <p>The ID of the training <code>DataSource</code>. The <code>CreateMLModel</code> operation uses the <code>TrainingDataSourceId</code>.</p>
-    pub fn training_data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.training_data_source_id = Some(input.into());
+    pub fn training_data_source_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.training_data_source_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the training <code>DataSource</code>. The <code>CreateMLModel</code> operation uses the <code>TrainingDataSourceId</code>.</p>
     pub fn set_training_data_source_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.training_data_source_id = input;
         self
     }
     /// <p>The AWS user account from which the <code>MLModel</code> was created. The account type can be either an AWS root account or an AWS Identity and Access Management (IAM) user account.</p>
-    pub fn created_by_iam_user(mut self, input: impl Into<std::string::String>) -> Self {
-        self.created_by_iam_user = Some(input.into());
+    pub fn created_by_iam_user(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.created_by_iam_user = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The AWS user account from which the <code>MLModel</code> was created. The account type can be either an AWS root account or an AWS Identity and Access Management (IAM) user account.</p>
     pub fn set_created_by_iam_user(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.created_by_iam_user = input;
         self
     }
     /// <p>The time that the <code>MLModel</code> was created. The time is expressed in epoch time.</p>
-    pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_at = Some(input);
+    pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time that the <code>MLModel</code> was created. The time is expressed in epoch time.</p>
     pub fn set_created_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_at = input;
         self
     }
     /// <p>The time of the most recent edit to the <code>MLModel</code>. The time is expressed in epoch time.</p>
-    pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_updated_at = Some(input);
+    pub fn last_updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_updated_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time of the most recent edit to the <code>MLModel</code>. The time is expressed in epoch time.</p>
     pub fn set_last_updated_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_updated_at = input;
         self
     }
     /// <p>A user-supplied name or description of the <code>MLModel</code>.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A user-supplied name or description of the <code>MLModel</code>.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
@@ -307,7 +318,7 @@ impl MlModelBuilder {
     /// <li> <p> <code>DELETED</code> - The <code>MLModel</code> is marked as deleted. It isn't usable.</p> </li>
     /// </ul>
     pub fn status(mut self, input: crate::types::EntityStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current status of an <code>MLModel</code>. This element can have one of the following values: </p>
@@ -318,29 +329,29 @@ impl MlModelBuilder {
     /// <li> <p> <code>COMPLETED</code> - The creation process completed successfully.</p> </li>
     /// <li> <p> <code>DELETED</code> - The <code>MLModel</code> is marked as deleted. It isn't usable.</p> </li>
     /// </ul>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::EntityStatus>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::EntityStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>Long integer type that is a 64-bit signed number.</p>
     pub fn size_in_bytes(mut self, input: i64) -> Self {
-        self.size_in_bytes = Some(input);
+        self.size_in_bytes = ::std::option::Option::Some(input);
         self
     }
     /// <p>Long integer type that is a 64-bit signed number.</p>
-    pub fn set_size_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_size_in_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.size_in_bytes = input;
         self
     }
     /// <p>The current endpoint of the <code>MLModel</code>.</p>
     pub fn endpoint_info(mut self, input: crate::types::RealtimeEndpointInfo) -> Self {
-        self.endpoint_info = Some(input);
+        self.endpoint_info = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current endpoint of the <code>MLModel</code>.</p>
     pub fn set_endpoint_info(
         mut self,
-        input: std::option::Option<crate::types::RealtimeEndpointInfo>,
+        input: ::std::option::Option<crate::types::RealtimeEndpointInfo>,
     ) -> Self {
         self.endpoint_info = input;
         self
@@ -360,12 +371,12 @@ impl MlModelBuilder {
     /// </ul>
     pub fn training_parameters(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.training_parameters.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.training_parameters = Some(hash_map);
+        self.training_parameters = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A list of the training parameters in the <code>MLModel</code>. The list is implemented as a map of key-value pairs.</p>
@@ -379,22 +390,25 @@ impl MlModelBuilder {
     /// </ul>
     pub fn set_training_parameters(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.training_parameters = input;
         self
     }
     /// <p>The location of the data file or directory in Amazon Simple Storage Service (Amazon S3).</p>
-    pub fn input_data_location_s3(mut self, input: impl Into<std::string::String>) -> Self {
-        self.input_data_location_s3 = Some(input.into());
+    pub fn input_data_location_s3(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.input_data_location_s3 = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The location of the data file or directory in Amazon Simple Storage Service (Amazon S3).</p>
     pub fn set_input_data_location_s3(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.input_data_location_s3 = input;
         self
@@ -404,14 +418,14 @@ impl MlModelBuilder {
     /// <li> <p> <code>SGD</code> -- Stochastic gradient descent. The goal of <code>SGD</code> is to minimize the gradient of the loss function. </p> </li>
     /// </ul>
     pub fn algorithm(mut self, input: crate::types::Algorithm) -> Self {
-        self.algorithm = Some(input);
+        self.algorithm = ::std::option::Option::Some(input);
         self
     }
     /// <p>The algorithm used to train the <code>MLModel</code>. The following algorithm is supported:</p>
     /// <ul>
     /// <li> <p> <code>SGD</code> -- Stochastic gradient descent. The goal of <code>SGD</code> is to minimize the gradient of the loss function. </p> </li>
     /// </ul>
-    pub fn set_algorithm(mut self, input: std::option::Option<crate::types::Algorithm>) -> Self {
+    pub fn set_algorithm(mut self, input: ::std::option::Option<crate::types::Algorithm>) -> Self {
         self.algorithm = input;
         self
     }
@@ -422,7 +436,7 @@ impl MlModelBuilder {
     /// <li> <p> <code>MULTICLASS</code> - Produces one of several possible results. For example, "Is this a HIGH-, LOW-, or MEDIUM-risk trade?".</p> </li>
     /// </ul>
     pub fn ml_model_type(mut self, input: crate::types::MlModelType) -> Self {
-        self.ml_model_type = Some(input);
+        self.ml_model_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Identifies the <code>MLModel</code> category. The following are the available types:</p>
@@ -433,76 +447,76 @@ impl MlModelBuilder {
     /// </ul>
     pub fn set_ml_model_type(
         mut self,
-        input: std::option::Option<crate::types::MlModelType>,
+        input: ::std::option::Option<crate::types::MlModelType>,
     ) -> Self {
         self.ml_model_type = input;
         self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn score_threshold(mut self, input: f32) -> Self {
-        self.score_threshold = Some(input);
+        self.score_threshold = ::std::option::Option::Some(input);
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_score_threshold(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_score_threshold(mut self, input: ::std::option::Option<f32>) -> Self {
         self.score_threshold = input;
         self
     }
     /// <p>The time of the most recent edit to the <code>ScoreThreshold</code>. The time is expressed in epoch time.</p>
-    pub fn score_threshold_last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.score_threshold_last_updated_at = Some(input);
+    pub fn score_threshold_last_updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.score_threshold_last_updated_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time of the most recent edit to the <code>ScoreThreshold</code>. The time is expressed in epoch time.</p>
     pub fn set_score_threshold_last_updated_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.score_threshold_last_updated_at = input;
         self
     }
     /// <p>A description of the most recent details about accessing the <code>MLModel</code>.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of the most recent details about accessing the <code>MLModel</code>.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
     /// <p>Long integer type that is a 64-bit signed number.</p>
     pub fn compute_time(mut self, input: i64) -> Self {
-        self.compute_time = Some(input);
+        self.compute_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>Long integer type that is a 64-bit signed number.</p>
-    pub fn set_compute_time(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_compute_time(mut self, input: ::std::option::Option<i64>) -> Self {
         self.compute_time = input;
         self
     }
     /// <p>A timestamp represented in epoch time.</p>
-    pub fn finished_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.finished_at = Some(input);
+    pub fn finished_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.finished_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>A timestamp represented in epoch time.</p>
     pub fn set_finished_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.finished_at = input;
         self
     }
     /// <p>A timestamp represented in epoch time.</p>
-    pub fn started_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.started_at = Some(input);
+    pub fn started_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.started_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>A timestamp represented in epoch time.</p>
     pub fn set_started_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.started_at = input;
         self

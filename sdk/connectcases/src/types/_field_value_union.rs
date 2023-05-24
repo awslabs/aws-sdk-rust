@@ -2,14 +2,14 @@
 
 /// <p>Object to store union of Field values.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum FieldValueUnion {
     /// <p>Can be either null, or have a Boolean value type. Only one value can be provided.</p>
     BooleanValue(bool),
     /// <p>Can be either null, or have a Double number value type. Only one value can be provided.</p>
     DoubleValue(f64),
     /// <p>String value type.</p>
-    StringValue(std::string::String),
+    StringValue(::std::string::String),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -23,11 +23,11 @@ pub enum FieldValueUnion {
 impl FieldValueUnion {
     /// Tries to convert the enum instance into [`BooleanValue`](crate::types::FieldValueUnion::BooleanValue), extracting the inner [`bool`](bool).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_boolean_value(&self) -> std::result::Result<&bool, &Self> {
+    pub fn as_boolean_value(&self) -> ::std::result::Result<&bool, &Self> {
         if let FieldValueUnion::BooleanValue(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`BooleanValue`](crate::types::FieldValueUnion::BooleanValue).
@@ -36,24 +36,24 @@ impl FieldValueUnion {
     }
     /// Tries to convert the enum instance into [`DoubleValue`](crate::types::FieldValueUnion::DoubleValue), extracting the inner [`f64`](f64).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_double_value(&self) -> std::result::Result<&f64, &Self> {
+    pub fn as_double_value(&self) -> ::std::result::Result<&f64, &Self> {
         if let FieldValueUnion::DoubleValue(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`DoubleValue`](crate::types::FieldValueUnion::DoubleValue).
     pub fn is_double_value(&self) -> bool {
         self.as_double_value().is_ok()
     }
-    /// Tries to convert the enum instance into [`StringValue`](crate::types::FieldValueUnion::StringValue), extracting the inner [`String`](std::string::String).
+    /// Tries to convert the enum instance into [`StringValue`](crate::types::FieldValueUnion::StringValue), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_string_value(&self) -> std::result::Result<&std::string::String, &Self> {
+    pub fn as_string_value(&self) -> ::std::result::Result<&::std::string::String, &Self> {
         if let FieldValueUnion::StringValue(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`StringValue`](crate::types::FieldValueUnion::StringValue).

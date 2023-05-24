@@ -6,29 +6,29 @@ pub use crate::operation::create_event_data_store::_create_event_data_store_inpu
 /// Fluent builder constructing a request to `CreateEventDataStore`.
 ///
 /// <p>Creates a new event data store.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateEventDataStoreFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_event_data_store::builders::CreateEventDataStoreInputBuilder,
 }
 impl CreateEventDataStoreFluentBuilder {
     /// Creates a new `CreateEventDataStore`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_event_data_store::CreateEventDataStore,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_event_data_store::CreateEventDataStoreError,
         >,
     > {
@@ -36,30 +36,33 @@ impl CreateEventDataStoreFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_event_data_store::CreateEventDataStoreOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_event_data_store::CreateEventDataStoreError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,21 +75,21 @@ impl CreateEventDataStoreFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_event_data_store::CreateEventDataStoreOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_event_data_store::CreateEventDataStoreError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the event data store.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// <p>The name of the event data store.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
@@ -108,7 +111,7 @@ impl CreateEventDataStoreFluentBuilder {
     /// <p>For more information about how to use advanced event selectors to include non-Amazon Web Services events in your event data store, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-lake-cli.html#lake-cli-create-integration">Create an integration to log events from outside Amazon Web Services</a> in the CloudTrail User Guide.</p>
     pub fn set_advanced_event_selectors(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AdvancedEventSelector>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AdvancedEventSelector>>,
     ) -> Self {
         self.inner = self.inner.set_advanced_event_selectors(input);
         self
@@ -119,7 +122,7 @@ impl CreateEventDataStoreFluentBuilder {
         self
     }
     /// <p>Specifies whether the event data store includes events from all regions, or only from the region in which the event data store is created.</p>
-    pub fn set_multi_region_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_multi_region_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_multi_region_enabled(input);
         self
     }
@@ -129,7 +132,7 @@ impl CreateEventDataStoreFluentBuilder {
         self
     }
     /// <p>Specifies whether an event data store collects events logged for an organization in Organizations.</p>
-    pub fn set_organization_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_organization_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_organization_enabled(input);
         self
     }
@@ -139,7 +142,7 @@ impl CreateEventDataStoreFluentBuilder {
         self
     }
     /// <p>The retention period of the event data store, in days. You can set a retention period of up to 2557 days, the equivalent of seven years.</p>
-    pub fn set_retention_period(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_retention_period(input);
         self
     }
@@ -149,7 +152,10 @@ impl CreateEventDataStoreFluentBuilder {
         self
     }
     /// <p>Specifies whether termination protection is enabled for the event data store. If termination protection is enabled, you cannot delete the event data store until termination protection is disabled.</p>
-    pub fn set_termination_protection_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_termination_protection_enabled(
+        mut self,
+        input: ::std::option::Option<bool>,
+    ) -> Self {
         self.inner = self.inner.set_termination_protection_enabled(input);
         self
     }
@@ -165,7 +171,7 @@ impl CreateEventDataStoreFluentBuilder {
     /// <p>A list of tags.</p>
     pub fn set_tags_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags_list(input);
         self
@@ -181,7 +187,7 @@ impl CreateEventDataStoreFluentBuilder {
     /// <li> <p> <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p> </li>
     /// <li> <p> <code>12345678-1234-1234-1234-123456789012</code> </p> </li>
     /// </ul>
-    pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kms_key_id(input.into());
         self
     }
@@ -196,7 +202,7 @@ impl CreateEventDataStoreFluentBuilder {
     /// <li> <p> <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code> </p> </li>
     /// <li> <p> <code>12345678-1234-1234-1234-123456789012</code> </p> </li>
     /// </ul>
-    pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kms_key_id(input);
         self
     }

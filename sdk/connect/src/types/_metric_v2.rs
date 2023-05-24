@@ -2,33 +2,33 @@
 
 /// <p>Contains information about the metric.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetricV2 {
     /// <p>The name of the metric.</p> <important>
     /// <p>This parameter is required. The following Required = No is incorrect.</p>
     /// </important>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>Contains information about the threshold for service level metrics.</p>
     #[doc(hidden)]
-    pub threshold: std::option::Option<std::vec::Vec<crate::types::ThresholdV2>>,
+    pub threshold: ::std::option::Option<::std::vec::Vec<crate::types::ThresholdV2>>,
     /// <p>Contains the filters to be used when returning data.</p>
     #[doc(hidden)]
-    pub metric_filters: std::option::Option<std::vec::Vec<crate::types::MetricFilterV2>>,
+    pub metric_filters: ::std::option::Option<::std::vec::Vec<crate::types::MetricFilterV2>>,
 }
 impl MetricV2 {
     /// <p>The name of the metric.</p> <important>
     /// <p>This parameter is required. The following Required = No is incorrect.</p>
     /// </important>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>Contains information about the threshold for service level metrics.</p>
-    pub fn threshold(&self) -> std::option::Option<&[crate::types::ThresholdV2]> {
+    pub fn threshold(&self) -> ::std::option::Option<&[crate::types::ThresholdV2]> {
         self.threshold.as_deref()
     }
     /// <p>Contains the filters to be used when returning data.</p>
-    pub fn metric_filters(&self) -> std::option::Option<&[crate::types::MetricFilterV2]> {
+    pub fn metric_filters(&self) -> ::std::option::Option<&[crate::types::MetricFilterV2]> {
         self.metric_filters.as_deref()
     }
 }
@@ -41,24 +41,26 @@ impl MetricV2 {
 
 /// A builder for [`MetricV2`](crate::types::MetricV2).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MetricV2Builder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) threshold: std::option::Option<std::vec::Vec<crate::types::ThresholdV2>>,
-    pub(crate) metric_filters: std::option::Option<std::vec::Vec<crate::types::MetricFilterV2>>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) threshold: ::std::option::Option<::std::vec::Vec<crate::types::ThresholdV2>>,
+    pub(crate) metric_filters: ::std::option::Option<::std::vec::Vec<crate::types::MetricFilterV2>>,
 }
 impl MetricV2Builder {
     /// <p>The name of the metric.</p> <important>
     /// <p>This parameter is required. The following Required = No is incorrect.</p>
     /// </important>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the metric.</p> <important>
     /// <p>This parameter is required. The following Required = No is incorrect.</p>
     /// </important>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
@@ -70,13 +72,13 @@ impl MetricV2Builder {
     pub fn threshold(mut self, input: crate::types::ThresholdV2) -> Self {
         let mut v = self.threshold.unwrap_or_default();
         v.push(input);
-        self.threshold = Some(v);
+        self.threshold = ::std::option::Option::Some(v);
         self
     }
     /// <p>Contains information about the threshold for service level metrics.</p>
     pub fn set_threshold(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ThresholdV2>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ThresholdV2>>,
     ) -> Self {
         self.threshold = input;
         self
@@ -89,13 +91,13 @@ impl MetricV2Builder {
     pub fn metric_filters(mut self, input: crate::types::MetricFilterV2) -> Self {
         let mut v = self.metric_filters.unwrap_or_default();
         v.push(input);
-        self.metric_filters = Some(v);
+        self.metric_filters = ::std::option::Option::Some(v);
         self
     }
     /// <p>Contains the filters to be used when returning data.</p>
     pub fn set_metric_filters(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::MetricFilterV2>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricFilterV2>>,
     ) -> Self {
         self.metric_filters = input;
         self

@@ -40,13 +40,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum LastLaunchResult {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,7 +60,7 @@ pub enum LastLaunchResult {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for LastLaunchResult {
+impl ::std::convert::From<&str> for LastLaunchResult {
     fn from(s: &str) -> Self {
         match s {
             "FAILED" => LastLaunchResult::Failed,
@@ -73,11 +73,11 @@ impl std::convert::From<&str> for LastLaunchResult {
         }
     }
 }
-impl std::str::FromStr for LastLaunchResult {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for LastLaunchResult {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(LastLaunchResult::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(LastLaunchResult::from(s))
     }
 }
 impl LastLaunchResult {
@@ -96,7 +96,7 @@ impl LastLaunchResult {
         &["FAILED", "NOT_STARTED", "PENDING", "SUCCEEDED"]
     }
 }
-impl AsRef<str> for LastLaunchResult {
+impl ::std::convert::AsRef<str> for LastLaunchResult {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

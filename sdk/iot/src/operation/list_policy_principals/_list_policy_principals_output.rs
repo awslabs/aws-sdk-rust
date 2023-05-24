@@ -2,27 +2,27 @@
 
 /// <p>The output from the ListPolicyPrincipals operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPolicyPrincipalsOutput {
     /// <p>The descriptions of the principals.</p>
     #[doc(hidden)]
-    pub principals: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub principals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The marker for the next set of results, or null if there are no additional results.</p>
     #[doc(hidden)]
-    pub next_marker: std::option::Option<std::string::String>,
+    pub next_marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListPolicyPrincipalsOutput {
     /// <p>The descriptions of the principals.</p>
-    pub fn principals(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn principals(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.principals.as_deref()
     }
     /// <p>The marker for the next set of results, or null if there are no additional results.</p>
-    pub fn next_marker(&self) -> std::option::Option<&str> {
+    pub fn next_marker(&self) -> ::std::option::Option<&str> {
         self.next_marker.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListPolicyPrincipalsOutput {
+impl ::aws_http::request_id::RequestId for ListPolicyPrincipalsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -37,10 +37,12 @@ impl ListPolicyPrincipalsOutput {
 
 /// A builder for [`ListPolicyPrincipalsOutput`](crate::operation::list_policy_principals::ListPolicyPrincipalsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListPolicyPrincipalsOutputBuilder {
-    pub(crate) principals: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) next_marker: std::option::Option<std::string::String>,
+    pub(crate) principals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) next_marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListPolicyPrincipalsOutputBuilder {
@@ -49,27 +51,27 @@ impl ListPolicyPrincipalsOutputBuilder {
     /// To override the contents of this collection use [`set_principals`](Self::set_principals).
     ///
     /// <p>The descriptions of the principals.</p>
-    pub fn principals(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn principals(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.principals.unwrap_or_default();
         v.push(input.into());
-        self.principals = Some(v);
+        self.principals = ::std::option::Option::Some(v);
         self
     }
     /// <p>The descriptions of the principals.</p>
     pub fn set_principals(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.principals = input;
         self
     }
     /// <p>The marker for the next set of results, or null if there are no additional results.</p>
-    pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_marker = Some(input.into());
+    pub fn next_marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The marker for the next set of results, or null if there are no additional results.</p>
-    pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_marker = input;
         self
     }

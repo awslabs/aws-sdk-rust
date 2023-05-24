@@ -22,56 +22,59 @@ pub use crate::operation::create_broker::_create_broker_input::CreateBrokerInput
 /// <li><p>ec2:DescribeVpcs</p></li>
 /// </ul>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/amazon-mq-setting-up.html#create-iam-user">Create an IAM User and Get Your AWS Credentials</a> and <a href="https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/connecting-to-amazon-mq.html#never-modify-delete-elastic-network-interface">Never Modify or Delete the Amazon MQ Elastic Network Interface</a> in the <i>Amazon MQ Developer Guide</i>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateBrokerFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_broker::builders::CreateBrokerInputBuilder,
 }
 impl CreateBrokerFluentBuilder {
     /// Creates a new `CreateBroker`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_broker::CreateBroker,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_broker::CreateBrokerError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_broker::CreateBrokerError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_broker::CreateBrokerOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_broker::CreateBrokerError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_broker::CreateBrokerError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -84,9 +87,9 @@ impl CreateBrokerFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_broker::CreateBrokerOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_broker::CreateBrokerError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_broker::CreateBrokerError>,
     > {
         self.send_middleware().await
     }
@@ -98,7 +101,7 @@ impl CreateBrokerFluentBuilder {
     /// <p>Optional. The authentication strategy used to secure the broker. The default is SIMPLE.</p>
     pub fn set_authentication_strategy(
         mut self,
-        input: std::option::Option<crate::types::AuthenticationStrategy>,
+        input: ::std::option::Option<crate::types::AuthenticationStrategy>,
     ) -> Self {
         self.inner = self.inner.set_authentication_strategy(input);
         self
@@ -109,17 +112,17 @@ impl CreateBrokerFluentBuilder {
         self
     }
     /// <p>Enables automatic upgrades to new minor versions for brokers, as new versions are released and supported by Amazon MQ. Automatic upgrades occur during the scheduled maintenance window of the broker or after a manual broker reboot. Set to true by default, if no value is specified.</p>
-    pub fn set_auto_minor_version_upgrade(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_auto_minor_version_upgrade(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_auto_minor_version_upgrade(input);
         self
     }
     /// <p>Required. The broker's name. This value must be unique in your AWS account, 1-50 characters long, must contain only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters, or special characters.</p>
-    pub fn broker_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn broker_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.broker_name(input.into());
         self
     }
     /// <p>Required. The broker's name. This value must be unique in your AWS account, 1-50 characters long, must contain only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters, or special characters.</p>
-    pub fn set_broker_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_broker_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_broker_name(input);
         self
     }
@@ -131,20 +134,23 @@ impl CreateBrokerFluentBuilder {
     /// <p>A list of information about the configuration.</p>
     pub fn set_configuration(
         mut self,
-        input: std::option::Option<crate::types::ConfigurationId>,
+        input: ::std::option::Option<crate::types::ConfigurationId>,
     ) -> Self {
         self.inner = self.inner.set_configuration(input);
         self
     }
     /// <p>The unique ID that the requester receives for the created broker. Amazon MQ passes your ID with the API action. Note: We recommend using a Universally Unique Identifier (UUID) for the creatorRequestId. You may omit the creatorRequestId if your application doesn't require idempotency.</p>
-    pub fn creator_request_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn creator_request_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.creator_request_id(input.into());
         self
     }
     /// <p>The unique ID that the requester receives for the created broker. Amazon MQ passes your ID with the API action. Note: We recommend using a Universally Unique Identifier (UUID) for the creatorRequestId. You may omit the creatorRequestId if your application doesn't require idempotency.</p>
     pub fn set_creator_request_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_creator_request_id(input);
         self
@@ -157,7 +163,7 @@ impl CreateBrokerFluentBuilder {
     /// <p>Required. The broker's deployment mode.</p>
     pub fn set_deployment_mode(
         mut self,
-        input: std::option::Option<crate::types::DeploymentMode>,
+        input: ::std::option::Option<crate::types::DeploymentMode>,
     ) -> Self {
         self.inner = self.inner.set_deployment_mode(input);
         self
@@ -170,7 +176,7 @@ impl CreateBrokerFluentBuilder {
     /// <p>Encryption options for the broker. Does not apply to RabbitMQ brokers.</p>
     pub fn set_encryption_options(
         mut self,
-        input: std::option::Option<crate::types::EncryptionOptions>,
+        input: ::std::option::Option<crate::types::EncryptionOptions>,
     ) -> Self {
         self.inner = self.inner.set_encryption_options(input);
         self
@@ -181,29 +187,41 @@ impl CreateBrokerFluentBuilder {
         self
     }
     /// <p>Required. The type of broker engine. Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.</p>
-    pub fn set_engine_type(mut self, input: std::option::Option<crate::types::EngineType>) -> Self {
+    pub fn set_engine_type(
+        mut self,
+        input: ::std::option::Option<crate::types::EngineType>,
+    ) -> Self {
         self.inner = self.inner.set_engine_type(input);
         self
     }
     /// <p>Required. The broker engine's version. For a list of supported engine versions, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
-    pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn engine_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.engine_version(input.into());
         self
     }
     /// <p>Required. The broker engine's version. For a list of supported engine versions, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
-    pub fn set_engine_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_engine_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_engine_version(input);
         self
     }
     /// <p>Required. The broker's instance type.</p>
-    pub fn host_instance_type(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn host_instance_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.host_instance_type(input.into());
         self
     }
     /// <p>Required. The broker's instance type.</p>
     pub fn set_host_instance_type(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_host_instance_type(input);
         self
@@ -216,7 +234,7 @@ impl CreateBrokerFluentBuilder {
     /// <p>Optional. The metadata of the LDAP server used to authenticate and authorize connections to the broker. Does not apply to RabbitMQ brokers.</p>
     pub fn set_ldap_server_metadata(
         mut self,
-        input: std::option::Option<crate::types::LdapServerMetadataInput>,
+        input: ::std::option::Option<crate::types::LdapServerMetadataInput>,
     ) -> Self {
         self.inner = self.inner.set_ldap_server_metadata(input);
         self
@@ -227,7 +245,7 @@ impl CreateBrokerFluentBuilder {
         self
     }
     /// <p>Enables Amazon CloudWatch logging for brokers.</p>
-    pub fn set_logs(mut self, input: std::option::Option<crate::types::Logs>) -> Self {
+    pub fn set_logs(mut self, input: ::std::option::Option<crate::types::Logs>) -> Self {
         self.inner = self.inner.set_logs(input);
         self
     }
@@ -239,7 +257,7 @@ impl CreateBrokerFluentBuilder {
     /// <p>The parameters that determine the WeeklyStartTime.</p>
     pub fn set_maintenance_window_start_time(
         mut self,
-        input: std::option::Option<crate::types::WeeklyStartTime>,
+        input: ::std::option::Option<crate::types::WeeklyStartTime>,
     ) -> Self {
         self.inner = self.inner.set_maintenance_window_start_time(input);
         self
@@ -250,7 +268,7 @@ impl CreateBrokerFluentBuilder {
         self
     }
     /// <p>Enables connections from applications outside of the VPC that hosts the broker's subnets. Set to false by default, if no value is provided.</p>
-    pub fn set_publicly_accessible(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_publicly_accessible(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_publicly_accessible(input);
         self
     }
@@ -259,14 +277,17 @@ impl CreateBrokerFluentBuilder {
     /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
     ///
     /// <p>The list of rules (1 minimum, 125 maximum) that authorize connections to brokers.</p>
-    pub fn security_groups(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn security_groups(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.security_groups(input.into());
         self
     }
     /// <p>The list of rules (1 minimum, 125 maximum) that authorize connections to brokers.</p>
     pub fn set_security_groups(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_security_groups(input);
         self
@@ -279,7 +300,7 @@ impl CreateBrokerFluentBuilder {
     /// <p>The broker's storage type.</p>
     pub fn set_storage_type(
         mut self,
-        input: std::option::Option<crate::types::BrokerStorageType>,
+        input: ::std::option::Option<crate::types::BrokerStorageType>,
     ) -> Self {
         self.inner = self.inner.set_storage_type(input);
         self
@@ -291,7 +312,7 @@ impl CreateBrokerFluentBuilder {
     /// <p>The list of groups that define which subnets and IP ranges the broker can use from different Availability Zones. If you specify more than one subnet, the subnets must be in different Availability Zones. Amazon MQ will not be able to create VPC endpoints for your broker with multiple subnets in the same Availability Zone. A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ Amazon MQ for ActiveMQ deployment requires two subnets. A CLUSTER_MULTI_AZ Amazon MQ for RabbitMQ deployment has no subnet requirements when deployed with public accessibility. Deployment without public accessibility requires at least one subnet.</p> <important>
     /// <p>If you specify subnets in a <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html">shared VPC</a> for a RabbitMQ broker, the associated VPC to which the specified subnets belong must be owned by your AWS account. Amazon MQ will not be able to create VPC endpoints in VPCs that are not owned by your AWS account.</p>
     /// </important>
-    pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn subnet_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subnet_ids(input.into());
         self
     }
@@ -300,7 +321,7 @@ impl CreateBrokerFluentBuilder {
     /// </important>
     pub fn set_subnet_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_subnet_ids(input);
         self
@@ -312,8 +333,8 @@ impl CreateBrokerFluentBuilder {
     /// <p>Create tags when creating the broker.</p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
@@ -321,8 +342,8 @@ impl CreateBrokerFluentBuilder {
     /// <p>Create tags when creating the broker.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
@@ -346,7 +367,7 @@ impl CreateBrokerFluentBuilder {
     /// </important>
     pub fn set_users(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::User>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::User>>,
     ) -> Self {
         self.inner = self.inner.set_users(input);
         self

@@ -2,29 +2,29 @@
 
 /// <p>The location of resources.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Location {
     /// <p>A JDBC location.</p>
     #[doc(hidden)]
-    pub jdbc: std::option::Option<std::vec::Vec<crate::types::CodeGenNodeArg>>,
+    pub jdbc: ::std::option::Option<::std::vec::Vec<crate::types::CodeGenNodeArg>>,
     /// <p>An Amazon Simple Storage Service (Amazon S3) location.</p>
     #[doc(hidden)]
-    pub s3: std::option::Option<std::vec::Vec<crate::types::CodeGenNodeArg>>,
+    pub s3: ::std::option::Option<::std::vec::Vec<crate::types::CodeGenNodeArg>>,
     /// <p>An Amazon DynamoDB table location.</p>
     #[doc(hidden)]
-    pub dynamo_db: std::option::Option<std::vec::Vec<crate::types::CodeGenNodeArg>>,
+    pub dynamo_db: ::std::option::Option<::std::vec::Vec<crate::types::CodeGenNodeArg>>,
 }
 impl Location {
     /// <p>A JDBC location.</p>
-    pub fn jdbc(&self) -> std::option::Option<&[crate::types::CodeGenNodeArg]> {
+    pub fn jdbc(&self) -> ::std::option::Option<&[crate::types::CodeGenNodeArg]> {
         self.jdbc.as_deref()
     }
     /// <p>An Amazon Simple Storage Service (Amazon S3) location.</p>
-    pub fn s3(&self) -> std::option::Option<&[crate::types::CodeGenNodeArg]> {
+    pub fn s3(&self) -> ::std::option::Option<&[crate::types::CodeGenNodeArg]> {
         self.s3.as_deref()
     }
     /// <p>An Amazon DynamoDB table location.</p>
-    pub fn dynamo_db(&self) -> std::option::Option<&[crate::types::CodeGenNodeArg]> {
+    pub fn dynamo_db(&self) -> ::std::option::Option<&[crate::types::CodeGenNodeArg]> {
         self.dynamo_db.as_deref()
     }
 }
@@ -37,11 +37,13 @@ impl Location {
 
 /// A builder for [`Location`](crate::types::Location).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LocationBuilder {
-    pub(crate) jdbc: std::option::Option<std::vec::Vec<crate::types::CodeGenNodeArg>>,
-    pub(crate) s3: std::option::Option<std::vec::Vec<crate::types::CodeGenNodeArg>>,
-    pub(crate) dynamo_db: std::option::Option<std::vec::Vec<crate::types::CodeGenNodeArg>>,
+    pub(crate) jdbc: ::std::option::Option<::std::vec::Vec<crate::types::CodeGenNodeArg>>,
+    pub(crate) s3: ::std::option::Option<::std::vec::Vec<crate::types::CodeGenNodeArg>>,
+    pub(crate) dynamo_db: ::std::option::Option<::std::vec::Vec<crate::types::CodeGenNodeArg>>,
 }
 impl LocationBuilder {
     /// Appends an item to `jdbc`.
@@ -52,13 +54,13 @@ impl LocationBuilder {
     pub fn jdbc(mut self, input: crate::types::CodeGenNodeArg) -> Self {
         let mut v = self.jdbc.unwrap_or_default();
         v.push(input);
-        self.jdbc = Some(v);
+        self.jdbc = ::std::option::Option::Some(v);
         self
     }
     /// <p>A JDBC location.</p>
     pub fn set_jdbc(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CodeGenNodeArg>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::CodeGenNodeArg>>,
     ) -> Self {
         self.jdbc = input;
         self
@@ -71,13 +73,13 @@ impl LocationBuilder {
     pub fn s3(mut self, input: crate::types::CodeGenNodeArg) -> Self {
         let mut v = self.s3.unwrap_or_default();
         v.push(input);
-        self.s3 = Some(v);
+        self.s3 = ::std::option::Option::Some(v);
         self
     }
     /// <p>An Amazon Simple Storage Service (Amazon S3) location.</p>
     pub fn set_s3(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CodeGenNodeArg>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::CodeGenNodeArg>>,
     ) -> Self {
         self.s3 = input;
         self
@@ -90,13 +92,13 @@ impl LocationBuilder {
     pub fn dynamo_db(mut self, input: crate::types::CodeGenNodeArg) -> Self {
         let mut v = self.dynamo_db.unwrap_or_default();
         v.push(input);
-        self.dynamo_db = Some(v);
+        self.dynamo_db = ::std::option::Option::Some(v);
         self
     }
     /// <p>An Amazon DynamoDB table location.</p>
     pub fn set_dynamo_db(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CodeGenNodeArg>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::CodeGenNodeArg>>,
     ) -> Self {
         self.dynamo_db = input;
         self

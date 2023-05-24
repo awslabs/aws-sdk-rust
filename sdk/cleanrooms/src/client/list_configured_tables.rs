@@ -4,7 +4,7 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_configured_tables::builders::ListConfiguredTablesFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_configured_tables::builders::ListConfiguredTablesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_configured_tables::builders::ListConfiguredTablesFluentBuilder::set_next_token): <p>The token value retrieved from a previous call to access the next page of results.</p>
+    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_configured_tables::builders::ListConfiguredTablesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_configured_tables::builders::ListConfiguredTablesFluentBuilder::set_next_token): <p>The token value retrieved from a previous call to access the next page of results.</p>
     ///   - [`max_results(i32)`](crate::operation::list_configured_tables::builders::ListConfiguredTablesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_configured_tables::builders::ListConfiguredTablesFluentBuilder::set_max_results): <p>The maximum size of the results that is returned per call.</p>
     /// - On success, responds with [`ListConfiguredTablesOutput`](crate::operation::list_configured_tables::ListConfiguredTablesOutput) with field(s):
     ///   - [`configured_table_summaries(Option<Vec<ConfiguredTableSummary>>)`](crate::operation::list_configured_tables::ListConfiguredTablesOutput::configured_table_summaries): <p>The configured tables listed by the request.</p>

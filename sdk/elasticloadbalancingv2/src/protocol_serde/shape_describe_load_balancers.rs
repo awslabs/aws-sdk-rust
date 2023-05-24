@@ -2,7 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_load_balancers_http_error(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::describe_load_balancers::DescribeLoadBalancersOutput,
@@ -15,7 +15,7 @@ pub fn de_describe_load_balancers_http_error(
         _response_body,
     )
     .map_err(crate::operation::describe_load_balancers::DescribeLoadBalancersError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
+    generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code =
         match generic.code() {
@@ -52,7 +52,7 @@ pub fn de_describe_load_balancers_http_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_describe_load_balancers_http_response_with_props(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::describe_load_balancers::DescribeLoadBalancersOutput,
@@ -69,7 +69,7 @@ pub fn de_describe_load_balancers_http_response_with_props(
             crate::operation::describe_load_balancers::DescribeLoadBalancersError::unhandled,
         )?;
         output._set_request_id(
-            aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
+            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
         );
         output.build()
     })
@@ -81,16 +81,16 @@ pub fn de_describe_load_balancers(
     mut builder: crate::operation::describe_load_balancers::builders::DescribeLoadBalancersOutputBuilder,
 ) -> Result<
     crate::operation::describe_load_balancers::builders::DescribeLoadBalancersOutputBuilder,
-    aws_smithy_xml::decode::XmlDecodeError,
+    ::aws_smithy_xml::decode::XmlDecodeError,
 > {
-    let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
+    let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("DescribeLoadBalancersResponse")) {
-        return Err(aws_smithy_xml::decode::XmlDecodeError::custom(format!(
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected DescribeLoadBalancersResponse got {:?}",
             start_el
         )));
@@ -98,7 +98,7 @@ pub fn de_describe_load_balancers(
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("DescribeLoadBalancersResult")) {
-            return Err(aws_smithy_xml::decode::XmlDecodeError::custom(format!(
+            return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
                 "invalid result, expected DescribeLoadBalancersResult got {:?}",
                 start_el
             )));
@@ -118,8 +118,8 @@ pub fn de_describe_load_balancers(
             s if s.matches("NextMarker") /* NextMarker com.amazonaws.elasticloadbalancingv2.synthetic#DescribeLoadBalancersOutput$NextMarker */ =>  {
                 let var_2 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -132,7 +132,7 @@ pub fn de_describe_load_balancers(
         }
         }
     } else {
-        return Err(aws_smithy_xml::decode::XmlDecodeError::custom(
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(
             "expected DescribeLoadBalancersResult tag",
         ));
     };

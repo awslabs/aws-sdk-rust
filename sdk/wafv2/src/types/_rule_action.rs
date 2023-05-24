@@ -2,43 +2,43 @@
 
 /// <p>The action that WAF should take on a web request when it matches a rule's statement. Settings at the web ACL level can override the rule action setting. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuleAction {
     /// <p>Instructs WAF to block the web request.</p>
     #[doc(hidden)]
-    pub block: std::option::Option<crate::types::BlockAction>,
+    pub block: ::std::option::Option<crate::types::BlockAction>,
     /// <p>Instructs WAF to allow the web request.</p>
     #[doc(hidden)]
-    pub allow: std::option::Option<crate::types::AllowAction>,
+    pub allow: ::std::option::Option<crate::types::AllowAction>,
     /// <p>Instructs WAF to count the web request and then continue evaluating the request using the remaining rules in the web ACL.</p>
     #[doc(hidden)]
-    pub count: std::option::Option<crate::types::CountAction>,
+    pub count: ::std::option::Option<crate::types::CountAction>,
     /// <p>Instructs WAF to run a <code>CAPTCHA</code> check against the web request.</p>
     #[doc(hidden)]
-    pub captcha: std::option::Option<crate::types::CaptchaAction>,
+    pub captcha: ::std::option::Option<crate::types::CaptchaAction>,
     /// <p>Instructs WAF to run a <code>Challenge</code> check against the web request.</p>
     #[doc(hidden)]
-    pub challenge: std::option::Option<crate::types::ChallengeAction>,
+    pub challenge: ::std::option::Option<crate::types::ChallengeAction>,
 }
 impl RuleAction {
     /// <p>Instructs WAF to block the web request.</p>
-    pub fn block(&self) -> std::option::Option<&crate::types::BlockAction> {
+    pub fn block(&self) -> ::std::option::Option<&crate::types::BlockAction> {
         self.block.as_ref()
     }
     /// <p>Instructs WAF to allow the web request.</p>
-    pub fn allow(&self) -> std::option::Option<&crate::types::AllowAction> {
+    pub fn allow(&self) -> ::std::option::Option<&crate::types::AllowAction> {
         self.allow.as_ref()
     }
     /// <p>Instructs WAF to count the web request and then continue evaluating the request using the remaining rules in the web ACL.</p>
-    pub fn count(&self) -> std::option::Option<&crate::types::CountAction> {
+    pub fn count(&self) -> ::std::option::Option<&crate::types::CountAction> {
         self.count.as_ref()
     }
     /// <p>Instructs WAF to run a <code>CAPTCHA</code> check against the web request.</p>
-    pub fn captcha(&self) -> std::option::Option<&crate::types::CaptchaAction> {
+    pub fn captcha(&self) -> ::std::option::Option<&crate::types::CaptchaAction> {
         self.captcha.as_ref()
     }
     /// <p>Instructs WAF to run a <code>Challenge</code> check against the web request.</p>
-    pub fn challenge(&self) -> std::option::Option<&crate::types::ChallengeAction> {
+    pub fn challenge(&self) -> ::std::option::Option<&crate::types::ChallengeAction> {
         self.challenge.as_ref()
     }
 }
@@ -51,64 +51,69 @@ impl RuleAction {
 
 /// A builder for [`RuleAction`](crate::types::RuleAction).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RuleActionBuilder {
-    pub(crate) block: std::option::Option<crate::types::BlockAction>,
-    pub(crate) allow: std::option::Option<crate::types::AllowAction>,
-    pub(crate) count: std::option::Option<crate::types::CountAction>,
-    pub(crate) captcha: std::option::Option<crate::types::CaptchaAction>,
-    pub(crate) challenge: std::option::Option<crate::types::ChallengeAction>,
+    pub(crate) block: ::std::option::Option<crate::types::BlockAction>,
+    pub(crate) allow: ::std::option::Option<crate::types::AllowAction>,
+    pub(crate) count: ::std::option::Option<crate::types::CountAction>,
+    pub(crate) captcha: ::std::option::Option<crate::types::CaptchaAction>,
+    pub(crate) challenge: ::std::option::Option<crate::types::ChallengeAction>,
 }
 impl RuleActionBuilder {
     /// <p>Instructs WAF to block the web request.</p>
     pub fn block(mut self, input: crate::types::BlockAction) -> Self {
-        self.block = Some(input);
+        self.block = ::std::option::Option::Some(input);
         self
     }
     /// <p>Instructs WAF to block the web request.</p>
-    pub fn set_block(mut self, input: std::option::Option<crate::types::BlockAction>) -> Self {
+    pub fn set_block(mut self, input: ::std::option::Option<crate::types::BlockAction>) -> Self {
         self.block = input;
         self
     }
     /// <p>Instructs WAF to allow the web request.</p>
     pub fn allow(mut self, input: crate::types::AllowAction) -> Self {
-        self.allow = Some(input);
+        self.allow = ::std::option::Option::Some(input);
         self
     }
     /// <p>Instructs WAF to allow the web request.</p>
-    pub fn set_allow(mut self, input: std::option::Option<crate::types::AllowAction>) -> Self {
+    pub fn set_allow(mut self, input: ::std::option::Option<crate::types::AllowAction>) -> Self {
         self.allow = input;
         self
     }
     /// <p>Instructs WAF to count the web request and then continue evaluating the request using the remaining rules in the web ACL.</p>
     pub fn count(mut self, input: crate::types::CountAction) -> Self {
-        self.count = Some(input);
+        self.count = ::std::option::Option::Some(input);
         self
     }
     /// <p>Instructs WAF to count the web request and then continue evaluating the request using the remaining rules in the web ACL.</p>
-    pub fn set_count(mut self, input: std::option::Option<crate::types::CountAction>) -> Self {
+    pub fn set_count(mut self, input: ::std::option::Option<crate::types::CountAction>) -> Self {
         self.count = input;
         self
     }
     /// <p>Instructs WAF to run a <code>CAPTCHA</code> check against the web request.</p>
     pub fn captcha(mut self, input: crate::types::CaptchaAction) -> Self {
-        self.captcha = Some(input);
+        self.captcha = ::std::option::Option::Some(input);
         self
     }
     /// <p>Instructs WAF to run a <code>CAPTCHA</code> check against the web request.</p>
-    pub fn set_captcha(mut self, input: std::option::Option<crate::types::CaptchaAction>) -> Self {
+    pub fn set_captcha(
+        mut self,
+        input: ::std::option::Option<crate::types::CaptchaAction>,
+    ) -> Self {
         self.captcha = input;
         self
     }
     /// <p>Instructs WAF to run a <code>Challenge</code> check against the web request.</p>
     pub fn challenge(mut self, input: crate::types::ChallengeAction) -> Self {
-        self.challenge = Some(input);
+        self.challenge = ::std::option::Option::Some(input);
         self
     }
     /// <p>Instructs WAF to run a <code>Challenge</code> check against the web request.</p>
     pub fn set_challenge(
         mut self,
-        input: std::option::Option<crate::types::ChallengeAction>,
+        input: ::std::option::Option<crate::types::ChallengeAction>,
     ) -> Self {
         self.challenge = input;
         self

@@ -2,20 +2,20 @@
 
 /// <p>Represents the result of a create upload request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateUploadOutput {
     /// <p>The newly created upload.</p>
     #[doc(hidden)]
-    pub upload: std::option::Option<crate::types::Upload>,
+    pub upload: ::std::option::Option<crate::types::Upload>,
     _request_id: Option<String>,
 }
 impl CreateUploadOutput {
     /// <p>The newly created upload.</p>
-    pub fn upload(&self) -> std::option::Option<&crate::types::Upload> {
+    pub fn upload(&self) -> ::std::option::Option<&crate::types::Upload> {
         self.upload.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for CreateUploadOutput {
+impl ::aws_http::request_id::RequestId for CreateUploadOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,21 @@ impl CreateUploadOutput {
 
 /// A builder for [`CreateUploadOutput`](crate::operation::create_upload::CreateUploadOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateUploadOutputBuilder {
-    pub(crate) upload: std::option::Option<crate::types::Upload>,
+    pub(crate) upload: ::std::option::Option<crate::types::Upload>,
     _request_id: Option<String>,
 }
 impl CreateUploadOutputBuilder {
     /// <p>The newly created upload.</p>
     pub fn upload(mut self, input: crate::types::Upload) -> Self {
-        self.upload = Some(input);
+        self.upload = ::std::option::Option::Some(input);
         self
     }
     /// <p>The newly created upload.</p>
-    pub fn set_upload(mut self, input: std::option::Option<crate::types::Upload>) -> Self {
+    pub fn set_upload(mut self, input: ::std::option::Option<crate::types::Upload>) -> Self {
         self.upload = input;
         self
     }

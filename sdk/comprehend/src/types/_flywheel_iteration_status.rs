@@ -42,13 +42,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum FlywheelIterationStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -66,7 +66,7 @@ pub enum FlywheelIterationStatus {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for FlywheelIterationStatus {
+impl ::std::convert::From<&str> for FlywheelIterationStatus {
     fn from(s: &str) -> Self {
         match s {
             "COMPLETED" => FlywheelIterationStatus::Completed,
@@ -81,11 +81,11 @@ impl std::convert::From<&str> for FlywheelIterationStatus {
         }
     }
 }
-impl std::str::FromStr for FlywheelIterationStatus {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for FlywheelIterationStatus {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FlywheelIterationStatus::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(FlywheelIterationStatus::from(s))
     }
 }
 impl FlywheelIterationStatus {
@@ -113,7 +113,7 @@ impl FlywheelIterationStatus {
         ]
     }
 }
-impl AsRef<str> for FlywheelIterationStatus {
+impl ::std::convert::AsRef<str> for FlywheelIterationStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

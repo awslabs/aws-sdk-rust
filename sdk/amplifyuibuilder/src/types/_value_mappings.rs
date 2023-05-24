@@ -2,31 +2,31 @@
 
 /// <p>Represents the data binding configuration for a value map.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ValueMappings {
     /// <p>The value and display value pairs.</p>
     #[doc(hidden)]
-    pub values: std::option::Option<std::vec::Vec<crate::types::ValueMapping>>,
+    pub values: ::std::option::Option<::std::vec::Vec<crate::types::ValueMapping>>,
     /// <p>The information to bind fields to data at runtime.</p>
     #[doc(hidden)]
-    pub binding_properties: std::option::Option<
-        std::collections::HashMap<
-            std::string::String,
+    pub binding_properties: ::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
             crate::types::FormInputBindingPropertiesValue,
         >,
     >,
 }
 impl ValueMappings {
     /// <p>The value and display value pairs.</p>
-    pub fn values(&self) -> std::option::Option<&[crate::types::ValueMapping]> {
+    pub fn values(&self) -> ::std::option::Option<&[crate::types::ValueMapping]> {
         self.values.as_deref()
     }
     /// <p>The information to bind fields to data at runtime.</p>
     pub fn binding_properties(
         &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<
-            std::string::String,
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<
+            ::std::string::String,
             crate::types::FormInputBindingPropertiesValue,
         >,
     > {
@@ -42,12 +42,14 @@ impl ValueMappings {
 
 /// A builder for [`ValueMappings`](crate::types::ValueMappings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ValueMappingsBuilder {
-    pub(crate) values: std::option::Option<std::vec::Vec<crate::types::ValueMapping>>,
-    pub(crate) binding_properties: std::option::Option<
-        std::collections::HashMap<
-            std::string::String,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec<crate::types::ValueMapping>>,
+    pub(crate) binding_properties: ::std::option::Option<
+        ::std::collections::HashMap<
+            ::std::string::String,
             crate::types::FormInputBindingPropertiesValue,
         >,
     >,
@@ -61,13 +63,13 @@ impl ValueMappingsBuilder {
     pub fn values(mut self, input: crate::types::ValueMapping) -> Self {
         let mut v = self.values.unwrap_or_default();
         v.push(input);
-        self.values = Some(v);
+        self.values = ::std::option::Option::Some(v);
         self
     }
     /// <p>The value and display value pairs.</p>
     pub fn set_values(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ValueMapping>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ValueMapping>>,
     ) -> Self {
         self.values = input;
         self
@@ -79,20 +81,20 @@ impl ValueMappingsBuilder {
     /// <p>The information to bind fields to data at runtime.</p>
     pub fn binding_properties(
         mut self,
-        k: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
         v: crate::types::FormInputBindingPropertiesValue,
     ) -> Self {
         let mut hash_map = self.binding_properties.unwrap_or_default();
         hash_map.insert(k.into(), v);
-        self.binding_properties = Some(hash_map);
+        self.binding_properties = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The information to bind fields to data at runtime.</p>
     pub fn set_binding_properties(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<
-                std::string::String,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<
+                ::std::string::String,
                 crate::types::FormInputBindingPropertiesValue,
             >,
         >,

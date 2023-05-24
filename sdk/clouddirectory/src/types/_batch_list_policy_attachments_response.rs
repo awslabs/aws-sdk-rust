@@ -2,22 +2,22 @@
 
 /// <p>Represents the output of a <code>ListPolicyAttachments</code> response operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchListPolicyAttachmentsResponse {
     /// <p>A list of <code>ObjectIdentifiers</code> to which the policy is attached.</p>
     #[doc(hidden)]
-    pub object_identifiers: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub object_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The pagination token.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl BatchListPolicyAttachmentsResponse {
     /// <p>A list of <code>ObjectIdentifiers</code> to which the policy is attached.</p>
-    pub fn object_identifiers(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn object_identifiers(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.object_identifiers.as_deref()
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
@@ -30,10 +30,12 @@ impl BatchListPolicyAttachmentsResponse {
 
 /// A builder for [`BatchListPolicyAttachmentsResponse`](crate::types::BatchListPolicyAttachmentsResponse).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BatchListPolicyAttachmentsResponseBuilder {
-    pub(crate) object_identifiers: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) object_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl BatchListPolicyAttachmentsResponseBuilder {
     /// Appends an item to `object_identifiers`.
@@ -41,27 +43,30 @@ impl BatchListPolicyAttachmentsResponseBuilder {
     /// To override the contents of this collection use [`set_object_identifiers`](Self::set_object_identifiers).
     ///
     /// <p>A list of <code>ObjectIdentifiers</code> to which the policy is attached.</p>
-    pub fn object_identifiers(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn object_identifiers(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.object_identifiers.unwrap_or_default();
         v.push(input.into());
-        self.object_identifiers = Some(v);
+        self.object_identifiers = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of <code>ObjectIdentifiers</code> to which the policy is attached.</p>
     pub fn set_object_identifiers(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.object_identifiers = input;
         self
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The pagination token.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

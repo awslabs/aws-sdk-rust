@@ -4,43 +4,43 @@
 /// <p>The parameters listed below are not required, but you must use at least one. </p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OriginationRoute {
     /// <p>The FQDN or IP address to contact for origination traffic.</p>
     #[doc(hidden)]
-    pub host: std::option::Option<std::string::String>,
+    pub host: ::std::option::Option<::std::string::String>,
     /// <p>The designated origination route port. Defaults to 5060.</p>
     #[doc(hidden)]
-    pub port: std::option::Option<i32>,
+    pub port: ::std::option::Option<i32>,
     /// <p>The protocol to use for the origination route. Encryption-enabled Amazon Chime Voice Connectors use TCP protocol by default.</p>
     #[doc(hidden)]
-    pub protocol: std::option::Option<crate::types::OriginationRouteProtocol>,
+    pub protocol: ::std::option::Option<crate::types::OriginationRouteProtocol>,
     /// <p>The priority associated with the host, with 1 being the highest priority. Higher priority hosts are attempted first.</p>
     #[doc(hidden)]
-    pub priority: std::option::Option<i32>,
+    pub priority: ::std::option::Option<i32>,
     /// <p>The weight associated with the host. If hosts are equal in priority, calls are redistributed among them based on their relative weight.</p>
     #[doc(hidden)]
-    pub weight: std::option::Option<i32>,
+    pub weight: ::std::option::Option<i32>,
 }
 impl OriginationRoute {
     /// <p>The FQDN or IP address to contact for origination traffic.</p>
-    pub fn host(&self) -> std::option::Option<&str> {
+    pub fn host(&self) -> ::std::option::Option<&str> {
         self.host.as_deref()
     }
     /// <p>The designated origination route port. Defaults to 5060.</p>
-    pub fn port(&self) -> std::option::Option<i32> {
+    pub fn port(&self) -> ::std::option::Option<i32> {
         self.port
     }
     /// <p>The protocol to use for the origination route. Encryption-enabled Amazon Chime Voice Connectors use TCP protocol by default.</p>
-    pub fn protocol(&self) -> std::option::Option<&crate::types::OriginationRouteProtocol> {
+    pub fn protocol(&self) -> ::std::option::Option<&crate::types::OriginationRouteProtocol> {
         self.protocol.as_ref()
     }
     /// <p>The priority associated with the host, with 1 being the highest priority. Higher priority hosts are attempted first.</p>
-    pub fn priority(&self) -> std::option::Option<i32> {
+    pub fn priority(&self) -> ::std::option::Option<i32> {
         self.priority
     }
     /// <p>The weight associated with the host. If hosts are equal in priority, calls are redistributed among them based on their relative weight.</p>
-    pub fn weight(&self) -> std::option::Option<i32> {
+    pub fn weight(&self) -> ::std::option::Option<i32> {
         self.weight
     }
 }
@@ -53,65 +53,67 @@ impl OriginationRoute {
 
 /// A builder for [`OriginationRoute`](crate::types::OriginationRoute).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OriginationRouteBuilder {
-    pub(crate) host: std::option::Option<std::string::String>,
-    pub(crate) port: std::option::Option<i32>,
-    pub(crate) protocol: std::option::Option<crate::types::OriginationRouteProtocol>,
-    pub(crate) priority: std::option::Option<i32>,
-    pub(crate) weight: std::option::Option<i32>,
+    pub(crate) host: ::std::option::Option<::std::string::String>,
+    pub(crate) port: ::std::option::Option<i32>,
+    pub(crate) protocol: ::std::option::Option<crate::types::OriginationRouteProtocol>,
+    pub(crate) priority: ::std::option::Option<i32>,
+    pub(crate) weight: ::std::option::Option<i32>,
 }
 impl OriginationRouteBuilder {
     /// <p>The FQDN or IP address to contact for origination traffic.</p>
-    pub fn host(mut self, input: impl Into<std::string::String>) -> Self {
-        self.host = Some(input.into());
+    pub fn host(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.host = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The FQDN or IP address to contact for origination traffic.</p>
-    pub fn set_host(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_host(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.host = input;
         self
     }
     /// <p>The designated origination route port. Defaults to 5060.</p>
     pub fn port(mut self, input: i32) -> Self {
-        self.port = Some(input);
+        self.port = ::std::option::Option::Some(input);
         self
     }
     /// <p>The designated origination route port. Defaults to 5060.</p>
-    pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.port = input;
         self
     }
     /// <p>The protocol to use for the origination route. Encryption-enabled Amazon Chime Voice Connectors use TCP protocol by default.</p>
     pub fn protocol(mut self, input: crate::types::OriginationRouteProtocol) -> Self {
-        self.protocol = Some(input);
+        self.protocol = ::std::option::Option::Some(input);
         self
     }
     /// <p>The protocol to use for the origination route. Encryption-enabled Amazon Chime Voice Connectors use TCP protocol by default.</p>
     pub fn set_protocol(
         mut self,
-        input: std::option::Option<crate::types::OriginationRouteProtocol>,
+        input: ::std::option::Option<crate::types::OriginationRouteProtocol>,
     ) -> Self {
         self.protocol = input;
         self
     }
     /// <p>The priority associated with the host, with 1 being the highest priority. Higher priority hosts are attempted first.</p>
     pub fn priority(mut self, input: i32) -> Self {
-        self.priority = Some(input);
+        self.priority = ::std::option::Option::Some(input);
         self
     }
     /// <p>The priority associated with the host, with 1 being the highest priority. Higher priority hosts are attempted first.</p>
-    pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
         self.priority = input;
         self
     }
     /// <p>The weight associated with the host. If hosts are equal in priority, calls are redistributed among them based on their relative weight.</p>
     pub fn weight(mut self, input: i32) -> Self {
-        self.weight = Some(input);
+        self.weight = ::std::option::Option::Some(input);
         self
     }
     /// <p>The weight associated with the host. If hosts are equal in priority, calls are redistributed among them based on their relative weight.</p>
-    pub fn set_weight(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_weight(mut self, input: ::std::option::Option<i32>) -> Self {
         self.weight = input;
         self
     }

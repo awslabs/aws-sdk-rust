@@ -2,20 +2,20 @@
 
 /// <p>Defines the values for a task parameter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct MaintenanceWindowTaskParameterValueExpression {
     /// <p>This field contains an array of 0 or more strings, each 1 to 255 characters in length.</p>
     #[doc(hidden)]
-    pub values: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl MaintenanceWindowTaskParameterValueExpression {
     /// <p>This field contains an array of 0 or more strings, each 1 to 255 characters in length.</p>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.values.as_deref()
     }
 }
-impl std::fmt::Debug for MaintenanceWindowTaskParameterValueExpression {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for MaintenanceWindowTaskParameterValueExpression {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("MaintenanceWindowTaskParameterValueExpression");
         formatter.field("values", &"*** Sensitive Data Redacted ***");
         formatter.finish()
@@ -31,9 +31,9 @@ impl MaintenanceWindowTaskParameterValueExpression {
 
 /// A builder for [`MaintenanceWindowTaskParameterValueExpression`](crate::types::MaintenanceWindowTaskParameterValueExpression).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct MaintenanceWindowTaskParameterValueExpressionBuilder {
-    pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl MaintenanceWindowTaskParameterValueExpressionBuilder {
     /// Appends an item to `values`.
@@ -41,16 +41,16 @@ impl MaintenanceWindowTaskParameterValueExpressionBuilder {
     /// To override the contents of this collection use [`set_values`](Self::set_values).
     ///
     /// <p>This field contains an array of 0 or more strings, each 1 to 255 characters in length.</p>
-    pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
         v.push(input.into());
-        self.values = Some(v);
+        self.values = ::std::option::Option::Some(v);
         self
     }
     /// <p>This field contains an array of 0 or more strings, each 1 to 255 characters in length.</p>
     pub fn set_values(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.values = input;
         self
@@ -62,8 +62,8 @@ impl MaintenanceWindowTaskParameterValueExpressionBuilder {
         }
     }
 }
-impl std::fmt::Debug for MaintenanceWindowTaskParameterValueExpressionBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for MaintenanceWindowTaskParameterValueExpressionBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("MaintenanceWindowTaskParameterValueExpressionBuilder");
         formatter.field("values", &"*** Sensitive Data Redacted ***");
         formatter.finish()

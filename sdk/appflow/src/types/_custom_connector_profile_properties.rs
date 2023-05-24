@@ -2,26 +2,28 @@
 
 /// <p>The profile properties required by the custom connector.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomConnectorProfileProperties {
     /// <p>A map of properties that are required to create a profile for the custom connector.</p>
     #[doc(hidden)]
-    pub profile_properties:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub profile_properties: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>The OAuth 2.0 properties required for OAuth 2.0 authentication.</p>
     #[doc(hidden)]
-    pub o_auth2_properties: std::option::Option<crate::types::OAuth2Properties>,
+    pub o_auth2_properties: ::std::option::Option<crate::types::OAuth2Properties>,
 }
 impl CustomConnectorProfileProperties {
     /// <p>A map of properties that are required to create a profile for the custom connector.</p>
     pub fn profile_properties(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.profile_properties.as_ref()
     }
     /// <p>The OAuth 2.0 properties required for OAuth 2.0 authentication.</p>
-    pub fn o_auth2_properties(&self) -> std::option::Option<&crate::types::OAuth2Properties> {
+    pub fn o_auth2_properties(&self) -> ::std::option::Option<&crate::types::OAuth2Properties> {
         self.o_auth2_properties.as_ref()
     }
 }
@@ -34,11 +36,14 @@ impl CustomConnectorProfileProperties {
 
 /// A builder for [`CustomConnectorProfileProperties`](crate::types::CustomConnectorProfileProperties).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CustomConnectorProfilePropertiesBuilder {
-    pub(crate) profile_properties:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) o_auth2_properties: std::option::Option<crate::types::OAuth2Properties>,
+    pub(crate) profile_properties: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) o_auth2_properties: ::std::option::Option<crate::types::OAuth2Properties>,
 }
 impl CustomConnectorProfilePropertiesBuilder {
     /// Adds a key-value pair to `profile_properties`.
@@ -48,19 +53,19 @@ impl CustomConnectorProfilePropertiesBuilder {
     /// <p>A map of properties that are required to create a profile for the custom connector.</p>
     pub fn profile_properties(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.profile_properties.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.profile_properties = Some(hash_map);
+        self.profile_properties = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A map of properties that are required to create a profile for the custom connector.</p>
     pub fn set_profile_properties(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.profile_properties = input;
@@ -68,13 +73,13 @@ impl CustomConnectorProfilePropertiesBuilder {
     }
     /// <p>The OAuth 2.0 properties required for OAuth 2.0 authentication.</p>
     pub fn o_auth2_properties(mut self, input: crate::types::OAuth2Properties) -> Self {
-        self.o_auth2_properties = Some(input);
+        self.o_auth2_properties = ::std::option::Option::Some(input);
         self
     }
     /// <p>The OAuth 2.0 properties required for OAuth 2.0 authentication.</p>
     pub fn set_o_auth2_properties(
         mut self,
-        input: std::option::Option<crate::types::OAuth2Properties>,
+        input: ::std::option::Option<crate::types::OAuth2Properties>,
     ) -> Self {
         self.o_auth2_properties = input;
         self

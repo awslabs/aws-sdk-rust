@@ -2,7 +2,7 @@
 
 /// <p>Represents the content of a particular type of related item.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum RelatedItemContent {
     /// <p>Represents the content of a comment to be returned to agents.</p>
     Comment(crate::types::CommentContent),
@@ -21,11 +21,11 @@ pub enum RelatedItemContent {
 impl RelatedItemContent {
     /// Tries to convert the enum instance into [`Comment`](crate::types::RelatedItemContent::Comment), extracting the inner [`CommentContent`](crate::types::CommentContent).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_comment(&self) -> std::result::Result<&crate::types::CommentContent, &Self> {
+    pub fn as_comment(&self) -> ::std::result::Result<&crate::types::CommentContent, &Self> {
         if let RelatedItemContent::Comment(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Comment`](crate::types::RelatedItemContent::Comment).
@@ -34,11 +34,11 @@ impl RelatedItemContent {
     }
     /// Tries to convert the enum instance into [`Contact`](crate::types::RelatedItemContent::Contact), extracting the inner [`ContactContent`](crate::types::ContactContent).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_contact(&self) -> std::result::Result<&crate::types::ContactContent, &Self> {
+    pub fn as_contact(&self) -> ::std::result::Result<&crate::types::ContactContent, &Self> {
         if let RelatedItemContent::Contact(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Contact`](crate::types::RelatedItemContent::Contact).

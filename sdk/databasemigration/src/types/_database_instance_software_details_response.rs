@@ -2,57 +2,57 @@
 
 /// <p>Describes an inventory database instance for a Fleet Advisor collector.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatabaseInstanceSoftwareDetailsResponse {
     /// <p>The database engine of a database in a Fleet Advisor collector inventory, for example <code>Microsoft SQL Server</code>.</p>
     #[doc(hidden)]
-    pub engine: std::option::Option<std::string::String>,
+    pub engine: ::std::option::Option<::std::string::String>,
     /// <p>The database engine version of a database in a Fleet Advisor collector inventory, for example <code>2019</code>.</p>
     #[doc(hidden)]
-    pub engine_version: std::option::Option<std::string::String>,
+    pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The database engine edition of a database in a Fleet Advisor collector inventory, for example <code>Express</code>.</p>
     #[doc(hidden)]
-    pub engine_edition: std::option::Option<std::string::String>,
+    pub engine_edition: ::std::option::Option<::std::string::String>,
     /// <p>The service pack level of the database.</p>
     #[doc(hidden)]
-    pub service_pack: std::option::Option<std::string::String>,
+    pub service_pack: ::std::option::Option<::std::string::String>,
     /// <p>The support level of the database, for example <code>Mainstream support</code>.</p>
     #[doc(hidden)]
-    pub support_level: std::option::Option<std::string::String>,
+    pub support_level: ::std::option::Option<::std::string::String>,
     /// <p>The operating system architecture of the database.</p>
     #[doc(hidden)]
-    pub os_architecture: std::option::Option<i32>,
+    pub os_architecture: ::std::option::Option<i32>,
     /// <p>Information about the database engine software, for example <code>Mainstream support ends on November 14th, 2024</code>.</p>
     #[doc(hidden)]
-    pub tooltip: std::option::Option<std::string::String>,
+    pub tooltip: ::std::option::Option<::std::string::String>,
 }
 impl DatabaseInstanceSoftwareDetailsResponse {
     /// <p>The database engine of a database in a Fleet Advisor collector inventory, for example <code>Microsoft SQL Server</code>.</p>
-    pub fn engine(&self) -> std::option::Option<&str> {
+    pub fn engine(&self) -> ::std::option::Option<&str> {
         self.engine.as_deref()
     }
     /// <p>The database engine version of a database in a Fleet Advisor collector inventory, for example <code>2019</code>.</p>
-    pub fn engine_version(&self) -> std::option::Option<&str> {
+    pub fn engine_version(&self) -> ::std::option::Option<&str> {
         self.engine_version.as_deref()
     }
     /// <p>The database engine edition of a database in a Fleet Advisor collector inventory, for example <code>Express</code>.</p>
-    pub fn engine_edition(&self) -> std::option::Option<&str> {
+    pub fn engine_edition(&self) -> ::std::option::Option<&str> {
         self.engine_edition.as_deref()
     }
     /// <p>The service pack level of the database.</p>
-    pub fn service_pack(&self) -> std::option::Option<&str> {
+    pub fn service_pack(&self) -> ::std::option::Option<&str> {
         self.service_pack.as_deref()
     }
     /// <p>The support level of the database, for example <code>Mainstream support</code>.</p>
-    pub fn support_level(&self) -> std::option::Option<&str> {
+    pub fn support_level(&self) -> ::std::option::Option<&str> {
         self.support_level.as_deref()
     }
     /// <p>The operating system architecture of the database.</p>
-    pub fn os_architecture(&self) -> std::option::Option<i32> {
+    pub fn os_architecture(&self) -> ::std::option::Option<i32> {
         self.os_architecture
     }
     /// <p>Information about the database engine software, for example <code>Mainstream support ends on November 14th, 2024</code>.</p>
-    pub fn tooltip(&self) -> std::option::Option<&str> {
+    pub fn tooltip(&self) -> ::std::option::Option<&str> {
         self.tooltip.as_deref()
     }
 }
@@ -65,84 +65,104 @@ impl DatabaseInstanceSoftwareDetailsResponse {
 
 /// A builder for [`DatabaseInstanceSoftwareDetailsResponse`](crate::types::DatabaseInstanceSoftwareDetailsResponse).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DatabaseInstanceSoftwareDetailsResponseBuilder {
-    pub(crate) engine: std::option::Option<std::string::String>,
-    pub(crate) engine_version: std::option::Option<std::string::String>,
-    pub(crate) engine_edition: std::option::Option<std::string::String>,
-    pub(crate) service_pack: std::option::Option<std::string::String>,
-    pub(crate) support_level: std::option::Option<std::string::String>,
-    pub(crate) os_architecture: std::option::Option<i32>,
-    pub(crate) tooltip: std::option::Option<std::string::String>,
+    pub(crate) engine: ::std::option::Option<::std::string::String>,
+    pub(crate) engine_version: ::std::option::Option<::std::string::String>,
+    pub(crate) engine_edition: ::std::option::Option<::std::string::String>,
+    pub(crate) service_pack: ::std::option::Option<::std::string::String>,
+    pub(crate) support_level: ::std::option::Option<::std::string::String>,
+    pub(crate) os_architecture: ::std::option::Option<i32>,
+    pub(crate) tooltip: ::std::option::Option<::std::string::String>,
 }
 impl DatabaseInstanceSoftwareDetailsResponseBuilder {
     /// <p>The database engine of a database in a Fleet Advisor collector inventory, for example <code>Microsoft SQL Server</code>.</p>
-    pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
-        self.engine = Some(input.into());
+    pub fn engine(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.engine = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The database engine of a database in a Fleet Advisor collector inventory, for example <code>Microsoft SQL Server</code>.</p>
-    pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_engine(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.engine = input;
         self
     }
     /// <p>The database engine version of a database in a Fleet Advisor collector inventory, for example <code>2019</code>.</p>
-    pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.engine_version = Some(input.into());
+    pub fn engine_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.engine_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The database engine version of a database in a Fleet Advisor collector inventory, for example <code>2019</code>.</p>
-    pub fn set_engine_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_engine_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.engine_version = input;
         self
     }
     /// <p>The database engine edition of a database in a Fleet Advisor collector inventory, for example <code>Express</code>.</p>
-    pub fn engine_edition(mut self, input: impl Into<std::string::String>) -> Self {
-        self.engine_edition = Some(input.into());
+    pub fn engine_edition(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.engine_edition = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The database engine edition of a database in a Fleet Advisor collector inventory, for example <code>Express</code>.</p>
-    pub fn set_engine_edition(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_engine_edition(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.engine_edition = input;
         self
     }
     /// <p>The service pack level of the database.</p>
-    pub fn service_pack(mut self, input: impl Into<std::string::String>) -> Self {
-        self.service_pack = Some(input.into());
+    pub fn service_pack(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.service_pack = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The service pack level of the database.</p>
-    pub fn set_service_pack(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_service_pack(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_pack = input;
         self
     }
     /// <p>The support level of the database, for example <code>Mainstream support</code>.</p>
-    pub fn support_level(mut self, input: impl Into<std::string::String>) -> Self {
-        self.support_level = Some(input.into());
+    pub fn support_level(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.support_level = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The support level of the database, for example <code>Mainstream support</code>.</p>
-    pub fn set_support_level(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_support_level(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.support_level = input;
         self
     }
     /// <p>The operating system architecture of the database.</p>
     pub fn os_architecture(mut self, input: i32) -> Self {
-        self.os_architecture = Some(input);
+        self.os_architecture = ::std::option::Option::Some(input);
         self
     }
     /// <p>The operating system architecture of the database.</p>
-    pub fn set_os_architecture(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_os_architecture(mut self, input: ::std::option::Option<i32>) -> Self {
         self.os_architecture = input;
         self
     }
     /// <p>Information about the database engine software, for example <code>Mainstream support ends on November 14th, 2024</code>.</p>
-    pub fn tooltip(mut self, input: impl Into<std::string::String>) -> Self {
-        self.tooltip = Some(input.into());
+    pub fn tooltip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.tooltip = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Information about the database engine software, for example <code>Mainstream support ends on November 14th, 2024</code>.</p>
-    pub fn set_tooltip(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_tooltip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tooltip = input;
         self
     }

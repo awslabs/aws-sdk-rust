@@ -2,36 +2,36 @@
 
 /// <p>A structure that contains results of an experiment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExperimentReport {
     /// <p>The name of the metric that is analyzed in this experiment report.</p>
     #[doc(hidden)]
-    pub metric_name: std::option::Option<std::string::String>,
+    pub metric_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the variation that this report pertains to.</p>
     #[doc(hidden)]
-    pub treatment_name: std::option::Option<std::string::String>,
+    pub treatment_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of analysis used for this report.</p>
     #[doc(hidden)]
-    pub report_name: std::option::Option<crate::types::ExperimentReportName>,
+    pub report_name: ::std::option::Option<crate::types::ExperimentReportName>,
     /// <p>The content of the report.</p>
     #[doc(hidden)]
-    pub content: std::option::Option<std::string::String>,
+    pub content: ::std::option::Option<::std::string::String>,
 }
 impl ExperimentReport {
     /// <p>The name of the metric that is analyzed in this experiment report.</p>
-    pub fn metric_name(&self) -> std::option::Option<&str> {
+    pub fn metric_name(&self) -> ::std::option::Option<&str> {
         self.metric_name.as_deref()
     }
     /// <p>The name of the variation that this report pertains to.</p>
-    pub fn treatment_name(&self) -> std::option::Option<&str> {
+    pub fn treatment_name(&self) -> ::std::option::Option<&str> {
         self.treatment_name.as_deref()
     }
     /// <p>The type of analysis used for this report.</p>
-    pub fn report_name(&self) -> std::option::Option<&crate::types::ExperimentReportName> {
+    pub fn report_name(&self) -> ::std::option::Option<&crate::types::ExperimentReportName> {
         self.report_name.as_ref()
     }
     /// <p>The content of the report.</p>
-    pub fn content(&self) -> std::option::Option<&str> {
+    pub fn content(&self) -> ::std::option::Option<&str> {
         self.content.as_deref()
     }
 }
@@ -44,54 +44,62 @@ impl ExperimentReport {
 
 /// A builder for [`ExperimentReport`](crate::types::ExperimentReport).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ExperimentReportBuilder {
-    pub(crate) metric_name: std::option::Option<std::string::String>,
-    pub(crate) treatment_name: std::option::Option<std::string::String>,
-    pub(crate) report_name: std::option::Option<crate::types::ExperimentReportName>,
-    pub(crate) content: std::option::Option<std::string::String>,
+    pub(crate) metric_name: ::std::option::Option<::std::string::String>,
+    pub(crate) treatment_name: ::std::option::Option<::std::string::String>,
+    pub(crate) report_name: ::std::option::Option<crate::types::ExperimentReportName>,
+    pub(crate) content: ::std::option::Option<::std::string::String>,
 }
 impl ExperimentReportBuilder {
     /// <p>The name of the metric that is analyzed in this experiment report.</p>
-    pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.metric_name = Some(input.into());
+    pub fn metric_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.metric_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the metric that is analyzed in this experiment report.</p>
-    pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_metric_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metric_name = input;
         self
     }
     /// <p>The name of the variation that this report pertains to.</p>
-    pub fn treatment_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.treatment_name = Some(input.into());
+    pub fn treatment_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.treatment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the variation that this report pertains to.</p>
-    pub fn set_treatment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_treatment_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.treatment_name = input;
         self
     }
     /// <p>The type of analysis used for this report.</p>
     pub fn report_name(mut self, input: crate::types::ExperimentReportName) -> Self {
-        self.report_name = Some(input);
+        self.report_name = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of analysis used for this report.</p>
     pub fn set_report_name(
         mut self,
-        input: std::option::Option<crate::types::ExperimentReportName>,
+        input: ::std::option::Option<crate::types::ExperimentReportName>,
     ) -> Self {
         self.report_name = input;
         self
     }
     /// <p>The content of the report.</p>
-    pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
-        self.content = Some(input.into());
+    pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.content = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The content of the report.</p>
-    pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content = input;
         self
     }

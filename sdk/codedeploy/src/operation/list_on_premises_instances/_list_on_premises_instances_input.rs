@@ -2,7 +2,7 @@
 
 /// <p>Represents the input of a <code>ListOnPremisesInstances</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListOnPremisesInstancesInput {
     /// <p>The registration status of the on-premises instances:</p>
     /// <ul>
@@ -10,13 +10,13 @@ pub struct ListOnPremisesInstancesInput {
     /// <li> <p> <code>Registered</code>: Include registered on-premises instances in the resulting list.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub registration_status: std::option::Option<crate::types::RegistrationStatus>,
+    pub registration_status: ::std::option::Option<crate::types::RegistrationStatus>,
     /// <p>The on-premises instance tags that are used to restrict the on-premises instance names returned.</p>
     #[doc(hidden)]
-    pub tag_filters: std::option::Option<std::vec::Vec<crate::types::TagFilter>>,
+    pub tag_filters: ::std::option::Option<::std::vec::Vec<crate::types::TagFilter>>,
     /// <p>An identifier returned from the previous list on-premises instances call. It can be used to return the next set of on-premises instances in the list.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListOnPremisesInstancesInput {
     /// <p>The registration status of the on-premises instances:</p>
@@ -24,15 +24,15 @@ impl ListOnPremisesInstancesInput {
     /// <li> <p> <code>Deregistered</code>: Include deregistered on-premises instances in the resulting list.</p> </li>
     /// <li> <p> <code>Registered</code>: Include registered on-premises instances in the resulting list.</p> </li>
     /// </ul>
-    pub fn registration_status(&self) -> std::option::Option<&crate::types::RegistrationStatus> {
+    pub fn registration_status(&self) -> ::std::option::Option<&crate::types::RegistrationStatus> {
         self.registration_status.as_ref()
     }
     /// <p>The on-premises instance tags that are used to restrict the on-premises instance names returned.</p>
-    pub fn tag_filters(&self) -> std::option::Option<&[crate::types::TagFilter]> {
+    pub fn tag_filters(&self) -> ::std::option::Option<&[crate::types::TagFilter]> {
         self.tag_filters.as_deref()
     }
     /// <p>An identifier returned from the previous list on-premises instances call. It can be used to return the next set of on-premises instances in the list.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
@@ -47,11 +47,13 @@ impl ListOnPremisesInstancesInput {
 
 /// A builder for [`ListOnPremisesInstancesInput`](crate::operation::list_on_premises_instances::ListOnPremisesInstancesInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListOnPremisesInstancesInputBuilder {
-    pub(crate) registration_status: std::option::Option<crate::types::RegistrationStatus>,
-    pub(crate) tag_filters: std::option::Option<std::vec::Vec<crate::types::TagFilter>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) registration_status: ::std::option::Option<crate::types::RegistrationStatus>,
+    pub(crate) tag_filters: ::std::option::Option<::std::vec::Vec<crate::types::TagFilter>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListOnPremisesInstancesInputBuilder {
     /// <p>The registration status of the on-premises instances:</p>
@@ -60,7 +62,7 @@ impl ListOnPremisesInstancesInputBuilder {
     /// <li> <p> <code>Registered</code>: Include registered on-premises instances in the resulting list.</p> </li>
     /// </ul>
     pub fn registration_status(mut self, input: crate::types::RegistrationStatus) -> Self {
-        self.registration_status = Some(input);
+        self.registration_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The registration status of the on-premises instances:</p>
@@ -70,7 +72,7 @@ impl ListOnPremisesInstancesInputBuilder {
     /// </ul>
     pub fn set_registration_status(
         mut self,
-        input: std::option::Option<crate::types::RegistrationStatus>,
+        input: ::std::option::Option<crate::types::RegistrationStatus>,
     ) -> Self {
         self.registration_status = input;
         self
@@ -83,35 +85,35 @@ impl ListOnPremisesInstancesInputBuilder {
     pub fn tag_filters(mut self, input: crate::types::TagFilter) -> Self {
         let mut v = self.tag_filters.unwrap_or_default();
         v.push(input);
-        self.tag_filters = Some(v);
+        self.tag_filters = ::std::option::Option::Some(v);
         self
     }
     /// <p>The on-premises instance tags that are used to restrict the on-premises instance names returned.</p>
     pub fn set_tag_filters(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TagFilter>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::TagFilter>>,
     ) -> Self {
         self.tag_filters = input;
         self
     }
     /// <p>An identifier returned from the previous list on-premises instances call. It can be used to return the next set of on-premises instances in the list.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An identifier returned from the previous list on-premises instances call. It can be used to return the next set of on-premises instances in the list.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
     /// Consumes the builder and constructs a [`ListOnPremisesInstancesInput`](crate::operation::list_on_premises_instances::ListOnPremisesInstancesInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::list_on_premises_instances::ListOnPremisesInstancesInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::list_on_premises_instances::ListOnPremisesInstancesInput {
                 registration_status: self.registration_status,
                 tag_filters: self.tag_filters,

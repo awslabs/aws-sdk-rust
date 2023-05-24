@@ -6,29 +6,29 @@ pub use crate::operation::update_domain_config::_update_domain_config_input::Upd
 /// Fluent builder constructing a request to `UpdateDomainConfig`.
 ///
 /// <p>Modifies the cluster configuration of the specified Amazon OpenSearch Service domain.sl</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateDomainConfigFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::update_domain_config::builders::UpdateDomainConfigInputBuilder,
 }
 impl UpdateDomainConfigFluentBuilder {
     /// Creates a new `UpdateDomainConfig`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_domain_config::UpdateDomainConfig,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_domain_config::UpdateDomainConfigError,
         >,
     > {
@@ -36,30 +36,33 @@ impl UpdateDomainConfigFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_domain_config::UpdateDomainConfigOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_domain_config::UpdateDomainConfigError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,21 +75,21 @@ impl UpdateDomainConfigFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_domain_config::UpdateDomainConfigOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_domain_config::UpdateDomainConfigError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the domain that you're updating.</p>
-    pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_name(input.into());
         self
     }
     /// <p>The name of the domain that you're updating.</p>
-    pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_name(input);
         self
     }
@@ -98,7 +101,7 @@ impl UpdateDomainConfigFluentBuilder {
     /// <p>Changes that you want to make to the cluster configuration, such as the instance type and number of EC2 instances.</p>
     pub fn set_cluster_config(
         mut self,
-        input: std::option::Option<crate::types::ClusterConfig>,
+        input: ::std::option::Option<crate::types::ClusterConfig>,
     ) -> Self {
         self.inner = self.inner.set_cluster_config(input);
         self
@@ -109,7 +112,10 @@ impl UpdateDomainConfigFluentBuilder {
         self
     }
     /// <p>The type and size of the EBS volume to attach to instances in the domain.</p>
-    pub fn set_ebs_options(mut self, input: std::option::Option<crate::types::EbsOptions>) -> Self {
+    pub fn set_ebs_options(
+        mut self,
+        input: ::std::option::Option<crate::types::EbsOptions>,
+    ) -> Self {
         self.inner = self.inner.set_ebs_options(input);
         self
     }
@@ -121,7 +127,7 @@ impl UpdateDomainConfigFluentBuilder {
     /// <p>Option to set the time, in UTC format, for the daily automated snapshot. Default value is <code>0</code> hours. </p>
     pub fn set_snapshot_options(
         mut self,
-        input: std::option::Option<crate::types::SnapshotOptions>,
+        input: ::std::option::Option<crate::types::SnapshotOptions>,
     ) -> Self {
         self.inner = self.inner.set_snapshot_options(input);
         self
@@ -132,7 +138,10 @@ impl UpdateDomainConfigFluentBuilder {
         self
     }
     /// <p>Options to specify the subnets and security groups for a VPC endpoint. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html">Launching your Amazon OpenSearch Service domains using a VPC</a>.</p>
-    pub fn set_vpc_options(mut self, input: std::option::Option<crate::types::VpcOptions>) -> Self {
+    pub fn set_vpc_options(
+        mut self,
+        input: ::std::option::Option<crate::types::VpcOptions>,
+    ) -> Self {
         self.inner = self.inner.set_vpc_options(input);
         self
     }
@@ -144,7 +153,7 @@ impl UpdateDomainConfigFluentBuilder {
     /// <p>Key-value pairs to configure Amazon Cognito authentication for OpenSearch Dashboards.</p>
     pub fn set_cognito_options(
         mut self,
-        input: std::option::Option<crate::types::CognitoOptions>,
+        input: ::std::option::Option<crate::types::CognitoOptions>,
     ) -> Self {
         self.inner = self.inner.set_cognito_options(input);
         self
@@ -162,8 +171,8 @@ impl UpdateDomainConfigFluentBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options">Advanced cluster parameters</a>.</p>
     pub fn advanced_options(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.advanced_options(k.into(), v.into());
         self
@@ -177,20 +186,26 @@ impl UpdateDomainConfigFluentBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options">Advanced cluster parameters</a>.</p>
     pub fn set_advanced_options(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_advanced_options(input);
         self
     }
     /// <p>Identity and Access Management (IAM) access policy as a JSON-formatted string.</p>
-    pub fn access_policies(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn access_policies(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.access_policies(input.into());
         self
     }
     /// <p>Identity and Access Management (IAM) access policy as a JSON-formatted string.</p>
-    pub fn set_access_policies(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_access_policies(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_access_policies(input);
         self
     }
@@ -210,8 +225,8 @@ impl UpdateDomainConfigFluentBuilder {
     /// <p>Options to publish OpenSearch logs to Amazon CloudWatch Logs.</p>
     pub fn set_log_publishing_options(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>,
         >,
     ) -> Self {
         self.inner = self.inner.set_log_publishing_options(input);
@@ -228,7 +243,7 @@ impl UpdateDomainConfigFluentBuilder {
     /// <p>Encryption at rest options for the domain.</p>
     pub fn set_encryption_at_rest_options(
         mut self,
-        input: std::option::Option<crate::types::EncryptionAtRestOptions>,
+        input: ::std::option::Option<crate::types::EncryptionAtRestOptions>,
     ) -> Self {
         self.inner = self.inner.set_encryption_at_rest_options(input);
         self
@@ -241,7 +256,7 @@ impl UpdateDomainConfigFluentBuilder {
     /// <p>Additional options for the domain endpoint, such as whether to require HTTPS for all traffic.</p>
     pub fn set_domain_endpoint_options(
         mut self,
-        input: std::option::Option<crate::types::DomainEndpointOptions>,
+        input: ::std::option::Option<crate::types::DomainEndpointOptions>,
     ) -> Self {
         self.inner = self.inner.set_domain_endpoint_options(input);
         self
@@ -257,7 +272,7 @@ impl UpdateDomainConfigFluentBuilder {
     /// <p>Node-to-node encryption options for the domain.</p>
     pub fn set_node_to_node_encryption_options(
         mut self,
-        input: std::option::Option<crate::types::NodeToNodeEncryptionOptions>,
+        input: ::std::option::Option<crate::types::NodeToNodeEncryptionOptions>,
     ) -> Self {
         self.inner = self.inner.set_node_to_node_encryption_options(input);
         self
@@ -273,7 +288,7 @@ impl UpdateDomainConfigFluentBuilder {
     /// <p>Options for fine-grained access control.</p>
     pub fn set_advanced_security_options(
         mut self,
-        input: std::option::Option<crate::types::AdvancedSecurityOptionsInput>,
+        input: ::std::option::Option<crate::types::AdvancedSecurityOptionsInput>,
     ) -> Self {
         self.inner = self.inner.set_advanced_security_options(input);
         self
@@ -286,7 +301,7 @@ impl UpdateDomainConfigFluentBuilder {
     /// <p>Options for Auto-Tune.</p>
     pub fn set_auto_tune_options(
         mut self,
-        input: std::option::Option<crate::types::AutoTuneOptions>,
+        input: ::std::option::Option<crate::types::AutoTuneOptions>,
     ) -> Self {
         self.inner = self.inner.set_auto_tune_options(input);
         self
@@ -297,7 +312,7 @@ impl UpdateDomainConfigFluentBuilder {
         self
     }
     /// <p>This flag, when set to True, specifies whether the <code>UpdateDomain</code> request should return the results of a dry run analysis without actually applying the change. A dry run determines what type of deployment the update will cause.</p>
-    pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
     }
@@ -317,7 +332,7 @@ impl UpdateDomainConfigFluentBuilder {
     /// </ul>
     pub fn set_dry_run_mode(
         mut self,
-        input: std::option::Option<crate::types::DryRunMode>,
+        input: ::std::option::Option<crate::types::DryRunMode>,
     ) -> Self {
         self.inner = self.inner.set_dry_run_mode(input);
         self
@@ -330,7 +345,7 @@ impl UpdateDomainConfigFluentBuilder {
     /// <p>Off-peak window options for the domain.</p>
     pub fn set_off_peak_window_options(
         mut self,
-        input: std::option::Option<crate::types::OffPeakWindowOptions>,
+        input: ::std::option::Option<crate::types::OffPeakWindowOptions>,
     ) -> Self {
         self.inner = self.inner.set_off_peak_window_options(input);
         self
@@ -343,7 +358,7 @@ impl UpdateDomainConfigFluentBuilder {
     /// <p>Service software update options for the domain.</p>
     pub fn set_software_update_options(
         mut self,
-        input: std::option::Option<crate::types::SoftwareUpdateOptions>,
+        input: ::std::option::Option<crate::types::SoftwareUpdateOptions>,
     ) -> Self {
         self.inner = self.inner.set_software_update_options(input);
         self

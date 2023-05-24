@@ -2,36 +2,36 @@
 
 /// <p>Specifies values used to filter responses when searching for insights. You can use a <code>ResourceCollection</code>, <code>ServiceCollection</code>, array of severities, and an array of status values. Each filter type contains one or more values to search for. If you specify multiple filter types, the filter types are joined with an <code>AND</code>, and the request returns only results that match all of the specified filters.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchInsightsFilters {
     /// <p> An array of severity values used to search for insights. </p>
     #[doc(hidden)]
-    pub severities: std::option::Option<std::vec::Vec<crate::types::InsightSeverity>>,
+    pub severities: ::std::option::Option<::std::vec::Vec<crate::types::InsightSeverity>>,
     /// <p> An array of status values used to search for insights. </p>
     #[doc(hidden)]
-    pub statuses: std::option::Option<std::vec::Vec<crate::types::InsightStatus>>,
+    pub statuses: ::std::option::Option<::std::vec::Vec<crate::types::InsightStatus>>,
     /// <p> A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
     #[doc(hidden)]
-    pub resource_collection: std::option::Option<crate::types::ResourceCollection>,
+    pub resource_collection: ::std::option::Option<crate::types::ResourceCollection>,
     /// <p>A collection of the names of Amazon Web Services services.</p>
     #[doc(hidden)]
-    pub service_collection: std::option::Option<crate::types::ServiceCollection>,
+    pub service_collection: ::std::option::Option<crate::types::ServiceCollection>,
 }
 impl SearchInsightsFilters {
     /// <p> An array of severity values used to search for insights. </p>
-    pub fn severities(&self) -> std::option::Option<&[crate::types::InsightSeverity]> {
+    pub fn severities(&self) -> ::std::option::Option<&[crate::types::InsightSeverity]> {
         self.severities.as_deref()
     }
     /// <p> An array of status values used to search for insights. </p>
-    pub fn statuses(&self) -> std::option::Option<&[crate::types::InsightStatus]> {
+    pub fn statuses(&self) -> ::std::option::Option<&[crate::types::InsightStatus]> {
         self.statuses.as_deref()
     }
     /// <p> A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
-    pub fn resource_collection(&self) -> std::option::Option<&crate::types::ResourceCollection> {
+    pub fn resource_collection(&self) -> ::std::option::Option<&crate::types::ResourceCollection> {
         self.resource_collection.as_ref()
     }
     /// <p>A collection of the names of Amazon Web Services services.</p>
-    pub fn service_collection(&self) -> std::option::Option<&crate::types::ServiceCollection> {
+    pub fn service_collection(&self) -> ::std::option::Option<&crate::types::ServiceCollection> {
         self.service_collection.as_ref()
     }
 }
@@ -44,12 +44,14 @@ impl SearchInsightsFilters {
 
 /// A builder for [`SearchInsightsFilters`](crate::types::SearchInsightsFilters).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SearchInsightsFiltersBuilder {
-    pub(crate) severities: std::option::Option<std::vec::Vec<crate::types::InsightSeverity>>,
-    pub(crate) statuses: std::option::Option<std::vec::Vec<crate::types::InsightStatus>>,
-    pub(crate) resource_collection: std::option::Option<crate::types::ResourceCollection>,
-    pub(crate) service_collection: std::option::Option<crate::types::ServiceCollection>,
+    pub(crate) severities: ::std::option::Option<::std::vec::Vec<crate::types::InsightSeverity>>,
+    pub(crate) statuses: ::std::option::Option<::std::vec::Vec<crate::types::InsightStatus>>,
+    pub(crate) resource_collection: ::std::option::Option<crate::types::ResourceCollection>,
+    pub(crate) service_collection: ::std::option::Option<crate::types::ServiceCollection>,
 }
 impl SearchInsightsFiltersBuilder {
     /// Appends an item to `severities`.
@@ -60,13 +62,13 @@ impl SearchInsightsFiltersBuilder {
     pub fn severities(mut self, input: crate::types::InsightSeverity) -> Self {
         let mut v = self.severities.unwrap_or_default();
         v.push(input);
-        self.severities = Some(v);
+        self.severities = ::std::option::Option::Some(v);
         self
     }
     /// <p> An array of severity values used to search for insights. </p>
     pub fn set_severities(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::InsightSeverity>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::InsightSeverity>>,
     ) -> Self {
         self.severities = input;
         self
@@ -79,39 +81,39 @@ impl SearchInsightsFiltersBuilder {
     pub fn statuses(mut self, input: crate::types::InsightStatus) -> Self {
         let mut v = self.statuses.unwrap_or_default();
         v.push(input);
-        self.statuses = Some(v);
+        self.statuses = ::std::option::Option::Some(v);
         self
     }
     /// <p> An array of status values used to search for insights. </p>
     pub fn set_statuses(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::InsightStatus>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::InsightStatus>>,
     ) -> Self {
         self.statuses = input;
         self
     }
     /// <p> A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
     pub fn resource_collection(mut self, input: crate::types::ResourceCollection) -> Self {
-        self.resource_collection = Some(input);
+        self.resource_collection = ::std::option::Option::Some(input);
         self
     }
     /// <p> A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
     pub fn set_resource_collection(
         mut self,
-        input: std::option::Option<crate::types::ResourceCollection>,
+        input: ::std::option::Option<crate::types::ResourceCollection>,
     ) -> Self {
         self.resource_collection = input;
         self
     }
     /// <p>A collection of the names of Amazon Web Services services.</p>
     pub fn service_collection(mut self, input: crate::types::ServiceCollection) -> Self {
-        self.service_collection = Some(input);
+        self.service_collection = ::std::option::Option::Some(input);
         self
     }
     /// <p>A collection of the names of Amazon Web Services services.</p>
     pub fn set_service_collection(
         mut self,
-        input: std::option::Option<crate::types::ServiceCollection>,
+        input: ::std::option::Option<crate::types::ServiceCollection>,
     ) -> Self {
         self.service_collection = input;
         self

@@ -2,22 +2,22 @@
 
 /// <p>The result of a <code>DescribeDomainChangeProgress</code> request. Contains progress information for the requested domain change.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDomainChangeProgressOutput {
     /// <p>Container for information about the stages of a configuration change happening on a domain.</p>
     #[doc(hidden)]
-    pub change_progress_status: std::option::Option<crate::types::ChangeProgressStatusDetails>,
+    pub change_progress_status: ::std::option::Option<crate::types::ChangeProgressStatusDetails>,
     _request_id: Option<String>,
 }
 impl DescribeDomainChangeProgressOutput {
     /// <p>Container for information about the stages of a configuration change happening on a domain.</p>
     pub fn change_progress_status(
         &self,
-    ) -> std::option::Option<&crate::types::ChangeProgressStatusDetails> {
+    ) -> ::std::option::Option<&crate::types::ChangeProgressStatusDetails> {
         self.change_progress_status.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeDomainChangeProgressOutput {
+impl ::aws_http::request_id::RequestId for DescribeDomainChangeProgressOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -31,10 +31,12 @@ impl DescribeDomainChangeProgressOutput {
 
 /// A builder for [`DescribeDomainChangeProgressOutput`](crate::operation::describe_domain_change_progress::DescribeDomainChangeProgressOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeDomainChangeProgressOutputBuilder {
     pub(crate) change_progress_status:
-        std::option::Option<crate::types::ChangeProgressStatusDetails>,
+        ::std::option::Option<crate::types::ChangeProgressStatusDetails>,
     _request_id: Option<String>,
 }
 impl DescribeDomainChangeProgressOutputBuilder {
@@ -43,13 +45,13 @@ impl DescribeDomainChangeProgressOutputBuilder {
         mut self,
         input: crate::types::ChangeProgressStatusDetails,
     ) -> Self {
-        self.change_progress_status = Some(input);
+        self.change_progress_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Container for information about the stages of a configuration change happening on a domain.</p>
     pub fn set_change_progress_status(
         mut self,
-        input: std::option::Option<crate::types::ChangeProgressStatusDetails>,
+        input: ::std::option::Option<crate::types::ChangeProgressStatusDetails>,
     ) -> Self {
         self.change_progress_status = input;
         self

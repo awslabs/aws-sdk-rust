@@ -2,43 +2,43 @@
 
 /// <p>Specifies the advanced security configuration: whether advanced security is enabled, whether the internal database option is enabled, master username and password (if internal database is enabled), and master user ARN (if IAM is enabled).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AdvancedSecurityOptionsInput {
     /// <p>True if advanced security is enabled.</p>
     #[doc(hidden)]
-    pub enabled: std::option::Option<bool>,
+    pub enabled: ::std::option::Option<bool>,
     /// <p>True if the internal user database is enabled.</p>
     #[doc(hidden)]
-    pub internal_user_database_enabled: std::option::Option<bool>,
+    pub internal_user_database_enabled: ::std::option::Option<bool>,
     /// <p>Credentials for the master user: username and password, ARN, or both.</p>
     #[doc(hidden)]
-    pub master_user_options: std::option::Option<crate::types::MasterUserOptions>,
+    pub master_user_options: ::std::option::Option<crate::types::MasterUserOptions>,
     /// <p>Specifies the SAML application configuration for the domain.</p>
     #[doc(hidden)]
-    pub saml_options: std::option::Option<crate::types::SamlOptionsInput>,
+    pub saml_options: ::std::option::Option<crate::types::SamlOptionsInput>,
     /// <p>True if Anonymous auth is enabled. Anonymous auth can be enabled only when AdvancedSecurity is enabled on existing domains.</p>
     #[doc(hidden)]
-    pub anonymous_auth_enabled: std::option::Option<bool>,
+    pub anonymous_auth_enabled: ::std::option::Option<bool>,
 }
 impl AdvancedSecurityOptionsInput {
     /// <p>True if advanced security is enabled.</p>
-    pub fn enabled(&self) -> std::option::Option<bool> {
+    pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
     /// <p>True if the internal user database is enabled.</p>
-    pub fn internal_user_database_enabled(&self) -> std::option::Option<bool> {
+    pub fn internal_user_database_enabled(&self) -> ::std::option::Option<bool> {
         self.internal_user_database_enabled
     }
     /// <p>Credentials for the master user: username and password, ARN, or both.</p>
-    pub fn master_user_options(&self) -> std::option::Option<&crate::types::MasterUserOptions> {
+    pub fn master_user_options(&self) -> ::std::option::Option<&crate::types::MasterUserOptions> {
         self.master_user_options.as_ref()
     }
     /// <p>Specifies the SAML application configuration for the domain.</p>
-    pub fn saml_options(&self) -> std::option::Option<&crate::types::SamlOptionsInput> {
+    pub fn saml_options(&self) -> ::std::option::Option<&crate::types::SamlOptionsInput> {
         self.saml_options.as_ref()
     }
     /// <p>True if Anonymous auth is enabled. Anonymous auth can be enabled only when AdvancedSecurity is enabled on existing domains.</p>
-    pub fn anonymous_auth_enabled(&self) -> std::option::Option<bool> {
+    pub fn anonymous_auth_enabled(&self) -> ::std::option::Option<bool> {
         self.anonymous_auth_enabled
     }
 }
@@ -51,68 +51,73 @@ impl AdvancedSecurityOptionsInput {
 
 /// A builder for [`AdvancedSecurityOptionsInput`](crate::types::AdvancedSecurityOptionsInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AdvancedSecurityOptionsInputBuilder {
-    pub(crate) enabled: std::option::Option<bool>,
-    pub(crate) internal_user_database_enabled: std::option::Option<bool>,
-    pub(crate) master_user_options: std::option::Option<crate::types::MasterUserOptions>,
-    pub(crate) saml_options: std::option::Option<crate::types::SamlOptionsInput>,
-    pub(crate) anonymous_auth_enabled: std::option::Option<bool>,
+    pub(crate) enabled: ::std::option::Option<bool>,
+    pub(crate) internal_user_database_enabled: ::std::option::Option<bool>,
+    pub(crate) master_user_options: ::std::option::Option<crate::types::MasterUserOptions>,
+    pub(crate) saml_options: ::std::option::Option<crate::types::SamlOptionsInput>,
+    pub(crate) anonymous_auth_enabled: ::std::option::Option<bool>,
 }
 impl AdvancedSecurityOptionsInputBuilder {
     /// <p>True if advanced security is enabled.</p>
     pub fn enabled(mut self, input: bool) -> Self {
-        self.enabled = Some(input);
+        self.enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>True if advanced security is enabled.</p>
-    pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
     }
     /// <p>True if the internal user database is enabled.</p>
     pub fn internal_user_database_enabled(mut self, input: bool) -> Self {
-        self.internal_user_database_enabled = Some(input);
+        self.internal_user_database_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>True if the internal user database is enabled.</p>
-    pub fn set_internal_user_database_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_internal_user_database_enabled(
+        mut self,
+        input: ::std::option::Option<bool>,
+    ) -> Self {
         self.internal_user_database_enabled = input;
         self
     }
     /// <p>Credentials for the master user: username and password, ARN, or both.</p>
     pub fn master_user_options(mut self, input: crate::types::MasterUserOptions) -> Self {
-        self.master_user_options = Some(input);
+        self.master_user_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>Credentials for the master user: username and password, ARN, or both.</p>
     pub fn set_master_user_options(
         mut self,
-        input: std::option::Option<crate::types::MasterUserOptions>,
+        input: ::std::option::Option<crate::types::MasterUserOptions>,
     ) -> Self {
         self.master_user_options = input;
         self
     }
     /// <p>Specifies the SAML application configuration for the domain.</p>
     pub fn saml_options(mut self, input: crate::types::SamlOptionsInput) -> Self {
-        self.saml_options = Some(input);
+        self.saml_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the SAML application configuration for the domain.</p>
     pub fn set_saml_options(
         mut self,
-        input: std::option::Option<crate::types::SamlOptionsInput>,
+        input: ::std::option::Option<crate::types::SamlOptionsInput>,
     ) -> Self {
         self.saml_options = input;
         self
     }
     /// <p>True if Anonymous auth is enabled. Anonymous auth can be enabled only when AdvancedSecurity is enabled on existing domains.</p>
     pub fn anonymous_auth_enabled(mut self, input: bool) -> Self {
-        self.anonymous_auth_enabled = Some(input);
+        self.anonymous_auth_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>True if Anonymous auth is enabled. Anonymous auth can be enabled only when AdvancedSecurity is enabled on existing domains.</p>
-    pub fn set_anonymous_auth_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_anonymous_auth_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.anonymous_auth_enabled = input;
         self
     }

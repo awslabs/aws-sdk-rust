@@ -2,20 +2,20 @@
 
 /// <p> Represents the output of a <code>GetOnPremisesInstance</code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetOnPremisesInstanceOutput {
     /// <p> Information about the on-premises instance. </p>
     #[doc(hidden)]
-    pub instance_info: std::option::Option<crate::types::InstanceInfo>,
+    pub instance_info: ::std::option::Option<crate::types::InstanceInfo>,
     _request_id: Option<String>,
 }
 impl GetOnPremisesInstanceOutput {
     /// <p> Information about the on-premises instance. </p>
-    pub fn instance_info(&self) -> std::option::Option<&crate::types::InstanceInfo> {
+    pub fn instance_info(&self) -> ::std::option::Option<&crate::types::InstanceInfo> {
         self.instance_info.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for GetOnPremisesInstanceOutput {
+impl ::aws_http::request_id::RequestId for GetOnPremisesInstanceOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -31,21 +31,23 @@ impl GetOnPremisesInstanceOutput {
 
 /// A builder for [`GetOnPremisesInstanceOutput`](crate::operation::get_on_premises_instance::GetOnPremisesInstanceOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetOnPremisesInstanceOutputBuilder {
-    pub(crate) instance_info: std::option::Option<crate::types::InstanceInfo>,
+    pub(crate) instance_info: ::std::option::Option<crate::types::InstanceInfo>,
     _request_id: Option<String>,
 }
 impl GetOnPremisesInstanceOutputBuilder {
     /// <p> Information about the on-premises instance. </p>
     pub fn instance_info(mut self, input: crate::types::InstanceInfo) -> Self {
-        self.instance_info = Some(input);
+        self.instance_info = ::std::option::Option::Some(input);
         self
     }
     /// <p> Information about the on-premises instance. </p>
     pub fn set_instance_info(
         mut self,
-        input: std::option::Option<crate::types::InstanceInfo>,
+        input: ::std::option::Option<crate::types::InstanceInfo>,
     ) -> Self {
         self.instance_info = input;
         self

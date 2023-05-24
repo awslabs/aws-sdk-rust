@@ -2,11 +2,11 @@
 
 /// <p>Status filter object to filter results based on specific member account ID or status type for an organization conformance pack.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OrganizationResourceDetailedStatusFilters {
     /// <p>The 12-digit account ID of the member account within an organization.</p>
     #[doc(hidden)]
-    pub account_id: std::option::Option<std::string::String>,
+    pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates deployment status for conformance pack in a member account. When management account calls <code>PutOrganizationConformancePack</code> action for the first time, conformance pack status is created in the member account. When management account calls <code>PutOrganizationConformancePack</code> action for the second time, conformance pack status is updated in the member account. Conformance pack status is deleted when the management account deletes <code>OrganizationConformancePack</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>. </p>
     /// <p> Config sets the state of the conformance pack to:</p>
     /// <ul>
@@ -21,11 +21,11 @@ pub struct OrganizationResourceDetailedStatusFilters {
     /// <li> <p> <code>UPDATE_FAILED</code> when conformance pack deletion has failed in the member account.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::OrganizationResourceDetailedStatus>,
+    pub status: ::std::option::Option<crate::types::OrganizationResourceDetailedStatus>,
 }
 impl OrganizationResourceDetailedStatusFilters {
     /// <p>The 12-digit account ID of the member account within an organization.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>Indicates deployment status for conformance pack in a member account. When management account calls <code>PutOrganizationConformancePack</code> action for the first time, conformance pack status is created in the member account. When management account calls <code>PutOrganizationConformancePack</code> action for the second time, conformance pack status is updated in the member account. Conformance pack status is deleted when the management account deletes <code>OrganizationConformancePack</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>. </p>
@@ -41,7 +41,9 @@ impl OrganizationResourceDetailedStatusFilters {
     /// <li> <p> <code>UPDATE_IN_PROGRESS</code> when conformance pack is being updated in the member account.</p> </li>
     /// <li> <p> <code>UPDATE_FAILED</code> when conformance pack deletion has failed in the member account.</p> </li>
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::types::OrganizationResourceDetailedStatus> {
+    pub fn status(
+        &self,
+    ) -> ::std::option::Option<&crate::types::OrganizationResourceDetailedStatus> {
         self.status.as_ref()
     }
 }
@@ -54,19 +56,21 @@ impl OrganizationResourceDetailedStatusFilters {
 
 /// A builder for [`OrganizationResourceDetailedStatusFilters`](crate::types::OrganizationResourceDetailedStatusFilters).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OrganizationResourceDetailedStatusFiltersBuilder {
-    pub(crate) account_id: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::OrganizationResourceDetailedStatus>,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::OrganizationResourceDetailedStatus>,
 }
 impl OrganizationResourceDetailedStatusFiltersBuilder {
     /// <p>The 12-digit account ID of the member account within an organization.</p>
-    pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.account_id = Some(input.into());
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The 12-digit account ID of the member account within an organization.</p>
-    pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
     }
@@ -84,7 +88,7 @@ impl OrganizationResourceDetailedStatusFiltersBuilder {
     /// <li> <p> <code>UPDATE_FAILED</code> when conformance pack deletion has failed in the member account.</p> </li>
     /// </ul>
     pub fn status(mut self, input: crate::types::OrganizationResourceDetailedStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates deployment status for conformance pack in a member account. When management account calls <code>PutOrganizationConformancePack</code> action for the first time, conformance pack status is created in the member account. When management account calls <code>PutOrganizationConformancePack</code> action for the second time, conformance pack status is updated in the member account. Conformance pack status is deleted when the management account deletes <code>OrganizationConformancePack</code> and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>. </p>
@@ -102,7 +106,7 @@ impl OrganizationResourceDetailedStatusFiltersBuilder {
     /// </ul>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::OrganizationResourceDetailedStatus>,
+        input: ::std::option::Option<crate::types::OrganizationResourceDetailedStatus>,
     ) -> Self {
         self.status = input;
         self

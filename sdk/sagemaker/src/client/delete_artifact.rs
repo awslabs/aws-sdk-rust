@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteArtifact`](crate::operation::delete_artifact::builders::DeleteArtifactFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`artifact_arn(impl Into<String>)`](crate::operation::delete_artifact::builders::DeleteArtifactFluentBuilder::artifact_arn) / [`set_artifact_arn(Option<String>)`](crate::operation::delete_artifact::builders::DeleteArtifactFluentBuilder::set_artifact_arn): <p>The Amazon Resource Name (ARN) of the artifact to delete.</p>
+    ///   - [`artifact_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_artifact::builders::DeleteArtifactFluentBuilder::artifact_arn) / [`set_artifact_arn(Option<String>)`](crate::operation::delete_artifact::builders::DeleteArtifactFluentBuilder::set_artifact_arn): <p>The Amazon Resource Name (ARN) of the artifact to delete.</p>
     ///   - [`source(ArtifactSource)`](crate::operation::delete_artifact::builders::DeleteArtifactFluentBuilder::source) / [`set_source(Option<ArtifactSource>)`](crate::operation::delete_artifact::builders::DeleteArtifactFluentBuilder::set_source): <p>The URI of the source.</p>
     /// - On success, responds with [`DeleteArtifactOutput`](crate::operation::delete_artifact::DeleteArtifactOutput) with field(s):
     ///   - [`artifact_arn(Option<String>)`](crate::operation::delete_artifact::DeleteArtifactOutput::artifact_arn): <p>The Amazon Resource Name (ARN) of the artifact.</p>

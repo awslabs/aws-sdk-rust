@@ -2,12 +2,12 @@
 
 /// <p>A conditional statement with which to compare a value, after a timestamp, before a timestamp, or equal to a string or integer. If multiple conditions are specified, the conditionals become an <code>AND</code>ed statement. If multiple values are specified for a conditional, the values are <code>OR</code>d.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum Condition {
     /// <p>After the specified timestamp.</p>
-    After(aws_smithy_types::DateTime),
+    After(::aws_smithy_types::DateTime),
     /// <p>Before the specified timestamp</p>
-    Before(aws_smithy_types::DateTime),
+    Before(::aws_smithy_types::DateTime),
     /// <p>The value is equal to the provided string or integer. </p>
     Equals(crate::types::AttributeValueList),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -21,26 +21,26 @@ pub enum Condition {
     Unknown,
 }
 impl Condition {
-    /// Tries to convert the enum instance into [`After`](crate::types::Condition::After), extracting the inner [`DateTime`](aws_smithy_types::DateTime).
+    /// Tries to convert the enum instance into [`After`](crate::types::Condition::After), extracting the inner [`DateTime`](::aws_smithy_types::DateTime).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_after(&self) -> std::result::Result<&aws_smithy_types::DateTime, &Self> {
+    pub fn as_after(&self) -> ::std::result::Result<&::aws_smithy_types::DateTime, &Self> {
         if let Condition::After(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`After`](crate::types::Condition::After).
     pub fn is_after(&self) -> bool {
         self.as_after().is_ok()
     }
-    /// Tries to convert the enum instance into [`Before`](crate::types::Condition::Before), extracting the inner [`DateTime`](aws_smithy_types::DateTime).
+    /// Tries to convert the enum instance into [`Before`](crate::types::Condition::Before), extracting the inner [`DateTime`](::aws_smithy_types::DateTime).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_before(&self) -> std::result::Result<&aws_smithy_types::DateTime, &Self> {
+    pub fn as_before(&self) -> ::std::result::Result<&::aws_smithy_types::DateTime, &Self> {
         if let Condition::Before(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Before`](crate::types::Condition::Before).
@@ -49,11 +49,11 @@ impl Condition {
     }
     /// Tries to convert the enum instance into [`Equals`](crate::types::Condition::Equals), extracting the inner [`AttributeValueList`](crate::types::AttributeValueList).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_equals(&self) -> std::result::Result<&crate::types::AttributeValueList, &Self> {
+    pub fn as_equals(&self) -> ::std::result::Result<&crate::types::AttributeValueList, &Self> {
         if let Condition::Equals(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Equals`](crate::types::Condition::Equals).

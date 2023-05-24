@@ -2,20 +2,22 @@
 
 /// <p>The result of a renewal offering.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RenewOfferingOutput {
     /// <p>Represents the status of the offering transaction for the renewal.</p>
     #[doc(hidden)]
-    pub offering_transaction: std::option::Option<crate::types::OfferingTransaction>,
+    pub offering_transaction: ::std::option::Option<crate::types::OfferingTransaction>,
     _request_id: Option<String>,
 }
 impl RenewOfferingOutput {
     /// <p>Represents the status of the offering transaction for the renewal.</p>
-    pub fn offering_transaction(&self) -> std::option::Option<&crate::types::OfferingTransaction> {
+    pub fn offering_transaction(
+        &self,
+    ) -> ::std::option::Option<&crate::types::OfferingTransaction> {
         self.offering_transaction.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for RenewOfferingOutput {
+impl ::aws_http::request_id::RequestId for RenewOfferingOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,21 +31,23 @@ impl RenewOfferingOutput {
 
 /// A builder for [`RenewOfferingOutput`](crate::operation::renew_offering::RenewOfferingOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RenewOfferingOutputBuilder {
-    pub(crate) offering_transaction: std::option::Option<crate::types::OfferingTransaction>,
+    pub(crate) offering_transaction: ::std::option::Option<crate::types::OfferingTransaction>,
     _request_id: Option<String>,
 }
 impl RenewOfferingOutputBuilder {
     /// <p>Represents the status of the offering transaction for the renewal.</p>
     pub fn offering_transaction(mut self, input: crate::types::OfferingTransaction) -> Self {
-        self.offering_transaction = Some(input);
+        self.offering_transaction = ::std::option::Option::Some(input);
         self
     }
     /// <p>Represents the status of the offering transaction for the renewal.</p>
     pub fn set_offering_transaction(
         mut self,
-        input: std::option::Option<crate::types::OfferingTransaction>,
+        input: ::std::option::Option<crate::types::OfferingTransaction>,
     ) -> Self {
         self.offering_transaction = input;
         self

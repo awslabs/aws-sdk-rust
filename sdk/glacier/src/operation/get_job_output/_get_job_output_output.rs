@@ -2,10 +2,10 @@
 
 /// <p>Contains the Amazon S3 Glacier response to your request.</p>
 #[non_exhaustive]
-#[derive(std::fmt::Debug)]
+#[derive(::std::fmt::Debug)]
 pub struct GetJobOutputOutput {
     /// <p>The job data, either archive data or inventory data.</p>
-    pub body: aws_smithy_http::byte_stream::ByteStream,
+    pub body: ::aws_smithy_http::byte_stream::ByteStream,
     /// <p>The checksum of the data in the response. This header is returned only when retrieving the output for an archive retrieval job. Furthermore, this header appears only under the following conditions:</p>
     /// <ul>
     /// <li> <p>You get the entire range of the archive.</p> </li>
@@ -13,27 +13,27 @@ pub struct GetJobOutputOutput {
     /// <li> <p>You request a range of the archive to return that starts on a multiple of 1 MB and goes to the end of the archive. For example, if you have a 3.1 MB archive and you specify a range that starts at 2 MB and ends at 3.1 MB (the end of the archive), then the x-amz-sha256-tree-hash is returned as a response header.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub checksum: std::option::Option<std::string::String>,
+    pub checksum: ::std::option::Option<::std::string::String>,
     /// <p>The HTTP response code for a job output request. The value depends on whether a range was specified in the request.</p>
     #[doc(hidden)]
     pub status: i32,
     /// <p>The range of bytes returned by Amazon S3 Glacier. If only partial output is downloaded, the response provides the range of bytes Amazon S3 Glacier returned. For example, bytes 0-1048575/8388608 returns the first 1 MB from 8 MB.</p>
     #[doc(hidden)]
-    pub content_range: std::option::Option<std::string::String>,
+    pub content_range: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the range units accepted. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html">RFC2616</a>. </p>
     #[doc(hidden)]
-    pub accept_ranges: std::option::Option<std::string::String>,
+    pub accept_ranges: ::std::option::Option<::std::string::String>,
     /// <p>The Content-Type depends on whether the job output is an archive or a vault inventory. For archive data, the Content-Type is application/octet-stream. For vault inventory, if you requested CSV format when you initiated the job, the Content-Type is text/csv. Otherwise, by default, vault inventory is returned as JSON, and the Content-Type is application/json.</p>
     #[doc(hidden)]
-    pub content_type: std::option::Option<std::string::String>,
+    pub content_type: ::std::option::Option<::std::string::String>,
     /// <p>The description of an archive.</p>
     #[doc(hidden)]
-    pub archive_description: std::option::Option<std::string::String>,
+    pub archive_description: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetJobOutputOutput {
     /// <p>The job data, either archive data or inventory data.</p>
-    pub fn body(&self) -> &aws_smithy_http::byte_stream::ByteStream {
+    pub fn body(&self) -> &::aws_smithy_http::byte_stream::ByteStream {
         &self.body
     }
     /// <p>The checksum of the data in the response. This header is returned only when retrieving the output for an archive retrieval job. Furthermore, this header appears only under the following conditions:</p>
@@ -42,7 +42,7 @@ impl GetJobOutputOutput {
     /// <li> <p>You request a range to return of the archive that starts and ends on a multiple of 1 MB. For example, if you have an 3.1 MB archive and you specify a range to return that starts at 1 MB and ends at 2 MB, then the x-amz-sha256-tree-hash is returned as a response header.</p> </li>
     /// <li> <p>You request a range of the archive to return that starts on a multiple of 1 MB and goes to the end of the archive. For example, if you have a 3.1 MB archive and you specify a range that starts at 2 MB and ends at 3.1 MB (the end of the archive), then the x-amz-sha256-tree-hash is returned as a response header.</p> </li>
     /// </ul>
-    pub fn checksum(&self) -> std::option::Option<&str> {
+    pub fn checksum(&self) -> ::std::option::Option<&str> {
         self.checksum.as_deref()
     }
     /// <p>The HTTP response code for a job output request. The value depends on whether a range was specified in the request.</p>
@@ -50,23 +50,23 @@ impl GetJobOutputOutput {
         self.status
     }
     /// <p>The range of bytes returned by Amazon S3 Glacier. If only partial output is downloaded, the response provides the range of bytes Amazon S3 Glacier returned. For example, bytes 0-1048575/8388608 returns the first 1 MB from 8 MB.</p>
-    pub fn content_range(&self) -> std::option::Option<&str> {
+    pub fn content_range(&self) -> ::std::option::Option<&str> {
         self.content_range.as_deref()
     }
     /// <p>Indicates the range units accepted. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html">RFC2616</a>. </p>
-    pub fn accept_ranges(&self) -> std::option::Option<&str> {
+    pub fn accept_ranges(&self) -> ::std::option::Option<&str> {
         self.accept_ranges.as_deref()
     }
     /// <p>The Content-Type depends on whether the job output is an archive or a vault inventory. For archive data, the Content-Type is application/octet-stream. For vault inventory, if you requested CSV format when you initiated the job, the Content-Type is text/csv. Otherwise, by default, vault inventory is returned as JSON, and the Content-Type is application/json.</p>
-    pub fn content_type(&self) -> std::option::Option<&str> {
+    pub fn content_type(&self) -> ::std::option::Option<&str> {
         self.content_type.as_deref()
     }
     /// <p>The description of an archive.</p>
-    pub fn archive_description(&self) -> std::option::Option<&str> {
+    pub fn archive_description(&self) -> ::std::option::Option<&str> {
         self.archive_description.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for GetJobOutputOutput {
+impl ::aws_http::request_id::RequestId for GetJobOutputOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -80,27 +80,27 @@ impl GetJobOutputOutput {
 
 /// A builder for [`GetJobOutputOutput`](crate::operation::get_job_output::GetJobOutputOutput).
 #[non_exhaustive]
-#[derive(std::default::Default, std::fmt::Debug)]
+#[derive(::std::default::Default, ::std::fmt::Debug)]
 pub struct GetJobOutputOutputBuilder {
-    pub(crate) body: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
-    pub(crate) checksum: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<i32>,
-    pub(crate) content_range: std::option::Option<std::string::String>,
-    pub(crate) accept_ranges: std::option::Option<std::string::String>,
-    pub(crate) content_type: std::option::Option<std::string::String>,
-    pub(crate) archive_description: std::option::Option<std::string::String>,
+    pub(crate) body: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>,
+    pub(crate) checksum: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<i32>,
+    pub(crate) content_range: ::std::option::Option<::std::string::String>,
+    pub(crate) accept_ranges: ::std::option::Option<::std::string::String>,
+    pub(crate) content_type: ::std::option::Option<::std::string::String>,
+    pub(crate) archive_description: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetJobOutputOutputBuilder {
     /// <p>The job data, either archive data or inventory data.</p>
-    pub fn body(mut self, input: aws_smithy_http::byte_stream::ByteStream) -> Self {
-        self.body = Some(input);
+    pub fn body(mut self, input: ::aws_smithy_http::byte_stream::ByteStream) -> Self {
+        self.body = ::std::option::Option::Some(input);
         self
     }
     /// <p>The job data, either archive data or inventory data.</p>
     pub fn set_body(
         mut self,
-        input: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
+        input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>,
     ) -> Self {
         self.body = input;
         self
@@ -111,8 +111,8 @@ impl GetJobOutputOutputBuilder {
     /// <li> <p>You request a range to return of the archive that starts and ends on a multiple of 1 MB. For example, if you have an 3.1 MB archive and you specify a range to return that starts at 1 MB and ends at 2 MB, then the x-amz-sha256-tree-hash is returned as a response header.</p> </li>
     /// <li> <p>You request a range of the archive to return that starts on a multiple of 1 MB and goes to the end of the archive. For example, if you have a 3.1 MB archive and you specify a range that starts at 2 MB and ends at 3.1 MB (the end of the archive), then the x-amz-sha256-tree-hash is returned as a response header.</p> </li>
     /// </ul>
-    pub fn checksum(mut self, input: impl Into<std::string::String>) -> Self {
-        self.checksum = Some(input.into());
+    pub fn checksum(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.checksum = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The checksum of the data in the response. This header is returned only when retrieving the output for an archive retrieval job. Furthermore, this header appears only under the following conditions:</p>
@@ -121,59 +121,74 @@ impl GetJobOutputOutputBuilder {
     /// <li> <p>You request a range to return of the archive that starts and ends on a multiple of 1 MB. For example, if you have an 3.1 MB archive and you specify a range to return that starts at 1 MB and ends at 2 MB, then the x-amz-sha256-tree-hash is returned as a response header.</p> </li>
     /// <li> <p>You request a range of the archive to return that starts on a multiple of 1 MB and goes to the end of the archive. For example, if you have a 3.1 MB archive and you specify a range that starts at 2 MB and ends at 3.1 MB (the end of the archive), then the x-amz-sha256-tree-hash is returned as a response header.</p> </li>
     /// </ul>
-    pub fn set_checksum(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_checksum(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.checksum = input;
         self
     }
     /// <p>The HTTP response code for a job output request. The value depends on whether a range was specified in the request.</p>
     pub fn status(mut self, input: i32) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The HTTP response code for a job output request. The value depends on whether a range was specified in the request.</p>
-    pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<i32>) -> Self {
         self.status = input;
         self
     }
     /// <p>The range of bytes returned by Amazon S3 Glacier. If only partial output is downloaded, the response provides the range of bytes Amazon S3 Glacier returned. For example, bytes 0-1048575/8388608 returns the first 1 MB from 8 MB.</p>
-    pub fn content_range(mut self, input: impl Into<std::string::String>) -> Self {
-        self.content_range = Some(input.into());
+    pub fn content_range(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.content_range = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The range of bytes returned by Amazon S3 Glacier. If only partial output is downloaded, the response provides the range of bytes Amazon S3 Glacier returned. For example, bytes 0-1048575/8388608 returns the first 1 MB from 8 MB.</p>
-    pub fn set_content_range(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_content_range(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.content_range = input;
         self
     }
     /// <p>Indicates the range units accepted. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html">RFC2616</a>. </p>
-    pub fn accept_ranges(mut self, input: impl Into<std::string::String>) -> Self {
-        self.accept_ranges = Some(input.into());
+    pub fn accept_ranges(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.accept_ranges = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates the range units accepted. For more information, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html">RFC2616</a>. </p>
-    pub fn set_accept_ranges(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_accept_ranges(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.accept_ranges = input;
         self
     }
     /// <p>The Content-Type depends on whether the job output is an archive or a vault inventory. For archive data, the Content-Type is application/octet-stream. For vault inventory, if you requested CSV format when you initiated the job, the Content-Type is text/csv. Otherwise, by default, vault inventory is returned as JSON, and the Content-Type is application/json.</p>
-    pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.content_type = Some(input.into());
+    pub fn content_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.content_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Content-Type depends on whether the job output is an archive or a vault inventory. For archive data, the Content-Type is application/octet-stream. For vault inventory, if you requested CSV format when you initiated the job, the Content-Type is text/csv. Otherwise, by default, vault inventory is returned as JSON, and the Content-Type is application/json.</p>
-    pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_content_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.content_type = input;
         self
     }
     /// <p>The description of an archive.</p>
-    pub fn archive_description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.archive_description = Some(input.into());
+    pub fn archive_description(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.archive_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of an archive.</p>
     pub fn set_archive_description(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.archive_description = input;
         self

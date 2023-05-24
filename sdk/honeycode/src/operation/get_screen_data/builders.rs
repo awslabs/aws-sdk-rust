@@ -6,56 +6,59 @@ pub use crate::operation::get_screen_data::_get_screen_data_input::GetScreenData
 /// Fluent builder constructing a request to `GetScreenData`.
 ///
 /// <p> The GetScreenData API allows retrieval of data from a screen in a Honeycode app. The API allows setting local variables in the screen to filter, sort or otherwise affect what will be displayed on the screen. </p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetScreenDataFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::get_screen_data::builders::GetScreenDataInputBuilder,
 }
 impl GetScreenDataFluentBuilder {
     /// Creates a new `GetScreenData`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::get_screen_data::GetScreenData,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::get_screen_data::GetScreenDataError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_screen_data::GetScreenDataError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_screen_data::GetScreenDataOutput,
-        aws_smithy_http::result::SdkError<crate::operation::get_screen_data::GetScreenDataError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_screen_data::GetScreenDataError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,39 +71,39 @@ impl GetScreenDataFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_screen_data::GetScreenDataOutput,
-        aws_smithy_http::result::SdkError<crate::operation::get_screen_data::GetScreenDataError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_screen_data::GetScreenDataError>,
     > {
         self.send_middleware().await
     }
     /// <p>The ID of the workbook that contains the screen.</p>
-    pub fn workbook_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn workbook_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.workbook_id(input.into());
         self
     }
     /// <p>The ID of the workbook that contains the screen.</p>
-    pub fn set_workbook_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_workbook_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_workbook_id(input);
         self
     }
     /// <p>The ID of the app that contains the screen.</p>
-    pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.app_id(input.into());
         self
     }
     /// <p>The ID of the app that contains the screen.</p>
-    pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_app_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_app_id(input);
         self
     }
     /// <p>The ID of the screen.</p>
-    pub fn screen_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn screen_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.screen_id(input.into());
         self
     }
     /// <p>The ID of the screen.</p>
-    pub fn set_screen_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_screen_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_screen_id(input);
         self
     }
@@ -111,7 +114,7 @@ impl GetScreenDataFluentBuilder {
     /// <p> Variables are optional and are needed only if the screen requires them to render correctly. Variables are specified as a map where the key is the name of the variable as defined on the screen. The value is an object which currently has only one property, rawValue, which holds the value of the variable to be passed to the screen. </p>
     pub fn variables(
         mut self,
-        k: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
         v: crate::types::VariableValue,
     ) -> Self {
         self.inner = self.inner.variables(k.into(), v);
@@ -120,8 +123,8 @@ impl GetScreenDataFluentBuilder {
     /// <p> Variables are optional and are needed only if the screen requires them to render correctly. Variables are specified as a map where the key is the name of the variable as defined on the screen. The value is an object which currently has only one property, rawValue, which holds the value of the variable to be passed to the screen. </p>
     pub fn set_variables(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::types::VariableValue>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, crate::types::VariableValue>,
         >,
     ) -> Self {
         self.inner = self.inner.set_variables(input);
@@ -135,19 +138,19 @@ impl GetScreenDataFluentBuilder {
     }
     /// <p> The number of results to be returned on a single page. Specify a number between 1 and 100. The maximum value is 100. </p>
     /// <p> This parameter is optional. If you don't specify this parameter, the default page size is 100. </p>
-    pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
     /// <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p>
     /// <p> Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException. </p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
     /// <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p>
     /// <p> Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException. </p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }

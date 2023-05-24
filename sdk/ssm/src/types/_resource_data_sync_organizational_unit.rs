@@ -2,15 +2,15 @@
 
 /// <p>The Organizations organizational unit data source for the sync.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceDataSyncOrganizationalUnit {
     /// <p>The Organizations unit ID data source for the sync.</p>
     #[doc(hidden)]
-    pub organizational_unit_id: std::option::Option<std::string::String>,
+    pub organizational_unit_id: ::std::option::Option<::std::string::String>,
 }
 impl ResourceDataSyncOrganizationalUnit {
     /// <p>The Organizations unit ID data source for the sync.</p>
-    pub fn organizational_unit_id(&self) -> std::option::Option<&str> {
+    pub fn organizational_unit_id(&self) -> ::std::option::Option<&str> {
         self.organizational_unit_id.as_deref()
     }
 }
@@ -23,20 +23,25 @@ impl ResourceDataSyncOrganizationalUnit {
 
 /// A builder for [`ResourceDataSyncOrganizationalUnit`](crate::types::ResourceDataSyncOrganizationalUnit).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResourceDataSyncOrganizationalUnitBuilder {
-    pub(crate) organizational_unit_id: std::option::Option<std::string::String>,
+    pub(crate) organizational_unit_id: ::std::option::Option<::std::string::String>,
 }
 impl ResourceDataSyncOrganizationalUnitBuilder {
     /// <p>The Organizations unit ID data source for the sync.</p>
-    pub fn organizational_unit_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.organizational_unit_id = Some(input.into());
+    pub fn organizational_unit_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.organizational_unit_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Organizations unit ID data source for the sync.</p>
     pub fn set_organizational_unit_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.organizational_unit_id = input;
         self

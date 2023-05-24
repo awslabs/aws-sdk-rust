@@ -2,27 +2,27 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeConnectionsOutput {
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     #[doc(hidden)]
-    pub marker: std::option::Option<std::string::String>,
+    pub marker: ::std::option::Option<::std::string::String>,
     /// <p>A description of the connections.</p>
     #[doc(hidden)]
-    pub connections: std::option::Option<std::vec::Vec<crate::types::Connection>>,
+    pub connections: ::std::option::Option<::std::vec::Vec<crate::types::Connection>>,
     _request_id: Option<String>,
 }
 impl DescribeConnectionsOutput {
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
     /// <p>A description of the connections.</p>
-    pub fn connections(&self) -> std::option::Option<&[crate::types::Connection]> {
+    pub fn connections(&self) -> ::std::option::Option<&[crate::types::Connection]> {
         self.connections.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeConnectionsOutput {
+impl ::aws_http::request_id::RequestId for DescribeConnectionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -38,20 +38,22 @@ impl DescribeConnectionsOutput {
 
 /// A builder for [`DescribeConnectionsOutput`](crate::operation::describe_connections::DescribeConnectionsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeConnectionsOutputBuilder {
-    pub(crate) marker: std::option::Option<std::string::String>,
-    pub(crate) connections: std::option::Option<std::vec::Vec<crate::types::Connection>>,
+    pub(crate) marker: ::std::option::Option<::std::string::String>,
+    pub(crate) connections: ::std::option::Option<::std::vec::Vec<crate::types::Connection>>,
     _request_id: Option<String>,
 }
 impl DescribeConnectionsOutputBuilder {
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
-    pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-        self.marker = Some(input.into());
+    pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
-    pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
     }
@@ -63,13 +65,13 @@ impl DescribeConnectionsOutputBuilder {
     pub fn connections(mut self, input: crate::types::Connection) -> Self {
         let mut v = self.connections.unwrap_or_default();
         v.push(input);
-        self.connections = Some(v);
+        self.connections = ::std::option::Option::Some(v);
         self
     }
     /// <p>A description of the connections.</p>
     pub fn set_connections(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Connection>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Connection>>,
     ) -> Self {
         self.connections = input;
         self

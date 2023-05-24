@@ -2,15 +2,15 @@
 
 /// <p>Details on the criteria used to define the filter for a vulnerability search. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchVulnerabilitiesFilterCriteria {
     /// <p>The IDs for specific vulnerabilities.</p>
     #[doc(hidden)]
-    pub vulnerability_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub vulnerability_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SearchVulnerabilitiesFilterCriteria {
     /// <p>The IDs for specific vulnerabilities.</p>
-    pub fn vulnerability_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn vulnerability_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.vulnerability_ids.as_deref()
     }
 }
@@ -23,9 +23,11 @@ impl SearchVulnerabilitiesFilterCriteria {
 
 /// A builder for [`SearchVulnerabilitiesFilterCriteria`](crate::types::SearchVulnerabilitiesFilterCriteria).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SearchVulnerabilitiesFilterCriteriaBuilder {
-    pub(crate) vulnerability_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) vulnerability_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SearchVulnerabilitiesFilterCriteriaBuilder {
     /// Appends an item to `vulnerability_ids`.
@@ -33,16 +35,19 @@ impl SearchVulnerabilitiesFilterCriteriaBuilder {
     /// To override the contents of this collection use [`set_vulnerability_ids`](Self::set_vulnerability_ids).
     ///
     /// <p>The IDs for specific vulnerabilities.</p>
-    pub fn vulnerability_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn vulnerability_ids(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.vulnerability_ids.unwrap_or_default();
         v.push(input.into());
-        self.vulnerability_ids = Some(v);
+        self.vulnerability_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IDs for specific vulnerabilities.</p>
     pub fn set_vulnerability_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.vulnerability_ids = input;
         self

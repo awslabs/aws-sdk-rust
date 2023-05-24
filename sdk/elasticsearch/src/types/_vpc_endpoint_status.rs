@@ -53,13 +53,13 @@
 /// </p>
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum VpcEndpointStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -79,7 +79,7 @@ pub enum VpcEndpointStatus {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for VpcEndpointStatus {
+impl ::std::convert::From<&str> for VpcEndpointStatus {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVE" => VpcEndpointStatus::Active,
@@ -95,11 +95,11 @@ impl std::convert::From<&str> for VpcEndpointStatus {
         }
     }
 }
-impl std::str::FromStr for VpcEndpointStatus {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for VpcEndpointStatus {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(VpcEndpointStatus::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(VpcEndpointStatus::from(s))
     }
 }
 impl VpcEndpointStatus {
@@ -129,7 +129,7 @@ impl VpcEndpointStatus {
         ]
     }
 }
-impl AsRef<str> for VpcEndpointStatus {
+impl ::std::convert::AsRef<str> for VpcEndpointStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

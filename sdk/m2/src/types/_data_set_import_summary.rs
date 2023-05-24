@@ -2,7 +2,7 @@
 
 /// <p>Represents a summary of data set imports.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataSetImportSummary {
     /// <p>The total number of data set imports.</p>
     #[doc(hidden)]
@@ -51,62 +51,64 @@ impl DataSetImportSummary {
 
 /// A builder for [`DataSetImportSummary`](crate::types::DataSetImportSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DataSetImportSummaryBuilder {
-    pub(crate) total: std::option::Option<i32>,
-    pub(crate) succeeded: std::option::Option<i32>,
-    pub(crate) failed: std::option::Option<i32>,
-    pub(crate) pending: std::option::Option<i32>,
-    pub(crate) in_progress: std::option::Option<i32>,
+    pub(crate) total: ::std::option::Option<i32>,
+    pub(crate) succeeded: ::std::option::Option<i32>,
+    pub(crate) failed: ::std::option::Option<i32>,
+    pub(crate) pending: ::std::option::Option<i32>,
+    pub(crate) in_progress: ::std::option::Option<i32>,
 }
 impl DataSetImportSummaryBuilder {
     /// <p>The total number of data set imports.</p>
     pub fn total(mut self, input: i32) -> Self {
-        self.total = Some(input);
+        self.total = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total number of data set imports.</p>
-    pub fn set_total(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_total(mut self, input: ::std::option::Option<i32>) -> Self {
         self.total = input;
         self
     }
     /// <p>The number of data set imports that have succeeded.</p>
     pub fn succeeded(mut self, input: i32) -> Self {
-        self.succeeded = Some(input);
+        self.succeeded = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of data set imports that have succeeded.</p>
-    pub fn set_succeeded(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_succeeded(mut self, input: ::std::option::Option<i32>) -> Self {
         self.succeeded = input;
         self
     }
     /// <p>The number of data set imports that have failed.</p>
     pub fn failed(mut self, input: i32) -> Self {
-        self.failed = Some(input);
+        self.failed = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of data set imports that have failed.</p>
-    pub fn set_failed(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_failed(mut self, input: ::std::option::Option<i32>) -> Self {
         self.failed = input;
         self
     }
     /// <p>The number of data set imports that are pending.</p>
     pub fn pending(mut self, input: i32) -> Self {
-        self.pending = Some(input);
+        self.pending = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of data set imports that are pending.</p>
-    pub fn set_pending(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_pending(mut self, input: ::std::option::Option<i32>) -> Self {
         self.pending = input;
         self
     }
     /// <p>The number of data set imports that are in progress.</p>
     pub fn in_progress(mut self, input: i32) -> Self {
-        self.in_progress = Some(input);
+        self.in_progress = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of data set imports that are in progress.</p>
-    pub fn set_in_progress(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_in_progress(mut self, input: ::std::option::Option<i32>) -> Self {
         self.in_progress = input;
         self
     }

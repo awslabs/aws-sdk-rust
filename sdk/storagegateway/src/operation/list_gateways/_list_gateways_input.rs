@@ -6,22 +6,22 @@
 /// <li> <p> <code>ListGatewaysInput$Marker</code> </p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListGatewaysInput {
     /// <p>An opaque string that indicates the position at which to begin the returned list of gateways.</p>
     #[doc(hidden)]
-    pub marker: std::option::Option<std::string::String>,
+    pub marker: ::std::option::Option<::std::string::String>,
     /// <p>Specifies that the list of gateways returned be limited to the specified number of items.</p>
     #[doc(hidden)]
-    pub limit: std::option::Option<i32>,
+    pub limit: ::std::option::Option<i32>,
 }
 impl ListGatewaysInput {
     /// <p>An opaque string that indicates the position at which to begin the returned list of gateways.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
     /// <p>Specifies that the list of gateways returned be limited to the specified number of items.</p>
-    pub fn limit(&self) -> std::option::Option<i32> {
+    pub fn limit(&self) -> ::std::option::Option<i32> {
         self.limit
     }
 }
@@ -34,40 +34,42 @@ impl ListGatewaysInput {
 
 /// A builder for [`ListGatewaysInput`](crate::operation::list_gateways::ListGatewaysInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListGatewaysInputBuilder {
-    pub(crate) marker: std::option::Option<std::string::String>,
-    pub(crate) limit: std::option::Option<i32>,
+    pub(crate) marker: ::std::option::Option<::std::string::String>,
+    pub(crate) limit: ::std::option::Option<i32>,
 }
 impl ListGatewaysInputBuilder {
     /// <p>An opaque string that indicates the position at which to begin the returned list of gateways.</p>
-    pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-        self.marker = Some(input.into());
+    pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An opaque string that indicates the position at which to begin the returned list of gateways.</p>
-    pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
     }
     /// <p>Specifies that the list of gateways returned be limited to the specified number of items.</p>
     pub fn limit(mut self, input: i32) -> Self {
-        self.limit = Some(input);
+        self.limit = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies that the list of gateways returned be limited to the specified number of items.</p>
-    pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.limit = input;
         self
     }
     /// Consumes the builder and constructs a [`ListGatewaysInput`](crate::operation::list_gateways::ListGatewaysInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::list_gateways::ListGatewaysInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::list_gateways::ListGatewaysInput {
+        ::std::result::Result::Ok(crate::operation::list_gateways::ListGatewaysInput {
             marker: self.marker,
             limit: self.limit,
         })

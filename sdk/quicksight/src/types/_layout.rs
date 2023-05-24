@@ -4,15 +4,15 @@
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/types-of-layout.html">Types of layout</a> in the <i>Amazon QuickSight User Guide</i>.</p>
 /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Layout {
     /// <p>The configuration that determines what the type of layout for a sheet.</p>
     #[doc(hidden)]
-    pub configuration: std::option::Option<crate::types::LayoutConfiguration>,
+    pub configuration: ::std::option::Option<crate::types::LayoutConfiguration>,
 }
 impl Layout {
     /// <p>The configuration that determines what the type of layout for a sheet.</p>
-    pub fn configuration(&self) -> std::option::Option<&crate::types::LayoutConfiguration> {
+    pub fn configuration(&self) -> ::std::option::Option<&crate::types::LayoutConfiguration> {
         self.configuration.as_ref()
     }
 }
@@ -25,20 +25,22 @@ impl Layout {
 
 /// A builder for [`Layout`](crate::types::Layout).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LayoutBuilder {
-    pub(crate) configuration: std::option::Option<crate::types::LayoutConfiguration>,
+    pub(crate) configuration: ::std::option::Option<crate::types::LayoutConfiguration>,
 }
 impl LayoutBuilder {
     /// <p>The configuration that determines what the type of layout for a sheet.</p>
     pub fn configuration(mut self, input: crate::types::LayoutConfiguration) -> Self {
-        self.configuration = Some(input);
+        self.configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration that determines what the type of layout for a sheet.</p>
     pub fn set_configuration(
         mut self,
-        input: std::option::Option<crate::types::LayoutConfiguration>,
+        input: ::std::option::Option<crate::types::LayoutConfiguration>,
     ) -> Self {
         self.configuration = input;
         self

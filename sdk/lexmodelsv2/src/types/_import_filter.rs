@@ -2,29 +2,29 @@
 
 /// <p>Filters the response from the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListImports.html">ListImports</a> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportFilter {
     /// <p>The name of the field to use for filtering.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<crate::types::ImportFilterName>,
+    pub name: ::std::option::Option<crate::types::ImportFilterName>,
     /// <p>The values to use to filter the response. The values must be <code>Bot</code>, <code>BotLocale</code>, or <code>CustomVocabulary</code>.</p>
     #[doc(hidden)]
-    pub values: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The operator to use for the filter. Specify EQ when the <code>ListImports</code> operation should return only resource types that equal the specified value. Specify CO when the <code>ListImports</code> operation should return resource types that contain the specified value.</p>
     #[doc(hidden)]
-    pub operator: std::option::Option<crate::types::ImportFilterOperator>,
+    pub operator: ::std::option::Option<crate::types::ImportFilterOperator>,
 }
 impl ImportFilter {
     /// <p>The name of the field to use for filtering.</p>
-    pub fn name(&self) -> std::option::Option<&crate::types::ImportFilterName> {
+    pub fn name(&self) -> ::std::option::Option<&crate::types::ImportFilterName> {
         self.name.as_ref()
     }
     /// <p>The values to use to filter the response. The values must be <code>Bot</code>, <code>BotLocale</code>, or <code>CustomVocabulary</code>.</p>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.values.as_deref()
     }
     /// <p>The operator to use for the filter. Specify EQ when the <code>ListImports</code> operation should return only resource types that equal the specified value. Specify CO when the <code>ListImports</code> operation should return resource types that contain the specified value.</p>
-    pub fn operator(&self) -> std::option::Option<&crate::types::ImportFilterOperator> {
+    pub fn operator(&self) -> ::std::option::Option<&crate::types::ImportFilterOperator> {
         self.operator.as_ref()
     }
 }
@@ -37,20 +37,25 @@ impl ImportFilter {
 
 /// A builder for [`ImportFilter`](crate::types::ImportFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ImportFilterBuilder {
-    pub(crate) name: std::option::Option<crate::types::ImportFilterName>,
-    pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) operator: std::option::Option<crate::types::ImportFilterOperator>,
+    pub(crate) name: ::std::option::Option<crate::types::ImportFilterName>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) operator: ::std::option::Option<crate::types::ImportFilterOperator>,
 }
 impl ImportFilterBuilder {
     /// <p>The name of the field to use for filtering.</p>
     pub fn name(mut self, input: crate::types::ImportFilterName) -> Self {
-        self.name = Some(input);
+        self.name = ::std::option::Option::Some(input);
         self
     }
     /// <p>The name of the field to use for filtering.</p>
-    pub fn set_name(mut self, input: std::option::Option<crate::types::ImportFilterName>) -> Self {
+    pub fn set_name(
+        mut self,
+        input: ::std::option::Option<crate::types::ImportFilterName>,
+    ) -> Self {
         self.name = input;
         self
     }
@@ -59,29 +64,29 @@ impl ImportFilterBuilder {
     /// To override the contents of this collection use [`set_values`](Self::set_values).
     ///
     /// <p>The values to use to filter the response. The values must be <code>Bot</code>, <code>BotLocale</code>, or <code>CustomVocabulary</code>.</p>
-    pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
         v.push(input.into());
-        self.values = Some(v);
+        self.values = ::std::option::Option::Some(v);
         self
     }
     /// <p>The values to use to filter the response. The values must be <code>Bot</code>, <code>BotLocale</code>, or <code>CustomVocabulary</code>.</p>
     pub fn set_values(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.values = input;
         self
     }
     /// <p>The operator to use for the filter. Specify EQ when the <code>ListImports</code> operation should return only resource types that equal the specified value. Specify CO when the <code>ListImports</code> operation should return resource types that contain the specified value.</p>
     pub fn operator(mut self, input: crate::types::ImportFilterOperator) -> Self {
-        self.operator = Some(input);
+        self.operator = ::std::option::Option::Some(input);
         self
     }
     /// <p>The operator to use for the filter. Specify EQ when the <code>ListImports</code> operation should return only resource types that equal the specified value. Specify CO when the <code>ListImports</code> operation should return resource types that contain the specified value.</p>
     pub fn set_operator(
         mut self,
-        input: std::option::Option<crate::types::ImportFilterOperator>,
+        input: ::std::option::Option<crate::types::ImportFilterOperator>,
     ) -> Self {
         self.operator = input;
         self

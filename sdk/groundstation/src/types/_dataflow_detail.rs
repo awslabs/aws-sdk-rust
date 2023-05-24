@@ -2,29 +2,29 @@
 
 /// <p>Information about a dataflow edge used in a contact.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataflowDetail {
     /// <p>Dataflow details for the source side.</p>
     #[doc(hidden)]
-    pub source: std::option::Option<crate::types::Source>,
+    pub source: ::std::option::Option<crate::types::Source>,
     /// <p>Dataflow details for the destination side.</p>
     #[doc(hidden)]
-    pub destination: std::option::Option<crate::types::Destination>,
+    pub destination: ::std::option::Option<crate::types::Destination>,
     /// <p>Error message for a dataflow.</p>
     #[doc(hidden)]
-    pub error_message: std::option::Option<std::string::String>,
+    pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl DataflowDetail {
     /// <p>Dataflow details for the source side.</p>
-    pub fn source(&self) -> std::option::Option<&crate::types::Source> {
+    pub fn source(&self) -> ::std::option::Option<&crate::types::Source> {
         self.source.as_ref()
     }
     /// <p>Dataflow details for the destination side.</p>
-    pub fn destination(&self) -> std::option::Option<&crate::types::Destination> {
+    pub fn destination(&self) -> ::std::option::Option<&crate::types::Destination> {
         self.destination.as_ref()
     }
     /// <p>Error message for a dataflow.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<&str> {
         self.error_message.as_deref()
     }
 }
@@ -37,43 +37,51 @@ impl DataflowDetail {
 
 /// A builder for [`DataflowDetail`](crate::types::DataflowDetail).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DataflowDetailBuilder {
-    pub(crate) source: std::option::Option<crate::types::Source>,
-    pub(crate) destination: std::option::Option<crate::types::Destination>,
-    pub(crate) error_message: std::option::Option<std::string::String>,
+    pub(crate) source: ::std::option::Option<crate::types::Source>,
+    pub(crate) destination: ::std::option::Option<crate::types::Destination>,
+    pub(crate) error_message: ::std::option::Option<::std::string::String>,
 }
 impl DataflowDetailBuilder {
     /// <p>Dataflow details for the source side.</p>
     pub fn source(mut self, input: crate::types::Source) -> Self {
-        self.source = Some(input);
+        self.source = ::std::option::Option::Some(input);
         self
     }
     /// <p>Dataflow details for the source side.</p>
-    pub fn set_source(mut self, input: std::option::Option<crate::types::Source>) -> Self {
+    pub fn set_source(mut self, input: ::std::option::Option<crate::types::Source>) -> Self {
         self.source = input;
         self
     }
     /// <p>Dataflow details for the destination side.</p>
     pub fn destination(mut self, input: crate::types::Destination) -> Self {
-        self.destination = Some(input);
+        self.destination = ::std::option::Option::Some(input);
         self
     }
     /// <p>Dataflow details for the destination side.</p>
     pub fn set_destination(
         mut self,
-        input: std::option::Option<crate::types::Destination>,
+        input: ::std::option::Option<crate::types::Destination>,
     ) -> Self {
         self.destination = input;
         self
     }
     /// <p>Error message for a dataflow.</p>
-    pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.error_message = Some(input.into());
+    pub fn error_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Error message for a dataflow.</p>
-    pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_error_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.error_message = input;
         self
     }

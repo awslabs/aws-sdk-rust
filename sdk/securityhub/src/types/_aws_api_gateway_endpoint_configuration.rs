@@ -2,17 +2,17 @@
 
 /// <p>Contains information about the endpoints for the API.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsApiGatewayEndpointConfiguration {
     /// <p>A list of endpoint types for the REST API.</p>
     /// <p>For an edge-optimized API, the endpoint type is <code>EDGE</code>. For a Regional API, the endpoint type is <code>REGIONAL</code>. For a private API, the endpoint type is <code>PRIVATE</code>.</p>
     #[doc(hidden)]
-    pub types: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AwsApiGatewayEndpointConfiguration {
     /// <p>A list of endpoint types for the REST API.</p>
     /// <p>For an edge-optimized API, the endpoint type is <code>EDGE</code>. For a Regional API, the endpoint type is <code>REGIONAL</code>. For a private API, the endpoint type is <code>PRIVATE</code>.</p>
-    pub fn types(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn types(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.types.as_deref()
     }
 }
@@ -25,9 +25,11 @@ impl AwsApiGatewayEndpointConfiguration {
 
 /// A builder for [`AwsApiGatewayEndpointConfiguration`](crate::types::AwsApiGatewayEndpointConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsApiGatewayEndpointConfigurationBuilder {
-    pub(crate) types: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AwsApiGatewayEndpointConfigurationBuilder {
     /// Appends an item to `types`.
@@ -36,17 +38,17 @@ impl AwsApiGatewayEndpointConfigurationBuilder {
     ///
     /// <p>A list of endpoint types for the REST API.</p>
     /// <p>For an edge-optimized API, the endpoint type is <code>EDGE</code>. For a Regional API, the endpoint type is <code>REGIONAL</code>. For a private API, the endpoint type is <code>PRIVATE</code>.</p>
-    pub fn types(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.types.unwrap_or_default();
         v.push(input.into());
-        self.types = Some(v);
+        self.types = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of endpoint types for the REST API.</p>
     /// <p>For an edge-optimized API, the endpoint type is <code>EDGE</code>. For a Regional API, the endpoint type is <code>REGIONAL</code>. For a private API, the endpoint type is <code>PRIVATE</code>.</p>
     pub fn set_types(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.types = input;
         self

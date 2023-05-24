@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteDisk`](crate::operation::delete_disk::builders::DeleteDiskFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`disk_name(impl Into<String>)`](crate::operation::delete_disk::builders::DeleteDiskFluentBuilder::disk_name) / [`set_disk_name(Option<String>)`](crate::operation::delete_disk::builders::DeleteDiskFluentBuilder::set_disk_name): <p>The unique name of the disk you want to delete (e.g., <code>my-disk</code>).</p>
+    ///   - [`disk_name(impl ::std::convert::Into<String>)`](crate::operation::delete_disk::builders::DeleteDiskFluentBuilder::disk_name) / [`set_disk_name(Option<String>)`](crate::operation::delete_disk::builders::DeleteDiskFluentBuilder::set_disk_name): <p>The unique name of the disk you want to delete (e.g., <code>my-disk</code>).</p>
     ///   - [`force_delete_add_ons(bool)`](crate::operation::delete_disk::builders::DeleteDiskFluentBuilder::force_delete_add_ons) / [`set_force_delete_add_ons(Option<bool>)`](crate::operation::delete_disk::builders::DeleteDiskFluentBuilder::set_force_delete_add_ons): <p>A Boolean value to indicate whether to delete all add-ons for the disk.</p>
     /// - On success, responds with [`DeleteDiskOutput`](crate::operation::delete_disk::DeleteDiskOutput) with field(s):
     ///   - [`operations(Option<Vec<Operation>>)`](crate::operation::delete_disk::DeleteDiskOutput::operations): <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>

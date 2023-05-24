@@ -2,22 +2,22 @@
 
 /// <p>Provides feedback on how relevant a document is to a search. Your application uses the <code>SubmitFeedback</code> API to provide relevance information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RelevanceFeedback {
     /// <p>The identifier of the search result that the user provided relevance feedback for.</p>
     #[doc(hidden)]
-    pub result_id: std::option::Option<std::string::String>,
+    pub result_id: ::std::option::Option<::std::string::String>,
     /// <p>Whether the document was relevant or not relevant to the search.</p>
     #[doc(hidden)]
-    pub relevance_value: std::option::Option<crate::types::RelevanceType>,
+    pub relevance_value: ::std::option::Option<crate::types::RelevanceType>,
 }
 impl RelevanceFeedback {
     /// <p>The identifier of the search result that the user provided relevance feedback for.</p>
-    pub fn result_id(&self) -> std::option::Option<&str> {
+    pub fn result_id(&self) -> ::std::option::Option<&str> {
         self.result_id.as_deref()
     }
     /// <p>Whether the document was relevant or not relevant to the search.</p>
-    pub fn relevance_value(&self) -> std::option::Option<&crate::types::RelevanceType> {
+    pub fn relevance_value(&self) -> ::std::option::Option<&crate::types::RelevanceType> {
         self.relevance_value.as_ref()
     }
 }
@@ -30,31 +30,33 @@ impl RelevanceFeedback {
 
 /// A builder for [`RelevanceFeedback`](crate::types::RelevanceFeedback).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RelevanceFeedbackBuilder {
-    pub(crate) result_id: std::option::Option<std::string::String>,
-    pub(crate) relevance_value: std::option::Option<crate::types::RelevanceType>,
+    pub(crate) result_id: ::std::option::Option<::std::string::String>,
+    pub(crate) relevance_value: ::std::option::Option<crate::types::RelevanceType>,
 }
 impl RelevanceFeedbackBuilder {
     /// <p>The identifier of the search result that the user provided relevance feedback for.</p>
-    pub fn result_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.result_id = Some(input.into());
+    pub fn result_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.result_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the search result that the user provided relevance feedback for.</p>
-    pub fn set_result_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_result_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.result_id = input;
         self
     }
     /// <p>Whether the document was relevant or not relevant to the search.</p>
     pub fn relevance_value(mut self, input: crate::types::RelevanceType) -> Self {
-        self.relevance_value = Some(input);
+        self.relevance_value = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether the document was relevant or not relevant to the search.</p>
     pub fn set_relevance_value(
         mut self,
-        input: std::option::Option<crate::types::RelevanceType>,
+        input: ::std::option::Option<crate::types::RelevanceType>,
     ) -> Self {
         self.relevance_value = input;
         self

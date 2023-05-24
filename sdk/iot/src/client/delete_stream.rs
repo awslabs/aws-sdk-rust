@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteStream`](crate::operation::delete_stream::builders::DeleteStreamFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`stream_id(impl Into<String>)`](crate::operation::delete_stream::builders::DeleteStreamFluentBuilder::stream_id) / [`set_stream_id(Option<String>)`](crate::operation::delete_stream::builders::DeleteStreamFluentBuilder::set_stream_id): <p>The stream ID.</p>
+    ///   - [`stream_id(impl ::std::convert::Into<String>)`](crate::operation::delete_stream::builders::DeleteStreamFluentBuilder::stream_id) / [`set_stream_id(Option<String>)`](crate::operation::delete_stream::builders::DeleteStreamFluentBuilder::set_stream_id): <p>The stream ID.</p>
     /// - On success, responds with [`DeleteStreamOutput`](crate::operation::delete_stream::DeleteStreamOutput)
     /// - On failure, responds with [`SdkError<DeleteStreamError>`](crate::operation::delete_stream::DeleteStreamError)
     pub fn delete_stream(

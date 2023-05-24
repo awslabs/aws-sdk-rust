@@ -2,27 +2,27 @@
 
 /// <p> Result structure used in response to request to delete a project. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteProjectOutput {
     /// <p> Resources which were deleted. </p>
     #[doc(hidden)]
-    pub deleted_resources: std::option::Option<std::vec::Vec<crate::types::Resource>>,
+    pub deleted_resources: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
     /// <p> Resources which were not deleted, due to a risk of losing potentially important data or files. </p>
     #[doc(hidden)]
-    pub orphaned_resources: std::option::Option<std::vec::Vec<crate::types::Resource>>,
+    pub orphaned_resources: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
     _request_id: Option<String>,
 }
 impl DeleteProjectOutput {
     /// <p> Resources which were deleted. </p>
-    pub fn deleted_resources(&self) -> std::option::Option<&[crate::types::Resource]> {
+    pub fn deleted_resources(&self) -> ::std::option::Option<&[crate::types::Resource]> {
         self.deleted_resources.as_deref()
     }
     /// <p> Resources which were not deleted, due to a risk of losing potentially important data or files. </p>
-    pub fn orphaned_resources(&self) -> std::option::Option<&[crate::types::Resource]> {
+    pub fn orphaned_resources(&self) -> ::std::option::Option<&[crate::types::Resource]> {
         self.orphaned_resources.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DeleteProjectOutput {
+impl ::aws_http::request_id::RequestId for DeleteProjectOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -36,10 +36,12 @@ impl DeleteProjectOutput {
 
 /// A builder for [`DeleteProjectOutput`](crate::operation::delete_project::DeleteProjectOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteProjectOutputBuilder {
-    pub(crate) deleted_resources: std::option::Option<std::vec::Vec<crate::types::Resource>>,
-    pub(crate) orphaned_resources: std::option::Option<std::vec::Vec<crate::types::Resource>>,
+    pub(crate) deleted_resources: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
+    pub(crate) orphaned_resources: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
     _request_id: Option<String>,
 }
 impl DeleteProjectOutputBuilder {
@@ -51,13 +53,13 @@ impl DeleteProjectOutputBuilder {
     pub fn deleted_resources(mut self, input: crate::types::Resource) -> Self {
         let mut v = self.deleted_resources.unwrap_or_default();
         v.push(input);
-        self.deleted_resources = Some(v);
+        self.deleted_resources = ::std::option::Option::Some(v);
         self
     }
     /// <p> Resources which were deleted. </p>
     pub fn set_deleted_resources(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Resource>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
     ) -> Self {
         self.deleted_resources = input;
         self
@@ -70,13 +72,13 @@ impl DeleteProjectOutputBuilder {
     pub fn orphaned_resources(mut self, input: crate::types::Resource) -> Self {
         let mut v = self.orphaned_resources.unwrap_or_default();
         v.push(input);
-        self.orphaned_resources = Some(v);
+        self.orphaned_resources = ::std::option::Option::Some(v);
         self
     }
     /// <p> Resources which were not deleted, due to a risk of losing potentially important data or files. </p>
     pub fn set_orphaned_resources(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Resource>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
     ) -> Self {
         self.orphaned_resources = input;
         self

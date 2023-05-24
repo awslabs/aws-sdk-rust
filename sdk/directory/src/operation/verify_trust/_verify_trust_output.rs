@@ -2,20 +2,20 @@
 
 /// <p>Result of a VerifyTrust request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VerifyTrustOutput {
     /// <p>The unique Trust ID of the trust relationship that was verified.</p>
     #[doc(hidden)]
-    pub trust_id: std::option::Option<std::string::String>,
+    pub trust_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl VerifyTrustOutput {
     /// <p>The unique Trust ID of the trust relationship that was verified.</p>
-    pub fn trust_id(&self) -> std::option::Option<&str> {
+    pub fn trust_id(&self) -> ::std::option::Option<&str> {
         self.trust_id.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for VerifyTrustOutput {
+impl ::aws_http::request_id::RequestId for VerifyTrustOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,21 @@ impl VerifyTrustOutput {
 
 /// A builder for [`VerifyTrustOutput`](crate::operation::verify_trust::VerifyTrustOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VerifyTrustOutputBuilder {
-    pub(crate) trust_id: std::option::Option<std::string::String>,
+    pub(crate) trust_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl VerifyTrustOutputBuilder {
     /// <p>The unique Trust ID of the trust relationship that was verified.</p>
-    pub fn trust_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.trust_id = Some(input.into());
+    pub fn trust_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.trust_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique Trust ID of the trust relationship that was verified.</p>
-    pub fn set_trust_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_trust_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.trust_id = input;
         self
     }

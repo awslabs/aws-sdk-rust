@@ -2,22 +2,22 @@
 
 /// <p>A structure that encapsulates, or contains, the media storage configuration properties.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MediaStorageConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the stream </p>
     #[doc(hidden)]
-    pub stream_arn: std::option::Option<std::string::String>,
+    pub stream_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the media storage configuration.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::MediaStorageConfigurationStatus>,
+    pub status: ::std::option::Option<crate::types::MediaStorageConfigurationStatus>,
 }
 impl MediaStorageConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the stream </p>
-    pub fn stream_arn(&self) -> std::option::Option<&str> {
+    pub fn stream_arn(&self) -> ::std::option::Option<&str> {
         self.stream_arn.as_deref()
     }
     /// <p>The status of the media storage configuration.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::MediaStorageConfigurationStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::MediaStorageConfigurationStatus> {
         self.status.as_ref()
     }
 }
@@ -30,31 +30,33 @@ impl MediaStorageConfiguration {
 
 /// A builder for [`MediaStorageConfiguration`](crate::types::MediaStorageConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MediaStorageConfigurationBuilder {
-    pub(crate) stream_arn: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::MediaStorageConfigurationStatus>,
+    pub(crate) stream_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::MediaStorageConfigurationStatus>,
 }
 impl MediaStorageConfigurationBuilder {
     /// <p>The Amazon Resource Name (ARN) of the stream </p>
-    pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.stream_arn = Some(input.into());
+    pub fn stream_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.stream_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the stream </p>
-    pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_stream_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stream_arn = input;
         self
     }
     /// <p>The status of the media storage configuration.</p>
     pub fn status(mut self, input: crate::types::MediaStorageConfigurationStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the media storage configuration.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::MediaStorageConfigurationStatus>,
+        input: ::std::option::Option<crate::types::MediaStorageConfigurationStatus>,
     ) -> Self {
         self.status = input;
         self

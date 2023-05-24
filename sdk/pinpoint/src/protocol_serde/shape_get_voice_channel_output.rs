@@ -2,7 +2,7 @@
 pub(crate) fn de_voice_channel_response_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::types::VoiceChannelResponse>,
+    ::std::option::Option<crate::types::VoiceChannelResponse>,
     crate::operation::get_voice_channel::GetVoiceChannelError,
 > {
     (!body.is_empty())

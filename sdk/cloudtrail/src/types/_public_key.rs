@@ -2,36 +2,36 @@
 
 /// <p>Contains information about a returned public key.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PublicKey {
     /// <p>The DER encoded public key value in PKCS#1 format.</p>
     #[doc(hidden)]
-    pub value: std::option::Option<aws_smithy_types::Blob>,
+    pub value: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>The starting time of validity of the public key.</p>
     #[doc(hidden)]
-    pub validity_start_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub validity_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ending time of validity of the public key.</p>
     #[doc(hidden)]
-    pub validity_end_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub validity_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The fingerprint of the public key.</p>
     #[doc(hidden)]
-    pub fingerprint: std::option::Option<std::string::String>,
+    pub fingerprint: ::std::option::Option<::std::string::String>,
 }
 impl PublicKey {
     /// <p>The DER encoded public key value in PKCS#1 format.</p>
-    pub fn value(&self) -> std::option::Option<&aws_smithy_types::Blob> {
+    pub fn value(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
         self.value.as_ref()
     }
     /// <p>The starting time of validity of the public key.</p>
-    pub fn validity_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn validity_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.validity_start_time.as_ref()
     }
     /// <p>The ending time of validity of the public key.</p>
-    pub fn validity_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn validity_end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.validity_end_time.as_ref()
     }
     /// <p>The fingerprint of the public key.</p>
-    pub fn fingerprint(&self) -> std::option::Option<&str> {
+    pub fn fingerprint(&self) -> ::std::option::Option<&str> {
         self.fingerprint.as_deref()
     }
 }
@@ -44,57 +44,59 @@ impl PublicKey {
 
 /// A builder for [`PublicKey`](crate::types::PublicKey).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PublicKeyBuilder {
-    pub(crate) value: std::option::Option<aws_smithy_types::Blob>,
-    pub(crate) validity_start_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) validity_end_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) fingerprint: std::option::Option<std::string::String>,
+    pub(crate) value: ::std::option::Option<::aws_smithy_types::Blob>,
+    pub(crate) validity_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) validity_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) fingerprint: ::std::option::Option<::std::string::String>,
 }
 impl PublicKeyBuilder {
     /// <p>The DER encoded public key value in PKCS#1 format.</p>
-    pub fn value(mut self, input: aws_smithy_types::Blob) -> Self {
-        self.value = Some(input);
+    pub fn value(mut self, input: ::aws_smithy_types::Blob) -> Self {
+        self.value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The DER encoded public key value in PKCS#1 format.</p>
-    pub fn set_value(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.value = input;
         self
     }
     /// <p>The starting time of validity of the public key.</p>
-    pub fn validity_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.validity_start_time = Some(input);
+    pub fn validity_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.validity_start_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The starting time of validity of the public key.</p>
     pub fn set_validity_start_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.validity_start_time = input;
         self
     }
     /// <p>The ending time of validity of the public key.</p>
-    pub fn validity_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.validity_end_time = Some(input);
+    pub fn validity_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.validity_end_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The ending time of validity of the public key.</p>
     pub fn set_validity_end_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.validity_end_time = input;
         self
     }
     /// <p>The fingerprint of the public key.</p>
-    pub fn fingerprint(mut self, input: impl Into<std::string::String>) -> Self {
-        self.fingerprint = Some(input.into());
+    pub fn fingerprint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.fingerprint = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The fingerprint of the public key.</p>
-    pub fn set_fingerprint(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_fingerprint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fingerprint = input;
         self
     }

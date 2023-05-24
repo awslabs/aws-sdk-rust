@@ -2,43 +2,43 @@
 
 /// <p>Name of the step from the SSM document.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemediationExecutionStep {
     /// <p>The details of the step.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The valid status of the step.</p>
     #[doc(hidden)]
-    pub state: std::option::Option<crate::types::RemediationExecutionStepState>,
+    pub state: ::std::option::Option<crate::types::RemediationExecutionStepState>,
     /// <p>An error message if the step was interrupted during execution.</p>
     #[doc(hidden)]
-    pub error_message: std::option::Option<std::string::String>,
+    pub error_message: ::std::option::Option<::std::string::String>,
     /// <p>The time when the step started.</p>
     #[doc(hidden)]
-    pub start_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when the step stopped.</p>
     #[doc(hidden)]
-    pub stop_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub stop_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl RemediationExecutionStep {
     /// <p>The details of the step.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The valid status of the step.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::RemediationExecutionStepState> {
+    pub fn state(&self) -> ::std::option::Option<&crate::types::RemediationExecutionStepState> {
         self.state.as_ref()
     }
     /// <p>An error message if the step was interrupted during execution.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<&str> {
         self.error_message.as_deref()
     }
     /// <p>The time when the step started.</p>
-    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The time when the step stopped.</p>
-    pub fn stop_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn stop_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.stop_time.as_ref()
     }
 }
@@ -51,68 +51,79 @@ impl RemediationExecutionStep {
 
 /// A builder for [`RemediationExecutionStep`](crate::types::RemediationExecutionStep).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RemediationExecutionStepBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) state: std::option::Option<crate::types::RemediationExecutionStepState>,
-    pub(crate) error_message: std::option::Option<std::string::String>,
-    pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) stop_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) state: ::std::option::Option<crate::types::RemediationExecutionStepState>,
+    pub(crate) error_message: ::std::option::Option<::std::string::String>,
+    pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) stop_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl RemediationExecutionStepBuilder {
     /// <p>The details of the step.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The details of the step.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The valid status of the step.</p>
     pub fn state(mut self, input: crate::types::RemediationExecutionStepState) -> Self {
-        self.state = Some(input);
+        self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The valid status of the step.</p>
     pub fn set_state(
         mut self,
-        input: std::option::Option<crate::types::RemediationExecutionStepState>,
+        input: ::std::option::Option<crate::types::RemediationExecutionStepState>,
     ) -> Self {
         self.state = input;
         self
     }
     /// <p>An error message if the step was interrupted during execution.</p>
-    pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.error_message = Some(input.into());
+    pub fn error_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An error message if the step was interrupted during execution.</p>
-    pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_error_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.error_message = input;
         self
     }
     /// <p>The time when the step started.</p>
-    pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.start_time = Some(input);
+    pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.start_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time when the step started.</p>
     pub fn set_start_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.start_time = input;
         self
     }
     /// <p>The time when the step stopped.</p>
-    pub fn stop_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.stop_time = Some(input);
+    pub fn stop_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.stop_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time when the step stopped.</p>
-    pub fn set_stop_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_stop_time(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
         self.stop_time = input;
         self
     }

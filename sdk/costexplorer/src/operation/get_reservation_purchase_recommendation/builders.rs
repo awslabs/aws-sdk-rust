@@ -8,47 +8,50 @@ pub use crate::operation::get_reservation_purchase_recommendation::_get_reservat
 /// <p>Gets recommendations for reservation purchases. These recommendations might help you to reduce your costs. Reservations provide a discounted hourly rate (up to 75%) compared to On-Demand pricing.</p>
 /// <p>Amazon Web Services generates your recommendations by identifying your On-Demand usage during a specific time period and collecting your usage into categories that are eligible for a reservation. After Amazon Web Services has these categories, it simulates every combination of reservations in each category of usage to identify the best number of each type of Reserved Instance (RI) to purchase to maximize your estimated savings. </p>
 /// <p>For example, Amazon Web Services automatically aggregates your Amazon EC2 Linux, shared tenancy, and c4 family usage in the US West (Oregon) Region and recommends that you buy size-flexible regional reservations to apply to the c4 family usage. Amazon Web Services recommends the smallest size instance in an instance family. This makes it easier to purchase a size-flexible Reserved Instance (RI). Amazon Web Services also shows the equal number of normalized units. This way, you can purchase any instance size that you want. For this example, your RI recommendation is for <code>c4.large</code> because that is the smallest size instance in the c4 instance family.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetReservationPurchaseRecommendationFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::get_reservation_purchase_recommendation::builders::GetReservationPurchaseRecommendationInputBuilder,
 }
 impl GetReservationPurchaseRecommendationFluentBuilder {
     /// Creates a new `GetReservationPurchaseRecommendation`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::get_reservation_purchase_recommendation::GetReservationPurchaseRecommendation, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::get_reservation_purchase_recommendation::GetReservationPurchaseRecommendationError>
+                    pub async fn customize(self) -> ::std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::get_reservation_purchase_recommendation::GetReservationPurchaseRecommendation, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                        ::aws_smithy_http::result::SdkError<crate::operation::get_reservation_purchase_recommendation::GetReservationPurchaseRecommendationError>
     >{
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::get_reservation_purchase_recommendation::GetReservationPurchaseRecommendationOutput, aws_smithy_http::result::SdkError<crate::operation::get_reservation_purchase_recommendation::GetReservationPurchaseRecommendationError>>
+                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::get_reservation_purchase_recommendation::GetReservationPurchaseRecommendationOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_reservation_purchase_recommendation::GetReservationPurchaseRecommendationError>>
                      {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -59,27 +62,27 @@ impl GetReservationPurchaseRecommendationFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> std::result::Result<crate::operation::get_reservation_purchase_recommendation::GetReservationPurchaseRecommendationOutput, aws_smithy_http::result::SdkError<crate::operation::get_reservation_purchase_recommendation::GetReservationPurchaseRecommendationError>>
+                        pub async fn send(self) -> ::std::result::Result<crate::operation::get_reservation_purchase_recommendation::GetReservationPurchaseRecommendationOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_reservation_purchase_recommendation::GetReservationPurchaseRecommendationError>>
                          {
         self.send_middleware().await
     }
     /// <p>The account ID that's associated with the recommendation. </p>
-    pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.account_id(input.into());
         self
     }
     /// <p>The account ID that's associated with the recommendation. </p>
-    pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_account_id(input);
         self
     }
     /// <p>The specific service that you want recommendations for.</p>
-    pub fn service(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn service(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service(input.into());
         self
     }
     /// <p>The specific service that you want recommendations for.</p>
-    pub fn set_service(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_service(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service(input);
         self
     }
@@ -161,7 +164,7 @@ impl GetReservationPurchaseRecommendationFluentBuilder {
     /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT isn't supported. OR isn't supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p>
     /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR aren't supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p>
     /// </note>
-    pub fn set_filter(mut self, input: std::option::Option<crate::types::Expression>) -> Self {
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::Expression>) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }
@@ -173,7 +176,7 @@ impl GetReservationPurchaseRecommendationFluentBuilder {
     /// <p>The account scope that you want your recommendations for. Amazon Web Services calculates recommendations including the management account and member accounts if the value is set to <code>PAYER</code>. If the value is <code>LINKED</code>, recommendations are calculated for individual member accounts only.</p>
     pub fn set_account_scope(
         mut self,
-        input: std::option::Option<crate::types::AccountScope>,
+        input: ::std::option::Option<crate::types::AccountScope>,
     ) -> Self {
         self.inner = self.inner.set_account_scope(input);
         self
@@ -186,7 +189,7 @@ impl GetReservationPurchaseRecommendationFluentBuilder {
     /// <p>The number of previous days that you want Amazon Web Services to consider when it calculates your recommendations.</p>
     pub fn set_lookback_period_in_days(
         mut self,
-        input: std::option::Option<crate::types::LookbackPeriodInDays>,
+        input: ::std::option::Option<crate::types::LookbackPeriodInDays>,
     ) -> Self {
         self.inner = self.inner.set_lookback_period_in_days(input);
         self
@@ -199,7 +202,7 @@ impl GetReservationPurchaseRecommendationFluentBuilder {
     /// <p>The reservation term that you want recommendations for.</p>
     pub fn set_term_in_years(
         mut self,
-        input: std::option::Option<crate::types::TermInYears>,
+        input: ::std::option::Option<crate::types::TermInYears>,
     ) -> Self {
         self.inner = self.inner.set_term_in_years(input);
         self
@@ -212,7 +215,7 @@ impl GetReservationPurchaseRecommendationFluentBuilder {
     /// <p>The reservation purchase option that you want recommendations for.</p>
     pub fn set_payment_option(
         mut self,
-        input: std::option::Option<crate::types::PaymentOption>,
+        input: ::std::option::Option<crate::types::PaymentOption>,
     ) -> Self {
         self.inner = self.inner.set_payment_option(input);
         self
@@ -225,7 +228,7 @@ impl GetReservationPurchaseRecommendationFluentBuilder {
     /// <p>The hardware specifications for the service instances that you want recommendations for, such as standard or convertible Amazon EC2 instances.</p>
     pub fn set_service_specification(
         mut self,
-        input: std::option::Option<crate::types::ServiceSpecification>,
+        input: ::std::option::Option<crate::types::ServiceSpecification>,
     ) -> Self {
         self.inner = self.inner.set_service_specification(input);
         self
@@ -236,17 +239,23 @@ impl GetReservationPurchaseRecommendationFluentBuilder {
         self
     }
     /// <p>The number of recommendations that you want returned in a single response object.</p>
-    pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_page_size(input);
         self
     }
     /// <p>The pagination token that indicates the next set of results that you want to retrieve.</p>
-    pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn next_page_token(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.next_page_token(input.into());
         self
     }
     /// <p>The pagination token that indicates the next set of results that you want to retrieve.</p>
-    pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_page_token(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_next_page_token(input);
         self
     }

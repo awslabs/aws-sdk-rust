@@ -2,95 +2,96 @@
 
 /// <p>The details for container properties that are returned by <code>DescribeJobs</code> for jobs that use Amazon EKS.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EksContainerDetail {
     /// <p>The name of the container. If the name isn't specified, the default name "<code>Default</code>" is used. Each container in a pod must have a unique name.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Docker image used to start the container.</p>
     #[doc(hidden)]
-    pub image: std::option::Option<std::string::String>,
+    pub image: ::std::option::Option<::std::string::String>,
     /// <p>The image pull policy for the container. Supported values are <code>Always</code>, <code>IfNotPresent</code>, and <code>Never</code>. This parameter defaults to <code>Always</code> if the <code>:latest</code> tag is specified, <code>IfNotPresent</code> otherwise. For more information, see <a href="https://kubernetes.io/docs/concepts/containers/images/#updating-images">Updating images</a> in the <i>Kubernetes documentation</i>.</p>
     #[doc(hidden)]
-    pub image_pull_policy: std::option::Option<std::string::String>,
+    pub image_pull_policy: ::std::option::Option<::std::string::String>,
     /// <p>The entrypoint for the container. For more information, see <a href="https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/pod-v1/#entrypoint">Entrypoint</a> in the <i>Kubernetes documentation</i>.</p>
     #[doc(hidden)]
-    pub command: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub command: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An array of arguments to the entrypoint. If this isn't specified, the <code>CMD</code> of the container image is used. This corresponds to the <code>args</code> member in the <a href="https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/pod-v1/#entrypoint">Entrypoint</a> portion of the <a href="https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/pod-v1/">Pod</a> in Kubernetes. Environment variable references are expanded using the container's environment.</p>
     /// <p>If the referenced environment variable doesn't exist, the reference in the command isn't changed. For example, if the reference is to "<code>$(NAME1)</code>" and the <code>NAME1</code> environment variable doesn't exist, the command string will remain "<code>$(NAME1)</code>". <code>$$</code> is replaced with <code>$</code> and the resulting string isn't expanded. For example, <code>$$(VAR_NAME)</code> is passed as <code>$(VAR_NAME)</code> whether or not the <code>VAR_NAME</code> environment variable exists. For more information, see <a href="https://docs.docker.com/engine/reference/builder/#cmd">CMD</a> in the <i>Dockerfile reference</i> and <a href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define a command and arguments for a pod</a> in the <i>Kubernetes documentation</i>.</p>
     #[doc(hidden)]
-    pub args: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub args: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The environment variables to pass to a container.</p> <note>
     /// <p>Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for variables that Batch sets.</p>
     /// </note>
     #[doc(hidden)]
-    pub env: std::option::Option<std::vec::Vec<crate::types::EksContainerEnvironmentVariable>>,
+    pub env: ::std::option::Option<::std::vec::Vec<crate::types::EksContainerEnvironmentVariable>>,
     /// <p>The type and amount of resources to assign to a container. The supported resources include <code>memory</code>, <code>cpu</code>, and <code>nvidia.com/gpu</code>. For more information, see <a href="https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/">Resource management for pods and containers</a> in the <i>Kubernetes documentation</i>.</p>
     #[doc(hidden)]
-    pub resources: std::option::Option<crate::types::EksContainerResourceRequirements>,
+    pub resources: ::std::option::Option<crate::types::EksContainerResourceRequirements>,
     /// <p>The exit code for the job attempt. A non-zero exit code is considered failed.</p>
     #[doc(hidden)]
-    pub exit_code: std::option::Option<i32>,
+    pub exit_code: ::std::option::Option<i32>,
     /// <p>A short human-readable string to provide additional details for a running or stopped container. It can be up to 255 characters long.</p>
     #[doc(hidden)]
-    pub reason: std::option::Option<std::string::String>,
+    pub reason: ::std::option::Option<::std::string::String>,
     /// <p>The volume mounts for the container. Batch supports <code>emptyDir</code>, <code>hostPath</code>, and <code>secret</code> volume types. For more information about volumes and volume mounts in Kubernetes, see <a href="https://kubernetes.io/docs/concepts/storage/volumes/">Volumes</a> in the <i>Kubernetes documentation</i>.</p>
     #[doc(hidden)]
-    pub volume_mounts: std::option::Option<std::vec::Vec<crate::types::EksContainerVolumeMount>>,
+    pub volume_mounts:
+        ::std::option::Option<::std::vec::Vec<crate::types::EksContainerVolumeMount>>,
     /// <p>The security context for a job. For more information, see <a href="https://kubernetes.io/docs/tasks/configure-pod-container/security-context/">Configure a security context for a pod or container</a> in the <i>Kubernetes documentation</i>.</p>
     #[doc(hidden)]
-    pub security_context: std::option::Option<crate::types::EksContainerSecurityContext>,
+    pub security_context: ::std::option::Option<crate::types::EksContainerSecurityContext>,
 }
 impl EksContainerDetail {
     /// <p>The name of the container. If the name isn't specified, the default name "<code>Default</code>" is used. Each container in a pod must have a unique name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The Docker image used to start the container.</p>
-    pub fn image(&self) -> std::option::Option<&str> {
+    pub fn image(&self) -> ::std::option::Option<&str> {
         self.image.as_deref()
     }
     /// <p>The image pull policy for the container. Supported values are <code>Always</code>, <code>IfNotPresent</code>, and <code>Never</code>. This parameter defaults to <code>Always</code> if the <code>:latest</code> tag is specified, <code>IfNotPresent</code> otherwise. For more information, see <a href="https://kubernetes.io/docs/concepts/containers/images/#updating-images">Updating images</a> in the <i>Kubernetes documentation</i>.</p>
-    pub fn image_pull_policy(&self) -> std::option::Option<&str> {
+    pub fn image_pull_policy(&self) -> ::std::option::Option<&str> {
         self.image_pull_policy.as_deref()
     }
     /// <p>The entrypoint for the container. For more information, see <a href="https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/pod-v1/#entrypoint">Entrypoint</a> in the <i>Kubernetes documentation</i>.</p>
-    pub fn command(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn command(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.command.as_deref()
     }
     /// <p>An array of arguments to the entrypoint. If this isn't specified, the <code>CMD</code> of the container image is used. This corresponds to the <code>args</code> member in the <a href="https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/pod-v1/#entrypoint">Entrypoint</a> portion of the <a href="https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/pod-v1/">Pod</a> in Kubernetes. Environment variable references are expanded using the container's environment.</p>
     /// <p>If the referenced environment variable doesn't exist, the reference in the command isn't changed. For example, if the reference is to "<code>$(NAME1)</code>" and the <code>NAME1</code> environment variable doesn't exist, the command string will remain "<code>$(NAME1)</code>". <code>$$</code> is replaced with <code>$</code> and the resulting string isn't expanded. For example, <code>$$(VAR_NAME)</code> is passed as <code>$(VAR_NAME)</code> whether or not the <code>VAR_NAME</code> environment variable exists. For more information, see <a href="https://docs.docker.com/engine/reference/builder/#cmd">CMD</a> in the <i>Dockerfile reference</i> and <a href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define a command and arguments for a pod</a> in the <i>Kubernetes documentation</i>.</p>
-    pub fn args(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn args(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.args.as_deref()
     }
     /// <p>The environment variables to pass to a container.</p> <note>
     /// <p>Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention is reserved for variables that Batch sets.</p>
     /// </note>
-    pub fn env(&self) -> std::option::Option<&[crate::types::EksContainerEnvironmentVariable]> {
+    pub fn env(&self) -> ::std::option::Option<&[crate::types::EksContainerEnvironmentVariable]> {
         self.env.as_deref()
     }
     /// <p>The type and amount of resources to assign to a container. The supported resources include <code>memory</code>, <code>cpu</code>, and <code>nvidia.com/gpu</code>. For more information, see <a href="https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/">Resource management for pods and containers</a> in the <i>Kubernetes documentation</i>.</p>
     pub fn resources(
         &self,
-    ) -> std::option::Option<&crate::types::EksContainerResourceRequirements> {
+    ) -> ::std::option::Option<&crate::types::EksContainerResourceRequirements> {
         self.resources.as_ref()
     }
     /// <p>The exit code for the job attempt. A non-zero exit code is considered failed.</p>
-    pub fn exit_code(&self) -> std::option::Option<i32> {
+    pub fn exit_code(&self) -> ::std::option::Option<i32> {
         self.exit_code
     }
     /// <p>A short human-readable string to provide additional details for a running or stopped container. It can be up to 255 characters long.</p>
-    pub fn reason(&self) -> std::option::Option<&str> {
+    pub fn reason(&self) -> ::std::option::Option<&str> {
         self.reason.as_deref()
     }
     /// <p>The volume mounts for the container. Batch supports <code>emptyDir</code>, <code>hostPath</code>, and <code>secret</code> volume types. For more information about volumes and volume mounts in Kubernetes, see <a href="https://kubernetes.io/docs/concepts/storage/volumes/">Volumes</a> in the <i>Kubernetes documentation</i>.</p>
-    pub fn volume_mounts(&self) -> std::option::Option<&[crate::types::EksContainerVolumeMount]> {
+    pub fn volume_mounts(&self) -> ::std::option::Option<&[crate::types::EksContainerVolumeMount]> {
         self.volume_mounts.as_deref()
     }
     /// <p>The security context for a job. For more information, see <a href="https://kubernetes.io/docs/tasks/configure-pod-container/security-context/">Configure a security context for a pod or container</a> in the <i>Kubernetes documentation</i>.</p>
     pub fn security_context(
         &self,
-    ) -> std::option::Option<&crate::types::EksContainerSecurityContext> {
+    ) -> ::std::option::Option<&crate::types::EksContainerSecurityContext> {
         self.security_context.as_ref()
     }
 }
@@ -103,52 +104,57 @@ impl EksContainerDetail {
 
 /// A builder for [`EksContainerDetail`](crate::types::EksContainerDetail).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EksContainerDetailBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) image: std::option::Option<std::string::String>,
-    pub(crate) image_pull_policy: std::option::Option<std::string::String>,
-    pub(crate) command: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) args: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) image: ::std::option::Option<::std::string::String>,
+    pub(crate) image_pull_policy: ::std::option::Option<::std::string::String>,
+    pub(crate) command: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) args: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) env:
-        std::option::Option<std::vec::Vec<crate::types::EksContainerEnvironmentVariable>>,
-    pub(crate) resources: std::option::Option<crate::types::EksContainerResourceRequirements>,
-    pub(crate) exit_code: std::option::Option<i32>,
-    pub(crate) reason: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::EksContainerEnvironmentVariable>>,
+    pub(crate) resources: ::std::option::Option<crate::types::EksContainerResourceRequirements>,
+    pub(crate) exit_code: ::std::option::Option<i32>,
+    pub(crate) reason: ::std::option::Option<::std::string::String>,
     pub(crate) volume_mounts:
-        std::option::Option<std::vec::Vec<crate::types::EksContainerVolumeMount>>,
-    pub(crate) security_context: std::option::Option<crate::types::EksContainerSecurityContext>,
+        ::std::option::Option<::std::vec::Vec<crate::types::EksContainerVolumeMount>>,
+    pub(crate) security_context: ::std::option::Option<crate::types::EksContainerSecurityContext>,
 }
 impl EksContainerDetailBuilder {
     /// <p>The name of the container. If the name isn't specified, the default name "<code>Default</code>" is used. Each container in a pod must have a unique name.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the container. If the name isn't specified, the default name "<code>Default</code>" is used. Each container in a pod must have a unique name.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The Docker image used to start the container.</p>
-    pub fn image(mut self, input: impl Into<std::string::String>) -> Self {
-        self.image = Some(input.into());
+    pub fn image(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.image = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Docker image used to start the container.</p>
-    pub fn set_image(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_image(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image = input;
         self
     }
     /// <p>The image pull policy for the container. Supported values are <code>Always</code>, <code>IfNotPresent</code>, and <code>Never</code>. This parameter defaults to <code>Always</code> if the <code>:latest</code> tag is specified, <code>IfNotPresent</code> otherwise. For more information, see <a href="https://kubernetes.io/docs/concepts/containers/images/#updating-images">Updating images</a> in the <i>Kubernetes documentation</i>.</p>
-    pub fn image_pull_policy(mut self, input: impl Into<std::string::String>) -> Self {
-        self.image_pull_policy = Some(input.into());
+    pub fn image_pull_policy(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.image_pull_policy = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The image pull policy for the container. Supported values are <code>Always</code>, <code>IfNotPresent</code>, and <code>Never</code>. This parameter defaults to <code>Always</code> if the <code>:latest</code> tag is specified, <code>IfNotPresent</code> otherwise. For more information, see <a href="https://kubernetes.io/docs/concepts/containers/images/#updating-images">Updating images</a> in the <i>Kubernetes documentation</i>.</p>
     pub fn set_image_pull_policy(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.image_pull_policy = input;
         self
@@ -158,16 +164,16 @@ impl EksContainerDetailBuilder {
     /// To override the contents of this collection use [`set_command`](Self::set_command).
     ///
     /// <p>The entrypoint for the container. For more information, see <a href="https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/pod-v1/#entrypoint">Entrypoint</a> in the <i>Kubernetes documentation</i>.</p>
-    pub fn command(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn command(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.command.unwrap_or_default();
         v.push(input.into());
-        self.command = Some(v);
+        self.command = ::std::option::Option::Some(v);
         self
     }
     /// <p>The entrypoint for the container. For more information, see <a href="https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/pod-v1/#entrypoint">Entrypoint</a> in the <i>Kubernetes documentation</i>.</p>
     pub fn set_command(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.command = input;
         self
@@ -178,17 +184,17 @@ impl EksContainerDetailBuilder {
     ///
     /// <p>An array of arguments to the entrypoint. If this isn't specified, the <code>CMD</code> of the container image is used. This corresponds to the <code>args</code> member in the <a href="https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/pod-v1/#entrypoint">Entrypoint</a> portion of the <a href="https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/pod-v1/">Pod</a> in Kubernetes. Environment variable references are expanded using the container's environment.</p>
     /// <p>If the referenced environment variable doesn't exist, the reference in the command isn't changed. For example, if the reference is to "<code>$(NAME1)</code>" and the <code>NAME1</code> environment variable doesn't exist, the command string will remain "<code>$(NAME1)</code>". <code>$$</code> is replaced with <code>$</code> and the resulting string isn't expanded. For example, <code>$$(VAR_NAME)</code> is passed as <code>$(VAR_NAME)</code> whether or not the <code>VAR_NAME</code> environment variable exists. For more information, see <a href="https://docs.docker.com/engine/reference/builder/#cmd">CMD</a> in the <i>Dockerfile reference</i> and <a href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define a command and arguments for a pod</a> in the <i>Kubernetes documentation</i>.</p>
-    pub fn args(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn args(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.args.unwrap_or_default();
         v.push(input.into());
-        self.args = Some(v);
+        self.args = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of arguments to the entrypoint. If this isn't specified, the <code>CMD</code> of the container image is used. This corresponds to the <code>args</code> member in the <a href="https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/pod-v1/#entrypoint">Entrypoint</a> portion of the <a href="https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/pod-v1/">Pod</a> in Kubernetes. Environment variable references are expanded using the container's environment.</p>
     /// <p>If the referenced environment variable doesn't exist, the reference in the command isn't changed. For example, if the reference is to "<code>$(NAME1)</code>" and the <code>NAME1</code> environment variable doesn't exist, the command string will remain "<code>$(NAME1)</code>". <code>$$</code> is replaced with <code>$</code> and the resulting string isn't expanded. For example, <code>$$(VAR_NAME)</code> is passed as <code>$(VAR_NAME)</code> whether or not the <code>VAR_NAME</code> environment variable exists. For more information, see <a href="https://docs.docker.com/engine/reference/builder/#cmd">CMD</a> in the <i>Dockerfile reference</i> and <a href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define a command and arguments for a pod</a> in the <i>Kubernetes documentation</i>.</p>
     pub fn set_args(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.args = input;
         self
@@ -203,7 +209,7 @@ impl EksContainerDetailBuilder {
     pub fn env(mut self, input: crate::types::EksContainerEnvironmentVariable) -> Self {
         let mut v = self.env.unwrap_or_default();
         v.push(input);
-        self.env = Some(v);
+        self.env = ::std::option::Option::Some(v);
         self
     }
     /// <p>The environment variables to pass to a container.</p> <note>
@@ -211,41 +217,43 @@ impl EksContainerDetailBuilder {
     /// </note>
     pub fn set_env(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::EksContainerEnvironmentVariable>>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::EksContainerEnvironmentVariable>,
+        >,
     ) -> Self {
         self.env = input;
         self
     }
     /// <p>The type and amount of resources to assign to a container. The supported resources include <code>memory</code>, <code>cpu</code>, and <code>nvidia.com/gpu</code>. For more information, see <a href="https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/">Resource management for pods and containers</a> in the <i>Kubernetes documentation</i>.</p>
     pub fn resources(mut self, input: crate::types::EksContainerResourceRequirements) -> Self {
-        self.resources = Some(input);
+        self.resources = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type and amount of resources to assign to a container. The supported resources include <code>memory</code>, <code>cpu</code>, and <code>nvidia.com/gpu</code>. For more information, see <a href="https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/">Resource management for pods and containers</a> in the <i>Kubernetes documentation</i>.</p>
     pub fn set_resources(
         mut self,
-        input: std::option::Option<crate::types::EksContainerResourceRequirements>,
+        input: ::std::option::Option<crate::types::EksContainerResourceRequirements>,
     ) -> Self {
         self.resources = input;
         self
     }
     /// <p>The exit code for the job attempt. A non-zero exit code is considered failed.</p>
     pub fn exit_code(mut self, input: i32) -> Self {
-        self.exit_code = Some(input);
+        self.exit_code = ::std::option::Option::Some(input);
         self
     }
     /// <p>The exit code for the job attempt. A non-zero exit code is considered failed.</p>
-    pub fn set_exit_code(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_exit_code(mut self, input: ::std::option::Option<i32>) -> Self {
         self.exit_code = input;
         self
     }
     /// <p>A short human-readable string to provide additional details for a running or stopped container. It can be up to 255 characters long.</p>
-    pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
-        self.reason = Some(input.into());
+    pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A short human-readable string to provide additional details for a running or stopped container. It can be up to 255 characters long.</p>
-    pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reason = input;
         self
     }
@@ -257,26 +265,26 @@ impl EksContainerDetailBuilder {
     pub fn volume_mounts(mut self, input: crate::types::EksContainerVolumeMount) -> Self {
         let mut v = self.volume_mounts.unwrap_or_default();
         v.push(input);
-        self.volume_mounts = Some(v);
+        self.volume_mounts = ::std::option::Option::Some(v);
         self
     }
     /// <p>The volume mounts for the container. Batch supports <code>emptyDir</code>, <code>hostPath</code>, and <code>secret</code> volume types. For more information about volumes and volume mounts in Kubernetes, see <a href="https://kubernetes.io/docs/concepts/storage/volumes/">Volumes</a> in the <i>Kubernetes documentation</i>.</p>
     pub fn set_volume_mounts(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::EksContainerVolumeMount>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::EksContainerVolumeMount>>,
     ) -> Self {
         self.volume_mounts = input;
         self
     }
     /// <p>The security context for a job. For more information, see <a href="https://kubernetes.io/docs/tasks/configure-pod-container/security-context/">Configure a security context for a pod or container</a> in the <i>Kubernetes documentation</i>.</p>
     pub fn security_context(mut self, input: crate::types::EksContainerSecurityContext) -> Self {
-        self.security_context = Some(input);
+        self.security_context = ::std::option::Option::Some(input);
         self
     }
     /// <p>The security context for a job. For more information, see <a href="https://kubernetes.io/docs/tasks/configure-pod-container/security-context/">Configure a security context for a pod or container</a> in the <i>Kubernetes documentation</i>.</p>
     pub fn set_security_context(
         mut self,
-        input: std::option::Option<crate::types::EksContainerSecurityContext>,
+        input: ::std::option::Option<crate::types::EksContainerSecurityContext>,
     ) -> Self {
         self.security_context = input;
         self

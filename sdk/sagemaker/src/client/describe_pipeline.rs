@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribePipeline`](crate::operation::describe_pipeline::builders::DescribePipelineFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`pipeline_name(impl Into<String>)`](crate::operation::describe_pipeline::builders::DescribePipelineFluentBuilder::pipeline_name) / [`set_pipeline_name(Option<String>)`](crate::operation::describe_pipeline::builders::DescribePipelineFluentBuilder::set_pipeline_name): <p>The name of the pipeline to describe.</p>
+    ///   - [`pipeline_name(impl ::std::convert::Into<String>)`](crate::operation::describe_pipeline::builders::DescribePipelineFluentBuilder::pipeline_name) / [`set_pipeline_name(Option<String>)`](crate::operation::describe_pipeline::builders::DescribePipelineFluentBuilder::set_pipeline_name): <p>The name of the pipeline to describe.</p>
     /// - On success, responds with [`DescribePipelineOutput`](crate::operation::describe_pipeline::DescribePipelineOutput) with field(s):
     ///   - [`pipeline_arn(Option<String>)`](crate::operation::describe_pipeline::DescribePipelineOutput::pipeline_arn): <p>The Amazon Resource Name (ARN) of the pipeline.</p>
     ///   - [`pipeline_name(Option<String>)`](crate::operation::describe_pipeline::DescribePipelineOutput::pipeline_name): <p>The name of the pipeline.</p>

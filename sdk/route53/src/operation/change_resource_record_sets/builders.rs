@@ -30,29 +30,29 @@ pub use crate::operation::change_resource_record_sets::_change_resource_record_s
 /// <p>When you submit a <code>ChangeResourceRecordSets</code> request, Route 53 propagates your changes to all of the Route 53 authoritative DNS servers. While your changes are propagating, <code>GetChange</code> returns a status of <code>PENDING</code>. When propagation is complete, <code>GetChange</code> returns a status of <code>INSYNC</code>. Changes generally propagate to all Route 53 name servers within 60 seconds. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetChange.html">GetChange</a>.</p>
 /// <p> <b>Limits on ChangeResourceRecordSets Requests</b> </p>
 /// <p>For information about the limits on a <code>ChangeResourceRecordSets</code> request, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ChangeResourceRecordSetsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::change_resource_record_sets::builders::ChangeResourceRecordSetsInputBuilder,
 }
 impl ChangeResourceRecordSetsFluentBuilder {
     /// Creates a new `ChangeResourceRecordSets`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::change_resource_record_sets::ChangeResourceRecordSets,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::change_resource_record_sets::ChangeResourceRecordSetsError,
         >,
     > {
@@ -60,30 +60,33 @@ impl ChangeResourceRecordSetsFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::change_resource_record_sets::ChangeResourceRecordSetsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::change_resource_record_sets::ChangeResourceRecordSetsError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -96,21 +99,27 @@ impl ChangeResourceRecordSetsFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::change_resource_record_sets::ChangeResourceRecordSetsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::change_resource_record_sets::ChangeResourceRecordSetsError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The ID of the hosted zone that contains the resource record sets that you want to change.</p>
-    pub fn hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn hosted_zone_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.hosted_zone_id(input.into());
         self
     }
     /// <p>The ID of the hosted zone that contains the resource record sets that you want to change.</p>
-    pub fn set_hosted_zone_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_hosted_zone_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_hosted_zone_id(input);
         self
     }
@@ -122,7 +131,7 @@ impl ChangeResourceRecordSetsFluentBuilder {
     /// <p>A complex type that contains an optional comment and the <code>Changes</code> element.</p>
     pub fn set_change_batch(
         mut self,
-        input: std::option::Option<crate::types::ChangeBatch>,
+        input: ::std::option::Option<crate::types::ChangeBatch>,
     ) -> Self {
         self.inner = self.inner.set_change_batch(input);
         self

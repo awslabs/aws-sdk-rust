@@ -43,13 +43,13 @@
 /// Specify font outline color. Leave Outline color (OutlineColor) blank and set Style passthrough (StylePassthrough) to enabled to use the font outline color data from your input captions, if present. Within your job settings, all of your DVB-Sub settings must be identical.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum DvbSubtitleOutlineColor {
     #[allow(missing_docs)] // documentation missing in model
@@ -69,7 +69,7 @@ pub enum DvbSubtitleOutlineColor {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for DvbSubtitleOutlineColor {
+impl ::std::convert::From<&str> for DvbSubtitleOutlineColor {
     fn from(s: &str) -> Self {
         match s {
             "AUTO" => DvbSubtitleOutlineColor::Auto,
@@ -85,11 +85,11 @@ impl std::convert::From<&str> for DvbSubtitleOutlineColor {
         }
     }
 }
-impl std::str::FromStr for DvbSubtitleOutlineColor {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for DvbSubtitleOutlineColor {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DvbSubtitleOutlineColor::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(DvbSubtitleOutlineColor::from(s))
     }
 }
 impl DvbSubtitleOutlineColor {
@@ -111,7 +111,7 @@ impl DvbSubtitleOutlineColor {
         &["AUTO", "BLACK", "BLUE", "GREEN", "RED", "WHITE", "YELLOW"]
     }
 }
-impl AsRef<str> for DvbSubtitleOutlineColor {
+impl ::std::convert::AsRef<str> for DvbSubtitleOutlineColor {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

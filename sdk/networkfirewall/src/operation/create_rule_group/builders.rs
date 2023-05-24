@@ -7,29 +7,29 @@ pub use crate::operation::create_rule_group::_create_rule_group_input::CreateRul
 ///
 /// <p>Creates the specified stateless or stateful rule group, which includes the rules for network traffic inspection, a capacity setting, and tags. </p>
 /// <p>You provide your rule group specification in your request using either <code>RuleGroup</code> or <code>Rules</code>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateRuleGroupFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_rule_group::builders::CreateRuleGroupInputBuilder,
 }
 impl CreateRuleGroupFluentBuilder {
     /// Creates a new `CreateRuleGroup`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_rule_group::CreateRuleGroup,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_rule_group::CreateRuleGroupError,
         >,
     > {
@@ -37,30 +37,33 @@ impl CreateRuleGroupFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_rule_group::CreateRuleGroupOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_rule_group::CreateRuleGroupError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -73,21 +76,27 @@ impl CreateRuleGroupFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_rule_group::CreateRuleGroupOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_rule_group::CreateRuleGroupError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
-    pub fn rule_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn rule_group_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.rule_group_name(input.into());
         self
     }
     /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
-    pub fn set_rule_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_rule_group_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_rule_group_name(input);
         self
     }
@@ -101,7 +110,7 @@ impl CreateRuleGroupFluentBuilder {
     /// <p>An object that defines the rule group rules. </p> <note>
     /// <p>You must provide either this rule group setting or a <code>Rules</code> setting, but not both. </p>
     /// </note>
-    pub fn set_rule_group(mut self, input: std::option::Option<crate::types::RuleGroup>) -> Self {
+    pub fn set_rule_group(mut self, input: ::std::option::Option<crate::types::RuleGroup>) -> Self {
         self.inner = self.inner.set_rule_group(input);
         self
     }
@@ -109,7 +118,7 @@ impl CreateRuleGroupFluentBuilder {
     /// <p>You must provide either this rules setting or a populated <code>RuleGroup</code> setting, but not both. </p>
     /// </note>
     /// <p>You can provide your rule group specification in Suricata flat format through this setting when you create or update your rule group. The call response returns a <code>RuleGroup</code> object that Network Firewall has populated from your string. </p>
-    pub fn rules(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn rules(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.rules(input.into());
         self
     }
@@ -117,7 +126,7 @@ impl CreateRuleGroupFluentBuilder {
     /// <p>You must provide either this rules setting or a populated <code>RuleGroup</code> setting, but not both. </p>
     /// </note>
     /// <p>You can provide your rule group specification in Suricata flat format through this setting when you create or update your rule group. The call response returns a <code>RuleGroup</code> object that Network Firewall has populated from your string. </p>
-    pub fn set_rules(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_rules(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_rules(input);
         self
     }
@@ -127,17 +136,17 @@ impl CreateRuleGroupFluentBuilder {
         self
     }
     /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules. </p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::RuleGroupType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::RuleGroupType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }
     /// <p>A description of the rule group. </p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>A description of the rule group. </p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
@@ -175,7 +184,7 @@ impl CreateRuleGroupFluentBuilder {
     /// <p>A rule with no criteria specified in any of its match settings has a capacity requirement of 1. A rule with protocol setting ["UDP","TCP"], source setting ["10.0.0.0/24","10.0.0.1/24","10.0.0.2/24"], and a single specification or no specification for each of the other match settings has a capacity requirement of 6. </p>
     /// <p> <b>Capacity for a stateful rule group</b> </p>
     /// <p>For a stateful rule group, the minimum capacity required is the number of individual rules that you expect to have in the rule group. </p>
-    pub fn set_capacity(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_capacity(input);
         self
     }
@@ -191,7 +200,7 @@ impl CreateRuleGroupFluentBuilder {
     /// <p>The key:value pairs to associate with the resource.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
@@ -206,7 +215,7 @@ impl CreateRuleGroupFluentBuilder {
     /// <p>Indicates whether you want Network Firewall to just check the validity of the request, rather than run the request. </p>
     /// <p>If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully, but doesn't actually make the requested changes. The call returns the value that the request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't make additions or changes to your resources. This option allows you to make sure that you have the required permissions to run the request and that your request parameters are valid. </p>
     /// <p>If set to <code>FALSE</code>, Network Firewall makes the requested changes to your resources. </p>
-    pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
     }
@@ -221,7 +230,7 @@ impl CreateRuleGroupFluentBuilder {
     /// <p>A complex type that contains settings for encryption of your rule group resources.</p>
     pub fn set_encryption_configuration(
         mut self,
-        input: std::option::Option<crate::types::EncryptionConfiguration>,
+        input: ::std::option::Option<crate::types::EncryptionConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_encryption_configuration(input);
         self
@@ -234,7 +243,7 @@ impl CreateRuleGroupFluentBuilder {
     /// <p>A complex type that contains metadata about the rule group that your own rule group is copied from. You can use the metadata to keep track of updates made to the originating rule group.</p>
     pub fn set_source_metadata(
         mut self,
-        input: std::option::Option<crate::types::SourceMetadata>,
+        input: ::std::option::Option<crate::types::SourceMetadata>,
     ) -> Self {
         self.inner = self.inner.set_source_metadata(input);
         self

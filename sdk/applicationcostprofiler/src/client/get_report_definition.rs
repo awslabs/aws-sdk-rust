@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetReportDefinition`](crate::operation::get_report_definition::builders::GetReportDefinitionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`report_id(impl Into<String>)`](crate::operation::get_report_definition::builders::GetReportDefinitionFluentBuilder::report_id) / [`set_report_id(Option<String>)`](crate::operation::get_report_definition::builders::GetReportDefinitionFluentBuilder::set_report_id): <p>ID of the report to retrieve.</p>
+    ///   - [`report_id(impl ::std::convert::Into<String>)`](crate::operation::get_report_definition::builders::GetReportDefinitionFluentBuilder::report_id) / [`set_report_id(Option<String>)`](crate::operation::get_report_definition::builders::GetReportDefinitionFluentBuilder::set_report_id): <p>ID of the report to retrieve.</p>
     /// - On success, responds with [`GetReportDefinitionOutput`](crate::operation::get_report_definition::GetReportDefinitionOutput) with field(s):
     ///   - [`report_id(Option<String>)`](crate::operation::get_report_definition::GetReportDefinitionOutput::report_id): <p>ID of the report retrieved.</p>
     ///   - [`report_description(Option<String>)`](crate::operation::get_report_definition::GetReportDefinitionOutput::report_description): <p>Description of the report.</p>

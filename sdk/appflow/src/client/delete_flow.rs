@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteFlow`](crate::operation::delete_flow::builders::DeleteFlowFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`flow_name(impl Into<String>)`](crate::operation::delete_flow::builders::DeleteFlowFluentBuilder::flow_name) / [`set_flow_name(Option<String>)`](crate::operation::delete_flow::builders::DeleteFlowFluentBuilder::set_flow_name): <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
+    ///   - [`flow_name(impl ::std::convert::Into<String>)`](crate::operation::delete_flow::builders::DeleteFlowFluentBuilder::flow_name) / [`set_flow_name(Option<String>)`](crate::operation::delete_flow::builders::DeleteFlowFluentBuilder::set_flow_name): <p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>
     ///   - [`force_delete(bool)`](crate::operation::delete_flow::builders::DeleteFlowFluentBuilder::force_delete) / [`set_force_delete(Option<bool>)`](crate::operation::delete_flow::builders::DeleteFlowFluentBuilder::set_force_delete): <p> Indicates whether Amazon AppFlow should delete the flow, even if it is currently in use. </p>
     /// - On success, responds with [`DeleteFlowOutput`](crate::operation::delete_flow::DeleteFlowOutput)
     /// - On failure, responds with [`SdkError<DeleteFlowError>`](crate::operation::delete_flow::DeleteFlowError)

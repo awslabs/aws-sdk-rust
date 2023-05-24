@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteBackup`](crate::operation::delete_backup::builders::DeleteBackupFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`backup_id(impl Into<String>)`](crate::operation::delete_backup::builders::DeleteBackupFluentBuilder::backup_id) / [`set_backup_id(Option<String>)`](crate::operation::delete_backup::builders::DeleteBackupFluentBuilder::set_backup_id): <p>The ID of the backup to be deleted. To find the ID of a backup, use the <code>DescribeBackups</code> operation.</p>
+    ///   - [`backup_id(impl ::std::convert::Into<String>)`](crate::operation::delete_backup::builders::DeleteBackupFluentBuilder::backup_id) / [`set_backup_id(Option<String>)`](crate::operation::delete_backup::builders::DeleteBackupFluentBuilder::set_backup_id): <p>The ID of the backup to be deleted. To find the ID of a backup, use the <code>DescribeBackups</code> operation.</p>
     /// - On success, responds with [`DeleteBackupOutput`](crate::operation::delete_backup::DeleteBackupOutput) with field(s):
     ///   - [`backup(Option<Backup>)`](crate::operation::delete_backup::DeleteBackupOutput::backup): <p>Information on the <code>Backup</code> object deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteBackupError>`](crate::operation::delete_backup::DeleteBackupError)

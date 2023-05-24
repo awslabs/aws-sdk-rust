@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum EnablementTypeFilter {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum EnablementTypeFilter {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for EnablementTypeFilter {
+impl ::std::convert::From<&str> for EnablementTypeFilter {
     fn from(s: &str) -> Self {
         match s {
             "ENABLED" => EnablementTypeFilter::Enabled,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for EnablementTypeFilter {
         }
     }
 }
-impl std::str::FromStr for EnablementTypeFilter {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for EnablementTypeFilter {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EnablementTypeFilter::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(EnablementTypeFilter::from(s))
     }
 }
 impl EnablementTypeFilter {
@@ -86,7 +86,7 @@ impl EnablementTypeFilter {
         &["ENABLED", "PENDING"]
     }
 }
-impl AsRef<str> for EnablementTypeFilter {
+impl ::std::convert::AsRef<str> for EnablementTypeFilter {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

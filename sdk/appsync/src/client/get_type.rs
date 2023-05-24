@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetType`](crate::operation::get_type::builders::GetTypeFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`api_id(impl Into<String>)`](crate::operation::get_type::builders::GetTypeFluentBuilder::api_id) / [`set_api_id(Option<String>)`](crate::operation::get_type::builders::GetTypeFluentBuilder::set_api_id): <p>The API ID.</p>
-    ///   - [`type_name(impl Into<String>)`](crate::operation::get_type::builders::GetTypeFluentBuilder::type_name) / [`set_type_name(Option<String>)`](crate::operation::get_type::builders::GetTypeFluentBuilder::set_type_name): <p>The type name.</p>
+    ///   - [`api_id(impl ::std::convert::Into<String>)`](crate::operation::get_type::builders::GetTypeFluentBuilder::api_id) / [`set_api_id(Option<String>)`](crate::operation::get_type::builders::GetTypeFluentBuilder::set_api_id): <p>The API ID.</p>
+    ///   - [`type_name(impl ::std::convert::Into<String>)`](crate::operation::get_type::builders::GetTypeFluentBuilder::type_name) / [`set_type_name(Option<String>)`](crate::operation::get_type::builders::GetTypeFluentBuilder::set_type_name): <p>The type name.</p>
     ///   - [`format(TypeDefinitionFormat)`](crate::operation::get_type::builders::GetTypeFluentBuilder::format) / [`set_format(Option<TypeDefinitionFormat>)`](crate::operation::get_type::builders::GetTypeFluentBuilder::set_format): <p>The type format: SDL or JSON.</p>
     /// - On success, responds with [`GetTypeOutput`](crate::operation::get_type::GetTypeOutput) with field(s):
     ///   - [`r#type(Option<Type>)`](crate::operation::get_type::GetTypeOutput::type): <p>The <code>Type</code> object.</p>

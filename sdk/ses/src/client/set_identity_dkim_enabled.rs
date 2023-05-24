@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`SetIdentityDkimEnabled`](crate::operation::set_identity_dkim_enabled::builders::SetIdentityDkimEnabledFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`identity(impl Into<String>)`](crate::operation::set_identity_dkim_enabled::builders::SetIdentityDkimEnabledFluentBuilder::identity) / [`set_identity(Option<String>)`](crate::operation::set_identity_dkim_enabled::builders::SetIdentityDkimEnabledFluentBuilder::set_identity): <p>The identity for which DKIM signing should be enabled or disabled.</p>
+    ///   - [`identity(impl ::std::convert::Into<String>)`](crate::operation::set_identity_dkim_enabled::builders::SetIdentityDkimEnabledFluentBuilder::identity) / [`set_identity(Option<String>)`](crate::operation::set_identity_dkim_enabled::builders::SetIdentityDkimEnabledFluentBuilder::set_identity): <p>The identity for which DKIM signing should be enabled or disabled.</p>
     ///   - [`dkim_enabled(bool)`](crate::operation::set_identity_dkim_enabled::builders::SetIdentityDkimEnabledFluentBuilder::dkim_enabled) / [`set_dkim_enabled(bool)`](crate::operation::set_identity_dkim_enabled::builders::SetIdentityDkimEnabledFluentBuilder::set_dkim_enabled): <p>Sets whether DKIM signing is enabled for an identity. Set to <code>true</code> to enable DKIM signing for this identity; <code>false</code> to disable it. </p>
     /// - On success, responds with [`SetIdentityDkimEnabledOutput`](crate::operation::set_identity_dkim_enabled::SetIdentityDkimEnabledOutput)
     /// - On failure, responds with [`SdkError<SetIdentityDkimEnabledError>`](crate::operation::set_identity_dkim_enabled::SetIdentityDkimEnabledError)

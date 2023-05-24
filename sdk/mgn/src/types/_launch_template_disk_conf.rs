@@ -2,11 +2,11 @@
 
 /// <p>Launch template disk configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LaunchTemplateDiskConf {
     /// <p>Launch template disk volume type configuration.</p>
     #[doc(hidden)]
-    pub volume_type: std::option::Option<crate::types::VolumeType>,
+    pub volume_type: ::std::option::Option<crate::types::VolumeType>,
     /// <p>Launch template disk iops configuration.</p>
     #[doc(hidden)]
     pub iops: i64,
@@ -16,7 +16,7 @@ pub struct LaunchTemplateDiskConf {
 }
 impl LaunchTemplateDiskConf {
     /// <p>Launch template disk volume type configuration.</p>
-    pub fn volume_type(&self) -> std::option::Option<&crate::types::VolumeType> {
+    pub fn volume_type(&self) -> ::std::option::Option<&crate::types::VolumeType> {
         self.volume_type.as_ref()
     }
     /// <p>Launch template disk iops configuration.</p>
@@ -37,40 +37,45 @@ impl LaunchTemplateDiskConf {
 
 /// A builder for [`LaunchTemplateDiskConf`](crate::types::LaunchTemplateDiskConf).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LaunchTemplateDiskConfBuilder {
-    pub(crate) volume_type: std::option::Option<crate::types::VolumeType>,
-    pub(crate) iops: std::option::Option<i64>,
-    pub(crate) throughput: std::option::Option<i64>,
+    pub(crate) volume_type: ::std::option::Option<crate::types::VolumeType>,
+    pub(crate) iops: ::std::option::Option<i64>,
+    pub(crate) throughput: ::std::option::Option<i64>,
 }
 impl LaunchTemplateDiskConfBuilder {
     /// <p>Launch template disk volume type configuration.</p>
     pub fn volume_type(mut self, input: crate::types::VolumeType) -> Self {
-        self.volume_type = Some(input);
+        self.volume_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Launch template disk volume type configuration.</p>
-    pub fn set_volume_type(mut self, input: std::option::Option<crate::types::VolumeType>) -> Self {
+    pub fn set_volume_type(
+        mut self,
+        input: ::std::option::Option<crate::types::VolumeType>,
+    ) -> Self {
         self.volume_type = input;
         self
     }
     /// <p>Launch template disk iops configuration.</p>
     pub fn iops(mut self, input: i64) -> Self {
-        self.iops = Some(input);
+        self.iops = ::std::option::Option::Some(input);
         self
     }
     /// <p>Launch template disk iops configuration.</p>
-    pub fn set_iops(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_iops(mut self, input: ::std::option::Option<i64>) -> Self {
         self.iops = input;
         self
     }
     /// <p>Launch template disk throughput configuration.</p>
     pub fn throughput(mut self, input: i64) -> Self {
-        self.throughput = Some(input);
+        self.throughput = ::std::option::Option::Some(input);
         self
     }
     /// <p>Launch template disk throughput configuration.</p>
-    pub fn set_throughput(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_throughput(mut self, input: ::std::option::Option<i64>) -> Self {
         self.throughput = input;
         self
     }

@@ -9,30 +9,30 @@ pub use crate::operation::describe_interconnect_loa::_describe_interconnect_loa_
 /// <p>Gets the LOA-CFA for the specified interconnect.</p>
 /// <p>The Letter of Authorization - Connecting Facility Assignment (LOA-CFA) is a document that is used when establishing your cross connect to Amazon Web Services at the colocation facility. For more information, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/Colocation.html">Requesting Cross Connects at Direct Connect Locations</a> in the <i>Direct Connect User Guide</i>.</p>
 #[deprecated]
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeInterconnectLoaFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner:
         crate::operation::describe_interconnect_loa::builders::DescribeInterconnectLoaInputBuilder,
 }
 impl DescribeInterconnectLoaFluentBuilder {
     /// Creates a new `DescribeInterconnectLoa`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::describe_interconnect_loa::DescribeInterconnectLoa,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::describe_interconnect_loa::DescribeInterconnectLoaError,
         >,
     > {
@@ -40,30 +40,33 @@ impl DescribeInterconnectLoaFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::describe_interconnect_loa::DescribeInterconnectLoaOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::describe_interconnect_loa::DescribeInterconnectLoaError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -76,31 +79,43 @@ impl DescribeInterconnectLoaFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::describe_interconnect_loa::DescribeInterconnectLoaOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::describe_interconnect_loa::DescribeInterconnectLoaError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The ID of the interconnect.</p>
-    pub fn interconnect_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn interconnect_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.interconnect_id(input.into());
         self
     }
     /// <p>The ID of the interconnect.</p>
-    pub fn set_interconnect_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_interconnect_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_interconnect_id(input);
         self
     }
     /// <p>The name of the service provider who establishes connectivity on your behalf. If you supply this parameter, the LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p>
-    pub fn provider_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn provider_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.provider_name(input.into());
         self
     }
     /// <p>The name of the service provider who establishes connectivity on your behalf. If you supply this parameter, the LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p>
-    pub fn set_provider_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_provider_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_provider_name(input);
         self
     }
@@ -112,7 +127,7 @@ impl DescribeInterconnectLoaFluentBuilder {
     /// <p>The standard media type for the LOA-CFA document. The only supported value is application/pdf.</p>
     pub fn set_loa_content_type(
         mut self,
-        input: std::option::Option<crate::types::LoaContentType>,
+        input: ::std::option::Option<crate::types::LoaContentType>,
     ) -> Self {
         self.inner = self.inner.set_loa_content_type(input);
         self

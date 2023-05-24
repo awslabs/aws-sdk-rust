@@ -2,22 +2,22 @@
 
 /// <p>Describes a resource relationship.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Relationship {
     /// <p>The ARN of the resource.</p>
     #[doc(hidden)]
-    pub from: std::option::Option<std::string::String>,
+    pub from: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the resource.</p>
     #[doc(hidden)]
-    pub to: std::option::Option<std::string::String>,
+    pub to: ::std::option::Option<::std::string::String>,
 }
 impl Relationship {
     /// <p>The ARN of the resource.</p>
-    pub fn from(&self) -> std::option::Option<&str> {
+    pub fn from(&self) -> ::std::option::Option<&str> {
         self.from.as_deref()
     }
     /// <p>The ARN of the resource.</p>
-    pub fn to(&self) -> std::option::Option<&str> {
+    pub fn to(&self) -> ::std::option::Option<&str> {
         self.to.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl Relationship {
 
 /// A builder for [`Relationship`](crate::types::Relationship).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RelationshipBuilder {
-    pub(crate) from: std::option::Option<std::string::String>,
-    pub(crate) to: std::option::Option<std::string::String>,
+    pub(crate) from: ::std::option::Option<::std::string::String>,
+    pub(crate) to: ::std::option::Option<::std::string::String>,
 }
 impl RelationshipBuilder {
     /// <p>The ARN of the resource.</p>
-    pub fn from(mut self, input: impl Into<std::string::String>) -> Self {
-        self.from = Some(input.into());
+    pub fn from(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.from = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the resource.</p>
-    pub fn set_from(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_from(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.from = input;
         self
     }
     /// <p>The ARN of the resource.</p>
-    pub fn to(mut self, input: impl Into<std::string::String>) -> Self {
-        self.to = Some(input.into());
+    pub fn to(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.to = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the resource.</p>
-    pub fn set_to(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_to(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.to = input;
         self
     }

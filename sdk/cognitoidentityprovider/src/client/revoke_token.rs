@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`RevokeToken`](crate::operation::revoke_token::builders::RevokeTokenFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`token(impl Into<String>)`](crate::operation::revoke_token::builders::RevokeTokenFluentBuilder::token) / [`set_token(Option<String>)`](crate::operation::revoke_token::builders::RevokeTokenFluentBuilder::set_token): <p>The refresh token that you want to revoke.</p>
-    ///   - [`client_id(impl Into<String>)`](crate::operation::revoke_token::builders::RevokeTokenFluentBuilder::client_id) / [`set_client_id(Option<String>)`](crate::operation::revoke_token::builders::RevokeTokenFluentBuilder::set_client_id): <p>The client ID for the token that you want to revoke.</p>
-    ///   - [`client_secret(impl Into<String>)`](crate::operation::revoke_token::builders::RevokeTokenFluentBuilder::client_secret) / [`set_client_secret(Option<String>)`](crate::operation::revoke_token::builders::RevokeTokenFluentBuilder::set_client_secret): <p>The secret for the client ID. This is required only if the client ID has a secret.</p>
+    ///   - [`token(impl ::std::convert::Into<String>)`](crate::operation::revoke_token::builders::RevokeTokenFluentBuilder::token) / [`set_token(Option<String>)`](crate::operation::revoke_token::builders::RevokeTokenFluentBuilder::set_token): <p>The refresh token that you want to revoke.</p>
+    ///   - [`client_id(impl ::std::convert::Into<String>)`](crate::operation::revoke_token::builders::RevokeTokenFluentBuilder::client_id) / [`set_client_id(Option<String>)`](crate::operation::revoke_token::builders::RevokeTokenFluentBuilder::set_client_id): <p>The client ID for the token that you want to revoke.</p>
+    ///   - [`client_secret(impl ::std::convert::Into<String>)`](crate::operation::revoke_token::builders::RevokeTokenFluentBuilder::client_secret) / [`set_client_secret(Option<String>)`](crate::operation::revoke_token::builders::RevokeTokenFluentBuilder::set_client_secret): <p>The secret for the client ID. This is required only if the client ID has a secret.</p>
     /// - On success, responds with [`RevokeTokenOutput`](crate::operation::revoke_token::RevokeTokenOutput)
     /// - On failure, responds with [`SdkError<RevokeTokenError>`](crate::operation::revoke_token::RevokeTokenError)
     pub fn revoke_token(

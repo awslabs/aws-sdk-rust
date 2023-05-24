@@ -2,27 +2,27 @@
 
 /// <p>Represents the output of a <code>ListApplicationRevisions</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListApplicationRevisionsOutput {
     /// <p>A list of locations that contain the matching revisions.</p>
     #[doc(hidden)]
-    pub revisions: std::option::Option<std::vec::Vec<crate::types::RevisionLocation>>,
+    pub revisions: ::std::option::Option<::std::vec::Vec<crate::types::RevisionLocation>>,
     /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list application revisions call to return the next set of application revisions in the list.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListApplicationRevisionsOutput {
     /// <p>A list of locations that contain the matching revisions.</p>
-    pub fn revisions(&self) -> std::option::Option<&[crate::types::RevisionLocation]> {
+    pub fn revisions(&self) -> ::std::option::Option<&[crate::types::RevisionLocation]> {
         self.revisions.as_deref()
     }
     /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list application revisions call to return the next set of application revisions in the list.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListApplicationRevisionsOutput {
+impl ::aws_http::request_id::RequestId for ListApplicationRevisionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -38,10 +38,12 @@ impl ListApplicationRevisionsOutput {
 
 /// A builder for [`ListApplicationRevisionsOutput`](crate::operation::list_application_revisions::ListApplicationRevisionsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListApplicationRevisionsOutputBuilder {
-    pub(crate) revisions: std::option::Option<std::vec::Vec<crate::types::RevisionLocation>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) revisions: ::std::option::Option<::std::vec::Vec<crate::types::RevisionLocation>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListApplicationRevisionsOutputBuilder {
@@ -53,24 +55,24 @@ impl ListApplicationRevisionsOutputBuilder {
     pub fn revisions(mut self, input: crate::types::RevisionLocation) -> Self {
         let mut v = self.revisions.unwrap_or_default();
         v.push(input);
-        self.revisions = Some(v);
+        self.revisions = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of locations that contain the matching revisions.</p>
     pub fn set_revisions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RevisionLocation>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::RevisionLocation>>,
     ) -> Self {
         self.revisions = input;
         self
     }
     /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list application revisions call to return the next set of application revisions in the list.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list application revisions call to return the next set of application revisions in the list.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

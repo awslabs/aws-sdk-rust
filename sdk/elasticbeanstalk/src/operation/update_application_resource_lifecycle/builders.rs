@@ -6,47 +6,50 @@ pub use crate::operation::update_application_resource_lifecycle::_update_applica
 /// Fluent builder constructing a request to `UpdateApplicationResourceLifecycle`.
 ///
 /// <p>Modifies lifecycle settings for an application.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateApplicationResourceLifecycleFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::update_application_resource_lifecycle::builders::UpdateApplicationResourceLifecycleInputBuilder,
 }
 impl UpdateApplicationResourceLifecycleFluentBuilder {
     /// Creates a new `UpdateApplicationResourceLifecycle`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_application_resource_lifecycle::UpdateApplicationResourceLifecycle, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::update_application_resource_lifecycle::UpdateApplicationResourceLifecycleError>
+                    pub async fn customize(self) -> ::std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::update_application_resource_lifecycle::UpdateApplicationResourceLifecycle, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                        ::aws_smithy_http::result::SdkError<crate::operation::update_application_resource_lifecycle::UpdateApplicationResourceLifecycleError>
     >{
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::update_application_resource_lifecycle::UpdateApplicationResourceLifecycleOutput, aws_smithy_http::result::SdkError<crate::operation::update_application_resource_lifecycle::UpdateApplicationResourceLifecycleError>>
+                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_application_resource_lifecycle::UpdateApplicationResourceLifecycleOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_application_resource_lifecycle::UpdateApplicationResourceLifecycleError>>
                      {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -57,17 +60,23 @@ impl UpdateApplicationResourceLifecycleFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> std::result::Result<crate::operation::update_application_resource_lifecycle::UpdateApplicationResourceLifecycleOutput, aws_smithy_http::result::SdkError<crate::operation::update_application_resource_lifecycle::UpdateApplicationResourceLifecycleError>>
+                        pub async fn send(self) -> ::std::result::Result<crate::operation::update_application_resource_lifecycle::UpdateApplicationResourceLifecycleOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_application_resource_lifecycle::UpdateApplicationResourceLifecycleError>>
                          {
         self.send_middleware().await
     }
     /// <p>The name of the application.</p>
-    pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn application_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.application_name(input.into());
         self
     }
     /// <p>The name of the application.</p>
-    pub fn set_application_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_application_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_application_name(input);
         self
     }
@@ -82,7 +91,7 @@ impl UpdateApplicationResourceLifecycleFluentBuilder {
     /// <p>The lifecycle configuration.</p>
     pub fn set_resource_lifecycle_config(
         mut self,
-        input: std::option::Option<crate::types::ApplicationResourceLifecycleConfig>,
+        input: ::std::option::Option<crate::types::ApplicationResourceLifecycleConfig>,
     ) -> Self {
         self.inner = self.inner.set_resource_lifecycle_config(input);
         self

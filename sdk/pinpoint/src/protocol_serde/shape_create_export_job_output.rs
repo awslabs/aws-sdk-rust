@@ -2,7 +2,7 @@
 pub(crate) fn de_export_job_response_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::types::ExportJobResponse>,
+    ::std::option::Option<crate::types::ExportJobResponse>,
     crate::operation::create_export_job::CreateExportJobError,
 > {
     (!body.is_empty())

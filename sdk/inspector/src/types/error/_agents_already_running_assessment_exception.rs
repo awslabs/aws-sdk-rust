@@ -2,66 +2,66 @@
 
 /// <p>You started an assessment run, but one of the instances is already participating in another assessment run.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AgentsAlreadyRunningAssessmentException {
     /// <p>Details of the exception error.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
     /// <p></p>
     #[doc(hidden)]
-    pub agents: std::option::Option<std::vec::Vec<crate::types::AgentAlreadyRunningAssessment>>,
+    pub agents: ::std::option::Option<::std::vec::Vec<crate::types::AgentAlreadyRunningAssessment>>,
     /// <p></p>
     #[doc(hidden)]
-    pub agents_truncated: std::option::Option<bool>,
+    pub agents_truncated: ::std::option::Option<bool>,
     /// <p>You can immediately retry your request.</p>
     #[doc(hidden)]
-    pub can_retry: std::option::Option<bool>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
+    pub can_retry: ::std::option::Option<bool>,
+    pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl AgentsAlreadyRunningAssessmentException {
     /// <p></p>
-    pub fn agents(&self) -> std::option::Option<&[crate::types::AgentAlreadyRunningAssessment]> {
+    pub fn agents(&self) -> ::std::option::Option<&[crate::types::AgentAlreadyRunningAssessment]> {
         self.agents.as_deref()
     }
     /// <p></p>
-    pub fn agents_truncated(&self) -> std::option::Option<bool> {
+    pub fn agents_truncated(&self) -> ::std::option::Option<bool> {
         self.agents_truncated
     }
     /// <p>You can immediately retry your request.</p>
-    pub fn can_retry(&self) -> std::option::Option<bool> {
+    pub fn can_retry(&self) -> ::std::option::Option<bool> {
         self.can_retry
     }
 }
 impl AgentsAlreadyRunningAssessmentException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for AgentsAlreadyRunningAssessmentException {
+impl ::std::fmt::Display for AgentsAlreadyRunningAssessmentException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "AgentsAlreadyRunningAssessmentException")?;
-        if let Some(inner_1) = &self.message {
+        ::std::write!(f, "AgentsAlreadyRunningAssessmentException")?;
+        if let ::std::option::Option::Some(inner_1) = &self.message {
             {
-                write!(f, ": {}", inner_1)?;
+                ::std::write!(f, ": {}", inner_1)?;
             }
         }
         Ok(())
     }
 }
-impl std::error::Error for AgentsAlreadyRunningAssessmentException {}
-impl aws_http::request_id::RequestId
+impl ::std::error::Error for AgentsAlreadyRunningAssessmentException {}
+impl ::aws_http::request_id::RequestId
     for crate::types::error::AgentsAlreadyRunningAssessmentException
 {
     fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata
     for AgentsAlreadyRunningAssessmentException
 {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
@@ -75,23 +75,25 @@ impl AgentsAlreadyRunningAssessmentException {
 
 /// A builder for [`AgentsAlreadyRunningAssessmentException`](crate::types::error::AgentsAlreadyRunningAssessmentException).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AgentsAlreadyRunningAssessmentExceptionBuilder {
-    pub(crate) message: std::option::Option<std::string::String>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
     pub(crate) agents:
-        std::option::Option<std::vec::Vec<crate::types::AgentAlreadyRunningAssessment>>,
-    pub(crate) agents_truncated: std::option::Option<bool>,
-    pub(crate) can_retry: std::option::Option<bool>,
-    meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+        ::std::option::Option<::std::vec::Vec<crate::types::AgentAlreadyRunningAssessment>>,
+    pub(crate) agents_truncated: ::std::option::Option<bool>,
+    pub(crate) can_retry: ::std::option::Option<bool>,
+    meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl AgentsAlreadyRunningAssessmentExceptionBuilder {
     /// <p>Details of the exception error.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Details of the exception error.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
@@ -103,39 +105,39 @@ impl AgentsAlreadyRunningAssessmentExceptionBuilder {
     pub fn agents(mut self, input: crate::types::AgentAlreadyRunningAssessment) -> Self {
         let mut v = self.agents.unwrap_or_default();
         v.push(input);
-        self.agents = Some(v);
+        self.agents = ::std::option::Option::Some(v);
         self
     }
     /// <p></p>
     pub fn set_agents(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AgentAlreadyRunningAssessment>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AgentAlreadyRunningAssessment>>,
     ) -> Self {
         self.agents = input;
         self
     }
     /// <p></p>
     pub fn agents_truncated(mut self, input: bool) -> Self {
-        self.agents_truncated = Some(input);
+        self.agents_truncated = ::std::option::Option::Some(input);
         self
     }
     /// <p></p>
-    pub fn set_agents_truncated(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_agents_truncated(mut self, input: ::std::option::Option<bool>) -> Self {
         self.agents_truncated = input;
         self
     }
     /// <p>You can immediately retry your request.</p>
     pub fn can_retry(mut self, input: bool) -> Self {
-        self.can_retry = Some(input);
+        self.can_retry = ::std::option::Option::Some(input);
         self
     }
     /// <p>You can immediately retry your request.</p>
-    pub fn set_can_retry(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_can_retry(mut self, input: ::std::option::Option<bool>) -> Self {
         self.can_retry = input;
         self
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
         self.meta = Some(meta);
         self
     }
@@ -143,7 +145,7 @@ impl AgentsAlreadyRunningAssessmentExceptionBuilder {
     /// Sets error metadata
     pub fn set_meta(
         &mut self,
-        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
     ) -> &mut Self {
         self.meta = meta;
         self

@@ -2,17 +2,17 @@
 
 /// <p>An occurrence of sensitive data in an Adobe Portable Document Format (PDF) file.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Page {
     /// <p>The page number of the page that contains the sensitive data.</p>
     #[doc(hidden)]
     pub page_number: i64,
     /// <p>An occurrence of sensitive data detected in a non-binary text file or a Microsoft Word file. Non-binary text files include files such as HTML, XML, JSON, and TXT files.</p>
     #[doc(hidden)]
-    pub line_range: std::option::Option<crate::types::Range>,
+    pub line_range: ::std::option::Option<crate::types::Range>,
     /// <p>An occurrence of sensitive data detected in a binary text file.</p>
     #[doc(hidden)]
-    pub offset_range: std::option::Option<crate::types::Range>,
+    pub offset_range: ::std::option::Option<crate::types::Range>,
 }
 impl Page {
     /// <p>The page number of the page that contains the sensitive data.</p>
@@ -20,11 +20,11 @@ impl Page {
         self.page_number
     }
     /// <p>An occurrence of sensitive data detected in a non-binary text file or a Microsoft Word file. Non-binary text files include files such as HTML, XML, JSON, and TXT files.</p>
-    pub fn line_range(&self) -> std::option::Option<&crate::types::Range> {
+    pub fn line_range(&self) -> ::std::option::Option<&crate::types::Range> {
         self.line_range.as_ref()
     }
     /// <p>An occurrence of sensitive data detected in a binary text file.</p>
-    pub fn offset_range(&self) -> std::option::Option<&crate::types::Range> {
+    pub fn offset_range(&self) -> ::std::option::Option<&crate::types::Range> {
         self.offset_range.as_ref()
     }
 }
@@ -37,40 +37,42 @@ impl Page {
 
 /// A builder for [`Page`](crate::types::Page).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PageBuilder {
-    pub(crate) page_number: std::option::Option<i64>,
-    pub(crate) line_range: std::option::Option<crate::types::Range>,
-    pub(crate) offset_range: std::option::Option<crate::types::Range>,
+    pub(crate) page_number: ::std::option::Option<i64>,
+    pub(crate) line_range: ::std::option::Option<crate::types::Range>,
+    pub(crate) offset_range: ::std::option::Option<crate::types::Range>,
 }
 impl PageBuilder {
     /// <p>The page number of the page that contains the sensitive data.</p>
     pub fn page_number(mut self, input: i64) -> Self {
-        self.page_number = Some(input);
+        self.page_number = ::std::option::Option::Some(input);
         self
     }
     /// <p>The page number of the page that contains the sensitive data.</p>
-    pub fn set_page_number(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_page_number(mut self, input: ::std::option::Option<i64>) -> Self {
         self.page_number = input;
         self
     }
     /// <p>An occurrence of sensitive data detected in a non-binary text file or a Microsoft Word file. Non-binary text files include files such as HTML, XML, JSON, and TXT files.</p>
     pub fn line_range(mut self, input: crate::types::Range) -> Self {
-        self.line_range = Some(input);
+        self.line_range = ::std::option::Option::Some(input);
         self
     }
     /// <p>An occurrence of sensitive data detected in a non-binary text file or a Microsoft Word file. Non-binary text files include files such as HTML, XML, JSON, and TXT files.</p>
-    pub fn set_line_range(mut self, input: std::option::Option<crate::types::Range>) -> Self {
+    pub fn set_line_range(mut self, input: ::std::option::Option<crate::types::Range>) -> Self {
         self.line_range = input;
         self
     }
     /// <p>An occurrence of sensitive data detected in a binary text file.</p>
     pub fn offset_range(mut self, input: crate::types::Range) -> Self {
-        self.offset_range = Some(input);
+        self.offset_range = ::std::option::Option::Some(input);
         self
     }
     /// <p>An occurrence of sensitive data detected in a binary text file.</p>
-    pub fn set_offset_range(mut self, input: std::option::Option<crate::types::Range>) -> Self {
+    pub fn set_offset_range(mut self, input: ::std::option::Option<crate::types::Range>) -> Self {
         self.offset_range = input;
         self
     }

@@ -2,22 +2,22 @@
 
 /// <p>A set of actions that Amazon Lex should run if none of the other conditions are met.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DefaultConditionalBranch {
     /// <p>The next step in the conversation.</p>
     #[doc(hidden)]
-    pub next_step: std::option::Option<crate::types::DialogState>,
+    pub next_step: ::std::option::Option<crate::types::DialogState>,
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
     #[doc(hidden)]
-    pub response: std::option::Option<crate::types::ResponseSpecification>,
+    pub response: ::std::option::Option<crate::types::ResponseSpecification>,
 }
 impl DefaultConditionalBranch {
     /// <p>The next step in the conversation.</p>
-    pub fn next_step(&self) -> std::option::Option<&crate::types::DialogState> {
+    pub fn next_step(&self) -> ::std::option::Option<&crate::types::DialogState> {
         self.next_step.as_ref()
     }
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
-    pub fn response(&self) -> std::option::Option<&crate::types::ResponseSpecification> {
+    pub fn response(&self) -> ::std::option::Option<&crate::types::ResponseSpecification> {
         self.response.as_ref()
     }
 }
@@ -30,31 +30,36 @@ impl DefaultConditionalBranch {
 
 /// A builder for [`DefaultConditionalBranch`](crate::types::DefaultConditionalBranch).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DefaultConditionalBranchBuilder {
-    pub(crate) next_step: std::option::Option<crate::types::DialogState>,
-    pub(crate) response: std::option::Option<crate::types::ResponseSpecification>,
+    pub(crate) next_step: ::std::option::Option<crate::types::DialogState>,
+    pub(crate) response: ::std::option::Option<crate::types::ResponseSpecification>,
 }
 impl DefaultConditionalBranchBuilder {
     /// <p>The next step in the conversation.</p>
     pub fn next_step(mut self, input: crate::types::DialogState) -> Self {
-        self.next_step = Some(input);
+        self.next_step = ::std::option::Option::Some(input);
         self
     }
     /// <p>The next step in the conversation.</p>
-    pub fn set_next_step(mut self, input: std::option::Option<crate::types::DialogState>) -> Self {
+    pub fn set_next_step(
+        mut self,
+        input: ::std::option::Option<crate::types::DialogState>,
+    ) -> Self {
         self.next_step = input;
         self
     }
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
     pub fn response(mut self, input: crate::types::ResponseSpecification) -> Self {
-        self.response = Some(input);
+        self.response = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies a list of message groups that Amazon Lex uses to respond the user input.</p>
     pub fn set_response(
         mut self,
-        input: std::option::Option<crate::types::ResponseSpecification>,
+        input: ::std::option::Option<crate::types::ResponseSpecification>,
     ) -> Self {
         self.response = input;
         self

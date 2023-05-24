@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetPosition`](crate::operation::get_position::builders::GetPositionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_identifier(impl Into<String>)`](crate::operation::get_position::builders::GetPositionFluentBuilder::resource_identifier) / [`set_resource_identifier(Option<String>)`](crate::operation::get_position::builders::GetPositionFluentBuilder::set_resource_identifier): <p>Resource identifier used to retrieve the position information.</p>
+    ///   - [`resource_identifier(impl ::std::convert::Into<String>)`](crate::operation::get_position::builders::GetPositionFluentBuilder::resource_identifier) / [`set_resource_identifier(Option<String>)`](crate::operation::get_position::builders::GetPositionFluentBuilder::set_resource_identifier): <p>Resource identifier used to retrieve the position information.</p>
     ///   - [`resource_type(PositionResourceType)`](crate::operation::get_position::builders::GetPositionFluentBuilder::resource_type) / [`set_resource_type(Option<PositionResourceType>)`](crate::operation::get_position::builders::GetPositionFluentBuilder::set_resource_type): <p>Resource type of the resource for which position information is retrieved.</p>
     /// - On success, responds with [`GetPositionOutput`](crate::operation::get_position::GetPositionOutput) with field(s):
     ///   - [`position(Option<Vec<f32>>)`](crate::operation::get_position::GetPositionOutput::position): <p>The position information of the resource.</p>

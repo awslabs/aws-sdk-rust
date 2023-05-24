@@ -2,22 +2,22 @@
 
 /// <p> Entity that comprises aggregated information on sensors having insufficient data. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InvalidSensorData {
     /// <p> Indicates the number of sensors that have at least some invalid values. </p>
     #[doc(hidden)]
-    pub affected_sensor_count: std::option::Option<i32>,
+    pub affected_sensor_count: ::std::option::Option<i32>,
     /// <p> Indicates the total number of invalid values across all the sensors. </p>
     #[doc(hidden)]
-    pub total_number_of_invalid_values: std::option::Option<i32>,
+    pub total_number_of_invalid_values: ::std::option::Option<i32>,
 }
 impl InvalidSensorData {
     /// <p> Indicates the number of sensors that have at least some invalid values. </p>
-    pub fn affected_sensor_count(&self) -> std::option::Option<i32> {
+    pub fn affected_sensor_count(&self) -> ::std::option::Option<i32> {
         self.affected_sensor_count
     }
     /// <p> Indicates the total number of invalid values across all the sensors. </p>
-    pub fn total_number_of_invalid_values(&self) -> std::option::Option<i32> {
+    pub fn total_number_of_invalid_values(&self) -> ::std::option::Option<i32> {
         self.total_number_of_invalid_values
     }
 }
@@ -30,29 +30,31 @@ impl InvalidSensorData {
 
 /// A builder for [`InvalidSensorData`](crate::types::InvalidSensorData).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InvalidSensorDataBuilder {
-    pub(crate) affected_sensor_count: std::option::Option<i32>,
-    pub(crate) total_number_of_invalid_values: std::option::Option<i32>,
+    pub(crate) affected_sensor_count: ::std::option::Option<i32>,
+    pub(crate) total_number_of_invalid_values: ::std::option::Option<i32>,
 }
 impl InvalidSensorDataBuilder {
     /// <p> Indicates the number of sensors that have at least some invalid values. </p>
     pub fn affected_sensor_count(mut self, input: i32) -> Self {
-        self.affected_sensor_count = Some(input);
+        self.affected_sensor_count = ::std::option::Option::Some(input);
         self
     }
     /// <p> Indicates the number of sensors that have at least some invalid values. </p>
-    pub fn set_affected_sensor_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_affected_sensor_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.affected_sensor_count = input;
         self
     }
     /// <p> Indicates the total number of invalid values across all the sensors. </p>
     pub fn total_number_of_invalid_values(mut self, input: i32) -> Self {
-        self.total_number_of_invalid_values = Some(input);
+        self.total_number_of_invalid_values = ::std::option::Option::Some(input);
         self
     }
     /// <p> Indicates the total number of invalid values across all the sensors. </p>
-    pub fn set_total_number_of_invalid_values(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_total_number_of_invalid_values(mut self, input: ::std::option::Option<i32>) -> Self {
         self.total_number_of_invalid_values = input;
         self
     }

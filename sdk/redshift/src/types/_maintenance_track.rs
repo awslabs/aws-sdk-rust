@@ -2,29 +2,29 @@
 
 /// <p>Defines a maintenance track that determines which Amazon Redshift version to apply during a maintenance window. If the value for <code>MaintenanceTrack</code> is <code>current</code>, the cluster is updated to the most recently certified maintenance release. If the value is <code>trailing</code>, the cluster is updated to the previously certified maintenance release. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MaintenanceTrack {
     /// <p>The name of the maintenance track. Possible values are <code>current</code> and <code>trailing</code>.</p>
     #[doc(hidden)]
-    pub maintenance_track_name: std::option::Option<std::string::String>,
+    pub maintenance_track_name: ::std::option::Option<::std::string::String>,
     /// <p>The version number for the cluster release.</p>
     #[doc(hidden)]
-    pub database_version: std::option::Option<std::string::String>,
+    pub database_version: ::std::option::Option<::std::string::String>,
     /// <p>An array of <code>UpdateTarget</code> objects to update with the maintenance track. </p>
     #[doc(hidden)]
-    pub update_targets: std::option::Option<std::vec::Vec<crate::types::UpdateTarget>>,
+    pub update_targets: ::std::option::Option<::std::vec::Vec<crate::types::UpdateTarget>>,
 }
 impl MaintenanceTrack {
     /// <p>The name of the maintenance track. Possible values are <code>current</code> and <code>trailing</code>.</p>
-    pub fn maintenance_track_name(&self) -> std::option::Option<&str> {
+    pub fn maintenance_track_name(&self) -> ::std::option::Option<&str> {
         self.maintenance_track_name.as_deref()
     }
     /// <p>The version number for the cluster release.</p>
-    pub fn database_version(&self) -> std::option::Option<&str> {
+    pub fn database_version(&self) -> ::std::option::Option<&str> {
         self.database_version.as_deref()
     }
     /// <p>An array of <code>UpdateTarget</code> objects to update with the maintenance track. </p>
-    pub fn update_targets(&self) -> std::option::Option<&[crate::types::UpdateTarget]> {
+    pub fn update_targets(&self) -> ::std::option::Option<&[crate::types::UpdateTarget]> {
         self.update_targets.as_deref()
     }
 }
@@ -37,33 +37,44 @@ impl MaintenanceTrack {
 
 /// A builder for [`MaintenanceTrack`](crate::types::MaintenanceTrack).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MaintenanceTrackBuilder {
-    pub(crate) maintenance_track_name: std::option::Option<std::string::String>,
-    pub(crate) database_version: std::option::Option<std::string::String>,
-    pub(crate) update_targets: std::option::Option<std::vec::Vec<crate::types::UpdateTarget>>,
+    pub(crate) maintenance_track_name: ::std::option::Option<::std::string::String>,
+    pub(crate) database_version: ::std::option::Option<::std::string::String>,
+    pub(crate) update_targets: ::std::option::Option<::std::vec::Vec<crate::types::UpdateTarget>>,
 }
 impl MaintenanceTrackBuilder {
     /// <p>The name of the maintenance track. Possible values are <code>current</code> and <code>trailing</code>.</p>
-    pub fn maintenance_track_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.maintenance_track_name = Some(input.into());
+    pub fn maintenance_track_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.maintenance_track_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the maintenance track. Possible values are <code>current</code> and <code>trailing</code>.</p>
     pub fn set_maintenance_track_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.maintenance_track_name = input;
         self
     }
     /// <p>The version number for the cluster release.</p>
-    pub fn database_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.database_version = Some(input.into());
+    pub fn database_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.database_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version number for the cluster release.</p>
-    pub fn set_database_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_database_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.database_version = input;
         self
     }
@@ -75,13 +86,13 @@ impl MaintenanceTrackBuilder {
     pub fn update_targets(mut self, input: crate::types::UpdateTarget) -> Self {
         let mut v = self.update_targets.unwrap_or_default();
         v.push(input);
-        self.update_targets = Some(v);
+        self.update_targets = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of <code>UpdateTarget</code> objects to update with the maintenance track. </p>
     pub fn set_update_targets(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::UpdateTarget>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateTarget>>,
     ) -> Self {
         self.update_targets = input;
         self

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeFileSystemPolicy`](crate::operation::describe_file_system_policy::builders::DescribeFileSystemPolicyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`file_system_id(impl Into<String>)`](crate::operation::describe_file_system_policy::builders::DescribeFileSystemPolicyFluentBuilder::file_system_id) / [`set_file_system_id(Option<String>)`](crate::operation::describe_file_system_policy::builders::DescribeFileSystemPolicyFluentBuilder::set_file_system_id): <p>Specifies which EFS file system to retrieve the <code>FileSystemPolicy</code> for.</p>
+    ///   - [`file_system_id(impl ::std::convert::Into<String>)`](crate::operation::describe_file_system_policy::builders::DescribeFileSystemPolicyFluentBuilder::file_system_id) / [`set_file_system_id(Option<String>)`](crate::operation::describe_file_system_policy::builders::DescribeFileSystemPolicyFluentBuilder::set_file_system_id): <p>Specifies which EFS file system to retrieve the <code>FileSystemPolicy</code> for.</p>
     /// - On success, responds with [`DescribeFileSystemPolicyOutput`](crate::operation::describe_file_system_policy::DescribeFileSystemPolicyOutput) with field(s):
     ///   - [`file_system_id(Option<String>)`](crate::operation::describe_file_system_policy::DescribeFileSystemPolicyOutput::file_system_id): <p>Specifies the EFS file system to which the <code>FileSystemPolicy</code> applies.</p>
     ///   - [`policy(Option<String>)`](crate::operation::describe_file_system_policy::DescribeFileSystemPolicyOutput::policy): <p>The JSON formatted <code>FileSystemPolicy</code> for the EFS file system.</p>

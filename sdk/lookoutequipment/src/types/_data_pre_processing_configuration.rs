@@ -3,17 +3,17 @@
 /// <p>The configuration is the <code>TargetSamplingRate</code>, which is the sampling rate of the data after post processing by Amazon Lookout for Equipment. For example, if you provide data that has been collected at a 1 second level and you want the system to resample the data at a 1 minute rate before training, the <code>TargetSamplingRate</code> is 1 minute.</p>
 /// <p>When providing a value for the <code>TargetSamplingRate</code>, you must attach the prefix "PT" to the rate you want. The value for a 1 second rate is therefore <i>PT1S</i>, the value for a 15 minute rate is <i>PT15M</i>, and the value for a 1 hour rate is <i>PT1H</i> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataPreProcessingConfiguration {
     /// <p>The sampling rate of the data after post processing by Amazon Lookout for Equipment. For example, if you provide data that has been collected at a 1 second level and you want the system to resample the data at a 1 minute rate before training, the <code>TargetSamplingRate</code> is 1 minute.</p>
     /// <p>When providing a value for the <code>TargetSamplingRate</code>, you must attach the prefix "PT" to the rate you want. The value for a 1 second rate is therefore <i>PT1S</i>, the value for a 15 minute rate is <i>PT15M</i>, and the value for a 1 hour rate is <i>PT1H</i> </p>
     #[doc(hidden)]
-    pub target_sampling_rate: std::option::Option<crate::types::TargetSamplingRate>,
+    pub target_sampling_rate: ::std::option::Option<crate::types::TargetSamplingRate>,
 }
 impl DataPreProcessingConfiguration {
     /// <p>The sampling rate of the data after post processing by Amazon Lookout for Equipment. For example, if you provide data that has been collected at a 1 second level and you want the system to resample the data at a 1 minute rate before training, the <code>TargetSamplingRate</code> is 1 minute.</p>
     /// <p>When providing a value for the <code>TargetSamplingRate</code>, you must attach the prefix "PT" to the rate you want. The value for a 1 second rate is therefore <i>PT1S</i>, the value for a 15 minute rate is <i>PT15M</i>, and the value for a 1 hour rate is <i>PT1H</i> </p>
-    pub fn target_sampling_rate(&self) -> std::option::Option<&crate::types::TargetSamplingRate> {
+    pub fn target_sampling_rate(&self) -> ::std::option::Option<&crate::types::TargetSamplingRate> {
         self.target_sampling_rate.as_ref()
     }
 }
@@ -26,22 +26,24 @@ impl DataPreProcessingConfiguration {
 
 /// A builder for [`DataPreProcessingConfiguration`](crate::types::DataPreProcessingConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DataPreProcessingConfigurationBuilder {
-    pub(crate) target_sampling_rate: std::option::Option<crate::types::TargetSamplingRate>,
+    pub(crate) target_sampling_rate: ::std::option::Option<crate::types::TargetSamplingRate>,
 }
 impl DataPreProcessingConfigurationBuilder {
     /// <p>The sampling rate of the data after post processing by Amazon Lookout for Equipment. For example, if you provide data that has been collected at a 1 second level and you want the system to resample the data at a 1 minute rate before training, the <code>TargetSamplingRate</code> is 1 minute.</p>
     /// <p>When providing a value for the <code>TargetSamplingRate</code>, you must attach the prefix "PT" to the rate you want. The value for a 1 second rate is therefore <i>PT1S</i>, the value for a 15 minute rate is <i>PT15M</i>, and the value for a 1 hour rate is <i>PT1H</i> </p>
     pub fn target_sampling_rate(mut self, input: crate::types::TargetSamplingRate) -> Self {
-        self.target_sampling_rate = Some(input);
+        self.target_sampling_rate = ::std::option::Option::Some(input);
         self
     }
     /// <p>The sampling rate of the data after post processing by Amazon Lookout for Equipment. For example, if you provide data that has been collected at a 1 second level and you want the system to resample the data at a 1 minute rate before training, the <code>TargetSamplingRate</code> is 1 minute.</p>
     /// <p>When providing a value for the <code>TargetSamplingRate</code>, you must attach the prefix "PT" to the rate you want. The value for a 1 second rate is therefore <i>PT1S</i>, the value for a 15 minute rate is <i>PT15M</i>, and the value for a 1 hour rate is <i>PT1H</i> </p>
     pub fn set_target_sampling_rate(
         mut self,
-        input: std::option::Option<crate::types::TargetSamplingRate>,
+        input: ::std::option::Option<crate::types::TargetSamplingRate>,
     ) -> Self {
         self.target_sampling_rate = input;
         self

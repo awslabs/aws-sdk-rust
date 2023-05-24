@@ -2,20 +2,22 @@
 
 /// <p>Represents the response from the server that describes the remote access session when AWS Device Farm stops the session.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopRemoteAccessSessionOutput {
     /// <p>A container that represents the metadata from the service about the remote access session you are stopping.</p>
     #[doc(hidden)]
-    pub remote_access_session: std::option::Option<crate::types::RemoteAccessSession>,
+    pub remote_access_session: ::std::option::Option<crate::types::RemoteAccessSession>,
     _request_id: Option<String>,
 }
 impl StopRemoteAccessSessionOutput {
     /// <p>A container that represents the metadata from the service about the remote access session you are stopping.</p>
-    pub fn remote_access_session(&self) -> std::option::Option<&crate::types::RemoteAccessSession> {
+    pub fn remote_access_session(
+        &self,
+    ) -> ::std::option::Option<&crate::types::RemoteAccessSession> {
         self.remote_access_session.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for StopRemoteAccessSessionOutput {
+impl ::aws_http::request_id::RequestId for StopRemoteAccessSessionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -31,21 +33,23 @@ impl StopRemoteAccessSessionOutput {
 
 /// A builder for [`StopRemoteAccessSessionOutput`](crate::operation::stop_remote_access_session::StopRemoteAccessSessionOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StopRemoteAccessSessionOutputBuilder {
-    pub(crate) remote_access_session: std::option::Option<crate::types::RemoteAccessSession>,
+    pub(crate) remote_access_session: ::std::option::Option<crate::types::RemoteAccessSession>,
     _request_id: Option<String>,
 }
 impl StopRemoteAccessSessionOutputBuilder {
     /// <p>A container that represents the metadata from the service about the remote access session you are stopping.</p>
     pub fn remote_access_session(mut self, input: crate::types::RemoteAccessSession) -> Self {
-        self.remote_access_session = Some(input);
+        self.remote_access_session = ::std::option::Option::Some(input);
         self
     }
     /// <p>A container that represents the metadata from the service about the remote access session you are stopping.</p>
     pub fn set_remote_access_session(
         mut self,
-        input: std::option::Option<crate::types::RemoteAccessSession>,
+        input: ::std::option::Option<crate::types::RemoteAccessSession>,
     ) -> Self {
         self.remote_access_session = input;
         self

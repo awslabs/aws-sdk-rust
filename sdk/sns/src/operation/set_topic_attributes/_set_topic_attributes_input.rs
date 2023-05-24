@@ -2,11 +2,11 @@
 
 /// <p>Input for SetTopicAttributes action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SetTopicAttributesInput {
     /// <p>The ARN of the topic to modify.</p>
     #[doc(hidden)]
-    pub topic_arn: std::option::Option<std::string::String>,
+    pub topic_arn: ::std::option::Option<::std::string::String>,
     /// <p>A map of attributes with their corresponding values.</p>
     /// <p>The following lists the names, descriptions, and values of the special request parameters that the <code>SetTopicAttributes</code> action uses:</p>
     /// <ul>
@@ -76,14 +76,14 @@ pub struct SetTopicAttributesInput {
     /// </ul> </li>
     /// </ul>
     #[doc(hidden)]
-    pub attribute_name: std::option::Option<std::string::String>,
+    pub attribute_name: ::std::option::Option<::std::string::String>,
     /// <p>The new value for the attribute.</p>
     #[doc(hidden)]
-    pub attribute_value: std::option::Option<std::string::String>,
+    pub attribute_value: ::std::option::Option<::std::string::String>,
 }
 impl SetTopicAttributesInput {
     /// <p>The ARN of the topic to modify.</p>
-    pub fn topic_arn(&self) -> std::option::Option<&str> {
+    pub fn topic_arn(&self) -> ::std::option::Option<&str> {
         self.topic_arn.as_deref()
     }
     /// <p>A map of attributes with their corresponding values.</p>
@@ -154,11 +154,11 @@ impl SetTopicAttributesInput {
     /// <li> <p>When you set <code>ContentBasedDeduplication</code> to <code>true</code>, Amazon SNS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message).</p> <p>(Optional) To override the generated value, you can specify a value for the <code>MessageDeduplicationId</code> parameter for the <code>Publish</code> action.</p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn attribute_name(&self) -> std::option::Option<&str> {
+    pub fn attribute_name(&self) -> ::std::option::Option<&str> {
         self.attribute_name.as_deref()
     }
     /// <p>The new value for the attribute.</p>
-    pub fn attribute_value(&self) -> std::option::Option<&str> {
+    pub fn attribute_value(&self) -> ::std::option::Option<&str> {
         self.attribute_value.as_deref()
     }
 }
@@ -172,20 +172,22 @@ impl SetTopicAttributesInput {
 
 /// A builder for [`SetTopicAttributesInput`](crate::operation::set_topic_attributes::SetTopicAttributesInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SetTopicAttributesInputBuilder {
-    pub(crate) topic_arn: std::option::Option<std::string::String>,
-    pub(crate) attribute_name: std::option::Option<std::string::String>,
-    pub(crate) attribute_value: std::option::Option<std::string::String>,
+    pub(crate) topic_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) attribute_name: ::std::option::Option<::std::string::String>,
+    pub(crate) attribute_value: ::std::option::Option<::std::string::String>,
 }
 impl SetTopicAttributesInputBuilder {
     /// <p>The ARN of the topic to modify.</p>
-    pub fn topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.topic_arn = Some(input.into());
+    pub fn topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.topic_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the topic to modify.</p>
-    pub fn set_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.topic_arn = input;
         self
     }
@@ -257,8 +259,11 @@ impl SetTopicAttributesInputBuilder {
     /// <li> <p>When you set <code>ContentBasedDeduplication</code> to <code>true</code>, Amazon SNS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message).</p> <p>(Optional) To override the generated value, you can specify a value for the <code>MessageDeduplicationId</code> parameter for the <code>Publish</code> action.</p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn attribute_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.attribute_name = Some(input.into());
+    pub fn attribute_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.attribute_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A map of attributes with their corresponding values.</p>
@@ -329,28 +334,37 @@ impl SetTopicAttributesInputBuilder {
     /// <li> <p>When you set <code>ContentBasedDeduplication</code> to <code>true</code>, Amazon SNS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message).</p> <p>(Optional) To override the generated value, you can specify a value for the <code>MessageDeduplicationId</code> parameter for the <code>Publish</code> action.</p> </li>
     /// </ul> </li>
     /// </ul>
-    pub fn set_attribute_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_attribute_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.attribute_name = input;
         self
     }
     /// <p>The new value for the attribute.</p>
-    pub fn attribute_value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.attribute_value = Some(input.into());
+    pub fn attribute_value(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.attribute_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The new value for the attribute.</p>
-    pub fn set_attribute_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_attribute_value(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.attribute_value = input;
         self
     }
     /// Consumes the builder and constructs a [`SetTopicAttributesInput`](crate::operation::set_topic_attributes::SetTopicAttributesInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::set_topic_attributes::SetTopicAttributesInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::set_topic_attributes::SetTopicAttributesInput {
                 topic_arn: self.topic_arn,
                 attribute_name: self.attribute_name,

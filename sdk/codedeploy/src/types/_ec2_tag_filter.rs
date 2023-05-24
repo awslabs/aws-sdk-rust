@@ -2,14 +2,14 @@
 
 /// <p>Information about an EC2 tag filter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Ec2TagFilter {
     /// <p>The tag filter key.</p>
     #[doc(hidden)]
-    pub key: std::option::Option<std::string::String>,
+    pub key: ::std::option::Option<::std::string::String>,
     /// <p>The tag filter value.</p>
     #[doc(hidden)]
-    pub value: std::option::Option<std::string::String>,
+    pub value: ::std::option::Option<::std::string::String>,
     /// <p>The tag filter type:</p>
     /// <ul>
     /// <li> <p> <code>KEY_ONLY</code>: Key only.</p> </li>
@@ -17,15 +17,15 @@ pub struct Ec2TagFilter {
     /// <li> <p> <code>KEY_AND_VALUE</code>: Key and value.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::Ec2TagFilterType>,
+    pub r#type: ::std::option::Option<crate::types::Ec2TagFilterType>,
 }
 impl Ec2TagFilter {
     /// <p>The tag filter key.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<&str> {
         self.key.as_deref()
     }
     /// <p>The tag filter value.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
     /// <p>The tag filter type:</p>
@@ -34,7 +34,7 @@ impl Ec2TagFilter {
     /// <li> <p> <code>VALUE_ONLY</code>: Value only.</p> </li>
     /// <li> <p> <code>KEY_AND_VALUE</code>: Key and value.</p> </li>
     /// </ul>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::Ec2TagFilterType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::Ec2TagFilterType> {
         self.r#type.as_ref()
     }
 }
@@ -47,30 +47,32 @@ impl Ec2TagFilter {
 
 /// A builder for [`Ec2TagFilter`](crate::types::Ec2TagFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct Ec2TagFilterBuilder {
-    pub(crate) key: std::option::Option<std::string::String>,
-    pub(crate) value: std::option::Option<std::string::String>,
-    pub(crate) r#type: std::option::Option<crate::types::Ec2TagFilterType>,
+    pub(crate) key: ::std::option::Option<::std::string::String>,
+    pub(crate) value: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::Ec2TagFilterType>,
 }
 impl Ec2TagFilterBuilder {
     /// <p>The tag filter key.</p>
-    pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.key = Some(input.into());
+    pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The tag filter key.</p>
-    pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key = input;
         self
     }
     /// <p>The tag filter value.</p>
-    pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.value = Some(input.into());
+    pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The tag filter value.</p>
-    pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
     }
@@ -81,7 +83,7 @@ impl Ec2TagFilterBuilder {
     /// <li> <p> <code>KEY_AND_VALUE</code>: Key and value.</p> </li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::Ec2TagFilterType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The tag filter type:</p>
@@ -90,7 +92,10 @@ impl Ec2TagFilterBuilder {
     /// <li> <p> <code>VALUE_ONLY</code>: Value only.</p> </li>
     /// <li> <p> <code>KEY_AND_VALUE</code>: Key and value.</p> </li>
     /// </ul>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::Ec2TagFilterType>) -> Self {
+    pub fn set_type(
+        mut self,
+        input: ::std::option::Option<crate::types::Ec2TagFilterType>,
+    ) -> Self {
         self.r#type = input;
         self
     }

@@ -6,29 +6,29 @@ pub use crate::operation::create_human_task_ui::_create_human_task_ui_input::Cre
 /// Fluent builder constructing a request to `CreateHumanTaskUi`.
 ///
 /// <p>Defines the settings you will use for the human review workflow user interface. Reviewers will see a three-panel interface with an instruction area, the item to review, and an input area.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateHumanTaskUiFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_human_task_ui::builders::CreateHumanTaskUiInputBuilder,
 }
 impl CreateHumanTaskUiFluentBuilder {
     /// Creates a new `CreateHumanTaskUi`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_human_task_ui::CreateHumanTaskUi,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_human_task_ui::CreateHumanTaskUiError,
         >,
     > {
@@ -36,30 +36,33 @@ impl CreateHumanTaskUiFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_human_task_ui::CreateHumanTaskUiOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_human_task_ui::CreateHumanTaskUiError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,23 +75,26 @@ impl CreateHumanTaskUiFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_human_task_ui::CreateHumanTaskUiOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_human_task_ui::CreateHumanTaskUiError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the user interface you are creating.</p>
-    pub fn human_task_ui_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn human_task_ui_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.human_task_ui_name(input.into());
         self
     }
     /// <p>The name of the user interface you are creating.</p>
     pub fn set_human_task_ui_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_human_task_ui_name(input);
         self
@@ -99,7 +105,10 @@ impl CreateHumanTaskUiFluentBuilder {
         self
     }
     /// <p>The Liquid template for the worker user interface.</p>
-    pub fn set_ui_template(mut self, input: std::option::Option<crate::types::UiTemplate>) -> Self {
+    pub fn set_ui_template(
+        mut self,
+        input: ::std::option::Option<crate::types::UiTemplate>,
+    ) -> Self {
         self.inner = self.inner.set_ui_template(input);
         self
     }
@@ -115,7 +124,7 @@ impl CreateHumanTaskUiFluentBuilder {
     /// <p>An array of key-value pairs that contain metadata to help you categorize and organize a human review workflow user interface. Each tag consists of a key and a value, both of which you define.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetFindings`](crate::operation::get_findings::builders::GetFindingsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`detector_id(impl Into<String>)`](crate::operation::get_findings::builders::GetFindingsFluentBuilder::detector_id) / [`set_detector_id(Option<String>)`](crate::operation::get_findings::builders::GetFindingsFluentBuilder::set_detector_id): <p>The ID of the detector that specifies the GuardDuty service whose findings you want to retrieve.</p>
+    ///   - [`detector_id(impl ::std::convert::Into<String>)`](crate::operation::get_findings::builders::GetFindingsFluentBuilder::detector_id) / [`set_detector_id(Option<String>)`](crate::operation::get_findings::builders::GetFindingsFluentBuilder::set_detector_id): <p>The ID of the detector that specifies the GuardDuty service whose findings you want to retrieve.</p>
     ///   - [`finding_ids(Vec<String>)`](crate::operation::get_findings::builders::GetFindingsFluentBuilder::finding_ids) / [`set_finding_ids(Option<Vec<String>>)`](crate::operation::get_findings::builders::GetFindingsFluentBuilder::set_finding_ids): <p>The IDs of the findings that you want to retrieve.</p>
     ///   - [`sort_criteria(SortCriteria)`](crate::operation::get_findings::builders::GetFindingsFluentBuilder::sort_criteria) / [`set_sort_criteria(Option<SortCriteria>)`](crate::operation::get_findings::builders::GetFindingsFluentBuilder::set_sort_criteria): <p>Represents the criteria used for sorting findings.</p>
     /// - On success, responds with [`GetFindingsOutput`](crate::operation::get_findings::GetFindingsOutput) with field(s):

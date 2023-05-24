@@ -4,27 +4,27 @@
     note = "Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html."
 )]
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDeploymentJobsOutput {
     /// <p>A list of deployment jobs that meet the criteria of the request.</p>
     #[doc(hidden)]
-    pub deployment_jobs: std::option::Option<std::vec::Vec<crate::types::DeploymentJob>>,
+    pub deployment_jobs: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentJob>>,
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListDeploymentJobs</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListDeploymentJobsOutput {
     /// <p>A list of deployment jobs that meet the criteria of the request.</p>
-    pub fn deployment_jobs(&self) -> std::option::Option<&[crate::types::DeploymentJob]> {
+    pub fn deployment_jobs(&self) -> ::std::option::Option<&[crate::types::DeploymentJob]> {
         self.deployment_jobs.as_deref()
     }
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListDeploymentJobs</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListDeploymentJobsOutput {
+impl ::aws_http::request_id::RequestId for ListDeploymentJobsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -39,10 +39,12 @@ impl ListDeploymentJobsOutput {
 
 /// A builder for [`ListDeploymentJobsOutput`](crate::operation::list_deployment_jobs::ListDeploymentJobsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListDeploymentJobsOutputBuilder {
-    pub(crate) deployment_jobs: std::option::Option<std::vec::Vec<crate::types::DeploymentJob>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) deployment_jobs: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentJob>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListDeploymentJobsOutputBuilder {
@@ -54,24 +56,24 @@ impl ListDeploymentJobsOutputBuilder {
     pub fn deployment_jobs(mut self, input: crate::types::DeploymentJob) -> Self {
         let mut v = self.deployment_jobs.unwrap_or_default();
         v.push(input);
-        self.deployment_jobs = Some(v);
+        self.deployment_jobs = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of deployment jobs that meet the criteria of the request.</p>
     pub fn set_deployment_jobs(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DeploymentJob>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentJob>>,
     ) -> Self {
         self.deployment_jobs = input;
         self
     }
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListDeploymentJobs</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListDeploymentJobs</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

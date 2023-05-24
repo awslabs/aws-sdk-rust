@@ -4,11 +4,11 @@
 /// <p>The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned when you run the <code>GetEC2RecommendationProjectedMetrics</code> action. Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecommendedOptionProjectedMetric {
     /// <p>The recommended instance type.</p>
     #[doc(hidden)]
-    pub recommended_instance_type: std::option::Option<std::string::String>,
+    pub recommended_instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The rank of the recommendation option projected metric.</p>
     /// <p>The top recommendation option is ranked as <code>1</code>.</p>
     /// <p>The projected metric rank correlates to the recommendation option rank. For example, the projected metric ranked as <code>1</code> is related to the recommendation option that is also ranked as <code>1</code> in the same response.</p>
@@ -16,11 +16,11 @@ pub struct RecommendedOptionProjectedMetric {
     pub rank: i32,
     /// <p>An array of objects that describe a projected utilization metric.</p>
     #[doc(hidden)]
-    pub projected_metrics: std::option::Option<std::vec::Vec<crate::types::ProjectedMetric>>,
+    pub projected_metrics: ::std::option::Option<::std::vec::Vec<crate::types::ProjectedMetric>>,
 }
 impl RecommendedOptionProjectedMetric {
     /// <p>The recommended instance type.</p>
-    pub fn recommended_instance_type(&self) -> std::option::Option<&str> {
+    pub fn recommended_instance_type(&self) -> ::std::option::Option<&str> {
         self.recommended_instance_type.as_deref()
     }
     /// <p>The rank of the recommendation option projected metric.</p>
@@ -30,7 +30,7 @@ impl RecommendedOptionProjectedMetric {
         self.rank
     }
     /// <p>An array of objects that describe a projected utilization metric.</p>
-    pub fn projected_metrics(&self) -> std::option::Option<&[crate::types::ProjectedMetric]> {
+    pub fn projected_metrics(&self) -> ::std::option::Option<&[crate::types::ProjectedMetric]> {
         self.projected_metrics.as_deref()
     }
 }
@@ -43,22 +43,28 @@ impl RecommendedOptionProjectedMetric {
 
 /// A builder for [`RecommendedOptionProjectedMetric`](crate::types::RecommendedOptionProjectedMetric).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RecommendedOptionProjectedMetricBuilder {
-    pub(crate) recommended_instance_type: std::option::Option<std::string::String>,
-    pub(crate) rank: std::option::Option<i32>,
-    pub(crate) projected_metrics: std::option::Option<std::vec::Vec<crate::types::ProjectedMetric>>,
+    pub(crate) recommended_instance_type: ::std::option::Option<::std::string::String>,
+    pub(crate) rank: ::std::option::Option<i32>,
+    pub(crate) projected_metrics:
+        ::std::option::Option<::std::vec::Vec<crate::types::ProjectedMetric>>,
 }
 impl RecommendedOptionProjectedMetricBuilder {
     /// <p>The recommended instance type.</p>
-    pub fn recommended_instance_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.recommended_instance_type = Some(input.into());
+    pub fn recommended_instance_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.recommended_instance_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The recommended instance type.</p>
     pub fn set_recommended_instance_type(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.recommended_instance_type = input;
         self
@@ -67,13 +73,13 @@ impl RecommendedOptionProjectedMetricBuilder {
     /// <p>The top recommendation option is ranked as <code>1</code>.</p>
     /// <p>The projected metric rank correlates to the recommendation option rank. For example, the projected metric ranked as <code>1</code> is related to the recommendation option that is also ranked as <code>1</code> in the same response.</p>
     pub fn rank(mut self, input: i32) -> Self {
-        self.rank = Some(input);
+        self.rank = ::std::option::Option::Some(input);
         self
     }
     /// <p>The rank of the recommendation option projected metric.</p>
     /// <p>The top recommendation option is ranked as <code>1</code>.</p>
     /// <p>The projected metric rank correlates to the recommendation option rank. For example, the projected metric ranked as <code>1</code> is related to the recommendation option that is also ranked as <code>1</code> in the same response.</p>
-    pub fn set_rank(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_rank(mut self, input: ::std::option::Option<i32>) -> Self {
         self.rank = input;
         self
     }
@@ -85,13 +91,13 @@ impl RecommendedOptionProjectedMetricBuilder {
     pub fn projected_metrics(mut self, input: crate::types::ProjectedMetric) -> Self {
         let mut v = self.projected_metrics.unwrap_or_default();
         v.push(input);
-        self.projected_metrics = Some(v);
+        self.projected_metrics = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of objects that describe a projected utilization metric.</p>
     pub fn set_projected_metrics(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ProjectedMetric>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ProjectedMetric>>,
     ) -> Self {
         self.projected_metrics = input;
         self

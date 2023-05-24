@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`RemoveFlowSource`](crate::operation::remove_flow_source::builders::RemoveFlowSourceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`flow_arn(impl Into<String>)`](crate::operation::remove_flow_source::builders::RemoveFlowSourceFluentBuilder::flow_arn) / [`set_flow_arn(Option<String>)`](crate::operation::remove_flow_source::builders::RemoveFlowSourceFluentBuilder::set_flow_arn): The flow that you want to remove a source from.
-    ///   - [`source_arn(impl Into<String>)`](crate::operation::remove_flow_source::builders::RemoveFlowSourceFluentBuilder::source_arn) / [`set_source_arn(Option<String>)`](crate::operation::remove_flow_source::builders::RemoveFlowSourceFluentBuilder::set_source_arn): The ARN of the source that you want to remove.
+    ///   - [`flow_arn(impl ::std::convert::Into<String>)`](crate::operation::remove_flow_source::builders::RemoveFlowSourceFluentBuilder::flow_arn) / [`set_flow_arn(Option<String>)`](crate::operation::remove_flow_source::builders::RemoveFlowSourceFluentBuilder::set_flow_arn): The flow that you want to remove a source from.
+    ///   - [`source_arn(impl ::std::convert::Into<String>)`](crate::operation::remove_flow_source::builders::RemoveFlowSourceFluentBuilder::source_arn) / [`set_source_arn(Option<String>)`](crate::operation::remove_flow_source::builders::RemoveFlowSourceFluentBuilder::set_source_arn): The ARN of the source that you want to remove.
     /// - On success, responds with [`RemoveFlowSourceOutput`](crate::operation::remove_flow_source::RemoveFlowSourceOutput) with field(s):
     ///   - [`flow_arn(Option<String>)`](crate::operation::remove_flow_source::RemoveFlowSourceOutput::flow_arn): The ARN of the flow that is associated with the source you removed.
     ///   - [`source_arn(Option<String>)`](crate::operation::remove_flow_source::RemoveFlowSourceOutput::source_arn): The ARN of the source that was removed.

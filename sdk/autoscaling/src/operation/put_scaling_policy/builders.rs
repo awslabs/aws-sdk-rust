@@ -9,29 +9,29 @@ pub use crate::operation::put_scaling_policy::_put_scaling_policy_input::PutScal
 /// <p>For more information about using dynamic scaling, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html">Target tracking scaling policies</a> and <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html">Step and simple scaling policies</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
 /// <p>For more information about using predictive scaling, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-predictive-scaling.html">Predictive scaling for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
 /// <p>You can view the scaling policies for an Auto Scaling group using the <code>DescribePolicies</code> API call. If you are no longer using a scaling policy, you can delete it by calling the <code>DeletePolicy</code> API.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutScalingPolicyFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::put_scaling_policy::builders::PutScalingPolicyInputBuilder,
 }
 impl PutScalingPolicyFluentBuilder {
     /// Creates a new `PutScalingPolicy`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::put_scaling_policy::PutScalingPolicy,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::put_scaling_policy::PutScalingPolicyError,
         >,
     > {
@@ -39,30 +39,33 @@ impl PutScalingPolicyFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::put_scaling_policy::PutScalingPolicyOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::put_scaling_policy::PutScalingPolicyError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -75,34 +78,37 @@ impl PutScalingPolicyFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::put_scaling_policy::PutScalingPolicyOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::put_scaling_policy::PutScalingPolicyError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn auto_scaling_group_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.auto_scaling_group_name(input.into());
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
     pub fn set_auto_scaling_group_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_auto_scaling_group_name(input);
         self
     }
     /// <p>The name of the policy.</p>
-    pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy_name(input.into());
         self
     }
     /// <p>The name of the policy.</p>
-    pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy_name(input);
         self
     }
@@ -113,7 +119,7 @@ impl PutScalingPolicyFluentBuilder {
     /// <li> <p> <code>SimpleScaling</code> (default)</p> </li>
     /// <li> <p> <code>PredictiveScaling</code> </p> </li>
     /// </ul>
-    pub fn policy_type(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn policy_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy_type(input.into());
         self
     }
@@ -124,19 +130,25 @@ impl PutScalingPolicyFluentBuilder {
     /// <li> <p> <code>SimpleScaling</code> (default)</p> </li>
     /// <li> <p> <code>PredictiveScaling</code> </p> </li>
     /// </ul>
-    pub fn set_policy_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_policy_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy_type(input);
         self
     }
     /// <p>Specifies how the scaling adjustment is interpreted (for example, an absolute number or a percentage). The valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
     /// <p>Required if the policy type is <code>StepScaling</code> or <code>SimpleScaling</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-adjustment">Scaling adjustment types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    pub fn adjustment_type(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn adjustment_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.adjustment_type(input.into());
         self
     }
     /// <p>Specifies how the scaling adjustment is interpreted (for example, an absolute number or a percentage). The valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
     /// <p>Required if the policy type is <code>StepScaling</code> or <code>SimpleScaling</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-adjustment">Scaling adjustment types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    pub fn set_adjustment_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_adjustment_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_adjustment_type(input);
         self
     }
@@ -146,7 +158,7 @@ impl PutScalingPolicyFluentBuilder {
         self
     }
     /// <p>Available for backward compatibility. Use <code>MinAdjustmentMagnitude</code> instead.</p>
-    pub fn set_min_adjustment_step(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_min_adjustment_step(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_min_adjustment_step(input);
         self
     }
@@ -162,7 +174,7 @@ impl PutScalingPolicyFluentBuilder {
     /// <p>Valid only if the policy type is <code>StepScaling</code> or <code>SimpleScaling</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-adjustment">Scaling adjustment types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <note>
     /// <p>Some Auto Scaling groups use instance weights. In this case, set the <code>MinAdjustmentMagnitude</code> to a value that is at least as large as your largest instance weight.</p>
     /// </note>
-    pub fn set_min_adjustment_magnitude(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_min_adjustment_magnitude(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_min_adjustment_magnitude(input);
         self
     }
@@ -174,7 +186,7 @@ impl PutScalingPolicyFluentBuilder {
     }
     /// <p>The amount by which to scale, based on the specified adjustment type. A positive value adds to the current capacity while a negative number removes from the current capacity. For exact capacity, you must specify a positive value.</p>
     /// <p>Required if the policy type is <code>SimpleScaling</code>. (Not used with any other policy type.) </p>
-    pub fn set_scaling_adjustment(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_scaling_adjustment(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_scaling_adjustment(input);
         self
     }
@@ -188,13 +200,16 @@ impl PutScalingPolicyFluentBuilder {
     /// <p>A cooldown period, in seconds, that applies to a specific simple scaling policy. When a cooldown period is specified here, it overrides the default cooldown.</p>
     /// <p>Valid only if the policy type is <code>SimpleScaling</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     /// <p>Default: None</p>
-    pub fn set_cooldown(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_cooldown(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_cooldown(input);
         self
     }
     /// <p>The aggregation type for the CloudWatch metrics. The valid values are <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code>. If the aggregation type is null, the value is treated as <code>Average</code>.</p>
     /// <p>Valid only if the policy type is <code>StepScaling</code>.</p>
-    pub fn metric_aggregation_type(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn metric_aggregation_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.metric_aggregation_type(input.into());
         self
     }
@@ -202,7 +217,7 @@ impl PutScalingPolicyFluentBuilder {
     /// <p>Valid only if the policy type is <code>StepScaling</code>.</p>
     pub fn set_metric_aggregation_type(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_metric_aggregation_type(input);
         self
@@ -221,7 +236,7 @@ impl PutScalingPolicyFluentBuilder {
     /// <p>Required if the policy type is <code>StepScaling</code>. (Not used with any other policy type.) </p>
     pub fn set_step_adjustments(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::StepAdjustment>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::StepAdjustment>>,
     ) -> Self {
         self.inner = self.inner.set_step_adjustments(input);
         self
@@ -240,7 +255,7 @@ impl PutScalingPolicyFluentBuilder {
     /// <p>Valid only if the policy type is <code>TargetTrackingScaling</code> or <code>StepScaling</code>.</p> <note>
     /// <p>The default is to use the value for the default instance warmup defined for the group. If default instance warmup is null, then <code>EstimatedInstanceWarmup</code> falls back to the value of default cooldown.</p>
     /// </note>
-    pub fn set_estimated_instance_warmup(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_estimated_instance_warmup(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_estimated_instance_warmup(input);
         self
     }
@@ -275,7 +290,7 @@ impl PutScalingPolicyFluentBuilder {
     /// <p>Required if the policy type is <code>TargetTrackingScaling</code>.</p>
     pub fn set_target_tracking_configuration(
         mut self,
-        input: std::option::Option<crate::types::TargetTrackingConfiguration>,
+        input: ::std::option::Option<crate::types::TargetTrackingConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_target_tracking_configuration(input);
         self
@@ -286,7 +301,7 @@ impl PutScalingPolicyFluentBuilder {
         self
     }
     /// <p>Indicates whether the scaling policy is enabled or disabled. The default is enabled. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enable-disable-scaling-policy.html">Disabling a scaling policy for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-    pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enabled(input);
         self
     }
@@ -307,7 +322,7 @@ impl PutScalingPolicyFluentBuilder {
     /// <p>Required if the policy type is <code>PredictiveScaling</code>.</p>
     pub fn set_predictive_scaling_configuration(
         mut self,
-        input: std::option::Option<crate::types::PredictiveScalingConfiguration>,
+        input: ::std::option::Option<crate::types::PredictiveScalingConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_predictive_scaling_configuration(input);
         self

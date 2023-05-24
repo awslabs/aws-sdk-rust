@@ -2,7 +2,7 @@
 
 /// <p>A range of ports.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PortRangeFromTo {
     /// <p>The first port in the port range.</p>
     #[doc(hidden)]
@@ -30,29 +30,31 @@ impl PortRangeFromTo {
 
 /// A builder for [`PortRangeFromTo`](crate::types::PortRangeFromTo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PortRangeFromToBuilder {
-    pub(crate) from: std::option::Option<i32>,
-    pub(crate) to: std::option::Option<i32>,
+    pub(crate) from: ::std::option::Option<i32>,
+    pub(crate) to: ::std::option::Option<i32>,
 }
 impl PortRangeFromToBuilder {
     /// <p>The first port in the port range.</p>
     pub fn from(mut self, input: i32) -> Self {
-        self.from = Some(input);
+        self.from = ::std::option::Option::Some(input);
         self
     }
     /// <p>The first port in the port range.</p>
-    pub fn set_from(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_from(mut self, input: ::std::option::Option<i32>) -> Self {
         self.from = input;
         self
     }
     /// <p>The last port in the port range.</p>
     pub fn to(mut self, input: i32) -> Self {
-        self.to = Some(input);
+        self.to = ::std::option::Option::Some(input);
         self
     }
     /// <p>The last port in the port range.</p>
-    pub fn set_to(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_to(mut self, input: ::std::option::Option<i32>) -> Self {
         self.to = input;
         self
     }

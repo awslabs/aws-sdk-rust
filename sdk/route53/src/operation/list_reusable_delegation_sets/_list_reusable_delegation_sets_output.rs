@@ -2,32 +2,32 @@
 
 /// <p>A complex type that contains information about the reusable delegation sets that are associated with the current Amazon Web Services account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListReusableDelegationSetsOutput {
     /// <p>A complex type that contains one <code>DelegationSet</code> element for each reusable delegation set that was created by the current Amazon Web Services account.</p>
     #[doc(hidden)]
-    pub delegation_sets: std::option::Option<std::vec::Vec<crate::types::DelegationSet>>,
+    pub delegation_sets: ::std::option::Option<::std::vec::Vec<crate::types::DelegationSet>>,
     /// <p>For the second and subsequent calls to <code>ListReusableDelegationSets</code>, <code>Marker</code> is the value that you specified for the <code>marker</code> parameter in the request that produced the current response.</p>
     #[doc(hidden)]
-    pub marker: std::option::Option<std::string::String>,
+    pub marker: ::std::option::Option<::std::string::String>,
     /// <p>A flag that indicates whether there are more reusable delegation sets to be listed.</p>
     #[doc(hidden)]
     pub is_truncated: bool,
     /// <p>If <code>IsTruncated</code> is <code>true</code>, the value of <code>NextMarker</code> identifies the next reusable delegation set that Amazon Route 53 will return if you submit another <code>ListReusableDelegationSets</code> request and specify the value of <code>NextMarker</code> in the <code>marker</code> parameter.</p>
     #[doc(hidden)]
-    pub next_marker: std::option::Option<std::string::String>,
+    pub next_marker: ::std::option::Option<::std::string::String>,
     /// <p>The value that you specified for the <code>maxitems</code> parameter in the call to <code>ListReusableDelegationSets</code> that produced the current response.</p>
     #[doc(hidden)]
-    pub max_items: std::option::Option<i32>,
+    pub max_items: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }
 impl ListReusableDelegationSetsOutput {
     /// <p>A complex type that contains one <code>DelegationSet</code> element for each reusable delegation set that was created by the current Amazon Web Services account.</p>
-    pub fn delegation_sets(&self) -> std::option::Option<&[crate::types::DelegationSet]> {
+    pub fn delegation_sets(&self) -> ::std::option::Option<&[crate::types::DelegationSet]> {
         self.delegation_sets.as_deref()
     }
     /// <p>For the second and subsequent calls to <code>ListReusableDelegationSets</code>, <code>Marker</code> is the value that you specified for the <code>marker</code> parameter in the request that produced the current response.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
     /// <p>A flag that indicates whether there are more reusable delegation sets to be listed.</p>
@@ -35,15 +35,15 @@ impl ListReusableDelegationSetsOutput {
         self.is_truncated
     }
     /// <p>If <code>IsTruncated</code> is <code>true</code>, the value of <code>NextMarker</code> identifies the next reusable delegation set that Amazon Route 53 will return if you submit another <code>ListReusableDelegationSets</code> request and specify the value of <code>NextMarker</code> in the <code>marker</code> parameter.</p>
-    pub fn next_marker(&self) -> std::option::Option<&str> {
+    pub fn next_marker(&self) -> ::std::option::Option<&str> {
         self.next_marker.as_deref()
     }
     /// <p>The value that you specified for the <code>maxitems</code> parameter in the call to <code>ListReusableDelegationSets</code> that produced the current response.</p>
-    pub fn max_items(&self) -> std::option::Option<i32> {
+    pub fn max_items(&self) -> ::std::option::Option<i32> {
         self.max_items
     }
 }
-impl aws_http::request_id::RequestId for ListReusableDelegationSetsOutput {
+impl ::aws_http::request_id::RequestId for ListReusableDelegationSetsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -57,13 +57,15 @@ impl ListReusableDelegationSetsOutput {
 
 /// A builder for [`ListReusableDelegationSetsOutput`](crate::operation::list_reusable_delegation_sets::ListReusableDelegationSetsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListReusableDelegationSetsOutputBuilder {
-    pub(crate) delegation_sets: std::option::Option<std::vec::Vec<crate::types::DelegationSet>>,
-    pub(crate) marker: std::option::Option<std::string::String>,
-    pub(crate) is_truncated: std::option::Option<bool>,
-    pub(crate) next_marker: std::option::Option<std::string::String>,
-    pub(crate) max_items: std::option::Option<i32>,
+    pub(crate) delegation_sets: ::std::option::Option<::std::vec::Vec<crate::types::DelegationSet>>,
+    pub(crate) marker: ::std::option::Option<::std::string::String>,
+    pub(crate) is_truncated: ::std::option::Option<bool>,
+    pub(crate) next_marker: ::std::option::Option<::std::string::String>,
+    pub(crate) max_items: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }
 impl ListReusableDelegationSetsOutputBuilder {
@@ -75,54 +77,54 @@ impl ListReusableDelegationSetsOutputBuilder {
     pub fn delegation_sets(mut self, input: crate::types::DelegationSet) -> Self {
         let mut v = self.delegation_sets.unwrap_or_default();
         v.push(input);
-        self.delegation_sets = Some(v);
+        self.delegation_sets = ::std::option::Option::Some(v);
         self
     }
     /// <p>A complex type that contains one <code>DelegationSet</code> element for each reusable delegation set that was created by the current Amazon Web Services account.</p>
     pub fn set_delegation_sets(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DelegationSet>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DelegationSet>>,
     ) -> Self {
         self.delegation_sets = input;
         self
     }
     /// <p>For the second and subsequent calls to <code>ListReusableDelegationSets</code>, <code>Marker</code> is the value that you specified for the <code>marker</code> parameter in the request that produced the current response.</p>
-    pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-        self.marker = Some(input.into());
+    pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>For the second and subsequent calls to <code>ListReusableDelegationSets</code>, <code>Marker</code> is the value that you specified for the <code>marker</code> parameter in the request that produced the current response.</p>
-    pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
     }
     /// <p>A flag that indicates whether there are more reusable delegation sets to be listed.</p>
     pub fn is_truncated(mut self, input: bool) -> Self {
-        self.is_truncated = Some(input);
+        self.is_truncated = ::std::option::Option::Some(input);
         self
     }
     /// <p>A flag that indicates whether there are more reusable delegation sets to be listed.</p>
-    pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_truncated(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_truncated = input;
         self
     }
     /// <p>If <code>IsTruncated</code> is <code>true</code>, the value of <code>NextMarker</code> identifies the next reusable delegation set that Amazon Route 53 will return if you submit another <code>ListReusableDelegationSets</code> request and specify the value of <code>NextMarker</code> in the <code>marker</code> parameter.</p>
-    pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_marker = Some(input.into());
+    pub fn next_marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If <code>IsTruncated</code> is <code>true</code>, the value of <code>NextMarker</code> identifies the next reusable delegation set that Amazon Route 53 will return if you submit another <code>ListReusableDelegationSets</code> request and specify the value of <code>NextMarker</code> in the <code>marker</code> parameter.</p>
-    pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_marker = input;
         self
     }
     /// <p>The value that you specified for the <code>maxitems</code> parameter in the call to <code>ListReusableDelegationSets</code> that produced the current response.</p>
     pub fn max_items(mut self, input: i32) -> Self {
-        self.max_items = Some(input);
+        self.max_items = ::std::option::Option::Some(input);
         self
     }
     /// <p>The value that you specified for the <code>maxitems</code> parameter in the call to <code>ListReusableDelegationSets</code> that produced the current response.</p>
-    pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_items = input;
         self
     }

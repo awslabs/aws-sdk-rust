@@ -2,19 +2,19 @@
 
 /// <p>When you update an SQL-based Kinesis Data Analytics application's output configuration using the <code>UpdateApplication</code> operation, provides information about an Amazon Lambda function that is configured as the destination.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LambdaOutputUpdate {
     /// <p>The Amazon Resource Name (ARN) of the destination Amazon Lambda function.</p> <note>
     /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: Amazon Lambda</a> </p>
     /// </note>
     #[doc(hidden)]
-    pub resource_arn_update: std::option::Option<std::string::String>,
+    pub resource_arn_update: ::std::option::Option<::std::string::String>,
 }
 impl LambdaOutputUpdate {
     /// <p>The Amazon Resource Name (ARN) of the destination Amazon Lambda function.</p> <note>
     /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: Amazon Lambda</a> </p>
     /// </note>
-    pub fn resource_arn_update(&self) -> std::option::Option<&str> {
+    pub fn resource_arn_update(&self) -> ::std::option::Option<&str> {
         self.resource_arn_update.as_deref()
     }
 }
@@ -27,16 +27,21 @@ impl LambdaOutputUpdate {
 
 /// A builder for [`LambdaOutputUpdate`](crate::types::LambdaOutputUpdate).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LambdaOutputUpdateBuilder {
-    pub(crate) resource_arn_update: std::option::Option<std::string::String>,
+    pub(crate) resource_arn_update: ::std::option::Option<::std::string::String>,
 }
 impl LambdaOutputUpdateBuilder {
     /// <p>The Amazon Resource Name (ARN) of the destination Amazon Lambda function.</p> <note>
     /// <p>To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example ARNs: Amazon Lambda</a> </p>
     /// </note>
-    pub fn resource_arn_update(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_arn_update = Some(input.into());
+    pub fn resource_arn_update(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.resource_arn_update = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the destination Amazon Lambda function.</p> <note>
@@ -44,7 +49,7 @@ impl LambdaOutputUpdateBuilder {
     /// </note>
     pub fn set_resource_arn_update(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.resource_arn_update = input;
         self

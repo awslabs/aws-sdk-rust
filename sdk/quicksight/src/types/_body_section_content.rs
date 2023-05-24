@@ -2,15 +2,15 @@
 
 /// <p>The configuration of content in a body section.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BodySectionContent {
     /// <p>The layout configuration of a body section.</p>
     #[doc(hidden)]
-    pub layout: std::option::Option<crate::types::SectionLayoutConfiguration>,
+    pub layout: ::std::option::Option<crate::types::SectionLayoutConfiguration>,
 }
 impl BodySectionContent {
     /// <p>The layout configuration of a body section.</p>
-    pub fn layout(&self) -> std::option::Option<&crate::types::SectionLayoutConfiguration> {
+    pub fn layout(&self) -> ::std::option::Option<&crate::types::SectionLayoutConfiguration> {
         self.layout.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl BodySectionContent {
 
 /// A builder for [`BodySectionContent`](crate::types::BodySectionContent).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BodySectionContentBuilder {
-    pub(crate) layout: std::option::Option<crate::types::SectionLayoutConfiguration>,
+    pub(crate) layout: ::std::option::Option<crate::types::SectionLayoutConfiguration>,
 }
 impl BodySectionContentBuilder {
     /// <p>The layout configuration of a body section.</p>
     pub fn layout(mut self, input: crate::types::SectionLayoutConfiguration) -> Self {
-        self.layout = Some(input);
+        self.layout = ::std::option::Option::Some(input);
         self
     }
     /// <p>The layout configuration of a body section.</p>
     pub fn set_layout(
         mut self,
-        input: std::option::Option<crate::types::SectionLayoutConfiguration>,
+        input: ::std::option::Option<crate::types::SectionLayoutConfiguration>,
     ) -> Self {
         self.layout = input;
         self

@@ -6,29 +6,29 @@ pub use crate::operation::list_classification_jobs::_list_classification_jobs_in
 /// Fluent builder constructing a request to `ListClassificationJobs`.
 ///
 /// <p>Retrieves a subset of information about one or more classification jobs.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListClassificationJobsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::list_classification_jobs::builders::ListClassificationJobsInputBuilder,
 }
 impl ListClassificationJobsFluentBuilder {
     /// Creates a new `ListClassificationJobs`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::list_classification_jobs::ListClassificationJobs,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::list_classification_jobs::ListClassificationJobsError,
         >,
     > {
@@ -36,30 +36,33 @@ impl ListClassificationJobsFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::list_classification_jobs::ListClassificationJobsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::list_classification_jobs::ListClassificationJobsError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,9 +75,9 @@ impl ListClassificationJobsFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::list_classification_jobs::ListClassificationJobsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::list_classification_jobs::ListClassificationJobsError,
         >,
     > {
@@ -100,7 +103,7 @@ impl ListClassificationJobsFluentBuilder {
     /// <p>The criteria to use to filter the results.</p>
     pub fn set_filter_criteria(
         mut self,
-        input: std::option::Option<crate::types::ListJobsFilterCriteria>,
+        input: ::std::option::Option<crate::types::ListJobsFilterCriteria>,
     ) -> Self {
         self.inner = self.inner.set_filter_criteria(input);
         self
@@ -111,17 +114,17 @@ impl ListClassificationJobsFluentBuilder {
         self
     }
     /// <p>The maximum number of items to include in each page of the response.</p>
-    pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
     /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
     /// <p>The nextToken string that specifies which page of results to return in a paginated response.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
@@ -133,7 +136,7 @@ impl ListClassificationJobsFluentBuilder {
     /// <p>The criteria to use to sort the results.</p>
     pub fn set_sort_criteria(
         mut self,
-        input: std::option::Option<crate::types::ListJobsSortCriteria>,
+        input: ::std::option::Option<crate::types::ListJobsSortCriteria>,
     ) -> Self {
         self.inner = self.inner.set_sort_criteria(input);
         self

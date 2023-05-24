@@ -2,29 +2,29 @@
 
 /// <p>A filter for import read set jobs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportReadSetFilter {
     /// <p>A status to filter on.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::ReadSetImportJobStatus>,
+    pub status: ::std::option::Option<crate::types::ReadSetImportJobStatus>,
     /// <p>The filter's start date.</p>
     #[doc(hidden)]
-    pub created_after: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_after: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The filter's end date.</p>
     #[doc(hidden)]
-    pub created_before: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_before: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ImportReadSetFilter {
     /// <p>A status to filter on.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::ReadSetImportJobStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::ReadSetImportJobStatus> {
         self.status.as_ref()
     }
     /// <p>The filter's start date.</p>
-    pub fn created_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_after(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_after.as_ref()
     }
     /// <p>The filter's end date.</p>
-    pub fn created_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_before.as_ref()
     }
 }
@@ -37,48 +37,50 @@ impl ImportReadSetFilter {
 
 /// A builder for [`ImportReadSetFilter`](crate::types::ImportReadSetFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ImportReadSetFilterBuilder {
-    pub(crate) status: std::option::Option<crate::types::ReadSetImportJobStatus>,
-    pub(crate) created_after: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) created_before: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) status: ::std::option::Option<crate::types::ReadSetImportJobStatus>,
+    pub(crate) created_after: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) created_before: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ImportReadSetFilterBuilder {
     /// <p>A status to filter on.</p>
     pub fn status(mut self, input: crate::types::ReadSetImportJobStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>A status to filter on.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::ReadSetImportJobStatus>,
+        input: ::std::option::Option<crate::types::ReadSetImportJobStatus>,
     ) -> Self {
         self.status = input;
         self
     }
     /// <p>The filter's start date.</p>
-    pub fn created_after(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_after = Some(input);
+    pub fn created_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_after = ::std::option::Option::Some(input);
         self
     }
     /// <p>The filter's start date.</p>
     pub fn set_created_after(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_after = input;
         self
     }
     /// <p>The filter's end date.</p>
-    pub fn created_before(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_before = Some(input);
+    pub fn created_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_before = ::std::option::Option::Some(input);
         self
     }
     /// <p>The filter's end date.</p>
     pub fn set_created_before(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_before = input;
         self

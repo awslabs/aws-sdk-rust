@@ -2,35 +2,35 @@
 
 /// <p>Details on a task in a cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Task {
     /// <p>The Elastic Network Adapter that's associated with the task if the task uses the <code>awsvpc</code> network mode.</p>
     #[doc(hidden)]
-    pub attachments: std::option::Option<std::vec::Vec<crate::types::Attachment>>,
+    pub attachments: ::std::option::Option<::std::vec::Vec<crate::types::Attachment>>,
     /// <p>The attributes of the task</p>
     #[doc(hidden)]
-    pub attributes: std::option::Option<std::vec::Vec<crate::types::Attribute>>,
+    pub attributes: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
     /// <p>The Availability Zone for the task.</p>
     #[doc(hidden)]
-    pub availability_zone: std::option::Option<std::string::String>,
+    pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The capacity provider that's associated with the task.</p>
     #[doc(hidden)]
-    pub capacity_provider_name: std::option::Option<std::string::String>,
+    pub capacity_provider_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the cluster that hosts the task.</p>
     #[doc(hidden)]
-    pub cluster_arn: std::option::Option<std::string::String>,
+    pub cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p>The connectivity status of a task.</p>
     #[doc(hidden)]
-    pub connectivity: std::option::Option<crate::types::Connectivity>,
+    pub connectivity: ::std::option::Option<crate::types::Connectivity>,
     /// <p>The Unix timestamp for the time when the task last went into <code>CONNECTED</code> status.</p>
     #[doc(hidden)]
-    pub connectivity_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub connectivity_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ARN of the container instances that host the task.</p>
     #[doc(hidden)]
-    pub container_instance_arn: std::option::Option<std::string::String>,
+    pub container_instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>The containers that's associated with the task.</p>
     #[doc(hidden)]
-    pub containers: std::option::Option<std::vec::Vec<crate::types::Container>>,
+    pub containers: ::std::option::Option<::std::vec::Vec<crate::types::Container>>,
     /// <p>The number of CPU units used by the task as expressed in a task definition. It can be expressed as an integer using CPU units (for example, <code>1024</code>). It can also be expressed as a string using vCPUs (for example, <code>1 vCPU</code> or <code>1 vcpu</code>). String values are converted to an integer that indicates the CPU units when the task definition is registered.</p>
     /// <p>If you use the EC2 launch type, this field is optional. Supported values are between <code>128</code> CPU units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code> vCPUs).</p>
     /// <p>If you use the Fargate launch type, this field is required. You must use one of the following values. These values determine the range of supported values for the <code>memory</code> parameter:</p>
@@ -45,37 +45,37 @@ pub struct Task {
     /// <li> <p>16384 (16vCPU) - Available <code>memory</code> values: 32GB and 120 GB in 8 GB increments</p> <p>This option requires Linux platform <code>1.4.0</code> or later.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub cpu: std::option::Option<std::string::String>,
+    pub cpu: ::std::option::Option<::std::string::String>,
     /// <p>The Unix timestamp for the time when the task was created. More specifically, it's for the time when the task entered the <code>PENDING</code> state.</p>
     #[doc(hidden)]
-    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The desired status of the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-lifecycle.html">Task Lifecycle</a>.</p>
     #[doc(hidden)]
-    pub desired_status: std::option::Option<std::string::String>,
+    pub desired_status: ::std::option::Option<::std::string::String>,
     /// <p>Determines whether execute command functionality is turned on for this task. If <code>true</code>, execute command functionality is turned on all the containers in the task.</p>
     #[doc(hidden)]
     pub enable_execute_command: bool,
     /// <p>The Unix timestamp for the time when the task execution stopped.</p>
     #[doc(hidden)]
-    pub execution_stopped_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub execution_stopped_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The name of the task group that's associated with the task.</p>
     #[doc(hidden)]
-    pub group: std::option::Option<std::string::String>,
+    pub group: ::std::option::Option<::std::string::String>,
     /// <p>The health status for the task. It's determined by the health of the essential containers in the task. If all essential containers in the task are reporting as <code>HEALTHY</code>, the task status also reports as <code>HEALTHY</code>. If any essential containers in the task are reporting as <code>UNHEALTHY</code> or <code>UNKNOWN</code>, the task status also reports as <code>UNHEALTHY</code> or <code>UNKNOWN</code>.</p> <note>
     /// <p>The Amazon ECS container agent doesn't monitor or report on Docker health checks that are embedded in a container image and not specified in the container definition. For example, this includes those specified in a parent image or from the image's Dockerfile. Health check parameters that are specified in a container definition override any Docker health checks that are found in the container image.</p>
     /// </note>
     #[doc(hidden)]
-    pub health_status: std::option::Option<crate::types::HealthStatus>,
+    pub health_status: ::std::option::Option<crate::types::HealthStatus>,
     /// <p>The Elastic Inference accelerator that's associated with the task.</p>
     #[doc(hidden)]
     pub inference_accelerators:
-        std::option::Option<std::vec::Vec<crate::types::InferenceAccelerator>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::InferenceAccelerator>>,
     /// <p>The last known status for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-lifecycle.html">Task Lifecycle</a>.</p>
     #[doc(hidden)]
-    pub last_status: std::option::Option<std::string::String>,
+    pub last_status: ::std::option::Option<::std::string::String>,
     /// <p>The infrastructure where your task runs on. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     #[doc(hidden)]
-    pub launch_type: std::option::Option<crate::types::LaunchType>,
+    pub launch_type: ::std::option::Option<crate::types::LaunchType>,
     /// <p>The amount of memory (in MiB) that the task uses as expressed in a task definition. It can be expressed as an integer using MiB (for example, <code>1024</code>). If it's expressed as a string using GB (for example, <code>1GB</code> or <code>1 GB</code>), it's converted to an integer indicating the MiB when the task definition is registered.</p>
     /// <p>If you use the EC2 launch type, this field is optional.</p>
     /// <p>If you use the Fargate launch type, this field is required. You must use one of the following values. The value that you choose determines the range of supported values for the <code>cpu</code> parameter.</p>
@@ -89,29 +89,29 @@ pub struct Task {
     /// <li> <p>Between 32GB and 120 GB in 8 GB increments - Available <code>cpu</code> values: 16384 (16 vCPU)</p> <p>This option requires Linux platform <code>1.4.0</code> or later.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub memory: std::option::Option<std::string::String>,
+    pub memory: ::std::option::Option<::std::string::String>,
     /// <p>One or more container overrides.</p>
     #[doc(hidden)]
-    pub overrides: std::option::Option<crate::types::TaskOverride>,
+    pub overrides: ::std::option::Option<crate::types::TaskOverride>,
     /// <p>The platform version where your task runs on. A platform version is only specified for tasks that use the Fargate launch type. If you didn't specify one, the <code>LATEST</code> platform version is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     #[doc(hidden)]
-    pub platform_version: std::option::Option<std::string::String>,
+    pub platform_version: ::std::option::Option<::std::string::String>,
     /// <p>The operating system that your tasks are running on. A platform family is specified only for tasks that use the Fargate launch type. </p>
     /// <p> All tasks that run as part of this service must use the same <code>platformFamily</code> value as the service (for example, <code>LINUX.</code>).</p>
     #[doc(hidden)]
-    pub platform_family: std::option::Option<std::string::String>,
+    pub platform_family: ::std::option::Option<::std::string::String>,
     /// <p>The Unix timestamp for the time when the container image pull began.</p>
     #[doc(hidden)]
-    pub pull_started_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub pull_started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Unix timestamp for the time when the container image pull completed.</p>
     #[doc(hidden)]
-    pub pull_stopped_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub pull_stopped_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Unix timestamp for the time when the task started. More specifically, it's for the time when the task transitioned from the <code>PENDING</code> state to the <code>RUNNING</code> state.</p>
     #[doc(hidden)]
-    pub started_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The tag specified when a task is started. If an Amazon ECS service started the task, the <code>startedBy</code> parameter contains the deployment ID of that service.</p>
     #[doc(hidden)]
-    pub started_by: std::option::Option<std::string::String>,
+    pub started_by: ::std::option::Option<::std::string::String>,
     /// <p>The stop code indicating why a task was stopped. The <code>stoppedReason</code> might contain additional details.</p>
     /// <p>The following are valid values:</p>
     /// <ul>
@@ -123,16 +123,16 @@ pub struct Task {
     /// <li> <p> <code>SpotInterruption</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub stop_code: std::option::Option<crate::types::TaskStopCode>,
+    pub stop_code: ::std::option::Option<crate::types::TaskStopCode>,
     /// <p>The Unix timestamp for the time when the task was stopped. More specifically, it's for the time when the task transitioned from the <code>RUNNING</code> state to the <code>STOPPED</code> state.</p>
     #[doc(hidden)]
-    pub stopped_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub stopped_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The reason that the task was stopped.</p>
     #[doc(hidden)]
-    pub stopped_reason: std::option::Option<std::string::String>,
+    pub stopped_reason: ::std::option::Option<::std::string::String>,
     /// <p>The Unix timestamp for the time when the task stops. More specifically, it's for the time when the task transitions from the <code>RUNNING</code> state to <code>STOPPED</code>.</p>
     #[doc(hidden)]
-    pub stopping_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub stopping_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The metadata that you apply to the task to help you categorize and organize the task. Each tag consists of a key and an optional value. You define both the key and value.</p>
     /// <p>The following basic restrictions apply to tags:</p>
     /// <ul>
@@ -145,55 +145,55 @@ pub struct Task {
     /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The Amazon Resource Name (ARN) of the task.</p>
     #[doc(hidden)]
-    pub task_arn: std::option::Option<std::string::String>,
+    pub task_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the task definition that creates the task.</p>
     #[doc(hidden)]
-    pub task_definition_arn: std::option::Option<std::string::String>,
+    pub task_definition_arn: ::std::option::Option<::std::string::String>,
     /// <p>The version counter for the task. Every time a task experiences a change that starts a CloudWatch event, the version counter is incremented. If you replicate your Amazon ECS task state with CloudWatch Events, you can compare the version of a task reported by the Amazon ECS API actions with the version reported in CloudWatch Events for the task (inside the <code>detail</code> object) to verify that the version in your event stream is current.</p>
     #[doc(hidden)]
     pub version: i64,
     /// <p>The ephemeral storage settings for the task.</p>
     #[doc(hidden)]
-    pub ephemeral_storage: std::option::Option<crate::types::EphemeralStorage>,
+    pub ephemeral_storage: ::std::option::Option<crate::types::EphemeralStorage>,
 }
 impl Task {
     /// <p>The Elastic Network Adapter that's associated with the task if the task uses the <code>awsvpc</code> network mode.</p>
-    pub fn attachments(&self) -> std::option::Option<&[crate::types::Attachment]> {
+    pub fn attachments(&self) -> ::std::option::Option<&[crate::types::Attachment]> {
         self.attachments.as_deref()
     }
     /// <p>The attributes of the task</p>
-    pub fn attributes(&self) -> std::option::Option<&[crate::types::Attribute]> {
+    pub fn attributes(&self) -> ::std::option::Option<&[crate::types::Attribute]> {
         self.attributes.as_deref()
     }
     /// <p>The Availability Zone for the task.</p>
-    pub fn availability_zone(&self) -> std::option::Option<&str> {
+    pub fn availability_zone(&self) -> ::std::option::Option<&str> {
         self.availability_zone.as_deref()
     }
     /// <p>The capacity provider that's associated with the task.</p>
-    pub fn capacity_provider_name(&self) -> std::option::Option<&str> {
+    pub fn capacity_provider_name(&self) -> ::std::option::Option<&str> {
         self.capacity_provider_name.as_deref()
     }
     /// <p>The ARN of the cluster that hosts the task.</p>
-    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+    pub fn cluster_arn(&self) -> ::std::option::Option<&str> {
         self.cluster_arn.as_deref()
     }
     /// <p>The connectivity status of a task.</p>
-    pub fn connectivity(&self) -> std::option::Option<&crate::types::Connectivity> {
+    pub fn connectivity(&self) -> ::std::option::Option<&crate::types::Connectivity> {
         self.connectivity.as_ref()
     }
     /// <p>The Unix timestamp for the time when the task last went into <code>CONNECTED</code> status.</p>
-    pub fn connectivity_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn connectivity_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.connectivity_at.as_ref()
     }
     /// <p>The ARN of the container instances that host the task.</p>
-    pub fn container_instance_arn(&self) -> std::option::Option<&str> {
+    pub fn container_instance_arn(&self) -> ::std::option::Option<&str> {
         self.container_instance_arn.as_deref()
     }
     /// <p>The containers that's associated with the task.</p>
-    pub fn containers(&self) -> std::option::Option<&[crate::types::Container]> {
+    pub fn containers(&self) -> ::std::option::Option<&[crate::types::Container]> {
         self.containers.as_deref()
     }
     /// <p>The number of CPU units used by the task as expressed in a task definition. It can be expressed as an integer using CPU units (for example, <code>1024</code>). It can also be expressed as a string using vCPUs (for example, <code>1 vCPU</code> or <code>1 vcpu</code>). String values are converted to an integer that indicates the CPU units when the task definition is registered.</p>
@@ -209,15 +209,15 @@ impl Task {
     /// <li> <p>8192 (8 vCPU) - Available <code>memory</code> values: 16 GB and 60 GB in 4 GB increments</p> <p>This option requires Linux platform <code>1.4.0</code> or later.</p> </li>
     /// <li> <p>16384 (16vCPU) - Available <code>memory</code> values: 32GB and 120 GB in 8 GB increments</p> <p>This option requires Linux platform <code>1.4.0</code> or later.</p> </li>
     /// </ul>
-    pub fn cpu(&self) -> std::option::Option<&str> {
+    pub fn cpu(&self) -> ::std::option::Option<&str> {
         self.cpu.as_deref()
     }
     /// <p>The Unix timestamp for the time when the task was created. More specifically, it's for the time when the task entered the <code>PENDING</code> state.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The desired status of the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-lifecycle.html">Task Lifecycle</a>.</p>
-    pub fn desired_status(&self) -> std::option::Option<&str> {
+    pub fn desired_status(&self) -> ::std::option::Option<&str> {
         self.desired_status.as_deref()
     }
     /// <p>Determines whether execute command functionality is turned on for this task. If <code>true</code>, execute command functionality is turned on all the containers in the task.</p>
@@ -225,31 +225,31 @@ impl Task {
         self.enable_execute_command
     }
     /// <p>The Unix timestamp for the time when the task execution stopped.</p>
-    pub fn execution_stopped_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn execution_stopped_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.execution_stopped_at.as_ref()
     }
     /// <p>The name of the task group that's associated with the task.</p>
-    pub fn group(&self) -> std::option::Option<&str> {
+    pub fn group(&self) -> ::std::option::Option<&str> {
         self.group.as_deref()
     }
     /// <p>The health status for the task. It's determined by the health of the essential containers in the task. If all essential containers in the task are reporting as <code>HEALTHY</code>, the task status also reports as <code>HEALTHY</code>. If any essential containers in the task are reporting as <code>UNHEALTHY</code> or <code>UNKNOWN</code>, the task status also reports as <code>UNHEALTHY</code> or <code>UNKNOWN</code>.</p> <note>
     /// <p>The Amazon ECS container agent doesn't monitor or report on Docker health checks that are embedded in a container image and not specified in the container definition. For example, this includes those specified in a parent image or from the image's Dockerfile. Health check parameters that are specified in a container definition override any Docker health checks that are found in the container image.</p>
     /// </note>
-    pub fn health_status(&self) -> std::option::Option<&crate::types::HealthStatus> {
+    pub fn health_status(&self) -> ::std::option::Option<&crate::types::HealthStatus> {
         self.health_status.as_ref()
     }
     /// <p>The Elastic Inference accelerator that's associated with the task.</p>
     pub fn inference_accelerators(
         &self,
-    ) -> std::option::Option<&[crate::types::InferenceAccelerator]> {
+    ) -> ::std::option::Option<&[crate::types::InferenceAccelerator]> {
         self.inference_accelerators.as_deref()
     }
     /// <p>The last known status for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-lifecycle.html">Task Lifecycle</a>.</p>
-    pub fn last_status(&self) -> std::option::Option<&str> {
+    pub fn last_status(&self) -> ::std::option::Option<&str> {
         self.last_status.as_deref()
     }
     /// <p>The infrastructure where your task runs on. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn launch_type(&self) -> std::option::Option<&crate::types::LaunchType> {
+    pub fn launch_type(&self) -> ::std::option::Option<&crate::types::LaunchType> {
         self.launch_type.as_ref()
     }
     /// <p>The amount of memory (in MiB) that the task uses as expressed in a task definition. It can be expressed as an integer using MiB (for example, <code>1024</code>). If it's expressed as a string using GB (for example, <code>1GB</code> or <code>1 GB</code>), it's converted to an integer indicating the MiB when the task definition is registered.</p>
@@ -264,36 +264,36 @@ impl Task {
     /// <li> <p>Between 16 GB and 60 GB in 4 GB increments - Available <code>cpu</code> values: 8192 (8 vCPU)</p> <p>This option requires Linux platform <code>1.4.0</code> or later.</p> </li>
     /// <li> <p>Between 32GB and 120 GB in 8 GB increments - Available <code>cpu</code> values: 16384 (16 vCPU)</p> <p>This option requires Linux platform <code>1.4.0</code> or later.</p> </li>
     /// </ul>
-    pub fn memory(&self) -> std::option::Option<&str> {
+    pub fn memory(&self) -> ::std::option::Option<&str> {
         self.memory.as_deref()
     }
     /// <p>One or more container overrides.</p>
-    pub fn overrides(&self) -> std::option::Option<&crate::types::TaskOverride> {
+    pub fn overrides(&self) -> ::std::option::Option<&crate::types::TaskOverride> {
         self.overrides.as_ref()
     }
     /// <p>The platform version where your task runs on. A platform version is only specified for tasks that use the Fargate launch type. If you didn't specify one, the <code>LATEST</code> platform version is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn platform_version(&self) -> std::option::Option<&str> {
+    pub fn platform_version(&self) -> ::std::option::Option<&str> {
         self.platform_version.as_deref()
     }
     /// <p>The operating system that your tasks are running on. A platform family is specified only for tasks that use the Fargate launch type. </p>
     /// <p> All tasks that run as part of this service must use the same <code>platformFamily</code> value as the service (for example, <code>LINUX.</code>).</p>
-    pub fn platform_family(&self) -> std::option::Option<&str> {
+    pub fn platform_family(&self) -> ::std::option::Option<&str> {
         self.platform_family.as_deref()
     }
     /// <p>The Unix timestamp for the time when the container image pull began.</p>
-    pub fn pull_started_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn pull_started_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.pull_started_at.as_ref()
     }
     /// <p>The Unix timestamp for the time when the container image pull completed.</p>
-    pub fn pull_stopped_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn pull_stopped_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.pull_stopped_at.as_ref()
     }
     /// <p>The Unix timestamp for the time when the task started. More specifically, it's for the time when the task transitioned from the <code>PENDING</code> state to the <code>RUNNING</code> state.</p>
-    pub fn started_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn started_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.started_at.as_ref()
     }
     /// <p>The tag specified when a task is started. If an Amazon ECS service started the task, the <code>startedBy</code> parameter contains the deployment ID of that service.</p>
-    pub fn started_by(&self) -> std::option::Option<&str> {
+    pub fn started_by(&self) -> ::std::option::Option<&str> {
         self.started_by.as_deref()
     }
     /// <p>The stop code indicating why a task was stopped. The <code>stoppedReason</code> might contain additional details.</p>
@@ -306,19 +306,19 @@ impl Task {
     /// <li> <p> <code>ServiceSchedulerInitiated</code> </p> </li>
     /// <li> <p> <code>SpotInterruption</code> </p> </li>
     /// </ul>
-    pub fn stop_code(&self) -> std::option::Option<&crate::types::TaskStopCode> {
+    pub fn stop_code(&self) -> ::std::option::Option<&crate::types::TaskStopCode> {
         self.stop_code.as_ref()
     }
     /// <p>The Unix timestamp for the time when the task was stopped. More specifically, it's for the time when the task transitioned from the <code>RUNNING</code> state to the <code>STOPPED</code> state.</p>
-    pub fn stopped_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn stopped_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.stopped_at.as_ref()
     }
     /// <p>The reason that the task was stopped.</p>
-    pub fn stopped_reason(&self) -> std::option::Option<&str> {
+    pub fn stopped_reason(&self) -> ::std::option::Option<&str> {
         self.stopped_reason.as_deref()
     }
     /// <p>The Unix timestamp for the time when the task stops. More specifically, it's for the time when the task transitions from the <code>RUNNING</code> state to <code>STOPPED</code>.</p>
-    pub fn stopping_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn stopping_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.stopping_at.as_ref()
     }
     /// <p>The metadata that you apply to the task to help you categorize and organize the task. Each tag consists of a key and an optional value. You define both the key and value.</p>
@@ -332,15 +332,15 @@ impl Task {
     /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
     /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
     /// </ul>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the task.</p>
-    pub fn task_arn(&self) -> std::option::Option<&str> {
+    pub fn task_arn(&self) -> ::std::option::Option<&str> {
         self.task_arn.as_deref()
     }
     /// <p>The ARN of the task definition that creates the task.</p>
-    pub fn task_definition_arn(&self) -> std::option::Option<&str> {
+    pub fn task_definition_arn(&self) -> ::std::option::Option<&str> {
         self.task_definition_arn.as_deref()
     }
     /// <p>The version counter for the task. Every time a task experiences a change that starts a CloudWatch event, the version counter is incremented. If you replicate your Amazon ECS task state with CloudWatch Events, you can compare the version of a task reported by the Amazon ECS API actions with the version reported in CloudWatch Events for the task (inside the <code>detail</code> object) to verify that the version in your event stream is current.</p>
@@ -348,7 +348,7 @@ impl Task {
         self.version
     }
     /// <p>The ephemeral storage settings for the task.</p>
-    pub fn ephemeral_storage(&self) -> std::option::Option<&crate::types::EphemeralStorage> {
+    pub fn ephemeral_storage(&self) -> ::std::option::Option<&crate::types::EphemeralStorage> {
         self.ephemeral_storage.as_ref()
     }
 }
@@ -361,45 +361,47 @@ impl Task {
 
 /// A builder for [`Task`](crate::types::Task).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TaskBuilder {
-    pub(crate) attachments: std::option::Option<std::vec::Vec<crate::types::Attachment>>,
-    pub(crate) attributes: std::option::Option<std::vec::Vec<crate::types::Attribute>>,
-    pub(crate) availability_zone: std::option::Option<std::string::String>,
-    pub(crate) capacity_provider_name: std::option::Option<std::string::String>,
-    pub(crate) cluster_arn: std::option::Option<std::string::String>,
-    pub(crate) connectivity: std::option::Option<crate::types::Connectivity>,
-    pub(crate) connectivity_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) container_instance_arn: std::option::Option<std::string::String>,
-    pub(crate) containers: std::option::Option<std::vec::Vec<crate::types::Container>>,
-    pub(crate) cpu: std::option::Option<std::string::String>,
-    pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) desired_status: std::option::Option<std::string::String>,
-    pub(crate) enable_execute_command: std::option::Option<bool>,
-    pub(crate) execution_stopped_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) group: std::option::Option<std::string::String>,
-    pub(crate) health_status: std::option::Option<crate::types::HealthStatus>,
+    pub(crate) attachments: ::std::option::Option<::std::vec::Vec<crate::types::Attachment>>,
+    pub(crate) attributes: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
+    pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
+    pub(crate) capacity_provider_name: ::std::option::Option<::std::string::String>,
+    pub(crate) cluster_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) connectivity: ::std::option::Option<crate::types::Connectivity>,
+    pub(crate) connectivity_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) container_instance_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) containers: ::std::option::Option<::std::vec::Vec<crate::types::Container>>,
+    pub(crate) cpu: ::std::option::Option<::std::string::String>,
+    pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) desired_status: ::std::option::Option<::std::string::String>,
+    pub(crate) enable_execute_command: ::std::option::Option<bool>,
+    pub(crate) execution_stopped_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) group: ::std::option::Option<::std::string::String>,
+    pub(crate) health_status: ::std::option::Option<crate::types::HealthStatus>,
     pub(crate) inference_accelerators:
-        std::option::Option<std::vec::Vec<crate::types::InferenceAccelerator>>,
-    pub(crate) last_status: std::option::Option<std::string::String>,
-    pub(crate) launch_type: std::option::Option<crate::types::LaunchType>,
-    pub(crate) memory: std::option::Option<std::string::String>,
-    pub(crate) overrides: std::option::Option<crate::types::TaskOverride>,
-    pub(crate) platform_version: std::option::Option<std::string::String>,
-    pub(crate) platform_family: std::option::Option<std::string::String>,
-    pub(crate) pull_started_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) pull_stopped_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) started_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) started_by: std::option::Option<std::string::String>,
-    pub(crate) stop_code: std::option::Option<crate::types::TaskStopCode>,
-    pub(crate) stopped_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) stopped_reason: std::option::Option<std::string::String>,
-    pub(crate) stopping_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    pub(crate) task_arn: std::option::Option<std::string::String>,
-    pub(crate) task_definition_arn: std::option::Option<std::string::String>,
-    pub(crate) version: std::option::Option<i64>,
-    pub(crate) ephemeral_storage: std::option::Option<crate::types::EphemeralStorage>,
+        ::std::option::Option<::std::vec::Vec<crate::types::InferenceAccelerator>>,
+    pub(crate) last_status: ::std::option::Option<::std::string::String>,
+    pub(crate) launch_type: ::std::option::Option<crate::types::LaunchType>,
+    pub(crate) memory: ::std::option::Option<::std::string::String>,
+    pub(crate) overrides: ::std::option::Option<crate::types::TaskOverride>,
+    pub(crate) platform_version: ::std::option::Option<::std::string::String>,
+    pub(crate) platform_family: ::std::option::Option<::std::string::String>,
+    pub(crate) pull_started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) pull_stopped_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) started_by: ::std::option::Option<::std::string::String>,
+    pub(crate) stop_code: ::std::option::Option<crate::types::TaskStopCode>,
+    pub(crate) stopped_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) stopped_reason: ::std::option::Option<::std::string::String>,
+    pub(crate) stopping_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) task_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) task_definition_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) version: ::std::option::Option<i64>,
+    pub(crate) ephemeral_storage: ::std::option::Option<crate::types::EphemeralStorage>,
 }
 impl TaskBuilder {
     /// Appends an item to `attachments`.
@@ -410,13 +412,13 @@ impl TaskBuilder {
     pub fn attachments(mut self, input: crate::types::Attachment) -> Self {
         let mut v = self.attachments.unwrap_or_default();
         v.push(input);
-        self.attachments = Some(v);
+        self.attachments = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Elastic Network Adapter that's associated with the task if the task uses the <code>awsvpc</code> network mode.</p>
     pub fn set_attachments(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Attachment>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Attachment>>,
     ) -> Self {
         self.attachments = input;
         self
@@ -429,88 +431,97 @@ impl TaskBuilder {
     pub fn attributes(mut self, input: crate::types::Attribute) -> Self {
         let mut v = self.attributes.unwrap_or_default();
         v.push(input);
-        self.attributes = Some(v);
+        self.attributes = ::std::option::Option::Some(v);
         self
     }
     /// <p>The attributes of the task</p>
     pub fn set_attributes(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Attribute>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
     ) -> Self {
         self.attributes = input;
         self
     }
     /// <p>The Availability Zone for the task.</p>
-    pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
-        self.availability_zone = Some(input.into());
+    pub fn availability_zone(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.availability_zone = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Availability Zone for the task.</p>
     pub fn set_availability_zone(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.availability_zone = input;
         self
     }
     /// <p>The capacity provider that's associated with the task.</p>
-    pub fn capacity_provider_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.capacity_provider_name = Some(input.into());
+    pub fn capacity_provider_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.capacity_provider_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The capacity provider that's associated with the task.</p>
     pub fn set_capacity_provider_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.capacity_provider_name = input;
         self
     }
     /// <p>The ARN of the cluster that hosts the task.</p>
-    pub fn cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cluster_arn = Some(input.into());
+    pub fn cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cluster_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the cluster that hosts the task.</p>
-    pub fn set_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cluster_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_arn = input;
         self
     }
     /// <p>The connectivity status of a task.</p>
     pub fn connectivity(mut self, input: crate::types::Connectivity) -> Self {
-        self.connectivity = Some(input);
+        self.connectivity = ::std::option::Option::Some(input);
         self
     }
     /// <p>The connectivity status of a task.</p>
     pub fn set_connectivity(
         mut self,
-        input: std::option::Option<crate::types::Connectivity>,
+        input: ::std::option::Option<crate::types::Connectivity>,
     ) -> Self {
         self.connectivity = input;
         self
     }
     /// <p>The Unix timestamp for the time when the task last went into <code>CONNECTED</code> status.</p>
-    pub fn connectivity_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.connectivity_at = Some(input);
+    pub fn connectivity_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.connectivity_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Unix timestamp for the time when the task last went into <code>CONNECTED</code> status.</p>
     pub fn set_connectivity_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.connectivity_at = input;
         self
     }
     /// <p>The ARN of the container instances that host the task.</p>
-    pub fn container_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.container_instance_arn = Some(input.into());
+    pub fn container_instance_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.container_instance_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the container instances that host the task.</p>
     pub fn set_container_instance_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.container_instance_arn = input;
         self
@@ -523,13 +534,13 @@ impl TaskBuilder {
     pub fn containers(mut self, input: crate::types::Container) -> Self {
         let mut v = self.containers.unwrap_or_default();
         v.push(input);
-        self.containers = Some(v);
+        self.containers = ::std::option::Option::Some(v);
         self
     }
     /// <p>The containers that's associated with the task.</p>
     pub fn set_containers(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Container>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Container>>,
     ) -> Self {
         self.containers = input;
         self
@@ -547,8 +558,8 @@ impl TaskBuilder {
     /// <li> <p>8192 (8 vCPU) - Available <code>memory</code> values: 16 GB and 60 GB in 4 GB increments</p> <p>This option requires Linux platform <code>1.4.0</code> or later.</p> </li>
     /// <li> <p>16384 (16vCPU) - Available <code>memory</code> values: 32GB and 120 GB in 8 GB increments</p> <p>This option requires Linux platform <code>1.4.0</code> or later.</p> </li>
     /// </ul>
-    pub fn cpu(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cpu = Some(input.into());
+    pub fn cpu(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cpu = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The number of CPU units used by the task as expressed in a task definition. It can be expressed as an integer using CPU units (for example, <code>1024</code>). It can also be expressed as a string using vCPUs (for example, <code>1 vCPU</code> or <code>1 vcpu</code>). String values are converted to an integer that indicates the CPU units when the task definition is registered.</p>
@@ -564,63 +575,69 @@ impl TaskBuilder {
     /// <li> <p>8192 (8 vCPU) - Available <code>memory</code> values: 16 GB and 60 GB in 4 GB increments</p> <p>This option requires Linux platform <code>1.4.0</code> or later.</p> </li>
     /// <li> <p>16384 (16vCPU) - Available <code>memory</code> values: 32GB and 120 GB in 8 GB increments</p> <p>This option requires Linux platform <code>1.4.0</code> or later.</p> </li>
     /// </ul>
-    pub fn set_cpu(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cpu(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cpu = input;
         self
     }
     /// <p>The Unix timestamp for the time when the task was created. More specifically, it's for the time when the task entered the <code>PENDING</code> state.</p>
-    pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_at = Some(input);
+    pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Unix timestamp for the time when the task was created. More specifically, it's for the time when the task entered the <code>PENDING</code> state.</p>
     pub fn set_created_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_at = input;
         self
     }
     /// <p>The desired status of the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-lifecycle.html">Task Lifecycle</a>.</p>
-    pub fn desired_status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.desired_status = Some(input.into());
+    pub fn desired_status(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.desired_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The desired status of the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-lifecycle.html">Task Lifecycle</a>.</p>
-    pub fn set_desired_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_desired_status(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.desired_status = input;
         self
     }
     /// <p>Determines whether execute command functionality is turned on for this task. If <code>true</code>, execute command functionality is turned on all the containers in the task.</p>
     pub fn enable_execute_command(mut self, input: bool) -> Self {
-        self.enable_execute_command = Some(input);
+        self.enable_execute_command = ::std::option::Option::Some(input);
         self
     }
     /// <p>Determines whether execute command functionality is turned on for this task. If <code>true</code>, execute command functionality is turned on all the containers in the task.</p>
-    pub fn set_enable_execute_command(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enable_execute_command(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_execute_command = input;
         self
     }
     /// <p>The Unix timestamp for the time when the task execution stopped.</p>
-    pub fn execution_stopped_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.execution_stopped_at = Some(input);
+    pub fn execution_stopped_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.execution_stopped_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Unix timestamp for the time when the task execution stopped.</p>
     pub fn set_execution_stopped_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.execution_stopped_at = input;
         self
     }
     /// <p>The name of the task group that's associated with the task.</p>
-    pub fn group(mut self, input: impl Into<std::string::String>) -> Self {
-        self.group = Some(input.into());
+    pub fn group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.group = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the task group that's associated with the task.</p>
-    pub fn set_group(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group = input;
         self
     }
@@ -628,7 +645,7 @@ impl TaskBuilder {
     /// <p>The Amazon ECS container agent doesn't monitor or report on Docker health checks that are embedded in a container image and not specified in the container definition. For example, this includes those specified in a parent image or from the image's Dockerfile. Health check parameters that are specified in a container definition override any Docker health checks that are found in the container image.</p>
     /// </note>
     pub fn health_status(mut self, input: crate::types::HealthStatus) -> Self {
-        self.health_status = Some(input);
+        self.health_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The health status for the task. It's determined by the health of the essential containers in the task. If all essential containers in the task are reporting as <code>HEALTHY</code>, the task status also reports as <code>HEALTHY</code>. If any essential containers in the task are reporting as <code>UNHEALTHY</code> or <code>UNKNOWN</code>, the task status also reports as <code>UNHEALTHY</code> or <code>UNKNOWN</code>.</p> <note>
@@ -636,7 +653,7 @@ impl TaskBuilder {
     /// </note>
     pub fn set_health_status(
         mut self,
-        input: std::option::Option<crate::types::HealthStatus>,
+        input: ::std::option::Option<crate::types::HealthStatus>,
     ) -> Self {
         self.health_status = input;
         self
@@ -649,34 +666,37 @@ impl TaskBuilder {
     pub fn inference_accelerators(mut self, input: crate::types::InferenceAccelerator) -> Self {
         let mut v = self.inference_accelerators.unwrap_or_default();
         v.push(input);
-        self.inference_accelerators = Some(v);
+        self.inference_accelerators = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Elastic Inference accelerator that's associated with the task.</p>
     pub fn set_inference_accelerators(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::InferenceAccelerator>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::InferenceAccelerator>>,
     ) -> Self {
         self.inference_accelerators = input;
         self
     }
     /// <p>The last known status for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-lifecycle.html">Task Lifecycle</a>.</p>
-    pub fn last_status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.last_status = Some(input.into());
+    pub fn last_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.last_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The last known status for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-lifecycle.html">Task Lifecycle</a>.</p>
-    pub fn set_last_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_last_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_status = input;
         self
     }
     /// <p>The infrastructure where your task runs on. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn launch_type(mut self, input: crate::types::LaunchType) -> Self {
-        self.launch_type = Some(input);
+        self.launch_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The infrastructure where your task runs on. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn set_launch_type(mut self, input: std::option::Option<crate::types::LaunchType>) -> Self {
+    pub fn set_launch_type(
+        mut self,
+        input: ::std::option::Option<crate::types::LaunchType>,
+    ) -> Self {
         self.launch_type = input;
         self
     }
@@ -692,8 +712,8 @@ impl TaskBuilder {
     /// <li> <p>Between 16 GB and 60 GB in 4 GB increments - Available <code>cpu</code> values: 8192 (8 vCPU)</p> <p>This option requires Linux platform <code>1.4.0</code> or later.</p> </li>
     /// <li> <p>Between 32GB and 120 GB in 8 GB increments - Available <code>cpu</code> values: 16384 (16 vCPU)</p> <p>This option requires Linux platform <code>1.4.0</code> or later.</p> </li>
     /// </ul>
-    pub fn memory(mut self, input: impl Into<std::string::String>) -> Self {
-        self.memory = Some(input.into());
+    pub fn memory(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.memory = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The amount of memory (in MiB) that the task uses as expressed in a task definition. It can be expressed as an integer using MiB (for example, <code>1024</code>). If it's expressed as a string using GB (for example, <code>1GB</code> or <code>1 GB</code>), it's converted to an integer indicating the MiB when the task definition is registered.</p>
@@ -708,88 +728,103 @@ impl TaskBuilder {
     /// <li> <p>Between 16 GB and 60 GB in 4 GB increments - Available <code>cpu</code> values: 8192 (8 vCPU)</p> <p>This option requires Linux platform <code>1.4.0</code> or later.</p> </li>
     /// <li> <p>Between 32GB and 120 GB in 8 GB increments - Available <code>cpu</code> values: 16384 (16 vCPU)</p> <p>This option requires Linux platform <code>1.4.0</code> or later.</p> </li>
     /// </ul>
-    pub fn set_memory(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_memory(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.memory = input;
         self
     }
     /// <p>One or more container overrides.</p>
     pub fn overrides(mut self, input: crate::types::TaskOverride) -> Self {
-        self.overrides = Some(input);
+        self.overrides = ::std::option::Option::Some(input);
         self
     }
     /// <p>One or more container overrides.</p>
-    pub fn set_overrides(mut self, input: std::option::Option<crate::types::TaskOverride>) -> Self {
+    pub fn set_overrides(
+        mut self,
+        input: ::std::option::Option<crate::types::TaskOverride>,
+    ) -> Self {
         self.overrides = input;
         self
     }
     /// <p>The platform version where your task runs on. A platform version is only specified for tasks that use the Fargate launch type. If you didn't specify one, the <code>LATEST</code> platform version is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn platform_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.platform_version = Some(input.into());
+    pub fn platform_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.platform_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The platform version where your task runs on. A platform version is only specified for tasks that use the Fargate launch type. If you didn't specify one, the <code>LATEST</code> platform version is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn set_platform_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_platform_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.platform_version = input;
         self
     }
     /// <p>The operating system that your tasks are running on. A platform family is specified only for tasks that use the Fargate launch type. </p>
     /// <p> All tasks that run as part of this service must use the same <code>platformFamily</code> value as the service (for example, <code>LINUX.</code>).</p>
-    pub fn platform_family(mut self, input: impl Into<std::string::String>) -> Self {
-        self.platform_family = Some(input.into());
+    pub fn platform_family(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.platform_family = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The operating system that your tasks are running on. A platform family is specified only for tasks that use the Fargate launch type. </p>
     /// <p> All tasks that run as part of this service must use the same <code>platformFamily</code> value as the service (for example, <code>LINUX.</code>).</p>
-    pub fn set_platform_family(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_platform_family(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.platform_family = input;
         self
     }
     /// <p>The Unix timestamp for the time when the container image pull began.</p>
-    pub fn pull_started_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.pull_started_at = Some(input);
+    pub fn pull_started_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.pull_started_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Unix timestamp for the time when the container image pull began.</p>
     pub fn set_pull_started_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.pull_started_at = input;
         self
     }
     /// <p>The Unix timestamp for the time when the container image pull completed.</p>
-    pub fn pull_stopped_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.pull_stopped_at = Some(input);
+    pub fn pull_stopped_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.pull_stopped_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Unix timestamp for the time when the container image pull completed.</p>
     pub fn set_pull_stopped_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.pull_stopped_at = input;
         self
     }
     /// <p>The Unix timestamp for the time when the task started. More specifically, it's for the time when the task transitioned from the <code>PENDING</code> state to the <code>RUNNING</code> state.</p>
-    pub fn started_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.started_at = Some(input);
+    pub fn started_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.started_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Unix timestamp for the time when the task started. More specifically, it's for the time when the task transitioned from the <code>PENDING</code> state to the <code>RUNNING</code> state.</p>
     pub fn set_started_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.started_at = input;
         self
     }
     /// <p>The tag specified when a task is started. If an Amazon ECS service started the task, the <code>startedBy</code> parameter contains the deployment ID of that service.</p>
-    pub fn started_by(mut self, input: impl Into<std::string::String>) -> Self {
-        self.started_by = Some(input.into());
+    pub fn started_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.started_by = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The tag specified when a task is started. If an Amazon ECS service started the task, the <code>startedBy</code> parameter contains the deployment ID of that service.</p>
-    pub fn set_started_by(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_started_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.started_by = input;
         self
     }
@@ -804,7 +839,7 @@ impl TaskBuilder {
     /// <li> <p> <code>SpotInterruption</code> </p> </li>
     /// </ul>
     pub fn stop_code(mut self, input: crate::types::TaskStopCode) -> Self {
-        self.stop_code = Some(input);
+        self.stop_code = ::std::option::Option::Some(input);
         self
     }
     /// <p>The stop code indicating why a task was stopped. The <code>stoppedReason</code> might contain additional details.</p>
@@ -817,42 +852,51 @@ impl TaskBuilder {
     /// <li> <p> <code>ServiceSchedulerInitiated</code> </p> </li>
     /// <li> <p> <code>SpotInterruption</code> </p> </li>
     /// </ul>
-    pub fn set_stop_code(mut self, input: std::option::Option<crate::types::TaskStopCode>) -> Self {
+    pub fn set_stop_code(
+        mut self,
+        input: ::std::option::Option<crate::types::TaskStopCode>,
+    ) -> Self {
         self.stop_code = input;
         self
     }
     /// <p>The Unix timestamp for the time when the task was stopped. More specifically, it's for the time when the task transitioned from the <code>RUNNING</code> state to the <code>STOPPED</code> state.</p>
-    pub fn stopped_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.stopped_at = Some(input);
+    pub fn stopped_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.stopped_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Unix timestamp for the time when the task was stopped. More specifically, it's for the time when the task transitioned from the <code>RUNNING</code> state to the <code>STOPPED</code> state.</p>
     pub fn set_stopped_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.stopped_at = input;
         self
     }
     /// <p>The reason that the task was stopped.</p>
-    pub fn stopped_reason(mut self, input: impl Into<std::string::String>) -> Self {
-        self.stopped_reason = Some(input.into());
+    pub fn stopped_reason(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.stopped_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason that the task was stopped.</p>
-    pub fn set_stopped_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_stopped_reason(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.stopped_reason = input;
         self
     }
     /// <p>The Unix timestamp for the time when the task stops. More specifically, it's for the time when the task transitions from the <code>RUNNING</code> state to <code>STOPPED</code>.</p>
-    pub fn stopping_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.stopping_at = Some(input);
+    pub fn stopping_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.stopping_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Unix timestamp for the time when the task stops. More specifically, it's for the time when the task transitions from the <code>RUNNING</code> state to <code>STOPPED</code>.</p>
     pub fn set_stopping_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.stopping_at = input;
         self
@@ -875,7 +919,7 @@ impl TaskBuilder {
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
-        self.tags = Some(v);
+        self.tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>The metadata that you apply to the task to help you categorize and organize the task. Each tag consists of a key and an optional value. You define both the key and value.</p>
@@ -891,53 +935,56 @@ impl TaskBuilder {
     /// </ul>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tags = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the task.</p>
-    pub fn task_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.task_arn = Some(input.into());
+    pub fn task_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.task_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the task.</p>
-    pub fn set_task_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_task_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.task_arn = input;
         self
     }
     /// <p>The ARN of the task definition that creates the task.</p>
-    pub fn task_definition_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.task_definition_arn = Some(input.into());
+    pub fn task_definition_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.task_definition_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the task definition that creates the task.</p>
     pub fn set_task_definition_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.task_definition_arn = input;
         self
     }
     /// <p>The version counter for the task. Every time a task experiences a change that starts a CloudWatch event, the version counter is incremented. If you replicate your Amazon ECS task state with CloudWatch Events, you can compare the version of a task reported by the Amazon ECS API actions with the version reported in CloudWatch Events for the task (inside the <code>detail</code> object) to verify that the version in your event stream is current.</p>
     pub fn version(mut self, input: i64) -> Self {
-        self.version = Some(input);
+        self.version = ::std::option::Option::Some(input);
         self
     }
     /// <p>The version counter for the task. Every time a task experiences a change that starts a CloudWatch event, the version counter is incremented. If you replicate your Amazon ECS task state with CloudWatch Events, you can compare the version of a task reported by the Amazon ECS API actions with the version reported in CloudWatch Events for the task (inside the <code>detail</code> object) to verify that the version in your event stream is current.</p>
-    pub fn set_version(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.version = input;
         self
     }
     /// <p>The ephemeral storage settings for the task.</p>
     pub fn ephemeral_storage(mut self, input: crate::types::EphemeralStorage) -> Self {
-        self.ephemeral_storage = Some(input);
+        self.ephemeral_storage = ::std::option::Option::Some(input);
         self
     }
     /// <p>The ephemeral storage settings for the task.</p>
     pub fn set_ephemeral_storage(
         mut self,
-        input: std::option::Option<crate::types::EphemeralStorage>,
+        input: ::std::option::Option<crate::types::EphemeralStorage>,
     ) -> Self {
         self.ephemeral_storage = input;
         self

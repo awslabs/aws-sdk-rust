@@ -8,56 +8,63 @@ pub use crate::operation::get_certificates::_get_certificates_input::GetCertific
 /// <p>Returns information about one or more Amazon Lightsail SSL/TLS certificates.</p> <note>
 /// <p>To get a summary of a certificate, ommit <code>includeCertificateDetails</code> from your request. The response will include only the certificate Amazon Resource Name (ARN), certificate name, domain name, and tags.</p>
 /// </note>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetCertificatesFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::get_certificates::builders::GetCertificatesInputBuilder,
 }
 impl GetCertificatesFluentBuilder {
     /// Creates a new `GetCertificates`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::get_certificates::GetCertificates,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::get_certificates::GetCertificatesError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_certificates::GetCertificatesError,
+        >,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_certificates::GetCertificatesOutput,
-        aws_smithy_http::result::SdkError<crate::operation::get_certificates::GetCertificatesError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_certificates::GetCertificatesError,
+        >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -70,9 +77,11 @@ impl GetCertificatesFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_certificates::GetCertificatesOutput,
-        aws_smithy_http::result::SdkError<crate::operation::get_certificates::GetCertificatesError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_certificates::GetCertificatesError,
+        >,
     > {
         self.send_middleware().await
     }
@@ -92,7 +101,7 @@ impl GetCertificatesFluentBuilder {
     /// <p>When omitted, the response includes all of your certificates in the Amazon Web Services Region where the request is made, regardless of their current status.</p>
     pub fn set_certificate_statuses(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CertificateStatus>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::CertificateStatus>>,
     ) -> Self {
         self.inner = self.inner.set_certificate_statuses(input);
         self
@@ -105,19 +114,25 @@ impl GetCertificatesFluentBuilder {
     }
     /// <p>Indicates whether to include detailed information about the certificates in the response.</p>
     /// <p>When omitted, the response includes only the certificate names, Amazon Resource Names (ARNs), domain names, and tags.</p>
-    pub fn set_include_certificate_details(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_include_certificate_details(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_include_certificate_details(input);
         self
     }
     /// <p>The name for the certificate for which to return information.</p>
     /// <p>When omitted, the response includes all of your certificates in the Amazon Web Services Region where the request is made.</p>
-    pub fn certificate_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn certificate_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.certificate_name(input.into());
         self
     }
     /// <p>The name for the certificate for which to return information.</p>
     /// <p>When omitted, the response includes all of your certificates in the Amazon Web Services Region where the request is made.</p>
-    pub fn set_certificate_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_certificate_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_certificate_name(input);
         self
     }

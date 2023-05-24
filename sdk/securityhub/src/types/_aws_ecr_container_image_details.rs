@@ -2,14 +2,14 @@
 
 /// <p>Information about an Amazon ECR image.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEcrContainerImageDetails {
     /// <p>The Amazon Web Services account identifier that is associated with the registry that the image belongs to.</p>
     #[doc(hidden)]
-    pub registry_id: std::option::Option<std::string::String>,
+    pub registry_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the repository that the image belongs to.</p>
     #[doc(hidden)]
-    pub repository_name: std::option::Option<std::string::String>,
+    pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The architecture of the image. Valid values are as follows:</p>
     /// <ul>
     /// <li> <p> <code>arm64</code> </p> </li>
@@ -17,25 +17,25 @@ pub struct AwsEcrContainerImageDetails {
     /// <li> <p> <code>x86_64</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub architecture: std::option::Option<std::string::String>,
+    pub architecture: ::std::option::Option<::std::string::String>,
     /// <p>The sha256 digest of the image manifest.</p>
     #[doc(hidden)]
-    pub image_digest: std::option::Option<std::string::String>,
+    pub image_digest: ::std::option::Option<::std::string::String>,
     /// <p>The list of tags that are associated with the image.</p>
     #[doc(hidden)]
-    pub image_tags: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub image_tags: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The date and time when the image was pushed to the repository.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     #[doc(hidden)]
-    pub image_published_at: std::option::Option<std::string::String>,
+    pub image_published_at: ::std::option::Option<::std::string::String>,
 }
 impl AwsEcrContainerImageDetails {
     /// <p>The Amazon Web Services account identifier that is associated with the registry that the image belongs to.</p>
-    pub fn registry_id(&self) -> std::option::Option<&str> {
+    pub fn registry_id(&self) -> ::std::option::Option<&str> {
         self.registry_id.as_deref()
     }
     /// <p>The name of the repository that the image belongs to.</p>
-    pub fn repository_name(&self) -> std::option::Option<&str> {
+    pub fn repository_name(&self) -> ::std::option::Option<&str> {
         self.repository_name.as_deref()
     }
     /// <p>The architecture of the image. Valid values are as follows:</p>
@@ -44,20 +44,20 @@ impl AwsEcrContainerImageDetails {
     /// <li> <p> <code>i386</code> </p> </li>
     /// <li> <p> <code>x86_64</code> </p> </li>
     /// </ul>
-    pub fn architecture(&self) -> std::option::Option<&str> {
+    pub fn architecture(&self) -> ::std::option::Option<&str> {
         self.architecture.as_deref()
     }
     /// <p>The sha256 digest of the image manifest.</p>
-    pub fn image_digest(&self) -> std::option::Option<&str> {
+    pub fn image_digest(&self) -> ::std::option::Option<&str> {
         self.image_digest.as_deref()
     }
     /// <p>The list of tags that are associated with the image.</p>
-    pub fn image_tags(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn image_tags(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.image_tags.as_deref()
     }
     /// <p>The date and time when the image was pushed to the repository.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn image_published_at(&self) -> std::option::Option<&str> {
+    pub fn image_published_at(&self) -> ::std::option::Option<&str> {
         self.image_published_at.as_deref()
     }
 }
@@ -70,33 +70,41 @@ impl AwsEcrContainerImageDetails {
 
 /// A builder for [`AwsEcrContainerImageDetails`](crate::types::AwsEcrContainerImageDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsEcrContainerImageDetailsBuilder {
-    pub(crate) registry_id: std::option::Option<std::string::String>,
-    pub(crate) repository_name: std::option::Option<std::string::String>,
-    pub(crate) architecture: std::option::Option<std::string::String>,
-    pub(crate) image_digest: std::option::Option<std::string::String>,
-    pub(crate) image_tags: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) image_published_at: std::option::Option<std::string::String>,
+    pub(crate) registry_id: ::std::option::Option<::std::string::String>,
+    pub(crate) repository_name: ::std::option::Option<::std::string::String>,
+    pub(crate) architecture: ::std::option::Option<::std::string::String>,
+    pub(crate) image_digest: ::std::option::Option<::std::string::String>,
+    pub(crate) image_tags: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) image_published_at: ::std::option::Option<::std::string::String>,
 }
 impl AwsEcrContainerImageDetailsBuilder {
     /// <p>The Amazon Web Services account identifier that is associated with the registry that the image belongs to.</p>
-    pub fn registry_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.registry_id = Some(input.into());
+    pub fn registry_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.registry_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account identifier that is associated with the registry that the image belongs to.</p>
-    pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_registry_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.registry_id = input;
         self
     }
     /// <p>The name of the repository that the image belongs to.</p>
-    pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.repository_name = Some(input.into());
+    pub fn repository_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the repository that the image belongs to.</p>
-    pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_repository_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.repository_name = input;
         self
     }
@@ -106,8 +114,8 @@ impl AwsEcrContainerImageDetailsBuilder {
     /// <li> <p> <code>i386</code> </p> </li>
     /// <li> <p> <code>x86_64</code> </p> </li>
     /// </ul>
-    pub fn architecture(mut self, input: impl Into<std::string::String>) -> Self {
-        self.architecture = Some(input.into());
+    pub fn architecture(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.architecture = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The architecture of the image. Valid values are as follows:</p>
@@ -116,17 +124,17 @@ impl AwsEcrContainerImageDetailsBuilder {
     /// <li> <p> <code>i386</code> </p> </li>
     /// <li> <p> <code>x86_64</code> </p> </li>
     /// </ul>
-    pub fn set_architecture(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_architecture(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.architecture = input;
         self
     }
     /// <p>The sha256 digest of the image manifest.</p>
-    pub fn image_digest(mut self, input: impl Into<std::string::String>) -> Self {
-        self.image_digest = Some(input.into());
+    pub fn image_digest(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.image_digest = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The sha256 digest of the image manifest.</p>
-    pub fn set_image_digest(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_image_digest(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_digest = input;
         self
     }
@@ -135,31 +143,34 @@ impl AwsEcrContainerImageDetailsBuilder {
     /// To override the contents of this collection use [`set_image_tags`](Self::set_image_tags).
     ///
     /// <p>The list of tags that are associated with the image.</p>
-    pub fn image_tags(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn image_tags(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.image_tags.unwrap_or_default();
         v.push(input.into());
-        self.image_tags = Some(v);
+        self.image_tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of tags that are associated with the image.</p>
     pub fn set_image_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.image_tags = input;
         self
     }
     /// <p>The date and time when the image was pushed to the repository.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn image_published_at(mut self, input: impl Into<std::string::String>) -> Self {
-        self.image_published_at = Some(input.into());
+    pub fn image_published_at(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.image_published_at = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date and time when the image was pushed to the repository.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn set_image_published_at(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.image_published_at = input;
         self

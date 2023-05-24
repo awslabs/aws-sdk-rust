@@ -2,26 +2,28 @@
 
 /// <p>A group of reservations that share a set of attributes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReservationCoverageGroup {
     /// <p>The attributes for this group of reservations.</p>
     #[doc(hidden)]
-    pub attributes:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub attributes: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>How much instance usage this group of reservations covered.</p>
     #[doc(hidden)]
-    pub coverage: std::option::Option<crate::types::Coverage>,
+    pub coverage: ::std::option::Option<crate::types::Coverage>,
 }
 impl ReservationCoverageGroup {
     /// <p>The attributes for this group of reservations.</p>
     pub fn attributes(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.attributes.as_ref()
     }
     /// <p>How much instance usage this group of reservations covered.</p>
-    pub fn coverage(&self) -> std::option::Option<&crate::types::Coverage> {
+    pub fn coverage(&self) -> ::std::option::Option<&crate::types::Coverage> {
         self.coverage.as_ref()
     }
 }
@@ -34,11 +36,14 @@ impl ReservationCoverageGroup {
 
 /// A builder for [`ReservationCoverageGroup`](crate::types::ReservationCoverageGroup).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ReservationCoverageGroupBuilder {
-    pub(crate) attributes:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) coverage: std::option::Option<crate::types::Coverage>,
+    pub(crate) attributes: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) coverage: ::std::option::Option<crate::types::Coverage>,
 }
 impl ReservationCoverageGroupBuilder {
     /// Adds a key-value pair to `attributes`.
@@ -48,19 +53,19 @@ impl ReservationCoverageGroupBuilder {
     /// <p>The attributes for this group of reservations.</p>
     pub fn attributes(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.attributes = Some(hash_map);
+        self.attributes = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The attributes for this group of reservations.</p>
     pub fn set_attributes(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.attributes = input;
@@ -68,11 +73,11 @@ impl ReservationCoverageGroupBuilder {
     }
     /// <p>How much instance usage this group of reservations covered.</p>
     pub fn coverage(mut self, input: crate::types::Coverage) -> Self {
-        self.coverage = Some(input);
+        self.coverage = ::std::option::Option::Some(input);
         self
     }
     /// <p>How much instance usage this group of reservations covered.</p>
-    pub fn set_coverage(mut self, input: std::option::Option<crate::types::Coverage>) -> Self {
+    pub fn set_coverage(mut self, input: ::std::option::Option<crate::types::Coverage>) -> Self {
         self.coverage = input;
         self
     }

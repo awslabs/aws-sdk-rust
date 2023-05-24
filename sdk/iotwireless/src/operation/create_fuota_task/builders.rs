@@ -6,29 +6,29 @@ pub use crate::operation::create_fuota_task::_create_fuota_task_input::CreateFuo
 /// Fluent builder constructing a request to `CreateFuotaTask`.
 ///
 /// <p>Creates a FUOTA task.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateFuotaTaskFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_fuota_task::builders::CreateFuotaTaskInputBuilder,
 }
 impl CreateFuotaTaskFluentBuilder {
     /// Creates a new `CreateFuotaTask`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_fuota_task::CreateFuotaTask,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_fuota_task::CreateFuotaTaskError,
         >,
     > {
@@ -36,30 +36,33 @@ impl CreateFuotaTaskFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_fuota_task::CreateFuotaTaskOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_fuota_task::CreateFuotaTaskError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,43 +75,46 @@ impl CreateFuotaTaskFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_fuota_task::CreateFuotaTaskOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_fuota_task::CreateFuotaTaskError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The name of a FUOTA task.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// <p>The name of a FUOTA task.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
     /// <p>The description of the new resource.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>The description of the new resource.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
     /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.</p>
-    pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn client_request_token(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.</p>
     pub fn set_client_request_token(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
@@ -121,33 +127,39 @@ impl CreateFuotaTaskFluentBuilder {
     /// <p>The LoRaWAN information used with a FUOTA task.</p>
     pub fn set_lo_ra_wan(
         mut self,
-        input: std::option::Option<crate::types::LoRaWanFuotaTask>,
+        input: ::std::option::Option<crate::types::LoRaWanFuotaTask>,
     ) -> Self {
         self.inner = self.inner.set_lo_ra_wan(input);
         self
     }
     /// <p>The S3 URI points to a firmware update image that is to be used with a FUOTA task.</p>
-    pub fn firmware_update_image(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn firmware_update_image(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.firmware_update_image(input.into());
         self
     }
     /// <p>The S3 URI points to a firmware update image that is to be used with a FUOTA task.</p>
     pub fn set_firmware_update_image(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_firmware_update_image(input);
         self
     }
     /// <p>The firmware update role that is to be used with a FUOTA task.</p>
-    pub fn firmware_update_role(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn firmware_update_role(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.firmware_update_role(input.into());
         self
     }
     /// <p>The firmware update role that is to be used with a FUOTA task.</p>
     pub fn set_firmware_update_role(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_firmware_update_role(input);
         self
@@ -164,7 +176,7 @@ impl CreateFuotaTaskFluentBuilder {
     /// <p>The tag to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
@@ -175,7 +187,7 @@ impl CreateFuotaTaskFluentBuilder {
         self
     }
     /// <p>The percentage of added redundant fragments. For example, if firmware file is 100 bytes and fragment size is 10 bytes, with <code>RedundancyPercent</code> set to 50(%), the final number of encoded fragments is (100 / 10) + (100 / 10 * 50%) = 15.</p>
-    pub fn set_redundancy_percent(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_redundancy_percent(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_redundancy_percent(input);
         self
     }
@@ -185,7 +197,7 @@ impl CreateFuotaTaskFluentBuilder {
         self
     }
     /// <p>The size of each fragment in bytes. Currently only supported in fuota tasks with multicast groups.</p>
-    pub fn set_fragment_size_bytes(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_fragment_size_bytes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_fragment_size_bytes(input);
         self
     }
@@ -195,7 +207,7 @@ impl CreateFuotaTaskFluentBuilder {
         self
     }
     /// <p>The interval of sending fragments in milliseconds. Currently the interval will be rounded to the nearest second. Note that this interval only controls the timing when the cloud sends the fragments down. The actual delay of receiving fragments at device side depends on the device's class and the communication delay with the cloud.</p>
-    pub fn set_fragment_interval_ms(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_fragment_interval_ms(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_fragment_interval_ms(input);
         self
     }

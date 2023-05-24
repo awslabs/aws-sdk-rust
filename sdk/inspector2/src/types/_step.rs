@@ -2,22 +2,22 @@
 
 /// <p>Details about the step associated with a finding.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Step {
     /// <p>The component ID.</p>
     #[doc(hidden)]
-    pub component_id: std::option::Option<std::string::String>,
+    pub component_id: ::std::option::Option<::std::string::String>,
     /// <p>The component type.</p>
     #[doc(hidden)]
-    pub component_type: std::option::Option<std::string::String>,
+    pub component_type: ::std::option::Option<::std::string::String>,
 }
 impl Step {
     /// <p>The component ID.</p>
-    pub fn component_id(&self) -> std::option::Option<&str> {
+    pub fn component_id(&self) -> ::std::option::Option<&str> {
         self.component_id.as_deref()
     }
     /// <p>The component type.</p>
-    pub fn component_type(&self) -> std::option::Option<&str> {
+    pub fn component_type(&self) -> ::std::option::Option<&str> {
         self.component_type.as_deref()
     }
 }
@@ -30,29 +30,37 @@ impl Step {
 
 /// A builder for [`Step`](crate::types::Step).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StepBuilder {
-    pub(crate) component_id: std::option::Option<std::string::String>,
-    pub(crate) component_type: std::option::Option<std::string::String>,
+    pub(crate) component_id: ::std::option::Option<::std::string::String>,
+    pub(crate) component_type: ::std::option::Option<::std::string::String>,
 }
 impl StepBuilder {
     /// <p>The component ID.</p>
-    pub fn component_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.component_id = Some(input.into());
+    pub fn component_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.component_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The component ID.</p>
-    pub fn set_component_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_component_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.component_id = input;
         self
     }
     /// <p>The component type.</p>
-    pub fn component_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.component_type = Some(input.into());
+    pub fn component_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.component_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The component type.</p>
-    pub fn set_component_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_component_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.component_type = input;
         self
     }

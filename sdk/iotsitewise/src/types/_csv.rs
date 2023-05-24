@@ -2,15 +2,15 @@
 
 /// <p>A .csv file.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Csv {
     /// <p>The column names specified in the .csv file.</p>
     #[doc(hidden)]
-    pub column_names: std::option::Option<std::vec::Vec<crate::types::ColumnName>>,
+    pub column_names: ::std::option::Option<::std::vec::Vec<crate::types::ColumnName>>,
 }
 impl Csv {
     /// <p>The column names specified in the .csv file.</p>
-    pub fn column_names(&self) -> std::option::Option<&[crate::types::ColumnName]> {
+    pub fn column_names(&self) -> ::std::option::Option<&[crate::types::ColumnName]> {
         self.column_names.as_deref()
     }
 }
@@ -23,9 +23,11 @@ impl Csv {
 
 /// A builder for [`Csv`](crate::types::Csv).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CsvBuilder {
-    pub(crate) column_names: std::option::Option<std::vec::Vec<crate::types::ColumnName>>,
+    pub(crate) column_names: ::std::option::Option<::std::vec::Vec<crate::types::ColumnName>>,
 }
 impl CsvBuilder {
     /// Appends an item to `column_names`.
@@ -36,13 +38,13 @@ impl CsvBuilder {
     pub fn column_names(mut self, input: crate::types::ColumnName) -> Self {
         let mut v = self.column_names.unwrap_or_default();
         v.push(input);
-        self.column_names = Some(v);
+        self.column_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>The column names specified in the .csv file.</p>
     pub fn set_column_names(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ColumnName>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ColumnName>>,
     ) -> Self {
         self.column_names = input;
         self

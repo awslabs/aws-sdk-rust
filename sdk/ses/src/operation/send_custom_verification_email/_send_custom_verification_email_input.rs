@@ -2,29 +2,29 @@
 
 /// <p>Represents a request to send a custom verification email to a specified recipient.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SendCustomVerificationEmailInput {
     /// <p>The email address to verify.</p>
     #[doc(hidden)]
-    pub email_address: std::option::Option<std::string::String>,
+    pub email_address: ::std::option::Option<::std::string::String>,
     /// <p>The name of the custom verification email template to use when sending the verification email.</p>
     #[doc(hidden)]
-    pub template_name: std::option::Option<std::string::String>,
+    pub template_name: ::std::option::Option<::std::string::String>,
     /// <p>Name of a configuration set to use when sending the verification email.</p>
     #[doc(hidden)]
-    pub configuration_set_name: std::option::Option<std::string::String>,
+    pub configuration_set_name: ::std::option::Option<::std::string::String>,
 }
 impl SendCustomVerificationEmailInput {
     /// <p>The email address to verify.</p>
-    pub fn email_address(&self) -> std::option::Option<&str> {
+    pub fn email_address(&self) -> ::std::option::Option<&str> {
         self.email_address.as_deref()
     }
     /// <p>The name of the custom verification email template to use when sending the verification email.</p>
-    pub fn template_name(&self) -> std::option::Option<&str> {
+    pub fn template_name(&self) -> ::std::option::Option<&str> {
         self.template_name.as_deref()
     }
     /// <p>Name of a configuration set to use when sending the verification email.</p>
-    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+    pub fn configuration_set_name(&self) -> ::std::option::Option<&str> {
         self.configuration_set_name.as_deref()
     }
 }
@@ -37,42 +37,59 @@ impl SendCustomVerificationEmailInput {
 
 /// A builder for [`SendCustomVerificationEmailInput`](crate::operation::send_custom_verification_email::SendCustomVerificationEmailInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SendCustomVerificationEmailInputBuilder {
-    pub(crate) email_address: std::option::Option<std::string::String>,
-    pub(crate) template_name: std::option::Option<std::string::String>,
-    pub(crate) configuration_set_name: std::option::Option<std::string::String>,
+    pub(crate) email_address: ::std::option::Option<::std::string::String>,
+    pub(crate) template_name: ::std::option::Option<::std::string::String>,
+    pub(crate) configuration_set_name: ::std::option::Option<::std::string::String>,
 }
 impl SendCustomVerificationEmailInputBuilder {
     /// <p>The email address to verify.</p>
-    pub fn email_address(mut self, input: impl Into<std::string::String>) -> Self {
-        self.email_address = Some(input.into());
+    pub fn email_address(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.email_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The email address to verify.</p>
-    pub fn set_email_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_email_address(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.email_address = input;
         self
     }
     /// <p>The name of the custom verification email template to use when sending the verification email.</p>
-    pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.template_name = Some(input.into());
+    pub fn template_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.template_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the custom verification email template to use when sending the verification email.</p>
-    pub fn set_template_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_template_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.template_name = input;
         self
     }
     /// <p>Name of a configuration set to use when sending the verification email.</p>
-    pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.configuration_set_name = Some(input.into());
+    pub fn configuration_set_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.configuration_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of a configuration set to use when sending the verification email.</p>
     pub fn set_configuration_set_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.configuration_set_name = input;
         self
@@ -80,11 +97,11 @@ impl SendCustomVerificationEmailInputBuilder {
     /// Consumes the builder and constructs a [`SendCustomVerificationEmailInput`](crate::operation::send_custom_verification_email::SendCustomVerificationEmailInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::send_custom_verification_email::SendCustomVerificationEmailInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::send_custom_verification_email::SendCustomVerificationEmailInput {
                 email_address: self.email_address,
                 template_name: self.template_name,

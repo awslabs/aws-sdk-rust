@@ -2,92 +2,92 @@
 
 /// <p>Provides statistics for each data field imported into to an Amazon Forecast dataset with the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Statistics {
     /// <p>The number of values in the field. If the response value is -1, refer to <code>CountLong</code>.</p>
     #[doc(hidden)]
-    pub count: std::option::Option<i32>,
+    pub count: ::std::option::Option<i32>,
     /// <p>The number of distinct values in the field. If the response value is -1, refer to <code>CountDistinctLong</code>.</p>
     #[doc(hidden)]
-    pub count_distinct: std::option::Option<i32>,
+    pub count_distinct: ::std::option::Option<i32>,
     /// <p>The number of null values in the field. If the response value is -1, refer to <code>CountNullLong</code>.</p>
     #[doc(hidden)]
-    pub count_null: std::option::Option<i32>,
+    pub count_null: ::std::option::Option<i32>,
     /// <p>The number of NAN (not a number) values in the field. If the response value is -1, refer to <code>CountNanLong</code>.</p>
     #[doc(hidden)]
-    pub count_nan: std::option::Option<i32>,
+    pub count_nan: ::std::option::Option<i32>,
     /// <p>For a numeric field, the minimum value in the field.</p>
     #[doc(hidden)]
-    pub min: std::option::Option<std::string::String>,
+    pub min: ::std::option::Option<::std::string::String>,
     /// <p>For a numeric field, the maximum value in the field.</p>
     #[doc(hidden)]
-    pub max: std::option::Option<std::string::String>,
+    pub max: ::std::option::Option<::std::string::String>,
     /// <p>For a numeric field, the average value in the field.</p>
     #[doc(hidden)]
-    pub avg: std::option::Option<f64>,
+    pub avg: ::std::option::Option<f64>,
     /// <p>For a numeric field, the standard deviation.</p>
     #[doc(hidden)]
-    pub stddev: std::option::Option<f64>,
+    pub stddev: ::std::option::Option<f64>,
     /// <p>The number of values in the field. <code>CountLong</code> is used instead of <code>Count</code> if the value is greater than 2,147,483,647.</p>
     #[doc(hidden)]
-    pub count_long: std::option::Option<i64>,
+    pub count_long: ::std::option::Option<i64>,
     /// <p>The number of distinct values in the field. <code>CountDistinctLong</code> is used instead of <code>CountDistinct</code> if the value is greater than 2,147,483,647.</p>
     #[doc(hidden)]
-    pub count_distinct_long: std::option::Option<i64>,
+    pub count_distinct_long: ::std::option::Option<i64>,
     /// <p>The number of null values in the field. <code>CountNullLong</code> is used instead of <code>CountNull</code> if the value is greater than 2,147,483,647.</p>
     #[doc(hidden)]
-    pub count_null_long: std::option::Option<i64>,
+    pub count_null_long: ::std::option::Option<i64>,
     /// <p>The number of NAN (not a number) values in the field. <code>CountNanLong</code> is used instead of <code>CountNan</code> if the value is greater than 2,147,483,647.</p>
     #[doc(hidden)]
-    pub count_nan_long: std::option::Option<i64>,
+    pub count_nan_long: ::std::option::Option<i64>,
 }
 impl Statistics {
     /// <p>The number of values in the field. If the response value is -1, refer to <code>CountLong</code>.</p>
-    pub fn count(&self) -> std::option::Option<i32> {
+    pub fn count(&self) -> ::std::option::Option<i32> {
         self.count
     }
     /// <p>The number of distinct values in the field. If the response value is -1, refer to <code>CountDistinctLong</code>.</p>
-    pub fn count_distinct(&self) -> std::option::Option<i32> {
+    pub fn count_distinct(&self) -> ::std::option::Option<i32> {
         self.count_distinct
     }
     /// <p>The number of null values in the field. If the response value is -1, refer to <code>CountNullLong</code>.</p>
-    pub fn count_null(&self) -> std::option::Option<i32> {
+    pub fn count_null(&self) -> ::std::option::Option<i32> {
         self.count_null
     }
     /// <p>The number of NAN (not a number) values in the field. If the response value is -1, refer to <code>CountNanLong</code>.</p>
-    pub fn count_nan(&self) -> std::option::Option<i32> {
+    pub fn count_nan(&self) -> ::std::option::Option<i32> {
         self.count_nan
     }
     /// <p>For a numeric field, the minimum value in the field.</p>
-    pub fn min(&self) -> std::option::Option<&str> {
+    pub fn min(&self) -> ::std::option::Option<&str> {
         self.min.as_deref()
     }
     /// <p>For a numeric field, the maximum value in the field.</p>
-    pub fn max(&self) -> std::option::Option<&str> {
+    pub fn max(&self) -> ::std::option::Option<&str> {
         self.max.as_deref()
     }
     /// <p>For a numeric field, the average value in the field.</p>
-    pub fn avg(&self) -> std::option::Option<f64> {
+    pub fn avg(&self) -> ::std::option::Option<f64> {
         self.avg
     }
     /// <p>For a numeric field, the standard deviation.</p>
-    pub fn stddev(&self) -> std::option::Option<f64> {
+    pub fn stddev(&self) -> ::std::option::Option<f64> {
         self.stddev
     }
     /// <p>The number of values in the field. <code>CountLong</code> is used instead of <code>Count</code> if the value is greater than 2,147,483,647.</p>
-    pub fn count_long(&self) -> std::option::Option<i64> {
+    pub fn count_long(&self) -> ::std::option::Option<i64> {
         self.count_long
     }
     /// <p>The number of distinct values in the field. <code>CountDistinctLong</code> is used instead of <code>CountDistinct</code> if the value is greater than 2,147,483,647.</p>
-    pub fn count_distinct_long(&self) -> std::option::Option<i64> {
+    pub fn count_distinct_long(&self) -> ::std::option::Option<i64> {
         self.count_distinct_long
     }
     /// <p>The number of null values in the field. <code>CountNullLong</code> is used instead of <code>CountNull</code> if the value is greater than 2,147,483,647.</p>
-    pub fn count_null_long(&self) -> std::option::Option<i64> {
+    pub fn count_null_long(&self) -> ::std::option::Option<i64> {
         self.count_null_long
     }
     /// <p>The number of NAN (not a number) values in the field. <code>CountNanLong</code> is used instead of <code>CountNan</code> if the value is greater than 2,147,483,647.</p>
-    pub fn count_nan_long(&self) -> std::option::Option<i64> {
+    pub fn count_nan_long(&self) -> ::std::option::Option<i64> {
         self.count_nan_long
     }
 }
@@ -100,139 +100,141 @@ impl Statistics {
 
 /// A builder for [`Statistics`](crate::types::Statistics).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StatisticsBuilder {
-    pub(crate) count: std::option::Option<i32>,
-    pub(crate) count_distinct: std::option::Option<i32>,
-    pub(crate) count_null: std::option::Option<i32>,
-    pub(crate) count_nan: std::option::Option<i32>,
-    pub(crate) min: std::option::Option<std::string::String>,
-    pub(crate) max: std::option::Option<std::string::String>,
-    pub(crate) avg: std::option::Option<f64>,
-    pub(crate) stddev: std::option::Option<f64>,
-    pub(crate) count_long: std::option::Option<i64>,
-    pub(crate) count_distinct_long: std::option::Option<i64>,
-    pub(crate) count_null_long: std::option::Option<i64>,
-    pub(crate) count_nan_long: std::option::Option<i64>,
+    pub(crate) count: ::std::option::Option<i32>,
+    pub(crate) count_distinct: ::std::option::Option<i32>,
+    pub(crate) count_null: ::std::option::Option<i32>,
+    pub(crate) count_nan: ::std::option::Option<i32>,
+    pub(crate) min: ::std::option::Option<::std::string::String>,
+    pub(crate) max: ::std::option::Option<::std::string::String>,
+    pub(crate) avg: ::std::option::Option<f64>,
+    pub(crate) stddev: ::std::option::Option<f64>,
+    pub(crate) count_long: ::std::option::Option<i64>,
+    pub(crate) count_distinct_long: ::std::option::Option<i64>,
+    pub(crate) count_null_long: ::std::option::Option<i64>,
+    pub(crate) count_nan_long: ::std::option::Option<i64>,
 }
 impl StatisticsBuilder {
     /// <p>The number of values in the field. If the response value is -1, refer to <code>CountLong</code>.</p>
     pub fn count(mut self, input: i32) -> Self {
-        self.count = Some(input);
+        self.count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of values in the field. If the response value is -1, refer to <code>CountLong</code>.</p>
-    pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.count = input;
         self
     }
     /// <p>The number of distinct values in the field. If the response value is -1, refer to <code>CountDistinctLong</code>.</p>
     pub fn count_distinct(mut self, input: i32) -> Self {
-        self.count_distinct = Some(input);
+        self.count_distinct = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of distinct values in the field. If the response value is -1, refer to <code>CountDistinctLong</code>.</p>
-    pub fn set_count_distinct(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_count_distinct(mut self, input: ::std::option::Option<i32>) -> Self {
         self.count_distinct = input;
         self
     }
     /// <p>The number of null values in the field. If the response value is -1, refer to <code>CountNullLong</code>.</p>
     pub fn count_null(mut self, input: i32) -> Self {
-        self.count_null = Some(input);
+        self.count_null = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of null values in the field. If the response value is -1, refer to <code>CountNullLong</code>.</p>
-    pub fn set_count_null(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_count_null(mut self, input: ::std::option::Option<i32>) -> Self {
         self.count_null = input;
         self
     }
     /// <p>The number of NAN (not a number) values in the field. If the response value is -1, refer to <code>CountNanLong</code>.</p>
     pub fn count_nan(mut self, input: i32) -> Self {
-        self.count_nan = Some(input);
+        self.count_nan = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of NAN (not a number) values in the field. If the response value is -1, refer to <code>CountNanLong</code>.</p>
-    pub fn set_count_nan(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_count_nan(mut self, input: ::std::option::Option<i32>) -> Self {
         self.count_nan = input;
         self
     }
     /// <p>For a numeric field, the minimum value in the field.</p>
-    pub fn min(mut self, input: impl Into<std::string::String>) -> Self {
-        self.min = Some(input.into());
+    pub fn min(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.min = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>For a numeric field, the minimum value in the field.</p>
-    pub fn set_min(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_min(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.min = input;
         self
     }
     /// <p>For a numeric field, the maximum value in the field.</p>
-    pub fn max(mut self, input: impl Into<std::string::String>) -> Self {
-        self.max = Some(input.into());
+    pub fn max(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.max = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>For a numeric field, the maximum value in the field.</p>
-    pub fn set_max(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_max(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.max = input;
         self
     }
     /// <p>For a numeric field, the average value in the field.</p>
     pub fn avg(mut self, input: f64) -> Self {
-        self.avg = Some(input);
+        self.avg = ::std::option::Option::Some(input);
         self
     }
     /// <p>For a numeric field, the average value in the field.</p>
-    pub fn set_avg(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_avg(mut self, input: ::std::option::Option<f64>) -> Self {
         self.avg = input;
         self
     }
     /// <p>For a numeric field, the standard deviation.</p>
     pub fn stddev(mut self, input: f64) -> Self {
-        self.stddev = Some(input);
+        self.stddev = ::std::option::Option::Some(input);
         self
     }
     /// <p>For a numeric field, the standard deviation.</p>
-    pub fn set_stddev(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_stddev(mut self, input: ::std::option::Option<f64>) -> Self {
         self.stddev = input;
         self
     }
     /// <p>The number of values in the field. <code>CountLong</code> is used instead of <code>Count</code> if the value is greater than 2,147,483,647.</p>
     pub fn count_long(mut self, input: i64) -> Self {
-        self.count_long = Some(input);
+        self.count_long = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of values in the field. <code>CountLong</code> is used instead of <code>Count</code> if the value is greater than 2,147,483,647.</p>
-    pub fn set_count_long(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_count_long(mut self, input: ::std::option::Option<i64>) -> Self {
         self.count_long = input;
         self
     }
     /// <p>The number of distinct values in the field. <code>CountDistinctLong</code> is used instead of <code>CountDistinct</code> if the value is greater than 2,147,483,647.</p>
     pub fn count_distinct_long(mut self, input: i64) -> Self {
-        self.count_distinct_long = Some(input);
+        self.count_distinct_long = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of distinct values in the field. <code>CountDistinctLong</code> is used instead of <code>CountDistinct</code> if the value is greater than 2,147,483,647.</p>
-    pub fn set_count_distinct_long(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_count_distinct_long(mut self, input: ::std::option::Option<i64>) -> Self {
         self.count_distinct_long = input;
         self
     }
     /// <p>The number of null values in the field. <code>CountNullLong</code> is used instead of <code>CountNull</code> if the value is greater than 2,147,483,647.</p>
     pub fn count_null_long(mut self, input: i64) -> Self {
-        self.count_null_long = Some(input);
+        self.count_null_long = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of null values in the field. <code>CountNullLong</code> is used instead of <code>CountNull</code> if the value is greater than 2,147,483,647.</p>
-    pub fn set_count_null_long(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_count_null_long(mut self, input: ::std::option::Option<i64>) -> Self {
         self.count_null_long = input;
         self
     }
     /// <p>The number of NAN (not a number) values in the field. <code>CountNanLong</code> is used instead of <code>CountNan</code> if the value is greater than 2,147,483,647.</p>
     pub fn count_nan_long(mut self, input: i64) -> Self {
-        self.count_nan_long = Some(input);
+        self.count_nan_long = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of NAN (not a number) values in the field. <code>CountNanLong</code> is used instead of <code>CountNan</code> if the value is greater than 2,147,483,647.</p>
-    pub fn set_count_nan_long(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_count_nan_long(mut self, input: ::std::option::Option<i64>) -> Self {
         self.count_nan_long = input;
         self
     }

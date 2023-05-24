@@ -2,36 +2,36 @@
 
 /// <p>Details on a member account in your organization.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Member {
     /// <p>The Amazon Web Services account ID of the member account.</p>
     #[doc(hidden)]
-    pub account_id: std::option::Option<std::string::String>,
+    pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the member account.</p>
     #[doc(hidden)]
-    pub relationship_status: std::option::Option<crate::types::RelationshipStatus>,
+    pub relationship_status: ::std::option::Option<crate::types::RelationshipStatus>,
     /// <p>The Amazon Web Services account ID of the Amazon Inspector delegated administrator for this member account.</p>
     #[doc(hidden)]
-    pub delegated_admin_account_id: std::option::Option<std::string::String>,
+    pub delegated_admin_account_id: ::std::option::Option<::std::string::String>,
     /// <p>A timestamp showing when the status of this member was last updated.</p>
     #[doc(hidden)]
-    pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl Member {
     /// <p>The Amazon Web Services account ID of the member account.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The status of the member account.</p>
-    pub fn relationship_status(&self) -> std::option::Option<&crate::types::RelationshipStatus> {
+    pub fn relationship_status(&self) -> ::std::option::Option<&crate::types::RelationshipStatus> {
         self.relationship_status.as_ref()
     }
     /// <p>The Amazon Web Services account ID of the Amazon Inspector delegated administrator for this member account.</p>
-    pub fn delegated_admin_account_id(&self) -> std::option::Option<&str> {
+    pub fn delegated_admin_account_id(&self) -> ::std::option::Option<&str> {
         self.delegated_admin_account_id.as_deref()
     }
     /// <p>A timestamp showing when the status of this member was last updated.</p>
-    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
@@ -44,59 +44,64 @@ impl Member {
 
 /// A builder for [`Member`](crate::types::Member).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MemberBuilder {
-    pub(crate) account_id: std::option::Option<std::string::String>,
-    pub(crate) relationship_status: std::option::Option<crate::types::RelationshipStatus>,
-    pub(crate) delegated_admin_account_id: std::option::Option<std::string::String>,
-    pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) relationship_status: ::std::option::Option<crate::types::RelationshipStatus>,
+    pub(crate) delegated_admin_account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl MemberBuilder {
     /// <p>The Amazon Web Services account ID of the member account.</p>
-    pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.account_id = Some(input.into());
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID of the member account.</p>
-    pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
     }
     /// <p>The status of the member account.</p>
     pub fn relationship_status(mut self, input: crate::types::RelationshipStatus) -> Self {
-        self.relationship_status = Some(input);
+        self.relationship_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the member account.</p>
     pub fn set_relationship_status(
         mut self,
-        input: std::option::Option<crate::types::RelationshipStatus>,
+        input: ::std::option::Option<crate::types::RelationshipStatus>,
     ) -> Self {
         self.relationship_status = input;
         self
     }
     /// <p>The Amazon Web Services account ID of the Amazon Inspector delegated administrator for this member account.</p>
-    pub fn delegated_admin_account_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.delegated_admin_account_id = Some(input.into());
+    pub fn delegated_admin_account_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.delegated_admin_account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID of the Amazon Inspector delegated administrator for this member account.</p>
     pub fn set_delegated_admin_account_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.delegated_admin_account_id = input;
         self
     }
     /// <p>A timestamp showing when the status of this member was last updated.</p>
-    pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.updated_at = Some(input);
+    pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.updated_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>A timestamp showing when the status of this member was last updated.</p>
     pub fn set_updated_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.updated_at = input;
         self

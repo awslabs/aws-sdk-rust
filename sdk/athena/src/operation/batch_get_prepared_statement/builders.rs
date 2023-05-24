@@ -6,29 +6,29 @@ pub use crate::operation::batch_get_prepared_statement::_batch_get_prepared_stat
 /// Fluent builder constructing a request to `BatchGetPreparedStatement`.
 ///
 /// <p>Returns the details of a single prepared statement or a list of up to 256 prepared statements for the array of prepared statement names that you provide. Requires you to have access to the workgroup to which the prepared statements belong. If a prepared statement cannot be retrieved for the name specified, the statement is listed in <code>UnprocessedPreparedStatementNames</code>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchGetPreparedStatementFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::batch_get_prepared_statement::builders::BatchGetPreparedStatementInputBuilder,
 }
 impl BatchGetPreparedStatementFluentBuilder {
     /// Creates a new `BatchGetPreparedStatement`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::batch_get_prepared_statement::BatchGetPreparedStatement,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::batch_get_prepared_statement::BatchGetPreparedStatementError,
         >,
     > {
@@ -36,30 +36,33 @@ impl BatchGetPreparedStatementFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::batch_get_prepared_statement::BatchGetPreparedStatementOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::batch_get_prepared_statement::BatchGetPreparedStatementError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,9 +75,9 @@ impl BatchGetPreparedStatementFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::batch_get_prepared_statement::BatchGetPreparedStatementOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::batch_get_prepared_statement::BatchGetPreparedStatementError,
         >,
     > {
@@ -85,25 +88,28 @@ impl BatchGetPreparedStatementFluentBuilder {
     /// To override the contents of this collection use [`set_prepared_statement_names`](Self::set_prepared_statement_names).
     ///
     /// <p>A list of prepared statement names to return.</p>
-    pub fn prepared_statement_names(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn prepared_statement_names(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.prepared_statement_names(input.into());
         self
     }
     /// <p>A list of prepared statement names to return.</p>
     pub fn set_prepared_statement_names(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_prepared_statement_names(input);
         self
     }
     /// <p>The name of the workgroup to which the prepared statements belong.</p>
-    pub fn work_group(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn work_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.work_group(input.into());
         self
     }
     /// <p>The name of the workgroup to which the prepared statements belong.</p>
-    pub fn set_work_group(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_work_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_work_group(input);
         self
     }

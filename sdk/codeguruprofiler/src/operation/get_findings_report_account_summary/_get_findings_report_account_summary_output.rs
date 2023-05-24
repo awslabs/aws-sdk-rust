@@ -2,27 +2,30 @@
 
 /// <p>The structure representing the GetFindingsReportAccountSummaryResponse.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetFindingsReportAccountSummaryOutput {
     /// <p>The return list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_FindingsReportSummary.html"> <code>FindingsReportSummary</code> </a> objects taht contain summaries of analysis results for all profiling groups in your AWS account.</p>
     #[doc(hidden)]
-    pub report_summaries: std::option::Option<std::vec::Vec<crate::types::FindingsReportSummary>>,
+    pub report_summaries:
+        ::std::option::Option<::std::vec::Vec<crate::types::FindingsReportSummary>>,
     /// <p>The <code>nextToken</code> value to include in a future <code>GetFindingsReportAccountSummary</code> request. When the results of a <code>GetFindingsReportAccountSummary</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetFindingsReportAccountSummaryOutput {
     /// <p>The return list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_FindingsReportSummary.html"> <code>FindingsReportSummary</code> </a> objects taht contain summaries of analysis results for all profiling groups in your AWS account.</p>
-    pub fn report_summaries(&self) -> std::option::Option<&[crate::types::FindingsReportSummary]> {
+    pub fn report_summaries(
+        &self,
+    ) -> ::std::option::Option<&[crate::types::FindingsReportSummary]> {
         self.report_summaries.as_deref()
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>GetFindingsReportAccountSummary</code> request. When the results of a <code>GetFindingsReportAccountSummary</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for GetFindingsReportAccountSummaryOutput {
+impl ::aws_http::request_id::RequestId for GetFindingsReportAccountSummaryOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -36,11 +39,13 @@ impl GetFindingsReportAccountSummaryOutput {
 
 /// A builder for [`GetFindingsReportAccountSummaryOutput`](crate::operation::get_findings_report_account_summary::GetFindingsReportAccountSummaryOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetFindingsReportAccountSummaryOutputBuilder {
     pub(crate) report_summaries:
-        std::option::Option<std::vec::Vec<crate::types::FindingsReportSummary>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::FindingsReportSummary>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetFindingsReportAccountSummaryOutputBuilder {
@@ -52,24 +57,24 @@ impl GetFindingsReportAccountSummaryOutputBuilder {
     pub fn report_summaries(mut self, input: crate::types::FindingsReportSummary) -> Self {
         let mut v = self.report_summaries.unwrap_or_default();
         v.push(input);
-        self.report_summaries = Some(v);
+        self.report_summaries = ::std::option::Option::Some(v);
         self
     }
     /// <p>The return list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_FindingsReportSummary.html"> <code>FindingsReportSummary</code> </a> objects taht contain summaries of analysis results for all profiling groups in your AWS account.</p>
     pub fn set_report_summaries(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::FindingsReportSummary>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::FindingsReportSummary>>,
     ) -> Self {
         self.report_summaries = input;
         self
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>GetFindingsReportAccountSummary</code> request. When the results of a <code>GetFindingsReportAccountSummary</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>GetFindingsReportAccountSummary</code> request. When the results of a <code>GetFindingsReportAccountSummary</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

@@ -2,66 +2,68 @@
 
 /// <p>The device types and operating systems that can be used to access a WorkSpace. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/workspaces-network-requirements.html">Amazon WorkSpaces Client Network Requirements</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorkspaceAccessProperties {
     /// <p>Indicates whether users can use Windows clients to access their WorkSpaces.</p>
     #[doc(hidden)]
-    pub device_type_windows: std::option::Option<crate::types::AccessPropertyValue>,
+    pub device_type_windows: ::std::option::Option<crate::types::AccessPropertyValue>,
     /// <p>Indicates whether users can use macOS clients to access their WorkSpaces.</p>
     #[doc(hidden)]
-    pub device_type_osx: std::option::Option<crate::types::AccessPropertyValue>,
+    pub device_type_osx: ::std::option::Option<crate::types::AccessPropertyValue>,
     /// <p>Indicates whether users can access their WorkSpaces through a web browser.</p>
     #[doc(hidden)]
-    pub device_type_web: std::option::Option<crate::types::AccessPropertyValue>,
+    pub device_type_web: ::std::option::Option<crate::types::AccessPropertyValue>,
     /// <p>Indicates whether users can use iOS devices to access their WorkSpaces.</p>
     #[doc(hidden)]
-    pub device_type_ios: std::option::Option<crate::types::AccessPropertyValue>,
+    pub device_type_ios: ::std::option::Option<crate::types::AccessPropertyValue>,
     /// <p>Indicates whether users can use Android and Android-compatible Chrome OS devices to access their WorkSpaces.</p>
     #[doc(hidden)]
-    pub device_type_android: std::option::Option<crate::types::AccessPropertyValue>,
+    pub device_type_android: ::std::option::Option<crate::types::AccessPropertyValue>,
     /// <p>Indicates whether users can use Chromebooks to access their WorkSpaces.</p>
     #[doc(hidden)]
-    pub device_type_chrome_os: std::option::Option<crate::types::AccessPropertyValue>,
+    pub device_type_chrome_os: ::std::option::Option<crate::types::AccessPropertyValue>,
     /// <p>Indicates whether users can use zero client devices to access their WorkSpaces.</p>
     #[doc(hidden)]
-    pub device_type_zero_client: std::option::Option<crate::types::AccessPropertyValue>,
+    pub device_type_zero_client: ::std::option::Option<crate::types::AccessPropertyValue>,
     /// <p>Indicates whether users can use Linux clients to access their WorkSpaces.</p>
     #[doc(hidden)]
-    pub device_type_linux: std::option::Option<crate::types::AccessPropertyValue>,
+    pub device_type_linux: ::std::option::Option<crate::types::AccessPropertyValue>,
 }
 impl WorkspaceAccessProperties {
     /// <p>Indicates whether users can use Windows clients to access their WorkSpaces.</p>
-    pub fn device_type_windows(&self) -> std::option::Option<&crate::types::AccessPropertyValue> {
+    pub fn device_type_windows(&self) -> ::std::option::Option<&crate::types::AccessPropertyValue> {
         self.device_type_windows.as_ref()
     }
     /// <p>Indicates whether users can use macOS clients to access their WorkSpaces.</p>
-    pub fn device_type_osx(&self) -> std::option::Option<&crate::types::AccessPropertyValue> {
+    pub fn device_type_osx(&self) -> ::std::option::Option<&crate::types::AccessPropertyValue> {
         self.device_type_osx.as_ref()
     }
     /// <p>Indicates whether users can access their WorkSpaces through a web browser.</p>
-    pub fn device_type_web(&self) -> std::option::Option<&crate::types::AccessPropertyValue> {
+    pub fn device_type_web(&self) -> ::std::option::Option<&crate::types::AccessPropertyValue> {
         self.device_type_web.as_ref()
     }
     /// <p>Indicates whether users can use iOS devices to access their WorkSpaces.</p>
-    pub fn device_type_ios(&self) -> std::option::Option<&crate::types::AccessPropertyValue> {
+    pub fn device_type_ios(&self) -> ::std::option::Option<&crate::types::AccessPropertyValue> {
         self.device_type_ios.as_ref()
     }
     /// <p>Indicates whether users can use Android and Android-compatible Chrome OS devices to access their WorkSpaces.</p>
-    pub fn device_type_android(&self) -> std::option::Option<&crate::types::AccessPropertyValue> {
+    pub fn device_type_android(&self) -> ::std::option::Option<&crate::types::AccessPropertyValue> {
         self.device_type_android.as_ref()
     }
     /// <p>Indicates whether users can use Chromebooks to access their WorkSpaces.</p>
-    pub fn device_type_chrome_os(&self) -> std::option::Option<&crate::types::AccessPropertyValue> {
+    pub fn device_type_chrome_os(
+        &self,
+    ) -> ::std::option::Option<&crate::types::AccessPropertyValue> {
         self.device_type_chrome_os.as_ref()
     }
     /// <p>Indicates whether users can use zero client devices to access their WorkSpaces.</p>
     pub fn device_type_zero_client(
         &self,
-    ) -> std::option::Option<&crate::types::AccessPropertyValue> {
+    ) -> ::std::option::Option<&crate::types::AccessPropertyValue> {
         self.device_type_zero_client.as_ref()
     }
     /// <p>Indicates whether users can use Linux clients to access their WorkSpaces.</p>
-    pub fn device_type_linux(&self) -> std::option::Option<&crate::types::AccessPropertyValue> {
+    pub fn device_type_linux(&self) -> ::std::option::Option<&crate::types::AccessPropertyValue> {
         self.device_type_linux.as_ref()
     }
 }
@@ -74,118 +76,120 @@ impl WorkspaceAccessProperties {
 
 /// A builder for [`WorkspaceAccessProperties`](crate::types::WorkspaceAccessProperties).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct WorkspaceAccessPropertiesBuilder {
-    pub(crate) device_type_windows: std::option::Option<crate::types::AccessPropertyValue>,
-    pub(crate) device_type_osx: std::option::Option<crate::types::AccessPropertyValue>,
-    pub(crate) device_type_web: std::option::Option<crate::types::AccessPropertyValue>,
-    pub(crate) device_type_ios: std::option::Option<crate::types::AccessPropertyValue>,
-    pub(crate) device_type_android: std::option::Option<crate::types::AccessPropertyValue>,
-    pub(crate) device_type_chrome_os: std::option::Option<crate::types::AccessPropertyValue>,
-    pub(crate) device_type_zero_client: std::option::Option<crate::types::AccessPropertyValue>,
-    pub(crate) device_type_linux: std::option::Option<crate::types::AccessPropertyValue>,
+    pub(crate) device_type_windows: ::std::option::Option<crate::types::AccessPropertyValue>,
+    pub(crate) device_type_osx: ::std::option::Option<crate::types::AccessPropertyValue>,
+    pub(crate) device_type_web: ::std::option::Option<crate::types::AccessPropertyValue>,
+    pub(crate) device_type_ios: ::std::option::Option<crate::types::AccessPropertyValue>,
+    pub(crate) device_type_android: ::std::option::Option<crate::types::AccessPropertyValue>,
+    pub(crate) device_type_chrome_os: ::std::option::Option<crate::types::AccessPropertyValue>,
+    pub(crate) device_type_zero_client: ::std::option::Option<crate::types::AccessPropertyValue>,
+    pub(crate) device_type_linux: ::std::option::Option<crate::types::AccessPropertyValue>,
 }
 impl WorkspaceAccessPropertiesBuilder {
     /// <p>Indicates whether users can use Windows clients to access their WorkSpaces.</p>
     pub fn device_type_windows(mut self, input: crate::types::AccessPropertyValue) -> Self {
-        self.device_type_windows = Some(input);
+        self.device_type_windows = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether users can use Windows clients to access their WorkSpaces.</p>
     pub fn set_device_type_windows(
         mut self,
-        input: std::option::Option<crate::types::AccessPropertyValue>,
+        input: ::std::option::Option<crate::types::AccessPropertyValue>,
     ) -> Self {
         self.device_type_windows = input;
         self
     }
     /// <p>Indicates whether users can use macOS clients to access their WorkSpaces.</p>
     pub fn device_type_osx(mut self, input: crate::types::AccessPropertyValue) -> Self {
-        self.device_type_osx = Some(input);
+        self.device_type_osx = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether users can use macOS clients to access their WorkSpaces.</p>
     pub fn set_device_type_osx(
         mut self,
-        input: std::option::Option<crate::types::AccessPropertyValue>,
+        input: ::std::option::Option<crate::types::AccessPropertyValue>,
     ) -> Self {
         self.device_type_osx = input;
         self
     }
     /// <p>Indicates whether users can access their WorkSpaces through a web browser.</p>
     pub fn device_type_web(mut self, input: crate::types::AccessPropertyValue) -> Self {
-        self.device_type_web = Some(input);
+        self.device_type_web = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether users can access their WorkSpaces through a web browser.</p>
     pub fn set_device_type_web(
         mut self,
-        input: std::option::Option<crate::types::AccessPropertyValue>,
+        input: ::std::option::Option<crate::types::AccessPropertyValue>,
     ) -> Self {
         self.device_type_web = input;
         self
     }
     /// <p>Indicates whether users can use iOS devices to access their WorkSpaces.</p>
     pub fn device_type_ios(mut self, input: crate::types::AccessPropertyValue) -> Self {
-        self.device_type_ios = Some(input);
+        self.device_type_ios = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether users can use iOS devices to access their WorkSpaces.</p>
     pub fn set_device_type_ios(
         mut self,
-        input: std::option::Option<crate::types::AccessPropertyValue>,
+        input: ::std::option::Option<crate::types::AccessPropertyValue>,
     ) -> Self {
         self.device_type_ios = input;
         self
     }
     /// <p>Indicates whether users can use Android and Android-compatible Chrome OS devices to access their WorkSpaces.</p>
     pub fn device_type_android(mut self, input: crate::types::AccessPropertyValue) -> Self {
-        self.device_type_android = Some(input);
+        self.device_type_android = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether users can use Android and Android-compatible Chrome OS devices to access their WorkSpaces.</p>
     pub fn set_device_type_android(
         mut self,
-        input: std::option::Option<crate::types::AccessPropertyValue>,
+        input: ::std::option::Option<crate::types::AccessPropertyValue>,
     ) -> Self {
         self.device_type_android = input;
         self
     }
     /// <p>Indicates whether users can use Chromebooks to access their WorkSpaces.</p>
     pub fn device_type_chrome_os(mut self, input: crate::types::AccessPropertyValue) -> Self {
-        self.device_type_chrome_os = Some(input);
+        self.device_type_chrome_os = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether users can use Chromebooks to access their WorkSpaces.</p>
     pub fn set_device_type_chrome_os(
         mut self,
-        input: std::option::Option<crate::types::AccessPropertyValue>,
+        input: ::std::option::Option<crate::types::AccessPropertyValue>,
     ) -> Self {
         self.device_type_chrome_os = input;
         self
     }
     /// <p>Indicates whether users can use zero client devices to access their WorkSpaces.</p>
     pub fn device_type_zero_client(mut self, input: crate::types::AccessPropertyValue) -> Self {
-        self.device_type_zero_client = Some(input);
+        self.device_type_zero_client = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether users can use zero client devices to access their WorkSpaces.</p>
     pub fn set_device_type_zero_client(
         mut self,
-        input: std::option::Option<crate::types::AccessPropertyValue>,
+        input: ::std::option::Option<crate::types::AccessPropertyValue>,
     ) -> Self {
         self.device_type_zero_client = input;
         self
     }
     /// <p>Indicates whether users can use Linux clients to access their WorkSpaces.</p>
     pub fn device_type_linux(mut self, input: crate::types::AccessPropertyValue) -> Self {
-        self.device_type_linux = Some(input);
+        self.device_type_linux = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether users can use Linux clients to access their WorkSpaces.</p>
     pub fn set_device_type_linux(
         mut self,
-        input: std::option::Option<crate::types::AccessPropertyValue>,
+        input: ::std::option::Option<crate::types::AccessPropertyValue>,
     ) -> Self {
         self.device_type_linux = input;
         self

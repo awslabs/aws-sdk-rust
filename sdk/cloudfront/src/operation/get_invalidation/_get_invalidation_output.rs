@@ -2,20 +2,20 @@
 
 /// <p>The returned result of the corresponding request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetInvalidationOutput {
     /// <p>The invalidation's information. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/InvalidationDatatype.html">Invalidation Complex Type</a>.</p>
     #[doc(hidden)]
-    pub invalidation: std::option::Option<crate::types::Invalidation>,
+    pub invalidation: ::std::option::Option<crate::types::Invalidation>,
     _request_id: Option<String>,
 }
 impl GetInvalidationOutput {
     /// <p>The invalidation's information. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/InvalidationDatatype.html">Invalidation Complex Type</a>.</p>
-    pub fn invalidation(&self) -> std::option::Option<&crate::types::Invalidation> {
+    pub fn invalidation(&self) -> ::std::option::Option<&crate::types::Invalidation> {
         self.invalidation.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for GetInvalidationOutput {
+impl ::aws_http::request_id::RequestId for GetInvalidationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,21 +29,23 @@ impl GetInvalidationOutput {
 
 /// A builder for [`GetInvalidationOutput`](crate::operation::get_invalidation::GetInvalidationOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetInvalidationOutputBuilder {
-    pub(crate) invalidation: std::option::Option<crate::types::Invalidation>,
+    pub(crate) invalidation: ::std::option::Option<crate::types::Invalidation>,
     _request_id: Option<String>,
 }
 impl GetInvalidationOutputBuilder {
     /// <p>The invalidation's information. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/InvalidationDatatype.html">Invalidation Complex Type</a>.</p>
     pub fn invalidation(mut self, input: crate::types::Invalidation) -> Self {
-        self.invalidation = Some(input);
+        self.invalidation = ::std::option::Option::Some(input);
         self
     }
     /// <p>The invalidation's information. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/InvalidationDatatype.html">Invalidation Complex Type</a>.</p>
     pub fn set_invalidation(
         mut self,
-        input: std::option::Option<crate::types::Invalidation>,
+        input: ::std::option::Option<crate::types::Invalidation>,
     ) -> Self {
         self.invalidation = input;
         self

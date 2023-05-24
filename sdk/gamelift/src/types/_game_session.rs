@@ -5,7 +5,7 @@
 /// <p>Once the session ends, the game session object is retained for 30 days. This means you can reuse idempotency token values after this time. Game session logs are retained for 14 days.</p>
 /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All APIs by task</a> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GameSession {
     /// <p>A unique identifier for the game session. A game session ARN has the following format: <code>arn:aws:gamelift:
     /// <region>
@@ -16,40 +16,40 @@ pub struct GameSession {
     /// </fleet>
     /// </region></code>.</p>
     #[doc(hidden)]
-    pub game_session_id: std::option::Option<std::string::String>,
+    pub game_session_id: ::std::option::Option<::std::string::String>,
     /// <p>A descriptive label that is associated with a game session. Session names do not need to be unique.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the fleet that the game session is running on.</p>
     #[doc(hidden)]
-    pub fleet_id: std::option::Option<std::string::String>,
+    pub fleet_id: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) associated with the GameLift fleet that this game session is running on. </p>
     #[doc(hidden)]
-    pub fleet_arn: std::option::Option<std::string::String>,
+    pub fleet_arn: ::std::option::Option<::std::string::String>,
     /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
     #[doc(hidden)]
-    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A time stamp indicating when this data object was terminated. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
     #[doc(hidden)]
-    pub termination_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub termination_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Number of players currently in the game session.</p>
     #[doc(hidden)]
-    pub current_player_session_count: std::option::Option<i32>,
+    pub current_player_session_count: ::std::option::Option<i32>,
     /// <p>The maximum number of players that can be connected simultaneously to the game session.</p>
     #[doc(hidden)]
-    pub maximum_player_session_count: std::option::Option<i32>,
+    pub maximum_player_session_count: ::std::option::Option<i32>,
     /// <p>Current status of the game session. A game session must have an <code>ACTIVE</code> status to have player sessions.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::GameSessionStatus>,
+    pub status: ::std::option::Option<crate::types::GameSessionStatus>,
     /// <p>Provides additional information about game session status. <code>INTERRUPTED</code> indicates that the game session was hosted on a spot instance that was reclaimed, causing the active game session to be terminated.</p>
     #[doc(hidden)]
-    pub status_reason: std::option::Option<crate::types::GameSessionStatusReason>,
+    pub status_reason: ::std::option::Option<crate::types::GameSessionStatusReason>,
     /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
     #[doc(hidden)]
-    pub game_properties: std::option::Option<std::vec::Vec<crate::types::GameProperty>>,
+    pub game_properties: ::std::option::Option<::std::vec::Vec<crate::types::GameProperty>>,
     /// <p>The IP address of the game session. To connect to a Amazon GameLift game server, an app needs both the IP address and port number.</p>
     #[doc(hidden)]
-    pub ip_address: std::option::Option<std::string::String>,
+    pub ip_address: ::std::option::Option<::std::string::String>,
     /// <p>The DNS identifier assigned to the instance that is running the game session. Values have the following format:</p>
     /// <ul>
     /// <li> <p>TLS-enabled fleets: <code>
@@ -66,26 +66,26 @@ pub struct GameSession {
     /// </ul>
     /// <p>When connecting to a game session that is running on a TLS-enabled fleet, you must use the DNS name, not the IP address.</p>
     #[doc(hidden)]
-    pub dns_name: std::option::Option<std::string::String>,
+    pub dns_name: ::std::option::Option<::std::string::String>,
     /// <p>The port number for the game session. To connect to a Amazon GameLift game server, an app needs both the IP address and port number.</p>
     #[doc(hidden)]
-    pub port: std::option::Option<i32>,
+    pub port: ::std::option::Option<i32>,
     /// <p>Indicates whether or not the game session is accepting new players.</p>
     #[doc(hidden)]
     pub player_session_creation_policy:
-        std::option::Option<crate::types::PlayerSessionCreationPolicy>,
+        ::std::option::Option<crate::types::PlayerSessionCreationPolicy>,
     /// <p>A unique identifier for a player. This ID is used to enforce a resource protection policy (if one exists), that limits the number of game sessions a player can create.</p>
     #[doc(hidden)]
-    pub creator_id: std::option::Option<std::string::String>,
+    pub creator_id: ::std::option::Option<::std::string::String>,
     /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
     #[doc(hidden)]
-    pub game_session_data: std::option::Option<std::string::String>,
+    pub game_session_data: ::std::option::Option<::std::string::String>,
     /// <p>Information about the matchmaking process that was used to create the game session. It is in JSON syntax, formatted as a string. In addition the matchmaking configuration used, it contains data on all players assigned to the match, including player attributes and team assignments. For more details on matchmaker data, see <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">Match Data</a>. Matchmaker data is useful when requesting match backfills, and is updated whenever new players are added during a successful backfill (see <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartMatchBackfill.html">StartMatchBackfill</a>). </p>
     #[doc(hidden)]
-    pub matchmaker_data: std::option::Option<std::string::String>,
+    pub matchmaker_data: ::std::option::Option<::std::string::String>,
     /// <p>The fleet location where the game session is running. This value might specify the fleet's home Region or a remote location. Location is expressed as an Amazon Web Services Region code such as <code>us-west-2</code>. </p>
     #[doc(hidden)]
-    pub location: std::option::Option<std::string::String>,
+    pub location: ::std::option::Option<::std::string::String>,
 }
 impl GameSession {
     /// <p>A unique identifier for the game session. A game session ARN has the following format: <code>arn:aws:gamelift:
@@ -96,51 +96,51 @@ impl GameSession {
     /// <custom id string or idempotency token></custom>
     /// </fleet>
     /// </region></code>.</p>
-    pub fn game_session_id(&self) -> std::option::Option<&str> {
+    pub fn game_session_id(&self) -> ::std::option::Option<&str> {
         self.game_session_id.as_deref()
     }
     /// <p>A descriptive label that is associated with a game session. Session names do not need to be unique.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>A unique identifier for the fleet that the game session is running on.</p>
-    pub fn fleet_id(&self) -> std::option::Option<&str> {
+    pub fn fleet_id(&self) -> ::std::option::Option<&str> {
         self.fleet_id.as_deref()
     }
     /// <p> The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) associated with the GameLift fleet that this game session is running on. </p>
-    pub fn fleet_arn(&self) -> std::option::Option<&str> {
+    pub fn fleet_arn(&self) -> ::std::option::Option<&str> {
         self.fleet_arn.as_deref()
     }
     /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>A time stamp indicating when this data object was terminated. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    pub fn termination_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn termination_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.termination_time.as_ref()
     }
     /// <p>Number of players currently in the game session.</p>
-    pub fn current_player_session_count(&self) -> std::option::Option<i32> {
+    pub fn current_player_session_count(&self) -> ::std::option::Option<i32> {
         self.current_player_session_count
     }
     /// <p>The maximum number of players that can be connected simultaneously to the game session.</p>
-    pub fn maximum_player_session_count(&self) -> std::option::Option<i32> {
+    pub fn maximum_player_session_count(&self) -> ::std::option::Option<i32> {
         self.maximum_player_session_count
     }
     /// <p>Current status of the game session. A game session must have an <code>ACTIVE</code> status to have player sessions.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::GameSessionStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::GameSessionStatus> {
         self.status.as_ref()
     }
     /// <p>Provides additional information about game session status. <code>INTERRUPTED</code> indicates that the game session was hosted on a spot instance that was reclaimed, causing the active game session to be terminated.</p>
-    pub fn status_reason(&self) -> std::option::Option<&crate::types::GameSessionStatusReason> {
+    pub fn status_reason(&self) -> ::std::option::Option<&crate::types::GameSessionStatusReason> {
         self.status_reason.as_ref()
     }
     /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
-    pub fn game_properties(&self) -> std::option::Option<&[crate::types::GameProperty]> {
+    pub fn game_properties(&self) -> ::std::option::Option<&[crate::types::GameProperty]> {
         self.game_properties.as_deref()
     }
     /// <p>The IP address of the game session. To connect to a Amazon GameLift game server, an app needs both the IP address and port number.</p>
-    pub fn ip_address(&self) -> std::option::Option<&str> {
+    pub fn ip_address(&self) -> ::std::option::Option<&str> {
         self.ip_address.as_deref()
     }
     /// <p>The DNS identifier assigned to the instance that is running the game session. Values have the following format:</p>
@@ -158,33 +158,33 @@ impl GameSession {
     /// </unique></code>. (See <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon EC2 Instance IP Addressing</a>.)</p> </li>
     /// </ul>
     /// <p>When connecting to a game session that is running on a TLS-enabled fleet, you must use the DNS name, not the IP address.</p>
-    pub fn dns_name(&self) -> std::option::Option<&str> {
+    pub fn dns_name(&self) -> ::std::option::Option<&str> {
         self.dns_name.as_deref()
     }
     /// <p>The port number for the game session. To connect to a Amazon GameLift game server, an app needs both the IP address and port number.</p>
-    pub fn port(&self) -> std::option::Option<i32> {
+    pub fn port(&self) -> ::std::option::Option<i32> {
         self.port
     }
     /// <p>Indicates whether or not the game session is accepting new players.</p>
     pub fn player_session_creation_policy(
         &self,
-    ) -> std::option::Option<&crate::types::PlayerSessionCreationPolicy> {
+    ) -> ::std::option::Option<&crate::types::PlayerSessionCreationPolicy> {
         self.player_session_creation_policy.as_ref()
     }
     /// <p>A unique identifier for a player. This ID is used to enforce a resource protection policy (if one exists), that limits the number of game sessions a player can create.</p>
-    pub fn creator_id(&self) -> std::option::Option<&str> {
+    pub fn creator_id(&self) -> ::std::option::Option<&str> {
         self.creator_id.as_deref()
     }
     /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
-    pub fn game_session_data(&self) -> std::option::Option<&str> {
+    pub fn game_session_data(&self) -> ::std::option::Option<&str> {
         self.game_session_data.as_deref()
     }
     /// <p>Information about the matchmaking process that was used to create the game session. It is in JSON syntax, formatted as a string. In addition the matchmaking configuration used, it contains data on all players assigned to the match, including player attributes and team assignments. For more details on matchmaker data, see <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">Match Data</a>. Matchmaker data is useful when requesting match backfills, and is updated whenever new players are added during a successful backfill (see <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartMatchBackfill.html">StartMatchBackfill</a>). </p>
-    pub fn matchmaker_data(&self) -> std::option::Option<&str> {
+    pub fn matchmaker_data(&self) -> ::std::option::Option<&str> {
         self.matchmaker_data.as_deref()
     }
     /// <p>The fleet location where the game session is running. This value might specify the fleet's home Region or a remote location. Location is expressed as an Amazon Web Services Region code such as <code>us-west-2</code>. </p>
-    pub fn location(&self) -> std::option::Option<&str> {
+    pub fn location(&self) -> ::std::option::Option<&str> {
         self.location.as_deref()
     }
 }
@@ -197,28 +197,30 @@ impl GameSession {
 
 /// A builder for [`GameSession`](crate::types::GameSession).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GameSessionBuilder {
-    pub(crate) game_session_id: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) fleet_id: std::option::Option<std::string::String>,
-    pub(crate) fleet_arn: std::option::Option<std::string::String>,
-    pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) termination_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) current_player_session_count: std::option::Option<i32>,
-    pub(crate) maximum_player_session_count: std::option::Option<i32>,
-    pub(crate) status: std::option::Option<crate::types::GameSessionStatus>,
-    pub(crate) status_reason: std::option::Option<crate::types::GameSessionStatusReason>,
-    pub(crate) game_properties: std::option::Option<std::vec::Vec<crate::types::GameProperty>>,
-    pub(crate) ip_address: std::option::Option<std::string::String>,
-    pub(crate) dns_name: std::option::Option<std::string::String>,
-    pub(crate) port: std::option::Option<i32>,
+    pub(crate) game_session_id: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) fleet_id: ::std::option::Option<::std::string::String>,
+    pub(crate) fleet_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) termination_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) current_player_session_count: ::std::option::Option<i32>,
+    pub(crate) maximum_player_session_count: ::std::option::Option<i32>,
+    pub(crate) status: ::std::option::Option<crate::types::GameSessionStatus>,
+    pub(crate) status_reason: ::std::option::Option<crate::types::GameSessionStatusReason>,
+    pub(crate) game_properties: ::std::option::Option<::std::vec::Vec<crate::types::GameProperty>>,
+    pub(crate) ip_address: ::std::option::Option<::std::string::String>,
+    pub(crate) dns_name: ::std::option::Option<::std::string::String>,
+    pub(crate) port: ::std::option::Option<i32>,
     pub(crate) player_session_creation_policy:
-        std::option::Option<crate::types::PlayerSessionCreationPolicy>,
-    pub(crate) creator_id: std::option::Option<std::string::String>,
-    pub(crate) game_session_data: std::option::Option<std::string::String>,
-    pub(crate) matchmaker_data: std::option::Option<std::string::String>,
-    pub(crate) location: std::option::Option<std::string::String>,
+        ::std::option::Option<crate::types::PlayerSessionCreationPolicy>,
+    pub(crate) creator_id: ::std::option::Option<::std::string::String>,
+    pub(crate) game_session_data: ::std::option::Option<::std::string::String>,
+    pub(crate) matchmaker_data: ::std::option::Option<::std::string::String>,
+    pub(crate) location: ::std::option::Option<::std::string::String>,
 }
 impl GameSessionBuilder {
     /// <p>A unique identifier for the game session. A game session ARN has the following format: <code>arn:aws:gamelift:
@@ -229,8 +231,11 @@ impl GameSessionBuilder {
     /// <custom id string or idempotency token></custom>
     /// </fleet>
     /// </region></code>.</p>
-    pub fn game_session_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.game_session_id = Some(input.into());
+    pub fn game_session_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.game_session_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the game session. A game session ARN has the following format: <code>arn:aws:gamelift:
@@ -241,108 +246,111 @@ impl GameSessionBuilder {
     /// <custom id string or idempotency token></custom>
     /// </fleet>
     /// </region></code>.</p>
-    pub fn set_game_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_game_session_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.game_session_id = input;
         self
     }
     /// <p>A descriptive label that is associated with a game session. Session names do not need to be unique.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A descriptive label that is associated with a game session. Session names do not need to be unique.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>A unique identifier for the fleet that the game session is running on.</p>
-    pub fn fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.fleet_id = Some(input.into());
+    pub fn fleet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.fleet_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the fleet that the game session is running on.</p>
-    pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_fleet_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fleet_id = input;
         self
     }
     /// <p> The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) associated with the GameLift fleet that this game session is running on. </p>
-    pub fn fleet_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.fleet_arn = Some(input.into());
+    pub fn fleet_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.fleet_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) associated with the GameLift fleet that this game session is running on. </p>
-    pub fn set_fleet_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_fleet_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.fleet_arn = input;
         self
     }
     /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_time = Some(input);
+    pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>A time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
     pub fn set_creation_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_time = input;
         self
     }
     /// <p>A time stamp indicating when this data object was terminated. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
-    pub fn termination_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.termination_time = Some(input);
+    pub fn termination_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.termination_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>A time stamp indicating when this data object was terminated. Format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
     pub fn set_termination_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.termination_time = input;
         self
     }
     /// <p>Number of players currently in the game session.</p>
     pub fn current_player_session_count(mut self, input: i32) -> Self {
-        self.current_player_session_count = Some(input);
+        self.current_player_session_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>Number of players currently in the game session.</p>
-    pub fn set_current_player_session_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_current_player_session_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.current_player_session_count = input;
         self
     }
     /// <p>The maximum number of players that can be connected simultaneously to the game session.</p>
     pub fn maximum_player_session_count(mut self, input: i32) -> Self {
-        self.maximum_player_session_count = Some(input);
+        self.maximum_player_session_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum number of players that can be connected simultaneously to the game session.</p>
-    pub fn set_maximum_player_session_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_maximum_player_session_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.maximum_player_session_count = input;
         self
     }
     /// <p>Current status of the game session. A game session must have an <code>ACTIVE</code> status to have player sessions.</p>
     pub fn status(mut self, input: crate::types::GameSessionStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Current status of the game session. A game session must have an <code>ACTIVE</code> status to have player sessions.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::GameSessionStatus>,
+        input: ::std::option::Option<crate::types::GameSessionStatus>,
     ) -> Self {
         self.status = input;
         self
     }
     /// <p>Provides additional information about game session status. <code>INTERRUPTED</code> indicates that the game session was hosted on a spot instance that was reclaimed, causing the active game session to be terminated.</p>
     pub fn status_reason(mut self, input: crate::types::GameSessionStatusReason) -> Self {
-        self.status_reason = Some(input);
+        self.status_reason = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides additional information about game session status. <code>INTERRUPTED</code> indicates that the game session was hosted on a spot instance that was reclaimed, causing the active game session to be terminated.</p>
     pub fn set_status_reason(
         mut self,
-        input: std::option::Option<crate::types::GameSessionStatusReason>,
+        input: ::std::option::Option<crate::types::GameSessionStatusReason>,
     ) -> Self {
         self.status_reason = input;
         self
@@ -355,24 +363,24 @@ impl GameSessionBuilder {
     pub fn game_properties(mut self, input: crate::types::GameProperty) -> Self {
         let mut v = self.game_properties.unwrap_or_default();
         v.push(input);
-        self.game_properties = Some(v);
+        self.game_properties = ::std::option::Option::Some(v);
         self
     }
     /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
     pub fn set_game_properties(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::GameProperty>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::GameProperty>>,
     ) -> Self {
         self.game_properties = input;
         self
     }
     /// <p>The IP address of the game session. To connect to a Amazon GameLift game server, an app needs both the IP address and port number.</p>
-    pub fn ip_address(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ip_address = Some(input.into());
+    pub fn ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ip_address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IP address of the game session. To connect to a Amazon GameLift game server, an app needs both the IP address and port number.</p>
-    pub fn set_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ip_address = input;
         self
     }
@@ -391,8 +399,8 @@ impl GameSessionBuilder {
     /// </unique></code>. (See <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon EC2 Instance IP Addressing</a>.)</p> </li>
     /// </ul>
     /// <p>When connecting to a game session that is running on a TLS-enabled fleet, you must use the DNS name, not the IP address.</p>
-    pub fn dns_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.dns_name = Some(input.into());
+    pub fn dns_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.dns_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The DNS identifier assigned to the instance that is running the game session. Values have the following format:</p>
@@ -410,17 +418,17 @@ impl GameSessionBuilder {
     /// </unique></code>. (See <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon EC2 Instance IP Addressing</a>.)</p> </li>
     /// </ul>
     /// <p>When connecting to a game session that is running on a TLS-enabled fleet, you must use the DNS name, not the IP address.</p>
-    pub fn set_dns_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_dns_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dns_name = input;
         self
     }
     /// <p>The port number for the game session. To connect to a Amazon GameLift game server, an app needs both the IP address and port number.</p>
     pub fn port(mut self, input: i32) -> Self {
-        self.port = Some(input);
+        self.port = ::std::option::Option::Some(input);
         self
     }
     /// <p>The port number for the game session. To connect to a Amazon GameLift game server, an app needs both the IP address and port number.</p>
-    pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.port = input;
         self
     }
@@ -429,57 +437,66 @@ impl GameSessionBuilder {
         mut self,
         input: crate::types::PlayerSessionCreationPolicy,
     ) -> Self {
-        self.player_session_creation_policy = Some(input);
+        self.player_session_creation_policy = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether or not the game session is accepting new players.</p>
     pub fn set_player_session_creation_policy(
         mut self,
-        input: std::option::Option<crate::types::PlayerSessionCreationPolicy>,
+        input: ::std::option::Option<crate::types::PlayerSessionCreationPolicy>,
     ) -> Self {
         self.player_session_creation_policy = input;
         self
     }
     /// <p>A unique identifier for a player. This ID is used to enforce a resource protection policy (if one exists), that limits the number of game sessions a player can create.</p>
-    pub fn creator_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.creator_id = Some(input.into());
+    pub fn creator_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.creator_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for a player. This ID is used to enforce a resource protection policy (if one exists), that limits the number of game sessions a player can create.</p>
-    pub fn set_creator_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_creator_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.creator_id = input;
         self
     }
     /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
-    pub fn game_session_data(mut self, input: impl Into<std::string::String>) -> Self {
-        self.game_session_data = Some(input.into());
+    pub fn game_session_data(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.game_session_data = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
     pub fn set_game_session_data(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.game_session_data = input;
         self
     }
     /// <p>Information about the matchmaking process that was used to create the game session. It is in JSON syntax, formatted as a string. In addition the matchmaking configuration used, it contains data on all players assigned to the match, including player attributes and team assignments. For more details on matchmaker data, see <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">Match Data</a>. Matchmaker data is useful when requesting match backfills, and is updated whenever new players are added during a successful backfill (see <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartMatchBackfill.html">StartMatchBackfill</a>). </p>
-    pub fn matchmaker_data(mut self, input: impl Into<std::string::String>) -> Self {
-        self.matchmaker_data = Some(input.into());
+    pub fn matchmaker_data(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.matchmaker_data = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Information about the matchmaking process that was used to create the game session. It is in JSON syntax, formatted as a string. In addition the matchmaking configuration used, it contains data on all players assigned to the match, including player attributes and team assignments. For more details on matchmaker data, see <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">Match Data</a>. Matchmaker data is useful when requesting match backfills, and is updated whenever new players are added during a successful backfill (see <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartMatchBackfill.html">StartMatchBackfill</a>). </p>
-    pub fn set_matchmaker_data(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_matchmaker_data(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.matchmaker_data = input;
         self
     }
     /// <p>The fleet location where the game session is running. This value might specify the fleet's home Region or a remote location. Location is expressed as an Amazon Web Services Region code such as <code>us-west-2</code>. </p>
-    pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
-        self.location = Some(input.into());
+    pub fn location(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.location = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The fleet location where the game session is running. This value might specify the fleet's home Region or a remote location. Location is expressed as an Amazon Web Services Region code such as <code>us-west-2</code>. </p>
-    pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_location(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.location = input;
         self
     }

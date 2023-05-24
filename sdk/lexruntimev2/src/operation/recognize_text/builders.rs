@@ -14,56 +14,59 @@ pub use crate::operation::recognize_text::_recognize_text_input::RecognizeTextIn
 /// <li> <p> <b>Timeout message</b> - If you don't configure a timeout message and a timeout, and the Lambda function doesn't return within 30 seconds, the timeout message is returned. If you configure a timeout, the timeout message is returned when the period times out. </p> </li>
 /// </ul>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/streaming-progress.html#progress-complete.html">Completion message</a>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RecognizeTextFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::recognize_text::builders::RecognizeTextInputBuilder,
 }
 impl RecognizeTextFluentBuilder {
     /// Creates a new `RecognizeText`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::recognize_text::RecognizeText,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::recognize_text::RecognizeTextError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::recognize_text::RecognizeTextError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::recognize_text::RecognizeTextOutput,
-        aws_smithy_http::result::SdkError<crate::operation::recognize_text::RecognizeTextError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::recognize_text::RecognizeTextError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -76,59 +79,59 @@ impl RecognizeTextFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::recognize_text::RecognizeTextOutput,
-        aws_smithy_http::result::SdkError<crate::operation::recognize_text::RecognizeTextError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::recognize_text::RecognizeTextError>,
     > {
         self.send_middleware().await
     }
     /// <p>The identifier of the bot that processes the request.</p>
-    pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn bot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bot_id(input.into());
         self
     }
     /// <p>The identifier of the bot that processes the request.</p>
-    pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_bot_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bot_id(input);
         self
     }
     /// <p>The alias identifier in use for the bot that processes the request.</p>
-    pub fn bot_alias_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn bot_alias_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bot_alias_id(input.into());
         self
     }
     /// <p>The alias identifier in use for the bot that processes the request.</p>
-    pub fn set_bot_alias_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_bot_alias_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bot_alias_id(input);
         self
     }
     /// <p>The locale where the session is in use.</p>
-    pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn locale_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.locale_id(input.into());
         self
     }
     /// <p>The locale where the session is in use.</p>
-    pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_locale_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_locale_id(input);
         self
     }
     /// <p>The identifier of the user session that is having the conversation.</p>
-    pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn session_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.session_id(input.into());
         self
     }
     /// <p>The identifier of the user session that is having the conversation.</p>
-    pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_session_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_session_id(input);
         self
     }
     /// <p>The text that the user entered. Amazon Lex V2 interprets this text.</p>
-    pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.text(input.into());
         self
     }
     /// <p>The text that the user entered. Amazon Lex V2 interprets this text.</p>
-    pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_text(input);
         self
     }
@@ -140,7 +143,7 @@ impl RecognizeTextFluentBuilder {
     /// <p>The current state of the dialog between the user and the bot.</p>
     pub fn set_session_state(
         mut self,
-        input: std::option::Option<crate::types::SessionState>,
+        input: ::std::option::Option<crate::types::SessionState>,
     ) -> Self {
         self.inner = self.inner.set_session_state(input);
         self
@@ -153,8 +156,8 @@ impl RecognizeTextFluentBuilder {
     /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes with the prefix <code>x-amz-lex:</code>.</p>
     pub fn request_attributes(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.request_attributes(k.into(), v.into());
         self
@@ -163,8 +166,8 @@ impl RecognizeTextFluentBuilder {
     /// <p>The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create any request attributes with the prefix <code>x-amz-lex:</code>.</p>
     pub fn set_request_attributes(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_request_attributes(input);

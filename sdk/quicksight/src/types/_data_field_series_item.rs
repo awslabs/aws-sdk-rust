@@ -2,41 +2,41 @@
 
 /// <p>The data field series item configuration of a line chart.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DataFieldSeriesItem {
     /// <p>The field ID of the field that you are setting the axis binding to.</p>
     #[doc(hidden)]
-    pub field_id: std::option::Option<std::string::String>,
+    pub field_id: ::std::option::Option<::std::string::String>,
     /// <p>The field value of the field that you are setting the axis binding to.</p>
     #[doc(hidden)]
-    pub field_value: std::option::Option<std::string::String>,
+    pub field_value: ::std::option::Option<::std::string::String>,
     /// <p>The axis that you are binding the field to.</p>
     #[doc(hidden)]
-    pub axis_binding: std::option::Option<crate::types::AxisBinding>,
+    pub axis_binding: ::std::option::Option<crate::types::AxisBinding>,
     /// <p>The options that determine the presentation of line series associated to the field.</p>
     #[doc(hidden)]
-    pub settings: std::option::Option<crate::types::LineChartSeriesSettings>,
+    pub settings: ::std::option::Option<crate::types::LineChartSeriesSettings>,
 }
 impl DataFieldSeriesItem {
     /// <p>The field ID of the field that you are setting the axis binding to.</p>
-    pub fn field_id(&self) -> std::option::Option<&str> {
+    pub fn field_id(&self) -> ::std::option::Option<&str> {
         self.field_id.as_deref()
     }
     /// <p>The field value of the field that you are setting the axis binding to.</p>
-    pub fn field_value(&self) -> std::option::Option<&str> {
+    pub fn field_value(&self) -> ::std::option::Option<&str> {
         self.field_value.as_deref()
     }
     /// <p>The axis that you are binding the field to.</p>
-    pub fn axis_binding(&self) -> std::option::Option<&crate::types::AxisBinding> {
+    pub fn axis_binding(&self) -> ::std::option::Option<&crate::types::AxisBinding> {
         self.axis_binding.as_ref()
     }
     /// <p>The options that determine the presentation of line series associated to the field.</p>
-    pub fn settings(&self) -> std::option::Option<&crate::types::LineChartSeriesSettings> {
+    pub fn settings(&self) -> ::std::option::Option<&crate::types::LineChartSeriesSettings> {
         self.settings.as_ref()
     }
 }
-impl std::fmt::Debug for DataFieldSeriesItem {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for DataFieldSeriesItem {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DataFieldSeriesItem");
         formatter.field("field_id", &self.field_id);
         formatter.field("field_value", &"*** Sensitive Data Redacted ***");
@@ -54,56 +54,56 @@ impl DataFieldSeriesItem {
 
 /// A builder for [`DataFieldSeriesItem`](crate::types::DataFieldSeriesItem).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct DataFieldSeriesItemBuilder {
-    pub(crate) field_id: std::option::Option<std::string::String>,
-    pub(crate) field_value: std::option::Option<std::string::String>,
-    pub(crate) axis_binding: std::option::Option<crate::types::AxisBinding>,
-    pub(crate) settings: std::option::Option<crate::types::LineChartSeriesSettings>,
+    pub(crate) field_id: ::std::option::Option<::std::string::String>,
+    pub(crate) field_value: ::std::option::Option<::std::string::String>,
+    pub(crate) axis_binding: ::std::option::Option<crate::types::AxisBinding>,
+    pub(crate) settings: ::std::option::Option<crate::types::LineChartSeriesSettings>,
 }
 impl DataFieldSeriesItemBuilder {
     /// <p>The field ID of the field that you are setting the axis binding to.</p>
-    pub fn field_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.field_id = Some(input.into());
+    pub fn field_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.field_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The field ID of the field that you are setting the axis binding to.</p>
-    pub fn set_field_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_field_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.field_id = input;
         self
     }
     /// <p>The field value of the field that you are setting the axis binding to.</p>
-    pub fn field_value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.field_value = Some(input.into());
+    pub fn field_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.field_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The field value of the field that you are setting the axis binding to.</p>
-    pub fn set_field_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_field_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.field_value = input;
         self
     }
     /// <p>The axis that you are binding the field to.</p>
     pub fn axis_binding(mut self, input: crate::types::AxisBinding) -> Self {
-        self.axis_binding = Some(input);
+        self.axis_binding = ::std::option::Option::Some(input);
         self
     }
     /// <p>The axis that you are binding the field to.</p>
     pub fn set_axis_binding(
         mut self,
-        input: std::option::Option<crate::types::AxisBinding>,
+        input: ::std::option::Option<crate::types::AxisBinding>,
     ) -> Self {
         self.axis_binding = input;
         self
     }
     /// <p>The options that determine the presentation of line series associated to the field.</p>
     pub fn settings(mut self, input: crate::types::LineChartSeriesSettings) -> Self {
-        self.settings = Some(input);
+        self.settings = ::std::option::Option::Some(input);
         self
     }
     /// <p>The options that determine the presentation of line series associated to the field.</p>
     pub fn set_settings(
         mut self,
-        input: std::option::Option<crate::types::LineChartSeriesSettings>,
+        input: ::std::option::Option<crate::types::LineChartSeriesSettings>,
     ) -> Self {
         self.settings = input;
         self
@@ -118,8 +118,8 @@ impl DataFieldSeriesItemBuilder {
         }
     }
 }
-impl std::fmt::Debug for DataFieldSeriesItemBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for DataFieldSeriesItemBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DataFieldSeriesItemBuilder");
         formatter.field("field_id", &self.field_id);
         formatter.field("field_value", &"*** Sensitive Data Redacted ***");

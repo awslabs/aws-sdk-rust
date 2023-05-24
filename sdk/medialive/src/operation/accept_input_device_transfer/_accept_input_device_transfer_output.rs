@@ -2,11 +2,11 @@
 
 /// Placeholder documentation for AcceptInputDeviceTransferResponse
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AcceptInputDeviceTransferOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for AcceptInputDeviceTransferOutput {
+impl ::aws_http::request_id::RequestId for AcceptInputDeviceTransferOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -20,7 +20,9 @@ impl AcceptInputDeviceTransferOutput {
 
 /// A builder for [`AcceptInputDeviceTransferOutput`](crate::operation::accept_input_device_transfer::AcceptInputDeviceTransferOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AcceptInputDeviceTransferOutputBuilder {
     _request_id: Option<String>,
 }

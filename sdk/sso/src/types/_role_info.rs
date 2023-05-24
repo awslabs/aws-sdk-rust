@@ -2,22 +2,22 @@
 
 /// <p>Provides information about the role that is assigned to the user.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RoleInfo {
     /// <p>The friendly name of the role that is assigned to the user.</p>
     #[doc(hidden)]
-    pub role_name: std::option::Option<std::string::String>,
+    pub role_name: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the AWS account assigned to the user.</p>
     #[doc(hidden)]
-    pub account_id: std::option::Option<std::string::String>,
+    pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl RoleInfo {
     /// <p>The friendly name of the role that is assigned to the user.</p>
-    pub fn role_name(&self) -> std::option::Option<&str> {
+    pub fn role_name(&self) -> ::std::option::Option<&str> {
         self.role_name.as_deref()
     }
     /// <p>The identifier of the AWS account assigned to the user.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl RoleInfo {
 
 /// A builder for [`RoleInfo`](crate::types::RoleInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RoleInfoBuilder {
-    pub(crate) role_name: std::option::Option<std::string::String>,
-    pub(crate) account_id: std::option::Option<std::string::String>,
+    pub(crate) role_name: ::std::option::Option<::std::string::String>,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }
 impl RoleInfoBuilder {
     /// <p>The friendly name of the role that is assigned to the user.</p>
-    pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.role_name = Some(input.into());
+    pub fn role_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.role_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The friendly name of the role that is assigned to the user.</p>
-    pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_role_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_name = input;
         self
     }
     /// <p>The identifier of the AWS account assigned to the user.</p>
-    pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.account_id = Some(input.into());
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the AWS account assigned to the user.</p>
-    pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
     }

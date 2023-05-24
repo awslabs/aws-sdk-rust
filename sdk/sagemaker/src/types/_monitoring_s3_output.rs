@@ -2,29 +2,29 @@
 
 /// <p>Information about where and how you want to store the results of a monitoring job.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MonitoringS3Output {
     /// <p>A URI that identifies the Amazon S3 storage location where Amazon SageMaker saves the results of a monitoring job.</p>
     #[doc(hidden)]
-    pub s3_uri: std::option::Option<std::string::String>,
+    pub s3_uri: ::std::option::Option<::std::string::String>,
     /// <p>The local path to the Amazon S3 storage location where Amazon SageMaker saves the results of a monitoring job. LocalPath is an absolute path for the output data.</p>
     #[doc(hidden)]
-    pub local_path: std::option::Option<std::string::String>,
+    pub local_path: ::std::option::Option<::std::string::String>,
     /// <p>Whether to upload the results of the monitoring job continuously or after the job completes.</p>
     #[doc(hidden)]
-    pub s3_upload_mode: std::option::Option<crate::types::ProcessingS3UploadMode>,
+    pub s3_upload_mode: ::std::option::Option<crate::types::ProcessingS3UploadMode>,
 }
 impl MonitoringS3Output {
     /// <p>A URI that identifies the Amazon S3 storage location where Amazon SageMaker saves the results of a monitoring job.</p>
-    pub fn s3_uri(&self) -> std::option::Option<&str> {
+    pub fn s3_uri(&self) -> ::std::option::Option<&str> {
         self.s3_uri.as_deref()
     }
     /// <p>The local path to the Amazon S3 storage location where Amazon SageMaker saves the results of a monitoring job. LocalPath is an absolute path for the output data.</p>
-    pub fn local_path(&self) -> std::option::Option<&str> {
+    pub fn local_path(&self) -> ::std::option::Option<&str> {
         self.local_path.as_deref()
     }
     /// <p>Whether to upload the results of the monitoring job continuously or after the job completes.</p>
-    pub fn s3_upload_mode(&self) -> std::option::Option<&crate::types::ProcessingS3UploadMode> {
+    pub fn s3_upload_mode(&self) -> ::std::option::Option<&crate::types::ProcessingS3UploadMode> {
         self.s3_upload_mode.as_ref()
     }
 }
@@ -37,42 +37,44 @@ impl MonitoringS3Output {
 
 /// A builder for [`MonitoringS3Output`](crate::types::MonitoringS3Output).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MonitoringS3OutputBuilder {
-    pub(crate) s3_uri: std::option::Option<std::string::String>,
-    pub(crate) local_path: std::option::Option<std::string::String>,
-    pub(crate) s3_upload_mode: std::option::Option<crate::types::ProcessingS3UploadMode>,
+    pub(crate) s3_uri: ::std::option::Option<::std::string::String>,
+    pub(crate) local_path: ::std::option::Option<::std::string::String>,
+    pub(crate) s3_upload_mode: ::std::option::Option<crate::types::ProcessingS3UploadMode>,
 }
 impl MonitoringS3OutputBuilder {
     /// <p>A URI that identifies the Amazon S3 storage location where Amazon SageMaker saves the results of a monitoring job.</p>
-    pub fn s3_uri(mut self, input: impl Into<std::string::String>) -> Self {
-        self.s3_uri = Some(input.into());
+    pub fn s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.s3_uri = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A URI that identifies the Amazon S3 storage location where Amazon SageMaker saves the results of a monitoring job.</p>
-    pub fn set_s3_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_uri = input;
         self
     }
     /// <p>The local path to the Amazon S3 storage location where Amazon SageMaker saves the results of a monitoring job. LocalPath is an absolute path for the output data.</p>
-    pub fn local_path(mut self, input: impl Into<std::string::String>) -> Self {
-        self.local_path = Some(input.into());
+    pub fn local_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.local_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The local path to the Amazon S3 storage location where Amazon SageMaker saves the results of a monitoring job. LocalPath is an absolute path for the output data.</p>
-    pub fn set_local_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_local_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.local_path = input;
         self
     }
     /// <p>Whether to upload the results of the monitoring job continuously or after the job completes.</p>
     pub fn s3_upload_mode(mut self, input: crate::types::ProcessingS3UploadMode) -> Self {
-        self.s3_upload_mode = Some(input);
+        self.s3_upload_mode = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether to upload the results of the monitoring job continuously or after the job completes.</p>
     pub fn set_s3_upload_mode(
         mut self,
-        input: std::option::Option<crate::types::ProcessingS3UploadMode>,
+        input: ::std::option::Option<crate::types::ProcessingS3UploadMode>,
     ) -> Self {
         self.s3_upload_mode = input;
         self

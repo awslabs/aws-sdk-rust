@@ -2,34 +2,34 @@
 
 /// <p>Describes a location.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Location {
     /// <p>The physical address.</p>
     #[doc(hidden)]
-    pub address: std::option::Option<std::string::String>,
+    pub address: ::std::option::Option<::std::string::String>,
     /// <p>The latitude.</p>
     #[doc(hidden)]
-    pub latitude: std::option::Option<std::string::String>,
+    pub latitude: ::std::option::Option<::std::string::String>,
     /// <p>The longitude.</p>
     #[doc(hidden)]
-    pub longitude: std::option::Option<std::string::String>,
+    pub longitude: ::std::option::Option<::std::string::String>,
 }
 impl Location {
     /// <p>The physical address.</p>
-    pub fn address(&self) -> std::option::Option<&str> {
+    pub fn address(&self) -> ::std::option::Option<&str> {
         self.address.as_deref()
     }
     /// <p>The latitude.</p>
-    pub fn latitude(&self) -> std::option::Option<&str> {
+    pub fn latitude(&self) -> ::std::option::Option<&str> {
         self.latitude.as_deref()
     }
     /// <p>The longitude.</p>
-    pub fn longitude(&self) -> std::option::Option<&str> {
+    pub fn longitude(&self) -> ::std::option::Option<&str> {
         self.longitude.as_deref()
     }
 }
-impl std::fmt::Debug for Location {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for Location {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("Location");
         formatter.field("address", &"*** Sensitive Data Redacted ***");
         formatter.field("latitude", &"*** Sensitive Data Redacted ***");
@@ -46,40 +46,40 @@ impl Location {
 
 /// A builder for [`Location`](crate::types::Location).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct LocationBuilder {
-    pub(crate) address: std::option::Option<std::string::String>,
-    pub(crate) latitude: std::option::Option<std::string::String>,
-    pub(crate) longitude: std::option::Option<std::string::String>,
+    pub(crate) address: ::std::option::Option<::std::string::String>,
+    pub(crate) latitude: ::std::option::Option<::std::string::String>,
+    pub(crate) longitude: ::std::option::Option<::std::string::String>,
 }
 impl LocationBuilder {
     /// <p>The physical address.</p>
-    pub fn address(mut self, input: impl Into<std::string::String>) -> Self {
-        self.address = Some(input.into());
+    pub fn address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.address = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The physical address.</p>
-    pub fn set_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.address = input;
         self
     }
     /// <p>The latitude.</p>
-    pub fn latitude(mut self, input: impl Into<std::string::String>) -> Self {
-        self.latitude = Some(input.into());
+    pub fn latitude(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.latitude = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The latitude.</p>
-    pub fn set_latitude(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_latitude(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.latitude = input;
         self
     }
     /// <p>The longitude.</p>
-    pub fn longitude(mut self, input: impl Into<std::string::String>) -> Self {
-        self.longitude = Some(input.into());
+    pub fn longitude(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.longitude = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The longitude.</p>
-    pub fn set_longitude(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_longitude(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.longitude = input;
         self
     }
@@ -92,8 +92,8 @@ impl LocationBuilder {
         }
     }
 }
-impl std::fmt::Debug for LocationBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for LocationBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("LocationBuilder");
         formatter.field("address", &"*** Sensitive Data Redacted ***");
         formatter.field("latitude", &"*** Sensitive Data Redacted ***");

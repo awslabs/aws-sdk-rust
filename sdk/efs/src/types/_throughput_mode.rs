@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ThroughputMode {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum ThroughputMode {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ThroughputMode {
+impl ::std::convert::From<&str> for ThroughputMode {
     fn from(s: &str) -> Self {
         match s {
             "bursting" => ThroughputMode::Bursting,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for ThroughputMode {
         }
     }
 }
-impl std::str::FromStr for ThroughputMode {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ThroughputMode {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ThroughputMode::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ThroughputMode::from(s))
     }
 }
 impl ThroughputMode {
@@ -91,7 +91,7 @@ impl ThroughputMode {
         &["bursting", "elastic", "provisioned"]
     }
 }
-impl AsRef<str> for ThroughputMode {
+impl ::std::convert::AsRef<str> for ThroughputMode {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ThresholdComparator {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum ThresholdComparator {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ThresholdComparator {
+impl ::std::convert::From<&str> for ThresholdComparator {
     fn from(s: &str) -> Self {
         match s {
             "GREATER_THAN" => ThresholdComparator::GreaterThan,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for ThresholdComparator {
         }
     }
 }
-impl std::str::FromStr for ThresholdComparator {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ThresholdComparator {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ThresholdComparator::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ThresholdComparator::from(s))
     }
 }
 impl ThresholdComparator {
@@ -86,7 +86,7 @@ impl ThresholdComparator {
         &["GREATER_THAN", "GREATER_THAN_OR_EQUAL_TO"]
     }
 }
-impl AsRef<str> for ThresholdComparator {
+impl ::std::convert::AsRef<str> for ThresholdComparator {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

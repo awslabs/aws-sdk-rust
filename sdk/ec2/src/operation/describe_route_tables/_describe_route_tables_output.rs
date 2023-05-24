@@ -2,27 +2,27 @@
 
 /// <p>Contains the output of DescribeRouteTables.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeRouteTablesOutput {
     /// <p>Information about one or more route tables.</p>
     #[doc(hidden)]
-    pub route_tables: std::option::Option<std::vec::Vec<crate::types::RouteTable>>,
+    pub route_tables: ::std::option::Option<::std::vec::Vec<crate::types::RouteTable>>,
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeRouteTablesOutput {
     /// <p>Information about one or more route tables.</p>
-    pub fn route_tables(&self) -> std::option::Option<&[crate::types::RouteTable]> {
+    pub fn route_tables(&self) -> ::std::option::Option<&[crate::types::RouteTable]> {
         self.route_tables.as_deref()
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeRouteTablesOutput {
+impl ::aws_http::request_id::RequestId for DescribeRouteTablesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -38,10 +38,12 @@ impl DescribeRouteTablesOutput {
 
 /// A builder for [`DescribeRouteTablesOutput`](crate::operation::describe_route_tables::DescribeRouteTablesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeRouteTablesOutputBuilder {
-    pub(crate) route_tables: std::option::Option<std::vec::Vec<crate::types::RouteTable>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) route_tables: ::std::option::Option<::std::vec::Vec<crate::types::RouteTable>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeRouteTablesOutputBuilder {
@@ -53,24 +55,24 @@ impl DescribeRouteTablesOutputBuilder {
     pub fn route_tables(mut self, input: crate::types::RouteTable) -> Self {
         let mut v = self.route_tables.unwrap_or_default();
         v.push(input);
-        self.route_tables = Some(v);
+        self.route_tables = ::std::option::Option::Some(v);
         self
     }
     /// <p>Information about one or more route tables.</p>
     pub fn set_route_tables(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RouteTable>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::RouteTable>>,
     ) -> Self {
         self.route_tables = input;
         self
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

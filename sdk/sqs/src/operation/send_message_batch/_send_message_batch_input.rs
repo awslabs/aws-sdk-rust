@@ -2,24 +2,24 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SendMessageBatchInput {
     /// <p>The URL of the Amazon SQS queue to which batched messages are sent.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
     #[doc(hidden)]
-    pub queue_url: std::option::Option<std::string::String>,
+    pub queue_url: ::std::option::Option<::std::string::String>,
     /// <p>A list of <code> <code>SendMessageBatchRequestEntry</code> </code> items.</p>
     #[doc(hidden)]
-    pub entries: std::option::Option<std::vec::Vec<crate::types::SendMessageBatchRequestEntry>>,
+    pub entries: ::std::option::Option<::std::vec::Vec<crate::types::SendMessageBatchRequestEntry>>,
 }
 impl SendMessageBatchInput {
     /// <p>The URL of the Amazon SQS queue to which batched messages are sent.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
-    pub fn queue_url(&self) -> std::option::Option<&str> {
+    pub fn queue_url(&self) -> ::std::option::Option<&str> {
         self.queue_url.as_deref()
     }
     /// <p>A list of <code> <code>SendMessageBatchRequestEntry</code> </code> items.</p>
-    pub fn entries(&self) -> std::option::Option<&[crate::types::SendMessageBatchRequestEntry]> {
+    pub fn entries(&self) -> ::std::option::Option<&[crate::types::SendMessageBatchRequestEntry]> {
         self.entries.as_deref()
     }
 }
@@ -33,22 +33,24 @@ impl SendMessageBatchInput {
 
 /// A builder for [`SendMessageBatchInput`](crate::operation::send_message_batch::SendMessageBatchInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SendMessageBatchInputBuilder {
-    pub(crate) queue_url: std::option::Option<std::string::String>,
+    pub(crate) queue_url: ::std::option::Option<::std::string::String>,
     pub(crate) entries:
-        std::option::Option<std::vec::Vec<crate::types::SendMessageBatchRequestEntry>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::SendMessageBatchRequestEntry>>,
 }
 impl SendMessageBatchInputBuilder {
     /// <p>The URL of the Amazon SQS queue to which batched messages are sent.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
-    pub fn queue_url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.queue_url = Some(input.into());
+    pub fn queue_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.queue_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL of the Amazon SQS queue to which batched messages are sent.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
-    pub fn set_queue_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_queue_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.queue_url = input;
         self
     }
@@ -60,13 +62,13 @@ impl SendMessageBatchInputBuilder {
     pub fn entries(mut self, input: crate::types::SendMessageBatchRequestEntry) -> Self {
         let mut v = self.entries.unwrap_or_default();
         v.push(input);
-        self.entries = Some(v);
+        self.entries = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of <code> <code>SendMessageBatchRequestEntry</code> </code> items.</p>
     pub fn set_entries(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SendMessageBatchRequestEntry>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SendMessageBatchRequestEntry>>,
     ) -> Self {
         self.entries = input;
         self
@@ -74,11 +76,11 @@ impl SendMessageBatchInputBuilder {
     /// Consumes the builder and constructs a [`SendMessageBatchInput`](crate::operation::send_message_batch::SendMessageBatchInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::send_message_batch::SendMessageBatchInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::send_message_batch::SendMessageBatchInput {
                 queue_url: self.queue_url,
                 entries: self.entries,

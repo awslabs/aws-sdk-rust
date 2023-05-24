@@ -2,7 +2,7 @@
 
 /// <p>The captions to be created, if any.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Captions {
     /// <p>A policy that determines how Elastic Transcoder handles the existence of multiple captions.</p>
     /// <ul>
@@ -13,14 +13,14 @@ pub struct Captions {
     /// <p> <code>MergePolicy</code> cannot be null.</p>
     #[deprecated]
     #[doc(hidden)]
-    pub merge_policy: std::option::Option<std::string::String>,
+    pub merge_policy: ::std::option::Option<::std::string::String>,
     /// <p>Source files for the input sidecar captions used during the transcoding process. To omit all sidecar captions, leave <code>CaptionSources</code> blank.</p>
     #[deprecated]
     #[doc(hidden)]
-    pub caption_sources: std::option::Option<std::vec::Vec<crate::types::CaptionSource>>,
+    pub caption_sources: ::std::option::Option<::std::vec::Vec<crate::types::CaptionSource>>,
     /// <p>The array of file formats for the output captions. If you leave this value blank, Elastic Transcoder returns an error.</p>
     #[doc(hidden)]
-    pub caption_formats: std::option::Option<std::vec::Vec<crate::types::CaptionFormat>>,
+    pub caption_formats: ::std::option::Option<::std::vec::Vec<crate::types::CaptionFormat>>,
 }
 impl Captions {
     /// <p>A policy that determines how Elastic Transcoder handles the existence of multiple captions.</p>
@@ -31,16 +31,16 @@ impl Captions {
     /// </ul>
     /// <p> <code>MergePolicy</code> cannot be null.</p>
     #[deprecated]
-    pub fn merge_policy(&self) -> std::option::Option<&str> {
+    pub fn merge_policy(&self) -> ::std::option::Option<&str> {
         self.merge_policy.as_deref()
     }
     /// <p>Source files for the input sidecar captions used during the transcoding process. To omit all sidecar captions, leave <code>CaptionSources</code> blank.</p>
     #[deprecated]
-    pub fn caption_sources(&self) -> std::option::Option<&[crate::types::CaptionSource]> {
+    pub fn caption_sources(&self) -> ::std::option::Option<&[crate::types::CaptionSource]> {
         self.caption_sources.as_deref()
     }
     /// <p>The array of file formats for the output captions. If you leave this value blank, Elastic Transcoder returns an error.</p>
-    pub fn caption_formats(&self) -> std::option::Option<&[crate::types::CaptionFormat]> {
+    pub fn caption_formats(&self) -> ::std::option::Option<&[crate::types::CaptionFormat]> {
         self.caption_formats.as_deref()
     }
 }
@@ -53,11 +53,13 @@ impl Captions {
 
 /// A builder for [`Captions`](crate::types::Captions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CaptionsBuilder {
-    pub(crate) merge_policy: std::option::Option<std::string::String>,
-    pub(crate) caption_sources: std::option::Option<std::vec::Vec<crate::types::CaptionSource>>,
-    pub(crate) caption_formats: std::option::Option<std::vec::Vec<crate::types::CaptionFormat>>,
+    pub(crate) merge_policy: ::std::option::Option<::std::string::String>,
+    pub(crate) caption_sources: ::std::option::Option<::std::vec::Vec<crate::types::CaptionSource>>,
+    pub(crate) caption_formats: ::std::option::Option<::std::vec::Vec<crate::types::CaptionFormat>>,
 }
 impl CaptionsBuilder {
     /// <p>A policy that determines how Elastic Transcoder handles the existence of multiple captions.</p>
@@ -68,8 +70,8 @@ impl CaptionsBuilder {
     /// </ul>
     /// <p> <code>MergePolicy</code> cannot be null.</p>
     #[deprecated]
-    pub fn merge_policy(mut self, input: impl Into<std::string::String>) -> Self {
-        self.merge_policy = Some(input.into());
+    pub fn merge_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.merge_policy = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A policy that determines how Elastic Transcoder handles the existence of multiple captions.</p>
@@ -80,7 +82,7 @@ impl CaptionsBuilder {
     /// </ul>
     /// <p> <code>MergePolicy</code> cannot be null.</p>
     #[deprecated]
-    pub fn set_merge_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_merge_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.merge_policy = input;
         self
     }
@@ -93,14 +95,14 @@ impl CaptionsBuilder {
     pub fn caption_sources(mut self, input: crate::types::CaptionSource) -> Self {
         let mut v = self.caption_sources.unwrap_or_default();
         v.push(input);
-        self.caption_sources = Some(v);
+        self.caption_sources = ::std::option::Option::Some(v);
         self
     }
     /// <p>Source files for the input sidecar captions used during the transcoding process. To omit all sidecar captions, leave <code>CaptionSources</code> blank.</p>
     #[deprecated]
     pub fn set_caption_sources(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CaptionSource>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::CaptionSource>>,
     ) -> Self {
         self.caption_sources = input;
         self
@@ -113,13 +115,13 @@ impl CaptionsBuilder {
     pub fn caption_formats(mut self, input: crate::types::CaptionFormat) -> Self {
         let mut v = self.caption_formats.unwrap_or_default();
         v.push(input);
-        self.caption_formats = Some(v);
+        self.caption_formats = ::std::option::Option::Some(v);
         self
     }
     /// <p>The array of file formats for the output captions. If you leave this value blank, Elastic Transcoder returns an error.</p>
     pub fn set_caption_formats(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CaptionFormat>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::CaptionFormat>>,
     ) -> Self {
         self.caption_formats = input;
         self

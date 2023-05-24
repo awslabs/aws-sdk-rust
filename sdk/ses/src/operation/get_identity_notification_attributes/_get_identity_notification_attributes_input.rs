@@ -2,15 +2,15 @@
 
 /// <p>Represents a request to return the notification attributes for a list of identities you verified with Amazon SES. For information about Amazon SES notifications, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetIdentityNotificationAttributesInput {
     /// <p>A list of one or more identities. You can specify an identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
     #[doc(hidden)]
-    pub identities: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub identities: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl GetIdentityNotificationAttributesInput {
     /// <p>A list of one or more identities. You can specify an identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
-    pub fn identities(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn identities(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.identities.as_deref()
     }
 }
@@ -23,9 +23,11 @@ impl GetIdentityNotificationAttributesInput {
 
 /// A builder for [`GetIdentityNotificationAttributesInput`](crate::operation::get_identity_notification_attributes::GetIdentityNotificationAttributesInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetIdentityNotificationAttributesInputBuilder {
-    pub(crate) identities: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) identities: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl GetIdentityNotificationAttributesInputBuilder {
     /// Appends an item to `identities`.
@@ -33,23 +35,23 @@ impl GetIdentityNotificationAttributesInputBuilder {
     /// To override the contents of this collection use [`set_identities`](Self::set_identities).
     ///
     /// <p>A list of one or more identities. You can specify an identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
-    pub fn identities(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn identities(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.identities.unwrap_or_default();
         v.push(input.into());
-        self.identities = Some(v);
+        self.identities = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of one or more identities. You can specify an identity by using its name or by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
     pub fn set_identities(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.identities = input;
         self
     }
     /// Consumes the builder and constructs a [`GetIdentityNotificationAttributesInput`](crate::operation::get_identity_notification_attributes::GetIdentityNotificationAttributesInput).
-    pub fn build(self) -> Result<crate::operation::get_identity_notification_attributes::GetIdentityNotificationAttributesInput, aws_smithy_http::operation::error::BuildError>{
-        Ok(
+    pub fn build(self) -> ::std::result::Result<crate::operation::get_identity_notification_attributes::GetIdentityNotificationAttributesInput, ::aws_smithy_http::operation::error::BuildError>{
+        ::std::result::Result::Ok(
             crate::operation::get_identity_notification_attributes::GetIdentityNotificationAttributesInput {
                 identities: self.identities
                 ,

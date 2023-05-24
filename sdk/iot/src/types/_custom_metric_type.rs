@@ -40,13 +40,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum CustomMetricType {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,7 +60,7 @@ pub enum CustomMetricType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for CustomMetricType {
+impl ::std::convert::From<&str> for CustomMetricType {
     fn from(s: &str) -> Self {
         match s {
             "ip-address-list" => CustomMetricType::IpAddressList,
@@ -73,11 +73,11 @@ impl std::convert::From<&str> for CustomMetricType {
         }
     }
 }
-impl std::str::FromStr for CustomMetricType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for CustomMetricType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CustomMetricType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(CustomMetricType::from(s))
     }
 }
 impl CustomMetricType {
@@ -96,7 +96,7 @@ impl CustomMetricType {
         &["ip-address-list", "number", "number-list", "string-list"]
     }
 }
-impl AsRef<str> for CustomMetricType {
+impl ::std::convert::AsRef<str> for CustomMetricType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

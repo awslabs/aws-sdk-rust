@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteRun`](crate::operation::delete_run::builders::DeleteRunFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::delete_run::builders::DeleteRunFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_run::builders::DeleteRunFluentBuilder::set_id): <p>The run's ID.</p>
+    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::delete_run::builders::DeleteRunFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_run::builders::DeleteRunFluentBuilder::set_id): <p>The run's ID.</p>
     /// - On success, responds with [`DeleteRunOutput`](crate::operation::delete_run::DeleteRunOutput)
     /// - On failure, responds with [`SdkError<DeleteRunError>`](crate::operation::delete_run::DeleteRunError)
     pub fn delete_run(&self) -> crate::operation::delete_run::builders::DeleteRunFluentBuilder {

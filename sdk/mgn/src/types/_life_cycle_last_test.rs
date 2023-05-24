@@ -2,29 +2,29 @@
 
 /// <p>Lifecycle last Test.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LifeCycleLastTest {
     /// <p>Lifecycle last Test initiated.</p>
     #[doc(hidden)]
-    pub initiated: std::option::Option<crate::types::LifeCycleLastTestInitiated>,
+    pub initiated: ::std::option::Option<crate::types::LifeCycleLastTestInitiated>,
     /// <p>Lifecycle last Test reverted.</p>
     #[doc(hidden)]
-    pub reverted: std::option::Option<crate::types::LifeCycleLastTestReverted>,
+    pub reverted: ::std::option::Option<crate::types::LifeCycleLastTestReverted>,
     /// <p>Lifecycle last Test finalized.</p>
     #[doc(hidden)]
-    pub finalized: std::option::Option<crate::types::LifeCycleLastTestFinalized>,
+    pub finalized: ::std::option::Option<crate::types::LifeCycleLastTestFinalized>,
 }
 impl LifeCycleLastTest {
     /// <p>Lifecycle last Test initiated.</p>
-    pub fn initiated(&self) -> std::option::Option<&crate::types::LifeCycleLastTestInitiated> {
+    pub fn initiated(&self) -> ::std::option::Option<&crate::types::LifeCycleLastTestInitiated> {
         self.initiated.as_ref()
     }
     /// <p>Lifecycle last Test reverted.</p>
-    pub fn reverted(&self) -> std::option::Option<&crate::types::LifeCycleLastTestReverted> {
+    pub fn reverted(&self) -> ::std::option::Option<&crate::types::LifeCycleLastTestReverted> {
         self.reverted.as_ref()
     }
     /// <p>Lifecycle last Test finalized.</p>
-    pub fn finalized(&self) -> std::option::Option<&crate::types::LifeCycleLastTestFinalized> {
+    pub fn finalized(&self) -> ::std::option::Option<&crate::types::LifeCycleLastTestFinalized> {
         self.finalized.as_ref()
     }
 }
@@ -37,48 +37,50 @@ impl LifeCycleLastTest {
 
 /// A builder for [`LifeCycleLastTest`](crate::types::LifeCycleLastTest).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LifeCycleLastTestBuilder {
-    pub(crate) initiated: std::option::Option<crate::types::LifeCycleLastTestInitiated>,
-    pub(crate) reverted: std::option::Option<crate::types::LifeCycleLastTestReverted>,
-    pub(crate) finalized: std::option::Option<crate::types::LifeCycleLastTestFinalized>,
+    pub(crate) initiated: ::std::option::Option<crate::types::LifeCycleLastTestInitiated>,
+    pub(crate) reverted: ::std::option::Option<crate::types::LifeCycleLastTestReverted>,
+    pub(crate) finalized: ::std::option::Option<crate::types::LifeCycleLastTestFinalized>,
 }
 impl LifeCycleLastTestBuilder {
     /// <p>Lifecycle last Test initiated.</p>
     pub fn initiated(mut self, input: crate::types::LifeCycleLastTestInitiated) -> Self {
-        self.initiated = Some(input);
+        self.initiated = ::std::option::Option::Some(input);
         self
     }
     /// <p>Lifecycle last Test initiated.</p>
     pub fn set_initiated(
         mut self,
-        input: std::option::Option<crate::types::LifeCycleLastTestInitiated>,
+        input: ::std::option::Option<crate::types::LifeCycleLastTestInitiated>,
     ) -> Self {
         self.initiated = input;
         self
     }
     /// <p>Lifecycle last Test reverted.</p>
     pub fn reverted(mut self, input: crate::types::LifeCycleLastTestReverted) -> Self {
-        self.reverted = Some(input);
+        self.reverted = ::std::option::Option::Some(input);
         self
     }
     /// <p>Lifecycle last Test reverted.</p>
     pub fn set_reverted(
         mut self,
-        input: std::option::Option<crate::types::LifeCycleLastTestReverted>,
+        input: ::std::option::Option<crate::types::LifeCycleLastTestReverted>,
     ) -> Self {
         self.reverted = input;
         self
     }
     /// <p>Lifecycle last Test finalized.</p>
     pub fn finalized(mut self, input: crate::types::LifeCycleLastTestFinalized) -> Self {
-        self.finalized = Some(input);
+        self.finalized = ::std::option::Option::Some(input);
         self
     }
     /// <p>Lifecycle last Test finalized.</p>
     pub fn set_finalized(
         mut self,
-        input: std::option::Option<crate::types::LifeCycleLastTestFinalized>,
+        input: ::std::option::Option<crate::types::LifeCycleLastTestFinalized>,
     ) -> Self {
         self.finalized = input;
         self

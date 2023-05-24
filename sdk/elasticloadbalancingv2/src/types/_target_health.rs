@@ -2,11 +2,11 @@
 
 /// <p>Information about the current health of a target.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TargetHealth {
     /// <p>The state of the target.</p>
     #[doc(hidden)]
-    pub state: std::option::Option<crate::types::TargetHealthStateEnum>,
+    pub state: ::std::option::Option<crate::types::TargetHealthStateEnum>,
     /// <p>The reason code.</p>
     /// <p>If the target state is <code>healthy</code>, a reason code is not provided.</p>
     /// <p>If the target state is <code>initial</code>, the reason code can be one of the following values:</p>
@@ -38,14 +38,14 @@ pub struct TargetHealth {
     /// <li> <p> <code>Elb.InternalError</code> - Target health is unavailable due to an internal error. Applies only to Network Load Balancers.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub reason: std::option::Option<crate::types::TargetHealthReasonEnum>,
+    pub reason: ::std::option::Option<crate::types::TargetHealthReasonEnum>,
     /// <p>A description of the target health that provides additional details. If the state is <code>healthy</code>, a description is not provided.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
 }
 impl TargetHealth {
     /// <p>The state of the target.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::TargetHealthStateEnum> {
+    pub fn state(&self) -> ::std::option::Option<&crate::types::TargetHealthStateEnum> {
         self.state.as_ref()
     }
     /// <p>The reason code.</p>
@@ -78,11 +78,11 @@ impl TargetHealth {
     /// <li> <p> <code>Target.HealthCheckDisabled</code> - Health checks are disabled for the target group. Applies only to Application Load Balancers.</p> </li>
     /// <li> <p> <code>Elb.InternalError</code> - Target health is unavailable due to an internal error. Applies only to Network Load Balancers.</p> </li>
     /// </ul>
-    pub fn reason(&self) -> std::option::Option<&crate::types::TargetHealthReasonEnum> {
+    pub fn reason(&self) -> ::std::option::Option<&crate::types::TargetHealthReasonEnum> {
         self.reason.as_ref()
     }
     /// <p>A description of the target health that provides additional details. If the state is <code>healthy</code>, a description is not provided.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
 }
@@ -95,22 +95,24 @@ impl TargetHealth {
 
 /// A builder for [`TargetHealth`](crate::types::TargetHealth).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TargetHealthBuilder {
-    pub(crate) state: std::option::Option<crate::types::TargetHealthStateEnum>,
-    pub(crate) reason: std::option::Option<crate::types::TargetHealthReasonEnum>,
-    pub(crate) description: std::option::Option<std::string::String>,
+    pub(crate) state: ::std::option::Option<crate::types::TargetHealthStateEnum>,
+    pub(crate) reason: ::std::option::Option<crate::types::TargetHealthReasonEnum>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
 }
 impl TargetHealthBuilder {
     /// <p>The state of the target.</p>
     pub fn state(mut self, input: crate::types::TargetHealthStateEnum) -> Self {
-        self.state = Some(input);
+        self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The state of the target.</p>
     pub fn set_state(
         mut self,
-        input: std::option::Option<crate::types::TargetHealthStateEnum>,
+        input: ::std::option::Option<crate::types::TargetHealthStateEnum>,
     ) -> Self {
         self.state = input;
         self
@@ -146,7 +148,7 @@ impl TargetHealthBuilder {
     /// <li> <p> <code>Elb.InternalError</code> - Target health is unavailable due to an internal error. Applies only to Network Load Balancers.</p> </li>
     /// </ul>
     pub fn reason(mut self, input: crate::types::TargetHealthReasonEnum) -> Self {
-        self.reason = Some(input);
+        self.reason = ::std::option::Option::Some(input);
         self
     }
     /// <p>The reason code.</p>
@@ -181,18 +183,18 @@ impl TargetHealthBuilder {
     /// </ul>
     pub fn set_reason(
         mut self,
-        input: std::option::Option<crate::types::TargetHealthReasonEnum>,
+        input: ::std::option::Option<crate::types::TargetHealthReasonEnum>,
     ) -> Self {
         self.reason = input;
         self
     }
     /// <p>A description of the target health that provides additional details. If the state is <code>healthy</code>, a description is not provided.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of the target health that provides additional details. If the state is <code>healthy</code>, a description is not provided.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }

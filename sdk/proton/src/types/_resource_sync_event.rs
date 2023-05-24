@@ -2,36 +2,36 @@
 
 /// <p>Detail data for a resource sync event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceSyncEvent {
     /// <p>The type of event.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<std::string::String>,
+    pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The external ID for the event.</p>
     #[doc(hidden)]
-    pub external_id: std::option::Option<std::string::String>,
+    pub external_id: ::std::option::Option<::std::string::String>,
     /// <p>The time when the event occurred.</p>
     #[doc(hidden)]
-    pub time: std::option::Option<aws_smithy_types::DateTime>,
+    pub time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A resource sync event.</p>
     #[doc(hidden)]
-    pub event: std::option::Option<std::string::String>,
+    pub event: ::std::option::Option<::std::string::String>,
 }
 impl ResourceSyncEvent {
     /// <p>The type of event.</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
     }
     /// <p>The external ID for the event.</p>
-    pub fn external_id(&self) -> std::option::Option<&str> {
+    pub fn external_id(&self) -> ::std::option::Option<&str> {
         self.external_id.as_deref()
     }
     /// <p>The time when the event occurred.</p>
-    pub fn time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.time.as_ref()
     }
     /// <p>A resource sync event.</p>
-    pub fn event(&self) -> std::option::Option<&str> {
+    pub fn event(&self) -> ::std::option::Option<&str> {
         self.event.as_deref()
     }
 }
@@ -44,51 +44,53 @@ impl ResourceSyncEvent {
 
 /// A builder for [`ResourceSyncEvent`](crate::types::ResourceSyncEvent).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResourceSyncEventBuilder {
-    pub(crate) r#type: std::option::Option<std::string::String>,
-    pub(crate) external_id: std::option::Option<std::string::String>,
-    pub(crate) time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) event: std::option::Option<std::string::String>,
+    pub(crate) r#type: ::std::option::Option<::std::string::String>,
+    pub(crate) external_id: ::std::option::Option<::std::string::String>,
+    pub(crate) time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) event: ::std::option::Option<::std::string::String>,
 }
 impl ResourceSyncEventBuilder {
     /// <p>The type of event.</p>
-    pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.r#type = Some(input.into());
+    pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.r#type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of event.</p>
-    pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The external ID for the event.</p>
-    pub fn external_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.external_id = Some(input.into());
+    pub fn external_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.external_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The external ID for the event.</p>
-    pub fn set_external_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_external_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.external_id = input;
         self
     }
     /// <p>The time when the event occurred.</p>
-    pub fn time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.time = Some(input);
+    pub fn time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time when the event occurred.</p>
-    pub fn set_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.time = input;
         self
     }
     /// <p>A resource sync event.</p>
-    pub fn event(mut self, input: impl Into<std::string::String>) -> Self {
-        self.event = Some(input.into());
+    pub fn event(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.event = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A resource sync event.</p>
-    pub fn set_event(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_event(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event = input;
         self
     }

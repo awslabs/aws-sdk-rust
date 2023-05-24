@@ -2,29 +2,29 @@
 
 /// <p>The configuration parameters for the SageMaker Clarify explainer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClarifyExplainerConfig {
     /// <p>A JMESPath boolean expression used to filter which records to explain. Explanations are activated by default. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-create-endpoint.html#clarify-online-explainability-create-endpoint-enable"> <code>EnableExplanations</code> </a>for additional information.</p>
     #[doc(hidden)]
-    pub enable_explanations: std::option::Option<std::string::String>,
+    pub enable_explanations: ::std::option::Option<::std::string::String>,
     /// <p>The inference configuration parameter for the model container.</p>
     #[doc(hidden)]
-    pub inference_config: std::option::Option<crate::types::ClarifyInferenceConfig>,
+    pub inference_config: ::std::option::Option<crate::types::ClarifyInferenceConfig>,
     /// <p>The configuration for SHAP analysis.</p>
     #[doc(hidden)]
-    pub shap_config: std::option::Option<crate::types::ClarifyShapConfig>,
+    pub shap_config: ::std::option::Option<crate::types::ClarifyShapConfig>,
 }
 impl ClarifyExplainerConfig {
     /// <p>A JMESPath boolean expression used to filter which records to explain. Explanations are activated by default. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-create-endpoint.html#clarify-online-explainability-create-endpoint-enable"> <code>EnableExplanations</code> </a>for additional information.</p>
-    pub fn enable_explanations(&self) -> std::option::Option<&str> {
+    pub fn enable_explanations(&self) -> ::std::option::Option<&str> {
         self.enable_explanations.as_deref()
     }
     /// <p>The inference configuration parameter for the model container.</p>
-    pub fn inference_config(&self) -> std::option::Option<&crate::types::ClarifyInferenceConfig> {
+    pub fn inference_config(&self) -> ::std::option::Option<&crate::types::ClarifyInferenceConfig> {
         self.inference_config.as_ref()
     }
     /// <p>The configuration for SHAP analysis.</p>
-    pub fn shap_config(&self) -> std::option::Option<&crate::types::ClarifyShapConfig> {
+    pub fn shap_config(&self) -> ::std::option::Option<&crate::types::ClarifyShapConfig> {
         self.shap_config.as_ref()
     }
 }
@@ -37,48 +37,53 @@ impl ClarifyExplainerConfig {
 
 /// A builder for [`ClarifyExplainerConfig`](crate::types::ClarifyExplainerConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ClarifyExplainerConfigBuilder {
-    pub(crate) enable_explanations: std::option::Option<std::string::String>,
-    pub(crate) inference_config: std::option::Option<crate::types::ClarifyInferenceConfig>,
-    pub(crate) shap_config: std::option::Option<crate::types::ClarifyShapConfig>,
+    pub(crate) enable_explanations: ::std::option::Option<::std::string::String>,
+    pub(crate) inference_config: ::std::option::Option<crate::types::ClarifyInferenceConfig>,
+    pub(crate) shap_config: ::std::option::Option<crate::types::ClarifyShapConfig>,
 }
 impl ClarifyExplainerConfigBuilder {
     /// <p>A JMESPath boolean expression used to filter which records to explain. Explanations are activated by default. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-create-endpoint.html#clarify-online-explainability-create-endpoint-enable"> <code>EnableExplanations</code> </a>for additional information.</p>
-    pub fn enable_explanations(mut self, input: impl Into<std::string::String>) -> Self {
-        self.enable_explanations = Some(input.into());
+    pub fn enable_explanations(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.enable_explanations = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A JMESPath boolean expression used to filter which records to explain. Explanations are activated by default. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-create-endpoint.html#clarify-online-explainability-create-endpoint-enable"> <code>EnableExplanations</code> </a>for additional information.</p>
     pub fn set_enable_explanations(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.enable_explanations = input;
         self
     }
     /// <p>The inference configuration parameter for the model container.</p>
     pub fn inference_config(mut self, input: crate::types::ClarifyInferenceConfig) -> Self {
-        self.inference_config = Some(input);
+        self.inference_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The inference configuration parameter for the model container.</p>
     pub fn set_inference_config(
         mut self,
-        input: std::option::Option<crate::types::ClarifyInferenceConfig>,
+        input: ::std::option::Option<crate::types::ClarifyInferenceConfig>,
     ) -> Self {
         self.inference_config = input;
         self
     }
     /// <p>The configuration for SHAP analysis.</p>
     pub fn shap_config(mut self, input: crate::types::ClarifyShapConfig) -> Self {
-        self.shap_config = Some(input);
+        self.shap_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration for SHAP analysis.</p>
     pub fn set_shap_config(
         mut self,
-        input: std::option::Option<crate::types::ClarifyShapConfig>,
+        input: ::std::option::Option<crate::types::ClarifyShapConfig>,
     ) -> Self {
         self.shap_config = input;
         self

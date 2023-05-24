@@ -2,22 +2,22 @@
 
 /// <p>Describes a DNS entry.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DnsEntry {
     /// <p>The DNS name.</p>
     #[doc(hidden)]
-    pub dns_name: std::option::Option<std::string::String>,
+    pub dns_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the private hosted zone.</p>
     #[doc(hidden)]
-    pub hosted_zone_id: std::option::Option<std::string::String>,
+    pub hosted_zone_id: ::std::option::Option<::std::string::String>,
 }
 impl DnsEntry {
     /// <p>The DNS name.</p>
-    pub fn dns_name(&self) -> std::option::Option<&str> {
+    pub fn dns_name(&self) -> ::std::option::Option<&str> {
         self.dns_name.as_deref()
     }
     /// <p>The ID of the private hosted zone.</p>
-    pub fn hosted_zone_id(&self) -> std::option::Option<&str> {
+    pub fn hosted_zone_id(&self) -> ::std::option::Option<&str> {
         self.hosted_zone_id.as_deref()
     }
 }
@@ -30,29 +30,37 @@ impl DnsEntry {
 
 /// A builder for [`DnsEntry`](crate::types::DnsEntry).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DnsEntryBuilder {
-    pub(crate) dns_name: std::option::Option<std::string::String>,
-    pub(crate) hosted_zone_id: std::option::Option<std::string::String>,
+    pub(crate) dns_name: ::std::option::Option<::std::string::String>,
+    pub(crate) hosted_zone_id: ::std::option::Option<::std::string::String>,
 }
 impl DnsEntryBuilder {
     /// <p>The DNS name.</p>
-    pub fn dns_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.dns_name = Some(input.into());
+    pub fn dns_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.dns_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The DNS name.</p>
-    pub fn set_dns_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_dns_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dns_name = input;
         self
     }
     /// <p>The ID of the private hosted zone.</p>
-    pub fn hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.hosted_zone_id = Some(input.into());
+    pub fn hosted_zone_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.hosted_zone_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the private hosted zone.</p>
-    pub fn set_hosted_zone_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_hosted_zone_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.hosted_zone_id = input;
         self
     }

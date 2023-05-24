@@ -2,50 +2,50 @@
 
 /// <p>A record of a presented X509 credential from a temporary credential request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CredentialSummary {
     /// <p>The ISO-8601 time stamp of when the certificate was last used in a temporary credential request.</p>
     #[doc(hidden)]
-    pub seen_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub seen_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The serial number of the certificate.</p>
     #[doc(hidden)]
-    pub serial_number: std::option::Option<std::string::String>,
+    pub serial_number: ::std::option::Option<::std::string::String>,
     /// <p>The fully qualified domain name of the issuing certificate for the presented end-entity certificate.</p>
     #[doc(hidden)]
-    pub issuer: std::option::Option<std::string::String>,
+    pub issuer: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the credential is enabled.</p>
     #[doc(hidden)]
-    pub enabled: std::option::Option<bool>,
+    pub enabled: ::std::option::Option<bool>,
     /// <p>The PEM-encoded data of the certificate.</p>
     #[doc(hidden)]
-    pub x509_certificate_data: std::option::Option<std::string::String>,
+    pub x509_certificate_data: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the temporary credential request was successful. </p>
     #[doc(hidden)]
-    pub failed: std::option::Option<bool>,
+    pub failed: ::std::option::Option<bool>,
 }
 impl CredentialSummary {
     /// <p>The ISO-8601 time stamp of when the certificate was last used in a temporary credential request.</p>
-    pub fn seen_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn seen_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.seen_at.as_ref()
     }
     /// <p>The serial number of the certificate.</p>
-    pub fn serial_number(&self) -> std::option::Option<&str> {
+    pub fn serial_number(&self) -> ::std::option::Option<&str> {
         self.serial_number.as_deref()
     }
     /// <p>The fully qualified domain name of the issuing certificate for the presented end-entity certificate.</p>
-    pub fn issuer(&self) -> std::option::Option<&str> {
+    pub fn issuer(&self) -> ::std::option::Option<&str> {
         self.issuer.as_deref()
     }
     /// <p>Indicates whether the credential is enabled.</p>
-    pub fn enabled(&self) -> std::option::Option<bool> {
+    pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
     /// <p>The PEM-encoded data of the certificate.</p>
-    pub fn x509_certificate_data(&self) -> std::option::Option<&str> {
+    pub fn x509_certificate_data(&self) -> ::std::option::Option<&str> {
         self.x509_certificate_data.as_deref()
     }
     /// <p>Indicates whether the temporary credential request was successful. </p>
-    pub fn failed(&self) -> std::option::Option<bool> {
+    pub fn failed(&self) -> ::std::option::Option<bool> {
         self.failed
     }
 }
@@ -58,76 +58,90 @@ impl CredentialSummary {
 
 /// A builder for [`CredentialSummary`](crate::types::CredentialSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CredentialSummaryBuilder {
-    pub(crate) seen_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) serial_number: std::option::Option<std::string::String>,
-    pub(crate) issuer: std::option::Option<std::string::String>,
-    pub(crate) enabled: std::option::Option<bool>,
-    pub(crate) x509_certificate_data: std::option::Option<std::string::String>,
-    pub(crate) failed: std::option::Option<bool>,
+    pub(crate) seen_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) serial_number: ::std::option::Option<::std::string::String>,
+    pub(crate) issuer: ::std::option::Option<::std::string::String>,
+    pub(crate) enabled: ::std::option::Option<bool>,
+    pub(crate) x509_certificate_data: ::std::option::Option<::std::string::String>,
+    pub(crate) failed: ::std::option::Option<bool>,
 }
 impl CredentialSummaryBuilder {
     /// <p>The ISO-8601 time stamp of when the certificate was last used in a temporary credential request.</p>
-    pub fn seen_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.seen_at = Some(input);
+    pub fn seen_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.seen_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The ISO-8601 time stamp of when the certificate was last used in a temporary credential request.</p>
-    pub fn set_seen_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_seen_at(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
         self.seen_at = input;
         self
     }
     /// <p>The serial number of the certificate.</p>
-    pub fn serial_number(mut self, input: impl Into<std::string::String>) -> Self {
-        self.serial_number = Some(input.into());
+    pub fn serial_number(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.serial_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The serial number of the certificate.</p>
-    pub fn set_serial_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_serial_number(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.serial_number = input;
         self
     }
     /// <p>The fully qualified domain name of the issuing certificate for the presented end-entity certificate.</p>
-    pub fn issuer(mut self, input: impl Into<std::string::String>) -> Self {
-        self.issuer = Some(input.into());
+    pub fn issuer(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.issuer = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The fully qualified domain name of the issuing certificate for the presented end-entity certificate.</p>
-    pub fn set_issuer(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_issuer(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.issuer = input;
         self
     }
     /// <p>Indicates whether the credential is enabled.</p>
     pub fn enabled(mut self, input: bool) -> Self {
-        self.enabled = Some(input);
+        self.enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether the credential is enabled.</p>
-    pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
     }
     /// <p>The PEM-encoded data of the certificate.</p>
-    pub fn x509_certificate_data(mut self, input: impl Into<std::string::String>) -> Self {
-        self.x509_certificate_data = Some(input.into());
+    pub fn x509_certificate_data(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.x509_certificate_data = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The PEM-encoded data of the certificate.</p>
     pub fn set_x509_certificate_data(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.x509_certificate_data = input;
         self
     }
     /// <p>Indicates whether the temporary credential request was successful. </p>
     pub fn failed(mut self, input: bool) -> Self {
-        self.failed = Some(input);
+        self.failed = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether the temporary credential request was successful. </p>
-    pub fn set_failed(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_failed(mut self, input: ::std::option::Option<bool>) -> Self {
         self.failed = input;
         self
     }

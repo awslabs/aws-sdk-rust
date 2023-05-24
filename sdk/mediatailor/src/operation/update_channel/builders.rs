@@ -6,56 +6,59 @@ pub use crate::operation::update_channel::_update_channel_input::UpdateChannelIn
 /// Fluent builder constructing a request to `UpdateChannel`.
 ///
 /// <p>Updates a channel. For information about MediaTailor channels, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-channels.html">Working with channels</a> in the <i>MediaTailor User Guide</i>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateChannelFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::update_channel::builders::UpdateChannelInputBuilder,
 }
 impl UpdateChannelFluentBuilder {
     /// Creates a new `UpdateChannel`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_channel::UpdateChannel,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::update_channel::UpdateChannelError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_channel::UpdateChannelError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_channel::UpdateChannelOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_channel::UpdateChannelError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_channel::UpdateChannelError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,19 +71,19 @@ impl UpdateChannelFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_channel::UpdateChannelOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_channel::UpdateChannelError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_channel::UpdateChannelError>,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the channel.</p>
-    pub fn channel_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn channel_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.channel_name(input.into());
         self
     }
     /// <p>The name of the channel.</p>
-    pub fn set_channel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_channel_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_channel_name(input);
         self
     }
@@ -92,7 +95,7 @@ impl UpdateChannelFluentBuilder {
     /// <p>The slate used to fill gaps between programs in the schedule. You must configure filler slate if your channel uses the <code>LINEAR</code> <code>PlaybackMode</code>. MediaTailor doesn't support filler slate for channels using the <code>LOOP</code> <code>PlaybackMode</code>.</p>
     pub fn set_filler_slate(
         mut self,
-        input: std::option::Option<crate::types::SlateSource>,
+        input: ::std::option::Option<crate::types::SlateSource>,
     ) -> Self {
         self.inner = self.inner.set_filler_slate(input);
         self
@@ -109,7 +112,7 @@ impl UpdateChannelFluentBuilder {
     /// <p>The channel's output properties.</p>
     pub fn set_outputs(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RequestOutputItem>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::RequestOutputItem>>,
     ) -> Self {
         self.inner = self.inner.set_outputs(input);
         self

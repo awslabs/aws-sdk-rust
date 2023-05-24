@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeClassificationJob`](crate::operation::describe_classification_job::builders::DescribeClassificationJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`job_id(impl Into<String>)`](crate::operation::describe_classification_job::builders::DescribeClassificationJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::describe_classification_job::builders::DescribeClassificationJobFluentBuilder::set_job_id): <p>The unique identifier for the classification job.</p>
+    ///   - [`job_id(impl ::std::convert::Into<String>)`](crate::operation::describe_classification_job::builders::DescribeClassificationJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::describe_classification_job::builders::DescribeClassificationJobFluentBuilder::set_job_id): <p>The unique identifier for the classification job.</p>
     /// - On success, responds with [`DescribeClassificationJobOutput`](crate::operation::describe_classification_job::DescribeClassificationJobOutput) with field(s):
     ///   - [`allow_list_ids(Option<Vec<String>>)`](crate::operation::describe_classification_job::DescribeClassificationJobOutput::allow_list_ids): <p>An array of unique identifiers, one for each allow list that the job uses when it analyzes data.</p>
     ///   - [`client_token(Option<String>)`](crate::operation::describe_classification_job::DescribeClassificationJobOutput::client_token): <p>The token that was provided to ensure the idempotency of the request to create the job.</p>

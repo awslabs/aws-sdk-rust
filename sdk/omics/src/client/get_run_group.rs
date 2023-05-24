@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetRunGroup`](crate::operation::get_run_group::builders::GetRunGroupFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::get_run_group::builders::GetRunGroupFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_run_group::builders::GetRunGroupFluentBuilder::set_id): <p>The group's ID.</p>
+    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::get_run_group::builders::GetRunGroupFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_run_group::builders::GetRunGroupFluentBuilder::set_id): <p>The group's ID.</p>
     /// - On success, responds with [`GetRunGroupOutput`](crate::operation::get_run_group::GetRunGroupOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::get_run_group::GetRunGroupOutput::arn): <p>The group's ARN.</p>
     ///   - [`id(Option<String>)`](crate::operation::get_run_group::GetRunGroupOutput::id): <p>The group's ID.</p>

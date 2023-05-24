@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopAutoMLJob`](crate::operation::stop_auto_ml_job::builders::StopAutoMLJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`auto_ml_job_name(impl Into<String>)`](crate::operation::stop_auto_ml_job::builders::StopAutoMLJobFluentBuilder::auto_ml_job_name) / [`set_auto_ml_job_name(Option<String>)`](crate::operation::stop_auto_ml_job::builders::StopAutoMLJobFluentBuilder::set_auto_ml_job_name): <p>The name of the object you are requesting.</p>
+    ///   - [`auto_ml_job_name(impl ::std::convert::Into<String>)`](crate::operation::stop_auto_ml_job::builders::StopAutoMLJobFluentBuilder::auto_ml_job_name) / [`set_auto_ml_job_name(Option<String>)`](crate::operation::stop_auto_ml_job::builders::StopAutoMLJobFluentBuilder::set_auto_ml_job_name): <p>The name of the object you are requesting.</p>
     /// - On success, responds with [`StopAutoMlJobOutput`](crate::operation::stop_auto_ml_job::StopAutoMlJobOutput)
     /// - On failure, responds with [`SdkError<StopAutoMLJobError>`](crate::operation::stop_auto_ml_job::StopAutoMLJobError)
     pub fn stop_auto_ml_job(

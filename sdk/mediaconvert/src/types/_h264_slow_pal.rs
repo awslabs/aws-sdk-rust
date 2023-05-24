@@ -38,13 +38,13 @@
 /// Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL to create a 25 fps output. When you enable slow PAL, MediaConvert relabels the video frames to 25 fps and resamples your audio to keep it synchronized with the video. Note that enabling this setting will slightly reduce the duration of your video. Required settings: You must also set Framerate to 25. In your JSON job specification, set (framerateControl) to (SPECIFIED), (framerateNumerator) to 25 and (framerateDenominator) to 1.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum H264SlowPal {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum H264SlowPal {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for H264SlowPal {
+impl ::std::convert::From<&str> for H264SlowPal {
     fn from(s: &str) -> Self {
         match s {
             "DISABLED" => H264SlowPal::Disabled,
@@ -63,11 +63,11 @@ impl std::convert::From<&str> for H264SlowPal {
         }
     }
 }
-impl std::str::FromStr for H264SlowPal {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for H264SlowPal {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(H264SlowPal::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(H264SlowPal::from(s))
     }
 }
 impl H264SlowPal {
@@ -84,7 +84,7 @@ impl H264SlowPal {
         &["DISABLED", "ENABLED"]
     }
 }
-impl AsRef<str> for H264SlowPal {
+impl ::std::convert::AsRef<str> for H264SlowPal {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

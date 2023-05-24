@@ -8,12 +8,12 @@ impl GetObjectInput {
     pub async fn make_operation(
         &self,
         _config: &crate::config::Config,
-    ) -> std::result::Result<
-        aws_smithy_http::operation::Operation<
+    ) -> ::std::result::Result<
+        ::aws_smithy_http::operation::Operation<
             crate::operation::get_object::GetObject,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
         let params_result = crate::endpoint::Params::builder()
             .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
@@ -22,118 +22,120 @@ impl GetObjectInput {
             .set_endpoint(_config.endpoint_url.clone())
             .build()
             .map_err(|err| {
-                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                ::aws_smithy_http::endpoint::ResolveEndpointError::from_source(
                     "could not construct endpoint parameters",
                     err,
                 )
             });
         let (endpoint_result, params) = match params_result {
-            Ok(params) => (
+            ::std::result::Result::Ok(params) => (
                 _config.endpoint_resolver.resolve_endpoint(&params),
-                Some(params),
+                ::std::option::Option::Some(params),
             ),
-            Err(e) => (Err(e), None),
+            ::std::result::Result::Err(e) => {
+                (::std::result::Result::Err(e), ::std::option::Option::None)
+            }
         };
         let mut request = {
             fn uri_base(
                 _input: &crate::operation::get_object::GetObjectInput,
-                output: &mut String,
-            ) -> std::result::Result<(), aws_smithy_http::operation::error::BuildError>
+                output: &mut ::std::string::String,
+            ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError>
             {
-                use std::fmt::Write as _;
+                use ::std::fmt::Write as _;
                 let input_1 = &_input.path;
                 let input_1 = input_1.as_ref().ok_or_else(|| {
-                    aws_smithy_http::operation::error::BuildError::missing_field(
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
                         "path",
                         "cannot be empty or unset",
                     )
                 })?;
-                let path = aws_smithy_http::label::fmt_string(
+                let path = ::aws_smithy_http::label::fmt_string(
                     input_1,
-                    aws_smithy_http::label::EncodingStrategy::Greedy,
+                    ::aws_smithy_http::label::EncodingStrategy::Greedy,
                 );
                 if path.is_empty() {
-                    return Err(
-                        aws_smithy_http::operation::error::BuildError::missing_field(
+                    return ::std::result::Result::Err(
+                        ::aws_smithy_http::operation::error::BuildError::missing_field(
                             "path",
                             "cannot be empty or unset",
                         ),
                     );
                 }
-                write!(output, "/{Path}", Path = path).expect("formatting should succeed");
-                Ok(())
+                ::std::write!(output, "/{Path}", Path = path).expect("formatting should succeed");
+                ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::operation::get_object::GetObjectInput,
-                builder: http::request::Builder,
-            ) -> std::result::Result<
-                http::request::Builder,
-                aws_smithy_http::operation::error::BuildError,
+                builder: ::http::request::Builder,
+            ) -> ::std::result::Result<
+                ::http::request::Builder,
+                ::aws_smithy_http::operation::error::BuildError,
             > {
-                let mut uri = String::new();
+                let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::protocol_serde::shape_get_object::ser_get_object_headers(
                     input, builder,
                 )?;
-                Ok(builder.method("GET").uri(uri))
+                ::std::result::Result::Ok(builder.method("GET").uri(uri))
             }
-            let mut builder = update_http_builder(&self, http::request::Builder::new())?;
+            let mut builder = update_http_builder(&self, ::http::request::Builder::new())?;
             builder
         };
-        let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
+        let mut properties = ::aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from("");
+        let body = ::aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
-        let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
+        let mut request = ::aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params {
+        if let ::std::option::Option::Some(params) = params {
             request.properties_mut().insert(params);
         }
         request
             .properties_mut()
-            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
-        let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-            aws_types::os_shim_internal::Env::real(),
+            .insert(::aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        let mut user_agent = ::aws_http::user_agent::AwsUserAgent::new_from_environment(
+            ::aws_types::os_shim_internal::Env::real(),
             crate::meta::API_METADATA.clone(),
         );
         if let Some(app_name) = _config.app_name() {
             user_agent = user_agent.with_app_name(app_name.clone());
         }
         request.properties_mut().insert(user_agent);
-        let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+        let mut signing_config = ::aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
         request
             .properties_mut()
-            .insert(aws_types::SigningService::from_static(
+            .insert(::aws_types::SigningService::from_static(
                 _config.signing_service(),
             ));
         if let Some(region) = &_config.region {
             request
                 .properties_mut()
-                .insert(aws_types::region::SigningRegion::from(region.clone()));
+                .insert(::aws_types::region::SigningRegion::from(region.clone()));
         }
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_http::auth::set_credentials_cache(
+        ::aws_http::auth::set_credentials_cache(
             &mut request.properties_mut(),
             _config.credentials_cache.clone(),
         );
-        let op = aws_smithy_http::operation::Operation::new(
+        let op = ::aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::get_object::GetObject::new(),
         )
-        .with_metadata(aws_smithy_http::operation::Metadata::new(
+        .with_metadata(::aws_smithy_http::operation::Metadata::new(
             "GetObject",
             "mediastoredata",
         ));
-        let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
-        Ok(op)
+        let op = op.with_retry_classifier(::aws_http::retry::AwsResponseRetryClassifier::new());
+        ::std::result::Result::Ok(op)
     }
 }
 /// `ParseStrictResponse` impl for `GetObject`.
-#[derive(std::clone::Clone, std::default::Default, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 #[doc(hidden)]
 pub struct GetObject;
@@ -143,23 +145,25 @@ impl GetObject {
         Self
     }
 }
-impl aws_smithy_http::response::ParseHttpResponse for GetObject {
-    type Output = std::result::Result<
+impl ::aws_smithy_http::response::ParseHttpResponse for GetObject {
+    type Output = ::std::result::Result<
         crate::operation::get_object::GetObjectOutput,
         crate::operation::get_object::GetObjectError,
     >;
     fn parse_unloaded(
         &self,
-        response: &mut aws_smithy_http::operation::Response,
-    ) -> Option<Self::Output> {
-        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
+        response: &mut ::aws_smithy_http::operation::Response,
+    ) -> ::std::option::Option<Self::Output> {
+        ::tracing::debug!(request_id = ?::aws_http::request_id::RequestId::request_id(response));
         // This is an error, defer to the non-streaming parser
         if !response.http().status().is_success() && response.http().status().as_u16() != 200 {
-            return None;
+            return ::std::option::Option::None;
         }
-        Some(crate::protocol_serde::shape_get_object::de_get_object_op_response(response))
+        ::std::option::Option::Some(
+            crate::protocol_serde::shape_get_object::de_get_object_op_response(response),
+        )
     }
-    fn parse_loaded(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+    fn parse_loaded(&self, response: &::http::Response<::bytes::Bytes>) -> Self::Output {
         // if streaming, we only hit this case if its an error
         crate::protocol_serde::shape_get_object::de_get_object_http_error(
             response.status().as_u16(),
@@ -178,7 +182,7 @@ impl aws_smithy_http::response::ParseHttpResponse for GetObject {
 pub type GetObjectErrorKind = GetObjectError;
 /// Error type for the `GetObjectError` operation.
 #[non_exhaustive]
-#[derive(std::fmt::Debug)]
+#[derive(::std::fmt::Debug)]
 pub enum GetObjectError {
     /// <p>The specified container was not found for the specified account.</p>
     ContainerNotFoundException(crate::types::error::ContainerNotFoundException),
@@ -191,22 +195,24 @@ pub enum GetObjectError {
         crate::types::error::RequestedRangeNotSatisfiableException,
     ),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    Unhandled(aws_smithy_types::error::Unhandled),
+    Unhandled(::aws_smithy_types::error::Unhandled),
 }
-impl aws_smithy_http::result::CreateUnhandledError for GetObjectError {
+impl ::aws_smithy_http::result::CreateUnhandledError for GetObjectError {
     fn create_unhandled_error(
-        source: Box<dyn std::error::Error + Send + Sync + 'static>,
-        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+        source: ::std::boxed::Box<
+            dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static,
+        >,
+        meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
     ) -> Self {
         Self::Unhandled({
-            let mut builder = aws_smithy_types::error::Unhandled::builder().source(source);
+            let mut builder = ::aws_smithy_types::error::Unhandled::builder().source(source);
             builder.set_meta(meta);
             builder.build()
         })
     }
 }
-impl std::fmt::Display for GetObjectError {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Display for GetObjectError {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::ContainerNotFoundException(_inner) => _inner.fmt(f),
             Self::InternalServerError(_inner) => _inner.fmt(f),
@@ -216,54 +222,60 @@ impl std::fmt::Display for GetObjectError {
         }
     }
 }
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for GetObjectError {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for GetObjectError {
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::ContainerNotFoundException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::InternalServerError(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::ObjectNotFoundException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::RequestedRangeNotSatisfiableException(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
             Self::Unhandled(_inner) => {
-                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+                ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
         }
     }
 }
-impl aws_http::request_id::RequestId for crate::operation::get_object::GetObjectError {
+impl ::aws_http::request_id::RequestId for crate::operation::get_object::GetObjectError {
     fn request_id(&self) -> Option<&str> {
         self.meta().request_id()
     }
 }
-impl aws_smithy_types::retry::ProvideErrorKind for GetObjectError {
-    fn code(&self) -> std::option::Option<&str> {
-        aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self)
+impl ::aws_smithy_types::retry::ProvideErrorKind for GetObjectError {
+    fn code(&self) -> ::std::option::Option<&str> {
+        ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self)
     }
-    fn retryable_error_kind(&self) -> std::option::Option<aws_smithy_types::retry::ErrorKind> {
-        None
+    fn retryable_error_kind(&self) -> ::std::option::Option<::aws_smithy_types::retry::ErrorKind> {
+        ::std::option::Option::None
     }
 }
 impl GetObjectError {
     /// Creates the `GetObjectError::Unhandled` variant from any error type.
-    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+    pub fn unhandled(
+        err: impl ::std::convert::Into<
+            ::std::boxed::Box<
+                dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static,
+            >,
+        >,
+    ) -> Self {
         Self::Unhandled(
-            aws_smithy_types::error::Unhandled::builder()
+            ::aws_smithy_types::error::Unhandled::builder()
                 .source(err)
                 .build(),
         )
     }
 
-    /// Creates the `GetObjectError::Unhandled` variant from a `aws_smithy_types::error::ErrorMetadata`.
-    pub fn generic(err: aws_smithy_types::error::ErrorMetadata) -> Self {
+    /// Creates the `GetObjectError::Unhandled` variant from a `::aws_smithy_types::error::ErrorMetadata`.
+    pub fn generic(err: ::aws_smithy_types::error::ErrorMetadata) -> Self {
         Self::Unhandled(
-            aws_smithy_types::error::Unhandled::builder()
+            ::aws_smithy_types::error::Unhandled::builder()
                 .source(err.clone())
                 .meta(err)
                 .build(),
@@ -273,8 +285,8 @@ impl GetObjectError {
     /// Returns error metadata, which includes the error code, message,
     /// request ID, and potentially additional information.
     ///
-    pub fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+    pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
+        use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
             Self::ContainerNotFoundException(e) => e.meta(),
             Self::InternalServerError(e) => e.meta(),
@@ -300,14 +312,16 @@ impl GetObjectError {
         matches!(self, Self::RequestedRangeNotSatisfiableException(_))
     }
 }
-impl std::error::Error for GetObjectError {
-    fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
+impl ::std::error::Error for GetObjectError {
+    fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
-            Self::ContainerNotFoundException(_inner) => Some(_inner),
-            Self::InternalServerError(_inner) => Some(_inner),
-            Self::ObjectNotFoundException(_inner) => Some(_inner),
-            Self::RequestedRangeNotSatisfiableException(_inner) => Some(_inner),
-            Self::Unhandled(_inner) => Some(_inner),
+            Self::ContainerNotFoundException(_inner) => ::std::option::Option::Some(_inner),
+            Self::InternalServerError(_inner) => ::std::option::Option::Some(_inner),
+            Self::ObjectNotFoundException(_inner) => ::std::option::Option::Some(_inner),
+            Self::RequestedRangeNotSatisfiableException(_inner) => {
+                ::std::option::Option::Some(_inner)
+            }
+            Self::Unhandled(_inner) => ::std::option::Option::Some(_inner),
         }
     }
 }

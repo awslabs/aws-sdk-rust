@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopAppReplication`](crate::operation::stop_app_replication::builders::StopAppReplicationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`app_id(impl Into<String>)`](crate::operation::stop_app_replication::builders::StopAppReplicationFluentBuilder::app_id) / [`set_app_id(Option<String>)`](crate::operation::stop_app_replication::builders::StopAppReplicationFluentBuilder::set_app_id): <p>The ID of the application.</p>
+    ///   - [`app_id(impl ::std::convert::Into<String>)`](crate::operation::stop_app_replication::builders::StopAppReplicationFluentBuilder::app_id) / [`set_app_id(Option<String>)`](crate::operation::stop_app_replication::builders::StopAppReplicationFluentBuilder::set_app_id): <p>The ID of the application.</p>
     /// - On success, responds with [`StopAppReplicationOutput`](crate::operation::stop_app_replication::StopAppReplicationOutput)
     /// - On failure, responds with [`SdkError<StopAppReplicationError>`](crate::operation::stop_app_replication::StopAppReplicationError)
     pub fn stop_app_replication(

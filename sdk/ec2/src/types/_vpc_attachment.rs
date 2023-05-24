@@ -2,22 +2,22 @@
 
 /// <p>Describes an attachment between a virtual private gateway and a VPC.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VpcAttachment {
     /// <p>The current state of the attachment.</p>
     #[doc(hidden)]
-    pub state: std::option::Option<crate::types::AttachmentStatus>,
+    pub state: ::std::option::Option<crate::types::AttachmentStatus>,
     /// <p>The ID of the VPC.</p>
     #[doc(hidden)]
-    pub vpc_id: std::option::Option<std::string::String>,
+    pub vpc_id: ::std::option::Option<::std::string::String>,
 }
 impl VpcAttachment {
     /// <p>The current state of the attachment.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::AttachmentStatus> {
+    pub fn state(&self) -> ::std::option::Option<&crate::types::AttachmentStatus> {
         self.state.as_ref()
     }
     /// <p>The ID of the VPC.</p>
-    pub fn vpc_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
 }
@@ -30,29 +30,34 @@ impl VpcAttachment {
 
 /// A builder for [`VpcAttachment`](crate::types::VpcAttachment).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VpcAttachmentBuilder {
-    pub(crate) state: std::option::Option<crate::types::AttachmentStatus>,
-    pub(crate) vpc_id: std::option::Option<std::string::String>,
+    pub(crate) state: ::std::option::Option<crate::types::AttachmentStatus>,
+    pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
 }
 impl VpcAttachmentBuilder {
     /// <p>The current state of the attachment.</p>
     pub fn state(mut self, input: crate::types::AttachmentStatus) -> Self {
-        self.state = Some(input);
+        self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current state of the attachment.</p>
-    pub fn set_state(mut self, input: std::option::Option<crate::types::AttachmentStatus>) -> Self {
+    pub fn set_state(
+        mut self,
+        input: ::std::option::Option<crate::types::AttachmentStatus>,
+    ) -> Self {
         self.state = input;
         self
     }
     /// <p>The ID of the VPC.</p>
-    pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.vpc_id = Some(input.into());
+    pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.vpc_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the VPC.</p>
-    pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_vpc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vpc_id = input;
         self
     }

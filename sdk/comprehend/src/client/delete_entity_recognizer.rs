@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteEntityRecognizer`](crate::operation::delete_entity_recognizer::builders::DeleteEntityRecognizerFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`entity_recognizer_arn(impl Into<String>)`](crate::operation::delete_entity_recognizer::builders::DeleteEntityRecognizerFluentBuilder::entity_recognizer_arn) / [`set_entity_recognizer_arn(Option<String>)`](crate::operation::delete_entity_recognizer::builders::DeleteEntityRecognizerFluentBuilder::set_entity_recognizer_arn): <p>The Amazon Resource Name (ARN) that identifies the entity recognizer.</p>
+    ///   - [`entity_recognizer_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_entity_recognizer::builders::DeleteEntityRecognizerFluentBuilder::entity_recognizer_arn) / [`set_entity_recognizer_arn(Option<String>)`](crate::operation::delete_entity_recognizer::builders::DeleteEntityRecognizerFluentBuilder::set_entity_recognizer_arn): <p>The Amazon Resource Name (ARN) that identifies the entity recognizer.</p>
     /// - On success, responds with [`DeleteEntityRecognizerOutput`](crate::operation::delete_entity_recognizer::DeleteEntityRecognizerOutput)
     /// - On failure, responds with [`SdkError<DeleteEntityRecognizerError>`](crate::operation::delete_entity_recognizer::DeleteEntityRecognizerError)
     pub fn delete_entity_recognizer(

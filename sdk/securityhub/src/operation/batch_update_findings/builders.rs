@@ -20,29 +20,29 @@ pub use crate::operation::batch_update_findings::_batch_update_findings_input::B
 /// <li> <p> <code>Workflow</code> </p> </li>
 /// </ul>
 /// <p>You can configure IAM policies to restrict access to fields and field values. For example, you might not want member accounts to be able to suppress findings or change the finding severity. See <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/finding-update-batchupdatefindings.html#batchupdatefindings-configure-access">Configuring access to BatchUpdateFindings</a> in the <i>Security Hub User Guide</i>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchUpdateFindingsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::batch_update_findings::builders::BatchUpdateFindingsInputBuilder,
 }
 impl BatchUpdateFindingsFluentBuilder {
     /// Creates a new `BatchUpdateFindings`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::batch_update_findings::BatchUpdateFindings,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::batch_update_findings::BatchUpdateFindingsError,
         >,
     > {
@@ -50,30 +50,33 @@ impl BatchUpdateFindingsFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::batch_update_findings::BatchUpdateFindingsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::batch_update_findings::BatchUpdateFindingsError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -86,9 +89,9 @@ impl BatchUpdateFindingsFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::batch_update_findings::BatchUpdateFindingsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::batch_update_findings::BatchUpdateFindingsError,
         >,
     > {
@@ -111,7 +114,7 @@ impl BatchUpdateFindingsFluentBuilder {
     /// <p>For each finding, the list provides the finding identifier and the ARN of the finding provider.</p>
     pub fn set_finding_identifiers(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AwsSecurityFindingIdentifier>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsSecurityFindingIdentifier>>,
     ) -> Self {
         self.inner = self.inner.set_finding_identifiers(input);
         self
@@ -122,7 +125,7 @@ impl BatchUpdateFindingsFluentBuilder {
         self
     }
     /// <p>The updated note.</p>
-    pub fn set_note(mut self, input: std::option::Option<crate::types::NoteUpdate>) -> Self {
+    pub fn set_note(mut self, input: ::std::option::Option<crate::types::NoteUpdate>) -> Self {
         self.inner = self.inner.set_note(input);
         self
     }
@@ -134,7 +137,7 @@ impl BatchUpdateFindingsFluentBuilder {
     /// <p>Used to update the finding severity.</p>
     pub fn set_severity(
         mut self,
-        input: std::option::Option<crate::types::SeverityUpdate>,
+        input: ::std::option::Option<crate::types::SeverityUpdate>,
     ) -> Self {
         self.inner = self.inner.set_severity(input);
         self
@@ -161,7 +164,7 @@ impl BatchUpdateFindingsFluentBuilder {
     /// </ul>
     pub fn set_verification_state(
         mut self,
-        input: std::option::Option<crate::types::VerificationState>,
+        input: ::std::option::Option<crate::types::VerificationState>,
     ) -> Self {
         self.inner = self.inner.set_verification_state(input);
         self
@@ -174,7 +177,7 @@ impl BatchUpdateFindingsFluentBuilder {
     }
     /// <p>The updated value for the finding confidence. Confidence is defined as the likelihood that a finding accurately identifies the behavior or issue that it was intended to identify.</p>
     /// <p>Confidence is scored on a 0-100 basis using a ratio scale, where 0 means zero percent confidence and 100 means 100 percent confidence.</p>
-    pub fn set_confidence(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_confidence(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_confidence(input);
         self
     }
@@ -186,7 +189,7 @@ impl BatchUpdateFindingsFluentBuilder {
     }
     /// <p>The updated value for the level of importance assigned to the resources associated with the findings.</p>
     /// <p>A score of 0 means that the underlying resources have no criticality, and a score of 100 is reserved for the most critical resources. </p>
-    pub fn set_criticality(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_criticality(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_criticality(input);
         self
     }
@@ -203,7 +206,7 @@ impl BatchUpdateFindingsFluentBuilder {
     /// <li> <p>Unusual Behaviors</p> </li>
     /// <li> <p>Sensitive Data Identifications </p> </li>
     /// </ul>
-    pub fn types(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.types(input.into());
         self
     }
@@ -218,7 +221,7 @@ impl BatchUpdateFindingsFluentBuilder {
     /// </ul>
     pub fn set_types(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_types(input);
         self
@@ -230,8 +233,8 @@ impl BatchUpdateFindingsFluentBuilder {
     /// <p>A list of name/value string pairs associated with the finding. These are custom, user-defined fields added to a finding.</p>
     pub fn user_defined_fields(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.user_defined_fields(k.into(), v.into());
         self
@@ -239,8 +242,8 @@ impl BatchUpdateFindingsFluentBuilder {
     /// <p>A list of name/value string pairs associated with the finding. These are custom, user-defined fields added to a finding.</p>
     pub fn set_user_defined_fields(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_user_defined_fields(input);
@@ -256,7 +259,7 @@ impl BatchUpdateFindingsFluentBuilder {
     /// <p>The workflow status indicates the progress of the investigation into the finding. </p>
     pub fn set_workflow(
         mut self,
-        input: std::option::Option<crate::types::WorkflowUpdate>,
+        input: ::std::option::Option<crate::types::WorkflowUpdate>,
     ) -> Self {
         self.inner = self.inner.set_workflow(input);
         self
@@ -273,7 +276,7 @@ impl BatchUpdateFindingsFluentBuilder {
     /// <p>A list of findings that are related to the updated findings.</p>
     pub fn set_related_findings(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RelatedFinding>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::RelatedFinding>>,
     ) -> Self {
         self.inner = self.inner.set_related_findings(input);
         self

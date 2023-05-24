@@ -2,146 +2,149 @@
 
 /// <p> The request structure for the update app request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateAppInput {
     /// <p> The unique ID for an Amplify app. </p>
     #[doc(hidden)]
-    pub app_id: std::option::Option<std::string::String>,
+    pub app_id: ::std::option::Option<::std::string::String>,
     /// <p> The name for an Amplify app. </p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p> The description for an Amplify app. </p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p> The platform for the Amplify app. For a static app, set the platform type to <code>WEB</code>. For a dynamic server-side rendered (SSR) app, set the platform type to <code>WEB_COMPUTE</code>. For an app requiring Amplify Hosting's original SSR support only, set the platform type to <code>WEB_DYNAMIC</code>.</p>
     #[doc(hidden)]
-    pub platform: std::option::Option<crate::types::Platform>,
+    pub platform: ::std::option::Option<crate::types::Platform>,
     /// <p> The AWS Identity and Access Management (IAM) service role for an Amplify app. </p>
     #[doc(hidden)]
-    pub iam_service_role_arn: std::option::Option<std::string::String>,
+    pub iam_service_role_arn: ::std::option::Option<::std::string::String>,
     /// <p> The environment variables for an Amplify app. </p>
     #[doc(hidden)]
-    pub environment_variables:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub environment_variables: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p> Enables branch auto-building for an Amplify app. </p>
     #[doc(hidden)]
-    pub enable_branch_auto_build: std::option::Option<bool>,
+    pub enable_branch_auto_build: ::std::option::Option<bool>,
     /// <p> Automatically disconnects a branch in the Amplify Console when you delete a branch from your Git repository. </p>
     #[doc(hidden)]
-    pub enable_branch_auto_deletion: std::option::Option<bool>,
+    pub enable_branch_auto_deletion: ::std::option::Option<bool>,
     /// <p> Enables basic authorization for an Amplify app. </p>
     #[doc(hidden)]
-    pub enable_basic_auth: std::option::Option<bool>,
+    pub enable_basic_auth: ::std::option::Option<bool>,
     /// <p> The basic authorization credentials for an Amplify app. You must base64-encode the authorization credentials and provide them in the format <code>user:password</code>.</p>
     #[doc(hidden)]
-    pub basic_auth_credentials: std::option::Option<std::string::String>,
+    pub basic_auth_credentials: ::std::option::Option<::std::string::String>,
     /// <p> The custom redirect and rewrite rules for an Amplify app. </p>
     #[doc(hidden)]
-    pub custom_rules: std::option::Option<std::vec::Vec<crate::types::CustomRule>>,
+    pub custom_rules: ::std::option::Option<::std::vec::Vec<crate::types::CustomRule>>,
     /// <p> The build specification (build spec) for an Amplify app. </p>
     #[doc(hidden)]
-    pub build_spec: std::option::Option<std::string::String>,
+    pub build_spec: ::std::option::Option<::std::string::String>,
     /// <p>The custom HTTP headers for an Amplify app.</p>
     #[doc(hidden)]
-    pub custom_headers: std::option::Option<std::string::String>,
+    pub custom_headers: ::std::option::Option<::std::string::String>,
     /// <p> Enables automated branch creation for an Amplify app. </p>
     #[doc(hidden)]
-    pub enable_auto_branch_creation: std::option::Option<bool>,
+    pub enable_auto_branch_creation: ::std::option::Option<bool>,
     /// <p> Describes the automated branch creation glob patterns for an Amplify app. </p>
     #[doc(hidden)]
-    pub auto_branch_creation_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub auto_branch_creation_patterns:
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> The automated branch creation configuration for an Amplify app. </p>
     #[doc(hidden)]
-    pub auto_branch_creation_config: std::option::Option<crate::types::AutoBranchCreationConfig>,
+    pub auto_branch_creation_config: ::std::option::Option<crate::types::AutoBranchCreationConfig>,
     /// <p> The name of the repository for an Amplify app </p>
     #[doc(hidden)]
-    pub repository: std::option::Option<std::string::String>,
+    pub repository: ::std::option::Option<::std::string::String>,
     /// <p>The OAuth token for a third-party source control system for an Amplify app. The OAuth token is used to create a webhook and a read-only deploy key using SSH cloning. The OAuth token is not stored.</p>
     /// <p>Use <code>oauthToken</code> for repository providers other than GitHub, such as Bitbucket or CodeCommit.</p>
     /// <p>To authorize access to GitHub as your repository provider, use <code>accessToken</code>.</p>
     /// <p>You must specify either <code>oauthToken</code> or <code>accessToken</code> when you update an app.</p>
     /// <p>Existing Amplify apps deployed from a GitHub repository using OAuth continue to work with CI/CD. However, we strongly recommend that you migrate these apps to use the GitHub App. For more information, see <a href="https://docs.aws.amazon.com/amplify/latest/UserGuide/setting-up-GitHub-access.html#migrating-to-github-app-auth">Migrating an existing OAuth app to the Amplify GitHub App</a> in the <i>Amplify User Guide</i> .</p>
     #[doc(hidden)]
-    pub oauth_token: std::option::Option<std::string::String>,
+    pub oauth_token: ::std::option::Option<::std::string::String>,
     /// <p>The personal access token for a GitHub repository for an Amplify app. The personal access token is used to authorize access to a GitHub repository using the Amplify GitHub App. The token is not stored.</p>
     /// <p>Use <code>accessToken</code> for GitHub repositories only. To authorize access to a repository provider such as Bitbucket or CodeCommit, use <code>oauthToken</code>.</p>
     /// <p>You must specify either <code>accessToken</code> or <code>oauthToken</code> when you update an app.</p>
     /// <p>Existing Amplify apps deployed from a GitHub repository using OAuth continue to work with CI/CD. However, we strongly recommend that you migrate these apps to use the GitHub App. For more information, see <a href="https://docs.aws.amazon.com/amplify/latest/UserGuide/setting-up-GitHub-access.html#migrating-to-github-app-auth">Migrating an existing OAuth app to the Amplify GitHub App</a> in the <i>Amplify User Guide</i> .</p>
     #[doc(hidden)]
-    pub access_token: std::option::Option<std::string::String>,
+    pub access_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateAppInput {
     /// <p> The unique ID for an Amplify app. </p>
-    pub fn app_id(&self) -> std::option::Option<&str> {
+    pub fn app_id(&self) -> ::std::option::Option<&str> {
         self.app_id.as_deref()
     }
     /// <p> The name for an Amplify app. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p> The description for an Amplify app. </p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p> The platform for the Amplify app. For a static app, set the platform type to <code>WEB</code>. For a dynamic server-side rendered (SSR) app, set the platform type to <code>WEB_COMPUTE</code>. For an app requiring Amplify Hosting's original SSR support only, set the platform type to <code>WEB_DYNAMIC</code>.</p>
-    pub fn platform(&self) -> std::option::Option<&crate::types::Platform> {
+    pub fn platform(&self) -> ::std::option::Option<&crate::types::Platform> {
         self.platform.as_ref()
     }
     /// <p> The AWS Identity and Access Management (IAM) service role for an Amplify app. </p>
-    pub fn iam_service_role_arn(&self) -> std::option::Option<&str> {
+    pub fn iam_service_role_arn(&self) -> ::std::option::Option<&str> {
         self.iam_service_role_arn.as_deref()
     }
     /// <p> The environment variables for an Amplify app. </p>
     pub fn environment_variables(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.environment_variables.as_ref()
     }
     /// <p> Enables branch auto-building for an Amplify app. </p>
-    pub fn enable_branch_auto_build(&self) -> std::option::Option<bool> {
+    pub fn enable_branch_auto_build(&self) -> ::std::option::Option<bool> {
         self.enable_branch_auto_build
     }
     /// <p> Automatically disconnects a branch in the Amplify Console when you delete a branch from your Git repository. </p>
-    pub fn enable_branch_auto_deletion(&self) -> std::option::Option<bool> {
+    pub fn enable_branch_auto_deletion(&self) -> ::std::option::Option<bool> {
         self.enable_branch_auto_deletion
     }
     /// <p> Enables basic authorization for an Amplify app. </p>
-    pub fn enable_basic_auth(&self) -> std::option::Option<bool> {
+    pub fn enable_basic_auth(&self) -> ::std::option::Option<bool> {
         self.enable_basic_auth
     }
     /// <p> The basic authorization credentials for an Amplify app. You must base64-encode the authorization credentials and provide them in the format <code>user:password</code>.</p>
-    pub fn basic_auth_credentials(&self) -> std::option::Option<&str> {
+    pub fn basic_auth_credentials(&self) -> ::std::option::Option<&str> {
         self.basic_auth_credentials.as_deref()
     }
     /// <p> The custom redirect and rewrite rules for an Amplify app. </p>
-    pub fn custom_rules(&self) -> std::option::Option<&[crate::types::CustomRule]> {
+    pub fn custom_rules(&self) -> ::std::option::Option<&[crate::types::CustomRule]> {
         self.custom_rules.as_deref()
     }
     /// <p> The build specification (build spec) for an Amplify app. </p>
-    pub fn build_spec(&self) -> std::option::Option<&str> {
+    pub fn build_spec(&self) -> ::std::option::Option<&str> {
         self.build_spec.as_deref()
     }
     /// <p>The custom HTTP headers for an Amplify app.</p>
-    pub fn custom_headers(&self) -> std::option::Option<&str> {
+    pub fn custom_headers(&self) -> ::std::option::Option<&str> {
         self.custom_headers.as_deref()
     }
     /// <p> Enables automated branch creation for an Amplify app. </p>
-    pub fn enable_auto_branch_creation(&self) -> std::option::Option<bool> {
+    pub fn enable_auto_branch_creation(&self) -> ::std::option::Option<bool> {
         self.enable_auto_branch_creation
     }
     /// <p> Describes the automated branch creation glob patterns for an Amplify app. </p>
-    pub fn auto_branch_creation_patterns(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn auto_branch_creation_patterns(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.auto_branch_creation_patterns.as_deref()
     }
     /// <p> The automated branch creation configuration for an Amplify app. </p>
     pub fn auto_branch_creation_config(
         &self,
-    ) -> std::option::Option<&crate::types::AutoBranchCreationConfig> {
+    ) -> ::std::option::Option<&crate::types::AutoBranchCreationConfig> {
         self.auto_branch_creation_config.as_ref()
     }
     /// <p> The name of the repository for an Amplify app </p>
-    pub fn repository(&self) -> std::option::Option<&str> {
+    pub fn repository(&self) -> ::std::option::Option<&str> {
         self.repository.as_deref()
     }
     /// <p>The OAuth token for a third-party source control system for an Amplify app. The OAuth token is used to create a webhook and a read-only deploy key using SSH cloning. The OAuth token is not stored.</p>
@@ -149,19 +152,19 @@ impl UpdateAppInput {
     /// <p>To authorize access to GitHub as your repository provider, use <code>accessToken</code>.</p>
     /// <p>You must specify either <code>oauthToken</code> or <code>accessToken</code> when you update an app.</p>
     /// <p>Existing Amplify apps deployed from a GitHub repository using OAuth continue to work with CI/CD. However, we strongly recommend that you migrate these apps to use the GitHub App. For more information, see <a href="https://docs.aws.amazon.com/amplify/latest/UserGuide/setting-up-GitHub-access.html#migrating-to-github-app-auth">Migrating an existing OAuth app to the Amplify GitHub App</a> in the <i>Amplify User Guide</i> .</p>
-    pub fn oauth_token(&self) -> std::option::Option<&str> {
+    pub fn oauth_token(&self) -> ::std::option::Option<&str> {
         self.oauth_token.as_deref()
     }
     /// <p>The personal access token for a GitHub repository for an Amplify app. The personal access token is used to authorize access to a GitHub repository using the Amplify GitHub App. The token is not stored.</p>
     /// <p>Use <code>accessToken</code> for GitHub repositories only. To authorize access to a repository provider such as Bitbucket or CodeCommit, use <code>oauthToken</code>.</p>
     /// <p>You must specify either <code>accessToken</code> or <code>oauthToken</code> when you update an app.</p>
     /// <p>Existing Amplify apps deployed from a GitHub repository using OAuth continue to work with CI/CD. However, we strongly recommend that you migrate these apps to use the GitHub App. For more information, see <a href="https://docs.aws.amazon.com/amplify/latest/UserGuide/setting-up-GitHub-access.html#migrating-to-github-app-auth">Migrating an existing OAuth app to the Amplify GitHub App</a> in the <i>Amplify User Guide</i> .</p>
-    pub fn access_token(&self) -> std::option::Option<&str> {
+    pub fn access_token(&self) -> ::std::option::Option<&str> {
         self.access_token.as_deref()
     }
 }
-impl std::fmt::Debug for UpdateAppInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for UpdateAppInput {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateAppInput");
         formatter.field("app_id", &self.app_id);
         formatter.field("name", &self.name);
@@ -206,81 +209,85 @@ impl UpdateAppInput {
 
 /// A builder for [`UpdateAppInput`](crate::operation::update_app::UpdateAppInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct UpdateAppInputBuilder {
-    pub(crate) app_id: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) platform: std::option::Option<crate::types::Platform>,
-    pub(crate) iam_service_role_arn: std::option::Option<std::string::String>,
-    pub(crate) environment_variables:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) enable_branch_auto_build: std::option::Option<bool>,
-    pub(crate) enable_branch_auto_deletion: std::option::Option<bool>,
-    pub(crate) enable_basic_auth: std::option::Option<bool>,
-    pub(crate) basic_auth_credentials: std::option::Option<std::string::String>,
-    pub(crate) custom_rules: std::option::Option<std::vec::Vec<crate::types::CustomRule>>,
-    pub(crate) build_spec: std::option::Option<std::string::String>,
-    pub(crate) custom_headers: std::option::Option<std::string::String>,
-    pub(crate) enable_auto_branch_creation: std::option::Option<bool>,
+    pub(crate) app_id: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) platform: ::std::option::Option<crate::types::Platform>,
+    pub(crate) iam_service_role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) environment_variables: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) enable_branch_auto_build: ::std::option::Option<bool>,
+    pub(crate) enable_branch_auto_deletion: ::std::option::Option<bool>,
+    pub(crate) enable_basic_auth: ::std::option::Option<bool>,
+    pub(crate) basic_auth_credentials: ::std::option::Option<::std::string::String>,
+    pub(crate) custom_rules: ::std::option::Option<::std::vec::Vec<crate::types::CustomRule>>,
+    pub(crate) build_spec: ::std::option::Option<::std::string::String>,
+    pub(crate) custom_headers: ::std::option::Option<::std::string::String>,
+    pub(crate) enable_auto_branch_creation: ::std::option::Option<bool>,
     pub(crate) auto_branch_creation_patterns:
-        std::option::Option<std::vec::Vec<std::string::String>>,
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) auto_branch_creation_config:
-        std::option::Option<crate::types::AutoBranchCreationConfig>,
-    pub(crate) repository: std::option::Option<std::string::String>,
-    pub(crate) oauth_token: std::option::Option<std::string::String>,
-    pub(crate) access_token: std::option::Option<std::string::String>,
+        ::std::option::Option<crate::types::AutoBranchCreationConfig>,
+    pub(crate) repository: ::std::option::Option<::std::string::String>,
+    pub(crate) oauth_token: ::std::option::Option<::std::string::String>,
+    pub(crate) access_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateAppInputBuilder {
     /// <p> The unique ID for an Amplify app. </p>
-    pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.app_id = Some(input.into());
+    pub fn app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.app_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The unique ID for an Amplify app. </p>
-    pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_app_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.app_id = input;
         self
     }
     /// <p> The name for an Amplify app. </p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name for an Amplify app. </p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p> The description for an Amplify app. </p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The description for an Amplify app. </p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p> The platform for the Amplify app. For a static app, set the platform type to <code>WEB</code>. For a dynamic server-side rendered (SSR) app, set the platform type to <code>WEB_COMPUTE</code>. For an app requiring Amplify Hosting's original SSR support only, set the platform type to <code>WEB_DYNAMIC</code>.</p>
     pub fn platform(mut self, input: crate::types::Platform) -> Self {
-        self.platform = Some(input);
+        self.platform = ::std::option::Option::Some(input);
         self
     }
     /// <p> The platform for the Amplify app. For a static app, set the platform type to <code>WEB</code>. For a dynamic server-side rendered (SSR) app, set the platform type to <code>WEB_COMPUTE</code>. For an app requiring Amplify Hosting's original SSR support only, set the platform type to <code>WEB_DYNAMIC</code>.</p>
-    pub fn set_platform(mut self, input: std::option::Option<crate::types::Platform>) -> Self {
+    pub fn set_platform(mut self, input: ::std::option::Option<crate::types::Platform>) -> Self {
         self.platform = input;
         self
     }
     /// <p> The AWS Identity and Access Management (IAM) service role for an Amplify app. </p>
-    pub fn iam_service_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.iam_service_role_arn = Some(input.into());
+    pub fn iam_service_role_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.iam_service_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The AWS Identity and Access Management (IAM) service role for an Amplify app. </p>
     pub fn set_iam_service_role_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.iam_service_role_arn = input;
         self
@@ -292,19 +299,19 @@ impl UpdateAppInputBuilder {
     /// <p> The environment variables for an Amplify app. </p>
     pub fn environment_variables(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.environment_variables.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.environment_variables = Some(hash_map);
+        self.environment_variables = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p> The environment variables for an Amplify app. </p>
     pub fn set_environment_variables(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.environment_variables = input;
@@ -312,43 +319,46 @@ impl UpdateAppInputBuilder {
     }
     /// <p> Enables branch auto-building for an Amplify app. </p>
     pub fn enable_branch_auto_build(mut self, input: bool) -> Self {
-        self.enable_branch_auto_build = Some(input);
+        self.enable_branch_auto_build = ::std::option::Option::Some(input);
         self
     }
     /// <p> Enables branch auto-building for an Amplify app. </p>
-    pub fn set_enable_branch_auto_build(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enable_branch_auto_build(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_branch_auto_build = input;
         self
     }
     /// <p> Automatically disconnects a branch in the Amplify Console when you delete a branch from your Git repository. </p>
     pub fn enable_branch_auto_deletion(mut self, input: bool) -> Self {
-        self.enable_branch_auto_deletion = Some(input);
+        self.enable_branch_auto_deletion = ::std::option::Option::Some(input);
         self
     }
     /// <p> Automatically disconnects a branch in the Amplify Console when you delete a branch from your Git repository. </p>
-    pub fn set_enable_branch_auto_deletion(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enable_branch_auto_deletion(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_branch_auto_deletion = input;
         self
     }
     /// <p> Enables basic authorization for an Amplify app. </p>
     pub fn enable_basic_auth(mut self, input: bool) -> Self {
-        self.enable_basic_auth = Some(input);
+        self.enable_basic_auth = ::std::option::Option::Some(input);
         self
     }
     /// <p> Enables basic authorization for an Amplify app. </p>
-    pub fn set_enable_basic_auth(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enable_basic_auth(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_basic_auth = input;
         self
     }
     /// <p> The basic authorization credentials for an Amplify app. You must base64-encode the authorization credentials and provide them in the format <code>user:password</code>.</p>
-    pub fn basic_auth_credentials(mut self, input: impl Into<std::string::String>) -> Self {
-        self.basic_auth_credentials = Some(input.into());
+    pub fn basic_auth_credentials(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.basic_auth_credentials = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The basic authorization credentials for an Amplify app. You must base64-encode the authorization credentials and provide them in the format <code>user:password</code>.</p>
     pub fn set_basic_auth_credentials(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.basic_auth_credentials = input;
         self
@@ -361,44 +371,50 @@ impl UpdateAppInputBuilder {
     pub fn custom_rules(mut self, input: crate::types::CustomRule) -> Self {
         let mut v = self.custom_rules.unwrap_or_default();
         v.push(input);
-        self.custom_rules = Some(v);
+        self.custom_rules = ::std::option::Option::Some(v);
         self
     }
     /// <p> The custom redirect and rewrite rules for an Amplify app. </p>
     pub fn set_custom_rules(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CustomRule>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::CustomRule>>,
     ) -> Self {
         self.custom_rules = input;
         self
     }
     /// <p> The build specification (build spec) for an Amplify app. </p>
-    pub fn build_spec(mut self, input: impl Into<std::string::String>) -> Self {
-        self.build_spec = Some(input.into());
+    pub fn build_spec(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.build_spec = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The build specification (build spec) for an Amplify app. </p>
-    pub fn set_build_spec(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_build_spec(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.build_spec = input;
         self
     }
     /// <p>The custom HTTP headers for an Amplify app.</p>
-    pub fn custom_headers(mut self, input: impl Into<std::string::String>) -> Self {
-        self.custom_headers = Some(input.into());
+    pub fn custom_headers(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.custom_headers = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The custom HTTP headers for an Amplify app.</p>
-    pub fn set_custom_headers(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_custom_headers(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.custom_headers = input;
         self
     }
     /// <p> Enables automated branch creation for an Amplify app. </p>
     pub fn enable_auto_branch_creation(mut self, input: bool) -> Self {
-        self.enable_auto_branch_creation = Some(input);
+        self.enable_auto_branch_creation = ::std::option::Option::Some(input);
         self
     }
     /// <p> Enables automated branch creation for an Amplify app. </p>
-    pub fn set_enable_auto_branch_creation(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enable_auto_branch_creation(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_auto_branch_creation = input;
         self
     }
@@ -407,16 +423,19 @@ impl UpdateAppInputBuilder {
     /// To override the contents of this collection use [`set_auto_branch_creation_patterns`](Self::set_auto_branch_creation_patterns).
     ///
     /// <p> Describes the automated branch creation glob patterns for an Amplify app. </p>
-    pub fn auto_branch_creation_patterns(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn auto_branch_creation_patterns(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.auto_branch_creation_patterns.unwrap_or_default();
         v.push(input.into());
-        self.auto_branch_creation_patterns = Some(v);
+        self.auto_branch_creation_patterns = ::std::option::Option::Some(v);
         self
     }
     /// <p> Describes the automated branch creation glob patterns for an Amplify app. </p>
     pub fn set_auto_branch_creation_patterns(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.auto_branch_creation_patterns = input;
         self
@@ -426,24 +445,24 @@ impl UpdateAppInputBuilder {
         mut self,
         input: crate::types::AutoBranchCreationConfig,
     ) -> Self {
-        self.auto_branch_creation_config = Some(input);
+        self.auto_branch_creation_config = ::std::option::Option::Some(input);
         self
     }
     /// <p> The automated branch creation configuration for an Amplify app. </p>
     pub fn set_auto_branch_creation_config(
         mut self,
-        input: std::option::Option<crate::types::AutoBranchCreationConfig>,
+        input: ::std::option::Option<crate::types::AutoBranchCreationConfig>,
     ) -> Self {
         self.auto_branch_creation_config = input;
         self
     }
     /// <p> The name of the repository for an Amplify app </p>
-    pub fn repository(mut self, input: impl Into<std::string::String>) -> Self {
-        self.repository = Some(input.into());
+    pub fn repository(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.repository = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the repository for an Amplify app </p>
-    pub fn set_repository(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_repository(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repository = input;
         self
     }
@@ -452,8 +471,8 @@ impl UpdateAppInputBuilder {
     /// <p>To authorize access to GitHub as your repository provider, use <code>accessToken</code>.</p>
     /// <p>You must specify either <code>oauthToken</code> or <code>accessToken</code> when you update an app.</p>
     /// <p>Existing Amplify apps deployed from a GitHub repository using OAuth continue to work with CI/CD. However, we strongly recommend that you migrate these apps to use the GitHub App. For more information, see <a href="https://docs.aws.amazon.com/amplify/latest/UserGuide/setting-up-GitHub-access.html#migrating-to-github-app-auth">Migrating an existing OAuth app to the Amplify GitHub App</a> in the <i>Amplify User Guide</i> .</p>
-    pub fn oauth_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.oauth_token = Some(input.into());
+    pub fn oauth_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.oauth_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The OAuth token for a third-party source control system for an Amplify app. The OAuth token is used to create a webhook and a read-only deploy key using SSH cloning. The OAuth token is not stored.</p>
@@ -461,7 +480,7 @@ impl UpdateAppInputBuilder {
     /// <p>To authorize access to GitHub as your repository provider, use <code>accessToken</code>.</p>
     /// <p>You must specify either <code>oauthToken</code> or <code>accessToken</code> when you update an app.</p>
     /// <p>Existing Amplify apps deployed from a GitHub repository using OAuth continue to work with CI/CD. However, we strongly recommend that you migrate these apps to use the GitHub App. For more information, see <a href="https://docs.aws.amazon.com/amplify/latest/UserGuide/setting-up-GitHub-access.html#migrating-to-github-app-auth">Migrating an existing OAuth app to the Amplify GitHub App</a> in the <i>Amplify User Guide</i> .</p>
-    pub fn set_oauth_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_oauth_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.oauth_token = input;
         self
     }
@@ -469,26 +488,26 @@ impl UpdateAppInputBuilder {
     /// <p>Use <code>accessToken</code> for GitHub repositories only. To authorize access to a repository provider such as Bitbucket or CodeCommit, use <code>oauthToken</code>.</p>
     /// <p>You must specify either <code>accessToken</code> or <code>oauthToken</code> when you update an app.</p>
     /// <p>Existing Amplify apps deployed from a GitHub repository using OAuth continue to work with CI/CD. However, we strongly recommend that you migrate these apps to use the GitHub App. For more information, see <a href="https://docs.aws.amazon.com/amplify/latest/UserGuide/setting-up-GitHub-access.html#migrating-to-github-app-auth">Migrating an existing OAuth app to the Amplify GitHub App</a> in the <i>Amplify User Guide</i> .</p>
-    pub fn access_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.access_token = Some(input.into());
+    pub fn access_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.access_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The personal access token for a GitHub repository for an Amplify app. The personal access token is used to authorize access to a GitHub repository using the Amplify GitHub App. The token is not stored.</p>
     /// <p>Use <code>accessToken</code> for GitHub repositories only. To authorize access to a repository provider such as Bitbucket or CodeCommit, use <code>oauthToken</code>.</p>
     /// <p>You must specify either <code>accessToken</code> or <code>oauthToken</code> when you update an app.</p>
     /// <p>Existing Amplify apps deployed from a GitHub repository using OAuth continue to work with CI/CD. However, we strongly recommend that you migrate these apps to use the GitHub App. For more information, see <a href="https://docs.aws.amazon.com/amplify/latest/UserGuide/setting-up-GitHub-access.html#migrating-to-github-app-auth">Migrating an existing OAuth app to the Amplify GitHub App</a> in the <i>Amplify User Guide</i> .</p>
-    pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_access_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.access_token = input;
         self
     }
     /// Consumes the builder and constructs a [`UpdateAppInput`](crate::operation::update_app::UpdateAppInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::update_app::UpdateAppInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::update_app::UpdateAppInput {
+        ::std::result::Result::Ok(crate::operation::update_app::UpdateAppInput {
             app_id: self.app_id,
             name: self.name,
             description: self.description,
@@ -511,8 +530,8 @@ impl UpdateAppInputBuilder {
         })
     }
 }
-impl std::fmt::Debug for UpdateAppInputBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for UpdateAppInputBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateAppInputBuilder");
         formatter.field("app_id", &self.app_id);
         formatter.field("name", &self.name);

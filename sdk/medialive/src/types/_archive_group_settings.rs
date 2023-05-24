@@ -2,29 +2,29 @@
 
 /// Archive Group Settings
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ArchiveGroupSettings {
     /// Parameters that control interactions with the CDN.
     #[doc(hidden)]
-    pub archive_cdn_settings: std::option::Option<crate::types::ArchiveCdnSettings>,
+    pub archive_cdn_settings: ::std::option::Option<crate::types::ArchiveCdnSettings>,
     /// A directory and base filename where archive files should be written.
     #[doc(hidden)]
-    pub destination: std::option::Option<crate::types::OutputLocationRef>,
+    pub destination: ::std::option::Option<crate::types::OutputLocationRef>,
     /// Number of seconds to write to archive file before closing and starting a new one.
     #[doc(hidden)]
-    pub rollover_interval: std::option::Option<i32>,
+    pub rollover_interval: ::std::option::Option<i32>,
 }
 impl ArchiveGroupSettings {
     /// Parameters that control interactions with the CDN.
-    pub fn archive_cdn_settings(&self) -> std::option::Option<&crate::types::ArchiveCdnSettings> {
+    pub fn archive_cdn_settings(&self) -> ::std::option::Option<&crate::types::ArchiveCdnSettings> {
         self.archive_cdn_settings.as_ref()
     }
     /// A directory and base filename where archive files should be written.
-    pub fn destination(&self) -> std::option::Option<&crate::types::OutputLocationRef> {
+    pub fn destination(&self) -> ::std::option::Option<&crate::types::OutputLocationRef> {
         self.destination.as_ref()
     }
     /// Number of seconds to write to archive file before closing and starting a new one.
-    pub fn rollover_interval(&self) -> std::option::Option<i32> {
+    pub fn rollover_interval(&self) -> ::std::option::Option<i32> {
         self.rollover_interval
     }
 }
@@ -37,46 +37,48 @@ impl ArchiveGroupSettings {
 
 /// A builder for [`ArchiveGroupSettings`](crate::types::ArchiveGroupSettings).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ArchiveGroupSettingsBuilder {
-    pub(crate) archive_cdn_settings: std::option::Option<crate::types::ArchiveCdnSettings>,
-    pub(crate) destination: std::option::Option<crate::types::OutputLocationRef>,
-    pub(crate) rollover_interval: std::option::Option<i32>,
+    pub(crate) archive_cdn_settings: ::std::option::Option<crate::types::ArchiveCdnSettings>,
+    pub(crate) destination: ::std::option::Option<crate::types::OutputLocationRef>,
+    pub(crate) rollover_interval: ::std::option::Option<i32>,
 }
 impl ArchiveGroupSettingsBuilder {
     /// Parameters that control interactions with the CDN.
     pub fn archive_cdn_settings(mut self, input: crate::types::ArchiveCdnSettings) -> Self {
-        self.archive_cdn_settings = Some(input);
+        self.archive_cdn_settings = ::std::option::Option::Some(input);
         self
     }
     /// Parameters that control interactions with the CDN.
     pub fn set_archive_cdn_settings(
         mut self,
-        input: std::option::Option<crate::types::ArchiveCdnSettings>,
+        input: ::std::option::Option<crate::types::ArchiveCdnSettings>,
     ) -> Self {
         self.archive_cdn_settings = input;
         self
     }
     /// A directory and base filename where archive files should be written.
     pub fn destination(mut self, input: crate::types::OutputLocationRef) -> Self {
-        self.destination = Some(input);
+        self.destination = ::std::option::Option::Some(input);
         self
     }
     /// A directory and base filename where archive files should be written.
     pub fn set_destination(
         mut self,
-        input: std::option::Option<crate::types::OutputLocationRef>,
+        input: ::std::option::Option<crate::types::OutputLocationRef>,
     ) -> Self {
         self.destination = input;
         self
     }
     /// Number of seconds to write to archive file before closing and starting a new one.
     pub fn rollover_interval(mut self, input: i32) -> Self {
-        self.rollover_interval = Some(input);
+        self.rollover_interval = ::std::option::Option::Some(input);
         self
     }
     /// Number of seconds to write to archive file before closing and starting a new one.
-    pub fn set_rollover_interval(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_rollover_interval(mut self, input: ::std::option::Option<i32>) -> Self {
         self.rollover_interval = input;
         self
     }

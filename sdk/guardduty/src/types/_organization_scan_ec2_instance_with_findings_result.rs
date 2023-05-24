@@ -2,15 +2,17 @@
 
 /// <p>An object that contains information on the status of scanning EC2 instances with findings for an organization.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OrganizationScanEc2InstanceWithFindingsResult {
     /// <p>Describes the configuration for scanning EBS volumes for an organization.</p>
     #[doc(hidden)]
-    pub ebs_volumes: std::option::Option<crate::types::OrganizationEbsVolumesResult>,
+    pub ebs_volumes: ::std::option::Option<crate::types::OrganizationEbsVolumesResult>,
 }
 impl OrganizationScanEc2InstanceWithFindingsResult {
     /// <p>Describes the configuration for scanning EBS volumes for an organization.</p>
-    pub fn ebs_volumes(&self) -> std::option::Option<&crate::types::OrganizationEbsVolumesResult> {
+    pub fn ebs_volumes(
+        &self,
+    ) -> ::std::option::Option<&crate::types::OrganizationEbsVolumesResult> {
         self.ebs_volumes.as_ref()
     }
 }
@@ -24,20 +26,22 @@ impl OrganizationScanEc2InstanceWithFindingsResult {
 
 /// A builder for [`OrganizationScanEc2InstanceWithFindingsResult`](crate::types::OrganizationScanEc2InstanceWithFindingsResult).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OrganizationScanEc2InstanceWithFindingsResultBuilder {
-    pub(crate) ebs_volumes: std::option::Option<crate::types::OrganizationEbsVolumesResult>,
+    pub(crate) ebs_volumes: ::std::option::Option<crate::types::OrganizationEbsVolumesResult>,
 }
 impl OrganizationScanEc2InstanceWithFindingsResultBuilder {
     /// <p>Describes the configuration for scanning EBS volumes for an organization.</p>
     pub fn ebs_volumes(mut self, input: crate::types::OrganizationEbsVolumesResult) -> Self {
-        self.ebs_volumes = Some(input);
+        self.ebs_volumes = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes the configuration for scanning EBS volumes for an organization.</p>
     pub fn set_ebs_volumes(
         mut self,
-        input: std::option::Option<crate::types::OrganizationEbsVolumesResult>,
+        input: ::std::option::Option<crate::types::OrganizationEbsVolumesResult>,
     ) -> Self {
         self.ebs_volumes = input;
         self

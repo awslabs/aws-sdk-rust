@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteLifecycleHook`](crate::operation::delete_lifecycle_hook::builders::DeleteLifecycleHookFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`lifecycle_hook_name(impl Into<String>)`](crate::operation::delete_lifecycle_hook::builders::DeleteLifecycleHookFluentBuilder::lifecycle_hook_name) / [`set_lifecycle_hook_name(Option<String>)`](crate::operation::delete_lifecycle_hook::builders::DeleteLifecycleHookFluentBuilder::set_lifecycle_hook_name): <p>The name of the lifecycle hook.</p>
-    ///   - [`auto_scaling_group_name(impl Into<String>)`](crate::operation::delete_lifecycle_hook::builders::DeleteLifecycleHookFluentBuilder::auto_scaling_group_name) / [`set_auto_scaling_group_name(Option<String>)`](crate::operation::delete_lifecycle_hook::builders::DeleteLifecycleHookFluentBuilder::set_auto_scaling_group_name): <p>The name of the Auto Scaling group.</p>
+    ///   - [`lifecycle_hook_name(impl ::std::convert::Into<String>)`](crate::operation::delete_lifecycle_hook::builders::DeleteLifecycleHookFluentBuilder::lifecycle_hook_name) / [`set_lifecycle_hook_name(Option<String>)`](crate::operation::delete_lifecycle_hook::builders::DeleteLifecycleHookFluentBuilder::set_lifecycle_hook_name): <p>The name of the lifecycle hook.</p>
+    ///   - [`auto_scaling_group_name(impl ::std::convert::Into<String>)`](crate::operation::delete_lifecycle_hook::builders::DeleteLifecycleHookFluentBuilder::auto_scaling_group_name) / [`set_auto_scaling_group_name(Option<String>)`](crate::operation::delete_lifecycle_hook::builders::DeleteLifecycleHookFluentBuilder::set_auto_scaling_group_name): <p>The name of the Auto Scaling group.</p>
     /// - On success, responds with [`DeleteLifecycleHookOutput`](crate::operation::delete_lifecycle_hook::DeleteLifecycleHookOutput)
     /// - On failure, responds with [`SdkError<DeleteLifecycleHookError>`](crate::operation::delete_lifecycle_hook::DeleteLifecycleHookError)
     pub fn delete_lifecycle_hook(

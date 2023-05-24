@@ -2,29 +2,29 @@
 
 /// <p>The amount of cost or usage that you created the budget for, compared to your actual costs or usage.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BudgetedAndActualAmounts {
     /// <p>The amount of cost or usage that you created the budget for.</p>
     #[doc(hidden)]
-    pub budgeted_amount: std::option::Option<crate::types::Spend>,
+    pub budgeted_amount: ::std::option::Option<crate::types::Spend>,
     /// <p>Your actual costs or usage for a budget period.</p>
     #[doc(hidden)]
-    pub actual_amount: std::option::Option<crate::types::Spend>,
+    pub actual_amount: ::std::option::Option<crate::types::Spend>,
     /// <p>The time period that's covered by this budget comparison.</p>
     #[doc(hidden)]
-    pub time_period: std::option::Option<crate::types::TimePeriod>,
+    pub time_period: ::std::option::Option<crate::types::TimePeriod>,
 }
 impl BudgetedAndActualAmounts {
     /// <p>The amount of cost or usage that you created the budget for.</p>
-    pub fn budgeted_amount(&self) -> std::option::Option<&crate::types::Spend> {
+    pub fn budgeted_amount(&self) -> ::std::option::Option<&crate::types::Spend> {
         self.budgeted_amount.as_ref()
     }
     /// <p>Your actual costs or usage for a budget period.</p>
-    pub fn actual_amount(&self) -> std::option::Option<&crate::types::Spend> {
+    pub fn actual_amount(&self) -> ::std::option::Option<&crate::types::Spend> {
         self.actual_amount.as_ref()
     }
     /// <p>The time period that's covered by this budget comparison.</p>
-    pub fn time_period(&self) -> std::option::Option<&crate::types::TimePeriod> {
+    pub fn time_period(&self) -> ::std::option::Option<&crate::types::TimePeriod> {
         self.time_period.as_ref()
     }
 }
@@ -37,40 +37,48 @@ impl BudgetedAndActualAmounts {
 
 /// A builder for [`BudgetedAndActualAmounts`](crate::types::BudgetedAndActualAmounts).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BudgetedAndActualAmountsBuilder {
-    pub(crate) budgeted_amount: std::option::Option<crate::types::Spend>,
-    pub(crate) actual_amount: std::option::Option<crate::types::Spend>,
-    pub(crate) time_period: std::option::Option<crate::types::TimePeriod>,
+    pub(crate) budgeted_amount: ::std::option::Option<crate::types::Spend>,
+    pub(crate) actual_amount: ::std::option::Option<crate::types::Spend>,
+    pub(crate) time_period: ::std::option::Option<crate::types::TimePeriod>,
 }
 impl BudgetedAndActualAmountsBuilder {
     /// <p>The amount of cost or usage that you created the budget for.</p>
     pub fn budgeted_amount(mut self, input: crate::types::Spend) -> Self {
-        self.budgeted_amount = Some(input);
+        self.budgeted_amount = ::std::option::Option::Some(input);
         self
     }
     /// <p>The amount of cost or usage that you created the budget for.</p>
-    pub fn set_budgeted_amount(mut self, input: std::option::Option<crate::types::Spend>) -> Self {
+    pub fn set_budgeted_amount(
+        mut self,
+        input: ::std::option::Option<crate::types::Spend>,
+    ) -> Self {
         self.budgeted_amount = input;
         self
     }
     /// <p>Your actual costs or usage for a budget period.</p>
     pub fn actual_amount(mut self, input: crate::types::Spend) -> Self {
-        self.actual_amount = Some(input);
+        self.actual_amount = ::std::option::Option::Some(input);
         self
     }
     /// <p>Your actual costs or usage for a budget period.</p>
-    pub fn set_actual_amount(mut self, input: std::option::Option<crate::types::Spend>) -> Self {
+    pub fn set_actual_amount(mut self, input: ::std::option::Option<crate::types::Spend>) -> Self {
         self.actual_amount = input;
         self
     }
     /// <p>The time period that's covered by this budget comparison.</p>
     pub fn time_period(mut self, input: crate::types::TimePeriod) -> Self {
-        self.time_period = Some(input);
+        self.time_period = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time period that's covered by this budget comparison.</p>
-    pub fn set_time_period(mut self, input: std::option::Option<crate::types::TimePeriod>) -> Self {
+    pub fn set_time_period(
+        mut self,
+        input: ::std::option::Option<crate::types::TimePeriod>,
+    ) -> Self {
         self.time_period = input;
         self
     }

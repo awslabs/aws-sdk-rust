@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum TargetType {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum TargetType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for TargetType {
+impl ::std::convert::From<&str> for TargetType {
     fn from(s: &str) -> Self {
         match s {
             "RDS_INSTANCE" => TargetType::RdsInstance,
@@ -67,11 +67,11 @@ impl std::convert::From<&str> for TargetType {
         }
     }
 }
-impl std::str::FromStr for TargetType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for TargetType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TargetType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(TargetType::from(s))
     }
 }
 impl TargetType {
@@ -89,7 +89,7 @@ impl TargetType {
         &["RDS_INSTANCE", "RDS_SERVERLESS_ENDPOINT", "TRACKED_CLUSTER"]
     }
 }
-impl AsRef<str> for TargetType {
+impl ::std::convert::AsRef<str> for TargetType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

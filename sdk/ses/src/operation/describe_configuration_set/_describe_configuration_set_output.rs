@@ -2,48 +2,48 @@
 
 /// <p>Represents the details of a configuration set. Configuration sets enable you to publish email sending events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeConfigurationSetOutput {
     /// <p>The configuration set object associated with the specified configuration set.</p>
     #[doc(hidden)]
-    pub configuration_set: std::option::Option<crate::types::ConfigurationSet>,
+    pub configuration_set: ::std::option::Option<crate::types::ConfigurationSet>,
     /// <p>A list of event destinations associated with the configuration set. </p>
     #[doc(hidden)]
-    pub event_destinations: std::option::Option<std::vec::Vec<crate::types::EventDestination>>,
+    pub event_destinations: ::std::option::Option<::std::vec::Vec<crate::types::EventDestination>>,
     /// <p>The name of the custom open and click tracking domain associated with the configuration set.</p>
     #[doc(hidden)]
-    pub tracking_options: std::option::Option<crate::types::TrackingOptions>,
+    pub tracking_options: ::std::option::Option<crate::types::TrackingOptions>,
     /// <p>Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS).</p>
     #[doc(hidden)]
-    pub delivery_options: std::option::Option<crate::types::DeliveryOptions>,
+    pub delivery_options: ::std::option::Option<crate::types::DeliveryOptions>,
     /// <p>An object that represents the reputation settings for the configuration set. </p>
     #[doc(hidden)]
-    pub reputation_options: std::option::Option<crate::types::ReputationOptions>,
+    pub reputation_options: ::std::option::Option<crate::types::ReputationOptions>,
     _request_id: Option<String>,
 }
 impl DescribeConfigurationSetOutput {
     /// <p>The configuration set object associated with the specified configuration set.</p>
-    pub fn configuration_set(&self) -> std::option::Option<&crate::types::ConfigurationSet> {
+    pub fn configuration_set(&self) -> ::std::option::Option<&crate::types::ConfigurationSet> {
         self.configuration_set.as_ref()
     }
     /// <p>A list of event destinations associated with the configuration set. </p>
-    pub fn event_destinations(&self) -> std::option::Option<&[crate::types::EventDestination]> {
+    pub fn event_destinations(&self) -> ::std::option::Option<&[crate::types::EventDestination]> {
         self.event_destinations.as_deref()
     }
     /// <p>The name of the custom open and click tracking domain associated with the configuration set.</p>
-    pub fn tracking_options(&self) -> std::option::Option<&crate::types::TrackingOptions> {
+    pub fn tracking_options(&self) -> ::std::option::Option<&crate::types::TrackingOptions> {
         self.tracking_options.as_ref()
     }
     /// <p>Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS).</p>
-    pub fn delivery_options(&self) -> std::option::Option<&crate::types::DeliveryOptions> {
+    pub fn delivery_options(&self) -> ::std::option::Option<&crate::types::DeliveryOptions> {
         self.delivery_options.as_ref()
     }
     /// <p>An object that represents the reputation settings for the configuration set. </p>
-    pub fn reputation_options(&self) -> std::option::Option<&crate::types::ReputationOptions> {
+    pub fn reputation_options(&self) -> ::std::option::Option<&crate::types::ReputationOptions> {
         self.reputation_options.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeConfigurationSetOutput {
+impl ::aws_http::request_id::RequestId for DescribeConfigurationSetOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -59,26 +59,28 @@ impl DescribeConfigurationSetOutput {
 
 /// A builder for [`DescribeConfigurationSetOutput`](crate::operation::describe_configuration_set::DescribeConfigurationSetOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeConfigurationSetOutputBuilder {
-    pub(crate) configuration_set: std::option::Option<crate::types::ConfigurationSet>,
+    pub(crate) configuration_set: ::std::option::Option<crate::types::ConfigurationSet>,
     pub(crate) event_destinations:
-        std::option::Option<std::vec::Vec<crate::types::EventDestination>>,
-    pub(crate) tracking_options: std::option::Option<crate::types::TrackingOptions>,
-    pub(crate) delivery_options: std::option::Option<crate::types::DeliveryOptions>,
-    pub(crate) reputation_options: std::option::Option<crate::types::ReputationOptions>,
+        ::std::option::Option<::std::vec::Vec<crate::types::EventDestination>>,
+    pub(crate) tracking_options: ::std::option::Option<crate::types::TrackingOptions>,
+    pub(crate) delivery_options: ::std::option::Option<crate::types::DeliveryOptions>,
+    pub(crate) reputation_options: ::std::option::Option<crate::types::ReputationOptions>,
     _request_id: Option<String>,
 }
 impl DescribeConfigurationSetOutputBuilder {
     /// <p>The configuration set object associated with the specified configuration set.</p>
     pub fn configuration_set(mut self, input: crate::types::ConfigurationSet) -> Self {
-        self.configuration_set = Some(input);
+        self.configuration_set = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration set object associated with the specified configuration set.</p>
     pub fn set_configuration_set(
         mut self,
-        input: std::option::Option<crate::types::ConfigurationSet>,
+        input: ::std::option::Option<crate::types::ConfigurationSet>,
     ) -> Self {
         self.configuration_set = input;
         self
@@ -91,52 +93,52 @@ impl DescribeConfigurationSetOutputBuilder {
     pub fn event_destinations(mut self, input: crate::types::EventDestination) -> Self {
         let mut v = self.event_destinations.unwrap_or_default();
         v.push(input);
-        self.event_destinations = Some(v);
+        self.event_destinations = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of event destinations associated with the configuration set. </p>
     pub fn set_event_destinations(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::EventDestination>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::EventDestination>>,
     ) -> Self {
         self.event_destinations = input;
         self
     }
     /// <p>The name of the custom open and click tracking domain associated with the configuration set.</p>
     pub fn tracking_options(mut self, input: crate::types::TrackingOptions) -> Self {
-        self.tracking_options = Some(input);
+        self.tracking_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>The name of the custom open and click tracking domain associated with the configuration set.</p>
     pub fn set_tracking_options(
         mut self,
-        input: std::option::Option<crate::types::TrackingOptions>,
+        input: ::std::option::Option<crate::types::TrackingOptions>,
     ) -> Self {
         self.tracking_options = input;
         self
     }
     /// <p>Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS).</p>
     pub fn delivery_options(mut self, input: crate::types::DeliveryOptions) -> Self {
-        self.delivery_options = Some(input);
+        self.delivery_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS).</p>
     pub fn set_delivery_options(
         mut self,
-        input: std::option::Option<crate::types::DeliveryOptions>,
+        input: ::std::option::Option<crate::types::DeliveryOptions>,
     ) -> Self {
         self.delivery_options = input;
         self
     }
     /// <p>An object that represents the reputation settings for the configuration set. </p>
     pub fn reputation_options(mut self, input: crate::types::ReputationOptions) -> Self {
-        self.reputation_options = Some(input);
+        self.reputation_options = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that represents the reputation settings for the configuration set. </p>
     pub fn set_reputation_options(
         mut self,
-        input: std::option::Option<crate::types::ReputationOptions>,
+        input: ::std::option::Option<crate::types::ReputationOptions>,
     ) -> Self {
         self.reputation_options = input;
         self

@@ -2,15 +2,15 @@
 
 /// <p>Contains information about a timestamp.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimestampValue {
     /// <p>The value of the timestamp, in the Unix epoch format.</p>
     #[doc(hidden)]
-    pub time_in_millis: std::option::Option<i64>,
+    pub time_in_millis: ::std::option::Option<i64>,
 }
 impl TimestampValue {
     /// <p>The value of the timestamp, in the Unix epoch format.</p>
-    pub fn time_in_millis(&self) -> std::option::Option<i64> {
+    pub fn time_in_millis(&self) -> ::std::option::Option<i64> {
         self.time_in_millis
     }
 }
@@ -23,18 +23,20 @@ impl TimestampValue {
 
 /// A builder for [`TimestampValue`](crate::types::TimestampValue).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TimestampValueBuilder {
-    pub(crate) time_in_millis: std::option::Option<i64>,
+    pub(crate) time_in_millis: ::std::option::Option<i64>,
 }
 impl TimestampValueBuilder {
     /// <p>The value of the timestamp, in the Unix epoch format.</p>
     pub fn time_in_millis(mut self, input: i64) -> Self {
-        self.time_in_millis = Some(input);
+        self.time_in_millis = ::std::option::Option::Some(input);
         self
     }
     /// <p>The value of the timestamp, in the Unix epoch format.</p>
-    pub fn set_time_in_millis(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_time_in_millis(mut self, input: ::std::option::Option<i64>) -> Self {
         self.time_in_millis = input;
         self
     }

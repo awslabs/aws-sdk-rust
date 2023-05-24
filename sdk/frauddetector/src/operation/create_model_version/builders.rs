@@ -6,29 +6,29 @@ pub use crate::operation::create_model_version::_create_model_version_input::Cre
 /// Fluent builder constructing a request to `CreateModelVersion`.
 ///
 /// <p>Creates a version of the model using the specified model type and model id. </p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateModelVersionFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_model_version::builders::CreateModelVersionInputBuilder,
 }
 impl CreateModelVersionFluentBuilder {
     /// Creates a new `CreateModelVersion`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_model_version::CreateModelVersion,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_model_version::CreateModelVersionError,
         >,
     > {
@@ -36,30 +36,33 @@ impl CreateModelVersionFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_model_version::CreateModelVersionOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_model_version::CreateModelVersionError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,21 +75,21 @@ impl CreateModelVersionFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_model_version::CreateModelVersionOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_model_version::CreateModelVersionError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The model ID. </p>
-    pub fn model_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.model_id(input.into());
         self
     }
     /// <p>The model ID. </p>
-    pub fn set_model_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_model_id(input);
         self
     }
@@ -98,7 +101,7 @@ impl CreateModelVersionFluentBuilder {
     /// <p>The model type.</p>
     pub fn set_model_type(
         mut self,
-        input: std::option::Option<crate::types::ModelTypeEnum>,
+        input: ::std::option::Option<crate::types::ModelTypeEnum>,
     ) -> Self {
         self.inner = self.inner.set_model_type(input);
         self
@@ -111,7 +114,7 @@ impl CreateModelVersionFluentBuilder {
     /// <p>The training data source location in Amazon S3. </p>
     pub fn set_training_data_source(
         mut self,
-        input: std::option::Option<crate::types::TrainingDataSourceEnum>,
+        input: ::std::option::Option<crate::types::TrainingDataSourceEnum>,
     ) -> Self {
         self.inner = self.inner.set_training_data_source(input);
         self
@@ -124,7 +127,7 @@ impl CreateModelVersionFluentBuilder {
     /// <p>The training data schema.</p>
     pub fn set_training_data_schema(
         mut self,
-        input: std::option::Option<crate::types::TrainingDataSchema>,
+        input: ::std::option::Option<crate::types::TrainingDataSchema>,
     ) -> Self {
         self.inner = self.inner.set_training_data_schema(input);
         self
@@ -137,7 +140,7 @@ impl CreateModelVersionFluentBuilder {
     /// <p>Details of the external events data used for model version training. Required if <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code>.</p>
     pub fn set_external_events_detail(
         mut self,
-        input: std::option::Option<crate::types::ExternalEventsDetail>,
+        input: ::std::option::Option<crate::types::ExternalEventsDetail>,
     ) -> Self {
         self.inner = self.inner.set_external_events_detail(input);
         self
@@ -150,7 +153,7 @@ impl CreateModelVersionFluentBuilder {
     /// <p>Details of the ingested events data used for model version training. Required if <code>trainingDataSource</code> is <code>INGESTED_EVENTS</code>.</p>
     pub fn set_ingested_events_detail(
         mut self,
-        input: std::option::Option<crate::types::IngestedEventsDetail>,
+        input: ::std::option::Option<crate::types::IngestedEventsDetail>,
     ) -> Self {
         self.inner = self.inner.set_ingested_events_detail(input);
         self
@@ -167,7 +170,7 @@ impl CreateModelVersionFluentBuilder {
     /// <p>A collection of key and value pairs.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self

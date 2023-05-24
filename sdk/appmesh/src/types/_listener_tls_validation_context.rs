@@ -2,24 +2,24 @@
 
 /// <p>An object that represents a listener's Transport Layer Security (TLS) validation context.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListenerTlsValidationContext {
     /// <p>A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS) certificate.</p>
     #[doc(hidden)]
-    pub trust: std::option::Option<crate::types::ListenerTlsValidationContextTrust>,
+    pub trust: ::std::option::Option<crate::types::ListenerTlsValidationContextTrust>,
     /// <p>A reference to an object that represents the SANs for a listener's Transport Layer Security (TLS) validation context.</p>
     #[doc(hidden)]
-    pub subject_alternative_names: std::option::Option<crate::types::SubjectAlternativeNames>,
+    pub subject_alternative_names: ::std::option::Option<crate::types::SubjectAlternativeNames>,
 }
 impl ListenerTlsValidationContext {
     /// <p>A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS) certificate.</p>
-    pub fn trust(&self) -> std::option::Option<&crate::types::ListenerTlsValidationContextTrust> {
+    pub fn trust(&self) -> ::std::option::Option<&crate::types::ListenerTlsValidationContextTrust> {
         self.trust.as_ref()
     }
     /// <p>A reference to an object that represents the SANs for a listener's Transport Layer Security (TLS) validation context.</p>
     pub fn subject_alternative_names(
         &self,
-    ) -> std::option::Option<&crate::types::SubjectAlternativeNames> {
+    ) -> ::std::option::Option<&crate::types::SubjectAlternativeNames> {
         self.subject_alternative_names.as_ref()
     }
 }
@@ -32,22 +32,24 @@ impl ListenerTlsValidationContext {
 
 /// A builder for [`ListenerTlsValidationContext`](crate::types::ListenerTlsValidationContext).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListenerTlsValidationContextBuilder {
-    pub(crate) trust: std::option::Option<crate::types::ListenerTlsValidationContextTrust>,
+    pub(crate) trust: ::std::option::Option<crate::types::ListenerTlsValidationContextTrust>,
     pub(crate) subject_alternative_names:
-        std::option::Option<crate::types::SubjectAlternativeNames>,
+        ::std::option::Option<crate::types::SubjectAlternativeNames>,
 }
 impl ListenerTlsValidationContextBuilder {
     /// <p>A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS) certificate.</p>
     pub fn trust(mut self, input: crate::types::ListenerTlsValidationContextTrust) -> Self {
-        self.trust = Some(input);
+        self.trust = ::std::option::Option::Some(input);
         self
     }
     /// <p>A reference to where to retrieve the trust chain when validating a peer’s Transport Layer Security (TLS) certificate.</p>
     pub fn set_trust(
         mut self,
-        input: std::option::Option<crate::types::ListenerTlsValidationContextTrust>,
+        input: ::std::option::Option<crate::types::ListenerTlsValidationContextTrust>,
     ) -> Self {
         self.trust = input;
         self
@@ -57,13 +59,13 @@ impl ListenerTlsValidationContextBuilder {
         mut self,
         input: crate::types::SubjectAlternativeNames,
     ) -> Self {
-        self.subject_alternative_names = Some(input);
+        self.subject_alternative_names = ::std::option::Option::Some(input);
         self
     }
     /// <p>A reference to an object that represents the SANs for a listener's Transport Layer Security (TLS) validation context.</p>
     pub fn set_subject_alternative_names(
         mut self,
-        input: std::option::Option<crate::types::SubjectAlternativeNames>,
+        input: ::std::option::Option<crate::types::SubjectAlternativeNames>,
     ) -> Self {
         self.subject_alternative_names = input;
         self

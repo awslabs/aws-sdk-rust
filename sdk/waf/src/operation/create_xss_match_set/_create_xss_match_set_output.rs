@@ -2,27 +2,27 @@
 
 /// <p>The response to a <code>CreateXssMatchSet</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateXssMatchSetOutput {
     /// <p>An <code>XssMatchSet</code>.</p>
     #[doc(hidden)]
-    pub xss_match_set: std::option::Option<crate::types::XssMatchSet>,
+    pub xss_match_set: ::std::option::Option<crate::types::XssMatchSet>,
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateXssMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
-    pub change_token: std::option::Option<std::string::String>,
+    pub change_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateXssMatchSetOutput {
     /// <p>An <code>XssMatchSet</code>.</p>
-    pub fn xss_match_set(&self) -> std::option::Option<&crate::types::XssMatchSet> {
+    pub fn xss_match_set(&self) -> ::std::option::Option<&crate::types::XssMatchSet> {
         self.xss_match_set.as_ref()
     }
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateXssMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
-    pub fn change_token(&self) -> std::option::Option<&str> {
+    pub fn change_token(&self) -> ::std::option::Option<&str> {
         self.change_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for CreateXssMatchSetOutput {
+impl ::aws_http::request_id::RequestId for CreateXssMatchSetOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -37,33 +37,35 @@ impl CreateXssMatchSetOutput {
 
 /// A builder for [`CreateXssMatchSetOutput`](crate::operation::create_xss_match_set::CreateXssMatchSetOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateXssMatchSetOutputBuilder {
-    pub(crate) xss_match_set: std::option::Option<crate::types::XssMatchSet>,
-    pub(crate) change_token: std::option::Option<std::string::String>,
+    pub(crate) xss_match_set: ::std::option::Option<crate::types::XssMatchSet>,
+    pub(crate) change_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateXssMatchSetOutputBuilder {
     /// <p>An <code>XssMatchSet</code>.</p>
     pub fn xss_match_set(mut self, input: crate::types::XssMatchSet) -> Self {
-        self.xss_match_set = Some(input);
+        self.xss_match_set = ::std::option::Option::Some(input);
         self
     }
     /// <p>An <code>XssMatchSet</code>.</p>
     pub fn set_xss_match_set(
         mut self,
-        input: std::option::Option<crate::types::XssMatchSet>,
+        input: ::std::option::Option<crate::types::XssMatchSet>,
     ) -> Self {
         self.xss_match_set = input;
         self
     }
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateXssMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
-    pub fn change_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.change_token = Some(input.into());
+    pub fn change_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.change_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateXssMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
-    pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_change_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.change_token = input;
         self
     }

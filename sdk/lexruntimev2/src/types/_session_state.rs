@@ -2,54 +2,56 @@
 
 /// <p>The state of the user's session with Amazon Lex V2.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SessionState {
     /// <p>The next step that Amazon Lex V2 should take in the conversation with a user.</p>
     #[doc(hidden)]
-    pub dialog_action: std::option::Option<crate::types::DialogAction>,
+    pub dialog_action: ::std::option::Option<crate::types::DialogAction>,
     /// <p>The active intent that Amazon Lex V2 is processing.</p>
     #[doc(hidden)]
-    pub intent: std::option::Option<crate::types::Intent>,
+    pub intent: ::std::option::Option<crate::types::Intent>,
     /// <p>One or more contexts that indicate to Amazon Lex V2 the context of a request. When a context is active, Amazon Lex V2 considers intents with the matching context as a trigger as the next intent in a session.</p>
     #[doc(hidden)]
-    pub active_contexts: std::option::Option<std::vec::Vec<crate::types::ActiveContext>>,
+    pub active_contexts: ::std::option::Option<::std::vec::Vec<crate::types::ActiveContext>>,
     /// <p>Map of key/value pairs representing session-specific context information. It contains application information passed between Amazon Lex V2 and a client application.</p>
     #[doc(hidden)]
-    pub session_attributes:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub session_attributes: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>A unique identifier for a specific request.</p>
     #[doc(hidden)]
-    pub originating_request_id: std::option::Option<std::string::String>,
+    pub originating_request_id: ::std::option::Option<::std::string::String>,
     /// <p>Hints for phrases that a customer is likely to use for a slot. Amazon Lex V2 uses the hints to help determine the correct value of a slot.</p>
     #[doc(hidden)]
-    pub runtime_hints: std::option::Option<crate::types::RuntimeHints>,
+    pub runtime_hints: ::std::option::Option<crate::types::RuntimeHints>,
 }
 impl SessionState {
     /// <p>The next step that Amazon Lex V2 should take in the conversation with a user.</p>
-    pub fn dialog_action(&self) -> std::option::Option<&crate::types::DialogAction> {
+    pub fn dialog_action(&self) -> ::std::option::Option<&crate::types::DialogAction> {
         self.dialog_action.as_ref()
     }
     /// <p>The active intent that Amazon Lex V2 is processing.</p>
-    pub fn intent(&self) -> std::option::Option<&crate::types::Intent> {
+    pub fn intent(&self) -> ::std::option::Option<&crate::types::Intent> {
         self.intent.as_ref()
     }
     /// <p>One or more contexts that indicate to Amazon Lex V2 the context of a request. When a context is active, Amazon Lex V2 considers intents with the matching context as a trigger as the next intent in a session.</p>
-    pub fn active_contexts(&self) -> std::option::Option<&[crate::types::ActiveContext]> {
+    pub fn active_contexts(&self) -> ::std::option::Option<&[crate::types::ActiveContext]> {
         self.active_contexts.as_deref()
     }
     /// <p>Map of key/value pairs representing session-specific context information. It contains application information passed between Amazon Lex V2 and a client application.</p>
     pub fn session_attributes(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.session_attributes.as_ref()
     }
     /// <p>A unique identifier for a specific request.</p>
-    pub fn originating_request_id(&self) -> std::option::Option<&str> {
+    pub fn originating_request_id(&self) -> ::std::option::Option<&str> {
         self.originating_request_id.as_deref()
     }
     /// <p>Hints for phrases that a customer is likely to use for a slot. Amazon Lex V2 uses the hints to help determine the correct value of a slot.</p>
-    pub fn runtime_hints(&self) -> std::option::Option<&crate::types::RuntimeHints> {
+    pub fn runtime_hints(&self) -> ::std::option::Option<&crate::types::RuntimeHints> {
         self.runtime_hints.as_ref()
     }
 }
@@ -62,37 +64,40 @@ impl SessionState {
 
 /// A builder for [`SessionState`](crate::types::SessionState).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SessionStateBuilder {
-    pub(crate) dialog_action: std::option::Option<crate::types::DialogAction>,
-    pub(crate) intent: std::option::Option<crate::types::Intent>,
-    pub(crate) active_contexts: std::option::Option<std::vec::Vec<crate::types::ActiveContext>>,
-    pub(crate) session_attributes:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) originating_request_id: std::option::Option<std::string::String>,
-    pub(crate) runtime_hints: std::option::Option<crate::types::RuntimeHints>,
+    pub(crate) dialog_action: ::std::option::Option<crate::types::DialogAction>,
+    pub(crate) intent: ::std::option::Option<crate::types::Intent>,
+    pub(crate) active_contexts: ::std::option::Option<::std::vec::Vec<crate::types::ActiveContext>>,
+    pub(crate) session_attributes: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) originating_request_id: ::std::option::Option<::std::string::String>,
+    pub(crate) runtime_hints: ::std::option::Option<crate::types::RuntimeHints>,
 }
 impl SessionStateBuilder {
     /// <p>The next step that Amazon Lex V2 should take in the conversation with a user.</p>
     pub fn dialog_action(mut self, input: crate::types::DialogAction) -> Self {
-        self.dialog_action = Some(input);
+        self.dialog_action = ::std::option::Option::Some(input);
         self
     }
     /// <p>The next step that Amazon Lex V2 should take in the conversation with a user.</p>
     pub fn set_dialog_action(
         mut self,
-        input: std::option::Option<crate::types::DialogAction>,
+        input: ::std::option::Option<crate::types::DialogAction>,
     ) -> Self {
         self.dialog_action = input;
         self
     }
     /// <p>The active intent that Amazon Lex V2 is processing.</p>
     pub fn intent(mut self, input: crate::types::Intent) -> Self {
-        self.intent = Some(input);
+        self.intent = ::std::option::Option::Some(input);
         self
     }
     /// <p>The active intent that Amazon Lex V2 is processing.</p>
-    pub fn set_intent(mut self, input: std::option::Option<crate::types::Intent>) -> Self {
+    pub fn set_intent(mut self, input: ::std::option::Option<crate::types::Intent>) -> Self {
         self.intent = input;
         self
     }
@@ -104,13 +109,13 @@ impl SessionStateBuilder {
     pub fn active_contexts(mut self, input: crate::types::ActiveContext) -> Self {
         let mut v = self.active_contexts.unwrap_or_default();
         v.push(input);
-        self.active_contexts = Some(v);
+        self.active_contexts = ::std::option::Option::Some(v);
         self
     }
     /// <p>One or more contexts that indicate to Amazon Lex V2 the context of a request. When a context is active, Amazon Lex V2 considers intents with the matching context as a trigger as the next intent in a session.</p>
     pub fn set_active_contexts(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ActiveContext>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ActiveContext>>,
     ) -> Self {
         self.active_contexts = input;
         self
@@ -122,46 +127,49 @@ impl SessionStateBuilder {
     /// <p>Map of key/value pairs representing session-specific context information. It contains application information passed between Amazon Lex V2 and a client application.</p>
     pub fn session_attributes(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.session_attributes.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.session_attributes = Some(hash_map);
+        self.session_attributes = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Map of key/value pairs representing session-specific context information. It contains application information passed between Amazon Lex V2 and a client application.</p>
     pub fn set_session_attributes(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.session_attributes = input;
         self
     }
     /// <p>A unique identifier for a specific request.</p>
-    pub fn originating_request_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.originating_request_id = Some(input.into());
+    pub fn originating_request_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.originating_request_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for a specific request.</p>
     pub fn set_originating_request_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.originating_request_id = input;
         self
     }
     /// <p>Hints for phrases that a customer is likely to use for a slot. Amazon Lex V2 uses the hints to help determine the correct value of a slot.</p>
     pub fn runtime_hints(mut self, input: crate::types::RuntimeHints) -> Self {
-        self.runtime_hints = Some(input);
+        self.runtime_hints = ::std::option::Option::Some(input);
         self
     }
     /// <p>Hints for phrases that a customer is likely to use for a slot. Amazon Lex V2 uses the hints to help determine the correct value of a slot.</p>
     pub fn set_runtime_hints(
         mut self,
-        input: std::option::Option<crate::types::RuntimeHints>,
+        input: ::std::option::Option<crate::types::RuntimeHints>,
     ) -> Self {
         self.runtime_hints = input;
         self

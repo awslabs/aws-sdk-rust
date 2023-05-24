@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteReceiptFilter`](crate::operation::delete_receipt_filter::builders::DeleteReceiptFilterFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`filter_name(impl Into<String>)`](crate::operation::delete_receipt_filter::builders::DeleteReceiptFilterFluentBuilder::filter_name) / [`set_filter_name(Option<String>)`](crate::operation::delete_receipt_filter::builders::DeleteReceiptFilterFluentBuilder::set_filter_name): <p>The name of the IP address filter to delete.</p>
+    ///   - [`filter_name(impl ::std::convert::Into<String>)`](crate::operation::delete_receipt_filter::builders::DeleteReceiptFilterFluentBuilder::filter_name) / [`set_filter_name(Option<String>)`](crate::operation::delete_receipt_filter::builders::DeleteReceiptFilterFluentBuilder::set_filter_name): <p>The name of the IP address filter to delete.</p>
     /// - On success, responds with [`DeleteReceiptFilterOutput`](crate::operation::delete_receipt_filter::DeleteReceiptFilterOutput)
     /// - On failure, responds with [`SdkError<DeleteReceiptFilterError>`](crate::operation::delete_receipt_filter::DeleteReceiptFilterError)
     pub fn delete_receipt_filter(

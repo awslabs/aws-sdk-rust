@@ -2,7 +2,7 @@
 
 /// <p> The connector metadata specific to Trend Micro. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TrendmicroMetadata {}
 impl TrendmicroMetadata {
     /// Creates a new builder-style object to manufacture [`TrendmicroMetadata`](crate::types::TrendmicroMetadata).
@@ -13,7 +13,9 @@ impl TrendmicroMetadata {
 
 /// A builder for [`TrendmicroMetadata`](crate::types::TrendmicroMetadata).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TrendmicroMetadataBuilder {}
 impl TrendmicroMetadataBuilder {
     /// Consumes the builder and constructs a [`TrendmicroMetadata`](crate::types::TrendmicroMetadata).

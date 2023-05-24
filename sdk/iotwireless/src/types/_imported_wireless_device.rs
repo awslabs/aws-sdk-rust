@@ -2,15 +2,15 @@
 
 /// <p>Information about a wireless device that has been added to an import task.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportedWirelessDevice {
     /// <p>The Sidewalk-related information about a device that has been added to an import task.</p>
     #[doc(hidden)]
-    pub sidewalk: std::option::Option<crate::types::ImportedSidewalkDevice>,
+    pub sidewalk: ::std::option::Option<crate::types::ImportedSidewalkDevice>,
 }
 impl ImportedWirelessDevice {
     /// <p>The Sidewalk-related information about a device that has been added to an import task.</p>
-    pub fn sidewalk(&self) -> std::option::Option<&crate::types::ImportedSidewalkDevice> {
+    pub fn sidewalk(&self) -> ::std::option::Option<&crate::types::ImportedSidewalkDevice> {
         self.sidewalk.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl ImportedWirelessDevice {
 
 /// A builder for [`ImportedWirelessDevice`](crate::types::ImportedWirelessDevice).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ImportedWirelessDeviceBuilder {
-    pub(crate) sidewalk: std::option::Option<crate::types::ImportedSidewalkDevice>,
+    pub(crate) sidewalk: ::std::option::Option<crate::types::ImportedSidewalkDevice>,
 }
 impl ImportedWirelessDeviceBuilder {
     /// <p>The Sidewalk-related information about a device that has been added to an import task.</p>
     pub fn sidewalk(mut self, input: crate::types::ImportedSidewalkDevice) -> Self {
-        self.sidewalk = Some(input);
+        self.sidewalk = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Sidewalk-related information about a device that has been added to an import task.</p>
     pub fn set_sidewalk(
         mut self,
-        input: std::option::Option<crate::types::ImportedSidewalkDevice>,
+        input: ::std::option::Option<crate::types::ImportedSidewalkDevice>,
     ) -> Self {
         self.sidewalk = input;
         self

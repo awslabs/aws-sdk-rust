@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateReservation`](crate::operation::update_reservation::builders::UpdateReservationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::update_reservation::builders::UpdateReservationFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_reservation::builders::UpdateReservationFluentBuilder::set_name): Name of the reservation
+    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::update_reservation::builders::UpdateReservationFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_reservation::builders::UpdateReservationFluentBuilder::set_name): Name of the reservation
     ///   - [`renewal_settings(RenewalSettings)`](crate::operation::update_reservation::builders::UpdateReservationFluentBuilder::renewal_settings) / [`set_renewal_settings(Option<RenewalSettings>)`](crate::operation::update_reservation::builders::UpdateReservationFluentBuilder::set_renewal_settings): Renewal settings for the reservation
-    ///   - [`reservation_id(impl Into<String>)`](crate::operation::update_reservation::builders::UpdateReservationFluentBuilder::reservation_id) / [`set_reservation_id(Option<String>)`](crate::operation::update_reservation::builders::UpdateReservationFluentBuilder::set_reservation_id): Unique reservation ID, e.g. '1234567'
+    ///   - [`reservation_id(impl ::std::convert::Into<String>)`](crate::operation::update_reservation::builders::UpdateReservationFluentBuilder::reservation_id) / [`set_reservation_id(Option<String>)`](crate::operation::update_reservation::builders::UpdateReservationFluentBuilder::set_reservation_id): Unique reservation ID, e.g. '1234567'
     /// - On success, responds with [`UpdateReservationOutput`](crate::operation::update_reservation::UpdateReservationOutput) with field(s):
     ///   - [`reservation(Option<Reservation>)`](crate::operation::update_reservation::UpdateReservationOutput::reservation): Reserved resources available to use
     /// - On failure, responds with [`SdkError<UpdateReservationError>`](crate::operation::update_reservation::UpdateReservationError)

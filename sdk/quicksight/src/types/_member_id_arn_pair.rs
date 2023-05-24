@@ -2,22 +2,22 @@
 
 /// <p>An object that consists of a member Amazon Resource Name (ARN) and a member ID.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MemberIdArnPair {
     /// <p>The ID of the member.</p>
     #[doc(hidden)]
-    pub member_id: std::option::Option<std::string::String>,
+    pub member_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the member.</p>
     #[doc(hidden)]
-    pub member_arn: std::option::Option<std::string::String>,
+    pub member_arn: ::std::option::Option<::std::string::String>,
 }
 impl MemberIdArnPair {
     /// <p>The ID of the member.</p>
-    pub fn member_id(&self) -> std::option::Option<&str> {
+    pub fn member_id(&self) -> ::std::option::Option<&str> {
         self.member_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the member.</p>
-    pub fn member_arn(&self) -> std::option::Option<&str> {
+    pub fn member_arn(&self) -> ::std::option::Option<&str> {
         self.member_arn.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl MemberIdArnPair {
 
 /// A builder for [`MemberIdArnPair`](crate::types::MemberIdArnPair).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MemberIdArnPairBuilder {
-    pub(crate) member_id: std::option::Option<std::string::String>,
-    pub(crate) member_arn: std::option::Option<std::string::String>,
+    pub(crate) member_id: ::std::option::Option<::std::string::String>,
+    pub(crate) member_arn: ::std::option::Option<::std::string::String>,
 }
 impl MemberIdArnPairBuilder {
     /// <p>The ID of the member.</p>
-    pub fn member_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.member_id = Some(input.into());
+    pub fn member_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.member_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the member.</p>
-    pub fn set_member_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_member_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.member_id = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the member.</p>
-    pub fn member_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.member_arn = Some(input.into());
+    pub fn member_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.member_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the member.</p>
-    pub fn set_member_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_member_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.member_arn = input;
         self
     }

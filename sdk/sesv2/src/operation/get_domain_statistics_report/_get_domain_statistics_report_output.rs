@@ -2,27 +2,27 @@
 
 /// <p>An object that includes statistics that are related to the domain that you specified.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDomainStatisticsReportOutput {
     /// <p>An object that contains deliverability metrics for the domain that you specified. The data in this object is a summary of all of the data that was collected from the <code>StartDate</code> to the <code>EndDate</code>.</p>
     #[doc(hidden)]
-    pub overall_volume: std::option::Option<crate::types::OverallVolume>,
+    pub overall_volume: ::std::option::Option<crate::types::OverallVolume>,
     /// <p>An object that contains deliverability metrics for the domain that you specified. This object contains data for each day, starting on the <code>StartDate</code> and ending on the <code>EndDate</code>.</p>
     #[doc(hidden)]
-    pub daily_volumes: std::option::Option<std::vec::Vec<crate::types::DailyVolume>>,
+    pub daily_volumes: ::std::option::Option<::std::vec::Vec<crate::types::DailyVolume>>,
     _request_id: Option<String>,
 }
 impl GetDomainStatisticsReportOutput {
     /// <p>An object that contains deliverability metrics for the domain that you specified. The data in this object is a summary of all of the data that was collected from the <code>StartDate</code> to the <code>EndDate</code>.</p>
-    pub fn overall_volume(&self) -> std::option::Option<&crate::types::OverallVolume> {
+    pub fn overall_volume(&self) -> ::std::option::Option<&crate::types::OverallVolume> {
         self.overall_volume.as_ref()
     }
     /// <p>An object that contains deliverability metrics for the domain that you specified. This object contains data for each day, starting on the <code>StartDate</code> and ending on the <code>EndDate</code>.</p>
-    pub fn daily_volumes(&self) -> std::option::Option<&[crate::types::DailyVolume]> {
+    pub fn daily_volumes(&self) -> ::std::option::Option<&[crate::types::DailyVolume]> {
         self.daily_volumes.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for GetDomainStatisticsReportOutput {
+impl ::aws_http::request_id::RequestId for GetDomainStatisticsReportOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -36,22 +36,24 @@ impl GetDomainStatisticsReportOutput {
 
 /// A builder for [`GetDomainStatisticsReportOutput`](crate::operation::get_domain_statistics_report::GetDomainStatisticsReportOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetDomainStatisticsReportOutputBuilder {
-    pub(crate) overall_volume: std::option::Option<crate::types::OverallVolume>,
-    pub(crate) daily_volumes: std::option::Option<std::vec::Vec<crate::types::DailyVolume>>,
+    pub(crate) overall_volume: ::std::option::Option<crate::types::OverallVolume>,
+    pub(crate) daily_volumes: ::std::option::Option<::std::vec::Vec<crate::types::DailyVolume>>,
     _request_id: Option<String>,
 }
 impl GetDomainStatisticsReportOutputBuilder {
     /// <p>An object that contains deliverability metrics for the domain that you specified. The data in this object is a summary of all of the data that was collected from the <code>StartDate</code> to the <code>EndDate</code>.</p>
     pub fn overall_volume(mut self, input: crate::types::OverallVolume) -> Self {
-        self.overall_volume = Some(input);
+        self.overall_volume = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that contains deliverability metrics for the domain that you specified. The data in this object is a summary of all of the data that was collected from the <code>StartDate</code> to the <code>EndDate</code>.</p>
     pub fn set_overall_volume(
         mut self,
-        input: std::option::Option<crate::types::OverallVolume>,
+        input: ::std::option::Option<crate::types::OverallVolume>,
     ) -> Self {
         self.overall_volume = input;
         self
@@ -64,13 +66,13 @@ impl GetDomainStatisticsReportOutputBuilder {
     pub fn daily_volumes(mut self, input: crate::types::DailyVolume) -> Self {
         let mut v = self.daily_volumes.unwrap_or_default();
         v.push(input);
-        self.daily_volumes = Some(v);
+        self.daily_volumes = ::std::option::Option::Some(v);
         self
     }
     /// <p>An object that contains deliverability metrics for the domain that you specified. This object contains data for each day, starting on the <code>StartDate</code> and ending on the <code>EndDate</code>.</p>
     pub fn set_daily_volumes(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DailyVolume>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DailyVolume>>,
     ) -> Self {
         self.daily_volumes = input;
         self

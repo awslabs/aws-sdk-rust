@@ -6,56 +6,59 @@ pub use crate::operation::create_link::_create_link_input::CreateLinkInputBuilde
 /// Fluent builder constructing a request to `CreateLink`.
 ///
 /// <p>Creates a new link for a specified site.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateLinkFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_link::builders::CreateLinkInputBuilder,
 }
 impl CreateLinkFluentBuilder {
     /// Creates a new `CreateLink`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_link::CreateLink,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_link::CreateLinkError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_link::CreateLinkError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_link::CreateLinkOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_link::CreateLinkError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_link::CreateLinkError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,46 +71,49 @@ impl CreateLinkFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_link::CreateLinkOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_link::CreateLinkError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_link::CreateLinkError>,
     > {
         self.send_middleware().await
     }
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn global_network_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.global_network_id(input.into());
         self
     }
     /// <p>The ID of the global network.</p>
     pub fn set_global_network_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_global_network_id(input);
         self
     }
     /// <p>A description of the link.</p>
     /// <p>Constraints: Maximum length of 256 characters.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>A description of the link.</p>
     /// <p>Constraints: Maximum length of 256 characters.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
     /// <p>The type of the link.</p>
     /// <p>Constraints: Maximum length of 128 characters. Cannot include the following characters: | \ ^</p>
-    pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.r#type(input.into());
         self
     }
     /// <p>The type of the link.</p>
     /// <p>Constraints: Maximum length of 128 characters. Cannot include the following characters: | \ ^</p>
-    pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }
@@ -117,29 +123,29 @@ impl CreateLinkFluentBuilder {
         self
     }
     /// <p> The upload speed and download speed in Mbps. </p>
-    pub fn set_bandwidth(mut self, input: std::option::Option<crate::types::Bandwidth>) -> Self {
+    pub fn set_bandwidth(mut self, input: ::std::option::Option<crate::types::Bandwidth>) -> Self {
         self.inner = self.inner.set_bandwidth(input);
         self
     }
     /// <p>The provider of the link.</p>
     /// <p>Constraints: Maximum length of 128 characters. Cannot include the following characters: | \ ^</p>
-    pub fn provider(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn provider(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.provider(input.into());
         self
     }
     /// <p>The provider of the link.</p>
     /// <p>Constraints: Maximum length of 128 characters. Cannot include the following characters: | \ ^</p>
-    pub fn set_provider(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_provider(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_provider(input);
         self
     }
     /// <p>The ID of the site.</p>
-    pub fn site_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn site_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.site_id(input.into());
         self
     }
     /// <p>The ID of the site.</p>
-    pub fn set_site_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_site_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_site_id(input);
         self
     }
@@ -155,7 +161,7 @@ impl CreateLinkFluentBuilder {
     /// <p>The tags to apply to the resource during creation.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self

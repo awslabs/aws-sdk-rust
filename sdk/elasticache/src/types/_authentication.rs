@@ -2,22 +2,22 @@
 
 /// <p>Indicates whether the user requires a password to authenticate.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Authentication {
     /// <p>Indicates whether the user requires a password to authenticate.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::AuthenticationType>,
+    pub r#type: ::std::option::Option<crate::types::AuthenticationType>,
     /// <p>The number of passwords belonging to the user. The maximum is two.</p>
     #[doc(hidden)]
-    pub password_count: std::option::Option<i32>,
+    pub password_count: ::std::option::Option<i32>,
 }
 impl Authentication {
     /// <p>Indicates whether the user requires a password to authenticate.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::AuthenticationType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::AuthenticationType> {
         self.r#type.as_ref()
     }
     /// <p>The number of passwords belonging to the user. The maximum is two.</p>
-    pub fn password_count(&self) -> std::option::Option<i32> {
+    pub fn password_count(&self) -> ::std::option::Option<i32> {
         self.password_count
     }
 }
@@ -30,32 +30,34 @@ impl Authentication {
 
 /// A builder for [`Authentication`](crate::types::Authentication).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AuthenticationBuilder {
-    pub(crate) r#type: std::option::Option<crate::types::AuthenticationType>,
-    pub(crate) password_count: std::option::Option<i32>,
+    pub(crate) r#type: ::std::option::Option<crate::types::AuthenticationType>,
+    pub(crate) password_count: ::std::option::Option<i32>,
 }
 impl AuthenticationBuilder {
     /// <p>Indicates whether the user requires a password to authenticate.</p>
     pub fn r#type(mut self, input: crate::types::AuthenticationType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether the user requires a password to authenticate.</p>
     pub fn set_type(
         mut self,
-        input: std::option::Option<crate::types::AuthenticationType>,
+        input: ::std::option::Option<crate::types::AuthenticationType>,
     ) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The number of passwords belonging to the user. The maximum is two.</p>
     pub fn password_count(mut self, input: i32) -> Self {
-        self.password_count = Some(input);
+        self.password_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of passwords belonging to the user. The maximum is two.</p>
-    pub fn set_password_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_password_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.password_count = input;
         self
     }

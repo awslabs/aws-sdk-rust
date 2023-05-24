@@ -2,7 +2,7 @@
 
 /// <p>The detailed status of the stack instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StackInstanceComprehensiveStatus {
     /// <ul>
     /// <li> <p> <code>CANCELLED</code>: The operation in the specified account and Region has been canceled. This is either because a user has stopped the stack set operation, or because the failure tolerance of the stack set operation has been exceeded.</p> </li>
@@ -13,7 +13,7 @@ pub struct StackInstanceComprehensiveStatus {
     /// <li> <p> <code>SUCCEEDED</code>: The operation in the specified account and Region completed successfully.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub detailed_status: std::option::Option<crate::types::StackInstanceDetailedStatus>,
+    pub detailed_status: ::std::option::Option<crate::types::StackInstanceDetailedStatus>,
 }
 impl StackInstanceComprehensiveStatus {
     /// <ul>
@@ -26,7 +26,7 @@ impl StackInstanceComprehensiveStatus {
     /// </ul>
     pub fn detailed_status(
         &self,
-    ) -> std::option::Option<&crate::types::StackInstanceDetailedStatus> {
+    ) -> ::std::option::Option<&crate::types::StackInstanceDetailedStatus> {
         self.detailed_status.as_ref()
     }
 }
@@ -39,9 +39,11 @@ impl StackInstanceComprehensiveStatus {
 
 /// A builder for [`StackInstanceComprehensiveStatus`](crate::types::StackInstanceComprehensiveStatus).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StackInstanceComprehensiveStatusBuilder {
-    pub(crate) detailed_status: std::option::Option<crate::types::StackInstanceDetailedStatus>,
+    pub(crate) detailed_status: ::std::option::Option<crate::types::StackInstanceDetailedStatus>,
 }
 impl StackInstanceComprehensiveStatusBuilder {
     /// <ul>
@@ -53,7 +55,7 @@ impl StackInstanceComprehensiveStatusBuilder {
     /// <li> <p> <code>SUCCEEDED</code>: The operation in the specified account and Region completed successfully.</p> </li>
     /// </ul>
     pub fn detailed_status(mut self, input: crate::types::StackInstanceDetailedStatus) -> Self {
-        self.detailed_status = Some(input);
+        self.detailed_status = ::std::option::Option::Some(input);
         self
     }
     /// <ul>
@@ -66,7 +68,7 @@ impl StackInstanceComprehensiveStatusBuilder {
     /// </ul>
     pub fn set_detailed_status(
         mut self,
-        input: std::option::Option<crate::types::StackInstanceDetailedStatus>,
+        input: ::std::option::Option<crate::types::StackInstanceDetailedStatus>,
     ) -> Self {
         self.detailed_status = input;
         self

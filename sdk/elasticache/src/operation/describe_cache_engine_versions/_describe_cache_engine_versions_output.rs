@@ -2,29 +2,30 @@
 
 /// <p>Represents the output of a <code>DescribeCacheEngineVersions</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeCacheEngineVersionsOutput {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
     #[doc(hidden)]
-    pub marker: std::option::Option<std::string::String>,
+    pub marker: ::std::option::Option<::std::string::String>,
     /// <p>A list of cache engine version details. Each element in the list contains detailed information about one cache engine version.</p>
     #[doc(hidden)]
-    pub cache_engine_versions: std::option::Option<std::vec::Vec<crate::types::CacheEngineVersion>>,
+    pub cache_engine_versions:
+        ::std::option::Option<::std::vec::Vec<crate::types::CacheEngineVersion>>,
     _request_id: Option<String>,
 }
 impl DescribeCacheEngineVersionsOutput {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
     /// <p>A list of cache engine version details. Each element in the list contains detailed information about one cache engine version.</p>
     pub fn cache_engine_versions(
         &self,
-    ) -> std::option::Option<&[crate::types::CacheEngineVersion]> {
+    ) -> ::std::option::Option<&[crate::types::CacheEngineVersion]> {
         self.cache_engine_versions.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeCacheEngineVersionsOutput {
+impl ::aws_http::request_id::RequestId for DescribeCacheEngineVersionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -38,21 +39,23 @@ impl DescribeCacheEngineVersionsOutput {
 
 /// A builder for [`DescribeCacheEngineVersionsOutput`](crate::operation::describe_cache_engine_versions::DescribeCacheEngineVersionsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeCacheEngineVersionsOutputBuilder {
-    pub(crate) marker: std::option::Option<std::string::String>,
+    pub(crate) marker: ::std::option::Option<::std::string::String>,
     pub(crate) cache_engine_versions:
-        std::option::Option<std::vec::Vec<crate::types::CacheEngineVersion>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::CacheEngineVersion>>,
     _request_id: Option<String>,
 }
 impl DescribeCacheEngineVersionsOutputBuilder {
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
-    pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-        self.marker = Some(input.into());
+    pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Provides an identifier to allow retrieval of paginated results.</p>
-    pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
     }
@@ -64,13 +67,13 @@ impl DescribeCacheEngineVersionsOutputBuilder {
     pub fn cache_engine_versions(mut self, input: crate::types::CacheEngineVersion) -> Self {
         let mut v = self.cache_engine_versions.unwrap_or_default();
         v.push(input);
-        self.cache_engine_versions = Some(v);
+        self.cache_engine_versions = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of cache engine version details. Each element in the list contains detailed information about one cache engine version.</p>
     pub fn set_cache_engine_versions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CacheEngineVersion>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::CacheEngineVersion>>,
     ) -> Self {
         self.cache_engine_versions = input;
         self

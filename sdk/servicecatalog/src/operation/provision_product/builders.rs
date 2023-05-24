@@ -10,29 +10,29 @@ pub use crate::operation::provision_product::_provision_product_input::Provision
 /// <p> If the request contains a tag key with an empty list of values, there's a tag conflict for that key. Don't include conflicted keys as tags, or this will cause the error "Parameter validation failed: Missing required parameter in Tags[<i>N</i>]:<i>Value</i>". </p> <note>
 /// <p> When provisioning a product that's been added to a portfolio, you must grant your user, group, or role access to the portfolio. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/catalogs_portfolios_users.html">Granting users access</a> in the <i>Service Catalog User Guide</i>. </p>
 /// </note>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ProvisionProductFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::provision_product::builders::ProvisionProductInputBuilder,
 }
 impl ProvisionProductFluentBuilder {
     /// Creates a new `ProvisionProduct`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::provision_product::ProvisionProduct,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::provision_product::ProvisionProductError,
         >,
     > {
@@ -40,30 +40,33 @@ impl ProvisionProductFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::provision_product::ProvisionProductOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::provision_product::ProvisionProductError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -76,9 +79,9 @@ impl ProvisionProductFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::provision_product::ProvisionProductOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::provision_product::ProvisionProductError,
         >,
     > {
@@ -89,7 +92,10 @@ impl ProvisionProductFluentBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn accept_language(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.accept_language(input.into());
         self
     }
@@ -98,85 +104,97 @@ impl ProvisionProductFluentBuilder {
     /// <li> <p> <code>jp</code> - Japanese</p> </li>
     /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn set_accept_language(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_accept_language(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_accept_language(input);
         self
     }
     /// <p>The product identifier. You must provide the name or ID, but not both.</p>
-    pub fn product_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn product_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.product_id(input.into());
         self
     }
     /// <p>The product identifier. You must provide the name or ID, but not both.</p>
-    pub fn set_product_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_product_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_product_id(input);
         self
     }
     /// <p>The name of the product. You must provide the name or ID, but not both.</p>
-    pub fn product_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn product_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.product_name(input.into());
         self
     }
     /// <p>The name of the product. You must provide the name or ID, but not both.</p>
-    pub fn set_product_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_product_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_product_name(input);
         self
     }
     /// <p>The identifier of the provisioning artifact. You must provide the name or ID, but not both.</p>
-    pub fn provisioning_artifact_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn provisioning_artifact_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.provisioning_artifact_id(input.into());
         self
     }
     /// <p>The identifier of the provisioning artifact. You must provide the name or ID, but not both.</p>
     pub fn set_provisioning_artifact_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_provisioning_artifact_id(input);
         self
     }
     /// <p>The name of the provisioning artifact. You must provide the name or ID, but not both.</p>
-    pub fn provisioning_artifact_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn provisioning_artifact_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.provisioning_artifact_name(input.into());
         self
     }
     /// <p>The name of the provisioning artifact. You must provide the name or ID, but not both.</p>
     pub fn set_provisioning_artifact_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_provisioning_artifact_name(input);
         self
     }
     /// <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path. To list the paths for a product, use <code>ListLaunchPaths</code>. You must provide the name or ID, but not both.</p>
-    pub fn path_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn path_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.path_id(input.into());
         self
     }
     /// <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path. To list the paths for a product, use <code>ListLaunchPaths</code>. You must provide the name or ID, but not both.</p>
-    pub fn set_path_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_path_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_path_id(input);
         self
     }
     /// <p>The name of the path. You must provide the name or ID, but not both.</p>
-    pub fn path_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn path_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.path_name(input.into());
         self
     }
     /// <p>The name of the path. You must provide the name or ID, but not both.</p>
-    pub fn set_path_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_path_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_path_name(input);
         self
     }
     /// <p>A user-friendly name for the provisioned product. This value must be unique for the Amazon Web Services account and cannot be updated after the product is provisioned.</p>
-    pub fn provisioned_product_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn provisioned_product_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.provisioned_product_name(input.into());
         self
     }
     /// <p>A user-friendly name for the provisioned product. This value must be unique for the Amazon Web Services account and cannot be updated after the product is provisioned.</p>
     pub fn set_provisioned_product_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_provisioned_product_name(input);
         self
@@ -193,7 +211,7 @@ impl ProvisionProductFluentBuilder {
     /// <p>Parameters specified by the administrator that are required for provisioning the product.</p>
     pub fn set_provisioning_parameters(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ProvisioningParameter>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ProvisioningParameter>>,
     ) -> Self {
         self.inner = self.inner.set_provisioning_parameters(input);
         self
@@ -209,7 +227,7 @@ impl ProvisionProductFluentBuilder {
     /// <p>An object that contains information about the provisioning preferences for a stack set.</p>
     pub fn set_provisioning_preferences(
         mut self,
-        input: std::option::Option<crate::types::ProvisioningPreferences>,
+        input: ::std::option::Option<crate::types::ProvisioningPreferences>,
     ) -> Self {
         self.inner = self.inner.set_provisioning_preferences(input);
         self
@@ -226,7 +244,7 @@ impl ProvisionProductFluentBuilder {
     /// <p>One or more tags.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
@@ -236,25 +254,34 @@ impl ProvisionProductFluentBuilder {
     /// To override the contents of this collection use [`set_notification_arns`](Self::set_notification_arns).
     ///
     /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related events.</p>
-    pub fn notification_arns(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn notification_arns(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.notification_arns(input.into());
         self
     }
     /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related events.</p>
     pub fn set_notification_arns(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_notification_arns(input);
         self
     }
     /// <p>An idempotency token that uniquely identifies the provisioning request.</p>
-    pub fn provision_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn provision_token(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.provision_token(input.into());
         self
     }
     /// <p>An idempotency token that uniquely identifies the provisioning request.</p>
-    pub fn set_provision_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_provision_token(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_provision_token(input);
         self
     }

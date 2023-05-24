@@ -2,7 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_set_ip_address_type_http_error(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::set_ip_address_type::SetIpAddressTypeOutput,
@@ -15,7 +15,7 @@ pub fn de_set_ip_address_type_http_error(
         _response_body,
     )
     .map_err(crate::operation::set_ip_address_type::SetIpAddressTypeError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
+    generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
@@ -83,7 +83,7 @@ pub fn de_set_ip_address_type_http_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_set_ip_address_type_http_response_with_props(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::set_ip_address_type::SetIpAddressTypeOutput,
@@ -100,7 +100,7 @@ pub fn de_set_ip_address_type_http_response_with_props(
         )
         .map_err(crate::operation::set_ip_address_type::SetIpAddressTypeError::unhandled)?;
         output._set_request_id(
-            aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
+            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
         );
         output.build()
     })
@@ -112,16 +112,16 @@ pub fn de_set_ip_address_type(
     mut builder: crate::operation::set_ip_address_type::builders::SetIpAddressTypeOutputBuilder,
 ) -> Result<
     crate::operation::set_ip_address_type::builders::SetIpAddressTypeOutputBuilder,
-    aws_smithy_xml::decode::XmlDecodeError,
+    ::aws_smithy_xml::decode::XmlDecodeError,
 > {
-    let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
+    let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("SetIpAddressTypeResponse")) {
-        return Err(aws_smithy_xml::decode::XmlDecodeError::custom(format!(
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected SetIpAddressTypeResponse got {:?}",
             start_el
         )));
@@ -129,7 +129,7 @@ pub fn de_set_ip_address_type(
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("SetIpAddressTypeResult")) {
-            return Err(aws_smithy_xml::decode::XmlDecodeError::custom(format!(
+            return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
                 "invalid result, expected SetIpAddressTypeResult got {:?}",
                 start_el
             )));
@@ -139,9 +139,9 @@ pub fn de_set_ip_address_type(
             s if s.matches("IpAddressType") /* IpAddressType com.amazonaws.elasticloadbalancingv2.synthetic#SetIpAddressTypeOutput$IpAddressType */ =>  {
                 let var_1 =
                     Some(
-                        Result::<crate::types::IpAddressType, aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                        Result::<crate::types::IpAddressType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::IpAddressType::from(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
                         )
                         ?
@@ -154,7 +154,7 @@ pub fn de_set_ip_address_type(
         }
         }
     } else {
-        return Err(aws_smithy_xml::decode::XmlDecodeError::custom(
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(
             "expected SetIpAddressTypeResult tag",
         ));
     };

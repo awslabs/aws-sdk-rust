@@ -6,56 +6,59 @@ pub use crate::operation::create_artifact::_create_artifact_input::CreateArtifac
 /// Fluent builder constructing a request to `CreateArtifact`.
 ///
 /// <p>Creates an <i>artifact</i>. An artifact is a lineage tracking entity that represents a URI addressable object or data. Some examples are the S3 URI of a dataset and the ECR registry path of an image. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking.html">Amazon SageMaker ML Lineage Tracking</a>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateArtifactFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_artifact::builders::CreateArtifactInputBuilder,
 }
 impl CreateArtifactFluentBuilder {
     /// Creates a new `CreateArtifact`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_artifact::CreateArtifact,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_artifact::CreateArtifactError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_artifact::CreateArtifactError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_artifact::CreateArtifactOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_artifact::CreateArtifactError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_artifact::CreateArtifactError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,19 +71,25 @@ impl CreateArtifactFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_artifact::CreateArtifactOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_artifact::CreateArtifactError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_artifact::CreateArtifactError>,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the artifact. Must be unique to your account in an Amazon Web Services Region.</p>
-    pub fn artifact_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn artifact_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.artifact_name(input.into());
         self
     }
     /// <p>The name of the artifact. Must be unique to your account in an Amazon Web Services Region.</p>
-    pub fn set_artifact_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_artifact_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_artifact_name(input);
         self
     }
@@ -90,17 +99,26 @@ impl CreateArtifactFluentBuilder {
         self
     }
     /// <p>The ID, ID type, and URI of the source.</p>
-    pub fn set_source(mut self, input: std::option::Option<crate::types::ArtifactSource>) -> Self {
+    pub fn set_source(
+        mut self,
+        input: ::std::option::Option<crate::types::ArtifactSource>,
+    ) -> Self {
         self.inner = self.inner.set_source(input);
         self
     }
     /// <p>The artifact type.</p>
-    pub fn artifact_type(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn artifact_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.artifact_type(input.into());
         self
     }
     /// <p>The artifact type.</p>
-    pub fn set_artifact_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_artifact_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_artifact_type(input);
         self
     }
@@ -111,8 +129,8 @@ impl CreateArtifactFluentBuilder {
     /// <p>A list of properties to add to the artifact.</p>
     pub fn properties(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.properties(k.into(), v.into());
         self
@@ -120,8 +138,8 @@ impl CreateArtifactFluentBuilder {
     /// <p>A list of properties to add to the artifact.</p>
     pub fn set_properties(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_properties(input);
@@ -135,7 +153,7 @@ impl CreateArtifactFluentBuilder {
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
     pub fn set_metadata_properties(
         mut self,
-        input: std::option::Option<crate::types::MetadataProperties>,
+        input: ::std::option::Option<crate::types::MetadataProperties>,
     ) -> Self {
         self.inner = self.inner.set_metadata_properties(input);
         self
@@ -152,7 +170,7 @@ impl CreateArtifactFluentBuilder {
     /// <p>A list of tags to apply to the artifact.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self

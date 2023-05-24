@@ -2,7 +2,7 @@
 
 /// <p>Contains the parameters for DescribeReservedInstances.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeReservedInstancesInput {
     /// <p>One or more filters.</p>
     /// <ul>
@@ -22,20 +22,20 @@ pub struct DescribeReservedInstancesInput {
     /// <li> <p> <code>usage-price</code> - The usage price of the Reserved Instance, per hour (for example, 0.84).</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub filters: std::option::Option<std::vec::Vec<crate::types::Filter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>Describes whether the Reserved Instance is Standard or Convertible.</p>
     #[doc(hidden)]
-    pub offering_class: std::option::Option<crate::types::OfferingClassType>,
+    pub offering_class: ::std::option::Option<crate::types::OfferingClassType>,
     /// <p>One or more Reserved Instance IDs.</p>
     /// <p>Default: Describes all your Reserved Instances, or only those otherwise specified.</p>
     #[doc(hidden)]
-    pub reserved_instances_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub reserved_instances_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
-    pub dry_run: std::option::Option<bool>,
+    pub dry_run: ::std::option::Option<bool>,
     /// <p>The Reserved Instance offering type. If you are using tools that predate the 2011-11-01 API version, you only have access to the <code>Medium Utilization</code> Reserved Instance offering type.</p>
     #[doc(hidden)]
-    pub offering_type: std::option::Option<crate::types::OfferingTypeValues>,
+    pub offering_type: ::std::option::Option<crate::types::OfferingTypeValues>,
 }
 impl DescribeReservedInstancesInput {
     /// <p>One or more filters.</p>
@@ -55,24 +55,24 @@ impl DescribeReservedInstancesInput {
     /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
     /// <li> <p> <code>usage-price</code> - The usage price of the Reserved Instance, per hour (for example, 0.84).</p> </li>
     /// </ul>
-    pub fn filters(&self) -> std::option::Option<&[crate::types::Filter]> {
+    pub fn filters(&self) -> ::std::option::Option<&[crate::types::Filter]> {
         self.filters.as_deref()
     }
     /// <p>Describes whether the Reserved Instance is Standard or Convertible.</p>
-    pub fn offering_class(&self) -> std::option::Option<&crate::types::OfferingClassType> {
+    pub fn offering_class(&self) -> ::std::option::Option<&crate::types::OfferingClassType> {
         self.offering_class.as_ref()
     }
     /// <p>One or more Reserved Instance IDs.</p>
     /// <p>Default: Describes all your Reserved Instances, or only those otherwise specified.</p>
-    pub fn reserved_instances_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn reserved_instances_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.reserved_instances_ids.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn dry_run(&self) -> std::option::Option<bool> {
+    pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
     /// <p>The Reserved Instance offering type. If you are using tools that predate the 2011-11-01 API version, you only have access to the <code>Medium Utilization</code> Reserved Instance offering type.</p>
-    pub fn offering_type(&self) -> std::option::Option<&crate::types::OfferingTypeValues> {
+    pub fn offering_type(&self) -> ::std::option::Option<&crate::types::OfferingTypeValues> {
         self.offering_type.as_ref()
     }
 }
@@ -85,13 +85,16 @@ impl DescribeReservedInstancesInput {
 
 /// A builder for [`DescribeReservedInstancesInput`](crate::operation::describe_reserved_instances::DescribeReservedInstancesInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeReservedInstancesInputBuilder {
-    pub(crate) filters: std::option::Option<std::vec::Vec<crate::types::Filter>>,
-    pub(crate) offering_class: std::option::Option<crate::types::OfferingClassType>,
-    pub(crate) reserved_instances_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) dry_run: std::option::Option<bool>,
-    pub(crate) offering_type: std::option::Option<crate::types::OfferingTypeValues>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
+    pub(crate) offering_class: ::std::option::Option<crate::types::OfferingClassType>,
+    pub(crate) reserved_instances_ids:
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) dry_run: ::std::option::Option<bool>,
+    pub(crate) offering_type: ::std::option::Option<crate::types::OfferingTypeValues>,
 }
 impl DescribeReservedInstancesInputBuilder {
     /// Appends an item to `filters`.
@@ -118,7 +121,7 @@ impl DescribeReservedInstancesInputBuilder {
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
         v.push(input);
-        self.filters = Some(v);
+        self.filters = ::std::option::Option::Some(v);
         self
     }
     /// <p>One or more filters.</p>
@@ -140,20 +143,20 @@ impl DescribeReservedInstancesInputBuilder {
     /// </ul>
     pub fn set_filters(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     ) -> Self {
         self.filters = input;
         self
     }
     /// <p>Describes whether the Reserved Instance is Standard or Convertible.</p>
     pub fn offering_class(mut self, input: crate::types::OfferingClassType) -> Self {
-        self.offering_class = Some(input);
+        self.offering_class = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes whether the Reserved Instance is Standard or Convertible.</p>
     pub fn set_offering_class(
         mut self,
-        input: std::option::Option<crate::types::OfferingClassType>,
+        input: ::std::option::Option<crate::types::OfferingClassType>,
     ) -> Self {
         self.offering_class = input;
         self
@@ -164,40 +167,43 @@ impl DescribeReservedInstancesInputBuilder {
     ///
     /// <p>One or more Reserved Instance IDs.</p>
     /// <p>Default: Describes all your Reserved Instances, or only those otherwise specified.</p>
-    pub fn reserved_instances_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn reserved_instances_ids(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.reserved_instances_ids.unwrap_or_default();
         v.push(input.into());
-        self.reserved_instances_ids = Some(v);
+        self.reserved_instances_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>One or more Reserved Instance IDs.</p>
     /// <p>Default: Describes all your Reserved Instances, or only those otherwise specified.</p>
     pub fn set_reserved_instances_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.reserved_instances_ids = input;
         self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
-        self.dry_run = Some(input);
+        self.dry_run = ::std::option::Option::Some(input);
         self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.dry_run = input;
         self
     }
     /// <p>The Reserved Instance offering type. If you are using tools that predate the 2011-11-01 API version, you only have access to the <code>Medium Utilization</code> Reserved Instance offering type.</p>
     pub fn offering_type(mut self, input: crate::types::OfferingTypeValues) -> Self {
-        self.offering_type = Some(input);
+        self.offering_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Reserved Instance offering type. If you are using tools that predate the 2011-11-01 API version, you only have access to the <code>Medium Utilization</code> Reserved Instance offering type.</p>
     pub fn set_offering_type(
         mut self,
-        input: std::option::Option<crate::types::OfferingTypeValues>,
+        input: ::std::option::Option<crate::types::OfferingTypeValues>,
     ) -> Self {
         self.offering_type = input;
         self
@@ -205,11 +211,11 @@ impl DescribeReservedInstancesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeReservedInstancesInput`](crate::operation::describe_reserved_instances::DescribeReservedInstancesInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::describe_reserved_instances::DescribeReservedInstancesInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::describe_reserved_instances::DescribeReservedInstancesInput {
                 filters: self.filters,
                 offering_class: self.offering_class,

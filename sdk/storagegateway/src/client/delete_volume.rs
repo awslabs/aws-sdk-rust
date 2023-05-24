@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteVolume`](crate::operation::delete_volume::builders::DeleteVolumeFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`volume_arn(impl Into<String>)`](crate::operation::delete_volume::builders::DeleteVolumeFluentBuilder::volume_arn) / [`set_volume_arn(Option<String>)`](crate::operation::delete_volume::builders::DeleteVolumeFluentBuilder::set_volume_arn): <p>The Amazon Resource Name (ARN) of the volume. Use the <code>ListVolumes</code> operation to return a list of gateway volumes.</p>
+    ///   - [`volume_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_volume::builders::DeleteVolumeFluentBuilder::volume_arn) / [`set_volume_arn(Option<String>)`](crate::operation::delete_volume::builders::DeleteVolumeFluentBuilder::set_volume_arn): <p>The Amazon Resource Name (ARN) of the volume. Use the <code>ListVolumes</code> operation to return a list of gateway volumes.</p>
     /// - On success, responds with [`DeleteVolumeOutput`](crate::operation::delete_volume::DeleteVolumeOutput) with field(s):
     ///   - [`volume_arn(Option<String>)`](crate::operation::delete_volume::DeleteVolumeOutput::volume_arn): <p>The Amazon Resource Name (ARN) of the storage volume that was deleted. It is the same ARN you provided in the request.</p>
     /// - On failure, responds with [`SdkError<DeleteVolumeError>`](crate::operation::delete_volume::DeleteVolumeError)

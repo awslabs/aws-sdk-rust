@@ -2,22 +2,22 @@
 
 /// <p>The aggregated field well for the table.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TableAggregatedFieldWells {
     /// <p>The group by field well for a pivot table. Values are grouped by group by fields.</p>
     #[doc(hidden)]
-    pub group_by: std::option::Option<std::vec::Vec<crate::types::DimensionField>>,
+    pub group_by: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
     /// <p>The values field well for a pivot table. Values are aggregated based on group by fields.</p>
     #[doc(hidden)]
-    pub values: std::option::Option<std::vec::Vec<crate::types::MeasureField>>,
+    pub values: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>,
 }
 impl TableAggregatedFieldWells {
     /// <p>The group by field well for a pivot table. Values are grouped by group by fields.</p>
-    pub fn group_by(&self) -> std::option::Option<&[crate::types::DimensionField]> {
+    pub fn group_by(&self) -> ::std::option::Option<&[crate::types::DimensionField]> {
         self.group_by.as_deref()
     }
     /// <p>The values field well for a pivot table. Values are aggregated based on group by fields.</p>
-    pub fn values(&self) -> std::option::Option<&[crate::types::MeasureField]> {
+    pub fn values(&self) -> ::std::option::Option<&[crate::types::MeasureField]> {
         self.values.as_deref()
     }
 }
@@ -30,10 +30,12 @@ impl TableAggregatedFieldWells {
 
 /// A builder for [`TableAggregatedFieldWells`](crate::types::TableAggregatedFieldWells).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TableAggregatedFieldWellsBuilder {
-    pub(crate) group_by: std::option::Option<std::vec::Vec<crate::types::DimensionField>>,
-    pub(crate) values: std::option::Option<std::vec::Vec<crate::types::MeasureField>>,
+    pub(crate) group_by: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>,
 }
 impl TableAggregatedFieldWellsBuilder {
     /// Appends an item to `group_by`.
@@ -44,13 +46,13 @@ impl TableAggregatedFieldWellsBuilder {
     pub fn group_by(mut self, input: crate::types::DimensionField) -> Self {
         let mut v = self.group_by.unwrap_or_default();
         v.push(input);
-        self.group_by = Some(v);
+        self.group_by = ::std::option::Option::Some(v);
         self
     }
     /// <p>The group by field well for a pivot table. Values are grouped by group by fields.</p>
     pub fn set_group_by(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DimensionField>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DimensionField>>,
     ) -> Self {
         self.group_by = input;
         self
@@ -63,13 +65,13 @@ impl TableAggregatedFieldWellsBuilder {
     pub fn values(mut self, input: crate::types::MeasureField) -> Self {
         let mut v = self.values.unwrap_or_default();
         v.push(input);
-        self.values = Some(v);
+        self.values = ::std::option::Option::Some(v);
         self
     }
     /// <p>The values field well for a pivot table. Values are aggregated based on group by fields.</p>
     pub fn set_values(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::MeasureField>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::MeasureField>>,
     ) -> Self {
         self.values = input;
         self

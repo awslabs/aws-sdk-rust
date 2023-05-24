@@ -13,29 +13,29 @@ pub use crate::operation::get_recommendations::_get_recommendations_input::GetRe
 /// <p>Campaigns that are backed by a solution created using a recipe of type PERSONALIZED_RANKING use the API.</p>
 /// </note>
 /// <p> For recommenders, the recommender's ARN is required and the required item and user input depends on the use case (domain-based recipe) backing the recommender. For information on use case requirements see <a href="https://docs.aws.amazon.com/personalize/latest/dg/domain-use-cases.html">Choosing recommender use cases</a>. </p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetRecommendationsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::get_recommendations::builders::GetRecommendationsInputBuilder,
 }
 impl GetRecommendationsFluentBuilder {
     /// Creates a new `GetRecommendations`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::get_recommendations::GetRecommendations,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::get_recommendations::GetRecommendationsError,
         >,
     > {
@@ -43,30 +43,33 @@ impl GetRecommendationsFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_recommendations::GetRecommendationsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::get_recommendations::GetRecommendationsError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -79,45 +82,45 @@ impl GetRecommendationsFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_recommendations::GetRecommendationsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::get_recommendations::GetRecommendationsError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The Amazon Resource Name (ARN) of the campaign to use for getting recommendations.</p>
-    pub fn campaign_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn campaign_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.campaign_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the campaign to use for getting recommendations.</p>
-    pub fn set_campaign_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_campaign_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_campaign_arn(input);
         self
     }
     /// <p>The item ID to provide recommendations for.</p>
     /// <p>Required for <code>RELATED_ITEMS</code> recipe type.</p>
-    pub fn item_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn item_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.item_id(input.into());
         self
     }
     /// <p>The item ID to provide recommendations for.</p>
     /// <p>Required for <code>RELATED_ITEMS</code> recipe type.</p>
-    pub fn set_item_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_item_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_item_id(input);
         self
     }
     /// <p>The user ID to provide recommendations for.</p>
     /// <p>Required for <code>USER_PERSONALIZATION</code> recipe type.</p>
-    pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_id(input.into());
         self
     }
     /// <p>The user ID to provide recommendations for.</p>
     /// <p>Required for <code>USER_PERSONALIZATION</code> recipe type.</p>
-    pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_user_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_id(input);
         self
     }
@@ -127,7 +130,7 @@ impl GetRecommendationsFluentBuilder {
         self
     }
     /// <p>The number of results to return. The default is 25. The maximum is 500.</p>
-    pub fn set_num_results(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_num_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_num_results(input);
         self
     }
@@ -138,8 +141,8 @@ impl GetRecommendationsFluentBuilder {
     /// <p>The contextual metadata to use when getting recommendations. Contextual metadata includes any interaction information that might be relevant when getting a user's recommendations, such as the user's current location or device type.</p>
     pub fn context(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.context(k.into(), v.into());
         self
@@ -147,8 +150,8 @@ impl GetRecommendationsFluentBuilder {
     /// <p>The contextual metadata to use when getting recommendations. Contextual metadata includes any interaction information that might be relevant when getting a user's recommendations, such as the user's current location or device type.</p>
     pub fn set_context(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_context(input);
@@ -156,13 +159,13 @@ impl GetRecommendationsFluentBuilder {
     }
     /// <p>The ARN of the filter to apply to the returned recommendations. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering Recommendations</a>.</p>
     /// <p>When using this parameter, be sure the filter resource is <code>ACTIVE</code>.</p>
-    pub fn filter_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn filter_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.filter_arn(input.into());
         self
     }
     /// <p>The ARN of the filter to apply to the returned recommendations. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering Recommendations</a>.</p>
     /// <p>When using this parameter, be sure the filter resource is <code>ACTIVE</code>.</p>
-    pub fn set_filter_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_filter_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_filter_arn(input);
         self
     }
@@ -175,8 +178,8 @@ impl GetRecommendationsFluentBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering recommendations and user segments</a>.</p>
     pub fn filter_values(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.filter_values(k.into(), v.into());
         self
@@ -186,20 +189,26 @@ impl GetRecommendationsFluentBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering recommendations and user segments</a>.</p>
     pub fn set_filter_values(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_filter_values(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the recommender to use to get recommendations. Provide a recommender ARN if you created a Domain dataset group with a recommender for a domain use case.</p>
-    pub fn recommender_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn recommender_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.recommender_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the recommender to use to get recommendations. Provide a recommender ARN if you created a Domain dataset group with a recommender for a domain use case.</p>
-    pub fn set_recommender_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_recommender_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_recommender_arn(input);
         self
     }
@@ -215,7 +224,7 @@ impl GetRecommendationsFluentBuilder {
     /// <p>The promotions to apply to the recommendation request. A promotion defines additional business rules that apply to a configurable subset of recommended items.</p>
     pub fn set_promotions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Promotion>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Promotion>>,
     ) -> Self {
         self.inner = self.inner.set_promotions(input);
         self

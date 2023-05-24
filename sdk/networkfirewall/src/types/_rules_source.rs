@@ -2,41 +2,41 @@
 
 /// <p>The stateless or stateful rules definitions for use in a single rule group. Each rule group requires a single <code>RulesSource</code>. You can use an instance of this for either stateless rules or stateful rules. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RulesSource {
     /// <p>Stateful inspection criteria, provided in Suricata compatible intrusion prevention system (IPS) rules. Suricata is an open-source network IPS that includes a standard rule-based language for network traffic inspection.</p>
     /// <p>These rules contain the inspection criteria and the action to take for traffic that matches the criteria, so this type of rule group doesn't have a separate action setting.</p>
     #[doc(hidden)]
-    pub rules_string: std::option::Option<std::string::String>,
+    pub rules_string: ::std::option::Option<::std::string::String>,
     /// <p>Stateful inspection criteria for a domain list rule group. </p>
     #[doc(hidden)]
-    pub rules_source_list: std::option::Option<crate::types::RulesSourceList>,
+    pub rules_source_list: ::std::option::Option<crate::types::RulesSourceList>,
     /// <p>An array of individual stateful rules inspection criteria to be used together in a stateful rule group. Use this option to specify simple Suricata rules with protocol, source and destination, ports, direction, and rule options. For information about the Suricata <code>Rules</code> format, see <a href="https://suricata.readthedocs.iorules/intro.html#">Rules Format</a>. </p>
     #[doc(hidden)]
-    pub stateful_rules: std::option::Option<std::vec::Vec<crate::types::StatefulRule>>,
+    pub stateful_rules: ::std::option::Option<::std::vec::Vec<crate::types::StatefulRule>>,
     /// <p>Stateless inspection criteria to be used in a stateless rule group. </p>
     #[doc(hidden)]
     pub stateless_rules_and_custom_actions:
-        std::option::Option<crate::types::StatelessRulesAndCustomActions>,
+        ::std::option::Option<crate::types::StatelessRulesAndCustomActions>,
 }
 impl RulesSource {
     /// <p>Stateful inspection criteria, provided in Suricata compatible intrusion prevention system (IPS) rules. Suricata is an open-source network IPS that includes a standard rule-based language for network traffic inspection.</p>
     /// <p>These rules contain the inspection criteria and the action to take for traffic that matches the criteria, so this type of rule group doesn't have a separate action setting.</p>
-    pub fn rules_string(&self) -> std::option::Option<&str> {
+    pub fn rules_string(&self) -> ::std::option::Option<&str> {
         self.rules_string.as_deref()
     }
     /// <p>Stateful inspection criteria for a domain list rule group. </p>
-    pub fn rules_source_list(&self) -> std::option::Option<&crate::types::RulesSourceList> {
+    pub fn rules_source_list(&self) -> ::std::option::Option<&crate::types::RulesSourceList> {
         self.rules_source_list.as_ref()
     }
     /// <p>An array of individual stateful rules inspection criteria to be used together in a stateful rule group. Use this option to specify simple Suricata rules with protocol, source and destination, ports, direction, and rule options. For information about the Suricata <code>Rules</code> format, see <a href="https://suricata.readthedocs.iorules/intro.html#">Rules Format</a>. </p>
-    pub fn stateful_rules(&self) -> std::option::Option<&[crate::types::StatefulRule]> {
+    pub fn stateful_rules(&self) -> ::std::option::Option<&[crate::types::StatefulRule]> {
         self.stateful_rules.as_deref()
     }
     /// <p>Stateless inspection criteria to be used in a stateless rule group. </p>
     pub fn stateless_rules_and_custom_actions(
         &self,
-    ) -> std::option::Option<&crate::types::StatelessRulesAndCustomActions> {
+    ) -> ::std::option::Option<&crate::types::StatelessRulesAndCustomActions> {
         self.stateless_rules_and_custom_actions.as_ref()
     }
 }
@@ -49,36 +49,38 @@ impl RulesSource {
 
 /// A builder for [`RulesSource`](crate::types::RulesSource).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RulesSourceBuilder {
-    pub(crate) rules_string: std::option::Option<std::string::String>,
-    pub(crate) rules_source_list: std::option::Option<crate::types::RulesSourceList>,
-    pub(crate) stateful_rules: std::option::Option<std::vec::Vec<crate::types::StatefulRule>>,
+    pub(crate) rules_string: ::std::option::Option<::std::string::String>,
+    pub(crate) rules_source_list: ::std::option::Option<crate::types::RulesSourceList>,
+    pub(crate) stateful_rules: ::std::option::Option<::std::vec::Vec<crate::types::StatefulRule>>,
     pub(crate) stateless_rules_and_custom_actions:
-        std::option::Option<crate::types::StatelessRulesAndCustomActions>,
+        ::std::option::Option<crate::types::StatelessRulesAndCustomActions>,
 }
 impl RulesSourceBuilder {
     /// <p>Stateful inspection criteria, provided in Suricata compatible intrusion prevention system (IPS) rules. Suricata is an open-source network IPS that includes a standard rule-based language for network traffic inspection.</p>
     /// <p>These rules contain the inspection criteria and the action to take for traffic that matches the criteria, so this type of rule group doesn't have a separate action setting.</p>
-    pub fn rules_string(mut self, input: impl Into<std::string::String>) -> Self {
-        self.rules_string = Some(input.into());
+    pub fn rules_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.rules_string = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Stateful inspection criteria, provided in Suricata compatible intrusion prevention system (IPS) rules. Suricata is an open-source network IPS that includes a standard rule-based language for network traffic inspection.</p>
     /// <p>These rules contain the inspection criteria and the action to take for traffic that matches the criteria, so this type of rule group doesn't have a separate action setting.</p>
-    pub fn set_rules_string(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_rules_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rules_string = input;
         self
     }
     /// <p>Stateful inspection criteria for a domain list rule group. </p>
     pub fn rules_source_list(mut self, input: crate::types::RulesSourceList) -> Self {
-        self.rules_source_list = Some(input);
+        self.rules_source_list = ::std::option::Option::Some(input);
         self
     }
     /// <p>Stateful inspection criteria for a domain list rule group. </p>
     pub fn set_rules_source_list(
         mut self,
-        input: std::option::Option<crate::types::RulesSourceList>,
+        input: ::std::option::Option<crate::types::RulesSourceList>,
     ) -> Self {
         self.rules_source_list = input;
         self
@@ -91,13 +93,13 @@ impl RulesSourceBuilder {
     pub fn stateful_rules(mut self, input: crate::types::StatefulRule) -> Self {
         let mut v = self.stateful_rules.unwrap_or_default();
         v.push(input);
-        self.stateful_rules = Some(v);
+        self.stateful_rules = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of individual stateful rules inspection criteria to be used together in a stateful rule group. Use this option to specify simple Suricata rules with protocol, source and destination, ports, direction, and rule options. For information about the Suricata <code>Rules</code> format, see <a href="https://suricata.readthedocs.iorules/intro.html#">Rules Format</a>. </p>
     pub fn set_stateful_rules(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::StatefulRule>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::StatefulRule>>,
     ) -> Self {
         self.stateful_rules = input;
         self
@@ -107,13 +109,13 @@ impl RulesSourceBuilder {
         mut self,
         input: crate::types::StatelessRulesAndCustomActions,
     ) -> Self {
-        self.stateless_rules_and_custom_actions = Some(input);
+        self.stateless_rules_and_custom_actions = ::std::option::Option::Some(input);
         self
     }
     /// <p>Stateless inspection criteria to be used in a stateless rule group. </p>
     pub fn set_stateless_rules_and_custom_actions(
         mut self,
-        input: std::option::Option<crate::types::StatelessRulesAndCustomActions>,
+        input: ::std::option::Option<crate::types::StatelessRulesAndCustomActions>,
     ) -> Self {
         self.stateless_rules_and_custom_actions = input;
         self

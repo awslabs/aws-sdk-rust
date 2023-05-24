@@ -6,56 +6,63 @@ pub use crate::operation::import_component::_import_component_input::ImportCompo
 /// Fluent builder constructing a request to `ImportComponent`.
 ///
 /// <p>Imports a component and transforms its data into a component document.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ImportComponentFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::import_component::builders::ImportComponentInputBuilder,
 }
 impl ImportComponentFluentBuilder {
     /// Creates a new `ImportComponent`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::import_component::ImportComponent,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::import_component::ImportComponentError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::import_component::ImportComponentError,
+        >,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::import_component::ImportComponentOutput,
-        aws_smithy_http::result::SdkError<crate::operation::import_component::ImportComponentError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::import_component::ImportComponentError,
+        >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,19 +75,21 @@ impl ImportComponentFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::import_component::ImportComponentOutput,
-        aws_smithy_http::result::SdkError<crate::operation::import_component::ImportComponentError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::import_component::ImportComponentError,
+        >,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the component.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// <p>The name of the component.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
@@ -99,7 +108,10 @@ impl ImportComponentFluentBuilder {
     /// </major></p>
     /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
     /// </note>
-    pub fn semantic_version(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn semantic_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.semantic_version(input.into());
         self
     }
@@ -118,29 +130,35 @@ impl ImportComponentFluentBuilder {
     /// </major></p>
     /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
     /// </note>
-    pub fn set_semantic_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_semantic_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_semantic_version(input);
         self
     }
     /// <p>The description of the component. Describes the contents of the component.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>The description of the component. Describes the contents of the component.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
     /// <p>The change description of the component. This description indicates the change that has been made in this version, or what makes this version different from other versions of this component.</p>
-    pub fn change_description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn change_description(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.change_description(input.into());
         self
     }
     /// <p>The change description of the component. This description indicates the change that has been made in this version, or what makes this version different from other versions of this component.</p>
     pub fn set_change_description(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_change_description(input);
         self
@@ -151,7 +169,7 @@ impl ImportComponentFluentBuilder {
         self
     }
     /// <p>The type of the component denotes whether the component is used to build the image, or only to test it.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::ComponentType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ComponentType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }
@@ -161,7 +179,10 @@ impl ImportComponentFluentBuilder {
         self
     }
     /// <p>The format of the resource that you want to import as a component.</p>
-    pub fn set_format(mut self, input: std::option::Option<crate::types::ComponentFormat>) -> Self {
+    pub fn set_format(
+        mut self,
+        input: ::std::option::Option<crate::types::ComponentFormat>,
+    ) -> Self {
         self.inner = self.inner.set_format(input);
         self
     }
@@ -171,37 +192,37 @@ impl ImportComponentFluentBuilder {
         self
     }
     /// <p>The platform of the component.</p>
-    pub fn set_platform(mut self, input: std::option::Option<crate::types::Platform>) -> Self {
+    pub fn set_platform(mut self, input: ::std::option::Option<crate::types::Platform>) -> Self {
         self.inner = self.inner.set_platform(input);
         self
     }
     /// <p>The data of the component. Used to specify the data inline. Either <code>data</code> or <code>uri</code> can be used to specify the data within the component.</p>
-    pub fn data(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.data(input.into());
         self
     }
     /// <p>The data of the component. Used to specify the data inline. Either <code>data</code> or <code>uri</code> can be used to specify the data within the component.</p>
-    pub fn set_data(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_data(input);
         self
     }
     /// <p>The uri of the component. Must be an Amazon S3 URL and the requester must have permission to access the Amazon S3 bucket. If you use Amazon S3, you can specify component content up to your service quota. Either <code>data</code> or <code>uri</code> can be used to specify the data within the component.</p>
-    pub fn uri(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.uri(input.into());
         self
     }
     /// <p>The uri of the component. Must be an Amazon S3 URL and the requester must have permission to access the Amazon S3 bucket. If you use Amazon S3, you can specify component content up to your service quota. Either <code>data</code> or <code>uri</code> can be used to specify the data within the component.</p>
-    pub fn set_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_uri(input);
         self
     }
     /// <p>The ID of the KMS key that should be used to encrypt this component.</p>
-    pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kms_key_id(input.into());
         self
     }
     /// <p>The ID of the KMS key that should be used to encrypt this component.</p>
-    pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kms_key_id(input);
         self
     }
@@ -212,8 +233,8 @@ impl ImportComponentFluentBuilder {
     /// <p>The tags of the component.</p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
@@ -221,20 +242,20 @@ impl ImportComponentFluentBuilder {
     /// <p>The tags of the component.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The idempotency token of the component.</p>
-    pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
     /// <p>The idempotency token of the component.</p>
-    pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }

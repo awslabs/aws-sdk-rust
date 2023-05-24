@@ -2,20 +2,20 @@
 
 /// <p>Represents the output for <code>DescribeStream</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeStreamOutput {
     /// <p>The current status of the stream, the stream Amazon Resource Name (ARN), an array of shard objects that comprise the stream, and whether there are more shards available.</p>
     #[doc(hidden)]
-    pub stream_description: std::option::Option<crate::types::StreamDescription>,
+    pub stream_description: ::std::option::Option<crate::types::StreamDescription>,
     _request_id: Option<String>,
 }
 impl DescribeStreamOutput {
     /// <p>The current status of the stream, the stream Amazon Resource Name (ARN), an array of shard objects that comprise the stream, and whether there are more shards available.</p>
-    pub fn stream_description(&self) -> std::option::Option<&crate::types::StreamDescription> {
+    pub fn stream_description(&self) -> ::std::option::Option<&crate::types::StreamDescription> {
         self.stream_description.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeStreamOutput {
+impl ::aws_http::request_id::RequestId for DescribeStreamOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,21 +29,23 @@ impl DescribeStreamOutput {
 
 /// A builder for [`DescribeStreamOutput`](crate::operation::describe_stream::DescribeStreamOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeStreamOutputBuilder {
-    pub(crate) stream_description: std::option::Option<crate::types::StreamDescription>,
+    pub(crate) stream_description: ::std::option::Option<crate::types::StreamDescription>,
     _request_id: Option<String>,
 }
 impl DescribeStreamOutputBuilder {
     /// <p>The current status of the stream, the stream Amazon Resource Name (ARN), an array of shard objects that comprise the stream, and whether there are more shards available.</p>
     pub fn stream_description(mut self, input: crate::types::StreamDescription) -> Self {
-        self.stream_description = Some(input);
+        self.stream_description = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current status of the stream, the stream Amazon Resource Name (ARN), an array of shard objects that comprise the stream, and whether there are more shards available.</p>
     pub fn set_stream_description(
         mut self,
-        input: std::option::Option<crate::types::StreamDescription>,
+        input: ::std::option::Option<crate::types::StreamDescription>,
     ) -> Self {
         self.stream_description = input;
         self

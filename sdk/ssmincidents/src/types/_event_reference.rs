@@ -2,12 +2,12 @@
 
 /// <p>An item referenced in a <code>TimelineEvent</code> that is involved in or somehow associated with an incident. You can specify an Amazon Resource Name (ARN) for an Amazon Web Services resource or a <code>RelatedItem</code> ID.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum EventReference {
     /// <p>The ID of a <code>RelatedItem</code> referenced in a <code>TimelineEvent</code>.</p>
-    RelatedItemId(std::string::String),
+    RelatedItemId(::std::string::String),
     /// <p>The Amazon Resource Name (ARN) of an Amazon Web Services resource referenced in a <code>TimelineEvent</code>.</p>
-    Resource(std::string::String),
+    Resource(::std::string::String),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -19,26 +19,26 @@ pub enum EventReference {
     Unknown,
 }
 impl EventReference {
-    /// Tries to convert the enum instance into [`RelatedItemId`](crate::types::EventReference::RelatedItemId), extracting the inner [`String`](std::string::String).
+    /// Tries to convert the enum instance into [`RelatedItemId`](crate::types::EventReference::RelatedItemId), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_related_item_id(&self) -> std::result::Result<&std::string::String, &Self> {
+    pub fn as_related_item_id(&self) -> ::std::result::Result<&::std::string::String, &Self> {
         if let EventReference::RelatedItemId(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`RelatedItemId`](crate::types::EventReference::RelatedItemId).
     pub fn is_related_item_id(&self) -> bool {
         self.as_related_item_id().is_ok()
     }
-    /// Tries to convert the enum instance into [`Resource`](crate::types::EventReference::Resource), extracting the inner [`String`](std::string::String).
+    /// Tries to convert the enum instance into [`Resource`](crate::types::EventReference::Resource), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_resource(&self) -> std::result::Result<&std::string::String, &Self> {
+    pub fn as_resource(&self) -> ::std::result::Result<&::std::string::String, &Self> {
         if let EventReference::Resource(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Resource`](crate::types::EventReference::Resource).

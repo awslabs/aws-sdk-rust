@@ -2,11 +2,11 @@
 
 /// <p>A complex type that contains the requested limit. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAccountLimitOutput {
     /// <p>The current setting for the specified limit. For example, if you specified <code>MAX_HEALTH_CHECKS_BY_OWNER</code> for the value of <code>Type</code> in the request, the value of <code>Limit</code> is the maximum number of health checks that you can create using the current account.</p>
     #[doc(hidden)]
-    pub limit: std::option::Option<crate::types::AccountLimit>,
+    pub limit: ::std::option::Option<crate::types::AccountLimit>,
     /// <p>The current number of entities that you have created of the specified type. For example, if you specified <code>MAX_HEALTH_CHECKS_BY_OWNER</code> for the value of <code>Type</code> in the request, the value of <code>Count</code> is the current number of health checks that you have created using the current account.</p>
     #[doc(hidden)]
     pub count: i64,
@@ -14,7 +14,7 @@ pub struct GetAccountLimitOutput {
 }
 impl GetAccountLimitOutput {
     /// <p>The current setting for the specified limit. For example, if you specified <code>MAX_HEALTH_CHECKS_BY_OWNER</code> for the value of <code>Type</code> in the request, the value of <code>Limit</code> is the maximum number of health checks that you can create using the current account.</p>
-    pub fn limit(&self) -> std::option::Option<&crate::types::AccountLimit> {
+    pub fn limit(&self) -> ::std::option::Option<&crate::types::AccountLimit> {
         self.limit.as_ref()
     }
     /// <p>The current number of entities that you have created of the specified type. For example, if you specified <code>MAX_HEALTH_CHECKS_BY_OWNER</code> for the value of <code>Type</code> in the request, the value of <code>Count</code> is the current number of health checks that you have created using the current account.</p>
@@ -22,7 +22,7 @@ impl GetAccountLimitOutput {
         self.count
     }
 }
-impl aws_http::request_id::RequestId for GetAccountLimitOutput {
+impl ::aws_http::request_id::RequestId for GetAccountLimitOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -37,30 +37,32 @@ impl GetAccountLimitOutput {
 
 /// A builder for [`GetAccountLimitOutput`](crate::operation::get_account_limit::GetAccountLimitOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetAccountLimitOutputBuilder {
-    pub(crate) limit: std::option::Option<crate::types::AccountLimit>,
-    pub(crate) count: std::option::Option<i64>,
+    pub(crate) limit: ::std::option::Option<crate::types::AccountLimit>,
+    pub(crate) count: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }
 impl GetAccountLimitOutputBuilder {
     /// <p>The current setting for the specified limit. For example, if you specified <code>MAX_HEALTH_CHECKS_BY_OWNER</code> for the value of <code>Type</code> in the request, the value of <code>Limit</code> is the maximum number of health checks that you can create using the current account.</p>
     pub fn limit(mut self, input: crate::types::AccountLimit) -> Self {
-        self.limit = Some(input);
+        self.limit = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current setting for the specified limit. For example, if you specified <code>MAX_HEALTH_CHECKS_BY_OWNER</code> for the value of <code>Type</code> in the request, the value of <code>Limit</code> is the maximum number of health checks that you can create using the current account.</p>
-    pub fn set_limit(mut self, input: std::option::Option<crate::types::AccountLimit>) -> Self {
+    pub fn set_limit(mut self, input: ::std::option::Option<crate::types::AccountLimit>) -> Self {
         self.limit = input;
         self
     }
     /// <p>The current number of entities that you have created of the specified type. For example, if you specified <code>MAX_HEALTH_CHECKS_BY_OWNER</code> for the value of <code>Type</code> in the request, the value of <code>Count</code> is the current number of health checks that you have created using the current account.</p>
     pub fn count(mut self, input: i64) -> Self {
-        self.count = Some(input);
+        self.count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current number of entities that you have created of the specified type. For example, if you specified <code>MAX_HEALTH_CHECKS_BY_OWNER</code> for the value of <code>Type</code> in the request, the value of <code>Count</code> is the current number of health checks that you have created using the current account.</p>
-    pub fn set_count(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_count(mut self, input: ::std::option::Option<i64>) -> Self {
         self.count = input;
         self
     }

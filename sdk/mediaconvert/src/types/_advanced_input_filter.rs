@@ -38,13 +38,13 @@
 /// Use to remove noise, blocking, blurriness, or ringing from your input as a pre-filter step before encoding. The Advanced input filter removes more types of compression artifacts and is an improvement when compared to basic Deblock and Denoise filters. To remove video compression artifacts from your input and improve the video quality: Choose Enabled. Additionally, this filter can help increase the video quality of your output relative to its bitrate, since noisy inputs are more complex and require more bits to encode. To help restore loss of detail after applying the filter, you can optionally add texture or sharpening as an additional step. Jobs that use this feature incur pro-tier pricing. To not apply advanced input filtering: Choose Disabled. Note that you can still apply basic filtering with Deblock and Denoise.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum AdvancedInputFilter {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum AdvancedInputFilter {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for AdvancedInputFilter {
+impl ::std::convert::From<&str> for AdvancedInputFilter {
     fn from(s: &str) -> Self {
         match s {
             "DISABLED" => AdvancedInputFilter::Disabled,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for AdvancedInputFilter {
         }
     }
 }
-impl std::str::FromStr for AdvancedInputFilter {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for AdvancedInputFilter {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AdvancedInputFilter::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(AdvancedInputFilter::from(s))
     }
 }
 impl AdvancedInputFilter {
@@ -86,7 +86,7 @@ impl AdvancedInputFilter {
         &["DISABLED", "ENABLED"]
     }
 }
-impl AsRef<str> for AdvancedInputFilter {
+impl ::std::convert::AsRef<str> for AdvancedInputFilter {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

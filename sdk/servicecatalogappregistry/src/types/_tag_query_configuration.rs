@@ -2,15 +2,15 @@
 
 /// <p> The definition of <code>tagQuery</code>. Specifies which resources are associated with an application. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TagQueryConfiguration {
     /// <p> Condition in the IAM policy that associates resources to an application. </p>
     #[doc(hidden)]
-    pub tag_key: std::option::Option<std::string::String>,
+    pub tag_key: ::std::option::Option<::std::string::String>,
 }
 impl TagQueryConfiguration {
     /// <p> Condition in the IAM policy that associates resources to an application. </p>
-    pub fn tag_key(&self) -> std::option::Option<&str> {
+    pub fn tag_key(&self) -> ::std::option::Option<&str> {
         self.tag_key.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl TagQueryConfiguration {
 
 /// A builder for [`TagQueryConfiguration`](crate::types::TagQueryConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TagQueryConfigurationBuilder {
-    pub(crate) tag_key: std::option::Option<std::string::String>,
+    pub(crate) tag_key: ::std::option::Option<::std::string::String>,
 }
 impl TagQueryConfigurationBuilder {
     /// <p> Condition in the IAM policy that associates resources to an application. </p>
-    pub fn tag_key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.tag_key = Some(input.into());
+    pub fn tag_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.tag_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Condition in the IAM policy that associates resources to an application. </p>
-    pub fn set_tag_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_tag_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tag_key = input;
         self
     }

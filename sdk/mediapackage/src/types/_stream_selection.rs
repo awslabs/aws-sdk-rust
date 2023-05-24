@@ -2,29 +2,29 @@
 
 /// A StreamSelection configuration.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StreamSelection {
     /// The maximum video bitrate (bps) to include in output.
     #[doc(hidden)]
-    pub max_video_bits_per_second: std::option::Option<i32>,
+    pub max_video_bits_per_second: ::std::option::Option<i32>,
     /// The minimum video bitrate (bps) to include in output.
     #[doc(hidden)]
-    pub min_video_bits_per_second: std::option::Option<i32>,
+    pub min_video_bits_per_second: ::std::option::Option<i32>,
     /// A directive that determines the order of streams in the output.
     #[doc(hidden)]
-    pub stream_order: std::option::Option<crate::types::StreamOrder>,
+    pub stream_order: ::std::option::Option<crate::types::StreamOrder>,
 }
 impl StreamSelection {
     /// The maximum video bitrate (bps) to include in output.
-    pub fn max_video_bits_per_second(&self) -> std::option::Option<i32> {
+    pub fn max_video_bits_per_second(&self) -> ::std::option::Option<i32> {
         self.max_video_bits_per_second
     }
     /// The minimum video bitrate (bps) to include in output.
-    pub fn min_video_bits_per_second(&self) -> std::option::Option<i32> {
+    pub fn min_video_bits_per_second(&self) -> ::std::option::Option<i32> {
         self.min_video_bits_per_second
     }
     /// A directive that determines the order of streams in the output.
-    pub fn stream_order(&self) -> std::option::Option<&crate::types::StreamOrder> {
+    pub fn stream_order(&self) -> ::std::option::Option<&crate::types::StreamOrder> {
         self.stream_order.as_ref()
     }
 }
@@ -37,42 +37,44 @@ impl StreamSelection {
 
 /// A builder for [`StreamSelection`](crate::types::StreamSelection).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StreamSelectionBuilder {
-    pub(crate) max_video_bits_per_second: std::option::Option<i32>,
-    pub(crate) min_video_bits_per_second: std::option::Option<i32>,
-    pub(crate) stream_order: std::option::Option<crate::types::StreamOrder>,
+    pub(crate) max_video_bits_per_second: ::std::option::Option<i32>,
+    pub(crate) min_video_bits_per_second: ::std::option::Option<i32>,
+    pub(crate) stream_order: ::std::option::Option<crate::types::StreamOrder>,
 }
 impl StreamSelectionBuilder {
     /// The maximum video bitrate (bps) to include in output.
     pub fn max_video_bits_per_second(mut self, input: i32) -> Self {
-        self.max_video_bits_per_second = Some(input);
+        self.max_video_bits_per_second = ::std::option::Option::Some(input);
         self
     }
     /// The maximum video bitrate (bps) to include in output.
-    pub fn set_max_video_bits_per_second(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_video_bits_per_second(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_video_bits_per_second = input;
         self
     }
     /// The minimum video bitrate (bps) to include in output.
     pub fn min_video_bits_per_second(mut self, input: i32) -> Self {
-        self.min_video_bits_per_second = Some(input);
+        self.min_video_bits_per_second = ::std::option::Option::Some(input);
         self
     }
     /// The minimum video bitrate (bps) to include in output.
-    pub fn set_min_video_bits_per_second(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_min_video_bits_per_second(mut self, input: ::std::option::Option<i32>) -> Self {
         self.min_video_bits_per_second = input;
         self
     }
     /// A directive that determines the order of streams in the output.
     pub fn stream_order(mut self, input: crate::types::StreamOrder) -> Self {
-        self.stream_order = Some(input);
+        self.stream_order = ::std::option::Option::Some(input);
         self
     }
     /// A directive that determines the order of streams in the output.
     pub fn set_stream_order(
         mut self,
-        input: std::option::Option<crate::types::StreamOrder>,
+        input: ::std::option::Option<crate::types::StreamOrder>,
     ) -> Self {
         self.stream_order = input;
         self

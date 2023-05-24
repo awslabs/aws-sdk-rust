@@ -2,22 +2,22 @@
 
 /// <p>Represents the name and version of a DataBrew recipe.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecipeReference {
     /// <p>The name of the recipe.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the version for the recipe. </p>
     #[doc(hidden)]
-    pub recipe_version: std::option::Option<std::string::String>,
+    pub recipe_version: ::std::option::Option<::std::string::String>,
 }
 impl RecipeReference {
     /// <p>The name of the recipe.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The identifier for the version for the recipe. </p>
-    pub fn recipe_version(&self) -> std::option::Option<&str> {
+    pub fn recipe_version(&self) -> ::std::option::Option<&str> {
         self.recipe_version.as_deref()
     }
 }
@@ -30,29 +30,37 @@ impl RecipeReference {
 
 /// A builder for [`RecipeReference`](crate::types::RecipeReference).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RecipeReferenceBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) recipe_version: std::option::Option<std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) recipe_version: ::std::option::Option<::std::string::String>,
 }
 impl RecipeReferenceBuilder {
     /// <p>The name of the recipe.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the recipe.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The identifier for the version for the recipe. </p>
-    pub fn recipe_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.recipe_version = Some(input.into());
+    pub fn recipe_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.recipe_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for the version for the recipe. </p>
-    pub fn set_recipe_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_recipe_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.recipe_version = input;
         self
     }

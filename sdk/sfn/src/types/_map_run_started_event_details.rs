@@ -2,15 +2,15 @@
 
 /// <p>Contains details about a Map Run that was started during a state machine execution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MapRunStartedEventDetails {
     /// <p>The Amazon Resource Name (ARN) of a Map Run that was started.</p>
     #[doc(hidden)]
-    pub map_run_arn: std::option::Option<std::string::String>,
+    pub map_run_arn: ::std::option::Option<::std::string::String>,
 }
 impl MapRunStartedEventDetails {
     /// <p>The Amazon Resource Name (ARN) of a Map Run that was started.</p>
-    pub fn map_run_arn(&self) -> std::option::Option<&str> {
+    pub fn map_run_arn(&self) -> ::std::option::Option<&str> {
         self.map_run_arn.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl MapRunStartedEventDetails {
 
 /// A builder for [`MapRunStartedEventDetails`](crate::types::MapRunStartedEventDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MapRunStartedEventDetailsBuilder {
-    pub(crate) map_run_arn: std::option::Option<std::string::String>,
+    pub(crate) map_run_arn: ::std::option::Option<::std::string::String>,
 }
 impl MapRunStartedEventDetailsBuilder {
     /// <p>The Amazon Resource Name (ARN) of a Map Run that was started.</p>
-    pub fn map_run_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.map_run_arn = Some(input.into());
+    pub fn map_run_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.map_run_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of a Map Run that was started.</p>
-    pub fn set_map_run_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_map_run_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.map_run_arn = input;
         self
     }

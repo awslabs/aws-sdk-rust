@@ -2,34 +2,34 @@
 
 /// <p>DescribeVTLDevicesOutput</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeVtlDevicesOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
-    pub gateway_arn: std::option::Option<std::string::String>,
+    pub gateway_arn: ::std::option::Option<::std::string::String>,
     /// <p>An array of VTL device objects composed of the Amazon Resource Name (ARN) of the VTL devices.</p>
     #[doc(hidden)]
-    pub vtl_devices: std::option::Option<std::vec::Vec<crate::types::VtlDevice>>,
+    pub vtl_devices: ::std::option::Option<::std::vec::Vec<crate::types::VtlDevice>>,
     /// <p>An opaque string that indicates the position at which the VTL devices that were fetched for description ended. Use the marker in your next request to fetch the next set of VTL devices in the list. If there are no more VTL devices to describe, this field does not appear in the response.</p>
     #[doc(hidden)]
-    pub marker: std::option::Option<std::string::String>,
+    pub marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeVtlDevicesOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+    pub fn gateway_arn(&self) -> ::std::option::Option<&str> {
         self.gateway_arn.as_deref()
     }
     /// <p>An array of VTL device objects composed of the Amazon Resource Name (ARN) of the VTL devices.</p>
-    pub fn vtl_devices(&self) -> std::option::Option<&[crate::types::VtlDevice]> {
+    pub fn vtl_devices(&self) -> ::std::option::Option<&[crate::types::VtlDevice]> {
         self.vtl_devices.as_deref()
     }
     /// <p>An opaque string that indicates the position at which the VTL devices that were fetched for description ended. Use the marker in your next request to fetch the next set of VTL devices in the list. If there are no more VTL devices to describe, this field does not appear in the response.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeVtlDevicesOutput {
+impl ::aws_http::request_id::RequestId for DescribeVtlDevicesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -44,21 +44,23 @@ impl DescribeVtlDevicesOutput {
 
 /// A builder for [`DescribeVtlDevicesOutput`](crate::operation::describe_vtl_devices::DescribeVtlDevicesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeVtlDevicesOutputBuilder {
-    pub(crate) gateway_arn: std::option::Option<std::string::String>,
-    pub(crate) vtl_devices: std::option::Option<std::vec::Vec<crate::types::VtlDevice>>,
-    pub(crate) marker: std::option::Option<std::string::String>,
+    pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) vtl_devices: ::std::option::Option<::std::vec::Vec<crate::types::VtlDevice>>,
+    pub(crate) marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeVtlDevicesOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.gateway_arn = Some(input.into());
+    pub fn gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.gateway_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    pub fn set_gateway_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_gateway_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.gateway_arn = input;
         self
     }
@@ -70,24 +72,24 @@ impl DescribeVtlDevicesOutputBuilder {
     pub fn vtl_devices(mut self, input: crate::types::VtlDevice) -> Self {
         let mut v = self.vtl_devices.unwrap_or_default();
         v.push(input);
-        self.vtl_devices = Some(v);
+        self.vtl_devices = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of VTL device objects composed of the Amazon Resource Name (ARN) of the VTL devices.</p>
     pub fn set_vtl_devices(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::VtlDevice>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::VtlDevice>>,
     ) -> Self {
         self.vtl_devices = input;
         self
     }
     /// <p>An opaque string that indicates the position at which the VTL devices that were fetched for description ended. Use the marker in your next request to fetch the next set of VTL devices in the list. If there are no more VTL devices to describe, this field does not appear in the response.</p>
-    pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-        self.marker = Some(input.into());
+    pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An opaque string that indicates the position at which the VTL devices that were fetched for description ended. Use the marker in your next request to fetch the next set of VTL devices in the list. If there are no more VTL devices to describe, this field does not appear in the response.</p>
-    pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
     }

@@ -2,20 +2,20 @@
 
 /// <p>CreateTaskResponse</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateTaskOutput {
     /// <p>The Amazon Resource Name (ARN) of the task.</p>
     #[doc(hidden)]
-    pub task_arn: std::option::Option<std::string::String>,
+    pub task_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateTaskOutput {
     /// <p>The Amazon Resource Name (ARN) of the task.</p>
-    pub fn task_arn(&self) -> std::option::Option<&str> {
+    pub fn task_arn(&self) -> ::std::option::Option<&str> {
         self.task_arn.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for CreateTaskOutput {
+impl ::aws_http::request_id::RequestId for CreateTaskOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,21 @@ impl CreateTaskOutput {
 
 /// A builder for [`CreateTaskOutput`](crate::operation::create_task::CreateTaskOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateTaskOutputBuilder {
-    pub(crate) task_arn: std::option::Option<std::string::String>,
+    pub(crate) task_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateTaskOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the task.</p>
-    pub fn task_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.task_arn = Some(input.into());
+    pub fn task_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.task_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the task.</p>
-    pub fn set_task_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_task_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.task_arn = input;
         self
     }

@@ -2,7 +2,7 @@
 
 /// <p>Information about scores of a contact evaluation item (section or question).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluationScore {
     /// <p>The score percentage for an item in a contact evaluation.</p>
     #[doc(hidden)]
@@ -37,40 +37,42 @@ impl EvaluationScore {
 
 /// A builder for [`EvaluationScore`](crate::types::EvaluationScore).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EvaluationScoreBuilder {
-    pub(crate) percentage: std::option::Option<f64>,
-    pub(crate) not_applicable: std::option::Option<bool>,
-    pub(crate) automatic_fail: std::option::Option<bool>,
+    pub(crate) percentage: ::std::option::Option<f64>,
+    pub(crate) not_applicable: ::std::option::Option<bool>,
+    pub(crate) automatic_fail: ::std::option::Option<bool>,
 }
 impl EvaluationScoreBuilder {
     /// <p>The score percentage for an item in a contact evaluation.</p>
     pub fn percentage(mut self, input: f64) -> Self {
-        self.percentage = Some(input);
+        self.percentage = ::std::option::Option::Some(input);
         self
     }
     /// <p>The score percentage for an item in a contact evaluation.</p>
-    pub fn set_percentage(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_percentage(mut self, input: ::std::option::Option<f64>) -> Self {
         self.percentage = input;
         self
     }
     /// <p>The flag to mark the item as not applicable for scoring.</p>
     pub fn not_applicable(mut self, input: bool) -> Self {
-        self.not_applicable = Some(input);
+        self.not_applicable = ::std::option::Option::Some(input);
         self
     }
     /// <p>The flag to mark the item as not applicable for scoring.</p>
-    pub fn set_not_applicable(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_not_applicable(mut self, input: ::std::option::Option<bool>) -> Self {
         self.not_applicable = input;
         self
     }
     /// <p>The flag that marks the item as automatic fail. If the item or a child item gets an automatic fail answer, this flag will be true.</p>
     pub fn automatic_fail(mut self, input: bool) -> Self {
-        self.automatic_fail = Some(input);
+        self.automatic_fail = ::std::option::Option::Some(input);
         self
     }
     /// <p>The flag that marks the item as automatic fail. If the item or a child item gets an automatic fail answer, this flag will be true.</p>
-    pub fn set_automatic_fail(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_automatic_fail(mut self, input: ::std::option::Option<bool>) -> Self {
         self.automatic_fail = input;
         self
     }

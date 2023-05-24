@@ -7,56 +7,59 @@ pub use crate::operation::list_members::_list_members_input::ListMembersInputBui
 ///
 /// <p>Returns a list of the members in a network and properties of their configurations.</p>
 /// <p>Applies only to Hyperledger Fabric.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListMembersFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::list_members::builders::ListMembersInputBuilder,
 }
 impl ListMembersFluentBuilder {
     /// Creates a new `ListMembers`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::list_members::ListMembers,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::list_members::ListMembersError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_members::ListMembersError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::list_members::ListMembersOutput,
-        aws_smithy_http::result::SdkError<crate::operation::list_members::ListMembersError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_members::ListMembersError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -69,9 +72,9 @@ impl ListMembersFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::list_members::ListMembersOutput,
-        aws_smithy_http::result::SdkError<crate::operation::list_members::ListMembersError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_members::ListMembersError>,
     > {
         self.send_middleware().await
     }
@@ -85,22 +88,22 @@ impl ListMembersFluentBuilder {
         )
     }
     /// <p>The unique identifier of the network for which to list members.</p>
-    pub fn network_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn network_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.network_id(input.into());
         self
     }
     /// <p>The unique identifier of the network for which to list members.</p>
-    pub fn set_network_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_network_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_network_id(input);
         self
     }
     /// <p>The optional name of the member to list.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// <p>The optional name of the member to list.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
@@ -110,7 +113,7 @@ impl ListMembersFluentBuilder {
         self
     }
     /// <p>An optional status specifier. If provided, only members currently in this status are listed.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::MemberStatus>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::MemberStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }
@@ -120,7 +123,7 @@ impl ListMembersFluentBuilder {
         self
     }
     /// <p>An optional Boolean value. If provided, the request is limited either to members that the current Amazon Web Services account owns (<code>true</code>) or that other Amazon Web Services accountsn own (<code>false</code>). If omitted, all members are listed.</p>
-    pub fn set_is_owned(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_owned(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_is_owned(input);
         self
     }
@@ -130,17 +133,17 @@ impl ListMembersFluentBuilder {
         self
     }
     /// <p>The maximum number of members to return in the request.</p>
-    pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }

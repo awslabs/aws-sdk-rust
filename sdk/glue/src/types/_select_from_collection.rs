@@ -2,25 +2,25 @@
 
 /// <p>Specifies a transform that chooses one <code>DynamicFrame</code> from a collection of <code>DynamicFrames</code>. The output is the selected <code>DynamicFrame</code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SelectFromCollection {
     /// <p>The name of the transform node.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The data inputs identified by their node names.</p>
     #[doc(hidden)]
-    pub inputs: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The index for the DynamicFrame to be selected.</p>
     #[doc(hidden)]
     pub index: i32,
 }
 impl SelectFromCollection {
     /// <p>The name of the transform node.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The data inputs identified by their node names.</p>
-    pub fn inputs(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn inputs(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.inputs.as_deref()
     }
     /// <p>The index for the DynamicFrame to be selected.</p>
@@ -37,20 +37,22 @@ impl SelectFromCollection {
 
 /// A builder for [`SelectFromCollection`](crate::types::SelectFromCollection).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SelectFromCollectionBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) inputs: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) index: std::option::Option<i32>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) inputs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) index: ::std::option::Option<i32>,
 }
 impl SelectFromCollectionBuilder {
     /// <p>The name of the transform node.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the transform node.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
@@ -59,27 +61,27 @@ impl SelectFromCollectionBuilder {
     /// To override the contents of this collection use [`set_inputs`](Self::set_inputs).
     ///
     /// <p>The data inputs identified by their node names.</p>
-    pub fn inputs(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn inputs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.inputs.unwrap_or_default();
         v.push(input.into());
-        self.inputs = Some(v);
+        self.inputs = ::std::option::Option::Some(v);
         self
     }
     /// <p>The data inputs identified by their node names.</p>
     pub fn set_inputs(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inputs = input;
         self
     }
     /// <p>The index for the DynamicFrame to be selected.</p>
     pub fn index(mut self, input: i32) -> Self {
-        self.index = Some(input);
+        self.index = ::std::option::Option::Some(input);
         self
     }
     /// <p>The index for the DynamicFrame to be selected.</p>
-    pub fn set_index(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_index(mut self, input: ::std::option::Option<i32>) -> Self {
         self.index = input;
         self
     }

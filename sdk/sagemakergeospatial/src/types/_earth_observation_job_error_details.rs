@@ -2,22 +2,22 @@
 
 /// <p>The structure representing the errors in an EarthObservationJob.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EarthObservationJobErrorDetails {
     /// <p>The type of error in an Earth Observation job.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::EarthObservationJobErrorType>,
+    pub r#type: ::std::option::Option<crate::types::EarthObservationJobErrorType>,
     /// <p>A detailed message describing the error in an Earth Observation job.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
 }
 impl EarthObservationJobErrorDetails {
     /// <p>The type of error in an Earth Observation job.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::EarthObservationJobErrorType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::EarthObservationJobErrorType> {
         self.r#type.as_ref()
     }
     /// <p>A detailed message describing the error in an Earth Observation job.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -30,32 +30,34 @@ impl EarthObservationJobErrorDetails {
 
 /// A builder for [`EarthObservationJobErrorDetails`](crate::types::EarthObservationJobErrorDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EarthObservationJobErrorDetailsBuilder {
-    pub(crate) r#type: std::option::Option<crate::types::EarthObservationJobErrorType>,
-    pub(crate) message: std::option::Option<std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::EarthObservationJobErrorType>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
 }
 impl EarthObservationJobErrorDetailsBuilder {
     /// <p>The type of error in an Earth Observation job.</p>
     pub fn r#type(mut self, input: crate::types::EarthObservationJobErrorType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of error in an Earth Observation job.</p>
     pub fn set_type(
         mut self,
-        input: std::option::Option<crate::types::EarthObservationJobErrorType>,
+        input: ::std::option::Option<crate::types::EarthObservationJobErrorType>,
     ) -> Self {
         self.r#type = input;
         self
     }
     /// <p>A detailed message describing the error in an Earth Observation job.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A detailed message describing the error in an Earth Observation job.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }

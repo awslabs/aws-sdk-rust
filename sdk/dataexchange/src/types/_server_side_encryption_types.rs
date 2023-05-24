@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ServerSideEncryptionTypes {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum ServerSideEncryptionTypes {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ServerSideEncryptionTypes {
+impl ::std::convert::From<&str> for ServerSideEncryptionTypes {
     fn from(s: &str) -> Self {
         match s {
             "AES256" => ServerSideEncryptionTypes::Aes256,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for ServerSideEncryptionTypes {
         }
     }
 }
-impl std::str::FromStr for ServerSideEncryptionTypes {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ServerSideEncryptionTypes {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ServerSideEncryptionTypes::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ServerSideEncryptionTypes::from(s))
     }
 }
 impl ServerSideEncryptionTypes {
@@ -86,7 +86,7 @@ impl ServerSideEncryptionTypes {
         &["AES256", "aws:kms"]
     }
 }
-impl AsRef<str> for ServerSideEncryptionTypes {
+impl ::std::convert::AsRef<str> for ServerSideEncryptionTypes {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

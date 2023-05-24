@@ -2,43 +2,43 @@
 
 /// <p>An object that contains inbox placement data for an email provider.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PlacementStatistics {
     /// <p>The percentage of emails that arrived in recipients' inboxes during the predictive inbox placement test.</p>
     #[doc(hidden)]
-    pub inbox_percentage: std::option::Option<f64>,
+    pub inbox_percentage: ::std::option::Option<f64>,
     /// <p>The percentage of emails that arrived in recipients' spam or junk mail folders during the predictive inbox placement test.</p>
     #[doc(hidden)]
-    pub spam_percentage: std::option::Option<f64>,
+    pub spam_percentage: ::std::option::Option<f64>,
     /// <p>The percentage of emails that didn't arrive in recipients' inboxes at all during the predictive inbox placement test.</p>
     #[doc(hidden)]
-    pub missing_percentage: std::option::Option<f64>,
+    pub missing_percentage: ::std::option::Option<f64>,
     /// <p>The percentage of emails that were authenticated by using Sender Policy Framework (SPF) during the predictive inbox placement test.</p>
     #[doc(hidden)]
-    pub spf_percentage: std::option::Option<f64>,
+    pub spf_percentage: ::std::option::Option<f64>,
     /// <p>The percentage of emails that were authenticated by using DomainKeys Identified Mail (DKIM) during the predictive inbox placement test.</p>
     #[doc(hidden)]
-    pub dkim_percentage: std::option::Option<f64>,
+    pub dkim_percentage: ::std::option::Option<f64>,
 }
 impl PlacementStatistics {
     /// <p>The percentage of emails that arrived in recipients' inboxes during the predictive inbox placement test.</p>
-    pub fn inbox_percentage(&self) -> std::option::Option<f64> {
+    pub fn inbox_percentage(&self) -> ::std::option::Option<f64> {
         self.inbox_percentage
     }
     /// <p>The percentage of emails that arrived in recipients' spam or junk mail folders during the predictive inbox placement test.</p>
-    pub fn spam_percentage(&self) -> std::option::Option<f64> {
+    pub fn spam_percentage(&self) -> ::std::option::Option<f64> {
         self.spam_percentage
     }
     /// <p>The percentage of emails that didn't arrive in recipients' inboxes at all during the predictive inbox placement test.</p>
-    pub fn missing_percentage(&self) -> std::option::Option<f64> {
+    pub fn missing_percentage(&self) -> ::std::option::Option<f64> {
         self.missing_percentage
     }
     /// <p>The percentage of emails that were authenticated by using Sender Policy Framework (SPF) during the predictive inbox placement test.</p>
-    pub fn spf_percentage(&self) -> std::option::Option<f64> {
+    pub fn spf_percentage(&self) -> ::std::option::Option<f64> {
         self.spf_percentage
     }
     /// <p>The percentage of emails that were authenticated by using DomainKeys Identified Mail (DKIM) during the predictive inbox placement test.</p>
-    pub fn dkim_percentage(&self) -> std::option::Option<f64> {
+    pub fn dkim_percentage(&self) -> ::std::option::Option<f64> {
         self.dkim_percentage
     }
 }
@@ -51,62 +51,64 @@ impl PlacementStatistics {
 
 /// A builder for [`PlacementStatistics`](crate::types::PlacementStatistics).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PlacementStatisticsBuilder {
-    pub(crate) inbox_percentage: std::option::Option<f64>,
-    pub(crate) spam_percentage: std::option::Option<f64>,
-    pub(crate) missing_percentage: std::option::Option<f64>,
-    pub(crate) spf_percentage: std::option::Option<f64>,
-    pub(crate) dkim_percentage: std::option::Option<f64>,
+    pub(crate) inbox_percentage: ::std::option::Option<f64>,
+    pub(crate) spam_percentage: ::std::option::Option<f64>,
+    pub(crate) missing_percentage: ::std::option::Option<f64>,
+    pub(crate) spf_percentage: ::std::option::Option<f64>,
+    pub(crate) dkim_percentage: ::std::option::Option<f64>,
 }
 impl PlacementStatisticsBuilder {
     /// <p>The percentage of emails that arrived in recipients' inboxes during the predictive inbox placement test.</p>
     pub fn inbox_percentage(mut self, input: f64) -> Self {
-        self.inbox_percentage = Some(input);
+        self.inbox_percentage = ::std::option::Option::Some(input);
         self
     }
     /// <p>The percentage of emails that arrived in recipients' inboxes during the predictive inbox placement test.</p>
-    pub fn set_inbox_percentage(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_inbox_percentage(mut self, input: ::std::option::Option<f64>) -> Self {
         self.inbox_percentage = input;
         self
     }
     /// <p>The percentage of emails that arrived in recipients' spam or junk mail folders during the predictive inbox placement test.</p>
     pub fn spam_percentage(mut self, input: f64) -> Self {
-        self.spam_percentage = Some(input);
+        self.spam_percentage = ::std::option::Option::Some(input);
         self
     }
     /// <p>The percentage of emails that arrived in recipients' spam or junk mail folders during the predictive inbox placement test.</p>
-    pub fn set_spam_percentage(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_spam_percentage(mut self, input: ::std::option::Option<f64>) -> Self {
         self.spam_percentage = input;
         self
     }
     /// <p>The percentage of emails that didn't arrive in recipients' inboxes at all during the predictive inbox placement test.</p>
     pub fn missing_percentage(mut self, input: f64) -> Self {
-        self.missing_percentage = Some(input);
+        self.missing_percentage = ::std::option::Option::Some(input);
         self
     }
     /// <p>The percentage of emails that didn't arrive in recipients' inboxes at all during the predictive inbox placement test.</p>
-    pub fn set_missing_percentage(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_missing_percentage(mut self, input: ::std::option::Option<f64>) -> Self {
         self.missing_percentage = input;
         self
     }
     /// <p>The percentage of emails that were authenticated by using Sender Policy Framework (SPF) during the predictive inbox placement test.</p>
     pub fn spf_percentage(mut self, input: f64) -> Self {
-        self.spf_percentage = Some(input);
+        self.spf_percentage = ::std::option::Option::Some(input);
         self
     }
     /// <p>The percentage of emails that were authenticated by using Sender Policy Framework (SPF) during the predictive inbox placement test.</p>
-    pub fn set_spf_percentage(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_spf_percentage(mut self, input: ::std::option::Option<f64>) -> Self {
         self.spf_percentage = input;
         self
     }
     /// <p>The percentage of emails that were authenticated by using DomainKeys Identified Mail (DKIM) during the predictive inbox placement test.</p>
     pub fn dkim_percentage(mut self, input: f64) -> Self {
-        self.dkim_percentage = Some(input);
+        self.dkim_percentage = ::std::option::Option::Some(input);
         self
     }
     /// <p>The percentage of emails that were authenticated by using DomainKeys Identified Mail (DKIM) during the predictive inbox placement test.</p>
-    pub fn set_dkim_percentage(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_dkim_percentage(mut self, input: ::std::option::Option<f64>) -> Self {
         self.dkim_percentage = input;
         self
     }

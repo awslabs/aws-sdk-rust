@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetQueryRuntimeStatistics`](crate::operation::get_query_runtime_statistics::builders::GetQueryRuntimeStatisticsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`query_execution_id(impl Into<String>)`](crate::operation::get_query_runtime_statistics::builders::GetQueryRuntimeStatisticsFluentBuilder::query_execution_id) / [`set_query_execution_id(Option<String>)`](crate::operation::get_query_runtime_statistics::builders::GetQueryRuntimeStatisticsFluentBuilder::set_query_execution_id): <p>The unique ID of the query execution.</p>
+    ///   - [`query_execution_id(impl ::std::convert::Into<String>)`](crate::operation::get_query_runtime_statistics::builders::GetQueryRuntimeStatisticsFluentBuilder::query_execution_id) / [`set_query_execution_id(Option<String>)`](crate::operation::get_query_runtime_statistics::builders::GetQueryRuntimeStatisticsFluentBuilder::set_query_execution_id): <p>The unique ID of the query execution.</p>
     /// - On success, responds with [`GetQueryRuntimeStatisticsOutput`](crate::operation::get_query_runtime_statistics::GetQueryRuntimeStatisticsOutput) with field(s):
     ///   - [`query_runtime_statistics(Option<QueryRuntimeStatistics>)`](crate::operation::get_query_runtime_statistics::GetQueryRuntimeStatisticsOutput::query_runtime_statistics): <p>Runtime statistics about the query execution.</p>
     /// - On failure, responds with [`SdkError<GetQueryRuntimeStatisticsError>`](crate::operation::get_query_runtime_statistics::GetQueryRuntimeStatisticsError)

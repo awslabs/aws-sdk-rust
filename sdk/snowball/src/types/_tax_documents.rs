@@ -2,15 +2,15 @@
 
 /// <p>The tax documents required in your Amazon Web Services Region.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TaxDocuments {
     /// <p>The tax documents required in Amazon Web Services Region in India.</p>
     #[doc(hidden)]
-    pub ind: std::option::Option<crate::types::IndTaxDocuments>,
+    pub ind: ::std::option::Option<crate::types::IndTaxDocuments>,
 }
 impl TaxDocuments {
     /// <p>The tax documents required in Amazon Web Services Region in India.</p>
-    pub fn ind(&self) -> std::option::Option<&crate::types::IndTaxDocuments> {
+    pub fn ind(&self) -> ::std::option::Option<&crate::types::IndTaxDocuments> {
         self.ind.as_ref()
     }
 }
@@ -23,18 +23,20 @@ impl TaxDocuments {
 
 /// A builder for [`TaxDocuments`](crate::types::TaxDocuments).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TaxDocumentsBuilder {
-    pub(crate) ind: std::option::Option<crate::types::IndTaxDocuments>,
+    pub(crate) ind: ::std::option::Option<crate::types::IndTaxDocuments>,
 }
 impl TaxDocumentsBuilder {
     /// <p>The tax documents required in Amazon Web Services Region in India.</p>
     pub fn ind(mut self, input: crate::types::IndTaxDocuments) -> Self {
-        self.ind = Some(input);
+        self.ind = ::std::option::Option::Some(input);
         self
     }
     /// <p>The tax documents required in Amazon Web Services Region in India.</p>
-    pub fn set_ind(mut self, input: std::option::Option<crate::types::IndTaxDocuments>) -> Self {
+    pub fn set_ind(mut self, input: ::std::option::Option<crate::types::IndTaxDocuments>) -> Self {
         self.ind = input;
         self
     }

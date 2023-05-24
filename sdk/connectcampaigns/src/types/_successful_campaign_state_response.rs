@@ -2,22 +2,22 @@
 
 /// Successful response of campaign state
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SuccessfulCampaignStateResponse {
     /// Identifier representing a Campaign
     #[doc(hidden)]
-    pub campaign_id: std::option::Option<std::string::String>,
+    pub campaign_id: ::std::option::Option<::std::string::String>,
     /// State of a campaign
     #[doc(hidden)]
-    pub state: std::option::Option<crate::types::CampaignState>,
+    pub state: ::std::option::Option<crate::types::CampaignState>,
 }
 impl SuccessfulCampaignStateResponse {
     /// Identifier representing a Campaign
-    pub fn campaign_id(&self) -> std::option::Option<&str> {
+    pub fn campaign_id(&self) -> ::std::option::Option<&str> {
         self.campaign_id.as_deref()
     }
     /// State of a campaign
-    pub fn state(&self) -> std::option::Option<&crate::types::CampaignState> {
+    pub fn state(&self) -> ::std::option::Option<&crate::types::CampaignState> {
         self.state.as_ref()
     }
 }
@@ -30,29 +30,31 @@ impl SuccessfulCampaignStateResponse {
 
 /// A builder for [`SuccessfulCampaignStateResponse`](crate::types::SuccessfulCampaignStateResponse).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SuccessfulCampaignStateResponseBuilder {
-    pub(crate) campaign_id: std::option::Option<std::string::String>,
-    pub(crate) state: std::option::Option<crate::types::CampaignState>,
+    pub(crate) campaign_id: ::std::option::Option<::std::string::String>,
+    pub(crate) state: ::std::option::Option<crate::types::CampaignState>,
 }
 impl SuccessfulCampaignStateResponseBuilder {
     /// Identifier representing a Campaign
-    pub fn campaign_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.campaign_id = Some(input.into());
+    pub fn campaign_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.campaign_id = ::std::option::Option::Some(input.into());
         self
     }
     /// Identifier representing a Campaign
-    pub fn set_campaign_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_campaign_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.campaign_id = input;
         self
     }
     /// State of a campaign
     pub fn state(mut self, input: crate::types::CampaignState) -> Self {
-        self.state = Some(input);
+        self.state = ::std::option::Option::Some(input);
         self
     }
     /// State of a campaign
-    pub fn set_state(mut self, input: std::option::Option<crate::types::CampaignState>) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::CampaignState>) -> Self {
         self.state = input;
         self
     }

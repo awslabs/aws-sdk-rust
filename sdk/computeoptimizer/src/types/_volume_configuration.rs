@@ -2,12 +2,12 @@
 
 /// <p>Describes the configuration of an Amazon Elastic Block Store (Amazon EBS) volume.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VolumeConfiguration {
     /// <p>The volume type.</p>
     /// <p>This can be <code>gp2</code> for General Purpose SSD, <code>io1</code> or <code>io2</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code> for Cold HDD, or <code>standard</code> for Magnetic volumes.</p>
     #[doc(hidden)]
-    pub volume_type: std::option::Option<std::string::String>,
+    pub volume_type: ::std::option::Option<::std::string::String>,
     /// <p>The size of the volume, in GiB.</p>
     #[doc(hidden)]
     pub volume_size: i32,
@@ -25,12 +25,12 @@ pub struct VolumeConfiguration {
     pub volume_burst_throughput: i32,
     /// <p> Contains the image used to boot the instance during launch. </p>
     #[doc(hidden)]
-    pub root_volume: std::option::Option<bool>,
+    pub root_volume: ::std::option::Option<bool>,
 }
 impl VolumeConfiguration {
     /// <p>The volume type.</p>
     /// <p>This can be <code>gp2</code> for General Purpose SSD, <code>io1</code> or <code>io2</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code> for Cold HDD, or <code>standard</code> for Magnetic volumes.</p>
-    pub fn volume_type(&self) -> std::option::Option<&str> {
+    pub fn volume_type(&self) -> ::std::option::Option<&str> {
         self.volume_type.as_deref()
     }
     /// <p>The size of the volume, in GiB.</p>
@@ -54,7 +54,7 @@ impl VolumeConfiguration {
         self.volume_burst_throughput
     }
     /// <p> Contains the image used to boot the instance during launch. </p>
-    pub fn root_volume(&self) -> std::option::Option<bool> {
+    pub fn root_volume(&self) -> ::std::option::Option<bool> {
         self.root_volume
     }
 }
@@ -67,86 +67,88 @@ impl VolumeConfiguration {
 
 /// A builder for [`VolumeConfiguration`](crate::types::VolumeConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VolumeConfigurationBuilder {
-    pub(crate) volume_type: std::option::Option<std::string::String>,
-    pub(crate) volume_size: std::option::Option<i32>,
-    pub(crate) volume_baseline_iops: std::option::Option<i32>,
-    pub(crate) volume_burst_iops: std::option::Option<i32>,
-    pub(crate) volume_baseline_throughput: std::option::Option<i32>,
-    pub(crate) volume_burst_throughput: std::option::Option<i32>,
-    pub(crate) root_volume: std::option::Option<bool>,
+    pub(crate) volume_type: ::std::option::Option<::std::string::String>,
+    pub(crate) volume_size: ::std::option::Option<i32>,
+    pub(crate) volume_baseline_iops: ::std::option::Option<i32>,
+    pub(crate) volume_burst_iops: ::std::option::Option<i32>,
+    pub(crate) volume_baseline_throughput: ::std::option::Option<i32>,
+    pub(crate) volume_burst_throughput: ::std::option::Option<i32>,
+    pub(crate) root_volume: ::std::option::Option<bool>,
 }
 impl VolumeConfigurationBuilder {
     /// <p>The volume type.</p>
     /// <p>This can be <code>gp2</code> for General Purpose SSD, <code>io1</code> or <code>io2</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code> for Cold HDD, or <code>standard</code> for Magnetic volumes.</p>
-    pub fn volume_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.volume_type = Some(input.into());
+    pub fn volume_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.volume_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The volume type.</p>
     /// <p>This can be <code>gp2</code> for General Purpose SSD, <code>io1</code> or <code>io2</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code> for Cold HDD, or <code>standard</code> for Magnetic volumes.</p>
-    pub fn set_volume_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_volume_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.volume_type = input;
         self
     }
     /// <p>The size of the volume, in GiB.</p>
     pub fn volume_size(mut self, input: i32) -> Self {
-        self.volume_size = Some(input);
+        self.volume_size = ::std::option::Option::Some(input);
         self
     }
     /// <p>The size of the volume, in GiB.</p>
-    pub fn set_volume_size(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_volume_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.volume_size = input;
         self
     }
     /// <p>The baseline IOPS of the volume.</p>
     pub fn volume_baseline_iops(mut self, input: i32) -> Self {
-        self.volume_baseline_iops = Some(input);
+        self.volume_baseline_iops = ::std::option::Option::Some(input);
         self
     }
     /// <p>The baseline IOPS of the volume.</p>
-    pub fn set_volume_baseline_iops(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_volume_baseline_iops(mut self, input: ::std::option::Option<i32>) -> Self {
         self.volume_baseline_iops = input;
         self
     }
     /// <p>The burst IOPS of the volume.</p>
     pub fn volume_burst_iops(mut self, input: i32) -> Self {
-        self.volume_burst_iops = Some(input);
+        self.volume_burst_iops = ::std::option::Option::Some(input);
         self
     }
     /// <p>The burst IOPS of the volume.</p>
-    pub fn set_volume_burst_iops(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_volume_burst_iops(mut self, input: ::std::option::Option<i32>) -> Self {
         self.volume_burst_iops = input;
         self
     }
     /// <p>The baseline throughput of the volume.</p>
     pub fn volume_baseline_throughput(mut self, input: i32) -> Self {
-        self.volume_baseline_throughput = Some(input);
+        self.volume_baseline_throughput = ::std::option::Option::Some(input);
         self
     }
     /// <p>The baseline throughput of the volume.</p>
-    pub fn set_volume_baseline_throughput(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_volume_baseline_throughput(mut self, input: ::std::option::Option<i32>) -> Self {
         self.volume_baseline_throughput = input;
         self
     }
     /// <p>The burst throughput of the volume.</p>
     pub fn volume_burst_throughput(mut self, input: i32) -> Self {
-        self.volume_burst_throughput = Some(input);
+        self.volume_burst_throughput = ::std::option::Option::Some(input);
         self
     }
     /// <p>The burst throughput of the volume.</p>
-    pub fn set_volume_burst_throughput(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_volume_burst_throughput(mut self, input: ::std::option::Option<i32>) -> Self {
         self.volume_burst_throughput = input;
         self
     }
     /// <p> Contains the image used to boot the instance during launch. </p>
     pub fn root_volume(mut self, input: bool) -> Self {
-        self.root_volume = Some(input);
+        self.root_volume = ::std::option::Option::Some(input);
         self
     }
     /// <p> Contains the image used to boot the instance during launch. </p>
-    pub fn set_root_volume(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_root_volume(mut self, input: ::std::option::Option<bool>) -> Self {
         self.root_volume = input;
         self
     }

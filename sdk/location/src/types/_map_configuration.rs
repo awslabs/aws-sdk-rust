@@ -2,7 +2,7 @@
 
 /// <p>Specifies the map tile style selected from an available provider.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MapConfiguration {
     /// <p>Specifies the map style selected from an available data provider.</p>
     /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri map styles</a>:</p>
@@ -41,7 +41,7 @@ pub struct MapConfiguration {
     /// <li> <p> <code>VectorOpenDataVisualizationDark</code> – The Open Data Visualization Dark map style is a dark-themed style with muted colors and fewer features that aids in understanding overlaid data.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub style: std::option::Option<std::string::String>,
+    pub style: ::std::option::Option<::std::string::String>,
 }
 impl MapConfiguration {
     /// <p>Specifies the map style selected from an available data provider.</p>
@@ -80,7 +80,7 @@ impl MapConfiguration {
     /// <li> <p> <code>VectorOpenDataVisualizationLight</code> – The Open Data Visualization Light map style is a light-themed style with muted colors and fewer features that aids in understanding overlaid data.</p> </li>
     /// <li> <p> <code>VectorOpenDataVisualizationDark</code> – The Open Data Visualization Dark map style is a dark-themed style with muted colors and fewer features that aids in understanding overlaid data.</p> </li>
     /// </ul>
-    pub fn style(&self) -> std::option::Option<&str> {
+    pub fn style(&self) -> ::std::option::Option<&str> {
         self.style.as_deref()
     }
 }
@@ -93,9 +93,11 @@ impl MapConfiguration {
 
 /// A builder for [`MapConfiguration`](crate::types::MapConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MapConfigurationBuilder {
-    pub(crate) style: std::option::Option<std::string::String>,
+    pub(crate) style: ::std::option::Option<::std::string::String>,
 }
 impl MapConfigurationBuilder {
     /// <p>Specifies the map style selected from an available data provider.</p>
@@ -134,8 +136,8 @@ impl MapConfigurationBuilder {
     /// <li> <p> <code>VectorOpenDataVisualizationLight</code> – The Open Data Visualization Light map style is a light-themed style with muted colors and fewer features that aids in understanding overlaid data.</p> </li>
     /// <li> <p> <code>VectorOpenDataVisualizationDark</code> – The Open Data Visualization Dark map style is a dark-themed style with muted colors and fewer features that aids in understanding overlaid data.</p> </li>
     /// </ul>
-    pub fn style(mut self, input: impl Into<std::string::String>) -> Self {
-        self.style = Some(input.into());
+    pub fn style(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.style = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the map style selected from an available data provider.</p>
@@ -174,7 +176,7 @@ impl MapConfigurationBuilder {
     /// <li> <p> <code>VectorOpenDataVisualizationLight</code> – The Open Data Visualization Light map style is a light-themed style with muted colors and fewer features that aids in understanding overlaid data.</p> </li>
     /// <li> <p> <code>VectorOpenDataVisualizationDark</code> – The Open Data Visualization Dark map style is a dark-themed style with muted colors and fewer features that aids in understanding overlaid data.</p> </li>
     /// </ul>
-    pub fn set_style(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_style(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.style = input;
         self
     }

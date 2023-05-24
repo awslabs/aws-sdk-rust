@@ -4,8 +4,8 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`sample(Sample)`](crate::operation::update_project::builders::UpdateProjectFluentBuilder::sample) / [`set_sample(Option<Sample>)`](crate::operation::update_project::builders::UpdateProjectFluentBuilder::set_sample): <p>Represents the sample size and sampling type for DataBrew to use for interactive data analysis.</p>
-    ///   - [`role_arn(impl Into<String>)`](crate::operation::update_project::builders::UpdateProjectFluentBuilder::role_arn) / [`set_role_arn(Option<String>)`](crate::operation::update_project::builders::UpdateProjectFluentBuilder::set_role_arn): <p>The Amazon Resource Name (ARN) of the IAM role to be assumed for this request.</p>
-    ///   - [`name(impl Into<String>)`](crate::operation::update_project::builders::UpdateProjectFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_project::builders::UpdateProjectFluentBuilder::set_name): <p>The name of the project to be updated.</p>
+    ///   - [`role_arn(impl ::std::convert::Into<String>)`](crate::operation::update_project::builders::UpdateProjectFluentBuilder::role_arn) / [`set_role_arn(Option<String>)`](crate::operation::update_project::builders::UpdateProjectFluentBuilder::set_role_arn): <p>The Amazon Resource Name (ARN) of the IAM role to be assumed for this request.</p>
+    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::update_project::builders::UpdateProjectFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_project::builders::UpdateProjectFluentBuilder::set_name): <p>The name of the project to be updated.</p>
     /// - On success, responds with [`UpdateProjectOutput`](crate::operation::update_project::UpdateProjectOutput) with field(s):
     ///   - [`last_modified_date(Option<DateTime>)`](crate::operation::update_project::UpdateProjectOutput::last_modified_date): <p>The date and time that the project was last modified.</p>
     ///   - [`name(Option<String>)`](crate::operation::update_project::UpdateProjectOutput::name): <p>The name of the project that you updated.</p>

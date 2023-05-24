@@ -6,56 +6,59 @@ pub use crate::operation::update_workflow::_update_workflow_input::UpdateWorkflo
 /// Fluent builder constructing a request to `UpdateWorkflow`.
 ///
 /// <p>Update a migration workflow.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateWorkflowFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::update_workflow::builders::UpdateWorkflowInputBuilder,
 }
 impl UpdateWorkflowFluentBuilder {
     /// Creates a new `UpdateWorkflow`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_workflow::UpdateWorkflow,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::update_workflow::UpdateWorkflowError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_workflow::UpdateWorkflowError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_workflow::UpdateWorkflowOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_workflow::UpdateWorkflowError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_workflow::UpdateWorkflowError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,39 +71,39 @@ impl UpdateWorkflowFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_workflow::UpdateWorkflowOutput,
-        aws_smithy_http::result::SdkError<crate::operation::update_workflow::UpdateWorkflowError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::update_workflow::UpdateWorkflowError>,
     > {
         self.send_middleware().await
     }
     /// <p>The ID of the migration workflow.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.id(input.into());
         self
     }
     /// <p>The ID of the migration workflow.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_id(input);
         self
     }
     /// <p>The name of the migration workflow.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// <p>The name of the migration workflow.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
     /// <p>The description of the migration workflow.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>The description of the migration workflow.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
@@ -111,7 +114,7 @@ impl UpdateWorkflowFluentBuilder {
     /// <p>The input parameters required to update a migration workflow.</p>
     pub fn input_parameters(
         mut self,
-        k: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
         v: crate::types::StepInput,
     ) -> Self {
         self.inner = self.inner.input_parameters(k.into(), v);
@@ -120,8 +123,8 @@ impl UpdateWorkflowFluentBuilder {
     /// <p>The input parameters required to update a migration workflow.</p>
     pub fn set_input_parameters(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::types::StepInput>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, crate::types::StepInput>,
         >,
     ) -> Self {
         self.inner = self.inner.set_input_parameters(input);
@@ -132,14 +135,14 @@ impl UpdateWorkflowFluentBuilder {
     /// To override the contents of this collection use [`set_step_targets`](Self::set_step_targets).
     ///
     /// <p>The servers on which a step will be run.</p>
-    pub fn step_targets(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn step_targets(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.step_targets(input.into());
         self
     }
     /// <p>The servers on which a step will be run.</p>
     pub fn set_step_targets(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_step_targets(input);
         self

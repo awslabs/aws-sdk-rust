@@ -2,22 +2,22 @@
 
 /// <p>Identifies the schema Amazon Resource Name (ARN) and facet name for the typed link.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TypedLinkSchemaAndFacetName {
     /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
     #[doc(hidden)]
-    pub schema_arn: std::option::Option<std::string::String>,
+    pub schema_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique name of the typed link facet.</p>
     #[doc(hidden)]
-    pub typed_link_name: std::option::Option<std::string::String>,
+    pub typed_link_name: ::std::option::Option<::std::string::String>,
 }
 impl TypedLinkSchemaAndFacetName {
     /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
-    pub fn schema_arn(&self) -> std::option::Option<&str> {
+    pub fn schema_arn(&self) -> ::std::option::Option<&str> {
         self.schema_arn.as_deref()
     }
     /// <p>The unique name of the typed link facet.</p>
-    pub fn typed_link_name(&self) -> std::option::Option<&str> {
+    pub fn typed_link_name(&self) -> ::std::option::Option<&str> {
         self.typed_link_name.as_deref()
     }
 }
@@ -30,29 +30,37 @@ impl TypedLinkSchemaAndFacetName {
 
 /// A builder for [`TypedLinkSchemaAndFacetName`](crate::types::TypedLinkSchemaAndFacetName).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TypedLinkSchemaAndFacetNameBuilder {
-    pub(crate) schema_arn: std::option::Option<std::string::String>,
-    pub(crate) typed_link_name: std::option::Option<std::string::String>,
+    pub(crate) schema_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) typed_link_name: ::std::option::Option<::std::string::String>,
 }
 impl TypedLinkSchemaAndFacetNameBuilder {
     /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
-    pub fn schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.schema_arn = Some(input.into());
+    pub fn schema_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.schema_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
-    pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_schema_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schema_arn = input;
         self
     }
     /// <p>The unique name of the typed link facet.</p>
-    pub fn typed_link_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.typed_link_name = Some(input.into());
+    pub fn typed_link_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.typed_link_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique name of the typed link facet.</p>
-    pub fn set_typed_link_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_typed_link_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.typed_link_name = input;
         self
     }

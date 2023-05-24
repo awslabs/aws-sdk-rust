@@ -2,20 +2,20 @@
 
 /// <p> The result structure for the get webhook request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetWebhookOutput {
     /// <p> Describes the structure of a webhook. </p>
     #[doc(hidden)]
-    pub webhook: std::option::Option<crate::types::Webhook>,
+    pub webhook: ::std::option::Option<crate::types::Webhook>,
     _request_id: Option<String>,
 }
 impl GetWebhookOutput {
     /// <p> Describes the structure of a webhook. </p>
-    pub fn webhook(&self) -> std::option::Option<&crate::types::Webhook> {
+    pub fn webhook(&self) -> ::std::option::Option<&crate::types::Webhook> {
         self.webhook.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for GetWebhookOutput {
+impl ::aws_http::request_id::RequestId for GetWebhookOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,21 @@ impl GetWebhookOutput {
 
 /// A builder for [`GetWebhookOutput`](crate::operation::get_webhook::GetWebhookOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetWebhookOutputBuilder {
-    pub(crate) webhook: std::option::Option<crate::types::Webhook>,
+    pub(crate) webhook: ::std::option::Option<crate::types::Webhook>,
     _request_id: Option<String>,
 }
 impl GetWebhookOutputBuilder {
     /// <p> Describes the structure of a webhook. </p>
     pub fn webhook(mut self, input: crate::types::Webhook) -> Self {
-        self.webhook = Some(input);
+        self.webhook = ::std::option::Option::Some(input);
         self
     }
     /// <p> Describes the structure of a webhook. </p>
-    pub fn set_webhook(mut self, input: std::option::Option<crate::types::Webhook>) -> Self {
+    pub fn set_webhook(mut self, input: ::std::option::Option<crate::types::Webhook>) -> Self {
         self.webhook = input;
         self
     }

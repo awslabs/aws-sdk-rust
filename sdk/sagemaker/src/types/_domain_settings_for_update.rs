@@ -2,35 +2,35 @@
 
 /// <p>A collection of <code>Domain</code> configuration settings to update.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DomainSettingsForUpdate {
     /// <p>A collection of <code>RStudioServerPro</code> Domain-level app settings to update. A single <code>RStudioServerPro</code> application is created for a domain.</p>
     #[doc(hidden)]
     pub r_studio_server_pro_domain_settings_for_update:
-        std::option::Option<crate::types::RStudioServerProDomainSettingsForUpdate>,
+        ::std::option::Option<crate::types::RStudioServerProDomainSettingsForUpdate>,
     /// <p>The configuration for attaching a SageMaker user profile name to the execution role as a <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">sts:SourceIdentity key</a>. This configuration can only be modified if there are no apps in the <code>InService</code> or <code>Pending</code> state.</p>
     #[doc(hidden)]
     pub execution_role_identity_config:
-        std::option::Option<crate::types::ExecutionRoleIdentityConfig>,
+        ::std::option::Option<crate::types::ExecutionRoleIdentityConfig>,
     /// <p>The security groups for the Amazon Virtual Private Cloud that the <code>Domain</code> uses for communication between Domain-level apps and user apps.</p>
     #[doc(hidden)]
-    pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DomainSettingsForUpdate {
     /// <p>A collection of <code>RStudioServerPro</code> Domain-level app settings to update. A single <code>RStudioServerPro</code> application is created for a domain.</p>
     pub fn r_studio_server_pro_domain_settings_for_update(
         &self,
-    ) -> std::option::Option<&crate::types::RStudioServerProDomainSettingsForUpdate> {
+    ) -> ::std::option::Option<&crate::types::RStudioServerProDomainSettingsForUpdate> {
         self.r_studio_server_pro_domain_settings_for_update.as_ref()
     }
     /// <p>The configuration for attaching a SageMaker user profile name to the execution role as a <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">sts:SourceIdentity key</a>. This configuration can only be modified if there are no apps in the <code>InService</code> or <code>Pending</code> state.</p>
     pub fn execution_role_identity_config(
         &self,
-    ) -> std::option::Option<&crate::types::ExecutionRoleIdentityConfig> {
+    ) -> ::std::option::Option<&crate::types::ExecutionRoleIdentityConfig> {
         self.execution_role_identity_config.as_ref()
     }
     /// <p>The security groups for the Amazon Virtual Private Cloud that the <code>Domain</code> uses for communication between Domain-level apps and user apps.</p>
-    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn security_group_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.security_group_ids.as_deref()
     }
 }
@@ -43,13 +43,15 @@ impl DomainSettingsForUpdate {
 
 /// A builder for [`DomainSettingsForUpdate`](crate::types::DomainSettingsForUpdate).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DomainSettingsForUpdateBuilder {
     pub(crate) r_studio_server_pro_domain_settings_for_update:
-        std::option::Option<crate::types::RStudioServerProDomainSettingsForUpdate>,
+        ::std::option::Option<crate::types::RStudioServerProDomainSettingsForUpdate>,
     pub(crate) execution_role_identity_config:
-        std::option::Option<crate::types::ExecutionRoleIdentityConfig>,
-    pub(crate) security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+        ::std::option::Option<crate::types::ExecutionRoleIdentityConfig>,
+    pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DomainSettingsForUpdateBuilder {
     /// <p>A collection of <code>RStudioServerPro</code> Domain-level app settings to update. A single <code>RStudioServerPro</code> application is created for a domain.</p>
@@ -57,13 +59,13 @@ impl DomainSettingsForUpdateBuilder {
         mut self,
         input: crate::types::RStudioServerProDomainSettingsForUpdate,
     ) -> Self {
-        self.r_studio_server_pro_domain_settings_for_update = Some(input);
+        self.r_studio_server_pro_domain_settings_for_update = ::std::option::Option::Some(input);
         self
     }
     /// <p>A collection of <code>RStudioServerPro</code> Domain-level app settings to update. A single <code>RStudioServerPro</code> application is created for a domain.</p>
     pub fn set_r_studio_server_pro_domain_settings_for_update(
         mut self,
-        input: std::option::Option<crate::types::RStudioServerProDomainSettingsForUpdate>,
+        input: ::std::option::Option<crate::types::RStudioServerProDomainSettingsForUpdate>,
     ) -> Self {
         self.r_studio_server_pro_domain_settings_for_update = input;
         self
@@ -73,13 +75,13 @@ impl DomainSettingsForUpdateBuilder {
         mut self,
         input: crate::types::ExecutionRoleIdentityConfig,
     ) -> Self {
-        self.execution_role_identity_config = Some(input);
+        self.execution_role_identity_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration for attaching a SageMaker user profile name to the execution role as a <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">sts:SourceIdentity key</a>. This configuration can only be modified if there are no apps in the <code>InService</code> or <code>Pending</code> state.</p>
     pub fn set_execution_role_identity_config(
         mut self,
-        input: std::option::Option<crate::types::ExecutionRoleIdentityConfig>,
+        input: ::std::option::Option<crate::types::ExecutionRoleIdentityConfig>,
     ) -> Self {
         self.execution_role_identity_config = input;
         self
@@ -89,16 +91,19 @@ impl DomainSettingsForUpdateBuilder {
     /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
     ///
     /// <p>The security groups for the Amazon Virtual Private Cloud that the <code>Domain</code> uses for communication between Domain-level apps and user apps.</p>
-    pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn security_group_ids(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
         v.push(input.into());
-        self.security_group_ids = Some(v);
+        self.security_group_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The security groups for the Amazon Virtual Private Cloud that the <code>Domain</code> uses for communication between Domain-level apps and user apps.</p>
     pub fn set_security_group_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.security_group_ids = input;
         self

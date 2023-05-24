@@ -7,29 +7,29 @@ pub use crate::operation::create_distribution::_create_distribution_input::Creat
 ///
 /// <p>Creates an Amazon Lightsail content delivery network (CDN) distribution.</p>
 /// <p>A distribution is a globally distributed network of caching servers that improve the performance of your website or web application hosted on a Lightsail instance. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-content-delivery-network-distributions">Content delivery networks in Amazon Lightsail</a>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateDistributionFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_distribution::builders::CreateDistributionInputBuilder,
 }
 impl CreateDistributionFluentBuilder {
     /// Creates a new `CreateDistribution`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_distribution::CreateDistribution,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_distribution::CreateDistributionError,
         >,
     > {
@@ -37,30 +37,33 @@ impl CreateDistributionFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_distribution::CreateDistributionOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_distribution::CreateDistributionError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -73,23 +76,26 @@ impl CreateDistributionFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_distribution::CreateDistributionOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::create_distribution::CreateDistributionError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The name for the distribution.</p>
-    pub fn distribution_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn distribution_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.distribution_name(input.into());
         self
     }
     /// <p>The name for the distribution.</p>
     pub fn set_distribution_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_distribution_name(input);
         self
@@ -102,7 +108,7 @@ impl CreateDistributionFluentBuilder {
     }
     /// <p>An object that describes the origin resource for the distribution, such as a Lightsail instance, bucket, or load balancer.</p>
     /// <p>The distribution pulls, caches, and serves content from the origin.</p>
-    pub fn set_origin(mut self, input: std::option::Option<crate::types::InputOrigin>) -> Self {
+    pub fn set_origin(mut self, input: ::std::option::Option<crate::types::InputOrigin>) -> Self {
         self.inner = self.inner.set_origin(input);
         self
     }
@@ -114,7 +120,7 @@ impl CreateDistributionFluentBuilder {
     /// <p>An object that describes the default cache behavior for the distribution.</p>
     pub fn set_default_cache_behavior(
         mut self,
-        input: std::option::Option<crate::types::CacheBehavior>,
+        input: ::std::option::Option<crate::types::CacheBehavior>,
     ) -> Self {
         self.inner = self.inner.set_default_cache_behavior(input);
         self
@@ -127,7 +133,7 @@ impl CreateDistributionFluentBuilder {
     /// <p>An object that describes the cache behavior settings for the distribution.</p>
     pub fn set_cache_behavior_settings(
         mut self,
-        input: std::option::Option<crate::types::CacheSettings>,
+        input: ::std::option::Option<crate::types::CacheSettings>,
     ) -> Self {
         self.inner = self.inner.set_cache_behavior_settings(input);
         self
@@ -144,7 +150,7 @@ impl CreateDistributionFluentBuilder {
     /// <p>An array of objects that describe the per-path cache behavior for the distribution.</p>
     pub fn set_cache_behaviors(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CacheBehaviorPerPath>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::CacheBehaviorPerPath>>,
     ) -> Self {
         self.inner = self.inner.set_cache_behaviors(input);
         self
@@ -152,14 +158,14 @@ impl CreateDistributionFluentBuilder {
     /// <p>The bundle ID to use for the distribution.</p>
     /// <p>A distribution bundle describes the specifications of your distribution, such as the monthly cost and monthly network transfer quota.</p>
     /// <p>Use the <code>GetDistributionBundles</code> action to get a list of distribution bundle IDs that you can specify.</p>
-    pub fn bundle_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn bundle_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bundle_id(input.into());
         self
     }
     /// <p>The bundle ID to use for the distribution.</p>
     /// <p>A distribution bundle describes the specifications of your distribution, such as the monthly cost and monthly network transfer quota.</p>
     /// <p>Use the <code>GetDistributionBundles</code> action to get a list of distribution bundle IDs that you can specify.</p>
-    pub fn set_bundle_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_bundle_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_bundle_id(input);
         self
     }
@@ -175,7 +181,7 @@ impl CreateDistributionFluentBuilder {
     /// <p>The default value is <code>dualstack</code>.</p>
     pub fn set_ip_address_type(
         mut self,
-        input: std::option::Option<crate::types::IpAddressType>,
+        input: ::std::option::Option<crate::types::IpAddressType>,
     ) -> Self {
         self.inner = self.inner.set_ip_address_type(input);
         self
@@ -194,7 +200,7 @@ impl CreateDistributionFluentBuilder {
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self

@@ -2,50 +2,50 @@
 
 /// <p>The summary description of the cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClusterSummary {
     /// <p>The unique identifier for the cluster.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the cluster.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The details about the current status of the cluster.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::ClusterStatus>,
+    pub status: ::std::option::Option<crate::types::ClusterStatus>,
     /// <p>An approximation of the cost of the cluster, represented in m1.small/hours. This value is incremented one time for every hour an m1.small instance runs. Larger instances are weighted more, so an Amazon EC2 instance that is roughly four times more expensive would result in the normalized instance hours being incremented by four. This result is only an approximation and does not reflect the actual billing rate.</p>
     #[doc(hidden)]
-    pub normalized_instance_hours: std::option::Option<i32>,
+    pub normalized_instance_hours: ::std::option::Option<i32>,
     /// <p>The Amazon Resource Name of the cluster.</p>
     #[doc(hidden)]
-    pub cluster_arn: std::option::Option<std::string::String>,
+    pub cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon Resource Name (ARN) of the Outpost where the cluster is launched. </p>
     #[doc(hidden)]
-    pub outpost_arn: std::option::Option<std::string::String>,
+    pub outpost_arn: ::std::option::Option<::std::string::String>,
 }
 impl ClusterSummary {
     /// <p>The unique identifier for the cluster.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The name of the cluster.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The details about the current status of the cluster.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::ClusterStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::ClusterStatus> {
         self.status.as_ref()
     }
     /// <p>An approximation of the cost of the cluster, represented in m1.small/hours. This value is incremented one time for every hour an m1.small instance runs. Larger instances are weighted more, so an Amazon EC2 instance that is roughly four times more expensive would result in the normalized instance hours being incremented by four. This result is only an approximation and does not reflect the actual billing rate.</p>
-    pub fn normalized_instance_hours(&self) -> std::option::Option<i32> {
+    pub fn normalized_instance_hours(&self) -> ::std::option::Option<i32> {
         self.normalized_instance_hours
     }
     /// <p>The Amazon Resource Name of the cluster.</p>
-    pub fn cluster_arn(&self) -> std::option::Option<&str> {
+    pub fn cluster_arn(&self) -> ::std::option::Option<&str> {
         self.cluster_arn.as_deref()
     }
     /// <p> The Amazon Resource Name (ARN) of the Outpost where the cluster is launched. </p>
-    pub fn outpost_arn(&self) -> std::option::Option<&str> {
+    pub fn outpost_arn(&self) -> ::std::option::Option<&str> {
         self.outpost_arn.as_deref()
     }
 }
@@ -58,73 +58,75 @@ impl ClusterSummary {
 
 /// A builder for [`ClusterSummary`](crate::types::ClusterSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ClusterSummaryBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::ClusterStatus>,
-    pub(crate) normalized_instance_hours: std::option::Option<i32>,
-    pub(crate) cluster_arn: std::option::Option<std::string::String>,
-    pub(crate) outpost_arn: std::option::Option<std::string::String>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::ClusterStatus>,
+    pub(crate) normalized_instance_hours: ::std::option::Option<i32>,
+    pub(crate) cluster_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) outpost_arn: ::std::option::Option<::std::string::String>,
 }
 impl ClusterSummaryBuilder {
     /// <p>The unique identifier for the cluster.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the cluster.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>The name of the cluster.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the cluster.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The details about the current status of the cluster.</p>
     pub fn status(mut self, input: crate::types::ClusterStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The details about the current status of the cluster.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::ClusterStatus>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ClusterStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>An approximation of the cost of the cluster, represented in m1.small/hours. This value is incremented one time for every hour an m1.small instance runs. Larger instances are weighted more, so an Amazon EC2 instance that is roughly four times more expensive would result in the normalized instance hours being incremented by four. This result is only an approximation and does not reflect the actual billing rate.</p>
     pub fn normalized_instance_hours(mut self, input: i32) -> Self {
-        self.normalized_instance_hours = Some(input);
+        self.normalized_instance_hours = ::std::option::Option::Some(input);
         self
     }
     /// <p>An approximation of the cost of the cluster, represented in m1.small/hours. This value is incremented one time for every hour an m1.small instance runs. Larger instances are weighted more, so an Amazon EC2 instance that is roughly four times more expensive would result in the normalized instance hours being incremented by four. This result is only an approximation and does not reflect the actual billing rate.</p>
-    pub fn set_normalized_instance_hours(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_normalized_instance_hours(mut self, input: ::std::option::Option<i32>) -> Self {
         self.normalized_instance_hours = input;
         self
     }
     /// <p>The Amazon Resource Name of the cluster.</p>
-    pub fn cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cluster_arn = Some(input.into());
+    pub fn cluster_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cluster_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name of the cluster.</p>
-    pub fn set_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cluster_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_arn = input;
         self
     }
     /// <p> The Amazon Resource Name (ARN) of the Outpost where the cluster is launched. </p>
-    pub fn outpost_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.outpost_arn = Some(input.into());
+    pub fn outpost_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.outpost_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Amazon Resource Name (ARN) of the Outpost where the cluster is launched. </p>
-    pub fn set_outpost_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_outpost_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.outpost_arn = input;
         self
     }

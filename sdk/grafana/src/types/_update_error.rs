@@ -2,29 +2,29 @@
 
 /// <p>A structure containing information about one error encountered while performing an <a href="https://docs.aws.amazon.com/grafana/latest/APIReference/API_UpdatePermissions.html">UpdatePermissions</a> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateError {
     /// <p>The error code.</p>
     #[doc(hidden)]
-    pub code: std::option::Option<i32>,
+    pub code: ::std::option::Option<i32>,
     /// <p>The message for this error.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
     /// <p>Specifies which permission update caused the error.</p>
     #[doc(hidden)]
-    pub caused_by: std::option::Option<crate::types::UpdateInstruction>,
+    pub caused_by: ::std::option::Option<crate::types::UpdateInstruction>,
 }
 impl UpdateError {
     /// <p>The error code.</p>
-    pub fn code(&self) -> std::option::Option<i32> {
+    pub fn code(&self) -> ::std::option::Option<i32> {
         self.code
     }
     /// <p>The message for this error.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
     /// <p>Specifies which permission update caused the error.</p>
-    pub fn caused_by(&self) -> std::option::Option<&crate::types::UpdateInstruction> {
+    pub fn caused_by(&self) -> ::std::option::Option<&crate::types::UpdateInstruction> {
         self.caused_by.as_ref()
     }
 }
@@ -37,42 +37,44 @@ impl UpdateError {
 
 /// A builder for [`UpdateError`](crate::types::UpdateError).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateErrorBuilder {
-    pub(crate) code: std::option::Option<i32>,
-    pub(crate) message: std::option::Option<std::string::String>,
-    pub(crate) caused_by: std::option::Option<crate::types::UpdateInstruction>,
+    pub(crate) code: ::std::option::Option<i32>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
+    pub(crate) caused_by: ::std::option::Option<crate::types::UpdateInstruction>,
 }
 impl UpdateErrorBuilder {
     /// <p>The error code.</p>
     pub fn code(mut self, input: i32) -> Self {
-        self.code = Some(input);
+        self.code = ::std::option::Option::Some(input);
         self
     }
     /// <p>The error code.</p>
-    pub fn set_code(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_code(mut self, input: ::std::option::Option<i32>) -> Self {
         self.code = input;
         self
     }
     /// <p>The message for this error.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The message for this error.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
     /// <p>Specifies which permission update caused the error.</p>
     pub fn caused_by(mut self, input: crate::types::UpdateInstruction) -> Self {
-        self.caused_by = Some(input);
+        self.caused_by = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies which permission update caused the error.</p>
     pub fn set_caused_by(
         mut self,
-        input: std::option::Option<crate::types::UpdateInstruction>,
+        input: ::std::option::Option<crate::types::UpdateInstruction>,
     ) -> Self {
         self.caused_by = input;
         self

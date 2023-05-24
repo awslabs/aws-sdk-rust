@@ -2,22 +2,22 @@
 
 /// <p>High level information for an SDK release. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReleaseSummary {
     /// <p>The release version. </p>
     #[doc(hidden)]
-    pub release_version: std::option::Option<std::string::String>,
+    pub release_version: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp of the release. </p>
     #[doc(hidden)]
-    pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ReleaseSummary {
     /// <p>The release version. </p>
-    pub fn release_version(&self) -> std::option::Option<&str> {
+    pub fn release_version(&self) -> ::std::option::Option<&str> {
         self.release_version.as_deref()
     }
     /// <p>The timestamp of the release. </p>
-    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
 }
@@ -30,29 +30,40 @@ impl ReleaseSummary {
 
 /// A builder for [`ReleaseSummary`](crate::types::ReleaseSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ReleaseSummaryBuilder {
-    pub(crate) release_version: std::option::Option<std::string::String>,
-    pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) release_version: ::std::option::Option<::std::string::String>,
+    pub(crate) timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ReleaseSummaryBuilder {
     /// <p>The release version. </p>
-    pub fn release_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.release_version = Some(input.into());
+    pub fn release_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.release_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The release version. </p>
-    pub fn set_release_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_release_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.release_version = input;
         self
     }
     /// <p>The timestamp of the release. </p>
-    pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.timestamp = Some(input);
+    pub fn timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>The timestamp of the release. </p>
-    pub fn set_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_timestamp(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
         self.timestamp = input;
         self
     }

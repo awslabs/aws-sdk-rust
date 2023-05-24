@@ -2,7 +2,7 @@
 
 /// <p>The next action that Amazon Lex V2 should take.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DialogAction {
     /// <p>The next action that the bot should take in its interaction with the user. The possible values are:</p>
     /// <ul>
@@ -13,10 +13,10 @@ pub struct DialogAction {
     /// <li> <p> <code>ElicitSlot</code> - The next action is to elicit a slot value from the user.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::DialogActionType>,
+    pub r#type: ::std::option::Option<crate::types::DialogActionType>,
     /// <p>The name of the slot that should be elicited from the user.</p>
     #[doc(hidden)]
-    pub slot_to_elicit: std::option::Option<std::string::String>,
+    pub slot_to_elicit: ::std::option::Option<::std::string::String>,
     /// <p>Configures the slot to use spell-by-letter or spell-by-word style. When you use a style on a slot, users can spell out their input to make it clear to your bot.</p>
     /// <ul>
     /// <li> <p>Spell by letter - "b" "o" "b"</p> </li>
@@ -24,10 +24,10 @@ pub struct DialogAction {
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-spelling.html"> Using spelling to enter slot values </a>.</p>
     #[doc(hidden)]
-    pub slot_elicitation_style: std::option::Option<crate::types::StyleType>,
+    pub slot_elicitation_style: ::std::option::Option<crate::types::StyleType>,
     /// <p>The name of the constituent sub slot of the composite slot specified in slotToElicit that should be elicited from the user.</p>
     #[doc(hidden)]
-    pub sub_slot_to_elicit: std::option::Option<crate::types::ElicitSubSlot>,
+    pub sub_slot_to_elicit: ::std::option::Option<crate::types::ElicitSubSlot>,
 }
 impl DialogAction {
     /// <p>The next action that the bot should take in its interaction with the user. The possible values are:</p>
@@ -38,11 +38,11 @@ impl DialogAction {
     /// <li> <p> <code>ElicitIntent</code> - The next action is to elicit an intent from the user.</p> </li>
     /// <li> <p> <code>ElicitSlot</code> - The next action is to elicit a slot value from the user.</p> </li>
     /// </ul>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::DialogActionType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::DialogActionType> {
         self.r#type.as_ref()
     }
     /// <p>The name of the slot that should be elicited from the user.</p>
-    pub fn slot_to_elicit(&self) -> std::option::Option<&str> {
+    pub fn slot_to_elicit(&self) -> ::std::option::Option<&str> {
         self.slot_to_elicit.as_deref()
     }
     /// <p>Configures the slot to use spell-by-letter or spell-by-word style. When you use a style on a slot, users can spell out their input to make it clear to your bot.</p>
@@ -51,11 +51,11 @@ impl DialogAction {
     /// <li> <p>Spell by word - "b as in boy" "o as in oscar" "b as in boy"</p> </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-spelling.html"> Using spelling to enter slot values </a>.</p>
-    pub fn slot_elicitation_style(&self) -> std::option::Option<&crate::types::StyleType> {
+    pub fn slot_elicitation_style(&self) -> ::std::option::Option<&crate::types::StyleType> {
         self.slot_elicitation_style.as_ref()
     }
     /// <p>The name of the constituent sub slot of the composite slot specified in slotToElicit that should be elicited from the user.</p>
-    pub fn sub_slot_to_elicit(&self) -> std::option::Option<&crate::types::ElicitSubSlot> {
+    pub fn sub_slot_to_elicit(&self) -> ::std::option::Option<&crate::types::ElicitSubSlot> {
         self.sub_slot_to_elicit.as_ref()
     }
 }
@@ -68,12 +68,14 @@ impl DialogAction {
 
 /// A builder for [`DialogAction`](crate::types::DialogAction).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DialogActionBuilder {
-    pub(crate) r#type: std::option::Option<crate::types::DialogActionType>,
-    pub(crate) slot_to_elicit: std::option::Option<std::string::String>,
-    pub(crate) slot_elicitation_style: std::option::Option<crate::types::StyleType>,
-    pub(crate) sub_slot_to_elicit: std::option::Option<crate::types::ElicitSubSlot>,
+    pub(crate) r#type: ::std::option::Option<crate::types::DialogActionType>,
+    pub(crate) slot_to_elicit: ::std::option::Option<::std::string::String>,
+    pub(crate) slot_elicitation_style: ::std::option::Option<crate::types::StyleType>,
+    pub(crate) sub_slot_to_elicit: ::std::option::Option<crate::types::ElicitSubSlot>,
 }
 impl DialogActionBuilder {
     /// <p>The next action that the bot should take in its interaction with the user. The possible values are:</p>
@@ -85,7 +87,7 @@ impl DialogActionBuilder {
     /// <li> <p> <code>ElicitSlot</code> - The next action is to elicit a slot value from the user.</p> </li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::DialogActionType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The next action that the bot should take in its interaction with the user. The possible values are:</p>
@@ -96,17 +98,26 @@ impl DialogActionBuilder {
     /// <li> <p> <code>ElicitIntent</code> - The next action is to elicit an intent from the user.</p> </li>
     /// <li> <p> <code>ElicitSlot</code> - The next action is to elicit a slot value from the user.</p> </li>
     /// </ul>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::DialogActionType>) -> Self {
+    pub fn set_type(
+        mut self,
+        input: ::std::option::Option<crate::types::DialogActionType>,
+    ) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The name of the slot that should be elicited from the user.</p>
-    pub fn slot_to_elicit(mut self, input: impl Into<std::string::String>) -> Self {
-        self.slot_to_elicit = Some(input.into());
+    pub fn slot_to_elicit(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.slot_to_elicit = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the slot that should be elicited from the user.</p>
-    pub fn set_slot_to_elicit(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_slot_to_elicit(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.slot_to_elicit = input;
         self
     }
@@ -117,7 +128,7 @@ impl DialogActionBuilder {
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-spelling.html"> Using spelling to enter slot values </a>.</p>
     pub fn slot_elicitation_style(mut self, input: crate::types::StyleType) -> Self {
-        self.slot_elicitation_style = Some(input);
+        self.slot_elicitation_style = ::std::option::Option::Some(input);
         self
     }
     /// <p>Configures the slot to use spell-by-letter or spell-by-word style. When you use a style on a slot, users can spell out their input to make it clear to your bot.</p>
@@ -128,20 +139,20 @@ impl DialogActionBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-spelling.html"> Using spelling to enter slot values </a>.</p>
     pub fn set_slot_elicitation_style(
         mut self,
-        input: std::option::Option<crate::types::StyleType>,
+        input: ::std::option::Option<crate::types::StyleType>,
     ) -> Self {
         self.slot_elicitation_style = input;
         self
     }
     /// <p>The name of the constituent sub slot of the composite slot specified in slotToElicit that should be elicited from the user.</p>
     pub fn sub_slot_to_elicit(mut self, input: crate::types::ElicitSubSlot) -> Self {
-        self.sub_slot_to_elicit = Some(input);
+        self.sub_slot_to_elicit = ::std::option::Option::Some(input);
         self
     }
     /// <p>The name of the constituent sub slot of the composite slot specified in slotToElicit that should be elicited from the user.</p>
     pub fn set_sub_slot_to_elicit(
         mut self,
-        input: std::option::Option<crate::types::ElicitSubSlot>,
+        input: ::std::option::Option<crate::types::ElicitSubSlot>,
     ) -> Self {
         self.sub_slot_to_elicit = input;
         self

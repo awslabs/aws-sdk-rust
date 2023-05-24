@@ -2,25 +2,25 @@
 
 /// <p>Replication configuration for a server group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServerGroupReplicationConfiguration {
     /// <p>The ID of the server group with which this replication configuration is associated.</p>
     #[doc(hidden)]
-    pub server_group_id: std::option::Option<std::string::String>,
+    pub server_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The replication configuration for servers in the server group.</p>
     #[doc(hidden)]
     pub server_replication_configurations:
-        std::option::Option<std::vec::Vec<crate::types::ServerReplicationConfiguration>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ServerReplicationConfiguration>>,
 }
 impl ServerGroupReplicationConfiguration {
     /// <p>The ID of the server group with which this replication configuration is associated.</p>
-    pub fn server_group_id(&self) -> std::option::Option<&str> {
+    pub fn server_group_id(&self) -> ::std::option::Option<&str> {
         self.server_group_id.as_deref()
     }
     /// <p>The replication configuration for servers in the server group.</p>
     pub fn server_replication_configurations(
         &self,
-    ) -> std::option::Option<&[crate::types::ServerReplicationConfiguration]> {
+    ) -> ::std::option::Option<&[crate::types::ServerReplicationConfiguration]> {
         self.server_replication_configurations.as_deref()
     }
 }
@@ -33,20 +33,28 @@ impl ServerGroupReplicationConfiguration {
 
 /// A builder for [`ServerGroupReplicationConfiguration`](crate::types::ServerGroupReplicationConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ServerGroupReplicationConfigurationBuilder {
-    pub(crate) server_group_id: std::option::Option<std::string::String>,
+    pub(crate) server_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) server_replication_configurations:
-        std::option::Option<std::vec::Vec<crate::types::ServerReplicationConfiguration>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ServerReplicationConfiguration>>,
 }
 impl ServerGroupReplicationConfigurationBuilder {
     /// <p>The ID of the server group with which this replication configuration is associated.</p>
-    pub fn server_group_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.server_group_id = Some(input.into());
+    pub fn server_group_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.server_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the server group with which this replication configuration is associated.</p>
-    pub fn set_server_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_server_group_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.server_group_id = input;
         self
     }
@@ -61,13 +69,13 @@ impl ServerGroupReplicationConfigurationBuilder {
     ) -> Self {
         let mut v = self.server_replication_configurations.unwrap_or_default();
         v.push(input);
-        self.server_replication_configurations = Some(v);
+        self.server_replication_configurations = ::std::option::Option::Some(v);
         self
     }
     /// <p>The replication configuration for servers in the server group.</p>
     pub fn set_server_replication_configurations(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ServerReplicationConfiguration>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ServerReplicationConfiguration>>,
     ) -> Self {
         self.server_replication_configurations = input;
         self

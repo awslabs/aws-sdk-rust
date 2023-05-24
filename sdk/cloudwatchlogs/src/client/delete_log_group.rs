@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteLogGroup`](crate::operation::delete_log_group::builders::DeleteLogGroupFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`log_group_name(impl Into<String>)`](crate::operation::delete_log_group::builders::DeleteLogGroupFluentBuilder::log_group_name) / [`set_log_group_name(Option<String>)`](crate::operation::delete_log_group::builders::DeleteLogGroupFluentBuilder::set_log_group_name): <p>The name of the log group.</p>
+    ///   - [`log_group_name(impl ::std::convert::Into<String>)`](crate::operation::delete_log_group::builders::DeleteLogGroupFluentBuilder::log_group_name) / [`set_log_group_name(Option<String>)`](crate::operation::delete_log_group::builders::DeleteLogGroupFluentBuilder::set_log_group_name): <p>The name of the log group.</p>
     /// - On success, responds with [`DeleteLogGroupOutput`](crate::operation::delete_log_group::DeleteLogGroupOutput)
     /// - On failure, responds with [`SdkError<DeleteLogGroupError>`](crate::operation::delete_log_group::DeleteLogGroupError)
     pub fn delete_log_group(

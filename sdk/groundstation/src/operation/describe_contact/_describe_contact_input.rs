@@ -2,15 +2,15 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeContactInput {
     /// <p>UUID of a contact.</p>
     #[doc(hidden)]
-    pub contact_id: std::option::Option<std::string::String>,
+    pub contact_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeContactInput {
     /// <p>UUID of a contact.</p>
-    pub fn contact_id(&self) -> std::option::Option<&str> {
+    pub fn contact_id(&self) -> ::std::option::Option<&str> {
         self.contact_id.as_deref()
     }
 }
@@ -23,29 +23,31 @@ impl DescribeContactInput {
 
 /// A builder for [`DescribeContactInput`](crate::operation::describe_contact::DescribeContactInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeContactInputBuilder {
-    pub(crate) contact_id: std::option::Option<std::string::String>,
+    pub(crate) contact_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeContactInputBuilder {
     /// <p>UUID of a contact.</p>
-    pub fn contact_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.contact_id = Some(input.into());
+    pub fn contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.contact_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>UUID of a contact.</p>
-    pub fn set_contact_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.contact_id = input;
         self
     }
     /// Consumes the builder and constructs a [`DescribeContactInput`](crate::operation::describe_contact::DescribeContactInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::describe_contact::DescribeContactInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::describe_contact::DescribeContactInput {
+        ::std::result::Result::Ok(crate::operation::describe_contact::DescribeContactInput {
             contact_id: self.contact_id,
         })
     }

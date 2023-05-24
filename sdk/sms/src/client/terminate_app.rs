@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`TerminateApp`](crate::operation::terminate_app::builders::TerminateAppFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`app_id(impl Into<String>)`](crate::operation::terminate_app::builders::TerminateAppFluentBuilder::app_id) / [`set_app_id(Option<String>)`](crate::operation::terminate_app::builders::TerminateAppFluentBuilder::set_app_id): <p>The ID of the application.</p>
+    ///   - [`app_id(impl ::std::convert::Into<String>)`](crate::operation::terminate_app::builders::TerminateAppFluentBuilder::app_id) / [`set_app_id(Option<String>)`](crate::operation::terminate_app::builders::TerminateAppFluentBuilder::set_app_id): <p>The ID of the application.</p>
     /// - On success, responds with [`TerminateAppOutput`](crate::operation::terminate_app::TerminateAppOutput)
     /// - On failure, responds with [`SdkError<TerminateAppError>`](crate::operation::terminate_app::TerminateAppError)
     pub fn terminate_app(

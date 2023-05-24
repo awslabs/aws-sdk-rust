@@ -2,29 +2,29 @@
 
 /// <p>Describes an action to write data to an Amazon Kinesis stream.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KinesisAction {
     /// <p>The ARN of the IAM role that grants access to the Amazon Kinesis stream.</p>
     #[doc(hidden)]
-    pub role_arn: std::option::Option<std::string::String>,
+    pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon Kinesis stream.</p>
     #[doc(hidden)]
-    pub stream_name: std::option::Option<std::string::String>,
+    pub stream_name: ::std::option::Option<::std::string::String>,
     /// <p>The partition key.</p>
     #[doc(hidden)]
-    pub partition_key: std::option::Option<std::string::String>,
+    pub partition_key: ::std::option::Option<::std::string::String>,
 }
 impl KinesisAction {
     /// <p>The ARN of the IAM role that grants access to the Amazon Kinesis stream.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
     /// <p>The name of the Amazon Kinesis stream.</p>
-    pub fn stream_name(&self) -> std::option::Option<&str> {
+    pub fn stream_name(&self) -> ::std::option::Option<&str> {
         self.stream_name.as_deref()
     }
     /// <p>The partition key.</p>
-    pub fn partition_key(&self) -> std::option::Option<&str> {
+    pub fn partition_key(&self) -> ::std::option::Option<&str> {
         self.partition_key.as_deref()
     }
 }
@@ -37,40 +37,48 @@ impl KinesisAction {
 
 /// A builder for [`KinesisAction`](crate::types::KinesisAction).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct KinesisActionBuilder {
-    pub(crate) role_arn: std::option::Option<std::string::String>,
-    pub(crate) stream_name: std::option::Option<std::string::String>,
-    pub(crate) partition_key: std::option::Option<std::string::String>,
+    pub(crate) role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) stream_name: ::std::option::Option<::std::string::String>,
+    pub(crate) partition_key: ::std::option::Option<::std::string::String>,
 }
 impl KinesisActionBuilder {
     /// <p>The ARN of the IAM role that grants access to the Amazon Kinesis stream.</p>
-    pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.role_arn = Some(input.into());
+    pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the IAM role that grants access to the Amazon Kinesis stream.</p>
-    pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
     /// <p>The name of the Amazon Kinesis stream.</p>
-    pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.stream_name = Some(input.into());
+    pub fn stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.stream_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Amazon Kinesis stream.</p>
-    pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stream_name = input;
         self
     }
     /// <p>The partition key.</p>
-    pub fn partition_key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.partition_key = Some(input.into());
+    pub fn partition_key(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.partition_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The partition key.</p>
-    pub fn set_partition_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_partition_key(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.partition_key = input;
         self
     }

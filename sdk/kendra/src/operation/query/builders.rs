@@ -15,56 +15,59 @@ pub use crate::operation::query::_query_input::QueryInputBuilder;
 /// </ul>
 /// <p>You can specify that the query return only one type of result using the <code>QueryResultTypeFilter</code> parameter.</p>
 /// <p>Each query returns the 100 most relevant results. </p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct QueryFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::query::builders::QueryInputBuilder,
 }
 impl QueryFluentBuilder {
     /// Creates a new `Query`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::query::Query,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::query::QueryError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::query::QueryError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::query::QueryOutput,
-        aws_smithy_http::result::SdkError<crate::operation::query::QueryError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::query::QueryError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -77,29 +80,29 @@ impl QueryFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::query::QueryOutput,
-        aws_smithy_http::result::SdkError<crate::operation::query::QueryError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::query::QueryError>,
     > {
         self.send_middleware().await
     }
     /// <p>The identifier of the index to search. The identifier is returned in the response from the <code>CreateIndex</code> API.</p>
-    pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn index_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.index_id(input.into());
         self
     }
     /// <p>The identifier of the index to search. The identifier is returned in the response from the <code>CreateIndex</code> API.</p>
-    pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_index_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_index_id(input);
         self
     }
     /// <p>The input query text for the search. Amazon Kendra truncates queries at 30 token words, which excludes punctuation and stop words. Truncation still applies if you use Boolean or more advanced, complex queries. </p>
-    pub fn query_text(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn query_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.query_text(input.into());
         self
     }
     /// <p>The input query text for the search. Amazon Kendra truncates queries at 30 token words, which excludes punctuation and stop words. Truncation still applies if you use Boolean or more advanced, complex queries. </p>
-    pub fn set_query_text(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_query_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_query_text(input);
         self
     }
@@ -113,7 +116,7 @@ impl QueryFluentBuilder {
     /// <p>The <code>AttributeFilter</code> parameter enables you to create a set of filtering rules that a document must satisfy to be included in the query results.</p>
     pub fn set_attribute_filter(
         mut self,
-        input: std::option::Option<crate::types::AttributeFilter>,
+        input: ::std::option::Option<crate::types::AttributeFilter>,
     ) -> Self {
         self.inner = self.inner.set_attribute_filter(input);
         self
@@ -130,7 +133,7 @@ impl QueryFluentBuilder {
     /// <p>An array of documents attributes. Amazon Kendra returns a count for each attribute key specified. This helps your users narrow their search.</p>
     pub fn set_facets(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Facet>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Facet>>,
     ) -> Self {
         self.inner = self.inner.set_facets(input);
         self
@@ -140,14 +143,17 @@ impl QueryFluentBuilder {
     /// To override the contents of this collection use [`set_requested_document_attributes`](Self::set_requested_document_attributes).
     ///
     /// <p>An array of document attributes to include in the response. You can limit the response to include certain document attributes. By default all document attributes are included in the response.</p>
-    pub fn requested_document_attributes(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn requested_document_attributes(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.requested_document_attributes(input.into());
         self
     }
     /// <p>An array of document attributes to include in the response. You can limit the response to include certain document attributes. By default all document attributes are included in the response.</p>
     pub fn set_requested_document_attributes(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_requested_document_attributes(input);
         self
@@ -160,7 +166,7 @@ impl QueryFluentBuilder {
     /// <p>Sets the type of query. Only results for the specified query type are returned.</p>
     pub fn set_query_result_type_filter(
         mut self,
-        input: std::option::Option<crate::types::QueryResultType>,
+        input: ::std::option::Option<crate::types::QueryResultType>,
     ) -> Self {
         self.inner = self.inner.set_query_result_type_filter(input);
         self
@@ -186,7 +192,7 @@ impl QueryFluentBuilder {
     /// <p>If there is relevance tuning configured for fields at the index level, but you use this API to override only some of these fields, then for the fields you did not override, the importance is set to 1.</p>
     pub fn set_document_relevance_override_configurations(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DocumentRelevanceConfiguration>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DocumentRelevanceConfiguration>>,
     ) -> Self {
         self.inner = self
             .inner
@@ -199,7 +205,7 @@ impl QueryFluentBuilder {
         self
     }
     /// <p>Query results are returned in pages the size of the <code>PageSize</code> parameter. By default, Amazon Kendra returns the first page of results. Use this parameter to get result pages after the first one.</p>
-    pub fn set_page_number(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_page_number(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_page_number(input);
         self
     }
@@ -209,7 +215,7 @@ impl QueryFluentBuilder {
         self
     }
     /// <p>Sets the number of results that are returned in each page of results. The default page size is 10. The maximum number of results returned is 100. If you ask for more than 100 results, only 100 are returned.</p>
-    pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_page_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_page_size(input);
         self
     }
@@ -223,7 +229,7 @@ impl QueryFluentBuilder {
     /// <p>If you don't provide sorting configuration, the results are sorted by the relevance that Amazon Kendra determines for the result.</p>
     pub fn set_sorting_configuration(
         mut self,
-        input: std::option::Option<crate::types::SortingConfiguration>,
+        input: ::std::option::Option<crate::types::SortingConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_sorting_configuration(input);
         self
@@ -236,18 +242,18 @@ impl QueryFluentBuilder {
     /// <p>The user context token or user and group information.</p>
     pub fn set_user_context(
         mut self,
-        input: std::option::Option<crate::types::UserContext>,
+        input: ::std::option::Option<crate::types::UserContext>,
     ) -> Self {
         self.inner = self.inner.set_user_context(input);
         self
     }
     /// <p>Provides an identifier for a specific user. The <code>VisitorId</code> should be a unique identifier, such as a GUID. Don't use personally identifiable information, such as the user's email address, as the <code>VisitorId</code>.</p>
-    pub fn visitor_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn visitor_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.visitor_id(input.into());
         self
     }
     /// <p>Provides an identifier for a specific user. The <code>VisitorId</code> should be a unique identifier, such as a GUID. Don't use personally identifiable information, such as the user's email address, as the <code>VisitorId</code>.</p>
-    pub fn set_visitor_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_visitor_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_visitor_id(input);
         self
     }
@@ -262,7 +268,7 @@ impl QueryFluentBuilder {
     /// <p>Enables suggested spell corrections for queries.</p>
     pub fn set_spell_correction_configuration(
         mut self,
-        input: std::option::Option<crate::types::SpellCorrectionConfiguration>,
+        input: ::std::option::Option<crate::types::SpellCorrectionConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_spell_correction_configuration(input);
         self

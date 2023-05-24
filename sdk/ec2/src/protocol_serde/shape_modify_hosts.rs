@@ -2,7 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_modify_hosts_http_error(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::modify_hosts::ModifyHostsOutput,
@@ -15,7 +15,7 @@ pub fn de_modify_hosts_http_error(
         _response_body,
     )
     .map_err(crate::operation::modify_hosts::ModifyHostsError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
+    generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     Err(crate::operation::modify_hosts::ModifyHostsError::generic(
         generic,
@@ -25,7 +25,7 @@ pub fn de_modify_hosts_http_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_modify_hosts_http_response_with_props(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::modify_hosts::ModifyHostsOutput,
@@ -38,7 +38,7 @@ pub fn de_modify_hosts_http_response_with_props(
         output = crate::protocol_serde::shape_modify_hosts::de_modify_hosts(_response_body, output)
             .map_err(crate::operation::modify_hosts::ModifyHostsError::unhandled)?;
         output._set_request_id(
-            aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
+            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
         );
         output.build()
     })
@@ -50,16 +50,16 @@ pub fn de_modify_hosts(
     mut builder: crate::operation::modify_hosts::builders::ModifyHostsOutputBuilder,
 ) -> Result<
     crate::operation::modify_hosts::builders::ModifyHostsOutputBuilder,
-    aws_smithy_xml::decode::XmlDecodeError,
+    ::aws_smithy_xml::decode::XmlDecodeError,
 > {
-    let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
+    let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("ModifyHostsResponse")) {
-        return Err(aws_smithy_xml::decode::XmlDecodeError::custom(format!(
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ModifyHostsResponse got {:?}",
             start_el
         )));

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetFunctionDefinition`](crate::operation::get_function_definition::builders::GetFunctionDefinitionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`function_definition_id(impl Into<String>)`](crate::operation::get_function_definition::builders::GetFunctionDefinitionFluentBuilder::function_definition_id) / [`set_function_definition_id(Option<String>)`](crate::operation::get_function_definition::builders::GetFunctionDefinitionFluentBuilder::set_function_definition_id): The ID of the Lambda function definition.
+    ///   - [`function_definition_id(impl ::std::convert::Into<String>)`](crate::operation::get_function_definition::builders::GetFunctionDefinitionFluentBuilder::function_definition_id) / [`set_function_definition_id(Option<String>)`](crate::operation::get_function_definition::builders::GetFunctionDefinitionFluentBuilder::set_function_definition_id): The ID of the Lambda function definition.
     /// - On success, responds with [`GetFunctionDefinitionOutput`](crate::operation::get_function_definition::GetFunctionDefinitionOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::get_function_definition::GetFunctionDefinitionOutput::arn): The ARN of the definition.
     ///   - [`creation_timestamp(Option<String>)`](crate::operation::get_function_definition::GetFunctionDefinitionOutput::creation_timestamp): The time, in milliseconds since the epoch, when the definition was created.

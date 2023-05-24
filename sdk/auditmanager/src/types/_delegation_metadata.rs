@@ -2,57 +2,57 @@
 
 /// <p> The metadata that's associated with the delegation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DelegationMetadata {
     /// <p> The unique identifier for the delegation. </p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p> The name of the associated assessment. </p>
     #[doc(hidden)]
-    pub assessment_name: std::option::Option<std::string::String>,
+    pub assessment_name: ::std::option::Option<::std::string::String>,
     /// <p> The unique identifier for the assessment. </p>
     #[doc(hidden)]
-    pub assessment_id: std::option::Option<std::string::String>,
+    pub assessment_id: ::std::option::Option<::std::string::String>,
     /// <p> The current status of the delegation. </p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::DelegationStatus>,
+    pub status: ::std::option::Option<crate::types::DelegationStatus>,
     /// <p> The Amazon Resource Name (ARN) of the IAM role. </p>
     #[doc(hidden)]
-    pub role_arn: std::option::Option<std::string::String>,
+    pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p> Specifies when the delegation was created. </p>
     #[doc(hidden)]
-    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> Specifies the name of the control set that was delegated for review. </p>
     #[doc(hidden)]
-    pub control_set_name: std::option::Option<std::string::String>,
+    pub control_set_name: ::std::option::Option<::std::string::String>,
 }
 impl DelegationMetadata {
     /// <p> The unique identifier for the delegation. </p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p> The name of the associated assessment. </p>
-    pub fn assessment_name(&self) -> std::option::Option<&str> {
+    pub fn assessment_name(&self) -> ::std::option::Option<&str> {
         self.assessment_name.as_deref()
     }
     /// <p> The unique identifier for the assessment. </p>
-    pub fn assessment_id(&self) -> std::option::Option<&str> {
+    pub fn assessment_id(&self) -> ::std::option::Option<&str> {
         self.assessment_id.as_deref()
     }
     /// <p> The current status of the delegation. </p>
-    pub fn status(&self) -> std::option::Option<&crate::types::DelegationStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::DelegationStatus> {
         self.status.as_ref()
     }
     /// <p> The Amazon Resource Name (ARN) of the IAM role. </p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
     /// <p> Specifies when the delegation was created. </p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p> Specifies the name of the control set that was delegated for review. </p>
-    pub fn control_set_name(&self) -> std::option::Option<&str> {
+    pub fn control_set_name(&self) -> ::std::option::Option<&str> {
         self.control_set_name.as_deref()
     }
 }
@@ -65,90 +65,110 @@ impl DelegationMetadata {
 
 /// A builder for [`DelegationMetadata`](crate::types::DelegationMetadata).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DelegationMetadataBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) assessment_name: std::option::Option<std::string::String>,
-    pub(crate) assessment_id: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::DelegationStatus>,
-    pub(crate) role_arn: std::option::Option<std::string::String>,
-    pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) control_set_name: std::option::Option<std::string::String>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) assessment_name: ::std::option::Option<::std::string::String>,
+    pub(crate) assessment_id: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::DelegationStatus>,
+    pub(crate) role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) control_set_name: ::std::option::Option<::std::string::String>,
 }
 impl DelegationMetadataBuilder {
     /// <p> The unique identifier for the delegation. </p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The unique identifier for the delegation. </p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p> The name of the associated assessment. </p>
-    pub fn assessment_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.assessment_name = Some(input.into());
+    pub fn assessment_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.assessment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the associated assessment. </p>
-    pub fn set_assessment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_assessment_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.assessment_name = input;
         self
     }
     /// <p> The unique identifier for the assessment. </p>
-    pub fn assessment_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.assessment_id = Some(input.into());
+    pub fn assessment_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.assessment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The unique identifier for the assessment. </p>
-    pub fn set_assessment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_assessment_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.assessment_id = input;
         self
     }
     /// <p> The current status of the delegation. </p>
     pub fn status(mut self, input: crate::types::DelegationStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p> The current status of the delegation. </p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::DelegationStatus>,
+        input: ::std::option::Option<crate::types::DelegationStatus>,
     ) -> Self {
         self.status = input;
         self
     }
     /// <p> The Amazon Resource Name (ARN) of the IAM role. </p>
-    pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.role_arn = Some(input.into());
+    pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Amazon Resource Name (ARN) of the IAM role. </p>
-    pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
     /// <p> Specifies when the delegation was created. </p>
-    pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_time = Some(input);
+    pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_time = ::std::option::Option::Some(input);
         self
     }
     /// <p> Specifies when the delegation was created. </p>
     pub fn set_creation_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_time = input;
         self
     }
     /// <p> Specifies the name of the control set that was delegated for review. </p>
-    pub fn control_set_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.control_set_name = Some(input.into());
+    pub fn control_set_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.control_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Specifies the name of the control set that was delegated for review. </p>
-    pub fn set_control_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_control_set_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.control_set_name = input;
         self
     }

@@ -16,56 +16,59 @@ pub use crate::operation::transfer_domain::_transfer_domain_input::TransferDomai
 /// <p>If the registrar for your domain is also the DNS service provider for the domain and you don't transfer DNS service to another provider, your website, email, and the web applications associated with the domain might become unavailable.</p>
 /// </important>
 /// <p>If the transfer is successful, this method returns an operation ID that you can use to track the progress and completion of the action. If the transfer doesn't complete successfully, the domain registrant will be notified by email.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct TransferDomainFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::transfer_domain::builders::TransferDomainInputBuilder,
 }
 impl TransferDomainFluentBuilder {
     /// Creates a new `TransferDomain`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::transfer_domain::TransferDomain,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::transfer_domain::TransferDomainError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::transfer_domain::TransferDomainError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::transfer_domain::TransferDomainOutput,
-        aws_smithy_http::result::SdkError<crate::operation::transfer_domain::TransferDomainError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::transfer_domain::TransferDomainError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -78,9 +81,9 @@ impl TransferDomainFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::transfer_domain::TransferDomainOutput,
-        aws_smithy_http::result::SdkError<crate::operation::transfer_domain::TransferDomainError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::transfer_domain::TransferDomainError>,
     > {
         self.send_middleware().await
     }
@@ -92,7 +95,7 @@ impl TransferDomainFluentBuilder {
     /// <li> <p>Hyphen (-). You can't specify a hyphen at the beginning or end of a label. </p> </li>
     /// <li> <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p> </li>
     /// </ul>
-    pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_name(input.into());
         self
     }
@@ -104,17 +107,23 @@ impl TransferDomainFluentBuilder {
     /// <li> <p>Hyphen (-). You can't specify a hyphen at the beginning or end of a label. </p> </li>
     /// <li> <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p> </li>
     /// </ul>
-    pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_name(input);
         self
     }
     /// <p>Reserved for future use.</p>
-    pub fn idn_lang_code(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn idn_lang_code(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.idn_lang_code(input.into());
         self
     }
     /// <p>Reserved for future use.</p>
-    pub fn set_idn_lang_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_idn_lang_code(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_idn_lang_code(input);
         self
     }
@@ -126,7 +135,7 @@ impl TransferDomainFluentBuilder {
     }
     /// <p>The number of years that you want to register the domain for. Domains are registered for a minimum of one year. The maximum period depends on the top-level domain.</p>
     /// <p>Default: 1</p>
-    pub fn set_duration_in_years(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_duration_in_years(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_duration_in_years(input);
         self
     }
@@ -142,18 +151,18 @@ impl TransferDomainFluentBuilder {
     /// <p>Contains details for the host and glue IP addresses.</p>
     pub fn set_nameservers(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Nameserver>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Nameserver>>,
     ) -> Self {
         self.inner = self.inner.set_nameservers(input);
         self
     }
     /// <p>The authorization code for the domain. You get this value from the current registrar.</p>
-    pub fn auth_code(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn auth_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.auth_code(input.into());
         self
     }
     /// <p>The authorization code for the domain. You get this value from the current registrar.</p>
-    pub fn set_auth_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_auth_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_auth_code(input);
         self
     }
@@ -165,7 +174,7 @@ impl TransferDomainFluentBuilder {
     }
     /// <p>Indicates whether the domain will be automatically renewed (true) or not (false). Auto renewal only takes effect after the account is charged.</p>
     /// <p>Default: true</p>
-    pub fn set_auto_renew(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_auto_renew(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_auto_renew(input);
         self
     }
@@ -177,7 +186,7 @@ impl TransferDomainFluentBuilder {
     /// <p>Provides detailed contact information.</p>
     pub fn set_admin_contact(
         mut self,
-        input: std::option::Option<crate::types::ContactDetail>,
+        input: ::std::option::Option<crate::types::ContactDetail>,
     ) -> Self {
         self.inner = self.inner.set_admin_contact(input);
         self
@@ -190,7 +199,7 @@ impl TransferDomainFluentBuilder {
     /// <p>Provides detailed contact information.</p>
     pub fn set_registrant_contact(
         mut self,
-        input: std::option::Option<crate::types::ContactDetail>,
+        input: ::std::option::Option<crate::types::ContactDetail>,
     ) -> Self {
         self.inner = self.inner.set_registrant_contact(input);
         self
@@ -203,7 +212,7 @@ impl TransferDomainFluentBuilder {
     /// <p>Provides detailed contact information.</p>
     pub fn set_tech_contact(
         mut self,
-        input: std::option::Option<crate::types::ContactDetail>,
+        input: ::std::option::Option<crate::types::ContactDetail>,
     ) -> Self {
         self.inner = self.inner.set_tech_contact(input);
         self
@@ -220,7 +229,7 @@ impl TransferDomainFluentBuilder {
     /// <p>You must specify the same privacy setting for the administrative, registrant, and technical contacts.</p>
     /// </note>
     /// <p>Default: <code>true</code> </p>
-    pub fn set_privacy_protect_admin_contact(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_privacy_protect_admin_contact(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_privacy_protect_admin_contact(input);
         self
     }
@@ -238,7 +247,7 @@ impl TransferDomainFluentBuilder {
     /// <p>Default: <code>true</code> </p>
     pub fn set_privacy_protect_registrant_contact(
         mut self,
-        input: std::option::Option<bool>,
+        input: ::std::option::Option<bool>,
     ) -> Self {
         self.inner = self.inner.set_privacy_protect_registrant_contact(input);
         self
@@ -255,7 +264,7 @@ impl TransferDomainFluentBuilder {
     /// <p>You must specify the same privacy setting for the administrative, registrant, and technical contacts.</p>
     /// </note>
     /// <p>Default: <code>true</code> </p>
-    pub fn set_privacy_protect_tech_contact(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_privacy_protect_tech_contact(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_privacy_protect_tech_contact(input);
         self
     }

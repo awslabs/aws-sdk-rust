@@ -2,15 +2,15 @@
 
 /// <p>Specifies the schedule for generating inventory results.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InventorySchedule {
     /// <p>Specifies how frequently inventory results are produced.</p>
     #[doc(hidden)]
-    pub frequency: std::option::Option<crate::types::InventoryFrequency>,
+    pub frequency: ::std::option::Option<crate::types::InventoryFrequency>,
 }
 impl InventorySchedule {
     /// <p>Specifies how frequently inventory results are produced.</p>
-    pub fn frequency(&self) -> std::option::Option<&crate::types::InventoryFrequency> {
+    pub fn frequency(&self) -> ::std::option::Option<&crate::types::InventoryFrequency> {
         self.frequency.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl InventorySchedule {
 
 /// A builder for [`InventorySchedule`](crate::types::InventorySchedule).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InventoryScheduleBuilder {
-    pub(crate) frequency: std::option::Option<crate::types::InventoryFrequency>,
+    pub(crate) frequency: ::std::option::Option<crate::types::InventoryFrequency>,
 }
 impl InventoryScheduleBuilder {
     /// <p>Specifies how frequently inventory results are produced.</p>
     pub fn frequency(mut self, input: crate::types::InventoryFrequency) -> Self {
-        self.frequency = Some(input);
+        self.frequency = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies how frequently inventory results are produced.</p>
     pub fn set_frequency(
         mut self,
-        input: std::option::Option<crate::types::InventoryFrequency>,
+        input: ::std::option::Option<crate::types::InventoryFrequency>,
     ) -> Self {
         self.frequency = input;
         self

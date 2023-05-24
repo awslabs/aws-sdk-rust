@@ -2,25 +2,25 @@
 
 /// <p>The parameter key-value pair used to update a provisioned product.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateProvisioningParameter {
     /// <p>The parameter key.</p>
     #[doc(hidden)]
-    pub key: std::option::Option<std::string::String>,
+    pub key: ::std::option::Option<::std::string::String>,
     /// <p>The parameter value.</p>
     #[doc(hidden)]
-    pub value: std::option::Option<std::string::String>,
+    pub value: ::std::option::Option<::std::string::String>,
     /// <p>If set to true, <code>Value</code> is ignored and the previous parameter value is kept.</p>
     #[doc(hidden)]
     pub use_previous_value: bool,
 }
 impl UpdateProvisioningParameter {
     /// <p>The parameter key.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<&str> {
         self.key.as_deref()
     }
     /// <p>The parameter value.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
     /// <p>If set to true, <code>Value</code> is ignored and the previous parameter value is kept.</p>
@@ -37,40 +37,42 @@ impl UpdateProvisioningParameter {
 
 /// A builder for [`UpdateProvisioningParameter`](crate::types::UpdateProvisioningParameter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateProvisioningParameterBuilder {
-    pub(crate) key: std::option::Option<std::string::String>,
-    pub(crate) value: std::option::Option<std::string::String>,
-    pub(crate) use_previous_value: std::option::Option<bool>,
+    pub(crate) key: ::std::option::Option<::std::string::String>,
+    pub(crate) value: ::std::option::Option<::std::string::String>,
+    pub(crate) use_previous_value: ::std::option::Option<bool>,
 }
 impl UpdateProvisioningParameterBuilder {
     /// <p>The parameter key.</p>
-    pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.key = Some(input.into());
+    pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The parameter key.</p>
-    pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key = input;
         self
     }
     /// <p>The parameter value.</p>
-    pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.value = Some(input.into());
+    pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The parameter value.</p>
-    pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
     }
     /// <p>If set to true, <code>Value</code> is ignored and the previous parameter value is kept.</p>
     pub fn use_previous_value(mut self, input: bool) -> Self {
-        self.use_previous_value = Some(input);
+        self.use_previous_value = ::std::option::Option::Some(input);
         self
     }
     /// <p>If set to true, <code>Value</code> is ignored and the previous parameter value is kept.</p>
-    pub fn set_use_previous_value(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_use_previous_value(mut self, input: ::std::option::Option<bool>) -> Self {
         self.use_previous_value = input;
         self
     }

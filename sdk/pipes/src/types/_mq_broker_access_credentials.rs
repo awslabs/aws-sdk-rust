@@ -2,10 +2,10 @@
 
 /// <p>The Secrets Manager secret that stores your broker credentials.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum MqBrokerAccessCredentials {
     /// <p>The ARN of the Secrets Manager secret.</p>
-    BasicAuth(std::string::String),
+    BasicAuth(::std::string::String),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -18,13 +18,13 @@ pub enum MqBrokerAccessCredentials {
 }
 impl MqBrokerAccessCredentials {
     #[allow(irrefutable_let_patterns)]
-    /// Tries to convert the enum instance into [`BasicAuth`](crate::types::MqBrokerAccessCredentials::BasicAuth), extracting the inner [`String`](std::string::String).
+    /// Tries to convert the enum instance into [`BasicAuth`](crate::types::MqBrokerAccessCredentials::BasicAuth), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_basic_auth(&self) -> std::result::Result<&std::string::String, &Self> {
+    pub fn as_basic_auth(&self) -> ::std::result::Result<&::std::string::String, &Self> {
         if let MqBrokerAccessCredentials::BasicAuth(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`BasicAuth`](crate::types::MqBrokerAccessCredentials::BasicAuth).

@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateApplication`](crate::operation::create_application::builders::CreateApplicationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::create_application::builders::CreateApplicationFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::create_application::builders::CreateApplicationFluentBuilder::set_name): <p>Application name.</p>
-    ///   - [`description(impl Into<String>)`](crate::operation::create_application::builders::CreateApplicationFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::create_application::builders::CreateApplicationFluentBuilder::set_description): <p>Application description.</p>
+    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::create_application::builders::CreateApplicationFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::create_application::builders::CreateApplicationFluentBuilder::set_name): <p>Application name.</p>
+    ///   - [`description(impl ::std::convert::Into<String>)`](crate::operation::create_application::builders::CreateApplicationFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::create_application::builders::CreateApplicationFluentBuilder::set_description): <p>Application description.</p>
     ///   - [`tags(HashMap<String, String>)`](crate::operation::create_application::builders::CreateApplicationFluentBuilder::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::operation::create_application::builders::CreateApplicationFluentBuilder::set_tags): <p>Application tags.</p>
     /// - On success, responds with [`CreateApplicationOutput`](crate::operation::create_application::CreateApplicationOutput) with field(s):
     ///   - [`application_id(Option<String>)`](crate::operation::create_application::CreateApplicationOutput::application_id): <p>Application ID.</p>

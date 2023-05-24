@@ -2,22 +2,22 @@
 
 /// <p>Represents a request to delete a configuration set event destination. Configuration set event destinations are associated with configuration sets, which enable you to publish email sending events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteConfigurationSetEventDestinationInput {
     /// <p>The name of the configuration set from which to delete the event destination.</p>
     #[doc(hidden)]
-    pub configuration_set_name: std::option::Option<std::string::String>,
+    pub configuration_set_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the event destination to delete.</p>
     #[doc(hidden)]
-    pub event_destination_name: std::option::Option<std::string::String>,
+    pub event_destination_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteConfigurationSetEventDestinationInput {
     /// <p>The name of the configuration set from which to delete the event destination.</p>
-    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
+    pub fn configuration_set_name(&self) -> ::std::option::Option<&str> {
         self.configuration_set_name.as_deref()
     }
     /// <p>The name of the event destination to delete.</p>
-    pub fn event_destination_name(&self) -> std::option::Option<&str> {
+    pub fn event_destination_name(&self) -> ::std::option::Option<&str> {
         self.event_destination_name.as_deref()
     }
 }
@@ -30,41 +30,49 @@ impl DeleteConfigurationSetEventDestinationInput {
 
 /// A builder for [`DeleteConfigurationSetEventDestinationInput`](crate::operation::delete_configuration_set_event_destination::DeleteConfigurationSetEventDestinationInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteConfigurationSetEventDestinationInputBuilder {
-    pub(crate) configuration_set_name: std::option::Option<std::string::String>,
-    pub(crate) event_destination_name: std::option::Option<std::string::String>,
+    pub(crate) configuration_set_name: ::std::option::Option<::std::string::String>,
+    pub(crate) event_destination_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteConfigurationSetEventDestinationInputBuilder {
     /// <p>The name of the configuration set from which to delete the event destination.</p>
-    pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.configuration_set_name = Some(input.into());
+    pub fn configuration_set_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.configuration_set_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the configuration set from which to delete the event destination.</p>
     pub fn set_configuration_set_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.configuration_set_name = input;
         self
     }
     /// <p>The name of the event destination to delete.</p>
-    pub fn event_destination_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.event_destination_name = Some(input.into());
+    pub fn event_destination_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.event_destination_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the event destination to delete.</p>
     pub fn set_event_destination_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.event_destination_name = input;
         self
     }
     /// Consumes the builder and constructs a [`DeleteConfigurationSetEventDestinationInput`](crate::operation::delete_configuration_set_event_destination::DeleteConfigurationSetEventDestinationInput).
-    pub fn build(self) -> Result<crate::operation::delete_configuration_set_event_destination::DeleteConfigurationSetEventDestinationInput, aws_smithy_http::operation::error::BuildError>{
-        Ok(
+    pub fn build(self) -> ::std::result::Result<crate::operation::delete_configuration_set_event_destination::DeleteConfigurationSetEventDestinationInput, ::aws_smithy_http::operation::error::BuildError>{
+        ::std::result::Result::Ok(
             crate::operation::delete_configuration_set_event_destination::DeleteConfigurationSetEventDestinationInput {
                 configuration_set_name: self.configuration_set_name
                 ,

@@ -2,57 +2,57 @@
 
 /// <p>Describes a data quality ruleset returned by <code>GetDataQualityRuleset</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataQualityRulesetListDetails {
     /// <p>The name of the data quality ruleset.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the data quality ruleset.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The date and time the data quality ruleset was created.</p>
     #[doc(hidden)]
-    pub created_on: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_on: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time the data quality ruleset was last modified.</p>
     #[doc(hidden)]
-    pub last_modified_on: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_modified_on: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>An object representing an Glue table.</p>
     #[doc(hidden)]
-    pub target_table: std::option::Option<crate::types::DataQualityTargetTable>,
+    pub target_table: ::std::option::Option<crate::types::DataQualityTargetTable>,
     /// <p>When a ruleset was created from a recommendation run, this run ID is generated to link the two together.</p>
     #[doc(hidden)]
-    pub recommendation_run_id: std::option::Option<std::string::String>,
+    pub recommendation_run_id: ::std::option::Option<::std::string::String>,
     /// <p>The number of rules in the ruleset.</p>
     #[doc(hidden)]
-    pub rule_count: std::option::Option<i32>,
+    pub rule_count: ::std::option::Option<i32>,
 }
 impl DataQualityRulesetListDetails {
     /// <p>The name of the data quality ruleset.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>A description of the data quality ruleset.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The date and time the data quality ruleset was created.</p>
-    pub fn created_on(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_on(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_on.as_ref()
     }
     /// <p>The date and time the data quality ruleset was last modified.</p>
-    pub fn last_modified_on(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_on(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_on.as_ref()
     }
     /// <p>An object representing an Glue table.</p>
-    pub fn target_table(&self) -> std::option::Option<&crate::types::DataQualityTargetTable> {
+    pub fn target_table(&self) -> ::std::option::Option<&crate::types::DataQualityTargetTable> {
         self.target_table.as_ref()
     }
     /// <p>When a ruleset was created from a recommendation run, this run ID is generated to link the two together.</p>
-    pub fn recommendation_run_id(&self) -> std::option::Option<&str> {
+    pub fn recommendation_run_id(&self) -> ::std::option::Option<&str> {
         self.recommendation_run_id.as_deref()
     }
     /// <p>The number of rules in the ruleset.</p>
-    pub fn rule_count(&self) -> std::option::Option<i32> {
+    pub fn rule_count(&self) -> ::std::option::Option<i32> {
         self.rule_count
     }
 }
@@ -65,96 +65,101 @@ impl DataQualityRulesetListDetails {
 
 /// A builder for [`DataQualityRulesetListDetails`](crate::types::DataQualityRulesetListDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DataQualityRulesetListDetailsBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) created_on: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_modified_on: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) target_table: std::option::Option<crate::types::DataQualityTargetTable>,
-    pub(crate) recommendation_run_id: std::option::Option<std::string::String>,
-    pub(crate) rule_count: std::option::Option<i32>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) created_on: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_modified_on: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) target_table: ::std::option::Option<crate::types::DataQualityTargetTable>,
+    pub(crate) recommendation_run_id: ::std::option::Option<::std::string::String>,
+    pub(crate) rule_count: ::std::option::Option<i32>,
 }
 impl DataQualityRulesetListDetailsBuilder {
     /// <p>The name of the data quality ruleset.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the data quality ruleset.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>A description of the data quality ruleset.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of the data quality ruleset.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>The date and time the data quality ruleset was created.</p>
-    pub fn created_on(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_on = Some(input);
+    pub fn created_on(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_on = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time the data quality ruleset was created.</p>
     pub fn set_created_on(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_on = input;
         self
     }
     /// <p>The date and time the data quality ruleset was last modified.</p>
-    pub fn last_modified_on(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_modified_on = Some(input);
+    pub fn last_modified_on(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_modified_on = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time the data quality ruleset was last modified.</p>
     pub fn set_last_modified_on(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_modified_on = input;
         self
     }
     /// <p>An object representing an Glue table.</p>
     pub fn target_table(mut self, input: crate::types::DataQualityTargetTable) -> Self {
-        self.target_table = Some(input);
+        self.target_table = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object representing an Glue table.</p>
     pub fn set_target_table(
         mut self,
-        input: std::option::Option<crate::types::DataQualityTargetTable>,
+        input: ::std::option::Option<crate::types::DataQualityTargetTable>,
     ) -> Self {
         self.target_table = input;
         self
     }
     /// <p>When a ruleset was created from a recommendation run, this run ID is generated to link the two together.</p>
-    pub fn recommendation_run_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.recommendation_run_id = Some(input.into());
+    pub fn recommendation_run_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.recommendation_run_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>When a ruleset was created from a recommendation run, this run ID is generated to link the two together.</p>
     pub fn set_recommendation_run_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.recommendation_run_id = input;
         self
     }
     /// <p>The number of rules in the ruleset.</p>
     pub fn rule_count(mut self, input: i32) -> Self {
-        self.rule_count = Some(input);
+        self.rule_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of rules in the ruleset.</p>
-    pub fn set_rule_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_rule_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.rule_count = input;
         self
     }

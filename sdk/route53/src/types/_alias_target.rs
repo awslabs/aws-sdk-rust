@@ -6,7 +6,7 @@
 /// <li> <p>For information about creating failover resource record sets in a private hosted zone, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html">Configuring Failover in a Private Hosted Zone</a>.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AliasTarget {
     /// <p> <i>Alias resource records sets only</i>: The value used depends on where you want to route traffic:</p>
     /// <dl>
@@ -80,7 +80,7 @@ pub struct AliasTarget {
     /// </dd>
     /// </dl>
     #[doc(hidden)]
-    pub hosted_zone_id: std::option::Option<std::string::String>,
+    pub hosted_zone_id: ::std::option::Option<::std::string::String>,
     /// <p> <i>Alias resource record sets only:</i> The value that you specify depends on where you want to route queries:</p>
     /// <dl>
     /// <dt>
@@ -170,7 +170,7 @@ pub struct AliasTarget {
     /// </dd>
     /// </dl>
     #[doc(hidden)]
-    pub dns_name: std::option::Option<std::string::String>,
+    pub dns_name: ::std::option::Option<::std::string::String>,
     /// <p> <i>Applies only to alias, failover alias, geolocation alias, latency alias, and weighted alias resource record sets:</i> When <code>EvaluateTargetHealth</code> is <code>true</code>, an alias resource record set inherits the health of the referenced Amazon Web Services resource, such as an ELB load balancer or another resource record set in the hosted zone.</p>
     /// <p>Note the following:</p>
     /// <dl>
@@ -292,7 +292,7 @@ impl AliasTarget {
     /// <p>Specify the hosted zone ID of your hosted zone. (An alias resource record set can't reference a resource record set in a different hosted zone.)</p>
     /// </dd>
     /// </dl>
-    pub fn hosted_zone_id(&self) -> std::option::Option<&str> {
+    pub fn hosted_zone_id(&self) -> ::std::option::Option<&str> {
         self.hosted_zone_id.as_deref()
     }
     /// <p> <i>Alias resource record sets only:</i> The value that you specify depends on where you want to route queries:</p>
@@ -383,7 +383,7 @@ impl AliasTarget {
     /// </note>
     /// </dd>
     /// </dl>
-    pub fn dns_name(&self) -> std::option::Option<&str> {
+    pub fn dns_name(&self) -> ::std::option::Option<&str> {
         self.dns_name.as_deref()
     }
     /// <p> <i>Applies only to alias, failover alias, geolocation alias, latency alias, and weighted alias resource record sets:</i> When <code>EvaluateTargetHealth</code> is <code>true</code>, an alias resource record set inherits the health of the referenced Amazon Web Services resource, such as an ELB load balancer or another resource record set in the hosted zone.</p>
@@ -445,11 +445,13 @@ impl AliasTarget {
 
 /// A builder for [`AliasTarget`](crate::types::AliasTarget).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AliasTargetBuilder {
-    pub(crate) hosted_zone_id: std::option::Option<std::string::String>,
-    pub(crate) dns_name: std::option::Option<std::string::String>,
-    pub(crate) evaluate_target_health: std::option::Option<bool>,
+    pub(crate) hosted_zone_id: ::std::option::Option<::std::string::String>,
+    pub(crate) dns_name: ::std::option::Option<::std::string::String>,
+    pub(crate) evaluate_target_health: ::std::option::Option<bool>,
 }
 impl AliasTargetBuilder {
     /// <p> <i>Alias resource records sets only</i>: The value used depends on where you want to route traffic:</p>
@@ -523,8 +525,11 @@ impl AliasTargetBuilder {
     /// <p>Specify the hosted zone ID of your hosted zone. (An alias resource record set can't reference a resource record set in a different hosted zone.)</p>
     /// </dd>
     /// </dl>
-    pub fn hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.hosted_zone_id = Some(input.into());
+    pub fn hosted_zone_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.hosted_zone_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> <i>Alias resource records sets only</i>: The value used depends on where you want to route traffic:</p>
@@ -598,7 +603,10 @@ impl AliasTargetBuilder {
     /// <p>Specify the hosted zone ID of your hosted zone. (An alias resource record set can't reference a resource record set in a different hosted zone.)</p>
     /// </dd>
     /// </dl>
-    pub fn set_hosted_zone_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_hosted_zone_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.hosted_zone_id = input;
         self
     }
@@ -690,8 +698,8 @@ impl AliasTargetBuilder {
     /// </note>
     /// </dd>
     /// </dl>
-    pub fn dns_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.dns_name = Some(input.into());
+    pub fn dns_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.dns_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> <i>Alias resource record sets only:</i> The value that you specify depends on where you want to route queries:</p>
@@ -782,7 +790,7 @@ impl AliasTargetBuilder {
     /// </note>
     /// </dd>
     /// </dl>
-    pub fn set_dns_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_dns_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dns_name = input;
         self
     }
@@ -833,7 +841,7 @@ impl AliasTargetBuilder {
     /// </dl>
     /// <p>For more information and examples, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon Route 53 Health Checks and DNS Failover</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     pub fn evaluate_target_health(mut self, input: bool) -> Self {
-        self.evaluate_target_health = Some(input);
+        self.evaluate_target_health = ::std::option::Option::Some(input);
         self
     }
     /// <p> <i>Applies only to alias, failover alias, geolocation alias, latency alias, and weighted alias resource record sets:</i> When <code>EvaluateTargetHealth</code> is <code>true</code>, an alias resource record set inherits the health of the referenced Amazon Web Services resource, such as an ELB load balancer or another resource record set in the hosted zone.</p>
@@ -882,7 +890,7 @@ impl AliasTargetBuilder {
     /// </dd>
     /// </dl>
     /// <p>For more information and examples, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html">Amazon Route 53 Health Checks and DNS Failover</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
-    pub fn set_evaluate_target_health(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_evaluate_target_health(mut self, input: ::std::option::Option<bool>) -> Self {
         self.evaluate_target_health = input;
         self
     }

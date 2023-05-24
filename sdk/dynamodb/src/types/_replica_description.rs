@@ -2,11 +2,11 @@
 
 /// <p>Contains the details of the replica.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplicaDescription {
     /// <p>The name of the Region.</p>
     #[doc(hidden)]
-    pub region_name: std::option::Option<std::string::String>,
+    pub region_name: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the replica:</p>
     /// <ul>
     /// <li> <p> <code>CREATING</code> - The replica is being created.</p> </li>
@@ -21,34 +21,35 @@ pub struct ReplicaDescription {
     /// </note> </li>
     /// </ul>
     #[doc(hidden)]
-    pub replica_status: std::option::Option<crate::types::ReplicaStatus>,
+    pub replica_status: ::std::option::Option<crate::types::ReplicaStatus>,
     /// <p>Detailed information about the replica status.</p>
     #[doc(hidden)]
-    pub replica_status_description: std::option::Option<std::string::String>,
+    pub replica_status_description: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the progress of a Create, Update, or Delete action on the replica as a percentage.</p>
     #[doc(hidden)]
-    pub replica_status_percent_progress: std::option::Option<std::string::String>,
+    pub replica_status_percent_progress: ::std::option::Option<::std::string::String>,
     /// <p>The KMS key of the replica that will be used for KMS encryption.</p>
     #[doc(hidden)]
-    pub kms_master_key_id: std::option::Option<std::string::String>,
+    pub kms_master_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Replica-specific provisioned throughput. If not described, uses the source table's provisioned throughput settings.</p>
     #[doc(hidden)]
     pub provisioned_throughput_override:
-        std::option::Option<crate::types::ProvisionedThroughputOverride>,
+        ::std::option::Option<crate::types::ProvisionedThroughputOverride>,
     /// <p>Replica-specific global secondary index settings.</p>
     #[doc(hidden)]
-    pub global_secondary_indexes:
-        std::option::Option<std::vec::Vec<crate::types::ReplicaGlobalSecondaryIndexDescription>>,
+    pub global_secondary_indexes: ::std::option::Option<
+        ::std::vec::Vec<crate::types::ReplicaGlobalSecondaryIndexDescription>,
+    >,
     /// <p>The time at which the replica was first detected as inaccessible. To determine cause of inaccessibility check the <code>ReplicaStatus</code> property.</p>
     #[doc(hidden)]
-    pub replica_inaccessible_date_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub replica_inaccessible_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Contains details of the table class.</p>
     #[doc(hidden)]
-    pub replica_table_class_summary: std::option::Option<crate::types::TableClassSummary>,
+    pub replica_table_class_summary: ::std::option::Option<crate::types::TableClassSummary>,
 }
 impl ReplicaDescription {
     /// <p>The name of the Region.</p>
-    pub fn region_name(&self) -> std::option::Option<&str> {
+    pub fn region_name(&self) -> ::std::option::Option<&str> {
         self.region_name.as_deref()
     }
     /// <p>The current state of the replica:</p>
@@ -64,43 +65,43 @@ impl ReplicaDescription {
     /// <p>If the KMS key remains inaccessible for more than 20 hours, DynamoDB will remove this replica from the replication group. The replica will not be deleted and replication will stop from and to this region.</p>
     /// </note> </li>
     /// </ul>
-    pub fn replica_status(&self) -> std::option::Option<&crate::types::ReplicaStatus> {
+    pub fn replica_status(&self) -> ::std::option::Option<&crate::types::ReplicaStatus> {
         self.replica_status.as_ref()
     }
     /// <p>Detailed information about the replica status.</p>
-    pub fn replica_status_description(&self) -> std::option::Option<&str> {
+    pub fn replica_status_description(&self) -> ::std::option::Option<&str> {
         self.replica_status_description.as_deref()
     }
     /// <p>Specifies the progress of a Create, Update, or Delete action on the replica as a percentage.</p>
-    pub fn replica_status_percent_progress(&self) -> std::option::Option<&str> {
+    pub fn replica_status_percent_progress(&self) -> ::std::option::Option<&str> {
         self.replica_status_percent_progress.as_deref()
     }
     /// <p>The KMS key of the replica that will be used for KMS encryption.</p>
-    pub fn kms_master_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_master_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_master_key_id.as_deref()
     }
     /// <p>Replica-specific provisioned throughput. If not described, uses the source table's provisioned throughput settings.</p>
     pub fn provisioned_throughput_override(
         &self,
-    ) -> std::option::Option<&crate::types::ProvisionedThroughputOverride> {
+    ) -> ::std::option::Option<&crate::types::ProvisionedThroughputOverride> {
         self.provisioned_throughput_override.as_ref()
     }
     /// <p>Replica-specific global secondary index settings.</p>
     pub fn global_secondary_indexes(
         &self,
-    ) -> std::option::Option<&[crate::types::ReplicaGlobalSecondaryIndexDescription]> {
+    ) -> ::std::option::Option<&[crate::types::ReplicaGlobalSecondaryIndexDescription]> {
         self.global_secondary_indexes.as_deref()
     }
     /// <p>The time at which the replica was first detected as inaccessible. To determine cause of inaccessibility check the <code>ReplicaStatus</code> property.</p>
     pub fn replica_inaccessible_date_time(
         &self,
-    ) -> std::option::Option<&aws_smithy_types::DateTime> {
+    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.replica_inaccessible_date_time.as_ref()
     }
     /// <p>Contains details of the table class.</p>
     pub fn replica_table_class_summary(
         &self,
-    ) -> std::option::Option<&crate::types::TableClassSummary> {
+    ) -> ::std::option::Option<&crate::types::TableClassSummary> {
         self.replica_table_class_summary.as_ref()
     }
 }
@@ -113,28 +114,31 @@ impl ReplicaDescription {
 
 /// A builder for [`ReplicaDescription`](crate::types::ReplicaDescription).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ReplicaDescriptionBuilder {
-    pub(crate) region_name: std::option::Option<std::string::String>,
-    pub(crate) replica_status: std::option::Option<crate::types::ReplicaStatus>,
-    pub(crate) replica_status_description: std::option::Option<std::string::String>,
-    pub(crate) replica_status_percent_progress: std::option::Option<std::string::String>,
-    pub(crate) kms_master_key_id: std::option::Option<std::string::String>,
+    pub(crate) region_name: ::std::option::Option<::std::string::String>,
+    pub(crate) replica_status: ::std::option::Option<crate::types::ReplicaStatus>,
+    pub(crate) replica_status_description: ::std::option::Option<::std::string::String>,
+    pub(crate) replica_status_percent_progress: ::std::option::Option<::std::string::String>,
+    pub(crate) kms_master_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) provisioned_throughput_override:
-        std::option::Option<crate::types::ProvisionedThroughputOverride>,
-    pub(crate) global_secondary_indexes:
-        std::option::Option<std::vec::Vec<crate::types::ReplicaGlobalSecondaryIndexDescription>>,
-    pub(crate) replica_inaccessible_date_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) replica_table_class_summary: std::option::Option<crate::types::TableClassSummary>,
+        ::std::option::Option<crate::types::ProvisionedThroughputOverride>,
+    pub(crate) global_secondary_indexes: ::std::option::Option<
+        ::std::vec::Vec<crate::types::ReplicaGlobalSecondaryIndexDescription>,
+    >,
+    pub(crate) replica_inaccessible_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) replica_table_class_summary: ::std::option::Option<crate::types::TableClassSummary>,
 }
 impl ReplicaDescriptionBuilder {
     /// <p>The name of the Region.</p>
-    pub fn region_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.region_name = Some(input.into());
+    pub fn region_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.region_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Region.</p>
-    pub fn set_region_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_region_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region_name = input;
         self
     }
@@ -152,7 +156,7 @@ impl ReplicaDescriptionBuilder {
     /// </note> </li>
     /// </ul>
     pub fn replica_status(mut self, input: crate::types::ReplicaStatus) -> Self {
-        self.replica_status = Some(input);
+        self.replica_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current state of the replica:</p>
@@ -170,20 +174,23 @@ impl ReplicaDescriptionBuilder {
     /// </ul>
     pub fn set_replica_status(
         mut self,
-        input: std::option::Option<crate::types::ReplicaStatus>,
+        input: ::std::option::Option<crate::types::ReplicaStatus>,
     ) -> Self {
         self.replica_status = input;
         self
     }
     /// <p>Detailed information about the replica status.</p>
-    pub fn replica_status_description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.replica_status_description = Some(input.into());
+    pub fn replica_status_description(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.replica_status_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Detailed information about the replica status.</p>
     pub fn set_replica_status_description(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.replica_status_description = input;
         self
@@ -191,28 +198,31 @@ impl ReplicaDescriptionBuilder {
     /// <p>Specifies the progress of a Create, Update, or Delete action on the replica as a percentage.</p>
     pub fn replica_status_percent_progress(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.replica_status_percent_progress = Some(input.into());
+        self.replica_status_percent_progress = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the progress of a Create, Update, or Delete action on the replica as a percentage.</p>
     pub fn set_replica_status_percent_progress(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.replica_status_percent_progress = input;
         self
     }
     /// <p>The KMS key of the replica that will be used for KMS encryption.</p>
-    pub fn kms_master_key_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.kms_master_key_id = Some(input.into());
+    pub fn kms_master_key_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.kms_master_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The KMS key of the replica that will be used for KMS encryption.</p>
     pub fn set_kms_master_key_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.kms_master_key_id = input;
         self
@@ -222,13 +232,13 @@ impl ReplicaDescriptionBuilder {
         mut self,
         input: crate::types::ProvisionedThroughputOverride,
     ) -> Self {
-        self.provisioned_throughput_override = Some(input);
+        self.provisioned_throughput_override = ::std::option::Option::Some(input);
         self
     }
     /// <p>Replica-specific provisioned throughput. If not described, uses the source table's provisioned throughput settings.</p>
     pub fn set_provisioned_throughput_override(
         mut self,
-        input: std::option::Option<crate::types::ProvisionedThroughputOverride>,
+        input: ::std::option::Option<crate::types::ProvisionedThroughputOverride>,
     ) -> Self {
         self.provisioned_throughput_override = input;
         self
@@ -244,41 +254,41 @@ impl ReplicaDescriptionBuilder {
     ) -> Self {
         let mut v = self.global_secondary_indexes.unwrap_or_default();
         v.push(input);
-        self.global_secondary_indexes = Some(v);
+        self.global_secondary_indexes = ::std::option::Option::Some(v);
         self
     }
     /// <p>Replica-specific global secondary index settings.</p>
     pub fn set_global_secondary_indexes(
         mut self,
-        input: std::option::Option<
-            std::vec::Vec<crate::types::ReplicaGlobalSecondaryIndexDescription>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::ReplicaGlobalSecondaryIndexDescription>,
         >,
     ) -> Self {
         self.global_secondary_indexes = input;
         self
     }
     /// <p>The time at which the replica was first detected as inaccessible. To determine cause of inaccessibility check the <code>ReplicaStatus</code> property.</p>
-    pub fn replica_inaccessible_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.replica_inaccessible_date_time = Some(input);
+    pub fn replica_inaccessible_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.replica_inaccessible_date_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time at which the replica was first detected as inaccessible. To determine cause of inaccessibility check the <code>ReplicaStatus</code> property.</p>
     pub fn set_replica_inaccessible_date_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.replica_inaccessible_date_time = input;
         self
     }
     /// <p>Contains details of the table class.</p>
     pub fn replica_table_class_summary(mut self, input: crate::types::TableClassSummary) -> Self {
-        self.replica_table_class_summary = Some(input);
+        self.replica_table_class_summary = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains details of the table class.</p>
     pub fn set_replica_table_class_summary(
         mut self,
-        input: std::option::Option<crate::types::TableClassSummary>,
+        input: ::std::option::Option<crate::types::TableClassSummary>,
     ) -> Self {
         self.replica_table_class_summary = input;
         self

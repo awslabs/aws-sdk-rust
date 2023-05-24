@@ -2,22 +2,22 @@
 
 /// <p>Describes a volume status.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VolumeStatusDetails {
     /// <p>The name of the volume status.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<crate::types::VolumeStatusName>,
+    pub name: ::std::option::Option<crate::types::VolumeStatusName>,
     /// <p>The intended status of the volume status.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<std::string::String>,
+    pub status: ::std::option::Option<::std::string::String>,
 }
 impl VolumeStatusDetails {
     /// <p>The name of the volume status.</p>
-    pub fn name(&self) -> std::option::Option<&crate::types::VolumeStatusName> {
+    pub fn name(&self) -> ::std::option::Option<&crate::types::VolumeStatusName> {
         self.name.as_ref()
     }
     /// <p>The intended status of the volume status.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
 }
@@ -30,29 +30,34 @@ impl VolumeStatusDetails {
 
 /// A builder for [`VolumeStatusDetails`](crate::types::VolumeStatusDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VolumeStatusDetailsBuilder {
-    pub(crate) name: std::option::Option<crate::types::VolumeStatusName>,
-    pub(crate) status: std::option::Option<std::string::String>,
+    pub(crate) name: ::std::option::Option<crate::types::VolumeStatusName>,
+    pub(crate) status: ::std::option::Option<::std::string::String>,
 }
 impl VolumeStatusDetailsBuilder {
     /// <p>The name of the volume status.</p>
     pub fn name(mut self, input: crate::types::VolumeStatusName) -> Self {
-        self.name = Some(input);
+        self.name = ::std::option::Option::Some(input);
         self
     }
     /// <p>The name of the volume status.</p>
-    pub fn set_name(mut self, input: std::option::Option<crate::types::VolumeStatusName>) -> Self {
+    pub fn set_name(
+        mut self,
+        input: ::std::option::Option<crate::types::VolumeStatusName>,
+    ) -> Self {
         self.name = input;
         self
     }
     /// <p>The intended status of the volume status.</p>
-    pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status = Some(input.into());
+    pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The intended status of the volume status.</p>
-    pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }

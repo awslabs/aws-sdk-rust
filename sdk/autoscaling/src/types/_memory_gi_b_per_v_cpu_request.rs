@@ -2,22 +2,22 @@
 
 /// <p>Specifies the minimum and maximum for the <code>MemoryGiBPerVCpu</code> object when you specify <code>InstanceRequirements</code> for an Auto Scaling group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MemoryGiBPerVCpuRequest {
     /// <p>The memory minimum in GiB.</p>
     #[doc(hidden)]
-    pub min: std::option::Option<f64>,
+    pub min: ::std::option::Option<f64>,
     /// <p>The memory maximum in GiB.</p>
     #[doc(hidden)]
-    pub max: std::option::Option<f64>,
+    pub max: ::std::option::Option<f64>,
 }
 impl MemoryGiBPerVCpuRequest {
     /// <p>The memory minimum in GiB.</p>
-    pub fn min(&self) -> std::option::Option<f64> {
+    pub fn min(&self) -> ::std::option::Option<f64> {
         self.min
     }
     /// <p>The memory maximum in GiB.</p>
-    pub fn max(&self) -> std::option::Option<f64> {
+    pub fn max(&self) -> ::std::option::Option<f64> {
         self.max
     }
 }
@@ -30,29 +30,31 @@ impl MemoryGiBPerVCpuRequest {
 
 /// A builder for [`MemoryGiBPerVCpuRequest`](crate::types::MemoryGiBPerVCpuRequest).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MemoryGiBPerVCpuRequestBuilder {
-    pub(crate) min: std::option::Option<f64>,
-    pub(crate) max: std::option::Option<f64>,
+    pub(crate) min: ::std::option::Option<f64>,
+    pub(crate) max: ::std::option::Option<f64>,
 }
 impl MemoryGiBPerVCpuRequestBuilder {
     /// <p>The memory minimum in GiB.</p>
     pub fn min(mut self, input: f64) -> Self {
-        self.min = Some(input);
+        self.min = ::std::option::Option::Some(input);
         self
     }
     /// <p>The memory minimum in GiB.</p>
-    pub fn set_min(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_min(mut self, input: ::std::option::Option<f64>) -> Self {
         self.min = input;
         self
     }
     /// <p>The memory maximum in GiB.</p>
     pub fn max(mut self, input: f64) -> Self {
-        self.max = Some(input);
+        self.max = ::std::option::Option::Some(input);
         self
     }
     /// <p>The memory maximum in GiB.</p>
-    pub fn set_max(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_max(mut self, input: ::std::option::Option<f64>) -> Self {
         self.max = input;
         self
     }

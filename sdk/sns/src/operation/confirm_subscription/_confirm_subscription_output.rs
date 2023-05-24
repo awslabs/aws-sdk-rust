@@ -2,20 +2,20 @@
 
 /// <p>Response for ConfirmSubscriptions action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConfirmSubscriptionOutput {
     /// <p>The ARN of the created subscription.</p>
     #[doc(hidden)]
-    pub subscription_arn: std::option::Option<std::string::String>,
+    pub subscription_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ConfirmSubscriptionOutput {
     /// <p>The ARN of the created subscription.</p>
-    pub fn subscription_arn(&self) -> std::option::Option<&str> {
+    pub fn subscription_arn(&self) -> ::std::option::Option<&str> {
         self.subscription_arn.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ConfirmSubscriptionOutput {
+impl ::aws_http::request_id::RequestId for ConfirmSubscriptionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -31,19 +31,27 @@ impl ConfirmSubscriptionOutput {
 
 /// A builder for [`ConfirmSubscriptionOutput`](crate::operation::confirm_subscription::ConfirmSubscriptionOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ConfirmSubscriptionOutputBuilder {
-    pub(crate) subscription_arn: std::option::Option<std::string::String>,
+    pub(crate) subscription_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ConfirmSubscriptionOutputBuilder {
     /// <p>The ARN of the created subscription.</p>
-    pub fn subscription_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.subscription_arn = Some(input.into());
+    pub fn subscription_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.subscription_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the created subscription.</p>
-    pub fn set_subscription_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_subscription_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.subscription_arn = input;
         self
     }

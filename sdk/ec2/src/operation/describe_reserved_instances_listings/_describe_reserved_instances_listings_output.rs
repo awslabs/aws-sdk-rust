@@ -2,23 +2,23 @@
 
 /// <p>Contains the output of DescribeReservedInstancesListings.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeReservedInstancesListingsOutput {
     /// <p>Information about the Reserved Instance listing.</p>
     #[doc(hidden)]
     pub reserved_instances_listings:
-        std::option::Option<std::vec::Vec<crate::types::ReservedInstancesListing>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ReservedInstancesListing>>,
     _request_id: Option<String>,
 }
 impl DescribeReservedInstancesListingsOutput {
     /// <p>Information about the Reserved Instance listing.</p>
     pub fn reserved_instances_listings(
         &self,
-    ) -> std::option::Option<&[crate::types::ReservedInstancesListing]> {
+    ) -> ::std::option::Option<&[crate::types::ReservedInstancesListing]> {
         self.reserved_instances_listings.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeReservedInstancesListingsOutput {
+impl ::aws_http::request_id::RequestId for DescribeReservedInstancesListingsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -32,10 +32,12 @@ impl DescribeReservedInstancesListingsOutput {
 
 /// A builder for [`DescribeReservedInstancesListingsOutput`](crate::operation::describe_reserved_instances_listings::DescribeReservedInstancesListingsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeReservedInstancesListingsOutputBuilder {
     pub(crate) reserved_instances_listings:
-        std::option::Option<std::vec::Vec<crate::types::ReservedInstancesListing>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ReservedInstancesListing>>,
     _request_id: Option<String>,
 }
 impl DescribeReservedInstancesListingsOutputBuilder {
@@ -50,13 +52,13 @@ impl DescribeReservedInstancesListingsOutputBuilder {
     ) -> Self {
         let mut v = self.reserved_instances_listings.unwrap_or_default();
         v.push(input);
-        self.reserved_instances_listings = Some(v);
+        self.reserved_instances_listings = ::std::option::Option::Some(v);
         self
     }
     /// <p>Information about the Reserved Instance listing.</p>
     pub fn set_reserved_instances_listings(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ReservedInstancesListing>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ReservedInstancesListing>>,
     ) -> Self {
         self.reserved_instances_listings = input;
         self

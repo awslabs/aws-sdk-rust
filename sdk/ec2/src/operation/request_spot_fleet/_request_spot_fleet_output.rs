@@ -2,20 +2,20 @@
 
 /// <p>Contains the output of RequestSpotFleet.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RequestSpotFleetOutput {
     /// <p>The ID of the Spot Fleet request.</p>
     #[doc(hidden)]
-    pub spot_fleet_request_id: std::option::Option<std::string::String>,
+    pub spot_fleet_request_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl RequestSpotFleetOutput {
     /// <p>The ID of the Spot Fleet request.</p>
-    pub fn spot_fleet_request_id(&self) -> std::option::Option<&str> {
+    pub fn spot_fleet_request_id(&self) -> ::std::option::Option<&str> {
         self.spot_fleet_request_id.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for RequestSpotFleetOutput {
+impl ::aws_http::request_id::RequestId for RequestSpotFleetOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,21 +30,26 @@ impl RequestSpotFleetOutput {
 
 /// A builder for [`RequestSpotFleetOutput`](crate::operation::request_spot_fleet::RequestSpotFleetOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RequestSpotFleetOutputBuilder {
-    pub(crate) spot_fleet_request_id: std::option::Option<std::string::String>,
+    pub(crate) spot_fleet_request_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl RequestSpotFleetOutputBuilder {
     /// <p>The ID of the Spot Fleet request.</p>
-    pub fn spot_fleet_request_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.spot_fleet_request_id = Some(input.into());
+    pub fn spot_fleet_request_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.spot_fleet_request_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the Spot Fleet request.</p>
     pub fn set_spot_fleet_request_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.spot_fleet_request_id = input;
         self

@@ -2,15 +2,15 @@
 
 /// <p>Sheet controls option.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SheetControlsOption {
     /// <p>Visibility state.</p>
     #[doc(hidden)]
-    pub visibility_state: std::option::Option<crate::types::DashboardUiState>,
+    pub visibility_state: ::std::option::Option<crate::types::DashboardUiState>,
 }
 impl SheetControlsOption {
     /// <p>Visibility state.</p>
-    pub fn visibility_state(&self) -> std::option::Option<&crate::types::DashboardUiState> {
+    pub fn visibility_state(&self) -> ::std::option::Option<&crate::types::DashboardUiState> {
         self.visibility_state.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl SheetControlsOption {
 
 /// A builder for [`SheetControlsOption`](crate::types::SheetControlsOption).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SheetControlsOptionBuilder {
-    pub(crate) visibility_state: std::option::Option<crate::types::DashboardUiState>,
+    pub(crate) visibility_state: ::std::option::Option<crate::types::DashboardUiState>,
 }
 impl SheetControlsOptionBuilder {
     /// <p>Visibility state.</p>
     pub fn visibility_state(mut self, input: crate::types::DashboardUiState) -> Self {
-        self.visibility_state = Some(input);
+        self.visibility_state = ::std::option::Option::Some(input);
         self
     }
     /// <p>Visibility state.</p>
     pub fn set_visibility_state(
         mut self,
-        input: std::option::Option<crate::types::DashboardUiState>,
+        input: ::std::option::Option<crate::types::DashboardUiState>,
     ) -> Self {
         self.visibility_state = input;
         self

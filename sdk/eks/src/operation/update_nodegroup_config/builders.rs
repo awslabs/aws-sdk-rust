@@ -6,29 +6,29 @@ pub use crate::operation::update_nodegroup_config::_update_nodegroup_config_inpu
 /// Fluent builder constructing a request to `UpdateNodegroupConfig`.
 ///
 /// <p>Updates an Amazon EKS managed node group configuration. Your node group continues to function during the update. The response output includes an update ID that you can use to track the status of your node group update with the <code>DescribeUpdate</code> API operation. Currently you can update the Kubernetes labels for a node group or the scaling configuration.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateNodegroupConfigFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::update_nodegroup_config::builders::UpdateNodegroupConfigInputBuilder,
 }
 impl UpdateNodegroupConfigFluentBuilder {
     /// Creates a new `UpdateNodegroupConfig`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_nodegroup_config::UpdateNodegroupConfig,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_nodegroup_config::UpdateNodegroupConfigError,
         >,
     > {
@@ -36,30 +36,33 @@ impl UpdateNodegroupConfigFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_nodegroup_config::UpdateNodegroupConfigOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_nodegroup_config::UpdateNodegroupConfigError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,31 +75,37 @@ impl UpdateNodegroupConfigFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_nodegroup_config::UpdateNodegroupConfigOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_nodegroup_config::UpdateNodegroupConfigError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the Amazon EKS cluster that the managed node group resides in.</p>
-    pub fn cluster_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn cluster_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.cluster_name(input.into());
         self
     }
     /// <p>The name of the Amazon EKS cluster that the managed node group resides in.</p>
-    pub fn set_cluster_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cluster_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_name(input);
         self
     }
     /// <p>The name of the managed node group to update.</p>
-    pub fn nodegroup_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn nodegroup_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.nodegroup_name(input.into());
         self
     }
     /// <p>The name of the managed node group to update.</p>
-    pub fn set_nodegroup_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_nodegroup_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_nodegroup_name(input);
         self
     }
@@ -108,7 +117,7 @@ impl UpdateNodegroupConfigFluentBuilder {
     /// <p>The Kubernetes labels to be applied to the nodes in the node group after the update.</p>
     pub fn set_labels(
         mut self,
-        input: std::option::Option<crate::types::UpdateLabelsPayload>,
+        input: ::std::option::Option<crate::types::UpdateLabelsPayload>,
     ) -> Self {
         self.inner = self.inner.set_labels(input);
         self
@@ -121,7 +130,7 @@ impl UpdateNodegroupConfigFluentBuilder {
     /// <p>The Kubernetes taints to be applied to the nodes in the node group after the update. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node taints on managed node groups</a>.</p>
     pub fn set_taints(
         mut self,
-        input: std::option::Option<crate::types::UpdateTaintsPayload>,
+        input: ::std::option::Option<crate::types::UpdateTaintsPayload>,
     ) -> Self {
         self.inner = self.inner.set_taints(input);
         self
@@ -134,7 +143,7 @@ impl UpdateNodegroupConfigFluentBuilder {
     /// <p>The scaling configuration details for the Auto Scaling group after the update.</p>
     pub fn set_scaling_config(
         mut self,
-        input: std::option::Option<crate::types::NodegroupScalingConfig>,
+        input: ::std::option::Option<crate::types::NodegroupScalingConfig>,
     ) -> Self {
         self.inner = self.inner.set_scaling_config(input);
         self
@@ -147,20 +156,23 @@ impl UpdateNodegroupConfigFluentBuilder {
     /// <p>The node group update configuration.</p>
     pub fn set_update_config(
         mut self,
-        input: std::option::Option<crate::types::NodegroupUpdateConfig>,
+        input: ::std::option::Option<crate::types::NodegroupUpdateConfig>,
     ) -> Self {
         self.inner = self.inner.set_update_config(input);
         self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn client_request_token(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn set_client_request_token(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self

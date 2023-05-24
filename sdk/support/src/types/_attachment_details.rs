@@ -2,22 +2,22 @@
 
 /// <p>The file name and ID of an attachment to a case communication. You can use the ID to retrieve the attachment with the <code>DescribeAttachment</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AttachmentDetails {
     /// <p>The ID of the attachment.</p>
     #[doc(hidden)]
-    pub attachment_id: std::option::Option<std::string::String>,
+    pub attachment_id: ::std::option::Option<::std::string::String>,
     /// <p>The file name of the attachment.</p>
     #[doc(hidden)]
-    pub file_name: std::option::Option<std::string::String>,
+    pub file_name: ::std::option::Option<::std::string::String>,
 }
 impl AttachmentDetails {
     /// <p>The ID of the attachment.</p>
-    pub fn attachment_id(&self) -> std::option::Option<&str> {
+    pub fn attachment_id(&self) -> ::std::option::Option<&str> {
         self.attachment_id.as_deref()
     }
     /// <p>The file name of the attachment.</p>
-    pub fn file_name(&self) -> std::option::Option<&str> {
+    pub fn file_name(&self) -> ::std::option::Option<&str> {
         self.file_name.as_deref()
     }
 }
@@ -30,29 +30,37 @@ impl AttachmentDetails {
 
 /// A builder for [`AttachmentDetails`](crate::types::AttachmentDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AttachmentDetailsBuilder {
-    pub(crate) attachment_id: std::option::Option<std::string::String>,
-    pub(crate) file_name: std::option::Option<std::string::String>,
+    pub(crate) attachment_id: ::std::option::Option<::std::string::String>,
+    pub(crate) file_name: ::std::option::Option<::std::string::String>,
 }
 impl AttachmentDetailsBuilder {
     /// <p>The ID of the attachment.</p>
-    pub fn attachment_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.attachment_id = Some(input.into());
+    pub fn attachment_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.attachment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the attachment.</p>
-    pub fn set_attachment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_attachment_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.attachment_id = input;
         self
     }
     /// <p>The file name of the attachment.</p>
-    pub fn file_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.file_name = Some(input.into());
+    pub fn file_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.file_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The file name of the attachment.</p>
-    pub fn set_file_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_file_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_name = input;
         self
     }

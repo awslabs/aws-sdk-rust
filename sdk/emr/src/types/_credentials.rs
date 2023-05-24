@@ -2,7 +2,7 @@
 
 /// <p>The credentials that you can use to connect to cluster endpoints. Credentials consist of a username and a password.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub enum Credentials {
     /// <p>The username and password that you use to connect to cluster endpoints.</p>
     UsernamePassword(crate::types::UsernamePassword),
@@ -22,11 +22,11 @@ impl Credentials {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_username_password(
         &self,
-    ) -> std::result::Result<&crate::types::UsernamePassword, &Self> {
+    ) -> ::std::result::Result<&crate::types::UsernamePassword, &Self> {
         if let Credentials::UsernamePassword(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`UsernamePassword`](crate::types::Credentials::UsernamePassword).
@@ -38,8 +38,8 @@ impl Credentials {
         matches!(self, Self::Unknown)
     }
 }
-impl std::fmt::Debug for Credentials {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for Credentials {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Credentials::UsernamePassword(_) => {
                 f.debug_tuple("*** Sensitive Data Redacted ***").finish()

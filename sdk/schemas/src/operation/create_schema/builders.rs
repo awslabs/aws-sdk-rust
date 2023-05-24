@@ -8,56 +8,59 @@ pub use crate::operation::create_schema::_create_schema_input::CreateSchemaInput
 /// <p>Creates a schema definition.</p> <note>
 /// <p>Inactive schemas will be deleted after two years.</p>
 /// </note>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateSchemaFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_schema::builders::CreateSchemaInputBuilder,
 }
 impl CreateSchemaFluentBuilder {
     /// Creates a new `CreateSchema`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_schema::CreateSchema,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_schema::CreateSchemaError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_schema::CreateSchemaError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_schema::CreateSchemaOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_schema::CreateSchemaError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_schema::CreateSchemaError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -70,49 +73,55 @@ impl CreateSchemaFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_schema::CreateSchemaOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_schema::CreateSchemaError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_schema::CreateSchemaError>,
     > {
         self.send_middleware().await
     }
     /// <p>The source of the schema definition.</p>
-    pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn content(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.content(input.into());
         self
     }
     /// <p>The source of the schema definition.</p>
-    pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_content(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_content(input);
         self
     }
     /// <p>A description of the schema.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>A description of the schema.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
     /// <p>The name of the registry.</p>
-    pub fn registry_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn registry_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.registry_name(input.into());
         self
     }
     /// <p>The name of the registry.</p>
-    pub fn set_registry_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_registry_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_registry_name(input);
         self
     }
     /// <p>The name of the schema.</p>
-    pub fn schema_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn schema_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.schema_name(input.into());
         self
     }
     /// <p>The name of the schema.</p>
-    pub fn set_schema_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_schema_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_schema_name(input);
         self
     }
@@ -123,8 +132,8 @@ impl CreateSchemaFluentBuilder {
     /// <p>Tags associated with the schema.</p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
@@ -132,8 +141,8 @@ impl CreateSchemaFluentBuilder {
     /// <p>Tags associated with the schema.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
@@ -145,7 +154,7 @@ impl CreateSchemaFluentBuilder {
         self
     }
     /// <p>The type of schema.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::Type>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::Type>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }

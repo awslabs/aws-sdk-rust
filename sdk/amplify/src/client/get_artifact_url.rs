@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetArtifactUrl`](crate::operation::get_artifact_url::builders::GetArtifactUrlFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`artifact_id(impl Into<String>)`](crate::operation::get_artifact_url::builders::GetArtifactUrlFluentBuilder::artifact_id) / [`set_artifact_id(Option<String>)`](crate::operation::get_artifact_url::builders::GetArtifactUrlFluentBuilder::set_artifact_id): <p> The unique ID for an artifact. </p>
+    ///   - [`artifact_id(impl ::std::convert::Into<String>)`](crate::operation::get_artifact_url::builders::GetArtifactUrlFluentBuilder::artifact_id) / [`set_artifact_id(Option<String>)`](crate::operation::get_artifact_url::builders::GetArtifactUrlFluentBuilder::set_artifact_id): <p> The unique ID for an artifact. </p>
     /// - On success, responds with [`GetArtifactUrlOutput`](crate::operation::get_artifact_url::GetArtifactUrlOutput) with field(s):
     ///   - [`artifact_id(Option<String>)`](crate::operation::get_artifact_url::GetArtifactUrlOutput::artifact_id): <p> The unique ID for an artifact. </p>
     ///   - [`artifact_url(Option<String>)`](crate::operation::get_artifact_url::GetArtifactUrlOutput::artifact_url): <p> The presigned URL for the artifact. </p>

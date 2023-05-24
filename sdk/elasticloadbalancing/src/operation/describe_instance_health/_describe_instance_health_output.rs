@@ -2,20 +2,20 @@
 
 /// <p>Contains the output for DescribeInstanceHealth.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeInstanceHealthOutput {
     /// <p>Information about the health of the instances.</p>
     #[doc(hidden)]
-    pub instance_states: std::option::Option<std::vec::Vec<crate::types::InstanceState>>,
+    pub instance_states: ::std::option::Option<::std::vec::Vec<crate::types::InstanceState>>,
     _request_id: Option<String>,
 }
 impl DescribeInstanceHealthOutput {
     /// <p>Information about the health of the instances.</p>
-    pub fn instance_states(&self) -> std::option::Option<&[crate::types::InstanceState]> {
+    pub fn instance_states(&self) -> ::std::option::Option<&[crate::types::InstanceState]> {
         self.instance_states.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeInstanceHealthOutput {
+impl ::aws_http::request_id::RequestId for DescribeInstanceHealthOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -31,9 +31,11 @@ impl DescribeInstanceHealthOutput {
 
 /// A builder for [`DescribeInstanceHealthOutput`](crate::operation::describe_instance_health::DescribeInstanceHealthOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeInstanceHealthOutputBuilder {
-    pub(crate) instance_states: std::option::Option<std::vec::Vec<crate::types::InstanceState>>,
+    pub(crate) instance_states: ::std::option::Option<::std::vec::Vec<crate::types::InstanceState>>,
     _request_id: Option<String>,
 }
 impl DescribeInstanceHealthOutputBuilder {
@@ -45,13 +47,13 @@ impl DescribeInstanceHealthOutputBuilder {
     pub fn instance_states(mut self, input: crate::types::InstanceState) -> Self {
         let mut v = self.instance_states.unwrap_or_default();
         v.push(input);
-        self.instance_states = Some(v);
+        self.instance_states = ::std::option::Option::Some(v);
         self
     }
     /// <p>Information about the health of the instances.</p>
     pub fn set_instance_states(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::InstanceState>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::InstanceState>>,
     ) -> Self {
         self.instance_states = input;
         self

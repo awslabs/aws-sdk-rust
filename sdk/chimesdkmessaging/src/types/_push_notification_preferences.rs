@@ -2,27 +2,27 @@
 
 /// <p>The channel membership preferences for push notification.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct PushNotificationPreferences {
     /// <p>Enum value that indicates which push notifications to send to the requested member of a channel. <code>ALL</code> sends all push notifications, <code>NONE</code> sends no push notifications, <code>FILTERED</code> sends only filtered push notifications. </p>
     #[doc(hidden)]
-    pub allow_notifications: std::option::Option<crate::types::AllowNotifications>,
+    pub allow_notifications: ::std::option::Option<crate::types::AllowNotifications>,
     /// <p>The simple JSON object used to send a subset of a push notification to the requested member.</p>
     #[doc(hidden)]
-    pub filter_rule: std::option::Option<std::string::String>,
+    pub filter_rule: ::std::option::Option<::std::string::String>,
 }
 impl PushNotificationPreferences {
     /// <p>Enum value that indicates which push notifications to send to the requested member of a channel. <code>ALL</code> sends all push notifications, <code>NONE</code> sends no push notifications, <code>FILTERED</code> sends only filtered push notifications. </p>
-    pub fn allow_notifications(&self) -> std::option::Option<&crate::types::AllowNotifications> {
+    pub fn allow_notifications(&self) -> ::std::option::Option<&crate::types::AllowNotifications> {
         self.allow_notifications.as_ref()
     }
     /// <p>The simple JSON object used to send a subset of a push notification to the requested member.</p>
-    pub fn filter_rule(&self) -> std::option::Option<&str> {
+    pub fn filter_rule(&self) -> ::std::option::Option<&str> {
         self.filter_rule.as_deref()
     }
 }
-impl std::fmt::Debug for PushNotificationPreferences {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for PushNotificationPreferences {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("PushNotificationPreferences");
         formatter.field("allow_notifications", &self.allow_notifications);
         formatter.field("filter_rule", &"*** Sensitive Data Redacted ***");
@@ -38,32 +38,32 @@ impl PushNotificationPreferences {
 
 /// A builder for [`PushNotificationPreferences`](crate::types::PushNotificationPreferences).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct PushNotificationPreferencesBuilder {
-    pub(crate) allow_notifications: std::option::Option<crate::types::AllowNotifications>,
-    pub(crate) filter_rule: std::option::Option<std::string::String>,
+    pub(crate) allow_notifications: ::std::option::Option<crate::types::AllowNotifications>,
+    pub(crate) filter_rule: ::std::option::Option<::std::string::String>,
 }
 impl PushNotificationPreferencesBuilder {
     /// <p>Enum value that indicates which push notifications to send to the requested member of a channel. <code>ALL</code> sends all push notifications, <code>NONE</code> sends no push notifications, <code>FILTERED</code> sends only filtered push notifications. </p>
     pub fn allow_notifications(mut self, input: crate::types::AllowNotifications) -> Self {
-        self.allow_notifications = Some(input);
+        self.allow_notifications = ::std::option::Option::Some(input);
         self
     }
     /// <p>Enum value that indicates which push notifications to send to the requested member of a channel. <code>ALL</code> sends all push notifications, <code>NONE</code> sends no push notifications, <code>FILTERED</code> sends only filtered push notifications. </p>
     pub fn set_allow_notifications(
         mut self,
-        input: std::option::Option<crate::types::AllowNotifications>,
+        input: ::std::option::Option<crate::types::AllowNotifications>,
     ) -> Self {
         self.allow_notifications = input;
         self
     }
     /// <p>The simple JSON object used to send a subset of a push notification to the requested member.</p>
-    pub fn filter_rule(mut self, input: impl Into<std::string::String>) -> Self {
-        self.filter_rule = Some(input.into());
+    pub fn filter_rule(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.filter_rule = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The simple JSON object used to send a subset of a push notification to the requested member.</p>
-    pub fn set_filter_rule(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_filter_rule(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.filter_rule = input;
         self
     }
@@ -75,8 +75,8 @@ impl PushNotificationPreferencesBuilder {
         }
     }
 }
-impl std::fmt::Debug for PushNotificationPreferencesBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for PushNotificationPreferencesBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("PushNotificationPreferencesBuilder");
         formatter.field("allow_notifications", &self.allow_notifications);
         formatter.field("filter_rule", &"*** Sensitive Data Redacted ***");

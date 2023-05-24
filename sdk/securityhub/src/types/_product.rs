@@ -2,23 +2,23 @@
 
 /// <p>Contains details about a product.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Product {
     /// <p>The ARN assigned to the product.</p>
     #[doc(hidden)]
-    pub product_arn: std::option::Option<std::string::String>,
+    pub product_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the product.</p>
     #[doc(hidden)]
-    pub product_name: std::option::Option<std::string::String>,
+    pub product_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the company that provides the product.</p>
     #[doc(hidden)]
-    pub company_name: std::option::Option<std::string::String>,
+    pub company_name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the product.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The categories assigned to the product.</p>
     #[doc(hidden)]
-    pub categories: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub categories: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The types of integration that the product supports. Available values are the following.</p>
     /// <ul>
     /// <li> <p> <code>SEND_FINDINGS_TO_SECURITY_HUB</code> - The integration sends findings to Security Hub.</p> </li>
@@ -26,37 +26,37 @@ pub struct Product {
     /// <li> <p> <code>UPDATE_FINDINGS_IN_SECURITY_HUB</code> - The integration does not send new findings to Security Hub, but does make updates to the findings that it receives from Security Hub.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub integration_types: std::option::Option<std::vec::Vec<crate::types::IntegrationType>>,
+    pub integration_types: ::std::option::Option<::std::vec::Vec<crate::types::IntegrationType>>,
     /// <p>For integrations with Amazon Web Services services, the Amazon Web Services Console URL from which to activate the service.</p>
     /// <p>For integrations with third-party products, the Amazon Web Services Marketplace URL from which to subscribe to or purchase the product.</p>
     #[doc(hidden)]
-    pub marketplace_url: std::option::Option<std::string::String>,
+    pub marketplace_url: ::std::option::Option<::std::string::String>,
     /// <p>The URL to the service or product documentation about the integration with Security Hub, including how to activate the integration.</p>
     #[doc(hidden)]
-    pub activation_url: std::option::Option<std::string::String>,
+    pub activation_url: ::std::option::Option<::std::string::String>,
     /// <p>The resource policy associated with the product.</p>
     #[doc(hidden)]
-    pub product_subscription_resource_policy: std::option::Option<std::string::String>,
+    pub product_subscription_resource_policy: ::std::option::Option<::std::string::String>,
 }
 impl Product {
     /// <p>The ARN assigned to the product.</p>
-    pub fn product_arn(&self) -> std::option::Option<&str> {
+    pub fn product_arn(&self) -> ::std::option::Option<&str> {
         self.product_arn.as_deref()
     }
     /// <p>The name of the product.</p>
-    pub fn product_name(&self) -> std::option::Option<&str> {
+    pub fn product_name(&self) -> ::std::option::Option<&str> {
         self.product_name.as_deref()
     }
     /// <p>The name of the company that provides the product.</p>
-    pub fn company_name(&self) -> std::option::Option<&str> {
+    pub fn company_name(&self) -> ::std::option::Option<&str> {
         self.company_name.as_deref()
     }
     /// <p>A description of the product.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The categories assigned to the product.</p>
-    pub fn categories(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn categories(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.categories.as_deref()
     }
     /// <p>The types of integration that the product supports. Available values are the following.</p>
@@ -65,20 +65,20 @@ impl Product {
     /// <li> <p> <code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - The integration receives findings from Security Hub.</p> </li>
     /// <li> <p> <code>UPDATE_FINDINGS_IN_SECURITY_HUB</code> - The integration does not send new findings to Security Hub, but does make updates to the findings that it receives from Security Hub.</p> </li>
     /// </ul>
-    pub fn integration_types(&self) -> std::option::Option<&[crate::types::IntegrationType]> {
+    pub fn integration_types(&self) -> ::std::option::Option<&[crate::types::IntegrationType]> {
         self.integration_types.as_deref()
     }
     /// <p>For integrations with Amazon Web Services services, the Amazon Web Services Console URL from which to activate the service.</p>
     /// <p>For integrations with third-party products, the Amazon Web Services Marketplace URL from which to subscribe to or purchase the product.</p>
-    pub fn marketplace_url(&self) -> std::option::Option<&str> {
+    pub fn marketplace_url(&self) -> ::std::option::Option<&str> {
         self.marketplace_url.as_deref()
     }
     /// <p>The URL to the service or product documentation about the integration with Security Hub, including how to activate the integration.</p>
-    pub fn activation_url(&self) -> std::option::Option<&str> {
+    pub fn activation_url(&self) -> ::std::option::Option<&str> {
         self.activation_url.as_deref()
     }
     /// <p>The resource policy associated with the product.</p>
-    pub fn product_subscription_resource_policy(&self) -> std::option::Option<&str> {
+    pub fn product_subscription_resource_policy(&self) -> ::std::option::Option<&str> {
         self.product_subscription_resource_policy.as_deref()
     }
 }
@@ -91,56 +91,59 @@ impl Product {
 
 /// A builder for [`Product`](crate::types::Product).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ProductBuilder {
-    pub(crate) product_arn: std::option::Option<std::string::String>,
-    pub(crate) product_name: std::option::Option<std::string::String>,
-    pub(crate) company_name: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) categories: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) integration_types: std::option::Option<std::vec::Vec<crate::types::IntegrationType>>,
-    pub(crate) marketplace_url: std::option::Option<std::string::String>,
-    pub(crate) activation_url: std::option::Option<std::string::String>,
-    pub(crate) product_subscription_resource_policy: std::option::Option<std::string::String>,
+    pub(crate) product_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) product_name: ::std::option::Option<::std::string::String>,
+    pub(crate) company_name: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) categories: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) integration_types:
+        ::std::option::Option<::std::vec::Vec<crate::types::IntegrationType>>,
+    pub(crate) marketplace_url: ::std::option::Option<::std::string::String>,
+    pub(crate) activation_url: ::std::option::Option<::std::string::String>,
+    pub(crate) product_subscription_resource_policy: ::std::option::Option<::std::string::String>,
 }
 impl ProductBuilder {
     /// <p>The ARN assigned to the product.</p>
-    pub fn product_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.product_arn = Some(input.into());
+    pub fn product_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.product_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN assigned to the product.</p>
-    pub fn set_product_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_product_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.product_arn = input;
         self
     }
     /// <p>The name of the product.</p>
-    pub fn product_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.product_name = Some(input.into());
+    pub fn product_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.product_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the product.</p>
-    pub fn set_product_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_product_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.product_name = input;
         self
     }
     /// <p>The name of the company that provides the product.</p>
-    pub fn company_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.company_name = Some(input.into());
+    pub fn company_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.company_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the company that provides the product.</p>
-    pub fn set_company_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_company_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.company_name = input;
         self
     }
     /// <p>A description of the product.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of the product.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
@@ -149,16 +152,16 @@ impl ProductBuilder {
     /// To override the contents of this collection use [`set_categories`](Self::set_categories).
     ///
     /// <p>The categories assigned to the product.</p>
-    pub fn categories(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn categories(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.categories.unwrap_or_default();
         v.push(input.into());
-        self.categories = Some(v);
+        self.categories = ::std::option::Option::Some(v);
         self
     }
     /// <p>The categories assigned to the product.</p>
     pub fn set_categories(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.categories = input;
         self
@@ -176,7 +179,7 @@ impl ProductBuilder {
     pub fn integration_types(mut self, input: crate::types::IntegrationType) -> Self {
         let mut v = self.integration_types.unwrap_or_default();
         v.push(input);
-        self.integration_types = Some(v);
+        self.integration_types = ::std::option::Option::Some(v);
         self
     }
     /// <p>The types of integration that the product supports. Available values are the following.</p>
@@ -187,45 +190,57 @@ impl ProductBuilder {
     /// </ul>
     pub fn set_integration_types(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::IntegrationType>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::IntegrationType>>,
     ) -> Self {
         self.integration_types = input;
         self
     }
     /// <p>For integrations with Amazon Web Services services, the Amazon Web Services Console URL from which to activate the service.</p>
     /// <p>For integrations with third-party products, the Amazon Web Services Marketplace URL from which to subscribe to or purchase the product.</p>
-    pub fn marketplace_url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.marketplace_url = Some(input.into());
+    pub fn marketplace_url(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.marketplace_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>For integrations with Amazon Web Services services, the Amazon Web Services Console URL from which to activate the service.</p>
     /// <p>For integrations with third-party products, the Amazon Web Services Marketplace URL from which to subscribe to or purchase the product.</p>
-    pub fn set_marketplace_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_marketplace_url(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.marketplace_url = input;
         self
     }
     /// <p>The URL to the service or product documentation about the integration with Security Hub, including how to activate the integration.</p>
-    pub fn activation_url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.activation_url = Some(input.into());
+    pub fn activation_url(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.activation_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL to the service or product documentation about the integration with Security Hub, including how to activate the integration.</p>
-    pub fn set_activation_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_activation_url(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.activation_url = input;
         self
     }
     /// <p>The resource policy associated with the product.</p>
     pub fn product_subscription_resource_policy(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.product_subscription_resource_policy = Some(input.into());
+        self.product_subscription_resource_policy = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The resource policy associated with the product.</p>
     pub fn set_product_subscription_resource_policy(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.product_subscription_resource_policy = input;
         self

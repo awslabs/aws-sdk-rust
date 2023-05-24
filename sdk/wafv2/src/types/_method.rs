@@ -4,7 +4,7 @@
 /// <p>This is used only in the <code>FieldToMatch</code> specification for some web request component types. </p>
 /// <p>JSON specification: <code>"Method": {}</code> </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Method {}
 impl Method {
     /// Creates a new builder-style object to manufacture [`Method`](crate::types::Method).
@@ -15,7 +15,9 @@ impl Method {
 
 /// A builder for [`Method`](crate::types::Method).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MethodBuilder {}
 impl MethodBuilder {
     /// Consumes the builder and constructs a [`Method`](crate::types::Method).

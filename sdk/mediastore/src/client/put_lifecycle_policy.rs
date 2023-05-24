@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`PutLifecyclePolicy`](crate::operation::put_lifecycle_policy::builders::PutLifecyclePolicyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`container_name(impl Into<String>)`](crate::operation::put_lifecycle_policy::builders::PutLifecyclePolicyFluentBuilder::container_name) / [`set_container_name(Option<String>)`](crate::operation::put_lifecycle_policy::builders::PutLifecyclePolicyFluentBuilder::set_container_name): <p>The name of the container that you want to assign the object lifecycle policy to.</p>
-    ///   - [`lifecycle_policy(impl Into<String>)`](crate::operation::put_lifecycle_policy::builders::PutLifecyclePolicyFluentBuilder::lifecycle_policy) / [`set_lifecycle_policy(Option<String>)`](crate::operation::put_lifecycle_policy::builders::PutLifecyclePolicyFluentBuilder::set_lifecycle_policy): <p>The object lifecycle policy to apply to the container.</p>
+    ///   - [`container_name(impl ::std::convert::Into<String>)`](crate::operation::put_lifecycle_policy::builders::PutLifecyclePolicyFluentBuilder::container_name) / [`set_container_name(Option<String>)`](crate::operation::put_lifecycle_policy::builders::PutLifecyclePolicyFluentBuilder::set_container_name): <p>The name of the container that you want to assign the object lifecycle policy to.</p>
+    ///   - [`lifecycle_policy(impl ::std::convert::Into<String>)`](crate::operation::put_lifecycle_policy::builders::PutLifecyclePolicyFluentBuilder::lifecycle_policy) / [`set_lifecycle_policy(Option<String>)`](crate::operation::put_lifecycle_policy::builders::PutLifecyclePolicyFluentBuilder::set_lifecycle_policy): <p>The object lifecycle policy to apply to the container.</p>
     /// - On success, responds with [`PutLifecyclePolicyOutput`](crate::operation::put_lifecycle_policy::PutLifecyclePolicyOutput)
     /// - On failure, responds with [`SdkError<PutLifecyclePolicyError>`](crate::operation::put_lifecycle_policy::PutLifecyclePolicyError)
     pub fn put_lifecycle_policy(

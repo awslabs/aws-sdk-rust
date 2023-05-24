@@ -3,10 +3,10 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateInsight`](crate::operation::update_insight::builders::UpdateInsightFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`insight_arn(impl Into<String>)`](crate::operation::update_insight::builders::UpdateInsightFluentBuilder::insight_arn) / [`set_insight_arn(Option<String>)`](crate::operation::update_insight::builders::UpdateInsightFluentBuilder::set_insight_arn): <p>The ARN of the insight that you want to update.</p>
-    ///   - [`name(impl Into<String>)`](crate::operation::update_insight::builders::UpdateInsightFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_insight::builders::UpdateInsightFluentBuilder::set_name): <p>The updated name for the insight.</p>
+    ///   - [`insight_arn(impl ::std::convert::Into<String>)`](crate::operation::update_insight::builders::UpdateInsightFluentBuilder::insight_arn) / [`set_insight_arn(Option<String>)`](crate::operation::update_insight::builders::UpdateInsightFluentBuilder::set_insight_arn): <p>The ARN of the insight that you want to update.</p>
+    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::update_insight::builders::UpdateInsightFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_insight::builders::UpdateInsightFluentBuilder::set_name): <p>The updated name for the insight.</p>
     ///   - [`filters(AwsSecurityFindingFilters)`](crate::operation::update_insight::builders::UpdateInsightFluentBuilder::filters) / [`set_filters(Option<AwsSecurityFindingFilters>)`](crate::operation::update_insight::builders::UpdateInsightFluentBuilder::set_filters): <p>The updated filters that define this insight.</p>
-    ///   - [`group_by_attribute(impl Into<String>)`](crate::operation::update_insight::builders::UpdateInsightFluentBuilder::group_by_attribute) / [`set_group_by_attribute(Option<String>)`](crate::operation::update_insight::builders::UpdateInsightFluentBuilder::set_group_by_attribute): <p>The updated <code>GroupBy</code> attribute that defines this insight.</p>
+    ///   - [`group_by_attribute(impl ::std::convert::Into<String>)`](crate::operation::update_insight::builders::UpdateInsightFluentBuilder::group_by_attribute) / [`set_group_by_attribute(Option<String>)`](crate::operation::update_insight::builders::UpdateInsightFluentBuilder::set_group_by_attribute): <p>The updated <code>GroupBy</code> attribute that defines this insight.</p>
     /// - On success, responds with [`UpdateInsightOutput`](crate::operation::update_insight::UpdateInsightOutput)
     /// - On failure, responds with [`SdkError<UpdateInsightError>`](crate::operation::update_insight::UpdateInsightError)
     pub fn update_insight(

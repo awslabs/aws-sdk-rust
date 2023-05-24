@@ -2,7 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_traffic_policy_versions_http_error(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::list_traffic_policy_versions::ListTrafficPolicyVersionsOutput,
@@ -17,7 +17,7 @@ pub fn de_list_traffic_policy_versions_http_error(
     .map_err(
         crate::operation::list_traffic_policy_versions::ListTrafficPolicyVersionsError::unhandled,
     )?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
+    generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code = match generic.code() {
                                 Some(code) => code,
@@ -65,7 +65,7 @@ pub fn de_list_traffic_policy_versions_http_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_list_traffic_policy_versions_http_response_with_props(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::list_traffic_policy_versions::ListTrafficPolicyVersionsOutput,
@@ -76,15 +76,15 @@ pub fn de_list_traffic_policy_versions_http_response_with_props(
         let mut output = crate::operation::list_traffic_policy_versions::builders::ListTrafficPolicyVersionsOutputBuilder::default();
         output = crate::protocol_serde::shape_list_traffic_policy_versions::de_list_traffic_policy_versions(_response_body, output).map_err(crate::operation::list_traffic_policy_versions::ListTrafficPolicyVersionsError::unhandled)?;
         output._set_request_id(
-            aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
+            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
         );
         output.build()
     })
 }
 
 #[allow(unused_mut)]
-pub fn de_list_traffic_policy_versions(inp: &[u8], mut builder: crate::operation::list_traffic_policy_versions::builders::ListTrafficPolicyVersionsOutputBuilder) -> Result<crate::operation::list_traffic_policy_versions::builders::ListTrafficPolicyVersionsOutputBuilder, aws_smithy_xml::decode::XmlDecodeError>{
-    let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
+pub fn de_list_traffic_policy_versions(inp: &[u8], mut builder: crate::operation::list_traffic_policy_versions::builders::ListTrafficPolicyVersionsOutputBuilder) -> Result<crate::operation::list_traffic_policy_versions::builders::ListTrafficPolicyVersionsOutputBuilder, ::aws_smithy_xml::decode::XmlDecodeError>{
+    let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
@@ -92,7 +92,7 @@ pub fn de_list_traffic_policy_versions(inp: &[u8], mut builder: crate::operation
     let start_el = decoder.start_el();
     if !start_el.matches("ListTrafficPolicyVersionsResponse") {
         return Err(
-                                aws_smithy_xml::decode::XmlDecodeError::custom(
+                                ::aws_smithy_xml::decode::XmlDecodeError::custom(
                                     format!("encountered invalid XML root: expected ListTrafficPolicyVersionsResponse but got {:?}. This is likely a bug in the SDK.", start_el)
                                 )
                             );
@@ -112,8 +112,8 @@ pub fn de_list_traffic_policy_versions(inp: &[u8], mut builder: crate::operation
             s if s.matches("TrafficPolicyVersionMarker") /* TrafficPolicyVersionMarker com.amazonaws.route53.synthetic#ListTrafficPolicyVersionsOutput$TrafficPolicyVersionMarker */ =>  {
                 let var_2 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -126,10 +126,10 @@ pub fn de_list_traffic_policy_versions(inp: &[u8], mut builder: crate::operation
                 let var_3 =
                     Some(
                          {
-                            <bool as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
-                            .map_err(|_|aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.route53#PageTruncated`)"))
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.route53#PageTruncated`)"))
                         }
                         ?
                     )
@@ -141,10 +141,10 @@ pub fn de_list_traffic_policy_versions(inp: &[u8], mut builder: crate::operation
                 let var_4 =
                     Some(
                          {
-                            <i32 as aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
-                            .map_err(|_|aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `smithy.api#Integer`)"))
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `smithy.api#Integer`)"))
                         }
                         ?
                     )

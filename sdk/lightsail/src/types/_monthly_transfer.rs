@@ -2,15 +2,15 @@
 
 /// <p>Describes the monthly data transfer in and out of your virtual private server (or <i>instance</i>).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MonthlyTransfer {
     /// <p>The amount allocated per month (in GB).</p>
     #[doc(hidden)]
-    pub gb_per_month_allocated: std::option::Option<i32>,
+    pub gb_per_month_allocated: ::std::option::Option<i32>,
 }
 impl MonthlyTransfer {
     /// <p>The amount allocated per month (in GB).</p>
-    pub fn gb_per_month_allocated(&self) -> std::option::Option<i32> {
+    pub fn gb_per_month_allocated(&self) -> ::std::option::Option<i32> {
         self.gb_per_month_allocated
     }
 }
@@ -23,18 +23,20 @@ impl MonthlyTransfer {
 
 /// A builder for [`MonthlyTransfer`](crate::types::MonthlyTransfer).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MonthlyTransferBuilder {
-    pub(crate) gb_per_month_allocated: std::option::Option<i32>,
+    pub(crate) gb_per_month_allocated: ::std::option::Option<i32>,
 }
 impl MonthlyTransferBuilder {
     /// <p>The amount allocated per month (in GB).</p>
     pub fn gb_per_month_allocated(mut self, input: i32) -> Self {
-        self.gb_per_month_allocated = Some(input);
+        self.gb_per_month_allocated = ::std::option::Option::Some(input);
         self
     }
     /// <p>The amount allocated per month (in GB).</p>
-    pub fn set_gb_per_month_allocated(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_gb_per_month_allocated(mut self, input: ::std::option::Option<i32>) -> Self {
         self.gb_per_month_allocated = input;
         self
     }

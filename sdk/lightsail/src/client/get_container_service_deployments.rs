@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetContainerServiceDeployments`](crate::operation::get_container_service_deployments::builders::GetContainerServiceDeploymentsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`service_name(impl Into<String>)`](crate::operation::get_container_service_deployments::builders::GetContainerServiceDeploymentsFluentBuilder::service_name) / [`set_service_name(Option<String>)`](crate::operation::get_container_service_deployments::builders::GetContainerServiceDeploymentsFluentBuilder::set_service_name): <p>The name of the container service for which to return deployments.</p>
+    ///   - [`service_name(impl ::std::convert::Into<String>)`](crate::operation::get_container_service_deployments::builders::GetContainerServiceDeploymentsFluentBuilder::service_name) / [`set_service_name(Option<String>)`](crate::operation::get_container_service_deployments::builders::GetContainerServiceDeploymentsFluentBuilder::set_service_name): <p>The name of the container service for which to return deployments.</p>
     /// - On success, responds with [`GetContainerServiceDeploymentsOutput`](crate::operation::get_container_service_deployments::GetContainerServiceDeploymentsOutput) with field(s):
     ///   - [`deployments(Option<Vec<ContainerServiceDeployment>>)`](crate::operation::get_container_service_deployments::GetContainerServiceDeploymentsOutput::deployments): <p>An array of objects that describe deployments for a container service.</p>
     /// - On failure, responds with [`SdkError<GetContainerServiceDeploymentsError>`](crate::operation::get_container_service_deployments::GetContainerServiceDeploymentsError)

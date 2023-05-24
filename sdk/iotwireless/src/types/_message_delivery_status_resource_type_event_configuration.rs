@@ -2,17 +2,17 @@
 
 /// <p>Message delivery status resource type event configuration object for enabling or disabling relevant topic.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MessageDeliveryStatusResourceTypeEventConfiguration {
     /// <p>Sidewalk resource type event configuration object for enabling or disabling topic.</p>
     #[doc(hidden)]
-    pub sidewalk: std::option::Option<crate::types::SidewalkResourceTypeEventConfiguration>,
+    pub sidewalk: ::std::option::Option<crate::types::SidewalkResourceTypeEventConfiguration>,
 }
 impl MessageDeliveryStatusResourceTypeEventConfiguration {
     /// <p>Sidewalk resource type event configuration object for enabling or disabling topic.</p>
     pub fn sidewalk(
         &self,
-    ) -> std::option::Option<&crate::types::SidewalkResourceTypeEventConfiguration> {
+    ) -> ::std::option::Option<&crate::types::SidewalkResourceTypeEventConfiguration> {
         self.sidewalk.as_ref()
     }
 }
@@ -27,20 +27,23 @@ impl MessageDeliveryStatusResourceTypeEventConfiguration {
 
 /// A builder for [`MessageDeliveryStatusResourceTypeEventConfiguration`](crate::types::MessageDeliveryStatusResourceTypeEventConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MessageDeliveryStatusResourceTypeEventConfigurationBuilder {
-    pub(crate) sidewalk: std::option::Option<crate::types::SidewalkResourceTypeEventConfiguration>,
+    pub(crate) sidewalk:
+        ::std::option::Option<crate::types::SidewalkResourceTypeEventConfiguration>,
 }
 impl MessageDeliveryStatusResourceTypeEventConfigurationBuilder {
     /// <p>Sidewalk resource type event configuration object for enabling or disabling topic.</p>
     pub fn sidewalk(mut self, input: crate::types::SidewalkResourceTypeEventConfiguration) -> Self {
-        self.sidewalk = Some(input);
+        self.sidewalk = ::std::option::Option::Some(input);
         self
     }
     /// <p>Sidewalk resource type event configuration object for enabling or disabling topic.</p>
     pub fn set_sidewalk(
         mut self,
-        input: std::option::Option<crate::types::SidewalkResourceTypeEventConfiguration>,
+        input: ::std::option::Option<crate::types::SidewalkResourceTypeEventConfiguration>,
     ) -> Self {
         self.sidewalk = input;
         self

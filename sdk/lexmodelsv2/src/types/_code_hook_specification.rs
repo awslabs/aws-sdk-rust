@@ -2,15 +2,15 @@
 
 /// <p>Contains information about code hooks that Amazon Lex calls during a conversation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CodeHookSpecification {
     /// <p>Specifies a Lambda function that verifies requests to a bot or fulfills the user's request to a bot.</p>
     #[doc(hidden)]
-    pub lambda_code_hook: std::option::Option<crate::types::LambdaCodeHook>,
+    pub lambda_code_hook: ::std::option::Option<crate::types::LambdaCodeHook>,
 }
 impl CodeHookSpecification {
     /// <p>Specifies a Lambda function that verifies requests to a bot or fulfills the user's request to a bot.</p>
-    pub fn lambda_code_hook(&self) -> std::option::Option<&crate::types::LambdaCodeHook> {
+    pub fn lambda_code_hook(&self) -> ::std::option::Option<&crate::types::LambdaCodeHook> {
         self.lambda_code_hook.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl CodeHookSpecification {
 
 /// A builder for [`CodeHookSpecification`](crate::types::CodeHookSpecification).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CodeHookSpecificationBuilder {
-    pub(crate) lambda_code_hook: std::option::Option<crate::types::LambdaCodeHook>,
+    pub(crate) lambda_code_hook: ::std::option::Option<crate::types::LambdaCodeHook>,
 }
 impl CodeHookSpecificationBuilder {
     /// <p>Specifies a Lambda function that verifies requests to a bot or fulfills the user's request to a bot.</p>
     pub fn lambda_code_hook(mut self, input: crate::types::LambdaCodeHook) -> Self {
-        self.lambda_code_hook = Some(input);
+        self.lambda_code_hook = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies a Lambda function that verifies requests to a bot or fulfills the user's request to a bot.</p>
     pub fn set_lambda_code_hook(
         mut self,
-        input: std::option::Option<crate::types::LambdaCodeHook>,
+        input: ::std::option::Option<crate::types::LambdaCodeHook>,
     ) -> Self {
         self.lambda_code_hook = input;
         self

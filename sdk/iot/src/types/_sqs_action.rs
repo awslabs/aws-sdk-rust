@@ -2,29 +2,29 @@
 
 /// <p>Describes an action to publish data to an Amazon SQS queue.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SqsAction {
     /// <p>The ARN of the IAM role that grants access.</p>
     #[doc(hidden)]
-    pub role_arn: std::option::Option<std::string::String>,
+    pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The URL of the Amazon SQS queue.</p>
     #[doc(hidden)]
-    pub queue_url: std::option::Option<std::string::String>,
+    pub queue_url: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether to use Base64 encoding.</p>
     #[doc(hidden)]
-    pub use_base64: std::option::Option<bool>,
+    pub use_base64: ::std::option::Option<bool>,
 }
 impl SqsAction {
     /// <p>The ARN of the IAM role that grants access.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
     /// <p>The URL of the Amazon SQS queue.</p>
-    pub fn queue_url(&self) -> std::option::Option<&str> {
+    pub fn queue_url(&self) -> ::std::option::Option<&str> {
         self.queue_url.as_deref()
     }
     /// <p>Specifies whether to use Base64 encoding.</p>
-    pub fn use_base64(&self) -> std::option::Option<bool> {
+    pub fn use_base64(&self) -> ::std::option::Option<bool> {
         self.use_base64
     }
 }
@@ -37,40 +37,42 @@ impl SqsAction {
 
 /// A builder for [`SqsAction`](crate::types::SqsAction).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SqsActionBuilder {
-    pub(crate) role_arn: std::option::Option<std::string::String>,
-    pub(crate) queue_url: std::option::Option<std::string::String>,
-    pub(crate) use_base64: std::option::Option<bool>,
+    pub(crate) role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) queue_url: ::std::option::Option<::std::string::String>,
+    pub(crate) use_base64: ::std::option::Option<bool>,
 }
 impl SqsActionBuilder {
     /// <p>The ARN of the IAM role that grants access.</p>
-    pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.role_arn = Some(input.into());
+    pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the IAM role that grants access.</p>
-    pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
     /// <p>The URL of the Amazon SQS queue.</p>
-    pub fn queue_url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.queue_url = Some(input.into());
+    pub fn queue_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.queue_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL of the Amazon SQS queue.</p>
-    pub fn set_queue_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_queue_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.queue_url = input;
         self
     }
     /// <p>Specifies whether to use Base64 encoding.</p>
     pub fn use_base64(mut self, input: bool) -> Self {
-        self.use_base64 = Some(input);
+        self.use_base64 = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether to use Base64 encoding.</p>
-    pub fn set_use_base64(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_use_base64(mut self, input: ::std::option::Option<bool>) -> Self {
         self.use_base64 = input;
         self
     }

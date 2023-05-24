@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum RequestCancelActivityTaskFailedCause {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum RequestCancelActivityTaskFailedCause {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for RequestCancelActivityTaskFailedCause {
+impl ::std::convert::From<&str> for RequestCancelActivityTaskFailedCause {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVITY_ID_UNKNOWN" => RequestCancelActivityTaskFailedCause::ActivityIdUnknown,
@@ -67,11 +67,11 @@ impl std::convert::From<&str> for RequestCancelActivityTaskFailedCause {
         }
     }
 }
-impl std::str::FromStr for RequestCancelActivityTaskFailedCause {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for RequestCancelActivityTaskFailedCause {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RequestCancelActivityTaskFailedCause::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(RequestCancelActivityTaskFailedCause::from(s))
     }
 }
 impl RequestCancelActivityTaskFailedCause {
@@ -90,7 +90,7 @@ impl RequestCancelActivityTaskFailedCause {
         &["ACTIVITY_ID_UNKNOWN", "OPERATION_NOT_PERMITTED"]
     }
 }
-impl AsRef<str> for RequestCancelActivityTaskFailedCause {
+impl ::std::convert::AsRef<str> for RequestCancelActivityTaskFailedCause {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

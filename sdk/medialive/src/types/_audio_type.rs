@@ -40,13 +40,13 @@
 /// Audio Type
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum AudioType {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,7 +60,7 @@ pub enum AudioType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for AudioType {
+impl ::std::convert::From<&str> for AudioType {
     fn from(s: &str) -> Self {
         match s {
             "CLEAN_EFFECTS" => AudioType::CleanEffects,
@@ -71,11 +71,11 @@ impl std::convert::From<&str> for AudioType {
         }
     }
 }
-impl std::str::FromStr for AudioType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for AudioType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AudioType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(AudioType::from(s))
     }
 }
 impl AudioType {
@@ -99,7 +99,7 @@ impl AudioType {
         ]
     }
 }
-impl AsRef<str> for AudioType {
+impl ::std::convert::AsRef<str> for AudioType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

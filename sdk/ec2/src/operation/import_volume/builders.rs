@@ -9,56 +9,59 @@ pub use crate::operation::import_volume::_import_volume_input::ImportVolumeInput
 /// <p>This API action supports only single-volume VMs. To import multi-volume VMs, use <code>ImportImage</code> instead. To import a disk to a snapshot, use <code>ImportSnapshot</code> instead.</p>
 /// <p>This API action is not supported by the Command Line Interface (CLI). For information about using the Amazon EC2 CLI, which is deprecated, see <a href="https://awsdocs.s3.amazonaws.com/EC2/ec2-clt.pdf#importing-your-volumes-into-amazon-ebs">Importing Disks to Amazon EBS</a> in the <i>Amazon EC2 CLI Reference</i> PDF file.</p>
 /// <p>For information about the import manifest referenced by this API action, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM Import Manifest</a>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ImportVolumeFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::import_volume::builders::ImportVolumeInputBuilder,
 }
 impl ImportVolumeFluentBuilder {
     /// Creates a new `ImportVolume`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::import_volume::ImportVolume,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::import_volume::ImportVolumeError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_volume::ImportVolumeError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::import_volume::ImportVolumeOutput,
-        aws_smithy_http::result::SdkError<crate::operation::import_volume::ImportVolumeError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_volume::ImportVolumeError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -71,32 +74,35 @@ impl ImportVolumeFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::import_volume::ImportVolumeOutput,
-        aws_smithy_http::result::SdkError<crate::operation::import_volume::ImportVolumeError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::import_volume::ImportVolumeError>,
     > {
         self.send_middleware().await
     }
     /// <p>The Availability Zone for the resulting EBS volume.</p>
-    pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn availability_zone(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.availability_zone(input.into());
         self
     }
     /// <p>The Availability Zone for the resulting EBS volume.</p>
     pub fn set_availability_zone(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_availability_zone(input);
         self
     }
     /// <p>A description of the volume.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>A description of the volume.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
@@ -106,7 +112,7 @@ impl ImportVolumeFluentBuilder {
         self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-    pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
     }
@@ -116,7 +122,10 @@ impl ImportVolumeFluentBuilder {
         self
     }
     /// <p>The disk image.</p>
-    pub fn set_image(mut self, input: std::option::Option<crate::types::DiskImageDetail>) -> Self {
+    pub fn set_image(
+        mut self,
+        input: ::std::option::Option<crate::types::DiskImageDetail>,
+    ) -> Self {
         self.inner = self.inner.set_image(input);
         self
     }
@@ -126,7 +135,7 @@ impl ImportVolumeFluentBuilder {
         self
     }
     /// <p>The volume size.</p>
-    pub fn set_volume(mut self, input: std::option::Option<crate::types::VolumeDetail>) -> Self {
+    pub fn set_volume(mut self, input: ::std::option::Option<crate::types::VolumeDetail>) -> Self {
         self.inner = self.inner.set_volume(input);
         self
     }

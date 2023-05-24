@@ -2,26 +2,26 @@
 
 /// <p>Information about the columns in a query execution result.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ColumnInfo {
     /// <p>The catalog to which the query results belong.</p>
     #[doc(hidden)]
-    pub catalog_name: std::option::Option<std::string::String>,
+    pub catalog_name: ::std::option::Option<::std::string::String>,
     /// <p>The schema name (database name) to which the query results belong.</p>
     #[doc(hidden)]
-    pub schema_name: std::option::Option<std::string::String>,
+    pub schema_name: ::std::option::Option<::std::string::String>,
     /// <p>The table name for the query results.</p>
     #[doc(hidden)]
-    pub table_name: std::option::Option<std::string::String>,
+    pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the column.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>A column label.</p>
     #[doc(hidden)]
-    pub label: std::option::Option<std::string::String>,
+    pub label: ::std::option::Option<::std::string::String>,
     /// <p>The data type of the column.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<std::string::String>,
+    pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>For <code>DECIMAL</code> data types, specifies the total number of digits, up to 38. For performance reasons, we recommend up to 18 digits.</p>
     #[doc(hidden)]
     pub precision: i32,
@@ -30,34 +30,34 @@ pub struct ColumnInfo {
     pub scale: i32,
     /// <p>Indicates the column's nullable status.</p>
     #[doc(hidden)]
-    pub nullable: std::option::Option<crate::types::ColumnNullable>,
+    pub nullable: ::std::option::Option<crate::types::ColumnNullable>,
     /// <p>Indicates whether values in the column are case-sensitive.</p>
     #[doc(hidden)]
     pub case_sensitive: bool,
 }
 impl ColumnInfo {
     /// <p>The catalog to which the query results belong.</p>
-    pub fn catalog_name(&self) -> std::option::Option<&str> {
+    pub fn catalog_name(&self) -> ::std::option::Option<&str> {
         self.catalog_name.as_deref()
     }
     /// <p>The schema name (database name) to which the query results belong.</p>
-    pub fn schema_name(&self) -> std::option::Option<&str> {
+    pub fn schema_name(&self) -> ::std::option::Option<&str> {
         self.schema_name.as_deref()
     }
     /// <p>The table name for the query results.</p>
-    pub fn table_name(&self) -> std::option::Option<&str> {
+    pub fn table_name(&self) -> ::std::option::Option<&str> {
         self.table_name.as_deref()
     }
     /// <p>The name of the column.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>A column label.</p>
-    pub fn label(&self) -> std::option::Option<&str> {
+    pub fn label(&self) -> ::std::option::Option<&str> {
         self.label.as_deref()
     }
     /// <p>The data type of the column.</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
     }
     /// <p>For <code>DECIMAL</code> data types, specifies the total number of digits, up to 38. For performance reasons, we recommend up to 18 digits.</p>
@@ -69,7 +69,7 @@ impl ColumnInfo {
         self.scale
     }
     /// <p>Indicates the column's nullable status.</p>
-    pub fn nullable(&self) -> std::option::Option<&crate::types::ColumnNullable> {
+    pub fn nullable(&self) -> ::std::option::Option<&crate::types::ColumnNullable> {
         self.nullable.as_ref()
     }
     /// <p>Indicates whether values in the column are case-sensitive.</p>
@@ -86,120 +86,122 @@ impl ColumnInfo {
 
 /// A builder for [`ColumnInfo`](crate::types::ColumnInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ColumnInfoBuilder {
-    pub(crate) catalog_name: std::option::Option<std::string::String>,
-    pub(crate) schema_name: std::option::Option<std::string::String>,
-    pub(crate) table_name: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) label: std::option::Option<std::string::String>,
-    pub(crate) r#type: std::option::Option<std::string::String>,
-    pub(crate) precision: std::option::Option<i32>,
-    pub(crate) scale: std::option::Option<i32>,
-    pub(crate) nullable: std::option::Option<crate::types::ColumnNullable>,
-    pub(crate) case_sensitive: std::option::Option<bool>,
+    pub(crate) catalog_name: ::std::option::Option<::std::string::String>,
+    pub(crate) schema_name: ::std::option::Option<::std::string::String>,
+    pub(crate) table_name: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) label: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<::std::string::String>,
+    pub(crate) precision: ::std::option::Option<i32>,
+    pub(crate) scale: ::std::option::Option<i32>,
+    pub(crate) nullable: ::std::option::Option<crate::types::ColumnNullable>,
+    pub(crate) case_sensitive: ::std::option::Option<bool>,
 }
 impl ColumnInfoBuilder {
     /// <p>The catalog to which the query results belong.</p>
-    pub fn catalog_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.catalog_name = Some(input.into());
+    pub fn catalog_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.catalog_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The catalog to which the query results belong.</p>
-    pub fn set_catalog_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_catalog_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.catalog_name = input;
         self
     }
     /// <p>The schema name (database name) to which the query results belong.</p>
-    pub fn schema_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.schema_name = Some(input.into());
+    pub fn schema_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.schema_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The schema name (database name) to which the query results belong.</p>
-    pub fn set_schema_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_schema_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.schema_name = input;
         self
     }
     /// <p>The table name for the query results.</p>
-    pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.table_name = Some(input.into());
+    pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.table_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The table name for the query results.</p>
-    pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_name = input;
         self
     }
     /// <p>The name of the column.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the column.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>A column label.</p>
-    pub fn label(mut self, input: impl Into<std::string::String>) -> Self {
-        self.label = Some(input.into());
+    pub fn label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.label = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A column label.</p>
-    pub fn set_label(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.label = input;
         self
     }
     /// <p>The data type of the column.</p>
-    pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.r#type = Some(input.into());
+    pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.r#type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The data type of the column.</p>
-    pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>For <code>DECIMAL</code> data types, specifies the total number of digits, up to 38. For performance reasons, we recommend up to 18 digits.</p>
     pub fn precision(mut self, input: i32) -> Self {
-        self.precision = Some(input);
+        self.precision = ::std::option::Option::Some(input);
         self
     }
     /// <p>For <code>DECIMAL</code> data types, specifies the total number of digits, up to 38. For performance reasons, we recommend up to 18 digits.</p>
-    pub fn set_precision(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_precision(mut self, input: ::std::option::Option<i32>) -> Self {
         self.precision = input;
         self
     }
     /// <p>For <code>DECIMAL</code> data types, specifies the total number of digits in the fractional part of the value. Defaults to 0.</p>
     pub fn scale(mut self, input: i32) -> Self {
-        self.scale = Some(input);
+        self.scale = ::std::option::Option::Some(input);
         self
     }
     /// <p>For <code>DECIMAL</code> data types, specifies the total number of digits in the fractional part of the value. Defaults to 0.</p>
-    pub fn set_scale(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_scale(mut self, input: ::std::option::Option<i32>) -> Self {
         self.scale = input;
         self
     }
     /// <p>Indicates the column's nullable status.</p>
     pub fn nullable(mut self, input: crate::types::ColumnNullable) -> Self {
-        self.nullable = Some(input);
+        self.nullable = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates the column's nullable status.</p>
     pub fn set_nullable(
         mut self,
-        input: std::option::Option<crate::types::ColumnNullable>,
+        input: ::std::option::Option<crate::types::ColumnNullable>,
     ) -> Self {
         self.nullable = input;
         self
     }
     /// <p>Indicates whether values in the column are case-sensitive.</p>
     pub fn case_sensitive(mut self, input: bool) -> Self {
-        self.case_sensitive = Some(input);
+        self.case_sensitive = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether values in the column are case-sensitive.</p>
-    pub fn set_case_sensitive(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_case_sensitive(mut self, input: ::std::option::Option<bool>) -> Self {
         self.case_sensitive = input;
         self
     }

@@ -2,48 +2,48 @@
 
 /// <p>Information about the user entity.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct EntityDisplayData {
     /// <p>The name of the user.</p>
     #[doc(hidden)]
-    pub user_name: std::option::Option<std::string::String>,
+    pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the group.</p>
     #[doc(hidden)]
-    pub group_name: std::option::Option<std::string::String>,
+    pub group_name: ::std::option::Option<::std::string::String>,
     /// <p>The user name of the user.</p>
     #[doc(hidden)]
-    pub identified_user_name: std::option::Option<std::string::String>,
+    pub identified_user_name: ::std::option::Option<::std::string::String>,
     /// <p>The first name of the user.</p>
     #[doc(hidden)]
-    pub first_name: std::option::Option<std::string::String>,
+    pub first_name: ::std::option::Option<::std::string::String>,
     /// <p>The last name of the user.</p>
     #[doc(hidden)]
-    pub last_name: std::option::Option<std::string::String>,
+    pub last_name: ::std::option::Option<::std::string::String>,
 }
 impl EntityDisplayData {
     /// <p>The name of the user.</p>
-    pub fn user_name(&self) -> std::option::Option<&str> {
+    pub fn user_name(&self) -> ::std::option::Option<&str> {
         self.user_name.as_deref()
     }
     /// <p>The name of the group.</p>
-    pub fn group_name(&self) -> std::option::Option<&str> {
+    pub fn group_name(&self) -> ::std::option::Option<&str> {
         self.group_name.as_deref()
     }
     /// <p>The user name of the user.</p>
-    pub fn identified_user_name(&self) -> std::option::Option<&str> {
+    pub fn identified_user_name(&self) -> ::std::option::Option<&str> {
         self.identified_user_name.as_deref()
     }
     /// <p>The first name of the user.</p>
-    pub fn first_name(&self) -> std::option::Option<&str> {
+    pub fn first_name(&self) -> ::std::option::Option<&str> {
         self.first_name.as_deref()
     }
     /// <p>The last name of the user.</p>
-    pub fn last_name(&self) -> std::option::Option<&str> {
+    pub fn last_name(&self) -> ::std::option::Option<&str> {
         self.last_name.as_deref()
     }
 }
-impl std::fmt::Debug for EntityDisplayData {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for EntityDisplayData {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("EntityDisplayData");
         formatter.field("user_name", &"*** Sensitive Data Redacted ***");
         formatter.field("group_name", &"*** Sensitive Data Redacted ***");
@@ -62,65 +62,68 @@ impl EntityDisplayData {
 
 /// A builder for [`EntityDisplayData`](crate::types::EntityDisplayData).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct EntityDisplayDataBuilder {
-    pub(crate) user_name: std::option::Option<std::string::String>,
-    pub(crate) group_name: std::option::Option<std::string::String>,
-    pub(crate) identified_user_name: std::option::Option<std::string::String>,
-    pub(crate) first_name: std::option::Option<std::string::String>,
-    pub(crate) last_name: std::option::Option<std::string::String>,
+    pub(crate) user_name: ::std::option::Option<::std::string::String>,
+    pub(crate) group_name: ::std::option::Option<::std::string::String>,
+    pub(crate) identified_user_name: ::std::option::Option<::std::string::String>,
+    pub(crate) first_name: ::std::option::Option<::std::string::String>,
+    pub(crate) last_name: ::std::option::Option<::std::string::String>,
 }
 impl EntityDisplayDataBuilder {
     /// <p>The name of the user.</p>
-    pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.user_name = Some(input.into());
+    pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.user_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the user.</p>
-    pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_name = input;
         self
     }
     /// <p>The name of the group.</p>
-    pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.group_name = Some(input.into());
+    pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the group.</p>
-    pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group_name = input;
         self
     }
     /// <p>The user name of the user.</p>
-    pub fn identified_user_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.identified_user_name = Some(input.into());
+    pub fn identified_user_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.identified_user_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user name of the user.</p>
     pub fn set_identified_user_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.identified_user_name = input;
         self
     }
     /// <p>The first name of the user.</p>
-    pub fn first_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.first_name = Some(input.into());
+    pub fn first_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.first_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The first name of the user.</p>
-    pub fn set_first_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_first_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.first_name = input;
         self
     }
     /// <p>The last name of the user.</p>
-    pub fn last_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.last_name = Some(input.into());
+    pub fn last_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.last_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The last name of the user.</p>
-    pub fn set_last_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_last_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_name = input;
         self
     }
@@ -135,8 +138,8 @@ impl EntityDisplayDataBuilder {
         }
     }
 }
-impl std::fmt::Debug for EntityDisplayDataBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for EntityDisplayDataBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("EntityDisplayDataBuilder");
         formatter.field("user_name", &"*** Sensitive Data Redacted ***");
         formatter.field("group_name", &"*** Sensitive Data Redacted ***");

@@ -2,48 +2,48 @@
 
 /// <p>Contains the result of testing a CloudFront function with <code>TestFunction</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct TestResult {
     /// <p>Contains configuration information and metadata about the CloudFront function that was tested.</p>
     #[doc(hidden)]
-    pub function_summary: std::option::Option<crate::types::FunctionSummary>,
+    pub function_summary: ::std::option::Option<crate::types::FunctionSummary>,
     /// <p>The amount of time that the function took to run as a percentage of the maximum allowed time. For example, a compute utilization of 35 means that the function completed in 35% of the maximum allowed time.</p>
     #[doc(hidden)]
-    pub compute_utilization: std::option::Option<std::string::String>,
+    pub compute_utilization: ::std::option::Option<::std::string::String>,
     /// <p>Contains the log lines that the function wrote (if any) when running the test.</p>
     #[doc(hidden)]
-    pub function_execution_logs: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub function_execution_logs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>If the result of testing the function was an error, this field contains the error message.</p>
     #[doc(hidden)]
-    pub function_error_message: std::option::Option<std::string::String>,
+    pub function_error_message: ::std::option::Option<::std::string::String>,
     /// <p>The event object returned by the function. For more information about the structure of the event object, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/functions-event-structure.html">Event object structure</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     #[doc(hidden)]
-    pub function_output: std::option::Option<std::string::String>,
+    pub function_output: ::std::option::Option<::std::string::String>,
 }
 impl TestResult {
     /// <p>Contains configuration information and metadata about the CloudFront function that was tested.</p>
-    pub fn function_summary(&self) -> std::option::Option<&crate::types::FunctionSummary> {
+    pub fn function_summary(&self) -> ::std::option::Option<&crate::types::FunctionSummary> {
         self.function_summary.as_ref()
     }
     /// <p>The amount of time that the function took to run as a percentage of the maximum allowed time. For example, a compute utilization of 35 means that the function completed in 35% of the maximum allowed time.</p>
-    pub fn compute_utilization(&self) -> std::option::Option<&str> {
+    pub fn compute_utilization(&self) -> ::std::option::Option<&str> {
         self.compute_utilization.as_deref()
     }
     /// <p>Contains the log lines that the function wrote (if any) when running the test.</p>
-    pub fn function_execution_logs(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn function_execution_logs(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.function_execution_logs.as_deref()
     }
     /// <p>If the result of testing the function was an error, this field contains the error message.</p>
-    pub fn function_error_message(&self) -> std::option::Option<&str> {
+    pub fn function_error_message(&self) -> ::std::option::Option<&str> {
         self.function_error_message.as_deref()
     }
     /// <p>The event object returned by the function. For more information about the structure of the event object, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/functions-event-structure.html">Event object structure</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn function_output(&self) -> std::option::Option<&str> {
+    pub fn function_output(&self) -> ::std::option::Option<&str> {
         self.function_output.as_deref()
     }
 }
-impl std::fmt::Debug for TestResult {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for TestResult {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("TestResult");
         formatter.field("function_summary", &self.function_summary);
         formatter.field("compute_utilization", &self.compute_utilization);
@@ -65,37 +65,41 @@ impl TestResult {
 
 /// A builder for [`TestResult`](crate::types::TestResult).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct TestResultBuilder {
-    pub(crate) function_summary: std::option::Option<crate::types::FunctionSummary>,
-    pub(crate) compute_utilization: std::option::Option<std::string::String>,
-    pub(crate) function_execution_logs: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) function_error_message: std::option::Option<std::string::String>,
-    pub(crate) function_output: std::option::Option<std::string::String>,
+    pub(crate) function_summary: ::std::option::Option<crate::types::FunctionSummary>,
+    pub(crate) compute_utilization: ::std::option::Option<::std::string::String>,
+    pub(crate) function_execution_logs:
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) function_error_message: ::std::option::Option<::std::string::String>,
+    pub(crate) function_output: ::std::option::Option<::std::string::String>,
 }
 impl TestResultBuilder {
     /// <p>Contains configuration information and metadata about the CloudFront function that was tested.</p>
     pub fn function_summary(mut self, input: crate::types::FunctionSummary) -> Self {
-        self.function_summary = Some(input);
+        self.function_summary = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains configuration information and metadata about the CloudFront function that was tested.</p>
     pub fn set_function_summary(
         mut self,
-        input: std::option::Option<crate::types::FunctionSummary>,
+        input: ::std::option::Option<crate::types::FunctionSummary>,
     ) -> Self {
         self.function_summary = input;
         self
     }
     /// <p>The amount of time that the function took to run as a percentage of the maximum allowed time. For example, a compute utilization of 35 means that the function completed in 35% of the maximum allowed time.</p>
-    pub fn compute_utilization(mut self, input: impl Into<std::string::String>) -> Self {
-        self.compute_utilization = Some(input.into());
+    pub fn compute_utilization(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.compute_utilization = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The amount of time that the function took to run as a percentage of the maximum allowed time. For example, a compute utilization of 35 means that the function completed in 35% of the maximum allowed time.</p>
     pub fn set_compute_utilization(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.compute_utilization = input;
         self
@@ -105,40 +109,52 @@ impl TestResultBuilder {
     /// To override the contents of this collection use [`set_function_execution_logs`](Self::set_function_execution_logs).
     ///
     /// <p>Contains the log lines that the function wrote (if any) when running the test.</p>
-    pub fn function_execution_logs(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn function_execution_logs(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.function_execution_logs.unwrap_or_default();
         v.push(input.into());
-        self.function_execution_logs = Some(v);
+        self.function_execution_logs = ::std::option::Option::Some(v);
         self
     }
     /// <p>Contains the log lines that the function wrote (if any) when running the test.</p>
     pub fn set_function_execution_logs(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.function_execution_logs = input;
         self
     }
     /// <p>If the result of testing the function was an error, this field contains the error message.</p>
-    pub fn function_error_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.function_error_message = Some(input.into());
+    pub fn function_error_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.function_error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the result of testing the function was an error, this field contains the error message.</p>
     pub fn set_function_error_message(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.function_error_message = input;
         self
     }
     /// <p>The event object returned by the function. For more information about the structure of the event object, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/functions-event-structure.html">Event object structure</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn function_output(mut self, input: impl Into<std::string::String>) -> Self {
-        self.function_output = Some(input.into());
+    pub fn function_output(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.function_output = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The event object returned by the function. For more information about the structure of the event object, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/functions-event-structure.html">Event object structure</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    pub fn set_function_output(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_function_output(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.function_output = input;
         self
     }
@@ -153,8 +169,8 @@ impl TestResultBuilder {
         }
     }
 }
-impl std::fmt::Debug for TestResultBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for TestResultBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("TestResultBuilder");
         formatter.field("function_summary", &self.function_summary);
         formatter.field("compute_utilization", &self.compute_utilization);

@@ -2,7 +2,7 @@
 
 /// <p>Details about a Lambda layer version.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsLambdaLayerVersionDetails {
     /// <p>The version number.</p>
     #[doc(hidden)]
@@ -10,11 +10,11 @@ pub struct AwsLambdaLayerVersionDetails {
     /// <p>The layer's compatible runtimes. Maximum number of five items.</p>
     /// <p>Valid values: <code>nodejs10.x</code> | <code>nodejs12.x</code> | <code>java8</code> | <code>java11</code> | <code>python2.7</code> | <code>python3.6</code> | <code>python3.7</code> | <code>python3.8</code> | <code>dotnetcore1.0</code> | <code>dotnetcore2.1</code> | <code>go1.x</code> | <code>ruby2.5</code> | <code>provided</code> </p>
     #[doc(hidden)]
-    pub compatible_runtimes: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub compatible_runtimes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Indicates when the version was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     #[doc(hidden)]
-    pub created_date: std::option::Option<std::string::String>,
+    pub created_date: ::std::option::Option<::std::string::String>,
 }
 impl AwsLambdaLayerVersionDetails {
     /// <p>The version number.</p>
@@ -23,12 +23,12 @@ impl AwsLambdaLayerVersionDetails {
     }
     /// <p>The layer's compatible runtimes. Maximum number of five items.</p>
     /// <p>Valid values: <code>nodejs10.x</code> | <code>nodejs12.x</code> | <code>java8</code> | <code>java11</code> | <code>python2.7</code> | <code>python3.6</code> | <code>python3.7</code> | <code>python3.8</code> | <code>dotnetcore1.0</code> | <code>dotnetcore2.1</code> | <code>go1.x</code> | <code>ruby2.5</code> | <code>provided</code> </p>
-    pub fn compatible_runtimes(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn compatible_runtimes(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.compatible_runtimes.as_deref()
     }
     /// <p>Indicates when the version was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn created_date(&self) -> std::option::Option<&str> {
+    pub fn created_date(&self) -> ::std::option::Option<&str> {
         self.created_date.as_deref()
     }
 }
@@ -41,20 +41,22 @@ impl AwsLambdaLayerVersionDetails {
 
 /// A builder for [`AwsLambdaLayerVersionDetails`](crate::types::AwsLambdaLayerVersionDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsLambdaLayerVersionDetailsBuilder {
-    pub(crate) version: std::option::Option<i64>,
-    pub(crate) compatible_runtimes: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) created_date: std::option::Option<std::string::String>,
+    pub(crate) version: ::std::option::Option<i64>,
+    pub(crate) compatible_runtimes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) created_date: ::std::option::Option<::std::string::String>,
 }
 impl AwsLambdaLayerVersionDetailsBuilder {
     /// <p>The version number.</p>
     pub fn version(mut self, input: i64) -> Self {
-        self.version = Some(input);
+        self.version = ::std::option::Option::Some(input);
         self
     }
     /// <p>The version number.</p>
-    pub fn set_version(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_version(mut self, input: ::std::option::Option<i64>) -> Self {
         self.version = input;
         self
     }
@@ -64,30 +66,33 @@ impl AwsLambdaLayerVersionDetailsBuilder {
     ///
     /// <p>The layer's compatible runtimes. Maximum number of five items.</p>
     /// <p>Valid values: <code>nodejs10.x</code> | <code>nodejs12.x</code> | <code>java8</code> | <code>java11</code> | <code>python2.7</code> | <code>python3.6</code> | <code>python3.7</code> | <code>python3.8</code> | <code>dotnetcore1.0</code> | <code>dotnetcore2.1</code> | <code>go1.x</code> | <code>ruby2.5</code> | <code>provided</code> </p>
-    pub fn compatible_runtimes(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn compatible_runtimes(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.compatible_runtimes.unwrap_or_default();
         v.push(input.into());
-        self.compatible_runtimes = Some(v);
+        self.compatible_runtimes = ::std::option::Option::Some(v);
         self
     }
     /// <p>The layer's compatible runtimes. Maximum number of five items.</p>
     /// <p>Valid values: <code>nodejs10.x</code> | <code>nodejs12.x</code> | <code>java8</code> | <code>java11</code> | <code>python2.7</code> | <code>python3.6</code> | <code>python3.7</code> | <code>python3.8</code> | <code>dotnetcore1.0</code> | <code>dotnetcore2.1</code> | <code>go1.x</code> | <code>ruby2.5</code> | <code>provided</code> </p>
     pub fn set_compatible_runtimes(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.compatible_runtimes = input;
         self
     }
     /// <p>Indicates when the version was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn created_date(mut self, input: impl Into<std::string::String>) -> Self {
-        self.created_date = Some(input.into());
+    pub fn created_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.created_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates when the version was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn set_created_date(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_created_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_date = input;
         self
     }

@@ -2,15 +2,15 @@
 
 /// <p>Describes a virtual private gateway propagating route.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PropagatingVgw {
     /// <p>The ID of the virtual private gateway.</p>
     #[doc(hidden)]
-    pub gateway_id: std::option::Option<std::string::String>,
+    pub gateway_id: ::std::option::Option<::std::string::String>,
 }
 impl PropagatingVgw {
     /// <p>The ID of the virtual private gateway.</p>
-    pub fn gateway_id(&self) -> std::option::Option<&str> {
+    pub fn gateway_id(&self) -> ::std::option::Option<&str> {
         self.gateway_id.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl PropagatingVgw {
 
 /// A builder for [`PropagatingVgw`](crate::types::PropagatingVgw).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PropagatingVgwBuilder {
-    pub(crate) gateway_id: std::option::Option<std::string::String>,
+    pub(crate) gateway_id: ::std::option::Option<::std::string::String>,
 }
 impl PropagatingVgwBuilder {
     /// <p>The ID of the virtual private gateway.</p>
-    pub fn gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.gateway_id = Some(input.into());
+    pub fn gateway_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.gateway_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the virtual private gateway.</p>
-    pub fn set_gateway_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_gateway_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.gateway_id = input;
         self
     }

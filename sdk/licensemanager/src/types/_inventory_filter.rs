@@ -2,29 +2,29 @@
 
 /// <p>An inventory filter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InventoryFilter {
     /// <p>Name of the filter.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>Condition of the filter.</p>
     #[doc(hidden)]
-    pub condition: std::option::Option<crate::types::InventoryFilterCondition>,
+    pub condition: ::std::option::Option<crate::types::InventoryFilterCondition>,
     /// <p>Value of the filter.</p>
     #[doc(hidden)]
-    pub value: std::option::Option<std::string::String>,
+    pub value: ::std::option::Option<::std::string::String>,
 }
 impl InventoryFilter {
     /// <p>Name of the filter.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>Condition of the filter.</p>
-    pub fn condition(&self) -> std::option::Option<&crate::types::InventoryFilterCondition> {
+    pub fn condition(&self) -> ::std::option::Option<&crate::types::InventoryFilterCondition> {
         self.condition.as_ref()
     }
     /// <p>Value of the filter.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
 }
@@ -37,43 +37,45 @@ impl InventoryFilter {
 
 /// A builder for [`InventoryFilter`](crate::types::InventoryFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InventoryFilterBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) condition: std::option::Option<crate::types::InventoryFilterCondition>,
-    pub(crate) value: std::option::Option<std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) condition: ::std::option::Option<crate::types::InventoryFilterCondition>,
+    pub(crate) value: ::std::option::Option<::std::string::String>,
 }
 impl InventoryFilterBuilder {
     /// <p>Name of the filter.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of the filter.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>Condition of the filter.</p>
     pub fn condition(mut self, input: crate::types::InventoryFilterCondition) -> Self {
-        self.condition = Some(input);
+        self.condition = ::std::option::Option::Some(input);
         self
     }
     /// <p>Condition of the filter.</p>
     pub fn set_condition(
         mut self,
-        input: std::option::Option<crate::types::InventoryFilterCondition>,
+        input: ::std::option::Option<crate::types::InventoryFilterCondition>,
     ) -> Self {
         self.condition = input;
         self
     }
     /// <p>Value of the filter.</p>
-    pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.value = Some(input.into());
+    pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Value of the filter.</p>
-    pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
     }

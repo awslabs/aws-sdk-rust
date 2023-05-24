@@ -39,56 +39,59 @@ pub use crate::operation::index_faces::_index_faces_input::IndexFacesInputBuilde
 /// <p></p>
 /// <p>The input image is passed either as base64-encoded image bytes, or as a reference to an image in an Amazon S3 bucket. If you use the AWS CLI to call Amazon Rekognition operations, passing image bytes isn't supported. The image must be formatted as a PNG or JPEG file. </p>
 /// <p>This operation requires permissions to perform the <code>rekognition:IndexFaces</code> action.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct IndexFacesFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::index_faces::builders::IndexFacesInputBuilder,
 }
 impl IndexFacesFluentBuilder {
     /// Creates a new `IndexFaces`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::index_faces::IndexFaces,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::index_faces::IndexFacesError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::index_faces::IndexFacesError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::index_faces::IndexFacesOutput,
-        aws_smithy_http::result::SdkError<crate::operation::index_faces::IndexFacesError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::index_faces::IndexFacesError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -101,19 +104,25 @@ impl IndexFacesFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::index_faces::IndexFacesOutput,
-        aws_smithy_http::result::SdkError<crate::operation::index_faces::IndexFacesError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::index_faces::IndexFacesError>,
     > {
         self.send_middleware().await
     }
     /// <p>The ID of an existing collection to which you want to add the faces that are detected in the input images.</p>
-    pub fn collection_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn collection_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.collection_id(input.into());
         self
     }
     /// <p>The ID of an existing collection to which you want to add the faces that are detected in the input images.</p>
-    pub fn set_collection_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_collection_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_collection_id(input);
         self
     }
@@ -125,19 +134,22 @@ impl IndexFacesFluentBuilder {
     }
     /// <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes isn't supported. </p>
     /// <p>If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.</p>
-    pub fn set_image(mut self, input: std::option::Option<crate::types::Image>) -> Self {
+    pub fn set_image(mut self, input: ::std::option::Option<crate::types::Image>) -> Self {
         self.inner = self.inner.set_image(input);
         self
     }
     /// <p>The ID you want to assign to all the faces detected in the image.</p>
-    pub fn external_image_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn external_image_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.external_image_id(input.into());
         self
     }
     /// <p>The ID you want to assign to all the faces detected in the image.</p>
     pub fn set_external_image_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_external_image_id(input);
         self
@@ -156,7 +168,7 @@ impl IndexFacesFluentBuilder {
     /// <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical AND operator to determine which attributes to return (in this case, all attributes). </p>
     pub fn set_detection_attributes(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Attribute>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Attribute>>,
     ) -> Self {
         self.inner = self.inner.set_detection_attributes(input);
         self
@@ -173,7 +185,7 @@ impl IndexFacesFluentBuilder {
     /// <p>If <code>IndexFaces</code> detects more faces than the value of <code>MaxFaces</code>, the faces with the lowest quality are filtered out first. If there are still more faces than the value of <code>MaxFaces</code>, the faces with the smallest bounding boxes are filtered out (up to the number that's needed to satisfy the value of <code>MaxFaces</code>). Information about the unindexed faces is available in the <code>UnindexedFaces</code> array. </p>
     /// <p>The faces that are returned by <code>IndexFaces</code> are sorted by the largest face bounding box size to the smallest size, in descending order.</p>
     /// <p> <code>MaxFaces</code> can be used with a collection associated with any version of the face model.</p>
-    pub fn set_max_faces(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_faces(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_faces(input);
         self
     }
@@ -187,7 +199,7 @@ impl IndexFacesFluentBuilder {
     /// <p>To use quality filtering, the collection you are using must be associated with version 3 of the face model or higher.</p>
     pub fn set_quality_filter(
         mut self,
-        input: std::option::Option<crate::types::QualityFilter>,
+        input: ::std::option::Option<crate::types::QualityFilter>,
     ) -> Self {
         self.inner = self.inner.set_quality_filter(input);
         self

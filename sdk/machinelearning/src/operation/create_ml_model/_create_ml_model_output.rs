@@ -3,20 +3,20 @@
 /// <p> Represents the output of a <code>CreateMLModel</code> operation, and is an acknowledgement that Amazon ML received the request.</p>
 /// <p>The <code>CreateMLModel</code> operation is asynchronous. You can poll for status updates by using the <code>GetMLModel</code> operation and checking the <code>Status</code> parameter. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateMlModelOutput {
     /// <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>. This value should be identical to the value of the <code>MLModelId</code> in the request. </p>
     #[doc(hidden)]
-    pub ml_model_id: std::option::Option<std::string::String>,
+    pub ml_model_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateMlModelOutput {
     /// <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>. This value should be identical to the value of the <code>MLModelId</code> in the request. </p>
-    pub fn ml_model_id(&self) -> std::option::Option<&str> {
+    pub fn ml_model_id(&self) -> ::std::option::Option<&str> {
         self.ml_model_id.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for CreateMlModelOutput {
+impl ::aws_http::request_id::RequestId for CreateMlModelOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,19 +30,21 @@ impl CreateMlModelOutput {
 
 /// A builder for [`CreateMlModelOutput`](crate::operation::create_ml_model::CreateMlModelOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateMlModelOutputBuilder {
-    pub(crate) ml_model_id: std::option::Option<std::string::String>,
+    pub(crate) ml_model_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateMlModelOutputBuilder {
     /// <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>. This value should be identical to the value of the <code>MLModelId</code> in the request. </p>
-    pub fn ml_model_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ml_model_id = Some(input.into());
+    pub fn ml_model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ml_model_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>. This value should be identical to the value of the <code>MLModelId</code> in the request. </p>
-    pub fn set_ml_model_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ml_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ml_model_id = input;
         self
     }

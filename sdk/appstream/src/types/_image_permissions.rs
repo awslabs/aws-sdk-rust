@@ -2,22 +2,22 @@
 
 /// <p>Describes the permissions for an image. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImagePermissions {
     /// <p>Indicates whether the image can be used for a fleet.</p>
     #[doc(hidden)]
-    pub allow_fleet: std::option::Option<bool>,
+    pub allow_fleet: ::std::option::Option<bool>,
     /// <p>Indicates whether the image can be used for an image builder.</p>
     #[doc(hidden)]
-    pub allow_image_builder: std::option::Option<bool>,
+    pub allow_image_builder: ::std::option::Option<bool>,
 }
 impl ImagePermissions {
     /// <p>Indicates whether the image can be used for a fleet.</p>
-    pub fn allow_fleet(&self) -> std::option::Option<bool> {
+    pub fn allow_fleet(&self) -> ::std::option::Option<bool> {
         self.allow_fleet
     }
     /// <p>Indicates whether the image can be used for an image builder.</p>
-    pub fn allow_image_builder(&self) -> std::option::Option<bool> {
+    pub fn allow_image_builder(&self) -> ::std::option::Option<bool> {
         self.allow_image_builder
     }
 }
@@ -30,29 +30,31 @@ impl ImagePermissions {
 
 /// A builder for [`ImagePermissions`](crate::types::ImagePermissions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ImagePermissionsBuilder {
-    pub(crate) allow_fleet: std::option::Option<bool>,
-    pub(crate) allow_image_builder: std::option::Option<bool>,
+    pub(crate) allow_fleet: ::std::option::Option<bool>,
+    pub(crate) allow_image_builder: ::std::option::Option<bool>,
 }
 impl ImagePermissionsBuilder {
     /// <p>Indicates whether the image can be used for a fleet.</p>
     pub fn allow_fleet(mut self, input: bool) -> Self {
-        self.allow_fleet = Some(input);
+        self.allow_fleet = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether the image can be used for a fleet.</p>
-    pub fn set_allow_fleet(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_allow_fleet(mut self, input: ::std::option::Option<bool>) -> Self {
         self.allow_fleet = input;
         self
     }
     /// <p>Indicates whether the image can be used for an image builder.</p>
     pub fn allow_image_builder(mut self, input: bool) -> Self {
-        self.allow_image_builder = Some(input);
+        self.allow_image_builder = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether the image can be used for an image builder.</p>
-    pub fn set_allow_image_builder(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_allow_image_builder(mut self, input: ::std::option::Option<bool>) -> Self {
         self.allow_image_builder = input;
         self
     }

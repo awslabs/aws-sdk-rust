@@ -2,7 +2,7 @@
 
 /// <p>A wildcard object representing every table under a database.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TableWildcard {}
 impl TableWildcard {
     /// Creates a new builder-style object to manufacture [`TableWildcard`](crate::types::TableWildcard).
@@ -13,7 +13,9 @@ impl TableWildcard {
 
 /// A builder for [`TableWildcard`](crate::types::TableWildcard).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TableWildcardBuilder {}
 impl TableWildcardBuilder {
     /// Consumes the builder and constructs a [`TableWildcard`](crate::types::TableWildcard).

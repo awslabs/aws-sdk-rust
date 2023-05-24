@@ -37,13 +37,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ParticipantTimerAction {
     #[allow(missing_docs)] // documentation missing in model
@@ -51,7 +51,7 @@ pub enum ParticipantTimerAction {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ParticipantTimerAction {
+impl ::std::convert::From<&str> for ParticipantTimerAction {
     fn from(s: &str) -> Self {
         match s {
             "Unset" => ParticipantTimerAction::Unset,
@@ -61,11 +61,11 @@ impl std::convert::From<&str> for ParticipantTimerAction {
         }
     }
 }
-impl std::str::FromStr for ParticipantTimerAction {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ParticipantTimerAction {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ParticipantTimerAction::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ParticipantTimerAction::from(s))
     }
 }
 impl ParticipantTimerAction {
@@ -81,7 +81,7 @@ impl ParticipantTimerAction {
         &["Unset"]
     }
 }
-impl AsRef<str> for ParticipantTimerAction {
+impl ::std::convert::AsRef<str> for ParticipantTimerAction {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

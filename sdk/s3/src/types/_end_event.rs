@@ -2,7 +2,7 @@
 
 /// <p>A message that indicates the request is complete and no more messages will be sent. You should not assume that the request is complete until the client receives an <code>EndEvent</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EndEvent {}
 impl EndEvent {
     /// Creates a new builder-style object to manufacture [`EndEvent`](crate::types::EndEvent).
@@ -13,7 +13,9 @@ impl EndEvent {
 
 /// A builder for [`EndEvent`](crate::types::EndEvent).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EndEventBuilder {}
 impl EndEventBuilder {
     /// Consumes the builder and constructs a [`EndEvent`](crate::types::EndEvent).

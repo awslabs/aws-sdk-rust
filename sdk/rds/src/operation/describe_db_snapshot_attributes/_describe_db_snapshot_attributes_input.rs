@@ -2,15 +2,15 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDbSnapshotAttributesInput {
     /// <p>The identifier for the DB snapshot to describe the attributes for.</p>
     #[doc(hidden)]
-    pub db_snapshot_identifier: std::option::Option<std::string::String>,
+    pub db_snapshot_identifier: ::std::option::Option<::std::string::String>,
 }
 impl DescribeDbSnapshotAttributesInput {
     /// <p>The identifier for the DB snapshot to describe the attributes for.</p>
-    pub fn db_snapshot_identifier(&self) -> std::option::Option<&str> {
+    pub fn db_snapshot_identifier(&self) -> ::std::option::Option<&str> {
         self.db_snapshot_identifier.as_deref()
     }
 }
@@ -23,20 +23,25 @@ impl DescribeDbSnapshotAttributesInput {
 
 /// A builder for [`DescribeDbSnapshotAttributesInput`](crate::operation::describe_db_snapshot_attributes::DescribeDbSnapshotAttributesInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeDbSnapshotAttributesInputBuilder {
-    pub(crate) db_snapshot_identifier: std::option::Option<std::string::String>,
+    pub(crate) db_snapshot_identifier: ::std::option::Option<::std::string::String>,
 }
 impl DescribeDbSnapshotAttributesInputBuilder {
     /// <p>The identifier for the DB snapshot to describe the attributes for.</p>
-    pub fn db_snapshot_identifier(mut self, input: impl Into<std::string::String>) -> Self {
-        self.db_snapshot_identifier = Some(input.into());
+    pub fn db_snapshot_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.db_snapshot_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier for the DB snapshot to describe the attributes for.</p>
     pub fn set_db_snapshot_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.db_snapshot_identifier = input;
         self
@@ -44,11 +49,11 @@ impl DescribeDbSnapshotAttributesInputBuilder {
     /// Consumes the builder and constructs a [`DescribeDbSnapshotAttributesInput`](crate::operation::describe_db_snapshot_attributes::DescribeDbSnapshotAttributesInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::describe_db_snapshot_attributes::DescribeDbSnapshotAttributesInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::describe_db_snapshot_attributes::DescribeDbSnapshotAttributesInput {
                 db_snapshot_identifier: self.db_snapshot_identifier,
             },

@@ -4,37 +4,37 @@
 pub struct GetSnapshotBlockOutput {
     /// <p>The size of the data in the block.</p>
     #[doc(hidden)]
-    pub data_length: std::option::Option<i32>,
+    pub data_length: ::std::option::Option<i32>,
     /// <p>The data content of the block.</p>
-    pub block_data: aws_smithy_http::byte_stream::ByteStream,
+    pub block_data: ::aws_smithy_http::byte_stream::ByteStream,
     /// <p>The checksum generated for the block, which is Base64 encoded.</p>
     #[doc(hidden)]
-    pub checksum: std::option::Option<std::string::String>,
+    pub checksum: ::std::option::Option<::std::string::String>,
     /// <p>The algorithm used to generate the checksum for the block, such as SHA256.</p>
     #[doc(hidden)]
-    pub checksum_algorithm: std::option::Option<crate::types::ChecksumAlgorithm>,
+    pub checksum_algorithm: ::std::option::Option<crate::types::ChecksumAlgorithm>,
     _request_id: Option<String>,
 }
 impl GetSnapshotBlockOutput {
     /// <p>The size of the data in the block.</p>
-    pub fn data_length(&self) -> std::option::Option<i32> {
+    pub fn data_length(&self) -> ::std::option::Option<i32> {
         self.data_length
     }
     /// <p>The data content of the block.</p>
-    pub fn block_data(&self) -> &aws_smithy_http::byte_stream::ByteStream {
+    pub fn block_data(&self) -> &::aws_smithy_http::byte_stream::ByteStream {
         &self.block_data
     }
     /// <p>The checksum generated for the block, which is Base64 encoded.</p>
-    pub fn checksum(&self) -> std::option::Option<&str> {
+    pub fn checksum(&self) -> ::std::option::Option<&str> {
         self.checksum.as_deref()
     }
     /// <p>The algorithm used to generate the checksum for the block, such as SHA256.</p>
-    pub fn checksum_algorithm(&self) -> std::option::Option<&crate::types::ChecksumAlgorithm> {
+    pub fn checksum_algorithm(&self) -> ::std::option::Option<&crate::types::ChecksumAlgorithm> {
         self.checksum_algorithm.as_ref()
     }
 }
-impl std::fmt::Debug for GetSnapshotBlockOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for GetSnapshotBlockOutput {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetSnapshotBlockOutput");
         formatter.field("data_length", &self.data_length);
         formatter.field("block_data", &"*** Sensitive Data Redacted ***");
@@ -44,7 +44,7 @@ impl std::fmt::Debug for GetSnapshotBlockOutput {
         formatter.finish()
     }
 }
-impl aws_http::request_id::RequestId for GetSnapshotBlockOutput {
+impl ::aws_http::request_id::RequestId for GetSnapshotBlockOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -59,57 +59,57 @@ impl GetSnapshotBlockOutput {
 
 /// A builder for [`GetSnapshotBlockOutput`](crate::operation::get_snapshot_block::GetSnapshotBlockOutput).
 #[non_exhaustive]
-#[derive(std::default::Default)]
+#[derive(::std::default::Default)]
 pub struct GetSnapshotBlockOutputBuilder {
-    pub(crate) data_length: std::option::Option<i32>,
-    pub(crate) block_data: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
-    pub(crate) checksum: std::option::Option<std::string::String>,
-    pub(crate) checksum_algorithm: std::option::Option<crate::types::ChecksumAlgorithm>,
+    pub(crate) data_length: ::std::option::Option<i32>,
+    pub(crate) block_data: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>,
+    pub(crate) checksum: ::std::option::Option<::std::string::String>,
+    pub(crate) checksum_algorithm: ::std::option::Option<crate::types::ChecksumAlgorithm>,
     _request_id: Option<String>,
 }
 impl GetSnapshotBlockOutputBuilder {
     /// <p>The size of the data in the block.</p>
     pub fn data_length(mut self, input: i32) -> Self {
-        self.data_length = Some(input);
+        self.data_length = ::std::option::Option::Some(input);
         self
     }
     /// <p>The size of the data in the block.</p>
-    pub fn set_data_length(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_data_length(mut self, input: ::std::option::Option<i32>) -> Self {
         self.data_length = input;
         self
     }
     /// <p>The data content of the block.</p>
-    pub fn block_data(mut self, input: aws_smithy_http::byte_stream::ByteStream) -> Self {
-        self.block_data = Some(input);
+    pub fn block_data(mut self, input: ::aws_smithy_http::byte_stream::ByteStream) -> Self {
+        self.block_data = ::std::option::Option::Some(input);
         self
     }
     /// <p>The data content of the block.</p>
     pub fn set_block_data(
         mut self,
-        input: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
+        input: ::std::option::Option<::aws_smithy_http::byte_stream::ByteStream>,
     ) -> Self {
         self.block_data = input;
         self
     }
     /// <p>The checksum generated for the block, which is Base64 encoded.</p>
-    pub fn checksum(mut self, input: impl Into<std::string::String>) -> Self {
-        self.checksum = Some(input.into());
+    pub fn checksum(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.checksum = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The checksum generated for the block, which is Base64 encoded.</p>
-    pub fn set_checksum(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_checksum(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.checksum = input;
         self
     }
     /// <p>The algorithm used to generate the checksum for the block, such as SHA256.</p>
     pub fn checksum_algorithm(mut self, input: crate::types::ChecksumAlgorithm) -> Self {
-        self.checksum_algorithm = Some(input);
+        self.checksum_algorithm = ::std::option::Option::Some(input);
         self
     }
     /// <p>The algorithm used to generate the checksum for the block, such as SHA256.</p>
     pub fn set_checksum_algorithm(
         mut self,
-        input: std::option::Option<crate::types::ChecksumAlgorithm>,
+        input: ::std::option::Option<crate::types::ChecksumAlgorithm>,
     ) -> Self {
         self.checksum_algorithm = input;
         self
@@ -134,8 +134,8 @@ impl GetSnapshotBlockOutputBuilder {
         }
     }
 }
-impl std::fmt::Debug for GetSnapshotBlockOutputBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for GetSnapshotBlockOutputBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetSnapshotBlockOutputBuilder");
         formatter.field("data_length", &self.data_length);
         formatter.field("block_data", &"*** Sensitive Data Redacted ***");

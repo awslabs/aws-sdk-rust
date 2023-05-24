@@ -2,61 +2,63 @@
 
 /// <p>The configuration for the Amazon File Cache resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FileCacheLustreConfiguration {
     /// <p>Per unit storage throughput represents the megabytes per second of read or write throughput per 1 tebibyte of storage provisioned. Cache throughput capacity is equal to Storage capacity (TiB) * PerUnitStorageThroughput (MB/s/TiB). The only supported value is <code>1000</code>.</p>
     #[doc(hidden)]
-    pub per_unit_storage_throughput: std::option::Option<i32>,
+    pub per_unit_storage_throughput: ::std::option::Option<i32>,
     /// <p>The deployment type of the Amazon File Cache resource, which must be <code>CACHE_1</code>.</p>
     #[doc(hidden)]
-    pub deployment_type: std::option::Option<crate::types::FileCacheLustreDeploymentType>,
+    pub deployment_type: ::std::option::Option<crate::types::FileCacheLustreDeploymentType>,
     /// <p>You use the <code>MountName</code> value when mounting the cache. If you pass a cache ID to the <code>DescribeFileCaches</code> operation, it returns the the <code>MountName</code> value as part of the cache's description.</p>
     #[doc(hidden)]
-    pub mount_name: std::option::Option<std::string::String>,
+    pub mount_name: ::std::option::Option<::std::string::String>,
     /// <p>A recurring weekly time, in the format <code>D:HH:MM</code>. </p>
     /// <p> <code>D</code> is the day of the week, for which 1 represents Monday and 7 represents Sunday. For further details, see <a href="https://en.wikipedia.org/wiki/ISO_week_date">the ISO-8601 spec as described on Wikipedia</a>.</p>
     /// <p> <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. </p>
     /// <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
     #[doc(hidden)]
-    pub weekly_maintenance_start_time: std::option::Option<std::string::String>,
+    pub weekly_maintenance_start_time: ::std::option::Option<::std::string::String>,
     /// <p>The configuration for a Lustre MDT (Metadata Target) storage volume.</p>
     #[doc(hidden)]
     pub metadata_configuration:
-        std::option::Option<crate::types::FileCacheLustreMetadataConfiguration>,
+        ::std::option::Option<crate::types::FileCacheLustreMetadataConfiguration>,
     /// <p>The configuration for Lustre logging used to write the enabled logging events for your Amazon File Cache resource to Amazon CloudWatch Logs.</p>
     #[doc(hidden)]
-    pub log_configuration: std::option::Option<crate::types::LustreLogConfiguration>,
+    pub log_configuration: ::std::option::Option<crate::types::LustreLogConfiguration>,
 }
 impl FileCacheLustreConfiguration {
     /// <p>Per unit storage throughput represents the megabytes per second of read or write throughput per 1 tebibyte of storage provisioned. Cache throughput capacity is equal to Storage capacity (TiB) * PerUnitStorageThroughput (MB/s/TiB). The only supported value is <code>1000</code>.</p>
-    pub fn per_unit_storage_throughput(&self) -> std::option::Option<i32> {
+    pub fn per_unit_storage_throughput(&self) -> ::std::option::Option<i32> {
         self.per_unit_storage_throughput
     }
     /// <p>The deployment type of the Amazon File Cache resource, which must be <code>CACHE_1</code>.</p>
     pub fn deployment_type(
         &self,
-    ) -> std::option::Option<&crate::types::FileCacheLustreDeploymentType> {
+    ) -> ::std::option::Option<&crate::types::FileCacheLustreDeploymentType> {
         self.deployment_type.as_ref()
     }
     /// <p>You use the <code>MountName</code> value when mounting the cache. If you pass a cache ID to the <code>DescribeFileCaches</code> operation, it returns the the <code>MountName</code> value as part of the cache's description.</p>
-    pub fn mount_name(&self) -> std::option::Option<&str> {
+    pub fn mount_name(&self) -> ::std::option::Option<&str> {
         self.mount_name.as_deref()
     }
     /// <p>A recurring weekly time, in the format <code>D:HH:MM</code>. </p>
     /// <p> <code>D</code> is the day of the week, for which 1 represents Monday and 7 represents Sunday. For further details, see <a href="https://en.wikipedia.org/wiki/ISO_week_date">the ISO-8601 spec as described on Wikipedia</a>.</p>
     /// <p> <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. </p>
     /// <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
-    pub fn weekly_maintenance_start_time(&self) -> std::option::Option<&str> {
+    pub fn weekly_maintenance_start_time(&self) -> ::std::option::Option<&str> {
         self.weekly_maintenance_start_time.as_deref()
     }
     /// <p>The configuration for a Lustre MDT (Metadata Target) storage volume.</p>
     pub fn metadata_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::FileCacheLustreMetadataConfiguration> {
+    ) -> ::std::option::Option<&crate::types::FileCacheLustreMetadataConfiguration> {
         self.metadata_configuration.as_ref()
     }
     /// <p>The configuration for Lustre logging used to write the enabled logging events for your Amazon File Cache resource to Amazon CloudWatch Logs.</p>
-    pub fn log_configuration(&self) -> std::option::Option<&crate::types::LustreLogConfiguration> {
+    pub fn log_configuration(
+        &self,
+    ) -> ::std::option::Option<&crate::types::LustreLogConfiguration> {
         self.log_configuration.as_ref()
     }
 }
@@ -69,47 +71,49 @@ impl FileCacheLustreConfiguration {
 
 /// A builder for [`FileCacheLustreConfiguration`](crate::types::FileCacheLustreConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FileCacheLustreConfigurationBuilder {
-    pub(crate) per_unit_storage_throughput: std::option::Option<i32>,
-    pub(crate) deployment_type: std::option::Option<crate::types::FileCacheLustreDeploymentType>,
-    pub(crate) mount_name: std::option::Option<std::string::String>,
-    pub(crate) weekly_maintenance_start_time: std::option::Option<std::string::String>,
+    pub(crate) per_unit_storage_throughput: ::std::option::Option<i32>,
+    pub(crate) deployment_type: ::std::option::Option<crate::types::FileCacheLustreDeploymentType>,
+    pub(crate) mount_name: ::std::option::Option<::std::string::String>,
+    pub(crate) weekly_maintenance_start_time: ::std::option::Option<::std::string::String>,
     pub(crate) metadata_configuration:
-        std::option::Option<crate::types::FileCacheLustreMetadataConfiguration>,
-    pub(crate) log_configuration: std::option::Option<crate::types::LustreLogConfiguration>,
+        ::std::option::Option<crate::types::FileCacheLustreMetadataConfiguration>,
+    pub(crate) log_configuration: ::std::option::Option<crate::types::LustreLogConfiguration>,
 }
 impl FileCacheLustreConfigurationBuilder {
     /// <p>Per unit storage throughput represents the megabytes per second of read or write throughput per 1 tebibyte of storage provisioned. Cache throughput capacity is equal to Storage capacity (TiB) * PerUnitStorageThroughput (MB/s/TiB). The only supported value is <code>1000</code>.</p>
     pub fn per_unit_storage_throughput(mut self, input: i32) -> Self {
-        self.per_unit_storage_throughput = Some(input);
+        self.per_unit_storage_throughput = ::std::option::Option::Some(input);
         self
     }
     /// <p>Per unit storage throughput represents the megabytes per second of read or write throughput per 1 tebibyte of storage provisioned. Cache throughput capacity is equal to Storage capacity (TiB) * PerUnitStorageThroughput (MB/s/TiB). The only supported value is <code>1000</code>.</p>
-    pub fn set_per_unit_storage_throughput(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_per_unit_storage_throughput(mut self, input: ::std::option::Option<i32>) -> Self {
         self.per_unit_storage_throughput = input;
         self
     }
     /// <p>The deployment type of the Amazon File Cache resource, which must be <code>CACHE_1</code>.</p>
     pub fn deployment_type(mut self, input: crate::types::FileCacheLustreDeploymentType) -> Self {
-        self.deployment_type = Some(input);
+        self.deployment_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The deployment type of the Amazon File Cache resource, which must be <code>CACHE_1</code>.</p>
     pub fn set_deployment_type(
         mut self,
-        input: std::option::Option<crate::types::FileCacheLustreDeploymentType>,
+        input: ::std::option::Option<crate::types::FileCacheLustreDeploymentType>,
     ) -> Self {
         self.deployment_type = input;
         self
     }
     /// <p>You use the <code>MountName</code> value when mounting the cache. If you pass a cache ID to the <code>DescribeFileCaches</code> operation, it returns the the <code>MountName</code> value as part of the cache's description.</p>
-    pub fn mount_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.mount_name = Some(input.into());
+    pub fn mount_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.mount_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>You use the <code>MountName</code> value when mounting the cache. If you pass a cache ID to the <code>DescribeFileCaches</code> operation, it returns the the <code>MountName</code> value as part of the cache's description.</p>
-    pub fn set_mount_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_mount_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.mount_name = input;
         self
     }
@@ -117,8 +121,11 @@ impl FileCacheLustreConfigurationBuilder {
     /// <p> <code>D</code> is the day of the week, for which 1 represents Monday and 7 represents Sunday. For further details, see <a href="https://en.wikipedia.org/wiki/ISO_week_date">the ISO-8601 spec as described on Wikipedia</a>.</p>
     /// <p> <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. </p>
     /// <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
-    pub fn weekly_maintenance_start_time(mut self, input: impl Into<std::string::String>) -> Self {
-        self.weekly_maintenance_start_time = Some(input.into());
+    pub fn weekly_maintenance_start_time(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.weekly_maintenance_start_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A recurring weekly time, in the format <code>D:HH:MM</code>. </p>
@@ -127,7 +134,7 @@ impl FileCacheLustreConfigurationBuilder {
     /// <p>For example, <code>1:05:00</code> specifies maintenance at 5 AM Monday.</p>
     pub fn set_weekly_maintenance_start_time(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.weekly_maintenance_start_time = input;
         self
@@ -137,26 +144,26 @@ impl FileCacheLustreConfigurationBuilder {
         mut self,
         input: crate::types::FileCacheLustreMetadataConfiguration,
     ) -> Self {
-        self.metadata_configuration = Some(input);
+        self.metadata_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration for a Lustre MDT (Metadata Target) storage volume.</p>
     pub fn set_metadata_configuration(
         mut self,
-        input: std::option::Option<crate::types::FileCacheLustreMetadataConfiguration>,
+        input: ::std::option::Option<crate::types::FileCacheLustreMetadataConfiguration>,
     ) -> Self {
         self.metadata_configuration = input;
         self
     }
     /// <p>The configuration for Lustre logging used to write the enabled logging events for your Amazon File Cache resource to Amazon CloudWatch Logs.</p>
     pub fn log_configuration(mut self, input: crate::types::LustreLogConfiguration) -> Self {
-        self.log_configuration = Some(input);
+        self.log_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration for Lustre logging used to write the enabled logging events for your Amazon File Cache resource to Amazon CloudWatch Logs.</p>
     pub fn set_log_configuration(
         mut self,
-        input: std::option::Option<crate::types::LustreLogConfiguration>,
+        input: ::std::option::Option<crate::types::LustreLogConfiguration>,
     ) -> Self {
         self.log_configuration = input;
         self

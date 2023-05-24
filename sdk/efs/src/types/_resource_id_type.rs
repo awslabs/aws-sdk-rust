@@ -38,13 +38,13 @@
 /// A preference indicating a choice to use 63bit/32bit IDs for all applicable resources.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ResourceIdType {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum ResourceIdType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ResourceIdType {
+impl ::std::convert::From<&str> for ResourceIdType {
     fn from(s: &str) -> Self {
         match s {
             "LONG_ID" => ResourceIdType::LongId,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for ResourceIdType {
         }
     }
 }
-impl std::str::FromStr for ResourceIdType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ResourceIdType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ResourceIdType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ResourceIdType::from(s))
     }
 }
 impl ResourceIdType {
@@ -86,7 +86,7 @@ impl ResourceIdType {
         &["LONG_ID", "SHORT_ID"]
     }
 }
-impl AsRef<str> for ResourceIdType {
+impl ::std::convert::AsRef<str> for ResourceIdType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

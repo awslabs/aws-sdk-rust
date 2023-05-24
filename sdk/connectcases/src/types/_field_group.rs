@@ -2,22 +2,22 @@
 
 /// <p>Object for a group of fields and associated properties.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FieldGroup {
     /// <p>Name of the field group.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>Represents an ordered list containing field related information.</p>
     #[doc(hidden)]
-    pub fields: std::option::Option<std::vec::Vec<crate::types::FieldItem>>,
+    pub fields: ::std::option::Option<::std::vec::Vec<crate::types::FieldItem>>,
 }
 impl FieldGroup {
     /// <p>Name of the field group.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>Represents an ordered list containing field related information.</p>
-    pub fn fields(&self) -> std::option::Option<&[crate::types::FieldItem]> {
+    pub fn fields(&self) -> ::std::option::Option<&[crate::types::FieldItem]> {
         self.fields.as_deref()
     }
 }
@@ -30,19 +30,21 @@ impl FieldGroup {
 
 /// A builder for [`FieldGroup`](crate::types::FieldGroup).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FieldGroupBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) fields: std::option::Option<std::vec::Vec<crate::types::FieldItem>>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) fields: ::std::option::Option<::std::vec::Vec<crate::types::FieldItem>>,
 }
 impl FieldGroupBuilder {
     /// <p>Name of the field group.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of the field group.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
@@ -54,13 +56,13 @@ impl FieldGroupBuilder {
     pub fn fields(mut self, input: crate::types::FieldItem) -> Self {
         let mut v = self.fields.unwrap_or_default();
         v.push(input);
-        self.fields = Some(v);
+        self.fields = ::std::option::Option::Some(v);
         self
     }
     /// <p>Represents an ordered list containing field related information.</p>
     pub fn set_fields(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::FieldItem>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::FieldItem>>,
     ) -> Self {
         self.fields = input;
         self

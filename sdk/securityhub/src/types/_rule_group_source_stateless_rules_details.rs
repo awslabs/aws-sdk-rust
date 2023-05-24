@@ -2,14 +2,15 @@
 
 /// <p>A stateless rule in the rule group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuleGroupSourceStatelessRulesDetails {
     /// <p>Indicates the order in which to run this rule relative to all of the rules in the stateless rule group.</p>
     #[doc(hidden)]
     pub priority: i32,
     /// <p>Provides the definition of the stateless rule.</p>
     #[doc(hidden)]
-    pub rule_definition: std::option::Option<crate::types::RuleGroupSourceStatelessRuleDefinition>,
+    pub rule_definition:
+        ::std::option::Option<crate::types::RuleGroupSourceStatelessRuleDefinition>,
 }
 impl RuleGroupSourceStatelessRulesDetails {
     /// <p>Indicates the order in which to run this rule relative to all of the rules in the stateless rule group.</p>
@@ -19,7 +20,7 @@ impl RuleGroupSourceStatelessRulesDetails {
     /// <p>Provides the definition of the stateless rule.</p>
     pub fn rule_definition(
         &self,
-    ) -> std::option::Option<&crate::types::RuleGroupSourceStatelessRuleDefinition> {
+    ) -> ::std::option::Option<&crate::types::RuleGroupSourceStatelessRuleDefinition> {
         self.rule_definition.as_ref()
     }
 }
@@ -32,20 +33,22 @@ impl RuleGroupSourceStatelessRulesDetails {
 
 /// A builder for [`RuleGroupSourceStatelessRulesDetails`](crate::types::RuleGroupSourceStatelessRulesDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RuleGroupSourceStatelessRulesDetailsBuilder {
-    pub(crate) priority: std::option::Option<i32>,
+    pub(crate) priority: ::std::option::Option<i32>,
     pub(crate) rule_definition:
-        std::option::Option<crate::types::RuleGroupSourceStatelessRuleDefinition>,
+        ::std::option::Option<crate::types::RuleGroupSourceStatelessRuleDefinition>,
 }
 impl RuleGroupSourceStatelessRulesDetailsBuilder {
     /// <p>Indicates the order in which to run this rule relative to all of the rules in the stateless rule group.</p>
     pub fn priority(mut self, input: i32) -> Self {
-        self.priority = Some(input);
+        self.priority = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates the order in which to run this rule relative to all of the rules in the stateless rule group.</p>
-    pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
         self.priority = input;
         self
     }
@@ -54,13 +57,13 @@ impl RuleGroupSourceStatelessRulesDetailsBuilder {
         mut self,
         input: crate::types::RuleGroupSourceStatelessRuleDefinition,
     ) -> Self {
-        self.rule_definition = Some(input);
+        self.rule_definition = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides the definition of the stateless rule.</p>
     pub fn set_rule_definition(
         mut self,
-        input: std::option::Option<crate::types::RuleGroupSourceStatelessRuleDefinition>,
+        input: ::std::option::Option<crate::types::RuleGroupSourceStatelessRuleDefinition>,
     ) -> Self {
         self.rule_definition = input;
         self

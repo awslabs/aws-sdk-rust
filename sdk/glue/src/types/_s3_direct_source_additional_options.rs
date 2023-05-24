@@ -2,36 +2,36 @@
 
 /// <p>Specifies additional connection options for the Amazon S3 data store.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3DirectSourceAdditionalOptions {
     /// <p>Sets the upper limit for the target size of the dataset in bytes that will be processed.</p>
     #[doc(hidden)]
-    pub bounded_size: std::option::Option<i64>,
+    pub bounded_size: ::std::option::Option<i64>,
     /// <p>Sets the upper limit for the target number of files that will be processed.</p>
     #[doc(hidden)]
-    pub bounded_files: std::option::Option<i64>,
+    pub bounded_files: ::std::option::Option<i64>,
     /// <p>Sets option to enable a sample path.</p>
     #[doc(hidden)]
-    pub enable_sample_path: std::option::Option<bool>,
+    pub enable_sample_path: ::std::option::Option<bool>,
     /// <p>If enabled, specifies the sample path.</p>
     #[doc(hidden)]
-    pub sample_path: std::option::Option<std::string::String>,
+    pub sample_path: ::std::option::Option<::std::string::String>,
 }
 impl S3DirectSourceAdditionalOptions {
     /// <p>Sets the upper limit for the target size of the dataset in bytes that will be processed.</p>
-    pub fn bounded_size(&self) -> std::option::Option<i64> {
+    pub fn bounded_size(&self) -> ::std::option::Option<i64> {
         self.bounded_size
     }
     /// <p>Sets the upper limit for the target number of files that will be processed.</p>
-    pub fn bounded_files(&self) -> std::option::Option<i64> {
+    pub fn bounded_files(&self) -> ::std::option::Option<i64> {
         self.bounded_files
     }
     /// <p>Sets option to enable a sample path.</p>
-    pub fn enable_sample_path(&self) -> std::option::Option<bool> {
+    pub fn enable_sample_path(&self) -> ::std::option::Option<bool> {
         self.enable_sample_path
     }
     /// <p>If enabled, specifies the sample path.</p>
-    pub fn sample_path(&self) -> std::option::Option<&str> {
+    pub fn sample_path(&self) -> ::std::option::Option<&str> {
         self.sample_path.as_deref()
     }
 }
@@ -44,51 +44,53 @@ impl S3DirectSourceAdditionalOptions {
 
 /// A builder for [`S3DirectSourceAdditionalOptions`](crate::types::S3DirectSourceAdditionalOptions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct S3DirectSourceAdditionalOptionsBuilder {
-    pub(crate) bounded_size: std::option::Option<i64>,
-    pub(crate) bounded_files: std::option::Option<i64>,
-    pub(crate) enable_sample_path: std::option::Option<bool>,
-    pub(crate) sample_path: std::option::Option<std::string::String>,
+    pub(crate) bounded_size: ::std::option::Option<i64>,
+    pub(crate) bounded_files: ::std::option::Option<i64>,
+    pub(crate) enable_sample_path: ::std::option::Option<bool>,
+    pub(crate) sample_path: ::std::option::Option<::std::string::String>,
 }
 impl S3DirectSourceAdditionalOptionsBuilder {
     /// <p>Sets the upper limit for the target size of the dataset in bytes that will be processed.</p>
     pub fn bounded_size(mut self, input: i64) -> Self {
-        self.bounded_size = Some(input);
+        self.bounded_size = ::std::option::Option::Some(input);
         self
     }
     /// <p>Sets the upper limit for the target size of the dataset in bytes that will be processed.</p>
-    pub fn set_bounded_size(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_bounded_size(mut self, input: ::std::option::Option<i64>) -> Self {
         self.bounded_size = input;
         self
     }
     /// <p>Sets the upper limit for the target number of files that will be processed.</p>
     pub fn bounded_files(mut self, input: i64) -> Self {
-        self.bounded_files = Some(input);
+        self.bounded_files = ::std::option::Option::Some(input);
         self
     }
     /// <p>Sets the upper limit for the target number of files that will be processed.</p>
-    pub fn set_bounded_files(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_bounded_files(mut self, input: ::std::option::Option<i64>) -> Self {
         self.bounded_files = input;
         self
     }
     /// <p>Sets option to enable a sample path.</p>
     pub fn enable_sample_path(mut self, input: bool) -> Self {
-        self.enable_sample_path = Some(input);
+        self.enable_sample_path = ::std::option::Option::Some(input);
         self
     }
     /// <p>Sets option to enable a sample path.</p>
-    pub fn set_enable_sample_path(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enable_sample_path(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_sample_path = input;
         self
     }
     /// <p>If enabled, specifies the sample path.</p>
-    pub fn sample_path(mut self, input: impl Into<std::string::String>) -> Self {
-        self.sample_path = Some(input.into());
+    pub fn sample_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.sample_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If enabled, specifies the sample path.</p>
-    pub fn set_sample_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_sample_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sample_path = input;
         self
     }

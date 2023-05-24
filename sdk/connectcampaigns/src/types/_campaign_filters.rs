@@ -2,15 +2,15 @@
 
 /// Filter model by type
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CampaignFilters {
     /// Connect instance identifier filter
     #[doc(hidden)]
-    pub instance_id_filter: std::option::Option<crate::types::InstanceIdFilter>,
+    pub instance_id_filter: ::std::option::Option<crate::types::InstanceIdFilter>,
 }
 impl CampaignFilters {
     /// Connect instance identifier filter
-    pub fn instance_id_filter(&self) -> std::option::Option<&crate::types::InstanceIdFilter> {
+    pub fn instance_id_filter(&self) -> ::std::option::Option<&crate::types::InstanceIdFilter> {
         self.instance_id_filter.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl CampaignFilters {
 
 /// A builder for [`CampaignFilters`](crate::types::CampaignFilters).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CampaignFiltersBuilder {
-    pub(crate) instance_id_filter: std::option::Option<crate::types::InstanceIdFilter>,
+    pub(crate) instance_id_filter: ::std::option::Option<crate::types::InstanceIdFilter>,
 }
 impl CampaignFiltersBuilder {
     /// Connect instance identifier filter
     pub fn instance_id_filter(mut self, input: crate::types::InstanceIdFilter) -> Self {
-        self.instance_id_filter = Some(input);
+        self.instance_id_filter = ::std::option::Option::Some(input);
         self
     }
     /// Connect instance identifier filter
     pub fn set_instance_id_filter(
         mut self,
-        input: std::option::Option<crate::types::InstanceIdFilter>,
+        input: ::std::option::Option<crate::types::InstanceIdFilter>,
     ) -> Self {
         self.instance_id_filter = input;
         self

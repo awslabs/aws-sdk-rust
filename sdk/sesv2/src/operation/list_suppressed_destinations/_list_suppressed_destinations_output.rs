@@ -2,30 +2,30 @@
 
 /// <p>A list of suppressed email addresses.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSuppressedDestinationsOutput {
     /// <p>A list of summaries, each containing a summary for a suppressed email destination.</p>
     #[doc(hidden)]
     pub suppressed_destination_summaries:
-        std::option::Option<std::vec::Vec<crate::types::SuppressedDestinationSummary>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::SuppressedDestinationSummary>>,
     /// <p>A token that indicates that there are additional email addresses on the suppression list for your account. To view additional suppressed addresses, issue another request to <code>ListSuppressedDestinations</code>, and pass this token in the <code>NextToken</code> parameter.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListSuppressedDestinationsOutput {
     /// <p>A list of summaries, each containing a summary for a suppressed email destination.</p>
     pub fn suppressed_destination_summaries(
         &self,
-    ) -> std::option::Option<&[crate::types::SuppressedDestinationSummary]> {
+    ) -> ::std::option::Option<&[crate::types::SuppressedDestinationSummary]> {
         self.suppressed_destination_summaries.as_deref()
     }
     /// <p>A token that indicates that there are additional email addresses on the suppression list for your account. To view additional suppressed addresses, issue another request to <code>ListSuppressedDestinations</code>, and pass this token in the <code>NextToken</code> parameter.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListSuppressedDestinationsOutput {
+impl ::aws_http::request_id::RequestId for ListSuppressedDestinationsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -39,11 +39,13 @@ impl ListSuppressedDestinationsOutput {
 
 /// A builder for [`ListSuppressedDestinationsOutput`](crate::operation::list_suppressed_destinations::ListSuppressedDestinationsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListSuppressedDestinationsOutputBuilder {
     pub(crate) suppressed_destination_summaries:
-        std::option::Option<std::vec::Vec<crate::types::SuppressedDestinationSummary>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::SuppressedDestinationSummary>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListSuppressedDestinationsOutputBuilder {
@@ -58,24 +60,24 @@ impl ListSuppressedDestinationsOutputBuilder {
     ) -> Self {
         let mut v = self.suppressed_destination_summaries.unwrap_or_default();
         v.push(input);
-        self.suppressed_destination_summaries = Some(v);
+        self.suppressed_destination_summaries = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of summaries, each containing a summary for a suppressed email destination.</p>
     pub fn set_suppressed_destination_summaries(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SuppressedDestinationSummary>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SuppressedDestinationSummary>>,
     ) -> Self {
         self.suppressed_destination_summaries = input;
         self
     }
     /// <p>A token that indicates that there are additional email addresses on the suppression list for your account. To view additional suppressed addresses, issue another request to <code>ListSuppressedDestinations</code>, and pass this token in the <code>NextToken</code> parameter.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A token that indicates that there are additional email addresses on the suppression list for your account. To view additional suppressed addresses, issue another request to <code>ListSuppressedDestinations</code>, and pass this token in the <code>NextToken</code> parameter.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

@@ -2,11 +2,11 @@
 
 /// <p>JoinDomainOutput</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JoinDomainOutput {
     /// <p>The unique Amazon Resource Name (ARN) of the gateway that joined the domain.</p>
     #[doc(hidden)]
-    pub gateway_arn: std::option::Option<std::string::String>,
+    pub gateway_arn: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the status of the gateway as a member of the Active Directory domain.</p>
     /// <ul>
     /// <li> <p> <code>ACCESS_DENIED</code>: Indicates that the <code>JoinDomain</code> operation failed due to an authentication error.</p> </li>
@@ -18,12 +18,12 @@ pub struct JoinDomainOutput {
     /// <li> <p> <code>UNKNOWN_ERROR</code>: Indicates that the <code>JoinDomain</code> operation failed due to another type of error.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub active_directory_status: std::option::Option<crate::types::ActiveDirectoryStatus>,
+    pub active_directory_status: ::std::option::Option<crate::types::ActiveDirectoryStatus>,
     _request_id: Option<String>,
 }
 impl JoinDomainOutput {
     /// <p>The unique Amazon Resource Name (ARN) of the gateway that joined the domain.</p>
-    pub fn gateway_arn(&self) -> std::option::Option<&str> {
+    pub fn gateway_arn(&self) -> ::std::option::Option<&str> {
         self.gateway_arn.as_deref()
     }
     /// <p>Indicates the status of the gateway as a member of the Active Directory domain.</p>
@@ -38,11 +38,11 @@ impl JoinDomainOutput {
     /// </ul>
     pub fn active_directory_status(
         &self,
-    ) -> std::option::Option<&crate::types::ActiveDirectoryStatus> {
+    ) -> ::std::option::Option<&crate::types::ActiveDirectoryStatus> {
         self.active_directory_status.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for JoinDomainOutput {
+impl ::aws_http::request_id::RequestId for JoinDomainOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -56,20 +56,22 @@ impl JoinDomainOutput {
 
 /// A builder for [`JoinDomainOutput`](crate::operation::join_domain::JoinDomainOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct JoinDomainOutputBuilder {
-    pub(crate) gateway_arn: std::option::Option<std::string::String>,
-    pub(crate) active_directory_status: std::option::Option<crate::types::ActiveDirectoryStatus>,
+    pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) active_directory_status: ::std::option::Option<crate::types::ActiveDirectoryStatus>,
     _request_id: Option<String>,
 }
 impl JoinDomainOutputBuilder {
     /// <p>The unique Amazon Resource Name (ARN) of the gateway that joined the domain.</p>
-    pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.gateway_arn = Some(input.into());
+    pub fn gateway_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.gateway_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique Amazon Resource Name (ARN) of the gateway that joined the domain.</p>
-    pub fn set_gateway_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_gateway_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.gateway_arn = input;
         self
     }
@@ -84,7 +86,7 @@ impl JoinDomainOutputBuilder {
     /// <li> <p> <code>UNKNOWN_ERROR</code>: Indicates that the <code>JoinDomain</code> operation failed due to another type of error.</p> </li>
     /// </ul>
     pub fn active_directory_status(mut self, input: crate::types::ActiveDirectoryStatus) -> Self {
-        self.active_directory_status = Some(input);
+        self.active_directory_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates the status of the gateway as a member of the Active Directory domain.</p>
@@ -99,7 +101,7 @@ impl JoinDomainOutputBuilder {
     /// </ul>
     pub fn set_active_directory_status(
         mut self,
-        input: std::option::Option<crate::types::ActiveDirectoryStatus>,
+        input: ::std::option::Option<crate::types::ActiveDirectoryStatus>,
     ) -> Self {
         self.active_directory_status = input;
         self

@@ -2,12 +2,12 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModifySnapshotCopyRetentionPeriodInput {
     /// <p>The unique identifier of the cluster for which you want to change the retention period for either automated or manual snapshots that are copied to a destination Amazon Web Services Region.</p>
     /// <p>Constraints: Must be the valid name of an existing cluster that has cross-region snapshot copy enabled.</p>
     #[doc(hidden)]
-    pub cluster_identifier: std::option::Option<std::string::String>,
+    pub cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The number of days to retain automated snapshots in the destination Amazon Web Services Region after they are copied from the source Amazon Web Services Region.</p>
     /// <p>By default, this only changes the retention period of copied automated snapshots. </p>
     /// <p>If you decrease the retention period for automated snapshots that are copied to a destination Amazon Web Services Region, Amazon Redshift deletes any existing automated snapshots that were copied to the destination Amazon Web Services Region and that fall outside of the new retention period.</p>
@@ -24,7 +24,7 @@ pub struct ModifySnapshotCopyRetentionPeriodInput {
 impl ModifySnapshotCopyRetentionPeriodInput {
     /// <p>The unique identifier of the cluster for which you want to change the retention period for either automated or manual snapshots that are copied to a destination Amazon Web Services Region.</p>
     /// <p>Constraints: Must be the valid name of an existing cluster that has cross-region snapshot copy enabled.</p>
-    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+    pub fn cluster_identifier(&self) -> ::std::option::Option<&str> {
         self.cluster_identifier.as_deref()
     }
     /// <p>The number of days to retain automated snapshots in the destination Amazon Web Services Region after they are copied from the source Amazon Web Services Region.</p>
@@ -51,24 +51,29 @@ impl ModifySnapshotCopyRetentionPeriodInput {
 
 /// A builder for [`ModifySnapshotCopyRetentionPeriodInput`](crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriodInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ModifySnapshotCopyRetentionPeriodInputBuilder {
-    pub(crate) cluster_identifier: std::option::Option<std::string::String>,
-    pub(crate) retention_period: std::option::Option<i32>,
-    pub(crate) manual: std::option::Option<bool>,
+    pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) retention_period: ::std::option::Option<i32>,
+    pub(crate) manual: ::std::option::Option<bool>,
 }
 impl ModifySnapshotCopyRetentionPeriodInputBuilder {
     /// <p>The unique identifier of the cluster for which you want to change the retention period for either automated or manual snapshots that are copied to a destination Amazon Web Services Region.</p>
     /// <p>Constraints: Must be the valid name of an existing cluster that has cross-region snapshot copy enabled.</p>
-    pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cluster_identifier = Some(input.into());
+    pub fn cluster_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the cluster for which you want to change the retention period for either automated or manual snapshots that are copied to a destination Amazon Web Services Region.</p>
     /// <p>Constraints: Must be the valid name of an existing cluster that has cross-region snapshot copy enabled.</p>
     pub fn set_cluster_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.cluster_identifier = input;
         self
@@ -81,7 +86,7 @@ impl ModifySnapshotCopyRetentionPeriodInputBuilder {
     /// <p>If you specify the value of -1 newly copied manual snapshots are retained indefinitely.</p>
     /// <p>Constraints: The number of days must be either -1 or an integer between 1 and 3,653 for manual snapshots.</p>
     pub fn retention_period(mut self, input: i32) -> Self {
-        self.retention_period = Some(input);
+        self.retention_period = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of days to retain automated snapshots in the destination Amazon Web Services Region after they are copied from the source Amazon Web Services Region.</p>
@@ -91,23 +96,23 @@ impl ModifySnapshotCopyRetentionPeriodInputBuilder {
     /// <p>If you specify the <code>manual</code> option, only newly copied manual snapshots will have the new retention period. </p>
     /// <p>If you specify the value of -1 newly copied manual snapshots are retained indefinitely.</p>
     /// <p>Constraints: The number of days must be either -1 or an integer between 1 and 3,653 for manual snapshots.</p>
-    pub fn set_retention_period(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.retention_period = input;
         self
     }
     /// <p>Indicates whether to apply the snapshot retention period to newly copied manual snapshots instead of automated snapshots.</p>
     pub fn manual(mut self, input: bool) -> Self {
-        self.manual = Some(input);
+        self.manual = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether to apply the snapshot retention period to newly copied manual snapshots instead of automated snapshots.</p>
-    pub fn set_manual(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_manual(mut self, input: ::std::option::Option<bool>) -> Self {
         self.manual = input;
         self
     }
     /// Consumes the builder and constructs a [`ModifySnapshotCopyRetentionPeriodInput`](crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriodInput).
-    pub fn build(self) -> Result<crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriodInput, aws_smithy_http::operation::error::BuildError>{
-        Ok(
+    pub fn build(self) -> ::std::result::Result<crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriodInput, ::aws_smithy_http::operation::error::BuildError>{
+        ::std::result::Result::Ok(
             crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriodInput {
                 cluster_identifier: self.cluster_identifier
                 ,

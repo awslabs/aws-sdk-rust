@@ -2,17 +2,17 @@
 
 /// <p>Contains a subset of information about a job execution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobExecutionSummary {
     /// <p>The unique identifier you assigned to this job when it was created.</p>
     #[doc(hidden)]
-    pub job_id: std::option::Option<std::string::String>,
+    pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>The time, in milliseconds since the epoch, when the job execution was enqueued.</p>
     #[doc(hidden)]
     pub queued_at: i64,
     /// <p>The time, in milliseconds since the epoch, when the job execution started.</p>
     #[doc(hidden)]
-    pub started_at: std::option::Option<i64>,
+    pub started_at: ::std::option::Option<i64>,
     /// <p>The time, in milliseconds since the epoch, when the job execution was last updated.</p>
     #[doc(hidden)]
     pub last_updated_at: i64,
@@ -21,11 +21,11 @@ pub struct JobExecutionSummary {
     pub version_number: i64,
     /// <p>A number that identifies a particular job execution on a particular device.</p>
     #[doc(hidden)]
-    pub execution_number: std::option::Option<i64>,
+    pub execution_number: ::std::option::Option<i64>,
 }
 impl JobExecutionSummary {
     /// <p>The unique identifier you assigned to this job when it was created.</p>
-    pub fn job_id(&self) -> std::option::Option<&str> {
+    pub fn job_id(&self) -> ::std::option::Option<&str> {
         self.job_id.as_deref()
     }
     /// <p>The time, in milliseconds since the epoch, when the job execution was enqueued.</p>
@@ -33,7 +33,7 @@ impl JobExecutionSummary {
         self.queued_at
     }
     /// <p>The time, in milliseconds since the epoch, when the job execution started.</p>
-    pub fn started_at(&self) -> std::option::Option<i64> {
+    pub fn started_at(&self) -> ::std::option::Option<i64> {
         self.started_at
     }
     /// <p>The time, in milliseconds since the epoch, when the job execution was last updated.</p>
@@ -45,7 +45,7 @@ impl JobExecutionSummary {
         self.version_number
     }
     /// <p>A number that identifies a particular job execution on a particular device.</p>
-    pub fn execution_number(&self) -> std::option::Option<i64> {
+    pub fn execution_number(&self) -> ::std::option::Option<i64> {
         self.execution_number
     }
 }
@@ -58,73 +58,75 @@ impl JobExecutionSummary {
 
 /// A builder for [`JobExecutionSummary`](crate::types::JobExecutionSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct JobExecutionSummaryBuilder {
-    pub(crate) job_id: std::option::Option<std::string::String>,
-    pub(crate) queued_at: std::option::Option<i64>,
-    pub(crate) started_at: std::option::Option<i64>,
-    pub(crate) last_updated_at: std::option::Option<i64>,
-    pub(crate) version_number: std::option::Option<i64>,
-    pub(crate) execution_number: std::option::Option<i64>,
+    pub(crate) job_id: ::std::option::Option<::std::string::String>,
+    pub(crate) queued_at: ::std::option::Option<i64>,
+    pub(crate) started_at: ::std::option::Option<i64>,
+    pub(crate) last_updated_at: ::std::option::Option<i64>,
+    pub(crate) version_number: ::std::option::Option<i64>,
+    pub(crate) execution_number: ::std::option::Option<i64>,
 }
 impl JobExecutionSummaryBuilder {
     /// <p>The unique identifier you assigned to this job when it was created.</p>
-    pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.job_id = Some(input.into());
+    pub fn job_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.job_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier you assigned to this job when it was created.</p>
-    pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_job_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_id = input;
         self
     }
     /// <p>The time, in milliseconds since the epoch, when the job execution was enqueued.</p>
     pub fn queued_at(mut self, input: i64) -> Self {
-        self.queued_at = Some(input);
+        self.queued_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time, in milliseconds since the epoch, when the job execution was enqueued.</p>
-    pub fn set_queued_at(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_queued_at(mut self, input: ::std::option::Option<i64>) -> Self {
         self.queued_at = input;
         self
     }
     /// <p>The time, in milliseconds since the epoch, when the job execution started.</p>
     pub fn started_at(mut self, input: i64) -> Self {
-        self.started_at = Some(input);
+        self.started_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time, in milliseconds since the epoch, when the job execution started.</p>
-    pub fn set_started_at(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_started_at(mut self, input: ::std::option::Option<i64>) -> Self {
         self.started_at = input;
         self
     }
     /// <p>The time, in milliseconds since the epoch, when the job execution was last updated.</p>
     pub fn last_updated_at(mut self, input: i64) -> Self {
-        self.last_updated_at = Some(input);
+        self.last_updated_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time, in milliseconds since the epoch, when the job execution was last updated.</p>
-    pub fn set_last_updated_at(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_last_updated_at(mut self, input: ::std::option::Option<i64>) -> Self {
         self.last_updated_at = input;
         self
     }
     /// <p>The version of the job execution. Job execution versions are incremented each time AWS IoT Jobs receives an update from a device.</p>
     pub fn version_number(mut self, input: i64) -> Self {
-        self.version_number = Some(input);
+        self.version_number = ::std::option::Option::Some(input);
         self
     }
     /// <p>The version of the job execution. Job execution versions are incremented each time AWS IoT Jobs receives an update from a device.</p>
-    pub fn set_version_number(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_version_number(mut self, input: ::std::option::Option<i64>) -> Self {
         self.version_number = input;
         self
     }
     /// <p>A number that identifies a particular job execution on a particular device.</p>
     pub fn execution_number(mut self, input: i64) -> Self {
-        self.execution_number = Some(input);
+        self.execution_number = ::std::option::Option::Some(input);
         self
     }
     /// <p>A number that identifies a particular job execution on a particular device.</p>
-    pub fn set_execution_number(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_execution_number(mut self, input: ::std::option::Option<i64>) -> Self {
         self.execution_number = input;
         self
     }

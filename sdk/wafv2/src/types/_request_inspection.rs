@@ -4,11 +4,11 @@
 /// <p>This is part of the <code>AWSManagedRulesATPRuleSet</code> configuration in <code>ManagedRuleGroupConfig</code>.</p>
 /// <p>In these settings, you specify how your application accepts login attempts by providing the request payload type and the names of the fields within the request body where the username and password are provided. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RequestInspection {
     /// <p>The payload type for your login endpoint, either JSON or form encoded.</p>
     #[doc(hidden)]
-    pub payload_type: std::option::Option<crate::types::PayloadType>,
+    pub payload_type: ::std::option::Option<crate::types::PayloadType>,
     /// <p>Details about your login page username field. </p>
     /// <p>How you specify this depends on the payload type.</p>
     /// <ul>
@@ -16,7 +16,7 @@ pub struct RequestInspection {
     /// <li> <p>For form encoded payload types, use the HTML form names.</p> <p>For example, for an HTML form with input elements named <code>username1</code> and <code>password1</code>, the username field specification is <code>username1</code> and the password field specification is <code>password1</code>.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub username_field: std::option::Option<crate::types::UsernameField>,
+    pub username_field: ::std::option::Option<crate::types::UsernameField>,
     /// <p>Details about your login page password field. </p>
     /// <p>How you specify this depends on the payload type.</p>
     /// <ul>
@@ -24,11 +24,11 @@ pub struct RequestInspection {
     /// <li> <p>For form encoded payload types, use the HTML form names.</p> <p>For example, for an HTML form with input elements named <code>username1</code> and <code>password1</code>, the username field specification is <code>username1</code> and the password field specification is <code>password1</code>.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub password_field: std::option::Option<crate::types::PasswordField>,
+    pub password_field: ::std::option::Option<crate::types::PasswordField>,
 }
 impl RequestInspection {
     /// <p>The payload type for your login endpoint, either JSON or form encoded.</p>
-    pub fn payload_type(&self) -> std::option::Option<&crate::types::PayloadType> {
+    pub fn payload_type(&self) -> ::std::option::Option<&crate::types::PayloadType> {
         self.payload_type.as_ref()
     }
     /// <p>Details about your login page username field. </p>
@@ -37,7 +37,7 @@ impl RequestInspection {
     /// <li> <p>For JSON payloads, specify the field name in JSON pointer syntax. For information about the JSON Pointer syntax, see the Internet Engineering Task Force (IETF) documentation <a href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>. </p> <p>For example, for the JSON payload <code>{ "login": { "username": "THE_USERNAME", "password": "THE_PASSWORD" } }</code>, the username field specification is <code>/login/username</code> and the password field specification is <code>/login/password</code>.</p> </li>
     /// <li> <p>For form encoded payload types, use the HTML form names.</p> <p>For example, for an HTML form with input elements named <code>username1</code> and <code>password1</code>, the username field specification is <code>username1</code> and the password field specification is <code>password1</code>.</p> </li>
     /// </ul>
-    pub fn username_field(&self) -> std::option::Option<&crate::types::UsernameField> {
+    pub fn username_field(&self) -> ::std::option::Option<&crate::types::UsernameField> {
         self.username_field.as_ref()
     }
     /// <p>Details about your login page password field. </p>
@@ -46,7 +46,7 @@ impl RequestInspection {
     /// <li> <p>For JSON payloads, specify the field name in JSON pointer syntax. For information about the JSON Pointer syntax, see the Internet Engineering Task Force (IETF) documentation <a href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>. </p> <p>For example, for the JSON payload <code>{ "login": { "username": "THE_USERNAME", "password": "THE_PASSWORD" } }</code>, the username field specification is <code>/login/username</code> and the password field specification is <code>/login/password</code>.</p> </li>
     /// <li> <p>For form encoded payload types, use the HTML form names.</p> <p>For example, for an HTML form with input elements named <code>username1</code> and <code>password1</code>, the username field specification is <code>username1</code> and the password field specification is <code>password1</code>.</p> </li>
     /// </ul>
-    pub fn password_field(&self) -> std::option::Option<&crate::types::PasswordField> {
+    pub fn password_field(&self) -> ::std::option::Option<&crate::types::PasswordField> {
         self.password_field.as_ref()
     }
 }
@@ -59,22 +59,24 @@ impl RequestInspection {
 
 /// A builder for [`RequestInspection`](crate::types::RequestInspection).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RequestInspectionBuilder {
-    pub(crate) payload_type: std::option::Option<crate::types::PayloadType>,
-    pub(crate) username_field: std::option::Option<crate::types::UsernameField>,
-    pub(crate) password_field: std::option::Option<crate::types::PasswordField>,
+    pub(crate) payload_type: ::std::option::Option<crate::types::PayloadType>,
+    pub(crate) username_field: ::std::option::Option<crate::types::UsernameField>,
+    pub(crate) password_field: ::std::option::Option<crate::types::PasswordField>,
 }
 impl RequestInspectionBuilder {
     /// <p>The payload type for your login endpoint, either JSON or form encoded.</p>
     pub fn payload_type(mut self, input: crate::types::PayloadType) -> Self {
-        self.payload_type = Some(input);
+        self.payload_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The payload type for your login endpoint, either JSON or form encoded.</p>
     pub fn set_payload_type(
         mut self,
-        input: std::option::Option<crate::types::PayloadType>,
+        input: ::std::option::Option<crate::types::PayloadType>,
     ) -> Self {
         self.payload_type = input;
         self
@@ -86,7 +88,7 @@ impl RequestInspectionBuilder {
     /// <li> <p>For form encoded payload types, use the HTML form names.</p> <p>For example, for an HTML form with input elements named <code>username1</code> and <code>password1</code>, the username field specification is <code>username1</code> and the password field specification is <code>password1</code>.</p> </li>
     /// </ul>
     pub fn username_field(mut self, input: crate::types::UsernameField) -> Self {
-        self.username_field = Some(input);
+        self.username_field = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details about your login page username field. </p>
@@ -97,7 +99,7 @@ impl RequestInspectionBuilder {
     /// </ul>
     pub fn set_username_field(
         mut self,
-        input: std::option::Option<crate::types::UsernameField>,
+        input: ::std::option::Option<crate::types::UsernameField>,
     ) -> Self {
         self.username_field = input;
         self
@@ -109,7 +111,7 @@ impl RequestInspectionBuilder {
     /// <li> <p>For form encoded payload types, use the HTML form names.</p> <p>For example, for an HTML form with input elements named <code>username1</code> and <code>password1</code>, the username field specification is <code>username1</code> and the password field specification is <code>password1</code>.</p> </li>
     /// </ul>
     pub fn password_field(mut self, input: crate::types::PasswordField) -> Self {
-        self.password_field = Some(input);
+        self.password_field = ::std::option::Option::Some(input);
         self
     }
     /// <p>Details about your login page password field. </p>
@@ -120,7 +122,7 @@ impl RequestInspectionBuilder {
     /// </ul>
     pub fn set_password_field(
         mut self,
-        input: std::option::Option<crate::types::PasswordField>,
+        input: ::std::option::Option<crate::types::PasswordField>,
     ) -> Self {
         self.password_field = input;
         self

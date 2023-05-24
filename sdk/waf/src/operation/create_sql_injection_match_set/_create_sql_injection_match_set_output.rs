@@ -2,29 +2,29 @@
 
 /// <p>The response to a <code>CreateSqlInjectionMatchSet</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSqlInjectionMatchSetOutput {
     /// <p>A <code>SqlInjectionMatchSet</code>.</p>
     #[doc(hidden)]
-    pub sql_injection_match_set: std::option::Option<crate::types::SqlInjectionMatchSet>,
+    pub sql_injection_match_set: ::std::option::Option<crate::types::SqlInjectionMatchSet>,
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateSqlInjectionMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     #[doc(hidden)]
-    pub change_token: std::option::Option<std::string::String>,
+    pub change_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateSqlInjectionMatchSetOutput {
     /// <p>A <code>SqlInjectionMatchSet</code>.</p>
     pub fn sql_injection_match_set(
         &self,
-    ) -> std::option::Option<&crate::types::SqlInjectionMatchSet> {
+    ) -> ::std::option::Option<&crate::types::SqlInjectionMatchSet> {
         self.sql_injection_match_set.as_ref()
     }
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateSqlInjectionMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
-    pub fn change_token(&self) -> std::option::Option<&str> {
+    pub fn change_token(&self) -> ::std::option::Option<&str> {
         self.change_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for CreateSqlInjectionMatchSetOutput {
+impl ::aws_http::request_id::RequestId for CreateSqlInjectionMatchSetOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -38,33 +38,35 @@ impl CreateSqlInjectionMatchSetOutput {
 
 /// A builder for [`CreateSqlInjectionMatchSetOutput`](crate::operation::create_sql_injection_match_set::CreateSqlInjectionMatchSetOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateSqlInjectionMatchSetOutputBuilder {
-    pub(crate) sql_injection_match_set: std::option::Option<crate::types::SqlInjectionMatchSet>,
-    pub(crate) change_token: std::option::Option<std::string::String>,
+    pub(crate) sql_injection_match_set: ::std::option::Option<crate::types::SqlInjectionMatchSet>,
+    pub(crate) change_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateSqlInjectionMatchSetOutputBuilder {
     /// <p>A <code>SqlInjectionMatchSet</code>.</p>
     pub fn sql_injection_match_set(mut self, input: crate::types::SqlInjectionMatchSet) -> Self {
-        self.sql_injection_match_set = Some(input);
+        self.sql_injection_match_set = ::std::option::Option::Some(input);
         self
     }
     /// <p>A <code>SqlInjectionMatchSet</code>.</p>
     pub fn set_sql_injection_match_set(
         mut self,
-        input: std::option::Option<crate::types::SqlInjectionMatchSet>,
+        input: ::std::option::Option<crate::types::SqlInjectionMatchSet>,
     ) -> Self {
         self.sql_injection_match_set = input;
         self
     }
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateSqlInjectionMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
-    pub fn change_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.change_token = Some(input.into());
+    pub fn change_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.change_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateSqlInjectionMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
-    pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_change_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.change_token = input;
         self
     }

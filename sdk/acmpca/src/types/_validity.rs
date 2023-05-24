@@ -3,11 +3,11 @@
 /// <p>Validity specifies the period of time during which a certificate is valid. Validity can be expressed as an explicit date and time when the validity of a certificate starts or expires, or as a span of time after issuance, stated in days, months, or years. For more information, see <a href="https://tools.ietf.org/html/rfc5280#section-4.1.2.5">Validity</a> in RFC 5280.</p>
 /// <p>Amazon Web Services Private CA API consumes the <code>Validity</code> data type differently in two distinct parameters of the <code>IssueCertificate</code> action. The required parameter <code>IssueCertificate</code>:<code>Validity</code> specifies the end of a certificate's validity period. The optional parameter <code>IssueCertificate</code>:<code>ValidityNotBefore</code> specifies a customized starting time for the validity period.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Validity {
     /// <p>A long integer interpreted according to the value of <code>Type</code>, below.</p>
     #[doc(hidden)]
-    pub value: std::option::Option<i64>,
+    pub value: ::std::option::Option<i64>,
     /// <p>Determines how <i>Amazon Web Services Private CA</i> interprets the <code>Value</code> parameter, an integer. Supported validity types include those listed below. Type definitions with values include a sample input value and the resulting output. </p>
     /// <p> <code>END_DATE</code>: The specific date and time when the certificate will expire, expressed using UTCTime (YYMMDDHHMMSS) or GeneralizedTime (YYYYMMDDHHMMSS) format. When UTCTime is used, if the year field (YY) is greater than or equal to 50, the year is interpreted as 19YY. If the year field is less than 50, the year is interpreted as 20YY.</p>
     /// <ul>
@@ -27,11 +27,11 @@ pub struct Validity {
     /// </ul>
     /// <p>The minimum validity duration for a certificate using relative time (<code>DAYS</code>) is one day. The minimum validity for a certificate using absolute time (<code>ABSOLUTE</code> or <code>END_DATE</code>) is one second.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::ValidityPeriodType>,
+    pub r#type: ::std::option::Option<crate::types::ValidityPeriodType>,
 }
 impl Validity {
     /// <p>A long integer interpreted according to the value of <code>Type</code>, below.</p>
-    pub fn value(&self) -> std::option::Option<i64> {
+    pub fn value(&self) -> ::std::option::Option<i64> {
         self.value
     }
     /// <p>Determines how <i>Amazon Web Services Private CA</i> interprets the <code>Value</code> parameter, an integer. Supported validity types include those listed below. Type definitions with values include a sample input value and the resulting output. </p>
@@ -52,7 +52,7 @@ impl Validity {
     /// <li> <p>Output expiration date: 01/10/2020 12:34:54 UTC</p> </li>
     /// </ul>
     /// <p>The minimum validity duration for a certificate using relative time (<code>DAYS</code>) is one day. The minimum validity for a certificate using absolute time (<code>ABSOLUTE</code> or <code>END_DATE</code>) is one second.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::ValidityPeriodType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ValidityPeriodType> {
         self.r#type.as_ref()
     }
 }
@@ -65,19 +65,21 @@ impl Validity {
 
 /// A builder for [`Validity`](crate::types::Validity).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ValidityBuilder {
-    pub(crate) value: std::option::Option<i64>,
-    pub(crate) r#type: std::option::Option<crate::types::ValidityPeriodType>,
+    pub(crate) value: ::std::option::Option<i64>,
+    pub(crate) r#type: ::std::option::Option<crate::types::ValidityPeriodType>,
 }
 impl ValidityBuilder {
     /// <p>A long integer interpreted according to the value of <code>Type</code>, below.</p>
     pub fn value(mut self, input: i64) -> Self {
-        self.value = Some(input);
+        self.value = ::std::option::Option::Some(input);
         self
     }
     /// <p>A long integer interpreted according to the value of <code>Type</code>, below.</p>
-    pub fn set_value(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<i64>) -> Self {
         self.value = input;
         self
     }
@@ -100,7 +102,7 @@ impl ValidityBuilder {
     /// </ul>
     /// <p>The minimum validity duration for a certificate using relative time (<code>DAYS</code>) is one day. The minimum validity for a certificate using absolute time (<code>ABSOLUTE</code> or <code>END_DATE</code>) is one second.</p>
     pub fn r#type(mut self, input: crate::types::ValidityPeriodType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Determines how <i>Amazon Web Services Private CA</i> interprets the <code>Value</code> parameter, an integer. Supported validity types include those listed below. Type definitions with values include a sample input value and the resulting output. </p>
@@ -123,7 +125,7 @@ impl ValidityBuilder {
     /// <p>The minimum validity duration for a certificate using relative time (<code>DAYS</code>) is one day. The minimum validity for a certificate using absolute time (<code>ABSOLUTE</code> or <code>END_DATE</code>) is one second.</p>
     pub fn set_type(
         mut self,
-        input: std::option::Option<crate::types::ValidityPeriodType>,
+        input: ::std::option::Option<crate::types::ValidityPeriodType>,
     ) -> Self {
         self.r#type = input;
         self

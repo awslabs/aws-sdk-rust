@@ -7,15 +7,15 @@
 /// part of the enums that are public interface.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
-pub struct UnknownVariantValue(pub(crate) String);
+pub struct UnknownVariantValue(pub(crate) ::std::string::String);
 impl UnknownVariantValue {
     pub(crate) fn as_str(&self) -> &str {
         &self.0

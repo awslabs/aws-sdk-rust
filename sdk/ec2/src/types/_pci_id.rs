@@ -2,36 +2,36 @@
 
 /// <p>Describes the data that identifies an Amazon FPGA image (AFI) on the PCI bus.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PciId {
     /// <p>The ID of the device.</p>
     #[doc(hidden)]
-    pub device_id: std::option::Option<std::string::String>,
+    pub device_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the vendor.</p>
     #[doc(hidden)]
-    pub vendor_id: std::option::Option<std::string::String>,
+    pub vendor_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the subsystem.</p>
     #[doc(hidden)]
-    pub subsystem_id: std::option::Option<std::string::String>,
+    pub subsystem_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the vendor for the subsystem.</p>
     #[doc(hidden)]
-    pub subsystem_vendor_id: std::option::Option<std::string::String>,
+    pub subsystem_vendor_id: ::std::option::Option<::std::string::String>,
 }
 impl PciId {
     /// <p>The ID of the device.</p>
-    pub fn device_id(&self) -> std::option::Option<&str> {
+    pub fn device_id(&self) -> ::std::option::Option<&str> {
         self.device_id.as_deref()
     }
     /// <p>The ID of the vendor.</p>
-    pub fn vendor_id(&self) -> std::option::Option<&str> {
+    pub fn vendor_id(&self) -> ::std::option::Option<&str> {
         self.vendor_id.as_deref()
     }
     /// <p>The ID of the subsystem.</p>
-    pub fn subsystem_id(&self) -> std::option::Option<&str> {
+    pub fn subsystem_id(&self) -> ::std::option::Option<&str> {
         self.subsystem_id.as_deref()
     }
     /// <p>The ID of the vendor for the subsystem.</p>
-    pub fn subsystem_vendor_id(&self) -> std::option::Option<&str> {
+    pub fn subsystem_vendor_id(&self) -> ::std::option::Option<&str> {
         self.subsystem_vendor_id.as_deref()
     }
 }
@@ -44,53 +44,58 @@ impl PciId {
 
 /// A builder for [`PciId`](crate::types::PciId).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PciIdBuilder {
-    pub(crate) device_id: std::option::Option<std::string::String>,
-    pub(crate) vendor_id: std::option::Option<std::string::String>,
-    pub(crate) subsystem_id: std::option::Option<std::string::String>,
-    pub(crate) subsystem_vendor_id: std::option::Option<std::string::String>,
+    pub(crate) device_id: ::std::option::Option<::std::string::String>,
+    pub(crate) vendor_id: ::std::option::Option<::std::string::String>,
+    pub(crate) subsystem_id: ::std::option::Option<::std::string::String>,
+    pub(crate) subsystem_vendor_id: ::std::option::Option<::std::string::String>,
 }
 impl PciIdBuilder {
     /// <p>The ID of the device.</p>
-    pub fn device_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.device_id = Some(input.into());
+    pub fn device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.device_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the device.</p>
-    pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_id = input;
         self
     }
     /// <p>The ID of the vendor.</p>
-    pub fn vendor_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.vendor_id = Some(input.into());
+    pub fn vendor_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.vendor_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the vendor.</p>
-    pub fn set_vendor_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_vendor_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.vendor_id = input;
         self
     }
     /// <p>The ID of the subsystem.</p>
-    pub fn subsystem_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.subsystem_id = Some(input.into());
+    pub fn subsystem_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.subsystem_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the subsystem.</p>
-    pub fn set_subsystem_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_subsystem_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subsystem_id = input;
         self
     }
     /// <p>The ID of the vendor for the subsystem.</p>
-    pub fn subsystem_vendor_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.subsystem_vendor_id = Some(input.into());
+    pub fn subsystem_vendor_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.subsystem_vendor_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the vendor for the subsystem.</p>
     pub fn set_subsystem_vendor_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.subsystem_vendor_id = input;
         self

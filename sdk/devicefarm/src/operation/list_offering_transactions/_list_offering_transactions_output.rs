@@ -2,30 +2,30 @@
 
 /// <p>Returns the transaction log of the specified offerings.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListOfferingTransactionsOutput {
     /// <p>The audit log of subscriptions you have purchased and modified through AWS Device Farm.</p>
     #[doc(hidden)]
     pub offering_transactions:
-        std::option::Option<std::vec::Vec<crate::types::OfferingTransaction>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::OfferingTransaction>>,
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListOfferingTransactionsOutput {
     /// <p>The audit log of subscriptions you have purchased and modified through AWS Device Farm.</p>
     pub fn offering_transactions(
         &self,
-    ) -> std::option::Option<&[crate::types::OfferingTransaction]> {
+    ) -> ::std::option::Option<&[crate::types::OfferingTransaction]> {
         self.offering_transactions.as_deref()
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListOfferingTransactionsOutput {
+impl ::aws_http::request_id::RequestId for ListOfferingTransactionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -41,11 +41,13 @@ impl ListOfferingTransactionsOutput {
 
 /// A builder for [`ListOfferingTransactionsOutput`](crate::operation::list_offering_transactions::ListOfferingTransactionsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListOfferingTransactionsOutputBuilder {
     pub(crate) offering_transactions:
-        std::option::Option<std::vec::Vec<crate::types::OfferingTransaction>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::OfferingTransaction>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListOfferingTransactionsOutputBuilder {
@@ -57,24 +59,24 @@ impl ListOfferingTransactionsOutputBuilder {
     pub fn offering_transactions(mut self, input: crate::types::OfferingTransaction) -> Self {
         let mut v = self.offering_transactions.unwrap_or_default();
         v.push(input);
-        self.offering_transactions = Some(v);
+        self.offering_transactions = ::std::option::Option::Some(v);
         self
     }
     /// <p>The audit log of subscriptions you have purchased and modified through AWS Device Farm.</p>
     pub fn set_offering_transactions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::OfferingTransaction>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::OfferingTransaction>>,
     ) -> Self {
         self.offering_transactions = input;
         self
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

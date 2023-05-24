@@ -2,20 +2,20 @@
 
 /// <p>Contains the Amazon S3 Glacier response to the <code>GetDataRetrievalPolicy</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDataRetrievalPolicyOutput {
     /// <p>Contains the returned data retrieval policy in JSON format.</p>
     #[doc(hidden)]
-    pub policy: std::option::Option<crate::types::DataRetrievalPolicy>,
+    pub policy: ::std::option::Option<crate::types::DataRetrievalPolicy>,
     _request_id: Option<String>,
 }
 impl GetDataRetrievalPolicyOutput {
     /// <p>Contains the returned data retrieval policy in JSON format.</p>
-    pub fn policy(&self) -> std::option::Option<&crate::types::DataRetrievalPolicy> {
+    pub fn policy(&self) -> ::std::option::Option<&crate::types::DataRetrievalPolicy> {
         self.policy.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for GetDataRetrievalPolicyOutput {
+impl ::aws_http::request_id::RequestId for GetDataRetrievalPolicyOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -31,21 +31,23 @@ impl GetDataRetrievalPolicyOutput {
 
 /// A builder for [`GetDataRetrievalPolicyOutput`](crate::operation::get_data_retrieval_policy::GetDataRetrievalPolicyOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetDataRetrievalPolicyOutputBuilder {
-    pub(crate) policy: std::option::Option<crate::types::DataRetrievalPolicy>,
+    pub(crate) policy: ::std::option::Option<crate::types::DataRetrievalPolicy>,
     _request_id: Option<String>,
 }
 impl GetDataRetrievalPolicyOutputBuilder {
     /// <p>Contains the returned data retrieval policy in JSON format.</p>
     pub fn policy(mut self, input: crate::types::DataRetrievalPolicy) -> Self {
-        self.policy = Some(input);
+        self.policy = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains the returned data retrieval policy in JSON format.</p>
     pub fn set_policy(
         mut self,
-        input: std::option::Option<crate::types::DataRetrievalPolicy>,
+        input: ::std::option::Option<crate::types::DataRetrievalPolicy>,
     ) -> Self {
         self.policy = input;
         self

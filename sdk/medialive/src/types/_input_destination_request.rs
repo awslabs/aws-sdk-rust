@@ -2,15 +2,15 @@
 
 /// Endpoint settings for a PUSH type input.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InputDestinationRequest {
     /// A unique name for the location the RTMP stream is being pushed to.
     #[doc(hidden)]
-    pub stream_name: std::option::Option<std::string::String>,
+    pub stream_name: ::std::option::Option<::std::string::String>,
 }
 impl InputDestinationRequest {
     /// A unique name for the location the RTMP stream is being pushed to.
-    pub fn stream_name(&self) -> std::option::Option<&str> {
+    pub fn stream_name(&self) -> ::std::option::Option<&str> {
         self.stream_name.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl InputDestinationRequest {
 
 /// A builder for [`InputDestinationRequest`](crate::types::InputDestinationRequest).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InputDestinationRequestBuilder {
-    pub(crate) stream_name: std::option::Option<std::string::String>,
+    pub(crate) stream_name: ::std::option::Option<::std::string::String>,
 }
 impl InputDestinationRequestBuilder {
     /// A unique name for the location the RTMP stream is being pushed to.
-    pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.stream_name = Some(input.into());
+    pub fn stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.stream_name = ::std::option::Option::Some(input.into());
         self
     }
     /// A unique name for the location the RTMP stream is being pushed to.
-    pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_stream_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stream_name = input;
         self
     }

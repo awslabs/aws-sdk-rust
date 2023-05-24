@@ -45,13 +45,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ReportInstanceReasonCodes {
     #[allow(missing_docs)] // documentation missing in model
@@ -75,7 +75,7 @@ pub enum ReportInstanceReasonCodes {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ReportInstanceReasonCodes {
+impl ::std::convert::From<&str> for ReportInstanceReasonCodes {
     fn from(s: &str) -> Self {
         match s {
             "instance-stuck-in-state" => ReportInstanceReasonCodes::InstanceStuckInState,
@@ -93,11 +93,11 @@ impl std::convert::From<&str> for ReportInstanceReasonCodes {
         }
     }
 }
-impl std::str::FromStr for ReportInstanceReasonCodes {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ReportInstanceReasonCodes {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ReportInstanceReasonCodes::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ReportInstanceReasonCodes::from(s))
     }
 }
 impl ReportInstanceReasonCodes {
@@ -131,7 +131,7 @@ impl ReportInstanceReasonCodes {
         ]
     }
 }
-impl AsRef<str> for ReportInstanceReasonCodes {
+impl ::std::convert::AsRef<str> for ReportInstanceReasonCodes {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

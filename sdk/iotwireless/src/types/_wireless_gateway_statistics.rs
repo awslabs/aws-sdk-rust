@@ -2,50 +2,50 @@
 
 /// <p>Information about a wireless gateway's operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WirelessGatewayStatistics {
     /// <p>The Amazon Resource Name of the resource.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the wireless gateway reporting the data.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the resource.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the resource.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>LoRaWAN gateway info.</p>
     #[doc(hidden)]
-    pub lo_ra_wan: std::option::Option<crate::types::LoRaWanGateway>,
+    pub lo_ra_wan: ::std::option::Option<crate::types::LoRaWanGateway>,
     /// <p>The date and time when the most recent uplink was received.</p>
     #[doc(hidden)]
-    pub last_uplink_received_at: std::option::Option<std::string::String>,
+    pub last_uplink_received_at: ::std::option::Option<::std::string::String>,
 }
 impl WirelessGatewayStatistics {
     /// <p>The Amazon Resource Name of the resource.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The ID of the wireless gateway reporting the data.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The name of the resource.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The description of the resource.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>LoRaWAN gateway info.</p>
-    pub fn lo_ra_wan(&self) -> std::option::Option<&crate::types::LoRaWanGateway> {
+    pub fn lo_ra_wan(&self) -> ::std::option::Option<&crate::types::LoRaWanGateway> {
         self.lo_ra_wan.as_ref()
     }
     /// <p>The date and time when the most recent uplink was received.</p>
-    pub fn last_uplink_received_at(&self) -> std::option::Option<&str> {
+    pub fn last_uplink_received_at(&self) -> ::std::option::Option<&str> {
         self.last_uplink_received_at.as_deref()
     }
 }
@@ -58,78 +58,83 @@ impl WirelessGatewayStatistics {
 
 /// A builder for [`WirelessGatewayStatistics`](crate::types::WirelessGatewayStatistics).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct WirelessGatewayStatisticsBuilder {
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) lo_ra_wan: std::option::Option<crate::types::LoRaWanGateway>,
-    pub(crate) last_uplink_received_at: std::option::Option<std::string::String>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) lo_ra_wan: ::std::option::Option<crate::types::LoRaWanGateway>,
+    pub(crate) last_uplink_received_at: ::std::option::Option<::std::string::String>,
 }
 impl WirelessGatewayStatisticsBuilder {
     /// <p>The Amazon Resource Name of the resource.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name of the resource.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// <p>The ID of the wireless gateway reporting the data.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the wireless gateway reporting the data.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>The name of the resource.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the resource.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The description of the resource.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the resource.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>LoRaWAN gateway info.</p>
     pub fn lo_ra_wan(mut self, input: crate::types::LoRaWanGateway) -> Self {
-        self.lo_ra_wan = Some(input);
+        self.lo_ra_wan = ::std::option::Option::Some(input);
         self
     }
     /// <p>LoRaWAN gateway info.</p>
     pub fn set_lo_ra_wan(
         mut self,
-        input: std::option::Option<crate::types::LoRaWanGateway>,
+        input: ::std::option::Option<crate::types::LoRaWanGateway>,
     ) -> Self {
         self.lo_ra_wan = input;
         self
     }
     /// <p>The date and time when the most recent uplink was received.</p>
-    pub fn last_uplink_received_at(mut self, input: impl Into<std::string::String>) -> Self {
-        self.last_uplink_received_at = Some(input.into());
+    pub fn last_uplink_received_at(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.last_uplink_received_at = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date and time when the most recent uplink was received.</p>
     pub fn set_last_uplink_received_at(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.last_uplink_received_at = input;
         self

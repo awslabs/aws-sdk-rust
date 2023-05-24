@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum CategoryFilterType {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum CategoryFilterType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for CategoryFilterType {
+impl ::std::convert::From<&str> for CategoryFilterType {
     fn from(s: &str) -> Self {
         match s {
             "CUSTOM_FILTER" => CategoryFilterType::CustomFilter,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for CategoryFilterType {
         }
     }
 }
-impl std::str::FromStr for CategoryFilterType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for CategoryFilterType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CategoryFilterType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(CategoryFilterType::from(s))
     }
 }
 impl CategoryFilterType {
@@ -91,7 +91,7 @@ impl CategoryFilterType {
         &["CUSTOM_FILTER", "CUSTOM_FILTER_LIST", "FILTER_LIST"]
     }
 }
-impl AsRef<str> for CategoryFilterType {
+impl ::std::convert::AsRef<str> for CategoryFilterType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

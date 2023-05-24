@@ -2,43 +2,43 @@
 
 /// <p>Contains the response to a successful <code>GetAccountAuthorizationDetails</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAccountAuthorizationDetailsOutput {
     /// <p>A list containing information about IAM users.</p>
     #[doc(hidden)]
-    pub user_detail_list: std::option::Option<std::vec::Vec<crate::types::UserDetail>>,
+    pub user_detail_list: ::std::option::Option<::std::vec::Vec<crate::types::UserDetail>>,
     /// <p>A list containing information about IAM groups.</p>
     #[doc(hidden)]
-    pub group_detail_list: std::option::Option<std::vec::Vec<crate::types::GroupDetail>>,
+    pub group_detail_list: ::std::option::Option<::std::vec::Vec<crate::types::GroupDetail>>,
     /// <p>A list containing information about IAM roles.</p>
     #[doc(hidden)]
-    pub role_detail_list: std::option::Option<std::vec::Vec<crate::types::RoleDetail>>,
+    pub role_detail_list: ::std::option::Option<::std::vec::Vec<crate::types::RoleDetail>>,
     /// <p>A list containing information about managed policies.</p>
     #[doc(hidden)]
-    pub policies: std::option::Option<std::vec::Vec<crate::types::ManagedPolicyDetail>>,
+    pub policies: ::std::option::Option<::std::vec::Vec<crate::types::ManagedPolicyDetail>>,
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
     #[doc(hidden)]
     pub is_truncated: bool,
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     #[doc(hidden)]
-    pub marker: std::option::Option<std::string::String>,
+    pub marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetAccountAuthorizationDetailsOutput {
     /// <p>A list containing information about IAM users.</p>
-    pub fn user_detail_list(&self) -> std::option::Option<&[crate::types::UserDetail]> {
+    pub fn user_detail_list(&self) -> ::std::option::Option<&[crate::types::UserDetail]> {
         self.user_detail_list.as_deref()
     }
     /// <p>A list containing information about IAM groups.</p>
-    pub fn group_detail_list(&self) -> std::option::Option<&[crate::types::GroupDetail]> {
+    pub fn group_detail_list(&self) -> ::std::option::Option<&[crate::types::GroupDetail]> {
         self.group_detail_list.as_deref()
     }
     /// <p>A list containing information about IAM roles.</p>
-    pub fn role_detail_list(&self) -> std::option::Option<&[crate::types::RoleDetail]> {
+    pub fn role_detail_list(&self) -> ::std::option::Option<&[crate::types::RoleDetail]> {
         self.role_detail_list.as_deref()
     }
     /// <p>A list containing information about managed policies.</p>
-    pub fn policies(&self) -> std::option::Option<&[crate::types::ManagedPolicyDetail]> {
+    pub fn policies(&self) -> ::std::option::Option<&[crate::types::ManagedPolicyDetail]> {
         self.policies.as_deref()
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
@@ -46,11 +46,11 @@ impl GetAccountAuthorizationDetailsOutput {
         self.is_truncated
     }
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for GetAccountAuthorizationDetailsOutput {
+impl ::aws_http::request_id::RequestId for GetAccountAuthorizationDetailsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -64,14 +64,16 @@ impl GetAccountAuthorizationDetailsOutput {
 
 /// A builder for [`GetAccountAuthorizationDetailsOutput`](crate::operation::get_account_authorization_details::GetAccountAuthorizationDetailsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetAccountAuthorizationDetailsOutputBuilder {
-    pub(crate) user_detail_list: std::option::Option<std::vec::Vec<crate::types::UserDetail>>,
-    pub(crate) group_detail_list: std::option::Option<std::vec::Vec<crate::types::GroupDetail>>,
-    pub(crate) role_detail_list: std::option::Option<std::vec::Vec<crate::types::RoleDetail>>,
-    pub(crate) policies: std::option::Option<std::vec::Vec<crate::types::ManagedPolicyDetail>>,
-    pub(crate) is_truncated: std::option::Option<bool>,
-    pub(crate) marker: std::option::Option<std::string::String>,
+    pub(crate) user_detail_list: ::std::option::Option<::std::vec::Vec<crate::types::UserDetail>>,
+    pub(crate) group_detail_list: ::std::option::Option<::std::vec::Vec<crate::types::GroupDetail>>,
+    pub(crate) role_detail_list: ::std::option::Option<::std::vec::Vec<crate::types::RoleDetail>>,
+    pub(crate) policies: ::std::option::Option<::std::vec::Vec<crate::types::ManagedPolicyDetail>>,
+    pub(crate) is_truncated: ::std::option::Option<bool>,
+    pub(crate) marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetAccountAuthorizationDetailsOutputBuilder {
@@ -83,13 +85,13 @@ impl GetAccountAuthorizationDetailsOutputBuilder {
     pub fn user_detail_list(mut self, input: crate::types::UserDetail) -> Self {
         let mut v = self.user_detail_list.unwrap_or_default();
         v.push(input);
-        self.user_detail_list = Some(v);
+        self.user_detail_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list containing information about IAM users.</p>
     pub fn set_user_detail_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::UserDetail>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::UserDetail>>,
     ) -> Self {
         self.user_detail_list = input;
         self
@@ -102,13 +104,13 @@ impl GetAccountAuthorizationDetailsOutputBuilder {
     pub fn group_detail_list(mut self, input: crate::types::GroupDetail) -> Self {
         let mut v = self.group_detail_list.unwrap_or_default();
         v.push(input);
-        self.group_detail_list = Some(v);
+        self.group_detail_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list containing information about IAM groups.</p>
     pub fn set_group_detail_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::GroupDetail>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::GroupDetail>>,
     ) -> Self {
         self.group_detail_list = input;
         self
@@ -121,13 +123,13 @@ impl GetAccountAuthorizationDetailsOutputBuilder {
     pub fn role_detail_list(mut self, input: crate::types::RoleDetail) -> Self {
         let mut v = self.role_detail_list.unwrap_or_default();
         v.push(input);
-        self.role_detail_list = Some(v);
+        self.role_detail_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list containing information about IAM roles.</p>
     pub fn set_role_detail_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::RoleDetail>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::RoleDetail>>,
     ) -> Self {
         self.role_detail_list = input;
         self
@@ -140,34 +142,34 @@ impl GetAccountAuthorizationDetailsOutputBuilder {
     pub fn policies(mut self, input: crate::types::ManagedPolicyDetail) -> Self {
         let mut v = self.policies.unwrap_or_default();
         v.push(input);
-        self.policies = Some(v);
+        self.policies = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list containing information about managed policies.</p>
     pub fn set_policies(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ManagedPolicyDetail>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ManagedPolicyDetail>>,
     ) -> Self {
         self.policies = input;
         self
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
     pub fn is_truncated(mut self, input: bool) -> Self {
-        self.is_truncated = Some(input);
+        self.is_truncated = ::std::option::Option::Some(input);
         self
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
-    pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_truncated(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_truncated = input;
         self
     }
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
-    pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-        self.marker = Some(input.into());
+    pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
-    pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
     }

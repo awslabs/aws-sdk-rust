@@ -2,7 +2,7 @@
 
 /// <p>Specifies how DataSync can access a location using the NFS protocol.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NfsMountOptions {
     /// <p>Specifies the NFS version that you want DataSync to use when mounting your NFS share. If the server refuses to use the version specified, the task fails.</p>
     /// <p>You can specify the following options:</p>
@@ -15,7 +15,7 @@ pub struct NfsMountOptions {
     /// <p>DataSync currently only supports NFS version 3 with Amazon FSx for NetApp ONTAP locations.</p>
     /// </note>
     #[doc(hidden)]
-    pub version: std::option::Option<crate::types::NfsVersion>,
+    pub version: ::std::option::Option<crate::types::NfsVersion>,
 }
 impl NfsMountOptions {
     /// <p>Specifies the NFS version that you want DataSync to use when mounting your NFS share. If the server refuses to use the version specified, the task fails.</p>
@@ -28,7 +28,7 @@ impl NfsMountOptions {
     /// </ul> <note>
     /// <p>DataSync currently only supports NFS version 3 with Amazon FSx for NetApp ONTAP locations.</p>
     /// </note>
-    pub fn version(&self) -> std::option::Option<&crate::types::NfsVersion> {
+    pub fn version(&self) -> ::std::option::Option<&crate::types::NfsVersion> {
         self.version.as_ref()
     }
 }
@@ -41,9 +41,11 @@ impl NfsMountOptions {
 
 /// A builder for [`NfsMountOptions`](crate::types::NfsMountOptions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NfsMountOptionsBuilder {
-    pub(crate) version: std::option::Option<crate::types::NfsVersion>,
+    pub(crate) version: ::std::option::Option<crate::types::NfsVersion>,
 }
 impl NfsMountOptionsBuilder {
     /// <p>Specifies the NFS version that you want DataSync to use when mounting your NFS share. If the server refuses to use the version specified, the task fails.</p>
@@ -57,7 +59,7 @@ impl NfsMountOptionsBuilder {
     /// <p>DataSync currently only supports NFS version 3 with Amazon FSx for NetApp ONTAP locations.</p>
     /// </note>
     pub fn version(mut self, input: crate::types::NfsVersion) -> Self {
-        self.version = Some(input);
+        self.version = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the NFS version that you want DataSync to use when mounting your NFS share. If the server refuses to use the version specified, the task fails.</p>
@@ -70,7 +72,7 @@ impl NfsMountOptionsBuilder {
     /// </ul> <note>
     /// <p>DataSync currently only supports NFS version 3 with Amazon FSx for NetApp ONTAP locations.</p>
     /// </note>
-    pub fn set_version(mut self, input: std::option::Option<crate::types::NfsVersion>) -> Self {
+    pub fn set_version(mut self, input: ::std::option::Option<crate::types::NfsVersion>) -> Self {
         self.version = input;
         self
     }

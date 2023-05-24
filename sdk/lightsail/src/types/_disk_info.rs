@@ -2,36 +2,36 @@
 
 /// <p>Describes a disk.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DiskInfo {
     /// <p>The disk name.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The disk path.</p>
     #[doc(hidden)]
-    pub path: std::option::Option<std::string::String>,
+    pub path: ::std::option::Option<::std::string::String>,
     /// <p>The size of the disk in GB (e.g., <code>32</code>).</p>
     #[doc(hidden)]
-    pub size_in_gb: std::option::Option<i32>,
+    pub size_in_gb: ::std::option::Option<i32>,
     /// <p>A Boolean value indicating whether this disk is a system disk (has an operating system loaded on it).</p>
     #[doc(hidden)]
-    pub is_system_disk: std::option::Option<bool>,
+    pub is_system_disk: ::std::option::Option<bool>,
 }
 impl DiskInfo {
     /// <p>The disk name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The disk path.</p>
-    pub fn path(&self) -> std::option::Option<&str> {
+    pub fn path(&self) -> ::std::option::Option<&str> {
         self.path.as_deref()
     }
     /// <p>The size of the disk in GB (e.g., <code>32</code>).</p>
-    pub fn size_in_gb(&self) -> std::option::Option<i32> {
+    pub fn size_in_gb(&self) -> ::std::option::Option<i32> {
         self.size_in_gb
     }
     /// <p>A Boolean value indicating whether this disk is a system disk (has an operating system loaded on it).</p>
-    pub fn is_system_disk(&self) -> std::option::Option<bool> {
+    pub fn is_system_disk(&self) -> ::std::option::Option<bool> {
         self.is_system_disk
     }
 }
@@ -44,51 +44,53 @@ impl DiskInfo {
 
 /// A builder for [`DiskInfo`](crate::types::DiskInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DiskInfoBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) path: std::option::Option<std::string::String>,
-    pub(crate) size_in_gb: std::option::Option<i32>,
-    pub(crate) is_system_disk: std::option::Option<bool>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) path: ::std::option::Option<::std::string::String>,
+    pub(crate) size_in_gb: ::std::option::Option<i32>,
+    pub(crate) is_system_disk: ::std::option::Option<bool>,
 }
 impl DiskInfoBuilder {
     /// <p>The disk name.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The disk name.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The disk path.</p>
-    pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
-        self.path = Some(input.into());
+    pub fn path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The disk path.</p>
-    pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.path = input;
         self
     }
     /// <p>The size of the disk in GB (e.g., <code>32</code>).</p>
     pub fn size_in_gb(mut self, input: i32) -> Self {
-        self.size_in_gb = Some(input);
+        self.size_in_gb = ::std::option::Option::Some(input);
         self
     }
     /// <p>The size of the disk in GB (e.g., <code>32</code>).</p>
-    pub fn set_size_in_gb(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_size_in_gb(mut self, input: ::std::option::Option<i32>) -> Self {
         self.size_in_gb = input;
         self
     }
     /// <p>A Boolean value indicating whether this disk is a system disk (has an operating system loaded on it).</p>
     pub fn is_system_disk(mut self, input: bool) -> Self {
-        self.is_system_disk = Some(input);
+        self.is_system_disk = ::std::option::Option::Some(input);
         self
     }
     /// <p>A Boolean value indicating whether this disk is a system disk (has an operating system loaded on it).</p>
-    pub fn set_is_system_disk(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_system_disk(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_system_disk = input;
         self
     }

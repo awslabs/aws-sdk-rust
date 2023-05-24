@@ -2,57 +2,57 @@
 
 /// <p>Specifies the operator to use in a property-based condition that filters the results of a query for information about S3 buckets.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BucketCriteriaAdditionalProperties {
     /// <p>The value for the property matches (equals) the specified value. If you specify multiple values, Amazon Macie uses OR logic to join the values.</p>
     #[doc(hidden)]
-    pub eq: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub eq: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The value for the property is greater than the specified value.</p>
     #[doc(hidden)]
-    pub gt: std::option::Option<i64>,
+    pub gt: ::std::option::Option<i64>,
     /// <p>The value for the property is greater than or equal to the specified value.</p>
     #[doc(hidden)]
-    pub gte: std::option::Option<i64>,
+    pub gte: ::std::option::Option<i64>,
     /// <p>The value for the property is less than the specified value.</p>
     #[doc(hidden)]
-    pub lt: std::option::Option<i64>,
+    pub lt: ::std::option::Option<i64>,
     /// <p>The value for the property is less than or equal to the specified value.</p>
     #[doc(hidden)]
-    pub lte: std::option::Option<i64>,
+    pub lte: ::std::option::Option<i64>,
     /// <p>The value for the property doesn't match (doesn't equal) the specified value. If you specify multiple values, Amazon Macie uses OR logic to join the values.</p>
     #[doc(hidden)]
-    pub neq: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub neq: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The name of the bucket begins with the specified value.</p>
     #[doc(hidden)]
-    pub prefix: std::option::Option<std::string::String>,
+    pub prefix: ::std::option::Option<::std::string::String>,
 }
 impl BucketCriteriaAdditionalProperties {
     /// <p>The value for the property matches (equals) the specified value. If you specify multiple values, Amazon Macie uses OR logic to join the values.</p>
-    pub fn eq(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn eq(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.eq.as_deref()
     }
     /// <p>The value for the property is greater than the specified value.</p>
-    pub fn gt(&self) -> std::option::Option<i64> {
+    pub fn gt(&self) -> ::std::option::Option<i64> {
         self.gt
     }
     /// <p>The value for the property is greater than or equal to the specified value.</p>
-    pub fn gte(&self) -> std::option::Option<i64> {
+    pub fn gte(&self) -> ::std::option::Option<i64> {
         self.gte
     }
     /// <p>The value for the property is less than the specified value.</p>
-    pub fn lt(&self) -> std::option::Option<i64> {
+    pub fn lt(&self) -> ::std::option::Option<i64> {
         self.lt
     }
     /// <p>The value for the property is less than or equal to the specified value.</p>
-    pub fn lte(&self) -> std::option::Option<i64> {
+    pub fn lte(&self) -> ::std::option::Option<i64> {
         self.lte
     }
     /// <p>The value for the property doesn't match (doesn't equal) the specified value. If you specify multiple values, Amazon Macie uses OR logic to join the values.</p>
-    pub fn neq(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn neq(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.neq.as_deref()
     }
     /// <p>The name of the bucket begins with the specified value.</p>
-    pub fn prefix(&self) -> std::option::Option<&str> {
+    pub fn prefix(&self) -> ::std::option::Option<&str> {
         self.prefix.as_deref()
     }
 }
@@ -65,15 +65,17 @@ impl BucketCriteriaAdditionalProperties {
 
 /// A builder for [`BucketCriteriaAdditionalProperties`](crate::types::BucketCriteriaAdditionalProperties).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BucketCriteriaAdditionalPropertiesBuilder {
-    pub(crate) eq: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) gt: std::option::Option<i64>,
-    pub(crate) gte: std::option::Option<i64>,
-    pub(crate) lt: std::option::Option<i64>,
-    pub(crate) lte: std::option::Option<i64>,
-    pub(crate) neq: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) prefix: std::option::Option<std::string::String>,
+    pub(crate) eq: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) gt: ::std::option::Option<i64>,
+    pub(crate) gte: ::std::option::Option<i64>,
+    pub(crate) lt: ::std::option::Option<i64>,
+    pub(crate) lte: ::std::option::Option<i64>,
+    pub(crate) neq: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) prefix: ::std::option::Option<::std::string::String>,
 }
 impl BucketCriteriaAdditionalPropertiesBuilder {
     /// Appends an item to `eq`.
@@ -81,57 +83,57 @@ impl BucketCriteriaAdditionalPropertiesBuilder {
     /// To override the contents of this collection use [`set_eq`](Self::set_eq).
     ///
     /// <p>The value for the property matches (equals) the specified value. If you specify multiple values, Amazon Macie uses OR logic to join the values.</p>
-    pub fn eq(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn eq(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.eq.unwrap_or_default();
         v.push(input.into());
-        self.eq = Some(v);
+        self.eq = ::std::option::Option::Some(v);
         self
     }
     /// <p>The value for the property matches (equals) the specified value. If you specify multiple values, Amazon Macie uses OR logic to join the values.</p>
     pub fn set_eq(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.eq = input;
         self
     }
     /// <p>The value for the property is greater than the specified value.</p>
     pub fn gt(mut self, input: i64) -> Self {
-        self.gt = Some(input);
+        self.gt = ::std::option::Option::Some(input);
         self
     }
     /// <p>The value for the property is greater than the specified value.</p>
-    pub fn set_gt(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_gt(mut self, input: ::std::option::Option<i64>) -> Self {
         self.gt = input;
         self
     }
     /// <p>The value for the property is greater than or equal to the specified value.</p>
     pub fn gte(mut self, input: i64) -> Self {
-        self.gte = Some(input);
+        self.gte = ::std::option::Option::Some(input);
         self
     }
     /// <p>The value for the property is greater than or equal to the specified value.</p>
-    pub fn set_gte(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_gte(mut self, input: ::std::option::Option<i64>) -> Self {
         self.gte = input;
         self
     }
     /// <p>The value for the property is less than the specified value.</p>
     pub fn lt(mut self, input: i64) -> Self {
-        self.lt = Some(input);
+        self.lt = ::std::option::Option::Some(input);
         self
     }
     /// <p>The value for the property is less than the specified value.</p>
-    pub fn set_lt(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_lt(mut self, input: ::std::option::Option<i64>) -> Self {
         self.lt = input;
         self
     }
     /// <p>The value for the property is less than or equal to the specified value.</p>
     pub fn lte(mut self, input: i64) -> Self {
-        self.lte = Some(input);
+        self.lte = ::std::option::Option::Some(input);
         self
     }
     /// <p>The value for the property is less than or equal to the specified value.</p>
-    pub fn set_lte(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_lte(mut self, input: ::std::option::Option<i64>) -> Self {
         self.lte = input;
         self
     }
@@ -140,27 +142,27 @@ impl BucketCriteriaAdditionalPropertiesBuilder {
     /// To override the contents of this collection use [`set_neq`](Self::set_neq).
     ///
     /// <p>The value for the property doesn't match (doesn't equal) the specified value. If you specify multiple values, Amazon Macie uses OR logic to join the values.</p>
-    pub fn neq(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn neq(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.neq.unwrap_or_default();
         v.push(input.into());
-        self.neq = Some(v);
+        self.neq = ::std::option::Option::Some(v);
         self
     }
     /// <p>The value for the property doesn't match (doesn't equal) the specified value. If you specify multiple values, Amazon Macie uses OR logic to join the values.</p>
     pub fn set_neq(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.neq = input;
         self
     }
     /// <p>The name of the bucket begins with the specified value.</p>
-    pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
-        self.prefix = Some(input.into());
+    pub fn prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the bucket begins with the specified value.</p>
-    pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.prefix = input;
         self
     }

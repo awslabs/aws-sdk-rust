@@ -2,29 +2,29 @@
 
 /// <p>An object that contains the full name, description, and unit of a metric. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResponseResourceMetric {
     /// <p>The full name of the metric.</p>
     #[doc(hidden)]
-    pub metric: std::option::Option<std::string::String>,
+    pub metric: ::std::option::Option<::std::string::String>,
     /// <p>The description of the metric.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The unit of the metric.</p>
     #[doc(hidden)]
-    pub unit: std::option::Option<std::string::String>,
+    pub unit: ::std::option::Option<::std::string::String>,
 }
 impl ResponseResourceMetric {
     /// <p>The full name of the metric.</p>
-    pub fn metric(&self) -> std::option::Option<&str> {
+    pub fn metric(&self) -> ::std::option::Option<&str> {
         self.metric.as_deref()
     }
     /// <p>The description of the metric.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The unit of the metric.</p>
-    pub fn unit(&self) -> std::option::Option<&str> {
+    pub fn unit(&self) -> ::std::option::Option<&str> {
         self.unit.as_deref()
     }
 }
@@ -37,40 +37,42 @@ impl ResponseResourceMetric {
 
 /// A builder for [`ResponseResourceMetric`](crate::types::ResponseResourceMetric).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResponseResourceMetricBuilder {
-    pub(crate) metric: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) unit: std::option::Option<std::string::String>,
+    pub(crate) metric: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) unit: ::std::option::Option<::std::string::String>,
 }
 impl ResponseResourceMetricBuilder {
     /// <p>The full name of the metric.</p>
-    pub fn metric(mut self, input: impl Into<std::string::String>) -> Self {
-        self.metric = Some(input.into());
+    pub fn metric(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.metric = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The full name of the metric.</p>
-    pub fn set_metric(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_metric(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.metric = input;
         self
     }
     /// <p>The description of the metric.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the metric.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>The unit of the metric.</p>
-    pub fn unit(mut self, input: impl Into<std::string::String>) -> Self {
-        self.unit = Some(input.into());
+    pub fn unit(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.unit = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unit of the metric.</p>
-    pub fn set_unit(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_unit(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.unit = input;
         self
     }

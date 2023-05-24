@@ -37,13 +37,13 @@
 /// Rtmp Ad Markers
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum RtmpAdMarkers {
     #[allow(missing_docs)] // documentation missing in model
@@ -51,7 +51,7 @@ pub enum RtmpAdMarkers {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for RtmpAdMarkers {
+impl ::std::convert::From<&str> for RtmpAdMarkers {
     fn from(s: &str) -> Self {
         match s {
             "ON_CUE_POINT_SCTE35" => RtmpAdMarkers::OnCuePointScte35,
@@ -61,11 +61,11 @@ impl std::convert::From<&str> for RtmpAdMarkers {
         }
     }
 }
-impl std::str::FromStr for RtmpAdMarkers {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for RtmpAdMarkers {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RtmpAdMarkers::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(RtmpAdMarkers::from(s))
     }
 }
 impl RtmpAdMarkers {
@@ -81,7 +81,7 @@ impl RtmpAdMarkers {
         &["ON_CUE_POINT_SCTE35"]
     }
 }
-impl AsRef<str> for RtmpAdMarkers {
+impl ::std::convert::AsRef<str> for RtmpAdMarkers {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

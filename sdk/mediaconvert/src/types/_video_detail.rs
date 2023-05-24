@@ -2,22 +2,22 @@
 
 /// Contains details about the output's video stream
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VideoDetail {
     /// Height in pixels for the output
     #[doc(hidden)]
-    pub height_in_px: std::option::Option<i32>,
+    pub height_in_px: ::std::option::Option<i32>,
     /// Width in pixels for the output
     #[doc(hidden)]
-    pub width_in_px: std::option::Option<i32>,
+    pub width_in_px: ::std::option::Option<i32>,
 }
 impl VideoDetail {
     /// Height in pixels for the output
-    pub fn height_in_px(&self) -> std::option::Option<i32> {
+    pub fn height_in_px(&self) -> ::std::option::Option<i32> {
         self.height_in_px
     }
     /// Width in pixels for the output
-    pub fn width_in_px(&self) -> std::option::Option<i32> {
+    pub fn width_in_px(&self) -> ::std::option::Option<i32> {
         self.width_in_px
     }
 }
@@ -30,29 +30,31 @@ impl VideoDetail {
 
 /// A builder for [`VideoDetail`](crate::types::VideoDetail).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VideoDetailBuilder {
-    pub(crate) height_in_px: std::option::Option<i32>,
-    pub(crate) width_in_px: std::option::Option<i32>,
+    pub(crate) height_in_px: ::std::option::Option<i32>,
+    pub(crate) width_in_px: ::std::option::Option<i32>,
 }
 impl VideoDetailBuilder {
     /// Height in pixels for the output
     pub fn height_in_px(mut self, input: i32) -> Self {
-        self.height_in_px = Some(input);
+        self.height_in_px = ::std::option::Option::Some(input);
         self
     }
     /// Height in pixels for the output
-    pub fn set_height_in_px(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_height_in_px(mut self, input: ::std::option::Option<i32>) -> Self {
         self.height_in_px = input;
         self
     }
     /// Width in pixels for the output
     pub fn width_in_px(mut self, input: i32) -> Self {
-        self.width_in_px = Some(input);
+        self.width_in_px = ::std::option::Option::Some(input);
         self
     }
     /// Width in pixels for the output
-    pub fn set_width_in_px(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_width_in_px(mut self, input: ::std::option::Option<i32>) -> Self {
         self.width_in_px = input;
         self
     }

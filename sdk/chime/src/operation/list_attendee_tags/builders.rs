@@ -6,29 +6,29 @@ pub use crate::operation::list_attendee_tags::_list_attendee_tags_input::ListAtt
 /// Fluent builder constructing a request to `ListAttendeeTags`.
 ///
 /// <p>Lists the tags applied to an Amazon Chime SDK attendee resource.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAttendeeTagsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::list_attendee_tags::builders::ListAttendeeTagsInputBuilder,
 }
 impl ListAttendeeTagsFluentBuilder {
     /// Creates a new `ListAttendeeTags`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::list_attendee_tags::ListAttendeeTags,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::list_attendee_tags::ListAttendeeTagsError,
         >,
     > {
@@ -36,30 +36,33 @@ impl ListAttendeeTagsFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::list_attendee_tags::ListAttendeeTagsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::list_attendee_tags::ListAttendeeTagsError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,31 +75,31 @@ impl ListAttendeeTagsFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::list_attendee_tags::ListAttendeeTagsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::list_attendee_tags::ListAttendeeTagsError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The Amazon Chime SDK meeting ID.</p>
-    pub fn meeting_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn meeting_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.meeting_id(input.into());
         self
     }
     /// <p>The Amazon Chime SDK meeting ID.</p>
-    pub fn set_meeting_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_meeting_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_meeting_id(input);
         self
     }
     /// <p>The Amazon Chime SDK attendee ID.</p>
-    pub fn attendee_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn attendee_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.attendee_id(input.into());
         self
     }
     /// <p>The Amazon Chime SDK attendee ID.</p>
-    pub fn set_attendee_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_attendee_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_attendee_id(input);
         self
     }

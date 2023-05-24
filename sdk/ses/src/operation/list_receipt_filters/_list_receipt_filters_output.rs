@@ -2,20 +2,20 @@
 
 /// <p>A list of IP address filters that exist under your AWS account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListReceiptFiltersOutput {
     /// <p>A list of IP address filter data structures, which each consist of a name, an IP address range, and whether to allow or block mail from it.</p>
     #[doc(hidden)]
-    pub filters: std::option::Option<std::vec::Vec<crate::types::ReceiptFilter>>,
+    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::ReceiptFilter>>,
     _request_id: Option<String>,
 }
 impl ListReceiptFiltersOutput {
     /// <p>A list of IP address filter data structures, which each consist of a name, an IP address range, and whether to allow or block mail from it.</p>
-    pub fn filters(&self) -> std::option::Option<&[crate::types::ReceiptFilter]> {
+    pub fn filters(&self) -> ::std::option::Option<&[crate::types::ReceiptFilter]> {
         self.filters.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListReceiptFiltersOutput {
+impl ::aws_http::request_id::RequestId for ListReceiptFiltersOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,9 +30,11 @@ impl ListReceiptFiltersOutput {
 
 /// A builder for [`ListReceiptFiltersOutput`](crate::operation::list_receipt_filters::ListReceiptFiltersOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListReceiptFiltersOutputBuilder {
-    pub(crate) filters: std::option::Option<std::vec::Vec<crate::types::ReceiptFilter>>,
+    pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::ReceiptFilter>>,
     _request_id: Option<String>,
 }
 impl ListReceiptFiltersOutputBuilder {
@@ -44,13 +46,13 @@ impl ListReceiptFiltersOutputBuilder {
     pub fn filters(mut self, input: crate::types::ReceiptFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
         v.push(input);
-        self.filters = Some(v);
+        self.filters = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of IP address filter data structures, which each consist of a name, an IP address range, and whether to allow or block mail from it.</p>
     pub fn set_filters(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ReceiptFilter>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ReceiptFilter>>,
     ) -> Self {
         self.filters = input;
         self

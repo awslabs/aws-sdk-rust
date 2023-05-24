@@ -3,15 +3,15 @@
 /// <p>Describes the dataset entity list for an entity recognizer model.</p>
 /// <p>For more information on how the input file is formatted, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/prep-training-data-cer.html">Preparing training data</a> in the Comprehend Developer Guide. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatasetEntityRecognizerEntityList {
     /// <p>Specifies the Amazon S3 location where the entity list is located.</p>
     #[doc(hidden)]
-    pub s3_uri: std::option::Option<std::string::String>,
+    pub s3_uri: ::std::option::Option<::std::string::String>,
 }
 impl DatasetEntityRecognizerEntityList {
     /// <p>Specifies the Amazon S3 location where the entity list is located.</p>
-    pub fn s3_uri(&self) -> std::option::Option<&str> {
+    pub fn s3_uri(&self) -> ::std::option::Option<&str> {
         self.s3_uri.as_deref()
     }
 }
@@ -24,18 +24,20 @@ impl DatasetEntityRecognizerEntityList {
 
 /// A builder for [`DatasetEntityRecognizerEntityList`](crate::types::DatasetEntityRecognizerEntityList).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DatasetEntityRecognizerEntityListBuilder {
-    pub(crate) s3_uri: std::option::Option<std::string::String>,
+    pub(crate) s3_uri: ::std::option::Option<::std::string::String>,
 }
 impl DatasetEntityRecognizerEntityListBuilder {
     /// <p>Specifies the Amazon S3 location where the entity list is located.</p>
-    pub fn s3_uri(mut self, input: impl Into<std::string::String>) -> Self {
-        self.s3_uri = Some(input.into());
+    pub fn s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.s3_uri = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the Amazon S3 location where the entity list is located.</p>
-    pub fn set_s3_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_uri = input;
         self
     }

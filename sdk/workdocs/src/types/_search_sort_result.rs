@@ -2,22 +2,22 @@
 
 /// <p>The result of the sort operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchSortResult {
     /// <p>Sort search results based on this field name.</p>
     #[doc(hidden)]
-    pub field: std::option::Option<crate::types::OrderByFieldType>,
+    pub field: ::std::option::Option<crate::types::OrderByFieldType>,
     /// <p>Sort direction.</p>
     #[doc(hidden)]
-    pub order: std::option::Option<crate::types::SortOrder>,
+    pub order: ::std::option::Option<crate::types::SortOrder>,
 }
 impl SearchSortResult {
     /// <p>Sort search results based on this field name.</p>
-    pub fn field(&self) -> std::option::Option<&crate::types::OrderByFieldType> {
+    pub fn field(&self) -> ::std::option::Option<&crate::types::OrderByFieldType> {
         self.field.as_ref()
     }
     /// <p>Sort direction.</p>
-    pub fn order(&self) -> std::option::Option<&crate::types::SortOrder> {
+    pub fn order(&self) -> ::std::option::Option<&crate::types::SortOrder> {
         self.order.as_ref()
     }
 }
@@ -30,29 +30,34 @@ impl SearchSortResult {
 
 /// A builder for [`SearchSortResult`](crate::types::SearchSortResult).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SearchSortResultBuilder {
-    pub(crate) field: std::option::Option<crate::types::OrderByFieldType>,
-    pub(crate) order: std::option::Option<crate::types::SortOrder>,
+    pub(crate) field: ::std::option::Option<crate::types::OrderByFieldType>,
+    pub(crate) order: ::std::option::Option<crate::types::SortOrder>,
 }
 impl SearchSortResultBuilder {
     /// <p>Sort search results based on this field name.</p>
     pub fn field(mut self, input: crate::types::OrderByFieldType) -> Self {
-        self.field = Some(input);
+        self.field = ::std::option::Option::Some(input);
         self
     }
     /// <p>Sort search results based on this field name.</p>
-    pub fn set_field(mut self, input: std::option::Option<crate::types::OrderByFieldType>) -> Self {
+    pub fn set_field(
+        mut self,
+        input: ::std::option::Option<crate::types::OrderByFieldType>,
+    ) -> Self {
         self.field = input;
         self
     }
     /// <p>Sort direction.</p>
     pub fn order(mut self, input: crate::types::SortOrder) -> Self {
-        self.order = Some(input);
+        self.order = ::std::option::Option::Some(input);
         self
     }
     /// <p>Sort direction.</p>
-    pub fn set_order(mut self, input: std::option::Option<crate::types::SortOrder>) -> Self {
+    pub fn set_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.order = input;
         self
     }

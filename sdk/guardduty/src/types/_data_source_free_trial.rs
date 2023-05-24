@@ -2,7 +2,7 @@
 
 /// <p>Contains information about which data sources are enabled for the GuardDuty member account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataSourceFreeTrial {
     /// <p>A value that specifies the number of days left to use each enabled data source.</p>
     #[doc(hidden)]
@@ -23,18 +23,20 @@ impl DataSourceFreeTrial {
 
 /// A builder for [`DataSourceFreeTrial`](crate::types::DataSourceFreeTrial).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DataSourceFreeTrialBuilder {
-    pub(crate) free_trial_days_remaining: std::option::Option<i32>,
+    pub(crate) free_trial_days_remaining: ::std::option::Option<i32>,
 }
 impl DataSourceFreeTrialBuilder {
     /// <p>A value that specifies the number of days left to use each enabled data source.</p>
     pub fn free_trial_days_remaining(mut self, input: i32) -> Self {
-        self.free_trial_days_remaining = Some(input);
+        self.free_trial_days_remaining = ::std::option::Option::Some(input);
         self
     }
     /// <p>A value that specifies the number of days left to use each enabled data source.</p>
-    pub fn set_free_trial_days_remaining(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_free_trial_days_remaining(mut self, input: ::std::option::Option<i32>) -> Self {
         self.free_trial_days_remaining = input;
         self
     }

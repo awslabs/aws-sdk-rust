@@ -2,16 +2,16 @@
 
 /// <p>Contains an asset property value (of a single type).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum AssetPropertyVariant {
     /// <p>Optional. A string that contains the boolean value (<code>true</code> or <code>false</code>) of the value entry. Accepts substitution templates.</p>
-    BooleanValue(std::string::String),
+    BooleanValue(::std::string::String),
     /// <p>Optional. A string that contains the double value of the value entry. Accepts substitution templates.</p>
-    DoubleValue(std::string::String),
+    DoubleValue(::std::string::String),
     /// <p>Optional. A string that contains the integer value of the value entry. Accepts substitution templates.</p>
-    IntegerValue(std::string::String),
+    IntegerValue(::std::string::String),
     /// <p>Optional. The string value of the value entry. Accepts substitution templates.</p>
-    StringValue(std::string::String),
+    StringValue(::std::string::String),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -23,52 +23,52 @@ pub enum AssetPropertyVariant {
     Unknown,
 }
 impl AssetPropertyVariant {
-    /// Tries to convert the enum instance into [`BooleanValue`](crate::types::AssetPropertyVariant::BooleanValue), extracting the inner [`String`](std::string::String).
+    /// Tries to convert the enum instance into [`BooleanValue`](crate::types::AssetPropertyVariant::BooleanValue), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_boolean_value(&self) -> std::result::Result<&std::string::String, &Self> {
+    pub fn as_boolean_value(&self) -> ::std::result::Result<&::std::string::String, &Self> {
         if let AssetPropertyVariant::BooleanValue(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`BooleanValue`](crate::types::AssetPropertyVariant::BooleanValue).
     pub fn is_boolean_value(&self) -> bool {
         self.as_boolean_value().is_ok()
     }
-    /// Tries to convert the enum instance into [`DoubleValue`](crate::types::AssetPropertyVariant::DoubleValue), extracting the inner [`String`](std::string::String).
+    /// Tries to convert the enum instance into [`DoubleValue`](crate::types::AssetPropertyVariant::DoubleValue), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_double_value(&self) -> std::result::Result<&std::string::String, &Self> {
+    pub fn as_double_value(&self) -> ::std::result::Result<&::std::string::String, &Self> {
         if let AssetPropertyVariant::DoubleValue(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`DoubleValue`](crate::types::AssetPropertyVariant::DoubleValue).
     pub fn is_double_value(&self) -> bool {
         self.as_double_value().is_ok()
     }
-    /// Tries to convert the enum instance into [`IntegerValue`](crate::types::AssetPropertyVariant::IntegerValue), extracting the inner [`String`](std::string::String).
+    /// Tries to convert the enum instance into [`IntegerValue`](crate::types::AssetPropertyVariant::IntegerValue), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_integer_value(&self) -> std::result::Result<&std::string::String, &Self> {
+    pub fn as_integer_value(&self) -> ::std::result::Result<&::std::string::String, &Self> {
         if let AssetPropertyVariant::IntegerValue(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`IntegerValue`](crate::types::AssetPropertyVariant::IntegerValue).
     pub fn is_integer_value(&self) -> bool {
         self.as_integer_value().is_ok()
     }
-    /// Tries to convert the enum instance into [`StringValue`](crate::types::AssetPropertyVariant::StringValue), extracting the inner [`String`](std::string::String).
+    /// Tries to convert the enum instance into [`StringValue`](crate::types::AssetPropertyVariant::StringValue), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_string_value(&self) -> std::result::Result<&std::string::String, &Self> {
+    pub fn as_string_value(&self) -> ::std::result::Result<&::std::string::String, &Self> {
         if let AssetPropertyVariant::StringValue(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`StringValue`](crate::types::AssetPropertyVariant::StringValue).

@@ -6,29 +6,29 @@ pub use crate::operation::invoke_device_method::_invoke_device_method_input::Inv
 /// Fluent builder constructing a request to `InvokeDeviceMethod`.
 ///
 /// <p>Given a device ID, issues a request to invoke a named device method (with possible parameters). See the "Example POST" code snippet below.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct InvokeDeviceMethodFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::invoke_device_method::builders::InvokeDeviceMethodInputBuilder,
 }
 impl InvokeDeviceMethodFluentBuilder {
     /// Creates a new `InvokeDeviceMethod`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::invoke_device_method::InvokeDeviceMethod,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::invoke_device_method::InvokeDeviceMethodError,
         >,
     > {
@@ -36,30 +36,33 @@ impl InvokeDeviceMethodFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::invoke_device_method::InvokeDeviceMethodOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::invoke_device_method::InvokeDeviceMethodError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,21 +75,21 @@ impl InvokeDeviceMethodFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::invoke_device_method::InvokeDeviceMethodOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::invoke_device_method::InvokeDeviceMethodError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The unique identifier of the device.</p>
-    pub fn device_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn device_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.device_id(input.into());
         self
     }
     /// <p>The unique identifier of the device.</p>
-    pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_device_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_device_id(input);
         self
     }
@@ -98,20 +101,23 @@ impl InvokeDeviceMethodFluentBuilder {
     /// <p>The device method to invoke.</p>
     pub fn set_device_method(
         mut self,
-        input: std::option::Option<crate::types::DeviceMethod>,
+        input: ::std::option::Option<crate::types::DeviceMethod>,
     ) -> Self {
         self.inner = self.inner.set_device_method(input);
         self
     }
     /// <p>A JSON encoded string containing the device method request parameters.</p>
-    pub fn device_method_parameters(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn device_method_parameters(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.device_method_parameters(input.into());
         self
     }
     /// <p>A JSON encoded string containing the device method request parameters.</p>
     pub fn set_device_method_parameters(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_device_method_parameters(input);
         self

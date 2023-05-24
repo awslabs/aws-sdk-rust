@@ -2,52 +2,52 @@
 
 /// <p>The model card for a model displayed in the Amazon SageMaker Model Dashboard.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModelDashboardModelCard {
     /// <p>The Amazon Resource Name (ARN) for a model card.</p>
     #[doc(hidden)]
-    pub model_card_arn: std::option::Option<std::string::String>,
+    pub model_card_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of a model card.</p>
     #[doc(hidden)]
-    pub model_card_name: std::option::Option<std::string::String>,
+    pub model_card_name: ::std::option::Option<::std::string::String>,
     /// <p>The model card version.</p>
     #[doc(hidden)]
     pub model_card_version: i32,
     /// <p>The model card status.</p>
     #[doc(hidden)]
-    pub model_card_status: std::option::Option<crate::types::ModelCardStatus>,
+    pub model_card_status: ::std::option::Option<crate::types::ModelCardStatus>,
     /// <p>The KMS Key ID (<code>KMSKeyId</code>) for encryption of model card information.</p>
     #[doc(hidden)]
-    pub security_config: std::option::Option<crate::types::ModelCardSecurityConfig>,
+    pub security_config: ::std::option::Option<crate::types::ModelCardSecurityConfig>,
     /// <p>A timestamp that indicates when the model card was created.</p>
     #[doc(hidden)]
-    pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     #[doc(hidden)]
-    pub created_by: std::option::Option<crate::types::UserContext>,
+    pub created_by: ::std::option::Option<crate::types::UserContext>,
     /// <p>A timestamp that indicates when the model card was last updated.</p>
     #[doc(hidden)]
-    pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     #[doc(hidden)]
-    pub last_modified_by: std::option::Option<crate::types::UserContext>,
+    pub last_modified_by: ::std::option::Option<crate::types::UserContext>,
     /// <p>The tags associated with a model card.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>For models created in SageMaker, this is the model ARN. For models created outside of SageMaker, this is a user-customized string.</p>
     #[doc(hidden)]
-    pub model_id: std::option::Option<std::string::String>,
+    pub model_id: ::std::option::Option<::std::string::String>,
     /// <p>A model card's risk rating. Can be low, medium, or high.</p>
     #[doc(hidden)]
-    pub risk_rating: std::option::Option<std::string::String>,
+    pub risk_rating: ::std::option::Option<::std::string::String>,
 }
 impl ModelDashboardModelCard {
     /// <p>The Amazon Resource Name (ARN) for a model card.</p>
-    pub fn model_card_arn(&self) -> std::option::Option<&str> {
+    pub fn model_card_arn(&self) -> ::std::option::Option<&str> {
         self.model_card_arn.as_deref()
     }
     /// <p>The name of a model card.</p>
-    pub fn model_card_name(&self) -> std::option::Option<&str> {
+    pub fn model_card_name(&self) -> ::std::option::Option<&str> {
         self.model_card_name.as_deref()
     }
     /// <p>The model card version.</p>
@@ -55,39 +55,39 @@ impl ModelDashboardModelCard {
         self.model_card_version
     }
     /// <p>The model card status.</p>
-    pub fn model_card_status(&self) -> std::option::Option<&crate::types::ModelCardStatus> {
+    pub fn model_card_status(&self) -> ::std::option::Option<&crate::types::ModelCardStatus> {
         self.model_card_status.as_ref()
     }
     /// <p>The KMS Key ID (<code>KMSKeyId</code>) for encryption of model card information.</p>
-    pub fn security_config(&self) -> std::option::Option<&crate::types::ModelCardSecurityConfig> {
+    pub fn security_config(&self) -> ::std::option::Option<&crate::types::ModelCardSecurityConfig> {
         self.security_config.as_ref()
     }
     /// <p>A timestamp that indicates when the model card was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
-    pub fn created_by(&self) -> std::option::Option<&crate::types::UserContext> {
+    pub fn created_by(&self) -> ::std::option::Option<&crate::types::UserContext> {
         self.created_by.as_ref()
     }
     /// <p>A timestamp that indicates when the model card was last updated.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
-    pub fn last_modified_by(&self) -> std::option::Option<&crate::types::UserContext> {
+    pub fn last_modified_by(&self) -> ::std::option::Option<&crate::types::UserContext> {
         self.last_modified_by.as_ref()
     }
     /// <p>The tags associated with a model card.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>For models created in SageMaker, this is the model ARN. For models created outside of SageMaker, this is a user-customized string.</p>
-    pub fn model_id(&self) -> std::option::Option<&str> {
+    pub fn model_id(&self) -> ::std::option::Option<&str> {
         self.model_id.as_deref()
     }
     /// <p>A model card's risk rating. Can be low, medium, or high.</p>
-    pub fn risk_rating(&self) -> std::option::Option<&str> {
+    pub fn risk_rating(&self) -> ::std::option::Option<&str> {
         self.risk_rating.as_deref()
     }
 }
@@ -100,123 +100,140 @@ impl ModelDashboardModelCard {
 
 /// A builder for [`ModelDashboardModelCard`](crate::types::ModelDashboardModelCard).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ModelDashboardModelCardBuilder {
-    pub(crate) model_card_arn: std::option::Option<std::string::String>,
-    pub(crate) model_card_name: std::option::Option<std::string::String>,
-    pub(crate) model_card_version: std::option::Option<i32>,
-    pub(crate) model_card_status: std::option::Option<crate::types::ModelCardStatus>,
-    pub(crate) security_config: std::option::Option<crate::types::ModelCardSecurityConfig>,
-    pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) created_by: std::option::Option<crate::types::UserContext>,
-    pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_modified_by: std::option::Option<crate::types::UserContext>,
-    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    pub(crate) model_id: std::option::Option<std::string::String>,
-    pub(crate) risk_rating: std::option::Option<std::string::String>,
+    pub(crate) model_card_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) model_card_name: ::std::option::Option<::std::string::String>,
+    pub(crate) model_card_version: ::std::option::Option<i32>,
+    pub(crate) model_card_status: ::std::option::Option<crate::types::ModelCardStatus>,
+    pub(crate) security_config: ::std::option::Option<crate::types::ModelCardSecurityConfig>,
+    pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) created_by: ::std::option::Option<crate::types::UserContext>,
+    pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_modified_by: ::std::option::Option<crate::types::UserContext>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) model_id: ::std::option::Option<::std::string::String>,
+    pub(crate) risk_rating: ::std::option::Option<::std::string::String>,
 }
 impl ModelDashboardModelCardBuilder {
     /// <p>The Amazon Resource Name (ARN) for a model card.</p>
-    pub fn model_card_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.model_card_arn = Some(input.into());
+    pub fn model_card_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.model_card_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for a model card.</p>
-    pub fn set_model_card_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_model_card_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.model_card_arn = input;
         self
     }
     /// <p>The name of a model card.</p>
-    pub fn model_card_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.model_card_name = Some(input.into());
+    pub fn model_card_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.model_card_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a model card.</p>
-    pub fn set_model_card_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_model_card_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.model_card_name = input;
         self
     }
     /// <p>The model card version.</p>
     pub fn model_card_version(mut self, input: i32) -> Self {
-        self.model_card_version = Some(input);
+        self.model_card_version = ::std::option::Option::Some(input);
         self
     }
     /// <p>The model card version.</p>
-    pub fn set_model_card_version(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_model_card_version(mut self, input: ::std::option::Option<i32>) -> Self {
         self.model_card_version = input;
         self
     }
     /// <p>The model card status.</p>
     pub fn model_card_status(mut self, input: crate::types::ModelCardStatus) -> Self {
-        self.model_card_status = Some(input);
+        self.model_card_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The model card status.</p>
     pub fn set_model_card_status(
         mut self,
-        input: std::option::Option<crate::types::ModelCardStatus>,
+        input: ::std::option::Option<crate::types::ModelCardStatus>,
     ) -> Self {
         self.model_card_status = input;
         self
     }
     /// <p>The KMS Key ID (<code>KMSKeyId</code>) for encryption of model card information.</p>
     pub fn security_config(mut self, input: crate::types::ModelCardSecurityConfig) -> Self {
-        self.security_config = Some(input);
+        self.security_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The KMS Key ID (<code>KMSKeyId</code>) for encryption of model card information.</p>
     pub fn set_security_config(
         mut self,
-        input: std::option::Option<crate::types::ModelCardSecurityConfig>,
+        input: ::std::option::Option<crate::types::ModelCardSecurityConfig>,
     ) -> Self {
         self.security_config = input;
         self
     }
     /// <p>A timestamp that indicates when the model card was created.</p>
-    pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_time = Some(input);
+    pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>A timestamp that indicates when the model card was created.</p>
     pub fn set_creation_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_time = input;
         self
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     pub fn created_by(mut self, input: crate::types::UserContext) -> Self {
-        self.created_by = Some(input);
+        self.created_by = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
-    pub fn set_created_by(mut self, input: std::option::Option<crate::types::UserContext>) -> Self {
+    pub fn set_created_by(
+        mut self,
+        input: ::std::option::Option<crate::types::UserContext>,
+    ) -> Self {
         self.created_by = input;
         self
     }
     /// <p>A timestamp that indicates when the model card was last updated.</p>
-    pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_modified_time = Some(input);
+    pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_modified_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>A timestamp that indicates when the model card was last updated.</p>
     pub fn set_last_modified_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_modified_time = input;
         self
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     pub fn last_modified_by(mut self, input: crate::types::UserContext) -> Self {
-        self.last_modified_by = Some(input);
+        self.last_modified_by = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     pub fn set_last_modified_by(
         mut self,
-        input: std::option::Option<crate::types::UserContext>,
+        input: ::std::option::Option<crate::types::UserContext>,
     ) -> Self {
         self.last_modified_by = input;
         self
@@ -229,34 +246,34 @@ impl ModelDashboardModelCardBuilder {
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
-        self.tags = Some(v);
+        self.tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>The tags associated with a model card.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tags = input;
         self
     }
     /// <p>For models created in SageMaker, this is the model ARN. For models created outside of SageMaker, this is a user-customized string.</p>
-    pub fn model_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.model_id = Some(input.into());
+    pub fn model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.model_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>For models created in SageMaker, this is the model ARN. For models created outside of SageMaker, this is a user-customized string.</p>
-    pub fn set_model_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_id = input;
         self
     }
     /// <p>A model card's risk rating. Can be low, medium, or high.</p>
-    pub fn risk_rating(mut self, input: impl Into<std::string::String>) -> Self {
-        self.risk_rating = Some(input.into());
+    pub fn risk_rating(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.risk_rating = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A model card's risk rating. Can be low, medium, or high.</p>
-    pub fn set_risk_rating(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_risk_rating(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.risk_rating = input;
         self
     }

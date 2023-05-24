@@ -2,15 +2,15 @@
 
 /// <p>Provides connection details.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SourceConnectionParameters {
     /// <p>Provides <code>ConnectionType</code> details.</p>
     #[doc(hidden)]
-    pub code_star: std::option::Option<crate::types::CodeStarParameters>,
+    pub code_star: ::std::option::Option<crate::types::CodeStarParameters>,
 }
 impl SourceConnectionParameters {
     /// <p>Provides <code>ConnectionType</code> details.</p>
-    pub fn code_star(&self) -> std::option::Option<&crate::types::CodeStarParameters> {
+    pub fn code_star(&self) -> ::std::option::Option<&crate::types::CodeStarParameters> {
         self.code_star.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl SourceConnectionParameters {
 
 /// A builder for [`SourceConnectionParameters`](crate::types::SourceConnectionParameters).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SourceConnectionParametersBuilder {
-    pub(crate) code_star: std::option::Option<crate::types::CodeStarParameters>,
+    pub(crate) code_star: ::std::option::Option<crate::types::CodeStarParameters>,
 }
 impl SourceConnectionParametersBuilder {
     /// <p>Provides <code>ConnectionType</code> details.</p>
     pub fn code_star(mut self, input: crate::types::CodeStarParameters) -> Self {
-        self.code_star = Some(input);
+        self.code_star = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides <code>ConnectionType</code> details.</p>
     pub fn set_code_star(
         mut self,
-        input: std::option::Option<crate::types::CodeStarParameters>,
+        input: ::std::option::Option<crate::types::CodeStarParameters>,
     ) -> Self {
         self.code_star = input;
         self

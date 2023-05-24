@@ -2,7 +2,7 @@
 
 /// <p>A union type containing information related to the trigger.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum RecommendationTriggerData {
     /// <p>Data associated with the QUERY RecommendationTriggerType.</p>
     Query(crate::types::QueryRecommendationTriggerData),
@@ -22,11 +22,11 @@ impl RecommendationTriggerData {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_query(
         &self,
-    ) -> std::result::Result<&crate::types::QueryRecommendationTriggerData, &Self> {
+    ) -> ::std::result::Result<&crate::types::QueryRecommendationTriggerData, &Self> {
         if let RecommendationTriggerData::Query(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Query`](crate::types::RecommendationTriggerData::Query).

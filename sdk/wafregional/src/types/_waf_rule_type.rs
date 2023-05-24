@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum WafRuleType {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum WafRuleType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for WafRuleType {
+impl ::std::convert::From<&str> for WafRuleType {
     fn from(s: &str) -> Self {
         match s {
             "GROUP" => WafRuleType::Group,
@@ -67,11 +67,11 @@ impl std::convert::From<&str> for WafRuleType {
         }
     }
 }
-impl std::str::FromStr for WafRuleType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for WafRuleType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(WafRuleType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(WafRuleType::from(s))
     }
 }
 impl WafRuleType {
@@ -89,7 +89,7 @@ impl WafRuleType {
         &["GROUP", "RATE_BASED", "REGULAR"]
     }
 }
-impl AsRef<str> for WafRuleType {
+impl ::std::convert::AsRef<str> for WafRuleType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

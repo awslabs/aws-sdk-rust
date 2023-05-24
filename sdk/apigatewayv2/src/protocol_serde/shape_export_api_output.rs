@@ -2,10 +2,10 @@
 pub(crate) fn de_body_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<aws_smithy_types::Blob>,
+    ::std::option::Option<::aws_smithy_types::Blob>,
     crate::operation::export_api::ExportApiError,
 > {
     (!body.is_empty())
-        .then(|| Ok(aws_smithy_types::Blob::new(body)))
+        .then(|| Ok(::aws_smithy_types::Blob::new(body)))
         .transpose()
 }

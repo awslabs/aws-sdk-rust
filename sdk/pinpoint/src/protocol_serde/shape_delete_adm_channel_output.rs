@@ -2,7 +2,7 @@
 pub(crate) fn de_adm_channel_response_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::types::AdmChannelResponse>,
+    ::std::option::Option<crate::types::AdmChannelResponse>,
     crate::operation::delete_adm_channel::DeleteAdmChannelError,
 > {
     (!body.is_empty())

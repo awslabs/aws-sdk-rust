@@ -2,56 +2,56 @@
 
 /// <p>Contains information about a deployment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Deployment {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group. When creating a subdeployment, the targetARN can only be a thing group.</p>
     #[doc(hidden)]
-    pub target_arn: std::option::Option<std::string::String>,
+    pub target_arn: ::std::option::Option<::std::string::String>,
     /// <p>The revision number of the deployment.</p>
     #[doc(hidden)]
-    pub revision_id: std::option::Option<std::string::String>,
+    pub revision_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the deployment.</p>
     #[doc(hidden)]
-    pub deployment_id: std::option::Option<std::string::String>,
+    pub deployment_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the deployment.</p>
     #[doc(hidden)]
-    pub deployment_name: std::option::Option<std::string::String>,
+    pub deployment_name: ::std::option::Option<::std::string::String>,
     /// <p>The time at which the deployment was created, expressed in ISO 8601 format.</p>
     #[doc(hidden)]
-    pub creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The status of the deployment.</p>
     #[doc(hidden)]
-    pub deployment_status: std::option::Option<crate::types::DeploymentStatus>,
+    pub deployment_status: ::std::option::Option<crate::types::DeploymentStatus>,
     /// <p>Whether or not the deployment is the latest revision for its target.</p>
     #[doc(hidden)]
     pub is_latest_for_target: bool,
     /// <p>The parent deployment's target <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a subdeployment.</p>
     #[doc(hidden)]
-    pub parent_target_arn: std::option::Option<std::string::String>,
+    pub parent_target_arn: ::std::option::Option<::std::string::String>,
 }
 impl Deployment {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group. When creating a subdeployment, the targetARN can only be a thing group.</p>
-    pub fn target_arn(&self) -> std::option::Option<&str> {
+    pub fn target_arn(&self) -> ::std::option::Option<&str> {
         self.target_arn.as_deref()
     }
     /// <p>The revision number of the deployment.</p>
-    pub fn revision_id(&self) -> std::option::Option<&str> {
+    pub fn revision_id(&self) -> ::std::option::Option<&str> {
         self.revision_id.as_deref()
     }
     /// <p>The ID of the deployment.</p>
-    pub fn deployment_id(&self) -> std::option::Option<&str> {
+    pub fn deployment_id(&self) -> ::std::option::Option<&str> {
         self.deployment_id.as_deref()
     }
     /// <p>The name of the deployment.</p>
-    pub fn deployment_name(&self) -> std::option::Option<&str> {
+    pub fn deployment_name(&self) -> ::std::option::Option<&str> {
         self.deployment_name.as_deref()
     }
     /// <p>The time at which the deployment was created, expressed in ISO 8601 format.</p>
-    pub fn creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_timestamp.as_ref()
     }
     /// <p>The status of the deployment.</p>
-    pub fn deployment_status(&self) -> std::option::Option<&crate::types::DeploymentStatus> {
+    pub fn deployment_status(&self) -> ::std::option::Option<&crate::types::DeploymentStatus> {
         self.deployment_status.as_ref()
     }
     /// <p>Whether or not the deployment is the latest revision for its target.</p>
@@ -59,7 +59,7 @@ impl Deployment {
         self.is_latest_for_target
     }
     /// <p>The parent deployment's target <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a subdeployment.</p>
-    pub fn parent_target_arn(&self) -> std::option::Option<&str> {
+    pub fn parent_target_arn(&self) -> ::std::option::Option<&str> {
         self.parent_target_arn.as_deref()
     }
 }
@@ -72,103 +72,120 @@ impl Deployment {
 
 /// A builder for [`Deployment`](crate::types::Deployment).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeploymentBuilder {
-    pub(crate) target_arn: std::option::Option<std::string::String>,
-    pub(crate) revision_id: std::option::Option<std::string::String>,
-    pub(crate) deployment_id: std::option::Option<std::string::String>,
-    pub(crate) deployment_name: std::option::Option<std::string::String>,
-    pub(crate) creation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) deployment_status: std::option::Option<crate::types::DeploymentStatus>,
-    pub(crate) is_latest_for_target: std::option::Option<bool>,
-    pub(crate) parent_target_arn: std::option::Option<std::string::String>,
+    pub(crate) target_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) revision_id: ::std::option::Option<::std::string::String>,
+    pub(crate) deployment_id: ::std::option::Option<::std::string::String>,
+    pub(crate) deployment_name: ::std::option::Option<::std::string::String>,
+    pub(crate) creation_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) deployment_status: ::std::option::Option<crate::types::DeploymentStatus>,
+    pub(crate) is_latest_for_target: ::std::option::Option<bool>,
+    pub(crate) parent_target_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeploymentBuilder {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group. When creating a subdeployment, the targetARN can only be a thing group.</p>
-    pub fn target_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.target_arn = Some(input.into());
+    pub fn target_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.target_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group. When creating a subdeployment, the targetARN can only be a thing group.</p>
-    pub fn set_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_target_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_arn = input;
         self
     }
     /// <p>The revision number of the deployment.</p>
-    pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.revision_id = Some(input.into());
+    pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.revision_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The revision number of the deployment.</p>
-    pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.revision_id = input;
         self
     }
     /// <p>The ID of the deployment.</p>
-    pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.deployment_id = Some(input.into());
+    pub fn deployment_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.deployment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the deployment.</p>
-    pub fn set_deployment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_deployment_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.deployment_id = input;
         self
     }
     /// <p>The name of the deployment.</p>
-    pub fn deployment_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.deployment_name = Some(input.into());
+    pub fn deployment_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.deployment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the deployment.</p>
-    pub fn set_deployment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_deployment_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.deployment_name = input;
         self
     }
     /// <p>The time at which the deployment was created, expressed in ISO 8601 format.</p>
-    pub fn creation_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_timestamp = Some(input);
+    pub fn creation_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time at which the deployment was created, expressed in ISO 8601 format.</p>
     pub fn set_creation_timestamp(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_timestamp = input;
         self
     }
     /// <p>The status of the deployment.</p>
     pub fn deployment_status(mut self, input: crate::types::DeploymentStatus) -> Self {
-        self.deployment_status = Some(input);
+        self.deployment_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the deployment.</p>
     pub fn set_deployment_status(
         mut self,
-        input: std::option::Option<crate::types::DeploymentStatus>,
+        input: ::std::option::Option<crate::types::DeploymentStatus>,
     ) -> Self {
         self.deployment_status = input;
         self
     }
     /// <p>Whether or not the deployment is the latest revision for its target.</p>
     pub fn is_latest_for_target(mut self, input: bool) -> Self {
-        self.is_latest_for_target = Some(input);
+        self.is_latest_for_target = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether or not the deployment is the latest revision for its target.</p>
-    pub fn set_is_latest_for_target(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_latest_for_target(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_latest_for_target = input;
         self
     }
     /// <p>The parent deployment's target <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a subdeployment.</p>
-    pub fn parent_target_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.parent_target_arn = Some(input.into());
+    pub fn parent_target_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.parent_target_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The parent deployment's target <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a subdeployment.</p>
     pub fn set_parent_target_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.parent_target_arn = input;
         self

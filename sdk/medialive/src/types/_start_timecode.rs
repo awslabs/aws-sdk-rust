@@ -2,15 +2,15 @@
 
 /// Settings to identify the start of the clip.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartTimecode {
     /// The timecode for the frame where you want to start the clip. Optional; if not specified, the clip starts at first frame in the file. Enter the timecode as HH:MM:SS:FF or HH:MM:SS;FF.
     #[doc(hidden)]
-    pub timecode: std::option::Option<std::string::String>,
+    pub timecode: ::std::option::Option<::std::string::String>,
 }
 impl StartTimecode {
     /// The timecode for the frame where you want to start the clip. Optional; if not specified, the clip starts at first frame in the file. Enter the timecode as HH:MM:SS:FF or HH:MM:SS;FF.
-    pub fn timecode(&self) -> std::option::Option<&str> {
+    pub fn timecode(&self) -> ::std::option::Option<&str> {
         self.timecode.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl StartTimecode {
 
 /// A builder for [`StartTimecode`](crate::types::StartTimecode).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct StartTimecodeBuilder {
-    pub(crate) timecode: std::option::Option<std::string::String>,
+    pub(crate) timecode: ::std::option::Option<::std::string::String>,
 }
 impl StartTimecodeBuilder {
     /// The timecode for the frame where you want to start the clip. Optional; if not specified, the clip starts at first frame in the file. Enter the timecode as HH:MM:SS:FF or HH:MM:SS;FF.
-    pub fn timecode(mut self, input: impl Into<std::string::String>) -> Self {
-        self.timecode = Some(input.into());
+    pub fn timecode(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.timecode = ::std::option::Option::Some(input.into());
         self
     }
     /// The timecode for the frame where you want to start the clip. Optional; if not specified, the clip starts at first frame in the file. Enter the timecode as HH:MM:SS:FF or HH:MM:SS;FF.
-    pub fn set_timecode(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_timecode(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.timecode = input;
         self
     }

@@ -6,29 +6,29 @@ pub use crate::operation::update_container_service::_update_container_service_in
 /// Fluent builder constructing a request to `UpdateContainerService`.
 ///
 /// <p>Updates the configuration of your Amazon Lightsail container service, such as its power, scale, and public domain names.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateContainerServiceFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::update_container_service::builders::UpdateContainerServiceInputBuilder,
 }
 impl UpdateContainerServiceFluentBuilder {
     /// Creates a new `UpdateContainerService`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_container_service::UpdateContainerService,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_container_service::UpdateContainerServiceError,
         >,
     > {
@@ -36,30 +36,33 @@ impl UpdateContainerServiceFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_container_service::UpdateContainerServiceOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_container_service::UpdateContainerServiceError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,21 +75,21 @@ impl UpdateContainerServiceFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_container_service::UpdateContainerServiceOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_container_service::UpdateContainerServiceError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the container service to update.</p>
-    pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn service_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_name(input.into());
         self
     }
     /// <p>The name of the container service to update.</p>
-    pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_service_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service_name(input);
         self
     }
@@ -102,7 +105,7 @@ impl UpdateContainerServiceFluentBuilder {
     /// <p>Use the <code>GetContainerServicePowers</code> action to view the specifications of each power option.</p>
     pub fn set_power(
         mut self,
-        input: std::option::Option<crate::types::ContainerServicePowerName>,
+        input: ::std::option::Option<crate::types::ContainerServicePowerName>,
     ) -> Self {
         self.inner = self.inner.set_power(input);
         self
@@ -115,7 +118,7 @@ impl UpdateContainerServiceFluentBuilder {
     }
     /// <p>The scale for the container service.</p>
     /// <p>The scale specifies the allocated compute nodes of the container service. The <code>power</code> and <code>scale</code> of a container service makes up its configured capacity. To determine the monthly price of your container service, multiply the base price of the <code>power</code> with the <code>scale</code> (the number of nodes) of the service.</p>
-    pub fn set_scale(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_scale(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_scale(input);
         self
     }
@@ -125,7 +128,7 @@ impl UpdateContainerServiceFluentBuilder {
         self
     }
     /// <p>A Boolean value to indicate whether the container service is disabled.</p>
-    pub fn set_is_disabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_disabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_is_disabled(input);
         self
     }
@@ -141,8 +144,8 @@ impl UpdateContainerServiceFluentBuilder {
     /// <p>You can specify public domain names using a string to array map as shown in the example later on this page.</p>
     pub fn public_domain_names(
         mut self,
-        k: impl Into<std::string::String>,
-        v: std::vec::Vec<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: ::std::vec::Vec<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.public_domain_names(k.into(), v);
         self
@@ -155,8 +158,11 @@ impl UpdateContainerServiceFluentBuilder {
     /// <p>You can specify public domain names using a string to array map as shown in the example later on this page.</p>
     pub fn set_public_domain_names(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<
+                ::std::string::String,
+                ::std::vec::Vec<::std::string::String>,
+            >,
         >,
     ) -> Self {
         self.inner = self.inner.set_public_domain_names(input);
@@ -175,7 +181,7 @@ impl UpdateContainerServiceFluentBuilder {
     /// <p>For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-container-service-ecr-private-repo-access">Configuring access to an Amazon ECR private repository for an Amazon Lightsail container service</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
     pub fn set_private_registry_access(
         mut self,
-        input: std::option::Option<crate::types::PrivateRegistryAccessRequest>,
+        input: ::std::option::Option<crate::types::PrivateRegistryAccessRequest>,
     ) -> Self {
         self.inner = self.inner.set_private_registry_access(input);
         self

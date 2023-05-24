@@ -2,15 +2,15 @@
 
 /// <p>Points to an <code>S3SignedObject</code> object that contains information about your signed code image.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SignedObject {
     /// <p>The <code>S3SignedObject</code>.</p>
     #[doc(hidden)]
-    pub s3: std::option::Option<crate::types::S3SignedObject>,
+    pub s3: ::std::option::Option<crate::types::S3SignedObject>,
 }
 impl SignedObject {
     /// <p>The <code>S3SignedObject</code>.</p>
-    pub fn s3(&self) -> std::option::Option<&crate::types::S3SignedObject> {
+    pub fn s3(&self) -> ::std::option::Option<&crate::types::S3SignedObject> {
         self.s3.as_ref()
     }
 }
@@ -23,18 +23,20 @@ impl SignedObject {
 
 /// A builder for [`SignedObject`](crate::types::SignedObject).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SignedObjectBuilder {
-    pub(crate) s3: std::option::Option<crate::types::S3SignedObject>,
+    pub(crate) s3: ::std::option::Option<crate::types::S3SignedObject>,
 }
 impl SignedObjectBuilder {
     /// <p>The <code>S3SignedObject</code>.</p>
     pub fn s3(mut self, input: crate::types::S3SignedObject) -> Self {
-        self.s3 = Some(input);
+        self.s3 = ::std::option::Option::Some(input);
         self
     }
     /// <p>The <code>S3SignedObject</code>.</p>
-    pub fn set_s3(mut self, input: std::option::Option<crate::types::S3SignedObject>) -> Self {
+    pub fn set_s3(mut self, input: ::std::option::Option<crate::types::S3SignedObject>) -> Self {
         self.s3 = input;
         self
     }

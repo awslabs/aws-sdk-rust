@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ForwardedIpPosition {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum ForwardedIpPosition {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ForwardedIpPosition {
+impl ::std::convert::From<&str> for ForwardedIpPosition {
     fn from(s: &str) -> Self {
         match s {
             "ANY" => ForwardedIpPosition::Any,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for ForwardedIpPosition {
         }
     }
 }
-impl std::str::FromStr for ForwardedIpPosition {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ForwardedIpPosition {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ForwardedIpPosition::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ForwardedIpPosition::from(s))
     }
 }
 impl ForwardedIpPosition {
@@ -91,7 +91,7 @@ impl ForwardedIpPosition {
         &["ANY", "FIRST", "LAST"]
     }
 }
-impl AsRef<str> for ForwardedIpPosition {
+impl ::std::convert::AsRef<str> for ForwardedIpPosition {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

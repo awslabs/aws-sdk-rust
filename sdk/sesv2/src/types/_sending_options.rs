@@ -2,7 +2,7 @@
 
 /// <p>Used to enable or disable email sending for messages that use this configuration set in the current Amazon Web Services Region.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SendingOptions {
     /// <p>If <code>true</code>, email sending is enabled for the configuration set. If <code>false</code>, email sending is disabled for the configuration set.</p>
     #[doc(hidden)]
@@ -23,18 +23,20 @@ impl SendingOptions {
 
 /// A builder for [`SendingOptions`](crate::types::SendingOptions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SendingOptionsBuilder {
-    pub(crate) sending_enabled: std::option::Option<bool>,
+    pub(crate) sending_enabled: ::std::option::Option<bool>,
 }
 impl SendingOptionsBuilder {
     /// <p>If <code>true</code>, email sending is enabled for the configuration set. If <code>false</code>, email sending is disabled for the configuration set.</p>
     pub fn sending_enabled(mut self, input: bool) -> Self {
-        self.sending_enabled = Some(input);
+        self.sending_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>If <code>true</code>, email sending is enabled for the configuration set. If <code>false</code>, email sending is disabled for the configuration set.</p>
-    pub fn set_sending_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_sending_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.sending_enabled = input;
         self
     }

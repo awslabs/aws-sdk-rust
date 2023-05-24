@@ -2,20 +2,20 @@
 
 /// <p>Contains the response to a <code>DescribeVolumes</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeVolumesOutput {
     /// <p>An array of volume IDs.</p>
     #[doc(hidden)]
-    pub volumes: std::option::Option<std::vec::Vec<crate::types::Volume>>,
+    pub volumes: ::std::option::Option<::std::vec::Vec<crate::types::Volume>>,
     _request_id: Option<String>,
 }
 impl DescribeVolumesOutput {
     /// <p>An array of volume IDs.</p>
-    pub fn volumes(&self) -> std::option::Option<&[crate::types::Volume]> {
+    pub fn volumes(&self) -> ::std::option::Option<&[crate::types::Volume]> {
         self.volumes.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeVolumesOutput {
+impl ::aws_http::request_id::RequestId for DescribeVolumesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,9 +29,11 @@ impl DescribeVolumesOutput {
 
 /// A builder for [`DescribeVolumesOutput`](crate::operation::describe_volumes::DescribeVolumesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeVolumesOutputBuilder {
-    pub(crate) volumes: std::option::Option<std::vec::Vec<crate::types::Volume>>,
+    pub(crate) volumes: ::std::option::Option<::std::vec::Vec<crate::types::Volume>>,
     _request_id: Option<String>,
 }
 impl DescribeVolumesOutputBuilder {
@@ -43,13 +45,13 @@ impl DescribeVolumesOutputBuilder {
     pub fn volumes(mut self, input: crate::types::Volume) -> Self {
         let mut v = self.volumes.unwrap_or_default();
         v.push(input);
-        self.volumes = Some(v);
+        self.volumes = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of volume IDs.</p>
     pub fn set_volumes(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Volume>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Volume>>,
     ) -> Self {
         self.volumes = input;
         self

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CancelVariantImportJob`](crate::operation::cancel_variant_import_job::builders::CancelVariantImportJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`job_id(impl Into<String>)`](crate::operation::cancel_variant_import_job::builders::CancelVariantImportJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::cancel_variant_import_job::builders::CancelVariantImportJobFluentBuilder::set_job_id): <p>The job's ID.</p>
+    ///   - [`job_id(impl ::std::convert::Into<String>)`](crate::operation::cancel_variant_import_job::builders::CancelVariantImportJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::cancel_variant_import_job::builders::CancelVariantImportJobFluentBuilder::set_job_id): <p>The job's ID.</p>
     /// - On success, responds with [`CancelVariantImportJobOutput`](crate::operation::cancel_variant_import_job::CancelVariantImportJobOutput)
     /// - On failure, responds with [`SdkError<CancelVariantImportJobError>`](crate::operation::cancel_variant_import_job::CancelVariantImportJobError)
     pub fn cancel_variant_import_job(

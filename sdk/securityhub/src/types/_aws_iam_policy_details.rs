@@ -2,7 +2,7 @@
 
 /// <p>Represents an IAM permissions policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsIamPolicyDetails {
     /// <p>The number of users, groups, and roles that the policy is attached to.</p>
     #[doc(hidden)]
@@ -10,35 +10,36 @@ pub struct AwsIamPolicyDetails {
     /// <p>When the policy was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     #[doc(hidden)]
-    pub create_date: std::option::Option<std::string::String>,
+    pub create_date: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the default version of the policy.</p>
     #[doc(hidden)]
-    pub default_version_id: std::option::Option<std::string::String>,
+    pub default_version_id: ::std::option::Option<::std::string::String>,
     /// <p>A description of the policy.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>Whether the policy can be attached to a user, group, or role.</p>
     #[doc(hidden)]
     pub is_attachable: bool,
     /// <p>The path to the policy.</p>
     #[doc(hidden)]
-    pub path: std::option::Option<std::string::String>,
+    pub path: ::std::option::Option<::std::string::String>,
     /// <p>The number of users and roles that use the policy to set the permissions boundary.</p>
     #[doc(hidden)]
     pub permissions_boundary_usage_count: i32,
     /// <p>The unique identifier of the policy.</p>
     #[doc(hidden)]
-    pub policy_id: std::option::Option<std::string::String>,
+    pub policy_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the policy.</p>
     #[doc(hidden)]
-    pub policy_name: std::option::Option<std::string::String>,
+    pub policy_name: ::std::option::Option<::std::string::String>,
     /// <p>List of versions of the policy.</p>
     #[doc(hidden)]
-    pub policy_version_list: std::option::Option<std::vec::Vec<crate::types::AwsIamPolicyVersion>>,
+    pub policy_version_list:
+        ::std::option::Option<::std::vec::Vec<crate::types::AwsIamPolicyVersion>>,
     /// <p>When the policy was most recently updated.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     #[doc(hidden)]
-    pub update_date: std::option::Option<std::string::String>,
+    pub update_date: ::std::option::Option<::std::string::String>,
 }
 impl AwsIamPolicyDetails {
     /// <p>The number of users, groups, and roles that the policy is attached to.</p>
@@ -47,15 +48,15 @@ impl AwsIamPolicyDetails {
     }
     /// <p>When the policy was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn create_date(&self) -> std::option::Option<&str> {
+    pub fn create_date(&self) -> ::std::option::Option<&str> {
         self.create_date.as_deref()
     }
     /// <p>The identifier of the default version of the policy.</p>
-    pub fn default_version_id(&self) -> std::option::Option<&str> {
+    pub fn default_version_id(&self) -> ::std::option::Option<&str> {
         self.default_version_id.as_deref()
     }
     /// <p>A description of the policy.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>Whether the policy can be attached to a user, group, or role.</p>
@@ -63,7 +64,7 @@ impl AwsIamPolicyDetails {
         self.is_attachable
     }
     /// <p>The path to the policy.</p>
-    pub fn path(&self) -> std::option::Option<&str> {
+    pub fn path(&self) -> ::std::option::Option<&str> {
         self.path.as_deref()
     }
     /// <p>The number of users and roles that use the policy to set the permissions boundary.</p>
@@ -71,20 +72,22 @@ impl AwsIamPolicyDetails {
         self.permissions_boundary_usage_count
     }
     /// <p>The unique identifier of the policy.</p>
-    pub fn policy_id(&self) -> std::option::Option<&str> {
+    pub fn policy_id(&self) -> ::std::option::Option<&str> {
         self.policy_id.as_deref()
     }
     /// <p>The name of the policy.</p>
-    pub fn policy_name(&self) -> std::option::Option<&str> {
+    pub fn policy_name(&self) -> ::std::option::Option<&str> {
         self.policy_name.as_deref()
     }
     /// <p>List of versions of the policy.</p>
-    pub fn policy_version_list(&self) -> std::option::Option<&[crate::types::AwsIamPolicyVersion]> {
+    pub fn policy_version_list(
+        &self,
+    ) -> ::std::option::Option<&[crate::types::AwsIamPolicyVersion]> {
         self.policy_version_list.as_deref()
     }
     /// <p>When the policy was most recently updated.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn update_date(&self) -> std::option::Option<&str> {
+    pub fn update_date(&self) -> ::std::option::Option<&str> {
         self.update_date.as_deref()
     }
 }
@@ -97,114 +100,122 @@ impl AwsIamPolicyDetails {
 
 /// A builder for [`AwsIamPolicyDetails`](crate::types::AwsIamPolicyDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsIamPolicyDetailsBuilder {
-    pub(crate) attachment_count: std::option::Option<i32>,
-    pub(crate) create_date: std::option::Option<std::string::String>,
-    pub(crate) default_version_id: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) is_attachable: std::option::Option<bool>,
-    pub(crate) path: std::option::Option<std::string::String>,
-    pub(crate) permissions_boundary_usage_count: std::option::Option<i32>,
-    pub(crate) policy_id: std::option::Option<std::string::String>,
-    pub(crate) policy_name: std::option::Option<std::string::String>,
+    pub(crate) attachment_count: ::std::option::Option<i32>,
+    pub(crate) create_date: ::std::option::Option<::std::string::String>,
+    pub(crate) default_version_id: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) is_attachable: ::std::option::Option<bool>,
+    pub(crate) path: ::std::option::Option<::std::string::String>,
+    pub(crate) permissions_boundary_usage_count: ::std::option::Option<i32>,
+    pub(crate) policy_id: ::std::option::Option<::std::string::String>,
+    pub(crate) policy_name: ::std::option::Option<::std::string::String>,
     pub(crate) policy_version_list:
-        std::option::Option<std::vec::Vec<crate::types::AwsIamPolicyVersion>>,
-    pub(crate) update_date: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::AwsIamPolicyVersion>>,
+    pub(crate) update_date: ::std::option::Option<::std::string::String>,
 }
 impl AwsIamPolicyDetailsBuilder {
     /// <p>The number of users, groups, and roles that the policy is attached to.</p>
     pub fn attachment_count(mut self, input: i32) -> Self {
-        self.attachment_count = Some(input);
+        self.attachment_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of users, groups, and roles that the policy is attached to.</p>
-    pub fn set_attachment_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_attachment_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.attachment_count = input;
         self
     }
     /// <p>When the policy was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn create_date(mut self, input: impl Into<std::string::String>) -> Self {
-        self.create_date = Some(input.into());
+    pub fn create_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.create_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>When the policy was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn set_create_date(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_create_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.create_date = input;
         self
     }
     /// <p>The identifier of the default version of the policy.</p>
-    pub fn default_version_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.default_version_id = Some(input.into());
+    pub fn default_version_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.default_version_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the default version of the policy.</p>
     pub fn set_default_version_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.default_version_id = input;
         self
     }
     /// <p>A description of the policy.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of the policy.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>Whether the policy can be attached to a user, group, or role.</p>
     pub fn is_attachable(mut self, input: bool) -> Self {
-        self.is_attachable = Some(input);
+        self.is_attachable = ::std::option::Option::Some(input);
         self
     }
     /// <p>Whether the policy can be attached to a user, group, or role.</p>
-    pub fn set_is_attachable(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_attachable(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_attachable = input;
         self
     }
     /// <p>The path to the policy.</p>
-    pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
-        self.path = Some(input.into());
+    pub fn path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The path to the policy.</p>
-    pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.path = input;
         self
     }
     /// <p>The number of users and roles that use the policy to set the permissions boundary.</p>
     pub fn permissions_boundary_usage_count(mut self, input: i32) -> Self {
-        self.permissions_boundary_usage_count = Some(input);
+        self.permissions_boundary_usage_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of users and roles that use the policy to set the permissions boundary.</p>
-    pub fn set_permissions_boundary_usage_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_permissions_boundary_usage_count(
+        mut self,
+        input: ::std::option::Option<i32>,
+    ) -> Self {
         self.permissions_boundary_usage_count = input;
         self
     }
     /// <p>The unique identifier of the policy.</p>
-    pub fn policy_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.policy_id = Some(input.into());
+    pub fn policy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.policy_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the policy.</p>
-    pub fn set_policy_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_policy_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_id = input;
         self
     }
     /// <p>The name of the policy.</p>
-    pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.policy_name = Some(input.into());
+    pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.policy_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the policy.</p>
-    pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_name = input;
         self
     }
@@ -216,26 +227,26 @@ impl AwsIamPolicyDetailsBuilder {
     pub fn policy_version_list(mut self, input: crate::types::AwsIamPolicyVersion) -> Self {
         let mut v = self.policy_version_list.unwrap_or_default();
         v.push(input);
-        self.policy_version_list = Some(v);
+        self.policy_version_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>List of versions of the policy.</p>
     pub fn set_policy_version_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AwsIamPolicyVersion>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsIamPolicyVersion>>,
     ) -> Self {
         self.policy_version_list = input;
         self
     }
     /// <p>When the policy was most recently updated.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn update_date(mut self, input: impl Into<std::string::String>) -> Self {
-        self.update_date = Some(input.into());
+    pub fn update_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.update_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>When the policy was most recently updated.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn set_update_date(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_update_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.update_date = input;
         self
     }

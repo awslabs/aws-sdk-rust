@@ -2,22 +2,22 @@
 
 /// <p>Contains information about the configuration of a model in a deployment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EdgeDeploymentModelConfig {
     /// <p>The name the device application uses to reference this model.</p>
     #[doc(hidden)]
-    pub model_handle: std::option::Option<std::string::String>,
+    pub model_handle: ::std::option::Option<::std::string::String>,
     /// <p>The edge packaging job associated with this deployment.</p>
     #[doc(hidden)]
-    pub edge_packaging_job_name: std::option::Option<std::string::String>,
+    pub edge_packaging_job_name: ::std::option::Option<::std::string::String>,
 }
 impl EdgeDeploymentModelConfig {
     /// <p>The name the device application uses to reference this model.</p>
-    pub fn model_handle(&self) -> std::option::Option<&str> {
+    pub fn model_handle(&self) -> ::std::option::Option<&str> {
         self.model_handle.as_deref()
     }
     /// <p>The edge packaging job associated with this deployment.</p>
-    pub fn edge_packaging_job_name(&self) -> std::option::Option<&str> {
+    pub fn edge_packaging_job_name(&self) -> ::std::option::Option<&str> {
         self.edge_packaging_job_name.as_deref()
     }
 }
@@ -30,31 +30,36 @@ impl EdgeDeploymentModelConfig {
 
 /// A builder for [`EdgeDeploymentModelConfig`](crate::types::EdgeDeploymentModelConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EdgeDeploymentModelConfigBuilder {
-    pub(crate) model_handle: std::option::Option<std::string::String>,
-    pub(crate) edge_packaging_job_name: std::option::Option<std::string::String>,
+    pub(crate) model_handle: ::std::option::Option<::std::string::String>,
+    pub(crate) edge_packaging_job_name: ::std::option::Option<::std::string::String>,
 }
 impl EdgeDeploymentModelConfigBuilder {
     /// <p>The name the device application uses to reference this model.</p>
-    pub fn model_handle(mut self, input: impl Into<std::string::String>) -> Self {
-        self.model_handle = Some(input.into());
+    pub fn model_handle(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.model_handle = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name the device application uses to reference this model.</p>
-    pub fn set_model_handle(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_model_handle(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_handle = input;
         self
     }
     /// <p>The edge packaging job associated with this deployment.</p>
-    pub fn edge_packaging_job_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.edge_packaging_job_name = Some(input.into());
+    pub fn edge_packaging_job_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.edge_packaging_job_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The edge packaging job associated with this deployment.</p>
     pub fn set_edge_packaging_job_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.edge_packaging_job_name = input;
         self

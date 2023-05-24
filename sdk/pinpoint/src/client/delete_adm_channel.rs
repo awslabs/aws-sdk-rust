@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteAdmChannel`](crate::operation::delete_adm_channel::builders::DeleteAdmChannelFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::operation::delete_adm_channel::builders::DeleteAdmChannelFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::delete_adm_channel::builders::DeleteAdmChannelFluentBuilder::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
+    ///   - [`application_id(impl ::std::convert::Into<String>)`](crate::operation::delete_adm_channel::builders::DeleteAdmChannelFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::delete_adm_channel::builders::DeleteAdmChannelFluentBuilder::set_application_id): <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     /// - On success, responds with [`DeleteAdmChannelOutput`](crate::operation::delete_adm_channel::DeleteAdmChannelOutput) with field(s):
     ///   - [`adm_channel_response(Option<AdmChannelResponse>)`](crate::operation::delete_adm_channel::DeleteAdmChannelOutput::adm_channel_response): <p>Provides information about the status and settings of the ADM (Amazon Device Messaging) channel for an application.</p>
     /// - On failure, responds with [`SdkError<DeleteAdmChannelError>`](crate::operation::delete_adm_channel::DeleteAdmChannelError)

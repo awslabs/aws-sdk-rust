@@ -8,29 +8,29 @@ pub use crate::operation::modify_db_cluster::_modify_db_cluster_input::ModifyDbC
 /// <p>Modify the settings for an Amazon Aurora DB cluster or a Multi-AZ DB cluster. You can change one or more settings by specifying these parameters and the new values in the request.</p>
 /// <p>For more information on Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.</p>
 /// <p>For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide</i>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyDBClusterFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::modify_db_cluster::builders::ModifyDbClusterInputBuilder,
 }
 impl ModifyDBClusterFluentBuilder {
     /// Creates a new `ModifyDBCluster`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::modify_db_cluster::ModifyDBCluster,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::modify_db_cluster::ModifyDBClusterError,
         >,
     > {
@@ -38,30 +38,33 @@ impl ModifyDBClusterFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::modify_db_cluster::ModifyDbClusterOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::modify_db_cluster::ModifyDBClusterError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -74,9 +77,9 @@ impl ModifyDBClusterFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::modify_db_cluster::ModifyDbClusterOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::modify_db_cluster::ModifyDBClusterError,
         >,
     > {
@@ -85,7 +88,10 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>The DB cluster identifier for the cluster being modified. This parameter isn't case-sensitive.</p>
     /// <p>Constraints: This identifier must match the identifier of an existing DB cluster.</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-    pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn db_cluster_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.db_cluster_identifier(input.into());
         self
     }
@@ -94,7 +100,7 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn set_db_cluster_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_db_cluster_identifier(input);
         self
@@ -108,7 +114,10 @@ impl ModifyDBClusterFluentBuilder {
     /// </ul>
     /// <p>Example: <code>my-cluster2</code> </p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-    pub fn new_db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn new_db_cluster_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.new_db_cluster_identifier(input.into());
         self
     }
@@ -123,7 +132,7 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn set_new_db_cluster_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_new_db_cluster_identifier(input);
         self
@@ -140,7 +149,7 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>Most modifications can be applied immediately or during the next scheduled maintenance window. Some modifications, such as turning on deletion protection and changing the master password, are applied immediately—regardless of when you choose to apply them.</p>
     /// <p>By default, this parameter is disabled.</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-    pub fn set_apply_immediately(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_apply_immediately(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_apply_immediately(input);
         self
     }
@@ -162,7 +171,7 @@ impl ModifyDBClusterFluentBuilder {
     /// <li> <p>Must be a value from 1 to 35</p> </li>
     /// </ul>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-    pub fn set_backup_retention_period(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_backup_retention_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_backup_retention_period(input);
         self
     }
@@ -170,7 +179,7 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn db_cluster_parameter_group_name(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.db_cluster_parameter_group_name(input.into());
         self
@@ -179,7 +188,7 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn set_db_cluster_parameter_group_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_db_cluster_parameter_group_name(input);
         self
@@ -190,7 +199,10 @@ impl ModifyDBClusterFluentBuilder {
     ///
     /// <p>A list of VPC security groups that the DB cluster will belong to.</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-    pub fn vpc_security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn vpc_security_group_ids(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.vpc_security_group_ids(input.into());
         self
     }
@@ -198,7 +210,7 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn set_vpc_security_group_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_vpc_security_group_ids(input);
         self
@@ -215,7 +227,7 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>Constraints: Value must be <code>1150-65535</code> </p>
     /// <p>Default: The same port as the original DB cluster.</p>
     /// <p>Valid for: Aurora DB clusters only</p>
-    pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_port(input);
         self
     }
@@ -226,7 +238,10 @@ impl ModifyDBClusterFluentBuilder {
     /// <li> <p>Can't be specified if <code>ManageMasterUserPassword</code> is turned on.</p> </li>
     /// </ul>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-    pub fn master_user_password(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn master_user_password(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.master_user_password(input.into());
         self
     }
@@ -239,14 +254,17 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn set_master_user_password(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_master_user_password(input);
         self
     }
     /// <p>A value that indicates that the DB cluster should be associated with the specified option group.</p>
     /// <p>DB clusters are associated with a default option group that can't be modified.</p>
-    pub fn option_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn option_group_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.option_group_name(input.into());
         self
     }
@@ -254,7 +272,7 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>DB clusters are associated with a default option group that can't be modified.</p>
     pub fn set_option_group_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_option_group_name(input);
         self
@@ -269,7 +287,10 @@ impl ModifyDBClusterFluentBuilder {
     /// <li> <p>Must be at least 30 minutes.</p> </li>
     /// </ul>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-    pub fn preferred_backup_window(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn preferred_backup_window(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.preferred_backup_window(input.into());
         self
     }
@@ -285,7 +306,7 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn set_preferred_backup_window(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_preferred_backup_window(input);
         self
@@ -296,7 +317,10 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.</p>
     /// <p>Constraints: Minimum 30-minute window.</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-    pub fn preferred_maintenance_window(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn preferred_maintenance_window(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.preferred_maintenance_window(input.into());
         self
     }
@@ -308,7 +332,7 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn set_preferred_maintenance_window(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_preferred_maintenance_window(input);
         self
@@ -325,7 +349,7 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>Valid for: Aurora DB clusters only</p>
     pub fn set_enable_iam_database_authentication(
         mut self,
-        input: std::option::Option<bool>,
+        input: ::std::option::Option<bool>,
     ) -> Self {
         self.inner = self.inner.set_enable_iam_database_authentication(input);
         self
@@ -348,7 +372,7 @@ impl ModifyDBClusterFluentBuilder {
     /// <li> <p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p> </li>
     /// </ul>
     /// <p>Valid for: Aurora MySQL DB clusters only</p>
-    pub fn set_backtrack_window(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_backtrack_window(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_backtrack_window(input);
         self
     }
@@ -385,7 +409,7 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn set_cloudwatch_logs_export_configuration(
         mut self,
-        input: std::option::Option<crate::types::CloudwatchLogsExportConfiguration>,
+        input: ::std::option::Option<crate::types::CloudwatchLogsExportConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_cloudwatch_logs_export_configuration(input);
         self
@@ -401,7 +425,10 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>To list all of the available engine versions for RDS for PostgreSQL, use the following command:</p>
     /// <p> <code>aws rds describe-db-engine-versions --engine postgres --query "DBEngineVersions[].EngineVersion"</code> </p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-    pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn engine_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.engine_version(input.into());
         self
     }
@@ -416,7 +443,10 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>To list all of the available engine versions for RDS for PostgreSQL, use the following command:</p>
     /// <p> <code>aws rds describe-db-engine-versions --engine postgres --query "DBEngineVersions[].EngineVersion"</code> </p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-    pub fn set_engine_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_engine_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_engine_version(input);
         self
     }
@@ -430,7 +460,7 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>A value that indicates whether major version upgrades are allowed.</p>
     /// <p>Constraints: You must allow major version upgrades when specifying a value for the <code>EngineVersion</code> parameter that is a different major version than the DB cluster's current version.</p>
     /// <p>Valid for: Aurora DB clusters only</p>
-    pub fn set_allow_major_version_upgrade(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_allow_major_version_upgrade(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_allow_major_version_upgrade(input);
         self
     }
@@ -446,7 +476,7 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>Valid for: Aurora DB clusters only</p>
     pub fn db_instance_parameter_group_name(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.db_instance_parameter_group_name(input.into());
         self
@@ -463,7 +493,7 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>Valid for: Aurora DB clusters only</p>
     pub fn set_db_instance_parameter_group_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_db_instance_parameter_group_name(input);
         self
@@ -471,20 +501,23 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>The Active Directory directory ID to move the DB cluster to. Specify <code>none</code> to remove the cluster from its current domain. The domain must be created prior to this operation.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// <p>Valid for: Aurora DB clusters only</p>
-    pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain(input.into());
         self
     }
     /// <p>The Active Directory directory ID to move the DB cluster to. Specify <code>none</code> to remove the cluster from its current domain. The domain must be created prior to this operation.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// <p>Valid for: Aurora DB clusters only</p>
-    pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain(input);
         self
     }
     /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
     /// <p>Valid for: Aurora DB clusters only</p>
-    pub fn domain_iam_role_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn domain_iam_role_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.domain_iam_role_name(input.into());
         self
     }
@@ -492,7 +525,7 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>Valid for: Aurora DB clusters only</p>
     pub fn set_domain_iam_role_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_domain_iam_role_name(input);
         self
@@ -507,7 +540,7 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>Valid for: Aurora DB clusters only</p>
     pub fn set_scaling_configuration(
         mut self,
-        input: std::option::Option<crate::types::ScalingConfiguration>,
+        input: ::std::option::Option<crate::types::ScalingConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_scaling_configuration(input);
         self
@@ -520,7 +553,7 @@ impl ModifyDBClusterFluentBuilder {
     }
     /// <p>A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection isn't enabled.</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-    pub fn set_deletion_protection(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_deletion_protection(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_deletion_protection(input);
         self
     }
@@ -536,7 +569,7 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>When enabled, the HTTP endpoint provides a connectionless web service API for running SQL queries on the Aurora Serverless v1 DB cluster. You can also query your database from inside the RDS console with the query editor.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using the Data API for Aurora Serverless v1</a> in the <i>Amazon Aurora User Guide</i>.</p>
     /// <p>Valid for: Aurora DB clusters only</p>
-    pub fn set_enable_http_endpoint(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enable_http_endpoint(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enable_http_endpoint(input);
         self
     }
@@ -548,7 +581,7 @@ impl ModifyDBClusterFluentBuilder {
     }
     /// <p>A value that indicates whether to copy all tags from the DB cluster to snapshots of the DB cluster. The default is not to copy them.</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-    pub fn set_copy_tags_to_snapshot(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_copy_tags_to_snapshot(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_copy_tags_to_snapshot(input);
         self
     }
@@ -562,14 +595,20 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>A value that indicates whether to enable this DB cluster to forward write operations to the primary cluster of an Aurora global database (<code>GlobalCluster</code>). By default, write operations are not allowed on Aurora DB clusters that are secondary clusters in an Aurora global database.</p>
     /// <p>You can set this value only on Aurora DB clusters that are members of an Aurora global database. With this parameter enabled, a secondary cluster can forward writes to the current primary cluster and the resulting changes are replicated back to this cluster. For the primary DB cluster of an Aurora global database, this value is used immediately if the primary is demoted by the <code>FailoverGlobalCluster</code> API operation, but it does nothing until then.</p>
     /// <p>Valid for: Aurora DB clusters only</p>
-    pub fn set_enable_global_write_forwarding(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enable_global_write_forwarding(
+        mut self,
+        input: ::std::option::Option<bool>,
+    ) -> Self {
         self.inner = self.inner.set_enable_global_write_forwarding(input);
         self
     }
     /// <p>The compute and memory capacity of each DB instance in the Multi-AZ DB cluster, for example db.m6gd.xlarge. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.</p>
     /// <p>For the full list of DB instance classes and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html"> DB Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>Valid for: Multi-AZ DB clusters only</p>
-    pub fn db_cluster_instance_class(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn db_cluster_instance_class(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.db_cluster_instance_class(input.into());
         self
     }
@@ -578,7 +617,7 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>Valid for: Multi-AZ DB clusters only</p>
     pub fn set_db_cluster_instance_class(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_db_cluster_instance_class(input);
         self
@@ -591,7 +630,7 @@ impl ModifyDBClusterFluentBuilder {
     }
     /// <p>The amount of storage in gibibytes (GiB) to allocate to each DB instance in the Multi-AZ DB cluster.</p>
     /// <p>Valid for: Multi-AZ DB clusters only</p>
-    pub fn set_allocated_storage(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_allocated_storage(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_allocated_storage(input);
         self
     }
@@ -600,7 +639,7 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>Valid values: <code>aurora</code>, <code>aurora-iopt1</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)</p>
     /// <p>Default: <code>aurora</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-    pub fn storage_type(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn storage_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.storage_type(input.into());
         self
     }
@@ -609,7 +648,7 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>Valid values: <code>aurora</code>, <code>aurora-iopt1</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)</p>
     /// <p>Default: <code>aurora</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-    pub fn set_storage_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_storage_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_storage_type(input);
         self
     }
@@ -625,7 +664,7 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>For information about valid IOPS values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS storage</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>Constraints: Must be a multiple between .5 and 50 of the storage amount for the DB cluster.</p>
     /// <p>Valid for: Multi-AZ DB clusters only</p>
-    pub fn set_iops(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_iops(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_iops(input);
         self
     }
@@ -637,7 +676,7 @@ impl ModifyDBClusterFluentBuilder {
     }
     /// <p>A value that indicates whether minor engine upgrades are applied automatically to the DB cluster during the maintenance window. By default, minor engine upgrades are applied automatically.</p>
     /// <p>Valid for: Multi-AZ DB clusters only</p>
-    pub fn set_auto_minor_version_upgrade(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_auto_minor_version_upgrade(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_auto_minor_version_upgrade(input);
         self
     }
@@ -653,14 +692,17 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>If <code>MonitoringRoleArn</code> is specified, also set <code>MonitoringInterval</code> to a value other than 0.</p>
     /// <p>Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code> </p>
     /// <p>Valid for: Multi-AZ DB clusters only</p>
-    pub fn set_monitoring_interval(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_monitoring_interval(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_monitoring_interval(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the IAM role that permits RDS to send Enhanced Monitoring metrics to Amazon CloudWatch Logs. An example is <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating a monitoring role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To create an IAM role for Amazon RDS Enhanced Monitoring</a> in the <i>Amazon RDS User Guide.</i> </p>
     /// <p>If <code>MonitoringInterval</code> is set to a value other than 0, supply a <code>MonitoringRoleArn</code> value.</p>
     /// <p>Valid for: Multi-AZ DB clusters only</p>
-    pub fn monitoring_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn monitoring_role_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.monitoring_role_arn(input.into());
         self
     }
@@ -669,7 +711,7 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>Valid for: Multi-AZ DB clusters only</p>
     pub fn set_monitoring_role_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_monitoring_role_arn(input);
         self
@@ -684,7 +726,7 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>A value that indicates whether to turn on Performance Insights for the DB cluster.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html"> Using Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.</p>
     /// <p>Valid for: Multi-AZ DB clusters only</p>
-    pub fn set_enable_performance_insights(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enable_performance_insights(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enable_performance_insights(input);
         self
     }
@@ -694,7 +736,7 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>Valid for: Multi-AZ DB clusters only</p>
     pub fn performance_insights_kms_key_id(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.performance_insights_kms_key_id(input.into());
         self
@@ -705,7 +747,7 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>Valid for: Multi-AZ DB clusters only</p>
     pub fn set_performance_insights_kms_key_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_performance_insights_kms_key_id(input);
         self
@@ -746,7 +788,7 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>Valid for: Multi-AZ DB clusters only</p>
     pub fn set_performance_insights_retention_period(
         mut self,
-        input: std::option::Option<i32>,
+        input: ::std::option::Option<i32>,
     ) -> Self {
         self.inner = self.inner.set_performance_insights_retention_period(input);
         self
@@ -764,7 +806,7 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html">Using Amazon Aurora Serverless v2</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub fn set_serverless_v2_scaling_configuration(
         mut self,
-        input: std::option::Option<crate::types::ServerlessV2ScalingConfiguration>,
+        input: ::std::option::Option<crate::types::ServerlessV2ScalingConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_serverless_v2_scaling_configuration(input);
         self
@@ -778,7 +820,7 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i> </p>
     /// <p>Valid for: Aurora DB clusters only</p>
-    pub fn network_type(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn network_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.network_type(input.into());
         self
     }
@@ -791,7 +833,7 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i> </p>
     /// <p>Valid for: Aurora DB clusters only</p>
-    pub fn set_network_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_network_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_network_type(input);
         self
     }
@@ -809,7 +851,7 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>If the DB cluster already manages the master user password with Amazon Web Services Secrets Manager, and you specify that the master user password is not managed with Amazon Web Services Secrets Manager, then you must specify <code>MasterUserPassword</code>. In this case, RDS deletes the secret and uses the new password for the master user specified by <code>MasterUserPassword</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html">Password management with Amazon Web Services Secrets Manager</a> in the <i>Amazon Aurora User Guide.</i> </p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-    pub fn set_manage_master_user_password(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_manage_master_user_password(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_manage_master_user_password(input);
         self
     }
@@ -833,7 +875,7 @@ impl ModifyDBClusterFluentBuilder {
     /// <li> <p>You must apply the change immediately when rotating the master user password.</p> </li>
     /// </ul>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-    pub fn set_rotate_master_user_password(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_rotate_master_user_password(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_rotate_master_user_password(input);
         self
     }
@@ -846,7 +888,10 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.</p>
     /// <p>There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-    pub fn master_user_secret_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn master_user_secret_kms_key_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.master_user_secret_kms_key_id(input.into());
         self
     }
@@ -861,7 +906,7 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn set_master_user_secret_kms_key_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_master_user_secret_kms_key_id(input);
         self
@@ -871,7 +916,7 @@ impl ModifyDBClusterFluentBuilder {
     /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html"> CreateDBCluster</a>.</p>
     /// <p>Valid for: Aurora DB clusters only</p>
-    pub fn engine_mode(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn engine_mode(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.engine_mode(input.into());
         self
     }
@@ -880,7 +925,7 @@ impl ModifyDBClusterFluentBuilder {
     /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html"> CreateDBCluster</a>.</p>
     /// <p>Valid for: Aurora DB clusters only</p>
-    pub fn set_engine_mode(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_engine_mode(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_engine_mode(input);
         self
     }
@@ -894,7 +939,7 @@ impl ModifyDBClusterFluentBuilder {
     /// <p>A value that indicates whether engine mode changes from <code>serverless</code> to <code>provisioned</code> are allowed.</p>
     /// <p>Constraints: You must allow engine mode changes when specifying a different value for the <code>EngineMode</code> parameter from the DB cluster's current engine mode.</p>
     /// <p>Valid for: Aurora Serverless v1 DB clusters only</p>
-    pub fn set_allow_engine_mode_change(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_allow_engine_mode_change(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_allow_engine_mode_change(input);
         self
     }

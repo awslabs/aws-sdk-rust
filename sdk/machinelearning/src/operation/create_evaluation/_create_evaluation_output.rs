@@ -3,20 +3,20 @@
 /// <p> Represents the output of a <code>CreateEvaluation</code> operation, and is an acknowledgement that Amazon ML received the request.</p>
 /// <p> <code>CreateEvaluation</code> operation is asynchronous. You can poll for status updates by using the <code>GetEvcaluation</code> operation and checking the <code>Status</code> parameter. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateEvaluationOutput {
     /// <p>The user-supplied ID that uniquely identifies the <code>Evaluation</code>. This value should be identical to the value of the <code>EvaluationId</code> in the request.</p>
     #[doc(hidden)]
-    pub evaluation_id: std::option::Option<std::string::String>,
+    pub evaluation_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateEvaluationOutput {
     /// <p>The user-supplied ID that uniquely identifies the <code>Evaluation</code>. This value should be identical to the value of the <code>EvaluationId</code> in the request.</p>
-    pub fn evaluation_id(&self) -> std::option::Option<&str> {
+    pub fn evaluation_id(&self) -> ::std::option::Option<&str> {
         self.evaluation_id.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for CreateEvaluationOutput {
+impl ::aws_http::request_id::RequestId for CreateEvaluationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -31,19 +31,27 @@ impl CreateEvaluationOutput {
 
 /// A builder for [`CreateEvaluationOutput`](crate::operation::create_evaluation::CreateEvaluationOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateEvaluationOutputBuilder {
-    pub(crate) evaluation_id: std::option::Option<std::string::String>,
+    pub(crate) evaluation_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateEvaluationOutputBuilder {
     /// <p>The user-supplied ID that uniquely identifies the <code>Evaluation</code>. This value should be identical to the value of the <code>EvaluationId</code> in the request.</p>
-    pub fn evaluation_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.evaluation_id = Some(input.into());
+    pub fn evaluation_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.evaluation_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user-supplied ID that uniquely identifies the <code>Evaluation</code>. This value should be identical to the value of the <code>EvaluationId</code> in the request.</p>
-    pub fn set_evaluation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_evaluation_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.evaluation_id = input;
         self
     }

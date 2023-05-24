@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`AddTagsToResource`](crate::operation::add_tags_to_resource::builders::AddTagsToResourceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`resource_arn(impl Into<String>)`](crate::operation::add_tags_to_resource::builders::AddTagsToResourceFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::add_tags_to_resource::builders::AddTagsToResourceFluentBuilder::set_resource_arn): <p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource to tag.</p>
+    ///   - [`resource_arn(impl ::std::convert::Into<String>)`](crate::operation::add_tags_to_resource::builders::AddTagsToResourceFluentBuilder::resource_arn) / [`set_resource_arn(Option<String>)`](crate::operation::add_tags_to_resource::builders::AddTagsToResourceFluentBuilder::set_resource_arn): <p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource to tag.</p>
     ///   - [`tag_list(Vec<Tag>)`](crate::operation::add_tags_to_resource::builders::AddTagsToResourceFluentBuilder::tag_list) / [`set_tag_list(Option<Vec<Tag>>)`](crate::operation::add_tags_to_resource::builders::AddTagsToResourceFluentBuilder::set_tag_list): <p>One or more tags.</p>
     /// - On success, responds with [`AddTagsToResourceOutput`](crate::operation::add_tags_to_resource::AddTagsToResourceOutput) with field(s):
     ///   - [`status(Option<String>)`](crate::operation::add_tags_to_resource::AddTagsToResourceOutput::status): <p>The status of the operation.</p>

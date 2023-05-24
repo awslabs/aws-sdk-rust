@@ -2,22 +2,22 @@
 
 /// A MediaPackage VOD PackagingGroup resource configuration.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdatePackagingGroupInput {
     /// CDN Authorization credentials
     #[doc(hidden)]
-    pub authorization: std::option::Option<crate::types::Authorization>,
+    pub authorization: ::std::option::Option<crate::types::Authorization>,
     /// The ID of a MediaPackage VOD PackagingGroup resource.
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
 }
 impl UpdatePackagingGroupInput {
     /// CDN Authorization credentials
-    pub fn authorization(&self) -> std::option::Option<&crate::types::Authorization> {
+    pub fn authorization(&self) -> ::std::option::Option<&crate::types::Authorization> {
         self.authorization.as_ref()
     }
     /// The ID of a MediaPackage VOD PackagingGroup resource.
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
 }
@@ -31,43 +31,45 @@ impl UpdatePackagingGroupInput {
 
 /// A builder for [`UpdatePackagingGroupInput`](crate::operation::update_packaging_group::UpdatePackagingGroupInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdatePackagingGroupInputBuilder {
-    pub(crate) authorization: std::option::Option<crate::types::Authorization>,
-    pub(crate) id: std::option::Option<std::string::String>,
+    pub(crate) authorization: ::std::option::Option<crate::types::Authorization>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
 }
 impl UpdatePackagingGroupInputBuilder {
     /// CDN Authorization credentials
     pub fn authorization(mut self, input: crate::types::Authorization) -> Self {
-        self.authorization = Some(input);
+        self.authorization = ::std::option::Option::Some(input);
         self
     }
     /// CDN Authorization credentials
     pub fn set_authorization(
         mut self,
-        input: std::option::Option<crate::types::Authorization>,
+        input: ::std::option::Option<crate::types::Authorization>,
     ) -> Self {
         self.authorization = input;
         self
     }
     /// The ID of a MediaPackage VOD PackagingGroup resource.
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// The ID of a MediaPackage VOD PackagingGroup resource.
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// Consumes the builder and constructs a [`UpdatePackagingGroupInput`](crate::operation::update_packaging_group::UpdatePackagingGroupInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::update_packaging_group::UpdatePackagingGroupInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::update_packaging_group::UpdatePackagingGroupInput {
                 authorization: self.authorization,
                 id: self.id,

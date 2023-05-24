@@ -2,22 +2,22 @@
 
 /// <p>Properties that describe the Amazon Web Services principal that created the <code>BlockPublicAccessConfiguration</code> using the <code>PutBlockPublicAccessConfiguration</code> action as well as the date and time that the configuration was created. Each time a configuration for block public access is updated, Amazon EMR updates this metadata.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BlockPublicAccessConfigurationMetadata {
     /// <p>The date and time that the configuration was created.</p>
     #[doc(hidden)]
-    pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Resource Name that created or last modified the configuration.</p>
     #[doc(hidden)]
-    pub created_by_arn: std::option::Option<std::string::String>,
+    pub created_by_arn: ::std::option::Option<::std::string::String>,
 }
 impl BlockPublicAccessConfigurationMetadata {
     /// <p>The date and time that the configuration was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The Amazon Resource Name that created or last modified the configuration.</p>
-    pub fn created_by_arn(&self) -> std::option::Option<&str> {
+    pub fn created_by_arn(&self) -> ::std::option::Option<&str> {
         self.created_by_arn.as_deref()
     }
 }
@@ -30,32 +30,40 @@ impl BlockPublicAccessConfigurationMetadata {
 
 /// A builder for [`BlockPublicAccessConfigurationMetadata`](crate::types::BlockPublicAccessConfigurationMetadata).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BlockPublicAccessConfigurationMetadataBuilder {
-    pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) created_by_arn: std::option::Option<std::string::String>,
+    pub(crate) creation_date_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) created_by_arn: ::std::option::Option<::std::string::String>,
 }
 impl BlockPublicAccessConfigurationMetadataBuilder {
     /// <p>The date and time that the configuration was created.</p>
-    pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.creation_date_time = Some(input);
+    pub fn creation_date_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.creation_date_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time that the configuration was created.</p>
     pub fn set_creation_date_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.creation_date_time = input;
         self
     }
     /// <p>The Amazon Resource Name that created or last modified the configuration.</p>
-    pub fn created_by_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.created_by_arn = Some(input.into());
+    pub fn created_by_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.created_by_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name that created or last modified the configuration.</p>
-    pub fn set_created_by_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_created_by_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.created_by_arn = input;
         self
     }

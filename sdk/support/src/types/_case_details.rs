@@ -24,17 +24,17 @@
 /// <li> <p> <b>timeCreated</b> - The time the case was created, in ISO-8601 format.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CaseDetails {
     /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
     #[doc(hidden)]
-    pub case_id: std::option::Option<std::string::String>,
+    pub case_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID displayed for the case in the Amazon Web Services Support Center. This is a numeric string.</p>
     #[doc(hidden)]
-    pub display_id: std::option::Option<std::string::String>,
+    pub display_id: ::std::option::Option<::std::string::String>,
     /// <p>The subject line for the case in the Amazon Web Services Support Center.</p>
     #[doc(hidden)]
-    pub subject: std::option::Option<std::string::String>,
+    pub subject: ::std::option::Option<::std::string::String>,
     /// <p>The status of the case.</p>
     /// <p>Valid values:</p>
     /// <ul>
@@ -46,43 +46,43 @@ pub struct CaseDetails {
     /// <li> <p> <code>work-in-progress</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub status: std::option::Option<std::string::String>,
+    pub status: ::std::option::Option<::std::string::String>,
     /// <p>The code for the Amazon Web Services service. You can get a list of codes and the corresponding service names by calling <code>DescribeServices</code>.</p>
     #[doc(hidden)]
-    pub service_code: std::option::Option<std::string::String>,
+    pub service_code: ::std::option::Option<::std::string::String>,
     /// <p>The category of problem for the support case.</p>
     #[doc(hidden)]
-    pub category_code: std::option::Option<std::string::String>,
+    pub category_code: ::std::option::Option<::std::string::String>,
     /// <p>The code for the severity level returned by the call to <code>DescribeSeverityLevels</code>.</p>
     #[doc(hidden)]
-    pub severity_code: std::option::Option<std::string::String>,
+    pub severity_code: ::std::option::Option<::std::string::String>,
     /// <p>The email address of the account that submitted the case.</p>
     #[doc(hidden)]
-    pub submitted_by: std::option::Option<std::string::String>,
+    pub submitted_by: ::std::option::Option<::std::string::String>,
     /// <p>The time that the case was created in the Amazon Web Services Support Center.</p>
     #[doc(hidden)]
-    pub time_created: std::option::Option<std::string::String>,
+    pub time_created: ::std::option::Option<::std::string::String>,
     /// <p>The five most recent communications between you and Amazon Web Services Support Center, including the IDs of any attachments to the communications. Also includes a <code>nextToken</code> that you can use to retrieve earlier communications.</p>
     #[doc(hidden)]
-    pub recent_communications: std::option::Option<crate::types::RecentCaseCommunications>,
+    pub recent_communications: ::std::option::Option<crate::types::RecentCaseCommunications>,
     /// <p>The email addresses that receive copies of communication about the case.</p>
     #[doc(hidden)]
-    pub cc_email_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub cc_email_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
     #[doc(hidden)]
-    pub language: std::option::Option<std::string::String>,
+    pub language: ::std::option::Option<::std::string::String>,
 }
 impl CaseDetails {
     /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
-    pub fn case_id(&self) -> std::option::Option<&str> {
+    pub fn case_id(&self) -> ::std::option::Option<&str> {
         self.case_id.as_deref()
     }
     /// <p>The ID displayed for the case in the Amazon Web Services Support Center. This is a numeric string.</p>
-    pub fn display_id(&self) -> std::option::Option<&str> {
+    pub fn display_id(&self) -> ::std::option::Option<&str> {
         self.display_id.as_deref()
     }
     /// <p>The subject line for the case in the Amazon Web Services Support Center.</p>
-    pub fn subject(&self) -> std::option::Option<&str> {
+    pub fn subject(&self) -> ::std::option::Option<&str> {
         self.subject.as_deref()
     }
     /// <p>The status of the case.</p>
@@ -95,41 +95,41 @@ impl CaseDetails {
     /// <li> <p> <code>unassigned</code> </p> </li>
     /// <li> <p> <code>work-in-progress</code> </p> </li>
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
     /// <p>The code for the Amazon Web Services service. You can get a list of codes and the corresponding service names by calling <code>DescribeServices</code>.</p>
-    pub fn service_code(&self) -> std::option::Option<&str> {
+    pub fn service_code(&self) -> ::std::option::Option<&str> {
         self.service_code.as_deref()
     }
     /// <p>The category of problem for the support case.</p>
-    pub fn category_code(&self) -> std::option::Option<&str> {
+    pub fn category_code(&self) -> ::std::option::Option<&str> {
         self.category_code.as_deref()
     }
     /// <p>The code for the severity level returned by the call to <code>DescribeSeverityLevels</code>.</p>
-    pub fn severity_code(&self) -> std::option::Option<&str> {
+    pub fn severity_code(&self) -> ::std::option::Option<&str> {
         self.severity_code.as_deref()
     }
     /// <p>The email address of the account that submitted the case.</p>
-    pub fn submitted_by(&self) -> std::option::Option<&str> {
+    pub fn submitted_by(&self) -> ::std::option::Option<&str> {
         self.submitted_by.as_deref()
     }
     /// <p>The time that the case was created in the Amazon Web Services Support Center.</p>
-    pub fn time_created(&self) -> std::option::Option<&str> {
+    pub fn time_created(&self) -> ::std::option::Option<&str> {
         self.time_created.as_deref()
     }
     /// <p>The five most recent communications between you and Amazon Web Services Support Center, including the IDs of any attachments to the communications. Also includes a <code>nextToken</code> that you can use to retrieve earlier communications.</p>
     pub fn recent_communications(
         &self,
-    ) -> std::option::Option<&crate::types::RecentCaseCommunications> {
+    ) -> ::std::option::Option<&crate::types::RecentCaseCommunications> {
         self.recent_communications.as_ref()
     }
     /// <p>The email addresses that receive copies of communication about the case.</p>
-    pub fn cc_email_addresses(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn cc_email_addresses(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.cc_email_addresses.as_deref()
     }
     /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
-    pub fn language(&self) -> std::option::Option<&str> {
+    pub fn language(&self) -> ::std::option::Option<&str> {
         self.language.as_deref()
     }
 }
@@ -142,49 +142,51 @@ impl CaseDetails {
 
 /// A builder for [`CaseDetails`](crate::types::CaseDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CaseDetailsBuilder {
-    pub(crate) case_id: std::option::Option<std::string::String>,
-    pub(crate) display_id: std::option::Option<std::string::String>,
-    pub(crate) subject: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<std::string::String>,
-    pub(crate) service_code: std::option::Option<std::string::String>,
-    pub(crate) category_code: std::option::Option<std::string::String>,
-    pub(crate) severity_code: std::option::Option<std::string::String>,
-    pub(crate) submitted_by: std::option::Option<std::string::String>,
-    pub(crate) time_created: std::option::Option<std::string::String>,
-    pub(crate) recent_communications: std::option::Option<crate::types::RecentCaseCommunications>,
-    pub(crate) cc_email_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) language: std::option::Option<std::string::String>,
+    pub(crate) case_id: ::std::option::Option<::std::string::String>,
+    pub(crate) display_id: ::std::option::Option<::std::string::String>,
+    pub(crate) subject: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<::std::string::String>,
+    pub(crate) service_code: ::std::option::Option<::std::string::String>,
+    pub(crate) category_code: ::std::option::Option<::std::string::String>,
+    pub(crate) severity_code: ::std::option::Option<::std::string::String>,
+    pub(crate) submitted_by: ::std::option::Option<::std::string::String>,
+    pub(crate) time_created: ::std::option::Option<::std::string::String>,
+    pub(crate) recent_communications: ::std::option::Option<crate::types::RecentCaseCommunications>,
+    pub(crate) cc_email_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) language: ::std::option::Option<::std::string::String>,
 }
 impl CaseDetailsBuilder {
     /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
-    pub fn case_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.case_id = Some(input.into());
+    pub fn case_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.case_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
-    pub fn set_case_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_case_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.case_id = input;
         self
     }
     /// <p>The ID displayed for the case in the Amazon Web Services Support Center. This is a numeric string.</p>
-    pub fn display_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.display_id = Some(input.into());
+    pub fn display_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.display_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID displayed for the case in the Amazon Web Services Support Center. This is a numeric string.</p>
-    pub fn set_display_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_display_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_id = input;
         self
     }
     /// <p>The subject line for the case in the Amazon Web Services Support Center.</p>
-    pub fn subject(mut self, input: impl Into<std::string::String>) -> Self {
-        self.subject = Some(input.into());
+    pub fn subject(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.subject = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The subject line for the case in the Amazon Web Services Support Center.</p>
-    pub fn set_subject(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_subject(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subject = input;
         self
     }
@@ -198,8 +200,8 @@ impl CaseDetailsBuilder {
     /// <li> <p> <code>unassigned</code> </p> </li>
     /// <li> <p> <code>work-in-progress</code> </p> </li>
     /// </ul>
-    pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status = Some(input.into());
+    pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the case.</p>
@@ -212,69 +214,81 @@ impl CaseDetailsBuilder {
     /// <li> <p> <code>unassigned</code> </p> </li>
     /// <li> <p> <code>work-in-progress</code> </p> </li>
     /// </ul>
-    pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }
     /// <p>The code for the Amazon Web Services service. You can get a list of codes and the corresponding service names by calling <code>DescribeServices</code>.</p>
-    pub fn service_code(mut self, input: impl Into<std::string::String>) -> Self {
-        self.service_code = Some(input.into());
+    pub fn service_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.service_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The code for the Amazon Web Services service. You can get a list of codes and the corresponding service names by calling <code>DescribeServices</code>.</p>
-    pub fn set_service_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_service_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_code = input;
         self
     }
     /// <p>The category of problem for the support case.</p>
-    pub fn category_code(mut self, input: impl Into<std::string::String>) -> Self {
-        self.category_code = Some(input.into());
+    pub fn category_code(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.category_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The category of problem for the support case.</p>
-    pub fn set_category_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_category_code(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.category_code = input;
         self
     }
     /// <p>The code for the severity level returned by the call to <code>DescribeSeverityLevels</code>.</p>
-    pub fn severity_code(mut self, input: impl Into<std::string::String>) -> Self {
-        self.severity_code = Some(input.into());
+    pub fn severity_code(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.severity_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The code for the severity level returned by the call to <code>DescribeSeverityLevels</code>.</p>
-    pub fn set_severity_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_severity_code(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.severity_code = input;
         self
     }
     /// <p>The email address of the account that submitted the case.</p>
-    pub fn submitted_by(mut self, input: impl Into<std::string::String>) -> Self {
-        self.submitted_by = Some(input.into());
+    pub fn submitted_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.submitted_by = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The email address of the account that submitted the case.</p>
-    pub fn set_submitted_by(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_submitted_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.submitted_by = input;
         self
     }
     /// <p>The time that the case was created in the Amazon Web Services Support Center.</p>
-    pub fn time_created(mut self, input: impl Into<std::string::String>) -> Self {
-        self.time_created = Some(input.into());
+    pub fn time_created(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.time_created = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The time that the case was created in the Amazon Web Services Support Center.</p>
-    pub fn set_time_created(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_time_created(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.time_created = input;
         self
     }
     /// <p>The five most recent communications between you and Amazon Web Services Support Center, including the IDs of any attachments to the communications. Also includes a <code>nextToken</code> that you can use to retrieve earlier communications.</p>
     pub fn recent_communications(mut self, input: crate::types::RecentCaseCommunications) -> Self {
-        self.recent_communications = Some(input);
+        self.recent_communications = ::std::option::Option::Some(input);
         self
     }
     /// <p>The five most recent communications between you and Amazon Web Services Support Center, including the IDs of any attachments to the communications. Also includes a <code>nextToken</code> that you can use to retrieve earlier communications.</p>
     pub fn set_recent_communications(
         mut self,
-        input: std::option::Option<crate::types::RecentCaseCommunications>,
+        input: ::std::option::Option<crate::types::RecentCaseCommunications>,
     ) -> Self {
         self.recent_communications = input;
         self
@@ -284,27 +298,30 @@ impl CaseDetailsBuilder {
     /// To override the contents of this collection use [`set_cc_email_addresses`](Self::set_cc_email_addresses).
     ///
     /// <p>The email addresses that receive copies of communication about the case.</p>
-    pub fn cc_email_addresses(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn cc_email_addresses(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.cc_email_addresses.unwrap_or_default();
         v.push(input.into());
-        self.cc_email_addresses = Some(v);
+        self.cc_email_addresses = ::std::option::Option::Some(v);
         self
     }
     /// <p>The email addresses that receive copies of communication about the case.</p>
     pub fn set_cc_email_addresses(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.cc_email_addresses = input;
         self
     }
     /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
-    pub fn language(mut self, input: impl Into<std::string::String>) -> Self {
-        self.language = Some(input.into());
+    pub fn language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.language = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
-    pub fn set_language(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.language = input;
         self
     }

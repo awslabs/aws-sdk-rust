@@ -2,36 +2,36 @@
 
 /// <p>The Identity and Access Management (IAM) action definition details. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IamActionDefinition {
     /// <p>The Amazon Resource Name (ARN) of the policy to be attached. </p>
     #[doc(hidden)]
-    pub policy_arn: std::option::Option<std::string::String>,
+    pub policy_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of roles to be attached. There must be at least one role. </p>
     #[doc(hidden)]
-    pub roles: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub roles: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of groups to be attached. There must be at least one group. </p>
     #[doc(hidden)]
-    pub groups: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of users to be attached. There must be at least one user. </p>
     #[doc(hidden)]
-    pub users: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub users: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl IamActionDefinition {
     /// <p>The Amazon Resource Name (ARN) of the policy to be attached. </p>
-    pub fn policy_arn(&self) -> std::option::Option<&str> {
+    pub fn policy_arn(&self) -> ::std::option::Option<&str> {
         self.policy_arn.as_deref()
     }
     /// <p>A list of roles to be attached. There must be at least one role. </p>
-    pub fn roles(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn roles(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.roles.as_deref()
     }
     /// <p>A list of groups to be attached. There must be at least one group. </p>
-    pub fn groups(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn groups(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.groups.as_deref()
     }
     /// <p>A list of users to be attached. There must be at least one user. </p>
-    pub fn users(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn users(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.users.as_deref()
     }
 }
@@ -44,21 +44,23 @@ impl IamActionDefinition {
 
 /// A builder for [`IamActionDefinition`](crate::types::IamActionDefinition).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct IamActionDefinitionBuilder {
-    pub(crate) policy_arn: std::option::Option<std::string::String>,
-    pub(crate) roles: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) groups: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) users: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) policy_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) roles: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) users: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl IamActionDefinitionBuilder {
     /// <p>The Amazon Resource Name (ARN) of the policy to be attached. </p>
-    pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.policy_arn = Some(input.into());
+    pub fn policy_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.policy_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the policy to be attached. </p>
-    pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_policy_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_arn = input;
         self
     }
@@ -67,16 +69,16 @@ impl IamActionDefinitionBuilder {
     /// To override the contents of this collection use [`set_roles`](Self::set_roles).
     ///
     /// <p>A list of roles to be attached. There must be at least one role. </p>
-    pub fn roles(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn roles(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.roles.unwrap_or_default();
         v.push(input.into());
-        self.roles = Some(v);
+        self.roles = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of roles to be attached. There must be at least one role. </p>
     pub fn set_roles(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.roles = input;
         self
@@ -86,16 +88,16 @@ impl IamActionDefinitionBuilder {
     /// To override the contents of this collection use [`set_groups`](Self::set_groups).
     ///
     /// <p>A list of groups to be attached. There must be at least one group. </p>
-    pub fn groups(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.groups.unwrap_or_default();
         v.push(input.into());
-        self.groups = Some(v);
+        self.groups = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of groups to be attached. There must be at least one group. </p>
     pub fn set_groups(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.groups = input;
         self
@@ -105,16 +107,16 @@ impl IamActionDefinitionBuilder {
     /// To override the contents of this collection use [`set_users`](Self::set_users).
     ///
     /// <p>A list of users to be attached. There must be at least one user. </p>
-    pub fn users(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn users(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.users.unwrap_or_default();
         v.push(input.into());
-        self.users = Some(v);
+        self.users = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of users to be attached. There must be at least one user. </p>
     pub fn set_users(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.users = input;
         self

@@ -2,33 +2,35 @@
 
 /// A request to create a partner input
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreatePartnerInputInput {
     /// Unique ID of the input.
     #[doc(hidden)]
-    pub input_id: std::option::Option<std::string::String>,
+    pub input_id: ::std::option::Option<::std::string::String>,
     /// Unique identifier of the request to ensure the request is handled exactly once in case of retries.
     #[doc(hidden)]
-    pub request_id: std::option::Option<std::string::String>,
+    pub request_id: ::std::option::Option<::std::string::String>,
     /// A collection of key-value pairs.
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl CreatePartnerInputInput {
     /// Unique ID of the input.
-    pub fn input_id(&self) -> std::option::Option<&str> {
+    pub fn input_id(&self) -> ::std::option::Option<&str> {
         self.input_id.as_deref()
     }
     /// Unique identifier of the request to ensure the request is handled exactly once in case of retries.
-    pub fn request_id(&self) -> std::option::Option<&str> {
+    pub fn request_id(&self) -> ::std::option::Option<&str> {
         self.request_id.as_deref()
     }
     /// A collection of key-value pairs.
     pub fn tags(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.tags.as_ref()
     }
 }
@@ -42,31 +44,34 @@ impl CreatePartnerInputInput {
 
 /// A builder for [`CreatePartnerInputInput`](crate::operation::create_partner_input::CreatePartnerInputInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreatePartnerInputInputBuilder {
-    pub(crate) input_id: std::option::Option<std::string::String>,
-    pub(crate) request_id: std::option::Option<std::string::String>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) input_id: ::std::option::Option<::std::string::String>,
+    pub(crate) request_id: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl CreatePartnerInputInputBuilder {
     /// Unique ID of the input.
-    pub fn input_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.input_id = Some(input.into());
+    pub fn input_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.input_id = ::std::option::Option::Some(input.into());
         self
     }
     /// Unique ID of the input.
-    pub fn set_input_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_input_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.input_id = input;
         self
     }
     /// Unique identifier of the request to ensure the request is handled exactly once in case of retries.
-    pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.request_id = Some(input.into());
+    pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.request_id = ::std::option::Option::Some(input.into());
         self
     }
     /// Unique identifier of the request to ensure the request is handled exactly once in case of retries.
-    pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.request_id = input;
         self
     }
@@ -77,19 +82,19 @@ impl CreatePartnerInputInputBuilder {
     /// A collection of key-value pairs.
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
+        self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// A collection of key-value pairs.
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.tags = input;
@@ -98,11 +103,11 @@ impl CreatePartnerInputInputBuilder {
     /// Consumes the builder and constructs a [`CreatePartnerInputInput`](crate::operation::create_partner_input::CreatePartnerInputInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::create_partner_input::CreatePartnerInputInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::create_partner_input::CreatePartnerInputInput {
                 input_id: self.input_id,
                 request_id: self.request_id,

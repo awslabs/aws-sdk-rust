@@ -2,18 +2,18 @@
 
 /// <p>The parameters for Twitter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TwitterParameters {
     /// <p>Twitter query string.</p>
     #[doc(hidden)]
-    pub query: std::option::Option<std::string::String>,
+    pub query: ::std::option::Option<::std::string::String>,
     /// <p>Maximum number of rows to query Twitter.</p>
     #[doc(hidden)]
     pub max_rows: i32,
 }
 impl TwitterParameters {
     /// <p>Twitter query string.</p>
-    pub fn query(&self) -> std::option::Option<&str> {
+    pub fn query(&self) -> ::std::option::Option<&str> {
         self.query.as_deref()
     }
     /// <p>Maximum number of rows to query Twitter.</p>
@@ -30,29 +30,31 @@ impl TwitterParameters {
 
 /// A builder for [`TwitterParameters`](crate::types::TwitterParameters).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TwitterParametersBuilder {
-    pub(crate) query: std::option::Option<std::string::String>,
-    pub(crate) max_rows: std::option::Option<i32>,
+    pub(crate) query: ::std::option::Option<::std::string::String>,
+    pub(crate) max_rows: ::std::option::Option<i32>,
 }
 impl TwitterParametersBuilder {
     /// <p>Twitter query string.</p>
-    pub fn query(mut self, input: impl Into<std::string::String>) -> Self {
-        self.query = Some(input.into());
+    pub fn query(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.query = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Twitter query string.</p>
-    pub fn set_query(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_query(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.query = input;
         self
     }
     /// <p>Maximum number of rows to query Twitter.</p>
     pub fn max_rows(mut self, input: i32) -> Self {
-        self.max_rows = Some(input);
+        self.max_rows = ::std::option::Option::Some(input);
         self
     }
     /// <p>Maximum number of rows to query Twitter.</p>
-    pub fn set_max_rows(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_rows(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_rows = input;
         self
     }

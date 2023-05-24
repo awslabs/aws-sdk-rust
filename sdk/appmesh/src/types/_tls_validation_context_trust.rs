@@ -2,7 +2,7 @@
 
 /// <p>An object that represents a Transport Layer Security (TLS) validation context trust.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum TlsValidationContextTrust {
     /// <p>A reference to an object that represents a Transport Layer Security (TLS) validation context trust for an Certificate Manager certificate.</p>
     Acm(crate::types::TlsValidationContextAcmTrust),
@@ -25,11 +25,11 @@ impl TlsValidationContextTrust {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_acm(
         &self,
-    ) -> std::result::Result<&crate::types::TlsValidationContextAcmTrust, &Self> {
+    ) -> ::std::result::Result<&crate::types::TlsValidationContextAcmTrust, &Self> {
         if let TlsValidationContextTrust::Acm(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Acm`](crate::types::TlsValidationContextTrust::Acm).
@@ -40,11 +40,11 @@ impl TlsValidationContextTrust {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_file(
         &self,
-    ) -> std::result::Result<&crate::types::TlsValidationContextFileTrust, &Self> {
+    ) -> ::std::result::Result<&crate::types::TlsValidationContextFileTrust, &Self> {
         if let TlsValidationContextTrust::File(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`File`](crate::types::TlsValidationContextTrust::File).
@@ -55,11 +55,11 @@ impl TlsValidationContextTrust {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_sds(
         &self,
-    ) -> std::result::Result<&crate::types::TlsValidationContextSdsTrust, &Self> {
+    ) -> ::std::result::Result<&crate::types::TlsValidationContextSdsTrust, &Self> {
         if let TlsValidationContextTrust::Sds(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Sds`](crate::types::TlsValidationContextTrust::Sds).

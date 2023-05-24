@@ -2,15 +2,18 @@
 
 /// <p> Custom request handling behavior that inserts custom headers into a web request. WAF uses custom request handling when the rule action doesn't block the request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsWafv2CustomRequestHandlingDetails {
     /// <p> The HTTP headers to insert into the request. </p>
     #[doc(hidden)]
-    pub insert_headers: std::option::Option<std::vec::Vec<crate::types::AwsWafv2CustomHttpHeader>>,
+    pub insert_headers:
+        ::std::option::Option<::std::vec::Vec<crate::types::AwsWafv2CustomHttpHeader>>,
 }
 impl AwsWafv2CustomRequestHandlingDetails {
     /// <p> The HTTP headers to insert into the request. </p>
-    pub fn insert_headers(&self) -> std::option::Option<&[crate::types::AwsWafv2CustomHttpHeader]> {
+    pub fn insert_headers(
+        &self,
+    ) -> ::std::option::Option<&[crate::types::AwsWafv2CustomHttpHeader]> {
         self.insert_headers.as_deref()
     }
 }
@@ -23,10 +26,12 @@ impl AwsWafv2CustomRequestHandlingDetails {
 
 /// A builder for [`AwsWafv2CustomRequestHandlingDetails`](crate::types::AwsWafv2CustomRequestHandlingDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsWafv2CustomRequestHandlingDetailsBuilder {
     pub(crate) insert_headers:
-        std::option::Option<std::vec::Vec<crate::types::AwsWafv2CustomHttpHeader>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::AwsWafv2CustomHttpHeader>>,
 }
 impl AwsWafv2CustomRequestHandlingDetailsBuilder {
     /// Appends an item to `insert_headers`.
@@ -37,13 +42,13 @@ impl AwsWafv2CustomRequestHandlingDetailsBuilder {
     pub fn insert_headers(mut self, input: crate::types::AwsWafv2CustomHttpHeader) -> Self {
         let mut v = self.insert_headers.unwrap_or_default();
         v.push(input);
-        self.insert_headers = Some(v);
+        self.insert_headers = ::std::option::Option::Some(v);
         self
     }
     /// <p> The HTTP headers to insert into the request. </p>
     pub fn set_insert_headers(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AwsWafv2CustomHttpHeader>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AwsWafv2CustomHttpHeader>>,
     ) -> Self {
         self.insert_headers = input;
         self

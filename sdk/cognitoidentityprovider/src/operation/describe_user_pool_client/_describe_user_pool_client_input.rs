@@ -2,27 +2,27 @@
 
 /// <p>Represents the request to describe a user pool client.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DescribeUserPoolClientInput {
     /// <p>The user pool ID for the user pool you want to describe.</p>
     #[doc(hidden)]
-    pub user_pool_id: std::option::Option<std::string::String>,
+    pub user_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The app client ID of the app associated with the user pool.</p>
     #[doc(hidden)]
-    pub client_id: std::option::Option<std::string::String>,
+    pub client_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeUserPoolClientInput {
     /// <p>The user pool ID for the user pool you want to describe.</p>
-    pub fn user_pool_id(&self) -> std::option::Option<&str> {
+    pub fn user_pool_id(&self) -> ::std::option::Option<&str> {
         self.user_pool_id.as_deref()
     }
     /// <p>The app client ID of the app associated with the user pool.</p>
-    pub fn client_id(&self) -> std::option::Option<&str> {
+    pub fn client_id(&self) -> ::std::option::Option<&str> {
         self.client_id.as_deref()
     }
 }
-impl std::fmt::Debug for DescribeUserPoolClientInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for DescribeUserPoolClientInput {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeUserPoolClientInput");
         formatter.field("user_pool_id", &self.user_pool_id);
         formatter.field("client_id", &"*** Sensitive Data Redacted ***");
@@ -40,40 +40,40 @@ impl DescribeUserPoolClientInput {
 
 /// A builder for [`DescribeUserPoolClientInput`](crate::operation::describe_user_pool_client::DescribeUserPoolClientInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct DescribeUserPoolClientInputBuilder {
-    pub(crate) user_pool_id: std::option::Option<std::string::String>,
-    pub(crate) client_id: std::option::Option<std::string::String>,
+    pub(crate) user_pool_id: ::std::option::Option<::std::string::String>,
+    pub(crate) client_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeUserPoolClientInputBuilder {
     /// <p>The user pool ID for the user pool you want to describe.</p>
-    pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.user_pool_id = Some(input.into());
+    pub fn user_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.user_pool_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user pool ID for the user pool you want to describe.</p>
-    pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_user_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_pool_id = input;
         self
     }
     /// <p>The app client ID of the app associated with the user pool.</p>
-    pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.client_id = Some(input.into());
+    pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.client_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The app client ID of the app associated with the user pool.</p>
-    pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_id = input;
         self
     }
     /// Consumes the builder and constructs a [`DescribeUserPoolClientInput`](crate::operation::describe_user_pool_client::DescribeUserPoolClientInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::describe_user_pool_client::DescribeUserPoolClientInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::describe_user_pool_client::DescribeUserPoolClientInput {
                 user_pool_id: self.user_pool_id,
                 client_id: self.client_id,
@@ -81,8 +81,8 @@ impl DescribeUserPoolClientInputBuilder {
         )
     }
 }
-impl std::fmt::Debug for DescribeUserPoolClientInputBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for DescribeUserPoolClientInputBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeUserPoolClientInputBuilder");
         formatter.field("user_pool_id", &self.user_pool_id);
         formatter.field("client_id", &"*** Sensitive Data Redacted ***");

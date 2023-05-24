@@ -7,47 +7,50 @@ pub use crate::operation::list_endpoints_by_platform_application::_list_endpoint
 ///
 /// <p>Lists the endpoints and endpoint attributes for devices in a supported push notification service, such as GCM (Firebase Cloud Messaging) and APNS. The results for <code>ListEndpointsByPlatformApplication</code> are paginated and return a limited list of endpoints, up to 100. If additional records are available after the first page results, then a NextToken string will be returned. To receive the next page, you call <code>ListEndpointsByPlatformApplication</code> again using the NextToken string received from the previous call. When there are no more records to return, NextToken will be null. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push Notifications</a>. </p>
 /// <p>This action is throttled at 30 transactions per second (TPS).</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListEndpointsByPlatformApplicationFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::list_endpoints_by_platform_application::builders::ListEndpointsByPlatformApplicationInputBuilder,
 }
 impl ListEndpointsByPlatformApplicationFluentBuilder {
     /// Creates a new `ListEndpointsByPlatformApplication`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::list_endpoints_by_platform_application::ListEndpointsByPlatformApplication, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::list_endpoints_by_platform_application::ListEndpointsByPlatformApplicationError>
+                    pub async fn customize(self) -> ::std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::list_endpoints_by_platform_application::ListEndpointsByPlatformApplication, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                        ::aws_smithy_http::result::SdkError<crate::operation::list_endpoints_by_platform_application::ListEndpointsByPlatformApplicationError>
     >{
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::list_endpoints_by_platform_application::ListEndpointsByPlatformApplicationOutput, aws_smithy_http::result::SdkError<crate::operation::list_endpoints_by_platform_application::ListEndpointsByPlatformApplicationError>>
+                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::list_endpoints_by_platform_application::ListEndpointsByPlatformApplicationOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_endpoints_by_platform_application::ListEndpointsByPlatformApplicationError>>
                      {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -58,7 +61,7 @@ impl ListEndpointsByPlatformApplicationFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> std::result::Result<crate::operation::list_endpoints_by_platform_application::ListEndpointsByPlatformApplicationOutput, aws_smithy_http::result::SdkError<crate::operation::list_endpoints_by_platform_application::ListEndpointsByPlatformApplicationError>>
+                        pub async fn send(self) -> ::std::result::Result<crate::operation::list_endpoints_by_platform_application::ListEndpointsByPlatformApplicationOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_endpoints_by_platform_application::ListEndpointsByPlatformApplicationError>>
                          {
         self.send_middleware().await
     }
@@ -69,25 +72,28 @@ impl ListEndpointsByPlatformApplicationFluentBuilder {
         crate::operation::list_endpoints_by_platform_application::paginator::ListEndpointsByPlatformApplicationPaginator::new(self.handle, self.inner)
     }
     /// <p>PlatformApplicationArn for ListEndpointsByPlatformApplicationInput action.</p>
-    pub fn platform_application_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn platform_application_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.platform_application_arn(input.into());
         self
     }
     /// <p>PlatformApplicationArn for ListEndpointsByPlatformApplicationInput action.</p>
     pub fn set_platform_application_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_platform_application_arn(input);
         self
     }
     /// <p>NextToken string is used when calling ListEndpointsByPlatformApplication action to retrieve additional records that are available after the first page results.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
     /// <p>NextToken string is used when calling ListEndpointsByPlatformApplication action to retrieve additional records that are available after the first page results.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }

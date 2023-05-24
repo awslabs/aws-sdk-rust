@@ -2,22 +2,24 @@
 
 /// <p>The total value of the new Convertible Reserved Instances.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TargetReservationValue {
     /// <p>The total value of the Convertible Reserved Instances that make up the exchange. This is the sum of the list value, remaining upfront price, and additional upfront cost of the exchange.</p>
     #[doc(hidden)]
-    pub reservation_value: std::option::Option<crate::types::ReservationValue>,
+    pub reservation_value: ::std::option::Option<crate::types::ReservationValue>,
     /// <p>The configuration of the Convertible Reserved Instances that make up the exchange.</p>
     #[doc(hidden)]
-    pub target_configuration: std::option::Option<crate::types::TargetConfiguration>,
+    pub target_configuration: ::std::option::Option<crate::types::TargetConfiguration>,
 }
 impl TargetReservationValue {
     /// <p>The total value of the Convertible Reserved Instances that make up the exchange. This is the sum of the list value, remaining upfront price, and additional upfront cost of the exchange.</p>
-    pub fn reservation_value(&self) -> std::option::Option<&crate::types::ReservationValue> {
+    pub fn reservation_value(&self) -> ::std::option::Option<&crate::types::ReservationValue> {
         self.reservation_value.as_ref()
     }
     /// <p>The configuration of the Convertible Reserved Instances that make up the exchange.</p>
-    pub fn target_configuration(&self) -> std::option::Option<&crate::types::TargetConfiguration> {
+    pub fn target_configuration(
+        &self,
+    ) -> ::std::option::Option<&crate::types::TargetConfiguration> {
         self.target_configuration.as_ref()
     }
 }
@@ -30,34 +32,36 @@ impl TargetReservationValue {
 
 /// A builder for [`TargetReservationValue`](crate::types::TargetReservationValue).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TargetReservationValueBuilder {
-    pub(crate) reservation_value: std::option::Option<crate::types::ReservationValue>,
-    pub(crate) target_configuration: std::option::Option<crate::types::TargetConfiguration>,
+    pub(crate) reservation_value: ::std::option::Option<crate::types::ReservationValue>,
+    pub(crate) target_configuration: ::std::option::Option<crate::types::TargetConfiguration>,
 }
 impl TargetReservationValueBuilder {
     /// <p>The total value of the Convertible Reserved Instances that make up the exchange. This is the sum of the list value, remaining upfront price, and additional upfront cost of the exchange.</p>
     pub fn reservation_value(mut self, input: crate::types::ReservationValue) -> Self {
-        self.reservation_value = Some(input);
+        self.reservation_value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total value of the Convertible Reserved Instances that make up the exchange. This is the sum of the list value, remaining upfront price, and additional upfront cost of the exchange.</p>
     pub fn set_reservation_value(
         mut self,
-        input: std::option::Option<crate::types::ReservationValue>,
+        input: ::std::option::Option<crate::types::ReservationValue>,
     ) -> Self {
         self.reservation_value = input;
         self
     }
     /// <p>The configuration of the Convertible Reserved Instances that make up the exchange.</p>
     pub fn target_configuration(mut self, input: crate::types::TargetConfiguration) -> Self {
-        self.target_configuration = Some(input);
+        self.target_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration of the Convertible Reserved Instances that make up the exchange.</p>
     pub fn set_target_configuration(
         mut self,
-        input: std::option::Option<crate::types::TargetConfiguration>,
+        input: ::std::option::Option<crate::types::TargetConfiguration>,
     ) -> Self {
         self.target_configuration = input;
         self

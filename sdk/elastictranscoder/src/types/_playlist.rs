@@ -2,16 +2,16 @@
 
 /// <p> Use Only for Fragmented MP4 or MPEG-TS Outputs. If you specify a preset for which the value of Container is <code>fmp4</code> (Fragmented MP4) or <code>ts</code> (MPEG-TS), Playlists contains information about the master playlists that you want Elastic Transcoder to create. We recommend that you create only one master playlist per output format. The maximum number of master playlists in a job is 30. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Playlist {
     /// <p>The name that you want Elastic Transcoder to assign to the master playlist, for example, nyc-vacation.m3u8. If the name includes a <code>/</code> character, the section of the name before the last <code>/</code> must be identical for all <code>Name</code> objects. If you create more than one master playlist, the values of all <code>Name</code> objects must be unique.</p> <note>
     /// <p>Elastic Transcoder automatically appends the relevant file extension to the file name (<code>.m3u8</code> for <code>HLSv3</code> and <code>HLSv4</code> playlists, and <code>.ism</code> and <code>.ismc</code> for <code>Smooth</code> playlists). If you include a file extension in <code>Name</code>, the file name will have two extensions.</p>
     /// </note>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The format of the output playlist. Valid formats include <code>HLSv3</code>, <code>HLSv4</code>, and <code>Smooth</code>.</p>
     #[doc(hidden)]
-    pub format: std::option::Option<std::string::String>,
+    pub format: ::std::option::Option<::std::string::String>,
     /// <p>For each output in this job that you want to include in a master playlist, the value of the Outputs:Key object.</p>
     /// <ul>
     /// <li> <p>If your output is not <code>HLS</code> or does not have a segment duration set, the name of the output file is a concatenation of <code>OutputKeyPrefix</code> and <code>Outputs:Key</code>:</p> <p>OutputKeyPrefix<code>Outputs:Key</code> </p> </li>
@@ -21,29 +21,29 @@ pub struct Playlist {
     /// <p>Elastic Transcoder automatically appends the relevant file extension to the file name. If you include a file extension in Output Key, the file name will have two extensions.</p>
     /// <p>If you include more than one output in a playlist, any segment duration settings, clip settings, or caption settings must be the same for all outputs in the playlist. For <code>Smooth</code> playlists, the <code>Audio:Profile</code>, <code>Video:Profile</code>, and <code>Video:FrameRate</code> to <code>Video:KeyframesMaxDist</code> ratio must be the same for all outputs.</p>
     #[doc(hidden)]
-    pub output_keys: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub output_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The HLS content protection settings, if any, that you want Elastic Transcoder to apply to the output files associated with this playlist.</p>
     #[doc(hidden)]
-    pub hls_content_protection: std::option::Option<crate::types::HlsContentProtection>,
+    pub hls_content_protection: ::std::option::Option<crate::types::HlsContentProtection>,
     /// <p>The DRM settings, if any, that you want Elastic Transcoder to apply to the output files associated with this playlist.</p>
     #[doc(hidden)]
-    pub play_ready_drm: std::option::Option<crate::types::PlayReadyDrm>,
+    pub play_ready_drm: ::std::option::Option<crate::types::PlayReadyDrm>,
     /// <p>The status of the job with which the playlist is associated.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<std::string::String>,
+    pub status: ::std::option::Option<::std::string::String>,
     /// <p>Information that further explains the status.</p>
     #[doc(hidden)]
-    pub status_detail: std::option::Option<std::string::String>,
+    pub status_detail: ::std::option::Option<::std::string::String>,
 }
 impl Playlist {
     /// <p>The name that you want Elastic Transcoder to assign to the master playlist, for example, nyc-vacation.m3u8. If the name includes a <code>/</code> character, the section of the name before the last <code>/</code> must be identical for all <code>Name</code> objects. If you create more than one master playlist, the values of all <code>Name</code> objects must be unique.</p> <note>
     /// <p>Elastic Transcoder automatically appends the relevant file extension to the file name (<code>.m3u8</code> for <code>HLSv3</code> and <code>HLSv4</code> playlists, and <code>.ism</code> and <code>.ismc</code> for <code>Smooth</code> playlists). If you include a file extension in <code>Name</code>, the file name will have two extensions.</p>
     /// </note>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The format of the output playlist. Valid formats include <code>HLSv3</code>, <code>HLSv4</code>, and <code>Smooth</code>.</p>
-    pub fn format(&self) -> std::option::Option<&str> {
+    pub fn format(&self) -> ::std::option::Option<&str> {
         self.format.as_deref()
     }
     /// <p>For each output in this job that you want to include in a master playlist, the value of the Outputs:Key object.</p>
@@ -54,25 +54,25 @@ impl Playlist {
     /// </ul>
     /// <p>Elastic Transcoder automatically appends the relevant file extension to the file name. If you include a file extension in Output Key, the file name will have two extensions.</p>
     /// <p>If you include more than one output in a playlist, any segment duration settings, clip settings, or caption settings must be the same for all outputs in the playlist. For <code>Smooth</code> playlists, the <code>Audio:Profile</code>, <code>Video:Profile</code>, and <code>Video:FrameRate</code> to <code>Video:KeyframesMaxDist</code> ratio must be the same for all outputs.</p>
-    pub fn output_keys(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn output_keys(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.output_keys.as_deref()
     }
     /// <p>The HLS content protection settings, if any, that you want Elastic Transcoder to apply to the output files associated with this playlist.</p>
     pub fn hls_content_protection(
         &self,
-    ) -> std::option::Option<&crate::types::HlsContentProtection> {
+    ) -> ::std::option::Option<&crate::types::HlsContentProtection> {
         self.hls_content_protection.as_ref()
     }
     /// <p>The DRM settings, if any, that you want Elastic Transcoder to apply to the output files associated with this playlist.</p>
-    pub fn play_ready_drm(&self) -> std::option::Option<&crate::types::PlayReadyDrm> {
+    pub fn play_ready_drm(&self) -> ::std::option::Option<&crate::types::PlayReadyDrm> {
         self.play_ready_drm.as_ref()
     }
     /// <p>The status of the job with which the playlist is associated.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
     /// <p>Information that further explains the status.</p>
-    pub fn status_detail(&self) -> std::option::Option<&str> {
+    pub fn status_detail(&self) -> ::std::option::Option<&str> {
         self.status_detail.as_deref()
     }
 }
@@ -85,38 +85,40 @@ impl Playlist {
 
 /// A builder for [`Playlist`](crate::types::Playlist).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PlaylistBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) format: std::option::Option<std::string::String>,
-    pub(crate) output_keys: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) hls_content_protection: std::option::Option<crate::types::HlsContentProtection>,
-    pub(crate) play_ready_drm: std::option::Option<crate::types::PlayReadyDrm>,
-    pub(crate) status: std::option::Option<std::string::String>,
-    pub(crate) status_detail: std::option::Option<std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) format: ::std::option::Option<::std::string::String>,
+    pub(crate) output_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) hls_content_protection: ::std::option::Option<crate::types::HlsContentProtection>,
+    pub(crate) play_ready_drm: ::std::option::Option<crate::types::PlayReadyDrm>,
+    pub(crate) status: ::std::option::Option<::std::string::String>,
+    pub(crate) status_detail: ::std::option::Option<::std::string::String>,
 }
 impl PlaylistBuilder {
     /// <p>The name that you want Elastic Transcoder to assign to the master playlist, for example, nyc-vacation.m3u8. If the name includes a <code>/</code> character, the section of the name before the last <code>/</code> must be identical for all <code>Name</code> objects. If you create more than one master playlist, the values of all <code>Name</code> objects must be unique.</p> <note>
     /// <p>Elastic Transcoder automatically appends the relevant file extension to the file name (<code>.m3u8</code> for <code>HLSv3</code> and <code>HLSv4</code> playlists, and <code>.ism</code> and <code>.ismc</code> for <code>Smooth</code> playlists). If you include a file extension in <code>Name</code>, the file name will have two extensions.</p>
     /// </note>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name that you want Elastic Transcoder to assign to the master playlist, for example, nyc-vacation.m3u8. If the name includes a <code>/</code> character, the section of the name before the last <code>/</code> must be identical for all <code>Name</code> objects. If you create more than one master playlist, the values of all <code>Name</code> objects must be unique.</p> <note>
     /// <p>Elastic Transcoder automatically appends the relevant file extension to the file name (<code>.m3u8</code> for <code>HLSv3</code> and <code>HLSv4</code> playlists, and <code>.ism</code> and <code>.ismc</code> for <code>Smooth</code> playlists). If you include a file extension in <code>Name</code>, the file name will have two extensions.</p>
     /// </note>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The format of the output playlist. Valid formats include <code>HLSv3</code>, <code>HLSv4</code>, and <code>Smooth</code>.</p>
-    pub fn format(mut self, input: impl Into<std::string::String>) -> Self {
-        self.format = Some(input.into());
+    pub fn format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.format = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The format of the output playlist. Valid formats include <code>HLSv3</code>, <code>HLSv4</code>, and <code>Smooth</code>.</p>
-    pub fn set_format(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.format = input;
         self
     }
@@ -132,10 +134,10 @@ impl PlaylistBuilder {
     /// </ul>
     /// <p>Elastic Transcoder automatically appends the relevant file extension to the file name. If you include a file extension in Output Key, the file name will have two extensions.</p>
     /// <p>If you include more than one output in a playlist, any segment duration settings, clip settings, or caption settings must be the same for all outputs in the playlist. For <code>Smooth</code> playlists, the <code>Audio:Profile</code>, <code>Video:Profile</code>, and <code>Video:FrameRate</code> to <code>Video:KeyframesMaxDist</code> ratio must be the same for all outputs.</p>
-    pub fn output_keys(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn output_keys(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.output_keys.unwrap_or_default();
         v.push(input.into());
-        self.output_keys = Some(v);
+        self.output_keys = ::std::option::Option::Some(v);
         self
     }
     /// <p>For each output in this job that you want to include in a master playlist, the value of the Outputs:Key object.</p>
@@ -148,54 +150,60 @@ impl PlaylistBuilder {
     /// <p>If you include more than one output in a playlist, any segment duration settings, clip settings, or caption settings must be the same for all outputs in the playlist. For <code>Smooth</code> playlists, the <code>Audio:Profile</code>, <code>Video:Profile</code>, and <code>Video:FrameRate</code> to <code>Video:KeyframesMaxDist</code> ratio must be the same for all outputs.</p>
     pub fn set_output_keys(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.output_keys = input;
         self
     }
     /// <p>The HLS content protection settings, if any, that you want Elastic Transcoder to apply to the output files associated with this playlist.</p>
     pub fn hls_content_protection(mut self, input: crate::types::HlsContentProtection) -> Self {
-        self.hls_content_protection = Some(input);
+        self.hls_content_protection = ::std::option::Option::Some(input);
         self
     }
     /// <p>The HLS content protection settings, if any, that you want Elastic Transcoder to apply to the output files associated with this playlist.</p>
     pub fn set_hls_content_protection(
         mut self,
-        input: std::option::Option<crate::types::HlsContentProtection>,
+        input: ::std::option::Option<crate::types::HlsContentProtection>,
     ) -> Self {
         self.hls_content_protection = input;
         self
     }
     /// <p>The DRM settings, if any, that you want Elastic Transcoder to apply to the output files associated with this playlist.</p>
     pub fn play_ready_drm(mut self, input: crate::types::PlayReadyDrm) -> Self {
-        self.play_ready_drm = Some(input);
+        self.play_ready_drm = ::std::option::Option::Some(input);
         self
     }
     /// <p>The DRM settings, if any, that you want Elastic Transcoder to apply to the output files associated with this playlist.</p>
     pub fn set_play_ready_drm(
         mut self,
-        input: std::option::Option<crate::types::PlayReadyDrm>,
+        input: ::std::option::Option<crate::types::PlayReadyDrm>,
     ) -> Self {
         self.play_ready_drm = input;
         self
     }
     /// <p>The status of the job with which the playlist is associated.</p>
-    pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status = Some(input.into());
+    pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the job with which the playlist is associated.</p>
-    pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }
     /// <p>Information that further explains the status.</p>
-    pub fn status_detail(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status_detail = Some(input.into());
+    pub fn status_detail(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.status_detail = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Information that further explains the status.</p>
-    pub fn set_status_detail(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status_detail(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.status_detail = input;
         self
     }

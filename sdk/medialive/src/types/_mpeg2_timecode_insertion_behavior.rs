@@ -38,13 +38,13 @@
 /// Mpeg2 Timecode Insertion Behavior
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum Mpeg2TimecodeInsertionBehavior {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum Mpeg2TimecodeInsertionBehavior {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for Mpeg2TimecodeInsertionBehavior {
+impl ::std::convert::From<&str> for Mpeg2TimecodeInsertionBehavior {
     fn from(s: &str) -> Self {
         match s {
             "DISABLED" => Mpeg2TimecodeInsertionBehavior::Disabled,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for Mpeg2TimecodeInsertionBehavior {
         }
     }
 }
-impl std::str::FromStr for Mpeg2TimecodeInsertionBehavior {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for Mpeg2TimecodeInsertionBehavior {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Mpeg2TimecodeInsertionBehavior::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(Mpeg2TimecodeInsertionBehavior::from(s))
     }
 }
 impl Mpeg2TimecodeInsertionBehavior {
@@ -86,7 +86,7 @@ impl Mpeg2TimecodeInsertionBehavior {
         &["DISABLED", "GOP_TIMECODE"]
     }
 }
-impl AsRef<str> for Mpeg2TimecodeInsertionBehavior {
+impl ::std::convert::AsRef<str> for Mpeg2TimecodeInsertionBehavior {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

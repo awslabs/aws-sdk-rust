@@ -2,29 +2,29 @@
 
 /// <p>The details that define an aggregation based on Amazon machine images (AMIs).</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AmiAggregation {
     /// <p>The IDs of AMIs to aggregate findings for.</p>
     #[doc(hidden)]
-    pub amis: std::option::Option<std::vec::Vec<crate::types::StringFilter>>,
+    pub amis: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>The order to sort results by.</p>
     #[doc(hidden)]
-    pub sort_order: std::option::Option<crate::types::SortOrder>,
+    pub sort_order: ::std::option::Option<crate::types::SortOrder>,
     /// <p>The value to sort results by.</p>
     #[doc(hidden)]
-    pub sort_by: std::option::Option<crate::types::AmiSortBy>,
+    pub sort_by: ::std::option::Option<crate::types::AmiSortBy>,
 }
 impl AmiAggregation {
     /// <p>The IDs of AMIs to aggregate findings for.</p>
-    pub fn amis(&self) -> std::option::Option<&[crate::types::StringFilter]> {
+    pub fn amis(&self) -> ::std::option::Option<&[crate::types::StringFilter]> {
         self.amis.as_deref()
     }
     /// <p>The order to sort results by.</p>
-    pub fn sort_order(&self) -> std::option::Option<&crate::types::SortOrder> {
+    pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SortOrder> {
         self.sort_order.as_ref()
     }
     /// <p>The value to sort results by.</p>
-    pub fn sort_by(&self) -> std::option::Option<&crate::types::AmiSortBy> {
+    pub fn sort_by(&self) -> ::std::option::Option<&crate::types::AmiSortBy> {
         self.sort_by.as_ref()
     }
 }
@@ -37,11 +37,13 @@ impl AmiAggregation {
 
 /// A builder for [`AmiAggregation`](crate::types::AmiAggregation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AmiAggregationBuilder {
-    pub(crate) amis: std::option::Option<std::vec::Vec<crate::types::StringFilter>>,
-    pub(crate) sort_order: std::option::Option<crate::types::SortOrder>,
-    pub(crate) sort_by: std::option::Option<crate::types::AmiSortBy>,
+    pub(crate) amis: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
+    pub(crate) sort_order: ::std::option::Option<crate::types::SortOrder>,
+    pub(crate) sort_by: ::std::option::Option<crate::types::AmiSortBy>,
 }
 impl AmiAggregationBuilder {
     /// Appends an item to `amis`.
@@ -52,34 +54,34 @@ impl AmiAggregationBuilder {
     pub fn amis(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.amis.unwrap_or_default();
         v.push(input);
-        self.amis = Some(v);
+        self.amis = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IDs of AMIs to aggregate findings for.</p>
     pub fn set_amis(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::StringFilter>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     ) -> Self {
         self.amis = input;
         self
     }
     /// <p>The order to sort results by.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
-        self.sort_order = Some(input);
+        self.sort_order = ::std::option::Option::Some(input);
         self
     }
     /// <p>The order to sort results by.</p>
-    pub fn set_sort_order(mut self, input: std::option::Option<crate::types::SortOrder>) -> Self {
+    pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.sort_order = input;
         self
     }
     /// <p>The value to sort results by.</p>
     pub fn sort_by(mut self, input: crate::types::AmiSortBy) -> Self {
-        self.sort_by = Some(input);
+        self.sort_by = ::std::option::Option::Some(input);
         self
     }
     /// <p>The value to sort results by.</p>
-    pub fn set_sort_by(mut self, input: std::option::Option<crate::types::AmiSortBy>) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::AmiSortBy>) -> Self {
         self.sort_by = input;
         self
     }

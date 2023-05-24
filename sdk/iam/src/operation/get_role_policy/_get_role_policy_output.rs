@@ -2,36 +2,36 @@
 
 /// <p>Contains the response to a successful <code>GetRolePolicy</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRolePolicyOutput {
     /// <p>The role the policy is associated with.</p>
     #[doc(hidden)]
-    pub role_name: std::option::Option<std::string::String>,
+    pub role_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the policy.</p>
     #[doc(hidden)]
-    pub policy_name: std::option::Option<std::string::String>,
+    pub policy_name: ::std::option::Option<::std::string::String>,
     /// <p>The policy document.</p>
     /// <p>IAM stores policies in JSON format. However, resources that were created using CloudFormation templates can be formatted in YAML. CloudFormation always converts a YAML policy to JSON format before submitting it to IAM.</p>
     #[doc(hidden)]
-    pub policy_document: std::option::Option<std::string::String>,
+    pub policy_document: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetRolePolicyOutput {
     /// <p>The role the policy is associated with.</p>
-    pub fn role_name(&self) -> std::option::Option<&str> {
+    pub fn role_name(&self) -> ::std::option::Option<&str> {
         self.role_name.as_deref()
     }
     /// <p>The name of the policy.</p>
-    pub fn policy_name(&self) -> std::option::Option<&str> {
+    pub fn policy_name(&self) -> ::std::option::Option<&str> {
         self.policy_name.as_deref()
     }
     /// <p>The policy document.</p>
     /// <p>IAM stores policies in JSON format. However, resources that were created using CloudFormation templates can be formatted in YAML. CloudFormation always converts a YAML policy to JSON format before submitting it to IAM.</p>
-    pub fn policy_document(&self) -> std::option::Option<&str> {
+    pub fn policy_document(&self) -> ::std::option::Option<&str> {
         self.policy_document.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for GetRolePolicyOutput {
+impl ::aws_http::request_id::RequestId for GetRolePolicyOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -45,43 +45,51 @@ impl GetRolePolicyOutput {
 
 /// A builder for [`GetRolePolicyOutput`](crate::operation::get_role_policy::GetRolePolicyOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetRolePolicyOutputBuilder {
-    pub(crate) role_name: std::option::Option<std::string::String>,
-    pub(crate) policy_name: std::option::Option<std::string::String>,
-    pub(crate) policy_document: std::option::Option<std::string::String>,
+    pub(crate) role_name: ::std::option::Option<::std::string::String>,
+    pub(crate) policy_name: ::std::option::Option<::std::string::String>,
+    pub(crate) policy_document: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetRolePolicyOutputBuilder {
     /// <p>The role the policy is associated with.</p>
-    pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.role_name = Some(input.into());
+    pub fn role_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.role_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The role the policy is associated with.</p>
-    pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_role_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_name = input;
         self
     }
     /// <p>The name of the policy.</p>
-    pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.policy_name = Some(input.into());
+    pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.policy_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the policy.</p>
-    pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_name = input;
         self
     }
     /// <p>The policy document.</p>
     /// <p>IAM stores policies in JSON format. However, resources that were created using CloudFormation templates can be formatted in YAML. CloudFormation always converts a YAML policy to JSON format before submitting it to IAM.</p>
-    pub fn policy_document(mut self, input: impl Into<std::string::String>) -> Self {
-        self.policy_document = Some(input.into());
+    pub fn policy_document(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.policy_document = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The policy document.</p>
     /// <p>IAM stores policies in JSON format. However, resources that were created using CloudFormation templates can be formatted in YAML. CloudFormation always converts a YAML policy to JSON format before submitting it to IAM.</p>
-    pub fn set_policy_document(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_policy_document(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.policy_document = input;
         self
     }

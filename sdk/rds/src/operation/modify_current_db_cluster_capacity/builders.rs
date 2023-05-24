@@ -13,47 +13,50 @@ pub use crate::operation::modify_current_db_cluster_capacity::_modify_current_db
 /// </important> <note>
 /// <p>This action only applies to Aurora Serverless v1 DB clusters.</p>
 /// </note>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyCurrentDBClusterCapacityFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::modify_current_db_cluster_capacity::builders::ModifyCurrentDbClusterCapacityInputBuilder,
 }
 impl ModifyCurrentDBClusterCapacityFluentBuilder {
     /// Creates a new `ModifyCurrentDBClusterCapacity`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::modify_current_db_cluster_capacity::ModifyCurrentDBClusterCapacity, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::modify_current_db_cluster_capacity::ModifyCurrentDBClusterCapacityError>
+                    pub async fn customize(self) -> ::std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::modify_current_db_cluster_capacity::ModifyCurrentDBClusterCapacity, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                        ::aws_smithy_http::result::SdkError<crate::operation::modify_current_db_cluster_capacity::ModifyCurrentDBClusterCapacityError>
     >{
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::modify_current_db_cluster_capacity::ModifyCurrentDbClusterCapacityOutput, aws_smithy_http::result::SdkError<crate::operation::modify_current_db_cluster_capacity::ModifyCurrentDBClusterCapacityError>>
+                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::modify_current_db_cluster_capacity::ModifyCurrentDbClusterCapacityOutput, ::aws_smithy_http::result::SdkError<crate::operation::modify_current_db_cluster_capacity::ModifyCurrentDBClusterCapacityError>>
                      {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -64,7 +67,7 @@ impl ModifyCurrentDBClusterCapacityFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> std::result::Result<crate::operation::modify_current_db_cluster_capacity::ModifyCurrentDbClusterCapacityOutput, aws_smithy_http::result::SdkError<crate::operation::modify_current_db_cluster_capacity::ModifyCurrentDBClusterCapacityError>>
+                        pub async fn send(self) -> ::std::result::Result<crate::operation::modify_current_db_cluster_capacity::ModifyCurrentDbClusterCapacityOutput, ::aws_smithy_http::result::SdkError<crate::operation::modify_current_db_cluster_capacity::ModifyCurrentDBClusterCapacityError>>
                          {
         self.send_middleware().await
     }
@@ -73,7 +76,10 @@ impl ModifyCurrentDBClusterCapacityFluentBuilder {
     /// <ul>
     /// <li> <p>Must match the identifier of an existing DB cluster.</p> </li>
     /// </ul>
-    pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn db_cluster_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.db_cluster_identifier(input.into());
         self
     }
@@ -84,7 +90,7 @@ impl ModifyCurrentDBClusterCapacityFluentBuilder {
     /// </ul>
     pub fn set_db_cluster_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_db_cluster_identifier(input);
         self
@@ -107,7 +113,7 @@ impl ModifyCurrentDBClusterCapacityFluentBuilder {
     /// <li> <p>For Aurora MySQL, valid capacity values are <code>1</code>, <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code>, <code>128</code>, and <code>256</code>.</p> </li>
     /// <li> <p>For Aurora PostgreSQL, valid capacity values are <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code>, <code>192</code>, and <code>384</code>.</p> </li>
     /// </ul>
-    pub fn set_capacity(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_capacity(input);
         self
     }
@@ -119,21 +125,27 @@ impl ModifyCurrentDBClusterCapacityFluentBuilder {
     }
     /// <p>The amount of time, in seconds, that Aurora Serverless v1 tries to find a scaling point to perform seamless scaling before enforcing the timeout action. The default is 300.</p>
     /// <p>Specify a value between 10 and 600 seconds.</p>
-    pub fn set_seconds_before_timeout(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_seconds_before_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_seconds_before_timeout(input);
         self
     }
     /// <p>The action to take when the timeout is reached, either <code>ForceApplyCapacityChange</code> or <code>RollbackCapacityChange</code>.</p>
     /// <p> <code>ForceApplyCapacityChange</code>, the default, sets the capacity to the specified value as soon as possible.</p>
     /// <p> <code>RollbackCapacityChange</code> ignores the capacity change if a scaling point isn't found in the timeout period.</p>
-    pub fn timeout_action(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn timeout_action(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.timeout_action(input.into());
         self
     }
     /// <p>The action to take when the timeout is reached, either <code>ForceApplyCapacityChange</code> or <code>RollbackCapacityChange</code>.</p>
     /// <p> <code>ForceApplyCapacityChange</code>, the default, sets the capacity to the specified value as soon as possible.</p>
     /// <p> <code>RollbackCapacityChange</code> ignores the capacity change if a scaling point isn't found in the timeout period.</p>
-    pub fn set_timeout_action(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_timeout_action(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_timeout_action(input);
         self
     }

@@ -2,24 +2,24 @@
 
 /// <p>Provides information about the number of documents and the number of questions and answers in an index.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IndexStatistics {
     /// <p>The number of question and answer topics in the index.</p>
     #[doc(hidden)]
-    pub faq_statistics: std::option::Option<crate::types::FaqStatistics>,
+    pub faq_statistics: ::std::option::Option<crate::types::FaqStatistics>,
     /// <p>The number of text documents indexed.</p>
     #[doc(hidden)]
-    pub text_document_statistics: std::option::Option<crate::types::TextDocumentStatistics>,
+    pub text_document_statistics: ::std::option::Option<crate::types::TextDocumentStatistics>,
 }
 impl IndexStatistics {
     /// <p>The number of question and answer topics in the index.</p>
-    pub fn faq_statistics(&self) -> std::option::Option<&crate::types::FaqStatistics> {
+    pub fn faq_statistics(&self) -> ::std::option::Option<&crate::types::FaqStatistics> {
         self.faq_statistics.as_ref()
     }
     /// <p>The number of text documents indexed.</p>
     pub fn text_document_statistics(
         &self,
-    ) -> std::option::Option<&crate::types::TextDocumentStatistics> {
+    ) -> ::std::option::Option<&crate::types::TextDocumentStatistics> {
         self.text_document_statistics.as_ref()
     }
 }
@@ -32,34 +32,37 @@ impl IndexStatistics {
 
 /// A builder for [`IndexStatistics`](crate::types::IndexStatistics).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct IndexStatisticsBuilder {
-    pub(crate) faq_statistics: std::option::Option<crate::types::FaqStatistics>,
-    pub(crate) text_document_statistics: std::option::Option<crate::types::TextDocumentStatistics>,
+    pub(crate) faq_statistics: ::std::option::Option<crate::types::FaqStatistics>,
+    pub(crate) text_document_statistics:
+        ::std::option::Option<crate::types::TextDocumentStatistics>,
 }
 impl IndexStatisticsBuilder {
     /// <p>The number of question and answer topics in the index.</p>
     pub fn faq_statistics(mut self, input: crate::types::FaqStatistics) -> Self {
-        self.faq_statistics = Some(input);
+        self.faq_statistics = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of question and answer topics in the index.</p>
     pub fn set_faq_statistics(
         mut self,
-        input: std::option::Option<crate::types::FaqStatistics>,
+        input: ::std::option::Option<crate::types::FaqStatistics>,
     ) -> Self {
         self.faq_statistics = input;
         self
     }
     /// <p>The number of text documents indexed.</p>
     pub fn text_document_statistics(mut self, input: crate::types::TextDocumentStatistics) -> Self {
-        self.text_document_statistics = Some(input);
+        self.text_document_statistics = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of text documents indexed.</p>
     pub fn set_text_document_statistics(
         mut self,
-        input: std::option::Option<crate::types::TextDocumentStatistics>,
+        input: ::std::option::Option<crate::types::TextDocumentStatistics>,
     ) -> Self {
         self.text_document_statistics = input;
         self

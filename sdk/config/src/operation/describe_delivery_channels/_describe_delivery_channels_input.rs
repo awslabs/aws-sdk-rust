@@ -2,15 +2,15 @@
 
 /// <p>The input for the <code>DescribeDeliveryChannels</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDeliveryChannelsInput {
     /// <p>A list of delivery channel names.</p>
     #[doc(hidden)]
-    pub delivery_channel_names: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub delivery_channel_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeDeliveryChannelsInput {
     /// <p>A list of delivery channel names.</p>
-    pub fn delivery_channel_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn delivery_channel_names(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.delivery_channel_names.as_deref()
     }
 }
@@ -25,9 +25,12 @@ impl DescribeDeliveryChannelsInput {
 
 /// A builder for [`DescribeDeliveryChannelsInput`](crate::operation::describe_delivery_channels::DescribeDeliveryChannelsInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeDeliveryChannelsInputBuilder {
-    pub(crate) delivery_channel_names: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) delivery_channel_names:
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeDeliveryChannelsInputBuilder {
     /// Appends an item to `delivery_channel_names`.
@@ -35,16 +38,19 @@ impl DescribeDeliveryChannelsInputBuilder {
     /// To override the contents of this collection use [`set_delivery_channel_names`](Self::set_delivery_channel_names).
     ///
     /// <p>A list of delivery channel names.</p>
-    pub fn delivery_channel_names(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn delivery_channel_names(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.delivery_channel_names.unwrap_or_default();
         v.push(input.into());
-        self.delivery_channel_names = Some(v);
+        self.delivery_channel_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of delivery channel names.</p>
     pub fn set_delivery_channel_names(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.delivery_channel_names = input;
         self
@@ -52,11 +58,11 @@ impl DescribeDeliveryChannelsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeDeliveryChannelsInput`](crate::operation::describe_delivery_channels::DescribeDeliveryChannelsInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::describe_delivery_channels::DescribeDeliveryChannelsInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::describe_delivery_channels::DescribeDeliveryChannelsInput {
                 delivery_channel_names: self.delivery_channel_names,
             },

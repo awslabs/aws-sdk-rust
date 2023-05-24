@@ -9,56 +9,59 @@ pub use crate::operation::search::_search_input::SearchInputBuilder;
 /// <p>You can query against the following value types: numeric, text, Boolean, and timestamp.</p> <note>
 /// <p>The Search API may provide access to otherwise restricted data. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/api-permissions-reference.html">Amazon SageMaker API Permissions: Actions, Permissions, and Resources Reference</a> for more information.</p>
 /// </note>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SearchFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::search::builders::SearchInputBuilder,
 }
 impl SearchFluentBuilder {
     /// Creates a new `Search`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::search::Search,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::search::SearchError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::search::SearchError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::search::SearchOutput,
-        aws_smithy_http::result::SdkError<crate::operation::search::SearchError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::search::SearchError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -71,9 +74,9 @@ impl SearchFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::search::SearchOutput,
-        aws_smithy_http::result::SdkError<crate::operation::search::SearchError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::search::SearchError>,
     > {
         self.send_middleware().await
     }
@@ -89,7 +92,10 @@ impl SearchFluentBuilder {
         self
     }
     /// <p>The name of the SageMaker resource to search for.</p>
-    pub fn set_resource(mut self, input: std::option::Option<crate::types::ResourceType>) -> Self {
+    pub fn set_resource(
+        mut self,
+        input: ::std::option::Option<crate::types::ResourceType>,
+    ) -> Self {
         self.inner = self.inner.set_resource(input);
         self
     }
@@ -101,18 +107,18 @@ impl SearchFluentBuilder {
     /// <p>A Boolean conditional statement. Resources must satisfy this condition to be included in search results. You must provide at least one subexpression, filter, or nested filter. The maximum number of recursive <code>SubExpressions</code>, <code>NestedFilters</code>, and <code>Filters</code> that can be included in a <code>SearchExpression</code> object is 50.</p>
     pub fn set_search_expression(
         mut self,
-        input: std::option::Option<crate::types::SearchExpression>,
+        input: ::std::option::Option<crate::types::SearchExpression>,
     ) -> Self {
         self.inner = self.inner.set_search_expression(input);
         self
     }
     /// <p>The name of the resource property used to sort the <code>SearchResults</code>. The default is <code>LastModifiedTime</code>.</p>
-    pub fn sort_by(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn sort_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sort_by(input.into());
         self
     }
     /// <p>The name of the resource property used to sort the <code>SearchResults</code>. The default is <code>LastModifiedTime</code>.</p>
-    pub fn set_sort_by(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_sort_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }
@@ -124,18 +130,18 @@ impl SearchFluentBuilder {
     /// <p>How <code>SearchResults</code> are ordered. Valid values are <code>Ascending</code> or <code>Descending</code>. The default is <code>Descending</code>.</p>
     pub fn set_sort_order(
         mut self,
-        input: std::option::Option<crate::types::SearchSortOrder>,
+        input: ::std::option::Option<crate::types::SearchSortOrder>,
     ) -> Self {
         self.inner = self.inner.set_sort_order(input);
         self
     }
     /// <p>If more than <code>MaxResults</code> resources match the specified <code>SearchExpression</code>, the response includes a <code>NextToken</code>. The <code>NextToken</code> can be passed to the next <code>SearchRequest</code> to continue retrieving results.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
     /// <p>If more than <code>MaxResults</code> resources match the specified <code>SearchExpression</code>, the response includes a <code>NextToken</code>. The <code>NextToken</code> can be passed to the next <code>SearchRequest</code> to continue retrieving results.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
@@ -145,7 +151,7 @@ impl SearchFluentBuilder {
         self
     }
     /// <p>The maximum number of results to return.</p>
-    pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }

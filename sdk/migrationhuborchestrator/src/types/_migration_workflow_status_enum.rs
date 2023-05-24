@@ -50,13 +50,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum MigrationWorkflowStatusEnum {
     #[allow(missing_docs)] // documentation missing in model
@@ -90,7 +90,7 @@ pub enum MigrationWorkflowStatusEnum {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for MigrationWorkflowStatusEnum {
+impl ::std::convert::From<&str> for MigrationWorkflowStatusEnum {
     fn from(s: &str) -> Self {
         match s {
             "COMPLETED" => MigrationWorkflowStatusEnum::Completed,
@@ -113,11 +113,11 @@ impl std::convert::From<&str> for MigrationWorkflowStatusEnum {
         }
     }
 }
-impl std::str::FromStr for MigrationWorkflowStatusEnum {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for MigrationWorkflowStatusEnum {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(MigrationWorkflowStatusEnum::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(MigrationWorkflowStatusEnum::from(s))
     }
 }
 impl MigrationWorkflowStatusEnum {
@@ -161,7 +161,7 @@ impl MigrationWorkflowStatusEnum {
         ]
     }
 }
-impl AsRef<str> for MigrationWorkflowStatusEnum {
+impl ::std::convert::AsRef<str> for MigrationWorkflowStatusEnum {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

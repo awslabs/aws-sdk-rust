@@ -2,22 +2,22 @@
 
 /// <p>Information about a user recorded in segment documents.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TraceUser {
     /// <p>The user's name.</p>
     #[doc(hidden)]
-    pub user_name: std::option::Option<std::string::String>,
+    pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>Services that the user's request hit.</p>
     #[doc(hidden)]
-    pub service_ids: std::option::Option<std::vec::Vec<crate::types::ServiceId>>,
+    pub service_ids: ::std::option::Option<::std::vec::Vec<crate::types::ServiceId>>,
 }
 impl TraceUser {
     /// <p>The user's name.</p>
-    pub fn user_name(&self) -> std::option::Option<&str> {
+    pub fn user_name(&self) -> ::std::option::Option<&str> {
         self.user_name.as_deref()
     }
     /// <p>Services that the user's request hit.</p>
-    pub fn service_ids(&self) -> std::option::Option<&[crate::types::ServiceId]> {
+    pub fn service_ids(&self) -> ::std::option::Option<&[crate::types::ServiceId]> {
         self.service_ids.as_deref()
     }
 }
@@ -30,19 +30,21 @@ impl TraceUser {
 
 /// A builder for [`TraceUser`](crate::types::TraceUser).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TraceUserBuilder {
-    pub(crate) user_name: std::option::Option<std::string::String>,
-    pub(crate) service_ids: std::option::Option<std::vec::Vec<crate::types::ServiceId>>,
+    pub(crate) user_name: ::std::option::Option<::std::string::String>,
+    pub(crate) service_ids: ::std::option::Option<::std::vec::Vec<crate::types::ServiceId>>,
 }
 impl TraceUserBuilder {
     /// <p>The user's name.</p>
-    pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.user_name = Some(input.into());
+    pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.user_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user's name.</p>
-    pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_name = input;
         self
     }
@@ -54,13 +56,13 @@ impl TraceUserBuilder {
     pub fn service_ids(mut self, input: crate::types::ServiceId) -> Self {
         let mut v = self.service_ids.unwrap_or_default();
         v.push(input);
-        self.service_ids = Some(v);
+        self.service_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>Services that the user's request hit.</p>
     pub fn set_service_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ServiceId>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceId>>,
     ) -> Self {
         self.service_ids = input;
         self

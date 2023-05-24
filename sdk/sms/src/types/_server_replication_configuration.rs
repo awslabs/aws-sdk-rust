@@ -2,25 +2,25 @@
 
 /// <p>Replication configuration of a server.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServerReplicationConfiguration {
     /// <p>The ID of the server with which this replication configuration is associated.</p>
     #[doc(hidden)]
-    pub server: std::option::Option<crate::types::Server>,
+    pub server: ::std::option::Option<crate::types::Server>,
     /// <p>The parameters for replicating the server.</p>
     #[doc(hidden)]
     pub server_replication_parameters:
-        std::option::Option<crate::types::ServerReplicationParameters>,
+        ::std::option::Option<crate::types::ServerReplicationParameters>,
 }
 impl ServerReplicationConfiguration {
     /// <p>The ID of the server with which this replication configuration is associated.</p>
-    pub fn server(&self) -> std::option::Option<&crate::types::Server> {
+    pub fn server(&self) -> ::std::option::Option<&crate::types::Server> {
         self.server.as_ref()
     }
     /// <p>The parameters for replicating the server.</p>
     pub fn server_replication_parameters(
         &self,
-    ) -> std::option::Option<&crate::types::ServerReplicationParameters> {
+    ) -> ::std::option::Option<&crate::types::ServerReplicationParameters> {
         self.server_replication_parameters.as_ref()
     }
 }
@@ -33,20 +33,22 @@ impl ServerReplicationConfiguration {
 
 /// A builder for [`ServerReplicationConfiguration`](crate::types::ServerReplicationConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ServerReplicationConfigurationBuilder {
-    pub(crate) server: std::option::Option<crate::types::Server>,
+    pub(crate) server: ::std::option::Option<crate::types::Server>,
     pub(crate) server_replication_parameters:
-        std::option::Option<crate::types::ServerReplicationParameters>,
+        ::std::option::Option<crate::types::ServerReplicationParameters>,
 }
 impl ServerReplicationConfigurationBuilder {
     /// <p>The ID of the server with which this replication configuration is associated.</p>
     pub fn server(mut self, input: crate::types::Server) -> Self {
-        self.server = Some(input);
+        self.server = ::std::option::Option::Some(input);
         self
     }
     /// <p>The ID of the server with which this replication configuration is associated.</p>
-    pub fn set_server(mut self, input: std::option::Option<crate::types::Server>) -> Self {
+    pub fn set_server(mut self, input: ::std::option::Option<crate::types::Server>) -> Self {
         self.server = input;
         self
     }
@@ -55,13 +57,13 @@ impl ServerReplicationConfigurationBuilder {
         mut self,
         input: crate::types::ServerReplicationParameters,
     ) -> Self {
-        self.server_replication_parameters = Some(input);
+        self.server_replication_parameters = ::std::option::Option::Some(input);
         self
     }
     /// <p>The parameters for replicating the server.</p>
     pub fn set_server_replication_parameters(
         mut self,
-        input: std::option::Option<crate::types::ServerReplicationParameters>,
+        input: ::std::option::Option<crate::types::ServerReplicationParameters>,
     ) -> Self {
         self.server_replication_parameters = input;
         self

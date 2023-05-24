@@ -6,56 +6,59 @@ pub use crate::operation::stop_assessment::_stop_assessment_input::StopAssessmen
 /// Fluent builder constructing a request to `StopAssessment`.
 ///
 /// <p> Stops the assessment of an on-premises environment. </p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopAssessmentFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::stop_assessment::builders::StopAssessmentInputBuilder,
 }
 impl StopAssessmentFluentBuilder {
     /// Creates a new `StopAssessment`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::stop_assessment::StopAssessment,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::stop_assessment::StopAssessmentError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_assessment::StopAssessmentError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::stop_assessment::StopAssessmentOutput,
-        aws_smithy_http::result::SdkError<crate::operation::stop_assessment::StopAssessmentError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_assessment::StopAssessmentError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,19 +71,25 @@ impl StopAssessmentFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::stop_assessment::StopAssessmentOutput,
-        aws_smithy_http::result::SdkError<crate::operation::stop_assessment::StopAssessmentError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::stop_assessment::StopAssessmentError>,
     > {
         self.send_middleware().await
     }
     /// <p> The <code>assessmentId</code> returned by <code>StartAssessment</code>. </p>
-    pub fn assessment_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn assessment_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.assessment_id(input.into());
         self
     }
     /// <p> The <code>assessmentId</code> returned by <code>StartAssessment</code>. </p>
-    pub fn set_assessment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_assessment_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_assessment_id(input);
         self
     }

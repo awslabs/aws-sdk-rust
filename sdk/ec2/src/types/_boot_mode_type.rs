@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum BootModeType {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum BootModeType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for BootModeType {
+impl ::std::convert::From<&str> for BootModeType {
     fn from(s: &str) -> Self {
         match s {
             "legacy-bios" => BootModeType::LegacyBios,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for BootModeType {
         }
     }
 }
-impl std::str::FromStr for BootModeType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for BootModeType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(BootModeType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(BootModeType::from(s))
     }
 }
 impl BootModeType {
@@ -86,7 +86,7 @@ impl BootModeType {
         &["legacy-bios", "uefi"]
     }
 }
-impl AsRef<str> for BootModeType {
+impl ::std::convert::AsRef<str> for BootModeType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

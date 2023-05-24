@@ -2,11 +2,11 @@
 
 /// <p> Response of CreateNotification </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateNotificationOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for CreateNotificationOutput {
+impl ::aws_http::request_id::RequestId for CreateNotificationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -21,7 +21,9 @@ impl CreateNotificationOutput {
 
 /// A builder for [`CreateNotificationOutput`](crate::operation::create_notification::CreateNotificationOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateNotificationOutputBuilder {
     _request_id: Option<String>,
 }

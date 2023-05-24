@@ -2,27 +2,27 @@
 
 /// <p>Contains the output of the <code>ListHsms</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListHsmsOutput {
     /// <p>The list of ARNs that identify the HSMs.</p>
     #[doc(hidden)]
-    pub hsm_list: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub hsm_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>If not null, more results are available. Pass this value to <code>ListHsms</code> to retrieve the next set of items.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListHsmsOutput {
     /// <p>The list of ARNs that identify the HSMs.</p>
-    pub fn hsm_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn hsm_list(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.hsm_list.as_deref()
     }
     /// <p>If not null, more results are available. Pass this value to <code>ListHsms</code> to retrieve the next set of items.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListHsmsOutput {
+impl ::aws_http::request_id::RequestId for ListHsmsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -36,10 +36,12 @@ impl ListHsmsOutput {
 
 /// A builder for [`ListHsmsOutput`](crate::operation::list_hsms::ListHsmsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListHsmsOutputBuilder {
-    pub(crate) hsm_list: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) hsm_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListHsmsOutputBuilder {
@@ -48,27 +50,27 @@ impl ListHsmsOutputBuilder {
     /// To override the contents of this collection use [`set_hsm_list`](Self::set_hsm_list).
     ///
     /// <p>The list of ARNs that identify the HSMs.</p>
-    pub fn hsm_list(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn hsm_list(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.hsm_list.unwrap_or_default();
         v.push(input.into());
-        self.hsm_list = Some(v);
+        self.hsm_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of ARNs that identify the HSMs.</p>
     pub fn set_hsm_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.hsm_list = input;
         self
     }
     /// <p>If not null, more results are available. Pass this value to <code>ListHsms</code> to retrieve the next set of items.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If not null, more results are available. Pass this value to <code>ListHsms</code> to retrieve the next set of items.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

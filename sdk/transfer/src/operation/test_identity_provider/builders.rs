@@ -16,29 +16,29 @@ pub use crate::operation::test_identity_provider::_test_identity_provider_input:
 /// <li> <p> If you provide a server ID for a server that uses service-managed users, you get an error: </p> <p> <code> An error occurred (InvalidRequestException) when calling the TestIdentityProvider operation: s-<i>server-ID</i> not configured for external auth </code> </p> </li>
 /// <li> <p> If you enter a Server ID for the <code>--server-id</code> parameter that does not identify an actual Transfer server, you receive the following error: </p> <p> <code>An error occurred (ResourceNotFoundException) when calling the TestIdentityProvider operation: Unknown server</code>. </p> <p>It is possible your sever is in a different region. You can specify a region by adding the following: <code>--region region-code</code>, such as <code>--region us-east-2</code> to specify a server in <b>US East (Ohio)</b>.</p> </li>
 /// </ul>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct TestIdentityProviderFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::test_identity_provider::builders::TestIdentityProviderInputBuilder,
 }
 impl TestIdentityProviderFluentBuilder {
     /// Creates a new `TestIdentityProvider`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::test_identity_provider::TestIdentityProvider,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::test_identity_provider::TestIdentityProviderError,
         >,
     > {
@@ -46,30 +46,33 @@ impl TestIdentityProviderFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::test_identity_provider::TestIdentityProviderOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::test_identity_provider::TestIdentityProviderError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -82,21 +85,21 @@ impl TestIdentityProviderFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::test_identity_provider::TestIdentityProviderOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::test_identity_provider::TestIdentityProviderError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>A system-assigned identifier for a specific server. That server's user authentication method is tested with a user name and password.</p>
-    pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn server_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.server_id(input.into());
         self
     }
     /// <p>A system-assigned identifier for a specific server. That server's user authentication method is tested with a user name and password.</p>
-    pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_server_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_server_id(input);
         self
     }
@@ -122,38 +125,44 @@ impl TestIdentityProviderFluentBuilder {
     /// </ul>
     pub fn set_server_protocol(
         mut self,
-        input: std::option::Option<crate::types::Protocol>,
+        input: ::std::option::Option<crate::types::Protocol>,
     ) -> Self {
         self.inner = self.inner.set_server_protocol(input);
         self
     }
     /// <p>The source IP address of the account to be tested.</p>
-    pub fn source_ip(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn source_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.source_ip(input.into());
         self
     }
     /// <p>The source IP address of the account to be tested.</p>
-    pub fn set_source_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_source_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_source_ip(input);
         self
     }
     /// <p>The name of the account to be tested.</p>
-    pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn user_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.user_name(input.into());
         self
     }
     /// <p>The name of the account to be tested.</p>
-    pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_user_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_user_name(input);
         self
     }
     /// <p>The password of the account to be tested.</p>
-    pub fn user_password(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn user_password(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.user_password(input.into());
         self
     }
     /// <p>The password of the account to be tested.</p>
-    pub fn set_user_password(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_user_password(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_user_password(input);
         self
     }

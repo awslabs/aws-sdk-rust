@@ -2,15 +2,15 @@
 
 /// <p>A request to retrieve a list of the blacklists that your dedicated IP addresses appear on.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBlacklistReportsInput {
     /// <p>A list of IP addresses that you want to retrieve blacklist information about. You can only specify the dedicated IP addresses that you use to send email using Amazon SES or Amazon Pinpoint.</p>
     #[doc(hidden)]
-    pub blacklist_item_names: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub blacklist_item_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl GetBlacklistReportsInput {
     /// <p>A list of IP addresses that you want to retrieve blacklist information about. You can only specify the dedicated IP addresses that you use to send email using Amazon SES or Amazon Pinpoint.</p>
-    pub fn blacklist_item_names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn blacklist_item_names(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.blacklist_item_names.as_deref()
     }
 }
@@ -25,9 +25,11 @@ impl GetBlacklistReportsInput {
 
 /// A builder for [`GetBlacklistReportsInput`](crate::operation::get_blacklist_reports::GetBlacklistReportsInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetBlacklistReportsInputBuilder {
-    pub(crate) blacklist_item_names: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) blacklist_item_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl GetBlacklistReportsInputBuilder {
     /// Appends an item to `blacklist_item_names`.
@@ -35,16 +37,19 @@ impl GetBlacklistReportsInputBuilder {
     /// To override the contents of this collection use [`set_blacklist_item_names`](Self::set_blacklist_item_names).
     ///
     /// <p>A list of IP addresses that you want to retrieve blacklist information about. You can only specify the dedicated IP addresses that you use to send email using Amazon SES or Amazon Pinpoint.</p>
-    pub fn blacklist_item_names(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn blacklist_item_names(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.blacklist_item_names.unwrap_or_default();
         v.push(input.into());
-        self.blacklist_item_names = Some(v);
+        self.blacklist_item_names = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of IP addresses that you want to retrieve blacklist information about. You can only specify the dedicated IP addresses that you use to send email using Amazon SES or Amazon Pinpoint.</p>
     pub fn set_blacklist_item_names(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.blacklist_item_names = input;
         self
@@ -52,11 +57,11 @@ impl GetBlacklistReportsInputBuilder {
     /// Consumes the builder and constructs a [`GetBlacklistReportsInput`](crate::operation::get_blacklist_reports::GetBlacklistReportsInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::get_blacklist_reports::GetBlacklistReportsInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::get_blacklist_reports::GetBlacklistReportsInput {
                 blacklist_item_names: self.blacklist_item_names,
             },

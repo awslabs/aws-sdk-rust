@@ -2,47 +2,49 @@
 
 /// <p>Information about a prompt.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Prompt {
     /// <p>The Amazon Resource Name (ARN) of the prompt.</p>
     #[doc(hidden)]
-    pub prompt_arn: std::option::Option<std::string::String>,
+    pub prompt_arn: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the prompt.</p>
     #[doc(hidden)]
-    pub prompt_id: std::option::Option<std::string::String>,
+    pub prompt_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the prompt.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description for the prompt.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl Prompt {
     /// <p>The Amazon Resource Name (ARN) of the prompt.</p>
-    pub fn prompt_arn(&self) -> std::option::Option<&str> {
+    pub fn prompt_arn(&self) -> ::std::option::Option<&str> {
         self.prompt_arn.as_deref()
     }
     /// <p>A unique identifier for the prompt.</p>
-    pub fn prompt_id(&self) -> std::option::Option<&str> {
+    pub fn prompt_id(&self) -> ::std::option::Option<&str> {
         self.prompt_id.as_deref()
     }
     /// <p>The name of the prompt.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>A description for the prompt.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn tags(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.tags.as_ref()
     }
 }
@@ -55,53 +57,56 @@ impl Prompt {
 
 /// A builder for [`Prompt`](crate::types::Prompt).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PromptBuilder {
-    pub(crate) prompt_arn: std::option::Option<std::string::String>,
-    pub(crate) prompt_id: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) prompt_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) prompt_id: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl PromptBuilder {
     /// <p>The Amazon Resource Name (ARN) of the prompt.</p>
-    pub fn prompt_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.prompt_arn = Some(input.into());
+    pub fn prompt_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.prompt_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the prompt.</p>
-    pub fn set_prompt_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_prompt_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.prompt_arn = input;
         self
     }
     /// <p>A unique identifier for the prompt.</p>
-    pub fn prompt_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.prompt_id = Some(input.into());
+    pub fn prompt_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.prompt_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique identifier for the prompt.</p>
-    pub fn set_prompt_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_prompt_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.prompt_id = input;
         self
     }
     /// <p>The name of the prompt.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the prompt.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>A description for the prompt.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description for the prompt.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
@@ -112,19 +117,19 @@ impl PromptBuilder {
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
+        self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.tags = input;

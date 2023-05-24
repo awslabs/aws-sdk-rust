@@ -2,22 +2,24 @@
 
 /// <p>The input for the data quality monitoring job. Currently endpoints are supported for input.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataQualityJobInput {
     /// <p>Input object for the endpoint</p>
     #[doc(hidden)]
-    pub endpoint_input: std::option::Option<crate::types::EndpointInput>,
+    pub endpoint_input: ::std::option::Option<crate::types::EndpointInput>,
     /// <p>Input object for the batch transform job.</p>
     #[doc(hidden)]
-    pub batch_transform_input: std::option::Option<crate::types::BatchTransformInput>,
+    pub batch_transform_input: ::std::option::Option<crate::types::BatchTransformInput>,
 }
 impl DataQualityJobInput {
     /// <p>Input object for the endpoint</p>
-    pub fn endpoint_input(&self) -> std::option::Option<&crate::types::EndpointInput> {
+    pub fn endpoint_input(&self) -> ::std::option::Option<&crate::types::EndpointInput> {
         self.endpoint_input.as_ref()
     }
     /// <p>Input object for the batch transform job.</p>
-    pub fn batch_transform_input(&self) -> std::option::Option<&crate::types::BatchTransformInput> {
+    pub fn batch_transform_input(
+        &self,
+    ) -> ::std::option::Option<&crate::types::BatchTransformInput> {
         self.batch_transform_input.as_ref()
     }
 }
@@ -30,34 +32,36 @@ impl DataQualityJobInput {
 
 /// A builder for [`DataQualityJobInput`](crate::types::DataQualityJobInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DataQualityJobInputBuilder {
-    pub(crate) endpoint_input: std::option::Option<crate::types::EndpointInput>,
-    pub(crate) batch_transform_input: std::option::Option<crate::types::BatchTransformInput>,
+    pub(crate) endpoint_input: ::std::option::Option<crate::types::EndpointInput>,
+    pub(crate) batch_transform_input: ::std::option::Option<crate::types::BatchTransformInput>,
 }
 impl DataQualityJobInputBuilder {
     /// <p>Input object for the endpoint</p>
     pub fn endpoint_input(mut self, input: crate::types::EndpointInput) -> Self {
-        self.endpoint_input = Some(input);
+        self.endpoint_input = ::std::option::Option::Some(input);
         self
     }
     /// <p>Input object for the endpoint</p>
     pub fn set_endpoint_input(
         mut self,
-        input: std::option::Option<crate::types::EndpointInput>,
+        input: ::std::option::Option<crate::types::EndpointInput>,
     ) -> Self {
         self.endpoint_input = input;
         self
     }
     /// <p>Input object for the batch transform job.</p>
     pub fn batch_transform_input(mut self, input: crate::types::BatchTransformInput) -> Self {
-        self.batch_transform_input = Some(input);
+        self.batch_transform_input = ::std::option::Option::Some(input);
         self
     }
     /// <p>Input object for the batch transform job.</p>
     pub fn set_batch_transform_input(
         mut self,
-        input: std::option::Option<crate::types::BatchTransformInput>,
+        input: ::std::option::Option<crate::types::BatchTransformInput>,
     ) -> Self {
         self.batch_transform_input = input;
         self

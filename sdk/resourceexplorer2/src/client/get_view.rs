@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetView`](crate::operation::get_view::builders::GetViewFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`view_arn(impl Into<String>)`](crate::operation::get_view::builders::GetViewFluentBuilder::view_arn) / [`set_view_arn(Option<String>)`](crate::operation::get_view::builders::GetViewFluentBuilder::set_view_arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view that you want information about.</p>
+    ///   - [`view_arn(impl ::std::convert::Into<String>)`](crate::operation::get_view::builders::GetViewFluentBuilder::view_arn) / [`set_view_arn(Option<String>)`](crate::operation::get_view::builders::GetViewFluentBuilder::set_view_arn): <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view that you want information about.</p>
     /// - On success, responds with [`GetViewOutput`](crate::operation::get_view::GetViewOutput) with field(s):
     ///   - [`view(Option<View>)`](crate::operation::get_view::GetViewOutput::view): <p>A structure that contains the details for the requested view.</p>
     ///   - [`tags(Option<HashMap<String, String>>)`](crate::operation::get_view::GetViewOutput::tags): <p>Tag key and value pairs that are attached to the view.</p>

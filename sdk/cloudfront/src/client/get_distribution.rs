@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetDistribution`](crate::operation::get_distribution::builders::GetDistributionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::get_distribution::builders::GetDistributionFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_distribution::builders::GetDistributionFluentBuilder::set_id): <p>The distribution's ID. If the ID is empty, an empty distribution configuration is returned.</p>
+    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::get_distribution::builders::GetDistributionFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_distribution::builders::GetDistributionFluentBuilder::set_id): <p>The distribution's ID. If the ID is empty, an empty distribution configuration is returned.</p>
     /// - On success, responds with [`GetDistributionOutput`](crate::operation::get_distribution::GetDistributionOutput) with field(s):
     ///   - [`distribution(Option<Distribution>)`](crate::operation::get_distribution::GetDistributionOutput::distribution): <p>The distribution's information.</p>
     ///   - [`e_tag(Option<String>)`](crate::operation::get_distribution::GetDistributionOutput::e_tag): <p>The current version of the distribution's information. For example: <code>E2QWRUHAPOMQZL</code>.</p>

@@ -2,29 +2,29 @@
 
 /// <p>Specifies the rule settings for when messages can't be sent.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClosedDaysRule {
     /// <p>The name of the closed day rule.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>Start DateTime ISO 8601 format</p>
     #[doc(hidden)]
-    pub start_date_time: std::option::Option<std::string::String>,
+    pub start_date_time: ::std::option::Option<::std::string::String>,
     /// <p>End DateTime ISO 8601 format</p>
     #[doc(hidden)]
-    pub end_date_time: std::option::Option<std::string::String>,
+    pub end_date_time: ::std::option::Option<::std::string::String>,
 }
 impl ClosedDaysRule {
     /// <p>The name of the closed day rule.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>Start DateTime ISO 8601 format</p>
-    pub fn start_date_time(&self) -> std::option::Option<&str> {
+    pub fn start_date_time(&self) -> ::std::option::Option<&str> {
         self.start_date_time.as_deref()
     }
     /// <p>End DateTime ISO 8601 format</p>
-    pub fn end_date_time(&self) -> std::option::Option<&str> {
+    pub fn end_date_time(&self) -> ::std::option::Option<&str> {
         self.end_date_time.as_deref()
     }
 }
@@ -37,40 +37,54 @@ impl ClosedDaysRule {
 
 /// A builder for [`ClosedDaysRule`](crate::types::ClosedDaysRule).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ClosedDaysRuleBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) start_date_time: std::option::Option<std::string::String>,
-    pub(crate) end_date_time: std::option::Option<std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) start_date_time: ::std::option::Option<::std::string::String>,
+    pub(crate) end_date_time: ::std::option::Option<::std::string::String>,
 }
 impl ClosedDaysRuleBuilder {
     /// <p>The name of the closed day rule.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the closed day rule.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>Start DateTime ISO 8601 format</p>
-    pub fn start_date_time(mut self, input: impl Into<std::string::String>) -> Self {
-        self.start_date_time = Some(input.into());
+    pub fn start_date_time(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.start_date_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Start DateTime ISO 8601 format</p>
-    pub fn set_start_date_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_start_date_time(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.start_date_time = input;
         self
     }
     /// <p>End DateTime ISO 8601 format</p>
-    pub fn end_date_time(mut self, input: impl Into<std::string::String>) -> Self {
-        self.end_date_time = Some(input.into());
+    pub fn end_date_time(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.end_date_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>End DateTime ISO 8601 format</p>
-    pub fn set_end_date_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_end_date_time(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.end_date_time = input;
         self
     }

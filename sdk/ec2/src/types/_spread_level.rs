@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum SpreadLevel {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum SpreadLevel {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for SpreadLevel {
+impl ::std::convert::From<&str> for SpreadLevel {
     fn from(s: &str) -> Self {
         match s {
             "host" => SpreadLevel::Host,
@@ -63,11 +63,11 @@ impl std::convert::From<&str> for SpreadLevel {
         }
     }
 }
-impl std::str::FromStr for SpreadLevel {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for SpreadLevel {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SpreadLevel::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(SpreadLevel::from(s))
     }
 }
 impl SpreadLevel {
@@ -84,7 +84,7 @@ impl SpreadLevel {
         &["host", "rack"]
     }
 }
-impl AsRef<str> for SpreadLevel {
+impl ::std::convert::AsRef<str> for SpreadLevel {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

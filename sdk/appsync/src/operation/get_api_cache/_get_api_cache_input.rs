@@ -2,15 +2,15 @@
 
 /// <p>Represents the input of a <code>GetApiCache</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetApiCacheInput {
     /// <p>The API ID.</p>
     #[doc(hidden)]
-    pub api_id: std::option::Option<std::string::String>,
+    pub api_id: ::std::option::Option<::std::string::String>,
 }
 impl GetApiCacheInput {
     /// <p>The API ID.</p>
-    pub fn api_id(&self) -> std::option::Option<&str> {
+    pub fn api_id(&self) -> ::std::option::Option<&str> {
         self.api_id.as_deref()
     }
 }
@@ -23,29 +23,31 @@ impl GetApiCacheInput {
 
 /// A builder for [`GetApiCacheInput`](crate::operation::get_api_cache::GetApiCacheInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetApiCacheInputBuilder {
-    pub(crate) api_id: std::option::Option<std::string::String>,
+    pub(crate) api_id: ::std::option::Option<::std::string::String>,
 }
 impl GetApiCacheInputBuilder {
     /// <p>The API ID.</p>
-    pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.api_id = Some(input.into());
+    pub fn api_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.api_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The API ID.</p>
-    pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_api_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.api_id = input;
         self
     }
     /// Consumes the builder and constructs a [`GetApiCacheInput`](crate::operation::get_api_cache::GetApiCacheInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::get_api_cache::GetApiCacheInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::get_api_cache::GetApiCacheInput {
+        ::std::result::Result::Ok(crate::operation::get_api_cache::GetApiCacheInput {
             api_id: self.api_id,
         })
     }

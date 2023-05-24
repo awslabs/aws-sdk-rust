@@ -6,29 +6,29 @@ pub use crate::operation::update_region_settings::_update_region_settings_input:
 /// Fluent builder constructing a request to `UpdateRegionSettings`.
 ///
 /// <p>Updates the current service opt-in settings for the Region. If service-opt-in is enabled for a service, Backup tries to protect that service's resources in this Region, when the resource is included in an on-demand backup or scheduled backup plan. Otherwise, Backup does not try to protect that service's resources in this Region. Use the <code>DescribeRegionSettings</code> API to determine the resource types that are supported.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateRegionSettingsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::update_region_settings::builders::UpdateRegionSettingsInputBuilder,
 }
 impl UpdateRegionSettingsFluentBuilder {
     /// Creates a new `UpdateRegionSettings`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_region_settings::UpdateRegionSettings,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_region_settings::UpdateRegionSettingsError,
         >,
     > {
@@ -36,30 +36,33 @@ impl UpdateRegionSettingsFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_region_settings::UpdateRegionSettingsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_region_settings::UpdateRegionSettingsError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -72,9 +75,9 @@ impl UpdateRegionSettingsFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_region_settings::UpdateRegionSettingsOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_region_settings::UpdateRegionSettingsError,
         >,
     > {
@@ -87,7 +90,7 @@ impl UpdateRegionSettingsFluentBuilder {
     /// <p>Updates the list of services along with the opt-in preferences for the Region.</p>
     pub fn resource_type_opt_in_preference(
         mut self,
-        k: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
         v: bool,
     ) -> Self {
         self.inner = self.inner.resource_type_opt_in_preference(k.into(), v);
@@ -96,7 +99,7 @@ impl UpdateRegionSettingsFluentBuilder {
     /// <p>Updates the list of services along with the opt-in preferences for the Region.</p>
     pub fn set_resource_type_opt_in_preference(
         mut self,
-        input: std::option::Option<std::collections::HashMap<std::string::String, bool>>,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, bool>>,
     ) -> Self {
         self.inner = self.inner.set_resource_type_opt_in_preference(input);
         self
@@ -108,7 +111,7 @@ impl UpdateRegionSettingsFluentBuilder {
     /// <p>Enables or disables full Backup management of backups for a resource type. To enable full Backup management for DynamoDB along with <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html"> Backup's advanced DynamoDB backup features</a>, follow the procedure to <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html#advanced-ddb-backup-enable-cli"> enable advanced DynamoDB backup programmatically</a>.</p>
     pub fn resource_type_management_preference(
         mut self,
-        k: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
         v: bool,
     ) -> Self {
         self.inner = self.inner.resource_type_management_preference(k.into(), v);
@@ -117,7 +120,7 @@ impl UpdateRegionSettingsFluentBuilder {
     /// <p>Enables or disables full Backup management of backups for a resource type. To enable full Backup management for DynamoDB along with <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html"> Backup's advanced DynamoDB backup features</a>, follow the procedure to <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html#advanced-ddb-backup-enable-cli"> enable advanced DynamoDB backup programmatically</a>.</p>
     pub fn set_resource_type_management_preference(
         mut self,
-        input: std::option::Option<std::collections::HashMap<std::string::String, bool>>,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, bool>>,
     ) -> Self {
         self.inner = self.inner.set_resource_type_management_preference(input);
         self

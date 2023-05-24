@@ -2,18 +2,18 @@
 
 /// <p>An Lambda layer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsLambdaFunctionLayer {
     /// <p>The ARN of the function layer.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The size of the layer archive in bytes.</p>
     #[doc(hidden)]
     pub code_size: i32,
 }
 impl AwsLambdaFunctionLayer {
     /// <p>The ARN of the function layer.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The size of the layer archive in bytes.</p>
@@ -30,29 +30,31 @@ impl AwsLambdaFunctionLayer {
 
 /// A builder for [`AwsLambdaFunctionLayer`](crate::types::AwsLambdaFunctionLayer).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsLambdaFunctionLayerBuilder {
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) code_size: std::option::Option<i32>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) code_size: ::std::option::Option<i32>,
 }
 impl AwsLambdaFunctionLayerBuilder {
     /// <p>The ARN of the function layer.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the function layer.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// <p>The size of the layer archive in bytes.</p>
     pub fn code_size(mut self, input: i32) -> Self {
-        self.code_size = Some(input);
+        self.code_size = ::std::option::Option::Some(input);
         self
     }
     /// <p>The size of the layer archive in bytes.</p>
-    pub fn set_code_size(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_code_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.code_size = input;
         self
     }

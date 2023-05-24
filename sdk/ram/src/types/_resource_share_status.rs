@@ -41,13 +41,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ResourceShareStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,7 +63,7 @@ pub enum ResourceShareStatus {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ResourceShareStatus {
+impl ::std::convert::From<&str> for ResourceShareStatus {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVE" => ResourceShareStatus::Active,
@@ -77,11 +77,11 @@ impl std::convert::From<&str> for ResourceShareStatus {
         }
     }
 }
-impl std::str::FromStr for ResourceShareStatus {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ResourceShareStatus {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ResourceShareStatus::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ResourceShareStatus::from(s))
     }
 }
 impl ResourceShareStatus {
@@ -101,7 +101,7 @@ impl ResourceShareStatus {
         &["ACTIVE", "DELETED", "DELETING", "FAILED", "PENDING"]
     }
 }
-impl AsRef<str> for ResourceShareStatus {
+impl ::std::convert::AsRef<str> for ResourceShareStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

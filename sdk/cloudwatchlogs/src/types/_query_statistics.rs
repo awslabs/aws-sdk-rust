@@ -2,7 +2,7 @@
 
 /// <p>Contains the number of log events scanned by the query, the number of log events that matched the query criteria, and the total number of bytes in the log events that were scanned.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QueryStatistics {
     /// <p>The number of log events that matched the query string.</p>
     #[doc(hidden)]
@@ -37,40 +37,42 @@ impl QueryStatistics {
 
 /// A builder for [`QueryStatistics`](crate::types::QueryStatistics).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct QueryStatisticsBuilder {
-    pub(crate) records_matched: std::option::Option<f64>,
-    pub(crate) records_scanned: std::option::Option<f64>,
-    pub(crate) bytes_scanned: std::option::Option<f64>,
+    pub(crate) records_matched: ::std::option::Option<f64>,
+    pub(crate) records_scanned: ::std::option::Option<f64>,
+    pub(crate) bytes_scanned: ::std::option::Option<f64>,
 }
 impl QueryStatisticsBuilder {
     /// <p>The number of log events that matched the query string.</p>
     pub fn records_matched(mut self, input: f64) -> Self {
-        self.records_matched = Some(input);
+        self.records_matched = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of log events that matched the query string.</p>
-    pub fn set_records_matched(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_records_matched(mut self, input: ::std::option::Option<f64>) -> Self {
         self.records_matched = input;
         self
     }
     /// <p>The total number of log events scanned during the query.</p>
     pub fn records_scanned(mut self, input: f64) -> Self {
-        self.records_scanned = Some(input);
+        self.records_scanned = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total number of log events scanned during the query.</p>
-    pub fn set_records_scanned(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_records_scanned(mut self, input: ::std::option::Option<f64>) -> Self {
         self.records_scanned = input;
         self
     }
     /// <p>The total number of bytes in the log events scanned during the query.</p>
     pub fn bytes_scanned(mut self, input: f64) -> Self {
-        self.bytes_scanned = Some(input);
+        self.bytes_scanned = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total number of bytes in the log events scanned during the query.</p>
-    pub fn set_bytes_scanned(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_bytes_scanned(mut self, input: ::std::option::Option<f64>) -> Self {
         self.bytes_scanned = input;
         self
     }

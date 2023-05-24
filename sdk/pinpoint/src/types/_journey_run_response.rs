@@ -2,36 +2,36 @@
 
 /// <p>Provides information from a specified run of a journey.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JourneyRunResponse {
     /// <p>The time when the journey run was created or scheduled, in ISO 8601 format.</p>
     #[doc(hidden)]
-    pub creation_time: std::option::Option<std::string::String>,
+    pub creation_time: ::std::option::Option<::std::string::String>,
     /// <p>The last time the journey run was updated, in ISO 8601 format..</p>
     #[doc(hidden)]
-    pub last_update_time: std::option::Option<std::string::String>,
+    pub last_update_time: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the run.</p>
     #[doc(hidden)]
-    pub run_id: std::option::Option<std::string::String>,
+    pub run_id: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the journey run.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::JourneyRunStatus>,
+    pub status: ::std::option::Option<crate::types::JourneyRunStatus>,
 }
 impl JourneyRunResponse {
     /// <p>The time when the journey run was created or scheduled, in ISO 8601 format.</p>
-    pub fn creation_time(&self) -> std::option::Option<&str> {
+    pub fn creation_time(&self) -> ::std::option::Option<&str> {
         self.creation_time.as_deref()
     }
     /// <p>The last time the journey run was updated, in ISO 8601 format..</p>
-    pub fn last_update_time(&self) -> std::option::Option<&str> {
+    pub fn last_update_time(&self) -> ::std::option::Option<&str> {
         self.last_update_time.as_deref()
     }
     /// <p>The unique identifier for the run.</p>
-    pub fn run_id(&self) -> std::option::Option<&str> {
+    pub fn run_id(&self) -> ::std::option::Option<&str> {
         self.run_id.as_deref()
     }
     /// <p>The current status of the journey run.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::JourneyRunStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::JourneyRunStatus> {
         self.status.as_ref()
     }
 }
@@ -44,53 +44,67 @@ impl JourneyRunResponse {
 
 /// A builder for [`JourneyRunResponse`](crate::types::JourneyRunResponse).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct JourneyRunResponseBuilder {
-    pub(crate) creation_time: std::option::Option<std::string::String>,
-    pub(crate) last_update_time: std::option::Option<std::string::String>,
-    pub(crate) run_id: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::JourneyRunStatus>,
+    pub(crate) creation_time: ::std::option::Option<::std::string::String>,
+    pub(crate) last_update_time: ::std::option::Option<::std::string::String>,
+    pub(crate) run_id: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::JourneyRunStatus>,
 }
 impl JourneyRunResponseBuilder {
     /// <p>The time when the journey run was created or scheduled, in ISO 8601 format.</p>
-    pub fn creation_time(mut self, input: impl Into<std::string::String>) -> Self {
-        self.creation_time = Some(input.into());
+    pub fn creation_time(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.creation_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The time when the journey run was created or scheduled, in ISO 8601 format.</p>
-    pub fn set_creation_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_creation_time(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.creation_time = input;
         self
     }
     /// <p>The last time the journey run was updated, in ISO 8601 format..</p>
-    pub fn last_update_time(mut self, input: impl Into<std::string::String>) -> Self {
-        self.last_update_time = Some(input.into());
+    pub fn last_update_time(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.last_update_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The last time the journey run was updated, in ISO 8601 format..</p>
-    pub fn set_last_update_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_last_update_time(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.last_update_time = input;
         self
     }
     /// <p>The unique identifier for the run.</p>
-    pub fn run_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.run_id = Some(input.into());
+    pub fn run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.run_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the run.</p>
-    pub fn set_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.run_id = input;
         self
     }
     /// <p>The current status of the journey run.</p>
     pub fn status(mut self, input: crate::types::JourneyRunStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current status of the journey run.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::JourneyRunStatus>,
+        input: ::std::option::Option<crate::types::JourneyRunStatus>,
     ) -> Self {
         self.status = input;
         self

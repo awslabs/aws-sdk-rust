@@ -2,7 +2,7 @@
 
 /// <p>A structure used to unlock a device.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Unlock {}
 impl Unlock {
     /// Creates a new builder-style object to manufacture [`Unlock`](crate::types::Unlock).
@@ -13,7 +13,9 @@ impl Unlock {
 
 /// A builder for [`Unlock`](crate::types::Unlock).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UnlockBuilder {}
 impl UnlockBuilder {
     /// Consumes the builder and constructs a [`Unlock`](crate::types::Unlock).

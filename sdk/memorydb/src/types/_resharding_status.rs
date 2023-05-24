@@ -2,15 +2,15 @@
 
 /// <p>The status of the online resharding</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReshardingStatus {
     /// <p>The status of the online resharding slot migration</p>
     #[doc(hidden)]
-    pub slot_migration: std::option::Option<crate::types::SlotMigration>,
+    pub slot_migration: ::std::option::Option<crate::types::SlotMigration>,
 }
 impl ReshardingStatus {
     /// <p>The status of the online resharding slot migration</p>
-    pub fn slot_migration(&self) -> std::option::Option<&crate::types::SlotMigration> {
+    pub fn slot_migration(&self) -> ::std::option::Option<&crate::types::SlotMigration> {
         self.slot_migration.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl ReshardingStatus {
 
 /// A builder for [`ReshardingStatus`](crate::types::ReshardingStatus).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ReshardingStatusBuilder {
-    pub(crate) slot_migration: std::option::Option<crate::types::SlotMigration>,
+    pub(crate) slot_migration: ::std::option::Option<crate::types::SlotMigration>,
 }
 impl ReshardingStatusBuilder {
     /// <p>The status of the online resharding slot migration</p>
     pub fn slot_migration(mut self, input: crate::types::SlotMigration) -> Self {
-        self.slot_migration = Some(input);
+        self.slot_migration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the online resharding slot migration</p>
     pub fn set_slot_migration(
         mut self,
-        input: std::option::Option<crate::types::SlotMigration>,
+        input: ::std::option::Option<crate::types::SlotMigration>,
     ) -> Self {
         self.slot_migration = input;
         self

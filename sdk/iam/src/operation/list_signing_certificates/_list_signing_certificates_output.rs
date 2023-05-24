@@ -2,22 +2,22 @@
 
 /// <p>Contains the response to a successful <code>ListSigningCertificates</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSigningCertificatesOutput {
     /// <p>A list of the user's signing certificate information.</p>
     #[doc(hidden)]
-    pub certificates: std::option::Option<std::vec::Vec<crate::types::SigningCertificate>>,
+    pub certificates: ::std::option::Option<::std::vec::Vec<crate::types::SigningCertificate>>,
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
     #[doc(hidden)]
     pub is_truncated: bool,
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     #[doc(hidden)]
-    pub marker: std::option::Option<std::string::String>,
+    pub marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListSigningCertificatesOutput {
     /// <p>A list of the user's signing certificate information.</p>
-    pub fn certificates(&self) -> std::option::Option<&[crate::types::SigningCertificate]> {
+    pub fn certificates(&self) -> ::std::option::Option<&[crate::types::SigningCertificate]> {
         self.certificates.as_deref()
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
@@ -25,11 +25,11 @@ impl ListSigningCertificatesOutput {
         self.is_truncated
     }
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
-    pub fn marker(&self) -> std::option::Option<&str> {
+    pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListSigningCertificatesOutput {
+impl ::aws_http::request_id::RequestId for ListSigningCertificatesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -45,11 +45,14 @@ impl ListSigningCertificatesOutput {
 
 /// A builder for [`ListSigningCertificatesOutput`](crate::operation::list_signing_certificates::ListSigningCertificatesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListSigningCertificatesOutputBuilder {
-    pub(crate) certificates: std::option::Option<std::vec::Vec<crate::types::SigningCertificate>>,
-    pub(crate) is_truncated: std::option::Option<bool>,
-    pub(crate) marker: std::option::Option<std::string::String>,
+    pub(crate) certificates:
+        ::std::option::Option<::std::vec::Vec<crate::types::SigningCertificate>>,
+    pub(crate) is_truncated: ::std::option::Option<bool>,
+    pub(crate) marker: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListSigningCertificatesOutputBuilder {
@@ -61,34 +64,34 @@ impl ListSigningCertificatesOutputBuilder {
     pub fn certificates(mut self, input: crate::types::SigningCertificate) -> Self {
         let mut v = self.certificates.unwrap_or_default();
         v.push(input);
-        self.certificates = Some(v);
+        self.certificates = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of the user's signing certificate information.</p>
     pub fn set_certificates(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SigningCertificate>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SigningCertificate>>,
     ) -> Self {
         self.certificates = input;
         self
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
     pub fn is_truncated(mut self, input: bool) -> Self {
-        self.is_truncated = Some(input);
+        self.is_truncated = ::std::option::Option::Some(input);
         self
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
-    pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_truncated(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_truncated = input;
         self
     }
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
-    pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
-        self.marker = Some(input.into());
+    pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.marker = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
-    pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.marker = input;
         self
     }

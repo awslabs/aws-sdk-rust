@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteIntegration`](crate::operation::delete_integration::builders::DeleteIntegrationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_name(impl Into<String>)`](crate::operation::delete_integration::builders::DeleteIntegrationFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::delete_integration::builders::DeleteIntegrationFluentBuilder::set_domain_name): <p>The unique name of the domain.</p>
-    ///   - [`uri(impl Into<String>)`](crate::operation::delete_integration::builders::DeleteIntegrationFluentBuilder::uri) / [`set_uri(Option<String>)`](crate::operation::delete_integration::builders::DeleteIntegrationFluentBuilder::set_uri): <p>The URI of the S3 bucket or any other type of data source.</p>
+    ///   - [`domain_name(impl ::std::convert::Into<String>)`](crate::operation::delete_integration::builders::DeleteIntegrationFluentBuilder::domain_name) / [`set_domain_name(Option<String>)`](crate::operation::delete_integration::builders::DeleteIntegrationFluentBuilder::set_domain_name): <p>The unique name of the domain.</p>
+    ///   - [`uri(impl ::std::convert::Into<String>)`](crate::operation::delete_integration::builders::DeleteIntegrationFluentBuilder::uri) / [`set_uri(Option<String>)`](crate::operation::delete_integration::builders::DeleteIntegrationFluentBuilder::set_uri): <p>The URI of the S3 bucket or any other type of data source.</p>
     /// - On success, responds with [`DeleteIntegrationOutput`](crate::operation::delete_integration::DeleteIntegrationOutput) with field(s):
     ///   - [`message(Option<String>)`](crate::operation::delete_integration::DeleteIntegrationOutput::message): <p>A message that indicates the delete request is done.</p>
     /// - On failure, responds with [`SdkError<DeleteIntegrationError>`](crate::operation::delete_integration::DeleteIntegrationError)

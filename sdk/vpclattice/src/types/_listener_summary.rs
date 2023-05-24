@@ -2,57 +2,57 @@
 
 /// <p>Summary information about a listener.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListenerSummary {
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the listener.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the listener.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The listener protocol.</p>
     #[doc(hidden)]
-    pub protocol: std::option::Option<crate::types::ListenerProtocol>,
+    pub protocol: ::std::option::Option<crate::types::ListenerProtocol>,
     /// <p>The listener port.</p>
     #[doc(hidden)]
-    pub port: std::option::Option<i32>,
+    pub port: ::std::option::Option<i32>,
     /// <p>The date and time that the listener was created, specified in ISO-8601 format.</p>
     #[doc(hidden)]
-    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the listener was last updated, specified in ISO-8601 format.</p>
     #[doc(hidden)]
-    pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ListenerSummary {
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The ID of the listener.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The name of the listener.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The listener protocol.</p>
-    pub fn protocol(&self) -> std::option::Option<&crate::types::ListenerProtocol> {
+    pub fn protocol(&self) -> ::std::option::Option<&crate::types::ListenerProtocol> {
         self.protocol.as_ref()
     }
     /// <p>The listener port.</p>
-    pub fn port(&self) -> std::option::Option<i32> {
+    pub fn port(&self) -> ::std::option::Option<i32> {
         self.port
     }
     /// <p>The date and time that the listener was created, specified in ISO-8601 format.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The date and time that the listener was last updated, specified in ISO-8601 format.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
 }
@@ -65,92 +65,94 @@ impl ListenerSummary {
 
 /// A builder for [`ListenerSummary`](crate::types::ListenerSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListenerSummaryBuilder {
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) protocol: std::option::Option<crate::types::ListenerProtocol>,
-    pub(crate) port: std::option::Option<i32>,
-    pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) protocol: ::std::option::Option<crate::types::ListenerProtocol>,
+    pub(crate) port: ::std::option::Option<i32>,
+    pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ListenerSummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// <p>The ID of the listener.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the listener.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>The name of the listener.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the listener.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The listener protocol.</p>
     pub fn protocol(mut self, input: crate::types::ListenerProtocol) -> Self {
-        self.protocol = Some(input);
+        self.protocol = ::std::option::Option::Some(input);
         self
     }
     /// <p>The listener protocol.</p>
     pub fn set_protocol(
         mut self,
-        input: std::option::Option<crate::types::ListenerProtocol>,
+        input: ::std::option::Option<crate::types::ListenerProtocol>,
     ) -> Self {
         self.protocol = input;
         self
     }
     /// <p>The listener port.</p>
     pub fn port(mut self, input: i32) -> Self {
-        self.port = Some(input);
+        self.port = ::std::option::Option::Some(input);
         self
     }
     /// <p>The listener port.</p>
-    pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.port = input;
         self
     }
     /// <p>The date and time that the listener was created, specified in ISO-8601 format.</p>
-    pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_at = Some(input);
+    pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time that the listener was created, specified in ISO-8601 format.</p>
     pub fn set_created_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_at = input;
         self
     }
     /// <p>The date and time that the listener was last updated, specified in ISO-8601 format.</p>
-    pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_updated_at = Some(input);
+    pub fn last_updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_updated_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time that the listener was last updated, specified in ISO-8601 format.</p>
     pub fn set_last_updated_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_updated_at = input;
         self

@@ -50,13 +50,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ServiceNamespace {
     #[allow(missing_docs)] // documentation missing in model
@@ -90,7 +90,7 @@ pub enum ServiceNamespace {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ServiceNamespace {
+impl ::std::convert::From<&str> for ServiceNamespace {
     fn from(s: &str) -> Self {
         match s {
             "appstream" => ServiceNamespace::Appstream,
@@ -113,11 +113,11 @@ impl std::convert::From<&str> for ServiceNamespace {
         }
     }
 }
-impl std::str::FromStr for ServiceNamespace {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ServiceNamespace {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ServiceNamespace::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ServiceNamespace::from(s))
     }
 }
 impl ServiceNamespace {
@@ -161,7 +161,7 @@ impl ServiceNamespace {
         ]
     }
 }
-impl AsRef<str> for ServiceNamespace {
+impl ::std::convert::AsRef<str> for ServiceNamespace {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

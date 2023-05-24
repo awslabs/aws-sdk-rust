@@ -9,29 +9,29 @@ pub use crate::operation::update_asset_model::_update_asset_model_input::UpdateA
 /// <p>This operation overwrites the existing model with the provided model. To avoid deleting your asset model's properties or hierarchies, you must include their IDs and definitions in the updated asset model payload. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModel.html">DescribeAssetModel</a>.</p>
 /// <p>If you remove a property from an asset model, IoT SiteWise deletes all previous data for that property. If you remove a hierarchy definition from an asset model, IoT SiteWise disassociates every asset associated with that hierarchy. You can't change the type or data type of an existing property.</p>
 /// </important>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateAssetModelFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::update_asset_model::builders::UpdateAssetModelInputBuilder,
 }
 impl UpdateAssetModelFluentBuilder {
     /// Creates a new `UpdateAssetModel`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_asset_model::UpdateAssetModel,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_asset_model::UpdateAssetModelError,
         >,
     > {
@@ -39,30 +39,33 @@ impl UpdateAssetModelFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_asset_model::UpdateAssetModelOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_asset_model::UpdateAssetModelError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -75,43 +78,58 @@ impl UpdateAssetModelFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_asset_model::UpdateAssetModelOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_asset_model::UpdateAssetModelError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The ID of the asset model to update.</p>
-    pub fn asset_model_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn asset_model_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.asset_model_id(input.into());
         self
     }
     /// <p>The ID of the asset model to update.</p>
-    pub fn set_asset_model_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_asset_model_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_asset_model_id(input);
         self
     }
     /// <p>A unique, friendly name for the asset model.</p>
-    pub fn asset_model_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn asset_model_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.asset_model_name(input.into());
         self
     }
     /// <p>A unique, friendly name for the asset model.</p>
-    pub fn set_asset_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_asset_model_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_asset_model_name(input);
         self
     }
     /// <p>A description for the asset model.</p>
-    pub fn asset_model_description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn asset_model_description(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.asset_model_description(input.into());
         self
     }
     /// <p>A description for the asset model.</p>
     pub fn set_asset_model_description(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_asset_model_description(input);
         self
@@ -130,7 +148,7 @@ impl UpdateAssetModelFluentBuilder {
     /// <p>You can specify up to 200 properties per asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn set_asset_model_properties(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AssetModelProperty>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelProperty>>,
     ) -> Self {
         self.inner = self.inner.set_asset_model_properties(input);
         self
@@ -149,7 +167,7 @@ impl UpdateAssetModelFluentBuilder {
     /// <p>You can specify up to 10 hierarchies per asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn set_asset_model_hierarchies(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AssetModelHierarchy>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelHierarchy>>,
     ) -> Self {
         self.inner = self.inner.set_asset_model_hierarchies(input);
         self
@@ -169,18 +187,18 @@ impl UpdateAssetModelFluentBuilder {
     /// <p>The composite asset models that are part of this asset model. Composite asset models are asset models that contain specific properties. Each composite model has a type that defines the properties that the composite model supports. Use composite asset models to define alarms on this asset model.</p>
     pub fn set_asset_model_composite_models(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AssetModelCompositeModel>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelCompositeModel>>,
     ) -> Self {
         self.inner = self.inner.set_asset_model_composite_models(input);
         self
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-    pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-    pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }

@@ -2,7 +2,7 @@
 
 /// <p>The individual sentiment responses for the utterance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SentimentScore {
     /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>POSITIVE</code> sentiment.</p>
     #[doc(hidden)]
@@ -44,51 +44,53 @@ impl SentimentScore {
 
 /// A builder for [`SentimentScore`](crate::types::SentimentScore).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SentimentScoreBuilder {
-    pub(crate) positive: std::option::Option<f64>,
-    pub(crate) negative: std::option::Option<f64>,
-    pub(crate) neutral: std::option::Option<f64>,
-    pub(crate) mixed: std::option::Option<f64>,
+    pub(crate) positive: ::std::option::Option<f64>,
+    pub(crate) negative: ::std::option::Option<f64>,
+    pub(crate) neutral: ::std::option::Option<f64>,
+    pub(crate) mixed: ::std::option::Option<f64>,
 }
 impl SentimentScoreBuilder {
     /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>POSITIVE</code> sentiment.</p>
     pub fn positive(mut self, input: f64) -> Self {
-        self.positive = Some(input);
+        self.positive = ::std::option::Option::Some(input);
         self
     }
     /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>POSITIVE</code> sentiment.</p>
-    pub fn set_positive(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_positive(mut self, input: ::std::option::Option<f64>) -> Self {
         self.positive = input;
         self
     }
     /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>NEGATIVE</code> sentiment.</p>
     pub fn negative(mut self, input: f64) -> Self {
-        self.negative = Some(input);
+        self.negative = ::std::option::Option::Some(input);
         self
     }
     /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>NEGATIVE</code> sentiment.</p>
-    pub fn set_negative(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_negative(mut self, input: ::std::option::Option<f64>) -> Self {
         self.negative = input;
         self
     }
     /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>NEUTRAL</code> sentiment.</p>
     pub fn neutral(mut self, input: f64) -> Self {
-        self.neutral = Some(input);
+        self.neutral = ::std::option::Option::Some(input);
         self
     }
     /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>NEUTRAL</code> sentiment.</p>
-    pub fn set_neutral(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_neutral(mut self, input: ::std::option::Option<f64>) -> Self {
         self.neutral = input;
         self
     }
     /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>MIXED</code> sentiment.</p>
     pub fn mixed(mut self, input: f64) -> Self {
-        self.mixed = Some(input);
+        self.mixed = ::std::option::Option::Some(input);
         self
     }
     /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of the <code>MIXED</code> sentiment.</p>
-    pub fn set_mixed(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_mixed(mut self, input: ::std::option::Option<f64>) -> Self {
         self.mixed = input;
         self
     }

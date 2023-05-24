@@ -2,66 +2,66 @@
 
 /// <p>Describes the parameters of a database.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RelationalDatabaseParameter {
     /// <p>Specifies the valid range of values for the parameter.</p>
     #[doc(hidden)]
-    pub allowed_values: std::option::Option<std::string::String>,
+    pub allowed_values: ::std::option::Option<::std::string::String>,
     /// <p>Indicates when parameter updates are applied.</p>
     /// <p>Can be <code>immediate</code> or <code>pending-reboot</code>.</p>
     #[doc(hidden)]
-    pub apply_method: std::option::Option<std::string::String>,
+    pub apply_method: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the engine-specific parameter type.</p>
     #[doc(hidden)]
-    pub apply_type: std::option::Option<std::string::String>,
+    pub apply_type: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the valid data type for the parameter.</p>
     #[doc(hidden)]
-    pub data_type: std::option::Option<std::string::String>,
+    pub data_type: ::std::option::Option<::std::string::String>,
     /// <p>Provides a description of the parameter.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean value indicating whether the parameter can be modified.</p>
     #[doc(hidden)]
-    pub is_modifiable: std::option::Option<bool>,
+    pub is_modifiable: ::std::option::Option<bool>,
     /// <p>Specifies the name of the parameter.</p>
     #[doc(hidden)]
-    pub parameter_name: std::option::Option<std::string::String>,
+    pub parameter_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the value of the parameter.</p>
     #[doc(hidden)]
-    pub parameter_value: std::option::Option<std::string::String>,
+    pub parameter_value: ::std::option::Option<::std::string::String>,
 }
 impl RelationalDatabaseParameter {
     /// <p>Specifies the valid range of values for the parameter.</p>
-    pub fn allowed_values(&self) -> std::option::Option<&str> {
+    pub fn allowed_values(&self) -> ::std::option::Option<&str> {
         self.allowed_values.as_deref()
     }
     /// <p>Indicates when parameter updates are applied.</p>
     /// <p>Can be <code>immediate</code> or <code>pending-reboot</code>.</p>
-    pub fn apply_method(&self) -> std::option::Option<&str> {
+    pub fn apply_method(&self) -> ::std::option::Option<&str> {
         self.apply_method.as_deref()
     }
     /// <p>Specifies the engine-specific parameter type.</p>
-    pub fn apply_type(&self) -> std::option::Option<&str> {
+    pub fn apply_type(&self) -> ::std::option::Option<&str> {
         self.apply_type.as_deref()
     }
     /// <p>Specifies the valid data type for the parameter.</p>
-    pub fn data_type(&self) -> std::option::Option<&str> {
+    pub fn data_type(&self) -> ::std::option::Option<&str> {
         self.data_type.as_deref()
     }
     /// <p>Provides a description of the parameter.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>A Boolean value indicating whether the parameter can be modified.</p>
-    pub fn is_modifiable(&self) -> std::option::Option<bool> {
+    pub fn is_modifiable(&self) -> ::std::option::Option<bool> {
         self.is_modifiable
     }
     /// <p>Specifies the name of the parameter.</p>
-    pub fn parameter_name(&self) -> std::option::Option<&str> {
+    pub fn parameter_name(&self) -> ::std::option::Option<&str> {
         self.parameter_name.as_deref()
     }
     /// <p>Specifies the value of the parameter.</p>
-    pub fn parameter_value(&self) -> std::option::Option<&str> {
+    pub fn parameter_value(&self) -> ::std::option::Option<&str> {
         self.parameter_value.as_deref()
     }
 }
@@ -74,97 +74,117 @@ impl RelationalDatabaseParameter {
 
 /// A builder for [`RelationalDatabaseParameter`](crate::types::RelationalDatabaseParameter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RelationalDatabaseParameterBuilder {
-    pub(crate) allowed_values: std::option::Option<std::string::String>,
-    pub(crate) apply_method: std::option::Option<std::string::String>,
-    pub(crate) apply_type: std::option::Option<std::string::String>,
-    pub(crate) data_type: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) is_modifiable: std::option::Option<bool>,
-    pub(crate) parameter_name: std::option::Option<std::string::String>,
-    pub(crate) parameter_value: std::option::Option<std::string::String>,
+    pub(crate) allowed_values: ::std::option::Option<::std::string::String>,
+    pub(crate) apply_method: ::std::option::Option<::std::string::String>,
+    pub(crate) apply_type: ::std::option::Option<::std::string::String>,
+    pub(crate) data_type: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) is_modifiable: ::std::option::Option<bool>,
+    pub(crate) parameter_name: ::std::option::Option<::std::string::String>,
+    pub(crate) parameter_value: ::std::option::Option<::std::string::String>,
 }
 impl RelationalDatabaseParameterBuilder {
     /// <p>Specifies the valid range of values for the parameter.</p>
-    pub fn allowed_values(mut self, input: impl Into<std::string::String>) -> Self {
-        self.allowed_values = Some(input.into());
+    pub fn allowed_values(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.allowed_values = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the valid range of values for the parameter.</p>
-    pub fn set_allowed_values(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_allowed_values(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.allowed_values = input;
         self
     }
     /// <p>Indicates when parameter updates are applied.</p>
     /// <p>Can be <code>immediate</code> or <code>pending-reboot</code>.</p>
-    pub fn apply_method(mut self, input: impl Into<std::string::String>) -> Self {
-        self.apply_method = Some(input.into());
+    pub fn apply_method(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.apply_method = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates when parameter updates are applied.</p>
     /// <p>Can be <code>immediate</code> or <code>pending-reboot</code>.</p>
-    pub fn set_apply_method(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_apply_method(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.apply_method = input;
         self
     }
     /// <p>Specifies the engine-specific parameter type.</p>
-    pub fn apply_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.apply_type = Some(input.into());
+    pub fn apply_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.apply_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the engine-specific parameter type.</p>
-    pub fn set_apply_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_apply_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.apply_type = input;
         self
     }
     /// <p>Specifies the valid data type for the parameter.</p>
-    pub fn data_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.data_type = Some(input.into());
+    pub fn data_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.data_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the valid data type for the parameter.</p>
-    pub fn set_data_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_data_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_type = input;
         self
     }
     /// <p>Provides a description of the parameter.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Provides a description of the parameter.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>A Boolean value indicating whether the parameter can be modified.</p>
     pub fn is_modifiable(mut self, input: bool) -> Self {
-        self.is_modifiable = Some(input);
+        self.is_modifiable = ::std::option::Option::Some(input);
         self
     }
     /// <p>A Boolean value indicating whether the parameter can be modified.</p>
-    pub fn set_is_modifiable(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_modifiable(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_modifiable = input;
         self
     }
     /// <p>Specifies the name of the parameter.</p>
-    pub fn parameter_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.parameter_name = Some(input.into());
+    pub fn parameter_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.parameter_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the name of the parameter.</p>
-    pub fn set_parameter_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_parameter_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.parameter_name = input;
         self
     }
     /// <p>Specifies the value of the parameter.</p>
-    pub fn parameter_value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.parameter_value = Some(input.into());
+    pub fn parameter_value(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.parameter_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the value of the parameter.</p>
-    pub fn set_parameter_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_parameter_value(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.parameter_value = input;
         self
     }

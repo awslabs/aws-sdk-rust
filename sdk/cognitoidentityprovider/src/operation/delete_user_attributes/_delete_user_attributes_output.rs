@@ -2,11 +2,11 @@
 
 /// <p>Represents the response from the server to delete user attributes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteUserAttributesOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for DeleteUserAttributesOutput {
+impl ::aws_http::request_id::RequestId for DeleteUserAttributesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -21,7 +21,9 @@ impl DeleteUserAttributesOutput {
 
 /// A builder for [`DeleteUserAttributesOutput`](crate::operation::delete_user_attributes::DeleteUserAttributesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeleteUserAttributesOutputBuilder {
     _request_id: Option<String>,
 }

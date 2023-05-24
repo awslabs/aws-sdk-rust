@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetContactAttributes`](crate::operation::get_contact_attributes::builders::GetContactAttributesFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`instance_id(impl Into<String>)`](crate::operation::get_contact_attributes::builders::GetContactAttributesFluentBuilder::instance_id) / [`set_instance_id(Option<String>)`](crate::operation::get_contact_attributes::builders::GetContactAttributesFluentBuilder::set_instance_id): <p>The identifier of the Amazon Connect instance.</p>
-    ///   - [`initial_contact_id(impl Into<String>)`](crate::operation::get_contact_attributes::builders::GetContactAttributesFluentBuilder::initial_contact_id) / [`set_initial_contact_id(Option<String>)`](crate::operation::get_contact_attributes::builders::GetContactAttributesFluentBuilder::set_initial_contact_id): <p>The identifier of the initial contact.</p>
+    ///   - [`instance_id(impl ::std::convert::Into<String>)`](crate::operation::get_contact_attributes::builders::GetContactAttributesFluentBuilder::instance_id) / [`set_instance_id(Option<String>)`](crate::operation::get_contact_attributes::builders::GetContactAttributesFluentBuilder::set_instance_id): <p>The identifier of the Amazon Connect instance.</p>
+    ///   - [`initial_contact_id(impl ::std::convert::Into<String>)`](crate::operation::get_contact_attributes::builders::GetContactAttributesFluentBuilder::initial_contact_id) / [`set_initial_contact_id(Option<String>)`](crate::operation::get_contact_attributes::builders::GetContactAttributesFluentBuilder::set_initial_contact_id): <p>The identifier of the initial contact.</p>
     /// - On success, responds with [`GetContactAttributesOutput`](crate::operation::get_contact_attributes::GetContactAttributesOutput) with field(s):
     ///   - [`attributes(Option<HashMap<String, String>>)`](crate::operation::get_contact_attributes::GetContactAttributesOutput::attributes): <p>Information about the attributes.</p>
     /// - On failure, responds with [`SdkError<GetContactAttributesError>`](crate::operation::get_contact_attributes::GetContactAttributesError)

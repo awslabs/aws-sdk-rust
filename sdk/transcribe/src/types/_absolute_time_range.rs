@@ -5,36 +5,36 @@
 /// <p>You can use also <code>First</code> to search from the start of the audio until the time that you specify, or <code>Last</code> to search from the time that you specify until the end of the audio. For example, setting <code>First</code> to 50000 only searches for your specified criteria in the audio contained between the start of the media file to the 50,000 millisecond mark. You can use <code>First</code> and <code>Last</code> independently of each other.</p>
 /// <p>If you prefer to use percentage instead of milliseconds, see .</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AbsoluteTimeRange {
     /// <p>The time, in milliseconds, when Amazon Transcribe starts searching for the specified criteria in your audio. If you include <code>StartTime</code> in your request, you must also include <code>EndTime</code>.</p>
     #[doc(hidden)]
-    pub start_time: std::option::Option<i64>,
+    pub start_time: ::std::option::Option<i64>,
     /// <p>The time, in milliseconds, when Amazon Transcribe stops searching for the specified criteria in your audio. If you include <code>EndTime</code> in your request, you must also include <code>StartTime</code>.</p>
     #[doc(hidden)]
-    pub end_time: std::option::Option<i64>,
+    pub end_time: ::std::option::Option<i64>,
     /// <p>The time, in milliseconds, from the start of your media file until the specified value. Amazon Transcribe searches for your specified criteria in this time segment.</p>
     #[doc(hidden)]
-    pub first: std::option::Option<i64>,
+    pub first: ::std::option::Option<i64>,
     /// <p>The time, in milliseconds, from the specified value until the end of your media file. Amazon Transcribe searches for your specified criteria in this time segment.</p>
     #[doc(hidden)]
-    pub last: std::option::Option<i64>,
+    pub last: ::std::option::Option<i64>,
 }
 impl AbsoluteTimeRange {
     /// <p>The time, in milliseconds, when Amazon Transcribe starts searching for the specified criteria in your audio. If you include <code>StartTime</code> in your request, you must also include <code>EndTime</code>.</p>
-    pub fn start_time(&self) -> std::option::Option<i64> {
+    pub fn start_time(&self) -> ::std::option::Option<i64> {
         self.start_time
     }
     /// <p>The time, in milliseconds, when Amazon Transcribe stops searching for the specified criteria in your audio. If you include <code>EndTime</code> in your request, you must also include <code>StartTime</code>.</p>
-    pub fn end_time(&self) -> std::option::Option<i64> {
+    pub fn end_time(&self) -> ::std::option::Option<i64> {
         self.end_time
     }
     /// <p>The time, in milliseconds, from the start of your media file until the specified value. Amazon Transcribe searches for your specified criteria in this time segment.</p>
-    pub fn first(&self) -> std::option::Option<i64> {
+    pub fn first(&self) -> ::std::option::Option<i64> {
         self.first
     }
     /// <p>The time, in milliseconds, from the specified value until the end of your media file. Amazon Transcribe searches for your specified criteria in this time segment.</p>
-    pub fn last(&self) -> std::option::Option<i64> {
+    pub fn last(&self) -> ::std::option::Option<i64> {
         self.last
     }
 }
@@ -47,51 +47,53 @@ impl AbsoluteTimeRange {
 
 /// A builder for [`AbsoluteTimeRange`](crate::types::AbsoluteTimeRange).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AbsoluteTimeRangeBuilder {
-    pub(crate) start_time: std::option::Option<i64>,
-    pub(crate) end_time: std::option::Option<i64>,
-    pub(crate) first: std::option::Option<i64>,
-    pub(crate) last: std::option::Option<i64>,
+    pub(crate) start_time: ::std::option::Option<i64>,
+    pub(crate) end_time: ::std::option::Option<i64>,
+    pub(crate) first: ::std::option::Option<i64>,
+    pub(crate) last: ::std::option::Option<i64>,
 }
 impl AbsoluteTimeRangeBuilder {
     /// <p>The time, in milliseconds, when Amazon Transcribe starts searching for the specified criteria in your audio. If you include <code>StartTime</code> in your request, you must also include <code>EndTime</code>.</p>
     pub fn start_time(mut self, input: i64) -> Self {
-        self.start_time = Some(input);
+        self.start_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time, in milliseconds, when Amazon Transcribe starts searching for the specified criteria in your audio. If you include <code>StartTime</code> in your request, you must also include <code>EndTime</code>.</p>
-    pub fn set_start_time(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<i64>) -> Self {
         self.start_time = input;
         self
     }
     /// <p>The time, in milliseconds, when Amazon Transcribe stops searching for the specified criteria in your audio. If you include <code>EndTime</code> in your request, you must also include <code>StartTime</code>.</p>
     pub fn end_time(mut self, input: i64) -> Self {
-        self.end_time = Some(input);
+        self.end_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time, in milliseconds, when Amazon Transcribe stops searching for the specified criteria in your audio. If you include <code>EndTime</code> in your request, you must also include <code>StartTime</code>.</p>
-    pub fn set_end_time(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<i64>) -> Self {
         self.end_time = input;
         self
     }
     /// <p>The time, in milliseconds, from the start of your media file until the specified value. Amazon Transcribe searches for your specified criteria in this time segment.</p>
     pub fn first(mut self, input: i64) -> Self {
-        self.first = Some(input);
+        self.first = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time, in milliseconds, from the start of your media file until the specified value. Amazon Transcribe searches for your specified criteria in this time segment.</p>
-    pub fn set_first(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_first(mut self, input: ::std::option::Option<i64>) -> Self {
         self.first = input;
         self
     }
     /// <p>The time, in milliseconds, from the specified value until the end of your media file. Amazon Transcribe searches for your specified criteria in this time segment.</p>
     pub fn last(mut self, input: i64) -> Self {
-        self.last = Some(input);
+        self.last = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time, in milliseconds, from the specified value until the end of your media file. Amazon Transcribe searches for your specified criteria in this time segment.</p>
-    pub fn set_last(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_last(mut self, input: ::std::option::Option<i64>) -> Self {
         self.last = input;
         self
     }

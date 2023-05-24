@@ -2,20 +2,21 @@
 
 /// <p>Contains the output of DescribeLoadBalancerPolicies.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeLoadBalancerPoliciesOutput {
     /// <p>Information about the policies.</p>
     #[doc(hidden)]
-    pub policy_descriptions: std::option::Option<std::vec::Vec<crate::types::PolicyDescription>>,
+    pub policy_descriptions:
+        ::std::option::Option<::std::vec::Vec<crate::types::PolicyDescription>>,
     _request_id: Option<String>,
 }
 impl DescribeLoadBalancerPoliciesOutput {
     /// <p>Information about the policies.</p>
-    pub fn policy_descriptions(&self) -> std::option::Option<&[crate::types::PolicyDescription]> {
+    pub fn policy_descriptions(&self) -> ::std::option::Option<&[crate::types::PolicyDescription]> {
         self.policy_descriptions.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeLoadBalancerPoliciesOutput {
+impl ::aws_http::request_id::RequestId for DescribeLoadBalancerPoliciesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,10 +30,12 @@ impl DescribeLoadBalancerPoliciesOutput {
 
 /// A builder for [`DescribeLoadBalancerPoliciesOutput`](crate::operation::describe_load_balancer_policies::DescribeLoadBalancerPoliciesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeLoadBalancerPoliciesOutputBuilder {
     pub(crate) policy_descriptions:
-        std::option::Option<std::vec::Vec<crate::types::PolicyDescription>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::PolicyDescription>>,
     _request_id: Option<String>,
 }
 impl DescribeLoadBalancerPoliciesOutputBuilder {
@@ -44,13 +47,13 @@ impl DescribeLoadBalancerPoliciesOutputBuilder {
     pub fn policy_descriptions(mut self, input: crate::types::PolicyDescription) -> Self {
         let mut v = self.policy_descriptions.unwrap_or_default();
         v.push(input);
-        self.policy_descriptions = Some(v);
+        self.policy_descriptions = ::std::option::Option::Some(v);
         self
     }
     /// <p>Information about the policies.</p>
     pub fn set_policy_descriptions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PolicyDescription>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PolicyDescription>>,
     ) -> Self {
         self.policy_descriptions = input;
         self

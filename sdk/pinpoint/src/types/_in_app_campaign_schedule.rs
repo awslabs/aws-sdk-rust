@@ -2,29 +2,29 @@
 
 /// <p>Schedule of the campaign.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InAppCampaignSchedule {
     /// <p>The scheduled time after which the in-app message should not be shown. Timestamp is in ISO 8601 format.</p>
     #[doc(hidden)]
-    pub end_date: std::option::Option<std::string::String>,
+    pub end_date: ::std::option::Option<::std::string::String>,
     /// <p>The event filter the SDK has to use to show the in-app message in the application.</p>
     #[doc(hidden)]
-    pub event_filter: std::option::Option<crate::types::CampaignEventFilter>,
+    pub event_filter: ::std::option::Option<crate::types::CampaignEventFilter>,
     /// <p>Time during which the in-app message should not be shown to the user.</p>
     #[doc(hidden)]
-    pub quiet_time: std::option::Option<crate::types::QuietTime>,
+    pub quiet_time: ::std::option::Option<crate::types::QuietTime>,
 }
 impl InAppCampaignSchedule {
     /// <p>The scheduled time after which the in-app message should not be shown. Timestamp is in ISO 8601 format.</p>
-    pub fn end_date(&self) -> std::option::Option<&str> {
+    pub fn end_date(&self) -> ::std::option::Option<&str> {
         self.end_date.as_deref()
     }
     /// <p>The event filter the SDK has to use to show the in-app message in the application.</p>
-    pub fn event_filter(&self) -> std::option::Option<&crate::types::CampaignEventFilter> {
+    pub fn event_filter(&self) -> ::std::option::Option<&crate::types::CampaignEventFilter> {
         self.event_filter.as_ref()
     }
     /// <p>Time during which the in-app message should not be shown to the user.</p>
-    pub fn quiet_time(&self) -> std::option::Option<&crate::types::QuietTime> {
+    pub fn quiet_time(&self) -> ::std::option::Option<&crate::types::QuietTime> {
         self.quiet_time.as_ref()
     }
 }
@@ -37,43 +37,45 @@ impl InAppCampaignSchedule {
 
 /// A builder for [`InAppCampaignSchedule`](crate::types::InAppCampaignSchedule).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InAppCampaignScheduleBuilder {
-    pub(crate) end_date: std::option::Option<std::string::String>,
-    pub(crate) event_filter: std::option::Option<crate::types::CampaignEventFilter>,
-    pub(crate) quiet_time: std::option::Option<crate::types::QuietTime>,
+    pub(crate) end_date: ::std::option::Option<::std::string::String>,
+    pub(crate) event_filter: ::std::option::Option<crate::types::CampaignEventFilter>,
+    pub(crate) quiet_time: ::std::option::Option<crate::types::QuietTime>,
 }
 impl InAppCampaignScheduleBuilder {
     /// <p>The scheduled time after which the in-app message should not be shown. Timestamp is in ISO 8601 format.</p>
-    pub fn end_date(mut self, input: impl Into<std::string::String>) -> Self {
-        self.end_date = Some(input.into());
+    pub fn end_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.end_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The scheduled time after which the in-app message should not be shown. Timestamp is in ISO 8601 format.</p>
-    pub fn set_end_date(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_end_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.end_date = input;
         self
     }
     /// <p>The event filter the SDK has to use to show the in-app message in the application.</p>
     pub fn event_filter(mut self, input: crate::types::CampaignEventFilter) -> Self {
-        self.event_filter = Some(input);
+        self.event_filter = ::std::option::Option::Some(input);
         self
     }
     /// <p>The event filter the SDK has to use to show the in-app message in the application.</p>
     pub fn set_event_filter(
         mut self,
-        input: std::option::Option<crate::types::CampaignEventFilter>,
+        input: ::std::option::Option<crate::types::CampaignEventFilter>,
     ) -> Self {
         self.event_filter = input;
         self
     }
     /// <p>Time during which the in-app message should not be shown to the user.</p>
     pub fn quiet_time(mut self, input: crate::types::QuietTime) -> Self {
-        self.quiet_time = Some(input);
+        self.quiet_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>Time during which the in-app message should not be shown to the user.</p>
-    pub fn set_quiet_time(mut self, input: std::option::Option<crate::types::QuietTime>) -> Self {
+    pub fn set_quiet_time(mut self, input: ::std::option::Option<crate::types::QuietTime>) -> Self {
         self.quiet_time = input;
         self
     }

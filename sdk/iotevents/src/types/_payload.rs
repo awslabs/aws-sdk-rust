@@ -3,7 +3,7 @@
 /// <p>Information needed to configure the payload.</p>
 /// <p>By default, AWS IoT Events generates a standard payload in JSON for any action. This action payload contains all attribute-value pairs that have the information about the detector model instance and the event triggered the action. To configure the action payload, you can use <code>contentExpression</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Payload {
     /// <p>The content of the payload. You can use a string expression that includes quoted strings (<code>'
     /// <string>
@@ -15,10 +15,10 @@ pub struct Payload {
     /// <path-to-datum></path-to-datum>
     /// </input-name></code>), string concatenations, and quoted strings that contain <code>${}</code> as the content. The recommended maximum size of a content expression is 1 KB.</p>
     #[doc(hidden)]
-    pub content_expression: std::option::Option<std::string::String>,
+    pub content_expression: ::std::option::Option<::std::string::String>,
     /// <p>The value of the payload type can be either <code>STRING</code> or <code>JSON</code>.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::PayloadType>,
+    pub r#type: ::std::option::Option<crate::types::PayloadType>,
 }
 impl Payload {
     /// <p>The content of the payload. You can use a string expression that includes quoted strings (<code>'
@@ -30,11 +30,11 @@ impl Payload {
     /// .
     /// <path-to-datum></path-to-datum>
     /// </input-name></code>), string concatenations, and quoted strings that contain <code>${}</code> as the content. The recommended maximum size of a content expression is 1 KB.</p>
-    pub fn content_expression(&self) -> std::option::Option<&str> {
+    pub fn content_expression(&self) -> ::std::option::Option<&str> {
         self.content_expression.as_deref()
     }
     /// <p>The value of the payload type can be either <code>STRING</code> or <code>JSON</code>.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::PayloadType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::PayloadType> {
         self.r#type.as_ref()
     }
 }
@@ -47,10 +47,12 @@ impl Payload {
 
 /// A builder for [`Payload`](crate::types::Payload).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PayloadBuilder {
-    pub(crate) content_expression: std::option::Option<std::string::String>,
-    pub(crate) r#type: std::option::Option<crate::types::PayloadType>,
+    pub(crate) content_expression: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::PayloadType>,
 }
 impl PayloadBuilder {
     /// <p>The content of the payload. You can use a string expression that includes quoted strings (<code>'
@@ -62,8 +64,11 @@ impl PayloadBuilder {
     /// .
     /// <path-to-datum></path-to-datum>
     /// </input-name></code>), string concatenations, and quoted strings that contain <code>${}</code> as the content. The recommended maximum size of a content expression is 1 KB.</p>
-    pub fn content_expression(mut self, input: impl Into<std::string::String>) -> Self {
-        self.content_expression = Some(input.into());
+    pub fn content_expression(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.content_expression = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The content of the payload. You can use a string expression that includes quoted strings (<code>'
@@ -77,18 +82,18 @@ impl PayloadBuilder {
     /// </input-name></code>), string concatenations, and quoted strings that contain <code>${}</code> as the content. The recommended maximum size of a content expression is 1 KB.</p>
     pub fn set_content_expression(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.content_expression = input;
         self
     }
     /// <p>The value of the payload type can be either <code>STRING</code> or <code>JSON</code>.</p>
     pub fn r#type(mut self, input: crate::types::PayloadType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The value of the payload type can be either <code>STRING</code> or <code>JSON</code>.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::PayloadType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::PayloadType>) -> Self {
         self.r#type = input;
         self
     }

@@ -2,29 +2,29 @@
 
 /// <p>Returns information about the status of the changes pending for the ActiveMQ user.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserPendingChanges {
     /// <p>Enables access to the the ActiveMQ Web Console for the ActiveMQ user.</p>
     #[doc(hidden)]
-    pub console_access: std::option::Option<bool>,
+    pub console_access: ::std::option::Option<bool>,
     /// <p>The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
     #[doc(hidden)]
-    pub groups: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Required. The type of change pending for the ActiveMQ user.</p>
     #[doc(hidden)]
-    pub pending_change: std::option::Option<crate::types::ChangeType>,
+    pub pending_change: ::std::option::Option<crate::types::ChangeType>,
 }
 impl UserPendingChanges {
     /// <p>Enables access to the the ActiveMQ Web Console for the ActiveMQ user.</p>
-    pub fn console_access(&self) -> std::option::Option<bool> {
+    pub fn console_access(&self) -> ::std::option::Option<bool> {
         self.console_access
     }
     /// <p>The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
-    pub fn groups(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn groups(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.groups.as_deref()
     }
     /// <p>Required. The type of change pending for the ActiveMQ user.</p>
-    pub fn pending_change(&self) -> std::option::Option<&crate::types::ChangeType> {
+    pub fn pending_change(&self) -> ::std::option::Option<&crate::types::ChangeType> {
         self.pending_change.as_ref()
     }
 }
@@ -37,20 +37,22 @@ impl UserPendingChanges {
 
 /// A builder for [`UserPendingChanges`](crate::types::UserPendingChanges).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UserPendingChangesBuilder {
-    pub(crate) console_access: std::option::Option<bool>,
-    pub(crate) groups: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) pending_change: std::option::Option<crate::types::ChangeType>,
+    pub(crate) console_access: ::std::option::Option<bool>,
+    pub(crate) groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) pending_change: ::std::option::Option<crate::types::ChangeType>,
 }
 impl UserPendingChangesBuilder {
     /// <p>Enables access to the the ActiveMQ Web Console for the ActiveMQ user.</p>
     pub fn console_access(mut self, input: bool) -> Self {
-        self.console_access = Some(input);
+        self.console_access = ::std::option::Option::Some(input);
         self
     }
     /// <p>Enables access to the the ActiveMQ Web Console for the ActiveMQ user.</p>
-    pub fn set_console_access(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_console_access(mut self, input: ::std::option::Option<bool>) -> Self {
         self.console_access = input;
         self
     }
@@ -59,29 +61,29 @@ impl UserPendingChangesBuilder {
     /// To override the contents of this collection use [`set_groups`](Self::set_groups).
     ///
     /// <p>The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
-    pub fn groups(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.groups.unwrap_or_default();
         v.push(input.into());
-        self.groups = Some(v);
+        self.groups = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
     pub fn set_groups(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.groups = input;
         self
     }
     /// <p>Required. The type of change pending for the ActiveMQ user.</p>
     pub fn pending_change(mut self, input: crate::types::ChangeType) -> Self {
-        self.pending_change = Some(input);
+        self.pending_change = ::std::option::Option::Some(input);
         self
     }
     /// <p>Required. The type of change pending for the ActiveMQ user.</p>
     pub fn set_pending_change(
         mut self,
-        input: std::option::Option<crate::types::ChangeType>,
+        input: ::std::option::Option<crate::types::ChangeType>,
     ) -> Self {
         self.pending_change = input;
         self

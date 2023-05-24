@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetHostedZone`](crate::operation::get_hosted_zone::builders::GetHostedZoneFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::get_hosted_zone::builders::GetHostedZoneFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_hosted_zone::builders::GetHostedZoneFluentBuilder::set_id): <p>The ID of the hosted zone that you want to get information about.</p>
+    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::get_hosted_zone::builders::GetHostedZoneFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_hosted_zone::builders::GetHostedZoneFluentBuilder::set_id): <p>The ID of the hosted zone that you want to get information about.</p>
     /// - On success, responds with [`GetHostedZoneOutput`](crate::operation::get_hosted_zone::GetHostedZoneOutput) with field(s):
     ///   - [`hosted_zone(Option<HostedZone>)`](crate::operation::get_hosted_zone::GetHostedZoneOutput::hosted_zone): <p>A complex type that contains general information about the specified hosted zone.</p>
     ///   - [`delegation_set(Option<DelegationSet>)`](crate::operation::get_hosted_zone::GetHostedZoneOutput::delegation_set): <p>A complex type that lists the Amazon Route 53 name servers for the specified hosted zone.</p>

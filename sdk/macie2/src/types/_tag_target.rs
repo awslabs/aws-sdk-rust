@@ -37,13 +37,13 @@
 /// <p>The type of object to apply a tag-based condition to. Valid values are:</p>
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum TagTarget {
     #[allow(missing_docs)] // documentation missing in model
@@ -51,7 +51,7 @@ pub enum TagTarget {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for TagTarget {
+impl ::std::convert::From<&str> for TagTarget {
     fn from(s: &str) -> Self {
         match s {
             "S3_OBJECT" => TagTarget::S3Object,
@@ -59,11 +59,11 @@ impl std::convert::From<&str> for TagTarget {
         }
     }
 }
-impl std::str::FromStr for TagTarget {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for TagTarget {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TagTarget::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(TagTarget::from(s))
     }
 }
 impl TagTarget {
@@ -79,7 +79,7 @@ impl TagTarget {
         &["S3_OBJECT"]
     }
 }
-impl AsRef<str> for TagTarget {
+impl ::std::convert::AsRef<str> for TagTarget {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

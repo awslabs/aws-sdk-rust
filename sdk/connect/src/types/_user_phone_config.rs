@@ -2,11 +2,11 @@
 
 /// <p>Contains information about the phone configuration settings for a user.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserPhoneConfig {
     /// <p>The phone type.</p>
     #[doc(hidden)]
-    pub phone_type: std::option::Option<crate::types::PhoneType>,
+    pub phone_type: ::std::option::Option<crate::types::PhoneType>,
     /// <p>The Auto accept setting.</p>
     #[doc(hidden)]
     pub auto_accept: bool,
@@ -17,11 +17,11 @@ pub struct UserPhoneConfig {
     pub after_contact_work_time_limit: i32,
     /// <p>The phone number for the user's desk phone.</p>
     #[doc(hidden)]
-    pub desk_phone_number: std::option::Option<std::string::String>,
+    pub desk_phone_number: ::std::option::Option<::std::string::String>,
 }
 impl UserPhoneConfig {
     /// <p>The phone type.</p>
-    pub fn phone_type(&self) -> std::option::Option<&crate::types::PhoneType> {
+    pub fn phone_type(&self) -> ::std::option::Option<&crate::types::PhoneType> {
         self.phone_type.as_ref()
     }
     /// <p>The Auto accept setting.</p>
@@ -35,7 +35,7 @@ impl UserPhoneConfig {
         self.after_contact_work_time_limit
     }
     /// <p>The phone number for the user's desk phone.</p>
-    pub fn desk_phone_number(&self) -> std::option::Option<&str> {
+    pub fn desk_phone_number(&self) -> ::std::option::Option<&str> {
         self.desk_phone_number.as_deref()
     }
 }
@@ -48,31 +48,33 @@ impl UserPhoneConfig {
 
 /// A builder for [`UserPhoneConfig`](crate::types::UserPhoneConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UserPhoneConfigBuilder {
-    pub(crate) phone_type: std::option::Option<crate::types::PhoneType>,
-    pub(crate) auto_accept: std::option::Option<bool>,
-    pub(crate) after_contact_work_time_limit: std::option::Option<i32>,
-    pub(crate) desk_phone_number: std::option::Option<std::string::String>,
+    pub(crate) phone_type: ::std::option::Option<crate::types::PhoneType>,
+    pub(crate) auto_accept: ::std::option::Option<bool>,
+    pub(crate) after_contact_work_time_limit: ::std::option::Option<i32>,
+    pub(crate) desk_phone_number: ::std::option::Option<::std::string::String>,
 }
 impl UserPhoneConfigBuilder {
     /// <p>The phone type.</p>
     pub fn phone_type(mut self, input: crate::types::PhoneType) -> Self {
-        self.phone_type = Some(input);
+        self.phone_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The phone type.</p>
-    pub fn set_phone_type(mut self, input: std::option::Option<crate::types::PhoneType>) -> Self {
+    pub fn set_phone_type(mut self, input: ::std::option::Option<crate::types::PhoneType>) -> Self {
         self.phone_type = input;
         self
     }
     /// <p>The Auto accept setting.</p>
     pub fn auto_accept(mut self, input: bool) -> Self {
-        self.auto_accept = Some(input);
+        self.auto_accept = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Auto accept setting.</p>
-    pub fn set_auto_accept(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_auto_accept(mut self, input: ::std::option::Option<bool>) -> Self {
         self.auto_accept = input;
         self
     }
@@ -80,25 +82,28 @@ impl UserPhoneConfigBuilder {
     /// <p>When returned by a <code>SearchUsers</code> call, <code>AfterContactWorkTimeLimit</code> is returned in milliseconds. </p>
     /// </note>
     pub fn after_contact_work_time_limit(mut self, input: i32) -> Self {
-        self.after_contact_work_time_limit = Some(input);
+        self.after_contact_work_time_limit = ::std::option::Option::Some(input);
         self
     }
     /// <p>The After Call Work (ACW) timeout setting, in seconds.</p> <note>
     /// <p>When returned by a <code>SearchUsers</code> call, <code>AfterContactWorkTimeLimit</code> is returned in milliseconds. </p>
     /// </note>
-    pub fn set_after_contact_work_time_limit(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_after_contact_work_time_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.after_contact_work_time_limit = input;
         self
     }
     /// <p>The phone number for the user's desk phone.</p>
-    pub fn desk_phone_number(mut self, input: impl Into<std::string::String>) -> Self {
-        self.desk_phone_number = Some(input.into());
+    pub fn desk_phone_number(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.desk_phone_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The phone number for the user's desk phone.</p>
     pub fn set_desk_phone_number(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.desk_phone_number = input;
         self

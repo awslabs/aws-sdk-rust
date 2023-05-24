@@ -2,25 +2,25 @@
 
 /// <p>Information about the result.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResultData {
     /// <p>The identifier of the result data.</p>
     #[doc(hidden)]
-    pub result_id: std::option::Option<std::string::String>,
+    pub result_id: ::std::option::Option<::std::string::String>,
     /// <p>The document.</p>
     #[doc(hidden)]
-    pub document: std::option::Option<crate::types::Document>,
+    pub document: ::std::option::Option<crate::types::Document>,
     /// <p>The relevance score of the results.</p>
     #[doc(hidden)]
     pub relevance_score: f64,
 }
 impl ResultData {
     /// <p>The identifier of the result data.</p>
-    pub fn result_id(&self) -> std::option::Option<&str> {
+    pub fn result_id(&self) -> ::std::option::Option<&str> {
         self.result_id.as_deref()
     }
     /// <p>The document.</p>
-    pub fn document(&self) -> std::option::Option<&crate::types::Document> {
+    pub fn document(&self) -> ::std::option::Option<&crate::types::Document> {
         self.document.as_ref()
     }
     /// <p>The relevance score of the results.</p>
@@ -37,40 +37,42 @@ impl ResultData {
 
 /// A builder for [`ResultData`](crate::types::ResultData).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResultDataBuilder {
-    pub(crate) result_id: std::option::Option<std::string::String>,
-    pub(crate) document: std::option::Option<crate::types::Document>,
-    pub(crate) relevance_score: std::option::Option<f64>,
+    pub(crate) result_id: ::std::option::Option<::std::string::String>,
+    pub(crate) document: ::std::option::Option<crate::types::Document>,
+    pub(crate) relevance_score: ::std::option::Option<f64>,
 }
 impl ResultDataBuilder {
     /// <p>The identifier of the result data.</p>
-    pub fn result_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.result_id = Some(input.into());
+    pub fn result_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.result_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the result data.</p>
-    pub fn set_result_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_result_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.result_id = input;
         self
     }
     /// <p>The document.</p>
     pub fn document(mut self, input: crate::types::Document) -> Self {
-        self.document = Some(input);
+        self.document = ::std::option::Option::Some(input);
         self
     }
     /// <p>The document.</p>
-    pub fn set_document(mut self, input: std::option::Option<crate::types::Document>) -> Self {
+    pub fn set_document(mut self, input: ::std::option::Option<crate::types::Document>) -> Self {
         self.document = input;
         self
     }
     /// <p>The relevance score of the results.</p>
     pub fn relevance_score(mut self, input: f64) -> Self {
-        self.relevance_score = Some(input);
+        self.relevance_score = ::std::option::Option::Some(input);
         self
     }
     /// <p>The relevance score of the results.</p>
-    pub fn set_relevance_score(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_relevance_score(mut self, input: ::std::option::Option<f64>) -> Self {
         self.relevance_score = input;
         self
     }

@@ -20,29 +20,29 @@ pub use crate::operation::terminate_workflow_execution::_terminate_workflow_exec
 /// <li> <p>You cannot use an IAM policy to constrain this action's parameters.</p> </li>
 /// </ul>
 /// <p>If the caller doesn't have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action fails. The associated event attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct TerminateWorkflowExecutionFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::terminate_workflow_execution::builders::TerminateWorkflowExecutionInputBuilder,
 }
 impl TerminateWorkflowExecutionFluentBuilder {
     /// Creates a new `TerminateWorkflowExecution`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::terminate_workflow_execution::TerminateWorkflowExecution,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::terminate_workflow_execution::TerminateWorkflowExecutionError,
         >,
     > {
@@ -50,30 +50,33 @@ impl TerminateWorkflowExecutionFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::terminate_workflow_execution::TerminateWorkflowExecutionOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::terminate_workflow_execution::TerminateWorkflowExecutionError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -86,61 +89,61 @@ impl TerminateWorkflowExecutionFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::terminate_workflow_execution::TerminateWorkflowExecutionOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::terminate_workflow_execution::TerminateWorkflowExecutionError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The domain of the workflow execution to terminate.</p>
-    pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn domain(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain(input.into());
         self
     }
     /// <p>The domain of the workflow execution to terminate.</p>
-    pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_domain(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain(input);
         self
     }
     /// <p>The workflowId of the workflow execution to terminate.</p>
-    pub fn workflow_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn workflow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.workflow_id(input.into());
         self
     }
     /// <p>The workflowId of the workflow execution to terminate.</p>
-    pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_workflow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_workflow_id(input);
         self
     }
     /// <p>The runId of the workflow execution to terminate.</p>
-    pub fn run_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.run_id(input.into());
         self
     }
     /// <p>The runId of the workflow execution to terminate.</p>
-    pub fn set_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_run_id(input);
         self
     }
     /// <p> A descriptive reason for terminating the workflow execution.</p>
-    pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.reason(input.into());
         self
     }
     /// <p> A descriptive reason for terminating the workflow execution.</p>
-    pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_reason(input);
         self
     }
     /// <p> Details for terminating the workflow execution.</p>
-    pub fn details(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn details(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.details(input.into());
         self
     }
     /// <p> Details for terminating the workflow execution.</p>
-    pub fn set_details(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_details(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_details(input);
         self
     }
@@ -168,7 +171,7 @@ impl TerminateWorkflowExecutionFluentBuilder {
     /// </note>
     pub fn set_child_policy(
         mut self,
-        input: std::option::Option<crate::types::ChildPolicy>,
+        input: ::std::option::Option<crate::types::ChildPolicy>,
     ) -> Self {
         self.inner = self.inner.set_child_policy(input);
         self

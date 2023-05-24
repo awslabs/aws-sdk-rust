@@ -37,13 +37,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum GroupingType {
     #[allow(missing_docs)] // documentation missing in model
@@ -51,7 +51,7 @@ pub enum GroupingType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for GroupingType {
+impl ::std::convert::From<&str> for GroupingType {
     fn from(s: &str) -> Self {
         match s {
             "ACCOUNT_BASED" => GroupingType::AccountBased,
@@ -61,11 +61,11 @@ impl std::convert::From<&str> for GroupingType {
         }
     }
 }
-impl std::str::FromStr for GroupingType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for GroupingType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(GroupingType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(GroupingType::from(s))
     }
 }
 impl GroupingType {
@@ -81,7 +81,7 @@ impl GroupingType {
         &["ACCOUNT_BASED"]
     }
 }
-impl AsRef<str> for GroupingType {
+impl ::std::convert::AsRef<str> for GroupingType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

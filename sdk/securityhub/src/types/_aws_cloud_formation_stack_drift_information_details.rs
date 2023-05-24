@@ -2,15 +2,15 @@
 
 /// <p>Provides information about the stack's conformity to its expected template configuration. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsCloudFormationStackDriftInformationDetails {
     /// <p>Status of the stack's actual configuration compared to its expected template configuration. </p>
     #[doc(hidden)]
-    pub stack_drift_status: std::option::Option<std::string::String>,
+    pub stack_drift_status: ::std::option::Option<::std::string::String>,
 }
 impl AwsCloudFormationStackDriftInformationDetails {
     /// <p>Status of the stack's actual configuration compared to its expected template configuration. </p>
-    pub fn stack_drift_status(&self) -> std::option::Option<&str> {
+    pub fn stack_drift_status(&self) -> ::std::option::Option<&str> {
         self.stack_drift_status.as_deref()
     }
 }
@@ -24,20 +24,25 @@ impl AwsCloudFormationStackDriftInformationDetails {
 
 /// A builder for [`AwsCloudFormationStackDriftInformationDetails`](crate::types::AwsCloudFormationStackDriftInformationDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsCloudFormationStackDriftInformationDetailsBuilder {
-    pub(crate) stack_drift_status: std::option::Option<std::string::String>,
+    pub(crate) stack_drift_status: ::std::option::Option<::std::string::String>,
 }
 impl AwsCloudFormationStackDriftInformationDetailsBuilder {
     /// <p>Status of the stack's actual configuration compared to its expected template configuration. </p>
-    pub fn stack_drift_status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.stack_drift_status = Some(input.into());
+    pub fn stack_drift_status(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.stack_drift_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Status of the stack's actual configuration compared to its expected template configuration. </p>
     pub fn set_stack_drift_status(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.stack_drift_status = input;
         self

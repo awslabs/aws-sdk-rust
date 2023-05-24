@@ -2,20 +2,20 @@
 
 /// <p>Represents the output of a <code>DescribeTable</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeTableOutput {
     /// <p>The properties of the table.</p>
     #[doc(hidden)]
-    pub table: std::option::Option<crate::types::TableDescription>,
+    pub table: ::std::option::Option<crate::types::TableDescription>,
     _request_id: Option<String>,
 }
 impl DescribeTableOutput {
     /// <p>The properties of the table.</p>
-    pub fn table(&self) -> std::option::Option<&crate::types::TableDescription> {
+    pub fn table(&self) -> ::std::option::Option<&crate::types::TableDescription> {
         self.table.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeTableOutput {
+impl ::aws_http::request_id::RequestId for DescribeTableOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,24 @@ impl DescribeTableOutput {
 
 /// A builder for [`DescribeTableOutput`](crate::operation::describe_table::DescribeTableOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeTableOutputBuilder {
-    pub(crate) table: std::option::Option<crate::types::TableDescription>,
+    pub(crate) table: ::std::option::Option<crate::types::TableDescription>,
     _request_id: Option<String>,
 }
 impl DescribeTableOutputBuilder {
     /// <p>The properties of the table.</p>
     pub fn table(mut self, input: crate::types::TableDescription) -> Self {
-        self.table = Some(input);
+        self.table = ::std::option::Option::Some(input);
         self
     }
     /// <p>The properties of the table.</p>
-    pub fn set_table(mut self, input: std::option::Option<crate::types::TableDescription>) -> Self {
+    pub fn set_table(
+        mut self,
+        input: ::std::option::Option<crate::types::TableDescription>,
+    ) -> Self {
         self.table = input;
         self
     }

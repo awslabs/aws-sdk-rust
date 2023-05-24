@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteAccessLogSettings`](crate::operation::delete_access_log_settings::builders::DeleteAccessLogSettingsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`api_id(impl Into<String>)`](crate::operation::delete_access_log_settings::builders::DeleteAccessLogSettingsFluentBuilder::api_id) / [`set_api_id(Option<String>)`](crate::operation::delete_access_log_settings::builders::DeleteAccessLogSettingsFluentBuilder::set_api_id): <p>The API identifier.</p>
-    ///   - [`stage_name(impl Into<String>)`](crate::operation::delete_access_log_settings::builders::DeleteAccessLogSettingsFluentBuilder::stage_name) / [`set_stage_name(Option<String>)`](crate::operation::delete_access_log_settings::builders::DeleteAccessLogSettingsFluentBuilder::set_stage_name): <p>The stage name. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.</p>
+    ///   - [`api_id(impl ::std::convert::Into<String>)`](crate::operation::delete_access_log_settings::builders::DeleteAccessLogSettingsFluentBuilder::api_id) / [`set_api_id(Option<String>)`](crate::operation::delete_access_log_settings::builders::DeleteAccessLogSettingsFluentBuilder::set_api_id): <p>The API identifier.</p>
+    ///   - [`stage_name(impl ::std::convert::Into<String>)`](crate::operation::delete_access_log_settings::builders::DeleteAccessLogSettingsFluentBuilder::stage_name) / [`set_stage_name(Option<String>)`](crate::operation::delete_access_log_settings::builders::DeleteAccessLogSettingsFluentBuilder::set_stage_name): <p>The stage name. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.</p>
     /// - On success, responds with [`DeleteAccessLogSettingsOutput`](crate::operation::delete_access_log_settings::DeleteAccessLogSettingsOutput)
     /// - On failure, responds with [`SdkError<DeleteAccessLogSettingsError>`](crate::operation::delete_access_log_settings::DeleteAccessLogSettingsError)
     pub fn delete_access_log_settings(

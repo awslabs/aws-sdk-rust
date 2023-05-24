@@ -2,15 +2,15 @@
 
 /// <p>An object that represents the virtual gateway's listener's Secret Discovery Service certificate.The proxy must be configured with a local SDS provider via a Unix Domain Socket. See App Mesh<a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html">TLS documentation</a> for more info. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VirtualGatewayListenerTlsSdsCertificate {
     /// <p>A reference to an object that represents the name of the secret secret requested from the Secret Discovery Service provider representing Transport Layer Security (TLS) materials like a certificate or certificate chain.</p>
     #[doc(hidden)]
-    pub secret_name: std::option::Option<std::string::String>,
+    pub secret_name: ::std::option::Option<::std::string::String>,
 }
 impl VirtualGatewayListenerTlsSdsCertificate {
     /// <p>A reference to an object that represents the name of the secret secret requested from the Secret Discovery Service provider representing Transport Layer Security (TLS) materials like a certificate or certificate chain.</p>
-    pub fn secret_name(&self) -> std::option::Option<&str> {
+    pub fn secret_name(&self) -> ::std::option::Option<&str> {
         self.secret_name.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl VirtualGatewayListenerTlsSdsCertificate {
 
 /// A builder for [`VirtualGatewayListenerTlsSdsCertificate`](crate::types::VirtualGatewayListenerTlsSdsCertificate).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VirtualGatewayListenerTlsSdsCertificateBuilder {
-    pub(crate) secret_name: std::option::Option<std::string::String>,
+    pub(crate) secret_name: ::std::option::Option<::std::string::String>,
 }
 impl VirtualGatewayListenerTlsSdsCertificateBuilder {
     /// <p>A reference to an object that represents the name of the secret secret requested from the Secret Discovery Service provider representing Transport Layer Security (TLS) materials like a certificate or certificate chain.</p>
-    pub fn secret_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.secret_name = Some(input.into());
+    pub fn secret_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.secret_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A reference to an object that represents the name of the secret secret requested from the Secret Discovery Service provider representing Transport Layer Security (TLS) materials like a certificate or certificate chain.</p>
-    pub fn set_secret_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_secret_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secret_name = input;
         self
     }

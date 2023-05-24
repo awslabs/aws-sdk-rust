@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetManagedScalingPolicy`](crate::operation::get_managed_scaling_policy::builders::GetManagedScalingPolicyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`cluster_id(impl Into<String>)`](crate::operation::get_managed_scaling_policy::builders::GetManagedScalingPolicyFluentBuilder::cluster_id) / [`set_cluster_id(Option<String>)`](crate::operation::get_managed_scaling_policy::builders::GetManagedScalingPolicyFluentBuilder::set_cluster_id): <p>Specifies the ID of the cluster for which the managed scaling policy will be fetched. </p>
+    ///   - [`cluster_id(impl ::std::convert::Into<String>)`](crate::operation::get_managed_scaling_policy::builders::GetManagedScalingPolicyFluentBuilder::cluster_id) / [`set_cluster_id(Option<String>)`](crate::operation::get_managed_scaling_policy::builders::GetManagedScalingPolicyFluentBuilder::set_cluster_id): <p>Specifies the ID of the cluster for which the managed scaling policy will be fetched. </p>
     /// - On success, responds with [`GetManagedScalingPolicyOutput`](crate::operation::get_managed_scaling_policy::GetManagedScalingPolicyOutput) with field(s):
     ///   - [`managed_scaling_policy(Option<ManagedScalingPolicy>)`](crate::operation::get_managed_scaling_policy::GetManagedScalingPolicyOutput::managed_scaling_policy): <p>Specifies the managed scaling policy that is attached to an Amazon EMR cluster. </p>
     /// - On failure, responds with [`SdkError<GetManagedScalingPolicyError>`](crate::operation::get_managed_scaling_policy::GetManagedScalingPolicyError)

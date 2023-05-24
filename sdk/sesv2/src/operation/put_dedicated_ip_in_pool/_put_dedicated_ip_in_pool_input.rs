@@ -2,22 +2,22 @@
 
 /// <p>A request to move a dedicated IP address to a dedicated IP pool.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutDedicatedIpInPoolInput {
     /// <p>The IP address that you want to move to the dedicated IP pool. The value you specify has to be a dedicated IP address that's associated with your Amazon Web Services account.</p>
     #[doc(hidden)]
-    pub ip: std::option::Option<std::string::String>,
+    pub ip: ::std::option::Option<::std::string::String>,
     /// <p>The name of the IP pool that you want to add the dedicated IP address to. You have to specify an IP pool that already exists.</p>
     #[doc(hidden)]
-    pub destination_pool_name: std::option::Option<std::string::String>,
+    pub destination_pool_name: ::std::option::Option<::std::string::String>,
 }
 impl PutDedicatedIpInPoolInput {
     /// <p>The IP address that you want to move to the dedicated IP pool. The value you specify has to be a dedicated IP address that's associated with your Amazon Web Services account.</p>
-    pub fn ip(&self) -> std::option::Option<&str> {
+    pub fn ip(&self) -> ::std::option::Option<&str> {
         self.ip.as_deref()
     }
     /// <p>The name of the IP pool that you want to add the dedicated IP address to. You have to specify an IP pool that already exists.</p>
-    pub fn destination_pool_name(&self) -> std::option::Option<&str> {
+    pub fn destination_pool_name(&self) -> ::std::option::Option<&str> {
         self.destination_pool_name.as_deref()
     }
 }
@@ -32,31 +32,36 @@ impl PutDedicatedIpInPoolInput {
 
 /// A builder for [`PutDedicatedIpInPoolInput`](crate::operation::put_dedicated_ip_in_pool::PutDedicatedIpInPoolInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PutDedicatedIpInPoolInputBuilder {
-    pub(crate) ip: std::option::Option<std::string::String>,
-    pub(crate) destination_pool_name: std::option::Option<std::string::String>,
+    pub(crate) ip: ::std::option::Option<::std::string::String>,
+    pub(crate) destination_pool_name: ::std::option::Option<::std::string::String>,
 }
 impl PutDedicatedIpInPoolInputBuilder {
     /// <p>The IP address that you want to move to the dedicated IP pool. The value you specify has to be a dedicated IP address that's associated with your Amazon Web Services account.</p>
-    pub fn ip(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ip = Some(input.into());
+    pub fn ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ip = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IP address that you want to move to the dedicated IP pool. The value you specify has to be a dedicated IP address that's associated with your Amazon Web Services account.</p>
-    pub fn set_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ip = input;
         self
     }
     /// <p>The name of the IP pool that you want to add the dedicated IP address to. You have to specify an IP pool that already exists.</p>
-    pub fn destination_pool_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.destination_pool_name = Some(input.into());
+    pub fn destination_pool_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.destination_pool_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the IP pool that you want to add the dedicated IP address to. You have to specify an IP pool that already exists.</p>
     pub fn set_destination_pool_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.destination_pool_name = input;
         self
@@ -64,11 +69,11 @@ impl PutDedicatedIpInPoolInputBuilder {
     /// Consumes the builder and constructs a [`PutDedicatedIpInPoolInput`](crate::operation::put_dedicated_ip_in_pool::PutDedicatedIpInPoolInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::put_dedicated_ip_in_pool::PutDedicatedIpInPoolInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::put_dedicated_ip_in_pool::PutDedicatedIpInPoolInput {
                 ip: self.ip,
                 destination_pool_name: self.destination_pool_name,

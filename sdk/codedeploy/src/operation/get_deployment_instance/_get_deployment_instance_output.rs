@@ -2,20 +2,20 @@
 
 /// <p> Represents the output of a <code>GetDeploymentInstance</code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDeploymentInstanceOutput {
     /// <p> Information about the instance. </p>
     #[doc(hidden)]
-    pub instance_summary: std::option::Option<crate::types::InstanceSummary>,
+    pub instance_summary: ::std::option::Option<crate::types::InstanceSummary>,
     _request_id: Option<String>,
 }
 impl GetDeploymentInstanceOutput {
     /// <p> Information about the instance. </p>
-    pub fn instance_summary(&self) -> std::option::Option<&crate::types::InstanceSummary> {
+    pub fn instance_summary(&self) -> ::std::option::Option<&crate::types::InstanceSummary> {
         self.instance_summary.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for GetDeploymentInstanceOutput {
+impl ::aws_http::request_id::RequestId for GetDeploymentInstanceOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -31,21 +31,23 @@ impl GetDeploymentInstanceOutput {
 
 /// A builder for [`GetDeploymentInstanceOutput`](crate::operation::get_deployment_instance::GetDeploymentInstanceOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetDeploymentInstanceOutputBuilder {
-    pub(crate) instance_summary: std::option::Option<crate::types::InstanceSummary>,
+    pub(crate) instance_summary: ::std::option::Option<crate::types::InstanceSummary>,
     _request_id: Option<String>,
 }
 impl GetDeploymentInstanceOutputBuilder {
     /// <p> Information about the instance. </p>
     pub fn instance_summary(mut self, input: crate::types::InstanceSummary) -> Self {
-        self.instance_summary = Some(input);
+        self.instance_summary = ::std::option::Option::Some(input);
         self
     }
     /// <p> Information about the instance. </p>
     pub fn set_instance_summary(
         mut self,
-        input: std::option::Option<crate::types::InstanceSummary>,
+        input: ::std::option::Option<crate::types::InstanceSummary>,
     ) -> Self {
         self.instance_summary = input;
         self

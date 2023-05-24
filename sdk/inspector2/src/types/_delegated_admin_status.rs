@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum DelegatedAdminStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum DelegatedAdminStatus {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for DelegatedAdminStatus {
+impl ::std::convert::From<&str> for DelegatedAdminStatus {
     fn from(s: &str) -> Self {
         match s {
             "DISABLE_IN_PROGRESS" => DelegatedAdminStatus::DisableInProgress,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for DelegatedAdminStatus {
         }
     }
 }
-impl std::str::FromStr for DelegatedAdminStatus {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for DelegatedAdminStatus {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DelegatedAdminStatus::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(DelegatedAdminStatus::from(s))
     }
 }
 impl DelegatedAdminStatus {
@@ -86,7 +86,7 @@ impl DelegatedAdminStatus {
         &["DISABLE_IN_PROGRESS", "ENABLED"]
     }
 }
-impl AsRef<str> for DelegatedAdminStatus {
+impl ::std::convert::AsRef<str> for DelegatedAdminStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

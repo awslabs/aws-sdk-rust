@@ -2,7 +2,7 @@
 pub(crate) fn de_response_headers_policy_list_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::types::ResponseHeadersPolicyList>,
+    ::std::option::Option<crate::types::ResponseHeadersPolicyList>,
     crate::operation::list_response_headers_policies::ListResponseHeadersPoliciesError,
 > {
     (!body.is_empty()).then(||{
@@ -12,13 +12,13 @@ pub(crate) fn de_response_headers_policy_list_payload(
 
 pub fn de_response_headers_policy_list(
     inp: &[u8],
-) -> Result<crate::types::ResponseHeadersPolicyList, aws_smithy_xml::decode::XmlDecodeError> {
-    let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
+) -> Result<crate::types::ResponseHeadersPolicyList, ::aws_smithy_xml::decode::XmlDecodeError> {
+    let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
     let start_el = decoder.start_el();
     if !(start_el.matches("ResponseHeadersPolicyList")) {
-        return Err(aws_smithy_xml::decode::XmlDecodeError::custom(format!(
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected ResponseHeadersPolicyList got {:?}",
             start_el
         )));

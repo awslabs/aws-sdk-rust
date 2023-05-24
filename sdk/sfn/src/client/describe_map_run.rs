@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeMapRun`](crate::operation::describe_map_run::builders::DescribeMapRunFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`map_run_arn(impl Into<String>)`](crate::operation::describe_map_run::builders::DescribeMapRunFluentBuilder::map_run_arn) / [`set_map_run_arn(Option<String>)`](crate::operation::describe_map_run::builders::DescribeMapRunFluentBuilder::set_map_run_arn): <p>The Amazon Resource Name (ARN) that identifies a Map Run.</p>
+    ///   - [`map_run_arn(impl ::std::convert::Into<String>)`](crate::operation::describe_map_run::builders::DescribeMapRunFluentBuilder::map_run_arn) / [`set_map_run_arn(Option<String>)`](crate::operation::describe_map_run::builders::DescribeMapRunFluentBuilder::set_map_run_arn): <p>The Amazon Resource Name (ARN) that identifies a Map Run.</p>
     /// - On success, responds with [`DescribeMapRunOutput`](crate::operation::describe_map_run::DescribeMapRunOutput) with field(s):
     ///   - [`map_run_arn(Option<String>)`](crate::operation::describe_map_run::DescribeMapRunOutput::map_run_arn): <p>The Amazon Resource Name (ARN) that identifies a Map Run.</p>
     ///   - [`execution_arn(Option<String>)`](crate::operation::describe_map_run::DescribeMapRunOutput::execution_arn): <p>The Amazon Resource Name (ARN) that identifies the execution in which the Map Run was started.</p>

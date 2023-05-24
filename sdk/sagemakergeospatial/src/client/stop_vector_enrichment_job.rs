@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopVectorEnrichmentJob`](crate::operation::stop_vector_enrichment_job::builders::StopVectorEnrichmentJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl Into<String>)`](crate::operation::stop_vector_enrichment_job::builders::StopVectorEnrichmentJobFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::stop_vector_enrichment_job::builders::StopVectorEnrichmentJobFluentBuilder::set_arn): <p>The Amazon Resource Name (ARN) of the Vector Enrichment job.</p>
+    ///   - [`arn(impl ::std::convert::Into<String>)`](crate::operation::stop_vector_enrichment_job::builders::StopVectorEnrichmentJobFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::stop_vector_enrichment_job::builders::StopVectorEnrichmentJobFluentBuilder::set_arn): <p>The Amazon Resource Name (ARN) of the Vector Enrichment job.</p>
     /// - On success, responds with [`StopVectorEnrichmentJobOutput`](crate::operation::stop_vector_enrichment_job::StopVectorEnrichmentJobOutput)
     /// - On failure, responds with [`SdkError<StopVectorEnrichmentJobError>`](crate::operation::stop_vector_enrichment_job::StopVectorEnrichmentJobError)
     pub fn stop_vector_enrichment_job(

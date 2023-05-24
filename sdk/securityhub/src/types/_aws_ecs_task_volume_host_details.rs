@@ -2,15 +2,15 @@
 
 /// <p>Provides details on a container instance bind mount host volume. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEcsTaskVolumeHostDetails {
     /// <p>When the <code>host</code> parameter is used, specify a <code>sourcePath</code> to declare the path on the host container instance that's presented to the container. </p>
     #[doc(hidden)]
-    pub source_path: std::option::Option<std::string::String>,
+    pub source_path: ::std::option::Option<::std::string::String>,
 }
 impl AwsEcsTaskVolumeHostDetails {
     /// <p>When the <code>host</code> parameter is used, specify a <code>sourcePath</code> to declare the path on the host container instance that's presented to the container. </p>
-    pub fn source_path(&self) -> std::option::Option<&str> {
+    pub fn source_path(&self) -> ::std::option::Option<&str> {
         self.source_path.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl AwsEcsTaskVolumeHostDetails {
 
 /// A builder for [`AwsEcsTaskVolumeHostDetails`](crate::types::AwsEcsTaskVolumeHostDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsEcsTaskVolumeHostDetailsBuilder {
-    pub(crate) source_path: std::option::Option<std::string::String>,
+    pub(crate) source_path: ::std::option::Option<::std::string::String>,
 }
 impl AwsEcsTaskVolumeHostDetailsBuilder {
     /// <p>When the <code>host</code> parameter is used, specify a <code>sourcePath</code> to declare the path on the host container instance that's presented to the container. </p>
-    pub fn source_path(mut self, input: impl Into<std::string::String>) -> Self {
-        self.source_path = Some(input.into());
+    pub fn source_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>When the <code>host</code> parameter is used, specify a <code>sourcePath</code> to declare the path on the host container instance that's presented to the container. </p>
-    pub fn set_source_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_source_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_path = input;
         self
     }

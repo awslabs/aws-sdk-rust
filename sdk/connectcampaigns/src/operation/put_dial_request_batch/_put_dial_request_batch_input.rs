@@ -2,22 +2,22 @@
 
 /// PutDialRequestBatchRequest
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutDialRequestBatchInput {
     /// Identifier representing a Campaign
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// A list of dial requests.
     #[doc(hidden)]
-    pub dial_requests: std::option::Option<std::vec::Vec<crate::types::DialRequest>>,
+    pub dial_requests: ::std::option::Option<::std::vec::Vec<crate::types::DialRequest>>,
 }
 impl PutDialRequestBatchInput {
     /// Identifier representing a Campaign
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// A list of dial requests.
-    pub fn dial_requests(&self) -> std::option::Option<&[crate::types::DialRequest]> {
+    pub fn dial_requests(&self) -> ::std::option::Option<&[crate::types::DialRequest]> {
         self.dial_requests.as_deref()
     }
 }
@@ -32,19 +32,21 @@ impl PutDialRequestBatchInput {
 
 /// A builder for [`PutDialRequestBatchInput`](crate::operation::put_dial_request_batch::PutDialRequestBatchInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PutDialRequestBatchInputBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) dial_requests: std::option::Option<std::vec::Vec<crate::types::DialRequest>>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) dial_requests: ::std::option::Option<::std::vec::Vec<crate::types::DialRequest>>,
 }
 impl PutDialRequestBatchInputBuilder {
     /// Identifier representing a Campaign
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// Identifier representing a Campaign
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
@@ -56,13 +58,13 @@ impl PutDialRequestBatchInputBuilder {
     pub fn dial_requests(mut self, input: crate::types::DialRequest) -> Self {
         let mut v = self.dial_requests.unwrap_or_default();
         v.push(input);
-        self.dial_requests = Some(v);
+        self.dial_requests = ::std::option::Option::Some(v);
         self
     }
     /// A list of dial requests.
     pub fn set_dial_requests(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DialRequest>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DialRequest>>,
     ) -> Self {
         self.dial_requests = input;
         self
@@ -70,11 +72,11 @@ impl PutDialRequestBatchInputBuilder {
     /// Consumes the builder and constructs a [`PutDialRequestBatchInput`](crate::operation::put_dial_request_batch::PutDialRequestBatchInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::put_dial_request_batch::PutDialRequestBatchInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::put_dial_request_batch::PutDialRequestBatchInput {
                 id: self.id,
                 dial_requests: self.dial_requests,

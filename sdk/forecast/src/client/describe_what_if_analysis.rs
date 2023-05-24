@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeWhatIfAnalysis`](crate::operation::describe_what_if_analysis::builders::DescribeWhatIfAnalysisFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`what_if_analysis_arn(impl Into<String>)`](crate::operation::describe_what_if_analysis::builders::DescribeWhatIfAnalysisFluentBuilder::what_if_analysis_arn) / [`set_what_if_analysis_arn(Option<String>)`](crate::operation::describe_what_if_analysis::builders::DescribeWhatIfAnalysisFluentBuilder::set_what_if_analysis_arn): <p>The Amazon Resource Name (ARN) of the what-if analysis that you are interested in.</p>
+    ///   - [`what_if_analysis_arn(impl ::std::convert::Into<String>)`](crate::operation::describe_what_if_analysis::builders::DescribeWhatIfAnalysisFluentBuilder::what_if_analysis_arn) / [`set_what_if_analysis_arn(Option<String>)`](crate::operation::describe_what_if_analysis::builders::DescribeWhatIfAnalysisFluentBuilder::set_what_if_analysis_arn): <p>The Amazon Resource Name (ARN) of the what-if analysis that you are interested in.</p>
     /// - On success, responds with [`DescribeWhatIfAnalysisOutput`](crate::operation::describe_what_if_analysis::DescribeWhatIfAnalysisOutput) with field(s):
     ///   - [`what_if_analysis_name(Option<String>)`](crate::operation::describe_what_if_analysis::DescribeWhatIfAnalysisOutput::what_if_analysis_name): <p>The name of the what-if analysis.</p>
     ///   - [`what_if_analysis_arn(Option<String>)`](crate::operation::describe_what_if_analysis::DescribeWhatIfAnalysisOutput::what_if_analysis_arn): <p>The Amazon Resource Name (ARN) of the what-if analysis.</p>

@@ -2,29 +2,29 @@
 
 /// <p>Details about a read set.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportReadSetDetail {
     /// <p>The set's ID.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The set's status.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::ReadSetExportJobItemStatus>,
+    pub status: ::std::option::Option<crate::types::ReadSetExportJobItemStatus>,
     /// <p>The set's status message.</p>
     #[doc(hidden)]
-    pub status_message: std::option::Option<std::string::String>,
+    pub status_message: ::std::option::Option<::std::string::String>,
 }
 impl ExportReadSetDetail {
     /// <p>The set's ID.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The set's status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::ReadSetExportJobItemStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::ReadSetExportJobItemStatus> {
         self.status.as_ref()
     }
     /// <p>The set's status message.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<&str> {
         self.status_message.as_deref()
     }
 }
@@ -37,43 +37,51 @@ impl ExportReadSetDetail {
 
 /// A builder for [`ExportReadSetDetail`](crate::types::ExportReadSetDetail).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ExportReadSetDetailBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::ReadSetExportJobItemStatus>,
-    pub(crate) status_message: std::option::Option<std::string::String>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::ReadSetExportJobItemStatus>,
+    pub(crate) status_message: ::std::option::Option<::std::string::String>,
 }
 impl ExportReadSetDetailBuilder {
     /// <p>The set's ID.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The set's ID.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>The set's status.</p>
     pub fn status(mut self, input: crate::types::ReadSetExportJobItemStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The set's status.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::ReadSetExportJobItemStatus>,
+        input: ::std::option::Option<crate::types::ReadSetExportJobItemStatus>,
     ) -> Self {
         self.status = input;
         self
     }
     /// <p>The set's status message.</p>
-    pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status_message = Some(input.into());
+    pub fn status_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The set's status message.</p>
-    pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.status_message = input;
         self
     }

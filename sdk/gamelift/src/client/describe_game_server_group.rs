@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeGameServerGroup`](crate::operation::describe_game_server_group::builders::DescribeGameServerGroupFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`game_server_group_name(impl Into<String>)`](crate::operation::describe_game_server_group::builders::DescribeGameServerGroupFluentBuilder::game_server_group_name) / [`set_game_server_group_name(Option<String>)`](crate::operation::describe_game_server_group::builders::DescribeGameServerGroupFluentBuilder::set_game_server_group_name): <p>A unique identifier for the game server group. Use either the name or ARN value.</p>
+    ///   - [`game_server_group_name(impl ::std::convert::Into<String>)`](crate::operation::describe_game_server_group::builders::DescribeGameServerGroupFluentBuilder::game_server_group_name) / [`set_game_server_group_name(Option<String>)`](crate::operation::describe_game_server_group::builders::DescribeGameServerGroupFluentBuilder::set_game_server_group_name): <p>A unique identifier for the game server group. Use either the name or ARN value.</p>
     /// - On success, responds with [`DescribeGameServerGroupOutput`](crate::operation::describe_game_server_group::DescribeGameServerGroupOutput) with field(s):
     ///   - [`game_server_group(Option<GameServerGroup>)`](crate::operation::describe_game_server_group::DescribeGameServerGroupOutput::game_server_group): <p>An object with the property settings for the requested game server group resource. </p>
     /// - On failure, responds with [`SdkError<DescribeGameServerGroupError>`](crate::operation::describe_game_server_group::DescribeGameServerGroupError)

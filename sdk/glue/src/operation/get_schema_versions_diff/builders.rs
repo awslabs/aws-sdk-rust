@@ -7,29 +7,29 @@ pub use crate::operation::get_schema_versions_diff::_get_schema_versions_diff_in
 ///
 /// <p>Fetches the schema version difference in the specified difference type between two stored schema versions in the Schema Registry.</p>
 /// <p>This API allows you to compare two schema versions between two schema definitions under the same schema.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetSchemaVersionsDiffFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::get_schema_versions_diff::builders::GetSchemaVersionsDiffInputBuilder,
 }
 impl GetSchemaVersionsDiffFluentBuilder {
     /// Creates a new `GetSchemaVersionsDiff`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::get_schema_versions_diff::GetSchemaVersionsDiff,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::get_schema_versions_diff::GetSchemaVersionsDiffError,
         >,
     > {
@@ -37,30 +37,33 @@ impl GetSchemaVersionsDiffFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_schema_versions_diff::GetSchemaVersionsDiffOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::get_schema_versions_diff::GetSchemaVersionsDiffError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -73,9 +76,9 @@ impl GetSchemaVersionsDiffFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_schema_versions_diff::GetSchemaVersionsDiffOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::get_schema_versions_diff::GetSchemaVersionsDiffError,
         >,
     > {
@@ -95,7 +98,7 @@ impl GetSchemaVersionsDiffFluentBuilder {
     /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
     /// <li> <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
     /// </ul>
-    pub fn set_schema_id(mut self, input: std::option::Option<crate::types::SchemaId>) -> Self {
+    pub fn set_schema_id(mut self, input: ::std::option::Option<crate::types::SchemaId>) -> Self {
         self.inner = self.inner.set_schema_id(input);
         self
     }
@@ -107,7 +110,7 @@ impl GetSchemaVersionsDiffFluentBuilder {
     /// <p>The first of the two schema versions to be compared.</p>
     pub fn set_first_schema_version_number(
         mut self,
-        input: std::option::Option<crate::types::SchemaVersionNumber>,
+        input: ::std::option::Option<crate::types::SchemaVersionNumber>,
     ) -> Self {
         self.inner = self.inner.set_first_schema_version_number(input);
         self
@@ -123,7 +126,7 @@ impl GetSchemaVersionsDiffFluentBuilder {
     /// <p>The second of the two schema versions to be compared.</p>
     pub fn set_second_schema_version_number(
         mut self,
-        input: std::option::Option<crate::types::SchemaVersionNumber>,
+        input: ::std::option::Option<crate::types::SchemaVersionNumber>,
     ) -> Self {
         self.inner = self.inner.set_second_schema_version_number(input);
         self
@@ -136,7 +139,7 @@ impl GetSchemaVersionsDiffFluentBuilder {
     /// <p>Refers to <code>SYNTAX_DIFF</code>, which is the currently supported diff type.</p>
     pub fn set_schema_diff_type(
         mut self,
-        input: std::option::Option<crate::types::SchemaDiffType>,
+        input: ::std::option::Option<crate::types::SchemaDiffType>,
     ) -> Self {
         self.inner = self.inner.set_schema_diff_type(input);
         self

@@ -2,22 +2,22 @@
 
 /// <p>Metadata for a column that is used as the input of a transform operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InputColumn {
     /// <p>The name of this column in the underlying data source.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The data type of the column.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::InputColumnDataType>,
+    pub r#type: ::std::option::Option<crate::types::InputColumnDataType>,
 }
 impl InputColumn {
     /// <p>The name of this column in the underlying data source.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The data type of the column.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::InputColumnDataType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::InputColumnDataType> {
         self.r#type.as_ref()
     }
 }
@@ -30,31 +30,33 @@ impl InputColumn {
 
 /// A builder for [`InputColumn`](crate::types::InputColumn).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InputColumnBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) r#type: std::option::Option<crate::types::InputColumnDataType>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::InputColumnDataType>,
 }
 impl InputColumnBuilder {
     /// <p>The name of this column in the underlying data source.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of this column in the underlying data source.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The data type of the column.</p>
     pub fn r#type(mut self, input: crate::types::InputColumnDataType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The data type of the column.</p>
     pub fn set_type(
         mut self,
-        input: std::option::Option<crate::types::InputColumnDataType>,
+        input: ::std::option::Option<crate::types::InputColumnDataType>,
     ) -> Self {
         self.r#type = input;
         self

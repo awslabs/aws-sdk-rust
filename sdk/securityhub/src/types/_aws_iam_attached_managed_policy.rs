@@ -2,22 +2,22 @@
 
 /// <p>A managed policy that is attached to an IAM principal.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsIamAttachedManagedPolicy {
     /// <p>The name of the policy.</p>
     #[doc(hidden)]
-    pub policy_name: std::option::Option<std::string::String>,
+    pub policy_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the policy.</p>
     #[doc(hidden)]
-    pub policy_arn: std::option::Option<std::string::String>,
+    pub policy_arn: ::std::option::Option<::std::string::String>,
 }
 impl AwsIamAttachedManagedPolicy {
     /// <p>The name of the policy.</p>
-    pub fn policy_name(&self) -> std::option::Option<&str> {
+    pub fn policy_name(&self) -> ::std::option::Option<&str> {
         self.policy_name.as_deref()
     }
     /// <p>The ARN of the policy.</p>
-    pub fn policy_arn(&self) -> std::option::Option<&str> {
+    pub fn policy_arn(&self) -> ::std::option::Option<&str> {
         self.policy_arn.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl AwsIamAttachedManagedPolicy {
 
 /// A builder for [`AwsIamAttachedManagedPolicy`](crate::types::AwsIamAttachedManagedPolicy).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsIamAttachedManagedPolicyBuilder {
-    pub(crate) policy_name: std::option::Option<std::string::String>,
-    pub(crate) policy_arn: std::option::Option<std::string::String>,
+    pub(crate) policy_name: ::std::option::Option<::std::string::String>,
+    pub(crate) policy_arn: ::std::option::Option<::std::string::String>,
 }
 impl AwsIamAttachedManagedPolicyBuilder {
     /// <p>The name of the policy.</p>
-    pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.policy_name = Some(input.into());
+    pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.policy_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the policy.</p>
-    pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_name = input;
         self
     }
     /// <p>The ARN of the policy.</p>
-    pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.policy_arn = Some(input.into());
+    pub fn policy_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.policy_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the policy.</p>
-    pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_policy_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_arn = input;
         self
     }

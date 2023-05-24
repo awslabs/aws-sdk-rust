@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum TagFilterType {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum TagFilterType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for TagFilterType {
+impl ::std::convert::From<&str> for TagFilterType {
     fn from(s: &str) -> Self {
         match s {
             "KEY_AND_VALUE" => TagFilterType::KeyAndValue,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for TagFilterType {
         }
     }
 }
-impl std::str::FromStr for TagFilterType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for TagFilterType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(TagFilterType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(TagFilterType::from(s))
     }
 }
 impl TagFilterType {
@@ -91,7 +91,7 @@ impl TagFilterType {
         &["KEY_AND_VALUE", "KEY_ONLY", "VALUE_ONLY"]
     }
 }
-impl AsRef<str> for TagFilterType {
+impl ::std::convert::AsRef<str> for TagFilterType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

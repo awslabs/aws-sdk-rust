@@ -2,7 +2,7 @@
 
 /// <p>The number of managed nodes found for each patch severity level defined in the request filter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SeveritySummary {
     /// <p>The total number of resources or compliance items that have a severity level of <code>Critical</code>. Critical severity is determined by the organization that published the compliance items.</p>
     #[doc(hidden)]
@@ -58,73 +58,75 @@ impl SeveritySummary {
 
 /// A builder for [`SeveritySummary`](crate::types::SeveritySummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SeveritySummaryBuilder {
-    pub(crate) critical_count: std::option::Option<i32>,
-    pub(crate) high_count: std::option::Option<i32>,
-    pub(crate) medium_count: std::option::Option<i32>,
-    pub(crate) low_count: std::option::Option<i32>,
-    pub(crate) informational_count: std::option::Option<i32>,
-    pub(crate) unspecified_count: std::option::Option<i32>,
+    pub(crate) critical_count: ::std::option::Option<i32>,
+    pub(crate) high_count: ::std::option::Option<i32>,
+    pub(crate) medium_count: ::std::option::Option<i32>,
+    pub(crate) low_count: ::std::option::Option<i32>,
+    pub(crate) informational_count: ::std::option::Option<i32>,
+    pub(crate) unspecified_count: ::std::option::Option<i32>,
 }
 impl SeveritySummaryBuilder {
     /// <p>The total number of resources or compliance items that have a severity level of <code>Critical</code>. Critical severity is determined by the organization that published the compliance items.</p>
     pub fn critical_count(mut self, input: i32) -> Self {
-        self.critical_count = Some(input);
+        self.critical_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total number of resources or compliance items that have a severity level of <code>Critical</code>. Critical severity is determined by the organization that published the compliance items.</p>
-    pub fn set_critical_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_critical_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.critical_count = input;
         self
     }
     /// <p>The total number of resources or compliance items that have a severity level of high. High severity is determined by the organization that published the compliance items.</p>
     pub fn high_count(mut self, input: i32) -> Self {
-        self.high_count = Some(input);
+        self.high_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total number of resources or compliance items that have a severity level of high. High severity is determined by the organization that published the compliance items.</p>
-    pub fn set_high_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_high_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.high_count = input;
         self
     }
     /// <p>The total number of resources or compliance items that have a severity level of medium. Medium severity is determined by the organization that published the compliance items.</p>
     pub fn medium_count(mut self, input: i32) -> Self {
-        self.medium_count = Some(input);
+        self.medium_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total number of resources or compliance items that have a severity level of medium. Medium severity is determined by the organization that published the compliance items.</p>
-    pub fn set_medium_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_medium_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.medium_count = input;
         self
     }
     /// <p>The total number of resources or compliance items that have a severity level of low. Low severity is determined by the organization that published the compliance items.</p>
     pub fn low_count(mut self, input: i32) -> Self {
-        self.low_count = Some(input);
+        self.low_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total number of resources or compliance items that have a severity level of low. Low severity is determined by the organization that published the compliance items.</p>
-    pub fn set_low_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_low_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.low_count = input;
         self
     }
     /// <p>The total number of resources or compliance items that have a severity level of informational. Informational severity is determined by the organization that published the compliance items.</p>
     pub fn informational_count(mut self, input: i32) -> Self {
-        self.informational_count = Some(input);
+        self.informational_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total number of resources or compliance items that have a severity level of informational. Informational severity is determined by the organization that published the compliance items.</p>
-    pub fn set_informational_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_informational_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.informational_count = input;
         self
     }
     /// <p>The total number of resources or compliance items that have a severity level of unspecified. Unspecified severity is determined by the organization that published the compliance items.</p>
     pub fn unspecified_count(mut self, input: i32) -> Self {
-        self.unspecified_count = Some(input);
+        self.unspecified_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total number of resources or compliance items that have a severity level of unspecified. Unspecified severity is determined by the organization that published the compliance items.</p>
-    pub fn set_unspecified_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_unspecified_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.unspecified_count = input;
         self
     }

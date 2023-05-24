@@ -2,48 +2,48 @@
 
 /// <p>Contains the response to a successful <code>GetOpenIDConnectProvider</code> request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetOpenIdConnectProviderOutput {
     /// <p>The URL that the IAM OIDC provider resource object is associated with. For more information, see <code>CreateOpenIDConnectProvider</code>.</p>
     #[doc(hidden)]
-    pub url: std::option::Option<std::string::String>,
+    pub url: ::std::option::Option<::std::string::String>,
     /// <p>A list of client IDs (also known as audiences) that are associated with the specified IAM OIDC provider resource object. For more information, see <code>CreateOpenIDConnectProvider</code>.</p>
     #[doc(hidden)]
-    pub client_id_list: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub client_id_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of certificate thumbprints that are associated with the specified IAM OIDC provider resource object. For more information, see <code>CreateOpenIDConnectProvider</code>. </p>
     #[doc(hidden)]
-    pub thumbprint_list: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub thumbprint_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The date and time when the IAM OIDC provider resource object was created in the Amazon Web Services account.</p>
     #[doc(hidden)]
-    pub create_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A list of tags that are attached to the specified IAM OIDC provider. The returned list of tags is sorted by tag key. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     _request_id: Option<String>,
 }
 impl GetOpenIdConnectProviderOutput {
     /// <p>The URL that the IAM OIDC provider resource object is associated with. For more information, see <code>CreateOpenIDConnectProvider</code>.</p>
-    pub fn url(&self) -> std::option::Option<&str> {
+    pub fn url(&self) -> ::std::option::Option<&str> {
         self.url.as_deref()
     }
     /// <p>A list of client IDs (also known as audiences) that are associated with the specified IAM OIDC provider resource object. For more information, see <code>CreateOpenIDConnectProvider</code>.</p>
-    pub fn client_id_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn client_id_list(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.client_id_list.as_deref()
     }
     /// <p>A list of certificate thumbprints that are associated with the specified IAM OIDC provider resource object. For more information, see <code>CreateOpenIDConnectProvider</code>. </p>
-    pub fn thumbprint_list(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn thumbprint_list(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.thumbprint_list.as_deref()
     }
     /// <p>The date and time when the IAM OIDC provider resource object was created in the Amazon Web Services account.</p>
-    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn create_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.create_date.as_ref()
     }
     /// <p>A list of tags that are attached to the specified IAM OIDC provider. The returned list of tags is sorted by tag key. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for GetOpenIdConnectProviderOutput {
+impl ::aws_http::request_id::RequestId for GetOpenIdConnectProviderOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -57,23 +57,25 @@ impl GetOpenIdConnectProviderOutput {
 
 /// A builder for [`GetOpenIdConnectProviderOutput`](crate::operation::get_open_id_connect_provider::GetOpenIdConnectProviderOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetOpenIdConnectProviderOutputBuilder {
-    pub(crate) url: std::option::Option<std::string::String>,
-    pub(crate) client_id_list: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) thumbprint_list: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) create_date: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub(crate) url: ::std::option::Option<::std::string::String>,
+    pub(crate) client_id_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) thumbprint_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     _request_id: Option<String>,
 }
 impl GetOpenIdConnectProviderOutputBuilder {
     /// <p>The URL that the IAM OIDC provider resource object is associated with. For more information, see <code>CreateOpenIDConnectProvider</code>.</p>
-    pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.url = Some(input.into());
+    pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL that the IAM OIDC provider resource object is associated with. For more information, see <code>CreateOpenIDConnectProvider</code>.</p>
-    pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.url = input;
         self
     }
@@ -82,16 +84,19 @@ impl GetOpenIdConnectProviderOutputBuilder {
     /// To override the contents of this collection use [`set_client_id_list`](Self::set_client_id_list).
     ///
     /// <p>A list of client IDs (also known as audiences) that are associated with the specified IAM OIDC provider resource object. For more information, see <code>CreateOpenIDConnectProvider</code>.</p>
-    pub fn client_id_list(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn client_id_list(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.client_id_list.unwrap_or_default();
         v.push(input.into());
-        self.client_id_list = Some(v);
+        self.client_id_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of client IDs (also known as audiences) that are associated with the specified IAM OIDC provider resource object. For more information, see <code>CreateOpenIDConnectProvider</code>.</p>
     pub fn set_client_id_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.client_id_list = input;
         self
@@ -101,29 +106,32 @@ impl GetOpenIdConnectProviderOutputBuilder {
     /// To override the contents of this collection use [`set_thumbprint_list`](Self::set_thumbprint_list).
     ///
     /// <p>A list of certificate thumbprints that are associated with the specified IAM OIDC provider resource object. For more information, see <code>CreateOpenIDConnectProvider</code>. </p>
-    pub fn thumbprint_list(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn thumbprint_list(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.thumbprint_list.unwrap_or_default();
         v.push(input.into());
-        self.thumbprint_list = Some(v);
+        self.thumbprint_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of certificate thumbprints that are associated with the specified IAM OIDC provider resource object. For more information, see <code>CreateOpenIDConnectProvider</code>. </p>
     pub fn set_thumbprint_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.thumbprint_list = input;
         self
     }
     /// <p>The date and time when the IAM OIDC provider resource object was created in the Amazon Web Services account.</p>
-    pub fn create_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.create_date = Some(input);
+    pub fn create_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.create_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time when the IAM OIDC provider resource object was created in the Amazon Web Services account.</p>
     pub fn set_create_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.create_date = input;
         self
@@ -136,13 +144,13 @@ impl GetOpenIdConnectProviderOutputBuilder {
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
-        self.tags = Some(v);
+        self.tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of tags that are attached to the specified IAM OIDC provider. The returned list of tags is sorted by tag key. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tags = input;
         self

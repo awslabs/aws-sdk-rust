@@ -6,56 +6,59 @@ pub use crate::operation::get_filter::_get_filter_input::GetFilterInputBuilder;
 /// Fluent builder constructing a request to `GetFilter`.
 ///
 /// <p>Returns the details of the filter specified by the filter name.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetFilterFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::get_filter::builders::GetFilterInputBuilder,
 }
 impl GetFilterFluentBuilder {
     /// Creates a new `GetFilter`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::get_filter::GetFilter,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::get_filter::GetFilterError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_filter::GetFilterError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_filter::GetFilterOutput,
-        aws_smithy_http::result::SdkError<crate::operation::get_filter::GetFilterError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_filter::GetFilterError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,29 +71,29 @@ impl GetFilterFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::get_filter::GetFilterOutput,
-        aws_smithy_http::result::SdkError<crate::operation::get_filter::GetFilterError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::get_filter::GetFilterError>,
     > {
         self.send_middleware().await
     }
     /// <p>The unique ID of the detector that the filter is associated with.</p>
-    pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn detector_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.detector_id(input.into());
         self
     }
     /// <p>The unique ID of the detector that the filter is associated with.</p>
-    pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_detector_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_detector_id(input);
         self
     }
     /// <p>The name of the filter you want to get.</p>
-    pub fn filter_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn filter_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.filter_name(input.into());
         self
     }
     /// <p>The name of the filter you want to get.</p>
-    pub fn set_filter_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_filter_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_filter_name(input);
         self
     }

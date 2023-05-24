@@ -2,20 +2,20 @@
 
 /// <p> The result structure for an Amplify app update request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAppOutput {
     /// <p> Represents the updated Amplify app. </p>
     #[doc(hidden)]
-    pub app: std::option::Option<crate::types::App>,
+    pub app: ::std::option::Option<crate::types::App>,
     _request_id: Option<String>,
 }
 impl UpdateAppOutput {
     /// <p> Represents the updated Amplify app. </p>
-    pub fn app(&self) -> std::option::Option<&crate::types::App> {
+    pub fn app(&self) -> ::std::option::Option<&crate::types::App> {
         self.app.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for UpdateAppOutput {
+impl ::aws_http::request_id::RequestId for UpdateAppOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,19 +29,21 @@ impl UpdateAppOutput {
 
 /// A builder for [`UpdateAppOutput`](crate::operation::update_app::UpdateAppOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateAppOutputBuilder {
-    pub(crate) app: std::option::Option<crate::types::App>,
+    pub(crate) app: ::std::option::Option<crate::types::App>,
     _request_id: Option<String>,
 }
 impl UpdateAppOutputBuilder {
     /// <p> Represents the updated Amplify app. </p>
     pub fn app(mut self, input: crate::types::App) -> Self {
-        self.app = Some(input);
+        self.app = ::std::option::Option::Some(input);
         self
     }
     /// <p> Represents the updated Amplify app. </p>
-    pub fn set_app(mut self, input: std::option::Option<crate::types::App>) -> Self {
+    pub fn set_app(mut self, input: ::std::option::Option<crate::types::App>) -> Self {
         self.app = input;
         self
     }

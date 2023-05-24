@@ -2,22 +2,22 @@
 
 /// <p>Information about the pixels in an anomaly mask. For more information, see <code>Anomaly</code>. <code>PixelAnomaly</code> is only returned by image segmentation models.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PixelAnomaly {
     /// <p>The percentage area of the image that the anomaly type covers.</p>
     #[doc(hidden)]
-    pub total_percentage_area: std::option::Option<f32>,
+    pub total_percentage_area: ::std::option::Option<f32>,
     /// <p>A hex color value for the mask that covers an anomaly type. Each anomaly type has a different mask color. The color maps to the color of the anomaly type used in the training dataset. </p>
     #[doc(hidden)]
-    pub color: std::option::Option<std::string::String>,
+    pub color: ::std::option::Option<::std::string::String>,
 }
 impl PixelAnomaly {
     /// <p>The percentage area of the image that the anomaly type covers.</p>
-    pub fn total_percentage_area(&self) -> std::option::Option<f32> {
+    pub fn total_percentage_area(&self) -> ::std::option::Option<f32> {
         self.total_percentage_area
     }
     /// <p>A hex color value for the mask that covers an anomaly type. Each anomaly type has a different mask color. The color maps to the color of the anomaly type used in the training dataset. </p>
-    pub fn color(&self) -> std::option::Option<&str> {
+    pub fn color(&self) -> ::std::option::Option<&str> {
         self.color.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl PixelAnomaly {
 
 /// A builder for [`PixelAnomaly`](crate::types::PixelAnomaly).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PixelAnomalyBuilder {
-    pub(crate) total_percentage_area: std::option::Option<f32>,
-    pub(crate) color: std::option::Option<std::string::String>,
+    pub(crate) total_percentage_area: ::std::option::Option<f32>,
+    pub(crate) color: ::std::option::Option<::std::string::String>,
 }
 impl PixelAnomalyBuilder {
     /// <p>The percentage area of the image that the anomaly type covers.</p>
     pub fn total_percentage_area(mut self, input: f32) -> Self {
-        self.total_percentage_area = Some(input);
+        self.total_percentage_area = ::std::option::Option::Some(input);
         self
     }
     /// <p>The percentage area of the image that the anomaly type covers.</p>
-    pub fn set_total_percentage_area(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_total_percentage_area(mut self, input: ::std::option::Option<f32>) -> Self {
         self.total_percentage_area = input;
         self
     }
     /// <p>A hex color value for the mask that covers an anomaly type. Each anomaly type has a different mask color. The color maps to the color of the anomaly type used in the training dataset. </p>
-    pub fn color(mut self, input: impl Into<std::string::String>) -> Self {
-        self.color = Some(input.into());
+    pub fn color(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.color = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A hex color value for the mask that covers an anomaly type. Each anomaly type has a different mask color. The color maps to the color of the anomaly type used in the training dataset. </p>
-    pub fn set_color(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_color(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.color = input;
         self
     }

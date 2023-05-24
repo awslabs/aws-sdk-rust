@@ -2,27 +2,27 @@
 
 /// <p>ListTasksResponse</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTasksOutput {
     /// <p>A list of all the tasks that are returned.</p>
     #[doc(hidden)]
-    pub tasks: std::option::Option<std::vec::Vec<crate::types::TaskListEntry>>,
+    pub tasks: ::std::option::Option<::std::vec::Vec<crate::types::TaskListEntry>>,
     /// <p>An opaque string that indicates the position at which to begin returning the next list of tasks.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListTasksOutput {
     /// <p>A list of all the tasks that are returned.</p>
-    pub fn tasks(&self) -> std::option::Option<&[crate::types::TaskListEntry]> {
+    pub fn tasks(&self) -> ::std::option::Option<&[crate::types::TaskListEntry]> {
         self.tasks.as_deref()
     }
     /// <p>An opaque string that indicates the position at which to begin returning the next list of tasks.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListTasksOutput {
+impl ::aws_http::request_id::RequestId for ListTasksOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -36,10 +36,12 @@ impl ListTasksOutput {
 
 /// A builder for [`ListTasksOutput`](crate::operation::list_tasks::ListTasksOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListTasksOutputBuilder {
-    pub(crate) tasks: std::option::Option<std::vec::Vec<crate::types::TaskListEntry>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) tasks: ::std::option::Option<::std::vec::Vec<crate::types::TaskListEntry>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListTasksOutputBuilder {
@@ -51,24 +53,24 @@ impl ListTasksOutputBuilder {
     pub fn tasks(mut self, input: crate::types::TaskListEntry) -> Self {
         let mut v = self.tasks.unwrap_or_default();
         v.push(input);
-        self.tasks = Some(v);
+        self.tasks = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of all the tasks that are returned.</p>
     pub fn set_tasks(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TaskListEntry>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::TaskListEntry>>,
     ) -> Self {
         self.tasks = input;
         self
     }
     /// <p>An opaque string that indicates the position at which to begin returning the next list of tasks.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An opaque string that indicates the position at which to begin returning the next list of tasks.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

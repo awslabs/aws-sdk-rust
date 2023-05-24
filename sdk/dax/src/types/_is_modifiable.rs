@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum IsModifiable {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum IsModifiable {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for IsModifiable {
+impl ::std::convert::From<&str> for IsModifiable {
     fn from(s: &str) -> Self {
         match s {
             "CONDITIONAL" => IsModifiable::Conditional,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for IsModifiable {
         }
     }
 }
-impl std::str::FromStr for IsModifiable {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for IsModifiable {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(IsModifiable::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(IsModifiable::from(s))
     }
 }
 impl IsModifiable {
@@ -91,7 +91,7 @@ impl IsModifiable {
         &["CONDITIONAL", "FALSE", "TRUE"]
     }
 }
-impl AsRef<str> for IsModifiable {
+impl ::std::convert::AsRef<str> for IsModifiable {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

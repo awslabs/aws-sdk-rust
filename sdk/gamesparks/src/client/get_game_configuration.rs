@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetGameConfiguration`](crate::operation::get_game_configuration::builders::GetGameConfigurationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`game_name(impl Into<String>)`](crate::operation::get_game_configuration::builders::GetGameConfigurationFluentBuilder::game_name) / [`set_game_name(Option<String>)`](crate::operation::get_game_configuration::builders::GetGameConfigurationFluentBuilder::set_game_name): <p>The name of the game.</p>
+    ///   - [`game_name(impl ::std::convert::Into<String>)`](crate::operation::get_game_configuration::builders::GetGameConfigurationFluentBuilder::game_name) / [`set_game_name(Option<String>)`](crate::operation::get_game_configuration::builders::GetGameConfigurationFluentBuilder::set_game_name): <p>The name of the game.</p>
     ///   - [`sections(Vec<String>)`](crate::operation::get_game_configuration::builders::GetGameConfigurationFluentBuilder::sections) / [`set_sections(Option<Vec<String>>)`](crate::operation::get_game_configuration::builders::GetGameConfigurationFluentBuilder::set_sections): <p>The list of sections to return.</p>
     /// - On success, responds with [`GetGameConfigurationOutput`](crate::operation::get_game_configuration::GetGameConfigurationOutput) with field(s):
     ///   - [`game_configuration(Option<GameConfigurationDetails>)`](crate::operation::get_game_configuration::GetGameConfigurationOutput::game_configuration): <p>Details about the game configuration.</p>

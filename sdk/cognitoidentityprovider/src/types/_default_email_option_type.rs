@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum DefaultEmailOptionType {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum DefaultEmailOptionType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for DefaultEmailOptionType {
+impl ::std::convert::From<&str> for DefaultEmailOptionType {
     fn from(s: &str) -> Self {
         match s {
             "CONFIRM_WITH_CODE" => DefaultEmailOptionType::ConfirmWithCode,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for DefaultEmailOptionType {
         }
     }
 }
-impl std::str::FromStr for DefaultEmailOptionType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for DefaultEmailOptionType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DefaultEmailOptionType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(DefaultEmailOptionType::from(s))
     }
 }
 impl DefaultEmailOptionType {
@@ -86,7 +86,7 @@ impl DefaultEmailOptionType {
         &["CONFIRM_WITH_CODE", "CONFIRM_WITH_LINK"]
     }
 }
-impl AsRef<str> for DefaultEmailOptionType {
+impl ::std::convert::AsRef<str> for DefaultEmailOptionType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

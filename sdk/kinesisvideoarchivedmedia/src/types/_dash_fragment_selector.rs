@@ -2,7 +2,7 @@
 
 /// <p>Contains the range of timestamps for the requested media, and the source of the timestamps. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DashFragmentSelector {
     /// <p>The source of the timestamps for the requested media.</p>
     /// <p>When <code>FragmentSelectorType</code> is set to <code>PRODUCER_TIMESTAMP</code> and <code>GetDASHStreamingSessionURLInput$PlaybackMode</code> is <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>, the first fragment ingested with a producer timestamp within the specified <code>FragmentSelector$TimestampRange</code> is included in the media playlist. In addition, the fragments with producer timestamps within the <code>TimestampRange</code> ingested immediately following the first fragment (up to the <code>GetDASHStreamingSessionURLInput$MaxManifestFragmentResults</code> value) are included. </p>
@@ -10,11 +10,11 @@ pub struct DashFragmentSelector {
     /// <p>When <code>FragmentSelectorType</code> is set to <code>PRODUCER_TIMESTAMP</code> and <code>GetDASHStreamingSessionURLInput$PlaybackMode</code> is <code>LIVE</code>, the producer timestamps are used in the MP4 fragments and for deduplication. But the most recently ingested fragments based on server timestamps are included in the MPEG-DASH manifest. This means that even if fragments ingested in the past have producer timestamps with values now, they are not included in the HLS media playlist.</p>
     /// <p>The default is <code>SERVER_TIMESTAMP</code>.</p>
     #[doc(hidden)]
-    pub fragment_selector_type: std::option::Option<crate::types::DashFragmentSelectorType>,
+    pub fragment_selector_type: ::std::option::Option<crate::types::DashFragmentSelectorType>,
     /// <p>The start and end of the timestamp range for the requested media.</p>
     /// <p>This value should not be present if <code>PlaybackType</code> is <code>LIVE</code>.</p>
     #[doc(hidden)]
-    pub timestamp_range: std::option::Option<crate::types::DashTimestampRange>,
+    pub timestamp_range: ::std::option::Option<crate::types::DashTimestampRange>,
 }
 impl DashFragmentSelector {
     /// <p>The source of the timestamps for the requested media.</p>
@@ -24,12 +24,12 @@ impl DashFragmentSelector {
     /// <p>The default is <code>SERVER_TIMESTAMP</code>.</p>
     pub fn fragment_selector_type(
         &self,
-    ) -> std::option::Option<&crate::types::DashFragmentSelectorType> {
+    ) -> ::std::option::Option<&crate::types::DashFragmentSelectorType> {
         self.fragment_selector_type.as_ref()
     }
     /// <p>The start and end of the timestamp range for the requested media.</p>
     /// <p>This value should not be present if <code>PlaybackType</code> is <code>LIVE</code>.</p>
-    pub fn timestamp_range(&self) -> std::option::Option<&crate::types::DashTimestampRange> {
+    pub fn timestamp_range(&self) -> ::std::option::Option<&crate::types::DashTimestampRange> {
         self.timestamp_range.as_ref()
     }
 }
@@ -42,10 +42,13 @@ impl DashFragmentSelector {
 
 /// A builder for [`DashFragmentSelector`](crate::types::DashFragmentSelector).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DashFragmentSelectorBuilder {
-    pub(crate) fragment_selector_type: std::option::Option<crate::types::DashFragmentSelectorType>,
-    pub(crate) timestamp_range: std::option::Option<crate::types::DashTimestampRange>,
+    pub(crate) fragment_selector_type:
+        ::std::option::Option<crate::types::DashFragmentSelectorType>,
+    pub(crate) timestamp_range: ::std::option::Option<crate::types::DashTimestampRange>,
 }
 impl DashFragmentSelectorBuilder {
     /// <p>The source of the timestamps for the requested media.</p>
@@ -54,7 +57,7 @@ impl DashFragmentSelectorBuilder {
     /// <p>When <code>FragmentSelectorType</code> is set to <code>PRODUCER_TIMESTAMP</code> and <code>GetDASHStreamingSessionURLInput$PlaybackMode</code> is <code>LIVE</code>, the producer timestamps are used in the MP4 fragments and for deduplication. But the most recently ingested fragments based on server timestamps are included in the MPEG-DASH manifest. This means that even if fragments ingested in the past have producer timestamps with values now, they are not included in the HLS media playlist.</p>
     /// <p>The default is <code>SERVER_TIMESTAMP</code>.</p>
     pub fn fragment_selector_type(mut self, input: crate::types::DashFragmentSelectorType) -> Self {
-        self.fragment_selector_type = Some(input);
+        self.fragment_selector_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The source of the timestamps for the requested media.</p>
@@ -64,7 +67,7 @@ impl DashFragmentSelectorBuilder {
     /// <p>The default is <code>SERVER_TIMESTAMP</code>.</p>
     pub fn set_fragment_selector_type(
         mut self,
-        input: std::option::Option<crate::types::DashFragmentSelectorType>,
+        input: ::std::option::Option<crate::types::DashFragmentSelectorType>,
     ) -> Self {
         self.fragment_selector_type = input;
         self
@@ -72,14 +75,14 @@ impl DashFragmentSelectorBuilder {
     /// <p>The start and end of the timestamp range for the requested media.</p>
     /// <p>This value should not be present if <code>PlaybackType</code> is <code>LIVE</code>.</p>
     pub fn timestamp_range(mut self, input: crate::types::DashTimestampRange) -> Self {
-        self.timestamp_range = Some(input);
+        self.timestamp_range = ::std::option::Option::Some(input);
         self
     }
     /// <p>The start and end of the timestamp range for the requested media.</p>
     /// <p>This value should not be present if <code>PlaybackType</code> is <code>LIVE</code>.</p>
     pub fn set_timestamp_range(
         mut self,
-        input: std::option::Option<crate::types::DashTimestampRange>,
+        input: ::std::option::Option<crate::types::DashTimestampRange>,
     ) -> Self {
         self.timestamp_range = input;
         self

@@ -40,13 +40,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum DetailedAlgorithmStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,7 +60,7 @@ pub enum DetailedAlgorithmStatus {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for DetailedAlgorithmStatus {
+impl ::std::convert::From<&str> for DetailedAlgorithmStatus {
     fn from(s: &str) -> Self {
         match s {
             "Completed" => DetailedAlgorithmStatus::Completed,
@@ -73,11 +73,11 @@ impl std::convert::From<&str> for DetailedAlgorithmStatus {
         }
     }
 }
-impl std::str::FromStr for DetailedAlgorithmStatus {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for DetailedAlgorithmStatus {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DetailedAlgorithmStatus::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(DetailedAlgorithmStatus::from(s))
     }
 }
 impl DetailedAlgorithmStatus {
@@ -96,7 +96,7 @@ impl DetailedAlgorithmStatus {
         &["Completed", "Failed", "InProgress", "NotStarted"]
     }
 }
-impl AsRef<str> for DetailedAlgorithmStatus {
+impl ::std::convert::AsRef<str> for DetailedAlgorithmStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

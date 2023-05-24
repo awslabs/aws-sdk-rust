@@ -7,56 +7,63 @@ pub use crate::operation::put_resource_set::_put_resource_set_input::PutResource
 ///
 /// <p>Creates the resource set.</p>
 /// <p>An Firewall Manager resource set defines the resources to import into an Firewall Manager policy from another Amazon Web Services service.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutResourceSetFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::put_resource_set::builders::PutResourceSetInputBuilder,
 }
 impl PutResourceSetFluentBuilder {
     /// Creates a new `PutResourceSet`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::put_resource_set::PutResourceSet,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::put_resource_set::PutResourceSetError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_resource_set::PutResourceSetError,
+        >,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::put_resource_set::PutResourceSetOutput,
-        aws_smithy_http::result::SdkError<crate::operation::put_resource_set::PutResourceSetError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_resource_set::PutResourceSetError,
+        >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -69,9 +76,11 @@ impl PutResourceSetFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::put_resource_set::PutResourceSetOutput,
-        aws_smithy_http::result::SdkError<crate::operation::put_resource_set::PutResourceSetError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_resource_set::PutResourceSetError,
+        >,
     > {
         self.send_middleware().await
     }
@@ -83,7 +92,7 @@ impl PutResourceSetFluentBuilder {
     /// <p>Details about the resource set to be created or updated.&gt;</p>
     pub fn set_resource_set(
         mut self,
-        input: std::option::Option<crate::types::ResourceSet>,
+        input: ::std::option::Option<crate::types::ResourceSet>,
     ) -> Self {
         self.inner = self.inner.set_resource_set(input);
         self
@@ -100,7 +109,7 @@ impl PutResourceSetFluentBuilder {
     /// <p>Retrieves the tags associated with the specified resource set. Tags are key:value pairs that you can use to categorize and manage your resources, for purposes like billing. For example, you might set the tag key to "customer" and the value to the customer name or ID. You can specify one or more tags to add to each Amazon Web Services resource, up to 50 tags for a resource.</p>
     pub fn set_tag_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tag_list(input);
         self

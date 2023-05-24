@@ -2,17 +2,17 @@
 
 /// <p>The threshold used with a non-aggregate check expression. The non-aggregate check expression will be applied to each row in a specific column. Then the threshold will be used to determine whether the validation succeeds.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Threshold {
     /// <p>The value of a threshold.</p>
     #[doc(hidden)]
     pub value: f64,
     /// <p>The type of a threshold. Used for comparison of an actual count of rows that satisfy the rule to the threshold value.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::ThresholdType>,
+    pub r#type: ::std::option::Option<crate::types::ThresholdType>,
     /// <p>Unit of threshold value. Can be either a COUNT or PERCENTAGE of the full sample size used for validation.</p>
     #[doc(hidden)]
-    pub unit: std::option::Option<crate::types::ThresholdUnit>,
+    pub unit: ::std::option::Option<crate::types::ThresholdUnit>,
 }
 impl Threshold {
     /// <p>The value of a threshold.</p>
@@ -20,11 +20,11 @@ impl Threshold {
         self.value
     }
     /// <p>The type of a threshold. Used for comparison of an actual count of rows that satisfy the rule to the threshold value.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::ThresholdType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ThresholdType> {
         self.r#type.as_ref()
     }
     /// <p>Unit of threshold value. Can be either a COUNT or PERCENTAGE of the full sample size used for validation.</p>
-    pub fn unit(&self) -> std::option::Option<&crate::types::ThresholdUnit> {
+    pub fn unit(&self) -> ::std::option::Option<&crate::types::ThresholdUnit> {
         self.unit.as_ref()
     }
 }
@@ -37,40 +37,42 @@ impl Threshold {
 
 /// A builder for [`Threshold`](crate::types::Threshold).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ThresholdBuilder {
-    pub(crate) value: std::option::Option<f64>,
-    pub(crate) r#type: std::option::Option<crate::types::ThresholdType>,
-    pub(crate) unit: std::option::Option<crate::types::ThresholdUnit>,
+    pub(crate) value: ::std::option::Option<f64>,
+    pub(crate) r#type: ::std::option::Option<crate::types::ThresholdType>,
+    pub(crate) unit: ::std::option::Option<crate::types::ThresholdUnit>,
 }
 impl ThresholdBuilder {
     /// <p>The value of a threshold.</p>
     pub fn value(mut self, input: f64) -> Self {
-        self.value = Some(input);
+        self.value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The value of a threshold.</p>
-    pub fn set_value(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.value = input;
         self
     }
     /// <p>The type of a threshold. Used for comparison of an actual count of rows that satisfy the rule to the threshold value.</p>
     pub fn r#type(mut self, input: crate::types::ThresholdType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of a threshold. Used for comparison of an actual count of rows that satisfy the rule to the threshold value.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::ThresholdType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ThresholdType>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>Unit of threshold value. Can be either a COUNT or PERCENTAGE of the full sample size used for validation.</p>
     pub fn unit(mut self, input: crate::types::ThresholdUnit) -> Self {
-        self.unit = Some(input);
+        self.unit = ::std::option::Option::Some(input);
         self
     }
     /// <p>Unit of threshold value. Can be either a COUNT or PERCENTAGE of the full sample size used for validation.</p>
-    pub fn set_unit(mut self, input: std::option::Option<crate::types::ThresholdUnit>) -> Self {
+    pub fn set_unit(mut self, input: ::std::option::Option<crate::types::ThresholdUnit>) -> Self {
         self.unit = input;
         self
     }

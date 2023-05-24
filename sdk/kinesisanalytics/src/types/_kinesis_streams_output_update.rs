@@ -2,22 +2,22 @@
 
 /// <p> When updating an output configuration using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_UpdateApplication.html">UpdateApplication</a> operation, provides information about an Amazon Kinesis stream configured as the destination. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KinesisStreamsOutputUpdate {
     /// <p>Amazon Resource Name (ARN) of the Amazon Kinesis stream where you want to write the output.</p>
     #[doc(hidden)]
-    pub resource_arn_update: std::option::Option<std::string::String>,
+    pub resource_arn_update: ::std::option::Option<::std::string::String>,
     /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream on your behalf. You need to grant the necessary permissions to this role.</p>
     #[doc(hidden)]
-    pub role_arn_update: std::option::Option<std::string::String>,
+    pub role_arn_update: ::std::option::Option<::std::string::String>,
 }
 impl KinesisStreamsOutputUpdate {
     /// <p>Amazon Resource Name (ARN) of the Amazon Kinesis stream where you want to write the output.</p>
-    pub fn resource_arn_update(&self) -> std::option::Option<&str> {
+    pub fn resource_arn_update(&self) -> ::std::option::Option<&str> {
         self.resource_arn_update.as_deref()
     }
     /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream on your behalf. You need to grant the necessary permissions to this role.</p>
-    pub fn role_arn_update(&self) -> std::option::Option<&str> {
+    pub fn role_arn_update(&self) -> ::std::option::Option<&str> {
         self.role_arn_update.as_deref()
     }
 }
@@ -30,32 +30,43 @@ impl KinesisStreamsOutputUpdate {
 
 /// A builder for [`KinesisStreamsOutputUpdate`](crate::types::KinesisStreamsOutputUpdate).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct KinesisStreamsOutputUpdateBuilder {
-    pub(crate) resource_arn_update: std::option::Option<std::string::String>,
-    pub(crate) role_arn_update: std::option::Option<std::string::String>,
+    pub(crate) resource_arn_update: ::std::option::Option<::std::string::String>,
+    pub(crate) role_arn_update: ::std::option::Option<::std::string::String>,
 }
 impl KinesisStreamsOutputUpdateBuilder {
     /// <p>Amazon Resource Name (ARN) of the Amazon Kinesis stream where you want to write the output.</p>
-    pub fn resource_arn_update(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_arn_update = Some(input.into());
+    pub fn resource_arn_update(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.resource_arn_update = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Amazon Resource Name (ARN) of the Amazon Kinesis stream where you want to write the output.</p>
     pub fn set_resource_arn_update(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.resource_arn_update = input;
         self
     }
     /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream on your behalf. You need to grant the necessary permissions to this role.</p>
-    pub fn role_arn_update(mut self, input: impl Into<std::string::String>) -> Self {
-        self.role_arn_update = Some(input.into());
+    pub fn role_arn_update(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.role_arn_update = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream on your behalf. You need to grant the necessary permissions to this role.</p>
-    pub fn set_role_arn_update(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_role_arn_update(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.role_arn_update = input;
         self
     }

@@ -2,36 +2,36 @@
 
 /// <p>The details for a backend storage resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetBackendStorageResourceConfig {
     /// <p>The name of the S3 bucket.</p>
     #[doc(hidden)]
-    pub bucket_name: std::option::Option<std::string::String>,
+    pub bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>Returns True if the storage resource has been imported.</p>
     #[doc(hidden)]
-    pub imported: std::option::Option<bool>,
+    pub imported: ::std::option::Option<bool>,
     /// <p>The authorization configuration for the storage S3 bucket.</p>
     #[doc(hidden)]
-    pub permissions: std::option::Option<crate::types::BackendStoragePermissions>,
+    pub permissions: ::std::option::Option<crate::types::BackendStoragePermissions>,
     /// <p>The name of the storage service.</p>
     #[doc(hidden)]
-    pub service_name: std::option::Option<crate::types::ServiceName>,
+    pub service_name: ::std::option::Option<crate::types::ServiceName>,
 }
 impl GetBackendStorageResourceConfig {
     /// <p>The name of the S3 bucket.</p>
-    pub fn bucket_name(&self) -> std::option::Option<&str> {
+    pub fn bucket_name(&self) -> ::std::option::Option<&str> {
         self.bucket_name.as_deref()
     }
     /// <p>Returns True if the storage resource has been imported.</p>
-    pub fn imported(&self) -> std::option::Option<bool> {
+    pub fn imported(&self) -> ::std::option::Option<bool> {
         self.imported
     }
     /// <p>The authorization configuration for the storage S3 bucket.</p>
-    pub fn permissions(&self) -> std::option::Option<&crate::types::BackendStoragePermissions> {
+    pub fn permissions(&self) -> ::std::option::Option<&crate::types::BackendStoragePermissions> {
         self.permissions.as_ref()
     }
     /// <p>The name of the storage service.</p>
-    pub fn service_name(&self) -> std::option::Option<&crate::types::ServiceName> {
+    pub fn service_name(&self) -> ::std::option::Option<&crate::types::ServiceName> {
         self.service_name.as_ref()
     }
 }
@@ -44,56 +44,58 @@ impl GetBackendStorageResourceConfig {
 
 /// A builder for [`GetBackendStorageResourceConfig`](crate::types::GetBackendStorageResourceConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetBackendStorageResourceConfigBuilder {
-    pub(crate) bucket_name: std::option::Option<std::string::String>,
-    pub(crate) imported: std::option::Option<bool>,
-    pub(crate) permissions: std::option::Option<crate::types::BackendStoragePermissions>,
-    pub(crate) service_name: std::option::Option<crate::types::ServiceName>,
+    pub(crate) bucket_name: ::std::option::Option<::std::string::String>,
+    pub(crate) imported: ::std::option::Option<bool>,
+    pub(crate) permissions: ::std::option::Option<crate::types::BackendStoragePermissions>,
+    pub(crate) service_name: ::std::option::Option<crate::types::ServiceName>,
 }
 impl GetBackendStorageResourceConfigBuilder {
     /// <p>The name of the S3 bucket.</p>
-    pub fn bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.bucket_name = Some(input.into());
+    pub fn bucket_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.bucket_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the S3 bucket.</p>
-    pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_bucket_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket_name = input;
         self
     }
     /// <p>Returns True if the storage resource has been imported.</p>
     pub fn imported(mut self, input: bool) -> Self {
-        self.imported = Some(input);
+        self.imported = ::std::option::Option::Some(input);
         self
     }
     /// <p>Returns True if the storage resource has been imported.</p>
-    pub fn set_imported(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_imported(mut self, input: ::std::option::Option<bool>) -> Self {
         self.imported = input;
         self
     }
     /// <p>The authorization configuration for the storage S3 bucket.</p>
     pub fn permissions(mut self, input: crate::types::BackendStoragePermissions) -> Self {
-        self.permissions = Some(input);
+        self.permissions = ::std::option::Option::Some(input);
         self
     }
     /// <p>The authorization configuration for the storage S3 bucket.</p>
     pub fn set_permissions(
         mut self,
-        input: std::option::Option<crate::types::BackendStoragePermissions>,
+        input: ::std::option::Option<crate::types::BackendStoragePermissions>,
     ) -> Self {
         self.permissions = input;
         self
     }
     /// <p>The name of the storage service.</p>
     pub fn service_name(mut self, input: crate::types::ServiceName) -> Self {
-        self.service_name = Some(input);
+        self.service_name = ::std::option::Option::Some(input);
         self
     }
     /// <p>The name of the storage service.</p>
     pub fn set_service_name(
         mut self,
-        input: std::option::Option<crate::types::ServiceName>,
+        input: ::std::option::Option<crate::types::ServiceName>,
     ) -> Self {
         self.service_name = input;
         self

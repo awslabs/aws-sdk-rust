@@ -7,29 +7,29 @@ pub use crate::operation::update_agent_status::_update_agent_status_input::Updat
 ///
 /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
 /// <p>Updates agent status.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateAgentStatusFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::update_agent_status::builders::UpdateAgentStatusInputBuilder,
 }
 impl UpdateAgentStatusFluentBuilder {
     /// Creates a new `UpdateAgentStatus`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::update_agent_status::UpdateAgentStatus,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_agent_status::UpdateAgentStatusError,
         >,
     > {
@@ -37,30 +37,33 @@ impl UpdateAgentStatusFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_agent_status::UpdateAgentStatusOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_agent_status::UpdateAgentStatusError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -73,51 +76,57 @@ impl UpdateAgentStatusFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::update_agent_status::UpdateAgentStatusOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::update_agent_status::UpdateAgentStatusError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());
         self
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_id(input);
         self
     }
     /// <p>The identifier of the agent status.</p>
-    pub fn agent_status_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn agent_status_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.agent_status_id(input.into());
         self
     }
     /// <p>The identifier of the agent status.</p>
-    pub fn set_agent_status_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_agent_status_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_agent_status_id(input);
         self
     }
     /// <p>The name of the agent status.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
     /// <p>The name of the agent status.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
     /// <p>The description of the agent status.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>The description of the agent status.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
@@ -127,7 +136,10 @@ impl UpdateAgentStatusFluentBuilder {
         self
     }
     /// <p>The state of the agent status.</p>
-    pub fn set_state(mut self, input: std::option::Option<crate::types::AgentStatusState>) -> Self {
+    pub fn set_state(
+        mut self,
+        input: ::std::option::Option<crate::types::AgentStatusState>,
+    ) -> Self {
         self.inner = self.inner.set_state(input);
         self
     }
@@ -137,7 +149,7 @@ impl UpdateAgentStatusFluentBuilder {
         self
     }
     /// <p>The display order of the agent status.</p>
-    pub fn set_display_order(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_display_order(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_display_order(input);
         self
     }
@@ -147,7 +159,7 @@ impl UpdateAgentStatusFluentBuilder {
         self
     }
     /// <p>A number indicating the reset order of the agent status.</p>
-    pub fn set_reset_order_number(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_reset_order_number(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_reset_order_number(input);
         self
     }

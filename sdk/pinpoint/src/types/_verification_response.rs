@@ -2,15 +2,15 @@
 
 /// <p>Verify OTP Message Response.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VerificationResponse {
     /// <p>Specifies whether the OTP is valid or not.</p>
     #[doc(hidden)]
-    pub valid: std::option::Option<bool>,
+    pub valid: ::std::option::Option<bool>,
 }
 impl VerificationResponse {
     /// <p>Specifies whether the OTP is valid or not.</p>
-    pub fn valid(&self) -> std::option::Option<bool> {
+    pub fn valid(&self) -> ::std::option::Option<bool> {
         self.valid
     }
 }
@@ -23,18 +23,20 @@ impl VerificationResponse {
 
 /// A builder for [`VerificationResponse`](crate::types::VerificationResponse).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VerificationResponseBuilder {
-    pub(crate) valid: std::option::Option<bool>,
+    pub(crate) valid: ::std::option::Option<bool>,
 }
 impl VerificationResponseBuilder {
     /// <p>Specifies whether the OTP is valid or not.</p>
     pub fn valid(mut self, input: bool) -> Self {
-        self.valid = Some(input);
+        self.valid = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether the OTP is valid or not.</p>
-    pub fn set_valid(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_valid(mut self, input: ::std::option::Option<bool>) -> Self {
         self.valid = input;
         self
     }

@@ -2,7 +2,7 @@
 
 /// <p> The connector-specific properties required when using Amazon Honeycode. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HoneycodeConnectorProfileProperties {}
 impl HoneycodeConnectorProfileProperties {
     /// Creates a new builder-style object to manufacture [`HoneycodeConnectorProfileProperties`](crate::types::HoneycodeConnectorProfileProperties).
@@ -13,7 +13,9 @@ impl HoneycodeConnectorProfileProperties {
 
 /// A builder for [`HoneycodeConnectorProfileProperties`](crate::types::HoneycodeConnectorProfileProperties).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct HoneycodeConnectorProfilePropertiesBuilder {}
 impl HoneycodeConnectorProfilePropertiesBuilder {
     /// Consumes the builder and constructs a [`HoneycodeConnectorProfileProperties`](crate::types::HoneycodeConnectorProfileProperties).

@@ -3,7 +3,7 @@
 /// <p>Object containing the parameters of a <code>Config</code>.</p>
 /// <p>See the subtype definitions for what each type of <code>Config</code> contains.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum ConfigTypeData {
     /// <p>Information about how AWS Ground Station should configure an antenna for downlink during a contact.</p>
     AntennaDownlinkConfig(crate::types::AntennaDownlinkConfig),
@@ -35,11 +35,11 @@ impl ConfigTypeData {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_antenna_downlink_config(
         &self,
-    ) -> std::result::Result<&crate::types::AntennaDownlinkConfig, &Self> {
+    ) -> ::std::result::Result<&crate::types::AntennaDownlinkConfig, &Self> {
         if let ConfigTypeData::AntennaDownlinkConfig(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`AntennaDownlinkConfig`](crate::types::ConfigTypeData::AntennaDownlinkConfig).
@@ -50,11 +50,11 @@ impl ConfigTypeData {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_antenna_downlink_demod_decode_config(
         &self,
-    ) -> std::result::Result<&crate::types::AntennaDownlinkDemodDecodeConfig, &Self> {
+    ) -> ::std::result::Result<&crate::types::AntennaDownlinkDemodDecodeConfig, &Self> {
         if let ConfigTypeData::AntennaDownlinkDemodDecodeConfig(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`AntennaDownlinkDemodDecodeConfig`](crate::types::ConfigTypeData::AntennaDownlinkDemodDecodeConfig).
@@ -65,11 +65,11 @@ impl ConfigTypeData {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_antenna_uplink_config(
         &self,
-    ) -> std::result::Result<&crate::types::AntennaUplinkConfig, &Self> {
+    ) -> ::std::result::Result<&crate::types::AntennaUplinkConfig, &Self> {
         if let ConfigTypeData::AntennaUplinkConfig(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`AntennaUplinkConfig`](crate::types::ConfigTypeData::AntennaUplinkConfig).
@@ -80,11 +80,11 @@ impl ConfigTypeData {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_dataflow_endpoint_config(
         &self,
-    ) -> std::result::Result<&crate::types::DataflowEndpointConfig, &Self> {
+    ) -> ::std::result::Result<&crate::types::DataflowEndpointConfig, &Self> {
         if let ConfigTypeData::DataflowEndpointConfig(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`DataflowEndpointConfig`](crate::types::ConfigTypeData::DataflowEndpointConfig).
@@ -95,11 +95,11 @@ impl ConfigTypeData {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_s3_recording_config(
         &self,
-    ) -> std::result::Result<&crate::types::S3RecordingConfig, &Self> {
+    ) -> ::std::result::Result<&crate::types::S3RecordingConfig, &Self> {
         if let ConfigTypeData::S3RecordingConfig(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`S3RecordingConfig`](crate::types::ConfigTypeData::S3RecordingConfig).
@@ -108,11 +108,13 @@ impl ConfigTypeData {
     }
     /// Tries to convert the enum instance into [`TrackingConfig`](crate::types::ConfigTypeData::TrackingConfig), extracting the inner [`TrackingConfig`](crate::types::TrackingConfig).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_tracking_config(&self) -> std::result::Result<&crate::types::TrackingConfig, &Self> {
+    pub fn as_tracking_config(
+        &self,
+    ) -> ::std::result::Result<&crate::types::TrackingConfig, &Self> {
         if let ConfigTypeData::TrackingConfig(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`TrackingConfig`](crate::types::ConfigTypeData::TrackingConfig).
@@ -123,11 +125,11 @@ impl ConfigTypeData {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_uplink_echo_config(
         &self,
-    ) -> std::result::Result<&crate::types::UplinkEchoConfig, &Self> {
+    ) -> ::std::result::Result<&crate::types::UplinkEchoConfig, &Self> {
         if let ConfigTypeData::UplinkEchoConfig(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`UplinkEchoConfig`](crate::types::ConfigTypeData::UplinkEchoConfig).

@@ -2,20 +2,20 @@
 
 /// <p>Details on the network bindings between a container and its host container instance. After a task reaches the <code>RUNNING</code> status, manual and automatic host and container port assignments are visible in the <code>networkBindings</code> section of <code>DescribeTasks</code> API responses.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkBinding {
     /// <p>The IP address that the container is bound to on the container instance.</p>
     #[doc(hidden)]
-    pub bind_ip: std::option::Option<std::string::String>,
+    pub bind_ip: ::std::option::Option<::std::string::String>,
     /// <p>The port number on the container that's used with the network binding.</p>
     #[doc(hidden)]
-    pub container_port: std::option::Option<i32>,
+    pub container_port: ::std::option::Option<i32>,
     /// <p>The port number on the host that's used with the network binding.</p>
     #[doc(hidden)]
-    pub host_port: std::option::Option<i32>,
+    pub host_port: ::std::option::Option<i32>,
     /// <p>The protocol used for the network binding.</p>
     #[doc(hidden)]
-    pub protocol: std::option::Option<crate::types::TransportProtocol>,
+    pub protocol: ::std::option::Option<crate::types::TransportProtocol>,
     /// <p>The port number range on the container that's bound to the dynamically mapped host port range.</p>
     /// <p>The following rules apply when you specify a <code>containerPortRange</code>:</p>
     /// <ul>
@@ -37,26 +37,26 @@ pub struct NetworkBinding {
     /// </ul>
     /// <p>You can call <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeTasks.html"> <code>DescribeTasks</code> </a> to view the <code>hostPortRange</code> which are the host ports that are bound to the container ports.</p>
     #[doc(hidden)]
-    pub container_port_range: std::option::Option<std::string::String>,
+    pub container_port_range: ::std::option::Option<::std::string::String>,
     /// <p>The port number range on the host that's used with the network binding. This is assigned is assigned by Docker and delivered by the Amazon ECS agent.</p>
     #[doc(hidden)]
-    pub host_port_range: std::option::Option<std::string::String>,
+    pub host_port_range: ::std::option::Option<::std::string::String>,
 }
 impl NetworkBinding {
     /// <p>The IP address that the container is bound to on the container instance.</p>
-    pub fn bind_ip(&self) -> std::option::Option<&str> {
+    pub fn bind_ip(&self) -> ::std::option::Option<&str> {
         self.bind_ip.as_deref()
     }
     /// <p>The port number on the container that's used with the network binding.</p>
-    pub fn container_port(&self) -> std::option::Option<i32> {
+    pub fn container_port(&self) -> ::std::option::Option<i32> {
         self.container_port
     }
     /// <p>The port number on the host that's used with the network binding.</p>
-    pub fn host_port(&self) -> std::option::Option<i32> {
+    pub fn host_port(&self) -> ::std::option::Option<i32> {
         self.host_port
     }
     /// <p>The protocol used for the network binding.</p>
-    pub fn protocol(&self) -> std::option::Option<&crate::types::TransportProtocol> {
+    pub fn protocol(&self) -> ::std::option::Option<&crate::types::TransportProtocol> {
         self.protocol.as_ref()
     }
     /// <p>The port number range on the container that's bound to the dynamically mapped host port range.</p>
@@ -79,11 +79,11 @@ impl NetworkBinding {
     /// <li> <p>Docker recommends that you turn off the docker-proxy in the Docker daemon config file when you have a large number of ports.</p> <p>For more information, see <a href="https://github.com/moby/moby/issues/11185"> Issue #11185</a> on the Github website.</p> <p>For information about how to turn off the docker-proxy in the Docker daemon config file, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/bootstrap_container_instance.html#bootstrap_docker_daemon">Docker daemon</a> in the <i>Amazon ECS Developer Guide</i>.</p> </li>
     /// </ul>
     /// <p>You can call <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeTasks.html"> <code>DescribeTasks</code> </a> to view the <code>hostPortRange</code> which are the host ports that are bound to the container ports.</p>
-    pub fn container_port_range(&self) -> std::option::Option<&str> {
+    pub fn container_port_range(&self) -> ::std::option::Option<&str> {
         self.container_port_range.as_deref()
     }
     /// <p>The port number range on the host that's used with the network binding. This is assigned is assigned by Docker and delivered by the Amazon ECS agent.</p>
-    pub fn host_port_range(&self) -> std::option::Option<&str> {
+    pub fn host_port_range(&self) -> ::std::option::Option<&str> {
         self.host_port_range.as_deref()
     }
 }
@@ -96,55 +96,57 @@ impl NetworkBinding {
 
 /// A builder for [`NetworkBinding`](crate::types::NetworkBinding).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NetworkBindingBuilder {
-    pub(crate) bind_ip: std::option::Option<std::string::String>,
-    pub(crate) container_port: std::option::Option<i32>,
-    pub(crate) host_port: std::option::Option<i32>,
-    pub(crate) protocol: std::option::Option<crate::types::TransportProtocol>,
-    pub(crate) container_port_range: std::option::Option<std::string::String>,
-    pub(crate) host_port_range: std::option::Option<std::string::String>,
+    pub(crate) bind_ip: ::std::option::Option<::std::string::String>,
+    pub(crate) container_port: ::std::option::Option<i32>,
+    pub(crate) host_port: ::std::option::Option<i32>,
+    pub(crate) protocol: ::std::option::Option<crate::types::TransportProtocol>,
+    pub(crate) container_port_range: ::std::option::Option<::std::string::String>,
+    pub(crate) host_port_range: ::std::option::Option<::std::string::String>,
 }
 impl NetworkBindingBuilder {
     /// <p>The IP address that the container is bound to on the container instance.</p>
-    pub fn bind_ip(mut self, input: impl Into<std::string::String>) -> Self {
-        self.bind_ip = Some(input.into());
+    pub fn bind_ip(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.bind_ip = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IP address that the container is bound to on the container instance.</p>
-    pub fn set_bind_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_bind_ip(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bind_ip = input;
         self
     }
     /// <p>The port number on the container that's used with the network binding.</p>
     pub fn container_port(mut self, input: i32) -> Self {
-        self.container_port = Some(input);
+        self.container_port = ::std::option::Option::Some(input);
         self
     }
     /// <p>The port number on the container that's used with the network binding.</p>
-    pub fn set_container_port(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_container_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.container_port = input;
         self
     }
     /// <p>The port number on the host that's used with the network binding.</p>
     pub fn host_port(mut self, input: i32) -> Self {
-        self.host_port = Some(input);
+        self.host_port = ::std::option::Option::Some(input);
         self
     }
     /// <p>The port number on the host that's used with the network binding.</p>
-    pub fn set_host_port(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_host_port(mut self, input: ::std::option::Option<i32>) -> Self {
         self.host_port = input;
         self
     }
     /// <p>The protocol used for the network binding.</p>
     pub fn protocol(mut self, input: crate::types::TransportProtocol) -> Self {
-        self.protocol = Some(input);
+        self.protocol = ::std::option::Option::Some(input);
         self
     }
     /// <p>The protocol used for the network binding.</p>
     pub fn set_protocol(
         mut self,
-        input: std::option::Option<crate::types::TransportProtocol>,
+        input: ::std::option::Option<crate::types::TransportProtocol>,
     ) -> Self {
         self.protocol = input;
         self
@@ -169,8 +171,11 @@ impl NetworkBindingBuilder {
     /// <li> <p>Docker recommends that you turn off the docker-proxy in the Docker daemon config file when you have a large number of ports.</p> <p>For more information, see <a href="https://github.com/moby/moby/issues/11185"> Issue #11185</a> on the Github website.</p> <p>For information about how to turn off the docker-proxy in the Docker daemon config file, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/bootstrap_container_instance.html#bootstrap_docker_daemon">Docker daemon</a> in the <i>Amazon ECS Developer Guide</i>.</p> </li>
     /// </ul>
     /// <p>You can call <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeTasks.html"> <code>DescribeTasks</code> </a> to view the <code>hostPortRange</code> which are the host ports that are bound to the container ports.</p>
-    pub fn container_port_range(mut self, input: impl Into<std::string::String>) -> Self {
-        self.container_port_range = Some(input.into());
+    pub fn container_port_range(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.container_port_range = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The port number range on the container that's bound to the dynamically mapped host port range.</p>
@@ -195,18 +200,24 @@ impl NetworkBindingBuilder {
     /// <p>You can call <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeTasks.html"> <code>DescribeTasks</code> </a> to view the <code>hostPortRange</code> which are the host ports that are bound to the container ports.</p>
     pub fn set_container_port_range(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.container_port_range = input;
         self
     }
     /// <p>The port number range on the host that's used with the network binding. This is assigned is assigned by Docker and delivered by the Amazon ECS agent.</p>
-    pub fn host_port_range(mut self, input: impl Into<std::string::String>) -> Self {
-        self.host_port_range = Some(input.into());
+    pub fn host_port_range(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.host_port_range = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The port number range on the host that's used with the network binding. This is assigned is assigned by Docker and delivered by the Amazon ECS agent.</p>
-    pub fn set_host_port_range(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_host_port_range(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.host_port_range = input;
         self
     }

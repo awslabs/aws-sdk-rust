@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeLedger`](crate::operation::describe_ledger::builders::DescribeLedgerFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::describe_ledger::builders::DescribeLedgerFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::describe_ledger::builders::DescribeLedgerFluentBuilder::set_name): <p>The name of the ledger that you want to describe.</p>
+    ///   - [`name(impl ::std::convert::Into<String>)`](crate::operation::describe_ledger::builders::DescribeLedgerFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::describe_ledger::builders::DescribeLedgerFluentBuilder::set_name): <p>The name of the ledger that you want to describe.</p>
     /// - On success, responds with [`DescribeLedgerOutput`](crate::operation::describe_ledger::DescribeLedgerOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::describe_ledger::DescribeLedgerOutput::name): <p>The name of the ledger.</p>
     ///   - [`arn(Option<String>)`](crate::operation::describe_ledger::DescribeLedgerOutput::arn): <p>The Amazon Resource Name (ARN) for the ledger.</p>

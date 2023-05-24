@@ -3,11 +3,11 @@
 /// <p>A list of HTTP methods that CloudFront includes as values for the <code>Access-Control-Allow-Methods</code> HTTP response header.</p>
 /// <p>For more information about the <code>Access-Control-Allow-Methods</code> HTTP response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Methods">Access-Control-Allow-Methods</a> in the MDN Web Docs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResponseHeadersPolicyAccessControlAllowMethods {
     /// <p>The number of HTTP methods in the list.</p>
     #[doc(hidden)]
-    pub quantity: std::option::Option<i32>,
+    pub quantity: ::std::option::Option<i32>,
     /// <p>The list of HTTP methods. Valid values are:</p>
     /// <ul>
     /// <li> <p> <code>GET</code> </p> </li>
@@ -21,13 +21,13 @@ pub struct ResponseHeadersPolicyAccessControlAllowMethods {
     /// </ul>
     /// <p> <code>ALL</code> is a special value that includes all of the listed HTTP methods.</p>
     #[doc(hidden)]
-    pub items: std::option::Option<
-        std::vec::Vec<crate::types::ResponseHeadersPolicyAccessControlAllowMethodsValues>,
+    pub items: ::std::option::Option<
+        ::std::vec::Vec<crate::types::ResponseHeadersPolicyAccessControlAllowMethodsValues>,
     >,
 }
 impl ResponseHeadersPolicyAccessControlAllowMethods {
     /// <p>The number of HTTP methods in the list.</p>
-    pub fn quantity(&self) -> std::option::Option<i32> {
+    pub fn quantity(&self) -> ::std::option::Option<i32> {
         self.quantity
     }
     /// <p>The list of HTTP methods. Valid values are:</p>
@@ -44,7 +44,7 @@ impl ResponseHeadersPolicyAccessControlAllowMethods {
     /// <p> <code>ALL</code> is a special value that includes all of the listed HTTP methods.</p>
     pub fn items(
         &self,
-    ) -> std::option::Option<&[crate::types::ResponseHeadersPolicyAccessControlAllowMethodsValues]>
+    ) -> ::std::option::Option<&[crate::types::ResponseHeadersPolicyAccessControlAllowMethodsValues]>
     {
         self.items.as_deref()
     }
@@ -59,21 +59,23 @@ impl ResponseHeadersPolicyAccessControlAllowMethods {
 
 /// A builder for [`ResponseHeadersPolicyAccessControlAllowMethods`](crate::types::ResponseHeadersPolicyAccessControlAllowMethods).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResponseHeadersPolicyAccessControlAllowMethodsBuilder {
-    pub(crate) quantity: std::option::Option<i32>,
-    pub(crate) items: std::option::Option<
-        std::vec::Vec<crate::types::ResponseHeadersPolicyAccessControlAllowMethodsValues>,
+    pub(crate) quantity: ::std::option::Option<i32>,
+    pub(crate) items: ::std::option::Option<
+        ::std::vec::Vec<crate::types::ResponseHeadersPolicyAccessControlAllowMethodsValues>,
     >,
 }
 impl ResponseHeadersPolicyAccessControlAllowMethodsBuilder {
     /// <p>The number of HTTP methods in the list.</p>
     pub fn quantity(mut self, input: i32) -> Self {
-        self.quantity = Some(input);
+        self.quantity = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of HTTP methods in the list.</p>
-    pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_quantity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.quantity = input;
         self
     }
@@ -99,7 +101,7 @@ impl ResponseHeadersPolicyAccessControlAllowMethodsBuilder {
     ) -> Self {
         let mut v = self.items.unwrap_or_default();
         v.push(input);
-        self.items = Some(v);
+        self.items = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of HTTP methods. Valid values are:</p>
@@ -116,8 +118,8 @@ impl ResponseHeadersPolicyAccessControlAllowMethodsBuilder {
     /// <p> <code>ALL</code> is a special value that includes all of the listed HTTP methods.</p>
     pub fn set_items(
         mut self,
-        input: std::option::Option<
-            std::vec::Vec<crate::types::ResponseHeadersPolicyAccessControlAllowMethodsValues>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::ResponseHeadersPolicyAccessControlAllowMethodsValues>,
         >,
     ) -> Self {
         self.items = input;

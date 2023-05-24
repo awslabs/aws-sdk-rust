@@ -2,20 +2,20 @@
 
 /// <p> The output for the <code>AddJobFlowSteps</code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddJobFlowStepsOutput {
     /// <p>The identifiers of the list of steps added to the job flow.</p>
     #[doc(hidden)]
-    pub step_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub step_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl AddJobFlowStepsOutput {
     /// <p>The identifiers of the list of steps added to the job flow.</p>
-    pub fn step_ids(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn step_ids(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.step_ids.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for AddJobFlowStepsOutput {
+impl ::aws_http::request_id::RequestId for AddJobFlowStepsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,9 +30,11 @@ impl AddJobFlowStepsOutput {
 
 /// A builder for [`AddJobFlowStepsOutput`](crate::operation::add_job_flow_steps::AddJobFlowStepsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AddJobFlowStepsOutputBuilder {
-    pub(crate) step_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) step_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl AddJobFlowStepsOutputBuilder {
@@ -41,16 +43,16 @@ impl AddJobFlowStepsOutputBuilder {
     /// To override the contents of this collection use [`set_step_ids`](Self::set_step_ids).
     ///
     /// <p>The identifiers of the list of steps added to the job flow.</p>
-    pub fn step_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn step_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.step_ids.unwrap_or_default();
         v.push(input.into());
-        self.step_ids = Some(v);
+        self.step_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The identifiers of the list of steps added to the job flow.</p>
     pub fn set_step_ids(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.step_ids = input;
         self

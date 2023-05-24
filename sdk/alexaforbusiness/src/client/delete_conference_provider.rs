@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteConferenceProvider`](crate::operation::delete_conference_provider::builders::DeleteConferenceProviderFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`conference_provider_arn(impl Into<String>)`](crate::operation::delete_conference_provider::builders::DeleteConferenceProviderFluentBuilder::conference_provider_arn) / [`set_conference_provider_arn(Option<String>)`](crate::operation::delete_conference_provider::builders::DeleteConferenceProviderFluentBuilder::set_conference_provider_arn): <p>The ARN of the conference provider.</p>
+    ///   - [`conference_provider_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_conference_provider::builders::DeleteConferenceProviderFluentBuilder::conference_provider_arn) / [`set_conference_provider_arn(Option<String>)`](crate::operation::delete_conference_provider::builders::DeleteConferenceProviderFluentBuilder::set_conference_provider_arn): <p>The ARN of the conference provider.</p>
     /// - On success, responds with [`DeleteConferenceProviderOutput`](crate::operation::delete_conference_provider::DeleteConferenceProviderOutput)
     /// - On failure, responds with [`SdkError<DeleteConferenceProviderError>`](crate::operation::delete_conference_provider::DeleteConferenceProviderError)
     pub fn delete_conference_provider(

@@ -3,15 +3,15 @@
 /// <p>Information about a network function.</p>
 /// <p>A network instance is a single network created in Amazon Web Services TNB that can be deployed and on which life-cycle operations (like terminate, update, and delete) can be performed.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSolInstantiatedVnfInfo {
     /// <p>State of the network function.</p>
     #[doc(hidden)]
-    pub vnf_state: std::option::Option<crate::types::VnfOperationalState>,
+    pub vnf_state: ::std::option::Option<crate::types::VnfOperationalState>,
 }
 impl GetSolInstantiatedVnfInfo {
     /// <p>State of the network function.</p>
-    pub fn vnf_state(&self) -> std::option::Option<&crate::types::VnfOperationalState> {
+    pub fn vnf_state(&self) -> ::std::option::Option<&crate::types::VnfOperationalState> {
         self.vnf_state.as_ref()
     }
 }
@@ -24,20 +24,22 @@ impl GetSolInstantiatedVnfInfo {
 
 /// A builder for [`GetSolInstantiatedVnfInfo`](crate::types::GetSolInstantiatedVnfInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetSolInstantiatedVnfInfoBuilder {
-    pub(crate) vnf_state: std::option::Option<crate::types::VnfOperationalState>,
+    pub(crate) vnf_state: ::std::option::Option<crate::types::VnfOperationalState>,
 }
 impl GetSolInstantiatedVnfInfoBuilder {
     /// <p>State of the network function.</p>
     pub fn vnf_state(mut self, input: crate::types::VnfOperationalState) -> Self {
-        self.vnf_state = Some(input);
+        self.vnf_state = ::std::option::Option::Some(input);
         self
     }
     /// <p>State of the network function.</p>
     pub fn set_vnf_state(
         mut self,
-        input: std::option::Option<crate::types::VnfOperationalState>,
+        input: ::std::option::Option<crate::types::VnfOperationalState>,
     ) -> Self {
         self.vnf_state = input;
         self

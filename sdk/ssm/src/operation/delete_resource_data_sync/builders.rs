@@ -6,30 +6,30 @@ pub use crate::operation::delete_resource_data_sync::_delete_resource_data_sync_
 /// Fluent builder constructing a request to `DeleteResourceDataSync`.
 ///
 /// <p>Deletes a resource data sync configuration. After the configuration is deleted, changes to data on managed nodes are no longer synced to or from the target. Deleting a sync configuration doesn't delete data.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteResourceDataSyncFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner:
         crate::operation::delete_resource_data_sync::builders::DeleteResourceDataSyncInputBuilder,
 }
 impl DeleteResourceDataSyncFluentBuilder {
     /// Creates a new `DeleteResourceDataSync`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::delete_resource_data_sync::DeleteResourceDataSync,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::delete_resource_data_sync::DeleteResourceDataSyncError,
         >,
     > {
@@ -37,30 +37,33 @@ impl DeleteResourceDataSyncFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::delete_resource_data_sync::DeleteResourceDataSyncOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::delete_resource_data_sync::DeleteResourceDataSyncError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -73,31 +76,31 @@ impl DeleteResourceDataSyncFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::delete_resource_data_sync::DeleteResourceDataSyncOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::delete_resource_data_sync::DeleteResourceDataSyncError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the configuration to delete.</p>
-    pub fn sync_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn sync_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sync_name(input.into());
         self
     }
     /// <p>The name of the configuration to delete.</p>
-    pub fn set_sync_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_sync_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sync_name(input);
         self
     }
     /// <p>Specify the type of resource data sync to delete.</p>
-    pub fn sync_type(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn sync_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.sync_type(input.into());
         self
     }
     /// <p>Specify the type of resource data sync to delete.</p>
-    pub fn set_sync_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_sync_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_sync_type(input);
         self
     }

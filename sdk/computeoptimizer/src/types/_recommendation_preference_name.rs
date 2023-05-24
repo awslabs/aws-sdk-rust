@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum RecommendationPreferenceName {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum RecommendationPreferenceName {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for RecommendationPreferenceName {
+impl ::std::convert::From<&str> for RecommendationPreferenceName {
     fn from(s: &str) -> Self {
         match s {
             "EnhancedInfrastructureMetrics" => {
@@ -71,11 +71,11 @@ impl std::convert::From<&str> for RecommendationPreferenceName {
         }
     }
 }
-impl std::str::FromStr for RecommendationPreferenceName {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for RecommendationPreferenceName {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(RecommendationPreferenceName::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(RecommendationPreferenceName::from(s))
     }
 }
 impl RecommendationPreferenceName {
@@ -99,7 +99,7 @@ impl RecommendationPreferenceName {
         ]
     }
 }
-impl AsRef<str> for RecommendationPreferenceName {
+impl ::std::convert::AsRef<str> for RecommendationPreferenceName {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

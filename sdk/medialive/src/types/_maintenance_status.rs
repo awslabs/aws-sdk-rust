@@ -2,36 +2,36 @@
 
 /// Placeholder documentation for MaintenanceStatus
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MaintenanceStatus {
     /// The currently selected maintenance day.
     #[doc(hidden)]
-    pub maintenance_day: std::option::Option<crate::types::MaintenanceDay>,
+    pub maintenance_day: ::std::option::Option<crate::types::MaintenanceDay>,
     /// Maintenance is required by the displayed date and time. Date and time is in ISO.
     #[doc(hidden)]
-    pub maintenance_deadline: std::option::Option<std::string::String>,
+    pub maintenance_deadline: ::std::option::Option<::std::string::String>,
     /// The currently scheduled maintenance date and time. Date and time is in ISO.
     #[doc(hidden)]
-    pub maintenance_scheduled_date: std::option::Option<std::string::String>,
+    pub maintenance_scheduled_date: ::std::option::Option<::std::string::String>,
     /// The currently selected maintenance start time. Time is in UTC.
     #[doc(hidden)]
-    pub maintenance_start_time: std::option::Option<std::string::String>,
+    pub maintenance_start_time: ::std::option::Option<::std::string::String>,
 }
 impl MaintenanceStatus {
     /// The currently selected maintenance day.
-    pub fn maintenance_day(&self) -> std::option::Option<&crate::types::MaintenanceDay> {
+    pub fn maintenance_day(&self) -> ::std::option::Option<&crate::types::MaintenanceDay> {
         self.maintenance_day.as_ref()
     }
     /// Maintenance is required by the displayed date and time. Date and time is in ISO.
-    pub fn maintenance_deadline(&self) -> std::option::Option<&str> {
+    pub fn maintenance_deadline(&self) -> ::std::option::Option<&str> {
         self.maintenance_deadline.as_deref()
     }
     /// The currently scheduled maintenance date and time. Date and time is in ISO.
-    pub fn maintenance_scheduled_date(&self) -> std::option::Option<&str> {
+    pub fn maintenance_scheduled_date(&self) -> ::std::option::Option<&str> {
         self.maintenance_scheduled_date.as_deref()
     }
     /// The currently selected maintenance start time. Time is in UTC.
-    pub fn maintenance_start_time(&self) -> std::option::Option<&str> {
+    pub fn maintenance_start_time(&self) -> ::std::option::Option<&str> {
         self.maintenance_start_time.as_deref()
     }
 }
@@ -44,62 +44,73 @@ impl MaintenanceStatus {
 
 /// A builder for [`MaintenanceStatus`](crate::types::MaintenanceStatus).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MaintenanceStatusBuilder {
-    pub(crate) maintenance_day: std::option::Option<crate::types::MaintenanceDay>,
-    pub(crate) maintenance_deadline: std::option::Option<std::string::String>,
-    pub(crate) maintenance_scheduled_date: std::option::Option<std::string::String>,
-    pub(crate) maintenance_start_time: std::option::Option<std::string::String>,
+    pub(crate) maintenance_day: ::std::option::Option<crate::types::MaintenanceDay>,
+    pub(crate) maintenance_deadline: ::std::option::Option<::std::string::String>,
+    pub(crate) maintenance_scheduled_date: ::std::option::Option<::std::string::String>,
+    pub(crate) maintenance_start_time: ::std::option::Option<::std::string::String>,
 }
 impl MaintenanceStatusBuilder {
     /// The currently selected maintenance day.
     pub fn maintenance_day(mut self, input: crate::types::MaintenanceDay) -> Self {
-        self.maintenance_day = Some(input);
+        self.maintenance_day = ::std::option::Option::Some(input);
         self
     }
     /// The currently selected maintenance day.
     pub fn set_maintenance_day(
         mut self,
-        input: std::option::Option<crate::types::MaintenanceDay>,
+        input: ::std::option::Option<crate::types::MaintenanceDay>,
     ) -> Self {
         self.maintenance_day = input;
         self
     }
     /// Maintenance is required by the displayed date and time. Date and time is in ISO.
-    pub fn maintenance_deadline(mut self, input: impl Into<std::string::String>) -> Self {
-        self.maintenance_deadline = Some(input.into());
+    pub fn maintenance_deadline(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.maintenance_deadline = ::std::option::Option::Some(input.into());
         self
     }
     /// Maintenance is required by the displayed date and time. Date and time is in ISO.
     pub fn set_maintenance_deadline(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.maintenance_deadline = input;
         self
     }
     /// The currently scheduled maintenance date and time. Date and time is in ISO.
-    pub fn maintenance_scheduled_date(mut self, input: impl Into<std::string::String>) -> Self {
-        self.maintenance_scheduled_date = Some(input.into());
+    pub fn maintenance_scheduled_date(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.maintenance_scheduled_date = ::std::option::Option::Some(input.into());
         self
     }
     /// The currently scheduled maintenance date and time. Date and time is in ISO.
     pub fn set_maintenance_scheduled_date(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.maintenance_scheduled_date = input;
         self
     }
     /// The currently selected maintenance start time. Time is in UTC.
-    pub fn maintenance_start_time(mut self, input: impl Into<std::string::String>) -> Self {
-        self.maintenance_start_time = Some(input.into());
+    pub fn maintenance_start_time(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.maintenance_start_time = ::std::option::Option::Some(input.into());
         self
     }
     /// The currently selected maintenance start time. Time is in UTC.
     pub fn set_maintenance_start_time(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.maintenance_start_time = input;
         self

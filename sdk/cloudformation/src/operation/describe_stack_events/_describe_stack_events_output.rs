@@ -2,27 +2,27 @@
 
 /// <p>The output for a <code>DescribeStackEvents</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeStackEventsOutput {
     /// <p>A list of <code>StackEvents</code> structures.</p>
     #[doc(hidden)]
-    pub stack_events: std::option::Option<std::vec::Vec<crate::types::StackEvent>>,
+    pub stack_events: ::std::option::Option<::std::vec::Vec<crate::types::StackEvent>>,
     /// <p>If the output exceeds 1 MB in size, a string that identifies the next page of events. If no additional page exists, this value is null.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeStackEventsOutput {
     /// <p>A list of <code>StackEvents</code> structures.</p>
-    pub fn stack_events(&self) -> std::option::Option<&[crate::types::StackEvent]> {
+    pub fn stack_events(&self) -> ::std::option::Option<&[crate::types::StackEvent]> {
         self.stack_events.as_deref()
     }
     /// <p>If the output exceeds 1 MB in size, a string that identifies the next page of events. If no additional page exists, this value is null.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeStackEventsOutput {
+impl ::aws_http::request_id::RequestId for DescribeStackEventsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -38,10 +38,12 @@ impl DescribeStackEventsOutput {
 
 /// A builder for [`DescribeStackEventsOutput`](crate::operation::describe_stack_events::DescribeStackEventsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeStackEventsOutputBuilder {
-    pub(crate) stack_events: std::option::Option<std::vec::Vec<crate::types::StackEvent>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) stack_events: ::std::option::Option<::std::vec::Vec<crate::types::StackEvent>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeStackEventsOutputBuilder {
@@ -53,24 +55,24 @@ impl DescribeStackEventsOutputBuilder {
     pub fn stack_events(mut self, input: crate::types::StackEvent) -> Self {
         let mut v = self.stack_events.unwrap_or_default();
         v.push(input);
-        self.stack_events = Some(v);
+        self.stack_events = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of <code>StackEvents</code> structures.</p>
     pub fn set_stack_events(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::StackEvent>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::StackEvent>>,
     ) -> Self {
         self.stack_events = input;
         self
     }
     /// <p>If the output exceeds 1 MB in size, a string that identifies the next page of events. If no additional page exists, this value is null.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the output exceeds 1 MB in size, a string that identifies the next page of events. If no additional page exists, this value is null.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

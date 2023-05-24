@@ -2,34 +2,34 @@
 
 /// <p>The information about job driver for Spark submit.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SparkSubmitJobDriver {
     /// <p>The entry point of job application.</p>
     #[doc(hidden)]
-    pub entry_point: std::option::Option<std::string::String>,
+    pub entry_point: ::std::option::Option<::std::string::String>,
     /// <p>The arguments for job application.</p>
     #[doc(hidden)]
-    pub entry_point_arguments: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub entry_point_arguments: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Spark submit parameters that are used for job runs.</p>
     #[doc(hidden)]
-    pub spark_submit_parameters: std::option::Option<std::string::String>,
+    pub spark_submit_parameters: ::std::option::Option<::std::string::String>,
 }
 impl SparkSubmitJobDriver {
     /// <p>The entry point of job application.</p>
-    pub fn entry_point(&self) -> std::option::Option<&str> {
+    pub fn entry_point(&self) -> ::std::option::Option<&str> {
         self.entry_point.as_deref()
     }
     /// <p>The arguments for job application.</p>
-    pub fn entry_point_arguments(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn entry_point_arguments(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.entry_point_arguments.as_deref()
     }
     /// <p>The Spark submit parameters that are used for job runs.</p>
-    pub fn spark_submit_parameters(&self) -> std::option::Option<&str> {
+    pub fn spark_submit_parameters(&self) -> ::std::option::Option<&str> {
         self.spark_submit_parameters.as_deref()
     }
 }
-impl std::fmt::Debug for SparkSubmitJobDriver {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for SparkSubmitJobDriver {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SparkSubmitJobDriver");
         formatter.field("entry_point", &"*** Sensitive Data Redacted ***");
         formatter.field("entry_point_arguments", &self.entry_point_arguments);
@@ -49,20 +49,20 @@ impl SparkSubmitJobDriver {
 
 /// A builder for [`SparkSubmitJobDriver`](crate::types::SparkSubmitJobDriver).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct SparkSubmitJobDriverBuilder {
-    pub(crate) entry_point: std::option::Option<std::string::String>,
-    pub(crate) entry_point_arguments: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) spark_submit_parameters: std::option::Option<std::string::String>,
+    pub(crate) entry_point: ::std::option::Option<::std::string::String>,
+    pub(crate) entry_point_arguments: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) spark_submit_parameters: ::std::option::Option<::std::string::String>,
 }
 impl SparkSubmitJobDriverBuilder {
     /// <p>The entry point of job application.</p>
-    pub fn entry_point(mut self, input: impl Into<std::string::String>) -> Self {
-        self.entry_point = Some(input.into());
+    pub fn entry_point(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.entry_point = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The entry point of job application.</p>
-    pub fn set_entry_point(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_entry_point(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.entry_point = input;
         self
     }
@@ -71,29 +71,35 @@ impl SparkSubmitJobDriverBuilder {
     /// To override the contents of this collection use [`set_entry_point_arguments`](Self::set_entry_point_arguments).
     ///
     /// <p>The arguments for job application.</p>
-    pub fn entry_point_arguments(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn entry_point_arguments(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.entry_point_arguments.unwrap_or_default();
         v.push(input.into());
-        self.entry_point_arguments = Some(v);
+        self.entry_point_arguments = ::std::option::Option::Some(v);
         self
     }
     /// <p>The arguments for job application.</p>
     pub fn set_entry_point_arguments(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.entry_point_arguments = input;
         self
     }
     /// <p>The Spark submit parameters that are used for job runs.</p>
-    pub fn spark_submit_parameters(mut self, input: impl Into<std::string::String>) -> Self {
-        self.spark_submit_parameters = Some(input.into());
+    pub fn spark_submit_parameters(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.spark_submit_parameters = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Spark submit parameters that are used for job runs.</p>
     pub fn set_spark_submit_parameters(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.spark_submit_parameters = input;
         self
@@ -107,8 +113,8 @@ impl SparkSubmitJobDriverBuilder {
         }
     }
 }
-impl std::fmt::Debug for SparkSubmitJobDriverBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for SparkSubmitJobDriverBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("SparkSubmitJobDriverBuilder");
         formatter.field("entry_point", &"*** Sensitive Data Redacted ***");
         formatter.field("entry_point_arguments", &self.entry_point_arguments);

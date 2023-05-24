@@ -2,22 +2,22 @@
 
 /// <p>A pair of ObjectIdentifier and LinkName.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ObjectIdentifierAndLinkNameTuple {
     /// <p>The ID that is associated with the object.</p>
     #[doc(hidden)]
-    pub object_identifier: std::option::Option<std::string::String>,
+    pub object_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The name of the link between the parent and the child object.</p>
     #[doc(hidden)]
-    pub link_name: std::option::Option<std::string::String>,
+    pub link_name: ::std::option::Option<::std::string::String>,
 }
 impl ObjectIdentifierAndLinkNameTuple {
     /// <p>The ID that is associated with the object.</p>
-    pub fn object_identifier(&self) -> std::option::Option<&str> {
+    pub fn object_identifier(&self) -> ::std::option::Option<&str> {
         self.object_identifier.as_deref()
     }
     /// <p>The name of the link between the parent and the child object.</p>
-    pub fn link_name(&self) -> std::option::Option<&str> {
+    pub fn link_name(&self) -> ::std::option::Option<&str> {
         self.link_name.as_deref()
     }
 }
@@ -30,32 +30,37 @@ impl ObjectIdentifierAndLinkNameTuple {
 
 /// A builder for [`ObjectIdentifierAndLinkNameTuple`](crate::types::ObjectIdentifierAndLinkNameTuple).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ObjectIdentifierAndLinkNameTupleBuilder {
-    pub(crate) object_identifier: std::option::Option<std::string::String>,
-    pub(crate) link_name: std::option::Option<std::string::String>,
+    pub(crate) object_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) link_name: ::std::option::Option<::std::string::String>,
 }
 impl ObjectIdentifierAndLinkNameTupleBuilder {
     /// <p>The ID that is associated with the object.</p>
-    pub fn object_identifier(mut self, input: impl Into<std::string::String>) -> Self {
-        self.object_identifier = Some(input.into());
+    pub fn object_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.object_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID that is associated with the object.</p>
     pub fn set_object_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.object_identifier = input;
         self
     }
     /// <p>The name of the link between the parent and the child object.</p>
-    pub fn link_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.link_name = Some(input.into());
+    pub fn link_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.link_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the link between the parent and the child object.</p>
-    pub fn set_link_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_link_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.link_name = input;
         self
     }

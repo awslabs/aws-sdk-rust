@@ -4,15 +4,15 @@
 /// <p>This data structure is only used with the deprecated <code>ExecuteSql</code> operation. Use the <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code> operation instead.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Record {
     /// <p>The values returned in the record.</p>
     #[doc(hidden)]
-    pub values: std::option::Option<std::vec::Vec<crate::types::Value>>,
+    pub values: ::std::option::Option<::std::vec::Vec<crate::types::Value>>,
 }
 impl Record {
     /// <p>The values returned in the record.</p>
-    pub fn values(&self) -> std::option::Option<&[crate::types::Value]> {
+    pub fn values(&self) -> ::std::option::Option<&[crate::types::Value]> {
         self.values.as_deref()
     }
 }
@@ -25,9 +25,11 @@ impl Record {
 
 /// A builder for [`Record`](crate::types::Record).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RecordBuilder {
-    pub(crate) values: std::option::Option<std::vec::Vec<crate::types::Value>>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec<crate::types::Value>>,
 }
 impl RecordBuilder {
     /// Appends an item to `values`.
@@ -38,13 +40,13 @@ impl RecordBuilder {
     pub fn values(mut self, input: crate::types::Value) -> Self {
         let mut v = self.values.unwrap_or_default();
         v.push(input);
-        self.values = Some(v);
+        self.values = ::std::option::Option::Some(v);
         self
     }
     /// <p>The values returned in the record.</p>
     pub fn set_values(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Value>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Value>>,
     ) -> Self {
         self.values = input;
         self

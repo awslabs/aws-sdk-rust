@@ -2,36 +2,36 @@
 
 /// <p>CDMA object for network measurement reports.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CdmaNmrObj {
     /// <p>Pseudo-noise offset, which is a characteristic of the signal from a cell on a radio tower.</p>
     #[doc(hidden)]
-    pub pn_offset: std::option::Option<i32>,
+    pub pn_offset: ::std::option::Option<i32>,
     /// <p>CDMA channel information.</p>
     #[doc(hidden)]
-    pub cdma_channel: std::option::Option<i32>,
+    pub cdma_channel: ::std::option::Option<i32>,
     /// <p>Transmit power level of the pilot signal, measured in dBm (decibel-milliwatts).</p>
     #[doc(hidden)]
-    pub pilot_power: std::option::Option<i32>,
+    pub pilot_power: ::std::option::Option<i32>,
     /// <p>CDMA base station ID (BSID).</p>
     #[doc(hidden)]
-    pub base_station_id: std::option::Option<i32>,
+    pub base_station_id: ::std::option::Option<i32>,
 }
 impl CdmaNmrObj {
     /// <p>Pseudo-noise offset, which is a characteristic of the signal from a cell on a radio tower.</p>
-    pub fn pn_offset(&self) -> std::option::Option<i32> {
+    pub fn pn_offset(&self) -> ::std::option::Option<i32> {
         self.pn_offset
     }
     /// <p>CDMA channel information.</p>
-    pub fn cdma_channel(&self) -> std::option::Option<i32> {
+    pub fn cdma_channel(&self) -> ::std::option::Option<i32> {
         self.cdma_channel
     }
     /// <p>Transmit power level of the pilot signal, measured in dBm (decibel-milliwatts).</p>
-    pub fn pilot_power(&self) -> std::option::Option<i32> {
+    pub fn pilot_power(&self) -> ::std::option::Option<i32> {
         self.pilot_power
     }
     /// <p>CDMA base station ID (BSID).</p>
-    pub fn base_station_id(&self) -> std::option::Option<i32> {
+    pub fn base_station_id(&self) -> ::std::option::Option<i32> {
         self.base_station_id
     }
 }
@@ -44,51 +44,53 @@ impl CdmaNmrObj {
 
 /// A builder for [`CdmaNmrObj`](crate::types::CdmaNmrObj).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CdmaNmrObjBuilder {
-    pub(crate) pn_offset: std::option::Option<i32>,
-    pub(crate) cdma_channel: std::option::Option<i32>,
-    pub(crate) pilot_power: std::option::Option<i32>,
-    pub(crate) base_station_id: std::option::Option<i32>,
+    pub(crate) pn_offset: ::std::option::Option<i32>,
+    pub(crate) cdma_channel: ::std::option::Option<i32>,
+    pub(crate) pilot_power: ::std::option::Option<i32>,
+    pub(crate) base_station_id: ::std::option::Option<i32>,
 }
 impl CdmaNmrObjBuilder {
     /// <p>Pseudo-noise offset, which is a characteristic of the signal from a cell on a radio tower.</p>
     pub fn pn_offset(mut self, input: i32) -> Self {
-        self.pn_offset = Some(input);
+        self.pn_offset = ::std::option::Option::Some(input);
         self
     }
     /// <p>Pseudo-noise offset, which is a characteristic of the signal from a cell on a radio tower.</p>
-    pub fn set_pn_offset(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_pn_offset(mut self, input: ::std::option::Option<i32>) -> Self {
         self.pn_offset = input;
         self
     }
     /// <p>CDMA channel information.</p>
     pub fn cdma_channel(mut self, input: i32) -> Self {
-        self.cdma_channel = Some(input);
+        self.cdma_channel = ::std::option::Option::Some(input);
         self
     }
     /// <p>CDMA channel information.</p>
-    pub fn set_cdma_channel(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_cdma_channel(mut self, input: ::std::option::Option<i32>) -> Self {
         self.cdma_channel = input;
         self
     }
     /// <p>Transmit power level of the pilot signal, measured in dBm (decibel-milliwatts).</p>
     pub fn pilot_power(mut self, input: i32) -> Self {
-        self.pilot_power = Some(input);
+        self.pilot_power = ::std::option::Option::Some(input);
         self
     }
     /// <p>Transmit power level of the pilot signal, measured in dBm (decibel-milliwatts).</p>
-    pub fn set_pilot_power(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_pilot_power(mut self, input: ::std::option::Option<i32>) -> Self {
         self.pilot_power = input;
         self
     }
     /// <p>CDMA base station ID (BSID).</p>
     pub fn base_station_id(mut self, input: i32) -> Self {
-        self.base_station_id = Some(input);
+        self.base_station_id = ::std::option::Option::Some(input);
         self
     }
     /// <p>CDMA base station ID (BSID).</p>
-    pub fn set_base_station_id(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_base_station_id(mut self, input: ::std::option::Option<i32>) -> Self {
         self.base_station_id = input;
         self
     }

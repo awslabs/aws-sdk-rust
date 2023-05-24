@@ -2,29 +2,29 @@
 
 /// <p>The network configuration for a device.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NetworkPayload {
     /// <p>Settings for Ethernet port 0.</p>
     #[doc(hidden)]
-    pub ethernet0: std::option::Option<crate::types::EthernetPayload>,
+    pub ethernet0: ::std::option::Option<crate::types::EthernetPayload>,
     /// <p>Settings for Ethernet port 1.</p>
     #[doc(hidden)]
-    pub ethernet1: std::option::Option<crate::types::EthernetPayload>,
+    pub ethernet1: ::std::option::Option<crate::types::EthernetPayload>,
     /// <p>Network time protocol (NTP) server settings.</p>
     #[doc(hidden)]
-    pub ntp: std::option::Option<crate::types::NtpPayload>,
+    pub ntp: ::std::option::Option<crate::types::NtpPayload>,
 }
 impl NetworkPayload {
     /// <p>Settings for Ethernet port 0.</p>
-    pub fn ethernet0(&self) -> std::option::Option<&crate::types::EthernetPayload> {
+    pub fn ethernet0(&self) -> ::std::option::Option<&crate::types::EthernetPayload> {
         self.ethernet0.as_ref()
     }
     /// <p>Settings for Ethernet port 1.</p>
-    pub fn ethernet1(&self) -> std::option::Option<&crate::types::EthernetPayload> {
+    pub fn ethernet1(&self) -> ::std::option::Option<&crate::types::EthernetPayload> {
         self.ethernet1.as_ref()
     }
     /// <p>Network time protocol (NTP) server settings.</p>
-    pub fn ntp(&self) -> std::option::Option<&crate::types::NtpPayload> {
+    pub fn ntp(&self) -> ::std::option::Option<&crate::types::NtpPayload> {
         self.ntp.as_ref()
     }
 }
@@ -37,46 +37,48 @@ impl NetworkPayload {
 
 /// A builder for [`NetworkPayload`](crate::types::NetworkPayload).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NetworkPayloadBuilder {
-    pub(crate) ethernet0: std::option::Option<crate::types::EthernetPayload>,
-    pub(crate) ethernet1: std::option::Option<crate::types::EthernetPayload>,
-    pub(crate) ntp: std::option::Option<crate::types::NtpPayload>,
+    pub(crate) ethernet0: ::std::option::Option<crate::types::EthernetPayload>,
+    pub(crate) ethernet1: ::std::option::Option<crate::types::EthernetPayload>,
+    pub(crate) ntp: ::std::option::Option<crate::types::NtpPayload>,
 }
 impl NetworkPayloadBuilder {
     /// <p>Settings for Ethernet port 0.</p>
     pub fn ethernet0(mut self, input: crate::types::EthernetPayload) -> Self {
-        self.ethernet0 = Some(input);
+        self.ethernet0 = ::std::option::Option::Some(input);
         self
     }
     /// <p>Settings for Ethernet port 0.</p>
     pub fn set_ethernet0(
         mut self,
-        input: std::option::Option<crate::types::EthernetPayload>,
+        input: ::std::option::Option<crate::types::EthernetPayload>,
     ) -> Self {
         self.ethernet0 = input;
         self
     }
     /// <p>Settings for Ethernet port 1.</p>
     pub fn ethernet1(mut self, input: crate::types::EthernetPayload) -> Self {
-        self.ethernet1 = Some(input);
+        self.ethernet1 = ::std::option::Option::Some(input);
         self
     }
     /// <p>Settings for Ethernet port 1.</p>
     pub fn set_ethernet1(
         mut self,
-        input: std::option::Option<crate::types::EthernetPayload>,
+        input: ::std::option::Option<crate::types::EthernetPayload>,
     ) -> Self {
         self.ethernet1 = input;
         self
     }
     /// <p>Network time protocol (NTP) server settings.</p>
     pub fn ntp(mut self, input: crate::types::NtpPayload) -> Self {
-        self.ntp = Some(input);
+        self.ntp = ::std::option::Option::Some(input);
         self
     }
     /// <p>Network time protocol (NTP) server settings.</p>
-    pub fn set_ntp(mut self, input: std::option::Option<crate::types::NtpPayload>) -> Self {
+    pub fn set_ntp(mut self, input: ::std::option::Option<crate::types::NtpPayload>) -> Self {
         self.ntp = input;
         self
     }

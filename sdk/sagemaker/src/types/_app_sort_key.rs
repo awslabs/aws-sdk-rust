@@ -37,13 +37,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum AppSortKey {
     #[allow(missing_docs)] // documentation missing in model
@@ -51,7 +51,7 @@ pub enum AppSortKey {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for AppSortKey {
+impl ::std::convert::From<&str> for AppSortKey {
     fn from(s: &str) -> Self {
         match s {
             "CreationTime" => AppSortKey::CreationTime,
@@ -59,11 +59,11 @@ impl std::convert::From<&str> for AppSortKey {
         }
     }
 }
-impl std::str::FromStr for AppSortKey {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for AppSortKey {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AppSortKey::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(AppSortKey::from(s))
     }
 }
 impl AppSortKey {
@@ -79,7 +79,7 @@ impl AppSortKey {
         &["CreationTime"]
     }
 }
-impl AsRef<str> for AppSortKey {
+impl ::std::convert::AsRef<str> for AppSortKey {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

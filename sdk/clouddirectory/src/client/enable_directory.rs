@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`EnableDirectory`](crate::operation::enable_directory::builders::EnableDirectoryFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`directory_arn(impl Into<String>)`](crate::operation::enable_directory::builders::EnableDirectoryFluentBuilder::directory_arn) / [`set_directory_arn(Option<String>)`](crate::operation::enable_directory::builders::EnableDirectoryFluentBuilder::set_directory_arn): <p>The ARN of the directory to enable.</p>
+    ///   - [`directory_arn(impl ::std::convert::Into<String>)`](crate::operation::enable_directory::builders::EnableDirectoryFluentBuilder::directory_arn) / [`set_directory_arn(Option<String>)`](crate::operation::enable_directory::builders::EnableDirectoryFluentBuilder::set_directory_arn): <p>The ARN of the directory to enable.</p>
     /// - On success, responds with [`EnableDirectoryOutput`](crate::operation::enable_directory::EnableDirectoryOutput) with field(s):
     ///   - [`directory_arn(Option<String>)`](crate::operation::enable_directory::EnableDirectoryOutput::directory_arn): <p>The ARN of the enabled directory.</p>
     /// - On failure, responds with [`SdkError<EnableDirectoryError>`](crate::operation::enable_directory::EnableDirectoryError)

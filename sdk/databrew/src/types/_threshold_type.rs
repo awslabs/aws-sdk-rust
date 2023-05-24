@@ -40,13 +40,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ThresholdType {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,7 +60,7 @@ pub enum ThresholdType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ThresholdType {
+impl ::std::convert::From<&str> for ThresholdType {
     fn from(s: &str) -> Self {
         match s {
             "GREATER_THAN" => ThresholdType::GreaterThan,
@@ -73,11 +73,11 @@ impl std::convert::From<&str> for ThresholdType {
         }
     }
 }
-impl std::str::FromStr for ThresholdType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ThresholdType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ThresholdType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ThresholdType::from(s))
     }
 }
 impl ThresholdType {
@@ -101,7 +101,7 @@ impl ThresholdType {
         ]
     }
 }
-impl AsRef<str> for ThresholdType {
+impl ::std::convert::AsRef<str> for ThresholdType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

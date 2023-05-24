@@ -2,29 +2,32 @@
 
 /// <p>Provides a list of conditional branches. Branches are evaluated in the order that they are entered in the list. The first branch with a condition that evaluates to true is executed. The last branch in the list is the default branch. The default branch should not have any condition expression. The default branch is executed if no other branch has a matching condition.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConditionalSpecification {
     /// <p>Determines whether a conditional branch is active. When <code>active</code> is false, the conditions are not evaluated.</p>
     #[doc(hidden)]
-    pub active: std::option::Option<bool>,
+    pub active: ::std::option::Option<bool>,
     /// <p>A list of conditional branches. A conditional branch is made up of a condition, a response and a next step. The response and next step are executed when the condition is true.</p>
     #[doc(hidden)]
-    pub conditional_branches: std::option::Option<std::vec::Vec<crate::types::ConditionalBranch>>,
+    pub conditional_branches:
+        ::std::option::Option<::std::vec::Vec<crate::types::ConditionalBranch>>,
     /// <p>The conditional branch that should be followed when the conditions for other branches are not satisfied. A conditional branch is made up of a condition, a response and a next step.</p>
     #[doc(hidden)]
-    pub default_branch: std::option::Option<crate::types::DefaultConditionalBranch>,
+    pub default_branch: ::std::option::Option<crate::types::DefaultConditionalBranch>,
 }
 impl ConditionalSpecification {
     /// <p>Determines whether a conditional branch is active. When <code>active</code> is false, the conditions are not evaluated.</p>
-    pub fn active(&self) -> std::option::Option<bool> {
+    pub fn active(&self) -> ::std::option::Option<bool> {
         self.active
     }
     /// <p>A list of conditional branches. A conditional branch is made up of a condition, a response and a next step. The response and next step are executed when the condition is true.</p>
-    pub fn conditional_branches(&self) -> std::option::Option<&[crate::types::ConditionalBranch]> {
+    pub fn conditional_branches(
+        &self,
+    ) -> ::std::option::Option<&[crate::types::ConditionalBranch]> {
         self.conditional_branches.as_deref()
     }
     /// <p>The conditional branch that should be followed when the conditions for other branches are not satisfied. A conditional branch is made up of a condition, a response and a next step.</p>
-    pub fn default_branch(&self) -> std::option::Option<&crate::types::DefaultConditionalBranch> {
+    pub fn default_branch(&self) -> ::std::option::Option<&crate::types::DefaultConditionalBranch> {
         self.default_branch.as_ref()
     }
 }
@@ -37,21 +40,23 @@ impl ConditionalSpecification {
 
 /// A builder for [`ConditionalSpecification`](crate::types::ConditionalSpecification).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ConditionalSpecificationBuilder {
-    pub(crate) active: std::option::Option<bool>,
+    pub(crate) active: ::std::option::Option<bool>,
     pub(crate) conditional_branches:
-        std::option::Option<std::vec::Vec<crate::types::ConditionalBranch>>,
-    pub(crate) default_branch: std::option::Option<crate::types::DefaultConditionalBranch>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ConditionalBranch>>,
+    pub(crate) default_branch: ::std::option::Option<crate::types::DefaultConditionalBranch>,
 }
 impl ConditionalSpecificationBuilder {
     /// <p>Determines whether a conditional branch is active. When <code>active</code> is false, the conditions are not evaluated.</p>
     pub fn active(mut self, input: bool) -> Self {
-        self.active = Some(input);
+        self.active = ::std::option::Option::Some(input);
         self
     }
     /// <p>Determines whether a conditional branch is active. When <code>active</code> is false, the conditions are not evaluated.</p>
-    pub fn set_active(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_active(mut self, input: ::std::option::Option<bool>) -> Self {
         self.active = input;
         self
     }
@@ -63,26 +68,26 @@ impl ConditionalSpecificationBuilder {
     pub fn conditional_branches(mut self, input: crate::types::ConditionalBranch) -> Self {
         let mut v = self.conditional_branches.unwrap_or_default();
         v.push(input);
-        self.conditional_branches = Some(v);
+        self.conditional_branches = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of conditional branches. A conditional branch is made up of a condition, a response and a next step. The response and next step are executed when the condition is true.</p>
     pub fn set_conditional_branches(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ConditionalBranch>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ConditionalBranch>>,
     ) -> Self {
         self.conditional_branches = input;
         self
     }
     /// <p>The conditional branch that should be followed when the conditions for other branches are not satisfied. A conditional branch is made up of a condition, a response and a next step.</p>
     pub fn default_branch(mut self, input: crate::types::DefaultConditionalBranch) -> Self {
-        self.default_branch = Some(input);
+        self.default_branch = ::std::option::Option::Some(input);
         self
     }
     /// <p>The conditional branch that should be followed when the conditions for other branches are not satisfied. A conditional branch is made up of a condition, a response and a next step.</p>
     pub fn set_default_branch(
         mut self,
-        input: std::option::Option<crate::types::DefaultConditionalBranch>,
+        input: ::std::option::Option<crate::types::DefaultConditionalBranch>,
     ) -> Self {
         self.default_branch = input;
         self

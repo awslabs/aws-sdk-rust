@@ -2,22 +2,22 @@
 
 /// <p>The destination configuration.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DestinationConfig {
     /// <p>The name of the IoT thing to which you want to connect.</p>
     #[doc(hidden)]
-    pub thing_name: std::option::Option<std::string::String>,
+    pub thing_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of service names that identify the target application. The IoT client running on the destination device reads this value and uses it to look up a port or an IP address and a port. The IoT client instantiates the local proxy, which uses this information to connect to the destination application.</p>
     #[doc(hidden)]
-    pub services: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub services: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DestinationConfig {
     /// <p>The name of the IoT thing to which you want to connect.</p>
-    pub fn thing_name(&self) -> std::option::Option<&str> {
+    pub fn thing_name(&self) -> ::std::option::Option<&str> {
         self.thing_name.as_deref()
     }
     /// <p>A list of service names that identify the target application. The IoT client running on the destination device reads this value and uses it to look up a port or an IP address and a port. The IoT client instantiates the local proxy, which uses this information to connect to the destination application.</p>
-    pub fn services(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn services(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.services.as_deref()
     }
 }
@@ -30,19 +30,21 @@ impl DestinationConfig {
 
 /// A builder for [`DestinationConfig`](crate::types::DestinationConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DestinationConfigBuilder {
-    pub(crate) thing_name: std::option::Option<std::string::String>,
-    pub(crate) services: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) thing_name: ::std::option::Option<::std::string::String>,
+    pub(crate) services: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DestinationConfigBuilder {
     /// <p>The name of the IoT thing to which you want to connect.</p>
-    pub fn thing_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.thing_name = Some(input.into());
+    pub fn thing_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.thing_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the IoT thing to which you want to connect.</p>
-    pub fn set_thing_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_thing_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.thing_name = input;
         self
     }
@@ -51,16 +53,16 @@ impl DestinationConfigBuilder {
     /// To override the contents of this collection use [`set_services`](Self::set_services).
     ///
     /// <p>A list of service names that identify the target application. The IoT client running on the destination device reads this value and uses it to look up a port or an IP address and a port. The IoT client instantiates the local proxy, which uses this information to connect to the destination application.</p>
-    pub fn services(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn services(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.services.unwrap_or_default();
         v.push(input.into());
-        self.services = Some(v);
+        self.services = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of service names that identify the target application. The IoT client running on the destination device reads this value and uses it to look up a port or an IP address and a port. The IoT client instantiates the local proxy, which uses this information to connect to the destination application.</p>
     pub fn set_services(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.services = input;
         self

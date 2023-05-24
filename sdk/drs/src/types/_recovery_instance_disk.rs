@@ -2,21 +2,21 @@
 
 /// <p>An object representing a block storage device on the Recovery Instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecoveryInstanceDisk {
     /// <p>The internal device name of this disk. This is the name that is visible on the machine itself and not from the EC2 console.</p>
     #[doc(hidden)]
-    pub internal_device_name: std::option::Option<std::string::String>,
+    pub internal_device_name: ::std::option::Option<::std::string::String>,
     /// <p>The amount of storage on the disk in bytes.</p>
     #[doc(hidden)]
     pub bytes: i64,
     /// <p>The EBS Volume ID of this disk.</p>
     #[doc(hidden)]
-    pub ebs_volume_id: std::option::Option<std::string::String>,
+    pub ebs_volume_id: ::std::option::Option<::std::string::String>,
 }
 impl RecoveryInstanceDisk {
     /// <p>The internal device name of this disk. This is the name that is visible on the machine itself and not from the EC2 console.</p>
-    pub fn internal_device_name(&self) -> std::option::Option<&str> {
+    pub fn internal_device_name(&self) -> ::std::option::Option<&str> {
         self.internal_device_name.as_deref()
     }
     /// <p>The amount of storage on the disk in bytes.</p>
@@ -24,7 +24,7 @@ impl RecoveryInstanceDisk {
         self.bytes
     }
     /// <p>The EBS Volume ID of this disk.</p>
-    pub fn ebs_volume_id(&self) -> std::option::Option<&str> {
+    pub fn ebs_volume_id(&self) -> ::std::option::Option<&str> {
         self.ebs_volume_id.as_deref()
     }
 }
@@ -37,43 +37,54 @@ impl RecoveryInstanceDisk {
 
 /// A builder for [`RecoveryInstanceDisk`](crate::types::RecoveryInstanceDisk).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RecoveryInstanceDiskBuilder {
-    pub(crate) internal_device_name: std::option::Option<std::string::String>,
-    pub(crate) bytes: std::option::Option<i64>,
-    pub(crate) ebs_volume_id: std::option::Option<std::string::String>,
+    pub(crate) internal_device_name: ::std::option::Option<::std::string::String>,
+    pub(crate) bytes: ::std::option::Option<i64>,
+    pub(crate) ebs_volume_id: ::std::option::Option<::std::string::String>,
 }
 impl RecoveryInstanceDiskBuilder {
     /// <p>The internal device name of this disk. This is the name that is visible on the machine itself and not from the EC2 console.</p>
-    pub fn internal_device_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.internal_device_name = Some(input.into());
+    pub fn internal_device_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.internal_device_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The internal device name of this disk. This is the name that is visible on the machine itself and not from the EC2 console.</p>
     pub fn set_internal_device_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.internal_device_name = input;
         self
     }
     /// <p>The amount of storage on the disk in bytes.</p>
     pub fn bytes(mut self, input: i64) -> Self {
-        self.bytes = Some(input);
+        self.bytes = ::std::option::Option::Some(input);
         self
     }
     /// <p>The amount of storage on the disk in bytes.</p>
-    pub fn set_bytes(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.bytes = input;
         self
     }
     /// <p>The EBS Volume ID of this disk.</p>
-    pub fn ebs_volume_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ebs_volume_id = Some(input.into());
+    pub fn ebs_volume_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.ebs_volume_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The EBS Volume ID of this disk.</p>
-    pub fn set_ebs_volume_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ebs_volume_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.ebs_volume_id = input;
         self
     }

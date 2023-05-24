@@ -2,148 +2,148 @@
 
 /// <p>Describes how many instances a stack has for each status.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstancesCount {
     /// <p>The number of instances in the Assigning state.</p>
     #[doc(hidden)]
-    pub assigning: std::option::Option<i32>,
+    pub assigning: ::std::option::Option<i32>,
     /// <p>The number of instances with <code>booting</code> status.</p>
     #[doc(hidden)]
-    pub booting: std::option::Option<i32>,
+    pub booting: ::std::option::Option<i32>,
     /// <p>The number of instances with <code>connection_lost</code> status.</p>
     #[doc(hidden)]
-    pub connection_lost: std::option::Option<i32>,
+    pub connection_lost: ::std::option::Option<i32>,
     /// <p>The number of instances in the Deregistering state.</p>
     #[doc(hidden)]
-    pub deregistering: std::option::Option<i32>,
+    pub deregistering: ::std::option::Option<i32>,
     /// <p>The number of instances with <code>online</code> status.</p>
     #[doc(hidden)]
-    pub online: std::option::Option<i32>,
+    pub online: ::std::option::Option<i32>,
     /// <p>The number of instances with <code>pending</code> status.</p>
     #[doc(hidden)]
-    pub pending: std::option::Option<i32>,
+    pub pending: ::std::option::Option<i32>,
     /// <p>The number of instances with <code>rebooting</code> status.</p>
     #[doc(hidden)]
-    pub rebooting: std::option::Option<i32>,
+    pub rebooting: ::std::option::Option<i32>,
     /// <p>The number of instances in the Registered state.</p>
     #[doc(hidden)]
-    pub registered: std::option::Option<i32>,
+    pub registered: ::std::option::Option<i32>,
     /// <p>The number of instances in the Registering state.</p>
     #[doc(hidden)]
-    pub registering: std::option::Option<i32>,
+    pub registering: ::std::option::Option<i32>,
     /// <p>The number of instances with <code>requested</code> status.</p>
     #[doc(hidden)]
-    pub requested: std::option::Option<i32>,
+    pub requested: ::std::option::Option<i32>,
     /// <p>The number of instances with <code>running_setup</code> status.</p>
     #[doc(hidden)]
-    pub running_setup: std::option::Option<i32>,
+    pub running_setup: ::std::option::Option<i32>,
     /// <p>The number of instances with <code>setup_failed</code> status.</p>
     #[doc(hidden)]
-    pub setup_failed: std::option::Option<i32>,
+    pub setup_failed: ::std::option::Option<i32>,
     /// <p>The number of instances with <code>shutting_down</code> status.</p>
     #[doc(hidden)]
-    pub shutting_down: std::option::Option<i32>,
+    pub shutting_down: ::std::option::Option<i32>,
     /// <p>The number of instances with <code>start_failed</code> status.</p>
     #[doc(hidden)]
-    pub start_failed: std::option::Option<i32>,
+    pub start_failed: ::std::option::Option<i32>,
     /// <p>The number of instances with <code>stop_failed</code> status.</p>
     #[doc(hidden)]
-    pub stop_failed: std::option::Option<i32>,
+    pub stop_failed: ::std::option::Option<i32>,
     /// <p>The number of instances with <code>stopped</code> status.</p>
     #[doc(hidden)]
-    pub stopped: std::option::Option<i32>,
+    pub stopped: ::std::option::Option<i32>,
     /// <p>The number of instances with <code>stopping</code> status.</p>
     #[doc(hidden)]
-    pub stopping: std::option::Option<i32>,
+    pub stopping: ::std::option::Option<i32>,
     /// <p>The number of instances with <code>terminated</code> status.</p>
     #[doc(hidden)]
-    pub terminated: std::option::Option<i32>,
+    pub terminated: ::std::option::Option<i32>,
     /// <p>The number of instances with <code>terminating</code> status.</p>
     #[doc(hidden)]
-    pub terminating: std::option::Option<i32>,
+    pub terminating: ::std::option::Option<i32>,
     /// <p>The number of instances in the Unassigning state.</p>
     #[doc(hidden)]
-    pub unassigning: std::option::Option<i32>,
+    pub unassigning: ::std::option::Option<i32>,
 }
 impl InstancesCount {
     /// <p>The number of instances in the Assigning state.</p>
-    pub fn assigning(&self) -> std::option::Option<i32> {
+    pub fn assigning(&self) -> ::std::option::Option<i32> {
         self.assigning
     }
     /// <p>The number of instances with <code>booting</code> status.</p>
-    pub fn booting(&self) -> std::option::Option<i32> {
+    pub fn booting(&self) -> ::std::option::Option<i32> {
         self.booting
     }
     /// <p>The number of instances with <code>connection_lost</code> status.</p>
-    pub fn connection_lost(&self) -> std::option::Option<i32> {
+    pub fn connection_lost(&self) -> ::std::option::Option<i32> {
         self.connection_lost
     }
     /// <p>The number of instances in the Deregistering state.</p>
-    pub fn deregistering(&self) -> std::option::Option<i32> {
+    pub fn deregistering(&self) -> ::std::option::Option<i32> {
         self.deregistering
     }
     /// <p>The number of instances with <code>online</code> status.</p>
-    pub fn online(&self) -> std::option::Option<i32> {
+    pub fn online(&self) -> ::std::option::Option<i32> {
         self.online
     }
     /// <p>The number of instances with <code>pending</code> status.</p>
-    pub fn pending(&self) -> std::option::Option<i32> {
+    pub fn pending(&self) -> ::std::option::Option<i32> {
         self.pending
     }
     /// <p>The number of instances with <code>rebooting</code> status.</p>
-    pub fn rebooting(&self) -> std::option::Option<i32> {
+    pub fn rebooting(&self) -> ::std::option::Option<i32> {
         self.rebooting
     }
     /// <p>The number of instances in the Registered state.</p>
-    pub fn registered(&self) -> std::option::Option<i32> {
+    pub fn registered(&self) -> ::std::option::Option<i32> {
         self.registered
     }
     /// <p>The number of instances in the Registering state.</p>
-    pub fn registering(&self) -> std::option::Option<i32> {
+    pub fn registering(&self) -> ::std::option::Option<i32> {
         self.registering
     }
     /// <p>The number of instances with <code>requested</code> status.</p>
-    pub fn requested(&self) -> std::option::Option<i32> {
+    pub fn requested(&self) -> ::std::option::Option<i32> {
         self.requested
     }
     /// <p>The number of instances with <code>running_setup</code> status.</p>
-    pub fn running_setup(&self) -> std::option::Option<i32> {
+    pub fn running_setup(&self) -> ::std::option::Option<i32> {
         self.running_setup
     }
     /// <p>The number of instances with <code>setup_failed</code> status.</p>
-    pub fn setup_failed(&self) -> std::option::Option<i32> {
+    pub fn setup_failed(&self) -> ::std::option::Option<i32> {
         self.setup_failed
     }
     /// <p>The number of instances with <code>shutting_down</code> status.</p>
-    pub fn shutting_down(&self) -> std::option::Option<i32> {
+    pub fn shutting_down(&self) -> ::std::option::Option<i32> {
         self.shutting_down
     }
     /// <p>The number of instances with <code>start_failed</code> status.</p>
-    pub fn start_failed(&self) -> std::option::Option<i32> {
+    pub fn start_failed(&self) -> ::std::option::Option<i32> {
         self.start_failed
     }
     /// <p>The number of instances with <code>stop_failed</code> status.</p>
-    pub fn stop_failed(&self) -> std::option::Option<i32> {
+    pub fn stop_failed(&self) -> ::std::option::Option<i32> {
         self.stop_failed
     }
     /// <p>The number of instances with <code>stopped</code> status.</p>
-    pub fn stopped(&self) -> std::option::Option<i32> {
+    pub fn stopped(&self) -> ::std::option::Option<i32> {
         self.stopped
     }
     /// <p>The number of instances with <code>stopping</code> status.</p>
-    pub fn stopping(&self) -> std::option::Option<i32> {
+    pub fn stopping(&self) -> ::std::option::Option<i32> {
         self.stopping
     }
     /// <p>The number of instances with <code>terminated</code> status.</p>
-    pub fn terminated(&self) -> std::option::Option<i32> {
+    pub fn terminated(&self) -> ::std::option::Option<i32> {
         self.terminated
     }
     /// <p>The number of instances with <code>terminating</code> status.</p>
-    pub fn terminating(&self) -> std::option::Option<i32> {
+    pub fn terminating(&self) -> ::std::option::Option<i32> {
         self.terminating
     }
     /// <p>The number of instances in the Unassigning state.</p>
-    pub fn unassigning(&self) -> std::option::Option<i32> {
+    pub fn unassigning(&self) -> ::std::option::Option<i32> {
         self.unassigning
     }
 }
@@ -156,227 +156,229 @@ impl InstancesCount {
 
 /// A builder for [`InstancesCount`](crate::types::InstancesCount).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InstancesCountBuilder {
-    pub(crate) assigning: std::option::Option<i32>,
-    pub(crate) booting: std::option::Option<i32>,
-    pub(crate) connection_lost: std::option::Option<i32>,
-    pub(crate) deregistering: std::option::Option<i32>,
-    pub(crate) online: std::option::Option<i32>,
-    pub(crate) pending: std::option::Option<i32>,
-    pub(crate) rebooting: std::option::Option<i32>,
-    pub(crate) registered: std::option::Option<i32>,
-    pub(crate) registering: std::option::Option<i32>,
-    pub(crate) requested: std::option::Option<i32>,
-    pub(crate) running_setup: std::option::Option<i32>,
-    pub(crate) setup_failed: std::option::Option<i32>,
-    pub(crate) shutting_down: std::option::Option<i32>,
-    pub(crate) start_failed: std::option::Option<i32>,
-    pub(crate) stop_failed: std::option::Option<i32>,
-    pub(crate) stopped: std::option::Option<i32>,
-    pub(crate) stopping: std::option::Option<i32>,
-    pub(crate) terminated: std::option::Option<i32>,
-    pub(crate) terminating: std::option::Option<i32>,
-    pub(crate) unassigning: std::option::Option<i32>,
+    pub(crate) assigning: ::std::option::Option<i32>,
+    pub(crate) booting: ::std::option::Option<i32>,
+    pub(crate) connection_lost: ::std::option::Option<i32>,
+    pub(crate) deregistering: ::std::option::Option<i32>,
+    pub(crate) online: ::std::option::Option<i32>,
+    pub(crate) pending: ::std::option::Option<i32>,
+    pub(crate) rebooting: ::std::option::Option<i32>,
+    pub(crate) registered: ::std::option::Option<i32>,
+    pub(crate) registering: ::std::option::Option<i32>,
+    pub(crate) requested: ::std::option::Option<i32>,
+    pub(crate) running_setup: ::std::option::Option<i32>,
+    pub(crate) setup_failed: ::std::option::Option<i32>,
+    pub(crate) shutting_down: ::std::option::Option<i32>,
+    pub(crate) start_failed: ::std::option::Option<i32>,
+    pub(crate) stop_failed: ::std::option::Option<i32>,
+    pub(crate) stopped: ::std::option::Option<i32>,
+    pub(crate) stopping: ::std::option::Option<i32>,
+    pub(crate) terminated: ::std::option::Option<i32>,
+    pub(crate) terminating: ::std::option::Option<i32>,
+    pub(crate) unassigning: ::std::option::Option<i32>,
 }
 impl InstancesCountBuilder {
     /// <p>The number of instances in the Assigning state.</p>
     pub fn assigning(mut self, input: i32) -> Self {
-        self.assigning = Some(input);
+        self.assigning = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of instances in the Assigning state.</p>
-    pub fn set_assigning(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_assigning(mut self, input: ::std::option::Option<i32>) -> Self {
         self.assigning = input;
         self
     }
     /// <p>The number of instances with <code>booting</code> status.</p>
     pub fn booting(mut self, input: i32) -> Self {
-        self.booting = Some(input);
+        self.booting = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of instances with <code>booting</code> status.</p>
-    pub fn set_booting(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_booting(mut self, input: ::std::option::Option<i32>) -> Self {
         self.booting = input;
         self
     }
     /// <p>The number of instances with <code>connection_lost</code> status.</p>
     pub fn connection_lost(mut self, input: i32) -> Self {
-        self.connection_lost = Some(input);
+        self.connection_lost = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of instances with <code>connection_lost</code> status.</p>
-    pub fn set_connection_lost(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_connection_lost(mut self, input: ::std::option::Option<i32>) -> Self {
         self.connection_lost = input;
         self
     }
     /// <p>The number of instances in the Deregistering state.</p>
     pub fn deregistering(mut self, input: i32) -> Self {
-        self.deregistering = Some(input);
+        self.deregistering = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of instances in the Deregistering state.</p>
-    pub fn set_deregistering(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_deregistering(mut self, input: ::std::option::Option<i32>) -> Self {
         self.deregistering = input;
         self
     }
     /// <p>The number of instances with <code>online</code> status.</p>
     pub fn online(mut self, input: i32) -> Self {
-        self.online = Some(input);
+        self.online = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of instances with <code>online</code> status.</p>
-    pub fn set_online(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_online(mut self, input: ::std::option::Option<i32>) -> Self {
         self.online = input;
         self
     }
     /// <p>The number of instances with <code>pending</code> status.</p>
     pub fn pending(mut self, input: i32) -> Self {
-        self.pending = Some(input);
+        self.pending = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of instances with <code>pending</code> status.</p>
-    pub fn set_pending(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_pending(mut self, input: ::std::option::Option<i32>) -> Self {
         self.pending = input;
         self
     }
     /// <p>The number of instances with <code>rebooting</code> status.</p>
     pub fn rebooting(mut self, input: i32) -> Self {
-        self.rebooting = Some(input);
+        self.rebooting = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of instances with <code>rebooting</code> status.</p>
-    pub fn set_rebooting(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_rebooting(mut self, input: ::std::option::Option<i32>) -> Self {
         self.rebooting = input;
         self
     }
     /// <p>The number of instances in the Registered state.</p>
     pub fn registered(mut self, input: i32) -> Self {
-        self.registered = Some(input);
+        self.registered = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of instances in the Registered state.</p>
-    pub fn set_registered(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_registered(mut self, input: ::std::option::Option<i32>) -> Self {
         self.registered = input;
         self
     }
     /// <p>The number of instances in the Registering state.</p>
     pub fn registering(mut self, input: i32) -> Self {
-        self.registering = Some(input);
+        self.registering = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of instances in the Registering state.</p>
-    pub fn set_registering(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_registering(mut self, input: ::std::option::Option<i32>) -> Self {
         self.registering = input;
         self
     }
     /// <p>The number of instances with <code>requested</code> status.</p>
     pub fn requested(mut self, input: i32) -> Self {
-        self.requested = Some(input);
+        self.requested = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of instances with <code>requested</code> status.</p>
-    pub fn set_requested(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_requested(mut self, input: ::std::option::Option<i32>) -> Self {
         self.requested = input;
         self
     }
     /// <p>The number of instances with <code>running_setup</code> status.</p>
     pub fn running_setup(mut self, input: i32) -> Self {
-        self.running_setup = Some(input);
+        self.running_setup = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of instances with <code>running_setup</code> status.</p>
-    pub fn set_running_setup(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_running_setup(mut self, input: ::std::option::Option<i32>) -> Self {
         self.running_setup = input;
         self
     }
     /// <p>The number of instances with <code>setup_failed</code> status.</p>
     pub fn setup_failed(mut self, input: i32) -> Self {
-        self.setup_failed = Some(input);
+        self.setup_failed = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of instances with <code>setup_failed</code> status.</p>
-    pub fn set_setup_failed(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_setup_failed(mut self, input: ::std::option::Option<i32>) -> Self {
         self.setup_failed = input;
         self
     }
     /// <p>The number of instances with <code>shutting_down</code> status.</p>
     pub fn shutting_down(mut self, input: i32) -> Self {
-        self.shutting_down = Some(input);
+        self.shutting_down = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of instances with <code>shutting_down</code> status.</p>
-    pub fn set_shutting_down(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_shutting_down(mut self, input: ::std::option::Option<i32>) -> Self {
         self.shutting_down = input;
         self
     }
     /// <p>The number of instances with <code>start_failed</code> status.</p>
     pub fn start_failed(mut self, input: i32) -> Self {
-        self.start_failed = Some(input);
+        self.start_failed = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of instances with <code>start_failed</code> status.</p>
-    pub fn set_start_failed(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_start_failed(mut self, input: ::std::option::Option<i32>) -> Self {
         self.start_failed = input;
         self
     }
     /// <p>The number of instances with <code>stop_failed</code> status.</p>
     pub fn stop_failed(mut self, input: i32) -> Self {
-        self.stop_failed = Some(input);
+        self.stop_failed = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of instances with <code>stop_failed</code> status.</p>
-    pub fn set_stop_failed(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_stop_failed(mut self, input: ::std::option::Option<i32>) -> Self {
         self.stop_failed = input;
         self
     }
     /// <p>The number of instances with <code>stopped</code> status.</p>
     pub fn stopped(mut self, input: i32) -> Self {
-        self.stopped = Some(input);
+        self.stopped = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of instances with <code>stopped</code> status.</p>
-    pub fn set_stopped(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_stopped(mut self, input: ::std::option::Option<i32>) -> Self {
         self.stopped = input;
         self
     }
     /// <p>The number of instances with <code>stopping</code> status.</p>
     pub fn stopping(mut self, input: i32) -> Self {
-        self.stopping = Some(input);
+        self.stopping = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of instances with <code>stopping</code> status.</p>
-    pub fn set_stopping(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_stopping(mut self, input: ::std::option::Option<i32>) -> Self {
         self.stopping = input;
         self
     }
     /// <p>The number of instances with <code>terminated</code> status.</p>
     pub fn terminated(mut self, input: i32) -> Self {
-        self.terminated = Some(input);
+        self.terminated = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of instances with <code>terminated</code> status.</p>
-    pub fn set_terminated(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_terminated(mut self, input: ::std::option::Option<i32>) -> Self {
         self.terminated = input;
         self
     }
     /// <p>The number of instances with <code>terminating</code> status.</p>
     pub fn terminating(mut self, input: i32) -> Self {
-        self.terminating = Some(input);
+        self.terminating = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of instances with <code>terminating</code> status.</p>
-    pub fn set_terminating(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_terminating(mut self, input: ::std::option::Option<i32>) -> Self {
         self.terminating = input;
         self
     }
     /// <p>The number of instances in the Unassigning state.</p>
     pub fn unassigning(mut self, input: i32) -> Self {
-        self.unassigning = Some(input);
+        self.unassigning = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of instances in the Unassigning state.</p>
-    pub fn set_unassigning(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_unassigning(mut self, input: ::std::option::Option<i32>) -> Self {
         self.unassigning = input;
         self
     }

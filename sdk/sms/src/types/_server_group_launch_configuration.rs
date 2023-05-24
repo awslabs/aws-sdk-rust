@@ -2,32 +2,32 @@
 
 /// <p>Launch configuration for a server group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServerGroupLaunchConfiguration {
     /// <p>The ID of the server group with which the launch configuration is associated.</p>
     #[doc(hidden)]
-    pub server_group_id: std::option::Option<std::string::String>,
+    pub server_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The launch order of servers in the server group.</p>
     #[doc(hidden)]
-    pub launch_order: std::option::Option<i32>,
+    pub launch_order: ::std::option::Option<i32>,
     /// <p>The launch configuration for servers in the server group.</p>
     #[doc(hidden)]
     pub server_launch_configurations:
-        std::option::Option<std::vec::Vec<crate::types::ServerLaunchConfiguration>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ServerLaunchConfiguration>>,
 }
 impl ServerGroupLaunchConfiguration {
     /// <p>The ID of the server group with which the launch configuration is associated.</p>
-    pub fn server_group_id(&self) -> std::option::Option<&str> {
+    pub fn server_group_id(&self) -> ::std::option::Option<&str> {
         self.server_group_id.as_deref()
     }
     /// <p>The launch order of servers in the server group.</p>
-    pub fn launch_order(&self) -> std::option::Option<i32> {
+    pub fn launch_order(&self) -> ::std::option::Option<i32> {
         self.launch_order
     }
     /// <p>The launch configuration for servers in the server group.</p>
     pub fn server_launch_configurations(
         &self,
-    ) -> std::option::Option<&[crate::types::ServerLaunchConfiguration]> {
+    ) -> ::std::option::Option<&[crate::types::ServerLaunchConfiguration]> {
         self.server_launch_configurations.as_deref()
     }
 }
@@ -40,31 +40,39 @@ impl ServerGroupLaunchConfiguration {
 
 /// A builder for [`ServerGroupLaunchConfiguration`](crate::types::ServerGroupLaunchConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ServerGroupLaunchConfigurationBuilder {
-    pub(crate) server_group_id: std::option::Option<std::string::String>,
-    pub(crate) launch_order: std::option::Option<i32>,
+    pub(crate) server_group_id: ::std::option::Option<::std::string::String>,
+    pub(crate) launch_order: ::std::option::Option<i32>,
     pub(crate) server_launch_configurations:
-        std::option::Option<std::vec::Vec<crate::types::ServerLaunchConfiguration>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ServerLaunchConfiguration>>,
 }
 impl ServerGroupLaunchConfigurationBuilder {
     /// <p>The ID of the server group with which the launch configuration is associated.</p>
-    pub fn server_group_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.server_group_id = Some(input.into());
+    pub fn server_group_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.server_group_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the server group with which the launch configuration is associated.</p>
-    pub fn set_server_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_server_group_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.server_group_id = input;
         self
     }
     /// <p>The launch order of servers in the server group.</p>
     pub fn launch_order(mut self, input: i32) -> Self {
-        self.launch_order = Some(input);
+        self.launch_order = ::std::option::Option::Some(input);
         self
     }
     /// <p>The launch order of servers in the server group.</p>
-    pub fn set_launch_order(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_launch_order(mut self, input: ::std::option::Option<i32>) -> Self {
         self.launch_order = input;
         self
     }
@@ -79,13 +87,13 @@ impl ServerGroupLaunchConfigurationBuilder {
     ) -> Self {
         let mut v = self.server_launch_configurations.unwrap_or_default();
         v.push(input);
-        self.server_launch_configurations = Some(v);
+        self.server_launch_configurations = ::std::option::Option::Some(v);
         self
     }
     /// <p>The launch configuration for servers in the server group.</p>
     pub fn set_server_launch_configurations(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ServerLaunchConfiguration>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ServerLaunchConfiguration>>,
     ) -> Self {
         self.server_launch_configurations = input;
         self

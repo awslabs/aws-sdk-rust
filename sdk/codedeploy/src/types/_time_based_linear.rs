@@ -2,7 +2,7 @@
 
 /// <p>A configuration that shifts traffic from one version of a Lambda function or ECS task set to another in equal increments, with an equal number of minutes between each increment. The original and target Lambda function versions or ECS task sets are specified in the deployment's AppSpec file.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TimeBasedLinear {
     /// <p>The percentage of traffic that is shifted at the start of each increment of a <code>TimeBasedLinear</code> deployment.</p>
     #[doc(hidden)]
@@ -30,29 +30,31 @@ impl TimeBasedLinear {
 
 /// A builder for [`TimeBasedLinear`](crate::types::TimeBasedLinear).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TimeBasedLinearBuilder {
-    pub(crate) linear_percentage: std::option::Option<i32>,
-    pub(crate) linear_interval: std::option::Option<i32>,
+    pub(crate) linear_percentage: ::std::option::Option<i32>,
+    pub(crate) linear_interval: ::std::option::Option<i32>,
 }
 impl TimeBasedLinearBuilder {
     /// <p>The percentage of traffic that is shifted at the start of each increment of a <code>TimeBasedLinear</code> deployment.</p>
     pub fn linear_percentage(mut self, input: i32) -> Self {
-        self.linear_percentage = Some(input);
+        self.linear_percentage = ::std::option::Option::Some(input);
         self
     }
     /// <p>The percentage of traffic that is shifted at the start of each increment of a <code>TimeBasedLinear</code> deployment.</p>
-    pub fn set_linear_percentage(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_linear_percentage(mut self, input: ::std::option::Option<i32>) -> Self {
         self.linear_percentage = input;
         self
     }
     /// <p>The number of minutes between each incremental traffic shift of a <code>TimeBasedLinear</code> deployment.</p>
     pub fn linear_interval(mut self, input: i32) -> Self {
-        self.linear_interval = Some(input);
+        self.linear_interval = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of minutes between each incremental traffic shift of a <code>TimeBasedLinear</code> deployment.</p>
-    pub fn set_linear_interval(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_linear_interval(mut self, input: ::std::option::Option<i32>) -> Self {
         self.linear_interval = input;
         self
     }

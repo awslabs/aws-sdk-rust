@@ -2,22 +2,22 @@
 
 /// <p>A complex type that contains information about the request to authorize associating a VPC with your private hosted zone. Authorization is only required when a private hosted zone and a VPC were created by using different accounts.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateVpcAssociationAuthorizationInput {
     /// <p>The ID of the private hosted zone that you want to authorize associating a VPC with.</p>
     #[doc(hidden)]
-    pub hosted_zone_id: std::option::Option<std::string::String>,
+    pub hosted_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>A complex type that contains the VPC ID and region for the VPC that you want to authorize associating with your hosted zone.</p>
     #[doc(hidden)]
-    pub vpc: std::option::Option<crate::types::Vpc>,
+    pub vpc: ::std::option::Option<crate::types::Vpc>,
 }
 impl CreateVpcAssociationAuthorizationInput {
     /// <p>The ID of the private hosted zone that you want to authorize associating a VPC with.</p>
-    pub fn hosted_zone_id(&self) -> std::option::Option<&str> {
+    pub fn hosted_zone_id(&self) -> ::std::option::Option<&str> {
         self.hosted_zone_id.as_deref()
     }
     /// <p>A complex type that contains the VPC ID and region for the VPC that you want to authorize associating with your hosted zone.</p>
-    pub fn vpc(&self) -> std::option::Option<&crate::types::Vpc> {
+    pub fn vpc(&self) -> ::std::option::Option<&crate::types::Vpc> {
         self.vpc.as_ref()
     }
 }
@@ -30,35 +30,43 @@ impl CreateVpcAssociationAuthorizationInput {
 
 /// A builder for [`CreateVpcAssociationAuthorizationInput`](crate::operation::create_vpc_association_authorization::CreateVpcAssociationAuthorizationInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateVpcAssociationAuthorizationInputBuilder {
-    pub(crate) hosted_zone_id: std::option::Option<std::string::String>,
-    pub(crate) vpc: std::option::Option<crate::types::Vpc>,
+    pub(crate) hosted_zone_id: ::std::option::Option<::std::string::String>,
+    pub(crate) vpc: ::std::option::Option<crate::types::Vpc>,
 }
 impl CreateVpcAssociationAuthorizationInputBuilder {
     /// <p>The ID of the private hosted zone that you want to authorize associating a VPC with.</p>
-    pub fn hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.hosted_zone_id = Some(input.into());
+    pub fn hosted_zone_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.hosted_zone_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the private hosted zone that you want to authorize associating a VPC with.</p>
-    pub fn set_hosted_zone_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_hosted_zone_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.hosted_zone_id = input;
         self
     }
     /// <p>A complex type that contains the VPC ID and region for the VPC that you want to authorize associating with your hosted zone.</p>
     pub fn vpc(mut self, input: crate::types::Vpc) -> Self {
-        self.vpc = Some(input);
+        self.vpc = ::std::option::Option::Some(input);
         self
     }
     /// <p>A complex type that contains the VPC ID and region for the VPC that you want to authorize associating with your hosted zone.</p>
-    pub fn set_vpc(mut self, input: std::option::Option<crate::types::Vpc>) -> Self {
+    pub fn set_vpc(mut self, input: ::std::option::Option<crate::types::Vpc>) -> Self {
         self.vpc = input;
         self
     }
     /// Consumes the builder and constructs a [`CreateVpcAssociationAuthorizationInput`](crate::operation::create_vpc_association_authorization::CreateVpcAssociationAuthorizationInput).
-    pub fn build(self) -> Result<crate::operation::create_vpc_association_authorization::CreateVpcAssociationAuthorizationInput, aws_smithy_http::operation::error::BuildError>{
-        Ok(
+    pub fn build(self) -> ::std::result::Result<crate::operation::create_vpc_association_authorization::CreateVpcAssociationAuthorizationInput, ::aws_smithy_http::operation::error::BuildError>{
+        ::std::result::Result::Ok(
             crate::operation::create_vpc_association_authorization::CreateVpcAssociationAuthorizationInput {
                 hosted_zone_id: self.hosted_zone_id
                 ,

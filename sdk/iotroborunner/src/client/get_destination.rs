@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetDestination`](crate::operation::get_destination::builders::GetDestinationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::get_destination::builders::GetDestinationFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_destination::builders::GetDestinationFluentBuilder::set_id): Destination ARN.
+    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::get_destination::builders::GetDestinationFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_destination::builders::GetDestinationFluentBuilder::set_id): Destination ARN.
     /// - On success, responds with [`GetDestinationOutput`](crate::operation::get_destination::GetDestinationOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::get_destination::GetDestinationOutput::arn): Destination ARN.
     ///   - [`id(Option<String>)`](crate::operation::get_destination::GetDestinationOutput::id): Filters access by the destination's identifier

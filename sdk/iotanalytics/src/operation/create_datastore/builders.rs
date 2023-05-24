@@ -6,56 +6,63 @@ pub use crate::operation::create_datastore::_create_datastore_input::CreateDatas
 /// Fluent builder constructing a request to `CreateDatastore`.
 ///
 /// <p>Creates a data store, which is a repository for messages.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateDatastoreFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_datastore::builders::CreateDatastoreInputBuilder,
 }
 impl CreateDatastoreFluentBuilder {
     /// Creates a new `CreateDatastore`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_datastore::CreateDatastore,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_datastore::CreateDatastoreError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_datastore::CreateDatastoreError,
+        >,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_datastore::CreateDatastoreOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_datastore::CreateDatastoreError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_datastore::CreateDatastoreError,
+        >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,19 +75,27 @@ impl CreateDatastoreFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_datastore::CreateDatastoreOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_datastore::CreateDatastoreError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_datastore::CreateDatastoreError,
+        >,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the data store.</p>
-    pub fn datastore_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn datastore_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.datastore_name(input.into());
         self
     }
     /// <p>The name of the data store.</p>
-    pub fn set_datastore_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_datastore_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_datastore_name(input);
         self
     }
@@ -92,7 +107,7 @@ impl CreateDatastoreFluentBuilder {
     /// <p>Where data in a data store is stored.. You can choose <code>serviceManagedS3</code> storage, <code>customerManagedS3</code> storage, or <code>iotSiteWiseMultiLayerStorage</code> storage. The default is <code>serviceManagedS3</code>. You can't change the choice of Amazon S3 storage after your data store is created. </p>
     pub fn set_datastore_storage(
         mut self,
-        input: std::option::Option<crate::types::DatastoreStorage>,
+        input: ::std::option::Option<crate::types::DatastoreStorage>,
     ) -> Self {
         self.inner = self.inner.set_datastore_storage(input);
         self
@@ -105,7 +120,7 @@ impl CreateDatastoreFluentBuilder {
     /// <p>How long, in days, message data is kept for the data store. When <code>customerManagedS3</code> storage is selected, this parameter is ignored.</p>
     pub fn set_retention_period(
         mut self,
-        input: std::option::Option<crate::types::RetentionPeriod>,
+        input: ::std::option::Option<crate::types::RetentionPeriod>,
     ) -> Self {
         self.inner = self.inner.set_retention_period(input);
         self
@@ -122,7 +137,7 @@ impl CreateDatastoreFluentBuilder {
     /// <p>Metadata which can be used to manage the data store.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
@@ -142,7 +157,7 @@ impl CreateDatastoreFluentBuilder {
     /// <p>You can't change the file format after you create the data store.</p>
     pub fn set_file_format_configuration(
         mut self,
-        input: std::option::Option<crate::types::FileFormatConfiguration>,
+        input: ::std::option::Option<crate::types::FileFormatConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_file_format_configuration(input);
         self
@@ -155,7 +170,7 @@ impl CreateDatastoreFluentBuilder {
     /// <p> Contains information about the partition dimensions in a data store. </p>
     pub fn set_datastore_partitions(
         mut self,
-        input: std::option::Option<crate::types::DatastorePartitions>,
+        input: ::std::option::Option<crate::types::DatastorePartitions>,
     ) -> Self {
         self.inner = self.inner.set_datastore_partitions(input);
         self

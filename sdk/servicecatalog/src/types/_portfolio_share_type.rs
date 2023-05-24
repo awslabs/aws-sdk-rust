@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum PortfolioShareType {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum PortfolioShareType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for PortfolioShareType {
+impl ::std::convert::From<&str> for PortfolioShareType {
     fn from(s: &str) -> Self {
         match s {
             "AWS_ORGANIZATIONS" => PortfolioShareType::AwsOrganizations,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for PortfolioShareType {
         }
     }
 }
-impl std::str::FromStr for PortfolioShareType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for PortfolioShareType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(PortfolioShareType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(PortfolioShareType::from(s))
     }
 }
 impl PortfolioShareType {
@@ -91,7 +91,7 @@ impl PortfolioShareType {
         &["AWS_ORGANIZATIONS", "AWS_SERVICECATALOG", "IMPORTED"]
     }
 }
-impl AsRef<str> for PortfolioShareType {
+impl ::std::convert::AsRef<str> for PortfolioShareType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

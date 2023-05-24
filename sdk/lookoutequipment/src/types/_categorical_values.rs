@@ -2,22 +2,22 @@
 
 /// <p> Entity that comprises information on categorical values in data. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CategoricalValues {
     /// <p> Indicates whether there is a potential data issue related to categorical values. </p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::StatisticalIssueStatus>,
+    pub status: ::std::option::Option<crate::types::StatisticalIssueStatus>,
     /// <p> Indicates the number of categories in the data. </p>
     #[doc(hidden)]
-    pub number_of_category: std::option::Option<i32>,
+    pub number_of_category: ::std::option::Option<i32>,
 }
 impl CategoricalValues {
     /// <p> Indicates whether there is a potential data issue related to categorical values. </p>
-    pub fn status(&self) -> std::option::Option<&crate::types::StatisticalIssueStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::StatisticalIssueStatus> {
         self.status.as_ref()
     }
     /// <p> Indicates the number of categories in the data. </p>
-    pub fn number_of_category(&self) -> std::option::Option<i32> {
+    pub fn number_of_category(&self) -> ::std::option::Option<i32> {
         self.number_of_category
     }
 }
@@ -30,32 +30,34 @@ impl CategoricalValues {
 
 /// A builder for [`CategoricalValues`](crate::types::CategoricalValues).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CategoricalValuesBuilder {
-    pub(crate) status: std::option::Option<crate::types::StatisticalIssueStatus>,
-    pub(crate) number_of_category: std::option::Option<i32>,
+    pub(crate) status: ::std::option::Option<crate::types::StatisticalIssueStatus>,
+    pub(crate) number_of_category: ::std::option::Option<i32>,
 }
 impl CategoricalValuesBuilder {
     /// <p> Indicates whether there is a potential data issue related to categorical values. </p>
     pub fn status(mut self, input: crate::types::StatisticalIssueStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p> Indicates whether there is a potential data issue related to categorical values. </p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::StatisticalIssueStatus>,
+        input: ::std::option::Option<crate::types::StatisticalIssueStatus>,
     ) -> Self {
         self.status = input;
         self
     }
     /// <p> Indicates the number of categories in the data. </p>
     pub fn number_of_category(mut self, input: i32) -> Self {
-        self.number_of_category = Some(input);
+        self.number_of_category = ::std::option::Option::Some(input);
         self
     }
     /// <p> Indicates the number of categories in the data. </p>
-    pub fn set_number_of_category(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_number_of_category(mut self, input: ::std::option::Option<i32>) -> Self {
         self.number_of_category = input;
         self
     }

@@ -2,27 +2,27 @@
 
 /// Represents the output of a ListWorkspaces operation.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListWorkspacesOutput {
     /// The list of existing workspaces, including those undergoing creation or deletion.
     #[doc(hidden)]
-    pub workspaces: std::option::Option<std::vec::Vec<crate::types::WorkspaceSummary>>,
+    pub workspaces: ::std::option::Option<::std::vec::Vec<crate::types::WorkspaceSummary>>,
     /// Pagination token to use when requesting the next page in this list.
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListWorkspacesOutput {
     /// The list of existing workspaces, including those undergoing creation or deletion.
-    pub fn workspaces(&self) -> std::option::Option<&[crate::types::WorkspaceSummary]> {
+    pub fn workspaces(&self) -> ::std::option::Option<&[crate::types::WorkspaceSummary]> {
         self.workspaces.as_deref()
     }
     /// Pagination token to use when requesting the next page in this list.
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListWorkspacesOutput {
+impl ::aws_http::request_id::RequestId for ListWorkspacesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -36,10 +36,12 @@ impl ListWorkspacesOutput {
 
 /// A builder for [`ListWorkspacesOutput`](crate::operation::list_workspaces::ListWorkspacesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListWorkspacesOutputBuilder {
-    pub(crate) workspaces: std::option::Option<std::vec::Vec<crate::types::WorkspaceSummary>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) workspaces: ::std::option::Option<::std::vec::Vec<crate::types::WorkspaceSummary>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListWorkspacesOutputBuilder {
@@ -51,24 +53,24 @@ impl ListWorkspacesOutputBuilder {
     pub fn workspaces(mut self, input: crate::types::WorkspaceSummary) -> Self {
         let mut v = self.workspaces.unwrap_or_default();
         v.push(input);
-        self.workspaces = Some(v);
+        self.workspaces = ::std::option::Option::Some(v);
         self
     }
     /// The list of existing workspaces, including those undergoing creation or deletion.
     pub fn set_workspaces(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::WorkspaceSummary>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::WorkspaceSummary>>,
     ) -> Self {
         self.workspaces = input;
         self
     }
     /// Pagination token to use when requesting the next page in this list.
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// Pagination token to use when requesting the next page in this list.
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

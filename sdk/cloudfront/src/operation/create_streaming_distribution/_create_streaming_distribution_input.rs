@@ -2,18 +2,18 @@
 
 /// <p>The request to create a new streaming distribution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateStreamingDistributionInput {
     /// <p>The streaming distribution's configuration information.</p>
     #[doc(hidden)]
     pub streaming_distribution_config:
-        std::option::Option<crate::types::StreamingDistributionConfig>,
+        ::std::option::Option<crate::types::StreamingDistributionConfig>,
 }
 impl CreateStreamingDistributionInput {
     /// <p>The streaming distribution's configuration information.</p>
     pub fn streaming_distribution_config(
         &self,
-    ) -> std::option::Option<&crate::types::StreamingDistributionConfig> {
+    ) -> ::std::option::Option<&crate::types::StreamingDistributionConfig> {
         self.streaming_distribution_config.as_ref()
     }
 }
@@ -26,10 +26,12 @@ impl CreateStreamingDistributionInput {
 
 /// A builder for [`CreateStreamingDistributionInput`](crate::operation::create_streaming_distribution::CreateStreamingDistributionInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateStreamingDistributionInputBuilder {
     pub(crate) streaming_distribution_config:
-        std::option::Option<crate::types::StreamingDistributionConfig>,
+        ::std::option::Option<crate::types::StreamingDistributionConfig>,
 }
 impl CreateStreamingDistributionInputBuilder {
     /// <p>The streaming distribution's configuration information.</p>
@@ -37,13 +39,13 @@ impl CreateStreamingDistributionInputBuilder {
         mut self,
         input: crate::types::StreamingDistributionConfig,
     ) -> Self {
-        self.streaming_distribution_config = Some(input);
+        self.streaming_distribution_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The streaming distribution's configuration information.</p>
     pub fn set_streaming_distribution_config(
         mut self,
-        input: std::option::Option<crate::types::StreamingDistributionConfig>,
+        input: ::std::option::Option<crate::types::StreamingDistributionConfig>,
     ) -> Self {
         self.streaming_distribution_config = input;
         self
@@ -51,11 +53,11 @@ impl CreateStreamingDistributionInputBuilder {
     /// Consumes the builder and constructs a [`CreateStreamingDistributionInput`](crate::operation::create_streaming_distribution::CreateStreamingDistributionInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::create_streaming_distribution::CreateStreamingDistributionInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::create_streaming_distribution::CreateStreamingDistributionInput {
                 streaming_distribution_config: self.streaming_distribution_config,
             },

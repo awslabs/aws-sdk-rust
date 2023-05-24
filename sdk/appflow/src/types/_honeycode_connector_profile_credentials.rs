@@ -2,34 +2,34 @@
 
 /// <p> The connector-specific credentials required when using Amazon Honeycode. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct HoneycodeConnectorProfileCredentials {
     /// <p> The credentials used to access protected Amazon Honeycode resources. </p>
     #[doc(hidden)]
-    pub access_token: std::option::Option<std::string::String>,
+    pub access_token: ::std::option::Option<::std::string::String>,
     /// <p> The credentials used to acquire new access tokens. </p>
     #[doc(hidden)]
-    pub refresh_token: std::option::Option<std::string::String>,
+    pub refresh_token: ::std::option::Option<::std::string::String>,
     /// <p> Used by select connectors for which the OAuth workflow is supported, such as Salesforce, Google Analytics, Marketo, Zendesk, and Slack. </p>
     #[doc(hidden)]
-    pub o_auth_request: std::option::Option<crate::types::ConnectorOAuthRequest>,
+    pub o_auth_request: ::std::option::Option<crate::types::ConnectorOAuthRequest>,
 }
 impl HoneycodeConnectorProfileCredentials {
     /// <p> The credentials used to access protected Amazon Honeycode resources. </p>
-    pub fn access_token(&self) -> std::option::Option<&str> {
+    pub fn access_token(&self) -> ::std::option::Option<&str> {
         self.access_token.as_deref()
     }
     /// <p> The credentials used to acquire new access tokens. </p>
-    pub fn refresh_token(&self) -> std::option::Option<&str> {
+    pub fn refresh_token(&self) -> ::std::option::Option<&str> {
         self.refresh_token.as_deref()
     }
     /// <p> Used by select connectors for which the OAuth workflow is supported, such as Salesforce, Google Analytics, Marketo, Zendesk, and Slack. </p>
-    pub fn o_auth_request(&self) -> std::option::Option<&crate::types::ConnectorOAuthRequest> {
+    pub fn o_auth_request(&self) -> ::std::option::Option<&crate::types::ConnectorOAuthRequest> {
         self.o_auth_request.as_ref()
     }
 }
-impl std::fmt::Debug for HoneycodeConnectorProfileCredentials {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for HoneycodeConnectorProfileCredentials {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("HoneycodeConnectorProfileCredentials");
         formatter.field("access_token", &"*** Sensitive Data Redacted ***");
         formatter.field("refresh_token", &self.refresh_token);
@@ -46,42 +46,48 @@ impl HoneycodeConnectorProfileCredentials {
 
 /// A builder for [`HoneycodeConnectorProfileCredentials`](crate::types::HoneycodeConnectorProfileCredentials).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct HoneycodeConnectorProfileCredentialsBuilder {
-    pub(crate) access_token: std::option::Option<std::string::String>,
-    pub(crate) refresh_token: std::option::Option<std::string::String>,
-    pub(crate) o_auth_request: std::option::Option<crate::types::ConnectorOAuthRequest>,
+    pub(crate) access_token: ::std::option::Option<::std::string::String>,
+    pub(crate) refresh_token: ::std::option::Option<::std::string::String>,
+    pub(crate) o_auth_request: ::std::option::Option<crate::types::ConnectorOAuthRequest>,
 }
 impl HoneycodeConnectorProfileCredentialsBuilder {
     /// <p> The credentials used to access protected Amazon Honeycode resources. </p>
-    pub fn access_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.access_token = Some(input.into());
+    pub fn access_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.access_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The credentials used to access protected Amazon Honeycode resources. </p>
-    pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_access_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.access_token = input;
         self
     }
     /// <p> The credentials used to acquire new access tokens. </p>
-    pub fn refresh_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.refresh_token = Some(input.into());
+    pub fn refresh_token(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.refresh_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The credentials used to acquire new access tokens. </p>
-    pub fn set_refresh_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_refresh_token(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.refresh_token = input;
         self
     }
     /// <p> Used by select connectors for which the OAuth workflow is supported, such as Salesforce, Google Analytics, Marketo, Zendesk, and Slack. </p>
     pub fn o_auth_request(mut self, input: crate::types::ConnectorOAuthRequest) -> Self {
-        self.o_auth_request = Some(input);
+        self.o_auth_request = ::std::option::Option::Some(input);
         self
     }
     /// <p> Used by select connectors for which the OAuth workflow is supported, such as Salesforce, Google Analytics, Marketo, Zendesk, and Slack. </p>
     pub fn set_o_auth_request(
         mut self,
-        input: std::option::Option<crate::types::ConnectorOAuthRequest>,
+        input: ::std::option::Option<crate::types::ConnectorOAuthRequest>,
     ) -> Self {
         self.o_auth_request = input;
         self
@@ -95,8 +101,8 @@ impl HoneycodeConnectorProfileCredentialsBuilder {
         }
     }
 }
-impl std::fmt::Debug for HoneycodeConnectorProfileCredentialsBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for HoneycodeConnectorProfileCredentialsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("HoneycodeConnectorProfileCredentialsBuilder");
         formatter.field("access_token", &"*** Sensitive Data Redacted ***");
         formatter.field("refresh_token", &self.refresh_token);

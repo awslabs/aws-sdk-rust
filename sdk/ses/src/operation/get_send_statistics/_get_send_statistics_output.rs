@@ -2,20 +2,20 @@
 
 /// <p>Represents a list of data points. This list contains aggregated data from the previous two weeks of your sending activity with Amazon SES.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSendStatisticsOutput {
     /// <p>A list of data points, each of which represents 15 minutes of activity.</p>
     #[doc(hidden)]
-    pub send_data_points: std::option::Option<std::vec::Vec<crate::types::SendDataPoint>>,
+    pub send_data_points: ::std::option::Option<::std::vec::Vec<crate::types::SendDataPoint>>,
     _request_id: Option<String>,
 }
 impl GetSendStatisticsOutput {
     /// <p>A list of data points, each of which represents 15 minutes of activity.</p>
-    pub fn send_data_points(&self) -> std::option::Option<&[crate::types::SendDataPoint]> {
+    pub fn send_data_points(&self) -> ::std::option::Option<&[crate::types::SendDataPoint]> {
         self.send_data_points.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for GetSendStatisticsOutput {
+impl ::aws_http::request_id::RequestId for GetSendStatisticsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,9 +30,12 @@ impl GetSendStatisticsOutput {
 
 /// A builder for [`GetSendStatisticsOutput`](crate::operation::get_send_statistics::GetSendStatisticsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetSendStatisticsOutputBuilder {
-    pub(crate) send_data_points: std::option::Option<std::vec::Vec<crate::types::SendDataPoint>>,
+    pub(crate) send_data_points:
+        ::std::option::Option<::std::vec::Vec<crate::types::SendDataPoint>>,
     _request_id: Option<String>,
 }
 impl GetSendStatisticsOutputBuilder {
@@ -44,13 +47,13 @@ impl GetSendStatisticsOutputBuilder {
     pub fn send_data_points(mut self, input: crate::types::SendDataPoint) -> Self {
         let mut v = self.send_data_points.unwrap_or_default();
         v.push(input);
-        self.send_data_points = Some(v);
+        self.send_data_points = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of data points, each of which represents 15 minutes of activity.</p>
     pub fn set_send_data_points(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SendDataPoint>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SendDataPoint>>,
     ) -> Self {
         self.send_data_points = input;
         self

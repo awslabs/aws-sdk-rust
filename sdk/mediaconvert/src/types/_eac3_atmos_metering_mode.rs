@@ -41,13 +41,13 @@
 /// Choose how the service meters the loudness of your audio.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum Eac3AtmosMeteringMode {
     #[allow(missing_docs)] // documentation missing in model
@@ -63,7 +63,7 @@ pub enum Eac3AtmosMeteringMode {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for Eac3AtmosMeteringMode {
+impl ::std::convert::From<&str> for Eac3AtmosMeteringMode {
     fn from(s: &str) -> Self {
         match s {
             "ITU_BS_1770_1" => Eac3AtmosMeteringMode::ItuBs17701,
@@ -77,11 +77,11 @@ impl std::convert::From<&str> for Eac3AtmosMeteringMode {
         }
     }
 }
-impl std::str::FromStr for Eac3AtmosMeteringMode {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for Eac3AtmosMeteringMode {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Eac3AtmosMeteringMode::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(Eac3AtmosMeteringMode::from(s))
     }
 }
 impl Eac3AtmosMeteringMode {
@@ -107,7 +107,7 @@ impl Eac3AtmosMeteringMode {
         ]
     }
 }
-impl AsRef<str> for Eac3AtmosMeteringMode {
+impl ::std::convert::AsRef<str> for Eac3AtmosMeteringMode {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

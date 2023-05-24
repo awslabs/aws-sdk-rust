@@ -2,22 +2,22 @@
 
 /// <p>Information about dimensions within a dimension group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DimensionGroupDetail {
     /// <p>The name of the dimension group.</p>
     #[doc(hidden)]
-    pub group: std::option::Option<std::string::String>,
+    pub group: ::std::option::Option<::std::string::String>,
     /// <p>The dimensions within a dimension group.</p>
     #[doc(hidden)]
-    pub dimensions: std::option::Option<std::vec::Vec<crate::types::DimensionDetail>>,
+    pub dimensions: ::std::option::Option<::std::vec::Vec<crate::types::DimensionDetail>>,
 }
 impl DimensionGroupDetail {
     /// <p>The name of the dimension group.</p>
-    pub fn group(&self) -> std::option::Option<&str> {
+    pub fn group(&self) -> ::std::option::Option<&str> {
         self.group.as_deref()
     }
     /// <p>The dimensions within a dimension group.</p>
-    pub fn dimensions(&self) -> std::option::Option<&[crate::types::DimensionDetail]> {
+    pub fn dimensions(&self) -> ::std::option::Option<&[crate::types::DimensionDetail]> {
         self.dimensions.as_deref()
     }
 }
@@ -30,19 +30,21 @@ impl DimensionGroupDetail {
 
 /// A builder for [`DimensionGroupDetail`](crate::types::DimensionGroupDetail).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DimensionGroupDetailBuilder {
-    pub(crate) group: std::option::Option<std::string::String>,
-    pub(crate) dimensions: std::option::Option<std::vec::Vec<crate::types::DimensionDetail>>,
+    pub(crate) group: ::std::option::Option<::std::string::String>,
+    pub(crate) dimensions: ::std::option::Option<::std::vec::Vec<crate::types::DimensionDetail>>,
 }
 impl DimensionGroupDetailBuilder {
     /// <p>The name of the dimension group.</p>
-    pub fn group(mut self, input: impl Into<std::string::String>) -> Self {
-        self.group = Some(input.into());
+    pub fn group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.group = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the dimension group.</p>
-    pub fn set_group(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.group = input;
         self
     }
@@ -54,13 +56,13 @@ impl DimensionGroupDetailBuilder {
     pub fn dimensions(mut self, input: crate::types::DimensionDetail) -> Self {
         let mut v = self.dimensions.unwrap_or_default();
         v.push(input);
-        self.dimensions = Some(v);
+        self.dimensions = ::std::option::Option::Some(v);
         self
     }
     /// <p>The dimensions within a dimension group.</p>
     pub fn set_dimensions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DimensionDetail>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DimensionDetail>>,
     ) -> Self {
         self.dimensions = input;
         self

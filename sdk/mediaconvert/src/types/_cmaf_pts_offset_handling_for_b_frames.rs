@@ -38,13 +38,13 @@
 /// Use this setting only when your output video stream has B-frames, which causes the initial presentation time stamp (PTS) to be offset from the initial decode time stamp (DTS). Specify how MediaConvert handles PTS when writing time stamps in output DASH manifests. Choose Match initial PTS (MATCH_INITIAL_PTS) when you want MediaConvert to use the initial PTS as the first time stamp in the manifest. Choose Zero-based (ZERO_BASED) to have MediaConvert ignore the initial PTS in the video stream and instead write the initial time stamp as zero in the manifest. For outputs that don't have B-frames, the time stamps in your DASH manifests start at zero regardless of your choice here.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum CmafPtsOffsetHandlingForBFrames {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum CmafPtsOffsetHandlingForBFrames {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for CmafPtsOffsetHandlingForBFrames {
+impl ::std::convert::From<&str> for CmafPtsOffsetHandlingForBFrames {
     fn from(s: &str) -> Self {
         match s {
             "MATCH_INITIAL_PTS" => CmafPtsOffsetHandlingForBFrames::MatchInitialPts,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for CmafPtsOffsetHandlingForBFrames {
         }
     }
 }
-impl std::str::FromStr for CmafPtsOffsetHandlingForBFrames {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for CmafPtsOffsetHandlingForBFrames {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CmafPtsOffsetHandlingForBFrames::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(CmafPtsOffsetHandlingForBFrames::from(s))
     }
 }
 impl CmafPtsOffsetHandlingForBFrames {
@@ -86,7 +86,7 @@ impl CmafPtsOffsetHandlingForBFrames {
         &["MATCH_INITIAL_PTS", "ZERO_BASED"]
     }
 }
-impl AsRef<str> for CmafPtsOffsetHandlingForBFrames {
+impl ::std::convert::AsRef<str> for CmafPtsOffsetHandlingForBFrames {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

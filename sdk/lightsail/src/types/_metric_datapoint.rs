@@ -2,57 +2,57 @@
 
 /// <p>Describes the metric data point.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetricDatapoint {
     /// <p>The average.</p>
     #[doc(hidden)]
-    pub average: std::option::Option<f64>,
+    pub average: ::std::option::Option<f64>,
     /// <p>The maximum.</p>
     #[doc(hidden)]
-    pub maximum: std::option::Option<f64>,
+    pub maximum: ::std::option::Option<f64>,
     /// <p>The minimum.</p>
     #[doc(hidden)]
-    pub minimum: std::option::Option<f64>,
+    pub minimum: ::std::option::Option<f64>,
     /// <p>The sample count.</p>
     #[doc(hidden)]
-    pub sample_count: std::option::Option<f64>,
+    pub sample_count: ::std::option::Option<f64>,
     /// <p>The sum.</p>
     #[doc(hidden)]
-    pub sum: std::option::Option<f64>,
+    pub sum: ::std::option::Option<f64>,
     /// <p>The timestamp (e.g., <code>1479816991.349</code>).</p>
     #[doc(hidden)]
-    pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The unit. </p>
     #[doc(hidden)]
-    pub unit: std::option::Option<crate::types::MetricUnit>,
+    pub unit: ::std::option::Option<crate::types::MetricUnit>,
 }
 impl MetricDatapoint {
     /// <p>The average.</p>
-    pub fn average(&self) -> std::option::Option<f64> {
+    pub fn average(&self) -> ::std::option::Option<f64> {
         self.average
     }
     /// <p>The maximum.</p>
-    pub fn maximum(&self) -> std::option::Option<f64> {
+    pub fn maximum(&self) -> ::std::option::Option<f64> {
         self.maximum
     }
     /// <p>The minimum.</p>
-    pub fn minimum(&self) -> std::option::Option<f64> {
+    pub fn minimum(&self) -> ::std::option::Option<f64> {
         self.minimum
     }
     /// <p>The sample count.</p>
-    pub fn sample_count(&self) -> std::option::Option<f64> {
+    pub fn sample_count(&self) -> ::std::option::Option<f64> {
         self.sample_count
     }
     /// <p>The sum.</p>
-    pub fn sum(&self) -> std::option::Option<f64> {
+    pub fn sum(&self) -> ::std::option::Option<f64> {
         self.sum
     }
     /// <p>The timestamp (e.g., <code>1479816991.349</code>).</p>
-    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
     /// <p>The unit. </p>
-    pub fn unit(&self) -> std::option::Option<&crate::types::MetricUnit> {
+    pub fn unit(&self) -> ::std::option::Option<&crate::types::MetricUnit> {
         self.unit.as_ref()
     }
 }
@@ -65,84 +65,89 @@ impl MetricDatapoint {
 
 /// A builder for [`MetricDatapoint`](crate::types::MetricDatapoint).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MetricDatapointBuilder {
-    pub(crate) average: std::option::Option<f64>,
-    pub(crate) maximum: std::option::Option<f64>,
-    pub(crate) minimum: std::option::Option<f64>,
-    pub(crate) sample_count: std::option::Option<f64>,
-    pub(crate) sum: std::option::Option<f64>,
-    pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) unit: std::option::Option<crate::types::MetricUnit>,
+    pub(crate) average: ::std::option::Option<f64>,
+    pub(crate) maximum: ::std::option::Option<f64>,
+    pub(crate) minimum: ::std::option::Option<f64>,
+    pub(crate) sample_count: ::std::option::Option<f64>,
+    pub(crate) sum: ::std::option::Option<f64>,
+    pub(crate) timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) unit: ::std::option::Option<crate::types::MetricUnit>,
 }
 impl MetricDatapointBuilder {
     /// <p>The average.</p>
     pub fn average(mut self, input: f64) -> Self {
-        self.average = Some(input);
+        self.average = ::std::option::Option::Some(input);
         self
     }
     /// <p>The average.</p>
-    pub fn set_average(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_average(mut self, input: ::std::option::Option<f64>) -> Self {
         self.average = input;
         self
     }
     /// <p>The maximum.</p>
     pub fn maximum(mut self, input: f64) -> Self {
-        self.maximum = Some(input);
+        self.maximum = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum.</p>
-    pub fn set_maximum(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_maximum(mut self, input: ::std::option::Option<f64>) -> Self {
         self.maximum = input;
         self
     }
     /// <p>The minimum.</p>
     pub fn minimum(mut self, input: f64) -> Self {
-        self.minimum = Some(input);
+        self.minimum = ::std::option::Option::Some(input);
         self
     }
     /// <p>The minimum.</p>
-    pub fn set_minimum(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_minimum(mut self, input: ::std::option::Option<f64>) -> Self {
         self.minimum = input;
         self
     }
     /// <p>The sample count.</p>
     pub fn sample_count(mut self, input: f64) -> Self {
-        self.sample_count = Some(input);
+        self.sample_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The sample count.</p>
-    pub fn set_sample_count(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_sample_count(mut self, input: ::std::option::Option<f64>) -> Self {
         self.sample_count = input;
         self
     }
     /// <p>The sum.</p>
     pub fn sum(mut self, input: f64) -> Self {
-        self.sum = Some(input);
+        self.sum = ::std::option::Option::Some(input);
         self
     }
     /// <p>The sum.</p>
-    pub fn set_sum(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_sum(mut self, input: ::std::option::Option<f64>) -> Self {
         self.sum = input;
         self
     }
     /// <p>The timestamp (e.g., <code>1479816991.349</code>).</p>
-    pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.timestamp = Some(input);
+    pub fn timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>The timestamp (e.g., <code>1479816991.349</code>).</p>
-    pub fn set_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_timestamp(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
         self.timestamp = input;
         self
     }
     /// <p>The unit. </p>
     pub fn unit(mut self, input: crate::types::MetricUnit) -> Self {
-        self.unit = Some(input);
+        self.unit = ::std::option::Option::Some(input);
         self
     }
     /// <p>The unit. </p>
-    pub fn set_unit(mut self, input: std::option::Option<crate::types::MetricUnit>) -> Self {
+    pub fn set_unit(mut self, input: ::std::option::Option<crate::types::MetricUnit>) -> Self {
         self.unit = input;
         self
     }

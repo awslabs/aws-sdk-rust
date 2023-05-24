@@ -2,7 +2,7 @@
 
 /// <p>The action that starts at the beginning of an incident. The response plan defines the action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum Action {
     /// <p>The Systems Manager automation document to start as the runbook at the beginning of the incident.</p>
     SsmAutomation(crate::types::SsmAutomation),
@@ -20,11 +20,11 @@ impl Action {
     #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`SsmAutomation`](crate::types::Action::SsmAutomation), extracting the inner [`SsmAutomation`](crate::types::SsmAutomation).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_ssm_automation(&self) -> std::result::Result<&crate::types::SsmAutomation, &Self> {
+    pub fn as_ssm_automation(&self) -> ::std::result::Result<&crate::types::SsmAutomation, &Self> {
         if let Action::SsmAutomation(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`SsmAutomation`](crate::types::Action::SsmAutomation).

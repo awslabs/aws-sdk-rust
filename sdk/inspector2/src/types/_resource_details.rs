@@ -2,33 +2,33 @@
 
 /// <p>Contains details about the resource involved in the finding.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceDetails {
     /// <p>An object that contains details about the Amazon EC2 instance involved in the finding.</p>
     #[doc(hidden)]
-    pub aws_ec2_instance: std::option::Option<crate::types::AwsEc2InstanceDetails>,
+    pub aws_ec2_instance: ::std::option::Option<crate::types::AwsEc2InstanceDetails>,
     /// <p>An object that contains details about the Amazon ECR container image involved in the finding.</p>
     #[doc(hidden)]
-    pub aws_ecr_container_image: std::option::Option<crate::types::AwsEcrContainerImageDetails>,
+    pub aws_ecr_container_image: ::std::option::Option<crate::types::AwsEcrContainerImageDetails>,
     /// <p>A summary of the information about an AWS Lambda function affected by a finding.</p>
     #[doc(hidden)]
-    pub aws_lambda_function: std::option::Option<crate::types::AwsLambdaFunctionDetails>,
+    pub aws_lambda_function: ::std::option::Option<crate::types::AwsLambdaFunctionDetails>,
 }
 impl ResourceDetails {
     /// <p>An object that contains details about the Amazon EC2 instance involved in the finding.</p>
-    pub fn aws_ec2_instance(&self) -> std::option::Option<&crate::types::AwsEc2InstanceDetails> {
+    pub fn aws_ec2_instance(&self) -> ::std::option::Option<&crate::types::AwsEc2InstanceDetails> {
         self.aws_ec2_instance.as_ref()
     }
     /// <p>An object that contains details about the Amazon ECR container image involved in the finding.</p>
     pub fn aws_ecr_container_image(
         &self,
-    ) -> std::option::Option<&crate::types::AwsEcrContainerImageDetails> {
+    ) -> ::std::option::Option<&crate::types::AwsEcrContainerImageDetails> {
         self.aws_ecr_container_image.as_ref()
     }
     /// <p>A summary of the information about an AWS Lambda function affected by a finding.</p>
     pub fn aws_lambda_function(
         &self,
-    ) -> std::option::Option<&crate::types::AwsLambdaFunctionDetails> {
+    ) -> ::std::option::Option<&crate::types::AwsLambdaFunctionDetails> {
         self.aws_lambda_function.as_ref()
     }
 }
@@ -41,23 +41,25 @@ impl ResourceDetails {
 
 /// A builder for [`ResourceDetails`](crate::types::ResourceDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResourceDetailsBuilder {
-    pub(crate) aws_ec2_instance: std::option::Option<crate::types::AwsEc2InstanceDetails>,
+    pub(crate) aws_ec2_instance: ::std::option::Option<crate::types::AwsEc2InstanceDetails>,
     pub(crate) aws_ecr_container_image:
-        std::option::Option<crate::types::AwsEcrContainerImageDetails>,
-    pub(crate) aws_lambda_function: std::option::Option<crate::types::AwsLambdaFunctionDetails>,
+        ::std::option::Option<crate::types::AwsEcrContainerImageDetails>,
+    pub(crate) aws_lambda_function: ::std::option::Option<crate::types::AwsLambdaFunctionDetails>,
 }
 impl ResourceDetailsBuilder {
     /// <p>An object that contains details about the Amazon EC2 instance involved in the finding.</p>
     pub fn aws_ec2_instance(mut self, input: crate::types::AwsEc2InstanceDetails) -> Self {
-        self.aws_ec2_instance = Some(input);
+        self.aws_ec2_instance = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that contains details about the Amazon EC2 instance involved in the finding.</p>
     pub fn set_aws_ec2_instance(
         mut self,
-        input: std::option::Option<crate::types::AwsEc2InstanceDetails>,
+        input: ::std::option::Option<crate::types::AwsEc2InstanceDetails>,
     ) -> Self {
         self.aws_ec2_instance = input;
         self
@@ -67,26 +69,26 @@ impl ResourceDetailsBuilder {
         mut self,
         input: crate::types::AwsEcrContainerImageDetails,
     ) -> Self {
-        self.aws_ecr_container_image = Some(input);
+        self.aws_ecr_container_image = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that contains details about the Amazon ECR container image involved in the finding.</p>
     pub fn set_aws_ecr_container_image(
         mut self,
-        input: std::option::Option<crate::types::AwsEcrContainerImageDetails>,
+        input: ::std::option::Option<crate::types::AwsEcrContainerImageDetails>,
     ) -> Self {
         self.aws_ecr_container_image = input;
         self
     }
     /// <p>A summary of the information about an AWS Lambda function affected by a finding.</p>
     pub fn aws_lambda_function(mut self, input: crate::types::AwsLambdaFunctionDetails) -> Self {
-        self.aws_lambda_function = Some(input);
+        self.aws_lambda_function = ::std::option::Option::Some(input);
         self
     }
     /// <p>A summary of the information about an AWS Lambda function affected by a finding.</p>
     pub fn set_aws_lambda_function(
         mut self,
-        input: std::option::Option<crate::types::AwsLambdaFunctionDetails>,
+        input: ::std::option::Option<crate::types::AwsLambdaFunctionDetails>,
     ) -> Self {
         self.aws_lambda_function = input;
         self

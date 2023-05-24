@@ -2,45 +2,47 @@
 
 /// <p>The device type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeviceType {
     /// <p>The device key.</p>
     #[doc(hidden)]
-    pub device_key: std::option::Option<std::string::String>,
+    pub device_key: ::std::option::Option<::std::string::String>,
     /// <p>The device attributes.</p>
     #[doc(hidden)]
-    pub device_attributes: std::option::Option<std::vec::Vec<crate::types::AttributeType>>,
+    pub device_attributes: ::std::option::Option<::std::vec::Vec<crate::types::AttributeType>>,
     /// <p>The creation date of the device.</p>
     #[doc(hidden)]
-    pub device_create_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub device_create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last modified date of the device.</p>
     #[doc(hidden)]
-    pub device_last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub device_last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date when the device was last authenticated.</p>
     #[doc(hidden)]
-    pub device_last_authenticated_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub device_last_authenticated_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl DeviceType {
     /// <p>The device key.</p>
-    pub fn device_key(&self) -> std::option::Option<&str> {
+    pub fn device_key(&self) -> ::std::option::Option<&str> {
         self.device_key.as_deref()
     }
     /// <p>The device attributes.</p>
-    pub fn device_attributes(&self) -> std::option::Option<&[crate::types::AttributeType]> {
+    pub fn device_attributes(&self) -> ::std::option::Option<&[crate::types::AttributeType]> {
         self.device_attributes.as_deref()
     }
     /// <p>The creation date of the device.</p>
-    pub fn device_create_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn device_create_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.device_create_date.as_ref()
     }
     /// <p>The last modified date of the device.</p>
-    pub fn device_last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn device_last_modified_date(
+        &self,
+    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.device_last_modified_date.as_ref()
     }
     /// <p>The date when the device was last authenticated.</p>
     pub fn device_last_authenticated_date(
         &self,
-    ) -> std::option::Option<&aws_smithy_types::DateTime> {
+    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.device_last_authenticated_date.as_ref()
     }
 }
@@ -53,22 +55,25 @@ impl DeviceType {
 
 /// A builder for [`DeviceType`](crate::types::DeviceType).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeviceTypeBuilder {
-    pub(crate) device_key: std::option::Option<std::string::String>,
-    pub(crate) device_attributes: std::option::Option<std::vec::Vec<crate::types::AttributeType>>,
-    pub(crate) device_create_date: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) device_last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) device_last_authenticated_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) device_key: ::std::option::Option<::std::string::String>,
+    pub(crate) device_attributes:
+        ::std::option::Option<::std::vec::Vec<crate::types::AttributeType>>,
+    pub(crate) device_create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) device_last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) device_last_authenticated_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl DeviceTypeBuilder {
     /// <p>The device key.</p>
-    pub fn device_key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.device_key = Some(input.into());
+    pub fn device_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.device_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The device key.</p>
-    pub fn set_device_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_device_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.device_key = input;
         self
     }
@@ -80,52 +85,52 @@ impl DeviceTypeBuilder {
     pub fn device_attributes(mut self, input: crate::types::AttributeType) -> Self {
         let mut v = self.device_attributes.unwrap_or_default();
         v.push(input);
-        self.device_attributes = Some(v);
+        self.device_attributes = ::std::option::Option::Some(v);
         self
     }
     /// <p>The device attributes.</p>
     pub fn set_device_attributes(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AttributeType>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AttributeType>>,
     ) -> Self {
         self.device_attributes = input;
         self
     }
     /// <p>The creation date of the device.</p>
-    pub fn device_create_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.device_create_date = Some(input);
+    pub fn device_create_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.device_create_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The creation date of the device.</p>
     pub fn set_device_create_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.device_create_date = input;
         self
     }
     /// <p>The last modified date of the device.</p>
-    pub fn device_last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.device_last_modified_date = Some(input);
+    pub fn device_last_modified_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.device_last_modified_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The last modified date of the device.</p>
     pub fn set_device_last_modified_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.device_last_modified_date = input;
         self
     }
     /// <p>The date when the device was last authenticated.</p>
-    pub fn device_last_authenticated_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.device_last_authenticated_date = Some(input);
+    pub fn device_last_authenticated_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.device_last_authenticated_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date when the device was last authenticated.</p>
     pub fn set_device_last_authenticated_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.device_last_authenticated_date = input;
         self

@@ -2,7 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_disassociate_repository_http_error(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::disassociate_repository::DisassociateRepositoryOutput,
@@ -15,7 +15,7 @@ pub fn de_disassociate_repository_http_error(
         _response_body,
     )
     .map_err(crate::operation::disassociate_repository::DisassociateRepositoryError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
+    generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code =
         match generic.code() {
@@ -132,7 +132,7 @@ pub fn de_disassociate_repository_http_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_disassociate_repository_http_response_with_props(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::disassociate_repository::DisassociateRepositoryOutput,
@@ -149,7 +149,7 @@ pub fn de_disassociate_repository_http_response_with_props(
             crate::operation::disassociate_repository::DisassociateRepositoryError::unhandled,
         )?;
         output._set_request_id(
-            aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
+            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
         );
         output.build()
     })
@@ -160,17 +160,17 @@ pub(crate) fn de_disassociate_repository(
     mut builder: crate::operation::disassociate_repository::builders::DisassociateRepositoryOutputBuilder,
 ) -> Result<
     crate::operation::disassociate_repository::builders::DisassociateRepositoryOutputBuilder,
-    aws_smithy_json::deserialize::error::DeserializeError,
+    ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
     let mut tokens_owned =
-        aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
+        ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(value))
             .peekable();
     let tokens = &mut tokens_owned;
-    aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
     loop {
         match tokens.next().transpose()? {
-            Some(aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+            Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                 match key.to_unescaped()?.as_ref() {
                     "RepositoryAssociation" => {
                         builder = builder.set_repository_association(
@@ -181,12 +181,12 @@ pub(crate) fn de_disassociate_repository(
                         builder = builder
                             .set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens)?);
                     }
-                    _ => aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }
             other => {
                 return Err(
-                    aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                         "expected object key or end object, found: {:?}",
                         other
                     )),
@@ -196,7 +196,7 @@ pub(crate) fn de_disassociate_repository(
     }
     if tokens.next().is_some() {
         return Err(
-            aws_smithy_json::deserialize::error::DeserializeError::custom(
+            ::aws_smithy_json::deserialize::error::DeserializeError::custom(
                 "found more JSON tokens after completing parsing",
             ),
         );

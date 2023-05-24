@@ -2,42 +2,42 @@
 
 /// <p> Information about the S3 bucket where the raw data of a report are exported. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct S3ReportExportConfig {
     /// <p> The name of the S3 bucket where the raw data of a report are exported. </p>
     #[doc(hidden)]
-    pub bucket: std::option::Option<std::string::String>,
+    pub bucket: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account identifier of the owner of the Amazon S3 bucket. This allows report data to be exported to an Amazon S3 bucket that is owned by an account other than the account running the build.</p>
     #[doc(hidden)]
-    pub bucket_owner: std::option::Option<std::string::String>,
+    pub bucket_owner: ::std::option::Option<::std::string::String>,
     /// <p> The path to the exported report's raw data results. </p>
     #[doc(hidden)]
-    pub path: std::option::Option<std::string::String>,
+    pub path: ::std::option::Option<::std::string::String>,
     /// <p> The type of build output artifact to create. Valid values include: </p>
     /// <ul>
     /// <li> <p> <code>NONE</code>: CodeBuild creates the raw data in the output bucket. This is the default if packaging is not specified. </p> </li>
     /// <li> <p> <code>ZIP</code>: CodeBuild creates a ZIP file with the raw data in the output bucket. </p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub packaging: std::option::Option<crate::types::ReportPackagingType>,
+    pub packaging: ::std::option::Option<crate::types::ReportPackagingType>,
     /// <p> The encryption key for the report's encrypted raw data. </p>
     #[doc(hidden)]
-    pub encryption_key: std::option::Option<std::string::String>,
+    pub encryption_key: ::std::option::Option<::std::string::String>,
     /// <p> A boolean value that specifies if the results of a report are encrypted. </p>
     #[doc(hidden)]
-    pub encryption_disabled: std::option::Option<bool>,
+    pub encryption_disabled: ::std::option::Option<bool>,
 }
 impl S3ReportExportConfig {
     /// <p> The name of the S3 bucket where the raw data of a report are exported. </p>
-    pub fn bucket(&self) -> std::option::Option<&str> {
+    pub fn bucket(&self) -> ::std::option::Option<&str> {
         self.bucket.as_deref()
     }
     /// <p>The Amazon Web Services account identifier of the owner of the Amazon S3 bucket. This allows report data to be exported to an Amazon S3 bucket that is owned by an account other than the account running the build.</p>
-    pub fn bucket_owner(&self) -> std::option::Option<&str> {
+    pub fn bucket_owner(&self) -> ::std::option::Option<&str> {
         self.bucket_owner.as_deref()
     }
     /// <p> The path to the exported report's raw data results. </p>
-    pub fn path(&self) -> std::option::Option<&str> {
+    pub fn path(&self) -> ::std::option::Option<&str> {
         self.path.as_deref()
     }
     /// <p> The type of build output artifact to create. Valid values include: </p>
@@ -45,15 +45,15 @@ impl S3ReportExportConfig {
     /// <li> <p> <code>NONE</code>: CodeBuild creates the raw data in the output bucket. This is the default if packaging is not specified. </p> </li>
     /// <li> <p> <code>ZIP</code>: CodeBuild creates a ZIP file with the raw data in the output bucket. </p> </li>
     /// </ul>
-    pub fn packaging(&self) -> std::option::Option<&crate::types::ReportPackagingType> {
+    pub fn packaging(&self) -> ::std::option::Option<&crate::types::ReportPackagingType> {
         self.packaging.as_ref()
     }
     /// <p> The encryption key for the report's encrypted raw data. </p>
-    pub fn encryption_key(&self) -> std::option::Option<&str> {
+    pub fn encryption_key(&self) -> ::std::option::Option<&str> {
         self.encryption_key.as_deref()
     }
     /// <p> A boolean value that specifies if the results of a report are encrypted. </p>
-    pub fn encryption_disabled(&self) -> std::option::Option<bool> {
+    pub fn encryption_disabled(&self) -> ::std::option::Option<bool> {
         self.encryption_disabled
     }
 }
@@ -66,43 +66,45 @@ impl S3ReportExportConfig {
 
 /// A builder for [`S3ReportExportConfig`](crate::types::S3ReportExportConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct S3ReportExportConfigBuilder {
-    pub(crate) bucket: std::option::Option<std::string::String>,
-    pub(crate) bucket_owner: std::option::Option<std::string::String>,
-    pub(crate) path: std::option::Option<std::string::String>,
-    pub(crate) packaging: std::option::Option<crate::types::ReportPackagingType>,
-    pub(crate) encryption_key: std::option::Option<std::string::String>,
-    pub(crate) encryption_disabled: std::option::Option<bool>,
+    pub(crate) bucket: ::std::option::Option<::std::string::String>,
+    pub(crate) bucket_owner: ::std::option::Option<::std::string::String>,
+    pub(crate) path: ::std::option::Option<::std::string::String>,
+    pub(crate) packaging: ::std::option::Option<crate::types::ReportPackagingType>,
+    pub(crate) encryption_key: ::std::option::Option<::std::string::String>,
+    pub(crate) encryption_disabled: ::std::option::Option<bool>,
 }
 impl S3ReportExportConfigBuilder {
     /// <p> The name of the S3 bucket where the raw data of a report are exported. </p>
-    pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
-        self.bucket = Some(input.into());
+    pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.bucket = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The name of the S3 bucket where the raw data of a report are exported. </p>
-    pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket = input;
         self
     }
     /// <p>The Amazon Web Services account identifier of the owner of the Amazon S3 bucket. This allows report data to be exported to an Amazon S3 bucket that is owned by an account other than the account running the build.</p>
-    pub fn bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
-        self.bucket_owner = Some(input.into());
+    pub fn bucket_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.bucket_owner = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account identifier of the owner of the Amazon S3 bucket. This allows report data to be exported to an Amazon S3 bucket that is owned by an account other than the account running the build.</p>
-    pub fn set_bucket_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_bucket_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bucket_owner = input;
         self
     }
     /// <p> The path to the exported report's raw data results. </p>
-    pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
-        self.path = Some(input.into());
+    pub fn path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The path to the exported report's raw data results. </p>
-    pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.path = input;
         self
     }
@@ -112,7 +114,7 @@ impl S3ReportExportConfigBuilder {
     /// <li> <p> <code>ZIP</code>: CodeBuild creates a ZIP file with the raw data in the output bucket. </p> </li>
     /// </ul>
     pub fn packaging(mut self, input: crate::types::ReportPackagingType) -> Self {
-        self.packaging = Some(input);
+        self.packaging = ::std::option::Option::Some(input);
         self
     }
     /// <p> The type of build output artifact to create. Valid values include: </p>
@@ -122,28 +124,34 @@ impl S3ReportExportConfigBuilder {
     /// </ul>
     pub fn set_packaging(
         mut self,
-        input: std::option::Option<crate::types::ReportPackagingType>,
+        input: ::std::option::Option<crate::types::ReportPackagingType>,
     ) -> Self {
         self.packaging = input;
         self
     }
     /// <p> The encryption key for the report's encrypted raw data. </p>
-    pub fn encryption_key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.encryption_key = Some(input.into());
+    pub fn encryption_key(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.encryption_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The encryption key for the report's encrypted raw data. </p>
-    pub fn set_encryption_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_encryption_key(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.encryption_key = input;
         self
     }
     /// <p> A boolean value that specifies if the results of a report are encrypted. </p>
     pub fn encryption_disabled(mut self, input: bool) -> Self {
-        self.encryption_disabled = Some(input);
+        self.encryption_disabled = ::std::option::Option::Some(input);
         self
     }
     /// <p> A boolean value that specifies if the results of a report are encrypted. </p>
-    pub fn set_encryption_disabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_encryption_disabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.encryption_disabled = input;
         self
     }

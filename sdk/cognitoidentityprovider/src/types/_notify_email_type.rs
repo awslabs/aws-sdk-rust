@@ -2,29 +2,29 @@
 
 /// <p>The notify email type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NotifyEmailType {
     /// <p>The email subject.</p>
     #[doc(hidden)]
-    pub subject: std::option::Option<std::string::String>,
+    pub subject: ::std::option::Option<::std::string::String>,
     /// <p>The email HTML body.</p>
     #[doc(hidden)]
-    pub html_body: std::option::Option<std::string::String>,
+    pub html_body: ::std::option::Option<::std::string::String>,
     /// <p>The email text body.</p>
     #[doc(hidden)]
-    pub text_body: std::option::Option<std::string::String>,
+    pub text_body: ::std::option::Option<::std::string::String>,
 }
 impl NotifyEmailType {
     /// <p>The email subject.</p>
-    pub fn subject(&self) -> std::option::Option<&str> {
+    pub fn subject(&self) -> ::std::option::Option<&str> {
         self.subject.as_deref()
     }
     /// <p>The email HTML body.</p>
-    pub fn html_body(&self) -> std::option::Option<&str> {
+    pub fn html_body(&self) -> ::std::option::Option<&str> {
         self.html_body.as_deref()
     }
     /// <p>The email text body.</p>
-    pub fn text_body(&self) -> std::option::Option<&str> {
+    pub fn text_body(&self) -> ::std::option::Option<&str> {
         self.text_body.as_deref()
     }
 }
@@ -37,40 +37,42 @@ impl NotifyEmailType {
 
 /// A builder for [`NotifyEmailType`](crate::types::NotifyEmailType).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NotifyEmailTypeBuilder {
-    pub(crate) subject: std::option::Option<std::string::String>,
-    pub(crate) html_body: std::option::Option<std::string::String>,
-    pub(crate) text_body: std::option::Option<std::string::String>,
+    pub(crate) subject: ::std::option::Option<::std::string::String>,
+    pub(crate) html_body: ::std::option::Option<::std::string::String>,
+    pub(crate) text_body: ::std::option::Option<::std::string::String>,
 }
 impl NotifyEmailTypeBuilder {
     /// <p>The email subject.</p>
-    pub fn subject(mut self, input: impl Into<std::string::String>) -> Self {
-        self.subject = Some(input.into());
+    pub fn subject(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.subject = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The email subject.</p>
-    pub fn set_subject(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_subject(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subject = input;
         self
     }
     /// <p>The email HTML body.</p>
-    pub fn html_body(mut self, input: impl Into<std::string::String>) -> Self {
-        self.html_body = Some(input.into());
+    pub fn html_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.html_body = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The email HTML body.</p>
-    pub fn set_html_body(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_html_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.html_body = input;
         self
     }
     /// <p>The email text body.</p>
-    pub fn text_body(mut self, input: impl Into<std::string::String>) -> Self {
-        self.text_body = Some(input.into());
+    pub fn text_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.text_body = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The email text body.</p>
-    pub fn set_text_body(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_text_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.text_body = input;
         self
     }

@@ -2,29 +2,29 @@
 
 /// <p>The configuration for how much storage a user or group can use on the volume. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OpenZfsUserOrGroupQuota {
     /// <p>A value that specifies whether the quota applies to a user or group.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::OpenZfsQuotaType>,
+    pub r#type: ::std::option::Option<crate::types::OpenZfsQuotaType>,
     /// <p>The ID of the user or group.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<i32>,
+    pub id: ::std::option::Option<i32>,
     /// <p>The amount of storage that the user or group can use in gibibytes (GiB).</p>
     #[doc(hidden)]
-    pub storage_capacity_quota_gi_b: std::option::Option<i32>,
+    pub storage_capacity_quota_gi_b: ::std::option::Option<i32>,
 }
 impl OpenZfsUserOrGroupQuota {
     /// <p>A value that specifies whether the quota applies to a user or group.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::OpenZfsQuotaType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::OpenZfsQuotaType> {
         self.r#type.as_ref()
     }
     /// <p>The ID of the user or group.</p>
-    pub fn id(&self) -> std::option::Option<i32> {
+    pub fn id(&self) -> ::std::option::Option<i32> {
         self.id
     }
     /// <p>The amount of storage that the user or group can use in gibibytes (GiB).</p>
-    pub fn storage_capacity_quota_gi_b(&self) -> std::option::Option<i32> {
+    pub fn storage_capacity_quota_gi_b(&self) -> ::std::option::Option<i32> {
         self.storage_capacity_quota_gi_b
     }
 }
@@ -37,40 +37,45 @@ impl OpenZfsUserOrGroupQuota {
 
 /// A builder for [`OpenZfsUserOrGroupQuota`](crate::types::OpenZfsUserOrGroupQuota).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OpenZfsUserOrGroupQuotaBuilder {
-    pub(crate) r#type: std::option::Option<crate::types::OpenZfsQuotaType>,
-    pub(crate) id: std::option::Option<i32>,
-    pub(crate) storage_capacity_quota_gi_b: std::option::Option<i32>,
+    pub(crate) r#type: ::std::option::Option<crate::types::OpenZfsQuotaType>,
+    pub(crate) id: ::std::option::Option<i32>,
+    pub(crate) storage_capacity_quota_gi_b: ::std::option::Option<i32>,
 }
 impl OpenZfsUserOrGroupQuotaBuilder {
     /// <p>A value that specifies whether the quota applies to a user or group.</p>
     pub fn r#type(mut self, input: crate::types::OpenZfsQuotaType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>A value that specifies whether the quota applies to a user or group.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::OpenZfsQuotaType>) -> Self {
+    pub fn set_type(
+        mut self,
+        input: ::std::option::Option<crate::types::OpenZfsQuotaType>,
+    ) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The ID of the user or group.</p>
     pub fn id(mut self, input: i32) -> Self {
-        self.id = Some(input);
+        self.id = ::std::option::Option::Some(input);
         self
     }
     /// <p>The ID of the user or group.</p>
-    pub fn set_id(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<i32>) -> Self {
         self.id = input;
         self
     }
     /// <p>The amount of storage that the user or group can use in gibibytes (GiB).</p>
     pub fn storage_capacity_quota_gi_b(mut self, input: i32) -> Self {
-        self.storage_capacity_quota_gi_b = Some(input);
+        self.storage_capacity_quota_gi_b = ::std::option::Option::Some(input);
         self
     }
     /// <p>The amount of storage that the user or group can use in gibibytes (GiB).</p>
-    pub fn set_storage_capacity_quota_gi_b(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_storage_capacity_quota_gi_b(mut self, input: ::std::option::Option<i32>) -> Self {
         self.storage_capacity_quota_gi_b = input;
         self
     }

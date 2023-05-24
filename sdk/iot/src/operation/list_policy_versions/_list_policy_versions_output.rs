@@ -2,20 +2,20 @@
 
 /// <p>The output from the ListPolicyVersions operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPolicyVersionsOutput {
     /// <p>The policy versions.</p>
     #[doc(hidden)]
-    pub policy_versions: std::option::Option<std::vec::Vec<crate::types::PolicyVersion>>,
+    pub policy_versions: ::std::option::Option<::std::vec::Vec<crate::types::PolicyVersion>>,
     _request_id: Option<String>,
 }
 impl ListPolicyVersionsOutput {
     /// <p>The policy versions.</p>
-    pub fn policy_versions(&self) -> std::option::Option<&[crate::types::PolicyVersion]> {
+    pub fn policy_versions(&self) -> ::std::option::Option<&[crate::types::PolicyVersion]> {
         self.policy_versions.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListPolicyVersionsOutput {
+impl ::aws_http::request_id::RequestId for ListPolicyVersionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,9 +30,11 @@ impl ListPolicyVersionsOutput {
 
 /// A builder for [`ListPolicyVersionsOutput`](crate::operation::list_policy_versions::ListPolicyVersionsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListPolicyVersionsOutputBuilder {
-    pub(crate) policy_versions: std::option::Option<std::vec::Vec<crate::types::PolicyVersion>>,
+    pub(crate) policy_versions: ::std::option::Option<::std::vec::Vec<crate::types::PolicyVersion>>,
     _request_id: Option<String>,
 }
 impl ListPolicyVersionsOutputBuilder {
@@ -44,13 +46,13 @@ impl ListPolicyVersionsOutputBuilder {
     pub fn policy_versions(mut self, input: crate::types::PolicyVersion) -> Self {
         let mut v = self.policy_versions.unwrap_or_default();
         v.push(input);
-        self.policy_versions = Some(v);
+        self.policy_versions = ::std::option::Option::Some(v);
         self
     }
     /// <p>The policy versions.</p>
     pub fn set_policy_versions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::PolicyVersion>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PolicyVersion>>,
     ) -> Self {
         self.policy_versions = input;
         self

@@ -6,56 +6,59 @@ pub use crate::operation::create_group::_create_group_input::CreateGroupInputBui
 /// Fluent builder constructing a request to `CreateGroup`.
 ///
 /// <p>Creates a group resource with a name and a filter expression. </p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateGroupFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_group::builders::CreateGroupInputBuilder,
 }
 impl CreateGroupFluentBuilder {
     /// Creates a new `CreateGroup`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_group::CreateGroup,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_group::CreateGroupError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_group::CreateGroupError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_group::CreateGroupOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_group::CreateGroupError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_group::CreateGroupError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,31 +71,34 @@ impl CreateGroupFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_group::CreateGroupOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_group::CreateGroupError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_group::CreateGroupError>,
     > {
         self.send_middleware().await
     }
     /// <p>The case-sensitive name of the new group. Default is a reserved name and names must be unique.</p>
-    pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.group_name(input.into());
         self
     }
     /// <p>The case-sensitive name of the new group. Default is a reserved name and names must be unique.</p>
-    pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_group_name(input);
         self
     }
     /// <p>The filter expression defining criteria by which to group traces.</p>
-    pub fn filter_expression(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn filter_expression(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.filter_expression(input.into());
         self
     }
     /// <p>The filter expression defining criteria by which to group traces.</p>
     pub fn set_filter_expression(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_filter_expression(input);
         self
@@ -113,7 +119,7 @@ impl CreateGroupFluentBuilder {
     /// </ul>
     pub fn set_insights_configuration(
         mut self,
-        input: std::option::Option<crate::types::InsightsConfiguration>,
+        input: ::std::option::Option<crate::types::InsightsConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_insights_configuration(input);
         self
@@ -148,7 +154,7 @@ impl CreateGroupFluentBuilder {
     /// </ul>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self

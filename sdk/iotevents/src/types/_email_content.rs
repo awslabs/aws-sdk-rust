@@ -2,22 +2,22 @@
 
 /// <p>Contains the subject and message of an email.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EmailContent {
     /// <p>The subject of the email.</p>
     #[doc(hidden)]
-    pub subject: std::option::Option<std::string::String>,
+    pub subject: ::std::option::Option<::std::string::String>,
     /// <p>The message that you want to send. The message can be up to 200 characters.</p>
     #[doc(hidden)]
-    pub additional_message: std::option::Option<std::string::String>,
+    pub additional_message: ::std::option::Option<::std::string::String>,
 }
 impl EmailContent {
     /// <p>The subject of the email.</p>
-    pub fn subject(&self) -> std::option::Option<&str> {
+    pub fn subject(&self) -> ::std::option::Option<&str> {
         self.subject.as_deref()
     }
     /// <p>The message that you want to send. The message can be up to 200 characters.</p>
-    pub fn additional_message(&self) -> std::option::Option<&str> {
+    pub fn additional_message(&self) -> ::std::option::Option<&str> {
         self.additional_message.as_deref()
     }
 }
@@ -30,31 +30,36 @@ impl EmailContent {
 
 /// A builder for [`EmailContent`](crate::types::EmailContent).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EmailContentBuilder {
-    pub(crate) subject: std::option::Option<std::string::String>,
-    pub(crate) additional_message: std::option::Option<std::string::String>,
+    pub(crate) subject: ::std::option::Option<::std::string::String>,
+    pub(crate) additional_message: ::std::option::Option<::std::string::String>,
 }
 impl EmailContentBuilder {
     /// <p>The subject of the email.</p>
-    pub fn subject(mut self, input: impl Into<std::string::String>) -> Self {
-        self.subject = Some(input.into());
+    pub fn subject(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.subject = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The subject of the email.</p>
-    pub fn set_subject(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_subject(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subject = input;
         self
     }
     /// <p>The message that you want to send. The message can be up to 200 characters.</p>
-    pub fn additional_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.additional_message = Some(input.into());
+    pub fn additional_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.additional_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The message that you want to send. The message can be up to 200 characters.</p>
     pub fn set_additional_message(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.additional_message = input;
         self

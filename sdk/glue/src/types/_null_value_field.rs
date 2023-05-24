@@ -2,22 +2,22 @@
 
 /// <p>Represents a custom null value such as a zeros or other value being used as a null placeholder unique to the dataset.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NullValueField {
     /// <p>The value of the null placeholder.</p>
     #[doc(hidden)]
-    pub value: std::option::Option<std::string::String>,
+    pub value: ::std::option::Option<::std::string::String>,
     /// <p>The datatype of the value.</p>
     #[doc(hidden)]
-    pub datatype: std::option::Option<crate::types::Datatype>,
+    pub datatype: ::std::option::Option<crate::types::Datatype>,
 }
 impl NullValueField {
     /// <p>The value of the null placeholder.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
     /// <p>The datatype of the value.</p>
-    pub fn datatype(&self) -> std::option::Option<&crate::types::Datatype> {
+    pub fn datatype(&self) -> ::std::option::Option<&crate::types::Datatype> {
         self.datatype.as_ref()
     }
 }
@@ -30,29 +30,31 @@ impl NullValueField {
 
 /// A builder for [`NullValueField`](crate::types::NullValueField).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NullValueFieldBuilder {
-    pub(crate) value: std::option::Option<std::string::String>,
-    pub(crate) datatype: std::option::Option<crate::types::Datatype>,
+    pub(crate) value: ::std::option::Option<::std::string::String>,
+    pub(crate) datatype: ::std::option::Option<crate::types::Datatype>,
 }
 impl NullValueFieldBuilder {
     /// <p>The value of the null placeholder.</p>
-    pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.value = Some(input.into());
+    pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value of the null placeholder.</p>
-    pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
     }
     /// <p>The datatype of the value.</p>
     pub fn datatype(mut self, input: crate::types::Datatype) -> Self {
-        self.datatype = Some(input);
+        self.datatype = ::std::option::Option::Some(input);
         self
     }
     /// <p>The datatype of the value.</p>
-    pub fn set_datatype(mut self, input: std::option::Option<crate::types::Datatype>) -> Self {
+    pub fn set_datatype(mut self, input: ::std::option::Option<crate::types::Datatype>) -> Self {
         self.datatype = input;
         self
     }

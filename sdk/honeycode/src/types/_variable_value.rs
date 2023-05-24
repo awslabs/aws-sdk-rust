@@ -2,20 +2,20 @@
 
 /// <p>The input variables to the app to be used by the InvokeScreenAutomation action request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct VariableValue {
     /// <p>Raw value of the variable.</p>
     #[doc(hidden)]
-    pub raw_value: std::option::Option<std::string::String>,
+    pub raw_value: ::std::option::Option<::std::string::String>,
 }
 impl VariableValue {
     /// <p>Raw value of the variable.</p>
-    pub fn raw_value(&self) -> std::option::Option<&str> {
+    pub fn raw_value(&self) -> ::std::option::Option<&str> {
         self.raw_value.as_deref()
     }
 }
-impl std::fmt::Debug for VariableValue {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for VariableValue {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("VariableValue");
         formatter.field("raw_value", &"*** Sensitive Data Redacted ***");
         formatter.finish()
@@ -30,18 +30,18 @@ impl VariableValue {
 
 /// A builder for [`VariableValue`](crate::types::VariableValue).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct VariableValueBuilder {
-    pub(crate) raw_value: std::option::Option<std::string::String>,
+    pub(crate) raw_value: ::std::option::Option<::std::string::String>,
 }
 impl VariableValueBuilder {
     /// <p>Raw value of the variable.</p>
-    pub fn raw_value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.raw_value = Some(input.into());
+    pub fn raw_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.raw_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Raw value of the variable.</p>
-    pub fn set_raw_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_raw_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.raw_value = input;
         self
     }
@@ -52,8 +52,8 @@ impl VariableValueBuilder {
         }
     }
 }
-impl std::fmt::Debug for VariableValueBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for VariableValueBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("VariableValueBuilder");
         formatter.field("raw_value", &"*** Sensitive Data Redacted ***");
         formatter.finish()

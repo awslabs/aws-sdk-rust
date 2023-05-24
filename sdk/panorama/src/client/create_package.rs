@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreatePackage`](crate::operation::create_package::builders::CreatePackageFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`package_name(impl Into<String>)`](crate::operation::create_package::builders::CreatePackageFluentBuilder::package_name) / [`set_package_name(Option<String>)`](crate::operation::create_package::builders::CreatePackageFluentBuilder::set_package_name): <p>A name for the package.</p>
+    ///   - [`package_name(impl ::std::convert::Into<String>)`](crate::operation::create_package::builders::CreatePackageFluentBuilder::package_name) / [`set_package_name(Option<String>)`](crate::operation::create_package::builders::CreatePackageFluentBuilder::set_package_name): <p>A name for the package.</p>
     ///   - [`tags(HashMap<String, String>)`](crate::operation::create_package::builders::CreatePackageFluentBuilder::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::operation::create_package::builders::CreatePackageFluentBuilder::set_tags): <p>Tags for the package.</p>
     /// - On success, responds with [`CreatePackageOutput`](crate::operation::create_package::CreatePackageOutput) with field(s):
     ///   - [`package_id(Option<String>)`](crate::operation::create_package::CreatePackageOutput::package_id): <p>The package's ID.</p>

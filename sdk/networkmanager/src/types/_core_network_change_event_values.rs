@@ -2,36 +2,36 @@
 
 /// <p>Describes a core network change event.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CoreNetworkChangeEventValues {
     /// <p>The edge location for the core network change event.</p>
     #[doc(hidden)]
-    pub edge_location: std::option::Option<std::string::String>,
+    pub edge_location: ::std::option::Option<::std::string::String>,
     /// <p>The segment name if the change event is associated with a segment.</p>
     #[doc(hidden)]
-    pub segment_name: std::option::Option<std::string::String>,
+    pub segment_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the attachment if the change event is associated with an attachment. </p>
     #[doc(hidden)]
-    pub attachment_id: std::option::Option<std::string::String>,
+    pub attachment_id: ::std::option::Option<::std::string::String>,
     /// <p>For a <code>STATIC_ROUTE</code> event, this is the IP address.</p>
     #[doc(hidden)]
-    pub cidr: std::option::Option<std::string::String>,
+    pub cidr: ::std::option::Option<::std::string::String>,
 }
 impl CoreNetworkChangeEventValues {
     /// <p>The edge location for the core network change event.</p>
-    pub fn edge_location(&self) -> std::option::Option<&str> {
+    pub fn edge_location(&self) -> ::std::option::Option<&str> {
         self.edge_location.as_deref()
     }
     /// <p>The segment name if the change event is associated with a segment.</p>
-    pub fn segment_name(&self) -> std::option::Option<&str> {
+    pub fn segment_name(&self) -> ::std::option::Option<&str> {
         self.segment_name.as_deref()
     }
     /// <p>The ID of the attachment if the change event is associated with an attachment. </p>
-    pub fn attachment_id(&self) -> std::option::Option<&str> {
+    pub fn attachment_id(&self) -> ::std::option::Option<&str> {
         self.attachment_id.as_deref()
     }
     /// <p>For a <code>STATIC_ROUTE</code> event, this is the IP address.</p>
-    pub fn cidr(&self) -> std::option::Option<&str> {
+    pub fn cidr(&self) -> ::std::option::Option<&str> {
         self.cidr.as_deref()
     }
 }
@@ -44,51 +44,65 @@ impl CoreNetworkChangeEventValues {
 
 /// A builder for [`CoreNetworkChangeEventValues`](crate::types::CoreNetworkChangeEventValues).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CoreNetworkChangeEventValuesBuilder {
-    pub(crate) edge_location: std::option::Option<std::string::String>,
-    pub(crate) segment_name: std::option::Option<std::string::String>,
-    pub(crate) attachment_id: std::option::Option<std::string::String>,
-    pub(crate) cidr: std::option::Option<std::string::String>,
+    pub(crate) edge_location: ::std::option::Option<::std::string::String>,
+    pub(crate) segment_name: ::std::option::Option<::std::string::String>,
+    pub(crate) attachment_id: ::std::option::Option<::std::string::String>,
+    pub(crate) cidr: ::std::option::Option<::std::string::String>,
 }
 impl CoreNetworkChangeEventValuesBuilder {
     /// <p>The edge location for the core network change event.</p>
-    pub fn edge_location(mut self, input: impl Into<std::string::String>) -> Self {
-        self.edge_location = Some(input.into());
+    pub fn edge_location(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.edge_location = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The edge location for the core network change event.</p>
-    pub fn set_edge_location(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_edge_location(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.edge_location = input;
         self
     }
     /// <p>The segment name if the change event is associated with a segment.</p>
-    pub fn segment_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.segment_name = Some(input.into());
+    pub fn segment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.segment_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The segment name if the change event is associated with a segment.</p>
-    pub fn set_segment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_segment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.segment_name = input;
         self
     }
     /// <p>The ID of the attachment if the change event is associated with an attachment. </p>
-    pub fn attachment_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.attachment_id = Some(input.into());
+    pub fn attachment_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.attachment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the attachment if the change event is associated with an attachment. </p>
-    pub fn set_attachment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_attachment_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.attachment_id = input;
         self
     }
     /// <p>For a <code>STATIC_ROUTE</code> event, this is the IP address.</p>
-    pub fn cidr(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cidr = Some(input.into());
+    pub fn cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cidr = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>For a <code>STATIC_ROUTE</code> event, this is the IP address.</p>
-    pub fn set_cidr(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cidr(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cidr = input;
         self
     }

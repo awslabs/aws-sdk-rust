@@ -2,7 +2,7 @@
 
 /// <p>This represents a sections within a panel or tab of the page layout.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum Section {
     /// <p>Consists of a group of fields and associated properties.</p>
     FieldGroup(crate::types::FieldGroup),
@@ -20,11 +20,11 @@ impl Section {
     #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`FieldGroup`](crate::types::Section::FieldGroup), extracting the inner [`FieldGroup`](crate::types::FieldGroup).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_field_group(&self) -> std::result::Result<&crate::types::FieldGroup, &Self> {
+    pub fn as_field_group(&self) -> ::std::result::Result<&crate::types::FieldGroup, &Self> {
         if let Section::FieldGroup(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`FieldGroup`](crate::types::Section::FieldGroup).

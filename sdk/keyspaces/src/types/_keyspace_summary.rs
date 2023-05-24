@@ -2,22 +2,22 @@
 
 /// <p>Represents the properties of a keyspace.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KeyspaceSummary {
     /// <p>The name of the keyspace.</p>
     #[doc(hidden)]
-    pub keyspace_name: std::option::Option<std::string::String>,
+    pub keyspace_name: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the keyspace in the format of an Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
-    pub resource_arn: std::option::Option<std::string::String>,
+    pub resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl KeyspaceSummary {
     /// <p>The name of the keyspace.</p>
-    pub fn keyspace_name(&self) -> std::option::Option<&str> {
+    pub fn keyspace_name(&self) -> ::std::option::Option<&str> {
         self.keyspace_name.as_deref()
     }
     /// <p>The unique identifier of the keyspace in the format of an Amazon Resource Name (ARN).</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
 }
@@ -30,29 +30,37 @@ impl KeyspaceSummary {
 
 /// A builder for [`KeyspaceSummary`](crate::types::KeyspaceSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct KeyspaceSummaryBuilder {
-    pub(crate) keyspace_name: std::option::Option<std::string::String>,
-    pub(crate) resource_arn: std::option::Option<std::string::String>,
+    pub(crate) keyspace_name: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl KeyspaceSummaryBuilder {
     /// <p>The name of the keyspace.</p>
-    pub fn keyspace_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.keyspace_name = Some(input.into());
+    pub fn keyspace_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.keyspace_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the keyspace.</p>
-    pub fn set_keyspace_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_keyspace_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.keyspace_name = input;
         self
     }
     /// <p>The unique identifier of the keyspace in the format of an Amazon Resource Name (ARN).</p>
-    pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_arn = Some(input.into());
+    pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the keyspace in the format of an Amazon Resource Name (ARN).</p>
-    pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
     }

@@ -2,11 +2,11 @@
 
 /// <p> Contains information used to update a collection of Amazon Web Services resources. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateResourceCollectionFilter {
     /// <p> A collection of Amazon Web Services CloudFormation stacks. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
     #[doc(hidden)]
-    pub cloud_formation: std::option::Option<crate::types::UpdateCloudFormationCollectionFilter>,
+    pub cloud_formation: ::std::option::Option<crate::types::UpdateCloudFormationCollectionFilter>,
     /// <p>The updated Amazon Web Services tags used to filter the resources in the resource collection.</p>
     /// <p>Tags help you identify and organize your Amazon Web Services resources. Many Amazon Web Services services support tagging, so you can assign the same tag to resources from different services to indicate that the resources are related. For example, you can assign the same tag to an Amazon DynamoDB table resource that you assign to an Lambda function. For more information about using tags, see the <a href="https://docs.aws.amazon.com/whitepapers/latest/tagging-best-practices/tagging-best-practices.html">Tagging best practices</a> whitepaper. </p>
     /// <p>Each Amazon Web Services tag has two parts. </p>
@@ -18,13 +18,13 @@ pub struct UpdateResourceCollectionFilter {
     /// <p>The string used for a <i>key</i> in a tag that you use to define your resource coverage must begin with the prefix <code>Devops-guru-</code>. The tag <i>key</i> might be <code>DevOps-Guru-deployment-application</code> or <code>devops-guru-rds-application</code>. When you create a <i>key</i>, the case of characters in the <i>key</i> can be whatever you choose. After you create a <i>key</i>, it is case-sensitive. For example, DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named <code>DevOps-Guru-RDS</code>, and these act as two different <i>keys</i>. Possible <i>key</i>/<i>value</i> pairs in your application might be <code>Devops-Guru-production-application/RDS</code> or <code>Devops-Guru-production-application/containers</code>.</p>
     /// </important>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::types::UpdateTagCollectionFilter>>,
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::UpdateTagCollectionFilter>>,
 }
 impl UpdateResourceCollectionFilter {
     /// <p> A collection of Amazon Web Services CloudFormation stacks. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
     pub fn cloud_formation(
         &self,
-    ) -> std::option::Option<&crate::types::UpdateCloudFormationCollectionFilter> {
+    ) -> ::std::option::Option<&crate::types::UpdateCloudFormationCollectionFilter> {
         self.cloud_formation.as_ref()
     }
     /// <p>The updated Amazon Web Services tags used to filter the resources in the resource collection.</p>
@@ -37,7 +37,7 @@ impl UpdateResourceCollectionFilter {
     /// <p>Together these are known as <i>key</i>-<i>value</i> pairs.</p> <important>
     /// <p>The string used for a <i>key</i> in a tag that you use to define your resource coverage must begin with the prefix <code>Devops-guru-</code>. The tag <i>key</i> might be <code>DevOps-Guru-deployment-application</code> or <code>devops-guru-rds-application</code>. When you create a <i>key</i>, the case of characters in the <i>key</i> can be whatever you choose. After you create a <i>key</i>, it is case-sensitive. For example, DevOps Guru works with a <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named <code>DevOps-Guru-RDS</code>, and these act as two different <i>keys</i>. Possible <i>key</i>/<i>value</i> pairs in your application might be <code>Devops-Guru-production-application/RDS</code> or <code>Devops-Guru-production-application/containers</code>.</p>
     /// </important>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::UpdateTagCollectionFilter]> {
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::UpdateTagCollectionFilter]> {
         self.tags.as_deref()
     }
 }
@@ -50,11 +50,14 @@ impl UpdateResourceCollectionFilter {
 
 /// A builder for [`UpdateResourceCollectionFilter`](crate::types::UpdateResourceCollectionFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateResourceCollectionFilterBuilder {
     pub(crate) cloud_formation:
-        std::option::Option<crate::types::UpdateCloudFormationCollectionFilter>,
-    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::UpdateTagCollectionFilter>>,
+        ::std::option::Option<crate::types::UpdateCloudFormationCollectionFilter>,
+    pub(crate) tags:
+        ::std::option::Option<::std::vec::Vec<crate::types::UpdateTagCollectionFilter>>,
 }
 impl UpdateResourceCollectionFilterBuilder {
     /// <p> A collection of Amazon Web Services CloudFormation stacks. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
@@ -62,13 +65,13 @@ impl UpdateResourceCollectionFilterBuilder {
         mut self,
         input: crate::types::UpdateCloudFormationCollectionFilter,
     ) -> Self {
-        self.cloud_formation = Some(input);
+        self.cloud_formation = ::std::option::Option::Some(input);
         self
     }
     /// <p> A collection of Amazon Web Services CloudFormation stacks. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
     pub fn set_cloud_formation(
         mut self,
-        input: std::option::Option<crate::types::UpdateCloudFormationCollectionFilter>,
+        input: ::std::option::Option<crate::types::UpdateCloudFormationCollectionFilter>,
     ) -> Self {
         self.cloud_formation = input;
         self
@@ -90,7 +93,7 @@ impl UpdateResourceCollectionFilterBuilder {
     pub fn tags(mut self, input: crate::types::UpdateTagCollectionFilter) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
-        self.tags = Some(v);
+        self.tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>The updated Amazon Web Services tags used to filter the resources in the resource collection.</p>
@@ -105,7 +108,7 @@ impl UpdateResourceCollectionFilterBuilder {
     /// </important>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::UpdateTagCollectionFilter>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::UpdateTagCollectionFilter>>,
     ) -> Self {
         self.tags = input;
         self

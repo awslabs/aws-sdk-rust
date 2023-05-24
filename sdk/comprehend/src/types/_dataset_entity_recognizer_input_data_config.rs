@@ -2,35 +2,35 @@
 
 /// <p>Specifies the format and location of the input data. You must provide either the <code>Annotations</code> parameter or the <code>EntityList</code> parameter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DatasetEntityRecognizerInputDataConfig {
     /// <p>The S3 location of the annotation documents for your custom entity recognizer.</p>
     #[doc(hidden)]
-    pub annotations: std::option::Option<crate::types::DatasetEntityRecognizerAnnotations>,
+    pub annotations: ::std::option::Option<crate::types::DatasetEntityRecognizerAnnotations>,
     /// <p>The format and location of the training documents for your custom entity recognizer.</p>
     #[doc(hidden)]
-    pub documents: std::option::Option<crate::types::DatasetEntityRecognizerDocuments>,
+    pub documents: ::std::option::Option<crate::types::DatasetEntityRecognizerDocuments>,
     /// <p>The S3 location of the entity list for your custom entity recognizer.</p>
     #[doc(hidden)]
-    pub entity_list: std::option::Option<crate::types::DatasetEntityRecognizerEntityList>,
+    pub entity_list: ::std::option::Option<crate::types::DatasetEntityRecognizerEntityList>,
 }
 impl DatasetEntityRecognizerInputDataConfig {
     /// <p>The S3 location of the annotation documents for your custom entity recognizer.</p>
     pub fn annotations(
         &self,
-    ) -> std::option::Option<&crate::types::DatasetEntityRecognizerAnnotations> {
+    ) -> ::std::option::Option<&crate::types::DatasetEntityRecognizerAnnotations> {
         self.annotations.as_ref()
     }
     /// <p>The format and location of the training documents for your custom entity recognizer.</p>
     pub fn documents(
         &self,
-    ) -> std::option::Option<&crate::types::DatasetEntityRecognizerDocuments> {
+    ) -> ::std::option::Option<&crate::types::DatasetEntityRecognizerDocuments> {
         self.documents.as_ref()
     }
     /// <p>The S3 location of the entity list for your custom entity recognizer.</p>
     pub fn entity_list(
         &self,
-    ) -> std::option::Option<&crate::types::DatasetEntityRecognizerEntityList> {
+    ) -> ::std::option::Option<&crate::types::DatasetEntityRecognizerEntityList> {
         self.entity_list.as_ref()
     }
 }
@@ -43,48 +43,50 @@ impl DatasetEntityRecognizerInputDataConfig {
 
 /// A builder for [`DatasetEntityRecognizerInputDataConfig`](crate::types::DatasetEntityRecognizerInputDataConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DatasetEntityRecognizerInputDataConfigBuilder {
-    pub(crate) annotations: std::option::Option<crate::types::DatasetEntityRecognizerAnnotations>,
-    pub(crate) documents: std::option::Option<crate::types::DatasetEntityRecognizerDocuments>,
-    pub(crate) entity_list: std::option::Option<crate::types::DatasetEntityRecognizerEntityList>,
+    pub(crate) annotations: ::std::option::Option<crate::types::DatasetEntityRecognizerAnnotations>,
+    pub(crate) documents: ::std::option::Option<crate::types::DatasetEntityRecognizerDocuments>,
+    pub(crate) entity_list: ::std::option::Option<crate::types::DatasetEntityRecognizerEntityList>,
 }
 impl DatasetEntityRecognizerInputDataConfigBuilder {
     /// <p>The S3 location of the annotation documents for your custom entity recognizer.</p>
     pub fn annotations(mut self, input: crate::types::DatasetEntityRecognizerAnnotations) -> Self {
-        self.annotations = Some(input);
+        self.annotations = ::std::option::Option::Some(input);
         self
     }
     /// <p>The S3 location of the annotation documents for your custom entity recognizer.</p>
     pub fn set_annotations(
         mut self,
-        input: std::option::Option<crate::types::DatasetEntityRecognizerAnnotations>,
+        input: ::std::option::Option<crate::types::DatasetEntityRecognizerAnnotations>,
     ) -> Self {
         self.annotations = input;
         self
     }
     /// <p>The format and location of the training documents for your custom entity recognizer.</p>
     pub fn documents(mut self, input: crate::types::DatasetEntityRecognizerDocuments) -> Self {
-        self.documents = Some(input);
+        self.documents = ::std::option::Option::Some(input);
         self
     }
     /// <p>The format and location of the training documents for your custom entity recognizer.</p>
     pub fn set_documents(
         mut self,
-        input: std::option::Option<crate::types::DatasetEntityRecognizerDocuments>,
+        input: ::std::option::Option<crate::types::DatasetEntityRecognizerDocuments>,
     ) -> Self {
         self.documents = input;
         self
     }
     /// <p>The S3 location of the entity list for your custom entity recognizer.</p>
     pub fn entity_list(mut self, input: crate::types::DatasetEntityRecognizerEntityList) -> Self {
-        self.entity_list = Some(input);
+        self.entity_list = ::std::option::Option::Some(input);
         self
     }
     /// <p>The S3 location of the entity list for your custom entity recognizer.</p>
     pub fn set_entity_list(
         mut self,
-        input: std::option::Option<crate::types::DatasetEntityRecognizerEntityList>,
+        input: ::std::option::Option<crate::types::DatasetEntityRecognizerEntityList>,
     ) -> Self {
         self.entity_list = input;
         self

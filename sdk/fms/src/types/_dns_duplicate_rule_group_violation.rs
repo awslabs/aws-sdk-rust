@@ -2,22 +2,22 @@
 
 /// <p>A DNS Firewall rule group that Firewall Manager tried to associate with a VPC is already associated with the VPC and can't be associated again. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DnsDuplicateRuleGroupViolation {
     /// <p>Information about the VPC ID. </p>
     #[doc(hidden)]
-    pub violation_target: std::option::Option<std::string::String>,
+    pub violation_target: ::std::option::Option<::std::string::String>,
     /// <p>A description of the violation that specifies the rule group and VPC.</p>
     #[doc(hidden)]
-    pub violation_target_description: std::option::Option<std::string::String>,
+    pub violation_target_description: ::std::option::Option<::std::string::String>,
 }
 impl DnsDuplicateRuleGroupViolation {
     /// <p>Information about the VPC ID. </p>
-    pub fn violation_target(&self) -> std::option::Option<&str> {
+    pub fn violation_target(&self) -> ::std::option::Option<&str> {
         self.violation_target.as_deref()
     }
     /// <p>A description of the violation that specifies the rule group and VPC.</p>
-    pub fn violation_target_description(&self) -> std::option::Option<&str> {
+    pub fn violation_target_description(&self) -> ::std::option::Option<&str> {
         self.violation_target_description.as_deref()
     }
 }
@@ -30,31 +30,42 @@ impl DnsDuplicateRuleGroupViolation {
 
 /// A builder for [`DnsDuplicateRuleGroupViolation`](crate::types::DnsDuplicateRuleGroupViolation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DnsDuplicateRuleGroupViolationBuilder {
-    pub(crate) violation_target: std::option::Option<std::string::String>,
-    pub(crate) violation_target_description: std::option::Option<std::string::String>,
+    pub(crate) violation_target: ::std::option::Option<::std::string::String>,
+    pub(crate) violation_target_description: ::std::option::Option<::std::string::String>,
 }
 impl DnsDuplicateRuleGroupViolationBuilder {
     /// <p>Information about the VPC ID. </p>
-    pub fn violation_target(mut self, input: impl Into<std::string::String>) -> Self {
-        self.violation_target = Some(input.into());
+    pub fn violation_target(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.violation_target = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Information about the VPC ID. </p>
-    pub fn set_violation_target(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_violation_target(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.violation_target = input;
         self
     }
     /// <p>A description of the violation that specifies the rule group and VPC.</p>
-    pub fn violation_target_description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.violation_target_description = Some(input.into());
+    pub fn violation_target_description(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.violation_target_description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of the violation that specifies the rule group and VPC.</p>
     pub fn set_violation_target_description(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.violation_target_description = input;
         self

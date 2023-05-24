@@ -6,47 +6,50 @@ pub use crate::operation::update_elasticsearch_domain_config::_update_elasticsea
 /// Fluent builder constructing a request to `UpdateElasticsearchDomainConfig`.
 ///
 /// <p>Modifies the cluster configuration of the specified Elasticsearch domain, setting as setting the instance type and the number of instances. </p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateElasticsearchDomainConfigFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::update_elasticsearch_domain_config::builders::UpdateElasticsearchDomainConfigInputBuilder,
 }
 impl UpdateElasticsearchDomainConfigFluentBuilder {
     /// Creates a new `UpdateElasticsearchDomainConfig`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_elasticsearch_domain_config::UpdateElasticsearchDomainConfig, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::update_elasticsearch_domain_config::UpdateElasticsearchDomainConfigError>
+                    pub async fn customize(self) -> ::std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::update_elasticsearch_domain_config::UpdateElasticsearchDomainConfig, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                        ::aws_smithy_http::result::SdkError<crate::operation::update_elasticsearch_domain_config::UpdateElasticsearchDomainConfigError>
     >{
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::update_elasticsearch_domain_config::UpdateElasticsearchDomainConfigOutput, aws_smithy_http::result::SdkError<crate::operation::update_elasticsearch_domain_config::UpdateElasticsearchDomainConfigError>>
+                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_elasticsearch_domain_config::UpdateElasticsearchDomainConfigOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_elasticsearch_domain_config::UpdateElasticsearchDomainConfigError>>
                      {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -57,17 +60,17 @@ impl UpdateElasticsearchDomainConfigFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> std::result::Result<crate::operation::update_elasticsearch_domain_config::UpdateElasticsearchDomainConfigOutput, aws_smithy_http::result::SdkError<crate::operation::update_elasticsearch_domain_config::UpdateElasticsearchDomainConfigError>>
+                        pub async fn send(self) -> ::std::result::Result<crate::operation::update_elasticsearch_domain_config::UpdateElasticsearchDomainConfigOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_elasticsearch_domain_config::UpdateElasticsearchDomainConfigError>>
                          {
         self.send_middleware().await
     }
     /// <p>The name of the Elasticsearch domain that you are updating. </p>
-    pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn domain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.domain_name(input.into());
         self
     }
     /// <p>The name of the Elasticsearch domain that you are updating. </p>
-    pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_domain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_domain_name(input);
         self
     }
@@ -82,7 +85,7 @@ impl UpdateElasticsearchDomainConfigFluentBuilder {
     /// <p>The type and number of instances to instantiate for the domain cluster.</p>
     pub fn set_elasticsearch_cluster_config(
         mut self,
-        input: std::option::Option<crate::types::ElasticsearchClusterConfig>,
+        input: ::std::option::Option<crate::types::ElasticsearchClusterConfig>,
     ) -> Self {
         self.inner = self.inner.set_elasticsearch_cluster_config(input);
         self
@@ -93,7 +96,10 @@ impl UpdateElasticsearchDomainConfigFluentBuilder {
         self
     }
     /// <p>Specify the type and size of the EBS volume that you want to use. </p>
-    pub fn set_ebs_options(mut self, input: std::option::Option<crate::types::EbsOptions>) -> Self {
+    pub fn set_ebs_options(
+        mut self,
+        input: ::std::option::Option<crate::types::EbsOptions>,
+    ) -> Self {
         self.inner = self.inner.set_ebs_options(input);
         self
     }
@@ -105,7 +111,7 @@ impl UpdateElasticsearchDomainConfigFluentBuilder {
     /// <p>Option to set the time, in UTC format, for the daily automated snapshot. Default value is <code>0</code> hours. </p>
     pub fn set_snapshot_options(
         mut self,
-        input: std::option::Option<crate::types::SnapshotOptions>,
+        input: ::std::option::Option<crate::types::SnapshotOptions>,
     ) -> Self {
         self.inner = self.inner.set_snapshot_options(input);
         self
@@ -116,7 +122,10 @@ impl UpdateElasticsearchDomainConfigFluentBuilder {
         self
     }
     /// <p>Options to specify the subnets and security groups for VPC endpoint. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html#es-creating-vpc" target="_blank">Creating a VPC</a> in <i>VPC Endpoints for Amazon Elasticsearch Service Domains</i></p>
-    pub fn set_vpc_options(mut self, input: std::option::Option<crate::types::VpcOptions>) -> Self {
+    pub fn set_vpc_options(
+        mut self,
+        input: ::std::option::Option<crate::types::VpcOptions>,
+    ) -> Self {
         self.inner = self.inner.set_vpc_options(input);
         self
     }
@@ -128,7 +137,7 @@ impl UpdateElasticsearchDomainConfigFluentBuilder {
     /// <p>Options to specify the Cognito user and identity pools for Kibana authentication. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-cognito-auth.html" target="_blank">Amazon Cognito Authentication for Kibana</a>.</p>
     pub fn set_cognito_options(
         mut self,
-        input: std::option::Option<crate::types::CognitoOptions>,
+        input: ::std::option::Option<crate::types::CognitoOptions>,
     ) -> Self {
         self.inner = self.inner.set_cognito_options(input);
         self
@@ -140,8 +149,8 @@ impl UpdateElasticsearchDomainConfigFluentBuilder {
     /// <p>Modifies the advanced option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.</p>
     pub fn advanced_options(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.advanced_options(k.into(), v.into());
         self
@@ -149,20 +158,26 @@ impl UpdateElasticsearchDomainConfigFluentBuilder {
     /// <p>Modifies the advanced option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.</p>
     pub fn set_advanced_options(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_advanced_options(input);
         self
     }
     /// <p>IAM access policy as a JSON-formatted string.</p>
-    pub fn access_policies(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn access_policies(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.access_policies(input.into());
         self
     }
     /// <p>IAM access policy as a JSON-formatted string.</p>
-    pub fn set_access_policies(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_access_policies(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_access_policies(input);
         self
     }
@@ -182,8 +197,8 @@ impl UpdateElasticsearchDomainConfigFluentBuilder {
     /// <p>Map of <code>LogType</code> and <code>LogPublishingOption</code>, each containing options to publish a given type of Elasticsearch log.</p>
     pub fn set_log_publishing_options(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>,
         >,
     ) -> Self {
         self.inner = self.inner.set_log_publishing_options(input);
@@ -197,7 +212,7 @@ impl UpdateElasticsearchDomainConfigFluentBuilder {
     /// <p>Options to specify configuration that will be applied to the domain endpoint.</p>
     pub fn set_domain_endpoint_options(
         mut self,
-        input: std::option::Option<crate::types::DomainEndpointOptions>,
+        input: ::std::option::Option<crate::types::DomainEndpointOptions>,
     ) -> Self {
         self.inner = self.inner.set_domain_endpoint_options(input);
         self
@@ -213,7 +228,7 @@ impl UpdateElasticsearchDomainConfigFluentBuilder {
     /// <p>Specifies advanced security options.</p>
     pub fn set_advanced_security_options(
         mut self,
-        input: std::option::Option<crate::types::AdvancedSecurityOptionsInput>,
+        input: ::std::option::Option<crate::types::AdvancedSecurityOptionsInput>,
     ) -> Self {
         self.inner = self.inner.set_advanced_security_options(input);
         self
@@ -229,7 +244,7 @@ impl UpdateElasticsearchDomainConfigFluentBuilder {
     /// <p>Specifies the NodeToNodeEncryptionOptions.</p>
     pub fn set_node_to_node_encryption_options(
         mut self,
-        input: std::option::Option<crate::types::NodeToNodeEncryptionOptions>,
+        input: ::std::option::Option<crate::types::NodeToNodeEncryptionOptions>,
     ) -> Self {
         self.inner = self.inner.set_node_to_node_encryption_options(input);
         self
@@ -245,7 +260,7 @@ impl UpdateElasticsearchDomainConfigFluentBuilder {
     /// <p>Specifies the Encryption At Rest Options.</p>
     pub fn set_encryption_at_rest_options(
         mut self,
-        input: std::option::Option<crate::types::EncryptionAtRestOptions>,
+        input: ::std::option::Option<crate::types::EncryptionAtRestOptions>,
     ) -> Self {
         self.inner = self.inner.set_encryption_at_rest_options(input);
         self
@@ -258,7 +273,7 @@ impl UpdateElasticsearchDomainConfigFluentBuilder {
     /// <p>Specifies Auto-Tune options.</p>
     pub fn set_auto_tune_options(
         mut self,
-        input: std::option::Option<crate::types::AutoTuneOptions>,
+        input: ::std::option::Option<crate::types::AutoTuneOptions>,
     ) -> Self {
         self.inner = self.inner.set_auto_tune_options(input);
         self
@@ -269,7 +284,7 @@ impl UpdateElasticsearchDomainConfigFluentBuilder {
         self
     }
     /// <p> This flag, when set to True, specifies whether the <code>UpdateElasticsearchDomain</code> request should return the results of validation checks without actually applying the change. This flag, when set to True, specifies the deployment mechanism through which the update shall be applied on the domain. This will not actually perform the Update. </p>
-    pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_dry_run(input);
         self
     }

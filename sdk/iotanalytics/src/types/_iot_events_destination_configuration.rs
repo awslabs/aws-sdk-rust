@@ -2,22 +2,22 @@
 
 /// <p>Configuration information for delivery of dataset contents to IoT Events.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IotEventsDestinationConfiguration {
     /// <p>The name of the IoT Events input to which dataset contents are delivered.</p>
     #[doc(hidden)]
-    pub input_name: std::option::Option<std::string::String>,
+    pub input_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the role that grants IoT Analytics permission to deliver dataset contents to an IoT Events input.</p>
     #[doc(hidden)]
-    pub role_arn: std::option::Option<std::string::String>,
+    pub role_arn: ::std::option::Option<::std::string::String>,
 }
 impl IotEventsDestinationConfiguration {
     /// <p>The name of the IoT Events input to which dataset contents are delivered.</p>
-    pub fn input_name(&self) -> std::option::Option<&str> {
+    pub fn input_name(&self) -> ::std::option::Option<&str> {
         self.input_name.as_deref()
     }
     /// <p>The ARN of the role that grants IoT Analytics permission to deliver dataset contents to an IoT Events input.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl IotEventsDestinationConfiguration {
 
 /// A builder for [`IotEventsDestinationConfiguration`](crate::types::IotEventsDestinationConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct IotEventsDestinationConfigurationBuilder {
-    pub(crate) input_name: std::option::Option<std::string::String>,
-    pub(crate) role_arn: std::option::Option<std::string::String>,
+    pub(crate) input_name: ::std::option::Option<::std::string::String>,
+    pub(crate) role_arn: ::std::option::Option<::std::string::String>,
 }
 impl IotEventsDestinationConfigurationBuilder {
     /// <p>The name of the IoT Events input to which dataset contents are delivered.</p>
-    pub fn input_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.input_name = Some(input.into());
+    pub fn input_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.input_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the IoT Events input to which dataset contents are delivered.</p>
-    pub fn set_input_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_input_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.input_name = input;
         self
     }
     /// <p>The ARN of the role that grants IoT Analytics permission to deliver dataset contents to an IoT Events input.</p>
-    pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.role_arn = Some(input.into());
+    pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the role that grants IoT Analytics permission to deliver dataset contents to an IoT Events input.</p>
-    pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }

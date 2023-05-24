@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum DataQualityRuleResultStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum DataQualityRuleResultStatus {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for DataQualityRuleResultStatus {
+impl ::std::convert::From<&str> for DataQualityRuleResultStatus {
     fn from(s: &str) -> Self {
         match s {
             "ERROR" => DataQualityRuleResultStatus::Error,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for DataQualityRuleResultStatus {
         }
     }
 }
-impl std::str::FromStr for DataQualityRuleResultStatus {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for DataQualityRuleResultStatus {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DataQualityRuleResultStatus::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(DataQualityRuleResultStatus::from(s))
     }
 }
 impl DataQualityRuleResultStatus {
@@ -91,7 +91,7 @@ impl DataQualityRuleResultStatus {
         &["ERROR", "FAIL", "PASS"]
     }
 }
-impl AsRef<str> for DataQualityRuleResultStatus {
+impl ::std::convert::AsRef<str> for DataQualityRuleResultStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

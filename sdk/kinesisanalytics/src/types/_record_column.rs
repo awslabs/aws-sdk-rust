@@ -3,29 +3,29 @@
 /// <p>Describes the mapping of each data element in the streaming source to the corresponding column in the in-application stream.</p>
 /// <p>Also used to describe the format of the reference data source.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecordColumn {
     /// <p>Name of the column created in the in-application input stream or reference table.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>Reference to the data element in the streaming input or the reference data source. This element is required if the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_RecordFormat.html#analytics-Type-RecordFormat-RecordFormatTypel">RecordFormatType</a> is <code>JSON</code>.</p>
     #[doc(hidden)]
-    pub mapping: std::option::Option<std::string::String>,
+    pub mapping: ::std::option::Option<::std::string::String>,
     /// <p>Type of column created in the in-application input stream or reference table.</p>
     #[doc(hidden)]
-    pub sql_type: std::option::Option<std::string::String>,
+    pub sql_type: ::std::option::Option<::std::string::String>,
 }
 impl RecordColumn {
     /// <p>Name of the column created in the in-application input stream or reference table.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>Reference to the data element in the streaming input or the reference data source. This element is required if the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_RecordFormat.html#analytics-Type-RecordFormat-RecordFormatTypel">RecordFormatType</a> is <code>JSON</code>.</p>
-    pub fn mapping(&self) -> std::option::Option<&str> {
+    pub fn mapping(&self) -> ::std::option::Option<&str> {
         self.mapping.as_deref()
     }
     /// <p>Type of column created in the in-application input stream or reference table.</p>
-    pub fn sql_type(&self) -> std::option::Option<&str> {
+    pub fn sql_type(&self) -> ::std::option::Option<&str> {
         self.sql_type.as_deref()
     }
 }
@@ -38,40 +38,42 @@ impl RecordColumn {
 
 /// A builder for [`RecordColumn`](crate::types::RecordColumn).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RecordColumnBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) mapping: std::option::Option<std::string::String>,
-    pub(crate) sql_type: std::option::Option<std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) mapping: ::std::option::Option<::std::string::String>,
+    pub(crate) sql_type: ::std::option::Option<::std::string::String>,
 }
 impl RecordColumnBuilder {
     /// <p>Name of the column created in the in-application input stream or reference table.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Name of the column created in the in-application input stream or reference table.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>Reference to the data element in the streaming input or the reference data source. This element is required if the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_RecordFormat.html#analytics-Type-RecordFormat-RecordFormatTypel">RecordFormatType</a> is <code>JSON</code>.</p>
-    pub fn mapping(mut self, input: impl Into<std::string::String>) -> Self {
-        self.mapping = Some(input.into());
+    pub fn mapping(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.mapping = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Reference to the data element in the streaming input or the reference data source. This element is required if the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_RecordFormat.html#analytics-Type-RecordFormat-RecordFormatTypel">RecordFormatType</a> is <code>JSON</code>.</p>
-    pub fn set_mapping(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_mapping(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.mapping = input;
         self
     }
     /// <p>Type of column created in the in-application input stream or reference table.</p>
-    pub fn sql_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.sql_type = Some(input.into());
+    pub fn sql_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.sql_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Type of column created in the in-application input stream or reference table.</p>
-    pub fn set_sql_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_sql_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sql_type = input;
         self
     }

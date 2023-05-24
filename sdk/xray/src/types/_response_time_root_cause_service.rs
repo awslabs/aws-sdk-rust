@@ -2,50 +2,53 @@
 
 /// <p>A collection of fields identifying the service in a response time warning.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResponseTimeRootCauseService {
     /// <p>The service name.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>A collection of associated service names.</p>
     #[doc(hidden)]
-    pub names: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The type associated to the service.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<std::string::String>,
+    pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The account ID associated to the service.</p>
     #[doc(hidden)]
-    pub account_id: std::option::Option<std::string::String>,
+    pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The path of root cause entities found on the service. </p>
     #[doc(hidden)]
-    pub entity_path: std::option::Option<std::vec::Vec<crate::types::ResponseTimeRootCauseEntity>>,
+    pub entity_path:
+        ::std::option::Option<::std::vec::Vec<crate::types::ResponseTimeRootCauseEntity>>,
     /// <p>A Boolean value indicating if the service is inferred from the trace.</p>
     #[doc(hidden)]
-    pub inferred: std::option::Option<bool>,
+    pub inferred: ::std::option::Option<bool>,
 }
 impl ResponseTimeRootCauseService {
     /// <p>The service name.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>A collection of associated service names.</p>
-    pub fn names(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn names(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.names.as_deref()
     }
     /// <p>The type associated to the service.</p>
-    pub fn r#type(&self) -> std::option::Option<&str> {
+    pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
     }
     /// <p>The account ID associated to the service.</p>
-    pub fn account_id(&self) -> std::option::Option<&str> {
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The path of root cause entities found on the service. </p>
-    pub fn entity_path(&self) -> std::option::Option<&[crate::types::ResponseTimeRootCauseEntity]> {
+    pub fn entity_path(
+        &self,
+    ) -> ::std::option::Option<&[crate::types::ResponseTimeRootCauseEntity]> {
         self.entity_path.as_deref()
     }
     /// <p>A Boolean value indicating if the service is inferred from the trace.</p>
-    pub fn inferred(&self) -> std::option::Option<bool> {
+    pub fn inferred(&self) -> ::std::option::Option<bool> {
         self.inferred
     }
 }
@@ -58,24 +61,26 @@ impl ResponseTimeRootCauseService {
 
 /// A builder for [`ResponseTimeRootCauseService`](crate::types::ResponseTimeRootCauseService).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResponseTimeRootCauseServiceBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) names: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) r#type: std::option::Option<std::string::String>,
-    pub(crate) account_id: std::option::Option<std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) r#type: ::std::option::Option<::std::string::String>,
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) entity_path:
-        std::option::Option<std::vec::Vec<crate::types::ResponseTimeRootCauseEntity>>,
-    pub(crate) inferred: std::option::Option<bool>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ResponseTimeRootCauseEntity>>,
+    pub(crate) inferred: ::std::option::Option<bool>,
 }
 impl ResponseTimeRootCauseServiceBuilder {
     /// <p>The service name.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The service name.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
@@ -84,37 +89,37 @@ impl ResponseTimeRootCauseServiceBuilder {
     /// To override the contents of this collection use [`set_names`](Self::set_names).
     ///
     /// <p>A collection of associated service names.</p>
-    pub fn names(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.names.unwrap_or_default();
         v.push(input.into());
-        self.names = Some(v);
+        self.names = ::std::option::Option::Some(v);
         self
     }
     /// <p>A collection of associated service names.</p>
     pub fn set_names(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.names = input;
         self
     }
     /// <p>The type associated to the service.</p>
-    pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.r#type = Some(input.into());
+    pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.r#type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type associated to the service.</p>
-    pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The account ID associated to the service.</p>
-    pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.account_id = Some(input.into());
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The account ID associated to the service.</p>
-    pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
     }
@@ -126,24 +131,24 @@ impl ResponseTimeRootCauseServiceBuilder {
     pub fn entity_path(mut self, input: crate::types::ResponseTimeRootCauseEntity) -> Self {
         let mut v = self.entity_path.unwrap_or_default();
         v.push(input);
-        self.entity_path = Some(v);
+        self.entity_path = ::std::option::Option::Some(v);
         self
     }
     /// <p>The path of root cause entities found on the service. </p>
     pub fn set_entity_path(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ResponseTimeRootCauseEntity>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ResponseTimeRootCauseEntity>>,
     ) -> Self {
         self.entity_path = input;
         self
     }
     /// <p>A Boolean value indicating if the service is inferred from the trace.</p>
     pub fn inferred(mut self, input: bool) -> Self {
-        self.inferred = Some(input);
+        self.inferred = ::std::option::Option::Some(input);
         self
     }
     /// <p>A Boolean value indicating if the service is inferred from the trace.</p>
-    pub fn set_inferred(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_inferred(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inferred = input;
         self
     }

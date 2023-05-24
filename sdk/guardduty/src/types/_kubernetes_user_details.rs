@@ -2,29 +2,29 @@
 
 /// <p>Details about the Kubernetes user involved in a Kubernetes finding.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KubernetesUserDetails {
     /// <p>The username of the user who called the Kubernetes API.</p>
     #[doc(hidden)]
-    pub username: std::option::Option<std::string::String>,
+    pub username: ::std::option::Option<::std::string::String>,
     /// <p>The user ID of the user who called the Kubernetes API.</p>
     #[doc(hidden)]
-    pub uid: std::option::Option<std::string::String>,
+    pub uid: ::std::option::Option<::std::string::String>,
     /// <p>The groups that include the user who called the Kubernetes API.</p>
     #[doc(hidden)]
-    pub groups: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl KubernetesUserDetails {
     /// <p>The username of the user who called the Kubernetes API.</p>
-    pub fn username(&self) -> std::option::Option<&str> {
+    pub fn username(&self) -> ::std::option::Option<&str> {
         self.username.as_deref()
     }
     /// <p>The user ID of the user who called the Kubernetes API.</p>
-    pub fn uid(&self) -> std::option::Option<&str> {
+    pub fn uid(&self) -> ::std::option::Option<&str> {
         self.uid.as_deref()
     }
     /// <p>The groups that include the user who called the Kubernetes API.</p>
-    pub fn groups(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn groups(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.groups.as_deref()
     }
 }
@@ -37,30 +37,32 @@ impl KubernetesUserDetails {
 
 /// A builder for [`KubernetesUserDetails`](crate::types::KubernetesUserDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct KubernetesUserDetailsBuilder {
-    pub(crate) username: std::option::Option<std::string::String>,
-    pub(crate) uid: std::option::Option<std::string::String>,
-    pub(crate) groups: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) username: ::std::option::Option<::std::string::String>,
+    pub(crate) uid: ::std::option::Option<::std::string::String>,
+    pub(crate) groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl KubernetesUserDetailsBuilder {
     /// <p>The username of the user who called the Kubernetes API.</p>
-    pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
-        self.username = Some(input.into());
+    pub fn username(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.username = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The username of the user who called the Kubernetes API.</p>
-    pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_username(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.username = input;
         self
     }
     /// <p>The user ID of the user who called the Kubernetes API.</p>
-    pub fn uid(mut self, input: impl Into<std::string::String>) -> Self {
-        self.uid = Some(input.into());
+    pub fn uid(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.uid = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user ID of the user who called the Kubernetes API.</p>
-    pub fn set_uid(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_uid(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.uid = input;
         self
     }
@@ -69,16 +71,16 @@ impl KubernetesUserDetailsBuilder {
     /// To override the contents of this collection use [`set_groups`](Self::set_groups).
     ///
     /// <p>The groups that include the user who called the Kubernetes API.</p>
-    pub fn groups(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.groups.unwrap_or_default();
         v.push(input.into());
-        self.groups = Some(v);
+        self.groups = ::std::option::Option::Some(v);
         self
     }
     /// <p>The groups that include the user who called the Kubernetes API.</p>
     pub fn set_groups(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.groups = input;
         self

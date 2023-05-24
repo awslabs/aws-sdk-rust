@@ -2,36 +2,36 @@
 
 /// <p>Represents an object when updating a rule.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RuleUpdate {
     /// <p>The ID or Amazon Resource Name (ARN) of the rule.</p>
     #[doc(hidden)]
-    pub rule_identifier: std::option::Option<std::string::String>,
+    pub rule_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The rule match.</p>
     #[doc(hidden)]
-    pub r#match: std::option::Option<crate::types::RuleMatch>,
+    pub r#match: ::std::option::Option<crate::types::RuleMatch>,
     /// <p>The rule priority. A listener can't have multiple rules with the same priority.</p>
     #[doc(hidden)]
-    pub priority: std::option::Option<i32>,
+    pub priority: ::std::option::Option<i32>,
     /// <p>The rule action.</p>
     #[doc(hidden)]
-    pub action: std::option::Option<crate::types::RuleAction>,
+    pub action: ::std::option::Option<crate::types::RuleAction>,
 }
 impl RuleUpdate {
     /// <p>The ID or Amazon Resource Name (ARN) of the rule.</p>
-    pub fn rule_identifier(&self) -> std::option::Option<&str> {
+    pub fn rule_identifier(&self) -> ::std::option::Option<&str> {
         self.rule_identifier.as_deref()
     }
     /// <p>The rule match.</p>
-    pub fn r#match(&self) -> std::option::Option<&crate::types::RuleMatch> {
+    pub fn r#match(&self) -> ::std::option::Option<&crate::types::RuleMatch> {
         self.r#match.as_ref()
     }
     /// <p>The rule priority. A listener can't have multiple rules with the same priority.</p>
-    pub fn priority(&self) -> std::option::Option<i32> {
+    pub fn priority(&self) -> ::std::option::Option<i32> {
         self.priority
     }
     /// <p>The rule action.</p>
-    pub fn action(&self) -> std::option::Option<&crate::types::RuleAction> {
+    pub fn action(&self) -> ::std::option::Option<&crate::types::RuleAction> {
         self.action.as_ref()
     }
 }
@@ -44,51 +44,59 @@ impl RuleUpdate {
 
 /// A builder for [`RuleUpdate`](crate::types::RuleUpdate).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RuleUpdateBuilder {
-    pub(crate) rule_identifier: std::option::Option<std::string::String>,
-    pub(crate) r#match: std::option::Option<crate::types::RuleMatch>,
-    pub(crate) priority: std::option::Option<i32>,
-    pub(crate) action: std::option::Option<crate::types::RuleAction>,
+    pub(crate) rule_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) r#match: ::std::option::Option<crate::types::RuleMatch>,
+    pub(crate) priority: ::std::option::Option<i32>,
+    pub(crate) action: ::std::option::Option<crate::types::RuleAction>,
 }
 impl RuleUpdateBuilder {
     /// <p>The ID or Amazon Resource Name (ARN) of the rule.</p>
-    pub fn rule_identifier(mut self, input: impl Into<std::string::String>) -> Self {
-        self.rule_identifier = Some(input.into());
+    pub fn rule_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.rule_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the rule.</p>
-    pub fn set_rule_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_rule_identifier(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.rule_identifier = input;
         self
     }
     /// <p>The rule match.</p>
     pub fn r#match(mut self, input: crate::types::RuleMatch) -> Self {
-        self.r#match = Some(input);
+        self.r#match = ::std::option::Option::Some(input);
         self
     }
     /// <p>The rule match.</p>
-    pub fn set_match(mut self, input: std::option::Option<crate::types::RuleMatch>) -> Self {
+    pub fn set_match(mut self, input: ::std::option::Option<crate::types::RuleMatch>) -> Self {
         self.r#match = input;
         self
     }
     /// <p>The rule priority. A listener can't have multiple rules with the same priority.</p>
     pub fn priority(mut self, input: i32) -> Self {
-        self.priority = Some(input);
+        self.priority = ::std::option::Option::Some(input);
         self
     }
     /// <p>The rule priority. A listener can't have multiple rules with the same priority.</p>
-    pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_priority(mut self, input: ::std::option::Option<i32>) -> Self {
         self.priority = input;
         self
     }
     /// <p>The rule action.</p>
     pub fn action(mut self, input: crate::types::RuleAction) -> Self {
-        self.action = Some(input);
+        self.action = ::std::option::Option::Some(input);
         self
     }
     /// <p>The rule action.</p>
-    pub fn set_action(mut self, input: std::option::Option<crate::types::RuleAction>) -> Self {
+    pub fn set_action(mut self, input: ::std::option::Option<crate::types::RuleAction>) -> Self {
         self.action = input;
         self
     }

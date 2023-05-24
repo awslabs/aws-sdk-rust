@@ -2,20 +2,20 @@
 
 /// <p>A CloudFront origin access control.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OriginAccessControlSummary {
     /// <p>The unique identifier of the origin access control.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>A description of the origin access control.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>A unique name that identifies the origin access control.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The signing protocol of the origin access control. The signing protocol determines how CloudFront signs (authenticates) requests. The only valid value is <code>sigv4</code>.</p>
     #[doc(hidden)]
-    pub signing_protocol: std::option::Option<crate::types::OriginAccessControlSigningProtocols>,
+    pub signing_protocol: ::std::option::Option<crate::types::OriginAccessControlSigningProtocols>,
     /// <p>A value that specifies which requests CloudFront signs (adds authentication information to). This field can have one of the following values:</p>
     /// <ul>
     /// <li> <p> <code>never</code> – CloudFront doesn't sign any origin requests.</p> </li>
@@ -23,29 +23,29 @@ pub struct OriginAccessControlSummary {
     /// <li> <p> <code>no-override</code> – If the viewer request doesn't contain the <code>Authorization</code> header, CloudFront signs the origin request. If the viewer request contains the <code>Authorization</code> header, CloudFront doesn't sign the origin request, but instead passes along the <code>Authorization</code> header that it received in the viewer request.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub signing_behavior: std::option::Option<crate::types::OriginAccessControlSigningBehaviors>,
+    pub signing_behavior: ::std::option::Option<crate::types::OriginAccessControlSigningBehaviors>,
     /// <p>The type of origin that this origin access control is for.</p>
     #[doc(hidden)]
     pub origin_access_control_origin_type:
-        std::option::Option<crate::types::OriginAccessControlOriginTypes>,
+        ::std::option::Option<crate::types::OriginAccessControlOriginTypes>,
 }
 impl OriginAccessControlSummary {
     /// <p>The unique identifier of the origin access control.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>A description of the origin access control.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>A unique name that identifies the origin access control.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The signing protocol of the origin access control. The signing protocol determines how CloudFront signs (authenticates) requests. The only valid value is <code>sigv4</code>.</p>
     pub fn signing_protocol(
         &self,
-    ) -> std::option::Option<&crate::types::OriginAccessControlSigningProtocols> {
+    ) -> ::std::option::Option<&crate::types::OriginAccessControlSigningProtocols> {
         self.signing_protocol.as_ref()
     }
     /// <p>A value that specifies which requests CloudFront signs (adds authentication information to). This field can have one of the following values:</p>
@@ -56,13 +56,13 @@ impl OriginAccessControlSummary {
     /// </ul>
     pub fn signing_behavior(
         &self,
-    ) -> std::option::Option<&crate::types::OriginAccessControlSigningBehaviors> {
+    ) -> ::std::option::Option<&crate::types::OriginAccessControlSigningBehaviors> {
         self.signing_behavior.as_ref()
     }
     /// <p>The type of origin that this origin access control is for.</p>
     pub fn origin_access_control_origin_type(
         &self,
-    ) -> std::option::Option<&crate::types::OriginAccessControlOriginTypes> {
+    ) -> ::std::option::Option<&crate::types::OriginAccessControlOriginTypes> {
         self.origin_access_control_origin_type.as_ref()
     }
 }
@@ -75,46 +75,48 @@ impl OriginAccessControlSummary {
 
 /// A builder for [`OriginAccessControlSummary`](crate::types::OriginAccessControlSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OriginAccessControlSummaryBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) signing_protocol:
-        std::option::Option<crate::types::OriginAccessControlSigningProtocols>,
+        ::std::option::Option<crate::types::OriginAccessControlSigningProtocols>,
     pub(crate) signing_behavior:
-        std::option::Option<crate::types::OriginAccessControlSigningBehaviors>,
+        ::std::option::Option<crate::types::OriginAccessControlSigningBehaviors>,
     pub(crate) origin_access_control_origin_type:
-        std::option::Option<crate::types::OriginAccessControlOriginTypes>,
+        ::std::option::Option<crate::types::OriginAccessControlOriginTypes>,
 }
 impl OriginAccessControlSummaryBuilder {
     /// <p>The unique identifier of the origin access control.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the origin access control.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>A description of the origin access control.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of the origin access control.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>A unique name that identifies the origin access control.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique name that identifies the origin access control.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
@@ -123,13 +125,13 @@ impl OriginAccessControlSummaryBuilder {
         mut self,
         input: crate::types::OriginAccessControlSigningProtocols,
     ) -> Self {
-        self.signing_protocol = Some(input);
+        self.signing_protocol = ::std::option::Option::Some(input);
         self
     }
     /// <p>The signing protocol of the origin access control. The signing protocol determines how CloudFront signs (authenticates) requests. The only valid value is <code>sigv4</code>.</p>
     pub fn set_signing_protocol(
         mut self,
-        input: std::option::Option<crate::types::OriginAccessControlSigningProtocols>,
+        input: ::std::option::Option<crate::types::OriginAccessControlSigningProtocols>,
     ) -> Self {
         self.signing_protocol = input;
         self
@@ -144,7 +146,7 @@ impl OriginAccessControlSummaryBuilder {
         mut self,
         input: crate::types::OriginAccessControlSigningBehaviors,
     ) -> Self {
-        self.signing_behavior = Some(input);
+        self.signing_behavior = ::std::option::Option::Some(input);
         self
     }
     /// <p>A value that specifies which requests CloudFront signs (adds authentication information to). This field can have one of the following values:</p>
@@ -155,7 +157,7 @@ impl OriginAccessControlSummaryBuilder {
     /// </ul>
     pub fn set_signing_behavior(
         mut self,
-        input: std::option::Option<crate::types::OriginAccessControlSigningBehaviors>,
+        input: ::std::option::Option<crate::types::OriginAccessControlSigningBehaviors>,
     ) -> Self {
         self.signing_behavior = input;
         self
@@ -165,13 +167,13 @@ impl OriginAccessControlSummaryBuilder {
         mut self,
         input: crate::types::OriginAccessControlOriginTypes,
     ) -> Self {
-        self.origin_access_control_origin_type = Some(input);
+        self.origin_access_control_origin_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of origin that this origin access control is for.</p>
     pub fn set_origin_access_control_origin_type(
         mut self,
-        input: std::option::Option<crate::types::OriginAccessControlOriginTypes>,
+        input: ::std::option::Option<crate::types::OriginAccessControlOriginTypes>,
     ) -> Self {
         self.origin_access_control_origin_type = input;
         self

@@ -2,34 +2,34 @@
 
 /// <p>Represents the request to verify user attributes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct VerifyUserAttributeInput {
     /// <p>A valid access token that Amazon Cognito issued to the user whose user attributes you want to verify.</p>
     #[doc(hidden)]
-    pub access_token: std::option::Option<std::string::String>,
+    pub access_token: ::std::option::Option<::std::string::String>,
     /// <p>The attribute name in the request to verify user attributes.</p>
     #[doc(hidden)]
-    pub attribute_name: std::option::Option<std::string::String>,
+    pub attribute_name: ::std::option::Option<::std::string::String>,
     /// <p>The verification code in the request to verify user attributes.</p>
     #[doc(hidden)]
-    pub code: std::option::Option<std::string::String>,
+    pub code: ::std::option::Option<::std::string::String>,
 }
 impl VerifyUserAttributeInput {
     /// <p>A valid access token that Amazon Cognito issued to the user whose user attributes you want to verify.</p>
-    pub fn access_token(&self) -> std::option::Option<&str> {
+    pub fn access_token(&self) -> ::std::option::Option<&str> {
         self.access_token.as_deref()
     }
     /// <p>The attribute name in the request to verify user attributes.</p>
-    pub fn attribute_name(&self) -> std::option::Option<&str> {
+    pub fn attribute_name(&self) -> ::std::option::Option<&str> {
         self.attribute_name.as_deref()
     }
     /// <p>The verification code in the request to verify user attributes.</p>
-    pub fn code(&self) -> std::option::Option<&str> {
+    pub fn code(&self) -> ::std::option::Option<&str> {
         self.code.as_deref()
     }
 }
-impl std::fmt::Debug for VerifyUserAttributeInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for VerifyUserAttributeInput {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("VerifyUserAttributeInput");
         formatter.field("access_token", &"*** Sensitive Data Redacted ***");
         formatter.field("attribute_name", &self.attribute_name);
@@ -48,51 +48,57 @@ impl VerifyUserAttributeInput {
 
 /// A builder for [`VerifyUserAttributeInput`](crate::operation::verify_user_attribute::VerifyUserAttributeInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct VerifyUserAttributeInputBuilder {
-    pub(crate) access_token: std::option::Option<std::string::String>,
-    pub(crate) attribute_name: std::option::Option<std::string::String>,
-    pub(crate) code: std::option::Option<std::string::String>,
+    pub(crate) access_token: ::std::option::Option<::std::string::String>,
+    pub(crate) attribute_name: ::std::option::Option<::std::string::String>,
+    pub(crate) code: ::std::option::Option<::std::string::String>,
 }
 impl VerifyUserAttributeInputBuilder {
     /// <p>A valid access token that Amazon Cognito issued to the user whose user attributes you want to verify.</p>
-    pub fn access_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.access_token = Some(input.into());
+    pub fn access_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.access_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A valid access token that Amazon Cognito issued to the user whose user attributes you want to verify.</p>
-    pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_access_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.access_token = input;
         self
     }
     /// <p>The attribute name in the request to verify user attributes.</p>
-    pub fn attribute_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.attribute_name = Some(input.into());
+    pub fn attribute_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.attribute_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The attribute name in the request to verify user attributes.</p>
-    pub fn set_attribute_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_attribute_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.attribute_name = input;
         self
     }
     /// <p>The verification code in the request to verify user attributes.</p>
-    pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
-        self.code = Some(input.into());
+    pub fn code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The verification code in the request to verify user attributes.</p>
-    pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.code = input;
         self
     }
     /// Consumes the builder and constructs a [`VerifyUserAttributeInput`](crate::operation::verify_user_attribute::VerifyUserAttributeInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::verify_user_attribute::VerifyUserAttributeInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::verify_user_attribute::VerifyUserAttributeInput {
                 access_token: self.access_token,
                 attribute_name: self.attribute_name,
@@ -101,8 +107,8 @@ impl VerifyUserAttributeInputBuilder {
         )
     }
 }
-impl std::fmt::Debug for VerifyUserAttributeInputBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for VerifyUserAttributeInputBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("VerifyUserAttributeInputBuilder");
         formatter.field("access_token", &"*** Sensitive Data Redacted ***");
         formatter.field("attribute_name", &self.attribute_name);

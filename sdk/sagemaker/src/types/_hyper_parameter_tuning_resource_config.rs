@@ -4,11 +4,11 @@
 /// <p> <code>HyperParameterTuningResourceConfig</code> supports the capabilities of <code>ResourceConfig</code> with the exception of <code>KeepAlivePeriodInSeconds</code>. Hyperparameter tuning jobs use warm pools by default, which reuse clusters between training jobs.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HyperParameterTuningResourceConfig {
     /// <p>The instance type used to run hyperparameter optimization tuning jobs. See <a href="https://docs.aws.amazon.com/notebooks-available-instance-types.html"> descriptions of instance types</a> for more information.</p>
     #[doc(hidden)]
-    pub instance_type: std::option::Option<crate::types::TrainingInstanceType>,
+    pub instance_type: ::std::option::Option<crate::types::TrainingInstanceType>,
     /// <p>The number of compute instances of type <code>InstanceType</code> to use. For <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/data-parallel-use-api.html">distributed training</a>, select a value greater than 1.</p>
     #[doc(hidden)]
     pub instance_count: i32,
@@ -25,21 +25,21 @@ pub struct HyperParameterTuningResourceConfig {
     /// <p> <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p>
     /// <p>Some instances use local storage, which use a <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">hardware module to encrypt</a> storage volumes. If you choose one of these instance types, you cannot request a <code>VolumeKmsKeyId</code>. For a list of instance types that use local storage, see <a href="http://aws.amazon.com/releasenotes/host-instance-storage-volumes-table/">instance store volumes</a>. For more information about Amazon Web Services Key Management Service, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-security-kms-permissions.html">KMS encryption</a> for more information.</p>
     #[doc(hidden)]
-    pub volume_kms_key_id: std::option::Option<std::string::String>,
+    pub volume_kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The strategy that determines the order of preference for resources specified in <code>InstanceConfigs</code> used in hyperparameter optimization.</p>
     #[doc(hidden)]
     pub allocation_strategy:
-        std::option::Option<crate::types::HyperParameterTuningAllocationStrategy>,
+        ::std::option::Option<crate::types::HyperParameterTuningAllocationStrategy>,
     /// <p>A list containing the configuration(s) for one or more resources for processing hyperparameter jobs. These resources include compute instances and storage volumes to use in model training jobs launched by hyperparameter tuning jobs. The <code>AllocationStrategy</code> controls the order in which multiple configurations provided in <code>InstanceConfigs</code> are used.</p> <note>
     /// <p>If you only want to use a single instance configuration inside the <code>HyperParameterTuningResourceConfig</code> API, do not provide a value for <code>InstanceConfigs</code>. Instead, use <code>InstanceType</code>, <code>VolumeSizeInGB</code> and <code>InstanceCount</code>. If you use <code>InstanceConfigs</code>, do not provide values for <code>InstanceType</code>, <code>VolumeSizeInGB</code> or <code>InstanceCount</code>.</p>
     /// </note>
     #[doc(hidden)]
     pub instance_configs:
-        std::option::Option<std::vec::Vec<crate::types::HyperParameterTuningInstanceConfig>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::HyperParameterTuningInstanceConfig>>,
 }
 impl HyperParameterTuningResourceConfig {
     /// <p>The instance type used to run hyperparameter optimization tuning jobs. See <a href="https://docs.aws.amazon.com/notebooks-available-instance-types.html"> descriptions of instance types</a> for more information.</p>
-    pub fn instance_type(&self) -> std::option::Option<&crate::types::TrainingInstanceType> {
+    pub fn instance_type(&self) -> ::std::option::Option<&crate::types::TrainingInstanceType> {
         self.instance_type.as_ref()
     }
     /// <p>The number of compute instances of type <code>InstanceType</code> to use. For <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/data-parallel-use-api.html">distributed training</a>, select a value greater than 1.</p>
@@ -59,13 +59,13 @@ impl HyperParameterTuningResourceConfig {
     /// <p>Amazon Resource Name (ARN) of a KMS key:</p>
     /// <p> <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p>
     /// <p>Some instances use local storage, which use a <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">hardware module to encrypt</a> storage volumes. If you choose one of these instance types, you cannot request a <code>VolumeKmsKeyId</code>. For a list of instance types that use local storage, see <a href="http://aws.amazon.com/releasenotes/host-instance-storage-volumes-table/">instance store volumes</a>. For more information about Amazon Web Services Key Management Service, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-security-kms-permissions.html">KMS encryption</a> for more information.</p>
-    pub fn volume_kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn volume_kms_key_id(&self) -> ::std::option::Option<&str> {
         self.volume_kms_key_id.as_deref()
     }
     /// <p>The strategy that determines the order of preference for resources specified in <code>InstanceConfigs</code> used in hyperparameter optimization.</p>
     pub fn allocation_strategy(
         &self,
-    ) -> std::option::Option<&crate::types::HyperParameterTuningAllocationStrategy> {
+    ) -> ::std::option::Option<&crate::types::HyperParameterTuningAllocationStrategy> {
         self.allocation_strategy.as_ref()
     }
     /// <p>A list containing the configuration(s) for one or more resources for processing hyperparameter jobs. These resources include compute instances and storage volumes to use in model training jobs launched by hyperparameter tuning jobs. The <code>AllocationStrategy</code> controls the order in which multiple configurations provided in <code>InstanceConfigs</code> are used.</p> <note>
@@ -73,7 +73,7 @@ impl HyperParameterTuningResourceConfig {
     /// </note>
     pub fn instance_configs(
         &self,
-    ) -> std::option::Option<&[crate::types::HyperParameterTuningInstanceConfig]> {
+    ) -> ::std::option::Option<&[crate::types::HyperParameterTuningInstanceConfig]> {
         self.instance_configs.as_deref()
     }
 }
@@ -86,38 +86,40 @@ impl HyperParameterTuningResourceConfig {
 
 /// A builder for [`HyperParameterTuningResourceConfig`](crate::types::HyperParameterTuningResourceConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct HyperParameterTuningResourceConfigBuilder {
-    pub(crate) instance_type: std::option::Option<crate::types::TrainingInstanceType>,
-    pub(crate) instance_count: std::option::Option<i32>,
-    pub(crate) volume_size_in_gb: std::option::Option<i32>,
-    pub(crate) volume_kms_key_id: std::option::Option<std::string::String>,
+    pub(crate) instance_type: ::std::option::Option<crate::types::TrainingInstanceType>,
+    pub(crate) instance_count: ::std::option::Option<i32>,
+    pub(crate) volume_size_in_gb: ::std::option::Option<i32>,
+    pub(crate) volume_kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) allocation_strategy:
-        std::option::Option<crate::types::HyperParameterTuningAllocationStrategy>,
+        ::std::option::Option<crate::types::HyperParameterTuningAllocationStrategy>,
     pub(crate) instance_configs:
-        std::option::Option<std::vec::Vec<crate::types::HyperParameterTuningInstanceConfig>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::HyperParameterTuningInstanceConfig>>,
 }
 impl HyperParameterTuningResourceConfigBuilder {
     /// <p>The instance type used to run hyperparameter optimization tuning jobs. See <a href="https://docs.aws.amazon.com/notebooks-available-instance-types.html"> descriptions of instance types</a> for more information.</p>
     pub fn instance_type(mut self, input: crate::types::TrainingInstanceType) -> Self {
-        self.instance_type = Some(input);
+        self.instance_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The instance type used to run hyperparameter optimization tuning jobs. See <a href="https://docs.aws.amazon.com/notebooks-available-instance-types.html"> descriptions of instance types</a> for more information.</p>
     pub fn set_instance_type(
         mut self,
-        input: std::option::Option<crate::types::TrainingInstanceType>,
+        input: ::std::option::Option<crate::types::TrainingInstanceType>,
     ) -> Self {
         self.instance_type = input;
         self
     }
     /// <p>The number of compute instances of type <code>InstanceType</code> to use. For <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/data-parallel-use-api.html">distributed training</a>, select a value greater than 1.</p>
     pub fn instance_count(mut self, input: i32) -> Self {
-        self.instance_count = Some(input);
+        self.instance_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of compute instances of type <code>InstanceType</code> to use. For <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/data-parallel-use-api.html">distributed training</a>, select a value greater than 1.</p>
-    pub fn set_instance_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.instance_count = input;
         self
     }
@@ -126,14 +128,14 @@ impl HyperParameterTuningResourceConfigBuilder {
     /// <p>SageMaker supports only the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html">General Purpose SSD (gp2)</a> storage volume type.</p>
     /// </note>
     pub fn volume_size_in_gb(mut self, input: i32) -> Self {
-        self.volume_size_in_gb = Some(input);
+        self.volume_size_in_gb = ::std::option::Option::Some(input);
         self
     }
     /// <p>The volume size in GB for the storage volume to be used in processing hyperparameter optimization jobs (optional). These volumes store model artifacts, incremental states and optionally, scratch space for training algorithms. Do not provide a value for this parameter if a value for <code>InstanceConfigs</code> is also specified.</p>
     /// <p>Some instance types have a fixed total local storage size. If you select one of these instances for training, <code>VolumeSizeInGB</code> cannot be greater than this total size. For a list of instance types with local instance storage and their sizes, see <a href="http://aws.amazon.com/releasenotes/host-instance-storage-volumes-table/">instance store volumes</a>.</p> <note>
     /// <p>SageMaker supports only the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html">General Purpose SSD (gp2)</a> storage volume type.</p>
     /// </note>
-    pub fn set_volume_size_in_gb(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_volume_size_in_gb(mut self, input: ::std::option::Option<i32>) -> Self {
         self.volume_size_in_gb = input;
         self
     }
@@ -143,8 +145,11 @@ impl HyperParameterTuningResourceConfigBuilder {
     /// <p>Amazon Resource Name (ARN) of a KMS key:</p>
     /// <p> <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p>
     /// <p>Some instances use local storage, which use a <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">hardware module to encrypt</a> storage volumes. If you choose one of these instance types, you cannot request a <code>VolumeKmsKeyId</code>. For a list of instance types that use local storage, see <a href="http://aws.amazon.com/releasenotes/host-instance-storage-volumes-table/">instance store volumes</a>. For more information about Amazon Web Services Key Management Service, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-security-kms-permissions.html">KMS encryption</a> for more information.</p>
-    pub fn volume_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.volume_kms_key_id = Some(input.into());
+    pub fn volume_kms_key_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.volume_kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A key used by Amazon Web Services Key Management Service to encrypt data on the storage volume attached to the compute instances used to run the training job. You can use either of the following formats to specify a key.</p>
@@ -155,7 +160,7 @@ impl HyperParameterTuningResourceConfigBuilder {
     /// <p>Some instances use local storage, which use a <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">hardware module to encrypt</a> storage volumes. If you choose one of these instance types, you cannot request a <code>VolumeKmsKeyId</code>. For a list of instance types that use local storage, see <a href="http://aws.amazon.com/releasenotes/host-instance-storage-volumes-table/">instance store volumes</a>. For more information about Amazon Web Services Key Management Service, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-security-kms-permissions.html">KMS encryption</a> for more information.</p>
     pub fn set_volume_kms_key_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.volume_kms_key_id = input;
         self
@@ -165,13 +170,13 @@ impl HyperParameterTuningResourceConfigBuilder {
         mut self,
         input: crate::types::HyperParameterTuningAllocationStrategy,
     ) -> Self {
-        self.allocation_strategy = Some(input);
+        self.allocation_strategy = ::std::option::Option::Some(input);
         self
     }
     /// <p>The strategy that determines the order of preference for resources specified in <code>InstanceConfigs</code> used in hyperparameter optimization.</p>
     pub fn set_allocation_strategy(
         mut self,
-        input: std::option::Option<crate::types::HyperParameterTuningAllocationStrategy>,
+        input: ::std::option::Option<crate::types::HyperParameterTuningAllocationStrategy>,
     ) -> Self {
         self.allocation_strategy = input;
         self
@@ -189,7 +194,7 @@ impl HyperParameterTuningResourceConfigBuilder {
     ) -> Self {
         let mut v = self.instance_configs.unwrap_or_default();
         v.push(input);
-        self.instance_configs = Some(v);
+        self.instance_configs = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list containing the configuration(s) for one or more resources for processing hyperparameter jobs. These resources include compute instances and storage volumes to use in model training jobs launched by hyperparameter tuning jobs. The <code>AllocationStrategy</code> controls the order in which multiple configurations provided in <code>InstanceConfigs</code> are used.</p> <note>
@@ -197,7 +202,9 @@ impl HyperParameterTuningResourceConfigBuilder {
     /// </note>
     pub fn set_instance_configs(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::HyperParameterTuningInstanceConfig>>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::HyperParameterTuningInstanceConfig>,
+        >,
     ) -> Self {
         self.instance_configs = input;
         self

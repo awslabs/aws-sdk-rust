@@ -3,17 +3,17 @@
 /// <p>Update metadata in a network package.</p>
 /// <p>A network package is a .zip file in CSAR (Cloud Service Archive) format defines the function packages you want to deploy and the Amazon Web Services infrastructure you want to deploy them on.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutSolNetworkPackageContentMetadata {
     /// <p>Metadata for network package artifacts.</p>
     /// <p>Artifacts are the contents of the package descriptor file and the state of the package.</p>
     #[doc(hidden)]
-    pub nsd: std::option::Option<crate::types::NetworkArtifactMeta>,
+    pub nsd: ::std::option::Option<crate::types::NetworkArtifactMeta>,
 }
 impl PutSolNetworkPackageContentMetadata {
     /// <p>Metadata for network package artifacts.</p>
     /// <p>Artifacts are the contents of the package descriptor file and the state of the package.</p>
-    pub fn nsd(&self) -> std::option::Option<&crate::types::NetworkArtifactMeta> {
+    pub fn nsd(&self) -> ::std::option::Option<&crate::types::NetworkArtifactMeta> {
         self.nsd.as_ref()
     }
 }
@@ -26,22 +26,24 @@ impl PutSolNetworkPackageContentMetadata {
 
 /// A builder for [`PutSolNetworkPackageContentMetadata`](crate::types::PutSolNetworkPackageContentMetadata).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PutSolNetworkPackageContentMetadataBuilder {
-    pub(crate) nsd: std::option::Option<crate::types::NetworkArtifactMeta>,
+    pub(crate) nsd: ::std::option::Option<crate::types::NetworkArtifactMeta>,
 }
 impl PutSolNetworkPackageContentMetadataBuilder {
     /// <p>Metadata for network package artifacts.</p>
     /// <p>Artifacts are the contents of the package descriptor file and the state of the package.</p>
     pub fn nsd(mut self, input: crate::types::NetworkArtifactMeta) -> Self {
-        self.nsd = Some(input);
+        self.nsd = ::std::option::Option::Some(input);
         self
     }
     /// <p>Metadata for network package artifacts.</p>
     /// <p>Artifacts are the contents of the package descriptor file and the state of the package.</p>
     pub fn set_nsd(
         mut self,
-        input: std::option::Option<crate::types::NetworkArtifactMeta>,
+        input: ::std::option::Option<crate::types::NetworkArtifactMeta>,
     ) -> Self {
         self.nsd = input;
         self

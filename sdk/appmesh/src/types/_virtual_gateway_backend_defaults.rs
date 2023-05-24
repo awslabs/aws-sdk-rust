@@ -2,15 +2,17 @@
 
 /// <p>An object that represents the default properties for a backend.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VirtualGatewayBackendDefaults {
     /// <p>A reference to an object that represents a client policy.</p>
     #[doc(hidden)]
-    pub client_policy: std::option::Option<crate::types::VirtualGatewayClientPolicy>,
+    pub client_policy: ::std::option::Option<crate::types::VirtualGatewayClientPolicy>,
 }
 impl VirtualGatewayBackendDefaults {
     /// <p>A reference to an object that represents a client policy.</p>
-    pub fn client_policy(&self) -> std::option::Option<&crate::types::VirtualGatewayClientPolicy> {
+    pub fn client_policy(
+        &self,
+    ) -> ::std::option::Option<&crate::types::VirtualGatewayClientPolicy> {
         self.client_policy.as_ref()
     }
 }
@@ -23,20 +25,22 @@ impl VirtualGatewayBackendDefaults {
 
 /// A builder for [`VirtualGatewayBackendDefaults`](crate::types::VirtualGatewayBackendDefaults).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VirtualGatewayBackendDefaultsBuilder {
-    pub(crate) client_policy: std::option::Option<crate::types::VirtualGatewayClientPolicy>,
+    pub(crate) client_policy: ::std::option::Option<crate::types::VirtualGatewayClientPolicy>,
 }
 impl VirtualGatewayBackendDefaultsBuilder {
     /// <p>A reference to an object that represents a client policy.</p>
     pub fn client_policy(mut self, input: crate::types::VirtualGatewayClientPolicy) -> Self {
-        self.client_policy = Some(input);
+        self.client_policy = ::std::option::Option::Some(input);
         self
     }
     /// <p>A reference to an object that represents a client policy.</p>
     pub fn set_client_policy(
         mut self,
-        input: std::option::Option<crate::types::VirtualGatewayClientPolicy>,
+        input: ::std::option::Option<crate::types::VirtualGatewayClientPolicy>,
     ) -> Self {
         self.client_policy = input;
         self

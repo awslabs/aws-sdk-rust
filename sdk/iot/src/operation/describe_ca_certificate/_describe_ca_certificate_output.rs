@@ -2,29 +2,29 @@
 
 /// <p>The output from the DescribeCACertificate operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeCaCertificateOutput {
     /// <p>The CA certificate description.</p>
     #[doc(hidden)]
-    pub certificate_description: std::option::Option<crate::types::CaCertificateDescription>,
+    pub certificate_description: ::std::option::Option<crate::types::CaCertificateDescription>,
     /// <p>Information about the registration configuration.</p>
     #[doc(hidden)]
-    pub registration_config: std::option::Option<crate::types::RegistrationConfig>,
+    pub registration_config: ::std::option::Option<crate::types::RegistrationConfig>,
     _request_id: Option<String>,
 }
 impl DescribeCaCertificateOutput {
     /// <p>The CA certificate description.</p>
     pub fn certificate_description(
         &self,
-    ) -> std::option::Option<&crate::types::CaCertificateDescription> {
+    ) -> ::std::option::Option<&crate::types::CaCertificateDescription> {
         self.certificate_description.as_ref()
     }
     /// <p>Information about the registration configuration.</p>
-    pub fn registration_config(&self) -> std::option::Option<&crate::types::RegistrationConfig> {
+    pub fn registration_config(&self) -> ::std::option::Option<&crate::types::RegistrationConfig> {
         self.registration_config.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeCaCertificateOutput {
+impl ::aws_http::request_id::RequestId for DescribeCaCertificateOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -40,10 +40,13 @@ impl DescribeCaCertificateOutput {
 
 /// A builder for [`DescribeCaCertificateOutput`](crate::operation::describe_ca_certificate::DescribeCaCertificateOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeCaCertificateOutputBuilder {
-    pub(crate) certificate_description: std::option::Option<crate::types::CaCertificateDescription>,
-    pub(crate) registration_config: std::option::Option<crate::types::RegistrationConfig>,
+    pub(crate) certificate_description:
+        ::std::option::Option<crate::types::CaCertificateDescription>,
+    pub(crate) registration_config: ::std::option::Option<crate::types::RegistrationConfig>,
     _request_id: Option<String>,
 }
 impl DescribeCaCertificateOutputBuilder {
@@ -52,26 +55,26 @@ impl DescribeCaCertificateOutputBuilder {
         mut self,
         input: crate::types::CaCertificateDescription,
     ) -> Self {
-        self.certificate_description = Some(input);
+        self.certificate_description = ::std::option::Option::Some(input);
         self
     }
     /// <p>The CA certificate description.</p>
     pub fn set_certificate_description(
         mut self,
-        input: std::option::Option<crate::types::CaCertificateDescription>,
+        input: ::std::option::Option<crate::types::CaCertificateDescription>,
     ) -> Self {
         self.certificate_description = input;
         self
     }
     /// <p>Information about the registration configuration.</p>
     pub fn registration_config(mut self, input: crate::types::RegistrationConfig) -> Self {
-        self.registration_config = Some(input);
+        self.registration_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the registration configuration.</p>
     pub fn set_registration_config(
         mut self,
-        input: std::option::Option<crate::types::RegistrationConfig>,
+        input: ::std::option::Option<crate::types::RegistrationConfig>,
     ) -> Self {
         self.registration_config = input;
         self

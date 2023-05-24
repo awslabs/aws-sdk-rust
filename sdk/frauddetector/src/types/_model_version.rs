@@ -2,36 +2,36 @@
 
 /// <p>The model version.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModelVersion {
     /// <p>The model ID.</p>
     #[doc(hidden)]
-    pub model_id: std::option::Option<std::string::String>,
+    pub model_id: ::std::option::Option<::std::string::String>,
     /// <p>The model type.</p>
     #[doc(hidden)]
-    pub model_type: std::option::Option<crate::types::ModelTypeEnum>,
+    pub model_type: ::std::option::Option<crate::types::ModelTypeEnum>,
     /// <p>The model version number.</p>
     #[doc(hidden)]
-    pub model_version_number: std::option::Option<std::string::String>,
+    pub model_version_number: ::std::option::Option<::std::string::String>,
     /// <p>The model version ARN.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
 }
 impl ModelVersion {
     /// <p>The model ID.</p>
-    pub fn model_id(&self) -> std::option::Option<&str> {
+    pub fn model_id(&self) -> ::std::option::Option<&str> {
         self.model_id.as_deref()
     }
     /// <p>The model type.</p>
-    pub fn model_type(&self) -> std::option::Option<&crate::types::ModelTypeEnum> {
+    pub fn model_type(&self) -> ::std::option::Option<&crate::types::ModelTypeEnum> {
         self.model_type.as_ref()
     }
     /// <p>The model version number.</p>
-    pub fn model_version_number(&self) -> std::option::Option<&str> {
+    pub fn model_version_number(&self) -> ::std::option::Option<&str> {
         self.model_version_number.as_deref()
     }
     /// <p>The model version ARN.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
 }
@@ -44,57 +44,62 @@ impl ModelVersion {
 
 /// A builder for [`ModelVersion`](crate::types::ModelVersion).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ModelVersionBuilder {
-    pub(crate) model_id: std::option::Option<std::string::String>,
-    pub(crate) model_type: std::option::Option<crate::types::ModelTypeEnum>,
-    pub(crate) model_version_number: std::option::Option<std::string::String>,
-    pub(crate) arn: std::option::Option<std::string::String>,
+    pub(crate) model_id: ::std::option::Option<::std::string::String>,
+    pub(crate) model_type: ::std::option::Option<crate::types::ModelTypeEnum>,
+    pub(crate) model_version_number: ::std::option::Option<::std::string::String>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
 impl ModelVersionBuilder {
     /// <p>The model ID.</p>
-    pub fn model_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.model_id = Some(input.into());
+    pub fn model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.model_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The model ID.</p>
-    pub fn set_model_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_id = input;
         self
     }
     /// <p>The model type.</p>
     pub fn model_type(mut self, input: crate::types::ModelTypeEnum) -> Self {
-        self.model_type = Some(input);
+        self.model_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The model type.</p>
     pub fn set_model_type(
         mut self,
-        input: std::option::Option<crate::types::ModelTypeEnum>,
+        input: ::std::option::Option<crate::types::ModelTypeEnum>,
     ) -> Self {
         self.model_type = input;
         self
     }
     /// <p>The model version number.</p>
-    pub fn model_version_number(mut self, input: impl Into<std::string::String>) -> Self {
-        self.model_version_number = Some(input.into());
+    pub fn model_version_number(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.model_version_number = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The model version number.</p>
     pub fn set_model_version_number(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.model_version_number = input;
         self
     }
     /// <p>The model version ARN.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The model version ARN.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }

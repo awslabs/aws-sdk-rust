@@ -2,36 +2,36 @@
 
 /// <p>Progress details for a specific stage of a pipeline configuration change.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChangeProgressStage {
     /// <p>The name of the stage.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the stage that the change is in.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::ChangeProgressStageStatuses>,
+    pub status: ::std::option::Option<crate::types::ChangeProgressStageStatuses>,
     /// <p>A description of the stage.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The most recent updated timestamp of the stage.</p>
     #[doc(hidden)]
-    pub last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ChangeProgressStage {
     /// <p>The name of the stage.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The current status of the stage that the change is in.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::ChangeProgressStageStatuses> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::ChangeProgressStageStatuses> {
         self.status.as_ref()
     }
     /// <p>A description of the stage.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The most recent updated timestamp of the stage.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
 }
@@ -44,56 +44,58 @@ impl ChangeProgressStage {
 
 /// A builder for [`ChangeProgressStage`](crate::types::ChangeProgressStage).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ChangeProgressStageBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<crate::types::ChangeProgressStageStatuses>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) last_updated_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::ChangeProgressStageStatuses>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ChangeProgressStageBuilder {
     /// <p>The name of the stage.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the stage.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The current status of the stage that the change is in.</p>
     pub fn status(mut self, input: crate::types::ChangeProgressStageStatuses) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current status of the stage that the change is in.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::ChangeProgressStageStatuses>,
+        input: ::std::option::Option<crate::types::ChangeProgressStageStatuses>,
     ) -> Self {
         self.status = input;
         self
     }
     /// <p>A description of the stage.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of the stage.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>The most recent updated timestamp of the stage.</p>
-    pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_updated_at = Some(input);
+    pub fn last_updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_updated_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The most recent updated timestamp of the stage.</p>
     pub fn set_last_updated_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_updated_at = input;
         self

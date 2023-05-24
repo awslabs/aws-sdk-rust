@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetLineageGroupPolicy`](crate::operation::get_lineage_group_policy::builders::GetLineageGroupPolicyFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`lineage_group_name(impl Into<String>)`](crate::operation::get_lineage_group_policy::builders::GetLineageGroupPolicyFluentBuilder::lineage_group_name) / [`set_lineage_group_name(Option<String>)`](crate::operation::get_lineage_group_policy::builders::GetLineageGroupPolicyFluentBuilder::set_lineage_group_name): <p>The name or Amazon Resource Name (ARN) of the lineage group.</p>
+    ///   - [`lineage_group_name(impl ::std::convert::Into<String>)`](crate::operation::get_lineage_group_policy::builders::GetLineageGroupPolicyFluentBuilder::lineage_group_name) / [`set_lineage_group_name(Option<String>)`](crate::operation::get_lineage_group_policy::builders::GetLineageGroupPolicyFluentBuilder::set_lineage_group_name): <p>The name or Amazon Resource Name (ARN) of the lineage group.</p>
     /// - On success, responds with [`GetLineageGroupPolicyOutput`](crate::operation::get_lineage_group_policy::GetLineageGroupPolicyOutput) with field(s):
     ///   - [`lineage_group_arn(Option<String>)`](crate::operation::get_lineage_group_policy::GetLineageGroupPolicyOutput::lineage_group_arn): <p>The Amazon Resource Name (ARN) of the lineage group.</p>
     ///   - [`resource_policy(Option<String>)`](crate::operation::get_lineage_group_policy::GetLineageGroupPolicyOutput::resource_policy): <p>The resource policy that gives access to the lineage group in another account.</p>

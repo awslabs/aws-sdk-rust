@@ -8,47 +8,50 @@ pub use crate::operation::update_instance_custom_health_status::_update_instance
 /// <p>Submits a request to change the health status of a custom health check to healthy or unhealthy.</p>
 /// <p>You can use <code>UpdateInstanceCustomHealthStatus</code> to change the status only for custom health checks, which you define using <code>HealthCheckCustomConfig</code> when you create a service. You can't use it to change the status for Route&nbsp;53 health checks, which you define using <code>HealthCheckConfig</code>.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_HealthCheckCustomConfig.html">HealthCheckCustomConfig</a>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateInstanceCustomHealthStatusFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::update_instance_custom_health_status::builders::UpdateInstanceCustomHealthStatusInputBuilder,
 }
 impl UpdateInstanceCustomHealthStatusFluentBuilder {
     /// Creates a new `UpdateInstanceCustomHealthStatus`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_instance_custom_health_status::UpdateInstanceCustomHealthStatus, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::update_instance_custom_health_status::UpdateInstanceCustomHealthStatusError>
+                    pub async fn customize(self) -> ::std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::update_instance_custom_health_status::UpdateInstanceCustomHealthStatus, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                        ::aws_smithy_http::result::SdkError<crate::operation::update_instance_custom_health_status::UpdateInstanceCustomHealthStatusError>
     >{
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::update_instance_custom_health_status::UpdateInstanceCustomHealthStatusOutput, aws_smithy_http::result::SdkError<crate::operation::update_instance_custom_health_status::UpdateInstanceCustomHealthStatusError>>
+                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::update_instance_custom_health_status::UpdateInstanceCustomHealthStatusOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_instance_custom_health_status::UpdateInstanceCustomHealthStatusError>>
                      {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -59,27 +62,27 @@ impl UpdateInstanceCustomHealthStatusFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> std::result::Result<crate::operation::update_instance_custom_health_status::UpdateInstanceCustomHealthStatusOutput, aws_smithy_http::result::SdkError<crate::operation::update_instance_custom_health_status::UpdateInstanceCustomHealthStatusError>>
+                        pub async fn send(self) -> ::std::result::Result<crate::operation::update_instance_custom_health_status::UpdateInstanceCustomHealthStatusOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_instance_custom_health_status::UpdateInstanceCustomHealthStatusError>>
                          {
         self.send_middleware().await
     }
     /// <p>The ID of the service that includes the configuration for the custom health check that you want to change the status for.</p>
-    pub fn service_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn service_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.service_id(input.into());
         self
     }
     /// <p>The ID of the service that includes the configuration for the custom health check that you want to change the status for.</p>
-    pub fn set_service_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_service_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_service_id(input);
         self
     }
     /// <p>The ID of the instance that you want to change the health status for.</p>
-    pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());
         self
     }
     /// <p>The ID of the instance that you want to change the health status for.</p>
-    pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_instance_id(input);
         self
     }
@@ -91,7 +94,7 @@ impl UpdateInstanceCustomHealthStatusFluentBuilder {
     /// <p>The new status of the instance, <code>HEALTHY</code> or <code>UNHEALTHY</code>.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::CustomHealthStatus>,
+        input: ::std::option::Option<crate::types::CustomHealthStatus>,
     ) -> Self {
         self.inner = self.inner.set_status(input);
         self

@@ -2,22 +2,22 @@
 
 /// <p>Configuration information of a Kinesis video stream.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KinesisVideoStreamConfig {
     /// <p>The prefix of the video stream.</p>
     #[doc(hidden)]
-    pub prefix: std::option::Option<std::string::String>,
+    pub prefix: ::std::option::Option<::std::string::String>,
     /// <p>The number of hours data is retained in the stream. Kinesis Video Streams retains the data in a data store that is associated with the stream.</p>
     /// <p>The default value is 0, indicating that the stream does not persist data.</p>
     #[doc(hidden)]
     pub retention_period_hours: i32,
     /// <p>The encryption configuration.</p>
     #[doc(hidden)]
-    pub encryption_config: std::option::Option<crate::types::EncryptionConfig>,
+    pub encryption_config: ::std::option::Option<crate::types::EncryptionConfig>,
 }
 impl KinesisVideoStreamConfig {
     /// <p>The prefix of the video stream.</p>
-    pub fn prefix(&self) -> std::option::Option<&str> {
+    pub fn prefix(&self) -> ::std::option::Option<&str> {
         self.prefix.as_deref()
     }
     /// <p>The number of hours data is retained in the stream. Kinesis Video Streams retains the data in a data store that is associated with the stream.</p>
@@ -26,7 +26,7 @@ impl KinesisVideoStreamConfig {
         self.retention_period_hours
     }
     /// <p>The encryption configuration.</p>
-    pub fn encryption_config(&self) -> std::option::Option<&crate::types::EncryptionConfig> {
+    pub fn encryption_config(&self) -> ::std::option::Option<&crate::types::EncryptionConfig> {
         self.encryption_config.as_ref()
     }
 }
@@ -39,44 +39,46 @@ impl KinesisVideoStreamConfig {
 
 /// A builder for [`KinesisVideoStreamConfig`](crate::types::KinesisVideoStreamConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct KinesisVideoStreamConfigBuilder {
-    pub(crate) prefix: std::option::Option<std::string::String>,
-    pub(crate) retention_period_hours: std::option::Option<i32>,
-    pub(crate) encryption_config: std::option::Option<crate::types::EncryptionConfig>,
+    pub(crate) prefix: ::std::option::Option<::std::string::String>,
+    pub(crate) retention_period_hours: ::std::option::Option<i32>,
+    pub(crate) encryption_config: ::std::option::Option<crate::types::EncryptionConfig>,
 }
 impl KinesisVideoStreamConfigBuilder {
     /// <p>The prefix of the video stream.</p>
-    pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
-        self.prefix = Some(input.into());
+    pub fn prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The prefix of the video stream.</p>
-    pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.prefix = input;
         self
     }
     /// <p>The number of hours data is retained in the stream. Kinesis Video Streams retains the data in a data store that is associated with the stream.</p>
     /// <p>The default value is 0, indicating that the stream does not persist data.</p>
     pub fn retention_period_hours(mut self, input: i32) -> Self {
-        self.retention_period_hours = Some(input);
+        self.retention_period_hours = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of hours data is retained in the stream. Kinesis Video Streams retains the data in a data store that is associated with the stream.</p>
     /// <p>The default value is 0, indicating that the stream does not persist data.</p>
-    pub fn set_retention_period_hours(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_retention_period_hours(mut self, input: ::std::option::Option<i32>) -> Self {
         self.retention_period_hours = input;
         self
     }
     /// <p>The encryption configuration.</p>
     pub fn encryption_config(mut self, input: crate::types::EncryptionConfig) -> Self {
-        self.encryption_config = Some(input);
+        self.encryption_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The encryption configuration.</p>
     pub fn set_encryption_config(
         mut self,
-        input: std::option::Option<crate::types::EncryptionConfig>,
+        input: ::std::option::Option<crate::types::EncryptionConfig>,
     ) -> Self {
         self.encryption_config = input;
         self

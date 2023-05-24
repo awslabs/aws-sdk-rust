@@ -2,22 +2,22 @@
 
 /// <p>The numeric equality type drill down filter.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CategoryDrillDownFilter {
     /// <p>The column that the filter is applied to.</p>
     #[doc(hidden)]
-    pub column: std::option::Option<crate::types::ColumnIdentifier>,
+    pub column: ::std::option::Option<crate::types::ColumnIdentifier>,
     /// <p>A list of the string inputs that are the values of the category drill down filter.</p>
     #[doc(hidden)]
-    pub category_values: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub category_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CategoryDrillDownFilter {
     /// <p>The column that the filter is applied to.</p>
-    pub fn column(&self) -> std::option::Option<&crate::types::ColumnIdentifier> {
+    pub fn column(&self) -> ::std::option::Option<&crate::types::ColumnIdentifier> {
         self.column.as_ref()
     }
     /// <p>A list of the string inputs that are the values of the category drill down filter.</p>
-    pub fn category_values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn category_values(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.category_values.as_deref()
     }
 }
@@ -30,21 +30,23 @@ impl CategoryDrillDownFilter {
 
 /// A builder for [`CategoryDrillDownFilter`](crate::types::CategoryDrillDownFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CategoryDrillDownFilterBuilder {
-    pub(crate) column: std::option::Option<crate::types::ColumnIdentifier>,
-    pub(crate) category_values: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) column: ::std::option::Option<crate::types::ColumnIdentifier>,
+    pub(crate) category_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CategoryDrillDownFilterBuilder {
     /// <p>The column that the filter is applied to.</p>
     pub fn column(mut self, input: crate::types::ColumnIdentifier) -> Self {
-        self.column = Some(input);
+        self.column = ::std::option::Option::Some(input);
         self
     }
     /// <p>The column that the filter is applied to.</p>
     pub fn set_column(
         mut self,
-        input: std::option::Option<crate::types::ColumnIdentifier>,
+        input: ::std::option::Option<crate::types::ColumnIdentifier>,
     ) -> Self {
         self.column = input;
         self
@@ -54,16 +56,19 @@ impl CategoryDrillDownFilterBuilder {
     /// To override the contents of this collection use [`set_category_values`](Self::set_category_values).
     ///
     /// <p>A list of the string inputs that are the values of the category drill down filter.</p>
-    pub fn category_values(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn category_values(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.category_values.unwrap_or_default();
         v.push(input.into());
-        self.category_values = Some(v);
+        self.category_values = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of the string inputs that are the values of the category drill down filter.</p>
     pub fn set_category_values(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.category_values = input;
         self

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ListMobileDeviceAccessRules`](crate::operation::list_mobile_device_access_rules::builders::ListMobileDeviceAccessRulesFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`organization_id(impl Into<String>)`](crate::operation::list_mobile_device_access_rules::builders::ListMobileDeviceAccessRulesFluentBuilder::organization_id) / [`set_organization_id(Option<String>)`](crate::operation::list_mobile_device_access_rules::builders::ListMobileDeviceAccessRulesFluentBuilder::set_organization_id): <p>The WorkMail organization for which to list the rules.</p>
+    ///   - [`organization_id(impl ::std::convert::Into<String>)`](crate::operation::list_mobile_device_access_rules::builders::ListMobileDeviceAccessRulesFluentBuilder::organization_id) / [`set_organization_id(Option<String>)`](crate::operation::list_mobile_device_access_rules::builders::ListMobileDeviceAccessRulesFluentBuilder::set_organization_id): <p>The WorkMail organization for which to list the rules.</p>
     /// - On success, responds with [`ListMobileDeviceAccessRulesOutput`](crate::operation::list_mobile_device_access_rules::ListMobileDeviceAccessRulesOutput) with field(s):
     ///   - [`rules(Option<Vec<MobileDeviceAccessRule>>)`](crate::operation::list_mobile_device_access_rules::ListMobileDeviceAccessRulesOutput::rules): <p>The list of mobile device access rules that exist under the specified WorkMail organization.</p>
     /// - On failure, responds with [`SdkError<ListMobileDeviceAccessRulesError>`](crate::operation::list_mobile_device_access_rules::ListMobileDeviceAccessRulesError)

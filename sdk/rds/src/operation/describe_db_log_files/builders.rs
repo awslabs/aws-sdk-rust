@@ -7,29 +7,29 @@ pub use crate::operation::describe_db_log_files::_describe_db_log_files_input::D
 ///
 /// <p>Returns a list of DB log files for the DB instance.</p>
 /// <p>This command doesn't apply to RDS Custom.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeDBLogFilesFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::describe_db_log_files::builders::DescribeDbLogFilesInputBuilder,
 }
 impl DescribeDBLogFilesFluentBuilder {
     /// Creates a new `DescribeDBLogFiles`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::describe_db_log_files::DescribeDBLogFiles,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::describe_db_log_files::DescribeDBLogFilesError,
         >,
     > {
@@ -37,30 +37,33 @@ impl DescribeDBLogFilesFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::describe_db_log_files::DescribeDbLogFilesOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::describe_db_log_files::DescribeDBLogFilesError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -73,9 +76,9 @@ impl DescribeDBLogFilesFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::describe_db_log_files::DescribeDbLogFilesOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::describe_db_log_files::DescribeDBLogFilesError,
         >,
     > {
@@ -97,7 +100,10 @@ impl DescribeDBLogFilesFluentBuilder {
     /// <ul>
     /// <li> <p>Must match the identifier of an existing DBInstance.</p> </li>
     /// </ul>
-    pub fn db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn db_instance_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.db_instance_identifier(input.into());
         self
     }
@@ -108,20 +114,23 @@ impl DescribeDBLogFilesFluentBuilder {
     /// </ul>
     pub fn set_db_instance_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_db_instance_identifier(input);
         self
     }
     /// <p>Filters the available log files for log file names that contain the specified string.</p>
-    pub fn filename_contains(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn filename_contains(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.filename_contains(input.into());
         self
     }
     /// <p>Filters the available log files for log file names that contain the specified string.</p>
     pub fn set_filename_contains(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_filename_contains(input);
         self
@@ -132,7 +141,7 @@ impl DescribeDBLogFilesFluentBuilder {
         self
     }
     /// <p>Filters the available log files for files written since the specified date, in POSIX timestamp format with milliseconds.</p>
-    pub fn set_file_last_written(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_file_last_written(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_file_last_written(input);
         self
     }
@@ -142,7 +151,7 @@ impl DescribeDBLogFilesFluentBuilder {
         self
     }
     /// <p>Filters the available log files for files larger than the specified size.</p>
-    pub fn set_file_size(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_file_size(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_file_size(input);
         self
     }
@@ -158,7 +167,7 @@ impl DescribeDBLogFilesFluentBuilder {
     /// <p>This parameter isn't currently supported.</p>
     pub fn set_filters(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
@@ -169,17 +178,17 @@ impl DescribeDBLogFilesFluentBuilder {
         self
     }
     /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxRecords value, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>
-    pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_records(input);
         self
     }
     /// <p>The pagination token provided in the previous request. If this parameter is specified the response includes only records beyond the marker, up to MaxRecords.</p>
-    pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn marker(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.marker(input.into());
         self
     }
     /// <p>The pagination token provided in the previous request. If this parameter is specified the response includes only records beyond the marker, up to MaxRecords.</p>
-    pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_marker(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_marker(input);
         self
     }

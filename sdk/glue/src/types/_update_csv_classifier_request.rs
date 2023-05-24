@@ -2,71 +2,71 @@
 
 /// <p>Specifies a custom CSV classifier to be updated.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateCsvClassifierRequest {
     /// <p>The name of the classifier.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>A custom symbol to denote what separates each column entry in the row.</p>
     #[doc(hidden)]
-    pub delimiter: std::option::Option<std::string::String>,
+    pub delimiter: ::std::option::Option<::std::string::String>,
     /// <p>A custom symbol to denote what combines content into a single column value. It must be different from the column delimiter.</p>
     #[doc(hidden)]
-    pub quote_symbol: std::option::Option<std::string::String>,
+    pub quote_symbol: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the CSV file contains a header.</p>
     #[doc(hidden)]
-    pub contains_header: std::option::Option<crate::types::CsvHeaderOption>,
+    pub contains_header: ::std::option::Option<crate::types::CsvHeaderOption>,
     /// <p>A list of strings representing column names.</p>
     #[doc(hidden)]
-    pub header: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub header: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies not to trim values before identifying the type of column values. The default value is true.</p>
     #[doc(hidden)]
-    pub disable_value_trimming: std::option::Option<bool>,
+    pub disable_value_trimming: ::std::option::Option<bool>,
     /// <p>Enables the processing of files that contain only one column.</p>
     #[doc(hidden)]
-    pub allow_single_column: std::option::Option<bool>,
+    pub allow_single_column: ::std::option::Option<bool>,
     /// <p>Specifies the configuration of custom datatypes.</p>
     #[doc(hidden)]
-    pub custom_datatype_configured: std::option::Option<bool>,
+    pub custom_datatype_configured: ::std::option::Option<bool>,
     /// <p>Specifies a list of supported custom datatypes.</p>
     #[doc(hidden)]
-    pub custom_datatypes: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub custom_datatypes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateCsvClassifierRequest {
     /// <p>The name of the classifier.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>A custom symbol to denote what separates each column entry in the row.</p>
-    pub fn delimiter(&self) -> std::option::Option<&str> {
+    pub fn delimiter(&self) -> ::std::option::Option<&str> {
         self.delimiter.as_deref()
     }
     /// <p>A custom symbol to denote what combines content into a single column value. It must be different from the column delimiter.</p>
-    pub fn quote_symbol(&self) -> std::option::Option<&str> {
+    pub fn quote_symbol(&self) -> ::std::option::Option<&str> {
         self.quote_symbol.as_deref()
     }
     /// <p>Indicates whether the CSV file contains a header.</p>
-    pub fn contains_header(&self) -> std::option::Option<&crate::types::CsvHeaderOption> {
+    pub fn contains_header(&self) -> ::std::option::Option<&crate::types::CsvHeaderOption> {
         self.contains_header.as_ref()
     }
     /// <p>A list of strings representing column names.</p>
-    pub fn header(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn header(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.header.as_deref()
     }
     /// <p>Specifies not to trim values before identifying the type of column values. The default value is true.</p>
-    pub fn disable_value_trimming(&self) -> std::option::Option<bool> {
+    pub fn disable_value_trimming(&self) -> ::std::option::Option<bool> {
         self.disable_value_trimming
     }
     /// <p>Enables the processing of files that contain only one column.</p>
-    pub fn allow_single_column(&self) -> std::option::Option<bool> {
+    pub fn allow_single_column(&self) -> ::std::option::Option<bool> {
         self.allow_single_column
     }
     /// <p>Specifies the configuration of custom datatypes.</p>
-    pub fn custom_datatype_configured(&self) -> std::option::Option<bool> {
+    pub fn custom_datatype_configured(&self) -> ::std::option::Option<bool> {
         self.custom_datatype_configured
     }
     /// <p>Specifies a list of supported custom datatypes.</p>
-    pub fn custom_datatypes(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn custom_datatypes(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.custom_datatypes.as_deref()
     }
 }
@@ -79,58 +79,60 @@ impl UpdateCsvClassifierRequest {
 
 /// A builder for [`UpdateCsvClassifierRequest`](crate::types::UpdateCsvClassifierRequest).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateCsvClassifierRequestBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) delimiter: std::option::Option<std::string::String>,
-    pub(crate) quote_symbol: std::option::Option<std::string::String>,
-    pub(crate) contains_header: std::option::Option<crate::types::CsvHeaderOption>,
-    pub(crate) header: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) disable_value_trimming: std::option::Option<bool>,
-    pub(crate) allow_single_column: std::option::Option<bool>,
-    pub(crate) custom_datatype_configured: std::option::Option<bool>,
-    pub(crate) custom_datatypes: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) delimiter: ::std::option::Option<::std::string::String>,
+    pub(crate) quote_symbol: ::std::option::Option<::std::string::String>,
+    pub(crate) contains_header: ::std::option::Option<crate::types::CsvHeaderOption>,
+    pub(crate) header: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) disable_value_trimming: ::std::option::Option<bool>,
+    pub(crate) allow_single_column: ::std::option::Option<bool>,
+    pub(crate) custom_datatype_configured: ::std::option::Option<bool>,
+    pub(crate) custom_datatypes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdateCsvClassifierRequestBuilder {
     /// <p>The name of the classifier.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the classifier.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>A custom symbol to denote what separates each column entry in the row.</p>
-    pub fn delimiter(mut self, input: impl Into<std::string::String>) -> Self {
-        self.delimiter = Some(input.into());
+    pub fn delimiter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.delimiter = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A custom symbol to denote what separates each column entry in the row.</p>
-    pub fn set_delimiter(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_delimiter(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.delimiter = input;
         self
     }
     /// <p>A custom symbol to denote what combines content into a single column value. It must be different from the column delimiter.</p>
-    pub fn quote_symbol(mut self, input: impl Into<std::string::String>) -> Self {
-        self.quote_symbol = Some(input.into());
+    pub fn quote_symbol(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.quote_symbol = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A custom symbol to denote what combines content into a single column value. It must be different from the column delimiter.</p>
-    pub fn set_quote_symbol(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_quote_symbol(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.quote_symbol = input;
         self
     }
     /// <p>Indicates whether the CSV file contains a header.</p>
     pub fn contains_header(mut self, input: crate::types::CsvHeaderOption) -> Self {
-        self.contains_header = Some(input);
+        self.contains_header = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether the CSV file contains a header.</p>
     pub fn set_contains_header(
         mut self,
-        input: std::option::Option<crate::types::CsvHeaderOption>,
+        input: ::std::option::Option<crate::types::CsvHeaderOption>,
     ) -> Self {
         self.contains_header = input;
         self
@@ -140,47 +142,47 @@ impl UpdateCsvClassifierRequestBuilder {
     /// To override the contents of this collection use [`set_header`](Self::set_header).
     ///
     /// <p>A list of strings representing column names.</p>
-    pub fn header(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn header(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.header.unwrap_or_default();
         v.push(input.into());
-        self.header = Some(v);
+        self.header = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of strings representing column names.</p>
     pub fn set_header(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.header = input;
         self
     }
     /// <p>Specifies not to trim values before identifying the type of column values. The default value is true.</p>
     pub fn disable_value_trimming(mut self, input: bool) -> Self {
-        self.disable_value_trimming = Some(input);
+        self.disable_value_trimming = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies not to trim values before identifying the type of column values. The default value is true.</p>
-    pub fn set_disable_value_trimming(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_disable_value_trimming(mut self, input: ::std::option::Option<bool>) -> Self {
         self.disable_value_trimming = input;
         self
     }
     /// <p>Enables the processing of files that contain only one column.</p>
     pub fn allow_single_column(mut self, input: bool) -> Self {
-        self.allow_single_column = Some(input);
+        self.allow_single_column = ::std::option::Option::Some(input);
         self
     }
     /// <p>Enables the processing of files that contain only one column.</p>
-    pub fn set_allow_single_column(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_allow_single_column(mut self, input: ::std::option::Option<bool>) -> Self {
         self.allow_single_column = input;
         self
     }
     /// <p>Specifies the configuration of custom datatypes.</p>
     pub fn custom_datatype_configured(mut self, input: bool) -> Self {
-        self.custom_datatype_configured = Some(input);
+        self.custom_datatype_configured = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the configuration of custom datatypes.</p>
-    pub fn set_custom_datatype_configured(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_custom_datatype_configured(mut self, input: ::std::option::Option<bool>) -> Self {
         self.custom_datatype_configured = input;
         self
     }
@@ -189,16 +191,19 @@ impl UpdateCsvClassifierRequestBuilder {
     /// To override the contents of this collection use [`set_custom_datatypes`](Self::set_custom_datatypes).
     ///
     /// <p>Specifies a list of supported custom datatypes.</p>
-    pub fn custom_datatypes(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn custom_datatypes(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.custom_datatypes.unwrap_or_default();
         v.push(input.into());
-        self.custom_datatypes = Some(v);
+        self.custom_datatypes = ::std::option::Option::Some(v);
         self
     }
     /// <p>Specifies a list of supported custom datatypes.</p>
     pub fn set_custom_datatypes(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.custom_datatypes = input;
         self

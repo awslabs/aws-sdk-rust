@@ -2,22 +2,22 @@
 
 /// Represents the output of a DescribeRuleGroupsNamespace operation.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeRuleGroupsNamespaceOutput {
     /// The selected rule groups namespace.
     #[doc(hidden)]
-    pub rule_groups_namespace: std::option::Option<crate::types::RuleGroupsNamespaceDescription>,
+    pub rule_groups_namespace: ::std::option::Option<crate::types::RuleGroupsNamespaceDescription>,
     _request_id: Option<String>,
 }
 impl DescribeRuleGroupsNamespaceOutput {
     /// The selected rule groups namespace.
     pub fn rule_groups_namespace(
         &self,
-    ) -> std::option::Option<&crate::types::RuleGroupsNamespaceDescription> {
+    ) -> ::std::option::Option<&crate::types::RuleGroupsNamespaceDescription> {
         self.rule_groups_namespace.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeRuleGroupsNamespaceOutput {
+impl ::aws_http::request_id::RequestId for DescribeRuleGroupsNamespaceOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -31,10 +31,12 @@ impl DescribeRuleGroupsNamespaceOutput {
 
 /// A builder for [`DescribeRuleGroupsNamespaceOutput`](crate::operation::describe_rule_groups_namespace::DescribeRuleGroupsNamespaceOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeRuleGroupsNamespaceOutputBuilder {
     pub(crate) rule_groups_namespace:
-        std::option::Option<crate::types::RuleGroupsNamespaceDescription>,
+        ::std::option::Option<crate::types::RuleGroupsNamespaceDescription>,
     _request_id: Option<String>,
 }
 impl DescribeRuleGroupsNamespaceOutputBuilder {
@@ -43,13 +45,13 @@ impl DescribeRuleGroupsNamespaceOutputBuilder {
         mut self,
         input: crate::types::RuleGroupsNamespaceDescription,
     ) -> Self {
-        self.rule_groups_namespace = Some(input);
+        self.rule_groups_namespace = ::std::option::Option::Some(input);
         self
     }
     /// The selected rule groups namespace.
     pub fn set_rule_groups_namespace(
         mut self,
-        input: std::option::Option<crate::types::RuleGroupsNamespaceDescription>,
+        input: ::std::option::Option<crate::types::RuleGroupsNamespaceDescription>,
     ) -> Self {
         self.rule_groups_namespace = input;
         self

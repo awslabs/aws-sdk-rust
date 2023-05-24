@@ -5,22 +5,22 @@
 /// <p>For more information about exporting CloudWatch Logs for Amazon RDS DB instances, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon RDS User Guide</i>.</p>
 /// <p>For more information about exporting CloudWatch Logs for Amazon Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CloudwatchLogsExportConfiguration {
     /// <p>The list of log types to enable.</p>
     #[doc(hidden)]
-    pub enable_log_types: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub enable_log_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The list of log types to disable.</p>
     #[doc(hidden)]
-    pub disable_log_types: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub disable_log_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CloudwatchLogsExportConfiguration {
     /// <p>The list of log types to enable.</p>
-    pub fn enable_log_types(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn enable_log_types(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.enable_log_types.as_deref()
     }
     /// <p>The list of log types to disable.</p>
-    pub fn disable_log_types(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn disable_log_types(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.disable_log_types.as_deref()
     }
 }
@@ -33,10 +33,12 @@ impl CloudwatchLogsExportConfiguration {
 
 /// A builder for [`CloudwatchLogsExportConfiguration`](crate::types::CloudwatchLogsExportConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CloudwatchLogsExportConfigurationBuilder {
-    pub(crate) enable_log_types: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) disable_log_types: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) enable_log_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) disable_log_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CloudwatchLogsExportConfigurationBuilder {
     /// Appends an item to `enable_log_types`.
@@ -44,16 +46,19 @@ impl CloudwatchLogsExportConfigurationBuilder {
     /// To override the contents of this collection use [`set_enable_log_types`](Self::set_enable_log_types).
     ///
     /// <p>The list of log types to enable.</p>
-    pub fn enable_log_types(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn enable_log_types(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.enable_log_types.unwrap_or_default();
         v.push(input.into());
-        self.enable_log_types = Some(v);
+        self.enable_log_types = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of log types to enable.</p>
     pub fn set_enable_log_types(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.enable_log_types = input;
         self
@@ -63,16 +68,19 @@ impl CloudwatchLogsExportConfigurationBuilder {
     /// To override the contents of this collection use [`set_disable_log_types`](Self::set_disable_log_types).
     ///
     /// <p>The list of log types to disable.</p>
-    pub fn disable_log_types(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn disable_log_types(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.disable_log_types.unwrap_or_default();
         v.push(input.into());
-        self.disable_log_types = Some(v);
+        self.disable_log_types = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of log types to disable.</p>
     pub fn set_disable_log_types(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.disable_log_types = input;
         self

@@ -2,14 +2,14 @@
 
 /// <p>Aggregated request sampling data for a sampling rule across all services for a 10-second window.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SamplingStatisticSummary {
     /// <p>The name of the sampling rule.</p>
     #[doc(hidden)]
-    pub rule_name: std::option::Option<std::string::String>,
+    pub rule_name: ::std::option::Option<::std::string::String>,
     /// <p>The start time of the reporting window.</p>
     #[doc(hidden)]
-    pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The number of requests that matched the rule.</p>
     #[doc(hidden)]
     pub request_count: i32,
@@ -22,11 +22,11 @@ pub struct SamplingStatisticSummary {
 }
 impl SamplingStatisticSummary {
     /// <p>The name of the sampling rule.</p>
-    pub fn rule_name(&self) -> std::option::Option<&str> {
+    pub fn rule_name(&self) -> ::std::option::Option<&str> {
         self.rule_name.as_deref()
     }
     /// <p>The start time of the reporting window.</p>
-    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
     /// <p>The number of requests that matched the rule.</p>
@@ -51,62 +51,67 @@ impl SamplingStatisticSummary {
 
 /// A builder for [`SamplingStatisticSummary`](crate::types::SamplingStatisticSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SamplingStatisticSummaryBuilder {
-    pub(crate) rule_name: std::option::Option<std::string::String>,
-    pub(crate) timestamp: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) request_count: std::option::Option<i32>,
-    pub(crate) borrow_count: std::option::Option<i32>,
-    pub(crate) sampled_count: std::option::Option<i32>,
+    pub(crate) rule_name: ::std::option::Option<::std::string::String>,
+    pub(crate) timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) request_count: ::std::option::Option<i32>,
+    pub(crate) borrow_count: ::std::option::Option<i32>,
+    pub(crate) sampled_count: ::std::option::Option<i32>,
 }
 impl SamplingStatisticSummaryBuilder {
     /// <p>The name of the sampling rule.</p>
-    pub fn rule_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.rule_name = Some(input.into());
+    pub fn rule_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.rule_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the sampling rule.</p>
-    pub fn set_rule_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_rule_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rule_name = input;
         self
     }
     /// <p>The start time of the reporting window.</p>
-    pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.timestamp = Some(input);
+    pub fn timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.timestamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>The start time of the reporting window.</p>
-    pub fn set_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_timestamp(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
         self.timestamp = input;
         self
     }
     /// <p>The number of requests that matched the rule.</p>
     pub fn request_count(mut self, input: i32) -> Self {
-        self.request_count = Some(input);
+        self.request_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of requests that matched the rule.</p>
-    pub fn set_request_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_request_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.request_count = input;
         self
     }
     /// <p>The number of requests recorded with borrowed reservoir quota.</p>
     pub fn borrow_count(mut self, input: i32) -> Self {
-        self.borrow_count = Some(input);
+        self.borrow_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of requests recorded with borrowed reservoir quota.</p>
-    pub fn set_borrow_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_borrow_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.borrow_count = input;
         self
     }
     /// <p>The number of requests recorded.</p>
     pub fn sampled_count(mut self, input: i32) -> Self {
-        self.sampled_count = Some(input);
+        self.sampled_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of requests recorded.</p>
-    pub fn set_sampled_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_sampled_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.sampled_count = input;
         self
     }

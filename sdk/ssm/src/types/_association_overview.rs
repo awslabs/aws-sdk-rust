@@ -2,32 +2,32 @@
 
 /// <p>Information about the association.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociationOverview {
     /// <p>The status of the association. Status can be: Pending, Success, or Failed.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<std::string::String>,
+    pub status: ::std::option::Option<::std::string::String>,
     /// <p>A detailed status of the association.</p>
     #[doc(hidden)]
-    pub detailed_status: std::option::Option<std::string::String>,
+    pub detailed_status: ::std::option::Option<::std::string::String>,
     /// <p>Returns the number of targets for the association status. For example, if you created an association with two managed nodes, and one of them was successful, this would return the count of managed nodes by status.</p>
     #[doc(hidden)]
     pub association_status_aggregated_count:
-        std::option::Option<std::collections::HashMap<std::string::String, i32>>,
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, i32>>,
 }
 impl AssociationOverview {
     /// <p>The status of the association. Status can be: Pending, Success, or Failed.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
     /// <p>A detailed status of the association.</p>
-    pub fn detailed_status(&self) -> std::option::Option<&str> {
+    pub fn detailed_status(&self) -> ::std::option::Option<&str> {
         self.detailed_status.as_deref()
     }
     /// <p>Returns the number of targets for the association status. For example, if you created an association with two managed nodes, and one of them was successful, this would return the count of managed nodes by status.</p>
     pub fn association_status_aggregated_count(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, i32>> {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, i32>> {
         self.association_status_aggregated_count.as_ref()
     }
 }
@@ -40,31 +40,39 @@ impl AssociationOverview {
 
 /// A builder for [`AssociationOverview`](crate::types::AssociationOverview).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AssociationOverviewBuilder {
-    pub(crate) status: std::option::Option<std::string::String>,
-    pub(crate) detailed_status: std::option::Option<std::string::String>,
+    pub(crate) status: ::std::option::Option<::std::string::String>,
+    pub(crate) detailed_status: ::std::option::Option<::std::string::String>,
     pub(crate) association_status_aggregated_count:
-        std::option::Option<std::collections::HashMap<std::string::String, i32>>,
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, i32>>,
 }
 impl AssociationOverviewBuilder {
     /// <p>The status of the association. Status can be: Pending, Success, or Failed.</p>
-    pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status = Some(input.into());
+    pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the association. Status can be: Pending, Success, or Failed.</p>
-    pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }
     /// <p>A detailed status of the association.</p>
-    pub fn detailed_status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.detailed_status = Some(input.into());
+    pub fn detailed_status(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.detailed_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A detailed status of the association.</p>
-    pub fn set_detailed_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_detailed_status(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.detailed_status = input;
         self
     }
@@ -75,18 +83,18 @@ impl AssociationOverviewBuilder {
     /// <p>Returns the number of targets for the association status. For example, if you created an association with two managed nodes, and one of them was successful, this would return the count of managed nodes by status.</p>
     pub fn association_status_aggregated_count(
         mut self,
-        k: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
         v: i32,
     ) -> Self {
         let mut hash_map = self.association_status_aggregated_count.unwrap_or_default();
         hash_map.insert(k.into(), v);
-        self.association_status_aggregated_count = Some(hash_map);
+        self.association_status_aggregated_count = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Returns the number of targets for the association status. For example, if you created an association with two managed nodes, and one of them was successful, this would return the count of managed nodes by status.</p>
     pub fn set_association_status_aggregated_count(
         mut self,
-        input: std::option::Option<std::collections::HashMap<std::string::String, i32>>,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, i32>>,
     ) -> Self {
         self.association_status_aggregated_count = input;
         self

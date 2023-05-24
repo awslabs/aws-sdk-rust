@@ -2,40 +2,42 @@
 
 /// Information needed to create a core definition.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateCoreDefinitionInput {
     /// A client token used to correlate requests and responses.
     #[doc(hidden)]
-    pub amzn_client_token: std::option::Option<std::string::String>,
+    pub amzn_client_token: ::std::option::Option<::std::string::String>,
     /// Information about the initial version of the core definition.
     #[doc(hidden)]
-    pub initial_version: std::option::Option<crate::types::CoreDefinitionVersion>,
+    pub initial_version: ::std::option::Option<crate::types::CoreDefinitionVersion>,
     /// The name of the core definition.
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// Tag(s) to add to the new resource.
     #[doc(hidden)]
-    pub tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl CreateCoreDefinitionInput {
     /// A client token used to correlate requests and responses.
-    pub fn amzn_client_token(&self) -> std::option::Option<&str> {
+    pub fn amzn_client_token(&self) -> ::std::option::Option<&str> {
         self.amzn_client_token.as_deref()
     }
     /// Information about the initial version of the core definition.
-    pub fn initial_version(&self) -> std::option::Option<&crate::types::CoreDefinitionVersion> {
+    pub fn initial_version(&self) -> ::std::option::Option<&crate::types::CoreDefinitionVersion> {
         self.initial_version.as_ref()
     }
     /// The name of the core definition.
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// Tag(s) to add to the new resource.
     pub fn tags(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.tags.as_ref()
     }
 }
@@ -49,48 +51,54 @@ impl CreateCoreDefinitionInput {
 
 /// A builder for [`CreateCoreDefinitionInput`](crate::operation::create_core_definition::CreateCoreDefinitionInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateCoreDefinitionInputBuilder {
-    pub(crate) amzn_client_token: std::option::Option<std::string::String>,
-    pub(crate) initial_version: std::option::Option<crate::types::CoreDefinitionVersion>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) tags:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) amzn_client_token: ::std::option::Option<::std::string::String>,
+    pub(crate) initial_version: ::std::option::Option<crate::types::CoreDefinitionVersion>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
 }
 impl CreateCoreDefinitionInputBuilder {
     /// A client token used to correlate requests and responses.
-    pub fn amzn_client_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.amzn_client_token = Some(input.into());
+    pub fn amzn_client_token(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.amzn_client_token = ::std::option::Option::Some(input.into());
         self
     }
     /// A client token used to correlate requests and responses.
     pub fn set_amzn_client_token(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.amzn_client_token = input;
         self
     }
     /// Information about the initial version of the core definition.
     pub fn initial_version(mut self, input: crate::types::CoreDefinitionVersion) -> Self {
-        self.initial_version = Some(input);
+        self.initial_version = ::std::option::Option::Some(input);
         self
     }
     /// Information about the initial version of the core definition.
     pub fn set_initial_version(
         mut self,
-        input: std::option::Option<crate::types::CoreDefinitionVersion>,
+        input: ::std::option::Option<crate::types::CoreDefinitionVersion>,
     ) -> Self {
         self.initial_version = input;
         self
     }
     /// The name of the core definition.
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// The name of the core definition.
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
@@ -101,19 +109,19 @@ impl CreateCoreDefinitionInputBuilder {
     /// Tag(s) to add to the new resource.
     pub fn tags(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.tags = Some(hash_map);
+        self.tags = ::std::option::Option::Some(hash_map);
         self
     }
     /// Tag(s) to add to the new resource.
     pub fn set_tags(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.tags = input;
@@ -122,11 +130,11 @@ impl CreateCoreDefinitionInputBuilder {
     /// Consumes the builder and constructs a [`CreateCoreDefinitionInput`](crate::operation::create_core_definition::CreateCoreDefinitionInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::create_core_definition::CreateCoreDefinitionInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::create_core_definition::CreateCoreDefinitionInput {
                 amzn_client_token: self.amzn_client_token,
                 initial_version: self.initial_version,

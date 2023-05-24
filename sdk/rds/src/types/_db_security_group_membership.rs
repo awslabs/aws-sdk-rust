@@ -8,22 +8,22 @@
 /// <li> <p> <code>RestoreDBInstanceToPointInTime</code> </p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DbSecurityGroupMembership {
     /// <p>The name of the DB security group.</p>
     #[doc(hidden)]
-    pub db_security_group_name: std::option::Option<std::string::String>,
+    pub db_security_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the DB security group.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<std::string::String>,
+    pub status: ::std::option::Option<::std::string::String>,
 }
 impl DbSecurityGroupMembership {
     /// <p>The name of the DB security group.</p>
-    pub fn db_security_group_name(&self) -> std::option::Option<&str> {
+    pub fn db_security_group_name(&self) -> ::std::option::Option<&str> {
         self.db_security_group_name.as_deref()
     }
     /// <p>The status of the DB security group.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
 }
@@ -36,32 +36,37 @@ impl DbSecurityGroupMembership {
 
 /// A builder for [`DbSecurityGroupMembership`](crate::types::DbSecurityGroupMembership).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DbSecurityGroupMembershipBuilder {
-    pub(crate) db_security_group_name: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<std::string::String>,
+    pub(crate) db_security_group_name: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<::std::string::String>,
 }
 impl DbSecurityGroupMembershipBuilder {
     /// <p>The name of the DB security group.</p>
-    pub fn db_security_group_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.db_security_group_name = Some(input.into());
+    pub fn db_security_group_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.db_security_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the DB security group.</p>
     pub fn set_db_security_group_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.db_security_group_name = input;
         self
     }
     /// <p>The status of the DB security group.</p>
-    pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status = Some(input.into());
+    pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the DB security group.</p>
-    pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }

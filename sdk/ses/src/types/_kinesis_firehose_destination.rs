@@ -3,22 +3,22 @@
 /// <p>Contains the delivery stream ARN and the IAM role ARN associated with an Amazon Kinesis Firehose event destination.</p>
 /// <p>Event destinations, such as Amazon Kinesis Firehose, are associated with configuration sets, which enable you to publish email sending events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KinesisFirehoseDestination {
     /// <p>The ARN of the IAM role under which Amazon SES publishes email sending events to the Amazon Kinesis Firehose stream.</p>
     #[doc(hidden)]
-    pub iam_role_arn: std::option::Option<std::string::String>,
+    pub iam_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the Amazon Kinesis Firehose stream that email sending events should be published to.</p>
     #[doc(hidden)]
-    pub delivery_stream_arn: std::option::Option<std::string::String>,
+    pub delivery_stream_arn: ::std::option::Option<::std::string::String>,
 }
 impl KinesisFirehoseDestination {
     /// <p>The ARN of the IAM role under which Amazon SES publishes email sending events to the Amazon Kinesis Firehose stream.</p>
-    pub fn iam_role_arn(&self) -> std::option::Option<&str> {
+    pub fn iam_role_arn(&self) -> ::std::option::Option<&str> {
         self.iam_role_arn.as_deref()
     }
     /// <p>The ARN of the Amazon Kinesis Firehose stream that email sending events should be published to.</p>
-    pub fn delivery_stream_arn(&self) -> std::option::Option<&str> {
+    pub fn delivery_stream_arn(&self) -> ::std::option::Option<&str> {
         self.delivery_stream_arn.as_deref()
     }
 }
@@ -31,31 +31,36 @@ impl KinesisFirehoseDestination {
 
 /// A builder for [`KinesisFirehoseDestination`](crate::types::KinesisFirehoseDestination).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct KinesisFirehoseDestinationBuilder {
-    pub(crate) iam_role_arn: std::option::Option<std::string::String>,
-    pub(crate) delivery_stream_arn: std::option::Option<std::string::String>,
+    pub(crate) iam_role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) delivery_stream_arn: ::std::option::Option<::std::string::String>,
 }
 impl KinesisFirehoseDestinationBuilder {
     /// <p>The ARN of the IAM role under which Amazon SES publishes email sending events to the Amazon Kinesis Firehose stream.</p>
-    pub fn iam_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.iam_role_arn = Some(input.into());
+    pub fn iam_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.iam_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the IAM role under which Amazon SES publishes email sending events to the Amazon Kinesis Firehose stream.</p>
-    pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_iam_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.iam_role_arn = input;
         self
     }
     /// <p>The ARN of the Amazon Kinesis Firehose stream that email sending events should be published to.</p>
-    pub fn delivery_stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.delivery_stream_arn = Some(input.into());
+    pub fn delivery_stream_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.delivery_stream_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the Amazon Kinesis Firehose stream that email sending events should be published to.</p>
     pub fn set_delivery_stream_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.delivery_stream_arn = input;
         self

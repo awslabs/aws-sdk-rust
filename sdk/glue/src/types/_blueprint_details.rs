@@ -2,22 +2,22 @@
 
 /// <p>The details of a blueprint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BlueprintDetails {
     /// <p>The name of the blueprint.</p>
     #[doc(hidden)]
-    pub blueprint_name: std::option::Option<std::string::String>,
+    pub blueprint_name: ::std::option::Option<::std::string::String>,
     /// <p>The run ID for this blueprint.</p>
     #[doc(hidden)]
-    pub run_id: std::option::Option<std::string::String>,
+    pub run_id: ::std::option::Option<::std::string::String>,
 }
 impl BlueprintDetails {
     /// <p>The name of the blueprint.</p>
-    pub fn blueprint_name(&self) -> std::option::Option<&str> {
+    pub fn blueprint_name(&self) -> ::std::option::Option<&str> {
         self.blueprint_name.as_deref()
     }
     /// <p>The run ID for this blueprint.</p>
-    pub fn run_id(&self) -> std::option::Option<&str> {
+    pub fn run_id(&self) -> ::std::option::Option<&str> {
         self.run_id.as_deref()
     }
 }
@@ -30,29 +30,37 @@ impl BlueprintDetails {
 
 /// A builder for [`BlueprintDetails`](crate::types::BlueprintDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BlueprintDetailsBuilder {
-    pub(crate) blueprint_name: std::option::Option<std::string::String>,
-    pub(crate) run_id: std::option::Option<std::string::String>,
+    pub(crate) blueprint_name: ::std::option::Option<::std::string::String>,
+    pub(crate) run_id: ::std::option::Option<::std::string::String>,
 }
 impl BlueprintDetailsBuilder {
     /// <p>The name of the blueprint.</p>
-    pub fn blueprint_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.blueprint_name = Some(input.into());
+    pub fn blueprint_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.blueprint_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the blueprint.</p>
-    pub fn set_blueprint_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_blueprint_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.blueprint_name = input;
         self
     }
     /// <p>The run ID for this blueprint.</p>
-    pub fn run_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.run_id = Some(input.into());
+    pub fn run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.run_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The run ID for this blueprint.</p>
-    pub fn set_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.run_id = input;
         self
     }

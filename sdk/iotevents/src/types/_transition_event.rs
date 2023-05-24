@@ -2,36 +2,36 @@
 
 /// <p>Specifies the actions performed and the next state entered when a <code>condition</code> evaluates to TRUE.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TransitionEvent {
     /// <p>The name of the transition event.</p>
     #[doc(hidden)]
-    pub event_name: std::option::Option<std::string::String>,
+    pub event_name: ::std::option::Option<::std::string::String>,
     /// <p>Required. A Boolean expression that when TRUE causes the actions to be performed and the <code>nextState</code> to be entered.</p>
     #[doc(hidden)]
-    pub condition: std::option::Option<std::string::String>,
+    pub condition: ::std::option::Option<::std::string::String>,
     /// <p>The actions to be performed.</p>
     #[doc(hidden)]
-    pub actions: std::option::Option<std::vec::Vec<crate::types::Action>>,
+    pub actions: ::std::option::Option<::std::vec::Vec<crate::types::Action>>,
     /// <p>The next state to enter.</p>
     #[doc(hidden)]
-    pub next_state: std::option::Option<std::string::String>,
+    pub next_state: ::std::option::Option<::std::string::String>,
 }
 impl TransitionEvent {
     /// <p>The name of the transition event.</p>
-    pub fn event_name(&self) -> std::option::Option<&str> {
+    pub fn event_name(&self) -> ::std::option::Option<&str> {
         self.event_name.as_deref()
     }
     /// <p>Required. A Boolean expression that when TRUE causes the actions to be performed and the <code>nextState</code> to be entered.</p>
-    pub fn condition(&self) -> std::option::Option<&str> {
+    pub fn condition(&self) -> ::std::option::Option<&str> {
         self.condition.as_deref()
     }
     /// <p>The actions to be performed.</p>
-    pub fn actions(&self) -> std::option::Option<&[crate::types::Action]> {
+    pub fn actions(&self) -> ::std::option::Option<&[crate::types::Action]> {
         self.actions.as_deref()
     }
     /// <p>The next state to enter.</p>
-    pub fn next_state(&self) -> std::option::Option<&str> {
+    pub fn next_state(&self) -> ::std::option::Option<&str> {
         self.next_state.as_deref()
     }
 }
@@ -44,31 +44,33 @@ impl TransitionEvent {
 
 /// A builder for [`TransitionEvent`](crate::types::TransitionEvent).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TransitionEventBuilder {
-    pub(crate) event_name: std::option::Option<std::string::String>,
-    pub(crate) condition: std::option::Option<std::string::String>,
-    pub(crate) actions: std::option::Option<std::vec::Vec<crate::types::Action>>,
-    pub(crate) next_state: std::option::Option<std::string::String>,
+    pub(crate) event_name: ::std::option::Option<::std::string::String>,
+    pub(crate) condition: ::std::option::Option<::std::string::String>,
+    pub(crate) actions: ::std::option::Option<::std::vec::Vec<crate::types::Action>>,
+    pub(crate) next_state: ::std::option::Option<::std::string::String>,
 }
 impl TransitionEventBuilder {
     /// <p>The name of the transition event.</p>
-    pub fn event_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.event_name = Some(input.into());
+    pub fn event_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.event_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the transition event.</p>
-    pub fn set_event_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_event_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_name = input;
         self
     }
     /// <p>Required. A Boolean expression that when TRUE causes the actions to be performed and the <code>nextState</code> to be entered.</p>
-    pub fn condition(mut self, input: impl Into<std::string::String>) -> Self {
-        self.condition = Some(input.into());
+    pub fn condition(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.condition = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Required. A Boolean expression that when TRUE causes the actions to be performed and the <code>nextState</code> to be entered.</p>
-    pub fn set_condition(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_condition(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.condition = input;
         self
     }
@@ -80,24 +82,24 @@ impl TransitionEventBuilder {
     pub fn actions(mut self, input: crate::types::Action) -> Self {
         let mut v = self.actions.unwrap_or_default();
         v.push(input);
-        self.actions = Some(v);
+        self.actions = ::std::option::Option::Some(v);
         self
     }
     /// <p>The actions to be performed.</p>
     pub fn set_actions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Action>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Action>>,
     ) -> Self {
         self.actions = input;
         self
     }
     /// <p>The next state to enter.</p>
-    pub fn next_state(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_state = Some(input.into());
+    pub fn next_state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_state = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The next state to enter.</p>
-    pub fn set_next_state(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_state = input;
         self
     }

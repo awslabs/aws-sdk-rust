@@ -2,29 +2,29 @@
 
 /// <p>An HTTP response header name and its value. CloudFront includes this header in HTTP responses that it sends for requests that match a cache behavior that's associated with this response headers policy.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResponseHeadersPolicyCustomHeader {
     /// <p>The HTTP response header name.</p>
     #[doc(hidden)]
-    pub header: std::option::Option<std::string::String>,
+    pub header: ::std::option::Option<::std::string::String>,
     /// <p>The value for the HTTP response header.</p>
     #[doc(hidden)]
-    pub value: std::option::Option<std::string::String>,
+    pub value: ::std::option::Option<::std::string::String>,
     /// <p>A Boolean that determines whether CloudFront overrides a response header with the same name received from the origin with the header specified here.</p>
     #[doc(hidden)]
-    pub r#override: std::option::Option<bool>,
+    pub r#override: ::std::option::Option<bool>,
 }
 impl ResponseHeadersPolicyCustomHeader {
     /// <p>The HTTP response header name.</p>
-    pub fn header(&self) -> std::option::Option<&str> {
+    pub fn header(&self) -> ::std::option::Option<&str> {
         self.header.as_deref()
     }
     /// <p>The value for the HTTP response header.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
     /// <p>A Boolean that determines whether CloudFront overrides a response header with the same name received from the origin with the header specified here.</p>
-    pub fn r#override(&self) -> std::option::Option<bool> {
+    pub fn r#override(&self) -> ::std::option::Option<bool> {
         self.r#override
     }
 }
@@ -37,40 +37,42 @@ impl ResponseHeadersPolicyCustomHeader {
 
 /// A builder for [`ResponseHeadersPolicyCustomHeader`](crate::types::ResponseHeadersPolicyCustomHeader).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResponseHeadersPolicyCustomHeaderBuilder {
-    pub(crate) header: std::option::Option<std::string::String>,
-    pub(crate) value: std::option::Option<std::string::String>,
-    pub(crate) r#override: std::option::Option<bool>,
+    pub(crate) header: ::std::option::Option<::std::string::String>,
+    pub(crate) value: ::std::option::Option<::std::string::String>,
+    pub(crate) r#override: ::std::option::Option<bool>,
 }
 impl ResponseHeadersPolicyCustomHeaderBuilder {
     /// <p>The HTTP response header name.</p>
-    pub fn header(mut self, input: impl Into<std::string::String>) -> Self {
-        self.header = Some(input.into());
+    pub fn header(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.header = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The HTTP response header name.</p>
-    pub fn set_header(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_header(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.header = input;
         self
     }
     /// <p>The value for the HTTP response header.</p>
-    pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.value = Some(input.into());
+    pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value for the HTTP response header.</p>
-    pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
     }
     /// <p>A Boolean that determines whether CloudFront overrides a response header with the same name received from the origin with the header specified here.</p>
     pub fn r#override(mut self, input: bool) -> Self {
-        self.r#override = Some(input);
+        self.r#override = ::std::option::Option::Some(input);
         self
     }
     /// <p>A Boolean that determines whether CloudFront overrides a response header with the same name received from the origin with the header specified here.</p>
-    pub fn set_override(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_override(mut self, input: ::std::option::Option<bool>) -> Self {
         self.r#override = input;
         self
     }

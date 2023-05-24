@@ -2,22 +2,22 @@
 
 /// <p>Summary of model on edge device.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EdgeModelSummary {
     /// <p>The name of the model.</p>
     #[doc(hidden)]
-    pub model_name: std::option::Option<std::string::String>,
+    pub model_name: ::std::option::Option<::std::string::String>,
     /// <p>The version model.</p>
     #[doc(hidden)]
-    pub model_version: std::option::Option<std::string::String>,
+    pub model_version: ::std::option::Option<::std::string::String>,
 }
 impl EdgeModelSummary {
     /// <p>The name of the model.</p>
-    pub fn model_name(&self) -> std::option::Option<&str> {
+    pub fn model_name(&self) -> ::std::option::Option<&str> {
         self.model_name.as_deref()
     }
     /// <p>The version model.</p>
-    pub fn model_version(&self) -> std::option::Option<&str> {
+    pub fn model_version(&self) -> ::std::option::Option<&str> {
         self.model_version.as_deref()
     }
 }
@@ -30,29 +30,37 @@ impl EdgeModelSummary {
 
 /// A builder for [`EdgeModelSummary`](crate::types::EdgeModelSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EdgeModelSummaryBuilder {
-    pub(crate) model_name: std::option::Option<std::string::String>,
-    pub(crate) model_version: std::option::Option<std::string::String>,
+    pub(crate) model_name: ::std::option::Option<::std::string::String>,
+    pub(crate) model_version: ::std::option::Option<::std::string::String>,
 }
 impl EdgeModelSummaryBuilder {
     /// <p>The name of the model.</p>
-    pub fn model_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.model_name = Some(input.into());
+    pub fn model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.model_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the model.</p>
-    pub fn set_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_name = input;
         self
     }
     /// <p>The version model.</p>
-    pub fn model_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.model_version = Some(input.into());
+    pub fn model_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.model_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version model.</p>
-    pub fn set_model_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_model_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.model_version = input;
         self
     }

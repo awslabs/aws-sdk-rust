@@ -2,27 +2,27 @@
 
 /// <p> The result structure for the list webhooks request. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListWebhooksOutput {
     /// <p> A list of webhooks. </p>
     #[doc(hidden)]
-    pub webhooks: std::option::Option<std::vec::Vec<crate::types::Webhook>>,
+    pub webhooks: ::std::option::Option<::std::vec::Vec<crate::types::Webhook>>,
     /// <p> A pagination token. If non-null, the pagination token is returned in a result. Pass its value in another request to retrieve more entries. </p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListWebhooksOutput {
     /// <p> A list of webhooks. </p>
-    pub fn webhooks(&self) -> std::option::Option<&[crate::types::Webhook]> {
+    pub fn webhooks(&self) -> ::std::option::Option<&[crate::types::Webhook]> {
         self.webhooks.as_deref()
     }
     /// <p> A pagination token. If non-null, the pagination token is returned in a result. Pass its value in another request to retrieve more entries. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListWebhooksOutput {
+impl ::aws_http::request_id::RequestId for ListWebhooksOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -36,10 +36,12 @@ impl ListWebhooksOutput {
 
 /// A builder for [`ListWebhooksOutput`](crate::operation::list_webhooks::ListWebhooksOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListWebhooksOutputBuilder {
-    pub(crate) webhooks: std::option::Option<std::vec::Vec<crate::types::Webhook>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) webhooks: ::std::option::Option<::std::vec::Vec<crate::types::Webhook>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListWebhooksOutputBuilder {
@@ -51,24 +53,24 @@ impl ListWebhooksOutputBuilder {
     pub fn webhooks(mut self, input: crate::types::Webhook) -> Self {
         let mut v = self.webhooks.unwrap_or_default();
         v.push(input);
-        self.webhooks = Some(v);
+        self.webhooks = ::std::option::Option::Some(v);
         self
     }
     /// <p> A list of webhooks. </p>
     pub fn set_webhooks(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Webhook>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Webhook>>,
     ) -> Self {
         self.webhooks = input;
         self
     }
     /// <p> A pagination token. If non-null, the pagination token is returned in a result. Pass its value in another request to retrieve more entries. </p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> A pagination token. If non-null, the pagination token is returned in a result. Pass its value in another request to retrieve more entries. </p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

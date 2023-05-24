@@ -2,7 +2,7 @@
 
 /// <p>Controls on the query specifications that can be run on a configured table.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum ConfiguredTableAnalysisRulePolicy {
     /// <p>Controls on the query specifications that can be run on a configured table.</p>
     V1(crate::types::ConfiguredTableAnalysisRulePolicyV1),
@@ -22,11 +22,11 @@ impl ConfiguredTableAnalysisRulePolicy {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_v1(
         &self,
-    ) -> std::result::Result<&crate::types::ConfiguredTableAnalysisRulePolicyV1, &Self> {
+    ) -> ::std::result::Result<&crate::types::ConfiguredTableAnalysisRulePolicyV1, &Self> {
         if let ConfiguredTableAnalysisRulePolicy::V1(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`V1`](crate::types::ConfiguredTableAnalysisRulePolicy::V1).

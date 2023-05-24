@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ResultFormat {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum ResultFormat {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ResultFormat {
+impl ::std::convert::From<&str> for ResultFormat {
     fn from(s: &str) -> Self {
         match s {
             "CSV" => ResultFormat::Csv,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for ResultFormat {
         }
     }
 }
-impl std::str::FromStr for ResultFormat {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ResultFormat {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ResultFormat::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ResultFormat::from(s))
     }
 }
 impl ResultFormat {
@@ -86,7 +86,7 @@ impl ResultFormat {
         &["CSV", "PARQUET"]
     }
 }
-impl AsRef<str> for ResultFormat {
+impl ::std::convert::AsRef<str> for ResultFormat {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

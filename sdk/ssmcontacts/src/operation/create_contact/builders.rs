@@ -6,56 +6,59 @@ pub use crate::operation::create_contact::_create_contact_input::CreateContactIn
 /// Fluent builder constructing a request to `CreateContact`.
 ///
 /// <p>Contacts are either the contacts that Incident Manager engages during an incident or the escalation plans that Incident Manager uses to engage contacts in phases during an incident.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateContactFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_contact::builders::CreateContactInputBuilder,
 }
 impl CreateContactFluentBuilder {
     /// Creates a new `CreateContact`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_contact::CreateContact,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_contact::CreateContactError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_contact::CreateContactError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_contact::CreateContactOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_contact::CreateContactError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_contact::CreateContactError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,29 +71,29 @@ impl CreateContactFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_contact::CreateContactOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_contact::CreateContactError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_contact::CreateContactError>,
     > {
         self.send_middleware().await
     }
     /// <p>The short name to quickly identify a contact or escalation plan. The contact alias must be unique and identifiable.</p>
-    pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.alias(input.into());
         self
     }
     /// <p>The short name to quickly identify a contact or escalation plan. The contact alias must be unique and identifiable.</p>
-    pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_alias(input);
         self
     }
     /// <p>The full name of the contact or escalation plan.</p>
-    pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.display_name(input.into());
         self
     }
     /// <p>The full name of the contact or escalation plan.</p>
-    pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_display_name(input);
         self
     }
@@ -100,7 +103,7 @@ impl CreateContactFluentBuilder {
         self
     }
     /// <p>To create an escalation plan use <code>ESCALATION</code>. To create a contact use <code>PERSONAL</code>.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::ContactType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ContactType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }
@@ -110,7 +113,7 @@ impl CreateContactFluentBuilder {
         self
     }
     /// <p>A list of stages. A contact has an engagement plan with stages that contact specified contact channels. An escalation plan uses stages that contact specified contacts.</p>
-    pub fn set_plan(mut self, input: std::option::Option<crate::types::Plan>) -> Self {
+    pub fn set_plan(mut self, input: ::std::option::Option<crate::types::Plan>) -> Self {
         self.inner = self.inner.set_plan(input);
         self
     }
@@ -126,20 +129,23 @@ impl CreateContactFluentBuilder {
     /// <p>Adds a tag to the target. You can only tag resources created in the first Region of your replication set.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>A token ensuring that the operation is called only once with the specified details.</p>
-    pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn idempotency_token(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.idempotency_token(input.into());
         self
     }
     /// <p>A token ensuring that the operation is called only once with the specified details.</p>
     pub fn set_idempotency_token(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_idempotency_token(input);
         self

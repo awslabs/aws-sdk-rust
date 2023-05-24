@@ -2,7 +2,7 @@
 
 /// <p>Controls on the query specifications that can be run on configured table..</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum AnalysisRulePolicyV1 {
     /// <p>Analysis rule type that enables only aggregation queries on a configured table.</p>
     Aggregation(crate::types::AnalysisRuleAggregation),
@@ -23,11 +23,11 @@ impl AnalysisRulePolicyV1 {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_aggregation(
         &self,
-    ) -> std::result::Result<&crate::types::AnalysisRuleAggregation, &Self> {
+    ) -> ::std::result::Result<&crate::types::AnalysisRuleAggregation, &Self> {
         if let AnalysisRulePolicyV1::Aggregation(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Aggregation`](crate::types::AnalysisRulePolicyV1::Aggregation).
@@ -36,11 +36,11 @@ impl AnalysisRulePolicyV1 {
     }
     /// Tries to convert the enum instance into [`List`](crate::types::AnalysisRulePolicyV1::List), extracting the inner [`AnalysisRuleList`](crate::types::AnalysisRuleList).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_list(&self) -> std::result::Result<&crate::types::AnalysisRuleList, &Self> {
+    pub fn as_list(&self) -> ::std::result::Result<&crate::types::AnalysisRuleList, &Self> {
         if let AnalysisRulePolicyV1::List(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`List`](crate::types::AnalysisRulePolicyV1::List).

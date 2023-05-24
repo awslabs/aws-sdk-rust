@@ -2,29 +2,29 @@
 
 /// <p>Describes an action that sends data to CloudWatch Logs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CloudwatchLogsAction {
     /// <p>The IAM role that allows access to the CloudWatch log.</p>
     #[doc(hidden)]
-    pub role_arn: std::option::Option<std::string::String>,
+    pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The CloudWatch log group to which the action sends data.</p>
     #[doc(hidden)]
-    pub log_group_name: std::option::Option<std::string::String>,
+    pub log_group_name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether batches of log records will be extracted and uploaded into CloudWatch. Values include <code>true</code> or <code>false</code> <i>(default)</i>.</p>
     #[doc(hidden)]
-    pub batch_mode: std::option::Option<bool>,
+    pub batch_mode: ::std::option::Option<bool>,
 }
 impl CloudwatchLogsAction {
     /// <p>The IAM role that allows access to the CloudWatch log.</p>
-    pub fn role_arn(&self) -> std::option::Option<&str> {
+    pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
     /// <p>The CloudWatch log group to which the action sends data.</p>
-    pub fn log_group_name(&self) -> std::option::Option<&str> {
+    pub fn log_group_name(&self) -> ::std::option::Option<&str> {
         self.log_group_name.as_deref()
     }
     /// <p>Indicates whether batches of log records will be extracted and uploaded into CloudWatch. Values include <code>true</code> or <code>false</code> <i>(default)</i>.</p>
-    pub fn batch_mode(&self) -> std::option::Option<bool> {
+    pub fn batch_mode(&self) -> ::std::option::Option<bool> {
         self.batch_mode
     }
 }
@@ -37,40 +37,48 @@ impl CloudwatchLogsAction {
 
 /// A builder for [`CloudwatchLogsAction`](crate::types::CloudwatchLogsAction).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CloudwatchLogsActionBuilder {
-    pub(crate) role_arn: std::option::Option<std::string::String>,
-    pub(crate) log_group_name: std::option::Option<std::string::String>,
-    pub(crate) batch_mode: std::option::Option<bool>,
+    pub(crate) role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) log_group_name: ::std::option::Option<::std::string::String>,
+    pub(crate) batch_mode: ::std::option::Option<bool>,
 }
 impl CloudwatchLogsActionBuilder {
     /// <p>The IAM role that allows access to the CloudWatch log.</p>
-    pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.role_arn = Some(input.into());
+    pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The IAM role that allows access to the CloudWatch log.</p>
-    pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role_arn = input;
         self
     }
     /// <p>The CloudWatch log group to which the action sends data.</p>
-    pub fn log_group_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.log_group_name = Some(input.into());
+    pub fn log_group_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.log_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The CloudWatch log group to which the action sends data.</p>
-    pub fn set_log_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_log_group_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.log_group_name = input;
         self
     }
     /// <p>Indicates whether batches of log records will be extracted and uploaded into CloudWatch. Values include <code>true</code> or <code>false</code> <i>(default)</i>.</p>
     pub fn batch_mode(mut self, input: bool) -> Self {
-        self.batch_mode = Some(input);
+        self.batch_mode = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether batches of log records will be extracted and uploaded into CloudWatch. Values include <code>true</code> or <code>false</code> <i>(default)</i>.</p>
-    pub fn set_batch_mode(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_batch_mode(mut self, input: ::std::option::Option<bool>) -> Self {
         self.batch_mode = input;
         self
     }

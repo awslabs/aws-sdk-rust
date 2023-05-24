@@ -2,7 +2,7 @@
 
 /// <p>Contains details about an exit from a state during an execution.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct StateExitedEventDetails {
     /// <p>The name of the state.</p>
     /// <p>A name must <i>not</i> contain:</p>
@@ -15,13 +15,13 @@ pub struct StateExitedEventDetails {
     /// </ul>
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The JSON output data of the state. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
     #[doc(hidden)]
-    pub output: std::option::Option<std::string::String>,
+    pub output: ::std::option::Option<::std::string::String>,
     /// <p>Contains details about the output of an execution history event.</p>
     #[doc(hidden)]
-    pub output_details: std::option::Option<crate::types::HistoryEventExecutionDataDetails>,
+    pub output_details: ::std::option::Option<crate::types::HistoryEventExecutionDataDetails>,
 }
 impl StateExitedEventDetails {
     /// <p>The name of the state.</p>
@@ -34,22 +34,22 @@ impl StateExitedEventDetails {
     /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
     /// </ul>
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The JSON output data of the state. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
-    pub fn output(&self) -> std::option::Option<&str> {
+    pub fn output(&self) -> ::std::option::Option<&str> {
         self.output.as_deref()
     }
     /// <p>Contains details about the output of an execution history event.</p>
     pub fn output_details(
         &self,
-    ) -> std::option::Option<&crate::types::HistoryEventExecutionDataDetails> {
+    ) -> ::std::option::Option<&crate::types::HistoryEventExecutionDataDetails> {
         self.output_details.as_ref()
     }
 }
-impl std::fmt::Debug for StateExitedEventDetails {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for StateExitedEventDetails {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("StateExitedEventDetails");
         formatter.field("name", &self.name);
         formatter.field("output", &"*** Sensitive Data Redacted ***");
@@ -66,11 +66,12 @@ impl StateExitedEventDetails {
 
 /// A builder for [`StateExitedEventDetails`](crate::types::StateExitedEventDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct StateExitedEventDetailsBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) output: std::option::Option<std::string::String>,
-    pub(crate) output_details: std::option::Option<crate::types::HistoryEventExecutionDataDetails>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) output: ::std::option::Option<::std::string::String>,
+    pub(crate) output_details:
+        ::std::option::Option<crate::types::HistoryEventExecutionDataDetails>,
 }
 impl StateExitedEventDetailsBuilder {
     /// <p>The name of the state.</p>
@@ -83,8 +84,8 @@ impl StateExitedEventDetailsBuilder {
     /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
     /// </ul>
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the state.</p>
@@ -97,29 +98,29 @@ impl StateExitedEventDetailsBuilder {
     /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
     /// </ul>
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The JSON output data of the state. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
-    pub fn output(mut self, input: impl Into<std::string::String>) -> Self {
-        self.output = Some(input.into());
+    pub fn output(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.output = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The JSON output data of the state. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
-    pub fn set_output(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_output(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.output = input;
         self
     }
     /// <p>Contains details about the output of an execution history event.</p>
     pub fn output_details(mut self, input: crate::types::HistoryEventExecutionDataDetails) -> Self {
-        self.output_details = Some(input);
+        self.output_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains details about the output of an execution history event.</p>
     pub fn set_output_details(
         mut self,
-        input: std::option::Option<crate::types::HistoryEventExecutionDataDetails>,
+        input: ::std::option::Option<crate::types::HistoryEventExecutionDataDetails>,
     ) -> Self {
         self.output_details = input;
         self
@@ -133,8 +134,8 @@ impl StateExitedEventDetailsBuilder {
         }
     }
 }
-impl std::fmt::Debug for StateExitedEventDetailsBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for StateExitedEventDetailsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("StateExitedEventDetailsBuilder");
         formatter.field("name", &self.name);
         formatter.field("output", &"*** Sensitive Data Redacted ***");

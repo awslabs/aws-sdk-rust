@@ -2,7 +2,7 @@
 
 /// <p>A complex type that identifies the namespaces that you want to list. You can choose to list public or private namespaces.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NamespaceFilter {
     /// <p>Specify the namespaces that you want to get using one of the following.</p>
     /// <ul>
@@ -11,7 +11,7 @@ pub struct NamespaceFilter {
     /// <li> <p> <code>HTTP_NAME</code>: Gets the namespaces with the specified HTTP name.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub name: std::option::Option<crate::types::NamespaceFilterName>,
+    pub name: ::std::option::Option<crate::types::NamespaceFilterName>,
     /// <p>Specify the values that are applicable to the value that you specify for <code>Name</code>.</p>
     /// <ul>
     /// <li> <p> <code>TYPE</code>: Specify <code>HTTP</code>, <code>DNS_PUBLIC</code>, or <code>DNS_PRIVATE</code>.</p> </li>
@@ -19,14 +19,14 @@ pub struct NamespaceFilter {
     /// <li> <p> <code>HTTP_NAME</code>: Specify the HTTP name of the namespace, which is found in <code>Namespace.Properties.HttpProperties.HttpName</code>.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub values: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specify the operator that you want to use to determine whether a namespace matches the specified value. Valid values for <code>Condition</code> are one of the following.</p>
     /// <ul>
     /// <li> <p> <code>EQ</code>: When you specify <code>EQ</code> for <code>Condition</code>, you can specify only one value. <code>EQ</code> is supported for <code>TYPE</code>, <code>NAME</code>, and <code>HTTP_NAME</code>. <code>EQ</code> is the default condition and can be omitted.</p> </li>
     /// <li> <p> <code>BEGINS_WITH</code>: When you specify <code>BEGINS_WITH</code> for <code>Condition</code>, you can specify only one value. <code>BEGINS_WITH</code> is supported for <code>TYPE</code>, <code>NAME</code>, and <code>HTTP_NAME</code>.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub condition: std::option::Option<crate::types::FilterCondition>,
+    pub condition: ::std::option::Option<crate::types::FilterCondition>,
 }
 impl NamespaceFilter {
     /// <p>Specify the namespaces that you want to get using one of the following.</p>
@@ -35,7 +35,7 @@ impl NamespaceFilter {
     /// <li> <p> <code>NAME</code>: Gets the namespaces with the specified name.</p> </li>
     /// <li> <p> <code>HTTP_NAME</code>: Gets the namespaces with the specified HTTP name.</p> </li>
     /// </ul>
-    pub fn name(&self) -> std::option::Option<&crate::types::NamespaceFilterName> {
+    pub fn name(&self) -> ::std::option::Option<&crate::types::NamespaceFilterName> {
         self.name.as_ref()
     }
     /// <p>Specify the values that are applicable to the value that you specify for <code>Name</code>.</p>
@@ -44,7 +44,7 @@ impl NamespaceFilter {
     /// <li> <p> <code>NAME</code>: Specify the name of the namespace, which is found in <code>Namespace.Name</code>.</p> </li>
     /// <li> <p> <code>HTTP_NAME</code>: Specify the HTTP name of the namespace, which is found in <code>Namespace.Properties.HttpProperties.HttpName</code>.</p> </li>
     /// </ul>
-    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn values(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.values.as_deref()
     }
     /// <p>Specify the operator that you want to use to determine whether a namespace matches the specified value. Valid values for <code>Condition</code> are one of the following.</p>
@@ -52,7 +52,7 @@ impl NamespaceFilter {
     /// <li> <p> <code>EQ</code>: When you specify <code>EQ</code> for <code>Condition</code>, you can specify only one value. <code>EQ</code> is supported for <code>TYPE</code>, <code>NAME</code>, and <code>HTTP_NAME</code>. <code>EQ</code> is the default condition and can be omitted.</p> </li>
     /// <li> <p> <code>BEGINS_WITH</code>: When you specify <code>BEGINS_WITH</code> for <code>Condition</code>, you can specify only one value. <code>BEGINS_WITH</code> is supported for <code>TYPE</code>, <code>NAME</code>, and <code>HTTP_NAME</code>.</p> </li>
     /// </ul>
-    pub fn condition(&self) -> std::option::Option<&crate::types::FilterCondition> {
+    pub fn condition(&self) -> ::std::option::Option<&crate::types::FilterCondition> {
         self.condition.as_ref()
     }
 }
@@ -65,11 +65,13 @@ impl NamespaceFilter {
 
 /// A builder for [`NamespaceFilter`](crate::types::NamespaceFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NamespaceFilterBuilder {
-    pub(crate) name: std::option::Option<crate::types::NamespaceFilterName>,
-    pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) condition: std::option::Option<crate::types::FilterCondition>,
+    pub(crate) name: ::std::option::Option<crate::types::NamespaceFilterName>,
+    pub(crate) values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) condition: ::std::option::Option<crate::types::FilterCondition>,
 }
 impl NamespaceFilterBuilder {
     /// <p>Specify the namespaces that you want to get using one of the following.</p>
@@ -79,7 +81,7 @@ impl NamespaceFilterBuilder {
     /// <li> <p> <code>HTTP_NAME</code>: Gets the namespaces with the specified HTTP name.</p> </li>
     /// </ul>
     pub fn name(mut self, input: crate::types::NamespaceFilterName) -> Self {
-        self.name = Some(input);
+        self.name = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specify the namespaces that you want to get using one of the following.</p>
@@ -90,7 +92,7 @@ impl NamespaceFilterBuilder {
     /// </ul>
     pub fn set_name(
         mut self,
-        input: std::option::Option<crate::types::NamespaceFilterName>,
+        input: ::std::option::Option<crate::types::NamespaceFilterName>,
     ) -> Self {
         self.name = input;
         self
@@ -105,10 +107,10 @@ impl NamespaceFilterBuilder {
     /// <li> <p> <code>NAME</code>: Specify the name of the namespace, which is found in <code>Namespace.Name</code>.</p> </li>
     /// <li> <p> <code>HTTP_NAME</code>: Specify the HTTP name of the namespace, which is found in <code>Namespace.Properties.HttpProperties.HttpName</code>.</p> </li>
     /// </ul>
-    pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
         v.push(input.into());
-        self.values = Some(v);
+        self.values = ::std::option::Option::Some(v);
         self
     }
     /// <p>Specify the values that are applicable to the value that you specify for <code>Name</code>.</p>
@@ -119,7 +121,7 @@ impl NamespaceFilterBuilder {
     /// </ul>
     pub fn set_values(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.values = input;
         self
@@ -130,7 +132,7 @@ impl NamespaceFilterBuilder {
     /// <li> <p> <code>BEGINS_WITH</code>: When you specify <code>BEGINS_WITH</code> for <code>Condition</code>, you can specify only one value. <code>BEGINS_WITH</code> is supported for <code>TYPE</code>, <code>NAME</code>, and <code>HTTP_NAME</code>.</p> </li>
     /// </ul>
     pub fn condition(mut self, input: crate::types::FilterCondition) -> Self {
-        self.condition = Some(input);
+        self.condition = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specify the operator that you want to use to determine whether a namespace matches the specified value. Valid values for <code>Condition</code> are one of the following.</p>
@@ -140,7 +142,7 @@ impl NamespaceFilterBuilder {
     /// </ul>
     pub fn set_condition(
         mut self,
-        input: std::option::Option<crate::types::FilterCondition>,
+        input: ::std::option::Option<crate::types::FilterCondition>,
     ) -> Self {
         self.condition = input;
         self

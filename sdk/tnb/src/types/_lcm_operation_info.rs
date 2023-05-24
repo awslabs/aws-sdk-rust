@@ -3,15 +3,15 @@
 /// <p>Lifecycle management operation details on the network instance.</p>
 /// <p>Lifecycle management operations are deploy, update, or delete operations.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LcmOperationInfo {
     /// <p>The identifier of the network operation.</p>
     #[doc(hidden)]
-    pub ns_lcm_op_occ_id: std::option::Option<std::string::String>,
+    pub ns_lcm_op_occ_id: ::std::option::Option<::std::string::String>,
 }
 impl LcmOperationInfo {
     /// <p>The identifier of the network operation.</p>
-    pub fn ns_lcm_op_occ_id(&self) -> std::option::Option<&str> {
+    pub fn ns_lcm_op_occ_id(&self) -> ::std::option::Option<&str> {
         self.ns_lcm_op_occ_id.as_deref()
     }
 }
@@ -24,18 +24,26 @@ impl LcmOperationInfo {
 
 /// A builder for [`LcmOperationInfo`](crate::types::LcmOperationInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LcmOperationInfoBuilder {
-    pub(crate) ns_lcm_op_occ_id: std::option::Option<std::string::String>,
+    pub(crate) ns_lcm_op_occ_id: ::std::option::Option<::std::string::String>,
 }
 impl LcmOperationInfoBuilder {
     /// <p>The identifier of the network operation.</p>
-    pub fn ns_lcm_op_occ_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ns_lcm_op_occ_id = Some(input.into());
+    pub fn ns_lcm_op_occ_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.ns_lcm_op_occ_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the network operation.</p>
-    pub fn set_ns_lcm_op_occ_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ns_lcm_op_occ_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.ns_lcm_op_occ_id = input;
         self
     }

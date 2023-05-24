@@ -2,29 +2,29 @@
 
 /// <p>Information about the reaction values provided by users on a comment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReactionForComment {
     /// <p>The reaction for a specified comment.</p>
     #[doc(hidden)]
-    pub reaction: std::option::Option<crate::types::ReactionValueFormats>,
+    pub reaction: ::std::option::Option<crate::types::ReactionValueFormats>,
     /// <p>The Amazon Resource Names (ARNs) of users who have provided reactions to the comment.</p>
     #[doc(hidden)]
-    pub reaction_users: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub reaction_users: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A numerical count of users who reacted with the specified emoji whose identities have been subsequently deleted from IAM. While these IAM users or roles no longer exist, the reactions might still appear in total reaction counts.</p>
     #[doc(hidden)]
-    pub reactions_from_deleted_users_count: std::option::Option<i32>,
+    pub reactions_from_deleted_users_count: ::std::option::Option<i32>,
 }
 impl ReactionForComment {
     /// <p>The reaction for a specified comment.</p>
-    pub fn reaction(&self) -> std::option::Option<&crate::types::ReactionValueFormats> {
+    pub fn reaction(&self) -> ::std::option::Option<&crate::types::ReactionValueFormats> {
         self.reaction.as_ref()
     }
     /// <p>The Amazon Resource Names (ARNs) of users who have provided reactions to the comment.</p>
-    pub fn reaction_users(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn reaction_users(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.reaction_users.as_deref()
     }
     /// <p>A numerical count of users who reacted with the specified emoji whose identities have been subsequently deleted from IAM. While these IAM users or roles no longer exist, the reactions might still appear in total reaction counts.</p>
-    pub fn reactions_from_deleted_users_count(&self) -> std::option::Option<i32> {
+    pub fn reactions_from_deleted_users_count(&self) -> ::std::option::Option<i32> {
         self.reactions_from_deleted_users_count
     }
 }
@@ -37,22 +37,24 @@ impl ReactionForComment {
 
 /// A builder for [`ReactionForComment`](crate::types::ReactionForComment).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ReactionForCommentBuilder {
-    pub(crate) reaction: std::option::Option<crate::types::ReactionValueFormats>,
-    pub(crate) reaction_users: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) reactions_from_deleted_users_count: std::option::Option<i32>,
+    pub(crate) reaction: ::std::option::Option<crate::types::ReactionValueFormats>,
+    pub(crate) reaction_users: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) reactions_from_deleted_users_count: ::std::option::Option<i32>,
 }
 impl ReactionForCommentBuilder {
     /// <p>The reaction for a specified comment.</p>
     pub fn reaction(mut self, input: crate::types::ReactionValueFormats) -> Self {
-        self.reaction = Some(input);
+        self.reaction = ::std::option::Option::Some(input);
         self
     }
     /// <p>The reaction for a specified comment.</p>
     pub fn set_reaction(
         mut self,
-        input: std::option::Option<crate::types::ReactionValueFormats>,
+        input: ::std::option::Option<crate::types::ReactionValueFormats>,
     ) -> Self {
         self.reaction = input;
         self
@@ -62,29 +64,32 @@ impl ReactionForCommentBuilder {
     /// To override the contents of this collection use [`set_reaction_users`](Self::set_reaction_users).
     ///
     /// <p>The Amazon Resource Names (ARNs) of users who have provided reactions to the comment.</p>
-    pub fn reaction_users(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn reaction_users(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.reaction_users.unwrap_or_default();
         v.push(input.into());
-        self.reaction_users = Some(v);
+        self.reaction_users = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Amazon Resource Names (ARNs) of users who have provided reactions to the comment.</p>
     pub fn set_reaction_users(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.reaction_users = input;
         self
     }
     /// <p>A numerical count of users who reacted with the specified emoji whose identities have been subsequently deleted from IAM. While these IAM users or roles no longer exist, the reactions might still appear in total reaction counts.</p>
     pub fn reactions_from_deleted_users_count(mut self, input: i32) -> Self {
-        self.reactions_from_deleted_users_count = Some(input);
+        self.reactions_from_deleted_users_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>A numerical count of users who reacted with the specified emoji whose identities have been subsequently deleted from IAM. While these IAM users or roles no longer exist, the reactions might still appear in total reaction counts.</p>
     pub fn set_reactions_from_deleted_users_count(
         mut self,
-        input: std::option::Option<i32>,
+        input: ::std::option::Option<i32>,
     ) -> Self {
         self.reactions_from_deleted_users_count = input;
         self

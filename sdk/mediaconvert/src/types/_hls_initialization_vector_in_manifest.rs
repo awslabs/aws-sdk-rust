@@ -38,13 +38,13 @@
 /// The Initialization Vector is a 128-bit number used in conjunction with the key for encrypting blocks. If set to INCLUDE, Initialization Vector is listed in the manifest. Otherwise Initialization Vector is not in the manifest.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum HlsInitializationVectorInManifest {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum HlsInitializationVectorInManifest {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for HlsInitializationVectorInManifest {
+impl ::std::convert::From<&str> for HlsInitializationVectorInManifest {
     fn from(s: &str) -> Self {
         match s {
             "EXCLUDE" => HlsInitializationVectorInManifest::Exclude,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for HlsInitializationVectorInManifest {
         }
     }
 }
-impl std::str::FromStr for HlsInitializationVectorInManifest {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for HlsInitializationVectorInManifest {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(HlsInitializationVectorInManifest::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(HlsInitializationVectorInManifest::from(s))
     }
 }
 impl HlsInitializationVectorInManifest {
@@ -86,7 +86,7 @@ impl HlsInitializationVectorInManifest {
         &["EXCLUDE", "INCLUDE"]
     }
 }
-impl AsRef<str> for HlsInitializationVectorInManifest {
+impl ::std::convert::AsRef<str> for HlsInitializationVectorInManifest {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

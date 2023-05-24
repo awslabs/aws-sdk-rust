@@ -2,40 +2,42 @@
 
 /// <p>A group of reservations that share a set of attributes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReservationUtilizationGroup {
     /// <p>The key for a specific reservation attribute.</p>
     #[doc(hidden)]
-    pub key: std::option::Option<std::string::String>,
+    pub key: ::std::option::Option<::std::string::String>,
     /// <p>The value of a specific reservation attribute.</p>
     #[doc(hidden)]
-    pub value: std::option::Option<std::string::String>,
+    pub value: ::std::option::Option<::std::string::String>,
     /// <p>The attributes for this group of reservations.</p>
     #[doc(hidden)]
-    pub attributes:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub attributes: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>How much you used this group of reservations.</p>
     #[doc(hidden)]
-    pub utilization: std::option::Option<crate::types::ReservationAggregates>,
+    pub utilization: ::std::option::Option<crate::types::ReservationAggregates>,
 }
 impl ReservationUtilizationGroup {
     /// <p>The key for a specific reservation attribute.</p>
-    pub fn key(&self) -> std::option::Option<&str> {
+    pub fn key(&self) -> ::std::option::Option<&str> {
         self.key.as_deref()
     }
     /// <p>The value of a specific reservation attribute.</p>
-    pub fn value(&self) -> std::option::Option<&str> {
+    pub fn value(&self) -> ::std::option::Option<&str> {
         self.value.as_deref()
     }
     /// <p>The attributes for this group of reservations.</p>
     pub fn attributes(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.attributes.as_ref()
     }
     /// <p>How much you used this group of reservations.</p>
-    pub fn utilization(&self) -> std::option::Option<&crate::types::ReservationAggregates> {
+    pub fn utilization(&self) -> ::std::option::Option<&crate::types::ReservationAggregates> {
         self.utilization.as_ref()
     }
 }
@@ -48,32 +50,35 @@ impl ReservationUtilizationGroup {
 
 /// A builder for [`ReservationUtilizationGroup`](crate::types::ReservationUtilizationGroup).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ReservationUtilizationGroupBuilder {
-    pub(crate) key: std::option::Option<std::string::String>,
-    pub(crate) value: std::option::Option<std::string::String>,
-    pub(crate) attributes:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) utilization: std::option::Option<crate::types::ReservationAggregates>,
+    pub(crate) key: ::std::option::Option<::std::string::String>,
+    pub(crate) value: ::std::option::Option<::std::string::String>,
+    pub(crate) attributes: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) utilization: ::std::option::Option<crate::types::ReservationAggregates>,
 }
 impl ReservationUtilizationGroupBuilder {
     /// <p>The key for a specific reservation attribute.</p>
-    pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
-        self.key = Some(input.into());
+    pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The key for a specific reservation attribute.</p>
-    pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key = input;
         self
     }
     /// <p>The value of a specific reservation attribute.</p>
-    pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.value = Some(input.into());
+    pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value of a specific reservation attribute.</p>
-    pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
         self
     }
@@ -84,19 +89,19 @@ impl ReservationUtilizationGroupBuilder {
     /// <p>The attributes for this group of reservations.</p>
     pub fn attributes(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.attributes = Some(hash_map);
+        self.attributes = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The attributes for this group of reservations.</p>
     pub fn set_attributes(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.attributes = input;
@@ -104,13 +109,13 @@ impl ReservationUtilizationGroupBuilder {
     }
     /// <p>How much you used this group of reservations.</p>
     pub fn utilization(mut self, input: crate::types::ReservationAggregates) -> Self {
-        self.utilization = Some(input);
+        self.utilization = ::std::option::Option::Some(input);
         self
     }
     /// <p>How much you used this group of reservations.</p>
     pub fn set_utilization(
         mut self,
-        input: std::option::Option<crate::types::ReservationAggregates>,
+        input: ::std::option::Option<crate::types::ReservationAggregates>,
     ) -> Self {
         self.utilization = input;
         self

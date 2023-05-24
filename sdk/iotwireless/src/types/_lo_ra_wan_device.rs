@@ -2,64 +2,64 @@
 
 /// <p>LoRaWAN object for create functions.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoRaWanDevice {
     /// <p>The DevEUI value.</p>
     #[doc(hidden)]
-    pub dev_eui: std::option::Option<std::string::String>,
+    pub dev_eui: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the device profile for the new wireless device.</p>
     #[doc(hidden)]
-    pub device_profile_id: std::option::Option<std::string::String>,
+    pub device_profile_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the service profile.</p>
     #[doc(hidden)]
-    pub service_profile_id: std::option::Option<std::string::String>,
+    pub service_profile_id: ::std::option::Option<::std::string::String>,
     /// <p>OTAA device object for v1.1 for create APIs</p>
     #[doc(hidden)]
-    pub otaa_v1_1: std::option::Option<crate::types::OtaaV11>,
+    pub otaa_v1_1: ::std::option::Option<crate::types::OtaaV11>,
     /// <p>OTAA device object for create APIs for v1.0.x</p>
     #[doc(hidden)]
-    pub otaa_v1_0_x: std::option::Option<crate::types::OtaaV10X>,
+    pub otaa_v1_0_x: ::std::option::Option<crate::types::OtaaV10X>,
     /// <p>ABP device object for create APIs for v1.1</p>
     #[doc(hidden)]
-    pub abp_v1_1: std::option::Option<crate::types::AbpV11>,
+    pub abp_v1_1: ::std::option::Option<crate::types::AbpV11>,
     /// <p>LoRaWAN object for create APIs</p>
     #[doc(hidden)]
-    pub abp_v1_0_x: std::option::Option<crate::types::AbpV10X>,
+    pub abp_v1_0_x: ::std::option::Option<crate::types::AbpV10X>,
     /// <p>List of FPort assigned for different LoRaWAN application packages to use</p>
     #[doc(hidden)]
-    pub f_ports: std::option::Option<crate::types::FPorts>,
+    pub f_ports: ::std::option::Option<crate::types::FPorts>,
 }
 impl LoRaWanDevice {
     /// <p>The DevEUI value.</p>
-    pub fn dev_eui(&self) -> std::option::Option<&str> {
+    pub fn dev_eui(&self) -> ::std::option::Option<&str> {
         self.dev_eui.as_deref()
     }
     /// <p>The ID of the device profile for the new wireless device.</p>
-    pub fn device_profile_id(&self) -> std::option::Option<&str> {
+    pub fn device_profile_id(&self) -> ::std::option::Option<&str> {
         self.device_profile_id.as_deref()
     }
     /// <p>The ID of the service profile.</p>
-    pub fn service_profile_id(&self) -> std::option::Option<&str> {
+    pub fn service_profile_id(&self) -> ::std::option::Option<&str> {
         self.service_profile_id.as_deref()
     }
     /// <p>OTAA device object for v1.1 for create APIs</p>
-    pub fn otaa_v1_1(&self) -> std::option::Option<&crate::types::OtaaV11> {
+    pub fn otaa_v1_1(&self) -> ::std::option::Option<&crate::types::OtaaV11> {
         self.otaa_v1_1.as_ref()
     }
     /// <p>OTAA device object for create APIs for v1.0.x</p>
-    pub fn otaa_v1_0_x(&self) -> std::option::Option<&crate::types::OtaaV10X> {
+    pub fn otaa_v1_0_x(&self) -> ::std::option::Option<&crate::types::OtaaV10X> {
         self.otaa_v1_0_x.as_ref()
     }
     /// <p>ABP device object for create APIs for v1.1</p>
-    pub fn abp_v1_1(&self) -> std::option::Option<&crate::types::AbpV11> {
+    pub fn abp_v1_1(&self) -> ::std::option::Option<&crate::types::AbpV11> {
         self.abp_v1_1.as_ref()
     }
     /// <p>LoRaWAN object for create APIs</p>
-    pub fn abp_v1_0_x(&self) -> std::option::Option<&crate::types::AbpV10X> {
+    pub fn abp_v1_0_x(&self) -> ::std::option::Option<&crate::types::AbpV10X> {
         self.abp_v1_0_x.as_ref()
     }
     /// <p>List of FPort assigned for different LoRaWAN application packages to use</p>
-    pub fn f_ports(&self) -> std::option::Option<&crate::types::FPorts> {
+    pub fn f_ports(&self) -> ::std::option::Option<&crate::types::FPorts> {
         self.f_ports.as_ref()
     }
 }
@@ -72,101 +72,109 @@ impl LoRaWanDevice {
 
 /// A builder for [`LoRaWanDevice`](crate::types::LoRaWanDevice).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LoRaWanDeviceBuilder {
-    pub(crate) dev_eui: std::option::Option<std::string::String>,
-    pub(crate) device_profile_id: std::option::Option<std::string::String>,
-    pub(crate) service_profile_id: std::option::Option<std::string::String>,
-    pub(crate) otaa_v1_1: std::option::Option<crate::types::OtaaV11>,
-    pub(crate) otaa_v1_0_x: std::option::Option<crate::types::OtaaV10X>,
-    pub(crate) abp_v1_1: std::option::Option<crate::types::AbpV11>,
-    pub(crate) abp_v1_0_x: std::option::Option<crate::types::AbpV10X>,
-    pub(crate) f_ports: std::option::Option<crate::types::FPorts>,
+    pub(crate) dev_eui: ::std::option::Option<::std::string::String>,
+    pub(crate) device_profile_id: ::std::option::Option<::std::string::String>,
+    pub(crate) service_profile_id: ::std::option::Option<::std::string::String>,
+    pub(crate) otaa_v1_1: ::std::option::Option<crate::types::OtaaV11>,
+    pub(crate) otaa_v1_0_x: ::std::option::Option<crate::types::OtaaV10X>,
+    pub(crate) abp_v1_1: ::std::option::Option<crate::types::AbpV11>,
+    pub(crate) abp_v1_0_x: ::std::option::Option<crate::types::AbpV10X>,
+    pub(crate) f_ports: ::std::option::Option<crate::types::FPorts>,
 }
 impl LoRaWanDeviceBuilder {
     /// <p>The DevEUI value.</p>
-    pub fn dev_eui(mut self, input: impl Into<std::string::String>) -> Self {
-        self.dev_eui = Some(input.into());
+    pub fn dev_eui(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.dev_eui = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The DevEUI value.</p>
-    pub fn set_dev_eui(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_dev_eui(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dev_eui = input;
         self
     }
     /// <p>The ID of the device profile for the new wireless device.</p>
-    pub fn device_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.device_profile_id = Some(input.into());
+    pub fn device_profile_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.device_profile_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the device profile for the new wireless device.</p>
     pub fn set_device_profile_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.device_profile_id = input;
         self
     }
     /// <p>The ID of the service profile.</p>
-    pub fn service_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.service_profile_id = Some(input.into());
+    pub fn service_profile_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.service_profile_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the service profile.</p>
     pub fn set_service_profile_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.service_profile_id = input;
         self
     }
     /// <p>OTAA device object for v1.1 for create APIs</p>
     pub fn otaa_v1_1(mut self, input: crate::types::OtaaV11) -> Self {
-        self.otaa_v1_1 = Some(input);
+        self.otaa_v1_1 = ::std::option::Option::Some(input);
         self
     }
     /// <p>OTAA device object for v1.1 for create APIs</p>
-    pub fn set_otaa_v1_1(mut self, input: std::option::Option<crate::types::OtaaV11>) -> Self {
+    pub fn set_otaa_v1_1(mut self, input: ::std::option::Option<crate::types::OtaaV11>) -> Self {
         self.otaa_v1_1 = input;
         self
     }
     /// <p>OTAA device object for create APIs for v1.0.x</p>
     pub fn otaa_v1_0_x(mut self, input: crate::types::OtaaV10X) -> Self {
-        self.otaa_v1_0_x = Some(input);
+        self.otaa_v1_0_x = ::std::option::Option::Some(input);
         self
     }
     /// <p>OTAA device object for create APIs for v1.0.x</p>
-    pub fn set_otaa_v1_0_x(mut self, input: std::option::Option<crate::types::OtaaV10X>) -> Self {
+    pub fn set_otaa_v1_0_x(mut self, input: ::std::option::Option<crate::types::OtaaV10X>) -> Self {
         self.otaa_v1_0_x = input;
         self
     }
     /// <p>ABP device object for create APIs for v1.1</p>
     pub fn abp_v1_1(mut self, input: crate::types::AbpV11) -> Self {
-        self.abp_v1_1 = Some(input);
+        self.abp_v1_1 = ::std::option::Option::Some(input);
         self
     }
     /// <p>ABP device object for create APIs for v1.1</p>
-    pub fn set_abp_v1_1(mut self, input: std::option::Option<crate::types::AbpV11>) -> Self {
+    pub fn set_abp_v1_1(mut self, input: ::std::option::Option<crate::types::AbpV11>) -> Self {
         self.abp_v1_1 = input;
         self
     }
     /// <p>LoRaWAN object for create APIs</p>
     pub fn abp_v1_0_x(mut self, input: crate::types::AbpV10X) -> Self {
-        self.abp_v1_0_x = Some(input);
+        self.abp_v1_0_x = ::std::option::Option::Some(input);
         self
     }
     /// <p>LoRaWAN object for create APIs</p>
-    pub fn set_abp_v1_0_x(mut self, input: std::option::Option<crate::types::AbpV10X>) -> Self {
+    pub fn set_abp_v1_0_x(mut self, input: ::std::option::Option<crate::types::AbpV10X>) -> Self {
         self.abp_v1_0_x = input;
         self
     }
     /// <p>List of FPort assigned for different LoRaWAN application packages to use</p>
     pub fn f_ports(mut self, input: crate::types::FPorts) -> Self {
-        self.f_ports = Some(input);
+        self.f_ports = ::std::option::Option::Some(input);
         self
     }
     /// <p>List of FPort assigned for different LoRaWAN application packages to use</p>
-    pub fn set_f_ports(mut self, input: std::option::Option<crate::types::FPorts>) -> Self {
+    pub fn set_f_ports(mut self, input: ::std::option::Option<crate::types::FPorts>) -> Self {
         self.f_ports = input;
         self
     }

@@ -2,22 +2,22 @@
 
 /// <p>Contains the data for a historical metric.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HistoricalMetricData {
     /// <p>Information about the metric.</p>
     #[doc(hidden)]
-    pub metric: std::option::Option<crate::types::HistoricalMetric>,
+    pub metric: ::std::option::Option<crate::types::HistoricalMetric>,
     /// <p>The value of the metric.</p>
     #[doc(hidden)]
-    pub value: std::option::Option<f64>,
+    pub value: ::std::option::Option<f64>,
 }
 impl HistoricalMetricData {
     /// <p>Information about the metric.</p>
-    pub fn metric(&self) -> std::option::Option<&crate::types::HistoricalMetric> {
+    pub fn metric(&self) -> ::std::option::Option<&crate::types::HistoricalMetric> {
         self.metric.as_ref()
     }
     /// <p>The value of the metric.</p>
-    pub fn value(&self) -> std::option::Option<f64> {
+    pub fn value(&self) -> ::std::option::Option<f64> {
         self.value
     }
 }
@@ -30,32 +30,34 @@ impl HistoricalMetricData {
 
 /// A builder for [`HistoricalMetricData`](crate::types::HistoricalMetricData).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct HistoricalMetricDataBuilder {
-    pub(crate) metric: std::option::Option<crate::types::HistoricalMetric>,
-    pub(crate) value: std::option::Option<f64>,
+    pub(crate) metric: ::std::option::Option<crate::types::HistoricalMetric>,
+    pub(crate) value: ::std::option::Option<f64>,
 }
 impl HistoricalMetricDataBuilder {
     /// <p>Information about the metric.</p>
     pub fn metric(mut self, input: crate::types::HistoricalMetric) -> Self {
-        self.metric = Some(input);
+        self.metric = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information about the metric.</p>
     pub fn set_metric(
         mut self,
-        input: std::option::Option<crate::types::HistoricalMetric>,
+        input: ::std::option::Option<crate::types::HistoricalMetric>,
     ) -> Self {
         self.metric = input;
         self
     }
     /// <p>The value of the metric.</p>
     pub fn value(mut self, input: f64) -> Self {
-        self.value = Some(input);
+        self.value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The value of the metric.</p>
-    pub fn set_value(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.value = input;
         self
     }

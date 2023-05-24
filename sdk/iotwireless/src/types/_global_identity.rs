@@ -2,22 +2,22 @@
 
 /// <p>Global identity information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GlobalIdentity {
     /// <p>Location area code of the global identity.</p>
     #[doc(hidden)]
-    pub lac: std::option::Option<i32>,
+    pub lac: ::std::option::Option<i32>,
     /// <p>GERAN (GSM EDGE Radio Access Network) cell global identifier.</p>
     #[doc(hidden)]
-    pub geran_cid: std::option::Option<i32>,
+    pub geran_cid: ::std::option::Option<i32>,
 }
 impl GlobalIdentity {
     /// <p>Location area code of the global identity.</p>
-    pub fn lac(&self) -> std::option::Option<i32> {
+    pub fn lac(&self) -> ::std::option::Option<i32> {
         self.lac
     }
     /// <p>GERAN (GSM EDGE Radio Access Network) cell global identifier.</p>
-    pub fn geran_cid(&self) -> std::option::Option<i32> {
+    pub fn geran_cid(&self) -> ::std::option::Option<i32> {
         self.geran_cid
     }
 }
@@ -30,29 +30,31 @@ impl GlobalIdentity {
 
 /// A builder for [`GlobalIdentity`](crate::types::GlobalIdentity).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GlobalIdentityBuilder {
-    pub(crate) lac: std::option::Option<i32>,
-    pub(crate) geran_cid: std::option::Option<i32>,
+    pub(crate) lac: ::std::option::Option<i32>,
+    pub(crate) geran_cid: ::std::option::Option<i32>,
 }
 impl GlobalIdentityBuilder {
     /// <p>Location area code of the global identity.</p>
     pub fn lac(mut self, input: i32) -> Self {
-        self.lac = Some(input);
+        self.lac = ::std::option::Option::Some(input);
         self
     }
     /// <p>Location area code of the global identity.</p>
-    pub fn set_lac(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_lac(mut self, input: ::std::option::Option<i32>) -> Self {
         self.lac = input;
         self
     }
     /// <p>GERAN (GSM EDGE Radio Access Network) cell global identifier.</p>
     pub fn geran_cid(mut self, input: i32) -> Self {
-        self.geran_cid = Some(input);
+        self.geran_cid = ::std::option::Option::Some(input);
         self
     }
     /// <p>GERAN (GSM EDGE Radio Access Network) cell global identifier.</p>
-    pub fn set_geran_cid(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_geran_cid(mut self, input: ::std::option::Option<i32>) -> Self {
         self.geran_cid = input;
         self
     }

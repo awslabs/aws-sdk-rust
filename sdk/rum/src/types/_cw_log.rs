@@ -2,22 +2,22 @@
 
 /// <p>A structure that contains the information about whether the app monitor stores copies of the data that RUM collects in CloudWatch Logs. If it does, this structure also contains the name of the log group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CwLog {
     /// <p>Indicated whether the app monitor stores copies of the data that RUM collects in CloudWatch Logs.</p>
     #[doc(hidden)]
-    pub cw_log_enabled: std::option::Option<bool>,
+    pub cw_log_enabled: ::std::option::Option<bool>,
     /// <p>The name of the log group where the copies are stored.</p>
     #[doc(hidden)]
-    pub cw_log_group: std::option::Option<std::string::String>,
+    pub cw_log_group: ::std::option::Option<::std::string::String>,
 }
 impl CwLog {
     /// <p>Indicated whether the app monitor stores copies of the data that RUM collects in CloudWatch Logs.</p>
-    pub fn cw_log_enabled(&self) -> std::option::Option<bool> {
+    pub fn cw_log_enabled(&self) -> ::std::option::Option<bool> {
         self.cw_log_enabled
     }
     /// <p>The name of the log group where the copies are stored.</p>
-    pub fn cw_log_group(&self) -> std::option::Option<&str> {
+    pub fn cw_log_group(&self) -> ::std::option::Option<&str> {
         self.cw_log_group.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl CwLog {
 
 /// A builder for [`CwLog`](crate::types::CwLog).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CwLogBuilder {
-    pub(crate) cw_log_enabled: std::option::Option<bool>,
-    pub(crate) cw_log_group: std::option::Option<std::string::String>,
+    pub(crate) cw_log_enabled: ::std::option::Option<bool>,
+    pub(crate) cw_log_group: ::std::option::Option<::std::string::String>,
 }
 impl CwLogBuilder {
     /// <p>Indicated whether the app monitor stores copies of the data that RUM collects in CloudWatch Logs.</p>
     pub fn cw_log_enabled(mut self, input: bool) -> Self {
-        self.cw_log_enabled = Some(input);
+        self.cw_log_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicated whether the app monitor stores copies of the data that RUM collects in CloudWatch Logs.</p>
-    pub fn set_cw_log_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_cw_log_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.cw_log_enabled = input;
         self
     }
     /// <p>The name of the log group where the copies are stored.</p>
-    pub fn cw_log_group(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cw_log_group = Some(input.into());
+    pub fn cw_log_group(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cw_log_group = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the log group where the copies are stored.</p>
-    pub fn set_cw_log_group(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cw_log_group(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cw_log_group = input;
         self
     }

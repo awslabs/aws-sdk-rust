@@ -38,13 +38,13 @@
 /// Selects which PIDs to place EBP markers on. They can either be placed only on the video PID, or on both the video PID and all audio PIDs. Only applicable when EBP segmentation markers are is selected (segmentationMarkers is EBP or EBP_LEGACY).
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum M2tsEbpPlacement {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum M2tsEbpPlacement {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for M2tsEbpPlacement {
+impl ::std::convert::From<&str> for M2tsEbpPlacement {
     fn from(s: &str) -> Self {
         match s {
             "VIDEO_AND_AUDIO_PIDS" => M2tsEbpPlacement::VideoAndAudioPids,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for M2tsEbpPlacement {
         }
     }
 }
-impl std::str::FromStr for M2tsEbpPlacement {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for M2tsEbpPlacement {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(M2tsEbpPlacement::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(M2tsEbpPlacement::from(s))
     }
 }
 impl M2tsEbpPlacement {
@@ -86,7 +86,7 @@ impl M2tsEbpPlacement {
         &["VIDEO_AND_AUDIO_PIDS", "VIDEO_PID"]
     }
 }
-impl AsRef<str> for M2tsEbpPlacement {
+impl ::std::convert::AsRef<str> for M2tsEbpPlacement {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

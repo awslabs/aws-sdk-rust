@@ -3,36 +3,36 @@
 /// <p>A summary of the latest analytics data for a specific control. </p>
 /// <p>This data reflects the total counts for the specified control across all active assessments. Control insights are grouped by control domain, and ranked by the highest total count of non-compliant evidence.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ControlInsightsMetadataItem {
     /// <p>The name of the control. </p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the control. </p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>A breakdown of the compliance check status for the evidence that’s associated with the control. </p>
     #[doc(hidden)]
-    pub evidence_insights: std::option::Option<crate::types::EvidenceInsights>,
+    pub evidence_insights: ::std::option::Option<crate::types::EvidenceInsights>,
     /// <p>The time when the control insights were last updated. </p>
     #[doc(hidden)]
-    pub last_updated: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ControlInsightsMetadataItem {
     /// <p>The name of the control. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The unique identifier for the control. </p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>A breakdown of the compliance check status for the evidence that’s associated with the control. </p>
-    pub fn evidence_insights(&self) -> std::option::Option<&crate::types::EvidenceInsights> {
+    pub fn evidence_insights(&self) -> ::std::option::Option<&crate::types::EvidenceInsights> {
         self.evidence_insights.as_ref()
     }
     /// <p>The time when the control insights were last updated. </p>
-    pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated.as_ref()
     }
 }
@@ -45,56 +45,58 @@ impl ControlInsightsMetadataItem {
 
 /// A builder for [`ControlInsightsMetadataItem`](crate::types::ControlInsightsMetadataItem).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ControlInsightsMetadataItemBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) evidence_insights: std::option::Option<crate::types::EvidenceInsights>,
-    pub(crate) last_updated: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) evidence_insights: ::std::option::Option<crate::types::EvidenceInsights>,
+    pub(crate) last_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ControlInsightsMetadataItemBuilder {
     /// <p>The name of the control. </p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the control. </p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The unique identifier for the control. </p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the control. </p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>A breakdown of the compliance check status for the evidence that’s associated with the control. </p>
     pub fn evidence_insights(mut self, input: crate::types::EvidenceInsights) -> Self {
-        self.evidence_insights = Some(input);
+        self.evidence_insights = ::std::option::Option::Some(input);
         self
     }
     /// <p>A breakdown of the compliance check status for the evidence that’s associated with the control. </p>
     pub fn set_evidence_insights(
         mut self,
-        input: std::option::Option<crate::types::EvidenceInsights>,
+        input: ::std::option::Option<crate::types::EvidenceInsights>,
     ) -> Self {
         self.evidence_insights = input;
         self
     }
     /// <p>The time when the control insights were last updated. </p>
-    pub fn last_updated(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_updated = Some(input);
+    pub fn last_updated(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_updated = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time when the control insights were last updated. </p>
     pub fn set_last_updated(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_updated = input;
         self

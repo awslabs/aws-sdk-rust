@@ -2,23 +2,23 @@
 
 /// <p>Information about the summary of the code review.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CodeReviewSummary {
     /// <p>The name of the code review.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
     #[doc(hidden)]
-    pub code_review_arn: std::option::Option<std::string::String>,
+    pub code_review_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the repository.</p>
     #[doc(hidden)]
-    pub repository_name: std::option::Option<std::string::String>,
+    pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The owner of the repository. For an Amazon Web Services CodeCommit repository, this is the Amazon Web Services account ID of the account that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for the account that owns the repository. For an S3 repository, it can be the username or Amazon Web Services account ID.</p>
     #[doc(hidden)]
-    pub owner: std::option::Option<std::string::String>,
+    pub owner: ::std::option::Option<::std::string::String>,
     /// <p>The provider type of the repository association.</p>
     #[doc(hidden)]
-    pub provider_type: std::option::Option<crate::types::ProviderType>,
+    pub provider_type: ::std::option::Option<crate::types::ProviderType>,
     /// <p>The state of the code review.</p>
     /// <p>The valid code review states are:</p>
     /// <ul>
@@ -28,45 +28,45 @@ pub struct CodeReviewSummary {
     /// <li> <p> <code>Deleting</code>: The code review is being deleted.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub state: std::option::Option<crate::types::JobState>,
+    pub state: ::std::option::Option<crate::types::JobState>,
     /// <p>The time, in milliseconds since the epoch, when the code review was created.</p>
     #[doc(hidden)]
-    pub created_time_stamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_time_stamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time, in milliseconds since the epoch, when the code review was last updated.</p>
     #[doc(hidden)]
-    pub last_updated_time_stamp: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_updated_time_stamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The type of the code review.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::Type>,
+    pub r#type: ::std::option::Option<crate::types::Type>,
     /// <p>The pull request ID for the code review.</p>
     #[doc(hidden)]
-    pub pull_request_id: std::option::Option<std::string::String>,
+    pub pull_request_id: ::std::option::Option<::std::string::String>,
     /// <p>The statistics from the code review.</p>
     #[doc(hidden)]
-    pub metrics_summary: std::option::Option<crate::types::MetricsSummary>,
+    pub metrics_summary: ::std::option::Option<crate::types::MetricsSummary>,
     /// <p>Specifies the source code that is analyzed in a code review.</p>
     #[doc(hidden)]
-    pub source_code_type: std::option::Option<crate::types::SourceCodeType>,
+    pub source_code_type: ::std::option::Option<crate::types::SourceCodeType>,
 }
 impl CodeReviewSummary {
     /// <p>The name of the code review.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
-    pub fn code_review_arn(&self) -> std::option::Option<&str> {
+    pub fn code_review_arn(&self) -> ::std::option::Option<&str> {
         self.code_review_arn.as_deref()
     }
     /// <p>The name of the repository.</p>
-    pub fn repository_name(&self) -> std::option::Option<&str> {
+    pub fn repository_name(&self) -> ::std::option::Option<&str> {
         self.repository_name.as_deref()
     }
     /// <p>The owner of the repository. For an Amazon Web Services CodeCommit repository, this is the Amazon Web Services account ID of the account that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for the account that owns the repository. For an S3 repository, it can be the username or Amazon Web Services account ID.</p>
-    pub fn owner(&self) -> std::option::Option<&str> {
+    pub fn owner(&self) -> ::std::option::Option<&str> {
         self.owner.as_deref()
     }
     /// <p>The provider type of the repository association.</p>
-    pub fn provider_type(&self) -> std::option::Option<&crate::types::ProviderType> {
+    pub fn provider_type(&self) -> ::std::option::Option<&crate::types::ProviderType> {
         self.provider_type.as_ref()
     }
     /// <p>The state of the code review.</p>
@@ -77,31 +77,31 @@ impl CodeReviewSummary {
     /// <li> <p> <code>Failed</code>: The code review failed.</p> </li>
     /// <li> <p> <code>Deleting</code>: The code review is being deleted.</p> </li>
     /// </ul>
-    pub fn state(&self) -> std::option::Option<&crate::types::JobState> {
+    pub fn state(&self) -> ::std::option::Option<&crate::types::JobState> {
         self.state.as_ref()
     }
     /// <p>The time, in milliseconds since the epoch, when the code review was created.</p>
-    pub fn created_time_stamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_time_stamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_time_stamp.as_ref()
     }
     /// <p>The time, in milliseconds since the epoch, when the code review was last updated.</p>
-    pub fn last_updated_time_stamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_updated_time_stamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_time_stamp.as_ref()
     }
     /// <p>The type of the code review.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::Type> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::Type> {
         self.r#type.as_ref()
     }
     /// <p>The pull request ID for the code review.</p>
-    pub fn pull_request_id(&self) -> std::option::Option<&str> {
+    pub fn pull_request_id(&self) -> ::std::option::Option<&str> {
         self.pull_request_id.as_deref()
     }
     /// <p>The statistics from the code review.</p>
-    pub fn metrics_summary(&self) -> std::option::Option<&crate::types::MetricsSummary> {
+    pub fn metrics_summary(&self) -> ::std::option::Option<&crate::types::MetricsSummary> {
         self.metrics_summary.as_ref()
     }
     /// <p>Specifies the source code that is analyzed in a code review.</p>
-    pub fn source_code_type(&self) -> std::option::Option<&crate::types::SourceCodeType> {
+    pub fn source_code_type(&self) -> ::std::option::Option<&crate::types::SourceCodeType> {
         self.source_code_type.as_ref()
     }
 }
@@ -114,71 +114,85 @@ impl CodeReviewSummary {
 
 /// A builder for [`CodeReviewSummary`](crate::types::CodeReviewSummary).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CodeReviewSummaryBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) code_review_arn: std::option::Option<std::string::String>,
-    pub(crate) repository_name: std::option::Option<std::string::String>,
-    pub(crate) owner: std::option::Option<std::string::String>,
-    pub(crate) provider_type: std::option::Option<crate::types::ProviderType>,
-    pub(crate) state: std::option::Option<crate::types::JobState>,
-    pub(crate) created_time_stamp: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_updated_time_stamp: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) r#type: std::option::Option<crate::types::Type>,
-    pub(crate) pull_request_id: std::option::Option<std::string::String>,
-    pub(crate) metrics_summary: std::option::Option<crate::types::MetricsSummary>,
-    pub(crate) source_code_type: std::option::Option<crate::types::SourceCodeType>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) code_review_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) repository_name: ::std::option::Option<::std::string::String>,
+    pub(crate) owner: ::std::option::Option<::std::string::String>,
+    pub(crate) provider_type: ::std::option::Option<crate::types::ProviderType>,
+    pub(crate) state: ::std::option::Option<crate::types::JobState>,
+    pub(crate) created_time_stamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_updated_time_stamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) r#type: ::std::option::Option<crate::types::Type>,
+    pub(crate) pull_request_id: ::std::option::Option<::std::string::String>,
+    pub(crate) metrics_summary: ::std::option::Option<crate::types::MetricsSummary>,
+    pub(crate) source_code_type: ::std::option::Option<crate::types::SourceCodeType>,
 }
 impl CodeReviewSummaryBuilder {
     /// <p>The name of the code review.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the code review.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
-    pub fn code_review_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.code_review_arn = Some(input.into());
+    pub fn code_review_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.code_review_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
-    pub fn set_code_review_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_code_review_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.code_review_arn = input;
         self
     }
     /// <p>The name of the repository.</p>
-    pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.repository_name = Some(input.into());
+    pub fn repository_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the repository.</p>
-    pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_repository_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.repository_name = input;
         self
     }
     /// <p>The owner of the repository. For an Amazon Web Services CodeCommit repository, this is the Amazon Web Services account ID of the account that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for the account that owns the repository. For an S3 repository, it can be the username or Amazon Web Services account ID.</p>
-    pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
-        self.owner = Some(input.into());
+    pub fn owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.owner = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The owner of the repository. For an Amazon Web Services CodeCommit repository, this is the Amazon Web Services account ID of the account that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for the account that owns the repository. For an S3 repository, it can be the username or Amazon Web Services account ID.</p>
-    pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.owner = input;
         self
     }
     /// <p>The provider type of the repository association.</p>
     pub fn provider_type(mut self, input: crate::types::ProviderType) -> Self {
-        self.provider_type = Some(input);
+        self.provider_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The provider type of the repository association.</p>
     pub fn set_provider_type(
         mut self,
-        input: std::option::Option<crate::types::ProviderType>,
+        input: ::std::option::Option<crate::types::ProviderType>,
     ) -> Self {
         self.provider_type = input;
         self
@@ -192,7 +206,7 @@ impl CodeReviewSummaryBuilder {
     /// <li> <p> <code>Deleting</code>: The code review is being deleted.</p> </li>
     /// </ul>
     pub fn state(mut self, input: crate::types::JobState) -> Self {
-        self.state = Some(input);
+        self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The state of the code review.</p>
@@ -203,78 +217,84 @@ impl CodeReviewSummaryBuilder {
     /// <li> <p> <code>Failed</code>: The code review failed.</p> </li>
     /// <li> <p> <code>Deleting</code>: The code review is being deleted.</p> </li>
     /// </ul>
-    pub fn set_state(mut self, input: std::option::Option<crate::types::JobState>) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::JobState>) -> Self {
         self.state = input;
         self
     }
     /// <p>The time, in milliseconds since the epoch, when the code review was created.</p>
-    pub fn created_time_stamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_time_stamp = Some(input);
+    pub fn created_time_stamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_time_stamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time, in milliseconds since the epoch, when the code review was created.</p>
     pub fn set_created_time_stamp(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_time_stamp = input;
         self
     }
     /// <p>The time, in milliseconds since the epoch, when the code review was last updated.</p>
-    pub fn last_updated_time_stamp(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_updated_time_stamp = Some(input);
+    pub fn last_updated_time_stamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_updated_time_stamp = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time, in milliseconds since the epoch, when the code review was last updated.</p>
     pub fn set_last_updated_time_stamp(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_updated_time_stamp = input;
         self
     }
     /// <p>The type of the code review.</p>
     pub fn r#type(mut self, input: crate::types::Type) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of the code review.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::Type>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::Type>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The pull request ID for the code review.</p>
-    pub fn pull_request_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.pull_request_id = Some(input.into());
+    pub fn pull_request_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.pull_request_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The pull request ID for the code review.</p>
-    pub fn set_pull_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_pull_request_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.pull_request_id = input;
         self
     }
     /// <p>The statistics from the code review.</p>
     pub fn metrics_summary(mut self, input: crate::types::MetricsSummary) -> Self {
-        self.metrics_summary = Some(input);
+        self.metrics_summary = ::std::option::Option::Some(input);
         self
     }
     /// <p>The statistics from the code review.</p>
     pub fn set_metrics_summary(
         mut self,
-        input: std::option::Option<crate::types::MetricsSummary>,
+        input: ::std::option::Option<crate::types::MetricsSummary>,
     ) -> Self {
         self.metrics_summary = input;
         self
     }
     /// <p>Specifies the source code that is analyzed in a code review.</p>
     pub fn source_code_type(mut self, input: crate::types::SourceCodeType) -> Self {
-        self.source_code_type = Some(input);
+        self.source_code_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the source code that is analyzed in a code review.</p>
     pub fn set_source_code_type(
         mut self,
-        input: std::option::Option<crate::types::SourceCodeType>,
+        input: ::std::option::Option<crate::types::SourceCodeType>,
     ) -> Self {
         self.source_code_type = input;
         self

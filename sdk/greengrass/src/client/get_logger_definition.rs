@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetLoggerDefinition`](crate::operation::get_logger_definition::builders::GetLoggerDefinitionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`logger_definition_id(impl Into<String>)`](crate::operation::get_logger_definition::builders::GetLoggerDefinitionFluentBuilder::logger_definition_id) / [`set_logger_definition_id(Option<String>)`](crate::operation::get_logger_definition::builders::GetLoggerDefinitionFluentBuilder::set_logger_definition_id): The ID of the logger definition.
+    ///   - [`logger_definition_id(impl ::std::convert::Into<String>)`](crate::operation::get_logger_definition::builders::GetLoggerDefinitionFluentBuilder::logger_definition_id) / [`set_logger_definition_id(Option<String>)`](crate::operation::get_logger_definition::builders::GetLoggerDefinitionFluentBuilder::set_logger_definition_id): The ID of the logger definition.
     /// - On success, responds with [`GetLoggerDefinitionOutput`](crate::operation::get_logger_definition::GetLoggerDefinitionOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::get_logger_definition::GetLoggerDefinitionOutput::arn): The ARN of the definition.
     ///   - [`creation_timestamp(Option<String>)`](crate::operation::get_logger_definition::GetLoggerDefinitionOutput::creation_timestamp): The time, in milliseconds since the epoch, when the definition was created.

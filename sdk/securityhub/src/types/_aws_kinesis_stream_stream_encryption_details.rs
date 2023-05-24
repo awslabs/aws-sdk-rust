@@ -2,22 +2,22 @@
 
 /// <p>Provides information about stream encryption. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsKinesisStreamStreamEncryptionDetails {
     /// <p>The encryption type to use. </p>
     #[doc(hidden)]
-    pub encryption_type: std::option::Option<std::string::String>,
+    pub encryption_type: ::std::option::Option<::std::string::String>,
     /// <p>The globally unique identifier for the customer-managed KMS key to use for encryption. </p>
     #[doc(hidden)]
-    pub key_id: std::option::Option<std::string::String>,
+    pub key_id: ::std::option::Option<::std::string::String>,
 }
 impl AwsKinesisStreamStreamEncryptionDetails {
     /// <p>The encryption type to use. </p>
-    pub fn encryption_type(&self) -> std::option::Option<&str> {
+    pub fn encryption_type(&self) -> ::std::option::Option<&str> {
         self.encryption_type.as_deref()
     }
     /// <p>The globally unique identifier for the customer-managed KMS key to use for encryption. </p>
-    pub fn key_id(&self) -> std::option::Option<&str> {
+    pub fn key_id(&self) -> ::std::option::Option<&str> {
         self.key_id.as_deref()
     }
 }
@@ -30,29 +30,37 @@ impl AwsKinesisStreamStreamEncryptionDetails {
 
 /// A builder for [`AwsKinesisStreamStreamEncryptionDetails`](crate::types::AwsKinesisStreamStreamEncryptionDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsKinesisStreamStreamEncryptionDetailsBuilder {
-    pub(crate) encryption_type: std::option::Option<std::string::String>,
-    pub(crate) key_id: std::option::Option<std::string::String>,
+    pub(crate) encryption_type: ::std::option::Option<::std::string::String>,
+    pub(crate) key_id: ::std::option::Option<::std::string::String>,
 }
 impl AwsKinesisStreamStreamEncryptionDetailsBuilder {
     /// <p>The encryption type to use. </p>
-    pub fn encryption_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.encryption_type = Some(input.into());
+    pub fn encryption_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.encryption_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The encryption type to use. </p>
-    pub fn set_encryption_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_encryption_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.encryption_type = input;
         self
     }
     /// <p>The globally unique identifier for the customer-managed KMS key to use for encryption. </p>
-    pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.key_id = Some(input.into());
+    pub fn key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The globally unique identifier for the customer-managed KMS key to use for encryption. </p>
-    pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key_id = input;
         self
     }

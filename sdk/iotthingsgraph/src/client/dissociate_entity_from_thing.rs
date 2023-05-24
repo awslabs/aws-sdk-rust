@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DissociateEntityFromThing`](crate::operation::dissociate_entity_from_thing::builders::DissociateEntityFromThingFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`thing_name(impl Into<String>)`](crate::operation::dissociate_entity_from_thing::builders::DissociateEntityFromThingFluentBuilder::thing_name) / [`set_thing_name(Option<String>)`](crate::operation::dissociate_entity_from_thing::builders::DissociateEntityFromThingFluentBuilder::set_thing_name): <p>The name of the thing to disassociate.</p>
+    ///   - [`thing_name(impl ::std::convert::Into<String>)`](crate::operation::dissociate_entity_from_thing::builders::DissociateEntityFromThingFluentBuilder::thing_name) / [`set_thing_name(Option<String>)`](crate::operation::dissociate_entity_from_thing::builders::DissociateEntityFromThingFluentBuilder::set_thing_name): <p>The name of the thing to disassociate.</p>
     ///   - [`entity_type(EntityType)`](crate::operation::dissociate_entity_from_thing::builders::DissociateEntityFromThingFluentBuilder::entity_type) / [`set_entity_type(Option<EntityType>)`](crate::operation::dissociate_entity_from_thing::builders::DissociateEntityFromThingFluentBuilder::set_entity_type): <p>The entity type from which to disassociate the thing.</p>
     /// - On success, responds with [`DissociateEntityFromThingOutput`](crate::operation::dissociate_entity_from_thing::DissociateEntityFromThingOutput)
     /// - On failure, responds with [`SdkError<DissociateEntityFromThingError>`](crate::operation::dissociate_entity_from_thing::DissociateEntityFromThingError)

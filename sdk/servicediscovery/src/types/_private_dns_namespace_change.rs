@@ -2,24 +2,24 @@
 
 /// <p>Updated properties for the private DNS namespace.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PrivateDnsNamespaceChange {
     /// <p>An updated description for the private DNS namespace.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>Properties to be updated in the private DNS namespace.</p>
     #[doc(hidden)]
-    pub properties: std::option::Option<crate::types::PrivateDnsNamespacePropertiesChange>,
+    pub properties: ::std::option::Option<crate::types::PrivateDnsNamespacePropertiesChange>,
 }
 impl PrivateDnsNamespaceChange {
     /// <p>An updated description for the private DNS namespace.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>Properties to be updated in the private DNS namespace.</p>
     pub fn properties(
         &self,
-    ) -> std::option::Option<&crate::types::PrivateDnsNamespacePropertiesChange> {
+    ) -> ::std::option::Option<&crate::types::PrivateDnsNamespacePropertiesChange> {
         self.properties.as_ref()
     }
 }
@@ -32,31 +32,33 @@ impl PrivateDnsNamespaceChange {
 
 /// A builder for [`PrivateDnsNamespaceChange`](crate::types::PrivateDnsNamespaceChange).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PrivateDnsNamespaceChangeBuilder {
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) properties: std::option::Option<crate::types::PrivateDnsNamespacePropertiesChange>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) properties: ::std::option::Option<crate::types::PrivateDnsNamespacePropertiesChange>,
 }
 impl PrivateDnsNamespaceChangeBuilder {
     /// <p>An updated description for the private DNS namespace.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An updated description for the private DNS namespace.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>Properties to be updated in the private DNS namespace.</p>
     pub fn properties(mut self, input: crate::types::PrivateDnsNamespacePropertiesChange) -> Self {
-        self.properties = Some(input);
+        self.properties = ::std::option::Option::Some(input);
         self
     }
     /// <p>Properties to be updated in the private DNS namespace.</p>
     pub fn set_properties(
         mut self,
-        input: std::option::Option<crate::types::PrivateDnsNamespacePropertiesChange>,
+        input: ::std::option::Option<crate::types::PrivateDnsNamespacePropertiesChange>,
     ) -> Self {
         self.properties = input;
         self

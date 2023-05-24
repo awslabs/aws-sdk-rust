@@ -2,17 +2,17 @@
 
 /// <p>A representation of a pricing plan. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct PricingPlanListElement {
     /// <p>The name of a pricing plan. </p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The pricing plan Amazon Resource Names (ARN). This can be used to uniquely identify a pricing plan. </p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The pricing plan description. </p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p> The pricing rules count that's currently associated with this pricing plan list element. </p>
     #[doc(hidden)]
     pub size: i64,
@@ -25,15 +25,15 @@ pub struct PricingPlanListElement {
 }
 impl PricingPlanListElement {
     /// <p>The name of a pricing plan. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The pricing plan Amazon Resource Names (ARN). This can be used to uniquely identify a pricing plan. </p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The pricing plan description. </p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p> The pricing rules count that's currently associated with this pricing plan list element. </p>
@@ -49,8 +49,8 @@ impl PricingPlanListElement {
         self.last_modified_time
     }
 }
-impl std::fmt::Debug for PricingPlanListElement {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for PricingPlanListElement {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("PricingPlanListElement");
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("arn", &self.arn);
@@ -70,73 +70,73 @@ impl PricingPlanListElement {
 
 /// A builder for [`PricingPlanListElement`](crate::types::PricingPlanListElement).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct PricingPlanListElementBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) size: std::option::Option<i64>,
-    pub(crate) creation_time: std::option::Option<i64>,
-    pub(crate) last_modified_time: std::option::Option<i64>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) size: ::std::option::Option<i64>,
+    pub(crate) creation_time: ::std::option::Option<i64>,
+    pub(crate) last_modified_time: ::std::option::Option<i64>,
 }
 impl PricingPlanListElementBuilder {
     /// <p>The name of a pricing plan. </p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a pricing plan. </p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The pricing plan Amazon Resource Names (ARN). This can be used to uniquely identify a pricing plan. </p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The pricing plan Amazon Resource Names (ARN). This can be used to uniquely identify a pricing plan. </p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// <p>The pricing plan description. </p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The pricing plan description. </p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p> The pricing rules count that's currently associated with this pricing plan list element. </p>
     pub fn size(mut self, input: i64) -> Self {
-        self.size = Some(input);
+        self.size = ::std::option::Option::Some(input);
         self
     }
     /// <p> The pricing rules count that's currently associated with this pricing plan list element. </p>
-    pub fn set_size(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_size(mut self, input: ::std::option::Option<i64>) -> Self {
         self.size = input;
         self
     }
     /// <p> The time when the pricing plan was created. </p>
     pub fn creation_time(mut self, input: i64) -> Self {
-        self.creation_time = Some(input);
+        self.creation_time = ::std::option::Option::Some(input);
         self
     }
     /// <p> The time when the pricing plan was created. </p>
-    pub fn set_creation_time(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_creation_time(mut self, input: ::std::option::Option<i64>) -> Self {
         self.creation_time = input;
         self
     }
     /// <p> The most recent time when the pricing plan was modified. </p>
     pub fn last_modified_time(mut self, input: i64) -> Self {
-        self.last_modified_time = Some(input);
+        self.last_modified_time = ::std::option::Option::Some(input);
         self
     }
     /// <p> The most recent time when the pricing plan was modified. </p>
-    pub fn set_last_modified_time(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<i64>) -> Self {
         self.last_modified_time = input;
         self
     }
@@ -152,8 +152,8 @@ impl PricingPlanListElementBuilder {
         }
     }
 }
-impl std::fmt::Debug for PricingPlanListElementBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for PricingPlanListElementBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("PricingPlanListElementBuilder");
         formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("arn", &self.arn);

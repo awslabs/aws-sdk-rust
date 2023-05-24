@@ -2,20 +2,20 @@
 
 /// <p>The system generated response showing the DNS aliases that Amazon FSx is attempting to associate with the file system. Use the API operation to monitor the status of the aliases Amazon FSx is associating with the file system. It can take up to 2.5 minutes for the alias status to change from <code>CREATING</code> to <code>AVAILABLE</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateFileSystemAliasesOutput {
     /// <p>An array of the DNS aliases that Amazon FSx is associating with the file system.</p>
     #[doc(hidden)]
-    pub aliases: std::option::Option<std::vec::Vec<crate::types::Alias>>,
+    pub aliases: ::std::option::Option<::std::vec::Vec<crate::types::Alias>>,
     _request_id: Option<String>,
 }
 impl AssociateFileSystemAliasesOutput {
     /// <p>An array of the DNS aliases that Amazon FSx is associating with the file system.</p>
-    pub fn aliases(&self) -> std::option::Option<&[crate::types::Alias]> {
+    pub fn aliases(&self) -> ::std::option::Option<&[crate::types::Alias]> {
         self.aliases.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for AssociateFileSystemAliasesOutput {
+impl ::aws_http::request_id::RequestId for AssociateFileSystemAliasesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,9 +29,11 @@ impl AssociateFileSystemAliasesOutput {
 
 /// A builder for [`AssociateFileSystemAliasesOutput`](crate::operation::associate_file_system_aliases::AssociateFileSystemAliasesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AssociateFileSystemAliasesOutputBuilder {
-    pub(crate) aliases: std::option::Option<std::vec::Vec<crate::types::Alias>>,
+    pub(crate) aliases: ::std::option::Option<::std::vec::Vec<crate::types::Alias>>,
     _request_id: Option<String>,
 }
 impl AssociateFileSystemAliasesOutputBuilder {
@@ -43,13 +45,13 @@ impl AssociateFileSystemAliasesOutputBuilder {
     pub fn aliases(mut self, input: crate::types::Alias) -> Self {
         let mut v = self.aliases.unwrap_or_default();
         v.push(input);
-        self.aliases = Some(v);
+        self.aliases = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of the DNS aliases that Amazon FSx is associating with the file system.</p>
     pub fn set_aliases(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Alias>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Alias>>,
     ) -> Self {
         self.aliases = input;
         self

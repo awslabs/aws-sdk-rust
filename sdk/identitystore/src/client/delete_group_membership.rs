@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteGroupMembership`](crate::operation::delete_group_membership::builders::DeleteGroupMembershipFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`identity_store_id(impl Into<String>)`](crate::operation::delete_group_membership::builders::DeleteGroupMembershipFluentBuilder::identity_store_id) / [`set_identity_store_id(Option<String>)`](crate::operation::delete_group_membership::builders::DeleteGroupMembershipFluentBuilder::set_identity_store_id): <p>The globally unique identifier for the identity store.</p>
-    ///   - [`membership_id(impl Into<String>)`](crate::operation::delete_group_membership::builders::DeleteGroupMembershipFluentBuilder::membership_id) / [`set_membership_id(Option<String>)`](crate::operation::delete_group_membership::builders::DeleteGroupMembershipFluentBuilder::set_membership_id): <p>The identifier for a <code>GroupMembership</code> in an identity store.</p>
+    ///   - [`identity_store_id(impl ::std::convert::Into<String>)`](crate::operation::delete_group_membership::builders::DeleteGroupMembershipFluentBuilder::identity_store_id) / [`set_identity_store_id(Option<String>)`](crate::operation::delete_group_membership::builders::DeleteGroupMembershipFluentBuilder::set_identity_store_id): <p>The globally unique identifier for the identity store.</p>
+    ///   - [`membership_id(impl ::std::convert::Into<String>)`](crate::operation::delete_group_membership::builders::DeleteGroupMembershipFluentBuilder::membership_id) / [`set_membership_id(Option<String>)`](crate::operation::delete_group_membership::builders::DeleteGroupMembershipFluentBuilder::set_membership_id): <p>The identifier for a <code>GroupMembership</code> in an identity store.</p>
     /// - On success, responds with [`DeleteGroupMembershipOutput`](crate::operation::delete_group_membership::DeleteGroupMembershipOutput)
     /// - On failure, responds with [`SdkError<DeleteGroupMembershipError>`](crate::operation::delete_group_membership::DeleteGroupMembershipError)
     pub fn delete_group_membership(

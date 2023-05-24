@@ -2,11 +2,11 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddSourceIdentifierToSubscriptionInput {
     /// <p>The name of the RDS event notification subscription you want to add a source identifier to.</p>
     #[doc(hidden)]
-    pub subscription_name: std::option::Option<std::string::String>,
+    pub subscription_name: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the event source to be added.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -19,11 +19,11 @@ pub struct AddSourceIdentifierToSubscriptionInput {
     /// <li> <p>If the source type is an RDS Proxy, a <code>DBProxyName</code> value must be supplied.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub source_identifier: std::option::Option<std::string::String>,
+    pub source_identifier: ::std::option::Option<::std::string::String>,
 }
 impl AddSourceIdentifierToSubscriptionInput {
     /// <p>The name of the RDS event notification subscription you want to add a source identifier to.</p>
-    pub fn subscription_name(&self) -> std::option::Option<&str> {
+    pub fn subscription_name(&self) -> ::std::option::Option<&str> {
         self.subscription_name.as_deref()
     }
     /// <p>The identifier of the event source to be added.</p>
@@ -37,7 +37,7 @@ impl AddSourceIdentifierToSubscriptionInput {
     /// <li> <p>If the source type is a DB cluster snapshot, a <code>DBClusterSnapshotIdentifier</code> value must be supplied.</p> </li>
     /// <li> <p>If the source type is an RDS Proxy, a <code>DBProxyName</code> value must be supplied.</p> </li>
     /// </ul>
-    pub fn source_identifier(&self) -> std::option::Option<&str> {
+    pub fn source_identifier(&self) -> ::std::option::Option<&str> {
         self.source_identifier.as_deref()
     }
 }
@@ -50,21 +50,26 @@ impl AddSourceIdentifierToSubscriptionInput {
 
 /// A builder for [`AddSourceIdentifierToSubscriptionInput`](crate::operation::add_source_identifier_to_subscription::AddSourceIdentifierToSubscriptionInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AddSourceIdentifierToSubscriptionInputBuilder {
-    pub(crate) subscription_name: std::option::Option<std::string::String>,
-    pub(crate) source_identifier: std::option::Option<std::string::String>,
+    pub(crate) subscription_name: ::std::option::Option<::std::string::String>,
+    pub(crate) source_identifier: ::std::option::Option<::std::string::String>,
 }
 impl AddSourceIdentifierToSubscriptionInputBuilder {
     /// <p>The name of the RDS event notification subscription you want to add a source identifier to.</p>
-    pub fn subscription_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.subscription_name = Some(input.into());
+    pub fn subscription_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.subscription_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the RDS event notification subscription you want to add a source identifier to.</p>
     pub fn set_subscription_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.subscription_name = input;
         self
@@ -80,8 +85,11 @@ impl AddSourceIdentifierToSubscriptionInputBuilder {
     /// <li> <p>If the source type is a DB cluster snapshot, a <code>DBClusterSnapshotIdentifier</code> value must be supplied.</p> </li>
     /// <li> <p>If the source type is an RDS Proxy, a <code>DBProxyName</code> value must be supplied.</p> </li>
     /// </ul>
-    pub fn source_identifier(mut self, input: impl Into<std::string::String>) -> Self {
-        self.source_identifier = Some(input.into());
+    pub fn source_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.source_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the event source to be added.</p>
@@ -97,14 +105,14 @@ impl AddSourceIdentifierToSubscriptionInputBuilder {
     /// </ul>
     pub fn set_source_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.source_identifier = input;
         self
     }
     /// Consumes the builder and constructs a [`AddSourceIdentifierToSubscriptionInput`](crate::operation::add_source_identifier_to_subscription::AddSourceIdentifierToSubscriptionInput).
-    pub fn build(self) -> Result<crate::operation::add_source_identifier_to_subscription::AddSourceIdentifierToSubscriptionInput, aws_smithy_http::operation::error::BuildError>{
-        Ok(
+    pub fn build(self) -> ::std::result::Result<crate::operation::add_source_identifier_to_subscription::AddSourceIdentifierToSubscriptionInput, ::aws_smithy_http::operation::error::BuildError>{
+        ::std::result::Result::Ok(
             crate::operation::add_source_identifier_to_subscription::AddSourceIdentifierToSubscriptionInput {
                 subscription_name: self.subscription_name
                 ,

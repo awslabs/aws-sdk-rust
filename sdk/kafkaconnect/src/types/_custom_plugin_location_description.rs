@@ -2,15 +2,15 @@
 
 /// <p>Information about the location of a custom plugin.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomPluginLocationDescription {
     /// <p>The S3 bucket Amazon Resource Name (ARN), file key, and object version of the plugin file stored in Amazon S3.</p>
     #[doc(hidden)]
-    pub s3_location: std::option::Option<crate::types::S3LocationDescription>,
+    pub s3_location: ::std::option::Option<crate::types::S3LocationDescription>,
 }
 impl CustomPluginLocationDescription {
     /// <p>The S3 bucket Amazon Resource Name (ARN), file key, and object version of the plugin file stored in Amazon S3.</p>
-    pub fn s3_location(&self) -> std::option::Option<&crate::types::S3LocationDescription> {
+    pub fn s3_location(&self) -> ::std::option::Option<&crate::types::S3LocationDescription> {
         self.s3_location.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl CustomPluginLocationDescription {
 
 /// A builder for [`CustomPluginLocationDescription`](crate::types::CustomPluginLocationDescription).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CustomPluginLocationDescriptionBuilder {
-    pub(crate) s3_location: std::option::Option<crate::types::S3LocationDescription>,
+    pub(crate) s3_location: ::std::option::Option<crate::types::S3LocationDescription>,
 }
 impl CustomPluginLocationDescriptionBuilder {
     /// <p>The S3 bucket Amazon Resource Name (ARN), file key, and object version of the plugin file stored in Amazon S3.</p>
     pub fn s3_location(mut self, input: crate::types::S3LocationDescription) -> Self {
-        self.s3_location = Some(input);
+        self.s3_location = ::std::option::Option::Some(input);
         self
     }
     /// <p>The S3 bucket Amazon Resource Name (ARN), file key, and object version of the plugin file stored in Amazon S3.</p>
     pub fn set_s3_location(
         mut self,
-        input: std::option::Option<crate::types::S3LocationDescription>,
+        input: ::std::option::Option<crate::types::S3LocationDescription>,
     ) -> Self {
         self.s3_location = input;
         self
